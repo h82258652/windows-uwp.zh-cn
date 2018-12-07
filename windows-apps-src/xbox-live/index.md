@@ -6,17 +6,17 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, xbox, xbox live
 ms.localizationpriority: medium
 ms.openlocfilehash: a3bd61c1c068689d364d7bafe89a90ed307fa126
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8326618"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8741459"
 ---
 # <a name="what-is-xbox-live"></a>什么是 Xbox Live？
 
 Xbox Live 是首要游戏网络，连接着世界各地的数百万玩家。 你可以将 Xbox Live 添加到 Windows 10 或 Xbox One 游戏中，以充分利用 Xbox Live 的功能和服务。
 
-使用 Xbox Live 创意者计划与[合作伙伴中心](https://partner.microsoft.com/dashboard)帐户的任何人都可以生成一个可在 Windows 10 电脑和 Xbox One 主机运行的通用 Windows 平台 (UWP) 的支持 Xbox Live 游戏。
+使用 Xbox Live 创意者计划与[合作伙伴中心](https://partner.microsoft.com/dashboard)帐户的任何人都可以生成一个可以在 Windows 10 电脑和 Xbox One 主机运行的通用 Windows 平台 (UWP) 的支持 Xbox Live 游戏。
 
 对于想要充分利用完整的 Xbox Live 体验（包括多人游戏、成就、本机 Xbox 主机开发）的游戏开发人员，我们还提供了其他开发人员计划，这些计划将在[开发人员计划概述](developer-program-overview.md)中进行详细介绍。
 

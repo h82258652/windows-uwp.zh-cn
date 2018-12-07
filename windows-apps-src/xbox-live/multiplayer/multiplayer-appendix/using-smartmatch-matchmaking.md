@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 匹配, smartmatch
 ms.localizationpriority: medium
 ms.openlocfilehash: 89f33768efcd649987866fd0798c222aa97f7ff8
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8330500"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8754366"
 ---
 # <a name="using-smartmatch-matchmaking"></a>使用 SmartMatch 匹配
 
@@ -42,7 +42,7 @@ ms.locfileid: "8330500"
 
 游戏指定匹配票证会话内的各成员的每个成员属性。 通过使用“matchAttrs”的属性名称并调用 **MultiplayerSession.SetCurrentUserMemberCustomPropertyJson 方法**来对它们进行设置。 此调用将 /members/{index}/properties/custom/matchAttrs 字段中的属性置于票证会话中的每个玩家上。
 
-匹配过程将"平展"每个成员每个为单个票证级别属性，具体取决于漏斗的 Xbox Live 配置中的属性指定的平展方法。 这可以在[XDP](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)上配置。
+匹配过程将"平展"每个成员每个为单个票证级别属性，基于为漏斗的 Xbox Live 配置中的属性指定的平展方法。 这可以在[XDP](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)上配置。
 
 
 ## <a name="making-the-match"></a>进行匹配

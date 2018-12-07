@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 53a6c7bb0e7390b024b01e221d8061316a80509e
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8686069"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8757090"
 ---
 # <a name="usersxuidxuidscidsscidstats"></a>/users/xuid({xuid})/scids/{scid}/stats
-访问代表指定用户的用户统计信息名称的以逗号分隔列表范围内的服务配置。 这些 Uri 的域是`userstats.xboxlive.com`。
+访问代表指定用户的用户统计信息名称的以逗号分隔列表范围的服务配置。 这些 Uri 的域是`userstats.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -26,7 +26,7 @@ ms.locfileid: "8686069"
  
 | 参数| 类型| 描述| 
 | --- | --- | --- | 
-| xuid| GUID| Xbox 用户 ID (XUID) 的用户的名义访问服务配置。| 
+| xuid| GUID| Xbox 用户 ID (XUID) 的用户的名义访问的服务配置。| 
 | scid| GUID| 服务配置，其中包含所访问的资源的标识符。| 
   
 <a id="ID4E4B"></a>

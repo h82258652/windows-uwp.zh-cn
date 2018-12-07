@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: da3d682a1b66d25a12f21a93e9596d13afae7f90
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8337550"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8751272"
 ---
 # <a name="serviceerror-json"></a>ServiceError (JSON)
 包含有关错误对服务调用失败时返回的信息。 
@@ -38,9 +38,9 @@ ServiceError 对象具有以下规范。
 | --- | --- | --- | --- | --- | 
 | 0| 成功无错误| 
 | 4000| 提交与 POST 请求失败验证的请求正文的 JSON 文档无效。 请参阅描述字段的详细信息。 | 
-| 4100| 用户不会不存在 XUID 请求 URI 中包含不表示 XBOX Live 上有效的用户。| 
+| 4100| 用户不会不存在 XUID 请求 URI 中包含不表示 XBOX Live 上的有效用户。| 
 | 4500| 授权错误调用方无权执行请求的操作。| 
-| 5000| 服务错误时出现内部服务错误| 
+| 5000| 服务错误没有内部服务错误| 
 | 5300| 服务不可用服务不可用。| 
    
 <a id="ID4EQE"></a>

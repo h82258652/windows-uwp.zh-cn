@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 测试, 测试帐户
 ms.localizationpriority: medium
 ms.openlocfilehash: dead4e62e41b7b597ba9a578ee8f174386529937
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8331828"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8755980"
 ---
 # <a name="xbox-live-account-tool"></a>Xbox Live 帐户工具
 
@@ -21,7 +21,7 @@ Xbox Live 帐户工具是一款设计用于帮助开发人员为测试游戏方�
 ## <a name="what-can-i-do-with-xbox-live-account-tool"></a>你可以使用 Xbox Live 帐户工具做什么？
 您可以：
   1. 查看用户的个人资料设置、XUID 和有效权限
-  2. 为用户的社交图片，无论是通过文本文件或 Xbox 开发人员平台 csv 添加关注者列表
+  2. 为用户的社交图片，通过文本文件或 Xbox 开发人员平台 csv 添加关注者列表
   3. 管理用户的好友列表：对你关注的用户执行收藏、取消收藏、阻止和取消阻止操作，并查看他们是否也关注你
   4. 更改开发用户的信誉（并立即查看原始的信誉统计值）
   5. 更改用户的玩家代号

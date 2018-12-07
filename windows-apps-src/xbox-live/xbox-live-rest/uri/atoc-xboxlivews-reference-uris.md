@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: cd86a6147c047a2925cdb931d9735712a4032adb
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8457521"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8754435"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a>统一资源标识符 (URI) 参考
 
@@ -37,7 +37,7 @@ ms.locfileid: "8457521"
 
 [玩家头像 URI](gamerpic/atoc-reference-gamerpic.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法，为标题生成图片。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法为标题生成图片。
 
 [排行榜 URI](leaderboard/atoc-reference-leaderboard.md)
 
@@ -45,11 +45,11 @@ ms.locfileid: "8457521"
 
 [列表 URI](lists/atoc-reference-lists.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法的 Pin。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法的引脚。
 
 [市场 URI](marketplace/atoc-reference-marketplace.md)
 
-&nbsp;&nbsp;Uri 和 Xbox 应用商店服务相关联的 HTTP 方法。
+&nbsp;&nbsp;Uri 和 Xbox 市场服务相关联的 HTTP 方法。
 
 [匹配 URI](matchtickets/atoc-reference-matchtickets.md)
 
@@ -81,7 +81,7 @@ ms.locfileid: "8457521"
 
 [游戏成就历史记录 URI](titlehistory/atoc-reference-titlehistoryv2.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法，为*游戏历史记录*。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法为*游戏历史记录*。
 
 [标题存储 URI](storage/atoc-reference-storagev2.md)
 

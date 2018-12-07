@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 02d24dbf1d189b759784dbbfa7052e2c218ec27e
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8326329"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8753881"
 ---
 # <a name="get-qosservers"></a>GET (/qosservers)
-通过适用于 Xbox Live 计算获取可用的 QoS 服务器列表中的客户端调用的 URI。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+URI 由客户端使用 Xbox Live 计算获取可用的 QoS 服务器的列表。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [需的请求标头](#ID4EBB)
   * [所需的响应标头](#ID4EUC)
@@ -33,11 +33,11 @@ gameserverds.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-当发出请求，如下表所示的标头是必需的。
+当发出请求下, 表中所示的标头是必需的。
  
 | 标头| 值| 描述| 
 | --- | --- | --- | 
-| 内容类型| 应用程序/json| 在提交的数据的类型。| 
+| 内容类型| 应用程序/json| 提交的数据的类型。| 
 | Host| gameserverds.xboxlive.com|  | 
 | Content-Length|  | 请求对象的长度。| 
 | x xbl 协定版本| 1| API 协定版本。| 
@@ -47,7 +47,7 @@ gameserverds.xboxlive.com
  
 ## <a name="required-response-headers"></a>所需的响应标头
  
-响应将始终会包括的标头，如下表所示。
+响应将始终包括下表中所示的标头。
  
 | 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | 
@@ -64,7 +64,7 @@ gameserverds.xboxlive.com
 | 成员| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
 | qosservers| 服务器信息的数组。| 
-| serverFqdn| 服务器完全限定的域名。| 
+| serverFqdn| 完全限定的域名服务器的名称。| 
 | serverSecureDeviceAddress| 服务器的安全设备地址。| 
 | targetLocation| 服务器的地理位置。| 
  

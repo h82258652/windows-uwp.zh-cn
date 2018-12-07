@@ -8,18 +8,18 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 04376505b76296e052ea431f2a4e5fcfeac7b9e4
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8326353"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8735322"
 ---
 # <a name="serviceconfigsscidhoppersnamestats"></a>/serviceconfigs/{scid}/hoppers/{name}/stats
 
 支持 GET 操作来检索漏斗的统计信息。
 
 > [!IMPORTANT]
-> 此 URI 旨在用于合约 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
+> 此 URI 旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
 
 <a id="ID4ER"></a>
 
@@ -48,7 +48,7 @@ momatch.xboxlive.com
 
 [GET (/serviceconfigs/{scid}/hoppers/{name}/stats)](uri-serviceconfigsscidhoppershoppernamestatsget.md)
 
-&nbsp;&nbsp;漏斗中获取统计信息。
+&nbsp;&nbsp;漏斗获取统计信息。
 
 <a id="ID4EQC"></a>
 

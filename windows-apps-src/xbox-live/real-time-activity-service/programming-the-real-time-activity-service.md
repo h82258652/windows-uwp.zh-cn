@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 实时活动
 ms.localizationpriority: medium
 ms.openlocfilehash: f8846d57343f4f7262bbeea2cec03465fa23b2ab
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8322833"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8740450"
 ---
 # <a name="programming-the-real-time-activity-service-using-c-apis"></a>使用 C++ API 对实时活动服务进行编程
 
@@ -56,10 +56,10 @@ void Example_RealTimeActivity_ConnectAsync()
 
 #### <a name="uwp-developers"></a>UWP 开发人员
 
-如果你要开发不是跨平台游玩游戏的 Windows 10 上的 UWP，你可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)定义统计信息。 读取[合作伙伴中心统计信息配置文章](../leaderboards-and-stats-2017/player-stats-configure-2017.md)以了解如何在合作伙伴中心上配置的统计数据。
+如果你要开发不是跨平台游玩游戏的 Windows 10 上的 UWP，你可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)中定义统计信息。 读取[合作伙伴中心的统计数据配置文章](../leaderboards-and-stats-2017/player-stats-configure-2017.md)以了解如何在合作伙伴中心上配置的统计数据。
 
 > [!NOTE]
-> Stats 2013 开发人员将需要关于[合作伙伴中心](https://partner.microsoft.com/dashboard)中的[Stats 2013 配置](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-configure-stats-2013)信息联系其 DAM。
+> Stats 2013 开发人员将需要联系其 DAM 有关[Stats 2013 配置](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-configure-stats-2013)[合作伙伴中心](https://partner.microsoft.com/dashboard)中的信息。
 
 ### <a name="disconnecting-from-the-real-time-activity-service"></a>与实时活动服务断开连接
 
@@ -129,6 +129,6 @@ void Example_RealTimeActivity_UnsubscribeFromStatisticChangeAsync()
 ```
 
 > [!IMPORTANT]
-> 实时活动服务将断开连接使用两个小时后，你的代码必须能够检测到此和重新建立与实时活动服务的连接，如果仍然需要它。 这主要是为了确保身份验证令牌到期时刷新。
+> 实时活动服务将断开连接使用两个小时后，你的代码必须能够检测到此和重新建立与实时活动服务的连接，如果仍然需要它。 这主要是为了确保身份验证标记到期时刷新。
 > 
-> 如果客户端使用 RTA 为多人游戏会话，并且断开连接时 30 秒，多人游戏会话 Directory(MPSD) 检测到 RTA 会话已关闭，并且开始用户退出会话。 它是对 RTA 客户端，以检测时关闭连接并启动重新连接并重新订阅之前 MPSD 结束会话。
+> 如果客户端使用 RTA 为多人游戏会话，并且断开连接时 30 秒，多人游戏会话 Directory(MPSD) 检测到 RTA 会话已关闭，并且开始用户退出会话。 它是对 RTA 客户端以检测时关闭连接并启动重新连接并重新订阅之前 MPSD 结束会话。

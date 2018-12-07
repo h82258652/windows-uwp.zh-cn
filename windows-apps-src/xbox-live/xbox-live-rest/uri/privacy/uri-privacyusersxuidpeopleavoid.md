@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d0ae745f825d6afda87167859b12bcc52b899f18
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8345668"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8752435"
 ---
 # <a name="usersowneridpeopleavoid"></a>/users/{ownerId}/people/avoid
-访问用户避免列表
+访问用户的避免列表
 
   * [URI 参数](#ID4EQ)
 

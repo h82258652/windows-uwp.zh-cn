@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 62932a921d51a988a5533d7ee08f4968bb67a29d
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8348047"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8752050"
 ---
 # <a name="data-type-overview"></a>数据类型概述
  
@@ -22,10 +22,10 @@ Xbox Live 服务使用各种与标识和身份验证相关的数据类型。 本
 | --- | --- | 
 | 玩家代号| 用户的独特的用户可读的屏幕名称。| 
 | 玩家| 一个 JSON 对象，包含用户的 XUID 和玩家代号，以及玩家的索引中的会话 （或"固定"），无论玩家仍然参与会话，并自定义数据的小 blob。| 
-| profile| 有关用户配置文件 URI 地址和 HTTP 方法，通常是用户的 UserSettings 通过访问，但还可能需要包括玩家卡、 玩家代号、 XUID 等信息。| 
+| profile| 用户配置文件 URI 地址和 HTTP 方法，通常是用户的 UserSettings 通过访问，但还可能包括玩家卡片玩家代号、 XUID，以及等信息。| 
 | 设置| UserSettings 对象中的特定于游戏的设置之一。| 
 | UserClaims| 简单的 JSON 对象，包含用户的 XUID 和玩家代号。| 
-| UserSettings| JSON 对象，包含特定于游戏的设置或当前身份验证的用户首选项的集合。 UserSettings 可以包含可能与相关的游戏内活动的任意数据。| 
+| UserSettings| 一个 JSON 对象，包含特定于游戏的设置或当前身份验证的用户首选项的集合。 UserSettings 可以包含可能与相关的游戏内活动的任意数据。| 
 | XUID| 用户的 Xbox 用户 ID，一个唯一的无符号长整型。 不是用户可读。| 
  
 <a id="ID4E6D"></a>

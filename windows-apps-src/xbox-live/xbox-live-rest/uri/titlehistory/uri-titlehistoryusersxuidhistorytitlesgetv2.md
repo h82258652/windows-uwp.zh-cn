@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: cadbf38385bbc321ef5bf23eb93c3fbc5c1a2417
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8345213"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8753987"
 ---
 # <a name="get-usersxuidxuidhistorytitles"></a>GET (/users/xuid({xuid})/history/titles)
 获取一份标题为其用户已解锁或对其成就的进度。 此 API 不会返回用户的游戏播放或启动完整历史记录。 这些 Uri 的域是`achievements.xboxlive.com`。
@@ -50,7 +50,7 @@ ms.locfileid: "8345213"
  
 | 声明| 是否为必需？| 描述| 如果缺少的行为| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 用户| 调用方是授权的 Xbox LIVE 用户。| 调用方必须是 Xbox LIVE 上有效的用户。| 403 已禁止| 
+| 用户| 调用方是授权的 Xbox LIVE 用户。| 调用方需要 Xbox LIVE 上的有效用户。| 403 已禁止| 
   
 <a id="ID4EGE"></a>
 
@@ -59,8 +59,8 @@ ms.locfileid: "8345213"
  
 | 标头| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <b>X RequestedServiceVersion</b>| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。| 
-| <b>x xbl 协定版本</b>| 32 位无符号的整数| 如果存在并设置为 2，就会使用此 API 的 V2 版本。 否则为 V1。| 
+| <b>X RequestedServiceVersion</b>| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。| 
+| <b>x xbl 协定版本</b>| 32 位无符号的整数| 如果存在，并且设置为 2，就会使用此 API 的 V2 版本。 否则为 V1。| 
   
 <a id="ID4ERF"></a>
 

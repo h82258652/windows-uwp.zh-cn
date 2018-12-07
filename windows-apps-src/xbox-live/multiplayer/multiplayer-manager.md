@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 99159b5d126c671b07d37e20f1bcd61452c7d670
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8331752"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8731630"
 ---
 # <a name="multiplayer-manager"></a>多人游戏管理器
 
@@ -102,4 +102,4 @@ for (auto& event : eventQueue)
 
 可在 Microsoft::Xbox::Services::Multiplayer::Manager 命名空间中的 C++ 或 WinRT 指南中查找 API 文档。  你还可以参阅 `multiplayer_manager.h` 标题。
 
-如果你有任何疑问、 反馈或遇到任何问题，使用多人游戏管理器，请联系你的 DAM，或在论坛上发布支持线程[https://forums.xboxlive.com](https://forums.xboxlive.com)。
+如果你有任何疑问、 反馈或遇到任何使用多人游戏管理器的问题，请联系你的 DAM，或在的论坛上发布支持线程[https://forums.xboxlive.com](https://forums.xboxlive.com)。

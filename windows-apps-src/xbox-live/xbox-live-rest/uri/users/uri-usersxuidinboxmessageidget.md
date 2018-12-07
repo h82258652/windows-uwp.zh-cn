@@ -8,21 +8,21 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 29b4c57468148a431a10e0d74f85d360ff0992b3
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8347381"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8751827"
 ---
 # <a name="get-usersxuidxuidinboxmessageid"></a>GET (/users/xuid({xuid})/inbox/{messageId})
-检索特定用户消息中，将其标记为已在服务上的读的详细的消息文本。
+检索特定用户消息，将其标记为已在服务上读的详细的消息文本。
 这些 Uri 的域是`msg.xboxlive.com`。
 
   * [备注](#ID4EV)
   * [URI 参数](#ID4EEB)
   * [授权](#ID4ERB)
   * [请求正文](#ID4E3B)
-  * [有关资源的隐私设置的效果](#ID4EJC)
+  * [资源上的隐私设置的效果](#ID4EJC)
   * [HTTP 状态代码](#ID4EUC)
   * [JavaScript 对象表示法 (JSON) 响应](#ID4EUE)
 
@@ -35,7 +35,7 @@ ms.locfileid: "8347381"
 
 此 URI 需要在 Xbox.com 刷新。 目前，Xbox 360 中不会更新的读/未读状态，直到用户注销并重新登录。
 
-此 API 支持仅内容类型是"application/json"，需要在每个调用的 HTTP 标头中此。
+此 API 支持仅内容类型是"application/json"，这必需的每个调用的 HTTP 标头中。
 
 <a id="ID4EEB"></a>
 
@@ -52,7 +52,7 @@ ms.locfileid: "8347381"
 
 ## <a name="authorization"></a>授权
 
-你必须具有用户声明检索用户的消息。
+你必须拥有自己声明检索用户消息的用户。
 
 <a id="ID4E3B"></a>
 
@@ -64,7 +64,7 @@ ms.locfileid: "8347381"
 <a id="ID4EJC"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a>有关资源的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>资源上的隐私设置的效果
 
 仅可以检索自己用户的消息。
 
@@ -73,15 +73,15 @@ ms.locfileid: "8347381"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源所做的请求的响应，该服务返回一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 说明|
 | --- | --- | --- | --- | --- |
 | 200| 成功。|
 | 400| 无法正确转换的 XUID。|
-| 403| 不能转换 XUID 或者找不到有效的 XUID 声明。|
+| 403| 不能转换 XUID 或无法找到有效的 XUID 声明。|
 | 404| 有效的 XUID 是缺少，或使用消息 ID 找不到或正确地分析。|
-| 500| 常规的服务器端错误或消息类型获取无效。|
+| 500| 常规服务器端错误或消息类型获取无效。|
 
 <a id="ID4EUE"></a>
 
@@ -132,7 +132,7 @@ ms.locfileid: "8347381"
 
 #### <a name="error-response"></a>错误响应
 
-如果错误，该服务可能会返回服务器对象，其中可能包含的服务的环境中的值。
+发生错误，该服务可能会返回一个服务器对象，其中可能包含的服务的环境中的值。
 
 | 属性| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

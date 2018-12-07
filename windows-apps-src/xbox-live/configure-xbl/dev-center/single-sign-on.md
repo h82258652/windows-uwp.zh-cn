@@ -7,11 +7,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心, 单一登录
 ms.openlocfilehash: 32f06edd407d8c1fa74795d0a230c7d56ba8e838
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8339560"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8728963"
 ---
 # <a name="configure-single-sign-on-in-partner-center"></a>在合作伙伴中心配置单一登录
 
@@ -30,7 +30,7 @@ ms.locfileid: "8339560"
 
 通过执行以下操作添加配置：
 
-1. 选择后你的游戏在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，导航到**服务** > **Xbox Live**。
+1. 选择后您的游戏在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，导航到**服务** > **Xbox Live**。
 
 2. 点击以下 **Xbox Live 单一登录**链接。
 

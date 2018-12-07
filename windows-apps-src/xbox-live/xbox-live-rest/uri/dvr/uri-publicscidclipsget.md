@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bce1dd261e0ad1172068a0287519cd0480da85f
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8334368"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8748275"
 ---
 # <a name="get-publicscidsscidclips"></a>GET (/public/scids/{scid}/clips)
-列出公共剪辑。 此 URI 的域是`gameclipsmetadata.xboxlive.com`。
+列表公共剪辑。 此 URI 的域是`gameclipsmetadata.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4ECB)
@@ -26,11 +26,11 @@ ms.locfileid: "8334368"
  
 ## <a name="remarks"></a>备注
  
-此 API 支持不同方法是公共的列表剪辑。 隐私检查和防止请求的 XUID 的内容隔离检查返回的剪辑列表。
+此 API 允许的各种方法是公共的列表剪辑。 在隐私检查和防止请求 XUID 内容隔离检查返回的剪辑列表。
  
-查询每个服务配置标识符 (SCID) 进行了优化。 指定进一步筛选器或下面列出的默认值以外的排序顺序可以在某些情况下长返回。 这会更明显的较大的视频集。 查询不能指定升序排序顺序。
+查询每个服务配置标识符 (SCID) 进行了优化。 指定进一步筛选器或下面列出的默认值以外的排序顺序可以在某些情况下长返回。 这是更明显的较大的视频集。 查询不能指定升序排序顺序。
  
-若要获取特定集合 ofpublic 剪辑，需要使用限定符。 请求的用户必须能够接触到请求的 SCID，否则 HTTP 403 会返回。
+若要获取特定集合 ofpublic 剪辑，需要限定符。 请求的用户必须能够接触到请求的 SCID，否则 HTTP 403 将返回。
   
 <a id="ID4ECB"></a>
 
@@ -40,7 +40,7 @@ ms.locfileid: "8334368"
 | 参数| 类型| 描述| 
 | --- | --- | --- | 
 | scid| 字符串| 公共剪辑主要服务配置标识符。| 
-| titleid| 字符串| 公共剪辑的职务 Id。 不能在相同的 URI 的 scid 中指定。 如果已指定，将用于查找主 SCID。| 
+| titleid| 字符串| 公共剪辑的职务 Id。 不能在相同的 URI 的 scid 中指定。 如果已指定，将用于查找的主 SCID。| 
   
 <a id="ID4ENB"></a>
 

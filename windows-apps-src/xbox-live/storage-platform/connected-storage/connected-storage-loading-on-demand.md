@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
 ms.localizationpriority: medium
 ms.openlocfilehash: 31c1893f09e6d56682b4e718ee8b905ce72c7ad8
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8457509"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8753037"
 ---
 # <a name="connected-storage-loading-on-demand"></a>按需加载连接存储
 

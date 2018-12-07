@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 匹配, smartmatch
 ms.localizationpriority: medium
 ms.openlocfilehash: 487ba1e2b6ab6bccbed4231034d09046a93292db
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8332555"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8741181"
 ---
 # <a name="smartmatch-matchmaking"></a>SmartMatch 匹配
 
@@ -173,7 +173,7 @@ SmartMatch 匹配基于用户信息以及想要一起游戏的用户的匹配请
 
 ### <a name="configuration-of-smartmatch-matchmaking-runtime-operations"></a>SmartMatch 匹配运行时操作配置
 
-SmartMatch 匹配的所有配置都都通过[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)进行。 配置使用游戏的“ServiceConfiguration-&gt;多人游戏和匹配”部分。
+SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)都进行。 配置使用游戏的“ServiceConfiguration-&gt;多人游戏和匹配”部分。
 
 
 #### <a name="matchmaking-session-template-configuration"></a>匹配会话模板配置
@@ -188,7 +188,7 @@ SmartMatch 匹配的所有配置都都通过[Xbox 开发人员门户 (XDP)](http
 
 对于目标会话，你必须创建用于配对游戏的模板。 它应具备可在开始游戏之前在玩家间启用 QoS 检查的设置，并且必须标有“游戏”功能。
 
-与配置 XDP 或合作伙伴中心 UI 中，你可以将每个会话映射到一个或多个漏斗，确定如何会话匹配在一起该 hopper 中每个包含规则。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
+配置 XDP 或合作伙伴中心的 UI，你可以将每个会话映射到一个或多个漏斗，确定如何会话匹配在一起该 hopper 中每个包含规则。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
 
 
 #### <a name="basic-hopper-configuration-for-matchmaking"></a>用于匹配的基本漏斗配置

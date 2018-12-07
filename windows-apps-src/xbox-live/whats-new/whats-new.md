@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 33e5b6afbf0d60679bfce1789be2d965fd881f1c
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8348663"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8755608"
 ---
 # <a name="whats-new-for-xbox-live"></a>Xbox Live 的新增功能
 你也可以查看 [Xbox Live API GitHub 提交历史记录](https://github.com/Microsoft/xbox-live-api/commits/master)，了解 Xbox Live API 的所有最新的代码更改。
@@ -32,7 +32,7 @@ ms.locfileid: "8348663"
 
 #### <a name="c-api-layer-for-xsapi"></a>Xsapi C API 图层
 
-C Api 现可用于 Xbox Live 的一些功能。 使用新的 API 层为受支持的功能，包括自定义内存管理、 异步任务的手动线程管理和新的 HTTP 库提供了很多优势。
+C Api 现已推出的 Xbox Live 的一些功能。 使用新的 API 层为受支持的功能，包括自定义内存管理、 手动线程管理对于异步任务，以及新的 HTTP 库提供了很多优势。
 
 有关详细信息，请参阅[Xbox Live C Api](../xsapi-flat-c.md)。
 
@@ -119,7 +119,7 @@ API 可用于直接从你的游戏内创建和管理游戏内俱乐部。 这些
 
 #### <a name="data-platform-2017"></a>数据平台 2017
 
-我们引入了简化的统计 API。  过去不得不发送 XDP 或合作伙伴中心上定义的统计规则对应的事件，并且这会更新云中的统计信息值。  我们将此模型称为 Stats 2013。
+我们引入了简化的统计 API。  传统上来讲您必须以发送与 XDP 或合作伙伴中心上定义的统计规则对应的事件，并且这会更新云中的统计信息值。  我们将此模型称为 Stats 2013。
 
 使用 Stats 2017，你的标题现在可以控制统计信息值。  你只需调用包含最新统计信息值的 API，它们即可被直接发送到服务，无需发送事件。  这使用新的 `StatsManager` API，你可以在[玩家统计信息](../leaderboards-and-stats-2017/player-stats.md)中了解更多信息
 

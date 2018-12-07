@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a2d0b9e7d97adfb02281e7bae34ed51afd44f7f
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8330971"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8755777"
 ---
 # <a name="step-by-step-guide-to-integrate-xbox-live-for-managed-partners-and-idxbox-members"></a>为托管的合作伙伴和 ID@Xbox 成员集成 Xbox Live 的分步指南
 
@@ -25,13 +25,13 @@ ms.locfileid: "8330971"
   - 对于 Xbox One，请参阅 [Xbox One 上的 UWP](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/index)，尤其是 [Xbox One 上 UWP 应用和游戏的系统资源](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation)
 - 跨平台游戏通常是使用 XDK 和 UWP 路径的面向 Xbox One 和 Windows 电脑的游戏。
 
-## <a name="2-ensure-you-have-a-title-created-in-partner-center-or-xdp"></a>2.确保你在合作伙伴中心或 XDP 上创建主题作品
-每个 Xbox Live 的主题作品必须在合作伙伴中心或 Xbox 开发人员门户 (XDP) 中定义之前你将能够在登录并进行 Xbox Live 服务调用。  [创建新的主题作品](create-a-new-title.md)将为你介绍如何执行此操作。
+## <a name="2-ensure-you-have-a-title-created-in-partner-center-or-xdp"></a>2.确保你在合作伙伴中心或 XDP 中创建的标题
+每个 Xbox Live 主题作品必须在合作伙伴中心或 Xbox 开发人员门户 (XDP) 中定义之前你将能够在登录并进行 Xbox Live 服务调用。  [创建新的主题作品](create-a-new-title.md)将为你介绍如何执行此操作。
 
 ## <a name="3-follow-the-appropriate-guide-to-setup-your-ide-or-game-engine"></a>3. 遵循相应指南设置 IDE 或游戏引擎
 你可以遵循适用于自己平台和引擎的相应入门指南，并在过程中了解 Xbox Live 的基础知识。
 
-* [使用适用于 UWP 游戏的 Visual Studio 的入门](get-started-with-visual-studio-and-uwp.md)介绍了如何关联 Visual Studio 项目与合作伙伴中心中的 Xbox Live 配置。
+* [使用适用于 UWP 游戏的 Visual Studio 的入门](get-started-with-visual-studio-and-uwp.md)将向你介绍如何关联 Visual Studio 项目与合作伙伴中心中的 Xbox Live 配置。
 
 * [使用适用于 UWP 游戏的 Unity 入门](partner-add-xbox-live-to-unity-uwp.md)将为你介绍如何新建支持 Xbox Live 的 Unity 主题作品，如何为主题作品添加排行榜等功能，以及如何生成本机 Visual Studio 项目。
 

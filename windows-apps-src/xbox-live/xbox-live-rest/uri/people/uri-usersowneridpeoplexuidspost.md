@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cb160f3276d215e3aba5dfd671c67fa17d883b5
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8323962"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8755993"
 ---
 # <a name="post-usersowneridpeoplexuids"></a>POST (/users/{ownerId}/people/xuids)
 获取用户的 XUID 从调用方的用户集合。 这些 Uri 的域是`social.xboxlive.com`。
@@ -61,7 +61,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串。 授权 Xbox LIVE 的数据。 这通常是加密的 XSTS 令牌。 示例值： <b>XBL3.0 x =&lt;userhash >;&lt;令牌 ></b>。| 
 | Content-Length| 32 位无符号的整数。 长度，以字节为单位，请求正文。 示例值： 22。| 
-| Content-Type| 字符串。 请求正文的 MIME 类型。 这必须是<b>application/json</b>。| 
+| Content-Type| 字符串。 请求正文中的 MIME 类型。 这必须是<b>application/json</b>。| 
   
 <a id="ID4EBE"></a>
 
@@ -70,8 +70,8 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 | 标题| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
-| 接受| 字符串。 内容类型的调用方接受在响应中。 所有的响应是<b>application/json</b>。| 
+| X RequestedServiceVersion| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
+| 接受| 字符串。 内容类型的调用方接受在响应中。 所有响应都是<b>application/json</b>。| 
   
 <a id="ID4EHF"></a>
 
@@ -124,13 +124,13 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 200| “确定”| 成功时的方法是"获取"。| 
+| 200| “确定”| "帮"方法时成功。| 
 | 204| 任何内容| 成功时的方法是"添加"或者"删除"。| 
-| 400| 错误请求| 方法参数已丢失或格式不正确，或者用户 Id 格式不正确。| 
+| 400| 错误请求| 方法参数已丢失或格式不正确，或用户 Id 的格式不正确。| 
 | 403| 已禁止| 无法分析 XUID 声明与授权标头中。| 
   
 <a id="ID4ENBAC"></a>

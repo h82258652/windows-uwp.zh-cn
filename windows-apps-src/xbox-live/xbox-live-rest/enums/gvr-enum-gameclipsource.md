@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b154191e58b1c419947afea988cacc8638b73d0f
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8343423"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8737916"
 ---
 # <a name="gameclipsource-enumeration"></a>GameClipSource 枚举
 详细介绍 GameClipSource 枚举。 
@@ -21,7 +21,7 @@ ms.locfileid: "8343423"
  
 ## <a name="gameclipsource"></a>GameClipSource
  
-| <b>枚举器</b>| <b>说明</b>| 
+| <b>枚举</b>| <b>说明</b>| 
 | --- | --- | 
 | 无| 游戏剪辑源是未知或未设置。 （不适用于上载）| 
 | 控制台| 通过 Xbox 控制台平台来源的游戏剪辑。| 

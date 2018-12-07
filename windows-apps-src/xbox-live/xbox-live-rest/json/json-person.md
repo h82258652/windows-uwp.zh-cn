@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 175d66ffc7744ca8203fe7681fcb0167e150f012
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8341094"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8745534"
 ---
 # <a name="person-json"></a>Person (JSON)
-人脉系统中的单个用户相关的元数据。 
+有关单个人员人脉系统中的元数据。 
 <a id="ID4EN"></a>
 
  
@@ -26,9 +26,9 @@ Person 对象具有以下规范。
 | 成员| 类型| 描述| 
 | --- | --- | --- | 
 | xuid| 字符串| 必需。 Xbox 用户 ID (XUID) 以十进制格式。 示例值： 2603643534573573。| 
-| isFavorite| 布尔值| 必需。 是否此人是一种用户关注的详细信息。 因为用户可以在其人脉列表中有大量的用户，应优先体验和先于其他不是收藏夹显示常用联系人。| 
+| isFavorite| 布尔值| 必需。 此人是否一个用户关注的详细信息。 因为用户可以在其人脉列表中有大量的用户，应在体验优先级和先于其他不是收藏夹显示常用联系人。| 
 | isFollowingCaller| 布尔值| 可选。 是否此人是遵循用户的名义 API 调用。| 
-| socialNetworks| 字符串的数组| 可选。 内的外部网络用户，并且此人建立关系。| 
+| socialNetworks| 字符串的数组| 可选。 内的外部网络用户，并且此人具有关系。| 
   
 <a id="ID4EHC"></a>
 

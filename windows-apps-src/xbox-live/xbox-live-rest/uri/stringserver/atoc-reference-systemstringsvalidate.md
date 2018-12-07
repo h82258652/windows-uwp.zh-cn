@@ -8,17 +8,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eaad3791830086d6b086ac0026523d28d596d1a
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8350427"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8728889"
 ---
 # <a name="system-strings-validatation-uris"></a>系统字符串验证 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务的*系统字符串验证*。
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的*系统字符串验证*。
  
-才能进行上载到永久性字符串数据，它应验证以确保它不违反行为准则或使用条款。 此 REST 资源采用一个字符串数组，并为每个，用于指示是可接受，并将包含有问题的术语返回结果代码。
+才能进行上载到永久性字符串数据，它应验证以确保它不违反行为准则或使用条款。 此 REST 资源采用一个字符串数组，并返回结果代码为每个，用于指示是可接受，并且包含有问题的词的字符串。
  
 这些 Uri 的域是客户端 strings.xboxlive.com。
  

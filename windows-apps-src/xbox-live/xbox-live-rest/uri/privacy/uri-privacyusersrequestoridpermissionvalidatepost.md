@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: edd91560ffb5d81b30da4b1453612cc5853a456f
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8332077"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8748812"
 ---
 # <a name="post-usersrequestoridpermissionvalidate"></a>POST (/users/{requestorId}/permission/validate)
-获取一套 yes 或 no 常见问题解答是否允许用户执行一组的目标用户指定的操作。
+获取有关是否允许用户执行一组的目标用户的指定的操作或否答案的一组。
 
   * [备注](#ID4EQ)
   * [URI 参数](#ID4ECB)
@@ -31,9 +31,9 @@ ms.locfileid: "8332077"
 
 ## <a name="remarks"></a>备注
 
-请求正文中获取用户列表和列表的设置，并结果是每个用户/设置对允许/阻止结果。
+请求正文中获取用户列表和列表的设置，并结果是为每个用户/设置对允许/阻止结果。
 
-在跨网络 （其中隐私通信检查必须执行用户具有 Xbox 用户 ID (XUID) 和不这样做的关闭网络用户之间） 的情况下多人游戏，请参阅有关用户键入[PermissionCheckBatchRequest (JSON)](../../json/json-permissioncheckbatchrequest.md) 。
+在多人游戏 （其中隐私通信检查必须执行用户具有 Xbox 用户 ID (XUID) 和关闭网络用户并不之间） 方案中跨网络，请参阅针对用户类型[PermissionCheckBatchRequest (JSON)](../../json/json-permissioncheckbatchrequest.md) 。
 
 <a id="ID4ECB"></a>
 
@@ -61,7 +61,7 @@ ms.locfileid: "8332077"
 | 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值： <code>XBL3.0 x=&lt;userhash>;&lt;token></code>|
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1。|
+| X RequestedServiceVersion| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1。|
 
 <a id="ID4E4D"></a>
 
@@ -98,7 +98,7 @@ ms.locfileid: "8332077"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源所做的请求的响应，该服务返回一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -113,7 +113,7 @@ ms.locfileid: "8332077"
 
 | 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Content-Type| 字符串| 请求正文的 MIME 类型。 示例值： <code>application/json</code>|
+| Content-Type| 字符串| 请求正文中的 MIME 类型。 示例值： <code>application/json</code>|
 | Content-Length| 字符串| 正在发送响应中的字节数。 示例值： 34|
 | 缓存控制| 字符串| 礼貌请求从服务器指定缓存行为。 示例： <code>no-cache, no-store</code>|
 

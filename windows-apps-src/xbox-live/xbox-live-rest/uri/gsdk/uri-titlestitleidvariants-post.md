@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 17974ddf7dec26abac18ccee9fda5249bc9d656f
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8348795"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8742359"
 ---
 # <a name="post-titlestitleidvariants"></a>POST (/titles/{titleId}/variants)
 URI 由客户端检索列表的游戏的变体，为指定的游戏 id。这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
@@ -47,11 +47,11 @@ gameserverds.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-当发出请求，如下表所示的标头是必需的。
+当发出请求下, 表中所示的标头是必需的。
  
 | 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | 
-| 内容类型| 应用程序/json| 在提交的数据的类型。| 
+| 内容类型| 应用程序/json| 提交的数据的类型。| 
 | Host| gameserverds.xboxlive.com|  | 
 | Content-Length|  | 请求对象的长度。| 
 | x xbl 协定版本| 1| API 协定版本。| 
@@ -62,18 +62,18 @@ gameserverds.xboxlive.com
  
 ## <a name="optional-request-headers"></a>可选的请求标头
  
-当发出请求，如下表所示的标头是可选的。
+当发出请求下, 表中所示的标头是可选的。
  
 | 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X XblCorrelationId|  | 请求正文的 mime 类型。| 
+| X XblCorrelationId|  | 请求正文中的 mime 类型。| 
   
 <a id="ID4E3D"></a>
 
  
 ## <a name="authorization"></a>授权
 
-请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务将在响应中返回 403 禁止访问。 如果标头无效或不存在，该服务将在响应中返回 401 未经授权。
+请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务返回 403 禁止在响应中。 如果在标头是无效或不存在，该服务在响应中返回 401 未经授权。
  
 <a id="ID4EEE"></a>
 
@@ -111,7 +111,7 @@ gameserverds.xboxlive.com
  
 ## <a name="required-response-headers"></a>所需的响应标头
  
-响应将始终会包括的标头，如下表所示。
+响应将始终包括下表中所示的标头。
  
 | 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -150,7 +150,7 @@ gameserverds.xboxlive.com
 | name| 架构的名称| 
 | gsiSets| GSI 集的数组。| 
 | minRequiredPlayers| 最小的变体的玩家人数。| 
-| maxAllowedPlayers| 变体的玩家的最大数量。| 
+| maxAllowedPlayers| 最大为变体的玩家数。| 
 | gsiSetId| GSI 集的 Id。| 
 | gsiSetName| GSI 集的名称。| 
 | selectionOrder|  | 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 社交, people system, 好友
 ms.localizationpriority: medium
 ms.openlocfilehash: 39fd9283e169efa04f9c61d1c5e1d206617ab0c8
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8348357"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8752886"
 ---
 # <a name="xbox-live-people-system"></a>Xbox Live People System
 

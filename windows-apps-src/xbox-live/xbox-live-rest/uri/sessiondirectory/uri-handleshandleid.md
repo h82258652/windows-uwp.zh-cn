@@ -8,17 +8,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a312d3744e96755a899d73307a47c01e3dc79fd
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8349352"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8732739"
 ---
 # <a name="handleshandleid"></a>/handles/{handleId}
-支持会话句柄由标识符指定的删除和 GET 操作。 
+支持会话句柄由标识符指定删除和 GET 的操作。 
 
 > [!NOTE] 
-> 此 URI 由 2015年多人游戏，并将应用仅向该多人游戏版本及更高版本。 它旨在与模板合约 104/105 或更高版本一起使用。  
+> 此 URI 使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在使用模板合约 104/105 或更高版本。  
 
  
 <a id="ID4EQ"></a>
@@ -42,11 +42,11 @@ sessiondirectory.xboxlive.com
 
 [DELETE (/handles/{handleId})](uri-handleshandleiddelete.md)
 
-&nbsp;&nbsp;删除句柄 ID 指定的句柄
+&nbsp;&nbsp;删除由句柄 ID 指定的句柄
 
 [GET (/handles/{handle-id})](uri-handleshandleidget.md)
 
-&nbsp;&nbsp;检索句柄 ID 指定的句柄
+&nbsp;&nbsp;检索句柄指定的句柄 id。
  
 <a id="ID4E4B"></a>
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7299fcb4d375a3fc35ad67306b70f5fa4afde963
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8342469"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8750437"
 ---
 # <a name="profile-json"></a>Profile (JSON)
 用户的个人配置文件设置。 
@@ -25,12 +25,12 @@ ms.locfileid: "8342469"
  
 | 成员| 类型| 描述| 
 | --- | --- | --- | 
-| AppDisplayName| 字符串| 在应用中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示应显示在应用中使用的用户的标识字符串。| 
-| GameDisplayName| 字符串| 在游戏中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示应显示在游戏中使用的用户的标识字符串。| 
+| AppDisplayName| 字符串| 在应用中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示用户的标识字符串，用于在应用中显示。| 
+| GameDisplayName| 字符串| 在游戏中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示用户的标识字符串，用于在游戏中显示。| 
 | Gamertag| 字符串| 用户的玩家代号。| 
-| AppDisplayPicRaw| 字符串| 原始应用显示 pic URL （如下所示）。| 
-| GameDisplayPicRaw| 字符串| 原始游戏显示 pic URL （如下所示）。| 
-| AccountTier| 字符串| 用户有何种帐户？ 金牌、 银牌或 FamilyGold？| 
+| AppDisplayPicRaw| 字符串| 原始应用显示 pic URL （见下方）。| 
+| GameDisplayPicRaw| 字符串| 原始游戏显示 pic URL （见下方）。| 
+| AccountTier| 字符串| 用户有何种帐户？ 金牌，银牌或 FamilyGold？| 
 | TenureLevel| 32 位无符号的整数| 用户已使用 Xbox Live 多少年？| 
 | 玩家分数| 32 位无符号的整数| 玩家分数的用户。| 
   
@@ -41,7 +41,7 @@ ms.locfileid: "8342469"
 
 
  
-原始 URL 是可调整大小的 URL。 它可用于指定以下值之一调整大小和格式使用通过将`&format={format}&w={width}&h={height}`为该 URI:
+原始 URL 是一个可调整大小的 URL。 它可以用于指定以下值之一调整大小和格式使用通过附加`&format={format}&w={width}&h={height}`为该 URI:
  
 格式： png
  

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 91d7c49628914f887c5d2243942e10e47d47b095
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8332777"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8748871"
 ---
 # <a name="post-titlestitleidclusters"></a>POST (/titles/{titleId}/clusters)
 允许客户端创建 Xbox Live 计算服务器实例的 URI。 这些 Uri 的域是`gameserverms.xboxlive.com`。
@@ -45,12 +45,12 @@ gameserverms.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-当发出请求，如下表所示的标头是必需的。
+当发出请求下, 表中所示的标头是必需的。
  
 | 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | 
-| 用户代理|  | 有关发出请求的用户代理信息。| 
-| 内容类型| 应用程序/json| 在提交的数据的类型。| 
+| 用户代理|  | 有关发出请求的用户代理的信息。| 
+| 内容类型| 应用程序/json| 提交的数据的类型。| 
 | Host| gameserverms.xboxlive.com|  | 
 | Content-Length|  | 请求对象的长度。| 
 | x xbl 协定版本| 1| API 协定版本。| 
@@ -61,7 +61,7 @@ gameserverms.xboxlive.com
  
 ## <a name="authorization"></a>授权
  
-请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务将在响应中返回 403 禁止访问。 如果标头无效或不存在，该服务将在响应中返回 401 未经授权。
+请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务返回 403 禁止在响应中。 如果在标头是无效或不存在，该服务在响应中返回 401 未经授权。
   
 <a id="ID4EWD"></a>
 
@@ -73,7 +73,7 @@ gameserverms.xboxlive.com
 | 成员| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | 
 | sessionId| 从 MPSD 会话标识符。| 
-| abortIfQueued| 可选参数，该设置为 true 告知 GSMS 不进行排队此会话的资源，如果它可以不立即完成。 如果请求已中止，因为此值为 true，将包含响应对象<code>"fulfillmentState" : "Aborted"</code>。 | 
+| abortIfQueued| 可选参数，该设置为 true 告知 GSMS 不进行排队此会话的资源，如果它可以不立即完成。 如果请求中止，因为此值为 true，将包含响应对象<code>"fulfillmentState" : "Aborted"</code>。 | 
  
 <a id="ID4ERE"></a>
 
@@ -96,7 +96,7 @@ gameserverms.xboxlive.com
  
 ## <a name="required-response-headers"></a>所需的响应标头
  
-响应将始终会包括的标头，如下表所示。
+响应将始终包括下表中所示的标头。
  
 | 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -116,8 +116,8 @@ gameserverms.xboxlive.com
  
 | 成员| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| pollIntervalMilliseconds| 建议以毫秒为单位来完成轮询间隔。 请注意，这不是所需的估计，当群集将准备好，但而对调用方轮询给定当前池的订阅和请求和实施情况率状态更新的频率的建议。| 
-| fulfillmentState| 指示是否提供的会话被立即分配一个资源，"完成"，添加到队列中的未来的资源、 可用性"队列"，或终止，"中止"，由于不能满足该请求时立即请求为"true"的指定的 abortIfQueued。 | 
+| pollIntervalMilliseconds| 建议以毫秒为单位来完成轮询间隔。 请注意，这不是的估计值，当群集将准备好，但而不是对调用方轮询给定当前池的订阅和请求和实施情况率状态更新的频率的建议。| 
+| fulfillmentState| 指示是否提供的会话被立即分配一个资源，"完成"，添加到队列的未来的资源、 可用性"排队"，或终止，"中止"，由于无法满足请求时立即请求指定的 abortIfQueued 为"true"。 | 
  
 <a id="ID4EWH"></a>
 
@@ -141,12 +141,12 @@ gameserverms.xboxlive.com
  
 收到以下响应代码时，游戏应仅重试对服务调用：
  
-   * 408-服务器超时
+   * 408 — 服务器超时
    * 429： 请求过多
    * 500-服务器错误
    * 502 — 错误的网关
-   * 503-服务不可用
-   * 504-网关超时
+   * 503 — 服务不可用
+   * 504 — 网关超时
    
 <a id="ID4EFBAC"></a>
 

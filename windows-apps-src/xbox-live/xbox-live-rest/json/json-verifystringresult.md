@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b01793222be80efccdca1f24f5226a2e9ff78064
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8341716"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8732531"
 ---
 # <a name="verifystringresult-json"></a>VerifyStringResult (JSON)
-结果代码对应于每个提交给[/system/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)的字符串。
+结果代码对应于提交到[/system/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)每个字符串。
 <a id="ID4ER"></a>
 
 
@@ -26,7 +26,7 @@ VerifyStringResult 对象具有以下规范。
 | 成员| 类型| 描述|
 | --- | --- | --- |
 | resultCode| 32 位无符号的整数| 必需。 HResult 代码对应于提交字符串。|
-| offendingString| 字符串| 必需。 导致被拒绝的字符串的字符串值。|
+| offendingString| 字符串| 必需。 字符串值，导致被拒绝的字符串。|
 
 <a id="ID4EXB"></a>
 
@@ -53,7 +53,7 @@ VerifyStringResult 对象具有以下规范。
 | 值| 错误名称|
 | --- | --- | --- | --- | --- |
 | 0| 成功|
-| 1| 具有冒犯性的字符串|
+| 1| 具有冒犯性字符串|
 | 2| 过长的字符串|
 | 3| 未知的错误|
 

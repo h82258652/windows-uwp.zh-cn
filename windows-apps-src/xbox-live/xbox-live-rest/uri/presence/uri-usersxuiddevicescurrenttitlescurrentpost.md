@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b29a0bc796712d7b7c44a1fe8512f99bf09eb4fc
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8325513"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8744435"
 ---
 # <a name="post-usersxuidxuiddevicescurrenttitlescurrent"></a>POST (/users/xuid({xuid})/devices/current/titles/current)
-更新游戏与用户的状态。 这些 Uri 的域是`userpresence.xboxlive.com`。
+使用用户的状态更新游戏。 这些 Uri 的域是`userpresence.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4EEB)
@@ -30,7 +30,7 @@ ms.locfileid: "8325513"
  
 ## <a name="remarks"></a>备注
  
-此 URI 可由非控制台平台上的所有游戏添加和更新的状态、 完整状态和标题的媒体状态数据。
+此 URI 可由非控制台平台上的所有游戏添加和更新的状态、 完整状态和游戏的媒体状态数据。
  
 **SandboxId**现在从 XToken 声明检索并强制执行。 如果不存在**SandboxId** ，则娱乐发现服务 (EDS) 将引发 400 错误请求错误。
   
@@ -64,7 +64,7 @@ ms.locfileid: "8325513"
 | 标头| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
-| x xbl 协定版本| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依次类推。 示例值： 3，vnext。| 
+| x xbl 协定版本| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 3，vnext。| 
 | Content-Type| 字符串| 请求正文中的示例值的 mime 类型： application/json。| 
 | Content-Length| 字符串| 请求正文的长度。 示例值： 312。| 
 | Host| 字符串| 服务器的域名。 示例值： presencebeta.xboxlive.com。| 
@@ -76,14 +76,14 @@ ms.locfileid: "8325513"
  
 | 标头| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依次类推。 默认值： 1。| 
+| X RequestedServiceVersion|  | 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。| 
   
 <a id="ID4ERH"></a>
 
  
 ## <a name="request-body"></a>请求正文
  
-请求对象是[TitleRequest](../../json/json-titlerequest.md)。 更新实际存在的正文中的属性。 任何属性都不是正文的一部分但存在服务器上将不会修改。
+请求对象是[TitleRequest](../../json/json-titlerequest.md)。 实际存在的正文中的属性会更新。 任何属性都不是正文的一部分但存在服务器上将不会修改。
  
 <a id="ID4EAAAC"></a>
 
@@ -106,9 +106,9 @@ ms.locfileid: "8325513"
  
 ## <a name="response-body"></a>响应正文
  
-如果成功，200 或 201 创建 HTTP 状态代码将返回，根据需要。
+如果成功，HTTP 状态代码的 200 或 201 创建将返回，根据需要。
  
-如果出现错误 （HTTP 4xx 或 5xx），在响应正文中返回相应的错误的信息。
+如果出现错误 （HTTP 4xx 或 5xx），则在响应正文中返回相应的错误信息。
   
 <a id="ID4EVAAC"></a>
 

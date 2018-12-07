@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 74ff0c6fe694bf889632561de056d9405f02d31d
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8325285"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8730346"
 ---
 # <a name="gameclipvisibility-enumeration"></a>GameClipVisibility 枚举
 详细介绍 GameClipVisibility 枚举。 
@@ -21,11 +21,11 @@ ms.locfileid: "8325285"
  
 ## <a name="gameclipvisibility"></a>GameClipVisibility
  
-| <b>枚举器</b>| <b>说明</b>| 
+| <b>枚举</b>| <b>说明</b>| 
 | --- | --- | 
 | 无| 未指定可见性。 这是在大多数情况下无效的值。| 
 | 默认值| 游戏剪辑可见性由 Xbox LIVE 隐私设置。| 
-| 所有者| 仅适用于创建它的原始 XUID 游戏剪辑。| 
-| Title| 游戏剪辑功能仅适用于原始游戏创建它。| 
-| Public| 可供所有人在 Xbox LIVE 游戏剪辑。| 
+| 所有者| 仅可用于创建它的原始 XUID 游戏剪辑。| 
+| Title| 游戏剪辑仅可用于创建它的原始标题。| 
+| Public| 游戏剪辑是可供所有人在 Xbox LIVE 中。| 
   

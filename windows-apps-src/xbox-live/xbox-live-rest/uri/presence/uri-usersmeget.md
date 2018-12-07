@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b06305fde989d0c30570beda5d4b0aabe7bf0518
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8341212"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8731165"
 ---
 # <a name="get-usersme"></a>GET (/users/me)
 获取当前用户的[PresenceRecord](../../json/json-presencerecord.md) ，而无需知道用户的 XUID。
@@ -32,7 +32,7 @@ ms.locfileid: "8341212"
 
 | 参数| 类型| 描述|
 | --- | --- | --- |
-| level| 字符串| 可选。 <ul><li><b>用户</b>： 返回只是用户节点。</li><li><b>设备</b>： 返回用户节点和设备节点。</li><li><b>标题</b>： 默认值。 返回除活动将整个树。</li><li><b>所有</b>： 返回整个树中，包括活动级别状态。</li></ul> | 
+| level| 字符串| 可选。 <ul><li><b>用户</b>： 返回仅用户节点。</li><li><b>设备</b>： 返回用户节点和设备节点。</li><li><b>标题</b>： 默认值。 返回除外活动的整个树。</li><li><b>所有</b>： 返回整个树中，包括活动级别状态。</li></ul> | 
 
 <a id="ID4EIC"></a>
 
@@ -51,7 +51,7 @@ ms.locfileid: "8341212"
 | 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。|
-| x xbl 协定版本| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依次类推。 示例值： 3，vnext。|
+| x xbl 协定版本| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 3，vnext。|
 | 接受| 字符串| 内容类型的可接受。 只有一个受状态是 application/json，但它必须在标头中指定。|
 | 接受的语言| 字符串| 在响应中的字符串的可接受区域设置。 示例值： EN-US。|
 | Host| 字符串| 服务器的域名。 示例值： presencebeta.xboxlive.com。|
@@ -63,7 +63,7 @@ ms.locfileid: "8341212"
 
 | 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依次类推。 默认值： 1。|
+| X RequestedServiceVersion|  | 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。|
 
 <a id="ID4EPG"></a>
 
@@ -82,7 +82,7 @@ ms.locfileid: "8341212"
 
 ### <a name="sample-response"></a>示例响应
 
-此方法返回[presencerecord，他](../../json/json-presencerecord.md)。
+此方法返回[presencerecord，他的](../../json/json-presencerecord.md)。
 
 
 ```cpp

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a062fd417bae37fd66c944e0e534ef7a50de5fa
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8325724"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8754241"
 ---
 # <a name="usersrequestoridpermissionvalidate"></a>/users/{requestorId}/permission/validate
  
@@ -34,11 +34,11 @@ ms.locfileid: "8325724"
 
 [GET (/users/{requestorId}/permission/validate)](uri-privacyusersrequestoridpermissionvalidateget.md)
 
-&nbsp;&nbsp;获取有关是否允许用户执行与目标用户指定的操作 yes 或 no 答案。
+&nbsp;&nbsp;获取有关是否允许用户执行与目标用户指定的操作或否答案。
 
 [POST (/users/{requestorId}/permission/validate)](uri-privacyusersrequestoridpermissionvalidatepost.md)
 
-&nbsp;&nbsp;获取一套 yes 或 no 常见问题解答是否允许用户执行一组的目标用户指定的操作。
+&nbsp;&nbsp;获取有关是否允许用户执行一组的目标用户的指定的操作或否答案的一组。
  
 <a id="ID4EAC"></a>
 

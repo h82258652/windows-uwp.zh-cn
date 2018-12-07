@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 745893b4b975b5fbf64fe76591ec15d18af59d73
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8324245"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8740630"
 ---
 # <a name="get-usersowneridpeopleavoid"></a>GET (/users/{ownerId}/people/avoid)
 获取用户避免列表。
@@ -30,7 +30,7 @@ ms.locfileid: "8324245"
 
 ## <a name="remarks"></a>备注
 
-如果给定目标，仅返回该用户，如果它们不在阻止列表中，也可以为空如果它们不。
+如果给定目标，仅返回该用户，如果它们在阻止列表中，也可以为空如果它们不。
 
 <a id="ID4EZ"></a>
 
@@ -65,7 +65,7 @@ ms.locfileid: "8324245"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源所做的请求的响应，该服务返回一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -81,7 +81,7 @@ ms.locfileid: "8324245"
 
 | 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Content-Type| 字符串| 请求正文的 MIME 类型。 示例值： <code>application/json</code>。 最大大小： none。|
+| Content-Type| 字符串| 请求正文中的 MIME 类型。 示例值： <code>application/json</code>。 最大大小： none。|
 | Content-Length| 字符串| 正在发送响应中的字节数。 示例值： 34。 最大大小： none。|
 | 缓存控制| 字符串| 礼貌请求从服务器指定缓存行为。 示例值： <code>application/json</code>。 最大大小： none。|
 

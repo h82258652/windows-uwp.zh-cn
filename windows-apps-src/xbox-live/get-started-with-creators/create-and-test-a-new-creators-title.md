@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 创意者, 测试
 ms.localizationpriority: medium
 ms.openlocfilehash: 84d81f6a6c18af92da003243c2d14d2ecc3bf136
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8340490"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8748278"
 ---
 # <a name="create-a-new-xbox-live-creators-program-title-and-publish-to-the-test-environment"></a>创建新的 Xbox Live 创意者计划主题作品并发布到测试环境
 
@@ -23,7 +23,7 @@ ms.locfileid: "8340490"
 
 1. 你正在使用 Xbox Live 创意者计划。
 2. 你正在开发通用 Windows 平台 (UWP) 主题作品。  UWP 主题作品可以在 Xbox One、Windows 10 台式电脑和移动设备上运行
-3. 你要在[合作伙伴中心](https://partner.microsoft.com/dashboard)配置你的游戏。
+3. 你要在[合作伙伴中心](https://partner.microsoft.com/dashboard)中配置你的游戏。
 4. 开发计算机运行的是 Windows 10。
 
 > [!NOTE]
@@ -31,7 +31,7 @@ ms.locfileid: "8340490"
 
 ## <a name="partner-center-setup"></a>合作伙伴中心设置
 
-你需要一个支持 Xbox Live 主题作品，作为使用所有 Xbox Live 功能的先决条件在[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建。
+你需要在[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建作为使用所有 Xbox Live 功能的先决条件一个支持 Xbox Live 的主题作品。
 
 ### <a name="create-a-microsoft-account"></a>创建 Microsoft 帐户
 如果你没有 Microsoft 帐户（也称为 MSA），则需要先在 [Microsoft 帐户 - 登录](https://go.microsoft.com/fwlink/p/?LinkID=254486) 上创建一个帐户。 如果你有 Office 365 帐户、使用 Outlook.com 或拥有 Xbox Live 帐户，则你可能已经有 MSA 了。
@@ -42,7 +42,7 @@ ms.locfileid: "8340490"
 要进行注册，请转到[注册为应用开发人员](https://developer.microsoft.com/store/register)，并按照注册流程完成操作。
 
 ### <a name="create-a-new-uwp-title"></a>创建新的 UWP 主题作品
-你将需要在合作伙伴中心中定义的 UWP 主题作品。 你执行该操作先转到[合作伙伴中心](https://partner.microsoft.com/dashboard)。
+你将需要一个在合作伙伴中心中定义的 UWP 主题作品。 你执行该操作先转到[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 
 然后，创建一个新主题作品。 你需要保留一个名称。
 

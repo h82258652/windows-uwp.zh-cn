@@ -1,17 +1,17 @@
 ---
 title: 创建新主题作品
-description: 了解如何通过使用合作伙伴中心进行 Xbox Live 创建新主题作品。
+description: 了解如何通过使用合作伙伴中心为 Xbox Live 创建新主题作品。
 ms.assetid: b8bd69e6-887a-4b1f-a42d-8affdbec0234
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1aa2447a2044bec9b2013b30c05e45342b763fc3
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8342346"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8739253"
 ---
 # <a name="create-a-new-title-for-xbox-live"></a>为 Xbox Live 创建新主题作品
 
@@ -22,11 +22,11 @@ ms.locfileid: "8342346"
 本文将通过以下假设引导你完成这一过程
 
 1. 你正在开发通用 Windows 平台 (UWP) 主题作品。  UWP 主题作品在 Xbox One、Windows 10 台式电脑和移动设备上运行
-2. 你要在[合作伙伴中心](https://partner.microsoft.com/dashboard)配置你的游戏。
+2. 你要在[合作伙伴中心](https://partner.microsoft.com/dashboard)中配置你的游戏。
 3. 你正在使用带有自定义游戏引擎的 Visual Studio 或 Unity。
 4. 开发计算机运行的是 Windows 10。
 
-假如上述条件均成立，本文的其余部分将介绍通过获取合作伙伴中心，创建新项目和 Xbox Live 登录代码中编写和测试配置主题作品所需的所有内容。
+假设上述条件均成立，本文的其余部分将指导完成需要获取游戏在合作伙伴中心，创建新项目和 Xbox Live 登录代码编写和测试中配置的所有内容。
 
 > [!NOTE]
 > 如果你是 Xbox Live 创意者计划的一员，则上述假设适用你，并应遵循本文中的内容。
@@ -44,7 +44,7 @@ ms.locfileid: "8342346"
 若要注册，请转到https://developer.microsoft.com/en-us/store/register并按照注册流程。
 
 ### <a name="create-a-new-uwp-title"></a>创建新的 UWP 主题作品
-接下来，你需要在合作伙伴中心中定义的 UWP 主题作品。  需要先转到仪表板才能执行此操作
+接下来，你需要在合作伙伴中心中定义一个 UWP 主题作品。  需要先转到仪表板才能执行此操作
 
 ![](../images/getting_started/first_xbltitle_dashboard.png)
 

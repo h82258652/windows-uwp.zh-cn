@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f9610b400e9530f86e264cea30bfdfdd1b09c8d
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8322746"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8752419"
 ---
 # <a name="usersxuidxuidlistspinslistname"></a>/users/xuid(xuid)/lists/PINS/{listname}
 访问列表中的项目。 这些 Uri 的域是`eplists.xboxlive.com`。
@@ -45,11 +45,11 @@ ms.locfileid: "8322746"
 
 [POST](uri-usersxuidlistspinslistnamepost.md)
 
-&nbsp;&nbsp;在基于查询字符串参数**insertIndex**索引列表中插入项目。
+&nbsp;&nbsp;项目插入到列表中基于查询字符串参数**insertIndex**的索引。
 
 [PUT](uri-usersxuidlistspinslistnameput.md)
 
-&nbsp;&nbsp;更新根据指定的请求正文中的每个项目的索引列表中的项。
+&nbsp;&nbsp;更新根据指定每个项目，请求正文中的索引列表中的项。
  
 <a id="ID4EZC"></a>
 

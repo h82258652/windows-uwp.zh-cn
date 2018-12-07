@@ -7,11 +7,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox live，Xbox，游戏，uwp，windows 10，Xbox one，合作伙伴中心，Xbox Live 设置
 ms.openlocfilehash: 9a846a4b7f0069216e92eb123b33d9fc0f7f67c9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8350009"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8751166"
 ---
 # <a name="configure-xbox-live-setup-in-partner-center"></a>在合作伙伴中心中配置 Xbox Live 设置
 
@@ -30,7 +30,7 @@ ms.locfileid: "8350009"
 > [!NOTE]
 > 此外，可以在“本地化字符串”页面上本地化所有字符串。  
 
-![选择要在合作伙伴中心中选择默认区域设置的下拉列表的图像](../../images/dev-center/xbox-live-setup/xbox-live-setup-2.png)
+![选择下拉列表在合作伙伴中心中选择默认区域设置的图像](../../images/dev-center/xbox-live-setup/xbox-live-setup-2.png)
 
 ## <a name="product-type"></a>产品类型
 此下拉菜单允许你更改产品的类型。 它默认为类型**游戏**。 你所做的选择将影响 XboxLivefeatures 提供给你。 有三个可供选择的选项：
@@ -38,7 +38,7 @@ ms.locfileid: "8350009"
 2. 游戏 
 3. 游戏演示 
 
-![选择要在合作伙伴中心中选择产品类型的下拉列表的图像](../../images/dev-center/xbox-live-setup/xbox-live-setup-3.png)
+![选择要在合作伙伴中心中选择你的产品类型的下拉列表的图像](../../images/dev-center/xbox-live-setup/xbox-live-setup-3.png)
 
 ## <a name="device-families"></a>设备系列
 此配置允许你选择作品可以在哪些设备类型上访问 Xbox Live。 默认情况下，启用所有设备系列。 你可以选中要启用的设备。

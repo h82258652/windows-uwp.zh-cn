@@ -7,13 +7,13 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
 ms.openlocfilehash: 9ef2365ee560e273108c38570697d599adde4c0b
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8329837"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8755611"
 ---
-# <a name="configure-achievements-2017-in-partner-center"></a>在合作伙伴中心配置 Achievements 2017
+# <a name="configure-achievements-2017-in-partner-center"></a>在合作伙伴中心中配置 Achievements 2017
 
 > [!IMPORTANT]
 > 成就仅适用于 ID@Xbox 或托管合作伙伴。 参加 Xbox Live 创意者计划的游戏不受支持。
@@ -64,7 +64,7 @@ ms.locfileid: "8329837"
 ### <a name="reward-details"></a>奖励详细信息
 填写奖励详细信息以关联新奖励。 完成后，单击**添加**。
 
-![在合作伙伴中心配置成就奖励详细信息的屏幕截图](../../images/dev-center/achievements-5.png)
+![在合作伙伴中心中配置成就奖励详细信息的屏幕截图](../../images/dev-center/achievements-5.png)
 
 可以创建两种类型的成就奖励。 它们是：
 

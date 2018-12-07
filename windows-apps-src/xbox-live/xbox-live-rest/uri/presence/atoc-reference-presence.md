@@ -8,17 +8,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a46ecd48c2b0bf523ab234a5f20cf9ed6669e75
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8333950"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8733653"
 ---
 # <a name="presence-uris"></a>状态 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务的*状态*。
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的*状态*。
  
-仅运行 Xbox 360、 Windows Phone 设备，或在 Windows 上的游戏可以使用此服务。
+仅在 Xbox 360 上、 在 Windows Phone 设备上，或在 Windows 上运行的游戏可以使用此服务。
  
 这些 Uri 的域是 userpresence.xboxlive.com。
  
@@ -55,11 +55,11 @@ ms.locfileid: "8333950"
 
 [/users/xuid({xuid})/groups/{moniker}/broadcasting](uri-usersxuidgroupsmonikerbroadcasting.md)
 
-&nbsp;&nbsp;访问组名字对象由指定的广播用户状态记录相关出现在 URI 中的 XUID。
+&nbsp;&nbsp;访问组名字对象由指定的广播用户状态记录与在 URI 中出现的 XUID。
 
 [/users/xuid({xuid})/groups/{moniker}/broadcasting/count](uri-usersxuidgroupsmonikerbroadcastingcount.md)
 
-&nbsp;&nbsp;访问的组名字对象由指定的广播用户计数与显示在 URI 中的 XUID。
+&nbsp;&nbsp;访问与在 URI 中出现的 XUID 相关的组名字对象由指定的广播用户计数。
  
 <a id="ID4EMC"></a>
 

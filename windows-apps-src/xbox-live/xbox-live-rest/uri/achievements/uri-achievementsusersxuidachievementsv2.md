@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d4ac8c1fbf3d5f3fcc645e284059c1644495d62
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8326155"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8755602"
 ---
 # <a name="usersxuidxuidachievements"></a>/users/xuid({xuid})/achievements
  
@@ -36,7 +36,7 @@ ms.locfileid: "8326155"
 
 [GET](uri-achievementsusersxuidachievementsgetv2.md)
 
-&nbsp;&nbsp;获取游戏，这些用户，解锁或这些用户具有正在上定义的成就的列表。
+&nbsp;&nbsp;获取的游戏，这些用户，通过解锁或这些用户具有正在上定义的成就的列表。
  
 <a id="ID4EKC"></a>
 

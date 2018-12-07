@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 85a6470a64ceef3b154384d1ca859fb28733aad3
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8322801"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8754458"
 ---
 # <a name="usersxuidxuidscidsscidstatsstatnamepeopleallfavorite"></a>/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite}
 访问 （排名） 的社交排行榜。
@@ -30,7 +30,7 @@ ms.locfileid: "8322801"
 | xuid| 字符串| 用户的标识符。|
 | scid| 字符串| 服务配置，其中包含所访问的资源的标识符。|
 | statname| 字符串| 正在访问的用户统计数据资源的唯一标识符。|
-| all\ | 最喜爱| 枚举| 是否要排名统计数据值 （分数） 为当前用户的所有已知的联系人或仅由用户指定为常用联系人的联系人。|
+| all\ | 最喜爱| 枚举| 是否要排名统计数据值 （分数） 为当前用户的所有已知的联系人或仅通过该用户指定为常用联系人的联系人。|
 
 <a id="ID4EOC"></a>
 
@@ -39,7 +39,7 @@ ms.locfileid: "8322801"
 
 [GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite})](uri-usersxuidscidstatnamepeopleget.md)
 
-&nbsp;&nbsp;返回社交排行榜的统计数据值 （分数） 为当前用户的任何一种所有已知的联系人或仅由用户指定为常用联系人的联系人的排名。
+&nbsp;&nbsp;返回社交排行榜的统计数据值 （分数） 为当前用户的任一所有已知的联系人或仅通过该用户指定为常用联系人的联系人的排名。
 
 <a id="ID4EYC"></a>
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: dab43079dbba3729ff39f3a2116c377c3b73142a
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8339789"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8734300"
 ---
 # <a name="post-usersxuidxuiddeleteuserdata"></a>POST (/users/xuid({xuid})/deleteuserdata)
 完全重置为测试用户信誉数据。 仅供测试。
@@ -29,7 +29,7 @@ ms.locfileid: "8339789"
 
 ## <a name="remarks"></a>备注
 
-调用此 API 将删除所有反馈项目和信誉数据从用户。 合作伙伴可以通过调用此 API，针对任何除零售沙盒。 执行团队可以通过调用此 API 和任何沙盒 id。
+调用此 API 将删除所有反馈项目和信誉数据从用户。 合作伙伴可以通过调用此 API 针对任何除零售沙盒。 执行团队可能会调用此 API 使用任何沙盒 id。
 
 这些 Uri 的域是`reputation.xboxlive.com`。 端口 10443 上始终调用此 URI。
 
@@ -40,7 +40,7 @@ ms.locfileid: "8339789"
 
 | 参数| 类型| 描述|
 | --- | --- | --- |
-| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 要删除其数据的用户。|
+| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 正在删除其数据的用户。|
 
 <a id="ID4EJB"></a>
 
@@ -63,23 +63,23 @@ Retail 沙盒中，从执行团队**PartnerClaim** 。
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源所做的请求的响应，该服务返回一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 描述|
 | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 已成功检索会话。|
-| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常是一个无效的参数。|
+| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常无效参数。|
 | 401| 未授权| 请求要求用户身份验证。|
 | 404| 找不到| 找不到指定的资源。|
-| 500| 内部服务器错误| 服务器时遇到意外的情况，使其不能完成请求。|
-| 503| 服务不可用| 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 客户端重试值后重试请求。|
+| 500| 内部服务器错误| 服务器时遇到意外的情况，执行此请求将阻止它。|
+| 503| 服务不可用| 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。|
 
 <a id="ID4EJF"></a>
 
 
 ## <a name="response-body"></a>响应正文
 
-无上成功;否则为[ServiceError (JSON)](../../json/json-serviceerror.md)文档。
+None 上成功;否则为[ServiceError (JSON)](../../json/json-serviceerror.md)文档。
 
 <a id="ID4EWF"></a>
 

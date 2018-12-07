@@ -8,15 +8,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a6f1e743542e70ee96ad93ee1cf2a7f2c3ed7158
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8326391"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8752925"
 ---
 # <a name="lists-uris"></a>列表 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务的*Pin*。
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的*引脚*。
  
 仅游戏和 Xbox 360、 Windows Phone 设备上、 SmartGlass，或在 Xbox.com 上运行的应用程序可以使用此服务。
  
@@ -33,7 +33,7 @@ ms.locfileid: "8326391"
 
 [/users/xuid(xuid)/lists/PINS/{listname}/ContainsItems](uri-usersxuidlistspinslistnamecontainsitems.md)
 
-&nbsp;&nbsp;确定是否一组项 （由 itemId 指定） 包含在列表中而不检索将整个列表。
+&nbsp;&nbsp;确定是否项目 （由 itemId 指定） 的一组包含在列表中而不检索将整个列表。
 
 [/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}](uri-usersxuidlistspinslistnameindex.md)
 

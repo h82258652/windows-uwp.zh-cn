@@ -8,18 +8,18 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 95de95b35de496331dd3fe0a4c69f18e047c1020
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8322656"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8732673"
 ---
 # <a name="get-serviceconfigsscidhoppersnamestats"></a>GET (/serviceconfigs/{scid}/hoppers/{name}/stats)
 
-漏斗中获取统计信息。
+漏斗获取统计信息。
 
 > [!IMPORTANT]
-> 此方法旨在用于合约 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
+> 此方法旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4E5)
@@ -32,7 +32,7 @@ ms.locfileid: "8322656"
 
 
 ## <a name="remarks"></a>备注
-此 HTTP/REST 方法获取从命名漏斗在服务配置 ID (SCID) 级别的统计信息。 此方法可以通过**Microsoft.Xbox.Services.Matchmaking.MatchmakingService.GetHopperStatisticsAsync** API 包装。  
+此 HTTP/REST 方法获取从命名漏斗在服务配置 ID (SCID) 级别的统计信息。 此方法可以由**Microsoft.Xbox.Services.Matchmaking.MatchmakingService.GetHopperStatisticsAsync** API 包装。  
 <a id="ID4E5"></a>
 
 

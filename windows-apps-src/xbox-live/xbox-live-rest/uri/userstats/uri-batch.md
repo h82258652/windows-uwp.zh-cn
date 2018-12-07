@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e8ea66b8d59ad7bd415626f218e0b7f49093f00
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8332603"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8728905"
 ---
 # <a name="batch"></a>/batch
-跨多个游戏的多个玩家统计数据的访问复杂的批处理请求。 这些 Uri 的域是`userstats.xboxlive.com`。
+用于跨多个游戏的多个玩家统计数据的访问复杂的批处理请求。 这些 Uri 的域是`userstats.xboxlive.com`。
   
 <a id="ID4EV"></a>
 
@@ -24,7 +24,7 @@ ms.locfileid: "8332603"
 
 [POST](uri-batchpost.md)
 
-&nbsp;&nbsp;POST 方法，可用作跨多个游戏的多个玩家统计数据的复杂的批处理请求的 GET 方法。
+&nbsp;&nbsp;POST 方法，可作为跨多个游戏的多个玩家统计数据的复杂的批处理请求的 GET 方法。
  
 <a id="ID4E6"></a>
 

@@ -8,15 +8,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: fe80e1666f9eab8caf7e0bbdb2b537bd7661c9a9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8330226"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8745452"
 ---
 # <a name="paging-parameters"></a>分页参数
  
-某些 Xbox Live 服务 Uri 返回的 JavaScript 对象表示法 (JSON) 对象的集合。 通过将分页参数指定为查询字符串附加到 URI 的一部分，可以通过分页这些集合。 遵循分页参数的完整列表。 允许分页参数的所有 Uri 都链接到此页面底部。
+某些 Xbox Live 服务 Uri 返回 JavaScript 对象表示法 (JSON) 对象的集合。 通过将分页参数指定为查询字符串附加到 URI 的一部分，可以通过分页这些集合。 遵循的分页参数的完整列表。 允许分页参数的所有 Uri 都链接到此页面底部。
  
 <a id="ID4E2"></a>
 

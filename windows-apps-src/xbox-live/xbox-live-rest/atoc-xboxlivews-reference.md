@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2076cf7b909083072904128a8f53c200a681ee8e
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8334588"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8757454"
 ---
 # <a name="xbox-live-services-restful-reference"></a>Xbox Live 服务 RESTful 参考
 
@@ -25,15 +25,15 @@ Xbox Live 服务是一套用于管理游戏和玩家信息的服务。 这些服
 
 [统一资源标识符 (URI) 参考](uri/atoc-xboxlivews-reference-uris.md)
 
-&nbsp;&nbsp;提供的资源和方法，可使用 Xbox Live 服务参考资料。
+&nbsp;&nbsp;提供有关的资源和方法，可使用 Xbox Live 服务参考资料。
 
 [JavaScript 对象表示法 (JSON) 对象参考](json/atoc-xboxlivews-reference-json.md)
 
-&nbsp;&nbsp;提供有关使用 Xbox Live 服务的 JavaScript 对象表示法 (JSON) 对象参考资料。
+&nbsp;&nbsp;提供与 Xbox Live 服务使用的 JavaScript 对象表示法 (JSON) 对象参考资料。
 
 [JavaScript 对象表示法 (JSON) 对象中使用的枚举](enums/atoc-xboxlivews-reference-enums.md)
 
-&nbsp;&nbsp;提供使用 Xbox Live 服务的 JavaScript 对象表示法 (JSON) 对象中使用的枚举的参考资料。
+&nbsp;&nbsp;提供与 Xbox Live 服务使用的 JavaScript 对象表示法 (JSON) 对象中使用的枚举的参考资料。
 
 [其他参考](additional/atoc-xboxlivews-reference-additional.md)
 

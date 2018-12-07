@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f9e51910e921c7efaa92dfd063e9d37975fda18f
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8349384"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8741048"
 ---
 # <a name="usersxuidxuidlistspinslistnamecontainsitems"></a>/users/xuid(xuid)/lists/PINS/{listname}/ContainsItems
-确定是否一组项 （由 itemId 指定） 包含在列表中而不检索将整个列表。 这些 Uri 的域是`eplists.xboxlive.com`。
+确定是否项目 （由 itemId 指定） 的一组包含在列表中而不检索将整个列表。 这些 Uri 的域是`eplists.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -36,7 +36,7 @@ ms.locfileid: "8349384"
 
 [POST](uri-usersxuidlistspinslistnamecontainsitemspost.md)
 
-&nbsp;&nbsp;确定列表是否无需检索将整个列表包含一组项 （由 itemId 指定）。
+&nbsp;&nbsp;确定是否列表包含一组项 （由 itemId 指定） 而不检索将整个列表。
  
 <a id="ID4EIC"></a>
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, xbox, xbox live, 资源, API, 参考
 ms.localizationpriority: medium
 ms.openlocfilehash: b12816166aa99311b9adffded176c4d808f2c677
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8486697"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8729044"
 ---
 # <a name="xbox-live-resources"></a>Xbox Live 资源
 
@@ -22,9 +22,9 @@ WinRT SDK API 参考可以在联机此处找到：
 
 * [Xbox Live WinRT SDK](https://docs.microsoft.com/en-us/dotnet/api/?view=xboxlive-dotnet-2017.11.20171204.01)
 
-C + + SDK 目前仅在离线格式中可用。
+C + + SDK 目前仅在脱机格式中可用。
 
-你可以在下载完整的 API 参考文档 （这包括 c + + 和 WinRT）：
+你可以在下载的完整的 API 参考文档 （这包括 c + + 和 WinRT）：
 
 * [Xbox Live API 参考](https://aka.ms/xboxliveuwpdocs)
 

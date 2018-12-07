@@ -7,16 +7,16 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, xbox one, xdk, 托管合作伙伴, 沙盒, 内容隔离
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e95999fc132e5dcda556120e9cf42f9c302f654
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8324616"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8743479"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a>高级 Xbox Live 沙盒
 
 > [!NOTE]
-> 本文介绍的沙盒的高级的用法，它主要适用于具有多个团队和复杂权限要求的大型游戏工作室。  如果你是 Xbox Live 创意者计划中的一员或 ID@Xbox 开发人员，建议你查看 [Xbox Live 沙盒简介](xbox-live-sandboxes.md)
+> 本文介绍的沙盒的高级的用法和它主要适用于拥有多个团队和复杂权限要求的大型游戏工作室。  如果你是 Xbox Live 创意者计划中的一员或 ID@Xbox 开发人员，建议你查看 [Xbox Live 沙盒简介](xbox-live-sandboxes.md)
 
 Xbox Live *沙盒*为开发提供了整个专用环境。 本文档将介绍什么是沙盒，它们存在的原因，如何适用于发布者，以及如何影响内部 Xbox 团队。 本文档面向的读者是生成 Xbox One 内容和使用沙盒的发布者。
 
@@ -46,7 +46,7 @@ Xbox Live *沙盒*为开发提供了整个专用环境。 本文档将介绍什�
 
 在这个全新的世界里，主题作品或产品本身对 Xbox Live 来说没有任何意义。 因为我们必须支持单个主题作品的同步零售和开发，以及主题作品*实例化*，以做出并保持必要的区分。 主题作品实例驻留在沙盒中，这就是沙盒起作用的地方。
 
-若要在 XDP 上创建作品，发布者创建一个产品组、 指定产品组的类型，然后创建单个产品。 （有关更多详细信息，请参阅 XDP 文档。）下面的图表阐明了产品组、产品、产品实例以及沙盒之间的关系。
+为在 XDP 上创建作品，发布者创建一个产品组、 指定产品组的类型，然后创建单个产品。 （有关更多详细信息，请参阅 XDP 文档。）下面的图表阐明了产品组、产品、产品实例以及沙盒之间的关系。
 
 图 2. 产品组、产品、产品实例以及沙盒之间的关系。
 
@@ -216,7 +216,7 @@ RETAIL 沙盒是为 Xbox One 创建的所有内容的最终目的地。
 
 此部分提供了发布者如何组织沙盒的示例。 发布者需要了解如何使用沙盒组织数据。  
 
-仅显示使用内容隔离的运行时访问管理下面的示例演示。
+仅显示使用内容隔离的运行时访问管理以下示例。
 
 ### <a name="scenario-1-two-titles-one-sandbox"></a>场景 1：两个主题作品、一个沙盒
 
@@ -301,9 +301,9 @@ RETAIL 沙盒是为 Xbox One 创建的所有内容的最终目的地。
 
 ![](images/sandboxes/sandboxes_image9.png)
 
-## <a name="determine-the-sandbox-your-device-is-targeting"></a>确定目标设备的沙盒
+## <a name="determine-the-sandbox-your-device-is-targeting"></a>确定面向你的设备的沙盒
 
-Xbox Live Api 包含将允许你查看你的游戏面向在运行时的沙盒应用配置单一实例。 这通过访问**沙盒**属性`xbox::services::xbox_live_app_config`。
+Xbox Live Api 包含将允许你查看你的游戏面向在运行时哪些沙盒应用配置单一实例。 这是通过访问的**沙盒**属性`xbox::services::xbox_live_app_config`。
 
 C + + XDK
 ```cpp
@@ -318,7 +318,7 @@ string sandbox = appConfig.Sandbox;
 ```
 
 > [!NOTE]
-> 用户登录前，沙盒属性不会获得一个值。
+> 用户登录前，沙盒属性不会获得值。
 
 ## <a name="summary"></a>摘要
 

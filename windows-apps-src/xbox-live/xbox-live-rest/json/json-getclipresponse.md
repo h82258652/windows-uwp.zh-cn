@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ef6875bfecfe7ee90fb1794164240116fd39ed91
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8337716"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8742828"
 ---
 # <a name="getclipresponse-json"></a>GetClipResponse (JSON)
 包装游戏剪辑。 

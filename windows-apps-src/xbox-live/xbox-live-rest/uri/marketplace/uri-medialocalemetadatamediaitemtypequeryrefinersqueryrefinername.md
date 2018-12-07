@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 356c7d6eb30eb14156e434f717530d6f4f48a990
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8330169"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8748783"
 ---
 # <a name="mediamarketplaceidmetadatamediaitemtypesmediaitemtypequeryrefinersqueryrefinername"></a>/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryrefinername}
-访问可接受的值为给定的查询精选名称和给定的媒体项类型。 这些 Uri 的域是`eds.xboxlive.com`。
+访问可接受的值为给定的查询精简名称和给定的媒体项类型。 这些 Uri 的域是`eds.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -28,7 +28,7 @@ ms.locfileid: "8330169"
 | --- | --- | --- | 
 | marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。| 
 | mediaitemtype| 字符串| 必需。 从值之一[GET (/media/ {marketplaceId} / /metadata/mediagroups/ {mediagroup} / mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md)。| 
-| queryrefinername| 字符串| 必需。 名称查询精选的所需的值，如"流派"或"十年期"。 请参阅 QueryRefiners。| 
+| queryrefinername| 字符串| 必需。 名称查询精简的所需的值，如"流派"或"十年期"。 请参阅 QueryRefiners。| 
   
 <a id="ID4EKC"></a>
 
@@ -37,7 +37,7 @@ ms.locfileid: "8330169"
 
 [GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryrefinername})](uri-medialocalemetadatamediaitemtypequeryrefinersqueryrefinernameget.md)
 
-&nbsp;&nbsp;列出了可接受的值为给定的查询精选名称和给定的媒体项类型。
+&nbsp;&nbsp;列出了可接受的值为给定的查询精简名称和给定的媒体项类型。
  
 <a id="ID4EUC"></a>
 

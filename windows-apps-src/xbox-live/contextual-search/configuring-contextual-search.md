@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务配置, 上下文搜索, 游戏剪辑, 广播
 ms.localizationpriority: medium
 ms.openlocfilehash: c8c78f115a160c82a28881a3c551a958cdf4b68c
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8327960"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8754333"
 ---
 # <a name="configuring-contextual-search"></a>配置上下文搜索
 
@@ -56,7 +56,7 @@ ms.locfileid: "8327960"
 
   ![](../images/contextual_search/config03.png)
 
-  请注意，仅支持统计信息实例 - 不接受统计信息模板。  你还应该了解为统计信息实例 （配置的 XDP 或合作伙伴中心的统计信息部分中） 设置的可见性。  仅标记为**开放**的统计信息将显示在第三方体验中。
+  请注意，仅支持统计信息实例 - 不接受统计信息模板。  你还应该了解为统计信息实例 （已在 XDP 或合作伙伴中心的统计数据部分配置） 设置的可见性。  仅标记为**开放**的统计信息将显示在第三方体验中。
 
 2. 选择统计信息优先级。 这是指定这一统计信息相对于搜索体验/算法的其他方面的重要性的方式。  可接受值为 1-10（1 是最高）。  若要忽略，将此值保留为 0 或空白。
 3. 添加显示名称。  这是向最终用户显示的可本地化的字符串。

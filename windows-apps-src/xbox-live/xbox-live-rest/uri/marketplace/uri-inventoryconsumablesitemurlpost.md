@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 877986ce9d48269295a68dbfd644f14785916b88
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8344477"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8740531"
 ---
 # <a name="post-itemid"></a>POST ({itemID})
-指示，已使用全部或易耗型的库存项目的一部分并减少所请求的距离该消耗品的数量。
+指示，已使用所有或易耗型库存项目的部分和递减所请求的量由该消耗品的数量。
 这些 Uri 的域是`inventory.xboxlive.com`。
 
   * [备注](#ID4EX)
@@ -28,15 +28,15 @@ ms.locfileid: "8344477"
 
 ## <a name="remarks"></a>备注
 
-   * 如果调用方要求占用的数量超过剩余可以提供的项目，则调用将被拒绝。
-   * 调用方要求占用的数量必须大于 0 正整数。 将拒绝消耗值为 0 或更低的调用。
+   * 如果调用方要求占用的数量超过该项目的剩余电源，调用将被拒绝。
+   * 调用方要求占用的数量必须大于 0 正整数。 消耗值为 0 或更低的调用将被拒绝。
    * 如果调用方提供一个空的事务 ID，将拒绝该请求。
-   * 如果可用，因此它将能够确定哪些游戏报告消耗，将记录的主题作品声明。
+   * 如果可用，以便它将能够确定哪些游戏报告消耗，将会记录的主题作品声明。
    * 使用相同的 transactionId 的其他文章将被忽略某个时间段。
 
 
 > [!NOTE]
-> 此 api <b>x xbl 协定版本标头</b>是"4"。
+> 此 API <b>x xbl 协定版本标头</b>是"4"。
 
 
 <a id="ID4EQB"></a>
@@ -46,7 +46,7 @@ ms.locfileid: "8344477"
 
 | 参数| 类型| 描述|
 | --- | --- | --- | --- |
-| itemID| 字符串| 特定于每个用户单数库存项目的 ID|
+| itemID| 字符串| 唯一的每个用户单数库存项目的 ID|
 
 <a id="ID4E2B"></a>
 
@@ -75,7 +75,7 @@ ms.locfileid: "8344477"
 
 ## <a name="response-body"></a>响应正文
 
-POST，假设传递身份验证并分配适当授权上下文响应是具有相同的 transactionId 收据 acknolodgement 传递给中 POST 请求、 易耗型项的 URL 和项目的新的服务数量值。
+POST，假设传递身份验证并分配适当授权上下文的响应是具有相同的 transactionId 收据 acknolodgement 传递给中 POST 请求、 在易耗型项的 URL 和项目的新的服务数量值。
 
 <a id="ID4EVC"></a>
 

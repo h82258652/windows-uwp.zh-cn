@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 5451c59ab608105677a657ade41154bd2b622f5e
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8327058"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8748324"
 ---
 # <a name="usersettings-json"></a>UserSettings (JSON)
 返回当前身份验证的用户的设置。 

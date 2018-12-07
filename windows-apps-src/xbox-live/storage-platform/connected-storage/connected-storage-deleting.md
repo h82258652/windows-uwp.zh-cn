@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
 ms.localizationpriority: medium
 ms.openlocfilehash: 756de46d05cdbf64d85491b4e8c6f783122f2356
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8457518"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8744616"
 ---
 # <a name="use-connected-storage-to-delete-data"></a>使用连接存储删除数据
 

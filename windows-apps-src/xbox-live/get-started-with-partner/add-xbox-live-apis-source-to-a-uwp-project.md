@@ -7,15 +7,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ca7d0aca0f05a56f51d13f8ae27c1c0ccd6e39e
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8332764"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8737103"
 ---
 # <a name="add-and-compile-the-xbox-live-apis-source-in-your-uwp-project"></a>向 UWP 项目添加 Xbox Live API 源并进行编译
 
-Xbox Live API (XSAPI) 源现已在 GitHub 上[https://github.com/Microsoft/xbox-live-api](https://github.com/Microsoft/xbox-live-api)。 开发人员可以遵循以下说明更新其项目，以使用本地生成。
+Xbox Live API (XSAPI) 源现已在 GitHub 上提供[https://github.com/Microsoft/xbox-live-api](https://github.com/Microsoft/xbox-live-api)。 开发人员可以遵循以下说明更新其项目，以使用本地生成。
 
 如果出现以下情况，你可能要自行生成 XSAPI：
 1. 希望调试错误以了解错误代码的来源。

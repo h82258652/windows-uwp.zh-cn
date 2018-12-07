@@ -8,15 +8,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9492ff3272af830404a546c9b01d62178adbac96
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8339776"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8729915"
 ---
 # <a name="session-directory-uris"></a>会话目录 URI
 
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务的多人游戏会话目录 (MPSD)。
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的多人游戏会话目录 (MPSD)。
 
 
 > [!NOTE] 
@@ -38,7 +38,7 @@ sessiondirectory.xboxlive.com
 
 ## <a name="service-version"></a>服务版本
 
-这些 REST Uri 的调用方必须将值传递 104/105 或更高版本的 X-Xbl-合约的版本，指定的服务版本娱乐发现服务 (EDS) 的 HTTP 标头。
+这些 REST Uri 的调用方必须为 X-Xbl-协定-版本，指定的服务版本的娱乐发现服务 (EDS) 的 HTTP 标头传递值 104/105 或更高版本。
 
 <a id="ID4EAC"></a>
 
@@ -66,7 +66,7 @@ sessiondirectory.xboxlive.com
 
 ## <a name="handles"></a>句柄
 
-2015 多人游戏仅，可以通过会话句柄访问会话。 添加了多个 Uri 以提供功能以支持句柄。  
+为 2015年多人游戏仅，可以通过会话句柄访问会话。 添加了多个 Uri 以提供功能以支持句柄。  
 <a id="ID4EFE"></a>
 
 
@@ -74,11 +74,11 @@ sessiondirectory.xboxlive.com
 
 [/handles](uri-handles.md)
 
-&nbsp;&nbsp;支持 POST 操作来设置用户的当前活动显示在 Xbox One 仪表板的用户体验，并邀请会话成员，如果需要该会话。
+&nbsp;&nbsp;支持 POST 操作来设置用户的当前活动显示在 Xbox One 仪表板的用户体验，并邀请会话成员，如果所需的会话。
 
 [/handles/{handleId}](uri-handleshandleid.md)
 
-&nbsp;&nbsp;支持会话句柄由标识符指定的删除和 GET 操作。
+&nbsp;&nbsp;支持会话句柄由标识符指定删除和 GET 的操作。
 
 [/handles/{handleId}/session](uri-handleshandleidsession.md)
 
@@ -86,11 +86,11 @@ sessiondirectory.xboxlive.com
 
 [/handles/query](uri-handlesquery.md)
 
-&nbsp;&nbsp;支持创建会话句柄查询 POST 操作。
+&nbsp;&nbsp;支持 POST 操作以创建用于会话句柄查询。
 
 [/serviceconfigs/{scid}/batch](uri-serviceconfigsscidbatch.md)
 
-&nbsp;&nbsp;支持在服务配置标识符级别的批处理查询 POST 操作。
+&nbsp;&nbsp;支持在服务配置标识符级别为批处理查询 POST 操作。
 
 [/serviceconfigs/{scid}/sessions](uri-serviceconfigsscidsessions.md)
 
@@ -106,7 +106,7 @@ sessiondirectory.xboxlive.com
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch](uri-serviceconfigscidsessiontemplatessessiontemplatenamebatch.md)
 
-&nbsp;&nbsp;支持在会话模板级别创建批处理查询 POST 操作。
+&nbsp;&nbsp;支持 POST 操作在会话模板级别创建批处理的查询。
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessions.md)
 

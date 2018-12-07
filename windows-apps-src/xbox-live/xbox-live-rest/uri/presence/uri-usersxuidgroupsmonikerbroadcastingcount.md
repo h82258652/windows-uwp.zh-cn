@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a39bc9c3302ba26949700774997355a216fe70d
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8330223"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8755918"
 ---
 # <a name="usersxuidxuidgroupsmonikerbroadcastingcount"></a>/users/xuid({xuid})/groups/{moniker}/broadcasting/count
-访问的组名字对象由指定的广播用户计数与显示在 URI 中的 XUID。 这些 Uri 的域是`userpresence.xboxlive.com`。
+访问与在 URI 中出现的 XUID 相关的组名字对象由指定的广播用户计数。 这些 Uri 的域是`userpresence.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -36,7 +36,7 @@ ms.locfileid: "8330223"
 
 [GET (/users/xuid({xuid})/groups/{moniker}/broadcasting/count )](uri-usersxuidgroupsmonikerbroadcastingcountget.md)
 
-&nbsp;&nbsp;检索与在 URI 中显示的 XUID 相关的组名字对象由指定的广播用户的计数。
+&nbsp;&nbsp;检索与在 URI 中出现的 XUID 相关的组名字对象由指定的广播用户的计数。
  
 <a id="ID4EHC"></a>
 
