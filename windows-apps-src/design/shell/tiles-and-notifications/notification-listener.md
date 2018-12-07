@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 通知侦听器, usernotificationlistener, 文档, 访问通知
 ms.localizationpriority: medium
-ms.openlocfilehash: ad17f4a6f568bcd10d03d7fa07c9dadd24f2f75f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: de1032eb3d0d364a62beff0a1af8f84240c11d87
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755273"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8807459"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知侦听器：访问所有通知
 
@@ -91,7 +91,7 @@ switch (accessStatus)
 }
 ```
 
-用户随时可以通过 Windows“设置”撤销访问权限。 因此，应用始终应在执行使用通知侦听器的代码之前通过 [GetAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus) 方法检查访问权限状态。 如果用户撤销访问权限，API 将在不发出提示的情况下失败，而不引发异常（例如，用于获取所有通知的 API 将只返回空列表）。
+用户随时可以通过 Windows“设置”撤销访问权限。 因此，你的应用应始终在执行使用通知侦听器的代码之前检查通过[GetAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus)方法的访问权限状态。 如果用户撤销访问权限，API 将在不发出提示的情况下失败，而不引发异常（例如，用于获取所有通知的 API 将只返回空列表）。
 
 
 ## <a name="access-the-users-notifications"></a>访问用户通知
@@ -277,7 +277,7 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>已添加/已消除的通知的前台事件
 
 > [!IMPORTANT] 
-> 已知问题： 前台事件上最新版本的 Windows 中，将会导致 CPU 循环并之前无法正常工作之前。 不要使用前台事件。 在即将推出更新到 Windows 中，我们将解决此问题。
+> 已知问题： 前台事件将导致 CPU 循环上最新版本的 Windows，并且之前无法正常工作之前的。 不要使用前台事件。 在即将推出更新到 Windows 中，我们将解决此问题。
 
 而不是使用前台事件，使用前面显示的[单进程模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)后台任务的代码。 后台任务还允许你收到的更改事件通知这两个应用已关闭或运行时。
 
@@ -292,6 +292,6 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 ```
 
 
-## <a name="howto-fixdelays-in-the-background-task"></a>如何 fixdelays 后台任务
+## <a name="howto-fixdelays-in-the-background-task"></a>后台任务中如何 fixdelays
 
-测试你的应用，你可能会注意到后台任务有时延迟并不能触发几分钟时间。 若要修复延迟，提示用户多哥对系统设置-> 系统-> 电池-> 应用的电池使用情况，在列表中找到你的应用、 选中，然后将其设置为"始终允许在后台运行"。此后，后台任务应该始终触发内收到通知后一秒。
+测试你的应用，你可能会注意到后台任务有时延迟并不能触发几分钟时间。 若要修复延迟，提示用户多哥对系统设置-> 系统-> 电池-> 应用的电池使用情况、 列表中找到你的应用、 选择它，并将其设置为"始终允许在后台运行"。在此之后，后台任务应始终触发内收到通知后一秒。
