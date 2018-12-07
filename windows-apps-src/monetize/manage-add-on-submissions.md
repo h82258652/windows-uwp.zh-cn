@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 45fc2274ac22eee4a4c249397f25c1b0405cb856
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8753226"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8784621"
 ---
 # <a name="manage-add-on-submissions"></a>管理加载项提交
 
@@ -24,7 +24,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 ## <a name="methods-for-managing-add-on-submissions"></a>管理加载项提交的方法
 
-使用以下方法获取、创建、更新、提交或删除加载项提交。 你可以使用这些方法之前，该加载项必须已存在于你的合作伙伴中心帐户中。 通过[定义其产品类型和产品 ID](../publish/set-your-add-on-product-id.md)或中所述[管理加载项](manage-add-ons.md)使用的 Microsoft 应用商店提交 API 方法，你可以在合作伙伴中心中创建加载项。
+使用以下方法获取、创建、更新、提交或删除加载项提交。 你可以使用这些方法之前，该加载项必须已存在于你的合作伙伴中心帐户。 通过[定义其产品类型和产品 ID](../publish/set-your-add-on-product-id.md)或中所述[管理加载项](manage-add-ons.md)使用的 Microsoft 应用商店提交 API 方法，你可以在合作伙伴中心中创建加载项。
 
 <table>
 <colgroup>
@@ -79,7 +79,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 若要创建加载项的提交，请遵循此过程。
 
-1. 如果尚未不执行此操作，完整必备条件中所述[创建使用 Microsoft Store 服务和管理提交](create-and-manage-submissions-using-windows-store-services.md)，包括将 Azure AD 应用程序与你的合作伙伴中心帐户相关联并获取客户端 ID 和密钥。 你只需执行此操作一次；有了客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。  
+1. 如果尚未不执行此操作，完整必备条件中所述[创建使用 Microsoft Store 服务和管理提交](create-and-manage-submissions-using-windows-store-services.md)，包括将 Azure AD 应用程序与你的合作伙伴中心帐户相关联并获取你的客户端 ID 和密钥。 你只需执行此操作一次；有了客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。  
 
 2. [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 在 Microsoft Store 提交 API 中，必须将此访问令牌传递给相关方法。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
@@ -243,7 +243,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 | status  | 字符串  |  提交的状态。 这可以是以下值之一： <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | 对象  |  包含有关提交状态的附加详细信息的[状态详细信息资源](#status-details-object)，其中包括任何错误的相关信息。 |
 | fileUploadUrl           | 字符串  | 用于为提交上载任何程序包的共享访问签名 (SAS) URI。 如果要为提交添加新的程序包，请将包含这些程序包的 ZIP 存档上载到此 URI。 有关详细信息，请参阅[创建加载项提交](#create-an-add-on-submission)。  |
-| friendlyName  | 字符串  |  在合作伙伴中心中所示的提交的友好名称。 当你创建提交时，系统会为你生成此值。  |
+| friendlyName  | 字符串  |  友好名称的提交中，在合作伙伴中心中所示。 当你创建提交时，系统会为你生成此值。  |
 
 <span id="listing-object" />
 

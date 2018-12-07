@@ -4,22 +4,22 @@ description: 从 .NET Framework 4.5 开始，你可以使用托管代码创建�
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 ms.date: 12/04/2018
 ms.topic: article
-keywords: windows 10, uwp
-ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 7dde2fb0411686294ebb8abc17192b2e45c61d7a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+keywords: windows 10, uwp
+ms.localizationpriority: medium
+ms.openlocfilehash: b4f5a2de5c3fa5564b4e4389cfc0806fd5d2844f
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736492"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8807079"
 ---
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>使用 C# 和 Visual Basic 创建 Windows 运行时组件
 从.NET Framework 4.5 开始，你可以使用托管的代码来创建你自己的 Windows 运行时类型并将它们打包在 Windows 运行时组件中。 你可以在 c + +、 JavaScript、 Visual Basic 或 C# 编写的通用 Windows 平台 (UWP) 应用中使用你的组件。 本主题概述了用于创建组件，规则，并讨论了.NET Framework 支持的 Windows 运行时的某些方面。 一般情况下，该支持设计为对 .NET Framework 程序员透明可见。 但是，在你创建要与 JavaScript 或 C++ 一起使用的组件时，需要意识到这些语言支持 Windows 运行时的方法差异。
 
-如果你要在 Visual Basic 或 C# 编写的 UWP 应用中仅创建使用组件，并且该组件不包含 UWP 控件，然后 onsider 使用**类库**模板而不**Windows 运行时组件**项目模板在 Microsoft Visual Studio。 简单类库所受限制较少。
+如果你要创建的组件使用仅在 UWP 应用中编写的 Visual Basic 或 C# 中，并且该组件不包含 UWP 控件，然后 onsider 使用**类库**模板而不**Windows 运行时组件**项目模板在 Microsoft Visual Studio。 简单类库所受限制较少。
 
 ## <a name="declaring-types-in-windows-runtime-components"></a>声明 Windows 运行时组件中的类型
 
@@ -27,11 +27,11 @@ ms.locfileid: "8736492"
 
 在外部，类型成员仅可以为其参数公开 Windows 运行时类型并返回值。 下表介绍在从 Windows 运行时组件公开的.NET Framework 类型上的限制。
 
-- 组件中的所有公共类型和成员的字段、参数和返回值必须是 Windows 运行时类型。 此限制包括由 Windows 运行时本身提供的类型以及创作 Windows 运行时类型。 它还包括许多 .NET Framework 类型。 这些类型包括属于.NET Framework 提供自然使用 Windows 运行时在托管代码中的支持&mdash;你的代码看起来使用熟悉的.NET Framework 类型，而不是基本的 Windows 运行时类型。 例如，你可以使用.NET Framework 基元类型，例如**Int32**和**双精度**、 某些基本类型，例如**DateTimeOffset**和**Uri**，以及一些常用的泛型接口类型，例如**IEnumerable&lt;T&gt; ** (IEnumerable (Of T) 在 Visual Basic) 和**IDictionary&lt;TKey，TValue&gt;**。 请注意，这些泛型类型的类型参数必须是 Windows 运行时类型。 这将在本主题后面的部分[Windows 运行时类型传递到托管代码](#passing-windows-runtime-types-to-managed-code)和[托管的 Windows 运行时类型传递](#passing-managed-types-to-the-windows-runtime)，进行讨论。
+- 组件中的所有公共类型和成员的字段、参数和返回值必须是 Windows 运行时类型。 此限制包括由 Windows 运行时本身提供的类型以及创作 Windows 运行时类型。 它还包括许多 .NET Framework 类型。 这些类型包括属于.NET Framework 提供自然使用 Windows 运行时在托管代码中的支持&mdash;你的代码看起来使用熟悉的.NET Framework 类型，而不是基本的 Windows 运行时类型。 例如，你可以使用.NET Framework 基元类型，例如**Int32**和**双精度**，例如**DateTimeOffset**和**Uri**，某些基本类型和一些常用的泛型接口类型，如**IEnumerable&lt;T&gt; ** (IEnumerable (Of T) 在 Visual Basic) 和**IDictionary&lt;TKey，TValue&gt;**。 请注意，这些泛型类型的类型参数必须是 Windows 运行时类型。 这将在本主题后面的部分[Windows 运行时类型传递到托管代码](#passing-windows-runtime-types-to-managed-code)和[托管的 Windows 运行时类型传递](#passing-managed-types-to-the-windows-runtime)，讨论。
 
 - 公共类和接口可以包含方法、属性和事件。 你可以为事件声明委托或使用**EventHandler&lt;T&gt;** 委托。 公共类或接口无法：
     - 具有泛型性。
-    - 实现接口的不是 Windows 运行时接口 （但是，可以创建自己的 Windows 运行时接口并实现它们）。
+    - 实现接口的不是 Windows 运行时接口 （但是，你可以创建自己的 Windows 运行时接口并实现它们）。
     - 从 Windows 运行时，例如**System.Exception**和**System.EventArgs**中不存在的类型派生。
 
 - 所有公共类型必须具有匹配程序集名的根命名空间，并且程序集名不得以“Windows”开头。
@@ -39,11 +39,11 @@ ms.locfileid: "8736492"
     > **提示**。 默认情况下，Visual Studio 项目具有匹配程序集名的命名空间名称。 在 Visual Basic 中，此默认命名空间的命名空间声明不会显示在代码中。
 
 - 公共结构无法具有公共字段以外的任何成员，并且这些字段必须是值类型或字符串。
-- 公共类必须是 **sealed**（在 Visual Basic 中是 **NotInheritable**）。 如果编程模型要求多态性，你可以创建公共接口，并且必须为多形性的类上实现该接口。
+- 公共类必须是 **sealed**（在 Visual Basic 中是 **NotInheritable**）。 如果编程模型要求多态性，你可以创建公共接口，然后必须为多形性的类上实现该接口。
 
 ## <a name="debugging-your-component"></a>调试组件
 
-如果你的 UWP 应用和组件均通过托管代码生成，然后你可以调试这两个在同一时间。
+如果你的 UWP 应用和组件均通过托管代码生成，然后你可以调试两者在同一时间。
 
 如果要作为使用 c + + 的 UWP 应用的一部分测试你的组件，你可以同时调试托管代码和本机代码。 默认情况下仅调试本机代码。
 
@@ -62,16 +62,16 @@ ms.locfileid: "8736492"
 4.  在托管代码中设置断点，并像往常一样调试。
 
 ## <a name="passing-windows-runtime-types-to-managed-code"></a>将 Windows 运行时类型传递到托管代码
-如前文所述[Windows 运行时组件中的声明类型](#declaring-types-in-windows-runtime-components)部分，某些.NET Framework 类型可以显示在公共类成员的签名。 这是支持 .NET Framework 在托管代码中自然使用 Windows 运行时的一部分。 它包含基元类型以及某些类和接口。 使用组件时从 JavaScript 或 c + + 代码，务必了解你的.NET Framework 类型向调用方的显示方式。 有关使用 JavaScript 的示例，请参阅[演练：使用 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。 本部分讨论常用类型。
+如前文所述部分[声明 Windows 运行时组件中的类型](#declaring-types-in-windows-runtime-components)，某些.NET Framework 类型可以显示在公共类成员的签名。 这是支持 .NET Framework 在托管代码中自然使用 Windows 运行时的一部分。 它包含基元类型以及某些类和接口。 从 JavaScript 或 c + + 代码使用组件时，务必了解你的.NET Framework 类型向调用方的显示方式。 有关使用 JavaScript 的示例，请参阅[演练：使用 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。 本部分讨论常用类型。
 
 在.NET Framework 中，基元类型，例如**Int32**结构具有许多有用的属性和方法，例如**TryParse**方法。 相比之下，Windows 运行时中的基元类型和结构则仅拥有字段。 在将这些类型传递到托管代码时，它们显示为 .NET Framework 类型，并且你可以像往常一样使用 .NET Framework 类型的属性和方法。 下表总结了在 IDE 中自动进行的替换：
 
--   Windows 运行时基元**Int32**、 **Int64**、**单个**、**双精度**、**布尔值**、**字符串**（不可变的 Unicode 字符集合）、**枚举**、 **UInt32**、 **UInt64**，以及**Guid**，在系统命名空间中使用相同的名称的类型。
+-   Windows 运行时基元**Int32**、 **Int64**、**单个**、**双精度**、**布尔值**、**字符串**（不可变的 Unicode 字符集合）、**枚举**、 **UInt32**、 **UInt64**，以及**Guid**，在系统命名空间中使用相同名称的类型。
 -   对于**UInt8**，请使用**System.Byte**。
 -   对于**Char16**，请使用**System.Char**。
 -   对于**IInspectable**接口，请使用**System.Object**。
 
-如果 C# 或 Visual Basic 为任意一种类型提供语言关键字，则可以改为使用语言关键字。
+如果 C# 或 Visual Basic 为任意一种类型提供语言关键字，然后可以改为使用语言关键字。
 
 除基元类型外，一些基本的常用 Windows 运行时类型作为其 .NET Framework 等效项显示在托管代码中。 例如，假设 JavaScript 代码使用**Windows.Foundation.Uri**类，并且你想要将其传递到 C# 或 Visual Basic 方法。 在托管代码中的等效类型是.NET Framework **System.Uri**类，并且这是用于方法参数的类型。 你可以在 Windows 运行时类型显示为 .NET Framework 类型时进行区分，因为 Visual Studio 中的 IntelliSense 在编写托管代码时会隐藏 Windows 运行时类型并显示等效的 .NET Framework 类型。 （通常，这两种类型具有相同名称。 但是，请注意， **Windows.Foundation.DateTime**结构显示在托管代码为**System.DateTimeOffset** ，而**非 system.datetime**。）
 
@@ -93,14 +93,14 @@ ms.locfileid: "8736492"
 | Windows.UI.Xaml.Data.PropertyChangedEventHandler | System.ComponentModel.PropertyChangedEventHandler |
 | Windows.UI.Xaml.Data.PropertyChangedEventArgs    | System.ComponentModel.PropertyChangedEventArgs    |
 
-在某种类型实现多个接口时，你可以将所实现的任意接口用作成员的参数类型或返回类型。 例如，你可以传递或返回**字典&lt;int，string&gt; ** (在 Visual Basic 中是**Dictionary （Of Integer，String）** ) 作为**IDictionary&lt;int，string&gt;**， **IReadOnlyDictionary&lt;int，string&gt; **，或者**IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey，TValue&gt;**。
+在某种类型实现多个接口时，你可以将所实现的任意接口用作成员的参数类型或返回类型。 例如，你可以将传递或返回**字典&lt;int，string&gt; ** (在 Visual Basic 中是**Dictionary （Of Integer，String）** ) 作为**IDictionary&lt;int，string&gt;**， **IReadOnlyDictionary&lt;int，string&gt; **，或**IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey，TValue&gt;**。
 
 > [!IMPORTANT]
 > JavaScript 使用最先显示在托管类型实现的接口列表中的接口。 例如，如果你返回**字典&lt;int，string&gt;** 到 JavaScript 代码，它将显示为**IDictionary&lt;int，string&gt;** 无论哪个接口你指定作为返回类型。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
 
-在 Windows 运行时中， **IMap&lt;K，V&gt;** 并**IMapView&lt;K，V&gt;** 使用 IKeyValuePair 进行迭代。 当将它们传递到托管代码时，它们显示为**IDictionary&lt;TKey，TValue&gt;** 并**IReadOnlyDictionary&lt;TKey，TValue&gt;**，所以自然而然地使用**System.Collections.Generic.KeyValuePair&lt;TKey，TValue&gt;** 枚举它们。
+在 Windows 运行时中， **IMap&lt;K，V&gt;** 并**IMapView&lt;K，V&gt;** 使用 IKeyValuePair 进行迭代。 当你将它们传递到托管代码时，它们显示为**IDictionary&lt;TKey，TValue&gt;** 并**IReadOnlyDictionary&lt;TKey，TValue&gt;**，所以自然而然地使用**System.Collections.Generic.KeyValuePair&lt;TKey，TValue&gt;** 枚举它们。
 
-接口在托管代码中的显示方式影响实现这些接口的类型的显示方式。 例如， **PropertySet**类实现**IMap&lt;K，V&gt;**，它在托管代码中显示**IDictionary&lt;TKey，TValue&gt;**。 **PropertySet**显示为好像实现**IDictionary&lt;TKey，TValue&gt;** 而不是**IMap&lt;K，V&gt;**，所以在托管代码中它似乎具有**Add**方法，其行为类似于**Add**方法在.NET Framework 字典。 它不会显示为具有**Insert**方法。 你可以查看本主题中的示例[演练： 在 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
+接口在托管代码中的显示方式影响实现这些接口的类型的显示方式。 例如， **PropertySet**类实现**IMap&lt;K，V&gt;**，它在托管代码中显示**IDictionary&lt;TKey，TValue&gt;**。 **PropertySet**显示为好像实现**IDictionary&lt;TKey，TValue&gt;** 而不是**IMap&lt;K，V&gt;**，所以在托管代码中它似乎具有**Add**方法，其行为类似于**Add**方法在.NET Framework 字典。 它不会显示为具有**Insert**方法。 你可以看到此主题中的示例[演练： 在 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
 
 ## <a name="passing-managed-types-to-the-windows-runtime"></a>将托管的类型传递到 Windows 运行时
 
@@ -108,7 +108,7 @@ ms.locfileid: "8736492"
 
 ## <a name="overloaded-methods"></a>重载的方法
 
-在 Windows 运行时中，可重载方法。 但是，如果声明多个具有相同数量的参数的重载，你必须为这些重载之一应用[**修饰**](/uwp/api/windows.foundation.metadata.defaultoverloadattribute)属性。 该重载是唯一能够通过 JavaScript 调用的重载。 例如，在以下代码中，接受 **int**（在 Visual Basic 中是 **Integer**）的重载是默认重载。
+在 Windows 运行时中，可重载方法。 但是，如果你声明多个具有相同数量的参数的重载，你必须向这些重载之一应用[**Windows.Foundation.Metadata.DefaultOverloadAttribute**](/uwp/api/windows.foundation.metadata.defaultoverloadattribute)属性。 该重载是唯一能够通过 JavaScript 调用的重载。 例如，在以下代码中，接受 **int**（在 Visual Basic 中是 **Integer**）的重载是默认重载。
 
 ```csharp
 public string OverloadExample(string s)
@@ -140,7 +140,7 @@ End Function
 
 ## <a name="implementing-istringable"></a>实现 IStringable
 
-从 Windows 8.1 开始，Windows 运行时包括**IStringable**接口，其方法**IStringable.ToString**，可提供由**Object.ToString**提供相媲美的基本格式支持。 如果你选择 Windows 运行时组件中导出的公共托管类型中实现**IStringable** ，将应用以下限制：
+从 Windows 8.1 开始，Windows 运行时包括**IStringable**接口，其方法**IStringable.ToString**，可提供由**Object.ToString**提供相媲美的基本格式支持。 如果你选择中的 Windows 运行时组件中导出的公共托管类型实现**IStringable** ，将应用以下限制：
 
 -   你可以仅在"类实现"关系，如 C# 中的以下代码中定义**IStringable**接口：
 
@@ -154,10 +154,10 @@ End Function
     Public Class NewClass : Implements IStringable
     ```
 
--   不能在接口上实现**IStringable** 。
--   不能声明为属于类**IStringable**参数。
+-   你不能在接口上实现**IStringable** 。
+-   你不能参数声明为属于类**IStringable**。
 -   **IStringable**不能是方法、 属性或字段的返回类型。
--   通过使用以下方法定义，不能隐藏**IStringable**实现从基类：
+-   不能通过使用以下方法定义隐藏**IStringable**实现从基类：
 
     ```cs
     public class NewClass : IStringable
@@ -169,18 +169,18 @@ End Function
     }
     ```
 
-    相反， **IStringable.ToString**实现必须始终重写基类实现。 你可以仅通过强类型的类实例上调用**ToString**实现来隐藏。
+    相反， **IStringable.ToString**实现必须始终重写基类实现。 你可以仅通过在强类型的类实例上调用**ToString**实现来隐藏。
 
 > [!NOTE]
-> 在许多情况下，在托管类型实现**IStringable**或隐藏其**ToString**实现从本机代码调用会产生意外的行为。
+> 许多情况下，对实现**IStringable**或隐藏其**ToString**实现的托管类型从本机代码调用会产生意外的行为。
 
 ## <a name="asynchronous-operations"></a>异步操作
 
 若要在组件中实现一种异步方法，将"Async"添加到方法名称的末尾并返回一个表示异步操作的 Windows 运行时接口： **IAsyncAction**、 **IAsyncActionWithProgress&lt;TProgress&gt;**， **IAsyncOperation&lt;TResult&gt;**，或**IAsyncOperationWithProgress&lt;TResult，TProgress&gt;**。
 
-你可以使用.NET Framework 任务 ([**任务**](/dotnet/api/system.threading.tasks.task)类和泛型[**任务&lt;TResult&gt;**](/dotnet/api/system.threading.tasks.task-1)类) 实现异步方法。 你必须返回表示操作正在运行，例如从 C# 或 Visual Basic 编写的异步方法返回的任务或从[**Task.Run**](/dotnet/api/system.threading.tasks.task.run)方法返回的任务的任务。 如果你使用构造函数创建任务，必须在返回它之前调用其 [Task.Start](/dotnet/api/system.threading.tasks.task.start) 方法。
+你可以使用.NET Framework 任务 ([**任务**](/dotnet/api/system.threading.tasks.task)类和泛型[**任务&lt;TResult&gt;**](/dotnet/api/system.threading.tasks.task-1)类) 实现异步方法。 你必须返回表示正在进行的操作，例如从 C# 或 Visual Basic 编写的异步方法返回的任务或从[**Task.Run**](/dotnet/api/system.threading.tasks.task.run)方法返回的任务的任务。 如果你使用构造函数创建任务，必须在返回它之前调用其 [Task.Start](/dotnet/api/system.threading.tasks.task.start) 方法。
 
-使用的付款方式`await`(`Await`在 Visual Basic) 需要`async`关键字 (`Async`在 Visual Basic 中)。 如果公开 Windows 运行时组件中的此类的方法，应用`async`将传递到**Run**方法的委托的关键字。
+使用的方法`await`(`Await`在 Visual Basic) 需要`async`关键字 (`Async`在 Visual Basic 中)。 如果公开 Windows 运行时组件中的此类的方法，应用`async`将传递到**Run**方法的委托的关键字。
 
 对于不支持取消和进度报告的异步操作，你可以使用 [WindowsRuntimeSystemExtensions.AsAsyncAction](https://msdn.microsoft.com/library/system.windowsruntimesystemextensions.asasyncaction.aspx) 或 [AsAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779745.aspx) 扩展方法来在相应的接口中打包任务。 例如，以下代码通过使用实现一种异步方法**Task.Run&lt;TResult&gt;** 方法来启动任务。 **AsAsyncOperation&lt;TResult&gt;** 扩展方法将返回为 Windows 运行时异步操作的任务。
 
@@ -207,7 +207,7 @@ Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 End Function
 ```
 
-以下 JavaScript 代码显示了如何通过使用[**WinJS.Promise**](https://msdn.microsoft.com/library/windows/apps/br211867.aspx)对象调用方法。 然后，传递到该方法的函数在完成异步调用时执行。 StringList 参数包含**DownloadAsStringAsync**方法返回的字符串列表，并且该函数会执行任何处理所需的。
+以下 JavaScript 代码显示了如何通过使用[**WinJS.Promise**](https://msdn.microsoft.com/library/windows/apps/br211867.aspx)对象调用方法。 然后，传递到该方法的函数在完成异步调用时执行。 StringList 参数包含**DownloadAsStringAsync**方法中，返回的字符串列表，并且该函数会执行任何处理所需的。
 
 ```javascript
 function asyncExample(id) {
@@ -219,9 +219,9 @@ function asyncExample(id) {
 }
 ```
 
-对于支持取消和进度报告的操作的异步操作，请使用[**AsyncInfo**](/dotnet/api/system.runtime.interopservices.windowsruntime)类生成启动的任务并挂钩的取消和进度报告将任务的取消和进度的功能与相应的 Windows 运行时接口的报告功能。 有关支持取消和进度报告的示例，请参阅[演练：使用 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
+有关异步操作和支持取消和进度报告的操作，使用[**AsyncInfo**](/dotnet/api/system.runtime.interopservices.windowsruntime)类生成启动的任务并挂钩的取消和进度报告将任务的取消和进度的功能与相应的 Windows 运行时接口的报告功能。 有关支持取消和进度报告的示例，请参阅[演练：使用 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
 
-请注意，即使异步方法不支持取消或进度报告，你可以使用**AsyncInfo**类的方法。 如果你使用 Visual Basic lambda 函数或 C# 匿名方法，不提供令牌参数，并[**IProgress&lt;T&gt;**](https://msdn.microsoft.com/library/hh138298.aspx)接口。 如果你使用 C# lambda 函数，则提供令牌参数，但忽略它。 上一示例中，使用了 AsAsyncOperation&lt;TResult&gt;方法，如下所示，当你使用[**AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken，Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/hh779740.aspx)) 方法改为重载。
+请注意，即使异步方法不支持取消或进度报告，你可以使用**AsyncInfo**类的方法。 如果你使用 Visual Basic lambda 函数或 C# 匿名方法，不提供令牌参数，并[**IProgress&lt;T&gt;**](https://msdn.microsoft.com/library/hh138298.aspx)接口。 如果你使用 C# lambda 函数，则提供令牌参数，但忽略它。 上一示例中，使用了 AsAsyncOperation&lt;TResult&gt;方法，如下所示，当你使用[**AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken，Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/hh779740.aspx)) 方法重载。
 
 ```csharp
 public static IAsyncOperation<IList<string>> DownloadAsStringsAsync(string id)
@@ -246,7 +246,7 @@ Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 End Function
 ```
 
-如果你创建一种异步方法，可以选择支持取消或进度报告，请考虑添加没有取消令牌参数的重载或者**IProgress&lt;T&gt;** 接口。
+如果你创建可以选择支持取消或进度报告的异步方法，请考虑添加不具有取消令牌参数的重载或**IProgress&lt;T&gt;** 接口。
 
 ## <a name="throwing-exceptions"></a>引发异常
 

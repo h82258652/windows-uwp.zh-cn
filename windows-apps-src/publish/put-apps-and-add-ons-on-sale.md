@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c844c37bab8a135468d74558e8dc053b18d48cc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735587"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794558"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>打折出售应用和加载项
 
-你还可以通过限时折扣在 Microsoft Store 中促销你的应用或加载项。 可以选择以更低的价格段或基于百分比的折扣提供产品。 并且，你可以选择是否要将促销提供给每位用户，或使其独占的产品/服务的客户拥有其他产品。
+你还可以通过限时折扣在 Microsoft Store 中促销你的应用或加载项。 可以选择以更低的价格段或基于百分比的折扣提供产品。 并且，你可以选择是否要将促销提供给每位用户，或使它的独占产品/服务拥有其他产品的客户。
 
 > [!NOTE]
 > 订阅加载项不支持促销价格。
@@ -25,7 +25,7 @@ ms.locfileid: "8735587"
 将产品进行促销后，客户将能够在所选时间段内以更低价格购买该产品。 如果将价格降为**免费**，客户可以在促销期间免费下载产品。
 
 > [!IMPORTANT]
-> 促销价格将仅显示给你在 windows 10 设备，包括 Xbox One 上的客户。 仅向所有者的其他产品提供的销售仅向 Windows 10 版本 1607年或更高版本的客户显示。
+> 促销价格将仅显示给你在 windows 10 设备，包括 Xbox One 上的客户。 仅向所有者的其他产品提供的销售仅显示给 Windows 10 版本 1607年或更高版本上的客户。
 > 
 > 在其他操作系统上，客户看到的是应用或加载项的常规价格，将无法以促销价进行购买。 你始终可以通过在新提交中选择其他价格区间来更改价格，但该价格不以限时促销的形式显示。
 

@@ -1,22 +1,22 @@
 ---
-description: 在 Microsoft Store 分析 API 中使用此方法，若要下载的 Xbox One 游戏中错误的 CAB 文件。
+description: 在 Microsoft Store 分析 API 中使用此方法来下载你的 Xbox One 游戏中的错误的 CAB 文件。
 title: 下载你的 Xbox One 游戏中的错误的 CAB 文件
 ms.date: 11/06/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下载 CAB
 ms.localizationpriority: medium
 ms.openlocfilehash: 736219533a254e6380c10600e97f707f15e37de6
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729834"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8807010"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-xbox-one-game"></a>下载你的 Xbox One 游戏中的错误的 CAB 文件
 
 在 Microsoft Store 分析 API 中使用此方法，可下载与已引入 Xbox 开发人员门户 (XDP) 通过在 Xbox One 游戏中的特定错误相关联，可在 XDP 分析合作伙伴中心仪表板的 CAB 文件。 此方法只能下载过去 30 天内发生的错误的 CAB 文件。
 
-你可以使用此方法之前，你都必须首先使用[获取 Xbox One 游戏中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)的方法来检索想要下载的 CAB 文件的 ID。
+你可以使用此方法之前，你都必须首先使用[获取你的 Xbox One 游戏中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)的方法来检索想要下载的 CAB 文件的 ID。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -70,4 +70,4 @@ Authorization: Bearer <your access token>
 * [使用 Microsoft Store 服务访问分析数据](access-analytics-data-using-windows-store-services.md)
 * [获取错误报告数据在 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)
 * [获取游戏在 Xbox One 中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)
-* [获取 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)
+* [获取你的 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)

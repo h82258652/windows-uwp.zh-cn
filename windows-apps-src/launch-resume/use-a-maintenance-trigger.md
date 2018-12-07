@@ -11,11 +11,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 87df67c480c18ef2c75a9c63d538f0107908ca10
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8758747"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787933"
 ---
 # <a name="use-a-maintenance-trigger"></a>使用维护触发器
 
@@ -36,7 +36,7 @@ ms.locfileid: "8758747"
 创建新的 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 对象。 第二个参数 *OneShot* 指定维护任务是只运行一次还是继续定期运行。 如果 *OneShot* 设置为 true，则第一个参数 (*FreshnessTime*) 会指定在计划后台任务之前需等待的分钟数。 如果 *OneShot* 设置为 false，则 *FreshnessTime* 会指定后台任务运行的频率。
 
 > [!NOTE]
-> 如果*FreshnessTime*设置为少于 15 分钟，在尝试注册后台任务时，会引发异常。
+> 如果*FreshnessTime*设置为少于 15 分钟，在尝试注册后台任务时将引发异常。
 
 此示例代码创建运行一小时一次的触发器。
 

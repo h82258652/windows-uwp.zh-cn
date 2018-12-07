@@ -7,11 +7,11 @@ keywords: windows 10，uwp，教育版
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
 ms.openlocfilehash: 7696cd785b4a8720f6eefb7bc897d13ffb0c7115
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738673"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789141"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>开发通用 Windows 应用教育版
 ![参加测验应用屏幕截图](images/take-a-test-screen-small.png)

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
 ms.openlocfilehash: c0df06458bf70599be657fe2812b2fb3e2b44ed6
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745979"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794473"
 ---
 # <a name="make-your-app-localizable"></a>对应用进行可本地化处理
 
@@ -60,7 +60,7 @@ ms.locfileid: "8745979"
 | The task could not be synchronized.        | Die Aufgabe konnte nicht synchronisiert werden.  |
 | The document could not be synchronized.    | Das Dokument konnte nicht synchronisiert werden. |
 
-在另一个示例中，考虑语句"提醒我在{0}分钟后。" “minute(s)”适用于英语，但其他语言可能会使用不同的术语。 例如，波兰语使用“minuta”、“minuty”或“minut”，具体取决于上下文。
+在另一个示例中，考虑语句"提醒我在{0}分钟。" “minute(s)”适用于英语，但其他语言可能会使用不同的术语。 例如，波兰语使用“minuta”、“minuty”或“minut”，具体取决于上下文。
 
 若要解决此问题，应本地化整个语句，而不应只本地化单个字词。 这么做看似增加了额外工作量且是个不明智的解决方案，但其实是最佳解决方案，原因如下：
 

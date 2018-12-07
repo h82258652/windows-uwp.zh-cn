@@ -1,22 +1,22 @@
 ---
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
-description: 在 Microsoft Store 提交 API 中使用此方法，可检索注册到你的合作伙伴中心帐户的所有应用相关的信息。
+description: 在 Microsoft Store 提交 API 中使用此方法可检索注册到你的合作伙伴中心帐户的所有应用相关的信息。
 title: 获取所有应用
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c909e707d25e4add534ce89319abe71c2557b59
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8740248"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782551"
 ---
 # <a name="get-all-apps"></a>获取所有应用
 
 
-在 Microsoft Store 提交 API 中使用此方法，可检索注册到你的合作伙伴中心帐户的所有应用的数据。
+在 Microsoft Store 提交 API 中使用此方法可检索注册到你的合作伙伴中心帐户的所有应用的数据。
 
 ## <a name="prerequisites"></a>先决条件
 

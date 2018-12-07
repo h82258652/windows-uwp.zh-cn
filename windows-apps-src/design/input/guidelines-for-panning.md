@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 340289c16cfd9c63f578c63827b1c0b35162cdfd
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756308"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8783634"
 ---
 # <a name="guidelines-for-panning"></a>平移指南
 
@@ -32,7 +32,7 @@ ms.locfileid: "8756308"
 
 -   显示平移指示器和滚动条以提供位置和大小提示。如果你提供自定义导航功能，则隐藏它们。
 
-    **注意**与标准滚动条，平移指示器是纯粹用于提供信息性。 它们并不会向输入设备显示，因此无法采用任何方式对它们进行操作。
+    **注意**与标准滚动条，平移指示器是纯粹用于提供信息。 它们并不会向输入设备显示，因此无法采用任何方式对它们进行操作。
 
      
 

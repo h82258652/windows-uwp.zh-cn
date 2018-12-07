@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 约会, 日历
 ms.localizationpriority: medium
 ms.openlocfilehash: 805383d243008f839b04c98906edd3beb52d581a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732561"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8808522"
 ---
 # <a name="manage-appointments"></a>管理约会
 
@@ -282,7 +282,7 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**注意**为 Windows Phone 应用商店应用， [**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync)函数一样[**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) ，显示的用于添加约会的对话框都可进行编辑。
+**注意**为 Windows Phone 应用商店应用， [**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync)函数一样[**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync)该中显示的用于添加约会的对话框都可进行编辑。
 
 ## <a name="replace-an-appointment-in-the-users-calendar"></a>在用户的日历中替换约会
 

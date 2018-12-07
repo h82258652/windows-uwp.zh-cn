@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下载 CAB
 ms.localizationpriority: medium
 ms.openlocfilehash: a4643f94236e62c46c12fd656ab5ddba5e1e0632
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735817"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787845"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-app"></a>下载应用中错误的 CAB 文件
 
-在 Microsoft Store 分析 API 中使用此方法，可下载与已报告给合作伙伴中心在应用中特定错误相关联的 CAB 文件。 此方法仅可以下载过去 30 天内发生的应用错误的 CAB 文件。 下载 CAB 文件还可以在合作伙伴中心中的[运行状况报告](../publish/health-report.md)**故障**部分。
+在 Microsoft Store 分析 API 中使用此方法，可下载与已报告给合作伙伴中心在应用中特定错误相关联的 CAB 文件。 此方法仅可以下载过去 30 天内发生的应用错误的 CAB 文件。 在合作伙伴中心中的[运行状况报告](../publish/health-report.md)的**故障**部分中，还提供下载 CAB 文件。
 
 开始使用此方法之前，你必须使用[获取应用中错误的详细信息](get-details-for-an-error-in-your-app.md)方法来检索你想下载的 CAB 文件的 ID。
 

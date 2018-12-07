@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d960235e73ea9172fb966f227af9440923f3553e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8739709"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8784388"
 ---
 # <a name="file-access-permissions"></a>文件访问权限
 
@@ -22,7 +22,7 @@ ms.locfileid: "8739709"
 在创建新的应用时，默认情况下你可以访问以下文件系统位置：
 
 ### <a name="application-install-directory"></a>应用程序安装目录
-你的应用用户的系统的安装其中的文件夹。
+你的应用用户的系统安装的文件夹。
 
 有两种主要方法访问的文件和文件夹在应用的安装目录：
 
@@ -87,7 +87,7 @@ URI 中的“ms-appx:///”前缀是指应用的安装目录。 你可以在[如
 
 此外，与其他位置不同，你还可以使用一些[用于通用 Windows 平台 (UWP) 应用的 Win32 和 COM](https://msdn.microsoft.com/library/windows/apps/br205757) 和一些 [Microsoft Visual Studio 中的 C/C++ 标准库函数](http://msdn.microsoft.com/library/hh875057.aspx)来访问应用安装目录中的文件。
 
-应用的安装目录是一个只读位置。 不能通过文件选取器获得对安装目录的访问权限。
+应用的安装目录是一个只读位置。 你无法通过文件选取器获得对安装目录的访问。
 
 ### <a name="application-data-locations"></a>应用程序数据位置
 你的应用可以存储数据的文件夹。 在安装你的应用时创建这些文件夹（本地、漫游和临时）。

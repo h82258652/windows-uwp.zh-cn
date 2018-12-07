@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 可追踪的磁贴, 动态磁贴, 可追踪的磁贴通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a43ad803ca4cfe4a7403117c268344d1192d74
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755658"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8806553"
 ---
 # <a name="chaseable-tile-notifications"></a>可追踪的磁贴通知
 
@@ -111,7 +111,7 @@ LaunchActivatedEventArgs 对象有一个属性支持可追踪通知，那就是 
 
 [TileActivatedInfo 对象](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)包含一个名为 [RecentlyShownNotifications](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications) 的属性，其中包含在前 15 分钟内在磁贴上显示的通知的列表。 该列表中的第一项表示磁贴的当前通知，后面的项表示用户在当前通知之前看过的通知。 如果已清除磁贴，则该列表为空。
 
-每个 ShownTileNotificationhas Argumentsproperty。 Argumentsproperty 将初始化与 argumentsstring 从磁贴通知负载，或者，如果负载不包括 argumentsstring。
+每个 ShownTileNotificationhas Argumentsproperty。 Argumentsproperty 将初始化 argumentsstring 从磁贴通知负载，或者，如果负载不包括 argumentsstring。
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs args)

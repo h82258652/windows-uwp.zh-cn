@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d5d9e1b93c9f769a748a6a44d0ed77f5bd3a9da
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749195"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8808652"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>通过后台任务更新动态磁贴
 
@@ -161,7 +161,7 @@ namespace BackgroundTasks
 
 创建 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 以注册你的任务。
 
-> **注意**从 Windows8.1 开始，后台任务注册参数验证注册的时间。 如果有任何注册参数无效，则会返回一个错误。 你的应用必须能够处理后台任务注册失败的情况，例如，使用条件语句检查注册错误，然后使用其他参数值重试失败的注册。
+> **注意**从 Windows8.1 开始，后台任务注册参数在进行验证注册的时间。 如果有任何注册参数无效，则会返回一个错误。 你的应用必须能够处理后台任务注册失败的情况，例如，使用条件语句检查注册错误，然后使用其他参数值重试失败的注册。
  
 
 在应用的主页中，添加 **RegisterBackgroundTask** 方法并在 **OnNavigatedTo** 事件处理程序中进行调用。

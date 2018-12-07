@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f131ad229b4ba22f7fa4652aa302e3596819f206
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732294"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8806477"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows 推送通知服务 (WNS) 概述
  
@@ -51,7 +51,7 @@ Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服�
 
 ### <a name="important-notes"></a>重要说明
 
--   我们不保证应用的通知通道 URI 将始终保持相同。 我们建议应用在每次运行时均请求一个新的通道，并在 URI 更改时更新其服务。 开发人员绝不能修改该通道 URI，而应将其视作一段黑盒字符串。 此时，通道 URI 于 30 天后过期。 如果 windows 10 应用会定期更新其通道在后台，则可以下载适用于 Windows8.1[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?linkid=231476)和重新使用其源代码和/或它所演示的模式。
+-   我们不保证应用的通知通道 URI 将始终保持相同。 我们建议应用在每次运行时均请求一个新的通道，并在 URI 更改时更新其服务。 开发人员绝不能修改该通道 URI，而应将其视作一段黑盒字符串。 此时，通道 URI 于 30 天后过期。 如果 windows 10 应用会定期更新其通道在后台，你可以下载适用于 Windows8.1[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?linkid=231476)并重新使用其源代码和/或它所演示的模式。
 -   云服务和客户端应用之间的接口由你这个开发人员来实现。 我们建议应用使用其自身的服务完成身份验证过程，并通过安全的协议（如 HTTPS）来传输数据。
 -   云服务必须始终确保通道 URI 使用域“notify.windows.com”。 该服务永远不应向任何其他域中的通道推送通知。 如果应用的回调发生了泄露，恶意攻击者可能会将该通道 URI 提交给假冒 WNS。 如果不对域进行检查，你的云服务可能会在你不知情的情况下向此攻击者泄露信息。
 -   如果你的云服务尝试将通知传递到过期通道，WNS 将返回[响应代码 410](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes)。 为响应此代码，你的服务不应再尝试将通知发送到该 URI。
@@ -72,7 +72,7 @@ WNS 身份验证方案通过来自 [OAuth 2.0](http://go.microsoft.com/fwlink/p/
 
 在对 WNS 进行身份验证的过程中，云服务会通过安全套接字层 (SSL) 提交一个 HTTP 请求。 参数以“application/x-www-for-urlencoded”格式提供。 在“client_id”字段中提供你的程序包 SID，并在“client_secret”字段中提供你的密钥。 有关语法的详细信息，请参阅[访问令牌请求](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#access_token_request)参考。
 
-**注意**这是只是一个示例中，你可以成功代码中使用你自己的不剪切和粘贴代码。
+**注意**这是只是一个示例中，你可以在自己的代码中成功使用的不剪切和粘贴代码。
 
  
 
@@ -160,9 +160,9 @@ WNS 对云服务进行身份验证，如果成功，则发送“200 OK”响应�
 ## <a name="push-notifications-and-battery-saver"></a>推送通知和节电模式
 
 
-节电模式可通过限制设备上的后台活动，延长电池使用时间。 Windows 10 允许用户设置节电模式电池电量低于指定的阈值时自动打开。 在节电模式处于打开状态时，将禁用推送消息接收，以节省电量。 但是也有几种例外情况。 以下 windows 10 节电模式设置 （**设置**应用中找到） 允许应用以接收推送通知，即使节电模式处于打开。
+节电模式可通过限制设备上的后台活动，延长电池使用时间。 Windows 10 允许用户设置节电模式电池电量低于指定的阈值时自动打开。 在节电模式处于打开状态时，将禁用推送消息接收，以节省电量。 但是也有几种例外情况。 以下 windows 10 节电模式设置 （**设置**应用中找到） 允许应用接收推送通知，即使节电模式打开。
 
--   **允许在节电模式下接收任何应用的推送通知**：此设置允许所有应用在节电模式处于打开状态时接收推送通知。 请注意，此设置仅适用于 windows 10 桌面版 （家庭版的、 专业版的、 企业版和教育的）。
+-   **允许在节电模式下接收任何应用的推送通知**：此设置允许所有应用在节电模式处于打开状态时接收推送通知。 请注意，此设置仅适用于 windows 10 桌面版 （家庭版、 专业版、 企业版和教育版）。
 -   **始终允许**：此设置允许在节电模式处于打开状态时在后台运行特定应用，包括接收推送通知。 此列表由用户手动维护。
 
 此两种设置的状态无法检查，但可以检查节电模式的状态。 在 windows 10，使用[**EnergySaverStatus**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus)属性检查节电模式状态。 应用也可以使用 [**EnergySaverStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) 事件侦听对节电模式的更改。

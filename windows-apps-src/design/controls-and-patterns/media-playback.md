@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e8ed0c28199e49e9c4be69785a7af5985afae6a2
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745156"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8808542"
 ---
 # <a name="media-player"></a>媒体播放器
 
@@ -97,7 +97,7 @@ Windows 10 入门应用中的媒体播放器。
 ### <a name="set-the-media-source"></a>设置媒体源
 若要播放网络上的文件或嵌入在应用中的文件，请将 [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 属性设置为带有该文件路径的 [MediaSource](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx)。
 
-**提示**若要打开 internet 中的文件，你需要声明你的应用清单 (Package.appxmanifest) 中的**Internet （客户端）** 功能。 有关声明功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/mt270968)。
+**提示**若要打开 internet 中的文件，你需要声明你的应用的清单 (Package.appxmanifest) 中的**Internet （客户端）** 功能。 有关声明功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
  
 
@@ -302,7 +302,7 @@ private DisplayRequest appDisplayRequest = null;
 [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 提供大量属性、方法和事件用于通过 [MediaPlayerElement.MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 属性控制音频和视频播放。 有关属性、方法和事件的完整列表，请参阅 [MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) 参考页。
 
 ### <a name="advanced-media-playback-scenarios"></a>高级媒体播放方案
-对于较复杂的媒体播放方案（如播放一个播放列表、在音频语言之间切换或创建自定义元数据轨），请将 [MediaPlayerElement.Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 设置为 [MediaPlaybackItem](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) 或 [MediaPlaybackList](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx)。 请参阅有关如何启用各种高级的媒体功能的详细信息[媒体播放](https://msdn.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource)页。
+对于较复杂的媒体播放方案（如播放一个播放列表、在音频语言之间切换或创建自定义元数据轨），请将 [MediaPlayerElement.Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 设置为 [MediaPlaybackItem](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) 或 [MediaPlaybackList](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx)。 有关如何启用各种高级的媒体功能，请参阅的详细信息的[媒体播放](https://msdn.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource)页。
 
 ### <a name="enable-full-window-video-rendering"></a>启用全屏视频呈现
 

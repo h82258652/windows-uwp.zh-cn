@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5847553bed563b724bb142f7abe62403fa8ec097
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743341"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8800568"
 ---
 # <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>针对 I/O、设备和应用模型将 Windows 运行时 8.x 移植到 UWP
 
@@ -32,7 +32,7 @@ ms.locfileid: "8743341"
 ## <a name="background-audio"></a>后台音频
 
 
-对于[**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352)属性中， **ForegroundOnlyMedia**和**BackgroundCapableMedia**已弃用适用于 windows 10 应用中。 改用 Windows Phone 应用商店应用模型。 有关详细信息，请参阅[后台音频](https://msdn.microsoft.com/library/windows/apps/mt282140)。
+对于[**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352)属性中，适用于 windows 10 应用弃用**ForegroundOnlyMedia**和**BackgroundCapableMedia** 。 改用 Windows Phone 应用商店应用模型。 有关详细信息，请参阅[后台音频](https://msdn.microsoft.com/library/windows/apps/mt282140)。
 
 ## <a name="detecting-the-platform-your-app-is-running-on"></a>检测正运行你的应用的平台
 
@@ -69,7 +69,7 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 ## <a name="location"></a>位置
 
 
-声明了位置功能在其应用包清单中的应用上运行时 windows 10，则系统将提示最终用户同意。 这是 true 指示应用是否在 Windows Phone 应用商店应用或 windows 10 应用。 因此，如果你的应用显示自己的自定义许可提示，或者如果它提供了一个开/关切换开关，则需要删除它以便仅提示最终用户一次。
+声明了位置功能其应用包清单中的应用上运行时 windows 10，则系统将提示最终用户同意。 这是 true 指示应用是否在 Windows Phone 应用商店应用或 windows 10 应用。 因此，如果你的应用显示自己的自定义许可提示，或者如果它提供了一个开/关切换开关，则需要删除它以便仅提示最终用户一次。
 
  
 

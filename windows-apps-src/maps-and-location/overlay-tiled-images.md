@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 图像, 覆盖
 ms.localizationpriority: medium
 ms.openlocfilehash: 47b9c4335a99e7b0f17da0fb9ddb520cc917e398
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754983"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8808352"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>覆盖地图上的平铺图像
 

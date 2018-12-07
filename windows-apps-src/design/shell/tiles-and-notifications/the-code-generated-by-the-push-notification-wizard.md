@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 957c4cf2e9e9fc4a32327ec29a96019609ebdfe5
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754265"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8806872"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>由推送通知向导生成的代码
  
@@ -207,7 +207,7 @@ function sendNotifications(request) {
 
 sendNotifications 函数发送 toast 通知形式的单一通知。 你还可以使用其他类型的推送通知。
 
-**提示**有关如何获取有关编辑脚本时的帮助的信息，请参阅[为服务器端 JavaScript 启用 IntelliSense](http://go.microsoft.com/fwlink/p/?LinkId=309275)。
+**提示**有关如何获取有关编辑脚本时的帮助信息，请参阅[为服务器端 JavaScript 启用 IntelliSense](http://go.microsoft.com/fwlink/p/?LinkId=309275)。
 
  
 

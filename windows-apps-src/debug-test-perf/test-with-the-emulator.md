@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ee38abfb28aad8d6a3ce073a947580b3df29593
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734109"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8808722"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
 
@@ -64,7 +64,7 @@ RAM
 
 ### <a name="running"></a>Running
 
-若要在仿真器中运行应用，只需从 Visual Studio 中的**运行**下拉菜单中选择的仿真的设备。
+若要在仿真器中运行应用，只需从 Visual Studio 中的**运行**下拉菜单中选择一个模拟的设备。
 
 ![提供模拟器以及分辨率、大小和内存](images/em-list.png)
 
@@ -452,7 +452,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
         -   如果你在同步操作正在进行时单击“取消同步”****，将弹出该卡，并且同步操作的结果会不完整。
     -   “弹出 SD 卡”**** 按钮将更改回“插入 SD 卡”****。
 
-> **注意**手机使用的由于 SD 卡已格式化为 FAT32 文件系统，32 GB 的最大大小。
+> **注意**由于的 SD 卡手机使用格式化为 FAT32 文件系统，32 GB 的最大大小。
 
 读取和写入模拟 SD 卡的速度受到限制以模仿真实速度。 访问 SD 卡的速度慢于访问计算机的硬盘驱动器的速度。
 
@@ -621,7 +621,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 ### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>错误消息：“删除虚拟以太网交换机时失败”
 
-在某些情况下，包括后更新为新 windows 10 外部测试版，与模拟器相关联的虚拟网络交换机可以进入其中不能通过用户界面删除的状态。
+在某些情况下，包括后更新到新 windows 10 外部测试版，与模拟器相关联的虚拟网络交换机可以进入其中不能通过用户界面删除的状态。
 
 若要在此情况下恢复，请在管理员命令提示符下运行“netcfg -d”：`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`。 当命令结束运行时，需要重新启动计算机才能完成恢复过程。
 

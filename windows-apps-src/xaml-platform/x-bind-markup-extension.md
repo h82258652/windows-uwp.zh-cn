@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c0eb1eb798cceb5c7a534c3aed1b8988bd1a42b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8742663"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8786102"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 标记扩展
 
-**注意**有关使用数据的一般信息随 **{x: Bind}** （和 **{x: Bind}** 和 **{Binding}** 之间的全方位比较），在应用中的绑定，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意**有关使用数据的常规信息绑定中你的应用与 **{x: Bind}** （和 **{x: Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
-**{X: Bind}** 标记扩展，用于 windows 10 的新功能-是 **{Binding}** 的替代方法。 **{x: Bind}** 运行在更少的时间和更低的内存比 **{绑定}** 和支持更好的调试。
+**{X: Bind}** 标记扩展，用于 windows 10 的新功能 — 是 **{Binding}** 的替代方法。 **{x: Bind}** 运行在更少的时间和更低的内存比 **{Binding}** 且支持更好的调试。
 
 XAML 编译时，**{x:Bind}** 将转换为从数据源上的某一属性中获取相关值的代码，并将其设置到标记中指定的属性上。 绑定对象可以配置为观察数据源属性值的更改，并基于这些更改自行刷新 (`Mode="OneWay"`)。 该对象也可以配置为将其自己的值的更改推送回源属性 (`Mode="TwoWay"`)。
 
@@ -111,7 +111,7 @@ _注意：C# 样式的强制转换语法较附加属性语法更灵活，是接�
 
 ## <a name="functions-in-binding-paths"></a>绑定路径中的函数
 
-从 Windows10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这是一项强大功能允许在标记中的几个方案的数据绑定。 [函数绑定](../data-binding/function-bindings.md)的详细信息，请参阅。
+从 Windows10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这是一项强大功能启用多个方案在标记中的数据绑定。 [函数绑定](../data-binding/function-bindings.md)的详细信息，请参阅。
 
 ## <a name="event-binding"></a>事件绑定
 
@@ -154,7 +154,7 @@ _注意：C# 样式的强制转换语法较附加属性语法更灵活，是接�
 
 因为 **{x:Bind}** 使用生成的代码来达成目标，所以它在编译时需使用类型信息。 这意味着你无法绑定到预先不知道类型的属性。 因此，不能将 **{x:Bind}** 与 **DataContext** 属性结合使用，因为它为 **Object** 类型，并且还可能会在运行时出现更改。
 
-时使用的数据模板中使用 **{x: Bind}** ，你必须指示要绑定到通过设置**X:datatype**值，在[示例](#examples)部分中所示的类型。 你也可以将类型设置为接口或基类类型，然后按需使用转换，从而编写一个完整的表达式。
+使用时 **{x: Bind}** 数据模板，你必须指示要绑定到通过设置**X:datatype**值，如[示例](#examples)部分中所示的类型。 你也可以将类型设置为接口或基类类型，然后按需使用转换，从而编写一个完整的表达式。
 
 已编译的绑定取决于代码生成。 因此，如果你在资源字典中使用 **{x:Bind}**，则该资源字典需要有一个代码隐藏类。 有关代码示例，请参阅[带有 {x:Bind}](../data-binding/data-binding-in-depth.md#resource-dictionaries-with-x-bind) 的资源字典。
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 751cda36fc58d0e6add9204327a74ec947c9fc53
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8758757"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788090"
 ---
 # <a name="xfieldmodifier-attribute"></a>x:FieldModifier 属性
 
@@ -30,11 +30,11 @@ ms.locfileid: "8758757"
 
 ## <a name="remarks"></a>备注
 
-**x:FieldModifier** 属性的值将随编程语言而变。 有效值为 **private**、**public**、**protected**、**internal** 或 **friend**。 对于 C#、 Microsoft Visual Basic 或 VisualC + + 组件扩展 (C + + / CX)，你可以为提供的字符串值"公共"公共";分析程序不会强制执行此属性值的情况。
+**x:FieldModifier** 属性的值将随编程语言而变。 有效值为 **private**、**public**、**protected**、**internal** 或 **friend**。 对于 C#、 Microsoft Visual Basic 或 VisualC + + 组件扩展 (C + + CX)，你可以为提供字符串值"公共"公共";分析程序不会强制执行此属性值的情况。
 
 **Private** 访问权限是默认设置。
 
 **x:FieldModifier** 仅适合具有 [x:Name 属性](x-name-attribute.md)的元素，因为一旦该名称是公共的，它将用来引用字段。
 
-**注意** **X:classmodifier**或**X:subclass**，Windows 运行时 XAML 不支持。
+**注意** **X:classmodifier**或**X:subclass**Windows 运行时 XAML 不支持。
 

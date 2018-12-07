@@ -7,20 +7,20 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, 市场活动, 推广
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ece97d2e2cf96d2905902fd563f1de9027aa64a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8752740"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8786991"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>为你的应用创建广告市场活动
 
-你可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)，从而有助于推广你的应用并扩大用户群中创建广告市场活动。 默认情况下，我们将选择目标受众为你的广告根据你在合作伙伴中心中的应用的设置，但你也可以选择定义你自己的受众。 你还可以使用一组默认的广告模板，或者上载你自己的广告设计。 有关广告市场活动的更多详细信息，请参阅[有关广告市场活动的常见问题](common-questions.md)。
+你可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)有助于推广你的应用并扩大其用户群中创建广告市场活动。 默认情况下，我们将选择目标受众为你的广告根据你在合作伙伴中心，应用的设置，但你也可以选择定义你自己的受众。 你还可以使用一组默认的广告模板，或者上载你自己的广告设计。 有关广告市场活动的更多详细信息，请参阅[有关广告市场活动的常见问题](common-questions.md)。
 
 你可以仅为通过[应用认证过程](the-app-certification-process.md) 的最终发布阶段的应用创建广告市场活动。
 
 > [!NOTE]
-> 文档的此部分介绍了如何在合作伙伴中心中创建广告市场活动。 或者，你可以使用 [Microsoft Store 促销 API](../monetize/run-ad-campaigns-using-windows-store-services.md) 以编程方式创建和管理市场活动。
+> 文档的此部分介绍如何在合作伙伴中心中创建广告市场活动。 或者，你可以使用 [Microsoft Store 促销 API](../monetize/run-ad-campaigns-using-windows-store-services.md) 以编程方式创建和管理市场活动。
 
 ## <a name="instructions"></a>说明
 

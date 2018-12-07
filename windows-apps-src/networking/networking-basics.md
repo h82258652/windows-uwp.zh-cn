@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 173164106e068e3fa081c8d7ddf7838d5b3d18db
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747087"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788381"
 ---
 # <a name="networking-basics"></a>网络基础知识
 针对任何支持网络的应用的必做事项。
@@ -464,7 +464,7 @@ using Windows::Storage::Streams;
 如何在通过网络进行连接时提供身份验证凭据。
 
 ### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>通过 StreamSocket 类提供客户端证书
-[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 类支持使用 SSL/TLS 应用来验证应用正在与其交互的服务器。 在某些情况下，应用还需要使用 TLS 客户端证书对服务器进行自身验证。 在 windows 10，你可以[**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893)设置的对象 （这必须在启动 TLS 握手之前） 上提供客户端证书。 如果服务器请求客户端证书，Windows 将通过提供的证书做出响应。
+[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 类支持使用 SSL/TLS 应用来验证应用正在与其交互的服务器。 在某些情况下，应用还需要使用 TLS 客户端证书对服务器进行自身验证。 在 windows 10，你可以在[**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893)设置的对象 （这必须在启动 TLS 握手之前） 上提供客户端证书。 如果服务器请求客户端证书，Windows 将通过提供的证书做出响应。
 
 下面是演示如何实现此目的的代码段：
 

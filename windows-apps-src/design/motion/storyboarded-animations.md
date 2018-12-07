@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 920ff8e295959ad6ea66cdb3b673217ff19b89e2
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738563"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789790"
 ---
 # <a name="storyboarded-animations"></a>情节提要动画
 
@@ -149,7 +149,7 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
 ### <a name="fromtoby-are-nullable"></a>From/To/By 可以为空
 
-我们之前提到过，你可以忽略 **From**、**To** 或 **By**，并因此使用当前非动画化的值作为缺失值的替代值。 动画的 **From**、**To** 或 **By** 属性的类型不能猜测。 例如，[**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) 属性的类型不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)。 而是 **Double** 的 [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)。 并且其默认值为 **null**，而不是 0。 该 **null** 值是动画系统区别你没有特别为 **From**、**To** 或 **By** 属性设置值的方式。 VisualC + + 组件扩展 (C + + / CX) 不具有一种**可为空值**类型，因此它改为使用[**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864) 。
+我们之前提到过，你可以忽略 **From**、**To** 或 **By**，并因此使用当前非动画化的值作为缺失值的替代值。 动画的 **From**、**To** 或 **By** 属性的类型不能猜测。 例如，[**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) 属性的类型不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)。 而是 **Double** 的 [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)。 并且其默认值为 **null**，而不是 0。 该 **null** 值是动画系统区别你没有特别为 **From**、**To** 或 **By** 属性设置值的方式。 VisualC + + 组件扩展 (C + + CX) 不具有**Nullable**类型，因此它改为使用[**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864) 。
 
 ### <a name="other-properties-of-an-animation"></a>动画的其他属性
 

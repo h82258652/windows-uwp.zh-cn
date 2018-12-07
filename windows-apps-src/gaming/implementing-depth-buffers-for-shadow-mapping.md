@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 阴影卷, 深度缓冲区, directx 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 2feecb3080efefb2f9625fd8b66c5b722ad02a45
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8740855"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794460"
 ---
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷
 
@@ -68,7 +68,7 @@ Windows8 添加了深度比较功能为功能级别 9 \_1 和 9 \_3。 现在，
 ## <a name="prerequisites"></a>先决条件
 
 
-应该[准备通用 Windows 平台 (UWP) DirectX 游戏开发的开发人员环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 你还不需要模板，但你将需要 Microsoft Visual Studio2015 构建在本演练中的代码示例。
+应该[准备通用 Windows 平台 (UWP) DirectX 游戏开发的开发人员环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 你还不需要模板，但你将需要 Microsoft Visual Studio2015 生成本演练中的代码示例。
 
 ## <a name="related-topics"></a>相关主题
 

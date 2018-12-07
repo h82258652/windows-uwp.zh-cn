@@ -7,11 +7,11 @@ keywords: windows 10，uwp，后台任务
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a59fe6056661289726fdaa6c2dd26e90d5e3fad
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8742939"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785826"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>创建和注册进程内后台任务
 
@@ -68,7 +68,7 @@ ms.locfileid: "8742939"
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>将你的后台活动代码放置在 OnBackgroundActivated() 中
 
-将你的后台活动代码放在[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)它触发时响应后台触发器。 就像[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)可以视为**OnBackgroundActivated** 。 该方法具有[BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)参数，其中包含**Run**方法提供的所有内容。 例如，在 App.xaml.cs 中：
+将你的后台活动代码放在[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)以它将会触发时响应后台触发器。 就像[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)可以视为**OnBackgroundActivated** 。 该方法具有[BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)参数，其中包含**Run**方法提供的所有内容。 例如，在 App.xaml.cs 中：
 
 ``` cs
 using Windows.ApplicationModel.Background;
@@ -88,7 +88,7 @@ sealed partial class App : Application
 }
 ```
 
-有关的更丰富的**OnBackgroundActivated**示例，请参阅[转换为与其主机应用相同的进程中运行的应用服务](convert-app-service-in-process.md)。
+有关的更丰富的**OnBackgroundActivated**示例，请参阅[将转换应用服务在其托管应用所在的同一进程中运行](convert-app-service-in-process.md)。
 
 ## <a name="handle-background-task-progress-and-completion"></a>处理后台任务进度和完成
 

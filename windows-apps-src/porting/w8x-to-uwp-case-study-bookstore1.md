@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 88a5492116eaf48f72d512a093001a5c3835f0d2
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732846"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789735"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows 运行时 8.x 到 UWP 案例研究：Bookstore1
 
 
-本主题介绍了移植非常简单的通用 8.1 应用到 Windows10Universal Windows 平台 (UWP) 应用的案例研究。 通用 8.1 应用是一种生成 Windows8.1，一个应用程序包和适用于 Windows Phone 8.1 的不同应用包。 借助 windows 10，你可以创建一个应用包，可供客户安装到种类广泛的设备，并且我们将在此案例研究中所执行的操作。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+本主题介绍了移植非常简单的通用 8.1 应用到 Windows10Universal Windows 平台 (UWP) 应用的案例研究。 通用 8.1 应用是一种生成 Windows8.1，一个应用程序包和适用于 Windows Phone 8.1 的不同应用包。 借助 windows 10，你可以创建的单个应用包，可供客户安装到种类广泛的设备，并且我们将在此案例研究中执行的操作。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
 我们将移植的应用包含绑定到视图模型的 **ListBox**。 该视图模型具有显示标题、作者和书籍封面的书籍列表。 书籍封面已将**生成操作**设置为**内容**，并将**复制到输出目录**设置为**不要复制**。
 
@@ -50,7 +50,7 @@ Bookstore1\_81 解决方案是 8.1 通用应用项目，它包含以下项目。
 -   Bookstore1\_81.WindowsPhone。 这是为 Windows Phone 8.1 生成应用包的项目。
 -   Bookstore1\_81.Shared。 这是包含由其他两个项目同时使用的源代码、标记文件以及其他资源的项目。
 
-对于此案例研究，我们针对要支持的设备提供[如果你有通用 8.1 应用](w8x-to-uwp-root.md)中所述的常用选项。 此处的决策很简单： 此应用具有相同的功能，并且具有大部分相同的代码，其 Windows8.1 和 Windows Phone 8.1 形式中。 因此，我们将共享项目 （和其他项目中我们所需要任何其他内容） 的内容移植到面向通用设备系列 （一种可安装到种类最广泛的设备） 的 windows 10。
+对于此案例研究，我们针对要支持的设备提供[如果你有通用 8.1 应用](w8x-to-uwp-root.md)中所述的常用选项。 此处的决策很简单： 此应用具有相同的功能，并且具有大部分相同的代码，其 Windows8.1 和 Windows Phone 8.1 形式中。 因此，我们将共享项目 （和其他项目中我们所需要任何其他内容） 的内容移植到面向通用设备系列 （一种可安装到种类最广泛的设备） windows 10。
 
 可快速完成以下任务：在 Visual Studio 中创建新项目、将文件从 Bookstore1\_81 复制到其中并将已复制的文件包含在新项目中。 首先创建一个新的空白应用程序（Windows 通用）项目。 将它命名为 Bookstore1Universal\_10。 这些是要从 Bookstore1\_81 复制到 Bookstore1Universal\_10 的文件。
 
@@ -62,7 +62,7 @@ Bookstore1\_81 解决方案是 8.1 通用应用项目，它包含以下项目。
 
 **从 Windows 项目中**
 
--   复制 BookstoreStyles.xaml。 我们将使用此证书合适的起始点，因为此文件中的所有资源键将都解析在 windows 10 应用中;不会等效的 WindowsPhone 文件中的一部分。
+-   复制 BookstoreStyles.xaml。 我们会使用此一个作为一个良好的起始点，因为此文件中的所有资源键将都解析在 windows 10 应用中;等效的 WindowsPhone 文件中的一些不会。
 
 编辑你刚刚复制的源代码和标记文件，并将对 Bookstore1\_81 命名空间的任何引用更改为 Bookstore1Universal\_10。 执行此操作的快速方法是使用**在文件中替换**功能。 视图模型中和任何其他强制性代码中都不需要更改任何代码。 但为了更易于查看应用正在运行哪个版本，请将 **Bookstore1Universal\_10.BookstoreViewModel.AppName** 属性返回的值从“BOOKSTORE1\_81”更改为“BOOKSTORE1UNIVERSAL\_10”。
 
@@ -70,17 +70,17 @@ Bookstore1\_81 解决方案是 8.1 通用应用项目，它包含以下项目。
 
 ![初始源代码发生更改的 Windows 10 应用](images/w8x-to-uwp-case-studies/c01-03-desk10-initial-source-code-changes.png)
 
-Windows 10 的初始源代码发生更改应用在桌面设备上运行
+在桌面设备上运行的 windows 10 应用的初始源代码发生更改
 
 ![初始源代码发生更改的 Windows 10 应用](images/w8x-to-uwp-case-studies/c01-04-mob10-initial-source-code-changes.png)
 
-Windows 10 的初始源代码发生更改应用在移动设备上运行
+在移动设备上运行的 windows 10 应用的初始源代码发生更改
 
 视图和视图模型正确地协同工作，并且 **ListBox** 处于运行状态。 我们只需修复样式。 在浅色主题的移动设备中，我们可以看到列表框的边框，但是该边框很容易处于隐藏状态。 并且版式太大，因此我们将更改我们正在使用的样式。 此外，如果我们希望应用看起来像默认状态，应用在桌面设备上运行时应使用浅色。 因此，我们将更改该设置。
 
 ## <a name="universal-styling"></a>通用样式设置
 
-Bookstore1\_81 应用使用两个不同的资源词典 (BookstoreStyles.xaml) 来为 Windows8.1 和 Windows Phone 8.1 操作系统定制其样式。 两个 BookstoreStyles.xaml 文件均未包含 windows 10 应用所需的样式。 但好消息是，我们所需要的实际上比它们中的任意一个都要简单得多。 因此接下来的步骤将主要涉及到删除和简化我们的项目文件和标记。 具体步骤如下。 并且你可以使用本主题顶部的链接下载这些项目，并查看此处和案例研究末尾之间的所有更改结果。
+Bookstore1\_81 应用使用两个不同的资源词典 (BookstoreStyles.xaml) 来为 Windows8.1 和 Windows Phone 8.1 操作系统定制其样式。 两个 BookstoreStyles.xaml 文件均未包含我们的 windows 10 应用所需的样式。 但好消息是，我们所需要的实际上比它们中的任意一个都要简单得多。 因此接下来的步骤将主要涉及到删除和简化我们的项目文件和标记。 具体步骤如下。 并且你可以使用本主题顶部的链接下载这些项目，并查看此处和案例研究末尾之间的所有更改结果。
 
 -   若要缩短项目之间的间距，请在 MainPage.xaml 中查找 `BookTemplate` 数据模板并从根 **Grid** 中删除 `Margin="0,0,0,8"`。
 -   同样在 `BookTemplate` 中，存在对 `BookTemplateTitleTextBlockStyle` 和 `BookTemplateAuthorTextBlockStyle` 的引用。 Bookstore1\_81 将这些键用作了间接寻址，因此单个键在这两个应用中具有不同的实现。 我们不再需要该间接寻址；我们可以直接引用系统样式。 因此使用 `TitleTextBlockStyle` 和 `SubtitleTextBlockStyle` 分别替换这些引用。
@@ -93,11 +93,11 @@ Bookstore1\_81 应用使用两个不同的资源词典 (BookstoreStyles.xaml) �
 
 ![即将完成移植的 Windows 10 应用](images/w8x-to-uwp-case-studies/c01-05-desk10-almost-ported.png)
 
-在桌面设备上运行即将完成移植的 windows 10 应用
+在桌面设备上运行的即将完成移植的 windows 10 应用
 
 ![即将完成移植的 Windows 10 应用](images/w8x-to-uwp-case-studies/c01-06-mob10-almost-ported.png)
 
-在移动设备上运行即将完成移植的 windows 10 应用
+在移动设备上运行的即将完成移植的 windows 10 应用
 
 ## <a name="an-optional-adjustment-to-the-list-box-for-mobile-devices"></a>对移动设备的列表框的可选调整
 

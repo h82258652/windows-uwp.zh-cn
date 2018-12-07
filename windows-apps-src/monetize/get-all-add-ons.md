@@ -1,21 +1,21 @@
 ---
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
-description: 在 Microsoft Store 提交 API 中使用此方法，可检索注册到你的合作伙伴中心帐户的所有应用的所有加载项数据。
+description: 在 Microsoft Store 提交 API 中使用此方法可检索注册到你的合作伙伴中心帐户的所有应用的所有加载项数据。
 title: 获取所有加载项
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 50733bc0617d56b7e6b8596b661aff8056961f18
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738431"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785710"
 ---
 # <a name="get-all-add-ons"></a>获取所有加载项
 
-在 Microsoft Store 提交 API 中使用此方法，可检索注册到你的合作伙伴中心帐户的所有应用的所有加载项的数据。
+在 Microsoft Store 提交 API 中使用此方法可检索注册到你的合作伙伴中心帐户的所有应用的所有加载项的数据。
 
 ## <a name="prerequisites"></a>先决条件
 

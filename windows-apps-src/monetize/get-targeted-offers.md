@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 定向优惠 API, 获取定向优惠
 ms.localizationpriority: medium
 ms.openlocfilehash: 71cd6ce3b9736b812f8ccdf4d21d35357928c63c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730554"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794026"
 ---
 # <a name="get-targeted-offers"></a>获取定向优惠
 
@@ -55,7 +55,7 @@ Authorization: Bearer <Microsoft Account token>
 
 | 字段      | 类型   | 描述         |
 |------------|--------|------------------|
-| offers      | array  | 与针对当前用户提供的定向优惠关联的加载项产品 ID 数组。 在应用中的合作伙伴中心的**定向优惠**页中指定这些产品 Id。            |
+| offers      | array  | 与针对当前用户提供的定向优惠关联的加载项产品 ID 数组。 在你的应用在合作伙伴中心的**定向优惠**页中指定这些产品 Id。            |
 | trackingId  | string | 一个 GUID，可在你自己的代码或服务中选择用来跟踪定向优惠。 |
 
 

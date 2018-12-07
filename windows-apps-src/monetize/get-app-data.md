@@ -1,23 +1,23 @@
 ---
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
-description: 在 Microsoft Store 提交 API 中使用这些方法，可检索注册到你的合作伙伴中心帐户的应用数据。
+description: 在 Microsoft Store 提交 API 中使用这些方法，可检索注册到你的合作伙伴中心帐户的应用的数据。
 title: 获取应用数据
 ms.date: 02/28/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用数据
 ms.localizationpriority: medium
 ms.openlocfilehash: 23e392e2064a2a48089d1efadd1461c146e0d343
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8713897"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8786751"
 ---
 # <a name="get-app-data"></a>获取应用数据
 
 在 Microsoft Store 提交 API 中使用以下方法获取你的合作伙伴中心帐户中现有应用的数据。 有关 Microsoft Store 提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
-你可以使用这些方法之前，应用必须已存在于你的合作伙伴中心帐户中。 若要创建或管理应用提交，请参阅[管理应用提交](manage-app-submissions.md)中的方法。
+你可以使用这些方法之前，应用必须已存在于你的合作伙伴中心帐户。 若要创建或管理应用提交，请参阅[管理应用提交](manage-app-submissions.md)中的方法。
 
 | 方法 | URI                                                                                             | 说明                                                 |
 |------- |------------------------------------------------------------------------------------------------ |------------------------------------------------------------ |

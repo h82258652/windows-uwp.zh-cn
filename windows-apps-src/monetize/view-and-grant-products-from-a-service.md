@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 收集 API, Microsoft Store 购买 API, 查看产品, 授予产品
 ms.localizationpriority: medium
 ms.openlocfilehash: 68bcee02c07ea8c998927d558521084cb49e9e24
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745182"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794107"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>管理服务中的产品权益
 
@@ -29,34 +29,34 @@ ms.locfileid: "8745182"
 
 以下步骤介绍了使用 Microsoft Store 收集 API 和购买 API 的端到端过程：
 
-1.  [配置 Azure ad 应用程序](#step-1)。
+1.  [配置 Azure AD 中的应用程序](#step-1)。
 2.  [将 Azure AD 应用程序 ID 与你在合作伙伴中心中的应用相关联](#step-2)。
 3.  在你的服务中，[创建 Azure AD 访问令牌](#step-3)，这些令牌表示你的发布者标识。
-4.  在客户端 Windows 应用中，[创建 Microsoft Store ID 密钥](#step-4)，表示当前用户，并传入此密钥标识返回到你的服务。
+4.  在客户端 Windows 应用中，[创建 Microsoft Store ID 密钥](#step-4)表示当前用户，并传递此密钥的标识返回到你的服务。
 5.  在你具有所需的 Azure AD 访问令牌和 Microsoft Store ID 密钥后，[从你的服务调用 Microsoft Store 收集 API 或购买 API](#step-5)。
 
 此端到端过程涉及到执行不同的任务的两个软件组件：
 
-* **你的服务**。 这是你的业务环境的上下文中安全地运行的应用程序，可以使用你选择的任何开发平台实现它。 创建 Azure AD 访问令牌所需的方案和用于调用 REST Uri 的 Microsoft Store 收集 API 和购买 API，你的服务负责有效。
+* **你的服务**。 这是你的业务环境的上下文中安全地运行的应用程序，可以使用你选择的任何开发平台实现它。 创建 Azure AD 访问令牌所需的方案和用于调用 REST Uri 的 Microsoft 应用商店收集 API 和购买 API，你的服务负责有效。
 * **客户端的 Windows 应用**。 这是你想要访问和管理客户授权信息 （包括应用的加载项） 的应用。 此应用负责创建你需要调用 Microsoft Store 收集 API 和购买 API 从你的服务的 Microsoft 应用商店 ID 密钥。
 
 <span id="step-1"/>
 
 ## <a name="step-1-configure-an-application-in-azure-ad"></a>步骤 1： 在 Azure AD 中配置应用程序
 
-你可以使用 Microsoft Store 收集 API 或购买 API 之前，必须创建 Azure AD Web 应用程序、 检索租户 ID 和应用程序的应用程序 ID 并生成一个密钥。 Azure AD Web 应用程序是指要从中调用 Microsoft Store 收集 API 或购买 API 的服务。 你需要的租户 ID、 应用程序 ID 和密钥，以生成你需要调用该 API 的 Azure AD 访问令牌。
+你可以使用 Microsoft Store 收集 API 或购买 API 之前，你必须创建 Azure AD Web 应用程序、 检索租户 ID 和应用程序的应用程序 ID 并生成一个密钥。 Azure AD Web 应用程序是指要从中调用 Microsoft Store 收集 API 或购买 API 的服务。 你需要的租户 ID、 应用程序 ID 和密钥，以生成你需要调用该 API 的 Azure AD 访问令牌。
 
 > [!NOTE]
-> 你只需执行一次本部分中任务。 更新你的 Azure AD 应用程序清单，并且已准备你的租户 ID、 应用程序 ID 和客户端密钥后，你可以重复使用这些值的每当你需要创建新 Azure AD 访问令牌。
+> 你只需执行一次本部分中任务。 在更新 Azure AD 应用程序清单并拥有你的租户 ID、 应用程序 ID 和客户端密钥后，你可以重复使用这些值的随时你需要创建新 Azure AD 访问令牌。
 
 1.  如果你尚未操作，请按照[与 Azure Active Directory 集成应用程序](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications)中的说明来注册**Web 应用 / API**与 Azure AD 应用程序。
     > [!NOTE]
-    > 当你注册你的应用程序时，你必须选择**Web 应用 / API**为应用程序类型，以便你可以为你的应用程序检索密钥 （也称为*客户端密钥*）。 若要调用 Microsoft Store 收集 API 或购买 API，必须在稍后步骤从 Azure AD 中请求访问令牌时提供客户端密码。
+    > 当你注册你的应用程序时，你必须选择**Web 应用 / API**为应用程序类型，以便你可以为你的应用程序检索密钥 （也称为*客户端密码*）。 若要调用 Microsoft Store 收集 API 或购买 API，必须在稍后步骤从 Azure AD 中请求访问令牌时提供客户端密码。
 
-2.  在[Azure 管理门户](https://portal.azure.com/)中，导航到**Azure Active Directory**。 选择你的目录，在左侧的导航窗格中，单击**应用注册**，然后选择应用程序。
-3.  你将转到应用程序的主注册页。 在此页上，将复制以供稍后使用的**应用程序 ID**值。
-4.  创建一个密钥，你将需要更高版本 （这调用所有*客户端密码*）。 在左侧窗格中，单击**设置**，然后选择**密钥**。 在此页面上完成步骤[创建密钥](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis)。 复制以供以后使用此密钥。
-5.  向你的[应用程序清单](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-manifest)中添加多个所需的受众 Uri。 在左侧窗格中，单击**清单**。 单击**编辑**、 替换为`"identifierUris"`与以下文本，部分，然后再单击**保存**。
+2.  在[Azure 管理门户](https://portal.azure.com/)中，导航到**Azure Active Directory**。 选择你的目录在左侧的导航窗格中，单击**应用注册**，然后选择你的应用程序。
+3.  你将转到应用程序的主注册页。 在此页上，将复制的**应用程序 ID**值以供稍后使用。
+4.  创建一个密钥，你将需要更高版本 （这调用所有*客户端密码*）。 在左侧窗格中，单击**设置**，然后选择**密钥**。 在此页上，完成[创建密钥](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis)的步骤。 复制以供以后使用此密钥。
+5.  向你的[应用程序清单](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-manifest)添加几个所需的受众 Uri。 在左侧窗格中，单击**清单**。 单击**编辑**，替换`"identifierUris"`与以下文本，部分，然后再单击**保存**。
 
     ```json
     "identifierUris" : [                                
@@ -78,7 +78,7 @@ ms.locfileid: "8745182"
 > 你只需执行一次此任务。
 
 1.  登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)，然后选择你的应用。
-2.  转到**服务** &gt; **产品收集和购买**页面上，插入其中一个可用的**客户端 ID**字段中输入你的 Azure AD 应用程序 ID。
+2.  转到**服务** &gt; **产品收集和购买**页面上，插入其中一个可用的**客户端 ID**字段中输入 Azure AD 应用程序 ID。
 
 <span id="step-3"/>
 
@@ -122,7 +122,7 @@ grant_type=client_credentials
 
 对于每个令牌，请指定以下参数数据：
 
-* 为*client\_id*和*client\_secret*的参数，指定的应用程序 ID 和你从[Azure 管理门户](http://manage.windowsazure.com)中检索的应用程序客户端密钥。 若要创建带有 Microsoft Store 收集 API 或购买 API 所需的身份验证级别的访问令牌，这两个参数都是必需的。
+* 为*client\_id*和*client\_secret*的参数，指定应用程序 ID 和你从[Azure 管理门户](http://manage.windowsazure.com)中检索的应用程序客户端密钥。 若要创建带有 Microsoft Store 收集 API 或购买 API 所需的身份验证级别的访问令牌，这两个参数都是必需的。
 
 * 对于*资源*参数，请指定[上一节](#access-tokens)中列出的受众 URI 之一，具体取决于要创建的访问令牌的类型。
 
@@ -153,7 +153,7 @@ grant_type=client_credentials
 
   * 如果你的应用使用 [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) 命名空间中的 [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 类来管理应用内购买，请使用 [CurrentApp.GetCustomerCollectionsIdAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getcustomercollectionsidasync) 方法。
 
-    将 Azure AD 访问令牌传递给该方法的 *serviceTicket* 参数。 如果你维护匿名用户 Id 作为当前应用的发布者管理的服务的上下文中，还传递给*publisherUserId*参数当前用户关联 （该用户 ID 将是 em 新的 Microsoft 应用商店 ID 密钥的用户 IDbedded 项中)。 否则，如果你不需要用户 ID 相关联的 Microsoft 应用商店 ID 密钥，你可以向*publisherUserId*参数传递字符串中的任何值。
+    将 Azure AD 访问令牌传递给该方法的 *serviceTicket* 参数。 如果你维护匿名用户 Id 作为当前应用的发布者管理的服务的上下文中，你还可以传递的用户 ID 向*publisherUserId*参数当前用户关联 （该用户 ID 将是 em 新的 Microsoft 应用商店 ID 密钥bedded 的密钥)。 否则，如果你不需要用户 ID 相关联的 Microsoft 应用商店 ID 密钥，你可以向*publisherUserId*参数传递任何字符串值。
 
 3.  在应用成功创建 Microsoft Store ID 密钥后，请将该密钥传递回服务。
 
@@ -171,7 +171,7 @@ grant_type=client_credentials
 
   * 如果你的应用使用 [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) 命名空间中的 [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 类来管理应用内购买，请使用 [CurrentApp.GetCustomerPurchaseIdAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getcustomerpurchaseidasync) 方法。
 
-    将 Azure AD 访问令牌传递给该方法的 *serviceTicket* 参数。 如果你维护匿名用户 Id 作为当前应用的发布者管理的服务的上下文中，还传递给*publisherUserId*参数当前用户关联 （该用户 ID 将是 em 新的 Microsoft 应用商店 ID 密钥的用户 IDbedded 项中)。 否则，如果你不需要用户 ID 相关联的 Microsoft 应用商店 ID 密钥，你可以向*publisherUserId*参数传递字符串中的任何值。
+    将 Azure AD 访问令牌传递给该方法的 *serviceTicket* 参数。 如果你维护匿名用户 Id 作为当前应用的发布者管理的服务的上下文中，你还可以传递的用户 ID 向*publisherUserId*参数当前用户关联 （该用户 ID 将是 em 新的 Microsoft 应用商店 ID 密钥bedded 的密钥)。 否则，如果你不需要用户 ID 相关联的 Microsoft 应用商店 ID 密钥，你可以向*publisherUserId*参数传递任何字符串值。
 
 3.  在应用成功创建 Microsoft Store ID 密钥后，请将该密钥传递回服务。
 

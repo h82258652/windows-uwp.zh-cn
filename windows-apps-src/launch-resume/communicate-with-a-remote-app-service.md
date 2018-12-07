@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，连接设备，远程系统、 rome、 项目 rome、 后台任务，应用服务
 ms.localizationpriority: medium
 ms.openlocfilehash: ddadae05ca3243f9bbd6b53cbb98f234ac560acd
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749636"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8800872"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>与远程应用服务通信
 
@@ -20,7 +20,7 @@ ms.locfileid: "8749636"
 ## <a name="set-up-the-app-service-on-the-host-device"></a>在主设备上设置应用服务
 为了在远程设备上运行应用服务，必须已经在该设备上安装了该应用服务的提供程序。 本指南将使用 [Windows 通用示例存储库](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)提供的[随机数字生成器应用服务示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices) CSharp 版。 有关如何编写你自己的应用服务的说明，请参阅[创建和使用应用服务](how-to-create-and-consume-an-app-service.md)。
 
-无论是使用已制定的应用服务还是编写自己的应用服务，你都将需要执行一些编辑操作，以使该服务与远程系统兼容。 在 Visual Studio 中，转到应用服务提供程序的项目（在示例中称为“AppServicesProvider”），然后选择其 _Package.appxmanifest_ 文件。 右键单击并选择**查看代码**以查看文件的完整内容。 创建主**应用程序**元素内的**扩展**元素 （或找到它，如果存在）。 然后，创建的**扩展**定义为应用服务的项目，并引用其父项目。
+无论是使用已制定的应用服务还是编写自己的应用服务，你都将需要执行一些编辑操作，以使该服务与远程系统兼容。 在 Visual Studio 中，转到应用服务提供程序的项目（在示例中称为“AppServicesProvider”），然后选择其 _Package.appxmanifest_ 文件。 右键单击并选择**查看代码**以查看文件的完整内容。 创建主**应用程序**元素内的**扩展**元素 （或者如果它已找到它）。 然后创建一个**扩展**定义为应用服务项目和引用其父项目。
 
 ``` xml
 ...
@@ -40,7 +40,7 @@ ms.locfileid: "8749636"
 ...
 ```
 
-才能使用此**uap3**命名空间中的元素，你必须在清单文件顶部添加命名空间定义如果尚未存在。
+若要使用此**uap3**命名空间中的元素，必须添加命名空间定义的清单文件顶部如果尚未存在。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

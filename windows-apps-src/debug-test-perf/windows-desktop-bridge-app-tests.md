@@ -1,21 +1,21 @@
 ---
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Windows 桌面桥应用测试
-description: 使用桌面桥的内置测试以确保你的桌面应用非常适合其转换为 UWP 应用。
+description: 使用桌面桥的内置测试以确保你的桌面应用进行了优化其转换为 UWP 应用。
 ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
 ms.openlocfilehash: df80fda8cf8b8c2f33a8ed0155363141fc299655
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755143"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8786027"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 桌面桥应用测试
 
-Windows 桌面应用程序转换为通用 Windows 平台 (UWP) 应用使用[桌面桥](https://developer.microsoft.com/en-us/windows/bridges/desktop)[的桌面桥应用](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)。 转换后，将以面向 Windows 10 桌面版的 UWP 应用包（.appx 或 .appxbundle）的形式打包、维护和部署 Windows 桌面应用程序。
+[桌面桥应用](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)的 Windows 桌面应用程序转换为使用[桌面桥](https://developer.microsoft.com/en-us/windows/bridges/desktop)的通用 Windows 平台 (UWP) 应用。 转换后，将以面向 Windows 10 桌面版的 UWP 应用包（.appx 或 .appxbundle）的形式打包、维护和部署 Windows 桌面应用程序。
 
 ## <a name="required-versus-optional-tests"></a>必需测试与可选测试
 适用于 Windows 桌面桥应用的可选测试仅供参考，将不能用于在 Microsoft 应用商店载入过程中评估你的应用。 我们建议调查这些测试结果以生成质量更好的应用。 应用商店载入的整体通过/失败条件取决于必需测试，而不是这些可选测试。
@@ -52,7 +52,7 @@ Windows 桌面应用程序转换为通用 Windows 平台 (UWP) 应用使用[桌�
 测试应用，确保它不是调试版本并且未链接到任何调试框架。
  
 **更正操作**  
-* 提交到 Microsoft Store 之前，请将应用编译为发行版本。
+* 提交到 Microsoft Store 之前，将应用编译为发行版本。
 * 确保你安装了正确版本的 .NET Framework。
 * 确保该应用未链接到框架的调试版本，并使用发布版本构建。 如果此应用包含 .NET 组件，请确保安装了正确的 .NET Framework 版本。
 
@@ -121,7 +121,7 @@ Windows 桌面应用程序转换为通用 Windows 平台 (UWP) 应用使用[桌�
 图像必须至少定义一个没有 TargetSize 限定符的变量。 它必须定义一个 Scale 限定符或者保持 Scale 和 TargetSize 为未指定状态，默认值为 Scale-100。  | 有关详细信息，请参阅有关[响应式设计](https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx)和[应用资源](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data)的指南。 
 该程序包缺少一个“resources.pri”文件。  | 如果你在应用清单中包含可本地化的内容，请确保你的应用包包含有效的 resources.pri 文件。 
 “resources.pri”文件必须包含一个其名称与程序包名称 {package full name} 相匹配的资源映射  | 如果清单发生更改并且 resources.pri 中的资源映射名称不再与清单中的程序包名称相匹配，你将遇到此错误。 在实际消息中，{package full name} 包含 resources.pri 必须包含的程序包名称。 为了解决此问题，你需要重新构建 resources.pri，而这样做的最简单方法就是重新构建应用包。 
-“resources.pri”文件不得启用 AutoMerge。  | MakePRI.exe 支持一个名为 AutoMerge 的选项。 AutoMerge 的默认值为 off。 启用后，AutoMerge 在运行时将应用的语言包资源合并到一个 resources.pri 中。 我们不建议执行此操作适用于要通过 Microsoft 应用商店分发的应用。 通过 Microsoft Store 分发应用的 resources.pri 必须为应用包的根目录中，并包含应用支持的所有语言参考。 
+“resources.pri”文件不得启用 AutoMerge。  | MakePRI.exe 支持一个名为 AutoMerge 的选项。 AutoMerge 的默认值为 off。 启用后，AutoMerge 在运行时将应用的语言包资源合并到一个 resources.pri 中。 我们不建议执行此操作适用于你打算通过分发的 Microsoft 应用商店的应用。 通过 Microsoft Store 分发应用的 resources.pri 必须为应用包的根目录中，并包含应用支持的所有语言参考。 
 字符串 {string} 不符合 {number} 个字符的最大长度限制。  | 请参阅[应用包要求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 在实际消息中，{string} 替换为有错误的字符串并且 {number} 包含最大长度。 
 字符串 {string} 不得包含前导空格/尾随空格。  | 应用部件清单 (manifest) 中元素的架构不允许前导空格或尾随空格字符。 在实际消息中，{string} 替换为有错误的字符串。 确保 resources.pri 中清单字段的任何本地化值都没有前导空格或尾随空格字符。 
 字符串必须非空（长度大于零）  | 有关详细信息，请参阅[应用包要求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 
@@ -210,7 +210,7 @@ Windows 桌面应用程序转换为通用 Windows 平台 (UWP) 应用使用[桌�
  
 **测试详细信息**  
 此测试检查应用中的所有 UWP 组件：
-* 验证该应用包中的每个托管二进制文件均不依赖于通过检查二进制文件的导入地址表不支持用于 UWP 应用开发的 Win32 API。
+* 验证，应用包中的每个托管二进制文件均不依赖于通过检查二进制文件的导入地址表不支持用于 UWP 应用开发的 Win32 API。
 * 验证应用包中的每个托管二进制文件是否均不依赖于批准的配置文件以外的功能。 
 
 **更正操作**  

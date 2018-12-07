@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 技术, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: c6d2ebad640849cd81d6a2704f89ca1f05cc1b27
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8752710"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8806487"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>适用于 UWP 应用的游戏技术
 
@@ -19,10 +19,10 @@ ms.locfileid: "8752710"
 
 在此指南中，你将了解可用于开发通用 Windows 平台 (UWP) 游戏的技术。
 
-##  <a name="benefits-of-windows10-for-game-development"></a>对于游戏开发的 windows 10 的优势
+##  <a name="benefits-of-windows10-for-game-development"></a>游戏开发对于 windows 10 的优势
 
 
-UWP，windows 10 中引入，windows 10 标题将能够跨越所有 Microsoft 平台。 通过从以前版本的 Windows 的免费迁移，没有 windows 10 客户端数量将稳定增加。 这两个事实的结合意味着你的 windows 10 标题将能够访问大量通过 Microsoft 应用商店的客户。
+在 windows 10 的 UWP 的引入，windows 10 标题将能够跨越所有 Microsoft 平台。 通过从以前版本的 Windows 的免费迁移，是 windows 10 客户端数量将稳定增加。 这两个事实的结合意味着你的 windows 10 标题将能够覆盖大量客户通过 Microsoft 应用商店。
 
 此外，windows 10 还提供了许多对游戏极其有益的新功能：
 
@@ -37,7 +37,7 @@ UWP，windows 10 中引入，windows 10 标题将能够跨越所有 Microsoft �
 ## <a name="development-environment"></a>开发环境
 
 
-若要创建 UWP 游戏，你将需要通过安装 Visual Studio 2015 或更高版本来设置开发环境。 我们建议你安装最新版本的 Visual Studio 中，使你访问的最新的开发和安全更新。 Visual Studio 允许你创建 UWP 应用，并提供用于游戏开发工具：
+若要创建 UWP 游戏，你将需要通过安装 Visual Studio 2015 或更高版本来设置开发环境。 我们建议你安装最新版本的 Visual Studio 中，使你可以访问的最新的开发和安全更新。 Visual Studio 允许你创建 UWP 应用，并提供用于游戏开发工具：
 
 -   用于 DX 游戏编程的 Visual Studio 工具 - Visual Studio 提供用于创建、编辑、预览和导出图像、模型和着色器资源的工具。 还有一些工具，可以用来在生成时转换资源以及调试 DirectX 图形代码。 有关详细信息，请参阅[使用 Visual Studio 工具进行游戏编程](set-up-visual-studio-for-game-development.md)。
 -   Visual Studio 图形诊断功能 - 图形诊断工具现在在 Windows 中作为可选功能提供。 诊断工具允许你 执行图形调试、图形帧分析以及实时监视 GPU 使用情况。 有关详细信息，请参阅[使用 DirectX 运行时和 Visual Studio 图形诊断功能](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)。

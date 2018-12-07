@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 78d825adf023b3c27ba6535f4cfdcc3a99be2d6c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8740188"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788318"
 ---
 # <a name="in-app-ads"></a>应用内广告
 
-使用**盈利**&gt;在[合作伙伴中心](https://partner.microsoft.com/dashboard)创建和管理广告单元的**应用内广告**页面：
+使用**盈利**&gt;中[的合作伙伴中心](https://partner.microsoft.com/dashboard)，以创建和管理广告单元的**应用内广告**页面：
 
 * 使用 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp) 的通用 Windows 平台 (UWP) 应用。
 * 以前发布的 Windows 8.x 和 Windows Phone 8.x 应用使用[Microsoft Advertising SDK for Windows 和 Windows Phone 8.x](http://aka.ms/store-8-sdk)。
@@ -70,7 +70,7 @@ ms.locfileid: "8740188"
 若要编辑 UWP 广告单元的[中介设置](#mediation)或此广告单元所用于的应用的 [COPPA 合规性](#coppa)，请单击广告单元的名称。
 
 > [!NOTE]
-> 如果广告单元过去六个月中具有不活动，我们将其标记为**非活动**，并最终从合作伙伴中心中删除它。 你可以使用筛选器来仅显示**活动**或**停用**广告单位。 如果看到你认为被不准确地标记为**停用**的任何广告单元，请[联系支持人员](http://aka.ms/storesupport)。
+> 如果广告单元过去六个月不有任何活动，我们将其标记为**非活动**，并最终从合作伙伴中心中删除它。 你可以使用筛选器来仅显示**活动**或**停用**广告单位。 如果看到你认为被不准确地标记为**停用**的任何广告单元，请[联系支持人员](http://aka.ms/storesupport)。
 
 <span id="mediation" />
 
@@ -86,8 +86,8 @@ ms.locfileid: "8740188"
 1. [创建广告单元](#create-ad-unit)或[选择现有广告单元](#available-ad-units)。
 2. 在**应用内广告**页面上，转到的**中介设置**部分和配置你的设置。
 
-    * 默认情况下，选择**让 Microsoft 优化我的设置**复选框。 我们建议你使用此选项。 此选项会使用机器学习算法自动为你的应用选择广告中介设置，以帮助最大化你在你的应用所支持的各市场中的广告收益。 当你使用此选项时，你还可以选择你想要使用的配置中的广告网络。 取消选中还不想要配置的一部分，并且我们的算法将确保你的应用仅在所选的广告网络接收广告的广告网络。
-    * 如果你想要选择你自己的广告中介设置，则选择**修改默认设置**。
+    * 默认情况下，选择**让 Microsoft 优化我的设置**复选框。 我们建议你使用此选项。 此选项会使用机器学习算法自动为你的应用选择广告中介设置，以帮助最大化你在你的应用所支持的各市场中的广告收益。 当你使用此选项时，你还可以选择你想要使用的配置中的广告网络。 取消选中你不想要配置的一部分，我们的算法将确保你的应用仅在所选的广告网络接收广告的广告网络。
+    * 如果你想要选择你自己的广告中介设置，选择**修改默认设置**。
 
     > [!NOTE]
     > 本部分中的其余步骤将仅适用于你选择**修改默认设置**。
@@ -110,7 +110,7 @@ ms.locfileid: "8740188"
 
 |  广告网络  |  说明  |  支持的广告类型  |
 |--------------|---------------|---------------------|
-| Oath 和 AppNexus |  这是可提供通过我们的合作伙伴的广告网络，Oath 和 AppNexus Microsoft 托管的广告网络。<p/>**注意**： Oath 和 AppNexus 始终排名第一**付费广告网络**列表中的横幅广告单元，并且它不能更改为更低排名针对这些类型的广告。 | 横幅、视频间隙 |
+| Oath 和 AppNexus |  这是可通过我们的合作伙伴的广告网络，Oath 和 AppNexus 提供一个 Microsoft 托管的广告网络。<p/>**注意**： Oath 和 AppNexus 始终排名第一**付费广告网络**列表中的横幅广告单元，并且它不能更改为更低排名针对这些类型的广告。 | 横幅、视频间隙 |
 | AppNexus（直接） | 选择此选项以从[AppNexus](https://www.appnexus.com)提供广告。 | 视频间隙、本机  |
 | Microsoft 应用安装广告 | 选择此选项以提供由 Windows 生态系统中[为其应用创建促销广告市场活动](create-an-ad-campaign-for-your-app.md)的其他开发人员创建的应用安装广告或应用重新参与广告。  |  横幅、横幅间隙、本机  |
 | MSN 内容建议 |  选择此选项以从 MSN 内容建议提供广告。 |  横幅、横幅间隙  |
@@ -152,7 +152,7 @@ ms.locfileid: "8740188"
 
 ## <a name="coppa-compliance"></a>COPPA 合规性
 
-当你[创建广告单元](#create-ad-unit)或[选择现有广告单元](#available-ad-units)， **COPPA 合规性**部分显示在页面底部的广告单元选定的应用是否至少一个提交已到达[应用商店中](../publish/the-app-certification-process.md#in-the-store)步骤在应用中认证过程。
+如果针对广告单元选定的应用具有至少一个提交已到达你[创建一个广告单元](#create-ad-unit)或[选择现有广告单元](#available-ad-units)， **COPPA 合规性**部分将显示在页面的底部时[在应用商店中](../publish/the-app-certification-process.md#in-the-store)步骤在应用中认证过程。
 
 根据《儿童在线隐私保护法》（“COPPA”），如果你的应用面向 13 岁以下的儿童，则你必须在这个部分选择**此应用程序面向 13 岁以下的儿童**。 如果选择此选项，则 Microsoft 将采取措施以在向你的应用发送广告时禁用其行为广告服务。
 

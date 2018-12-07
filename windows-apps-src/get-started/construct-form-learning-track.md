@@ -7,11 +7,11 @@ keywords: 入门, uwp, windows 10, 学习轨迹, 布局, 表单
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 0cb42552139fd706dd9e87d61c24f8fe2c2d51f7
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749334"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794532"
 ---
 # <a name="create-and-customize-a-form"></a>创建和自定义表单
 
@@ -133,7 +133,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 ## <a name="going-further"></a>深入探索
 
-虽然本文创建的只是一个表单，但布局和控件的概念适用于你可能构建的所有 XAML UI。 可随意重新经历的文档，我们链接给你进行试验的表单，添加新 UI 功能并进一步改进用户体验。 如果你希望通过更详细的布局功能的分步指南，请参阅我们的[自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md)
+虽然本文创建的只是一个表单，但布局和控件的概念适用于你可能构建的所有 XAML UI。 可随意返回参阅我们链接给你和试验的表单，添加新 UI 功能并进一步改进用户体验的文档。 如果你希望通过更详细的布局功能的分步指南，请参阅我们的[自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md)
 
 表单不一定非得单独使用，你也可以更进一步 - 将它们嵌入到[大纲/细节模式](../design/controls-and-patterns/master-details.md)或[透视表控件](../design/controls-and-patterns/tabs-pivot.md)中。 或者，如果要对表单背后的代码做些改动，请参阅[事件概述](../xaml-platform/events-and-routed-events-overview.md)。
 

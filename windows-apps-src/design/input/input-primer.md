@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d9b2a894746cc9f26a0ebb3df90c967a73914c3c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754380"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8806405"
 ---
 # <a name="interaction-primer"></a>交互入门
 
@@ -64,7 +64,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 ## <a name="cortana"></a>Cortana
 
-在 windows 10， **Cortana**扩展性来处理来自用户的语音命令，并启动你的应用程序执行一个单独操作。
+在 windows 10， **Cortana**扩展性来处理用户的语音命令，并启动你的应用程序执行一个单独操作。
 
 ### <a name="device-support"></a>设备支持
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, 已知问题, 疑难解答
 ms.localizationpriority: medium
 ms.openlocfilehash: 3df88af638886e6bbda9b2f2f2065809da319532
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743308"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789101"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>有关应用内广告的已知问题和疑难解答
 
@@ -58,7 +58,7 @@ ms.locfileid: "8743308"
 
 * 旁加载应用或在仿真器中运行的应用不会显示实时广告。
 
-当实时广告单元服务测试广告时，广告单元的状态将显示**活动并服务测试广告**在合作伙伴中心。 这当前不适用于手机应用。
+当实时广告单元服务测试广告时，该广告单元的状态将显示**活动并服务测试广告**在合作伙伴中心。 这当前不适用于手机应用。
 
 
 <span id="reference_errors"/>

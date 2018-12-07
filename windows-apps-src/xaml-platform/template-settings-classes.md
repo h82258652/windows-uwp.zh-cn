@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b44aaf741c188658c7a639422b0d091f8db6e3e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730935"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8800628"
 ---
 # <a name="template-settings-classes"></a>模板设置类
 
@@ -95,7 +95,7 @@ ms.locfileid: "8730935"
 
 同样，模板中有许多 XAML，因此我们只显示摘要。 而且这仅仅是分别使用相同 [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752) 属性的多个状态和主题动画之一。 对于 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)，通过绑定使用 **ComboBoxTemplateSettings** 值强制模板中的相关动画停止，并在基于共享值的位置上开始，以便平稳地过渡。
 
-**注意**当你的控件模板的一部分，请使用**TemplateSettings**值时，请确保你设置属性值的类型相匹配。 如果不是，你可能需要为绑定创建一个值转换器，以便可以从 **TemplateSettings** 值的不同源类型转换为绑定的目标类型。 有关详细信息，请参阅 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903)。
+**注意**时作为控件模板的一部分，请使用**TemplateSettings**值，请确保你设置属性值的类型相匹配。 如果不是，你可能需要为绑定创建一个值转换器，以便可以从 **TemplateSettings** 值的不同源类型转换为绑定的目标类型。 有关详细信息，请参阅 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903)。
 
 ## <a name="related-topics"></a>相关主题
 
