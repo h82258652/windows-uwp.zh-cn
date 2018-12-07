@@ -9,11 +9,11 @@ ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b6e0c6a751116ad03c4e8d69cb02e7147938097
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8740168"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8801310"
 ---
 # <a name="speech-recognition"></a>语音识别
 
@@ -26,7 +26,7 @@ ms.locfileid: "8740168"
 
 ## <a name="configure-speech-recognition"></a>配置语音识别
 
-若要支持与你的应用的语音识别，用户必须连接并使其在设备上，麦克风和接受 Microsoft 隐私策略授予你的应用权限才能使用它。
+若要支持与你的应用的语音识别，用户必须连接并使其在设备上，麦克风和接受 Microsoft 隐私策略授予对你的应用权限才能使用它。
 
 若要自动与系统对话框，请求访问和使用麦克风权限提示用户的音频源 （示例中的[语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)如下所示），只需设置**麦克风**[设备功能](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)[应用包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)中。 有关详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
 
@@ -34,9 +34,9 @@ ms.locfileid: "8740168"
 
 如果用户单击是访问权限授予给麦克风，你的应用添加到列表中批准的应用程序的设置-> 隐私-> 麦克风页面。 但是，因为用户可以选择在任何时候关闭此设置，你应确认你的应用尝试使用它之前有权访问麦克风。
 
-如果你还想要支持 Cortana、 听写或其他语音识别服务 （如[预定义的语法](#predefined-grammars)中定义的主题约束），你还必须确认**联机语音识别**(设置-> 隐私-> 语音) 是已启用。
+如果你还想要支持听写，Cortana，或其他语音识别服务 （如[预定义的语法](#predefined-grammars)的主题约束中定义），则必须还确认**联机语音识别**(设置-> 隐私-> 语音) 是已启用。
 
-此代码段显示了你的应用如何检查是否存在麦克风和它有权使用它。
+此代码段显示了如何，你的应用可以检查是否存在麦克风和它有权使用它。
 
 ```csharp
 public class AudioCapturePermissions
@@ -210,7 +210,7 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 *约束*可定义该应用在语音输入中识别出的字词和短语（词汇）。 约束是语音识别的核心，它除了能提高语音识别准确度，还能为你的应用带来其他优势。
 
-识别语音输入，可以使用以下类型的约束。
+识别语音输入，你可以使用以下类型的约束。
 
 ### <a name="predefined-grammars"></a>预定义的语法
 
@@ -279,7 +279,7 @@ catch (Exception exception)
 
 请参阅[**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220)/
 
-**注意**类型的你使用的约束类型取决于待创建识别体验的复杂性。 对于特定识别任务，任一类型都可能是最佳选择，你也可能在应用中发现所有类型的约束的用途。
+**注意**类型的你使用的约束类型取决于你想要创建识别体验的复杂性。 对于特定识别任务，任一类型都可能是最佳选择，你也可能在应用中发现所有类型的约束的用途。
 要开始使用约束，请参阅[定义自定义识别约束](define-custom-recognition-constraints.md)。
 
 预定义的通用 Windows 应用听写语法可识别使用某种语言的大部分字词和短语。 如果语音识别器对象在没有自定义约束的情况下实例化，它会自动激活。

@@ -14,15 +14,15 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 5b755533cd4f0720477988781e6cc955b532f1a9
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751141"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8801104"
 ---
 # <a name="buttons"></a>按钮
 
-按钮为用户提供了触发即时操作的方法。 某些按钮都专用于特定的任务，如导航、 重复的操作，或显示的菜单。
+按钮为用户提供了触发即时操作的方法。 一些按钮都专用于特定的任务，如导航、 重复的操作，或显示的菜单。
 
 ![按钮示例](images/controls/button.png)
 
@@ -34,16 +34,16 @@ XAML 框架提供的标准按钮控件，以及多个专用的按钮控件。
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | 引发 Click 事件持续时按下按钮。
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A 按钮的样式像超链接，用于导航。 有关详细信息，请参阅[超链接](hyperlinks.md)。
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | 使用 v 形图标以打开一个附加的浮出控件按钮。
-[拆分按钮](/uwp/api/windows.ui.xaml.controls.splitbutton) | 一个具有两条边按钮。 一侧启动某项操作，并另一侧打开菜单。
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | 一个具有两条边的切换按钮。 一侧切换开/关，并且另一侧打开菜单。
+[拆分按钮](/uwp/api/windows.ui.xaml.controls.splitbutton) | 一个具有两种边按钮。 一侧启动某项操作，并在其他端打开菜单。
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | 使用两种边切换按钮。 一侧切换开/关，并且另一侧打开的菜单。
 
 | **获取 Windows UI 库** |
 | - |
-| DropDownButton、 拆分按钮，以及 ToggleSplitButton 是 Windows UI 库，其中包含新的控件和适用于 UWP 应用的 UI 功能的 NuGet 程序包的一部分。 有关详细信息，包括安装说明，请参阅[Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| DropDownButton、 拆分按钮，以及 ToggleSplitButton 是 Windows UI 库，包含新的控件和适用于 UWP 应用的 UI 功能的 NuGet 包的一部分。 有关详细信息，包括安装说明，请参阅[Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 | **平台 Api** | **Windows UI 库 Api** |
 | - | - |
-| [Click 事件](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)，[命令属性](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [DropDownButton 类](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)，[拆分按钮类](/uwp/api/microsoft.ui.xaml.controls.splitbutton)， [ToggleSplitButton 类](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
+| [单击事件](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)，[命令属性](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [DropDownButton 类](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)，[拆分按钮类](/uwp/api/microsoft.ui.xaml.controls.splitbutton)， [ToggleSplitButton 类](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -52,9 +52,9 @@ XAML 框架提供的标准按钮控件，以及多个专用的按钮控件。
 当该操作是导航到另一个页面时，不要使用按钮改为使用[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) 。 有关详细信息，请参阅[超链接](hyperlinks.md)。
 > 例外：对于向导导航，请使用标记为“上一步”和“下一步”的按钮。 对于其他类型的向后导航或向上导航，请使用[后退按钮](../basics/navigation-history-and-backwards-navigation.md)。
 
-当用户可能想要重复触发操作，请使用**RepeatButton** 。 例如，使用 RepeatButton 增加或减少计数器中的值。
+当用户可能想要重复触发操作时，请使用**RepeatButton** 。 例如，使用 RepeatButton 增加或减少计数器中的值。
 
-当该按钮具有浮出控件，其中包含更多选项时，请使用**DropDownButton** 。 默认 v 形图标提供了一个按钮包括浮出控件的视觉显示。
+使用**DropDownButton**时该按钮具有浮出控件，其中包含更多选项。 默认 v 形图标提供了一个按钮包括浮出控件的视觉显示。
 
 当你希望用户能够立即启动操作，或从选项中选择其他独立使用**拆分按钮**。
 
@@ -209,7 +209,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 > DropDownButton 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本，或[Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton)是显示一个可视指示器，它具有一个附加的浮出控件，包含更多选项 v 形图标的按钮。 它具有相同的行为与浮出控件; 一个标准按钮不同的外观。
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton)是显示一个可视指示器，它具有一个附加的浮出控件，包含更多选项 v 形一个按钮。 它具有相同的行为与在浮出控件; 一个标准按钮仅外观会不同。
 
 下拉列表按钮继承 Click 事件，但你通常不使用它。 相反，你可以使用浮出控件属性将附加浮出控件，以及调用使用浮出控件中的菜单选项的操作。 单击该按钮时，此弹出窗口将自动打开。
 
@@ -218,7 +218,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ### <a name="example---drop-down-button"></a>示例-下拉列表按钮
 
-此示例显示了如何使用包含在 RichEditBox 中的段落对齐的命令的浮出控件中创建一个下拉列表按钮。 （有关详细信息和代码，请参阅[富编辑框](rich-edit-box.md)）。
+此示例显示了如何使用浮出控件，其中包含段落对齐方式 RichEditBox 中的命令创建一个下拉列表按钮。 （有关详细信息和代码，请参阅[富编辑框](rich-edit-box.md)）。
 
 ![一个下拉列表使用对齐命令的按钮](images/drop-down-button-align.png)
 
@@ -268,18 +268,18 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 
 > 拆分按钮需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本，或[Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
-[拆分按钮](/uwp/api/windows.ui.xaml.controls.splitbutton)具有两个部分，可以单独调用。 另一部分的行为类似于标准按钮，调用即时操作。 其他部分调用浮出控件，其中包含用户可以选择的其他选项。
+[拆分按钮](/uwp/api/windows.ui.xaml.controls.splitbutton)具有两个部分，可以单独调用。 另一部分的行为类似于标准按钮，调用即时操作。 其他部分调用浮出控件，其中包含用户可以选择从的其他选项。
 
 > [!NOTE]
-> 当调用借助触摸，拆分按钮的行为如下一个下拉列表按钮;按钮的两个部分调用浮出控件。 用于输入其他方法，用户可以单独调用该按钮任一半部分。
+> 当调用通过触摸，拆分按钮的行为作为一个下拉列表按钮;按钮的两个部分调用浮出控件。 使用其他方法的输入，用户可以单独调用该按钮任一半部分。
 
 拆分按钮的典型行为是：
 
-- 当用户单击按钮的一部分时，则处理 Click 事件调用当前在下拉列表中选择的选项。
-- 打开下拉列表时，句柄调用中的项目下拉列表以这两个更改哪个选项已选中，然后再调用它。 请务必调用浮出控件项，因为该按钮单击使用触摸时，事件不会发生。
+- 当用户单击按钮一部分时，处理 Click 事件来调用当前在下拉列表中选择的选项。
+- 打开下拉列表时，句柄调用中的项目下拉列表以这两个更改哪个选项处于选中状态，然后调用它。 请务必调用浮出控件项，因为该按钮的单击事件不会发生在使用触摸时。
 
 > [!TIP]
-> 有多种方法，向下放在下拉菜单中的项目并处理其调用。 如果你使用 ListView 或 GridView，一种方法是处理 SelectionChanged 事件。 如果你这样做，请将[SingleSelectionFollowsFocus](/uwp/api/windows.ui.xaml.controls.listviewbase.singleselectionfollowsfocus)设置为**false**。 这将允许用户导航而无需调用每次更改上的项使用键盘的选项。
+> 有多种方法，向下放在下拉列表中的项目并处理其调用。 如果你使用 ListView 或 GridView，一种方法是处理 SelectionChanged 事件。 如果你这样做，请将[SingleSelectionFollowsFocus](/uwp/api/windows.ui.xaml.controls.listviewbase.singleselectionfollowsfocus)设置为**false**。 这将允许用户导航而无需调用每次更改上的项使用键盘的选项。
 
 ### <a name="example---split-button"></a>示例-拆分按钮
 
@@ -375,26 +375,26 @@ public sealed partial class MainPage : Page
 
 > ToggleSplitButton 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本，或[Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton)具有可单独调用的两个部分。 另一部分的行为就像可以打开或关闭切换按钮。 其他部分调用浮出控件，其中包含用户可以选择的其他选项。
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton)有两个部分，可以单独调用。 另一部分的行为类似可以打开或关闭切换按钮。 其他部分调用浮出控件，其中包含用户可以选择从的其他选项。
 
-切换拆分按钮通常用于启用或禁用功能有多个选项可供用户选择的一项功能。 例如，在文档编辑器中，它可以用于打开列表，打开或关闭时的下拉框用于选择列表的样式。
+切换拆分按钮通常用于启用或禁用该功能有多个选项可供用户选择的一项功能。 例如，在文档编辑器中，它可以用于打开列表打开或关闭时的下拉框用于选择列表的样式。
 
 > [!NOTE]
-> 当调用借助触摸，拆分按钮的行为如下一个下拉列表按钮。 用于输入其他方法，用户可以单独调用该按钮任一半部分。 借助触摸，按钮的两个部分调用浮出控件。 因此，你必须在浮出控件的内容以打开或关闭切换按钮包括一个选项。
+> 当调用通过触摸，拆分按钮的行为作为一个下拉列表按钮。 使用其他方法的输入，用户可以单独调用该按钮任一半部分。 借助触摸，按钮的两个部分调用浮出控件。 因此，你必须在浮出控件内容来打开或关闭切换按钮中包含一个选项。
 
 ### <a name="differences-with-togglebutton"></a>与 ToggleButton 之间的区别
 
-[切换按钮](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton)，与 ToggleSplitButton 不具有不确定状态。 因此，你应记住这些差异：
+与[ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton)，不同 ToggleSplitButton 不具有不确定状态。 因此，你应记住这些差异：
 
 - ToggleSplitButton 没有**IsThreeState**属性或**不确定**事件。
-- [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked)属性是只是一个**布尔值**，不**为 null 的布尔值**。
+- [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked)属性是只是一个**布尔值**，不**为空 bool**。
 - ToggleSplitButton 具有仅[IsCheckedChanged](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischeckedchanged)事件;它不具有单独的**Checked**和**Unchecked**事件。
 
 ### <a name="example---toggle-split-button"></a>示例-切换拆分按钮
 
 下面的示例演示如何拆分按钮切换可用于打开列表格式打开或关闭和更改的列表，在 RichEditBox 中的样式。 （有关详细信息和代码，请参阅[富编辑框](rich-edit-box.md)）。
 
-![用于选择列表样式切换拆分按钮](images/toggle-split-button-open.png)
+![切换拆分按钮用于选择列表样式](images/toggle-split-button-open.png)
 
 ```xaml
 <ToggleSplitButton x:Name="ListButton"

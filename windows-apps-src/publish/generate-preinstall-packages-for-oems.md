@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ab17adc80a643c04ac7793945486c3ff975fde5
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747117"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8807366"
 ---
 # <a name="generate-preinstall-packages-for-oems"></a>生成适用于 OEM 的预安装程序包
 
@@ -20,7 +20,7 @@ ms.locfileid: "8747117"
 
 ## <a name="important-preinstall-policy--limitations"></a>预安装策略及限制重要提示
 
-预安装的应用必须通过[合作伙伴中心](https://partner.microsoft.com/dashboard)以获取最新的应用商店许可，它们能够连接到应用商店并接收应用更新进行认证。
+预安装的应用必须通过[合作伙伴中心](https://partner.microsoft.com/dashboard)，以便它们无法连接到应用商店并接收应用更新具有最新的应用商店许可证进行认证。
 
 任何预安装的应用必须在所有市场中保持免费。
 

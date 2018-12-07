@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API
 ms.localizationpriority: medium
 ms.openlocfilehash: 2122c259e78ce96c4553dd676c0c1ed78e4e7123
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738232"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8800183"
 ---
 # <a name="create-and-manage-submissions"></a>创建和管理提交
 
 
-使用*Microsoft Store 提交 API*以编程方式查询并创建的应用、 加载项和软件包外部测试版针对你的或组织的合作伙伴中心帐户的提交。 如果你的帐户管理多个应用或加载项，并且想要自动执行并优化这些资源的提交过程，此 API 非常有用。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
+使用*Microsoft Store 提交 API*以编程方式查询并创建提交的应用、 加载项和软件包外部测试版针对你的或组织的合作伙伴中心帐户。 如果你的帐户管理多个应用或加载项，并且想要自动执行并优化这些资源的提交过程，此 API 非常有用。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
 
 以下步骤介绍了使用 Microsoft Store 提交 API 的端到端过程：
 
@@ -41,15 +41,15 @@ ms.locfileid: "8738232"
 
 在开始编写调用 Microsoft Store 提交 API 的代码之前，确保已满足以下先决条件。
 
-* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以[创建合作伙伴中心中的新 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)任何附加费用。
+* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以为任何附加费用[创建合作伙伴中心中的新 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) 。
 
 * 你必须[将 Azure AD 应用程序与合作伙伴中心帐户相关联](#associate-an-azure-ad-application-with-your-windows-partner-center-account)并获取租户 ID、 客户端 ID 和密钥。 获取 Azure AD 访问令牌（该令牌用于调用 Microsoft Store 提交 API）需要这些值。
 
 * 使用 Microsoft Store 提交 API 对应用进行准备：
 
-  * 如果在合作伙伴中心中尚不存在你的应用，则必须[创建你的应用通过保留其名称在合作伙伴中心](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。 你无法使用 Microsoft Store 提交 API 在合作伙伴中心; 创建应用你必须使用合作伙伴中心创建它，然后后，你可以使用该 API 访问应用并以编程方式创建它的提交。 不过，可以使用该 API 以编程方式创建加载项和软件包外部测试版，然后再为它们创建提交。
+  * 如果在合作伙伴中心中尚不存在你的应用，则必须[创建你的应用通过保留在合作伙伴中心其名称](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。 你无法使用 Microsoft Store 提交 API 创建应用在合作伙伴中心;你必须使用合作伙伴中心创建它，然后后，你可以使用该 API 访问应用并以编程方式创建它的提交。 不过，可以使用该 API 以编程方式创建加载项和软件包外部测试版，然后再为它们创建提交。
 
-  * 你可以创建使用此 API 为给定应用提交之前，必须首先[创建一个合作伙伴中心中的应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，包括回答[年龄分级](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)问卷调查。 完成此操作后，才可以使用该 API 为此应用以编程方式创建新的提交。 无需创建加载项提交或软件包外部测试版提交，即可将该 API 用于这些类型的提交。
+  * 你可以创建使用此 API 为给定应用提交之前，你必须首先[创建一个合作伙伴中心中的应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，包括回答[年龄分级](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)问卷调查。 完成此操作后，才可以使用该 API 为此应用以编程方式创建新的提交。 无需创建加载项提交或软件包外部测试版提交，即可将该 API 用于这些类型的提交。
 
   * 如果你要创建或更新应用提交并需要包括应用包，请事先[准备应用包](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements)。
 
@@ -68,7 +68,7 @@ ms.locfileid: "8738232"
 
 1.  在合作伙伴中心，[将你的组织的合作伙伴中心帐户与你的组织的 Azure AD 目录相关联](../publish/associate-azure-ad-with-partner-center.md)。
 
-2.  接下来，从合作伙伴中心、[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)表示应用或服务并且将用于访问你的合作伙伴中心帐户的提交的**帐户设置**部分中的**用户**页面中。 请确保为此应用程序分配**管理员**角色。 如果应用程序不存在，但在你的 Azure AD 目录，你可以[创建一个新合作伙伴中心中的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。  
+2.  接下来，从合作伙伴中心、[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)表示应用或服务并且将用于访问你的合作伙伴中心帐户的提交的**帐户设置**部分中的**用户**页。 请确保为此应用程序分配**管理员**角色。 如果应用程序不存在，但在你的 Azure AD 目录，你可以[创建一个新合作伙伴中心中的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。  
 
 3.  返回到**用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
 
@@ -93,7 +93,7 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-对于 POST URI 和*client\_id*和*client\_secret*参数中*tenant\_id*值，指定的租户 ID、 客户端 ID 和你从上一部分中的合作伙伴中心中检索的应用程序的密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
+对于 POST URI 中的*client\_id*和*client\_secret*参数*tenant\_id*值，指定的租户 ID、 客户端 ID 和你从上一部分中的合作伙伴中心中检索的应用程序的密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
 
 在你的访问令牌到期后，可以按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
 

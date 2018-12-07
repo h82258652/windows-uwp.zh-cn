@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版, 软件包外部测试版
 ms.localizationpriority: medium
 ms.openlocfilehash: c7e7ab4db7690cee86b76e39caa30b3c0fb25618
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730271"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8801843"
 ---
 # <a name="get-package-flights-for-an-app"></a>获取应用的软件包外部测试版
 
-在 Microsoft Store 提交 API 中使用此方法，列出注册到你的合作伙伴中心帐户的应用的软件包外部测试版。 有关软件包外部测试版的详细信息，请参阅[软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。
+在 Microsoft Store 提交 API 中使用此方法列出，为注册到你的合作伙伴中心帐户的应用的软件包外部测试版。 有关软件包外部测试版的详细信息，请参阅[软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。
 
 ## <a name="prerequisites"></a>先决条件
 

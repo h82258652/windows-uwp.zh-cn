@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 目标组, 客户, 外部测试版组, 用户组, 已知用户
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fcb111121511553bba22cef55f94125d47e9f21
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8739267"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8801094"
 ---
 # <a name="create-known-user-groups"></a>创建已知用户组
 
@@ -20,7 +20,7 @@ ms.locfileid: "8739267"
 
 ## <a name="to-create-a-known-user-group"></a>创建已知用户组
 
-1. 在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，展开左侧的导航菜单中的**参与**，然后选择**客户组**。 
+1. 在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，展开左侧的导航菜单中**参与**，然后选择**客户组**。 
 2. 在**我的客户组**部分中选择**创建新组**。
 3. 在下一页上，在**组名称**框中，输入组名称。
 4. 确保选择**已知用户组**单选按钮。

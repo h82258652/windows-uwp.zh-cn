@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: deeae0cc66a7e75da2e44c0d2aba2a9ed459b824
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729307"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799871"
 ---
 # <a name="introduction-to-buffers"></a>缓冲区简介
 
@@ -21,7 +21,7 @@ ms.locfileid: "8729307"
 
 缓冲区元素由 1 到 4 个组件组成。 缓冲区元素可以包含打包数据值（如 R8G8B8A8 表面值）、单个 8 位整数或四个 32 位浮点值。
 
-缓冲区是作为非结构化资源创建的。 由于它是非结构化，缓冲区不能包含任何 mipmap 级别不能获取筛选读取时，它无法进行多重采样。
+缓冲区是作为非结构化资源创建的。 由于它是非结构化，一个缓冲区不能包含任何 mipmap 级别不能获取筛选读取时，它无法进行多重采样。
 
 ## <a name="span-idbuffertypesspanspan-idbuffertypesspanspan-idbuffertypesspanbuffer-types"></a><span id="Buffer_Types"></span><span id="buffer_types"></span><span id="BUFFER_TYPES"></span>缓冲区类型
 
@@ -62,7 +62,7 @@ ms.locfileid: "8729307"
 使用以下参数查找存储在索引缓冲区中的连续索引：
 
 -   偏移-从索引缓冲区的基本地址之间的字节数。
--   StartIndexLocation-指定从基本地址和偏移量的第一个索引缓冲区元素。 开始屏幕位置是指要呈现的第一个索引。
+-   StartIndexLocation-指定从基本地址和偏移量的第一个索引缓冲区元素。 在开始屏幕位置表示要呈现的第一个索引。
 -   IndexCount - 要呈现的索引的数量。
 
 开始菜单的索引缓冲区 = 索引缓冲区基本地址 + 偏移 （字节） + StartIndexLocation \ * ElementSize （字节）;
@@ -77,9 +77,9 @@ ms.locfileid: "8729307"
 
 每个元素存储 1 到 4 个组件常量（由所存储数据的格式决定）。
 
-常量缓冲区仅可使用一个绑定标志，但这不能与任何其他绑定标志结合。
+常量缓冲区仅可使用单个绑定标志，它不能结合使用任何其他绑定标志。
 
-若要从着色器中读取的着色器常量缓冲区，使用 HLSL 负载函数。 每个着色器阶段允许最多 15 个着色器-常量缓冲区；每个缓冲区可包含最多 4096 个常量。
+若要从着色器读取的着色器-常量缓冲区，使用 HLSL 负载函数。 每个着色器阶段允许最多 15 个着色器-常量缓冲区；每个缓冲区可包含最多 4096 个常量。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 

@@ -1,5 +1,5 @@
 ---
-description: 显示焦点是一种灯光效果，当用户将游戏板或键盘焦点移向它们，可聚焦元素的边框进行动画处理。
+description: 显示焦点是一种灯光效果，当用户将游戏板或键盘焦点移到它们时，可聚焦元素的边框进行动画处理。
 title: 显示焦点
 template: detail.hbs
 ms.date: 03/1/2018
@@ -10,25 +10,25 @@ design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
 ms.openlocfilehash: 311e5714c5428fac6509564fd00784299a02f630
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8748050"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799334"
 ---
 # <a name="reveal-focus"></a>显示焦点
 
 ![主图](images/header-reveal-focus.svg)
 
-显示焦点是[10 英尺体验](/windows/uwp/design/devices/designing-for-tv)，例如 Xbox One 和电视屏幕的一种灯光效果。 当用户将游戏板或键盘焦点移向可聚焦元素（如按钮）时，它会将这些元素的边框进行动画处理。 默认情况下，它是关闭状态，但启用很简单。 
+显示焦点是[10 英尺体验](/windows/uwp/design/devices/designing-for-tv)，例如 Xbox One 和电视屏幕的照明效果。 当用户将游戏板或键盘焦点移向可聚焦元素（如按钮）时，它会将这些元素的边框进行动画处理。 默认情况下，它是关闭状态，但启用很简单。 
 
-（展示突出显示效果，突出显示交互性元素的灯光请参阅[展示突出显示文章](/windows/uwp/design/style/reveal)）。
+（展示突出显示效果，突出显示交互性元素的灯光请参阅[展示突出显示文章](/windows/uwp/design/style/reveal)。）
 
 
 > **重要 API**：[Application.FocusVisualKind 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind)、[FocusVisualKind 枚举](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind)、[Control.UseSystemFocusVisuals 属性](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
 ## <a name="how-it-works"></a>工作原理
-通过添加动画的明亮辉光的元素边框周围显示焦点引起对聚焦的元素：
+通过添加动画的明亮辉光的元素边框周围显示焦点引起对聚焦元素：
 
 ![显示视觉](images/traveling-focus-fullscreen-light-rf.gif)
 
@@ -63,20 +63,20 @@ ms.locfileid: "8748050"
     }
 ```
 
-设置**FocusVisualKind**属性后，系统自动将展示焦点效果应用于其[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)属性设置为**True** （大多数控件的默认值） 的所有控件。 
+设置**FocusVisualKind**属性后，系统自动将显示焦点效果应用于其[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)属性设置为**True** （大多数控件的默认值） 的所有控件。 
 
-## <a name="why-isnt-reveal-focus-on-by-default"></a>为何焦点不是展示在默认情况下？ 
-如你所见，很容易启用展示焦点时在应用检测到它正在 Xbox 上运行。 那么，系统为何不为你打开它？ 展示焦点会增加焦点视觉对象的大小，因为这可能导致你的 UI 布局问题。 在某些情况下，你会想要自定义显示焦点效果来优化你的应用。
+## <a name="why-isnt-reveal-focus-on-by-default"></a>为何焦点不是显示在默认情况下？ 
+如你所见，它是应用检测到它正在 Xbox 上运行时打开展示焦点相当简单。 那么，系统为何不为你打开它？ 显示焦点会增加焦点视觉对象的大小，因为这可能导致你的 UI 布局问题。 在某些情况下，你会想要自定义显示焦点效果来优化你的应用。
 
 ## <a name="customizing-reveal-focus"></a>自定义显示焦点
 
 你可以通过修改每个控件的焦点视觉属性来自定义显示焦点效果： [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)、 [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)、 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)，以及[FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)。 这些属性让你可以自定义焦点矩形的颜色和粗细。 （它们与你用于创建[高可见性焦点视觉](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals)的属性相同。） 
 
-但在开始菜单对构成之前，最好先多一些了解构成展示焦点的组件。
+但在开始对构成前，它很有用多一些了解构成显示焦点的组件。
 
-有默认的展示的焦点视觉对象的三个部分： 主边框、 辅助边框和显示明亮辉光。 主边框为 **2px** 粗，在辅助边框的*外部*周围运行。 辅助边框为 **1px** 粗，在主边框的*内部*周围运行。 显示焦点明亮辉光的粗细与主边框的粗细成比例并且初始屏幕*之外*的主边框周围运行。
+有三个部分的默认显示焦点视觉对象： 主边框、 辅助边框和显示明亮辉光。 主边框为 **2px** 粗，在辅助边框的*外部*周围运行。 辅助边框为 **1px** 粗，在主边框的*内部*周围运行。 显示焦点明亮辉光具有粗细与主边框的粗细成比例，并且*之外*的主边框周围运行。
 
-除了静态元素中，展示的焦点视觉功能动画的灯光，跳动时移动焦点时，焦点方向移动。
+除了静态元素，显示焦点视觉功能动画的灯光，跳动时移动焦点时，焦点方向移动。
 
 ![显示焦点层](images/reveal-breakdown.svg)
 
@@ -172,7 +172,7 @@ ms.locfileid: "8748050"
 
 ## <a name="related-articles"></a>相关文章
 
-- [展示突出显示](https://docs.microsoft.com/windows/uwp/design/style/reveal)
+- [显示突出显示](https://docs.microsoft.com/windows/uwp/design/style/reveal)
 - [针对 Xbox 和电视进行设计](/windows/uwp/design/devices/designing-for-tv)
 - [游戏板和遥控器交互](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
 - [焦点视觉示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)

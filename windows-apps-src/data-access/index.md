@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, 数据, 数据库, 关系, 表, sqlite
 ms.localizationpriority: medium
 ms.openlocfilehash: eb5adbdd3ae12d039d934e8d0cbe468ae5c1187c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8740983"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8800203"
 ---
 # <a name="data-access"></a>数据访问
 
-通过使用 SQLite 数据库，你可以在用户设备上存储数据。 此外可以直接向 SQL Server 数据库连接你的应用，无需使用任何一种服务层。
+你可以通过使用 SQLite 数据库在用户设备上存储数据。 你可以也你的应用直接连接到 SQL Server 数据库无需使用任何一种服务层。
 
 | 主题 | 描述|
 |-------|------------|

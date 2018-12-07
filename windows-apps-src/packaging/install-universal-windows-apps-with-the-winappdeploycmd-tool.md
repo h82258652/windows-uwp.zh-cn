@@ -1,24 +1,24 @@
 ---
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: 使用 WinAppDeployCmd.exe 工具安装应用
-description: Windows 应用程序部署 (WinAppDeployCmd.exe) 是可用于将部署到任意 windows 10 设备通用 Windows 平台 (UWP) 应用从 windows 10 电脑的命令行工具。
+description: Windows 应用程序部署 (WinAppDeployCmd.exe) 是可用于将部署到任意 windows 10 设备从 windows 10 电脑的通用 Windows 平台 (UWP) 应用的命令行工具。
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ec673236f41d4128e6aa5702f4d54f43c55890ab
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754953"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797720"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>使用 WinAppDeployCmd.exe 工具安装应用
 
 
-Windows 应用程序部署 (WinAppDeployCmd.exe) 是可用于将部署到任意 windows 10 设备通用 Windows 平台 (UWP) 应用从 windows 10 电脑的命令行工具。 此工具可用于在 windows 10 设备而无需为该应用的 Microsoft Visual Studio 或解决方案是通过 USB 连接还是位于同一子网的情况下部署应用包。 你还可以将事先未打包的应用部署到远程电脑或 Xbox One。 本文介绍如何使用此工具安装 UWP 应用。
+Windows 应用程序部署 (WinAppDeployCmd.exe) 是可用于将部署到任意 windows 10 设备从 windows 10 电脑的通用 Windows 平台 (UWP) 应用的命令行工具。 你可以使用此工具的应用包部署在 windows 10 设备时通过 USB 连接或位于同一子网而无需为该应用的 Microsoft Visual Studio 或解决方案。 你还可以将事先未打包的应用部署到远程电脑或 Xbox One。 本文介绍如何使用此工具安装 UWP 应用。
 
-你只需从命令提示符或脚本文件中运行 WinAppDeployCmd 工具安装 windows 10 SDK。 当你使用 WinAppDeployCmd.exe 安装应用时，这用于.appx/.msix 文件或 AppxManifest （适用于松散文件） 旁加载到 windows 10 设备上的应用。 此命令不会安装应用所需的证书。 若要运行应用时，windows 10 设备必须处于开发人员模式下或已经安装了证书。
+你只需在 windows 10 SDK 安装为从命令提示符或脚本文件中运行 WinAppDeployCmd 工具。 当你使用 WinAppDeployCmd.exe 安装应用时，这使用.appx/.msix 文件或 AppxManifest （适用于松散文件） 将旁加载到 windows 10 设备上的应用。 此命令不会安装应用所需的证书。 若要运行应用时，windows 10 设备必须处于开发人员模式下或已经安装了证书。
 
 若要部署到移动设备，必须首先创建程序包。 有关详细信息，请查看[此处](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
@@ -120,7 +120,7 @@ WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 WinAppDeployCmd devices 3
 ```
 
-从 windows 10 设备的 IP 地址为 192.168.0.1、 PIN 为 A1B2C3 以与设备建立连接到电脑的下载目录中的 MyApp.appx 程序包安装应用
+从 windows 10 设备 IP 地址为 192.168.0.1、 PIN 为 A1B2C3 以与设备建立连接到电脑的下载目录中的 MyApp.appx 程序包安装应用
 
 ``` syntax
 WinAppDeployCmd install -file "Downloads\MyApp.appx" -ip 192.168.0.1 -pin A1B2C3

@@ -13,11 +13,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e7453d3973cef31ae8143f3ecff31fffeb763a3
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8753560"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8801362"
 ---
 # <a name="keyboard-events"></a>键盘事件
 
@@ -329,7 +329,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 你可以替代特定控件（如 [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView)）的键事件，以针对各种输入设备（包括键盘和游戏板）提供一致的焦点导航。
 
-在下面的示例中，我们按下任意箭头键时，该控件子类并替代 KeyDown 行为，以将焦点移动到 GridView 内容。
+在以下示例中，我们按下任意箭头键时，控件子类并替代 KeyDown 行为，以将焦点移动到 GridView 内容。
 
 ```csharp
 public class CustomGridView : GridView

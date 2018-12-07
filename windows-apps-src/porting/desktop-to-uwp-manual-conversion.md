@@ -9,11 +9,11 @@ ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4b9b5f08be695d803e9254e5801ac63b2889e1c9
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749311"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8796001"
 ---
 # <a name="package-a-desktop-application-manually"></a>手动打包的桌面应用程序
 
@@ -21,7 +21,7 @@ ms.locfileid: "8749311"
 
 若要手动打包应用，请创建程序包清单文件，然后运行命令行工具生成 Windows 应用包。
 
-如果使用 xcopy 命令安装你的应用程序，或者你已经熟悉了你的应用安装程序对系统所作的更改，请考虑手动打包，并且想要更精确地控制过程。
+如果使用 xcopy 命令安装你的应用程序，或者你熟悉应用的安装程序对系统所做的更改，请考虑手动打包并且想要更精确地控制过程。
 
 如果不确定安装程序会对系统进行哪些更改，或如果更希望使用自动化工具来生成程序包清单，请考虑任一[这些](desktop-to-uwp-root.md#convert)选项。
 
@@ -84,11 +84,11 @@ ms.locfileid: "8749311"
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> 如果你已保留你的 Microsoft 应用商店中的应用程序名称，你可以使用[合作伙伴中心](https://partner.microsoft.com/dashboard)中获取的名称和发布者。 如果你计划旁加载到其他系统应用程序，你可以提供这些自己的名称，只要你用于对应用进行签名的证书上的名称匹配，你选择的发布者名称。
+> 如果你已保留在 Microsoft 应用商店中你的应用程序的名称，你可以通过使用[合作伙伴中心](https://partner.microsoft.com/dashboard)中获取的名称和发布者。 如果你计划旁加载到其他系统应用程序，你可以提供这些自己的名称，只要你用于对应用进行签名的证书上的名称匹配，你选择的发布者名称。
 
 ### <a name="properties"></a>属性
 
-[属性](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 元素具有 3 个所需子元素。 下面是一个带元素占位符文本的示例**属性**节点。 **DisplayName**是你在应用商店上, 传到应用商店的应用中保留的应用程序的名称。
+[属性](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 元素具有 3 个所需子元素。 下面是一个带元素占位符文本的示例**属性**节点。 **DisplayName**是你在应用商店，对于上传到应用商店的应用中保留的应用程序的名称。
 
 ```XML
 <Properties>
@@ -118,7 +118,7 @@ ms.locfileid: "8749311"
 ```
 
 ### <a name="capabilities"></a>功能
-为你将需要添加创建程序包的桌面应用``runFullTrust``功能。
+对于桌面应用创建的包的你将需要添加``runFullTrust``功能。
 
 ```XML
 <Capabilities>
@@ -174,7 +174,7 @@ ms.locfileid: "8749311"
 
 ### <a name="generate-a-package-resource-index-pri-file"></a>生成包资源索引 (PRI) 文件
 
-如果你创建基于目标的资源，如上述部分所述，或修改了任何视觉资源应用程序创建程序包后，你需要生成一个新的 PRI 文件。
+如果你创建基于目标的资源，如上述部分所述或修改了任何视觉资源你的应用程序创建程序包后，你需要生成新的 PRI 文件。
 
 1.  打开**适用于 VS 2017 的开发人员命令提示符**。
 
@@ -198,14 +198,14 @@ ms.locfileid: "8749311"
 
 ## <a name="run-the-packaged-app"></a>运行打包的应用
 
-你可以运行你的应用程序对它进行测试本地而无需获得证书并对其进行签名。 只需运行此 PowerShell cmdlet：
+你可以运行你的应用程序测试，本地而无需获得证书并对其进行签名。 只需运行此 PowerShell cmdlet：
 
 ```Add-AppxPackage –Register AppxManifest.xml```
 
 若要更新应用的 .exe 或 .dll 文件，请将程序包中的现有文件替换为新文件、增加 AppxManifest.xml 中的版本号，然后再次运行上述命令。
 
 > [!NOTE]
-> 打包的应用程序始终作为交互用户运行，并且任何安装已打包的应用程序上的驱动器必须格式化为 NTFS 格式。
+> 打包的应用程序始终作为交互用户运行，并且任何驱动器安装到你已打包的应用程序都必须格式化为 NTFS 格式。
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -223,4 +223,4 @@ ms.locfileid: "8749311"
 
 **对你的应用程序进行签名，然后将它分发**
 
-请参阅[分配已打包的桌面应用程序](desktop-to-uwp-distribute.md)
+请参阅[分布的已打包的桌面应用程序](desktop-to-uwp-distribute.md)
