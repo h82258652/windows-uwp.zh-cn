@@ -8,11 +8,11 @@ keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: d56482ee036eaadbd759de9af22fdd10c652aceb
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8744275"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790379"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>已打包的桌面应用程序的已知的问题
 
@@ -50,7 +50,7 @@ ms.locfileid: "8744275"
 
 ### <a name="error-found-in-xml-the-executable-attribute-is-invalid---the-value-myappexe-is-invalid-according-to-its-datatype"></a>XML 中发现错误。 “Executable”特性无效 - 根据其数据类型，值“MyApp.EXE”无效
 
-如果应用程序中的可执行文件具有大写的 **.EXE** 扩展名，则可能会出现这种情况。 虽然此扩展名的大小写不应影响，无论你的应用程序运行，这可能导致 DAC 生成此错误。
+如果应用程序中的可执行文件具有大写的 **.EXE** 扩展名，则可能会出现这种情况。 虽然此扩展名的大小写不应影响是否你的应用程序运行，这可能导致 DAC 生成此错误。
 
 若要解决此问题，请尝试在打包时指定 **-AppExecutable** 标志，并使用小写的“.exe”作为主要可执行文件的扩展名（例如 MYAPP.exe）。    或者你可以更改为大写小写应用程序中的所有可执行文件的大小写 (例如： 从。EXE.exe)。
 
@@ -93,7 +93,7 @@ PE 文件的验证码签名的位置由可选头数据目录中的证书表项�
 
 如果更新未解决问题或者你不确定如何恢复电脑，请联系 [Microsoft 支持](https://support.microsoft.com/contactus/)。
 
-如果是开发人员，可能需要阻止在不包含此更新的 Windows 版本上安装打包应用程序。 请注意，通过执行此操作，你的应用程序不会提供给尚未安装更新的用户。 若要限制用户已安装此更新的应用程序的可用性，请修改 AppxManifest.xml 文件，如下所示：
+如果是开发人员，可能需要阻止在不包含此更新的 Windows 版本上安装打包应用程序。 请注意，通过执行此操作，你的应用程序不会提供给用户尚未安装更新。 若要限制用户已安装此更新的应用程序的可用性，请修改 AppxManifest.xml 文件，如下所示：
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -121,7 +121,7 @@ Windows 应用包清单中的发布者条目必须与要用于签名的证书的
 
 **选项 3：CertUtil**
 
-从命令行运行**certutil** ，对 PFX 文件，并从输出中复制*使用者*字段。
+运行**certutil**从命令行对 PFX 文件，然后从输出复制*使用者*字段。
 
 ```cmd
 certutil -dump <cert_file.pfx>
@@ -129,19 +129,19 @@ certutil -dump <cert_file.pfx>
 
 <a id="bad-pe-cert" />
 
-### <a name="bad-pe-certificate-0x800700c1"></a>损坏的 PE 证书 (0x800700C1)
+### <a name="bad-pe-certificate-0x800700c1"></a>不合适的 PE 证书 (0x800700C1)
 
-当你的程序包包含已损坏的证书的二进制文件时，会出现此错误。 下面是一些会出现此错误原因的原因：
+当你的包包含一个已损坏的证书的二进制文件时，会出现此错误。 下面是一些会出现此错误原因的原因：
 
-* 证书的开始菜单不可末尾的图像。  
+* 开始菜单的证书不是图像的末尾。  
 
 * 证书的大小不积极。
 
-* 证书开始菜单未在`IMAGE_NT_HEADERS32`结构为一个 32 位可执行文件或之后`IMAGE_NT_HEADERS64`结构的 64 位可执行文件。
+* 证书开始屏幕后不是`IMAGE_NT_HEADERS32`结构为一个 32 位可执行文件或之后`IMAGE_NT_HEADERS64`结构的 64 位可执行文件。
 
 * 证书指针未正确对齐 WIN_CERTIFICATE 结构。
 
-若要查找包含损坏的 PE 证书文件，打开**命令提示符**，并设置名为环境变量`APPXSIP_LOG`为 1 的值。
+若要查找包含损坏的 PE 证书文件，打开**命令提示符**，并设置名为环境变量`APPXSIP_LOG`值为 1 到。
 
 ```
 set APPXSIP_LOG=1
@@ -153,7 +153,7 @@ set APPXSIP_LOG=1
 signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx
 ```
 
-包含损坏的 PE 证书的文件的信息将显示在**控制台窗口**中。 例如：
+在**控制台窗口**中将显示有关文件包含损坏的 PE 证书的信息。 例如：
 
 ```
 ...

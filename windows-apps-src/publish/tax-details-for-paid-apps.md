@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 税收, 应用税收, 税收要求, 商业扩张, 税率
 ms.localizationpriority: medium
 ms.openlocfilehash: 2065fb2a1cfeb2a895757e1aedc86cd421ff826c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8748744"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790687"
 ---
 # <a name="tax-details-for-paid-apps"></a>付费应用的税收明细
 
@@ -206,7 +206,7 @@ ms.locfileid: "8748744"
 | 圣赫勒拿、阿森松与特里斯坦达库尼亚    | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 圣基茨和尼维斯            | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 圣卢西亚                      | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
-| 法属圣马丁 （法属）       | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
+| 法属圣马丁 （法语一部分）       | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 圣文森特和格林纳丁斯 | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 萨摩亚                            | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 圣马力诺                       | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |

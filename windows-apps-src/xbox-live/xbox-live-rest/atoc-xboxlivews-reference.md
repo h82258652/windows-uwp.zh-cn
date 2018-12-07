@@ -7,16 +7,16 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 2076cf7b909083072904128a8f53c200a681ee8e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 5e63e4ee6789e4ffb292608aa446138109e00e05
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8757454"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785703"
 ---
 # <a name="xbox-live-services-restful-reference"></a>Xbox Live 服务 RESTful 参考
 
-Xbox Live 服务是一套用于管理游戏和玩家信息的服务。 这些服务支持**Xbox.Services** API，应尽可能使用。 使用 RESTful 接口较新的方法不会添加到**Xbox.Services**尚未此部分中所述。
+Xbox Live 服务是一套用于管理游戏和玩家信息的服务。 这些服务支持**Xbox.Services** API，应尽可能使用。 使用 RESTful 接口不已添加到**Xbox.Services**尚未的较新方法此部分中所述。
 
 <a id="ID4E5"></a>
 

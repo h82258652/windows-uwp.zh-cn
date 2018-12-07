@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b324cbca6d5e36193c057a6d1473ff1aad7be095
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745141"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791812"
 ---
 # <a name="playready-encrypted-media-extension"></a>PlayReady 加密媒体扩展
 
@@ -23,7 +23,7 @@ ms.locfileid: "8745141"
 
 ## <a name="whats-new-in-playready-encrypted-media-extension"></a>PlayReady 加密媒体扩展中的新增功能
 
-本部分提供发出对 PlayReady 加密媒体扩展 (EME) 上启用 PlayReady 内容保护 windows 10 的更改的列表。
+本部分提供更改到 PlayReady 加密媒体扩展 (EME) 上启用 PlayReady 内容保护 windows 10 的列表。
 
 下表介绍的新功能和 windows 10 的 PlayReady 加密媒体扩展到所做的更改：
 
@@ -34,10 +34,10 @@ ms.locfileid: "8745141"
 -   可主动获取非永久性许可证。
 -   在一条消息中可获取多个许可证。
 
-    可以使用如下所示 Windows8.1 的多个密钥标识符 (Keyid) 使用 PlayReady 对象，也可以与多个 Keyid 使用[内容解密模型数据 (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) 。
+    你可以使用如 Windows8.1 中, 所示的多个密钥标识符 (Keyid) 使用 PlayReady 对象，或通过多个 Keyid 使用[内容解密模型数据 (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) 。
 
     > [!NOTE]
-    > 在 windows 10，多个密钥标识符支持下&lt;KeyID&gt;在 CDMData 中。
+    > 在 windows 10，多个密钥标识符下支持&lt;KeyID&gt;在 CDMData 中。
 
 -   添加了实时到期支持，或有限持续时间许可证 (LDL)。
 

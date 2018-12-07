@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 524cc15dbb7a3264d8476210f727508ea41ace87
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8733889"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790604"
 ---
 # <a name="create-adaptive-tiles"></a>创建自适应磁贴
 
@@ -208,7 +208,7 @@ TileContent content = new TileContent()
 
 你可以控制动态磁贴底部的品牌（显示名称和角徽标），方法是使用通知负载上的品牌属性。 你可以选择显示“无”、仅“名称”、仅“徽标”，或使用“nameAndLogo”显示两者。
 
-**注意**Windows Mobile 不支持在 Mobile 上角徽标，因此"徽标"和"nameAndLogo"默认值为"名称"。
+**注意**Windows Mobile 不支持在 Mobile 上角徽标，因此"徽标"和"nameAndLogo"默认为"名称"。
 
  
 
@@ -485,7 +485,7 @@ new AdaptiveText()
 
 若要在各个设备和屏幕上提供最佳体验，请提供多个组。 如果有多个组，你的磁贴将可以适应更大的屏幕。
 
-**注意**组的唯一有效子级是子组。
+**注意**一组的唯一有效子级是子组。
 
  
 

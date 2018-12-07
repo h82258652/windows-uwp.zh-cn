@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，帐户用户，管理用户、 azure ad，多用户、 多个用户
 ms.localizationpriority: medium
 ms.openlocfilehash: 282b1eb087fa081b621437206f338ed4b6d3569b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8742236"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790945"
 ---
 # <a name="manage-account-users"></a>管理帐户用户
 
@@ -26,4 +26,4 @@ ms.locfileid: "8742236"
 -   [为帐户用户设置角色和自定义权限](set-custom-permissions-for-account-users.md)
 
 > [!TIP]
-> 这些主题适用于 Windows 应用开发人员计划的合作伙伴中心中，不过租户关联和用户管理流程类似 Windows 硬件开发人员计划中的帐户 （有关详细信息，请参阅[仪表板管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)） 或在Windows 桌面应用程序计划 （有关详细信息，请参阅[Windows 桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)）。
+> 这些主题适用于 Windows 应用开发人员计划在合作伙伴中心，不过租户关联和用户管理流程类似 Windows 硬件开发人员计划中的帐户 （有关详细信息，请参阅[仪表板管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)） 或在Windows 桌面应用程序计划 （有关详细信息，请参阅[Windows 桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)）。

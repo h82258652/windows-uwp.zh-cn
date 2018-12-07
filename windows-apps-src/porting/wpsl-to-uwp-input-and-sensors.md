@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ef1814443b3831e514eafb3f5a0c58b7703126b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730978"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792469"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-io-device-and-app-model"></a>针对 I/O、 设备和应用模型进行移植 WindowsPhone silverlight 移植到 UWP
 
@@ -22,7 +22,7 @@ ms.locfileid: "8730978"
 
 ## <a name="application-lifecycle-process-lifetime-management"></a>应用程序生命周期（进程周期管理）
 
-WindowsPhone Silverlight 应用包含代码，用于保存和还原其应用程序状态及其视图状态才可支持进行逻辑删除并随后进行重新激活。 通用 Windows 平台 (UWP) 应用的应用生命周期有诸多与 WindowsPhone Silverlight 应用，因为它们都旨在最大程度地可用的资源相同的目标应用到用户已选择都使用在任何时刻的前景色。 你会发现你的代码可以相当轻松地适应新系统。
+WindowsPhone Silverlight 应用包含代码，用于保存和还原其应用程序状态及其视图状态才可支持进行逻辑删除并随后进行重新激活。 通用 Windows 平台 (UWP) 应用的应用生命周期有诸多与 WindowsPhone Silverlight 应用，因为它们都旨在最大程度地可用的资源相同的目标到任何应用用户已选择都使用在任何时刻的前景色。 你会发现你的代码可以相当轻松地适应新系统。
 
 **注意**自动按下硬件**后退**按钮终止 WindowsPhone Silverlight 应用。 按下移动设备上的硬件 **“后退”** 按钮*不会*自动终止 UWP 应用。 但是，它将处于暂停状态，然后可能会被终止。 但是，对于对应用程序生命周期事件做出相应响应的应用，这些详细信息是透明的。
 
@@ -67,7 +67,7 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 
 ## <a name="device-status"></a>设备状态
 
-WindowsPhone Silverlight 应用可以使用**Microsoft.Phone.Info.DeviceStatus**类来获取有关在其运行应用的设备的信息。 尽管 **Microsoft.Phone.Info** 命名空间没有直接的 UWP 等效项，但下面提供了一些可在 UWP 应用中使用的属性和事件，从而无需调用 **DeviceStatus** 类的成员。
+WindowsPhone Silverlight 应用可以使用**Microsoft.Phone.Info.DeviceStatus**类获取有关在其运行应用的设备的信息。 尽管 **Microsoft.Phone.Info** 命名空间没有直接的 UWP 等效项，但下面提供了一些可在 UWP 应用中使用的属性和事件，从而无需调用 **DeviceStatus** 类的成员。
 
 | Windows Phone Silverlight                                                               | UWP                                                                                                                                                                                                                                                                                                                                |
 |-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -86,7 +86,7 @@ WindowsPhone Silverlight 应用可以使用**Microsoft.Phone.Info.DeviceStatus**
 
 ## <a name="location"></a>位置
 
-声明了位置功能在其应用包清单中的应用上运行时 windows 10，则系统将提示最终用户同意。 因此，如果你的应用显示自己的自定义许可提示，或者如果它提供了一个开/关切换开关，则需要删除它以便仅提示最终用户一次。
+声明了位置功能其应用包清单中的应用上运行时 windows 10，则系统将提示最终用户同意。 因此，如果你的应用显示自己的自定义许可提示，或者如果它提供了一个开/关切换开关，则需要删除它以便仅提示最终用户一次。
 
 ## <a name="orientation"></a>方向
 

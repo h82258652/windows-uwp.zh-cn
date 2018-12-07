@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, 打包, 资产包布局, 资产包
 ms.localizationpriority: medium
 ms.openlocfilehash: b7ae65d13f92f5ab28f2f5eda468032bb7f83793
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747904"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791673"
 ---
 # <a name="introduction-to-asset-packages"></a>资产包简介
 
@@ -26,7 +26,7 @@ ms.locfileid: "8747904"
 ### <a name="how-do-asset-packages-affect-publishing"></a>资产包对发布有何影响？
 资产包最明显的好处是减小了打包应用的大小。 较小的应用包可减少 Microsoft Store 处理的文件数量，从而加快应用发布过程；但这不是资产包最重要的好处。
 
-创建资产包后，你可以指定是否允许包执行。 由于资产包只应包含与体系结构无关的文件，通常不包含任何 .dll 或 .exe 文件，因此资产包通常不需要执行。 这种区别的重要性在于，在发布过程中，必须扫描所有可执行程序包以确保它们不包含恶意软件，而对于较大的程序包，扫描过程需要更长的时间。 但是，如果将程序包指定为不可执行，则应用的安装将确保该程序包中包含的文件无法执行。 这一保证消除了扫描整个程序包的需要，将大幅减少应用发布（以及更新）期间的恶意软件扫描时间，从而显著加快使用资产包的应用的发布速度。 请注意该[平面捆绑应用包](flat-bundles.md)必须还可用于获得该发布优势，因为这允许应用商店以每个.appx 或.msix 包并行处理文件。 
+创建资产包后，你可以指定是否允许包执行。 由于资产包只应包含与体系结构无关的文件，通常不包含任何 .dll 或 .exe 文件，因此资产包通常不需要执行。 这种区别的重要性在于，在发布过程中，必须扫描所有可执行程序包以确保它们不包含恶意软件，而对于较大的程序包，扫描过程需要更长的时间。 但是，如果将程序包指定为不可执行，则应用的安装将确保该程序包中包含的文件无法执行。 这一保证消除了扫描整个程序包的需要，将大幅减少应用发布（以及更新）期间的恶意软件扫描时间，从而显著加快使用资产包的应用的发布速度。 请注意该[平面捆绑应用包](flat-bundles.md)必须还可用于获得该发布优势，因为这允许应用商店以每个.appx 或.msix 程序包并行处理文件。 
 
 
 ### <a name="should-i-use-asset-packages"></a>我应该使用资产包吗？

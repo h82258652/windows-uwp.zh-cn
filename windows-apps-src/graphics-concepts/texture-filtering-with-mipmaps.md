@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 474f97f32439c389be8283bb10e0c0ed716b3f69
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754110"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791245"
 ---
 # <a name="texture-filtering-with-mipmaps"></a>使用 mipmap 进行纹理筛选
 
@@ -47,7 +47,7 @@ Direct3D 可评估 mipmap 集中的哪个纹理的分辨率与所需的输出最
 
 Mipmap 纹理应用于 3D 场景中，可缩短呈现场景所需的时间。 Mipmap 纹理还可以增强场景的真实性， 但通常需要占用大量的内存。
 
-**注意** mipmap 链中的每个表面具有尺寸的一半的一个表面链中。 如果顶层 mipmap 的尺寸为 256x128，则第二层 mipmap 的尺寸为 128x64，第三层 mipmap 的尺寸为 64x32，依此类推，最低层 mipmap 的尺寸为 1x1。 链中任何 mipmap 的宽度或高度不得小于 1，因此你可以请求的 mipmap 层级在数量上存在限制。 以 4x2 顶层 mipmap 表面为例，允许的最大值为 3 层。 也就是，顶层 mipmap 的尺寸为 4x2，第二层 mipmap 的尺寸为 2x1，第三层 mipmap 的尺寸为 1x1。 如果值大于 3，会使第二层 mipmap 的高度变为小数值，因此这是不允许的。
+**注意**的 mipmap 链中每个表面具有尺寸的一半的一个表面链中。 如果顶层 mipmap 的尺寸为 256x128，则第二层 mipmap 的尺寸为 128x64，第三层 mipmap 的尺寸为 64x32，依此类推，最低层 mipmap 的尺寸为 1x1。 链中任何 mipmap 的宽度或高度不得小于 1，因此你可以请求的 mipmap 层级在数量上存在限制。 以 4x2 顶层 mipmap 表面为例，允许的最大值为 3 层。 也就是，顶层 mipmap 的尺寸为 4x2，第二层 mipmap 的尺寸为 2x1，第三层 mipmap 的尺寸为 1x1。 如果值大于 3，会使第二层 mipmap 的高度变为小数值，因此这是不允许的。
 
  
 

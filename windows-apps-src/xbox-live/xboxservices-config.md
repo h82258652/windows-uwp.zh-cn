@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务配置, xboxservices.config
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ff538d691627bf4bb12b3ef6f8b1360e59ac701
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750578"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787841"
 ---
 # <a name="xboxservicesconfig-file-description"></a>XboxServices.config 文件描述
 
@@ -27,8 +27,8 @@ ms.locfileid: "8750578"
 
 字段 | 描述
 --- | ---
-PrimaryServiceConfigId  |  Xbox Live 服务配置 ID (SCID)。 在[合作伙伴中心](https://partner.microsoft.com/dashboard)，你可以为你的应用**服务**部分下找到**Xbox Live**的页面 （对于创意者计划） 或**Xbox Live 设置**页面 （适用于所有 Xbox Live 游戏），此值。
-TitleId  |  应用的十进制作品 ID。 在[合作伙伴中心](https://partner.microsoft.com/dashboard)，你可以为你的应用**服务**部分下找到**Xbox Live**的页面 （对于创意者计划） 或**Xbox Live 设置**页面 （适用于所有 Xbox Live 游戏），此值。
+PrimaryServiceConfigId  |  Xbox Live 服务配置 ID (SCID)。 在[合作伙伴中心](https://partner.microsoft.com/dashboard)，你可以为你的应用**服务**部分下找到**Xbox Live**页面 （对于创意者计划） 或**Xbox Live 设置**页面 （适用于所有 Xbox Live 游戏），此值。
+TitleId  |  应用的十进制作品 ID。 在[合作伙伴中心](https://partner.microsoft.com/dashboard)，你可以为你的应用**服务**部分下找到**Xbox Live**页面 （对于创意者计划） 或**Xbox Live 设置**页面 （适用于所有 Xbox Live 游戏），此值。
 XboxLiveCreatorsTitle  |  如果为“true”，则指示应用是 Xbox Live 创意者计划应用。 否则为“false”。
 范围  |  **（可选）** 定义应用所用功能的范围。 有关详细描述，请见下文。
 

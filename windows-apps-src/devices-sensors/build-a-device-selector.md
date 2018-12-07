@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 01a4bfc2ec4c1d442058dbb6009065541f93cc7f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731713"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788906"
 ---
 # <a name="build-a-device-selector"></a>生成设备选择器
 
@@ -62,7 +62,7 @@ ms.locfileid: "8731713"
 
 > **提示**你可以指定**NULL** **COP\_EQUAL**或**COP\_NOTEQUAL**。 这将转换为一个没有值或值不存在的属性。 在 AQS 中，可以使用空括号 \[\] 指定 **NULL**。
 
-> **重要提示**在使用**COP\_VALUE\_CONTAINS**和**COP\_VALUE\_NOTCONTAINS**运算符时，它们的行为不同的字符串和字符串数组。 如果是字符串，系统将执行不区分大小写的搜索，以查看设备是否将指定字符串作为子字符串包含起来。 如果是字符串数组，则不会搜索子字符串。 对于字符串数组，将搜索该数组，查看它是否包含整个指定字符串。 无法通过搜索字符串数组查看数组中的元素是否包含一个子字符串。
+> **重要提示**在使用**COP\_VALUE\_CONTAINS**和**COP\_VALUE\_NOTCONTAINS**运算符时，它们的行为不同的方式与字符串和字符串数组。 如果是字符串，系统将执行不区分大小写的搜索，以查看设备是否将指定字符串作为子字符串包含起来。 如果是字符串数组，则不会搜索子字符串。 对于字符串数组，将搜索该数组，查看它是否包含整个指定字符串。 无法通过搜索字符串数组查看数组中的元素是否包含一个子字符串。
 
 如果你无法创建可相应地设置结果范围的单个 AQS 筛选器字符串，则可以在接收结果后进行筛选。 但是，如果你选择执行此操作，我们建议你在将结果提供给 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 时，尽量从初始 AQS 筛选器字符串限制结果。 这将有助于提高你的应用程序的性能。
 

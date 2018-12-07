@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9911323010f691d1fa59c35306a7173cd08a0faa
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755863"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790859"
 ---
 # <a name="resolve-submission-errors"></a>解决提交错误
 
@@ -19,7 +19,7 @@ ms.locfileid: "8755863"
 
 ## <a name="uwp-apps"></a>UWP 应用
 
-如果你要提交 UWP 应用，你可能在预处理过程程序包文件不由 Visual Studio 生成的应用商店.msixupload 或.appxupload 文件中看到的错误。 请确保按照[程序包使用 Visual Studio 的 UWP 应用](../packaging/packaging-uwp-apps.md)中的步骤，创建你的应用包文件时，仅上载的提交中，不是.msix/appx 或.msixbundle/appxbundle[程序包](upload-app-packages.md)页面上的.msixupload 或.appxupload 文件.
+如果你要提交 UWP 应用，你可能在预处理过程程序包文件不由 Visual Studio 生成的应用商店.msixupload 或.appxupload 文件中看到的错误。 请确保按照[程序包使用 Visual Studio 的 UWP 应用](../packaging/packaging-uwp-apps.md)中的步骤，创建你的应用的程序包文件时，仅上载的提交，不是.msix/appx 或.msixbundle/appxbundle 的[程序包](upload-app-packages.md)页面上的.msixupload 或.appxupload 文件.
 
 如果显示了编译错误，请确保能够在发布模式中成功生成应用程序。 有关详细信息，请参阅 [.NET 本机内部编译器错误](http://go.microsoft.com/fwlink/p/?LinkID=613098)。
 
@@ -30,7 +30,7 @@ ms.locfileid: "8755863"
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x 及更早版本
 
 > [!IMPORTANT]
-> 从 2018 年 10 月 31 日起新创建的产品不能包含程序包面向 Windows Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+> 从 2018 年 10 月 31 日起新创建产品不能包含程序包面向 Windows Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
 
 在预处理过程中检测到 Windows Phone 程序包的问题时，你可能会看到**错误 2001**。 在大多数情况下，需要重新生成你的应用包来更正错误。 完成后，请在提交的[程序包](upload-app-packages.md)页面上将旧程序包替换为新程序包，然后再单击“提交到应用商店”****。
 

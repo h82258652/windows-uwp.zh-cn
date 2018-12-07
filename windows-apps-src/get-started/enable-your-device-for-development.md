@@ -7,11 +7,11 @@ ms.date: 05/30/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1338373226b30c3126782a62f3b5260a47e86d63
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8758517"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793009"
 ---
 # <a name="enable-your-device-for-development"></a>启用设备进行开发
 
@@ -52,7 +52,7 @@ ms.locfileid: "8758517"
 
  你可以启用设备以进行开发，或仅进行旁加载。
 
--   *Microsoft Store 应用*是默认设置。 如果你未正在开发应用或者未使用公司发布的特殊内部应用，则启用此设置。
+-   *Microsoft 应用商店应用*是默认设置。 如果你未正在开发应用或者未使用公司发布的特殊内部应用，则启用此设置。
 -   *旁加载*是指安装未经 Microsoft Store 认证的应用，然后对其进行运行或测试的过程。 例如，仅限公司内部使用的应用。
 -   借助*开发人员模式*，你不仅可以旁加载应用，还可以在调试模式下从 Visual Studio 运行应用。 
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a312d3744e96755a899d73307a47c01e3dc79fd
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8732739"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787945"
 ---
 # <a name="handleshandleid"></a>/handles/{handleId}
 支持会话句柄由标识符指定删除和 GET 的操作。 

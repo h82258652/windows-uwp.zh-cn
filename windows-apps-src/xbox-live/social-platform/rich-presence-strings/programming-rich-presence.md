@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 完整状态
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a113dc140500c982ddf22e25308eaafeaed66d6
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8732029"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780261"
 ---
 # <a name="programming-rich-presence"></a>对 Rich Presence 进行编程
 

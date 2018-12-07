@@ -1,17 +1,17 @@
 ---
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: 此案例研究以 Bookstore 中提供的信息，首先显示分组数据的 LongListSelector WindowsPhone Silverlight 应用。
+description: 此案例研究，以 Bookstore 中提供的信息，首先显示分组数据 LongListSelector 中的 WindowsPhone Silverlight 应用。
 title: WindowsPhone silverlight 移植到 UWP 案例研究： Bookstore2
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b75da7d50135ee8d40f8ed44f0239edb54dcf65
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745784"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792508"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>WindowsPhone silverlight 移植到 UWP 案例研究： Bookstore2
 
@@ -120,7 +120,7 @@ ms.locfileid: "8745784"
 
 ![移动设备上初始源代码发生更改的 UWP 应用](images/wpsl-to-uwp-case-studies/c02-02-mob10-initial-source-code-changes.png)
 
-视图模型与放大和缩小视图正确协作，不过，我们面临着需再多做一些样式设置和模板方面的工作这一问题。 例如，正确的样式和画笔是不尚未使用，使你可以通过单击缩小的组标题上不可见的文本。如果在桌面设备上运行该应用，你将看到第二个问题，即，该应用尚未调整其用户界面以提供的最佳体验和使用的窗口可以可能比在移动设备的屏幕大小大很多较大的设备上的空间。 因此，在后面的几个部分（[初始样式设置和模板](#initial-styling-and-templating)、[自适应 UI](#adaptive-ui) 和 [最终样式设置](#final-styling)）中我们将解决这些问题。
+视图模型与放大和缩小视图正确协作，不过，我们面临着需再多做一些样式设置和模板方面的工作这一问题。 例如，正确的样式和画笔是不尚未使用，使你可以通过单击缩小的组标题上不可见的文本。如果你在桌面设备上运行该应用，你将看到第二个问题，即，该应用尚未调整其用户界面以提供最佳体验和使用的窗口可以可能比在移动设备的屏幕大小大很多较大的设备上的空间。 因此，在后面的几个部分（[初始样式设置和模板](#initial-styling-and-templating)、[自适应 UI](#adaptive-ui) 和 [最终样式设置](#final-styling)）中我们将解决这些问题。
 
 ## <a name="initial-styling-and-templating"></a>初始样式设置和模板
 
@@ -264,11 +264,11 @@ ms.locfileid: "8745784"
 
 ![在移动设备上运行的已移植的 Windows 10 应用，缩小视图](images/w8x-to-uwp-case-studies/c02-10-mob10-zo-ported.png)
 
-在移动设备上使用，缩小视图运行的已移植的 windows 10 应用
+在移动设备，缩小视图上运行的已移植的 windows 10 应用
 
 ## <a name="making-the-view-model-more-flexible"></a>使视图模型更灵活
 
-本部分包含多种设施的示例，这些设施是由于移动我们的应用以使用 UWP 而对我们开放的。 下面介绍一些可选步骤，你可以利用它们在通过 **CollectionViewSource** 访问视图模型时使之更灵活。 视图模型 （源文件位于 ViewModel\\BookstoreViewModel.cs 中） 我们从 WindowsPhone Silverlight 应用 Bookstore2WPSL8 移植包含一个名为 Author 派生类**列表&lt;T&gt;**，其中的**T**是 BookSku。 这意味着，Author 类*是一*组 BookSku。
+本部分包含多种设施的示例，这些设施是由于移动我们的应用以使用 UWP 而对我们开放的。 下面介绍一些可选步骤，你可以利用它们在通过 **CollectionViewSource** 访问视图模型时使之更灵活。 视图模型 （源文件位于 ViewModel\\BookstoreViewModel.cs 中） 我们从 WindowsPhone Silverlight 应用 Bookstore2WPSL8 移植包含名为 Author 派生的类**列表&lt;T&gt;**，其中的**T**是 BookSku。 这意味着，Author 类*是一*组 BookSku。
 
 当我们将 **CollectionViewSource.Source** 绑定到 Authors 时，我们要传达的唯一信息是 Authors 中的每个 Author 都是一个包含*某些内容*的组。 我们将其保留为 **CollectionViewSource**，以确定在此情况下 Author 确实是一组 BookSku。 该方法可用：但是不灵活。 如果我们希望 Author *既属于*一组 BookSku *又属于*一组作者的住址呢？ Author 不可能同时*属于*这两个组。 但 Author 可以*包含*任意数量的组。 而这就是解决方案：使用*包含组*模式而不是我们当前在使用的*属于组*模式。 操作方法如下：
 
@@ -301,4 +301,4 @@ ms.locfileid: "8745784"
 
 ## <a name="conclusion"></a>总结
 
-此案例研究涉及了一个比上一个用户界面更为大胆的用户界面。 所有设施和概念的 WindowsPhone Silverlight **LongListSelector**— 等 — 后来发现是适用于 UWP 应用的**SemanticZoom**、 **ListView**、 **GridView**，以及**CollectionViewSource**形式。 我们展示了如何在 UWP 应用中重复使用、或复制并编辑强制性代码和标记，以实现为适合最窄和最宽以及介于这两者之间的所有大小的 Windows 设备外形规格而定制的功能、UI 和交互。
+此案例研究涉及了一个比上一个用户界面更为大胆的用户界面。 所有设施和概念的 WindowsPhone Silverlight **LongListSelector**— 和详细信息--发现适用于 UWP 应用的**SemanticZoom**、 **ListView**、 **GridView**和**CollectionViewSource**形式。 我们展示了如何在 UWP 应用中重复使用、或复制并编辑强制性代码和标记，以实现为适合最窄和最宽以及介于这两者之间的所有大小的 Windows 设备外形规格而定制的功能、UI 和交互。

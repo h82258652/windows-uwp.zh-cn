@@ -7,11 +7,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live，Xbox，游戏，uwp，windows 10，Xbox one，本地化字符串，合作伙伴中心
 ms.openlocfilehash: 127f566dc5ae57b920d396623b6a84ff5d5eed96
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8736521"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8783137"
 ---
 # <a name="configuring-localized-strings-in-partner-center"></a>在合作伙伴中心配置本地化字符串
 

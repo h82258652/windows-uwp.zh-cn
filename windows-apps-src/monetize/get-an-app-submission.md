@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用提交
 ms.localizationpriority: medium
 ms.openlocfilehash: ca13ff36db823bfea44fa9e31c20a621c5b8aa2e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734854"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792220"
 ---
 # <a name="get-an-app-submission"></a>获取应用提交
 
@@ -24,7 +24,7 @@ ms.locfileid: "8734854"
 
 * 如果尚未开始操作，请先完成 Microsoft Store 提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 创建一个应用提交。 你可以执行此操作在合作伙伴中心，或者你可以通过使用[创建应用提交](create-an-app-submission.md)的方法。
+* 创建一个应用提交。 你可以执行此操作在合作伙伴中心，或者你可以执行此操作通过使用[创建应用提交](create-an-app-submission.md)的方法。
 
 ## <a name="request"></a>请求
 

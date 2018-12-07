@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 714da78a8860eec92bce9389185f52a58e45b44e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756641"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791172"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>借助自动播放功能自动启动
 
@@ -106,7 +106,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **注意**`DisplayImages`和`CopyImages`方法添加以下步骤中。
+> **注意**`DisplayImages`和`CopyImages`方法在以下步骤中添加。
 
 ### <a name="step-4-add-code-to-display-images"></a>步骤 4：添加用于显示图像的代码
 

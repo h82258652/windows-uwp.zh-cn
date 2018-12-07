@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 线程, 线程池
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c1df6a4b72b7c73cac41e66ef1074975db0d979
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754472"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793089"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>向线程池提交工作项
 
@@ -350,7 +350,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>摘要和后续步骤
 
-你可以了解详情，请在[创建 ThreadPool 工作项示例](http://go.microsoft.com/fwlink/p/?LinkID=328569)编写 Windows8.1，此快速入门下载代码并在 win_unap windows 10 应用中重复使用的源代码。
+你可以了解详情，请在[创建 ThreadPool 工作项示例](http://go.microsoft.com/fwlink/p/?LinkID=328569)为 Windows8.1，编写此快速入门下载代码并在 win_unap windows 10 应用中重复使用的源代码。
 
 ## <a name="related-topics"></a>相关主题
 

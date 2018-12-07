@@ -5,12 +5,12 @@ ms.date: 9/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
-ms.openlocfilehash: 795155ab38be11987d978d8c3843a73b7d359277
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 465253be7ebf8cf7794004c0a6832a78cb0ced69
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755043"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792626"
 ---
 # <a name="optional-packages-with-executable-code"></a>包含可执行代码的可选包
  
@@ -24,7 +24,10 @@ ms.locfileid: "8755043"
 若要获取最新的开发工具，请参阅[适用于 Windows 10 的下载和工具](https://developer.microsoft.com/windows/downloads)。 
 
 > [!NOTE]
-> 若要将使用可选包和/或相关集的应用提交到 Microsoft Store，你需要权限。 如果它们不提交到应用商店，可以为合作伙伴中心未经许可的业务线 (LOB) 或企业应用使用可选包和相关的集。 请参阅 [Windows 开发人员支持](https://developer.microsoft.com/windows/support)，获取提交使用可选包和相关集的应用的权限。
+> 若要将使用可选包和/或相关集的应用提交到 Microsoft Store，你需要权限。 如果它们不提交到应用商店，可选包和相关的集可以使用适用于合作伙伴中心未经许可的业务线 (LOB) 或企业应用。 请参阅 [Windows 开发人员支持](https://developer.microsoft.com/windows/support)，获取提交使用可选包和相关集的应用的权限。
+
+> [!NOTE]
+> 包含可执行代码的可选包必须[相关的集](https://docs.microsoft.com/windows/uwp/packaging/optional-packages#related-sets)的一部分。 你将无法从可选包执行代码，除非它是一组相关的一部分。
 
 ## <a name="c-optional-packages-with-executable-code"></a>包含可执行代码的 C++ 可选包
 

@@ -5,12 +5,12 @@ keywords: 用户活动, 时间线, cortana 从你离开的位置继续, cortana 
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 98a7697715b456498db3ee5642e2743ae228b3cb
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: f35882af5ed7f66f59eb4e7fc4410223c4424e92
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749972"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790826"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>即便跨设备，也继续用户活动
 
@@ -99,7 +99,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-此代码用于检测应用是否是通过协议激活的。 如果是，它会设法确定应用应执行什么操作来继续之前的任务（应用因此任务被激活）。 由于是一个简单应用，此应用要继续执行的唯一活动是在应用启动时将你转至辅助页面。
+此代码用于检测应用是否是通过协议激活的。 如果是，它会设法确定应用应执行什么操作来继续之前的任务（应用因此任务被激活）。 由于一个简单应用，此应用恢复的唯一活动将你至辅助页面应用弹出时。
 
 ## <a name="use-adaptive-cards-to-improve-the-timeline-experience"></a>使用自适应卡片来改善时间线体验
 

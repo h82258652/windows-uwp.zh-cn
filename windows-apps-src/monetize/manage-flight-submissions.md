@@ -7,24 +7,24 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 19ddd43d4e61480764882f1b10e6240aa2afeb8c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750211"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791911"
 ---
 # <a name="manage-package-flight-submissions"></a>管理软件包外部测试版提交
 
 Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部测试版提交的方法，包括逐步软件包推出。 有关 Microsoft Store 提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
 > [!IMPORTANT]
-> 如果你使用 Microsoft Store 提交 API 创建软件包外部测试版提交，请务必进行进一步更改提交到仅使用 API，而不是合作伙伴中心。 如果你使用仪表板更改你最初使用此 API 创建的提交，则将无法再使用此 API 更改或提交该提交。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
+> 如果你使用 Microsoft Store 提交 API 创建软件包外部测试版提交，请务必对进行进一步更改提交只能通过使用 API，而不是合作伙伴中心。 如果你使用仪表板更改你最初使用此 API 创建的提交，则将无法再使用此 API 更改或提交该提交。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
 
 <span id="methods-for-package-flight-submissions" />
 
 ## <a name="methods-for-managing-package-flight-submissions"></a>管理软件包外部测试版提交的方法
 
-使用以下方法获取、创建、更新、提交或删除软件包外部测试版提交。 你可以使用这些方法之前，必须已在合作伙伴中心存在软件包外部测试版。 你可以创建软件包外部测试版[中的合作伙伴中心](https://msdn.microsoft.com/windows/uwp/publish/package-flights)或通过使用中的 Microsoft 应用商店提交 API 方法中所述[管理软件包外部测试版](manage-flights.md)。
+使用以下方法获取、创建、更新、提交或删除软件包外部测试版提交。 你可以使用这些方法之前，必须已在合作伙伴中心中存在软件包外部测试版。 你可以创建软件包外部测试版[中的合作伙伴中心](https://msdn.microsoft.com/windows/uwp/publish/package-flights)或通过使用中的 Microsoft 应用商店提交 API 方法中所述[管理软件包外部测试版](manage-flights.md)。
 
 <table>
 <colgroup>
@@ -79,7 +79,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 若要创建软件包外部测试版提交，请遵循此过程。
 
-1. 如果尚未不执行此操作，完整必备条件中所述[创建使用 Microsoft Store 服务和管理提交](create-and-manage-submissions-using-windows-store-services.md)，包括将 Azure AD 应用程序与你的合作伙伴中心帐户相关联并获取客户端 ID 和密钥。 你只需执行此操作一次；有了客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。  
+1. 如果尚未不执行此操作，完整必备条件中所述[创建使用 Microsoft Store 服务和管理提交](create-and-manage-submissions-using-windows-store-services.md)，包括将 Azure AD 应用程序与你的合作伙伴中心帐户相关联并获取你的客户端 ID 和密钥。 你只需执行此操作一次；有了客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。  
 
 2. [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 在 Microsoft Store 提交 API 中，必须将此访问令牌传递给相关方法。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
@@ -331,7 +331,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 此资源具有以下值。
 
 > [!NOTE]
-> 当调用[更新应用提交](update-a-flight-submission.md)方法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 由合作伙伴中心，其他值进行填充。
+> 当调用[更新应用提交](update-a-flight-submission.md)方法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由合作伙伴中心进行填充。
 
 | 值           | 类型    | 说明              |
 |-----------------|---------|------|

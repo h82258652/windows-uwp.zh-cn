@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 877986ce9d48269295a68dbfd644f14785916b88
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8740531"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8783227"
 ---
 # <a name="post-itemid"></a>POST ({itemID})
 指示，已使用所有或易耗型库存项目的部分和递减所请求的量由该消耗品的数量。

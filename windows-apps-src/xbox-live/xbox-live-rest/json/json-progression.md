@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: dda124e5be9a4d21a1ee5b9d6130290207e31921
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8751188"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787758"
 ---
 # <a name="progression-json"></a>Progression (JSON)
 在用户解锁成就的进度。 

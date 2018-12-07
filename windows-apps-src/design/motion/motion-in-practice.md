@@ -12,11 +12,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 355c760e173bd101b2865c300824de44b6434ee4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735085"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791265"
 ---
 # <a name="bringing-it-together"></a>综合运用
 
@@ -83,7 +83,7 @@ ms.locfileid: "8735085"
 > 隐式动画需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本。
 
 
-隐式动画是通过自动内插期间参数更改的旧的和新值之间实现 Fluent 运动的简单方法。
+隐式动画是通过进行自动插值之间期间参数更改的旧的和新值来实现 Fluent 运动的简单方法。
 
 你还可以隐式动画更改以下属性：
 
@@ -96,9 +96,9 @@ ms.locfileid: "8735085"
 - [边框](/uwp/api/windows.ui.xaml.controls.border)、 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)或[面板](/uwp/api/windows.ui.xaml.controls.panel)
   - **Background**
 
-可以具有隐式动画处理的更改的每个属性都有相应的_转换_属性。 属性进行动画处理，你将过渡类型分配到相应的_转换_属性。 此表显示了_转换_属性以及用于每个转换类型。
+可以具有隐式动画处理的更改的每个属性都有相应的_过渡_属性。 属性进行动画处理，你将过渡类型分配到相应的_过渡_属性。 此表显示_转换_属性以及用于每个过渡类型。
 
-| 动画的属性 | 转换属性 | 隐式转换类型 |
+| 动画化的属性 | 转换属性 | 隐式转换类型 |
 | -- | -- | -- |
 | [UIElement.Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
 | [UIElement.Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | [RotationTransition](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
@@ -108,7 +108,7 @@ ms.locfileid: "8735085"
 | [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 | [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-此示例显示了如何使用的 Opacity 属性和过渡使按钮启用控件时，淡入和淡出，当它处于禁用状态。
+此示例显示了如何使用的 Opacity 属性和过渡使按钮启用控件时淡入和淡出时禁用它。
 
 ```xaml
 <Button x:Name="SubmitButton"

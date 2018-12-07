@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 42229212a0f54e307eaa841849c1a279c4354d2a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736267"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788655"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>增强用于 Windows 10 的桌面应用程序
 
-可以使用 Windows 运行时 Api 来添加为 Windows 10 用户增强的现代化体验。
+你可以使用 Windows 运行时 Api 来添加为 Windows 10 用户喜悦的现代化体验。
 
 首先，设置项目。 然后，添加 Windows 10 体验。 你可以为 Windows 10 用户单独生成，也可以不考虑用户所运行的 Windows 版本而向所有用户分发完全相同的二进制文件。
 
@@ -55,7 +55,7 @@ ms.locfileid: "8736267"
 
 :white_check_mark: **首先，确定你要添加哪些体验**
 
-有许多选项。 例如，你可以使用盈利 Api 或直接注意到你的应用程序，当你拥有要共享的信息，如另一个用户已发布了新图片有趣的内容时简化你的采购订单流。
+有许多选项。 例如，你可以使用盈利 Api 或直接注意到你的应用程序，当你拥有要共享，如另一个用户已发布了新图片有趣的内容时简化你的采购订单流。
 
 ![Toast](images/desktop-to-uwp/toast.png)
 
@@ -150,7 +150,7 @@ void UWP::ShowToast()
 
 ## <a name="support-windows-xp-windows-vista-and-windows-78-install-bases"></a>支持 Windows XP、Windows Vista 和 Windows 7/8 安装库
 
-无需创建新分支和维护不同代码库，可以增加你的应用程序在 Windows 10 的现代体验。
+你可以增加你的应用程序在 Windows 10 的现代体验无需创建新分支和维护不同代码库。
 
 如果要为 Windows 10 用户生成单独的二进制文件，请使用条件编译。 如果你希望生成要部署到所有 Windows 用户的一组二进制文件，请使用运行时检查。
 
@@ -201,7 +201,7 @@ void UWP::ShowToast()
 
 ### <a name="runtime-checks"></a>运行时检查
 
-可以不考虑用户所运行的 Windows 版本而为所有 Windows 用户编译一组二进制文件。 你的应用程序调用 Windows 运行时 Api 仅当用户是运行应用程序打包的应用程序作为 Windows 10 上。
+可以不考虑用户所运行的 Windows 版本而为所有 Windows 用户编译一组二进制文件。 你的应用程序调用 Windows 运行时 Api 只用户是否运行应用程序打包的应用程序作为 Windows 10 上。
 
 若要添加到你的代码运行时检查最简单方法是将此 Nuget 程序包安装：[桌面桥帮助程序](https://www.nuget.org/packages/DesktopBridge.Helpers/)，然后使用``IsRunningAsUWP()``方法来关闭调用 Windows 运行时 Api 的所有代码的门槛。 请参阅此博客文章以了解详细信息：[桌面桥 - 标识应用程序的上下文](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/)。
 

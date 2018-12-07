@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9466ec598fad090e31768d680b64ffea52688844
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729529"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792194"
 ---
 # <a name="themeresource-markup-extension"></a>{ThemeResource} 标记扩展
 
@@ -67,7 +67,7 @@ Windows 运行时提供了专门由 **ThemeResource** 引用的资源集。 这�
 
 可能会在一系列具有依赖关系的值中看到 **ThemeResource** 用法。 例如，由同时还是键控资源的 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 使用的 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723)值可能会使用 **ThemeResource** 引用。 但是，任何使用键控 **SolidColorBrush** 资源的 UI 属性也将使用 **ThemeResource** 引用，以便每个启用了动态值的 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 类型属性在主题更改时会随之更改。
 
-**注意**`{ThemeResource}`和主题切换的运行时资源评估是 Windows8.1 XAML 中支持，但不是支持在 XAML 中的应用面向 Windows8。
+**注意**`{ThemeResource}`和主题切换的运行时资源评估是 Windows8.1 XAML 中支持，但在 XAML 中的应用不支持面向 Windows8。
 
 ### <a name="system-resources"></a>系统资源
 
@@ -138,7 +138,7 @@ Windows 运行时提供了专门由 **ThemeResource** 引用的资源集。 这�
 
 ## <a name="windows8-behavior"></a>Windows8 行为
 
-Windows8 不支持**ThemeResource**标记扩展，它是从 Windows8.1 开始提供。 此外，Windows8 不支持动态切换 Windows 运行时应用的主题相关资源。 必须重新启动应用，才能应用针对 XAML 模板和样式的主题更改。 这并不实现良好的用户体验，因此应用不重新编译和目标 Windows8.1 强烈建议，以便他们可以使用**ThemeResource**用法使用样式和动态切换主题时在用户执行。 对于 Windows8 Windows8.1 上运行将继续使用 Windows8 行为已编译的应用。
+Windows8 不支持**ThemeResource**标记扩展，它是从 Windows8.1 开始提供。 此外，Windows8 不支持动态切换 Windows 运行时应用的主题相关资源。 必须重新启动应用，才能应用针对 XAML 模板和样式的主题更改。 这不是良好的用户体验，因此应用不重新编译和目标 Windows8.1 强烈建议，以便他们可以使用**ThemeResource**用法使用样式和动态切换主题时在用户执行。 对于 Windows8 Windows8.1 上运行将继续使用 Windows8 行为已编译的应用。
 
 ## <a name="design-time-tools-support-for-the-themeresource-markup-extension"></a>设计时工具支持 **{ThemeResource}** 标记扩展
 

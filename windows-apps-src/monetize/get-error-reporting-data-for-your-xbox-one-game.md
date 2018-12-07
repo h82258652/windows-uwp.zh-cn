@@ -5,12 +5,12 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误
 ms.localizationpriority: medium
-ms.openlocfilehash: f9ae7c75fb332e910aa1b63712cf0d230172afd3
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 22dff391e787e1763cb730272ba9cea029758c99
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750022"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791278"
 ---
 # <a name="get-error-reporting-data-for-your-xbox-one-game"></a>获取错误报告数据在 Xbox One 游戏
 
@@ -47,7 +47,7 @@ ms.locfileid: "8750022"
 
 | 参数        | 类型   |  说明      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 要为其检索错误报告数据的 Xbox One 游戏的产品 ID。 若要获取你的游戏的产品 ID，请导航到 Xbox 开发人员门户 (XDP) 中你的游戏，并从 URL 中检索产品 ID。 或者，如果你从 Windows 合作伙伴中心分析报告下载你的运行状况数据，该.tsv 文件中包含的产品 ID。 |  是  |
+| applicationId | 字符串 | 要为其检索错误报告数据的 Xbox One 游戏**应用商店 ID** 。 **应用商店 ID**在合作伙伴中心中的应用标识页面上可用。 **应用商店 ID**的一个示例是 9WZDNCRFJ3Q8。 |  是  |
 | startDate | date | 要检索的错误报告数据日期范围中的开始日期。 默认值为当前日期。 如果 *aggregationLevel* 是 **day**、**week** 或 **month**，此参数应采用 ```mm/dd/yyyy``` 格式指定日期。 如果 *aggregationLevel* 是 **hour**，此参数可以采用 ```mm/dd/yyyy``` 格式指定日期或者采用 ```yyyy-mm-dd hh:mm:ss``` 格式指定日期和时间。  |  否  |
 | endDate | date | 要检索的错误报告数据日期范围中的结束日期。 默认值为当前日期。 如果 *aggregationLevel* 是 **day**、**week** 或 **month**，此参数应采用 ```mm/dd/yyyy``` 格式指定日期。 如果 *aggregationLevel* 是 **hour**，此参数可以采用 ```mm/dd/yyyy``` 格式指定日期或者采用 ```yyyy-mm-dd hh:mm:ss``` 格式指定日期和时间。 |  否  |
 | top | int | 要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。 |  否  |
@@ -60,7 +60,7 @@ ms.locfileid: "8750022"
 
 ### <a name="request-example"></a>请求示例
 
-以下示例演示用于获取 Xbox One 游戏的错误报告数据的多个请求。 *ApplicationId*值替换为你的游戏的产品 ID。
+以下示例演示用于获取 Xbox One 游戏的错误报告数据的多个请求。 *ApplicationId*值替换为你的游戏的**应用商店 ID** 。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/failurehits?applicationId=BRRT4NJ9B3D1&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -88,8 +88,8 @@ Authorization: Bearer <your access token>
 
 | 值           | 类型    | 说明        |
 |-----------------|---------|---------------------|
-| date            | string  | 错误数据的日期范围内的第一个日期，格式为 ```yyyy-mm-dd```。 如果请求指定某一天，此值就是该日期。 如果请求指定更长的日期范围，此值则是该日期范围的第一个日期。 对于指定**小时** *aggregationLevel*值的请求，此值还包括一个时间值格式```hh:mm:ss```中发生了错误的本地时区。  |
-| applicationId   | 字符串  | 你要为其检索错误数据的 Xbox One 游戏的产品 ID。   |
+| date            | string  | 错误数据的日期范围内的第一个日期，格式为 ```yyyy-mm-dd```。 如果请求指定某一天，此值就是该日期。 如果请求指定更长的日期范围，此值则是该日期范围的第一个日期。 对于*aggregationLevel*的值指定为**小时**的请求，此值还包括一个时间值格式```hh:mm:ss```在本地时区发生错误。  |
+| applicationId   | 字符串  | 你要为其检索错误数据的 Xbox One 游戏**应用商店 ID** 。   |
 | applicationName | 字符串  | 游戏的显示名称。   |
 | failureName     | string  | 故障的名称，它由四个部分组成：一个或多个问题类、异常/错误检查代码、发生故障的映像的名称和相关的函数名称。  |
 | failureHash     | 字符串  | 错误的唯一标识符。   |
@@ -139,6 +139,6 @@ Authorization: Bearer <your access token>
 ## <a name="related-topics"></a>相关主题
 
 * [获取游戏在 Xbox One 中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)
-* [获取 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)
+* [获取你的 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)
 * [下载你的 Xbox One 游戏中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)
 * [使用 Microsoft Store 服务访问分析数据](access-analytics-data-using-windows-store-services.md)

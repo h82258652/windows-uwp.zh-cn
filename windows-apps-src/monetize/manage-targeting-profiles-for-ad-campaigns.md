@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d84c6eb678bf884709e13ecefd81e64097ee738
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730350"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790121"
 ---
 # <a name="manage-targeting-profiles"></a>管理目标市场配置文件
 
@@ -143,7 +143,7 @@ Authorization: Bearer <your access token>
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整数   |  目标市场配置文件的 ID。     |   是    |       |   否      |       
 |  name   |  字符串   |   目标市场配置文件的名称。    |    否   |      |  是     |       
-|  targetingType   |  字符串   |  以下值之一： <ul><li>**自动**： 指定此值可使 Microsoft 能够选择具体取决于你在合作伙伴中心中的应用的设置的目标市场配置文件。</li><li>**Manual**：指定此值可定义你自己的目标市场配置文件。</li></ul>     |  否     |  Auto    |   是    |       
+|  targetingType   |  字符串   |  以下值之一： <ul><li>**自动**： 指定此值可允许 Microsoft 选择目标市场配置文件基于你的应用在合作伙伴中心中的设置。</li><li>**Manual**：指定此值可定义你自己的目标市场配置文件。</li></ul>     |  否     |  Auto    |   是    |       
 |  age   |  数组   |   一个或多个整数，用于标识要针对的用户的年龄范围。 有关整数的完整列表，请参阅本文章中的[年龄值](#age-values)。    |    否    |  null    |     否    |       
 |  gender   |  数组   |  一个或多个整数，用于标识要针对的用户的性别。 有关整数的完整列表，请参阅本文章中的[性别值](#gender-values)。       |  否    |  null    |     否    |       
 |  country   |  数组   |  一个或多个整数，用于标识要针对的用户所在的国家或地区代码。 有关整数的完整列表，请参阅本文章中的[国家或地区代码值](#country-code-values)。    |  否    |  null   |      否   |       

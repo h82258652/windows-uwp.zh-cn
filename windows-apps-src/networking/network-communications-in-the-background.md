@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f206700360b6590a88b76f04531c9c6b1e94414f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730034"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791318"
 ---
 # <a name="network-communications-in-the-background"></a>后台网络通信
-若要继续网络通信，尽管它不在前台，你的应用可以使用后台任务，这两个选项之一。
-- 套接字代理。 如果你的应用使用套接字进行长期连接然后，它离开前台时，它可以将套接字的所有权委托给系统套接字代理。 然后代理： 流量到达套接字; 上激活你的应用所有权传输回你的应用;并且，你的应用然后处理到达的流量。
+若要继续网络通信不在前台时，你的应用可以使用后台任务和这两个选项之一。
+- 套接字代理。 如果你的应用使用套接字进行长期连接然后，当它离开前台时，它可以将套接字的所有权委托给系统套接字代理。 然后代理： 流量到达套接字; 上激活你的应用所有权传输回你的应用;并且，你的应用然后处理到达的流量。
 - 控制通道触发器。 
 
 ## <a name="performing-network-operations-in-background-tasks"></a>在后台任务中执行网络操作
@@ -430,7 +430,7 @@ async Task<bool> RegisterWithCCTHelper(string serverUri)
 ## <a name="controlchanneltrigger-with-httpclient"></a>ControlChannelTrigger 与 HttpClient
 将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，需要应用某些特殊注意事项。 将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 与 **ControlChannelTrigger** 结合使用时，应遵循某些特定于传输的使用模式和最佳做法。 此外，这些注意事项影响在 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 上接收数据包的请求的处理方式。
 
-**注意**[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637)使用 SSL 目前不支持使用网络触发器功能和[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
+**注意**[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637)使用 SSL 当前不支持使用网络触发器功能和[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
  
 将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，应遵循以下使用模式和最佳做法：
 

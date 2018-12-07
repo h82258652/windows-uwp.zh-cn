@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 控件, 输入
 ms.localizationpriority: medium
 ms.openlocfilehash: 01c0d1361dcc0858a54792adc0d17408ed281c99
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8702495"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790359"
 ---
 # <a name="add-controls"></a>添加控件
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-优秀的通用 Windows 平台 (UWP) 游戏支持多种界面。 潜在玩家可能将 windows 10 上没有物理按钮，连接，Xbox 控制器的电脑的平板电脑，或者具有高性能鼠标和游戏键盘的最新桌面游戏安装。 在我们的游戏中，控制在 [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) 类中实现。 此类将全部三个输入类型（鼠标和键盘、触控和游戏板）聚合到一个控制器内。 最终结果是一个第一人称射击游戏，其使用通过多台设备使用的流派标准移动观看控件。
+优秀的通用 Windows 平台 (UWP) 游戏支持多种界面。 潜在玩家可能将 windows 10 上没有物理按钮，连接，了 Xbox 控制器的电脑的平板电脑，或者具有高性能鼠标和游戏键盘的最新桌面游戏安装。 在我们的游戏中，控制在 [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) 类中实现。 此类将全部三个输入类型（鼠标和键盘、触控和游戏板）聚合到一个控制器内。 最终结果是一个第一人称射击游戏，其使用通过多台设备使用的流派标准移动观看控件。
 
 > [!NOTE]
 > 有关控件的详细信息，请参阅[游戏的移动观看控件](tutorial--adding-move-look-controls-to-your-directx-game.md)和[游戏的触摸控件](tutorial--adding-touch-controls-to-your-directx-game.md)。
@@ -399,7 +399,7 @@ window->PointerReleased +=
 
 
 
-在这里，**MoveLookController** 将触发该事件的指针的指针 ID 分配到对应于观看区域的特定变量。 如果触摸发生在观看区域中， **m\_lookPointerID**变量设置为触发该事件的指针 ID。 还将设置布尔值变量 **m\_lookInUse** 以指示尚未释放控件。
+在这里，**MoveLookController** 将触发该事件的指针的指针 ID 分配到对应于观看区域的特定变量。 如果触摸发生在观看区域中，是**m\_lookPointerID**变量设置为触发该事件的指针 ID。 还将设置布尔值变量 **m\_lookInUse** 以指示尚未释放控件。
 
 现在，我们讨论游戏示例如何处理 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) 触摸屏事件。
 
@@ -575,7 +575,7 @@ window->KeyUp +=
 
 
 
-在 [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) 方法中，我们添加了两个新事件来确定游戏板是否已[添加](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105)或[删除](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114)。 这些事件更新 **m_gamepadsChanged** 属性。 这用于**UpdatePollingDevices**方法中检查是否已更改已知游戏板的列表。 
+在 [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) 方法中，我们添加了两个新事件来确定游戏板是否已[添加](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105)或[删除](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114)。 这些事件更新 **m_gamepadsChanged** 属性。 这用于**UpdatePollingDevices**方法中检查已更改已知游戏板的列表。 
 
 ```cpp
     // Detect gamepad connection and disconnection events.

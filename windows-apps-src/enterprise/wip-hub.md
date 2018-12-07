@@ -10,11 +10,11 @@ keywords: windows 10, uwp, Windows 信息保护, 企业数据, 企业数据保�
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
 ms.openlocfilehash: b65da20c8931f74800f817ecba0139b14d0447ad
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749397"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788513"
 ---
 # <a name="windows-information-protection-wip"></a>Windows 信息保护 (WIP)
 
@@ -62,7 +62,7 @@ WIP 和 MDM 一起使组织可以更好地控制如何处理组织所管理的�
 
 如果你已准备好启发你的应用，请参阅以下指南之一：
 
-**对于使用 C# 生成的通用 Windows 平台 (UWP) 应用**
+**适用于使用 C# 生成的通用 Windows 平台 (UWP) 应用**
 
 [Windows 信息保护 (WIP) 开发人员指南](wip-dev-guide.md)。
 

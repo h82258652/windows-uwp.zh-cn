@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 821b346958846b56a55c0ec5920d71f4b3cc13c4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8748799"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790015"
 ---
 # <a name="titlestitleidclusters"></a>/titles/{titleId}/clusters
 允许客户端创建游戏的 Xbox Live 计算服务器实例的 URI。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。

@@ -4,20 +4,20 @@ title: 分析应用性能
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10、 uwp、 分析、 报告、 仪表板、 应用、 数据、 指标
+keywords: windows 10，uwp，分析，报告，仪表板、 应用、 数据指标
 ms.localizationpriority: medium
 ms.openlocfilehash: f6a6d79745ec98af2c7f562297092eea3feda659
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729672"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790339"
 ---
 # <a name="analyze-app-performance"></a>分析应用性能
 
 你可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)应用查看详细的分析。 可以通过统计信息和图表了解你的应用的表现（从你已拥有的客户数量到客户使用你的应用的方式）以及他们对你的应用的评价。 你还可以找到应用运行状况、广告使用情况等有关指标。
 
-你可以查看分析报告合作伙伴中心或[下载所需的报告](download-analytic-reports.md)中的右侧，以脱机分析数据。 我们还提供几种方法为你向[访问合作伙伴中心分析数据](#outside)。
+你可以查看分析报告合作伙伴中心或[下载所需的报告](download-analytic-reports.md)中的右侧，以脱机分析数据。 我们还提供几种方法为你访问[合作伙伴中心分析数据](#outside)。
 
 ## <a name="view-key-analytics-for-all-your-apps"></a>查看所有应用的关键分析
 

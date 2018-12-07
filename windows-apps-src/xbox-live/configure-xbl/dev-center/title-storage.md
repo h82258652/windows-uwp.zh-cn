@@ -6,11 +6,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live，Xbox，游戏，uwp，windows 10，Xbox one，标题存储，合作伙伴中心
 ms.openlocfilehash: d32f9f2f4e003db50ad560acc513511a850d43b5
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8740260"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787815"
 ---
 # <a name="configure-storage-for-you-title-in-partner-center"></a>在合作伙伴中心中配置为标题存储
 
