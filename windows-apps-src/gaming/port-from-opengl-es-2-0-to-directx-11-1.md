@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, opengl, direct3d 11, 移植, 图形
 ms.localizationpriority: medium
 ms.openlocfilehash: 9af5e42a27e21b8a4300edc4b8171f7abc64bac7
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745899"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782577"
 ---
 # <a name="port-from-opengl-es-20-to-direct3d-11"></a>从 OpenGL ES 2.0 移植到 Direct3D 11
 

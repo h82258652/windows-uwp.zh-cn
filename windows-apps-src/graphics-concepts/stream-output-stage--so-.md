@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 12a0c59942eefd2ab9625b1b442043a1868230a1
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 87eb6562c6ee66ca1d409d3748e688861d5f3920
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755896"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8783505"
 ---
 # <a name="stream-output-so-stage"></a>流输出 (SO) 阶段
 
@@ -41,9 +41,9 @@ ms.locfileid: "8755896"
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
 
 
-流输出 (SO) 阶段可持续地将几何着色器 (GS) 阶段等之前的有效阶段输出（或流式传输）至内存中的一个或多个缓冲区。 如果几何着色器 (GS) 阶段无效，那么流输出 (SO) 阶段会持续地将域着色器 (DS) 阶段的顶点数据输出至内存缓冲区（如果 DS 也无效，则从顶点着色器 (VS) 阶段输出）。
+流输出 (SO) 阶段连续地将来自前一活动阶段的顶点数据（例如几何着色器 (GS) 阶段）输出（或流入）到内存中的一个或多个缓冲区。 如果几何着色器 (GS) 阶段是处于非活动状态，流输出 (SO) 阶段连续输出到内存 （或者如果 DS 也无效，则从顶点着色器 (VS) 阶段） 中的缓冲区来自域着色器 (DS) 阶段的顶点数据。
 
-当三角形或直线带绑定到输入装配器 (IA) 阶段时，那么所有带会都转换列表流出之前。顶点都始终写成完整基元 （例如，3 个顶点的三角形一次）;不完整的基元不会流出。带邻近度的基元类型数据流出之前放弃相邻数据。
+当三角形或直线带绑定到输入装配器 (IA) 阶段时，每个带转换为列表流出之前。顶点始终写出成完整基元 (例如，3 个顶点的三角形一次）;不完整的基元不会流出。带邻近度的基元类型会数据流出之前放弃相邻数据。
 
 流输出阶段支持最多同时 4 个缓冲区。
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f81ab1ef635bf4cfb20c289d6998c242f7aa47fc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736883"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787413"
 ---
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>为 MediaCapture 设置格式、分辨率和帧速率
 
@@ -30,7 +30,7 @@ ms.locfileid: "8736883"
 
 创建包装 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) 界面功能的简单帮助程序类使选择一组符合特定标准的编码属性变得更简单。 此帮助程序类因具有以下编码属性功能的行为而极为有用：
 
-**警告** [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994)方法采用枚举的成员[**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) ，如**VideoRecord**或**照片**，并返回的任一[**列表ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993)或[**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217)对象可传达流编码设置，如捕获的照片或视频的分辨率。 调用 **GetAvailableMediaStreamProperties** 的结果可能包括 **ImageEncodingProperties** 或 **VideoEncodingProperties**，不论指定的 **MediaStreamType** 值是什么。 出于此原因，在尝试访问任何属性值之前，你都应始终查看每个返回的值的类型并将其转换到相应类型。
+**警告** [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994)方法采用[**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640)枚举，如**VideoRecord**或**照片**、 的成员，并返回的任一[**列表ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993)或[**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217)对象可传达流编码设置，如捕获的照片或视频的分辨率。 调用 **GetAvailableMediaStreamProperties** 的结果可能包括 **ImageEncodingProperties** 或 **VideoEncodingProperties**，不论指定的 **MediaStreamType** 值是什么。 出于此原因，在尝试访问任何属性值之前，你都应始终查看每个返回的值的类型并将其转换到相应类型。
 
 以下定义的帮助程序类为 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 或 [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) 处理类型检查和转换，因此你的应用代码无需分辨这两种类型。 除此之外，此帮助程序类还会公开属性的纵横比属性、帧速率（仅适用于视频编码属性）以及使在应用 UI 中显示编码属性变得更简单的友好名称。
 

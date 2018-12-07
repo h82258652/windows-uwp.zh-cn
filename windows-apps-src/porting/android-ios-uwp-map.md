@@ -8,11 +8,11 @@ keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
 ms.openlocfilehash: 008dce5ffc3824d49830bc368a3eaa9d55b7d229
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8748109"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8784965"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
 
@@ -298,7 +298,7 @@ ms.locfileid: "8748109"
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>应用生命周期。</strong> <br><br>在应用启动、暂停、恢复和关闭时处理事件，以便有机会保存/还原应用程序状态并运行其他任务。</td>
-<td align="left">每个活动都有其自己的<strong>活动生命周期</strong>，具有<strong>已恢复</strong>之类的状态。 在你<strong>活动类</strong>中实现如<strong>onResume</strong>的<strong>生命周期回调</strong>。</td>
+<td align="left">每个活动都有其自己的<strong>活动生命周期</strong>，具有<strong>已恢复</strong>之类的状态。 在你<strong>活动类</strong>中实现如<strong>onResume</strong> <strong>生命周期回调</strong>。</td>
 <td align="left"><strong>应用程序生命周期</strong>具有<strong>已挂起</strong>之类的状态。 如 <strong>applicationDidEnterBackground:</strong> 之类的方法在<strong>应用程序委托对象</strong>中实现，以便在状态发生更改时运行代码。</td>
 <td align="left">应用程序具有<strong>应用执行状态</strong>，如 NotRunning、Activated、Running、Suspending、Suspended 和 Resuming。<br/><br/>你可以在应用中实现<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.aspx">应用程序类</a></strong>方法（如 OnLaunched、OnActivated、Suspending 或 Resuming），以便在状态发生更改时运行代码。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt243287.aspx">应用生命周期</a></td>
 </tr>

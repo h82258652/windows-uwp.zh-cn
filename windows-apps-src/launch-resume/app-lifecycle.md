@@ -7,11 +7,11 @@ ms.date: 01/23/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8555f9594ac3d2e7ea1b9f7006750c1084db3d9f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731329"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8781059"
 ---
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows10 通用 Windows 平台 (UWP) 应用生命周期
 
@@ -183,9 +183,9 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 通常，用户不需要关闭应用，他们可以让 Windows 管理它们。 但是，用户可以选择以下方法来关闭应用：使用关闭手势、按 Alt+F4，或在 Windows Phone 上使用任务切换程序。
 
-没有事件指示用户关闭了应用。 当用户关闭应用时，应用首先处于暂停状态，以使你有机会保存其状态。 在 Windows8.1 及更高版本，应用已被用户关闭后，应用删除从屏幕和切换列表，但不是会显式终止。
+没有事件指示用户关闭了应用。 当用户关闭应用时，应用首先处于暂停状态，以使你有机会保存其状态。 在 Windows8.1 及更高版本，应用已被用户关闭后，该应用删除从屏幕和切换列表，但不是会显式终止。
 
-**由用户关闭行为：** 如果你的应用需要执行不同于被 Windows 关闭时用户关闭时，你可以使用激活事件处理程序来确定应用被用户还是被 Windows 终止。 请参阅 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举的参考中 **ClosedByUser** 和 **Terminated** 状态的说明。
+**由用户关闭行为：** 如果你的应用需要执行不同于被 Windows 关闭时用户关闭时，你可以使用激活事件处理程序以确定由用户还是被 Windows 终止应用。 请参阅 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举的参考中 **ClosedByUser** 和 **Terminated** 状态的说明。
 
 我们建议，应用不要以编程方式自行关闭，除非绝对必要。 例如，如果应用检测到内存泄漏，它可以关闭自身来确保用户个人数据的安全性。
 

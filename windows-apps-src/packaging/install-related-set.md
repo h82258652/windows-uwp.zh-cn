@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
 ms.openlocfilehash: c90fffeee7003159f58cf2e108286f4fe7732fd6
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8757986"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8786801"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>使用应用安装程序文件安装相关集
 
@@ -87,7 +87,7 @@ ms.locfileid: "8757986"
 ```
 
 ### <a name="step-3-add-the-main-package-information"></a>第 3 步：添加主要包信息 
-如果主应用包是.appxbundle 或.msixbundle 文件，则使用`<MainBundle>`如下所示。 如果主应用包是.appx 或.msix 文件，则使用`<MainPackage>`替代`<MainBundle>`的代码片段中。 
+如果主应用包是.appxbundle 或.msixbundle 文件，然后使用`<MainBundle>`如下所示。 如果主应用包是.appx 或.msix 文件，然后使用`<MainPackage>`替代`<MainBundle>`的代码片段中。 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

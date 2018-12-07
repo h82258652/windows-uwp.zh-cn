@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 加载项, 属性, 订阅期, 产品生命周期, 内容类型, iap, 应用内购买, 应用内产品
 ms.localizationpriority: medium
 ms.openlocfilehash: 17025282aec18da01f14431996a3942ffdd90312
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8733796"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794147"
 ---
 # <a name="enter-add-on-properties"></a>输入加载项属性
 
@@ -84,7 +84,7 @@ ms.locfileid: "8733796"
 若要查询此字段，请使用 [Windows.Services.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.Services.Store)中的 [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) 属性。 （或者，如果使用的是 [Windows.ApplicationModel.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，则使用 [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords) 属性。）
 
 > [!NOTE]
-> 关键字不可用于面向 Windows8 和 Windows8.1 的程序包。
+> 关键字不是可用于面向 Windows8 和 Windows8.1 的程序包。
 
 <span id="custom-developer-data" />
 
@@ -97,7 +97,7 @@ ms.locfileid: "8733796"
 若要查询此字段，请使用 [Windows.Services.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.Services.Store)中的 [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) 属性。 （或者，如果使用的是 [Windows.ApplicationModel.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，则使用 [ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag) 属性。）
 
 > [!NOTE]
-> **自定义开发人员数据**字段不可用于面向 Windows8 和 Windows8.1 的程序包。
+> **自定义开发人员数据**字段不是可用于面向 Windows8 和 Windows8.1 的程序包的。
 
  
 

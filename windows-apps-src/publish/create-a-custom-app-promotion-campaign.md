@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 自定义, 应用, 促销, 市场活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 407a34294155e688e672db392c262e1607c01a39
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743035"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782126"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>创建自定义应用促销市场活动
 
@@ -26,7 +26,7 @@ ms.locfileid: "8743035"
 
 你可以通过以下方式检索应用的自定义市场活动表现数据：
 
-* [购置报告](acquisitions-report.md)中，你可以查看页面查看次数和转换为你的应用或加载项的**应用页面查看次数和转换按市场活动 ID**和**总市场活动转换**图表相关的数据。
+* [购置报告](acquisitions-report.md)中，你可以查看页面查看次数和转换为你的应用或加载项的**应用页面查看次数和转换数量按市场活动 ID**和**总市场活动转换**图表相关的数据。
 * 如果你的应用是通用 Windows 平台 (UWP) 应用，则可以使用 Windows SDK 中的 API 以编程方式检索导致转换的自定义市场活动 ID。
 
 ## <a name="example-custom-campaign-scenario"></a>自定义市场活动方案示例
@@ -45,9 +45,9 @@ ms.locfileid: "8743035"
 
 ## <a name="understanding-how-acquisitions-qualify-as-conversions"></a>了解购置如何限定为转换
 
-自定义市场活动*转换*是由客户单击通过自定义市场活动推广的 URL 所导致的购置。 限定为转换为[购置报告](acquisitions-report.md)中的**应用页面查看次数和转换按市场活动 ID**和**总市场活动转换**的图表和限定为转换[不同的方案以编程方式检索市场活动 ID](#programmatically)。
+自定义市场活动*转换*是由客户单击通过自定义市场活动推广的 URL 所导致的购置。 限定为转换为[购置报告](acquisitions-report.md)中的**应用页面查看次数和转换数量按市场活动 ID**和**总市场活动转换**图表和限定为转换[不同的方案以编程方式检索市场活动 ID](#programmatically)。
 
-### <a name="qualifying-conversions-in-the-acquisitions-report"></a>限定转换中的购置报告
+### <a name="qualifying-conversions-in-the-acquisitions-report"></a>限定购置报告中的转换
 
 以下情形限定为[购置报告](acquisitions-report.md)中**按市场活动 ID 的应用页面查看次数和转换数量**与**市场活动转换总量**图表中的转换：
 
@@ -193,4 +193,4 @@ public async Task<string> GetCampaignId()
 
 3.  再多次单击该 URL，在每次访问应用的页面后关闭 UWP 应用或浏览器页面。 在其中**一次**访问你的应用页面时，购置你的应用可生成转换。 计算你单击 URL 的总次数。
 
-4. 确认是否预期的页面查看次数和转换显示在**应用页面查看和市场活动 ID 转换**和**市场活动转换总量**图表中的[购置报告](acquisitions-report.md)中，并测试你的应用代码以确认它是否可以成功检索市场活动 ID 使用上文所述的 Api。
+4. 确认是否预期的页面查看次数和转换显示在[购置报告](acquisitions-report.md)中，**应用页面查看和市场活动 ID 转换**和**市场活动转换总量**图表中和测试你的应用代码以确认它是否可以成功检索市场活动 ID 使用上面所述的 Api。

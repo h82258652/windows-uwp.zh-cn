@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx 9, directx 11, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 56bb86706795e773d21e45263f640f9fc0aa596a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8758377"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8783581"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>将 DirectX 9 功能映射到 DirectX 11 API
 
@@ -580,7 +580,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>注意</strong>着色器获取 UINT 值，但如果 Direct3D 9 样式的整型需要浮点数 （0.0 f、 1.0 f...255.f)，UINT 只可以转换为 float32 着色器中。
+<strong>注意</strong>着色器获取 UINT 值，但如果 Direct3D 9 样式的整型需要浮点数 （0.0 f、 1.0 f...255.f)，只可以 UINT 转换为 float32 着色器中。
 </div>
 <div>
  
@@ -590,7 +590,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong>注意</strong>着色器获取 SINT 值，但如果需要 Direct3D 9 样式整型浮点数，则只需将 SINT 转换为 float32 着色器中。
+<strong>注意</strong>着色器获取 SINT 值，但如果 Direct3D 9 样式需要整型浮点数，则只需将 SINT 转换为 float32 着色器中。
 </div>
 <div>
  
@@ -600,7 +600,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong>注意</strong>着色器获取 SINT 值，但如果需要 Direct3D 9 样式整型浮点数，则只需将 SINT 转换为 float32 着色器中。
+<strong>注意</strong>着色器获取 SINT 值，但如果 Direct3D 9 样式需要整型浮点数，则只需将 SINT 转换为 float32 着色器中。
 </div>
 <div>
  

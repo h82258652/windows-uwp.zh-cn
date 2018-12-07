@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 确认应用提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a860239bcd266f577abca3af1cfc994393cae8e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8753905"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785405"
 ---
 # <a name="commit-an-app-submission"></a>确认应用提交
 
 
-在 Microsoft Store 提交 API 中使用此方法，来确认新的或更新应用提交到合作伙伴中心。 确认操作警报合作伙伴中心，提交数据已上传 （包括任何相关的程序包和图像）。 作为响应，合作伙伴中心提交以供引入和发布的提交数据所做的更改。 确认操作成功后，在合作伙伴中心中显示提交更改。
+在 Microsoft Store 提交 API 中使用此方法，来确认新的或更新应用提交到合作伙伴中心。 确认操作警报合作伙伴中心，提交数据已上传 （包括任何相关的程序包和图像）。 作为响应，合作伙伴中心提交以供引入和发布的提交数据所做的更改。 确认操作成功后，在合作伙伴中心中显示对提交更改。
 
 有关确认操作如何适用通过使用 Microsoft Store 提交 API 提交应用过程的详细信息，请参阅[管理应用提交](manage-app-submissions.md)。
 

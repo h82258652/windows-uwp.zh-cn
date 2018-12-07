@@ -3,15 +3,15 @@ title: 连接的应用和设备（项目“Rome”）
 description: 本节介绍如何使用远程系统平台发现远程设备、在远程设备上启动应用，以及与远程设备上的应用服务通信。
 ms.date: 06/08/2018
 ms.topic: article
-keywords: windows 10，uwp，连接设备、 远程系统、 rome、 项目 rome
+keywords: windows 10，uwp，连接设备，远程系统、 rome，项目 rome
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ms.openlocfilehash: 79decdcb420e7d1b5cb732a354ccddb1ce5b7404
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8733151"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787179"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>连接的应用和设备（项目“Rome”）
 

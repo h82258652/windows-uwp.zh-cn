@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 第一个应用, c#, c++, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cd4d60e6eb3eee7253997938882e6fbdf9fba69
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729509"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780455"
 ---
 # <a name="create-your-first-app"></a>创建你的第一个应用
 
@@ -38,9 +38,9 @@ ms.locfileid: "8729509"
 * [适用于 Microsoft Store、用 C# 和 MonoGame 编写的简单 2D UWP 游戏](get-started-tutorial-game-mg2d.md)
 
 
-## <a name="visualc-component-extensions-ccx-and-xaml"></a>VisualC + + 组件扩展 (C + + / CX) 和 XAML
+## <a name="visualc-component-extensions-ccx-and-xaml"></a>VisualC + + 组件扩展 (C + + CX) 和 XAML
 
-利用 c + + 编程专业知识生成应用使用 VisualC + + 组件扩展 (C + + / CX) 使用 XAML。
+利用 c + + 编程专业知识生成应用使用 VisualC + + 组件扩展 (C + + CX) 使用 XAML。
 
 * [使用 XAML 和 C++/CX 创建“Hello, world”应用](create-a-basic-windows-10-app-in-cpp.md)
 

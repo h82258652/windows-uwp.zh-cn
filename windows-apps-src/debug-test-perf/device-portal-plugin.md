@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: d9e11445d77434320c8842608bf8183a078c0660
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8744655"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782629"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>为 Device Portal 编写自定义插件
 
@@ -108,7 +108,7 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-必须由应用来完成请求处理循环处理的两个事件：**已关闭**，对于每当 Device Portal 服务关闭，并且[**RequestReceived**](https://docs.microsoft.com/en-us/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs)，这会显示传入 HTTP 请求并提供主要Device Portal 提供程序的功能。 
+有两个事件，必须由应用来完成请求处理循环：**已关闭**，对于每当 Device Portal 服务关闭，并且[**RequestReceived**](https://docs.microsoft.com/en-us/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs)，这会显示传入 HTTP 请求并提供主要Device Portal 提供程序的功能。 
 
 ## <a name="handle-the-requestreceived-event"></a>处理 RequestReceived 事件
 对于在插件的指定处理程序路由上进行的每个 HTTP 请求，会引发一次 **RequestReceived** 事件。 Device Portal 提供程序的请求处理循环与 NodeJS Express 的类似：请求和响应对象会随事件一起提供，处理程序会通过填充响应对象进行响应。 在 Device Portal 提供程序中，，**RequestReceived** 事件及其处理程序使用 [**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httprequestmessage) 和 [**HttpResponseMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httpresponsemessage) 对象。   

@@ -1,6 +1,6 @@
 ---
 description: “展示”是一种灯光效果，有助于重点深入了解应用的交互式元素。
-title: 展示突出显示
+title: 显示突出显示
 template: detail.hbs
 ms.date: 08/9/2017
 ms.topic: article
@@ -11,17 +11,17 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8278b126ed209148a2e44ea464e04073dcefc829
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8753398"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780773"
 ---
-# <a name="reveal-highlight"></a>展示突出显示
+# <a name="reveal-highlight"></a>显示突出显示
 
 ![主图](images/header-reveal-highlight.svg)
 
-展示突出显示是当用户附近移动指针它们突出显示交互性元素，如命令栏，一种灯光效果。 
+显示突出显示是当用户附近移动指针它们时突出显示交互性元素，如命令栏，一种灯光效果。 
 
 > **重要的 API**：[RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper) 和 [VisualState 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
@@ -65,7 +65,7 @@ ms.locfileid: "8753398"
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
 
-这些插图显示几种不同控件展示突出显示：
+这些插图显示几种不同控件显示突出显示：
 
 ![展示示例](images/RevealExamples_Collage.png)
 
@@ -113,7 +113,7 @@ ms.locfileid: "8753398"
 
 ## <a name="enabling-reveal-on-custom-controls"></a>在自定义控件上启用“展示”
 
-你可以向自定义控件添加“展示”。 在执行操作之前，最好先多一些了解展示效果的工作原理。 “展示”由两种单独的效果组成：**边框展示**和**悬停展示**。
+你可以向自定义控件添加“展示”。 在执行操作之前，它很有帮助多一些了解展示效果的工作原理。 “展示”由两种单独的效果组成：**边框展示**和**悬停展示**。
 
 - **边框**会在指针靠近时显示交互式元素的边框。 此效果会向你显示，这些邻近项目可以与当前的聚焦项目采用类似操作。
 - **悬停**会在悬停或聚焦的项目周围应用一个柔和的光晕形状，并在单击时播放按下动画。 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 811a9b42efe83cf89fd3df89e5c43c72274af36f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750526"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8786515"
 ---
  # <a name="files-folders-and-libraries"></a>文件、文件夹和库
 
@@ -29,7 +29,7 @@ ms.locfileid: "8750526"
 | [确定 Microsoft OneDrive 文件的可用性](quickstart-determining-availability-of-microsoft-onedrive-files.md) | 使用 [StorageFile.IsAvailable](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 属性确定 Microsoft OneDrive 文件是否可用。 |
 | [音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | 将现有的音乐、图片和视频文件夹添加到相应的库。 你还可以从库中删除文件夹、获取库中的文件夹列表，并发现存储的照片、音乐和视频。 |
 | [跟踪最近使用的文件和文件夹](how-to-track-recently-used-files-and-folders.md) | 通过将用户经常访问的文件添加到你的应用的最近使用列表 (MRU) 中来跟踪这些文件。 该平台会为你管理 MRU，它会根据各个项的上次访问时间对它们进行排序，并在列表中的项超过 25 个的限制时删除最旧的项。 所有应用都有其自己的 MRU。 |
-| [跟踪在后台中的文件系统更改](change-tracking-filesystem.md) | 跟踪对文件系统，更改，即使应用未运行。|
+| [跟踪在后台中的文件系统更改](change-tracking-filesystem.md) | 即使在应用未运行时对文件系统，跟踪更改。|
 | [访问 SD 卡](access-the-sd-card.md) | 你可以在可选 MicroSD 卡上存储和访问不重要的数据，尤其是内部存储具有限制的低成本移动设备。 |
 | [文件访问权限](file-access-permissions.md) | 默认情况下，应用可以访问特定文件系统位置。 应用也可以通过文件选取器或声明功能访问其他位置。 |
 | [快速访问 UWP 中的文件属性](fast-file-properties.md) | 高效地从库中收集文件及其属性的列表以用于 UWP 应用。 |

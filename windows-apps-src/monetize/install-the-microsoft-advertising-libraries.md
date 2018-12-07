@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, 安装, SDK, 广告库
 ms.localizationpriority: medium
 ms.openlocfilehash: 2066d055f7abf0e9a34e245d9c6a95e14596d362
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736357"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8781578"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>安装 Microsoft 广告 SDK
 
 若要在面向 Windows10 的 UWP 应用中显示广告，请安装 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp)。 此 SDK 是 Visual Studio 2015 和更高版本的扩展。
 
 > [!NOTE]
-> 如果你要开发是 JavaScript/HTML UWP 应用，你已安装 Windows 10 SDK 版本 10.0.14393 （周年更新） 或更高版本，还必须安装[WinJS](https://github.com/winjs/winjs)库。 此库过去包含在以前版本的 Windows SDK 中，但从 Windows 10 SDK 版本 10.0.14393（周年更新）开始，此库必须单独安装。
+> 如果你要开发是 JavaScript/HTML UWP 应用，你已安装 Windows 10 SDK 版本 10.0.14393 （周年更新） 或更高版本，你还必须安装[WinJS](https://github.com/winjs/winjs)库。 此库过去包含在以前版本的 Windows SDK 中，但从 Windows 10 SDK 版本 10.0.14393（周年更新）开始，此库必须单独安装。
 
 <span id="install-msi" />
 

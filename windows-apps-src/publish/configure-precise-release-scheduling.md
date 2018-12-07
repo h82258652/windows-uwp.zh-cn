@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 计划, 发布日期, 日期, 启动
 ms.localizationpriority: medium
 ms.openlocfilehash: a1477a426a9cdf240e694efb19bd7521fcd734cb
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731766"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8781741"
 ---
 # <a name="configure-precise-release-scheduling"></a>配置精确的发布计划
 
@@ -28,7 +28,7 @@ ms.locfileid: "8731766"
 > [!IMPORTANT]
 > 在“计划”部分指定的日期仅适用于 Windows 10 的客户。
 >
->如果你以前发布的应用支持较早的操作系统版本，你选择的任何**停止购置**日期将不适用于这些客户;他们仍然能够获取该应用 （除非你提交更新的新选项[可见性](choose-visibility-options.md#discoverability)部分中，或如果你选择从**应用概述**页面的**使禁止提供应用**）。
+>如果你以前发布的应用支持较早操作系统版本，你选择的任何**停止购置**日期将不适用于这些客户;他们仍然能够获取该应用 （除非你提交的新选项中的[可见性](choose-visibility-options.md#discoverability)部分中，更新或从**应用概述**页面中选择**使禁止提供应用**）。
 
 
 ## <a name="base-schedule"></a>基准计划
@@ -58,7 +58,7 @@ ms.locfileid: "8731766"
 
 默认情况下，**停止获取**设置为永不。 若要更改此设置，请在下拉列表中选择**在某个时间**，然后指定日期和时间，如上所述。 在你选定的日期和时间，客户将不再能够获取该应用。
 
-请务必了解此选项有相同的影响，因为在[可见性](choose-visibility-options.md#discoverability)部分中选择**使此应用，可发现，但不可用**，然后选择**停止购置： 任何具有直接链接的客户可以看到产品的应用商店一览，但它们才能够下载该如果他们拥有之前，产品或拥有一个促销代码，同时使用的 Windows 10 设备。** 若要完全停止向新客户提供应用，请从“应用概述”页面中单击**禁止提供应用**。 有关详细信息，请参阅[从应用商店中删除应用](guidance-for-app-package-management.md#removing-an-app-from-the-store)。
+请务必了解此选项有相同的影响，因为在[可见性](choose-visibility-options.md#discoverability)部分中选择**使此应用，可发现，但不可用**，然后选择**停止购置： 任何具有直接链接的客户可以看到产品的应用商店一览，但它们才能够下载该如果他们拥有之前，产品或拥有一个促销代码并使用的是 Windows 10 设备。** 若要完全停止向新客户提供应用，请从“应用概述”页面中单击**禁止提供应用**。 有关详细信息，请参阅[从应用商店中删除应用](guidance-for-app-package-management.md#removing-an-app-from-the-store)。
 
 > [!TIP]
 > 如果选择了**停止获取**的日期，而后来你想要再次提供该应用，则可以创建一个新的提交并将**停止获取**改回**从不**。 在发布更新的提交后，可以再次提供你的应用。

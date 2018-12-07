@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
 ms.openlocfilehash: edd0fbcf841dc9d8fa43873da95dc08b276a5418
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734470"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780605"
 ---
 # <a name="code-your-app-for-experimentation"></a>为实验编写应用代码
 
-完成后你[创建项目并定义远程变量在合作伙伴中心中的](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)，你可以随时更新你的通用 Windows 平台 (UWP) 应用中的代码：
+完成后您[创建项目和定义远程变量在合作伙伴中心中的](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)，你可以随时更新你的通用 Windows 平台 (UWP) 应用中的代码：
 * 从合作伙伴中心接收远程变量值。
 * 使用远程变量为你的用户配置应用体验。
 * 登录到合作伙伴中心，指示用户查看实验并执行所需的操作 （也称为*转换*） 时的事件。
@@ -25,7 +25,7 @@ ms.locfileid: "8734470"
 以下部分介绍了获取实验变体和将事件记录到合作伙伴中心的一般过程。 针对实验为应用编码后，你可以[定义合作伙伴中心中的实验](define-your-experiment-in-the-dev-center-dashboard.md)。 有关演示如何创建并运行实验的端到端过程的演练，请参阅[通过 A/B 测试来创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
 > [!NOTE]
-> 某些实验性 Api 在 Microsoft Store Services SDK 中使用[异步模式](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)从合作伙伴中心中检索数据。 这意味着，这些方法的部分执行可能会在调用这些方法后发生，以便你的应用的 UI 可以一边保持响应，一边完成操作。 异步模式要求你的应用在调用该 API 时使用 **async** 关键字和 **await** 运算符，如本文中的代码示例所示。 按照惯例，异步方法以 **Async** 结尾。
+> 某些实验性 Api 在 Microsoft Store Services SDK 中使用[异步模式](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)来从合作伙伴中心中检索数据。 这意味着，这些方法的部分执行可能会在调用这些方法后发生，以便你的应用的 UI 可以一边保持响应，一边完成操作。 异步模式要求你的应用在调用该 API 时使用 **async** 关键字和 **await** 运算符，如本文中的代码示例所示。 按照惯例，异步方法以 **Async** 结尾。
 
 ## <a name="configure-your-project"></a>配置项目
 
@@ -42,7 +42,7 @@ ms.locfileid: "8734470"
 
 ## <a name="get-variation-data-and-log-the-view-event-for-your-experiment"></a>获取变体数据并记录实验的视图事件
 
-在你的项目中，找到你想要在实验中修改的功能代码。 添加检索变体数据的代码、 使用此数据修改正在测试的功能的行为，然后实验的视图事件记录到 A / B 测试服务在合作伙伴中心。
+在你的项目中，找到你想要在实验中修改的功能代码。 添加检索变体数据的代码使用此数据修改正在测试的功能的行为，然后为你的实验的视图事件记录到 A / B 测试服务在合作伙伴中心。
 
 你需要的具体代码将依应用而定，但以下示例演示了基本过程。 有关完整的代码示例，请参阅[利用 A/B 测试创建和运行你的第一个试验](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
@@ -50,7 +50,7 @@ ms.locfileid: "8734470"
 
 以下步骤详细描述了此过程的重要部分。
 
-1. 声明一个表示当前变体分配的[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)对象和[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger)对象将用来登录到合作伙伴中心的视图和转换事件。
+1. 声明一个表示当前变体分配[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)对象和[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger)对象将用来登录到合作伙伴中心的视图和转换事件。
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet1)]
 
@@ -68,7 +68,7 @@ ms.locfileid: "8734470"
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet4)]
 
-5. 使用 [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) 对象的 [GetBoolean](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getboolean)、[GetDouble](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getdouble)、[GetInt32](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getint32) 或 [GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) 方法获取变体分配的值。 在每个方法中，第一个参数是你想要检索的变体名称 （这是你在合作伙伴中心中输入的变体的相同名称）。 第二个参数是默认值，该方法应返回，如果不能从合作伙伴中心中检索指定的值 （例如，如果没有网络连接），并且缓存的变体版本不可用。
+5. 使用 [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) 对象的 [GetBoolean](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getboolean)、[GetDouble](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getdouble)、[GetInt32](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getint32) 或 [GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) 方法获取变体分配的值。 在每个方法中，第一个参数是你想要检索的变体名称 （这是你在合作伙伴中心中输入的变体的相同名称）。 第二个参数是默认值，该方法应返回如果不能从合作伙伴中心中检索指定的值 （例如，如果没有网络连接），并且缓存的变体版本不可用。
 
     以下示例使用 [GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) 获取名为 *buttonText* 的变量，并指定 **Grey Button** 的默认变量值。
 
@@ -78,7 +78,7 @@ ms.locfileid: "8734470"
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet6)]
 
-7. 最后，你的实验[视图事件](run-app-experiments-with-a-b-testing.md#terms)记录到 A / B 测试服务在合作伙伴中心。 将 ```logger``` 字段初始化为 [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger) 对象，然后调用 [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation) 方法。 传递表示当前变体分配 （此对象向合作伙伴中心提供事件的相关上下文） 的[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)对象和实验的视图事件名称。 这必须匹配你的合作伙伴中心中为实验输入的视图事件名称。 你的代码应在用户开始查看实验的一部分变体时记录视图事件。
+7. 最后，为你的实验[视图事件](run-app-experiments-with-a-b-testing.md#terms)记录到 A / B 测试服务在合作伙伴中心。 将 ```logger``` 字段初始化为 [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger) 对象，然后调用 [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation) 方法。 传递表示当前变体分配 （此对象向合作伙伴中心提供事件的相关上下文） 的[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)对象和实验的视图事件名称。 这必须匹配你的合作伙伴中心中为实验输入的视图事件名称。 你的代码应在用户开始查看实验的一部分变体时记录视图事件。
 
     以下示例演示了如何记录名为 **userViewedButton** 的视图事件。 在此示例中，实验的目标是获取单击应用中按钮的用户，以便在应用完成变体数据（在这种情况下，为按钮文本）检索并将它分配给该按钮的内容后，会记录视图事件。
 

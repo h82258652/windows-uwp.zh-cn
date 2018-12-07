@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 7169848084b587793ba1537ea3d6ad78d31892d5
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734540"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8806620"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>服务点设备声明和启用模型
 
@@ -34,7 +34,7 @@ ms.locfileid: "8734540"
 
 ## <a name="enable-device-for-io-operations"></a>启用设备进行 I/O 操作
 
-声明操作只是建立对设备的独占权限，但不会将其放到运行状态。  若要接收事件，或执行任何操作，输出必须启用使用**EnableAsync**的设备。  相反，你可以调用**DisableAsync**停止侦听设备或执行输出中的事件。  你还可以使用**IsEnabled**来确定你的设备的状态。
+声明操作只是建立到设备，独占权限，但不会将其放到运行状态。  若要接收事件或执行任何操作，输出必须启用使用**EnableAsync**的设备。  相反，你可以调用**DisableAsync**停止从设备或执行输出侦听事件。  你还可以使用**IsEnabled**来确定你的设备的状态。
 
 ### <a name="apis-used-enable--disable"></a>使用 Api 启用/禁用
 
@@ -107,7 +107,7 @@ ms.locfileid: "8734540"
     }
 ```
 
-然后与你声明的设备一起注册事件处理程序
+然后注册事件处理程序中与你已声明的设备关联
 
 ```Csharp
     BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(DeviceId);

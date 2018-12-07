@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 购买 API, 订阅
 ms.localizationpriority: medium
 ms.openlocfilehash: b568531ce0807ebc5be0d27a78b94547e8473ae6
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729857"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782146"
 ---
 # <a name="get-subscriptions-for-a-user"></a>获取用户订阅
 
@@ -114,7 +114,7 @@ Host: https://purchase.mp.microsoft.com
 | autoRenew | 布尔值 |  表示是否已将订阅配置为在当前订阅期结束时自动续订。   |
 | 受益人 | 字符串 |  与此订阅关联的权利受益人的 ID。   |
 | expirationTime | 字符串 | 订阅截止日期和时间（ISO 8601 格式）。 仅当订阅处于特定状态时，此字段才可用。 截止时间通常表示当前状态截止的时间。 例如，对于活动的订阅，截止日期表示下一次自动续订发生的时间。    |
-| expirationTimeWithGrace | 字符串 | 过期日期和时间，订阅将包括在宽限期，采用 ISO 8601 格式。 此值指示当该用户将失去对订阅的访问后失败，订阅自动续订。    |
+| expirationTimeWithGrace | 字符串 | 过期日期和时间，订阅将包括在宽限期，采用 ISO 8601 格式。 此值指示当该用户将失去对订阅的访问后已失败，订阅自动续订。    |
 | id | 字符串 |  订阅 ID。 使用此方法表示在你调用[更改用户订阅的计费状态](change-the-billing-state-of-a-subscription-for-a-user.md)方法时想要修改的订阅。    |
 | isTrial | 布尔值 |  表示订阅是否为试用版。     |
 | lastModified | 字符串 |  上次修改订阅的日期和时间（ISO 8601 格式）。      |

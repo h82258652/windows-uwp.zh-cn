@@ -8,16 +8,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5752a7bf18d785121258ea3fe75afe8383be2aff
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8744407"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782606"
 ---
 # <a name="send-a-local-tile-notification"></a>发送本地磁贴通知
  
 
-在 windows 10 中的主要应用磁贴在应用清单中，而辅助磁贴是以编程方式创建和定义你的应用代码定义。 本文介绍了如何使用自适应磁贴模板将本地磁贴通知发送到主要磁贴和辅助磁贴。 （本地通知是从应用代码发送的通知，而不是从 Web 服务器推送或拉取的通知。）
+在 windows 10 中的主要应用磁贴定义在应用清单中，而辅助磁贴是以编程方式创建和由你的应用代码定义。 本文介绍了如何使用自适应磁贴模板将本地磁贴通知发送到主要磁贴和辅助磁贴。 （本地通知是从应用代码发送的通知，而不是从 Web 服务器推送或拉取的通知。）
 
 ![默认磁贴和带有通知的磁贴](images/sending-local-tile-01.png)
 

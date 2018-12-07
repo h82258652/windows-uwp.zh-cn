@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 0930e970af943329cac60d02a4bfe5986c21757a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734784"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782274"
 ---
 # <a name="device-portal-for-xbox"></a>适用于 Xbox 的 Device Portal
 
@@ -193,11 +193,11 @@ Kinect 传感器必须连接到控制台才能更改以下这些设置。
 
 ![将工具添加到工作区](images/device-portal-xbox-13.png)
 
-### <a name="game-event-data"></a>游戏的事件数据
+### <a name="game-event-data"></a>游戏事件数据
 
-在**游戏的事件数据**页上，你可以查看实时图该流中的当前记录在 Xbox One 上的事件跟踪 Windows (ETW) 为游戏的事件数量。 如果游戏在系统上记录的事件，你还可以查看详细信息 （事件名称、 事件发生和在游戏作品） 描述数据图数据表中的每个事件。 表仅记录事件是否可用。
+在**游戏事件数据**页上，你可以查看实时图该流中当前记录在 Xbox One 上的事件跟踪的 Windows (ETW) 游戏事件的数量。 如果有记录在系统上的游戏事件，你还可以查看详细信息 （事件名称、 事件匹配项，并在游戏作品） 描述在数据图数据表中的每个事件。 下表仅记录事件是否可用。
 
-![游戏的事件数据](images/device-portal-xbox-22.PNG)
+![游戏事件数据](images/device-portal-xbox-22.PNG)
 
 ## <a name="see-also"></a>另请参阅
 

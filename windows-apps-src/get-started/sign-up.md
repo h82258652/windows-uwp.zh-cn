@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 注册, 开发者帐户
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c15f6df30477f11c8b20afd08fa1c1cd55b34b3
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8708485"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782176"
 ---
 # <a name="create-a-developer-account"></a>创建一个开发者帐户
 

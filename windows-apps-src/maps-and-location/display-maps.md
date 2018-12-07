@@ -6,12 +6,12 @@ ms.date: 03/14/2018
 ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 地图控件, 地图视图
 ms.localizationpriority: medium
-ms.openlocfilehash: 7242bdcedd4380c5593dba2788706ed0fbbc94a4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 7713c1664018a1875d80f70fb75da2afe6104c3c
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750788"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780111"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>使用 2D、3D 和 Streetside 视图显示地图
 
@@ -421,7 +421,7 @@ private async void display3DLocation()
 
 通过调用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的以下方法，在地图上获取有关位置的信息。
 
--   [**GetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016) 方法 - 获取与地图控件视口中指定点相对应的地理位置。
+-   [**TryGetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016)方法-获取与地图控件视口中指定点相对应的地理位置。
 -   [**GetOffsetFromLocation**](https://msdn.microsoft.com/library/windows/apps/dn637018) 方法 - 在地图控件的视口中获取与指定地理位置相对应的点。
 -   [**IsLocationInView**](https://msdn.microsoft.com/library/windows/apps/dn637022) 方法 - 确定指定的地理位置当前在地图控件的视口中是否可见。
 -   [**FindMapElementsAtOffset**](https://msdn.microsoft.com/library/windows/apps/dn637014) 方法 - 在位于地图控件视口中指定点的地图上获取元素。

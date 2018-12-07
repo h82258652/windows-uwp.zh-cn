@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, python
 ms.localizationpriority: medium
 ms.openlocfilehash: 157c11484de150d363157e5b6e5de00a35bafd5f
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8690072"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8779213"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Python 示例：应用、加载项和外部测试版的提交
 
@@ -58,7 +58,7 @@ ms.locfileid: "8690072"
 2. 接下来，此方法会[删除应用的挂起提交](delete-an-app-submission.md)（如果存在）。
 3. 然后，此方法会[创建新的应用提交](create-an-app-submission.md)（新提交时是上次发布的提交副本）。
 4. 它会更改新提交的部分详细信息并将新的提交包上载到 Azure Blob 存储。
-5. 接下来，该[更新](update-an-app-submission.md)，然后[提交](commit-an-app-submission.md)到合作伙伴中心的新提交。
+5. 接下来，它[更新](update-an-app-submission.md)，然后[提交](commit-an-app-submission.md)到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-app-submission.md)，直到其成功提交。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L93-L166)]
@@ -73,7 +73,7 @@ ms.locfileid: "8690072"
 2. 接下来，此方法会[删除加载项的挂起提交](delete-an-add-on-submission.md)（如果存在）。
 3. 然后，此方法[会创建新的加载项提交](create-an-add-on-submission.md)（新提交时是上次发布的提交副本）。
 4. 它会将包含提交图标的 ZIP 存档上载到 Azure Blob 存储。 有关详细信息，请参阅[创建加载项提交](manage-add-on-submissions.md#create-an-add-on-submission)中关于将 ZIP 存档上载至 Azure Blob 存储的相关说明。
-5. 接下来，该[更新](update-an-add-on-submission.md)，然后[提交](commit-an-add-on-submission.md)到合作伙伴中心的新提交。
+5. 接下来，它[更新](update-an-add-on-submission.md)，然后[提交](commit-an-add-on-submission.md)到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-add-on-submission.md)，直到其成功提交。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L172-L245)]
@@ -88,7 +88,7 @@ ms.locfileid: "8690072"
 2. 接下来，此方法会[删除软件包外部测试版的挂起提交](delete-a-flight-submission.md)（如果存在）。
 3. 然后，此方法[会创建新的软件包外部测试版提交](create-a-flight-submission.md)（新提交时是上次发布的提交副本）。
 4. 它会将新的提交程序包上载到 Azure Blob 存储。 有关详细信息，请参阅[创建软件包外部测试版提交](manage-flight-submissions.md#create-a-package-flight-submission)中关于将 ZIP 存档上载至 Azure Blob 存储的相关说明。
-5. 接下来，该[更新](update-a-flight-submission.md)，然后[提交](commit-a-flight-submission.md)到合作伙伴中心的新提交。
+5. 接下来，它[更新](update-a-flight-submission.md)，然后[提交](commit-a-flight-submission.md)到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-a-flight-submission.md)，直到其成功提交。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L251-L325)]

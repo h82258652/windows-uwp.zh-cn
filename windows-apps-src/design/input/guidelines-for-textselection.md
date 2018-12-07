@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9679e6e658e7fa1eb50b41331e7e59ec2115fc14
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8694863"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785292"
 ---
 # <a name="selecting-text-and-images"></a>选择文本和图像
 
@@ -53,14 +53,14 @@ ms.locfileid: "8694863"
 
 **文本选择**
 
-如果你的应用需要支持文本选择自定义 UI，我们建议你遵循此处所述的 Windowsselection 行为。
+如果你的应用需要一个支持文本选择的自定义 UI，我们建议你遵循此处所述的 Windowsselection 行为。
 
 **可编辑的内容和不可编辑的内容**
 
 
-借助触摸，选择交互主要是通过诸如用于设置插入光标或选择词汇的点击以及用于修改选择的滑动之类的手势来执行。 与其他 Windowstouch 交互，计时的交互仅限于点按操作和手势来显示信息 UI。 有关详细信息，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
+借助触摸，选择交互主要是通过诸如用于设置插入光标或选择词汇的点击以及用于修改选择的滑动之类的手势来执行。 与其他 Windowstouch 交互，计时的交互仅限于点按操作并按住手势来显示信息 UI。 有关详细信息，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
 
-Windowsrecognizes 两个可能选择交互，可编辑和不可编辑的状态，并相应调整选择 UI、 反馈以及功能。
+Windowsrecognizes 两个可能状态为选择交互，可编辑和不可编辑，并相应调整选择 UI、 反馈以及功能。
 
 **可编辑的内容**
 

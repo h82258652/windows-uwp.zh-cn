@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 142ee642806ebba41d6ddb4d49fe55217e7a0e2e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730627"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785925"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>延长显示初始屏幕的时间
 
@@ -24,11 +24,11 @@ ms.locfileid: "8730627"
 通过为你的应用创建延长的初始屏幕，使初始屏幕显示的时间更长。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，但是也可以进行自定义。 无论你是要显示实时加载信息还是想要简单地为应用提供更多时间来准备其初始 UI，延长的初始屏幕允许你定义启动体验。
 
 > [!NOTE]
-> 中的短语"延长的初始屏幕"本主题是指在屏幕保留延长时间的时间的初始屏幕。 它不表示从 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 类派生的子类。
+> 短语"延长的初始屏幕"本主题中是指在屏幕保留延长时间的时间的初始屏幕。 它不表示从 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 类派生的子类。
 
 通过遵循以下建议，确保延长的初始屏幕准确地模仿默认初始屏幕：
 
--   你的延长的初始屏幕页面应该使用 620 x 300 像素的图像，与应用清单中为初始屏幕指定的图像（你的应用的初始屏幕图像）一致。 在 Microsoft Visual Studio2015 初始屏幕设置存储在应用清单 （Package.appxmanifest 文件） 中的**视觉资源**选项卡的**初始屏幕**部分。
+-   你的延长的初始屏幕页面应该使用 620 x 300 像素的图像，与应用清单中为初始屏幕指定的图像（你的应用的初始屏幕图像）一致。 在 Microsoft Visual Studio2015 初始屏幕设置存储在你的应用清单 （Package.appxmanifest 文件） 中的**视觉资源**选项卡的**初始屏幕**部分。
 -   你的延长的初始屏幕使用的背景色应该与应用清单中为初始屏幕指定的背景色（你的应用的初始屏幕背景）一致。
 -   你的代码应该使用 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 类将你的应用的初始屏幕图像放置在默认初始屏幕的相同屏幕坐标处。
 -   通过使用 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 类在你的延长的初始屏幕上重新放置项目，你的代码应该响应窗口调整大小事件（例如，在旋转屏幕时或将应用移动到屏幕上靠近另一个应用的位置时）。
@@ -58,7 +58,7 @@ ms.locfileid: "8730627"
 -   将 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 元素添加到 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)。 将你为默认初始屏幕选择的 600 x 320 像素图像用于延长的初始屏幕。
 -   （可选）添加一个进度控件，以向用户显示正在加载的应用。 此主题添加了一个 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538)，而非一个确定或不确定的 [**ProgressBar**](https://msdn.microsoft.com/library/windows/apps/br227529)。
 
-下面的示例演示了一个具有这些添加和更改的[**网格**](https://msdn.microsoft.com/library/windows/apps/br242704)。
+以下示例演示了具有这些添加和更改的[**网格**](https://msdn.microsoft.com/library/windows/apps/br242704)。
 
 ```xaml
     <Grid Background="#464646">
@@ -213,13 +213,13 @@ ms.locfileid: "8730627"
     ```
 
     > [!NOTE]
-    > 尝试获取图像位置之前，请确保类变量 (`splash`) 包含一个有效的[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763)对象，该示例中所示。
+    > 你尝试获取图像位置之前，请确保类变量 (`splash`) 包含一个有效[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763)对象，该示例中所示。
 
      
 
 8.  **（可选）添加类方法以还原保存的会话状态**
 
-    在步骤 4 中你添加到 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法中的代码：[修改启动激活处理程序](#modify-the-launch-activation-handler)，将导致你的应用在启动时显示延长的初始屏幕。 合并到延长的初始屏幕类中的应用启动相关的所有方法，你可以考虑向 ExtendedSplash.xaml.cs 文件以还原应用的状态中添加一种方法。
+    在步骤 4 中你添加到 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法中的代码：[修改启动激活处理程序](#modify-the-launch-activation-handler)，将导致你的应用在启动时显示延长的初始屏幕。 若要合并到延长的初始屏幕类中的应用启动相关的所有方法，你可以考虑方法添加到 ExtendedSplash.xaml.cs 文件以还原应用的状态。
 
     ```cs
     void RestoreState(bool loadState)

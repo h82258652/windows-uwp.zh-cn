@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 551f8b925ffd56950ba893da7b81fefb4579f558
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8744143"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8781016"
 ---
 # <a name="bluetooth-gatt-server"></a>蓝牙 GATT 服务器
 
@@ -20,29 +20,29 @@ ms.locfileid: "8744143"
 - [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
 
 
-本文介绍了适用于通用 Windows 平台 (UWP) 应用，以及有关常见的 GATT 服务器任务的示例代码的蓝牙通用属性 (GATT) 服务器 Api: 
+本文演示了适用于通用 Windows 平台 (UWP) 应用，以及有关常见的 GATT 服务器任务的示例代码的蓝牙通用属性 (GATT) 服务器 Api: 
 - 定义的受支持的服务
 - 发布服务器，以便它可以发现的远程客户端
-- 公布服务支持
+- 播发服务支持
 - 若要读取和写入请求进行响应
-- 将通知发送到订阅的客户端
+- 将通知发送到已订阅的客户端
 
 ## <a name="overview"></a>概述
-Windows 通常可在客户端角色运行。 不过，很多情况下会出现这需要 Windows 将充当蓝牙 LE GATT 服务器以及。 IoT 设备，以及大多数跨平台 BLE 通信的几乎所有情况下将需要 Windows GATT 服务器。 此外，将通知发送到附近可穿戴设备已成为受欢迎的情况下需要以及这种技术。  
-> 请确保[GATT 客户端文档](gatt-client.md)中的所有概念是都很明显，然后再继续。  
+Windows 通常可在客户端角色运行。 不过，许多方案会出现这需要 Windows 将充当蓝牙 LE GATT 服务器以及。 适用于 IoT 设备，以及大多数跨平台 BLE 通信的几乎所有方案都需要 Windows GATT 服务器。 此外，将通知发送到附近可穿戴设备已成为一个受欢迎的方案，该要求以及此技术。  
+> 请确保在继续操作前清除[GATT 客户端文档](gatt-client.md)中的所有概念。  
 
-服务器操作将围绕在服务提供商和 GattLocalCharacteristic。 这两个类将提供声明、 实现和公开到远程设备上的数据层次结构所需的功能。
+服务器操作将围绕服务提供商和 GattLocalCharacteristic。 这两个类将提供声明、 实现和公开到远程设备上的数据层次结构所需的功能。
 
 ## <a name="define-the-supported-services"></a>定义的受支持的服务
 你的应用可能会声明将发布的 Windows 的一个或多个服务。 UUID 唯一地标识每个服务。 
 
 ### <a name="attributes-and-uuids"></a>属性和 Uuid
-每个服务、 特征和描述符定义很通过自己的唯一 128 位 UUID。
-> 所有的 Windows Api 使用的术语 GUID，但蓝牙标准定义这些后台任务视为 Uuid。 对我们来说，这些两个术语可以互换，因此我们将继续使用术语 UUID。 
+定义每个服务、 特征和描述符的是自己的唯一 128 位 UUID。
+> 所有的 Windows Api 使用的术语 GUID，但蓝牙标准定义这些作为 Uuid。 对我们来说，这些两个术语彼此互换，因此我们将继续使用术语 UUID。 
 
-如果该属性是标准和定义蓝牙 SIG 定义，还会有一个相应的 16 位短 ID (例如电池级别 UUID 是 0000**2A19**-0000-1000年-8000-00805F9B34FB 和简短的 ID 是 0x2A19)。 这些标准 Uuid 可以[GattServiceUuids](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids.aspx)和[GattCharacteristicUuids](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids.aspx)中所示。
+如果该属性是标准和定义的蓝牙 SIG 定义，还会有一个相应的 16 位短 ID (例如电池级别 UUID 是 0000**2A19**-0000-1000年-8000-00805F9B34FB 和简短的 ID 是 0x2A19)。 这些标准 Uuid 可以看到[GattServiceUuids](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids.aspx)和[GattCharacteristicUuids](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids.aspx)中。
 
-如果你的应用实现它是自己的自定义服务，自定义 UUID 将需要生成。 这是轻松地完成在 Visual Studio 中通过工具-> CreateGuid （使用选项 5 进入"xxxxxxxx-xxxx-...xxxx"格式）。 现在可以使用此 uuid 来声明新的本地服务、 特征或描述符。
+如果你的应用实现它是自己的自定义服务，自定义 UUID 将需要进行生成。 这是轻松地完成在 Visual Studio 中通过工具-> CreateGuid （使用选项 5 获取"xxxxxxxx-xxxx-...xxxx"格式）。 现在可以使用此 uuid 来声明新的本地服务、 特征或描述符。
 
 #### <a name="restricted-services"></a>受限的服务
 以下服务由系统保留，并且不能这一次发布：
@@ -52,17 +52,17 @@ Windows 通常可在客户端角色运行。 不过，很多情况下会出现�
 4. 人体学接口设备服务 (HOGP)
 5. 扫描参数服务 (SCP)
 
-> 尝试创建阻止的服务将导致 BluetoothError.DisabledByPolicy 正在从 CreateAsync 调用返回。
+> 尝试创建阻止的服务将导致 BluetoothError.DisabledByPolicy 正在从调用返回的到 CreateAsync。
 
 #### <a name="generated-attributes"></a>生成的属性
-以下描述符是自动生成系统，具体取决于期间创建的特性提供 GattLocalCharacteristicParameters:
-1. 客户端特性配置 （如果特性标记为 indicatable 或 notifiable）。
-2. 特性用户说明 （如果设置 UserDescription 属性）。 请参阅 GattLocalCharacteristicParameters.UserDescription 属性的详细信息。
-3. 特性的格式 （对于指定每个演示文稿格式的一个描述符）。  请参阅 GattLocalCharacteristicParameters.PresentationFormats 属性的详细信息。
-4. 特性聚合格式 （如果未指定多个演示文稿格式）。  有关详细信息的 GattLocalCharacteristicParameters.See PresentationFormats 属性。
-5. 特性扩展属性 （如果在特性进行了标记扩展的属性位）。
+以下描述符是自动生成系统，具体取决于期间创建的特征提供 GattLocalCharacteristicParameters:
+1. 客户端特征配置 （如果特征标记为 indicatable 或 notifiable）。
+2. 特征用户说明 （如果 UserDescription 属性设置）。 请参阅 GattLocalCharacteristicParameters.UserDescription 属性的详细信息。
+3. 特征格式 （对于指定每个演示文稿格式的一个描述符）。  请参阅 GattLocalCharacteristicParameters.PresentationFormats 属性的详细信息。
+4. 特征聚合格式 （如果指定了多个演示文稿格式）。  有关详细信息的 GattLocalCharacteristicParameters.See PresentationFormats 属性。
+5. 特征扩展属性 （如果在特性进行了标记扩展的属性位）。
 
-> 通过 ReliableWrites 和 WritableAuxiliaries 特性属性确定的扩展属性描述符的值。
+> 通过 ReliableWrites 和 WritableAuxiliaries 特征属性确定的扩展属性描述符的值。
 
 > 尝试创建保留的描述符将导致出现异常。
 
@@ -80,9 +80,9 @@ if (result.Error == BluetoothError.Success)
     // 
 }
 ```
-> 主要服务是 GATT 树的最高级别。 主要服务包含特征以及其他服务 （称为加入或辅助服务）。 
+> 主要服务是 GATT 树的最高级别。 主要服务包含特征以及其他服务 （称为包含或辅助服务）。 
 
-现在，填充与所需的特征和描述符的服务：
+现在，填充使用所需的特征和描述符的服务：
 
 ```csharp
 GattLocalCharacteristicResult characteristicResult = await serviceProvider.Service.CreateCharacteristicAsync(uuid1, ReadParameters);
@@ -112,10 +112,10 @@ if (characteristicResult.Error != BluetoothError.Success)
 _notifyCharacteristic = characteristicResult.Characteristic;
 _notifyCharacteristic.SubscribedClientsChanged += SubscribedClientsChanged;
 ```
-如上所示，这也是不错的声明每个特性支持的操作的事件处理程序。  若要正确响应的请求，应用必须定义，并为该属性支持每个请求类型设置事件处理程序。  如未注册一个处理程序将被立即完成与*UnlikelyError*由系统在请求中引起。
+如上所示，这也是不错的声明每个特性支持的操作的事件处理程序。  若要正确响应的请求，应用必须定义，并为该属性支持每个请求类型设置事件处理程序。  未能注册一个处理程序将被立即完成与*UnlikelyError*由系统在请求中的结果。
 
-### <a name="constant-characteristics"></a>常量的特征
-有时，将不会更改过程中应用的生命周期的特性值。 在此情况下，最好声明常量的特征，以防止不必要的应用激活： 
+### <a name="constant-characteristics"></a>常量特征
+有时，存在不会更改的应用的生命周期期间的特性值。 在此情况下，最好声明常量的特征，以防止不必要的应用激活： 
 
 ```csharp
 byte[] value = new byte[] {0x21};
@@ -134,7 +134,7 @@ if (characteristicResult.Error != BluetoothError.Success)
 }
 ```
 ## <a name="publish-the-service"></a>发布服务
-一旦该服务已完全定义下, 一步是发布服务支持。 这将通知操作系统在远程设备执行服务发现时，应返回该服务。  你将需要设置两个属性的 IsDiscoverable 和 IsConnectable:  
+一旦该服务已完全定义下, 一步是发布服务支持。 这将通知操作系统在远程设备执行服务发现时，应返回该服务。  你将需要设置两个属性-IsDiscoverable 和 IsConnectable:  
 
 ```csharp
 GattServiceProviderAdvertisingParameters advParameters = new GattServiceProviderAdvertisingParameters
@@ -145,17 +145,17 @@ GattServiceProviderAdvertisingParameters advParameters = new GattServiceProvider
 serviceProvider.StartAdvertising(advParameters);
 ```
 - **IsDiscoverable**： 公布在广告，使设备发现远程设备的友好名称。
-- **IsConnectable**： 公布用于外设角色的可连接的广告。
+- **IsConnectable**： 公布在外设角色中使用一个可连接广告。
 
 > 可发现和 Connectable 服务时，系统会将服务 Uuid 添加到广告数据包。  广告数据包中仅 31 字节数，并且其中 16 所需的 128 位 UUID ！
 
 > 请注意，在前台发布服务时，应用程序时必须调用 StopAdvertising 应用程序挂起。
 
 ## <a name="respond-to-read-and-write-requests"></a>若要读取和写入请求进行响应
-正如我们之前所见而声明所需的特征，GattLocalCharacteristics 将产生 3 种类型的事件-ReadRequested、 WriteRequested 和 SubscribedClientsChanged。
+如我们之前所见而声明所需的特征，GattLocalCharacteristics 具有 3 种类型的事件-ReadRequested、 WriteRequested 和 SubscribedClientsChanged。
 
 ### <a name="read"></a>已阅读
-在远程设备尝试读取特性值 （并且不常数值） 时，调用 ReadRequested 事件。 参数 （包含在远程设备的信息） 以及调用了读取特性传递给该委托： 
+在远程设备尝试读取特性值 （并且它不是常量值） 时，调用 ReadRequested 事件。 参数 （包含在远程设备有关的信息） 以及调用了读取的特点传递给该委托： 
 
 ```csharp
 characteristic.ReadRequested += Characteristic_ReadRequested;
@@ -178,7 +178,7 @@ async void ReadCharacteristic_ReadRequested(GattLocalCharacteristic sender, Gatt
 ``` 
 
 ### <a name="write"></a>写入
-当在远程设备尝试值写入特性时，有关详细信息在远程设备，以写入的特性和值本身调用 WriteRequested 事件： 
+当在远程设备尝试值写入特性时，有关详细信息在远程设备，以写入的特征和值本身调用 WriteRequested 事件： 
 
 ```csharp
 characteristic.ReadRequested += Characteristic_ReadRequested;
@@ -202,8 +202,8 @@ async void WriteCharacteristic_WriteRequested(GattLocalCharacteristic sender, Ga
 ```
 有两种类型的写入-带有和不响应。 使用 GattWriteOption （GattWriteRequest 对象的属性） 来查明在远程设备正在执行哪种类型的写入。 
 
-## <a name="send-notifications-to-subscribed-clients"></a>将通知发送到订阅的客户端
-最常见的 GATT 服务器操作，通知执行推送到远程设备的数据的关键的功能。 有时，你会想要通知所有订阅的客户端，但你可能想要选取的设备发送给新值的 othertimes: 
+## <a name="send-notifications-to-subscribed-clients"></a>将通知发送到已订阅的客户端
+最常见的 GATT 服务器操作，通知执行推送到远程设备数据的关键的功能。 有时，你会想要通知所有订阅的客户端，但 othertimes 你可能想要选取的设备发送给新值： 
 
 ```csharp
 async void NotifyValue()

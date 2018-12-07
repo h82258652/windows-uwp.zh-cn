@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c7959231596829e20dc8afea654b2d51977abe4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 287079bf7195ebcadc3543d9369a0567f197b10c
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736955"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787913"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>创建、编辑和保存位图图像
 
@@ -45,7 +45,7 @@ ms.locfileid: "8736955"
 
 若要将 **SoftwareBitmap** 保存到某个文件，请获取该图像将保存到的 **StorageFile** 的实例。 此示例使用 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 以允许用户选择输出文件。
 
-[!code-cs[PickOuputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOuputFile)]
+[!code-cs[PickOutputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOutputFile)]
 
 调用 **StorageFile** 对象的 [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) 方法，以获取该图像将写入的随机访问流。 调用静态方法 [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211) 以获取指定流的 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) 类的实例。 **CreateAsync** 的第一个参数是表示编解码器的 GUID，应该使用该编解码器对图像进行编码。 **BitmapEncoder** 类公开一个包含受编码器支持的每个编解码器的 ID（例如 [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226)）的属性。
 

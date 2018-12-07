@@ -1,21 +1,21 @@
 ---
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
-description: 在 Microsoft Store 提交 API 中使用此方法，可检索注册到你的合作伙伴中心帐户的特定应用相关的信息。
+description: 在 Microsoft Store 提交 API 中使用此方法可检索注册到你的合作伙伴中心帐户的特定应用相关的信息。
 title: 获取应用
 ms.date: 02/28/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用
 ms.localizationpriority: medium
 ms.openlocfilehash: ccb5473f85cba08c170af2334b0894a11e27a15a
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8710143"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787521"
 ---
 # <a name="get-an-app"></a>获取应用
 
-在 Microsoft Store 提交 API 中使用此方法，可检索注册到你的合作伙伴中心帐户的特定应用相关的信息。
+在 Microsoft Store 提交 API 中使用此方法可检索注册到你的合作伙伴中心帐户的特定应用相关的信息。
 
 ## <a name="prerequisites"></a>先决条件
 

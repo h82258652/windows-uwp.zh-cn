@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 4208fd56b16d5130f218492428eb459364b8ada9
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8753590"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782372"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -82,7 +82,7 @@ VSTS 适用于基于 TFS 和 GIT 的代码存储库。
 
 #### <a name="configure-the-build-solution-build-task"></a>配置生成解决方案生成任务
 
-此任务将编译为二进制文件的工作文件夹中，并生成输出应用包文件的任何解决方案。
+此任务将在对二进制文件的工作文件夹，并且生成输出应用包文件的任何解决方案编译。
 此任务使用 MSbuild 参数。  你必须指定这些参数的值。 使用下表作为指南。
 
 |**MSBuild 参数**|**值**|**说明**|
@@ -224,7 +224,7 @@ MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "A
 
 ## <a name="set-up-a-continuous-deployment-build-for-sideloading"></a>设置连续部署生成用于旁加载
 
-此类型的生成完成后，用户可以从生成结果页的项目部分下载应用包文件。
+当此类型的生成完成时，用户可以从生成结果页的项目部分下载应用包文件。
 如果要通过创建更完整的分配来对应用进行 beta 测试，可使用 HockeyApp 服务。 此服务提供用于 beta 测试、用户分析和崩溃诊断的高级功能。
 
 ### <a name="applying-version-numbers-to-your-builds"></a>将版本号应用到生成
@@ -281,7 +281,7 @@ CI_MyUWPApp_1.1.2501.0
 $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUWPApp_$(AppxVersion)_x86_x64_ARM.appxbundle
 ```
 
-尽管 HockeyApp 任务允许你指定符号文件的路径，它是一种与捆绑包将符号的最佳做法。
+尽管 HockeyApp 任务允许你指定符号文件的路径，它是与捆绑包将符号是最佳做法。
 
 ## <a name="set-up-a-continuous-deployment-build-that-submits-a-package-to-the-store"></a>设置将程序包提交到 Microsoft Store 的连续部署生成
 
@@ -291,7 +291,7 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUW
 
 Microsoft Store 关联向导生成名为 Package.StoreAssociation.xml 的文件，该文件包含 Microsoft Store 关联信息。 如果你将源代码存储在公用存储库（如 GitHub）中，则此文件将包含该帐户的所有应用保留名称。 可在公开前排除或删除此文件。
 
-如果你没有发布该应用已使用合作伙伴中心帐户的访问权限，你可以按照本文档中的说明：[为第三方生成应用？如何打包它们的应用商店应用](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97)。
+如果你没有访问用于发布该应用的合作伙伴中心帐户，你可以按照本文档中的说明：[为第三方生成应用？如何打包它们的应用商店应用](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97)。
 
 然后你需要验证生成步骤是否包含以下参数：
 
@@ -305,9 +305,9 @@ Microsoft Store 关联向导生成名为 Package.StoreAssociation.xml 的文件�
 
 对 Microsoft Store 使用 Visual Studio Team Services 扩展以便与 Microsoft Store API 集成，并将应用包发送到 Microsoft Store。
 
-需要连接你的合作伙伴中心帐户与 Azure Active Directory (AD)，然后在你的广告请求进行身份验证中创建的应用。 可按照扩展页中的指南完成该操作。
+你需要连接你的合作伙伴中心帐户与 Azure Active Directory (AD)，然后 AD 进行身份验证请求中创建一个应用。 可按照扩展页中的指南完成该操作。
 
-配置该扩展后，你可以添加生成任务，并与你的应用 ID 和上传文件的位置对其进行配置。
+后您已配置了扩展，你可以添加生成任务，并使用你的应用 ID 和上传文件的位置配置它。
 
 ![配置合作伙伴中心](images/building-screen17.png)
 
@@ -328,18 +328,18 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 如果要分发应用而不将其发布到应用商店，则可将应用直接旁加载到设备，前提是这些设备信任用于对应用包签名的证书。
 
-使用 `Add-AppDevPackage.ps1` PowerShell 脚本安装应用。 此脚本将证书添加到本地计算机的受信任的根证书部分，并将然后安装或更新的应用包文件。
+使用 `Add-AppDevPackage.ps1` PowerShell 脚本安装应用。 此脚本将证书添加到在本地计算机的受信任的根证书部分，并将然后安装或更新的应用包文件。
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>使用 Windows10 周年更新旁加载应用
 
-在 Windows 10 周年更新中，你可以双击应用包文件并安装你的应用通过在对话框中选择安装按钮。
+在 Windows 10 周年更新中，你可以双击应用包文件，并通过在对话框中选择安装按钮来安装你的应用。
 
 ![在 rs1 中旁加载](images/building-screen18.png)
 
 >[!NOTE]
 > 此方法不安装证书或关联的依赖项。
 
-如果你想要分发你从 VSTS 或 HockeyApp 之类的网站的 Windows 应用程序包，你需要将该站点添加到你的浏览器中的受信任的站点列表。 否则，Windows 将该文件标记为锁定。
+如果你想要分发你从 VSTS 或 HockeyApp 之类的网站的 Windows 应用程序包，你将需要将该站点添加到你的浏览器中的受信任的站点的列表。 否则，Windows 将该文件标记为锁定。
 
 <span id="certificates-best-practices"/>
 

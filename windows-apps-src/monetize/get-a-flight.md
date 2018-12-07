@@ -1,21 +1,21 @@
 ---
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
-description: 在 Microsoft Store 提交 API 中使用此方法，可获取注册到你的合作伙伴中心帐户的应用的软件包外部测试版的数据。
+description: 在 Microsoft Store 提交 API 中使用此方法，可获取软件包外部测试，为注册到你的合作伙伴中心帐户的应用的数据。
 title: 获取软件包外部测试版
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版, 软件包外部测试版
 ms.localizationpriority: medium
 ms.openlocfilehash: c4ff6c929a7264b5dece0057701c8348fe5d39be
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734069"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8779837"
 ---
 # <a name="get-a-package-flight"></a>获取软件包外部测试版
 
-在 Microsoft Store 提交 API 中使用此方法，可获取注册到你的合作伙伴中心帐户的应用的软件包外部测试版的数据。
+在 Microsoft Store 提交 API 中使用此方法，可获取软件包外部测试，为注册到你的合作伙伴中心帐户的应用的数据。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -44,8 +44,8 @@ ms.locfileid: "8734069"
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字符串 | 必需。 应用（包含要获取的软件包外部测试版）的应用商店 ID。 在合作伙伴中心是可用的应用商店 ID。  |
-| flightId | 字符串 | 必需。 要获取的软件包外部测试版的 ID。 在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中提供了此 ID。 在合作伙伴中心中创建外部测试版，此 ID 也包含在合作伙伴中心中的外部测试版页面的 URL 中可用。  |
+| applicationId | 字符串 | 必需。 应用（包含要获取的软件包外部测试版）的应用商店 ID。 在合作伙伴中心中会提供应用应用商店 ID。  |
+| flightId | 字符串 | 必需。 要获取的软件包外部测试版的 ID。 在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中提供了此 ID。 对于在合作伙伴中心中创建的外部测试版，此 ID 也包含在合作伙伴中心中的外部测试版页面的 URL 中可用。  |
 
 
 ### <a name="request-body"></a>请求正文

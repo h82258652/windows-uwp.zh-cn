@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ef1a6047a7c462961f40ae8913881125e2331bb
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755223"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8779897"
 ---
 # <a name="xname-attribute"></a>x:Name 属性
 
@@ -65,7 +65,7 @@ UWP XAML 中使用的一些类型还具有一个名为 **Name** 的属性。 例
 
 如果 **Name** 可用作一个元素上的可设置属性，**Name** 和 **x:Name** 可在 XAML 中交替使用，但如果在相同元素上指定了这两个属性，会发生错误。 有时，会存在一个只读的 **Name** 属性（如 [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031)）。 如果出现这种情况，请在 XAML 中始终使用 **x:Name** 对该元素进行命名，而且对于一些少见的代码方案使用只读的 **Name**。
 
-**注意**[**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)通常不应作为一种方法来更改最初由**X:name**，设置值，但有一些一般规则的例外情况的方案。 在典型的场景中，XAML 名称范围的创建和定义是一个 XAML 处理器操作。 在运行时修改 **FrameworkElement.Name** 可能会导致不一致的 XAML 名称范围/专用字段命名对齐，这种不一致在代码隐藏文件中很难跟踪。
+**注意**[**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)通常不应作为一种方式更改最初由**X:name**，设置值，但有一些例外一般规则的方案。 在典型的场景中，XAML 名称范围的创建和定义是一个 XAML 处理器操作。 在运行时修改 **FrameworkElement.Name** 可能会导致不一致的 XAML 名称范围/专用字段命名对齐，这种不一致在代码隐藏文件中很难跟踪。
 
 ### <a name="xname-and-xkey"></a>x:Name 和 x:Key
 

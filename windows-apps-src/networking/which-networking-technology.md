@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e418e5a159df44d6ff6e15e4faa972164447f5ee
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8690920"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8786701"
 ---
 # <a name="which-networking-technology"></a>选择哪一种网络技术？
 
@@ -127,7 +127,7 @@ Windows 10 中的新后台传输功能是能够在文件传输完成，以便你
 
 ### <a name="mobile-operators"></a>移动运营商
 
-Windows 10 到开发人员受众公开具有之前只公开给设备制造商和移动运营商的某些 Api。 请注意，尽管这些 API 现已公开，但它们仍受特定应用功能的限制，即必须得到 Microsoft 批准之后，才能发布应用。 这些 API 的实际使用主要限于设备制造商和移动运营商。
+Windows 10 向开发人员受众公开具有之前只公开给设备制造商和移动运营商的某些 Api。 请注意，尽管这些 API 现已公开，但它们仍受特定应用功能的限制，即必须得到 Microsoft 批准之后，才能发布应用。 这些 API 的实际使用主要限于设备制造商和移动运营商。
 
 ### <a name="network-operations"></a>网络运营
 

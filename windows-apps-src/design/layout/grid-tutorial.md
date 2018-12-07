@@ -8,11 +8,11 @@ keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b221220d417df5b70927984ac65eff93fae54a4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749706"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8779444"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>教程：使用 Grid 和 StackPanel 创建简单的天气应用
 
@@ -21,7 +21,7 @@ ms.locfileid: "8749706"
 > **重要 API**：[Grid 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid)、[StackPanel 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>必备条件
-- Windows 10 和 Microsoft Visual Studio 2015 或更高版本。 （最新的 Visual Studio 推荐当前开发和安全更新）[单击此处以了解如何设置 Visual Studio](../../get-started/get-set-up.md)。
+- Windows 10 和 Microsoft Visual Studio 2015 或更高版本。 （最新的 Visual Studio 推荐当前开发和安全更新）[单击此处以了解如何获取设置与 Visual Studio](../../get-started/get-set-up.md)。
 - 了解如何通过使用 XAML 和 C# 创建一个基本的“Hello World”应用。 如果还没有，[请单击此处以了解如何创建一个“Hello World”应用](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
 ## <a name="step-1-create-a-blank-app"></a>步骤 1：创建空白应用

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, visual studio, 工具, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a3938f486d52942031944b1184a711ddbc579db
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754426"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8779348"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>用于游戏编程的 Visual Studio 工具
 
@@ -116,7 +116,7 @@ float3 LambertLighting(
 
 你可以向项目中添加生成自定义以便 Visual Studio 将资源转换为可以使用的格式。 在此之后，你可以将资源加载到应用中 并通过创建和填充 DirectX 资源来使用它们，就像在任何其他 DirectX 应用中一样。
 
-若要添加生成自定义，右键单击**解决方案资源管理器**中的项目，并选择**生成自定义...**。你可以向项目添加以下类型的生成自定义。
+若要添加生成自定义，你在**解决方案资源管理器**中的项目上右键单击并选择**生成自定义...**。你可以将以下类型的生成自定义项添加到你的项目。
 
 -   图像内容管道获取图像文件作为输入，并输出 DirectDraw 表面 (.dds) 文件。
 -   网格内容管道获取网格文件（如 .fbx）并输出 .cmo 网格文件。

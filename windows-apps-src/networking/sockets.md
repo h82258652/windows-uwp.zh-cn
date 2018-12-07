@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d75afd17d5aa7edf64fda36b3a35b3a101c1d89
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729685"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782860"
 ---
 # <a name="sockets"></a>套接字
 套接字是实现许多网络协议所基于的低级数据传输技术。 UWP 为客户端-服务器或对等应用程序提供 TCP 和 UDP 套接字类，无论连接长期存在还是不需要建立连接。
@@ -1202,7 +1202,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 }
 ```
 
-下面的示例适用于 C# 及任何其他 UWP 语言。 它依赖于 [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) 和 [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) 的批量发送行为。 技术在这在从 windows 10，可保证输出流上的所有操作都完成后才返回该输出流上调用[**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) 。
+下面的示例适用于 C# 及任何其他 UWP 语言。 它依赖于 [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) 和 [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) 的批量发送行为。 技术在这，从 windows 10，起可保证在输出流上的所有操作都完成后才返回该输出流上调用[**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) 。
 
 ```csharp
 // An implementation of batched sends suitable for any UWP language.

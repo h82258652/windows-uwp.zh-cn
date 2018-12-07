@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
 ms.openlocfilehash: 58044fba24450c397ee58b1034429f2af8d23ed6
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749112"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780555"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows10 游戏开发指南
 
@@ -246,7 +246,7 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
     </colgroup>
     <tr>
         <td>发布的应用和游戏开发人员论坛</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">发布和应用广告</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">发布和应用内广告</a></td>
     </tr>
     <tr>
         <td>UWP 应用开发人员论坛</td>
@@ -1358,7 +1358,7 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
 
 ### <a name="enable-in-app-product-add-on-purchases"></a>启用应用内产品 （加载项） 购买
 
-加载项 （应用内产品） 是玩家可以在游戏中购买的补充项。 加载项可以是游戏级别、 项目或玩家可能喜欢的任何其他内容。 如果使用得当，加载项可以在改进游戏体验的同时提供收入。 定义和发布你的游戏通过合作伙伴中心的加载项，然后启用你的游戏代码中的应用内购买。
+加载项 （应用内产品） 是玩家可以在游戏中购买的补充项。 加载项可以是游戏级别、 项目或玩家可能喜欢的任何其他内容。 如果使用得当，加载项可以在改进游戏体验的同时提供收入。 定义和发布你的游戏的加载项通过合作伙伴中心，并启用应用内购买你的游戏代码中。
 
 <table>
     <colgroup>
@@ -1378,7 +1378,7 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">加载项提交</a></td>
     </tr>
     <tr>
-        <td>监视加载项销售和你的游戏的统计数据</td>
+        <td>监视加载项销售和为你的游戏的统计数据</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148538">加载项购置报告</a></td>
     </tr>
 </table>

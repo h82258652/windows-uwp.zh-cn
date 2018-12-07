@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, 街机摇杆, 输入
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f9e3ff29dfb17b6e2a07df52153013b5266206e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8740575"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8784519"
 ---
 # <a name="arcade-stick"></a>街机摇杆
 
@@ -28,9 +28,9 @@ ms.locfileid: "8740575"
 
 要重现单独街机的感觉并实现其高精度数字控制，街机摇杆是尤为重要的输入设备。 街机摇杆对于肉搏战和其他街机风格的游戏来说是完美的输入设备，并适合所有能正常使用全数字控件的游戏。 街机摇杆在 Windows 10 和 Xbox One UWP 应用中受 [Windows.Gaming.Input][] 命名空间支持。
 
-Xbox One 街机摇杆配备了一个 8 向数字游戏杆，六个**操作**按钮 （表示为 A1 A6 图所示） 和两个**特殊**的按钮 （表示为 S1 和 S2）;它们不支持模拟控件或震动的全数字输入的设备。 Xbox One 街机摇杆还配备了用于支持 UI 导航**视图**和**菜单**按钮，但不是打算支持游戏命令，并且不能作为游戏杆按钮随时访问。
+Xbox One 街机摇杆配备了一个 8 向数字游戏杆，六个**操作**按钮 （表示为 A1 A6 下图中） 和两个**特殊**的按钮 （表示为 S1 和 S2）;它们是全数字输入的设备，不支持模拟控件或震动。 Xbox One 街机摇杆还配备了用于支持 UI 导航**视图**和**菜单**按钮，但不是打算支持游戏命令，并且无法如同游戏杆按钮一样访问。
 
-![街机摇杆用 4 方向操纵杆 6 个操作按钮 (A1-A6)，以及 2 个特殊的按钮 （S1 和 S2）](images/arcade-stick-1.png)
+![街机摇杆用 4 双向操纵杆 6 个操作按钮 (A1-A6)，以及 2 个特殊的按钮 （S1 和 S2）](images/arcade-stick-1.png)
 
 ### <a name="ui-navigation"></a>UI 导航
 
@@ -53,7 +53,7 @@ Xbox One 街机摇杆配备了一个 8 向数字游戏杆，六个**操作**按�
 
 ## <a name="detect-and-track-arcade-sticks"></a>检测和跟踪街机摇杆
 
-检测和跟踪街机摇杆的工作原理完全相同的方式，与游戏板，除非与[ArcadeStick][]类而不是[游戏板](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad)类。 有关详细信息，请参阅[游戏板和振动](gamepad-and-vibration.md)。
+检测和跟踪街机杆的工作原理完全相同的方式与其针对游戏板，除非与[ArcadeStick][]类而不是[游戏板](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad)类。 有关详细信息，请参阅[游戏板和振动](gamepad-and-vibration.md)。
 
 <!-- Arcade sticks are managed by the system, therefore you don't have to create or initialize them. The system provides a list of connected arcades sticks and events to notify you when an arcade stick is added or removed.
 
@@ -141,14 +141,14 @@ ArcadeStickReading reading = arcadestick->GetCurrentReading();
 
 ### <a name="reading-the-buttons"></a>读取按钮
 
-每个街机摇杆按钮&mdash;游戏杆，六个**操作**按钮和两个**特殊**按钮的四个方向&mdash;提供指示它是按下 （向下） 还是释放 （向上） 的数字读数。 为了提高效率，按钮读数不以单独的布尔值; 表示相反，它们是全部打包到的单独位域所表示的[ArcadeStickButtons][]枚举。
+每个街机摇杆按钮&mdash;游戏杆，六个**操作**按钮和两个**特殊**按钮的四个方向&mdash;提供指示它是按下 （向下） 还是释放 （向上） 的数字读数。 为了提高效率，按钮读数不以单独的布尔值; 表示相反，它们是全部打包到的单独位域[ArcadeStickButtons][]枚举表示。
 
 > [!NOTE]
-> 街机摇杆配备了用于 UI 导航，如**View**和**Menu**按钮的其他按钮。 这些按钮不是 `ArcadeStickButtons` 枚举的一部分，只能作为 UI 导航设备通过访问街机摇杆进行读取。 有关详细信息，请参阅 [UI 导航设备](ui-navigation-controller.md)。
+> 街机摇杆配备了用于 UI 导航，如**视图**和**菜单**按钮的其他按钮。 这些按钮不是 `ArcadeStickButtons` 枚举的一部分，只能作为 UI 导航设备通过访问街机摇杆进行读取。 有关详细信息，请参阅 [UI 导航设备](ui-navigation-controller.md)。
 
 从 [ArcadeStickReading][] 结构的 `Buttons` 属性中读取按钮值。 由于此属性为位域，因此使用按位掩码隔离你感兴趣的按钮值。 设置相应位时按钮为按下（向下）；否则，按钮为释放（向上）。
 
-以下示例确定是否按下了**操作 1**按钮。
+以下示例确定是否按下的**操作 1**按钮。
 
 ```cpp
 if (ArcadeStickButtons::Action1 == (reading.Buttons & ArcadeStickButtons::Action1))

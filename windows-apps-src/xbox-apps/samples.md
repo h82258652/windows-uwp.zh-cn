@@ -7,15 +7,15 @@ keywords: windows 10, uwp
 ms.assetid: 9ef40050-7df6-49bd-8563-1bd58bb6e3f0
 ms.localizationpriority: medium
 ms.openlocfilehash: b0f793dfb1c261ed967e79ab2a64e09306a57917
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8741411"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785694"
 ---
 # <a name="uwp-on-xbox-one-samples"></a>Xbox One 上的 UWP 示例
 
-有多个已进行优化适用于 Xbox One 时该平台上运行的跨平台 UWP 示例。 你可以浏览 GitHub 上的代码、 阅读的自述文件和 wiki，并克隆到计算机的项目。
+有多个已进行优化适用于 Xbox One 在该平台上运行时的跨平台 UWP 示例。 你可以浏览 GitHub 上的代码、 阅读的自述文件和 wiki，并克隆到计算机的项目。
 
 ## <a name="tvhelpers"></a>TVHelpers
 
@@ -27,7 +27,7 @@ TVJS 包括对自动控制器导航、丰富媒体播放、搜索以及更多内
 
 ## <a name="the-news-experience"></a>新闻体验
 
-[新闻体验](https://github.com/Microsoft/uwp-experiences/tree/news/apps/News)，第四个咖啡是示例新闻应用的桌面、 手机和 Xbox One 进行工作，并且提供更佳的体验，它利用每台设备的优势。 在 Xbox 上，它非常适合游戏板、 UI 定制到 10 英尺体验中，并在电视安全区域中，在其他优化之间保持内容。 请参阅[博客文章](https://blogs.windows.com/buildingapps/2016/09/09/tailoring-your-app-for-xbox-and-the-tv-app-dev-on-xbox-series/)，有关详细信息。
+[新闻体验](https://github.com/Microsoft/uwp-experiences/tree/news/apps/News)，第四个咖啡，是一个示例新闻应用的桌面、 手机和 Xbox One 进行工作，并且提供更佳的体验，它利用每台设备的优势。 在 Xbox 上，它非常适合游戏板、 UI 适合 10 英尺体验，并保留在电视安全区域中，在其他优化之间内容。 请参阅[博客文章](https://blogs.windows.com/buildingapps/2016/09/09/tailoring-your-app-for-xbox-and-the-tv-app-dev-on-xbox-series/)，有关详细信息。
 
 ![新闻体验](images/samples-1.png)
 

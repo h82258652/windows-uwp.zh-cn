@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 堆栈跟踪, 错误
 ms.localizationpriority: medium
 ms.openlocfilehash: ceffc7622f756eb17c8475208852e013df814554
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8733859"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787116"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>获取应用中的错误的堆栈跟踪
 
-使用 Microsoft Store 分析 API 中的此方法，可获取应用中的错误堆栈跟踪。 此方法仅可以下载过去 30 天内发生的应用错误的堆栈跟踪。 合作伙伴中心中的[运行状况报告](../publish/health-report.md)**故障**部分中，还提供堆栈跟踪。
+使用 Microsoft Store 分析 API 中的此方法，可获取应用中的错误堆栈跟踪。 此方法仅可以下载过去 30 天内发生的应用错误的堆栈跟踪。 在合作伙伴中心中的[运行状况报告](../publish/health-report.md)的**故障**部分中，还提供堆栈跟踪。
 
 在可以使用此方法之前，必须首先使用[获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)方法来检索与想要检索堆栈跟踪的错误相关联的 CAB 文件 ID。
 

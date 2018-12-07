@@ -7,15 +7,15 @@ ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
 ms.openlocfilehash: 66284538c97aee1a11c27beaa483dcfe109b6615
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735637"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782994"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>启用使用应用 URI 处理程序的网站应用
 
-网站应用，以便当用户打开指向你的网站的链接，而不是打开浏览器启动应用时，与网站关联你的应用。 如果未安装你的应用，你的网站打开浏览器中像往常一样。 用户可以信任此体验，因为只有经验证的内容所有者可以注册链接。 用户将能够查看他们已注册的 web 到应用链接的所有方法转到设置 > 应用 > 网站应用。
+网站应用关联你的应用与网站，以便当用户打开指向你的网站的链接，而不是打开浏览器时启动你的应用。 如果未安装你的应用，你的网站打开浏览器中像往常一样。 用户可以信任此体验，因为只有经验证的内容所有者可以注册链接。 用户将能够通过转到设置检查所有他们已注册的 web 到应用链接 > 应用 > 网站应用。
 
 若要启用 web 到应用链接，你将需要：
 - 在清单文件中标识你的应用将处理的 URI
@@ -23,7 +23,7 @@ ms.locfileid: "8735637"
 - 处理应用中的激活。
 
 > [!Note]
-> 从 Windows 10 创意者更新开始，受支持的 Microsoft Edge 中单击的链接将启动相应的应用。 受支持的链接 （例如 Internet Explorer 等），其他浏览器中单击将使你在浏览体验。
+> 从 Windows 10 创意者更新开始，受支持的 Microsoft Edge 中单击的链接将启动相应的应用。 受支持的链接 （如 Internet Explorer 等），其他浏览器中单击将使你在浏览体验。
 
 ## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a>注册以处理应用部件清单中的 http 和 https 链接
 
@@ -76,7 +76,7 @@ Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器
 | **\***       | 表示任何子字符串      |
 | **?**        | 表示单个字符 |
 
-例如，对于指定`"excludePaths" : [ "/news/*", "/blog/*" ]`在上面的示例中，你的应用将支持开始菜单与你的网站地址 (例如 msn.com)，**除非**下的所有路径`/news/`和`/blog/`。 将支持 **msn.com/weather.html**，但不支持 ****msn.com/news/topnews.html****。
+例如，对于指定`"excludePaths" : [ "/news/*", "/blog/*" ]`在上面的示例中，你的应用将支持启动你的网站地址 (例如 msn.com)，**除非**下的所有路径`/news/`和`/blog/`。 将支持 **msn.com/weather.html**，但不支持 ****msn.com/news/topnews.html****。
 
 ### <a name="multiple-apps"></a>多个应用
 
@@ -164,7 +164,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 -   程序包系列名称 (PFN)：你的应用的 PFN
 -   文件路径：用于本地验证的 JSON 文件（例如 C:\\SomeFolder\\windows-app-web-link）
 
-如果该工具未返回任何内容，验证起作用时上传该文件。 如果存在错误代码，它不起作用。
+如果该工具未返回任何内容，验证将在该文件上载时上工作。 如果存在错误代码，它不起作用。
 
 你可以启用以下注册表项以强制路径匹配适用于旁加载应用作为本地验证的一部分：
 

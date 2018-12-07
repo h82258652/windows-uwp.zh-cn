@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
 ms.openlocfilehash: ae8daa6141eadaac699fc49b8ec4796f1dde5c91
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732806"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787271"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>用 JavaScript 创建 UWP 游戏
 
@@ -24,9 +24,9 @@ ms.locfileid: "8732806"
 ## <a name="introduction"></a>简介
 
 
-应用发布到 Microsoft 应用商店意味着你可以共享 （或其出售 ！） 与数百万人，许多不同设备上。  
+应用发布到 Microsoft 应用商店意味着你可以将其共享 （或其出售 ！） 与数百万人，许多不同设备上。  
 
-若要将应用发布到 Microsoft Store，必须将其编写为 UWP （通用 Windows 平台） 应用。 不过，UWP 非常灵活，并且支持多种语言和框架。 为了证明这一点，以下示例为用 JavaScript 编写并且使用了多个 CreateJS 库的简单游戏，它展示了如何绘制子画面、创建游戏循环、支持键盘和鼠标以及适用于不同的屏幕尺寸。
+为了将应用发布到 Microsoft Store，必须将其编写为 UWP （通用 Windows 平台） 应用。 不过，UWP 非常灵活，并且支持多种语言和框架。 为了证明这一点，以下示例为用 JavaScript 编写并且使用了多个 CreateJS 库的简单游戏，它展示了如何绘制子画面、创建游戏循环、支持键盘和鼠标以及适用于不同的屏幕尺寸。
 
 此项目由使用 Visual Studio 的 JavaScript 创建。 除了一些细微差别外，还可将其托管在网站上，或者可对其进行调整以适应其他平台。 
 
@@ -257,7 +257,7 @@ function animate_clouds()
 
 ## <a name="publishing-to-the-microsoft-store"></a>发布到 Microsoft 应用商店
 
-现在你有一个 UWP 应用，就可以将其发布到 Microsoft Store （假设已先了改进 ！） 
+现在你拥有一个 UWP 应用，就可以将其发布到 Microsoft Store （假设已先了改进 ！） 
 
 此流程包含几个步骤。
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
 ms.openlocfilehash: e0e57e28fe36ae506d29e2b51a31c756513fdd08
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8758297"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785041"
 ---
 # <a name="export-restrictions-on-cryptography"></a>有关加密的出口限制
 
@@ -21,7 +21,7 @@ ms.locfileid: "8758297"
 
 美国商务部工业与安全局负责对使用某些加密类型的技术出口进行监管。 Microsoft Store 中列出的所有应用都必须遵守这些法律和法规，因为这些应用文件可以存储在美国。 甚至其他国家或地区的应用开发者上传在美国之外分发的应用也必须遵守这些法规。 因此，向 Microsoft Store 提交应用时，所有应用开发者必须确保他们的应用不包含这些法规所限制的任何技术。
 
-> **注意**此处提供的信息提供了一些指南，但也作为应用开发者以确保应用遵守所有适用法律和法规的约束在 Microsoft Store 中发布应用你自己的责任。
+> **注意**此处提供的信息提供了一些指南，但它是你的责任作为应用开发者以确保应用遵守所有适用法律和法规的约束在 Microsoft Store 中发布应用。
 
  
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 690b6b8ee688f62dcae375ed48e07797c921bf43
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731489"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8781221"
 ---
 # <a name="working-with-symbologies"></a>使用标志
 [条形码标志](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)是到特定条形码格式的数据映射。 一些常见的标志包括 UPC、 Code 128、 QR 码等。  通用 Windows 平台条形码扫描仪 Api 允许应用程序控制扫描仪如何处理这些标志而无需手动配置扫描仪。 
@@ -20,7 +20,7 @@ ms.locfileid: "8731489"
 
 在通过使用 [BarcodeScanner.FromIdAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.fromidasync) 获得 [BarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner) 对象后，调用 [GetSupportedSymbologiesAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getsupportedsymbologiesasync#Windows_Devices_PointOfService_BarcodeScanner_GetSupportedSymbologiesAsync) 获取设备支持的标志的列表。
 
-下面的示例获取的条形码扫描仪支持的标志的列表，并将它们显示在文本块：
+下面的示例获取的条形码扫描仪，受支持的标志的列表，并将它们显示在文本块：
 
 ```cs
 private void DisplaySupportedSymbologies(BarcodeScanner barcodeScanner, TextBlock textBlock) 
@@ -47,7 +47,7 @@ bool symbologySupported = await barcodeScanner.IsSymbologySupportedAsync(Barcode
 ## <a name="change-which-symbologies-are-recognized"></a>更改识别哪些标志
 在某些情况下，你可能需要使用条形码扫描仪支持的标志的子集。  若要阻止你不打算在应用程序中使用的标志，这尤为有用。 例如，为确保用户扫描正确的条形码，你可以在获取项目 SKU 时将扫描限制为 UPC 或 EAN，在获取序列号时将扫描限制为 Code 128。
 
-在你知道了扫描仪支持的标志后，你可以设置希望扫描仪识别的标志。  这可以完成后使用[ClaimScannerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync#Windows_Devices_PointOfService_BarcodeScanner_ClaimScannerAsync) [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner)对象。 可以调用 [SetActiveSymbologiesAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.setactivesymbologiesasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_SetActiveSymbologiesAsync_Windows_Foundation_Collections_IIterable_System_UInt32__) 来启用一组特定的标志，列表中略去的标志将禁用。
+在你知道了扫描仪支持的标志后，你可以设置希望扫描仪识别的标志。  这可以完成后您已建立使用[ClaimScannerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync#Windows_Devices_PointOfService_BarcodeScanner_ClaimScannerAsync) [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner)对象。 可以调用 [SetActiveSymbologiesAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.setactivesymbologiesasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_SetActiveSymbologiesAsync_Windows_Foundation_Collections_IIterable_System_UInt32__) 来启用一组特定的标志，列表中略去的标志将禁用。
 
 下面的示例将活动的已声明的条形码扫描仪标志设置为[Code39](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.code39#Windows_Devices_PointOfService_BarcodeSymbologies_Code39)和[Code39Ex](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.code39ex):
 
@@ -60,7 +60,7 @@ private async void SetSymbologies(ClaimedBarcodeScanner claimedBarcodeScanner)
 ```
 
 ## <a name="barcode-symbology-attributes"></a>条形码符号特性
-不同条形码标志可以有不同的属性，如支持多个解码一部分的原始数据传输到主机检查数字的长度和检查数字验证。 与[BarcodeSymbologyAttributes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes)类中，你可以获取和设置给定[ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner)和条形码标志这些属性。
+不同条形码标志可以有不同的属性，如支持多个解码长度，一部分的原始数据传输到主机检查数字和检查数字验证。 与[BarcodeSymbologyAttributes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes)类，你可以获取和设置给定[ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner)和条形码标志这些属性。
 
 你可以获取与[GetSymbologyAttributesAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.getsymbologyattributesasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_GetSymbologyAttributesAsync_System_UInt32_)某个给定标志的属性。 以下代码段获取**ClaimedBarcodeScanner**Upca 标志的属性。
 
@@ -69,7 +69,7 @@ BarcodeSymbologyAttributes barcodeSymbologyAttributes =
     await claimedBarcodeScanner.GetSymbologyAttributesAsync(BarcodeSymbologies.Upca);
 ```
 
-当你完成修改的属性，并已准备好对其进行设置时，你可以调用[SetSymbologyAttributesAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.setsymbologyattributesasync)。 此方法返回一个**布尔值**，如果已成功设置属性，它为**true** 。
+当你完成修改的属性，并已准备好进行设置时，你可以调用[SetSymbologyAttributesAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.setsymbologyattributesasync)。 此方法返回一个**布尔值**，如果已成功设置的属性，这为**true** 。
 
 ```cs
 bool success = await claimedBarcodeScanner.SetSymbologyAttributesAsync(
@@ -82,12 +82,12 @@ bool success = await claimedBarcodeScanner.SetSymbologyAttributesAsync(
 在设置之前解码长度，检查条形码标志是否支持多个与[IsDecodeLengthSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.isdecodelengthsupported#Windows_Devices_PointOfService_BarcodeSymbologyAttributes_IsDecodeLengthSupported)长度。 一旦你知道它受支持，你可以设置[DecodeLengthKind](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelengthkind#Windows_Devices_PointOfService_BarcodeSymbologyAttributes_DecodeLengthKind)，该常量的类型[BarcodeSymbologyDecodeLengthKind](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologydecodelengthkind)。 此属性可以是以下值之一：
 
 * **AnyLength**： 解码的任意数量的长度。
-* **离散**： 解码[DecodeLength1](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelength1)或[DecodeLength2](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelength2)单字节字符长度。
-* **范围**： 解码**DecodeLength1**和**DecodeLength2**单字节字符之间的长度。 **DecodeLength1**和**DecodeLength2** do 无关紧要 （无论是可比其他高或低） 的顺序。
+* **离散**： 解码的[DecodeLength1](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelength1)或[DecodeLength2](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelength2)单字节字符长度。
+* **范围**： 解码**DecodeLength1**和**DecodeLength2**单字节字符之间的长度。 **DecodeLength1**和**DecodeLength2** do 无关紧要 （无论是可以比其他高或低） 的顺序。
 
-最后，你可以设置**DecodeLength1**和**DecodeLength2**来控制所需的数据长度的值。
+最后，你可以设置**DecodeLength1**和**DecodeLength2**来控制所需的数据的长度的值。
 
-以下代码片段演示如何设置解码长度：
+以下代码片段演示了设置解码长度：
 
 ```cs
 private async Task<bool> SetDecodeLength(
@@ -114,7 +114,7 @@ private async Task<bool> SetDecodeLength(
 
 ### <a name="check-digit-transmission"></a>检查数字传输
 
-你可以设置标志的另一个属性是是否检查数字将被传输给主机的原始数据的一部分。 将此值设置之前，请确保标志支持检查与[IsCheckDigitTransmissionSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigittransmissionsupported)数字传输。 然后，设置是否使用[IsCheckDigitTransmissionEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigittransmissionenabled)启用检查数字传输。
+你可以设置某个标志的另一个属性是是否检查数字将被传输给主机的原始数据的一部分。 将此设置之前，请确保标志支持检查数字[IsCheckDigitTransmissionSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigittransmissionsupported)传输。 然后，设置是否使用[IsCheckDigitTransmissionEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigittransmissionenabled)启用检查数字传输。
 
 以下代码片段演示了设置检查数字传输：
 
@@ -136,7 +136,7 @@ private async Task<bool> SetCheckDigitTransmission(ClaimedBarcodeScanner scanner
 
 ### <a name="check-digit-validation"></a>检查数字验证
 
-你还可以设置是否将经过条形码检查数字。 将此值设置之前，请确保标志支持检查数字验证通过[IsCheckDigitValidationSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigitvalidationsupported)。 然后，设置是否与[IsCheckDigitValidationEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigitvalidationenabled)启用检查数字验证。
+你还可以设置是否将经过条形码检查数字。 将此设置之前，请确保标志支持检查数字[IsCheckDigitValidationSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigitvalidationsupported)验证。 然后，设置是否与[IsCheckDigitValidationEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigitvalidationenabled)启用检查数字验证。
 
 以下代码片段演示了设置检查数字验证：
 
