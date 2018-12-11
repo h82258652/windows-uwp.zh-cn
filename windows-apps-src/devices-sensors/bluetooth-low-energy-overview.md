@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10，uwp，蓝牙、 蓝牙 LE、 低能耗、 gatt、 间隙、 中心、 外围设备、 客户端、 服务器、 观察程序，发布者
 ms.localizationpriority: medium
 ms.openlocfilehash: ecc78bd4bb079adbaaa58c981ce55457c522764b
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8798144"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8892564"
 ---
 # <a name="bluetooth-low-energy"></a>低能耗蓝牙
 蓝牙低功耗 (LE) 是一种规范定义用于发现和高效的设备之间的通信协议。 发现的设备是通过通用的访问权限配置文件 （间隙） 协议完成。 后发现，通过通用属性 (GATT) 协议完成设备设备通信。 本主题提供在 UWP 应用中的蓝牙 LE 概览。 蓝牙 LE 有关的更多详细信息，请参阅[蓝牙核心规范](https://www.bluetooth.com/specifications/bluetooth-core-specification)版本 4.0，蓝牙 LE 引入。 

@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 获取, 获得, 开始
 ms.localizationpriority: medium
 ms.openlocfilehash: cc98f61acc3b5dccdc4869b646337fdf9a6e701a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8744166"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8894018"
 ---
 # <a name="get-started-with-cwinrt"></a>C++/WinRT 入门
 
 若要帮助你更快地开始使用[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，本主题介绍基于新一个简单的代码示例**Windows 控制台应用程序 (C + + WinRT)** 项目。 本主题还介绍了如何[添加 C + + 为 Windows 桌面应用程序项目的 WinRT 支持](#modify-a-windows-desktop-application-project-to-add-cwinrt-support)。
 
 > [!IMPORTANT]
-> 如果你使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0 (Windows 10 版本 1803年)，则新创建 C + + WinRT 项目可能无法编译错误"*错误 C3861: 'from_abi': 标识符不找到*"，以及与源自*base.h*其他错误。 解决方法是任一目标更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **合规模式： 否**(另外，如果 **/ 许可-** 出现在项目属性**C/C++** > **语言** > **命令行**下**的其他选项**，然后将其删除)。
+> 如果你使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0 (Windows 10 版本 1803年)，则新创建 C + + WinRT 项目可能无法编译错误"*错误 C3861: 'from_abi': 标识符不找到*"，并使用来自*base.h*其他错误。 解决方法是任一目标更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **一致性模式： 否**(另外，如果 **/ 许可-** 出现在项目属性**C/C++** > **语言** > **命令行**下**的其他选项**，然后将其删除)。
 
 ## <a name="a-cwinrt-quick-start"></a>C++/WinRT 快速入门
 
@@ -118,15 +118,15 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 ## <a name="modify-a-windows-desktop-application-project-to-add-cwinrt-support"></a>修改 Windows 桌面应用程序项目添加 C + + /winrt 支持
 
-本部分介绍了如何添加 C + + WinRT 支持添加到你可能有一个 Windows 桌面应用程序项目。 如果你没有现有的 Windows 桌面应用程序项目，然后，可以按照以下步骤以及按首次创建一个。 例如，打开 Visual Studio，然后创建**Visual c + +** \> **Windows 桌面版** \> **Windows 桌面应用程序**项目。
+本部分介绍了如何添加 C + + WinRT 支持添加到你可能有一个 Windows 桌面应用程序项目。 如果你没有现有的 Windows 桌面应用程序项目，然后你可以按照这些步骤以及按第创建一个。 例如，打开 Visual Studio 并创建**Visual c + +** \> **Windows 桌面版** \> **Windows 桌面应用程序**项目。
 
 ### <a name="set-project-properties"></a>设置项目属性
 
-转到项目属性**常规** \> **Windows SDK 版本**，并选择**所有配置**及其**所有平台**。 确保**Windows SDK 版本**已设置为 10.0.17134.0 (Windows 10 版本 1803) 或更高版本。
+转到项目属性**常规** \> **Windows SDK 版本**，并选择**所有配置**和**所有平台**。 确保**Windows SDK 版本**被设置为 10.0.17134.0 (Windows 10 版本 1803) 或更高版本。
 
-确认你正在不受[我的新项目不会为什么编译？](/windows/uwp/cpp-and-winrt-apis/faq)。
+确认你正在不受[为什么不会我的新项目编译？](/windows/uwp/cpp-and-winrt-apis/faq)。
 
-因为 C + + /winrt 使用 C + + 17 标准的功能，请将项目属性**C/c + +** > **语言** > 的**标准 c + + 语言** *ISO C + + 17 标准 (/ std:c + + 17)*。
+因为 C + + WinRT 使用中的 C + + 17 标准的功能，请将项目属性**C/c + +** > **语言** > 的**c + + 语言标准** *ISO C + + 17 标准 (/ std:c + + 17)*。
 
 ### <a name="the-precompiled-header"></a>在预编译标头
 
@@ -144,13 +144,13 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 ### <a name="linking"></a>链接
 
-C + + /winrt 语言投影依赖于特定的 Windows 运行时自由 （非成员） 函数和入口点，需要链接到[WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella 库。 本部分介绍三种满足链接器方法。
+C + + /winrt 语言投影依赖于某些 Windows 运行时自由 （非成员） 函数和入口点，需要链接到[WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella 库。 本部分介绍满足链接器三种的方式。
 
-第一个选项是将添加到你的 Visual Studio 项目所有 C + + /winrt MSBuild 属性和目标。 编辑你`.vcxproj`文件，找到`<PropertyGroup Label="Globals">`，该属性在组内，设置属性`<CppWinRTEnabled>true</CppWinRTEnabled>`。
+第一个选项是将添加到 Visual Studio 项目所有 C + + /winrt MSBuild 属性和目标。 编辑你`.vcxproj`文件，找到`<PropertyGroup Label="Globals">`，该属性在组内，设置属性`<CppWinRTEnabled>true</CppWinRTEnabled>`。
 
 或者，你可以使用项目链接设置显式链接`WindowsApp.lib`。
 
-或者，你可以很轻松源代码中 (在`pch.h`，例如) 如下所示。
+或者，你可以执行此操作它源代码 (在`pch.h`，例如) 如下所示。
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")
