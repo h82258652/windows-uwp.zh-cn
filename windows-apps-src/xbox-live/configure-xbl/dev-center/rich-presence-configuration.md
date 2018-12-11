@@ -6,11 +6,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live，Xbox，游戏，uwp，windows 10，Xbox one，Rich Presence 字符串，合作伙伴中心
 ms.openlocfilehash: 5c2add99c6fc6ad1c7f085eb35dc4fdba9e0688d
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8753311"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8885035"
 ---
 # <a name="configure-rich-presence-in-partner-center"></a>在合作伙伴中心中配置完整状态
 

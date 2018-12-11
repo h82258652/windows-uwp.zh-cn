@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务配置, xboxservices.config
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ff538d691627bf4bb12b3ef6f8b1360e59ac701
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8787841"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8894599"
 ---
 # <a name="xboxservicesconfig-file-description"></a>XboxServices.config 文件描述
 
