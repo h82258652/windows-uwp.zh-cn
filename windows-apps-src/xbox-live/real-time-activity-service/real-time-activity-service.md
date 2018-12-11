@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 实时活动服务
 ms.localizationpriority: medium
 ms.openlocfilehash: 36389fac3bd6dea2d2e24c0935087781118d8046
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8737306"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8824840"
 ---
 # <a name="real-time-activity-service"></a>实时活动服务
 

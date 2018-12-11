@@ -1,22 +1,22 @@
 ---
-description: 在 Microsoft Store 分析 API 中使用此方法获取 Xbox One 中的错误的堆栈跟踪游戏。
-title: 获取 Xbox One 中的错误的堆栈跟踪游戏
+description: 在 Microsoft Store 分析 API 中使用此方法，可获取你的 Xbox One 中的错误堆栈跟踪游戏。
+title: 获取你的 Xbox One 中的错误的堆栈跟踪游戏
 ms.date: 11/06/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 堆栈跟踪, 错误
 ms.localizationpriority: medium
 ms.openlocfilehash: fd43305c54245c3281a0e840d3df4c5c87ff7ad8
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8752384"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8900657"
 ---
-# <a name="get-the-stack-trace-for-an-error-in-your-xbox-one-game"></a>获取 Xbox One 中的错误的堆栈跟踪游戏
+# <a name="get-the-stack-trace-for-an-error-in-your-xbox-one-game"></a>获取你的 Xbox One 中的错误的堆栈跟踪游戏
 
-使用 Microsoft Store 分析 API 中获取你的 Xbox One 中的错误的堆栈跟踪游戏通过 Xbox 开发人员门户 (XDP) 引入并提供在 XDP 分析合作伙伴中心仪表板中的此方法。 此方法只能下载过去 30 天内发生的错误的堆栈跟踪。
+使用 Microsoft Store 分析 API 中获取你的 Xbox One 中的错误堆栈跟踪游戏通过 Xbox 开发人员门户 (XDP) 引入并提供在 XDP 分析合作伙伴中心仪表板中的此方法。 此方法只能下载过去 30 天内发生的错误的堆栈跟踪。
 
-你可以使用此方法之前，你都必须首先使用[获取 Xbox One 游戏中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)的方法来检索与想要检索堆栈跟踪的错误相关联的 CAB 文件的 ID。
+你可以使用此方法之前，你都必须首先使用[获取你的 Xbox One 游戏中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)的方法来检索与想要检索堆栈跟踪的错误相关联的 CAB 文件的 ID。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -48,13 +48,13 @@ ms.locfileid: "8752384"
 
 | 参数        | 类型   |  说明      |  必需  |
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 要检索堆栈跟踪 Xbox One 游戏的产品 ID。 若要获取你的游戏的产品 ID，请导航到 Xbox 开发人员门户 (XDP) 中你的游戏，并从 URL 中检索产品 ID。 或者，如果你从 Windows 合作伙伴中心分析报告下载你的运行状况数据，该.tsv 文件中包含的产品 ID。 |  是  |
+| applicationId | 字符串 | 要检索堆栈跟踪的 Xbox One 游戏的产品 ID。 若要获取你的游戏的产品 ID，请导航到 Xbox 开发人员门户 (XDP) 中你的游戏，并从 URL 中检索产品 ID。 或者，如果你从 Windows 合作伙伴中心分析报告下载你的运行状况数据，该.tsv 文件中包含的产品 ID。 |  是  |
 | cabId | 字符串 | 获取与想要检索堆栈跟踪的错误相关联的 CAB 文件的唯一 ID。 若要获取此 ID，使用[获取游戏的 Xbox One 中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)的方法来检索你的应用中特定错误的详细信息，并使用该方法的响应正文中的**cabId**值。 |  是  |
 
  
 ### <a name="request-example"></a>请求示例
 
-下面的示例演示了如何为 Xbox One 游戏使用此方法获取堆栈跟踪。 *ApplicationId*值替换为你的游戏的产品 ID。
+以下示例演示了如何为 Xbox One 游戏使用此方法获取堆栈跟踪。 *ApplicationId*值替换为你的游戏的产品 ID。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/stacktrace?applicationId=BRRT4NJ9B3D1&cabId=1336373323853 HTTP/1.1

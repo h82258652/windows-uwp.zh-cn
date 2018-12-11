@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f6a37af19c9e3e9beaebbadfcc71f3ad01e3087c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734460"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8872847"
 ---
 # <a name="guidelines-for-cross-slide"></a>交叉滑动指南
 
@@ -56,7 +56,7 @@ ms.locfileid: "8734460"
 
 对在单个方向上滚动的列表或集合使用横向滑动。 有关详细信息，请参阅[添加 ListView 控件](https://msdn.microsoft.com/library/windows/apps/hh465382)。
 
-**注意**在其中可以在两个方向，如 web 浏览器或电子阅读器中平移内容区域的情况下应使用按下保持定时的交互来调用上下文菜单，如图像和超链接的对象。
+**注意**在其中可以在两个方向，如 web 浏览器或电子阅读器中平移内容区域的情况下应使用按下保持定时的交互来调用如图像和超链接的对象的上下文菜单。
 
  
 

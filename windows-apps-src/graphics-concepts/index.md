@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cb6a2466ea201c9b5047f7eb159477a0d584429
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8739241"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8827242"
 ---
 # <a name="direct3d-graphics-glossary"></a>Direct3D 图形词汇表
 
 
-定义 Microsoft Direct3D 图形术语。 本词汇表定义，在高级别、 一般 3D 计算机图形条款的开发中使用 Direct3D 游戏和应用。
+定义 Microsoft Direct3D 图形术语。 此词汇表定义，在高级别、 一般 3D 计算机图形条款的开发中使用 Direct3D 游戏和应用。
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分内容
 

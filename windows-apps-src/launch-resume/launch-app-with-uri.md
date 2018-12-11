@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a42a59f76da99461b2e2428f5732ca0c433b6540
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731389"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8871331"
 ---
 # <a name="launch-an-app-with-a-uri"></a>使用 URI 启动应用
 
@@ -27,7 +27,7 @@ ms.locfileid: "8731389"
 | [启动 UWP 应用](launch-store-app.md) | 本主题介绍了 ms-windows-store URI 方案。 应用可以使用此 URI 方案将 UWP 应用启动到 Microsoft Store 中的特定页面。 |
 | [启动 Windows 地图应用](launch-maps-app.md) | 了解如何从你的应用启动 Windows 地图应用。 |
 | [启动“人脉”应用](launch-people-apps.md) | 本主题介绍了 ms-people URI 方案。 你的应用可以使用此 URI 方案来针对特定操作启动“人脉”应用。 |
-| [启动屏幕截取](launch-screen-snipping.md) | 了解如何使用 URI 方案来打开新的代码段中，或打开代码段和 Sketch 应用。 |
+| [启动屏幕截取](launch-screen-snipping.md) | 了解如何使用 URI 方案来打开新的代码段，或打开代码段和 Sketch 应用。 |
 | [启用使用应用 URI 处理程序的网站应用](web-to-app-linking.md) | 通过网站功能支持应用推动用户与你的应用的互动。 |
 
 ## <a name="related-topics"></a>相关主题

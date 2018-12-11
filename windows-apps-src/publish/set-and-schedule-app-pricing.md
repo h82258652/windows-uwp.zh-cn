@@ -6,18 +6,18 @@ ms.topic: article
 keywords: Windows 10, uwp, 定价, 定价应用, 应用价格, 销售应用, 价格更改, 自定义价格, 价格, 单价, 成本, 替代基价, 自由格式价格, 自由格式
 ms.localizationpriority: medium
 ms.openlocfilehash: ea873d2c1f78762741d6272fafe1496d6b3a71ea
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8746754"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8826365"
 ---
 # <a name="set-and-schedule-app-pricing"></a>设置和计划应用定价
 
 可通过[定价和可用性](set-app-pricing-and-availability.md)页面的**定价**部分为应用选择一个基价。 还可[计划价格更改](#schedule-price-changes)，以指示应用价格应更改的日期和时间。 此外，你可以选择[替代特定市场的基价](#override-base-price-for-specific-markets)，方法是选择新的价格层或使用市场的当地货币输入自由格式价格。
 
 > [!NOTE]
-> 虽然本主题涉及应用，但加载项提交的价格选择也使用同样的过程。 请注意，[订阅加载项](../monetize/enable-subscription-add-ons-for-your-app.md)，你选择的基本价格不能不断增加 （通过计划价格更改，或通过更改基价），尽管它可能会降低。
+> 虽然本主题涉及应用，但加载项提交的价格选择也使用同样的过程。 请注意，[订阅加载项](../monetize/enable-subscription-add-ons-for-your-app.md)，你选择的基本价格不能不断增加 （通过计划价格更改，或通过更改的基本价格），尽管它可能会降低。
 
 ## <a name="base-price"></a>基价
 
@@ -35,14 +35,14 @@ ms.locfileid: "8746754"
 请记住，你选择的价格段可能包含你的客户必须支付的销售税或增值税。 若要了解有关选定市场中应用的税收含义的详细信息，请参阅[付费应用的税收详细信息](tax-details-for-paid-apps.md)。 还应查看[特定市场的价格考虑因素](define-market-selection.md#price-considerations-for-specific-markets)。
 
 > [!NOTE]
-> 如果你选择下**可用，但不可被发现在应用商店中使此产品**的**停止购置**选项中的[可见性](choose-visibility-options.md#discoverability)部分），你将无法设置定价 （因为没有人能够获取该应用提交除非他们使用促销代码免费获取应用）。
+> 如果你选择的**停止购置**选项下**可用，但不可被发现在应用商店中使此产品**在[可见性](choose-visibility-options.md#discoverability)部分），你将无法设置为你的提交定价 （因为没有人能够获取应用除非他们使用促销代码免费获取应用）。
 
 ## <a name="schedule-price-changes"></a>计划价格更改
 
 如果希望在特定日期和时间更改应用基价，可选择计划一个或多个价格更改。 
 
 > [!IMPORTANT]
-> 仅向使用 Windows 10 设备（包括 Xbox）的客户显示价格更改。 如果你以前发布的应用支持较早的操作系统版本，则价格更改将不适用于这些客户。 对于使用 Windows 8 的客户，应用将始终按**基价**（非任何特定于市场的价格）提供应用，即使计划了其他价格更改也是如此。 对于 Windows 8.1 和 Windows Phone 8.1 及更早版本的客户，应用将始终提供有关客户的市场的第一个价格段。
+> 仅向使用 Windows 10 设备（包括 Xbox）的客户显示价格更改。 如果你以前发布的应用支持较早操作系统版本，则价格更改将不适用于这些客户。 对于使用 Windows 8 的客户，应用将始终按**基价**（非任何特定于市场的价格）提供应用，即使计划了其他价格更改也是如此。 对于 Windows 8.1 和 Windows Phone 8.1 及更早版本的客户，应用将始终提供有关客户的市场的第一个价格段。
 
 单击**计划价格更改**可查看价格更改选项。 选择你想要使用的价格段（或为单个市场基价替代输入自由格式价格），然后选择日期、时间和时区。
 

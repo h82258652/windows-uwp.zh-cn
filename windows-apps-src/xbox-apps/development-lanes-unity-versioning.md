@@ -2,12 +2,14 @@
 title: Unity - 对你的 UWP 项目进行版本控制
 description: 对你的 Unity UWP 项目进行版本控制。
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fe59b0c63f536822ec50a225bbdc11e68b97713
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.topic: article
+ms.date: 02/08/2017
+ms.openlocfilehash: 064eaf42fe7d664be273cd7e2222fa5d90be1a11
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732393"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8873102"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity：对你的 UWP 项目进行版本控制
 
@@ -57,9 +59,9 @@ ms.locfileid: "8732393"
 
 ## <a name="files"></a>文件  
 
-`App.cs` | ***包括***|UWP 应用程序; 的入口点这可进行修改并使用其他源文件进行扩展  
-`Package.appxmanifest` | ***包括***|应用包清单源文件的 AppX  
-`project.json` | ***包括***|介绍的 NuGet 包在`*.csproj`取决于  
+`App.cs` | ***包括***|UWP 应用程序; 入口点这可进行修改并使用其他源文件扩展  
+`Package.appxmanifest` | ***包括***|应用包清单源文件你的 AppX 的  
+`project.json` | ***包括***|描述的 NuGet 包你`*.csproj`取决于  
 `ScrapyardPhoenix.csproj` | ***包括***|介绍了你的 UWP 生成目标;如果你将其他依赖项添加到你的 UWP 项目，此`*.csproj`文件将包含该信息  
 `ScrapyardPhoenix.csproj.user` | ***忽略***|此文件包含本地用户信息
 

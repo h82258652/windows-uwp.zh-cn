@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b8c4777e1c34bca36200bf6e8a96c35d6a0b1079
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751492"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8826861"
 ---
 # <a name="custom-events-and-event-accessors-in-windows-runtime-components"></a>Windows 运行时组件中的自定义事件和事件访问器
 
@@ -112,7 +112,7 @@ NumberChanged 事件的以下代码显示了 UWP 事件的基本模式。 在本
 
 -   [InvocationList](https://msdn.microsoft.com/library/hh138465.aspx) 属性返回包括所有事件处理程序的委托，并且这些事件处理程序当前已注册为处理该事件。 使用此委派引发事件，或使用委派类的方法单独调用处理程序。
 
-    >**注意**我们建议你遵循在本文的前面部分中提供的示例所示的模式，并委托前将复制到临时变量调用它。 这可避免一个线程删除最后的处理程序的争用条件，从而在其他线程尝试调用委派之前将其减少为 null。 委派不可变动，因此副本仍然有效。
+    >**注意**我们建议你遵循在本文的前面部分中提供的示例中所示的模式，并委托前将复制到临时变量调用它。 这可避免一个线程删除最后的处理程序的争用条件，从而在其他线程尝试调用委派之前将其减少为 null。 委派不可变动，因此副本仍然有效。
 
 根据情况将自己的代码置于访问器中。 如果线程安全出现问题，必须自行锁定代码。
 

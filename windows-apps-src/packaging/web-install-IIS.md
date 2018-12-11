@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10，uwp，应用安装程序，AppInstaller 旁, 加载，相关集，可选包，IIS 服务器
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a4512229a29a7adc59d6b61edd596eaeb56a5a8
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8741875"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8873305"
 ---
 # <a name="install-a-uwp-app-from-an-iis-server"></a>从 IIS 服务器安装 UWP 应用
 
@@ -20,7 +20,7 @@ ms.locfileid: "8741875"
 
 ## <a name="setup"></a>安装
 
-若要成功完成本教程，你需要：
+若要成功完成本教程，你将需要：
 
 1. Visual Studio 2017  
 2. Web 开发工具和 IIS 
@@ -43,7 +43,7 @@ ms.locfileid: "8741875"
 
 ## <a name="step-2---install-visual-studio-2017-and-web-development-tools"></a>第 2 步-安装 Visual Studio 2017 和 Web 开发工具 
 
-[安装 Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio)如果尚未安装它。 如果你已经有了 Visual Studio 2017，请确保已安装了以下工作负荷。 如果工作负荷不存在于你的安装，请按照使用 Visual Studio 安装程序 （从开始菜单中找到）。  
+[安装 Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio)如果尚未安装它。 如果你已经有了 Visual Studio 2017，确保已安装以下工作负荷。 如果工作负荷不存在于你的安装，请按照使用 Visual Studio 安装程序 （从开始菜单中找到）。  
 
 在安装期间，选择**ASP.NET 和 Web 开发**和你感兴趣的任何其他工作负荷。 
 
@@ -51,13 +51,13 @@ ms.locfileid: "8741875"
 
 ## <a name="step-3---build-a-web-app"></a>步骤 3-生成 Web 应用
 
-启动 Visual Studio 2017 以**管理员身份**并使用**空**的项目模板创建新的**Visual C# Web 应用程序**项目。 
+启动 Visual Studio 2017 以**管理员身份**并使用**空**项目模板创建新的**Visual C# Web 应用程序**项目。 
 
 ![新建项目](images/sample-web-app.png)
 
 ## <a name="step-4---configure-iis-with-our-web-app"></a>步骤 4-配置 IIS 与我们的 Web 应用 
 
-从解决方案资源管理器中，右键单击根项目，然后选择**属性**。
+从解决方案资源管理器，右键单击根项目并选择**属性**。
 
 在 web 应用属性中，选择**Web**选项卡。在**服务器**部分中，从下拉菜单中选择**本地 IIS** ，然后单击**创建虚拟目录**。 
 
@@ -65,23 +65,23 @@ ms.locfileid: "8741875"
 
 ## <a name="step-5---add-an-app-package-to-a-web-application"></a>步骤 5-将应用包添加到 web 应用程序 
 
-添加要分配到 web 应用程序的应用包。 你可以使用的是 GitHub 上提供[初学者项目包](https://github.com/AppInstaller/MySampleWebApp/tree/master/MySampleWebApp/packages)的一部分，如果你没有可用的应用包的应用包。 该应用包签名所用的证书 (MySampleApp.cer) 也随 GitHub 上的示例提供。 你必须将证书安装到你之前安装该应用 (第 9 步) 的设备。
+添加你打算将分配到 web 应用程序的应用包。 你可以使用是 GitHub 上提供[初学者项目包](https://github.com/AppInstaller/MySampleWebApp/tree/master/MySampleWebApp/packages)的一部分，如果你没有可用的应用包的应用包。 该应用包签名所用的证书 (MySampleApp.cer) 也随 GitHub 上的示例提供。 你必须安装到你之前安装该应用 (第 9 步) 的设备的证书。
 
-初学者项目的 web 应用程序中，在一个新文件夹添加到名为 web 应用`packages`，其中包含要分发的应用包。 若要在 Visual Studio 中创建文件夹，右键单击解决方案资源管理器的根上，选择**添加** -> **新文件夹**并将其命名`packages`。 若要将应用包添加到文件夹，右键单击`packages`文件夹，然后选择**添加** -> **现有项目...** 和浏览到应用包的位置。 
+初学者项目 web 应用程序，在一个新文件夹添加到名为 web 应用`packages`，其中包含要分发的应用包。 若要在 Visual Studio 中创建文件夹，右键单击解决方案资源管理器的根上，选择**添加** -> **新文件夹**并将其命名`packages`。 若要将应用包添加到文件夹，右键单击`packages`文件夹，然后选择**添加** -> **现有项目...** 和浏览到应用包的位置。 
 
 ![添加程序包](images/add-package.png)
 
 ## <a name="step-6---create-a-web-page"></a>第 6 步-创建网页
 
-此示例 web 应用使用简单的 HTML。 你可以自由地生成 web 应用根据需要根据你的需求。 
+此示例 web 应用使用简单的 HTML。 你可以自由地生成 web 应用根据需要每个你的需求。 
 
-右键单击解决方案资源管理器的根项目中，选择**添加** -> **新项目**，并从**Web**部分中添加一个新的**HTML 页面**。
+右键单击解决方案资源管理器的根项目中，选择**添加** -> **新项目**，并从**Web**部分中添加新**的 HTML 页面**。
 
-创建的 HTML 页面后，右键单击解决方案资源管理器中的 HTML 页面上，并选择**设为开始页**。  
+HTML 页面创建后，在解决方案资源管理器中的 HTML 页面上右键单击并选择**设为起始页**。  
 
-双击 HTML 文件，以在代码编辑器窗口中打开它。 在本教程中，将使用仅在所需的网页来调用应用安装程序应用成功安装 Windows 10 应用中的元素。 
+双击 HTML 文件，以在代码编辑器窗口中打开它。 在本教程中，将使用仅在所需的网页来调用应用安装程序应用成功安装的 Windows 10 应用中的元素。 
 
-包含在网页上的以下的 HTML 代码。 成功调用应用安装程序的关键是使用应用安装程序将向操作系统注册的自定义方案： `ms-appinstaller:?source=`。 请参阅下面的代码示例，更多详细信息。
+在你的 web 页面包含以下的 HTML 代码。 成功调用应用安装程序的关键是使用应用安装程序向操作系统注册的自定义方案： `ms-appinstaller:?source=`。 请参阅下面的代码示例，更多详细信息。
 
 > [!NOTE]
 > 请确保指定的自定义方案匹配 VS 解决方案的 web 选项卡中的项目 Url 后的 URL 路径。
@@ -100,7 +100,7 @@ ms.locfileid: "8741875"
 
 ## <a name="step-7---configure-the-web-app-for-app-package-mime-types"></a>步骤 7-配置应用包 MIME 类型的 web 应用
 
-从解决方案资源管理器中打开**Web.config**文件并添加以下行中的`<configuration>`元素。 
+从解决方案资源管理器中打开**Web.config**文件并添加以下行内的`<configuration>`元素。 
 
 ```xml
 <system.webServer>
@@ -119,7 +119,7 @@ ms.locfileid: "8741875"
 
 由于网络隔离，如应用安装程序的 UWP 应用被限制为使用 IP 环回地址，如http://localhost/。 使用本地 IIS 服务器时，必须将应用安装程序添加到环回豁免列表。 
 
-若要执行此操作，以打开**命令提示符**的**管理员**并输入以下内容: '' 命令行 CheckNetIsolation.exe LoopbackExempt-a-n="microsoft.desktopappinstaller_8wekyb3d8bbwe"
+若要执行此操作，以打开**命令提示符****管理员**并输入以下内容: '' 命令行 CheckNetIsolation.exe LoopbackExempt-a-n="microsoft.desktopappinstaller_8wekyb3d8bbwe"
 ```
 
 To verify that the app is added to the exempt list, use the following command to display the apps in the loopback exempt list: 
@@ -129,7 +129,7 @@ CheckNetIsolation.exe LoopbackExempt -s
 
 你应查找`microsoft.desktopappinstaller_8wekyb3d8bbwe`列表中。
 
-通过应用安装程序安装应用的本地验证完成后，你可以删除你通过此步骤中添加环回豁免：
+通过应用安装程序安装应用的本地验证完成后，你可以删除你在此步骤中通过添加环回豁免：
 
 '' 命令行 CheckNetIsolation.exe LoopbackExempt-d-n="microsoft.desktopappinstaller_8wekyb3d8bbwe"
 ```

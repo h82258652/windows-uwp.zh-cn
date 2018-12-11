@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
 ms.openlocfilehash: 402d535bf6ff9ced24bc642c17d13b2d48d79681
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747024"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8871522"
 ---
 # <a name="developer-settings-api-reference"></a>开发人员设置 API 参考   
 你可以使用此 API 访问有助于开发的 Xbox One 设置。
@@ -48,7 +48,7 @@ GET | /ext/settings
 * Category -（字符串）设置的类别。
 * Type - ("Text" | "Number" | "Bool" | "Select") 此字段指示设备的类型：文本输入、布尔值（“true”或“false”），具有最小值和最大值的数字或者在特定的值列表中进行选择。
 
-如果设置为数字：
+如果该设置是一个数字：
 * Min-(Number) 此字段指示设置的最小数值。
 * Max-(Number) 此字段指示设置的最大数值。
 
@@ -99,7 +99,7 @@ GET | /ext/settings/\&lt;setting name\&gt;
 * Category -（字符串）设置的类别。
 * Type - ("Text" | "Number" | "Bool" | "Select") 此字段指示设备的类型：文本输入、布尔值（“true”或“false”），具有最小值和最大值的数字或者在特定的值列表中进行选择。
 
-如果设置为数字：
+如果该设置是一个数字：
 * Min-(Number) 此字段指示设置的最小数值。
 * Max-(Number) 此字段指示设置的最大数值。
 
