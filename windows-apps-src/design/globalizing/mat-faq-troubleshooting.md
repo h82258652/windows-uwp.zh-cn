@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
 ms.openlocfilehash: a39d2b3133714ab784309e131a71219beae4e3c0
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8800707"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8878853"
 ---
 # <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>多语言应用工具包 4.0 常见问题和疑难解答
 

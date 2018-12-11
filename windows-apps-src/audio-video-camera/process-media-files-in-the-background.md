@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0194ccba43e2ba5270b9ff8eacf045ca140af6cb
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736998"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8879169"
 ---
 # <a name="process-media-files-in-the-background"></a>在后台处理媒体文件
 
@@ -140,7 +140,7 @@ ms.locfileid: "8736998"
 
 [!code-cs[RegisterBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
 
-当应用最初启动目的，如**OnNavigatedTo**事件时，典型的应用将注册其后台任务。
+当应用最初启动，如**OnNavigatedTo**事件时，典型的应用将注册其后台任务。
 
 通过调用 **MediaProcessingTrigger** 对象的 [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071) 方法来启动后台任务。 此方法返回的 [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007) 对象让你知道后台任务是否已成功启动，如果未成功启动，则让你知道后台任务未启动的原因。 
 

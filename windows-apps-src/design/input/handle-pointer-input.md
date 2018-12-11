@@ -8,12 +8,12 @@ keywords: 笔、鼠标、触摸板、触摸、指针、输入、用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f1030e6cddf5a0ded289545de752d926789314ed
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: d5a51bd55a081265b4a90dfa662216977d1bded2
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749560"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8879452"
 ---
 # <a name="handle-pointer-input"></a>处理指针输入
 
@@ -75,7 +75,7 @@ UWP 应用可以侦听以下指针事件：
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208965"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>当另一个 UI 元素捕获该指针、释放该指针、或以编程方式捕获另一个指针时发生。</p>
 <div class="alert">
-<strong>注意</strong>没有任何相应的指针捕获事件。
+<strong>注意</strong>没有相应的指针捕获事件。
 </div>
 <div>
  
@@ -494,7 +494,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
 ```csharp
 /// <summary>
 /// The pointer canceled event handler.
-/// Fires for for various reasons, including: 
+/// Fires for various reasons, including: 
 ///    - Touch contact canceled by pen coming into range of the surface.
 ///    - The device doesn't report an active contact for more than 100ms.
 ///    - The desktop is locked or the user logged off. 

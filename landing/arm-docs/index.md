@@ -9,17 +9,17 @@ ms.localizationpriority: medium
 ms.topic: article
 keywords: 基于 ARM、 ARM、 生成 win32 ARM64 应用构建 ARM64 驱动程序的 Windows 10
 ms.openlocfilehash: 83f2a0d03040a682e6965558174294fe27e21bfb
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8748614"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8879439"
 ---
 # <a name="windows-10-on-arm"></a>基于 ARM 的 Windows 10
 在 ARM 处理器的电脑上运行 Windows 10。 本页提供了有关你可以了解有关平台的详细信息并开始开发应用的信息。 我们还鼓励你通过使用在页面底部的链接提供你的反馈。
 
-## <a name="introductory-videos"></a>入门视频
-观看，并了解如何在 ARM 上运行 Windows 10。
+## <a name="introductory-videos"></a>介绍性视频
+观看并了解如何在 ARM 上运行 Windows 10。
 
 <ul class="cols cols3">
     <li>
@@ -28,15 +28,15 @@ ms.locfileid: "8748614"
     </li>
     <li>
         <a href="https://channel9.msdn.com/Events/Build/2018/BRK2438"><img alt="Build 2018 Windows 10 on ARM for developers" src="./images/buildVideoStillScaled.png" /></a>
-        <h3>Build 2018 面向开发人员的 ARM 上的 Windows 10</h3><p>了解有关 Windows 10 on ARM 设备如何神奇之处的 x86 模拟的工作原理，以及最后如何提交和 ARM 上生成适用于 Windows 10 的应用。 我们将介绍如何生成 ARM64 的桌面应用和 UWP 的应用。</p>
+        <h3>面向开发人员的 ARM 上生成 2018 Windows 10</h3><p>了解有关 Windows 10 on ARM 设备，如何幻的 x86 模拟的工作原理，以及最后如何提交和 ARM 上生成适用于 Windows 10 的应用。 我们将展示如何生成适用于桌面版和 UWP ARM64 应用。</p>
     </li>
     <li>
         <a href="https://channel9.msdn.com/Events/Ch9Live/Windows-Community-Standup/Kevin-Gallo-January-2018"><img alt="Community standup video featuring Kevin Gallo" src="./images/communityStandupStillScaled.png" /></a>
-        <h3>Windows 社区站立与古柯 Gallo</h3><p>更深入了解如何在 ARM64 上, 运行 Windows 10 和熟悉应用和此平台上的体验。</p>
+        <h3>Windows 社区站立与古柯 Gallo</h3><p>深入了解如何在 ARM64 上, 运行 Windows 10 和获取应用和此平台上的体验的感觉。</p>
     </li>
 </ul>
 
-## <a name="understanding-windows-10-on-arm"></a>基于 ARM 的了解 Windows 10
+## <a name="understanding-windows-10-on-arm"></a>在 ARM 上了解 Windows 10
 获取通过查看这些资源了解平台。
 
 <ul class="cardsF panelContent cols cols2">
@@ -65,7 +65,7 @@ ms.locfileid: "8748614"
                 </a>
                 <div class="cardText">
                     <h3>了解如何 x86 模拟的工作原理</h3>
-                    <p class="x-hidden-focus">了解有关这一重要功能基于 ARM 的 Windows 10 的所有问题。</p>
+                    <p class="x-hidden-focus">了解有关此密钥功能基于 ARM 的 Windows 10 的所有问题。</p>
                 </div>
             </div>
         </div>
@@ -89,7 +89,7 @@ ms.locfileid: "8748614"
 </ul>
 
 ## <a name="developing-for-windows-10-on-arm"></a>针对基于 ARM 的 Windows 10 进行开发
-在 ARM 上定制你的应用到 Windows 10 开始菜单，并那里充分利用可用的功能。  
+在 ARM 上定制你的应用到 Windows 10 开始菜单和那里充分利用可用的功能。  
 
 <ul class="cardsF panelContent cols cols3">
     <li>
@@ -101,8 +101,8 @@ ms.locfileid: "8748614"
                     </div>
                     </a>
                 <div class="cardText">
-                    <h3>生成 ARM64 sdk 的新应用</h3>
-                    <p class="x-hidden-focus">查看其中我们指导你完成编译为 ARM64 本机基于 ARM 的 Windows 10 上运行的应用这篇博客文章。</p>
+                    <h3>在 sdk 生成 ARM64 应用</h3>
+                    <p class="x-hidden-focus">请查看其中我们指导你完成你的应用编译为 ARM64 本机在基于 ARM 的 Windows 10 上运行此博客文章。</p>
                 </div>
             </div>
         </div>
@@ -191,8 +191,8 @@ ms.locfileid: "8748614"
     </li>
 </ul>-->
 
-## <a name="let-us-know-if-you-have-feedback"></a>让我们知道是否反馈
-通过利用来自你和现有客户的反馈，我们正在不断提升我们的产品。 如果你有想法、 堵塞问题，或只是想要如何出色共享是你的体验时，这些链接将帮助你。
+## <a name="let-us-know-if-you-have-feedback"></a>让我们知道是否你有的反馈
+通过利用你和现有客户反馈，我们正在不断提升我们的产品。 如果你有想法、 堵塞问题，或只是想要如何出色共享是你的体验时，这些链接将帮助你。
 
 <ul class="cardsM cols cols3">
 <li>
@@ -200,7 +200,7 @@ ms.locfileid: "8748614"
             <img class="cardImage" role="presentation" alt="Feedback hub icon" src="/media/common/i_feedback.svg" data-linktype="external" />
             <div class="cardText">
                 <h3>使用反馈中心</h3>
-                <p>我们是否错过某些内容？ 你是否拥有一个好主意？ 让我们知道在反馈中心中。</p>
+                <p>我们没有错过某些内容？ 你是否拥有一个好主意？ 让我们知道在反馈中心中。</p>
             </div>
         </a>
     </li>
@@ -209,7 +209,7 @@ ms.locfileid: "8748614"
             <img class="cardImage" role="presentation" alt="Report a bug icon" src="/media/common/i_mail.svg" data-linktype="external" />
             <div class="cardText">
                 <h3>报告错误</h3>
-                <p>在我们的平台中发现一个 bug？ 发送电子邮件至我们的详细信息。</p>
+                <p>在我们的平台中找到 bug？ 发送电子邮件至我们的详细信息。</p>
             </div>
         </a>
     </li>
@@ -218,7 +218,7 @@ ms.locfileid: "8748614"
             <img class="cardImage" role="presentation" alt="Give doc feedback icon" src="/media/common/i_form.svg" data-linktype="external" />
             <div class="cardText">
                 <h3>提供文档反馈</h3>
-                <p>你有与我们的文档中找到问题？ 你是否要我们来创造更清楚内容？ 在我们的文档 GitHub 存储库中创建问题。</p>
+                <p>你有与我们的文档中找到问题？ 你是否要我们来创造更清楚内容？ 在我们的文档 GitHub 存储库上创建问题。</p>
             </div>
         </a>
     </li>
