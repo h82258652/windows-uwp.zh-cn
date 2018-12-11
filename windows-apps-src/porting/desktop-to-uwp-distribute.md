@@ -1,22 +1,22 @@
 ---
 Description: Distribute a packaged desktop application (Desktop Bridge)
 Search.Product: eADQiWindows 10XVcnh
-title: 发布到 Microsoft Store 或旁加载打包桌面应用程序它到一个或多个设备上。
+title: 发布到 Microsoft 应用商店或旁加载你已打包的桌面应用程序它到一个或多个设备上。
 ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fe216b70b7c10f254c0e3b7b18275a72d46215c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8737887"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8891061"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a>分发打包的桌面应用程序
 
-发布到 Microsoft Store 或旁加载打包桌面应用程序它到一个或多个设备上。  
+发布到 Microsoft 应用商店或旁加载你已打包的桌面应用程序它到一个或多个设备上。  
 
 > [!NOTE]
 > 你是否拥有如何将用户切换到打包应用程序的计划？ 分发应用前，请参阅本指南的[将用户切换到打包的应用](#transition-users)部分，获得一些参考。
@@ -25,11 +25,11 @@ ms.locfileid: "8737887"
 
 [Microsoft Store](https://www.microsoft.com/store/apps) 是客户获取应用最便利的方法。
 
-发布到 Microsoft Store 的应用程序，以获得最广泛的受众。 此外，组织客户还可以获取你的应用程序内部分发到通过[适用于企业的 Microsoft 应用商店](https://www.microsoft.com/business-store)。
+发布到 Microsoft 应用商店应用程序，以获得最广泛的受众。 此外，组织客户还可以获取你的应用程序，以在内部分发到其组织通过[适用于企业的 Microsoft 应用商店](https://www.microsoft.com/business-store)。
 
 如果你打算发布到 Microsoft Store，在提交过程中，系统将要求你额外回答几个问题。 这是因为程序包清单声明名为 **runFullTrust** 的受限功能，我们需要批准该功能对你的应用程序的使用。 可以在此处了解有关此要求的详细信息：[受限功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
 
-你无需对你的应用程序，然后将其提交到应用商店才能。
+你无需对你的应用程序，然后才能将其提交到应用商店。
 
 >[!IMPORTANT]
 > 如果你打算发布到 Microsoft 应用商店应用程序，请确保你的应用程序在运行 Windows 10 s。 设备上正常运行这是应用商店要求。 请参阅[测试适用于 Windows 10 S 的 Windows 应用](desktop-to-uwp-test-windows-s.md)。
@@ -38,15 +38,15 @@ ms.locfileid: "8737887"
 
 ## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>而不将其置于 Microsoft Store 分发你的应用程序
 
-如果您不会无需使用应用商店分发你的应用程序，你可以手动将应用分配到一个或多个设备。
+如果您而是将无需使用应用商店分发你的应用程序，你可以手动将应用分配到一个或多个设备。
 
 如果要更好地控制分发体验，或者不想涉及 Microsoft Store 证书过程，这很有意义。
 
-若要将分配到其他设备的应用程序，而将其放置在应用商店中，你必须获取一个证书，使用该证书，然后旁加载到这些设备上的应用程序对你的应用程序。
+若要将分配到其他设备的应用程序，而将其放置在应用商店中，你必须获取一个证书，通过使用该证书，然后旁加载应用程序到这些设备上的登录你的应用程序。
 
 你可以[创建证书](../packaging/create-certificate-package-signing.md)或从 [Verisign](https://www.verisign.com/) 等热门供应商处获取。
 
-如果你打算分发到运行 Windows 10 S 的设备上的应用程序，你的应用程序必须由 Microsoft Store 签名，因此你必须先完成应用商店提交过程，然后可以分发到这些设备上的应用程序。
+如果你打算分发到运行 Windows 10 S 的设备上应用程序，你的应用程序已由 Microsoft 应用商店签名，因此你必须先完成应用商店提交过程，然后可以分发到这些设备上的应用程序。
 
 如果创建证书，则必须将其安装到运行应用的每台设备上的**受信任根**或**受信任人**证书存储区中。 如果从热门供应商处获取证书，则不必在其他系统上安装除应用外的任何内容。  
 
@@ -55,7 +55,7 @@ ms.locfileid: "8737887"
 
 若要对你的应用程序使用证书进行签名，请参阅[登录应用程序包使用 SignTool](../packaging/sign-app-package-using-signtool.md)。
 
-旁加载到其他设备上的应用程序，请参阅[Windows 10 中的旁加载 LOB 应用](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)。
+旁加载到其他设备，你的应用程序，请参阅[Windows 10 中的旁加载 LOB 应用](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)。
 
 **视频**
 
@@ -70,7 +70,7 @@ ms.locfileid: "8737887"
 分发应用前，请考虑向程序包清单添加几个扩展，以便帮助用户养成使用打包的应用的习惯。 下面是一些可以执行的操作。
 
 * 将现有“开始”磁贴和任务栏按钮指向打包后的应用。
-* 将打包的应用程序与一组文件类型相关联。
+* 将打包应用程序与一组文件类型相关联。
 * 使打包应用程序默认打开特定类型的文件。
 
 有关扩展的完整列表以及如何使用它们的指南，请参阅[将用户切换到应用](desktop-to-uwp-extensions.md#transition-users-to-your-app)。

@@ -5,16 +5,16 @@ title: 全球化和本地化
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
-ms.date: 10/18/2017
+ms.date: 12/7/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 49ee09374db54678dbe0152b996537771fd1bfd1
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: b7b4452bb242bb7679d37036ccda5e27912a2505
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738841"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8892350"
 ---
 # <a name="globalization-and-localization"></a>全球化和本地化
 
@@ -65,3 +65,4 @@ Windows 的使用遍及世界各地，用户的语言、区域及文化背景各
 | [针对双向文本设计应用](design-for-bidi-text.md) | 设计应用，使其提供双向文本支持（双向），以便组合从左到右和从右到左写入系统的脚本。 |
 | [使用多语言应用工具包 4.0](use-mat.md) | 多语言应用工具包 (MAT) 4.0 与 Microsoft Visual Studio 2017 集成，为 UWP 应用提供翻译支持、翻译文件管理和编辑工具。 |
 | [多语言应用工具包 4.0 常见问题和疑难解答](mat-faq-troubleshooting.md) | 本主题提供有关多语言应用工具包 (MAT) 4.0 的常见问题解答。 |
+| [准备日语 era 更改应用程序](japanese-era-change.md) | 了解有关 2019 年 5 日语 era 更改以及如何准备你的应用程序。 |
