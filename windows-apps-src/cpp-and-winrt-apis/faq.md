@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 问的, 问题, 常见问题
 ms.localizationpriority: medium
 ms.openlocfilehash: b162fbaaeda8e1ded1f0d3e1d75c840dfa543f4c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735847"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8900364"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>C++/WinRT 常见问题
 你可能有的关于创作和使用与 Windows 运行时 Api 的问题的解答[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
@@ -20,11 +20,11 @@ ms.locfileid: "8735847"
 
 ## <a name="how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>如何重定向我的 C + + 到更高版本的 Windows SDK 的 WinRT 项目？
 
-请参阅[如何重定目标 C + + WinRT 项目转换为更高版本的 Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。
+请参阅[如何重定目标 C + + 到更高版本的 Windows SDK 的 WinRT 项目](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。
 
-## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>为什么我的新项目不会编译？ 在我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及 SDK 版本 17134
+## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>为什么我的新项目不会编译？ 在我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，和 SDK 版本 17134
 
-如果你使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0 (Windows 10 版本 1803年)，则新创建 C + + WinRT 项目可能无法编译错误"*错误 C3861: 'from_abi': 标识符不找到*"，以及与源自*base.h*其他错误。 解决方法是任一目标更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **合规模式： 否**(另外，如果 **/ 许可-** 出现在项目属性**C/C++** > **命令行**下**的其他选项**，然后将其删除)。
+如果你使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0 (Windows 10 版本 1803年)，则新创建 C + + WinRT 项目可能无法编译错误"*错误 C3861: 'from_abi': 标识符不找到*"，并使用来自*base.h*其他错误。 解决方法是任一目标更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **一致性模式： 否**(另外，如果 **/ 许可-** 出现在项目属性**C/C++** > **命令行**下**的其他选项**，然后将其删除)。
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsixhttpsakamscppwinrtvsix"></a>[C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix) 的要求是什么？
 [VSIX](https://aka.ms/cppwinrt/vsix) 强制执行最低的 Windows SDK 目标版本 10.0.17134.0（Windows 10，版本 1803）。 还需要 Visual Studio 2017（版本不低于 15.6；建议版本不低于 15.7）。 你可以通过 `.vcxproj` 文件 `<PropertyGroup Label="Globals">` 中 `<CppWinRTEnabled>true</CppWinRTEnabled>` 的存在来识别使用 VSIX 的项目。 有关详细信息，请参阅 [C++/WinRT 的 Visual Studio 支持和 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
@@ -33,7 +33,7 @@ ms.locfileid: "8735847"
 运行时类是一个可通过现代 COM 接口进行激活和使用（通常跨可执行文件）的类型。 但是，运行时类也可在实现它的编译单元内使用。 你采用接口定义语言 (IDL) 声明运行时类，而且可以在标准 C++ 中使用 C++/WinRT 实现它。
 
 ## <a name="what-do-the-projected-type-and-the-implementation-type-mean"></a>*投影类型*和*实现类型*是什么意思？
-如果你仅*使用* Windows 运行时类（运行时类），则将要专门处理*投影类型*。 C++/WinRT 是一种*语言投影*，所以投影类型是通过 C++/WinRT *投影*到 C++ 中的 Windows 运行时的表面的一部分。 有关更多详细信息，请参阅[使用的 Api 通过 C + + WinRT](consume-apis.md)。
+如果你仅*使用* Windows 运行时类（运行时类），则将要专门处理*投影类型*。 C++/WinRT 是一种*语言投影*，所以投影类型是通过 C++/WinRT *投影*到 C++ 中的 Windows 运行时的表面的一部分。 有关更多详细信息，请参阅[使用 Api 通过 C + + WinRT](consume-apis.md)。
 
 *实现类型*包含运行时类的实现，因此仅在实现该运行时类的项目中可用。 当你在实现运行时类的项目中工作时（Windows 运行时组件项目或使用 XAML UI 的项目），请务必熟悉你对某个运行时类的实现类型与表示该运行时类已投影到 C++/WinRT 中的投影类型之间的区别。 有关更多详细信息，请参阅[通过 C++/WinRT 创作 API](author-apis.md)。
 
@@ -49,7 +49,7 @@ ms.locfileid: "8735847"
 #pragma comment(lib, "windowsapp")
 ```
 
-请务必解决任何你可以通过而不可选的静态链接库链接**WindowsApp.lib**的链接器错误，否则你的应用程序不会通过 Visual Studio 和使用的[Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)测试若要验证提交 （因此不会为你的应用程序能够成功地引入 Microsoft Store 可能的含义） 的 Microsoft 应用商店。
+请务必解决任何你可以通过而不可选的静态链接库链接**WindowsApp.lib**的链接器错误，否则你的应用程序不会通过 Visual Studio 和使用的[Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)测试若要验证提交 （因此将不会将它为你的应用程序能够成功地引入 Microsoft Store 的含义） 的 Microsoft 应用商店。
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>我是否应实现 [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable)，如果是，该怎么实现？
 如果你有在其构造函数中释放资源的运行时类，而且有旨在从其实现编译单元外部所使用的运行时类（即适用于 Windows 运行时客户端应用的一般使用的 Windows 运行时组件），则我们建议你还要实现 **IClosable**，以支持缺乏确定性终止化的语言对运行时类的使用。 确保资源得到释放，无论调用的是析构函数 [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.Close) 还是两者。 可调用 **IClosable::Close** 任意次数。
@@ -91,11 +91,11 @@ C++/WinRT 使用 C++ 17 标准版中的功能，因此你需要使用所有必�
 
 Visual Studio 是我们支持和推荐用于 C++/WinRT 的开发工具。 请参阅[对 C++/WinRT 的 Visual Studio 支持以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
 
-## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>为什么没有只读属性在生成的实现的函数`const`限定符？
+## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>为什么没有只读属性的生成的实现函数`const`限定符？
 
-声明[MIDL 3.0](/uwp/midl-3/)中的一个只读属性时，你可能希望`cppwinrt.exe`工具来为你生成一个实现函数的`const`-限定 （const 函数将视为 const*此*指针）。
+声明时[MIDL 3.0](/uwp/midl-3/)中的一个只读属性，你可能希望`cppwinrt.exe`工具来为你生成一个实现函数的`const`-限定 （const 函数将视为 const*此*指针）。
 
-当然建议尽可能使用 const 但`cppwinrt.exe`工具本身不会尝试有关哪一种实现函数都可能 const，而这不可能的原因。 你可以选择将实现功能的任何 const，如本示例中所示。
+当然建议使用 const 尽可能，但`cppwinrt.exe`工具本身不会尝试有关哪一种实现函数都可能 const，而这不可能的原因。 你可以选择让你实现的函数的任何 const，如本示例中所示。
 
 ```cppwinrt
 struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation::IStringable>
@@ -107,9 +107,9 @@ struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation
 };
 ```
 
-你可以删除的`const`限定符上**ToString**应你决定，你需要更改其实现中的某些对象状态。 但使每个你的成员函数 const 或非量，不能同时。 换言之，不重载将实现函数，在`const`。
+你可以删除的`const`限定符上**ToString**应你决定，你需要更改在其实现中的某些对象状态。 但是，使你的成员的每个函数 const 或非量，不能同时。 换言之，不重载实现函数`const`。
 
-除了实现功能，其他另一个将放置在 const 进入图片是 Windows 运行时函数投影。 请考虑此代码。
+除了你实现的函数，其他另一个将放置在 const 进入图片是 Windows 运行时函数投影。 请考虑此代码。
 
 ```cppwinrt
 int main()
@@ -119,19 +119,19 @@ int main()
 }
 ```
 
-**ToString**上述调用，在 Visual Studio 中的**转到声明**命令显示的 Windows 运行时**istringable:: Tostring**投影到 C + + WinRT 如下所示。
+调用**ToString**上面的**转到声明**命令在 Visual Studio 中的显示的 Windows 运行时**istringable:: Tostring**投影到 C + + WinRT 如下所示。
 
 ```
 winrt::hstring ToString() const;
 ```
 
-无论你选择限定实现它们的 const 投影的函数。 在后台，投影调用应用程序二进制接口 (ABI)，以通过 COM 接口指针调用的金额。 只有投影的**ToString**与之交互的状态是该 COM 接口指针;并且，它的确有无需修改该指针，因此该函数是 const。 这将使你保证它不会更改有关，通过调用**IStringable**引用的任何内容，并确保你可以调用**ToString**甚至与 const 引用到**IStringable**。
+投影的函数是 const 无论你选择如何限定实现它们。 在后台，投影调用应用程序二进制接口 (ABI)，以通过 COM 接口指针调用的金额。 只有投影的**ToString**与之交互的状态是该 COM 接口指针;并且它当然无需修改该指针，因此该函数是 const。 这将使你保证它不会更改有关正在，通过调用**IStringable**引用的任何内容，并确保你可以调用**ToString**甚至与 const 引用**IStringable**。
 
-了解，这些示例中的`const`是实现详细信息的 C + + WinRT 投影和实现;它们构成为您提供方便代码清理。 没有根本不`const`上 COM 和 Windows 运行时 ABI （适用于成员函数）。
+了解，这些示例中的`const`是实现详细信息的 C + + WinRT 投影和实现;它们构成为您提供方便代码清理。 没有根本不`const`上是 COM 还是 Windows 运行时 ABI （适用于成员函数）。
 
-## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>是否有任何建议减小代码大小为 C + + WinRT 二进制文件？
+## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>你有任何建议减小代码大小对于 C + + WinRT 二进制文件？
 
-使用 Windows 运行时对象时，应避免的编码模式，因为它可以对你的应用程序产生负面影响，从而比生成所需的更多二进制文件的代码如下所示。
+使用 Windows 运行时对象时，应避免的编码模式，因为它可以在你的应用程序比生成所需的更多二进制代码，从而产生负面影响，如下所示。
 
 ```cppwinrt
 anobject.b().c().d();
@@ -139,7 +139,7 @@ anobject.b().c().e();
 anobject.b().c().f();
 ```
 
-在 Windows 运行时世界中，则编译器将无法缓存的值`c()`或通过间接寻址调用每个方法的接口 ('。)。 除非干涉，那样会导致更多虚拟调用和引用计数开销。 上面的模式可以轻松地生成为严格所需的两倍代码。 相反，首选位置可以如下所示的模式。 生成很少的代码，并且它可以也极大地缩短运行的时性能。
+在 Windows 运行时世界中，则编译器将无法缓存的值`c()`或通过间接寻址调用每个方法的接口 ('。)。 除非干预，，会导致更多虚拟调用和引用计数开销。 上面的模式可以轻松地生成为严格所需的两倍代码。 相反，更喜欢位置可以如下所示的模式。 它会生成很少的代码，并且它可以也极大地缩短运行的时性能。
 
 ```cppwinrt
 auto a{ anobject.b().c() };
@@ -148,7 +148,7 @@ a.e();
 a.f();
 ```
 
-如上所示的建议的模式将应用而不只是到 C + + WinRT 但向所有 Windows 运行时语言投影。
+如上所示的建议的模式应用而不只是到 C + + WinRT 但向所有 Windows 运行时语言投影。
 
 > [!NOTE]
-> 如果本主题没有解决问题，则通过访问[Visual Studio c + + 开发人员社区](https://developercommunity.visualstudio.com/spaces/62/index.html)，或使用，你可能会发现帮助[`c++-winrt`标记 Stack Overflow 上](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)。
+> 如果本主题没有解决你的问题，则通过访问[Visual Studio c + + 开发人员社区](https://developercommunity.visualstudio.com/spaces/62/index.html)，或使用，你可能会发现帮助[`c++-winrt`标记 Stack Overflow 上](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)。
