@@ -1,17 +1,17 @@
 ---
 ms.assetid: 37F2C162-4910-4336-BEED-8536C88DCA65
-description: 在 Microsoft Store 提交 API 中使用这些方法，管理已注册到你的合作伙伴中心帐户的应用的软件包外部测试版。
+description: 在 Microsoft Store 提交 API 中使用这些方法来管理已注册到你的合作伙伴中心帐户的应用的软件包外部测试版。
 title: 管理软件包外部测试版
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版
 ms.localizationpriority: medium
 ms.openlocfilehash: 8678ee4d73f13e241a2c72d6dac532289af13ced
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729945"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8884113"
 ---
 # <a name="manage-package-flights"></a>管理软件包外部测试版
 

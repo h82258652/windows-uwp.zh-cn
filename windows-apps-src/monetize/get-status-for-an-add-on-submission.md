@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 状态
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bfec8232fe8e410e65997098954e35d3f5fdc1b
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8800578"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8889947"
 ---
 # <a name="get-the-status-of-an-add-on-submission"></a>获取加载项提交的状态
 

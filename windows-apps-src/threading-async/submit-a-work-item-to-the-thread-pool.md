@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 线程, 线程池
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c1df6a4b72b7c73cac41e66ef1074975db0d979
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8793089"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8890410"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>向线程池提交工作项
 

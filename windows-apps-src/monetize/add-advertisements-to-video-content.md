@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 广告, 视频, scheduler, javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 29e2c46636445adac496d0f2149e956c5703c20d
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8801421"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8889327"
 ---
 # <a name="show-ads-in-video-content"></a>在视频内容中显示广告
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 端口, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: c7569c6b2f041f5535e0eabe934a91da86b60b9a
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8825624"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8889610"
 ---
 # <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>演练：将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)
 

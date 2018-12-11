@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏设置, 显示模式, 系统要求, 硬件要求, 最低硬件, 建议硬件, 隐私策略, 支持联系人信息, 应用网站, 支持信息
 ms.localizationpriority: medium
 ms.openlocfilehash: 80220f8402b225691a2e4eb3202f1f04d48e06b4
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8791050"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8889277"
 ---
 # <a name="enter-app-properties"></a>输入应用属性
 

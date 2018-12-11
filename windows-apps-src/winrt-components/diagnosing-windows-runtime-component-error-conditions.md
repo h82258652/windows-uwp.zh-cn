@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4733edba06b7042c436918e882556f86dfa00071
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8687436"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8888398"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>诊断 Windows 运行时组件错误条件
 
@@ -113,8 +113,8 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 | WME0006      | {0}不是此程序集的有效 winmd 文件名。 Windows 元数据文件中的所有类型必须存在于由文件名暗示的命名空间的子命名空间中。 未存在于此类子命名空间中的类型无法在运行时找到。 在此程序集，能够充当文件名的最小常见命名空间是{1}。 |
 | WME1042      | 输入模块必须包含至少一种位于命名空间内的公共类型。                                                                                                                                                                                                                                                                   |
 | WME1043      | 输入模块必须包含至少一种位于命名空间内的公共类型。 仅在命名空间内找到的类型为专有类型。                                                                                                                                                                                                               |
-| WME1044      | 公共类型具有一个命名空间 ({1}) 共享没有通用的前缀与其他命名空间 ({0})。 Windows 元数据文件中的所有类型必须存在于由文件名暗示的命名空间的子命名空间中。                                                                                                                              |
-| WME1067      | Namespace 名称无法仅凭大小写区分:{0}，{1}。                                                                                                                                                                                                                                                                                                |
+| WME1044      | 公共类型具有一个命名空间 ({1}) 共享任何通用前缀与其他命名空间 ({0})。 Windows 元数据文件中的所有类型必须存在于由文件名暗示的命名空间的子命名空间中。                                                                                                                              |
+| WME1067      | Namespace 名称无法仅不同情况:{0}，{1}。                                                                                                                                                                                                                                                                                                |
 | WME1068      | 类型{0}不能具有相同的命名空间名称'{1}。                                                                                                                                                                                                                                                                                                 |
 
  
@@ -157,7 +157,7 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 <tr class="odd">
 <td align="left">WME1039</td>
 <td align="left"><p>方法{0}具有类型的参数{1}在其签名中。 尽管此泛型类型并非有效的 Windows 运行时类型，但类型或其泛型参数可以实现作为有效的 Windows 运行时类型的接口。 {2}</p>
-> **注意**的{2}，Winmdexp.exe 会附加备用项列表，如"请考虑更改类型 ' System.Collections.Generic.List&lt;T&gt;下列任一方法签名中键入改为:System.Collections.Generic.IList&lt;T&gt;，System.Collections.Generic.IReadOnlyList&lt;T&gt;，如&lt;T&gt;'。"
+> **注意**的{2}，Winmdexp.exe 会附加备用项列表，如"请考虑更改类型 ' System.Collections.Generic.List&lt;T&gt;下列任一方法签名中类型改为:System.Collections.Generic.IList&lt;T&gt;，System.Collections.Generic.IReadOnlyList&lt;T&gt;，如&lt;T&gt;'。"
 </td>
 </tr>
 <tr class="even">
@@ -185,7 +185,7 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 
 在 UWP 中，成员签名中的数组必须是一维数组，并且下限为 0（零）。 不允许嵌套的数组类型，例如 `myArray[][]`（在 Visual Basic 中是 `myArray()()`）。
 
-> **注意**此限制不适用于在实现内部使用的数组。
+> **注意**此限制不适用于在你的实现内部使用的数组。
 
  
 
@@ -208,8 +208,8 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 | WME1102      | 方法{0}具有输出参数{1}这是数组，但具有{2}。 在 Windows 运行时中，可写入输出数组的内容。 请删除从属性{1}。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | WME1103      | 方法{0}具有参数{1}这是数组，且具有 System.Runtime.InteropServices.InAttribute 或 System.Runtime.InteropServices.OutAttribute。 在 Windows 运行时中，数组参数必须具有{2}或{3}。 请删除这些属性，或使用相应的 Windows 运行时属性替换它们（如有必要）。                                                                                                                                                                                                                                                                                                                                                                                          |
 | WME1104      | 方法{0}具有参数{1}这不是数组，且具有{2}或{3}。 Windows 运行时不支持标记非数组参数与{2}或{3}。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| WME1105      | 方法{0}具有参数{1}' 具有 System.Runtime.InteropServices.InAttribute 或 System.Runtime.InteropServices.OutAttribute。 Windows 运行时不支持使用 System.Runtime.InteropServices.InAttribute 或 System.Runtime.InteropServices.OutAttribute 标记参数。 请考虑删除 System.Runtime.InteropServices.InAttribute，并改为使用“out”修饰符替换 System.Runtime.InteropServices.OutAttribute。 方法{0}具有参数{1}' 具有 System.Runtime.InteropServices.InAttribute 或 System.Runtime.InteropServices.OutAttribute。 Windows 运行时仅支持使用 System.Runtime.InteropServices.OutAttribute 标记 ByRef 参数，不支持这些属性的其他用法。 |
-| WME1106      | 方法{0}具有参数{1}这是一组。 在 Windows 运行时中，数组参数的内容必须是可读或可写。 请将{2}或{3}为{1}。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| WME1105      | 方法{0}具有参数{1}具有 System.Runtime.InteropServices.InAttribute 或 System.Runtime.InteropServices.OutAttribute。 Windows 运行时不支持使用 System.Runtime.InteropServices.InAttribute 或 System.Runtime.InteropServices.OutAttribute 标记参数。 请考虑删除 System.Runtime.InteropServices.InAttribute，并改为使用“out”修饰符替换 System.Runtime.InteropServices.OutAttribute。 方法{0}具有参数{1}具有 System.Runtime.InteropServices.InAttribute 或 System.Runtime.InteropServices.OutAttribute。 Windows 运行时仅支持使用 System.Runtime.InteropServices.OutAttribute 标记 ByRef 参数，不支持这些属性的其他用法。 |
+| WME1106      | 方法{0}具有参数{1}这是一个数组。 在 Windows 运行时中，数组参数的内容必须是可读或可写。 请将{2}或{3}为{1}。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 
 ## <a name="member-with-a-parameter-named-value"></a>具有名为“value”的参数的成员
@@ -236,7 +236,7 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> **注意**如果你更改返回值，名称而新名称与其他参数的名称，你将收到错误 WME1091。
+> **注意**如果你更改返回值的名称而新名称与其他参数的名称，你将收到错误 WME1091。
 
 JavaScript 代码可以按照名称访问方法的输出参数，包括返回值。 有关示例，请参阅 [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 属性。
 

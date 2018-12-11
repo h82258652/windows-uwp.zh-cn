@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 恢复, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: f0aa60061ae9fc14392bfe4beb0693ba50fda0df
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8800971"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8890725"
 ---
 # <a name="how-to-resume-an-app-directx-and-c"></a>如何恢复应用（DirectX 和 C++）
 
