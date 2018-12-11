@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 118c451bb4e015d578620647f09ff23724701da0
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8793460"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8854544"
 ---
 # <a name="introduction-to-xbox-live-apis"></a>Xbox Live API 简介
 

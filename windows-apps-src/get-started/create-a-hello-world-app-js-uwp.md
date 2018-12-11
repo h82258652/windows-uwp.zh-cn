@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c5b99c95167940c1ae51dbe96a3e43dc6fb0af34
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731349"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8872195"
 ---
 # <a name="create-a-hello-world-app-js"></a>创建“Hello, world”应用 (JS)
 
@@ -23,14 +23,14 @@ ms.locfileid: "8731349"
 
 在此处，你将了解如何：
 
--   创建一个新的**Visual Studio 2017**项目面向**windows 10**和**UWP**。
+-   创建新的**Visual Studio 2017**项目面向**windows 10**和**UWP**。
 -   添加 HTML 和 JavaScript 内容
 -   在 Visual Studio 中，在本地桌面中运行该项目
 
 ## <a name="before-you-start"></a>开始之前...
 
 -   [UWP 应用是什么？](universal-application-platform-guide.md)。
--   若要完成本教程中，你需要 windows 10 和 Visual Studio2017。 [准备工作](get-set-up.md)。
+-   若要完成本教程，你需要 windows 10 和 Visual Studio2017。 [准备工作](get-set-up.md)。
 -   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 如果要更改默认布局，你可以在**窗口**菜单中，通过使用**重置窗口布局**命令来重置它。
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>步骤 1：在 Visual Studio 中创建新项目。

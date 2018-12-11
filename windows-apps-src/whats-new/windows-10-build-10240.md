@@ -7,17 +7,17 @@ ms.topic: article
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
 ms.openlocfilehash: 75c5c34f3dec48bbee2feccde5b60cde45a241f9
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729919"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8827202"
 ---
 # <a name="whats-new-in-windows10-for-developers-build-10240"></a>什么是 windows 10 中面向开发人员的新增功能、 内部版本 10240
 
 Windows 10 版本 10240 和更新的 SDK 提供用于打造出色的通用 Windows 平台应用的工具、功能和体验。 在 Windows 10 上[安装这些工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431) 后，你就可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
-下面是按功能逐个你在 windows 10 版本 10240 （也称为 Windows 10 版本 1507年） 的新增功能。
+下面是通过功能逐项查看你在 windows 10 版本 10240 （也称为 Windows 10 版本 1507年） 的新增功能。
 
 ## <a name="adaptive-layouts"></a>自适应布局
 

@@ -7,11 +7,11 @@ keywords: Windows 10, uwp, 类别, 类别, 目标组, 客户
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ms.localizationpriority: medium
 ms.openlocfilehash: d0df23f0da4efe01877c45e5b2b6b5f4e2142a92
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755203"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8829840"
 ---
 # <a name="create-customer-segments"></a>创建客户类别
 
@@ -33,7 +33,7 @@ ms.locfileid: "8755203"
 
 ## <a name="to-create-a-customer-segment"></a>创建客户类别
 
-1.  在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，展开左侧的导航菜单中的**参与**，然后选择**客户组**。
+1.  在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，展开左侧的导航菜单中**参与**，然后选择**客户组**。
 2.  在**客户组**页面上，执行以下操作之一：
  - 在**我的客户组**部分中，选择**创建新组**，从最开始定义类别。 在下一页上，选择**类别**单选按钮。
  - 在**类别模板**部分中，选择其中一个预定义类别（可按现样使用或按需修改）旁边的**复制**。
@@ -41,7 +41,7 @@ ms.locfileid: "8755203"
 4.  在**包含此应用的客户**列表中，选择一个目标应用。
 5.  在**定义包含条件**部分中，指定类别的筛选条件。
 
-    你可以选择各种筛选条件，包括**购置**、**购置源**、**人口统计**、**分级**，**改动预期**、**应用商店购买**、**应用商店购置**以及**应用商店花费**。
+    你可以选择各种筛选条件，包括**购置**、**购置源**、**人口统计**、**评分**，**改动预期**、**应用商店购买**、**应用商店购置**以及**应用商店花费**。
 
     例如，如果希望创建仅包含 18 至 24 岁的应用客户的类别，可从下拉列表中选择筛选条件 \[**人口统计**\] \[**年龄组**\]\ [**是**\] \[**18 至 24**\]。
 

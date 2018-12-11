@@ -11,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0f881c470d92ea1eafb08f24e6cf1fd06f4fc75e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: fb97f69ccdffcec86dfdaf5fa6c5f817644ebd61
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8746958"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8873490"
 ---
 # <a name="icons-for-uwp-apps"></a>适用于 UWP 应用的图标
 
@@ -136,7 +136,7 @@ ms.locfileid: "8746958"
 
 ## <a name="make-the-icon-do-something"></a>让图标发挥作用
 
-图标之后下, 一步是使其执行某些操作通过将它与命令或导航操作相关联。 若要执行此操作的最佳方式是将图标添加到某个按钮或命令栏。 
+图标之后下, 一步是以使其执行某些操作通过将它与命令或导航操作相关联。 若要执行此操作的最佳方法是将图标添加到某个按钮或命令栏。 
 
 ![命令栏图像](images/icons/app-bar-desktop.svg)
 
