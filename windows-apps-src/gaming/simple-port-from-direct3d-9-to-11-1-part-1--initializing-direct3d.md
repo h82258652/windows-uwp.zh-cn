@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, direct3d 11, 初始化, 移植, direct3d 9
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aaf6dcc001a09e33588ac18898767b9cf92819c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738358"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8895508"
 ---
 # <a name="initialize-direct3d-11"></a>初始化 Direct3D 11
 
@@ -73,7 +73,7 @@ m_pD3D->CreateDevice(
 
 创建 Direct3D 11 设备和上下文之后，我们可以利用 COM 指针功能获取最新版本的接口，该指针功能还包括其他功能，因此我们总是推荐使用它。
 
-> **注意** D3D\_FEATURE\_LEVEL\_9\_1 （对应于着色器模型 2.0） 是你的 Microsoft 应用商店游戏所需支持的最低级别。 （如果不支持 9\_1，则你游戏的 ARM 程序包将无法通过认证。）如果你的游戏还包括用于着色器模型 3 功能的呈现路径，那么你应该在数组中包含 D3D\_FEATURE\_LEVEL\_9\_3。
+> **注意** : D3D\_FEATURE\_LEVEL\_9\_1 （对应于着色器模型 2.0） 是你的 Microsoft 应用商店游戏所需支持的最低级别。 （如果不支持 9\_1，则你游戏的 ARM 程序包将无法通过认证。）如果你的游戏还包括用于着色器模型 3 功能的呈现路径，那么你应该在数组中包含 D3D\_FEATURE\_LEVEL\_9\_3。
 
  
 
