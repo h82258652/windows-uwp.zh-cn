@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: cfe20136ad1320966fc851cf9dd6de765871c957
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8795554"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8897770"
 ---
 # <a name="post-jsonusersbatchscidssciddatapathandfilenamejson"></a>POST (/json/users/batch/scids/{scid}/data/{pathAndFileName},json)
 将多个文件下载从多个用户具有相同的文件名。 请求 URI 由确定要下载的文件。 请求正文中的包含的用户的 Xuid 列表以下载的文件。 响应正文将很多部分的 MIME 消息，与每个表示的特定用户的组其自己的标头文件的一部分。 很可能是成功和失败的组合的响应的部分。 这些 Uri 的域是`titlestorage.xboxlive.com`。

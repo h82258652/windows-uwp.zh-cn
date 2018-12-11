@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xbox 集成多人游戏, 清单
 ms.localizationpriority: medium
 ms.openlocfilehash: 926cc4495236fc4762f9b3176a5d6a4a579e2e2e
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8779018"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8892433"
 ---
 # <a name="xim-project-configuration"></a>XIM 项目配置
 

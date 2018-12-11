@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 创意者
 ms.localizationpriority: medium
 ms.openlocfilehash: caeedd11d18474721f291e14f5db1697cf650db7
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8787674"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8886845"
 ---
 # <a name="get-started-developing-an-xbox-live-creators-program-title-with-the-unity-game-engine"></a>使用 Unity 游戏引擎开发 Xbox Live 创意者计划主题作品入门
 
