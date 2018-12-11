@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e8c995c5a9513bea44664bcb395cd604ba2668c3
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8829980"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8896630"
 ---
 # <a name="composition-brushes"></a>合成画笔
 从 UWP 应用程序在屏幕上可见所有内容都是可见，因为它由画笔绘制。 画笔，你可以使用范围从简单纯色到图像或绘图到复杂的效果链的内容绘制用户界面 (UI) 对象。 本主题介绍使用 CompositionBrush 绘制的概念。

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6727c22631a9536a0ed8d04e7c88602bba890284
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8737379"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8897731"
 ---
 # <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>桌面应用程序和 UWP 应用之间共享代码
 
@@ -63,7 +63,7 @@ ms.locfileid: "8737379"
 
 ### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>示例：将数据访问代码迁移到 .NET Standard 2.0 库
 
-假设我们有一个显示我们 Northwind 示例数据库中的客户的非常基本的 Windows 窗体应用程序。
+假设我们有的非常基本的 Windows 窗体应用程序显示我们 Northwind 示例数据库中的客户。
 
 ![Windows 窗体应用](images/desktop-to-uwp/win-forms-app.png)
 

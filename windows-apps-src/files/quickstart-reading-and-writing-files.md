@@ -12,11 +12,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 6079ea8ca844efc912b970c00c6907d98378dd07
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8748894"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8896003"
 ---
 # <a name="create-write-and-read-a-file"></a>创建、写入和读取文件
 
@@ -35,7 +35,7 @@ ms.locfileid: "8748894"
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
-    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何编写异步应用 C + + /winrt 中，请参阅[并发和异步操作通过 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。 若要了解如何编写异步应用 C + + CX，请参阅[进行异步编程 C + + / CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
+    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何编写异步应用 C + + /winrt 中，请参阅[并发和异步操作通过 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。 若要了解如何编写异步应用 C + + CX，请参阅[进行异步编程 C + + CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
 -   **了解如何获取你希望读取和/或写入的文件**
 
@@ -150,7 +150,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
 
 **使用缓冲区将字节写入文件（2 步）**
 
-1.  首先，调用[**CryptographicBuffer.ConvertStringToBinary**](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary)获取缓冲区的字节 （基于一个字符串） 想要写入文件。
+1.  首先，调用[**CryptographicBuffer.ConvertStringToBinary**](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary)以获取一个缓冲区的字节 （基于一个字符串） 想要写入到你的文件。
 
 ```csharp
 var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
@@ -191,7 +191,7 @@ Dim buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBi
     Windows.Security.Cryptography.BinaryStringEncoding.Utf8)
 ```
 
-2.  然后将字节写入从你的缓冲区文件通过调用[**FileIO.WriteBufferAsync**](/uwp/api/windows.storage.fileio.writebufferasync)方法。
+2.  然后将字节写入从你的缓冲区你的文件通过调用[**FileIO.WriteBufferAsync**](/uwp/api/windows.storage.fileio.writebufferasync)方法。
 
 ```csharp
 await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer);
@@ -254,7 +254,7 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
 ```
 
-2.  接下来，通过调用从[**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)方法获取输出流`stream`。 如果你使用 C#，然后括起来这**using**语句，以管理输出流的生存期。 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后你可以控制其生存期括在块中，或将其设置为`nullptr`完成后使用它。
+2.  接下来，通过调用从[**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)方法获取输出流`stream`。 如果你使用 C#，然后括起来这**using**语句以管理输出流的生存期。 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后你可以控制其生存期括在块中，或将其设置为`nullptr`完成后使用它。
 
 ```csharp
 using (var outputStream = stream.GetOutputStreamAt(0))
@@ -280,7 +280,7 @@ Using outputStream = stream.GetOutputStreamAt(0)
 End Using
 ```
 
-3.  现在添加此代码 （如果你使用 C# 中，现有的**using**语句中） 以创建新的[**DataWriter**](/uwp/api/windows.storage.streams.datawriter)对象并调用[**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring)方法写入输出流。
+3.  现在添加此代码 （如果你使用 C# 中，现有的**using**语句中），以通过创建新的[**DataWriter**](/uwp/api/windows.storage.streams.datawriter)对象并调用[**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring)方法写入输出流。
 
 ```csharp
 using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
@@ -306,7 +306,7 @@ Dim dataWriter As New DataWriter(outputStream)
 dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
 ```
 
-4.  最后，添加此代码 （如果你使用 C# 中，**使用**内部语句中），以将文本保存到你的文件与[**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync)并关闭该流与[**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync)。
+4.  最后，添加此代码 （如果你使用 C# 中，**使用**内部语句中），以将文本保存到你的文件与[**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync)并关闭[**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync)与流。
 
 ```csharp
 await dataWriter.StoreAsync();

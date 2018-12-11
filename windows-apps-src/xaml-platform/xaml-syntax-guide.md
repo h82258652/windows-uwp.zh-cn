@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e988582877a6aa4ca3cf88ba0a5d98aceb56939e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8741559"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8896693"
 ---
 # <a name="xaml-syntax-guide"></a>XAML 语法指南
 
@@ -286,7 +286,7 @@ Windows 运行时 API 中的许多属性都使用枚举作为值。 如果成员
 
 ## <a name="xaml-placeholder-conventions-in-windows-runtime-reference"></a>Windows 运行时参考中的 XAML 占位符约定
 
-参考主题中有针对可以使用 XAML 的 Windows 运行时 API 的“语法”**** 部分，如果你阅读过其中某个部分，就可能会看到语法中包含很多占位符。 XAML 语法是不同于 C#、 Microsoft Visual Basic 或 VisualC + + 组件扩展 (C + + / CX) 语法因为 XAML 语法是一种用法语法。 它会提示你在自己的 XAML 文件中的最终用法，但不会过度规定可以使用的值。 因此，通常用法描述混合了文本和占位符的语法类型，并定义“XAML 值”**** 部分中的某些占位符。
+参考主题中有针对可以使用 XAML 的 Windows 运行时 API 的“语法”**** 部分，如果你阅读过其中某个部分，就可能会看到语法中包含很多占位符。 XAML 语法是不同于 C#、 Microsoft Visual Basic 或 VisualC + + 组件扩展 (C + + CX) 语法因为 XAML 语法是一种用法语法。 它会提示你在自己的 XAML 文件中的最终用法，但不会过度规定可以使用的值。 因此，通常用法描述混合了文本和占位符的语法类型，并定义“XAML 值”**** 部分中的某些占位符。
 
 当你在某个属性的 XAML 语法中看到类型名称/元素名称时，显示的名称为最初定义该属性的类型的名称。 但 Windows 运行时 XAML 支持基于 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的类的类继承模型。 因此，通常你可以使用以下类中的属性：该类从字面上看不属于定义类，但派生自首先定义该属性/特性的类。 例如，你可以将 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 设置为使用深度继承的任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 派生类上的属性。 例如：`<Button Visibility="Visible" />`。 因此，对于任意 XAML 用法语法中显示的元素名称，都不要过于拘泥于字面意思；该语法对于表示该类的元素以及表示派生类的元素也可能同样适用。 在类型很少或不能显示为采用真实用法的定义元素时，该类型名称在语法中刻意小写。 例如，你看到的 **UIElement.Visibility** 的语法为：
 

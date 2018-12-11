@@ -1,20 +1,20 @@
 ---
 ms.assetid: 23FE28F1-89C5-4A17-A732-A722648F9C5E
 title: 异步编程
-description: 本主题介绍了进行异步编程在通用 Windows 平台 (UWP) 和它在 C#、 Microsoft Visual Basic.NET、 c + + 和 JavaScript 中的表示形式。
+description: 本主题介绍了进行异步编程在通用 Windows 平台 (UWP) 和 C#、 Microsoft Visual Basic.NET、 c + + 和 JavaScript 中的表示形式。
 ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, uwp, 异步
 ms.localizationpriority: medium
 ms.openlocfilehash: 50e8bae0db888b947c568deb50fa5f2fc227e734
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735052"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8896033"
 ---
 # <a name="asynchronous-programming"></a>异步编程
-本主题介绍了进行异步编程在通用 Windows 平台 (UWP) 和它在 C#、 Microsoft Visual Basic.NET、 c + + 和 JavaScript 中的表示形式。
+本主题介绍了进行异步编程在通用 Windows 平台 (UWP) 和 C#、 Microsoft Visual Basic.NET、 c + + 和 JavaScript 中的表示形式。
 
 使用异步编程可帮助应用在完成可能花费较长时间的工作时保持响应。 例如，从 Internet 下载内容的应用等待内容到达可能要花费数秒钟。 如果你已在 UI 线程中使用同步方法来检索内容，则应用会在方法返回之前被阻止。 应用将不会响应用户交互，而且因为无响应的原因，用户可能会感到沮丧。 使用异步编程效果更佳。采用此方式时，应用在等待操作完成时继续运行并响应 UI。
 
@@ -47,20 +47,20 @@ ms.locfileid: "8735052"
 |----------------------|---------------------------------------|
 | C#                   | **async** 关键字、**await** 运算符 |
 | Visual Basic         | **Async** 关键字、**Await** 运算符 |
-| C++/WinRT            | 协同程序，并且**co_await**运营商  |
+| C++/WinRT            | 协同程序，并**co_await**运营商  |
 | C++/CX               | **task** 类，**.then** 方法      |
 | JavaScript           | 承诺对象，**then** 函数     |
 
 ## <a name="asynchronous-patterns-in-uwp-using-c-and-visual-basic"></a>使用 C# 和 Visual Basic 的 UWP 中的异步模式
 用 C# 或 Visual Basic 编写的典型代码段将同步执行，这意味着当执行一行时，它会在下一行执行之前完成。 尽管之前已有用于异步执行的 Microsoft .NET 编程模型，但生成的代码趋向于强调执行异步代码的技术，而不是专注于代码要尝试完成的任务。 UWP、.NET Framework 以及 C# 和 Visual Basic 编译器已添加了可从代码中提取异步机制的功能。 对于 .NET 和 UWP，可编写异步代码，该代码关注于你的代码要做什么，而不是如何做以及何时做。 你的异步代码看起来将非常类似于同步代码。 有关详细信息，请参阅[使用 C# 或 Visual Basic 调用异步 API](call-asynchronous-apis-in-csharp-or-visual-basic.md)。
 
-## <a name="asynchronous-patterns-in-uwp-with-cwinrt"></a>通过 C + 的 UWP 中的异步模式 + WinRT
-通过 C + + /winrt 使用协同程序，并且**co_await**运营商。 有关详细信息和代码示例，请参阅[异步编程在 C + + WinRT](../cpp-and-winrt-apis/concurrency.md)。
+## <a name="asynchronous-patterns-in-uwp-with-cwinrt"></a>使用 C + 的 UWP 中的异步模式 + WinRT
+通过 C + + WinRT，你使用协同程序，并且**co_await**运营商。 有关详细信息和代码示例，请参阅[异步编程在 C + + WinRT](../cpp-and-winrt-apis/concurrency.md)。
 
-## <a name="asynchronous-patterns-in-uwp-with-ccx"></a>通过 C + 的 UWP 中的异步模式 + / CX
-在 C++/CX 中， 异步编程基于 [**task class**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750113.aspx) 及其 [**then method**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx)。 语法与 JavaScript 承诺的语法类似。 **task 类**及其相关类型还提供取消和管理线程上下文的功能。 有关详细信息，请参阅[异步编程在 C + + / CX](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
+## <a name="asynchronous-patterns-in-uwp-with-ccx"></a>使用 C + 的 UWP 中的异步模式 + CX
+在 C++/CX 中， 异步编程基于 [**task class**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750113.aspx) 及其 [**then method**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx)。 语法与 JavaScript 承诺的语法类似。 **task 类**及其相关类型还提供取消和管理线程上下文的功能。 有关详细信息，请参阅[异步编程在 C + + CX](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
 
-[**create\_async 函数**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750102.aspx)提供了相应支持，以便生成可以通过 JavaScript 或任何其他支持 UWP 的语言使用的异步 API。 有关详细信息，请参阅[创建异步操作 C + + / CX](https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx)。
+[**create\_async 函数**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750102.aspx)提供了相应支持，以便生成可以通过 JavaScript 或任何其他支持 UWP 的语言使用的异步 API。 有关详细信息，请参阅[创建异步操作 C + + CX](https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx)。
 
 ## <a name="asynchronous-patterns-in-uwp-using-javascript"></a>使用 JavaScript 的 UWP 中的异步模式
 在 JavaScript 中，异步编程通过让异步方法返回承诺对象以遵循 [Common JS Promises/A](http://wiki.commonjs.org/wiki/Promises/A) 建议标准。 承诺可在 UWP 和 Windows JavaScript 库中使用。
