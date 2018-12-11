@@ -10,11 +10,11 @@ dev_langs:
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b4f5a2de5c3fa5564b4e4389cfc0806fd5d2844f
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8878258"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8928106"
 ---
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>使用 C# 和 Visual Basic 创建 Windows 运行时组件
 从.NET Framework 4.5 开始，你可以使用托管的代码来创建你自己的 Windows 运行时类型并将它们打包在 Windows 运行时组件中。 你可以在 c + +、 JavaScript、 Visual Basic 或 C# 编写的通用 Windows 平台 (UWP) 应用中使用你的组件。 本主题概述了用于创建组件，规则，并讨论了.NET Framework 支持的 Windows 运行时的某些方面。 一般情况下，该支持设计为对 .NET Framework 程序员透明可见。 但是，在你创建要与 JavaScript 或 C++ 一起使用的组件时，需要意识到这些语言支持 Windows 运行时的方法差异。
