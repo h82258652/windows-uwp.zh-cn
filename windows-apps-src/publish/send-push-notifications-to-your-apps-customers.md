@@ -7,17 +7,17 @@ keywords: Windows 10, uwp, 目标通知, 推送通知, toast, 磁贴
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
 ms.openlocfilehash: 902a8d84c2a0cfa1549c4c3926e838e9bb8ed9c4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751795"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8877716"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>向应用客户发送通知
 
 在正确的时间，通过正确的消息吸引客户是作为应用开发人员取得成功的关键。 通知可以鼓励客户采取行动，例如为应用评分、购买加载项、试用新功能或下载其他应用（或许可通过你提供的[促销代码](generate-promotional-codes.md)免费获取）。
 
-[合作伙伴中心](https://partner.microsoft.com/dashboard)提供以数据驱动的客户参与平台，可用于将通知发送到所有应用的客户，或仅面向符合[客户中所定义条件的应用的 Windows 10 客户的子集类别](create-customer-segments.md)。 你还可以创建一条通知发送到多个应用的客户。
+[合作伙伴中心](https://partner.microsoft.com/dashboard)提供以数据驱动的客户参与平台，可用于将通知发送到所有应用的客户，或仅面向你的应用的 Windows 10 的客户符合[客户中所定义条件的子集类别](create-customer-segments.md)。 你还可以创建一条通知发送到客户的多个应用。
 
 > [!IMPORTANT]
 > 此类通知仅可与 UWP 应用一起使用。
@@ -35,21 +35,21 @@ ms.locfileid: "8751795"
 
 在高级别上，需要完成三件事才能使用通知与客户接洽。
 
-1. **注册应用以接收推送通知。** 通过在应用中添加对 Microsoft Store Services SDK 的引用，然后添加几行注册通知通道合作伙伴中心和应用之间的代码执行此操作。 我们将使用该通道向你的客户传递通知。 有关详细信息，请参阅[针对定向推送通知配置应用](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
+1. **注册应用以接收推送通知。** 通过在你的应用中添加对 Microsoft Store Services SDK 的引用，然后添加几行注册通知通道合作伙伴中心和应用之间的代码执行此操作。 我们将使用该通道向你的客户传递通知。 有关详细信息，请参阅[针对定向推送通知配置应用](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
 2. **确定目标客户。** 你可以向所有应用客户，或（对于为单个应用创建的通知）称为*段*的客户组发送通知，具体可以根据人口统计或收入条件来定义。 有关详细信息，请参阅[创建客户类别](create-customer-segments.md)。
 3. **创建通知内容并发送。** 例如，你可以创建鼓励新客户为应用评分的通知，或者发送促进购买加载项的特别优惠的通知。
 
 
 ## <a name="to-create-and-send-a-notification"></a>创建并发送通知
 
-请按照以下步骤在合作伙伴中心中创建一条通知，并将其发送给特定的客户类别。
+请按照以下步骤在合作伙伴中心中创建通知，并将其发送给特定的客户类别。
 
 > [!NOTE]
-> 应用可以从合作伙伴中心收到通知之前，首先必须注册以接收通知的应用在应用中调用[RegisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)方法。 此方法在 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 中可用。 有关如何调用此方法的详细信息以及代码示例，请参阅[针对定向推送通知配置应用](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
+> 应用可以从合作伙伴中心收到通知之前，你必须先调用[RegisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)在你的应用可以注册应用以接收通知。 此方法在 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 中可用。 有关如何调用此方法的详细信息以及代码示例，请参阅[针对定向推送通知配置应用](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
 
 1. 在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，展开**参与**部分中，，然后选择**通知**。
 2. 在**通知**页上，选择**新通知**。
-3. 在**选择模板**部分中，选择你想要发送，然后单击**确定**[通知类型](#notification-template-types)。
+3. 在**选择模板**部分中，选择你想要发送，然后单击**确定**的[通知类型](#notification-template-types)。
 4. 在下一页中，使用下拉菜单选择要为其生成通知的**单个应用**或**多个应用**。 你只能选择已[配置为使用 Microsoft Store Services SDK 接收通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)的应用。
 5. 在**通知设置**部分，选择通知**名称**，并选择通知发送目标的**客户组**（如果适用）。 （发送至多个应用的通知只能发送至这些应用的所有客户。）如果要使用你尚未创建的段，请选择**创建新客户组**。 请注意，新段 24 小时之后才可用作通知。 有关详细信息，请参阅[创建客户类别](create-customer-segments.md)。
 6. 如果你想要指定何时发送通知，清除**立即发送通知**复选框并选择特定的日期和时间（除非指定为使用每个客户的当地时区，否则所有客户均使用 UTC 时间）。
@@ -109,17 +109,17 @@ ms.locfileid: "8751795"
 ### <a name="to-measure-notification-performance"></a>测量通知性能
 
 1.  创建通知时，请在**通知内容**部分中选中**跟踪应用启动率**复选框。
-2.  在应用中，调用[ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch)方法，以通知合作伙伴中心，响应目标通知已启动你的应用。 此方法由 Microsoft Store Services SDK 提供。 有关如何调用此方法的详细信息，请参阅[配置应用以接收合作伙伴中心的通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
+2.  在应用中，调用[ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch)通知合作伙伴中心，以响应目标通知已启动你的应用。 此方法由 Microsoft Store Services SDK 提供。 有关如何调用此方法的详细信息，请参阅[配置应用以接收合作伙伴中心通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
 
 
 ### <a name="to-view-notification-performance"></a>查看通知性能
 
-如上所述配置通知和你的应用来测量通知性能，如前文所述，你可以查看通知执行的程度。
+如上所述配置通知和你的应用来测量通知性能，如上所述，你可以查看通知执行的程度。
 
 若要查看每个通知的详细的数据：
 
-1.  在合作伙伴中心中，展开**参与**部分，然后选择**通知**。
-2.  在现有通知表中，选择**正在进行**或**已完成**，，然后查看**传送速率**和**应用启动率**列，以查看每个通知的高级性能。
+1.  在合作伙伴中心中，展开**参与**部分并选择**通知**。
+2.  在现有通知的表中，选择**正在进行**或**已完成**，，然后查看**传送速率**和**应用启动率**列以查看每个通知的高级性能。
 3.  若要查看更详细的性能细节，请选择通知名称。 在**交货统计**部分，可以查看以下通知**状态**类型的**计数**和**百分比**信息：
     * **失败**：由于某些原因，通知未发送。 这可能会在 Windows 通知服务发生问题时出现。
     * **通道过期失败**： 无法发送通知，因为应用和合作伙伴中心之间的通道过期。 这可能会在客户长时间没有打开应用的情况下发生。
@@ -128,11 +128,11 @@ ms.locfileid: "8751795"
     * **启动数**：通知已发送、客户已点击该通知，最后应用也打开。 请注意，这仅跟踪应用启动数。 此状态不包含邀请客户执行其他操作的通知，例如启动应用商店以留下评分。
     * **未知**：我们无法确定此通知的状态。
 
-若要分析所有通知的用户活动数据：
+若要分析所有通知用户活动数据：
 
-1.  在合作伙伴中心中，展开**参与**部分，然后选择**通知**。
-2.  在**通知**页面中，单击**分析**选项卡。此选项卡上显示以下数据：
-    * 图形视图的各个用户操作状态为你的 toast 和操作中心通知。
+1.  在合作伙伴中心中，展开**参与**部分并选择**通知**。
+2.  在**通知**页面上，单击**分析**选项卡。此选项卡上显示以下数据：
+    * 为你的 toast 和操作中心通知的各种用户操作状态的图形视图。
     * 为你的 toast 和操作通过率单击世界地图视图中心通知。
 3. 在页面顶部附近，可以选择希望显示数据的时间段。 默认选择为 30D（30 天），但你可以选择要显示 3、6 或 12 个月的数据或指定的自定义数据范围的数据。 你还可以展开**筛选器**筛选的所有数据的应用和市场。
 

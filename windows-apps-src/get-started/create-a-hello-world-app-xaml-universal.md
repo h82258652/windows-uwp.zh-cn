@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 第一个应用, Hello World
 ms.localizationpriority: medium
 ms.openlocfilehash: 433536673efb9d2f17d822599051030b219ed02f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735303"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8877304"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>创建“Hello, world”应用 \(XAML\)
 
@@ -19,7 +19,7 @@ ms.locfileid: "8735303"
 
 在此处，你将了解如何：
 
--   创建一个新的**Visual Studio 2017**项目面向**windows 10**和**UWP**。
+-   创建新的**Visual Studio 2017**项目面向**windows 10**和**UWP**。
 -   编写 XAML 即可更改起始页上的 UI。
 -   在 Visual Studio 中，在本地桌面中运行该项目。
 -   使用 SpeechSynthesizer，可在你按下某个按钮时使应用说话。
@@ -96,7 +96,7 @@ ms.locfileid: "8735303"
 -   包括依赖项、 资源以及你的应用包含的文件的列表。
 
 *一组徽标图像*
--   Assets/Square150x150Logo.scale-200.png 和 Wide310x150Logo.scale 200.png 表示你的应用 （中或范围大小） 在开始菜单中。
+-   Assets/Square150x150Logo.scale-200.png 和 Wide310x150Logo.scale 200.png 表示你的应用 （中等或范围大小） 在开始菜单中。
 -   Assets/Square44x44Logo.png 表示你的应用的开始菜单、 任务栏和任务管理器应用列表中。
 -   Assets/StoreLogo.png 表示 Microsoft Store 中的应用。
 -   Assets/SplashScreen.scale-200.png 是应用启动时显示的初始屏幕。
@@ -222,7 +222,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-请确保为将方法签名现在包含**异步**关键字，或尝试运行应用时，你将收到错误。
+请确保为将方法签名现在包含**异步**关键字，或当你尝试运行应用时，你将收到错误。
 
 ### <a name="what-did-we-just-do"></a>我们刚才做了什么？
 
@@ -233,7 +233,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ## <a name="summary"></a>小结
 
-恭喜，你已为 windows 10 和 UWP 中创建第一个应用 ！
+恭喜，你已为 windows 10 和 UWP 创建第一个应用 ！
 
 若要了解如何使用 XAML 来布置你的应用将使用的控件，请尝试[网格教程](../design/layout/grid-tutorial.md)，或直接跳至[下一步](learn-more.md)。
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, egl, dxgi, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 1279d5100aa00e1b94d7d56b472a0574d22c3416
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8742288"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8875907"
 ---
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a>将 EGL 代码与 DXGI 和 Direct3D 进行比较
 
@@ -28,7 +28,7 @@ DirectX Graphics Interface (DXGI) 以及若干个 Direct3D API 所起的作用�
 
 和 EGL 一样，DXGI 和 Direct3D 提供配置图形资源、获取你的着色器要绘制到的呈现上下文以及在窗口中显示结果的方法。 但是，DXGI 和 Direct3D 具有更多选项，因此从 EGL 移植时需要花费更多精力才能获得正确设置。
 
-> **注意**本指南基于 EGL 1.4 中，找到 Khronos Group 开放规范： [khronos 原生平台图形界面 （EGL 版本 1.4-2011 年 4 月 6 日） \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)。 本指南中未涉及语法中特定于其他平台和开发语言的差别。
+> **注意**本指南基于 EGL 1.4 中，找到 Khronos Group 打开规范： [khronos 原生平台图形界面 （EGL 版本 1.4-2011 年 4 月 6 日） \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)。 本指南中未涉及语法中特定于其他平台和开发语言的差别。
 
  
 

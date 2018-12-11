@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, opengl, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: e3b86054048aaa6aa80f37f66ebc57ab9b8e6b50
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/10/2018
-ms.locfileid: "8827162"
+ms.locfileid: "8878348"
 ---
 # <a name="opengl-es-20-to-direct3d-11-reference"></a>OpenGL ES 2.0 到 Direct3D 11 参考
 
