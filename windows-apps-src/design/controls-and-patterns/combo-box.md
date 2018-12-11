@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: fb286b591881d16ff08dae9fe12770644d886acf
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.openlocfilehash: 2dcefdfd3438e0bf8de94f0b9fd2376cf5c23190
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8802074"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8885923"
 ---
 # <a name="combo-box"></a>组合框
 
@@ -72,10 +72,10 @@ ms.locfileid: "8802074"
 
 ```xaml
 <ComboBox Header="Colors" PlaceholderText="Pick a color" Width="200">
-    <x:String>Blue<x:String>
-    <x:String>Green<x:String>
-    <x:String>Red<x:String>
-    <x:String>Yellow<x:String>
+    <x:String>Blue</x:String>
+    <x:String>Green</x:String>
+    <x:String>Red</x:String>
+    <x:String>Yellow</x:String>
 </ComboBox>
 ```
 

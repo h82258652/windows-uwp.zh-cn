@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b177a7741cae0fe786d095c26a6be08ec598bcbb
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750798"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8885500"
 ---
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>演练：创建简单的 Windows 运行时组件并通过 JavaScript 调用它
 
@@ -22,7 +22,7 @@ ms.locfileid: "8750798"
 
 可以通过 Visual Studio 轻松地将使用 C# 或 Visual Basic 编写的 Windows 运行时组件添加到你的应用，并创建可以从 JavaScript 调用的 Windows 运行时类型。 在内部，Windows 运行时类型可以使用通用 Windows 应用中允许的任何 .NET Framework 功能。 （有关详细信息，请参阅[C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)和[适用于 UWP 应用的概述.NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)。）外部，类型成员可以仅公开 Windows 运行时类型为其参数和返回值。 在生成解决方案时，Visual Studio 将生成 .NET Framework Windows 运行时组件项目，然后执行创建 Windows 元数据 (.winmd) 文件的生成步骤。 这是你的 Windows 运行时组件，即 Visual Studio 在你的应用中包含的组件。
 
-> **注意**.NET Framework 自动将某些常用的.NET Framework 类型，例如基元数据类型和集合类型映射到其 Windows 运行时等效项。 这些 .NET Framework 类型可在 Windows 运行时组件的公共接口中使用，并且将组件作为相应的 Windows 运行时类型向用户显示。 请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)。
+> **注意**.NET Framework 自动将某些常用的.NET Framework 类型，例如基元数据类型和集合类型，映射到其 Windows 运行时等效项。 这些 .NET Framework 类型可在 Windows 运行时组件的公共接口中使用，并且将组件作为相应的 Windows 运行时类型向用户显示。 请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)。
 
 本演练演示以下任务。 完成第一部分（使用 JavaScript 设置 Windows 应用）后，可以按照任意顺序完成剩余部分。
 
@@ -268,7 +268,7 @@ Visual Studio 首先编译类库，然后执行运行 [Winmdexp.exe（Windows �
 > End Class
 > ```
 
-事件处理程序遵循熟悉的.NET Framework 事件模式，不同之处在于，该事件 （在此情况下为 PropertySet 对象） 的发件人被强制转换为 IObservableMap&lt;字符串、 对象&gt;接口 (IObservableMap （的字符串，对象） 中Visual Basic 中)，这是 Windows 运行时接口的实例化[IObservableMap&lt;K，V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx)。 （你可以将转换为其类型发件人有必要。）此外，事件参数被呈现为接口而不是作为对象。
+在事件处理程序遵循熟悉的.NET Framework 事件模式，不同之处在于，该事件 （在此情况下为 PropertySet 对象） 的发件人被强制转换为 IObservableMap&lt;字符串、 对象&gt;接口 (IObservableMap （的字符串，对象） 中Visual Basic 中)，这是 Windows 运行时接口的实例化[IObservableMap&lt;K，V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx)。 （你可以将转换为其类型发件人有必要。）此外，事件参数将显示为接口而不是作为对象。
 
 在 default.js 文件中添加 Runtime1 函数，如下所示。 此代码会创建一个 PropertySetStats 对象、获取其 PropertySet 集合，然后添加自己的事件处理程序 onMapChanged 函数以处理 MapChanged 事件。 对集合进行更改之后，runtime1 调用 DisplayStats 方法显示更改类型的摘要。
 
@@ -373,7 +373,7 @@ runtimeButton2.addEventListener("click", runtime2, false);
 
 若要运行应用，请选择 F5 键。 依次选择“Runtime 1”**** 和“Runtime 2”****。 JavaScript 事件处理程序报告对集合进行的第一项更改。 但是第二项更改具有一个重复键。 .NET Framework 字典的用户期望 Add 方法引发异常，而该情况会如期发生。 JavaScript 处理 .NET Framework 异常。
 
-> **注意**无法显示从 JavaScript 代码的异常的消息。 消息文本替换为堆栈跟踪。 有关详细信息，请参阅“使用 C# 和 Visual Basic 创建 Windows 运行时组件”的“引发异常”。
+> **注意**不能显示从 JavaScript 代码的异常的消息。 消息文本替换为堆栈跟踪。 有关详细信息，请参阅“使用 C# 和 Visual Basic 创建 Windows 运行时组件”的“引发异常”。
 
 相比之下，当 JavaScript 调用带有重复键的 insert 方法时，项的值已发生更改。 这种行为的差异是由于 JavaScript 和 .NET Framework 支持 Windows 运行时的方式不同，如[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)中所述。
 
@@ -470,7 +470,7 @@ returnsButton2.addEventListener("click", returns2, false);
 
 另一种意外的行为：如果你将未分配的 JavaScript 变量作为字符串参数传递，你得到的将是字符串“undefined”。 简而言之，请谨慎将 .NET Framework 集合类型传递给你的 JavaScript 代码。
 
-> **注意**如果你有大量文本，以连接，你可以执行更高效地通过将代码移动到.NET Framework 方法并使用 StringBuilder 类中，如 showMap 函数所示。
+> **注意**如果你有大量的文本，以连接，你可以执行更高效地通过将代码移动到.NET Framework 方法并使用 StringBuilder 类中，如 showMap 函数中所示。
 
 尽管无法从 Windows 运行时组件公开你自己的泛型类型，但你可以使用如下所示的代码返回 Windows 运行时类的 .NET Framework 泛型集合：
 

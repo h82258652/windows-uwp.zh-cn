@@ -1,22 +1,24 @@
 ---
-title: Device Portal 网络凭据 API 参考
+title: 设备门户网络凭据 API 参考
 description: 了解如何添加、 删除或以编程方式更新网络凭据。
 ms.localizationpriority: medium
-ms.openlocfilehash: 2da8dae554a0dcbb84d3d3fc3873e2fb035175dc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.topic: article
+ms.date: 02/08/2017
+ms.openlocfilehash: ac30d8db830c51ee40653feb49b443ed44502617
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730968"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8883046"
 ---
-# <a name="network-credentials-api-reference"></a>网络凭据的 API 参考
-你可以添加、 删除或更新在使用此 REST API 在开发工具包上的存储的网络凭据。
+# <a name="network-credentials-api-reference"></a>网络凭据 API 参考
+你可以添加、 删除或更新在使用此 REST API 在开发工具包上存储的网络凭据。
 
 ## <a name="get-existing-credentials"></a>获取现有凭据
 
 **请求**
 
-你可以获取具有该网络共享凭据的用户的用户名以及存储的共享的列表。
+你可以获取具有该网络共享凭据的用户的用户名以及存储共享的列表。
 
 方法      | 请求 URI
 :------     | :-----
@@ -76,7 +78,7 @@ POST | /ext/networkcredential
 
 - 以下 JSON 元素：
 * NetworkPath-网络共享文件夹的路径。
-* 用户名-用于存储凭据的用户名。
+* 用户名-存储凭据的用户名。
 * 密码-此用户的新的或更新密码。
 
 **响应**   
@@ -93,7 +95,7 @@ HTTP 状态代码      | 说明
 4XX | 错误代码
 5XX | 错误代码
 
-## <a name="remove-stored-credentials-for-a-share"></a>删除共享存储的凭据。
+## <a name="remove-stored-credentials-for-a-share"></a>删除共享的存储的凭据。
 
 **请求**
 
@@ -107,7 +109,7 @@ DELETE | /ext/networkcredential
 
 | URI 参数      | 描述     | 
 | ------------------ |-----------------|
-| NetworkPath        | 将从中删除存储的凭据的共享网络路径。 |
+| NetworkPath        | 要从中删除存储的凭据的共享网络路径。 |
 <br>
 
 **请求标头**

@@ -5,18 +5,18 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误, 详细信息
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b713e3c6c2f7b82e5779e4785cc6b2e320b24f0
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: da3252c42a0c2e2bd02465985737125cc053a616
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8741162"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8880876"
 ---
 # <a name="get-details-for-an-error-in-your-xbox-one-game"></a>获取游戏在 Xbox One 中的错误的详细信息
 
 使用 Microsoft Store 分析 API 中以获取详细的数据的特定错误在 Xbox One 游戏通过 Xbox 开发人员门户 (XDP) 引入并提供在 XDP 分析合作伙伴中心仪表板中的此方法。 此方法仅可以检索过去 30 天内发生的错误的详细信息。
 
-你可以使用此方法之前，你都必须首先使用[获取错误报告数据 Xbox One 游戏的](get-error-reporting-data-for-your-xbox-one-game.md)方法来检索希望获取详细的信息的错误的 ID。
+你可以使用此方法之前，你都必须首先使用[获取错误报告数据 Xbox One 游戏的](get-error-reporting-data-for-your-xbox-one-game.md)方法来检索想要获取详细的信息的错误的 ID。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -25,7 +25,7 @@ ms.locfileid: "8741162"
 
 * 如果尚未开始操作，请先完成 Microsoft Store 分析 API 的所有[先决条件](access-analytics-data-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 获取希望获取详细信息的错误的 ID。 若要获取此 ID，使用[获取错误报告数据的 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)的方法，并使用该方法的响应正文中的**failureHash**值。
+* 获取希望获取详细信息的错误的 ID。 若要获取此 ID，使用[获取错误报告数据对于你的 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)的方法，并使用该方法的响应正文中的**failureHash**值。
 
 ## <a name="request"></a>请求
 
@@ -48,8 +48,8 @@ ms.locfileid: "8741162"
 
 | 参数        | 类型   |  说明      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 要为其检索错误详细信息的 Xbox One 游戏的产品 ID。 若要获取你的游戏的产品 ID，请导航到 Xbox 开发人员门户 (XDP) 中你的游戏，并从 URL 中检索产品 ID。 或者，如果你从 Windows 合作伙伴中心分析报告下载你的运行状况数据，该.tsv 文件中包含的产品 ID。 |  是  |
-| failureHash | 字符串 | 你希望获取详细信息的错误的唯一 ID。 若要获取感兴趣的错误的此值，使用[获取错误报告数据的 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)的方法，并使用该方法的响应正文中的**failureHash**值。 |  是  |
+| applicationId | 字符串 | 要为其检索错误详细信息的 Xbox One 游戏**应用商店 ID** 。 **应用商店 ID**在合作伙伴中心中的应用标识页面上可用。 **应用商店 ID**的一个示例是 9WZDNCRFJ3Q8。 |  是  |
+| failureHash | 字符串 | 你希望获取详细信息的错误的唯一 ID。 若要获取感兴趣的错误此值，使用[获取错误报告数据对于你的 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)的方法并使用该方法的响应正文中的**failureHash**值。 |  是  |
 | startDate | date | 要检索的详细错误数据日期范围中的开始日期。 默认值为当前日期之前 30 天。 |  否  |
 | endDate | date | 要检索的详细错误数据日期范围中的结束日期。 默认值为当前日期。 |  否  |
 | top | int | 要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。 |  否  |
@@ -60,7 +60,7 @@ ms.locfileid: "8741162"
 
 ### <a name="request-example"></a>请求示例
 
-以下示例演示用于获取详细的错误数据的 Xbox One 游戏的多个请求。 *ApplicationId*值替换为你的游戏的产品 ID。
+以下示例演示用于获取详细的错误数据的 Xbox One 游戏的多个请求。 *ApplicationId*值替换为你的游戏的**应用商店 ID** 。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/failuredetails?applicationId=BRRT4NJ9B3D1&failureHash=012e33e3-dbc9-b12f-c124-9d9810f05d8b&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0 HTTP/1.1
@@ -90,7 +90,7 @@ Authorization: Bearer <your access token>
 
 | 值           | 类型    | 描述     |
 |-----------------|---------|----------------------------|
-| applicationId   | 字符串  | 要为其检索详细的错误数据的 Xbox One 游戏的产品 ID。      |
+| applicationId   | 字符串  | 要为其检索详细的错误数据的 Xbox One 游戏**应用商店 ID** 。      |
 | failureHash     | 字符串  | 错误的唯一标识符。     |
 | failureName     | string  | 故障的名称，它由四个部分组成：一个或多个问题类、异常/错误检查代码、发生故障的映像的名称和相关的函数名称。           |
 | date            | 字符串  | 错误数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
@@ -139,5 +139,5 @@ Authorization: Bearer <your access token>
 
 * [使用 Microsoft Store 服务访问分析数据](access-analytics-data-using-windows-store-services.md)
 * [获取错误报告数据在 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)
-* [获取 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)
+* [获取你的 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)
 * [下载你的 Xbox One 游戏中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)
