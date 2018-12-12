@@ -7,11 +7,11 @@ keywords: windows 10，uwp，连接设备，远程系统、 rome，项目 rome
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ms.openlocfilehash: 79decdcb420e7d1b5cb732a354ccddb1ce5b7404
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8893527"
+ms.locfileid: "8929249"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>连接的应用和设备（项目“Rome”）
 

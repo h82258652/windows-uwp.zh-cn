@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d8c33504fcc785aa2f1fc94796e47fe097fbea96
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8887219"
+ms.locfileid: "8931530"
 ---
 # <a name="using-lights-in-windows-ui"></a>Windows UI 中使用光
 
@@ -121,7 +121,7 @@ _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock
 --- | ---
 **正常映射** | NormalMaps 创建其中正常指向光线将显得更亮并正常指向立即将暗的纹理效果。 若要添加到目标 visual NormalMap 使用[CompositionSurfaceBrush](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)使用 LoadedImageSurface 加载 NormalMap 资产。
 **环绕** | 环境光属性主要用于控制整体颜色反射。
-**反射** | 镜面反射创建对象，使它们看起来闪亮上突出显示。 你可以控制镜面反射程度以及闪光的级别。  These properties are manipulated to create material effects like shinny metals or glossy paper.
+**反射** | 镜面反射创建对象，使它们看起来闪亮上突出显示。 你可以控制镜面反射程度以及闪光的级别。  这些属性被操作以创建材料效果，例如 shinny 金属或镜面纸张。
 **漫射** | 漫射的反射散布在所有方向的光。
 **反射率模型** | [反射率模型](/uwp/api/windows.ui.composition.effects.scenelightingeffectreflectancemodel)允许你[Blinn Phong](https://docs.microsoft.com/visualstudio/designers/how-to-create-a-basic-phong-shader)和物理基于 Blinn Phong 之间进行选择。  当你想要有压缩反射高光，你可以选择以物理方式基于 Blinn Phong。
 
