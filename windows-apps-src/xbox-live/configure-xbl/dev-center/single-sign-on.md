@@ -7,11 +7,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心, 单一登录
 ms.openlocfilehash: 32f06edd407d8c1fa74795d0a230c7d56ba8e838
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8894563"
+ms.locfileid: "8941787"
 ---
 # <a name="configure-single-sign-on-in-partner-center"></a>在合作伙伴中心配置单一登录
 
