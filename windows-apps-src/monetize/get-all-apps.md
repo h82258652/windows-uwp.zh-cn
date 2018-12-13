@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c909e707d25e4add534ce89319abe71c2557b59
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 267e1d4de3917ae332cdfe15309f3871ef7b6647
+ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919077"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "8968561"
 ---
 # <a name="get-all-apps"></a>获取所有应用
 
 
-在 Microsoft Store 提交 API 中使用此方法可检索注册到你的合作伙伴中心帐户的所有应用的数据。
+在 Microsoft Store 提交 API 中使用此方法可检索注册到你的合作伙伴中心帐户的应用数据。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -31,7 +31,7 @@ ms.locfileid: "8919077"
 
 | 方法 | 请求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications` |
 
 
 ### <a name="request-header"></a>请求头
@@ -43,7 +43,7 @@ ms.locfileid: "8919077"
 
 ### <a name="request-parameters"></a>请求参数
 
-此方法的所有请求参数均为选填。 如果不填写参数即调用此方法，则响应将包含注册到帐户的所有应用的数据。
+此方法的所有请求参数均为选填。 如果你调用此方法时不使用参数，则响应将包含数据的前 10 个注册到帐户的应用。
 
 |  参数  |  类型  |  说明  |  必填  |
 |------|------|------|------|
@@ -57,19 +57,44 @@ ms.locfileid: "8919077"
 
 ### <a name="request-examples"></a>请求示例
 
-以下示例演示了如何检索注册到帐户的所有应用的相关信息。
+以下示例演示了如何检索注册到帐户的前 10 个应用。
 
-```
+```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-以下示例演示了如何检索注册到帐户的前 10 个应用。
+以下示例演示了如何检索注册到帐户的所有应用的相关信息。 首先，获取前 10 个应用：
 
-```
+```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
+
+然后以递归方式调用`GET https://manage.devcenter.microsoft.com/v1.0/my/{@nextLink}`之前`{@nextlink}`为 null 或在响应中不存在。 例如：
+
+```http
+GET https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10 HTTP/1.1
+Authorization: Bearer <your access token>
+```
+  
+```http
+GET https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=20&top=10 HTTP/1.1
+Authorization: Bearer <your access token>
+```
+
+```http
+GET https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=30&top=10 HTTP/1.1
+Authorization: Bearer <your access token>
+```
+
+如果你已知道你的帐户具有的应用的总数，你可以只需传入数**顶部**参数，以获取有关所有应用的信息。
+
+```http
+GET https://manage.devcenter.microsoft.com/v1.0/my/applications?top=23 HTTP/1.1
+Authorization: Bearer <your access token>
+```
+
 
 ## <a name="response"></a>响应
 
@@ -114,7 +139,7 @@ Authorization: Bearer <your access token>
 | 值      | 类型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 值      | 数组  | 包含有关每个注册到帐户的应用的对象组。 有关每个对象中的数据的详细信息，请参阅[应用程序资源](get-app-data.md#application_object)。                                                                                                                           |
-| @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含可附加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 请求 URI 的相对路径，用于请求下一页数据。 例如，如果初始请求正文的 *top* 参数设置为 10，但有 20 个应用注册到你的帐户，响应正文将包含 ```applications?skip=10&top=10``` 的 @nextLink 值，指示你可以调用 ```https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10``` 请求接下来的 10 个应用。 |
+| @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含可附加到基本 `https://manage.devcenter.microsoft.com/v1.0/my/` 请求 URI 的相对路径，用于请求下一页数据。 例如，如果初始请求正文的 *top* 参数设置为 10，但有 20 个应用注册到你的帐户，响应正文将包含 `applications?skip=10&top=10` 的 @nextLink 值，指示你可以调用 `https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10` 请求接下来的 10 个应用。 |
 | totalCount | int    | 查询的数据结果中的总行数（即注册到帐户的应用总数）。                                                |
 
 

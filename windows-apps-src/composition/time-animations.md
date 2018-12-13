@@ -1,16 +1,16 @@
 ---
 title: 时间动画
 description: 使用 KeyFrameAnimation 类可随着时间推移更改 UI。
-ms.date: 10/10/2017
+ms.date: 12/12/2018
 ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a1fe8c1fcb641c3bc79f1f058befe6f4b44044a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 838a8c3a6dfe89de49fddefd28c53cea563408cf
+ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934366"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "8968571"
 ---
 # <a name="time-based-animations"></a>基于时间的动画
 
@@ -62,22 +62,22 @@ ms.locfileid: "8934366"
 1. 使用动画模板，开始添加关键帧和定义动画属性。
     - 至少需要有一个关键帧（100% 或 1f 关键帧）。
     - 建议同时定义持续时间。
-1. 准备好运行此动画后，针对需要实现动画效果的属性，对 CompositionObject 调用 StartAnimation(...)。 特别是：
-    - `Visual.StartAnimation("targetProperty", CompositionAnimation animation);`
-    - `Visual.StartAnimationGroup(AnimationGroup animationGroup);`
-1. 如果有正在运行的动画，并且希望停止动画或动画组，可以使用以下 API：
-    - `Visual.StopAnimation("targetProperty");`
-    - `Visual.StopAnimationGroup(AnimationGroup AnimationGroup);`
+1. 一次可以随时运行此动画然后 StartAnimation(...)，对 CompositionObject 调用面向你想要设置动画的属性。 特别是：
+    - `visual.StartAnimation("targetProperty", CompositionAnimation animation);`
+    - `visual.StartAnimationGroup(AnimationGroup animationGroup);`
+1. 如果你有正在运行的动画，并且你想要停止动画或动画组，你可以使用这些 Api:
+    - `visual.StopAnimation("targetProperty");`
+    - `visual.StopAnimationGroup(AnimationGroup AnimationGroup);`
 
 让我们来看一看示例，看看这个准则的应用情况。
 
 ## <a name="example"></a>示例
 
-在本示例中，需要对从 <0,0,0> 到 <20,20,20> 超过 1 秒的视觉偏移进行动画处理。 此外，需要看 10 次在这些位置之间的视觉动画。
+在此示例中，你想要设置动画的 < 200,0,0 > 对从 < 0,0,0 > 视觉偏移量超过 1 秒。 此外，需要看 10 次在这些位置之间的视觉动画。
 
 ![关键帧动画](images/animation/animated-rectangle.gif)
 
-首先确定需要进行动画处理的 CompositionObject 和属性。 在本例中，红色方框用名为 `redSquare` 的 Composition Visual 表示。 从此对象启动动画。
+首先确定需要进行动画处理的 CompositionObject 和属性。 在本例中，红色方框用名为 `redVisual` 的 Composition Visual 表示。 从此对象启动动画。
 
 接下来，因为要对 Offset 属性进行动画处理，所以需要创建 Vector3KeyFrameAnimation（Offset 为 Vector3 类型）。 你还可以为 KeyFrameAnimation 定义 KeyFrame。
 
@@ -86,7 +86,7 @@ ms.locfileid: "8934366"
     animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
 ```
 
-然后，定义 KeyFrameAnimation 的属性，以描述其持续时间以及两个位置（当前位置和 <200,0,0>）之间的 10 次动画行为。
+然后，你定义 KeyFrameAnimation 来描述其持续时间以及行为之间的两个位置 （当前位置和 < 200,0,0 >） 10 次动画的属性。
 
 ```csharp
     animation.Duration = TimeSpan.FromSeconds(2);
@@ -98,13 +98,13 @@ ms.locfileid: "8934366"
 最后，为了运行动画，需要对 CompositionObject 的属性启动它。
 
 ```csharp
-redVisual.StartAnimation("Offset.X", animation);
+redVisual.StartAnimation("Offset", animation);
 ```
 
 完整代码如下。
 
 ```csharp
-private void AnimateSquare(Compositor compositor, SpriteVisual redSquare)
+private void AnimateSquare(Compositor compositor, SpriteVisual redVisual)
 { 
     Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
     animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
@@ -112,6 +112,6 @@ private void AnimateSquare(Compositor compositor, SpriteVisual redSquare)
     animation.Direction = Windows.UI.Composition.AnimationDirection.Alternate;
     // Run animation for 10 times
     animation.IterationCount = 10;
-    visual.StartAnimation("Offset.X", animation);
+    redVisual.StartAnimation("Offset", animation);
 } 
 ```

@@ -6,16 +6,16 @@ ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b00ace982bb39b99816013a8491b5b75be765833
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 122be597bbf772d891b7e9839dfc4d9039754b00
+ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933581"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "8968581"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>通过保留名称创建应用
 
-在你的[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建新的应用的第一步保留应用名称。 每个保留名称（有时被称为应用的*标题*）在整个 Microsoft Store 中必须是唯一的。
+在[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建新的应用的第一步保留应用名称。 每个保留名称（有时被称为应用的*标题*）在整个 Microsoft Store 中必须是唯一的。
 
 即使你尚未开始构建应用，也可以为你的应用保留名称。 我们建议尽快，执行此操作，以便其他人可以使用的名称。 请注意，你将需要在三个月内提交应用，以便为你保留该名称。
 

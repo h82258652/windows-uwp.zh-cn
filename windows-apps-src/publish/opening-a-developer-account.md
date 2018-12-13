@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e1c2567393e6d6bfab75b2db068f0b61f7fb6893
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9b65dd07a89b1617f805c17bf43a3ce3f5f3282f
+ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946780"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "8968591"
 ---
 # <a name="opening-a-developer-account"></a>开设开发者帐户
 
@@ -61,7 +61,7 @@ ms.locfileid: "8946780"
 
 -   创建使用尚未属于你或其他个人，如电子邮件地址的 Microsoft 帐户MyCompany_PartnerCenter@outlook.com。 不要使用在贵公司的域的电子邮件地址，尤其是当你的公司已经使用 Azure AD。 (如上所述，你可以添加其他用户从你的公司的 Azure AD 更高版本。)
 -   将此 Microsoft 帐户的访问权限限制为尽可能少的用户。
--   设置公司电子邮件通讯组列表，包括每位需要访问开发人员帐户，并将添加到此电子邮件地址 [Microsoft 帐户关联的安全信息 [(https://account.microsoft.com/security)。 此列表，以接收安全代码发送到此别名允许的所有员工。 如果设置分发列表不可行，你可以将个人的电子邮件地址添加到你的安全信息，但该电子邮件地址的所有者将是唯一的人可以访问和共享安全代码收到提示时 （例如当新的安全信息添加到 t他帐户，或者从新设备的访问时）。
+-   设置公司电子邮件通讯组列表，包括每位需要访问开发人员帐户，并将此电子邮件地址添加到[Microsoft 帐户关联的安全信息](https://account.microsoft.com/security)。 此列表，以接收安全代码发送到此别名允许的所有员工。 如果设置分发列表不可行，你可以将个人的电子邮件地址添加到你的安全信息，但该电子邮件地址的所有者将是唯一的人可以访问和共享安全代码收到提示时 （例如当新的安全信息添加到 t他帐户，或者从新设备的访问时）。
 -   添加 Microsoft 帐户的安全信息的公司电话号码。 尝试使用无需分机并可供关键团队成员的数字。
 -   一般情况下，让开发人员使用[受信任的设备](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)登录到贵公司的开发人员帐户。 所有关键团队成员都应具有对这些受信任的设备的访问权限。 这将减少访问帐户时对发送安全代码的需求。 每个帐户每周可生成的代码数量有限。
 -   如果需要允许从不受信任的电脑访问帐户，请将开发人员访问人数上限限制为五人。 理想情况下，这些开发人员应从共享相同地理和网络位置的计算机访问该帐户。
