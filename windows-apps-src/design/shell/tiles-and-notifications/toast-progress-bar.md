@@ -7,12 +7,12 @@ ms.date: 12/7/2017
 ms.topic: article
 keywords: windows 10, uwp, toast, 进度栏, toast 进度栏, 通知, toast 数据绑定
 ms.localizationpriority: medium
-ms.openlocfilehash: 853e9c1672f1933789c961838734a67b3e816b6a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f955f2a71fed6444c65f9550e1f4fa3baeabe092
+ms.sourcegitcommit: 88265a8c9f6a77a0508a0c9d89b6ab0a6238a1da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921312"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "8969054"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>Toast 进度栏和数据绑定
 
@@ -21,7 +21,7 @@ ms.locfileid: "8921312"
 > [!IMPORTANT]
 > **需要创意者更新和 1.4.0 的通知库**：目标必须为 SDK 15063 并且运行版本 15063 或更高版本以使用 Toast 上的进度栏。 必须使用版本 1.4.0 或更高版本的 [UWP 社区工具包通知 NuGet 库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)来构造 Toast 内容中的进度栏。
 
-Toast 内的进度栏可为“不确定的”（没有特定值，动态点指示有操作正在发生）或“确定的”（在栏中填充了特定百分比，如 60%）。
+Toast 内的进度栏可为"indeterminate"（没有特定值，动态的点指示有操作正在发生） 或"确定"（填充了特定百分比栏的是，如 60%）。
 
 > **重要 API**：[NotificationData 类](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata)，[ToastNotifier.Update 方法](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update)，[ToastNotification 类](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 
