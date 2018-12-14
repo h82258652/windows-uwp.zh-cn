@@ -6,12 +6,12 @@ ms.date: 06/28/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d960235e73ea9172fb966f227af9440923f3553e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 05ff8dd78f58910512291b819d59d68f682cc93c
+ms.sourcegitcommit: 23748871459931fc838c5e259e4822bffcf3cdea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940018"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "8970932"
 ---
 # <a name="file-access-permissions"></a>文件访问权限
 
@@ -22,7 +22,7 @@ ms.locfileid: "8940018"
 在创建新的应用时，默认情况下你可以访问以下文件系统位置：
 
 ### <a name="application-install-directory"></a>应用程序安装目录
-你的应用用户的系统安装的文件夹。
+你的应用在用户的系统安装了该文件夹。
 
 有两种主要方法访问的文件和文件夹在应用的安装目录：
 
@@ -87,7 +87,7 @@ URI 中的“ms-appx:///”前缀是指应用的安装目录。 你可以在[如
 
 此外，与其他位置不同，你还可以使用一些[用于通用 Windows 平台 (UWP) 应用的 Win32 和 COM](https://msdn.microsoft.com/library/windows/apps/br205757) 和一些 [Microsoft Visual Studio 中的 C/C++ 标准库函数](http://msdn.microsoft.com/library/hh875057.aspx)来访问应用安装目录中的文件。
 
-应用的安装目录是一个只读位置。 你无法通过文件选取器获得对安装目录的访问。
+应用的安装目录是一个只读位置。 不能通过文件选取器获得对安装目录的访问权限。
 
 ### <a name="application-data-locations"></a>应用程序数据位置
 你的应用可以存储数据的文件夹。 在安装你的应用时创建这些文件夹（本地、漫游和临时）。
@@ -254,8 +254,8 @@ createFolderTask.then([](StorageFolder^ newFolder)
 
 | 位置 | 功能 | Windows.Storage API |
 |----------|------------|---------------------|
-| 用户有权访问的所有文件。 例如：文档、图片、照片、下载、桌面、OneDrive 等。 | broadFileSystemAccess<br><br>此功能受限。 首次使用时，系统将提示用户允许访问。 可以通过“设置”>“隐私”>“文件系统”配置访问。 如果向 Microsoft Store 提交声明此功能的应用，将需要额外说明应用需要此功能的原因以及打算使用它的方式。<br>此功能适用于 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 命名空间中的 API。 | 不适用 |
-| 文档 | DocumentsLibrary <br><br>注意：必须将文件类型关联（该关联声明你的应用可以在此位置中访问的特定文件类型）添加到你的应用清单。 <br><br>你的应用使用此功能的情况：<br>- 使用有效的 OneDrive URL 或资源 ID 促进跨平台离线访问特定 OneDrive 内容<br>-保存打开的文件复制到用户的 OneDrive 时自动离线 | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
+| 用户有权访问的所有文件。 例如：文档、图片、照片、下载、桌面、OneDrive 等。 | broadFileSystemAccess<br><br>此功能受限。 可以在**设置**中配置的访问权限 > **隐私** > **文件系统**。 因为用户可以授予或拒绝权限**设置**中的任何时间，你应确保你的应用是复原为这些更改。 如果你发现你的应用没有访问权限，你可能会选择提示用户提供[Windows 10 文件系统访问以及隐私](https://privacy.microsoft.com/en-US/windows-10-file-system-access-and-privacy)文章的链接来更改设置。 请注意，用户必须关闭应用、 切换设置，重启应用。 如果在应用运行时，他们可以切换设置，平台将暂停你的应用，以便你可以保存状态，然后强制终止应用，以便应用新设置。 在 2018 年 4 月更新中，对于权限默认处于打开。 在 2018 年 10 月更新中，默认值为 Off。<br /><br />如果向 Microsoft Store 提交声明此功能的应用，将需要额外说明应用需要此功能的原因以及打算使用它的方式。<br>此功能适用[**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346)命名空间中的 Api。 请参阅有关如何启用此功能在应用中的示例本文末尾**示例**部分。 | 不适用 |
+| 文档 | DocumentsLibrary <br><br>注意：必须将文件类型关联（该关联声明你的应用可以在此位置中访问的特定文件类型）添加到你的应用清单。 <br><br>你的应用使用此功能的情况：<br>- 使用有效的 OneDrive URL 或资源 ID 促进跨平台离线访问特定 OneDrive 内容<br>的打开时自动用户的 onedrive 文件保存离线 | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
 | 音乐     | MusicLibrary <br>另请参阅[音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
 | 图片  | PicturesLibrary<br> 另请参阅[音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  
 | 视频    | VideosLibrary<br>另请参阅[音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.VideosLibrary](https://msdn.microsoft.com/library/windows/apps/br227159) |   
