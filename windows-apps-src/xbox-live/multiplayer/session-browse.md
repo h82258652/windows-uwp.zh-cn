@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: de3ff0afd2526c6cb62bc6b6af148712a997a174
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f09687e1ec48318bc785e74fee65c7502835a071
+ms.sourcegitcommit: 1cf04b0b1bd7623cd7f6067b8392dce4372f2c69
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931427"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "8970976"
 ---
 # <a name="multiplayer-session-browse"></a>多人游戏会话浏览
 
@@ -54,7 +54,7 @@ ms.locfileid: "8931427"
 当会话已满，或以其他方式不能加入时，作品可从 MPSD 中删除搜索句柄，以便该会话将不再显示在会话浏览查询中。
 
 >[!NOTE]
-> 搜索句柄在显示要呈现给用户的会话列表时使用。 如果可能，应尽量避免使用搜索句柄进行背景匹配，应考虑使用 [SmartMatch](multiplayer-manager/play-multiplayer-with-matchmaking.md)
+> 搜索句柄在显示要呈现给用户的会话列表时使用。 使用搜索句柄进行背景匹配有效，并不应考虑使用[SmartMatch](multiplayer-manager/play-multiplayer-with-matchmaking.md)
 
 ## <a name="set-up-a-session-for-session-browse"></a>为会话浏览设置会话
 
@@ -224,6 +224,8 @@ Xbox Live 服务仅返回与搜索查询匹配的前 100 项结果。 如果结�
  如果玩家尝试加入会话，但该会话已满或关闭，则你的游戏也应刷新搜索结果。
 
  搜索刷新过多，可能会导致服务限制，因此，你的作品应限制查询的刷新速率。
+
+ 若要减少服务调用卷，搜索句柄包含自定义会话属性可以用来存储和查询瞬息万变的会话属性。 不应将此类属性存储在搜索属性。
 
 ### <a name="example-query-for-search-handles"></a>示例：查询搜索句柄
 

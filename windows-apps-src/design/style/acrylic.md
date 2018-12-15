@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 336e4e64cc0b1819081a7e42b6e3e2d099355248
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 92c08971ee498e93e5a974ef8bd63d00dd27fc7d
+ms.sourcegitcommit: 1cf04b0b1bd7623cd7f6067b8392dce4372f2c69
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947839"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "8970980"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
@@ -68,14 +68,14 @@ ms.locfileid: "8947839"
 
  ![应用内亚克力](images/AppAcrylic_DarkTheme.png)
 
- 图层谨慎使用多个亚克力图面： 多层背景亚克力可以创建人分心光学错觉。
+ 图层谨慎使用多个亚克力图面： 多层背景亚克力可以创建分散注意力的光学错觉。
 
 ## <a name="when-to-use-acrylic"></a>何时使用亚克力
 
-* 用于支持 UI，例如 NavigationView 或串联命令元素使用应用内亚克力。 
+* 用于支持 UI，例如 NavigationView 或行中的命令元素使用应用内亚克力。
 * 对于瞬态 UI 元素，如上下文菜单、 浮出控件和光 dimsissable UI 使用背景亚克力。<br />在瞬态方案中使用亚克力有助于 visual 维持与触发瞬态 UI 的内容。
 
-如果你使用的应用内亚克力导航的图面，请考虑扩展亚克力窗格以提高你的应用上的流下方的内容。 使用 NavigationView 将执行此操作为你自动。 但是，若要避免而导致产生条纹效果，不尝试将多个亚克力边缘到边缘-这可以创建两个模糊表面之间不需要的接合处。 亚克力是一种工具来让 visual 协调设计，但不正确，使用时可能会导致视觉干扰。
+如果你导航图面上使用应用内亚克力，请考虑扩展亚克力窗格以提高你的应用上的流下方的内容。 使用 NavigationView 将执行此操作为你自动。 但是，若要避免而导致产生条纹效果，不尝试将多个亚克力边缘到边缘-这可以创建两个模糊表面之间不需要接合处。 亚克力是一种工具来让 visual 协调设计，但不正确，使用时可能会导致视觉干扰。
 
 请考虑以下使用模式，确定如何最佳亚克力融入你的应用：
 
@@ -86,19 +86,19 @@ ms.locfileid: "8947839"
 
 ![使用应用内水平命令的地图应用](images/Maps_In_App_Acrylic_1.png)
 
-此外，在顶部具有你内容扩展或下亚克力滚动将为应用提供更加沉浸式和无缝体验。
+此外，在顶部无内容扩展或下亚克力的滚动将为应用提供更加沉浸式和无缝体验。
 
 ### <a name="vertical-panes"></a>垂直窗格
 
-对于垂直窗格或图面，可帮助你的应用关闭内容部分，我们建议你使用的不透明背景而不是亚克力。 如果内容顶部打开垂直窗格，如在 NavigationView 的**精简**或**最小**模式下，我们建议你使用应用内亚克力来帮助维护该页面的上下文，当用户在打开该窗格。
+对于垂直窗格或图面，可帮助你的应用关闭内容部分，我们建议你使用而不是亚克力的不透明背景。 如果内容顶部打开垂直窗格，一样在 NavigationView 的**精简**或**最小**模式下，我们建议你使用应用内亚克力来帮助维护该页面的上下文，当用户在打开该窗格。
 
 ### <a name="transient-surfaces"></a>瞬态图面
 
-如应用带有菜单浮出控件，非模式弹出窗口或轻型消除窗格，建议使用背景亚克力。
+适用于与菜单浮出控件，非模式弹出窗口的应用或轻型消除窗格，建议使用背景亚克力。
 
 ![使用信息性的浮出控件的邮件应用模式](images/Mail_TransientContextMenu.png)
 
-默认情况下，许多控件将使用亚克力。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)、 [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)、[组合框](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)和类似控件与光 dimiss 弹出窗口将所有使用瞬态亚克力时它们进行调用。
+默认情况下，许多控件将使用亚克力。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)、 [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)、[组合框](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)和类似控件与光 dimiss 弹出窗口将所有使用瞬态亚克力在调用时。
 
 > [!Note]
 > 呈现亚克力图面是 GPU 密集型，从而导致设备的功耗增加并缩短电池使用时间。 亚克力效果会自动禁用设备进入节电模式，并且用户可以禁用亚克力效果的所有应用，如果他们选择。
@@ -145,7 +145,7 @@ ms.locfileid: "8947839"
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> <b>建议用法：</b>如果你的应用使用 AltMedium 颜色的辅助文本且文本大小的 18 像素或更大，你可以放置文本后面的这些更半透明 70%亚克力资源。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
+        <td> <b>建议用法：</b>如果你的应用使用 AltMedium 颜色的辅助文本且文本大小的 18 像素或更大，你可以将文本后面的这些更半透明 70%亚克力资源放。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush、SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush、SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush、SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush、SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush、SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush、SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
@@ -192,14 +192,20 @@ ms.locfileid: "8947839"
 你可以选择在应用的亚力克中添加颜色色调，以展示个性化设计或实现与页面其他元素之间的视觉平衡。 若要显示颜色而非灰度，你需要使用以下属性定义属于你自己的亚克力画笔。
  - **TintColor**：颜色/色调覆盖层。 考虑指定 RGB 颜色值和 alpha 通道不透明度。
  - **TintOpacity**：色调层不透明度。 我们建议将 80%不透明度作为起点，尽管不同的颜色看起来可能在其他 translucencies 更具吸引力。
+ - **TintLuminosityOpacity**： 控制允许通过从背景亚克力图面的饱和度的量。
  - **BackgroundSource**：指定使用背景亚克力还是应用内亚克力的标记。
- - **FallbackColor**： 节电模式中替换亚克力的纯色。 对于背景亚克力，当应用并非位于活动状态桌面窗口中或者应用正在手机和 Xbox 上运行时，回退颜色也会替换亚克力。
+ - **FallbackColor**： 使用节电模式中替换亚克力的纯色。 对于背景亚克力，当应用并非位于活动状态桌面窗口中或者应用正在手机和 Xbox 上运行时，回退颜色也会替换亚克力。
 
 ![浅色主题亚克力样本](images/CustomAcrylic_Swatches_LightTheme.png)
 
 ![深色主题亚克力样本](images/CustomAcrylic_Swatches_DarkTheme.png)
 
+![亮度 opactity 相较于色调不透明度](images/LuminosityVersusTint.png)
+
 若要添加亚克力画笔，请定义用于深色、浅色和高对比度主题的三个资源。 请注意，在高对比度主题中，我们建议使用 x:Key 与深色/浅色 AcrylicBrush 相同的 SolidColorBrush。
+
+> [!Note] 
+> 如果你未指定 TintLuminosityOpacity 值，系统将自动调整具体取决于你的 TintColor 和 TintOpacity 其值。
 
 ```xaml
 <ResourceDictionary.ThemeDictionaries>
@@ -208,6 +214,7 @@ ms.locfileid: "8947839"
             BackgroundSource="HostBackdrop"
             TintColor="#FFFF0000"
             TintOpacity="0.8"
+            TintLuminosityOpacity="0.5"
             FallbackColor="#FF7F0000"/>
     </ResourceDictionary>
 
@@ -221,6 +228,7 @@ ms.locfileid: "8947839"
             BackgroundSource="HostBackdrop"
             TintColor="#FFFF0000"
             TintOpacity="0.8"
+            TintLuminosityOpacity="0.5"
             FallbackColor="#FFFF7F7F"/>
     </ResourceDictionary>
 </ResourceDictionary.ThemeDictionaries>
@@ -249,10 +257,9 @@ else
 
 ## <a name="extend-acrylic-into-the-title-bar"></a>将亚克力扩展到标题栏
 
-若要创建无缝的应用窗口外观，可以将亚克力应用到标题栏区域。 此示例中将亚克力扩展到标题栏的方式是将 [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) 对象的 [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) 和 [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) 属性设置为 [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent)。 
+若要创建无缝的应用窗口外观，可以将亚克力应用到标题栏区域。 此示例中将亚克力扩展到标题栏的方式是将 [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) 对象的 [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) 和 [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) 属性设置为 [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent)。
 
 ```csharp
-/// Extend acrylic into the title bar. 
 private void ExtendAcrylicIntoTitleBar()
 {
     CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
@@ -262,11 +269,10 @@ private void ExtendAcrylicIntoTitleBar()
 }
 ```
 
-此代码可放在应用的 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) 方法 (_App.xaml.cs_) 中、对 [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) 的调用后（如此处所示），或应用的第一页中。 
-
+此代码可放在应用的 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) 方法 (_App.xaml.cs_) 中、对 [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) 的调用后（如此处所示），或应用的第一页中。
 
 ```csharp
-// Call your extend acrylic code in the OnLaunched event, after 
+// Call your extend acrylic code in the OnLaunched event, after
 // calling Window.Current.Activate.
 protected override void OnLaunched(LaunchActivatedEventArgs e)
 {
@@ -313,7 +319,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
 * 请将亚克力用作非主要应用图面（例如导航窗格）的背景材料。
 * 请将亚克力扩展到至少一个应用边缘，通过与应用周围环境巧妙融合营造无缝体验。
-* 不要在你的应用的较大的背景图面上放置桌面 arylic-这将中断主要用于瞬态表面的亚克力的心理模型。
+* 不要在你的应用的较大的背景图面上放置桌面 arylic-这将中断主要用于瞬态曲面的亚克力的心理模型。
 * 不要直接并列放置应用内亚克力和背景亚克力，以避免接缝处产生不协调的视觉效果。
 * 不要并列放置具有相同色调和不透明度的多个亚克力窗格，因为这会导致出现不协调的明显接缝。
 * 不要将主题色文本放在亚克力图面上。

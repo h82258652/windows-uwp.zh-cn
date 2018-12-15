@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4960f6eb18fe4cffe34b8167a328521e9038c684
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4878ce99d449674243c8a3f7360a9e9b0dd6db19
+ms.sourcegitcommit: 1cf04b0b1bd7623cd7f6067b8392dce4372f2c69
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930728"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "8970990"
 ---
 # <a name="create-custom-transport-controls"></a>创建自定义传输控件
 
@@ -51,7 +51,7 @@ MediaPlayerElement 具有可自定义的 XAML 传输控件来管理通用 Window
 
 ## <a name="template-structure"></a>模板结构
 
-[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx) 是默认样式的一部分。 传输控件的默认样式在 [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) 类引用页中显示。 可以将此默认样式复制到你的项目，以对其进行修改。 该 ControlTemplate 被划分为类似于其他 XAML 控件模板的若干部分。
+[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx) 是默认样式的一部分。 可以将此默认样式复制到你的项目，以对其进行修改。 该 ControlTemplate 被划分为类似于其他 XAML 控件模板的若干部分。
 - 该模板的第一部分包含 MediaTransportControls 的各个组件的 [**Style**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) 定义。
 - 第二部分定义 MediaTransportControls 所使用的各个视觉状态。
 - 第三部分包含将各种 MediaTransportControls 元素保留在一起并定义组件布局方式的 [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)。
