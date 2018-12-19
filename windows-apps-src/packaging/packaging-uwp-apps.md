@@ -9,18 +9,18 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: eaee9d28d8e927e3fbc9d56c8aa7c24422d1484a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f11fa421fe5bcbf8f37098df91344abdb9915890
+ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928076"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "8976884"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual Studio 打包 UWP 应用
 
 若要出售你的通用 Windows 平台 (UWP) 应用或将其分配给其他用户，你需要将其打包。 如果你不想通过 Microsoft Store 分发应用，也可以将应用包直接旁加载到设备上或通过 [Web 安装](installing-UWP-apps-web.md)分发它。 本文介绍使用 Visual Studio 配置、创建和测试 UWP 应用包的过程。 有关管理和部署业务线 (LOB) 应用的详细信息，请参阅[企业应用管理](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management)。
 
-在 Windows 10 中，你可以提交应用包、 应用程序包或[合作伙伴](https://partner.microsoft.com/dashboard)中心完成应用包上传文件。 在上述选项中，提交包上传文件将提供最佳的体验。 
+在 Windows 10 中，你可以提交应用包、 应用程序包或[合作伙伴](https://partner.microsoft.com/dashboard)中心的完整的应用包上传文件。 在上述选项中，提交包上传文件将提供最佳的体验。
 
 ## <a name="types-of-app-packages"></a>应用包类型
 
@@ -30,12 +30,12 @@ ms.locfileid: "8928076"
 - **应用程序包 （.appxbundle 或.msixbundle）**  
     应用程序包可以包含多个应用包，每个包都构建为支持特定的设备体系结构。 例如，一个应用程序包可以包含三个独立的应用包，它们分别用于 x86、x64 和 ARM 配置。 应尽可能生成应用程序包，因为它们使你的应用能够在尽可能广泛的设备上使用。  
 
-- **应用包上传文件 (.appxupload)**  
-    一个可以包含多个应用包或一个应用程序包以支持各种处理器体系结构的文件。 上传文件还包含一个符号文件，在 Microsoft Store 中发布应用后，你可以使用该符号文件[分析应用性能](https://docs.microsoft.com/windows/uwp/publish/analytics)。 如果你使用 Visual Studio 将应用打包并且打算将它提交到合作伙伴中心中，用于发布，将为你自动创建该文件。 请务必注意，这些都是**仅**有效的应用包的合作伙伴中心提交可以使用 Visual Studio 创建的。
+- **应用包上传文件 （.appxupload 或.msixupload）**  
+    一个可以包含多个应用包或一个应用程序包以支持各种处理器体系结构的文件。 上传文件还包含一个符号文件，在 Microsoft Store 中发布应用后，你可以使用该符号文件[分析应用性能](https://docs.microsoft.com/windows/uwp/publish/analytics)。 如果你使用 Visual Studio 将应用打包并且打算将它提交到合作伙伴中心中，发布，将为你自动创建该文件。 请务必注意，这些是**仅**有效的应用包的合作伙伴中心提交可以使用 Visual Studio 创建的。
 
 以下是准备和创建应用包的步骤概述：
 
-1.  [在打包应用前](#before-packaging-your-app)。 按照以下步骤来确保你的应用可以随时打包以进行合作伙伴中心提交。
+1.  [在打包应用前](#before-packaging-your-app)。 请按照以下步骤来确保你的应用可以随时打包以进行合作伙伴中心提交。
 2.  [配置应用包](#configure-an-app-package)。 使用 Visual Studio 清单设计器配置程序包。 例如，添加磁贴图像并选择应用支持的方向。
 3.  [创建应用包上传文件](#create-an-app-package-upload-file)。 使用 Visual Studio 应用包向导创建应用包，然后使用 Windows 应用认证工具包验证程序包。
 4.  [旁加载应用包](#sideload-your-app-package)。 将应用旁加载到设备后，你可以测试该应用是否按预期运行。
@@ -44,7 +44,7 @@ ms.locfileid: "8928076"
 
 ## <a name="before-packaging-your-app"></a>在打包应用前
 
-1.  **测试你的应用。** 合作伙伴中心提交你的应用打包之前，确保它可以在你计划支持的所有设备系列上按预期。 这些设备系列可能包括桌面设备、移动设备、Surface Hub、Xbox、IoT 设备或其他设备。
+1.  **测试你的应用。** 合作伙伴中心提交你的应用打包之前，请确保它可以在你计划支持的所有设备系列上按预期。 这些设备系列可能包括桌面设备、移动设备、Surface Hub、Xbox、IoT 设备或其他设备。
 2.  **优化你的应用。** 你可以使用 Visual Studio 的分析和调试工具来优化你的 UWP 应用的性能。 例如，用于 UI 响应能力的时间线工具、内存使用工具、CPU 使用工具等。 有关这些工具的详细信息，请参阅[分析功能教程](https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour)主题。
 3.  **检查 .NET Native 兼容性（对于 VB 和 C# 应用）。** 在通用 Windows 平台中，有一个本机编译器可以提升应用的运行时性能。 通过这项更改，你应在该编译环境中测试你的应用。 默认情况下，**Release** 版本配置会启用 .NET 本机工具链，因此请务必使用此 **Release** 配置测试应用并检查应用是否按预期运行。 [调试 .NET Native Windows 通用应用](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx)对在使用 .NET Native 时可能遇到的一些常见调试问题做了更详细的说明。
 
@@ -63,25 +63,25 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
     检查是否在**视觉资源**选项卡上拥有 UWP 应用所需的所有图像。
 
-    你可以从**打包**选项卡中输入发布数据。 你可以从此位置选择用于对你的应用进行签名的证书。 所有 UWP 应用都必须使用证书进行签名。 
-    
+    你可以从**打包**选项卡中输入发布数据。 你可以从此位置选择用于对你的应用进行签名的证书。 所有 UWP 应用都必须使用证书进行签名。
+
     >[!IMPORTANT]
-    >如果你是在 Microsoft Store 中发布应用，将使用你的受信任的证书进行签名。 这让用户能够安装和运行你的应用，而不必安装关联的应用签名证书。 
-    
+    >如果你是在 Microsoft Store 中发布应用，将使用你的受信任的证书进行签名。 这让用户能够安装和运行你的应用，而不必安装关联的应用签名证书。
+
     如果你不打算发布应用，只想旁加载应用包，则你首先需要信任该程序包。 要信任该程序包，必须在用户设备上安装证书。 有关旁加载的详细信息，请参阅[启用设备进行开发](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。
 
 4.  在你对应用进行必要的编辑后，请保存你的 **Package.appxmanifest** 文件。
 
-如果你通过 Microsoft Store 分发应用，Visual Studio 可以将你的程序包关联到 Microsoft Store。 在关联应用时，会自动更新清单设计器的“打包”选项卡中的某些字段。
+如果你要分发你的应用通过 Microsoft 应用商店，Visual Studio 可以将你的程序包关联的应用商店。 若要执行此操作，右键单击项目名称在解决方案资源管理器，然后选择**应用商店**->**将应用与应用商店关联**。 你还可以执行此操作在**创建应用包**向导中，将在下一节中进行介绍。 在关联应用时，会自动更新清单设计器的“打包”选项卡中的某些字段。
 
 ## <a name="create-an-app-package-upload-file"></a>创建应用包上传文件
 
-若要通过 Microsoft 应用商店分发应用，你必须创建应用包 （.appx 或.msix）、 应用程序包 （.appxbundle 或.msixbundle） 或上传程序包 (.appxupload) 和[提交到合作伙伴中心的封装的应用](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 尽管可以提交到单独的合作伙伴中心的应用包或应用程序包，但你可以鼓励提交上传程序包。
+若要通过 Microsoft 应用商店分发应用必须创建应用包 （.appx 或.msix）、 应用程序包 （.appxbundle 或.msixbundle） 或上传程序包 (.appxupload) 和[提交到合作伙伴中心的封装的应用](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 虽然很可能在提交应用包或应用程序包到单独的合作伙伴中心，你可以鼓励提交上传程序包。
 
 >[!NOTE]
-> 应用包上传文件 (.appxupload) 是**只有**一种可以使用 Visual Studio 创建的合作伙伴中心的有效的应用包。 其他有效的[可以手动创建的应用包](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)，无需使用 Visual Studio。 
+> 应用包上传文件 （.appxupload 或.msixupload） 是有效的合作伙伴中心，可以使用 Visual Studio 创建的应用包**只**类型。 其他有效的[可以手动创建的应用包](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)，无需使用 Visual Studio。
 
-你可以通过使用**创建应用包**向导执行该操作。 请按照以下步骤来创建适用于使用 Visual Studio 的合作伙伴中心提交的程序包。
+你可以通过使用**创建应用包**向导执行该操作。 请按照以下步骤来创建适用于使用 Visual Studio 的合作伙伴中心提交程序包。
 
 **创建应用包上传文件**
 
@@ -91,19 +91,17 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
     将显示**创建应用包**向导。
 
-3.  选择是中的第一个对话框，询问你是否希望生成要上传到合作伙伴中心，然后单击下一步的程序包。  
+3.  选择**我想要创建包上传到 Microsoft Store 使用新的应用名称**中的第一个对话框，然后单击**下一步**。  
     ![显示的“创建应用包”对话框窗口](images/packaging-screen3.jpg)
 
-    如果你选择否，Visual Studio 将不会生成应用包上传 (.appxupload) 文件的合作伙伴中心提交。 如果你仅希望旁加载应用以在内部设备上运行它或用于测试目的，那么你可以选择此选项。 有关旁加载的详细信息，请参阅[启用设备进行开发](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。
-4.  登录到合作伙伴中心开发者帐户。 如果你还没有开发者帐户，该向导将帮助你创建一个。
-5.  选择你的程序包，并且应用名称，或者如果尚未保留一个合作伙伴中心中保留一个新。  
+    如果已将你的项目关联的应用在应用商店中，你还可以用于创建在关联的应用商店应用的程序包的选项。 如果你选择**我想要创建适用于旁加载程序包**，Visual Studio 将不会生成应用包上传 （.msixupload 或.appxupload） 文件的合作伙伴中心提交。 如果你仅希望旁加载应用以在内部设备上运行它或用于测试目的，那么你可以选择此选项。 有关旁加载的详细信息，请参阅[启用设备进行开发](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。
+4.  在下一页上，在开发人员帐户登录到合作伙伴中心。 如果你还没有开发者帐户，该向导将帮助你创建一个。
     ![使用显示的应用名称选择创建应用包窗口](images/packaging-screen4.jpg)
-6.  确保在 **Select and Configure Packages** 对话框中选择全部三种体系结构配置（x86、x64 和 ARM），以确保你的应用能够部署到最广泛的设备上。 在**生成应用程序包**列表框中，选择**始终**。 应用程序包 (.appxbundle) 是首选通过单个应用包文件因为它包含每种类型的处理器体系结构配置的应用包集合。 当你选择生成应用程序包时，应用程序包将包含在最终的应用包上传 (.appxupload) 文件中，并带有调试和崩溃分析信息。 如果你不确定该选择哪种体系结构，或者想了解有关各种设备使用哪种体系结构的详细信息，请参阅[应用包体系结构](https://docs.microsoft.com/windows/uwp/packaging/device-architecture)。  
+5.  从当前已注册到你的帐户的应用的列表中选择你的程序包的应用名称也可以保留一个新，如果尚未保留一个合作伙伴中心中。  
+6.  确保在 **Select and Configure Packages** 对话框中选择全部三种体系结构配置（x86、x64 和 ARM），以确保你的应用能够部署到最广泛的设备上。 在**生成应用程序包**列表框中，选择**始终**。 应用程序包 （.appxbundle 或.msixbundle） 是首选通过单个应用包文件因为它包含每种类型的处理器体系结构配置的应用包集合。 当你选择生成应用程序包时，应用程序包将包含在最终应用包上传 （.appxupload 或.msixupload） 文件以及调试和崩溃分析信息。 如果你不确定该选择哪种体系结构，或者想了解有关各种设备使用哪种体系结构的详细信息，请参阅[应用包体系结构](https://docs.microsoft.com/windows/uwp/packaging/device-architecture)。  
     ![显示的创建应用包窗口及包配置](images/packaging-screen5.jpg)
-
-
-7.  包括完整的 PDB 符号文件[分析应用性能](https://docs.microsoft.com/windows/uwp/publish/analytics)从合作伙伴中心后您的应用完成发布。 配置任何其他详细信息，例如版本编号或包输出位置。
-9.  单击**创建**生成应用包。 如果你在步骤 3 中选择**是**，并创建合作伙伴中心提交的软件包，该向导将创建包上传 (.appxupload) 文件。 如果在步骤 3 中选择了**否**，向导将根据步骤 6 中的选择创建单个应用包或应用程序包。
+7.  包括完整的 PDB 符号文件[分析应用](https://docs.microsoft.com/windows/uwp/publish/analytics)性能从合作伙伴中心后已发布你的应用。 配置任何其他详细信息，例如版本编号或包输出位置。
+9.  单击**创建**生成应用包。 如果你在步骤 3 中选择**我想要创建要上传到 Microsoft Store 的程序包**选项之一，并创建合作伙伴中心提交的软件包，向导将创建包上传 （.appxupload 或.msixupload） 文件。 如果你在步骤 3 中选择了**我想要创建适用于旁加载程序包**，该向导将创建的单个应用包或应用程序包具体取决于你在步骤 6 中的选择。
 10. 应用成功打包后，你将看到下面的对话框。  
     ![显示的程序包创建完成窗口，带有验证选项](images/packaging-screen6.jpg)
 
@@ -115,16 +113,16 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
     如果你有想要用于测试的远程 windows 10 设备，你将需要在该设备上手动安装 Windows 应用认证工具包。 下一节将指导你完成这些步骤。 完成该操作后，你可以选择**远程计算机**并单击**启动 Windows 应用认证工具包**，以连接到远程设备并运行验证测试。
 
-12. 在 WACK 完成并且你的应用通过认证后，你就可以向合作伙伴中心提交应用。 请确保上传正确的文件。 可以在你的解决方案的根文件夹 `\[AppName]\AppPackages` 中找到文件的默认位置，并且它将以 .appxupload 文件扩展名结束。 如果你选择了应用程序包以及所有包体系结构，则将采用 `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload` 形式的名称。
+12. 在 WACK 完成并且你的应用通过认证后，你就可以向合作伙伴中心提交应用。 请确保上传正确的文件。 可以在你的解决方案的根文件夹中找到该文件的默认位置`\[AppName]\AppPackages`，并且它将以.appxupload 或.msixupload 文件扩展名结束。 名称将形式的`[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload`或`[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload`如果你选择了应用程序包以及所有包体系结构。
 
-有关应用提交到合作伙伴中心的详细信息，请参阅[应用提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
+应用提交到合作伙伴中心的详细信息，请参阅[应用提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
 
-**验证你在远程 windows 10 设备上的应用包**
+**验证应用包的远程 windows 10 设备**
 
 1.  通过[启用设备进行开发](https://msdn.microsoft.com/library/windows/apps/Dn706236)说明启用 windows 10 设备进行开发。
-    **重要提示**你无法验证你的应用包的远程 ARM 设备上的 windows 10。
+    **重要**无法用于 windows 10 验证应用包的远程 ARM 设备上。
 2.  下载并安装适用于 Visual Studio 的远程工具。 这些工具用于远程运行 Windows 应用认证工具包。 你可以通过访问[在远程计算机上运行 UWP 应用](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor)获取有关这些工具的详细信息，包括下载位置。
-3.  下载所需的[Windows 应用认证工具包](http://go.microsoft.com/fwlink/p/?LinkID=309666)，然后将它安装在远程 windows 10 设备。
+3.  下载所需的[Windows 应用认证工具包](http://go.microsoft.com/fwlink/p/?LinkID=309666)，然后将它安装在远程 windows 10 设备上。
 4.  在向导的**程序包创建已完成**页面上，选择**远程计算机**选项按钮，然后选择**测试连接**按钮旁边的省略号按钮。
     **注意****远程计算机**选项按钮是你选择了至少一个支持验证的解决方案配置时才可用。 有关使用 WACK 测试应用的详细信息，请参阅 [Windows 应用认证工具包](https://msdn.microsoft.com/library/windows/apps/Mt186449)。
 5.  指定你的子网内部的设备规格，或提供你的子网外部的设备的域名服务器 (DNS) 名称或 IP 地址。
@@ -133,7 +131,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 ## <a name="sideload-your-app-package"></a>旁加载应用包
 
-Windows 10 周年更新引入了双击应用包文件安装应用包的简单方法。 若要使用这种情况，导航到你的应用包或应用程序包文件，然后双击它。 应用安装程序启动并提供基本的应用信息及安装按钮、安装进度条和任何相关的错误消息。 
+Windows 10 周年更新引入了双击应用包文件安装应用包的简单方法。 若要使用此，导航到你的应用包或应用程序包文件，然后双击它。 应用安装程序启动并提供基本的应用信息及安装按钮、安装进度条和任何相关的错误消息。
 
 ![安装名为 Contoso 的示例应用时的应用安装程序显示](images/appinstaller-screen.png)
 
@@ -146,7 +144,7 @@ Windows 10 周年更新引入了双击应用包文件安装应用包的简单方
 下面的列表提供了旁加载应用的要求。
 
 -   你必须[启用你的设备进行开发](https://msdn.microsoft.com/library/windows/apps/Dn706236)。
--   旁加载到你的应用在 windows 10 移动版设备上，使用[WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md)工具。
+-   旁加载你的应用在 windows 10 移动版设备上，使用[WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md)工具。
 
 **将应用旁加载到台式机、笔记本电脑或平板电脑**
 

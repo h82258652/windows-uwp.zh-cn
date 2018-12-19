@@ -5,12 +5,12 @@ ms.date: 11/13/2017
 ms.topic: article
 keywords: Windows 10, uwp, SQL Server, 数据库
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cb4b16cea3368660ffcb1bc4b252391a73ab13e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4fe215a593293ff91afb7f71a830512ac365093f
+ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940808"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "8976924"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>在 UWP 应用中使用 SQL Server 数据库
 通过使用 [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 命名空间中的类，你的应用可以直接连接到 SQL Server 数据库然后存储和检索数据。
@@ -29,7 +29,7 @@ ms.locfileid: "8940808"
 
 在清单设计器中打开你的 UWP 项目的 **Package.appxmanifest** 文件。
 
-在“功能”**** 选项卡中，选中“企业身份验证”**** 复选框。
+在**功能**选项卡中，选择**企业身份验证**复选框，如果你使用的 Windows 身份验证进行身份验证 SQL Server。
 
 ![企业身份验证功能](images/enterprise-authentication.png)
 
@@ -61,8 +61,13 @@ ms.locfileid: "8940808"
 ```csharp
 sealed partial class App : Application
 {
+    // Connection string for using Windows Authentication.
     private string connectionString =
         @"Data Source=YourServerName\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
+
+    // This is an example connection string for using SQL Server Authentication.
+    // private string connectionString =
+    //     @"Data Source=YourServerName\YourInstanceName;Initial Catalog=DatabaseName; User Id=XXXXX; Password=XXXXX";
 
     public string ConnectionString { get => connectionString; set => connectionString = value; }
 
