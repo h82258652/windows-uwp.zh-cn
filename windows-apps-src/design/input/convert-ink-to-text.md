@@ -8,12 +8,12 @@ keywords: Windows 墨迹, Windows 墨迹书写, DirectInk, InkPresenter, InkCanv
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 581f91099a09cff9307a2b4119f9db938f1b83f9
-ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
+ms.openlocfilehash: 07ed74af3ebe558c6a82cd799cb6aa1efa035e46
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "8976914"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980375"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>将 Windows Ink 笔划识别为文本和形状
 
@@ -373,17 +373,17 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
     通过[**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478)检测到的每个单词产生识别结果。
 
-```csharp
-// Recognize all ink strokes on the ink canvas.
-    IReadOnlyList<InkRecognitionResult> recognitionResults =
-        await inkRecognizerContainer.RecognizeAsync(
-            inkCanvas.InkPresenter.StrokeContainer,
-            InkRecognitionTarget.All);
-```
+    ```csharp
+    // Recognize all ink strokes on the ink canvas.
+        IReadOnlyList<InkRecognitionResult> recognitionResults =
+            await inkRecognizerContainer.RecognizeAsync(
+                inkCanvas.InkPresenter.StrokeContainer,
+                InkRecognitionTarget.All);
+    ```
 
-    Each [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) object contains a set of text candidates. The topmost item in this list is considered by the recognition engine to be the best match, followed by the remaining candidates in order of decreasing confidence.
+    每个[**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464)对象包含一组的候选项文本。 识别引擎将此列表中最上面的项视为最佳匹配结果，后跟以置信度降序排列的其余候选项。
 
-    We iterate through each [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) and compile the list of candidates. The candidates are then displayed and the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) is cleared (which also clears the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)).
+    我们将循环访问每个[**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464)并进行编译的候选项列表。 然后显示这些候选项，并且[**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492)清除 （这也会清除[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)）。
 
     ```csharp
     string str = "Recognition result\n";
@@ -404,7 +404,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
         inkCanvas.InkPresenter.StrokeContainer.Clear();
     ```
 
-    Here's the click handler example, in full.
+    下面是完整的单击处理程序示例。
 
     ```csharp
     // Handle button click to initiate recognition.

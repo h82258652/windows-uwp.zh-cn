@@ -2,16 +2,16 @@
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: 访问家庭组内容
 description: 访问存储在用户的“家庭组”文件夹中的内容，包括图片、音乐和视频。
-ms.date: 02/08/2017
+ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 422d02b8797bef8ea4f793ba652e9e4e34421a9b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 06c42cff51852f7d0456d533af60455d7d1b9caf
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932224"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980295"
 ---
 # <a name="accessing-homegroup-content"></a>访问家庭组内容
 
@@ -34,7 +34,7 @@ ms.locfileid: "8932224"
     若要访问家庭组内容，用户的计算机必须已设置家庭组，且你的应用必须至少具有以下功能之一：**picturesLibrary**、**musicLibrary** 或 **videosLibrary**。 当你的应用访问“家庭组”文件夹时，它将仅看到与在你的应用清单中声明的功能相对应的库。 若要了解详细信息，请参阅[文件访问权限](file-access-permissions.md)。
 
     > [!NOTE]
-    >  无论在你的应用的清单中声明了什么功能，也无论用户的共享设置如何，你的应用都看不到家庭组的文档库中的内容。     
+    > 无论在你的应用的清单中声明了什么功能，也无论用户的共享设置如何，你的应用都看不到家庭组的文档库中的内容。     
 
 -   **了解如何使用文件选取器**
 

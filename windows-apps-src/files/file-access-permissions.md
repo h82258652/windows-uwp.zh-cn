@@ -2,20 +2,25 @@
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: 文件访问权限
 description: 默认情况下，应用可以访问特定文件系统位置。 应用也可以通过文件选取器或声明功能访问其他位置。
-ms.date: 06/28/2018
+ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 05ff8dd78f58910512291b819d59d68f682cc93c
-ms.sourcegitcommit: 23748871459931fc838c5e259e4822bffcf3cdea
+dev_langs:
+- csharp
+- cppwinrt
+- cpp
+- javascript
+ms.openlocfilehash: 5c3732927c59cb768ef522a847f79f82994852b7
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "8970932"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980395"
 ---
 # <a name="file-access-permissions"></a>文件访问权限
 
-默认情况下，通用 Windows 应用（应用）可以访问特定文件系统位置。 应用也可以通过文件选取器或声明功能访问其他位置。
+默认情况下，通用 Windows 平台 (UWP) 应用可以访问特定文件系统位置。 应用也可以通过文件选取器或声明功能访问其他位置。
 
 ## <a name="the-locations-that-all-apps-can-access"></a>所有应用均可访问的位置
 
@@ -28,62 +33,62 @@ ms.locfileid: "8970932"
 
 1. 可以检索代表应用的安装目录的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，如下所示：
 
-```csharp
-Windows.Storage.StorageFolder installedLocation = Windows.ApplicationModel.Package.Current.InstalledLocation;
-```
+    ```csharp
+    Windows.Storage.StorageFolder installedLocation = Windows.ApplicationModel.Package.Current.InstalledLocation;
+    ```
+    
+    ```javascript
+    var installDirectory = Windows.ApplicationModel.Package.current.installedLocation;
+    ```
+    
+    ```cppwinrt
+    #include <winrt/Windows.Storage.h>
+    ...
+    Windows::Storage::StorageFolder installedLocation{ Windows::ApplicationModel::Package::Current().InstalledLocation() };
+    ```
+    
+    ```cpp
+    Windows::Storage::StorageFolder^ installedLocation = Windows::ApplicationModel::Package::Current->InstalledLocation;
+    ```
 
-```javascript
-var installDirectory = Windows.ApplicationModel.Package.current.installedLocation;
-```
-
-```cppwinrt
-#include <winrt/Windows.Storage.h>
-...
-Windows::Storage::StorageFolder installedLocation{ Windows::ApplicationModel::Package::Current().InstalledLocation() };
-```
-
-```cpp
-Windows::Storage::StorageFolder^ installedLocation = Windows::ApplicationModel::Package::Current->InstalledLocation;
-```
-
-可以使用 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 方法访问目录中的文件和文件夹。 在本例中，此 **StorageFolder** 存储在 `installDirectory` 变量中。 可以从 GitHub 上的[应用包信息示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Package)了解有关使用应用包和安装目录的详细信息。
+    可以使用 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 方法访问目录中的文件和文件夹。 在本例中，此 **StorageFolder** 存储在 `installDirectory` 变量中。 可以从 GitHub 上的[应用包信息示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Package)了解有关使用应用包和安装目录的详细信息。
 
 2. 你可以通过使用应用 URI 直接从应用的安装目录检索文件，如下所示：
 
-```cs
-using Windows.Storage;            
-StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///file.txt"));
-```
-
-```javascript
-Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appx:///file.txt").done(
-    function(file) {
+    ```csharp
+    using Windows.Storage;            
+    StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///file.txt"));
+    ```
+    
+    ```javascript
+    Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appx:///file.txt").done(
+        function(file) {
+            // Process file
+        }
+    );
+    ```
+    
+    ```cppwinrt
+    Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
+    {
+        Windows::Storage::StorageFile file{
+            co_await Windows::Storage::StorageFile::GetFileFromApplicationUriAsync(Windows::Foundation::Uri{L"ms-appx:///file.txt"})
+        };
         // Process file
     }
-);
-```
+    ```
+    
+    ```cpp
+    auto getFileTask = create_task(StorageFile::GetFileFromApplicationUriAsync(ref new Uri("ms-appx:///file.txt")));
+    getFileTask.then([](StorageFile^ file) 
+    {
+        // Process file
+    });
+    ```
 
-```cppwinrt
-Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
-{
-    Windows::Storage::StorageFile file{
-        co_await Windows::Storage::StorageFile::GetFileFromApplicationUriAsync(Windows::Foundation::Uri{L"ms-appx:///file.txt"})
-    };
-    // Process file
-}
-```
-
-```cpp
-auto getFileTask = create_task(StorageFile::GetFileFromApplicationUriAsync(ref new Uri("ms-appx:///file.txt")));
-getFileTask.then([](StorageFile^ file) 
-{
-    // Process file
-});
-```
-
-当 [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 完成时，它将返回一个 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，代表应用的安装目录中的 `file.txt` 文件（示例中的 `file`）。
-
-URI 中的“ms-appx:///”前缀是指应用的安装目录。 你可以在[如何使用 URI 来引用内容](https://msdn.microsoft.com/library/windows/apps/hh781215)中了解有关使用应用 URI 的更多信息。
+    当 [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 完成时，它将返回一个 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，代表应用的安装目录中的 `file.txt` 文件（示例中的 `file`）。
+    
+    URI 中的“ms-appx:///”前缀是指应用的安装目录。 你可以在[如何使用 URI 来引用内容](https://msdn.microsoft.com/library/windows/apps/hh781215)中了解有关使用应用 URI 的更多信息。
 
 此外，与其他位置不同，你还可以使用一些[用于通用 Windows 平台 (UWP) 应用的 Win32 和 COM](https://msdn.microsoft.com/library/windows/apps/br205757) 和一些 [Microsoft Visual Studio 中的 C/C++ 标准库函数](http://msdn.microsoft.com/library/hh875057.aspx)来访问应用安装目录中的文件。
 
@@ -96,66 +101,66 @@ URI 中的“ms-appx:///”前缀是指应用的安装目录。 你可以在[如
 
 1.  使用 [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587) 属性检索应用数据文件夹。
 
-例如，可以使用 [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587).[**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) 检索代表应用的本地文件夹的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，如下所示：
+    例如，可以使用 [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587).[**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) 检索代表应用的本地文件夹的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，如下所示：
+    
+    ```csharp
+    using Windows.Storage;
+    StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+    ```
+    
+    ```javascript
+    var localFolder = Windows.Storage.ApplicationData.current.localFolder;
+    ```
+    
+    ```cppwinrt
+    Windows::Storage::StorageFolder storageFolder{
+        Windows::Storage::ApplicationData::Current().LocalFolder()
+    };
+    ```
+    
+    ```cpp
+    using namespace Windows::Storage;
+    StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+    ```
+    
+    如果希望访问应用的漫游或临时文件夹，可以改用 [**RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) 或 [**TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) 属性。
+    
+    在检索代表应用数据位置的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 之后，可以使用 **StorageFolder** 方法访问该位置中的文件和文件夹。 在本例中，这些 **StorageFolder** 对象存储在 `localFolder` 变量中。 可以从 [ApplicationData 类](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata)页面上的指南，以及通过从 GitHub 下载[应用程序数据示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ApplicationData)，来了解有关使用应用数据位置的详细信息。
 
-```cs
-using Windows.Storage;
-StorageFolder localFolder = ApplicationData.Current.LocalFolder;
-```
-
-```javascript
-var localFolder = Windows.Storage.ApplicationData.current.localFolder;
-```
-
-```cppwinrt
-Windows::Storage::StorageFolder storageFolder{
-    Windows::Storage::ApplicationData::Current().LocalFolder()
-};
-```
-
-```cpp
-using namespace Windows::Storage;
-StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-```
-
-如果希望访问应用的漫游或临时文件夹，可以改用 [**RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) 或 [**TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) 属性。
-
-在检索代表应用数据位置的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 之后，可以使用 **StorageFolder** 方法访问该位置中的文件和文件夹。 在本例中，这些 **StorageFolder** 对象存储在 `localFolder` 变量中。 可以从 [ApplicationData 类](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata)页面上的指南，以及通过从 GitHub 下载[应用程序数据示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ApplicationData)，来了解有关使用应用数据位置的详细信息。
-
-2. 例如，你可以通过使用应用 URI 直接从应用的本地文件夹检索文件，如下所示：
-
-```cs
-using Windows.Storage;
-StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appdata:///local/file.txt"));
-```
-
-```javascript
-Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appdata:///local/file.txt").done(
-    function(file) {
-        // Process file
-    }
-);
-```
-
-```cppwinrt
-Windows::Storage::StorageFile file{
-    co_await Windows::Storage::StorageFile::GetFileFromApplicationUriAsync(Windows::Foundation::Uri{ L"ms-appdata:///local/file.txt" })
-};
-// Process file
-```
-
-```cpp
-using Windows::Storage;
-auto getFileTask = create_task(StorageFile::GetFileFromApplicationUriAsync(ref new Uri("ms-appdata:///local/file.txt")));
-getFileTask.then([](StorageFile^ file) 
-{
+2. 你可以直接从你的应用的本地文件夹检索文件，通过使用应用 URI，如下：
+    
+    ```csharp
+    using Windows.Storage;
+    StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appdata:///local/file.txt"));
+    ```
+    
+    ```javascript
+    Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appdata:///local/file.txt").done(
+        function(file) {
+            // Process file
+        }
+    );
+    ```
+    
+    ```cppwinrt
+    Windows::Storage::StorageFile file{
+        co_await Windows::Storage::StorageFile::GetFileFromApplicationUriAsync(Windows::Foundation::Uri{ L"ms-appdata:///local/file.txt" })
+    };
     // Process file
-});
-```
-
-当 [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 完成时，它将返回一个 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，代表应用的本地文件夹中的 `file.txt` 文件（示例中的 `file`）。
-
-URI 中的“ms-appdata:///local/”前缀是指应用的本地文件夹。 要访问应用的漫游文件夹或临时文件夹中的文件，请改用“ms-appdata:///roaming/”或“ms-appdata:///temporary/”。 你可以在[如何加载文件资源](https://msdn.microsoft.com/library/windows/apps/hh781229)中了解关于使用应用 URI 的详细信息。
+    ```
+    
+    ```cpp
+    using Windows::Storage;
+    auto getFileTask = create_task(StorageFile::GetFileFromApplicationUriAsync(ref new Uri("ms-appdata:///local/file.txt")));
+    getFileTask.then([](StorageFile^ file) 
+    {
+        // Process file
+    });
+    ```
+    
+    当 [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 完成时，它将返回一个 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，代表应用的本地文件夹中的 `file.txt` 文件（示例中的 `file`）。
+    
+    URI 中的“ms-appdata:///local/”前缀是指应用的本地文件夹。 要访问应用的漫游文件夹或临时文件夹中的文件，请改用“ms-appdata:///roaming/”或“ms-appdata:///temporary/”。 你可以在[如何加载文件资源](https://msdn.microsoft.com/library/windows/apps/hh781229)中了解关于使用应用 URI 的详细信息。
 
 此外，与其他位置不同，你还可以使用一些[用于 UWP 应用的 Win32 和 COM](https://msdn.microsoft.com/library/windows/apps/br205757) 以及和一些 Visual Studio 中的 C/C++ 标准库函数来访问应用数据位置中的文件。
 
@@ -178,69 +183,69 @@ URI 中的“ms-appdata:///local/”前缀是指应用的本地文件夹。 要�
 
 - 你可以在用户的下载文件夹中创建文件，如下所示：
 
-```cs
-using Windows.Storage;
-StorageFile newFile = await DownloadsFolder.CreateFileAsync("file.txt");
-```
-
-```javascript
-Windows.Storage.DownloadsFolder.createFileAsync("file.txt").done(
-    function(newFile) {
-        // Process file
-    }
-);
-```
-
-```cppwinrt
-Windows::Storage::StorageFile newFile{
-    co_await Windows::Storage::DownloadsFolder::CreateFileAsync(L"file.txt")
-};
-// Process file
-```
-
-```cpp
-using Windows::Storage;
-auto createFileTask = create_task(DownloadsFolder::CreateFileAsync(L"file.txt"));
-createFileTask.then([](StorageFile^ newFile)
-{
+    ```csharp
+    using Windows.Storage;
+    StorageFile newFile = await DownloadsFolder.CreateFileAsync("file.txt");
+    ```
+    
+    ```javascript
+    Windows.Storage.DownloadsFolder.createFileAsync("file.txt").done(
+        function(newFile) {
+            // Process file
+        }
+    );
+    ```
+    
+    ```cppwinrt
+    Windows::Storage::StorageFile newFile{
+        co_await Windows::Storage::DownloadsFolder::CreateFileAsync(L"file.txt")
+    };
     // Process file
-});
-```
+    ```
+    
+    ```cpp
+    using Windows::Storage;
+    auto createFileTask = create_task(DownloadsFolder::CreateFileAsync(L"file.txt"));
+    createFileTask.then([](StorageFile^ newFile)
+    {
+        // Process file
+    });
+    ```
 
-[**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) 重载，这样可以指定在“下载”文件夹中已经存在同名文件时系统应执行的操作。 这些方法完成之后，它们将返回一个代表已创建文件的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)。 此文件在本例中称为 `newFile`。
+    [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) 重载，这样可以指定在“下载”文件夹中已经存在同名文件时系统应执行的操作。 这些方法完成之后，它们将返回一个代表已创建文件的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)。 此文件在本例中称为 `newFile`。
 
 - 你可以在用户的“下载”文件夹中创建子文件夹，如下所示：
 
-```cs
-using Windows.Storage;
-StorageFolder newFolder = await DownloadsFolder.CreateFolderAsync("New Folder");
-```
-
-```javascript
-Windows.Storage.DownloadsFolder.createFolderAsync("New Folder").done(
-    function(newFolder) {
-        // Process folder
-    }
-);
-```
-
-```cppwinrt
-Windows::Storage::StorageFolder newFolder{
-    co_await Windows::Storage::DownloadsFolder::CreateFolderAsync(L"New Folder")
-};
-// Process folder
-```
-
-```cpp
-using Windows::Storage;
-auto createFolderTask = create_task(DownloadsFolder::CreateFolderAsync(L"New Folder"));
-createFolderTask.then([](StorageFolder^ newFolder)
-{
+    ```csharp
+    using Windows.Storage;
+    StorageFolder newFolder = await DownloadsFolder.CreateFolderAsync("New Folder");
+    ```
+    
+    ```javascript
+    Windows.Storage.DownloadsFolder.createFolderAsync("New Folder").done(
+        function(newFolder) {
+            // Process folder
+        }
+    );
+    ```
+    
+    ```cppwinrt
+    Windows::Storage::StorageFolder newFolder{
+        co_await Windows::Storage::DownloadsFolder::CreateFolderAsync(L"New Folder")
+    };
     // Process folder
-});
-```
+    ```
+    
+    ```cpp
+    using Windows::Storage;
+    auto createFolderTask = create_task(DownloadsFolder::CreateFolderAsync(L"New Folder"));
+    createFolderTask.then([](StorageFolder^ newFolder)
+    {
+        // Process folder
+    });
+    ```
 
-[**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) 重载，这样可以指定在“下载”文件夹中已经存在同名子文件夹时系统应执行的操作。 这些方法完成之后，它们将返回一个代表已创建子文件夹的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。 此文件在本例中称为 `newFolder`。
+    [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) 重载，这样可以指定在“下载”文件夹中已经存在同名子文件夹时系统应执行的操作。 这些方法完成之后，它们将返回一个代表已创建子文件夹的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。 此文件在本例中称为 `newFolder`。
 
 如果在“下载”文件夹中创建文件或文件夹，我们建议将该项目添加到你的应用的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457)，这样你的应用以后可以随时访问该项目。
 

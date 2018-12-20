@@ -2,20 +2,18 @@
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: 获取文件属性
 description: 获取由 StorageFile 对象表示的文件属性&\#8212;顶级、基本和扩展&\#8212;。
-ms.date: 02/08/2017
+ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b0747dd3b8992ab456bdb00a4dc7157211eb8ba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f69c86ac8f7d13970eca8d1bbb50d4859b95f6a6
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932979"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980355"
 ---
 # <a name="get-file-properties"></a>获取文件属性
-
-
 
 **重要的 API**
 
@@ -26,10 +24,7 @@ ms.locfileid: "8932979"
 获取由 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 对象表示的文件属性：顶级、基本和扩展。
 
 > [!NOTE]
-> 另请参阅[文件访问示例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
-
- 
-
+> 有关完整示例，请参阅[文件访问示例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -45,9 +40,8 @@ ms.locfileid: "8932979"
 
 很多顶级文件属性都可以作为 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 类的成员进行访问。 这些属性包括文件属性、内容类型、创建日期、显示名称和文件类型等。
 
-**注意**请记住声明**picturesLibrary**的功能。
-
- 
+> [!NOTE]
+> 请记住声明 **picturesLibrary** 功能。
 
 此示例枚举了图片库中的所有文件，从而访问每个文件中的一些顶层属性。
 

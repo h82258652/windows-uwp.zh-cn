@@ -2,16 +2,16 @@
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: 跟踪最近使用的文件和文件夹
 description: 通过将用户经常访问的文件添加到你的应用的最近使用列表 (MRU) 中来跟踪这些文件。
-ms.date: 02/08/2017
+ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a810c097b4f162395106e74b68d5e9cdb2f8538
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 21e0516e3de4085e9ad2f3b67cb5ed497d907f5c
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930049"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980365"
 ---
 # <a name="track-recently-used-files-and-folders"></a>跟踪最近使用的文件和文件夹
 
@@ -25,9 +25,7 @@ ms.locfileid: "8930049"
 你的应用的 MRU 由 [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475) 类表示，你可从静态 [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) 属性获取该类。 MRU 项存储为 [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129) 对象，这意味着 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 对象（代表文件）和 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 对象（代表文件夹）都可以添加到 MRU 中。
 
 > [!NOTE]
-> 另请参阅[文件选取器示例](http://go.microsoft.com/fwlink/p/?linkid=619994)和[文件访问示例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
-
- 
+> 有关完整示例，请参阅[文件选取器示例](http://go.microsoft.com/fwlink/p/?linkid=619994)和[文件访问示例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
 
 ## <a name="prerequisites"></a>先决条件
 

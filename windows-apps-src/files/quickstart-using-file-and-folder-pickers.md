@@ -2,16 +2,16 @@
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: 使用选取器打开文件和文件夹
 description: 通过让用户与选取器交互来访问文件和文件夹。 你可以使用 FileOpenPicker 和 FileSavePicker 类获取对文件的访问权限，并使用 FolderPicker 获取对文件夹的访问权限。
-ms.date: 02/08/2017
+ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ed2c1715ebb682aed3da4b55ef94cc0c60f8391
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 04534316c3357dfecc4a94b91dcab42f8238dec6
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921160"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980325"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>使用选取器打开文件和文件夹
 
@@ -115,39 +115,39 @@ else
 
     - **选取单个文件**
 
-    ```cs
-    Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
-    if (file != null)
-    {
-        // Application now has read/write access to the picked file
-        this.textBlock.Text = "Picked photo: " + file.Name;
-    }
-    else
-    {
-        this.textBlock.Text = "Operation cancelled.";
-    }
-    ```
+        ```cs
+        Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
+        if (file != null)
+        {
+            // Application now has read/write access to the picked file
+            this.textBlock.Text = "Picked photo: " + file.Name;
+        }
+        else
+        {
+            this.textBlock.Text = "Operation cancelled.";
+        }
+        ```
 
     - **选取多个文件**  
 
-    ```cs
-    var files = await picker.PickMultipleFilesAsync();
-    if (files.Count > 0)
-    {
-        StringBuilder output = new StringBuilder("Picked files:\n");
-
-        // Application now has read/write access to the picked file(s)
-        foreach (Windows.Storage.StorageFile file in files)
+        ```cs
+        var files = await picker.PickMultipleFilesAsync();
+        if (files.Count > 0)
         {
-            output.Append(file.Name + "\n");
+            StringBuilder output = new StringBuilder("Picked files:\n");
+    
+            // Application now has read/write access to the picked file(s)
+            foreach (Windows.Storage.StorageFile file in files)
+            {
+                output.Append(file.Name + "\n");
+            }
+            this.textBlock.Text = output.ToString();
         }
-        this.textBlock.Text = output.ToString();
-    }
-    else
-    {
-        this.textBlock.Text = "Operation cancelled.";
-    }
-    ```
+        else
+        {
+            this.textBlock.Text = "Operation cancelled.";
+        }
+        ```
 
 ## <a name="pick-a-folder-complete-code-listing"></a>选取文件夹：完整代码列表
 
