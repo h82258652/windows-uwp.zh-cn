@@ -6,16 +6,16 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 赛车方向盘, 力反馈
 ms.localizationpriority: medium
-ms.openlocfilehash: 90d12caca103648824ceb36a4ca4968754beb7f2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ab7c5bc15b149d5f469b7fc5e6b6285986569b22
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923058"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981551"
 ---
 # <a name="racing-wheel-and-force-feedback"></a>赛车方向盘和力回馈
 
-此页介绍使用 [Windows.Gaming.Input.RacingWheel][racingwheel] 和通用 Windows 平台 (UWP) 的相关 API 进行 Xbox One 赛车方向盘编程的基本知识。
+此页介绍适用于 Xbox One 赛车方向盘使用[Windows.Gaming.Input.RacingWheel]编程的基础知识[racingwheel]和通用 Windows 平台 (UWP) 的相关 Api。
 
 在本页中，你将了解如下内容：
 
@@ -27,13 +27,13 @@ ms.locfileid: "8923058"
 
 ## <a name="racing-wheel-overview"></a>赛车方向盘概述
 
-赛车方向盘是与真实的赛车驾驶舱外观类似的输入设备。 对于具有汽车或卡车的街机风格和模拟风格的赛车游戏而言，赛车方向盘是完美的输入设备。 赛车方向盘在 Windows 10 和 Xbox One UWP 应用中受 [Windows.Gaming.Input][] 命名空间支持。
+赛车方向盘是与真实的赛车驾驶舱外观类似的输入设备。 对于具有汽车或卡车的街机风格和模拟风格的赛车游戏而言，赛车方向盘是完美的输入设备。 赛车方向盘在 Windows 10 和 Xbox One UWP 应用中受 [Windows.Gaming.Input](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input) 命名空间支持。
 
 Xbox One 赛车方向盘有多种价位，一般而言，价格越高，输入和力回馈功能的数量越多且越出色。 所有赛车方向盘均配备模拟方向盘、模拟油门和刹车控件，以及一些方向盘上的按钮。 某些赛车方向盘还配备模拟离合器和手刹控件、档位以及力回馈功能。 并非所有赛车方向盘都配备有相同的功能组，对某些功能的支持也可能有所不同。例如，方向盘可能支持不同范围的旋转，档位可能支持不同的档数。
 
 ### <a name="device-capabilities"></a>设备功能
 
-不同的 Xbox One 赛车方向盘提供不同的可选设备功能组，并对这些功能提供不同级别的支持，在 [Windows.Gaming.Input][] API 支持的设备当中，单个种类的输入设备之间的这种差异级别是唯一的。 并且，你将会遇到的大多设备都将至少支持某些可选功能或者其他功能变体。 因此，单独确定每个连接的赛车方向盘的功能并支持适合游戏的各种功能非常重要。
+不同的 Xbox One 赛车方向盘提供不同的可选设备功能集和各种级别的支持对这些功能;这种级别的单个种类的输入设备之间的变体是唯一的[Windows.Gaming.Input](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input) API 支持的设备当中。 并且，你将会遇到的大多设备都将至少支持某些可选功能或者其他功能变体。 因此，单独确定每个连接的赛车方向盘的功能并支持适合游戏的各种功能非常重要。
 
 有关详细信息，请参阅[确定赛车方向盘功能](#determining-racing-wheel-capabilities)。
 
@@ -81,13 +81,13 @@ Xbox One 赛车方向盘有多种价位，一般而言，价格越高，输入�
 
 ## <a name="detect-and-track-racing-wheels"></a>检测和跟踪赛车方向盘
 
-检测与跟踪赛车方向盘的工作原理与检测与跟踪游戏板完全相同，除了使用 [RacingWheel][] 类而不是 [Gamepad](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad) 类。 有关详细信息，请参阅[游戏板和振动](gamepad-and-vibration.md)。
+检测与跟踪赛车方向盘的工作原理与检测与跟踪游戏板完全相同，除了使用 [RacingWheel](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel) 类而不是 [Gamepad](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad) 类。 有关详细信息，请参阅[游戏板和振动](gamepad-and-vibration.md)。
 
 <!-- Racing wheels are managed by the system, therefore you don't have to create or initialize them. The system provides a list of connected racing wheels and events to notify you when a racing wheel is added or removed.
 
 ### The racing wheels list
 
-The [RacingWheel][] class provides a static property, [RacingWheels][], which is a read-only list of racing wheels that are currently connected. Because you might only be interested in some of the connected racing wheels, it's recommended that you maintain your own collection instead of accessing them through the `RacingWheels` property.
+The [RacingWheel](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel) class provides a static property, [RacingWheels](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.racingwheels#Windows_Gaming_Input_RacingWheel_RacingWheels), which is a read-only list of racing wheels that are currently connected. Because you might only be interested in some of the connected racing wheels, it's recommended that you maintain your own collection instead of accessing them through the `RacingWheels` property.
 
 The following example copies all connected racing wheels into a new collection.
 ```cpp
@@ -102,7 +102,7 @@ for (auto racingwheel : RacingWheel::RacingWheels)
 
 ### Adding and removing racing wheels
 
-When a racing wheel is added or removed the [RacingWheelAdded][] and [RacingWheelRemoved][] events are raised. You can register handlers for these events to keep track of the racing wheels that are currently connected.
+When a racing wheel is added or removed the [RacingWheelAdded](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.racingwheeladded) and [RacingWheelRemoved](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.racingwheelremoved) events are raised. You can register handlers for these events to keep track of the racing wheels that are currently connected.
 
 The following example starts tracking an racing wheels that's been added.
 ```cpp
@@ -138,7 +138,7 @@ Each racing wheel can be associated with a user account to link their identity t
 
 轮询会捕获赛车方向盘在某个精确时间点的快照。 此输入收集方法对于大多数游戏都非常适合，因为其逻辑通常按确定的循环运行，而不是受事件驱动；而且，相对于随着时间逐个收集许多单个输入解释游戏命令，从一次性收集的输入解释游戏命令，通常会更为简单。
 
-通过调用 [GetCurrentReading][] 轮询赛车方向盘；此函数返回包含赛车方向盘状态的 [RacingWheelReading][]。
+通过调用 [GetCurrentReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.getcurrentreading#Windows_Gaming_Input_RacingWheel_GetCurrentReading) 轮询赛车方向盘；此函数返回包含赛车方向盘状态的 [RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading)。
 
 下面是轮询赛车方向盘来获取其当前状态的示例。
 
@@ -154,7 +154,7 @@ RacingWheelReading reading = racingwheel->GetCurrentReading();
 
 许多赛车方向盘控件是可选控件，或者即使位于必需控件中也只是支持不同的功能变体，所以你必须单独确定每个赛车方向盘的功能，然后才能处理每个赛车方向盘读数中收集的输入。
 
-可选控件包括手刹、离合器和档位。你可以通过分别读取赛车方向盘的 [HasHandbrake][]、[HasClutch][] 和 [HasPatternShifter][] 属性来确定连接的赛车方向盘是否支持这些控件。 如果属性的值为 **true**，则支持该控件，否则不支持。
+可选控件包括手刹、离合器和档位。你可以通过分别读取赛车方向盘的 [HasHandbrake](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.hashandbrake#Windows_Gaming_Input_RacingWheel_HasHandbrake)、[HasClutch](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.hasclutch#Windows_Gaming_Input_RacingWheel_HasClutch) 和 [HasPatternShifter](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.haspatternshifter#Windows_Gaming_Input_RacingWheel_HasPatternShifter) 属性来确定连接的赛车方向盘是否支持这些控件。 如果属性的值为 **true**，则支持该控件，否则不支持。
 
 ```cpp
 if (racingwheel->HasHandbrake)
@@ -180,7 +180,7 @@ auto maxWheelDegrees = racingwheel->MaxWheelAngle;
 auto maxShifterGears = racingwheel->MaxPatternShifterGear;
 ```
 
-最后，某些赛车方向盘通过方向盘支持力回馈。 你可以读取赛车方向盘的 [WheelMotor][] 属性来确定连接的赛车方向盘是否支持力回馈。 如果 `WheelMotor` 不为 **null**，则支持力回馈，否则不支持力回馈。
+最后，某些赛车方向盘通过方向盘支持力回馈。 你可以读取赛车方向盘的 [WheelMotor](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.wheelmotor#Windows_Gaming_Input_RacingWheel_WheelMotor) 属性来确定连接的赛车方向盘是否支持力回馈。 如果 `WheelMotor` 不为 **null**，则支持力回馈，否则不支持力回馈。
 
 ```cpp
 if (racingwheel->WheelMotor != nullptr)
@@ -193,12 +193,12 @@ if (racingwheel->WheelMotor != nullptr)
 
 ### <a name="reading-the-buttons"></a>读取按钮
 
-每个赛车方向盘按钮（方向键的四个方向、**减档**和**加档**按钮，以及 16 个其他按钮）提供一个数字读数，指出其是按下（向下）还是释放（向上）。 为了提高效率，按钮读数不以单独的布尔值表示；而是全部打包到一个由 [RacingWheelButtons][] 枚举表示的单独位域中。
+每个赛车方向盘按钮（方向键的四个方向、**减档**和**加档**按钮，以及 16 个其他按钮）提供一个数字读数，指出其是按下（向下）还是释放（向上）。 为了提高效率，按钮读数不以单独的布尔值表示；而是全部打包到一个由 [RacingWheelButtons](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelbuttons) 枚举表示的单独位域中。
 
 > [!NOTE]
 > 赛车方向盘配备了用于 UI 导航的其他按钮，例如**视图**和**菜单**按钮。 这些按钮不是 `RacingWheelButtons` 枚举的一部分，只能作为 UI 导航设备通过访问赛车方向盘进行读取。 有关详细信息，请参阅 [UI 导航设备](ui-navigation-controller.md)。
 
-从 [RacingWheelReading][] 结构的 `Buttons` 属性中读取按钮值。 由于此属性为位域，因此使用按位掩码隔离你感兴趣的按钮值。 设置相应位时按钮为按下（向下）；否则，按钮为释放（向上）。
+从 [RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading) 结构的 `Buttons` 属性中读取按钮值。 由于此属性为位域，因此使用按位掩码隔离你感兴趣的按钮值。 设置相应位时按钮为按下（向下）；否则，按钮为释放（向上）。
 
 以下示例确定是否按下**加档**按钮。
 
@@ -222,7 +222,7 @@ if (RacingWheelButtons::None == (reading.Buttons & RacingWheelButtons::NextGear)
 
 ### <a name="reading-the-wheel"></a>读取方向盘
 
-方向盘是必需控件，提供介于 -1.0 和 +1.0 之间的模拟读数。 值 -1.0 对应于方向盘最左的位置；值 +1.0 对应于最右的位置。 从 [RacingWheelReading][] 结构的 `Wheel` 属性中读取方向盘的值。
+方向盘是必需控件，提供介于 -1.0 和 +1.0 之间的模拟读数。 值 -1.0 对应于方向盘最左的位置；值 +1.0 对应于最右的位置。 从 [RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading) 结构的 `Wheel` 属性中读取方向盘的值。
 
 ```cpp
 float wheel = reading.Wheel;  // returns a value between -1.0 and +1.0.
@@ -232,7 +232,7 @@ float wheel = reading.Wheel;  // returns a value between -1.0 and +1.0.
 
 ### <a name="reading-the-throttle-and-brake"></a>读取油门和刹车
 
-油门和刹车为必需控件，每个控件会提供一个介于 0.0（完全释放）和 1.0（完全按下）的模拟读数，用浮点值表示。 油门控件的值通过 [RacingWheelReading][] 结构的 `Throttle` 属性读取，刹车控件的值通过 `Brake` 属性来读取。
+油门和刹车为必需控件，每个控件会提供一个介于 0.0（完全释放）和 1.0（完全按下）的模拟读数，用浮点值表示。 油门控件的值通过 [RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading) 结构的 `Throttle` 属性读取，刹车控件的值通过 `Brake` 属性来读取。
 
 ```cpp
 float throttle = reading.Throttle;  // returns a value between 0.0 and 1.0
@@ -241,7 +241,7 @@ float brake    = reading.Brake;     // returns a value between 0.0 and 1.0
 
 ### <a name="reading-the-handbrake-and-clutch"></a>读取手刹和离合器
 
-手刹和离合器为可选控件，每个控件会提供一个介于 0.0（完全释放）和 1.0（完全占用）的模拟读数，用浮点值表示。 手刹的值通过 [RacingWheelReading][] 结构的 `Handbrake` 属性读取，离合器控件的值通过 `Clutch` 属性来读取。
+手刹和离合器为可选控件，每个控件会提供一个介于 0.0（完全释放）和 1.0（完全占用）的模拟读数，用浮点值表示。 手刹的值通过 [RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading) 结构的 `Handbrake` 属性读取，离合器控件的值通过 `Clutch` 属性来读取。
 
 ```cpp
 float handbrake = 0.0;
@@ -260,7 +260,7 @@ if(racingwheel->HasClutch)
 
 ### <a name="reading-the-pattern-shifter"></a>读取档位
 
-档位是可选控件，会提供一个介于 -1 和 [MaxPatternShifterGear][] 之间的数字读数，用带符号的整数值表示。 值 -1 或 0 分别对应于_倒档_ 和_空挡_，递增的正值对应于越来越高的前进挡（最高 [MaxPatternShifterGear][] 档，含该档）。 档位值通过 [RacingWheelReading][] 结构的 `PatternShifterGear` 属性读取。
+档位是可选控件，会提供一个介于 -1 和 [MaxPatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.maxpatternshiftergear) 之间的数字读数，用带符号的整数值表示。 值 -1 或 0 分别对应于_倒档_ 和_空挡_，递增的正值对应于越来越高的前进挡（最高 **MaxPatternShifterGear** 档，含该档）。 读取档位值是从[RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading)结构[PatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading.patternshiftergear)属性。
 
 ```cpp
 if (racingwheel->HasPatternShifter)
@@ -278,7 +278,7 @@ if (racingwheel->HasPatternShifter)
 
 ## <a name="force-feedback-overview"></a>力回馈概述
 
-很多赛车方向盘有力回馈功能，可提供更具沉浸感且更富有挑战性的驾驶体验。 支持力回馈的赛车方向盘通常配备有一个电机，它可以将用力沿单个轴（方向盘旋转轴）应用于方向盘。 力回馈在 Windows 10 和 Xbox One UWP 应用中受 [Windows.Gaming.Input.ForceFeedback][] 命名空间支持。
+很多赛车方向盘有力回馈功能，可提供更具沉浸感且更富有挑战性的驾驶体验。 支持力回馈的赛车方向盘通常配备有一个电机，它可以将用力沿单个轴（方向盘旋转轴）应用于方向盘。 在 Windows 10 和 Xbox One UWP 应用中受[Windows.Gaming.Input.ForceFeedback](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback)命名空间支持力回馈。
 
 > [!NOTE]
 > 力回馈 API 能够支持多个力轴，但是当前没有 Xbox One 赛车方向盘支持除方向盘旋转反馈轴以外的任何反馈轴。
@@ -289,7 +289,7 @@ if (racingwheel->HasPatternShifter)
 
 ### <a name="determining-force-feedback-capabilities"></a>确定力回馈功能
 
-你可以读取赛车方向盘的 [WheelMotor][] 属性来确定连接的赛车方向盘是否支持力回馈。 如果 `WheelMotor` 为 **null**，则不支持力回馈，否则支持力回馈。并且，你可以继续确定电机的特定反馈功能，例如它可以影响的轴。
+你可以读取赛车方向盘的 [WheelMotor](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.wheelmotor#Windows_Gaming_Input_RacingWheel_WheelMotor) 属性来确定连接的赛车方向盘是否支持力回馈。 如果 `WheelMotor` 为 **null**，则不支持力回馈，否则支持力回馈。并且，你可以继续确定电机的特定反馈功能，例如它可以影响的轴。
 
 ```cpp
 if (racingwheel->WheelMotor != nullptr)
@@ -315,7 +315,7 @@ if (racingwheel->WheelMotor != nullptr)
 
 ### <a name="loading-force-feedback-effects"></a>加载力回馈效果
 
-力回馈效果被加载到回馈设备中，此设备在遇到游戏命令时自主“执行”。 提供了一些基本效果，可以通过实现 [IForceFeedbackEffect][] 接口的类创建自定义效果。
+力回馈效果被加载到回馈设备中，此设备在遇到游戏命令时自主“执行”。 提供了一些基本效果;可以通过实现[IForceFeedbackEffect](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback.iforcefeedbackeffect)接口的类创建自定义效果。
 
 | 效果类         | 效果描述                                                                     |
 | -------------------- | -------------------------------------------------------------------------------------- |
@@ -371,8 +371,8 @@ else
 
 ## <a name="see-also"></a>另请参阅
 
-* [Windows.Gaming.Input.UINavigationController][]
-* [Windows.Gaming.Input.IGameController][]
+* [Windows.Gaming.Input.UINavigationController](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.uinavigationcontroller)
+* [Windows.Gaming.Input.IGameController](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.igamecontroller)
 * [游戏输入实践](input-practices-for-games.md)
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx

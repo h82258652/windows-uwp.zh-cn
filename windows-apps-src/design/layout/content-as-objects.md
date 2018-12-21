@@ -3,12 +3,12 @@ description: ''
 title: 作为对象的内容
 template: detail.hbs
 ms.localizationpriority: medium
-ms.openlocfilehash: 37ba5093f2d7cfe268be40413b889801daf00967
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ed2ac8530d69929cc0e0e921cfb1cc5368058cd2
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942398"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981441"
 ---
 # <a name="content-as-objects"></a>作为对象的内容
 
@@ -35,7 +35,7 @@ ms.locfileid: "8942398"
   <p>所以，你如何创建一个清晰的视觉层次结构？ 使用早期版本的 Windows 10，你可以使用空白、位置和版式来定义视觉层次结构。 </p>
   </div>
   <div class="side-by-side-content-right">
-    ![平面布局](images/content-as-objects/flat-layout.png)
+    <a href="images/content-as-objects/flat-layout.png">平面布局</a>
     
   </div>
 </div>
@@ -43,7 +43,7 @@ ms.locfileid: "8942398"
 
 使用 Windows 10 RS2，我们逐个添加了另一个维度: 深度。 
 
-![布局深度](images/content-as-objects/depth-in-layout2.png)
+<a href="images/content-as-objects/depth-in-layout2.png">布局深度</a>
 
 
 ## <a name="use-depth-to-establish-a-hierarchy"></a>使用深度建立层次结构 
@@ -59,7 +59,7 @@ ms.locfileid: "8942398"
     </p>
   </div>
   <div class="side-by-side-content-right">
-    ![布局深度](images/content-as-objects/elements-forward-backward.png) 
+    <a href="images/content-as-objects/elements-forward-backward.png">布局深度</a> 
     
   </div>
 </div>
@@ -76,13 +76,12 @@ ms.locfileid: "8942398"
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **超出背景层** <br/>
-此层位于应用后面。  当元素迁移到此层时，我们建议使这些元素变为非交互。 此层上的元素具有最慢的视差且将剪裁到应用窗口。 TODO：此层是否缩放？ 
+<b>超出背景层</b>此层位于应用后面。  当元素迁移到此层时，我们建议使这些元素变为非交互。 此层上的元素具有最慢的视差且将剪裁到应用窗口。 TODO：此层是否缩放？ 
 
 <p>示例背景元素包括内容后面的图像，TODO：示例；TODO：示例。</p>
   </div>
   <div class="side-by-side-content-right">
-    ![应用的超出背景层](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">应用的超出背景层</a>
     
   </div>
 </div>
@@ -93,13 +92,12 @@ ms.locfileid: "8942398"
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **被动层** <br/>
-这是该应用的基层，默认为 UI 元素所在的位置。  元素在此层上实时移动（无视差），剪裁到应用窗口，并且以 100% 的比例呈现。 
+<b>被动层</b>这是应用的基层 UI 元素居住默认情况下。  元素在此层上实时移动（无视差），剪裁到应用窗口，并且以 100% 的比例呈现。 
 
 <p>示例元素：应用背景、文本、辅助 UI，如应用导航 UI。</p>
   </div>
   <div class="side-by-side-content-right">
-    ![应用的被动层](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">应用的被动层</a>
     
   </div>
 </div>
@@ -110,13 +108,12 @@ ms.locfileid: "8942398"
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **操作调用层** <br/>
-此层适用于你在被动层元素上方优先排序的交互式项目。 此层上的元素具有中等视差且将剪裁到应用窗口。 TODO：此层上的元素是否缩放或具有投影？
+<b>操作调用层</b>这一层是适用于被动层元素上方优先排序的交互式项目。 此层上的元素具有中等视差且将剪裁到应用窗口。 TODO：此层上的元素是否缩放或具有投影？
 
 <p>示例元素：列表、网格、主命令（TODO：如...）。</p> 
   </div>
   <div class="side-by-side-content-right">
-    ![应用的操作调用层](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">应用的操作调用层</a>
     
   </div>
 </div>
@@ -126,13 +123,12 @@ ms.locfileid: "8942398"
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **主图层** <br/>
-此层适用于那时屏幕上的最高优先级元素。  此层上的元素可以打破应用窗口的边界，可以缩放，而且会自动获取投影。
+<b>主图层</b>此层时适合在屏幕上的最高优先级元素。  此层上的元素可以打破应用窗口的边界，可以缩放，而且会自动获取投影。
 
 <p>示例元素：照片元素、当前所选的项目。</p>  
   </div>
   <div class="side-by-side-content-right">
-    ![应用的主图层](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">应用的主图层</a>
     
   </div>
 </div>

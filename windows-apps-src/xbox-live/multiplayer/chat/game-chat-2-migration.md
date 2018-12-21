@@ -5,12 +5,12 @@ ms.date: 5/2/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天 2, 游戏聊天, 语音通信
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b638fce06aeb439af9fca1642507fb781c912af
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3e4e96738f0b37342ea3e166706a7cafa4e6f185
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928540"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981367"
 ---
 # <a name="migration-from-game-chat-to-game-chat-2"></a>从游戏聊天迁移到游戏聊天 2
 
@@ -274,7 +274,7 @@ chat_manager::singleton_instance().finish_processing_state_changes(gameChatState
 chatUser->GenerateTextMessage(L"Hello", false);
 ```
 
-第二个布尔参数控制文本到语音转换。 有关详细信息，请参阅 [辅助功能](#accessibility)。然后，游戏聊天生成包含此消息的聊天数据包。 游戏聊天的远程实例将通过 `OnTextMessageReceived` 事件获得该文本消息的通知。
+第二个布尔参数控制文本到语音转换。 有关更多详细信息，请参阅[辅助功能](#accessibility)。 然后，游戏聊天生成包含此消息的聊天数据包。 游戏聊天的远程实例将通过 `OnTextMessageReceived` 事件获得该文本消息的通知。
 
 ### <a name="game-chat-2"></a>游戏聊天 2
 

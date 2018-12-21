@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 用户角色, 用户权限, 自定义角色, 用户访问权限, 自定义权限, 标准角色
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a76dd85343ddf81baceb4946515c869083b839e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d1581757cb16cf2ed5d0082a6a0e4a4e09299361
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947979"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981501"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>为帐户用户设置角色或自定义权限
 
@@ -21,7 +21,7 @@ ms.locfileid: "8947979"
 > 无论是添加用户、组还是添加 Azure AD 应用程序，均可应用同一角色和权限。
 
 在确定应用什么角色或权限时，请注意： 
--   用户 （包括组和 Azure AD 应用程序） 将能够使用其分配角色关联的权限访问整个合作伙伴中心帐户，除非你[自定义权限](#custom)并将其分配[产品级别权限](#product-level-permissions)以便他们只能使用特定的应用和/或加载项。
+-   用户 （包括组和 Azure AD 应用程序） 将能够使用其分配角色关联的权限访问整个合作伙伴中心帐户，除非你[自定义权限](#custom)并将其分配[产品级别权限](#product-level-permissions)因此，他们只能使用特定的应用和/或加载项。
 -   可以通过选择多个角色或使用自定义权限授予想要授予的访问权限，允许用户、组或 Azure AD 应用程序访问多个角色的功能。
 -   具有某个角色（或自定义权限集）的用户还可加入具有其他角色（或权限集）的组。 在该情况下，用户可访问与组和个人帐户关联的所有功能。
 
@@ -33,7 +33,7 @@ ms.locfileid: "8947979"
 
 ## <a name="assign-roles-to-account-users"></a>将角色分配给帐户用户
 
-默认情况下，一组标准角色可供你选择从，当你添加用户、 组或 Azure AD 应用程序与你的合作伙伴中心帐户。 每个角色都有一组特定的权限，以便在帐户内执行某些功能。 
+默认情况下，一组标准角色可供你选择时添加用户、 组或 Azure AD 应用程序到合作伙伴中心帐户。 每个角色都有一组特定的权限，以便在帐户内执行某些功能。 
 
 除非选择定义[自定义权限](#custom)（方法为选中**自定义权限**），否则添加到帐户的每个用户、组或 Azure AD 应用程序都必须分配以下标准角色中的至少一个角色。 
 
@@ -43,7 +43,7 @@ ms.locfileid: "8947979"
 
 | 角色                 | 描述              |
 |----------------------|--------------------------|
-| 管理员              | 具有对该帐户的完整访问权限，除了更改税收和付款设置。 这包括在合作伙伴中心中管理用户，但请注意，若要创建和删除 Azure AD 租户中的用户的功能取决于 Azure AD 中的帐户的权限。 也就是说，如果用户分配了管理员角色，但不具有全局管理员权限在组织的 Azure AD，他们将无法创建新用户或从目录中删除用户 （尽管他们可以更改用户的合作伙伴中心角色）。 <p> 注意，如果合作伙伴中心帐户与多个 Azure AD 租户相关联，一个管理器无法查看完整的用户详细信息 (包括名字、 姓氏、 密码恢复电子邮件，以及它们是否为 Azure AD 全局管理员) 除非它们是登录到具有该租户的全局管理员权限的帐户与该用户所在租户。 但是，他们可以添加和删除与合作伙伴中心帐户相关联的任何租户中的用户。 |
+| 管理员              | 具有对该帐户的完整访问权限，除了更改税收和付款设置。 这包括在合作伙伴中心中管理用户，但请注意，创建和删除 Azure AD 租户中的用户的功能取决于 Azure AD 中的帐户的权限。 也就是说，如果用户分配了管理员角色，但不具有全局管理员权限在组织的 Azure AD，他们将无法创建新用户或从目录中删除用户 （尽管他们可以更改用户的合作伙伴中心角色）。 <p> 注意，如果合作伙伴中心帐户与多个 Azure AD 租户相关联，一个管理器无法查看完整的用户详细信息 (包括名字、 姓氏、 密码恢复电子邮件，以及它们是否为 Azure AD 全局管理员) 除非它们是登录到与具有该租户的全局管理员权限的帐户的用户所在租户。 但是，他们可以添加和删除与合作伙伴中心帐户相关联的任何租户中的用户。 |
 | 开发人员            | 可以上传程序包并提交应用和加载项，并且可以查看[使用情况报告](usage-report.md)获取遥测详细信息。 可以访问[跨设备体验](https://go.microsoft.com/fwlink/?linkid=874042)功能。 无法查看财务信息或帐户设置。   |
 | 业务参与者 | 可查看[运行状况](health-report.md)和[使用情况](usage-report.md)报告。 无法创建或提交产品、更改帐户设置或查看财务信息。   |
 | 财务参与者  | 可查看[付款报告](payout-summary.md)、财务信息和购置报告。 无法对应用、加载项或帐户设置进行任何更改。    |
@@ -166,11 +166,11 @@ ms.locfileid: "8947979"
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>购置</b>     </td><td>    可查看产品的<a href="acquisitions-report.md">购置</a>和<a href="add-on-acquisitions-report.md">加载项购置</a>报告。        </td><td>    不适用    </td><td>    不适用 （对于父产品的设置包括**加载项购置**报告）        </td><td>    不适用                         </td></tr>
+    <tr><td align="left">    <b>购置</b>     </td><td>    可查看产品的<a href="acquisitions-report.md">购置</a>和<a href="add-on-acquisitions-report.md">加载项购置</a>报告。        </td><td>    不适用    </td><td>    不适用 （对于父产品的设置包含**加载项购置**报告）        </td><td>    不适用                         </td></tr>
     <tr><td align="left">    <b>使用情况</b> </td><td>    可查看产品的<a href="usage-report.md">使用情况报告</a>。     </td><td>    不适用       </td><td>    不适用     </td><td>    不适用         </td></tr>
     <tr><td align="left">    <b>运行状况</b> </td><td>    可查看产品的<a href="health-report.md">运行状况报告</a>。    </td><td>    不适用     </td><td>    不适用     </td><td>    不适用         </td></tr>
     <tr><td align="left">    <b>客户反馈</b>    </td><td>    可查看产品的<a href="reviews-report.md">评论</a>和<a href="feedback-report.md">反馈</a>报告。       </td><td>    不适用（若要响应反馈或评论，必须授予<b>联系客户</b>权限）   </td><td>    不适用     </td><td>    不适用         </td></tr>
-    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    可查看产品的[Xbox 分析报告](xbox-analytics-report.md)。    </td><td>    不适用   </td><td>    不适用       </td><td>    不适用          </td></tr>
+    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    可查看产品的<a href="xbox-analytics-report.md">Xbox 分析报告</a>。    </td><td>    不适用   </td><td>    不适用       </td><td>    不适用          </td></tr>
     </tbody>
     </table>
 
@@ -189,7 +189,7 @@ ms.locfileid: "8947979"
     <tbody>
     <tr><td align="left">    <b>促销代码</b>     </td><td>    可查看产品及其加载项的<a href="generate-promotional-codes.md">促销代码</a>订单和使用信息，并可查看使用情况信息。         </td><td>    可查看、管理和创建产品及其加载项的<a href="generate-promotional-codes.md">促销代码</a>，还可查看使用信息。          </td><td>    不适用（对于父产品的设置适用于所有加载项）     </td><td>    不适用（对于父产品的设置适用于所有加载项）     </td></tr>
     <tr><td align="left">    <b>定向优惠</b>     </td><td>    可查看产品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">定向优惠</a>。         </td><td>    可查看、管理和创建产品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">定向优惠</a>。          </td><td>    不适用     </td><td>    不适用      </td></tr>
-    <tr><td align="left">    <b>联系客户</b>  </td><td>    可查看<a href="respond-to-customer-feedback.md">客户反馈响应</a>和<a href="respond-to-customer-reviews.md">客户评论响应</a>，前提是还授予了<b>客户反馈</b>权限。 还可查看为产品创建的<a href="send-push-notifications-to-your-apps-customers.md">目标通知</a>。    </td><td>    只要<b>客户反馈</b>权限授予了也可以<a href="respond-to-customer-feedback.md">响应客户反馈</a>和<a href="respond-to-customer-reviews.md">回复客户评论</a>。 还可为产品<a href="send-push-notifications-to-your-apps-customers.md">创建和发送目标通知</a>。                   </td><td>    不适用         </td><td>    不适用                          </td></tr>
+    <tr><td align="left">    <b>联系客户</b>  </td><td>    可查看<a href="respond-to-customer-feedback.md">客户反馈响应</a>和<a href="respond-to-customer-reviews.md">客户评论响应</a>，前提是还授予了<b>客户反馈</b>权限。 还可查看为产品创建的<a href="send-push-notifications-to-your-apps-customers.md">目标通知</a>。    </td><td>    只要<b>客户反馈</b>权限授予了也可以<a href="respond-to-customer-feedback.md">回复客户反馈</a>和<a href="respond-to-customer-reviews.md">回复客户评论</a>。 还可为产品<a href="send-push-notifications-to-your-apps-customers.md">创建和发送目标通知</a>。                   </td><td>    不适用         </td><td>    不适用                          </td></tr>
     <tr><td align="left">    <b>实验</b></td><td>    可查看产品的<a href="../monetize/run-app-experiments-with-a-b-testing.md">实验（A/B 测试）</a>和实验数据。   </td><td>    可为产品创建、管理和查看<a href="../monetize/run-app-experiments-with-a-b-testing.md">实验（A/B 测试）</a>，还可查看实验数据。     </td><td>    不适用  </td><td>    不适用                 </td></tr>
     <tr><td align="left">    <b>Microsoft Store 促销活动</b>&nbsp;*</td><td>    可以查看产品的促销活动状态。   </td><td>    可以将产品添加到促销活动并配置折扣。      </td><td>    可以查看产品的促销活动状态。   </td><td>    可以将产品添加到促销活动并配置折扣。      </td></tr>
     </tbody>

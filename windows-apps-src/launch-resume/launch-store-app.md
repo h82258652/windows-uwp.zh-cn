@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f64a290443ed5e45a5379b13f70dcc1ea2f57fa9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cda37ee9964a3e7e02f4e4ce3829a8b55e823692
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930138"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981531"
 ---
 # <a name="launch-the-microsoft-store-app"></a>打开 Microsoft Store 应用
 
@@ -19,7 +19,7 @@ ms.locfileid: "8930138"
 
 本主题介绍了 **ms-windows-store:** URI 方案。 你的应用可以使用此 URI 方案来启动到应用商店中的特定页面的 Microsoft 应用商店应用通过使用[**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)方法。
 
-此示例演示了如何打开到游戏页面的存储：
+此示例显示了如何打开存储到的游戏页面：
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://navigatetopage/?Id=Games"));
@@ -41,7 +41,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">启动产品的产品详细信息页面 (PDP)。 <p>应用商店 ID 已向所有使用 Windows 10 的客户推荐，并且将适用于所有操作系统版本，但执行此操作的早期方法（例如：PFN）仍受支持。</p>
-<p>每个应用的应用管理部分中的<a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">应用标识</a>页面上，可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)中找到这些值。</p>
+<p>每个应用的应用管理部分中的<a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">应用标识</a>页面上，可以在<a href="https://partner.microsoft.com/dashboard">合作伙伴中心</a>中找到这些值。</p>
 </td>
 <td>
 应用商店 ID <p>（建议）</p>
@@ -57,7 +57,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td>产品 ID (Windows Phone 7.x/8.x)</td>
-<td>ms-windows-store://pdp/?PhoneAppId=ca05b3ab-f157-450c-8c49-a1f127f5e71d </td>
+<td>ms-windows-store://pdp/?PhoneAppId=ca05b3ab-f157-450c-8c49-a1f127f5e71d</td>
 </tr>
 <tr>
 <td>产品 ID (Windows 8.x)</td>

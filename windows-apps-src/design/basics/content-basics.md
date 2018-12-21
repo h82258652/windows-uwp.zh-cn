@@ -9,12 +9,12 @@ ms.date: 12/1/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 56586e3c26c2adc07bad58e3ee072b4dc57db2ba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fc27a2c24128553b7c1449bd8e724e2097213b80
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946405"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981411"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>UWP 应用的内容设计基础知识
 
@@ -106,7 +106,7 @@ ms.locfileid: "8946405"
 <td align="left"><p><a href="../controls-and-patterns/text-block.md">文本块</a>、<a href="../controls-and-patterns/text-box.md">文本框</a>、<a href="../controls-and-patterns/rich-edit-box.md">可编辑对话框</a></p>
 </td>
 <td align="left">显示文本。 某些元素使用户能够编辑文本。 有关详细信息，请参阅<a href="../controls-and-patterns/text-controls.md">文本控件</a>。
-<p>有关如何显示文本的指南，请参阅[版式](../style/typography.md)。</p>
+<p>有关如何显示文本的指南，请参阅<a href="../style/typography.md">版式</a>。</p>
 </td>
 </tr>
 <tr class="odd">
