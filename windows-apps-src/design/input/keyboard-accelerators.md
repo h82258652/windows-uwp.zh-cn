@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f764d15c1bf5a52a6a48a45856daf9031bbd346
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7e898b0552a9485cd15079a37940a2151e4bc9f9
+ms.sourcegitcommit: 2ef3d22a30afe853de891280e11d96e5e1ab62d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921591"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "8981876"
 ---
 # <a name="keyboard-accelerators"></a>键盘加速键
 
@@ -48,7 +48,7 @@ ms.locfileid: "8921591"
 
   具有良好设计的键盘 UI 是软件辅助功能的一个重要方面。 它使具有视力缺陷或行动有障碍的用户能够在应用中导航并与应用的功能交互。 这些用户可能无法操作鼠标，而是依靠各种辅助技术，如键盘增强工具、屏幕键盘、屏幕放大器、屏幕阅读器、语音输入实用工具。 对于这些用户，广泛的命令覆盖面非常重要。
 
-- 键盘加速键可以让你的应用对于喜欢通过键盘进行交互的更多 usablefor 高级用户。
+- 键盘加速键可以让你的应用更多 usablefor 电源用户对于喜欢通过键盘进行交互。
 
   有经验的用户通常强烈倾向于使用键盘，因为可以更为快速地输入可让基于键盘的命令，而无需将双手从键盘上挪开。 对于这些用户，效率性和一致性体验至关重要；综合性体验仅对常用命令十分重要。
 
@@ -193,9 +193,9 @@ MenuFlyoutItem.KeyboardAccelerators 元素的 ScopeOwner 属性会将快捷方�
 
 ## <a name="invoke-a-keyboard-accelerator"></a>调用键盘加速键 
 
-[KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) 对象使用 [UI 自动化 (UIA) 控件模式](https://msdn.microsoft.com/library/windows/desktop/ee671194(v=vs.85).aspx)在调用加速键时采取相应的操作。
+[KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) 对象使用 [UI 自动化 (UIA) 控件模式](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-controlpatternsoverview)在调用加速键时采取相应的操作。
 
-UIA [控件模式] 将公开常见的控件功能。 例如，Button 控件可实现 [Invoke](https://msdn.microsoft.com/library/windows/desktop/ee671279(v=vs.85).aspx) 控件模式以支持 Click 事件（通常，通过单击、双击或按 Enter、预定义的键盘快捷方式或某个替代击键组合来调用控件）。 使用键盘快捷方式调用控件时，XAML 框架会查找控件是否实现了 Invoke 控件模式，如果已实现，则会激活该模式（侦听 KeyboardAcceleratorInvoked 事件并不需要该模式）。
+UIA [控件模式] 将公开常见的控件功能。 例如，Button 控件可实现了[Invoke](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-implementinginvoke)控件模式，以支持 Click 事件 （通常控件通过单击、 双击或按 Enter、 预定义的键盘快捷方式或其他某个击键组合来调用）。 使用键盘快捷方式调用控件时，XAML 框架会查找控件是否实现了 Invoke 控件模式，如果已实现，则会激活该模式（侦听 KeyboardAcceleratorInvoked 事件并不需要该模式）。
 
 在以下示例中，Control+S 会触发 Click 事件，因为按钮会实现 Invoke 模式。
 
@@ -218,10 +218,12 @@ UIA [控件模式] 将公开常见的控件功能。 例如，Button 控件可�
 ## <a name="custom-keyboard-accelerator-behavior"></a>自定义键盘快捷方式行为
 
 [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) 对象的 Invoked 事件是在执行快捷方式时激发的。 [KeyboardAcceleratorInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) 事件对象包含以下属性：
-- **Handled**（布尔值）：将其设置为 true 可以阻止事件触发控件模式并停止快捷方式事件浮升。 默认值为 false。
-- **Element** (DependencyObject)：包含快捷方式的对象。
 
-在此，我们将演示如何定义键盘快捷方式集合以及如何处理 Invoked 事件。
+- [**处理**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled)（布尔值）： 将此值设置为 true 可以阻止事件触发控件模式并停止快捷方式事件浮升。 默认值为 false。
+- [**元素**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element)(DependencyObject): 与快捷方式关联的对象。
+- [**KeyboardAccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator)： 键盘加速键用于引发的 Invoked 事件。
+
+我们将演示如何在 ListView 中定义的项目的键盘快捷方式集合以及如何处理每个快捷方式的 Invoked 事件。
 
 ``` xaml
 <ListView x:Name="MyListView">
@@ -229,19 +231,20 @@ UIA [控件模式] 将公开常见的控件功能。 例如，Button 控件可�
     <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
     <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
   </ListView.KeyboardAccelerators>
-</ListView>   
+</ListView>
 ```
 
 ``` csharp
-void SelectAllInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+void SelectAllInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
-  CustomSelectAll(MyListView);
+  MyListView.SelectAll();
   args.Handled = true;
 }
 
 void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
-  Refresh(MyListView);
+  MyListView.SelectionMode = ListViewSelectionMode.None;
+  MyListView.SelectionMode = ListViewSelectionMode.Multiple;
   args.Handled = true;
 }
 ```
@@ -257,7 +260,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 ``` xaml
 <ListView >
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" 
+    <KeyboardAccelerator Key="A"
       Modifiers="Control"
       Invoked="CustomListViewSelecAllInvoked" />
   </ListView.KeyboardAccelerators>
@@ -366,7 +369,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 *工具提示中的加速键组合*
 
-[按钮](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)，和[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)对象，键盘加速键附加到控件的默认工具提示。 适用于[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)） 对象，键盘加速键显示的浮出控件文本。
+[按钮](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)，和[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)对象，键盘加速键附加到控件的默认工具提示。 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)） 对象，键盘加速键显示浮出控件文本。
 
 > [!NOTE]
 > 指定工具提示 （请参阅 Button1 下面的示例） 替代此行为。
@@ -487,7 +490,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ### <a name="when-an-accelerator-is-invoked"></a>调用快捷方式时
 
-快捷方式由两种类型的键组成：修改键和非修改键。 修改键包括 Shift、菜单、Ctrl 和 Windows 键，这些键通过 [VirtualKeyModifiers](http://msdn.microsoft.com/library/windows/apps/xaml/Windows.System.VirtualKeyModifiers) 公开。 非修改键包括任何虚拟键，如 Delete、F3、空格键、Esc 以及所有字母数字和标点符号键。 用户长按一个或多个修改键期间按非修改键时，会调用键盘快捷方式。 例如，如果用户按 Ctrl+Shift+M，则在用户按 M 时，框架将检查修改键（Ctrl 和 Shift），并触发快捷方式（如果存在）。
+快捷方式由两种类型的键组成：修改键和非修改键。 修改键包括 Shift、菜单、Ctrl 和 Windows 键，这些键通过 [VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKeyModifiers) 公开。 非修改键包括任何虚拟键，如 Delete、F3、空格键、Esc 以及所有字母数字和标点符号键。 用户长按一个或多个修改键期间按非修改键时，会调用键盘快捷方式。 例如，如果用户按 Ctrl+Shift+M，则在用户按 M 时，框架将检查修改键（Ctrl 和 Shift），并触发快捷方式（如果存在）。
 
 > [!NOTE]
 > 按照设计，快捷方式会自动重复（例如，当用户按 Ctrl+Shift 然后按住 M 时，会重复调用快捷方式，直到松开 M 为止）。 此行为无法修改。
@@ -499,7 +502,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 在 XAML 中，会像只有一个输入浮升管道那样来处理键击。 KeyDown/KeyUp 事件和字符输入会使用此输入管道。 例如，如果元素具有焦点并且用户按下了某个键，则会对此元素引发 KeyDown 事件，随后对此元素的父项引发此事件，一直向上处理到树顶，直到 args.Handled 属性为 true 为止。
 
-KeyDown 事件也被一些控件用来实现内置的控件快捷方式。 当控件具有键盘快捷方式时，它会处理 KeyDown 事件，这意味着将不会有 KeyDown 事件浮升。 例如，RichEditBox 支持使用 Ctrl+C 进行复制。 当按下 Ctrl 时，KeyDown 事件会被触发并浮升，但是当用户同时按下 C 时，KeyDown 事件会被标记为“已处理”，并且不会被触发（除非将 [UIElement.AddHandler](http://msdn.microsoft.com/library/windows/apps/xaml/Windows.UI.Xaml.UIElement.AddHandler) 的 handledEventsToo 参数设置为 true）。
+KeyDown 事件也被一些控件用来实现内置的控件快捷方式。 当控件具有键盘快捷方式时，它会处理 KeyDown 事件，这意味着将不会有 KeyDown 事件浮升。 例如，RichEditBox 支持使用 Ctrl+C 进行复制。 当按下 Ctrl 时，KeyDown 事件会被触发并浮升，但是当用户同时按下 C 时，KeyDown 事件会被标记为“已处理”，并且不会被触发（除非将 [UIElement.AddHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) 的 handledEventsToo 参数设置为 true）。
 
 #### <a name="the-characterreceived-event"></a>CharacterReceived 事件
 
