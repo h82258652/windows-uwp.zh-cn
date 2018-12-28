@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ab894a9ba9c51b091e593503be2db57ba3b1a913
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c00b406f77758266c68a16b078192517caaa14bf
+ms.sourcegitcommit: 616adaaf15ae1b41e867181326c094f42ba6ec07
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936481"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "8990213"
 ---
 # <a name="optimize-your-xaml-layout"></a>优化 XAML 布局
 
@@ -75,7 +75,7 @@ ms.locfileid: "8936481"
 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 增加了一些复杂性，但仅使用单个面板元素。
 
 ```xml
-  <Grid>
+<Grid>
   <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
       <RowDefinition Height="Auto" />
@@ -134,7 +134,7 @@ ms.locfileid: "8936481"
 
 常见的 UI 要求是具有元素互相重叠的布局。 通常填充、边距、对齐和转换用于以这种方式定位元素。 已优化 XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 控件以提高重叠元素的布局性能。
 
-**重要提示**若要查看改进，请使用单个单元[**网格**](https://msdn.microsoft.com/library/windows/apps/BR242704)。 不要定义 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) 或 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions)。
+**重要**若要查看改进，请使用单个单元[**网格**](https://msdn.microsoft.com/library/windows/apps/BR242704)。 不要定义 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) 或 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions)。
 
 ### <a name="examples"></a>示例
 
