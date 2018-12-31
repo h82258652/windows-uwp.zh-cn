@@ -2,16 +2,16 @@
 Description: To understand your tax considerations for price selection, payout implications, and tax responsibility, see your countries/regions of distribution in the tables below.
 title: 付费应用的税收明细
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
-ms.date: 11/20/2018
+ms.date: 01/02/2019
 ms.topic: article
 keywords: windows 10, uwp, 税收, 应用税收, 税收要求, 商业扩张, 税率
 ms.localizationpriority: medium
-ms.openlocfilehash: 2065fb2a1cfeb2a895757e1aedc86cd421ff826c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 896a92e009b7d9c33554f77d8da56730625f1f85
+ms.sourcegitcommit: ffad7cfb5d5c099f9f559e966fd93b705b47d2bd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924117"
+ms.lasthandoff: 12/31/2018
+ms.locfileid: "8990335"
 ---
 # <a name="tax-details-for-paid-apps"></a>付费应用的税收明细
 
@@ -46,7 +46,7 @@ ms.locfileid: "8924117"
 | 奥地利                          | 所选择的价格就是最终售价并且包含所有适用的税款。 在付款之前，将从价格中扣除税款。       | （所选价格减去 20% 的税款）的 70%     | Microsoft          |
 | 阿塞拜疆                       | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 巴哈马                      | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
-| 巴林                          | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
+| 巴林                          | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | （所选价格减去 5% 的税款）的 70%                 | Microsoft          |
 | 孟加拉国                       | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 巴巴多斯                         | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 白俄罗斯                          | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                  | （所选价格减去 20% 的税款）的 70%         | Microsoft          |

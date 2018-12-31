@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10，uwp 安全
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: b0a052d08c6b0816d977d3e86881540194075818
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 14f5139f5fe2c3d5d1f97040ee3bec33ea48d6ac
+ms.sourcegitcommit: ffad7cfb5d5c099f9f559e966fd93b705b47d2bd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941275"
+ms.lasthandoff: 12/31/2018
+ms.locfileid: "8990325"
 ---
 # <a name="web-account-manager"></a>Web 帐户管理器
 
@@ -74,6 +74,9 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 ![帐户设置窗格](images/tb-1.png)
 
 窗格为空的原因是系统只提供了一个 UI shell，这取决于开发人员是否使用标识提供者以编程方式填充窗格。 
+
+> [!TIP]
+> 或者，你可以使用**[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** 而不是**[显示](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**，这将返回**[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**，查询操作的状态。 
 
 ## <a name="register-for-accountcommandsrequested"></a>注册 AccountCommandsRequested
 
