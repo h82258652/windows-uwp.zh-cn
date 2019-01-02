@@ -1,20 +1,20 @@
 ---
-description: XBind 标记扩展允许在标记中使用的功能。
+description: XBind 标记扩展允许函数在标记中使用。
 title: x:Bind 中的函数
 ms.date: 04/26/2018
 ms.topic: article
 keywords: windows 10，uwp xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 371b64a6161911242acd5b9abf97cfa7d2f05358
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 90d9bf524cda8d3ceed921d3bc19b73648f7581e
+ms.sourcegitcommit: 393180e82e1f6b95b034e99c25053d400e987551
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927252"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "8990490"
 ---
 # <a name="functions-in-xbind"></a>x:Bind 中的函数
 
-**注意**有关使用数据的常规信息绑定中你的应用与 **{x: Bind}** （和 **{x: Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意**有关使用数据的常规信息绑定在你的应用与 **{x: Bind}** （和 **{x: Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 从 Windows10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这样做可以实现以下操作：
 
@@ -62,29 +62,27 @@ class ColorEntry
 
 与其他属性路径一样指定该函数的路径，可以包含用于定位该函数的点 (.)、索引器或强制转换。
 
-可以使用 XMLNamespace:ClassName.MethodName 语法指定静态函数。 例如，使用以下语法用于绑定到代码隐藏文件中的静态函数。
+可以使用 XMLNamespace:ClassName.MethodName 语法指定静态函数。 例如，使用以下语法用于绑定到代码隐藏部分中的静态函数。
 
 ```xaml
 <Page 
      xmlns:local="using:MyPage">
      ...
-     <Grid x:Name="myGrid" Background="Black" >
-        <TextBlock Foreground="{x:Bind local:GenerateAppropriateForeground(myGrid.Background)}" Text="Hello World!" />
-    </Grid>
+    <StackPanel>
+        <TextBlock x:Name="BigTextBlock" FontSize="20" Text="Big text" />
+        <TextBlock FontSize="{x:Bind local:MyHelpers.Half(BigTextBlock.FontSize)}" 
+                   Text="Small text" />
+    </StackPanel>
 </Page>
 ```
 ```csharp
-public class MyPage : Page
+static public class MyHelpers
 {
-    public static GenerateAppropriateForeground(SolidColorBrush background)
-    {
-        //Implement static function
-        ...
-    }
+    public static double Half(double value) => value / 2.0;
 }
 ```
 
-你还可以直接在标记中使用的系统功能以完成简单的方案，如日期格式设置文本格式、 文本串联、 等，例如：
+你还可以直接在标记中使用系统功能，例如完成诸如日期格式设置、 文本格式、 文本串联、 等的简单方案：
 ```xaml
 <Page 
      xmlns:sys="using:System"
@@ -104,7 +102,7 @@ public class MyPage : Page
 - 参数类型需要匹配将传入的数据 - 我们不执行收缩转换
 - 函数的返回类型需要匹配正使用绑定的属性的类型
 
-从开始到 Windows 10 的下一个主要更新，则绑定引擎将响应属性更改通知触发的函数名称和重新评估作为必要的绑定。 例如： 
+从开始到 Windows 10 的下一个主要更新，绑定引擎将响应属性更改通知触发的函数名称和重新评估根据需要的绑定。 例如： 
 
 ```XAML
 <DataTemplate x:DataType="local:Person">
@@ -159,7 +157,7 @@ public class Person:INotifyPropertyChanged
 ```
 
 > [!TIP]
-> 可以使用 X:bind 中函数来实现作为内容已通过转换器和多重绑定在 WPF 所支持的方案相同。
+> 可以使用 X:bind 中的函数来实现作为内容已通过转换器和多重绑定在 WPF 所支持的方案相同。
 
 ## <a name="function-arguments"></a>函数参数
 
@@ -173,7 +171,7 @@ public class Person:INotifyPropertyChanged
 
 ### <a name="two-way-function-bindings"></a>双向函数绑定
 
-在双向绑定方案中，必须针对绑定的相反方向指定第二个函数。 完成此操作使用**绑**绑定属性。 在以下示例中，该函数应该具有一个参数，其值需要返回给模型。
+在双向绑定方案中，必须针对绑定的相反方向指定第二个函数。 这是使用**绑**绑定属性。 在以下示例中，该函数应该具有一个参数，其值需要返回给模型。
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```

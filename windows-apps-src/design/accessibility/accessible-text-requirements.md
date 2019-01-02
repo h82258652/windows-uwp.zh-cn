@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bdfcdc0782515928740a9c01b409b5170540cb27
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 888de987d507f0a1a21458c299605ebcc7b1bc70
+ms.sourcegitcommit: 393180e82e1f6b95b034e99c25053d400e987551
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934502"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "8990470"
 ---
 # <a name="accessible-text-requirements"></a>辅助文本要求  
 
@@ -114,25 +114,31 @@ _没有默认选择的示例_
 <span id="text_in_graphics"/>
 <span id="TEXT_IN_GRAPHICS"/>
 
-## <a name="text-in-graphics"></a>图形中的文本  
+## <a name="text-in-graphics"></a>图形中的文本
+
 请尽可能避免在图形中包括文本。 例如，图像源文件中所包括的、在应用中显示为 [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 元素的任何文本不会自动供辅助技术访问或读取。 如果必须在图形中使用文本，确保你提供为“alt text”的等效值的 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 值包括该文本或者该文本的含义汇总。 如果要从矢量创建作为 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 一部分的文本字符，或者要使用 [**Glyphs**](https://msdn.microsoft.com/library/windows/apps/BR209921) 创建文本字符，也可以遵循类似的注意事项。
 
 <span id="Text_font_size"/>
 <span id="text_font_size"/>
 <span id="TEXT_FONT_SIZE"/>
 
-## <a name="text-font-size"></a>文本字号  
-如果应用中的文本使用的字号太小而使文本难以辨认，许多用户都会难以认出这样的文本。 你可以通过使应用 UI 中的文本在首次出现时合理变大来避免发生此问题。 Windows 中还包含辅助技术，这些技术通过可使用户更改应用或显示器的视图大小。
+## <a name="text-font-size-and-scale"></a>文本的字体大小和缩放比例
 
-* 某些用户可采用辅助功能选项方式更改其主显示器的每英寸点数 (dpi) 值。 该选项可从“轻松使用”**** 的“放大屏幕上显示的内容”**** 中获得，可重定向到“外观和个性化”**** / “显示器”**** 的“控制面板”**** UI。 究竟有哪些大小设置选项可用可能有所不同，因为这取决于显示设备的功能。
-* “放大镜”工具可以放大 UI 的选定区域。 但是，很难使用“放大镜”工具阅读文本。
+用户可以很难阅读文本在应用中的，只需字体使用时太小，因此请确保你的应用程序中的任何文本是合理的大小，第一个位置。
 
-<span id="Text_scale_factor"/>
-<span id="text_scale_factor"/>
-<span id="TEXT_SCALE_FACTOR"/>
+完成后明显，Windows 将包含各种辅助功能工具和设置，用户可以充分利用和调整到自己需求和偏好阅读文本。 其中包括：
 
-## <a name="text-scale-factor"></a>文本缩放比例  
-各种文本元素和控件都具有 [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled) 属性。 默认情况下，此属性的值为 **true**。 当其值为 **true** 时，手机上称为“文本缩放”**** 的设置（“设置”&gt;“轻松使用”****）导致该元素中文本的文字大小被放大。 此缩放对 **FontSize** 较小的文本的影响程度比对 **FontSize** 较大的文本的影响更大。 但是你可以通过将元素的 **IsTextScaleFactorEnabled** 属性设置为 **false** 来禁用自动放大。 试用此标记、调整手机上的**文本大小**设置，然后查看 **TextBlock** 会发生什么情况：
+* 放大 UI 的选定的区域放大镜工具。 你应确保在应用中的文本布局不会将很难使用放大镜进行读取。
+* 中的全局缩放和分辨率设置**设置-> 系统-> 显示-> 缩放和布局**。 究竟有哪些大小设置选项可用可能有所不同因为这取决于显示设备的功能。
+* 在文本大小设置**设置-> 轻松使用-> 显示**。 调整**使更大的文本**设置指定仅文本的大小以支持跨所有应用程序和屏幕 （所有 UWP 文本控件都支持文本缩放体验而无需任何自定义或模板化） 控件。 
+> [!NOTE]
+> **使一切变大**设置允许用户仅其主屏幕上一般情况下指定文本和应用的首选的大小。
+
+各种文本元素和控件都具有 [**IsTextScaleFactorEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled) 属性。 默认情况下，此属性的值为 **true**。 当**true**，该元素中的文本大小可以缩放的量。 缩放影响已在更大程度比它会影响文本，大型**FontSize**小**FontSize**的文本。 你可以禁用自动调整大小的元素的**IsTextScaleFactorEnabled**属性设置为**false**。 
+
+有关更多详细信息，请参阅[文本缩放](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)。
+
+将以下标记添加到应用并运行。 调整**文本大小**设置，并查看每个**TextBlock**会发生什么情况。
 
 XAML
 ```xml
@@ -143,9 +149,9 @@ XAML
     Style="{StaticResource BodyTextBlockStyle}" IsTextScaleFactorEnabled="False"/>
 ```  
 
-但请勿例行禁用自动放大，因为通常跨所有应用缩放 UI 文本对于用户而言是一项重要的辅助功能体验，他们会以为在你的应用中也有这项功能。
+我们不建议你禁用文本缩放因为通常跨所有应用缩放 UI 文本是用户的重要的辅助功能体验。
 
-你还可以使用 [**TextScaleFactorChanged**](https://msdn.microsoft.com/library/windows/apps/Dn633867) 事件和 [**TextScaleFactor**](https://msdn.microsoft.com/library/windows/apps/Dn633866) 属性查明对手机上的 **“文本大小”** 设置的更改。 以下是操作方法：
+你还可以使用 [**TextScaleFactorChanged**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) 事件和 [**TextScaleFactor**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactor) 属性查明对手机上的 **“文本大小”** 设置的更改。 以下是操作方法：
 
 C#
 ```csharp
@@ -163,7 +169,7 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 }
 ```
 
-**TextScaleFactor** 的值是个双数，范围是 \[1,2\]。 最小的文本通过此数量放大。 例如，你可以使用此值缩放图像以匹配文本。 但是请记住，并非所有文本都通过相同的系数来缩放。 一般来说，开始时的文本越大，它受缩放的影响越小。
+**TextScaleFactor**的值是在范围 \[1,2.25\ 双]。 最小的文本通过此数量放大。 例如，你可以使用此值缩放图像以匹配文本。 但是请记住，并非所有文本都通过相同的系数来缩放。 一般来说，开始时的文本越大，它受缩放的影响越小。
 
 这些类型具有 **IsTextScaleFactorEnabled** 属性：  
 * [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378)
@@ -176,6 +182,8 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>相关主题  
+
+* [文本缩放](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
 * [辅助功能](accessibility.md)
 * [基本的辅助功能信息](basic-accessibility-information.md)
 * [XAML 文本显示示例](http://go.microsoft.com/fwlink/p/?linkid=238579)
