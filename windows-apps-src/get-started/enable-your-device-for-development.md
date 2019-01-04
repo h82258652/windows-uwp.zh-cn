@@ -6,12 +6,12 @@ keywords: 入门 开发人员许可证 Visual Studio，开发人员许可证 启
 ms.date: 05/30/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1338373226b30c3126782a62f3b5260a47e86d63
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 802555f6b1e6f928edf43806226ac497a437b4ff
+ms.sourcegitcommit: 67cc4153dac48a2633d93c954eaad61be8600fa8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943467"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "8991755"
 ---
 # <a name="enable-your-device-for-development"></a>启用设备进行开发
 
@@ -44,23 +44,19 @@ ms.locfileid: "8943467"
 
 ![转到“设置”、选择“更新和安全”，然后选择“面向开发人员”来查看你的选项](images/devmode-pc-options.png)
 
-下面是移动设备系列的设置页：
-
-![在手机上的“设置”中，选择“更新和安全”](images/devmode-mob.png)
-
 ## <a name="which-setting-should-i-choose-sideload-apps-or-developer-mode"></a>应选择哪些设置：旁加载应用还是开发人员模式？
 
  你可以启用设备以进行开发，或仅进行旁加载。
 
 -   *Microsoft 应用商店应用*是默认设置。 如果你未正在开发应用或者未使用公司发布的特殊内部应用，则启用此设置。
 -   *旁加载*是指安装未经 Microsoft Store 认证的应用，然后对其进行运行或测试的过程。 例如，仅限公司内部使用的应用。
--   借助*开发人员模式*，你不仅可以旁加载应用，还可以在调试模式下从 Visual Studio 运行应用。 
+-   借助*开发人员模式*，你不仅可以旁加载应用，还可以在调试模式下从 Visual Studio 运行应用。
 
 默认情况下，你只能从 Microsoft Store 安装通用 Windows 平台 (UWP) 应用。 将这些设置更改为使用开发人员功能时可能需更改设备的安全级别。 不应从未经验证的源安装应用。
 
 ### <a name="sideload-apps"></a>旁加载应用
 
-旁加载应用设置通常由需要在未通过 Microsoft Store 认证的托管设备上安装自定义应用的公司或学校使用。 在此情况下，组织通常会强制执行禁用 *UWP 应用*设置的策略，如之前的设置页图像中所示。 组织还会提供旁加载应用所需的证书和安装位置。 有关详细信息，请参阅 TechNet 文章[在 Windows 10 中旁加载应用](https://technet.microsoft.com/library/mt269549.aspx)和 [Microsoft Intune 中的应用部署入门](https://technet.microsoft.com/library/dn646955.aspx)。
+旁加载应用设置通常由公司或学校需要在托管设备上安装自定义应用，而不需要通过 Microsoft 应用商店中，或从非 Microsoft 源运行应用所需的任何其他人使用。 在此情况下，组织通常会强制执行禁用 *UWP 应用*设置的策略，如之前的设置页图像中所示。 组织还会提供旁加载应用所需的证书和安装位置。 有关详细信息，请参阅 TechNet 文章[在 Windows 10 中旁加载应用](https://technet.microsoft.com/library/mt269549.aspx)和 [Microsoft Intune 中的应用部署入门](https://technet.microsoft.com/library/dn646955.aspx)。
 
 设备系列特定信息
 
@@ -90,7 +86,7 @@ ms.locfileid: "8943467"
 
 此图显示了 Windows 10 的开发人员功能：
 
-![开发人员模式选项](images/devmode-mob-options.png) 
+![开发人员模式选项](images/devmode-mob-options.png)
 
 ### <a name="span-iddevice-discovery-and-pairingspandevice-portal"></a><span id="device-discovery-and-pairing"></span>Device Portal
 
@@ -103,7 +99,7 @@ ms.locfileid: "8943467"
 - [适用于移动设备的 Device Portal](../debug-test-perf/device-portal-mobile.md)
 - [适用于 Xbox 的 Device Portal](../debug-test-perf/device-portal-xbox.md)
 
-如果在启用开发人员模式或 Device Portal 时遇到问题，请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛以查找这些问题的解决方法，或者访问[无法安装开发人员模式程序包](#failure-to-install-developer-mode-package)以获取更多详细信息，并了解可以使用哪些 WSUS KB 来解除阻止开发人员模式程序包。 
+如果在启用开发人员模式或 Device Portal 时遇到问题，请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛以查找这些问题的解决方法，或者访问[无法安装开发人员模式程序包](#failure-to-install-developer-mode-package)以获取更多详细信息，并了解可以使用哪些 WSUS KB 来解除阻止开发人员模式程序包。
 
 ### <a name="ssh"></a>SSH
 
@@ -114,7 +110,7 @@ ms.locfileid: "8943467"
 
 为了充分利用 SSH 服务，可以启用设备发现来支持固定配对。 如果想要运行另一个 SSH 服务，可以在其他端口上设置该服务或关闭开发人员模式 SSH 服务。 若要关闭 SSH 服务，请关闭设备发现。  
 
-SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身份验证。  此密码是在按设备发现“配对”按钮后显示在设备上的 PIN，且仅在 PIN 显示时有效。  SFTP 子系统也将启用，用于手动管理从 Visual Studio 安装松散文件部署的 DevelopmentFiles 文件夹。 
+SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身份验证。  此密码是在按设备发现“配对”按钮后显示在设备上的 PIN，且仅在 PIN 显示时有效。  SFTP 子系统也将启用，用于手动管理从 Visual Studio 安装松散文件部署的 DevelopmentFiles 文件夹。
 
 #### <a name="caveats-for-ssh-usage"></a>SSH 使用的注意事项
 在 Windows 中使用的现有 SSH 服务器尚不兼容协议，因此，使用 SFTP 或 SSH 客户端可能需要特殊配置。  特别是，SFTP 子系统在版本 3 或更低版本上运行，因此，任何连接的客户端均应配置为需要旧服务器。  较旧设备上的 SSH 服务器使用 `ssh-dss` 进行公钥身份验证，其已弃用 OpenSSH。  若要连接到此类设备，SSH 客户端必须手动配置为接受 `ssh-dss`。  
@@ -129,7 +125,7 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 
 ### <a name="optimizations-for-windows-explorer-remote-desktop-and-powershell-desktop-only"></a>适用于 Windows 资源管理器、远程桌面和 PowerShell 的优化（仅限桌面设备）
 
- 在桌面设备系列上，**面向开发人员**设置页提供可用于针对开发任务对电脑进行优化的设置的快捷方式。 对于每个设置，可以选中相应复选框，然后单击**应用**或单击**显示设置**链接打开该选项的设置页。 
+ 在桌面设备系列上，**面向开发人员**设置页提供可用于针对开发任务对电脑进行优化的设置的快捷方式。 对于每个设置，可以选中相应复选框，然后单击**应用**或单击**显示设置**链接打开该选项的设置页。
 
 
 ## <a name="notes"></a>注释
@@ -141,34 +137,35 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 -   你可以使用 [Device Portal](../debug-test-perf/device-portal.md) 从浏览器部署到运行 Windows 10 版本 1511 或更高版本的移动设备。 在 Device Portal 中使用**[应用](../debug-test-perf/device-portal.md#apps-manager)** 页上传应用包 (.appx) 并在设备上安装它。
 
 ## <a name="failure-to-install-developer-mode-package"></a>无法安装开发人员模式程序包。
-有时，由于网络或管理问题，开发人员模式无法正确安装。 开发人员模式程序包是**远程**部署到此电脑的必需条件 - 使用来自浏览器的 Device Portal 或设备发现启用 SSH - 但不用于本地部署。  即使你遇到这些问题，你仍然可以使用 Visual Studio 本地部署应用，或者从本设备向其他设备部署。 
+有时，由于网络或管理问题，开发人员模式无法正确安装。 开发人员模式程序包是**远程**部署到此电脑的必需条件 - 使用来自浏览器的 Device Portal 或设备发现启用 SSH - 但不用于本地部署。  即使你遇到这些问题，你仍然可以使用 Visual Studio 本地部署应用，或者从本设备向其他设备部署。
 
-请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛，查找这些问题的解决方法以及其他内容。 
+请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛，查找这些问题的解决方法以及其他内容。
 
 > [!NOTE]
-> 如果没有正确安装开发人员模式下，我们鼓励你提出的反馈请求。 在**反馈中心**应用中，选择**添加新反馈**，并选择**开发人员平台**类别和**开发人员模式**子类别。 提交反馈将帮助 Microsoft 解决你遇到此问题。
+> 如果没有正确安装开发人员模式下，我们鼓励你提出的反馈请求。 在**反馈中心**应用中，选择**添加新反馈**，并选择**开发人员平台**类别和**开发人员模式**子类别。 提交反馈将帮助 Microsoft 解决遇到的问题。
 
 ### <a name="failed-to-locate-the-package"></a>无法找到该程序包
 
 “无法在 Windows 更新中找到开发人员模式程序包。 错误代码 0x80004005 了解详细信息”   
 
-发生此错误可能是由于网络连接问题、企业设置，或者程序包可能丢失。 
+发生此错误可能是由于网络连接问题、企业设置，或者程序包可能丢失。
 
 若要解决此问题：
 
-1. 确保你的计算机连接到 Internet。 
-2. 如果你位于加入域的计算机上，请与网络管理员联系。 默认情况下，WSUS 中阻止了开发人员模式程序包，如所有按需功能。 2.1. 为了在当前和之前的版本中解除阻止开发人员模式程序包，应该允许在 WSUS 中使用以下 KB：4016509、3180030、3197985  
+1. 确保你的计算机连接到 Internet。
+2. 如果你位于加入域的计算机上，请与网络管理员联系。 默认情况下，WSUS 中阻止了开发人员模式程序包，如所有按需功能。
+2.1. 为了在当前和之前的版本中解除阻止开发人员模式程序包，应该允许在 WSUS 中使用以下 KB：4016509、3180030、3197985  
 3. 在“设置”&gt;“更新和安全”&gt;“Windows 更新”中检查 Windows 更新。
-4. 在“设置”&gt;“系统”&gt;“应用和功能”&gt;“管理可选功能”&gt;“添加功能”中验证 Windows 开发人员模式是否存在。 如果缺少，Windows 无法为计算机找到正确的程序包。 
+4. 在“设置”&gt;“系统”&gt;“应用和功能”&gt;“管理可选功能”&gt;“添加功能”中验证 Windows 开发人员模式是否存在。 如果缺少，Windows 无法为计算机找到正确的程序包。
 
-在执行上述任意步骤后，禁用并随后重新启用“开发人员模式”以验证是否解决该问题。 
+在执行上述任意步骤后，禁用并随后重新启用“开发人员模式”以验证是否解决该问题。
 
 
 ### <a name="failed-to-install-the-package"></a>无法安装程序包
 
 “开发人员模式程序包无法安装。 错误代码 0x80004005 了解详细信息”
 
-发生此错误可能是由于 Windows 的内部版本和开发人员模式程序包之间不兼容。 
+发生此错误可能是由于 Windows 的内部版本和开发人员模式程序包之间不兼容。
 
 若要解决此问题：
 
@@ -178,7 +175,7 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 
 ## <a name="use-group-policies-or-registry-keys-to-enable-a-device"></a>使用组策略或注册表项启用设备
 
-对于大多数开发人员而言，希望使用“设置”应用启用设备进行调试。 在诸如自动执行测试等方案中，可以使用其他方法启用 Windows 10 桌面设备进行开发。  请注意，这些步骤不会启用 SSH 服务器或允许面向设备进行远程部署和调试。 
+对于大多数开发人员而言，希望使用“设置”应用启用设备进行调试。 在诸如自动执行测试等方案中，可以使用其他方法启用 Windows 10 桌面设备进行开发。  请注意，这些步骤不会启用 SSH 服务器或允许面向设备进行远程部署和调试。
 
 可以使用 gpedit.msc 设置组策略来启用设备，除非你拥有 Windows 10 家庭版。 如果你有 Windows 10 家庭版，则需要使用 regedit 或 PowerShell 命令直接设置注册表项以启用设备。
 
