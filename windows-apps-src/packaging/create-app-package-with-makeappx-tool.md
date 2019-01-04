@@ -1,35 +1,29 @@
 ---
 title: 使用 MakeAppx.exe 工具创建应用包
 description: MakeAppx.exe 创建、加密、解密应用程序包和捆绑包，并从中提取文件。
-ms.date: 06/21/2018
+ms.date: 01/02/2019
 ms.topic: article
 keywords: windows 10, uwp, 打包, windows 10, uwp, packaging
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: dc109fe2e684dd3bc1fef62cece5cac3ab50d246
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3c6958491092498451743085af38b2d0fa6bdf8a
+ms.sourcegitcommit: 62bc4936ca8ddf1fea03d43a4ede5d14a5755165
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943008"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "8991603"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>使用 MakeAppx.exe 工具创建应用包
 
 
-**MakeAppx.exe** 同时创建应用包和应用捆绑包。 **MakeAppx.exe** 还从应用包或捆绑包中提取文件，并加密或解密应用程序包和捆绑包。 此工具包含在 Windows 10 SDK 中，并且可以从命令提示符或脚本文件中使用。
+**MakeAppx.exe**创建应用包 （.msix 或.appx） 和应用包捆绑包 （.msixbundle 或.appxbundle）。 **MakeAppx.exe** 还从应用包或捆绑包中提取文件，并加密或解密应用程序包和捆绑包。 此工具包含在 Windows 10 SDK 中，并且可以从命令提示符或脚本文件中使用。
 
-> [!IMPORTANT] 
-> 如果你使用 Visual Studio 开发你的应用，建议使用 Visual Studio 向导创建应用包。 有关详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
+> [!IMPORTANT]
+> 如果你使用 Visual Studio 开发你的应用，建议使用 Visual Studio 向导创建应用包。 有关详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](packaging-uwp-apps.md)。
 
-请注意，**MakeAppx.exe** 不会创建 .appxupload 文件。 .Appxupload 文件作为 Visual Studio 打包过程的一部分进行创建，并包含其他两个文件：.msix 或.appx 和.appxsym。 .Appxsym 文件是应用的包含用于在合作伙伴中心中的[故障分析](../publish/health-report.md)你的公共符号的压缩的.pdb 文件。 也可以提交常规 .appx 文件，但崩溃分析或调试信息将不可用。 有关将程序包提交到应用商店的详细信息，请参阅[上载应用包](../publish/upload-app-packages.md)。 
-
- 更新到最新版本的 Windows 10 中的此工具不会影响.appx 包使用情况。 你可以继续使用此工具与.appx 程序包，或支持针对.msix 包使用该工具，如下所述。
-
-手动创建一个 .appxupload 文件：
-- 将.msix 和.appxsym 放在一个文件夹
-- 压缩该文件夹
-- 将压缩的文件夹扩展名从 .zip 更改为 .appxupload
+> [!IMPORTANT]
+> 请注意**MakeAppx.exe**不会创建[应用包上传文件 （.appxupload 或.msixupload）](packaging-uwp-apps.md#types-of-app-packages)，这是推荐的一种有效的应用包[提交到合作伙伴中心](../publish/upload-app-packages.md)。 应用包上传文件通常[作为 Visual Studio 打包过程的一部分创建](packaging-uwp-apps.md#create-an-app-package-upload-file)，尽管也可以手动创建。
 
 ## <a name="using-makeappxexe"></a>使用 MakeAppx.exe
 
@@ -96,7 +90,7 @@ MakeAppx <command> [options]
 
 ### <a name="create-an-app-package"></a>创建应用包
 
-应用包是将一组完整的打包到.msix 或.appx 包文件中的应用的文件。 若要使用 **pack** 命令创建应用包，必须提供程序包位置的内容目录或映射文件。 你还可以在创建它时加密程序包。 如果你想要加密程序包，必须使用 /ep 并指定是否使用密钥文件 (/kf) 或全局测试密钥 (/kt)。 有关创建加密程序包的详细信息，请参阅[加密或解密程序包或捆绑包](#encrypt-or-decrypt-a-package-or-bundle)。
+应用包是整套.msix 或.appx 包文件打包在应用的文件。 若要使用 **pack** 命令创建应用包，必须提供程序包位置的内容目录或映射文件。 你还可以在创建它时加密程序包。 如果你想要加密程序包，必须使用 /ep 并指定是否使用密钥文件 (/kf) 或全局测试密钥 (/kt)。 有关创建加密程序包的详细信息，请参阅[加密或解密程序包或捆绑包](#encrypt-or-decrypt-a-package-or-bundle)。
 
 特定于 **pack** 命令的选项：
 
@@ -111,7 +105,7 @@ MakeAppx <command> [options]
 
 下面的用法示例演示了一些可能的 **pack** 命令语法选项：
 
-``` syntax 
+``` syntax
 MakeAppx pack [options] /d <content directory> /p <output package name>
 MakeAppx pack [options] /f <mapping file> /p <output package name>
 MakeAppx pack [options] /m <app package manifest> /f <mapping file> /p <output package name>
@@ -200,7 +194,7 @@ MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kt
 
 **MakeAppx.exe** 工具也可以加密或解密现有程序包或捆绑包。 只需提供程序包名称、输出程序包名称，以及加密或解密是否应使用密钥文件 (/kf) 或全局测试密钥 (/kt)。
 
-Visual Studio 打包向导不提供加密和解密。 
+Visual Studio 打包向导不提供加密和解密。
 
 特定于 **encrypt** 和 **decrypt** 命令的选项：
 
@@ -251,7 +245,7 @@ MakeAppx.exe decrypt p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile
 "\\MyServer\path\icon.png"              "icon.png"
 "my app files\readme.txt"               "my app files\readme.txt"
 "CustomManifest.xml"                    "AppxManifest.xml"
-``` 
+```
 
 使用映射文件时，可以选择是否想要使用 /m 选项。 /M 选项允许用户指定映射文件中的资源元数据，该文件将包含在生成的清单中。 如果使用 /m 选项，映射文件必须包含以“[ResourceMetadata]”行开始的部分，后跟指定“ResourceDimensions”和“ResourceId”的行。 应用程序包可以包含多个“ResourceDimensions”，但永远只会存在一个“ResourceId”。
 
@@ -269,11 +263,11 @@ MakeAppx.exe decrypt p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile
 
 ## <a name="semantic-validation-performed-by-makeappxexe"></a>由 MakeAppx.exe 执行的语义式验证
 
-**MakeAppx.exe** 执行有限的语义式验证，旨在捕获最常见的部署错误并帮助确保应用包有效。 如果想要在使用 **MakeAppx.exe** 时跳过验证，请参阅 /nv 选项。 
+**MakeAppx.exe** 执行有限的语义式验证，旨在捕获最常见的部署错误并帮助确保应用包有效。 如果想要在使用 **MakeAppx.exe** 时跳过验证，请参阅 /nv 选项。
 
 此验证确保：
 - 在程序包清单中引用的所有文件都包含在应用包中。
 - 应用程序没有两个相同的密钥。
-- 应用程序不会注册此列表中的禁用协议：SMB、FILE、MS-WWA-WEB、MS-WWA。 
+- 应用程序不会注册此列表中的禁用协议：SMB、FILE、MS-WWA-WEB、MS-WWA。
 
 这不是完整的语义式验证，因为它仅用于捕获常见错误。 不能保证通过 **MakeAppx.exe** 生成的程序包均可安装。

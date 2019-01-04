@@ -2,16 +2,16 @@
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: 适用于 HoloLens 的 Device Portal
 description: 了解适用于 HoloLens 的 Windows 设备门户是如何支持你远程配置和管理你的 HoloLens 设备。
-ms.date: 09/26/2017
+ms.date: 1/3/2019
 ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 2607b40e53ab4a6fa1dbca389348d2de9108e4b0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6d02f9eac43687974ed76ef25e53f654783956a9
+ms.sourcegitcommit: 62bc4936ca8ddf1fea03d43a4ede5d14a5755165
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931375"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "8991613"
 ---
 # <a name="device-portal-for-hololens"></a>适用于 HoloLens 的 Device Portal
 
@@ -34,8 +34,7 @@ ms.locfileid: "8931375"
 #### <a name="connect-over-wi-fi"></a>通过 WLAN 连接 
 
 1. 将 HoloLens 连接到 WLAN。
-2. 查看设备的 IP 地址，可在设备的“设置”&gt;“网络和 Internet”&gt;“WLAN”&gt;“高级选项”下找到 IP 地址。
-    你还可以问“你好小娜，我的 IP 地址是多少？”
+2. 查找设备的 IP 地址。 查找在设备上的 IP 地址**设置 > 网络和 Internet > Wi-fi > 硬件属性**。 你还可以问“你好小娜，我的 IP 地址是多少？”
 
 3. 通过电脑上的 Web 浏览器，转到 `https://<YOUR_HOLOLENS_IP_ADDRESS>`
     - 该浏览器会显示以下消息：“此网站的安全证书存在问题”。 由于颁发给设备门户的证书是测试证书，因此会显示上述消息。 你可以暂时忽略此证书错误并继续。
