@@ -1,17 +1,17 @@
 ---
 title: 启动屏幕截取
-description: 本主题介绍了 ms screenclip 和 ms screensketch URI 方案。 你的应用可以使用这些 URI 方案来启动代码段和 Sketch 应用或打开新的代码段。
+description: 本主题介绍了 ms screenclip 和 ms screensketch URI 方案。 你的应用可以使用这些 URI 方案来启动代码段和草图应用或打开新的代码段。
 ms.date: 8/1/2017
 ms.topic: article
-keywords: windows 10，uwp，uri、 截图草图
+keywords: windows 10，uwp，uri、 代码段草图
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0a90772e01885a7361cd51b54fc6e5ea9930bfbd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 07c095e661327ba1b64c4ba897937c8e3e905140
+ms.sourcegitcommit: d705a79d037baa764790d3d8daa9321ed0ac9ebc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920556"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "8992187"
 ---
 # <a name="launch-screen-snipping"></a>启动屏幕截取
 
@@ -26,22 +26,22 @@ ms.locfileid: "8920556"
 | 参数 | 类型 | 必需 | 描述 |
 | --- | --- | --- | --- |
 | 源 | 字符串 | 否 | 要指示启动 URI 的源的自由格式字符串。 |
-| delayInSeconds | int | 否 | 从 1 到 30 的整数值。 指定以完全秒为单位，URI 调用和截图开始时之间的延迟。 |
+| delayInSeconds | int | 否 | 从 1 到 30 的整数值。 指定以完整秒为单位，URI 调用和截图开始时之间的延迟。 |
 
-## <a name="launching-the-snip--sketch-app"></a>启动代码段和 Sketch 应用
+## <a name="launching-the-snip--sketch-app"></a>启动代码段和草图应用
 
-**Ms screensketch:** URI 允许你以编程方式启动代码段和 Sketch 的应用，并在注释该应用中打开特定的图像。
+**Ms screensketch:** URI 允许你以编程方式启动代码段和 Sketch 的应用，并为批注该应用中打开特定的图像。
 
 **ms screensketch:** 采用以下参数：
 
 | 参数 | 类型 | 必需 | 描述 |
 | --- | --- | --- | --- |
-| sharedAccessToken | 字符串 | 否 | 用于标识要在代码段和 Sketch 的应用中打开的文件访问令牌。 从[SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile)检索。 如果省略此参数，则将打开的文件不启动应用。 |
+| sharedAccessToken | 字符串 | 否 | 用于标识要在代码段和 Sketch 的应用中打开的文件访问令牌。 从[SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile)检索。 如果省略此参数，则应用将启动没有打开文件。 |
 | secondarySharedAccessToken | 字符串 | 否 | 提供关于截图元数据中标识的 JSON 文件的字符串。 元数据可能包括具有 x、 y 坐标的数组和/或[userActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity) **clipPoints**字段。 |
 | 源 | 字符串 | 否 | 要指示启动 URI 的源的自由格式字符串。 |
 | isTemporary | Bool | 否 | 如果设置为 True，屏幕草图将尝试打开它后删除文件。 |
 
-下面的示例调用[LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_)方法将从用户的应用发送到截图和 Sketch 的图像。
+下面的示例调用[LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_)方法将从用户的应用发送到代码段和 Sketch 的图像。
 
 ```csharp
 
@@ -49,7 +49,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-screenske
 
 ```
 
-以下示例说明了由**ms 屏幕截图** **secondaryFileAccessToken**参数指定的文件可能包含：
+下面的示例说明了由**ms screensketch** **secondarySharedAccessToken**参数指定的文件可能包含：
 
 ```json
 {
