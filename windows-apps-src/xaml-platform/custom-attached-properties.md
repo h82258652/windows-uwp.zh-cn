@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: a92e1ad1c5bfb3960950b976da46ca16490d097e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 12aabe7a17a9bc62c5e6da27fe019e540db725df
+ms.sourcegitcommit: 557257fb792f0b04b013d3507b3ebe5b0f6aa6c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923005"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "8992230"
 ---
 # <a name="custom-attached-properties"></a>自定义附加属性
 
@@ -73,7 +73,7 @@ ms.locfileid: "8923005"
 
 此示例展示了依赖属性注册（使用 [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 方法），以及一个自定义附加属性的 **Get** 和 **Set** 访问器。 在此示例中，附加属性名称为 `IsMovable`。 因此，访问器必须命名为 `GetIsMovable` 和 `SetIsMovable`。 附加属性的所有者是自身不具有 UI 的名为 `GameService` 服务类；其目的只是在使用 **GameService.IsMovable** 附加属性时提供附加属性服务。
 
-定义附加的属性在 C + + CX 是更为复杂。 必须决定如何协调标头文件和代码文件。 另外，应该将标识符公开为只有一个 **get** 访问器的属性，原因如[自定义依赖属性](custom-dependency-properties.md)中所述。 在 C + +，必须定义此属性-字段关系 CX 显式而不在.NET **readonly**关键字和隐式依赖备份的简单属性。 你还需要在首次启动应用时，在加载需要附加属性的任何 XAML 页面之前，在仅运行一次的帮助程序函数中执行附加属性的注册操作。 为所有依赖属性或附加属性调用属性注册帮助程序函数的典型位置是 app.xaml 文件代码的 **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) 构造函数内。
+定义附加的属性在 C + + CX 是更为复杂。 必须决定如何协调标头文件和代码文件。 另外，应该将标识符公开为只有一个 **get** 访问器的属性，原因如[自定义依赖属性](custom-dependency-properties.md)中所述。 在 C + + CX 必须定义此属性-字段关系显式而不依赖于.NET **readonly**关键字和隐式支持的简单属性。 你还需要在首次启动应用时，在加载需要附加属性的任何 XAML 页面之前，在仅运行一次的帮助程序函数中执行附加属性的注册操作。 为所有依赖属性或附加属性调用属性注册帮助程序函数的典型位置是 app.xaml 文件代码的 **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) 构造函数内。
 
 ```csharp
 public class GameService : DependencyObject
@@ -120,19 +120,21 @@ End Class
 // GameService.idl
 namespace UserAndCustomControls
 {
+    [default_interface]
     runtimeclass GameService : Windows.UI.Xaml.DependencyObject
     {
         GameService();
         static Windows.UI.Xaml.DependencyProperty IsMovableProperty{ get; };
-        Boolean IsMovable;
+        static Boolean GetIsMovable(Windows.UI.Xaml.DependencyObject target);
+        static void SetIsMovable(Windows.UI.Xaml.DependencyObject target, Boolean value);
     }
 }
 
 // GameService.h
 ...
-    bool IsMovable(){ return winrt::unbox_value<bool>(GetValue(m_IsMovableProperty)); }
-    void IsMovable(bool value){ SetValue(m_IsMovableProperty, winrt::box_value(value)); }
-    Windows::UI::Xaml::DependencyProperty IsMovableProperty(){ return m_IsMovableProperty; }
+    static Windows::UI::Xaml::DependencyProperty IsMovableProperty() { return m_IsMovableProperty; }
+    static bool GetIsMovable(Windows::UI::Xaml::DependencyObject const& target) { return winrt::unbox_value<bool>(target.GetValue(m_IsMovableProperty)); }
+    static void SetIsMovable(Windows::UI::Xaml::DependencyObject const& target, bool value) { target.SetValue(m_IsMovableProperty, winrt::box_value(value)); }
 
 private:
     static Windows::UI::Xaml::DependencyProperty m_IsMovableProperty;
@@ -204,7 +206,10 @@ GameService::RegisterDependencyProperties() {
 }
 ```
 
-## <a name="using-your-custom-attached-property-in-xaml"></a>在 XAML 中使用自定义附加属性
+## <a name="setting-your-custom-attached-property-from-xaml-markup"></a>XAML 标记中设置自定义附加的属性
+
+> [!NOTE]
+> 如果你使用 C + + /winrt 中，然后跳到下一节 ([设置自定义附加的属性强制使用 C + + WinRT](#setting-your-custom-attached-property-imperatively-with-cwinrt))。
 
 定义附加属性并将它的支持成员包含在一个自定义类型中后，你必须让这些定义可供 XAML 使用。 为此，你必须映射一个 XAML 命名空间，它将引用其中包含相关类的代码命名空间。 如果在一个库中定义了附加属性，必须将该库包含在应用的应用程序包中。
 
@@ -230,7 +235,32 @@ XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 
 ```
 
 > [!NOTE]
-> 如果使用 C++ 编写 XAML UI，只要一个 XAML 页面使用一种自定义类型，就必须包含定义附加属性的该类型的标头文件。 每个 XAML 页面都有一个与之关联的 .xaml.h 代码隐藏标头文件。 你应该在这里包含（使用 **\#include**）附加属性的所有者类型定义的标头文件。
+> 如果你要编写 XAML UI 通过 C + + CX，那么你必须包含定义附加的属性，任何时间的自定义类型的标头文件在 XAML 页面使用该类型。 每个 XAML 页面都有关联的代码隐藏标头 (。 xaml.h)。 你应该在这里包含（使用 **\#include**）附加属性的所有者类型定义的标头文件。
+
+## <a name="setting-your-custom-attached-property-imperatively-with-cwinrt"></a>设置自定义附加的属性强制使用 C + + WinRT
+
+如果你使用 C + + WinRT，那么你可以访问的自定义附加的属性，从强制性代码，而不是从 XAML 标记。 下面的代码显示如何。
+
+```xaml
+<Image x:Name="gameServiceImage"/>
+```
+
+```cppwinrt
+// MainPage.h
+...
+#include "GameService.h"
+...
+
+// MainPage.cpp
+...
+MainPage::MainPage()
+{
+    InitializeComponent();
+
+    GameService::SetIsMovable(gameServiceImage(), true);
+}
+...
+```
 
 ## <a name="value-type-of-a-custom-attached-property"></a>自定义附加属性的值类型
 
