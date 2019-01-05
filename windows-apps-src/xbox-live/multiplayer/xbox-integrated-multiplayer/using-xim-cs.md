@@ -5,12 +5,12 @@ ms.date: 04/24/2018
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox 集成多人游戏
 ms.localizationpriority: medium
-ms.openlocfilehash: d230d59de1b40797505ac7a47ee52184857b8d05
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 92ac7b9897b57de42fa56126b477f4db5b9b74dd
+ms.sourcegitcommit: 2a81d71e799eb167c7a26bf33c9ac847b8e6bc66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946789"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "8992077"
 ---
 # <a name="using-xim-c"></a>使用 XIM (C#)
 
@@ -561,3 +561,6 @@ XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableNetworkInformation(selectedN
 ```
 
 当通过 `XimNetworkConfiguration.TeamConfiguration`（声明了两个或更多团队）启用网络查询时，通过调用 XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableNetworkInformation() 加入的玩家将拥有默认团队索引值 0。
+
+> [!NOTE]
+> 如果应用具有指定多个本地用户，并且正在加入的网络具有比本地用户数较少空间，仍可以成功加入。 但是，仅允许本地用户的次数可加入网络。
