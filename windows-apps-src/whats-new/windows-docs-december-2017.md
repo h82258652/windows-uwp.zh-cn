@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 12 月
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b4c834c646aed7953dc2b0f992dea579d8b9fd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 52a60189d7fba39709aa679dbff79551b151e5a4
+ms.sourcegitcommit: b66c5ccbf519b99a432c83c890436a044fc891df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937216"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "8992611"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>2017 年 12 月 Windows 开发人员文档中的新增功能
 
@@ -58,7 +58,7 @@ Visual Studio 2017 第 15.5 版已更新 **Windows 应用程序包项目**模板
 
 ### <a name="subscription-add-ons-are-now-available-to-developers-in-the-windows-dev-center-insider-program"></a>参加 Windows 开发人员中心会员计划的开发人员现在可以使用订阅加载项
 
-所有参加[开发人员中心会员计划](../publish/dev-center-insider-program.md)的开发人员现在都可以使用订阅加载项，以便在自动定期计费周期内销售自主应用中的数字产品（比如应用功能或数字内容）。 如需了解更多的详细信息，可参阅[启用应用加载项订阅](../monetize/enable-subscription-add-ons-for-your-app.md)。
+所有参加开发人员中心会员计划的开发人员现在都可以使用订阅加载项，以便在自动定期计费周期内销售自主应用中的数字产品（比如应用功能或数字内容）。 如需了解更多的详细信息，可参阅[启用应用加载项订阅](../monetize/enable-subscription-add-ons-for-your-app.md)。
 
 ## <a name="developer-guidance"></a>开发人员指南
 
