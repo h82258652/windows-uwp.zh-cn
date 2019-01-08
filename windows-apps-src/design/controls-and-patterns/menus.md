@@ -3,7 +3,7 @@ Description: Menus and context menus display a list of commands or options when 
 title: 菜单和上下文菜单
 label: Menus and context menus
 template: detail.hbs
-ms.date: 10/02/2018
+ms.date: 01/08/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
@@ -13,12 +13,12 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 038bb15029a3d9893c5b32558546ecf07066043b
-ms.sourcegitcommit: 43149cd43e8169edfbd241428ba49e56b64bfd0d
+ms.openlocfilehash: 3f585af5cff4b135760bf14b902b2783715392ed
+ms.sourcegitcommit: 404ec20d276adfd9e47f88a94efd4b9cf0725656
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/08/2019
-ms.locfileid: "8995048"
+ms.locfileid: "8995431"
 ---
 # <a name="menus-and-context-menus"></a>菜单和上下文菜单
 
@@ -217,7 +217,8 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-menu-bar"></a>创建菜单栏
 
-> **预览**： 菜单栏需要[最新的 Windows 10 Insider Preview 版本和 SDK](https://insider.windows.com/for-developers/)或[Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> [!IMPORTANT]
+> 菜单栏需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本，或[Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 使用相同的元素来创建如菜单浮出控件中所示的菜单栏中的菜单。 但是，而不是组合 MenuFlyout MenuFlyoutItem 对象，你将它们组合 MenuBarItem 元素中。 每个 MenuBarItem 将作为顶级菜单添加到在菜单栏。
 
