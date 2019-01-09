@@ -6,12 +6,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 创意者, 测试
 ms.localizationpriority: medium
-ms.openlocfilehash: 84d81f6a6c18af92da003243c2d14d2ecc3bf136
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5b39a2ed67d2fe77fa8904408b81a329125d73c7
+ms.sourcegitcommit: 0373a2021c1b7144f28b08778d6a3b3dc64aa10c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925595"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "8997388"
 ---
 # <a name="create-a-new-xbox-live-creators-program-title-and-publish-to-the-test-environment"></a>创建新的 Xbox Live 创意者计划主题作品并发布到测试环境
 
@@ -31,18 +31,18 @@ ms.locfileid: "8925595"
 
 ## <a name="partner-center-setup"></a>合作伙伴中心设置
 
-你需要在[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建作为使用所有 Xbox Live 功能的先决条件一个支持 Xbox Live 的主题作品。
+你需要作为必备条件到使用任何 Xbox Live 功能在[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建一个支持 Xbox Live 的主题作品。
 
 ### <a name="create-a-microsoft-account"></a>创建 Microsoft 帐户
 如果你没有 Microsoft 帐户（也称为 MSA），则需要先在 [Microsoft 帐户 - 登录](https://go.microsoft.com/fwlink/p/?LinkID=254486) 上创建一个帐户。 如果你有 Office 365 帐户、使用 Outlook.com 或拥有 Xbox Live 帐户，则你可能已经有 MSA 了。
 
 ### <a name="register-as-an-app-developer"></a>注册成为应用开发人员。
-你将需要先注册成为应用开发人员，然后你可以在合作伙伴中心中创建新主题作品。
+你将需要先注册成为应用开发人员，然后你可以在合作伙伴中心中创建新的主题作品。
 
 要进行注册，请转到[注册为应用开发人员](https://developer.microsoft.com/store/register)，并按照注册流程完成操作。
 
 ### <a name="create-a-new-uwp-title"></a>创建新的 UWP 主题作品
-你将需要一个在合作伙伴中心中定义的 UWP 主题作品。 你执行该操作先转到[合作伙伴中心](https://partner.microsoft.com/dashboard)。
+你将需要在合作伙伴中心中定义一个 UWP 主题作品。 你执行该操作先转到[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 
 然后，创建一个新主题作品。 你需要保留一个名称。
 
@@ -85,7 +85,7 @@ ms.locfileid: "8925595"
 
 仅授权的设备和用户可以访问开发沙盒中游戏的 Xbox Live 配置。
 
-默认情况下，所有 Xbox One 开发主机已添加到你的合作伙伴中心帐户有权访问你的开发沙盒。  若要添加 Xbox One 主机，请转到[管理 Xbox One 主机](https://partner.microsoft.com/XboxDevices)。 如果你已在你的合作伙伴中心帐户中，你可以转到**帐户设置** > **帐户设置** > **开发人员设备** > **Xbox One 开发主机**。
+默认情况下，所有的 Xbox One 开发主机已添加到你的合作伙伴中心帐户具有访问你的开发沙盒。  若要添加 Xbox One 主机，请转到[管理 Xbox One 主机](https://partner.microsoft.com/xboxconfig/devices)。 如果你已在你的合作伙伴中心帐户，则可以转到**帐户设置** > **帐户设置** > **开发人员设备** > **Xbox One 开发主机**。
 
 此外，你还可以授权常规 Xbox Live 帐户，使其有权访问你的开发沙盒。  若要授权 Xbox Live 帐户访问你的开发沙盒，请转到[管理帐户](https://developer.microsoft.com/xboxtestaccounts/configurecreators)。
 
