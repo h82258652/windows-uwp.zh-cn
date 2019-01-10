@@ -6,18 +6,18 @@ ms.date: 07/12/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f24543c1afcd9c154788cc4be03434384f00f0c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cf84846fc34a7b93f168abc1dfa31e9f743be209
+ms.sourcegitcommit: 444fd387c55618f9afdac115264c85b14fd8b826
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939796"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "8999920"
 ---
 # <a name="events-and-routed-events-overview"></a>事件和路由事件概述
 
 **重要的 API**
--   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
--   [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809)
+- [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
+- [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809)
 
 我们将介绍在 Windows 运行时应用中，事件的编程概念时使用的 C#、 Visual Basic 或 VisualC + + 组件扩展 (C + + CX) 作为编程语言中，并使用 XAML 进行 UI 定义。 你可以在 XAML 中的 UI 元素声明中为事件分配处理程序，或者在代码中添加处理程序。 Windows 运行时支持*路由事件*：借助此功能，某些输入事件和数据事件可由引发该事件的对象以外的对象来处理。 在定义控件模板或使用页面或版式容器时，路由事件十分有用。
 
@@ -151,9 +151,9 @@ End Sub
 
 在 C + + CX，你还使用**+=** 语法，但与基本 C# 形式有区别：
 
--   不存在委托推断，所以必须为委托实例使用 **ref new** 关键字。
--   委托构造函数有两个参数，并且需要目标对象作为第一个参数。 通常由你指定 **this**。
--   委托构造函数需将方法地址作为第二个参数，所以 **&** 引用运算符位于方法名称之前。
+- 不存在委托推断，所以必须为委托实例使用 **ref new** 关键字。
+- 委托构造函数有两个参数，并且需要目标对象作为第一个参数。 通常由你指定 **this**。
+- 委托构造函数需将方法地址作为第二个参数，所以 **&** 引用运算符位于方法名称之前。
 
 ```cppwinrt
 textBlock1().PointerEntered({this, &MainPage::TextBlock1_PointerEntered });
@@ -170,11 +170,11 @@ ref new PointerEventHandler(this, &BlankPage::textBlock1_PointerEntered);
 
 在极少数情况下，你希望明确删除事件处理程序。 其中包括：
 
--   你为静态事件添加的处理程序（不能按照传统的方式进行垃圾回收）。 例如，[**CompositionTarget**](https://msdn.microsoft.com/library/windows/apps/br228126) 和 [**Clipboard**](https://msdn.microsoft.com/library/windows/apps/br205867) 类的事件就是 Windows 运行时 API 中的静态事件。
--   你希望立即删除其中的处理程序计时的测试代码，或者你希望在运行时交换其中的旧/新事件处理程序的代码。
--   所实现的自定义 **remove** 访问器。
--   自定义的静态事件。
--   页面导航的处理程序。
+- 你为静态事件添加的处理程序（不能按照传统的方式进行垃圾回收）。 例如，[**CompositionTarget**](https://msdn.microsoft.com/library/windows/apps/br228126) 和 [**Clipboard**](https://msdn.microsoft.com/library/windows/apps/br205867) 类的事件就是 Windows 运行时 API 中的静态事件。
+- 你希望立即删除其中的处理程序计时的测试代码，或者你希望在运行时交换其中的旧/新事件处理程序的代码。
+- 所实现的自定义 **remove** 访问器。
+- 自定义的静态事件。
+- 页面导航的处理程序。
 
 [**FrameworkElement.Unloaded**](https://msdn.microsoft.com/library/windows/apps/br208748) 或 [**Page.NavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) 是可能的事件触发器，它们在状态管理和对象生存期中具有合适的位置，以便你可以使用它们删除其他事件的处理程序。
 
@@ -196,31 +196,43 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 对于存在于大部分 UI 元素上的一组事件，采用 C#、Microsoft Visual Basic 或 C++/CX 的 Windows 运行时支持路由事件的概念。 这些事件适用于输入和用户交互方案，并且是在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 基类上实现的。 以下是属于路由事件的输入事件列表：
 
--   [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922)
--   [**DragEnter**](https://msdn.microsoft.com/library/windows/apps/br208923)
--   [**DragLeave**](https://msdn.microsoft.com/library/windows/apps/br208924)
--   [**DragOver**](https://msdn.microsoft.com/library/windows/apps/br208925)
--   [**Drop**](https://msdn.microsoft.com/library/windows/apps/br208926)
--   [**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928)
--   [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941)
--   [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942)
--   [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945)
--   [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946)
--   [**ManipulationInertiaStarting**](https://msdn.microsoft.com/library/windows/apps/br208947)
--   [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950)
--   [**ManipulationStarting**](https://msdn.microsoft.com/library/windows/apps/br208951)
--   [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)
--   [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)
--   [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968)
--   [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)
--   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970)
--   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)
--   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)
--   [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973)
--   [**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984)
--   [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985)
--   [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/br208927)
--   [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/br208943)
+- [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
+- [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
+- [**ContextCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextcanceled)
+- [**ContextRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextrequested)
+- [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)
+- [**DragEnter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragenter)
+- [**DragLeave**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
+- [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
+- [**DragStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragstarting)
+- [**Drop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
+- [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
+- [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
+- [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
+- [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
+- [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
+- [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
+- [**LosingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
+- [**LostFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus)
+- [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)
+- [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)
+- [**ManipulationInertiaStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting)
+- [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)
+- [**ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)
+- [**NoFocusCandidateFound**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.nofocuscandidatefoundeventargs)
+- [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)
+- [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)
+- [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)
+- [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)
+- [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)
+- [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
+- [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
+- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
+- [**PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown.md)
+- [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup.md)
+- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
+- [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
+- [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
 路由事件是一种可能从一个子对象（*路由*）传递到对象树中它的每个后续父对象的事件。 UI 的 XAML 结构大体类似于此树，该树的根是 XAML 中的根元素。 真正的对象树可能与 XAML 元素嵌套稍有区别，因为对象树不包含 XAML 语言功能，例如属性元素标记。 你可以将路由事件视为从任何 XAML 对象元素中引发事件的子元素向包含它的父对象元素*浮升*。 该事件及其事件数据可以沿事件路由在多个对象上进行处理。 如果元素都不具有处理程序，则可能继续进行路由，直到达到根元素为止。
 
@@ -262,13 +274,13 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 确定某个元素是否对鼠标、触摸和触笔输入可见以及其在 UI 中的位置称为*点击测试*。 对于触摸操作以及特定于交互的事件或一个触摸操作引起的操作事件，一个元素必须对点击测试可见，以用作事件源并触发与该操作关联的事件。 否则，该操作会通过该元素传递到可与该输入交互的可视化树中的任意基础元素或父元素。 影响点击测试的因素有很多，但你可以通过检查给定元素的 [**IsHitTestVisible**](https://msdn.microsoft.com/library/windows/apps/br208933) 属性来确定该元素是否会引发输入事件。 只有当该元素符合以下条件时，该属性才返回 **true**：
 
--   元素的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 属性值为 [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006)。
--   元素的 **Background** 或 **Fill** 属性值不是 **null**。 **null** [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 值会导致透明性和点击测试不可见。 （若要使元素透明而且可执行点击测试，可使用 [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) 画笔代替 **null**。）
+- 元素的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 属性值为 [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006)。
+- 元素的 **Background** 或 **Fill** 属性值不是 **null**。 **null** [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 值会导致透明性和点击测试不可见。 （若要使元素透明而且可执行点击测试，可使用 [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) 画笔代替 **null**。）
 
-**注意****背景**和**填充**未定义的[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)，而由不同的派生类，如[**控件**](https://msdn.microsoft.com/library/windows/apps/br209390)和[**形状**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)定义。 但你为前景和背景属性使用的画笔含义对点击测试和输入事件而言是相同的，无论是哪些子类实现了这些属性。
+**注意****背景**和**填充**未定义的[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)，而定义由不同的派生类，如[**控件**](https://msdn.microsoft.com/library/windows/apps/br209390)和[**形状**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)。 但你为前景和背景属性使用的画笔含义对点击测试和输入事件而言是相同的，无论是哪些子类实现了这些属性。
 
--   如果该元素为控件，那么它的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) 属性值必须为 **true**。
--   该元素必须具有实际的布局大小。 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 和 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 为 0 的元素不会引发输入事件。
+- 如果该元素为控件，那么它的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) 属性值必须为 **true**。
+- 该元素必须具有实际的布局大小。 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 和 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 为 0 的元素不会引发输入事件。
 
 某些控件对点击测试有特殊规则。 例如，[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 没有 **Background** 属性，但它仍然可在其大小的整个区域内进行点击测试。 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 和 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 控件可在它们定义的矩形大小上执行点击测试，无论显示的媒体源文件中显示了何种透明内容，例如 alpha 通道。 由于该输入可由托管 HTML 处理并引发脚本事件，因此 [**WebView**](https://msdn.microsoft.com/library/windows/apps/br227702) 控件具有特殊的点击测试行为。
 
@@ -284,13 +296,13 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 在定义自定义事件时，事件添加方式及其对于类设计的含义高度依赖于你所使用的编程语言。
 
--   对于 C# 和 Visual Basic，你定义了一个 CLR 事件。 你可以使用标准的 .NET 事件模式，但前提是你未使用自定义的访问器 (**add**/**remove**)。 其他提示：
-    -   对于事件处理程序，最好使用 [**System.EventHandler<TEventArgs>**](https://msdn.microsoft.com/library/windows/apps/xaml/db0etb8x.aspx)，因为它能够以内置方式转换为 Windows 运行时一般事件委托 [**EventHandler<T>**](https://msdn.microsoft.com/library/windows/apps/br206577)。
-    -   请勿将事件数据类以 [**System.EventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/system.eventargs.aspx) 为基础，因为它不会转换为 Windows 运行时。 使用现有的事件数据类，或者根本不使用基类。
-    -   如果你使用的是自定义访问器，请参阅 [Windows 运行时组件中的自定义事件和事件访问器](https://msdn.microsoft.com/library/windows/apps/xaml/hh972883.aspx)。
-    -   如果你不清楚什么是标准的 .NET 事件模式，请参阅[为自定义的 Silverlight 类定义事件](http://msdn.microsoft.com/library/dd833067.aspx)。 这是为 Microsoft Silverlight 编写的，但是它同样很好地汇总了标准 .NET 事件模式的代码和概念。
--   对于 C++/CX，请参阅[事件 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh755799.aspx)。
-    -   即便你以自己的方式使用自定义事件，也可以使用命名引用。 请勿对自定义事件使用 lambda，因为它会创建循环引用。
+- 对于 C# 和 Visual Basic，你定义了一个 CLR 事件。 你可以使用标准的 .NET 事件模式，但前提是你未使用自定义的访问器 (**add**/**remove**)。 其他提示：
+    - 对于事件处理程序，最好使用 [**System.EventHandler<TEventArgs>**](https://msdn.microsoft.com/library/windows/apps/xaml/db0etb8x.aspx)，因为它能够以内置方式转换为 Windows 运行时一般事件委托 [**EventHandler<T>**](https://msdn.microsoft.com/library/windows/apps/br206577)。
+    - 请勿将事件数据类以 [**System.EventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/system.eventargs.aspx) 为基础，因为它不会转换为 Windows 运行时。 使用现有的事件数据类，或者根本不使用基类。
+    - 如果你使用的是自定义访问器，请参阅 [Windows 运行时组件中的自定义事件和事件访问器](https://msdn.microsoft.com/library/windows/apps/xaml/hh972883.aspx)。
+    - 如果你不清楚什么是标准的 .NET 事件模式，请参阅[为自定义的 Silverlight 类定义事件](http://msdn.microsoft.com/library/dd833067.aspx)。 这是为 Microsoft Silverlight 编写的，但是它同样很好地汇总了标准 .NET 事件模式的代码和概念。
+- 对于 C++/CX，请参阅[事件 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh755799.aspx)。
+    - 即便你以自己的方式使用自定义事件，也可以使用命名引用。 请勿对自定义事件使用 lambda，因为它会创建循环引用。
 
 你不能声明针对 Windows 运行时的自定义路由事件；路由事件限于来自 Windows 运行时的集合。
 

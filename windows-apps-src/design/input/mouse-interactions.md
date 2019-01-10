@@ -8,23 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ad801dee43607b4fb6e75bd30f612682e1214ff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f81634fdb0f9382b1f660394764e5555189783e4
+ms.sourcegitcommit: 444fd387c55618f9afdac115264c85b14fd8b826
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921130"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "8999910"
 ---
 # <a name="mouse-interactions"></a>鼠标交互
 
-
-针对触摸输入优化通用 Windows 平台 (UWP) 应用设计，并在默认情况下获得基本的鼠标支持。
-
- 
+针对触摸输入优化通用 Windows 平台 (UWP) 应用设计，并在默认情况下获得基本的鼠标支持。 
 
 ![鼠标](images/input-patterns/input-mouse.jpg)
-
-
 
 鼠标输入最适合那些需要精确指向和单击的用户交互。 由于 Windows 的 UI 针对触摸的不精确特性进行了优化，因此它自然支持这种固有的精确度。
 
@@ -33,7 +28,6 @@ ms.locfileid: "8921130"
 本主题介绍鼠标交互的设计注意事项。
 
 ## <a name="the-uwp-app-mouse-language"></a>UWP 应用鼠标语言
-
 
 一组在整个系统中通用的简单鼠标交互功能。
 
@@ -90,36 +84,64 @@ ms.locfileid: "8921130"
 </tbody>
 </table>
 
-## <a name="mouse-events"></a>鼠标事件
+## <a name="mouse-input-events"></a>鼠标输入的事件
 
-通过处理用于触摸和笔输入的相同基本指针事件在应用中响应鼠标输入。
+可以通过所有[**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)对象都支持的常见路由的输入事件处理大多数鼠标输入。 其中包括：
 
-使用 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 事件实现基本输入功能，而无需为每个指针输入设备编写代码。 但是，你仍可以使用此对象的指针、手势和操作事件来利用每台设备的特殊功能（例如鼠标滚轮事件）。
+- [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
+- [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
+- [**ContextCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextcanceled)
+- [**ContextRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextrequested)
+- [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)
+- [**DragEnter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragenter)
+- [**DragLeave**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
+- [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
+- [**DragStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragstarting)
+- [**Drop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
+- [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
+- [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
+- [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
+- [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
+- [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
+- [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
+- [**LosingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
+- [**LostFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus)
+- [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)
+- [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)
+- [**ManipulationInertiaStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting)
+- [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)
+- [**ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)
+- [**NoFocusCandidateFound**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.nofocuscandidatefoundeventargs)
+- [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)
+- [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)
+- [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)
+- [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)
+- [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)
+- [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
+- [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
+- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
+- [**PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown.md)
+- [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup.md)
+- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
+- [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
+- [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
-**示例：** 请参阅我们的[应用示例](https://go.microsoft.com/fwlink/p/?LinkID=264996)中实际此功能。
+但是，你可以充分利用每个设备 （如鼠标滚轮事件） 使用中[Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)的指针、 手势和操作事件的特定功能。
 
-
-- [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-
-- [输入示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-
-- [输入：使用 GestureRecognizer 的笔势和操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
+**示例：** 有关信息，请参阅我们的[BasicInput 示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)。
 
 ## <a name="guidelines-for-visual-feedback"></a>视觉反馈指南
 
-
--   当（通过移动或悬停事件）检测到鼠标时，显示特定于鼠标的 UI 以指示元素显示的功能。 如果鼠标在一定的时间段内没有移动，或者如果用户启动了触摸交互，则让鼠标 UI 逐渐淡出。 这会使 UI 干净整洁。
--   不要使用鼠标获取悬停反馈，由元素提供的反馈是足够的（请参阅下面的“光标”）。
--   如果元素不支持交互（如静态文本），不要显示视觉反馈。
--   不要将焦点矩形与鼠标交互结合使用。 保留焦点矩形是为了进行键盘交互。
--   对于所有代表相同输入目标的元素，同时显示视觉反馈。
--   提供用来模拟基于触摸的操作 （如平移、旋转、缩放等）提供按钮（如 + 和 -）。
+- 当（通过移动或悬停事件）检测到鼠标时，显示特定于鼠标的 UI 以指示元素显示的功能。 如果鼠标在一定的时间段内没有移动，或者如果用户启动了触摸交互，则让鼠标 UI 逐渐淡出。 这会使 UI 干净整洁。
+- 不要使用鼠标获取悬停反馈，由元素提供的反馈是足够的（请参阅下面的“光标”）。
+- 如果元素不支持交互（如静态文本），不要显示视觉反馈。
+- 不要将焦点矩形与鼠标交互结合使用。 保留焦点矩形是为了进行键盘交互。
+- 对于所有代表相同输入目标的元素，同时显示视觉反馈。
+- 提供用来模拟基于触摸的操作 （如平移、旋转、缩放等）提供按钮（如 + 和 -）。
 
 有关视觉反馈的更一般指南，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
 
-
 ## <a name="cursors"></a>光标
-
 
 为鼠标指针提供了一组标准光标。 它们用来表示元素的主要操作。
 
@@ -127,33 +149,21 @@ ms.locfileid: "8921130"
 
 如果你需要自定义鼠标光标：
 
--   对于可单击元素，始终使用箭头光标（![箭头光标](images/cursor-arrow.png)）。 对于链接或其他交互元素，不使用指向手光标（![指向手光标](images/cursor-pointinghand.png)）。 而应使用悬停效果（上文中有介绍）。
--   对于可选择文本，使用文本光标（![文本光标](images/cursor-text.png)）。
--   当主要操作是移动（如拖动或裁剪）时，使用移动光标（![移动光标](images/cursor-move.png)）。 对于主要操作是导航的元素（如“开始”菜单磁贴），不使用移动光标。
--   当对象的大小可调整时，使用水平、垂直和对角调整大小光标（![垂直调整光标](images/cursor-vertical.png), ![水平调整光标](images/cursor-horizontal.png), ![对角调整光标（左下和右上）](images/cursor-diagonal2.png), ![对角调整光标（左上和右下）](images/cursor-diagonal1.png)）。
--   当在固定画布（如地图）内平移内容时，使用手掌型光标（![手掌型光标（张开）](images/cursor-pan1.png), ![手掌型光标（闭合）](images/cursor-pan2.png)当在固定画布（例如地图）中平移内容时。
+- 对于可单击元素，始终使用箭头光标（![箭头光标](images/cursor-arrow.png)）。 对于链接或其他交互元素，不使用指向手光标（![指向手光标](images/cursor-pointinghand.png)）。 而应使用悬停效果（上文中有介绍）。
+- 对于可选择文本，使用文本光标（![文本光标](images/cursor-text.png)）。
+- 当主要操作是移动（如拖动或裁剪）时，使用移动光标（![移动光标](images/cursor-move.png)）。 对于主要操作是导航的元素（如“开始”菜单磁贴），不使用移动光标。
+- 当对象的大小可调整时，使用水平、垂直和对角调整大小光标（![垂直调整光标](images/cursor-vertical.png), ![水平调整光标](images/cursor-horizontal.png), ![对角调整光标（左下和右上）](images/cursor-diagonal2.png), ![对角调整光标（左上和右下）](images/cursor-diagonal1.png)）。
+- 当在固定画布（如地图）内平移内容时，使用手掌型光标（![手掌型光标（张开）](images/cursor-pan1.png), ![手掌型光标（闭合）](images/cursor-pan2.png)当在固定画布（例如地图）中平移内容时。
 
 ## <a name="related-articles"></a>相关文章
 
-* [处理指针输入](handle-pointer-input.md)
-* [标识输入设备](identify-input-devices.md)
+- [处理指针输入](handle-pointer-input.md)
+- [标识输入设备](identify-input-devices.md)
+- [事件和路由事件概述](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
 
-**示例**
-* [基本输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+### <a name="samples"></a>示例
 
-**存档示例**
-* [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：XAML 用户输入事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML 滚动、平移以及缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [输入：使用 GestureRecognizer 的笔势和操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
- 
- 
-
- 
-
-
-
-
+- [基本输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+- [低延迟输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+- [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+- [焦点视觉示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
