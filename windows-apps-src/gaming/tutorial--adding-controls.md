@@ -6,19 +6,19 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 控件, 输入
 ms.localizationpriority: medium
-ms.openlocfilehash: 01c0d1361dcc0858a54792adc0d17408ed281c99
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 09bda2bda5f6f8731b64321d3282f540e6c50db4
+ms.sourcegitcommit: 4e12e820141fa5c3e61052ec78452b4032a974da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947849"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "8999752"
 ---
 # <a name="add-controls"></a>添加控件
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-优秀的通用 Windows 平台 (UWP) 游戏支持多种界面。 潜在玩家可能将 windows 10 上没有物理按钮，连接，了 Xbox 控制器的电脑的平板电脑，或者具有高性能鼠标和游戏键盘的最新桌面游戏安装。 在我们的游戏中，控制在 [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) 类中实现。 此类将全部三个输入类型（鼠标和键盘、触控和游戏板）聚合到一个控制器内。 最终结果是一个第一人称射击游戏，其使用通过多台设备使用的流派标准移动观看控件。
+优秀的通用 Windows 平台 (UWP) 游戏支持多种界面。 潜在玩家可能将 windows 10 上没有物理按钮，连接，了 Xbox 控制器的电脑的平板电脑或具有高性能鼠标和游戏键盘的最新桌面游戏安装。 在我们的游戏中，控制在 [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) 类中实现。 此类将全部三个输入类型（鼠标和键盘、触控和游戏板）聚合到一个控制器内。 最终结果是一个第一人称射击游戏，其使用通过多台设备使用的流派标准移动观看控件。
 
 > [!NOTE]
 > 有关控件的详细信息，请参阅[游戏的移动观看控件](tutorial--adding-move-look-controls-to-your-directx-game.md)和[游戏的触摸控件](tutorial--adding-touch-controls-to-your-directx-game.md)。
@@ -95,7 +95,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 游戏在暂停后进入 **WaitForInput** 状态。 当玩家将指针移出游戏主窗口或者按下暂停按钮（P 键或游戏板**开始**按钮）时将发生此情况。 **MoveLookController** 注册点按操作，并在它调用 [**IsPauseRequested**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L107-L127) 方法时通知游戏循环。 此时，如果 **IsPauseRequested** 返回 **true**，游戏循环将对 **MoveLookController** 调用 **WaitForPress** 以将控制器转入 **WaitForInput** 状态。 
 
 
-进入 **WaitForInput** 状态后，游戏将停止处理几乎所有游戏输入事件，直到它返回到 **Active** 状态。 例外情况是暂停按钮，按此按钮会使游戏回退到活动状态。 以外暂停按钮中，为了让游戏回退到**活动**状态玩家需要选择一个菜单项。 
+进入 **WaitForInput** 状态后，游戏将停止处理几乎所有游戏输入事件，直到它返回到 **Active** 状态。 例外情况是暂停按钮，按此按钮会使游戏回退到活动状态。 除了暂停按钮之外使游戏回退到**活动**状态玩家需要选择一个菜单项。 
 
 
 
@@ -399,7 +399,7 @@ window->PointerReleased +=
 
 
 
-在这里，**MoveLookController** 将触发该事件的指针的指针 ID 分配到对应于观看区域的特定变量。 如果触摸发生在观看区域中，是**m\_lookPointerID**变量设置为触发该事件的指针 ID。 还将设置布尔值变量 **m\_lookInUse** 以指示尚未释放控件。
+在这里，**MoveLookController** 将触发该事件的指针的指针 ID 分配到对应于观看区域的特定变量。 对于触摸发生在观看区域中， **m\_lookPointerID**变量设置为触发该事件的指针 ID。 还将设置布尔值变量 **m\_lookInUse** 以指示尚未释放控件。
 
 现在，我们讨论游戏示例如何处理 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) 触摸屏事件。
 
@@ -585,6 +585,9 @@ window->KeyUp +=
     Gamepad::GamepadRemoved +=
         ref new EventHandler<Gamepad^>(this, &MoveLookController::OnGamepadRemoved);
 ```
+
+> [!NOTE]
+> 应用未处于焦点时，UWP 应用无法从 Xbox One 控制器接收输入。
 
 ### <a name="the-updatepollingdevices-method"></a>UpdatePollingDevices 方法
 
