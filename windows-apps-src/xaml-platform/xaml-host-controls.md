@@ -1,24 +1,24 @@
 ---
 description: 本指南将帮助您直接在 WPF 和 Windows 窗体应用程序中创建基于 Fluent 的 UWP UI
 title: 桌面应用程序中的 UWP 控件
-ms.date: 09/21/2018
+ms.date: 01/11/2019
 ms.topic: article
 keywords: windows 10, uwp, windows 窗体, wpf
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 43cdb19e791726732f564ffea1b03af53a4a1ffe
-ms.sourcegitcommit: 1294275b5044ef8878d54bf4fd7aa8e0203e6fac
+ms.openlocfilehash: bf25fea6ca6e8809c12324ae57a42cc712ded2a5
+ms.sourcegitcommit: 9df81996628359ad6af4227339a2ce01c2d804e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/11/2019
-ms.locfileid: "9001553"
+ms.locfileid: "9001781"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>桌面应用程序中的 UWP 控件
 
 > [!NOTE]
 > XAML 群岛目前为开发人员预览。 尽管我们鼓励你试用它们在原型代码中现在，我们不建议你使用它们在生产代码中这一次。 这些 Api 和控件将继续成熟并在将来稳定的 Windows 版本。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。
 >
-> 如果你有关于 XAML 群岛的反馈，发送反馈XamlIslandsFeedback@microsoft.com。 我们非常重要见解和方案。
+> 如果你有关于反馈 XAML 群岛、 在[WindowsCommunityToolkit 存储库](https://github.com/windows-toolkit/WindowsCommunityToolkit/issues)中创建新问题，并那里评论。 如果你希望私下提交反馈，你可以发送到XamlIslandsFeedback@microsoft.com。 我们非常重要见解和方案。
 
 Windows 10 现在可以在非 UWP 桌面应用程序中使用 UWP 控件，以便你可以增强的外观、 体验和功能的现有桌面应用程序将仅可通过 UWP 控件的最新 Windows 10 UI 功能。 这意味着，你可以使用 UWP 功能，例如[Windows Ink](../design/input/pen-and-stylus-interactions.md)和[Fluent 设计系统](../design/fluent-design-system/index.md)支持你的现有 WPF、 Windows 窗体和 c + + Win32 应用程序中的控件。 此开发人员方案有时称为*XAML 群岛*。
 
