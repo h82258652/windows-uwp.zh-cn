@@ -1,20 +1,20 @@
 ---
 description: 本主题介绍如何直接或间接使用 **winrt::implements** 基结构来创作 C++/WinRT API。
 title: 使用 C++/WinRT 创作 API
-ms.date: 10/03/2018
+ms.date: 01/10/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fd543d7c3ad9dec878cc02b14a79c254d91b4be
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5b0f2c5a9941e8f82e77cbaaf2d38badb41ce7c0
+ms.sourcegitcommit: 1294275b5044ef8878d54bf4fd7aa8e0203e6fac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943395"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "9001563"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 创作 API
 
-本主题演示如何创作[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)通过使用[**winrt:: implements**](/uwp/cpp-ref-for-winrt/implements) Api 直接或间接基结构。 在此上下文中，*创作*的同义词有*生成*或*实现*。 本主题介绍以下在 C++/WinRT 类型上实现 API 的情形（按此顺序）。
+本主题演示如何创作[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api 使用[**winrt:: implements**](/uwp/cpp-ref-for-winrt/implements)直接或间接基结构。 在此上下文中，*创作*的同义词有*生成*或*实现*。 本主题介绍以下在 C++/WinRT 类型上实现 API 的情形（按此顺序）。
 
 - 你*不是*在创作一个 Windows 运行时类（运行时类）；你只是想要实现一个或多个 Windows 运行时接口以便在应用内进行本地使用。 在此案例中，你直接从 **winrt::implements** 派生并实现相关函数。
 - 你*正在*创作一个运行时类。 你可能正在创作一个要从某个应用中使用的组件。 或者，你可能正在创作一个要从 XAML 用户接口 (UI) 使用的类型，在此情况下，你在同一个编译单元内实现和使用一个运行时类。 在这些情况下，你使用工具为你生成派生自 **winrt::implements** 的类。
@@ -30,7 +30,7 @@ ms.locfileid: "8943395"
 > [!NOTE]
 > 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的安装和使用的信息，请参阅[对 C++/WinRT 的 Visual Studio 支持以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
 
-在 Visual Studio 中， **Visual c + +** > **Windows 通用** > **核心应用 (C + + WinRT)** 项目模板阐释**CoreApplication**模式。 该模式首先将 [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) 的实现传递给 [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run)。
+在 Visual Studio 中， **Visual c + +** > **Windows 通用** > **核心应用 (C + + WinRT)** 项目模板阐释了**CoreApplication**模式。 该模式首先将 [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) 的实现传递给 [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run)。
 
 ```cppwinrt
 using namespace Windows::ApplicationModel::Core;
@@ -258,7 +258,7 @@ IStringable istringable = winrt::make<MyType>();
 > [!NOTE]
 > 但是，如果你从 XAML UI 引用类型，则在同一个项目中将会有一个实现类型和一个投影类型。 在此情况下，**请**返回投影类型的实例。 有关此情况的代码示例，请参阅 [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。
 
-我们仅可以使用 `istringable`（在上面的代码示例中）来调用 **IStringable** 接口的成员。 但 C++/WinRT 接口（这是投影接口）派生自 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)。 因此，你可以调用[**iunknown:: As**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) （或[**Try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)） 在其上查询其他投影的类型或接口，你也可使用或返回这些接口。
+我们仅可以使用 `istringable`（在上面的代码示例中）来调用 **IStringable** 接口的成员。 但 C++/WinRT 接口（这是投影接口）派生自 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)。 因此，你可以调用[**iunknown:: As**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) （或[**Try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)） 对其查询其他投影的类型或接口，这样你也可使用或返回。
 
 ```cppwinrt
 istringable.ToString();
@@ -281,7 +281,7 @@ iclosable.Close();
 在以下情况： 你有一个接口对象，并且你恰好知道它是实现上的接口，然后你可以回到使用[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)函数模板的实现。 同样，这种方法可以避免虚拟函数调用，并让你直接访问实现。
 
 > [!NOTE]
-> 如果你尚未安装了 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更高版本，然后你需要调用[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)而不是[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)。
+> 如果尚未安装 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809)，或更高版本，然后你需要调用[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)而不是[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)。
 
 下面提供了一个示例。 [实现**BgLabelControl**自定义控件类](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)中有另一个示例。
 
@@ -311,7 +311,28 @@ myimpl.Close();
 IClosable ic1 = myimpl.as<IClosable>(); // error
 ```
 
-如果你有一个实现类型的实例，并且需要将它传递给期望相应的投影类型的函数，那么你可以这样做。 实现类型上存在一个转换运算符 (前提是实现类型由`cppwinrt.exe`工具) 的实现此目的。
+如果你有一个实现类型的实例，并且需要将它传递给期望相应的投影类型的函数，那么你可以这样做。 实现类型上存在一个转换运算符 (前提是实现类型由生成`cppwinrt.exe`工具) 的实现此目的。 你可以直接向需要相应的投影类型的值的方法传递的实现类型值。 从一个实现类型成员函数，你可以传递`*this`到需要相应的投影类型的值的方法。
+
+```cppwinrt
+// MyProject::MyType is the projected type; the implementation type would be MyProject::implementation::MyType.
+
+void MyOtherType::DoWork(MyProject::MyType const&){ ... }
+
+...
+
+void FreeFunction(MyProject::MyOtherType const& ot)
+{
+    MyType myimpl;
+    ot.DoWork(myimpl);
+}
+
+...
+
+void MyType::MemberFunction(MyProject::MyOtherType const& ot)
+{
+    ot.DoWork(*this);
+}
+```
 
 ## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>从具有非默认构造函数的类型派生
 [**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_)是非默认构造函数的示例。 由于没有默认构造函数，因此，若要构造一个 **ToggleButtonAutomationPeer**，你需要传递 *owner*。 因此，如果你从 **ToggleButtonAutomationPeer** 派生，则需要提供一个接受 *owner* 并将它传递给基类的构造函数。 让我们来看看实际的情况。
