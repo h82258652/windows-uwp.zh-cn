@@ -9,12 +9,12 @@ ms.date: 12/1/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fc27a2c24128553b7c1449bd8e724e2097213b80
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: b2d85d97fa704b4fb79e93cf95fdd1bfcc41f8ca
+ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981411"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "9004603"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>UWP 应用的内容设计基础知识
 
@@ -38,11 +38,6 @@ ms.locfileid: "8981411"
 
 集合可让用户浏览一组内容或数据。 [网格视图](../controls-and-patterns/item-templates-gridview.md)是适用于照片或媒体中心式内容的选项，[列表视图](../controls-and-patterns/item-templates-listview.md)是适用于以文字为主内容或数据的选项。
 
-### <a name="hub"></a>中心
-
-![中心](images/content-basics/hub.png)
-
-[中心](../controls-and-patterns/hub.md)专为窗口购物而设计。 用户可以抢先了解提供的内容；这一切都是为了展示内容的多样性，并确保内容简短。 例如，中心部分 1 可包含 hero 屏幕，中心部分 2 可包含一个集合，中心部分 3 可包含另一个集合，等等。
 
 ### <a name="masterdetail"></a>大纲/细节
 
