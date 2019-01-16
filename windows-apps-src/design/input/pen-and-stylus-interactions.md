@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows Ink 书写, DirectInk, InkPresenter, InkCanvas, �
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 22477ab0facfcb67d44057a91c7c3a49df57f8b9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2451606ccb9dfb604dd9f8aaffe245016776c1e7
+ms.sourcegitcommit: 906b494aa190e6e5b46e7b73d4a900b2cc7d53ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937987"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "9010991"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>UWP 应用中的笔交互和 Windows Ink
 
@@ -47,9 +47,9 @@ Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、�
 
 | 组件 | 描述 |
 | --- | --- |
-| [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) | XAMLUI 平台控件，默认情况下，接收和显示来自笔的所有输入作为笔划墨迹或擦除笔划进行处理。<br/>有关如何使用 InkCanvas 的详细信息，请参阅[将 Windows Ink 笔划识别为文本](convert-ink-to-text.md)和[存储和检索 Windows Ink 笔划数据](save-and-load-ink.md)。 |
+| [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) | 一个 XAMLUI 平台控件，默认情况下，接收和显示来自笔的所有输入作为笔划墨迹或擦除笔划进行处理。<br/>有关如何使用 InkCanvas 的详细信息，请参阅[将 Windows Ink 笔划识别为文本](convert-ink-to-text.md)和[存储和检索 Windows Ink 笔划数据](save-and-load-ink.md)。 |
 | [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) | 代码隐藏对象，与 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控件（通过 [**InkCanvas.InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 属性公开）一起进行实例化。 此对象提供 **InkCanvas** 公开的所有默认墨迹书写功能以及适用于其他自定义和个性化的完整 API 集。<br/>有关如何使用 InkPresenter 的详细信息，请参阅[将 Windows Ink 笔划识别为文本](convert-ink-to-text.md)和[存储和检索 Windows Ink 笔划数据](save-and-load-ink.md)。 |
-| [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | XAMLUI 平台控件，包含激活关联的[**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)中与墨迹相关功能的按钮的可自定义、 可扩展集合。<br/>有关如何使用 InkToolbar 的详细信息，请参阅[将 InkToolbar 添加到通用 Windows 平台 (UWP) 墨迹书写应用](ink-toolbar.md)。 |
+| [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | XAMLUI 平台控件，包含可自定义和可扩展按钮可激活关联的[**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)中与墨迹相关功能的集合。<br/>有关如何使用 InkToolbar 的详细信息，请参阅[将 InkToolbar 添加到通用 Windows 平台 (UWP) 墨迹书写应用](ink-toolbar.md)。 |
 | [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) | 支持将笔划墨迹呈现到通用 Windows 应用的指定 Direct2D 设备上下文，而非默认的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控件。 这支持完全自定义墨迹书写体验。<br/>有关详细信息，请参阅[复杂墨迹示例](https://go.microsoft.com/fwlink/p/?LinkID=620314)。 |
 
 ## <a name="basic-inking-with-inkcanvas"></a>通过 InkCanvas 实现基本墨迹书写
@@ -64,7 +64,7 @@ Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、�
 在本例中，[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 覆盖了背景图。
 
 > [!NOTE]
-> InkCanvas 的默认 [**Height**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height) 和 [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width) 属性为零，除非它是自动调整其子元素大小的元素的子项。 
+> InkCanvas 的默认[**高度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height)和[**宽度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width)属性为零，除非它是自动调整大小及其子元素，如[StackPanel](stackpanel.md)或[网格](grid.md)控件元素的子元素。
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
