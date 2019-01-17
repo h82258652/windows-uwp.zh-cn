@@ -6,12 +6,12 @@ keywords: 应用到应用的通信，进程间通信，IPC，后台消息，后�
 ms.date: 1/16/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9029c8ee3a930e66ebdbd0c4d0681d87486a8393
-ms.sourcegitcommit: 6e2027f8ebc1d891d27ea6b2e4676d592871bcc7
+ms.openlocfilehash: 5239bff53bb0e5383bce28b4d781a0ab6a41c3af
+ms.sourcegitcommit: cfdc854fede8e586202523cdb59d3d0a2f5b4b36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "9011257"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9013956"
 ---
 # <a name="create-and-consume-an-app-service"></a>创建和使用应用服务
 
@@ -214,17 +214,9 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 
 ## <a name="deploy-the-service-app-and-get-the-package-family-name"></a>部署服务应用并获取程序包系列名称
 
-必须先部署应用服务提供程序，然后你可以从客户端调用它。 此外需要以便调用它的应用服务的包系列名称。
+必须先部署应用服务提供程序，然后你可以从客户端调用它。 你可以选择 Visual Studio 中的**生成 > 部署解决方案**进行部署。
 
-获取应用服务应用程序的程序包系列名称的一种方法是在**AppServiceProvider**项目中 （例如，从**应用**构造函数中**调用[Windows.ApplicationModel.Package.Current.Id.FamilyName](https://msdn.microsoft.com/library/windows/apps/br224670)从App.xaml.cs**) 并记下结果。 若要在 Visual Studio 中运行**AppServiceProvider** ，请在**解决方案资源管理器**窗口中将其设置为启动项目并运行该项目。
-
-获取程序包系列名称的另一个方法是部署解决方案 (**生成&gt;部署解决方案**) 并记下**输出**窗口中的完整程序包名称 (**视图&gt;输出**)。 你必须从**输出**窗口以获取程序包名称中的字符串中删除平台信息。 例如，如果**输出**窗口中报告的完整程序包名称是：
-
-`Microsoft.SDKSamples.AppServicesProvider.CPP_1.0.0.0_x86__8wekyb3d8bbwe`
-
-然后可以提取`1.0.0.0\_x86\_\_`，将以下内容作为程序包系列名称：
-
-`Microsoft.SDKSamples.AppServicesProvider.CPP_8wekyb3d8bbwe`
+此外需要以便调用它的应用服务提供程序程序包系列名称。 你可以通过在设计器视图中打开**AppServiceProvider**项目的**Package.appxmanifest**文件来获取它 （双击它在**解决方案资源管理器**）。 选择**打包**选项卡，复制**程序包系列名称**，旁边的值并将其粘贴某个位置 （如记事本） 现在。
 
 ## <a name="write-a-client-to-call-the-app-service"></a>编写客户端以调用应用服务
 
