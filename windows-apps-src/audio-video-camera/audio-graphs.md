@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0211e451c3e700da34d24e39a5045f9e046020a8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0b360425755a7dc2249a284d9f68761ce3c783ef
+ms.sourcegitcommit: 92ce837841ae8f16d203e919dbf5c4436bee56e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933610"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "9015252"
 ---
 # <a name="audio-graphs"></a>音频图
 
@@ -80,7 +80,7 @@ Windows 运行时音频图 API：
 
 [!code-cs[CreateDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceInputNode)]
 
-如果要为设备输入节点指定特定音频呈现设备，可以通过调用 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 并传入由 [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817) 返回的音频呈现设备选择器，使用 [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 类来获取系统的可用音频捕获设备列表。 你可以以编程方式选择返回的 **DeviceInformation** 对象之一，或显示 UI 以允许用户选择某台设备，然后将其传递到 [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218) 中。
+如果你想要为设备输入节点指定特定音频捕获，你可以使用[**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393)类以通过调用[**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432)来获取系统的可用音频捕获设备的列表和传入音频呈现设备选择器返回的[**Windows.Media.Devices.MediaDevice.GetAudioCaptureSelector**](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getaudiocaptureselector)。 你可以以编程方式选择返回的 **DeviceInformation** 对象之一，或显示 UI 以允许用户选择某台设备，然后将其传递到 [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218) 中。
 
 [!code-cs[EnumerateAudioCaptureDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioCaptureDevices)]
 
