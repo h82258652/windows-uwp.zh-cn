@@ -5,16 +5,19 @@ ms.date: 10/20/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天, 游戏聊天 2, 语音通信
 ms.localizationpriority: medium
-ms.openlocfilehash: 80825e52e074e74b77891f34f29a3d443e3d0873
-ms.sourcegitcommit: 2e47a0d047e6ca8d3f473434a2b07b6216b55d17
+ms.openlocfilehash: 9f013f8b80cc7bca367c3ef5cd2c0d1da86cc98c
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "9004496"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014695"
 ---
 # <a name="game-chat-2-overview"></a>游戏聊天 2 概述
 
 游戏聊天 2 可以轻松地将语音和文本聊天通信添加到你的应用，同时尊重玩家的隐私设置并满足 Xbox One 游戏和与语音和文字聊天的中心应用的 Xbox 要求。 已启用语音到文本或文本到语音转换通过轻松访问-游戏聊天脚本设置的玩家游戏聊天 2 将以透明方式执行转换以创建表示传入语音音频和播放的文本消息的聊天分别合成传出聊天文本消息的语音音频。
+
+> [!NOTE]
+> 如果你正在查找特定 api，你可以找到它可下载的 Xbox Live API 编译 HTML 帮助 (.chm) 文件中[下面](https://aka.ms/xboxliveuwpdocs)。
 
 - **通信关系**-游戏聊天 2 让玩家可以如何与相互通信的细化控制。 而不是指定团队或频道，游戏聊天 2 需要定义的每个对用户之间的明确关系。 游戏聊天 2 通信关系支持单向和双向的任意一对玩家之间的通信。 可以相互独立地配置语音和文本通信关系。
 

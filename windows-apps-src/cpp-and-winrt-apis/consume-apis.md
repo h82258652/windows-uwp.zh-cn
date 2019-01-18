@@ -5,12 +5,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 59b056e160a1d7782e054ad4dbf1b63e91be42e9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cd26bfe2643b7130227e758083d820ce6be7d24e
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919950"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014742"
 ---
 # <a name="consume-apis-with-cwinrt"></a>通过 C++/WinRT 使用 API
 
@@ -123,6 +123,20 @@ private:
 
 *除* `nullptr_t` 构造函数以外的投影类型上的所有构造函数都将导致创建支持 Windows 运行时对象。 `nullptr_t` 构造函数本质上是一个无操作。 它预期投影对象会在后续时间初始化。 因此，不论运行时类是否具有默认的构造函数，你都可以使用此技巧实现有效的延迟初始化。
 
+此注意事项会影响其中你正在调用默认构造函数，例如矢量和地图中的其他位置。 此代码示例，请考虑。
+
+```cppwinrt
+std::map<int, TextBlock> lookup;
+lookup[2] = value;
+```
+
+分配创建新的**TextBlock**，然后立即将其与覆盖`value`。 下面是补救措施。
+
+```cppwinrt
+std::map<int, TextBlock> lookup;
+lookup.insert_or_assign(2, value);
+```
+
 ## <a name="if-the-api-is-implemented-in-a-windows-runtime-component"></a>如果在 Windows 运行时组件中实现此 API
 无论你是自行创作该组件，还是该组件来自供应商，本部分均适用。
 
@@ -176,7 +190,7 @@ MainPage::MainPage()
 有关更多详细信息、代码以及使用在使用的项目中实现的运行时类的演练，请参阅 [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。
 
 ## <a name="instantiating-and-returning-projected-types-and-interfaces"></a>实例化和返回投影类型和接口
-以下投影类型和实例的示例可能类似于使用的项目。 请记住，一个投影的类型 （例如，一个在此示例中），工具生成的并不是你将创作你自己。
+以下投影类型和实例的示例可能类似于使用的项目。 请记住 （如在此示例中），一个投影的类型是工具生成的而不是某些内容，你将创作你自己。
 
 ```cppwinrt
 struct MyRuntimeClass : MyProject::IMyRuntimeClass, impl::require<MyRuntimeClass,
