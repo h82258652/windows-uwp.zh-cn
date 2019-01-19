@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 23343ea88b0347ac3e8cb5d41812a24d619be986
-ms.sourcegitcommit: 28fa37c2106ceb0ebe2c06ec74198b7ee97a9b88
+ms.openlocfilehash: 618b9d556d3c855c5aed888f0639393bdaaec52e
+ms.sourcegitcommit: 6b417970ee42b46d0a3a2307229376e41e70f8c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "9015418"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "9015662"
 ---
 # <a name="make-your-app-localizable"></a>对应用进行可本地化处理
 
@@ -22,7 +22,7 @@ ms.locfileid: "9015418"
 
 ## <a name="put-your-strings-into-resources-files-resw"></a>将字符串置于资源文件 (.resw) 中
 
-请不要对强制性代码、XAML 标注或应用程序包清单中的字符串文本进行硬编码。 相反，将字符串放入资源文件 (.resw) 中，以便它们适合独立于你应用的生成二进制文件的不同本地市场。 有关详细信息，请参阅[本地化 UI 和应用程序包清单中的字符串](../../app-resources/localize-strings-ui-manifest.md)。
+不要在强制性代码中，XAML 标记中，也不在你的应用程序包清单中的硬编码字符串文本。 相反，将字符串放入资源文件 (.resw) 中，以便它们适合独立于你应用的生成二进制文件的不同本地市场。 有关详细信息，请参阅[本地化 UI 和应用程序包清单中的字符串](../../app-resources/localize-strings-ui-manifest.md)。
 
 该主题还展示如何向你的默认资源文件 (.resw) 中添加注释。 例如，如果你要采用非正式语音或语调，请确保在注释中解释此情况。 此外，为最大程度降低费用，请确认仅向翻译人员提供需要翻译的字符串。
 
@@ -64,9 +64,9 @@ ms.locfileid: "9015418"
 
 若要解决此问题，应本地化整个语句，而不应只本地化单个字词。 这么做看似增加了额外工作量且是个不明智的解决方案，但其实是最佳解决方案，原因如下：
 
--   会针对所有语言显示一个语法正确的消息。
--   翻译无需询问该字符串将会被什么词替代。
--   当应用完成后出现类似于此图面的问题时，也无需实施高成本的代码修复。
+- 会针对所有语言显示一个语法正确的消息。
+- 翻译无需询问该字符串将会被什么词替代。
+- 当应用完成后出现类似于此图面的问题时，也无需实施高成本的代码修复。
 
 ## <a name="other-considerations-for-strings"></a>字符串的其他注意事项
 
@@ -82,13 +82,22 @@ ms.locfileid: "9015418"
 
 ## <a name="deployment-considerations"></a>部署注意事项
 
-当你安装你的应用包含本地化的语言数据可能会发现仅的默认语言是适用于应用，即使你最初包含多种语言的资源。 由于在安装过程经过优化，可仅安装匹配当前的语言和文化的设备的语言资源的方式发生这种情况。 这意味着，如果你的设备配置为 en-我们时安装该应用仅 en-我们的语言资源将安装。 如果你更改默认语言操作系统的应用将仍然仅显示 en-我们资源因为它是安装的应用的唯一语言。 此时没有方法在初始安装后安装适用于应用的其他语言支持。 
+安装包含本地化的语言数据的应用时，你可能会发现仅的默认语言是适用于应用，即使你最初包含多种语言的资源。 这是设备的因为在安装过程经过优化，可仅安装匹配当前的语言和文化的语言资源。 因此，如果你的设备配置为 EN-US，仅 EN-US 语言资源被安装与你的应用。
 
-如果你想要确保在安装后所有语言资源都都可用可以 cerate 指定某些资源安装过程中都所需的应用包配置文件。 在此配置文件中可能需要安装的语言资源包括任何资源。 有关安装保证资源的详细信息，请参阅本文档：[确保无论设备是否需要它们在设备上安装了资源](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140))
- 
-在打包过程为你的应用生成 appxbundle 时，此优化的安装功能将自动启用。 （可选） 以确保已安装所有资源可以禁用 appxbundle 生成你的应用打包时。 不建议此方法但是因为它可能会增加你的应用的安装时间。 改为你应创建依据上一段打包配置文件，并仅需要允许安装程序继续优化夺走不需要的资源所需资源。 
- 
-你可以禁用 appxbundle 生成，并通过将"生成应用 Bundle"属性设置为"从不"包括所有已打包的资源。 
+> [!NOTE]
+> 不能在初始安装之后安装适用于应用的其他语言支持。 如果安装应用后更改默认语言，应用将继续使用仅原始的语言资源。
+
+如果你想要确保在安装后可用的所有语言资源，创建应用包的指定某些资源 （包括语言资源） 的安装过程中所需的配置文件。 在打包过程中生成应用程序的.appxbundle 时，此优化的安装功能将自动启用。 有关详细信息，请参阅[确保无论设备是否需要它们在设备上安装了资源](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140))。
+
+（可选），以确保所有资源都都安装 （而不只是一个子集），可以禁用.appxbundle 生成你的应用打包时。 不建议此方法但是因为它可以增加你的应用的安装时间。
+
+通过将"生成应用 Bundle"属性设置为"从不"禁用自动生成.appxbundle:
+
+1. 在 Visual Studio 中，右键单击项目名称
+2. 选择**应用商店** -> **创建应用包...**
+3. 在**创建程序包**对话框中，选择**想要创建程序包上传到 Microsoft Store 使用新的应用名称**，然后单击**下一步**。
+4. 在**选择应用名称**对话框中，选择/创建了应用命名为你的程序包。
+5. 在**选择并配置程序包**对话框中，将**生成应用程序包**设置为**从不**。
 
 ## <a name="geopolitical-awareness"></a>地缘政治意识
 
@@ -128,12 +137,13 @@ ms.locfileid: "9015418"
 - **直接在项目中打开资源文件，即可对其进行翻译。** 对于需要翻译成两种或三种语言的字符串数量较少的项目，此方法比较适用。 在开发人员使用多种语言并且愿意处理翻译过程的情况下，可以使用这种方法。 这种方法的优势在于快速、无需工具并且误译的风险最小。 但这种方法不可扩展。 特别是，不同语言中的资源很容易不同步，这会导致不好的用户体验和维护困难。
 - **字符串资源文件采用 XML 或 ResJSON 文本格式，因此可以使用任何文本编辑器交付它们以供翻译。 然后，再将已翻译的文件复制回项目中。** 此方法存在翻译人员意外编辑 XML 标记的风险，但它允许在 Microsoft Visual Studio 项目外进行翻译工作。 对于需要翻译成少数几种语言的项目，此方法可能比较适用。 XLIFF 格式是专门用于本地化的 XML 格式，应该可以很好地受到一些本地化供应商或本地化工具的支持。 你可以使用[多语言应用工具包](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx)从其他资源文件中（如 .resw 或 .resjson）生成 XLIFF 文件。
 
-对于其他文件（例如，图像或音频文件），可能需要交付给本地化人员。
+> [!NOTE]
+> 本地化可能还需要其他资源，包括图像和音频文件。
 
-此外，请考虑以下建议。
+你还应该考虑以下：
 
-- **使用本地化工具。** 有很多本地化工具可用于解析资源文件，并仅允许翻译人员编辑可翻译的字符串。 这种方法减少了翻译人员意外编辑 XML 标记的风险。 但它的缺点是向本地化流程中引入了新的工具和流程。 本地化工具适合具有大量字符串但需要翻译为少数语言的项目。 若要了解详细信息，请参阅[如何使用多语言应用工具包](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx)。
-- **使用本地化供应商。** 如果项目包含大量字符串并需要翻译为多种语言，请考虑使用本地化供应商。 本地化供应商可提供有关工具和流程的建议，并可翻译你的资源文件。 这是一种理想的解决方案，但也是花费最大的选项，并且会增加翻译内容的检查时间。
+- **本地化工具**用于解析资源文件，并仅允许翻译的字符串编辑可翻译人员提供了大量的本地化工具。 这种方法减少了翻译人员意外编辑 XML 标记的风险。 但它的缺点是向本地化流程中引入了新的工具和流程。 本地化工具适合具有大量字符串但需要翻译为少数语言的项目。 若要了解详细信息，请参阅[如何使用多语言应用工具包](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx)。
+- **本地化供应商**请考虑使用本地化供应商，如果你的应用程序包含大量字符串需要翻译成大量的语言。 本地化供应商可提供有关工具和流程的建议，并可翻译你的资源文件。 这是一种理想的解决方案，但也是花费最大的选项，并且会增加翻译内容的检查时间。
 
 ## <a name="keep-access-keys-and-labels-consistent"></a>使访问键和标签保持一致
 
@@ -145,8 +155,8 @@ ms.locfileid: "9015418"
 
 *汉字注音*允许用户或创建者指定所使用字符的注音，因而可解决此问题。 如果使用以下过程向应用名称添加假名注音，则可以确保该名称排序在应用列表的适当位置。 如果应用名称包含日文汉字字符并且没有提供假名注音，则当用户的 UI 语言或排序顺序设置为日语时，Windows 将尽量生成适当的发音。 然而，也可能会依据较常见的读音对包含少见或独特读音的应用名称进行排序。 因此，用于日语应用程序（尤其是名称中包含日文汉字字符的应用程序）的最佳做法是：在日语本地化过程中提供其应用名称的汉字注音版本。
 
-1.  添加“ms-resource:Appname”作为程序包显示名称和应用程序显示名称。
-2.  在字符串下创建 ja-JP 文件夹并添加两个资源文件，如下所示：
+1. 添加“ms-resource:Appname”作为程序包显示名称和应用程序显示名称。
+2. 在字符串下创建 ja-JP 文件夹并添加两个资源文件，如下所示：
 
     ``` syntax
     strings\
@@ -156,28 +166,28 @@ ms.locfileid: "9015418"
             Resources.resw
     ```
 
-3.  在用于常规 ja-JP 的 Resources.resw 中：添加用于应用名称“希蒼”的字符串资源
-4.  在用于日语汉字注音资源的 Resources.altform-msft-phonetic.resw 中：添加用于应用名称“のあ”的汉字注音值
+3. 在用于常规 ja-JP 的 Resources.resw 中：添加用于应用名称“希蒼”的字符串资源
+4. 在用于日语汉字注音资源的 Resources.altform-msft-phonetic.resw 中：添加用于应用名称“のあ”的汉字注音值
 
 用户可以搜索应用名称“希蒼”，方法是使用汉字注音值“のあ”(noa)，也可以使用注音值（通过输入法编辑器 (IME) 使用 **GetPhonetic** 功能）“まれあお”(mare-ao)。
 
 按照**区域控制面板**格式排序：
 
--   在日语用户区域设置下，
-    -   如果启用汉字注音，则“希蒼”排序在“の”下。
-    -   如果没有汉字注音，则“希蒼”排序在“ま”下。
--   在非日语用户区域设置下，
-    -   如果启用汉字注音，则“希蒼”排序在“の”下。
-    -   如果没有汉字注音，则“希蒼”排序在“漢字”下。
+- 在日语用户区域设置下，
+  - 如果启用汉字注音，则“希蒼”排序在“の”下。
+  - 如果没有汉字注音，则“希蒼”排序在“ま”下。
+- 在非日语用户区域设置下，
+  - 如果启用汉字注音，则“希蒼”排序在“の”下。
+  - 如果没有汉字注音，则“希蒼”排序在“漢字”下。
 
 ## <a name="related-topics"></a>相关主题
 
-* [全球化指南](guidelines-and-checklist-for-globalizing-your-app.md)
-* [对 UI 和应用包清单中的字符串实施本地化](../../app-resources/localize-strings-ui-manifest.md)
-* [定制语言、比例、高对比度和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)
-* [调整布局和字体并支持 RTL](adjust-layout-and-fonts--and-support-rtl.md)
-* [响应限定符值更改事件更新图像](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
+- [全球化指南](guidelines-and-checklist-for-globalizing-your-app.md)
+- [对 UI 和应用包清单中的字符串实施本地化](../../app-resources/localize-strings-ui-manifest.md)
+- [定制语言、比例、高对比度和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)
+- [调整布局和字体并支持 RTL](adjust-layout-and-fonts--and-support-rtl.md)
+- [响应限定符值更改事件更新图像](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
 
 ## <a name="samples"></a>示例
 
-* [应用程序资源和本地化示例](http://go.microsoft.com/fwlink/p/?linkid=254478)
+- [应用程序资源和本地化示例](http://go.microsoft.com/fwlink/p/?linkid=254478)
