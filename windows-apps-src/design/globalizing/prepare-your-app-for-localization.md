@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: c0df06458bf70599be657fe2812b2fb3e2b44ed6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 23343ea88b0347ac3e8cb5d41812a24d619be986
+ms.sourcegitcommit: 28fa37c2106ceb0ebe2c06ec74198b7ee97a9b88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938294"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "9015418"
 ---
 # <a name="make-your-app-localizable"></a>对应用进行可本地化处理
 
@@ -60,7 +60,7 @@ ms.locfileid: "8938294"
 | The task could not be synchronized.        | Die Aufgabe konnte nicht synchronisiert werden.  |
 | The document could not be synchronized.    | Das Dokument konnte nicht synchronisiert werden. |
 
-在另一个示例中，考虑语句"提醒我在{0}分钟。" “minute(s)”适用于英语，但其他语言可能会使用不同的术语。 例如，波兰语使用“minuta”、“minuty”或“minut”，具体取决于上下文。
+在另一个示例中，考虑语句"提醒我在{0}分钟后。" “minute(s)”适用于英语，但其他语言可能会使用不同的术语。 例如，波兰语使用“minuta”、“minuty”或“minut”，具体取决于上下文。
 
 若要解决此问题，应本地化整个语句，而不应只本地化单个字词。 这么做看似增加了额外工作量且是个不明智的解决方案，但其实是最佳解决方案，原因如下：
 
@@ -80,6 +80,16 @@ ms.locfileid: "8938294"
 
 伪本地化你的应用，找出任何本地化问题。 伪本地化是一种本地化预演或问题揭露测试。 生成一组未真正翻译的资源；它们看起来就是那样子的。 例如，你的字符串大约比默认语言长 40%，并且字符串中具有分隔符，以便你可以一眼就看出它们在 UI 中是否被截断。
 
+## <a name="deployment-considerations"></a>部署注意事项
+
+当你安装你的应用包含本地化的语言数据可能会发现仅的默认语言是适用于应用，即使你最初包含多种语言的资源。 由于在安装过程经过优化，可仅安装匹配当前的语言和文化的设备的语言资源的方式发生这种情况。 这意味着，如果你的设备配置为 en-我们时安装该应用仅 en-我们的语言资源将安装。 如果你更改默认语言操作系统的应用将仍然仅显示 en-我们资源因为它是安装的应用的唯一语言。 此时没有方法在初始安装后安装适用于应用的其他语言支持。 
+
+如果你想要确保在安装后所有语言资源都都可用可以 cerate 指定某些资源安装过程中都所需的应用包配置文件。 在此配置文件中可能需要安装的语言资源包括任何资源。 有关安装保证资源的详细信息，请参阅本文档：[确保无论设备是否需要它们在设备上安装了资源](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140))
+ 
+在打包过程为你的应用生成 appxbundle 时，此优化的安装功能将自动启用。 （可选） 以确保已安装所有资源可以禁用 appxbundle 生成你的应用打包时。 不建议此方法但是因为它可能会增加你的应用的安装时间。 改为你应创建依据上一段打包配置文件，并仅需要允许安装程序继续优化夺走不需要的资源所需资源。 
+ 
+你可以禁用 appxbundle 生成，并通过将"生成应用 Bundle"属性设置为"从不"包括所有已打包的资源。 
+
 ## <a name="geopolitical-awareness"></a>地缘政治意识
 
 在地图中或在涉及地理区域时避免政治冒犯。 地图可能包含有争议的地理区域或国界，并且这是引起政治冲突的常见原因。 请务必小心用于选择国家/地区的任何 UI，应将其称为“国家/地区”。 将有争议的领土列于标记为“国家/地区”的列表（例如地址表）中可能会冒犯某些用户。
@@ -96,7 +106,7 @@ ms.locfileid: "8938294"
     string.Format("Every {0} {1}", monthName, dayNumber); // For example, "Every April 1".
 ```
 
-此示例中的格式字符串适用于英语(美国)。 但不适用于德语(德国)，例如，其中的日期和月份以相反顺序显示。 确保 translator 知道每个参数的意图，以便它们可以反向格式中的项顺序的格式字符串 (例如，"{1} {0}") 为适合于目标语言。
+此示例中的格式字符串适用于英语(美国)。 但不适用于德语(德国)，例如，其中的日期和月份以相反顺序显示。 确保翻译人员知道每个参数的意图，以便它们可以反转中的格式字符串的格式项的顺序 (例如，"{1} {0}")，适用于目标语言。
 
 ## <a name="dont-over-localize"></a>不要过度本地化
 
