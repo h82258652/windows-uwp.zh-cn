@@ -5,16 +5,16 @@ ms.date: 5/2/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c7055748eb8905341d9f90c47e6141c9c9c599e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b547394657fc992474ac0ef9e79719e3ab8f31e1
+ms.sourcegitcommit: 58783d1ea22e632b9c50dcfbaa1cc57686bcdd8e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929664"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024224"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>使用 Visual Studio 创建应用安装程序文件
 
-从 Windows 10 版本 1804 和 Visual Studio 2017 更新 15.7 开始，可以将旁加载应用配置为使用 `.appinstaller` 文件接收自动更新。 Visual Studio 支持启用这些更新。
+始于 Windows 10，版本 1803年和 Visual Studio 2017 更新 15.7 开始旁, 加载的应用可以配置为接收自动更新使用`.appinstaller`文件。 Visual Studio 支持启用这些更新。
 
 ## <a name="app-installer-file-location"></a>应用安装程序文件位置
 `.appinstaller` 文件可以托管在一个共享位置，如 HTTP 终结点或 UNC 共享文件夹，并包含用于查找要安装的应用包的路径。 用户从共享位置安装应用并启用对新更新的定期检查。 
@@ -25,12 +25,12 @@ ms.locfileid: "8929664"
 你可以在创建项目时配置 `TargetPlatformMinVersion` 属性，也可以稍后从项目属性中进行更改。 
 
 >[!IMPORTANT]
-> 只在 `TargetPlatformMinVersion` 为 Windows 10 版本 1804 或更高版本时，才生成应用安装程序文件。
+> 应用安装程序文件只是生成时`TargetPlatformMinVersion`是 Windows 10 版本 1803年或更高版本。
 
 
 ### <a name="create-packages"></a>创建程序包
 
-分发通过旁加载应用，你必须创建应用包 (.appx/.msix) 或应用程序包 (.appxbundle/.msixbundle) 并将其发布在共享位置。
+若要分发通过旁加载应用，必须创建应用包 (.appx/.msix) 或应用程序包 (.appxbundle/.msixbundle)，并将其发布在共享位置。
 
 要执行该操作，请使用 Visual Studio 中的**创建应用序包**向导，并执行以下步骤。
 
