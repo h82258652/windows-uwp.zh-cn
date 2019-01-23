@@ -5,19 +5,19 @@ ms.date: 07/18/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 创作, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: bbc9fcd2b29183352fd06a7d7403aad2d0f011d9
-ms.sourcegitcommit: 557257fb792f0b04b013d3507b3ebe5b0f6aa6c4
+ms.openlocfilehash: fc4047344daa19888912f3a93175b36cd0dfa96b
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2019
-ms.locfileid: "8992250"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024556"
 ---
 # <a name="author-events-in-cwinrt"></a>在 C++/WinRT 中创作事件
 
 本主题演示如何创作 Windows 运行时组件，该组件包含表示银行帐户的运行时类，当该帐户的余额进入借方时其会引发事件。 它还演示使用该银行帐户运行时类、调用函数以调整余额并处理产生的任何事件的核心应用。
 
 > [!NOTE]
-> 有关安装和使用的信息[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio 扩展 (VSIX) (提供项目模板支持以及 C + + /winrt MSBuild 属性和目标)，请参阅[Visual Studio 支持 C + + /winrt 以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
+> 有关安装和使用的信息[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio 扩展 (VSIX) (提供项目模板支持以及 C + + /winrt MSBuild 属性和目标)，请参阅[Visual Studio 支持 C + + /winrt 以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)。
 
 > [!IMPORTANT]
 > 有关支持你了解如何利用 C++/WinRT 来使用和创作运行时类的基本概述和术语，请参阅[通过 C++/WinRT 使用 API](consume-apis.md) 和[通过 C++/WinRT 创作 API](author-apis.md)。
@@ -146,7 +146,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 ## <a name="parameterized-delegates-and-simple-signals-across-an-abi"></a>参数化的委托和简单信号，跨 ABI
 
-如果你的事件必须可访问性跨应用程序二进制接口 (ABI)&mdash;例如组件和其使用的应用程序&mdash;事件必须使用 Windows 运行时委托类型。 上述示例使用[**Windows::Foundation::EventHandler\<T\ >**](/uwp/api/windows.foundation.eventhandler) Windows 运行时委托类型。 [**TypedEventHandler\<TSender、 TResult\ >**](/uwp/api/windows.foundation.eventhandler)是 Windows 运行时委托类型的另一个示例。
+如果你的事件必须可访问性跨应用程序二进制接口 (ABI)&mdash;例如组件和其使用的应用程序&mdash;事件必须使用 Windows 运行时委托类型。 上面的示例使用[**Windows::Foundation::EventHandler\<T\>**](/uwp/api/windows.foundation.eventhandler) Windows 运行时委托类型。 [**TypedEventHandler\<TSender、 TResult\>**](/uwp/api/windows.foundation.eventhandler)是 Windows 运行时委托类型的另一个示例。
 
 这些两个委托类型的类型参数必须跨 ABI，因此类型参数必须也是 Windows 运行时类型。 这包括第一方和第三方运行时类，以及基元类型，如数字和字符串。 编译器帮助你与"*必须是 WinRT 类型*"错误，如果你忘记了此约束。
 

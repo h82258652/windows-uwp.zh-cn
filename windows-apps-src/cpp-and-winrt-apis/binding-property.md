@@ -5,12 +5,12 @@ ms.date: 08/21/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 属性
 ms.localizationpriority: medium
-ms.openlocfilehash: c0eccacb4d99437a482faceb7825a3cc3dbcc475
-ms.sourcegitcommit: 557257fb792f0b04b013d3507b3ebe5b0f6aa6c4
+ms.openlocfilehash: f0c12816214ee63b06903ca045e4eef37b49bdde
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2019
-ms.locfileid: "8992240"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024546"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控件; 绑定到 C++/WinRT 属性
 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 这一想法基于称为*观察者模式*的软件设计模式。 本主题介绍如何实现可观测属性[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何将 XAML 控件绑定到它们。
@@ -24,7 +24,7 @@ ms.locfileid: "8992240"
 XAML 文本元素或控件可检索更新的值然后将自行更新以显示新值，从而绑定到这些事件并处理事件。
 
 > [!NOTE]
-> 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的安装和使用的信息，请参阅[针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
+> 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的安装和使用的信息，请参阅[针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)。
 
 ## <a name="create-a-blank-app-bookstore"></a>创建空白应用 (Bookstore)
 首先在 Microsoft Visual Studio 中创建新项目。 创建**Visual c + +** > **Windows 通用** > **空白应用 (C + + WinRT)** 项目，然后将其命名为*Bookstore*。

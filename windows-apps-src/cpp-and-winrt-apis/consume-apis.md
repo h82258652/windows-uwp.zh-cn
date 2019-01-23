@@ -5,12 +5,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: cd26bfe2643b7130227e758083d820ce6be7d24e
-ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
+ms.openlocfilehash: 1bb0b5f0f30ff13815eece466b678df7cbfbd4a0
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "9014742"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024536"
 ---
 # <a name="consume-apis-with-cwinrt"></a>通过 C++/WinRT 使用 API
 
@@ -141,7 +141,7 @@ lookup.insert_or_assign(2, value);
 无论你是自行创作该组件，还是该组件来自供应商，本部分均适用。
 
 > [!NOTE]
-> 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的安装和使用的信息，请参阅[针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
+> 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的安装和使用的信息，请参阅[针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)。
 
 在应用程序项目中，引用 Windows 运行时组件的 Windows 运行时元数据 (`.winmd`) 文件，然后生成。 在生成过程中，`cppwinrt.exe` 工具生成标准 C++ 库，该库全面描述&mdash;或*投影*&mdash;该组件的 API 接口。 换言之，生成的库包含该组件的投影类型。
 

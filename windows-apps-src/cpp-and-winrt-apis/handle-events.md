@@ -5,19 +5,19 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 已投影, 投影, 处理, 事件, 委托
 ms.localizationpriority: medium
-ms.openlocfilehash: f30ff39b0dcb54cd50808381bcb30e58e7dfe07d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 93a6a11a84b6b5131d0cf9a524c11116d21b2ecd
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940848"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024486"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>在 C++/WinRT 中使用代理处理事件
 
 本主题介绍了如何注册和撤销事件处理委托使用[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。 你可以使用任何标准 C++ 函数类对象来处理事件。
 
 > [!NOTE]
-> 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的安装和使用的信息，请参阅[针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
+> 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的安装和使用的信息，请参阅[针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)。
 
 ## <a name="register-a-delegate-to-handle-an-event"></a>注册用于处理事件的委托
 
@@ -49,7 +49,7 @@ MainPage::MainPage()
 ```
 
 > [!IMPORTANT]
-> 当注册委托，上面的代码示例会传递原始*此*指针 （指向当前对象）。 若要了解如何建立的强引用或与当前的弱引用，请参阅[安全地访问*此*指针事件处理委托](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)的部分中的**如果你使用的成员函数用作代理**子部分。
+> 当注册委托，上面的代码示例会传递原始*此*指针 （指向当前对象）。 若要了解如何建立的强引用或对当前对象的弱引用，请参阅[安全地访问*此*指针事件处理委托](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)部分的**如果你使用的成员函数用作代理**子部分。
 
 还有其他方法可用来构建 **RoutedEventHandler**。 下面是摘自 [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) 的文档主题的语法块（从页面上的**语言**下拉菜单选择 *C++/WinRT*）。 请注意各种构造函数：一种采用 lambda；另一种是自由函数；还有一种（我们在上面使用的）采用对象和指向成员函数的指针。
 
@@ -157,7 +157,7 @@ Button::Click_revoker Click(winrt::auto_revoke_t,
 ```
 
 > [!NOTE]
-> 在上面的代码示例`Button::Click_revoker`是类型别名`winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>`。 类似的模式适用于所有 C++/WinRT 事件。 每个 Windows 运行时事件已返回一个事件撤销程序，然后撤销程序的类型是事件源的成员的撤消函数重载。 因此，若要参加另一个示例， [**corewindow:: Sizechanged**](/uwp/api/windows.ui.core.corewindow.sizechanged)事件都有返回值的类型**CoreWindow::SizeChanged_revoker**注册函数重载。
+> 在上面的代码示例`Button::Click_revoker`是类型别名`winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>`。 类似的模式适用于所有 C++/WinRT 事件。 每个 Windows 运行时事件已返回一个事件撤销程序，然后撤销程序的类型是事件源的成员的撤消函数重载。 因此，若要参加另一个示例中， [**corewindow:: Sizechanged**](/uwp/api/windows.ui.core.corewindow.sizechanged)事件都有返回值的类型**CoreWindow::SizeChanged_revoker**注册函数重载。
 
 
 你可以考虑撤销页面-导航方案中的处理程序。 如果你反复进入某个页面然后退出，则可以在离开该页面时撤销任何处理程序。 或者，如果你重复使用同一页面实例，则还可以检查令牌的值并且仅在它尚未被设置时注册它 (`if (!m_token){ ... }`)。 第三个选项是将事件撤销程序作为数据成员存储在页面中。 第四个选项（将在本主题后面描述）是捕获对 lambda 函数中的 *this* 对象的强引用或弱引用。
@@ -200,9 +200,9 @@ void ProcessFeedAsync()
 如上面的“协同程序”注释所示，与将代理与异步操作和运算的已完成事件结合使用相比，你可能会发现使用协同程序更自然。 有关详细信息和代码示例，请参阅[利用 C++/WinRT 实现的并发和异步运算](concurrency.md)。
 
 > [!NOTE]
-> 不正确实现为异步操作或操作的多个*完成处理程序*。 你可以让任一单个为其已完成的事件，委托，或者你可以`co_await`它。 如果你有两者，第二个将会失败。
+> 不正确实现为异步操作或操作的多个*完成处理程序*。 你可以让任一单个为其已完成的事件，委托或者你可以`co_await`它。 如果你有两者，则第二个将会失败。
 
-如果你继续使用而不是协同程序的委托，然后你可以选择简单的语法。
+如果你继续使用而不是协同程序的委托，然后你可以选择更简单的语法。
 
 ```cppwinrt
 async_op_with_progress.Completed(
@@ -230,7 +230,7 @@ winrt::hstring f(ListView listview)
 
 ## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>安全地访问*此*指针事件处理委托
 
-如果你处理了对象的成员函数的事件或从内的 lambda 函数对象的成员函数，则需要考虑事件接收者 （处理事件的对象） 和事件源 （的对象的相对生存期引发事件）。 有关详细信息和代码示例，请参阅[强和弱引用在 C + + WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
+如果你处理事件的对象的成员函数，或从内的 lambda 函数对象的成员函数，则需要考虑事件接收者 （处理事件的对象） 和事件源 （的对象的相对生存期引发事件）。 有关详细信息和代码示例，请参阅[强和弱引用在 C + + WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
 
 ## <a name="important-apis"></a>重要的 API
 * [winrt:: auto_revoke_t 标记结构](/uwp/cpp-ref-for-winrt/auto-revoke-t)
