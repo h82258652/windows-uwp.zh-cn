@@ -1,222 +1,213 @@
-items:
 - name: 概述
   href: ../publish/index.md
 - name: 开设开发者帐户
   href: ../publish/opening-a-developer-account.md
   items:
-  - name: 帐户类型、位置和费用
-    href: ../publish/account-types-locations-and-fees.md
-  - name: 管理帐户设置和个人资料信息
-    href: ../publish/manage-account-settings-and-profile.md
-  - name: 商标和版权保护
-    href: ../publish/trademark-and-copyright-protection.md
-  - name: 开发人员中心预览体验计划
-    href: ../publish/dev-center-insider-program.md
+    - name: 帐户类型、位置和费用
+      href: ../publish/account-types-locations-and-fees.md
+    - name: 管理帐户设置和个人资料信息
+      href: ../publish/manage-account-settings-and-profile.md
+    - name: 商标和版权保护
+      href: ../publish/trademark-and-copyright-protection.md
 - name: 管理帐户用户
   href: ../publish/manage-account-users.md
   items:
-  - name: 将 Azure AD 与合作伙伴中心帐户关联
-    href: ../publish/associate-azure-ad-with-partner-center.md
-  - name: 添加用户、组和 Azure AD 应用程序
-    href: ../publish/add-users-groups-and-azure-ad-applications.md
-  - name: 设置角色和自定义权限
-    href: ../publish/set-custom-permissions-for-account-users.md
+    - name: 将 Azure AD 与合作伙伴中心帐户关联
+      href: ../publish/associate-azure-ad-with-partner-center.md
+    - name: 添加用户、组和 Azure AD 应用程序
+      href: ../publish/add-users-groups-and-azure-ad-applications.md
+    - name: 设置角色和自定义权限
+      href: ../publish/set-custom-permissions-for-account-users.md
 - name: 通过保留名称创建应用
   href: ../publish/create-your-app-by-reserving-a-name.md
 - name: 应用提交
   href: ../publish/app-submissions.md
   items:
-  - name: 设置应用定价和可用性
-    href: ../publish/set-app-pricing-and-availability.md
-    items:
-    - name: 定义市场选择
-      href: ../publish/define-market-selection.md
-    - name: 选择可见性选项
-      href: ../publish/choose-visibility-options.md
-    - name: 配置精确的发布计划
-      href: ../publish/configure-precise-release-scheduling.md
-    - name: 设置和计划应用定价
-      href: ../publish/set-and-schedule-app-pricing.md
-    - name: 组织许可选项
-      href: ../publish/organizational-licensing.md
-  - name: 输入应用属性
-    href: ../publish/enter-app-properties.md
-    items:
-    - name: 类别和子类别表
-      href: ../publish/category-and-subcategory-table.md
-    - name: 产品声明
-      href: ../publish/product-declarations.md
-  - name: 年龄分级
-    href: ../publish/age-ratings.md
-  - name: 上传应用包
-    href: ../publish/upload-app-packages.md
-    items:
-    - name: 设备系列可用性
-      href: ../publish/device-family-availability.md
-    - name: 应用包要求
-      href: ../publish/app-package-requirements.md
-    - name: 程序包版本编号
-      href: ../publish/package-version-numbering.md
-    - name: 支持的语言
-      href: ../publish/supported-languages.md
-    - name: 应用包管理指南
-      href: ../publish/guidance-for-app-package-management.md
-  - name: 创建 Store 一览
-    href: ../publish/create-app-store-listings.md
-    items:
-    - name: 编写出色的应用提要
-      href: ../publish/write-a-great-app-description.md
-    - name: 应用屏幕截图、图像和预告片
-      href: ../publish/app-screenshots-and-images.md
-    - name: 导入和导出应用商店一览
-      href: ../publish/import-and-export-store-listings.md
-    - name: 创建特定于平台的 Store 一览
-      href: ../publish/create-platform-specific-store-listings.md
-  - name: 管理提交选项
-    href: ../publish/manage-submission-options.md
-    items:
-    - name: 认证说明
-      href: ../publish/notes-for-certification.md
-  - name: 应用认证过程
-    href: ../publish/the-app-certification-process.md
-    items:
-    - name: 解决提交错误
-      href: ../publish/resolve-submission-errors.md
-    - name: 避免常见的认证失败
-      href: ../publish/avoid-common-certification-failures.md
-  - name: 软件包外部测试版
-    href: ../publish/package-flights.md
-  - name: 逐步部署程序包
-    href: ../publish/gradual-package-rollout.md
-  - name: Beta 测试和目标分配
-    href: ../publish/beta-testing-and-targeted-distribution.md
-  - name: 将 LOB 应用分配到企业
-    href: ../publish/distribute-lob-apps-to-enterprises.md
+    - name: 设置应用定价和可用性
+      href: ../publish/set-app-pricing-and-availability.md
+      items:
+        - name: 定义市场选择
+          href: ../publish/define-market-selection.md
+        - name: 选择可见性选项
+          href: ../publish/choose-visibility-options.md
+        - name: 配置精确的发布计划
+          href: ../publish/configure-precise-release-scheduling.md
+        - name: 设置和计划应用定价
+          href: ../publish/set-and-schedule-app-pricing.md
+        - name: 组织许可选项
+          href: ../publish/organizational-licensing.md
+    - name: 输入应用属性
+      href: ../publish/enter-app-properties.md
+      items:
+        - name: 类别和子类别表
+          href: ../publish/category-and-subcategory-table.md
+        - name: 产品声明
+          href: ../publish/product-declarations.md
+    - name: 年龄分级
+      href: ../publish/age-ratings.md
+    - name: 上传应用包
+      href: ../publish/upload-app-packages.md
+      items:
+        - name: 设备系列可用性
+          href: ../publish/device-family-availability.md
+        - name: 应用包要求
+          href: ../publish/app-package-requirements.md
+        - name: 程序包版本编号
+          href: ../publish/package-version-numbering.md
+        - name: 支持的语言
+          href: ../publish/supported-languages.md
+        - name: 应用包管理指南
+          href: ../publish/guidance-for-app-package-management.md
+    - name: 创建 Store 一览
+      href: ../publish/create-app-store-listings.md
+      items:
+        - name: 编写出色的应用提要
+          href: ../publish/write-a-great-app-description.md
+        - name: 应用屏幕截图、图像和预告片
+          href: ../publish/app-screenshots-and-images.md
+        - name: 导入和导出应用商店一览
+          href: ../publish/import-and-export-store-listings.md
+        - name: 创建特定于平台的 Store 一览
+          href: ../publish/create-platform-specific-store-listings.md
+    - name: 管理提交选项
+      href: ../publish/manage-submission-options.md
+      items:
+        - name: 认证说明
+          href: ../publish/notes-for-certification.md
+    - name: 应用认证过程
+      href: ../publish/the-app-certification-process.md
+      items:
+        - name: 解决提交错误
+          href: ../publish/resolve-submission-errors.md
+        - name: 避免常见的认证失败
+          href: ../publish/avoid-common-certification-failures.md
+    - name: 软件包外部测试版
+      href: ../publish/package-flights.md
+    - name: 逐步部署程序包
+      href: ../publish/gradual-package-rollout.md
+    - name: Beta 测试和目标分配
+      href: ../publish/beta-testing-and-targeted-distribution.md
+    - name: 将 LOB 应用分配到企业
+      href: ../publish/distribute-lob-apps-to-enterprises.md
 - name: 加载项提交
   href: ../publish/add-on-submissions.md
   items:
-  - name: 设置加载项产品类型和产品 ID
-    href: ../publish/set-your-add-on-product-id.md
-  - name: 输入加载项属性
-    href: ../publish/enter-add-on-properties.md
-  - name: 设置加载项定价和可用性
-    href: ../publish/set-add-on-pricing-and-availability.md
-  - name: 创建加载项 Store 一览
-    href: ../publish/create-add-on-store-listings.md
+    - name: 设置加载项产品类型和产品 ID
+      href: ../publish/set-your-add-on-product-id.md
+    - name: 输入加载项属性
+      href: ../publish/enter-add-on-properties.md
+    - name: 设置加载项定价和可用性
+      href: ../publish/set-add-on-pricing-and-availability.md
+    - name: 创建加载项 Store 一览
+      href: ../publish/create-add-on-store-listings.md
 - name: 应用内广告
   href: ../publish/in-app-ads.md
 - name: 应用管理和服务
   href: ../publish/app-management-and-services.md
   items:
-  - name: 查看应用标识的详细信息
-    href: ../publish/view-app-identity-details.md
-  - name: 管理应用名称
-    href: ../publish/manage-app-names.md
-  - name: 生成适用于 OEM 的预安装程序包
-    href: ../publish/generate-preinstall-packages-for-oems.md
+    - name: 查看应用标识的详细信息
+      href: ../publish/view-app-identity-details.md
+    - name: 管理应用名称
+      href: ../publish/manage-app-names.md
+    - name: 生成适用于 OEM 的预安装程序包
+      href: ../publish/generate-preinstall-packages-for-oems.md
 - name: 推广和宣传
   href: ../publish/attract-customers-and-promote-your-apps.md
   items:
-  - name: 生成促销充值码
-    href: ../publish/generate-promotional-codes.md
-  - name: 为你的应用创建广告市场活动
-    href: ../publish/create-an-ad-campaign-for-your-app.md
-    items:
-    - name: 管理广告市场活动
-      href: ../publish/managing-your-ad-campaign.md
-    - name: 关于自家广告
-      href: ../publish/about-house-ads.md
-    - name: 关于社区广告
-      href: ../publish/about-community-ads.md
-    - name: 有关广告市场活动的常见问题
-      href: ../publish/common-questions.md
-  - name: 创建自定义应用促销市场活动
-    href: ../publish/create-a-custom-app-promotion-campaign.md
-  - name: 打折出售应用和加载项
-    href: ../publish/put-apps-and-add-ons-on-sale.md
-  - name: 应用营销指南
-    href: ../publish/app-marketing-guidelines.md
-  - name: 链接到你的应用
-    href: ../publish/link-to-your-app.md
-  - name: 更方便地推广你的应用
-    href: ../publish/make-your-app-easier-to-promote.md
+    - name: 生成促销充值码
+      href: ../publish/generate-promotional-codes.md
+    - name: 为你的应用创建广告市场活动
+      href: ../publish/create-an-ad-campaign-for-your-app.md
+      items:
+        - name: 管理广告市场活动
+          href: ../publish/managing-your-ad-campaign.md
+        - name: 关于自家广告
+          href: ../publish/about-house-ads.md
+        - name: 关于社区广告
+          href: ../publish/about-community-ads.md
+        - name: 有关广告市场活动的常见问题
+          href: ../publish/common-questions.md
+    - name: 创建自定义应用促销市场活动
+      href: ../publish/create-a-custom-app-promotion-campaign.md
+    - name: 打折出售应用和加载项
+      href: ../publish/put-apps-and-add-ons-on-sale.md
+    - name: 应用营销指南
+      href: ../publish/app-marketing-guidelines.md
+    - name: 链接到你的应用
+      href: ../publish/link-to-your-app.md
+    - name: 更方便地推广你的应用
+      href: ../publish/make-your-app-easier-to-promote.md
 - name: 与客户互动
   href: ../publish/engage-with-your-customers.md
   items:
-  - name: 创建客户组
-    href: ../publish/create-customer-groups.md
-    items:
-    - name: 创建客户类别
-      href: ../publish/create-customer-segments.md
-    - name: 创建已知用户组
-      href: ../publish/create-known-user-groups.md
-  - name: 回复客户评价
-    href: ../publish/respond-to-customer-reviews.md
-  - name: 回复客户反馈
-    href: ../publish/respond-to-customer-feedback.md
-  - name: 向应用客户发送通知
-    href: ../publish/send-push-notifications-to-your-apps-customers.md
-  - name: 使用定向的优惠
-    href: ../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md
+    - name: 创建客户组
+      href: ../publish/create-customer-groups.md
+      items:
+        - name: 创建客户类别
+          href: ../publish/create-customer-segments.md
+        - name: 创建已知用户组
+          href: ../publish/create-known-user-groups.md
+    - name: 回复客户评价
+      href: ../publish/respond-to-customer-reviews.md
+    - name: 回复客户反馈
+      href: ../publish/respond-to-customer-feedback.md
+    - name: 向应用客户发送通知
+      href: ../publish/send-push-notifications-to-your-apps-customers.md
+    - name: 使用定向的优惠
+      href: ../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md
 - name: 分析应用性能
   href: ../publish/analytics.md
   items:
-  - name: 购置报告
-    href: ../publish/acquisitions-report.md
-  - name: 加载项购置报告
-    href: ../publish/add-on-acquisitions-report.md
-  - name: 使用情况报告
-    href: ../publish/usage-report.md
-  - name: 运行状况报告
-    href: ../publish/health-report.md
-  - name: 分级报告
-    href: ../publish/ratings-report.md
-  - name: 评价报告
-    href: ../publish/reviews-report.md
-  - name: 反馈报告
-    href: ../publish/feedback-report.md
-  - name: Xbox 分析报告
-    href: ../publish/xbox-analytics-report.md
-  - name: 洞察报告
-    href: ../publish/insights-report.md
-  - name: 广告效果报告
-    href: ../publish/advertising-performance-report.md
-  - name: 广告活动报告
-    href: ../publish/ad-campaign-report.md
-  - name: 下载分析报告
-    href: ../publish/download-analytic-reports.md
+    - name: 购置报告
+      href: ../publish/acquisitions-report.md
+    - name: 加载项购置报告
+      href: ../publish/add-on-acquisitions-report.md
+    - name: 使用情况报告
+      href: ../publish/usage-report.md
+    - name: 运行状况报告
+      href: ../publish/health-report.md
+    - name: 分级报告
+      href: ../publish/ratings-report.md
+    - name: 评价报告
+      href: ../publish/reviews-report.md
+    - name: 反馈报告
+      href: ../publish/feedback-report.md
+    - name: Xbox 分析报告
+      href: ../publish/xbox-analytics-report.md
+    - name: 洞察报告
+      href: ../publish/insights-report.md
+    - name: 广告效果报告
+      href: ../publish/advertising-performance-report.md
+    - name: 广告活动报告
+      href: ../publish/ad-campaign-report.md
+    - name: 下载分析报告
+      href: ../publish/download-analytic-reports.md
 - name: 获取付款
   href: ../publish/getting-paid-apps.md
   items:
-  - name: 设置你的付款帐户和税单
-    href: ../publish/setting-up-your-payout-account-and-tax-forms.md
-  - name: 付款阈值、方法和时间范围
-    href: ../publish/payment-thresholds-methods-and-timeframes.md
-  - name: 付款摘要
-    href: ../publish/payout-summary.md
-  - name: 付费应用的税收明细
-    href: ../publish/tax-details-for-paid-apps.md
-  - name: 了解 IRS 税单
-    href: ../publish/understand-irs-tax-forms.md
-  - name: 移动运营商结算
-    href: ../publish/mobile-operator-billing.md
-  - name: VAT 信息
-    href: ../publish/vat-info.md
+    - name: 设置你的付款帐户和税单
+      href: ../publish/setting-up-your-payout-account-and-tax-forms.md
+    - name: 付款阈值、方法和时间范围
+      href: ../publish/payment-thresholds-methods-and-timeframes.md
+    - name: 付款摘要
+      href: ../publish/payout-summary.md
+    - name: 付费应用的税收明细
+      href: ../publish/tax-details-for-paid-apps.md
+    - name: 了解 IRS 税单
+      href: ../publish/understand-irs-tax-forms.md
+    - name: 移动运营商结算
+      href: ../publish/mobile-operator-billing.md
+    - name: VAT 信息
+      href: ../publish/vat-info.md
 - name: Microsoft Store 策略和行为准则
-  href: https://docs.microsoft.com/legal/windows/agreements/store-policies-and-code-of-conduct
+  href: 'https://docs.microsoft.com/legal/windows/agreements/store-policies-and-code-of-conduct'
   items:
-  - name: Microsoft Store 策略
-    href: https://docs.microsoft.com/legal/windows/agreements/store-policies
-    items:
-    - name: 更改历史记录
-      href: https://docs.microsoft.com/legal/windows/agreements/store-policies-change-history
-  - name: 应用质量
-    href: https://docs.microsoft.com/legal/windows/agreements/store-app-quality
-  - name: 开发人员行为准则
-    href: https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct
-ms.openlocfilehash: 53ac86d707ecbf117e4fc2852ca476dc73cc9525
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962479"
+    - name: Microsoft Store 策略
+      href: 'https://docs.microsoft.com/legal/windows/agreements/store-policies'
+      items:
+        - name: 更改历史记录
+          href: 'https://docs.microsoft.com/legal/windows/agreements/store-policies-change-history'
+    - name: 应用质量
+      href: 'https://docs.microsoft.com/legal/windows/agreements/store-app-quality'
+    - name: 开发人员行为准则
+      href: 'https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct'
