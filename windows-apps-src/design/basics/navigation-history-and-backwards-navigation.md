@@ -7,12 +7,12 @@ ms.date: 06/21/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 192c5f4be7496b3fe47238c4965d6854f06d21b4
-ms.sourcegitcommit: 2e47a0d047e6ca8d3f473434a2b07b6216b55d17
+ms.openlocfilehash: c74d4ebd08dfeddfb4a0149cffcd7bb845ceff11
+ms.sourcegitcommit: 4ee300bfa6a238d3ce7674036ec1c574bb025210
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "9004500"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "9029940"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP 应用的导航历史记录和向后导航
 
@@ -296,8 +296,6 @@ bool App::On_BackRequested()
 系统后退栏是"区带"选项卡区带和应用的内容区域之间插入。 此区带横跨整个应用，“后退”按钮位于左边缘。 此区带的垂直高度为 32 像素，以确保后退按钮的足够的触摸目标大小。
 
 系统后退栏基于“后退”按钮的可见性动态显示。 后退按钮可见时，系统后退栏插入，将通过以下选项卡区带 32 像素向下移位应用内容。 当后退按钮隐藏时，系统后退栏动态删除，通过 32 像素，以满足选项卡区带移动应用内容。 若要避免对你的应用的 UI shift 向上或向下，我们建议绘制[应用内后退按钮](#back-button)。
-
-[标题栏自定义](../shell/title-bar.md)会延续到应用选项卡和系统后退栏。 如果你的应用指定后台和前台颜色属性具有[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)，则这些颜色将应用到选项卡和系统后退栏。
 
 [标题栏自定义](../shell/title-bar.md)会延续到应用选项卡和系统后退栏。 如果你的应用指定后台和前台颜色属性具有[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)，则这些颜色将应用到选项卡和系统后退栏。
 
