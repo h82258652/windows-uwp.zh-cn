@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 92c08971ee498e93e5a974ef8bd63d00dd27fc7d
-ms.sourcegitcommit: 1cf04b0b1bd7623cd7f6067b8392dce4372f2c69
+ms.openlocfilehash: b47991add56868fe534b0460ec65336e94f433e9
+ms.sourcegitcommit: 1391190e27907f0c7cd40e4bb56cdead387a53cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "8970980"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035527"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
@@ -72,10 +72,10 @@ ms.locfileid: "8970980"
 
 ## <a name="when-to-use-acrylic"></a>何时使用亚克力
 
-* 用于支持 UI，例如 NavigationView 或行中的命令元素使用应用内亚克力。
+* 用于支持 UI，例如可能会重叠内容时滚动或与之交互的图面上使用应用内亚克力。
 * 对于瞬态 UI 元素，如上下文菜单、 浮出控件和光 dimsissable UI 使用背景亚克力。<br />在瞬态方案中使用亚克力有助于 visual 维持与触发瞬态 UI 的内容。
 
-如果你导航图面上使用应用内亚克力，请考虑扩展亚克力窗格以提高你的应用上的流下方的内容。 使用 NavigationView 将执行此操作为你自动。 但是，若要避免而导致产生条纹效果，不尝试将多个亚克力边缘到边缘-这可以创建两个模糊表面之间不需要接合处。 亚克力是一种工具来让 visual 协调设计，但不正确，使用时可能会导致视觉干扰。
+如果你导航图面上使用应用内亚克力，请考虑扩展亚克力窗格以提高你的应用上的流下方的内容。 使用 NavigationView 将执行此操作为你自动。 但是，若要避免创建而导致产生条纹效果，不尝试将多个亚克力边缘到边缘-这可以创建两个模糊表面之间不需要接合处。 亚克力这种工具可让设计，visual 协调，但不正确，使用时可能会导致视觉干扰。
 
 请考虑以下使用模式，确定如何最佳亚克力融入你的应用：
 
@@ -86,15 +86,15 @@ ms.locfileid: "8970980"
 
 ![使用应用内水平命令的地图应用](images/Maps_In_App_Acrylic_1.png)
 
-此外，在顶部无内容扩展或下亚克力的滚动将为应用提供更加沉浸式和无缝体验。
+此外，在顶部无内容扩展或下亚克力的滚动将为你的应用设置为一个更沉浸式且无缝体验。
 
 ### <a name="vertical-panes"></a>垂直窗格
 
-对于垂直窗格或图面，可帮助你的应用关闭内容部分，我们建议你使用而不是亚克力的不透明背景。 如果内容顶部打开垂直窗格，一样在 NavigationView 的**精简**或**最小**模式下，我们建议你使用应用内亚克力来帮助维护该页面的上下文，当用户在打开该窗格。
+对于垂直窗格或图面，可帮助你的应用关闭内容部分，我们建议你使用而不是亚克力的不透明背景。 如果内容顶部打开垂直窗格，如在 NavigationView 的**精简**或**最小**模式下，我们建议你使用应用内亚克力来帮助维护该页面的上下文，当用户在打开该窗格。
 
 ### <a name="transient-surfaces"></a>瞬态图面
 
-适用于与菜单浮出控件，非模式弹出窗口的应用或轻型消除窗格，建议使用背景亚克力。
+如应用带有菜单浮出控件，非模式弹出窗口或轻型消除窗格，建议使用背景亚克力。
 
 ![使用信息性的浮出控件的邮件应用模式](images/Mail_TransientContextMenu.png)
 
@@ -107,11 +107,11 @@ ms.locfileid: "8970980"
 亚克力外观可自动适应各种设备和上下文。
 
 在高对比度模式中，用户仍将看到自己选择的熟悉的背景颜色，而非亚克力。 此外，背景亚克力和应用内亚克力均显示为纯色：
- - 当用户关闭设置中的透明度 > 个性化 > 颜色
+ - 当用户关闭设置 > 中的透明度个性化 > 颜色
  - 当激活节电模式
  - 应用在低端硬件上运行时
 
-此外，只有背景亚克力将其透明度和纹理替换为纯色：
+此外，只有背景亚克力会替换其透明度和纹理使用纯色：
  - 桌面上的应用窗口停用时
  - UWP 应用在手机、Xbox、HoloLens 或平板电脑模式下运行时
 
@@ -145,7 +145,7 @@ ms.locfileid: "8970980"
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> <b>建议用法：</b>如果你的应用使用 AltMedium 颜色的辅助文本且文本大小的 18 像素或更大，你可以将文本后面的这些更半透明 70%亚克力资源放。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
+        <td> <b>建议用法：</b>如果你的应用使用 AltMedium 颜色的辅助文本且文本大小的 18 像素或更大，你可以放置文本后面的这些更半透明 70%亚克力资源。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush、SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush、SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush、SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush、SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush、SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush、SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
@@ -205,7 +205,7 @@ ms.locfileid: "8970980"
 若要添加亚克力画笔，请定义用于深色、浅色和高对比度主题的三个资源。 请注意，在高对比度主题中，我们建议使用 x:Key 与深色/浅色 AcrylicBrush 相同的 SolidColorBrush。
 
 > [!Note] 
-> 如果你未指定 TintLuminosityOpacity 值，系统将自动调整具体取决于你的 TintColor 和 TintOpacity 其值。
+> 如果未指定 TintLuminosityOpacity 值，系统将自动调整具体取决于你的 TintColor 和 TintOpacity 其值。
 
 ```xaml
 <ResourceDictionary.ThemeDictionaries>
@@ -319,7 +319,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
 * 请将亚克力用作非主要应用图面（例如导航窗格）的背景材料。
 * 请将亚克力扩展到至少一个应用边缘，通过与应用周围环境巧妙融合营造无缝体验。
-* 不要在你的应用的较大的背景图面上放置桌面 arylic-这将中断主要用于瞬态曲面的亚克力的心理模型。
+* 不要在你的应用的较大的背景图面上放置桌面 arylic-这将中断主要用于瞬态表面的亚克力的心理模型。
 * 不要直接并列放置应用内亚克力和背景亚克力，以避免接缝处产生不协调的视觉效果。
 * 不要并列放置具有相同色调和不透明度的多个亚克力窗格，因为这会导致出现不协调的明显接缝。
 * 不要将主题色文本放在亚克力图面上。
