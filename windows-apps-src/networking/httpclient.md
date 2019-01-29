@@ -6,15 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-dev_langs:
-- csharp
-- cppwinrt
-ms.openlocfilehash: 9cd5d9d275241ab107a3b1b06044ba0109d4bb3d
-ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
+ms.openlocfilehash: fd921782571082ee696c26480f1c55c96c30d7c2
+ms.sourcegitcommit: 7bea35c5a35c78e65f822313962c4b1579b163b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035388"
+ms.locfileid: "9035441"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -105,14 +102,12 @@ catch (Exception ex)
 ```cppwinrt
 // pch.h
 #pragma once
-
-#include "winrt/Windows.Foundation.h"
+#include <winrt/Windows.Foundation.h>
 #include <winrt/Windows.Web.Http.Headers.h>
 
 // main.cpp : Defines the entry point for the console application.
 #include "pch.h"
 #include <iostream>
-
 using namespace winrt;
 using namespace Windows::Foundation;
 
@@ -160,6 +155,66 @@ int main()
     std::wcout << httpResponseBody;
 }
 ```
+
+## <a name="post-binary-data-over-http"></a>通过 HTTP POST 二进制数据
+
+[C + + WinRT](/windows/uwp/cpp-and-winrt-apis)下面的代码示例演示如何发送少量的二进制数据，使用[HttpBufferContent](/uwp/api/windows.web.http.httpbuffercontent)类的 POST 请求。
+
+```cppwinrt
+// pch.h
+#pragma once
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Storage.Streams.h>
+#include <winrt/Windows.Web.Http.Headers.h>
+
+// main.cpp : Defines the entry point for the console application.
+#include "pch.h"
+#include <iostream>
+#include <sstream>
+#include <winrt/Windows.Security.Cryptography.h>
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+
+int main()
+{
+    init_apartment();
+
+    // Create an HttpClient object.
+    Windows::Web::Http::HttpClient httpClient;
+
+    Uri requestUri{ L"http://www.contoso.com/post" };
+
+    auto buffer{
+    Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(
+        L"A sentence of text by way of sample data",
+        Windows::Security::Cryptography::BinaryStringEncoding::Utf8)
+    };
+    Windows::Web::Http::HttpBufferContent postContent{ buffer };
+    postContent.Headers().Append(L"Content-Type", L"image/jpeg");
+
+    // Send the POST request asynchronously, and retrieve the response as a string.
+    Windows::Web::Http::HttpResponseMessage httpResponseMessage;
+    std::wstring httpResponseBody;
+
+    try
+    {
+        // Send the POST request.
+        httpResponseMessage = httpClient.PostAsync(requestUri, postContent).get();
+        httpResponseMessage.EnsureSuccessStatusCode();
+        httpResponseBody = httpResponseMessage.Content().ReadAsStringAsync().get();
+    }
+    catch (winrt::hresult_error const& ex)
+    {
+        httpResponseBody = ex.message();
+    }
+    std::wcout << httpResponseBody;
+}
+```
+
+若要发布二进制文件的内容，你会发现更易于使用[HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent)对象。 构造一个文档，作为它的构造函数的参数，通过从[StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync)调用返回的值。 该方法返回的二进制文件内的数据的流。
+
+此外，如果你正在上传 （大于大约 10 MB） 的大型文件，然后我们建议你使用 Windows 运行时[后台传输](/uwp/api/windows.networking.backgroundtransfer)Api。
 
 ## <a name="exceptions-in-windowswebhttp"></a>Windows.Web.Http 中的异常
 
