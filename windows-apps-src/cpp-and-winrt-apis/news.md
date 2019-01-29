@@ -1,17 +1,17 @@
 ---
 description: 新闻和更改到 C + + WinRT。
 title: 什么是新在 C + + WinRT
-ms.date: 10/03/2018
+ms.date: 01/29/2019
 ms.topic: article
 keywords: windows 10，uwp，标准，c + +，cpp，winrt，投影，新闻，内容的、 新
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 986b0e896ca00e1fc15a6ed265ea1e98103524f3
-ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
+ms.openlocfilehash: b46aaf9948587ef79a9c5bf73064b1a70c0e9c3a
+ms.sourcegitcommit: a71122082947b4cc3d157465e402746760d1d5c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024576"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035702"
 ---
 # <a name="whats-new-in-cwinrt"></a>什么是新在 C + + WinRT
 
@@ -44,10 +44,7 @@ ms.locfileid: "9024576"
 - 强化的智能指针。 以前，无法撤消时事件 revokers 移动-分配一个新值。 这有助于发现的问题智能指针类未可靠地处理自我分配;[**winrt:: com_ptr 结构模板**](/uwp/cpp-ref-for-winrt/com-ptr)中的根。 **winrt:: com_ptr**已修复，并修复来处理事件 revokers 移动语义正确，以便它们分配时撤销。
 
 > [!NOTE]
-> 使用版本 1.0.181002.2 （或更高版本） 的[C + + /winrt Visual Studio 扩展 (VSIX)](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)安装，创建新的 C + + WinRT 项目会自动安装该项目的[Microsoft.Windows.CppWinRT NuGet 程序包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 Microsoft.Windows.CppWinRT NuGet 程序包提供改进了 C + + WinRT 项目生成支持，从而使你的项目之间的开发计算机和生成代理 （在其只有 NuGet 程序包，以及不 VSIX，已安装） 移植。
->
-> 现有项目的&mdash;已安装版本 1.0.181002.2 之后 （或更高版本） 的 VSIX&mdash;我们建议你在 Visual Studio 中打开项目，单击**项目** \> **管理 NuGet 程序包...** \> **浏览**，键入或将**Microsoft.Windows.CppWinRT**粘贴搜索框中，选择搜索结果中的项，然后单击**安装**安装该项目的程序包。
-
+> 重要的更改所做[C + + /winrt Visual Studio 扩展 (VSIX)](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)，同时在版本 1.0.181002.2，然后版本 1.0.190128.4 中。 有关这些更改，以及它们可能会影响你的项目的详细信息，请参阅[Visual Studio 支持 C + + /winrt 以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)。
 
 ## <a name="isolation-from-windows-sdk-header-files"></a>从 Windows SDK 标头文件的隔离
 
