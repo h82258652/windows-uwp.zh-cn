@@ -9,12 +9,12 @@ ms.date: 12/7/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: b7b4452bb242bb7679d37036ccda5e27912a2505
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6e9e0f6305a99b6e3ab83cb3b560754f2e4d310f
+ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944338"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035418"
 ---
 # <a name="globalization-and-localization"></a>全球化和本地化
 
@@ -36,6 +36,10 @@ Windows 的使用遍及世界各地，用户的语言、区域及文化背景各
 - 日期和时间格式设置
 - 数字、货币、重量和测量约定
 - 排序规则
+
+>[!NOTE]
+> Microsoft 使用标准的国家/地区代码的列表，请参阅[官方国家/地区列表](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion)。
+
 
 **可本地化性**是为本地化准备全球化应用和/或验证应用是否已准备好进行本地化的过程。 以正确方式对应用进行可本地化处理意味着应用在之后的本地化过程中不会出现任何功能缺陷。 可本地化应用最重要的属性是其可执行代码与应用的可本地化资源完全分隔。
 
@@ -65,4 +69,4 @@ Windows 的使用遍及世界各地，用户的语言、区域及文化背景各
 | [针对双向文本设计应用](design-for-bidi-text.md) | 设计应用，使其提供双向文本支持（双向），以便组合从左到右和从右到左写入系统的脚本。 |
 | [使用多语言应用工具包 4.0](use-mat.md) | 多语言应用工具包 (MAT) 4.0 与 Microsoft Visual Studio 2017 集成，为 UWP 应用提供翻译支持、翻译文件管理和编辑工具。 |
 | [多语言应用工具包 4.0 常见问题和疑难解答](mat-faq-troubleshooting.md) | 本主题提供有关多语言应用工具包 (MAT) 4.0 的常见问题解答。 |
-| [准备日语 era 更改应用程序](japanese-era-change.md) | 了解有关 2019 年 5 日语 era 更改以及如何准备你的应用程序。 |
+| [准备你的应用程序以进行日本纪元更改](japanese-era-change.md) | 了解有关 2019 年 5 日语 era 更改以及如何准备你的应用程序。 |

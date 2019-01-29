@@ -6,15 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 706432123d8a778af558d0c3e426ad4f5120bdba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+dev_langs:
+- csharp
+- cppwinrt
+ms.openlocfilehash: 9cd5d9d275241ab107a3b1b06044ba0109d4bb3d
+ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935251"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035388"
 ---
 # <a name="httpclient"></a>HttpClient
-
 
 **重要的 API**
 
@@ -58,7 +60,7 @@ ms.locfileid: "8935251"
 
 ## <a name="send-a-simple-get-request-over-http"></a>通过 HTTP 发送简单的 GET 请求
 
-正如本文前面提到的，[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间允许 UWP 应用发送 GET 请求。 以下代码片段演示了如何 GET 请求发送到http://www.contoso.com使用[**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)类和[**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631)类读取来自 GET 请求的响应。
+正如本文前面提到的，[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间允许 UWP 应用发送 GET 请求。 下面的代码段演示了如何获取请求发送到http://www.contoso.com使用[**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)类和[**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631)类读取来自 GET 请求的响应。
 
 ```csharp
 //Create an HTTP client object
@@ -100,11 +102,70 @@ catch (Exception ex)
 }
 ```
 
+```cppwinrt
+// pch.h
+#pragma once
+
+#include "winrt/Windows.Foundation.h"
+#include <winrt/Windows.Web.Http.Headers.h>
+
+// main.cpp : Defines the entry point for the console application.
+#include "pch.h"
+#include <iostream>
+
+using namespace winrt;
+using namespace Windows::Foundation;
+
+int main()
+{
+    init_apartment();
+
+    // Create an HttpClient object.
+    Windows::Web::Http::HttpClient httpClient;
+
+    // Add a user-agent header to the GET request.
+    auto headers{ httpClient.DefaultRequestHeaders() };
+
+    // The safe way to add a header value is to use the TryParseAdd method, and verify the return value is true.
+    // This is especially important if the header value is coming from user input.
+    std::wstring header{ L"ie" };
+    if (!headers.UserAgent().TryParseAdd(header))
+    {
+        throw L"Invalid header value: " + header;
+    }
+
+    header = L"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)";
+    if (!headers.UserAgent().TryParseAdd(header))
+    {
+        throw L"Invalid header value: " + header;
+    }
+
+    Uri requestUri{ L"http://www.contoso.com" };
+
+    // Send the GET request asynchronously, and retrieve the response as a string.
+    Windows::Web::Http::HttpResponseMessage httpResponseMessage;
+    std::wstring httpResponseBody;
+
+    try
+    {
+        // Send the GET request.
+        httpResponseMessage = httpClient.GetAsync(requestUri).get();
+        httpResponseMessage.EnsureSuccessStatusCode();
+        httpResponseBody = httpResponseMessage.Content().ReadAsStringAsync().get();
+    }
+    catch (winrt::hresult_error const& ex)
+    {
+        httpResponseBody = ex.message();
+    }
+    std::wcout << httpResponseBody;
+}
+```
+
 ## <a name="exceptions-in-windowswebhttp"></a>Windows.Web.Http 中的异常
 
 将统一资源标识符 (URI) 的无效字符串传递给 [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 对象的构造函数时，将引发异常。
 
-**.NET:** [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998)类型显示为 C# 和 VB. [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)
+**.NET:** [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998)类型显示为在 C# 和 VB. [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)
 
 在 C# 和 Visual Basic 中，通过使用 .NET 4.5 中的 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) 类和 [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) 方法之一在构造 URI 之前测试从用户收到的字符串，可以避免该错误。
 
@@ -112,7 +173,7 @@ catch (Exception ex)
 
 [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 缺少方便函数。 所以，使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 和该命名空间中其他类的应用需要使用 **HRESULT** 值。
 
-在应用中使用 C#、 VB.NET、 [System.Exception](http://msdn.microsoft.com/library/system.exception.aspx) .NET Framework4.5 表示的错误应用执行期间发生异常时。 [System.Exception.HResult](http://msdn.microsoft.com/library/system.exception.hresult.aspx) 属性将返回分配到特定异常的 **HRESULT**。 [System.Exception.Message](http://msdn.microsoft.com/library/system.exception.message.aspx) 属性将返回用于描述异常的消息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来根据异常原因修改应用行为。
+在应用中使用 C#、 VB.NET、 [System.Exception](http://msdn.microsoft.com/library/system.exception.aspx) .NET Framework4.5 表示错误应用执行期间发生异常时。 [System.Exception.HResult](http://msdn.microsoft.com/library/system.exception.hresult.aspx) 属性将返回分配到特定异常的 **HRESULT**。 [System.Exception.Message](http://msdn.microsoft.com/library/system.exception.message.aspx) 属性将返回用于描述异常的消息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来根据异常原因修改应用行为。
 
 在使用托管的 C++ 的应用中发生异常时，[Platform::Exception](http://msdn.microsoft.com/library/windows/apps/hh755825.aspx) 表示应用执行期间的错误。 [Platform::Exception::HResult](http://msdn.microsoft.com/library/windows/apps/hh763371.aspx) 属性将返回分配到特定异常的 **HRESULT**。 [Platform::Exception::Message](http://msdn.microsoft.com/library/windows/apps/hh763375.aspx) 属性将返回系统提供的与 **HRESULT** 值关联的字符串。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来基于异常原因修改应用行为。
 

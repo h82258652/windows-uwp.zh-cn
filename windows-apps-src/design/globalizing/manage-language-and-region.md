@@ -7,12 +7,12 @@ ms.date: 11/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 43aeccecee5b4b2d7a2d5fa1082fb619e87e7268
-ms.sourcegitcommit: 51ea7eae59684400e7813a9dd3376d5e7bfb3635
+ms.openlocfilehash: d70dbc0dffc3763855924b8f7faca61ca2fb18f2
+ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "8972041"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035398"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>了解用户配置文件语言和应用清单语言
 Windows 用户可以使用**设置** > **时间和语言** > **区域和语言**来配置首选显示语言的排序列表或一种首选显示语言。 某种语言可能会具有区域变体。 例如，可以选择西班牙使用的西班牙语、墨西哥使用的西班牙语、美国使用的西班牙语等。
@@ -98,7 +98,7 @@ Windows 用户可以使用**设置** > **时间和语言** > **区域和语言**
 **注意**即使你的应用的默认语言的资源必须指定语言限定符。 例如，如果你的应用的默认语言是英语 （美国），然后限定为资源`\Assets\Images\en-US\logo.png`。
 
 - Windows 执行复杂的匹配，包括跨区域变体，如 EN-US 和 EN-GB。 因此包括为相应的地区子标记。 请参阅[资源管理系统匹配语言标记的方式](../../app-resources/how-rms-matches-lang-tags.md)。
-- 当没有为语言定义禁止脚本值时，请指定语言脚本子标记中的限定符。 例如，而不是 ZH-CN 或 ZH-TW，请使用 Zh-hant、 不同的 ZH-TW 或 Zh-hans （有关更多详细信息，请参阅[IANA 语言子标记注册表](http://go.microsoft.com/fwlink/p/?linkid=227303)）。
+- 当没有为语言定义禁止脚本值时，请在限定符中指定的语言脚本子标记。 例如，而不是 ZH-CN 或 ZH-TW，使用 Zh-hant、 不同的 ZH-TW 或 Zh-hans （有关详细信息，请参阅[IANA 语言子标记注册表](http://go.microsoft.com/fwlink/p/?linkid=227303)）。
 - 对于只有一种标准方言的语言，没有无需包括地区限定符。 例如，而不是 JA-JP 使用 ja。
 - 某些工具和其他组件（如机器翻译程序）可能会发现特定的语言标记（如区域方言信息）在理解数据方面很有帮助。
 
@@ -106,10 +106,10 @@ Windows 用户可以使用**设置** > **时间和语言** > **区域和语言**
 
 本地化可能不需要的所有资源。
 
-- 至少，请确保在默认语言中存在的所有资源。
-- 密切相关的语言 （部分本地化） 可能满足某些资源的子集。 例如，如果应用的整个资源集都使用西班牙语，那么你可能不会将应用的全部 UI 本地化为加泰罗尼亚语。 对于泰罗尼西班牙语的用户，不可用加泰罗尼亚语提供的资源在西班牙语显示。
-- 某些资源可能需要进行特定语言，而其他资源映射到常见资源的大部分异常。 在此情况下，标记应使用未确定语言标记 und 于所有语言使用的资源。 Windows 将“und”语言标记解释为通配符（类似于“\*”），因为它可以匹配其他任何特定匹配之后排在最顶端的应用语言。 例如，如果某些资源对于芬兰语有所不同，但是这些资源的剩余部分对于所有语言都相同，应该使用芬兰语语言标记对芬兰语资源进行标记，而剩余部分则应该通过“und”进行标记。
-- 对于资源，具体取决于语言脚本，如字体或高度的文本、 使用未确定语言标记与某个指定的脚本: und-&lt;脚本&gt;。 例如，对于拉丁语字体，请使用 `und-Latn\\fonts.css`；对于西里尔文字体，请使用 `und-Cryl\\fonts.css`。
+- 至少，请确保所有资源都存在于默认语言。
+- 密切相关的语言 （部分本地化） 或许可以满足某些资源的子集。 例如，如果应用的整个资源集都使用西班牙语，那么你可能不会将应用的全部 UI 本地化为加泰罗尼亚语。 对于泰罗尼西班牙语的用户，不可用加泰罗尼亚语提供的资源在西班牙语显示。
+- 某些资源可能需要进行特定语言，而其他资源映射到常见资源的大多数异常。 在此情况下，标记应使用未确定的语言标记 und 于所有语言使用的资源。 Windows 将“und”语言标记解释为通配符（类似于“\*”），因为它可以匹配其他任何特定匹配之后排在最顶端的应用语言。 例如，如果某些资源对于芬兰语有所不同，但是这些资源的剩余部分对于所有语言都相同，应该使用芬兰语语言标记对芬兰语资源进行标记，而剩余部分则应该通过“und”进行标记。
+- 对于资源，具体取决于语言的脚本，如字体或高度的文本、 使用未确定语言标记与某个指定的脚本: und-&lt;脚本&gt;。 例如，对于拉丁语字体，请使用 `und-Latn\\fonts.css`；对于西里尔文字体，请使用 `und-Cryl\\fonts.css`。
 
 ## <a name="set-the-http-accept-language-request-header"></a>设置 HTTP 接受的语言请求标头
 请考虑所调用的 Web 服务是否具有与应用相同的本地化程度范围。 UWP 应用和桌面应用以典型的 Web 请求形式发出的 HTTP 请求以及 XMLHttpRequest (XHR) 使用标准 HTTP 接受的语言请求标头。 默认情况下，HTTP 标头设置为用户配置文件语言列表。 列表中的每种语言进一步扩展为包含中性语言和权重 (q)。 例如，fr-FR 和 en-US 的用户语言列表会产生 fr-FR、fr、en-US、en 的 HTTP 接受的语言请求标头（“fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3”）。 但是，如果天气应用（以此为例）以法语（法国）显示 UI，但用户在其首选项列表中排在最顶端的语言是德语，你则需要从服务中显式请求使用法语（法国），以便在应用内保持一致性。
@@ -191,6 +191,9 @@ Windows 用户可以使用**设置** > **时间和语言** > **区域和语言**
 </tr>
 </tbody>
 </table>
+
+>[!NOTE]
+> Microsoft 使用标准的国家/地区代码的列表，请参阅[官方国家/地区列表](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion)。
 
 ## <a name="important-apis"></a>重要的 API
 * [GlobalizationPreferences.Languages](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
