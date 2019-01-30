@@ -13,12 +13,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5
-ms.openlocfilehash: 479df01808d32a26eaa6775bb9047adc86979f3f
-ms.sourcegitcommit: 67cc4153dac48a2633d93c954eaad61be8600fa8
+ms.openlocfilehash: da8abfc32dcddabe5c5d72d1d04cb752dc3f9bba
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "8991765"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9037289"
 ---
 # <a name="treeview"></a>树视图
 
@@ -57,7 +57,7 @@ TreeView API 支持以下功能：
     <p>如果你安装了该<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，单击此处<a href="xamlcontrolsgallery:/item/TreeView">打开该应用并查看操作中的树视图</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">获取源代码 (GitHub)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
 </tr>

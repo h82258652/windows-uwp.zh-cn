@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: a76a03eaff3d831b48e7b86c0b70ff2cbae7360a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4a969c0dfbfd08b5cc29651e2ad295c2bdd60ee0
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936213"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9037009"
 ---
 # <a name="inking-controls"></a>墨迹书写控件
 
@@ -59,7 +59,7 @@ InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默�
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/InkCanvas">打开此应用，了解 InkCanvas 的实际应用</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">获取源代码 (GitHub)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -166,7 +166,7 @@ InkToolbar 由两组不同的按钮类型组成：
 
 - [SimpleInk 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)演示关于 InkCanvas 和 InkToolbar 控件的自定义和扩展性功能的 8 个方案。 每个方案都提供了有关常见墨迹书写和控件实现的基本指南。
 - [ComplexInk 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) - 演示更高级的墨迹书写方案。
-- [XAML 控件库示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - 以交互式格式查看所有 XAML 控件。
+- [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
 
 ## <a name="related-articles"></a>相关文章
 

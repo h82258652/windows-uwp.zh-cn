@@ -10,18 +10,18 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8278b126ed209148a2e44ea464e04073dcefc829
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e5647d60cc043e167f8e2962680a88c750cc2eb1
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942601"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9037259"
 ---
 # <a name="reveal-highlight"></a>显示突出显示
 
 ![主图](images/header-reveal-highlight.svg)
 
-显示突出显示是当用户附近移动指针它们时突出显示交互性元素，如命令栏，一种灯光效果。 
+展示突出显示是当用户将指针靠近它们突出显示交互性元素，如命令栏，一种灯光效果。 
 
 > **重要的 API**：[RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper) 和 [VisualState 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
@@ -42,7 +42,7 @@ ms.locfileid: "8942601"
     <p>如果你已安装了 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，单击此处<a href="xamlcontrolsgallery:/item/Reveal">打开此应用，了解“展示”的实际应用</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">获取源代码 (GitHub)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -65,7 +65,7 @@ ms.locfileid: "8942601"
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
 
-这些插图显示几种不同控件显示突出显示：
+这些插图显示几种不同控件上显示突出显示：
 
 ![展示示例](images/RevealExamples_Collage.png)
 
@@ -113,7 +113,7 @@ ms.locfileid: "8942601"
 
 ## <a name="enabling-reveal-on-custom-controls"></a>在自定义控件上启用“展示”
 
-你可以向自定义控件添加“展示”。 在执行操作之前，它很有帮助多一些了解展示效果的工作原理。 “展示”由两种单独的效果组成：**边框展示**和**悬停展示**。
+你可以向自定义控件添加“展示”。 在执行操作之前，最好先多一些了解展示效果的工作原理。 “展示”由两种单独的效果组成：**边框展示**和**悬停展示**。
 
 - **边框**会在指针靠近时显示交互式元素的边框。 此效果会向你显示，这些邻近项目可以与当前的聚焦项目采用类似操作。
 - **悬停**会在悬停或聚焦的项目周围应用一个柔和的光晕形状，并在单击时播放按下动画。 
@@ -131,7 +131,7 @@ ms.locfileid: "8942601"
 
 这些效果由两个画笔定义： 
 * 边框展示由**RevealBorderBrush**定义
-* 悬停展示由**RevealBackgroundBrush**定义
+* 悬停展示定义的**RevealBackgroundBrush**
 
 ```xaml
 <RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>
@@ -278,7 +278,7 @@ ms.locfileid: "8942601"
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
-- [XAML 控件库示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - 以交互式格式查看所有 XAML 控件。
+- [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
 
 ## <a name="reveal-and-the-fluent-design-system"></a>展示和 Fluent Design 系统
 

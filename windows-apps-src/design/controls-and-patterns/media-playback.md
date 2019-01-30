@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e8ed0c28199e49e9c4be69785a7af5985afae6a2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: afda713e4a3d0ae30a4ee1ad9e9308d835062108
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944535"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9037359"
 ---
 # <a name="media-player"></a>媒体播放器
 
@@ -44,7 +44,7 @@ ms.locfileid: "8944535"
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/MediaPlayerElement">MediaPlayerElement</a> 或 <a href="xamlcontrolsgallery:/item/MediaPlayer">MediaPlayer</a> 的实际应用。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">获取源代码 (GitHub)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -302,7 +302,7 @@ private DisplayRequest appDisplayRequest = null;
 [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 提供大量属性、方法和事件用于通过 [MediaPlayerElement.MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 属性控制音频和视频播放。 有关属性、方法和事件的完整列表，请参阅 [MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) 参考页。
 
 ### <a name="advanced-media-playback-scenarios"></a>高级媒体播放方案
-对于较复杂的媒体播放方案（如播放一个播放列表、在音频语言之间切换或创建自定义元数据轨），请将 [MediaPlayerElement.Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 设置为 [MediaPlaybackItem](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) 或 [MediaPlaybackList](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx)。 有关如何启用各种高级的媒体功能，请参阅的详细信息的[媒体播放](https://msdn.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource)页。
+对于较复杂的媒体播放方案（如播放一个播放列表、在音频语言之间切换或创建自定义元数据轨），请将 [MediaPlayerElement.Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 设置为 [MediaPlaybackItem](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) 或 [MediaPlaybackList](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx)。 有关如何启用各种高级的媒体功能，请参阅的详细信息的[媒体播放](https://msdn.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource)页面。
 
 ### <a name="enable-full-window-video-rendering"></a>启用全屏视频呈现
 
@@ -391,7 +391,7 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
-- [XAML 控件库示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - 以交互式格式查看所有 XAML 控件。
+- [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
 
 ## <a name="related-articles"></a>相关文章
 

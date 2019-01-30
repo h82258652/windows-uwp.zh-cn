@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ce3222ed13cf82a9f235a592b5830ab96384664
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 52de0933bf51adaae6b0923868e12eb92ced4a1a
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926917"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9037129"
 ---
 # <a name="flyouts"></a>浮出控件
 
@@ -30,7 +30,7 @@ ms.locfileid: "8926917"
 
 * 不要使用浮出控件替代[工具提示](../tooltips.md)或[上下文菜单](../menus.md)。 使用工具提示显示在指定时间后隐藏的简短描述。 针对与 UI 元素相关的上下文操作（如复制和粘贴）使用上下文菜单。
 
-建议在何时使用浮出控件与何时使用对话框 （类似控件），请参阅[对话框和浮出控件](index.md)。 
+有关何时使用浮出控件与何时使用对话框 （类似控件），请参阅[对话框和浮出控件](index.md)的建议。 
 
 ## <a name="examples"></a>示例
 
@@ -42,7 +42,7 @@ ms.locfileid: "8926917"
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> 或 <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> 的实际应用。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">获取源代码 (GitHub)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -210,7 +210,7 @@ private void Folder2_Click(object sender, RoutedEventArgs e)
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
-- [XAML 控件库示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - 以交互式格式查看所有 XAML 控件。
+- [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
 
 ## <a name="related-articles"></a>相关文章
 - [工具提示](../tooltips.md)

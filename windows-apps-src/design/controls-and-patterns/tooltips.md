@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 651914cfb2abd4326c6ac6295f10ad359925d465
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 80591abb1e3130540ea94bc1f8d2602b90edc590
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939809"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9037059"
 ---
 # <a name="tooltips"></a>工具提示
 
@@ -64,7 +64,7 @@ ms.locfileid: "8939809"
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/ToolTip">打开此应用，了解 ToolTip 的实际应用</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">获取源代码 (GitHub)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -112,7 +112,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 默认情况下，工具提示在指针上方居中显示。 工具提示的放置位置不受应用窗口的约束，因此工具提示可能部分或完全显示在应用窗口边界的外部。
 
-对于广泛调整，使用[位置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)属性或**ToolTipService.Placement**附加属性指定是否在工具提示应绘制上方、 下方、 左方或右方指针。 你可以设置要更改在指针和工具提示之间的距离的[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)或[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)属性。 只有一个两个偏移量值将会影响最终位置-VerticalOffset 放置时保留位置的顶部或底部，HorizontalOffset 或向右。
+对于广泛调整，用于[放置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)属性或**ToolTipService.Placement**附加属性指定是否在工具提示应绘制上方、 下方、 左方或右方指针。 你可以设置要更改在指针和工具提示之间的距离的[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)或[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)属性。 只有一个两个偏移量值将会影响最终位置-VerticalOffset 放置时保留放置的顶部或底部，HorizontalOffset 或向右。
 
 ```xaml
 <!-- An Image with an offset ToolTip. -->
@@ -125,7 +125,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 </Image>
 ```
 
-如果工具提示遮盖了它所指的内容，你可以调整它准确地使用新的**PlacementRect**属性的位置。 PlacementRect 定位在工具提示的位置，也可以提供足够的屏幕空间要绘制在此区域之外的工具提示用作工具提示将不会阻挡，一个区域。 你可以指定相对于工具提示的所有者和高度矩形的原点和排除区域的宽度。 如果工具提示应绘制上方、 下方、 左方或右方 PlacementRect，定义的[位置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)属性。 
+如果工具提示遮盖了它所指的内容，你可以调整它精确地使用新的**PlacementRect**属性的位置。 PlacementRect 定位工具提示的位置，并提供足够的屏幕空间，此区域之外绘制工具提示也用作工具提示将不会阻挡，一个区域。 你可以指定相对于工具提示的所有者和高度矩形的原点和排除区域的宽度。 如果工具提示应绘制上方、 下方、 左方或右方 PlacementRect，定义的[位置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)属性。 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->
@@ -149,7 +149,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
-- [XAML 控件库示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - 以交互式格式查看所有 XAML 控件。
+- [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
 
 ## <a name="related-articles"></a>相关文章
 
