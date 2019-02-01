@@ -5,12 +5,12 @@ ms.date: 01/31/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 简介
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c7334711debf87d8834213af39ba384166404e1
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.openlocfilehash: 5281049aa9ddec58a97283a2ca6ba5d229a49c4e
+ms.sourcegitcommit: 038fe813c73804285d5e74d97864ac1a2fb531f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042369"
+ms.locfileid: "9042601"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 简介
 &nbsp;
@@ -98,15 +98,19 @@ Visual Studio 的 XAML 设计面的支持 C + + WinRT 是接近与 C# 的奇偶�
 ...
 ```
 
-你可以通过手动安装**Microsoft.Windows.CppWinRT** NuGet 程序包升级你的项目。 之后安装 （或升级到） VSIX 扩展，最新版本在 Visual Studio 中打开项目，单击**项目** \> **管理 NuGet 程序包...** \> **浏览**，键入或粘贴**Microsoft.Windows.CppWinRT**在搜索框中，选择搜索结果中的项目，然后单击**安装**，以安装你的项目的包。 然后，编辑你`.vcxproj`文件，并删除`<CppWinRTEnabled>true</CppWinRTEnabled>`属性。
+你可以通过手动安装**Microsoft.Windows.CppWinRT** NuGet 程序包升级你的项目。 之后安装 （或升级到） VSIX 扩展，最新版本在 Visual Studio 中打开项目，单击**项目** \> **管理 NuGet 程序包...** \> **浏览**，键入或粘贴**Microsoft.Windows.CppWinRT**在搜索框中，选择搜索结果中的项目，然后单击**安装**，以安装你的项目的包。
 
 ### <a name="created-with-or-upgraded-to-between-101810022-and-101901283"></a>使用创建 （或升级到） 1.0.181002.2 和 1.0.190128.3 之间
 如果你的项目创建 VSIX 扩展 1.0.181002.2 和 1.0.190128.3 之间的版本，非独占，然后**Microsoft.Windows.CppWinRT** NuGet 程序包已在项目中自动安装的项目模板。 你可能还升级较旧的项目，以在此范围内使用 VSIX 扩展的版本。 如果你这样做，则&mdash;也仍存在于版本在此范围内的 VSIX 扩展中生成支持起计&mdash;升级后的项目可能或可能没有安装**Microsoft.Windows.CppWinRT** NuGet 程序包。
 
-若要升级你的项目，按照上一节中的说明，并确保你的项目确实具有**Microsoft.Windows.CppWinRT** NuGet 程序包安装。 然后，还删除`<CppWinRTEnabled>true</CppWinRTEnabled>`属性。
+若要升级你的项目，按照上一节中的说明，并确保你的项目确实具有**Microsoft.Windows.CppWinRT** NuGet 程序包安装。
 
 ### <a name="invalid-upgrade-configurations"></a>无效的升级配置
 使用 VSIX 扩展的最新版本，它不是项目具有有效`<CppWinRTEnabled>true</CppWinRTEnabled>`如果还没有安装**Microsoft.Windows.CppWinRT** NuGet 程序包的属性。 一个项目，此配置将产生生成错误消息，"C + + /winrt VSIX 不再提供项目的生成支持。  请添加对 Microsoft.Windows.CppWinRT Nuget 程序包的项目引用。
+
+正如提到的上面，C + + WinRT 项目现在需要有在其中安装 NuGet 程序包。
+
+由于`<CppWinRTEnabled>`元素已过时，则可以选择性地编辑你`.vcxproj`，并删除该元素。 它不是绝对需要，但它是一个选项。
 
 ## <a name="custom-types-in-the-cwinrt-projection"></a>C++/WinRT 投影中的自定义类型
 在 C + /winrt 编程中，你可以使用标准 c + + 语言功能和[标准 c + + 数据类型和 C + + WinRT](std-cpp-data-types.md)&mdash;包括一些 c + + 标准库数据类型。 但你还会在投影中发现一些自定义数据类型，并且可以选择使用它们。 例如，我们使用 [C++/WinRT 入门](get-started.md)中快速入门代码示例中的 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)。
