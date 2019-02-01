@@ -1,30 +1,31 @@
 ---
 Description: To understand your tax considerations for price selection, payout implications, and tax responsibility, see your countries/regions of distribution in the tables below.
-title: 付费应用的税收明细
+title: 税收详细信息
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
-ms.date: 01/02/2019
+ms.date: 01/31/2019
 ms.topic: article
 keywords: windows 10, uwp, 税收, 应用税收, 税收要求, 商业扩张, 税率
 ms.localizationpriority: medium
-ms.openlocfilehash: 896a92e009b7d9c33554f77d8da56730625f1f85
-ms.sourcegitcommit: ffad7cfb5d5c099f9f559e966fd93b705b47d2bd
+ms.openlocfilehash: cf57fa923297b8e4a57d7c5ca4668868bfae7038
+ms.sourcegitcommit: b9ee49402db7a8999cade1c5cf7f7b6ac4d783db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2018
-ms.locfileid: "8990335"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042487"
 ---
-# <a name="tax-details-for-paid-apps"></a>付费应用的税收明细
+# <a name="tax-details-for-windows-appgame-developers-and-azure-marketplace-publishers"></a>为 Windows 应用/游戏开发人员和 Azure Marketplace 发布者的税收详细信息
 
 
-若要了解有关价格选择、付款含义和税收责任的税收注意事项，请在下面的表格中查看分配的国家/地区。
+若要了解有关价格选择你税收注意事项和税收责任下的应用开发人员协议或现代发布者协议，请参阅下面的表格中分发你国家/地区。
 
 > [!NOTE]
 > 商业扩张调整也许在一些特定的国家/地区中具有付款含义。 有关商业扩张调整的进一步详细信息及其适用的市场，请参阅[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和[受影响国家/地区](define-market-selection.md#price-considerations-for-specific-markets)的列表。
 
 > [!IMPORTANT]
-> 税率可能随时改变。 Microsoft 不能保证下表中的税率始终准确。
-> 
-> 经销商所在国家/地区的税收责任和情形（如[下方](#reseller-countriesregions)所述）列于[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)附件 C 中，与下表中列出的信息不产生冲突
+> 经销商国家/地区和情形 （如描述[如下](#reseller-countriesregions)） 的税收责任涵盖附件 C 中的[应用开发人员协议](https://docs.microsoft.com/en-us/legal/windows/agreements/app-developer-agreement)，尽管下表中的信息。
+> 请注意，**付款含义**列仅适用于 Windows 应用/游戏开发人员。 此列中所述的税率可能随时更改在任何时间，Microsoft 不能保证下表中的税率始终将准确。
+
+
 
  
 
@@ -206,7 +207,7 @@ ms.locfileid: "8990335"
 | 圣赫勒拿、阿森松与特里斯坦达库尼亚    | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 圣基茨和尼维斯            | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 圣卢西亚                      | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
-| 法属圣马丁 （法语一部分）       | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
+| 法属圣马丁 （法属）       | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 圣文森特和格林纳丁斯 | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 萨摩亚                            | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 圣马力诺                       | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
@@ -262,9 +263,16 @@ ms.locfileid: "8990335"
 | 赞比亚                           | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 津巴布韦                         | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 
- 
+以下仅适用于 Azure Marketplace 发布者，无论为相反上面： 
 
-## <a name="mixed-remittance-countriesregions"></a>混合汇款的国家/地区
+| 国家/地区                   | 价格选择的税收注意事项                                                                                                             | 税收管理                    | 
+|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
+| 澳大利亚 （适用于通过除企业协议的所有客户购买方案进行的购买） | 所选择的价格就是最终售价并且包含所有适用的税款。 | Microsoft |
+| 澳大利亚 （仅适用于通过企业协议客户购买方案进行的购买） | 所选择的价格就是最终售价并且包含所有适用的税款。 | Publisher |
+| 巴西 | 所选择的价格就是最终售价并且包含所有适用的税款。 | 发布者 **（请参阅经销商国家/地区）** |
+| 墨西哥 | 所选择的价格就是最终售价并且包含所有适用的税款。 | 发布者 **（请参阅经销商国家/地区）** |
+
+## <a name="mixed-remittance-countriesregions-for-windows-appgame-developers"></a>混合的汇款的国家 / 地区，可适用于 Windows 应用/游戏开发人员
 
 
 某些 Microsoft 结算合作伙伴可能会征收并汇寄营业税、使用税、商品与服务税、增值税或类似税款（如果有），这适用于客户通过下列国家/地区的应用商店获取的应用或应用内产品。 Microsoft 提供的[报告](payout-summary.md#downloading-payment-transactions)将对结算合作伙伴已经征收了营业税、使用税、商品与服务税、增值税或类似税款（适用于客户通过应用商店获取的应用或应用内产品）的交易进行识别。 除了此类报告中所述的交易外，无论 Microsoft 还是其结算服务提供商都不会在这些国家/地区汇寄与客户购买你的应用或应用内产品相关的任何销售税、使用税、商品与服务税、增值税或其他类似税款。 你有责任检查提供给你的报告，以及确定和遵守义务（如果有）以注册、征收和汇寄与应用或应用内产品相关交易的税款。
@@ -274,20 +282,23 @@ ms.locfileid: "8990335"
 | 南非                       |
 | 越南                            |
 
- 
-
 ## <a name="reseller-countriesregions"></a>经销商国家/地区
 
-
 在某些国家/地区中，Microsoft 将充当经销商（而不是代理），从而使你的应用和应用内产品在应用商店中可用。 有关经销商国家/地区的条款和条件的进一步详细信息，请参阅[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。
+
+以下仅适用于 Windows 应用/游戏开发人员：   
 
 |                    经销商国家/地区                                                                          |
 |------------------------------------------------------------------------------------------------------------------------|
 | 中国（运行 Windows Phone 7.x 的移动通信设备和运行 Windows8.x 的个人计算机除外） |
 | 巴西（仅适用于在 Windows 10 设备上进行的购买）     |
 
- 
+以下仅适用于 Azure Marketplace 发布者： 
 
+|                    经销商国家/地区                                                                          |
+|------------------------------------------------------------------------------------------------------------------------|
+| 巴西 （适用于通过除云解决方案提供商以外的所有客户购买方案进行的购买） |
+| 墨西哥 （仅适用于通过企业协议客户购买方案进行的购买） |
 
 
  
