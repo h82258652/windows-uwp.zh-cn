@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fd921782571082ee696c26480f1c55c96c30d7c2
-ms.sourcegitcommit: 7bea35c5a35c78e65f822313962c4b1579b163b2
+ms.openlocfilehash: b753b9e93a0cd2abae089f9d53915e0c109f6b63
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035441"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042419"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -158,7 +158,7 @@ int main()
 
 ## <a name="post-binary-data-over-http"></a>通过 HTTP POST 二进制数据
 
-[C + + WinRT](/windows/uwp/cpp-and-winrt-apis)下面的代码示例演示如何发送少量的二进制数据，使用[HttpBufferContent](/uwp/api/windows.web.http.httpbuffercontent)类的 POST 请求。
+[C + + WinRT](/windows/uwp/cpp-and-winrt-apis)下面的代码示例演示如何发送少量的二进制数据，使用[HttpBufferContent](/uwp/api/windows.web.http.httpbuffercontent)类的 POST 请求。 调用**get** （如下面的代码示例中所示） 不适合 UI 线程。 若要在此情况下使用的正确技术，请参阅[并发和异步操作通过 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。
 
 ```cppwinrt
 // pch.h

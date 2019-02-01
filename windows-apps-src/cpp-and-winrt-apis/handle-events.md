@@ -5,19 +5,19 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 已投影, 投影, 处理, 事件, 委托
 ms.localizationpriority: medium
-ms.openlocfilehash: 93a6a11a84b6b5131d0cf9a524c11116d21b2ecd
-ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
+ms.openlocfilehash: 193d821b44722e150f38da7430504f5d528770a4
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024486"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042389"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>在 C++/WinRT 中使用代理处理事件
 
 本主题介绍了如何注册和撤销事件处理委托使用[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。 你可以使用任何标准 C++ 函数类对象来处理事件。
 
 > [!NOTE]
-> 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的安装和使用的信息，请参阅[针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)。
+> 有关信息有关安装和使用 C + + /winrt Visual Studio 扩展 (VSIX) (提供项目模板支持以及 C + + /winrt MSBuild 属性和目标)，请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="register-a-delegate-to-handle-an-event"></a>注册用于处理事件的委托
 

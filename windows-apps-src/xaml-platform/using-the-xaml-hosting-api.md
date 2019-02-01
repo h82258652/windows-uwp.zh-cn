@@ -5,12 +5,12 @@ ms.date: 01/11/2019
 ms.topic: article
 keywords: windows 10，uwp，windows 窗体、 wpf win32
 ms.localizationpriority: medium
-ms.openlocfilehash: 999a990dbbc98f4f1224ce55f48d99889afbb89a
-ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
+ms.openlocfilehash: efd7dc687b9aba2e3c07b0afefa2e4fa49b882b1
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024626"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042309"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用 UWP XAML 托管 API 的桌面应用程序
 
@@ -55,9 +55,9 @@ UWP XAML 托管 API 具有以下先决条件。
 
 * Windows 10 Insider Preview 版本 17709 （或更高版本） 和相应的 Windows SDK Insider Preview 版本。 由于这是不断发展的功能，为了获得最佳体验我们建议使用最新的可用版本。
 
-* 若要使用 UWP XAML 托管 API 桌面应用程序中，你将需要配置你的项目，以便你可以调用 UWP Api:
+* 若要使用 UWP XAML 托管 API 桌面应用程序中，你将需要配置你的项目，以便你可以调用 UWP Api。
 
-    * **C + + Win32:** 我们建议你配置项目以使用[C + + WinRT](../cpp-and-winrt-apis/index.md)。 下载并安装[C + + /winrt Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix)从 Visual Studio Marketplace，然后添加```<CppWinRTEnabled>true</CppWinRTEnabled>```属性将.vcxproj 文件以描述[下面](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)。
+    * **C + + Win32:** 我们建议你配置项目以使用[C + + WinRT](../cpp-and-winrt-apis/index.md)。 有关说明，请参阅[修改 Windows 桌面应用程序项目添加 C + + /winrt 支持](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support)。
 
     * **Windows 窗体和 WPF:** 请按照[以下说明](../porting/desktop-to-uwp-enhance.md)。
 

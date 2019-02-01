@@ -5,12 +5,12 @@ ms.date: 10/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 获取, 获得, 开始
 ms.localizationpriority: medium
-ms.openlocfilehash: 069212fd9a6e0bcf3fb024d7f28738dd3049f5e1
-ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
+ms.openlocfilehash: c0d11a8718f61666d6285d8a1c91b48992044b22
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024476"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042349"
 ---
 # <a name="get-started-with-cwinrt"></a>C++/WinRT 入门
 
@@ -22,7 +22,7 @@ ms.locfileid: "9024476"
 ## <a name="a-cwinrt-quick-start"></a>C++/WinRT 快速入门
 
 > [!NOTE]
-> 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的安装和使用的信息，请参阅[针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)。
+> 有关信息有关安装和使用 C + + /winrt Visual Studio 扩展 (VSIX) （它提供项目模板支持），请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 创建一个新的 **Windows 控制台应用程序(C++/WinRT)** 项目。
 
@@ -120,6 +120,8 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 本部分介绍了如何添加 C + + WinRT 支持添加到你可能有一个 Windows 桌面应用程序项目。 如果你没有现有 Windows 桌面应用程序项目，然后你可以遵循以下步骤由第创建一个。 例如，打开 Visual Studio 并创建**Visual c + +** \> **Windows 桌面版** \> **Windows 桌面应用程序**项目。
 
+你可以选择安装[C + + /winrt Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix)。 有关详细信息，请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+
 ### <a name="set-project-properties"></a>设置项目属性
 
 转到项目属性**常规** \> **Windows SDK 版本**，并选择**所有配置**和**所有平台**。 确保**Windows SDK 版本**设置为 10.0.17134.0 (Windows 10，版本 1803年) 或更高版本。
@@ -146,11 +148,9 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 C + + /winrt 语言投影依赖于某些 Windows 运行时可用 （非成员） 函数和入口点，需要将链接到[WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella 库。 本部分介绍满足链接器三种的方式。
 
-第一个选项是将添加到 Visual Studio 项目所有 C + + /winrt MSBuild 属性和目标。 编辑你`.vcxproj`文件，找到`<PropertyGroup Label="Globals">`，该属性在组内，设置属性`<CppWinRTEnabled>true</CppWinRTEnabled>`。
+第一个选项是将添加到 Visual Studio 项目所有 C + + /winrt MSBuild 属性和目标。 若要执行此操作，安装到你的项目[Microsoft.Windows.CppWinRT NuGet 程序包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 打开项目中，Visual Studio 中，单击**项目** \> **管理 NuGet 程序包...** \> **浏览**，键入或将**Microsoft.Windows.CppWinRT**粘贴搜索框中，选择搜索结果中的项，然后单击**安装**安装该项目的程序包。
 
-或者，你可以使用项目链接设置显式链接`WindowsApp.lib`。
-
-或者，你可以在源代码中完成 (在`pch.h`，例如) 如下。
+你还可以使用项目链接设置显式链接`WindowsApp.lib`。 或者，你可以在源代码中完成 (在`pch.h`，例如) 如下。
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")

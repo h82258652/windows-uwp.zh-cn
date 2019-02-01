@@ -5,12 +5,12 @@ ms.date: 10/26/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 问的, 问题, 常见问题
 ms.localizationpriority: medium
-ms.openlocfilehash: e02622452aa99cd262221cd0c448ceca8271b00d
-ms.sourcegitcommit: a71122082947b4cc3d157465e402746760d1d5c2
+ms.openlocfilehash: 2d4bb534ae5b5dc02f72712cf417ca9054f21b6e
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035722"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042289"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>C++/WinRT 常见问题
 你可能有的关于创作和使用与 Windows 运行时 Api 的问题的解答[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
@@ -19,15 +19,16 @@ ms.locfileid: "9035722"
 > 如果问题与你看到的错误消息有关，另请参阅 [C++/WinRT 问题疑难解答](troubleshooting.md)主题。
 
 ## <a name="how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>如何重定向我的 C + + 到更高版本的 Windows SDK 的 WinRT 项目？
-
 请参阅[如何重定目标 C + + 到更高版本的 Windows SDK 的 WinRT 项目](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>为什么我的新项目不会编译？ 我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及 SDK 版本 17134
-
 如果你使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)，则新创建 C + + WinRT 项目可能无法编译带有错误"*错误 C3861: from_abi： 标识符不找到*"，并在*base.h*源自其他错误。 解决方案是任一目标更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **标准的模式下： 否**(另外，如果 **/ 许可的**出现在项目属性**C/C++** > **命令行**下**的其他选项**，然后将其删除)。
 
-## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsixhttpsakamscppwinrtvsix"></a>[C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix) 的要求是什么？
-[VSIX 扩展](https://aka.ms/cppwinrt/vsix)需要的最低的 Windows SDK 目标版本 10.0.17134.0 (Windows 10，版本 1803年)。 你还需要 Visual Studio 2017 (至少版本 15.6; 我们建议至少是 15.7)，或 Visual Studio 2019。 你可以通过 `.vcxproj` 文件 `<PropertyGroup Label="Globals">` 中 `<CppWinRTEnabled>true</CppWinRTEnabled>` 的存在来识别使用 VSIX 的项目。 有关详细信息，包括关于你的项目是否需要安装， [Microsoft.Windows.CppWinRT NuGet 程序包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)的信息，请参阅[Visual Studio 支持 C + + /winrt 以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)。
+## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>如何解决生成错误"的 C + + /winrt VSIX 不再提供项目的生成支持。  请添加对 Microsoft.Windows.CppWinRT Nuget 程序包的项目引用"？
+将**Microsoft.Windows.CppWinRT** NuGet 程序包安装到你的项目。 有关详细信息，请参阅[较早版本的 VSIX 扩展](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
+
+## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsix"></a>C++/WinRT Visual Studio 扩展 (VSIX) 的要求是什么？
+版本 1.0.190128.4 VSIX 扩展的及更高版本，请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。 有关其他版本，请参阅[较早版本的 VSIX 扩展](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
 
 ## <a name="whats-a-runtime-class"></a>什么是*运行时类*？
 运行时类是一个可通过现代 COM 接口进行激活和使用（通常跨可执行文件）的类型。 但是，运行时类也可在实现它的编译单元内使用。 你采用接口定义语言 (IDL) 声明运行时类，而且可以在标准 C++ 中使用 C++/WinRT 实现它。
@@ -89,10 +90,9 @@ windows.com
 
 C++/WinRT 使用 C++ 17 标准版中的功能，因此你需要使用所有必要的编译器标志来获得支持；此类标志因编译器而异。
 
-Visual Studio 是我们支持和推荐用于 C++/WinRT 的开发工具。 请参阅[对 C++/WinRT 的 Visual Studio 支持以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)。
+Visual Studio 是我们支持和推荐用于 C++/WinRT 的开发工具。 请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>为什么没有只读属性的生成的实现函数`const`限定符？
-
 声明[MIDL 3.0](/uwp/midl-3/)中的一个只读属性时，你可能希望`cppwinrt.exe`工具来为你生成一个实现函数的`const`-限定 （const 函数将视为 const*此*指针）。
 
 我们当然建议尽可能使用 const 但`cppwinrt.exe`工具本身不会尝试有关实现的函数可能是 const，和这不可能的原因。 你可以选择将任何实现函数 const，如本示例中所示。
@@ -130,7 +130,6 @@ winrt::hstring ToString() const;
 了解，这些示例中的`const`是实现详细信息的 C + + WinRT 投影和实现;它们构成为您提供方便代码清理。 没有此类内容为`const`上 COM 和 Windows 运行时 ABI （适用于成员函数）。
 
 ## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>是否有任何建议减少代码大小为 C + + WinRT 二进制文件？
-
 使用 Windows 运行时对象时，应避免的编码模式，因为它可以在你的应用程序比生成所需的更多二进制代码，从而产生负面影响，如下所示。
 
 ```cppwinrt
@@ -151,7 +150,6 @@ a.f();
 如上所示的建议的模式应用而不只是到 C + + WinRT 但向所有 Windows 运行时语言投影。
 
 ## <a name="how-do-i-turn-a-string-into-a-typemdashfor-navigation-for-example"></a>如何成为类型打开一个字符串&mdash;对于导航，例如？
-
 在[导航视图的代码示例](/windows/uwp/design/controls-and-patterns/navigationview#code-example)（这是主要在 C#） 结束时，没有 C + + WinRT 代码段显示了如何执行此操作。
 
 > [!NOTE]

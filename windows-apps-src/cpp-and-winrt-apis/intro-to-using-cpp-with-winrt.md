@@ -1,16 +1,16 @@
 ---
 description: 对 C++/WinRT（一种适用于 Windows 运行时 API 的标准 C++ 语言投影）的介绍。
 title: C++/WinRT 简介
-ms.date: 01/29/2019
+ms.date: 01/31/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 简介
 ms.localizationpriority: medium
-ms.openlocfilehash: 34505416e46a04a577a83eac5310ba0769c4741b
-ms.sourcegitcommit: a71122082947b4cc3d157465e402746760d1d5c2
+ms.openlocfilehash: 2c7334711debf87d8834213af39ba384166404e1
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035712"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042369"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 简介
 &nbsp;
@@ -21,7 +21,7 @@ C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言�
 C + + /winrt 是 Microsoft 的建议的替换[C + + CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)语言投影，以及[Windows 运行时 c + + 模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live)。 完整列表[主题有关 C + + WinRT](index.md#topics-about-cwinrt)包括信息与，进行互操作和从移植，C + + /CX 和 WRL。
 
 > [!IMPORTANT]
-> C++/WinRT 的最需要注意的其中两个部分在[针对 C++/WinRT 的 SDK 支持](#sdk-support-for-cwinrt)和[针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持](#visual-studio-support-for-cwinrt-xaml-and-the-vsix)章节中进行了说明。
+> 两个最重要的部分 C + + WinRT 需要注意的部分中进行了描述[SDK 支持 C + + WinRT](#sdk-support-for-cwinrt)和[Visual Studio 支持 C + + WinRT、 XAML，VSIX 扩展和 NuGet 程序包](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="language-projections"></a>语言投影
 Windows 运行时基于组件对象模型 (COM) API，可通过*语言投影* 访问它。 投影将隐藏 COM 详细信息，并为给定语言提供更自然的编程体验。
@@ -34,34 +34,30 @@ Windows 运行时基于组件对象模型 (COM) API，可通过*语言投影* �
 
 通过 C++/WinRT，你还可以使用标准 C++ 实现自己的运行时类，而不必求助于 COM 样式的编程。 对于运行时类，你只需在 IDL 文件中描述类型，`midl.exe` 和 `cppwinrt.exe` 将为你生成实现样板源代码文件。 你也可以通过从 C++/WinRT 基类派生来只实现接口。 有关详细信息，请参阅[通过 C++/WinRT 创作 API](author-apis.md)。
 
-## <a name="visual-studio-support-for-cwinrt-xaml-and-the-vsix"></a>Visual Studio 支持 C + + WinRT、 XAML 和 VSIX
-对于 Visual Studio 中的 C++/WinRT 项目模板以及 C++/WinRT MSBuild 属性和目标，请从 [Visual Studio Marketplace](https://marketplace.visualstudio.com/) 中下载并安装 [C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix)。
+## <a name="visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package"></a>Visual Studio 支持 C + + WinRT、 XAML，VSIX 扩展和 NuGet 程序包
+对于 Visual Studio 支持，除了最低 Windows SDK 目标版本 10.0.17134.0 (Windows 10，版本 1803年)，你将需要 Visual Studio 2017 (至少版本 15.6; 我们建议至少是 15.7)，或 Visual Studio 2019。 如果你尚未安装它，你将需要安装从 Visual Studio 安装程序内的**c + + 通用 Windows 平台工具**选项。 并在 Windows**设置** > **更新 \& 安全** > **适用于开发人员**，选择**开发人员模式**选项，而不是**旁加载应用**选项。
 
-> [!NOTE]
-> 使用版本 1.0.181002.2 （或更高版本） 的[VSIX 扩展](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)安装，创建新的 C + + WinRT 项目会自动安装该项目的[Microsoft.Windows.CppWinRT NuGet 程序包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 Microsoft.Windows.CppWinRT NuGet 程序包提供改进了 C + + WinRT 项目生成支持，从而使你的项目之间的开发计算机和生成代理 （在其只有 NuGet 程序包，不要使用 VSIX 扩展名，安装了和） 移植。
->
-> 现有项目的&mdash;已安装版本 1.0.181002.2 之后 （或更高版本） 的 VSIX 扩展&mdash;我们建议你在 Visual Studio 中打开项目，单击**项目** \> **管理 NuGet 程序包...** \> **浏览**，键入或将**Microsoft.Windows.CppWinRT**粘贴搜索框中，选择搜索结果中的项，然后单击**安装**安装该项目的程序包。 此步骤是必需项后，如果已安装版本 1.0.190128.4 （或更高版本） 的 VSIX 扩展。
+你将需要下载并安装最新版本的[C + + /winrt Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix)从[Visual Studio Marketplace](https://marketplace.visualstudio.com/)。
 
-你将需要 Visual Studio 2017 (至少需要版本 15.6，但我们建议至少是 15.7) 或 Visual Studio 2019，以及 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)。 如果你尚未安装它，你将需要安装从 Visual Studio 安装程序内的**c + + 通用 Windows 平台工具**选项。 并在 Windows**设置** > **更新 \& 安全** > **适用于开发人员**，选择**开发人员模式**选项，而不是**旁加载应用**选项。
+- VSIX 扩展提供 C + + WinRT 项目模板和项目模板在 Visual Studio 中，以便你可以开始使用 C + + WinRT 开发。
+- 此外，它将提供 Visual Studio 本机调试可视化效果 (natvis) 的 C + + /winrt 投影类型;提供与 C# 调试类似的体验。 Natvis 对于调试版本是自动的。 你可以通过定义符号 WINRT_NATVIS 选择加入到该发布版本。
 
-然后将能够创建和生成，或者打开，C + + WinRT 项目在 Visual Studio 中，并将其部署。 或者，也可以通过添加转换现有项目`<CppWinRTEnabled>true</CppWinRTEnabled>`属性及其`.vcxproj`文件。
+Visual Studio 项目模板的 C + + WinRT 如下所述。 当你创建新的 C + + WinRT 项目最新版本的安装，VSIX 扩展的新 C + + WinRT 项目会自动安装[Microsoft.Windows.CppWinRT NuGet 程序包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 **Microsoft.Windows.CppWinRT** NuGet 程序包提供 C + + WinRT 构建支持 （MSBuild 属性和目标），使你的项目之间的开发计算机和生成代理移植 (在其上只有 NuGet 程序包，并不 VSIX 扩展已安装）。
 
-```xml
-<Project ...>
-    <PropertyGroup Label="Globals">
-        <CppWinRTEnabled>true</CppWinRTEnabled>
-...
-```
-
-添加该属性后，你将获得对该项目的 C++/WinRT MSBuild 支持，包括调用 `cppwinrt.exe`工具。
+> [!IMPORTANT]
+> 如果你有使用创建 （或在升级） 的项目更早版本的 VSIX 扩展的版本比 1.0.190128.4，然后查看[较早版本的 VSIX 扩展](#earlier-versions-of-the-vsix-extension)。 该部分包含有关你的项目，你将需要知道其使用 VSIX 扩展的最新版本进行升级的配置的重要信息。
 
 因为 C + + /winrt 使用 C + + 17 标准的功能，它必须项目属性**C/c + +** > **语言** > **c + + 语言标准** > **ISO C + + 17 标准 (/ std:c + + 17)**。 你可能还希望设置**合规模式: 是(/permissive-)**，它将进一步约束代码以符合标准。
 
 要注意的另一个项目属性是 **C/C++** > **常规** > **将警告视为错误**。 请根据喜好将此项设置为**是(/WX)** 或**否(/WX-)**。 有时候，由 `cppwinrt.exe` 工具生成的源文件会生成警告，除非向其添加实现。
 
-VSIX 还为你提供 C++/WinRT 投影类型的 Visual Studio 本机调试可视化效果 (natvis)；提供与 C# 调试类似的体验。 Natvis 对于调试版本是自动的。 你可以通过定义符号 WINRT_NATVIS 选择加入到该发布版本。
+使用系统设置最多上文所述，你将能够创建和生成，或者打开，C + + WinRT 项目在 Visual Studio 中，并将其部署。
 
-下面是由 VSIX 提供的 Visual Studio 项目模板。
+或者，也可以通过手动安装**Microsoft.Windows.CppWinRT** NuGet 程序包来转换现有项目。 之后安装 （或更新到） VSIX 扩展，最新版本在 Visual Studio 中打开现有的项目，单击**项目** \> **管理 NuGet 程序包...** \> **浏览**，键入或将**Microsoft.Windows.CppWinRT**粘贴搜索框中，选择搜索结果中的项，然后单击**安装**安装该项目的程序包。 添加程序包后，你将获得 C + + /winrt MSBuild 支持该项目，包括调用`cppwinrt.exe`工具。
+
+你可以标识项目使用 C + + /winrt MSBuild 支持**Microsoft.Windows.CppWinRT** NuGet 程序包安装在项目中是否存在。
+
+下面是由 VSIX 扩展提供的 Visual Studio 项目模板。
 
 ### <a name="windows-console-application-cwinrt"></a>Windows 控制台应用程序 (C++/WinRT)
 适用于 Windows 桌面版的 C++/WinRT 客户端应用程序的项目模板，具有控制台用户界面。
@@ -86,6 +82,31 @@ Visual Studio 的 XAML 设计面的支持 C + + WinRT 是接近与 C# 的奇偶�
 在 IDL 文件中，在组件、组件的默认接口和组件实现的任何其他接口中定义运行时类。 构建项目一次以生成 `module.g.cpp`、`module.h.cpp`、`Generated Files` 中的实现模板和 `Generated Files\sources` 中的存根类型定义。 然后使用这些存根类型定义作为参考以在组件中实现运行时类。 我们建议在每个运行时类自己的 IDL 文件中声明这些类。
 
 将生成的 Windows 运行时组件二进制文件及其 `.winmd` 与使用它们的 UWP 应用绑定。
+
+## <a name="earlier-versions-of-the-vsix-extension"></a>较早版本的 VSIX 扩展
+我们建议你安装 （或更新） [VSIX 扩展](https://aka.ms/cppwinrt/vsix)的最新版本。 它配置为默认情况下自行更新。 如果你执行此操作，并且你有使用 VSIX 扩展早于 1.0.190128.4，则本部分的版本创建的项目中包含有关升级这些项目，以使用最新版本的重要信息。 如果你不更新，然后你将仍然有用信息本部分中。
+
+支持的 Windows SDK 和 Visual Studio 版本和 Visual Studio 配置中的信息[Visual Studio 支持 C + + WinRT、 XAML，VSIX 扩展和 NuGet 程序包](#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)以上部分适用于较早版本的 VSIX扩展。 下面的信息介绍关于行为的重要差异，并配置更早版本项目与创建 （或升级后使用） 版本。
+
+### <a name="created-earlier-than-101810022"></a>早于 1.0.181002.2 创建
+如果你的项目创建版本的 VSIX 扩展早于 1.0.181002.2，则 C + + WinRT 生成支持已内置于该版本的 VSIX 扩展。 你的项目具有`<CppWinRTEnabled>true</CppWinRTEnabled>`中设置属性`.vcxproj`文件。
+
+```xml
+<Project ...>
+    <PropertyGroup Label="Globals">
+        <CppWinRTEnabled>true</CppWinRTEnabled>
+...
+```
+
+你可以通过手动安装**Microsoft.Windows.CppWinRT** NuGet 程序包升级你的项目。 之后安装 （或升级到） VSIX 扩展，最新版本在 Visual Studio 中打开项目，单击**项目** \> **管理 NuGet 程序包...** \> **浏览**，键入或粘贴**Microsoft.Windows.CppWinRT**在搜索框中，选择搜索结果中的项目，然后单击**安装**，以安装你的项目的包。 然后，编辑你`.vcxproj`文件，并删除`<CppWinRTEnabled>true</CppWinRTEnabled>`属性。
+
+### <a name="created-with-or-upgraded-to-between-101810022-and-101901283"></a>使用创建 （或升级到） 1.0.181002.2 和 1.0.190128.3 之间
+如果你的项目创建 VSIX 扩展 1.0.181002.2 和 1.0.190128.3 之间的版本，非独占，然后**Microsoft.Windows.CppWinRT** NuGet 程序包已在项目中自动安装的项目模板。 你可能还升级较旧的项目，以在此范围内使用 VSIX 扩展的版本。 如果你这样做，则&mdash;也仍存在于版本在此范围内的 VSIX 扩展中生成支持起计&mdash;升级后的项目可能或可能没有安装**Microsoft.Windows.CppWinRT** NuGet 程序包。
+
+若要升级你的项目，按照上一节中的说明，并确保你的项目确实具有**Microsoft.Windows.CppWinRT** NuGet 程序包安装。 然后，还删除`<CppWinRTEnabled>true</CppWinRTEnabled>`属性。
+
+### <a name="invalid-upgrade-configurations"></a>无效的升级配置
+使用 VSIX 扩展的最新版本，它不是项目具有有效`<CppWinRTEnabled>true</CppWinRTEnabled>`如果还没有安装**Microsoft.Windows.CppWinRT** NuGet 程序包的属性。 一个项目，此配置将产生生成错误消息，"C + + /winrt VSIX 不再提供项目的生成支持。  请添加对 Microsoft.Windows.CppWinRT Nuget 程序包的项目引用。
 
 ## <a name="custom-types-in-the-cwinrt-projection"></a>C++/WinRT 投影中的自定义类型
 在 C + /winrt 编程中，你可以使用标准 c + + 语言功能和[标准 c + + 数据类型和 C + + WinRT](std-cpp-data-types.md)&mdash;包括一些 c + + 标准库数据类型。 但你还会在投影中发现一些自定义数据类型，并且可以选择使用它们。 例如，我们使用 [C++/WinRT 入门](get-started.md)中快速入门代码示例中的 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)。

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10，uwp，标准，c + +，cpp，winrt，投影，新闻，内容的、 新
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b46aaf9948587ef79a9c5bf73064b1a70c0e9c3a
-ms.sourcegitcommit: a71122082947b4cc3d157465e402746760d1d5c2
+ms.openlocfilehash: cb624a93a010dfe9784cf8c26beed12c6cf2f77d
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035702"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042429"
 ---
 # <a name="whats-new-in-cwinrt"></a>什么是新在 C + + WinRT
 
@@ -43,8 +43,8 @@ ms.locfileid: "9035702"
 - 删除不必要的递归。 当命令行引用到某个文件夹，而不是特定于`.winmd`、`cppwinrt.exe`工具不会再递归搜索`.winmd`文件。 `cppwinrt.exe`工具现在还处理重复项更加智能化，从而使其更具复原能力用户错误，并且为不当正确`.winmd`文件。
 - 强化的智能指针。 以前，无法撤消时事件 revokers 移动-分配一个新值。 这有助于发现的问题智能指针类未可靠地处理自我分配;[**winrt:: com_ptr 结构模板**](/uwp/cpp-ref-for-winrt/com-ptr)中的根。 **winrt:: com_ptr**已修复，并修复来处理事件 revokers 移动语义正确，以便它们分配时撤销。
 
-> [!NOTE]
-> 重要的更改所做[C + + /winrt Visual Studio 扩展 (VSIX)](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)，同时在版本 1.0.181002.2，然后版本 1.0.190128.4 中。 有关这些更改，以及它们可能会影响你的项目的详细信息，请参阅[Visual Studio 支持 C + + /winrt 以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)。
+> [!IMPORTANT]
+> 重要的更改所做[C + + /winrt Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix)，在版本 1.0.181002.2，然后再版本 1.0.190128.4 中。 有关这些更改，以及它们如何影响你的现有项目的详细信息[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)和[早期版本的 VSIX 扩展](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
 
 ## <a name="isolation-from-windows-sdk-header-files"></a>从 Windows SDK 标头文件的隔离
 

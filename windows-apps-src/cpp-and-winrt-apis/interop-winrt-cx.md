@@ -5,12 +5,12 @@ ms.date: 10/09/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: e1e4570320e9d48351ccb01052fc77d35ae03642
-ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
+ms.openlocfilehash: 558f3fa75e7dd599927a9d2ace256bf1feb98e77
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024566"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042299"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>实现 C++/WinRT 与 C++/CX 之间的互操作
 
@@ -47,7 +47,7 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 
 ## <a name="example-project-showing-the-two-helper-functions-in-use"></a>显示两个帮助程序函数中使用的示例项目
 
-要重现，简单的方法，方案逐渐移植的代码中的 C + + CX 项目对 C + + WinRT，可以首先创建新项目在 Visual Studio 中使用之一的 C + + WinRT 项目模板 (请参阅[Visual Studio 支持 C + + WinRT以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix))。
+要重现，简单的方法，方案逐渐移植的代码中的 C + + CX 项目对 C + + WinRT，可以首先创建新项目在 Visual Studio 中使用之一的 C + + WinRT 项目模板 (请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。
 
 此示例项目还说明了才能处理 C + 之间潜在的命名空间冲突，为不同岛的代码中，使用命名空间别名 + WinRT 投影和 C + + /CX 投影。
 
