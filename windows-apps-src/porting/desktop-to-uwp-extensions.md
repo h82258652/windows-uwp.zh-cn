@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
-ms.openlocfilehash: 19ae09190b916fdaae68a67a2b9c11caa20d30e2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1c0dcb40e4e70fc28dc0ccdbbf4aa329b00c71cf
+ms.sourcegitcommit: 7a1899358cd5ce9d2f9fa1bd174a123740f98e7a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922348"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042643"
 ---
-# <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>与 Windows 10 集成已打包的桌面应用程序
+# <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>将打包的桌面应用程序与 Windows 10 集成
 
-使用扩展以预定义方式与 Windows 10 集成已打包的桌面应用程序。
+使用扩展以预定义的方式与 Windows 10 集成已打包的桌面应用程序。
 
 例如，使用扩展创建一个防火墙例外，使你的应用程序文件类型的默认应用程序或开始菜单磁贴指向打包后的应用版本。 若要使用扩展，只需将某些 XML 添加到应用的程序包清单文件。 不需要任何代码。
 
@@ -93,7 +93,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ### <a name="make-your-packaged-application-open-files-instead-of-your-desktop-app"></a>使打包应用打开文件而不是你的桌面应用程序
 
-你可以确保用户默认情况下，针对特定类型的文件而不是打开你的应用的桌面版本打开新打包的应用程序。
+你可以确保用户默认对特定类型的文件而不是打开你的应用的桌面版本打开新打包的应用程序。
 
 为达到该目的，需指定每个想要从中继承文件关联的应用程序的[编程标识符 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx)。
 
@@ -120,7 +120,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |-------|-------------|
 |类别 |始终为 ``windows.fileTypeAssociation``。
 |名称 |应用的唯一 ID。 此 ID 内部用于生成与文件类型关联相关联的经过哈希处理的[编程标识符 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx)。 可使用此 ID 管理将来版本的应用中的更改。 |
-|MigrationProgId |[编程标识符 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx)来描述应用程序、 组件和要从中继承文件关联的桌面应用程序的版本。|
+|MigrationProgId |[编程标识符 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) ，描述应用程序、 组件和要从中继承文件关联的桌面应用程序的版本。|
 
 #### <a name="example"></a>示例
 
@@ -154,7 +154,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>将打包应用程序与一组文件类型相关联
 
-你可以与文件类型扩展名关联的打包应用程序。 如果用户右键单击某个文件，然后选择**打开方式**选项，你的应用程序出现在建议列表中。
+你可以与文件类型扩展名关联的打包应用程序。 如果用户右键单击某个文件，然后选择**打开方式**选项，你的应用程序将显示在建议列表中。
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
@@ -242,8 +242,8 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |类别 | 始终为 ``windows.fileTypeAssociation``。
 |Name |应用的唯一 ID。 |
 |Verb |文件资源管理器上下文菜单中显示的名称。 此字符串可使用 ```ms-resource``` 进行本地化。|
-|ID |动词命令的唯一 ID。 如果你的应用程序是 UWP 应用，这被传递到你的应用作为其激活事件参数的一部分中，以便它可以相应地处理用户的选择。 如果你的应用程序是完全信任的已打包的应用，该参数将改为接收 （请参阅下一项）。 |
-|Parameters |与动词命令关联的实参参数和值的列表。 如果你的应用程序是完全信任的已打包的应用，这些参数传递给该应用程序作为事件参数激活应用程序时。 你可以自定义你的应用程序基于不同激活动词命令的行为。 如果变量可包含文件路径，请用引号将参数值括起来。 这将避免路径包含空格的情况下出现的任何问题。 如果你的应用程序是 UWP 应用，则无法传递参数。 应用转而接收参数（请参阅上一项）。|
+|ID |动词命令的唯一 ID。 如果你的应用程序是 UWP 应用，这被传递到你的应用作为其激活事件参数的一部分中，以便它可以相应地处理用户的选择。 如果你的应用程序是完全信任已打包的应用，该参数将改为接收 （请参阅下一项）。 |
+|Parameters |与动词命令关联的实参参数和值的列表。 如果你的应用程序是完全信任已打包的应用，这些参数传递给该应用程序作为事件参数激活应用程序时。 你可以自定义应用程序基于不同激活动词命令的行为。 如果变量可包含文件路径，请用引号将参数值括起来。 这将避免路径包含空格的情况下出现的任何问题。 如果你的应用程序是 UWP 应用，则无法传递参数。 应用转而接收参数（请参阅上一项）。|
 |Extended |指定动词命令仅在用户右键单击文件之前按住 **Shift** 键显示上下文菜单时才显示。 如果未列出该特性，则该特性可选，并且默认为值 **False**（例如，始终显示动词命令）。 为每个动词命令逐个指定此行为（“打开”除外，它始终为 **False**）。|
 
 #### <a name="example"></a>示例
@@ -280,7 +280,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ### <a name="open-certain-types-of-files-directly-by-using-a-url"></a>直接使用 URL 打开某些类型的文件
 
-你可以确保用户默认情况下，针对特定类型的文件而不是打开你的应用的桌面版本打开新打包的应用程序。
+你可以确保用户默认对特定类型的文件而不是打开你的应用的桌面版本打开新打包的应用程序。
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
@@ -305,7 +305,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |-------|-------------|
 |类别 |始终为 ``windows.fileTypeAssociation``。
 |Name |应用的唯一 ID。 |
-|UseUrl |指示是否直接从 URL 目标打开文件。 如果你未设置此值，尝试在你的应用程序使用的 URL 原因系统第一个将该文件下载到本地打开文件。 |
+|UseUrl |指示是否直接从 URL 目标打开文件。 如果你未设置此值，尝试在你的应用程序使用 URL 原因第一个下载文件系统本地打开的文件。 |
 |Parameters |可选参数。 |
 |FileType |相关的文件扩展名。 |
 
@@ -856,7 +856,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 * [通过使用某个协议启动你的应用程序](#protocol)
 * [通过使用别名启动应用程序](#alias)
 * [用户登录 Windows 时启动可执行文件](#executable)
-* [使用户能够到其电脑连接设备时启动你的应用程序](#autoplay)
+* [允许用户在设备连接到其电脑时启动你的应用程序](#autoplay)
 * [在接收来自 Microsoft Store 的更新后自动重启](#updates)
 
 <a id="protocol" />
@@ -886,7 +886,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 |-------|-------------|
 |类别 |始终为 ``windows.protocol``。
 |Name |协议的名称。 |
-|Parameters |参数和值，以激活应用程序时传递到你的应用程序作为事件参数的列表。 如果变量可包含文件路径，请用引号将参数值括起来。 这将避免路径包含空格的情况下出现的任何问题。 |
+|Parameters |参数和值时激活应用程序要传递给应用程序作为事件参数的列表。 如果变量可包含文件路径，请用引号将参数值括起来。 这将避免路径包含空格的情况下出现的任何问题。 |
 
 ### <a name="example"></a>示例
 
@@ -897,11 +897,13 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
   <Applications>
     <Application>
       <Extensions>
-        <uap3:Extension
-          Category="windows.protocol">
-          <uap3:Protocol
-            Name="myapp-cmd"
-            Parameters="/p &quot;%1&quot;" />
+         <uap3:Extension
+                Category="windows.appExecutionAlias"
+                Executable="exes\launcher.exe"
+                EntryPoint="Windows.FullTrustApplication">
+            <uap3:AppExecutionAlias>
+                <desktop:ExecutionAlias Alias="Contoso.exe" />
+            </uap3:AppExecutionAlias>
         </uap3:Extension>
       </Extensions>
     </Application>
@@ -913,7 +915,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 
 ### <a name="start-your-application-by-using-an-alias"></a>通过使用别名启动应用程序
 
-用户和其他进程可以使用别名启动你的应用程序无需指定你的应用的完整路径。 可以指定该别名。
+用户和其他进程可以使用别名启动你的应用程序，而无需指定你的应用的完整路径。 可以指定该别名。
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
@@ -947,15 +949,20 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
   xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
   IgnorableNamespaces="uap3, desktop">
-  ...
-  <uap3:Extension
-        Category="windows.appExecutionAlias"
-        Executable="exes\launcher.exe"
-        EntryPoint="Windows.FullTrustApplication">
-      <uap3:AppExecutionAlias>
-        <desktop:ExecutionAlias Alias="Contoso.exe" />
-      </uap3:AppExecutionAlias>
-  </uap3:Extension>
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap3:Extension
+          Category="windows.protocol">
+          <uap3:Protocol
+            Name="myapp-cmd"
+            Parameters="/p &quot;%1&quot;" />
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>
+ 
 ...
 </Package>
 ```
@@ -1027,9 +1034,9 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 
 <a id="autoplay" />
 
-### <a name="enable-users-to-start-your-application-when-they-connect-a-device-to-their-pc"></a>使用户能够到其电脑连接设备时启动你的应用程序
+### <a name="enable-users-to-start-your-application-when-they-connect-a-device-to-their-pc"></a>允许用户在设备连接到其电脑时启动你的应用程序
 
-当用户将设备连接到其电脑时，自动播放可以将提供你的应用程序作为一个选项。
+当用户将设备连接到其电脑时，自动播放可以将你的应用程序作为一个选项。
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
@@ -1055,10 +1062,10 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 |ProviderDisplayName | 一个字符串，表示你的应用程序或服务 (例如:"Contoso 视频播放器")。 |
 |ContentEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的内容事件的名称。 当卷设备（如相机内存卡、U 盘或 DVD）插入到电脑时，会引发内容事件。 你可以在[此处](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到此类事件的完整列表。  |
 |谓词 |谓词设置标识传递给你的应用程序针对所选选项的值。 你可以为自动播放事件指定多个启动操作并且可以使用谓词设置确定用户为你的应用选择的选项。 你可以通过检查传递给应用的启动事件参数的 verb 属性来标识用户选择的选项。 你可以为谓词设置使用任何值（但保留的 open 除外）。 |
-|DropTargetHandler |应用程序的实现[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)接口的类 ID。 系统会将可移动媒体中的文件传递给你的 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 实现的 [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) 方法。  |
+|DropTargetHandler |应用程序实现[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)接口的类 ID。 系统会将可移动媒体中的文件传递给你的 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 实现的 [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) 方法。  |
 |参数 |你不必为所有内容事件实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于任意内容事件，你可以提供命令行参数，而不是实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于这些事件，自动播放将使用这些命令行参数启动你的应用程序。 你可以在应用的初始化代码中解析这些参数，确定应用是否由自动播放启动，然后提供自定义实现。 |
 |DeviceEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的设备事件的名称。 当有设备连接到电脑时，将引发设备事件。 设备事件以字符串 ``WPD`` 开头，你可以在[此处](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到设备事件列表。 |
-|HWEventHandler |应用程序的实现[IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx)接口的类 ID。 |
+|HWEventHandler |应用程序实现[IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx)接口的类 ID。 |
 |InitCmdLine |你要传递给 [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx) 接口的 [Initialize](https://msdn.microsoft.com/en-us/library/windows/desktop/bb775495.aspx) 方法的字符串参数。 |
 
 ### <a name="example"></a>示例
@@ -1090,16 +1097,16 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 如果用户安装应用更新到它时，你的应用程序已打开，应用程序关闭。
 
-如果你希望该应用程序来重启在更新完成之后，你想要重新启动每个进程中调用[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)函数。
+如果你希望该应用程序重新启动在更新完成之后，你想要重新启动每个进程中调用[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)函数。
 
-在你的应用程序中每个活动窗口接收[WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx)消息。 此时，你的应用程序可以调用的[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)函数再次更新命令行，如有必要。
+在你的应用程序中每个活动窗口接收[WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx)消息。 到目前为止，你的应用程序可以调用[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)函数再次以更新命令行，如有必要。
 
 当你的应用程序中的每个活动窗口收到[WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx)消息时，你的应用程序应保存数据，并关闭。
 
 >[!NOTE]
 在应用程序不会处理[WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx)消息的情况下，你的活动窗口还会收到[WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx)消息。
 
-此时，你的应用程序有 30 秒时间来关闭自己的进程或平台强制终止这些进程。
+到目前为止，你的应用程序有 30 秒时间来关闭自己的进程或平台强制终止这些进程。
 
 更新完成后，重新启动你的应用程序。
 
@@ -1115,9 +1122,9 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 ### <a name="make-your-application-appear-as-the-print-target-in-applications-that-support-printing"></a>使应用程序中显示为打印目标应用程序支持打印
 
-当用户想要从另一个应用程序 （如记事本） 打印数据时，你可以使应用程序中显示为打印目标应用的可用打印目标列表。
+当用户想要从其他应用程序 （如记事本） 打印数据时，你可以使应用程序显示为可用打印目标的应用的列表中的打印目标。
 
-你将需要修改你的应用程序，以便在其接收 XML 纸张规范 (XPS) 格式的打印数据。
+你将需要修改你的应用程序，以使其接收 XML 纸张规范 (XPS) 格式的打印数据。
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
@@ -1266,7 +1273,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 
 此扩展可能会很有用，如果你想要创建在所有设备运行的通用 Windows 平台用户界面，但希望 Win32 应用程序继续以完全信任方式运行的组件。
 
-只需创建对 Win32 应用的 Windows 应用包。 然后，将此扩展添加到 UWP 应用的程序包文件。 此扩展指示你想要在 Windows 应用包中启动可执行文件。  如果想要在 UWP 应用和 Win32 应用之间进行通信，可以设置一个或多个[应用服务](../launch-resume/app-services.md)来执行此操作。 可以在[此处](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)阅读关于此方案的详细信息。
+只需创建适用于 Win32 应用的 Windows 应用包。 然后，将此扩展添加到 UWP 应用的程序包文件。 此扩展指示你想要在 Windows 应用包中启动可执行文件。  如果想要在 UWP 应用和 Win32 应用之间进行通信，可以设置一个或多个[应用服务](../launch-resume/app-services.md)来执行此操作。 可以在[此处](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)阅读关于此方案的详细信息。
 
 ## <a name="next-steps"></a>后续步骤
 
