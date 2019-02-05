@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 反馈中心, 启动
 ms.localizationpriority: medium
-ms.openlocfilehash: b4e11b8dfffd7e749a31f052545bfbdfc4449126
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9f5d5c12deed9fffc3d2515529aa5bba5fbffc47
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947869"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045270"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>从应用启动“反馈中心”
 
-你可以通过将用于启动“反馈中心”的控件（如按钮）添加到通用 Windows 平台 (UWP) 应用来鼓励客户留下反馈。 “反馈中心”是预安装的应用，该应用提供了一个用于收集有关 Windows 和已安装应用的反馈的位置。 为你的应用通过反馈中心提交的所有客户反馈是收集，以便你可以看到问题、 建议和投票客户已提交一个报告中，向你在合作伙伴中心，[反馈报告](../publish/feedback-report.md)中呈现。
+你可以通过将用于启动“反馈中心”的控件（如按钮）添加到通用 Windows 平台 (UWP) 应用来鼓励客户留下反馈。 “反馈中心”是预安装的应用，该应用提供了一个用于收集有关 Windows 和已安装应用的反馈的位置。 通过反馈中心应用提交的所有客户反馈是收集，以便你可以看到问题、 建议和投票客户已提交一个报告中，向你在合作伙伴中心，在[反馈报告](../publish/feedback-report.md)中呈现。
 
-若要从应用启动“反馈中心”，请使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 所提供的 API。 我们建议你使用此 API 从遵循我们的设计指南的应用中的 UI 元素启动“反馈中心”。
+若要从应用启动“反馈中心”，请使用 [Microsoft Store Services SDK](https://aka.ms/store-em-sdk) 所提供的 API。 我们建议你使用此 API 从遵循我们的设计指南的应用中的 UI 元素启动“反馈中心”。
 
 > [!NOTE]
 > 反馈仅在运行基于桌面和移动[设备系列](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families)的 Windows10 操作系统的版本 10.0.14271 或更高版本的设备上可用。 我们建议你仅当“反馈中心”在用户设备上可用时才在应用中显示反馈控件。 本主题中的代码演示如何执行此操作。

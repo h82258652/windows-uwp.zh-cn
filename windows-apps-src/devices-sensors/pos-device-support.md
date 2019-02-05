@@ -5,19 +5,19 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ffb8ea583aade51ae1cc5049a423d734359722c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 74753c2c91912969342d2989ed76900e8386f292
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946898"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050930"
 ---
 # <a name="supported-point-of-service-peripherals"></a>支持的服务点外设
 
 ## <a name="barcode-scanner"></a>条形码扫描仪
 | 连接性 | 支持 |
 | -------------|-------------|
-| USB          | <p>Windows 包含用于 USB 连接的条形码扫描仪的内置类驱动程序，该驱动程序基于 [USB.org](http://www.usb.org/developers/hidpage/) 定义的 HID POS 扫描仪使用表 (8c) 规范。有关已知兼容设备的列表，请参阅下表。  请参阅条形码扫描仪手册或联系制造商，以确定如何在 **USB.HID.POS 扫描仪**模式下配置扫描仪。 </p><p>Windows 还支持供应商特定驱动程序的实现，以便为不支持 USB.HID.POS 扫描仪标准的其他条形码扫描仪提供支持。 请与条形码扫描仪制造商联系以核实供应商特定驱动程序可用性。</p><p>有关创建自定义条形码扫描仪驱动程序的信息，请联系条形码扫描仪制造商，或者参阅[条形码扫描仪驱动程序设计指南](https://aka.ms/pointofservice-drv)</p> |
+| USB          | <p>Windows 包含用于 USB 连接的条形码扫描仪的内置类驱动程序，该驱动程序基于 [USB.org](https://www.usb.org/developers/hidpage/) 定义的 HID POS 扫描仪使用表 (8c) 规范。有关已知兼容设备的列表，请参阅下表。  请参阅条形码扫描仪手册或联系制造商，以确定如何在 **USB.HID.POS 扫描仪**模式下配置扫描仪。 </p><p>Windows 还支持供应商特定驱动程序的实现，以便为不支持 USB.HID.POS 扫描仪标准的其他条形码扫描仪提供支持。 请与条形码扫描仪制造商联系以核实供应商特定驱动程序可用性。</p><p>有关创建自定义条形码扫描仪驱动程序的信息，请联系条形码扫描仪制造商，或者参阅[条形码扫描仪驱动程序设计指南](https://aka.ms/pointofservice-drv)</p> |
 | 蓝牙    | <p>Windows 支持串行端口协议 - 基于简单串行接口 (SPP SSI) 的蓝牙条形码扫描仪。 有关已知兼容设备的列表，请参阅下表。 请参阅条形码扫描仪手册或联系制造商，以确定如何在 **SPP-SSI** 模式下配置扫描仪。</p> |
 | 网络摄像头       | <p>从 Windows 10 版本 1803 开始，你可以通过来自通用 Windows 应用程序的标准相机镜头来读取条形码。 建议使用支持自动对焦且最低分辨率为 1920x1440 的相机。  如果条形码打印得足够大，一些分辨率较低的相机可以读取标准条形码。  宽度更窄的条形码可能需要使用分辨率更高的相机。</p>| 
 |
@@ -35,7 +35,7 @@ ms.locfileid: "8946898"
 | Honeywell     | N5680                          | 2D         | 内置     | 组件    | HID 的 POS 扫描仪           |
 | Honeywell     | N3680                          | 2D         | 内置     | 组件    | HID 的 POS 扫描仪           |
 | Honeywell     | 轨道 7190g                    | 2D         | USB          | 演示 | HID 的 POS 扫描仪           |
-| Honeywell     | Stratos 2700                   | 2D         | USB          | 计数器   | HID 的 POS 扫描仪           |
+| Honeywell     | Stratos 2700                   | 2D         | USB          | 计数器中   | HID 的 POS 扫描仪           |
 | Honeywell     | Voyager 1200g                  | 1D         | USB          | 手持     | HID 的 POS 扫描仪           |
 | Honeywell     | Voyager 1202g                  | 1D         | USB          | 手持     | HID 的 POS 扫描仪           |
 | Honeywell     | Voyager 1202-bf                | 1D         | USB          | 手持     | HID 的 POS 扫描仪           |
@@ -67,7 +67,7 @@ ms.locfileid: "8946898"
 
 
 ¹ Upgradable 以支持通过 Honeywell 2D 条形码 <br/>
-² 最低需要固件 016 (2018.01.18)。 可使用 Zebra [123Scan](http://www.zebra.com/123Scan)。 
+² 最低需要固件 016 (2018.01.18)。 可使用 Zebra [123Scan](https://www.zebra.com/123Scan)。 
 
 
 <hr>
@@ -77,7 +77,7 @@ ms.locfileid: "8946898"
 |----------------|-------|------------------|
 | Innowi         | ChecOut M | Windows10   |
 
-### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>Windows 移动版设备与内置的条形码扫描仪
+### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>与内置的条形码扫描仪的 Windows 移动版设备
 | 制造商   | 型号 | 操作系统 |
 |----------------|-------|------------------|
 | Bluebird       | EF400 | Windows 移动版   |
@@ -90,7 +90,7 @@ ms.locfileid: "8946898"
 | 松下      | FZ-F1 |Windows 移动版   |
 | PointMobile    | PM80 | Windows 移动版   |
 | Zebra          | TC700j | Windows 移动版   |
-| HP             | Elite X3 夹克 | Windows 移动版   |
+| HP             | Elite X3 护套 | Windows 移动版   |
 
 
 

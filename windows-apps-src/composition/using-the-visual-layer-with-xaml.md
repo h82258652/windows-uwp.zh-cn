@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ae9bc0f6d53181a88b02ecda19b3aed745febe40
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 66b61b9db88392c7ca7370f06fb2150deba7c8c3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921704"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047532"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>将可视化层与 XAML 结合使用
 
@@ -283,7 +283,7 @@ void MainPage::InitializeDropShadow(Windows::UI::Xaml::UIElement^ shadowHost, Wi
 
 ### <a name="frosted-glass"></a>毛玻璃
 
-创建使背景内容模糊和带色彩的效果。 请注意，开发人员需要安装 Win2D NuGet 程序包才能使用效果。 有关安装说明，请参阅 [Win2D 主页](http://microsoft.github.io/Win2D/html/Introduction.htm)。
+创建使背景内容模糊和带色彩的效果。 请注意，开发人员需要安装 Win2D NuGet 程序包才能使用效果。 有关安装说明，请参阅 [Win2D 主页](https://microsoft.github.io/Win2D/html/Introduction.htm)。
 
 #### <a name="implementation-overview"></a>实现概述
 

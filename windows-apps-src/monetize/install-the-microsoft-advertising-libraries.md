@@ -6,19 +6,19 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, 广告, 安装, SDK, 广告库
 ms.localizationpriority: medium
-ms.openlocfilehash: 2066d055f7abf0e9a34e245d9c6a95e14596d362
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 121accdfc8996c609c616838f645f19e2377c7c5
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939335"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047748"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>安装 Microsoft 广告 SDK
 
-若要在面向 Windows10 的 UWP 应用中显示广告，请安装 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp)。 此 SDK 是 Visual Studio 2015 和更高版本的扩展。
+若要在面向 Windows10 的 UWP 应用中显示广告，请安装 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)。 此 SDK 是 Visual Studio 2015 和更高版本的扩展。
 
 > [!NOTE]
-> 如果你要开发是 JavaScript/HTML UWP 应用，你已安装 Windows 10 SDK 版本 10.0.14393 （周年更新） 或更高版本，你还必须安装[WinJS](https://github.com/winjs/winjs)库。 此库过去包含在以前版本的 Windows SDK 中，但从 Windows 10 SDK 版本 10.0.14393（周年更新）开始，此库必须单独安装。
+> 如果你要开发是 JavaScript/HTML UWP 应用，你已安装 Windows 10 SDK 版本 10.0.14393 （周年更新） 或更高版本，还必须安装[WinJS](https://github.com/winjs/winjs)库。 此库过去包含在以前版本的 Windows SDK 中，但从 Windows 10 SDK 版本 10.0.14393（周年更新）开始，此库必须单独安装。
 
 <span id="install-msi" />
 
@@ -35,7 +35,7 @@ ms.locfileid: "8939335"
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  下载并安装 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp)。 安装它可能需要几分钟。 请确信并等待，直到进程结束。
+3.  下载并安装 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)。 安装它可能需要几分钟。 请确信并等待，直到进程结束。
 
 4.  重新启动 Visual Studio。
 
@@ -66,7 +66,7 @@ ms.locfileid: "8939335"
 
 5. 在搜索框中，键入 **Microsoft.Advertising.XAML**（对于 XAML 项目）或 **Microsoft.Advertising.JS**（对于 JavaScript/HTML 项目）并安装相应程序包。 程序包安装完成后，保存你的解决方案。
     > [!NOTE]
-    > 如果**输出**窗口报告指示指定路径过长的 *Install-Package* 错误，则可能需要配置 NuGet 以将软件包提取到路径短于默认位置的备用位置。 若要执行此操作，将 ```repositoryPath``` 值添加到计算机上的 nuget.config 文件，并将其分配到可从中提取 NuGet 包的短文件夹路径。 有关详细信息，请参阅 NuGet 文档中的[此文章](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，可尝试将 Visual Studio 项目移到路径较短的备用文件夹。
+    > 如果**输出**窗口报告指示指定路径过长的 *Install-Package* 错误，则可能需要配置 NuGet 以将软件包提取到路径短于默认位置的备用位置。 若要执行此操作，将 ```repositoryPath``` 值添加到计算机上的 nuget.config 文件，并将其分配到可从中提取 NuGet 包的短文件夹路径。 有关详细信息，请参阅 NuGet 文档中的[此文章](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，可尝试将 Visual Studio 项目移到路径较短的备用文件夹。
 
 6. 关闭解决方案，然后重新打开它。
 
@@ -101,7 +101,7 @@ ms.locfileid: "8939335"
 
 ## <a name="understanding-framework-packages-in-the-microsoft-advertising-sdk"></a>了解 Microsoft 广告 SDK 中的框架包
 
-适用于 UWP 应用的 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp) 中的 Microsoft.Advertising.dll 库已配置为*框架包*。 此库包含 [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) 和 [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui) 命名空间中的广告 API。
+适用于 UWP 应用的 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp) 中的 Microsoft.Advertising.dll 库已配置为*框架包*。 此库包含 [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) 和 [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui) 命名空间中的广告 API。
 
 此库是一个框架包，因此，这意味着在用户安装使用此库的应用版本之后，无论我们何时发布新版本的库及修复和性能增强，Windows 更新均会在其设备上自动更新此库。 这有助于确保客户始终在其设备上安装最新可用版本的库。
 

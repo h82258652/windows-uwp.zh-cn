@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 付款摘要, 声明, 付款, 收益, 支出, 付款, 收入
 ms.localizationpriority: medium
-ms.openlocfilehash: fa35ac4961b64379ee8a50ec192f5cebad5720d6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e9ab2d2d096c6c0a639a831bb7d09f6d1d044a0c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919877"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046237"
 ---
 # <a name="payout-summary"></a>付款摘要
 
@@ -20,14 +20,14 @@ ms.locfileid: "8919877"
 
 如果使用广告来获取收益，可以在**付款摘要**中查看广告收益的付款信息。 我们将显示获取这些收益所在的应用、由于在多个应用中使用的广告单元而“未映射”的应用或者本来就无法映射到特定应用的应用。 
 
-如果在 Azure Marketplace 中销售产品，还将在**付款摘要**中看到成功付款信息。 有关 Azure Marketplace 付款的更多详细信息，请参阅 [Microsoft Azure 应用商店参与策略](http://go.microsoft.com/fwlink/p/?LinkId=722436)和 [Microsoft Azure 应用商店发布者协议](http://go.microsoft.com/fwlink/p/?LinkID=699560 )。 有关 Azure Marketplace 付款报告的详细信息，可以在[此处](http://go.microsoft.com/fwlink/p/?LinkID=722439)找到。
+如果在 Azure Marketplace 中销售产品，还将在**付款摘要**中看到成功付款信息。 有关 Azure Marketplace 付款的更多详细信息，请参阅 [Microsoft Azure 应用商店参与策略](https://go.microsoft.com/fwlink/p/?LinkId=722436)和 [Microsoft Azure 应用商店发布者协议](https://go.microsoft.com/fwlink/p/?LinkID=699560 )。 有关 Azure Marketplace 付款报告的详细信息，可以在[此处](https://go.microsoft.com/fwlink/p/?LinkID=722439)找到。
 
 > [!NOTE]
 > 若要可用于付款，收益必须达到相应的[付款阈值](payment-thresholds-methods-and-timeframes.md)。 如果收益少于付款阈值，则将保留在**预留**类别中，直到达到此阈值。 有关应用收益的支付阈值的详细信息，请参阅[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。 对于广告收益，付款阈值是 50 美元（或本地货币的对等值）。 
 >
 > 月付（如果已达到任何适用的付款阈值）。 我们以后通常在每月的第 15 日支付指定月的任何到期付款。 请注意，付款通常需要 3 到 10 个工作日才会到达你的付款帐户。 有关详细信息，请参阅[付款阈值、方法和时间范围](payment-thresholds-methods-and-timeframes.md)。
 
-若要查看你的**付款摘要**，单击在合作伙伴中心的右上角附近显示的**付款**图标，然后选择**付款摘要**。
+要查看**付款摘要**，单击显示在合作伙伴中心中的右上角附近的**付款**图标，然后选择**付款摘要**。
 
 ## <a name="current-proceeds-and-payments"></a>当前收益和付款
 

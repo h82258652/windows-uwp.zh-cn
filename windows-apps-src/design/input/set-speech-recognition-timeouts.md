@@ -8,12 +8,12 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 73c7e889b4633dae9e416cf7ccde13eb3f58e8ee
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 679c2632fd5793ae083b2a79e29de3a3e9da04cf
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939259"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044920"
 ---
 # <a name="set-speech-recognition-timeouts"></a>设置语音识别超时
 
@@ -47,7 +47,7 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 * [语音交互](speech-interactions.md)
 **示例**
-* [语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [语音识别和语音合成示例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

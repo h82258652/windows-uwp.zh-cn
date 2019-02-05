@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10，uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f707e72e73398ae21cd391da16a0f2b40dcd7ee
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2c7d40765e0d12e3543f198aebd5acd15ed3aff3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942784"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047771"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>使用 three.js 创建 3D JavaScript 游戏
 
@@ -35,7 +35,7 @@ ms.locfileid: "8942784"
 
 为了运行此项目，你需要具备以下条件：
 -   一台运行当前版本 Windows 10 的 Windows 计算机（或虚拟机）。
--   一份 Visual Studio 副本。 可以从 [Visual Studio 主页](http://visualstudio.com/) 下载免费的社区版 Visual Studio。
+-   一份 Visual Studio 副本。 可以从 [Visual Studio 主页](https://visualstudio.com/) 下载免费的社区版 Visual Studio。
 此项目使用了 **three.js** JavaScript 库。 **three.js** 使用 MIT 许可证发布。 此项目已包含该库（在解决方案资源管理器视图中查找 `js/libs`）。 有关此库的更多信息，请参阅 [**three.js**](https://threejs.org/) 主页。
 
 ## <a name="getting-started"></a>入门
@@ -256,7 +256,7 @@ ___
 
 如果遇到问题，你可以复制和粘帖此 CodePen 中的所有 JavaScript 来加以解决，或者可以对其进行编辑，以调整某些光和更改部分颜色。 
 
-<iframe height='300' scrolling='no' title='光、 相机、 立方体 ！' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>请参阅 Pen<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>光、 相机、 立方体 ！</a> 通过 Microsoft Edge 文档 (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 可以在<a href='https://codepen.io'>CodePen</a>上。
+<iframe height='300' scrolling='no' title='光、 相机、 立方体 ！' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>请参阅 Pen<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>光，相机、 立方体 ！</a> 通过 Microsoft Edge 文档 (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 可以在<a href='https://codepen.io'>CodePen</a>上。
 </iframe>
 
 
@@ -931,7 +931,7 @@ function getRandomInt(min, max) {
 
 我们成功了！ 现在，我们的恐龙也享有了 AI，可以在迷宫内四处移动！
 
-<iframe height='300' scrolling='no' title='移动恐龙-碰撞' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/bqwMXZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>请参阅笔<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/bqwMXZ/'>移动恐龙-碰撞</a>，Microsoft Edge 文档 (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 可以在<a href='https://codepen.io'>CodePen</a>上。
+<iframe height='300' scrolling='no' title='移动恐龙-碰撞' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/bqwMXZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>查看笔<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/bqwMXZ/'>移动恐龙-碰撞</a>，Microsoft Edge 文档 (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 可以在<a href='https://codepen.io'>CodePen</a>上。
 </iframe>
 
 ### <a name="10-starting-the-chase"></a>10. 开始追踪

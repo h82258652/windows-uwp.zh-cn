@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e7453d3973cef31ae8143f3ecff31fffeb763a3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9ff4e7d01d907112558993f52c8a214c91f7d499
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942548"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047066"
 ---
 # <a name="keyboard-events"></a>键盘事件
 
@@ -329,7 +329,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 你可以替代特定控件（如 [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView)）的键事件，以针对各种输入设备（包括键盘和游戏板）提供一致的焦点导航。
 
-在以下示例中，我们按下任意箭头键时，控件子类并替代 KeyDown 行为，以将焦点移动到 GridView 内容。
+在以下示例中，我们时按下任意箭头键在控件子类并替代 KeyDown 行为，以将焦点移动到 GridView 内容。
 
 ```csharp
 public class CustomGridView : GridView
@@ -397,16 +397,16 @@ public class CustomGridView : GridView
 
 **示例**
 * [触摸键盘示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [焦点视觉示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延迟输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [焦点视觉示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **存档示例**
-* [输入示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：触摸键盘示例](http://go.microsoft.com/fwlink/p/?linkid=246019)
-* [响应屏幕键盘外观示例](http://go.microsoft.com/fwlink/p/?linkid=231633)
-* [XAML 文本编辑示例](http://go.microsoft.com/fwlink/p/?LinkID=251417)
+* [输入示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [输入：触摸键盘示例](https://go.microsoft.com/fwlink/p/?linkid=246019)
+* [响应屏幕键盘外观示例](https://go.microsoft.com/fwlink/p/?linkid=231633)
+* [XAML 文本编辑示例](https://go.microsoft.com/fwlink/p/?LinkID=251417)
  
 
  

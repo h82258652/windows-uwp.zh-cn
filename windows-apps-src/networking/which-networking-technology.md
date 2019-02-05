@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e418e5a159df44d6ff6e15e4faa972164447f5ee
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b64ddadd0e543930fa72d0c44a6cacf0a873df89
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944512"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050680"
 ---
 # <a name="which-networking-technology"></a>选择哪一种网络技术？
 
@@ -69,7 +69,7 @@ ms.locfileid: "8944512"
 
 当你希望通过网络可靠地传输文件时，请使用[后台传输 API](background-transfers.md)。 后台传输 API 提供了高级的上载和下载功能，这些功能可在应用暂停期间在后台运行，并且在应用终止后仍保持运行。 该 API 监视网络状态以及在失去连接时自动暂停和恢复传输，而且传输同样也既为数据敏感型又为电池敏感型，这意味着下载活动将根据当前连接性和设备电池状态进行调整。 当你的应用在移动设备或电池供电的设备上运行时，这些功能是必不可少的。 该 API 非常适合于使用 HTTP 上载和下载大型文件。 还支持 FTP，但只能用于下载。
 
-Windows 10 中的新后台传输功能是能够在文件传输完成，以便你可以更新本地目录，激活其他应用，或在下载完成时通知用户时触发后期处理。
+在 windows 10 中的新后台传输功能是能够文件传输完成，以便你可以更新本地目录，激活其他应用，或在下载完成时通知用户时触发后期处理。
 
 ### <a name="when-to-use-background-transfers"></a>何时使用后台传输
 
@@ -91,7 +91,7 @@ Windows 10 中的新后台传输功能是能够在文件传输完成，以便你
 
 ### <a name="dns-service-discovery"></a>DNS 服务发现
 
-[**Windows.Networking.ServiceDiscovery.Dnssd**](https://msdn.microsoft.com/library/windows/apps/dn895183) API 使你能够使用 DNS-SD 协议（如 IETF [RFC 2782](http://go.microsoft.com/fwlink/?LinkId=524158) 中所述）在网络上向其他设备宣传某种网络服务。
+[**Windows.Networking.ServiceDiscovery.Dnssd**](https://msdn.microsoft.com/library/windows/apps/dn895183) API 使你能够使用 DNS-SD 协议（如 IETF [RFC 2782](https://go.microsoft.com/fwlink/?LinkId=524158) 中所述）在网络上向其他设备宣传某种网络服务。
 
 ### <a name="communicating-over-bluetooth"></a>通过蓝牙进行通信
 
@@ -127,7 +127,7 @@ Windows 10 中的新后台传输功能是能够在文件传输完成，以便你
 
 ### <a name="mobile-operators"></a>移动运营商
 
-Windows 10 向开发人员受众公开具有之前只公开给设备制造商和移动运营商的某些 Api。 请注意，尽管这些 API 现已公开，但它们仍受特定应用功能的限制，即必须得到 Microsoft 批准之后，才能发布应用。 这些 API 的实际使用主要限于设备制造商和移动运营商。
+Windows 10 向开发人员受众公开已之前只公开给设备制造商和移动运营商的某些 Api。 请注意，尽管这些 API 现已公开，但它们仍受特定应用功能的限制，即必须得到 Microsoft 批准之后，才能发布应用。 这些 API 的实际使用主要限于设备制造商和移动运营商。
 
 ### <a name="network-operations"></a>网络运营
 

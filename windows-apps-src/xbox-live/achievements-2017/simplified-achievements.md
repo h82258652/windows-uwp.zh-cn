@@ -1,17 +1,17 @@
 ---
 title: Achievements 2017
-description: Achievements 2017
+description: " Achievements 2017"
 ms.assetid: d424db04-328d-470c-81d3-5d4b82cb792f
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: e7588639d9a83b50066e4dd313d6427d047c8482
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bfc67f6aca27abf095a89c451111e6429bca82e1
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931199"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044753"
 ---
 # <a name="achievements-2017"></a>Achievements 2017
 
@@ -44,8 +44,8 @@ Achievements 2017 系统支持游戏开发人员使用直接调用模型来解�
 | 解锁触发           | 通过 API 调用直接触发                 | 通过遥测事件间接触发        |
 | 解锁所有者             | 游戏                                 | Xbox Live                              |
 | 配置            | 字符串、图像、奖励              | 字符串、图像、奖励、解锁规则 \[+ 统计数据，+ 事件\]                    |
-| 进度              | 受支持 <br>*通过 API 调用直接支持*                | 受支持 <br> *通过遥测事件间接支持*       |
-| 实时活动 (RTA) | 受支持                             | 受支持                              |
+| 进度              | 支持 <br>*通过 API 调用直接支持*                | 支持 <br> *通过遥测事件间接支持*       |
+| 实时活动 (RTA) | 支持                             | 支持                              |
 | 挑战               | 不支持   | 受支持                      |
 
 ## <a name="title-requirements"></a>游戏要求
@@ -97,7 +97,7 @@ API 签名如下所示：
 `xbox::services::xbox_live_result<T>` 为所有 C++ Xbox Live 服务 API 调用的返回调用。
 
 有关详细信息，请参阅 Xfest 2015 访谈，“XSAPI：C++，无异常！”<br>
-[视频](http://go.microsoft.com/?linkid=9888207) |  [幻灯片](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Documents/Xfest_2015/Xbox_Live_Track/XSAPI_Cpp_No_Exceptions.pptx)
+[视频](https://go.microsoft.com/?linkid=9888207) |  [幻灯片](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Documents/Xfest_2015/Xbox_Live_Track/XSAPI_Cpp_No_Exceptions.pptx)
 
 ### <a name="unlocking-via-updateachievement-api"></a>通过 Update_Achievement API 解锁
 

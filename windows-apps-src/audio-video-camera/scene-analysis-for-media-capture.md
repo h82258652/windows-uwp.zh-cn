@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9714488473bf4bdc118fd56129ea67e00019dcb1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3359c3e7d7841e68dd00dc318eb1de9f1418df06
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934762"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047339"
 ---
 # <a name="effects-for-analyzing-camera-frames"></a>分析相机帧的效果
 
@@ -97,7 +97,7 @@ ms.locfileid: "8934762"
 
 [!code-cs[RegisterFaceDetectionHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterFaceDetectionHandler)]
 
-在该事件的处理程序中，你可以通过访问 [**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774) 的 [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) 属性，获取帧中所有检测到的人脸列表。 [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) 属性是 [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) 结构，用于描述包含检测到的人脸的矩形，其单位相对于预览流尺寸。 若要查看将预览流坐标转换到屏幕坐标的示例代码，请参阅[人脸检测 UWP 示例](http://go.microsoft.com/fwlink/?LinkId=619486)。
+在该事件的处理程序中，你可以通过访问 [**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774) 的 [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) 属性，获取帧中所有检测到的人脸列表。 [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) 属性是 [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) 结构，用于描述包含检测到的人脸的矩形，其单位相对于预览流尺寸。 若要查看将预览流坐标转换到屏幕坐标的示例代码，请参阅[人脸检测 UWP 示例](https://go.microsoft.com/fwlink/?LinkId=619486)。
 
 [!code-cs[FaceDetected](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetected)]
 

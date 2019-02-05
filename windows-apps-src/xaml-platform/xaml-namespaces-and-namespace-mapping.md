@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6178e2072721ad8514ba7ddfc0ae8f99ab59d34c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4332bd0b19d381937e477efc472634d6d81afd58
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920579"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046490"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 命名空间和命名空间映射
 
@@ -65,7 +65,7 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 
 -   **d:DataContext 特性：** 可以针对页面根或控件设置此特性，以便替代该对象所拥有的任何显式或继承的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)。
 -   **d:DesignSource 特性：** 为 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 指定设计时数据源，并替代 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835)。
--   **d:DesignInstance 和 d:DesignData 标记扩展：** 这些标记扩展用于为 **d:DataContext** 或 **d:DesignSource** 提供设计时数据资源。 在这里，我们不会完全记录如何使用设计时数据源资源。 有关详细信息，请参阅[设计时特性](http://go.microsoft.com/fwlink/p/?LinkId=272504)。 有关一些使用示例，请参阅[设计面图以及用于原型制作的示例数据](https://msdn.microsoft.com/library/windows/apps/mt517866)。
+-   **d:DesignInstance 和 d:DesignData 标记扩展：** 这些标记扩展用于为 **d:DataContext** 或 **d:DesignSource** 提供设计时数据资源。 在这里，我们不会完全记录如何使用设计时数据源资源。 有关详细信息，请参阅[设计时特性](https://go.microsoft.com/fwlink/p/?LinkId=272504)。 有关一些使用示例，请参阅[设计面图以及用于原型制作的示例数据](https://msdn.microsoft.com/library/windows/apps/mt517866)。
 
 ### **<a name="mc-httpschemasopenxmlformatsorgmarkup-compatibility2006"></a>mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 

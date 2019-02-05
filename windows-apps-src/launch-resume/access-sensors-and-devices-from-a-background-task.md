@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: 13bc8f2558b3e3f15d7329697a41b177777b6e7a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 26b665f68932f7a90127ee99414f984f5d9f2005
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918988"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046776"
 ---
 # <a name="access-sensors-and-devices-from-a-background-task"></a>从后台任务访问传感器和设备
 
@@ -20,7 +20,7 @@ ms.locfileid: "8918988"
 
 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 例如，根据应用运行所在的位置，它可以使用后台任务将数据与设备或监视器传感器同步。 为了帮助延长电池使用时间并确保相应的用户同意，使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 需遵循本主题中所述的策略。
 
-若要访问后台中的传感器或外围设备，请创建一个使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务。 有关显示如何在电脑上实现此目的的示例，请参阅[自定义 USB 设备示例](http://go.microsoft.com/fwlink/p/?LinkId=301975 )。 有关在手机上实现此目的的示例，请参阅[后台传感器示例](http://go.microsoft.com/fwlink/p/?LinkId=393307)。
+若要访问后台中的传感器或外围设备，请创建一个使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务。 有关显示如何在电脑上实现此目的的示例，请参阅[自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )。 有关在手机上实现此目的的示例，请参阅[后台传感器示例](https://go.microsoft.com/fwlink/p/?LinkId=393307)。
 
 > [!Important]
 > **DeviceUseTrigger** 不能用于进程内的后台任务。 本主题中的信息仅适用于进程外运行的后台任务。
@@ -33,7 +33,7 @@ ms.locfileid: "8918988"
 
 ### <a name="limitation-critical-device-operations"></a>限制：关键设备操作
 
-某些关键设备操作（如长时间运行的固件更新）无法通过 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 执行。 此类操作仅可以在电脑上通过使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 的特权应用执行。 *特权应用*是指由设备制造商授权执行这些操作的应用。 设备元数据用于指定已指派哪个应用（如果有）作为设备的特权应用。 有关详细信息，请参阅 [Microsoft Store 设备应用的设备同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)。
+某些关键设备操作（如长时间运行的固件更新）无法通过 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 执行。 此类操作仅可以在电脑上通过使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 的特权应用执行。 *特权应用*是指由设备制造商授权执行这些操作的应用。 设备元数据用于指定已指派哪个应用（如果有）作为设备的特权应用。 有关详细信息，请参阅 [Microsoft Store 设备应用的设备同步和更新](https://go.microsoft.com/fwlink/p/?LinkId=306619)。
 
 ## <a name="protocolsapis-supported-in-a-deviceusetrigger-background-task"></a>DeviceUseTrigger 后台任务中支持的协议/API
 
@@ -81,9 +81,9 @@ ms.locfileid: "8918988"
 8.  Windows 监控系统条件和任务运行情况，并在必要时（不再符合所需条件）取消该任务。
 9.  当后台任务报告进度或完成时，你的应用将通过该注册任务的进度事件和完成事件接收这些事件。
 
-**重要提示**使用[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)时，请考虑以下几个要点：
+**重要提示**使用[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)时考虑以下几个要点：
 
--   首次 Windows8.1 和 Windows Phone 8.1 中引入以编程方式触发，使用[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)后台任务的能力。
+-   在 windows 8.1 和 Windows Phone 8.1 中首次引入以编程方式触发的后台任务，使用[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)的能力。
 
 -   Windows 会强制执行某些策略，从而确保获得用户同意才能更新电脑上的外围设备。
 
@@ -91,7 +91,7 @@ ms.locfileid: "8918988"
 
 -   当不再符合某些策略要求（包括最长后台时间（时钟时间）量时，Windows 可能会取消使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务。 使用这些后台任务与外围设备交互时考虑这些策略要求很重要。
 
-**提示**以了解这些后台任务的工作原理，请下载相关示例。 有关显示如何在电脑上实现此目的的示例，请参阅[自定义 USB 设备示例](http://go.microsoft.com/fwlink/p/?LinkId=301975 )。 有关在手机上实现此目的的示例，请参阅[后台传感器示例](http://go.microsoft.com/fwlink/p/?LinkId=393307)。
+**提示**以了解这些后台任务的工作原理，请下载相关示例。 有关显示如何在电脑上实现此目的的示例，请参阅[自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )。 有关在手机上实现此目的的示例，请参阅[后台传感器示例](https://go.microsoft.com/fwlink/p/?LinkId=393307)。
  
 ## <a name="frequency-and-foreground-restrictions"></a>频率和前台限制
 

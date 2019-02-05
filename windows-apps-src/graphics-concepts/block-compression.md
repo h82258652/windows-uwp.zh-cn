@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b7726067055b92ae51c01d4d056a2a11624204db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3f6a1277dbb2d756f0d3a4ffc1fd545f892a2096
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934346"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047206"
 ---
 # <a name="block-compression"></a>块压缩
 
@@ -346,13 +346,13 @@ FLOAT32 f = 1.0f;
 UINT32 u;
 ```
 
-若要将“f”重新解释为类型“u”，请使用 [memcpy](http://msdn.microsoft.com/library/dswaw1wk.aspx)：
+若要将“f”重新解释为类型“u”，请使用 [memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx)：
 
 ```cpp
 memcpy( &u, &f, sizeof( f ) ); // 'u' becomes equal to 0x3F800000.
 ```
 
-在上一重新解释中，数据的基础值不变；[memcpy](http://msdn.microsoft.com/library/dswaw1wk.aspx) 将浮点数重新解释为无符号整数。
+在上一重新解释中，数据的基础值不变；[memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx) 将浮点数重新解释为无符号整数。
 
 若要执行更典型的转换类型，请使用分配：
 

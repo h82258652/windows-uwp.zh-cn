@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 11467a45021da7898c2b617e3b1b01312c795c4c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3c17fb7de151308e41a2e613d86a9c0413c7517e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947531"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047791"
 ---
 # <a name="epson-escpos-with-formatting"></a>Epson ESC/POS（可进行格式设置）
 
@@ -59,4 +59,4 @@ printJob.PrintLine(DoubleOn + "Here is some large text." + DoubleOff);
 printJob.ExecuteAsync();
 ```
 
-有关 ESC/POS（包括可用命令）的详细信息，请查看 [Epson ESC/POS 常见问题](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf)。 有关 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) 和所有可用功能的详细信息，请参阅 MSDN 上的 [PointofService 打印机](https://msdn.microsoft.com/library/windows/apps/Mt426652)。
+有关 ESC/POS（包括可用命令）的详细信息，请查看 [Epson ESC/POS 常见问题](https://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf)。 有关 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) 和所有可用功能的详细信息，请参阅 MSDN 上的 [PointofService 打印机](https://msdn.microsoft.com/library/windows/apps/Mt426652)。

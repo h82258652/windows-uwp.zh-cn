@@ -1,17 +1,17 @@
 ---
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: 此案例研究，以 Bookstore 中提供的信息，首先显示分组数据 LongListSelector 中的 WindowsPhone Silverlight 应用。
+description: 此案例研究，基于 Bookstore 中提供的信息，开始显示分组数据 LongListSelector 中的 WindowsPhone Silverlight 应用。
 title: WindowsPhone silverlight 移植到 UWP 案例研究： Bookstore2
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b75da7d50135ee8d40f8ed44f0239edb54dcf65
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ae1b0c272af5939deba73ff7a07797207d7caaa4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945879"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048174"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>WindowsPhone silverlight 移植到 UWP 案例研究： Bookstore2
 
@@ -22,13 +22,13 @@ ms.locfileid: "8945879"
 
 ## <a name="downloads"></a>下载
 
-[下载 Bookstore2WPSL8 WindowsPhone Silverlight 应用](http://go.microsoft.com/fwlink/p/?linkid=522601)。
+[下载 Bookstore2WPSL8 WindowsPhone Silverlight 应用](https://go.microsoft.com/fwlink/p/?linkid=522601)。
 
-[下载 Bookstore2Universal\_10 windows 10 应用](http://go.microsoft.com/fwlink/?linkid=532952)。
+[下载 Bookstore2Universal\_10 windows 10 应用](https://go.microsoft.com/fwlink/?linkid=532952)。
 
 ##  <a name="the-windowsphone-silverlight-app"></a>WindowsPhone Silverlight 应用
 
-下图显示了 Bookstore2WPSL8（我们要移植的应用）的外观。 它是垂直滚动的 **LongListSelector**，其中包含按作者进行分组的书籍。 你可以缩小到跳转列表，并且可以从该列表导航回任一组。 此应用包含两个主要部分：提供分组数据源的视图模型，以及绑定到该视图模型的用户界面。 如我们所见，这两部分都可以轻松地从 WindowsPhone Silverlight 技术移植到通用 Windows 平台 (UWP)。
+下图显示了 Bookstore2WPSL8（我们要移植的应用）的外观。 它是垂直滚动的 **LongListSelector**，其中包含按作者进行分组的书籍。 你可以缩小到跳转列表，并且可以从该列表导航回任一组。 此应用包含两个主要部分：提供分组数据源的视图模型，以及绑定到该视图模型的用户界面。 如我们所见，这两个部分轻松地从 WindowsPhone Silverlight 技术移植到通用 Windows 平台 (UWP)。
 
 ![Bookstore2WPSL8 的外观](images/wpsl-to-uwp-case-studies/c02-01-wpsl-how-the-app-looks.png)
 
@@ -40,7 +40,7 @@ ms.locfileid: "8945879"
 -   复制包含视图模型源文件的文件夹（该文件夹是 \\ViewModel）。
 -   复制 MainPage.xaml 并替换目标位置中的文件。
 
-我们可以保留的 App.xaml 和 App.xaml.cs Visual Studio 生成为我们在 windows 10 项目中。
+我们可以保留的 App.xaml 和 App.xaml.cs 中的 Visual Studio 生成为我们在 windows 10 项目中。
 
 编辑你刚刚复制的源代码和标记文件，并将对 Bookstore2WPSL8 命名空间的任何引用更改为 Bookstore2Universal\_10。 执行此操作的快速方法是使用**在文件中替换**功能。 在视图模型源文件的强制性代码中，需要进行以下移植更改。
 
@@ -120,7 +120,7 @@ ms.locfileid: "8945879"
 
 ![移动设备上初始源代码发生更改的 UWP 应用](images/wpsl-to-uwp-case-studies/c02-02-mob10-initial-source-code-changes.png)
 
-视图模型与放大和缩小视图正确协作，不过，我们面临着需再多做一些样式设置和模板方面的工作这一问题。 例如，正确的样式和画笔是不尚未使用，使你可以通过单击缩小的组标题上不可见的文本。如果你在桌面设备上运行该应用，你将看到第二个问题，即，该应用尚未调整其用户界面以提供最佳体验和使用的窗口可以可能比在移动设备的屏幕大小大很多较大的设备上的空间。 因此，在后面的几个部分（[初始样式设置和模板](#initial-styling-and-templating)、[自适应 UI](#adaptive-ui) 和 [最终样式设置](#final-styling)）中我们将解决这些问题。
+视图模型与放大和缩小视图正确协作，不过，我们面临着需再多做一些样式设置和模板方面的工作这一问题。 例如，正确的样式和画笔是不尚未使用，因此文本是可通过单击缩小的组标题上不可见。如果在桌面设备上运行应用，你将看到第二个问题，即，该应用尚未调整其用户界面以提供最佳体验和使用 windows 可以可能比移动设备的屏幕大小大很多较大的设备上的空间。 因此，在后面的几个部分（[初始样式设置和模板](#initial-styling-and-templating)、[自适应 UI](#adaptive-ui) 和 [最终样式设置](#final-styling)）中我们将解决这些问题。
 
 ## <a name="initial-styling-and-templating"></a>初始样式设置和模板
 
@@ -264,7 +264,7 @@ ms.locfileid: "8945879"
 
 ![在移动设备上运行的已移植的 Windows 10 应用，缩小视图](images/w8x-to-uwp-case-studies/c02-10-mob10-zo-ported.png)
 
-在移动设备，缩小视图上运行的已移植的 windows 10 应用
+移动设备，缩小视图上运行的已移植的 windows 10 应用
 
 ## <a name="making-the-view-model-more-flexible"></a>使视图模型更灵活
 
@@ -301,4 +301,4 @@ ms.locfileid: "8945879"
 
 ## <a name="conclusion"></a>总结
 
-此案例研究涉及了一个比上一个用户界面更为大胆的用户界面。 所有设施和概念的 WindowsPhone Silverlight **LongListSelector**— 和详细信息--发现适用于 UWP 应用的**SemanticZoom**、 **ListView**、 **GridView**和**CollectionViewSource**形式。 我们展示了如何在 UWP 应用中重复使用、或复制并编辑强制性代码和标记，以实现为适合最窄和最宽以及介于这两者之间的所有大小的 Windows 设备外形规格而定制的功能、UI 和交互。
+此案例研究涉及了一个比上一个用户界面更为大胆的用户界面。 所有设施和概念以及 WindowsPhone Silverlight **LongListSelector**— 等 — 找到要提供给形式的**SemanticZoom**、 **ListView**、 **GridView**和**CollectionViewSource**的 UWP 应用。 我们展示了如何在 UWP 应用中重复使用、或复制并编辑强制性代码和标记，以实现为适合最窄和最宽以及介于这两者之间的所有大小的 Windows 设备外形规格而定制的功能、UI 和交互。

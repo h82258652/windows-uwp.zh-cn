@@ -6,12 +6,12 @@ ms.date: 5/30/2018
 ms.topic: article
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, 开发人员计划, 创意者
 ms.localizationpriority: medium
-ms.openlocfilehash: 621e9adac30e67ea5e9a2e164f3d427e96bd51a3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0335711c210588142bf3d4f86acaee9705648373
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919524"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047704"
 ---
 # <a name="developer-program-overview"></a>开发人员计划概述
 
@@ -26,7 +26,7 @@ Xbox Live 创意者计划仅支持创建适用于[通用 Windows 平台](https:/
 Xbox One 为玩家提供策展式 Microsoft Store 体验，玩家可以用 Xbox 在 Microsoft Store 全新创意者集锦版块中购买通过 Xbox Live 创意者计划发布的游戏。 这样，便在确保人人都能基于开放式平台开发并交付游戏与主机玩家逐步了解并期待获得特选 Microsoft Store 体验之间达成平衡。 在 Windows 10 上，你的作品将与其他所有 Xbox Live 游戏一起发布在 Microsoft Store 中。
 
 ### <a name="publishing-and-certification"></a>发布和认证
-你必须在要发布的游戏在 Xbox Live 创意者计划的一部分的[合作伙伴中心开发人员计划](https://developer.microsoft.com/store/register)中注册。 你的游戏必须符合下面两组要求：
+你必须在要发布游戏的 Xbox Live 创意者计划的[合作伙伴中心开发人员计划](https://developer.microsoft.com/store/register)中注册。 你的游戏必须符合下面两组要求：
 
 1. 集成 Xbox Live 登录并显示用户身份（玩家代号、玩家头像等）。 所有其他 Xbox Live 服务都是可选的。
 2. 遵循标准的 [Microsoft Store 策略](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx)。
@@ -45,21 +45,21 @@ Xbox Live 创意者计划作品也可以使用游戏引擎 [Construct（2 和 3�
 
 [了解如何将 Xbox Live 集成到 GameMaker Studio 2 项目。](https://www.yoyogames.com/gamemaker/xblc)
 
-对于不支持 Xbox Live 功能或插件的其他游戏开发引擎，如 [MonoGame](http://www.monogame.net/) 或 [Xenko](https://xenko.com/)，仍然可以使用 Xbox Live API 将 Xbox Live 添加到你的作品中。 要从你的项目使用 Xbox Live API，可以通过 NuGet 程序包添加对二进制文件的引用或者添加 API 源。 添加 NuGet 程序包可加快编译速度，而添加源可简化调试。
+对于不支持 Xbox Live 功能或插件的其他游戏开发引擎，如 [MonoGame](https://www.monogame.net/) 或 [Xenko](https://xenko.com/)，仍然可以使用 Xbox Live API 将 Xbox Live 添加到你的作品中。 要从你的项目使用 Xbox Live API，可以通过 NuGet 程序包添加对二进制文件的引用或者添加 API 源。 添加 NuGet 程序包可加快编译速度，而添加源可简化调试。
 
 ### <a name="support-and-feedback"></a>支持和反馈
-你可能遇到的任何问题都可以在 [MSDN 论坛](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev)上得到解答。  你也可以使用“xbox-live”标记在 [Stack Overflow](http://stackoverflow.com/questions/tagged/xbox-live) 上提出编程相关问题。  Xbox Live 团队将与社区合作，并且将根据在此处收到的反馈不断改进我们的 API、工具和文档。
+你可能遇到的任何问题都可以在 [MSDN 论坛](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev)上得到解答。  你也可以使用“xbox-live”标记在 [Stack Overflow](https://stackoverflow.com/questions/tagged/xbox-live) 上提出编程相关问题。  Xbox Live 团队将与社区合作，并且将根据在此处收到的反馈不断改进我们的 API、工具和文档。
 
 对于 Xbox Live 创意者计划中的开发人员，你可以在我们的 [Xbox 用户反馈](https://xbox.uservoice.com/forums/363186--new-ideas)中[提交新的想法](https://xbox.uservoice.com/forums/363186--new-ideas?category_id=196261)或[对现有想法进行表决](https://xbox.uservoice.com/forums/251649?category_id=210838)。
 
 ## <a name="idxbox"></a>ID@Xbox
 
-Xbox Live 创意者计划非常适用于大量游戏和开发人员。 但是，如果你希望访问完整的 Xbox Live 堆栈，包括多人在线游戏、成就和游戏得分，或者想要利用硬件开发工具包获得 Xbox One 系列设备的完整功能，则 [ID@Xbox](http://www.xbox.com/en-US/developers/id) 计划适合你。
+Xbox Live 创意者计划非常适用于大量游戏和开发人员。 但是，如果你希望访问完整的 Xbox Live 堆栈，包括多人在线游戏、成就和游戏得分，或者想要利用硬件开发工具包获得 Xbox One 系列设备的完整功能，则 [ID@Xbox](https://www.xbox.com/en-US/developers/id) 计划适合你。
 
 ID@Xbox 计划中的游戏必须是获批的概念，并通过基于 Xbox One 和 Windows 10 的完整认证，这需要贵方投入更多的时间。
 相对于 Creators Collection，ID@Xbox 作品放置在应用商店的主要版块中，这样做可以增加客户看到的机会。
 
-ID@Xbox 计划中的开发人员还可以获得 Microsoft 提供的开发人员支持和促销帮助，以及一整套免费的专属白皮书，并访问开发人员技术论坛。 你可以继续使用 [MSDN 论坛](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev)，也可以使用“xbox live”标记在 [Stack Overflow](http://stackoverflow.com/questions/tagged/xbox-live) 上提出编程相关问题（如果你愿意）。
+ID@Xbox 计划中的开发人员还可以获得 Microsoft 提供的开发人员支持和促销帮助，以及一整套免费的专属白皮书，并访问开发人员技术论坛。 你可以继续使用 [MSDN 论坛](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev)，也可以使用“xbox live”标记在 [Stack Overflow](https://stackoverflow.com/questions/tagged/xbox-live) 上提出编程相关问题（如果你愿意）。
 
 ## <a name="microsoft-partners"></a>Microsoft 合作伙伴
 
@@ -67,7 +67,7 @@ ID@Xbox 计划中的开发人员还可以获得 Microsoft 提供的开发人员�
 
 ## <a name="feature-table"></a>功能表
 
-下表说明了适用于 Xbox Live 创意者计划和 [ID@Xbox](http://www.xbox.com/en-US/developers/id) 计划的功能。  
+下表说明了适用于 Xbox Live 创意者计划和 [ID@Xbox](https://www.xbox.com/en-US/developers/id) 计划的功能。  
 
 <table>
 

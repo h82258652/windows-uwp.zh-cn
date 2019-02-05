@@ -5,12 +5,12 @@ ms.date: 05/1/2018
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: f3e1d955ce7e70f2f2a454823020df38db66e47d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6b802dfa44f36768dc2446ee1d15bf9ca6d4f9f3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930425"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051040"
 ---
 # <a name="enable-or-disable-the-software-decoder-that-ships-with-windows"></a>启用或禁用 Windows 附带的软件解码器
 在 Windows 10 版本 1803 中，软件解码器默认安装和启用。  如果你不想使用相机条形码扫描仪，或者如果你已获取了使用 Windows.Devices.PointOfService.BarcodeScanner API 的第三方解码器且不希望两个同时使用，则可以禁用 Windows 附带的软件解码器。
@@ -46,7 +46,7 @@ Windows Registry Editor Version 5.00
 ```  
 
 > [!Warning] 
-> 如果注册表修改不正确，可能会发生严重问题。  为了增加保护，请在修改注册表前对其进行备份。  那么，如果发生问题，你也可以恢复注册表。  有关如何备份和恢复注册表的详细信息，请单击下面的文章编号以参阅 Microsoft 知识库中的文章： <br/><br/> [322756](http://support.microsoft.com/kb/322756) 如何备份和恢复 Windows 中的注册表。
+> 如果注册表修改不正确，可能会发生严重问题。  为了增加保护，请在修改注册表前对其进行备份。  那么，如果发生问题，你也可以恢复注册表。  有关如何备份和恢复注册表的详细信息，请单击下面的文章编号以参阅 Microsoft 知识库中的文章： <br/><br/> [322756](https://support.microsoft.com/kb/322756) 如何备份和恢复 Windows 中的注册表。
 
 > [!NOTE]
 > 内置于 Windows 10 的软件解码器提供 [**Digimarc Corporation**](https://www.digimarc.com/) 的成果。

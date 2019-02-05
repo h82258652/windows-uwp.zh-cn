@@ -6,12 +6,12 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 27325938ef159dfcb29de174064314ee21d3a3f5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 19cfec890d6a434a392ce08257cad6bbeee4cda1
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924233"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044980"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C\# 示例：应用、加载项和外部测试版的提交
 
@@ -29,7 +29,7 @@ ms.locfileid: "8924233"
 这些示例使用以下库：
 
 * Microsoft.WindowsAzure.Storage.dll。 此库在[用于 .NET 的 Azure SDK](https://azure.microsoft.com/downloads/) 中提供，或者可以通过安装 [WindowsAzure.Storage NuGet 程序包](https://www.nuget.org/packages/WindowsAzure.Storage)获取。
-* [Newtonsoft.Json](http://www.newtonsoft.com/json) 来自 Newtonsoft 的 NuGet 程序包。
+* [Newtonsoft.Json](https://www.newtonsoft.com/json) 来自 Newtonsoft 的 NuGet 程序包。
 
 ## <a name="main-program"></a>主计划
 
@@ -76,7 +76,7 @@ ms.locfileid: "8924233"
 2. 然后，该方法会 [创建新的加载项提交](create-an-add-on-submission.md)。
 3. 该方法会将包含提交图标的 ZIP 存档上传至 Azure Blob 存储。
 4. 接下来，它[提交到合作伙伴中心的新提交](commit-an-add-on-submission.md)。
-5. 最后，该方法定期[检查新提交的状态](get-status-for-an-add-on-submission.md)，直到其成功提交。
+5. 最后，它会定期[检查新提交的状态](get-status-for-an-add-on-submission.md)，直到其成功提交。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionCreateSample.cs#InAppProductSubmissionCreateSample)]

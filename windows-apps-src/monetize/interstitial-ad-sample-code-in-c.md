@@ -6,16 +6,16 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, 间隙, c#, 示例代码
 ms.localizationpriority: medium
-ms.openlocfilehash: a8276e1a9639b23a965c5a608fb951d1e1035133
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 075d98d49ba7e878abc7e800af84984bdb93e3a2
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947879"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045083"
 ---
 # <a name="interstitial-ad-sample-code-in-c"></a>C\# 间隙广告示例代码 #  
 
-本主题提供了显示间隙视频广告的基本 C# 和 XAML 通用 Windows 平台 (UWP) 应用的完整示例代码。 有关显示如何配置项目以使用此代码的分步说明，请参阅[间隙广告](interstitial-ads.md)。 有关完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
+本主题提供了显示间隙视频广告的基本 C# 和 XAML 通用 Windows 平台 (UWP) 应用的完整示例代码。 有关显示如何配置项目以使用此代码的分步说明，请参阅[间隙广告](interstitial-ads.md)。 有关完整示例项目，请参阅 [GitHub 上的广告示例](https://aka.ms/githubads)。
 
 ## <a name="code-example"></a>代码示例
 
@@ -39,5 +39,5 @@ ms.locfileid: "8947879"
  
 ## <a name="related-topics"></a>相关主题
 
-* [GitHub 上的广告示例](http://aka.ms/githubads)
+* [GitHub 上的广告示例](https://aka.ms/githubads)
  

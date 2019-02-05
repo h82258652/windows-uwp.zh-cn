@@ -7,26 +7,26 @@ ms.date: 11/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: d70dbc0dffc3763855924b8f7faca61ca2fb18f2
-ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
+ms.openlocfilehash: d782e8cd64cb976df964c72199964c1d349d527e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035398"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045656"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>了解用户配置文件语言和应用清单语言
 Windows 用户可以使用**设置** > **时间和语言** > **区域和语言**来配置首选显示语言的排序列表或一种首选显示语言。 某种语言可能会具有区域变体。 例如，可以选择西班牙使用的西班牙语、墨西哥使用的西班牙语、美国使用的西班牙语等。
 
 在**设置** > **时间和语言** > **区域和语言**中，用户还可以独立于语言指定他们在世界上的所在位置（称为地区）。 请注意，显示语言（以及区域变体）设置不是地区设置的决定因素，反之亦然。 例如，尽管某位用户可能目前居住在法国，但选择的却是西班牙语（墨西哥）作为首选 Windows 显示语言。
 
-对于 UWP 应用，语言以 [BCP-47 语言标记](http://go.microsoft.com/fwlink/p/?linkid=227302)表示。 例如，BCP-47 语言标记“en-US”对应**设置**中的英语（美国）。 相应的 UWP API 将接受并返回 BCP-47 语言标记的字符串表示形式。
+对于 UWP 应用，语言以 [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)表示。 例如，BCP-47 语言标记“en-US”对应**设置**中的英语（美国）。 相应的 UWP API 将接受并返回 BCP-47 语言标记的字符串表示形式。
 
-另请参阅 [IANA 语言子标记注册表](http://go.microsoft.com/fwlink/p/?linkid=227303)。
+另请参阅 [IANA 语言子标记注册表](https://go.microsoft.com/fwlink/p/?linkid=227303)。
 
 以下三部分定义了术语“用户配置文件语言列表”、“应用部件清单语言列表”和“应用运行时语言列表”。 我们将在此主题和此功能区域中的其他主题中使用以上术语，因此了解它们的含义非常重要。
 
 ## <a name="user-profile-language-list"></a>用户配置文件语言列表
-用户配置文件语言列表是用户在**设置** > **时间和语言** > **区域和语言** > **语言**中配置的列表的名称。 在代码中，可以使用 [**GlobalizationPreferences.Languages**](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages) 属性将用户配置文件语言列表作为字符串只读列表进行访问，其中每个字符串均为单个 [BCP-47 语言标记](http://go.microsoft.com/fwlink/p/?linkid=227302)，例如“en-US”或“ja-JP”。
+用户配置文件语言列表是用户在**设置** > **时间和语言** > **区域和语言** > **语言**中配置的列表的名称。 在代码中，可以使用 [**GlobalizationPreferences.Languages**](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages) 属性将用户配置文件语言列表作为字符串只读列表进行访问，其中每个字符串均为单个 [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)，例如“en-US”或“ja-JP”。
 
 ```csharp
     IReadOnlyList<string> userLanguages = Windows.System.UserProfile.GlobalizationPreferences.Languages;
@@ -70,7 +70,7 @@ Windows 用户可以使用**设置** > **时间和语言** > **区域和语言**
 
 更具体地说，应用运行时语言列表是由以下项组成的。
 
-1.  **（可选）主要语言替代**。 [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride) 是一个简单的替代设置，适用于让用户独立选择语言的应用，或者有充分理由替代默认语言选择的应用。 若要了解详细信息，请参阅[应用程序资源和本地化示例](http://go.microsoft.com/fwlink/p/?linkid=231501)。
+1.  **（可选）主要语言替代**。 [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride) 是一个简单的替代设置，适用于让用户独立选择语言的应用，或者有充分理由替代默认语言选择的应用。 若要了解详细信息，请参阅[应用程序资源和本地化示例](https://go.microsoft.com/fwlink/p/?linkid=231501)。
 2.  **受应用支持的用户语言**。 这是由应用部件清单语言列表筛选的用户配置文件语言列表。 通过受应用支持的语言筛选用户的语言可以保持以下对象之间的一致性：软件开发工具包 (SDK)、类库、从属框架包以及应用。
 3.  **如果 1 和 2 为空，则使用默认语言或第一种受应用支持的语言**。 如果用户配置文件语言列表不包含应用支持的任何语言，应用运行时语言则为应用支持的第一种语言。
 
@@ -98,7 +98,7 @@ Windows 用户可以使用**设置** > **时间和语言** > **区域和语言**
 **注意**即使你的应用的默认语言的资源必须指定语言限定符。 例如，如果你的应用的默认语言是英语 （美国），然后限定为资源`\Assets\Images\en-US\logo.png`。
 
 - Windows 执行复杂的匹配，包括跨区域变体，如 EN-US 和 EN-GB。 因此包括为相应的地区子标记。 请参阅[资源管理系统匹配语言标记的方式](../../app-resources/how-rms-matches-lang-tags.md)。
-- 当没有为语言定义禁止脚本值时，请在限定符中指定的语言脚本子标记。 例如，而不是 ZH-CN 或 ZH-TW，使用 Zh-hant、 不同的 ZH-TW 或 Zh-hans （有关详细信息，请参阅[IANA 语言子标记注册表](http://go.microsoft.com/fwlink/p/?linkid=227303)）。
+- 当没有为语言定义禁止脚本值时，请在限定符中指定的语言脚本子标记。 例如，而不是 ZH-CN 或 ZH-TW，使用 Zh-hant、 不同的 ZH-TW 或 Zh-hans （有关详细信息，请参阅[IANA 语言子标记注册表](https://go.microsoft.com/fwlink/p/?linkid=227303)）。
 - 对于只有一种标准方言的语言，没有无需包括地区限定符。 例如，而不是 JA-JP 使用 ja。
 - 某些工具和其他组件（如机器翻译程序）可能会发现特定的语言标记（如区域方言信息）在理解数据方面很有帮助。
 
@@ -208,12 +208,12 @@ Windows 用户可以使用**设置** > **时间和语言** > **区域和语言**
 * [GeographicRegion](/uwp/api/windows.globalization.geographicregion?branch=live)
 
 ## <a name="related-topics"></a>相关主题
-* [BCP-47 语言标记](http://go.microsoft.com/fwlink/p/?linkid=227302)
-* [IANA 语言子标记注册表](http://go.microsoft.com/fwlink/p/?linkid=227303)
+* [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [IANA 语言子标记注册表](https://go.microsoft.com/fwlink/p/?linkid=227303)
 * [定制语言、比例、高对比度和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [支持的语言](../../publish/supported-languages.md)
 * [全球化日期/时间/数字格式](use-global-ready-formats.md)
 * [资源管理系统匹配语言标记的方式](../../app-resources/how-rms-matches-lang-tags.md)
 
 ## <a name="samples"></a>示例
-* [应用程序资源和本地化示例](http://go.microsoft.com/fwlink/p/?linkid=231501)
+* [应用程序资源和本地化示例](https://go.microsoft.com/fwlink/p/?linkid=231501)

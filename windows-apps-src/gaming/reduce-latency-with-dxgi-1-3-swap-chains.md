@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 延迟, dxgi, 交换链, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: ec315cc9ed59a4b3272151f2ee1bb4bde8d9df10
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: acb5c58eebafa53fe140442550356f7eb7534efe
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942804"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047166"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>利用 DXGI 1.3 交换链减少延迟
 
@@ -35,7 +35,7 @@ ms.locfileid: "8942804"
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **注意**与某些标志，此标记不能将添加或删除使用[**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577)。 如果此标记的设置方式与创建交换链时不同，DXGI 会返回一个错误代码。
+> **注意**与某些标志，此标记不能添加或删除使用[**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577)。 如果此标记的设置方式与创建交换链时不同，DXGI 会返回一个错误代码。
 
  
 
@@ -147,7 +147,7 @@ void DX::DeviceResources::WaitOnSwapChain()
 ## <a name="related-topics"></a>相关主题
 
 
-* [DirectXLatency 示例](http://go.microsoft.com/fwlink/p/?LinkID=317361)
+* [DirectXLatency 示例](https://go.microsoft.com/fwlink/p/?LinkID=317361)
 * [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309)
 * [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036)
 * [**Windows.System.Threading**](https://msdn.microsoft.com/library/windows/apps/br229642)

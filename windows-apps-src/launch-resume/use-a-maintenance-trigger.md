@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 87df67c480c18ef2c75a9c63d538f0107908ca10
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 53107ca6add4193737ab0d00497bbe6324bee44f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943352"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047006"
 ---
 # <a name="use-a-maintenance-trigger"></a>使用维护触发器
 
@@ -36,7 +36,7 @@ ms.locfileid: "8943352"
 创建新的 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 对象。 第二个参数 *OneShot* 指定维护任务是只运行一次还是继续定期运行。 如果 *OneShot* 设置为 true，则第一个参数 (*FreshnessTime*) 会指定在计划后台任务之前需等待的分钟数。 如果 *OneShot* 设置为 false，则 *FreshnessTime* 会指定后台任务运行的频率。
 
 > [!NOTE]
-> 如果*FreshnessTime*设置为少于 15 分钟，在尝试注册后台任务时将引发异常。
+> 如果*FreshnessTime*设置为少于 15 分钟，在尝试注册后台任务时，会引发异常。
 
 此示例代码创建运行一小时一次的触发器。
 
@@ -129,4 +129,4 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
 * [调试后台任务](debug-a-background-task.md)
-* [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](https://go.microsoft.com/fwlink/p/?linkid=254345)

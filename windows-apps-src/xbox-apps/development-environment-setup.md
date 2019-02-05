@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c812cea510865da68760788a723830fe0940c21
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2c1d8c6a33bd7d9249b5000767ece154ab7f8776
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920177"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046001"
 ---
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>在 Xbox 开发环境上设置你的 UWP
 
@@ -123,6 +123,6 @@ Xbox 开发环境上的通用 Windows 平台 (UWP) 由通过本地网络连接�
 ## <a name="see-also"></a>另请参阅
 - [Xbox One 开发人员模式激活](devkit-activation.md)  
 - [适用于 Windows 10 的下载和工具](https://dev.windows.com/downloads)  
-- [Windows 预览体验计划](http://go.microsoft.com/fwlink/?LinkId=780552)  
+- [Windows 预览体验计划](https://go.microsoft.com/fwlink/?LinkId=780552)  
 - [Xbox One 工具简介](introduction-to-xbox-tools.md) 
 - [Xbox One 上的 UWP](index.md)

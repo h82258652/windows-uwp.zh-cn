@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 107c904dc4b89941c0f453efd830504d2d032534
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7ed69dc912e916f7964c125550621c22dfcd9555
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929120"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049059"
 ---
 # <a name="show-multiple-views-for-an-app"></a>显示应用的多个视图
 
@@ -75,7 +75,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 2.  跟踪新视图的 [**Id**](https://msdn.microsoft.com/library/windows/apps/dn281120)。 稍后使用此选项来显示视图。
 
-    你可能需要考虑在你的应用中生成一些基础结构以帮助跟踪你创建的视图。 有关示例，请参阅 [MultipleViews 示例](http://go.microsoft.com/fwlink/p/?LinkId=620574)中的 `ViewLifetimeControl` 类。
+    你可能需要考虑在你的应用中生成一些基础结构以帮助跟踪你创建的视图。 有关示例，请参阅 [MultipleViews 示例](https://go.microsoft.com/fwlink/p/?LinkId=620574)中的 `ViewLifetimeControl` 类。
 
     ```csharp
     int newViewId = 0;
@@ -83,7 +83,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 3.  在新线程上，填充窗口。
 
-    使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法在新视图的 UI 线程上安排工作。 使用 [lambda 表达式](http://go.microsoft.com/fwlink/p/?LinkId=389615)将函数作为参数传递到 **RunAsync** 方法。 你在 lambda 函数中执行的工作将在新视图的线程上进行。
+    使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法在新视图的 UI 线程上安排工作。 使用 [lambda 表达式](https://go.microsoft.com/fwlink/p/?LinkId=389615)将函数作为参数传递到 **RunAsync** 方法。 你在 lambda 函数中执行的工作将在新视图的线程上进行。
 
     在 XAML中，通常向 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 的 [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051) 属性添加 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)，然后将 **Frame** 导航到你已为其定义应用内容的 XAML [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)。 有关详细信息，请参阅[两个页面之间的对等导航](../basics/navigate-between-two-pages.md)
 

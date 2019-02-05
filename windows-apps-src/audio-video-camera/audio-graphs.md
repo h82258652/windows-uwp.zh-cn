@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b360425755a7dc2249a284d9f68761ce3c783ef
-ms.sourcegitcommit: 92ce837841ae8f16d203e919dbf5c4436bee56e5
+ms.openlocfilehash: da1dc2ab7444bf65074d9c7ccc615aaee07fdcff
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "9015252"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046350"
 ---
 # <a name="audio-graphs"></a>音频图
 
@@ -32,7 +32,7 @@ ms.locfileid: "9015252"
 其他方案通过向音频图添加音频效果实现。 音频图中的每个节点都可以通过零或更多种音频效果来填充， 音频效果会对通过该节点的音频执行音频处理。 提供回音、均衡器、限制和混响等几种内置效果， 只需几行代码即可将其附加到音频节点。 你还可以创建其效果与内置效果完全相同、你自己的自定义音频效果。
 
 > [!NOTE]
-> [AudioGraph UWP 示例](http://go.microsoft.com/fwlink/?LinkId=619481)可实现本概述中所讨论的代码。 你可以下载该示例以查看上下文中的代码，或将该示例用作你自己的应用的起点。
+> [AudioGraph UWP 示例](https://go.microsoft.com/fwlink/?LinkId=619481)可实现本概述中所讨论的代码。 你可以下载该示例以查看上下文中的代码，或将该示例用作你自己的应用的起点。
 
 ## <a name="choosing-windows-runtime-audiograph-or-xaudio2"></a>选择 Windows 运行时 AudioGraph 或 XAudio2
 

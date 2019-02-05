@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0897bd2636f13cfb02568847c0ba40b2d6b218f3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: dbba9dbdf6bc3df02657cc03b9264e74664318b4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936461"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045160"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>针对外形规格和 UX 进行移植 WindowsPhone silverlight 移植到 UWP
 
@@ -30,7 +30,7 @@ Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常
 
 客观来讲，屏幕应以英寸为测量单位，并且应采用物理（原始）像素。 知道这两个指标后，你便可以知道一英寸可以容纳的像素数。 这是像素密度，既可称为 DPI（每英寸点数），又可称为 PPI（每英寸像素）。 DPI 的倒数近似于像素的物理大小。 像素密度也称为*分辨率*，尽管该术语通常用于表示像素计数。
 
-由于观看距离增加，所有这些目标指标*看起来*都会更小，而且它们将解析为屏幕的*有效大小*及其*有效分辨率*。 以下设备与眼睛的距离按从近到远的顺序依次为：手机、平板电脑和 PC 显示器、[Surface Hub](http://www.microsoft.com/microsoft-surface-hub) 设备和电视。 若要进行补偿，在客观上设备距离通常应大于观看距离。 当设置 UI 元素的大小时，应采用称为有效像素 (epx) 的单位来设置这些大小。 和 windows 10 将考虑使用 DPI 和设备中的典型观看距离来计算 UI 元素以物理像素为单位，以提供最佳的观看体验的最佳大小。 请参阅[视图/有效像素、观看距离和比例系数](wpsl-to-uwp-porting-xaml-and-ui.md)。
+由于观看距离增加，所有这些目标指标*看起来*都会更小，而且它们将解析为屏幕的*有效大小*及其*有效分辨率*。 以下设备与眼睛的距离按从近到远的顺序依次为：手机、平板电脑和 PC 显示器、[Surface Hub](https://www.microsoft.com/microsoft-surface-hub) 设备和电视。 若要进行补偿，在客观上设备距离通常应大于观看距离。 当设置 UI 元素的大小时，应采用称为有效像素 (epx) 的单位来设置这些大小。 和 windows 10 将考虑使用 DPI 和设备中的典型观看距离来计算 UI 元素以物理像素为单位，以提供最佳的观看体验的最佳大小。 请参阅[视图/有效像素、观看距离和比例系数](wpsl-to-uwp-porting-xaml-and-ui.md)。
 
 即便如此，我们仍建议你用多种不同的设备来测试你的应用，以便你可以自行确认每种体验。
 
@@ -56,7 +56,7 @@ Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常
 
 ## <a name="input-modalities"></a>输入形式
 
-WindowsPhone Silverlight 界面是触摸特定的。 当然，已移植应用的界面还应该支持触摸，但是你可以选择支持除此之外的其他输入形式，例如鼠标和键盘。 在 UWP 中，将鼠标、笔和触控输入统一称为*指针输入*。 有关详细信息，请参阅[处理指针输入](https://msdn.microsoft.com/library/windows/apps/mt404610)和[键盘交互](https://msdn.microsoft.com/library/windows/apps/mt185607)。
+WindowsPhone Silverlight 界面是触摸专用界面。 当然，已移植应用的界面还应该支持触摸，但是你可以选择支持除此之外的其他输入形式，例如鼠标和键盘。 在 UWP 中，将鼠标、笔和触控输入统一称为*指针输入*。 有关详细信息，请参阅[处理指针输入](https://msdn.microsoft.com/library/windows/apps/mt404610)和[键盘交互](https://msdn.microsoft.com/library/windows/apps/mt185607)。
 
 ## <a name="maximizing-markup-and-code-re-use"></a>最大程度地重复使用标记和代码
 
@@ -64,7 +64,7 @@ WindowsPhone Silverlight 界面是触摸特定的。 当然，已移植应用的
 
 ## <a name="more-info-and-design-guidelines"></a>详细信息和设计指南
 
--   [设计 UWP 应用](http://dev.windows.com/design)
+-   [设计 UWP 应用](https://dev.windows.com/design)
 -   [字体指南](https://msdn.microsoft.com/library/windows/apps/hh700394)
 -   [不同外观规格规划](https://msdn.microsoft.com/library/windows/apps/dn958435)
 

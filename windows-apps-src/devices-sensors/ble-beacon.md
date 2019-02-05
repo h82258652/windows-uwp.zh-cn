@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
-ms.openlocfilehash: e9eafde0596ad3156f52a7a2f0a1566444a9836a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b1c8271c8066304dce355cf50afd4509173eed3e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918955"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046786"
 ---
 # <a name="bluetooth-le-advertisements"></a>蓝牙低能耗广告
 
@@ -29,7 +29,7 @@ ms.locfileid: "8918955"
 -   [广告观察程序](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.aspx)：侦听附近信标并根据负载或邻近感应将它们过滤掉。  
 -   [广告发布程序](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher.aspx)：定义负载使 Windows 能够以开发人员的名义发布广告。  
 
-Github 上的[蓝牙广告示例](http://go.microsoft.com/fwlink/p/?LinkId=619990)中有完整的示例代码。
+Github 上的[蓝牙广告示例](https://go.microsoft.com/fwlink/p/?LinkId=619990)中有完整的示例代码。
 
 ## <a name="basic-setup"></a>基本设置
 
@@ -43,7 +43,7 @@ Github 上的[蓝牙广告示例](http://go.microsoft.com/fwlink/p/?LinkId=61999
 
 蓝牙 LE 广告允许你的设备不断以信标方式发出特定负载，称为广告。 如果任何附近支持蓝牙 LE 的设备都设置为侦听此特定广告，则这些设备可以看到此广告。
 
-> **注意**： 出于用户隐私，广告的生命周期被绑定到，你的应用。 你可以创建 BluetoothLEAdvertisementPublisher，并在后台任务中为后台广告调用“开始”。 有关后台任务的详细信息，请参阅[启动、恢复和后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/index)。
+> **注意**： 出于用户隐私，广告的生命周期被绑定到应用。 你可以创建 BluetoothLEAdvertisementPublisher，并在后台任务中为后台广告调用“开始”。 有关后台任务的详细信息，请参阅[启动、恢复和后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/index)。
 
 ### <a name="basic-publishing"></a>基本发布
 

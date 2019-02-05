@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 网络, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 2697564e703cfe290e33f204125346f3e8bad8ac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3d9675d59a727829946a7ef2a7d4f3780db36bee
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947759"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044797"
 ---
 # <a name="networking-for-games"></a>游戏网络
 
@@ -388,7 +388,7 @@ using namespace Windows::Web::Http;
 
 **示例**
 
-* [DatagramSocket 示例](http://go.microsoft.com/fwlink/p/?LinkID=243037)
+* [DatagramSocket 示例](https://go.microsoft.com/fwlink/p/?LinkID=243037)
 * [HttpClient 示例]( http://go.microsoft.com/fwlink/p/?linkid=242550)
-* [邻近感应示例](http://go.microsoft.com/fwlink/p/?linkid=245082)
-* [StreamSocket 示例](http://go.microsoft.com/fwlink/p/?linkid=243037)
+* [邻近感应示例](https://go.microsoft.com/fwlink/p/?linkid=245082)
+* [StreamSocket 示例](https://go.microsoft.com/fwlink/p/?linkid=243037)

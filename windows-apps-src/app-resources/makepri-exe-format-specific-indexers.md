@@ -6,19 +6,19 @@ ms.date: 10/18/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: e6938807a589337489f07f5865e02a580a72dae2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1a245c4ec0280f687cf34e85123960e64fe36a57
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925854"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044624"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>MakePri.exe 特定格式索引器
 
 本主题介绍 [MakePri.exe](compile-resources-manually-with-makepri.md) 工具生成其资源索引时所使用的特定格式索引器。
 
 > [!NOTE]
-> 检查安装 Windows 软件开发工具包时**适用于 UWP 管理应用的 Windows SDK**选项时，MakePri.exe 会安装。 它安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及中名为其他体系结构的文件夹）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> MakePri.exe 在安装时检查安装 Windows 软件开发工具包时**适用于 UWP 管理应用的 Windows SDK**选项。 安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及中名为其他体系结构的文件夹）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
 MakePri.exe 通常与 `new`、`versioned` 或 `resourcepack` 命令一起使用。 请参阅 [MakePri.exe 命令行选项](makepri-exe-command-options.md)。 在这些情况下，它索引源文件以生成资源索引。 MakePri.exe 使用各种单独的索引器读取不同的源资源文件或资源容器。 最简单的索引器是文件夹索引器，它索引文件夹的内容，如 `.jpg` 或 `.png` 图像。
 
@@ -311,7 +311,7 @@ ResJSON 索引器由 RESJSON 的 `type` 属性进行标识。 它索引 `.resjso
 </xs:schema>\
 ```
 
-`.resjson` 文件包含 JSON 文本（请参阅 [JavaScript 对象表示法 (JSON) 的应用程序/json 媒体类型](http://www.ietf.org/rfc/rfc4627.txt)）。 文件必须包含一个具有分层属性的简单 JSON 对象。 每个属性必须是另外一个 JSON 对象或字符串值。
+`.resjson` 文件包含 JSON 文本（请参阅 [JavaScript 对象表示法 (JSON) 的应用程序/json 媒体类型](https://www.ietf.org/rfc/rfc4627.txt)）。 文件必须包含一个具有分层属性的简单 JSON 对象。 每个属性必须是另外一个 JSON 对象或字符串值。
 
 名称以下划线（“_”）开头的 JSON 属性不编译到最终 PRI 文件中，但保留在日志文件中。
 
@@ -400,4 +400,4 @@ ResW 索引器由 RESW 的 `type` 属性进行标识。 它索引 `.resw` 文件
 * [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)
 * [MakePri.exe 命令行选项](makepri-exe-command-options.md)
 * [MakePri.exe 配置文件](makepri-exe-configuration.md)
-* [JavaScript 对象表示法 (JSON) 的应用程序/json 媒体类型](http://www.ietf.org/rfc/rfc4627.txt)
+* [JavaScript 对象表示法 (JSON) 的应用程序/json 媒体类型](https://www.ietf.org/rfc/rfc4627.txt)

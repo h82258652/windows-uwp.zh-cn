@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08fab2b312fa4ea79d03f350d62070e205d535f8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 021e3142a4e94f762cc48dbc86905dcf0b658772
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920727"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045696"
 ---
 # <a name="launch-the-windows-maps-app"></a>启动 Windows 地图应用
 
@@ -20,7 +20,7 @@ ms.locfileid: "8920727"
 
 了解如何从你的应用启动 Windows 地图应用。 本主题介绍了 **bingmaps:、*ms-drive-to:、ms-walk-to:** 和 **ms-settings:** 统一资源标识符 (URI) 方案。 使用这些 URI 方案来将 Windows 地图应用启动为特定的地图、路线和搜索结果或从“设置”应用下载 Windows 地图离线地图。
 
-**提示** 若要了解有关从你的应用启动 Windows 地图应用的详细信息，请从 GitHub 上的 [Windows 通用示例存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)中下载[通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)。
+**提示** 若要了解有关从你的应用启动 Windows 地图应用的详细信息，请从 GitHub 上的 [Windows 通用示例存储库](https://go.microsoft.com/fwlink/p/?LinkId=619979)中下载[通用 Windows 平台 (UWP) 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)。
 
 ## <a name="introducing-uris"></a>URI 简介
 
@@ -328,7 +328,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>如果给出一条不完整的路线，则不会绘制任何路线。</p>
 <p>通过与 **mode** 参数结合使用，指定交通的模式（驾车、公交或步行）。 如果未指定 **mode**，将使用交通首选项的用户的模式提供路线。</p>
 <div class="alert">
-**注意**如果由**pos**参数值指定位置可以针对某个位置使用标题。 将显示标题，而不是显示纬度和经度。
+**注意**如果**pos**参数值指定位置可以针对某个位置使用标题。 将显示标题，而不是显示纬度和经度。
 </div>
 <div>
  

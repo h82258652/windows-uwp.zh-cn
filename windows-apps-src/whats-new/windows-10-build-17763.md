@@ -6,22 +6,22 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 75cde09068bcc310bcd5be2033227fa620b96f53
-ms.sourcegitcommit: 1322dd5478026176d7b3e635ea0046de3f744656
+ms.openlocfilehash: 2b172844e75d9af3d0112e03f155708af3ca6bed
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "8996565"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045864"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>对于开发人员，版本 17763，什么是 Windows 10 中的新增功能
 
-Windows 10 版本 17763 (也称为 2018 年 10 月更新或版本 1809年)，在与 Visual Studio 2017 和更新的 SDK 结合使用，提供工具、 功能和体验用于打造出色的通用 Windows 平台应用。 只需在 Windows10 上[安装工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+Windows 10 版本 17763 (也称为 2018 年 10 月更新或版本 1809年)，在与 Visual Studio 2017 和更新的 SDK 结合使用，提供工具、 功能和体验用于打造出色的通用 Windows 平台应用。 只需在 Windows10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
-该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关添加到 Windows SDK 的新命名空间的完整列表，请参阅[Windows 10 版本 17763 API 更改](windows-10-build-17763-api-diff.md)。 有关 Windows 10 突出功能的详细信息，请参阅 [Windows 10 中的酷炫功能](http://go.microsoft.com/fwlink/?LinkId=823181)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的详尽概述。
+该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关添加到 Windows SDK 的新命名空间的完整列表，请参阅[Windows 10 版本 17763 API 更改](windows-10-build-17763-api-diff.md)。 有关 Windows 10 突出功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的详尽概述。
 
 ## <a name="design--ui"></a>设计和 UI
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 应用图标和徽标 | [应用图标和徽标页面](../design/style/app-icons-and-logos.md)已重新编写，现在显示的最新的 Visual Studio 图标工具并将图像添加到你的应用一览 Microsoft 应用商店中提供的信息。
 设计登录页面 | [更新登录页的设计](https://developer.microsoft.com/windows/apps/design)都有一个一览概述 UWP 设计区域和 Fluent 设计添加的最新功能的信息。
@@ -38,26 +38,26 @@ Windows UI 库 | [Windows UI 库](https://aka.ms/winui-docs)是一组提供适�
 
 ## <a name="develop-windows-apps"></a>开发 Windows 应用
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 条形码扫描仪 | 已重新组织，并改进了更多详细信息和代码段的[条形码扫描仪](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner)文档。 我们还增加了新的主题中，[获取并了解条形码数据](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner-scan-data)，这就解释了如何获取和使用条形码扫描仪中的数据。
 C++/WinRT | [C + + WinRT](https://aka.ms/cppwinrt)包含许多新功能、 更改和修复了此版本。 有新的函数和基本类，你在实现自己的[集合属性和集合类型](/windows/uwp/cpp-and-winrt-apis/collections); 支持你现在可以使用 C + 使用[{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) XAML 标记扩展 + WinRT 运行时类 （如代码示例，请参阅[数据绑定概述](/windows/uwp/data-binding/data-binding-quickstart)）。 有关的所有新的和更改在此版本中的完整说明，请参阅[新增 C + + WinRT](../cpp-and-winrt-apis/news.md)。</br></br>其他新 C + + WinRT 内容包括： [XAML 自定义控件](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl);[创作 COM 组件](/windows/uwp/cpp-and-winrt-apis/author-coclasses);[值类别](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories);和[强和弱引用](../cpp-and-winrt-apis/weak-references.md)。
 C + + WinRT 代码示例 | 我们添加了 250 C + + WinRT 代码一览主题中我们的文档，附带的现有 C + + CX 代码示例。
 投稿指南 | 我们已为我们的 UWP 文档更新[我们提供的指南](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md)。 此新指南阐明的工作流和我们的文档的外部贡献的期望。
 DirectX 图形 Infastructure (DXGI) | 新文档已添加表示缺失的 DXGI Api，并显示在 Windows 10 上，我们已提供有关的最佳做法的文章。 </br> * [为了获得最佳性能，使用 DXGI 翻转模型](https://docs.microsoft.com/windows/desktop/direct3ddxgi/for-best-performance--use-dxgi-flip-model)： 提供如何最大限度提高性能和现代版本的 Windows 上演示文稿堆栈中的效率的指南。 </br> * [IDXGIOutput6::CheckHardwareCompositionSupport 方法](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nf-dxgi1_6-idxgioutput6-checkhardwarecompositionsupport)： 通知应用程序，受支持硬件拉伸。 </br> * [DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS 枚举](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/ne-dxgi1_6-dxgi_hardware_composition_support_flags)： 描述支持的硬件合成哪些级别。
-入门 | 大大我们[要开始使用](../get-started/index.md)的内容的增加了已使用新的主题，提供有关如何开发人员新 Windows 10 可能完成下列常见任务的信息和指南： </br> * [构建表单](../get-started/construct-form-learning-track.md) </br> * [以列表形式显示客户](../get-started/display-customers-in-list-learning-track.md) </br> * [保存和加载设置](../get-started/settings-learning-track.md) </br> * [使用文件](../get-started/fileio-learning-track.md)
+即刻体验 | 大大我们[要开始使用](../get-started/index.md)的内容的增加了已使用新的主题，提供有关如何开发人员新 Windows 10 可能完成下列常见任务的信息和指南： </br> * [构建表单](../get-started/construct-form-learning-track.md) </br> * [以列表形式显示客户](../get-started/display-customers-in-list-learning-track.md) </br> * [保存和加载设置](../get-started/settings-learning-track.md) </br> * [使用文件](../get-started/fileio-learning-track.md)
 地图样式表编辑器 | 使用新[地图样式表编辑器](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft?rtc=1#activetab=pivot:overviewtab)应用程序以交互方式自定义你将添加到你的应用程序的地图的外观。
 Microsoft 学习 | 新的[Microsoft 了解站点](https://www.microsoft.com/learning/default.aspx)向 Microsoft 开发人员提供新动手学习和培训机会。 目前，Microsoft 了解提供培训和认证的 Microsoft 365、 Microsoft Azure、 Office 365 和 Windows Server。
-记事本 | [已更新，记事本](http://aka.ms/ant-man)，添加缩放、 环绕查找/替换，并且对 Unix/Linux （换行符） 和 Mac （回车） 行尾的支持。
+记事本 | [已更新，记事本](https://aka.ms/ant-man)，添加缩放、 环绕查找/替换，并且对 Unix/Linux （换行符） 和 Mac （回车） 行尾的支持。
 Project Rome | 现在，[项目 rome](https://docs.microsoft.com/windows/project-rome/)跨受支持的平台和 Sdk 提供一致的编程体验。 </br>  新[Microsoft Graph 通知](https://developer.microsoft.com/graph/docs/concepts/notifications-concept-overview)使用项目 rome 产品/服务以用户为中心的跨平台通知平台为你的应用。
-屏幕截图 | 新的[URI 方案](../launch-resume/launch-screen-snipping.md)允许你的应用以编程方式打开新的代码段，或启动特定注释的图像的代码段和草图应用。
+屏幕截图 | 新的[URI 方案](../launch-resume/launch-screen-snipping.md)允许你的应用以编程方式打开新的代码段，或启动特定注释的图像的代码段 & 草图应用。
 在桌面应用程序的 UWP 控件 | Windows 10 现在可以在 WPF、 Windows 窗体和 c + + Win32 桌面应用程序中使用 UWP 控件。 这意味着你可以增强的外观、 体验和功能的现有桌面应用程序将仅可通过 UWP 控件，如 Windows Ink 和支持 Fluent 设计系统的控件的最新 Windows 10 UI 功能。 此功能称为*XAML 群岛*。 </br> 我们提供几种方法用于在你的应用程序，具体取决于你所使用的应用程序平台中的 XAML 群岛。 WPF 和 Windows 窗体应用程序可以使用一组[Windows 社区工具包](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)提供面向设计器的开发体验的控件。 C + + Win32 应用程序必须[Windows.UI.Xaml.Hosting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting)命名空间中使用*UWP XAML 托管 API* 。 有关详细信息，请参阅[桌面应用程序中的 UWP 控件](../xaml-platform/xaml-host-controls.md)。 </br> **注意：** 作为开发人员预览版当前可用的 Api 和控件应能使 XAML 群岛。 尽管我们鼓励你试用它们在原型代码中现在，我们不建议你使用它们在生产代码中这一次。
 Windows 机器学习 | [Windows 机器学习](https://docs.microsoft.com/windows/ai/)已现在正式启动，为尖端机器学习模型提供更快地分析和支持等功能。 若要支持想要将其集成到其应用程序开发人员，我们创建了一个新文档站点具有多个新的和更新的资源： </br> * [教程： 创建 Windows 机器学习桌面应用程序 （c + +）](https://docs.microsoft.com/windows/ai/get-started-desktop)： 本教程介绍如何建立适用于桌面的简单 Windows ML 应用程序。 </br> * [教程： 创建 Windows 机器学习 UWP 应用程序 (C#)](https://docs.microsoft.com/windows/ai/get-started-uwp)： 在此分步教程中使用 Windows ML 创建第一个 UWP 应用程序。 </br> * [Windows.AI.MachineLearning Namespace](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning)： 已更新为最新版本的 Windows 10 SDK API 参考和开发人员现在可以使用此 API 的 Win32 和 UWP 应用程序。
 Windows Mixed Reality | 开发人员现在可以将受硬件保护的请求后缓冲纹理如果受显示硬件，允许应用程序使用 PlayReady 等来源的受硬件保护的内容。 硬件保护支持和设置是适用于通过使用新属性[Windows.Graphics.Holographic.HolographicCamera](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera)，主图层，用于通过[四层Windows.Graphics.Holographic.HolographicQuadLayerUpdateParameters](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicquadlayerupdateparameters)。
 
 ## <a name="iot-core"></a>IoT Core
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 AssignedAccessSettings | [AssignedAccessSettings 类](https://docs.microsoft.com/uwp/api/windows.system.userprofile.assignedaccesssettings)支持调用不同的方法和属性来访问用户的分配的访问权限设置为特定设备。
 默认应用概述 | [Windows 10 IoT 核心版默认应用](https://docs.microsoft.com/windows/iot-core/develop-your-app/iotcoredefaultapp)已更新的新特性和功能，例如，天气、 墨迹书写和音频。
@@ -69,7 +69,7 @@ Windows.System.Update | 新[Windows.System.Update 命名空间](https://docs.mic
 
 ## <a name="web-development"></a>Web 开发
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 EdgeHTML 18 | Windows 10 2018 年 10 月更新海上与[EdgeHTML 18](https://docs.microsoft.com/microsoft-edge/dev-guide)，Microsoft Edge 浏览器和适用于 UWP 应用的 JavaScript 引擎最新的更新。 EdgeHTML 18 带来了对 Web 身份验证 API、 新 web 视图控件功能的详细信息的现代化和扩展支持 ！ 在工具方面，EdgeHTML 18 Edge DevTools 和 Edge DevTools 协议带来 WebDriver 的新功能和自动更新和增强功能。 有关所有详细信息，请查看[EdgeHTML 18 中的新](https://docs.microsoft.com/microsoft-edge/dev-guide)和[最新的 Windows 10 中的 DevTools 更新 (EdgeHTML 18)](https://docs.microsoft.com/microsoft-edge/devtools-guide/whats-new) 。
 渐进式 Web 应用 | Windows 10 JavaScript 应用 （ *WWAHost.exe*进程中运行的 web 应用） 现在支持启动才能激活任何视图是一个可选[每个应用程序背景脚本](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide#progressive-web-apps)和过程的持续时间内运行。 与此，可以监视和修改导航、 在导航之间跟踪状态、 监视导航错误，以及在视图激活之前运行代码。 如果指定为[`StartPage`](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema2010-v2/element-application)在[应用清单](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest)你，每个应用的视图 (windows) 公开给作为的新实例脚本[`WebUIView`](https://docs.microsoft.com/en-us/uwp/api/windows.ui.webui.webuiview)类，作为一般 (Win32) [web 视图](https://docs.microsoft.com/en-us/uwp/api/windows.web.ui.iwebviewcontrol)中提供相同的事件、 属性和方法。
@@ -78,7 +78,7 @@ WebVR | 我们已主要更新中[WebVR 开发人员指南](https://docs.microsof
 
 ## <a name="publish--monetize-windows-apps"></a>发布 Windows 应用并实现盈利
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 MSIX | [MSIX](https://docs.microsoft.com/windows/msix/overview)是提供对所有 Windows 应用的现代打包体验的新 Windows 应用包格式。 开放源代码 MSIX 格式同时启用现代部署功能保留现有包的功能。
 MSIX 打包工具 | 使用新[MSIX 打包工具](https://docs.microsoft.com/windows/msix/mpt-overview)） 可以将现有桌面应用程序以 MSIX 格式重新打包即使没有访问其源代码。 它可以运行命令行中，或通过其交互式 UI。
@@ -97,11 +97,11 @@ C + + /winrt 是一种的创作和使用 Windows 运行时 Api 的新方法。 �
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>要开始使用适用于开发人员： 创建和自定义 Windows 10 上的表单
 
-我们的[入门文档](../get-started/index.md)面向 Windows 开发人员现在提供基本应用开发任务动手的体验。 此视频将指导你通过一个这些主题的链接，并介绍有关在应用中创建窗体 UI 基础知识。 [观看视频](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看操作，然后中的代码[自行查看本主题。](http://aka.ms/CreateForms)
+我们的[入门文档](../get-started/index.md)面向 Windows 开发人员现在提供基本应用开发任务动手的体验。 此视频将指导你通过一个这些主题的链接，并介绍有关在应用中创建窗体 UI 基础知识。 [观看视频](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看操作，然后中的代码[自行查看本主题。](https://aka.ms/CreateForms)
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>增强你的项目个性聊天机器人
 
-项目个性聊天，可以将自定义角色添加到你聊天机器人。 通过与 Microsoft 机器人框架 SDK 集成，你可以添加更多谈话地与客户交互的小访谈功能。 [观看视频](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be)以了解如何实现它，然后经验的[试用交互式演示](http://aka.ms/PersonalityChat)。
+项目个性聊天，可以将自定义角色添加到你聊天机器人。 通过与 Microsoft 机器人框架 SDK 集成，你可以添加更多谈话地与客户交互的小访谈功能。 [观看视频](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be)以了解如何实现它，然后经验的[试用交互式演示](https://aka.ms/PersonalityChat)。
 
 ### <a name="multi-instance-uwp-apps"></a>多实例 UWP 应用
 

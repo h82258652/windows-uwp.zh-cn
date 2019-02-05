@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9911323010f691d1fa59c35306a7173cd08a0faa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: df7c1bbbc77374b8afb4272e1d9618c8294a4b6e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920707"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047984"
 ---
 # <a name="resolve-submission-errors"></a>解决提交错误
 
@@ -19,13 +19,13 @@ ms.locfileid: "8920707"
 
 ## <a name="uwp-apps"></a>UWP 应用
 
-如果你要提交 UWP 应用，你可能在预处理过程程序包文件不由 Visual Studio 生成的应用商店.msixupload 或.appxupload 文件中看到的错误。 请确保按照[程序包使用 Visual Studio 的 UWP 应用](../packaging/packaging-uwp-apps.md)中的步骤，创建你的应用的程序包文件时，仅上载的提交，不是.msix/appx 或.msixbundle/appxbundle 的[程序包](upload-app-packages.md)页面上的.msixupload 或.appxupload 文件.
+如果你要提交 UWP 应用，你可能在预处理过程程序包文件不由 Visual Studio 生成的应用商店.msixupload 或.appxupload 文件中看到的错误。 请务必按照[程序包使用 Visual Studio 的 UWP 应用](../packaging/packaging-uwp-apps.md)中的步骤时创建你的应用包文件，并仅上载的提交中，不是.msix/appx 或.msixbundle/appxbundle 的[程序包](upload-app-packages.md)页面上的.msixupload 或.appxupload 文件.
 
-如果显示了编译错误，请确保能够在发布模式中成功生成应用程序。 有关详细信息，请参阅 [.NET 本机内部编译器错误](http://go.microsoft.com/fwlink/p/?LinkID=613098)。
+如果显示了编译错误，请确保能够在发布模式中成功生成应用程序。 有关详细信息，请参阅 [.NET 本机内部编译器错误](https://go.microsoft.com/fwlink/p/?LinkID=613098)。
 
 ## <a name="desktop-application"></a>桌面应用程序
 
-如果你计划提交包包含的 Win32 和 UWP 二进制文件，请确保使用 Windows 打包项目可在 Visual Studio 2017 更新 4 中创建该程序包。 如果你使用的 UWP 项目模板创建程序包，你可能无法提交的打包到应用商店或旁加载到其他电脑上。 即使该程序包发布成功，它可能会以意想不到的方式，用户的电脑上的行为。 有关详细信息，请参阅[包使用 Visual Studio （桌面桥） 的应用]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)。
+如果你计划提交包包含的 Win32 和 UWP 二进制文件，请确保使用 Windows 打包项目中提供的 Visual Studio 2017 更新 4 创建该程序包。 如果你使用 UWP 项目模板创建程序包，你可能无法提交的打包到应用商店或旁加载到其他电脑上。 即使该程序包发布成功，它可能会以意想不到的方式，用户的电脑上的行为。 有关详细信息，请参阅[包使用 Visual Studio （桌面桥） 的应用]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)。
 
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x 及更早版本
 
@@ -52,7 +52,7 @@ ms.locfileid: "8920707"
 - 如果应用已经具有标识，可能仍然需要保留要在程序包中使用的名称。 在**应用管理**下，单击[管理应用名称](manage-app-names.md)。 输入你想要使用的名称，然后单击“保留应用名称”****。
 
 > [!IMPORTANT]
->  如果你想要使用的名称不可用，另一个应用可能具有已保留该名称。 如果你的应用已发布该名称，或者如果认为你有权使用它，[请联系支持人员](https://go.microsoft.com/fwlink/p/?LinkId=331509)。  
+>  如果你想要使用的名称不可用，另一个应用可能已保留了该名称。 如果你的应用已发布该名称，或者如果认为你有权使用它，[请联系支持人员](https://go.microsoft.com/fwlink/p/?LinkId=331509)。  
 
  
 

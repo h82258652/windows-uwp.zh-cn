@@ -6,19 +6,19 @@ ms.date: 08/21/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
-ms.openlocfilehash: c0c283f9edd33b8c39ebccd0a71019741a0d1448
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 24ec2013735597efae73aee31bb4aee1a8e1413e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921008"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044298"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>使用 Microsoft Store Services SDK 吸引客户
 
-Microsoft Store Services SDK 提供的功能可帮助你吸引客户在你的通用 Windows 平台 (UWP) 应用，例如向应用发送定向的通知和运行 A / B 实验应用中。 此 SDK 是 Visual Studio 2015 和更高版本的 Visual Studio 的扩展。
+Microsoft Store Services SDK 提供的功能可帮助你吸引客户在你的通用 Windows 平台 (UWP) 应用，例如向应用发送定向的通知和运行 A / B 实验在应用中。 此 SDK 是 Visual Studio 2015 和更高版本的 Visual Studio 的扩展。
 
 > [!NOTE]
-> 要在 UWP 应用中显示广告，请使用 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp) 而不是 Microsoft Store Services SDK。 广告库已从 Microsoft Store Services SDK 移至 Microsoft 广告 SDK。 有关详细信息，请参阅[在应用中显示广告](display-ads-in-your-app.md)。
+> 要在 UWP 应用中显示广告，请使用 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp) 而不是 Microsoft Store Services SDK。 广告库已从 Microsoft Store Services SDK 移至 Microsoft 广告 SDK。 有关详细信息，请参阅[在应用中显示广告](display-ads-in-your-app.md)。
 
 
 
@@ -28,10 +28,10 @@ Microsoft Store Services SDK 当前支持以下适用于 UWP 应用的方案。 
 
 |  方案  |  说明   |
 |------------|----------------|
-|  [在 UWP 应用中使用 A/B 测试运行实验](run-app-experiments-with-a-b-testing.md)    |  在通用 Windows 平台 (UWP) 应用上运行 A/B 测试，测量这些功能对某些客户的有效性，之后再将它们发布给每位用户。 在合作伙伴中心中定义实验后，使用[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)类以在应用中获取实验变体，使用此数据修改正在测试的功能的行为，然后使用 LogForVariation [](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)方法将视图事件和转换事件发送到合作伙伴中心。 最后，使用合作伙伴中心查看结果并管理实验。  |
+|  [在 UWP 应用中使用 A/B 测试运行实验](run-app-experiments-with-a-b-testing.md)    |  在通用 Windows 平台 (UWP) 应用上运行 A/B 测试，测量这些功能对某些客户的有效性，之后再将它们发布给每位用户。 在合作伙伴中心中定义实验后，使用[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)类以在应用中获取实验变体，使用此数据修改正在测试的功能的行为，然后使用[LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)方法将视图事件和转换事件发送到合作伙伴中心。 最后，使用合作伙伴中心查看结果并管理实验。  |
 |  [从 UWP 应用启动“反馈中心”](launch-feedback-hub-from-your-app.md)    |  使用 UWP 应用中的 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 类将 Windows10 客户定向到“反馈中心”，他们可以在其中提交问题、建议和赞成票。 然后，管理合作伙伴中心中的[反馈报告](../publish/feedback-report.md)此反馈。 |
-|  [配置你的 UWP 应用以接收合作伙伴中心推送通知](configure-your-app-to-receive-dev-center-notifications.md)    |  使用 UWP 应用中的[StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager)类注册应用以接收发送给客户使用合作伙伴中心的定向的推送通知。  |
-|   [在 UWP 应用中为合作伙伴中心中的使用情况报告记录自定义事件](log-custom-events-for-dev-center.md)   |  使用 UWP 应用中的[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)类与合作伙伴中心中的应用相关联的自定义事件记录。 然后，查看你的合作伙伴中心中的[使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)的**自定义事件**部分中的自定义事件的总发生次数。  |
+|  [配置你的 UWP 应用以接收合作伙伴中心推送通知](configure-your-app-to-receive-dev-center-notifications.md)    |  使用 UWP 应用中[StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager)类注册应用以接收发送给客户使用合作伙伴中心的定向的推送通知。  |
+|   [在 UWP 应用，以便在合作伙伴中心中的使用情况报告中记录自定义事件](log-custom-events-for-dev-center.md)   |  UWP 应用中使用[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)类与你在合作伙伴中心中的应用相关联的自定义事件记录。 然后，查看[使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)合作伙伴中心中的**自定义事件**部分中自定义事件的总发生次数。  |
 
 <span id="prerequisites" />
 
@@ -48,7 +48,7 @@ Microsoft Store Services SDK 需要：
 
 在开发计算机上安装 Microsoft Store Services SDK 的方法有两种：
 
-* **MSI 安装程序**&nbsp;&nbsp;可通过[此处](http://aka.ms/store-em-sdk)提供的 MSI 安装程序安装该 SDK。
+* **MSI 安装程序**&nbsp;&nbsp;可通过[此处](https://aka.ms/store-em-sdk)提供的 MSI 安装程序安装该 SDK。
 * **NuGet 包**&nbsp;&nbsp;你可以将 SDK 安装为 NuGet 包。
 
 Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Services SDK 新版本。 如果你有使用该 SDK 的现有项目，并且你希望使用最新版本，请在开发计算机上下载并安装最新版本的 SDK。
@@ -68,7 +68,7 @@ Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Servi
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  下载并安装 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk)。 安装它可能需要几分钟。 请确信并等待，直到进程结束。
+3.  下载并安装 [Microsoft Store Services SDK](https://aka.ms/store-em-sdk)。 安装它可能需要几分钟。 请确信并等待，直到进程结束。
 
 4.  重新启动 Visual Studio。
 
@@ -99,7 +99,7 @@ Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Servi
 
 5. 在搜索框中，键入 **Microsoft.Services.Store.Engagement** 并安装 Microsoft.Services.Store.Engagement 包。 程序包安装完成后，保存你的解决方案。
     > [!NOTE]
-    > 如果**输出**窗口报告指示指定路径过长的 *Install-Package* 错误，则可能需要配置 NuGet 以将软件包提取到路径短于默认位置的备用位置。 若要执行此操作，将 ```repositoryPath``` 值添加到计算机上的 nuget.config 文件，并将其分配到可从中提取 NuGet 包的短文件夹路径。 有关详细信息，请参阅 NuGet 文档中的[此文章](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，可尝试将 Visual Studio 项目移到路径较短的备用文件夹。 你正在太长的全局程序包路径还可能导致该问题。 在此情况下，添加```globalPackagesFolder```值转换 nuget.config 文件。
+    > 如果**输出**窗口报告指示指定路径过长的 *Install-Package* 错误，则可能需要配置 NuGet 以将软件包提取到路径短于默认位置的备用位置。 若要执行此操作，将 ```repositoryPath``` 值添加到计算机上的 nuget.config 文件，并将其分配到可从中提取 NuGet 包的短文件夹路径。 有关详细信息，请参阅 NuGet 文档中的[此文章](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，可尝试将 Visual Studio 项目移到路径较短的备用文件夹。 通过在全局程序包路径不太长时也可能导致该问题。 在此情况下，添加```globalPackagesFolder```到 nuget.config 文件的值。
 
 6. 关闭包含你的项目的 Visual Studio 解决方案，然后重新打开解决方案。
 

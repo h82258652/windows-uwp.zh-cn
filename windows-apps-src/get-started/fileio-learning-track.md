@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 入门, uwp, windows 10, 学习轨迹, 文件, 文件 io, 读取文件, 写入文件, 创建文件, 写入文本, 读取文本
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9350228585ec8108c41bd15de6179de0294140dc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e0abc146820ca27ee83662ba5f8b79a1daf90bab
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921077"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045526"
 ---
 # <a name="work-with-files"></a>处理文件
 
@@ -61,7 +61,7 @@ await Windows.Storage.FileIO.AppendLinesAsync(file, listOfStrings); // each entr
 
 ## <a name="read-text-from-a-file"></a>从文件读取文本
 
-与写入文件相同，读取文件也是从指定文件的位置开始。 我们将使用与上述示例使用的相同位置。 然后我们将使用**FileIO**类以读取其内容。
+与写入文件相同，读取文件也是从指定文件的位置开始。 我们将使用与上述示例使用的相同位置。 然后我们将使用**FileIO**类读取其内容。
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
@@ -130,7 +130,7 @@ UWP 应用必须通过在其清单中添加相应的功能来声明访问特定�
 | [创建、写入和读取文件](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files) | 涵盖创建、读取和写入文本、二进制数据和流。 |
 | [本地存储应用数据入门](https://blogs.windows.com/buildingapps/2016/05/10/getting-started-storing-app-data-locally/#pCbJKGjcShh5DTV5.97) | 除了涵盖保存本地数据的最佳实践外，还涵盖了 LocalSettings 和 LocalCache 文件夹的用途。 |
 | [开始使用漫游应用数据](https://blogs.windows.com/buildingapps/2016/05/03/getting-started-with-roaming-app-data/#RgjgLt5OkU9DbVV8.97) | 有关如何使用漫游应用数据的两部分系列文章。 |
-| [漫游应用程序数据指南](http://msdn.microsoft.com/library/windows/apps/hh465094) | 请在设计应用时按照这些数据漫游指南操作。 |
+| [漫游应用程序数据指南](https://msdn.microsoft.com/library/windows/apps/hh465094) | 请在设计应用时按照这些数据漫游指南操作。 |
 | [存储和检索设置以及其他应用数据](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | 提供各种应用数据存储（如本地、漫游和临时文件夹）的概述。 请参阅[漫游数据](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#roaming-data)部分，了解有关写入在设备之间漫游的数据的指南和其他信息。 |
 | [文件访问权限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) | 有关你的应用可以访问哪些文件系统位置的信息。 |
 | [使用选取器打开文件和文件夹](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) | 展示如何通过让用户通过选取器 UI 决定来访问文件和文件夹。 |
@@ -143,6 +143,6 @@ UWP 应用必须通过在其清单中添加相应的功能来声明访问特定�
 |-----------------|---------------|
 | [应用程序数据示例](https://code.msdn.microsoft.com/windowsapps/ApplicationData-sample-fb043eb2) | 展示如何通过使用应用程序数据 API 来存储和检索特定于每个用户的数据。 |
 | [文件访问示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | 展示如何创建、读取、写入、复制和删除文件。 |
-| [文件选取器示例](http://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | 展示如何通过让用户使用 UI 选择文件和文件夹来访问它们，以及如何保存文件，以便用户可以指定要保存文件的名称、文件类型和位置。 |
+| [文件选取器示例](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | 展示如何通过让用户使用 UI 选择文件和文件夹来访问它们，以及如何保存文件，以便用户可以指定要保存文件的名称、文件类型和位置。 |
 | [JSON 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | 展示如何使用 [Windows.Data.Json 命名空间](https://docs.microsoft.com/uwp/api/Windows.Data.Json)编码和解码 JavaScript 对象表示法 (JSON) 的对象、数组、字符串、数字和布尔值。 |
 | [其他代码示例](https://developer.microsoft.com//windows/samples) | 在类别下拉列表中选择**文件、文件夹和库**。 |

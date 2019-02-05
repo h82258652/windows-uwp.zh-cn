@@ -6,16 +6,16 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 定向优惠 API, 定向优惠
 ms.localizationpriority: medium
-ms.openlocfilehash: 27d99d2008352ff291f0cb620afab8ccb8f6977c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bcf270bd56d17936ef404adbc3663034b58e7a2c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937535"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045020"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>使用应用商店服务管理定向优惠
 
-如果你创建在*定向的优惠***参与 > 定向优惠**为你的应用在合作伙伴中心，使用*Microsoft Store 定向优惠 API*在你的应用的代码来检索信息，可帮助你实现应用内体验页面定向的优惠。 有关定向优惠和如何在仪表板中创建定向优惠的更多信息，请参阅[使用定向优惠最大化参与度和转换率](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)。
+如果你创建*定向优惠*中你的应用在合作伙伴中心，使用*Microsoft Store 定向优惠 API*来检索信息，可帮助你的应用的代码中实现应用内体验的**定向优惠与 >** 页面定向的优惠。 有关定向优惠和如何在仪表板中创建定向优惠的更多信息，请参阅[使用定向优惠最大化参与度和转换率](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)。
 
 定向优惠 API 是一个简单的 REST API，可用来获取为当前用户提供的定向优惠，具体取决于用户是否属于该定向优惠所针对的客户细分的一部分。 若要在你的应用中使用此 API，请执行以下步骤：
 
@@ -45,7 +45,7 @@ ms.locfileid: "8937535"
 
 此方法将会返回与针对当前用户提供的定向优惠关联的加载项产品 ID。 你可以通过这些信息将一个或多个定向优惠作为应用内购买提供给用户。
 
-下面的示例演示如何为当前用户获取定向优惠。 此示例是[完整示例](#code-example)的一个片段。 它需要 Newtonsoft 的 [Json.NET](http://www.newtonsoft.com/json) 库和完整示例中提供的其他类和 **using** 语句。
+下面的示例演示如何为当前用户获取定向优惠。 此示例是[完整示例](#code-example)的一个片段。 它需要 Newtonsoft 的 [Json.NET](https://www.newtonsoft.com/json) 库和完整示例中提供的其他类和 **using** 语句。
 
 [!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffers)]
 
@@ -59,7 +59,7 @@ ms.locfileid: "8937535"
 * 通过使用[获取定向优惠](get-targeted-offers.md)方法为当前用户获取所有定向优惠。
 * 购买与定向优惠关联的加载项。
 
-此示例需要 Newtonsoft 的 [Json.NET](http://www.newtonsoft.com/json) 库。 此示例使用此库对 JSON 格式的数据进行序列化和反序列化。
+此示例需要 Newtonsoft 的 [Json.NET](https://www.newtonsoft.com/json) 库。 此示例使用此库对 JSON 格式的数据进行序列化和反序列化。
 
 [!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffersSample)]
 

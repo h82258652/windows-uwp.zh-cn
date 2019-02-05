@@ -6,12 +6,12 @@ ms.date: 12/14/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 81aa15892bf39209c31238878e0ca19a996d0b3e
-ms.sourcegitcommit: 322e1ae259ba0480b816a004d7a52bb0d1618b90
+ms.openlocfilehash: 1dff4e3b37be14729abdc3262d484745a0245776
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "9000272"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048044"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>设置付款帐户和税单
 
@@ -70,9 +70,9 @@ ms.locfileid: "9000272"
 
 关于使用 PayPal 作为付款方式的常见问题：
 
--   **我需要有怎样的 PayPal 设置才能接收付款？** 必须确保你的 PayPal 帐户不会阻止 eCheck 付款。 此设置在 PayPal 的“付款接收首选项”页面中管理。 有关详细信息，请参阅 [PayPal 的帐户设置页面](http://go.microsoft.com/fwlink/p/?linkid=513139)。
+-   **我需要有怎样的 PayPal 设置才能接收付款？** 必须确保你的 PayPal 帐户不会阻止 eCheck 付款。 此设置在 PayPal 的“付款接收首选项”页面中管理。 有关详细信息，请参阅 [PayPal 的帐户设置页面](https://go.microsoft.com/fwlink/p/?linkid=513139)。
 -   **我所在的国家/地区是否受支持？** 请参阅[帐户类型、位置和费用](account-types-locations-and-fees.md)以了解哪些地方支持 PayPal 的付款方式。
--   **我的 PayPal 帐户是否需要在同一国家/地区为我的合作伙伴中心帐户中注册？** 否。 设置 PayPal 帐户时，可以接受默认配置。 您不应该有任何其他国家/地区和货币的问题，除非您阻止了某些货币的付款。 此设置在 PayPal 的“付款接收首选项”页面中管理。
+-   **我的 PayPal 帐户是否需要在同一国家/地区为我的合作伙伴中心帐户中注册？** 不需要。 设置 PayPal 帐户时，可以接受默认配置。 您不应该有任何其他国家/地区和货币的问题，除非您阻止了某些货币的付款。 此设置在 PayPal 的“付款接收首选项”页面中管理。
 -   **我是否必须手动接受 PayPal 付款？** 否。 PayPal 帐户默认设置为需要用户手动接受付款，这意味着如果你不在 30 天内接受付款，将返回付款。 你可以更改此设置，方法是在 PayPal 的“更多设置”页面中关闭“询问我”。
 
 

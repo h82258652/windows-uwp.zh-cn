@@ -6,19 +6,19 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 78d825adf023b3c27ba6535f4cfdcc3a99be2d6c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cfdc4bd81a96d3bbdb2dd369cbdd0444ca22ea4c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947789"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048474"
 ---
 # <a name="in-app-ads"></a>应用内广告
 
-使用**盈利**&gt;中[的合作伙伴中心](https://partner.microsoft.com/dashboard)，以创建和管理广告单元的**应用内广告**页面：
+使用**盈利**&gt;在[合作伙伴中心](https://partner.microsoft.com/dashboard)创建和管理广告单元的**应用内广告**页面：
 
-* 使用 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp) 的通用 Windows 平台 (UWP) 应用。
-* 以前发布的 Windows 8.x 和 Windows Phone 8.x 应用使用[Microsoft Advertising SDK for Windows 和 Windows Phone 8.x](http://aka.ms/store-8-sdk)。
+* 使用 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp) 的通用 Windows 平台 (UWP) 应用。
+* 以前发布的 Windows 8.x 和 Windows Phone 8.x 应用使用[Microsoft Advertising SDK for Windows 和 Windows Phone 8.x](https://aka.ms/store-8-sdk)。
 
 > [!IMPORTANT]
 > 从 2018 年 10 月 31 日起，新创建的产品不能包含面向 Windows 8.x/Windows 程序包 Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
@@ -37,7 +37,7 @@ ms.locfileid: "8947789"
 4.  在**广告单元类型**下拉列表中，选择广告类型。
 
     * 如果你的应用中显示横幅广告时，选择**横幅**。
-    * 如果你的应用中显示间隙视频广告或间隙横幅广告，请选择**间隙视频**或**间隙横幅**（请务必选择你想要显示的间隙广告类型的相应选项）。
+    * 如果你的应用中显示的间隙视频广告或间隙横幅广告，请选择**间隙视频**或**间隙横幅**（请务必选择你想要显示的间隙广告的类型的相应选项）。
     * 如果你的应用中显示本机广告时，选择**本机**。
 
 5. 在**设备系列**下拉框中，选择将在其中使用广告单元的应用所适用的设备系列。 可用选项包括：**UWP (Windows 10)**、**电脑/平板电脑 (Windows 8.1)** 或**移动设备 (Windows Phone 8.x)**。
@@ -70,7 +70,7 @@ ms.locfileid: "8947789"
 若要编辑 UWP 广告单元的[中介设置](#mediation)或此广告单元所用于的应用的 [COPPA 合规性](#coppa)，请单击广告单元的名称。
 
 > [!NOTE]
-> 如果广告单元过去六个月不有任何活动，我们将其标记为**非活动**，并最终从合作伙伴中心中删除它。 你可以使用筛选器来仅显示**活动**或**停用**广告单位。 如果看到你认为被不准确地标记为**停用**的任何广告单元，请[联系支持人员](http://aka.ms/storesupport)。
+> 如果广告单元过去六个月中具有不活动，我们将其标记为**非活动**，并最终从合作伙伴中心中删除它。 你可以使用筛选器来仅显示**活动**或**停用**广告单位。 如果看到你认为被不准确地标记为**停用**的任何广告单元，请[联系支持人员](https://aka.ms/storesupport)。
 
 <span id="mediation" />
 
@@ -86,7 +86,7 @@ ms.locfileid: "8947789"
 1. [创建广告单元](#create-ad-unit)或[选择现有广告单元](#available-ad-units)。
 2. 在**应用内广告**页面上，转到的**中介设置**部分和配置你的设置。
 
-    * 默认情况下，选择**让 Microsoft 优化我的设置**复选框。 我们建议你使用此选项。 此选项会使用机器学习算法自动为你的应用选择广告中介设置，以帮助最大化你在你的应用所支持的各市场中的广告收益。 当你使用此选项时，你还可以选择你想要使用的配置中的广告网络。 取消选中你不想要配置的一部分，我们的算法将确保你的应用仅在所选的广告网络接收广告的广告网络。
+    * 默认情况下，**让 Microsoft 优化我的设置**复选框处于选中状态。 我们建议你使用此选项。 此选项会使用机器学习算法自动为你的应用选择广告中介设置，以帮助最大化你在你的应用所支持的各市场中的广告收益。 使用此选项时，你还可以选择你想要使用的配置中的广告网络。 取消选中你不想要配置的一部分，我们的算法将确保你的应用仅在所选的广告网络接收广告的广告网络。
     * 如果你想要选择你自己的广告中介设置，选择**修改默认设置**。
 
     > [!NOTE]
@@ -110,14 +110,14 @@ ms.locfileid: "8947789"
 
 |  广告网络  |  说明  |  支持的广告类型  |
 |--------------|---------------|---------------------|
-| Oath 和 AppNexus |  这是可通过我们的合作伙伴的广告网络，Oath 和 AppNexus 提供一个 Microsoft 托管的广告网络。<p/>**注意**： Oath 和 AppNexus 始终排名第一**付费广告网络**列表中的横幅广告单元，并且它不能更改为更低排名针对这些类型的广告。 | 横幅、视频间隙 |
+| Oath 和 AppNexus |  这是可提供通过我们的合作伙伴的广告网络，Oath 和 AppNexus Microsoft 托管的广告网络。<p/>**注意**： Oath 和 AppNexus 始终排名第一**付费广告网络**列表中的横幅广告单元，并且它不能更改为更低排名针对这些类型的广告。 | 横幅、视频间隙 |
 | AppNexus（直接） | 选择此选项以从[AppNexus](https://www.appnexus.com)提供广告。 | 视频间隙、本机  |
 | Microsoft 应用安装广告 | 选择此选项以提供由 Windows 生态系统中[为其应用创建促销广告市场活动](create-an-ad-campaign-for-your-app.md)的其他开发人员创建的应用安装广告或应用重新参与广告。  |  横幅、横幅间隙、本机  |
 | MSN 内容建议 |  选择此选项以从 MSN 内容建议提供广告。 |  横幅、横幅间隙  |
 | Outbrain |  选择此选项以提供来自 [Outbrain](https://www.outbrain.com/) 的广告。 |  横幅、横幅间隙  |
-| Revcontent |  选择此选项以提供来自 [Revcontent](http://www.revcontent.com/) 的广告。 |  横幅、本机  |
+| Revcontent |  选择此选项以提供来自 [Revcontent](https://www.revcontent.com/) 的广告。 |  横幅、本机  |
 | Smaato |  选择此选项以提供来自 [Smaato](https://www.smaato.com/) 的广告。 |  横幅  |
-| smartclip |  选择此选项以提供来自 [smartclip](http://www.smartclip.com/) 的广告。 |  视频间隙  |
+| smartclip |  选择此选项以提供来自 [smartclip](https://www.smartclip.com/) 的广告。 |  视频间隙  |
 | SpotX |  选择此选项以提供来自 [SpotX](https://www.spotx.tv/) 的广告。 |  视频间隙  |
 | Taboola |  选择此选项以提供来自 [Taboola](https://www.taboola.com/) 的广告。 |  横幅  |
 | Undertone | 选择此选项以从[Undertone](https://www.undertone.com/)提供广告。 | 横幅间隙 |
@@ -152,11 +152,11 @@ ms.locfileid: "8947789"
 
 ## <a name="coppa-compliance"></a>COPPA 合规性
 
-如果针对广告单元选定的应用具有至少一个提交已到达你[创建一个广告单元](#create-ad-unit)或[选择现有广告单元](#available-ad-units)， **COPPA 合规性**部分将显示在页面的底部时[在应用商店中](../publish/the-app-certification-process.md#in-the-store)步骤在应用中认证过程。
+如果针对广告单元选定的应用具有至少一个提交已到达你[创建一个广告单元](#create-ad-unit)或[选择现有广告单元](#available-ad-units)， **COPPA 合规性**部分将显示在页面底部时[在应用商店中](../publish/the-app-certification-process.md#in-the-store)步骤在应用中认证过程。
 
 根据《儿童在线隐私保护法》（“COPPA”），如果你的应用面向 13 岁以下的儿童，则你必须在这个部分选择**此应用程序面向 13 岁以下的儿童**。 如果选择此选项，则 Microsoft 将采取措施以在向你的应用发送广告时禁用其行为广告服务。
 
 你选择的 **COPPA 合规性**设置将自动应用于所选应用的所有广告单元。
 
 > [!IMPORTANT]
-> 如果你的应用面向 13 岁以下的儿童，则你承担 COPPA 规定的某些义务。 有关你的义务的详细信息，请参阅[此页面](http://go.microsoft.com/fwlink/p/?linkid=536558)。
+> 如果你的应用面向 13 岁以下的儿童，则你承担 COPPA 规定的某些义务。 有关你的义务的详细信息，请参阅[此页面](https://go.microsoft.com/fwlink/p/?linkid=536558)。

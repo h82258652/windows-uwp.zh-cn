@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 888de987d507f0a1a21458c299605ebcc7b1bc70
-ms.sourcegitcommit: 393180e82e1f6b95b034e99c25053d400e987551
+ms.openlocfilehash: 3f474ec0c3017c3834d3eadb6f1caa989fc188a7
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "8990470"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050740"
 ---
 # <a name="accessible-text-requirements"></a>辅助文本要求  
 
@@ -28,13 +28,13 @@ ms.locfileid: "8990470"
 ## <a name="contrast-ratios"></a>对比率  
 尽管用户始终可以选择切换到高对比度模式，但是你的应用的文本设计应当将该选项视为最后的方法。 更好的做法是确保应用文本满足某些为文本及其背景之间对比度级别制定的指导准则。 对比度级别基于不考虑色调的确定性技术进行评估。 例如，如果文本为红色，而背景为绿色，则具有色盲障碍的用户可能无法读取该文本。 检查和更正对比率可以防止出现这些类型的辅助功能问题。
 
-此处记录的文本对比度建议基于 Web 辅助功能标准 [G18：确保文本（和文本的图像）和文本后面的背景之间的对比率至少为 4.5:1](http://go.microsoft.com/fwlink/p/?linkid=221823)。 该指南在 *WCAG 2.0 的 W3C 技术*规范中有说明。
+此处记录的文本对比度建议基于 Web 辅助功能标准 [G18：确保文本（和文本的图像）和文本后面的背景之间的对比率至少为 4.5:1](https://go.microsoft.com/fwlink/p/?linkid=221823)。 该指南在 *WCAG 2.0 的 W3C 技术*规范中有说明。
 
 为了考虑辅助功能，可见文本与背景的发光度对比率必须最低为 4.5:1。 例外情况包括徽标和附带文本，例如作为非活动 UI 组件一部分的文本。
 
 装饰性文本且未传递任何信息的文本除外。 例如，如果使用随机字词创建背景，且这些字词可以在不改变含义的情况下进行重新整理或取代，则会将这些字词视为装饰性文本且无需符合此条件。
 
-使用颜色对比工具验证可见文本的对比度是否可接受。 若要了解可以测试对比率的工具，请参阅 [WCAG 2.0 G18 的技术（“资源”部分）](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources)。
+使用颜色对比工具验证可见文本的对比度是否可接受。 若要了解可以测试对比率的工具，请参阅 [WCAG 2.0 G18 的技术（“资源”部分）](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources)。
 
 > [!NOTE]
 > “WCAG 2.0 G18 的技术”列出的某些工具无法与 UWP 应用交互使用。 你可能需要在工具中手动输入前景和背景颜色值，或者屏幕捕获应用 UI，然后对屏幕捕获图像运行对比率工具。
@@ -129,8 +129,8 @@ _没有默认选择的示例_
 完成后明显，Windows 将包含各种辅助功能工具和设置，用户可以充分利用和调整到自己需求和偏好阅读文本。 其中包括：
 
 * 放大 UI 的选定的区域放大镜工具。 你应确保在应用中的文本布局不会将很难使用放大镜进行读取。
-* 中的全局缩放和分辨率设置**设置-> 系统-> 显示-> 缩放和布局**。 究竟有哪些大小设置选项可用可能有所不同因为这取决于显示设备的功能。
-* 在文本大小设置**设置-> 轻松使用-> 显示**。 调整**使更大的文本**设置指定仅文本的大小以支持跨所有应用程序和屏幕 （所有 UWP 文本控件都支持文本缩放体验而无需任何自定义或模板化） 控件。 
+* **设置 >System >Display >Scale 和布局**中的全局缩放和分辨率设置。 究竟有哪些大小设置选项可用可能有所不同因为这取决于显示设备的功能。
+* 在**设置 >Ease 的访问权限 >Display**文本大小设置。 调整**使更大的文本**设置指定仅文本的大小以支持跨所有应用程序和屏幕 （所有 UWP 文本控件都支持文本缩放体验而无需任何自定义或模板化） 控件。 
 > [!NOTE]
 > **使一切变大**设置允许用户仅其主屏幕上一般情况下指定文本和应用的首选的大小。
 
@@ -186,6 +186,6 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 * [文本缩放](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
 * [辅助功能](accessibility.md)
 * [基本的辅助功能信息](basic-accessibility-information.md)
-* [XAML 文本显示示例](http://go.microsoft.com/fwlink/p/?linkid=238579)
-* [XAML 文本编辑示例](http://go.microsoft.com/fwlink/p/?linkid=251417)
-* [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570) 
+* [XAML 文本显示示例](https://go.microsoft.com/fwlink/p/?linkid=238579)
+* [XAML 文本编辑示例](https://go.microsoft.com/fwlink/p/?linkid=251417)
+* [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570) 

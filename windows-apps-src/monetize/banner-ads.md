@@ -5,12 +5,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10，uwp，广告，广告，AdControl，横幅广告
 ms.localizationpriority: medium
-ms.openlocfilehash: e8754790fac07e6e1babdb44888cfd1ff138c230
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5f8aea8f204127a0f783f9b751a9f4178667753e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938229"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9045875"
 ---
 # <a name="banner-ads"></a>横幅广告
 
@@ -22,7 +22,7 @@ ms.locfileid: "8938229"
 
 ## <a name="in-this-section"></a>本部分内容
 
-|  主题    | 描述 |               
+|  主题    | 说明 |               
 |----------|-------|
 | [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)     | 在 XAML/.NET 应用中添加横幅广告。        |
 | [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)     | 在 HTML5/JavaScript 应用中添加横幅广告。        |
@@ -31,5 +31,5 @@ ms.locfileid: "8938229"
 
 ## <a name="related-topics"></a>相关主题
 
-* [GitHub 上的广告示例](http://aka.ms/githubads)
+* [GitHub 上的广告示例](https://aka.ms/githubads)
 * [为应用设置广告单元](set-up-ad-units-in-your-app.md)

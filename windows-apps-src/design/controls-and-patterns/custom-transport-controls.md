@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 26f47f3175802191a866bcd77e4cc7a95ffdbbe4
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: 2101eba9c78c87339af5f1bd46e6afc81eacf6af
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981471"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047422"
 ---
 # <a name="create-custom-transport-controls"></a>创建自定义传输控件
 
@@ -26,7 +26,7 @@ MediaPlayerElement 具有可自定义的 XAML 传输控件来管理通用 Window
 在开始操作之前，你应当先熟悉 MediaPlayerElement 和 MediaTransportControls 类。 有关详细信息，请参阅 MediaPlayerElement 控件指南。
 
 > [!TIP]
-> 本主题中的示例基于[媒体传输控件示例](http://go.microsoft.com/fwlink/p/?LinkId=620023)。 你可以下载该示例来查看和运行完整代码。
+> 本主题中的示例基于[媒体传输控件示例](https://go.microsoft.com/fwlink/p/?LinkId=620023)。 你可以下载该示例来查看和运行完整代码。
 
 > [!NOTE]
 > **MediaPlayerElement** 仅在 Windows 10 1607 版本及更高版本中可用。 如果要针对早期版本的 Windows 10 开发应用，你将需要改用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 本页面中的所有示例均同样适用于 **MediaElement**。
@@ -95,7 +95,7 @@ MediaPlayerElement 具有可自定义的 XAML 传输控件来管理通用 Window
 
 ### <a name="create-a-derived-control"></a>创建派生控件
 
-若要添加或修改传输控件的功能，必须创建一个派生自 MediaTransportControls 的新类。 名为 `CustomMediaTransportControls` 的派生类显示在[媒体传输控件示例](http://go.microsoft.com/fwlink/p/?LinkId=620023)和此页面上的其他示例中。
+若要添加或修改传输控件的功能，必须创建一个派生自 MediaTransportControls 的新类。 名为 `CustomMediaTransportControls` 的派生类显示在[媒体传输控件示例](https://go.microsoft.com/fwlink/p/?LinkId=620023)和此页面上的其他示例中。
 
 **创建一个派生自 MediaTransportControls 的新类**
 1. 向你的项目中添加一个新类文件。
@@ -202,7 +202,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
 ### <a name="adding-a-custom-button"></a>添加自定义按钮
 
-你可能想要自定义 MediaTransportControls 的原因之一是要将自定义命令添加到该控件。 无论将其添加为主要命令还是辅助命令，用于创建命令按钮和修改其行为的过程都是相同的。 在[媒体传输控件示例](http://go.microsoft.com/fwlink/p/?LinkId=620023)中，“分级”按钮将添加到主要命令中。
+你可能想要自定义 MediaTransportControls 的原因之一是要将自定义命令添加到该控件。 无论将其添加为主要命令还是辅助命令，用于创建命令按钮和修改其行为的过程都是相同的。 在[媒体传输控件示例](https://go.microsoft.com/fwlink/p/?LinkId=620023)中，“分级”按钮将添加到主要命令中。
 
 **添加自定义命令按钮**
 1. 创建 AppBarButton 对象并将其添加到控件模板中的 CommandBar。
@@ -215,7 +215,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
               VerticalAlignment="Center" />
 ```
 
-你必须将其添加到 CommandBar 的适当的位置。 （有关详细信息，请参阅溢出菜单部分使用）。如何在 UI 中放置由按钮是在标记中的位置确定。 例如，如果你想要此按钮作为主要命令中的最后一个元素显示，则在主要命令列表的最末尾处添加按钮。
+你必须将其添加到 CommandBar 的适当的位置。 （有关详细信息，请参阅溢出菜单部分使用）。如何在 UI 中放置取决于该按钮所在的标记中。 例如，如果你想要此按钮作为主要命令中的最后一个元素显示，则在主要命令列表的最末尾处添加按钮。
 
 还可以自定义按钮的图标。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx"><b>AppBarButton</b></a>引用。
     

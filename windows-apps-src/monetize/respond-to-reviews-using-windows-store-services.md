@@ -6,16 +6,16 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 评价 API, 回复评价
 ms.localizationpriority: medium
-ms.openlocfilehash: 95de2cc1de1b71a435fc8d4388f599c417132814
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 677108e692bbc702778cad3c42a45b4f5408b8cd
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944453"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044511"
 ---
 # <a name="respond-to-reviews-using-store-services"></a>使用 Microsoft Store 服务回复评价
 
-使用 *Microsoft Store 评价 API* 可以编程方式在 Microsoft Store 中提交对你的应用评价的回复。 对于开发人员要批量回复多条评价无需使用合作伙伴中心，此 API 将特别有用。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
+使用 *Microsoft Store 评价 API* 可以编程方式在 Microsoft Store 中提交对你的应用评价的回复。 此 API 是特别有用的开发人员要批量回复多条评价无需使用合作伙伴中心。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
 
 以下步骤介绍端到端过程：
 
@@ -32,9 +32,9 @@ ms.locfileid: "8944453"
 
 在开始编写调用 Microsoft Store 评价 API 的代码之前，确保已完成以下先决条件。
 
-* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以为任何附加费用[创建合作伙伴中心中的新 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) 。
+* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](https://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以[创建合作伙伴中心中的新 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) ，无额外费用。
 
-* 你必须将 Azure AD 应用程序与你的合作伙伴中心帐户相关联、 检索租户 ID 和应用程序的客户端 ID 并生成一个密钥。 Azure AD 应用程序是指你想要从中调用 Microsoft Store 评价 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才能获取将传递给 API 的 Azure AD 访问令牌。
+* 必须将 Azure AD 应用程序与你的合作伙伴中心帐户相关联、 检索租户 ID 和应用程序的客户端 ID 并生成一个密钥。 Azure AD 应用程序是指你想要从中调用 Microsoft Store 评价 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才能获取将传递给 API 的 Azure AD 访问令牌。
     > [!NOTE]
     > 你只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
 
@@ -42,7 +42,7 @@ ms.locfileid: "8944453"
 
 1.  在合作伙伴中心，[将你的组织的合作伙伴中心帐户与你的组织的 Azure AD 目录相关联](../publish/associate-azure-ad-with-partner-center.md)。
 
-2.  接下来，从合作伙伴中心的**帐户设置**部分中的**用户**页中，[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)表示应用或服务并且将用于回复评价。 请确保为此应用程序分配**管理员**角色。 如果应用程序不存在，但在你的 Azure AD 目录，你可以[创建一个新合作伙伴中心中的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。 
+2.  接下来，从合作伙伴中心的**帐户设置**部分中的**用户**页面中，[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)表示应用或服务并且将用于回复评价。 请确保为此应用程序分配**管理员**角色。 如果应用不存在，但在你的 Azure AD 目录，你可以[创建一个新合作伙伴中心中的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。 
 
 3.  返回到**用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
 
@@ -67,7 +67,7 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-对于 POST URI 中的*client\_id*和*client\_secret*参数*tenant\_id*值，指定的租户 ID、 客户端 ID 和你从上一部分中的合作伙伴中心中检索的应用程序的密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
+对于 POST URI 和*client\_id*和*client\_secret*参数中的*tenant\_id*值，指定的租户 ID、 客户端 ID 和你从上一节中的合作伙伴中心中检索的应用程序的密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
 
 在你的访问令牌到期后，你可按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
 

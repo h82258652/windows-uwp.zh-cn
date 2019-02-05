@@ -6,18 +6,18 @@ ms.date: 07/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 图像, 覆盖
 ms.localizationpriority: medium
-ms.openlocfilehash: 47b9c4335a99e7b0f17da0fb9ddb520cc917e398
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c0c2f07a364980b67a34a519eb5dd8b4da1a18f0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942299"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046430"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>覆盖地图上的平铺图像
 
 使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据）；或者使用磁贴源替换所有默认地图。
 
-**提示** 若要了解有关在应用中使用地图的详细信息，请在 Github 上下载[通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)。
+**提示** 若要了解有关在应用中使用地图的详细信息，请在 Github 上下载[通用 Windows 平台 (UWP) 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)。
 
 <a id="tileintro" />
 
@@ -35,7 +35,7 @@ http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 
 （X 和 Y 坐标以指定级别的详细信息形式表示单个磁贴在世界地图中的位置。 磁贴编号系统从位于地图左上角的 {0, 0} 开始。 例如，坐标为 {1, 2} 的磁贴位于磁贴网格中的第 2 列，第 3 行。）
 
-有关地图服务使用的磁贴系统的详细信息，请参阅[必应地图磁贴系统](http://go.microsoft.com/fwlink/p/?LinkId=626692)。
+有关地图服务使用的磁贴系统的详细信息，请参阅[必应地图磁贴系统](https://go.microsoft.com/fwlink/p/?LinkId=626692)。
 
 ### <a name="overlay-tiles-from-a-tile-source"></a>覆盖来自磁贴源的磁贴
 
@@ -421,7 +421,7 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessStream::get()
 ## <a name="related-topics"></a>相关主题
 
 * [必应地图开发人员中心](https://www.bingmapsportal.com/)
-* [UWP 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [地图设计指南](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [版本 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 路况应用示例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 路况应用示例](https://go.microsoft.com/fwlink/p/?LinkId=619982)

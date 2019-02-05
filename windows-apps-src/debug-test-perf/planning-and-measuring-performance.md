@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6388158a7b1c4fd3fa3e0ab17dcc86b7ef2d7c0e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3bfe034ed697661c81b2f01b67fafeee1941832d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921561"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050760"
 ---
 # <a name="planning-for-performance"></a>规划性能
 
@@ -104,7 +104,7 @@ ms.locfileid: "8921561"
 
 **应用启动和恢复**
 
--   延迟应用的初始屏幕，除非有必要，否则不要延长应用的初始屏幕。 有关详细信息，请参阅[创建快速且流畅的应用启动体验](http://go.microsoft.com/fwlink/p/?LinkId=317595)和[延长显示初始屏幕的时间](https://msdn.microsoft.com/library/windows/apps/Mt187309)。
+-   延迟应用的初始屏幕，除非有必要，否则不要延长应用的初始屏幕。 有关详细信息，请参阅[创建快速且流畅的应用启动体验](https://go.microsoft.com/fwlink/p/?LinkId=317595)和[延长显示初始屏幕的时间](https://msdn.microsoft.com/library/windows/apps/Mt187309)。
 -   禁用在欢迎屏幕消除后立即出现的动画，因为这些动画只会导致应用启动时间延迟的感觉。
 
 **自适应 UI 和方向**
@@ -152,7 +152,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 // ...
 ```
 
-另请参阅[日志记录示例](http://go.microsoft.com/fwlink/p/?LinkId=529576)。
+另请参阅[日志记录示例](https://go.microsoft.com/fwlink/p/?LinkId=529576)。
 
 检测应用之后，你可以测试和衡量应用的性能。
 
@@ -171,7 +171,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
     -   多次运行应用有助于消除随机测试变量，并且有助于确保一致的测量结果。
 -   测试降低功能可用性。 用户设备的功率可能明显低于你的开发计算机。 Windows 设计时考虑到了低功率设备，例如移动电脑。 在平台上运行的应用应确保在这些设备上也可以良好地执行。 提示：预期低功率设备的运行速度大约是台式机的四分之一，请相应地设置你的目标。
 -   使用 Microsoft Visual Studio 和 Windows Performance Analyzer 等工具的组合衡量应用性能。 Visual Studio 可以提供侧重于应用的分析，如源代码链接。 Windows Performance Analyzer 可以提供侧重于系统的分析，如提供系统信息、关于触摸操作事件以及关于磁盘输入/输出 (I/O) 和图形处理单元 (GPU) 开销的信息。 这两个工具都会跟踪捕获和导出，并且都可以重新打开共享跟踪和事后跟踪。
--   你在将应用提交到应用商店进行认证之前，请确保你测试将计划合并到性能相关测试用例的[Windows 应用认证工具包测试](windows-app-certification-kit-tests.md)和中的"性能测试"部分中所述"性能和[UWP 应用测试用例](https://msdn.microsoft.com/library/windows/apps/Dn275879)的稳定性"部分。
+-   你在将应用提交到应用商店进行认证之前，请务必合并到你测试计划中的[Windows 应用认证工具包测试](windows-app-certification-kit-tests.md)和中的"性能测试"部分所述与性能相关测试用例"性能和[UWP 应用测试用例](https://msdn.microsoft.com/library/windows/apps/Dn275879)的稳定性"部分。
 
 有关详细信息，请参阅以下资源和分析工具。
 

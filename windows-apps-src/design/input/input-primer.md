@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d9b2a894746cc9f26a0ebb3df90c967a73914c3c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 80c834257e883d3aeb8594001344abd6ef14682c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947799"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051090"
 ---
 # <a name="interaction-primer"></a>交互入门
 
@@ -64,7 +64,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 ## <a name="cortana"></a>Cortana
 
-在 windows 10， **Cortana**扩展性来处理用户的语音命令，并启动你的应用程序执行一个单独操作。
+在 windows 10 中， **Cortana**扩展性来处理用户的语音命令，并启动你的应用程序执行一个单独操作。
 
 ### <a name="device-support"></a>设备支持
 
@@ -234,7 +234,7 @@ Surface Hub 设备可以识别 100 个独特的并发触摸点。
 
 键盘是主要的文本输入设备。对于残障人士，或者认为键盘是与应用交互的最快和最有效方法的用户而言，键盘通常非常重要。
 
-使用[适用于手机的 Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431)，一种新体验兼容 windows 10 移动版设备，用户可以将手机连接鼠标和键盘来使手机像笔记本电脑一样工作。
+使用[适用于手机的 Continuum](https://go.microsoft.com/fwlink/p/?LinkID=699431)，一种新体验兼容 windows 10 移动版设备，用户可以将手机连接鼠标和键盘来使手机像笔记本电脑一样工作。
 
 ### <a name="device-support"></a>设备支持
 
@@ -256,7 +256,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 
 触摸键盘是一种借助触摸屏输入来输入文本的可视软件键盘。 触摸键盘不可以代替 OSK，因为它仅用于文本输入（它不模拟硬件键盘），并且仅在文本字段或其他可编辑的文本控件获得焦点时显示。 触摸键盘不支持应用或系统命令。
 
-**注意**OSK 的优先级高于触摸键盘时，它不会显示 OSK 是否存在。
+**注意**OSK 的优先级高于触摸键盘，不会显示 OSK 是否存在。
 
 一般而言，键盘：
 

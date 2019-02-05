@@ -1,29 +1,29 @@
 ---
-description: 通过在 Visual Studio 中创建新的 windows 10 项目并将你的文件复制到其中开始移植过程。
-title: WindowsPhone Silverlight 将项目移植到 UWP 项目
+description: 通过在 Visual Studio 中创建新的 windows 10 项目并将文件复制到其中开始移植过程。
+title: 移植到 UWP 项目的 WindowsPhone Silverlight 项目
 ms.assetid: d86c99c5-eb13-4e37-b000-6a657543d8f4
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 55c4347b85d94d183d44599f7d34bc750d34d181
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fe07e19a66bb7fc85a69a3bd542894e0b22aba9b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927897"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045383"
 ---
-# <a name="porting-windowsphone-silverlight-projects-to-uwp-projects"></a>WindowsPhone Silverlight 将项目移植到 UWP 项目
+# <a name="porting-windowsphone-silverlight-projects-to-uwp-projects"></a>移植到 UWP 项目的 WindowsPhone Silverlight 项目
 
 
 上一主题是[命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)。
 
-通过在 Visual Studio 中创建新的 windows 10 项目并将你的文件复制到其中开始移植过程。
+通过在 Visual Studio 中创建新的 windows 10 项目并将文件复制到其中开始移植过程。
 
 ## <a name="create-the-project-and-copy-files-to-it"></a>创建项目并将文件复制到其中
 
 1.  启动 Microsoft Visual Studio2015 并创建一个新的空白应用程序 （Windows 通用） 项目。 有关详细信息，请参阅[快速启动你的 Windows 运行时 8.x 应用使用模板 （C#、 c + +、 Visual Basic）](https://msdn.microsoft.com/library/windows/apps/hh768232)。 你的新项目会生成一个将在所有设备系列上运行的应用包（appx 文件）。
-2.  在 WindowsPhone Silverlight 应用项目中，标识所有源代码文件和视觉资产文件，你想要重复使用。 通过使用文件资源管理器，将数据模型、视图模型、视觉资源、资源词典，文件夹结构和想要重复使用的任何其他内容复制到新项目中。 根据需要在磁盘上复制或创建子文件夹。
+2.  在 WindowsPhone Silverlight 应用项目中，标识所有源代码文件和你想要重复使用的视觉资源文件。 通过使用文件资源管理器，将数据模型、视图模型、视觉资源、资源词典，文件夹结构和想要重复使用的任何其他内容复制到新项目中。 根据需要在磁盘上复制或创建子文件夹。
 3.  还可以将视图（例如，MainPage.xaml 和 MainPage.xaml.cs）复制到新项目节点中。 同样，也可根据需要创建新的子文件夹，并从项目中删除现有视图。 但是，在覆盖或删除 Visual Studio 生成的视图之前，请保留一份副本，因为在以后引用它时，这可能会很有用。 将 WindowsPhone Silverlight 应用移植的第一个阶段侧重于一设备系列上正常工作并让其。 之后，将侧重点转到确保视图能自行适应所有外形规格，也可以选择添加任何自适应代码以最大程度地利用特定的设备系列。
 4.  在**解决方案资源管理器**中，请确保将**显示所有文件**切换为打开。 选择要复制的文件，右键单击这些文件，然后单击**包括在项目中**。 这将自动包括其所包含的文件夹。 然后，可根据需要将 **“显示所有文件”** 切换为关闭。 备用工作流（如果选择）旨在使用 **“添加现有项”** 命令，以便在 Visual Studio **“解决方案资源管理器”** 中创建任何必要子文件夹。 仔细检查可见资源是否已将**生成操作**设置为**内容**，并将**复制到输出目录**设置为**不复制**。
 5.  在此阶段中，命名空间和类名称之间的差异将生成大量生成错误。 例如，在打开 Visual Studio 生成的视图时，你将会看到它们的类型是 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)，而不是 **PhoneApplicationPage**。 XAML 标记和命令性代码之间的许多差异将在本移植指南的以下主题中详细介绍。 只需按照以下常规步骤操作，即可快速取得进展：在 XAML 标记的命名空间前缀声明中将“clr-namespace”更改为“using”；使用[命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)主题和 Visual Studio 的 **Find and Replace** 命令以批量更改到源代码（例如，将“System.Windows”替换为“Windows.UI.Xaml”）；并通过 Visual Studio 中的强制性代码编辑器使用上下文菜单上的 **Resolve** 和 **Organize Usings** 命令，以进行更具针对性的更改。
@@ -62,12 +62,12 @@ ms.locfileid: "8927897"
 -   你的应用既能检测到正在运行它的设备系列，又能导航到专门为该设备系列设计的视图。 有关详细信息，请参阅[检测应用所运行的平台](wpsl-to-uwp-input-and-sensors.md)。
 -   在以下情况下，你可能会发现一种类似的技术也许会很有用：必须要为某个标记文件或 **ResourceDictionary** 文件（或者包含该文件的文件夹）提供一个特殊名称，以便它仅当应用在特定设备系列上运行时才自动在运行时加载。 此技术将在 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 案例研究中进行介绍。
 -   若要使用未在所有设备系列上提供的功能（例如打印机、扫描仪或相机按钮），你可以编写自适应代码。 请参阅本主题下[条件编译和自适应代码](#conditional-compilation-and-adaptive-code)中的第三个示例。
--   如果你想要支持 WindowsPhone Silverlight 和 windows 10，则你可能能够共享项目之间的源代码文件。 以下是操作方法：在 Visual Studio 中，在**解决方案资源管理器**中右键单击项目、选择**添加现有项**、选择要共享的文件，然后单击**添加为链接**。 将源代码文件存储在文件系统上的常用文件夹中，可在指向它们的链接所在的项目中看到这些文件，不要忘记将它们添加到源控件。 如果你可以在文件中构建强制性源代码且其中的大多数代码（即使不是全部）同时适用于这两个平台，则无需具有该文件的两个副本。 尽可能将文件中任何特定于平台的逻辑打包到条件编译指令中，或者将其打包到运行时条件中（如果需要）。 请参阅下面的下一个部分和 [C# 预处理器指令](http://msdn.microsoft.com/library/ed8yd1ha.aspx)。
--   对于在二进制级别，而不是源代码级别上重复使用，存在一些可移植类库，这些库支持适用于 windows 10 应用 (.NET Core) 的 WindowsPhone Silverlight 中可用的.NET Api 子集。 可移植类库程序集为二进制形式，可与这些 .NET 平台及其他平台兼容。 使用 Visual Studio 创建一个面向可移植类库的项目。 请参阅[使用可移植类库的跨平台开发](http://msdn.microsoft.com/library/gg597391.aspx)。
+-   如果你想要支持 WindowsPhone Silverlight 和 windows 10，则你可能能够共享项目之间的源代码文件。 以下是操作方法：在 Visual Studio 中，在**解决方案资源管理器**中右键单击项目、选择**添加现有项**、选择要共享的文件，然后单击**添加为链接**。 将源代码文件存储在文件系统上的常用文件夹中，可在指向它们的链接所在的项目中看到这些文件，不要忘记将它们添加到源控件。 如果你可以在文件中构建强制性源代码且其中的大多数代码（即使不是全部）同时适用于这两个平台，则无需具有该文件的两个副本。 尽可能将文件中任何特定于平台的逻辑打包到条件编译指令中，或者将其打包到运行时条件中（如果需要）。 请参阅下面的下一个部分和 [C# 预处理器指令](https://msdn.microsoft.com/library/ed8yd1ha.aspx)。
+-   对于在二进制级别，而不是源代码级别上重复使用，存在一些可移植类库，这些库支持适用于 windows 10 应用 (.NET Core) 的 WindowsPhone Silverlight 中可用的.NET Api 子集。 可移植类库程序集为二进制形式，可与这些 .NET 平台及其他平台兼容。 使用 Visual Studio 创建一个面向可移植类库的项目。 请参阅[使用可移植类库的跨平台开发](https://msdn.microsoft.com/library/gg597391.aspx)。
 
 ## <a name="conditional-compilation-and-adaptive-code"></a>条件编译和自适应代码
 
-如果你想要在单个代码文件中支持 WindowsPhone Silverlight 和 windows 10，你可以执行此操作。 如果你查看 windows 10 项目在项目属性页中，你将看到该项目将 WINDOWS\_UAP 定义为条件编译符号。 一般情况下，你可以使用以下逻辑执行条件编译。
+如果你想要在单个代码文件中支持 WindowsPhone Silverlight 和 windows 10，则可以执行的操作。 如果你查看 windows 10 项目在项目属性页中，你将看到该项目将 WINDOWS\_UAP 定义为条件编译符号。 一般情况下，你可以使用以下逻辑执行条件编译。
 
 ```csharp
 #if WINDOWS_UAP
@@ -77,7 +77,7 @@ ms.locfileid: "8927897"
 #endif // WINDOWS_UAP
 ```
 
-如果你有一个 WindowsPhone Silverlight 应用和 Windows 运行时 8.x 应用之间共享的代码，则可能已经具有包含如下逻辑的源代码：
+如果你有一个 WindowsPhone Silverlight 应用和 Windows 运行时 8.x 应用之间共享的代码，则可能已具有包含如下逻辑的源代码：
 
 ```csharp
 #if NETFX_CORE
@@ -101,7 +101,7 @@ ms.locfileid: "8927897"
 #endif // WINDOWS_UAP
 ```
 
-你可能已使用条件编译来限制 Windows Phone 的硬件后退按钮的处理。 在 windows 10，后退按钮事件是一个通用概念。 已在硬件或软件中实现的后退按钮都将引发 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件（即，为要处理的事件）。
+你可能已使用条件编译来限制 Windows Phone 的硬件后退按钮的处理。 在 windows 10 中，后退按钮事件是一个通用概念。 已在硬件或软件中实现的后退按钮都将引发 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件（即，为要处理的事件）。
 
 ```csharp
        Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
@@ -116,7 +116,7 @@ ms.locfileid: "8927897"
 
 ```
 
-你可能已使用条件编译来限制 Windows Phone 的硬件相机按钮的处理。 在 windows 10，硬件相机按钮是一个特定于移动设备系列的概念。 因为某一应用包将在所有设备上运行，所以我们将使用所谓的自适应代码，将编译时条件更改为运行时条件。 为此，我们将使用 [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) 类在运行时查询是否存在 [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 类。 由于 **HardwareButtons** 在移动扩展 SDK 中进行了定义，因此我们需要针对要编译的代码将对该 SDK 的引用添加到我们的项目。 但需要注意的是，处理程序仅在实现移动扩展 SDK 中定义的类型且属于移动设备系列的设备上执行。 因此，下面的代码应注意仅使用存在的功能，尽管它采用了不同于条件编译的方式来实现该程序。
+你可能已使用条件编译来限制 Windows Phone 的硬件相机按钮的处理。 在 windows 10 中，硬件相机按钮是一个特定于移动设备系列的概念。 因为某一应用包将在所有设备上运行，所以我们将使用所谓的自适应代码，将编译时条件更改为运行时条件。 为此，我们将使用 [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) 类在运行时查询是否存在 [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 类。 由于 **HardwareButtons** 在移动扩展 SDK 中进行了定义，因此我们需要针对要编译的代码将对该 SDK 的引用添加到我们的项目。 但需要注意的是，处理程序仅在实现移动扩展 SDK 中定义的类型且属于移动设备系列的设备上执行。 因此，下面的代码应注意仅使用存在的功能，尽管它采用了不同于条件编译的方式来实现该程序。
 
 ```csharp
        // Note: Cache the value instead of querying it more than once.

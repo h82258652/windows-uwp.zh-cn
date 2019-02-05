@@ -6,18 +6,18 @@ keywords: 联系人, 短信, 发送
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 427eb1b895269727d82e42d5abc3ae1f1da1a35d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: abc9ca7d6c3d6e7120cfc5ede4f10a4dfd5a7c1f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944988"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050690"
 ---
 # <a name="send-an-sms-message"></a>发送短信
 
 本主题向你展示如何启动撰写短信对话框以允许用户发送短信。 你可以在显示该对话框之前，使用数据预填充短信的字段。 该消息将在用户点击发送按钮后发出。
 
-若要调用此代码，声明你的程序包清单中的**聊天**、 **smsSend**和**chatSystem**功能。 这些是[受限的功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities)，但你可以在应用中使用它们。 仅当你打算将应用发布到应用商店，你需要批准。 请参阅[帐户类型、 位置和费用](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees)。
+若要调用此代码，声明你的程序包清单中的**聊天**、 **smsSend**和**chatSystem**功能。 这是[受限的功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities)，但你可以在应用中使用它们。 仅当你打算将应用发布到应用商店，你需要批准。 请参阅[帐户类型、 位置和费用](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees)。
 
 ## <a name="launch-the-compose-sms-dialog"></a>启动撰写短信对话框
 
@@ -63,7 +63,7 @@ if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Applicatio
 
 ## <a name="summary-and-next-steps"></a>摘要和后续步骤
 
-本主题已向你展示如何启动撰写短信对话框。 有关选择用作短信接收方的联系人的信息，请参阅[选择联系人](selecting-contacts.md)。 从 GitHub 下载[通用 Windows 应用示例](http://go.microsoft.com/fwlink/p/?linkid=619979)来查看更多有关如何使用后台任务发送和接收短信的示例。
+本主题已向你展示如何启动撰写短信对话框。 有关选择用作短信接收方的联系人的信息，请参阅[选择联系人](selecting-contacts.md)。 从 GitHub 下载[通用 Windows 应用示例](https://go.microsoft.com/fwlink/p/?linkid=619979)来查看更多有关如何使用后台任务发送和接收短信的示例。
 
 ## <a name="related-topics"></a>相关主题
 

@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c75a6c487fe4a7f7cb56deff869b36309a4b9c7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a3133508a0cb8919994543845412ef71a8d463fe
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921760"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050840"
 ---
 # <a name="conditional-xaml"></a>条件 XAML
 
@@ -59,7 +59,7 @@ IsPropertyPresent(ControlType, PropertyName) | IsPropertyNotPresent(ControlType,
 
 在此示例中，如果在 Fall Creators Update 或更高版本上运行应用，将显示“Hello, Conditional XAML”作为文本块的内容，如果在以前的版本上运行，则默认显示无内容。
 
-首先，使用前缀“contract5Present”定义自定义命名空间并使用默认 XAML 命名空间 (http://schemas.microsoft.com/winfx/2006/xaml/presentation) 作为含有 [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text) 属性的架构。 若要使其成为一个条件命名空间，添加“?” 架构后的分隔符。
+首先，使用前缀“contract5Present”定义自定义命名空间并使用默认 XAML 命名空间 (https://schemas.microsoft.com/winfx/2006/xaml/presentation) 作为含有 [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text) 属性的架构。 若要使其成为一个条件命名空间，添加“?” 架构后的分隔符。
 
 然后定义在运行 Fall Creators Update 或更高版本的设备上返回 **true** 的条件。 使用 ApiInformation 方法 **IsApiContractPresent** 来检查 UniversalApiContract 的第 5 个版本。 UniversalApiContract 版本 5 是和 Fall Creators Update (SDK 16299) 一起发布的。
 

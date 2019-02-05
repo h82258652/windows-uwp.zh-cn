@@ -8,12 +8,12 @@ keywords: 设备、数字化器、输入、交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c45ad71643b0d75efcb130c1175952822197a161
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d37a830ffd0735d69046aa7e9495cfe6fa943f97
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932936"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048494"
 ---
 # <a name="identify-input-devices"></a>标识输入设备
 
@@ -27,7 +27,7 @@ ms.locfileid: "8932936"
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) 类，用于检索由一个或多个连接的鼠标公开的属性。 只需创建新的 **MouseCapabilities** 对象并获取感兴趣的属性。
 
-**注意**此处讨论的属性返回的值基于所有检测到鼠标： 如果至少一个鼠标支持特定功能，并且数值属性返回任何一个公开的最大值，布尔属性返回非零值鼠标。
+**注意**此处讨论的属性返回的值基于所有检测到鼠标： 布尔属性返回非零值，如果至少一个鼠标支持特定功能，，数值属性返回任何一个公开的最大值鼠标。
 
  
 
@@ -178,12 +178,12 @@ private void GetPointerDevices()
 
 
 **示例**
-* [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [基本输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延迟输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 
 **存档示例**
-* [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
  
 
  

@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 视频, scheduler, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 29e2c46636445adac496d0f2149e956c5703c20d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 69fef2bc5deb21be8685badb0cf18f38769170cb
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934782"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045070"
 ---
 # <a name="show-ads-in-video-content"></a>在视频内容中显示广告
 
@@ -26,7 +26,7 @@ ms.locfileid: "8934782"
 
 ## <a name="prerequisites"></a>先决条件
 
-* 使用 Visual Studio 2015 安装 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp) 或更高版本。
+* 使用 Visual Studio 2015 安装 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp) 或更高版本。
 
 * 你的项目必须使用 [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview) 控件，提供将计划广告的视频内容。 可在 GitHub 上的 Microsoft 中提供的 [TVHelpers](https://github.com/Microsoft/TVHelpers) 库集合中获取此控件。
 

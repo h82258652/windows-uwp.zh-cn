@@ -6,12 +6,12 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f85570d5c66db1641ec6352526d4db6213e199b4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e7082c3e572493656e8b109da35861ec820d4ec9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944892"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050830"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>使用 MediaFrameReader 处理音频帧
 
@@ -21,7 +21,7 @@ ms.locfileid: "8944892"
 > 本文中讨论的功能仅从 Windows 10 版本 1803 开始提供。
 
 > [!NOTE] 
-> 文中提供了一个通用 Windows 应用示例，介绍使用 **MediaFrameReader** 显示不同帧源（包括彩色、深度和红外相机）的帧。 有关详细信息，请参阅[相机帧示例](http://go.microsoft.com/fwlink/?LinkId=823230)。
+> 文中提供了一个通用 Windows 应用示例，介绍使用 **MediaFrameReader** 显示不同帧源（包括彩色、深度和红外相机）的帧。 有关详细信息，请参阅[相机帧示例](https://go.microsoft.com/fwlink/?LinkId=823230)。
 
 ## <a name="setting-up-your-project"></a>设置项目
 获取音频帧的过程在很大程度上与获取其他类型的媒体帧相同。 对于使用 **MediaCapture** 的任何应用，在尝试访问任何相机设备前都必须声明应用使用 *webcam* 功能。 如果应用从音频设备捕获音频，还应声明 *microphone* 设备功能。 
@@ -79,7 +79,7 @@ ms.locfileid: "8944892"
 * [使用 MediaFrameReader 处理媒体帧](process-media-frames-with-mediaframereader.md)
 * [相机](camera.md)
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [相机帧示例](http://go.microsoft.com/fwlink/?LinkId=823230)
+* [相机帧示例](https://go.microsoft.com/fwlink/?LinkId=823230)
 * [音频图](audio-graphs.md)
  
 

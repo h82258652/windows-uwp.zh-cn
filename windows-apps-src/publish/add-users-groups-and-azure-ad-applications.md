@@ -5,39 +5,39 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10，uwp，azure ad 应用程序，aad，用户、 组、 多个用户，多用户
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ecdcf2b148f53fefb5edc7e1f2df0d6bab58475
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 326bb547ac5b0d31f5112d7d5737ddad0d592dd5
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942063"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046936"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-partner-center-account"></a>添加用户、 组和 Azure AD 应用程序与你的合作伙伴中心帐户
 
-（在下**帐户设置**） 的[合作伙伴中心](https://partner.microsoft.com/dashboard)的**用户**部分允许你使用 Azure Active Directory 将用户添加到你的合作伙伴中心帐户。 为每个用户分配一个角色（或自定义权限集），并且该角色定义他们的帐户访问权限。 你还可以添加[的用户组](#groups)和[Azure AD 应用程序](#azure-ad-applications)以授予他们对你的合作伙伴中心帐户的访问权限。
+（在下**帐户设置**） 的[合作伙伴中心](https://partner.microsoft.com/dashboard)的**用户**部分允许你使用 Azure Active Directory 将用户添加到你的合作伙伴中心帐户。 为每个用户分配一个角色（或自定义权限集），并且该角色定义他们的帐户访问权限。 你还可以添加[用户组](#groups)和[Azure AD 应用程序](#azure-ad-applications)以授予他们对你的合作伙伴中心帐户的访问权限。
 
 将用户添加到帐户后，你可以[编辑帐户详细信息](#edit)、更改[角色和权限](set-custom-permissions-for-account-users.md)或[删除用户](#remove)。
 
 > [!IMPORTANT]
-> 为了将用户添加到你的帐户，你必须[将你的合作伙伴中心帐户与你的组织的 Azure Active Directory 租户相关联](associate-azure-ad-with-partner-center.md)的第一个。 
+> 若要将用户添加到你的帐户，必须[将你的合作伙伴中心帐户与你的组织的 Azure Active Directory 租户相关联](associate-azure-ad-with-partner-center.md)的第一个。 
 
-在添加用户时，你将需要通过向其分配一个[角色或自定义权限集](set-custom-permissions-for-account-users.md)来指定他们对你的合作伙伴中心帐户的访问。 
+在添加用户时，你将需要通过向其分配的[角色或自定义权限集](set-custom-permissions-for-account-users.md)来指定他们对你的合作伙伴中心帐户的访问。 
 
-请记住，所有合作伙伴中心用户 （包括组和 Azure AD 应用程序） 必须[与你的合作伙伴中心帐户关联的 Azure AD 租户](associate-azure-ad-with-partner-center.md)中都拥有一个活动帐户。 您可以在一个租户中一次性完成用户管理工作；但你必须使用你想要在其中添加或编辑用户的租户的管理员帐户登录。 在合作伙伴中心中创建新用户还将创建为该用户帐户在 Azure AD 租户到你登录，并对合作伙伴中心中的用户名称进行更改将在你的组织的 Azure AD 租户中进行相同的更改。
+请记住所有合作伙伴中心用户 （包括组和 Azure AD 应用程序） 必须[与你的合作伙伴中心帐户关联的 Azure AD 租户](associate-azure-ad-with-partner-center.md)中都拥有一个活动帐户。 您可以在一个租户中一次性完成用户管理工作；但你必须使用你想要在其中添加或编辑用户的租户的管理员帐户登录。 在合作伙伴中心中创建新用户还将创建用户帐户在 Azure AD 租户的已登录，并对合作伙伴中心中的用户的名称的更改将在你的组织的 Azure AD 租户中进行相同的更改。
 
 > [!NOTE]
-> 如果你的组织使用[的目录集成](http://go.microsoft.com/fwlink/p/?LinkID=724033)以同步你的 Azure AD 的本地目录服务，你将无法在合作伙伴中心中创建新用户、 组或 Azure AD 应用程序。 你 （或你的本地目录中的其他管理员） 将需要先创建它们的本地目录中直接将能够查看和在合作伙伴中心中添加它们。
+> 如果你的组织使用[目录集成](https://go.microsoft.com/fwlink/p/?LinkID=724033)以同步你的 Azure AD 的本地目录服务，你将无法在合作伙伴中心中创建新用户、 组或 Azure AD 应用程序。 你 （或你的本地目录中的其他管理员） 将需要创建它们的本地目录中直接，才能将能够查看和合作伙伴中心中添加它们。
 
 
 <span id="users" />
 
 ## <a name="add-users-to-your-partner-center-account"></a>将用户添加到你的合作伙伴中心帐户
 
-若要将用户添加到你的合作伙伴中心帐户中，转到**帐户设置**中的**用户**页，然后选择**添加用户。** 你必须使用你想要在其中工作的 Azure AD 租户的管理员帐户登录。 
+若要将用户添加到你的合作伙伴中心帐户，请转到**帐户设置**中的**用户**页，然后选择**添加用户。** 你必须使用你想要在其中工作的 Azure AD 租户的管理员帐户登录。 
 
 ### <a name="add-existing-users"></a>添加现有用户 
 
-你可以选择已存在于你的组织的租户并授权他们访问你的合作伙伴中心帐户的用户。 
+你可以选择用户已存在于你的组织的租户并将它们提供给你的合作伙伴中心帐户的访问权限。 
 
 <span id="from-directory" />
 
@@ -52,11 +52,11 @@ ms.locfileid: "8942063"
 
 ### <a name="additional-methods-for-adding-users"></a>其他用户添加方法
 
-如果还具有 Azure AD 租户的[全局管理员](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限的管理员帐户登录你正在，你将需要将用户添加到你的合作伙伴中心帐户的其他选项。 你需要选择其中一个选项：
+如果还具有 Azure AD 租户的[全局管理员](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限的管理员帐户登录中工作，你将需要将用户添加到你的合作伙伴中心帐户的其他选项。 你需要选择其中一个选项：
 
 -   **添加现有用户**： 选择用户已存在于你的组织的目录，并授权他们访问你的合作伙伴中心帐户，使用上文所述的方法。
 -   **创建新用户**： 创建全新的用户帐户添加到你的组织的目录和你的合作伙伴中心帐户
--   **邀请外部用户**：向当前不在你的组织目录中的用户发送电子邮件邀请。 他们将受邀访问你的合作伙伴中心帐户，并且新的[来宾用户](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)帐户将会为其创建 Azure AD 租户中。
+-   **邀请外部用户**：向当前不在你的组织目录中的用户发送电子邮件邀请。 他们将受邀访问你的合作伙伴中心帐户，并且新的[来宾用户](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)帐户为其创建 Azure AD 租户中。
 
 <span id="new-user" />
 
@@ -92,12 +92,12 @@ ms.locfileid: "8942063"
 如果需要重新发送邀请，请在**用户**页上查找用户，然后选择他们的电子邮件地址（或者显示**邀请挂起**的文本）。 然后在页面底部单击**重新发送邀请**。
 
 > [!IMPORTANT]
-> 外部用户邀请加入你的合作伙伴中心帐户可分配相同的角色和权限与其他用户。 但是，外部用户无法在 Visual Studio 中执行某些任务，例如将应用与 Microsoft Store 关联，或创建要上传到 Microsoft Store 的程序包。 如果用户需要执行这些任务，请选择**创建新用户**而不是**邀请外部用户**。 （如果你不希望将这些用户添加到现有 Azure AD 租户，可以[创建新租户](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)，然后在该租户中为他们创建新用户帐户。） 
+> 外部用户的邀请加入你的合作伙伴中心帐户可分配相同的角色和权限与其他用户。 但是，外部用户无法在 Visual Studio 中执行某些任务，例如将应用与 Microsoft Store 关联，或创建要上传到 Microsoft Store 的程序包。 如果用户需要执行这些任务，请选择**创建新用户**而不是**邀请外部用户**。 （如果你不希望将这些用户添加到现有 Azure AD 租户，可以[创建新租户](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)，然后在该租户中为他们创建新用户帐户。） 
 
 
 ### <a name="changing-a-users-directory-password"></a>更改用户的目录密码
 
-如果在创建用户帐户时已经提供了**密码恢复电子邮件**，那么用户可以在有需要时自行更改密码。 你还可以按照以下步骤更新用户密码（如果你使用 Azure AD 租户中的全局管理员帐户登录以更改用户密码）。 请注意，这将更改用户的 Azure AD 租户中的密码，密码以及他们用于访问合作伙伴中心。 
+如果在创建用户帐户时已经提供了**密码恢复电子邮件**，那么用户可以在有需要时自行更改密码。 你还可以按照以下步骤更新用户密码（如果你使用 Azure AD 租户中的全局管理员帐户登录以更改用户密码）。 请注意，这将更改在你的 Azure AD 租户中的用户的密码，密码以及他们用于访问合作伙伴中心。 
 
 1.  在**用户**页面 （下面**帐户设置**），选择你想要编辑的用户帐户的名称。
 2.  选择页面底部的**重置密码**按钮。
@@ -110,18 +110,18 @@ ms.locfileid: "8942063"
 
 ## <a name="add-groups-to-your-partner-center-account"></a>将组添加到你的合作伙伴中心帐户
 
-为你的合作伙伴中心帐户，你可以从你的组织的目录添加组。 当你执行此操作时，属于该组成员的每个用户都将能够访问它，并且具有与组的分配角色关联的权限。
+可以将一组从组织的目录添加到合作伙伴中心帐户。 当你执行此操作时，属于该组成员的每个用户都将能够访问它，并且具有与组的分配角色关联的权限。
 
 ### <a name="add-groups-from-your-organizations-directory"></a>从组织的目录添加组
 
 1.  选择 （附近的合作伙伴中心右上角） 的齿轮图标，然后选择**开发人员设置**。 在**设置**菜单中，选择**用户**。
-2. 从**用户**页上，选择**添加组**。
+2. 从**用户**页中，选择**添加组**。
 2.  从出现的列表中选择一个或多个组。 你可以使用搜索框来搜索特定组。
     > [!TIP]
     > 如果你选择多个组添加到你的合作伙伴中心帐户，则必须为其分配相同角色或自定义权限集。 若要添加具有不同角色/权限的多个组，请针对每个角色或自定义权限集重复以下步骤。
 
 3.  完成选择组后，请单击**添加选定项**。
-4.  在**角色**部分中，为选定的组指定[角色或自定义权限](set-custom-permissions-for-account-users.md)。 组中的所有成员都将能够访问合作伙伴中心帐户的权限应用于该组，不必考虑与他们的个人帐户关联的角色/权限。
+4.  在**角色**部分中，为选定的组指定[角色或自定义权限](set-custom-permissions-for-account-users.md)。 组的所有成员都将能够访问合作伙伴中心帐户的权限应用于该组，不必考虑与他们的个人帐户关联的角色/权限。
 5.  单击**保存**。
 
 
@@ -132,7 +132,7 @@ ms.locfileid: "8942063"
 1.  从 （在**开发人员设置**） 下的**用户**页面中，单击**添加组**。
 2.  在下一页上，选择**新组**。
 3.  输入新组的显示名称。
-4.  为组指定[角色或自定义权限](set-custom-permissions-for-account-users.md)。 组中的所有成员都将能够访问合作伙伴中心帐户的权限应用于该组，不必考虑与他们的个人帐户关联的角色/权限。
+4.  为组指定[角色或自定义权限](set-custom-permissions-for-account-users.md)。 组的所有成员都将能够访问合作伙伴中心帐户的权限应用于该组，不必考虑与他们的个人帐户关联的角色/权限。
 5.  从出现的列表中选择要分配给新组的用户。 你可以使用搜索框来搜索特定用户。
 6.  完成选择用户后，请单击**添加选定项**将其添加到新组中。
 7.  单击**保存**。
@@ -163,7 +163,7 @@ ms.locfileid: "8942063"
 如果你想要授予对品牌新 Azure AD 应用程序帐户的合作伙伴中心访问权限，你可以创建一个**用户**部分中。 请注意，这将创建一个新帐户，你的组织的目录中，而不只是在你的合作伙伴中心帐户。
 
 > [!TIP]
-> 如果你主要使用此 Azure AD 应用程序的合作伙伴中心身份验证，并且不需要用户直接访问它，你可以输入任何有效地址的**回复 URL**和**应用 ID URI**，只要这些值未由任何其他 Azure你的目录中的 AD 应用程序。
+> 如果你主要使用此 Azure AD 应用程序的合作伙伴中心身份验证，并且不需要用户直接访问它，你可以输入任何有效地址为**回复 URL**和**应用 ID URI**，只要这些值未由任何其他 Azure你的目录中的 AD 应用程序。
 
 1.  在**用户**页面 （下面**帐户设置**），选择**添加 Azure AD 应用程序**。
 2.  在下一页上，选择**新的 Azure AD 应用程序**。
@@ -201,7 +201,7 @@ ms.locfileid: "8942063"
 添加用户、 组和/或 Azure AD 应用程序与你的合作伙伴中心帐户后，你可以更改其帐户信息。 
 
 > [!IMPORTANT]
-> [角色](set-custom-permissions-for-account-users.md)或权限所做的更改将仅影响合作伙伴中心访问权限。 所有其他更改 （例如更改用户的名称或组成员身份或回复 URL 和应用 ID URI Azure AD 应用程序） 将反映在你的组织的 Azure AD 租户以及你的合作伙伴中心帐户。 
+> [角色](set-custom-permissions-for-account-users.md)或权限所做的更改将仅影响合作伙伴中心访问权限。 所有其他更改 （例如 Azure AD 应用程序更改用户的名称或组成员身份或回复 URL 和应用 ID URI） 将反映在你的组织的 Azure AD 租户以及你的合作伙伴中心帐户。 
 
 1.  在**用户**页面 （下面**帐户设置**），选择用户、 组或你想要编辑的 Azure AD 应用程序帐户的名称。
 2.  进行所需更改。 你可以编辑的项目如下所示：
@@ -209,7 +209,7 @@ ms.locfileid: "8942063"
     -   对于**组**，你可以编辑组的名称。 （若要更新组成员身份，请编辑要添加或从组中删除的用户，并对**组成员身份**部分进行更改。）
     -   对于 **Azure AD 应用程序**，你可以输入**回复 URL** 或**应用 ID URI** 的新值。
     请记住这些更改将在你的组织的目录以及你的合作伙伴中心帐户。
-3.  有关合作伙伴中心访问权限的更改，选择或取消选择你想要将应用，或选择**自定义权限**并进行所需的更改的角色。 这些更改仅影响合作伙伴中心访问，并且不会更改你的组织的 Azure AD 租户中的任何权限。
+3.  相关合作伙伴中心访问权限的更改，选择或取消选择你想要应用，或选择**自定义权限**并进行所需的更改的角色。 这些更改仅影响合作伙伴中心访问，并且不会更改你的组织的 Azure AD 租户中的任何权限。
 3.  单击**保存**。
 
 
@@ -223,7 +223,7 @@ ms.locfileid: "8942063"
 
 ## <a name="remove-users-groups-and-azure-ad-applications"></a>删除用户、组和 Azure AD 应用程序
 
-若要从你的合作伙伴中心帐户删除用户、 组或 Azure AD 应用程序，请选择按其名称在**用户**页上显示的**删除**链接。 在确认你想要将其删除之后, 该用户、 组或 Azure AD 应用程序将不再能够访问你的合作伙伴中心帐户 （除非以后再次添加它）。
+若要从你的合作伙伴中心帐户中删除用户、 组或 Azure AD 应用程序，请选择按其名称在**用户**页上显示的**删除**链接。 在确认你想要将其删除之后, 该用户、 组或 Azure AD 应用程序将不再能够访问你的合作伙伴中心帐户 （除非以后再次添加它）。
 
 > [!IMPORTANT]
 > 删除用户、 组或 Azure AD 应用程序意味着它将不再具有到合作伙伴中心帐户的访问权限。 它**不会**从你的组织的目录中删除用户、组或 Azure AD 应用程序。

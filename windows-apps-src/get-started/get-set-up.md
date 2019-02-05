@@ -1,23 +1,23 @@
 ---
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: 准备工作
-description: 准备工作比想像中的简单。 请按照以下说明，并开始创建适用于 windows 10 通用 Windows 平台 (UWP) 应用。
+description: 准备工作比想像中的简单。 请按照以下说明和开始菜单适用于 windows 10 创建通用 Windows 平台 (UWP) 应用。
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f3d14467856aee733f2e11d057db0deb873269ff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a92b8d0f921bc747108b802d285b783e7f2bcaa8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920631"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047934"
 ---
 # <a name="get-set-up"></a>准备工作
 
 ![使用 Visual Studio 的准备工作](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-准备工作比想像中的简单。 请按照以下说明，并开始创建适用于 windows 10 通用 Windows 平台 (UWP) 应用。
+准备工作比想像中的简单。 请按照以下说明和开始菜单适用于 windows 10 创建通用 Windows 平台 (UWP) 应用。
 
 ## <a name="1-download-or-update-visual-studio"></a>1. 下载或更新 Visual Studio
 
@@ -64,7 +64,7 @@ Microsoft Visual Studio2017 有助于设计、 编码、 测试和调试应用�
 
 ## <a name="want-more-tools-and-downloads"></a>需要更多的工具和下载吗？
 
-有关工具和下载的完整列表，请参阅[下载](http://go.microsoft.com/fwlink/p/?linkid=285935)。
+有关工具和下载的完整列表，请参阅[下载](https://go.microsoft.com/fwlink/p/?linkid=285935)。
 
 ## <a name="see-also"></a>另请参阅
 

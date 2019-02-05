@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 04534316c3357dfecc4a94b91dcab42f8238dec6
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: 09ddb212cd84b9754c35adccdf6e60ad96a4f94f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980325"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050800"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>使用选取器打开文件和文件夹
 
@@ -24,7 +24,7 @@ ms.locfileid: "8980325"
 通过让用户与选取器交互来访问文件和文件夹。 你可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 类访问文件，并使用 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) 访问文件夹。
 
 > [!NOTE]
-> 有关完整示例，请参阅[文件选取器示例](http://go.microsoft.com/fwlink/p/?linkid=619994)。
+> 有关完整示例，请参阅[文件选取器示例](https://go.microsoft.com/fwlink/p/?linkid=619994)。
 
 ## <a name="prerequisites"></a>先决条件
 

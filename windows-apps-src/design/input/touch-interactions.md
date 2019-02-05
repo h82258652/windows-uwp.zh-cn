@@ -8,12 +8,12 @@ keywords: 键盘, 指针, 输入, 用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b662a7689f0b0b24fc3f70a9fbc143d4268d2cb8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b889fede67c7e32ff48c0e48a516f389afda820a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940491"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048638"
 ---
 # <a name="touch-interactions"></a>触摸交互
 
@@ -80,7 +80,7 @@ ms.locfileid: "8940491"
 
 ## <a name="use-touch-feedback"></a>用户触摸反馈
 
-与你的应用交互期间适当的视觉反馈可帮助用户识别、 了解以及适应应用和 Windowsplatform 如何解释其交互。 视觉反馈可以指示成功交互、延迟系统状态、加强控制感觉、减少错误、帮助用户了解系统和输入设备并鼓励交互。
+与你的应用交互期间适当的视觉反馈可帮助用户识别、 了解以及适应应用和 Windowsplatform 如何解释其交互的。 视觉反馈可以指示成功交互、延迟系统状态、加强控制感觉、减少错误、帮助用户了解系统和输入设备并鼓励交互。
 
 当用户依赖触摸屏输入来进行要求基于位置的准确活动时，视觉反馈非常重要。 无论何时何地检测到触摸输入都显示反馈，以帮助用户了解应用及其控件定义的任何自定义定向规则。
 
@@ -591,17 +591,17 @@ End Sub
 
 **示例**
 
-* [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延迟输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [焦点视觉示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **存档示例**
 
-* [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML 滚动、平移以及缩放示例](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [输入：使用 GestureRecognizer 的笔势和操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [输入：XAML 用户输入事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML 滚动、平移以及缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [输入：使用 GestureRecognizer 的笔势和操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
  

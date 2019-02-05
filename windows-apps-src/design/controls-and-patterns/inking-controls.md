@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a969c0dfbfd08b5cc29651e2ad295c2bdd60ee0
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: fcbed8400b31616f92f20aa3a64a4dd8603dc7b0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037009"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047891"
 ---
 # <a name="inking-controls"></a>墨迹书写控件
 
@@ -84,7 +84,7 @@ InkCanvas 和 InkToolbar 还用于 **Windows Ink 工作区**中的**草图板**�
 ```
 
 > [!NOTE]
-> 有关使用 InkPresenter 进行的详细的 InkCanvas 自定义，请参阅[“UWP 应用中的笔和触笔交互”](http://windowsstyleguide/input/pen-and-stylus-interactions/)。
+> 有关使用 InkPresenter 进行的详细的 InkCanvas 自定义，请参阅[“UWP 应用中的笔和触笔交互”](https://windowsstyleguide/input/pen-and-stylus-interactions/)。
 
 InkToolbar 控件必须与 InkCanvas 结合使用。 将 InkToolbar（以及所有内置工具）合并到应用需要一行额外的标记：
 
@@ -170,6 +170,6 @@ InkToolbar 由两组不同的按钮类型组成：
 
 ## <a name="related-articles"></a>相关文章
 
-- [UWP 应用中的笔和触笔交互](http://windowsstyleguide/input/pen-and-stylus-interactions/)
-- [识别笔划墨迹](http://windowsstyleguide/input/convert-ink-to-text/)
-- [存储和检索笔划墨迹](http://windowsstyleguide/input/save-and-load-ink/)
+- [UWP 应用中的笔和触笔交互](https://windowsstyleguide/input/pen-and-stylus-interactions/)
+- [识别笔划墨迹](https://windowsstyleguide/input/convert-ink-to-text/)
+- [存储和检索笔划墨迹](https://windowsstyleguide/input/save-and-load-ink/)

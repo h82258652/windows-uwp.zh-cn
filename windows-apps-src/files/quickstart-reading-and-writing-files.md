@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: e3e18bc5ec683e6c7a8aab18321f4b98511faa62
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: d60dcb60d8628822d7597ad25268aae5e7a7ae6a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980335"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044574"
 ---
 # <a name="create-write-and-read-a-file"></a>创建、写入和读取文件
 
@@ -29,7 +29,7 @@ ms.locfileid: "8980335"
 使用 [**StorageFile**](/uwp/api/windows.storage.storagefile) 对象读取和写入文件。
 
 > [!NOTE]
-> 有关完整示例，请参阅[文件访问示例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
+> 有关完整示例，请参阅[文件访问示例](https://go.microsoft.com/fwlink/p/?linkid=619995)。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -191,7 +191,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
         Windows.Security.Cryptography.BinaryStringEncoding.Utf8)
     ```
 
-2.  然后将字节写入缓冲区从你的文件通过调用[**FileIO.WriteBufferAsync**](/uwp/api/windows.storage.fileio.writebufferasync)方法。
+2.  然后将字节写入从你的缓冲区你的文件通过调用[**FileIO.WriteBufferAsync**](/uwp/api/windows.storage.fileio.writebufferasync)方法。
 
     ```csharp
     await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer);
@@ -254,7 +254,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
     ```
 
-2.  接下来，通过调用从[**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)方法获取输出流`stream`。 如果你使用 C#，然后括起来这**using**语句以管理输出流的生存期。 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后你可以控制其生存期括在块中，或将其设置为`nullptr`当你完成使用它。
+2.  接下来，通过调用[**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)方法获取输出流`stream`。 如果你使用 C#，然后将这在**使用**语句以管理输出流的生存期中。 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后你可以控制其生存期括在块中，或将其设置为`nullptr`当你完成使用它。
 
     ```csharp
     using (var outputStream = stream.GetOutputStreamAt(0))
@@ -306,7 +306,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
     ```
 
-4.  最后，添加此代码 （如果你使用 C# 中，**使用**内部语句中），以将文本保存到你的文件与[**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync)并关闭[**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync)与流。
+4.  最后，添加此代码 （如果你使用 C# 中，**使用**内部语句中），以将文本保存到你的文件与[**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync)和关闭[**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync)与流。
 
     ```csharp
     await dataWriter.StoreAsync();

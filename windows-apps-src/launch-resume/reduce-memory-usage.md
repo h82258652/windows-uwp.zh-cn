@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c9716483d7df51c2c02d2f9c88e5a4cec05437cc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 28c21b3d3b3e53def2181e96a58b53998ee0f04a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942982"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046600"
 ---
 # <a name="free-memory-when-your-app-moves-to-the-background"></a>在将应用移动到后台时释放内存
 
@@ -103,5 +103,5 @@ Windows 10 版本 1607 引入了两个新的应用程序生命周期事件：[**
 
 ## <a name="related-topics"></a>相关主题
 
-* [后台媒体播放示例](http://go.microsoft.com/fwlink/p/?LinkId=800141) - 介绍了如何在将应用移动到后台状态时释放内存。
+* [后台媒体播放示例](https://go.microsoft.com/fwlink/p/?LinkId=800141) - 介绍了如何在将应用移动到后台状态时释放内存。
 * [诊断工具](https://blogs.msdn.microsoft.com/visualstudioalm/2015/01/16/diagnostic-tools-debugger-window-in-visual-studio-2015/) - 使用诊断工具，可以观察垃圾回收事件，并验证应用是否按预期方式释放内存。

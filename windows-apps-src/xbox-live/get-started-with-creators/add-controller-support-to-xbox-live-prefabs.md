@@ -6,12 +6,12 @@ ms.date: 07/14/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, unity, 控制器支持
 ms.localizationpriority: medium
-ms.openlocfilehash: 20defe8598b8360787454134eab3b2daaf244441
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4d32ec62b8beec10256ed9a695866c2fd9bdd03e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927035"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044204"
 ---
 # <a name="add-controller-support-to-xbox-live-prefabs"></a>向 Xbox Live Prefabs 添加控制器支持
 
@@ -48,4 +48,4 @@ ms.locfileid: "8927035"
 
 ## <a name="xbox-controller-button-mappings"></a>Xbox 控制器按钮映射
 
-有关 Unity 中的 Xbox 控制器按钮映射，请查看此 [Unity 控制器 Wiki 页](http://wiki.unity3d.com/index.php?title=Xbox360Controller)。
+有关 Unity 中的 Xbox 控制器按钮映射，请查看此 [Unity 控制器 Wiki 页](https://wiki.unity3d.com/index.php?title=Xbox360Controller)。

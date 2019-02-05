@@ -6,21 +6,21 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 开发者帐户, 个人, 公司, 业务, windows 10, uwp, developer account, individual, company, business
 ms.localizationpriority: medium
-ms.openlocfilehash: 3163b4c89cc1d0bf3e4adfdea39222dfcb5a3ee1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9fda6fc33ab82283047e4bdf4b78d21f78a577c9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934632"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045706"
 ---
 # <a name="account-types-locations-and-fees"></a>帐户类型、位置和费用
 
-Windows 在[合作伙伴中心](https://partner.microsoft.com/dashboard)产品/服务计划个人和公司帐户在许多[国家和地区](#developer-account-and-app-submission-markets)。 任一类型的帐户提供访问以将应用发布到应用商店并参与其他 Microsoft 计划。
+Windows 在[合作伙伴中心](https://partner.microsoft.com/dashboard)产品/服务计划个人和公司帐户在许多[国家和地区](#developer-account-and-app-submission-markets)。 你将应用发布到应用商店和参与其他 Microsoft 计划访问权限的帐户提供的任何一种类型。
 
 > [!NOTE]
 > 当打开开发者帐户，请确保你想要使用的开发者帐户的 Microsoft 帐户登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。 稍后你将可以选择[向帐户添加其他用户](manage-account-users.md)。
 
-在[开始注册过程](http://go.microsoft.com/fwlink/p/?LinkId=615100) 时，你需要选择是创建个人帐户还是公司帐户。 这两种类型的帐户均允许你提交应用、游戏、加载项和服务。
+在[开始注册过程](https://go.microsoft.com/fwlink/p/?LinkId=615100) 时，你需要选择是创建个人帐户还是公司帐户。 这两种类型的帐户均允许你提交应用、游戏、加载项和服务。
 
 公司帐户用于组织和企业。 对于公司帐户，我们还需要进一步进行[验证](#account-verification)，以确保已向你授权为公司设置该帐户。 个人帐户通常适用于自行开发的单个开发人员，但你可以选择将其他帐户用户添加到任一帐户类型。
 
@@ -37,7 +37,7 @@ Windows 在[合作伙伴中心](https://partner.microsoft.com/dashboard)产品/�
 
 ## <a name="account-verification"></a>帐户验证
 
-完成注册过程后，帐户将进行验证过程。 对于个人帐户，我们将进行检查，确保其他公司没有在使用该发布者显示名称。 对于公司帐户，我们的验证合作伙伴 Dun & Bradstreet 将确认你是否有权为你所代表的公司创建帐户。 此过程可能历时几天到几周不等，并经常会致电贵公司（因此请确保你在填写注册表单时所填写的所有联系信息是最新的）。 直到进行验证，但时在等待，你可以[保留应用名称](create-your-app-by-reserving-a-name.md)才能提交从公司帐户的应用继续生成和测试应用，以及在准备你的提交中工作。
+完成注册过程后，帐户将进行验证过程。 对于个人帐户，我们将进行检查，确保其他公司没有在使用该发布者显示名称。 对于公司帐户，我们的验证合作伙伴 Dun & Bradstreet 将确认你是否有权为你所代表的公司创建帐户。 此过程可能历时几天到几周不等，并经常会致电贵公司（因此请确保你在填写注册表单时所填写的所有联系信息是最新的）。 直到进行验证，但前台，你可以[保留应用名称](create-your-app-by-reserving-a-name.md)才能提交从公司帐户的应用继续生成和测试应用，并且适用于准备你的提交。
 
 可在**帐户设置**页上查看验证状态。 
 

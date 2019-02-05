@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, 税收, irs, 国内税收署, 税款, 所得税, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a5e70278d655bce4ced48b33c4711762a7cce7f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fb25887d9bc40bd9c596cd437b7d2d6d06047020
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918538"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047309"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 发出的 IRS 税单
 
@@ -23,13 +23,13 @@ ms.locfileid: "8918538"
 
 | IRS 税单 | 说明 | 可用性 |
 |--------------|-------------|--------------|
-|1099-MISC、1099-K | 与你参与 Microsoft 市场的销售活动和/或收到的付款金额相关 | 将上或在**1 月 31**日之前加盖邮戳打印的表单，并将在[合作伙伴中心](https://partner.microsoft.com/dashboard)中提供.pdf 副本 (在**帐户设置 > 税务资料**) 在同一时间 |
-|1042-S | 与你收到的应缴纳美国预扣税的付款金额相关 | 将上或在**3 月 15**日之前加盖邮戳打印的表单，并将在合作伙伴中心中提供.pdf 副本 (在**帐户设置 > 税务资料**) 在同一时间 |
+|1099-MISC、1099-K | 与你参与 Microsoft 市场的销售活动和/或收到的付款金额相关 | 打印的表单将加盖邮戳，或之前**1 月 31 日**，并将在同一时间 （以**帐户设置 > 税务配置文件**) 的[合作伙伴中心](https://partner.microsoft.com/dashboard)中提供.pdf 副本 |
+|1042-S | 与你收到的应缴纳美国预扣税的付款金额相关 | 打印的表单将加盖邮戳，或之前**3 月 15 日**，和.pdf 副本可在合作伙伴中心**帐户设置 > 税务配置文件**) 在同一时间 |
 
 > [!NOTE]
 > 我们在 IRS 税单使用的地址来自于你的[税务配置文件](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的地址。 如果你的地址已变更，请务必更新**税务资料**中的地址。
 
-税单将从以下地址发送给你：
+从以下地址，将向你发送的税单：
 
 **美国公民：**
 <table>
@@ -41,10 +41,10 @@ ms.locfileid: "8918538"
 **非美国公民：**
 <table>
 <tr><th>业务组</th><th>法人</th><th>地址</th></tr>
-<tr><td>Windows、 Office 和 Azure</td><td>Microsoft 爱尔兰操作有限 （付款由 Microsoft Corporation 通过 Microsoft 爱尔兰作为合格的 Microsoft Corporation 中介）</td><td>一个 Microsoft 位置<br>南亚&nbsp;县&nbsp;业务&nbsp;Park<br>Leopardstown，都柏林 18 爱尔兰</td></tr>
-<tr><td>广告 *</td><td>Microsoft 爱尔兰操作有限 （付款由 Microsoft 联机 Inc.通过 Microsoft 爱尔兰作为 Microsoft 联机 inc.付款代理）</td><td>一个 Microsoft 位置<br>南亚&nbsp;县&nbsp;业务&nbsp;Park<br>Leopardstown，都柏林 18 爱尔兰</td></tr>
+<tr><td>Windows、 Office 和 Azure</td><td>Microsoft 爱尔兰操作限制 （付款的 Microsoft Corporation 通过 Microsoft 爱尔兰充当限定中介 Microsoft Corporation）</td><td>一个 Microsoft 位置<br>南&nbsp;县&nbsp;业务&nbsp;Park<br>Leopardstown，都柏林 18 爱尔兰</td></tr>
+<tr><td>广告 *</td><td>Microsoft 爱尔兰操作限制 （付款由 Microsoft 联机 Inc.通过 Microsoft 爱尔兰充当 Microsoft 联机 inc.付款代理）</td><td>一个 Microsoft 位置<br>南&nbsp;县&nbsp;业务&nbsp;Park<br>Leopardstown，都柏林 18 爱尔兰</td></tr>
 <tr><td>广告</td><td>Microsoft Online inc.</td><td>6100 他道路<br>89511 Reno，NV 美国</td></tr>
-<tr><td colspan="3">* 将通过 Microsoft 爱尔兰操作有限支付收益广告收益的以下国家/地区的公民： 奥地利、 比利时、 保加利亚、 克罗地亚、 塞浦路斯、 捷克共和国、 丹麦、 爱沙尼亚、 芬兰、 法国、 德国、 希腊、 匈牙利、 爱尔兰、曼岛、 意大利、 拉脱维亚、 列支敦士登、 立陶宛、 卢森堡、 马耳他、 摩纳哥、 荷兰、 挪威、 波兰、 葡萄牙、 罗马尼亚、 斯洛伐克、 斯洛文尼亚、 南非、 西班牙、 瑞典、 瑞士、 英国</td></tr>
+<tr><td colspan="3">* 将通过 Microsoft 爱尔兰操作限制支付收益广告收益的以下国家/地区的公民： 奥地利、 比利时、 保加利亚、 克罗地亚、 塞浦路斯、 捷克共和国、 丹麦、 爱沙尼亚、 芬兰、 法国、 德国、 希腊、 匈牙利、 爱尔兰、曼岛、 意大利、 拉脱维亚、 列支敦士登、 立陶宛、 卢森堡、 马耳他、 摩纳哥、 荷兰、 挪威、 波兰、 葡萄牙、 罗马尼亚、 斯洛伐克、 斯洛文尼亚、 南非、 西班牙、 瑞典、 瑞士、 英国</td></tr>
 </table>
 
 ## <a name="for-developers-located-in-the-united-states"></a>针对位于美国的开发人员
@@ -56,7 +56,7 @@ ms.locfileid: "8918538"
   </tr>
   <tr> 
      <td valign="top">在适用的纳税年度中，我<b>销售了 200 多个应用</b>，总购买金额<b>超过 20,000 美元</b>（<b>未</b>计算通过 Windows 10 上的 Microsoft Store 在巴西和中国完成的销售额）。</td>
-    <td valign="top"><b>1099-K</b>：<br>归档方：Microsoft Corporation<br>EIN: *** 4442<br><br><b>重要提示</b>： 1099-k 表单包含<b>总购买</b>金额，不与你付款金额。</td>
+    <td valign="top"><b>1099-K</b>：<br>归档方：Microsoft Corporation<br>EIN: *** 4442<br><br><b>重要提示</b>： 1099-k 表单包含<b>总购买</b>金额，付款金额。</td>
   </tr>
   <tr> 
      <td valign="top">(i) 通过 Windows 10 上的 Microsoft Store 完成的巴西和中国应用销售或 (ii) 在 Minecraft（我的世界）卖场中的销售，我收到的<b>付款金额至少为 10 美元</b>。<br>
@@ -127,4 +127,4 @@ ms.locfileid: "8918538"
 
 
 > [!NOTE]
-> 如果你有与**IRS 税单**相关的其他问题或疑虑，请创建一个[支持票证](http://aka.ms/storesupport)。 Microsoft 无法回答与你的具体税务情况相关的问题；对于这些问题，请向税务专业人士寻求建议。
+> 如果你有与**IRS 税单**相关的其他问题或疑虑，请创建一个[支持票证](https://aka.ms/storesupport)。 Microsoft 无法回答与你的具体税务情况相关的问题；对于这些问题，请向税务专业人士寻求建议。

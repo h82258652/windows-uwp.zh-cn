@@ -6,12 +6,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 投放广告, 错误处理, javascript, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: a6c14ecf8e8909ab6cd95a54ca8144fbf8a8d912
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d0e2e1c019497fc22e8d922ba5f0a02a30034b65
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947674"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050660"
 ---
 # <a name="handle-ad-errors"></a>处理广告错误
 
@@ -67,9 +67,9 @@ private void OnAdError(object sender, AdErrorEventArgs e)
 </div>
 ```
 
-该错误处理程序函数具有声明性，必须括在 [markSupportedForProcessing](http://msdn.microsoft.com/library/windows/apps/Hh967819.aspx) 函数中。
+该错误处理程序函数具有声明性，必须括在 [markSupportedForProcessing](https://msdn.microsoft.com/library/windows/apps/Hh967819.aspx) 函数中。
 
-当发生错误时，该错误处理程序会捕获 JavaScript 错误对象。 该错误对象向错误处理程序提供两个参数。 有关详细信息，请参阅[异步 Windows 运行时方法的特殊错误属性](http://msdn.microsoft.com/library/windows/apps/hh994690.aspx)。
+当发生错误时，该错误处理程序会捕获 JavaScript 错误对象。 该错误对象向错误处理程序提供两个参数。 有关详细信息，请参阅[异步 Windows 运行时方法的特殊错误属性](https://msdn.microsoft.com/library/windows/apps/hh994690.aspx)。
 
 以下是一个名为 **errorLogger** 的错误处理函数的示例，该函数可处理 **onErrorOccurred** 事件。
 

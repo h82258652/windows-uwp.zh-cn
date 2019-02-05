@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9940367054ae8771355012492434e12aa97d43ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a1d5a15bd88b7adc23ccc835001c384a91e65a31
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921783"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050700"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 处理媒体帧
 
@@ -23,7 +23,7 @@ ms.locfileid: "8921783"
 > 本文中讨论的功能仅从 Windows 10 版本 1607 开始提供。
 
 > [!NOTE] 
-> 文中提供了一个通用 Windows 应用示例，介绍使用 **MediaFrameReader** 显示不同帧源（包括彩色、深度和红外相机）的帧。 有关详细信息，请参阅[相机帧示例](http://go.microsoft.com/fwlink/?LinkId=823230)。
+> 文中提供了一个通用 Windows 应用示例，介绍使用 **MediaFrameReader** 显示不同帧源（包括彩色、深度和红外相机）的帧。 有关详细信息，请参阅[相机帧示例](https://go.microsoft.com/fwlink/?LinkId=823230)。
 
 > [!NOTE] 
 > Windows 10 版本 1803 中采用了一组新的 API，借助其可将 **MediaFrameReader** 与音频数据结合使用。 有关详细信息，请参阅[使用 MediaFrameReader 处理音频帧](process-audio-frames-with-mediaframereader.md)。
@@ -48,7 +48,7 @@ ms.locfileid: "8921783"
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-你还可以创建[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher)使用[**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427)和从[**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector)返回的值以在设备上可用的帧源组时接收通知更改，例如当接通外部相机。 有关详细信息，请参阅[**枚举设备**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
+你还可以创建[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher)使用[**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427)和从[**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector)返回的值在设备上可用的帧源组时接收通知更改，例如当外部相机已接通电源。 有关详细信息，请参阅[**枚举设备**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
 
 [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) 具有 [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 对象集合，用于描述组内包括的帧源。 检索可在设备上使用的帧源组后，可以选择公开所关注帧源的组。
 
@@ -151,7 +151,7 @@ ms.locfileid: "8921783"
 有关在应用程序挂起时清理媒体捕获对象的详细信息，请参阅[**显示相机预览**](simple-camera-preview-access.md)。
 
 ## <a name="the-framerenderer-helper-class"></a>FrameRenderer 帮助程序类
-通用 Windows [相机帧示例](http://go.microsoft.com/fwlink/?LinkId=823230)提供在应用中轻松显示彩色、红外和深度源的帧的帮助程序类。 通常，对深度和红外数据的操作不止将其显示到屏幕，因此这个帮助程序类是显示帧阅读器功能和调试帧阅读器实现的有用工具。
+通用 Windows [相机帧示例](https://go.microsoft.com/fwlink/?LinkId=823230)提供在应用中轻松显示彩色、红外和深度源的帧的帮助程序类。 通常，对深度和红外数据的操作不止将其显示到屏幕，因此这个帮助程序类是显示帧阅读器功能和调试帧阅读器实现的有用工具。
 
 **FrameRenderer** 帮助程序类实现以下方法。
 
@@ -253,7 +253,7 @@ ms.locfileid: "8921783"
 
 * [相机](camera.md)
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [相机帧示例](http://go.microsoft.com/fwlink/?LinkId=823230)
+* [相机帧示例](https://go.microsoft.com/fwlink/?LinkId=823230)
  
 
  

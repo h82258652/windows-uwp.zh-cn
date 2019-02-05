@@ -6,17 +6,17 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 控件, 输入
 ms.localizationpriority: medium
-ms.openlocfilehash: 09bda2bda5f6f8731b64321d3282f540e6c50db4
-ms.sourcegitcommit: 4e12e820141fa5c3e61052ec78452b4032a974da
+ms.openlocfilehash: 369aa076184f79aa1e43c3aac11706982a6be268
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "8999752"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045636"
 ---
 # <a name="add-controls"></a>添加控件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 优秀的通用 Windows 平台 (UWP) 游戏支持多种界面。 潜在玩家可能将 windows 10 上没有物理按钮，连接，了 Xbox 控制器的电脑的平板电脑或具有高性能鼠标和游戏键盘的最新桌面游戏安装。 在我们的游戏中，控制在 [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) 类中实现。 此类将全部三个输入类型（鼠标和键盘、触控和游戏板）聚合到一个控制器内。 最终结果是一个第一人称射击游戏，其使用通过多台设备使用的流派标准移动观看控件。
 

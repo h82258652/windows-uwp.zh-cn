@@ -6,12 +6,12 @@ ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 122be597bbf772d891b7e9839dfc4d9039754b00
-ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
+ms.openlocfilehash: 41020055e664d58f36e50eaf4e1cff1e28eeec37
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "8968581"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044734"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>通过保留名称创建应用
 
@@ -22,12 +22,12 @@ ms.locfileid: "8968581"
 在[上载应用程序包](upload-app-packages.md)时，[**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) 值必须与为应用所保留的名称相匹配。 如果使用 Microsoft Visual Studio 创建应用程序包，则将为你填充此特性。
 
 > [!IMPORTANT]
-> 你可以保留其他名称的应用，并且你可以选择使用其中一种在你的应用的已发布版本而不是保留时先在合作伙伴中心中创建你的应用的一个。 但是，请注意，将某些你的应用[标识详细信息](view-app-identity-details.md)，如**程序包系列名称 (PFN)** 中使用你在此处输入的第一个名称。 这些值可能会给某些用户，且不能更改，因此请确保你保留该名称是适用于此用。
+> 你可以保留其他名称的应用，并且你可以选择使用其中一个引擎在你的应用的已发布版本而不是一个保留在合作伙伴中心中首次创建你的应用时。 但是，请注意，将某些你的应用[标识详细信息](view-app-identity-details.md)，如**程序包系列名称 (PFN)** 中使用你在此处输入的第一个名称。 这些值可能会给某些用户，且不能更改，因此请确保你保留的名称是适用于此用。
 
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>通过保留新名称创建应用
 
-保留名称是在合作伙伴中心中创建应用的第一步。 
+保留名称是在合作伙伴中心创建应用的第一步。 
 
 1.  在**概述**页面上，单击**创建新应用**。
 2.  在文本框中，输入要使用的名称，然后选择**检查可用性**。 如果该名称可用，你将看到绿色复选标记。 （如果你输入的名称已经由另一个开发人员保留或使用，你将看到一条指示该名称不可用的消息。）
@@ -36,7 +36,7 @@ ms.locfileid: "8968581"
 现在已为你保留该名称，只要你准备就绪，就可以开始进行[提交](app-submissions.md)。 
 
 > [!NOTE]
-> 可能会发现自己无法保留某个名称，即使在 Microsoft Store 中并没有看到任何以该名称命名的应用也是如此。 这通常是因为其他开发人员已为其应用保留该名称，但尚未提交该应用。 如果你拥有某个名称的商标权或其他法律权利，但却无法保留该名称，或发现 Microsoft Store 中的其他应用在使用该名称，请[联系 Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777)。
+> 可能会发现自己无法保留某个名称，即使在 Microsoft Store 中并没有看到任何以该名称命名的应用也是如此。 这通常是因为其他开发人员已为其应用保留该名称，但尚未提交该应用。 如果你拥有某个名称的商标权或其他法律权利，但却无法保留该名称，或发现 Microsoft Store 中的其他应用在使用该名称，请[联系 Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=233777)。
 
 在保留某个名称后，你有三个月的时间来提交应用。 如果在三个月内未提交该应用，保留的名称将过期，其他开发人员将可以使用该名称命名应用。 如果你尝试采用已任其过期的名称提交应用，则可能会遇到错误。
 

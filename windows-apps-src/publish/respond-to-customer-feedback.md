@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
-ms.openlocfilehash: 626b2ce36d8abc4798d39a89af540c61b26b5ed1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 93d4da26dbb4c5eee1856b3a594214aabbbbaa00
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938516"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047562"
 ---
 # <a name="respond-to-customer-feedback"></a>回复客户反馈
 
 可以使用[反馈报告](feedback-report.md)查看 Windows 10 客户就你的应用在反馈中心中留下的反馈，然后直接回复该反馈。 可以在反馈中心中发布供所有人查看的回复（作为个别评论，或通过更新一条反馈的状态并添加描述），告知客户相关新功能或 Bug 修复，或者就如何改进你的应用请求更多特定反馈。 还可以将你的回复作为电子邮件直接发送给留下反馈的客户。
 
 > [!TIP]
-> 可以按以下方式鼓励客户留下反馈：使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 中的反馈 API 添加允许客户直接[从 UWP 应用启动反馈中心](../monetize/launch-feedback-hub-from-your-app.md)的控件。 请记住，已在支持反馈中心的 Windows 10 设备上下载了你的应用的任何客户可以直接通过“反馈中心”应用留下该应用的反馈。 因此，你可能会在此报告中看到客户反馈，即使未从你的应用内明确请求反馈。
+> 可以按以下方式鼓励客户留下反馈：使用 [Microsoft Store Services SDK](https://aka.ms/store-em-sdk) 中的反馈 API 添加允许客户直接[从 UWP 应用启动反馈中心](../monetize/launch-feedback-hub-from-your-app.md)的控件。 请记住，已在支持反馈中心的 Windows 10 设备上下载了你的应用的任何客户可以直接通过“反馈中心”应用留下该应用的反馈。 因此，你可能会在此报告中看到客户反馈，即使未从你的应用内明确请求反馈。
 
 若要对任何一条反馈进行回复，请单击**反馈报告**中该条反馈旁边显示的“回复反馈”**** 链接。
 
@@ -66,4 +66,4 @@ ms.locfileid: "8938516"
 > [!NOTE]
 > 如果客户收到不恰当的反馈回复，可以向 Microsoft 举报开发人员。 客户也可以选择不通过电子邮件接收反馈回复。
 
-你与客户的关系与你自己相关。 如果开发人员与客户之间有争议，Microsoft 将不介入其中。 但是，如果你认为客户关于你产品的反馈内容不合理，请提交[支持票证](http://go.microsoft.com/fwlink/p/?LinkID=401178)。
+你与客户的关系与你自己相关。 如果开发人员与客户之间有争议，Microsoft 将不介入其中。 但是，如果你认为客户关于你产品的反馈内容不合理，请提交[支持票证](https://go.microsoft.com/fwlink/p/?LinkID=401178)。

@@ -1,21 +1,21 @@
 ---
 title: 执行地理编码和反向地理编码
-description: 本指南介绍了如何将街道地址转换为地理位置 （地理编码），并通过调用 Windows.Services.Maps 命名空间中 MapLocationFinder 类的方法，将转换为街道地址 （反向地理编码） 的地理位置。
+description: 本指南演示如何将街道地址转换为地理位置 （地理编码） 以及将为街道地址 （反向地理编码） 的地理位置转换通过调用 Windows.Services.Maps 命名空间中 MapLocationFinder 类的方法。
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
 ms.date: 07/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 地理编码, 地图, 位置
 ms.localizationpriority: medium
-ms.openlocfilehash: e8b0efe39578974090844a4224055821c29f8ced
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a30ca89242b15866019fffc6972bdae7086f3f7e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920312"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046440"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>执行地理编码和反向地理编码
 
-本指南介绍了如何将街道地址转换为地理位置 （地理编码） 以及将为街道地址 （反向地理编码） 的地理位置转换通过调用 Windows.Services.Maps[**中[**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)类的方法**](https://msdn.microsoft.com/library/windows/apps/dn636979)命名空间。
+本指南介绍了如何将街道地址转换为地理位置 （地理编码） 以及将为街道地址 （反向地理编码） 的地理位置转换通过调用[**Windows.Services.Maps 中[**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)类的方法**](https://msdn.microsoft.com/library/windows/apps/dn636979)命名空间。
 
 > [!TIP]
 > 若要了解有关在你的应用中使用地图的详细信息，请从 GitHub 上的[Windows 通用示例存储库](hhttps://github.com/Microsoft/Windows-universal-samples)下载[MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)示例。
@@ -25,7 +25,7 @@ ms.locfileid: "8920312"
 -   [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)类包含处理地理编码 ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) 和反向地理编码 ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)) 的方法。
 -   这些方法都返回[**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)实例。
 -   [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) [**位置**](https://msdn.microsoft.com/library/windows/apps/dn627552)属性会公开[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)对象的集合。 
--   [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)对象具有[**地址**](https://msdn.microsoft.com/library/windows/apps/dn636929)属性，它将公开表示街道地址的[**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533)对象，并公开表示地理位置的[**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint)对象的[**点**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.point)属性。
+-   [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)对象具有公开[**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533)对象表示街道地址，[**地址**](https://msdn.microsoft.com/library/windows/apps/dn636929)属性和[**点**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.point)属性公开表示地理位置的[**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint)对象。
 
 > [!IMPORTANT]
 > 必须先指定地图验证密钥，才能使用地图服务。 有关详细信息，请参阅[请求地图验证密钥](authentication-key.md)。
@@ -121,8 +121,8 @@ town = Redmond
 
 ## <a name="related-topics"></a>相关主题
 
-* [UWP 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [UWP 路况应用示例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP 路况应用示例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [地图设计指南](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [视频： 跨手机、 平板电脑和 Windows 应用中的 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [必应地图开发人员中心](https://www.bingmapsportal.com/)

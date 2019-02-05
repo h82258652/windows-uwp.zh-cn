@@ -6,12 +6,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, fiddler, 服务调用, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: d1dfc240e4545c7ab7002cedfba7621cfc397345
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 52660fa90b9771d956ff710cb1b5295d4d8fa975
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936827"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050376"
 ---
 # <a name="troubleshooting-xbox-live-using-fiddler"></a>使用 Fiddler 的 Xbox Live 疑难解答
 
@@ -20,7 +20,7 @@ Fiddler 是一种 Web 调试代理，用于记录你的设备和 Internet 之间
 ## <a name="for-windows-uwp-pc-apps"></a>适用于 Windows UWP 电脑应用
 
 1. 确保当前用户位于电脑上的管理员组中。
-1. 下载从 Fiddler[http://www.telerik.com/fiddler](http://www.telerik.com/fiddler)
+1. 下载从 Fiddler[http://www.telerik.com/fiddler](https://www.telerik.com/fiddler)
 1. 确保你选择“适用于 .NET 4”的版本
 1. 安装完成后，转至“工具”->“Fiddler”选项并启用“捕获 HTTPS CONNECT 和解密 HTTPS 流量”。  运行时与 Xbox LIVE 服务之间的所有通信将使用 SSL 加密。  未选中此选项的话，你将无法看到任何有用信息。  接受 Fiddler 弹出的所有对话（应该有 5 个对话，包括 UAC）
 1. 转至“WinConfig”、“全部豁免”和“保存更改”。  否则，Fiddler 将不会使用应用商店应用。
@@ -45,7 +45,7 @@ Fiddler 是一种 Web 调试代理，用于记录你的设备和 Internet 之间
 
 在正常操作中，通过代理通信的主机面临通信被代理修改的风险，从而可能使玩家有机会作弊。 因此，主机设计为不允许通过代理通信。 将 Fiddler 用于 Xbox One 开发工具包需要你在开发工具包上执行某些特殊配置步骤，以便允许它使用 Fiddler 代理。
 
-Fiddler 是一款免费软件，可从 [Fiddler 网站](http://www.telerik.com/fiddler/)下载。
+Fiddler 是一款免费软件，可从 [Fiddler 网站](https://www.telerik.com/fiddler/)下载。
 
 Fiddler 可能影响主机所报告的网络状态。 如果从运行 Fiddler 的计算机禁用上游连接，则在主机的身份验证过期前，主机可能无法检测到此断开连接。 如果你使用的是 Fiddler，请确保断开主机与运行 Fiddler 的计算机之间的连接，而不是使用 Fiddler 模拟断开连接。 更好的是，使用网络压力工具，模拟断开连接，以便进行测试。
 
@@ -53,7 +53,7 @@ Fiddler 可能影响主机所报告的网络状态。 如果从运行 Fiddler �
 
 请按照以下步骤安装并启用 Fiddler，以便从开发工具包监视流量。
 
-1. 按照 [Fiddler 网站](http://www.telerik.com/fiddler/)上的指示在开发电脑上安装 Fiddler。
+1. 按照 [Fiddler 网站](https://www.telerik.com/fiddler/)上的指示在开发电脑上安装 Fiddler。
 1. 启动 Fiddler，然后从“工具”菜单中选择“Fiddler 选项”。
 1. 选择“连接”选项卡，并确保“允许远程计算机连接”复选框处于选中状态。
 1. 单击“确定”来接受对设置的更改。 你将看到一个显示必须重启 Fiddler 才能使更改生效以及你可能需要手动配置防火墙的对话框。 单击此对话框上的“确定”，但不要重启 Fiddler。
@@ -68,11 +68,11 @@ Fiddler 可能影响主机所报告的网络状态。 如果从运行 Fiddler �
 | 操作           | 允许                          |
 | 替代         | 否                             |
 | 程序          | fiddler.exe 的路径            |
-| LocalAddress     | 任意                            |
-| RemoteAddress    | 任意                            |
+| LocalAddress     | Any                            |
+| RemoteAddress    | Any                            |
 | 协议         | TCP                            |
-| LocalPort        | 任意                            |
-| RemotePort       | 任意                            |
+| LocalPort        | Any                            |
+| RemotePort       | Any                            |
 | AllowedUsers     | 任意                            |
 | AllowedComputers | 任意                            |
 

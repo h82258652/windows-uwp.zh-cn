@@ -6,12 +6,12 @@ ms.date: 10/15/2018
 ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 42229212a0f54e307eaa841849c1a279c4354d2a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0e06de7d33604981e0055d9d57f774d280753db2
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941864"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051050"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>增强用于 Windows 10 的桌面应用程序
 
@@ -55,7 +55,7 @@ ms.locfileid: "8941864"
 
 :white_check_mark: **首先，确定你要添加哪些体验**
 
-有许多选项。 例如，你可以使用盈利 Api 或直接注意到你的应用程序，当你拥有要共享，如另一个用户已发布了新图片有趣的内容时简化你的采购订单流。
+有许多选项。 例如，你可以使用盈利 Api 或直接注意到你的应用程序，当你有要共享，如另一个用户已发布了新图片有趣的内容来简化你采购订单流。
 
 ![Toast](images/desktop-to-uwp/toast.png)
 
@@ -150,7 +150,7 @@ void UWP::ShowToast()
 
 ## <a name="support-windows-xp-windows-vista-and-windows-78-install-bases"></a>支持 Windows XP、Windows Vista 和 Windows 7/8 安装库
 
-你可以增加你的应用程序在 Windows 10 的现代体验无需创建新分支和维护不同代码库。
+你可以增加你的应用程序在 Windows 10 的现代体验而无需创建新分支和维护不同代码库。
 
 如果要为 Windows 10 用户生成单独的二进制文件，请使用条件编译。 如果你希望生成要部署到所有 Windows 用户的一组二进制文件，请使用运行时检查。
 
@@ -201,9 +201,9 @@ void UWP::ShowToast()
 
 ### <a name="runtime-checks"></a>运行时检查
 
-可以不考虑用户所运行的 Windows 版本而为所有 Windows 用户编译一组二进制文件。 你的应用程序调用 Windows 运行时 Api 只用户是否运行应用程序打包的应用程序作为 Windows 10 上。
+可以不考虑用户所运行的 Windows 版本而为所有 Windows 用户编译一组二进制文件。 你的应用程序调用 Windows 运行时 Api 仅当用户是运行应用程序打包的应用程序作为 Windows 10 上。
 
-若要添加到你的代码运行时检查最简单方法是将此 Nuget 程序包安装：[桌面桥帮助程序](https://www.nuget.org/packages/DesktopBridge.Helpers/)，然后使用``IsRunningAsUWP()``方法来关闭调用 Windows 运行时 Api 的所有代码的门槛。 请参阅此博客文章以了解详细信息：[桌面桥 - 标识应用程序的上下文](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/)。
+添加到你的代码运行时检查最简单方法是安装此 Nuget 包：[桌面桥帮助程序](https://www.nuget.org/packages/DesktopBridge.Helpers/)，然后使用``IsRunningAsUWP()``方法来关闭调用 Windows 运行时 Api 的所有代码的门槛。 请参阅此博客文章以了解详细信息：[桌面桥 - 标识应用程序的上下文](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/)。
 
 ## <a name="related-video"></a>相关视频
 
@@ -222,7 +222,7 @@ void UWP::ShowToast()
 
 **查找问题的答案**
 
-有问题？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
+有问题？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
 
 **提供反馈或提出功能建议**
 

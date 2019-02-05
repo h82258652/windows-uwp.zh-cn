@@ -6,12 +6,12 @@ ms.date: 02/12/2017
 ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 0930e970af943329cac60d02a4bfe5986c21757a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 42077756beff4269cc91624502fb9958c580bbc0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932666"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047269"
 ---
 # <a name="device-portal-for-xbox"></a>适用于 Xbox 的 Device Portal
 
@@ -43,7 +43,7 @@ ms.locfileid: "8932666"
 
 Xbox 设备门户提供了一组与 Windows 设备门户上可用的页面类似的标准页面以及唯一的多个页面。 有关前者的详细说明，请参阅 [Windows 设备门户概述](device-portal.md)。 以下部分介绍对 Xbox 设备门户是唯一的页面。
 
-### <a name="home"></a>主页
+### <a name="home"></a>家
 
 与 Windows 设备门户的**应用管理器**页面类似，Xbox 设备门户的**主页**显示**我的游戏和应用**下已安装的游戏和应用列表。 您可以单击某个游戏或应用的名称查看有关它的更多详细信息，如**包系列名称**。 在**操作**下拉列表中，你可以对游戏或应用执行操作，如**启动**它。
 
@@ -165,7 +165,7 @@ Kinect 传感器必须连接到控制台才能更改以下这些设置。
 
 * **处于空闲状态时，之后关闭**：设备将在其在此时间内处于空闲状态后关闭。
 
-* **电源模式**：设备的电源模式。 有关更多信息，请参阅[有关节能和随开即用电源模式](http://support.xbox.com/xbox-one/console/learn-about-power-modes)。
+* **电源模式**：设备的电源模式。 有关更多信息，请参阅[有关节能和随开即用电源模式](https://support.xbox.com/xbox-one/console/learn-about-power-modes)。
 
 * **连接到电源时自动启动控制台**：该设备将在其连接到电源时自动打开。
 
@@ -195,7 +195,7 @@ Kinect 传感器必须连接到控制台才能更改以下这些设置。
 
 ### <a name="game-event-data"></a>游戏事件数据
 
-在**游戏事件数据**页上，你可以查看实时图该流中当前记录在 Xbox One 上的事件跟踪的 Windows (ETW) 游戏事件的数量。 如果有记录在系统上的游戏事件，你还可以查看详细信息 （事件名称、 事件匹配项，并在游戏作品） 描述在数据图数据表中的每个事件。 下表仅记录事件是否可用。
+在**游戏事件数据**页上，你可以查看实时图该流中的当前记录在 Xbox One 上的事件跟踪 Windows (ETW) 游戏事件数。 如果没有游戏事件记录在系统上，你还可以查看详细信息 （事件名称、 事件发生和在游戏作品） 描述在数据图数据表中的每个事件。 表仅记录事件是否可用。
 
 ![游戏事件数据](images/device-portal-xbox-22.PNG)
 

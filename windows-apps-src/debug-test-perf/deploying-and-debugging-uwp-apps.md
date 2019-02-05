@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 调试, 测试, 性能
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f58485b6f6829b9eec0495cce088304b181a2b1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 606ab4489b86b1fbba7346b4a503339c4c19f7d4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940669"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048314"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和调试 UWP 应用
 
@@ -30,7 +30,7 @@ Microsoft Visual Studio 允许你部署和调试通用 Windows 平台 (UWP) 应�
 -   “本地计算机”**** 会将应用部署到当前开发计算机。 仅当你的应用的“目标平台最小版本”**** 小于或等于开发计算机上的操作系统时，此选项才可用。
 -   “远程计算机”**** 允许你指定要部署应用的远程目标。 可以在[指定远程设备](#specifying-a-remote-device)中找到有关部署到远程计算机的详细信息。
 -   “设备”**** 会将应用部署到 USB 连接设备。 该设备必须已针对开发人员解锁，并且已解锁屏幕。
--   “仿真器”**** 目标会使用名称中指定的配置将应用启动并部署到仿真器。 仿真器仅适用于 HYPER-V 启用计算机运行 Windows8.1 或并且之外。
+-   “仿真器”**** 目标会使用名称中指定的配置将应用启动并部署到仿真器。 仿真器仅适用于 HYPER-V 启用计算机运行 windows 8.1 或更高。
 
 
 ## <a name="debugging-deployed-apps"></a>调试已部署的应用
@@ -45,7 +45,7 @@ Microsoft Visual Studio 允许你部署和调试通用 Windows 平台 (UWP) 应�
 可以在 Windows 8.1 或更高版本上开发和编译 UWP 应用，但需要运行 Windows 10。 如果你要在 Windows 8.1 电脑上开发 UWP 应用，你可以远程调试在另一台 Windows 10 设备上运行的 UWP 应用，前提是主机和目标计算机在同一个 LAN 上。 若要执行此操作，请在两台计算机上下载和安装 [Visual Studio 远程工具](https://www.visualstudio.com/downloads/)。 已安装的版本必须与你已安装的现有 Visual Studio 版本匹配，并且你选择的体系结构（x86、x64）还必须与你的目标应用的体系结构匹配。   
 
 ## <a name="package-layout"></a>程序包布局
-截至 Visual Studio 2015 Update 3，我们添加了适用于开发人员来指定他们的 UWP 应用的布局路径的选项。 当你生成应用时，这将确定程序包布局将复制到磁盘上的位置。 默认情况下，此属性相对于项目的根目录设置。 如果未修改此属性，行为将与以前版本的 Visual Studio 保持相同。
+从 Visual Studio 2015 Update 3，我们添加了适用于开发人员指定他们的 UWP 应用的布局路径的选项。 当你生成应用时，这将确定程序包布局将复制到磁盘上的位置。 默认情况下，此属性相对于项目的根目录设置。 如果未修改此属性，行为将与以前版本的 Visual Studio 保持相同。
 
 可以在项目的 **Debug** 属性中设置此属性。
 
@@ -123,7 +123,7 @@ Microsoft Visual Studio 允许你部署和调试通用 Windows 平台 (UWP) 应�
 - **无**：此身份验证模式仅适用于运行 Visual Studio 远程工具的远程电脑（台式机或笔记本电脑）。 当在有一个登录的测试帐户的环境中设置测试计算机并且无法输入凭据时，使用此身份验证模式。 确保远程调试器设置已设置为接受“无身份验证”。
 
 ## <a name="advanced-remote-deployment-options"></a>高级远程部署选项
-因为版本的 Visual Studio 2015 更新 3 和 Windows 10 周年更新，存在新的高级远程部署选项的特定 Windows 10 设备。 可以在项目属性的“调试”**** 菜单上找到高级远程部署选项。
+如的 Visual Studio 2015 更新 3 和 Windows 10 周年更新的发布，有新的高级远程部署选项的特定 Windows 10 设备。 可以在项目属性的“调试”**** 菜单上找到高级远程部署选项。
 
 新属性包括：
 * 部署类型
@@ -132,7 +132,7 @@ Microsoft Visual Studio 允许你部署和调试通用 Windows 平台 (UWP) 应�
 
 ### <a name="requirements"></a>要求
 若要利用高级远程部署选项，你必须满足以下要求：
-* Visual Studio 2015 更新 3 或一些更高版本 Visual Studio 与 Windows 10 Tools 1.4.1 一起安装或更高版本 （其中包括 Windows 10 周年更新 SDK） 我们建议你使用最新版本的 Visual Studio 更新以确保你获取所有最新的开发和安全功能。
+* Visual Studio 2015 更新 3 或一些更高版本 Visual Studio 版本安装 Windows 10 Tools 1.4.1 一起安装的或更高版本 （包括 Windows 10 周年更新 SDK） 我们建议你使用最新版本的 Visual Studio 更新以确保你获取所有最新的开发和安全功能。
 * 面向 Windows 10 周年更新 Xbox 远程设备或 Windows 10 创意者更新电脑 
 * 使用通用身份验证模式
 
@@ -177,20 +177,20 @@ Microsoft Visual Studio 允许你部署和调试通用 Windows 平台 (UWP) 应�
 > [!NOTE]
 > **从网络注册布局**当前在运行 Windows 10 周年更新的 Xbox 上和运行 Windows 10 创意者更新的电脑上受支持。
 
-在远程设备上，布局注册到以下默认位置，具体取决于设备系列： `Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles` -此是挂载到**程序包注册路径**电脑不使用挂载并改为直接注册**程序包注册路径**
+在远程设备上，布局注册到以下默认位置，具体取决于设备系列： `Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles` -此的符号链接到**程序包注册路径**电脑不使用符号链接并改为直接注册**程序包注册路径**
 
 
 ## <a name="debugging-options"></a>调试选项
 
-在 windows 10，UWP 应用的启动性能得到改进通过主动启动，然后在一种称为[预启动](https://msdn.microsoft.com/library/windows/apps/Mt593297)暂停的应用。 许多应用不需要执行任何特殊操作就即在此模式下工作，但某些应用可能需要调整它们的行为。 若要帮助调试这些代码路径中的任何问题，你可以在 Visual Studio 中使用预启动模式开始调试该应用。
+在 windows 10，UWP 应用的启动性能改进通过主动启动，然后在一种称为[预启动](https://msdn.microsoft.com/library/windows/apps/Mt593297)暂停的应用。 许多应用不需要执行任何特殊操作就即在此模式下工作，但某些应用可能需要调整它们的行为。 若要帮助调试这些代码路径中的任何问题，你可以在 Visual Studio 中使用预启动模式开始调试该应用。
 
-在 Visual Studio 项目（“调试”**** -&gt;“其他调试目标”**** -&gt;“调试通用 Windows 应用预启动”****）和计算机上已安装的应用（通过选中“激活具有预启动的应用”**** 复选框，“调试”**** -&gt;“其他调试目标”**** -&gt;”调试安装的应用包”****）中都支持调试。 有关详细信息，请参阅[调试 UWP 预启动](http://go.microsoft.com/fwlink/p/?LinkId=717245)。
+在 Visual Studio 项目（“调试”**** -&gt;“其他调试目标”**** -&gt;“调试通用 Windows 应用预启动”****）和计算机上已安装的应用（通过选中“激活具有预启动的应用”**** 复选框，“调试”**** -&gt;“其他调试目标”**** -&gt;”调试安装的应用包”****）中都支持调试。 有关详细信息，请参阅[调试 UWP 预启动](https://go.microsoft.com/fwlink/p/?LinkId=717245)。
 
 可以在启动项目的“调试”**** 属性页上设置以下部署选项。
 
 - **允许本地网络环回**
 
-  出于安全原因，以标准方式安装的 UWP 应用不允许对安装了它的设备进行网络调用。 默认情况下，Visual Studio 部署针对已部署应用从此规则创建豁免。 此豁免允许你在单台计算机上测试通信过程。 之前应用提交到 Microsoft Store，你应测试你的应用不具有豁免。
+  出于安全原因，以标准方式安装的 UWP 应用不允许对安装了它的设备进行网络调用。 默认情况下，Visual Studio 部署针对已部署应用从此规则创建豁免。 此豁免允许你在单台计算机上测试通信过程。 提交到 Microsoft 应用商店应用，你需要测试你的应用不具有豁免。
 
   若要从应用中删除网络环回豁免：
 
@@ -206,7 +206,7 @@ Microsoft Visual Studio 允许你部署和调试通用 Windows 平台 (UWP) 应�
 
 ## <a name="symbols"></a>符号
 
-符号文件包含各种在调试代码时非常有用的数据，如变量、函数名称和入口点地址，从而使你可以更好地了解异常和调用堆栈执行顺序。 适用于 Windows 的大多数变体的符号通过 [Microsoft 符号服务器](http://msdl.microsoft.com/download/symbols)提供，或者可以下载，以供在[下载 Windows 符号包](http://aka.ms/winsymbols)中更快速地离线查找。
+符号文件包含各种在调试代码时非常有用的数据，如变量、函数名称和入口点地址，从而使你可以更好地了解异常和调用堆栈执行顺序。 适用于 Windows 的大多数变体的符号通过 [Microsoft 符号服务器](https://msdl.microsoft.com/download/symbols)提供，或者可以下载，以供在[下载 Windows 符号包](https://aka.ms/winsymbols)中更快速地离线查找。
 
 若要为 Visual Studio 设置符号选项，请依次选择“工具”&gt;“选项”****，然后在对话窗口中依次转到“调试”&gt;“符号”****。
 
@@ -223,7 +223,7 @@ Microsoft Visual Studio 允许你部署和调试通用 Windows 平台 (UWP) 应�
 
 ## <a name="windbg"></a>WinDbg
 
-WinDbg 是 Windows 调试工具套件随附的一款功能强大的调试器，它包含在 [Windows SDK](http://go.microsoft.com/fwlink/p/?LinkID=271979) 中。 Windows SDK 安装允许你安装 Windows 调试工具作为独立产品。 尽管对调试本机代码非常有用，但我们不建议为使用托管代码或 HTML5 编写的应用使用 WinDbg。
+WinDbg 是 Windows 调试工具套件随附的一款功能强大的调试器，它包含在 [Windows SDK](https://go.microsoft.com/fwlink/p/?LinkID=271979) 中。 Windows SDK 安装允许你安装 Windows 调试工具作为独立产品。 尽管对调试本机代码非常有用，但我们不建议为使用托管代码或 HTML5 编写的应用使用 WinDbg。
 
 若要将 WinDbg 用于 UWP 应用，你将需要先使用 PLMDebug 为应用包禁用进程周期管理 (PLM)，如[进程周期管理 (PLM) 的测试和调试工具](testing-debugging-plm.md)中所述。
 

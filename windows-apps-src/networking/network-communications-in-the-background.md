@@ -6,12 +6,12 @@ ms.date: 06/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f206700360b6590a88b76f04531c9c6b1e94414f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 20a70263b0e97ce903d2db83f9e70152d8fe3a72
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932181"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046081"
 ---
 # <a name="network-communications-in-the-background"></a>后台网络通信
 若要继续网络通信不在前台时，你的应用可以使用后台任务和这两个选项之一。
@@ -19,14 +19,14 @@ ms.locfileid: "8932181"
 - 控制通道触发器。 
 
 ## <a name="performing-network-operations-in-background-tasks"></a>在后台任务中执行网络操作
-- 在检索到程序包并且需要执行生存期较短的任务时，使用 [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) 激活后台任务。 执行任务后, 后台任务应终止，以节省电量。
+- 在检索到程序包并且需要执行生存期较短的任务时，使用 [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) 激活后台任务。 执行任务后, 后台任务应终止以节省电量。
 - 在检索到程序包并且需要执行生存期较长的任务时，使用 [ControlChannelTrigger](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 激活后台任务。
 
 **与网络相关的条件和标志**
 
 - 将 **InternetAvailable** 条件添加到你的后台任务 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)，以将后台任务触发时间延迟到网络堆栈运行后。 此条件可以省电，因为必须有网络连接才会执行后台任务。 此条件不提供实时激活。
 
-无论使用哪种触发器，请设置后台任务上的 [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder)，以确保在后台任务运行时网络保持连接。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果你的后台任务未使用**IsNetworkRequested**，你的后台任务将无法访问网络当处于连接待机模式时 （例如，手机屏幕处于关闭状态时）。
+无论使用哪种触发器，请设置后台任务上的 [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder)，以确保在后台任务运行时网络保持连接。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果你的后台任务不使用**IsNetworkRequested**，你的后台任务将无法访问网络当处于连接待机模式时 （例如，手机屏幕处于关闭状态时）。
 
 ## <a name="socket-broker-and-the-socketactivitytrigger"></a>套接字代理和 SocketActivityTrigger
 如果应用使用 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 连接，尽管它不在前台，你应该使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) 和套接字代理收到流量到达你的应用的通知。
@@ -150,7 +150,7 @@ case SocketActivityTriggerReason.SocketClosed:
   deferral.Complete();
 ```
 
-有关演示使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) 和套接字代理的完整示例，请参阅 [SocketActivityStreamSocket 示例](http://go.microsoft.com/fwlink/p/?LinkId=620606)。 在 Scenario1\_Connect.xaml.cs 中执行套接字的初始化，在 SocketActivityTask.cs 中执行后台任务实现。
+有关演示使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) 和套接字代理的完整示例，请参阅 [SocketActivityStreamSocket 示例](https://go.microsoft.com/fwlink/p/?LinkId=620606)。 在 Scenario1\_Connect.xaml.cs 中执行套接字的初始化，在 SocketActivityTask.cs 中执行后台任务实现。
 
 你可能会注意到示例在创建新的套接字或获取现有套接字后立刻调用 **TransferOwnership**，而不是如本主题所述使用 **OnSuspending** 事件处理程序执行此操作。 这是因为此示例主要用于演示 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)，并且不使用该套接字来获取其他任何活动（尽管它在运行中）。 你的应用可能变得更加复杂，并且应该使用 **OnSuspending** 来确定调用 **TransferOwnership** 的时间。
 
@@ -425,21 +425,21 @@ async Task<bool> RegisterWithCCTHelper(string serverUri)
 }
 ```
 
-有关将 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用的详细信息，请参阅 [ControlChannelTrigger StreamWebSocket 示例](http://go.microsoft.com/fwlink/p/?linkid=251232)。
+有关将 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用的详细信息，请参阅 [ControlChannelTrigger StreamWebSocket 示例](https://go.microsoft.com/fwlink/p/?linkid=251232)。
 
 ## <a name="controlchanneltrigger-with-httpclient"></a>ControlChannelTrigger 与 HttpClient
-将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，需要应用某些特殊注意事项。 将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 与 **ControlChannelTrigger** 结合使用时，应遵循某些特定于传输的使用模式和最佳做法。 此外，这些注意事项影响在 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 上接收数据包的请求的处理方式。
+将 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，需要应用某些特殊注意事项。 将 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 与 **ControlChannelTrigger** 结合使用时，应遵循某些特定于传输的使用模式和最佳做法。 此外，这些注意事项影响在 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 上接收数据包的请求的处理方式。
 
-**注意**[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637)使用 SSL 当前不支持使用网络触发器功能和[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
+**注意**[HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637)使用 SSL 目前不支持使用网络触发器功能和[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
  
-将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，应遵循以下使用模式和最佳做法：
+将 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，应遵循以下使用模式和最佳做法：
 
--   在将请求发送到特定 URI 之前，应用需要在 [System.Net.Http](http://go.microsoft.com/fwlink/p/?linkid=227894) 命名空间中的 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 或 [HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638) 对象上设置各种属性和标题。
--   应用可能需要进行初始请求以正确测试并设置传输，然后再创建要用于 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 传输。 在应用确定可以正确设置传输后，可以将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 对象配置为用于 **ControlChannelTrigger** 对象的传输对象。 设计此过程是为了防止在某些情况下断开通过传输建立的连接。 使用 SSL 与证书，应用可能需要显示一个对话框以输入 PIN 或者用于存在多个证书可供选择时。 可能需要进行代理身份验证和服务器身份验证。 如果代理或服务器身份验证已过期，则可能会关闭连接。 应用可以处理这些身份验证过期问题的一个方法是设置计时器。 当需要 HTTP 重定向时，不能保证能够可靠建立第二次连接。 初始测试请求可以确保在将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 对象用作 **ControlChannelTrigger** 对象的传输之前，应用使用最新的重定向 URL。
+-   在将请求发送到特定 URI 之前，应用需要在 [System.Net.Http](https://go.microsoft.com/fwlink/p/?linkid=227894) 命名空间中的 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 或 [HttpClientHandler](https://go.microsoft.com/fwlink/p/?linkid=241638) 对象上设置各种属性和标题。
+-   应用可能需要进行初始请求以正确测试并设置传输，然后再创建要用于 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 传输。 在应用确定可以正确设置传输后，可以将 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 对象配置为用于 **ControlChannelTrigger** 对象的传输对象。 设计此过程是为了防止在某些情况下断开通过传输建立的连接。 使用 SSL 与证书，应用可能需要显示一个对话框以输入 PIN 或者用于存在多个证书可供选择时。 可能需要进行代理身份验证和服务器身份验证。 如果代理或服务器身份验证已过期，则可能会关闭连接。 应用可以处理这些身份验证过期问题的一个方法是设置计时器。 当需要 HTTP 重定向时，不能保证能够可靠建立第二次连接。 初始测试请求可以确保在将 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 对象用作 **ControlChannelTrigger** 对象的传输之前，应用使用最新的重定向 URL。
 
-与其他网络传输不同，[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 对象无法直接传递到 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 对象的 [**UsingTransport**](https://msdn.microsoft.com/library/windows/apps/hh701175) 方法中。 相反，必须专门构建 [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) 对象以用于 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 对象和 **ControlChannelTrigger**。 [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) 对象使用 [RtcRequestFactory.Create](http://go.microsoft.com/fwlink/p/?linkid=259154) 方法创建。 创建的 [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) 对象随后将传递给 **UsingTransport** 方法。
+与其他网络传输不同，[HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 对象无法直接传递到 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 对象的 [**UsingTransport**](https://msdn.microsoft.com/library/windows/apps/hh701175) 方法中。 相反，必须专门构建 [HttpRequestMessage](https://go.microsoft.com/fwlink/p/?linkid=259153) 对象以用于 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 对象和 **ControlChannelTrigger**。 [HttpRequestMessage](https://go.microsoft.com/fwlink/p/?linkid=259153) 对象使用 [RtcRequestFactory.Create](https://go.microsoft.com/fwlink/p/?linkid=259154) 方法创建。 创建的 [HttpRequestMessage](https://go.microsoft.com/fwlink/p/?linkid=259153) 对象随后将传递给 **UsingTransport** 方法。
 
-以下示例展示了如何构建 [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) 对象以用于 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 对象和 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
+以下示例展示了如何构建 [HttpRequestMessage](https://go.microsoft.com/fwlink/p/?linkid=259153) 对象以用于 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 对象和 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
 
 ```csharp
 using System;
@@ -481,13 +481,13 @@ private void SetupHttpRequestAndSendToHttpServer()
 }
 ```
 
-某些特殊的注意事项影响在 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 上发送 HTTP 请求以启动接收响应的请求的处理方式。 尤其在将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，你的应用必须使用处理发送操作的 Task 而不是 **await** 模型。
+某些特殊的注意事项影响在 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 上发送 HTTP 请求以启动接收响应的请求的处理方式。 尤其在将 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，你的应用必须使用处理发送操作的 Task 而不是 **await** 模型。
 
-使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637)，不会将 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的后台任务上的 [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法与接收完成回调的返回同步。 出于此原因，应用仅可以在 **Run** 方法中使用阻止 HttpResponseMessage 技术并等待，直至收到整个响应。
+使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637)，不会将 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的后台任务上的 [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法与接收完成回调的返回同步。 出于此原因，应用仅可以在 **Run** 方法中使用阻止 HttpResponseMessage 技术并等待，直至收到整个响应。
 
-结合使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 和 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 明显不同于 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 传输。 由于 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 代码，通过 Task 将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 接收回调提供给应用。 这意味着，**ControlChannelTrigger** 推送通知任务会在将数据或错误调度到应用后立即引发。 在下面的示例中，代码将 [HttpClient.SendAsync](http://go.microsoft.com/fwlink/p/?linkid=241637) 方法返回的 responseTask 存储在推送通知任务将选取和内联处理的全局存储中。
+结合使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 和 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 明显不同于 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 传输。 由于 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 代码，通过 Task 将 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 接收回调提供给应用。 这意味着，**ControlChannelTrigger** 推送通知任务会在将数据或错误调度到应用后立即引发。 在下面的示例中，代码将 [HttpClient.SendAsync](https://go.microsoft.com/fwlink/p/?linkid=241637) 方法返回的 responseTask 存储在推送通知任务将选取和内联处理的全局存储中。
 
-以下示例展示了如何在与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 一起使用时在 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 上处理发送请求。
+以下示例展示了如何在与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 一起使用时在 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 上处理发送请求。
 
 ```csharp
 using System;
@@ -532,7 +532,7 @@ private void SendHttpRequest()
 }
 ```
 
-以下示例展示了如何在与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 一起使用时在 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 上读取收到的响应。
+以下示例展示了如何在与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 一起使用时在 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 上读取收到的响应。
 
 ```csharp
 using System.Net;
@@ -573,7 +573,7 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 }
 ```
 
-有关结合使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 和 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的详细信息，请参阅 [ControlChannelTrigger HttpClient 示例](http://go.microsoft.com/fwlink/p/?linkid=258323)。
+有关结合使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 和 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的详细信息，请参阅 [ControlChannelTrigger HttpClient 示例](https://go.microsoft.com/fwlink/p/?linkid=258323)。
 
 ## <a name="controlchanneltrigger-with-ixmlhttprequest2"></a>ControlChannelTrigger 与 IXMLHttpRequest2
 将 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，需要应用某些特殊注意事项。 将 **IXMLHTTPRequest2** 与 **ControlChannelTrigger** 结合使用时，应遵循某些特定于传输的使用模式和最佳做法。 使用 **ControlChannelTrigger** 不影响在 **IXMLHTTPRequest2** 上发送或接收 HTTP 请求的请求的处理方式。
@@ -584,7 +584,7 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 -   在调用 [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) 方法前，应用可能需要调用 [**SetProperty**](https://msdn.microsoft.com/library/windows/desktop/hh831167) 和 [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/desktop/hh831168) 方法来设置 HTTP 传输。
 -   应用可能需要进行初始 [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) 请求以正确测试并设置传输，然后再创建要用于 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的传输。 在应用确定正确设置传输后，可以将 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 对象配置为与 **ControlChannelTrigger** 一起使用的传输对象。 设计此过程是为了防止在某些情况下断开通过传输建立的连接。 使用 SSL 与证书，应用可能需要显示一个对话框以输入 PIN 或者用于存在多个证书可供选择时。 可能需要进行代理身份验证和服务器身份验证。 如果代理或服务器身份验证已过期，则可能会关闭连接。 应用可以处理这些身份验证过期问题的一个方法是设置计时器。 当需要 HTTP 重定向时，不能保证能够可靠建立第二次连接。 初始测试请求可以确保在将 **IXMLHTTPRequest2** 对象用作 **ControlChannelTrigger** 对象的传输之前，应用使用最新的重定向 URL。
 
-有关结合使用 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 和 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的详细信息，请参阅 [ControlChannelTrigger 和 IXMLHTTPRequest2 示例](http://go.microsoft.com/fwlink/p/?linkid=258538)。
+有关结合使用 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 和 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的详细信息，请参阅 [ControlChannelTrigger 和 IXMLHTTPRequest2 示例](https://go.microsoft.com/fwlink/p/?linkid=258538)。
 
 ## <a name="important-apis"></a>重要的 API
 * [SocketActivityTrigger](/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)

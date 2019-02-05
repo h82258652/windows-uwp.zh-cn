@@ -6,12 +6,12 @@ ms.date: 05/11/2017
 ms.topic: article
 keywords: windows 10 S, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a8b17697612d50d10ecfbb07388207527a4cb39b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cf442da9344f37525bf3c17e4a62a319b9c04044
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937828"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048454"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>在 S 模式下测试适用于 Windows 10 的 Windows 应用
 
@@ -87,7 +87,7 @@ Device Guard 代码完整性策略强制执行应用在 Windows 10 S 上运行�
 
 **查找问题的答案**
 
-有问题？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
+有问题？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
 
 **提供反馈或提出功能建议**
 

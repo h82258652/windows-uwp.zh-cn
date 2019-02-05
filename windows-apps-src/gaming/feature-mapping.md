@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx 9, directx 11, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 56bb86706795e773d21e45263f640f9fc0aa596a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0cfaa071ea0182ef5fac264e85d919be5744d15d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936064"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050670"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>将 DirectX 9 功能映射到 DirectX 11 API
 
@@ -55,7 +55,7 @@ D3DX 和 DXUT 已弃用，并且不能由 UWP 游戏使用。 这些帮助程序
 
 -   [从 Direct3D 9 到 UWP 的简单移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)操作实例演示了如何设置窗口、初始化 Direct3D 以及执行基本的 3D 呈现。
 -   [使用 DirectX 编写简单的 UWP 游戏](tutorial--create-your-first-uwp-directx-game.md)演示了常见游戏编程任务，包括图形、加载文件、UI、控件以及声音。
--   [DirectX 工具包](http://go.microsoft.com/fwlink/p/?LinkID=248929)社区项目提供用于 Direct3D 11 和 UWP 应用的 帮助程序类。
+-   [DirectX 工具包](https://go.microsoft.com/fwlink/p/?LinkID=248929)社区项目提供用于 Direct3D 11 和 UWP 应用的 帮助程序类。
 
 ## <a name="move-shader-programs-from-fx-to-hlsl"></a>将 FX 中的着色器程序移动到 HLSL
 
@@ -580,7 +580,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>注意</strong>着色器获取 UINT 值，但如果 Direct3D 9 样式的整型需要浮点数 （0.0 f、 1.0 f...255.f)，只可以 UINT 转换为 float32 着色器中。
+<strong>注意</strong>着色器获取 UINT 值，但是如果 Direct3D 9 样式的整型需要浮点数 （0.0 f、 1.0 f...255.f)，只可以将 UINT 转换为 float32 着色器中。
 </div>
 <div>
  
@@ -590,7 +590,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong>注意</strong>着色器获取 SINT 值，但如果 Direct3D 9 样式需要整型浮点数，则只需将 SINT 转换为 float32 着色器中。
+<strong>注意</strong>着色器获取 SINT 值，但如果需要 Direct3D 9 样式整型浮点数，则只需在 SINT 转换为 float32 着色器中。
 </div>
 <div>
  
@@ -600,7 +600,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong>注意</strong>着色器获取 SINT 值，但如果 Direct3D 9 样式需要整型浮点数，则只需将 SINT 转换为 float32 着色器中。
+<strong>注意</strong>着色器获取 SINT 值，但如果需要 Direct3D 9 样式整型浮点数，则只需在 SINT 转换为 float32 着色器中。
 </div>
 <div>
  

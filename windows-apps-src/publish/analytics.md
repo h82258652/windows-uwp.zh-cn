@@ -6,18 +6,18 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10，uwp，分析，报告，仪表板、 应用、 数据指标
 ms.localizationpriority: medium
-ms.openlocfilehash: f6a6d79745ec98af2c7f562297092eea3feda659
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6f76b1f897c345fb71beec8e37e592165922b2ed
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945729"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047708"
 ---
 # <a name="analyze-app-performance"></a>分析应用性能
 
 你可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)应用查看详细的分析。 可以通过统计信息和图表了解你的应用的表现（从你已拥有的客户数量到客户使用你的应用的方式）以及他们对你的应用的评价。 你还可以找到应用运行状况、广告使用情况等有关指标。
 
-你可以查看分析报告合作伙伴中心或[下载所需的报告](download-analytic-reports.md)中的右侧，以脱机分析数据。 我们还提供几种方法为你访问[合作伙伴中心分析数据](#outside)。
+你可以查看分析报告合作伙伴中心或[下载所需的报告](download-analytic-reports.md)中的右侧，以脱机分析数据。 我们还提供几种方法为你[访问合作伙伴中心之外分析数据](#outside)。
 
 ## <a name="view-key-analytics-for-all-your-apps"></a>查看所有应用的关键分析
 
@@ -45,7 +45,7 @@ ms.locfileid: "8945729"
 
 <span id="outside"/>
 
-## <a name="access-analytics-data-outside-of-partner-center"></a>在合作伙伴中心之外访问分析数据
+## <a name="access-analytics-data-outside-of-partner-center"></a>合作伙伴中心之外访问分析数据
 
 除了在合作伙伴中心中查看报告，你可以访问应用分析数据以其他方式。
 
@@ -64,4 +64,4 @@ ms.locfileid: "8945729"
 * [了解如何使用适用于 Power BI 的 Windows 开发人员中心内容包连接到分析数据](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
 > [!NOTE]
-> 若要连接到适用于 Power BI 的 Windows 开发人员中心内容包，我们建议你指定从 Azure AD 目录与你的合作伙伴中心帐户相关联的凭据。 如果你使用 Microsoft 帐户凭据，Power BI 中的分析数据不会自动刷新，而是需要登录到 Power BI 才能刷新数据。 如果你的组织已经使用 Office 365 或 Microsoft 的其他业务服务，则你已经具有 Azure AD。 否则，你可以[免费获取它](http://go.microsoft.com/fwlink/p/?LinkId=703757)。 有关关联设置的详细信息，请参阅[Azure Active Directory 相关联与合作伙伴中心帐户](associate-azure-ad-with-dev-center.md)。
+> 若要连接到适用于 Power BI 的 Windows 开发人员中心内容包，我们建议你指定从 Azure AD 目录与你的合作伙伴中心帐户相关联的凭据。 如果你使用 Microsoft 帐户凭据，Power BI 中的分析数据不会自动刷新，而是需要登录到 Power BI 才能刷新数据。 如果你的组织已经使用 Office 365 或 Microsoft 的其他业务服务，则你已经具有 Azure AD。 否则，你可以[免费获取它](https://go.microsoft.com/fwlink/p/?LinkId=703757)。 有关关联设置的详细信息，请参阅[Azure Active Directory 相关联与合作伙伴中心帐户](associate-azure-ad-with-dev-center.md)。

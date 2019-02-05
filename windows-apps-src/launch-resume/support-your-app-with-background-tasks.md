@@ -6,12 +6,12 @@ ms.date: 08/21/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: 2413a27c12a9b36f0fd57482492414e7b5a379b6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 71026762933267e1cad9a1cd9b6581eed1dadbb8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934772"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044564"
 ---
 # <a name="support-your-app-with-background-tasks"></a>使用后台任务支持应用
 
@@ -24,25 +24,25 @@ ms.locfileid: "8934772"
 
 ## <a name="in-process-and-out-of-process-background-tasks"></a>进程内后台任务和进程外后台任务
 
-有两个可实现后台任务的方法：
+有两种方式实现后台任务：
 
-* 进程内： 应用及其后台进程运行的同一进程中
+* 在进程： 应用及其后台进程运行的同一进程中
 * 进程外： 应用及其后台进程运行在单独进程中。
 
 进程内后台支持在 Windows10 版本 1607 中引入，目的是简化编写后台任务。 但仍可以编写进程外后台任务。 有关在何时编写进程内和进程外后台任务的建议，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
-进程外后台任务是更容易复原，因为如果出现错误，后台进程不能使应用崩溃。 但复原的代价来管理应用和后台任务之间的跨进程通信的更为复杂的价格。
+由于出现错误时，后台进程不能使应用崩溃，进程外后台任务是更具复原能力。 但复原的代价来管理应用和后台任务之间的跨进程通信的更为复杂的价格。
 
-进程外后台任务实现为实现[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)接口操作系统在单独进程 (backgroundtaskhost.exe) 中运行的轻型类。 通过使用[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)类注册后台任务。 注册后台任务时，类名称将用于指定入口点。
+进程外后台任务实现为实现[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)接口操作系统在独立进程 (backgroundtaskhost.exe) 中运行的轻型类。 通过使用[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)类注册后台任务。 注册后台任务时，类名称将用于指定入口点。
 
-在 Windows10 版本 1607 中，可以在无需创建后台任务的情况下启用后台活动。 相反，你可以运行后台代码直接在前台应用程序的过程。
+在 Windows10 版本 1607 中，可以在无需创建后台任务的情况下启用后台活动。 你可以改为运行直接在前台应用程序的进程内后台代码。
 
 若要快速开始使用进程内后台任务，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
 
 若要快速开始使用进程外后台任务，请参阅[创建和注册进程外后台任务](create-and-register-a-background-task.md)。
 
 > [!TIP]
-> 从 windows 10 开始，不再需要将应用放在锁屏上作为注册后台任务的先决条件。
+> 从 windows 10 开始，不再需要将应用放在锁屏上为其注册后台任务的先决条件。
 
 ## <a name="background-tasks-for-system-events"></a>系统事件的后台任务
 
@@ -71,9 +71,9 @@ ms.locfileid: "8934772"
 | **UserNotPresent**       | 用户必须离开。            |
 | **UserPresent**          | 用户必须存在。         |
 
-将 **InternetAvailable** 条件添加到你的后台任务 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)，以将后台任务触发时间延迟到网络堆栈运行后。 此条件节省电源，因为可用网络之前，将不会执行后台任务。 此条件不提供实时激活。
+将 **InternetAvailable** 条件添加到你的后台任务 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)，以将后台任务触发时间延迟到网络堆栈运行后。 这种情况节省电源，因为可用网络之前，不会执行后台任务。 此条件不提供实时激活。
 
-如果你的后台任务需要网络连接，设置[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)以确保后台任务运行时网络，保持。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果你的后台任务不会设置**IsNetworkRequested**，然后你的后台任务将无法访问网络当处于连接待机模式时 （例如，当手机屏幕处于关闭状态。）
+如果你的后台任务需要网络连接，设置[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)以确保后台任务运行时网络，保持。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果你的后台任务不会设置**IsNetworkRequested**，然后你的后台任务将不能访问网络当处于连接待机模式时 （例如，手机屏幕处于关闭状态时。）
  
 有关后台任务条件的详细信息，请参阅[设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)。
 
@@ -158,7 +158,7 @@ ms.locfileid: "8934772"
 > [!IMPORTANT]
 > **DeviceUseTrigger** 和 **DeviceServicingTrigger** 不能用于进程内后台任务。
 
-某些关键设备操作（如长时间运行的固件更新）无法通过 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 执行。 此类操作仅可以在电脑上通过使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 的特权应用执行。 *特权应用*是指由设备制造商授权执行这些操作的应用。 设备元数据用于指定已指派哪个应用（如果有）作为设备的特权应用。 有关详细信息，请参阅[设备同步和更新的 Microsoft 应用商店设备应用](http://go.microsoft.com/fwlink/p/?LinkId=306619)
+某些关键设备操作（如长时间运行的固件更新）无法通过 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 执行。 此类操作仅可以在电脑上通过使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 的特权应用执行。 *特权应用*是指由设备制造商授权执行这些操作的应用。 设备元数据用于指定已指派哪个应用（如果有）作为设备的特权应用。 有关详细信息，请参阅[设备同步和更新的 Microsoft 应用商店设备应用](https://go.microsoft.com/fwlink/p/?LinkId=306619)
 
 ## <a name="managing-background-tasks"></a>管理后台任务
 
@@ -167,11 +167,11 @@ ms.locfileid: "8934772"
 [处理取消的后台任务](handle-a-cancelled-background-task.md)  
 [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 
-在应用启动期间检查你的后台任务注册。 确保你的应用的分组的后台任务中 BackgroundTaskBuilder.AllTasks 存在。 重新注册的那些不存在。 不再需要的任何任务取消。 这将确保所有后台任务注册在每次启动应用时都是最新。
+在应用启动期间检查你的后台任务注册。 确保在 BackgroundTaskBuilder.AllTasks 中存在你的应用未分组的后台任务。 重新注册的那些不存在。 注销不再需要的任何任务。 这将确保所有后台任务注册在每次启动应用时都是最新。
 
 ## <a name="related-topics"></a>相关主题
 
-**Windows 10 中使用多任务的概念指南**
+**在 windows 10 中使用多任务的概念指南**
 
 * [启动、恢复和多任务](index.md)
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
-ms.openlocfilehash: 95fa9e8ef9c508846443e04e23184c03e38ce9a2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e6d36c368672675f503359735de8717df1be8b57
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939322"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050650"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>用 MonoGame 2D 创建 UWP 游戏
 
@@ -26,24 +26,24 @@ MonoGame 是一款轻型游戏开发框架。 本教程介绍了用 MonoGame 进
 
 ## <a name="prerequisites"></a>必备条件
 +   Windows 10 和 Microsoft Visual Studio 2017。  [单击此处了解如何设置 Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
-+ .NET 的桌面开发框架。 如果你还没有安装，你可以通过重新运行 Visual Studio 安装程序和修改你安装的 Visual Studio 2017 获取它。
++ .NET 的桌面开发框架。 如果你尚未获得此安装，你可以通过重新运行 Visual Studio 安装程序和修改你安装的 Visual Studio 2017 获取它。
 +   C# 或类似面向对象的编程语言的基础知识。 [单击此处以了解如何开始使用 C#](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 +   熟悉基本的计算机科学概念如类、方法以及变量，将有所帮助。
 
 ## <a name="why-monogame"></a>为什么选择 MonoGame？
-谈及游戏开发环境时，我们并不缺少选择。 从功能齐全的引擎（如 Unity）到全面、复杂的多媒体 API（如 DirectX），但这些都让人很难知道从何处入手。 MonoGame 是一组工具，其复杂度处于游戏引擎与更专业的 API（如 DirectX）之间。 它提供了易于使用的内容管道，以及用于创建在各种平台上运行的轻型游戏所需的所有功能。 最重要的是，MonoGame 应用用纯 C# 编写，并通过 Microsoft 应用商店或其他类似的分发平台，可以快速分发它们。
+谈及游戏开发环境时，我们并不缺少选择。 从功能齐全的引擎（如 Unity）到全面、复杂的多媒体 API（如 DirectX），但这些都让人很难知道从何处入手。 MonoGame 是一组工具，其复杂度处于游戏引擎与更专业的 API（如 DirectX）之间。 它提供了易于使用的内容管道，以及用于创建在各种平台上运行的轻型游戏所需的所有功能。 最重要的是，MonoGame 应用用纯 C#，编写，并通过 Microsoft 应用商店或其他类似的分发平台，可以快速分发它们。
 
 ## <a name="get-the-code"></a>获取代码
 如果你不想跟着教程逐步学习，只想了解 MonoGame 的实际应用，[请单击此处以获得完成后的应用](https://github.com/Microsoft/Windows-appsample-get-started-mg2d)。
 
-在 Visual Studio 2017 中，打开项目，并按**F5**运行示例。 首次进行此操作可能会需要一段时间，因为 Visual Studio 需要提取安装中缺少的所有 NuGet 包。
+在 Visual Studio 2017 中，打开项目，然后按**F5**以运行样本。 首次进行此操作可能会需要一段时间，因为 Visual Studio 需要提取安装中缺少的所有 NuGet 包。
 
 如果已完成此操作，则请跳至下一节“设置 MonoGame”，以查看代码的分步操作实例。
 
-**注意：** 此示例中创建的游戏并不完整（或完全没有乐趣）。 其唯一目的是展示用 MonoGame 2d 游戏开发的所有核心概念。 你可随意使用此代码并进行改进，或者在掌握基础知识之后从头开始。
+**注意：** 此示例中创建的游戏并不完整（或完全没有乐趣）。 其唯一目的是为了演示用 MonoGame 2d 游戏开发的所有核心概念。 你可随意使用此代码并进行改进，或者在掌握基础知识之后从头开始。
 
 ## <a name="set-up-monogame-project"></a>设置 MonoGame 项目
-1. 从 [MonoGame.net](http://www.monogame.net/) 中安装适用于 Visual Studio 的 **MonoGame 3.6**。
+1. 从 [MonoGame.net](https://www.monogame.net/) 中安装适用于 Visual Studio 的 **MonoGame 3.6**。
 
 2. 启动 Visual Studio 2017。
 
@@ -66,7 +66,7 @@ MonoGame 是一款轻型游戏开发框架。 本教程介绍了用 MonoGame 进
 
 **protected override void UnloadContent()** 此方法用于卸载非内容管理器内容。 我们不会用到此方法。
 
-**受保护的 override void Update (GameTime gameTime)** 每个游戏循环周期调用此方法一次。 我们在此更新游戏中使用的任何对象或变量的状态。 这包括对象的位置、速度或颜色等等。 这是处理用户输入的位置。 简而言之，此方法用于处理游戏逻辑的每个部分（在屏幕上绘制对象除外）。
+**受保护的 override void Update (GameTime gameTime)** 每个游戏循环周期调用此方法一次。 我们在此更新游戏中使用的任何对象或变量的状态。 这包括对象的位置、速度或颜色等等。 这是在其中处理用户输入。 简而言之，此方法用于处理游戏逻辑的每个部分（在屏幕上绘制对象除外）。
 **protected override void Draw(GameTime gameTime)** 这是在屏幕上使用“Update”方法提供的位置绘制对象的地方。
 
 ## <a name="draw-a-sprite"></a>绘制子画面
@@ -324,7 +324,7 @@ broccoli = new SpriteClass(GraphicsDevice, "Content/broccoli.png", ScaleToHighDP
 花椰菜在游戏中的显示大小比我们期望的大得多，因此，我们需要将其缩小至其原始尺寸的 1/5。
 
 ### <a name="5-program-obstacle-behaviour"></a>5.设置障碍物行为
-我们希望花椰菜在屏幕以外的地方繁殖，并朝玩家头像的方向生长，从而使玩家需要躲避它。 若要实现此目的，请将此方法添加到**Game1.cs**类：
+我们希望花椰菜在屏幕以外的地方繁殖，并朝玩家头像的方向生长，从而使玩家需要躲避它。 为此，请将此方法添加到**Game1.cs**类：
 
 ```CSharp
 public void SpawnBroccoli()
@@ -379,7 +379,7 @@ public void StartGame()
 ```
 
 ### <a name="7-handle-keyboard-input"></a>7.处理键盘输入
-接下来，我们需要一个新方法来通过键盘处理用户输入。 将此方法添加到**Game1.cs**:
+接下来，我们需要通过键盘处理用户输入的新方法。 将此方法添加到**Game1.cs**:
 
 ```CSharp
 void KeyboardHandler()
@@ -428,7 +428,7 @@ void KeyboardHandler()
 
 如果在游戏尚未开始时按下**空格**键，则第二个将会开始游戏。
 
-如果按下**空格**键，则第三个将会通过更改其 **dY** 属性来使恐龙头像跳跃。 请注意，玩家无法跳跃"地面"上 (dino.y = screenHeight * SKYRATIO)，也将无法跳跃如果空格键被按住而不是按下一次。 游戏开始后，这将使恐龙无法跳跃，通过按下相同的按键即可开始游戏。
+如果按下**空格**键，则第三个将会通过更改其 **dY** 属性来使恐龙头像跳跃。 请注意，玩家无法跳跃，除非它们是在"地面"上 (dino.y = screenHeight * SKYRATIO)，也将无法跳跃如果空间是否被按下键而不是按下一次。 游戏开始后，这将使恐龙无法跳跃，通过按下相同的按键即可开始游戏。
 
 最后，最后一个条件从句用于检查是否按下向左或向右方向箭头，如果是，则相应地更改恐龙的 **dX** 属性。
 
@@ -482,9 +482,9 @@ broccoli.Draw(spriteBatch);
 dino.Draw(spriteBatch);
 ```
 
-在 MonoGame 中，对 **spriteBatch.Draw** 的新调用将会覆盖任何先前的调用。 这意味着，花椰菜和恐龙子画面将绘制现有的草地子画面，以便他们可以永远不会隐藏它无论其位置。
+在 MonoGame 中，对 **spriteBatch.Draw** 的新调用将会覆盖任何先前的调用。 这意味着，花椰菜和恐龙子画面将绘制现有的草地子画面，因此它们可以永远不会隐藏无论其位置。
 
-现在尝试运行游戏，并通过箭头键和空格键移动恐龙。 如果已遵循以上步骤，你应该能够让你在游戏窗口内移动的头像和花椰菜应生成速度将会不断增长。
+现在尝试运行游戏，并通过箭头键和空格键移动恐龙。 如果已遵循以上步骤，你应该能够让你在游戏窗口内移动的头像和花椰菜应生成速度不断增长。
 
 ![玩家头像和障碍物](images/monogame-tutorial-2.png)
 
@@ -683,8 +683,8 @@ if (gameOver)
 
 ![游戏结束](images/monogame-tutorial-4.png)
 
-## <a name="publish-to-the-microsoft-store"></a>发布到 Microsoft Store
-因为我们的生成此游戏为 UWP 应用，就可以将此项目发布到 Microsoft Store。 此流程包含几个步骤。
+## <a name="publish-to-the-microsoft-store"></a>发布到 Microsoft 应用商店
+因为我们构建为 UWP 应用此游戏，则可以将此项目发布到 Microsoft Store。 此流程包含几个步骤。
 
 你必须以 Windows 开发人员的身份[注册](https://developer.microsoft.com/en-us/store/register)。
 

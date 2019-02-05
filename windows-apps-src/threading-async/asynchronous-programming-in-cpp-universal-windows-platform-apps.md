@@ -6,18 +6,18 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, uwp, 线程, 异步, C++
 ms.localizationpriority: medium
-ms.openlocfilehash: 84f0da2f0b9642a817f4efb5b6d30a968c0803ff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: beab78415ab36fc7bc0659af1b3466b2c3601d88
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920506"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045961"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>使用 C++/CX 异步编程
 > [!NOTE]
 > 本主题旨在帮助你维护 C++/CX 应用程序。 不过，建议使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 编写新应用程序。 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。
 
-本文介绍的推荐的方式来使用异步方法在 VisualC + + 组件扩展 (C + + CX) 通过使用`task`中定义的类`concurrency`在 ppltasks.h 中的命名空间。
+本文介绍了使用 VisualC + + 组件扩展中的异步方法的推荐的方式 (C + + CX) 通过使用`task`中定义的类`concurrency`在 ppltasks.h 中的命名空间。
 
 ## <a name="universal-windows-platform-uwp-asynchronous-types"></a>通用 Windows 平台 (UWP) 异步类型
 通用 Windows 平台 (UWP) 功能具有一个定义完善的用于调用异步方法的模型，并提供了使用此类方法所需的类型。 如果你对 UWP 异步模型不熟悉，请在阅读本文其余部分之前阅读[异步编程][AsyncProgramming]。
@@ -289,7 +289,7 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
 ## <a name="related-topics"></a>相关主题
 * [使用 C++/CX 为 UWP 应用创建异步操作](https://msdn.microsoft.com/library/hh750082)
-* [Visual C++ 语言参考](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
+* [Visual C++ 语言参考](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
 * [异步编程][AsyncProgramming]
 * [任务并行度（并发运行时）][taskParallelism]
 * [concurrency::task](/cpp/parallel/concrt/reference/task-class)

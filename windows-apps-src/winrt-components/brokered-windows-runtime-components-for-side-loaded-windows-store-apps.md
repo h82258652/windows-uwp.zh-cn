@@ -1,27 +1,27 @@
 ---
 title: 适用于旁加载 UWP 应用的中转 Windows 运行时组件
-description: 本文讨论 windows 10，允许触摸友好的.NET 应用使用对主要关键业务操作负责的现有代码支持面向企业的功能。
+description: 本文讨论 windows 10 中，这允许触摸友好的.NET 应用使用对主要关键业务操作负责的现有代码支持面向企业的功能。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: d9665ba3af10091ddc652198d5340e00456a65a7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9ebac70d56fcdf1bf717d763daf4ac1bd9c06d4b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934522"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048414"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>适用于旁加载 UWP 应用的中转 Windows 运行时组件
 
-本文讨论 windows 10，允许触摸友好的.NET 应用使用对主要关键业务操作负责的现有代码支持面向企业的功能。
+本文讨论 windows 10 中，这允许触摸友好的.NET 应用使用对主要关键业务操作负责的现有代码支持面向企业的功能。
 
 ## <a name="introduction"></a>简介
 
 >**注意**可能为[Visual Studio 2015 & 2017年](https://aka.ms/brokeredsample)下载本文附带的示例代码。 用于生成中转 Windows 运行时组件的 Microsoft Visual Studio 模板可以在此处下载：[面向 Windows 10 通用 Windows 应用的 Visual Studio 2015 模板](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
 
-Windows 包含了新功能称为*旁加载应用程序的中转 Windows 运行时组件*。 我们使用术语 IPC（进程间通信）来描述在单个进程（桌面组件）中运行现有桌面软件资源的同时，在 UWP 应用中与此代码交互的能力。 这对于企业开发人员来说是熟悉的模型，因为数据库应用程序以及在 Windows 中使用 NT 服务的应用程序共享相似的多进程体系结构。
+Windows 包括名*旁加载应用程序的中转 Windows 运行时组件*的新功能。 我们使用术语 IPC（进程间通信）来描述在单个进程（桌面组件）中运行现有桌面软件资源的同时，在 UWP 应用中与此代码交互的能力。 这对于企业开发人员来说是熟悉的模型，因为数据库应用程序以及在 Windows 中使用 NT 服务的应用程序共享相似的多进程体系结构。
 
 应用的旁加载是此功能的关键组件。
 企业特定的应用程序在一般消费者 Microsoft Store 中并没有一席之地，并且企业对安全、隐私、分发、设置和服务有非常具体的要求。 因此，旁加载模型既是此功能的使用者的要求，也是关键的实现详细信息。
@@ -52,7 +52,7 @@ Windows 包含了新功能称为*旁加载应用程序的中转 Windows 运行�
 
 旁加载应用程序在每个方面都是正常的 UWP 应用，除了一个方面：它是旁加载的，而不是通过 Microsoft Store 安装。 大部分安装机制都相同：清单和应用程序打包很相似（稍后介绍有关清单的一项额外说明）。 启用旁加载后，一个简单的 PowerShell 脚本便可安装必要的证书和应用程序本身。 旁加载应用程序通过 Visual Studio 中的“项目/应用商店”菜单所含的 WACK 认证测试是正常的最佳做法。
 
->**注意**旁加载可以处于打开状态中设置-&gt;更新和安全&gt;适用于开发人员。
+>**注意**旁加载可以在设置-打开&gt;更新 & 安全&gt;适用于开发人员。
 
 要注意的一个要点是，作为 Windows 10 一部分提供的应用代理机制仅限于 32 位。 桌面组件必须为 32 位。
 旁加载应用程序可以为 64 位（假设已同时注册 64 位和 32 位代理），但这并不是典型情况。 使用正常“中性”配置和“首选 32 位”默认值在 C\# 中生成旁加载应用程序自然可创建 32 位旁加载应用程序。
@@ -161,7 +161,7 @@ namespace Fabrikam
     rem erase "$(TargetPath)"
 ```
 
-一次引用**winmd**创建 （文件夹项目的目标文件夹下的"参考"） 中，它是执行 （复制） 为每个使用的旁加载应用程序项目和引用的手。 这将在下一部分中进一步描述。 体现在以上生成规则中的项目结构确保实现和引用**winmd**处于生成层次结构以避免混淆中明确隔离的目录。
+一次引用**winmd**创建 （在文件夹项目的目标文件夹下的"参考"中），它是执行 （复制） 为每个使用的旁加载应用程序项目和引用的手。 这将在下一部分中进一步描述。 体现在以上生成规则中的项目结构确保实现和引用**winmd**中明确隔离的目录中生成层次结构，以避免混淆。
 
 ## <a name="side-loaded-applications-in-detail"></a>旁加载应用程序的详细信息
 如之前所述，旁加载应用程序的生成方式和任何其他 UWP 应用相同，但是有一个额外细节：要声明旁加载的应用程序清单中 RuntimeClass 的可用性。 这使应用程序只需编写新内容便可访问桌面组件中的功能。 <Extension> 部分中的新清单项描述了桌面组件中实现的 RuntimeClass 和关于它的位置的信息。 应用程序清单中的这些声明内容同样适用于面向 Windows 10 的应用。 例如：
@@ -183,7 +183,7 @@ namespace Fabrikam
 
 如“定义合约”部分中所提到的，必须对桌面组件的引用 winmd 进行项目引用。 Visual Studio 项目系统通常使用相同的名称创建一个两级目录结构。 在本例中，它是 EnterpriseIPCApplication\\EnterpriseIPCApplication。 引用**winmd**手动复制到此二级目录，然后项目引用对话框用于 （单击**浏览...** 按钮) 定位和引用此**winmd**。 在此之后，桌面组件的顶级命名空间（例如 Fabrikam）应当作为顶级节点出现在该项目的“引用”部分中。
 
->**注意**非常重要，若要使用**引用 winmd**中的旁加载应用程序。 如果你意外延续**实现 winmd**到旁加载应用目录并引用它，你将可能收到与"无法找到 IStringable"相关的错误。 这是一个确认登录的错误**winmd**已引用。 IPC 服务器应用中 （在下一节中详细介绍） 周密的生成后规则隔离这些两个**winmd**到单独的目录。
+>**注意**非常重要，用于**引用 winmd**旁加载应用程序中。 如果你意外延续**实现 winmd**到旁加载应用目录并引用它，你将可能收到与"无法找到 IStringable"相关的错误。 这是一个确保登录的错误**winmd**已引用。 IPC 服务器应用中 （在下一节中详细介绍） 周密的生成后规则介绍这些两个**winmd**到单独的目录。
 
 环境变量（尤其是 %ProgramFiles%）可以在 <ActivatableClassAttribute Value="path"> 中使用。如前所述，应用代理仅支持 32 位，因此，如果应用程序在 64 位 OS 上运行，%ProgramFiles% 将解析为 C:\\Program Files (x86)。
 
@@ -406,7 +406,7 @@ namespace Fabrikam
 
 以上引用是对此混合服务器的正确操作至关重要的引用的周密组合。 该协议旨在打开 .csproj 文件（在如何编辑项目 OutputType 中有所说明），并根据需要添加这些引用。
 
-正确配置引用后，下一个任务是实现服务器的功能。 请参阅 MSDN 主题[的 Windows 运行时组件 （使用 C\ # /vb/c + + 和 XAML 的 UWP 应用） 互操作性最佳做法](https://msdn.microsoft.com/library/windows/apps/hh750311.aspx)。
+正确配置引用后，下一个任务是实现服务器的功能。 请参阅 MSDN 主题[的 Windows 运行时组件 （使用 C\ #/ VB/c + + 和 XAML 的 UWP 应用） 互操作性最佳做法](https://msdn.microsoft.com/library/windows/apps/hh750311.aspx)。
 该任务是创建一个 Windows 运行时组件 dll，可调用桌面代码作为其实现的一部分。 附带的样本包括在 Windows 运行时中使用的主要模式：
 
 -   方法调用
@@ -419,7 +419,7 @@ namespace Fabrikam
 
 **安装**
 
-若要安装该应用，将复制实现**winmd**到关联的旁加载应用程序的清单中指定的正确目录： <ActivatableClassAttribute>Value ="path"。 还需复制任何相关联的支持文件和代理/存根 dll（下面介绍了后者的详细信息）。 未能将复制实现**winmd**到服务器目录位置将导致所有旁加载的 RuntimeClass 上的新应用程序的调用引发"没有注册类"错误。 安装代理/存根失败（或注册失败）将导致所有调用失败，且无返回值。 后者的错误通常是**不**与可见异常相关联。
+若要安装该应用，将复制实现**winmd**到关联的旁加载应用程序的清单中指定的正确目录： <ActivatableClassAttribute>Value ="path"。 还需复制任何相关联的支持文件和代理/存根 dll（下面介绍了后者的详细信息）。 无法复制实现**winmd**到服务器目录位置将导致所有旁加载到 RuntimeClass 上的新的应用程序的调用引发"没有注册类"错误。 安装代理/存根失败（或注册失败）将导致所有调用失败，且无返回值。 后者的错误通常是**不**与可见异常相关联。
 如果由于此配置错误而观察到异常，它们可能指的是“无效的强制转换”。
 
 **服务器实现注意事项**
@@ -453,7 +453,7 @@ return Task<int>.Run( () =>
 
 ```
 
->**注意** 通常要在编写实现的同时等待一些其他潜在长期运行的操作。 如果是这样，**Task.Run**的代码需要声明：
+>**注意** 通常要在编写实现的同时等待一些其他潜在长期运行的操作。 如果是这样，**Task.Run**代码需要声明：
 
 ```csharp
 return Task<int>.Run(async () =>
@@ -483,11 +483,11 @@ return Task<int>.Run(async () =>
 
 **“解决方案”&gt;“添加”&gt;项目”&gt;“Visual C++”&gt;“Win32 控制台” 选择 DLL 选项。**
 
-以下步骤中，我们假设服务器组件被称为**MyWinRTComponent**。
+下面的步骤中，我们假定服务器组件被称为**MyWinRTComponent**。
 
 **步骤 3：** 删除所有来自该项目的 CPP/H 文件。
 
-**步骤 4:** 上一部分"定义合约"包含运行**winmdidl.exe**、**midl.exe**、**mdmerge.exe**，等的生成后命令。 从该生成后命令的 MIDL 步骤得出的输出之一将生成以下 4 个重要输出：
+**步骤 4:** 上一节"定义合约"包含运行**winmdidl.exe**、**midl.exe**、**mdmerge.exe**，等的生成后命令。 从该生成后命令的 MIDL 步骤得出的输出之一将生成以下 4 个重要输出：
 
 a) Dlldata.c
 
@@ -499,7 +499,7 @@ d) \*\_p.c 文件（例如 MyWinRTComponent\_p.c）
 
 **步骤 5：** 将这四个生成文件添加到“MyWinRTProxy”项目。
 
-**步骤 6:** 将 def 文件添加到"MyWinRTProxy"项目 **(项目 > 添加新项 > 代码 > 模块定义文件**) 和内容更新为：
+**步骤 6:** 将 def 文件添加到"MyWinRTProxy"项目 **(项目 > 添加新项 > 代码 > 模块定义文件**) 和更新的内容为：
 
 LIBRARY MyWinRTComponent.Proxies.dll
 
@@ -535,9 +535,9 @@ MyWinRTComponent.Proxies
 
 **部署代理**
 
-必须全局注册该代理。 执行此操作的最简单方法是让你的安装进程对代理 dll 调用 DllRegisterServer。 请注意，由于此功能仅支持针对 x86 生成的服务器（即，无 64 位支持），因此最简单的配置是使用 32 位服务器、32 位代理和 32 位旁加载应用程序。 该代理通常位于旁边的实现**winmd**适用于桌面组件。
+必须全局注册该代理。 执行此操作的最简单方法是让你的安装进程对代理 dll 调用 DllRegisterServer。 请注意，由于此功能仅支持针对 x86 生成的服务器（即，无 64 位支持），因此最简单的配置是使用 32 位服务器、32 位代理和 32 位旁加载应用程序。 该代理通常位于与实现**winmd**并行适用于桌面组件。
 
-必须执行一个额外配置步骤。 为了使旁加载进程加载和执行该代理，该目录必须为 ALL_APPLICATION_PACKAGES 标记为“读取/执行”。 这是通过**icacls.exe**命令行工具。 此命令的目录中应该执行其中实现**winmd**和代理/存根 dll 所在：
+必须执行一个额外配置步骤。 为了使旁加载进程加载和执行该代理，该目录必须为 ALL_APPLICATION_PACKAGES 标记为“读取/执行”。 这是通过**icacls.exe**命令行工具。 此命令应执行的目录中，实现**winmd**和代理/存根 dll 所在：
 
 *icacls。 /T /grant \*S-1-15-2-1:RX*
 
@@ -553,7 +553,7 @@ MyWinRTComponent.Proxies
 
 -   结果的批量传输降低了跨进程闲聊。 这通常通过使用 Windows 运行时数组构造来执行。
 
--   返回*列表<T>* 其中*T*是来自异步操作或属性提取的对象，将导致许多跨进程闲聊。 例如，假设你返回*列表&lt;用户&gt;* 对象。 每次迭代传递都将是一次跨进程调用。 每个*用户*返回的对象都由代理和每个调用方法或对该单个对象的属性会导致跨进程调用。 因此"无辜"*列表&lt;用户&gt;* 对象的*计数*大将导致大量的慢速调用。 数组中内容结构的批量传输可产生更好的性能。 例如：
+-   返回*列表<T>* 其中*T*是来自异步操作或属性提取的对象，将导致许多跨进程闲聊。 例如，假设你返回*列表&lt;用户&gt;* 对象。 每次迭代传递都将是一次跨进程调用。 每个*用户*返回的对象都由代理和每次调用方法或对该单个对象的属性将导致跨进程调用。 因此"无辜"*列表&lt;用户&gt;* 对象其中*计数*大将导致大量的慢速调用。 数组中内容结构的批量传输可产生更好的性能。 例如：
 
 ```csharp
 struct PersonStruct
@@ -568,7 +568,7 @@ struct PersonStruct
 然后返回*PersonStruct\ [\]* 而不是*列表&lt;PersonObject&gt;*。
 这将在一次跨进程“跳跃”中获取所有数据。
 
-和所有性能注意事项一样，测量和测试至关重要。 理想情况下，应当将遥测插入到各种操作中以确定它们所需的时间。 请务必在一系列测量： 例如，多长时间未实际需要使用所有*人*对象的旁加载应用程序中为特定的查询？
+和所有性能注意事项一样，测量和测试至关重要。 理想情况下，应当将遥测插入到各种操作中以确定它们所需的时间。 请务必在一系列测量： 例如，多长时间实际需要使用所有*人*对象的旁加载应用程序中为特定的查询？
 
 另一项技术是变量加载测试。 这可以通过将性能测试挂钩放入将变量延迟加载引入服务器处理的应用程序来完成。 这可以模拟各种加载和应用程序对不同服务器性能的反应。
 此示例演示如何使用正确的异步技术将时间延迟放入代码中。 要注入的延迟的确切量和要放入人工加载中的随机化的范围，将根据应用程序设计和应用程序将在其中运行的预期环境而变化。
@@ -592,13 +592,13 @@ struct PersonStruct
 
 -   [适用于 Windows 10 和 VS 2015 的中转 WinRT 组件项目模板](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
 
--   [NorthwindRT 中转 WinRT 组件示例](http://go.microsoft.com/fwlink/p/?LinkID=397349)
+-   [NorthwindRT 中转 WinRT 组件示例](https://go.microsoft.com/fwlink/p/?LinkID=397349)
 
--   [提供可靠且值得信任的 Microsoft Store 应用](http://go.microsoft.com/fwlink/p/?LinkID=393644)
+-   [提供可靠且值得信任的 Microsoft Store 应用](https://go.microsoft.com/fwlink/p/?LinkID=393644)
 
 -   [应用合约和扩展（Microsoft Store 应用）](https://msdn.microsoft.com/library/windows/apps/hh464906.aspx)
 
 -   [如何在 Windows 10 中旁加载应用](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#GroupPolicy)
 
--   [将 UWP 应用部署到企业](http://go.microsoft.com/fwlink/p/?LinkID=264770)
+-   [将 UWP 应用部署到企业](https://go.microsoft.com/fwlink/p/?LinkID=264770)
 

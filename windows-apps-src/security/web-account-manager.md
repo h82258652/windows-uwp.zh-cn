@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10，uwp 安全
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 14f5139f5fe2c3d5d1f97040ee3bec33ea48d6ac
-ms.sourcegitcommit: ffad7cfb5d5c099f9f559e966fd93b705b47d2bd
+ms.openlocfilehash: e2c1be80ada3e337a4bf7353b854ae4cbe5bd99a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2018
-ms.locfileid: "8990325"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050980"
 ---
 # <a name="web-account-manager"></a>Web 帐户管理器
 
 本文介绍如何通过 Windows 10 Web 帐户管理器 API，使用 **[AccountsSettingsPane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** 将通用 Windows 平台 (UWP) 应用连接到外部标识提供者，如 Microsoft 或 Facebook。 你将了解如何请求用户的权限以使用其 Microsoft 帐户、获取访问令牌，并使用它来执行基本操作（如获取配置文件数据或将文件上传到他们的 OneDrive 帐户）。 相关步骤类似于通过支持 Web 帐户管理器的任何标识提供者来获取用户权限和访问权限。
 
 > [!NOTE]
-> 有关完整代码示例，请参阅 [GitHub 上的 WebAccountManagement 示例](http://go.microsoft.com/fwlink/p/?LinkId=620621)。
+> 有关完整代码示例，请参阅 [GitHub 上的 WebAccountManagement 示例](https://go.microsoft.com/fwlink/p/?LinkId=620621)。
 
 ## <a name="get-set-up"></a>准备工作
 
@@ -178,7 +178,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 * 有关 OneDrive 的作用域，请参阅 [OneDrive 身份验证和登录](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
 
 > [!TIP]
-> （可选） 如果你的应用使用的登录提示 （若要填充默认电子邮件地址的用户字段） 或其他与登录体验相关的特殊属性，则列出**[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性中。 这将导致系统缓存的 web 帐户，可以防止在缓存中的帐户不匹配时忽略此属性。
+> （可选） 如果你的应用使用的登录提示 （若要填充的默认电子邮件地址的用户字段） 或其他与登录体验相关的特殊属性，则列出**[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性中。 这将导致系统缓存的 web 帐户，这样可以防止在缓存中的帐户不匹配时忽略。
 
 如果在开发企业应用，可能需要连接到 Azure Active Directory (AAD) 实例，并使用 Microsoft Graph API，而非常规的 MSA 服务。 在此方案中，使用以下代码： 
 
@@ -430,6 +430,6 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 [Web 身份验证代理](web-authentication-broker.md)
 
-[Web 帐户管理示例](http://go.microsoft.com/fwlink/p/?LinkId=620621)
+[Web 帐户管理示例](https://go.microsoft.com/fwlink/p/?LinkId=620621)
 
 [Lunch Scheduler 应用](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)

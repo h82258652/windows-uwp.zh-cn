@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp, wip, Windows 信息保护, 企业数据, 企业数据保护, edp, 启发式应用
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 ms.localizationpriority: medium
-ms.openlocfilehash: 229d97c137344de26be0168be437825bea8e9700
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6f022045787512f6baea679633d5327b6ba4caf8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932540"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048354"
 ---
 # <a name="windows-information-protection-wip-developer-guide"></a>Windows 信息保护 (WIP) 开发人员指南
 
@@ -21,7 +21,7 @@ ms.locfileid: "8932540"
 
 在本指南中，我们将向你介绍如何生成一个启发式应用。 完成此操作后，策略管理员将能够信任你的应用，允许它们使用组织数据。 员工会爱戴你，因为即使在他们从组织的移动设备管理 (MDM) 注销或完全退出组织后，你仍然将他们的个人数据完好无损保留在他们的设备上。
 
-__注意__ 本指南有助于启发你创建 UWP 应用。 如果你想要启发 C++ Windows 桌面应用，请参阅 [Windows 信息保护 (WIP) 开发人员指南 (C++)](http://go.microsoft.com/fwlink/?LinkId=822192)。
+__注意__ 本指南有助于启发你创建 UWP 应用。 如果你想要启发 C++ Windows 桌面应用，请参阅 [Windows 信息保护 (WIP) 开发人员指南 (C++)](https://go.microsoft.com/fwlink/?LinkId=822192)。
 
 可以在此处阅读有关 WIP 和启发式应用的详细信息：[Windows 信息保护 (WIP)](wip-hub.md)。
 
@@ -1163,4 +1163,4 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 
 ## <a name="related-topics"></a>相关主题
 
-[Windows 信息保护 (WIP) 示例](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
+[Windows 信息保护 (WIP) 示例](https://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)

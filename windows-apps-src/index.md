@@ -9,12 +9,12 @@ ms.date: 08/4/2017
 keywords: windows uwp, 通用 Windows 平台, Windows 运行时 API, windows api, windows api 参考, winrt api, uwp api, uwp api 参考, 开发 uwp, 设计 uwp, 发布 uwp
 ms.localizationpriority: medium
 ms.technology: uwp-conceptual-docs
-ms.openlocfilehash: 419f1e87d2cb0ff87b210e9f746e3617f51d6776
-ms.sourcegitcommit: f433f926ddd94fe1d0fdd0057cb39b74e83b4f8a
+ms.openlocfilehash: ce1923fa071344a848b4b0c4fab1ed6da6da48f7
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "9029043"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047146"
 ---
 # <a name="universal-windows-platform-documentation"></a>通用 Windows 平台文档
 借助通用 Windows 平台 (UWP)，可以生成适用于任何 Windows 设备（电脑、手机、Xbox One、HoloLens 以及其他设备）的应用，然后将这些应用发布到 Microsoft Store。
@@ -274,7 +274,7 @@ ms.locfileid: "9029043"
                             <a href="https://twitter.com/WindowsDocs">@WindowsDocs在 Twitter 上</a>
                         </p>
                         <p>
-                            <a href="http://aka.ms/OneDevMinute">OneDevMinute YouTube 上</a>
+                            <a href="https://aka.ms/OneDevMinute">OneDevMinute YouTube 上</a>
                         </p>
                         <p>
                             <a href="https://developer.microsoft.com/windows/support">Windows 开发人员支持</a>

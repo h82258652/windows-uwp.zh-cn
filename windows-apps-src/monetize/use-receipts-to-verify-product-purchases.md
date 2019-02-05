@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用内购买, IAP, 收据, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: b71d55d71a63060a66265051fafc8bdf7313e77b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9449a2dd265128a83f7840872ce4995df05a4e78
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923298"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047249"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>使用收据验证产品购买
 
@@ -108,11 +108,11 @@ ms.locfileid: "8923298"
 |-------------|------------|--------|--------|
 |  [AppReceipt](#appreceipt)  |    否        |  0 或 1  |  包含当前应用的购买信息。            |
 |  [ProductReceipt](#productreceipt)  |     否       |  0 或更多    |   包含有关当前应用的应用内购买的信息。     |
-|  签名  |      是      |  1   |   此元素是一种标准 [XML-DSIG 构造](http://go.microsoft.com/fwlink/p/?linkid=251093)。 它包含 **SignatureValue** 元素（其中包含可用于验证收据的签名）和 **SignedInfo** 元素。      |
+|  签名  |      是      |  1   |   此元素是一种标准 [XML-DSIG 构造](https://go.microsoft.com/fwlink/p/?linkid=251093)。 它包含 **SignatureValue** 元素（其中包含可用于验证收据的签名）和 **SignedInfo** 元素。      |
 
 **Receipt** 具有以下必属性。
 
-|  属性  |  描述   |
+|  属性  |  说明   |
 |-------------|-------------------|
 |  **版本**  |    收据的版本号。            |
 |  **CertificateId**  |     用于对收据进行签名的证书指纹。          |
@@ -127,7 +127,7 @@ ms.locfileid: "8923298"
 
 **AppReceipt** 具有以下属性。
 
-|  属性  |  描述   |
+|  属性  |  说明   |
 |-------------|-------------------|
 |  **Id**  |    标识购买。           |
 |  **AppId**  |     操作系统用于该应用的程序包系列名称值。           |
@@ -142,7 +142,7 @@ ms.locfileid: "8923298"
 
 **ProductReceipt** 具有以下属性。
 
-|  属性  |  描述   |
+|  属性  |  说明   |
 |-------------|-------------------|
 |  **Id**  |    标识购买。           |
 |  **AppId**  |     标识应用，用户通过该应用进行购买。           |

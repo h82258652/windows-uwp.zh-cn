@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: d56482ee036eaadbd759de9af22fdd10c652aceb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9c437e30db7007a6889a822d7d2219f1647bb3d8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932633"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051030"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>已打包的桌面应用程序的已知的问题
 
@@ -34,7 +34,7 @@ ms.locfileid: "8932633"
 
 若要解决此问题，请尝试从提升的命令提示符中运行命令 `Netsh int ipv4 reset`，然后重启计算机。
 
-### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>你的.NET 应用程序使用"AnyCPU"生成选项编译，并且无法安装
+### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>.NET 应用程序使用"AnyCPU"生成选项编译，并且无法安装
 
 如果将主要可执行文件或任何依赖项放置在 **Program Files** 或 **Windows\System32** 文件夹层次结构中的任意位置，则可能会出现这种情况。
 
@@ -69,7 +69,7 @@ PE 文件的验证码签名的位置由可选头数据目录中的证书表项�
             **WIN_CERTIFICATE** 项的大小必须为正数
 - 对于 32 位可执行文件，**WIN_CERTIFICATE** 项必须在 **IMAGE_NT_HEADERS32** 结构之后开始，对于 64 位可执行文件，必须在 IMAGE_NT_HEADERS64 结构之后开始
 
-有关更多详细信息，请参考[验证码门户可执行文件规范](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx)和 [PE 文件格式规范](https://msdn.microsoft.com/windows/hardware/gg463119.aspx)。
+有关更多详细信息，请参考[验证码门户可执行文件规范](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx)和 [PE 文件格式规范](https://msdn.microsoft.com/windows/hardware/gg463119.aspx)。
 
 请注意，当尝试对 Windows 应用包进行签名时，SignTool.exe 可能会输出已损坏或格式不正确的二进制文件列表。 若要执行此操作，请通过将环境变量 APPXSIP_LOG 设置为 1（如 ```set APPXSIP_LOG=1```）来启用详细日志记录并重新运行 SignTool.exe。
 
@@ -93,7 +93,7 @@ PE 文件的验证码签名的位置由可选头数据目录中的证书表项�
 
 如果更新未解决问题或者你不确定如何恢复电脑，请联系 [Microsoft 支持](https://support.microsoft.com/contactus/)。
 
-如果是开发人员，可能需要阻止在不包含此更新的 Windows 版本上安装打包应用程序。 请注意，通过执行此操作，你的应用程序不会提供给用户尚未安装更新。 若要限制用户已安装此更新的应用程序的可用性，请修改 AppxManifest.xml 文件，如下所示：
+如果是开发人员，可能需要阻止在不包含此更新的 Windows 版本上安装打包应用程序。 请注意，通过执行此操作，你的应用程序不会提供给尚未安装更新的用户。 若要限制用户已安装此更新的应用程序的可用性，请修改 AppxManifest.xml 文件，如下所示：
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -129,19 +129,19 @@ certutil -dump <cert_file.pfx>
 
 <a id="bad-pe-cert" />
 
-### <a name="bad-pe-certificate-0x800700c1"></a>不合适的 PE 证书 (0x800700C1)
+### <a name="bad-pe-certificate-0x800700c1"></a>损坏的 PE 证书 (0x800700C1)
 
 当你的包包含一个已损坏的证书的二进制文件时，会出现此错误。 下面是一些会出现此错误原因的原因：
 
-* 开始菜单的证书不是图像的末尾。  
+* 开始菜单的证书不末尾的图像。  
 
 * 证书的大小不积极。
 
-* 证书开始屏幕后不是`IMAGE_NT_HEADERS32`结构为一个 32 位可执行文件或之后`IMAGE_NT_HEADERS64`结构的 64 位可执行文件。
+* 证书开始菜单未在`IMAGE_NT_HEADERS32`结构为一个 32 位可执行文件或之后`IMAGE_NT_HEADERS64`结构的 64 位可执行文件。
 
 * 证书指针未正确对齐 WIN_CERTIFICATE 结构。
 
-若要查找包含损坏的 PE 证书文件，打开**命令提示符**，并设置名为环境变量`APPXSIP_LOG`值为 1 到。
+若要查找包含错误的 PE 证书文件，打开**命令提示符**，并设置名为环境变量`APPXSIP_LOG`为 1 的值。
 
 ```
 set APPXSIP_LOG=1
@@ -153,7 +153,7 @@ set APPXSIP_LOG=1
 signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx
 ```
 
-在**控制台窗口**中将显示有关文件包含损坏的 PE 证书的信息。 例如：
+有关文件包含错误的 PE 证书的信息将显示在**控制台窗口**。 例如：
 
 ```
 ...
@@ -166,7 +166,7 @@ ERROR: [AppxSipCustomLoggerCallback] File has malformed certificate: uninstall.e
 
 **查找问题的答案**
 
-有问题？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
+有问题？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
 
 **提供反馈或提出功能建议**
 

@@ -8,12 +8,12 @@ keywords: 语音, 语音, 语音识别, 自然语言, 听写, 输入, 用户交�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 53539c73137b40d154db00fa9e340d81412764da
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 539acb242cfe6ee70d1311133a3f1a193860541a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942176"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047552"
 ---
 # <a name="define-custom-recognition-constraints"></a>定义自定义识别约束
 
@@ -144,7 +144,7 @@ SRGS 提供一组完整的功能，可帮助你为应用构建复杂的语音交
 -   使用语义定义语音识别对你的应用的意义。
 -   在语法中以内联方式或通过指向词典的链接来指定发音。
 
-有关 SRGS 元素和属性的详细信息，请参阅 [SRGS 语法 XML 参考](http://go.microsoft.com/fwlink/p/?LinkID=269886)。 若要开始创建 SRGS 语法，请参阅[如何创建基本的 XML 语法](http://go.microsoft.com/fwlink/p/?LinkID=269887)。
+有关 SRGS 元素和属性的详细信息，请参阅 [SRGS 语法 XML 参考](https://go.microsoft.com/fwlink/p/?LinkID=269886)。 若要开始创建 SRGS 语法，请参阅[如何创建基本的 XML 语法](https://go.microsoft.com/fwlink/p/?LinkID=269887)。
 
 请牢记以下几点：
 
@@ -178,7 +178,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-该 SRGS 文件 (srgs.grxml) 包含语义翻译标记。 这些标记提供了用于将语法匹配数据返回应用的机制。 语法必须符合万维网联合会 (W3C)[用于语音识别的语义翻译 (SISR) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765) 规范。
+该 SRGS 文件 (srgs.grxml) 包含语义翻译标记。 这些标记提供了用于将语法匹配数据返回应用的机制。 语法必须符合万维网联合会 (W3C)[用于语音识别的语义翻译 (SISR) 1.0](https://go.microsoft.com/fwlink/p/?LinkID=201765) 规范。
 
 我们在此处侦听“是”和“否”的变体。
 
@@ -236,7 +236,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 * [语音交互](speech-interactions.md)
 
 **示例**
-* [语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [语音识别和语音合成示例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

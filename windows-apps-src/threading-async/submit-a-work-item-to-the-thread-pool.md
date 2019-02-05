@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 线程, 线程池
 ms.localizationpriority: medium
-ms.openlocfilehash: 08608bc5715031f9ddf5b6bec05e7c86737f7e10
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: 423f0efa9118f581d6e768a815dd2550801aa87e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981371"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048614"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>向线程池提交工作项
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 <b>重要的 API</b>
 
@@ -350,7 +350,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>摘要和后续步骤
 
-你可以了解详情，请在[创建 ThreadPool 工作项示例](http://go.microsoft.com/fwlink/p/?LinkID=328569)为 windows 8.1 编写此快速入门下载代码并在 win_unap windows 10 应用中重复使用的源代码。
+你可以了解详情，请在的[创建 ThreadPool 工作项示例](https://go.microsoft.com/fwlink/p/?LinkID=328569)为 windows 8.1 编写此快速入门下载代码并在 win_unap windows 10 应用中重复使用的源代码。
 
 ## <a name="related-topics"></a>相关主题
 

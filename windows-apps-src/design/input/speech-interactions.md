@@ -8,12 +8,12 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dfd829881892eece08c30fcd665bdf21a1f43471
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 09787d5a83415b65b8946860edb5b7cad09a5846
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945058"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050810"
 ---
 # <a name="speech-interactions"></a>语音交互
 
@@ -80,9 +80,9 @@ Windows 应用程序中的 **Cortana** 使用自定义语音命令（说出或�
 
 -   预定义语法（听写或 Web 搜索）
 
-    -   **侦听**屏幕。
+    -   “侦听”屏幕。
     -   **思考**屏幕。
-    -   **听到你说**屏幕或错误屏幕。
+    -   “听到你说”屏幕或错误屏幕。
 -   字词或短语列表，或者 SRGS 语法文件
 
     -   **侦听**屏幕。
@@ -157,14 +157,14 @@ Windows 应用程序中的 **Cortana** 使用自定义语音命令（说出或�
 自定义语法由你设计和创作，随你的应用一起安装。 使用自定义约束的语音识别是在设备上执行的。
 
 -   编程列表约束提供一种轻型方法，用于使用字词或短语的列表创建一种简单的语法。 列表约束非常适用于识别清晰的短语。 因为语音识别引擎仅须处理语音即可确认匹配，所以采用某种语法明确指定所有字词也可提高识别准确度。 也可以以编程方式更新该列表。
--   SRGS 语法是一个静态文档，与编程列表约束不同，它使用由 [SRGS 版本 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302) 定义的 XML 格式。 SRGS 语法提供了对语音识别体验的最大控制，方法是让你在单个识别中捕获多个语义含义。
+-   SRGS 语法是一个静态文档，与编程列表约束不同，它使用由 [SRGS 版本 1.0](https://go.microsoft.com/fwlink/p/?LinkID=262302) 定义的 XML 格式。 SRGS 语法提供了对语音识别体验的最大控制，方法是让你在单个识别中捕获多个语义含义。
 
     以下是用于编写 SRGS 语法的一些提示：
 
     -   使每个语法保持简短。 与包含许多短语的较大语法相比，包含较少短语的语法往往可提供更准确的识别度。 最好将多个较小语法用于特定方案，而不是将单个语法用于整个应用。
     -   让用户了解针对每个应用上下文说哪些内容，并按照需要启用和禁用语法。
     -   设计每个语法，以便用户可以使用多种方式说出同一条命令。 例如，可以使用 **GARBAGE** 规则来匹配你的语法没有定义的语音输入。 这将使用户可以说出对你的应用没有任何意义的其他字词。 例如，“给我”、“和”、“呃”、“可能”等等。
-    -   使用 [sapi:subset](http://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx) 元素，帮助匹配语音输入。 这是针对 SRGS 规范的 Microsoft 扩展，可帮助匹配部分短语。
+    -   使用 [sapi:subset](https://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx) 元素，帮助匹配语音输入。 这是针对 SRGS 规范的 Microsoft 扩展，可帮助匹配部分短语。
     -   尽量避免在语法中定义只包含一个音节的短语。 对于包含两个或更多音节的短语，识别往往更为准确。
     -   避免使用听起来相似的短语。 例如，“hello”、“bellow”和“fellow”等短语可使识别引擎难以分辨，从而导致较差的识别准确度。
 
@@ -175,9 +175,9 @@ Windows 应用程序中的 **Cortana** 使用自定义语音命令（说出或�
 
 如果你的应用包含了带有不常见或虚构字词的专用词汇或带有罕见发音的字词，你可能能够通过定义自定义发音来提高对这些字词的识别性能。
 
-对于包含字词和短语的小型列表，或包含不常用字词和短语的列表，可以使用 SRGS 语法创建自定义发音。 有关详细信息，请参阅[令牌元素](http://msdn.microsoft.com/library/windowsphone/design/hh361600.aspx)。
+对于包含字词和短语的小型列表，或包含不常用字词和短语的列表，可以使用 SRGS 语法创建自定义发音。 有关详细信息，请参阅[令牌元素](https://msdn.microsoft.com/library/windowsphone/design/hh361600.aspx)。
 
-对于包含字词和短语的较大列表，或包含常用字词和短语的列表，可以创建单独的发音词典文档。 有关详细信息，请参阅[关于词典和音标字母](http://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx)。
+对于包含字词和短语的较大列表，或包含常用字词和短语的列表，可以创建单独的发音词典文档。 有关详细信息，请参阅[关于词典和音标字母](https://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx)。
 
 ## <a name="testing"></a>测试
 
@@ -200,7 +200,7 @@ TTS 从纯文本或 SSML 生成语音输出。
 -   将一系列不常见单词串联在一起，或者说出零件编号或标点可能会导致短语变得无法识别。
 -   当母语使用者说出短语时的韵律或节奏不同时，语音可能听起来不自然。
 
-将 SSML 而不是将纯文本用作语音合成器的输入可以解决这两种问题。 有关 SSML 的详细信息，请参阅[使用 SSML 控制合成的语音](http://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx)和[语音合成标记语言参考](http://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx)。
+将 SSML 而不是将纯文本用作语音合成器的输入可以解决这两种问题。 有关 SSML 的详细信息，请参阅[使用 SSML 控制合成的语音](https://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx)和[语音合成标记语言参考](https://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx)。
 
 ## <a name="other-articles-in-this-section"></a>本部分中的其他文章 
 
@@ -220,7 +220,7 @@ TTS 从纯文本或 SSML 生成语音输出。
 
  **示例**
 
-* [语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [语音识别和语音合成示例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

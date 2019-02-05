@@ -1,38 +1,38 @@
 ---
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: 开设开发者帐户
-description: 下面是如何 Winodws 开发者帐户注册 Microsoft 应用商店和其他 Microsoft 计划在合作伙伴中心的概述。
+description: 下面是如何为 Microsoft Store 和合作伙伴中心中的其他 Microsoft 计划注册 Winodws 开发者帐户的概述。
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b65dd07a89b1617f805c17bf43a3ce3f5f3282f
-ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
+ms.openlocfilehash: 4f28204edeec7a1f256eae803095edf587532117
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "8968591"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046091"
 ---
 # <a name="opening-a-developer-account"></a>开设开发者帐户
 
 下面是如何注册[合作伙伴中心](https://partner.microsoft.com/dashboard)中的 Windows 开发人员帐户的概述。
 
 > [!NOTE]
-> 当你注册开发者帐户时，我们将使用你在联系人信息中提供的电子邮件地址，以发送与你的帐户相关的电子邮件通信。 有时，其中可能包括有关我们的计划的信息性电子邮件。 如果你通过单击[退出](http://go.microsoft.com/fwlink/p/?LinkId=533280)选择不接收这些信息电子邮件，则请注意，我们仍然会向你发送交易电子邮件（例如，为了让你知道你的应用已经通过认证，或付款已在路上）。 这些电子邮件是你的帐户的必要组成部分，除非关闭你的帐户，否则你将继续收到这些交易电子邮件。
+> 当你注册开发者帐户时，我们将使用你在联系人信息中提供的电子邮件地址，以发送与你的帐户相关的电子邮件通信。 有时，其中可能包括有关我们的计划的信息性电子邮件。 如果你通过单击[退出](https://go.microsoft.com/fwlink/p/?LinkId=533280)选择不接收这些信息电子邮件，则请注意，我们仍然会向你发送交易电子邮件（例如，为了让你知道你的应用已经通过认证，或付款已在路上）。 这些电子邮件是你的帐户的必要组成部分，除非关闭你的帐户，否则你将继续收到这些交易电子邮件。
 
 ## <a name="the-account-signup-process"></a>帐户注册过程
 
 > [!NOTE]
 > 在某些情况下，在注册开发者帐户时所看到的屏幕和字段可能与下方所述内容略有不同。 基本信息和过程都相同。
 
-1.  转到[注册页面](http://go.microsoft.com/fwlink/p/?LinkId=615100)，然后单击**注册**。
+1.  转到[注册页面](https://go.microsoft.com/fwlink/p/?LinkId=615100)，然后单击**注册**。
 2.  如果尚未使用 Microsoft 帐户登录，请立即登录，或创建新的 Microsoft 帐户。 你在此处所使用的 Microsoft 帐户将会是你用来登录到开发者帐户的帐户。
 3.  选择你所居住的或你的企业所在的[国家/地区](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)。 你将无法在以后更改此设置。
 4.  选择[开发者帐户类型](account-types-locations-and-fees.md)（个人或公司）。 之后将无法更改该设置，因此请确保选择正确的帐户类型。
 5.  输入希望使用的**发布者显示名称**（不超过 50 个字符）。 客户在浏览应用时将看到此名称，并通过此名称了解应用，因此请谨慎选择该名称。 对于公司帐户，请确保使用组织的注册公司名称或商标。 请注意，如果输入其他人已选择的名称，或者系统显示其他人有权使用该名称，我们将不允许你使用该名称。 
 
    > [!NOTE]
-   > 确保有权使用在此输入的名称。 如果其他人拥有所选名称的商标或版权，帐户可能会关闭。 有关详细信息，请参阅[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。 如果其他人正在使用你对其持有商标或其他法定权利的发布者显示名称，请[联系 Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777)。    
+   > 确保有权使用在此输入的名称。 如果其他人拥有所选名称的商标或版权，帐户可能会关闭。 有关详细信息，请参阅[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。 如果其他人正在使用你对其持有商标或其他法定权利的发布者显示名称，请[联系 Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=233777)。    
 
 6.  输入希望用于开发者帐户的联系人信息。
 
@@ -55,13 +55,13 @@ ms.locfileid: "8968591"
 ## <a name="additional-guidelines-for-company-accounts"></a>有关公司帐户的其他指南
 
 > [!IMPORTANT]
-> 若要允许多位用户访问开发者帐户，我们建议使用 Azure Active Directory 将角色分配给个别用户 （而不是对 Microsoft 帐户的共享访问）。 每个用户然后可以通过使用其个别登录到合作伙伴中心访问开发人员帐户的 Azure AD 凭据。 有关详细信息，请参阅[管理帐户用户](manage-account-users.md)。
+> 若要允许多个用户访问开发者帐户，我们建议使用 Azure Active Directory 将角色分配给单个用户 （而不是对 Microsoft 帐户的共享访问）。 每个用户可以通过使用其个别登录到合作伙伴中心访问开发人员帐户的 Azure AD 凭据。 有关详细信息，请参阅[管理帐户用户](manage-account-users.md)。
 
-如果你将需要具有多个用户访问权限，通过使用打开它的 Microsoft 帐户 （而不是作为单个用户添加到帐户），以下指南的公司帐户可能会有所帮助：
+如果你将需要多个用户访问权限，通过使用打开它的 Microsoft 帐户 （而不是作为单个用户添加到帐户），以下指南的公司帐户可能会有所帮助：
 
 -   创建使用尚未属于你或其他个人，如电子邮件地址的 Microsoft 帐户MyCompany_PartnerCenter@outlook.com。 不要使用在贵公司的域的电子邮件地址，尤其是当你的公司已经使用 Azure AD。 (如上所述，你可以添加其他用户从你的公司的 Azure AD 更高版本。)
 -   将此 Microsoft 帐户的访问权限限制为尽可能少的用户。
--   设置公司电子邮件通讯组列表，包括每位需要访问开发人员帐户，并将此电子邮件地址添加到[Microsoft 帐户关联的安全信息](https://account.microsoft.com/security)。 此列表，以接收安全代码发送到此别名允许的所有员工。 如果设置分发列表不可行，你可以将个人的电子邮件地址添加到你的安全信息，但该电子邮件地址的所有者将是唯一的人可以访问和共享安全代码收到提示时 （例如当新的安全信息添加到 t他帐户，或者从新设备的访问时）。
+-   设置公司电子邮件通讯组列表，包括每位需要访问开发人员帐户，并将此电子邮件地址添加到[与 Microsoft 帐户相关联的安全信息](https://account.microsoft.com/security)。 这允许的所有员工列表，以接收安全代码发送到此别名。 如果设置分发列表不可行，你可以将个人的电子邮件地址添加到你的安全信息，但该电子邮件地址的所有者将是唯一的人可以访问和共享安全代码收到提示时 （例如当新的安全信息添加到 t他帐户，或者从新设备的访问时）。
 -   添加 Microsoft 帐户的安全信息的公司电话号码。 尝试使用无需分机并可供关键团队成员的数字。
 -   一般情况下，让开发人员使用[受信任的设备](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)登录到贵公司的开发人员帐户。 所有关键团队成员都应具有对这些受信任的设备的访问权限。 这将减少访问帐户时对发送安全代码的需求。 每个帐户每周可生成的代码数量有限。
 -   如果需要允许从不受信任的电脑访问帐户，请将开发人员访问人数上限限制为五人。 理想情况下，这些开发人员应从共享相同地理和网络位置的计算机访问该帐户。
@@ -72,9 +72,9 @@ ms.locfileid: "8968591"
 
 我们通过将 Microsoft 帐户与多种形式的身份验证相结合，使用所提供的安全信息来提高 Microsoft 帐户的安全级别。 这样一来，未经授权访问 Microsoft 帐户（和开发者帐户）的难度将大大提高。 此外，如果你忘记密码或有人试图访问你的帐户，我们可联系你以确认所有权和/或恢复帐户相应控制权限。
 
-Microsoft 帐户上必须具有至少两个电子邮件地址和/或电话号码。 我们建议添加尽可能多的信息。 请记住，必须对某些安全信息进行确认，它才能生效。 同样，确保经常查看你的安全信息并确保它处于最新状态。 你可以通过转到 https://account.microsoft.com/security 并使用 Microsoft 帐户登录来管理你的安全信息。 有关详细信息，请参阅[安全信息和安全代码](https://support.microsoft.com/help/12428/microsoft-account-security-info-and-security-codes)。
+Microsoft 帐户上必须具有至少两个电子邮件地址和/或电话号码。 我们建议添加尽可能多的信息。 请记住，必须对某些安全信息进行确认，它才能生效。 同样，确保经常查看你的安全信息并确保它处于最新状态。 你可以通过转到 https://account.microsoft.com/security 并使用 Microsoft 帐户登录来管理你的安全信息。 有关详细信息，请参阅[安全信息 & 安全代码](https://support.microsoft.com/help/12428/microsoft-account-security-info-and-security-codes)。
 
-在你登录到合作伙伴中心使用你的 Microsoft 帐户，系统可能会要求你验证身份通过发送安全代码，你必须将其提供来完成登录过程。 我们建议指定你经常使用作为*受信任的设备*的电脑。 当你从受信任的设备登录时，通常不会提示你的代码，尽管可能偶尔系统提示你在特定情况下，或者如果你未登录该设备中很长时间。 有关详细信息，请参阅[添加到你的 Microsoft 帐户受信任的设备](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)。
+在你登录到合作伙伴中心使用你的 Microsoft 帐户，系统可能会要求你验证身份通过发送安全代码，你必须将其提供来完成登录过程。 我们建议将指定你经常使用作为*受信任的设备*的电脑。 当你从受信任的设备登录时，你通常不会被提示代码，尽管有时可能会在特定情况下提示你或你未登录该设备中很长时间。 有关详细信息，请参阅[添加到你的 Microsoft 帐户受信任的设备](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)。
 
 
 ## <a name="closing-your-account"></a>关闭你的帐户

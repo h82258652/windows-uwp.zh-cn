@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
-ms.openlocfilehash: b317ba9280baef885bf6487d4bc0745112575dce
-ms.sourcegitcommit: 061de8e92935b5e438aa26ef63a6fac4acc4109d
+ms.openlocfilehash: aacce5710f8ed0066e5efdfb5e0344473f718f9b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "9009904"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049444"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
@@ -19,7 +19,7 @@ ms.locfileid: "9009904"
 
 请注意，本文侧重于应用开发。 有关 Windows Hello 的体系结构和实现细节的信息，请参阅 [TechNet 上的 Windows Hello 指南](https://technet.microsoft.com/library/mt589441.aspx)。
 
-有关完整代码示例，请参阅 [GitHub 上的 Windows Hello 代码示例](http://go.microsoft.com/fwlink/?LinkID=717812)。
+有关完整代码示例，请参阅 [GitHub 上的 Windows Hello 代码示例](https://go.microsoft.com/fwlink/?LinkID=717812)。
 
 有关使用 Windows Hello 创建 UWP 应用和支持身份验证服务的分步演练，请参阅 [Windows Hello 登录应用](microsoft-passport-login.md)和 [Windows Hello 登录服务](microsoft-passport-login-auth-service.md)文章。
 
@@ -275,7 +275,7 @@ if (openKeyResult.Status == KeyCredentialStatus.Success)
 
 ![Windows Hello 质询响应](images/passport-challenge-response.png)
 
-接下来，服务器必须验证签名。 当你请求公钥并将其发送到服务器以供将来验证时，它是 ASN.1 编码的 publicKeyInfo blob。 如果你看一下[GitHub 上的 Windows Hello 代码示例](http://go.microsoft.com/fwlink/?LinkID=717812)，你将看到有用于封装 Crypt32 函数以将 ASN.1 编码的 blob 转换到 CNG blob，这会更加常用的帮助程序类。 该 blob 包含公钥算法（即 RSA ）和 RSA 公钥。
+接下来，服务器必须验证签名。 当你请求公钥并将其发送到服务器以供将来验证时，它是 ASN.1 编码的 publicKeyInfo blob。 如果你看一下[GitHub 上的 Windows Hello 代码示例](https://go.microsoft.com/fwlink/?LinkID=717812)，你将看到有用于封装 Crypt32 函数以将 ASN.1 编码的 blob 转换到 CNG blob，这会更加常用的帮助程序类。 该 blob 包含公钥算法（即 RSA ）和 RSA 公钥。
 
 在此示例中，我们将 ASN.1 编码的 blob 转换到 CNG blob 的原因是，以便它可以使用与 CNG （/windows/桌面/SecCNG/cng-门户） 和 BCrypt API。 如果你查找 CNG blob，它将指向你相关[BCRYPT_KEY_BLOB 结构](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob)。 此 API 图面可以用于身份验证和 Windows 应用程序中的加密。 ASN.1 是记录用于通信数据结构可序列化，标准，并且它通常用于在公钥加密和证书。 这就是为什么公钥信息返回这种方式。 公钥是 RSA 密钥;并且这是 Windows Hello 时使用它对数据进行签名的算法。
 
@@ -407,9 +407,9 @@ Windows 10 引入了更高级别且易于实施的安全性。 Windows Hello 提
 
 ### <a name="61-articles-and-sample-code"></a>6.1 文章和示例代码
 
-- [Windows Hello 概述](http://windows.microsoft.com/windows-10/getstarted-what-is-hello)
+- [Windows Hello 概述](https://windows.microsoft.com/windows-10/getstarted-what-is-hello)
 - [Windows Hello 的实现细节](https://msdn.microsoft.com/library/mt589441)
-- [GitHub 上的 Windows Hello 代码示例](http://go.microsoft.com/fwlink/?LinkID=717812)
+- [GitHub 上的 Windows Hello 代码示例](https://go.microsoft.com/fwlink/?LinkID=717812)
 
 ### <a name="62-terminology"></a>6.2 术语
 
