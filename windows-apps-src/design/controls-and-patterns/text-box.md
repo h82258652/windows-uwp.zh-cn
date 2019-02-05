@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a0c36430c6dd993c86ae1833631e55e1a8bdca4c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 7075df3d5c3de0dd7d756432400dfe934651c5b4
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050317"
+ms.locfileid: "9058758"
 ---
 # <a name="text-box"></a>文本框
 
@@ -146,7 +146,7 @@ ScrollViewer.SetVerticalScrollBarVisibility(textBox, ScrollBarVisibility.Auto);
 
 ### <a name="format-the-text-display"></a>设置文本显示的格式
 
-使用 [TextAlignment]() 属性使文本在文本框内对齐。 若要使文本框在页面布局内对齐，请使用 [HorizontalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) 和 [VerticalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx) 属性。
+使用 [TextAlignment](/uwp/api/windows.ui.xaml.controls.textbox.textalignment) 属性使文本在文本框内对齐。 若要使文本框在页面布局内对齐，请使用 [HorizontalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) 和 [VerticalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx) 属性。
 
 尽管文本框仅支持无格式文本，但你可以自定义文本在文本框中的显示方式来匹配你的品牌。 你可以设置标准 [Control](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) 属性（如 [FontFamily](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontfamily.aspx)、[FontSize](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontsize.aspx)、[FontStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontstyle.aspx)、[Background](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx)、[Foreground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) 和 [CharacterSpacing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.characterspacing.aspx)）以更改文本外观。 这些属性仅影响文本框在本地显示文本的方式，所以举例来说，如果你要将文本复制并粘贴到 RTF 控件，将不会应用任何格式。
 
