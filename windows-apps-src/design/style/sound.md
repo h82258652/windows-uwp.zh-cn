@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dd47ce2acf78a76ad413d70ce8c3e7f39a793ea
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: f04d364aac79ed232f35cbdd8378bc50393d2c74
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048194"
+ms.locfileid: "9058508"
 ---
 # <a name="sound"></a>声音
 
@@ -118,7 +118,7 @@ ElementSoundPlayer.Play(ElementSoundKind.Hide);
 ```
 ### <a name="navigation-within-a-page"></a>页面内的导航
 
-面板或视图内应用的页面之间导航时 （请参阅[表和透视表](../controls-and-patterns/tabs-pivot.md)），通常是双向移动。 这意味着你可以移动到下一个视图/面板或者上一个视图/面板，而无需离开你所在的当前的应用页面。
+面板或视图内应用的页面之间导航时 （请参阅[表和透视表](../controls-and-patterns/pivot.md)），通常是双向移动。 这意味着你可以移动到下一个视图/面板或者上一个视图/面板，而无需离开你所在的当前的应用页面。
 
 **MovePrevious** 和 **MoveNext** 声音包含围绕此导航概念的音频体验。
 

@@ -6,12 +6,12 @@ ms.date: 06/22/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f4f68481078d7265ee11ba2b7147d28990081e80
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.openlocfilehash: cab06db098312531a488731fb50bae99d8f2c8f6
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042409"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058828"
 ---
 # <a name="composition-native-interoperation-with-directx-and-direct2d"></a>与 DirectX 和 Direct2D 的合成本机互操作性
 
@@ -43,7 +43,7 @@ Windows.UI.Composition API 提供了 [**ICompositorInterop**](https://msdn.micro
 
 有两个下面的代码示例。 首先， [C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)示例中 （这是完成），然后 C + + CX 代码示例 （省略该示例的 DirectWrite 和 Direct2D 部分）。
 
-若要使用 C + + WinRT 代码示例中，首先创建一个新**核心应用 (C + + WinRT)** 在 Visual Studio 中的项目 (要求的信息，请参阅[Visual Studio 支持 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 在创建项目，选择作为目标版本**Windows 10 版本 1803 (10.0;版本 17134）**。 这是针对其生成和测试此代码的版本。 内容替换为你`App.cpp`源代码文件具有以下代码列表，然后生成并运行。 应用程序呈现字符串"Hello，World ！" 以透明的背景上的黑色文本。
+若要使用 C + + WinRT 代码示例中，首先创建一个新**核心应用 (C + + WinRT)** 在 Visual Studio 中的项目 (要求的信息，请参阅[Visual Studio 支持 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 在创建项目，选择作为目标版本**Windows 10 版本 1803 (10.0;版本 17134）**。 这是针对其生成和测试此代码的版本。 内容替换为你`App.cpp`源代码文件具有以下代码列表，然后生成并运行。 应用程序呈现字符串"Hello，World ！" 以透明的背景上的黑色文本。
 
 ```cppwinrt
 // App.cpp

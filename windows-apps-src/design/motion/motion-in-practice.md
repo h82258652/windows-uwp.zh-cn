@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 355c760e173bd101b2865c300824de44b6434ee4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6eafbfd965d2783c0f72e75c91a04e5ac1cb119f
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944272"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058558"
 ---
 # <a name="bringing-it-together"></a>综合运用
 
@@ -83,7 +83,7 @@ ms.locfileid: "8944272"
 > 隐式动画需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本。
 
 
-隐式动画是通过进行自动插值之间期间参数更改的旧的和新值来实现 Fluent 运动的简单方法。
+隐式动画是通过自动内插期间参数更改的旧的和新值之间实现 Fluent 运动的简单方法。
 
 你还可以隐式动画更改以下属性：
 
@@ -96,19 +96,19 @@ ms.locfileid: "8944272"
 - [边框](/uwp/api/windows.ui.xaml.controls.border)、 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)或[面板](/uwp/api/windows.ui.xaml.controls.panel)
   - **Background**
 
-可以具有隐式动画处理的更改的每个属性都有相应的_过渡_属性。 属性进行动画处理，你将过渡类型分配到相应的_过渡_属性。 此表显示_转换_属性以及用于每个过渡类型。
+可以更改隐式动画的每个属性都有相应的_转换_属性。 属性进行动画处理，你将过渡类型分配到相应的_转换_属性。 此表显示_转换_属性以及用于每个转换类型。
 
 | 动画化的属性 | 转换属性 | 隐式转换类型 |
 | -- | -- | -- |
 | [UIElement.Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
 | [UIElement.Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | [RotationTransition](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
-| [UIElement.Scale](/uwp/api/windows.ui.xaml.uielement.scale) | [ScaleTransition](/uwp/api/windows.ui.xaml.uielement.scaletransition) | [Vector3Transition](/uwp/api/windows.ui.xaml.uielement.vector3transition) |
-| [UIElement.Translation](/uwp/api/windows.ui.xaml.uielement.scale) | [TranslationTransition](/uwp/api/windows.ui.xaml.uielement.translationtransition) | [Vector3Transition](/uwp/api/windows.ui.xaml.uielement.vector3transition) |
+| [UIElement.Scale](/uwp/api/windows.ui.xaml.uielement.scale) | [ScaleTransition](/uwp/api/windows.ui.xaml.uielement.scaletransition) | [Vector3Transition](/uwp/api/windows.ui.xaml.vector3transition) |
+| [UIElement.Translation](/uwp/api/windows.ui.xaml.uielement.scale) | [TranslationTransition](/uwp/api/windows.ui.xaml.uielement.translationtransition) | [Vector3Transition](/uwp/api/windows.ui.xaml.vector3transition) |
 | [Border.Background](/uwp/api/windows.ui.xaml.controls.border.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.border.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 | [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 | [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-此示例显示了如何使用的 Opacity 属性和过渡使按钮启用控件时淡入和淡出时禁用它。
+此示例显示了如何使用的 Opacity 属性和过渡使按钮启用控件时淡入和淡出时处于禁用状态。
 
 ```xaml
 <Button x:Name="SubmitButton"

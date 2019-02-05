@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 入门, uwp, windows 10, 学习轨迹, 布局, 表单
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1c316ac97211e85b782bdbf8f5642889a7726a95
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 45c4acda953808a85363d1cec7c623dd79cc08f1
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037042"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058528"
 ---
 # <a name="create-and-customize-a-form"></a>创建和自定义表单
 
@@ -135,7 +135,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 虽然本文创建的只是一个表单，但布局和控件的概念适用于你可能构建的所有 XAML UI。 可随意返回通过的文档，我们链接给你进行试验的表单，添加新 UI 功能并进一步改进用户体验。 如果你希望通过更详细的布局功能的分步指南，请参阅我们的[自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md)
 
-表单不一定非得单独使用，你也可以更进一步 - 将它们嵌入到[大纲/细节模式](../design/controls-and-patterns/master-details.md)或[透视表控件](../design/controls-and-patterns/tabs-pivot.md)中。 或者，如果要对表单背后的代码做些改动，请参阅[事件概述](../xaml-platform/events-and-routed-events-overview.md)。
+表单不一定非得单独使用，你也可以更进一步 - 将它们嵌入到[大纲/细节模式](../design/controls-and-patterns/master-details.md)或[透视表控件](../design/controls-and-patterns/pivot.md)中。 或者，如果要对表单背后的代码做些改动，请参阅[事件概述](../xaml-platform/events-and-routed-events-overview.md)。
 
 ## <a name="useful-apis-and-docs"></a>有用的 API 和文档
 
@@ -161,7 +161,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 | [表单](../design/controls-and-patterns/forms.md) | 关于创建表单的总括指南。 |
 | [布局面板](../design/layout/layout-panels.md) | 概述布局面板类型以及在何处使用它们。 |
 | [大纲/细节模式](../design/controls-and-patterns/master-details.md) | 可以围绕一个或多个表单实现的设计模式。 |
-| [Pivot 控件](../design/controls-and-patterns/tabs-pivot.md) | 一种可以包含一个或多个表单的控件。 |
+| [Pivot 控件](../design/controls-and-patterns/pivot.md) | 一种可以包含一个或多个表单的控件。 |
 | [响应式设计](../design/layout/responsive-design.md) | 对响应式设计原则的宽泛介绍。 | 
 | [采用 XAML 的响应式布局](../design/layout/layouts-with-xaml.md) | 关于响应式设计可视状态及其他实现的特定信息。 |
 | [面向响应式设计的屏幕大小](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | 关于应将响应式布局限制在哪些屏幕大小范围内的指南。 |

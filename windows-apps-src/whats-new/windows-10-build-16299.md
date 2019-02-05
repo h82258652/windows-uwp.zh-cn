@@ -5,18 +5,18 @@ keywords: 最近更新, 更新, 功能, 新增, Windows 10, 1709, 10 月, 最新
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bd333cecc5f9141b3fd34593ea10d17fe6face1e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e0749ba30dc4c4e8d2791aa2d6699581b48fb8e5
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929918"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050410"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>面向开发人员的 Windows 10 版本 16299 中的最近更新
 
-Windows 10 版本 16299（又称 Fall Creators Update 或版本 1709）与 Visual Studio 2017 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了丰富的工具、功能和体验。 只需在 Windows10 上[安装工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+Windows 10 版本 16299（又称 Fall Creators Update 或版本 1709）与 Visual Studio 2017 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了丰富的工具、功能和体验。 只需在 Windows10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
-该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 版本 16299 API 更改](windows-10-build-16299-api-diff.md)。 有关 Windows 10 重要功能的详细信息，请参阅 [Windows 10 中的酷炫功能](http://go.microsoft.com/fwlink/?LinkId=823181)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的详尽概述。
+该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 版本 16299 API 更改](windows-10-build-16299-api-diff.md)。 有关 Windows 10 重要功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的详尽概述。
 
 ## <a name="design--ui"></a>设计和 UI
 
@@ -58,7 +58,7 @@ Cortana | 使用 [Cortana 技能工具包](https://docs.microsoft.com/cortana/sk
 桌面桥打包 | Visual Studio 引入了新的[打包项目](../porting/desktop-to-uwp-packaging-dot-net.md)，能够消除在打包完全受信任的桌面应用程序时必需的所有手动步骤。 只需添加打包项目，参考桌面项目，再按 F5 进行应用调试。 无需手动调整。 相比于使用以往版本的 Visual Studio 的体验，新的简洁体验是一个巨大的改进。
 诊断和线程处理 | 新的诊断 API 提供运行应用的相关信息： </br></br>* [AppMemoryReport](https://docs.microsoft.com/uwp/api/Windows.System.AppMemoryReport) 类提供应用预计总提交限制、私有提交使用等信息。 </br>* [AppDiagnosticInfo](https://docs.microsoft.com/uwp/api/windows.system.appdiagnosticinfo) 类现在可以监视应用或任务的执行状态，并且在执行状态改变时发出通知。 </br>* [MemoryManager](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) 类提供了若干新的方法，能够设置应用内存使用限制并报告预计的应用内存使用限制。 </br></br>你可以按优先顺序排列任务，并且使用 [DispatcherQueue](https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueue) 类在不同的线程上运行任务。 通过 [CreateDispatcherQueueController](https://msdn.microsoft.com/library/windows/desktop/mt826210.aspx) 函数，在 Win32 中也可以使用此项功能。
 EdgeHTML 16 | 支持 Microsoft Edge 以及基于 JS 的通用 Windows 平台的 Web 平台已更新到 EdgeHTML 16，并且现在加入对 F12 开发人员工具、CSS 网格布局支持以及其他重要功能的重大改进。 </br></br> * Microsoft Edge 中现在支持 [CSS 网格布局](https://docs.microsoft.com/microsoft-edge/dev-guide/css/grid-layout)。 网格布局是一种基于网格的二维布局系统，比使用浮点或脚本定位更能够实现良好的布局流度。</br></br> * 更新了 [Microsoft Edge F12 DevTools 文档](https://docs.microsoft.com/microsoft-edge/f12-devtools-guide)，提高了可靠性和性能。 添加了新功能，以优化你的开发体验。 </br></br>* 仅 Microsoft Edge 中的 [WebVR](https://docs.microsoft.com/microsoft-edge/webvr/) 添加了对[运动控制器](https://docs.microsoft.com/microsoft-edge/webvr/input#controller-buttons)以及各种 [Windows Mixed Reality 头戴显示设备](https://docs.microsoft.com/microsoft-edge/webvr/hardware)的支持。 WebVR 也已经过优化，每秒最多可支持 90 帧。 </br></br> 请参阅 [Microsoft Edge 开发人员指南](https://docs.microsoft.com/microsoft-edge/dev-guide)获取完整的更改以及受支持的最新 API 的列表。
-3D 地图元素 | 你可以在地图中添加三维对象。 你可以使用新的 [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) 类从 [3D 制造格式 (3MF)](http://3mf.io/specification/) 文件中导入 3D 对象。
+3D 地图元素 | 你可以在地图中添加三维对象。 你可以使用新的 [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) 类从 [3D 制造格式 (3MF)](https://3mf.io/specification/) 文件中导入 3D 对象。
 地图元素样式 | 你可以使用以下两个新的 [MapElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement) 属性自定义地图元素的外观：[MapStyleSheetEntry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.MapStyleSheetEntry) 以及 [MapStyleSheetEntryState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.MapStyleSheetEntryState)。 </br></br>* 你可以使用 [MapStyleSheetEntry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.MapStyleSheetEntry) 属性使得地图元素看起来是底图的一部分（比如，通过将元素样式设置为地图样式表中的现有输入，比如 *Water*）。 </br></br>* 你可以使用 [MapStyleSheetEntryState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.MapStyleSheetEntryState) 属性，以便使用地图样式表中的默认状态（比如 *Hover* 和 *Selected*）修改地图元素的外观 ，或者将其覆盖以创建自定义样式。
 图层 | 你可以将兴趣点元素添加到[图层](../maps-and-location/display-poi.md#layers)，然后直接将 XAML 绑定到该图层。 将元素分层。 然后，你可以分别操控每一层。 例如，每个层都有自己的事件组，你可以响应特定层的事件，并执行特定于该事件的操作。
 地图位置信息 | 在[轻型弹出窗口](../maps-and-location/display-maps.md#placecard)中，你可以将地图展示在 UI 元素的上方、下方或侧面，或者展示在用户触摸的应用区域。  该窗口将在用户更改上下文时关闭。 这使得用户不需要切换到其他应用或浏览器窗口以获取位置信息。
@@ -78,7 +78,7 @@ EdgeHTML 16 | 支持 Microsoft Edge 以及基于 JS 的通用 Windows 平台的 
 
 功能 | 说明
  :------ | :------
-帐户管理 | 我们现在提供更大的灵活性时[将你的合作伙伴中心帐户与 Azure AD 租户关联](../publish/associate-azure-ad-with-dev-center.md)添加多个帐户用户。 你可以将多个 Azure AD 租户与一个合作伙伴中心帐户，相关联，或将关联一个 Azure AD 租户与多个合作伙伴中心帐户。
+帐户管理 | 我们现在提供更大的灵活性时[将你的合作伙伴中心帐户与 Azure AD 租户关联](../publish/associate-azure-ad-with-dev-center.md)添加多个帐户用户。 可以将多个 Azure AD 租户与一个合作伙伴中心帐户，相关联，或将关联一个 Azure AD 租户与多个合作伙伴中心帐户。
 广告 | Microsoft 广告 SDK 现在支持你在应用中显示[本机广告](../monetize/native-ads.md)。 本机广告是基于组件的广告格式，其中每一个广告创意元素（如标题、图像、说明和行动号召文字）都作为单独的元素提供给你。 本机广告目前仅适用于加入试验计划的开发人员，但我们计划不久后将此功能提供给所有的开发人员。
 定价和可用性 |  新的定价和可用性选项可用于[计划价格更改](../publish/set-and-schedule-app-pricing.md)和[设置精确的发布日期](../publish/configure-precise-release-scheduling.md)。
 Store 分析 API | [Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md) 现在提供一种可用来[下载应用中的错误的 CAB 文件](../monetize/download-the-cab-file-for-an-error-in-your-app.md)的方法。

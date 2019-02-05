@@ -6,12 +6,12 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e7082c3e572493656e8b109da35861ec820d4ec9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: c78e16a50bdca09f474d5016fdc86b6d27702d5b
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050830"
+ms.locfileid: "9058767"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>使用 MediaFrameReader 处理音频帧
 
@@ -49,7 +49,7 @@ ms.locfileid: "9050830"
 
 通过调用 [**MediaCapture.CreateFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_) 获取 **MediaFrameReader** 的新实例，传递在上一步所选的 **MediaFrameSource** 对象。 默认情况下，音频帧是在缓冲模式下获得的，这降低了丢失帧的可能性，但是如果音频帧处理速度不够快并填满系统分配的内存缓冲区，仍然会出现这种情况。
 
-为音频数据的新帧可用时系统引发的 [**MediaFrameReader.FrameArrived**](*https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.framearrived) 事件注册处理程序。 调用 [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.startasync) 以开始获取音频帧。 如果帧阅读器无法启动，从调用返回的状态值将包含 [**Success**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus) 以外的值。
+为音频数据的新帧可用时系统引发的 [**MediaFrameReader.FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.framearrived) 事件注册处理程序。 调用 [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.startasync) 以开始获取音频帧。 如果帧阅读器无法启动，从调用返回的状态值将包含 [**Success**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus) 以外的值。
 
 [!code-cs[CreateAudioFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCreateAudioFrameReader)]
 

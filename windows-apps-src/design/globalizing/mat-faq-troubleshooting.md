@@ -6,12 +6,12 @@ ms.date: 11/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: a39d2b3133714ab784309e131a71219beae4e3c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2e27256fbf19ed31a7b087e94dea9e5514db516f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926649"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050590"
 ---
 # <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>多语言应用工具包 4.0 常见问题和疑难解答
 
@@ -83,7 +83,7 @@ No XLIFF language files were found. The app will not contain any localized resou
 
 ## <a name="what-is-microsoft-translator"></a>什么是 Microsoft Translator？
 
-Microsoft Translator 是提供基于机器翻译的基于云的服务。 在无法合理获得人工翻译时，机器翻译是获得译文的理想选择。 若要了解详细信息，请参阅 [Microsoft Translator](http://go.microsoft.com/fwlink/p/?LinkId=258220)。
+Microsoft Translator 是提供基于机器翻译的基于云的服务。 在无法合理获得人工翻译时，机器翻译是获得译文的理想选择。 若要了解详细信息，请参阅 [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)。
 
 工具包使用 Microsoft Translator 服务向你提供翻译建议。 当 Microsoft Translator 图标显示在翻译语言对话框中时，可以看到 Microsoft Translator 支持的语言。
 
@@ -178,5 +178,5 @@ msbuild /t:rebuild <project-name>
 ## <a name="related-topics"></a>相关主题
 
 * [使用多语言应用工具包 4.0](use-mat.md)
-* [Microsoft Translator](http://go.microsoft.com/fwlink/p/?LinkId=258220)
+* [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)
 * [MakePri.exe 命令行选项](../../app-resources/makepri-exe-command-options.md)

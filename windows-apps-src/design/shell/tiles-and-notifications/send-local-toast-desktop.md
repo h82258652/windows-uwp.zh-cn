@@ -8,12 +8,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10，uwp，win32，桌面，toast 通知，发送一个 toast，发送本地 toast，桌面桥，C#、 c 清晰，toast 通知，wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 3436433c8086c2801f1ee2174a51525e48c2f7c9
-ms.sourcegitcommit: fae67a53ab1468a31120293653ade9541085bdd7
+ms.openlocfilehash: 907ba19812c9a34a7a91f42fefac4c190bfd394b
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "8992308"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058698"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>从桌面 C# 应用发送本地 toast 通知
 
@@ -386,7 +386,7 @@ DesktopNotificationManagerCompat.History.Clear();
 
 ## <a name="step-10-deploying-and-debugging"></a>步骤 10：部署和调试
 
-若要部署和调试桌面桥应用，请参阅[运行、调试和测试打包的桌面应用](/porting/desktop-to-uwp-debug.md)。
+若要部署和调试桌面桥应用，请参阅[运行、调试和测试打包的桌面应用](/windows/uwp/porting/desktop-to-uwp-debug)。
 
 若要部署和调试经典 Win32 应用，必须在正常调试之前通过安装程序安装应用，以便显示包含有 AUMID 和 CLSID 的“开始”快捷方式。 出现“开始”快捷方式后，可以从 Visual Studio 中使用 F5 进行调试。
 

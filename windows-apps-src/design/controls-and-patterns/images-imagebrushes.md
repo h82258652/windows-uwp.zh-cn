@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fd6accd3082c141d9288dba5c6156132188c214b
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 5451e0dd94510873f87b981a817fb55ba2c4f985
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037239"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049774"
 ---
 # <a name="images-and-image-brushes"></a>图像和图像画笔
 
@@ -155,7 +155,7 @@ ms.locfileid: "9037239"
 
 使用 XAML 指定 Image 和 ImageBrush 比使用代码指定更为典型。 这是因为这些元素通常是设计工具的输出，它们作为 XAML UI 定义的一部分。
 
-如果要使用代码定义一个 Image 或 ImageBrush，请使用默认的构造函数，然后设置相关的源属性（[Image.Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) 或 [ImageBrush.ImageSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)）。 在你使用代码设置源属性时，它们需要 [BitmapImage](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx)（而非 URI）。 如果源是一个流，请使用 [SetSourceAsync](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx) 方法来初始化该值。 如果源是一个 URI，（其中包含应用中使用 **ms-appx** 或 **ms-resource** 方案的内容），请使用采用 URI 的 [BitmapImage](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx) 构造函数。 如果在检索或解码图像资源时存在任何计时问题，而你可能在图像资源可用前需要使用替代内容用以显示，则还可以考虑处理 [ImageOpened](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) 事件。 有关示例代码，请参阅 [XAML 图像示例](http://go.microsoft.com/fwlink/p/?linkid=238575)。
+如果要使用代码定义一个 Image 或 ImageBrush，请使用默认的构造函数，然后设置相关的源属性（[Image.Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) 或 [ImageBrush.ImageSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)）。 在你使用代码设置源属性时，它们需要 [BitmapImage](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx)（而非 URI）。 如果源是一个流，请使用 [SetSourceAsync](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx) 方法来初始化该值。 如果源是一个 URI，（其中包含应用中使用 **ms-appx** 或 **ms-resource** 方案的内容），请使用采用 URI 的 [BitmapImage](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx) 构造函数。 如果在检索或解码图像资源时存在任何计时问题，而你可能在图像资源可用前需要使用替代内容用以显示，则还可以考虑处理 [ImageOpened](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) 事件。 有关示例代码，请参阅 [XAML 图像示例](https://go.microsoft.com/fwlink/p/?linkid=238575)。
 
 > [!NOTE]
 > 如果你使用代码建立图像，可以使用自动处理来访问具有当前规模和区域性限定符的非限定资源，或者可以使用具有区域性和规模限定符的 [ResourceManager](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) 和 [ResourceMap](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) 来直接获取资源。 有关详细信息，请参阅[资源管理系统](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)。

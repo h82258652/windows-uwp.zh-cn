@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b307814c834d656b05ceb7208c4bd0788078061
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: a0c36430c6dd993c86ae1833631e55e1a8bdca4c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036969"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050317"
 ---
 # <a name="text-box"></a>文本框
 
@@ -192,7 +192,7 @@ rootGrid.Children.Add(textBox);
 全选 | TextBox 包含文本。
 撤销 | 文本已更改。
 
-若要修改上下文菜单中显示的命令，请处理 [ContextMenuOpening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.contextmenuopening.aspx) 事件。 有关此内容的示例，请参阅 [ContextMenu 示例](http://go.microsoft.com/fwlink/p/?linkid=234891)的方案 2。 有关设计信息，请参阅上下文菜单指南。
+若要修改上下文菜单中显示的命令，请处理 [ContextMenuOpening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.contextmenuopening.aspx) 事件。 有关此内容的示例，请参阅 [ContextMenu 示例](https://go.microsoft.com/fwlink/p/?linkid=234891)的方案 2。 有关设计信息，请参阅上下文菜单指南。
 
 ### <a name="select-copy-and-paste"></a>选择、复制和粘贴
 

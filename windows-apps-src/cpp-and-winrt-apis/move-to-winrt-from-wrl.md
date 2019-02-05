@@ -5,12 +5,12 @@ ms.date: 05/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: b2e09bc5d65e9bf3029b4049049de52709e648b2
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.openlocfilehash: e81f82fe823ee0fdf81741c89576adf268940d91
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042339"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058808"
 ---
 # <a name="move-to-cwinrt-from-wrl"></a>从 WRL 移动到 C++/WinRT
 本主题介绍如何将[Windows 运行时 c + + 模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)中的等效代码移植[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
@@ -116,7 +116,7 @@ winrt::check_hresult(
 );
 ```
 
-## <a name="porting-a-wrl-module-microsoftwrlmodule"></a>移植 WRL 模块 ([Microsoft::WRL::Module]())
+## <a name="porting-a-wrl-module-microsoftwrlmodule"></a>移植 WRL 模块 (Microsoft::WRL::Module)
 你可以将 C++/WinRT 代码逐渐添加到使用 WRL 来实现组件的现有项目，你现有的 WRL 类会继续受支持。 此部分显示如何操作。
 
 如果你在 Visual Studio 中创建一个新的 **Windows 运行时组件 (C++/WinRT)** 投影类型并生成，则将为你生成文件 `Generated Files\module.g.cpp`。 该文件包含两个有用的 C++/WinRT 函数的定义（下方已列出），你可以将其复制并添加到项目中。 这些函数是 **WINRT_CanUnloadNow** 和 **WINRT_GetActivationFactory**，如你所见，它们有条件地调用 WRL 以便为你提供支持，不论你正处于哪个移植阶段。

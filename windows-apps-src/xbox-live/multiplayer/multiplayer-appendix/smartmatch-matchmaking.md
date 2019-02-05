@@ -6,12 +6,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 匹配, smartmatch
 ms.localizationpriority: medium
-ms.openlocfilehash: 487ba1e2b6ab6bccbed4231034d09046a93292db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6bc5f15e6fdb7d2f393daef8d21c134579610a9b
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923291"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058491"
 ---
 # <a name="smartmatch-matchmaking"></a>SmartMatch 匹配
 
@@ -178,7 +178,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 
 #### <a name="matchmaking-session-template-configuration"></a>匹配会话模板配置
 
-如 [SmartMatch 匹配]()中所述，有两种类型的会话与匹配相关：匹配票证会话和匹配目标会话。 基本上，票证会话是匹配服务的输入，而目标会话是输出。 配置会话模板时，你应创建每个会话类型的模板。
+如 [SmartMatch 匹配](/windows/uwp/xbox-live/multiplayer/multiplayer-appendix/smartmatch-matchmaking)中所述，有两种类型的会话与匹配相关：匹配票证会话和匹配目标会话。 基本上，票证会话是匹配服务的输入，而目标会话是输出。 配置会话模板时，你应创建每个会话类型的模板。
 
 对于票证会话，你可以使用专用模板。 或者，你可以将模板重新用于大厅会话或其他不用于游戏的会话。
 
@@ -188,7 +188,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 
 对于目标会话，你必须创建用于配对游戏的模板。 它应具备可在开始游戏之前在玩家间启用 QoS 检查的设置，并且必须标有“游戏”功能。
 
-配置 XDP 或合作伙伴中心的 UI，你可以将每个会话映射到一个或多个漏斗，确定如何会话匹配在一起该 hopper 中每个包含规则。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
+与配置的 XDP 或合作伙伴中心的用户界面中，你可以将每个会话映射到一个或多个漏斗，确定如何会话匹配在一起该 hopper 中每个包含规则。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
 
 
 #### <a name="basic-hopper-configuration-for-matchmaking"></a>用于匹配的基本漏斗配置
@@ -449,7 +449,7 @@ Must 规则阻止在所有代中拆分票证，并提供“首选均衡团队”
 
 ## <a name="target-session-initialization-and-qos"></a>目标会话初始化和 QoS
 
-通过 SmartMatch 匹配将一组玩家匹配到目标会话中，如 [SmartMatch 比赛]()中所述。 游戏必须采取措施来确认已经有足够数量的玩家加入，他们可以在需要时成功与其他玩家连接。 此过程称为目标会话初始化。
+通过 SmartMatch 匹配将一组玩家匹配到目标会话中，如 [SmartMatch 比赛](/windows/uwp/xbox-live/multiplayer/multiplayer-appendix/smartmatch-matchmaking)中所述。 游戏必须采取措施来确认已经有足够数量的玩家加入，他们可以在需要时成功与其他玩家连接。 此过程称为目标会话初始化。
 
 对于使用对等网络拓扑的游戏，目标会话初始化的一个重要方面是 QoS 度量和评估。 关联操作是 Xbox One 主机之间（或控制台和服务器之间）的延迟和带宽的度量，以及对生成的度量结果（确定节点之间的网络连接是否正常）的评估。
 
@@ -526,8 +526,6 @@ MPSD 支持名为“受管初始化”的功能，通过该功能，它可以在
 
 ## <a name="see-also"></a>另请参阅
 
-[为你的游戏配置 SmartMatch]()
-
 [MPSD 会话模板](multiplayer-session-directory.md)
 
-[SmartMatch 运行时操作]()
+[SmartMatch 运行时操作](/windows/uwp/xbox-live/multiplayer/multiplayer-appendix/smartmatch-matchmaking)

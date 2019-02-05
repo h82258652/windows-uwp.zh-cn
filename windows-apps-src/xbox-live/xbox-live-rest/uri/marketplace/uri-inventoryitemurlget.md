@@ -7,15 +7,15 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: d1620c5afe7b0d005840112d4eddd2ec50e134db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 446197eb20820304088ddac4a6379fa3b2510873
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919652"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058482"
 ---
 # <a name="get-inventoryitemid"></a>GET (/inventory/{itemID})
-为特定的库存项目提供完整的详细信息集。 这些 Uri 的域是`inventory.xboxlive.com`。
+提供特定清单项完整的详细信息集。 这些 Uri 的域是`inventory.xboxlive.com`。
  
   * [备注](#ID4EX)
   * [URI 参数](#ID4EAB)
@@ -33,9 +33,9 @@ ms.locfileid: "8919652"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 类型| 说明| 
 | --- | --- | --- | 
-| itemID| 字符串| 唯一的每个用户单数库存项目的 ID| 
+| itemID| 字符串| 唯一单数库存项目的每个用户的 ID| 
   
 <a id="ID4ELB"></a>
 
@@ -66,7 +66,7 @@ GET 请求，假设传递身份验证并分配适当授权上下文中，该响�
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[GET (/inventory/{itemID})]()
+[GET (/inventory/{itemID})](uri-inventoryget.md)
 
   
 <a id="ID4EJC"></a>

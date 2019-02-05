@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 957c4cf2e9e9fc4a32327ec29a96019609ebdfe5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1ac5ca785eab39612bb3a9c6ccd58779c6241059
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923242"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049914"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>由推送通知向导生成的代码
  
@@ -174,9 +174,9 @@ void mymobileservice1234Push::HandleExceptionsComingFromTheServer()
 ## <a name="server-side-scripts-javascript-backend-only"></a>服务器端脚本（仅 JavaScript 后端）
 
 
-对于使用 JavaScript 后端的移动服务，服务器端脚本在发生删除、插入、读取或更新操作时运行。 服务器端脚本并不实现这些操作，但是当从客户端调用 Windows Mobile REST API，从而触发这些事件时，这些脚本便会运行。 然后这些脚本自身通过调用 request.execute 或 request.respond 向调用上下文发出响应，从而向这些操作传递控制。 请参阅 [Azure 移动服务 REST API 参考](http://go.microsoft.com/fwlink/p/?linkid=511139)。
+对于使用 JavaScript 后端的移动服务，服务器端脚本在发生删除、插入、读取或更新操作时运行。 服务器端脚本并不实现这些操作，但是当从客户端调用 Windows Mobile REST API，从而触发这些事件时，这些脚本便会运行。 然后这些脚本自身通过调用 request.execute 或 request.respond 向调用上下文发出响应，从而向这些操作传递控制。 请参阅 [Azure 移动服务 REST API 参考](https://go.microsoft.com/fwlink/p/?linkid=511139)。
 
-服务器端脚本中有多种函数可用。 请参阅 [Azure 移动服务中的注册表操作](http://go.microsoft.com/fwlink/p/?linkid=511140)。 有关所有可用函数的参考，请参阅[移动服务服务器脚本参考](http://go.microsoft.com/fwlink/p/?linkid=257676)。
+服务器端脚本中有多种函数可用。 请参阅 [Azure 移动服务中的注册表操作](https://go.microsoft.com/fwlink/p/?linkid=511140)。 有关所有可用函数的参考，请参阅[移动服务服务器脚本参考](https://go.microsoft.com/fwlink/p/?linkid=257676)。
 
 还将在 Notifyallusers.js 中创建以下自定义 API 代码：
 
@@ -207,7 +207,7 @@ function sendNotifications(request) {
 
 sendNotifications 函数发送 toast 通知形式的单一通知。 你还可以使用其他类型的推送通知。
 
-**提示**有关如何获取有关编辑脚本时的帮助信息，请参阅[为服务器端 JavaScript 启用 IntelliSense](http://go.microsoft.com/fwlink/p/?LinkId=309275)。
+**提示**有关如何获取有关编辑脚本时的帮助的信息，请参阅[为服务器端 JavaScript 启用 IntelliSense](https://go.microsoft.com/fwlink/p/?LinkId=309275)。
 
  
 
@@ -231,9 +231,9 @@ Toast 通知易于使用，你可以在为你生成的通道表的 Insert.js 代
 
 在以下情况下，你可以直接调用 Windows 推送通知服务 (WNS)：移动服务缺乏足够的灵活性、希望使用 C# 或 Visual Basic 编写服务器代码、或者你已经有云服务并且希望从云服务发送推送通知。 通过直接调用 WNS，你可以从自己的云服务发送推送通知，例如使用通过数据库或其他 Web 服务监视数据的辅助角色。 你的云服务必须通过 WNS 验证，才能向你的应用发送推送通知。 请参阅[如何执行 Windows 推送通知服务 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/hh465407) 或 [(C#/C++/VB) 的验证](https://msdn.microsoft.com/library/windows/apps/xaml/hh868206)。
 
-你还可以通过在移动服务中运行计划的任务来发送推送通知。 请参阅[在移动服务中计划定期作业](http://go.microsoft.com/fwlink/p/?linkid=301694)。
+你还可以通过在移动服务中运行计划的任务来发送推送通知。 请参阅[在移动服务中计划定期作业](https://go.microsoft.com/fwlink/p/?linkid=301694)。
 
-**警告**已运行推送通知向导一次，不运行该向导第二次来为其他移动服务添加注册代码。 针对每个项目多次运行该向导会生成导致对 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法的重叠调用的代码，从而导致运行时异常。 如果你要为多个移动服务注册推送通知，请运行该向导一次，然后重新编写该注册代码以确保对 **CreatePushNotificationChannelForApplicationAsync** 的调用不会同时运行。 例如，你可以通过将 push.register.\* 中的向导生成的代码（包括对 **CreatePushNotificationChannelForApplicationAsync** 的调用）移到 OnLaunched 事件之外来实现此目的，但此操作的细节取决于应用的体系结构。
+**警告**已运行推送通知向导一次，不运行该向导为其他移动服务添加注册代码的第二个时机。 针对每个项目多次运行该向导会生成导致对 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法的重叠调用的代码，从而导致运行时异常。 如果你要为多个移动服务注册推送通知，请运行该向导一次，然后重新编写该注册代码以确保对 **CreatePushNotificationChannelForApplicationAsync** 的调用不会同时运行。 例如，你可以通过将 push.register.\* 中的向导生成的代码（包括对 **CreatePushNotificationChannelForApplicationAsync** 的调用）移到 OnLaunched 事件之外来实现此目的，但此操作的细节取决于应用的体系结构。
 
  
 

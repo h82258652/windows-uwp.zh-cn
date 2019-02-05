@@ -7,12 +7,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: ca75261420449ac0b5af27ec34256ccef89fad2d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f8ad32fb2033c97a408ccb0f6cc6871b01caf5c5
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937405"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058488"
 ---
 # <a name="usersowneridsummary"></a>/users/{ownerId}/summary
 有关从调用方的角度来看所有者访问摘要数据。
@@ -24,7 +24,7 @@ ms.locfileid: "8937405"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- |
 | ownerId| 字符串| 正在访问其资源的用户的标识符。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。 示例值： <code>me</code>， <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>|
 
@@ -47,4 +47,4 @@ ms.locfileid: "8937405"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[/users/{ownerId}/summary]()
+[/users/{ownerId}/summary](uri-usersowneridsummaryget.md)

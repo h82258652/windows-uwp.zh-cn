@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a29f58ff8dc842fd985a44f94ff44baea51dc2e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7af61b7d442fee7eff6399a7a5d143adb53fb560
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940999"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058548"
 ---
 # <a name="web-view"></a>Web 视图
  
@@ -73,7 +73,7 @@ webView1.Navigate("http://www.contoso.com");
 
 若要使用 POST 请求和 HTTP 标头导航到 URI，请使用 [NavigateWithHttpRequestMessage](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx) 方法。 此方法仅支持针对 [HttpRequestMessage.Method](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httprequestmessage.method.aspx) 属性值的 [HttpMethod.Post](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.post.aspx) 和 [HttpMethod.Get](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.get.aspx)。 
 
-若要加载应用的 [LocalFolder]() 或 [TemporaryFolder]() 数据存储中的未压缩和未加密内容，请将 **Navigate** 方法与使用 [ms-appdata scheme]() 的 **Uri** 结合使用。 Web 视图对此方案的支持要求你将子文件夹中的内容置于本地文件夹或临时文件夹下。 这样便可以导航到 URI，例如 ms-appdata:///local/*folder*/*file*.html 和 ms-appdata:///temp/*folder*/*file*.html。 （若要加载压缩或加密文件，请参阅 [NavigateToLocalStreamUri](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx)。） 
+若要加载应用的 [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) 或 [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) 数据存储中的未压缩和未加密内容，请将 **Navigate** 方法与使用 [ms-appdata scheme](/windows/uwp/app-resources/uri-schemes) 的 **Uri** 结合使用。 Web 视图对此方案的支持要求你将子文件夹中的内容置于本地文件夹或临时文件夹下。 这样便可以导航到 URI，例如 ms-appdata:///local/*folder*/*file*.html 和 ms-appdata:///temp/*folder*/*file*.html。 （若要加载压缩或加密文件，请参阅 [NavigateToLocalStreamUri](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx)。） 
 
 其中的每个第一级别的子文件夹独立于其他第一级别子文件夹中的内容。 例如，可以导航到 ms-appdata:///temp/folder1/file.html，但在此文件中不能链接到 ms-appdata:///temp/folder2/file.html。 但仍可以使用 **ms-appx-web scheme** 链接到应用程序包中的 HTML 内容，也可以使用 **http** 和 **https** URI 方案链接到 Web 内容。
 

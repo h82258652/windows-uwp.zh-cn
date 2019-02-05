@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b09e90ea71872421a0caf1edcc1a03ce25fef42
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f6868975f793bf504dac167bf4d57d2574ddc0e9
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930658"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058638"
 ---
 # <a name="designing-for-xbox-and-tv"></a>针对 Xbox 和电视进行设计
 
@@ -64,7 +64,7 @@ _**Microsoft 电影和电视中提供了屏幕截图中所示的所有电影。*
 
 现在你已了解了适用于 10 英尺体验的良好 UWP 应用设计的原则，请阅读以下关于优化应用和实现出色用户体验的特定方法的概述。
 
-| 功能        | 描述           |
+| 功能        | 说明           |
 | -------------------------------------------------------------- |--------------------------------|
 | [游戏板和遥控器](#gamepad-and-remote-control)      | 确保你的应用适用于游戏板和遥控器是针对 10 英尺体验进行优化中最重要的步骤。 可以进行多个特定于游戏板和遥控器的改进，以优化用户操作在某种程度上受限的设备上的用户交互体验。 |
 | [XY 焦点导航和交互](#xy-focus-navigation-and-interaction) | UWP 提供 **XY 焦点导航**，该导航允许用户在应用的 UI 中四处导航。 但是，这会限制用户只能向上、向下、向左和向右导航。 本部分概述了处理此情况的建议和其他注意事项。 |
@@ -933,9 +933,9 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的**主�
 
 ![Pivot 下划线](images/designing-for-tv/pivot-underline.png)
 
-你可以将 [Pivot.IsHeaderItemsCarouselEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabled.aspx) 属性设置为 `true`，以便透视表始终保持在相同的位置，而不是使选定的透视表标题始终移动到第一个位置。 这对大屏幕显示（如电视）来说是更佳的体验，因为标题换行可能会干扰用户。 如果所有透视表标题不能全部适合屏幕，有一个滚动条可以让客户看到其他标题；但是，你应确保它们全部适合屏幕以提供最佳体验。 有关详细信息，请参阅[表和透视表](../controls-and-patterns/tabs-pivot.md)。
+你可以将 [Pivot.IsHeaderItemsCarouselEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabled.aspx) 属性设置为 `true`，以便透视表始终保持在相同的位置，而不是使选定的透视表标题始终移动到第一个位置。 这对大屏幕显示（如电视）来说是更佳的体验，因为标题换行可能会干扰用户。 如果所有透视表标题不能全部适合屏幕，有一个滚动条可以让客户看到其他标题；但是，你应确保它们全部适合屏幕以提供最佳体验。 有关详细信息，请参阅[表和透视表](../controls-and-patterns/pivot.md)。
 
-### <a name="navigation-pane-a-namenavigation-pane"></a>导航窗格 <a name="navigation-pane">
+### <a name="navigation-pane-a-namenavigation-pane-"></a>导航窗格 <a name="navigation-pane" />
 
 导航窗格（也称为*汉堡菜单*）是 UWP 应用中常用的导航控件。 通常，该窗格内含多个从列表样式菜单中选择的选项，用于将用户转到其他页面。 此窗格通常一开始以折叠方式显示以节省空间，用户可以通过单击某个按钮来打开它。
 

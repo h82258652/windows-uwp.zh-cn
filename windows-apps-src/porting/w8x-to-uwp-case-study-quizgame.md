@@ -6,23 +6,23 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ce39e87f3c5c9e11f3e9ddb1424d606356ee3c8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d2d1b2b4e6875730d5a6bfa8dd711e11ac5d049c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918869"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049304"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-quizgame-sample-app"></a>Windows 运行时 8.x 到 UWP 案例研究： QuizGame 示例应用
 
 
 
 
-本主题介绍运行对等测验游戏 WinRT 8.1 示例应用移植到 Windows10Universal Windows 平台 (UWP) 应用的案例研究。
+本主题介绍正常运行对等测验游戏 WinRT 8.1 示例应用移植到 Windows10Universal Windows 平台 (UWP) 应用的案例研究。
 
-通用 8.1 应用是一种生成两个版本的应用在同一个应用： 一个应用包用于 Windows8.1，以及适用于 Windows Phone 8.1 的不同应用包。 QuizGame 的 WinRT 8.1 版本使用 Universal Windows App 项目安排，但它采用不同的方式，并且为两个平台构建功能不同的应用。 Windows8.1 应用包可用作该主机对于测验游戏会话，而 Windows Phone 8.1 应用包到主机的客户端的角色。 测验游戏会话的两个部分通过对等网络进行通信。
+通用 8.1 应用是一种生成两个版本的应用在同一个应用： 一个应用包用于 windows 8.1 和 Windows Phone 8.1 的不同的应用包。 QuizGame 的 WinRT 8.1 版本使用 Universal Windows App 项目安排，但它采用不同的方式，并且为两个平台构建功能不同的应用。 Windows 8.1 应用包可用作该主机对于测验游戏会话，而 Windows Phone 8.1 应用包到主机的客户端的角色。 测验游戏会话的两个部分通过对等网络进行通信。
 
-针对电脑和手机定制两个部分，每个部分都很有意义。 但是，如果你刚好可以在你选择的任何设备上运行主机和客户端不是更好吗？ 在此情况下研究中，我们将移植到 windows 10，它们将其中分别生成到单个应用包中的用户可以安装到种类广泛的设备上的两个应用。
+针对电脑和手机定制两个部分，每个部分都很有意义。 但是，如果你刚好可以在你选择的任何设备上运行主机和客户端不是更好吗？ 在此情况下研究，我们将移植到 windows 10，它们将其中分别生成到单个应用包中的用户可以安装到种类广泛的设备上的两个应用。
 
 该应用使用可充分利用视图和视图模型的模式。 由于此明确的分离，此应用的移植过程如你所将看到的一样，非常直观简单。
 
@@ -36,9 +36,9 @@ ms.locfileid: "8918869"
 
 ## <a name="downloads"></a>下载
 
-[下载 QuizGame 通用 8.1 应用](http://go.microsoft.com/fwlink/?linkid=532953)。 这是应用在移植之前的初始状态。 
+[下载 QuizGame 通用 8.1 应用](https://go.microsoft.com/fwlink/?linkid=532953)。 这是应用在移植之前的初始状态。 
 
-[下载 QuizGame10 windows 10 应用](http://go.microsoft.com/fwlink/?linkid=532954)。 这是刚移植后的应用的状态。 
+[下载 QuizGame10 windows 10 应用](https://go.microsoft.com/fwlink/?linkid=532954)。 这是刚移植后的应用的状态。 
 
 [在 GitHub 上查看此示例的最新版本](https://github.com/Microsoft/Windows-appsample-quizgame)。
 
@@ -80,13 +80,13 @@ QuizGame（我们将移植的应用）的外观如下。
 QuizGame 具有以下部分。
 
 -   P2PHelper。 这是一个包含对等网络逻辑的可移植类库。
--   QuizGame.Windows。 这是生成面向 Windows8.1 在主机应用的应用包的项目。
+-   QuizGame.Windows。 这是构建主机应用，且面向 windows 8.1 的应用包的项目。
 -   QuizGame.WindowsPhone。 这是一个为客户端应用构建应用包且面向 Windows Phone 8.1的项目。
 -   QuizGame.Shared。 这是包含由其他两个项目同时使用的源代码、标记文件以及其他资源的项目。
 
 对于此案例研究，我们针对要支持的设备提供[如果你有通用 8.1 应用](w8x-to-uwp-root.md)中所述的常用选项。
 
-基于这些选项，我们会将 quizgame.windows 移植到名为 QuizGameHost 的新 windows 10 项目。 并且，我们会将 quizgame.windowsphone 移植到名为 QuizGameClient 的新 windows 10 项目。 这些项目将面向通用设备系列，因此它们将在任何设备上运行。 我们会将 QuizGame.Shared 源文件等保留在它们自己的文件夹中，并且我们会将这些共享文件链接到两个新的项目中。 和以前一样，我们会将所有内容保留在一个解决方案中并将其命名为 QuizGame10。
+根据这些选项，我们会将 quizgame.windows 移植到名为 QuizGameHost 的新 windows 10 项目。 并且，我们会将 quizgame.windowsphone 移植到名为 QuizGameClient 的新 windows 10 项目。 这些项目将面向通用设备系列，因此它们将在任何设备上运行。 我们会将 QuizGame.Shared 源文件等保留在它们自己的文件夹中，并且我们会将这些共享文件链接到两个新的项目中。 和以前一样，我们会将所有内容保留在一个解决方案中并将其命名为 QuizGame10。
 
 **QuizGame10 解决方案**
 
@@ -154,7 +154,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 -   在由注释 `<!-- Content -->` 指示的 **Grid** 上，设置 `x:Name="contentGrid"` 和 `Margin="-18,12,0,0"`。
 -   在紧挨在注释 `<!-- Options -->` 上方的 **TextBlock** 上，设置 `Margin="0,0,0,24"`。
 -   在默认 **TextBlock** 样式（文件中的第一个资源）中，将 **FontSize** 资源库的值更改为“15”。
--   在 `OptionContentControlStyle` 中，将 **FontSize** 资源库的值更改为“20”。 此步骤和上一个步骤将为我们提供一个可在所有设备上良好工作的良好字型渐变。 这些是更灵活大小比我们为 Windows8.1 应用使用的"30"。
+-   在 `OptionContentControlStyle` 中，将 **FontSize** 资源库的值更改为“20”。 此步骤和上一个步骤将为我们提供一个可在所有设备上良好工作的良好字型渐变。 这些是更灵活大小比我们为 windows 8.1 应用使用的"30"。
 -   最后，将相应的视觉状态管理器标记添加到根 **Grid**。
 
 ```xml
@@ -177,7 +177,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 ## <a name="universal-styling"></a>通用样式设置
 
 
-你将注意到在 windows 10，按钮不具有其模板中填充相同的触摸目标。 可以通过两个小更改修复该问题。 第一，将此标记添加到 QuizGameHost 和 QuizGameClient 中的 app.xaml。
+你将注意到在 windows 10 中，按钮不具有其模板中填充相同的触摸目标。 可以通过两个小更改修复该问题。 第一，将此标记添加到 QuizGameHost 和 QuizGameClient 中的 app.xaml。
 
 ```xml
 <Style TargetType="Button">
@@ -195,4 +195,4 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 ## <a name="conclusion"></a>总结
 
-我们在此案例研究中移植的应用是涉及到多个项目、一个类库以及大量代码和用户界面的相对复杂的应用。 即便如此，该移植仍然很简单。 移植的一些是直接归功于 windows 10 开发人员平台与 Windows8.1 和 Windows Phone 8.1 平台之间的相似性。 另一些是由于原始应用的设计方式使模型、视图模型和视图保持分离。
+我们在此案例研究中移植的应用是涉及到多个项目、一个类库以及大量代码和用户界面的相对复杂的应用。 即便如此，该移植仍然很简单。 移植的一部分是直接归功于 windows 10 开发人员平台与 windows 8.1 和 Windows Phone 8.1 平台之间的相似性。 另一些是由于原始应用的设计方式使模型、视图模型和视图保持分离。

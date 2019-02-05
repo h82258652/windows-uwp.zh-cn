@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 88b35c4ebc7e3b3f5c047ed5e1cef9d46a011909
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 6578ddfd077e121e0eca5a5fcc8c06cdec26aa42
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037019"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058608"
 ---
 # <a name="scroll-viewer-controls"></a>滚动查看器控件
 
@@ -143,7 +143,7 @@ ScrollViewer 定义以下 XAML 附加属性：
 - 如果你希望用户可在较大的区域中在两个方向上平移并缩放，请将该图像放置到滚动查看器中。例如，如果你希望用户可以在完整大小的图像（不是调整大小以适应屏幕的图像）中平移和缩放。
 - 如果用户将滚动查看一段较长的文本，请配置滚动查看器，使其仅在垂直方向滚动。
 - 使用滚动查看器仅包含一个对象。 请注意，该唯一对象可能是版式面板，它反过来包含自身的任意数量的对象。
-- 不要将 [Pivot](tabs-pivot.md) 控件放置在滚动查看器内，避免与透视表的滚动逻辑发生冲突。
+- 不要将 [Pivot](pivot.md) 控件放置在滚动查看器内，避免与透视表的滚动逻辑发生冲突。
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 

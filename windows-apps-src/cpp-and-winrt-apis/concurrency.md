@@ -5,12 +5,12 @@ ms.date: 10/27/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, 异步, 异步的, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: c0c9a0912b0287d45633aeec4dbb643e7959c215
-ms.sourcegitcommit: 4ee300bfa6a238d3ce7674036ec1c574bb025210
+ms.openlocfilehash: f3283ffa5fa047806befa2712301c25a7d07af8e
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "9029930"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058798"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>通过 C++/WinRT 的并发和异步操作
 
@@ -289,7 +289,7 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 }
 ```
 
-上面的代码抛出一个 [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/hresult-wrong-thread) 异常，因为必须从创建 **TextBlock** 的线程（即 UI 线程）更新 TextBlock。 一种解决方案是捕获最初调用协同程序的线程上下文。 若要执行该操作，实例化[**winrt:: apartment_context**](/uwp/cpp-ref-for-winrt/apartment-context)对象，执行后台任务，然后`co_await` **apartment_context**若要切换回调用上下文。
+上面的代码抛出一个 [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/error-handling/hresult-wrong-thread) 异常，因为必须从创建 **TextBlock** 的线程（即 UI 线程）更新 TextBlock。 一种解决方案是捕获最初调用协同程序的线程上下文。 若要执行该操作，实例化[**winrt:: apartment_context**](/uwp/cpp-ref-for-winrt/apartment-context)对象，执行后台任务，然后`co_await` **apartment_context**若要切换回调用上下文。
 
 ```cppwinrt
 IAsyncAction DoWorkAsync(TextBlock textblock)

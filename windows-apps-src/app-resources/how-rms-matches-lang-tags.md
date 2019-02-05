@@ -6,12 +6,12 @@ ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 4914a448432206e2418fe110c0b49517a7145e0b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ccbfa5f06d336604160f98dd44c27cc0cf1b0aed
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937974"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050580"
 ---
 # <a name="how-the-resource-management-system-matches-language-tags"></a>资源管理系统匹配语言标记的方式
 
@@ -21,7 +21,7 @@ ms.locfileid: "8937974"
 
 具有语言标记限定符的资源基于应用运行时语言列表进行比较和评分。 有关不同语言列表的定义，请参阅[了解用户配置文件语言和应用清单语言](../design/globalizing/manage-language-and-region.md)。 在与列表中的首个语言匹配之后才会与列表中第二个语言匹配，对于其他区域变体也是如此。 例如，如果应用运行时语言为 en-US，则会先于 fr-CA 资源选择用于 en-GB 的资源。 只有当没有 en 形式的资源时，才会选择 fr-CA 的资源（请注意：在这种情况下，应用的默认语言不能设置为任何形式的 en）。
 
-评分机制使用 [BCP 47](http://go.microsoft.com/fwlink/p/?linkid=227302) 子标记注册表和其他数据源中包含的数据。 它允许存在具有不同匹配度的评分梯度，而且当存在多个候选项时，它会选择具有最佳匹配分数的候选项。
+评分机制使用 [BCP 47](https://go.microsoft.com/fwlink/p/?linkid=227302) 子标记注册表和其他数据源中包含的数据。 它允许存在具有不同匹配度的评分梯度，而且当存在多个候选项时，它会选择具有最佳匹配分数的候选项。
 
 因此，你可以在通用词条中标记语言内容，但在需要时仍然可以指定特定的内容。 例如，你的应用可能具有美国、英国和其他地区通用的许多英语字符串。 将这些字符串标记为“en”（英语）可以节省空间和本地化开销。 当需要进行区分时，如在含有“颜色/色彩”一词的字符串中，可以分别使用语言和地区子标记（如“en-US”和“en-GB”）单独标记美国版本和英国版本。
 
@@ -74,7 +74,7 @@ ms.locfileid: "8937974"
 
 #### <a name="macro-region-match"></a>宏地区匹配
 
-标记在语言和脚本子标记上匹配；两个标记都有地区子标记，其中一个子标记表示包含其他地区的宏地区。 宏地区子标记始终是数字，并且从联合国统计部门 M.49 国家/地区和区域代码衍生而来。 有关包含关系的详细信息，请参阅[宏地理（大陆）区域、地理子区域和所选经济和其他分组的构成](http://go.microsoft.com/fwlink/p/?LinkId=247929)。
+标记在语言和脚本子标记上匹配；两个标记都有地区子标记，其中一个子标记表示包含其他地区的宏地区。 宏地区子标记始终是数字，并且从联合国统计部门 M.49 国家/地区和区域代码衍生而来。 有关包含关系的详细信息，请参阅[宏地理（大陆）区域、地理子区域和所选经济和其他分组的构成](https://go.microsoft.com/fwlink/p/?LinkId=247929)。
 
 **注意**“经济分组”和“其他分组”的 UN 代码在 BCP-47 中不受支持。
  
@@ -189,6 +189,6 @@ ms.locfileid: "8937974"
 ## <a name="related-topics"></a>相关主题
 
 * [资源管理系统如何匹配和选择资源](how-rms-matches-and-chooses-resources.md)
-* [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [了解用户配置文件语言和应用清单语言](../design/globalizing/manage-language-and-region.md)
-* [宏地理（大陆）区域、地理子区域和所选经济和其他分组的构成](http://go.microsoft.com/fwlink/p/?LinkId=247929)
+* [宏地理（大陆）区域、地理子区域和所选经济和其他分组的构成](https://go.microsoft.com/fwlink/p/?LinkId=247929)

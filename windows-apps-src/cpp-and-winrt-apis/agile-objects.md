@@ -5,16 +5,16 @@ ms.date: 10/20/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 敏捷, 对象, 敏捷性, IAgileObject
 ms.localizationpriority: medium
-ms.openlocfilehash: 2711779f2f5fc13be19a4a10224b110564716477
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2481396d9348250e14ebfc2d1f940b663b405f77
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945242"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058618"
 ---
 # <a name="agile-objects-in-cwinrt"></a>C++/WinRT 中的敏捷对象
 
-在大多数情况下，可以从任何线程 （就像大多数标准 c + + 对象可以） 访问 Windows 运行时类的实例。 此类的 Windows 运行时类是*敏捷对象*。 只有 Windows 附带的 Windows 运行时类的一小部分是非敏捷的但当你使用它们，你需要考虑它们的线程模型和封送行为 （封送跨边界传送数据单元）。 它是一个好的默认每个 Windows 运行时对象是敏捷的因此你自己[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)类型均为敏捷型默认情况下。
+在大多数情况下，可以从任何线程 （就像大多数标准 c + + 对象可以） 访问 Windows 运行时类的实例。 此类的 Windows 运行时类是*敏捷对象*。 只有少量的 windows 的 Windows 运行时类非敏捷的但当你使用它们需要考虑它们的线程模型和封送行为 （封送跨边界传送数据单元）。 它是一个好的默认为每个 Windows 运行时对象是敏捷的因此你自己[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)类型均为敏捷型默认情况下。
 
 但你可以选择退出。例如，你可能会有令人信服的理由来要求类型的对象驻留在某个给定的单线程单元中。 对于重入要求，通常需要这样做。 不过，敏捷对象越来越多，甚至用户界面 (UI) API 也提供敏捷对象。 总之，敏捷性是最简单、最有效率的选项。 此外，当实现一个激活工厂时，即使对应的运行时类不是敏捷的，激活工厂也必须是敏捷的。
 
@@ -23,7 +23,7 @@ ms.locfileid: "8945242"
 
 ## <a name="code-examples"></a>代码示例
 
-让我们使用运行时类的实现的示例演示如何 C + + WinRT 支持敏捷性。
+让我们使用的运行时类实现的示例演示如何 C + + WinRT 支持敏捷性。
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>
@@ -63,7 +63,7 @@ if (myimpl.try_as<IAgileObject>()) { /* myimpl is agile. */ }
 
 ## <a name="opting-out-of-agile-object-support"></a>选择退出敏捷对象支持
 
-你通过以下方法选择明确退出敏捷对象支持：将 [**winrt::non_agile**](/uwp/cpp-ref-for-winrt/non_agile) 标记结构作为模板参数传递给基类。
+你通过以下方法选择明确退出敏捷对象支持：将 [**winrt::non_agile**](/uwp/cpp-ref-for-winrt/non-agile) 标记结构作为模板参数传递给基类。
 
 如果你直接从 **winrt::implements** 派生。
 
@@ -120,7 +120,7 @@ winrt::hstring message{ nonagile_obj_again.Message() };
 * [winrt::agile_ref 结构模板](/uwp/cpp-ref-for-winrt/agile-ref)
 * [winrt::implements 结构模板](/uwp/cpp-ref-for-winrt/implements)
 * [winrt::make_agile 函数模板](/uwp/cpp-ref-for-winrt/make-agile)
-* [winrt::non_agile 标记结构](/uwp/cpp-ref-for-winrt/non_agile)
+* [winrt::non_agile 标记结构](/uwp/cpp-ref-for-winrt/non-agile)
 * [winrt::Windows::Foundation::IUnknown::as 函数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 * [winrt::Windows::Foundation::IUnknown::try_as 函数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
 

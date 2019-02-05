@@ -6,12 +6,12 @@ ms.date: 11/28/2017
 ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 位置功能
 ms.localizationpriority: medium
-ms.openlocfilehash: fae533e0ce42e14e3c53f5083b746a9aae221adf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b3582aa8ed406a25eb704f2f86f8ed272bea2c63
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941354"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050217"
 ---
 # <a name="get-the-users-location"></a>获取用户位置
 
@@ -20,9 +20,9 @@ ms.locfileid: "8941354"
 
 查找用户的位置并响应位置更改。 对用户位置的访问由“设置”应用中的隐私设置来管理。 本主题还介绍了如何查看你的应用是否具有访问用户位置的权限。
 
-**提示**若要了解有关在你的应用中访问用户位置的详细信息，请从 GitHub 上的 [Windows-universal-samples 存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)下载以下示例。
+**提示**若要了解有关在你的应用中访问用户位置的详细信息，请从 GitHub 上的 [Windows-universal-samples 存储库](https://go.microsoft.com/fwlink/p/?LinkId=619979)下载以下示例。
 
--   [通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [通用 Windows 平台 (UWP) 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="enable-the-location-capability"></a>启用位置功能
 
@@ -44,7 +44,7 @@ ms.locfileid: "8941354"
 
 ### <a name="step-1-request-access-to-the-users-location"></a>步骤 1：请求访问用户的位置
 
-除非你的应用具有粗糙位置功能 （参见备注），你必须使用之前[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)方法访问的位置请求访问用户的位置。 必须从 UI 线程调用 **RequestAccessAsync** 方法，并且你的应用必须在前台。 只有在用户授予相应的应用权限后，你的应用才可以访问用户的位置信息。\*
+除非你的应用具有粗糙位置功能 （参见备注），你必须使用之前尝试[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)方法访问的位置请求访问用户的位置。 必须从 UI 线程调用 **RequestAccessAsync** 方法，并且你的应用必须在前台。 只有在用户授予相应的应用权限后，你的应用才可以访问用户的位置信息。\*
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -267,6 +267,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 ## <a name="related-topics"></a>相关主题
 
-* [UWP 地理位置示例](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP 地理位置示例](https://go.microsoft.com/fwlink/p/?linkid=533278)
 * [地理围栏设计指南](https://msdn.microsoft.com/library/windows/apps/dn631756)
 * [位置感知应用设计指南](https://msdn.microsoft.com/library/windows/apps/hh465148)

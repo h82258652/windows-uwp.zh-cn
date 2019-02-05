@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4517d3fc917cb306281e9050f8554119ff987007
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: a2d5db17be1367deea66ff2762d0350931e1861e
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044501"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058578"
 ---
 # <a name="enterprise"></a>企业版
 
@@ -47,7 +47,7 @@ Windows Template Studio 是一个 Visual Studio 2017 扩展，加快了创建新
 
 我们已发布新的 UWP XAML 控件填充传统桌面应用程序 UI 和 UWP UI 之间的差距。
 
-例如，新的[菜单栏](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/menus?branch=jimwalk%2Frs5-menu-bar)、 [DropDownButton](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button)、[拆分按钮](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button)，以及[CommandBarFlyout](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/command-bar-flyout?branch=jimwalk%2Frs5-command-bar-flyout)控件向你提供更灵活的方式来公开命令，且[EditableComboBox](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/combo-box?branch=rs5#make-a-combo-box-editable)让用户输入未列出的值在预定义的选项列表。
+例如，新的[菜单栏](/windows/uwp/design/controls-and-patterns/menus)、 [DropDownButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button)、[拆分按钮](/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button)，以及[CommandBarFlyout](/windows/uwp/design/controls-and-patterns/command-bar-flyout)控件向你提供更灵活的方式来公开命令，且[EditableComboBox](/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable)让用户输入未列出的值在预定义的选项列表。
 
 ![菜单栏](images/menu-bar.png)
 
@@ -68,7 +68,7 @@ Windows UI 库是一组提供适用于 UWP 应用的控件和其他用户界面�
 
 ![Windows UI 库](images/win-ui.png)
 
-请参阅[Windows UI 库 （预览版本）](https://docs.microsoft.com/en-us/uwp/toolkits/winui/)。
+请参阅[Windows UI 库 （预览版本）](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 <a id="xaml-islands" />
 
@@ -161,7 +161,7 @@ Windows 10 提供了一套适用于应用开发人员保护其用户、 公司�
 |-------|-------------|
 | [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631) | 在此初级指南中，你将熟悉 Windows 10 UWP 平台，包括：什么是设备系列和如何决定要面向哪个设备、可使你针对不同设备外形规格改编 UI 的新 UI 控件和面板以及如何了解和控制适用于应用的 API 图面。 |
 | [自适应 XAML UI 代码示例](https://go.microsoft.com/fwlink/p/?LinkId=619992) | 此代码示例显示了所有可能的布局选项和为你的应用，而不考虑设备类型的控件，并允许你与显示了如何实现你正在寻找的任何布局面板进行交互。 除了演示每个控件如何响应不同的外形规格外，应用本身也具有响应性，并显示实现自定义 UI 的各种方法。 |
-| [Xamarin 主题]() | 面向手机 Xamarin |
+| [Xamarin 主题](/xamarin/) | 面向手机 Xamarin |
 
 ## <a name="deployment"></a>部署
 

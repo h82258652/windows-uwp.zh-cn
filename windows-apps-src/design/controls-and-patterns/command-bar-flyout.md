@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0760805128f8f11b4598a5c8b0d19d8e9f20d04d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 90c86e071b0e1d2a07d7755ba23cb6418ca0022a
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050950"
+ms.locfileid: "9058568"
 ---
 # <a name="command-bar-flyout"></a>命令栏浮出控件
 
@@ -165,7 +165,7 @@ CommandBarFlyout 控件具有可用于添加命令和内容的 2 个属性： [P
 
 ### <a name="other-content"></a>其他内容
 
-它们包装在 AppBarElementContainer 中，可以将其他控件添加到命令栏浮出控件。 这允许你添加控件如[DropDownButton]()或[拆分按钮]()，或添加如[StackPanel]()创建更复杂的 UI 的容器。
+它们包装在 AppBarElementContainer 中，可以将其他控件添加到命令栏浮出控件。 这允许你添加控件如[DropDownButton](buttons.md)或[拆分按钮](buttons.md)，或添加如[StackPanel](buttons.md)创建更复杂的 UI 的容器。
 
 若要添加到命令栏浮出控件的主要或辅助命令集合中，元素必须实现[ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement)接口。 AppBarElementContainer 是实现此接口，因此你可以将某个元素添加到命令栏，即使它不会实现接口本身的包装器。
 
@@ -174,7 +174,7 @@ CommandBarFlyout 控件具有可用于添加命令和内容的 2 个属性： [P
 > [!TIP]
 > 默认情况下，为应用画布设计元素可能看起来不正确命令栏中。 当你添加使用 AppBarElementContainer 元素时，有一些进行匹配其他命令栏元素的元素应采取的步骤：
 >
-> - 替代默认画笔的[轻型样式设置](/design/controls-and-patterns/xaml-styles#lightweight-styling)以使该元素的背景和匹配应用栏按钮的边框。
+> - 替代默认画笔的[轻型样式设置](/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling)以使该元素的背景和匹配应用栏按钮的边框。
 > - 调整大小和元素的位置。
 > - 在使用的宽度和高度 16px Viewbox 换行图标。
 

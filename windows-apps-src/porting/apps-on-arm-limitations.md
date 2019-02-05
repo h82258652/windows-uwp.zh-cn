@@ -6,17 +6,17 @@ ms.topic: article
 keywords: windows 10 s, 始终连接, 限制, 基于 ARM 的 Windows 10
 ms.localizationpriority: medium
 redirect_url: https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-troubleshooting-x86
-ms.openlocfilehash: 5fa05e1dfd04208ba547a692473fc3df136e6e4f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 42a2866642d11d1d97cc7b0b663486723499a5cf
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919273"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058668"
 ---
 # <a name="limitations-of-apps-and-experiences-on-arm"></a>ARM 上的应用和体验限制
 基于 ARM 的 Windows 10 有以下必要限制：
 
-- **只支持 ARM64 驱动程序**。 与所有体系结构一样，内核模式驱动程序、[用户模式驱动程序框架 (UMDF)](https://docs.microsoft.com/en-us/windows-hardware/drivers/wdf/overview-of-the-umdf) 驱动程序和打印驱动程序必须进行编译，以匹配操作系统的体系结构。 虽然 ARM 操作系统有模拟 x86 用户模式应用的功能，但目前尚未模拟为其他体系结构（如 x64 或 x86）实现的驱动程序，因此在该平台上不受支持。 任何使用自定义驱动程序的应用都需要移植到 ARM64。 在有限的情况下，应用可以在模拟环境下以 x86 方式运行，但应用的驱动程序部分必须移植到 ARM64。 有关为 ARM64 编译驱动程序的详细信息，请参阅[使用 WDK 构建 ARM64 驱动程序](https://review.docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers?branch=rs4-arm64)。
+- **只支持 ARM64 驱动程序**。 与所有体系结构一样，内核模式驱动程序、[用户模式驱动程序框架 (UMDF)](https://docs.microsoft.com/en-us/windows-hardware/drivers/wdf/overview-of-the-umdf) 驱动程序和打印驱动程序必须进行编译，以匹配操作系统的体系结构。 虽然 ARM 操作系统有模拟 x86 用户模式应用的功能，但目前尚未模拟为其他体系结构（如 x64 或 x86）实现的驱动程序，因此在该平台上不受支持。 任何使用自定义驱动程序的应用都需要移植到 ARM64。 在有限的情况下，应用可以在模拟环境下以 x86 方式运行，但应用的驱动程序部分必须移植到 ARM64。 有关为 ARM64 编译驱动程序的详细信息，请参阅[使用 WDK 构建 ARM64 驱动程序](/windows-hardware/drivers/develop/building-arm64-drivers)。
 
 - **不支持 x64 应用**。 基于 ARM 的 Windows 10 不支持 x64 应用模拟。
 

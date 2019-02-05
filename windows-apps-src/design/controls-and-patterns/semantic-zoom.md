@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5689fd967756025872fd45bf242076e854e700aa
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 210cca8a4b17b77e8c1f9cb490a79bcd1a53b6c7
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048094"
+ms.locfileid: "9058788"
 ---
 # <a name="semantic-zoom"></a>语义式缩放
 
@@ -80,7 +80,7 @@ ms.locfileid: "9048094"
 - 显示项目级数据的放大视图。
 - 显示组级数据的缩小视图。
 
-在使用语义式缩放前，应了解如何将列表视图用于分组数据。 有关详细信息，请参阅[列表视图和网格视图](listview-and-gridview.md)和[在列表中为项目分组]()。 
+在使用语义式缩放前，应了解如何将列表视图用于分组数据。 有关详细信息，请参阅[列表视图和网格视图](listview-and-gridview.md)。 
 
 > **注意**&nbsp;&nbsp;若要定义 SemanticZoom 控件的放大视图和缩小视图，可以使用任意两个可实现 [ISemanticZoomInformation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.isemanticzoominformation.aspx) 接口的控件。 XAML 框架提供 3 个可实现此接口的控件：ListView、GridView 和 Hub。
  

@@ -6,12 +6,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 帐户, 测试帐户
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f48f9baa574128530f5794b441c45a8c8f980eb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 662f85f985baf58eef050060f8132f5a4b92444d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927936"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049250"
 ---
 # <a name="authorize-xbox-live-accounts-for-testing-in-your-environment"></a>在你的环境中授权 Xbox Live 帐户以进行测试
 
@@ -50,4 +50,4 @@ ms.locfileid: "8927936"
 
 在模式对话框中输入的电子邮件会经过一些检查，包括查找是否有与其关联的 Xbox Live 帐户。 如果任意检查未通过，则帐户不会添加到表中且不会获得授权，你可能会收到“抱歉，添加电子邮件地址时出现问题”错误。
 
-如果遇到问题，正确的检查方法是，尝试在 [Xbox.com](http://www.xbox.com/live/) 上使用帐户登录。 如果你无法登录，则说明此帐户不是 Xbox Live 帐户。
+如果遇到问题，正确的检查方法是，尝试在 [Xbox.com](https://www.xbox.com/live/) 上使用帐户登录。 如果你无法登录，则说明此帐户不是 Xbox Live 帐户。

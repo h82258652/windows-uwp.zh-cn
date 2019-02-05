@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b753b9e93a0cd2abae089f9d53915e0c109f6b63
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.openlocfilehash: f4e0b2a2370acd3571b48eecdf13e44cadc3879c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042419"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050470"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -39,7 +39,7 @@ ms.locfileid: "9042419"
 
 -   异步方法上提供的 HTTP 请求进度信息。
 
-[**Windows.Web.Http.HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) 类用于声明由 [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 发送的 HTTP 请求消息。 [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) 类用于声明从 HTTP 请求接收到的 HTTP 响应消息。 HTTP 消息由 IETF 在 [RFC 2616](http://go.microsoft.com/fwlink/p/?linkid=241642) 中进行定义。
+[**Windows.Web.Http.HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) 类用于声明由 [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 发送的 HTTP 请求消息。 [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) 类用于声明从 HTTP 请求接收到的 HTTP 响应消息。 HTTP 消息由 IETF 在 [RFC 2616](https://go.microsoft.com/fwlink/p/?linkid=241642) 中进行定义。
 
 [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间用于声明 HTTP 内容作为 HTTP 实体正文和包含 Cookie 的标头。 HTTP 内容可以与 HTTP 请求或 HTTP 响应相关联。 **Windows.Web.Http** 命名空间提供很多不同的类来声明 HTTP 内容。
 
@@ -228,9 +228,9 @@ int main()
 
 [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 缺少方便函数。 所以，使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 和该命名空间中其他类的应用需要使用 **HRESULT** 值。
 
-在应用中使用 C#、 VB.NET、 [System.Exception](http://msdn.microsoft.com/library/system.exception.aspx) .NET Framework4.5 表示错误应用执行期间发生异常时。 [System.Exception.HResult](http://msdn.microsoft.com/library/system.exception.hresult.aspx) 属性将返回分配到特定异常的 **HRESULT**。 [System.Exception.Message](http://msdn.microsoft.com/library/system.exception.message.aspx) 属性将返回用于描述异常的消息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来根据异常原因修改应用行为。
+在应用中使用 C#、 VB.NET、 [System.Exception](https://msdn.microsoft.com/library/system.exception.aspx) .NET Framework4.5 表示错误应用执行期间发生异常时。 [System.Exception.HResult](https://msdn.microsoft.com/library/system.exception.hresult.aspx) 属性将返回分配到特定异常的 **HRESULT**。 [System.Exception.Message](https://msdn.microsoft.com/library/system.exception.message.aspx) 属性将返回用于描述异常的消息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来根据异常原因修改应用行为。
 
-在使用托管的 C++ 的应用中发生异常时，[Platform::Exception](http://msdn.microsoft.com/library/windows/apps/hh755825.aspx) 表示应用执行期间的错误。 [Platform::Exception::HResult](http://msdn.microsoft.com/library/windows/apps/hh763371.aspx) 属性将返回分配到特定异常的 **HRESULT**。 [Platform::Exception::Message](http://msdn.microsoft.com/library/windows/apps/hh763375.aspx) 属性将返回系统提供的与 **HRESULT** 值关联的字符串。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来基于异常原因修改应用行为。
+在使用托管的 C++ 的应用中发生异常时，[Platform::Exception](https://msdn.microsoft.com/library/windows/apps/hh755825.aspx) 表示应用执行期间的错误。 [Platform::Exception::HResult](https://msdn.microsoft.com/library/windows/apps/hh763371.aspx) 属性将返回分配到特定异常的 **HRESULT**。 [Platform::Exception::Message](https://msdn.microsoft.com/library/windows/apps/hh763375.aspx) 属性将返回系统提供的与 **HRESULT** 值关联的字符串。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来基于异常原因修改应用行为。
 
 对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。 对于某些非法的方法调用，返回的 **HRESULT** 为 **E\_ILLEGAL\_METHOD\_CALL**。
 

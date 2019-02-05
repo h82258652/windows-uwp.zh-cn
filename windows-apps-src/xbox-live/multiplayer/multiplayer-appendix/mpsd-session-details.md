@@ -6,12 +6,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏 2015, 会话, mpsd
 ms.localizationpriority: medium
-ms.openlocfilehash: 175dddb79ed7e9d7cddc970e0b48efed11fbe0b6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3eb92af2d478fa41150f375dd19ef347d2b6f2e9
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941517"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058494"
 ---
 # <a name="mpsd-session-details"></a>MPSD 会话详细信息
 
@@ -29,7 +29,7 @@ ms.locfileid: "8941517"
 
 ## <a name="session-overview"></a>会话概述
 
-多人游戏会话目录 (MPSD) 会话具有会话名称并被标识为会话模板，这是为会话提供默认设置的 JSON 文档的实例。 模板是具有服务配置标识符 (SCID) 的服务配置的一部分，这是一个 GUID。 可以在[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)和[合作伙伴中心](https://partner.microsoft.com/dashboard)上找到此模板。 服务配置是面向开发人员的资源用于引入、 管理和安全策略。 当通过 MPSD 访问会话时，主要授权根据设置开发人员通过 XDP 或合作伙伴中心访问策略的服务配置对执行。 当会话在授予了服务配置的访问权限后加载时，辅助访问检查（如会话成员身份验证）在会话级别执行。
+多人游戏会话目录 (MPSD) 会话具有会话名称并被标识为会话模板，这是为会话提供默认设置的 JSON 文档的实例。 模板是具有服务配置标识符 (SCID) 的服务配置的一部分，这是一个 GUID。 可以在[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)和[合作伙伴中心](https://partner.microsoft.com/dashboard)上找到此模板。 服务配置是面向开发人员的资源用于引入、 管理和安全策略。 当通过 MPSD 访问会话时，主要授权根据设置开发人员通过 XDP 或合作伙伴中心访问策略的服务配置执行。 当会话在授予了服务配置的访问权限后加载时，辅助访问检查（如会话成员身份验证）在会话级别执行。
 
 本主题假设你的模板使用协定版本 107，即当前的 MPSD 为 Xbox One 使用的版本。 如果你有基于协定版本 105（与 104 相同）定义的模板，你必须更改这些设置以支持版本 107。 有关说明，请参阅[常见的多人游戏 2015 迁移问题](common-issues-when-adapting-multiplayer.md)。
 
@@ -231,7 +231,7 @@ MPSD 会话的大小由该会话中的成员数量确定。
 
 ### <a name="large-sessions"></a>大型会话
 
-大型 MPSD 会话最多可以有 1000 个成员，但它会禁用部分会话功能，如获取包含所有成员的列表。 会话的“大”由 **MultiplayerSessionCapabilities.Large 属性**表示。 此属性设置为 true 指示大型会话，而“大”功能在 /constants/system/capabilities 对象中指示。 有关详细信息，请参阅[会话功能]()。
+大型 MPSD 会话最多可以有 1000 个成员，但它会禁用部分会话功能，如获取包含所有成员的列表。 会话的“大”由 **MultiplayerSessionCapabilities.Large 属性**表示。 此属性设置为 true 指示大型会话，而“大”功能在 /constants/system/capabilities 对象中指示。 
 
 ## <a name="session-user-states"></a>会话用户状态
 

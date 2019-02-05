@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 05cf78d7dec260b990d2ce71662e3db6eb07d07f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ebba5abe0de8014a21d2e651534dacc118705fff
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941213"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050154"
 ---
 # <a name="getting-started-common-controls"></a>入门：常见控件
 
@@ -30,12 +30,12 @@ UWP 控件相当智能的方面是，它们可以感知到在其上运行的设�
 | 日期选取器 (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | 图像视图 (UIDatePicker) | [图像](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> 另请参阅[图像和 ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
 | 标签 (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> 另请参阅[快速入门：显示文本](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392) |
-| 地图视图 (MKMapView) 和地图视图委派 (MKMapViewDelegate) | 请参阅[适用于 UWP 应用的必应地图](http://go.microsoft.com/fwlink/p/?LinkId=263496) |
+| 地图视图 (MKMapView) 和地图视图委派 (MKMapViewDelegate) | 请参阅[适用于 UWP 应用的必应地图](https://go.microsoft.com/fwlink/p/?LinkId=263496) |
 | 导航控制器 (UINavigationController) 和导航控制器委托 (UINavigationControllerDelegate) | [帧](https://msdn.microsoft.com/library/windows/apps/br242682) <br/> 另请参阅[导航](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 | 页面控件 (UIPageControl) | [页面](https://msdn.microsoft.com/library/windows/apps/br227503) <br/> 另请参阅[导航](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 | 选取器视图 (UIPickerView) 和选取器视图委托 (UIPickerViewDelegate) | [组合框](https://msdn.microsoft.com/library/windows/apps/br209348) <br/> 另请参阅[添加组合框和列表框](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616) |
 | 进度条 (UIProgressView) | [进度栏](https://msdn.microsoft.com/library/windows/apps/br227529) <br/> 另请参阅[快速入门：添加进度控件](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
-| 滚动视图 (UIScrollView) 和滚动视图委托 (UIScrollViewDelegate) | [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527) <br/>  另请参阅[Extensible Application Markup Language (XAML) 滚动、平移以及缩放示例](http://go.microsoft.com/fwlink/p/?LinkId=238577) |
+| 滚动视图 (UIScrollView) 和滚动视图委托 (UIScrollViewDelegate) | [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527) <br/>  另请参阅[Extensible Application Markup Language (XAML) 滚动、平移以及缩放示例](https://go.microsoft.com/fwlink/p/?LinkId=238577) |
 | 搜索栏 (UISearchBar) 和搜索栏委派 (UISearchBarDelegate) | 请参阅[向应用添加搜索](https://msdn.microsoft.com/library/windows/apps/xaml/jj130767) <br/>  另请参阅[快速入门：向应用添加搜索](https://msdn.microsoft.com/library/windows/apps/xaml/hh868180) |
 | 分段控件 (UISegmentedControl) | 无 |
 | 滑块 (UISlider) | [滑块](https://msdn.microsoft.com/library/windows/apps/br209614) <br/>  另请参阅[如何添加滑块](https://msdn.microsoft.com/library/windows/apps/xaml/hh868197) |
@@ -46,7 +46,7 @@ UWP 控件相当智能的方面是，它们可以感知到在其上运行的设�
 | 文本字段 (UITextField) 和文本字段委托 (UITextFieldDelegate) | [TextBox](https://msdn.microsoft.com/library/windows/apps/br209683) <br/>  另请参阅[显示和编辑文本](https://msdn.microsoft.com/library/windows/apps/mt280218) |
 | 文本视图 (UITextView) 和文本视图委托 (UITextViewDelegate) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/>  另请参阅[快速入门：显示文本](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392) |
 | 视图 (UIView) 和视图控制器 (UIViewController) | [页面](https://msdn.microsoft.com/library/windows/apps/br227503) <br/>  另请参阅[导航](https://msdn.microsoft.com/library/windows/apps/mt187344) |
-| Web 视图 (UIWebView) 和 Web 视图委托 (UIWebViewDelegate) | [WebView](https://msdn.microsoft.com/library/windows/apps/br227702) <br/>  另请参阅 [XAML WebView 控件示例](http://go.microsoft.com/fwlink/p/?LinkId=238582) |
+| Web 视图 (UIWebView) 和 Web 视图委托 (UIWebViewDelegate) | [WebView](https://msdn.microsoft.com/library/windows/apps/br227702) <br/>  另请参阅 [XAML WebView 控件示例](https://go.microsoft.com/fwlink/p/?LinkId=238582) |
 | 窗口 (UIWindow) | [帧](https://msdn.microsoft.com/library/windows/apps/br242682) <br/>  另请参阅[导航](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 
 有关其他更多控件，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)。
@@ -59,6 +59,6 @@ UWP 控件相当智能的方面是，它们可以感知到在其上运行的设�
 
 ## <a name="related-topics"></a>相关主题
 
-* [版本 2014：XAML UI 和控件如何？](http://go.microsoft.com/fwlink/p/?LinkID=397897)
-* [版本 2014：使用常见 XAML UI 框架开发应用](http://go.microsoft.com/fwlink/p/?LinkID=397898)
-* [版本 2014：使用 Visual Studio 构建 XAML 融合应用](http://go.microsoft.com/fwlink/p/?LinkID=397876)
+* [版本 2014：XAML UI 和控件如何？](https://go.microsoft.com/fwlink/p/?LinkID=397897)
+* [版本 2014：使用常见 XAML UI 框架开发应用](https://go.microsoft.com/fwlink/p/?LinkID=397898)
+* [版本 2014：使用 Visual Studio 构建 XAML 融合应用](https://go.microsoft.com/fwlink/p/?LinkID=397876)

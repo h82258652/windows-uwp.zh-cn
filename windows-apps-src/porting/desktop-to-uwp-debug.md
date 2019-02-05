@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10，uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
-ms.openlocfilehash: 2180551f48a728a9b426bc7e35b2dac388ff56ef
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: 8b2350c8164548121baec231335e747166f1c082
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981571"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050044"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>运行、 调试和测试打包的桌面应用程序
 
@@ -22,7 +22,7 @@ ms.locfileid: "8981571"
 
 ## <a name="run-your-application"></a>运行你的应用程序
 
-你可以运行你的应用程序测试，本地而无需获得证书并对其进行签名。 运行应用程序的方式取决于你工具用于创建程序包。
+你可以运行你的应用程序对它进行测试本地而无需获得证书并对其进行签名。 运行应用程序的方式取决于你工具用于创建程序包。
 
 ### <a name="you-created-the-package-by-using-visual-studio"></a>使用 Visual Studio 创建程序包
 
@@ -68,19 +68,19 @@ Add-AppxPackage –Register AppxManifest.xml
 
 ### <a name="debug-the-entire-application-lifecycle"></a>调试整个应用程序生命周期
 
-在某些情况下，你可能希望更精细地控制调试过程，包括应用启动前调试你的应用程序的能力。
+在某些情况下，可能希望更精细地控制调试过程，包括应用启动前调试你的应用程序的能力。
 
-[PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx)可用于获取包括暂停、 恢复和终止的应用程序生命周期的完全控制。
+[PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx)可用于获取对包括暂停、 恢复和终止的应用程序生命周期的完全控制。
 
 [PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) 包含在 Windows SDK 中。
 
 ## <a name="test-your-app"></a>测试应用
 
-若要在准备分发，请在现实环境中测试你的应用程序，最好是对你的应用程序进行签名，然后安装它。
+若要在准备分发，请在现实环境中测试你的应用程序，则最好对你的应用程序进行签名，然后安装它。
 
 ### <a name="test-an-application-that-you-packaged-by-using-visual-studio"></a>测试使用 Visual Studio 打包的应用程序
 
-Visual Studio 对你的应用程序通过使用测试证书进行签名。 你会在**创建应用包**向导生成的输出文件夹中找到该证书。 证书文件具有 *.cer*扩展，并且你将需要你想要测试你的应用程序上的电脑上的**受信任的根证书颁发机构**存储中安装该证书。 请参阅[旁加载包](../packaging/packaging-uwp-apps.md#sideload-your-app-package)。
+Visual Studio 对你的应用程序通过使用测试证书进行签名。 你会在**创建应用包**向导生成的输出文件夹中找到该证书。 证书文件包含 *.cer*扩展，你将需要你想要测试你的应用程序上的电脑上的**受信任的根证书颁发机构**存储中安装该证书。 请参阅[旁加载包](../packaging/packaging-uwp-apps.md#sideload-your-app-package)。
 
 ### <a name="test-an-application-that-you-packaged-by-using-the-desktop-app-converter-dac"></a>测试使用 Desktop App Converter (DAC) 打包的应用程序
 
@@ -105,11 +105,11 @@ Visual Studio 对你的应用程序通过使用测试证书进行签名。 你�
 [SigningCerts](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SigningCerts)
 
 
-### <a name="test-your-application-for-windows-10-s"></a>测试应用程序适用于 Windows 10 S
+### <a name="test-your-application-for-windows-10-s"></a>测试适用于 Windows 10 S 应用程序
 
-在发布你的应用之前，请确保，它将设备上正常运行 Windows 10 s。事实上，如果你打算发布到 Microsoft 应用商店应用程序，你必须执行此操作因为这是应用商店要求。 无法在运行 Windows 10 S 的设备上正常运行的应用将不会通过认证。
+在发布你的应用之前，请确保在运行 Windows 10 s。 设备上它也将正常运行事实上，如果你打算发布到 Microsoft 应用商店应用程序，你必须执行此操作由于它是应用商店要求。 无法在运行 Windows 10 S 的设备上正常运行的应用将不会通过认证。
 
-请参阅[测试 Windows 10 S 的 Windows 应用程序](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-test-windows-s)。
+请参阅[测试 Windows 应用程序适用于 Windows 10 S](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-test-windows-s)。
 
 ### <a name="run-another-process-inside-the-full-trust-container"></a>在完全信任的容器内运行另一个进程
 
@@ -124,7 +124,7 @@ Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [
 
 **查找问题的答案**
 
-有问题？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
+有问题？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
 
 **提供反馈或提出功能建议**
 

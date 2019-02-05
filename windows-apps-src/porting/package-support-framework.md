@@ -6,12 +6,12 @@ ms.date: 07/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b0ed1c7f01e8cb06f6950f2ad23a42605e97c1a0
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 80f9c8bad9445bd9cfef9b09c00f99929fda37aa
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050730"
+ms.locfileid: "9058658"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>使用包支持框架到 MSIX 程序包应用运行时修复
 
@@ -86,7 +86,7 @@ PSF 包含你可以使用，例如文件重定向修正的运行时修补程序�
 
 ### <a name="create-the-package-layout-folder"></a>创建程序包布局文件夹
 
-如果你已经有一个.msix （或.appx） 文件，可以将其内容解包到布局文件夹将用作你的程序包暂存区域。 你可以执行此操作从命令提示符使用 makemsix 工具，具体取决于 SDK 的安装路径，这是你将 Windows 10 电脑上找到 makeappx.exe 工具： x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makeappx.exe x64: C:\Program Files (x86) \Windows Kits\10\bin\x64\makeappx.exe
+如果你已经有一个.msix （或.appx） 文件，可以将其内容解包到布局文件夹将用作你的程序包暂存区域。 你可以执行此操作从命令提示符使用 MakeAppx 工具，具体取决于 SDK 的安装路径，这是你将 Windows 10 电脑上找到 makeappx.exe 工具： x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makeappx.exe x64: C:\Program Files (x86) \Windows Kits\10\bin\x64\makeappx.exe
 
 ```ps
 makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -514,7 +514,7 @@ if (auto configRoot = ::FixupQueryCurrentDllConfig())
 
 首先，F5 调试运行应用程序通过部署松散文件从包布局文件夹路径，而不是从.msix 安装 /.appx 程序包。  布局文件夹通常不具有相同的安全限制为已安装的包文件夹。 因此，它可能无法重现之前应用运行时修复程序包路径访问拒绝错误。
 
-若要解决此问题，请使用.msix /.appx 程序包部署，而不是 F5 松散文件部署。  若要创建.msix /.appx 包文件，使用 Windows SDK 中，从[MakeMSIX](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)实用程序，如前文所述。 或者，从 Visual Studio 中，右键单击你的应用程序项目节点并选择**应用商店**->**创建应用包**。
+若要解决此问题，请使用.msix /.appx 程序包部署，而不是 F5 松散文件部署。  若要创建.msix /.appx 包文件，如前文所述使用[MakeAppx](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)实用程序从 Windows SDK。 或者，从 Visual Studio 中，右键单击你的应用程序项目节点并选择**应用商店**->**创建应用包**。
 
 使用 Visual Studio 的另一个问题是它不具有用于将附加到调试程序启动任何子进程的内置支持。   这使得更难进行调试的目标应用程序，必须手动连接由 Visual Studio 启动后启动路径中的逻辑。
 

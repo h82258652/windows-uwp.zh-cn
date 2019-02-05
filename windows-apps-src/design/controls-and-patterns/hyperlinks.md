@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 13a22c33f3c975e5c1e797f52d7c4e81ea008b61
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 9aa5053d83518c61335807874cd0d31943a60695
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036979"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058598"
 ---
 # <a name="hyperlinks"></a>超链接
 
@@ -158,7 +158,7 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 **内容**
 
-超链接对可能存在于其 [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) 集合中的内容具有限制。 具体来说，超链接仅允许 [Run](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx) 和非另一个超链接的其他 [Span]() 类型。 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) 不可在超链接的内联集合中。 尝试添加受限制的内容会引发无效参数异常或 XAML 分析异常。
+超链接对可能存在于其 [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) 集合中的内容具有限制。 具体来说，超链接仅允许 [Run](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx) 和非另一个超链接的其他 [Span](/uwp/api/windows.ui.xaml.documents.span) 类型。 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) 不可在超链接的内联集合中。 尝试添加受限制的内容会引发无效参数异常或 XAML 分析异常。
 
 **超链接和主题/样式行为**
 

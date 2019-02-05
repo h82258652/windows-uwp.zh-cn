@@ -5,16 +5,16 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 投放广告, 广告中介
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f4041c21665bd77856b15b7e94e45d613d6ea51
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9197dd4b62df26ff63e469063573789da948c767
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945749"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049814"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Microsoft 广告中介服务
 
-当你使用 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp) [在应用中显示广告](display-ads-in-your-app.md)时，可以选择使用 Microsoft 广告中介服务来最大程度地增加广告收益。 本文概要介绍广告中介服务及其目标。
+当你使用 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp) [在应用中显示广告](display-ads-in-your-app.md)时，可以选择使用 Microsoft 广告中介服务来最大程度地增加广告收益。 本文概要介绍广告中介服务及其目标。
 
 广告中介服务是 [Microsoft 广告盈利平台](https://developer.microsoft.com/windows/ad-monetization-platform)的一部分。 该平台由以下部分组成。
 
@@ -28,7 +28,7 @@ ms.locfileid: "8945749"
 
 ## <a name="manage-complexity-of-ad-network-relationships"></a>管理广告网络关系的复杂性  
 
-广告中介服务与大量广告网络集成，你无需进行此项工作。 使用 Microsoft 广告 SDK 在应用中显示广告后，你可以修改你的广告中介设置[合作伙伴中心中](../publish/in-app-ads.md#mediation-settings)以显示来自多个广告网络的广告。 无需对代码进行任何更改，便可以收到来自新广告网络的广告。
+广告中介服务与大量广告网络集成，你无需进行此项工作。 使用 Microsoft 广告 SDK 在应用中显示广告后，你可以修改广告中介设置[合作伙伴中心中](../publish/in-app-ads.md#mediation-settings)以显示来自多个广告网络的广告。 无需对代码进行任何更改，便可以收到来自新广告网络的广告。
 
 我们代表你管理与广告网络的端到端关系。 从网络集成到投放广告、报告和付款，所有工作都由我们来处理，你无需进行任何操作。
 
@@ -55,6 +55,6 @@ ms.locfileid: "8945749"
 
 ## <a name="related-topics"></a>相关主题
 
-* [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp)
+* [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)
 * [中介设置](../publish/in-app-ads.md#mediation-settings)
 * [广告性能报告](../publish/advertising-performance-report.md)

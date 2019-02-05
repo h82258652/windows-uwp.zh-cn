@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b109dff2896d2db01892d2b62a511d392f8054b3
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 692b8837f3bd74dfc5f74bee02786213c9a898f2
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037159"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058518"
 ---
 # <a name="text-block"></a>文本块
 
@@ -80,7 +80,7 @@ textBlock1.Text = "Hello, world!";
     <Italic>italic</Italic>, or a <Bold><Italic>combination</Italic></Bold>.</TextBlock>
 ```
 
-派生自 Inline 类的元素（例如 Bold、Italic、Run、Span 和 LineBreak）支持用于不同文本部分的不同格式。 有关详细信息，请参阅[设置文本格式]()部分。 你可以使用内联 Hyperlink 元素向文本添加超链接。 但是，使用 Inlines 还会禁用快速路径文本呈现，该主题将在下一节中讨论。
+派生自 Inline 类的元素（例如 Bold、Italic、Run、Span 和 LineBreak）支持用于不同文本部分的不同格式。 有关详细信息，请参阅[设置文本格式](#formatting-text)部分。 你可以使用内联 Hyperlink 元素向文本添加超链接。 但是，使用 Inlines 还会禁用快速路径文本呈现，该主题将在下一节中讨论。
 
 
 ## <a name="performance-considerations"></a>性能注意事项

@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2101eba9c78c87339af5f1bd46e6afc81eacf6af
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: d4b9e82b0ab5e798bb0b29c4d5127cfe773db5f7
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047422"
+ms.locfileid: "9058648"
 ---
 # <a name="create-custom-transport-controls"></a>创建自定义传输控件
 
@@ -57,7 +57,7 @@ MediaPlayerElement 具有可自定义的 XAML 传输控件来管理通用 Window
 - 第三部分包含将各种 MediaTransportControls 元素保留在一起并定义组件布局方式的 [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)。
 
 > [!NOTE]
-> 有关修改模板的详细信息，请参阅 [控制模板]()。 可以在 IDE 中使用文本编辑器或类似编辑器打开 \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic 中的 XAML 文件。 每个控件的默认样式和模板都在 **generic.xaml** 文件中定义。 你可以通过搜索“MediaTransportControls”找到 generic.xaml 中的 MediaTransportControls 模板。
+> 有关修改模板的详细信息，请参阅 [控制模板](/windows/uwp/design/controls-and-patterns/control-templates)。 可以在 IDE 中使用文本编辑器或类似编辑器打开 \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic 中的 XAML 文件。 每个控件的默认样式和模板都在 **generic.xaml** 文件中定义。 你可以通过搜索“MediaTransportControls”找到 generic.xaml 中的 MediaTransportControls 模板。
 
 在以下部分中，你将了解如何自定义传输控件的几个主要元素：
 - [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx)：允许用户在其媒体上进行推移，同时显示相关进度
@@ -91,7 +91,7 @@ MediaPlayerElement 具有可自定义的 XAML 传输控件来管理通用 Window
 </MediaPlayerElement>
 ```
 
-有关修改样式和模板的详细信息，请参阅[样式控件]()和[控件模板]()。
+有关修改样式和模板的详细信息，请参阅[样式控件](/windows/uwp/design/controls-and-patterns/xaml-styles)和[控件模板](/windows/uwp/design/controls-and-patterns/control-templates)。
 
 ### <a name="create-a-derived-control"></a>创建派生控件
 

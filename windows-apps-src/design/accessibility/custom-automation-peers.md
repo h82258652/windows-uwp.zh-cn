@@ -1,19 +1,19 @@
 ---
 Description: Describes the concept of automation peers for Microsoft UI Automation, and how you can provide automation support for your own custom UI class.
 ms.assetid: AA8DA53B-FE6E-40AC-9F0A-CB09637C87B4
-title: 自定义自动化对等
+title: 自定义的自动化对等
 label: Custom automation peers
 template: detail.hbs
 ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 18d3affe5f142c56314d132ba488d87c6f285723
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 13bf5d60b547f71d0cd83e5790236534d05d2544
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920131"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050530"
 ---
 # <a name="custom-automation-peers"></a>自定义自动化对等  
 
@@ -318,7 +318,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 
 一个对等可以报告它支持多个模式。 如果是这样，该替代应当包括每个受支持的 [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) 值的返回路径逻辑，而且应当在每个匹配情况下返回相应的对等。 预期结果是，调用方一次仅请求一个接口，而且由调用方负责转换为预期的接口。
 
-下面是自定义对等的 [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) 替代示例。 它报告它支持两个模式：[**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) 和 [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653)。 此处的控件是一个媒体显示控件，它可以显示为全屏（切换模式），而且具有一个进度条（范围控件），用户可以在该进度条中选择位置。 此代码源自 [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)。
+下面是自定义对等的 [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) 替代示例。 它报告它支持两个模式：[**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) 和 [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653)。 此处的控件是一个媒体显示控件，它可以显示为全屏（切换模式），而且具有一个进度条（范围控件），用户可以在该进度条中选择位置。 此代码源自 [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570)。
 
 
 ```csharp
@@ -538,7 +538,7 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 
 ## <a name="related-topics"></a>相关主题  
 * [辅助功能](accessibility.md)
-* [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472)
 * [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185)
 * [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer)

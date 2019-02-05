@@ -6,18 +6,18 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
 ms.localizationpriority: medium
-ms.openlocfilehash: 3791887baaefeca0052a10c60d4650d5623ba3fd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e3d0a17bbb46cf2b855749f7349f86268b915ec6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947252"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050550"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-15063"></a>面向开发人员的 Windows 10 版本 15063 中的新增功能
 
-Windows 10 版本 15063（又称创意者更新或版本 1703）与 Visual Studio 2017 和更新的 SDK 相结合，为打造卓越的通用 Windows 平台应用提供了丰富的工具、功能和体验。 只需在 Windows10 上[安装工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+Windows 10 版本 15063（又称创意者更新或版本 1703）与 Visual Studio 2017 和更新的 SDK 相结合，为打造卓越的通用 Windows 平台应用提供了丰富的工具、功能和体验。 只需在 Windows10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
-这是一系列开发人员感兴趣的新增和改进功能。 有关添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 版本 15063 API 更改](windows-10-build-15063-api-diff.md)。 有关 Windows 10 突出功能的详细信息，请参阅 [Windows 10 中的酷炫功能](http://go.microsoft.com/fwlink/?LinkId=823181)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的详尽概述。
+这是一系列开发人员感兴趣的新增和改进功能。 有关添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 版本 15063 API 更改](windows-10-build-15063-api-diff.md)。 有关 Windows 10 突出功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的详尽概述。
 
 ## <a name="windows-10-build-15063---march-2017"></a>Windows 10 版本 15063 - 2017 年 3 月
 

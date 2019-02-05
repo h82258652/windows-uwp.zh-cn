@@ -13,12 +13,12 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 93aee51ae558009827f755f759c4bb587564d1cd
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 194e8578244fee72d0f122ee96caaf22bf2b8807
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036879"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058688"
 ---
 # <a name="menus-and-context-menus"></a>菜单和上下文菜单
 
@@ -32,7 +32,7 @@ ms.locfileid: "9036879"
 
 | **平台 Api** | **Windows UI 库 Api** |
 | - | - |
-| [MenuFlyout 类](/uwp/api/windows.ui.xaml.controls.menuflyout)，[菜单栏类](/uwp/api/windows.ui.xaml.controls.menubar)， [ContextFlyout 属性](/uwp/api/windows.ui.xaml.uielement.contextflyout)， [FlyoutBase.AttachedFlyout 属性](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) | [菜单栏类](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| [MenuFlyout 类](/uwp/api/windows.ui.xaml.controls.menuflyout)，[菜单栏类](/uwp/api/windows.ui.xaml.controls.menubar)， [ContextFlyout 属性](/uwp/api/windows.ui.xaml.uielement.contextflyout)， [FlyoutBase.AttachedFlyout 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) | [菜单栏类](/uwp/api/microsoft.ui.xaml.controls.menubar) |
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 

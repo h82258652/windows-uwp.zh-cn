@@ -11,12 +11,12 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5dc12e9b85b7274c9e1deb7d629917cbeaa981c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 77e39b9c7440fab491b3d7ef85baa757d299fff8
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942360"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058538"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>UWP 应用中的凝视交互和目视跟踪
 
@@ -36,7 +36,7 @@ ms.locfileid: "8942360"
 此外，凝视输入还为游戏（包括目标获取和跟踪）和传统的生产力应用程序、展台及其他交互式场景提供同样具有吸引力的机会，如传统输入设备（键盘、鼠标和触控）不可用或可能对释放用户双手以执行其他任务（如提购物袋）非常有用/有帮助的情况。
 
 > [!NOTE]
-> **Windows 10 Fall Creators Update** 以及[目视控制](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control)中引入了对目视跟踪硬件的支持，这是一项内置功能，让你可以使用眼睛控制屏幕指针，使用屏幕键盘键入，并使用文本到语音转换与其他人交流。 一组用于生成可与目视跟踪硬件（通过 **Windows 10 2018 年 4 月更新(版本 1803，内部版本 17134)** 和更高版本提供）交互的应用程序的 [UWP API]([Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview))。
+> **Windows 10 Fall Creators Update** 以及[目视控制](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control)中引入了对目视跟踪硬件的支持，这是一项内置功能，让你可以使用眼睛控制屏幕指针，使用屏幕键盘键入，并使用文本到语音转换与其他人交流。 一组用于生成可与目视跟踪硬件交互的应用程序的 UWP Api ([Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) 是适用于**Windows 10 2018 年 4 月更新 (版本 1803，内部版本 17134)** 和更高版本。
 
 ## <a name="privacy"></a>隐私
 

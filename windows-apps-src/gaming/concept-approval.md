@@ -6,12 +6,12 @@ ms.date: 06/23/2017
 ms.topic: article
 keywords: windows 10, uwp, 概念审批
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e4ecdbb77e1e3df10963a59dff38d4ecf215126
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 289da691766e0f2f78bd40aff2ac294ac6852463
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927242"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050450"
 ---
 # <a name="concept-approval"></a>概念审批
 
@@ -19,13 +19,13 @@ ms.locfileid: "8927242"
 
 ## <a name="who-needs-concept-approval"></a>谁需要概念审批？
 
-仅当你通过 [ID@Xbox](http://www.xbox.com/Developers/id) 或作为托管合作伙伴将游戏发布到 Xbox 时，才需要完成此过程。 如果你加入 [Xbox Live 创意者计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)，并制作以后可自行发布到 Xbox 的通用 Windows 平台 (UWP) 游戏，则无需完成此过程。 但是，通过该计划制作的游戏将在应用商店的单独部分中予以特别推荐。 如果你希望你的游戏与大型 AAA 游戏一起被特别推荐，或者你想使用 Xbox 开发套件 (XDK) 创建更加精彩的游戏，则将需要完成概念审批过程。
+仅当你通过 [ID@Xbox](https://www.xbox.com/Developers/id) 或作为托管合作伙伴将游戏发布到 Xbox 时，才需要完成此过程。 如果你加入 [Xbox Live 创意者计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)，并制作以后可自行发布到 Xbox 的通用 Windows 平台 (UWP) 游戏，则无需完成此过程。 但是，通过该计划制作的游戏将在应用商店的单独部分中予以特别推荐。 如果你希望你的游戏与大型 AAA 游戏一起被特别推荐，或者你想使用 Xbox 开发套件 (XDK) 创建更加精彩的游戏，则将需要完成概念审批过程。
 
-如果你要开发适用于 Windows 桌面或移动设备的 UWP 游戏（或者你要发布的 UWP 应用*不*是一款面向任何设备的游戏），则你也不需要概念审批。 你只需要是[开发者帐户](https://go.microsoft.com/fwlink/?LinkId=817223)，并且你可以自由配置应用并向通过合作伙伴中心的应用商店提交应用。
+如果你要开发适用于 Windows 桌面或移动设备的 UWP 游戏（或者你要发布的 UWP 应用*不*是一款面向任何设备的游戏），则你也不需要概念审批。 你只需要是[开发人员帐户](https://go.microsoft.com/fwlink/?LinkId=817223)，并且你可以自由配置应用并向通过合作伙伴中心的应用商店提交应用。
 
 ## <a name="submit-your-concept-for-approval"></a>提交概念以供审批
 
-如果你是一名独立的游戏开发人员或发布者，可通过 ID@Xbox 程序提交你的概念以供审批。 了解有关 ID@Xbox 的详细信息，并在[此处](http://www.xbox.com/Developers/id)。
+如果你是一名独立的游戏开发人员或发布者，可通过 ID@Xbox 程序提交你的概念以供审批。 了解有关 ID@Xbox 的详细信息，并在[此处](https://www.xbox.com/Developers/id)。
 
 如果你已经是 ID@Xbox 开发人员，你应该已收到一个指向游戏信息表 (GIF) 的链接，可在其中提交你的游戏概念。 如有问题，请联系 [id@xbox.com](mailto:id@xbox.com)。
 

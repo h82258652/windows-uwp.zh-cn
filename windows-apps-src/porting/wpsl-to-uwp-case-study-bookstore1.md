@@ -1,22 +1,22 @@
 ---
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
-description: 本主题介绍了一个非常简单 WindowsPhone Silverlight 应用移植到 windows 10 通用 Windows 平台 (UWP) 应用的案例研究。
+description: 本主题介绍了移植非常简单的 WindowsPhone Silverlight 应用到 windows 10 通用 Windows 平台 (UWP) 应用的案例研究。
 title: WindowsPhone silverlight 移植到 UWP 案例研究： Bookstore1
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 19045e84f1ca3396321dd4f8c4e76da24dc9a588
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2b9f8de488ad0baea1de9aea5c911f2519385d25
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935911"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049564"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>WindowsPhone silverlight 移植到 UWP 案例研究： Bookstore1
 
 
-本主题介绍了移植非常简单的 WindowsPhone Silverlight 应用到 Windows10Universal Windows 平台 (UWP) 应用的案例研究。 借助 windows 10，你可以创建的单个应用包，可供客户安装到种类广泛的设备，并且我们将在此案例研究中执行的操作。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+本主题介绍了移植非常简单的 WindowsPhone Silverlight 应用到 Windows10Universal Windows 平台 (UWP) 应用的案例研究。 借助 windows 10 中，你可以创建的单个应用包的可供客户安装到种类广泛的设备，并且我们将在此案例研究中执行的操作。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
 我们将移植的应用包含绑定到视图模型的 **ListBox**。 该视图模型具有显示标题、作者和书籍封面的书籍列表。 书籍封面已将**生成操作**设置为**内容**，并将**复制到输出目录**设置为**不要复制**。
 
@@ -26,9 +26,9 @@ ms.locfileid: "8935911"
 
 ## <a name="downloads"></a>下载
 
-[下载 Bookstore1WPSL8 WindowsPhone Silverlight 应用](http://go.microsoft.com/fwlink/?linkid=517053)。
+[下载 Bookstore1WPSL8 WindowsPhone Silverlight 应用](https://go.microsoft.com/fwlink/?linkid=517053)。
 
-[下载 Bookstore1Universal\_10 windows 10 应用](http://go.microsoft.com/fwlink/?linkid=532950)。
+[下载 Bookstore1Universal\_10 windows 10 应用](https://go.microsoft.com/fwlink/?linkid=532950)。
 
 ## <a name="the-windowsphone-silverlight-app"></a>WindowsPhone Silverlight 应用
 
@@ -44,7 +44,7 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 -   复制包含视图模型源文件的文件夹（该文件夹是 \\ViewModel）。
 -   复制 MainPage.xaml 并替换目标位置中的文件。
 
-我们可以保留的 App.xaml 和 App.xaml.cs Visual Studio 生成为我们在 windows 10 项目中。
+我们可以保留的 App.xaml 和 App.xaml.cs 中的 Visual Studio 生成为我们在 windows 10 项目中。
 
 编辑你刚刚复制的源代码和标记文件，并将对 Bookstore1WPSL8 命名空间的任何引用更改为 Bookstore1Universal\_10。 执行此操作的快速方法是使用**在文件中替换**功能。 在视图模型源文件的强制性代码中，需要进行以下移植更改：
 
@@ -76,9 +76,9 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 
 ## <a name="paying-off-the-debt-items-and-some-initial-styling"></a>支付债务项和一些初始样式设置
 
-默认情况下，支持所有方向。 WindowsPhone Silverlight 应用将自身明确约束为仅纵向，因此债务项 \#1 # 1 和 \#2 支付通过转到新项目中的应用包清单并选中**纵向**下**支持方向**。
+默认情况下，支持所有方向。 WindowsPhone Silverlight 应用将自身明确约束为仅纵向，因此债务项 \#1 # 1 和 \#2 支付通过转到应用包清单中的新项目并选中**纵向**下**支持方向**。
 
-对于此应用，项 \#3 不是债务，因为默认情况下会显示状态栏（以前称为系统托盘）。 对于项 \#4 和 \#5，我们需要找到与已在使用 WindowsPhone Silverlight 样式相对应的四个通用 Windows 平台 (UWP) **TextBlock**样式。 你可以在仿真器中运行 WindowsPhone Silverlight 应用并将其比较[文本](wpsl-to-uwp-porting-xaml-and-ui.md)部分中的图示并行。 通过执行此操作，以及查看 WindowsPhone Silverlight 系统样式的属性，我们可以生成此表。
+对于此应用，项 \#3 不是债务，因为默认情况下会显示状态栏（以前称为系统托盘）。 对于项 \#4 和 \#5，我们需要找到与已在使用 WindowsPhone Silverlight 样式相对应的四个通用 Windows 平台 (UWP) **TextBlock**样式。 你可以在仿真器中运行 WindowsPhone Silverlight 应用并将其进行比较[文本](wpsl-to-uwp-porting-xaml-and-ui.md)部分中的图示并行。 通过执行此操作，以及查看 WindowsPhone Silverlight 系统样式的属性，我们可以生成此表。
 
 | Windows Phone Silverlight 样式键 | UWP 样式键          |
 |-------------------------------------|------------------------|

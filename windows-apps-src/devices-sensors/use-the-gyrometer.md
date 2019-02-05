@@ -6,12 +6,12 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8257a8a0c6b8ca320adb04bfb64b0308a4cbefd3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 940f82e5e4cff30a2756c32c80d2f3ab02ae440a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930174"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050500"
 ---
 # <a name="use-the-gyrometer"></a>使用陀螺测试仪
 
@@ -31,7 +31,7 @@ ms.locfileid: "8930174"
 
 ## <a name="prerequisites"></a>先决条件
 
-你应熟悉 Extensible Application Markup Language (XAML)、 Microsoft VisualC # 和事件。
+你应熟悉 Extensible Application Markup Language (XAML)、 Microsoft VisualC #，和事件。
 
 你使用的设备或仿真器必须支持陀螺测试仪。
 
@@ -180,4 +180,4 @@ GyrometerReadingChangedEventArgs>(ReadingChanged);
 
  ## <a name="related-topics"></a>相关主题
 
-* [陀螺测试仪示例](http://go.microsoft.com/fwlink/p/?linkid=241379)
+* [陀螺测试仪示例](https://go.microsoft.com/fwlink/p/?linkid=241379)

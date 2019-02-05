@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b87ee76481492de0dfb23394e0aef7f017f3305
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8334a99fc27d96214a73d0ad01ec8ece791fd90f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935981"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049654"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>选择一种方法进行 iOS 和 UWP 应用开发
 
@@ -26,19 +26,19 @@ Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这�
 
 若从零开始，有许多选项可供你随意使用，其中包括：
 
--   [Xamarin](http://go.microsoft.com/fwlink/p/?LinkID=320484)
+-   [Xamarin](https://go.microsoft.com/fwlink/p/?LinkID=320484)
 
     借助 Xamarin，你可以使用 C# 编写应用、使其在 Windows 上运行，也可以创建本机 iOS 应用。 Visual Studio 中内置了对 Xamarin 的支持；只需选择正确的项目类型即可。
 
--   [Apache Cordova](http://go.microsoft.com/fwlink/p/?LinkID=400439)
+-   [Apache Cordova](https://go.microsoft.com/fwlink/p/?LinkID=400439)
 
     如果 Javascript 和 HTML 更适合你，Apache Cordova (aka PhoneGap) 将会帮助你创建适用于 iOS、Windows 和 Android 的跨平台应用。 Visual Studio 中也内置了此项目类型。
 
 -   游戏引擎
 
-    借助可供你支配的工具（如 [Unity3D](http://go.microsoft.com/fwlink/p/?LinkID=320479) 和 [Unreal Engine](http://go.microsoft.com/fwlink/p/?LinkID=394062)），你可以编写适用于 Windows 和包括 iOS 在内的许多其他平台的 AAA 级质量游戏。 Unity 支持 C# 脚本，而 Unreal 则使用 C++。
+    借助可供你支配的工具（如 [Unity3D](https://go.microsoft.com/fwlink/p/?LinkID=320479) 和 [Unreal Engine](https://go.microsoft.com/fwlink/p/?LinkID=394062)），你可以编写适用于 Windows 和包括 iOS 在内的许多其他平台的 AAA 级质量游戏。 Unity 支持 C# 脚本，而 Unreal 则使用 C++。
 
--   [MonoGame](http://go.microsoft.com/fwlink/p/?LinkID=320483)
+-   [MonoGame](https://go.microsoft.com/fwlink/p/?LinkID=320483)
 
     XNA 的精神继任者。 现在它是开源跨平台框架，这意味着你可以采用 C# 面向各种支持物理引擎以及 2D 与 3D 图形的平台编写应用。
 
@@ -54,13 +54,13 @@ Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这�
 
     如果你的核心业务逻辑采用 C++（而不是 OBJECTIVE-C 或 Swift）编写，通常在你的项目中仅需细微的改动就可以使用此代码。 然后可以使用 XAML 定义 UI（与其他的 Windows 应用一样），并在必要时调用 C++ 代码。
 
--   [在 Windows 上使用 ANGLE 运行 OpenGL ES](http://go.microsoft.com/fwlink/p/?linkid=618387)
+-   [在 Windows 上使用 ANGLE 运行 OpenGL ES](https://go.microsoft.com/fwlink/p/?linkid=618387)
 
     移植 OpenGL ES 2.0 项目的中间步骤是使用 ANGLE。 ANGLE 通过将 OpenGL ES API 调用平移到 DirectX 11 API 调用，允许你在 Windows 上运行 OpenGL ES 内容。
 
 ## <a name="other-cross-platform-authoring-tools"></a>其他跨平台创作工具
 
--   [GameSalad](http://go.microsoft.com/fwlink/p/?LinkID=320480)
+-   [GameSalad](https://go.microsoft.com/fwlink/p/?LinkID=320480)
 
     一个游戏创作环境。
 
@@ -68,31 +68,31 @@ Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这�
 
     一个游戏创作环境。
 
--   [Titanium Studio](http://go.microsoft.com/fwlink/p/?LinkID=320482)
+-   [Titanium Studio](https://go.microsoft.com/fwlink/p/?LinkID=320482)
 
     一个跨平台创作环境。
 
--   [Cocos2D-x](http://go.microsoft.com/fwlink/p/?LinkID=320485)
+-   [Cocos2D-x](https://go.microsoft.com/fwlink/p/?LinkID=320485)
 
     一个用于子画面处理和力学建模的跨平台代码库。
 
--   [Impact.js](http://go.microsoft.com/fwlink/p/?LinkID=320486)
+-   [Impact.js](https://go.microsoft.com/fwlink/p/?LinkID=320486)
 
     一个基于 HTML 的游戏库。
 
--   [Marmalade](http://go.microsoft.com/fwlink/p/?LinkID=320487)
+-   [Marmalade](https://go.microsoft.com/fwlink/p/?LinkID=320487)
 
     一个跨平台 SDK。
 
--   [OpenFL](http://go.microsoft.com/fwlink/p/?LinkID=320488)
+-   [OpenFL](https://go.microsoft.com/fwlink/p/?LinkID=320488)
 
     一个跨平台开发工具。
 
--   [GameMaker](http://go.microsoft.com/fwlink/p/?LinkID=320490)
+-   [GameMaker](https://go.microsoft.com/fwlink/p/?LinkID=320490)
 
     一个游戏专用的创作环境。
 
--   [PlayCanvas](http://go.microsoft.com/fwlink/p/?LinkID=394061)
+-   [PlayCanvas](https://go.microsoft.com/fwlink/p/?LinkID=394061)
 
     一个基于 HTML 的游戏开发工具。
 

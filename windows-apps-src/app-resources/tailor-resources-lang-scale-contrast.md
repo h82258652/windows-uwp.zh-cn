@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ab8dde9984ed0e4f7d99e7809361d928bebb718
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 82dd3d20aa39ea471618e7707d066c67a6547f9f
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045423"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058748"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>定制语言、比例、高对比度和其他限定符的资源
 
@@ -258,7 +258,7 @@ Windows 会根据其 DPI（每英寸点数）和设备的观看距离自动为�
 
 ## <a name="theme"></a>主题
 
-`theme` 限定符用于提供与默认应用模式设置最匹配的资源，或使用 [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application?branch=master.RequestedTheme) 的应用替代。
+`theme` 限定符用于提供与默认应用模式设置最匹配的资源，或使用 [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application.requestedtheme) 的应用替代。
 
 ## <a name="important-apis"></a>重要的 API
 

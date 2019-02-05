@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b14e413a5629dfb5447750e32c42c4efafef8fa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0ccb9447e9594f71907f0da5d0e15f9c6c65bb6b
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931444"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058838"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>方案 1：从字符串资源和资产文件生成 PRI 文件
 在此方案中，我们使用[包资源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690) 让新应用代表我们的自定义生成系统。 请记住，此自定义生成系统的目的是为目标 UWP 应用创建 PRI 文件。 因此，作为此演练的一部分，我们将创建一些示例资源文件（包含字符串和其他类型的资源）来代表该目标 UWP 应用的资源。
@@ -119,7 +119,7 @@ std::wstring filePathPRIDumpBasic{ generatedPRIsFolder + L"\\resources-pri-dump-
 ::CreateDirectory(generatedPRIsFolder.c_str(), nullptr);
 ```
 
-调用初始化 COM 后立即声明资源索引器图柄，然后调用 [**MrmCreateResourceIndexer**]() 以创建资源索引器。
+调用初始化 COM 后立即声明资源索引器图柄，然后调用 [**MrmCreateResourceIndexer**](/windows/desktop/menurc/mrmcreateresourceindexer) 以创建资源索引器。
 
 ```cppwinrt
 MrmResourceIndexerHandle indexer;
@@ -139,7 +139,7 @@ MrmResourceIndexerHandle indexer;
 - 默认资源限定符列表。
 - 指向资源索引器图柄的指针，以便函数可以对其进行设置。
 
-下一步是将资源添加到刚刚创建的资源索引器中。 `resources.resw` 是一个包含目标 UWP 应用中性字符串的资源文件 (.resw)。 如果想查看其内容，请向上滚动（在本主题中）。 `de-DE\resources.resw` 包含德语字符串，`en-US\resources.resw` 包含英语字符串。 若要将资源文件内的字符串资源添加到资源索引器，请调用 [**MrmIndexResourceContainerAutoQualifiers**]()。 第三步，向包含资源索引器中性图像资源的文件调用 [**MrmIndexFile**]() 函数。
+下一步是将资源添加到刚刚创建的资源索引器中。 `resources.resw` 是一个包含目标 UWP 应用中性字符串的资源文件 (.resw)。 如果想查看其内容，请向上滚动（在本主题中）。 `de-DE\resources.resw` 包含德语字符串，`en-US\resources.resw` 包含英语字符串。 若要将资源文件内的字符串资源添加到资源索引器，请调用 [**MrmIndexResourceContainerAutoQualifiers**](/windows/desktop/menurc/mrmindexresourcecontainerautoqualifiers)。 第三步，向包含资源索引器中性图像资源的文件调用 [**MrmIndexFile**](/windows/desktop/menurc/mrmindexfile) 函数。
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"resources.resw"));
@@ -150,19 +150,19 @@ MrmResourceIndexerHandle indexer;
 
 调用 **MrmIndexFile** 时，值 L"ms-resource:///Files/sample-image.png" 是资源 uri。 第一个路径段是“Files”，之后从这个资源索引器生成 PRI 文件时，它将用作资源映射子树名称。
 
-在简要介绍了有关资源文件的资源索引器之后，是时候让它通过调用 [**MrmCreateResourceFile**]() 函数在磁盘上生成 PRI 文件了。
+在简要介绍了有关资源文件的资源索引器之后，是时候让它通过调用 [**MrmCreateResourceFile**](/windows/desktop/menurc/mrmcreateresourcefile) 函数在磁盘上生成 PRI 文件了。
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmCreateResourceFile(indexer, MrmPackagingModeStandaloneFile, MrmPackagingOptionsNone, generatedPRIsFolder.c_str()));
 ```
 
-此时，在一个名为 `Generated PRIs` 的文件夹中已创建了名为 `resources.pri` 的 PRI 文件。 现在我们已经完成了资源索引器，调用 [**MrmDestroyIndexerAndMessages**]() 来破坏其图柄并释放其分配的任何计算机资源。
+此时，在一个名为 `Generated PRIs` 的文件夹中已创建了名为 `resources.pri` 的 PRI 文件。 现在我们已经完成了资源索引器，调用 [**MrmDestroyIndexerAndMessages**](/windows/desktop/menurc/mrmdestroyindexerandmessages) 来破坏其图柄并释放其分配的任何计算机资源。
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmDestroyIndexerAndMessages(indexer));
 ```
 
-由于 PRI 文件是二进制的，如果将二进制 PRI 文件转储为等效 XML，就更易于查看刚才生成的内容。 调用 [**MrmDumpPriFile**]() 即可实现该操作。
+由于 PRI 文件是二进制的，如果将二进制 PRI 文件转储为等效 XML，就更易于查看刚才生成的内容。 [**MrmDumpPriFile**](/windows/desktop/menurc/mrmdumpprifile)调用执行该。
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmDumpPriFile(filePathPRI.c_str(), nullptr, MrmDumpType::MrmDumpType_Basic, filePathPRIDumpBasic.c_str()));
