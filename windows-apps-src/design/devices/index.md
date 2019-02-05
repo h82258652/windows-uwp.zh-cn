@@ -8,12 +8,12 @@ keywords: 设备, 输入, 交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: de67a61b4d5982675d32e0446b67d7cf70051923
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 127c01321c0341e7125e8c6da955c789c4c65f2f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936362"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049904"
 ---
 #  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>通用 Windows 平台 (UWP) 应用的设备基础版
 
@@ -129,7 +129,7 @@ UI 注意事项
 
 手机是所有计算设备中最广泛使用的设备，它可以借助有限的屏幕空间和基本输入完成许多操作。 手机有多种尺寸可供选择；较大的手机称为平板手机。 平板手机上的应用体验类似于手机上的应用体验，但平板手机增加的屏幕空间支持在内容使用中进行某些关键更改。
 
-使用适用于兼容 windows 10 移动版设备，一种新体验的手机的 Continuum 用户可以将手机连接到监视器和甚至使用鼠标和键盘来使手机像笔记本电脑一样工作。 （有关详细信息，请参阅[适用于手机的 Continuum 文章](http://go.microsoft.com/fwlink/p/?LinkID=699431)。）
+使用适用于兼容 windows 10 移动版设备新体验的手机的 Continuum 用户可以将手机连接到监视器和甚至使用鼠标和键盘来使手机像笔记本电脑一样工作。 （有关详细信息，请参阅[适用于手机的 Continuum 文章](https://go.microsoft.com/fwlink/p/?LinkID=699431)。）
 
 屏幕尺寸
 -   4 英寸到 5 英寸（对于手机）

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ee38abfb28aad8d6a3ce073a947580b3df29593
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: df03c6f10f106868213fe812b2f303d7675c567b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942591"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050124"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
 
@@ -45,7 +45,7 @@ RAM
 
 若要查看 RAM 和操作系统的要求，请在“控制面板”中选择“系统和安全”****，然后选择“系统”****。
 
-适用于 Windows 10 移动版的 Microsoft 模拟器要求 Visual Studio 2015 或更高版本;它不与早期版本的 Visual Studio 反向兼容。
+适用于 Windows 10 移动版的 Microsoft 模拟器要求 Visual Studio 2015 或更高版本;它不与早期版本的 Visual Studio 的向后兼容。
 
 适用于 Windows 10 移动版的 Microsoft 模拟器无法加载面向 Windows Phone OS 7.1 之前的 Windows Phone 操作系统版本的应用。
 
@@ -64,7 +64,7 @@ RAM
 
 ### <a name="running"></a>Running
 
-若要在仿真器中运行应用，只需从 Visual Studio 中的**运行**下拉菜单中选择一个模拟的设备。
+若要在仿真器中运行应用，只需从 Visual Studio 中的**运行**下拉菜单中选择仿真的设备。
 
 ![提供模拟器以及分辨率、大小和内存](images/em-list.png)
 
@@ -177,7 +177,7 @@ ESC | WIN + ESC | BACK | 长按可实现预期效果。
 -   右上角部分会列出日志。 当你将一对设备触碰到一起（或触碰到 POS 终端）时，将记录触碰事件，而当设备取消触碰时，将记录取消触碰事件。 此部分还记录你的应用是否在连接中断前响应或记录你在模拟器 UI 中执行的任何其他操作，并带有时间戳。 日志在模式切换后仍然保留，并且你可以随时通过点击“日志”**** 屏幕上方的“清除”**** 按钮清除日志。
 -   屏幕的下半部分是消息日志，显示通过当前选择的连接发送或接收的所有消息的报道，具体取决于所选择的模式。
 
-> **重要提示**当你首次启动触碰器工具时，你将收到一个 Windows 防火墙提示。 你必须选中全部 3 个复选框，并允许该工具通过防火墙，否则该工作将在无提示的情况下无法运行。
+> **重要提示**当你首次启动触碰器工具时，你会收到一个 Windows 防火墙提示。 你必须选中全部 3 个复选框，并允许该工具通过防火墙，否则该工作将在无提示的情况下无法运行。
 
 在启动快速启动安装程序后，请确保按照上述说明选中防火墙提示上的全部 3 个复选框。 此外，必须安装触碰器工具，并且在与 Microsoft 模拟器相同的物理主机上使用它。
 
@@ -237,7 +237,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 -   选中脚本编辑器窗口下的“启用 MasterCard”**** 侦听器复选框，然后从 MasterCard 启动模拟器。
 -   使用此工具，你可以生成通过 NFC 工具中继到在模拟器上运行的应用程序的命令。
 
-若要了解有关 HCE 支持以及在 Windows 10 移动版中如何开发 HCE 应用的详细信息，请参考 [Microsoft NFC 团队博客](http://go.microsoft.com/fwlink/?LinkId=534749)。
+若要了解有关 HCE 支持以及在 Windows 10 移动版中如何开发 HCE 应用的详细信息，请参考 [Microsoft NFC 团队博客](https://go.microsoft.com/fwlink/?LinkId=534749)。
 
 ### <a name="how-to-create-scripts-for-hce-testing"></a>如何创建用于 HCE 测试的脚本
 
@@ -452,7 +452,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
         -   如果你在同步操作正在进行时单击“取消同步”****，将弹出该卡，并且同步操作的结果会不完整。
     -   “弹出 SD 卡”**** 按钮将更改回“插入 SD 卡”****。
 
-> **注意**由于的 SD 卡手机使用格式化为 FAT32 文件系统，32 GB 的最大大小。
+> **注意**使用 FAT32 文件系统格式化由于使用 SD 卡手机，32 GB 的最大大小。
 
 读取和写入模拟 SD 卡的速度受到限制以模仿真实速度。 访问 SD 卡的速度慢于访问计算机的硬盘驱动器的速度。
 
@@ -621,7 +621,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 ### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>错误消息：“删除虚拟以太网交换机时失败”
 
-在某些情况下，包括后更新到新 windows 10 外部测试版，与模拟器相关联的虚拟网络交换机可以进入其中不能通过用户界面删除的状态。
+在某些情况下，包括后更新到新的 windows 10 外部测试，与模拟器相关联的虚拟网络交换机可以进入其中不能通过用户界面删除的状态。
 
 若要在此情况下恢复，请在管理员命令提示符下运行“netcfg -d”：`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`。 当命令结束运行时，需要重新启动计算机才能完成恢复过程。
 
@@ -631,7 +631,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 Microsoft 模拟器包括 XDECleanup.exe，此工具用于删除所有虚拟机、diff 磁盘和特定于模拟器的网络交换机，它已随附于模拟器 (XDE) 二进制文件。 如果仿真器虚拟机进入错误状态，你应使用此工具将其清理。 从管理员命令提示符运行该工具：`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
 
-> **注意**XDECleanup.exe 删除所有仿真器特定的 HYPER-V Vm，并且它还将都删除任何 VM 检查点或已保存的状态。
+> **注意**XDECleanup.exe 删除所有仿真程序特定的 HYPER-V Vm，并且它还将删除任何 VM 检查点或已保存的状态。
 
 ### <a name="uninstall-windows-10-for-mobile-image"></a>卸载 Windows 10 移动版映像
 
@@ -656,7 +656,7 @@ Microsoft 模拟器包括 XDECleanup.exe，此工具用于删除所有虚拟机�
 
 ## <a name="support-resources"></a>支持资源
 
-若要在开始使用 Windows 10 工具时查找答案并解决问题，请访问 [Windows 10 工具论坛](http://go.microsoft.com/fwlink/?LinkId=534765)。 若要查看 Windows 10 开发的所有论坛，请访问[此链接](http://go.microsoft.com/fwlink/?LinkId=535000)。
+若要在开始使用 Windows 10 工具时查找答案并解决问题，请访问 [Windows 10 工具论坛](https://go.microsoft.com/fwlink/?LinkId=534765)。 若要查看 Windows 10 开发的所有论坛，请访问[此链接](https://go.microsoft.com/fwlink/?LinkId=535000)。
 
 ## <a name="related-topics"></a>相关主题
 

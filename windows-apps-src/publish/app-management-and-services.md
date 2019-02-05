@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cd6f6a6fb638069dba58c62eca91b74868816d2a
-ms.sourcegitcommit: 0373a2021c1b7144f28b08778d6a3b3dc64aa10c
+ms.openlocfilehash: d6261a7cce86c82b4865d7ca1d68c082cba9ccca
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "8997392"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049474"
 ---
 # <a name="app-management-and-services"></a>应用管理和服务
 
@@ -25,7 +25,7 @@ ms.locfileid: "8997392"
 
 ## <a name="xbox-live"></a>Xbox Live
 
-如果你要发布游戏，你可以启用此页面上的[Xbox Live 创意者计划](http://xbox.com/developers/creators-program)。 这允许你启动配置和测试 Xbox Live 功能，并最终发布你的 Xbox Live 创意者计划游戏。
+如果你要发布游戏，你可以启用此页面上的[Xbox Live 创意者计划](https://xbox.com/developers/creators-program)。 这允许你启动配置和测试 Xbox Live 功能，并最终发布你的 Xbox Live 创意者计划游戏。
 
 有关详细信息，请参阅[开始使用 Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)和[创建新的 Xbox Live 创意者计划主题作品并发布到测试环境](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)。
 
@@ -37,9 +37,9 @@ ms.locfileid: "8997392"
 
 ## <a name="maps"></a>地图
 
-若要在面向 Windows 10 或 Windows 8.x 的应用中使用地图服务，请访问[必应地图开发人员中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 有关如何从必应地图开发人员中心中请求地图验证密钥并将其添加到你的应用的信息，请参阅有关详细信息的[请求地图验证密钥](../maps-and-location/authentication-key.md)。 
+若要在面向 Windows 10 或 Windows 8.x 的应用中使用地图服务，请访问[必应地图开发人员中心](https://go.microsoft.com/fwlink/p/?LinkId=614880)。 有关如何从必应地图开发人员中心中请求地图验证密钥并将其添加到你的应用的信息，请参阅有关详细信息的[请求地图验证密钥](../maps-and-location/authentication-key.md)。 
 
-仅对以前发布的应用适用于 Windows Phone 8.1 及更早版本中使用**地图**页面。 若要在这些应用中使用地图服务，你将需要请求地图服务应用程序 ID 和令牌包含在你的应用的代码。 当你单击**获取令牌**时，我们将生成地图服务应用程序 ID (**ApplicationID**) 和地图服务身份验证令牌 (**AuthenticationToken**) 为你的应用。 请务必将这些值添加到你的代码之前你程序包并提交你的应用。 有关详细信息，请参阅[如何将地图控件添加某一页面 (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882)。
+仅对以前发布的应用适用于 Windows Phone 8.1 及更早版本中使用**地图**页面。 若要在这些应用中使用地图服务，你将需要请求地图服务应用程序 ID 和令牌包含在你的应用的代码。 当你单击**获取令牌**时，我们将生成地图服务应用程序 ID (**ApplicationID**) 和地图服务身份验证令牌 (**AuthenticationToken**) 为你的应用。 请务必将这些值添加到你的代码之前你程序包并提交你的应用。 有关详细信息，请参阅[如何将地图控件添加某一页面 (Windows Phone 8.1)](https://go.microsoft.com/fwlink/p/?LinkId=614882)。
 
 ## <a name="product-collections-and-purchases"></a>产品收集和购买
 
@@ -91,9 +91,9 @@ ms.locfileid: "8997392"
 
 -   可使用 **Windows 推送通知服务 (WNS)** 从自己的云服务中发送 Toast、磁贴、锁屏提醒和原始更新。 有关详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)。
 
--   你可以使用 **Microsoft Azure 移动应用**发送推送通知、验证和管理应用用户，以及将应用数据存储在云中。 有关详细信息，请参阅[“移动应用”文档](http://go.microsoft.com/fwlink/p/?LinkId=221116)。
+-   你可以使用 **Microsoft Azure 移动应用**发送推送通知、验证和管理应用用户，以及将应用数据存储在云中。 有关详细信息，请参阅[“移动应用”文档](https://go.microsoft.com/fwlink/p/?LinkId=221116)。
 
--   **Microsoft 推送通知服务 (MPNS)** 可以使用 Windows Phone 以前发布的.xap 程序包。 你可以在此处发送有限数量的未经验证的通知而不进行任何配置，不过为了避免节流限制，我们建议使用经过验证的通知。 如果你使用的 MPNS，你将需要证书上传到**WNS/MPNS**页面上提供的字段。 有关详细信息，请参阅[设置经过验证的 Web 服务以发送 Windows Phone 8 的推送通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
+-   **Microsoft 推送通知服务 (MPNS)** 可以使用 Windows Phone 以前发布的.xap 程序包。 你可以在此处发送有限数量的未经验证的通知而不进行任何配置，不过为了避免节流限制，我们建议使用经过验证的通知。 如果你使用的 MPNS，你将需要证书上传到**WNS/MPNS**页面上提供的字段。 有关详细信息，请参阅[设置经过验证的 Web 服务以发送 Windows Phone 8 的推送通知](https://go.microsoft.com/fwlink/p/?LinkId=528736)。
  
 
  

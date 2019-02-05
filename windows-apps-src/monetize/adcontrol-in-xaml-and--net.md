@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, uwp, 广告, AdControl, 广告控件, XAML, .net, 演练
 ms.localizationpriority: medium
-ms.openlocfilehash: 161718bb88d7588db345f3de26de2a955ca6620e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8784de7025a2e9efa8e9e02be14c94579730a1dd
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920405"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050184"
 ---
 # <a name="adcontrol-in-xaml-and-net"></a>XAML 和 .NET 中的 AdControl
 
@@ -19,11 +19,11 @@ ms.locfileid: "8920405"
 本演练介绍如何使用 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 类在适用于 Windows 10（使用 C# 实现）的通用 Windows 平台 (UWP) XAML 应用中显示横幅广告。
 
 > [!NOTE]
-> Microsoft 广告 SDK 还支持使用 C++ 实现的 XAML 应用。 有关完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
+> Microsoft 广告 SDK 还支持使用 C++ 实现的 XAML 应用。 有关完整示例项目，请参阅 [GitHub 上的广告示例](https://aka.ms/githubads)。
 
 ## <a name="prerequisites"></a>先决条件
 
-* 使用 Visual Studio 2015 或更高版本的 Visual Studio 安装 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp)。 有关安装说明，请参阅[此文章](install-the-microsoft-advertising-libraries.md)。
+* 使用 Visual Studio 2015 或更高版本的 Visual Studio 安装 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)。 有关安装说明，请参阅[此文章](install-the-microsoft-advertising-libraries.md)。
 
 ## <a name="integrate-a-banner-ad-into-your-app"></a>在应用中集成横幅广告
 
@@ -78,7 +78,7 @@ ms.locfileid: "8920405"
 5. 在**网格**标记中，为 **AdControl** 添加代码。 将 [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) 和 [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) 属性分配至[测试广告单元值](set-up-ad-units-in-your-app.md#test-ad-units)。 另外还要调整控件的**高度**和**宽度**，以使其适应[横幅广告支持的广告大小](supported-ad-sizes-for-banner-ads.md)。
 
     > [!NOTE]
-    > 每个 **AdControl** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为控件提供广告，每个广告单元都包含*单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 将应用发布到应用商店之前，必须[替换这些测试值的实时值](#release)从合作伙伴中心。
+    > 每个 **AdControl** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为控件提供广告，每个广告单元都包含*单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 将应用发布到应用商店之前，必须[替换这些测试值的实时值](#release)合作伙伴中心中。
 
     完整的**网格**标记应类似如下代码。
 
@@ -126,7 +126,7 @@ ms.locfileid: "8920405"
 
 2.  在合作伙伴中心中，转到[应用内广告](../publish/in-app-ads.md)页面并[创建一个广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。 对于广告单元类型，请指定**横幅**。 记下广告单元 ID 和应用程序 ID。
     > [!NOTE]
-    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 在合作伙伴中心中创建实时 UWP 广告单元时，广告单元的应用程序 ID 值始终与应用商店 ID 为你的应用 （示例应用商店 ID 值类似于 9NBLGGH4R315） 匹配。
+    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 在合作伙伴中心中创建实时 UWP 广告单元时，该广告单元的应用程序 ID 值始终与匹配 （示例应用商店 ID 值类似于 9NBLGGH4R315） 你应用的应用商店 ID。
 
 3. 你可以选择通过配置[中介设置](../publish/in-app-ads.md#mediation)部分（位于[应用内广告](../publish/in-app-ads.md)页面上）的设置为 **AdControl** 启用广告中介。 广告中介显示来自多个广告网络（包括其他付费广告网络，如 Taboola 和 Smaato）的广告及 Microsoft 应用促销活动的广告，从而使你能够最大化你的广告收益和应用促销能力。
 
@@ -134,7 +134,7 @@ ms.locfileid: "8920405"
 
 5.  [你的应用提交](../publish/app-submissions.md)到应用商店使用合作伙伴中心。
 
-6.  查看你在合作伙伴中心中的[广告性能报告](../publish/advertising-performance-report.md)。
+6.  查看[广告性能报告](../publish/advertising-performance-report.md)合作伙伴中心中。
 
 <span id="manage" />
 
@@ -149,5 +149,5 @@ ms.locfileid: "8920405"
 
 * [横幅广告指南](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
 * [XAML/C# 演练中的错误处理](error-handling-in-xamlc-walkthrough.md)。
-* [GitHub 上的广告示例](http://aka.ms/githubads)
+* [GitHub 上的广告示例](https://aka.ms/githubads)
 * [为应用设置广告单元](set-up-ad-units-in-your-app.md)

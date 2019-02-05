@@ -6,17 +6,17 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 114524294a5b77165167601c1479b6c3894bb29b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7e108d603a623e3b9e41d7ced3c0fafc80f006b8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937818"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050004"
 ---
 # <a name="view-app-identity-details"></a>查看应用标识的详细信息
 
 
-你可以查看与分配给你的应用的**应用标识**页上的 Microsoft Store 的唯一标识符相关的详细信息。 你还可以获取指向你的应用的应用商店的此页面上列出。
+你可以查看与分配给你的应用的**应用标识**页面上的 Microsoft Store 的唯一标识符相关的详细信息。 此外可以获取指向你的应用的应用商店的此页面上列出。
 
 若要找到此信息，请导航到其中一个应用，然后展开左侧导航菜单中的**应用管理**。 选中**应用标识**查看这些详细信息。
 
@@ -46,7 +46,7 @@ ms.locfileid: "8937818"
 
 可以共享应用的页面直接链接来帮助客户在应用商店中查找该应用。 此链接采用格式 **`https://www.microsoft.com/store/apps/<your app's Store ID>`**。 当客户单击此链接时，它将打开基于 Web 的应用一览页。 在 Windows 设备上，应用商店应用还将启动并显示应用一览。
 
-你的应用的**应用商店 ID** 也会在本部分中显示。 此应用商店 ID 可以用来[生成应用商店锁屏提醒](http://go.microsoft.com/fwlink/p/?LinkId=534236)或标识你的应用。
+你的应用的**应用商店 ID** 也会在本部分中显示。 此应用商店 ID 可以用来[生成应用商店锁屏提醒](https://go.microsoft.com/fwlink/p/?LinkId=534236)或标识你的应用。
 
 **应用商店协议链接**可直接链接到应用商店中你的应用，无需打开浏览器，例如可从应用内部链接至你的应用。 有关详细信息，请参阅[链接到你的应用](link-to-your-app.md)。
 

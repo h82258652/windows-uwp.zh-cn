@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, 已知问题, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 3df88af638886e6bbda9b2f2f2065809da319532
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 029d595c41301e62f74c9b08b633bb22bfb12786
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939375"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049175"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>有关应用内广告的已知问题和疑难解答
 
@@ -40,7 +40,7 @@ ms.locfileid: "8939375"
 
 你没有看到广告的原因有很多，其中包括网络错误。 其他原因可能包括：
 
-* 在合作伙伴中心中选择某个广告单元，且大小大于或小于应用代码中的**AdControl**的大小。
+* 在合作伙伴中心中选择某个广告单元，大小大于或小于应用代码中的**AdControl**的大小。
 
 * 在运行动态应用时，如果将[测试模式值](set-up-ad-units-in-your-app.md#test-ad-units)用于广告单元 ID，则广告不会显示。
 
@@ -48,7 +48,7 @@ ms.locfileid: "8939375"
 
 如果你可以在应用中看到测试广告，则代码有效，并且能够显示广告。 如果遇到问题，请联系[产品支持人员](https://developer.microsoft.com/en-us/windows/support)。 在该页面上，选择**联系我们**。
 
-你还可在[论坛](http://go.microsoft.com/fwlink/p/?LinkId=401266)发布问题。
+你还可在[论坛](https://go.microsoft.com/fwlink/p/?LinkId=401266)发布问题。
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>应用中显示的是测试广告而非实时广告
 
@@ -91,7 +91,7 @@ JavaScript/HTML 应用不得将元素放入 Z 顺序的保留 MAX-10 范围。 �
 
 ## <a name="more-information"></a>详细信息
 
-有关最新的已知问题和发布与 Microsoft 广告 SDK 相关的问题的详细信息，请访问[论坛](http://go.microsoft.com/fwlink/p/?LinkId=401266)。
+有关最新的已知问题和发布与 Microsoft 广告 SDK 相关的问题的详细信息，请访问[论坛](https://go.microsoft.com/fwlink/p/?LinkId=401266)。
 
  
 

@@ -6,17 +6,17 @@ ms.date: 10/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b40fd56a85be6dce441324a427790cda28f9d7ac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: db481fac1bdcb9e79762f52aee48574e987c4cbb
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929529"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048880"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>使用 Visual Studio 测试 Surface Hub 应用
 Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及测试通用 Windows 平台 \(UWP\) 应用（包括针对 Microsoft Surface Hub 生成的应用）的环境。 模拟器不使用相同的用户界面与 Surface Hub，但它可用于测试你的应用的外观和行为与 Surface Hub 的屏幕大小和分辨率。
 
-有关详细信息的模拟器工具一般情况下，请参阅[在模拟器中运行的 UWP 应用](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator)。
+有关详细信息的模拟器工具一般情况下，请参阅[在模拟器中的运行 UWP 应用](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator)。
 
 ## <a name="add-surface-hub-resolutions-to-the-simulator"></a>将 Surface Hub 分辨率添加到模拟器
 若要将 Surface Hub 分辨率添加到模拟器，请执行以下操作：
@@ -69,7 +69,7 @@ Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及
     ![Visual Studio 模拟器分辨率](images/vs-simulator-resolutions.png)
 
    > [!TIP]
-   > 更好地[打开平板电脑模式](http://windows.microsoft.com/windows-10/getstarted-like-a-tablet)模拟 Surface Hub 的体验。
+   > [打开平板电脑模式下](https://windows.microsoft.com/windows-10/getstarted-like-a-tablet)更好地模拟 Surface Hub 的体验。
 
 ## <a name="deploy-apps-to-a-surface-hub-device-from-visual-studio"></a>从 Visual Studio 将应用部署到 Surface Hub 设备
 手动将应用部署到 Surface Hub 是一个简单的过程。
@@ -85,7 +85,7 @@ Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及
    > [!NOTE]
    > 访问 Surface Hub 上的设置应用需要管理权限。
 
-2. 导航到**更新和安全 \ > 适用于开发人员**。
+2. 导航到**更新 & 安全 \> 适用于开发人员**。
 
 3. 选择“开发人员模式”**** 并接受警告提示。
 
@@ -93,7 +93,7 @@ Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及
 有关部署过程的详细信息一般情况下，请参阅[部署和调试 UWP 应用](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)。
 
    > [!NOTE]
-   > 此功能需要 Visual Studio 2015 更新 1 个或更高版本，但我们建议你使用最新的最新版本的 Visual Studio。 保持最新的 Visual Studio 实例将 gibe 你所有最新的开发和安全更新。
+   > 此功能需要 Visual Studio 2015 Update 1 个或更高版本，但我们建议你使用最新的最新版本的 Visual Studio。 保持最新的 Visual Studio 实例将 gibe 你所有最新的开发和安全更新。
 
 1. 导航到“开始调试”**** 按钮旁边的调试目标下拉列表，然后选择“远程计算机”****。
 
@@ -109,4 +109,4 @@ Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及
 3. 选择**开始调试 (F5)** 部署和调试你的应用在 Surface Hub 中，或按 Ctrl + F5 仅部署应用。
 
    > [!TIP]
-   > 如果 Surface Hub 显示欢迎屏幕，将其消除选择任意按钮。
+   > 如果 Surface Hub 显示欢迎屏幕，请选择任意按钮清除它。

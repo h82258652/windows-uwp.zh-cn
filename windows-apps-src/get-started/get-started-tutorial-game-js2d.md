@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: ae8daa6141eadaac699fc49b8ec4796f1dde5c91
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3527cae294f2268b2457b9fe9a6593cf1b539ee8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923811"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050144"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>用 JavaScript 创建 UWP 游戏
 
@@ -26,7 +26,7 @@ ms.locfileid: "8923811"
 
 应用发布到 Microsoft 应用商店意味着你可以将其共享 （或其出售 ！） 与数百万人，许多不同设备上。  
 
-为了将应用发布到 Microsoft Store，必须将其编写为 UWP （通用 Windows 平台） 应用。 不过，UWP 非常灵活，并且支持多种语言和框架。 为了证明这一点，以下示例为用 JavaScript 编写并且使用了多个 CreateJS 库的简单游戏，它展示了如何绘制子画面、创建游戏循环、支持键盘和鼠标以及适用于不同的屏幕尺寸。
+若要将应用发布到 Microsoft Store，必须将其编写为 UWP （通用 Windows 平台） 应用。 不过，UWP 非常灵活，并且支持多种语言和框架。 为了证明这一点，以下示例为用 JavaScript 编写并且使用了多个 CreateJS 库的简单游戏，它展示了如何绘制子画面、创建游戏循环、支持键盘和鼠标以及适用于不同的屏幕尺寸。
 
 此项目由使用 Visual Studio 的 JavaScript 创建。 除了一些细微差别外，还可将其托管在网站上，或者可对其进行调整以适应其他平台。 
 
@@ -38,9 +38,9 @@ ms.locfileid: "8923811"
 为了运行此项目，你需要具备以下条件：
 
 * 一台运行当前版本 Windows 10 的 Windows 计算机（或虚拟机）。
-* 一份 Visual Studio 副本。 可以从 [Visual Studio 主页](http://visualstudio.com) 下载免费的社区版 Visual Studio。
+* 一份 Visual Studio 副本。 可以从 [Visual Studio 主页](https://visualstudio.com) 下载免费的社区版 Visual Studio。
 
-此项目使用 CreateJS JavaScript 框架。 CreateJS 是一组使用 MIT 许可证发布的免费工具，设计用于轻松创建基于子画面的游戏。 此项目已包含 CreateJS 库（在解决方案资源管理器视图中查找 *js/easeljs-0.8.2.min.js* 和 *js/preloadjs-0.6.2.min.js*）。 有关 CreateJS 的更多信息，请查看 [CreateJS 主页](http://www.createjs.com)。
+此项目使用 CreateJS JavaScript 框架。 CreateJS 是一组使用 MIT 许可证发布的免费工具，设计用于轻松创建基于子画面的游戏。 此项目已包含 CreateJS 库（在解决方案资源管理器视图中查找 *js/easeljs-0.8.2.min.js* 和 *js/preloadjs-0.6.2.min.js*）。 有关 CreateJS 的更多信息，请查看 [CreateJS 主页](https://www.createjs.com)。
 
 
 ## <a name="getting-started"></a>入门
@@ -61,7 +61,7 @@ ms.locfileid: "8923811"
 
 现在，你可以运行此游戏！
 
-按 **F5** 即可开始运行此应用。 你应看到一个打开的窗口，我们熟悉的恐龙 （如果稀疏） 站立风光中。 现在，我们将测试该应用、解释某些重要部分并在进行的过程中探索其他功能。
+按 **F5** 即可开始运行此应用。 你应看到一个打开的窗口，我们熟悉的恐龙站立于旖旎风光 （如果稀疏） 中。 现在，我们将测试该应用、解释某些重要部分并在进行的过程中探索其他功能。
 
 ![只是一个普通的恐龙，一只忍者神猫坐在其背部](images/JS2D_3.png)
 
@@ -69,7 +69,7 @@ ms.locfileid: "8923811"
 
 ## <a name="walkthough"></a>操作实例
 
-如果通过 F5 开始游戏，则可能会想知道发生了什么。 答案是"并不多"，因为许多代码当前被注释掉。到目前为止，你将看到所有是只有恐龙以及按空格键所请求。 
+如果通过 F5 开始游戏，则可能会想知道发生了什么。 答案是"并不多"，因为大量的代码是当前被注释掉。到目前为止，你将看到所有是只有恐龙以及按空格键所请求。 
 
 ### <a name="1-setting-the-stage"></a>1. 设置舞台
 
@@ -134,7 +134,7 @@ EaselJS 可以为我们提供几种不同类型的图形对象。 我们可以�
     ];
 ```
 
-加载资源（如图像）时，JavaScript 需要一些帮助，因此，我们使用可预加载图像的 CreateJS 库的一项被称为 [LoadQueue](http://www.createjs.com/docs/preloadjs/classes/LoadQueue.html) 的功能。 我们不确定加载图像需要花费多长时间，因此，我们使用 LoadQueue 来解决此问题。 图像可用后，队列将会通知我们它们已准备就绪。 为此，我们先创建一个列出所有图像的新对象，然后再创建一个 LoadQueue 对象。 在以下代码中，你将会看到当一切准备就绪时它会如何调用一个名为 **loadingComplete()** 的函数。
+加载资源（如图像）时，JavaScript 需要一些帮助，因此，我们使用可预加载图像的 CreateJS 库的一项被称为 [LoadQueue](https://www.createjs.com/docs/preloadjs/classes/LoadQueue.html) 的功能。 我们不确定加载图像需要花费多长时间，因此，我们使用 LoadQueue 来解决此问题。 图像可用后，队列将会通知我们它们已准备就绪。 为此，我们先创建一个列出所有图像的新对象，然后再创建一个 LoadQueue 对象。 在以下代码中，你将会看到当一切准备就绪时它会如何调用一个名为 **loadingComplete()** 的函数。
 
 ```
     // Now we create a special queue, and finally a handler that is
@@ -162,9 +162,9 @@ EaselJS 可以为我们提供几种不同类型的图形对象。 我们可以�
 
 ### <a name="3-moving-the-clouds"></a>3. 移动云彩
 
-现在，我们将让云彩移动。 实际上，移动云彩以及任何对象的秘密在于设置 [ticker](http://www.createjs.com/docs/easeljs/classes/Ticker.html) 函数，该函数将在一秒内被反复调用多次。 每调用一次该函数，就会在略有不同的位置重新绘制图像。
+现在，我们将让云彩移动。 实际上，移动云彩以及任何对象的秘密在于设置 [ticker](https://www.createjs.com/docs/easeljs/classes/Ticker.html) 函数，该函数将在一秒内被反复调用多次。 每调用一次该函数，就会在略有不同的位置重新绘制图像。
 
-<p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">请参阅 Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - 为云彩添加动画效果</a>，Microsoft Edge 文档 (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>)（位于 <a href="http://codepen.io">CodePen</a>）。</p>
+<p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">请参阅 Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - 为云彩添加动画效果</a>，Microsoft Edge 文档 (<a href="https://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>)（位于 <a href="https://codepen.io">CodePen</a>）。</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
  
 执行该操作的代码已位于 **main.js** 文件中，由 CreateJS 库 EaselJS 提供。 显示如下：
@@ -217,7 +217,7 @@ function animate_clouds()
 
 现在，只要玩家点击按键或点击鼠标，我们就会调用两个函数。 两个事件均会调用 **userDidSomething()**，该函数通过查找游戏状态变量来决定现在进行的是什么游戏以及接下来需要发生的事情。
 
-游戏状态是游戏中使用的常见设计模式。 所有一切均通过打点计时器调用的 **gameLoop()** 函数来进行。 gameLoop() 通过一个变量跟踪游戏是正在进行中，还是处于“游戏结束状态”或“准备就绪状态”或是创作者定义的任何其他状态。 此状态变量已在交换语句中经过测试，它用于定义调用了哪些其他函数。 因此，如果将状态设为“进行中”，则会调用用于使恐龙跳跃和让桶滚动的函数。 如果恐龙被杀死，则游戏状态变量将设为“游戏结束状态”，此时将会显示 消息“游戏结束！”。 如果你对游戏设计模式感兴趣，那么[游戏编程模式](http://gameprogrammingpatterns.com/)一书将对你非常有用。
+游戏状态是游戏中使用的常见设计模式。 所有一切均通过打点计时器调用的 **gameLoop()** 函数来进行。 gameLoop() 通过一个变量跟踪游戏是正在进行中，还是处于“游戏结束状态”或“准备就绪状态”或是创作者定义的任何其他状态。 此状态变量已在交换语句中经过测试，它用于定义调用了哪些其他函数。 因此，如果将状态设为“进行中”，则会调用用于使恐龙跳跃和让桶滚动的函数。 如果恐龙被杀死，则游戏状态变量将设为“游戏结束状态”，此时将会显示 消息“游戏结束！”。 如果你对游戏设计模式感兴趣，那么[游戏编程模式](https://gameprogrammingpatterns.com/)一书将对你非常有用。
 
 再次尝试运行此应用，你最终将能够开始游戏。 按空格键（或单击鼠标或点击屏幕）继续游戏。 
 
@@ -271,7 +271,7 @@ function animate_clouds()
 
 接下来怎么做？ 以下是一些可添加到你的（未来的）获奖应用中的功能建议。
 
-1. 声音效果。 CreateJS 库包括声音支持，它具有一个名为 [SoundJS](http://www.createjs.com/soundjs) 的库。
+1. 声音效果。 CreateJS 库包括声音支持，它具有一个名为 [SoundJS](https://www.createjs.com/soundjs) 的库。
 2. 游戏板支持。 提供有一个 [可用的 API](https://gamedevelopment.tutsplus.com/tutorials/using-the-html5-gamepad-api-to-add-controller-support-to-browser-games--cms-21345)。
 3. 让我们打造一款更棒的游戏！ 这一部分由你决定，网上也提供有许多的资源。 
 

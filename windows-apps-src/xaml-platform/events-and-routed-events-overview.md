@@ -6,12 +6,12 @@ ms.date: 07/12/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cf84846fc34a7b93f168abc1dfa31e9f743be209
-ms.sourcegitcommit: 444fd387c55618f9afdac115264c85b14fd8b826
+ms.openlocfilehash: 33814efca80bd4ad6348f730242d2edab1edda97
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "8999920"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050194"
 ---
 # <a name="events-and-routed-events-overview"></a>事件和路由事件概述
 
@@ -300,7 +300,7 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
     - 对于事件处理程序，最好使用 [**System.EventHandler<TEventArgs>**](https://msdn.microsoft.com/library/windows/apps/xaml/db0etb8x.aspx)，因为它能够以内置方式转换为 Windows 运行时一般事件委托 [**EventHandler<T>**](https://msdn.microsoft.com/library/windows/apps/br206577)。
     - 请勿将事件数据类以 [**System.EventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/system.eventargs.aspx) 为基础，因为它不会转换为 Windows 运行时。 使用现有的事件数据类，或者根本不使用基类。
     - 如果你使用的是自定义访问器，请参阅 [Windows 运行时组件中的自定义事件和事件访问器](https://msdn.microsoft.com/library/windows/apps/xaml/hh972883.aspx)。
-    - 如果你不清楚什么是标准的 .NET 事件模式，请参阅[为自定义的 Silverlight 类定义事件](http://msdn.microsoft.com/library/dd833067.aspx)。 这是为 Microsoft Silverlight 编写的，但是它同样很好地汇总了标准 .NET 事件模式的代码和概念。
+    - 如果你不清楚什么是标准的 .NET 事件模式，请参阅[为自定义的 Silverlight 类定义事件](https://msdn.microsoft.com/library/dd833067.aspx)。 这是为 Microsoft Silverlight 编写的，但是它同样很好地汇总了标准 .NET 事件模式的代码和概念。
 - 对于 C++/CX，请参阅[事件 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh755799.aspx)。
     - 即便你以自己的方式使用自定义事件，也可以使用命名引用。 请勿对自定义事件使用 lambda，因为它会创建循环引用。
 
@@ -313,6 +313,6 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 * [XAML 概述](xaml-overview.md)
 * [快速入门：触摸输入](https://msdn.microsoft.com/library/windows/apps/xaml/hh465387)
 * [键盘交互](https://msdn.microsoft.com/library/windows/apps/mt185607)
-* [.NET 事件和委托](http://go.microsoft.com/fwlink/p/?linkid=214364)
+* [.NET 事件和委托](https://go.microsoft.com/fwlink/p/?linkid=214364)
 * [创建 Windows 运行时组件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399)

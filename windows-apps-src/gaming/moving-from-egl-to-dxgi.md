@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, egl, dxgi, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 1279d5100aa00e1b94d7d56b472a0574d22c3416
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 19c857ae5274be70d19a14d5bbf47adb595b5676
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929822"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049694"
 ---
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a>将 EGL 代码与 DXGI 和 Direct3D 进行比较
 
@@ -28,7 +28,7 @@ DirectX Graphics Interface (DXGI) 以及若干个 Direct3D API 所起的作用�
 
 和 EGL 一样，DXGI 和 Direct3D 提供配置图形资源、获取你的着色器要绘制到的呈现上下文以及在窗口中显示结果的方法。 但是，DXGI 和 Direct3D 具有更多选项，因此从 EGL 移植时需要花费更多精力才能获得正确设置。
 
-> **注意**本指南基于 EGL 1.4 中，找到 Khronos Group 打开规范： [khronos 原生平台图形界面 （EGL 版本 1.4-2011 年 4 月 6 日） \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)。 本指南中未涉及语法中特定于其他平台和开发语言的差别。
+> **注意**本指南基于 EGL 1.4 中，找到 Khronos Group 开放规范： [khronos 原生平台图形界面 （EGL 版本 1.4-2011 年 4 月 6 日） \[PDF\]](https://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)。 本指南中未涉及语法中特定于其他平台和开发语言的差别。
 
  
 
@@ -47,7 +47,7 @@ DirectX Graphics Interface (DXGI) 以及若干个 Direct3D API 所起的作用�
 -   呈现到特定呈现目标（如纹理）。
 -   使用图形资源更新具有呈现结果的窗口显示图面。
 
-若要查看配置图形管道的基本 Direct3D 过程，请查看 Microsoft Visual Studio2015 中的 DirectX 11 应用 (通用 Windows) 模板。 其中的基本呈现类为在其上设置 Direct3D 11 图形基础结构、配置基本资源以及支持通用 Windows 平台 (UWP) 应用功能（如屏幕旋转）提供了一个良好的基线。
+若要查看配置图形管道的基本 Direct3D 过程，请查阅 Microsoft Visual Studio2015 中的 DirectX 11 应用 (通用 Windows) 模板。 其中的基本呈现类为在其上设置 Direct3D 11 图形基础结构、配置基本资源以及支持通用 Windows 平台 (UWP) 应用功能（如屏幕旋转）提供了一个良好的基线。
 
 与 Direct3D 11 相比，EGL 提供的 API 相对较少，如果不熟悉特定于该平台的命名和行话，则导航 EGL 可能会有很大难度。 下面这个简单概述可帮助你应对这种挑战。
 

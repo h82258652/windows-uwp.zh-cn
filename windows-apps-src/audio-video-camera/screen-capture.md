@@ -6,12 +6,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 屏幕捕获
 ms.localizationpriority: medium
-ms.openlocfilehash: db32db6b293dce4210bebee139e05447da996b42
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: dfed365e097b6f0d3816477513202b2693127ade
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946498"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049974"
 ---
 # <a name="screen-capture"></a>屏幕捕获
 
@@ -20,11 +20,11 @@ ms.locfileid: "8946498"
 通过屏幕捕获，开发人员调用安全系统 UI 以便最终用户选取要捕获的屏幕或应用程序窗口，然后系统会在当前正在捕获的项目四周绘制黄色通知边框。 如果同时存在多个捕获会话，系统会在每个正在捕获的项目四周绘制黄色边框。
 
 > [!NOTE]
-> 屏幕捕获 Api 仅在桌面和 Windows Mixed Reality 沉浸式头戴显示设备上受支持。
+> 屏幕捕获 Api 仅支持桌面和 Windows Mixed Reality 沉浸式头戴显示设备。
 
 ## <a name="add-the-screen-capture-capability"></a>添加屏幕捕获功能
 
-**Windows.Graphics.Capture**命名空间中找到的 Api 需要你的应用程序清单中声明一个常规功能：
+**Windows.Graphics.Capture**命名空间中的 Api 需要在你的应用程序清单中声明一个常规功能：
     
 1. 在**解决方案资源管理器**中打开**Package.appxmanifest** 。
 2. 选择**功能**选项卡。
@@ -68,7 +68,7 @@ public async Task StartCaptureAsync()
 }
 ```
 
-由于这是 UI 代码，则需要在 UI 线程上调用。 如果你正在调用此方法从代码隐藏页面你的应用程序 （例如**MainPage.xaml.cs**) 这是为你自动完成，但如果不是，你可以强制它与下面的代码在 UI 线程上运行：
+由于这是 UI 代码，则需要在 UI 线程上调用。 如果你要调用此方法从代码隐藏页面的应用程序 （例如**MainPage.xaml.cs**) 这是为你自动完成，但如果不是，你可以强制它与下面的代码在 UI 线程上运行：
 
 ```cs
 CoreWindow window = CoreApplication.MainView.CoreWindow;
@@ -163,10 +163,10 @@ _framePool.FrameArrived += (s, a) =>
 
 ## <a name="putting-it-all-together"></a>整合到一起
 
-以下代码段是如何在 UWP 应用程序中实现屏幕捕获的端到端示例。 在此示例中，我们已经有一个按钮的前端，单击时，调用**Button_ClickAsync**方法。
+下面的代码段是如何在 UWP 应用程序中实现屏幕捕获的端到端示例。 在此示例中，我们已经有一个按钮的前端，单击时，调用**Button_ClickAsync**方法。
 
 > [!NOTE]
-> 此代码段使用[Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm)，2D 图形呈现的库。 请参阅有关如何将其设置为你的项目信息其文档。
+> 此代码段使用[Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)，2D 图形呈现的库。 请参阅有关如何将其设置为你的项目信息其文档。
 
 ```cs
 using Microsoft.Graphics.Canvas;
@@ -386,7 +386,7 @@ namespace WindowsGraphicsCapture
 
 ## <a name="record-a-video"></a>录制视频
 
-如果你想要你的应用程序的视频录制，你可以执行操作以便更轻松地[Windows.Media.AppRecording 命名空间](https://docs.microsoft.com/uwp/api/windows.media.apprecording)。 这是桌面扩展 SDK 的一部分，因此它仅适用于桌面版上，并且需要你添加对它从你的项目的引用。 有关详细信息，请参阅[设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)。
+如果你想要你的应用程序的视频录制，你可以执行操作以便更轻松地[Windows.Media.AppRecording 命名空间](https://docs.microsoft.com/uwp/api/windows.media.apprecording)。 这是桌面扩展 SDK 的一部分，因此它仅适用于在桌面上，并且需要添加对它从你的项目的引用。 有关详细信息，请参阅[设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)。
 
 ## <a name="see-also"></a>另请参阅
 

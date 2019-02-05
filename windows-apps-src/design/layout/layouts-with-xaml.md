@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 82a528b3ec98f56e1079e11ec1123d86de15d50f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 691ce1cc0c49154142a52f329af6f2a1df4ae027
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919982"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049394"
 ---
 # <a name="responsive-layouts-with-xaml"></a>采用 XAML 的响应式布局
 
@@ -95,7 +95,7 @@ Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分
 可以在代码中或视觉状态中更改元素的 Visibility 属性。 更改元素的 Visibility 后，其所有子元素也会相应更改。 可以通过折叠一个面板的同时显示另一个面板来替换 UI 部分。
 
 > [!Tip]
-> 当你有在 UI 中的元素是**折叠**默认情况下时，会创建这些对象仍然在启动时，即使它们不可见。 可以延迟加载这些元素，直至通过将 **x:DeferLoadStrategy 属性**设置为“Lazy”以使它们显示。 这可以改善启动性能。 有关详细信息，请参阅 [x:DeferLoadStrategy 属性](../../xaml-platform/x-deferloadstrategy-attribute.md)。
+> 当你有在 UI 中的某些元素是**Collapsed**默认情况下时，会创建这些对象仍然在启动时，即使它们不可见。 可以延迟加载这些元素，直至通过将 **x:DeferLoadStrategy 属性**设置为“Lazy”以使它们显示。 这可以改善启动性能。 有关详细信息，请参阅 [x:DeferLoadStrategy 属性](../../xaml-platform/x-deferloadstrategy-attribute.md)。
 
 ### <a name="style-resources"></a>样式资源
 
@@ -109,7 +109,7 @@ Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分
 
 下面对 XAML 框架中提供的面板控件的主要功能做一个比较。
 
-面板控件 | 描述
+面板控件 | 说明
 --------------|------------
 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) | **Canvas** 不支持动态 UI；控制设置子元素位置和大小的所有方面。 通常将其用于特殊情况（例如创建图形），或用于定义较大自适应 UI 的小静态区域。 可以使用代码或视觉状态来在运行时重新放置元素。<li>元素使用 Canvas.Top 和 Canvas.Left 附加属性进行绝对定位。</li><li>可以使用 Canvas.ZIndex 附加属性明确指定分层。</li><li>HorizontalAlignment/VerticalAlignment 的 Stretch 值将忽略。 如果未显式设置元素的大小，它会调整大小以容纳其内容。</li><li>如果子内容超出面板，则视觉上不会被截断。 </li><li>子内容不受面板边界限制。</li>
 [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) | **Grid** 支持对子元素进行动态调整大小。 可以使用代码或视觉状态来重新定位和重新排列元素。<li>元素使用 Grid.Row 和 Grid.Column 附加属性在行和列中进行排列。</li><li>通过使用 Grid.RowSpan 和 Grid.ColumnSpan 附加属性，元素可跨越多行和多列。</li><li>将遵循 HorizontalAlignment/VerticalAlignment 的 Stretch 值。 如果未明确设置元素的大小，则该元素会拉伸以填满网格单元格中的可用空间。</li><li>如果子内容超出面板，则视觉上会被截断。</li><li>由于内容大小受面板边界限制，因此可滚动的内容会显示滚动条（如果需要）。</li>
@@ -117,7 +117,7 @@ Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分
 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) |<li>元素在单行中以垂直或水平方向进行堆叠。</li><li>在与 Orientation 属性相反的方向上，将遵循 HorizontalAlignment/VerticalAlignment 的 Stretch 值。 如果未显式设置元素的大小，则该元素会拉伸以填满可用宽度（或如果 Orientation 为 Horizontal，则为高度）。 在 Orientation 属性指定的方向上，元素会调整大小以容纳其内容。</li><li>如果子内容超出面板，则视觉上会被截断。</li><li>由于在 Orientation 属性指定的方向上内容大小不受面板边界限制，因此可滚动内容拉伸超过面板边界，但不显示滚动条。 必须显式限制子内容的高度（或宽度）以使其滚动条显示。</li>
 [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) |<li>元素以行或列排列，当达到 MaximumRowsOrColumns 值时会自动换行至新行或新列。</li><li>由 Orientation 属性指定是按行还是列排列元素。</li><li>通过使用 VariableSizedWrapGrid.RowSpan 和 VariableSizedWrapGrid.ColumnSpan 附加属性，内容可跨越多行和多列。</li><li>HorizontalAlignment/VerticalAlignment 的 Stretch 值将忽略。 根据 ItemHeight 和 ItemWidth 属性的指定设置元素大小。 如果未设置这些属性，第一个单元格中的项目会调整大小以容纳其内容，并且所有其他单元格将继承此大小。</li><li>如果子内容超出面板，则视觉上会被截断。</li><li>由于内容大小受面板边界限制，因此可滚动的内容会显示滚动条（如果需要）。</li>
 
-有关这些面板的详细信息和示例，请参阅[布局面板](layout-panels.md)。 另请参阅[响应技术示例](http://go.microsoft.com/fwlink/p/?LinkId=620024)。
+有关这些面板的详细信息和示例，请参阅[布局面板](layout-panels.md)。 另请参阅[响应技术示例](https://go.microsoft.com/fwlink/p/?LinkId=620024)。
 
 可以使用布局面板将你的 UI 组织到控件的逻辑组中。 当你将它们与相应的属性设置结合使用时，针对 UI 元素的自动调整大小、重新定位和重新排列，你会获得一些支持。 但是，当对窗口大小进行重大更改后，大多数 UI 布局需要进一步修改。 为此，可以使用视觉状态。
 
@@ -232,7 +232,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 ```
 
 > [!Important]
-> 在上一示例中，在**Grid**元素设置 VisualStateManager.VisualStateGroups 附加属性。 使用 StateTrigger 时，请务必将 VisualStateGroups 附加到根元素的第一个子元素，以便触发器自动生效。 （在此处，**Grid** 是根 **Page** 元素的第一个子元素。）
+> 在前面的示例中，**网格**元素设置 VisualStateManager.VisualStateGroups 附加属性。 使用 StateTrigger 时，请务必将 VisualStateGroups 附加到根元素的第一个子元素，以便触发器自动生效。 （在此处，**Grid** 是根 **Page** 元素的第一个子元素。）
 
 ### <a name="attached-property-syntax"></a>附加属性语法
 
@@ -254,13 +254,13 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 
 ### <a name="custom-state-triggers"></a>自定义状态触发器
 
-可以扩展 [**StateTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.statetrigger.aspx) 类以为更大范围的方案创建自定义触发器。 例如，可以创建 StateTrigger 以根据输入类型触发不同状态，然后在输入类型为触摸时增大控件周围的边距。 或者创建 StateTrigger 以根据运行应用的设备系列来应用不同的状态。 有关如何从单个 XAML 视图中生成自定义触发器并使用它们创建优化的 UI 体验的示例，请参阅[状态触发器示例](http://go.microsoft.com/fwlink/p/?LinkId=620025)。
+可以扩展 [**StateTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.statetrigger.aspx) 类以为更大范围的方案创建自定义触发器。 例如，可以创建 StateTrigger 以根据输入类型触发不同状态，然后在输入类型为触摸时增大控件周围的边距。 或者创建 StateTrigger 以根据运行应用的设备系列来应用不同的状态。 有关如何从单个 XAML 视图中生成自定义触发器并使用它们创建优化的 UI 体验的示例，请参阅[状态触发器示例](https://go.microsoft.com/fwlink/p/?LinkId=620025)。
 
 ### <a name="visual-states-and-styles"></a>视觉状态和样式
 
 可以在视觉状态中使用 Style 资源以将一组属性更改应用到多个控件。 有关使用样式的详细信息，请参阅[设置控件样式](../controls-and-patterns/xaml-styles.md)。
 
-在此来自状态触发器示例的简化 XAML 中，Style 资源应用于 Button 以调整鼠标或触控输入的大小和边距。 有关自定义状态触发器的完整代码和定义，请参阅[状态触发器示例](http://go.microsoft.com/fwlink/p/?LinkId=620025)。
+在此来自状态触发器示例的简化 XAML 中，Style 资源应用于 Button 以调整鼠标或触控输入的大小和边距。 有关自定义状态触发器的完整代码和定义，请参阅[状态触发器示例](https://go.microsoft.com/fwlink/p/?LinkId=620025)。
 
 ```xaml
 <Page ... >
@@ -389,7 +389,7 @@ else
 }
 ```
 
-还可以使用不同的条件来确定要导航到的页面。 有关更多示例，请参阅[定制多个视图示例](http://go.microsoft.com/fwlink/p/?LinkId=620636)，它使用 [**GetIntegratedDisplaySize**](https://msdn.microsoft.com/library/windows/apps/xaml/dn904185.aspx) 函数来检查集成屏幕的物理大小。
+还可以使用不同的条件来确定要导航到的页面。 有关更多示例，请参阅[定制多个视图示例](https://go.microsoft.com/fwlink/p/?LinkId=620636)，它使用 [**GetIntegratedDisplaySize**](https://msdn.microsoft.com/library/windows/apps/xaml/dn904185.aspx) 函数来检查集成屏幕的物理大小。
 
 ## <a name="related-topics"></a>相关主题
 - [教程：创建自适应布局](../basics/xaml-basics-adaptive-layout.md)

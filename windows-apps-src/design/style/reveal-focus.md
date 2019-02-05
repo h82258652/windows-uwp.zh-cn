@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 88dc22a11f88bbf0945340729722ea434345b205
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 15c0ff77d511e531bcb8b20b21f3c52a8c753b7a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037349"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049112"
 ---
 # <a name="reveal-focus"></a>显示焦点
 
@@ -163,7 +163,7 @@ ms.locfileid: "9037349"
 
 ## <a name="use-your-own-focus-visuals"></a>使用你自己的焦点视觉
 
-若要自定义显示焦点的另一个方法是通过使用视觉状态绘制你自己选择退出系统提供的焦点视觉。 若要了解详细信息，请参阅[焦点视觉示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)。
+若要自定义显示焦点的另一个方法是通过使用视觉状态绘制你自己选择退出系统提供的焦点视觉。 若要了解详细信息，请参阅[焦点视觉示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)。
 
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>显示焦点和 Fluent 设计系统
@@ -175,7 +175,7 @@ ms.locfileid: "9037349"
 - [显示突出显示](https://docs.microsoft.com/windows/uwp/design/style/reveal)
 - [针对 Xbox 和电视进行设计](/windows/uwp/design/devices/designing-for-tv)
 - [游戏板和遥控器交互](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
-- [焦点视觉示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [焦点视觉示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 - [合成效果](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
 - [系统内的科学：Fluent Design 和深色](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [系统内的科学：Fluent 设计和浅色](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

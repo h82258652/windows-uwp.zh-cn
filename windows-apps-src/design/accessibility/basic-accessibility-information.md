@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e7526ec4f32f641f152709e6968f3dc442c2a06
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8320b2b4abb5e49bbf589b360cc9cc2e0e033f79
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934552"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050327"
 ---
 # <a name="expose-basic-accessibility-information"></a>公开基本的辅助功能信息  
 
@@ -141,7 +141,7 @@ XAML
 <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"/>
 
 ## <a name="accessible-names-from-dynamic-data"></a>动态数据中的辅助名称  
-Windows 通过一个名为*数据绑定*的功能，支持许多可用来显示相关数据源所提供的值的控件。 当你用数据项填充列表时，可能需要在初始列表填充之后使用一种用来为数据绑定列表项设置辅助名称的技术。 有关详细信息，请参阅 [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)中的“方案 4”。
+Windows 通过一个名为*数据绑定*的功能，支持许多可用来显示相关数据源所提供的值的控件。 当你用数据项填充列表时，可能需要在初始列表填充之后使用一种用来为数据绑定列表项设置辅助名称的技术。 有关详细信息，请参阅 [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570)中的“方案 4”。
 
 <span id="Accessible_names_and_localization"/>
 <span id="accessible_names_and_localization"/>
@@ -157,5 +157,5 @@ Windows 通过一个名为*数据绑定*的功能，支持许多可用来显示�
 ## <a name="related-topics"></a>相关主题  
 * [辅助功能](accessibility.md)
 * [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770)
-* [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [辅助功能测试](accessibility-testing.md)

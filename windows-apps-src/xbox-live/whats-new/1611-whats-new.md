@@ -6,12 +6,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: de716ea88e5225789f93a7ff770d7b8dd2f8bd94
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bec5b694d86f41f3a4b1f5e7fb3119b4945d14f9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946828"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049019"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---november-2016"></a>Xbox Live SDK 的新增功能 - 2016 年 11 月
 
@@ -61,5 +61,5 @@ ms.locfileid: "8946828"
 * [Xbox Live 简介](../get-started-with-partner/get-started-with-xbox-live-partner.md)部分已经重写。  如果你要创建启用了 Xbox Live 的新游戏，或好奇如何在你的游戏中集成其他 Xbox Live 功能，你可以参阅[此处](../get-started-with-partner/get-started-with-xbox-live-partner.md)的新文档。
 
 ## <a name="tools"></a>工具
-* Xbox Live 跟踪分析器，你可以找到在[http://aka.ms/XboxLiveTools](http://aka.ms/XboxLiveTools)现在具有 CERT 模式。  
+* Xbox Live 跟踪分析器，你可以找到在[http://aka.ms/XboxLiveTools](https://aka.ms/XboxLiveTools)现在具有 CERT 模式。  
 * 同样，Xbox Live 跟踪分析器具有多主机支持。  如果你传入包含多个主机的 HTTP 请求的 Fiddler 跟踪，将为每个请求生成单独的报告。

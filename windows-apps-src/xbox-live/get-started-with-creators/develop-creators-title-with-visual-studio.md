@@ -6,12 +6,12 @@ ms.date: 11/28/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xbox live 创意者, visual studio
 ms.localizationpriority: medium
-ms.openlocfilehash: e52555afd94edda3fc7cefe7a46e51be175b26d9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 854d6cf138d1c2d5ef8d68cdf7033e40ba900120
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918126"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049161"
 ---
 # <a name="get-started-developing-an-xbox-live-creators-program-title-with-visual-studio"></a>使用 Visual Studio 开发 Xbox Live 创意者计划主题作品入门
 
@@ -30,7 +30,7 @@ ms.locfileid: "8918126"
 
 ## <a name="create-a-new-product-in-partner-center"></a>在合作伙伴中心中创建新产品
 
-每个 Xbox Live 主题作品必须具有[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建，你将能够在登录并进行 Xbox Live 服务调用之前的产品。 有关详细信息，请参阅[创建新创意者主题作品](create-and-test-a-new-creators-title.md)。
+每个 Xbox Live 主题作品必须具有之前你将能够登录并进行 Xbox Live 服务调用在[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建的产品。 有关详细信息，请参阅[创建新创意者主题作品](create-and-test-a-new-creators-title.md)。
 
 ## <a name="configuring-your-development-device"></a>配置开发设备
 
@@ -89,7 +89,7 @@ Xbox 服务 API 同时支持 C++ 和 WinRT，其命名结构的形式为 **Micro
 #### <a name="windows-10-sdk-version-10015063-or-lower"></a>Windows 10 SDK 版本 10.0.15063 或更低版本
 如果你想要使用连接存储，将需要安装 Xbox Live 平台扩展 SDK，然后才能将引用添加到项目中。 你可以通过以下方式来执行此操作：
 
-1. 下载 [Xbox Live 平台扩展 SDK](http://aka.ms/xblextsdk)并解压缩。
+1. 下载 [Xbox Live 平台扩展 SDK](https://aka.ms/xblextsdk)并解压缩。
 2. 解压缩完成后，运行其中与你所使用的 Windows 10 SDK 版本匹配的 MSI 文件。
 
 安装完 Xbox Live 平台扩展 SDK 后，需要在 Visual Studio 中向它添加引用。 你可以通过以下方式来执行此操作：
@@ -103,7 +103,7 @@ Xbox 服务 API 同时支持 C++ 和 WinRT，其命名结构的形式为 **Micro
 
 ### <a name="4-associate-your-visual-studio-project-with-your-uwp-app"></a>4. 将 Visual Studio 项目与 UWP 应用关联
 
-为你的游戏支持登录，它必须与你在合作伙伴中心中创建的产品相关联。 您可以通过使用 Microsoft Store 关联向导在 Visual Studio 中关联你的游戏。 在 Visual Studio 中，执行以下操作：
+为你的游戏支持登录，它必须与你在合作伙伴中心中创建的产品关联。 您可以通过使用 Microsoft Store 关联向导在 Visual Studio 中关联你的游戏。 在 Visual Studio 中，执行以下操作：
 
 1.  右键单击主项目（启动项目），然后单击 **Store** > **Associate App with the Store...**
 2.  如果需要，使用用于创建应用的 **Windows 开发人员帐户**登录并按照提示进行操作。
@@ -128,7 +128,7 @@ UWP 项目需要指定 Internet 功能与 Xbox Live 通信。 你可以通过以
 3. 右键单击文件，然后选择**属性**并确保：
     1. **生成操作**已设置为**内容**，并且  
     2. **复制到输出目录**已设置为**始终复制**。
-5.  使用以下模板编辑配置文件，并使用适用于你的主题作品的值替换 **TitleId** 和 **PrimaryServiceConfigId**。 你可以在合作伙伴中心中的根 Xbox Live 页面获取正确的值。 **PrimaryServiceConfigId**在合作伙伴中心中显示为**SCID**。
+5.  使用以下模板编辑配置文件，并使用适用于你的主题作品的值替换 **TitleId** 和 **PrimaryServiceConfigId**。 在合作伙伴中心中，可以从根 Xbox Live 页面获取正确的值。 **PrimaryServiceConfigId**在合作伙伴中心中显示为**SCID**。
 
 ```json
     {

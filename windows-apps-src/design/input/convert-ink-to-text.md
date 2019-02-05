@@ -8,12 +8,12 @@ keywords: Windows 墨迹, Windows 墨迹书写, DirectInk, InkPresenter, InkCanv
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 07ed74af3ebe558c6a82cd799cb6aa1efa035e46
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: 9bdd122f438cc9584b5e1eff2236c625adea9c2b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980375"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048980"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>将 Windows Ink 笔划识别为文本和形状
 
@@ -227,7 +227,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
     recognitionCanvas.Children.Add(text);
 }
 ```
-7. 以下是在我们的识别画布上绘制椭圆和多边形的函数。 我们可以使用在墨迹画布上的关联的墨迹笔划的边界矩形来设置的位置和字体大小的形状。
+7. 以下是在我们的识别画布上绘制椭圆和多边形的函数。 我们可以使用在墨迹画布上的关联的墨迹笔划的边界矩形来设置的位置和形状的字体大小。
 ```csharp
     // Draw an ellipse on the recognitionCanvas.
     private void DrawEllipse(InkAnalysisInkDrawing shape)
@@ -371,7 +371,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
     [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/br208446)调用以检索一组[**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464)对象。
 
-    通过[**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478)检测到的每个单词产生识别结果。
+    为每个单词检测到的[**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478)生成识别结果。
 
     ```csharp
     // Recognize all ink strokes on the ink canvas.
@@ -381,9 +381,9 @@ private void DrawText(string recognizedText, Rect boundingRect)
                 InkRecognitionTarget.All);
     ```
 
-    每个[**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464)对象包含一组的候选项文本。 识别引擎将此列表中最上面的项视为最佳匹配结果，后跟以置信度降序排列的其余候选项。
+    每个[**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464)对象包含文本候选焦点的一组。 识别引擎将此列表中最上面的项视为最佳匹配结果，后跟以置信度降序排列的其余候选项。
 
-    我们将循环访问每个[**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464)并进行编译的候选项列表。 然后显示这些候选项，并且[**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492)清除 （这也会清除[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)）。
+    我们将循环访问每个[**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464)并进行编译的候选项列表。 随后显示这些候选项， [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492)被清除 （这也会清除[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)）。
 
     ```csharp
     string str = "Recognition result\n";
@@ -475,7 +475,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 你的应用可以查询已安装的手写识别引擎的集合，并使用其中一个引擎或让用户选择其首选语言。
 
-**注意**用户可以看到的已安装的语言列表，方法转到**设置-&gt;时间和语言**。 已安装的语言在**语言**下列出。
+**注意**用户可以看到的已安装的语言列表，方法转到**设置-&gt;时间 & 语言**。 已安装的语言在**语言**下列出。
 
 若要安装新语言包并为该语言启用手写识别：
 
@@ -862,9 +862,9 @@ string str = "Recognition result\n";
 * [墨迹手写识别示例 (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
 
 **其他示例**
-* [简单墨迹示例 (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [复杂墨迹示例 (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [墨迹示例 (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [简单墨迹示例 (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [复杂墨迹示例 (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [墨迹示例 (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [入门教程：在 UWP 应用中支持墨迹](https://aka.ms/appsample-ink)
 * [Coloring Book 示例](https://aka.ms/cpubsample-coloringbook)
 * [系列说明示例](https://aka.ms/cpubsample-familynotessample)

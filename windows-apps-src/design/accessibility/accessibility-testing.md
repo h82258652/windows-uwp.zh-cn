@@ -8,12 +8,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a06859d6580720150383f2995505e671c0a31a4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d84683544628a9b6df0eafb2999fabb134465ea8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947232"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049624"
 ---
 # <a name="accessibility-testing"></a>辅助功能测试  
 
@@ -79,7 +79,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 <span id="VERIFY_THE_CONTRAST_RATIO_OF_VISIBLE_TEXT"/>
 
 ## <a name="verify-the-contrast-ratio-of-visible-text"></a>验证可见文本的对比度  
-使用颜色对比工具验证可见文本的对比度是否可接受。 例外情况包括不活动的 UI 元素，以及不传递任何信息且可以在含义不变的情况下重新整理的徽标或装饰文本。 有关对比率和例外情况的详细信息，请参阅[辅助文本要求](accessible-text-requirements.md)。 请参阅 [WCAG 2.0 G18 的技术（“资源”部分）](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources)了解可以测试对比率的工具。
+使用颜色对比工具验证可见文本的对比度是否可接受。 例外情况包括不活动的 UI 元素，以及不传递任何信息且可以在含义不变的情况下重新整理的徽标或装饰文本。 有关对比率和例外情况的详细信息，请参阅[辅助文本要求](accessible-text-requirements.md)。 请参阅 [WCAG 2.0 G18 的技术（“资源”部分）](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources)了解可以测试对比率的工具。
 
 > [!NOTE]
 > “WCAG 2.0 G18 的技术”列出的某些工具无法与 UWP 应用交互使用。 你可能需要在该工具中手动输入前景和背景颜色值，对应用 UI 进行屏幕捕获，然后对屏幕捕获图像运行对比度工具，或者在图像编辑程序中打开源位图文件时运行该工具，而不是在应用加载该图像时。
@@ -163,5 +163,5 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 * [辅助功能](accessibility.md)
 * [要避免的做法](practices-to-avoid.md)
 * [UI 自动化](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
-* [Windows 中的辅助功能](http://go.microsoft.com/fwlink/p/?LinkId=320802)
+* [Windows 中的辅助功能](https://go.microsoft.com/fwlink/p/?LinkId=320802)
 * [讲述人入门](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

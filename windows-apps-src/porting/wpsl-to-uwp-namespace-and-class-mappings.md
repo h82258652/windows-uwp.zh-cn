@@ -6,29 +6,29 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0072aa814e0bcb22806cad764b5f365770961ac3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9acd42f57117fb01eef4ba8f87d35664be21cf32
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926207"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048817"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>WindowsPhone silverlight 移植到 UWP API 的映射
 
 
 本主题提供 WindowsPhone Silverlight Api 到其通用 Windows 平台 (UWP) 等效项的全面映射。 但是，通常不存在一对一的功能映射：任一平台都可能比其在命名空间或类中的对应平台具有更多或更少的功能。
 
-当你要在 UWP 项目中工作并重复使用 WindowsPhone Silverlight 项目中的源代码，映射表将帮助你。 这两个平台之间的命名空间和类（包括 UI 控件）的名称存在差异。 在许多情况下，只需更改命名空间名称，就可以编译代码。 有时，类或 API 名称以及命名空间名称已发生更改。 有时，映射会处理较多工作，在极少数情况下，则需要更改方法。
+当你要在 UWP 项目中工作并重复使用从 WindowsPhone Silverlight 项目的源代码，映射表将帮助你。 这两个平台之间的命名空间和类（包括 UI 控件）的名称存在差异。 在许多情况下，只需更改命名空间名称，就可以编译代码。 有时，类或 API 名称以及命名空间名称已发生更改。 有时，映射会处理较多工作，在极少数情况下，则需要更改方法。
 
-**如何使用该表：** 首先，搜索你要使用的类的名称。 只要进行映射比仅更改命名空间名称更复杂，就会在此处列出类。 如果你的类未列出，则该映射只是命名空间的更改。 因此，找到你的类的命名空间名称后，你将找到等效的 UWP 命名空间名称。 你的类将位于该命名空间中。 如果你的命名空间未列出，则其名称并未更改。
+**如何使用该表：** 首先，搜索要使用的类的名称。 只要进行映射比仅更改命名空间名称更复杂，就会在此处列出类。 如果你的类未列出，则该映射只是命名空间的更改。 因此，找到你的类的命名空间名称后，你将找到等效的 UWP 命名空间名称。 你的类将位于该命名空间中。 如果你的命名空间未列出，则其名称并未更改。
 
-**注意**windows 10 支持更多的.NET framework 比 Windows Phone 应用商店应用。 例如，windows 10 具有多个 System.ServiceModel.\* 命名空间，以及 System.Net、 System.Net.NetworkInformation 和 System.Net.Sockets。
+**注意**windows 10 支持更多的.NET framework 比 Windows Phone 应用商店应用的功能。 例如，windows 10 具有多个 System.ServiceModel.\* 命名空间，以及 System.Net、 System.Net.NetworkInformation 和 System.Net.Sockets。
 此外，在 windows 10 应用中，你将受益于.NET Native，这是先进障碍的编译技术，可将 MSIL 转换为可本机运行的计算机代码。 .NET Native 应用启动速度更快、使用的内存更少，并且比其对应的 MSIL 更省电。
 
 | WindowsPhone Silverlight | Windows 运行时 |
 | ------------------------- | --------------- |
 | 广告 | |
-| **Microsoft.Advertising.Mobile.UI.AdControl** 类 | [AdControl](http://msdn.microsoft.com/library/advertising-windows-sdk-api-reference-adcontrol.aspx) 类 |
+| **Microsoft.Advertising.Mobile.UI.AdControl** 类 | [AdControl](https://msdn.microsoft.com/library/advertising-windows-sdk-api-reference-adcontrol.aspx) 类 |
 | 警报、提醒和后台代理程序 | |
 | **Microsoft.Phone.BackgroundAgent** 类 | [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 类 |
 | **Microsoft.Phone.Scheduler** 命名空间 | [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847) 命名空间 |
@@ -52,11 +52,11 @@ ms.locfileid: "8926207"
 | (SWT = **System.Windows.Threading**) <br/> **SWT.DispatcherTimer** 类 | [**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250) 类 |
 | Blend for Visual Studio | |
 | (MEDC = **Microsoft.Expression.Drawing.Core**) <br/> **MEDC.GeometryHelper** 类 | 无直接等效项 |
-| **Microsoft.Expression.Interactivity** 命名空间 | [Microsoft.Xaml.Interactivity](http://go.microsoft.com/fwlink/p/?LinkId=328776) 命名空间 |
-| **Microsoft.Expression.Interactivity.Core** 命名空间 | [Microsoft.Xaml.Interactions.Core](http://go.microsoft.com/fwlink/p/?LinkId=328773) 命名空间 |
+| **Microsoft.Expression.Interactivity** 命名空间 | [Microsoft.Xaml.Interactivity](https://go.microsoft.com/fwlink/p/?LinkId=328776) 命名空间 |
+| **Microsoft.Expression.Interactivity.Core** 命名空间 | [Microsoft.Xaml.Interactions.Core](https://go.microsoft.com/fwlink/p/?LinkId=328773) 命名空间 |
 | (MEIC = **Microsoft.Expression.Interactivity.Core**) <br/> **MEIC.ExtendedVisualStateManager** 类 | 无直接等效项 |
 | **Microsoft.Expression.Interactivity.Input** 命名空间 | 无直接等效项 |
-| **Microsoft.Expression.Interactivity.Media** 命名空间 | [Microsoft.Xaml.Interactions.Media](http://go.microsoft.com/fwlink/p/?LinkId=328775) 命名空间 |
+| **Microsoft.Expression.Interactivity.Media** 命名空间 | [Microsoft.Xaml.Interactions.Media](https://go.microsoft.com/fwlink/p/?LinkId=328775) 命名空间 |
 | **Microsoft.Expression.Shapes** 命名空间 | 无直接等效项 |
 | (MI = **Microsoft.Internal**) <br/> **MI.IManagedFrameworkInternalHelper** 接口 | 无直接等效项 |
 | 联系人和日历数据 | |
@@ -109,7 +109,7 @@ ms.locfileid: "8926207"
 | **Microsoft.Devices.Camera**、**Microsoft.Devices.PhotoCamera** 类 | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 类。 此外，[**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 类（仅限 Windows）。 |
 | **Microsoft.Devices.CameraButtons** 类 | [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 类 |
 | **Microsoft.Devices.CameraVideoBrushExtensions** 类 | [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 类 |
-| **Microsoft.Devices.Environment** 类 | 无直接等效项。 使用条件编译并定义自定义符号作为解决方法。 或者你可以使用 [IsAttached](http://msdn.microsoft.com/library/e299w87h.aspx) 属性设计一个解决方法。 |
+| **Microsoft.Devices.Environment** 类 | 无直接等效项。 使用条件编译并定义自定义符号作为解决方法。 或者你可以使用 [IsAttached](https://msdn.microsoft.com/library/e299w87h.aspx) 属性设计一个解决方法。 |
 | **Microsoft.Devices.MediaHistory** 类 | 无直接等效项 |
 | **Microsoft.Devices.VibrateController** 类 | [**VibrationDevice**](https://msdn.microsoft.com/library/windows/apps/jj207230) 类 |
 | **Microsoft.Devices.Radio.FMRadio** 类 | 无直接等效项 |
@@ -121,7 +121,7 @@ ms.locfileid: "8926207"
 | (ST = **System.Threading**) <br/> **ST.Thread.CurrentCulture** 属性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentCulture** 属性 |
 | (ST = **System.Threading**) <br/> **ST.Thread.CurrentUICulture** 属性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentUICulture** 属性 |
 | 图形和动画 | |
-| **Microsoft.Xna.Framework.\*** 命名空间、[XNA Framework 类库](http://go.microsoft.com/fwlink/p/?LinkId=263769)、[Content Pipeline 类库](http://go.microsoft.com/fwlink/p/?LinkId=263770) | 无直接等效项。 通常情况下，结合使用 [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 和 C++。 请参阅[开发游戏](https://msdn.microsoft.com/library/windows/apps/hh452744)和 [DirectX 和 XAML 互操作](https://msdn.microsoft.com/library/windows/apps/hh825871)。 |
+| **Microsoft.Xna.Framework.\*** 命名空间、[XNA Framework 类库](https://go.microsoft.com/fwlink/p/?LinkId=263769)、[Content Pipeline 类库](https://go.microsoft.com/fwlink/p/?LinkId=263770) | 无直接等效项。 通常情况下，结合使用 [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 和 C++。 请参阅[开发游戏](https://msdn.microsoft.com/library/windows/apps/hh452744)和 [DirectX 和 XAML 互操作](https://msdn.microsoft.com/library/windows/apps/hh825871)。 |
 | **Microsoft.Xna.Framework.Audio.Microphone** 类 | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 类 |
 | **Microsoft.Xna.Framework.Audio.SoundEffect** 类 | [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 类 |
 | **Microsoft.Xna.Framework.GamerServices** 命名空间 | (WPS = **Windows.Phone.System**) <br/> [**WPS.UserProfile.GameServices.Core**](https://msdn.microsoft.com/library/windows/apps/jj207609) 命名空间 |

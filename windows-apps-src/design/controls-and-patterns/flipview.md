@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a34a53e5a332276c121324d9cf891a506aadb7f7
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: ac4e5bb7c761ad6661647cb88f831ffa652b6241
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037109"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048797"
 ---
 # <a name="flip-view"></a>翻转视图
 
@@ -204,7 +204,7 @@ stackPanel1.Children.Add(flipView1);
 
 ![上下文指示器示例](images/controls_contextindicator.jpg)
 
-有关显示如何向 FlipView 添加上下文指示器的示例代码，请参阅 [XAML FlipView 示例](http://go.microsoft.com/fwlink/p/?LinkID=311760)。
+有关显示如何向 FlipView 添加上下文指示器的示例代码，请参阅 [XAML FlipView 示例](https://go.microsoft.com/fwlink/p/?LinkID=311760)。
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
 

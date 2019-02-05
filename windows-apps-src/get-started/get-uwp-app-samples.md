@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 示例代码, 代码示例
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
-ms.openlocfilehash: 64eb0d13db1fbcf49d9da28e57eb85ff84823bf1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4cdf38a4bd77c4f6affb813c9e1de68463c43100
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946292"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049714"
 ---
 # <a name="get-uwp-app-samples"></a>获取 UWP 应用示例
 
@@ -28,7 +28,7 @@ zip 文件始终具有最新示例。 无需 GitHub 帐户即可下载它。 当
 
 
 > [!NOTE]
-> UWP 示例需要使用 Visual Studio 2015 或更高版本和 Windows SDK 才能打开、生成并运行。 你可以在[此处](http://go.microsoft.com/fwlink/p/?LinkID=280676 "Windows 开发工具下载")获得支持生成 UWP 应用的 Visual Studio 社区的免费副本。  
+> UWP 示例需要使用 Visual Studio 2015 或更高版本和 Windows SDK 才能打开、生成并运行。 你可以在[此处](https://go.microsoft.com/fwlink/p/?LinkID=280676 "Windows 开发工具下载")获得支持生成 UWP 应用的 Visual Studio 社区的免费副本。  
 >
 > 此外，请确保解压缩整个存档，而不只是个别示例。 所有示例都依赖于该存档中的 SharedContent 文件夹。 UWP 功能示例使用 Visual Studio 中的“已链接”文件减少重复的常见文件，包括示例模板文件和图像资源。 这些常见文件存储在存储库根的 SharedContent 文件夹中，并且指代使用链接的项目文件。
 
