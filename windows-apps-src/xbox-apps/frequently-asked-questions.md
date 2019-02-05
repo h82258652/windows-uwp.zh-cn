@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
-ms.openlocfilehash: 036c3c1832bbb3e27a93671f399a9a97c7afaba3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 38b5144d9b70e6e2825ef11a64be8873ec5b7d63
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922262"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046946"
 ---
 # <a name="frequently-asked-questions"></a>常见问题
 
@@ -59,9 +59,9 @@ Xbox 不再支持 x86 应用开发或将 x86 应用商店提交到应用商店�
 
 ### <a name="i-sold-my-xbox-one-and-left-it-in-developer-mode-how-do-i-deactivate-developer-mode"></a>我已出售我的 Xbox One，并且将它保留在开发人员模式下。 如何停用开发人员模式？
 
-如果你无法再访问你的 Xbox one，可以在 Windows 合作伙伴中心中停用它。 有关详细信息，请参阅主题中的[Xbox One 开发人员模式停用](devkit-deactivation.md#deactivate-your-console-using-partner-center)**停用主机使用合作伙伴中心**部分。 
+如果你不再有权为你的 Xbox One，可以在 Windows 合作伙伴中心中停用它。 有关详细信息，请参阅[Xbox One 开发人员模式停用](devkit-deactivation.md#deactivate-your-console-using-partner-center)主题中的**停用主机使用合作伙伴中心**部分。 
 
-### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>我退出开发人员计划使用合作伙伴中心，但我仍处于开发人员模式。 我该怎么办？
+### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>我使用退出了开发人员计划的合作伙伴中心，但我仍处于开发人员模式。 我该怎么办？
 
 启动“开发人员主页”，然后选择**退出开发人员模式**按钮。 这将在零售模式下重新启动主机。 
 
@@ -71,7 +71,7 @@ Xbox 不再支持 x86 应用开发或将 x86 应用商店提交到应用商店�
 
 ### <a name="can-i-publish-my-game"></a>我是否可以发布我的游戏？
 
-你可以在开发人员模式下使用 UWP 和你的 Xbox One，在 Xbox One 上生成和测试你的游戏。 若要发布 UWP 游戏，你必须注册 [ID@XBOX](http://www.xbox.com/Developers/id) 或参与 [Xbox Live Creators 计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)。 有关详细信息，请参阅[开发人员计划概述](https://developer.microsoft.com/games/xbox/docs/xboxlive/get-started/developer-program-overview.html)。
+你可以在开发人员模式下使用 UWP 和你的 Xbox One，在 Xbox One 上生成和测试你的游戏。 若要发布 UWP 游戏，你必须注册 [ID@XBOX](https://www.xbox.com/Developers/id) 或参与 [Xbox Live Creators 计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)。 有关详细信息，请参阅[开发人员计划概述](https://developer.microsoft.com/games/xbox/docs/xboxlive/get-started/developer-program-overview.html)。
 
 ### <a name="will-the-standard-game-engines-work"></a>标准游戏引擎是否工作？
 

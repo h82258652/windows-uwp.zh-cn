@@ -6,12 +6,12 @@ ms.date: 07/05/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: aaaf7e6b13a3ce05bd30dd0ebf3e1d7d98915d6e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3d8cbb3d7e245b747a7637726df9559f5fa87a6d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946059"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046410"
 ---
 # <a name="handle-uri-activation"></a>处理 URI 激活
 
@@ -37,7 +37,7 @@ ms.locfileid: "8946059"
 
     以下是该协议的清单设计器中每个可以填写的字段的简短描述（有关详细信息，请参阅 [**AppX 程序包清单**](https://msdn.microsoft.com/library/windows/apps/dn934791)）：
 
-| 字段 | 描述 |
+| 字段 | 说明 |
 |-------|-------------|
 | **徽标** | 指定用于标识**控制面板**的[设置默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)中 URI 方案名称的徽标。 如果未指定徽标，则使用应用的小徽标。 |
 | **显示名称** | 指定用于标识**控制面板**的[设置默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)中 URI 方案名称的显示名称。 |
@@ -155,7 +155,7 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 任何应用或网站（包括恶意应用或网站）都可以使用你的 URI 方案名称。 因此，在 URI 中获得的任何数据都可能来自不受信任的来源。 建议千万不要基于在 URI 中接收的参数执行永久性操作。 例如，可以使用 URI 参数将应用启动到用户的帐户页面，但建议永远不要将其用于直接修改用户的帐户。
 
 > [!NOTE]
-> 如果为应用创建新的 URI 方案名称，请确保遵循 [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550) 中的指南。 这样会确保你的名称符合 URI 方案的标准。
+> 如果为应用创建新的 URI 方案名称，请确保遵循 [RFC 4395](https://go.microsoft.com/fwlink/p/?LinkID=266550) 中的指南。 这样会确保你的名称符合 URI 方案的标准。
 
 > [!NOTE]
 > 通过协议合约启动后，请确保“后退”按钮可使用户返回到已启动应用的屏幕，而不是应用的早期内容。

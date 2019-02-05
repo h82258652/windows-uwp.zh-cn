@@ -6,16 +6,16 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, 演练
 ms.localizationpriority: medium
-ms.openlocfilehash: 423b005028ca7796dbab81d2c26a68c3d74fc922
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8bf2605c55b9b73ccd3376f9c812da31339caedc
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919701"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050710"
 ---
 # <a name="implement-ads-in-your-app"></a>在应用中实现广告
 
-本部分中的文章介绍如何使用 Microsoft 广告 SDK 将横幅广告、间隙广告和本机广告添加到应用。 有关完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
+本部分中的文章介绍如何使用 Microsoft 广告 SDK 将横幅广告、间隙广告和本机广告添加到应用。 有关完整示例项目，请参阅 [GitHub 上的广告示例](https://aka.ms/githubads)。
 
 ## <a name="in-this-section"></a>本部分内容
 

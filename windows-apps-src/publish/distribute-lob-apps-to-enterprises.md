@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, lob, 业务线, 企业应用, 适用于企业的 store, 适用于教育的 store, 企业
 ms.localizationpriority: medium
-ms.openlocfilehash: eecd7a3ff86de5db9693bf6ce597e2b1e00bb4ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c6e1eafbce5eca1570161da1656c0242228ff7de
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947601"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044584"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>将 LOB 应用分配到企业
 
@@ -30,7 +30,7 @@ ms.locfileid: "8947601"
 将 LOB 应用专门发布到企业的第一步是建立你的帐户和企业的专用应用商店之间的关联。
 
 > [!IMPORTANT]
-> 此关联过程必须由企业启动，并且必须使用与用于创建开发人员帐户的 Microsoft 帐户关联的电子邮件地址。 有关详细信息，请参阅[使用业务线应用](http://go.microsoft.com/fwlink/p/?LinkId=698846)。
+> 此关联过程必须由企业启动，并且必须使用与用于创建开发人员帐户的 Microsoft 帐户关联的电子邮件地址。 有关详细信息，请参阅[使用业务线应用](https://go.microsoft.com/fwlink/p/?LinkId=698846)。
 
 在企业选择邀请你发布供其专门使用的应用时，你将收到包含确认该关联的链接的电子邮件。 你还可以通过转到**帐户设置**的**企业关联**部分来确认这些关联（只要你已使用用于打开开发人员帐户的 Microsoft 帐户登录）。
 
@@ -73,7 +73,7 @@ ms.locfileid: "8947601"
 > [!NOTE]
 > 为了获取 LOB 应用，组织必须位于[受支持的市场](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets)中，并且不得在提交应用时[排除该市场](define-pricing-and-market-selection.md)。 
 
-有关详细信息，请参阅[使用业务线应用](http://go.microsoft.com/fwlink/p/?LinkId=698846)和[使用专用应用商店分配应用](http://go.microsoft.com/fwlink/p/?LinkId=698847)。
+有关详细信息，请参阅[使用业务线应用](https://go.microsoft.com/fwlink/p/?LinkId=698846)和[使用专用应用商店分配应用](https://go.microsoft.com/fwlink/p/?LinkId=698847)。
 
 
 ## <a name="update-lob-apps"></a>更新 LOB 应用
@@ -94,7 +94,7 @@ ms.locfileid: "8947601"
 
 在某些情况下，公司可能不希望其 LOB 应用通过合作伙伴中心 （例如出于合规性原因或应用需要其他功能） 提交。 在这种情况下，企业可以通过旁加载直接将应用部署到计算机，无需使用适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店。
 
-有关详细信息，请参阅[在 Windows 10 中旁加载 LOB 应用](http://go.microsoft.com/fwlink/p/?LinkId=623433)。
+有关详细信息，请参阅[在 Windows 10 中旁加载 LOB 应用](https://go.microsoft.com/fwlink/p/?LinkId=623433)。
 
  
 

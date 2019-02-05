@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 75af433d80364485b0c12a9540c0d7bb471c4e28
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ebf54e062ef2388562cc970a2f124f0ce1f978c7
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947882"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045310"
 ---
 # <a name="composition-effects"></a>合成效果
 
 [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) API 允许将实时效果应用于图像和附带动画效果属性的 UI。 在此概述中，我们将详细描述可用于允许效果应用于合成视觉对象的功能。
 
-为了支持[通用 Windows 平台 \(UWP\)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) 一致性以供开发人员在其应用程序中描述效果，合成效果利用 Win2D 的 IGraphicsEffect 接口通过 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空间来使用效果描述。
+为了支持[通用 Windows 平台 \(UWP\)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) 一致性以供开发人员在其应用程序中描述效果，合成效果利用 Win2D 的 IGraphicsEffect 接口通过 [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空间来使用效果描述。
 
 画笔效果通过将效果应用于一组现有图像来绘制应用程序的区域。 Windows 10 合成效果 API 专用于子画面视觉效果。 在创建颜色、图形和效果方面，SpriteVisual 具有灵活性和互动性。 SpriteVisual 是合成视觉对象类型，该效果可以使用画笔填充 2D 矩形。 该视觉效果定义矩形的边框，而画笔定义用于绘制矩形的像素。
 
@@ -37,13 +37,13 @@ ms.locfileid: "8947882"
 
 目前，合成支持以下效果：
 
-| 作用               | 描述                                                                                                                                                                                                                |
+| 作用               | 说明                                                                                                                                                                                                                |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 2D 仿射变换  | 将 2D 仿射变换矩阵应用到图像。 我们使用此效果在我们的效果[示例](http://go.microsoft.com/fwlink/?LinkId=785341)中对 alpha 蒙板进行动画处理。       |
-| 算术合成 | 使用灵活方程组合两张图像。 我们使用算术合成在我们的[示例](http://go.microsoft.com/fwlink/?LinkId=785341)中创建交叉淡入淡出效果。 |
-| 混合效果         | 创建组合两张图像的混合效果。 合成提供 Win2D 中受支持的 21 种[混合模式](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.htm)（共 26 种）。        |
+| 2D 仿射变换  | 将 2D 仿射变换矩阵应用到图像。 我们使用此效果在我们的效果[示例](https://go.microsoft.com/fwlink/?LinkId=785341)中对 alpha 蒙板进行动画处理。       |
+| 算术合成 | 使用灵活方程组合两张图像。 我们使用算术合成在我们的[示例](https://go.microsoft.com/fwlink/?LinkId=785341)中创建交叉淡入淡出效果。 |
+| 混合效果         | 创建组合两张图像的混合效果。 合成提供 Win2D 中受支持的 21 种[混合模式](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.htm)（共 26 种）。        |
 | 颜色源         | 生成包含纯色的图像。                                                                                                                                                                               |
-| 合成            | 组合两张图像。 合成提供 Win2D 中受支持的全部 13 种[合成模式](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.htm)。                                              |
+| 合成            | 组合两张图像。 合成提供 Win2D 中受支持的全部 13 种[合成模式](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.htm)。                                              |
 | 对比度             | 增加或降低图像的对比度。                                                                                                                                                                           |
 | 曝光             | 增加或降低图像的曝光。                                                                                                                                                                           |
 | 灰度            | 将图像转换为单色灰度。                                                                                                                                                                                   |
@@ -54,7 +54,7 @@ ms.locfileid: "8947882"
 | 棕褐                | 将图像转换为棕褐色调。                                                                                                                                                                                          |
 | 温度和色调 | 调整图像的温度和/或色调。                                                                                                                                                                           |
 
-有关更多详细信息，请参阅 Win2D 的 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空间。 合成中不受支持的效果会标注为 \[NoComposition\]。
+有关更多详细信息，请参阅 Win2D 的 [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空间。 合成中不受支持的效果会标注为 \[NoComposition\]。
 
 ### <a name="chaining-effects"></a>链接效果
 
@@ -123,11 +123,11 @@ ScalarKeyFrameAnimation effectAnimation = _compositor.CreateScalarKeyFrameAnimat
 catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimation);
 ```
 
-对于使用关键帧进行动画处理的效果属性，请参阅[去饱和度 - 动画示例](http://go.microsoft.com/fwlink/?LinkId=785342)；若要使用效果和表达式，请参阅 [AlphaMask 示例](http://go.microsoft.com/fwlink/?LinkId=785343)。
+对于使用关键帧进行动画处理的效果属性，请参阅[去饱和度 - 动画示例](https://go.microsoft.com/fwlink/?LinkId=785342)；若要使用效果和表达式，请参阅 [AlphaMask 示例](https://go.microsoft.com/fwlink/?LinkId=785343)。
 
 ### <a name="multiple-effect-instances-with-independent-properties"></a>具有独立属性的多个效果实例
 
-效果编译期间，通过指定应为动态的参数，就可以根据每个效果实例更改该参数。 这允许两个视觉效果使用同一效果，但以不同的效果属性进行呈现。 有关详细信息，请参阅 ColorSource 和 Blend [示例](http://go.microsoft.com/fwlink/?LinkId=785344)。
+效果编译期间，通过指定应为动态的参数，就可以根据每个效果实例更改该参数。 这允许两个视觉效果使用同一效果，但以不同的效果属性进行呈现。 有关详细信息，请参阅 ColorSource 和 Blend [示例](https://go.microsoft.com/fwlink/?LinkId=785344)。
 
 ## <a name="getting-started-with-composition-effects"></a>合成效果入门
 
@@ -168,7 +168,7 @@ Win2D 发布为 Nuget.org 程序包，并且只有安装它之后才可以使用
 ![源图像](images/composition-cat-source.png)
 ### <a name="setting-your-composition-basics"></a>设置合成基本要素
 
-有关如何设置 Windows.UI.Composition 合成器、对 ContainerVisual 进行根处理和与核心窗口相关联的示例，请参阅我们在 GitHub 上的[合成可视化树示例](http://go.microsoft.com/fwlink/?LinkId=785345)。
+有关如何设置 Windows.UI.Composition 合成器、对 ContainerVisual 进行根处理和与核心窗口相关联的示例，请参阅我们在 GitHub 上的[合成可视化树示例](https://go.microsoft.com/fwlink/?LinkId=785345)。
 
 ```cs
 _compositor = new Compositor();

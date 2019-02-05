@@ -1,23 +1,23 @@
 ---
-description: XBind 标记扩展是 Binding 的高性能的替代方法。 xBind-新的 Windows 10-运行在更少的时间和更低的内存比绑定，并支持更好的调试。
+description: XBind 标记扩展是 Binding 的高性能的替代方法。 xBind-新的 Windows 10-运行在更少的时间和更低的内存比绑定和支持更好的调试。
 title: xBind 标记扩展
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c0eb1eb798cceb5c7a534c3aed1b8988bd1a42b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1d8e065b76a79a6733d1fa066cd924d07a8fc7c9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925198"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045363"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 标记扩展
 
-**注意**有关使用数据的常规信息绑定中你的应用与 **{x: Bind}** （和 **{x: Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意**有关使用数据的常规信息绑定在你的应用与 **{x: Bind}** （和 **{x: Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
-**{X: Bind}** 标记扩展，用于 windows 10 的新功能 — 是 **{Binding}** 的替代方法。 **{x: Bind}** 运行在更少的时间和更低的内存比 **{Binding}** 且支持更好的调试。
+**{X: Bind}** 标记扩展-windows 10 的新功能-是 **{Binding}** 的替代方法。 **{x: Bind}** 运行在更少的时间和更低的内存比 **{绑定}** 和支持更好的调试。
 
 XAML 编译时，**{x:Bind}** 将转换为从数据源上的某一属性中获取相关值的代码，并将其设置到标记中指定的属性上。 绑定对象可以配置为观察数据源属性值的更改，并基于这些更改自行刷新 (`Mode="OneWay"`)。 该对象也可以配置为将其自己的值的更改推送回源属性 (`Mode="TwoWay"`)。
 
@@ -28,9 +28,9 @@ XAML 编译时，**{x:Bind}** 将转换为从数据源上的某一属性中获�
 
 **用于演示 {x:Bind} 的应用示例**
 
--   [{x:Bind} 示例](http://go.microsoft.com/fwlink/p/?linkid=619989)
+-   [{x:Bind} 示例](https://go.microsoft.com/fwlink/p/?linkid=619989)
 -   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)
--   [XAML UI 基本示例](http://go.microsoft.com/fwlink/p/?linkid=619992)
+-   [XAML UI 基本示例](https://go.microsoft.com/fwlink/p/?linkid=619992)
 
 ## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
 
@@ -85,7 +85,7 @@ XAML 编译时，**{x:Bind}** 将转换为从数据源上的某一属性中获�
 
 对于 C++/CX，**{x:Bind}** 无法绑定到页面或数据模型中的私有字段和属性，你需要具有其可绑定的公共属性。 绑定的图面区域需显示为 CX 类/接口，以便我们可以获取相关的元数据。 无需使用 **\[Bindable\]** 属性。
 
-使用 **x:Bind** 时，无需将 **ElementName=xxx** 用作绑定表达式的一部分。 相反，你可以使用该元素的名称作为路径的第一部分为绑定因为已命名的元素变为表示根绑定源的页面或用户控件内的字段。 
+使用 **x:Bind** 时，无需将 **ElementName=xxx** 用作绑定表达式的一部分。 相反，你可以使用元素的名称作为路径的第一部分为绑定因为已命名的元素变为表示根绑定源的页面或用户控件内的字段。 
 
 
 ### <a name="collections"></a>集合
@@ -111,7 +111,7 @@ _注意：C# 样式的强制转换语法较附加属性语法更灵活，是接�
 
 ## <a name="functions-in-binding-paths"></a>绑定路径中的函数
 
-从 Windows10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这是一项强大功能启用多个方案在标记中的数据绑定。 [函数绑定](../data-binding/function-bindings.md)的详细信息，请参阅。
+从 Windows10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这是一项强大功能支持多个方案在标记中的数据绑定。 [函数绑定](../data-binding/function-bindings.md)的详细信息，请参阅。
 
 ## <a name="event-binding"></a>事件绑定
 
@@ -154,7 +154,7 @@ _注意：C# 样式的强制转换语法较附加属性语法更灵活，是接�
 
 因为 **{x:Bind}** 使用生成的代码来达成目标，所以它在编译时需使用类型信息。 这意味着你无法绑定到预先不知道类型的属性。 因此，不能将 **{x:Bind}** 与 **DataContext** 属性结合使用，因为它为 **Object** 类型，并且还可能会在运行时出现更改。
 
-使用时 **{x: Bind}** 数据模板，你必须指示要绑定到通过设置**X:datatype**值，如[示例](#examples)部分中所示的类型。 你也可以将类型设置为接口或基类类型，然后按需使用转换，从而编写一个完整的表达式。
+使用数据模板 **{x: Bind}** 时, 必须指示要绑定到的类型通过设置**X:datatype**值，在[示例](#examples)部分中所示。 你也可以将类型设置为接口或基类类型，然后按需使用转换，从而编写一个完整的表达式。
 
 已编译的绑定取决于代码生成。 因此，如果你在资源字典中使用 **{x:Bind}**，则该资源字典需要有一个代码隐藏类。 有关代码示例，请参阅[带有 {x:Bind}](../data-binding/data-binding-in-depth.md#resource-dictionaries-with-x-bind) 的资源字典。
 
@@ -167,7 +167,7 @@ _注意：C# 样式的强制转换语法较附加属性语法更灵活，是接�
 > [!NOTE]
 > 从 Windows10 版本 1607 开始，XAML 框架向 Visibility 转换器提供内置布尔值。 转换器将 **true** 映射到 **Visible** 枚举值并将 **false** 映射到 **Collapsed**，以便你可以将 Visibility 属性绑定到布尔值，无需创建转换器。 注意，这不是函数绑定的特点，只是属性绑定。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
-**提示**如果你需要指定单个花括号为某个值，如[**路径**](https://msdn.microsoft.com/library/windows/apps/br209830)或[**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827)，它前面加反斜杠： `\{`。 此外，将包含需要转义的括号的整个字符串放在第二组引号中，例如 `ConverterParameter='{Mix}'`。
+**提示**如果你需要指定单个花括号为某个值，如[**路径**](https://msdn.microsoft.com/library/windows/apps/br209830)或[**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827)前, 加上反斜杠： `\{`。 此外，将包含需要转义的括号的整个字符串放在第二组引号中，例如 `ConverterParameter='{Mix}'`。
 
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) 和 **ConverterLanguage** 都与如下方案相关：将绑定源中的值或类型转换为与绑定目标属性兼容的类型或值。 有关详细信息和相关示例，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)的“数据转换”部分。
 

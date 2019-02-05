@@ -1,8 +1,22 @@
 ---
-<<<<<<< HEAD 作者： Karl 桥 Microsoft 说明： 针对来自 Xbox 游戏板和遥控器输入优化应用。
-=== 说明： TODO
->>>>>>> 主标题： 游戏板和遥控器交互 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47 标签： 游戏板和远程交互模板： detail.hbs isNew: true <<<<<<< HEAD ms.author: kbridge=======
-大纲ms.date: 02/08/2017 ms.topic： 文章关键字： windows 10，uwp ms.localizationpriority： 中等
+author: Karl-Bridge-Microsoft
+Description: Optimize your app for input from Xbox gamepad and remote control.
+title: 游戏板和遥控器交互
+ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
+label: Gamepad and remote interactions
+template: detail.hbs
+isNew: true
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+keywords: windows 10, uwp
+ms.localizationpriority: medium
+ms.openlocfilehash: 022724064ad1e7f5551b6676bf256ca5cf6e4b8e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048554"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>游戏板和遥控器交互
 

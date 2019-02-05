@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, uwp, 辅助功能, 游戏
 ms.localizationpriority: medium
-ms.openlocfilehash: 489804c4645c8e6d1c4926e362f81926c8b2f3c8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0e1d9d25fc63dd2fbb8d258fdaee692ccdfdc911
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937595"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046330"
 ---
 #  <a name="making-games-accessible"></a>使游戏成为辅助游戏
 
@@ -33,7 +33,7 @@ ms.locfileid: "8937595"
 
 能够玩你的游戏的用户数 x 游戏的精彩程度 = 游戏销量
 
-如果你制作了一款精彩的游戏，但这款游戏很复杂，只有少量的用户可以玩，你的销量便会受到限制。 同样，如果你制作的游戏无法供具有肢体、感官或认知障碍的人士玩，那么你就错过了潜在的销量。 例如，考虑到[美国就有 19% 的人口具有某种形式的残障](http://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html)，[有估计 14% 的成年人面临阅读困难](https://nces.ed.gov/naal/estimates/overview.aspx)，而且[估计有 10% 的男性具有某种形式的色觉障碍](https://www.aao.org/eye-health/diseases/color-blindness-risk)，这可能会对你的应用收益产生很大的影响。 
+如果你制作了一款精彩的游戏，但这款游戏很复杂，只有少量的用户可以玩，你的销量便会受到限制。 同样，如果你制作的游戏无法供具有肢体、感官或认知障碍的人士玩，那么你就错过了潜在的销量。 例如，考虑到[美国就有 19% 的人口具有某种形式的残障](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html)，[有估计 14% 的成年人面临阅读困难](https://nces.ed.gov/naal/estimates/overview.aspx)，而且[估计有 10% 的男性具有某种形式的色觉障碍](https://www.aao.org/eye-health/diseases/color-blindness-risk)，这可能会对你的应用收益产生很大的影响。 
 
 有关更多商业理由，请参阅[使视频游戏成为辅助游戏](https://msdn.microsoft.com/library/windows/desktop/ee415219)。
 
@@ -158,7 +158,7 @@ ms.locfileid: "8937595"
 
 ## <a name="game-accessibility-features"></a>游戏辅助功能
 
-本部分概述可使你的游戏更具辅助性的一些功能。 这些功能派生自[游戏辅助功能指南](http://gameaccessibilityguidelines.com/)中的指南，这些指南代表了由工作室、专家和学者组成的合作团体的研究成果。 有关详细信息，请参阅[游戏辅助功能指南](http://gameaccessibilityguidelines.com/)。 
+本部分概述可使你的游戏更具辅助性的一些功能。 这些功能派生自[游戏辅助功能指南](https://gameaccessibilityguidelines.com/)中的指南，这些指南代表了由工作室、专家和学者组成的合作团体的研究成果。 有关详细信息，请参阅[游戏辅助功能指南](https://gameaccessibilityguidelines.com/)。 
 
 ### <a name="colorblind-friendly-graphics-and-user-interface"></a>色盲友好图形和用户界面
 
@@ -175,7 +175,7 @@ ms.locfileid: "8937595"
     
   + 不要只单独依赖颜色来传达或区分游戏对象。 还应使用形状和图案。
   + 如果只能使用颜色，请在预设中加入可自由选择的颜色，以便有需要的玩家可以进行完全自定义，同时不为不需要的玩家带来额外的麻烦。
-  + 使用色盲模拟器来测试设计，以便你可以通过色盲眼睛查看自己的设计。 这可以帮助你避免出现常见的对比度问题。 [Color Oracle](http://www.colororacle.org) 是一个免费的色盲模拟器，可模拟三类最常见的色觉缺陷 – 绿色盲、红色盲和蓝色盲。
+  + 使用色盲模拟器来测试设计，以便你可以通过色盲眼睛查看自己的设计。 这可以帮助你避免出现常见的对比度问题。 [Color Oracle](https://www.colororacle.org) 是一个免费的色盲模拟器，可模拟三类最常见的色觉缺陷 – 绿色盲、红色盲和蓝色盲。
   
 ### <a name="closed-captioning-and-subtitles"></a>隐藏式字幕和字幕
 
@@ -209,13 +209,13 @@ ms.locfileid: "8937595"
 
 ### <a name="fully-mappable-controls"></a>完全可映射控制
 
-有些公司和组织（如 [Special Effect](http://www.specialeffect.org.uk/)）设计可与各种游戏系统（如 Windows 和 Xbox One）结合使用的自定义游戏控制器。 此自定义使具有不同形式的残障的人士能够玩本来不能玩的游戏。 有关现在由于自定义控制器而能够独立玩游戏的人员的详细信息，请参阅[它们帮助了谁](http://www.specialeffect.org.uk/who-we-helped)。
+有些公司和组织（如 [Special Effect](https://www.specialeffect.org.uk/)）设计可与各种游戏系统（如 Windows 和 Xbox One）结合使用的自定义游戏控制器。 此自定义使具有不同形式的残障的人士能够玩本来不能玩的游戏。 有关现在由于自定义控制器而能够独立玩游戏的人员的详细信息，请参阅[它们帮助了谁](https://www.specialeffect.org.uk/who-we-helped)。
 
 作为游戏开发人员，你可以通过允许完全可映射的控制来使游戏更具辅助性，以便使玩家可以选择插入其自己的自定义控制器，并根据需要重新映射按键。
 
 使用完全可映射控制对于使用标准控制器的用户也有益处。 你的玩家可以设计适合自己特殊的个人需求的布局。
 
-标准 Xbox One 和 Xbox Elite 控制器都提供控制器的自定义用于精确游戏。 若要完全利用其重新映射功能，__建议开发人员直接在游戏中加入重新映射__。 有关详细信息，请参阅 [Xbox One](http://support.xbox.com/xbox-one/accessories/customize-standard-controller-with-accessories-app) 和 [Xbox Elite](http://support.xbox.com/xbox-one/accessories/use-accessories-app-configure-elite-controller)。
+标准 Xbox One 和 Xbox Elite 控制器都提供控制器的自定义用于精确游戏。 若要完全利用其重新映射功能，__建议开发人员直接在游戏中加入重新映射__。 有关详细信息，请参阅 [Xbox One](https://support.xbox.com/xbox-one/accessories/customize-standard-controller-with-accessories-app) 和 [Xbox Elite](https://support.xbox.com/xbox-one/accessories/use-accessories-app-configure-elite-controller)。
 
 ### <a name="wider-selection-of-difficulty-levels"></a>较广的难度级别选择
 
@@ -225,7 +225,7 @@ ms.locfileid: "8937595"
 
 ### <a name="photosensitivity-epilepsy-testing"></a>光敏性癫痫测试
 
-光敏性癫痫 (PSE) 是一种由视觉刺激（包括暴露在闪光灯或特定的移动视觉形式和模式下）触发病情发作的病症。 大约 3% 的人会出现此病症，并且在儿童和青少年中更常见。 在数字方面，我们看到大约[每 4000 个用户中有 1 个年龄段为 5-24](http://www.epilepsy.com/information/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-3)。
+光敏性癫痫 (PSE) 是一种由视觉刺激（包括暴露在闪光灯或特定的移动视觉形式和模式下）触发病情发作的病症。 大约 3% 的人会出现此病症，并且在儿童和青少年中更常见。 在数字方面，我们看到大约[每 4000 个用户中有 1 个年龄段为 5-24](https://www.epilepsy.com/information/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-3)。
 
 在玩视频游戏时，有许多因素可能会导致光敏反映，包括游戏的持续时间、闪光的频率、光的强度、背景和光的对比度、屏幕和玩家之间的距离以及光的波长。
 
@@ -241,7 +241,7 @@ ms.locfileid: "8937595"
 * 超过五个可能由较小的规则单元（如圆点）组成的均匀分布的高对比度重复条纹 - 行或列（如网格和棋盘）
 * 超过五行只有大写字母格式的文本行，字母之间间距不大，而且行间距与行本身的高度相同，这有效地将它变为高对比度的均匀交替行
 
-使用自动系统检查游戏中是否有可能触发光敏性癫痫的刺激物。 （示例：Cambridge Research System Ltd 和 Graham Harding 教授开发的 [The Harding Test](http://www.hardingtest.com/index.php?page=test) 和 [Harding Flash and Pattern Analyzer (FPA) G2](http://www.hardingfpa.com/harding-fpa-for-games/)。） 
+使用自动系统检查游戏中是否有可能触发光敏性癫痫的刺激物。 （示例：Cambridge Research System Ltd 和 Graham Harding 教授开发的 [The Harding Test](https://www.hardingtest.com/index.php?page=test) 和 [Harding Flash and Pattern Analyzer (FPA) G2](https://www.hardingfpa.com/harding-fpa-for-games/)。） 
 
 加入**闪烁开/关**设置选项，并将**闪烁**设置为默认**关闭**。 这样一来，就可以保护还不知道自己容易发病的玩家。
 
@@ -252,21 +252,21 @@ ms.locfileid: "8937595"
 下面是一些提供关于游戏辅助功能的其他信息的外部站点。
 
 ### <a name="game-accessibility-guidelines"></a>游戏辅助功能指南
-* [游戏辅助功能指南](http://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation 指南](http://www.includification.com/)
-* [设计通用辅助 (UA) 游戏](http://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
+* [游戏辅助功能指南](https://gameaccessibilityguidelines.com/)
+* [AbleGamers Foundation 指南](https://www.includification.com/)
+* [设计通用辅助 (UA) 游戏](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
 ### <a name="custom-input-controllers"></a>自定义输入控制器
-* [特殊效果](http://www.specialeffect.org.uk/)
-* [参战的战争斗士](http://www.warfighterengaged.org/)
+* [特殊效果](https://www.specialeffect.org.uk/)
+* [参战的战争斗士](https://www.warfighterengaged.org/)
 
 ## <a name="references-used"></a>使用的参考
-* [游戏辅助功能指南](http://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation 指南](http://www.includification.com/)
-* [Color Blind Awareness，一家社区利益公司](http://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
-* [如何良好地添加字幕 - Gamasutra 上的一篇博客文章，作者 Ian Hamilton](http://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
-* [面向所有人的创新计划](http://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
-* [癫痫基金会](http://www.epilepsy.com/)
+* [游戏辅助功能指南](https://gameaccessibilityguidelines.com/)
+* [AbleGamers Foundation 指南](https://www.includification.com/)
+* [Color Blind Awareness，一家社区利益公司](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
+* [如何良好地添加字幕 - Gamasutra 上的一篇博客文章，作者 Ian Hamilton](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
+* [面向所有人的创新计划](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
+* [癫痫基金会](https://www.epilepsy.com/)
 
 ## <a name="related-links"></a>相关链接
 * [非独占设计](https://www.microsoft.com/design/inclusive)

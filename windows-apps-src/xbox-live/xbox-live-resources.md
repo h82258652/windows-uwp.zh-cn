@@ -5,12 +5,12 @@ ms.date: 09/12/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, xbox, xbox live, 资源, API, 参考
 ms.localizationpriority: medium
-ms.openlocfilehash: b12816166aa99311b9adffded176c4d808f2c677
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c3ed5a76791bebfb1b82afaf12c699bfdd7c7437
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931137"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044079"
 ---
 # <a name="xbox-live-resources"></a>Xbox Live 资源
 
@@ -52,7 +52,7 @@ Xbox Live API 源代码在 GitHub 上的以下位置公开发布：
 
 该程序包包含与 UWP 平台的安全网络和连接存储功能相关的 winmd 文件和文档。 此扩展通过使用 Windows.Gaming.XboxLive.Storage 命名空间，在你的 UWP 作品中启用连接存储。
 
-* [Xbox Live 平台扩展 SDK](http://aka.ms/xblextsdk)
+* [Xbox Live 平台扩展 SDK](https://aka.ms/xblextsdk)
 
 > [!NOTE]
 > - 如果你的开发人员环境使用的是 Windows 10 Fall Creators Update SDK 或更高版本，则不需要此下载。

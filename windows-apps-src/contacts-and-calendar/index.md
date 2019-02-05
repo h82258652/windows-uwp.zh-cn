@@ -6,12 +6,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp, 联系人, 日历, 约会, 电子邮件
 ms.localizationpriority: medium
-ms.openlocfilehash: a2ccf75796140723270e49a7b967ce234d41baf1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 239dbaa7799d9991a63223d1cd8706d34445a16b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945676"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048234"
 ---
 # <a name="contacts-my-people-and-calendar"></a>联系人、我的人脉和日历
 
@@ -35,8 +35,8 @@ ms.locfileid: "8945676"
 
 ## <a name="related-topics"></a>相关主题
 
-* [约会 API 示例](http://go.microsoft.com/fwlink/p/?linkid=309836)
-* [联系人管理器 API 示例](http://go.microsoft.com/fwlink/p/?LinkID=310079)
-* [联系人选取器应用示例](http://go.microsoft.com/fwlink/p/?linkid=231575)
-* [处理联系人操作示例](http://go.microsoft.com/fwlink/p/?LinkID=320151)
+* [约会 API 示例](https://go.microsoft.com/fwlink/p/?linkid=309836)
+* [联系人管理器 API 示例](https://go.microsoft.com/fwlink/p/?LinkID=310079)
+* [联系人选取器应用示例](https://go.microsoft.com/fwlink/p/?linkid=231575)
+* [处理联系人操作示例](https://go.microsoft.com/fwlink/p/?LinkID=320151)
 * [联系人卡片集成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)

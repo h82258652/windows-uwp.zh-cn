@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
 ms.localizationpriority: medium
-ms.openlocfilehash: 60642016e5924c554534775a6576b61e935eaf1e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 019db8c93b61f84dde400f7be9f98bf82b1466e8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932500"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048574"
 ---
 # <a name="bringing-html-games-to-uwp-on-xbox"></a>将 HTML 游戏移植到 Xbox 上的 UWP
 Xbox One 是适用于 HTML 5 游戏的一个优秀平台。 HTML 5 游戏在 [Edge](https://developer.microsoft.com/microsoft-edge/) 浏览器引擎上运行。 Edge 速度较快，并且完全支持 HTML 5 和 CSS 3 功能（如 WebGL 和画布）。
@@ -20,7 +20,7 @@ Xbox One 是适用于 HTML 5 游戏的一个优秀平台。 HTML 5 游戏在 [Ed
 
 HTML 游戏与任何其他类型的游戏势均力敌。 开发人员可以获取本机 API（如控制器输入）、Kinect 等的完全访问权限。
 
-Xbox One 在通用 Windows 平台上运行，这意味着如同其他 Microsoft 设备一样，它支持托管的 Web 应用（即完全来自服务器的应用程序）。 若要了解详细信息，请参阅[托管的 Web 应用](http://microsoftedge.github.io/WebAppsDocs/en-US/win10/HWA.htm)。
+Xbox One 在通用 Windows 平台上运行，这意味着如同其他 Microsoft 设备一样，它支持托管的 Web 应用（即完全来自服务器的应用程序）。 若要了解详细信息，请参阅[托管的 Web 应用](https://microsoftedge.github.io/WebAppsDocs/en-US/win10/HWA.htm)。
 
 
 本视频更加详细地介绍 Xbox 上的封装 Web 应用和托管 Web 应用，包括如何生成这些应用。

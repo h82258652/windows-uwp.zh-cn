@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 云服务
 ms.localizationpriority: medium
-ms.openlocfilehash: 12f9125b4a128b754fc90c48e6a289cec40a7f54
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5781d8f8606f68360018cfa17d5cfe5719ed31a6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925311"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045586"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>使用适用于 UWP 游戏的云服务
 
@@ -81,7 +81,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发�
         </td>
     </tr>
     <tr>
-        <td><a href="http://web.ageofascent.com/">Illyriad Games</a></td>
+        <td><a href="https://web.ageofascent.com/">Illyriad Games</a></td>
         <td>Illyriad Games 制作的<b>崛起时代</b>，是一款可以在装有现代浏览器的设备上运行的大型多人在线 (MMO) 史诗般 3D 空间游戏。 因此可以在电脑、笔记本电脑、手机和其他移动设备上玩此款游戏，无需安装任何插件。该游戏使用 ASP.NET Core、HTML5、WebGL 和 Azure。</td>
         <td>
             <ul>
@@ -96,7 +96,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发�
         </td>
     </tr>
     <tr>
-        <td><a href="http://www.nextgames.com/">Next Games</a></td>
+        <td><a href="https://www.nextgames.com/">Next Games</a></td>
         <td>Next Games 是<b>行尸走肉：无人之地</b>视频游戏的制作者，该游戏改编自 AMC 的原创系列。 《行尸走肉》游戏后端使用的是 Azure。 这款游戏在开放的首个周末和第一周内达到 1000000 下载量，在美国 App Store 中成为 iPhone 和 iPad 免费应用第一名、12 个国家/地区中免费应用第一名和 13 个国家/地区中免费游戏第一名。
         </td>
         <td>
@@ -111,7 +111,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发�
         </td>
     </tr>
     <tr>
-        <td><a href="http://www.crimecoast.com/">Pixel Squad</a></td>
+        <td><a href="https://www.crimecoast.com/">Pixel Squad</a></td>
         <td>Pixel Squad 使用 Unity 游戏引擎和 Azure 开发了<b>罪恶港湾</b>。 <b>罪恶港湾</b>是一款社交策略游戏，适用于 Android、iOS 和 Windows 平台。 这款游戏使用了 Azure Blob 存储、托管的 Azure Redis 缓存、负载平衡 IIS VM 阵列和 Microsoft 通知中心。 了解它们如何管理扩展以及如何处理 5000 名玩家同时在线时的玩家数量飙升情况。
         </td>
         <td>
@@ -130,7 +130,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发�
 ### <a name="other-links"></a>其他链接
 
 * [Hitman 和 Azure：创建只有使用云才能实现的“难寻目标”等游戏功能](https://channel9.msdn.com/Series/Hitman)
-* [Hitcents、Game Troopers 和 InnoSpark 的秘密武器 Azure](http://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
+* [Hitcents、Game Troopers 和 InnoSpark 的秘密武器 Azure](https://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
 * [基于 Bizspark 计划使用 Azure 的游戏初创公司](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
 
 
@@ -194,12 +194,12 @@ Windows10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发�
     
 * [开发人员计划](e2e.md#developer-programs)
 
-    Microsoft 提供多个开发人员计划，如 [ID@Xbox](http://www.xbox.com/Developers/id) 和 [Xbox Live 创意者计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)，可以帮助你开发和发布游戏。
+    Microsoft 提供多个开发人员计划，如 [ID@Xbox](https://www.xbox.com/Developers/id) 和 [Xbox Live 创意者计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)，可以帮助你开发和发布游戏。
 
 ## <a name="learning-resources"></a>学习资源
 
 * //版本 2016：[CodeLabs &mdash; 使用 Microsoft Azure App Service 和 Microsoft SQL Azure 后端在 Unity 中保存游戏分数](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
-* 版本 2017年:[使用 Microsoft Azure 提供世界级游戏体验： 从 Halo、 杀手，等 WalkingDead （视频） 的游戏中汲取](https://channel9.msdn.com/Events/Build/2017/P4062)
+* 版本 2017年:[使用 Microsoft Azure 提供世界级游戏体验： 从诸如 Halo、 杀手和 WalkingDead （视频） 的游戏中汲取](https://channel9.msdn.com/Events/Build/2017/P4062)
 * 可重复使用的一组构建块、项目、服务和最佳做法，旨在在 GitHub 上使用 Azure 支持常见游戏工作负荷：[Azure 上的游戏构建块](https://github.com/MicrosoftDX/nether)
 * [Azure 上的游戏服务（视频）](https://channel9.msdn.com/Series/Gaming-Services-on-Azure)
 
@@ -225,7 +225,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发�
 * [面向游戏的 Azure](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
 * [面向初创公司的 Microsoft](https://startups.microsoft.com)
-* [ID@Xbox](http://www.xbox.com/Developers/id)
+* [ID@Xbox](https://www.xbox.com/Developers/id)
 
 
  

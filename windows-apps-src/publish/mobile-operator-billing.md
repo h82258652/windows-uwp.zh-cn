@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 移动运营商, 移动结算, 移动运营商结算
 ms.localizationpriority: medium
-ms.openlocfilehash: f9f751735c2387ab5009e2e6f19f68db304916ec
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: 3f23e40abfb269e2b52e9dc5b66c2486da071c9b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980385"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045676"
 ---
 # <a name="mobile-operator-billing"></a>移动运营商结算
 
@@ -19,7 +19,7 @@ ms.locfileid: "8980385"
 Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的手机和 Xbox One 主机提供移动运营商结算作为付款方式。 如果客户的移动运营商支持此功能，客户可以将移动运营商结算添加为付款方式，并通过此方式使用其移动帐户进行 Microsoft Store 购买。
 
 > [!TIP]
->  如果客户的移动运营商提供移动运营商结算，但客户在其设备上找不到此选项，请参阅相关[步骤](http://go.microsoft.com/fwlink/p/?LinkId=523993)。
+>  如果客户的移动运营商提供移动运营商结算，但客户在其设备上找不到此选项，请参阅相关[步骤](https://go.microsoft.com/fwlink/p/?LinkId=523993)。
 
 我们定期与移动运营商合作以扩展此付款方式的可用性。 如果希望建议在下表中没有看到的移动运营商，请联系该移动运营商并请求他们添加此付款方式。
 
@@ -41,7 +41,7 @@ Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的�
 | 马来西亚        | Digi                             |
 | 荷兰     | KPN / Telfort                    |
 | 挪威          | Telenor / Talkmore、 Telia / OneCall   |
-| 波兰          | Orange、 播放                     |
+| 波兰          | Orange、 玩游戏                     |
 | 新加坡       | M1 Limited StarHub              |
 | 斯洛伐克        | Slovak Telekom                   |
 | 西班牙           | Orange                           |

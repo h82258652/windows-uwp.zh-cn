@@ -5,12 +5,12 @@ keywords: 用户活动, 时间线, cortana 从你离开的位置继续, cortana 
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f35882af5ed7f66f59eb4e7fc4410223c4424e92
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2e1c2a3da3711bbc5335a9c44a4b280e3934adac
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941791"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046197"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>即便跨设备，也继续用户活动
 
@@ -34,7 +34,7 @@ ms.locfileid: "8941791"
 
 1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) 用于通过特定上下文继续执行应用程序操作。 通常情况下，此链接采用两种形式：方案的协议处理程序（例如“my-app://page2?action=edit”）或 AppUriHandler（例如，http://constoso.com/page2?action=edit)。
 2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) 公开一个类，允许用户使用标题、描述或自适应卡片元素来直观标识活动。
-3. 最后，[内容](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content)是可用于存储活动元数据的位置，通过这一位置，可按特定上下文来对活动进行归组和检索。 通常，它采用 [http://schema.org](http://schema.org) 数据的形式。
+3. 最后，[内容](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content)是可用于存储活动元数据的位置，通过这一位置，可按特定上下文来对活动进行归组和检索。 通常，它采用 [http://schema.org](https://schema.org) 数据的形式。
 
 向应用添加 **UserActivity**：
 
@@ -103,7 +103,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 ## <a name="use-adaptive-cards-to-improve-the-timeline-experience"></a>使用自适应卡片来改善时间线体验
 
-用户活动显示在 Cortana 和时间线中。 当活动显示在时间线中时，系统将使用[自适应卡片](http://adaptivecards.io/)框架来显示它们。 如果不为每项活动提供一张自适应卡片，时间线会根据应用程序名称和图标、标题字段和可选说明字段自动创建简单的活动卡。 下面是自适应卡片有效负载和它生成的卡的示例。
+用户活动显示在 Cortana 和时间线中。 当活动显示在时间线中时，系统将使用[自适应卡片](https://adaptivecards.io/)框架来显示它们。 如果不为每项活动提供一张自适应卡片，时间线会根据应用程序名称和图标、标题字段和可选说明字段自动创建简单的活动卡。 下面是自适应卡片有效负载和它生成的卡的示例。
 
 ![自适应卡片](images/adaptivecard.png)]
 
@@ -157,7 +157,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 可使用 [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) API 在时间线和 Cortana 中显示应用。
 * 详细了解[**UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * 查看[示例代码](https://github.com/Microsoft/project-rome)。
-* 请参阅[更复杂的自适应卡片](http://adaptivecards.io/)。
+* 请参阅[更复杂的自适应卡片](https://adaptivecards.io/)。
 * 通过 [Microsoft Graph](https://developer.microsoft.com/graph/) 从 iOS、Android 或 web 服务发布 **UserActivity**。
 * 了解有关 [GitHub 上的 Project Rome](https://github.com/Microsoft/project-rome)的详细信息。
 
@@ -169,7 +169,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 * [用户活动 （项目 rome 文档）](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [自适应卡片](https://docs.microsoft.com/adaptive-cards/)
-* [自适应卡片可视化工具，示例](http://adaptivecards.io/)
+* [自适应卡片可视化工具，示例](https://adaptivecards.io/)
 * [处理 URI 激活](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [使用 Microsoft Graph、活动源和自适应卡片在任何平台上与客户互动](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)

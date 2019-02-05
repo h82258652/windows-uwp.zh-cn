@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 50e6c68841440120b783713ef0a591e39a7c7eec
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d0c3bea228cae8d9482a8e0cb24c958e36992848
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942820"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046570"
 ---
 # <a name="accessibility-overview"></a>辅助功能概述  
 
@@ -188,11 +188,11 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 <span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_APPS_THAT_SUPPORT_XAML___MICROSOFT_DIRECTX_INTEROP"/>
 
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>支持 XAML / Microsoft DirectX 互操作的应用中的辅助技术支持  
-默认情况下，无法访问 XAML UI 中托管的 Microsoft DirectX 内容（使用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) 或 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)）。 [XAML SwapChainPanel DirectX 互操作示例](http://go.microsoft.com/fwlink/p/?LinkID=309155)显示如何为托管的 DirectX 内容创建 UI 自动化对等。 这种技术让托管的内容可通过 UI 自动化进行访问。
+默认情况下，无法访问 XAML UI 中托管的 Microsoft DirectX 内容（使用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) 或 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)）。 [XAML SwapChainPanel DirectX 互操作示例](https://go.microsoft.com/fwlink/p/?LinkID=309155)显示如何为托管的 DirectX 内容创建 UI 自动化对等。 这种技术让托管的内容可通过 UI 自动化进行访问。
 
 ## <a name="related-topics"></a>相关主题  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
 * [辅助功能设计](https://msdn.microsoft.com/library/windows/apps/Hh700407)
-* [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [辅助功能](accessibility.md)
 * [讲述人入门](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

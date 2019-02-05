@@ -5,18 +5,18 @@ keywords: 新增功能，更新，功能，开发人员指南，Windows 10 年 1
 ms.date: 1/17/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f224663506cbb60f6c1476caccb5ecffefeaf7b
-ms.sourcegitcommit: cfdc854fede8e586202523cdb59d3d0a2f5b4b36
+ms.openlocfilehash: cc5323ba12fa72fb5350e62f74206ea72fe96497
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "9014388"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046127"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>什么是 Windows 开发人员文档中 2019 年 1 月的新增功能
 
 Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 以下功能概述、 开发人员指南和视频进行了在 1 月 1 个月中可用。
 
-只需在 Windows10 上[安装工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+只需在 Windows10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -70,7 +70,7 @@ WPF、 Windows 窗体和 WinUI UX 框架现在均可用于开放源代码在 Git
 
 ### <a name="progressive-web-apps"></a>渐进式 Web 应用
 
-渐进式 Web 应用是像本机应用函数跨不同浏览器和各种 Windows 10 设备的网站。 [观看视频](https://youtu.be/ugAewC3308Y)以了解更多信息，然后[查看文档](http://aka.ms/Windows-PWA)开始。
+渐进式 Web 应用是像本机应用函数跨不同浏览器和各种 Windows 10 设备的网站。 [观看视频](https://youtu.be/ugAewC3308Y)以了解更多信息，然后[查看文档](https://aka.ms/Windows-PWA)开始。
 
 ### <a name="vs-code-series"></a>VS 代码系列
 

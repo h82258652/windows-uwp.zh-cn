@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 938b5b3cdd2e23995a1031875a28f178e0c97a26
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5ad64c2a0d4d7569ec2c0c0a44f9236fc4b2819f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931128"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045516"
 ---
 # <a name="keyboard-accessibility"></a>键盘辅助功能  
 
@@ -148,7 +148,7 @@ XAML
 
 为简单起见，上一个示例对于“Ctrl+A”之类的字符串没有使用资源。 但是，本地化过程中也必须考虑快捷键。 对快捷键进行本地化是相关的，因为选择将哪个键用作快捷键通常取决于元素的可见文本标签。
 
-有关实现快捷键的更多指南，请参阅 Windows 用户体验交互指南中的[快捷键](http://go.microsoft.com/fwlink/p/?linkid=221825)。
+有关实现快捷键的更多指南，请参阅 Windows 用户体验交互指南中的[快捷键](https://go.microsoft.com/fwlink/p/?linkid=221825)。
 
 <span id="Implementing_a_key_event_handler"/>
 <span id="implementing_a_key_event_handler"/>
@@ -249,5 +249,5 @@ Windows Phone 设备通常不具有专用的硬件键盘。 但是，软输入�
 * [辅助功能](accessibility.md)
 * [键盘交互](https://msdn.microsoft.com/library/windows/apps/Mt185607)
 * [触摸键盘示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
 

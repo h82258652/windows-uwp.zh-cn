@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，3dprinting，3d 打印
 ms.localizationpriority: medium
-ms.openlocfilehash: a51312cc9be466c6847ec7f2d98b29da1c8e5c9f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4013341a3e4e44d6ac2df66d58d4114313573d2a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918776"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048264"
 ---
 # <a name="3d-printing-from-your-app"></a>从应用进行 3D 打印
 
@@ -65,7 +65,7 @@ ms.locfileid: "8918776"
 现在，你可以将 3D 数据文件加载到应用的内存中。 但是，3D 几何图形数据可以有很多不同的格式，而且并非都适合 3D 打印。 Windows 10 针对所有 3D 打印任务都使用 3D 制造格式 (.3mf) 文件类型。
 
 > [!NOTE]  
-> .3mf 文件类型提供的功能比此教程中所涉及的要更多。 若要了解有关 3MF 及其为 3D 产品的生产商和消费者提供的功能的详细信息，请参阅 [3MF 规范](http://3mf.io/what-is-3mf/3mf-specification/)。 若要了解如何使用 Windows 10 API 来充分利用这些功能，请参阅[生成 3MF 程序包](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)教程。
+> .3mf 文件类型提供的功能比此教程中所涉及的要更多。 若要了解有关 3MF 及其为 3D 产品的生产商和消费者提供的功能的详细信息，请参阅 [3MF 规范](https://3mf.io/what-is-3mf/3mf-specification/)。 若要了解如何使用 Windows 10 API 来充分利用这些功能，请参阅[生成 3MF 程序包](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)教程。
 
 [3D Builder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) 应用可以打开最常见 3D 格式的文件并将其另存为 .3mf 文件。 在此示例中，文件类型可能会有所不同，不过有一种简单的解决方法，即打开 3D Builder 应用并提示用户将导入的数据另存为 .3mf 文件，然后重新加载它。
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a4c5005885d150fdd4f6a41b3fb2586e2728bbd5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: dde7f966e47aa6c35e3bc4e508eddabf13e313ee
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921881"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045908"
 ---
 # <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>高动态范围 (HDR) 和低亮度照片捕获
 
@@ -39,7 +39,7 @@ ms.locfileid: "8921881"
 > [!NOTE] 
 > 本文以[使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)中讨论的概念和代码为基础，该文章介绍了实现基本照片和视频捕获的步骤。 我们建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
 
-有一个通用 Windows 示例展示了 **AdvancedPhotoCapture** 类的用法，你可以使用该类查看用在上下文中或用作自己应用起始点的 API。 有关详细信息，请参阅[相机高级捕获示例](http://go.microsoft.com/fwlink/?LinkID=620517)。
+有一个通用 Windows 示例展示了 **AdvancedPhotoCapture** 类的用法，你可以使用该类查看用在上下文中或用作自己应用起始点的 API。 有关详细信息，请参阅[相机高级捕获示例](https://go.microsoft.com/fwlink/?LinkID=620517)。
 
 ## <a name="advanced-photo-capture-namespaces"></a>高级照片捕获命名空间
 

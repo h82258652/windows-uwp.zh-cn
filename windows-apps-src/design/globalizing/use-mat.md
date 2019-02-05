@@ -6,12 +6,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 84e3c74171c619fd59e272e539fd9a4e5428e258
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 74ad832d5516a4fa9bef849c5f691e2909c6c3d4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925576"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047612"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>使用多语言应用工具包 4.0
 
@@ -63,13 +63,13 @@ ms.locfileid: "8925576"
 
 工具包将作出响应，执行这些操作。
 
-- 对于已添加的各种语言，将创建一个得名于该语言的 [BCP 47 语言标记](http://go.microsoft.com/fwlink/p/?linkid=227302)的新文件夹。 该文件夹内创建了新的资源文件 (.resw)，以匹配包含默认语言字符串的文件。
+- 对于已添加的各种语言，将创建一个得名于该语言的 [BCP 47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)的新文件夹。 该文件夹内创建了新的资源文件 (.resw)，以匹配包含默认语言字符串的文件。
 - 如果这是你首次添加语言，则将向项目添加一个名为 `MultilingualResources` 的新文件夹。 该文件夹内添加了各种语言的 .xlf 文件。 .xlf 文件包含项目的每个资源文件 (.resw) 中每个字符串的翻译单元。
 - 输出窗口确认对所添加语言的添加。
 
 每当添加/删除默认语言资源文件 (.resw) 或添加/删除默认语言资源文件 (.resw) 中的字符串时，重新生成项目以重新同步 .xlf 文件。 这将确保 .xlf 文件包含以默认语言显示的字符串并集。
 
-安装的 [Microsoft 语言门户](http://go.microsoft.com/fwlink/p/?LinkId=330295)和 [Microsoft Translator](http://go.microsoft.com/fwlink/p/?LinkId=258220) 等翻译提供程序可用于翻译应用的资源。 当提供程序支持某一特定语言时，该提供程序的图标将显示在“翻译语言”对话框中语言名称的旁边。
+安装的 [Microsoft 语言门户](https://go.microsoft.com/fwlink/p/?LinkId=330295)和 [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220) 等翻译提供程序可用于翻译应用的资源。 当提供程序支持某一特定语言时，该提供程序的图标将显示在“翻译语言”对话框中语言名称的旁边。
 
 在“翻译语言”对话框中，工具包所发现的任何基于 .xlf 的现有语言的选项框均已预勾选，指示项目中已包含该语言。
 
@@ -149,8 +149,8 @@ ms.locfileid: "8925576"
 
 多语言应用工具包随附两个提供程序。
 
-- [Microsoft 语言门户](http://go.microsoft.com/fwlink/p/?LinkId=330295)提供程序基于 Microsoft 产品和服务的用户界面文本翻译启用翻译循环使用和术语匹配支持。
-- [Microsoft Translator](http://go.microsoft.com/fwlink/p/?LinkId=258220) 提供程序启用按需机器翻译服务。
+- [Microsoft 语言门户](https://go.microsoft.com/fwlink/p/?LinkId=330295)提供程序基于 Microsoft 产品和服务的用户界面文本翻译启用翻译循环使用和术语匹配支持。
+- [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220) 提供程序启用按需机器翻译服务。
 
 你和你的翻译人员可以管理多语言编辑器中的翻译状态，以便稍后查看不确定的翻译。 可以在**属性**选项卡中设置每个字符串的状态。状态值为：**新**、**需审阅**、**已翻译**、**最终**和**签核**。 位于行左侧的指示器显示状态。 当多语言编辑器中的所有行都显示为绿色时，即表示翻译工作已完成。
 
@@ -166,7 +166,7 @@ ms.locfileid: "8925576"
 * [全球化和本地化](globalizing-portal.md)
 * [全球化指南](guidelines-and-checklist-for-globalizing-your-app.md)
 * [对应用进行可本地化处理](prepare-your-app-for-localization.md)
-* [BCP-47 语言标记](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)
 
 ## <a name="downloads"></a>下载
 
@@ -175,5 +175,5 @@ ms.locfileid: "8925576"
 
 ## <a name="translation-services"></a>翻译服务
 
-* [Microsoft 语言门户](http://go.microsoft.com/fwlink/p/?LinkId=330295)
-* [Microsoft Translator](http://go.microsoft.com/fwlink/p/?LinkId=258220)
+* [Microsoft 语言门户](https://go.microsoft.com/fwlink/p/?LinkId=330295)
+* [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)

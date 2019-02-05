@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 地图, 位置, 地理围栏, 通知
 ms.localizationpriority: medium
-ms.openlocfilehash: adcce5716a2982cf2c08e98ee337dbad20bddf28
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7e00a3db8890183f50efad6caa31bd573707c6a6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924664"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9045686"
 ---
 # <a name="set-up-a-geofence"></a>设置地理围栏
 
@@ -20,9 +20,9 @@ ms.locfileid: "8924664"
 
 在你的应用中设置 [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) 并了解如何处理前台和后台中的通知。
 
-**提示** 若要了解有关在你的应用中访问位置的详细信息，请从 GitHub 上的 [Windows-universal-samples 存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)下载以下示例。
+**提示** 若要了解有关在你的应用中访问位置的详细信息，请从 GitHub 上的 [Windows-universal-samples 存储库](https://go.microsoft.com/fwlink/p/?LinkId=619979)下载以下示例。
 
--   [通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [通用 Windows 平台 (UWP) 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="enable-the-location-capability"></a>启用位置功能
 
@@ -456,7 +456,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 1.  在 Visual Studio 中生成应用。
 2.  在 Visual Studio 模拟器中启动你的应用。
-3.  使用这些工具模拟地理围栏区域内外的各种位置。 确保在 [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) 属性指定的时间过后等待足够长的时间以触发事件。 请注意，你必须接受启用应用的位置权限提示。 有关模拟位置的详细信息，请参阅[设置设备的模拟地理位置](http://go.microsoft.com/fwlink/p/?LinkID=325245)。
+3.  使用这些工具模拟地理围栏区域内外的各种位置。 确保在 [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) 属性指定的时间过后等待足够长的时间以触发事件。 请注意，你必须接受启用应用的位置权限提示。 有关模拟位置的详细信息，请参阅[设置设备的模拟地理位置](https://go.microsoft.com/fwlink/p/?LinkID=325245)。
 4.  你还可以使用仿真器来估计围栏的大小以及以不同的速度进行检测所需的大致停留时间。
 
 ### <a name="test-and-debug-a-geofencing-app-that-is-running-in-the-background"></a>测试和调试在后台运行的地理围栏应用
@@ -468,7 +468,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 3.  关闭在本地运行的应用。
 4.  在 Visual Studio 模拟器中启动你的应用。 请注意，模拟器一次仅支持在一个应用上模拟后台地理围栏。 不要在模拟器中启动多个地理围栏应用。
 5.  在模拟器中，模拟地理围栏区域内外的各种位置。 确保在 [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) 后等待足够长的时间以触发事件。 请注意，你必须接受提示才能启用应用的位置权限。
-6.  使用 Visual Studio 触发位置后台任务。 有关在 Visual Studio 中触发后台任务的详细信息，请参阅[如何触发后台任务](http://go.microsoft.com/fwlink/p/?LinkID=325378)。
+6.  使用 Visual Studio 触发位置后台任务。 有关在 Visual Studio 中触发后台任务的详细信息，请参阅[如何触发后台任务](https://go.microsoft.com/fwlink/p/?LinkID=325378)。
 
 ## <a name="troubleshoot-your-app"></a>应用疑难解答
 
@@ -481,6 +481,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 ## <a name="related-topics"></a>相关主题
 
-* [UWP 地理位置示例](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP 地理位置示例](https://go.microsoft.com/fwlink/p/?linkid=533278)
 * [地理围栏设计指南](https://msdn.microsoft.com/library/windows/apps/dn631756)
 * [位置感知应用设计指南](https://msdn.microsoft.com/library/windows/apps/hh465148)

@@ -6,12 +6,12 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: f18a1db19c3a8c6632a8cbc3104dc1328f97fdb4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b11f6dfec2941ae4eaa277f37de66965bd1ea4aa
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919733"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048900"
 ---
 # <a name="specify-the-default-resources-that-your-app-uses"></a>指定应用使用的默认资源
 
@@ -44,7 +44,7 @@ ms.locfileid: "8919733"
    </default>
    ```
    
-   **注意** 值 `LANGUAGE-TAG(S)` 需要与应用的默认语言保持同步。 如果该值是单一的 [BCP 47 语言标记](http://go.microsoft.com/fwlink/p/?linkid=227302)，则应用的默认语言必须是同一个标记。 如果它是一个以逗号分隔的语言标记列表，则应用的默认语言必须是列表中的第一个标记。 在应用包清单源文件 (`Package.appxmanifest`) 中的**应用程序**选项卡上，在**默认语言**字段中设置应用的默认语言。
+   **注意** 值 `LANGUAGE-TAG(S)` 需要与应用的默认语言保持同步。 如果该值是单一的 [BCP 47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)，则应用的默认语言必须是同一个标记。 如果它是一个以逗号分隔的语言标记列表，则应用的默认语言必须是列表中的第一个标记。 在应用包清单源文件 (`Package.appxmanifest`) 中的**应用程序**选项卡上，在**默认语言**字段中设置应用的默认语言。
 
 4. 每个`<qualifier>`元素指示 Visual Studio 将何值用作每个限定符名称的默认值。 就目前拥有的文件内容来说，实际上尚未更改 Visual Studio 的行为。 换言之，Visual Studio *已表现得如同*该文件已存在这些内容，因为这些都是默认值。 因此若要使用自己的默认值替代默认值，需要更改文件中的值。 以下示例是编辑前三个值后该文件的外观。
    ```xml
@@ -103,5 +103,5 @@ ms.locfileid: "8919733"
 ## <a name="related-topics"></a>相关主题
 
 * [定制语言、比例、高对比度和其他限定符的资源](tailor-resources-lang-scale-contrast.md)
-* [BCP-47 语言标记](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)

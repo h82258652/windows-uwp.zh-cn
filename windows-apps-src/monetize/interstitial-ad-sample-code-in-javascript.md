@@ -1,21 +1,21 @@
 ---
 ms.assetid: 646977ed-1705-4ea7-a3db-a6b9aac70703
 description: 了解如何使用 JavaScript/HTML 启动间隙广告。
-title: JavaScript 中的间隙广告示例代码
+title: JavaScript 间隙广告示例代码
 ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, 间隙, javascript, 示例代码
 ms.localizationpriority: medium
-ms.openlocfilehash: 98ba09b88c96b0f0afb4ba5a786d31442fd9da05
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 641a3bfc2c2869cab6f3bbf480aa599cadd955a2
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928116"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047106"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a>JavaScript 中的间隙广告示例代码
 
-本主题提供了显示间隙广告的基本 JavaScript 和 HTML 通用 Windows 平台 (UWP) 应用的完整示例代码。 有关显示如何配置项目以使用此代码的分步说明，请参阅[间隙广告](interstitial-ads.md)。 有关完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
+本主题提供了显示间隙广告的基本 JavaScript 和 HTML 通用 Windows 平台 (UWP) 应用的完整示例代码。 有关显示如何配置项目以使用此代码的分步说明，请参阅[间隙广告](interstitial-ads.md)。 有关完整示例项目，请参阅 [GitHub 上的广告示例](https://aka.ms/githubads)。
 
 ## <a name="code-example"></a>代码示例
 
@@ -45,6 +45,6 @@ ms.locfileid: "8928116"
 
 ## <a name="related-topics"></a>相关主题
 
-* [GitHub 上的广告示例](http://aka.ms/githubads)
+* [GitHub 上的广告示例](https://aka.ms/githubads)
 
  

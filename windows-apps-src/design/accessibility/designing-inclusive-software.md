@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 52504855a83b8fdf30de311028c39e30ddd2b026
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 88d2377f95efbe79853b1416213a25e22ed7d5f0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921140"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044744"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>针对 Windows 10 设计非独占软件  
 
@@ -106,7 +106,7 @@ Windows 中的内置辅助功能之一是高对比度模式，该模式可增强
 7.  交付已完成的产品，并为可能在你之后继续从事该项目的人员记录你的实现。  
 
 ## <a name="related-topics"></a>相关主题  
-* [非独占设计](http://design.microsoft.com/inclusive)
+* [非独占设计](https://design.microsoft.com/inclusive)
 * [针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/windows/accessible-apps)
 * [开发非独占 Windows 应用](developing-inclusive-windows-apps.md) 

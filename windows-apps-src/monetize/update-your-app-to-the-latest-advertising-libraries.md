@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, AdControl, AdMediatorControl, 迁移
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: adac5cfdb1b4a10674fb7173e5b84a86b509f130
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ff0ea54f55803e652964203899f429faf196805e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920164"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048674"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>将应用更新到最新的横幅广告库
 
@@ -19,7 +19,7 @@ ms.locfileid: "8920164"
 
 ## <a name="overview"></a>概述
 
-显示横幅广告的 UWP 应用必须使用 **AdControl**，它位于 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp) 中分布的广告库中。 此 SDK 支持最低广告功能集，包括通过互动广告局 (IAB) 中的[移动富媒体广告界面定义 (MRAID) 1.0 规范](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)提供 HTML5 富媒体的功能。 我们的许多广告厂商寻求这些功能，并且我们要求应用开发人员使用这些 SDK 版本之一来增加我们的应用生态系统对广告厂商的吸引力，并最终为你带来更多收益。
+显示横幅广告的 UWP 应用必须使用 **AdControl**，它位于 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp) 中分布的广告库中。 此 SDK 支持最低广告功能集，包括通过互动广告局 (IAB) 中的[移动富媒体广告界面定义 (MRAID) 1.0 规范](https://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)提供 HTML5 富媒体的功能。 我们的许多广告厂商寻求这些功能，并且我们要求应用开发人员使用这些 SDK 版本之一来增加我们的应用生态系统对广告厂商的吸引力，并最终为你带来更多收益。
 
 在发布此 SDK 之前，我们先前已在多个较早的广告 SDK 版本中提供了 **AdControl** 类。 这些较早的广告 SDK 版本不再受支持，因为它们不支持以上所述的最低广告功能。 截止 2017 年 4 月 1 日，我们不再为使用不受支持的广告 SDK 版本的应用提供横幅广告。 如果你的应用仍使用的是不受支持的广告 SDK 版本，则会看到以下行为：
 
@@ -27,14 +27,14 @@ ms.locfileid: "8920164"
 
 * 当应用中的 **AdControl** 请求新广告时，将引发控件的 **ErrorOccurred** 事件，并且事件参数的 **ErrorCode** 属性将具有值 **NoAdAvailable**。
 
-* 与你的应用关联的任何广告单元均会停用。 你无法从 DePartnerv 中心帐户中删除这些已停用的广告单元。 如果你已将应用更新为使用 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp)，请忽略这些广告单元并创建新的广告单元。
+* 与你的应用关联的任何广告单元均会停用。 你无法从 DePartnerv 中心帐户中删除这些已停用的广告单元。 如果你已将应用更新为使用 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)，请忽略这些广告单元并创建新的广告单元。
 
 * 此外，不再为任何用于多个应用的广告单元提供横幅广告。 请确保你的每个广告单元只用于一个应用中。
 
-如果现有应用（已存在于 Microsoft Store 中或仍在开发中）使用 **AdControl** 显示横幅广告并且你不确定你的应用正在使用的是哪个广告 SDK，请按照文章中的说明确定你是否需要将应用更新为受支持的 SDK。 如果你遇到任何问题或需要帮助，请[联系支持人员](http://go.microsoft.com/fwlink/?LinkId=393643)。
+如果现有应用（已存在于 Microsoft Store 中或仍在开发中）使用 **AdControl** 显示横幅广告并且你不确定你的应用正在使用的是哪个广告 SDK，请按照文章中的说明确定你是否需要将应用更新为受支持的 SDK。 如果你遇到任何问题或需要帮助，请[联系支持人员](https://go.microsoft.com/fwlink/?LinkId=393643)。
 
 > [!NOTE]
-> 如果你的应用已使用 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp)（适用于 UWP 应用），则无需对应用进行任何更改。
+> 如果你的应用已使用 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)（适用于 UWP 应用），则无需对应用进行任何更改。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -76,7 +76,7 @@ ms.locfileid: "8920164"
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  安装 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp)。
+3.  安装 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)。
 
 ## <a name="part-3-update-your-project"></a>第 3 部分：更新项目
 

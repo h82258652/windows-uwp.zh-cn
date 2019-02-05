@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: f09687e1ec48318bc785e74fee65c7502835a071
-ms.sourcegitcommit: 1cf04b0b1bd7623cd7f6067b8392dce4372f2c69
+ms.openlocfilehash: 579c71ef9266fb9a1ee4ef0538d1beffec0bb4ea
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "8970976"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046286"
 ---
 # <a name="multiplayer-session-browse"></a>多人游戏会话浏览
 
@@ -54,7 +54,7 @@ ms.locfileid: "8970976"
 当会话已满，或以其他方式不能加入时，作品可从 MPSD 中删除搜索句柄，以便该会话将不再显示在会话浏览查询中。
 
 >[!NOTE]
-> 搜索句柄在显示要呈现给用户的会话列表时使用。 使用搜索句柄进行背景匹配有效，并不应考虑使用[SmartMatch](multiplayer-manager/play-multiplayer-with-matchmaking.md)
+> 搜索句柄在显示要呈现给用户的会话列表时使用。 使用搜索句柄进行背景匹配无效，，应考虑使用[SmartMatch](multiplayer-manager/play-multiplayer-with-matchmaking.md)
 
 ## <a name="set-up-a-session-for-session-browse"></a>为会话浏览设置会话
 
@@ -103,7 +103,7 @@ ms.locfileid: "8970976"
 搜索属性包含以下组成部分：
 
 `tags` - 标记是字符串描述符，可用于对游戏会话进行分类，与标签类似。 标记必须以字母开头，不能包含空格，且必须少于 100 个字符。
-Example tags: "ProRankOnly", "norocketlaunchers", "cityMaps".
+标记示例：“ProRankOnly”、“norocketlaunchers”、“cityMaps”。
 
 `strings` - 字符串是文本变量，字符串名称必须以字母开头，不能包含空格，且必须少于 100 个字符。
 
@@ -156,7 +156,7 @@ auto result = xboxLiveContext->multiplayer_service().set_search_handle(searchHan
 
 检索搜索句柄列表时，你可以使用搜索查询，将结果限制到符合特定条件的会话。
 
-搜索查询语法是 [OData](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398092) 样式的语法，其中，只有以下运算符受到支持：
+搜索查询语法是 [OData](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398092) 样式的语法，其中，只有以下运算符受到支持：
 
  运算符 | 描述
  --- | ---
@@ -225,7 +225,7 @@ Xbox Live 服务仅返回与搜索查询匹配的前 100 项结果。 如果结�
 
  搜索刷新过多，可能会导致服务限制，因此，你的作品应限制查询的刷新速率。
 
- 若要减少服务调用卷，搜索句柄包含自定义会话属性可以用来存储和查询瞬息万变的会话属性。 不应将此类属性存储在搜索属性。
+ 若要减少服务调用卷，搜索句柄包含自定义会话属性可以用于存储和查询快速变化的会话属性。 不应将此类属性存储在搜索属性。
 
 ### <a name="example-query-for-search-handles"></a>示例：查询搜索句柄
 

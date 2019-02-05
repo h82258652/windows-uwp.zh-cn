@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 714da78a8860eec92bce9389185f52a58e45b44e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f49d70ceadad8309419846aa26cb9f97df1c82ff
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947120"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047432"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>借助自动播放功能自动启动
 
 可以使用**自动播放**功能在用户将设备连接到其电脑时，将应用作为一个选项提供。 这包括非卷设备（如相机或媒体播放器）或卷设备（如 U 盘、SD 卡或 DVD）。 还可以使用**自动播放**功能在用户使用邻近感应（点击）在两台电脑之间共享文件时，将应用作为一个选项提供。
 
-> **注意**如果你是设备制造商，并且你想要为你的设备的**自动播放**处理程序关联[的 Microsoft 应用商店设备应用](http://go.microsoft.com/fwlink/p/?LinkID=301381)，你可以中标识该应用在设备元数据。 有关详细信息，请参阅 [Microsoft Store 设备应用的自动播放](http://go.microsoft.com/fwlink/p/?LinkId=306684)。
+> **注意**如果你是设备制造商，并且你想要将你的[Microsoft 应用商店设备应用](https://go.microsoft.com/fwlink/p/?LinkID=301381)作为你的设备的**自动播放**处理程序相关联，则可以标识该应用在设备元数据中的。 有关详细信息，请参阅 [Microsoft Store 设备应用的自动播放](https://go.microsoft.com/fwlink/p/?LinkId=306684)。
 
 ## <a name="register-for-autoplay-content"></a>注册自动播放内容
 
@@ -106,7 +106,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **注意**`DisplayImages`和`CopyImages`方法在以下步骤中添加。
+> **注意**`DisplayImages`和`CopyImages`方法添加以下步骤中。
 
 ### <a name="step-4-add-code-to-display-images"></a>步骤 4：添加用于显示图像的代码
 
@@ -218,7 +218,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 1.  按 F5 生成并部署应用（在调试模式下）。
 2.  若要运行应用，请将相机内存卡或相机的其他存储设备插入电脑。 然后，从自动播放选项列表中选择在你的 package.appxmanifest 文件中指定的内容事件选项之一。 此示例代码仅显示或复制相机内存卡的 DCIM 文件夹中的图片。 如果你的相机内存卡将图片存储在 AVCHD 或 PRIVATE\ACHD 文件夹中，则将需要相应地更新代码。
-    **注意**如果你没有相机内存卡，如果它具有一个名为根中的**DCIM**文件夹，并且 DCIM 文件夹具有一个子文件夹，其中包含图像，你可以使用闪存驱动器。
+    **注意**如果你没有相机内存卡，如果它具有一个名为根中的**DCIM**文件夹，并且 DCIM 文件夹具有一个子文件夹包含图像，你可以使用闪存驱动器。
 
 ## <a name="register-for-an-autoplay-device"></a>注册自动播放设备
 
@@ -233,11 +233,11 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 ### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>步骤 1：创建新项目并添加自动播放声明
 
-1.  打开 Visual Studio，然后从**文件**菜单中选择**新建项目**。 在 **Visual C#** 部分的 **Windows** 下，选择**空白应用(通用 Windows)**。 将应用命名为 **AutoPlayDevice\_Camera** 并单击**确定**。
+1.  打开 Visual Studio，然后从“文件”**** 菜单中选择“新建项目”****。 在“Visual C#”**** 部分的“Windows”**** 下，选择“空白应用(通用 Windows)”****。 将应用命名为 **AutoPlayDevice\_Camera** 并单击**确定**。
 2.  打开 Package.appxmanifest 文件，选择**功能**选项卡。选择**可移动存储**功能。 这会使该应用能够访问作为可移动存储卷设备的相机上的数据。
 3.  在清单文件中，选择**声明**选项卡。在**可用声明**下拉列表中，选择**自动播放设备**，然后单击**添加**。 选择已添加到**支持的声明**列表中的新**自动播放设备**项。
 4.  **自动播放设备**声明会在“自动播放”引发已知事件的设备事件时将你的应用标识为一个选项。 在**启动操作**部分中，为第一个启动操作输入下表中的以下值。
-5.  在**可用声明**下拉列表中，选择**文件类型关联**，然后单击**添加**。 在新**文件类型关联**声明的“属性”中，将**显示名称**字段设置为**从相机显示图像**，将**名称**字段设置为 **camera\_association1**。 在**支持的文件类型**部分中，单击**新增**（如果需要）。 将**文件类型**字段设置为 **.jpg**。 在**支持的文件类型**部分中，再次单击**新增**。 将新文件关联的**文件类型**字段设置为 **.png**。 对于内容事件，自动播放功能会筛选掉任何未与应用显式关联的文件类型。
+5.  在“可用声明”**** 下拉列表中，选择“文件类型关联”****，然后单击“添加”****。 在新**文件类型关联**声明的“属性”中，将**显示名称**字段设置为**从相机显示图像**，将**名称**字段设置为 **camera\_association1**。 在**支持的文件类型**部分中，单击**新增**（如果需要）。 将**文件类型**字段设置为 **.jpg**。 在**支持的文件类型**部分中，再次单击**新增**。 将新文件关联的**文件类型**字段设置为 **.png**。 对于内容事件，自动播放功能会筛选掉任何未与应用显式关联的文件类型。
 6.  保存并关闭清单文件。
 
 | 设置             | 值            |
@@ -364,7 +364,7 @@ internal async void ShowImages(Windows.Storage.StorageFolder folder)
 }
 ```
 
-> **注意**`GetImageList`和`GetThumbnail`方法在以下步骤中添加。
+> **注意**`GetImageList`和`GetThumbnail`方法添加在以下步骤中。
 
 ### <a name="step-6-add-code-to-display-images"></a>步骤 6：添加用于显示图像的代码
 
@@ -407,7 +407,7 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 
 1.  按 F5 生成并部署应用（在调试模式下）。
 2.  若要运行你的应用，请将相机连接到你的计算机。 然后从“自动播放”选项列表中选择该应用。
-    **注意**不是所有相机都播发**WPD\\ImageSource**自动播放设备事件。
+    **注意**并非所有相机都播发**WPD\\ImageSource**自动播放设备事件。
 
 ## <a name="configure-removable-storage"></a>配置可移动存储
 
@@ -514,7 +514,7 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 
 使用**自动播放**系统，应用可以注册各种设备和卷（磁盘）到达事件。 若要注册**自动播放**内容事件，则必须在程序包清单中启用**可移动存储**功能。 此表显示了可以注册的事件及其引发时间。
 
-| 方案                                                           | 事件                              | 描述   |
+| 方案                                                           | 事件                              | 说明   |
 |--------------------------------------------------------------------|------------------------------------|---------------|
 | 使用相机上的照片                                           | **WPD\ImageSource**                | 针对标识为 Windows Portable Devices 且提供 ImageSource 功能的相机引发。 |
 | 使用自动播放器上的音乐                                     | **WPD\AudioSource**                | 针对标识为 Windows Portable Devices 且提供 AudioSource 功能的媒体播放器引发。 |

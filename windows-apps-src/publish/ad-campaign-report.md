@@ -1,21 +1,21 @@
 ---
-title: 广告市场活动报告
+title: 广告活动报告
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
-description: 合作伙伴中心中的广告市场活动报告可使你查看应用推广广告市场活动的执行方式。
+description: 在合作伙伴中心中的广告市场活动报告可使你查看应用推广广告市场活动的执行方式。
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 推广, 应用, 市场活动, 报告, 安装
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e44374d56796ea2151424a11df1652892f247b6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7b798abf88805ef3c693149149be958ba0cc1de9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947477"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046836"
 ---
 # <a name="ad-campaign-report"></a>广告市场活动报告
 
-[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**广告市场活动**报告可使你查看你的应用推广[广告市场活动](create-an-ad-campaign-for-your-app.md)的执行方式。 若要查看报告，**吸引**展开左侧的导航菜单中，选择**广告市场活动**。
+[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**广告市场活动**报告可以查看你的应用推广[广告市场活动](create-an-ad-campaign-for-your-app.md)的执行方式。 若要查看该报告，**吸引**展开左侧的导航菜单中，选择**广告市场活动**。
 
 ## <a name="definitions"></a>定义
 
@@ -48,7 +48,7 @@ ms.locfileid: "8947477"
 
 ## <a name="install-tracking"></a>安装跟踪
 
-通过合作伙伴中心投放安装广告市场活动可提供急需的曝光度你的应用。 将向最有可能对应用感兴趣的客户显示广告曝光，此类客户可单击广告并通过应用商店安装应用。 以前，难以分辨安装量是源于广告市场活动还是其他来源所致。
+通过合作伙伴中心投放安装广告市场活动可提供所需的曝光度你的应用。 将向最有可能对应用感兴趣的客户显示广告曝光，此类客户可单击广告并通过应用商店安装应用。 以前，难以分辨安装量是源于广告市场活动还是其他来源所致。
 
 此报告可显示已通过投放广告市场活动赢得的安装数。 这仅表示由广告市场活动直接产生的下载量，不包括其他来源所产生的下载量。
 
@@ -65,7 +65,7 @@ ms.locfileid: "8947477"
 
 1.  客户尚未退出目标跟踪。
 2.  客户已登录 Microsoft 帐户。
-3.  客户满足 [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) 要求（无法跟踪不满足 COPPA 要求的客户）。
+3.  客户满足 [COPPA](https://go.microsoft.com/fwlink?LinkId=536558) 要求（无法跟踪不满足 COPPA 要求的客户）。
 
 因此，应用安装跟踪有可能低估由广告市场活动所产生的实际安装量。 请注意，你可以查看的应用的安装总数 (通过市场活动和其他) 在合作伙伴中心中的[购置](acquisitions-report.md)报告。
 

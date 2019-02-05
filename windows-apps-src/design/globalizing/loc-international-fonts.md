@@ -6,18 +6,18 @@ ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c525c79287a81421c68fca5bed3393b4d230d8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6f1d618a111ee207eacfceb52680859c8272e0ed
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942681"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046650"
 ---
 # <a name="international-fonts"></a>国际字体
 
 本主题列出的字体可用于已本地化为除美国英语以外的其他语言的 UWP 应用。
 
-在下表中，“语言标记”列列出了语言的 [BCP-47 语言标记](http://go.microsoft.com/fwlink/p/?linkid=227302)。 若要查看 Microsoft Store 专门支持的语言标记列表，请参阅[支持的语言](../../publish/supported-languages.md)。
+在下表中，“语言标记”列列出了语言的 [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)。 若要查看 Microsoft Store 专门支持的语言标记列表，请参阅[支持的语言](../../publish/supported-languages.md)。
 
 | 语言 | 语言标记 | Windows 中使用的字体 |
 | --------- | ----------- | -------------------- |
@@ -135,5 +135,5 @@ Meiryo UI 字体用于 Windows。 Windows 包含 Yu Gothic 和 Yu Mincho 两种�
 
 ## <a name="related-topics"></a>相关主题
 
-* [BCP-47 语言标记](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [支持的语言](../../publish/supported-languages.md)

@@ -8,12 +8,12 @@ keywords: 键盘, 文本, 核心文本, 自定义文本, 文本服务框架, 输
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 161278dc5fe0bb8c7d4c790def6a9f7ba88b83d2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: dfb2a5203d2a8e5c497fa427c6a2a7ed5fe2302d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946573"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046177"
 ---
 # <a name="custom-text-input"></a>自定义文本输入
 
@@ -156,6 +156,6 @@ ms.locfileid: "8946573"
 **示例**
 * [自定义编辑控件示例](https://go.microsoft.com/fwlink/?linkid=831024)
 **存档示例**
-* [XAML 文本编辑示例](http://go.microsoft.com/fwlink/p/?LinkID=251417)
+* [XAML 文本编辑示例](https://go.microsoft.com/fwlink/p/?LinkID=251417)
 
 

@@ -6,12 +6,12 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ms.date: 01/23/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8555f9594ac3d2e7ea1b9f7006750c1084db3d9f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3f70d768ad6589e210826f94f73249ed1ea272e1
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944094"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045606"
 ---
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows10 通用 Windows 平台 (UWP) 应用生命周期
 
@@ -64,7 +64,7 @@ Windows10 版本 1607 又引入了两个应用模型状态：**在前台运行**
 
 当应用启动时，Windows 显示应用的初始屏幕。 若要配置初始屏幕，请参阅[添加初始屏幕](https://msdn.microsoft.com/library/windows/apps/xaml/hh465331)。
 
-显示初始屏幕时，应用应该注册事件处理程序以及为初始页面设置它所需的任何自定义 UI。 务必使在应用程序的构造函数和 **OnLaunched()** 中运行的这些任务在数秒内完成，否则系统可能会认为应用未响应并终止它。 如果某个应用需要从网络请求数据或者需要从磁盘检索大量数据，应完成这些活动，但不启动。 在应用等待这些长时间运行的操作结束的同时，它可以使用自己的自定义加载 UI 或扩展的初始屏幕。 有关详细信息，请参阅[延长显示初始屏幕的时间](create-a-customized-splash-screen.md)和[初始屏幕示例](http://go.microsoft.com/fwlink/p/?linkid=234889)。
+显示初始屏幕时，应用应该注册事件处理程序以及为初始页面设置它所需的任何自定义 UI。 务必使在应用程序的构造函数和 **OnLaunched()** 中运行的这些任务在数秒内完成，否则系统可能会认为应用未响应并终止它。 如果某个应用需要从网络请求数据或者需要从磁盘检索大量数据，应完成这些活动，但不启动。 在应用等待这些长时间运行的操作结束的同时，它可以使用自己的自定义加载 UI 或扩展的初始屏幕。 有关详细信息，请参阅[延长显示初始屏幕的时间](create-a-customized-splash-screen.md)和[初始屏幕示例](https://go.microsoft.com/fwlink/p/?linkid=234889)。
 
 应用完成启动后，它将进入 **Running** 状态，初始屏幕也将消失，将清除所有初始屏幕资源和对象。
 
@@ -131,7 +131,7 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 ### <a name="asynchronous-work-and-deferrals"></a>异步工作和延迟
 
-如果在处理程序中执行异步调用，控件将立即从该异步调用中返回。 这意味着，执行之后会从事件处理程序中返回，并且应用会转变为下一个状态，即使异步调用尚未完成。 使用传递给事件处理程序的 [**EnteredBackgroundEventArgs**](http://aka.ms/Ag2yh4) 对象上的 [**GetDeferral**](http://aka.ms/Kt66iv) 方法以延迟暂停，直到调用返回的 [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) 对象上的 [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) 方法。
+如果在处理程序中执行异步调用，控件将立即从该异步调用中返回。 这意味着，执行之后会从事件处理程序中返回，并且应用会转变为下一个状态，即使异步调用尚未完成。 使用传递给事件处理程序的 [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4) 对象上的 [**GetDeferral**](https://aka.ms/Kt66iv) 方法以延迟暂停，直到调用返回的 [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) 对象上的 [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) 方法。
 
 延迟并不会增加应用终止之前需要运行的代码量。 它仅延迟终止，直到调用延迟的 *Complete* 方法，或者达到延迟期限 - *以先发生者为准*。
 
@@ -183,9 +183,9 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 通常，用户不需要关闭应用，他们可以让 Windows 管理它们。 但是，用户可以选择以下方法来关闭应用：使用关闭手势、按 Alt+F4，或在 Windows Phone 上使用任务切换程序。
 
-没有事件指示用户关闭了应用。 当用户关闭应用时，应用首先处于暂停状态，以使你有机会保存其状态。 在 Windows8.1 及更高版本，应用已被用户关闭后，该应用删除从屏幕和切换列表，但不是会显式终止。
+没有事件指示用户关闭了应用。 当用户关闭应用时，应用首先处于暂停状态，以使你有机会保存其状态。 在 windows 8.1 及更高版本，应用已被用户关闭后，应用会从屏幕和切换列表，但不是会显式终止。
 
-**由用户关闭行为：** 如果你的应用需要执行不同于被 Windows 关闭时用户关闭时，你可以使用激活事件处理程序以确定由用户还是被 Windows 终止应用。 请参阅 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举的参考中 **ClosedByUser** 和 **Terminated** 状态的说明。
+**通过用户关闭行为：** 如果你的应用需要执行不同于被 Windows 关闭时用户关闭时，你可以使用激活事件处理程序确定应用由用户还是被 Windows 终止。 请参阅 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举的参考中 **ClosedByUser** 和 **Terminated** 状态的说明。
 
 我们建议，应用不要以编程方式自行关闭，除非绝对必要。 例如，如果应用检测到内存泄漏，它可以关闭自身来确保用户个人数据的安全性。
 
@@ -193,7 +193,7 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 系统故障体验旨在使用户尽快返回他们当时正在执行的操作。 不应提供警告对话框或其他通知，因为这会给用户带来延迟。
 
-如果应用出现故障、停止响应或者发生意外，系统将通过用户的[反馈和诊断设置](http://go.microsoft.com/fwlink/p/?LinkID=614828)向 Microsoft 发送问题报告。 Microsoft 在问题报告中向你提供错误数据的一个子集，这样你可以使用这些数据改进你的应用。 你可以在“仪表板”中应用的“质量”页面中看到此数据。
+如果应用出现故障、停止响应或者发生意外，系统将通过用户的[反馈和诊断设置](https://go.microsoft.com/fwlink/p/?LinkID=614828)向 Microsoft 发送问题报告。 Microsoft 在问题报告中向你提供错误数据的一个子集，这样你可以使用这些数据改进你的应用。 你可以在“仪表板”中应用的“质量”页面中看到此数据。
 
 当用户在应用发生崩溃之后激活该应用时，其激活事件处理程序将收到 **NotRunning** 的 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 值，并且应显示其初始 UI 和数据。 崩溃后，不要经常使用原本将用于 **Resuming** 和 **Suspended** 的应用数据，因为该数据可能已损坏；请参阅[应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)。
 

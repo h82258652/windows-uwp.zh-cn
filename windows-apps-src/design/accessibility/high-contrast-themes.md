@@ -7,12 +7,12 @@ ms.date: 09/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e4e8d5f49d10219a06a36fdfbe7ec3abe236109a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b58eb4b6e3f3f02bb1f72fcba9da3710f08a72da
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931454"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045991"
 ---
 # <a name="high-contrast-themes"></a>高对比度主题  
 
@@ -46,7 +46,7 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 当你需要从其系统默认值更改颜色时，可为你的应用创建 ThemeDictionaries 集合。
 
 1. 首先创建正确的管道（如果尚不存在）。 在 App.xaml 中，创建 **ThemeDictionaries** 集合，其中至少要包含 **Default** 和 **HighContrast**。
-2. 在 **Default** 中，创建所需的 [Brush](http://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) 类型，通常为 **SolidColorBrush**。 为它提供特定于其用途的 *x:Key* 名称。
+2. 在 **Default** 中，创建所需的 [Brush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) 类型，通常为 **SolidColorBrush**。 为它提供特定于其用途的 *x:Key* 名称。
 3. 为它分配所需的**颜色**。
 4. 将 **Brush** 复制到 **HighContrast** 中。
 
@@ -235,7 +235,7 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 
 ## <a name="related-topics"></a>相关主题  
 * [辅助功能](accessibility.md)
-* [UI 对比度和设置示例](http://go.microsoft.com/fwlink/p/?linkid=231539)
-* [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)
-* [XAML 高对比度示例](http://go.microsoft.com/fwlink/p/?linkid=254993)
+* [UI 对比度和设置示例](https://go.microsoft.com/fwlink/p/?linkid=231539)
+* [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML 高对比度示例](https://go.microsoft.com/fwlink/p/?linkid=254993)
 * [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237)

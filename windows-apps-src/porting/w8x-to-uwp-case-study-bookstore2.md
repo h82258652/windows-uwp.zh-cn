@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 156f780e5637852d554488adfeeb9d688fa4a4d7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a81980bc03a272cb2be0e66772591f4e395d7722
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947939"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051010"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore2"></a>Windows 运行时 8.x 到 UWP 案例研究：Bookstore2
 
@@ -22,9 +22,9 @@ ms.locfileid: "8947939"
 
 ## <a name="downloads"></a>下载
 
-[下载 Bookstore2\_81 通用 8.1 应用](http://go.microsoft.com/fwlink/?linkid=532951)。
+[下载 Bookstore2\_81 通用 8.1 应用](https://go.microsoft.com/fwlink/?linkid=532951)。
 
-[下载 Bookstore2Universal\_10 windows 10 应用](http://go.microsoft.com/fwlink/?linkid=532952)。
+[下载 Bookstore2Universal\_10 windows 10 应用](https://go.microsoft.com/fwlink/?linkid=532952)。
 
 ## <a name="the-universal-81-app"></a>通用 8.1 应用
 
@@ -49,9 +49,9 @@ Windows Phone 上的Bookstore2\_81，缩小视图
 
 ##  <a name="porting-to-a-windows10-project"></a>移植到 windows 10 项目
 
-Bookstore2\_81 解决方案是一个 8.1 通用应用项目。 Bookstore2\_81.Windows 项目为 Windows8.1，生成应用包，Bookstore2\_81.WindowsPhone 项目为 Windows Phone 8.1 生成应用包。 Bookstore2\_81.Shared 是包含经常由其他两个项目同时使用的源代码、标记文件以及其他资源的项目。
+Bookstore2\_81 解决方案是一个 8.1 通用应用项目。 Bookstore2\_81.Windows 项目为 windows 8.1 生成应用包，Bookstore2\_81.WindowsPhone 项目为 Windows Phone 8.1 生成应用包。 Bookstore2\_81.Shared 是包含经常由其他两个项目同时使用的源代码、标记文件以及其他资源的项目。
 
-就像以前的案例研究中，的选择我们来看 （[如果你有一个通用 8.1 应用](w8x-to-uwp-root.md)中描述的） 与移植项目的内容共享到 windows 10 面向通用设备系列。
+就像与上一个案例研究中，的选择我们 （[如果你有一个通用 8.1 应用](w8x-to-uwp-root.md)中描述的） 是移植项目的内容共享到 windows 10 中面向通用设备系列。
 
 首先创建新的空白应用程序（Windows 通用）项目。 将其命名为 Bookstore2Universal\_10。 这些是要从 Bookstore2\_81 复制到 Bookstore2Universal\_10 的文件。
 
@@ -63,7 +63,7 @@ Bookstore2\_81 解决方案是一个 8.1 通用应用项目。 Bookstore2\_81.Wi
 
 **从 Windows 项目中**
 
--   复制 BookstoreStyles.xaml。 我们会使用此一个作为一个良好的起始点，因为此文件中的所有资源键将都解析在 windows 10 应用中;等效的 WindowsPhone 文件中的一些不会。
+-   复制 BookstoreStyles.xaml。 我们将使用此证书合适的起始点，因为此文件中的所有资源键将都解析在 windows 10 应用中;不会等效的 WindowsPhone 文件中的一部分。
 -   复制 SeZoUC.xaml 和 SeZoUC.xaml.cs。 我们将从此视图的 Windows 版本开始（此版本适用于宽窗口），然后我们将使其适应较小的窗口，从而适应较小的设备。
 
 编辑你刚刚复制的源代码和标记文件，并将对 Bookstore2\_81 命名空间的任何引用都更改为 Bookstore2Universal\_10。 执行此操作的快速方法是使用 **“在文件中替换”** 功能。 视图模型中和任何其他强制性代码中都不需要更改任何代码。 但为了更易于查看应用正在运行哪个版本的应用，请将 **Bookstore2Universal\_10.BookstoreViewModel.AppName** 属性返回的值从“Bookstore2\_81”更改为“BOOKSTORE2UNIVERSAL\_10”。
@@ -72,13 +72,13 @@ Bookstore2\_81 解决方案是一个 8.1 通用应用项目。 Bookstore2\_81.Wi
 
 ![在桌面设备上运行的初始源代码发生更改的 Windows 10 应用，放大视图](images/w8x-to-uwp-case-studies/c02-05-desk10-zi-initial-source-code-changes.png)
 
-Windows 10 的初始源代码发生更改应用运行在桌面设备上，放大视图
+在桌面设备，放大视图上运行的 windows 10 应用的初始源代码发生更改
 
 ![在桌面设备上运行的初始源代码发生更改的 Windows 10 应用，缩小视图](images/w8x-to-uwp-case-studies/c02-06-desk10-zo-initial-source-code-changes.png)
 
-Windows 10 的初始源代码发生更改应用运行在桌面设备上使用，缩小视图
+在桌面设备，缩小视图上运行的 windows 10 应用的初始源代码发生更改
 
-视图模型与放大和缩小视图正确协作，尽管存在一些问题使其难以体现出来。 一个问题是，[**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 无法滚动。 这是因为，在 windows 10， [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)的默认样式导致它被垂直布置 （并且 windows 10 设计指南建议我们使用它在这种方式新的和已移植的应用中）。 但是，我们从 Bookstore2\_81 项目复制的自定义项目面板模板中水平滚动设置 (针对 8.1 设计应用) 所产生的后果作为结果所应用的 windows 10 默认样式中的垂直滚动设置我们移植到 windows 10 应用。 第二个问题是，该应用尚未调整其用户界面以在不同大小的窗口和小型设备中提供最佳体验。 第三，尚未使用正确的样式和画笔，从而导致许多文本不可见（包括你可以通过单击缩小的组标题）。 因此在接下来的三个部分（[SemanticZoom 和 GridView 设计更改](#semanticzoom-and-gridview-design-changes)、[自适应 UI](#adaptive-ui) 和[通用样式](#universal-styling)）中，我们将修复这三个问题。
+视图模型与放大和缩小视图正确协作，尽管存在一些问题使其难以体现出来。 一个问题是，[**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 无法滚动。 这是因为，在 windows 10 中， [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)的默认样式导致它被垂直布置 （并且 windows 10 设计指南建议我们使用它在这种方式新应用和移植应用）。 但是，我们从 Bookstore2\_81 项目复制的自定义项目面板模板中水平滚动设置 (针对 8.1 设计应用) 所产生的后果结果是应用的 windows 10 默认样式中的垂直滚动设置我们移植到 windows 10 应用。 第二个问题是，该应用尚未调整其用户界面以在不同大小的窗口和小型设备中提供最佳体验。 第三，尚未使用正确的样式和画笔，从而导致许多文本不可见（包括你可以通过单击缩小的组标题）。 因此在接下来的三个部分（[SemanticZoom 和 GridView 设计更改](#semanticzoom-and-gridview-design-changes)、[自适应 UI](#adaptive-ui) 和[通用样式](#universal-styling)）中，我们将修复这三个问题。
 
 ## <a name="semanticzoom-and-gridview-design-changes"></a>SemanticZoom 和 GridView 设计更改
 
@@ -167,7 +167,7 @@ Windows 10 的初始源代码发生更改应用运行在桌面设备上使用，
 
 ![在移动设备上运行的已移植的 Windows 10 应用，缩小视图](images/w8x-to-uwp-case-studies/c02-10-mob10-zo-ported.png)
 
-在移动设备，缩小视图上运行的已移植的 windows 10 应用
+移动设备，缩小视图上运行的已移植的 windows 10 应用
 
 ## <a name="conclusion"></a>总结
 

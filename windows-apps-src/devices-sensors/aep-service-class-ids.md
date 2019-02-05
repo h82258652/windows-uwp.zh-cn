@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: faa9e3f8936e8650af905678ce7434c4b9967be0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 08a186e0a8e7293b139f756b69966cd8d4b49c92
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939835"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048294"
 ---
 # <a name="aep-service-class-ids"></a>AEP 服务类 ID
 
@@ -72,7 +72,7 @@ ms.locfileid: "8939835"
 
  
 
-有关可用蓝牙服务的更完整列表，请参阅[此处](http://go.microsoft.com/fwlink/p/?LinkID=619586)和[此处](http://go.microsoft.com/fwlink/p/?LinkID=619587)的蓝牙协议和服务页面。 你还可以使用 [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571) API 获取一些常见的 GATT 服务。
+有关可用蓝牙服务的更完整列表，请参阅[此处](https://go.microsoft.com/fwlink/p/?LinkID=619586)和[此处](https://go.microsoft.com/fwlink/p/?LinkID=619587)的蓝牙协议和服务页面。 你还可以使用 [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571) API 获取一些常见的 GATT 服务。
 
 ## <a name="custom-bluetooth-le-services"></a>自定义蓝牙 LE 服务
 

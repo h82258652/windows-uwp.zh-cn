@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 31c165d47beea8ee0e31a3213bdd0dbf0c2bc3d7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d2f883e62cf7c61560295673cf48cf891befed91
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927771"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044451"
 ---
 # <a name="directx-11-porting-faq"></a>DirectX 11 移植常见问题
 
@@ -42,12 +42,12 @@ Direct3D 11 是对 Direct3D 9 的重大升级。 其中包含了多种范式转�
 ## <a name="my-game-code-is-based-on-d3dx-and-dxut-is-there-anything-available-that-can-help-me-migrate-my-code"></a>我的游戏代码基于 D3DX 和 DXUT。 是否有可以帮助我迁移代码的内容？
 
 
-[DirectX 工具包 (DirectXTK)](http://go.microsoft.com/fwlink/p/?LinkID=248929) 社区项目提供用于 Direct3D 11 的帮助程序类。
+[DirectX 工具包 (DirectXTK)](https://go.microsoft.com/fwlink/p/?LinkID=248929) 社区项目提供用于 Direct3D 11 的帮助程序类。
 
 ##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>如何保留桌面和 Microsoft 应用商店的代码路径？
 
 
-标题为[双重用途的游戏编码技术的](http://go.microsoft.com/fwlink/p/?LinkID=286210)Chuck walbourn 编写的文章系列提供有关在桌面和 Microsoft 应用商店代码路径之间共享代码的指南。
+标题为[双重用途的游戏编码技术的](https://go.microsoft.com/fwlink/p/?LinkID=286210)Chuck walbourn 编写的文章系列提供有关桌面和 Microsoft 应用商店代码路径之间共享代码的指南。
 
 ##  <a name="how-do-i-load-image-resources-in-my-directx-uwp-app"></a>如何在 DirectX UWP应用中加载图像资源？
 
@@ -57,7 +57,7 @@ Direct3D 11 是对 Direct3D 9 的重大升级。 其中包含了多种范式转�
 -   内容管道将图像转换为用作 Direct3D 纹理资源的 DDS 文件。 请参阅[在游戏或应用中使用 3D 资源](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx)。
 -   [Windows 图像处理组件](https://msdn.microsoft.com/library/windows/desktop/ee719902)可用于加载各种格式的图像，并且可用于 Direct2D 位图以及 Direct3D 纹理资源。
 
-还可以使用 [DirectXTK](http://go.microsoft.com/fwlink/p/?LinkID=248929) 或 [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926) 中的 DDSTextureLoader 和 WICTextureLoader。
+还可以使用 [DirectXTK](https://go.microsoft.com/fwlink/p/?LinkID=248929) 或 [DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926) 中的 DDSTextureLoader 和 WICTextureLoader。
 
 ## <a name="where-is-the-directx-sdk"></a>DirectX SDK 在哪里？
 
@@ -74,7 +74,7 @@ Win32 桌面应用程序仍然使用 DirectSetup，因此如果你还要升级�
 ## <a name="is-there-any-way-i-can-update-my-desktop-code-to-directx-11-before-moving-away-from-effects"></a>离开“效果”之前，有什么方法可以将我的桌面代码更新到 DirectX 11？
 
 
-请参阅 [Direct3D 11 更新的效果](http://go.microsoft.com/fwlink/p/?LinkId=271568)。 Effects 11 有助于消除对传统 DirectX SDK 标头的依赖性，它的用途是帮助移植，并且只能用于桌面应用。
+请参阅 [Direct3D 11 更新的效果](https://go.microsoft.com/fwlink/p/?LinkId=271568)。 Effects 11 有助于消除对传统 DirectX SDK 标头的依赖性，它的用途是帮助移植，并且只能用于桌面应用。
 
 ##  <a name="is-there-a-path-for-porting-my-directx-8-game-to-uwp"></a>是否存在将 DirectX 8 游戏移植到 UWP 的路径？
 
@@ -116,7 +116,7 @@ DirectX 10.x 和 DirectX 11 桌面游戏可轻松移植到 UWP。 请参阅 [迁
 ## <a name="what-should-i-use-instead-of-the-x-file-format-for-my-models"></a>我应该对我的模型使用哪种文件格式来替代 .x 文件格式？
 
 
-尽管我们还没有正式替换 .x 文件格式，但是很多示例都采用了 SDKMesh 格式。 Visual Studio 还有一个[内容管道](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx)，该管道将多种流行的格式编译成可以使用 Visual Studio 3D 初学者工具包中的代码加载或可以使用 [DirectXTK](http://go.microsoft.com/fwlink/p/?LinkID=248929) 加载的 CMO 文件。
+尽管我们还没有正式替换 .x 文件格式，但是很多示例都采用了 SDKMesh 格式。 Visual Studio 还有一个[内容管道](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx)，该管道将多种流行的格式编译成可以使用 Visual Studio 3D 初学者工具包中的代码加载或可以使用 [DirectXTK](https://go.microsoft.com/fwlink/p/?LinkID=248929) 加载的 CMO 文件。
 
 ## <a name="how-do-i-debug-my-shaders"></a>如何调试着色器？
 

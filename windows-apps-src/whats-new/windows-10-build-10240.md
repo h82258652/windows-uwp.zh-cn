@@ -6,22 +6,22 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
-ms.openlocfilehash: 75c5c34f3dec48bbee2feccde5b60cde45a241f9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9a1f3c95169842f7c9bc00a662b4498ed12df32c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941722"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045726"
 ---
 # <a name="whats-new-in-windows10-for-developers-build-10240"></a>什么是 windows 10 中面向开发人员的新增功能、 内部版本 10240
 
-Windows 10 版本 10240 和更新的 SDK 提供用于打造出色的通用 Windows 平台应用的工具、功能和体验。 在 Windows 10 上[安装这些工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431) 后，你就可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+Windows 10 版本 10240 和更新的 SDK 提供用于打造出色的通用 Windows 平台应用的工具、功能和体验。 在 Windows 10 上[安装这些工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 后，你就可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 下面是通过功能逐项查看你在 windows 10 版本 10240 （也称为 Windows 10 版本 1507年） 的新增功能。
 
 ## <a name="adaptive-layouts"></a>自适应布局
 
-功能 | 描述
+功能 | 说明
  :---- | ----:
 适用于定制内容的多个视图 | XAML 针对定义用于共享相同代码文件的定制视图（.xaml 文件）提供了新的支持。 这使你可以更加方便地创建和保留已定制为特定设备系列或方案的不同视图。 如果你的应用具有不同的 UI 内容、布局或导航模型（与对应的方案截然不同），应构建多个视图。 例如，对于针对移动版应用的单手使用模式进行优化的导航菜单，你可以使用 [Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx)；而对于针对桌面版应用的鼠标输入进行优化的导航菜单，你可以使用 [SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx)。
 StateTriggers | 使用新的 [VisualState.StateTriggers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstate.statetriggers.aspx) 功能，你可以基于窗口高度/宽度或者基于自定义触发器有条件地设置相关属性。 之前，你必须在代码中处理 Window [SizeChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.window.sizechanged.aspx) 事件并调用 [VisualStateManager.GotoState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager.gotostate.aspx)。
@@ -30,7 +30,7 @@ Setters | 使用新的 [VisualState.Setters](https://msdn.microsoft.com/library/
 
 ## <a name="xaml-features"></a>XAML 功能
 
-功能 | 描述
+功能 | 说明
  :---- | :----
 已编译的数据绑定 (x:Bind) | 在通用 Windows 应用中，你可以使用基于编译器的新绑定机制，该机制可通过 x:Bind 属性进行启用。 基于编译器的绑定将在编译时严格设置类型并进行处理，这将非常快速并且会在绑定类型不匹配时提供编译时错误。 因为绑定已转换为编译的应用代码，所以你现在就可以调试绑定，方法是在 Visual Studio 中逐步执行代码以诊断特定的绑定问题。 你还可以使用 x:Bind 来绑定方法，例如 <textblock text="{x:Bind Customer.Address.ToString()}" /> 对于典型的绑定方案，你可以使用 x:Bind 替代绑定，从而获得改进的性能和可维护性。
 列表的声明性增量呈现 (x:Phase) | 在通用 Windows 应用中，新的 x:Phase 属性允许你使用 XAML（而非代码）执行列表的增量呈现或阶段性呈现。 当平移带有复杂项目的较长列表时，你的应用呈现项目的速度可能不足以跟上平移的速度，以致于你的用户获得了一次槽糕的体验。 阶段性呈现让你可以在某一列表项目中指定个别元素的呈现优先级，以便仅该列表项目中最重要的部分才能在快速平移方案中呈现。 这将为你的用户提供一次较为顺畅的平移体验。 <br /><br /> 在 Windows 8.1 中，你可以处理 [ContainerContentChanging](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging.aspx) 事件，并编写用于分阶段呈现列表项目的代码。 在 UWP 应用中，你可以使用 x:Phase 属性以声明方式完成阶段性呈现。 通过将 x:Phase 与已编译的绑定 x:Bind 结合使用，你可以在数据模板中为每个绑定元素轻松指定呈现优先级。 在进行平移时，呈现项目所需执行的操作是基于阶段按时间进行分片，这将支持增量项目呈现。
@@ -85,7 +85,7 @@ Windows 内核文本 API | 新的 [Windows.UI.Text.Core](https://msdn.microsoft.
 
 ## <a name="application-model"></a>应用程序模型
 
-功能 | 描述
+功能 | 说明
  :---- | :----
 Cortana | 通过语音命令扩展 Cortana 的基本功能，这些命令用于在外部应用程序中启动并执行一个单独操作。 通过集成应用的基本功能，并通过为用户提供中心入口点以在无需直接打开应用的情况下完成大多数任务，Cortana 可以充当应用和用户之间的联络人。 在大多数情况下，这可以为用户节省大量时间和精力。 了解如何[将应用集成到 Cortana Canvas](https://msdn.microsoft.com/library/windows/apps/xaml/dn974230.aspx)。 如果你需要创意，可以参考[通用 Windows 应用设计基础知识](https://developer.microsoft.com/windows/design/layout)中特定于 Cortana 的设计建议和 UX 指南。
 文件资源管理器 | 新的 [Windows.System.Launcher.LaunchFolderAsync](https://msdn.microsoft.com/library/windows/apps/windows.system.launcher.launchfolderasync.aspx) 方法允许你启动文件资源管理器并显示所指定的文件夹的内容。
@@ -97,7 +97,7 @@ Cortana | 通过语音命令扩展 Cortana 的基本功能，这些命令用于�
 
 ## <a name="devices"></a>设备
 
-功能 | 描述
+功能 | 说明
  :---- | :----
 Microsoft Surface Hub | Microsoft Surface Hub 是一款强大的团队协作设备和大屏幕平台，适用于在 Surface Hub 或连接的设备中以本机方式运行的通用 Windows 应用。 针对自己的业务生成可以利用大屏幕、触摸和墨迹输入以及各种板载硬件（如相机和传感器）的应用。<br /><br />请参阅[通用 Windows 应用设计基础知识](https://developer.microsoft.com/windows/design/layout)中特定于 Surface Hub 的设计建议和 UX 指南。 这些文档介绍了面向 Universal Windows App 的响应式设计技术。 <br /><br />有关支持社区共享应用的详细信息，请参阅 [SharedModeSettings](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.sharedmodesettings.aspx)。 有关墨迹输入以及在 [InkCanvas](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) 控件上支持多点墨迹的详细信息，请参阅 [Windows.UI.Input.Inking](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.aspx) 和 [Windows.UI.Input.Inking.Core](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.core.aspx)。 有关处理传感器输入的详细信息，请参阅[集成设备、打印机和传感器](https://msdn.microsoft.com/library/windows/apps/xaml/br229563.aspx)。
 位置 | Windows 10 引入了一个新方法 [RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.requestaccessasync.aspx) 来提示用户提供其位置的访问权限。 用户可通过“设置”**** 应用中的“位置隐私设置”****，设置其位置数据的隐私。 仅当出现以下情况时你的应用才可以访问用户位置：“此设备的位置”**** 已打开 *（不适用于 Windows 10 手机版）*、位置服务设置“位置”**** 已打开，并且在“选择可以使用你的位置信息的应用”**** 下，你的应用已设置为打开。 <br /><br />在访问用户的位置之前，务必调用 **RequestAccessAsync**。 此时，你的应用必须在前台，并且 **RequestAccessAsync** 必须从 UI 线程中进行调用。 除非用户向你的应用授予访问其位置的权限，否则你的应用将无法访问位置数据。
@@ -110,7 +110,7 @@ MIDI 设备 | 新的 [Windows.Devices.Midi](https://msdn.microsoft.com/library/w
 
 ## <a name="graphics"></a>图形
 
-功能 | 描述
+功能 | 说明
  :---- | :----
 DirectX | Windows 10 中的 DirectX 12 在 DirectX 的核心处引入了下一代版本的 Microsoft Direct3D，即 3D Graphics API。 [Direct3D 12 图形](https://msdn.microsoft.com/library/windows/desktop/dn903821(v=vs.85).aspx)可实现类似控制台的低级别 API 的效率和性能。 Direct3D 12 现在比以往更快、更有效。 它提供更丰富的场景、更多的对象、更复杂的效果，并且能更好地利用现代图形硬件。
 SoftwareBitmapSource | 在通用 Windows 应用中，可将新的 [SoftwareBitmapSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.softwarebitmapsource.aspx) 类型用作 XAML 图像源。 这可将未编码的图像传递到 XAML 框架，从而使其立即显示在屏幕上，同时避免 XAML 框架对图像进行编码。 你可以实现更快速的图像呈现，如直接通过相机呈现低延迟照片、使用自定义图像解码器、从 DirectX 图面捕获帧，或者甚至从零开始创建内存中图像并直接使用 XAML 呈现所有这些图像，延迟和内存开销均较低。
@@ -133,7 +133,7 @@ MediaElement 媒体失败事件 | 在通用 Windows 应用中，[MediaElement](h
 
 ## <a name="networking"></a>网络
 
-功能 | 描述
+功能 | 说明
  :---- | :----
 套接字 | 套接字更新包括： <br /><br />**套接字代理：** 套接字代理可以代表处于应用生命周期中任意状态的应用建立和关闭套接字连接。 这使应用和它们提供的服务更容易被发现。 例如，通过套接字代理，Win32 服务仍可接受传入的套接字连接，即便是该服务不在运行也是如此。 <br /><br />**吞吐量改进：** 套接字吞吐量已针对使用 Windows.Networking.Sockets 命名空间的应用进行了优化。
 后台传输后续处理任务 | 你可以利用 [Windows.Networking.BackgroundTransfer](https://msdn.microsoft.com/library/windows/apps/windows.networking.backgroundtransfer.aspx) 命名空间中的新 API 注册后处理任务组。 这样你的应用便可以立即根据后台传输的成功或失败执行操作，而不是等待下次用户恢复它，即使该应用不在前台运行也是如此。
@@ -143,7 +143,7 @@ JSON 支持改进 | 在调试会话期间，转换 JSON 对象时，[Windows.Dat
 
 ## <a name="security"></a>安全
 
-功能 | 描述
+功能 | 说明
  :---- | :----
 ECC 加密 | [Windows.Security.Cryptography](https://msdn.microsoft.com/library/windows/apps/windows.security.cryptography.aspx) 命名空间中的新 API 支持椭圆曲线密码 (ECC)，后者是基于有限域上椭圆曲线的公共密钥加密实现。 在算法上，ECC 比 RSA 更为复杂，它提供更小的密钥大小、可减少内存占用并且可提高性能。 它提供 Microsoft 服务并且向客户提供 RSA 密钥和 NIST 批准曲线参数的替代方法。
 Microsoft Passport | Microsoft Passport 是身份验证的替代方法，它使用非对称加密和手势来替代密码。 “凭据”命名空间中的类（如 [KeyCredentialManger](https://msdn.microsoft.com/library/windows/apps/windows.security.credentials.keycredentialmanager.aspx)）让开发人员可以轻松通过 Microsoft Passport 来创建应用程序，而无需使用复杂的加密或生物识别。
@@ -152,7 +152,7 @@ Microsoft Passport for Work | Microsoft Passport for Work 是使用 Azure Active
 
 ## <a name="system-services"></a>系统服务
 
-功能 | 描述
+功能 | 说明
  :---- | :----
 电源 | 现在，当节电模式处于启用或未启用状态时，你的 Windows 桌面应用程序将得到通知。 通过响应电源条件更改，你的应用程序将有机会帮助延长电池使用时间。 <br /><br />[GUID_POWER_SAVING_STATUS](https://msdn.microsoft.com/library/windows/desktop/hh448380.aspx)：将此新的 GUID 与 [PowerSettingRegisterNotification](https://msdn.microsoft.com/library/windows/desktop/hh769082(v=vs.85).aspx) 函数结合使用，以便在节电模式处于启用或未启用状态时收到通知。 <br /><br />[SYSTEM_POWER_STATUS](https://msdn.microsoft.com/library/windows/desktop/aa373232.aspx)：已将此结构更新为支持节电模式。 第四个成员 *SystemStatusFlag*（以前称为 Reserved1）现在指示节电模式是否处于启用状态。 使用 [GetSystemPowerStatus](https://msdn.microsoft.com/library/windows/desktop/aa372693(v=vs.85).aspx) 函数检索指向此结构的指针。
 版本 | 你可以使用[版本帮助程序函数](https://msdn.microsoft.com/library/windows/desktop/dn424972.aspx)确定操作系统的版本。 在 Windows 10 中，这些帮助程序函数包括一个新函数 [IsWindows10OrGreater](https://msdn.microsoft.com/library/windows/desktop/dn905474(v=vs.85).aspx)。 如果你想要确定系统版本，则应该使用帮助程序函数，而不是使用已弃用的 [GetVersionEx](https://msdn.microsoft.com/library/windows/desktop/ms724451.aspx) 和 [GetVersion](https://msdn.microsoft.com/library/windows/desktop/ms724439.aspx) 函数。 有关如何获取系统版本的详细信息，请参阅[获取系统版本](https://msdn.microsoft.com/library/windows/desktop/ms724429.aspx)。 <br /><br />如果你使用已弃用的 [GetVersionEx](https://msdn.microsoft.com/library/windows/desktop/ms724451.aspx) 或 [GetVersion](https://msdn.microsoft.com/library/windows/desktop/ms724439.aspx) 函数在 [OSVERSIONINFOEX](https://msdn.microsoft.com/library/windows/desktop/ms724833(v=vs.85).aspx) 或 [OSVERSIONINFO](https://msdn.microsoft.com/library/windows/desktop/ms724834.aspx) 结构中获取版本信息，请注意，这些结构包含的版本号将从适用于 Windows 8.1 和 Windows Server 2012 R2 的 6.3 版增加到适用于 Windows 10 的 10.0 版。 有关操作系统版本号的详细信息，请参阅[操作系统版本](https://msdn.microsoft.com/library/windows/desktop/ms724832.aspx)。 <br /><br />你还需要在你的应用程序中明确定向到 Windows 8.1 或 Windows 10，以使用 [GetVersionEx](https://msdn.microsoft.com/library/windows/desktop/ms724451.aspx) 或 [GetVersion](https://msdn.microsoft.com/library/windows/desktop/ms724439.aspx) 函数获取有关这些版本的正确版本信息。 有关如何针对这些版本的 Windows 定向你的应用程序的信息，请参阅[针对 Windows 定向你的应用程序](https://msdn.microsoft.com/library/windows/desktop/dn481241.aspx)。
@@ -161,7 +161,7 @@ Microsoft Passport for Work | Microsoft Passport for Work 是使用 Azure Active
 
 ## <a name="storage"></a>存储
 
-功能 | 描述
+功能 | 说明
  :---- | :----
 文件搜索 API 可用于 Windows Phone | 作为应用发布者，你可以注册你的应用，以便通过将扩展添加到应用清单，与其他应用共享存储文件夹。 然后，调用 [Windows.Storage.ApplicationData.GetPublisherCacheFolder](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.getpublishercachefolder.aspx) 方法来获取共享的存储位置。 Windows 运行时应用的强大安全模型通常可防止应用在它们自己间共享数据。 但是，它可以帮助来自同一发布者的应用共享基于每个用户的文件和设置。
 

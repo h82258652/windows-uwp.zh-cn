@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
-ms.openlocfilehash: bdde349c09b08efcbc18857f67444bb990b25421
-ms.sourcegitcommit: 0373a2021c1b7144f28b08778d6a3b3dc64aa10c
+ms.openlocfilehash: 59da5dd5866fe79f4420e1e895af74f976526f27
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "8997402"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046257"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>Xbox One 开发人员模式激活
 
@@ -46,7 +46,7 @@ Xbox One 具有两种模式，即*零售* 模式 (**1**) 和*开发人员* 模�
 
     ![激活步骤 8](images/activation-step-8-rs2.png)    
     
-8.  单击**同意并激活**。 这将导致页面重新加载，并且你将看到你的设备已填充到表中。 可以在 [Xbox One 开发人员模式激活计划](http://go.microsoft.com/fwlink/p/?LinkId=760399)中找到 Xbox One 开发人员模式激活计划协议的条款。
+8.  单击**同意并激活**。 这将导致页面重新加载，并且你将看到你的设备已填充到表中。 可以在 [Xbox One 开发人员模式激活计划](https://go.microsoft.com/fwlink/p/?LinkId=760399)中找到 Xbox One 开发人员模式激活计划协议的条款。
 
 9.  输入激活代码之后，主机将显示激活过程的进度屏幕。  
     

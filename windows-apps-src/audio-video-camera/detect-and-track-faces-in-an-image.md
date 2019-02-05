@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 970fbcef984f28e779ea7c133de95f7f7f99be8d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fdeb3f18e6500cc0a907e725f34c0eb96d33876e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923520"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045928"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>检测图像或视频中的人脸
 
@@ -23,7 +23,7 @@ ms.locfileid: "8923520"
 
 有关使用 [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) 跟踪人脸的替代方法，请参阅[媒体捕获的场景分析](scene-analysis-for-media-capture.md)。
 
-文本中的代码源自[基本人脸检测](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)和[基本人脸跟踪](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)示例。 你可以下载这些示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
+文本中的代码源自[基本人脸检测](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)和[基本人脸跟踪](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)示例。 你可以下载这些示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
 
 ## <a name="detect-faces-in-a-single-image"></a>检测单张图像中的人脸
 
@@ -98,8 +98,8 @@ ms.locfileid: "8923520"
 ## <a name="related-topics"></a>相关主题
 
 * [媒体捕获的场景分析](scene-analysis-for-media-capture.md)
-* [基本人脸检测示例](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [基本人脸跟踪示例](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [基本人脸检测示例](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
+* [基本人脸跟踪示例](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
 * [Camera](camera.md)
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [媒体播放](media-playback.md)

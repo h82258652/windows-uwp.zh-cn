@@ -1,29 +1,29 @@
 ---
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Windows 桌面桥应用测试
-description: 使用桌面桥的内置测试以确保你的桌面应用进行了优化其转换为 UWP 应用。
+description: 使用桌面桥的内置测试以确保针对其转换为 UWP 应用，你的桌面应用进行了优化。
 ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
-ms.openlocfilehash: df80fda8cf8b8c2f33a8ed0155363141fc299655
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 42ec5c1e91fbeebcaad68f346f317893fdfb2e1c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932873"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046806"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 桌面桥应用测试
 
-[桌面桥应用](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)的 Windows 桌面应用程序转换为使用[桌面桥](https://developer.microsoft.com/en-us/windows/bridges/desktop)的通用 Windows 平台 (UWP) 应用。 转换后，将以面向 Windows 10 桌面版的 UWP 应用包（.appx 或 .appxbundle）的形式打包、维护和部署 Windows 桌面应用程序。
+Windows 桌面应用程序转换为通用 Windows 平台 (UWP) 应用使用[桌面桥](https://developer.microsoft.com/en-us/windows/bridges/desktop)[的桌面桥应用](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)。 转换后，将以面向 Windows 10 桌面版的 UWP 应用包（.appx 或 .appxbundle）的形式打包、维护和部署 Windows 桌面应用程序。
 
 ## <a name="required-versus-optional-tests"></a>必需测试与可选测试
-适用于 Windows 桌面桥应用的可选测试仅供参考，将不能用于在 Microsoft 应用商店载入过程中评估你的应用。 我们建议调查这些测试结果以生成质量更好的应用。 应用商店载入的整体通过/失败条件取决于必需测试，而不是这些可选测试。
+适用于 Windows 桌面桥应用的可选测试仅供参考，不将用于在 Microsoft 应用商店载入过程中评估你的应用。 我们建议调查这些测试结果以生成质量更好的应用。 应用商店载入的整体通过/失败条件取决于必需测试，而不是这些可选测试。
 
 ## <a name="current-optional-tests"></a>当前可选测试
 
 ### <a name="1-digitally-signed-file-test"></a>1. 数字签名的文件测试 
-**背景**  
+**Background**  
 此测试验证所有可移植可执行 (PE) 文件是否都包含有效签名。 数字签名文件的存在使用户可以了解软件是正版。
 
 **测试详细信息**  
@@ -33,7 +33,7 @@ ms.locfileid: "8932873"
 始终建议使用数字签名文件。 有关详细信息，请参阅[代码签名简介](https://msdn.microsoft.com/en-us/library/ms537361(v=vs.85).aspx)。
 
 ### <a name="2-file-association-verbs"></a>2. 文件关联谓词 
-**背景**  
+**Background**  
 此测试扫描包注册表以检查是否注册了任何文件关联谓词。 
 
 **测试详细信息**  
@@ -45,8 +45,8 @@ ms.locfileid: "8932873"
 ### <a name="3-debug-configuration-test"></a>3. 调试配置测试
 此测试验证 appx 不是调试版本。
  
-**背景**  
-要通过 Microsoft 应用商店的认证，应用不得编译为调试和不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
+**Background**  
+要通过认证的 Microsoft 应用商店，应用必须不编译为调试，且不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
  
 **测试详细信息**  
 测试应用，确保它不是调试版本并且未链接到任何调试框架。
@@ -121,7 +121,7 @@ ms.locfileid: "8932873"
 图像必须至少定义一个没有 TargetSize 限定符的变量。 它必须定义一个 Scale 限定符或者保持 Scale 和 TargetSize 为未指定状态，默认值为 Scale-100。  | 有关详细信息，请参阅有关[响应式设计](https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx)和[应用资源](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data)的指南。 
 该程序包缺少一个“resources.pri”文件。  | 如果你在应用清单中包含可本地化的内容，请确保你的应用包包含有效的 resources.pri 文件。 
 “resources.pri”文件必须包含一个其名称与程序包名称 {package full name} 相匹配的资源映射  | 如果清单发生更改并且 resources.pri 中的资源映射名称不再与清单中的程序包名称相匹配，你将遇到此错误。 在实际消息中，{package full name} 包含 resources.pri 必须包含的程序包名称。 为了解决此问题，你需要重新构建 resources.pri，而这样做的最简单方法就是重新构建应用包。 
-“resources.pri”文件不得启用 AutoMerge。  | MakePRI.exe 支持一个名为 AutoMerge 的选项。 AutoMerge 的默认值为 off。 启用后，AutoMerge 在运行时将应用的语言包资源合并到一个 resources.pri 中。 我们不建议执行此操作适用于你打算通过分发的 Microsoft 应用商店的应用。 通过 Microsoft Store 分发应用的 resources.pri 必须为应用包的根目录中，并包含应用支持的所有语言参考。 
+“resources.pri”文件不得启用 AutoMerge。  | MakePRI.exe 支持一个名为 AutoMerge 的选项。 AutoMerge 的默认值为 off。 启用后，AutoMerge 在运行时将应用的语言包资源合并到一个 resources.pri 中。 我们不建议执行此操作适用于要通过 Microsoft 应用商店分发的应用。 通过 Microsoft Store 分发应用的 resources.pri 必须为应用包的根目录中，并包含应用支持的所有语言参考。 
 字符串 {string} 不符合 {number} 个字符的最大长度限制。  | 请参阅[应用包要求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 在实际消息中，{string} 替换为有错误的字符串并且 {number} 包含最大长度。 
 字符串 {string} 不得包含前导空格/尾随空格。  | 应用部件清单 (manifest) 中元素的架构不允许前导空格或尾随空格字符。 在实际消息中，{string} 替换为有错误的字符串。 确保 resources.pri 中清单字段的任何本地化值都没有前导空格或尾随空格字符。 
 字符串必须非空（长度大于零）  | 有关详细信息，请参阅[应用包要求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 
@@ -133,7 +133,7 @@ ms.locfileid: "8932873"
 
 
 #### <a name="22-branding-validation"></a>2.2 品牌验证
-**背景**  
+**Background**  
 桌面桥应用应该完整并且功能齐全。 使用默认图像（来自模板或 SDK 示例）的应用会带来很差的用户体验，且无法在应用商店目录中方便地标识。
 
 **测试详细信息**  
@@ -165,7 +165,7 @@ ms.locfileid: "8932873"
 #### <a name="32-application-count"></a>3.2 应用程序计数
 此测试验证应用包（.appx 应用程序包）中是否包含某个应用程序。 
 
-**背景**  
+**Background**  
 此测试依据应用商店策略进行实现。 
 
 **测试详细信息**  
@@ -176,7 +176,7 @@ ms.locfileid: "8932873"
 
 
 #### <a name="33-registry-checks"></a>3.3 注册表检查
-**背景**  
+**Background**  
 此测试检查应用程序是否安装或更新任何新的服务或驱动程序。
 
 **测试详细信息**  
@@ -205,26 +205,26 @@ ms.locfileid: "8932873"
 ### <a name="5-supported-api-test"></a>5. 支持的 API 测试
 检查应用是否使用了任何不兼容的 API。 
 
-**背景**  
+**Background**  
 桌面桥应用可以利用一些旧版 Win32 API 以及现代 API（UWP 组件）。 此测试识别使用不支持 API 的托管二进制文件。
  
 **测试详细信息**  
 此测试检查应用中的所有 UWP 组件：
-* 验证，应用包中的每个托管二进制文件均不依赖于通过检查二进制文件的导入地址表不支持用于 UWP 应用开发的 Win32 API。
+* 验证，应用包中的每个托管二进制文件均不依赖于通过检查二进制文件的导入地址表不支持的 UWP 应用开发的 Win32 API。
 * 验证应用包中的每个托管二进制文件是否均不依赖于批准的配置文件以外的功能。 
 
 **更正操作**  
 这可以通过确保应用编译为发行版本而不是调试版本来进行更正。 
 
 > [!NOTE]
-> 应用的调试版本将无法通过此测试，即使该应用使用仅[适用于 UWP 应用的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。 检查错误消息，识别存在该 API 不允许的 UWP 应用的 API。 
+> 应用的调试版本将无法通过此测试，即使该应用使用仅[适用于 UWP 应用的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。 检查错误消息，识别存在该 API 不允许的 API 适用于 UWP 应用。 
 
 > [!NOTE]
 > 内置于该调试配置中的 c + + 应用将无法通过此测试，即使配置仅适用于 UWP 应用使用 Windows SDK 中的 Api。 有关详细信息，请参阅[UWP 应用中的 Windows Api 的替代项](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)。
 
 ### <a name="6-user-account-control-uac-test"></a>6. 用户帐户控制 (UAC) 测试  
 
-**背景**  
+**Background**  
 确保应用在运行时不需要用户帐户控制。
 
 **测试详细信息**  
@@ -269,7 +269,7 @@ Windows 应用认证工具包中“对被禁止文件的检查”当前会对以
 当应用使用“Release Preview”版本的文件而不是最新官方版本时，此检查通常会失败。 
 
 **更正操作**  
-若要解决此问题，适用于 UWP 应用中使用[必应地图 SDK](http://go.microsoft.com/fwlink/p/?linkid=614880)的最新版本。
+若要解决此问题，适用于 UWP 应用使用[必应地图 SDK](https://go.microsoft.com/fwlink/p/?linkid=614880)的最新版本。
 
 #### <a name="82-private-code-signing"></a>8.2 私有代码签名
 测试应用包中是否存在私有代码签名二进制文件。 

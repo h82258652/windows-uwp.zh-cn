@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e9d0fdee4ba9f44f15c461e5a53dad28700023a4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e50d3613e5f7058e99f2e71ba023fb4191e5c734
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947037"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051100"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>应用启动性能的最佳实践
 
@@ -103,7 +103,7 @@ XAML 应用中的启动性能与启动期间创建的元素数直接关联。 �
 -   用户控件和控件模板将进行扩展，所以应将这些内容考虑在内。
 -   如果你创建了不会在屏幕上显示的任意 XAML，则应判断 XAML 的这些部分是否应在启动期间创建。
 
-[Visual Studio 实时可视化树](http://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx)窗口会显示树中每个节点的子元素计数。
+[Visual Studio 实时可视化树](https://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx)窗口会显示树中每个节点的子元素计数。
 
 ![实时可视化树。](images/live-visual-tree.png)
 
@@ -323,7 +323,7 @@ XAML 应用中的启动性能与启动期间创建的元素数直接关联。 �
 > End Class
 > ```
 
-有关使用延长的初始屏幕的示例，请参阅[初始屏幕示例](http://go.microsoft.com/fwlink/p/?linkid=234889)。
+有关使用延长的初始屏幕的示例，请参阅[初始屏幕示例](https://go.microsoft.com/fwlink/p/?linkid=234889)。
 
 ### <a name="phase-3"></a>第 3 阶段
 
@@ -339,7 +339,7 @@ XAML 应用中的启动性能与启动期间创建的元素数直接关联。 �
 
 可重用的代码经常以在一个项目中包含的多个模块 (DLL) 的形式出现。 加载这些模块要求访问磁盘，你可以想象得出来，这样做会增加开销。 虽然这对冷启动的影响最大，但对热启动同样有影响。 对于 C# 和 Visual Basic，CLR 将通过按需加载程序集尽可能力求延迟该开销。 即，在已执行的方法引用某个模块之前，CLR 不会加载该模块。 因此，请在启动代码中仅引用启动你的应用所必需的程序集，这样 CLR 就不会加载不必要的模块。 如果包含不必要的引用的启动路径中有未使用的代码路径，那么你可以将这些代码路径移动到其他方法，以避免不必要的负载。
 
-减少模块负载的另一个方法是组合你的应用模块。 加载一个大型程序集花费的时间通常比加载两个小型程序集的时间要少。 该方法并非始终可用。并且，仅当组合模块不会对开发人员生产效率或代码可重用性造成实质性影响时，你才应组合模块。 你可以使用 [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) 或 [Windows 性能分析器 (WPA)](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx) 等工具来查明在启动时加载了哪些模块。
+减少模块负载的另一个方法是组合你的应用模块。 加载一个大型程序集花费的时间通常比加载两个小型程序集的时间要少。 该方法并非始终可用。并且，仅当组合模块不会对开发人员生产效率或代码可重用性造成实质性影响时，你才应组合模块。 你可以使用 [PerfView](https://go.microsoft.com/fwlink/p/?linkid=251609) 或 [Windows 性能分析器 (WPA)](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx) 等工具来查明在启动时加载了哪些模块。
 
 ### <a name="make-smart-web-requests"></a>发出智能 Web 请求
 

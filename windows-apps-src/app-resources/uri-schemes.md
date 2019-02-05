@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 345a41a45e28843161e65ecb04f0083f1a71269a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942843"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048344"
 ---
 # <a name="uri-schemes"></a>URI 方案
 
@@ -19,9 +19,9 @@ ms.locfileid: "8942843"
 
 ## <a name="common-features-of-the-uri-schemes"></a>URI 方案的常见功能
 
-本主题中所述的所有方案均遵循适用于标准化和资源检索的典型的 URI 方案规则。 请参阅 [RFC 3986](http://go.microsoft.com/fwlink/p/?LinkId=263444) 获取 URI 的常规语法。
+本主题中所述的所有方案均遵循适用于标准化和资源检索的典型的 URI 方案规则。 请参阅 [RFC 3986](https://go.microsoft.com/fwlink/p/?LinkId=263444) 获取 URI 的常规语法。
 
-所有 URI 方案均按照 [RFC 3986](http://go.microsoft.com/fwlink/p/?LinkId=263444) 定义作为 URI 颁发机构和路径组件的层次结构部分。
+所有 URI 方案均按照 [RFC 3986](https://go.microsoft.com/fwlink/p/?LinkId=263444) 定义作为 URI 颁发机构和路径组件的层次结构部分。
 
 ```syntax
 URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
@@ -267,7 +267,7 @@ ms-resource:///Hello%23World/String1
 
 ## <a name="related-topics"></a>相关主题
 
-* [统一资源标识符 (URI)：通用语法](http://go.microsoft.com/fwlink/p/?LinkId=263444)
+* [统一资源标识符 (URI)：通用语法](https://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [打包应用](../packaging/index.md)
 * [引用 XAML 标记和代码中的图像或其他资产](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [存储和检索设置以及其他应用数据](../design/app-settings/store-and-retrieve-app-data.md)

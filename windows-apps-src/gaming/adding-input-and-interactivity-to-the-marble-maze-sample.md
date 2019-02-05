@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, 输入, 示例
 ms.localizationpriority: medium
-ms.openlocfilehash: aee239f76c3d4431426f0bc9fe519a59f8f48838
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d545f696a93bfa8416e1a772ecc015867a3615c2
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923437"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045443"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>向 Marble Maze 添加输入和交互性示例
 
@@ -21,7 +21,7 @@ ms.locfileid: "8923437"
 通用 Windows 平台 (UWP) 游戏可在广泛的设备上运行，如台式计算机、笔记本电脑和平板电脑。 一台设备可能拥有过多的输入和控制机制。 本文档介绍了在使用输入设备时要记住的重要实践，并展示了 Marble Maze 如何应用这些实践。
 
 > [!NOTE]
-> 与本文档对应的示例代码位于 [DirectX Marble Maze 游戏示例](http://go.microsoft.com/fwlink/?LinkId=624011)中。
+> 与本文档对应的示例代码位于 [DirectX Marble Maze 游戏示例](https://go.microsoft.com/fwlink/?LinkId=624011)中。
 
  
 本文档讨论了在游戏中使用输入时的一些重要事项：

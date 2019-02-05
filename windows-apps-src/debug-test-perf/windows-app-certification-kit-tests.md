@@ -1,28 +1,28 @@
 ---
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Windows 应用认证工具包测试
-description: Windows 应用认证工具包包含大量测试，可帮助确保你的应用已准备好在 Microsoft store 中发布。
+description: Windows 应用认证工具包包含大量测试，可以帮助确保你的应用已准备好在 Microsoft store 中发布。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
-ms.openlocfilehash: 55c11232847e2e7aa4827da0e3816f0cc34e9bed
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ecb7cb68b57e3d9b30a25237a63410d3bfa319b3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923124"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047156"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 应用认证工具包测试
 
 
-[Windows 应用认证工具包](windows-app-certification-kit.md)包含大量测试，帮助确保你的应用已准备好发布到 Microsoft Store。 这些测试下面列出了自己的条件，详细信息，并建议在故障的情况下操作。
+[Windows 应用认证工具包](windows-app-certification-kit.md)包含大量测试，帮助确保你的应用已准备好发布到 Microsoft Store。 这些测试下面列出了自己的条件，详细信息，并建议在发生故障的操作。
 
 ## <a name="deployment-and-launch-tests"></a>部署和启动测试
 
 在认证测试期间监视应用，记录它何时崩溃或停止响应。
 
-### <a name="background"></a>背景
+### <a name="background"></a>Background
 
 停止响应或崩溃的应用可能导致用户丢失数据和拥有糟糕的体验。
 
@@ -54,7 +54,7 @@ Windows 应用认证工具包调用 [**IApplicationActivationManager::ActivateAp
 
 检查 Windows 应用是否能在未来版本的操作系统中运行。 此测试历来都仅适用于桌面应用工作流，但现在可适用于应用商店和通用 Windows 平台工作流。
 
-### <a name="background"></a>背景
+### <a name="background"></a>Background
 
 操作系统版本信息已限制的 Microsoft 应用商店的使用情况。 这常被应用误用于检查操作系统版本，使得该应用会向用户提供特定于操作系统版本的相关功能。
 
@@ -70,7 +70,7 @@ Windows App 认证工具包使用 HighVersionLie 来检测应用检查操作系�
 
 这将验证应用是否具有一个可用于已声明后台任务的取消处理程序。 在该任务被取消后，将需要一个用于调用的专用函数。 此测试仅适用于已部署的应用。
 
-### <a name="background"></a>后台
+### <a name="background"></a>Background
 
 Windows 应用可注册一个在后台运行的进程。 例如，电子邮件应用有时可能会对服务器执行 ping 操作。 但是，如果操作系统需要这些资源，它将取消该后台任务，并且应用应当能正常处理此取消操作。 不具有取消处理程序的应用可能会出现崩溃，或者在用户试图关闭应用时无法将其关闭。
 
@@ -104,7 +104,7 @@ Windows 应用可注册一个在后台运行的进程。 例如，电子邮件�
 
 测试应用部件清单 (manifest) 的内容，确保它的内容是正确的。
 
-### <a name="background"></a>背景
+### <a name="background"></a>Background
 
 应用必须拥有格式正确的应用部件清单 (manifest)。
 
@@ -308,7 +308,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 ### <a name="test-details"></a>测试详细信息
 
--   验证，应用包中的每个二进制文件均不依赖于通过检查二进制文件的导入地址表不支持用于 UWP 应用开发的 Win32 API。
+-   验证，应用包中的每个二进制文件均不依赖于通过检查二进制文件的导入地址表不支持的 UWP 应用开发的 Win32 API。
 -   验证应用包中的每个托管二进制文件是否均不依赖于批准的配置文件以外的功能。
 
 ### <a name="corrective-actions"></a>更正操作
@@ -319,7 +319,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 查看错误消息，识别应用所用的不是[适用于 UWP 应用的 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)的 API。
 
-> **注意**即使配置仅适用于 UWP 应用使用 Windows SDK 中的 Api，内置于该调试配置中的 c + + 应用将无法通过此测试。 请参阅，有关详细信息的[UWP 应用中的 Windows Api 的替代项](http://go.microsoft.com/fwlink/p/?LinkID=244022)。
+> **注意**即使配置仅适用于 UWP 应用使用 Windows SDK 中的 Api，内置于该调试配置中的 c + + 应用将无法通过此测试。 请参阅，有关详细信息的[UWP 应用中的 Windows Api 的替代项](https://go.microsoft.com/fwlink/p/?LinkID=244022)。
 
 ## <a name="performance-tests"></a>性能测试
 
@@ -429,7 +429,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 <tr><td>
 <p>“resources.pri”文件不得启用 AutoMerge。</p>
 </td><td>
-<p>MakePRI.exe 支持一个名为 <strong>AutoMerge</strong> 的选项。 <strong>AutoMerge</strong> 的默认值为 <strong>off</strong>。 启用后，<strong>AutoMerge</strong> 在运行时将应用的语言包资源合并到一个 resources.pri 中。 我们不建议执行此操作适用于你打算通过分发的 Microsoft 应用商店的应用。 通过 Microsoft Store 分发应用的 resources.pri 必须为应用包的根目录中，并包含应用支持的所有语言参考。</p>
+<p>MakePRI.exe 支持一个名为 <strong>AutoMerge</strong> 的选项。 <strong>AutoMerge</strong> 的默认值为 <strong>off</strong>。 启用后，<strong>AutoMerge</strong> 在运行时将应用的语言包资源合并到一个 resources.pri 中。 我们不建议执行此操作适用于要通过 Microsoft 应用商店分发的应用。 通过 Microsoft Store 分发应用的 resources.pri 必须为应用包的根目录中，并包含应用支持的所有语言参考。</p>
 </td></tr>
 <tr><td>
 <p>字符串 {string} 不符合 {number} 个字符的最大长度限制。</p>
@@ -495,9 +495,9 @@ UWP 应用应该完整并且功能齐全。 使用默认图像（来自模板或
 
 测试应用，确保它不是一个调试版本。
 
-### <a name="background"></a>背景
+### <a name="background"></a>Background
 
-要通过 Microsoft 应用商店的认证，应用不得编译为调试和不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
+要通过认证的 Microsoft 应用商店，应用必须不编译为调试，且不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
 
 ### <a name="test-details"></a>测试详细信息
 
@@ -513,7 +513,7 @@ UWP 应用应该完整并且功能齐全。 使用默认图像（来自模板或
 
 ### <a name="utf-8-file-encoding"></a>UTF-8 文件编码
 
-### <a name="background"></a>背景
+### <a name="background"></a>Background
 
 HTML、CSS 和 JavaScript 文件必须使用带有相应字节顺序标记 (BOM) 的 UTF-8 格式进行编码，以便从字节码缓存中获益并避免某些运行时错误情况。
 
@@ -531,7 +531,7 @@ HTML、CSS 和 JavaScript 文件必须使用带有相应字节顺序标记 (BOM)
 
 对 Microsoft Direct3D 应用进行测试，以确保它们不会在使用旧版图形硬件的设备上崩溃。
 
-### <a name="background"></a>后台
+### <a name="background"></a>Background
 
 Microsoft 应用商店要求使用 Direct3D 正确呈现或正常功能级别 9 \-1 图形卡上的所有应用程序。
 
@@ -543,13 +543,13 @@ Microsoft 应用商店要求使用 Direct3D 正确呈现或正常功能级别 9 
 
 ### <a name="corrective-action"></a>更正操作
 
-确保你的应用在 Direct3D 功能级别 9\-1 上正确呈现，即使你希望它在更高的功能级别上运行。 有关详细信息，请参阅[针对不同 Direct3D 功能级别开发](http://go.microsoft.com/fwlink/p/?LinkID=253575)。
+确保你的应用在 Direct3D 功能级别 9\-1 上正确呈现，即使你希望它在更高的功能级别上运行。 有关详细信息，请参阅[针对不同 Direct3D 功能级别开发](https://go.microsoft.com/fwlink/p/?LinkID=253575)。
 
 ### <a name="direct3d-trim-after-suspend"></a>Direct3D 暂停后修正
 
-> **注意**此测试仅适用于 UWP 应用开发对于 Windows8.1 及更高版本。
+> **注意**此测试仅适用于 UWP 应用开发的 windows 8.1 和更高版本。
 
-### <a name="background"></a>后台
+### <a name="background"></a>Background
 
 如果该应用不在其 Direct3D 设备上调用 [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346)，则该应用不会释放为其早期 3D 工作分配的内存。 这将增加由于系统内存压力而终止应用的风险。
 

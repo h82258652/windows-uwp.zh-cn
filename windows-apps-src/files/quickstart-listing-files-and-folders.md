@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: e964650e90870ef09d8d1b142917f96b61002544
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: b561e08227664f723802ffc0ee3f0e16bc34a5cc
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980275"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045093"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>枚举和查询文件和文件夹
 
@@ -25,7 +25,7 @@ ms.locfileid: "8980275"
 有关如何存储通用 Windows 平台应用数据的指南，请参阅 [ApplicationData](/uwp/api/windows.storage.applicationdata) 类。
 
 > [!NOTE]
-> 有关完整示例，请参阅该[文件夹枚举示例](http://go.microsoft.com/fwlink/p/?linkid=619993)。
+> 有关完整示例，请参阅[文件夹枚举示例](https://go.microsoft.com/fwlink/p/?linkid=619993)。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -42,7 +42,7 @@ ms.locfileid: "8980275"
 > [!NOTE]
 > 请记住声明 **picturesLibrary** 功能。
 
-在此示例中我们首先使用[**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync)方法 （不在子文件夹中） 获得[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根文件夹中的所有文件，并列出每个文件的名称。 接下来，我们使用[**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync)方法获取**PicturesLibrary**中的所有子文件夹并列出每个子文件夹的名称。
+在此示例中我们首先使用[**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync)方法来获取[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根文件夹中的所有文件 （不在子文件夹） 并列出每个文件的名称。 接下来，我们使用[**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync)方法**PicturesLibrary**中获取所有子文件夹并列出每个子文件夹的名称。
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -177,7 +177,7 @@ Next folder
 > [!NOTE]
 > 在 C# 或 Visual Basic 中，请记得在使用 **await** 运算符的任何方法的方法声明中放入 **async** 关键字。
 
-或者，你可以使用[**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync)方法获取某个特定位置中的所有项 （文件和子文件夹）。 下面的示例使用**GetItemsAsync**方法 （不在子文件夹中） 获取所有文件和[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根文件夹中的子文件夹。 然后，该示例会列出每个文件和子文件夹的名称。 如果该项是子文件夹，则该示例会向该名称追加 `"folder"`。
+或者，你可以使用[**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync)方法获取某个特定位置中的所有项 （文件和子文件夹）。 下面的示例使用**GetItemsAsync**方法 （不在子文件夹） 中获取的所有文件和[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根文件夹中的子文件夹。 然后，该示例会列出每个文件和子文件夹的名称。 如果该项是子文件夹，则该示例会向该名称追加 `"folder"`。
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -280,7 +280,7 @@ Next item
 
 ## <a name="query-files-in-a-location-and-enumerate-matching-files"></a>查询某个位置中的文件并枚举匹配的文件
 
-在此示例中我们查询按月和此次分组[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)中的所有文件的示例会递归到子文件夹。 首先，我们调用 [**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) 并将 [**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) 值传递给该方法。 这向我们提供了一个 [**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult) 对象。
+在此示例中我们查询按月和此次分组[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)中的所有文件示例递归到子文件夹。 首先，我们调用 [**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) 并将 [**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) 值传递给该方法。 这向我们提供了一个 [**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult) 对象。
 
 接下来，我们调用 [**StorageFolderQueryResult.GetFoldersAsync**](/uwp/api/windows.storage.search.storagefolderqueryresult.getfoldersasync)，它将返回表示虚拟文件夹的 [**StorageFolder**](/uwp/api/windows.storage.storagefolder) 对象。 在此示例中，我们按月分组，因此每个虚拟文件夹都表示一组具有相同月份的文件。
 

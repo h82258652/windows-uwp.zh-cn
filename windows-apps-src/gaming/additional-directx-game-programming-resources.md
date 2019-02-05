@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, 编程
 ms.localizationpriority: medium
-ms.openlocfilehash: d75495f75459122f5a5b01d7a82450c72cd2bb1c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6c69d317f920e5b829eb5dea796b7930cc387203
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947212"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044318"
 ---
 # <a name="game-programming-resources"></a>游戏编程资源
 
@@ -24,7 +24,7 @@ ms.locfileid: "8947212"
 
 
 -   [图形和游戏](https://msdn.microsoft.com/library/windows/desktop/ee663279)
--   [OpenGL 参考](http://go.microsoft.com/fwlink/p/?LinkID=288875)
+-   [OpenGL 参考](https://go.microsoft.com/fwlink/p/?LinkID=288875)
 
 ## <a name="game-design-guidance"></a>游戏设计指南
 
@@ -45,25 +45,25 @@ ms.locfileid: "8947212"
 -   [DirectXTex 纹理处理库](  http://go.microsoft.com/fwlink/p/?LinkID=248926)
 -   Microsoft Visual Studio[图形诊断](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx)
 -   [Win2D](https://github.com/Microsoft/Win2D) - 一个易于使用的 Windows 运行时 API，具有带 GPU 加速的立即模式 2D 图形呈现。
--   [适用于 Microsoft Store](http://go.microsoft.com/fwlink/p/?linkid=618387) -通过到 DirectX 11 API 调用的 OpenGL ES API 调用的 Windows 上运行 OpenGL ES 内容。
+-   [适用于 Microsoft Store](https://go.microsoft.com/fwlink/p/?linkid=618387) -通过将转换到 DirectX 11 API 调用的 OpenGL ES API 调用的 Windows 上运行 OpenGL ES 内容。
 
 ## <a name="gdc-2015-game-dev-session-videos"></a>GDC 2015 游戏开发会议视频
 
 
--   [Microsoft 生态系统上的游戏的未来](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) – Phil Spencer
--   [开发 Windows 10 游戏](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10) – Chris Tector、Don Xbox
--   [DirectX 12 高级图形和性能](http://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance) – Max McMullen
--   [Windows 10 上的游戏消费者体验](http://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10) – Bill Schiefelbein
--   [独立开发人员的新机会](http://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers) – Chris Charla
--   [开发适用于 Windows 10 的 Xbox Live](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10) – Vijay Gajjala、Brian Tyler
--   [Xbox Live 多玩家：介绍跨平台比赛和玩法服务](http://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay) – Ferdinand Schober
--   [Fable Legends（神鬼寓言传奇）：使用 Xbox Live 进行跨设备游戏](http://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live) – Raymond Arifianto、Julian Davis
--   [在 Xbox Live 中利用基于云的用户统计数据和成绩的最佳实践](http://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live) – Cierra McDonald
--   [使用 DirectX 工具解决游戏的图形难题](http://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools) – Rudolph Balaz、Rong Lu、Jason Strayer
--   [电源更优，性能更佳：DirectX 12 上的游戏](http://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12) – Bennett Sorbo
--   [多核移动设备中持续的游戏性能](http://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices) – Julian Calinov
--   [为 Windows Core World 设计游戏](http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World) – Todd Williams、Shai Hinitz
--   [Windows 10 电脑游戏](http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10) – Chuck Walbourn
+-   [Microsoft 生态系统上的游戏的未来](https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) – Phil Spencer
+-   [开发 Windows 10 游戏](https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10) – Chris Tector、Don Xbox
+-   [DirectX 12 高级图形和性能](https://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance) – Max McMullen
+-   [Windows 10 上的游戏消费者体验](https://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10) – Bill Schiefelbein
+-   [独立开发人员的新机会](https://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers) – Chris Charla
+-   [开发适用于 Windows 10 的 Xbox Live](https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10) – Vijay Gajjala、Brian Tyler
+-   [Xbox Live 多玩家：介绍跨平台比赛和玩法服务](https://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay) – Ferdinand Schober
+-   [Fable Legends（神鬼寓言传奇）：使用 Xbox Live 进行跨设备游戏](https://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live) – Raymond Arifianto、Julian Davis
+-   [在 Xbox Live 中利用基于云的用户统计数据和成绩的最佳实践](https://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live) – Cierra McDonald
+-   [使用 DirectX 工具解决游戏的图形难题](https://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools) – Rudolph Balaz、Rong Lu、Jason Strayer
+-   [电源更优，性能更佳：DirectX 12 上的游戏](https://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12) – Bennett Sorbo
+-   [多核移动设备中持续的游戏性能](https://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices) – Julian Calinov
+-   [为 Windows Core World 设计游戏](https://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World) – Todd Williams、Shai Hinitz
+-   [Windows 10 电脑游戏](https://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10) – Chuck Walbourn
 
 ## <a name="build-2015-session-videos"></a>//build 2015 会议视频
 
@@ -75,8 +75,8 @@ ms.locfileid: "8947212"
 ## <a name="other-resources"></a>其他资源
 
 
--   [CodePlex](http://go.microsoft.com/fwlink/p/?LinkID=76627)
--   [GameDev.net](http://go.microsoft.com/fwlink/p/?LinkID=288870)
+-   [CodePlex](https://go.microsoft.com/fwlink/p/?LinkID=76627)
+-   [GameDev.net](https://go.microsoft.com/fwlink/p/?LinkID=288870)
 
  
 

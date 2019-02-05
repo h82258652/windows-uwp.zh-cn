@@ -6,17 +6,17 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, 联网, websocket, messagewebsocket, streamwebsocketwindows 10, uwp, networking, websocket, messagewebsocket, streamwebsocket
 ms.localizationpriority: medium
-ms.openlocfilehash: 05f56f07aed0c9f97daffe3842952ce142f8159a
-ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
+ms.openlocfilehash: 8af1f478bc466719eef3c5e19d055ac6073a0b11
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035408"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045403"
 ---
 # <a name="websockets"></a>WebSockets
 WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与服务器之间进行既快捷又安全的双向通信，同时支持 UTF-8 和二进制消息。
 
-在 [WebSocket Protocol](http://tools.ietf.org/html/rfc6455) 下，数据通过全双工单套接字连接立即传输，从而允许从两个终结点实时发送和接收消息。 WebSocket 非常适用于在多玩家游戏（实时游戏和基于轮次的游戏）、即时社交网络通知、显示的最新股票和天气信息以及需要安全、快速地传输数据的其他应用。
+在 [WebSocket Protocol](https://tools.ietf.org/html/rfc6455) 下，数据通过全双工单套接字连接立即传输，从而允许从两个终结点实时发送和接收消息。 WebSocket 非常适用于在多玩家游戏（实时游戏和基于轮次的游戏）、即时社交网络通知、显示的最新股票和天气信息以及需要安全、快速地传输数据的其他应用。
 
 为建立 WebSocket 连接，需在客户端与服务器之间交换基于 HTTP 的特定握手。 如果成功，则会使用前面建立的 TCP 连接将应用程序层协议从 HTTP“升级”到 WebSocket。 此后，HTTP 完全被排除在外；这两个终结点均可使用 WebSocket 协议发送或接收数据，直至 WebSocket 连接断开。
 
@@ -834,8 +834,8 @@ protected:
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
 ## <a name="related-topics"></a>相关主题
-* [WebSocket 协议](http://tools.ietf.org/html/rfc6455)
+* [WebSocket 协议](https://tools.ietf.org/html/rfc6455)
 * [套接字](sockets.md)
 
 ## <a name="samples"></a>示例
-* [WebSocket 示例](http://go.microsoft.com/fwlink/p/?LinkId=620623)
+* [WebSocket 示例](https://go.microsoft.com/fwlink/p/?LinkId=620623)

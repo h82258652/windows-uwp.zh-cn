@@ -6,12 +6,12 @@ ms.date: 04/18/2017
 ms.topic: article
 keywords: windows 10, uwp, 元数据, 提示, 语言, 章节
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f461bb70c1319352c66b8d12775dc7fa1db0edf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2b3753e92524e300252930f48433f91e175353c9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921621"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046104"
 ---
 # <a name="system-supported-timed-metadata-cues"></a>系统支持的计时元数据提示
 本文介绍如何利用可以在媒体文件或流中嵌入的多种格式的计时元数据。 UWP 应用可以注册在播放过程中每当遇到这些元数据提示时由媒体管道引发的事件。 通过使用 [**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue) 类，应用可以实现自己的自定义元数据提示，但是本文重点介绍由媒体管道自动检测的几种元数据标准，包括：
@@ -148,7 +148,7 @@ ms.locfileid: "8921621"
 
 [!code-cs[RegisterMetadataHandlerForID3Cues](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetRegisterMetadataHandlerForID3Cues)]
 
-在 **CueEntered** 事件的处理程序中，将 [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) 的  **Cue** 属性中包含的数据提示强制转换为 [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue)。  检查以确保提示的 **DataCue** 和 [**Data**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Data) 属性不为 null。 扩展的 EMU 注释在传输流中采用原始字节的形式提供（请参阅[http://id3.org/id3v2.4.0-structure](http://id3.org/id3v2.4.0-structure)）。 通过调用 [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer) 来创建新 **DataReader** 以读取提示数据。  在此示例中，ID3 标记中的标头值从提示数据进行读取并写入调试输出。
+在 **CueEntered** 事件的处理程序中，将 [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) 的  **Cue** 属性中包含的数据提示强制转换为 [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue)。  检查以确保提示的 **DataCue** 和 [**Data**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Data) 属性不为 null。 扩展的 EMU 注释在传输流中采用原始字节的形式提供（请参阅[http://id3.org/id3v2.4.0-structure](https://id3.org/id3v2.4.0-structure)）。 通过调用 [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer) 来创建新 **DataReader** 以读取提示数据。  在此示例中，ID3 标记中的标头值从提示数据进行读取并写入调试输出。
 
 [!code-cs[ID3CueEntered](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetID3CueEntered)]
 
@@ -174,7 +174,7 @@ ms.locfileid: "8921621"
 
 在 **CueEntered** 事件的处理程序中，将 [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) 的  **Cue** 属性中包含的数据提示强制转换为 [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue)。  检查以确保 **DataCue** 对象不为 null。 emsg 箱的属性由媒体管道作为自定义属性在 DataCue 对象的 [**Properties**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Properties) 集合中提供。 此示例尝试使用 **[TryGetValue](https://docs.microsoft.com/uwp/api/windows.foundation.collections.propertyset.trygetvalue)** 方法提取几个不同的属性值。 如果此方法返回 null，则表示请求的属性在 emsg 箱中不存在，因此改为设置默认值。
 
-示例的下一个部分演示触发广告播放的应用情景，当上一步中获取的 *scheme_id_uri* 属性的值为“urn:scte:scte35:2013:xml”时会发生这种情况（请参阅[http://dashif.org/identifiers/event-schemes/](http://dashif.org/identifiers/event-schemes/)）。 请注意，标准建议多次发送此 emsg 以便实现冗余，因此此示例维护已处理的 emsg ID 的列表，仅处理新消息。 通过调用 [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer) 来创建新 **DataReader** 以读取提示数据，并通过设置 [**UnicodeEncoding**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.UnicodeEncoding) 属性来将编码设置为 UTF-8，然后读取数据。 在此示例中，消息负载会写入调试输出。 实际应用会使用负载数据安排广告的播放。
+示例的下一个部分演示触发广告播放的应用情景，当上一步中获取的 *scheme_id_uri* 属性的值为“urn:scte:scte35:2013:xml”时会发生这种情况（请参阅[http://dashif.org/identifiers/event-schemes/](https://dashif.org/identifiers/event-schemes/)）。 请注意，标准建议多次发送此 emsg 以便实现冗余，因此此示例维护已处理的 emsg ID 的列表，仅处理新消息。 通过调用 [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer) 来创建新 **DataReader** 以读取提示数据，并通过设置 [**UnicodeEncoding**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.UnicodeEncoding) 属性来将编码设置为 UTF-8，然后读取数据。 在此示例中，消息负载会写入调试输出。 实际应用会使用负载数据安排广告的播放。
 
 [!code-cs[EmsgCueEntered](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetEmsgCueEntered)]
 

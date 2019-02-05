@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 盈利
 ms.localizationpriority: medium
-ms.openlocfilehash: 91545116b0d7eae107021cc52ee05d299257518c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 92d85f81be25eed5f0a43cafb4bb34d9f879c827
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929753"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050920"
 ---
 #  <a name="monetization-for-games"></a>通过游戏盈利
 
@@ -22,12 +22,12 @@ ms.locfileid: "8929753"
 你可以通过以下一种或多种方式，推广 UWP 游戏并通过其盈利。
 * 将游戏放置在 Microsoft 应用商店，它是安全的在线应用商店产品[全球分配](#worldwide-distribution-channel)。 世界各地的玩家均可以[你设置的价格](#set-a-price-for-your-game)在线购买你的游戏。
 * 使用 Windows SDK 中的 API 创建[游戏内购买](#in-game-purchases)。 玩家可以从你的游戏内购买商品，或购买装备、皮肤、地图或游戏关卡等额外内容。
-* 使用 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp) 中的 API 从广告网络显示广告。 你可以[在你的游戏中显示广告](#display-ads-in-your-game)并向玩家提供观看视频广告换取游戏内奖励的选项。
+* 使用 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp) 中的 API 从广告网络显示广告。 你可以[在你的游戏中显示广告](#display-ads-in-your-game)并向玩家提供观看视频广告换取游戏内奖励的选项。
 * [通过广告市场活动最大程度地发展游戏的潜在客户](#maximize-your-games-potential-through-ad-campaigns)。 使用付费、社区（免费）或自家（免费）广告推广你的游戏，以扩大其用户群。
 
 ## <a name="worldwide-distribution-channel"></a>全球分配渠道
 
-Microsoft 应用商店可以使你的游戏可供下载 200 多个国家和地区支持通过各种形式的付款包括 Visa、 Mastercard 和 PayPal 全球。 有关国家和地区的完整列表，请参阅[定义市场选择](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。
+在 Microsoft 应用商店可以使你的游戏可用于下载 200 多个国家和地区支持通过各种形式的付款包括 Visa、 Mastercard 和 PayPal 全球。 有关国家和地区的完整列表，请参阅[定义市场选择](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。
 
 ## <a name="set-a-price-for-your-game"></a>为你的游戏设置价格
 
@@ -47,18 +47,18 @@ Microsoft 应用商店可以使你的游戏可供下载 200 多个国家和地�
 
 ## <a name="in-game-purchases"></a>游戏内购买
 
-游戏内购买是指在游戏内购买的产品。 它们还通常称为_应用内购买_。 在 Microsoft Store，这些产品称为_加载项_。 通过合作伙伴中心，[加载项发布](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)之后。 你还需要在你的游戏代码中启用加载项。
+游戏内购买是指在游戏内购买的产品。 它们还通常称为_应用内购买_。 在 Microsoft 应用商店中，这些产品称为_加载项_。 通过合作伙伴中心的[发布加载项](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。 你还需要在你的游戏代码中启用加载项。
 
 ### <a name="types-of-add-ons"></a>加载项类型
 
 你可以在应用商店中创建两种类型的加载项：_耐用型_或_易耗型_。 耐用型加载项可以保留一段指定时间，并且在过期前只能购买一次。 易耗型加载项可以反复购买和使用。
 
-创建易耗型加载项时，确定你想要跟踪它们的方式，&mdash;即它们由_开发人员托管_还是由_应用商店托管_（此功能将在 Windows10 版本 1607 中开始提供）。 使用开发人员管理的易耗品，你负责为跟踪商品库存;与应用商店管理的易耗品，Microsoft Store 会跟踪的商品为你。 有关详细信息，请参阅[易耗型加载项概述](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
+创建易耗型加载项时，确定你想要跟踪它们的方式，&mdash;即它们由_开发人员托管_还是由_应用商店托管_（此功能将在 Windows10 版本 1607 中开始提供）。 使用开发人员管理的易耗品，你负责为跟踪商品库存;与应用商店管理的易耗品，Microsoft Store 跟踪的商品为你。 有关详细信息，请参阅[易耗型加载项概述](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
 
 ### <a name="create-in-game-purchases"></a>创建游戏内购买
 
 最新应用内购买和许可证信息 API 是 Windows SDK 中 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的一部分（从 Windows10 版本 1607 开始）。 如果你要面向 1607 或更高版本开发新游戏，我们建议你使用 __Windows.Services.Store__ 命名空间，因为它支持最新的加载项类型并且性能更佳。
-它还设计为与将来在合作伙伴中心和应用商店支持的产品和功能类型兼容。 如果要面向以前版本的 Windows10 开发，请改为使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间。
+它还设计为与将来的产品和功能在合作伙伴中心和应用商店支持的类型兼容。 如果要面向以前版本的 Windows10 开发，请改为使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间。
 
 有关详细信息，请转到[应用内购买和试用](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)。
 
@@ -90,7 +90,7 @@ Microsoft 应用商店可以使你的游戏可供下载 200 多个国家和地�
 
 1. 在 Visual Studio 中打开你的游戏解决方案。
 2. 在 Visual Studio 内，转到__项目__ > __应用商店__ > __创建应用包...__
-3. 对于__你希望生成要上传到 Microsoft Store 的程序包？__ 选项中，选择__是__。
+3. 对于__你想要生成要上传到 Microsoft Store 的程序包？__ 选项，选择__是__。
 4. 登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)开发者帐户。 或者[注册](https://developer.microsoft.com/store/register)开发者帐户（如果没有）。
 5. 选择要为其创建上传包的应用。 如果尚未创建应用提交，请提供新的应用名称创建新提交。 有关详细信息，请参阅[通过保留名称创建应用](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。
 6. 成功创建程序包后，单击__启动 Windows 应用认证工具包__启动测试过程。
@@ -165,7 +165,7 @@ Microsoft 广告 SDK 中的库和工具有助于你在游戏中设置服务，�
 
 Microsoft 广告 SDK 中的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx)、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 和 [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) 类用于帮助在游戏中显示广告。
 
-若要开始操作，请使用 Visual Studio 2015 或更高版本下载并安装 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp)。 有关详细信息，请参阅[安装 Microsoft 广告 SDK](../monetize/install-the-microsoft-advertising-libraries.md)。
+若要开始操作，请使用 Visual Studio 2015 或更高版本下载并安装 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)。 有关详细信息，请参阅[安装 Microsoft 广告 SDK](../monetize/install-the-microsoft-advertising-libraries.md)。
 
 #### <a name="implementation-guides"></a>实现指南
 

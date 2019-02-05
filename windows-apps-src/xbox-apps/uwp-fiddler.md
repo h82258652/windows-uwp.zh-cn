@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 9c133c77-fe9d-4b81-b4b3-462936333aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: c27891b47bb9f7774799c912cc6f4cae3cea92bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fae6caf73cb8a5b569193a17e65e5d8b4f582ff2
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944653"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046723"
 ---
 # <a name="how-to-use-fiddler-with-xbox-one-when-developing-for-uwp"></a>在针对 UWP 进行开发时如何将 Fiddler 用于 Xbox One
 
@@ -19,14 +19,14 @@ Fiddler 是一种 Web 调试代理，用于记录 Xbox One 开发工具包和 In
 
 在正常操作中，通过代理通信的主机面临通信被代理修改的风险，从而可能使玩家有机会作弊。 因此，主机设计为不允许通过代理通信。 将 Fiddler 用于 Xbox One 开发工具包需要你在开发工具包上执行某些特殊配置步骤，以便允许它使用 Fiddler 代理。 
 
-Fiddler 是一款免费软件，可从 [Fiddler 网站](http://www.fiddler2.com/fiddler2/)下载。 
+Fiddler 是一款免费软件，可从 [Fiddler 网站](https://www.fiddler2.com/fiddler2/)下载。 
 
 Fiddler 可能影响主机所报告的网络状态。 如果从运行 Fiddler 的计算机禁用上游连接，则在主机的身份验证过期前，主机可能无法检测到此断开连接。 如果你使用的是 Fiddler，请确保断开主机与运行 Fiddler 的计算机之间的连接，而不是使用 Fiddler 模拟断开连接。
 
 ### <a name="to-install-and-enable-fiddler-on-your-development-pc"></a>在开发电脑上安装并启用 Fiddler
 请按照以下步骤安装并启用 Fiddler，以便从开发工具包监视流量：
 
-1. 按照 [Fiddler 网站](http://www.fiddler2.com/fiddler2/)上的指示在开发电脑上安装 Fiddler。 
+1. 按照 [Fiddler 网站](https://www.fiddler2.com/fiddler2/)上的指示在开发电脑上安装 Fiddler。 
 2. 启动 Fiddler，然后从“工具”**** 菜单中选择“Fiddler 选项”****。 
 3. 选择“连接”**** 选项卡，并确保“允许远程计算机连接”**** 处于选中状态。 
 4. 单击“确定”**** 来接受对设置的更改。 你将看到一个显示必须重启 Fiddler 才能使更改生效以及你可能需要手动配置防火墙的对话框。 单击此对话框上的“确定”****，但*不要重启 Fiddler*。
@@ -41,11 +41,11 @@ Fiddler 可能影响主机所报告的网络状态。 如果从运行 Fiddler �
   | 操作            | 允许                          |
   | 替代          | 否                             |
   | 程序           | *fiddler.exe 的路径*          |
-  | LocalAddress      | 任意                            |
-  | RemoteAddress     | 任意                            |
+  | LocalAddress      | Any                            |
+  | RemoteAddress     | Any                            |
   | 协议          | TCP                            |
-  | LocalPort         | 任意                            |
-  | RemotePort        | 任意                            |
+  | LocalPort         | Any                            |
+  | RemotePort        | Any                            |
   | AllowedUsers      | 任意                            |
   | AllowedComputers  | 任意                            |
 

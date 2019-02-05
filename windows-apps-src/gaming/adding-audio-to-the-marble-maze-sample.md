@@ -6,12 +6,12 @@ ms.date: 10/18/2017
 ms.topic: article
 keywords: Windows 10, uwp, 音频, 游戏, 示例
 ms.localizationpriority: medium
-ms.openlocfilehash: 666ea75f1d4f18121b7ae9fa3def3b455ae3e7a3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 40fa8b1c23d591453308c3ad066967ed65902917
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924707"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050890"
 ---
 # <a name="adding-audio-to-the-marble-maze-sample"></a>向 Marble Maze 添加音频示例
 
@@ -20,7 +20,7 @@ ms.locfileid: "8924707"
 Marble Maze 在后台播放音乐，还使用游戏声音来指示游戏事件，例如弹珠撞到墙壁时。 该实现的一个重要部分是，Marble Maze 使用一个混响或回声效果来模拟弹珠弹跳时的声音。 混响效果实现可导致回声在小空间中更快且更响亮地传到你耳中；但在大空间中，回声会更安静、更慢地传到你耳中。
 
 > [!NOTE]
-> 与本文档对应的示例代码位于 [DirectX Marble Maze 游戏示例](http://go.microsoft.com/fwlink/?LinkId=624011)中。
+> 与本文档对应的示例代码位于 [DirectX Marble Maze 游戏示例](https://go.microsoft.com/fwlink/?LinkId=624011)中。
 
 本文档讨论了在游戏中使用音频时的一些重要事项：
 

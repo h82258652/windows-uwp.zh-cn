@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fac02f892c66a1bcf0b08986ae00a3a162b44ca
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 181568d705f24c97af0d62f951a88102d3d008db
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925722"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049165"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -19,7 +19,7 @@ ms.locfileid: "8925722"
 
 本主题介绍如何向通用 Windows 平台 (UWP) 应用添加 PlayReady 保护的媒体内容。
 
-PlayReady DRM 允许开发人员在强制执行内容提供商定义的访问规则的同时，创建能够向用户提供 PlayReady 内容的 UWP 应用。 本部分介绍的 windows 10 以及如何修改 PlayReady UWP 应用以支持从以前的 Windows8.1 版本到 windows 10 版本所做的更改 Microsoft PlayReady DRM 所做的更改。
+PlayReady DRM 允许开发人员在强制执行内容提供商定义的访问规则的同时，创建能够向用户提供 PlayReady 内容的 UWP 应用。 本部分介绍的 windows 10 以及如何修改 PlayReady UWP 应用以支持从以前的 windows 8.1 版本到 windows 10 版本所做的更改 Microsoft PlayReady DRM 所做的更改。
  
 | 主题                                                                     | 说明                                                                                                                                                                                                                                                                             |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -77,15 +77,15 @@ PlayReady DRM 允许开发人员在强制执行内容提供商定义的访问规
 -   [**PlayReadySecureStopIterator**](https://msdn.microsoft.com/library/windows/apps/dn986375) 类
 -   [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) 枚举器
 
-已创建新示例，用于演示如何使用 PlayReady DRM 的新功能。 可以从 [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670) 下载示例。
+已创建新示例，用于演示如何使用 PlayReady DRM 的新功能。 可以从 [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670) 下载示例。
 
 ## <a name="things-to-consider"></a>注意事项
 
--   PlayReady DRM 现在支持 HDCP 类型 1（在 HDCP 版本 2.1 或更高版本中受支持）。 PlayReady 将强制实施设备许可证中的 HDCP 类型限制策略。 在 Windows10 上，此策略将强制仅使用 HDCP 2.2 或更高版本。 此功能可在 PlayReady 服务器 v3.0 SDK 许可证中启用（服务器在许可证中使用 HDCP 类型限制 GUID 控制此策略）。 有关详细信息，请参阅 [PlayReady 合规性和可靠性规则](http://www.microsoft.com/playready/licensing/compliance/)。
+-   PlayReady DRM 现在支持 HDCP 类型 1（在 HDCP 版本 2.1 或更高版本中受支持）。 PlayReady 将强制实施设备许可证中的 HDCP 类型限制策略。 在 Windows10 上，此策略将强制仅使用 HDCP 2.2 或更高版本。 此功能可在 PlayReady 服务器 v3.0 SDK 许可证中启用（服务器在许可证中使用 HDCP 类型限制 GUID 控制此策略）。 有关详细信息，请参阅 [PlayReady 合规性和可靠性规则](https://www.microsoft.com/playready/licensing/compliance/)。
 -   Windows Media 视频（也称为 VC-1）在硬件 DRM 中不受支持（请参阅[替代硬件 DRM](hardware-drm.md#override-hardware-drm)）。
 -   PlayReady DRM 现在支持高效率视频编码 (HEVC /H.265) 视频压缩标准。 若要支持 HEVC，应用必须使用常用加密方案 (CENC) 版本 2 内容（它包括以明文形式离开内容的切片标头）。 有关详细信息，请参阅 ISO/IEC 23001 7 信息技术 -- MPEG 系统技术 - 部分 7：ISO 基本媒体文件格式文件中的常用加密（需要规范版本 ISO/IEC 23001-7:2015 或更高版本。） Microsoft 还建议将 CENC 版本 2 用于所有 HWDRM 内容。 此外，一些硬件 DRM 可支持 HEVC，而另一些硬件 DRM 则不支持（请参阅[替代硬件 DRM](hardware-drm.md#override-hardware-drm)）。
 -   若要利用某些新的 PlayReady 3.0 功能（包括但不限于适用于基于硬件的客户端的 SL3000、在一个许可证获取消息中获取多个非永久性许可证以及对非永久性许可证的基于时间的限制），要求 PlayReady 服务器是 Microsoft PlayReady 服务器软件开发工具包 v3.0.2769 发行版本或更高版本。
--   根据内容许可证指定的输出保护策略，如果媒体播放连接的输出不支持这些要求，它将无法让最终用户使用。 下表列出了作为结果发生的常见错误集。 有关详细信息，请参阅 [PlayReady 合规性和可靠性规则](http://www.microsoft.com/playready/licensing/compliance/)。
+-   根据内容许可证指定的输出保护策略，如果媒体播放连接的输出不支持这些要求，它将无法让最终用户使用。 下表列出了作为结果发生的常见错误集。 有关详细信息，请参阅 [PlayReady 合规性和可靠性规则](https://www.microsoft.com/playready/licensing/compliance/)。
 
 | 错误                                                   | 值      | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |---------------------------------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -398,10 +398,10 @@ PlayReady DRM 允许你在使用 HDCP 2.0 或更高版本后立即通过 Miracas
 在开始创建 PlayReady 保护的 UWP 应用之前，需要在系统上安装以下软件：
 
 -   Windows 10。
--   如果你正在为 PlayReady DRM 编译任何示例适用于 UWP 应用，则必须使用 Microsoft Visual Studio2015 或更高版本编译这些示例。 你仍可以使用 Microsoft Visual Studio2013 编译任何于 Windows8.1 应用商店应用的 PlayReady DRM 的示例。
+-   如果你正在为 PlayReady DRM 编译任何示例适用于 UWP 应用，则必须使用 Microsoft Visual Studio2015 或更高版本编译这些示例。 你仍可以使用 Microsoft Visual Studio2013 编译任何从适用于 windows 8.1 应用商店应用的 PlayReady DRM 的示例。
 
 <!--This is no longer available-->
-<!--If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876).-->
+<!--If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](https://go.microsoft.com/fwlink/p/?LinkId=626876).-->
 
 ## <a name="playready-uwp-app-migration-guide"></a>PlayReady UWP 应用迁移指南
 
@@ -507,7 +507,7 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
 -   在到达内容末尾或用户中途停止媒体演示文稿，因而媒体演示文稿停止时。
 -   在上一个会话意外结束时（如因系统或应用崩溃）。 在启动或关机时，应用将查询任何未解决的安全停止会话，并将发送与任何其他媒体播放分离的质询。
 
-有关安全停止的示例实现，请参阅 PlayReady 示例中的 securestop.cs 文件，该文件位于 [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670)。
+有关安全停止的示例实现，请参阅 PlayReady 示例中的 securestop.cs 文件，该文件位于 [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670)。
 
 ## <a name="use-playready-drm-on-xbox-one"></a>在 Xbox One 上使用 PlayReady DRM
 

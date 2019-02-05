@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f81ab1ef635bf4cfb20c289d6998c242f7aa47fc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 77b8f075e0eac02722c29eddddb6f188575ca18f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929186"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047502"
 ---
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>为 MediaCapture 设置格式、分辨率和帧速率
 
@@ -21,7 +21,7 @@ ms.locfileid: "8929186"
 
 相机配置文件提供发现和设置相机流属性的更高级方法，但并非所有设备均支持这些文件。 有关详细信息，请参阅[相机配置文件](camera-profiles.md)。
 
-本文中的代码源自 [CameraResolution 示例](http://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409)。 你可以下载该示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
+本文中的代码源自 [CameraResolution 示例](https://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409)。 你可以下载该示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
 
 > [!NOTE] 
 > 本文以[使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)中讨论的概念和代码为基础，该文章介绍了实现基本照片和视频捕获的步骤。 建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
@@ -30,7 +30,7 @@ ms.locfileid: "8929186"
 
 创建包装 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) 界面功能的简单帮助程序类使选择一组符合特定标准的编码属性变得更简单。 此帮助程序类因具有以下编码属性功能的行为而极为有用：
 
-**警告** [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994)方法采用[**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640)枚举，如**VideoRecord**或**照片**、 的成员，并返回的任一[**列表ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993)或[**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217)对象可传达流编码设置，如捕获的照片或视频的分辨率。 调用 **GetAvailableMediaStreamProperties** 的结果可能包括 **ImageEncodingProperties** 或 **VideoEncodingProperties**，不论指定的 **MediaStreamType** 值是什么。 出于此原因，在尝试访问任何属性值之前，你都应始终查看每个返回的值的类型并将其转换到相应类型。
+**警告** [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994)方法采用[**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640)枚举，如**VideoRecord**或**照片**、 的成员，并返回的任一[**列表ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993)或[**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217)对象可传达流编码设置，如在已捕获的照片或视频的分辨率。 调用 **GetAvailableMediaStreamProperties** 的结果可能包括 **ImageEncodingProperties** 或 **VideoEncodingProperties**，不论指定的 **MediaStreamType** 值是什么。 出于此原因，在尝试访问任何属性值之前，你都应始终查看每个返回的值的类型并将其转换到相应类型。
 
 以下定义的帮助程序类为 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 或 [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) 处理类型检查和转换，因此你的应用代码无需分辨这两种类型。 除此之外，此帮助程序类还会公开属性的纵横比属性、帧速率（仅适用于视频编码属性）以及使在应用 UI 中显示编码属性变得更简单的友好名称。
 
@@ -74,7 +74,7 @@ ms.locfileid: "8929186"
 
 -   选择最接近 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 的大小的预览分辨率，以便仅必要的像素通过预览流管道。
 
-**重要提示**有可能某些设备上，设置不同的纵横比相机的预览流和捕获流。 匹配失误引起的帧裁剪可能导致内容显示在预览中不可见的捕获媒体中，这会导致消极的用户体验。 强烈建议你为预览流和捕获流在容差较小的窗口中使用相同的纵横比。 只要纵横比密切匹配，为捕获和预览启用完全不同的分辨率便不会出现什么问题。
+**重要提示**很有可能，在某些设备，以设置不同的纵横比相机的预览流和捕获流上。 匹配失误引起的帧裁剪可能导致内容显示在预览中不可见的捕获媒体中，这会导致消极的用户体验。 强烈建议你为预览流和捕获流在容差较小的窗口中使用相同的纵横比。 只要纵横比密切匹配，为捕获和预览启用完全不同的分辨率便不会出现什么问题。
 
 
 为确保照片或视频捕获流与预览流的纵横比相匹配，此示例调用 [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) 并传递 **VideoPreview** 枚举值以请求预览流的当前流属性。 接下来定义纵横比容差较小的窗口，以便我们可以包括可能不同于预览流（只要相近即可）的纵横比。 接下来，Linq 扩展方法用于选择纵横比处于预览流的定义容差范围内的 **StreamPropertiesHelper** 对象。

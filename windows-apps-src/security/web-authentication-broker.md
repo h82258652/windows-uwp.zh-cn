@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
-ms.openlocfilehash: 8781cbffcb8d5c433c58865fba38cd65369b5c49
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 473b7ef9f4efacbbe78e1fdb5563695f8211bca8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930072"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050900"
 ---
 # <a name="web-authentication-broker"></a>Web 身份验证代理
 
@@ -21,7 +21,7 @@ ms.locfileid: "8930072"
 本文介绍了如何将通用 Windows 平台 (UWP) 应用连接到使用身份验证协议（如 OpenID 或 OAuth）的联机标识提供商（如 Facebook、Twitter、Flickr、Instagram 等）。 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 方法将请求发送给联机标识提供者，并取回描述应用有权访问的提供者资源的访问令牌。
 
 >[!NOTE]
->有关完整的有效代码示例，请克隆 [GitHub 上的 WebAuthenticationBroker 存储库](http://go.microsoft.com/fwlink/p/?LinkId=620622)。
+>有关完整的有效代码示例，请克隆 [GitHub 上的 WebAuthenticationBroker 存储库](https://go.microsoft.com/fwlink/p/?LinkId=620622)。
 
  
 
@@ -155,11 +155,11 @@ catch (Exception ex)
 
 Fiddler Web 调试程序可与应用一起使用。
 
-1.  由于 AuthHost 在自己的应用容器中运行，如果要为它提供的私有网络功能必须先设置注册表项： Windows 注册表编辑器版本 5.00
+1.  由于 AuthHost 在自己的应用容器中运行，如果要为其指定的私有网络功能必须先设置注册表项： Windows 注册表编辑器版本 5.00
 
     **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
 
-    如果你没有此注册表项，你可以在具有管理员权限的命令提示符中创建。
+    如果你没有此注册表项，你可以在具有管理员权限的命令提示符中创建它。
 
     ```cmd 
     REG ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\authhost.exe" /v EnablePrivateNetwork /t REG_DWORD /d 1 /f

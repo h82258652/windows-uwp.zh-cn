@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e38b57deb7101dcf0476bd3d952fc01ffd605db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 58e9ab90115566059fb79220b7b8c0b9c5ce677e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942209"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047964"
 ---
 # <a name="developing-inclusive-windows-apps"></a>开发非独占 Windows 应用  
 
@@ -82,7 +82,7 @@ XAML
 
 ## <a name="related-topics"></a>相关主题  
 * [设计非独占软件](designing-inclusive-software.md)  
-* [非独占设计](http://design.microsoft.com/inclusive)
+* [非独占设计](https://design.microsoft.com/inclusive)
 * [要避免的辅助功能做法](practices-to-avoid.md)
 * [针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 辅助功能开发人员中心](https://msdn.microsoft.com/enable)

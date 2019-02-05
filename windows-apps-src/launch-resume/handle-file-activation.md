@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: abe77526a7ac12bc905839065913dd59d70fdf62
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: eaf6118720ab77931decf93113a13341ab4f51d0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925894"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046510"
 ---
 # <a name="handle-file-activation"></a>处理文件激活
 
@@ -41,7 +41,7 @@ ms.locfileid: "8925894"
 
     以下是清单设计器中每个可以填写的字段的简短描述：
 
-| 字段 | 描述 |
+| 字段 | 说明 |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **显示名称** | 为一组文件类型指定显示名称。 该显示名称用于在**控制面板**上的[设置默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)中标识文件类型。 |
 | **徽标** | 指定用于标识桌面上以及**控制面板**的[设置默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)中的文件类型的徽标。 如果不指定徽标，则使用应用程序的小徽标。 |
@@ -123,19 +123,19 @@ void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEv
 > [!NOTE]
 > 通过文件合约启动后，请确保“后退”按钮可使用户返回到已启动应用的屏幕，而不是应用的早期内容。
 
-我们建议你创建一个新的 XAML**框架**的每个激活事件打开新页面。 这种方式，新 XAML 框架的导航 backstack 不包含应用暂停时在当前窗口可能具有所有早期内容。 如果你决定启动和文件合约使用单个 XAML**框架**，则应导航到新页面之前清除该**框架**的导航日志中的页面。
+我们建议你创建一个新 XAML**框架**的每个激活事件打开新页面。 这种方式，新 XAML 框架的导航 backstack 不包含应用暂停时在当前窗口可能具有所有早期内容。 如果你决定启动和文件合约使用单个 XAML**框架**，则应导航到新页面之前清除该**框架**的导航日志中的页面。
 
 通过文件激活启动应用时，你应该考虑包括允许用户返回到应用顶部页面的 UI。
 
 ## <a name="remarks"></a>备注
 
-收到的文件可能来自不受信任的来源。 我们建议在对该文件采取操作之前，先对文件的内容进行验证。 有关输入验证的详细信息，请参阅[编写安全代码](http://go.microsoft.com/fwlink/p/?LinkID=142053)
+收到的文件可能来自不受信任的来源。 我们建议在对该文件采取操作之前，先对文件的内容进行验证。 有关输入验证的详细信息，请参阅[编写安全代码](https://go.microsoft.com/fwlink/p/?LinkID=142053)
 
 ## <a name="related-topics"></a>相关主题
 
 ### <a name="complete-example"></a>完整示例
 
-* [关联启动示例](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+* [关联启动示例](https://go.microsoft.com/fwlink/p/?LinkID=231484)
 
 ### <a name="concepts"></a>概念
 

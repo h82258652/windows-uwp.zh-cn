@@ -6,12 +6,12 @@ ms.date: 01/29/2018
 ms.topic: article
 keywords: windows 10，uwp 打印
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b0c2993900721fc2020bb998f3db6ffd9106c8e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: aecb09b4fbaa7614c1d31c9dc0bb8095925175e7
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941854"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045330"
 ---
 # <a name="print-from-your-app"></a>从应用打印
 
@@ -26,14 +26,14 @@ ms.locfileid: "8941854"
 了解如何从通用 Windows 应用中打印文档。 本主题还介绍了如何打印特定页面。 有关对打印预览 UI 的更多高级更改，请参阅[自定义打印预览 UI](customize-the-print-preview-ui.md)。
 
 > [!TIP]
-> 本主题中的大多数示例都基于打印示例。 若要查看完整代码，请从 GitHub 上的 [Windows-universal-samples 存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)中下载[通用 Windows 平台 (UWP) 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)。
+> 本主题中的大多数示例都基于打印示例。 若要查看完整代码，请从 GitHub 上的 [Windows-universal-samples 存储库](https://go.microsoft.com/fwlink/p/?LinkId=619979)中下载[通用 Windows 平台 (UWP) 打印示例](https://go.microsoft.com/fwlink/p/?LinkId=619984)。
 
 ## <a name="register-for-printing"></a>注册打印
 
 在你的应用中添加打印的第一步是注册打印合约。 你的应用必须在你希望你的用户能够从其打印的每个屏幕上执行此操作。 仅显示给用户的屏幕可以注册打印。 如果你的应用的一个屏幕已注册打印，则该屏幕必须取消注册打印（当该屏幕存在时）。 如果该屏幕替换为另一个屏幕，则当下一个屏幕打开时，它必须注册新的打印合约。
 
 > [!TIP]
-> 如果你需要在应用中支持多个页面的打印，则可以将该打印代码放置在常用的帮助程序类中并且让你的应用重复使用它。 有关具体做法的示例，请参阅 [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `PrintHelper` 类。
+> 如果你需要在应用中支持多个页面的打印，则可以将该打印代码放置在常用的帮助程序类中并且让你的应用重复使用它。 有关具体做法的示例，请参阅 [UWP 打印示例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `PrintHelper` 类。
 
 首先，声明 [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 和 [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314)。 **PrintManager** 类型以及用于支持其他 Windows 打印功能的类型都位于 [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489) 命名空间中。 **PrintDocument** 类型以及支持准备 XAML 内容以供打印的其他类型都位于 [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325) 命名空间中。 你可以通过在页面中添加以下 **using** 或 **Imports** 语句，使得编写打印代码更加容易。
 
@@ -44,7 +44,7 @@ using Windows.UI.Xaml.Controls;
 
 [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) 类用于处理应用和 [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 之间的大部分交互，但是它会公开其自身的多个回调。 在注册期间，创建 **PrintManager** 和 **PrintDocument** 的实例并为其打印事件注册处理程序。
 
-在 [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)中，注册通过 `RegisterForPrinting` 方法来执行。
+在 [UWP 打印示例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中，注册通过 `RegisterForPrinting` 方法来执行。
 
 ```csharp
 public virtual void RegisterForPrinting()
@@ -170,7 +170,7 @@ protected virtual void PrintTaskRequested(PrintManager sender, PrintTaskRequeste
 > [!IMPORTANT]
 > 如果用户更改打印设置，则将再次调用分页事件处理程序以允许你重排内容。 为了获得最佳的用户体验，我们建议在重新排列内容之前检查设置，以避免在不必要时重新初始化分页内容。
 
-在 [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) 事件处理程序中（[UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `CreatePrintPreviewPages` 方法），创建要在打印预览 UI 中显示并发送到打印机的页面。 用于准备你的应用的内容以供打印的代码特定于你的应用以及你打印的内容。 请参考 [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)源代码，了解它如何格式化其内容以进行打印。
+在 [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) 事件处理程序中（[UWP 打印示例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `CreatePrintPreviewPages` 方法），创建要在打印预览 UI 中显示并发送到打印机的页面。 用于准备你的应用的内容以供打印的代码特定于你的应用以及你打印的内容。 请参考 [UWP 打印示例](https://go.microsoft.com/fwlink/p/?LinkId=619984)源代码，了解它如何格式化其内容以进行打印。
 
 ```csharp
 protected virtual void CreatePrintPreviewPages(object sender, PaginateEventArgs e)
@@ -215,7 +215,7 @@ protected virtual void CreatePrintPreviewPages(object sender, PaginateEventArgs 
 
 要在打印预览窗口中显示特定页面时，[**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 将引发 [**GetPreviewPage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.getpreviewpage) 事件。 这与 **IPrintPreviewPageCollection** 接口的 **MakePage** 方法对应。 此时将调用在注册期间创建的事件处理程序。
 
-在 [**GetPreviewPage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.getpreviewpage) 事件处理程序（[UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `GetPrintPreviewPage` 方法）中，在打印文档上设置相应的页面。
+在 [**GetPreviewPage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.getpreviewpage) 事件处理程序（[UWP 打印示例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `GetPrintPreviewPage` 方法）中，在打印文档上设置相应的页面。
 
 ```csharp
 protected virtual void GetPrintPreviewPage(object sender, GetPreviewPageEventArgs e)
@@ -227,7 +227,7 @@ protected virtual void GetPrintPreviewPage(object sender, GetPreviewPageEventArg
 
 最后，在用户单击打印按钮后，[**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 会通过调用 **IDocumentPageSource** 接口的 **MakeDocument** 方法，请求要发送到打印机的页面的最终集合。 在 XAML 中，这会引发 [**AddPages**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.addpages) 事件。 此时将调用在注册期间创建的事件处理程序。
 
-在 [**AddPages**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.addpages) 事件处理程序（[UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `AddPrintPages` 方法）中，将页面集合中的页面添加到要发送到打印机的 [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) 对象。 如果用户指定要打印的特殊页面或页面范围，则使用此处的信息以仅添加将实际发送到打印机的页面。
+在 [**AddPages**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.addpages) 事件处理程序（[UWP 打印示例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `AddPrintPages` 方法）中，将页面集合中的页面添加到要发送到打印机的 [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) 对象。 如果用户指定要打印的特殊页面或页面范围，则使用此处的信息以仅添加将实际发送到打印机的页面。
 
 ```csharp
 protected virtual void AddPrintPages(object sender, AddPagesEventArgs e)
@@ -307,7 +307,7 @@ printDetailedOptions.OptionChanged += printDetailedOptions_OptionChanged;
 
 **OptionChanged** 事件处理程序执行两项工作。 第一，它根据用户选择的页面范围选项显示和隐藏页面范围的文本编辑字段。 第二，它将测试输入到页面范围文本框中的文本，以确保它代表文档的有效页面范围。
 
-此示例显示了 [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)如何处理更改事件。
+此示例显示了 [UWP 打印示例](https://go.microsoft.com/fwlink/p/?LinkId=619984)如何处理更改事件。
 
 ```csharp
 async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, PrintTaskOptionChangedEventArgs args)
@@ -384,11 +384,11 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 ```
 
 > [!TIP]
-> 有关如何解析用户在“范围”文本框中输入的页面范围的详细信息，请参阅 [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `GetPagesInRange` 方法。
+> 有关如何解析用户在“范围”文本框中输入的页面范围的详细信息，请参阅 [UWP 打印示例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `GetPagesInRange` 方法。
 
 ## <a name="preview-selected-pages"></a>预览所选页面
 
-针对打印而设置你的应用内容的格式的方式取决于你的应用及其内容的性质。 [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)使用 print helper 类来设置其内容的格式以用于打印。
+针对打印而设置你的应用内容的格式的方式取决于你的应用及其内容的性质。 [UWP 打印示例](https://go.microsoft.com/fwlink/p/?LinkId=619984)使用 print helper 类来设置其内容的格式以用于打印。
 
 在打印这些页面的子集时，可采用多种方法在打印预览中显示内容。 无论你采用哪种方法在打印预览中显示页面范围，打印输出都必须仅包含选中的页面。
 
@@ -400,4 +400,4 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 * [打印的设计指南](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//Build 2015 视频：开发可在 Windows 10 中打印的应用](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [UWP 打印示例](https://go.microsoft.com/fwlink/p/?LinkId=619984)

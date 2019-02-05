@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
 ms.localizationpriority: medium
-ms.openlocfilehash: f2aad1b4d6abf9a05af9b9a938188c69d9cae7c8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0869f5cfc2499a00577f0196cd9f9f84987c0321
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941318"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048364"
 ---
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>用于 Xbox One 上 UWP 应用和游戏的系统资源
 
@@ -44,7 +44,7 @@ Xbox One 上运行的 UWP 应用与系统和其他应用共享资源。 Xbox One
 
 对于**应用程序开发**，与标准电脑相比，可用资源可能会受到限制，并因系统上运行的应用和游戏数而有所变化。
 
-对于**游戏开发**，Xbox One 与其他游戏主机一样，是一个专业化的硬件，它需要专门的基于硬件的开发工具来访问其全部潜能。 如果你正在开发需要最大限度发挥 Xbox One 硬件潜能的游戏，可以考虑注册 [ID@Xbox](http://www.xbox.com/Developers/id) 计划来获取 Xbox One 开发工具包的访问权限。
+对于**游戏开发**，Xbox One 与其他游戏主机一样，是一个专业化的硬件，它需要专门的基于硬件的开发工具来访问其全部潜能。 如果你正在开发需要最大限度发挥 Xbox One 硬件潜能的游戏，可以考虑注册 [ID@Xbox](https://www.xbox.com/Developers/id) 计划来获取 Xbox One 开发工具包的访问权限。
 
 
 有关 Xbox One 上的 UWP 应用的系统资源的详细信息，请观看此视频的第一部分。
