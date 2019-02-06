@@ -5,12 +5,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 400d80018201c8ae048cb4a5d326fa560b9cdd5c
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: e273b1b3bb84929005cfbe4a205397fa298ea1c8
+ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981391"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059728"
 ---
 # <a name="xbox-best-practices"></a>Xbox 最佳做法
 
@@ -22,11 +22,11 @@ ms.locfileid: "8981391"
 
 ### <a name="do-turn-off-mouse-mode"></a>*应做事项：* 关闭鼠标模式
 
-Xbox 用户喜欢其控制器。 若要优化控制器输入，[禁用鼠标模式](how-to-disable-mouse-mode.md)，并启用方向导航（也称为 [X-Y 焦点](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)）。 请注意焦点陷阱和不可访问的 UI。
+Xbox 用户喜欢其控制器。 若要优化控制器输入，[禁用鼠标模式](how-to-disable-mouse-mode.md)并启用方向导航 （也称为[XY 焦点导航和交互](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)）。 请注意焦点陷阱和不可访问的 UI。
 
 ### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a>*应做事项：* 绘制适用于 10 英尺体验的焦点矩形
 
-大多数 Xbox 用户面向电视坐在客厅中，因此请记住，标准焦点矩形难以在十英尺远的距离看到屏幕。 若要确保用户始终可以清楚地看到具有输入焦点的 UI 元素，请遵循[焦点视觉对象](../design/devices/designing-for-tv.md#focus-visual)指南。 在 XAML 中，当你的应用在 Xbox 上运行时，将免费获取此行为，但 HTML 应用需要使用自定义 CSS 样式。
+大多数 Xbox 用户面向电视坐在客厅中，因此请记住，标准焦点矩形难以在十英尺远的距离看到屏幕。 若要确保用户始终可以清楚地看到具有输入焦点的 UI 元素，请遵循[焦点视觉对象](../design/input/gamepad-and-remote-interactions.md#focus-visual)指南。 在 XAML 中，当你的应用在 Xbox 上运行时，将免费获取此行为，但 HTML 应用需要使用自定义 CSS 样式。
 
 ### <a name="do-integrate-with-the-systemmediatransportcontrols-class"></a>*应做事项：* 与 SystemMediaTransportControls 类集成
 

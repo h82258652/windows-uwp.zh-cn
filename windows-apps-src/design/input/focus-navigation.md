@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dd7ca5ed7694ba5f114d913580e7e3a233537ae
-ms.sourcegitcommit: 8e0fa6e2cdd5d7456a4c8a10fd9f2501b346294f
+ms.openlocfilehash: a699ef00b3f377656940e66e6d35bfcba1cc5762
+ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "9041045"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059698"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>适用于键盘、手柄、遥控器和辅助功能工具的焦点导航
 
@@ -425,7 +425,7 @@ ms.locfileid: "9041045"
 
 在本部分中，我们将介绍如何在你的应用程序中通过一组支持所有基于焦点的非指针输入类型的导航策略属性指定首选的导航策略并微调焦点导航。
 
-有关构建适用于 Xbox/电视的应用和体验的更多一般信息，请参阅[键盘交互](keyboard-interactions.md)和[针对 Xbox 和电视进行设计](../devices/designing-for-tv.md#xy-focus-navigation-and-interaction)。
+有关构建适用于 Xbox/电视的应用和体验的详细信息，请参阅[键盘交互](keyboard-interactions.md)、[针对 Xbox 和电视进行设计](../devices/designing-for-tv.md)和[游戏板和遥控器交互](gamepad-and-remote-interactions.md)。
 
 ### <a name="navigation-strategies"></a>导航策略
 

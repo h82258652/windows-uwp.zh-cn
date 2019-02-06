@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, ui, 导航
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cc879ba89dc3c70ebc08d948b25f31bc30a3c6e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ec5ba9d893a622e256030601cca204abab35045f
+ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926452"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059708"
 ---
 # <a name="ui-navigation-controller"></a>UI 导航控制器
 
@@ -35,7 +35,7 @@ UI 导航控制器是_逻辑_输入设备，用于提供一套可由各种_物�
 
 导航设备必须都支持_必需组_中的所有导航命令；这些命令包括方向（up、down、left 和 right）、view、menu、accept 和 cancel 命令。
 
-方向命令用于单个 UI 元素之间的主要 [XY-聚焦导航](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)。 view 和 menu 命令分别用于显示游戏玩法信息（通常是瞬时的，有时是模态的）和用于在游戏玩法和菜单上下文之间进行切换。 accept 和 cancel 命令分别用于肯定（是）和否定（否）响应。
+方向命令用于单个 UI 元素之间的主要 [XY-聚焦导航](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)。 view 和 menu 命令分别用于显示游戏玩法信息（通常是瞬时的，有时是模态的）和用于在游戏玩法和菜单上下文之间进行切换。 accept 和 cancel 命令分别用于肯定（是）和否定（否）响应。
 
 下表通过示例总结了这些命令及其预期用途。
 | 命令 | 预期用途
