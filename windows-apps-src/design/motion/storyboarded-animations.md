@@ -6,12 +6,12 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 920ff8e295959ad6ea66cdb3b673217ff19b89e2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 212ef252e7d123ebf457a6584f77addb04fdfb2c
+ms.sourcegitcommit: a5f5bd724e65ce4a62d28dfd9080afb127886d6e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943148"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059988"
 ---
 # <a name="storyboarded-animations"></a>情节提要动画
 
@@ -265,7 +265,8 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 作为一名应用开发人员，你还可以选择应用应用级设置，该设置始终禁用从属动画，甚至禁用其中 **EnableDependentAnimation** 为 **true** 的那些动画。 请参阅 [**Timeline.AllowDependentAnimations**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.allowdependentanimations)。
 
 > [!TIP]
-> 如果你使用 Visual Studio 为控件创作视觉状态，则设计人员将会在你尝试将从属动画应用到视觉状态属性时生成警告。
+> 如果你使用动画窗格在 Blend for Visual Studio 2017，你尝试将从属动画应用到视觉状态属性时，将在设计器中显示警告。 错误列表的生成输出中，将不显示警告。 如果你手动编辑 XAML，设计器不会显示一条警告。 在运行时在调试时，输出窗格的调试输出将显示一条警告的动画不独立，将跳过。
+
 
 ## <a name="starting-and-controlling-an-animation"></a>启动动画和控制动画
 
