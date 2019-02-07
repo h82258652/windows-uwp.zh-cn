@@ -1,25 +1,25 @@
 ---
 title: 快速访问 UWP 中的文件属性
 description: 高效地从库中收集文件及其属性的列表以用于 UWP 应用。
-ms.date: 03/22/2018
+ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp, 文件, 属性
 ms.localizationpriority: medium
-ms.openlocfilehash: 772abd3696850be202593c582e6338a04de38537
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5ae884ca5424f50a7a835bc55602b5aa7c54096d
+ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926532"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9060051"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>快速访问 UWP 中的文件属性 
 
 了解如何从库中收集文件及其属性的列表，然后在应用中使用这些属性。  
 
 先决条件 
-- **异步编程的通用 Windows 平台 (UWP) 应用**    可了解如何在 C# 或 Visual Basic 编写异步应用，请参阅[调用异步 Api 采用 C# 或 Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。 
+- **异步编程的通用 Windows 平台 (UWP) 应用**    你可以了解如何在 C# 或 Visual Basic 编写异步应用，请参阅[调用异步 Api 采用 C# 或 Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。 
 - **对库的访问权限**这些示例中的代码需要**picturesLibrary**功能，但你的文件位置可能根本需要其他功能或任何功能。 若要了解详细信息，请参阅[文件访问权限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)。 
-- **简单文件枚举**此示例使用[QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions)来设置几个高级的枚举属性。 要详细了解如何只获取一个较小目录的简单文件列表，请参阅[枚举和查询文件和文件夹](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)。 
+- **简单文件枚举**此示例使用[QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions)设置几个高级的枚举属性。 要详细了解如何只获取一个较小目录的简单文件列表，请参阅[枚举和查询文件和文件夹](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)。 
 
 ## <a name="usage"></a>用法  
 许多应用都需要列出一组文件的属性，但不必始终直接与这些文件交互。 例如，一个音乐应用一次播放（打开）一个文件，但它需要一个文件夹中所有文件的属性，以便该应用显示歌曲队列，从而让用户能够选择有效的文件来播放。 
@@ -118,6 +118,5 @@ while (images.Count != 0 || index < 10000) 
 [QueryOptions API 参考](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
 [枚举和查询文件和文件夹](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
 [文件访问权限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
-[快速属性访问演练](https://blogs.msdn.microsoft.com/adamdwilson/2017/12/20/fast-file-enumeration-with-partially-initialized-storagefiles/)
  
  

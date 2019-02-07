@@ -2,20 +2,18 @@
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: 适用于 Windows 桌面的设备门户
 description: 了解 Windows 设备门户如何在 Windows 桌面上打开诊断和自动化。
-ms.date: 03/15/2018
+ms.date: 2/6/2019
 ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 1be8dfd11e68dc8e6382f98e08e6c23f2a4d6be6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3dcf35a1bd43930e616edc6d1e7180c9cea31560
+ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938827"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9060041"
 ---
 # <a name="device-portal-for-windows-desktop"></a>适用于 Windows 桌面的设备门户
-
-
 
 Windows 设备门户允许你查看诊断信息，并通过 HTTP 从浏览器窗口与你的桌面进行交互。 你可以使用设备门户执行以下操作：
 - 查看并操作正在运行的进程的列表
@@ -77,6 +75,7 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
 - Scratch
 
 ## <a name="more-device-portal-options"></a>更多设备门户选项
+
 ### <a name="registry-based-configuration-for-device-portal"></a>设备门户的基于注册表的配置
 
 如果你希望为设备门户选择端口号（如 80 和 443），你可以设置以下 RegKey：
@@ -105,6 +104,30 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
 - `-Debug <various options for authentication, port selection, and tracing level>`
     - 运行独立版本的具有特定配置和可见调试消息的设备门户。 这对于生成[打包的插件](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin)最为有用。 
     - 有关如何作为系统运行此项以完全测试你的打包插件的详细信息，请参阅 [MSDN 杂志文章](https://msdn.microsoft.com/en-us/magazine/mt826332.aspx)。
+
+## <a name="common-errors-and-issues"></a>常见错误和问题
+
+下面是设置 Device Portal 时可能遇到的一些常见错误。
+
+### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbseinvalidwindowsupdatecount"></a>WindowsUpdateSearch 返回无效的更新数量 (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
+
+尝试在 Windows 10 的预发布版本上安装的开发人员程序包时，你可能会收到此错误。 Windows 更新上承载这些功能按需 (FoD) 包和下载这些预发行版本上需要你选择到外部测试版。 如果你安装参与到外部测试版的正确版本和圈组合，有效负载不会可下载。 仔细检查以下各项：
+
+1. 导航到**设置 > 更新 & 安全 > Windows 预览体验计划**，并确认**Windows 预览体验成员帐户**部分具有正确的帐户信息。 如果你没有看到该部分中，选择**Windows 预览体验成员帐户链接**，添加你的电子邮件帐户，并确认，它将显示的标题下的**Windows 预览体验成员帐户**（你可能需要选择**Windows 预览体验成员帐户链接**到第二次实际新添加的帐户链接）。
+ 
+2. 在**要接收的内容类型？**，请确保选择**活动开发状态的 Windows** 。
+ 
+3. 在**你想要获取新版本的节奏？**，请确保**Windows Insider Fast**处于选中状态。
+ 
+4. 你现在应该能够安装 Fod。 如果你已确认你是在 Windows 预览体验成员快速并仍无法安装 Fod，请提供反馈，并附加**C:\Windows\Logs\CBS**下的日志文件。
+
+### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>[SC]StartService: OpenService 失败 1060年： 指定的服务不存在作为安装服务
+
+如果未安装开发人员程序包，你可能会收到此错误。 而无需开发人员程序包中，没有任何 web 管理服务。 请尝试再次安装开发人员程序包。
+
+### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbsemeterednetwork"></a>Cb 获取服务无法启动下载，因为系统位于按流量计费的网络 (CBS_E_METERED_NETWORK)
+
+如果你使用的是按流量计费的 internet 连接，你可能会收到此错误。 你将无法下载按流量计费的连接上的开发人员程序包。
 
 ## <a name="see-also"></a>另请参阅
 
