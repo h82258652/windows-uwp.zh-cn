@@ -6,23 +6,23 @@ ms.date: 10/04/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b6e85c47c569f1a4a0a39a8ce12bc7c091316c10
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 236b5ab54de4224cccfc72a68c95c8160f148986
+ms.sourcegitcommit: b589795bedbff993867ddce16ed1f1a4a4b39e8c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918816"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "9070328"
 ---
 # <a name="use-app-services-and-extensions"></a>使用应用服务和扩展
 
 本部分介绍如何将应用服务集成到你的 UWP 应用，以允许跨应用共享数据和功能。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [创建和使用应用服务](how-to-create-and-consume-an-app-service.md) | 了解如何编写可以向其他 UWP 应用提供服务的通用 Windows 平台 (UWP) 应用，以及如何使用这些服务。 |
 | [将应用服务转换为与其主机应用在同一个进程中运行](convert-app-service-in-process.md) | 将在单独的后台进程中运行的应用服务代码转换为在与应用服务提供程序相同的进程中运行的代码。 |
 | [使用应用服务、扩展和包扩展应用](extend-your-app-with-services-extensions-packages.md) | 确定使用哪种技术来扩展和组件化应用，并简要概述每种技术。 |
-| [创建和使用应用扩展](how-to-create-an-extension.md) | 编写并托管通用 Windows 平台 (UWP) 应用扩展，以便通过用户可从 Microsoft Store 中安装的程序包来扩展应用。 |
+| [创建和托管应用扩展](how-to-create-an-extension.md) | 编写并托管通用 Windows 平台 (UWP) 应用扩展，以便通过用户可从 Microsoft Store 中安装的程序包来扩展应用。 |
 
 
 ## <a name="related-topics"></a>相关主题
