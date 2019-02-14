@@ -11,23 +11,20 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7075df3d5c3de0dd7d756432400dfe934651c5b4
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.openlocfilehash: 212b5843a302c8210cd01dd0ab4017eda016098a
+ms.sourcegitcommit: 9af94470480ef67438f6fd189edab47395fb77e6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058758"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "9075120"
 ---
 # <a name="text-box"></a>文本框
-
- 
 
 TextBox 控件可使用户在应用中键入文本。 它通常用于捕获单行文本，但可配置为捕获多行文本。 文本以简单、统一、纯文本的格式显示在屏幕上。
 
 TextBox 具有大量可简化文本输入的功能。 它附带熟悉的内置上下文菜单，并提供对复制和粘贴文本的支持。 “清除所有”按钮使用户可以快速删除所输入的所有文本。 它还内置了拼写检查功能，并且在默认情况下处于启用状态。
 
 > **重要 API**：[TextBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)、[Text 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)
-
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -86,6 +83,18 @@ rootGrid.Children.Add(textBox);
 
 通常使用文本框接受表单上的数据输入，并使用 [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) 属性获取来自文本框的完整文本字符串。 通常使用提交按钮单击之类的事件来访问 Text 属性，但如果你需要在文本发生更改时执行某些操作，可以处理 [TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanged.aspx) 或 [TextChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanging.aspx) 事件。
 
+此示例显示了如何获取和设置文本框中的当前内容。
+
+```xaml
+<TextBox name="SampleTextBox" Text="Sample Text"/>
+```
+
+```csharp
+string sampleText = SampleTextBox.Text;
+...
+SampleTextBox.Text = "Sample text retrieved";
+```
+
 你可以将 [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.header.aspx)（或标签）和 [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.placeholdertext.aspx)（或水位线）添加到文本框，以向用户指示文本框的用途。 若要自定义标题外观，可设置 [HeaderTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.headertemplate.aspx) 属性而非 Header。 *有关设计信息，请参阅标签指南*。
 
 可以通过设置 [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.maxlength.aspx) 属性来限制用户可键入的字符数。 但是，MaxLength 不会限制粘贴文本的长度。 使用 [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) 事件修改粘贴文本（如果这对你的应用很重要）。
@@ -97,6 +106,7 @@ rootGrid.Children.Add(textBox);
 “清除所有”按钮仅为包含文本并具有焦点的可编辑单行文本框显示。
 
 在以下任意情况下，不会显示“清除所有”按钮：
+
 - **IsReadOnly** 为 **true**
 - **AcceptsReturn** 为 **true**
 - **TextWrap** 具有非 **NoWrap** 的值
@@ -111,10 +121,10 @@ rootGrid.Children.Add(textBox);
 用户可以选择并复制文本。
 IsEnabled
 
-
 ### <a name="enable-multi-line-input"></a>启用多行输入
 
 有两个可用于控制文本框是否在多行上显示文本的属性。 通常同时设置这两个属性来创建多行文本框。
+
 - 若要使文本框允许和显示新行或返回字符，请将 [AcceptsReturn](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) 属性设置为 **true**。
 - 若要启用文本换行，请将 [TextWrapping](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) 属性设置为 **Wrap**。 这会导致文本在其到达文本框边缘时独立于行分隔符换行。
 
@@ -244,46 +254,45 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 ## <a name="recommendations"></a>建议
 
--   如果文本框的用途不甚清楚，请使用标签或占位符文本。 无论文本输入框是否具有值，标签都可见。 占位符文本显示在文本输入框内，并在输入值后立即消失。
--   针对可输入值的范围，为文本框提供适当的宽度。 字词长度因语言而异，因此如果你希望应用在全世界通用，请将本地化考虑在内。
--   文本输入框通常为单行 (`TextWrap = "NoWrap"`)。 当用户需要输入或编辑长字符串时，将文本输入框设置为多行 (`TextWrap = "Wrap"`)。
--   一般而言，文本输入框用于可编辑文本。 但你可以使文本输入框变为只读，以使其内容可供阅读、选择和复制，但不能编辑。
--   如果你需要减少视图中的混乱感，请考虑让一组文本输入框仅在选中控制复选框时显示。 你还可以将文本输入框的启用状态绑定到诸如复选框等控件上。
--   请考虑你希望文本输入框在包含值并且用户点击时表现怎样的行为。 默认行为适用于编辑值，而不是替代该值；插入点将位于字词之间，并且没有选择任何内容。 如果替代是给定文本输入框最常用的情况，你可以在控件接收焦点时选择字段中的所有文本，并且键入将替代选择的内容。
+- 如果文本框的用途不甚清楚，请使用标签或占位符文本。 无论文本输入框是否具有值，标签都可见。 占位符文本显示在文本输入框内，并在输入值后立即消失。
+- 针对可输入值的范围，为文本框提供适当的宽度。 字词长度因语言而异，因此如果你希望应用在全世界通用，请将本地化考虑在内。
+- 文本输入框通常为单行 (`TextWrap = "NoWrap"`)。 当用户需要输入或编辑长字符串时，将文本输入框设置为多行 (`TextWrap = "Wrap"`)。
+- 一般而言，文本输入框用于可编辑文本。 但你可以使文本输入框变为只读，以使其内容可供阅读、选择和复制，但不能编辑。
+- 如果你需要减少视图中的混乱感，请考虑让一组文本输入框仅在选中控制复选框时显示。 你还可以将文本输入框的启用状态绑定到诸如复选框等控件上。
+- 请考虑你希望文本输入框在包含值并且用户点击时表现怎样的行为。 默认行为适用于编辑值，而不是替代该值；插入点将位于字词之间，并且没有选择任何内容。 如果替代是给定文本输入框最常用的情况，你可以在控件接收焦点时选择字段中的所有文本，并且键入将替代选择的内容。
 
-**单行输入框**
+### <a name="single-line-input-boxes"></a>单行输入框
 
--   使用多个单行文本框来捕获许多文本信息的较小部分。 如果文本框在本质上相关联，请将它们分在一组。
+- 使用多个单行文本框来捕获许多文本信息的较小部分。 如果文本框在本质上相关联，请将它们分在一组。
 
--   使单行文本框的大小比最长的预期输入稍微宽一些。 如果执行此操作后导致该控件变得过宽，请将其分成两个控件。 例如，可以将一个地址输入拆分为“地址行 1”和“地址行 2”。
--   设置可输入字符的最大长度。 如果备份数据源不允许输入长字符串，请限制输入并使用验证弹出窗口来让用户知道何时达到限制。
--   使用单行文本输入控件从用户那里收集小文本块。
+- 使单行文本框的大小比最长的预期输入稍微宽一些。 如果执行此操作后导致该控件变得过宽，请将其分成两个控件。 例如，可以将一个地址输入拆分为“地址行 1”和“地址行 2”。
+- 设置可输入字符的最大长度。 如果备份数据源不允许输入长字符串，请限制输入并使用验证弹出窗口来让用户知道何时达到限制。
+- 使用单行文本输入控件从用户那里收集小文本块。
 
     下面的示例显示一个用来捕获安全问题答案的单行文本框。 答案应当简短，因此此处适合使用单行文本框。
 
     ![基本数据输入](images/guidelines_and_checklist_for_singleline_text_input_type_text.png)
 
--   使用一组简短的、大小固定的单行输入文本控件可输入具有特定格式的数据。
+- 使用一组简短的、大小固定的单行输入文本控件可输入具有特定格式的数据。
 
     ![格式化数据输出](images/textinput_example_productkey.png)
 
--   将不受限制的单行文本输入控件与一个命令按钮结合使用可输入或编辑字符串。
+- 将不受限制的单行文本输入控件与一个命令按钮结合使用可输入或编辑字符串。
 
     ![辅助数据输入](images/textinput_example_assisted.png)
 
+### <a name="multi-line-text-input-controls"></a>多行文本输入控件
 
-**多行文本输入控件**
-
--   创建富文本框时，提供样式按钮并实现它们的操作。
--   使用与应用样式一致的字体。
--   使文本控件的高度足够大，以便容纳典型输入。
--   如果要捕获具有最大字符或字词计数的长文本，请使用纯文本框并提供实时运行计数器，以便向用户显示他们在达到上限前还能输入多少字符或字词。 你需要自行创建计数器、将它放在文本框下面，并在用户输入每个字符或字词时动态更新它。
+- 创建富文本框时，提供样式按钮并实现它们的操作。
+- 使用与应用样式一致的字体。
+- 使文本控件的高度足够大，以便容纳典型输入。
+- 如果要捕获具有最大字符或字词计数的长文本，请使用纯文本框并提供实时运行计数器，以便向用户显示他们在达到上限前还能输入多少字符或字词。 你需要自行创建计数器、将它放在文本框下面，并在用户输入每个字符或字词时动态更新它。
 
     ![长文本](images/guidelines_and_checklist_for_multiline_text_input_text_limits.png)
 
--   不要让文本输入控件在用户键入时增加高度。
--   当用户仅需要一行时，不要使用多行文本框。
--   如果纯文本控件足够使用，不要使用富文本控件。
+- 不要让文本输入控件在用户键入时增加高度。
+- 当用户仅需要一行时，不要使用多行文本框。
+- 如果纯文本控件足够使用，不要使用富文本控件。
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
