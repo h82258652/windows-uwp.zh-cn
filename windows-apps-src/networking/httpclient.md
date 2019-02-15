@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f4e0b2a2370acd3571b48eecdf13e44cadc3879c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: dd4b8c137d65339701b40027bb3230162e2c2456
+ms.sourcegitcommit: fde2d41ef4b5658785723359a8c4b856beae8f95
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050470"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "9079205"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -158,12 +158,16 @@ int main()
 
 ## <a name="post-binary-data-over-http"></a>通过 HTTP POST 二进制数据
 
-[C + + WinRT](/windows/uwp/cpp-and-winrt-apis)下面的代码示例演示如何发送少量的二进制数据，使用[HttpBufferContent](/uwp/api/windows.web.http.httpbuffercontent)类的 POST 请求。 调用**get** （如下面的代码示例中所示） 不适合 UI 线程。 若要在此情况下使用的正确技术，请参阅[并发和异步操作通过 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。
+[C + + WinRT](/windows/uwp/cpp-and-winrt-apis)下面的代码示例演示如何使用表单数据和 POST 请求发送少量的二进制数据作为文件上载到 web 服务器。 该代码使用[**HttpBufferContent**](/uwp/api/windows.web.http.httpbuffercontent)类来表示二进制数据，并[**HttpMultipartFormDataContent**](/uwp/api/windows.web.http.httpmultipartformdatacontent)类来表示多部分表单数据。
+
+> [!NOTE]
+> 调用**get** （如下面的代码示例中所示） 不适合 UI 线程。 若要在此情况下使用的正确技术，请参阅[并发和异步操作通过 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。
 
 ```cppwinrt
 // pch.h
 #pragma once
 #include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Security.Cryptography.h>
 #include <winrt/Windows.Storage.Streams.h>
 #include <winrt/Windows.Web.Http.Headers.h>
 
@@ -171,7 +175,6 @@ int main()
 #include "pch.h"
 #include <iostream>
 #include <sstream>
-#include <winrt/Windows.Security.Cryptography.h>
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Storage::Streams;
@@ -180,18 +183,31 @@ int main()
 {
     init_apartment();
 
-    // Create an HttpClient object.
     Windows::Web::Http::HttpClient httpClient;
 
-    Uri requestUri{ L"http://www.contoso.com/post" };
+    Uri requestUri{ L"https://www.contoso.com/post" };
+
+    Windows::Web::Http::HttpMultipartFormDataContent postContent;
+    Windows::Web::Http::Headers::HttpContentDispositionHeaderValue disposition{ L"form-data" };
+    postContent.Headers().ContentDisposition(disposition);
+    // The 'name' directive contains the name of the form field representing the data.
+    disposition.Name(L"fileForUpload");
+    // Here, the 'filename' directive is used to indicate to the server a file name
+    // to use to save the uploaded data.
+    disposition.FileName(L"file.dat");
 
     auto buffer{
-    Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(
-        L"A sentence of text by way of sample data",
-        Windows::Security::Cryptography::BinaryStringEncoding::Utf8)
+        Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(
+            L"A sentence of text to encode into binary to serve as sample data.",
+            Windows::Security::Cryptography::BinaryStringEncoding::Utf8
+        )
     };
-    Windows::Web::Http::HttpBufferContent postContent{ buffer };
-    postContent.Headers().Append(L"Content-Type", L"image/jpeg");
+    Windows::Web::Http::HttpBufferContent binaryContent{ buffer };
+    // You can use the 'image/jpeg' content type to represent any binary data;
+    // it's not necessarily an image file.
+    binaryContent.Headers().Append(L"Content-Type", L"image/jpeg");
+
+    postContent.Add(binaryContent); // Add the binary data content as a part of the form data content.
 
     // Send the POST request asynchronously, and retrieve the response as a string.
     Windows::Web::Http::HttpResponseMessage httpResponseMessage;
@@ -212,9 +228,9 @@ int main()
 }
 ```
 
-若要发布二进制文件的内容，你会发现更易于使用[HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent)对象。 构造一个文档，作为它的构造函数的参数，通过从[StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync)调用返回的值。 该方法返回的二进制文件内的数据的流。
+若要发布的实际的二进制文件 （而不是使用上面的显式二进制数据） 的内容，你会发现更易于使用[HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent)对象。 构造一个文档，作为它的构造函数的参数，通过从[StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync)调用返回的值。 该方法返回的二进制文件内的数据的流。
 
-此外，如果你正在上传 （大于大约 10 MB） 的大型文件，然后我们建议你使用 Windows 运行时[后台传输](/uwp/api/windows.networking.backgroundtransfer)Api。
+此外，如果你正在上载大文件 （大于大约 10 MB），则我们建议你使用 Windows 运行时[后台传输](/uwp/api/windows.networking.backgroundtransfer)Api。
 
 ## <a name="exceptions-in-windowswebhttp"></a>Windows.Web.Http 中的异常
 
