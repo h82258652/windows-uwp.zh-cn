@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
-ms.openlocfilehash: 59da5dd5866fe79f4420e1e895af74f976526f27
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 3664ecae152b7178709bffc373a877e58a86461a
+ms.sourcegitcommit: eaee5a45d5eace64c69e67691e5330b466cc74c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046257"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "9083254"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>Xbox One 开发人员模式激活
 
@@ -38,19 +38,21 @@ Xbox One 具有两种模式，即*零售* 模式 (**1**) 和*开发人员* 模�
 
     ![激活步骤 5](images/activation-step-5.png)  
     
-5.  转到[partner.microsoft.com/xboxconfig/devices](https://partner.microsoft.com/xboxconfig/devices)。
+5.  [注册在合作伙伴中心中的应用开发人员帐户](https://developer.microsoft.com/store/register)。  这也是发布你的游戏的第一步。
 
-6.  与你的帐户凭据登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。
+6.  使用有效，当前合作伙伴中心的应用开发者帐户登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。  如果你看不到多个选项在左侧导航窗格中，或者看不到**概述**部分中，以下步骤和激活链接_将不起作用_; 中的**创建新的应用**选项请确保完全注册应用开发者帐户从上一步。
 
-7.  输入“开发人员模式激活”应用中显示的激活代码。 与你的帐户关联的激活次数有限制。 激活开发人员模式后，合作伙伴中心将指示你已将其中一个激活与你的帐户关联。
+7.  转到[partner.microsoft.com/xboxconfig/devices](https://partner.microsoft.com/xboxconfig/devices)。
+
+8.  输入“开发人员模式激活”应用中显示的激活代码。 与你的帐户关联的激活次数有限制。 激活开发人员模式后，合作伙伴中心将指示你已将其中一个激活与你的帐户关联。
 
     ![激活步骤 8](images/activation-step-8-rs2.png)    
     
-8.  单击**同意并激活**。 这将导致页面重新加载，并且你将看到你的设备已填充到表中。 可以在 [Xbox One 开发人员模式激活计划](https://go.microsoft.com/fwlink/p/?LinkId=760399)中找到 Xbox One 开发人员模式激活计划协议的条款。
+9.  单击**同意并激活**。 这将导致页面重新加载，并且你将看到你的设备已填充到表中。 可以在 [Xbox One 开发人员模式激活计划](https://go.microsoft.com/fwlink/p/?LinkId=760399)中找到 Xbox One 开发人员模式激活计划协议的条款。
 
-9.  输入激活代码之后，主机将显示激活过程的进度屏幕。  
+10. 输入激活代码之后，主机将显示激活过程的进度屏幕。  
     
-10. 激活完成后，打开“开发人员模式激活”应用，然后单击**切换并重启**以转到开发人员模式。 请注意，此操作所需的时间比平常更长。
+11. 激活完成后，打开“开发人员模式激活”应用，然后单击**切换并重启**以转到开发人员模式。 请注意，此操作所需的时间比平常更长。
 
     ![激活步骤 12](images/activation-step-12.png)   
 
