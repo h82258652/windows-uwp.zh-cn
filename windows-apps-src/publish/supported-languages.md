@@ -2,21 +2,21 @@
 Description: You can submit apps to the Microsoft Store in over 100 languages.
 title: 支持的语言
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
-ms.date: 10/25/2018
+ms.date: 02/20/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d2e883fca2b5ca350322fc44c1de51a02aaa4d85
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 02a68cd325823bf671f7e0a99c64a899b17caddd
+ms.sourcegitcommit: a32f656253acc1e8b150919e73c886a59e65756a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938017"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "9083705"
 ---
 # <a name="supported-languages"></a>支持的语言
 
 
-你可以将应用提交到 Microsoft Store 用 100 多种语言。
+你可以提交到 Microsoft Store 用 100 多种语言的应用。
 
 若要了解有关在应用中配置语言的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)和[了解用户配置文件语言和应用清单语言](../design/globalizing/manage-language-and-region.md)。 我们还提供[多语言应用工具包](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)，用于帮助你编写支持多种语言的应用。
 
@@ -25,7 +25,7 @@ ms.locfileid: "8938017"
 
 以下是 Microsoft 应用商店支持的语言。 你的应用必须支持至少其中一种语言。 
 
-此处将不包括的语言代码不受应用商店。 我们建议你不要包含面向以外; 下面列出的语言代码的程序包此类软件包不会分发给客户，并且可能导致延迟或故障认证。
+此处将不包括的语言代码不支持通过应用商店。 我们建议你不要包含面向以外; 下面列出的语言代码的程序包此类软件包不会分发给客户，并且可能导致延迟或失败认证。
 
 | 语言名称         | 支持的语言代码                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,7 +43,7 @@ ms.locfileid: "8938017"
 | 保加利亚语             | bg、bg-bg                                                                                                                                                                                             |
 | 加泰罗尼亚语               | ca、ca-es、ca-es-valencia                                                                                                                                                                             |
 | 切罗基语              | chr-cher、chr-cher-us、chr-latn                                                                                                                                                                       |
-| 中文(简体)  | zh、zh-Hans、zh-cn、zh-hans-cn、zh-sg、zh-hans-sg                                                                                                                                                     |
+| 中文(简体)  | Zh-hans、 中文 cn、 中文 hans cn、 中文 sg、 中文 hans sg                                                                                                                                                     |
 | 中文(繁体) | zh-Hant、zh-hk、zh-mo、zh-tw、zh-hant-hk、zh-hant-mo、zh-hant-tw                                                                                                                                      |
 | 克罗地亚语              | hr、hr-hr、hr-ba                                                                                                                                                                                      |
 | 捷克语                 | cs、cs-cz                                                                                                                                                                                             |
