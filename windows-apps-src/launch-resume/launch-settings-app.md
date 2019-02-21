@@ -6,12 +6,12 @@ ms.date: 1/8/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 92cfb1318f176e7d8adb8052c119a006389f49e5
-ms.sourcegitcommit: 158467c576c5924e1822d397bd449fc8251bf92f
+ms.openlocfilehash: 5a1f9d853e41642ca5f8027d42b49fcbc3122a66
+ms.sourcegitcommit: 6ba110be80bc343a1aecaf4361edcdb70278c0a3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "8996072"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "9086655"
 ---
 # <a name="launch-the-windows-settings-app"></a>启动 Windows 设置应用
 
@@ -103,7 +103,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |“设置”页面| URI |
 |-------------|-----|
-| 权限和历史记录 | ms-settings:cortana-permissions |
+| 权限 & 历史记录 | ms-settings:cortana-permissions |
 | 更多详细信息 | ms-settings:cortana-moredetails |
 | 在我的设备上的 Cortana | ms-settings:cortana-notifications |
 | 与 Cortana 交谈 | ms-settings:cortana-language<br/>ms 的 cortana 设置：<br/>ms-设置： cortana-talktocortana |
@@ -136,7 +136,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 音频 | ms-settings:easeofaccess-audio |
 | 隐藏式字幕 | ms-settings:easeofaccess-closedcaptioning |
 | 颜色筛选器 | ms-设置： easeofaccess-colorfilter |
-| 光标和指针大小 | ms-设置： easeofaccess-cursorandpointersize |
+| 光标 & 指针大小 | ms-设置： easeofaccess-cursorandpointersize |
 | 屏幕 | ms-settings:easeofaccess-display |
 | 目视控制 | ms-settings:easeofaccess-eyecontrol |
 | 字体 | ms-settings:fonts |
@@ -268,7 +268,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | “节电模式”设置 | ms-settings:batterysaver-settings（仅在具有电池的设备[如平板电脑]上可用） |
 | 电池使用 | ms-settings:batterysaver-usagedetails（仅在具有电池的设备[如平板电脑]上可用） |
 | 剪贴板 | ms-设置： 剪贴板 |
-| 屏幕 | ms-settings:display |
+| 显示器 | ms-settings:display |
 | 默认保存位置 | ms-settings:savelocations |
 | 屏幕 | ms-settings:screenrotation |
 | 复制我的屏幕 | ms-settings:quietmomentspresentation |
@@ -288,7 +288,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 远程桌面 | ms-settings:remotedesktop |
 | 电话 | ms-设置： 手机 (**Windows 10 版本 1809年及更高版本中的已弃用**) |
 | 电源和睡眠 | ms-settings:powersleep |
-| 声音 | ms-settings:sounds |
+| 声音 | ms-设置： 声音 |
 | 存储 | ms-settings:storagesense |
 | 存储感知 | ms-settings:storagepolicies |
 
