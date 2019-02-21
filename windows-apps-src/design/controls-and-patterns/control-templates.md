@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ad66d8797234d01673518256d6f5376ce93245f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 539f67079547db28a02ef34fc4b9af2e15d107d3
+ms.sourcegitcommit: 4e80ee8d577c3475b6d247317a24411a48b02c29
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928698"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "9083888"
 ---
 # <a name="control-templates"></a>控件模板
 
@@ -200,7 +200,7 @@ ms.locfileid: "8928698"
 
 对于 XAML 模板中的某些属性，你可能已注意到使用 [{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)的资源引用。 这是一种可使单个控件模板使用资源的技术，这些资源可能采用不同的值，具体取决于当前处于活动状态的主题。 这对于画笔和颜色尤其重要，因为主题的主要目的是使用户选择应用于整个系统的是深色主题、浅色主题，还是高对比度主题。 使用 XAML 资源系统的应用可以使用适合该主题的资源集，以便应用 UI 中的主题选择可以反映用户的整个系统的主题选择。
 
- # # 获取示例代码
+## <a name="get-the-sample-code"></a>获取示例代码
 
 * [XAML 控件库示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 * [自定义文本编辑控件示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
