@@ -8,12 +8,12 @@ keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5442dacb5c01bc6e22460e9d772ad73ba06b54e2
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 70a9b6046e3b7be9ac84678ac21c0c9f89a4a7b2
+ms.sourcegitcommit: 1a4bbfb8495e2f414deac5ee050ab679a78b1717
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049934"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "9089749"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>打包桌面应用程序 （桌面桥）
 
@@ -127,13 +127,13 @@ Cloudhouse 提供了自动打包工具，用于将业务线应用程序打包到
 
 #### <a name="firegiant"></a>FireGiant
 
-[FireGiant Appx 扩展](https://www.firegiant.com/products/wix-expansion-pack/appx)可用来基于相同 WiX 源代码同时创建 Windows 应用包和 MSI 程序包。 每次生成，你可以使用 Windows 应用包和较早版本的 Windows MSI 面向 Windows 10。
+[FireGiant MSIX 扩展](https://www.firegiant.com/products/wix-expansion-pack/msix)，可以从相同 WiX 源代码同时创建 Windows 应用包和 MSI 程序包。 每次生成，你可以使用 Windows 应用包和较早版本的 Windows MSI 面向 Windows 10。
 
 <img width="20%" src="images/desktop-to-uwp/FG3rdPartyLogo.png">
 
-FireGiant Appx 扩展使用对 WiX 项目的静态分析和智能模拟来创建 Windows 应用包，而无需容器或虚拟机的磁盘空间和运行时开销。
+FireGiant MSIX 扩展使用静态分析和对 WiX 项目的智能模拟来创建 Windows 应用包，而无需容器或虚拟机的磁盘空间和运行时开销。
 
-因为 FireGiant Appx 扩展不会通过运行安装程序来转换它，你可以保留 WiX 安装程序，而无需重复将其转换为 Windows 应用包。 你的使用不同版本 Windows 的所有用户都可获取最新改进功能，你无需担心 MSI 和 Windows 应用包不同步。
+因为 FireGiant MSIX 扩展不会通过其运行转换安装程序，你可以保留 WiX 安装程序而无需重复将其转换为 Windows 应用包。 你的使用不同版本 Windows 的所有用户都可获取最新改进功能，你无需担心 MSI 和 Windows 应用包不同步。
 
 请查看此[视频](https://www.youtube.com/watch?v=AFBpdBiAYQE)，了解几行代码 FireGiant CEO Rob Mensching 如何创建 Appx （Windows 应用包） 版本的热门开源 7-zip 压缩工具，然后他如何提高 Windows 应用程序和 MSI 包更改相同 WiX 源代码。
 
