@@ -6,12 +6,12 @@ ms.date: 01/28/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xbox 集成多人游戏, xim, 聊天
 ms.localizationpriority: medium
-ms.openlocfilehash: 217517031c230cfca98bf4420d1f5b9876afbdc1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ab7aca94ca491cd986fcff050e17da5fed1f2ea9
+ms.sourcegitcommit: 9b0f9c8854277d2e786e9294af3a2b559aa457a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942321"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "9099310"
 ---
 # <a name="using-xim-as-a-dedicated-chat-solution-via-out-of-band-reservations"></a>通过带外保留将 XIM 用作专门的聊天解决方案
 
@@ -84,9 +84,9 @@ ms.locfileid: "8942321"
 
 这会开始为指定的 Xbox 用户 ID 创建保留的异步过程。 操作完成后，XIM 将会提供一个用于报告成功或失败的 `xim_create_out_of_band_reservation_completed_state_change`。 如果成功，将会为你的系统创建一个保留字符串，以便提供给为操作提供的那些 Xbox 用户 ID。 成功创建的保留字符串仅在一定时间内有效。 该时间在 `xim_create_out_of_band_reservation_completed_state_change` 内返回。
 
-有了有效的保留字符串后，可以使用用于聚集 XIM 外部玩家的“带外”外部机制将该字符串分配给枚举的玩家。 例如，如果你正在使用多人游戏会话目录 (MPSD) Xbox Live 服务，可将此字符串作为会话文件中的自定义属性写入（注意：该保留字符串将始终仅包含一组受限字符，此类字符可在 JSON 内安全使用，而无需转义或 Base64 编码）。
+有了有效的保留字符串后，可以使用用于聚集 XIM 外部玩家的“带外”外部机制将该字符串分配给枚举的玩家。 例如，如果你使用的多人游戏会话目录 (MPSD) Xbox Live 服务，你可以编写此字符串作为会话文档中的自定义共享的会话属性 (注意： 保留字符串将始终包含仅一组受限的字符安全地在 JSON 而无需转义或 Base64 编码）。
 
-一旦其他用户都拥有各自的保留字符串，他们便可以将其用作 `xim::move_to_network_using_out_of_band_reservation()` 的参数，准备开始移动至 XIM 网络。 以下示例假设已将保留字符串提取到名为“reservationString”的变量。
+一旦其他用户从共享的会话文档属性检索到各自的保留字符串，他们可以开始移动到 XIM 网络将其用作参数设置为`xim::move_to_network_using_out_of_band_reservation()`。 以下示例假设已将保留字符串提取到名为“reservationString”的变量。
 
 ```cpp
 xim::singleton_instance().move_to_network_using_out_of_band_reservation(reservationString);

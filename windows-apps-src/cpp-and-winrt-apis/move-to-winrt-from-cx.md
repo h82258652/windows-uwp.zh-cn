@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: ba64afe3440ed209a6f637871f21427716533b09
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.openlocfilehash: 39f60576962d9e69d8ec7ba80918fdbdfe96f070
+ms.sourcegitcommit: 9b0f9c8854277d2e786e9294af3a2b559aa457a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042279"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "9099314"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>从 C++/CX 移动到 C++/WinRT
 
@@ -282,6 +282,7 @@ C++/CX 在**平台**命名空间中提供了多个数据类型。 这些类型�
 | C++/CX | C++/WinRT |
 | ---- | ---- |
 | **平台:: Agile\ ^** | [**winrt:: agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
+| **平台:: \ ^** | 请参阅[端口**平台:: \ ^** ](#port-platformarray) |
 | **Platform::Exception\^** | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) |
 | **Platform::InvalidArgumentException\^** | [**winrt::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) |
 | **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
@@ -301,6 +302,9 @@ Platform::Agile<Windows::UI::Core::CoreWindow> m_window;
 ```cppwinrt
 winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 ```
+
+### <a name="port-platformarray"></a>端口**平台:: \ ^**
+你的选项包括使用初始值列表、 **std:: array**或**std:: vector**。 有关详细信息和代码示例，请参阅[标准初始值列表](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists)和[标准数组和矢量](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors)。
 
 ### <a name="port-platformexception-to-winrthresulterror"></a>将 **Platform::Exception\^** 移植到 **winrt::hresult_error**
 当 Windows 运行时 API 返回非 S\_OK HRESULT 时，**Platform::Exception\^** 类型在 C++/CX 中生成。 C++/WinRT 的等效项是 [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)。
