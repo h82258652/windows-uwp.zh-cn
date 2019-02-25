@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b11f927eca82e2c068f0210022893905b1503db
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: c0113f039ccd2d2df0c155b77295afef194018ce
+ms.sourcegitcommit: f7b8112a99097c7c8a76b028aef436d1a5c68cdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049964"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "9099457"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows10 游戏开发指南
 
@@ -1512,21 +1512,6 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
     <tr>
         <td>将语言、文化与技术桥接在一起</td>
         <td><a href="https://www.microsoft.com/Language/Default.aspx">语言约定和标准 Microsoft 术语的联机资源</a></td>
-    </tr>
-</table>
-
-### <a name="security"></a>安全性
-
-创建玩家可以公平游戏和比赛的环境。 加入 TruePlay 的游戏将在受保护的程序中运行，减少了常见的攻击类型。 游戏监视系统还有助于识别常见的作弊情况。 
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>反电脑游戏作弊工具</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/mt808781">TruePlay</a></td>
     </tr>
 </table>
 
