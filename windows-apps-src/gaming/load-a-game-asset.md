@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 加载资源
 ms.localizationpriority: medium
-ms.openlocfilehash: ca16dd6115bbbe84529928ca58ee0d3074498728
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 478c61713dfcf5bc8a420aa71b0dced81ed6a169
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937206"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114583"
 ---
 # <a name="load-resources-in-your-directx-game"></a>在 DirectX 游戏中加载资源
 
@@ -212,7 +212,7 @@ void ResourceLoading::CreateDeviceResources()
 -   此后，后续的位 \(numVertices \* sizeof\(**BasicVertex**\)\) 包含顶点数据。
 -   最后一个数据位 \(numIndices \* 16\) 包含索引数据，表示为 uint16 值序列。
 
-重点是要知道你加载的网格数据的位级布局。 而且还要确保你符合字节序。 所有 Windows8 平台都是序。
+重点是要知道你加载的网格数据的位级布局。 而且还要确保你符合字节序。 所有 Windows8 平台都是小字节序。
 
 在该示例中，你从 **LoadMeshAsync** 方法中调用一个方法 CreateMesh 来执行该位级解释。
 
@@ -690,7 +690,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 在该代码中，你读取顶点着色器 CSO 文件中的字节数据之后，通过调用 [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 创建顶点着色器。 之后，在同一个 lambda 中为着色器创建输入布局。
 
-其他着色器类型（如外壳着色器和几何体着色器）可能还需要特定配置。 [BasicLoader 的完整代码](complete-code-for-basicloader.md)和 [Direct3D 资源加载示例]( http://go.microsoft.com/fwlink/p/?LinkID=265132)中提供了各种着色器加载方法的完整代码。
+其他着色器类型（如外壳着色器和几何体着色器）可能还需要特定配置。 [BasicLoader 的完整代码](complete-code-for-basicloader.md)和 [Direct3D 资源加载示例]( https://go.microsoft.com/fwlink/p/?LinkID=265132)中提供了各种着色器加载方法的完整代码。
 
 ## <a name="remarks"></a>备注
 
@@ -698,7 +698,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ## <a name="related-topics"></a>相关主题
 
-* [Direct3D 资源加载示例]( http://go.microsoft.com/fwlink/p/?LinkID=265132)
+* [Direct3D 资源加载示例]( https://go.microsoft.com/fwlink/p/?LinkID=265132)
 * [BasicLoader 的完整代码](complete-code-for-basicloader.md)
 * [BasicReaderWriter 的完整代码](complete-code-for-basicreaderwriter.md)
 * [DDSTextureLoader 的完整代码](complete-code-for-ddstextureloader.md)

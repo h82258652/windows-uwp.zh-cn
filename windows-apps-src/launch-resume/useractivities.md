@@ -5,12 +5,12 @@ keywords: 用户活动, 时间线, cortana 从你离开的位置继续, cortana 
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e1c2a3da3711bbc5335a9c44a4b280e3934adac
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 2756231b067176da66c6dbcedf7a1452d5d109f4
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046197"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114543"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>即便跨设备，也继续用户活动
 
@@ -34,7 +34,7 @@ ms.locfileid: "9046197"
 
 1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) 用于通过特定上下文继续执行应用程序操作。 通常情况下，此链接采用两种形式：方案的协议处理程序（例如“my-app://page2?action=edit”）或 AppUriHandler（例如，http://constoso.com/page2?action=edit)。
 2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) 公开一个类，允许用户使用标题、描述或自适应卡片元素来直观标识活动。
-3. 最后，[内容](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content)是可用于存储活动元数据的位置，通过这一位置，可按特定上下文来对活动进行归组和检索。 通常，它采用 [http://schema.org](https://schema.org) 数据的形式。
+3. 最后，[内容](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content)是可用于存储活动元数据的位置，通过这一位置，可按特定上下文来对活动进行归组和检索。 通常，它采用 [https://schema.org](https://schema.org) 数据的形式。
 
 向应用添加 **UserActivity**：
 

@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
-ms.openlocfilehash: ccc3f22d0485faa0df01828f1a6f807d2a1ce555
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 9ce41a495297870f512f0694e4f2b63eedebbc37
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046896"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114593"
 ---
 # <a name="process-bitmaps-with-opencv"></a>通过 OpenCV 处理位图
 
@@ -20,7 +20,7 @@ ms.locfileid: "9046896"
 本文中的示例向你想演示了如何创建一个可通过 UWP 应用使用的本机代码 Windows 运行时组件，包括使用 C# 创建的应用。 此帮助程序组件将公开单个方法，即**模糊**，它将使用 OpenCV 的模糊图像处理功能。 此组件使用专用方法获取 OpenCV 库可直接使用的基础图像数据缓冲区的指针，从而能够更简单地扩展帮助程序组件，以实现其他 OpenCV 处理功能。 
 
 * 有关使用 **SoftwareBitmap** 的介绍，请参阅[创建、编辑和保存位图图像](imaging.md)。 
-* 若要了解如何使用 OpenCV 库，请转至 [http://opencv.org](https://opencv.org)。
+* 若要了解如何使用 OpenCV 库，请转至 [https://opencv.org](https://opencv.org)。
 * 若要了解如何结合使用本文中所示的 OpenCV 帮助程序组件和 **[MediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader)** 对来自相机的帧进行实时图像处理，请参阅[通过 MediaFrameReader 使用 OpenCV](use-opencv-with-mediaframereader.md)。
 * 有关实现不同效果的完整示例代码，请参阅 Windows 通用示例 GitHub 存储库中的[相机帧 + OpenCV 示例](https://go.microsoft.com/fwlink/?linkid=854003)。
 
