@@ -5,12 +5,12 @@ keywords: windows 10, uwp, 订阅, 加载项, 应用内购买, IAP, Windows.Serv
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 44553d2a772dcfe3b46ea196d6f6bb7c20fdfec0
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: cda22488f613c508b2c753c6b530b2b34b10909d
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046683"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114473"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>为应用启用订阅加载项
 
@@ -27,7 +27,7 @@ UWP 应用的订阅加载项支持以下功能：
 * 你可以在你的订阅中添加 1 周或 1 个月的免费试用期间。
 * Windows SDK [提供了一些 API](#code-examples)，可用于在应用中获取有关应用的可用订阅加载项的信息并支持购买订阅加载项。 我们还提供你可以从你的服务调用的 REST API 来[管理用户订阅](#manage-subscriptions)。
 * 你可以查看分析报告，其中提供了订阅购置、活动订户以及在指定的时间段内取消的订阅的数量。
-* 客户可以在他们的 Microsoft 帐户的 [http://account.microsoft.com/services](https://account.microsoft.com/services) 页面管理他们的订阅。 客户可以使用此页面查看他们购买的所有订阅、取消订阅，以及更改与其订阅关联的付款方式。
+* 客户可以在他们的 Microsoft 帐户的 [https://account.microsoft.com/services](https://account.microsoft.com/services) 页面管理他们的订阅。 客户可以使用此页面查看他们购买的所有订阅、取消订阅，以及更改与其订阅关联的付款方式。
 
 ## <a name="steps-to-enable-a-subscription-add-on-for-your-app"></a>为你的应用启用订阅加载项的步骤
 
@@ -109,7 +109,7 @@ UWP 应用的订阅加载项支持以下功能：
 
 ## <a name="cancellations"></a>取消
 
-客户可以使用其 Microsoft 帐户的 [http://account.microsoft.com/services](https://account.microsoft.com/services) 页面查看他们购买的所有订阅、取消订阅，以及更改与其订阅关联的付款方式。 当客户使用此页面取消订阅时，他们在当前帐单期间内将仍然拥有对该订阅的访问权限。 他们不能获得当前帐单周期任何部分的退款。 在当前帐单周期结束时，他们的订阅会停止。
+客户可以使用其 Microsoft 帐户的 [https://account.microsoft.com/services](https://account.microsoft.com/services) 页面查看他们购买的所有订阅、取消订阅，以及更改与其订阅关联的付款方式。 当客户使用此页面取消订阅时，他们在当前帐单期间内将仍然拥有对该订阅的访问权限。 他们不能获得当前帐单周期任何部分的退款。 在当前帐单周期结束时，他们的订阅会停止。
 
 你还可以使用我们的 REST API [更改给定用户的订阅的帐单状态](change-the-billing-state-of-a-subscription-for-a-user.md)，以代表用户取消订阅。
 
@@ -124,7 +124,7 @@ UWP 应用的订阅加载项支持以下功能：
 目前订阅加载项不支持以下情形。
 
 * 目前不支持直接通过应用商店向客户销售订阅。 订阅只能通过数字产品的应用内购买提供。
-* 客户不能使用他们的 Microsoft 帐户的 [http://account.microsoft.com/services](https://account.microsoft.com/services) 页面切换到不同订阅期。 若要切换到不同订阅期，客户必须取消其当前订阅，然后购买了订阅期从你的应用。
+* 客户不能使用他们的 Microsoft 帐户的 [https://account.microsoft.com/services](https://account.microsoft.com/services) 页面切换到不同订阅期。 若要切换到不同订阅期，客户必须取消其当前订阅，然后购买了订阅期从你的应用。
 * 订阅加载项目前不支持分级订阅（例如，将客户从基本订阅切换到包含更多功能的高级订阅）。
 * 目前订阅加载项不支持[销售](../publish/put-apps-and-add-ons-on-sale.md)和[促销代码](../publish/generate-promotional-codes.md)。
 

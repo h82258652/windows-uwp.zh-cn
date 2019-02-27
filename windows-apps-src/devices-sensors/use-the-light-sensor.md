@@ -6,12 +6,12 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 47092c128fe3a3855d7e32706451545b357c39c4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7aeb60d67f0cdee77772797816e45fdd9bdc41b4
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928823"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114533"
 ---
 # <a name="use-the-light-sensor"></a>使用光传感器
 
@@ -31,7 +31,7 @@ ms.locfileid: "8928823"
 
 ## <a name="prerequisites"></a>先决条件
 
-你应熟悉 Extensible Application Markup Language (XAML)、 Microsoft VisualC # 和事件。
+你应熟悉 Extensible Application Markup Language (XAML)、 Microsoft VisualC #，和事件。
 
 你使用的设备或仿真器必须支持氛围光传感器。
 
@@ -63,7 +63,7 @@ ms.locfileid: "8928823"
     using Windows.UI.Core; // Required to access the core dispatcher object
     using Windows.Devices.Sensors; // Required to access the sensor platform and the ALS
 
-    // The Blank Page item template is documented at http://go.microsoft.com/fwlink/p/?linkid=234238
+    // The Blank Page item template is documented at https://go.microsoft.com/fwlink/p/?linkid=234238
 
     namespace App1
     {

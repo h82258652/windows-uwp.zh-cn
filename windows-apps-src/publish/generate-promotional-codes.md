@@ -6,21 +6,21 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 促销代码, 促销代码, 预付码, 预付码
 ms.localizationpriority: medium
-ms.openlocfilehash: ce8fb38ee26beadc68eb8e5829549f69e2d11d16
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: db4cde6f8c195101ec31de26c00ffa7325e08d71
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929021"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114483"
 ---
 # <a name="generate-promotional-codes"></a>生成促销充值码
 
 
-[合作伙伴中心](https://partner.microsoft.com/dashboard)允许你的应用或已在 Microsoft Store 中发布的加载项生成促销代码。 促销充值码是让有影响力的用户能够免费访问你的应用或加载项的一种简便方式。 通过使用户免费访问你的应用或加载项，或者的[beta 测试](beta-testing-and-targeted-distribution.md)windows 10，你可能还使用促销充值码来处理客户服务方案。 
+[合作伙伴中心](https://partner.microsoft.com/dashboard)允许你的应用或已在 Microsoft Store 中发布的加载项生成促销代码。 促销充值码是让有影响力的用户能够免费访问你的应用或加载项的一种简便方式。 你还可能会让用户免费访问你的应用或加载项，或使用 windows 10 [beta 测试](beta-testing-and-targeted-distribution.md)使用促销代码来处理客户服务方案。 
 
 每个促销代码都具有对应的唯一可兑换 URL，客户可单击才能兑换充值码并从 Microsoft Store 安装应用或加载项。  请注意，你的应用必须先通过[应用认证过程](the-app-certification-process.md)的最终发布阶段，客户才能兑换促销代码以安装应用。
 
-你可以生成一次性代码 （并分配一个为每个客户），或者你可以选择生成代码可用于多个时间由指定的客户数。
+你可以生成一次性代码 （并分配一个与每个客户），或者你可以选择生成代码可用于多个时间由指定的客户数。
 
 > [!TIP]
 > 可使用[定向推送通知](send-push-notifications-to-your-apps-customers.md)向细分市场客户分发促销代码。 执行此操作时，请务必使用允许多个客户使用同一代码的促销代码。
@@ -36,7 +36,7 @@ ms.locfileid: "8929021"
 -   必须按照[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中定义的要求进行操作，包括 **3k. 促销代码**部分。
 
 > [!NOTE]
-> 即使你的应用是对客户不可用，你可以使用促销代码 (即，如果你已选择**可用，但不可被发现在应用商店中使此产品**与**停止购置： 任何具有直接链接的客户可以看到产品的应用商店一览，但它们才能够下载该如果他们拥有之前，产品或拥有一个促销代码并使用的是 Windows 10 设备**你的提交[可发现性](choose-visibility-options.md#discoverability)部分中的选项)。 使用此选项，客户必须在 Windows 10 （包括 Xbox） 上才能获取你的产品的促销代码。
+> 即使你的应用是对客户不可用，可以使用促销代码 (即，如果选择了**可用，但不可被发现在应用商店中使此产品**与**停止购置： 任何具有直接链接的客户可以看到产品的应用商店一览，但它们才能够下载该如果他们拥有之前，产品或拥有一个促销代码并在使用 Windows 10 设备**你的提交[可发现性](choose-visibility-options.md#discoverability)部分中的选项)。 使用此选项，客户必须在 Windows 10 （包括 Xbox） 上才能获取你的产品的促销代码。
 
 
 ## <a name="order-promotional-codes"></a>预订促销代码
@@ -71,7 +71,7 @@ ms.locfileid: "8929021"
     -   **产品名称**：代码相关联的应用或加载项的名称。
     -   **订单名称**：生成此代码的订单的名称。
     -   **促销代码**：代码本身。 这是由连字符分隔、字母数字字符组成的 5x5 字符串。 例如：DM3GY-M2GYM-6YMW6-4QHHT-23W2Z
-    -   **可兑换 URL**：客户可用于兑换代码并安装应用或加载项的 URL。 URL 具有以下格式： http://go.microsoft.com/fwlink/?LinkId=532540&mstoken=&lt; promotional_code >
+    -   **可兑换 URL**：客户可用于兑换代码并安装应用或加载项的 URL。 URL 具有以下格式： https://go.microsoft.com/fwlink/?LinkId=532540&mstoken=&lt; promotional_code>
     -   **开始日期**：此代码的激活日期。
     -   **到期日期**：此代码的到期日期。
     -   **代码 ID**：此代码的唯一 ID。
@@ -88,7 +88,7 @@ ms.locfileid: "8929021"
 
 ## <a name="code-redemption-user-experience"></a>代码兑换用户体验
 
-向客户分发促销代码 （或其可兑换 URL） 后，他们可以单击该 URL 免费获取产品。 单击可兑换 URL 将打开经过身份验证的**兑换代码**页面（位于 <https://account.microsoft.com/billing/redeem>）。 此页面包含用户即将兑换的应用的描述。 如果客户没有使用其 Microsoft 帐户登录，系统将提示其登录。 你的客户也可以访问 <https://account.microsoft.com/billing/redeem>，直接输入代码。
+向客户分发促销代码 （或其可兑换 URL） 后，他们可以单击 URL 即可免费获取产品。 单击可兑换 URL 将打开经过身份验证的**兑换代码**页面（位于 <https://account.microsoft.com/billing/redeem>）。 此页面包含用户即将兑换的应用的描述。 如果客户没有使用其 Microsoft 帐户登录，系统将提示其登录。 你的客户也可以访问 <https://account.microsoft.com/billing/redeem>，直接输入代码。
 
 > [!IMPORTANT]
 > 建议不要在产品尚未完成发布过程时向客户分发促销代码（即使你已选择**在应用商店中提供此产品，同时使其不可被发现**，也是如此）。 当客户尝试将促销代码用于尚未发布的产品时，将看到错误消息。
@@ -96,7 +96,7 @@ ms.locfileid: "8929021"
 客户单击**兑换**后，Microsoft Store 将打开到应用的概览页面（如果客户使用 Windows 10 或 Windows 8.1 设备），在此页面中，客户可单击**安装**以免费下载和安装应用。 如果客户使用未安装 Microsoft Store 的计算机或设备，则此链接将打开此应用的 Microsoft Store 网页。 此代码将应用于客户的 Microsoft 帐户，以便其稍后在 Windows 设备（与同一个 Microsoft 帐户相关联）上免费下载此应用。
 
 > [!NOTE]
-> 在某些情况下，客户可能会看到**购买**按钮而不是**安装**，即使应用已通过促销充值码成功兑换。 客户可单击**购买**来免费安装此应用。
+> 在某些情况下，客户可能会看到而不是**安装**，**购买**按钮，即使应用已通过促销充值码成功兑换。 客户可单击**购买**来免费安装此应用。
 
 
 ## <a name="review-your-promotional-codes"></a>查看促销代码

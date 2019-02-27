@@ -6,12 +6,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务配置
 ms.localizationpriority: medium
-ms.openlocfilehash: eb086333518fb8ec57c3030a858662f74f755c76
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: d12c66e61a189c13ddbcd96dd99caa351206ecf6
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049032"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114426"
 ---
 # <a name="xbox-live-service-configuration"></a>Xbox Live 服务配置
 
@@ -31,7 +31,7 @@ ms.locfileid: "9049032"
 
 ## <a name="choose-your-development-portal"></a>选择你的开发门户
 
-如上所述，有两个不同的门户可用于配置 Xbox Live 服务。 合作伙伴中心的[https://partner.microsoft.com/dashboard](https://partner.microsoft.com/dashboard)并在 Xbox 开发门户 (XDP) [http://xdp.xboxlive.com](https://xdp.xboxlive.com)。
+如上所述，有两个不同的门户可用于配置 Xbox Live 服务。 合作伙伴中心的[https://partner.microsoft.com/dashboard](https://partner.microsoft.com/dashboard)并在 Xbox 开发门户 (XDP) [https://xdp.xboxlive.com](https://xdp.xboxlive.com)。
 
 合作伙伴中心建议的所有作品接下来，但对于某些功能，你可能仍想要使用 XDP。 此部分将帮助并建议你从何处配置你的作品。
 

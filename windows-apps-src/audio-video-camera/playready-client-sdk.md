@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 181568d705f24c97af0d62f951a88102d3d008db
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 40df746d89757b481a47cefeaeda3f8a34091014
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049165"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114603"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -77,7 +77,7 @@ PlayReady DRM 允许开发人员在强制执行内容提供商定义的访问规
 -   [**PlayReadySecureStopIterator**](https://msdn.microsoft.com/library/windows/apps/dn986375) 类
 -   [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) 枚举器
 
-已创建新示例，用于演示如何使用 PlayReady DRM 的新功能。 可以从 [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670) 下载示例。
+已创建新示例，用于演示如何使用 PlayReady DRM 的新功能。 可以从 [https://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670) 下载示例。
 
 ## <a name="things-to-consider"></a>注意事项
 
@@ -507,7 +507,7 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
 -   在到达内容末尾或用户中途停止媒体演示文稿，因而媒体演示文稿停止时。
 -   在上一个会话意外结束时（如因系统或应用崩溃）。 在启动或关机时，应用将查询任何未解决的安全停止会话，并将发送与任何其他媒体播放分离的质询。
 
-有关安全停止的示例实现，请参阅 PlayReady 示例中的 securestop.cs 文件，该文件位于 [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670)。
+有关安全停止的示例实现，请参阅 PlayReady 示例中的 securestop.cs 文件，该文件位于 [https://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670)。
 
 ## <a name="use-playready-drm-on-xbox-one"></a>在 Xbox One 上使用 PlayReady DRM
 

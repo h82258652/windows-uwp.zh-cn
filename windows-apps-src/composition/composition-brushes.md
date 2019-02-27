@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a7f080a3de18ec0acc8fe68d8f0282d92f46125
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: eb0d48cee4fe6698ec371c882c913affa5af7729
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050990"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114563"
 ---
 # <a name="composition-brushes"></a>合成画笔
 从 UWP 应用程序在屏幕上可见的所有内容都是可见，因为它已由画笔绘制。 画笔，可以使用范围从简单纯色到图像或绘图到复杂的效果链的内容绘制用户界面 (UI) 的对象。 本主题介绍了使用 CompositionBrush 绘制的概念。
@@ -191,7 +191,7 @@ CompositionSurfaceBrush _videoBrush;
 _mediaPlayer = new MediaPlayer();
 
 // Get a source from a URI. This could also be from a file via a picker or a stream
-var source = MediaSource.CreateFromUri(new Uri("http://go.microsoft.com/fwlink/?LinkID=809007&clcid=0x409"));
+var source = MediaSource.CreateFromUri(new Uri("https://go.microsoft.com/fwlink/?LinkID=809007&clcid=0x409"));
 var item = new MediaPlaybackItem(source);
 _mediaPlayer.Source = item;
 _mediaPlayer.IsLoopingEnabled = true;

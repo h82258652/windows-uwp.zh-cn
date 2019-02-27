@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, 编程
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c69d317f920e5b829eb5dea796b7930cc387203
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 84d5068c2f474af22d789dea6428f911087f9ff0
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044318"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114443"
 ---
 # <a name="game-programming-resources"></a>游戏编程资源
 
@@ -34,15 +34,15 @@ ms.locfileid: "9044318"
 ## <a name="blogs"></a>博客
 
 
--   [Windows 游戏和 DirectX SDK]( http://go.microsoft.com/fwlink/p/?LinkID=288873)
--   [DirectX 开发人员博客]( http://go.microsoft.com/fwlink/p/?LinkID=288874)
--   [Shawn Hargreaves 博客]( http://go.microsoft.com/fwlink/p/?LinkID=288872)（XNA 游戏信息）。
+-   [Windows 游戏和 DirectX SDK]( https://go.microsoft.com/fwlink/p/?LinkID=288873)
+-   [DirectX 开发人员博客]( https://go.microsoft.com/fwlink/p/?LinkID=288874)
+-   [Shawn Hargreaves 博客]( https://go.microsoft.com/fwlink/p/?LinkID=288872)（XNA 游戏信息）。
 
 ## <a name="toolkits"></a>工具包
 
 
--   [DirectX 工具包](  http://go.microsoft.com/fwlink/p/?LinkID=248929)
--   [DirectXTex 纹理处理库](  http://go.microsoft.com/fwlink/p/?LinkID=248926)
+-   [DirectX 工具包](  https://go.microsoft.com/fwlink/p/?LinkID=248929)
+-   [DirectXTex 纹理处理库](  https://go.microsoft.com/fwlink/p/?LinkID=248926)
 -   Microsoft Visual Studio[图形诊断](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx)
 -   [Win2D](https://github.com/Microsoft/Win2D) - 一个易于使用的 Windows 运行时 API，具有带 GPU 加速的立即模式 2D 图形呈现。
 -   [适用于 Microsoft Store](https://go.microsoft.com/fwlink/p/?linkid=618387) -通过将转换到 DirectX 11 API 调用的 OpenGL ES API 调用的 Windows 上运行 OpenGL ES 内容。

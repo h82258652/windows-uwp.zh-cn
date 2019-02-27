@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
-ms.openlocfilehash: e3c8729a6d2ac828f3d7b257681d64f4c7834587
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: b480e96621e143e283a2556bdbef394aaf7dbc07
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048867"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114463"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 应用认证工具包
 
@@ -24,13 +24,13 @@ ms.locfileid: "9048867"
 测试通用 Windows 应用的先决条件：
 
 -   你必须安装并运行 windows 10。
--   必须安装[Windows 应用认证工具包版本 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666)，这 windows 10 包含在 Windows 软件开发工具包 (SDK)。
+-   必须安装[Windows 应用认证工具包版本 10]( https://go.microsoft.com/fwlink/p/?LinkID=309666)，这 windows 10 包含在 Windows 软件开发工具包 (SDK)。
 -   必须[启用设备进行开发](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。
 -   必须将要测试的 Windows 应用部署到计算机。
 
 **有关就地升级的注意事项**
 
-安装更高版本的 [Windows 应用认证工具包]( http://go.microsoft.com/fwlink/p/?LinkID=309666)将替换已安装在该计算机上的所有早期版本的工具包。
+安装更高版本的 [Windows 应用认证工具包]( https://go.microsoft.com/fwlink/p/?LinkID=309666)将替换已安装在该计算机上的所有早期版本的工具包。
 
 ## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-interactively"></a>以交互方式使用 Windows 应用认证工具包验证 Windows 应用
 

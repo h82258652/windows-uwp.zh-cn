@@ -6,12 +6,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 收集 API, Microsoft Store 购买 API, 查看产品, 授予产品
 ms.localizationpriority: medium
-ms.openlocfilehash: a749550c1dc644c4a9fb3f91530503adf192246e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 0bf85a73cb35044b4be2282c9a13c1e65b836a92
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050257"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114503"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>管理服务中的产品权益
 
@@ -253,5 +253,5 @@ Microsoft Store ID 密钥是 JSON Web 令牌 (JWT)，该令牌表示你想要访
 * [更改用户订阅的计费状态](change-the-billing-state-of-a-subscription-for-a-user.md)
 * [续订 Microsoft Store ID 密钥](renew-a-windows-store-id-key.md)
 * [将应用程序与 Azure Active Directory 集成](https://go.microsoft.com/fwlink/?LinkId=722502)
-* [了解 Azure Active Directory 应用程序清单]( http://go.microsoft.com/fwlink/?LinkId=722500)
+* [了解 Azure Active Directory 应用程序清单]( https://go.microsoft.com/fwlink/?LinkId=722500)
 * [支持的令牌和声明类型](https://go.microsoft.com/fwlink/?LinkId=722501)

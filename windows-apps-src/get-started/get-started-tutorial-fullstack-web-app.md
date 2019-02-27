@@ -5,12 +5,12 @@ keywords: 托管 Web 应用, HWA, REST API, 单页应用, SPA
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fa606da245c3506c8b4125edeb1edfc47f6aab0d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: f60eb37d7bff1187e282f5af2207c6df92f4ec24
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049544"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114573"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>创建具有 REST 后端的单页 Web 应用
 
@@ -209,7 +209,7 @@ Server.listen(port, function () {  // Starts server with our modfied port settin
 ]
 ```
 
-现在，按 F5 并将你的浏览器打开到 [http://localhost:8000](https://localhost:8000)。 页面应打开到记忆游戏 API 的 Swagger UI，从这里，可以展开每种方法的详细信息和输入字段。 你甚至可以尝试调用 API，尽管它们的响应仅包含模拟数据（由 [Swagmock](https://www.npmjs.com/package/swagmock) 模块提供）。 现在是时候添加游戏逻辑以使这些 API 实际可用。
+现在，按 F5 并将你的浏览器打开到 [https://localhost:8000](https://localhost:8000)。 页面应打开到记忆游戏 API 的 Swagger UI，从这里，可以展开每种方法的详细信息和输入字段。 你甚至可以尝试调用 API，尽管它们的响应仅包含模拟数据（由 [Swagmock](https://www.npmjs.com/package/swagmock) 模块提供）。 现在是时候添加游戏逻辑以使这些 API 实际可用。
 
 ### <a name="3-set-up-your-route-handlers"></a>3. 设置路由处理程序
 
@@ -235,7 +235,7 @@ Swagger 文件 (config\swagger.json) 通过将它定义的每个 URL 路径映�
 
 为简单起见，我们将我们的游戏板存储在 Node 服务器的全局变量 (`global.board`) 中。 但实际上，你使用云存储（如 Google [Cloud Datastore](https://cloud.google.com/datastore/) 或 Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/)）来让这成为同时支持多个游戏和玩家的可行记忆游戏 API 服务。
 
-请确保你已将所有更改保存在 VS 代码内，并再次启动服务器（VS 代码中按 F5，通过 shell 使用 `npm start`，然后浏览到 [http://localhost:8000](https://localhost:8000)）以测试游戏 API。
+请确保你已将所有更改保存在 VS 代码内，并再次启动服务器（VS 代码中按 F5，通过 shell 使用 `npm start`，然后浏览到 [https://localhost:8000](https://localhost:8000)）以测试游戏 API。
 
 每次按**试用！** 按钮（**/game**、**/guess** 或 **/new** 操作其中一个）时，请检查生成的**响应正文**和**响应代码**（如下），以确认所有部分都按预期工作。
 
@@ -333,7 +333,7 @@ Azure 文档将引导你完成：
     npm start
     ```
 
-5. 通过转到 [http://localhost:3000/](https://localhost:3000/) 查看你的应用程序。
+5. 通过转到 [https://localhost:3000/](https://localhost:3000/) 查看你的应用程序。
 
     ![http://localhost:3000/ 的屏幕截图](./images/express.png)
 
@@ -620,7 +620,7 @@ Bootstrap 的网格系统允许网格系统折叠为一个垂直列，就像你�
 
 1. 在记忆目录中打开命令提示符，然后输入以下命令： `npm start`
 
-2. 在你的浏览器中，转到 [http://localhost:3000/](https://localhost:3000/)，玩游戏吧！
+2. 在你的浏览器中，转到 [https://localhost:3000/](https://localhost:3000/)，玩游戏吧！
 
 3. 如果你遇到任何错误，你可以通过在键盘上按 F5 并键入 `Node.js` 来使用 Visual Studio Code 的 Node.js 调试工具。 有关 Visual Studio Code 的调试的详细信息，请查看此[文章](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations)。 
 
