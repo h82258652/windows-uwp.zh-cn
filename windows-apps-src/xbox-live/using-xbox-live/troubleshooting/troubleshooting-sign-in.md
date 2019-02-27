@@ -6,12 +6,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 登录, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: becff46ce8fc186ff615c9f66eaed014f036f971
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: ff8d66105d8a1a44708bf23a681767a3044cb654
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046113"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117535"
 ---
 # <a name="troubleshooting-xbox-live-sign-in"></a>Xbox Live 登录疑难解答
 
@@ -102,7 +102,7 @@ ms.locfileid: "9046113"
 
 ### <a name="0x87dd000e-title-not-authorized"></a>0x87DD000E 游戏未授权
 
-仔细检查你的设备是否已设置为正确的开发沙盒以及用户是否具有该沙盒的访问权限。 请参阅[使用 Xbox 应用测试](#test-xbox-app)部分，了解与如何使用 Xbox 应用进行验证相关的详细信息。
+仔细检查你的设备是否已设置为正确的开发沙盒以及用户是否具有该沙盒的访问权限。 请参阅[使用 Xbox 应用测试](#test-using-the-xbox-app)部分，了解与如何使用 Xbox 应用进行验证相关的详细信息。
 
 如果这仍未解决问题，则再检查“开发人员中心绑定”和“应用 ID”的设置是否如上所述。
 

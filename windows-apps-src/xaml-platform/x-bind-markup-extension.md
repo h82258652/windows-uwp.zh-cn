@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d8e065b76a79a6733d1fa066cd924d07a8fc7c9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 625c48e2f0fc57a4e9fd3a98acc505e01e2eb42c
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045363"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117827"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 标记扩展
 
@@ -52,7 +52,7 @@ XAML 编译时，**{x:Bind}** 将转换为从数据源上的某一属性中获�
 | _bindingProperties_ |
 | _propName_=_value_\[, _propName_=_value_\]* | 使用一个名称/值对语法指定的一个或多个绑定属性。 |
 | _propName_ | 要在绑定对象上设置的属性的字符串名称。 例如，“Converter”。 |
-| _value_ | 要将属性设置为的值。 参数的语法取决于要设置的属性。 下面是 _propName_=_value_ 用法的示例，其中该值本身就是一个标记扩展：`Converter={StaticResource myConverterClass}`。 有关详细信息，请参阅下面的[可使用 {x:Bind} 设置的属性](#properties-you-can-set)部分。 |
+| _value_ | 要将属性设置为的值。 参数的语法取决于要设置的属性。 下面是 _propName_=_value_ 用法的示例，其中该值本身就是一个标记扩展：`Converter={StaticResource myConverterClass}`。 有关详细信息，请参阅下面的[可使用 {x:Bind} 设置的属性](#properties-that-you-can-set-with-xbind)部分。 |
 
 ## <a name="examples"></a>示例
 

@@ -6,12 +6,12 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 118c451bb4e015d578620647f09ff23724701da0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1f52e379b524952c3361b432a577a7137b02155b
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920693"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117538"
 ---
 # <a name="introduction-to-xbox-live-apis"></a>Xbox Live API 简介
 
@@ -42,8 +42,8 @@ ms.locfileid: "8920693"
 Xbox Live 服务 API (**XSAPI**) 公开了三个组的客户端 Api，它支持各种客户方案：
 
 - [XSAPI WinRT API](#xsapi-winrt-based-api)
-- [基于 XSAPI C++11 的 API](#xsapi-c++11-based-api)
-- [基于 XSAPI C 的 API](#xsapi-c-based-api)（**新从 2018 年 6 月起**）
+- [基于 XSAPI C++11 的 API](#xsapi-c11-based-api)
+- [XSAPI C 基于 API](#xsapi-c-based-api)（**新从 2018 年 6 月起**）
 
 比较 Api:
 
@@ -103,10 +103,10 @@ winrt::Windows::Xbox::System::User cppWinrtUser = winrt::Windows::Xbox::System::
 std::shared_ptr<xbox::services::xbox_live_context> xboxLiveContext = std::make_shared<xbox::services::xbox_live_context>(cppWinrtUser);
 ```
 
-### <a name="xsapi-c-based-api"></a>基于 XSAPI C 的 API
+### <a name="xsapi-c-based-api"></a>XSAPI C 基于 API
 
 - 允许游戏时调用 XSAPI 控制的内存分配。
 - 允许游戏获得的线程处理时调用 XSAPI 的完全控制。
-- 使用新 HTTP 库中，libHttpClient，面向游戏开发人员。
+- 使用新 HTTP 库，libHttpClient，面向游戏开发人员。
 
 有关详细信息，请参阅[Xbox Live C Api 简介](xsapi-flat-c.md)。

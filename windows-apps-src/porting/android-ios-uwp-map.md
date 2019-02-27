@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 008dce5ffc3824d49830bc368a3eaa9d55b7d229
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2d4739442414b02358f3afea8967b0fc404ff7f9
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8948019"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117817"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
 
@@ -43,7 +43,7 @@ ms.locfileid: "8948019"
 <td align="left"><strong>设计语言。</strong><br><br>一组规定平台中的应用应当具有的外观和行为的约定。</td>
 <td align="left"><strong>Android 材料设计</strong>指南提供了一种视觉语言，供 Android 设计人员和开发人员遵循。</td>
 <td align="left"><strong>人机接口指南</strong>为 iOS 设计人员和开发人员提供了相关建议。</td>
-<td align="left"><a href="https://dev.windows.com/design"><strong>UWP Windows 应用设计</strong></a>展示了如何创建一款在所有 Windows 10 设备上都很出色的应用。 你可以在其中找到用户界面 (UI) 设计基础知识、响应式设计技术和完整详细的指南列表。<br/></td>
+<td align="left"><a href="https://developer.microsoft.com/en-us/windows/apps/design"><strong>UWP Windows 应用设计</strong></a>展示了如何创建一款在所有 Windows 10 设备上都很出色的应用。 你可以在其中找到用户界面 (UI) 设计基础知识、响应式设计技术和完整详细的指南列表。<br/></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>用户界面标记语言。</strong> <br><br>一种呈现和描述 UI 及其组件的标记语言。 每个平台都提供了用于视觉编辑和标记编辑的编辑器。<br/></td>

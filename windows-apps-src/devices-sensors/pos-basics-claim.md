@@ -5,12 +5,12 @@ ms.date: 06/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 7169848084b587793ba1537ea3d6ad78d31892d5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0e7d60c0b612a8067ac4c225dff9da5da428f1a1
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924943"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117647"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>服务点设备声明和启用模型
 
@@ -19,7 +19,7 @@ ms.locfileid: "8924943"
 在成功创建 PointOfService 设备对象后，你必须使用适合的设备类型声明方法进行声明，然后才能使用该设备输入或输出。  声明授予应用程序对很多设备功能的独占访问权限，以确保一个应用程序不会干扰其他应用程序使用设备。  一次只有一个应用程序可以声明独占使用 PointOfService 设备。 
 
 > [!Note]
-> 声明操作建立独占锁定到设备，但不会将其放到运行状态。  有关详细信息，请参阅[启用设备进行 I/O 操作](#Enable-device-for-I/O-operations)。
+> 声明操作建立独占锁定到设备，但不会将其放到运行状态。  有关详细信息，请参阅[启用设备进行 I/O 操作](#enable-device-for-io-operations)。
 
 ### <a name="apis-used-to-claim--release"></a>Api 用于声明 / 发布
 
@@ -34,7 +34,7 @@ ms.locfileid: "8924943"
 
 ## <a name="enable-device-for-io-operations"></a>启用设备进行 I/O 操作
 
-声明操作只是建立到设备，独占权限，但不会将其放到运行状态。  若要接收事件或执行任何操作，输出必须启用使用**EnableAsync**的设备。  相反，你可以调用**DisableAsync**停止从设备或执行输出侦听事件。  你还可以使用**IsEnabled**来确定你的设备的状态。
+声明操作只是建立到设备，独占权限，但不会将其放到运行状态。  若要接收事件或执行任何操作，输出必须启用使用**EnableAsync**的设备。  相反，你可以调用**DisableAsync**停止侦听设备或执行输出中的事件。  你还可以使用**IsEnabled**来确定你的设备的状态。
 
 ### <a name="apis-used-enable--disable"></a>使用 Api 启用/禁用
 
@@ -107,7 +107,7 @@ ms.locfileid: "8924943"
     }
 ```
 
-然后注册事件处理程序中与你已声明的设备关联
+然后与你已声明的设备注册事件处理程序
 
 ```Csharp
     BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(DeviceId);

@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 呈现
 ms.localizationpriority: medium
-ms.openlocfilehash: f73665e60513e4f8465be3dbe69f792af285a8e1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 108e9bf21b0552ac7f88721bf4b1ee72ca2a5e2c
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934642"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117747"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>呈现框架 II：游戏呈现
 
@@ -42,7 +42,7 @@ ms.locfileid: "8934642"
     * 使用具有不同频率的多个常量缓冲区是为了减少每帧必须发送到 GPU 的数据量。 该示例基于常量必须更新的频率将它们分为不同的缓冲区。 这是 Direct3D 编程的最佳做法。 
     * 在此游戏示例中，定义了 4 个常量缓冲区。
         1. __m\_constantBufferNeverChanges__ 包含照明参数。 它在 __FinalizeCreateGameDeviceResources__ 方法中设置一次，此后不再更改。
-        2. __m\_constantBufferChangeOnResize__ 包含投影矩阵。 投影矩阵依赖于窗口的大小和纵横比。 它在 [__CreateWindowSizeDependentResources__](#createwindowsizedependentresources-method) 方法中设置一次，然后在使用 [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) 方法加载资源后进行更新。 如果在 3D 中呈现，也会每帧更改两次。
+        2. __m\_constantBufferChangeOnResize__ 包含投影矩阵。 投影矩阵依赖于窗口的大小和纵横比。 它在 [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) 方法中设置一次，然后在使用 [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) 方法加载资源后进行更新。 如果在 3D 中呈现，也会每帧更改两次。
         3. __m\_constantBufferChangesEveryFrame__ 包含视图矩阵。 此矩阵依赖于相机位置和观看方向（投影的法线），并且使用 __Render__ 方法每帧仅更改一次。 之前在__呈现框架 I：呈现简介__中的 [__GameRenderer::Render__方法](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method)中进行了讨论。
         4. __m\_constantBufferChangesEveryPrim__ 包含每个基元的模型矩阵和材料属性。 模型矩阵将顶点从本地坐标转换为世界坐标。 这些常量特定于每个基元并在每次绘图调用时更新。 之前在__呈现框架 I：呈现简介__中的[基元呈现](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering)下进行了讨论。
 * 保持基元纹理的着色器资源对象也在此类中定义。
@@ -158,7 +158,7 @@ GameRenderer::GameRenderer(const std::shared_ptr<DX::DeviceResources>& deviceRes
 在此游戏示例（以及 Visual Studio 的 __DirectX 11 应用（通用 Windows）__ 模板）中，使用从 __GameRenderer__ 构造函数调用的这两种方法实施游戏资源的创建和加载：
 
 * [__CreateDeviceDependentResources__](#createdevicedependentresources-method)
-* [__CreateWindowSizeDependentResources__](#createwindowsizedependentresources-method)
+* [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method)
 
 ## <a name="createdevicedependentresources-method"></a>CreateDeviceDependentResources 方法
 
@@ -590,7 +590,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 在此游戏示例中，许多方法调用与 [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) 方法相同。 有关代码演练，请转到上一部分。
 
-游戏 HUD 和覆盖窗口大小呈现调整包含在[添加用户界面](#tutorial--adding-a-user-interface)中。
+游戏 HUD 和覆盖窗口大小呈现调整包含在[添加用户界面](tutorial--adding-a-user-interface.md)中。
 
 ```cpp
 // Initializes view parameters when the window size changes.

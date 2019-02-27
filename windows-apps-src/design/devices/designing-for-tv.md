@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 788f47c1b29766cae1f437992aee8414580f3935
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.openlocfilehash: 431b8912e43647bc2678aaab7efc9ec68b866d10
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116489"
+ms.locfileid: "9117577"
 ---
 # <a name="designing-for-xbox-and-tv"></a>针对 Xbox 和电视进行设计
 
@@ -122,7 +122,7 @@ Xbox One 以 1080p（1920 x 1080 像素）呈现你的应用。 因此，当显�
 
 #### <a name="number-of-clicks"></a>单击数
 
-当用户从电视屏幕的一侧导航到另一侧时，此操作不应超过**六次单击**，以便简化你的 UI。 同样，**简洁性**原则也适用于此处。 有关更多详细信息，请参阅[最少单击路径](#path-of-least-clicks)。
+当用户从电视屏幕的一侧导航到另一侧时，此操作不应超过**六次单击**，以便简化你的 UI。 同样，**简洁性**原则也适用于此处。 
 
 ![跨 6 个图标](images/designing-for-tv/six-clicks.png)
 
@@ -462,7 +462,7 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的**主�
 
 嵌套 UI 公开包含在容器 UI 元素内的可操作项，其中嵌套项和容器项可彼此独立捕获焦点。
 
-嵌套 UI 较适合某些输入类型，但对于依赖 XY 导航的游戏板和遥控器不一定适用。 请务必遵循本主题中的指南操作，确保你的 UI 已针对 10 英尺环境进行了优化，并且用户可以轻松地访问所有可交互元素。 一个常见解决方案是将嵌套 UI 元素置于 `ContextFlyout` 中（请参阅 [CommandBar 和 ContextFlyout](#commandbar-and-contextflyout)）。
+嵌套 UI 较适合某些输入类型，但对于依赖 XY 导航的游戏板和遥控器不一定适用。 请务必遵循本主题中的指南操作，确保你的 UI 已针对 10 英尺环境进行了优化，并且用户可以轻松地访问所有可交互元素。 一个常见解决方案是将嵌套的 UI 元素置于`ContextFlyout`。
 
 有关嵌套 UI 的详细信息，请参阅[列表项中的嵌套 UI](../controls-and-patterns/nested-ui.md)。
 
@@ -558,7 +558,7 @@ bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily 
                     "Windows.Xbox");
 ```
 
-然后，你可以遵循此检查对代码块中的 UI 进行相应调整。 [UWP 颜色示例](#uwp-color-sample)中显示了这一示例。
+然后，你可以遵循此检查对代码块中的 UI 进行相应调整。 
 
 ## <a name="summary"></a>小结
 

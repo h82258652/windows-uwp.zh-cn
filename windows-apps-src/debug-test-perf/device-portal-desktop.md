@@ -6,12 +6,12 @@ ms.date: 02/6/2019
 ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: c499c14d98f63836d80134aac70b2c80902f049b
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.openlocfilehash: 4fe1f2a51199dd12cd1d285c17c5d48c9a25b969
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116129"
+ms.locfileid: "9117797"
 ---
 # <a name="device-portal-for-windows-desktop"></a>适用于 Windows 桌面的设备门户
 
@@ -39,7 +39,7 @@ Windows 设备门户允许你查看诊断信息，并通过 HTTP 从浏览器窗
 
 ![“设置”应用的“设备门户”部分](images/device-portal/device-portal-desk-settings.png) 
 
-在启用设备门户后，你将在该部分的底部看到 Web 链接。 记下追加到所列 URL 末尾的端口号：此端口号在启用设备门户时随机生成，但应在桌面重启后保持一致。 如果你希望手动设置端口号以使它们永久保留，请参阅[设置端口号](device-portal-desktop.md#setting-port-numbers)。
+在启用设备门户后，你将在该部分的底部看到 Web 链接。 记下追加到所列 URL 末尾的端口号：此端口号在启用设备门户时随机生成，但应在桌面重启后保持一致。 
 
 这些链接提供了连接到设备门户的两种方法：通过本地网络（包括 VPN）或通过本地主机。
 

@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 16af4bcabbc21c60a5dc0006da51f5bd23eef791
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 175009773f7969adbaf36a036e733443f593467f
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941990"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117767"
 ---
 #  <a name="define-the-uwp-app-framework"></a>定义 UWP 应用框架
 
@@ -23,7 +23,7 @@ ms.locfileid: "8941990"
 
 你需要实现应用单一实例调用的以下五个方法：
 * [__Initialize__](#initialize-the-view-provider)
-* [__SetWindow__](#configure-the-window-and-display-behavior)
+* [__SetWindow__](#configure-the-window-and-display-behaviors)
 * [__Load__](#load-method-of-the-view-provider)
 * [__Run__](#run-method-of-the-view-provider)
 * [__Uninitialize__](#uninitialize-method-of-the-view-provider)
@@ -384,7 +384,7 @@ void GameMain::Run()
 
 当用户最终结束游戏会话时，我们需要清理。 这时要使用 **Uninitialize**。
 
-在 windows 10，关闭应用窗口不会终止应用的进程，而改为其将应用 singleton 的状态写入内存。 如果在系统回收此内存时必须执行一些特殊操作（包括任何特殊的资源清除），则将执行该清除的代码放入此方法。
+在 windows 10 中，关闭应用窗口不会终止应用的进程，而改为写入内存应用 singleton 的状态。 如果在系统回收此内存时必须执行一些特殊操作（包括任何特殊的资源清除），则将执行该清除的代码放入此方法。
 
 ### <a name="app-uninitialize"></a>App:: Uninitialize
 

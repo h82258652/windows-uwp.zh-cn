@@ -1,16 +1,16 @@
 ---
 title: 服务点入门
 description: 本文包含有关服务点 UWP API 入门的信息。
-ms.date: 05/1/2018
+ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e537e40d5224f2522cb5ecebd92664d1794dd06
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 518529fecff9f25a83a03847b1623bf9f09a8145
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920968"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115997"
 ---
 # <a name="getting-started-with-point-of-service"></a>服务点入门
 

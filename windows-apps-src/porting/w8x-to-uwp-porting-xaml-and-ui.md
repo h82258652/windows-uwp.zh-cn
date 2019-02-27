@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4de36ba8c87c764ff1280e2c886d1ff8692b3246
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 7b8bb652c3d8b978d631da2e529662a455310458
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9046031"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117847"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>将 Windows 运行时 8.x XAML 和 UI 移植到 UWP
 
@@ -86,7 +86,7 @@ ms.locfileid: "9046031"
 
 ## <a name="controls-and-control-styles-and-templates"></a>控件、控件样式和模板
 
-Windows 10 上运行的通用 8.1 应用将保留 8.1 的外观和行为的控件。 但是，当该应用移植到 windows 10 应用，有外观和行为需要注意的一些差异。 体系结构和设计的控件是实质上保持不变 windows 10 应用，因此更改主要围绕[设计语言](#design-language-in-windows-10)、 简化和可用性改进。
+Windows 10 上运行的通用 8.1 应用将保留 8.1 的外观和行为的控件。 但是，当该应用移植到 windows 10 应用，有外观和行为需要注意的一些差异。 体系结构和设计的控件是实质上保持不变 windows 10 应用，因此更改主要围绕设计语言、 简化和可用性改进。
 
 **注意** PointerOver 视觉状态是与中自定义样式/模板相关 windows 10 应用和 Windows 运行时 8.x 应用，而不是在 Windows Phone 应用商店应用。 出于此原因 （以及由于 windows 10 应用支持的系统资源键），我们建议你重新使用自定义样式/模板从 Windows 运行时 8.x 应用移植到 windows 10 应用时。
 如果你想要在特定的自定义样式/模板使用最新的视觉状态集是否受益于对默认样式/模板，所做的性能改进，然后编辑新的 windows 10 默认模板的副本和重新应用你自定义。 性能改进的一个示例是，以前包含 **ContentPresenter** 或面板的任何 **Border** 已被删除，而子元素现在可呈现边框。
@@ -122,7 +122,7 @@ Windows 10 上运行的通用 8.1 应用将保留 8.1 的外观和行为的控�
 
 ##  <a name="design-language-in-windows10"></a>在 windows 10 中的设计语言
 
-有一些细小但很重要设计语言差异通用 8.1 应用和 windows 10 应用之间。 有关所有详细信息，请参阅[设计](https://dev.windows.com/design)。 不考虑设计语言更改，我们的设计原则始终保持一致：关注细节却又力求简洁（专注于内容而不是外观），显著减少视觉元素，始终忠实于数字领域；使用可视化层次结构（尤其是版式）；基于网格进行设计；通过流畅的动画带给你生动的体验。
+有一些细小但很重要设计语言差异通用 8.1 应用和 windows 10 应用之间。 有关所有详细信息，请参阅[设计](https://developer.microsoft.com/en-us/windows/apps/design)。 不考虑设计语言更改，我们的设计原则始终保持一致：关注细节却又力求简洁（专注于内容而不是外观），显著减少视觉元素，始终忠实于数字领域；使用可视化层次结构（尤其是版式）；基于网格进行设计；通过流畅的动画带给你生动的体验。
 
 ## <a name="effective-pixels-viewing-distance-and-scale-factors"></a>有效像素、观看距离和比例因子
 
@@ -247,7 +247,7 @@ Windows 10 上运行的通用 8.1 应用将保留 8.1 的外观和行为的控�
 
 在其他情况下，资源键将不再受支持。 Visual Studio 中的 XAML 标记编辑器突出显示对无法解析的资源键的引用。 例如，XAML 标记编辑器将使用红色波形曲线为对样式键 `ListViewItemTextBlockStyle` 的引用加下划线。 如果未更正该错误，则应用将在你尝试将其部署到模拟器或设备时立即终止。 因此，请务必留意 XAML 标记的正确性。 而且你将发现 Visual Studio 是捕获此类问题的绝佳工具。
 
-对于仍受支持的键，设计语言的更改意味着由某些样式设置的属性已更改。 例如，`TitleTextBlockStyle`将**FontSize**设置为在 Windows 运行时 8.x 应用中的 14.667px 和 Windows Phone 应用商店应用中的 18.14px。 但是，相同的样式将**FontSize**设置为大于 24px 在 windows 10 应用中。 查看你的设计和布局，并在合适的位置上使用适当的样式。 有关详细信息，请参阅[字体指南](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[设计 UWP 应用](https://dev.windows.com/design)。
+对于仍受支持的键，设计语言的更改意味着由某些样式设置的属性已更改。 例如，`TitleTextBlockStyle`将**FontSize**设置为在 Windows 运行时 8.x 应用中的 14.667px 和 Windows Phone 应用商店应用中的 18.14px。 但是，相同的样式将**FontSize**设置为大于 24px 在 windows 10 应用中。 查看你的设计和布局，并在合适的位置上使用适当的样式。 有关详细信息，请参阅[字体指南](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[设计 UWP 应用](https://developer.microsoft.com/en-us/windows/apps/design)。
 
 下面是不再受支持的键的完整列表。
 

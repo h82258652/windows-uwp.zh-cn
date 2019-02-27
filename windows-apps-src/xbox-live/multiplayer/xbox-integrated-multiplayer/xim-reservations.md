@@ -6,12 +6,12 @@ ms.date: 01/28/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xbox 集成多人游戏, xim, 聊天
 ms.localizationpriority: medium
-ms.openlocfilehash: ab7aca94ca491cd986fcff050e17da5fed1f2ea9
-ms.sourcegitcommit: 9b0f9c8854277d2e786e9294af3a2b559aa457a8
+ms.openlocfilehash: 82b38b8d0d94e4cccf501a101faee0e28a6b43c0
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "9099310"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117544"
 ---
 # <a name="using-xim-as-a-dedicated-chat-solution-via-out-of-band-reservations"></a>通过带外保留将 XIM 用作专门的聊天解决方案
 
@@ -23,13 +23,6 @@ ms.locfileid: "9099310"
 
 后续主题将描述如何在 XIM 中利用带外保留。 由于与之前部分中所述的“标准”XIM 使用大致相同，某些讨论已略过。 建议熟悉[使用 XIM](using-xim.md)。
 
-主题：
-
-1. [移至新的带外保留 XIM 网络](#moving)
-1. [添加玩家至使用带外保留托管的 XIM 网络](#adding)
-1. [在使用带外保留托管的 XIM 网络中配置聊天目标](#targets)
-1. [将玩家从使用带外保留托管的 XIM 网络中移除](#remove)
-1. [清理使用带外保留托管的 XIM 网络](#clean)
 
 ## <a name="moving-to-a-new-out-of-band-reservation-xim-network"></a>移至新的带外保留 XIM 网络 
 

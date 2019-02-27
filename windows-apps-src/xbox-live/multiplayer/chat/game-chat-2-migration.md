@@ -5,33 +5,16 @@ ms.date: 05/02/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天 2, 游戏聊天, 语音通信
 ms.localizationpriority: medium
-ms.openlocfilehash: b21544744f4bbe7954bd6eb29787b144bd693cd6
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.openlocfilehash: e963210091694a07114f10d5a3dc531a353621df
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116009"
+ms.locfileid: "9117541"
 ---
 # <a name="migration-from-game-chat-to-game-chat-2"></a>从游戏聊天迁移到游戏聊天 2
 
-本文档详细介绍游戏聊天与游戏聊天 2 之间的相似之处，以及如何从游戏聊天迁移到游戏聊天 2。 因此，本文面向的是已有游戏聊天实现但希望迁移到游戏聊天 2 的作品。 如果你还没有游戏聊天实现，建议先[使用游戏聊天 2](using-game-chat-2.md)。 本文档包含以下主题：
-
-1. [前言](#preface)
-2. [先决条件](#prerequisites)
-3. [初始化](#initialization)
-4. [配置用户](#configuring-users)
-5. [处理数据](#processing-data)
-6. [处理事件](#processing-events)
-7. [文字聊天](#text-chat)
-8. [辅助功能](#accessibility)
-9. [UI](#UI)
-10. [静音](#muting)
-11. [信誉差者自动静音](#bad-reputation-auto-mute)
-12. [特权和隐私](#privilege-and-privacy)
-13. [清理](#cleanup)
-14. [失败模型和调试](#failure-model-and-debugging)
-15. [如何配置热门场景](#how-to-configure-popular-scenarios)
-16. [编码前与解码后音频操作。](#pre-encode-and-post-decode-audio-manipulation)
+本文档详细介绍游戏聊天与游戏聊天 2 之间的相似之处，以及如何从游戏聊天迁移到游戏聊天 2。 因此，本文面向的是已有游戏聊天实现但希望迁移到游戏聊天 2 的作品。 如果你还没有游戏聊天实现，建议先[使用游戏聊天 2](using-game-chat-2.md)。 
 
 ## <a name="preface"></a>前言
 
@@ -65,7 +48,7 @@ ms.locfileid: "9116009"
 
 编译游戏聊天 2 需要包括 GameChat2.h 主标头。 为了进行正确地链接，你的项目还必须在至少一个编译单元中包含 GameChat2Impl.h（建议使用通用的预编译标头，因为这些存根功能实现很小，编译器很容易将其生成为“内联”）。
 
-在使用游戏聊天 2 接口时，项目无需在使用 C++/CX 或传统 C++ 进行编译之间作出选择；该接口可与以上两者一起使用。 此外，该实现也不会将引发异常作为报告非致命错误的手段，因此你可以根据需要在无异常项目中轻松使用它。 然而，该实现确实将引发异常作为报告致命错误的手段（请参阅[失败模型](#failure)了解详细信息）。
+在使用游戏聊天 2 接口时，项目无需在使用 C++/CX 或传统 C++ 进行编译之间作出选择；该接口可与以上两者一起使用。 此外，该实现也不会将引发异常作为报告非致命错误的手段，因此你可以根据需要在无异常项目中轻松使用它。 然而，该实现确实将引发异常作为报告致命错误的手段（请参阅[失败模型](#failure-model-and-debugging)了解详细信息）。
 
 ## <a name="initialization"></a>初始化
 

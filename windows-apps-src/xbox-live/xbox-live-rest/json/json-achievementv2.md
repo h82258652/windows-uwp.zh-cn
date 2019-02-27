@@ -7,12 +7,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 1734caec256feceefb4f54965d9d8e0198d714ca
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b0e20f46a0d97cba496df5c6fb9cda14fbeccccd
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941956"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115403"
 ---
 # <a name="achievement-json"></a>Achievement (JSON)
 成就对象 （版本 2）。
@@ -37,13 +37,13 @@ ms.locfileid: "8941956"
 | description| 字符串| 当解锁成就的说明。|
 | lockedDescription| 字符串| 成就解锁之前的说明。|
 | productId| 字符串| 已发布的 ProductId 成就。|
-| achievementType| **AchievementType**枚举| 成就 （不与相同传统成就的以前类型） 的类型： <ul><li>无效 (0): 未知和不受支持的成就类型。</li><li>永久性 (1): 没有结束日期，可以随时解锁成就。</li><li>质询 (2): 具有特定时段期间，它可以是一种解锁成就。</li></ul> |
+| achievementType| **AchievementType**枚举| 成就 （不与相同上传统成就以前的类型） 的类型： <ul><li>无效 (0): 未知和不支持成就类型。</li><li>永久性 (1): 没有结束日期，可以随时解锁成就。</li><li>质询 (2): 具有特定时间窗口期间，它可以是一种解锁成就。</li></ul> |
 | participationType| **ParticipationType**枚举| 成就参与类型。 有效值为个人或组。|
-| timeWindow| TimeWindow| 在此期间可能会解锁成就的时段。 仅支持挑战。|
-| 奖励| [奖励](json-reward.md)的数组| 解锁时获得的奖励集合。|
-| estimatedTime| 时间跨度| 估计的时间成就需要获得。|
+| timeWindow| TimeWindow| 在此期间可能会解锁成就时间窗口。 仅支持挑战。|
+| 奖励| [奖励](json-reward.md)的数组| 解锁时获得的奖励的集合。|
+| estimatedTime| 时间跨度| 估计的时间成就将持续获得。|
 | deeplink| 字符串| 到游戏 deeplink。|
-| isRevoked| 布尔值| 是否成就被吊销强制执行。|
+| isRevoked| 布尔值| 无论成就被吊销强制执行。|
 
 <a id="ID4EIAAC"></a>
 
@@ -77,7 +77,7 @@ ms.locfileid: "8941956"
         [{
                 "name":"Icon Name",
                 "type":"Icon",
-                "url":"http://www.xbox.com"
+                "url":"https://www.xbox.com"
         }],
         "platform":"D",
         "isSecret":true,

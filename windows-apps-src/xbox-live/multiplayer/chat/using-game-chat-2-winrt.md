@@ -5,30 +5,16 @@ ms.date: 04/11/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天 2, 游戏聊天, 语音通信
 ms.localizationpriority: medium
-ms.openlocfilehash: c06ee8610273273f234dbf3c7cb9fbd3a17eaa76
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.openlocfilehash: 1cb0578151d4262d61f5fbc078bebab721fb3bfe
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115577"
+ms.locfileid: "9117547"
 ---
 # <a name="using-game-chat-2-winrt-projections"></a>使用游戏聊天 2（WinRT 投影）
 
 这是关于使用游戏聊天 2 的 C# API 的简短演练。 需要通过 C++ 访问游戏聊天 2 的游戏开发人员应查看[使用游戏聊天 2](using-game-chat-2.md)。
-
-1. [先决条件](#prereq)
-2. [初始化](#init)
-3. [配置用户](#config)
-4. [处理数据帧](#data)
-5. [处理状态更改](#state)
-6. [文字聊天](#text)
-7. [辅助功能](#access)
-8. [UI](#UI)
-9. [静音](#mute)
-10. [信誉差者自动静音](#automute)
-11. [特权和隐私](#priv)
-12. [清除](#cleanup)
-13. [如何配置热门场景](#how-to-configure-popular-scenarios)
 
 ## <a name="prerequisites-a-nameprereq"></a>系统必备 <a name="prereq">
 

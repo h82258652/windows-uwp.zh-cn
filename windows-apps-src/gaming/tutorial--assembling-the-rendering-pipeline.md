@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 呈现
 ms.localizationpriority: medium
-ms.openlocfilehash: 6724aedf898706dd4c5bf728616c918d64b2fb32
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4c16f1fbb55374b1d04c9fc9f5f7eae72ad19b00
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931292"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117777"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a>呈现框架 I：呈现简介
 
@@ -71,7 +71,7 @@ void App::Initialize(
 
 ## <a name="display-the-graphics-by-rendering-the-frame"></a>通过呈现帧显示图形
 
-游戏场景需要在游戏启动时呈现。 [__GameMain::Run__](#gameamainrun-method) 方法中的呈现开始说明（如下所示）。
+游戏场景需要在游戏启动时呈现。 [__GameMain::Run__](#gamemainrun-method) 方法中的呈现开始说明（如下所示）。
 
 这个简单的流是：
 1. __更新__
@@ -130,7 +130,7 @@ void GameMain::Run()
 
 呈现通过调用 __GameMain::Run__ 中的 [__GameRenderer::Render__](#gamerendererrender-method) 方法实现。
 
-如果[立体呈现](#stereo-rendering)已启用，则有两个呈现通道：一个用于右眼，一个用于左眼。 在每个呈现通道中，我们将呈现目标和[深度模板视图](#depth-stencil-view)绑定到设备。 我们还会清除之后的深度模板视图。
+如果[立体呈现](#stereo-rendering)已启用，则有两个呈现通道：一个用于右眼，一个用于左眼。 在每个呈现通道中，我们将呈现目标和深度模板视图绑定到设备。 我们还会清除之后的深度模板视图。
 
 > [!Note]
 > 立体呈现可以使用其他方法实现，如使用顶点实例或几何着色器的单通道立体声。 双呈现通道方法速度较慢，但更便于实现立体呈现。
@@ -146,7 +146,7 @@ void GameMain::Run()
 
 设置 Direct3D 上下文以使用输入顶点布局。 输入布局对象介绍了如何将顶点缓冲区数据传输到[呈现管道](#rendering-pipeline)。 
 
-接下来，我们设置 Direct3D 上下文以使用之前定义的[常量缓冲区](#constant-buffers)，其用于[顶点着色器](#vertex-shaders-and-pixel-shaders)管道阶段和[像素着色器](#vertex-shaders-and-pixel-shaders)管道阶段。 
+接下来，我们设置 Direct3D 上下文以使用之前定义的常量缓冲区，其用于[顶点着色器](#vertex-shaders-and-pixel-shaders)管道阶段和[像素着色器](#vertex-shaders-and-pixel-shaders)管道阶段。 
 
 > [!Note]
 > 请参阅[呈现框架 II：游戏呈现](tutorial-game-rendering.md)了解有关常量缓冲区定义的详细信息。
@@ -338,11 +338,11 @@ void GameRenderer::Render()
 * __M\_constantBufferChangesEveryPrim__ 包含每个对象的参数。  它包括世界转换矩阵的对象，以及材料属性，如用于光线计算的颜色和反射指数。
 * 设置 Direct3D 上下文以使用将传输到[呈现管道](#rendering-pipeline)输入装配器 (IA) 阶段的网格对象数据的输入顶点布局
 * 设置 Direct3D 上下文以在 IA 阶段使用[索引缓冲区](#index-buffer)。 提供基元信息：类型、数据顺序。
-* 提交绘图调用来绘制索引的非实例化基元。 __GameObject::Render__ 方法使用特定于给定基元的数据更新基元[常量缓冲区](#constant-buffer-or-shader-constant-buffer)。 这将导致在上下文中调用 __DrawIndexed__，以绘制每个基元的几何图形。 尤其是，此绘图调用会随着常量缓冲区数据的参数化将命令和数据编入图形处理单元 (GPU) 的队列。 每个绘图调用对每个顶点执行一次[顶点着色器](#vertex-shaders-and-pixel-shaders)，然后对基元中每个三角形的每个像素执行一次[像素着色器](#vertex-shaders-and-pixel-shaders)。 纹理是像素着色器用于执行呈现的状态部分。
+* 提交绘图调用来绘制索引的非实例化基元。 __GameObject::Render__ 方法使用特定于给定基元的数据更新基元[常量缓冲区](#constant-buffer-or-shader-constant-buffer)。 这将导致在上下文中调用 __DrawIndexed__，以绘制每个基元的几何图形。 尤其是，此绘图调用会随着常量缓冲区数据的参数化将命令和数据编入图形处理单元 (GPU) 的队列。 每个绘图调用对每个顶点执行一次顶点着色器，然后对基元中每个三角形的每个像素执行一次[像素着色器](#vertex-shaders-and-pixel-shaders)。 纹理是像素着色器用于执行呈现的状态部分。
 
 多个常量缓冲区的原因：
     * 该游戏使用多个常量缓冲区，但每个基元只需更新一次这些缓冲区。 如之前所述，常量缓冲区就像对每个基元的着色器的输入。 一些数据是静态数据 (__m\_constantBufferNeverChanges__)；一些数据是 (__m\_constantBufferChangesEveryFrame__) 帧上的常量，如相机的位置；还有一些数据特定于基元，如其颜色和纹理 (__m\_constantBufferChangesEveryPrim__)
-    * 游戏[呈现器](#renderer)将这些输入分别放入不同的常量缓冲区，以优化 CPU 和 GPU 使用的内存带宽。 此方法还有助于最大程度地减少 GPU 需要跟踪的数据量。 GPU 有一个很大的命令队列，游戏每次调用 __Draw__ 时，该命令将随与之关联的数据一起排队。 当游戏更新基元常量缓冲区并发出下一个 __Draw__ 命令时，图形驱动程序会将此下一个命令和关联的数据添加到队列。 如果游戏绘制 100 个基元，它可能在队列中有 100 个常量缓冲区数据的副本。 为了最大程度地减少游戏发送到 GPU 的数据量，游戏使用仅包含每个基元更新的单独基元常量缓冲区。
+    * 示例呈现器将这些输入分别放入不同的常量缓冲区，以优化 CPU 和 GPU 使用的内存带宽。 此方法还有助于最大程度地减少 GPU 需要跟踪的数据量。 GPU 有一个很大的命令队列，游戏每次调用 __Draw__ 时，该命令将随与之关联的数据一起排队。 当游戏更新基元常量缓冲区并发出下一个 __Draw__ 命令时，图形驱动程序会将此下一个命令和关联的数据添加到队列。 如果游戏绘制 100 个基元，它可能在队列中有 100 个常量缓冲区数据的副本。 为了最大程度地减少游戏发送到 GPU 的数据量，游戏使用仅包含每个基元更新的单独基元常量缓冲区。
 
 #### <a name="gameobjectrender-method"></a>GameObject::Render 方法
 
@@ -626,7 +626,7 @@ Microsoft DirectX 图形基础结构 (DXGI) 是一个新子系统中引入的 Wi
 
 使用功能级别，在创建设备时，你可以尝试为想要请求的功能级别创建设备。 如果设备创建成功，该功能级别将存在，如果失败，硬件将不支持该功能级别。 你可以尝试在更低的功能级别重新创建设备，也可以选择退出应用程序。 例如，12\_0 功能级别需要 Direct3D 11.3 或 Direct3D 12，以及着色器模型 5.1。 有关详细信息，请参阅 [Direct3D 功能级别：各功能级别概述](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview)。
 
-使用功能级别，你可以开发适用于 Direct3D9、 Microsoft Direct3D10 或 Direct3D11，应用程序，然后运行它上 9、 10 或 11 硬件 （除一些例外情况）。 有关详细信息，请参阅 [Direct3D 功能级别](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)。
+使用功能级别，你可以开发适用于 Direct3D9、 Microsoft Direct3D10 或 Direct3D11，应用程序，然后运行它 9、 10 或 11 硬件 （有某些例外） 上。 有关详细信息，请参阅 [Direct3D 功能级别](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)。
 
 ### <a name="stereo-rendering"></a>立体呈现
 

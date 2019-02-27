@@ -9,18 +9,18 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 728a057b445ae50a1c0af818b350b25fd390ca01
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 71a3108e21455086e2742987db1d7125c733f6e2
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047632"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117597"
 ---
 # <a name="contact-card"></a>联系人卡片
 
 联系人卡片显示[联系人](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)（UWP 用来表示用户和企业的机制）的联系人信息，例如姓名、电话号码和地址。  联系人卡片还允许用户编辑联系人信息。 你可以选择显示紧凑式联系人卡片或包含更多信息的完整联系人卡片。
 
-> **重要 API**：[ShowContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowFullContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_Foundation_Rect_)、[ShowFullContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_)、[IsShowContactCardSupported 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported)、[Contact 类](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
+> **重要 API**：[ShowContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)、[ShowFullContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_)、[IsShowContactCardSupported 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported)、[Contact 类](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
 有两种显示联系人卡片的方式：  
 * 以标准联系人卡片方式显示在可轻型消除的浮出控件中，当用户在联系人卡片外部单击时联系人卡片消失。 
@@ -103,7 +103,7 @@ ms.locfileid: "9047632"
                 email.Address = "jsmith@contoso.com"; 
                 contact.Emails.Add(email); 
     ```
-5. 通过调用 [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowFullContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_Foundation_Rect_) 方法显示联系人卡片。 
+5. 通过调用 [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard) 方法显示联系人卡片。 
 
     ```csharp
             ContactManager.ShowFullContactCard(
@@ -146,7 +146,7 @@ private void OnUserClickShowContactCard(object sender, RoutedEventArgs e)
 
 ## <a name="show-a-full-contact-card"></a>显示完整联系人卡片
 
-要显示完整联系人卡片，请调用 [ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_) 方法而不是 [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowFullContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_Foundation_Rect_)。
+要显示完整联系人卡片，请调用 [ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_) 方法而不是 [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)。
 
 ```csharp
 private void onUserClickShowContactCard() 

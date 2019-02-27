@@ -6,12 +6,12 @@ ms.date: 01/31/2019
 ms.topic: article
 keywords: windows 10, uwp, 税收, 应用税收, 税收要求, 商业扩张, 税率
 ms.localizationpriority: medium
-ms.openlocfilehash: cf57fa923297b8e4a57d7c5ca4668868bfae7038
-ms.sourcegitcommit: b9ee49402db7a8999cade1c5cf7f7b6ac4d783db
+ms.openlocfilehash: e5ada027b835e852d1db728ef124a798540abdf7
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042487"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117757"
 ---
 # <a name="tax-details-for-windows-appgame-developers-and-azure-marketplace-publishers"></a>为 Windows 应用/游戏开发人员和 Azure Marketplace 发布者的税收详细信息
 
@@ -223,7 +223,7 @@ ms.locfileid: "9042487"
 | 斯洛文尼亚                         | 所选择的价格就是最终售价并且包含所有适用的税款。 在付款之前，将从价格中扣除税款。              | （所选价格减去 22% 的税款）的 70% | Microsoft          |
 | 所罗门群岛                  | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 索马里                          | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
-| 南非                     | 所选择的价格就是最终售价并且包含所有适用的税款。 [阅读有关该国家/地区税收注意事项的详细信息。](#mixed-remittance-countriesregions) | 所选价格的 70%                 | 开发人员          |
+| 南非                     | 所选择的价格就是最终售价并且包含所有适用的税款。 [阅读有关该国家/地区税收注意事项的详细信息。](#mixed-remittance-countriesregions-for-windows-appgame-developers) | 所选价格的 70%                 | 开发人员          |
 | 西班牙                            | 所选择的价格就是最终售价并且包含所有适用的税款。 在付款之前，将从价格中扣除税款。              | （所选价格减去 21% 的税款）的 70% | Microsoft          |
 | 斯里兰卡                        | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 苏里南                         | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
@@ -257,7 +257,7 @@ ms.locfileid: "9042487"
 | 瓦努阿图                          | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 梵蒂冈                     | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 委内瑞拉                        | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
-| 越南                          | 所选择的价格就是最终售价并且包含所有适用的税款。 [阅读有关该国家/地区税收注意事项的详细信息。](#mixed-remittance-countriesregions) | 所选价格的 70%                 | 开发人员          |
+| 越南                          | 所选择的价格就是最终售价并且包含所有适用的税款。 [阅读有关该国家/地区税收注意事项的详细信息。](#mixed-remittance-countriesregions-for-windows-appgame-developers) | 所选价格的 70%                 | 开发人员          |
 | 瓦利斯和富图纳                | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 也门                            | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 赞比亚                           | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |

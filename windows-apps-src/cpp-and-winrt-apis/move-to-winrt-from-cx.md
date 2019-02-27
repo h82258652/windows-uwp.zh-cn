@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 39f60576962d9e69d8ec7ba80918fdbdfe96f070
-ms.sourcegitcommit: 9b0f9c8854277d2e786e9294af3a2b559aa457a8
+ms.openlocfilehash: fe988bffbf024308fb5d43da7ed538e5330b58de
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "9099314"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117637"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>从 C++/CX 移动到 C++/WinRT
 
@@ -371,7 +371,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 auto var{ titleRecord->TitleName->Data() };
 ```
 
-使用 C++/WinRT 也一样，你可以使用 [**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function) 函数获取 null 结尾的 C 样式字符串版本，就像从 **std::wstring** 获取的一样。
+使用 C++/WinRT 也一样，你可以使用 [**hstring::c_str**](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_) 函数获取 null 结尾的 C 样式字符串版本，就像从 **std::wstring** 获取的一样。
 
 ```cppwinrt
 auto var{ titleRecord.TitleName().c_str() };

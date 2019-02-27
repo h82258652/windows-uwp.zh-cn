@@ -6,12 +6,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛
 ms.localizationpriority: medium
-ms.openlocfilehash: 38a189dd127c38f9408041f08f3d395e80fa0243
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 891fa8da1ca6e26128e0a33d28a505a18e99662a
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929525"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117563"
 ---
 # <a name="arena-title-integration-guide"></a>Arena 游戏集成指南
 
@@ -32,7 +32,7 @@ Xbox Arena 使用的概念与 Xbox 多人游戏开发相似。 如果你不熟�
 ![](../../images/arena/tournament-flow.png)
 
 
-Arena 协议激活 URI 包含与锦标赛有关的信息、比赛会话以及当比赛结束时你的游戏可以调用的深层链接。 深层链接可使用户返回至 Xbox Arena UI。 这些 URI 组件在 [Arena 集成的基本要求](#basic-requirements-for-arena-integration)的[协议激活](#protocol-activation)部分有详细的介绍。
+Arena 协议激活 URI 包含与锦标赛有关的信息、比赛会话以及当比赛结束时你的游戏可以调用的深层链接。 深层链接可使用户返回至 Xbox Arena UI。 这些 URI 组件在 [Arena 集成的基本要求](#basic-requirements-for-arena-integration)的[协议激活](#1protocol-activation)部分有详细的介绍。
 
 ## <a name="basic-requirements-for-arena-integration"></a>Arena 集成的基本要求
 
@@ -93,7 +93,7 @@ ms-xbl-{titleIdHex}://
 **organizerId、tournamentId** | **organizerId** 和 **tournamentId** 一起使用时，构成与比赛关联的锦标赛的唯一标识符。 如果你选择在你的游戏中显示它，则可使用此标识符从“锦标赛中心”检索与锦标赛有关的更多详细信息。
 **teamId** | **teamId** 是在用户（由 **joinerXuid** 参数指定）加入的锦标赛上下文中团队的唯一标识符。 与 **organizerId** 和 **tournamentId** 参数类似，你可以使用 **teamId** 选择性地从“锦标赛中心”检索与团队有关的信息。
 **scid、templateName、name** | 这些参数一起用来标识会话。 这些也是在指向会话的 MPSD URI 路径中的三个参数：</br> </br>`https://sessiondirectory.xboxlive.com/serviceconfigs/{scid}/sessiontemplates/{templateName}/sessions{name}`.</br></br>在 XSAPI 中，它们是 `multiplayer_session_reference ` 构造函数的三个参数。
-**returnUri、returnPfn** | **returnUri** 是使用户返回到 Xbox Arena UI 的协议激活 URI。 **returnPfn** 参数可能存在，也可能不存在。 如果存在，它是用于处理 **returnUri** 的应用的产品系列名称 (PFN)。 有关演示如何使用这些值的示例代码，请参阅[返回到 Xbox Arena UI](#returning-to-the-xbox-arena-ui)。
+**returnUri、returnPfn** | **returnUri** 是使用户返回到 Xbox Arena UI 的协议激活 URI。 **returnPfn** 参数可能存在，也可能不存在。 如果存在，它是用于处理 **returnUri** 的应用的产品系列名称 (PFN)。 有关演示如何使用这些值的示例代码，请参阅[返回到 Xbox Arena UI](#4returning-to-the-xbox-arena-ui)。
 
 ### <a name="2--playing-the-match"></a>2. 进行比赛
 
@@ -324,7 +324,7 @@ void Sample::LaunchReturnUi(Uri ^returnUri, String ^returnPfn, User ^currentUser
 
 ## <a name="configuring-a-title-for-arena"></a>为 Arena 配置游戏
 
-若要为 Arena 启用游戏，一些额外步骤时所需的 Xbox 开发人员门户 (XDP) 或[合作伙伴中心](https://partner.microsoft.com/dashboard)中对其进行配置。
+若要为 Arena 启用游戏，一些额外步骤都是必需时在 Xbox 开发人员门户 (XDP) 或[合作伙伴中心](https://partner.microsoft.com/dashboard)中对其进行配置。
 
 ### <a name="enabling-arena-for-your-title"></a>为你的游戏启用 Arena
 
@@ -339,7 +339,7 @@ void Sample::LaunchReturnUi(Uri ^returnUri, String ^returnPfn, User ^currentUser
 * **Arena 平台** - 你可以为你的游戏选择玩锦标赛的平台。
 * **锦标赛资产** -（以前位于“多人游戏和匹配”部分。）这些是你的游戏的锦标赛图像。
 
-Arena 还可以在启用在合作伙伴中心中的 Xbox Live 服务下的**锦标赛**菜单中。
+Arena 还可以在启用在合作伙伴中心中下的 Xbox Live 服务的**锦标赛**菜单中。
 
 ![在合作伙伴中心中的 arena 菜单](../../images/arena/Arena_On_WDC.JPG)
 

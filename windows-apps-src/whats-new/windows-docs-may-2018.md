@@ -2,15 +2,15 @@
 title: 在 2018 年 5 月 Windows 文档中新增功能-开发 UWP 应用
 description: 新功能、 视频和开发人员指南已被添加到 2018 年 5 月的 Windows 10 开发人员文档和 Microsoft Build 会议。
 keywords: 有哪些新增功能，更新，功能，开发人员指南，Windows 10 月，生成
-ms.date: 5/7/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: be67c83a986602318adf995bae35c09e5a7a4997
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 69df2bbe8bc91fcf4a2631c0f257fc44851c24f2
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048664"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116219"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>什么是 Windows 开发人员文档中 2018 年 5 月的新增功能
 
@@ -99,7 +99,7 @@ MSIX 打包格式是一种开放源格式的简化我们的合作伙伴支持 MS
 
 ## <a name="developer-guidance"></a>开发人员指南
 
-### <a name="get-started"></a>立即开始
+### <a name="get-started"></a>即刻体验
 
 我们已大大增加我们获取启动较新的学习轨迹的内容。 这些新主题旨在为新 Windows 10 开发人员提供了他们可能想要完成的一些常见任务的信息。 这些不是教程并不提供手持演练中，但改为指出现有文档所在以及如何使用它。 请查看改良[开始编写代码](../get-started/create-uwp-apps.md)页上，也可以浏览每个单独的学习轨迹：
 

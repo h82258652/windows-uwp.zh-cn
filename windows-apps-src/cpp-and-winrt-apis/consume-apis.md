@@ -5,12 +5,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 531bd349fca825a8bb80630192698b647db3129a
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.openlocfilehash: 488516f94a53eb26b4a9e2f49927b8399c62bff5
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042319"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117687"
 ---
 # <a name="consume-apis-with-cwinrt"></a>通过 C++/WinRT 使用 API
 
@@ -40,7 +40,7 @@ int main()
 > [!TIP]
 > 如果希望使用来自 Windows 命名空间的类型，请包括与该命名空间对应的 C++/WinRT 标头。 `using namespace` 指令是可选的，不过这种指令很方便。
 
-在上述代码示例中，在初始化 C++/WinRT 后，我们将通过其公开记录的构造函数之一（本示例中为 [**Uri(字符串)**](/uwp/api/windows.foundation.uri#Windows_Foundation_Uri__ctor_System_String_)）堆叠分配 **winrt::Windows::Foundation::Uri** 投影类型的值。 这是最常见的用例，也是一般情况下你所要做的全部工作。 在有了 C++/WinRT 投影类型值后，你可以将其视为实际 Windows 运行时类型的实例，因为它具有所有相同的成员。
+在上述代码示例中，在初始化 C++/WinRT 后，我们将通过其公开记录的构造函数之一（本示例中为 [**Uri(字符串)**](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_)）堆叠分配 **winrt::Windows::Foundation::Uri** 投影类型的值。 这是最常见的用例，也是一般情况下你所要做的全部工作。 在有了 C++/WinRT 投影类型值后，你可以将其视为实际 Windows 运行时类型的实例，因为它具有所有相同的成员。
 
 事实上，该投影值是一个代理；它本质上只是支持对象的智能指针。 投影值的构造函数调用 [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) 来创建 Windows 运行时支持类（本例中为 **Windows.Foundation.Uri**）的实例，并将该对象的默认接口存储在新投影值内。 如下所示，你对投影的值的成员的调用实际上通过智能指针代理，给支持对象;这是发生状态变化。
 

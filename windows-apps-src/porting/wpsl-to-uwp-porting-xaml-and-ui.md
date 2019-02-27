@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ec5f12c60e9fd244805209720e3e6d29260d5100
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 869ab9994f10070797fb4b803b1189127d84eadf
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049684"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117707"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>移植 WindowsPhone Silverlight XAML 和 UI 到 UWP
 
@@ -205,7 +205,7 @@ WindowsPhone Silverlight 应用使用**Microsoft.Phone.Controls**命名空间和
 
 ##  <a name="design-language-in-windows10"></a>在 windows 10 中的设计语言
 
-有一些在设计语言 WindowsPhone Silverlight 应用和 windows 10 应用之间的差异。 有关所有详细信息，请参阅[设计](https://dev.windows.com/design)。 不考虑设计语言更改，我们的设计原则始终保持一致：关注细节却又力求简洁（专注于内容而不是外观），显著减少视觉元素，始终忠实于数字领域；使用可视化层次结构（尤其是版式）；基于网格进行设计；通过流畅的动画带给你生动的体验。
+有一些在设计语言 WindowsPhone Silverlight 应用和 windows 10 应用之间的差异。 有关所有详细信息，请参阅[设计](https://developer.microsoft.com/en-us/windows/apps/design)。 不考虑设计语言更改，我们的设计原则始终保持一致：关注细节却又力求简洁（专注于内容而不是外观），显著减少视觉元素，始终忠实于数字领域；使用可视化层次结构（尤其是版式）；基于网格进行设计；通过流畅的动画带给你生动的体验。
 
 ## <a name="localization-and-globalization"></a>本地化和全球化
 
@@ -313,7 +313,7 @@ URI 映射和片段导航是 URI 导航技术，因此它们不适用于 UWP 导
 
 Windows 10 应用的 TextBlock 系统样式
 
-在 WindowsPhone Silverlight 应用中，默认字体系列是 Segoe WP。 在 windows 10 应用中，默认字体系列是 Segoe UI。 因此，你的应用中的字体指标可能看起来不同。 如果你想要重现 WindowsPhone Silverlight 文本的外观，可以设置你自己的指标使用[**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671)和[**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362)等属性。 有关详细信息，请参阅[字体指南](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[设计 UWP 应用](https://dev.windows.com/design)。
+在 WindowsPhone Silverlight 应用中，默认字体系列是 Segoe WP。 在 windows 10 应用中，默认字体系列是 Segoe UI。 因此，你的应用中的字体指标可能看起来不同。 如果你想要重现 WindowsPhone Silverlight 文本的外观，可以设置你自己的指标使用[**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671)和[**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362)等属性。 有关详细信息，请参阅[字体指南](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[设计 UWP 应用](https://developer.microsoft.com/en-us/windows/apps/design)。
 
 ## <a name="theme-changes"></a>主题更改
 

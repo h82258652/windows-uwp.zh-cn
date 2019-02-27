@@ -8,12 +8,12 @@ ms.date: 07/28/2017
 ms.topic: article
 keywords: windows 10, uwp, 磁贴, 磁贴通知, 磁贴内容, 架构, 磁贴负载
 ms.localizationpriority: medium
-ms.openlocfilehash: 02ac975ae3893b1d3d591133862d0ff3733cca6b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f12f1c2b6ac158b6f8e837fd3d6a64f96939ed99
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925135"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117727"
 ---
 # <a name="tile-content-schema"></a>磁贴内容架构
 
@@ -67,7 +67,7 @@ TileContent 是描述磁贴通知内容（包括视觉）的顶级对象。
 | 属性 | 类型 | 必需 | 描述 |
 |---|---|---|---|
 | **Content** | [ITileBindingContent](#itilebindingcontent) | false | 要在磁贴上显示的视觉内容。 [TileBindingContentAdaptive](#tilebindingcontentadaptive)、[TileBindingContentIconic](#TileBindingContentIconic)、[TileBindingContentContact](#TileBindingContentContact)、[TileBindingContentPeople](#TileBindingContentPeople) 或 [TileBindingContentPhotos](#TileBindingContentPhotos) 中的一个。 |
-| **Branding** | [TileBranding](#tilebranding) | 否 | 磁贴应该用来显示应用品牌的形式。 默认情况下，将从默认磁贴继承品牌。 |
+| **Branding** | TileBranding | 否 | 磁贴应该用来显示应用品牌的形式。 默认情况下，将从默认磁贴继承品牌。 |
 | **DisplayName** | 字符串 | 否 | 用来覆盖此磁贴大小的磁贴显示名称的可选字符串。 |
 | **Arguments** | 字符串 | 否 | 周年更新中的新增功能：当用户从动态磁贴启动应用时通过 LaunchActivatedEventArgs 上的 TileActivatedInfo 属性传递回应用的应用定义数据。 可以通过这些数据了解用户在点击动态磁贴时看到了哪些磁贴通知。 在没有周年更新的设备上，将忽略此功能。 |
 | **BaseUri** | Uri | 否 | 与图像源属性中的相对 URL 结合的默认基本 URL。 |
@@ -92,7 +92,7 @@ TileContent 是描述磁贴通知内容（包括视觉）的顶级对象。
 
 | 属性 | 类型 | 必需 | 描述 |
 |---|---|---|---|
-| **Children** | IList <[ITileBindingContentAdaptiveChild](#ITileBindingContentAdaptiveChild)> | false | 内联视觉元素。 可添加 [AdaptiveText](#adaptivetext)、[AdaptiveImage](#adaptiveimage) 和 [AdaptiveGroup](#adaptivegroup) 对象。 子级以垂直 StackPanel 方式显示。 |
+| **Children** | IList<ITileBindingContentAdaptiveChild> | false | 内联视觉元素。 可添加 [AdaptiveText](#adaptivetext)、[AdaptiveImage](#adaptiveimage) 和 [AdaptiveGroup](#adaptivegroup) 对象。 子级以垂直 StackPanel 方式显示。 |
 | **BackgroundImage** | [TileBackgroundImage](#tilebackgroundimage) | 否 | 一个可选的背景图像，显示在所有磁贴内容之后，全出血。 |
 | **PeekImage** | [TilePeekImage](#tilepeekimage) | 否 | 从磁贴顶部以动画形式进入的可选速览图像。 |
 | **TextStacking** | [TileTextStacking](#tiletextstacking) | 否 | 整体性控制子级内容文本堆叠（垂直对齐）。 |
