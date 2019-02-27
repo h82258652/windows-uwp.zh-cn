@@ -2,16 +2,16 @@
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: 在 Microsoft Store 购买 API 中使用此方法，可向给定用户授予免费应用或加载项。
 title: 授予免费产品
-ms.date: 03/16/2018
+ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 购买 API, 授予产品
 ms.localizationpriority: medium
-ms.openlocfilehash: 75edbe720e2e4483432d3d865650e5d7e7a24b40
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 957958891b1052be4ac9ae65d90f97ff8a44ef36
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929792"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116359"
 ---
 # <a name="grant-free-products"></a>授予免费产品
 
@@ -40,7 +40,7 @@ ms.locfileid: "8929792"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头         | 类型   | 描述                                                                                           |
+| 标头         | 类型   | 说明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
 | 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。                           |
 | Host           | 字符串 | 必须设置为值 **purchase.mp.microsoft.com**。                                            |
@@ -52,13 +52,13 @@ ms.locfileid: "8929792"
 
 | 参数      | 类型   | 说明        | 必需 |
 |----------------|--------|---------------------|----------|
-| availabilityId | string | 从 Microsoft Store 目录中授予的产品的可用性 ID。         | 是      |
-| b2bKey         | string | 代表要向其授予产品的用户的身份的 [Microsoft Store ID 密钥](view-and-grant-products-from-a-service.md#step-4)。    | 是      |
+| availabilityId | 字符串 | 从 Microsoft Store 目录中授予的产品的可用性 ID。         | 是      |
+| b2bKey         | 字符串 | 代表要向其授予产品的用户的身份的 [Microsoft Store ID 密钥](view-and-grant-products-from-a-service.md#step-4)。    | 是      |
 | devOfferId     | 字符串 | 购买后显示在“集合”项中的开发人员指定的优惠 ID。        |
 | language       | 字符串 | 用户的语言。  | 是      |
 | market         | 字符串 | 用户的市场。       | 是      |
 | orderId        | GUID   | 为订单生成的 GUID。 此值对用户而言是唯一的，但不 要求对所有订单都唯一。    | 是      |
-| productId      | string | Microsoft Store 目录中的[产品](in-app-purchases-and-trials.md#products-skus-and-availabilities)的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 产品的示例应用商店 ID 为 9NBLGGH42CFD。 | 是      |
+| productId      | 字符串 | Microsoft Store 目录中的[产品](in-app-purchases-and-trials.md#products-skus-and-availabilities)的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 产品的示例应用商店 ID 为 9NBLGGH42CFD。 | 是      |
 | quantity       | int    | 要购买的数量。 当前，唯一受支持的值为 1。 如果未指定，默认值为 1。   | 否       |
 | skuId          | string | Microsoft Store 目录中的产品 [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) 的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 SKU 的示例应用商店 ID 为 0010。     | 是      |
 
@@ -102,9 +102,9 @@ Content-Type: application/json
 | orderValidityEndTime      | 字符串                      | 在提交前，订单定价 有效期的结束时间。 不适用于免费应用。      | 是      |
 | orderValidityStartTime    | 字符串                      | 在提交前，订单定价 有效期的开始时间。 不适用于免费应用。          | 是      |
 | 购买者                 | IdentityV6                  | 描述购买者标识的对象。       | 是      |
-| totalAmount               | 十进制                     | 订单中所有项的总购买额（含税）。       | 是      |
-| totalAmountBeforeTax      | 十进制                     | 订单中所有项的总购买额（税前）。      | 是      |
-| totalChargedToCsvTopOffPI | 十进制                     | 如果使用单独的付款方式 (PI) 和存储 值 (CSV)，金额将从 CSV 中扣除。            | 是      |
+| totalAmount               | 十进制值                     | 订单中所有项的总购买额（含税）。       | 是      |
+| totalAmountBeforeTax      | 十进制值                     | 订单中所有项的总购买额（税前）。      | 是      |
+| totalChargedToCsvTopOffPI | 十进制值                     | 如果使用单独的付款方式 (PI) 和存储 值 (CSV)，金额将从 CSV 中扣除。            | 是      |
 | totalTaxAmount            | 十进制                     | 所有行项的税款总额。    | 是      |
 
 
@@ -133,11 +133,11 @@ OrderLineItemV6 对象包含以下参数。
 | isTaxIncluded           | 布尔型        | 指示税款是否包括在项目的价格明细中。                                        | 是      |
 | legacyBillingOrderId    | 字符串         | 传统的帐单 ID。                                                                                       | 否       |
 | lineItemId              | 字符串         | 此订单中项目的行项 ID。                                                                 | 是      |
-| listPrice               | 十进制        | 此订单中项目的价目表。                                                                    | 是      |
+| listPrice               | 十进制值        | 此订单中项目的价目表。                                                                    | 是      |
 | productId               | 字符串         | 表示 Microsoft Store 目录中的行项的[产品](in-app-purchases-and-trials.md#products-skus-and-availabilities)的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 产品的示例 Store ID 为 9NBLGGH42CFD。   | 是      |
 | productType             | 字符串         | 产品的类型。 支持的值包括 **Durable**、**Application** 和 **UnmanagedConsumable**。 | 是      |
 | quantity                | int            | 订购项的数量。                                                                            | 是      |
-| retailPrice             | 十进制        | 订购项的零售价格。                                                                        | 是      |
+| retailPrice             | 十进制值        | 订购项的零售价格。                                                                        | 是      |
 | revenueRecognitionState | 字符串         | 收入识别状态。                                                                               | 是      |
 | skuId                   | string         | Microsoft Store 目录中的行项的 [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) 的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 SKU 的示例 Store ID 为 0010。                                                                   | 是      |
 | taxAmount               | 十进制        | 行项的税额。                                                                            | 是      |
@@ -150,7 +150,7 @@ IdentityV6 对象包含以下参数。
 
 | 参数     | 类型   | 说明                                                                        | 必需 |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
-| IdentityType  | 字符串 | 包含值 **“pub”**。                                                      | 是      |
+| IdentityType  | string | 包含值 **“pub”**。                                                      | 是      |
 | identityValue | 字符串 | 指定的 Microsoft Store ID 密钥的 *publisherUserId* 字符串值。 | 是      |
 
 

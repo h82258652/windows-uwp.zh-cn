@@ -7,12 +7,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b9f846c9335a3c8213b7e213b354f71fdd855e4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4cfc2ac0a635e4aacdc9eeefb5097c6bd946a518
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933312"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115390"
 ---
 # <a name="gameclip-json"></a>GameClip (JSON)
  
@@ -23,21 +23,21 @@ ms.locfileid: "8933312"
  
 GameClip 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 类型| 说明| 
 | --- | --- | --- | 
 | <b>gameClipId</b>| 字符串| 分配到游戏剪辑的 ID。| 
 | <b>状态</b>| GameClipState| 在系统中的游戏剪辑的状态。| 
 | <b>dateRecorded</b>| DateTime| 日期和时间开始录制，采用 UTC （ISO 8601 格式）。| 
 | <b>lastModified</b>| DateTime| 上次修改时间的游戏剪辑或其元数据，采用 UTC （ISO 8601 格式）。| 
 | <b>userCaption</b>| 字符串| 用户输入非本地化字符串的游戏剪辑。| 
-| <b>type</b>| GameClipTypes| 剪辑的类型。 可以是多个值，并且将为以逗号分隔的如果是这样。| 
+| <b>type</b>| GameClipTypes| 剪辑的类型。 可以是多个值，并将逗号分隔的如果是这样。| 
 | <b>源</b>| GameClipSource| 如何确定该剪辑的源。| 
-| <b>可见性</b>| GameClipVisibility| 它在系统中发布后的游戏剪辑的可见性。| 
+| <b>可见性</b>| GameClipVisibility| 一旦系统中发布的游戏剪辑的可见性。| 
 | <b>durationInSeconds</b>| 32 位无符号的整数| 持续时间的游戏剪辑以秒为单位。| 
-| <b>scid</b>| 字符串| 游戏剪辑是相关联的 SCID。| 
-| <b>rating</b>| 双精度浮点数| 与游戏剪辑，0.0 到 5.0 的范围内评分。| 
-| <b>ratingCount</b>| 32 位无符号的整数| 此代码片段具有分级次数。| 
-| <b>视图</b>| 32 位无符号的整数| 视图与游戏剪辑数。| 
+| <b>scid</b>| 字符串| 到游戏剪辑相关联的 SCID。| 
+| <b>rating</b>| 双精度浮点数| 与游戏剪辑，范围介于 0.0 到 5.0 中相关评分。| 
+| <b>ratingCount</b>| 32 位无符号的整数| 此代码片段进行分级次数。| 
+| <b>视图</b>| 32 位无符号的整数| 与游戏剪辑相关的视图数。| 
 | <b>titleData</b>| 字符串| 特定于游戏的属性包中。| 
 | <b>titleData</b>| 字符串| 特定于控制台的属性包中。| 
 | <b>缩略图</b>| GameClipThumbnail 的数组| GameClipThumbnail 对象数组。| 
@@ -69,7 +69,7 @@ GameClip 对象具有以下规范。
      "views": 5,
      "thumbnails": [
        {
-         "uri": "http://gameclips.xbox.com/thumbnails/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/small.jpg",
+         "uri": "https://gameclips.xbox.com/thumbnails/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/small.jpg",
          "fileSize": 123,
          "width": 120,
          "height": 250
@@ -77,7 +77,7 @@ GameClip 对象具有以下规范。
      ],
      "gameClipUris": [
        {
-         "uri": "http://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
+         "uri": "https://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
          "fileSize": 1234565,
          "uriType": "Download",
          "expiration": "9999-12-31T23:59:59.9999999"

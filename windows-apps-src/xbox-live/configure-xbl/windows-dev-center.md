@@ -1,16 +1,16 @@
 ---
 title: 合作伙伴中心服务配置
 description: 详细说明了如何在合作伙伴中心中配置 Xbox Live 服务的主题的链接。
-ms.date: 7/30/2018
+ms.date: 07/30/2018
 ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
-ms.openlocfilehash: dc081925e1a3bd671c01794dca5e432e957a7809
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 83874add42f0a7656c249890857aa018028474a1
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946710"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115406"
 ---
 # <a name="partner-center-service-configuration"></a>合作伙伴中心服务配置
 
@@ -19,12 +19,12 @@ ms.locfileid: "8946710"
 > [!IMPORTANT]
 > 这些主题不适用于 Xbox Live 创意者计划中的主题作品。
 
-你的游戏必须启用 Xbox Live 完全访问权限，才能访问配置页面。
+若要访问的配置页，你的游戏必须启用 Xbox Live 完全访问权限。
 
-若要访问 Xbox Live 配置页中，在[合作伙伴中心](https://partner.microsoft.com/dashboard)，选择主题作品后导航到**服务** > **Xbox Live**。
+若要访问 Xbox Live 配置页中，在[合作伙伴中心](https://partner.microsoft.com/dashboard)，选择你的游戏后导航到**服务** > **Xbox Live**。
 
 
-以下主题介绍了如何通过使用合作伙伴中心配置 Xbox Live。
+下面的主题介绍如何配置 Xbox Live，方法是使用合作伙伴中心。
 
 ## <a name="in-this-section"></a>本部分内容
 

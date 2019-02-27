@@ -12,14 +12,14 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f3fd2173296c433015fa30b81c0d90e32d2d4b0
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: bee954cba446ac7dc7eb41622d9275b3b73af6ee
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036939"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116096"
 ---
-## <a name="dialog-controls"></a>对话框控件
+# <a name="dialog-controls"></a>对话框控件
 
 对话框控件是提供上下文应用信息的模式 UI 覆盖。 它们除非明确取消阻止与应用窗口的交互。 它们通常会请求用户进行某种类型的操作。
 

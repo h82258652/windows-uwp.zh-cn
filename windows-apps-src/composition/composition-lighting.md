@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5182981483069d42339ad71a5347dc9c6c36ed58
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.openlocfilehash: 733ce75942a05482ade88c1510e788f1cbd515d4
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058738"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115944"
 ---
 # <a name="using-lights-in-windows-ui"></a>Windows UI 中使用光
 
@@ -22,7 +22,7 @@ Windows.UI.Composition Api 使你能够创建实时动画和效果。 合成光�
 合成光线允许你创建有趣的 UI 通过允许：
 
 - 光独立于场景实现沉浸式方案，如音乐播放场景中的其他对象的转换。
-- 能够配对光的对象，因此它们一起移动独立于场景启用[展示](/design/style/reveal)Fluent 突出显示之类的方案的其余部分。
+- 能够配对光的对象，因此它们一起移动独立于场景启用[展示](/windows/uwp/design/style/reveal)Fluent 突出显示之类的方案的其余部分。
 - 作为一组创建材料和深度光和整个场景的转换。
 
 合成光线支持三个关键概念：**光**、**目标**和**SceneLightingEffect**。
@@ -74,7 +74,7 @@ _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock
 **环境光** | 向场景添加非环境光将关闭所有现有的光。  不面向非环境光的项目将显示为黑色。  若要照亮周围的视觉对象不定向光的自然方式，与其他光配合使用环境光。
 **光的数量** | 你可以使用任意组合任何两个非环境合成光面向你的 UI。 环境光没有限制;位置时，点和远的光。
 **生命周期** | CompositionLight 可能会遇到生命周期条件 (示例： 使用之前，垃圾回收器可能回收光对象)。  我们建议通过将光添加为成员来帮助管理生命周期的应用程序保持对你灯的引用。
-**转换** | 光必须放置在使用可视结构中的效果，例如[透视转换](/design/layout/3-d-perspective-effects)正确绘制的 UI 上方的节点。
+**转换** | 光必须放置在使用可视结构中的效果，例如[透视转换](/windows/uwp/design/layout/3-d-perspective-effects)正确绘制的 UI 上方的节点。
 **目标和坐标空间** | CoordinateSpace 是光属性必须设置中的所有视觉空间。 CompositionLight.Targets 必须 CoordinateSpace 树内。
 
 ## <a name="lighting-properties"></a>光属性

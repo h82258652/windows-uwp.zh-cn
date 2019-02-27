@@ -4,16 +4,16 @@ author: aablackm
 description: 了解如何在通用 Windows 平台 (UWP) 游戏中登录 Xbox Live 用户。
 ms.assetid: e54c98ce-e049-4189-a50d-bb1cb319697c
 ms.author: aablackm
-ms.date: 03/14/2018
+ms.date: 03/19/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 身份验证, 登录
 ms.localizationpriority: medium
-ms.openlocfilehash: adea0d0e964c994c74ccb14b55907a152858f35e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5473b7ede7731d7d07b7e5bfd72857fdb64f1c89
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929564"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115476"
 ---
 # <a name="authentication-for-uwp-projects"></a>UWP 项目的身份验证
 
@@ -21,7 +21,7 @@ ms.locfileid: "8929564"
 
 如果想要在特定设备上访问特定游戏的 Xbox Live 服务，则用户需要先进行身份验证。  游戏可以通过调用 Xbox Live Api 来启动身份验证过程。  在某些情况下，用户将会看到一个用于提供其他信息的界面，如输入要使用的 Microsoft 帐户的用户名和密码、提供游戏的授权同意、解决帐户问题、接受新的使用条款等。
 
-身份验证后，用户将与该设备，直到他们明确注销 Xbox Live 从 Xbox 应用。  允许上进行身份验证的非控制台设备 （适用于所有 Xbox Live 游戏）; 一次只有一个玩家 若要进行身份验证的非主机设备上对新玩家，经过身份验证的现有玩家必须先注销。
+身份验证后，用户将与该设备相关联，直到他们明确注销 Xbox Live 从 Xbox 应用。  只有一个玩家允许 （适用于所有 Xbox Live 游戏）; 一次中进行身份验证的非控制台设备上 若要进行身份验证的非控制台设备上对新玩家，经过身份验证的现有玩家必须先注销。
 
 ## <a name="steps-to-sign-in"></a>登录步骤
 
@@ -36,7 +36,7 @@ ms.locfileid: "8929564"
 
 ### <a name="creating-an-xboxliveuser-object"></a>创建 XboxLiveUser 对象
 
-大多数 Xbox Live 活动与 Xbox Live 用户相关。  作为游戏开发人员，你需要先创建一个代表本地用户的 XboxLiveUser 对象。
+大多数 Xbox Live 活动与 Xbox Live 用户。  作为游戏开发人员，你需要先创建一个代表本地用户的 XboxLiveUser 对象。
 
 C++：
 
@@ -86,7 +86,7 @@ Microsoft.Xbox.Services.System.SignInResult XboxLiveUser.SignInSilentlyAsync(Win
 
 * **coreDispatcher**
 
-  线程调度程序用于在线程之间进行通信。 尽管静默登录 API 不会显示任何 UI，但 XSAPI 仍需要 UI 线程调度程序用于获取与 appx 区域设置的信息。 你可以通过调用 UI 线程中的 Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher 来获取静态 UI 线程调度程序。 或者，如果你确定该 UI 将在 UI 线程上调用，则可以传递 nullptr（例如在 JS UWA 上）。
+  线程调度程序用于在线程之间进行通信。 尽管静默登录 API 不会显示任何 UI，XSAPI 仍需要 UI 线程调度程序用于获取与 appx 区域设置的信息。 你可以通过调用 UI 线程中的 Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher 来获取静态 UI 线程调度程序。 或者，如果你确定该 UI 将在 UI 线程上调用，则可以传递 nullptr（例如在 JS UWA 上）。
 
 
 静默登录尝试存在 3 种可能结果
@@ -355,13 +355,13 @@ public void OnSignOut(object sender, SignOutCompletedEventArgs e)
 
 ## <a name="determining-if-the-device-is-offline"></a>确定设备是否处于脱机状态
 
-登录 Api 仍将成功时脱机如果用户已登录一次，并且将会返回最后登录的帐户。  
+登录 Api 仍将成功时脱机如果用户已登录一次，并将返回最后登录的帐户。  
 
-如果没有用户具有已登录之前，脱机登录不会实现。
+如果没有用户已签名之前，脱机登录不会实现。
 
-如果可以脱机玩游戏 （配套模式等），可以允许用户玩游戏，并通过 WriteInGameEvent API 和连接存储 API 记录游戏进度，这两个其正常工作设备处于脱机状态时。
+如果可以脱机玩游戏 （配套模式等），均允许用户玩游戏和通过 WriteInGameEvent API 和连接存储 API 记录游戏进度，这两种正常工作设备处于脱机状态时。
 
-如果无法脱机玩游戏 （多人游戏或基于服务器的游戏等），则游戏应调用 GetNetworkConnectivityLevel API 来查明在设备处于脱机状态，并通知用户相关状态及可能的解决方案 (例如，你需要连接到 Internet 才能继续...)。
+如果无法脱机玩游戏 （多人游戏或基于服务器的游戏等），则游戏应调用 GetNetworkConnectivityLevel API 来了解设备是否处于脱机状态，并通知用户相关状态及可能的解决方案 (例如，你需要连接到 Internet 才能继续...)。
 
 ## <a name="online-status-code-samples"></a>联机状态代码示例
 

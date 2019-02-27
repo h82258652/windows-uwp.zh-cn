@@ -2,16 +2,16 @@
 title: 开发人员计划概述
 description: 了解可供使用 Xbox Live 的各种开发人员计划。
 ms.assetid: 1166308a-4079-41b4-8550-ce04b82b4f72
-ms.date: 5/30/2018
+ms.date: 05/30/2018
 ms.topic: article
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, 开发人员计划, 创意者
 ms.localizationpriority: medium
-ms.openlocfilehash: 0335711c210588142bf3d4f86acaee9705648373
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 05abd3f28328f4418f5a8a772049b3869b488ffc
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047704"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115505"
 ---
 # <a name="developer-program-overview"></a>开发人员计划概述
 

@@ -2,16 +2,16 @@
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: 使用此方法续订 Microsoft Store 密钥。
 title: 续订 Microsoft Store ID 密钥
-ms.date: 03/16/2018
+ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 收集 API, Microsoft Store 购买 API, Microsoft Store ID 密钥, 续订
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f1c6248b2d87a68b77cad6f1bdc7cce0fae587e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fd4d7ce26e12f7ff939ced8d456390b97d0c8a0d
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939088"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116033"
 ---
 # <a name="renew-a-microsoft-store-id-key"></a>续订 Microsoft Store ID 密钥
 

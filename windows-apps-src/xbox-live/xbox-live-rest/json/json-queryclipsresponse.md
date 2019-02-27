@@ -7,15 +7,15 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 23955d311d57fa3454bdb84df67ddae07a0c8548
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a0369de617fd60fcc71e7d69b46ced6b499e8de5
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918107"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115351"
 ---
 # <a name="queryclipsresponse-json"></a>QueryClipsResponse (JSON)
-包装分页信息的列表以及返回游戏剪辑的列表。 
+换行列表的分页信息以及返回游戏剪辑的列表。 
 <a id="ID4EN"></a>
 
  
@@ -23,10 +23,10 @@ ms.locfileid: "8918107"
  
 QueryClipsResponse 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 类型| 说明| 
 | --- | --- | --- | 
-| <b>gameClips</b>| GameClip 的数组| 满足最多请求 (<b>maxItems</b>) 查询的游戏剪辑的数组。| 
-| <b>pagingInfo</b>| PagingInfo| 包含所需的延续任务和列表的后续调用分页的超过了请求 (<b>maxItems</b>) 的信息。| 
+| <b>gameClips</b>| GameClip 的数组| 满足的请求限制 (<b>maxItems</b>) 查询的游戏剪辑的数组。| 
+| <b>pagingInfo</b>| PagingInfo| 包含所需的延续任务和列表的后续调用分页的超过请求限制 (<b>maxItems</b>) 的信息。| 
   
 <a id="ID4E2B"></a>
 
@@ -55,7 +55,7 @@ QueryClipsResponse 对象具有以下规范。
      "views": 5,
      "thumbnails": [
        {
-         "uri": "http://gameclips.xbox.com/thumbnails/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/small.jpg",
+         "uri": "https://gameclips.xbox.com/thumbnails/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/small.jpg",
          "fileSize": 123,
          "width": 120,
          "height": 250
@@ -63,7 +63,7 @@ QueryClipsResponse 对象具有以下规范。
      ],
      "gameClipUris": [
        {
-         "uri": "http://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
+         "uri": "https://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
          "fileSize": 1234565,
          "uriType": "Download",
          "expiration": "9999-12-31T23:59:59.9999999"
@@ -90,7 +90,7 @@ QueryClipsResponse 对象具有以下规范。
      "systemProperties": "{ 'Id': '123456', 'Location': 'C:\\videos\\123456.mp4' }",
      "thumbnails": [
        {
-         "uri": "http://gameclips.xbox.com/thumbnails/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/small.jpg",
+         "uri": "https://gameclips.xbox.com/thumbnails/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/small.jpg",
          "fileSize": 123,
          "width": 120,
          "height": 250
@@ -98,13 +98,13 @@ QueryClipsResponse 对象具有以下规范。
      ],
      "gameClipUris": [
        {
-         "uri": "http://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
+         "uri": "https://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
          "fileSize": 1234567,
          "uriType": "Download",
          "expiration": "9999-12-31T23:59:59.9999999"
        },
        {
-         "uri": "http://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/manifest",
+         "uri": "https://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/manifest",
          "fileSize": 0,
          "uriType": "SmoothStreaming",
          "expiration": "2013-01-18T11:25:51.6522794Z"

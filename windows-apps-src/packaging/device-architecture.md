@@ -1,16 +1,16 @@
 ---
 title: 应用包体系结构
 description: 详细了解在生成你的 UWP 应用包时应使用哪些处理器体系结构。
-ms.date: 7/13/2017
+ms.date: 07/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 打包, 体系结构, 包配置
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ce92f4da57b99638f393125d3aed11a4bd91bb6
-ms.sourcegitcommit: 62bc4936ca8ddf1fea03d43a4ede5d14a5755165
+ms.openlocfilehash: 338dac1d43e08257fa00b51c0c311a090f3d95c0
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "8991593"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116106"
 ---
 # <a name="app-package-architectures"></a>应用包体系结构
 

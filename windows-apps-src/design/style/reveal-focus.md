@@ -2,19 +2,19 @@
 description: 显示焦点是一种灯光效果，当用户将游戏板或键盘焦点移向它们时，可聚焦元素的边框进行动画处理。
 title: 显示焦点
 template: detail.hbs
-ms.date: 03/1/2018
+ms.date: 03/01/2018
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 15c0ff77d511e531bcb8b20b21f3c52a8c753b7a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 7bcceb8d44b6d92cab05a9c077531b3fe1b05c79
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049112"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115964"
 ---
 # <a name="reveal-focus"></a>显示焦点
 

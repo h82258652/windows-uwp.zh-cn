@@ -2,15 +2,15 @@
 title: 在 2018 年 7 月 Windows 文档中新增功能-开发 UWP 应用
 description: 新功能、 视频、 示例和开发人员指南已添加到 2018 年 7 月 Windows 10 开发人员文档。
 keywords: 新增功能，更新，功能，开发人员指南，Windows 10，7 月
-ms.date: 7/11/2018
+ms.date: 07/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 83d890983cfe32aaf1204b21552a7d72d89d9675
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 22a3a9614a4488791a36f81a3d4dedac572111b4
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049634"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115874"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>什么是 Windows 开发人员文档中 2018 年 7 月的新增功能
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d983de8f9f58e5c9fe6b048b98ea00ebef7197c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 66618d79166e06f6ee2696ed3c9f193a310b6ae9
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923407"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116339"
 ---
 # <a name="adaptive-streaming"></a>自适应流式处理
 
@@ -95,7 +95,7 @@ ms.locfileid: "8923407"
 [!code-cs[AMSDownloadCompleted](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDownloadCompleted)]
 
 ## <a name="gather-adaptive-streaming-telemetry-data-with-adaptivemediasourcediagnostics"></a>使用 AdaptiveMediaSourceDiagnostics 收集自适应流式处理遥测数据
-**AdaptiveMediaSource** 会公开 [**Diagnostics**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource?branch=master.Diagnostics) 属性，它返回 [**AdaptiveMediaSourceDiagnostics**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics) 对象。 使用此对象可为 [**DiagnosticAvailable**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics.DiagnosticAvailable) 事件进行注册。 此事件旨在用于遥测收集，而不应用于在运行时修改应用行为。 多种不同原因都会引发此诊断事件。 检查传入到事件中的 [**AdaptiveMediaSourceDiagnosticAvailableEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs) 对象的 [**DiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs.DiagnosticType) 属性，以确定引发事件的原因。 可能原因包括访问请求的资源时出错以及分析流式处理清单文件时出错。 有关可以触发诊断事件的情况的列表，请参阅 [**AdaptiveMediaSourceDiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostictype)。 与其他自适应流式处理事件的参数一样，**AdaptiveMediaSourceDiagnosticAvailableEventArgs** 提供 **RequestId** 属性，用于在不同事件之间关联请求信息。
+**AdaptiveMediaSource** 会公开 [**Diagnostics**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource) 属性，它返回 [**AdaptiveMediaSourceDiagnostics**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics) 对象。 使用此对象可为 [**DiagnosticAvailable**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics.DiagnosticAvailable) 事件进行注册。 此事件旨在用于遥测收集，而不应用于在运行时修改应用行为。 多种不同原因都会引发此诊断事件。 检查传入到事件中的 [**AdaptiveMediaSourceDiagnosticAvailableEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs) 对象的 [**DiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs.DiagnosticType) 属性，以确定引发事件的原因。 可能原因包括访问请求的资源时出错以及分析流式处理清单文件时出错。 有关可以触发诊断事件的情况的列表，请参阅 [**AdaptiveMediaSourceDiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostictype)。 与其他自适应流式处理事件的参数一样，**AdaptiveMediaSourceDiagnosticAvailableEventArgs** 提供 **RequestId** 属性，用于在不同事件之间关联请求信息。
 
 [!code-cs[AMSDiagnosticAvailable](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDiagnosticAvailable)]
 

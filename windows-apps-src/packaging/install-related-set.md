@@ -1,16 +1,16 @@
 ---
 title: 使用应用安装程序文件安装相关集
 description: 在此部分中，我们将查看允许通过应用安装程序来安装相关集所需执行的步骤。 我们还将完成相应的步骤以构建一个将定义相关集的 *.appinstaller 文件。
-ms.date: 1/4/2018
+ms.date: 01/04/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
-ms.openlocfilehash: c90fffeee7003159f58cf2e108286f4fe7732fd6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 946c0ae2251d1f75ea250d43881b29b172b9ad1d
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944029"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116159"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>使用应用安装程序文件安装相关集
 

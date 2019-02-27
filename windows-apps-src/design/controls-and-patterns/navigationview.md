@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b61c36143749ddb358cea1d4cf59f43ecb8c6338
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 4ba3a45701d82ad0b43591469bf390190ec18db0
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037089"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116449"
 ---
 # <a name="navigation-view"></a>导航视图
 
@@ -143,7 +143,7 @@ PaneDisplayMode 属性可用于定位窗格在内容上方或左侧的内容。
 NavigationView 窗格可以包含：
 
 - [NavigationViewItem](/uwp/api/windows.ui.xaml.controls.navigationviewitem)对象。 用于导航到特定页面导航项目。
-- [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator)对象。 用于对导航项分组的分隔符。 [不透明度](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity)属性设置为 0 来呈现空间作为分隔符。
+- [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator)对象。 用于对导航项分组的分隔符。 [不透明度](/uwp/api/windows.ui.xaml.uielement.opacity)属性设置为 0 来呈现空间作为分隔符。
 - [NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader)对象。 用于标记项组标头。
 - 若要允许应用级别搜索可选[AutoSuggestBox](auto-suggest-box.md)控件。 将控件分配给[NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox)属性。
 - [应用设置](../app-settings/app-settings-and-data.md)的可选入口点。 若要隐藏设置项，请将[IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible)属性设置为**false**。

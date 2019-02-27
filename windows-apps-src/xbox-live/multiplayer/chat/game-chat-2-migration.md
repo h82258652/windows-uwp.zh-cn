@@ -1,16 +1,16 @@
 ---
 title: 游戏聊天 2 迁移
 description: 了解如何迁移现有游戏聊天代码以使用游戏聊天 2。
-ms.date: 5/2/2018
+ms.date: 05/02/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天 2, 游戏聊天, 语音通信
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e4e96738f0b37342ea3e166706a7cafa4e6f185
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: b21544744f4bbe7954bd6eb29787b144bd693cd6
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981367"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116009"
 ---
 # <a name="migration-from-game-chat-to-game-chat-2"></a>从游戏聊天迁移到游戏聊天 2
 

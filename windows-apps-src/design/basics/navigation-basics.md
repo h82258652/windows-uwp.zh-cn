@@ -5,17 +5,17 @@ ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
 op-migration-status: ready
-ms.date: 7/16/2018
+ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4eb31ed1f802b8827c124958438ceb6c5902aee1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bba6d42e6ce494c0655c6b6c60db91c1e2e006e8
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944683"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116239"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP 应用的导航设计基础知识
 
@@ -188,7 +188,7 @@ ms.locfileid: "8944683"
         - 你希望为你的应用的内容的更多空间。
         - 图标不能清楚地描述你导航类别。
         
-        使用 tab 键时：
+        使用表时：
 
         - 你想要保留导航历史记录和页面状态。
         - 你预期用户经常标签之间进行切换。

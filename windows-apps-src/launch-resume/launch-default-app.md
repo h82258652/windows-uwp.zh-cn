@@ -6,12 +6,12 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 143aa8310cdfe9dd5f0be29bf07f03c23293a647
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6c5c8b99ec3646d1eebbb922557f97c9e9304ed4
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919032"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116459"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>启动 URI 的默认应用
 
@@ -46,7 +46,7 @@ URI 方案允许你通过单击超链接来打开应用。 正如可以使用 **
 <br>
 例如，以下 URI 打开默认浏览器并显示必应网站。
 
-`http://bing.com`
+`https://bing.com`
 
 你还可以启动自定义 URI 方案。 如果未安装处理该 URI 的应用，你可以建议用户安装应用。 有关详细信息，请参阅[在没有可以处理该 URI 的应用时推荐一个应用](#recommend-an-app-if-one-is-not-available-to-handle-the-uri)。
 
@@ -119,7 +119,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 调用 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 的源应用可请求在 URI 启动后停留于屏幕上。 默认情况下，Windows 会尝试在处理该 URI 的源应用和目标应用之间平等地共享所有可用空间。 源应用可使用 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 属性向操作系统指示希望其应用占用较多或较少的可用空间。 此外，还可使用 **DesiredRemainingView** 指示源应用在 URI 启动后无需停留于屏幕上，并可由目标应用完全替代。 此属性仅指定调用应用的首选窗口大小。 不指定可能会同时显示在屏幕上的其他应用的行为。
 
-**注意**Windows 时会考虑多个不同因素它确定源应用的最终窗口尺寸，例如源应用的首选项、 屏幕、 屏幕方向等上的应用数量。 设置 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 并不能保证为源应用设定具体的窗口化行为。
+**注意**Windows 时会考虑多个不同因素在确定源应用的最终窗口尺寸，例如时，源应用的首选项、 屏幕、 屏幕方向等上的应用数量。 设置 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 并不能保证为源应用设定具体的窗口化行为。
 
 ```cs
 // Set the desired remaining view.
@@ -244,4 +244,4 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 | URI 方案 | 结果 |
 |------------|---------|
-| msnweather://forecast?la= \[latitude\] 和 lo = \ [longitude\] | 启动天气应用中基于位置的地理坐标的预测页面。<br>`latitude` 指位置的纬度。<br> `longitude` 指的经度的位置。<br> |
+| msnweather://forecast?la= \[latitude\]&lo=\[longitude\] | 启动天气应用中基于位置的地理坐标预测页。<br>`latitude` 指的所在位置的纬度。<br> `longitude` 指的所在位置的经度。<br> |

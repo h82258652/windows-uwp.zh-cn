@@ -1,16 +1,10 @@
 ---
 description: 了解如何设计和编码在各种设备和屏幕大小上易于导航且外观优美的 UWP 应用。
 title: 设计基础知识
-keywords: uwp 应用布局, 通用 windows 平台, 应用设计, 界面
-ms.date: 3/7/2018
+keywords: 'uwp 应用布局, 通用 windows 平台, 应用设计, 界面'
+ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5196503a4a50d1565d00b9ac0e48e6c2d0b6e426
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946465"
 ---
 # <a name="design-basics-for-uwp-apps"></a>UWP 应用的设计基础知识
 

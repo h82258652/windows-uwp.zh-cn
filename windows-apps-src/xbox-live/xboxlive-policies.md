@@ -6,14 +6,14 @@ ms.topic: article
 layout: LandingPage
 keywords: windows 10, uwp, 游戏, xbox, xbox live, 策略
 ms.localizationpriority: medium
-ms.openlocfilehash: dae8ce84e791406a78252c231cb2cdc60caa07fb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6f4ccabd72f16a402eecce53328393425c416d36
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947495"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115367"
 ---
-## <a name="xbox-live-policies"></a>Xbox Live 策略
+# <a name="xbox-live-policies"></a>Xbox Live 策略
 
 **文档版本： 2.0**
 

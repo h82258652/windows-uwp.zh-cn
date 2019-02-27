@@ -2,15 +2,15 @@
 title: 2018 年 2 月 Windows 文档中的新增功能 - 开发 UWP 应用
 description: 新增功能、视频和开发人员指南已添加到 2018 年 2 月 Windows 10 开发人员文档
 keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 2 月
-ms.date: 2/5/2018
+ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 22ff57fb32d9c65c675ca63ae0c644b146226795
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 421fb7c973c1aaa4e9e1924548d7f11439fd5350
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044218"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115834"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>2018 年 2 月 Windows 开发人员文档中的新增功能
 

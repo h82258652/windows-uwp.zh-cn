@@ -7,12 +7,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b7c30815a2d6e9a8bcac0730f0330ea41624c3e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1c74d0831c3b841ad2a1366bd2e03fb8a9b0448d
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944071"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115364"
 ---
 # <a name="gameclipuri-json"></a>GameClipUri (JSON)
  
@@ -23,12 +23,12 @@ ms.locfileid: "8944071"
  
 GameClipUri 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 类型| 说明| 
 | --- | --- | --- | 
-| <b>uri</b>| 字符串| 为视频资产的位置 URI。| 
-| <b>fileSize</b>| 32 位无符号的整数| 缩略图图像的总文件大小。| 
+| <b>uri</b>| 字符串| 位置的视频资源的 URI。| 
+| <b>文件大小</b>| 32 位无符号的整数| 缩略图图像的总文件大小。| 
 | <b>uriType</b>| GameClipUriType| URI 的类型。| 
-| <b>到期</b>| DateTime| 此响应中包含的 URI 的到期时间。 如果 URL 为空，或者被视为过期前播放，调用方应调用 RefreshUrl API。| 
+| <b>到期</b>| DateTime| 此响应中包含的 URI 的到期时间。 如果 URL 是空或被视为过期前播放，调用方应调用 RefreshUrl API。| 
   
 <a id="ID4EMC"></a>
 
@@ -38,7 +38,7 @@ GameClipUri 对象具有以下规范。
 
 ```json
 {
-         "uri": "http://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
+         "uri": "https://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
          "fileSize": 1234565,
          "uriType": "Download",
          "expiration": "9999-12-31T23:59:59.9999999"

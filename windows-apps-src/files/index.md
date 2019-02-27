@@ -4,14 +4,8 @@ title: 文件、文件夹和库
 description: 了解有关应用设置的读取和写入、文件和文件夹选取器，以及诸如视频/音乐库的特殊“沙盒式”位置的信息。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: 'windows 10, uwp'
 ms.localizationpriority: medium
-ms.openlocfilehash: 517302b7db1e7b65ca7a181a8c766ce1e71737ac
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044541"
 ---
  # <a name="files-folders-and-libraries"></a>文件、文件夹和库
 
@@ -22,6 +16,7 @@ ms.locfileid: "9044541"
 |-------|--------------|
 | [枚举和查询文件和文件夹](quickstart-listing-files-and-folders.md) | 访问位于文件夹、库、设备或网络位置的文件和文件夹。 还可以通过构造文件和文件夹查询来查询某个位置的文件和文件夹。 |
 | [创建、写入和读取文件](quickstart-reading-and-writing-files.md) | 使用 [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) 对象读取和写入文件。 |
+| [用于向文件写入的最佳做法](best-practices-for-writing-to-files.md) | 了解有关使用各种文件写入[FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio)和[PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio)类的方法的最佳实践。 |
 | [获取文件属性](quickstart-getting-file-properties.md) | 获取由 [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) 对象表示的文件属性：顶级、基本和扩展。 |
 | [使用选取器打开文件和文件夹](quickstart-using-file-and-folder-pickers.md) | 通过让用户选取器交互来访问文件和文件夹。 你可以使用 [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881) 来获取对文件夹的访问权限。 |
 | [使用选取器保存文件](quickstart-save-a-file-with-a-picker.md) | 使用 [FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871) 让用户指定名称和他们要让应用保存文件的位置。 |

@@ -2,15 +2,15 @@
 title: 什么是 2019 年 1 月 Windows 文档新增功能-开发 UWP 应用
 description: 新功能、 视频和开发人员指南已添加到 Windows 10 开发人员文档中针对 2019 年 1 月
 keywords: 新增功能，更新，功能，开发人员指南，Windows 10 年 1 月
-ms.date: 1/17/2019
+ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cc5323ba12fa72fb5350e62f74206ea72fe96497
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: beb80c28866b8f8207f203b70cb504dcd034098d
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046127"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116249"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>什么是 Windows 开发人员文档中 2019 年 1 月的新增功能
 

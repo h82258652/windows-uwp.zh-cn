@@ -1,16 +1,16 @@
 ---
 title: PointOfService 设备功能
 description: 使用 Windows.Devices.PointOfService 命名空间需要有 PointOfService 功能
-ms.date: 05/1/2018
+ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 832881919a3ed1f44c0912703ede5948c5b10d11
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9c09a9093389fc0a917243773eae6803220ed610
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945468"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115751"
 ---
 # <a name="pointofservice-device-capability"></a>PointOfService 设备功能
 你可以通过声明应用程序包清单中的功能请求访问 PointOfService API] 你可以使用 Microsoft Visual Studio 中的清单设计器声明大多数功能，也可以手动添加。  

@@ -3,16 +3,16 @@ Description: Learn how Win32 C++ WRL apps can send local toast notifications and
 title: 从桌面 C++ WRL 应用发送本地 toast 通知
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
-ms.date: 03/7/2018
+ms.date: 03/07/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, 桌面, toast 通知, 发送 toast, 发送本地 toast, 桌面桥, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: f4b7dbe75b06e264eed67d9f08b1e12a42ecb890
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 82de349009350c970fce923a2aa503df0801c3b7
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926815"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116259"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>从桌面 C++ WRL 应用发送本地 toast 通知
 
@@ -395,7 +395,7 @@ if (SUCCEEDED(hr))
 
 ## <a name="step-10-deploying-and-debugging"></a>步骤 10：部署和调试
 
-若要部署和调试桌面桥应用，请参阅[运行、调试和测试打包的桌面应用](/porting/desktop-to-uwp-debug.md)。
+若要部署和调试桌面桥应用，请参阅[运行、调试和测试打包的桌面应用](/windows/uwp/porting/desktop-to-uwp-debug)。
 
 若要部署和调试经典 Win32 应用，必须在正常调试之前通过安装程序安装应用，以便显示包含有 AUMID 和 CLSID 的“开始”快捷方式。 出现“开始”快捷方式后，可以从 Visual Studio 中使用 F5 进行调试。
 

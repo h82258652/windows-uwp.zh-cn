@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 04a5285c39e46019275b3dd6fb3843d932b53901
-ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
+ms.openlocfilehash: 788f47c1b29766cae1f437992aee8414580f3935
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9059741"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116489"
 ---
 # <a name="designing-for-xbox-and-tv"></a>针对 Xbox 和电视进行设计
 
@@ -434,7 +434,7 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的**主�
 
 ![Pivot 下划线](images/designing-for-tv/pivot-underline.png)
 
-你可以将 [Pivot.IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) 属性设置为 `true`，以便透视表始终保持在相同的位置，而不是使选定的透视表标题始终移动到第一个位置。 这对大屏幕显示（如电视）来说是更佳的体验，因为标题换行可能会干扰用户。 如果所有透视表标题不能全部适合屏幕，有一个滚动条可以让客户看到其他标题；但是，你应确保它们全部适合屏幕以提供最佳体验。 有关详细信息，请参阅[表和透视表](../controls-and-patterns/tabs-pivot.md)。
+你可以将 [Pivot.IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) 属性设置为 `true`，以便透视表始终保持在相同的位置，而不是使选定的透视表标题始终移动到第一个位置。 这对大屏幕显示（如电视）来说是更佳的体验，因为标题换行可能会干扰用户。 如果所有透视表标题不能全部适合屏幕，有一个滚动条可以让客户看到其他标题；但是，你应确保它们全部适合屏幕以提供最佳体验。 有关详细信息，请参阅[表和透视表](/windows/uwp/design/controls-and-patterns/pivot)。
 
 ### <a name="navigation-pane-a-namenavigation-pane-"></a>导航窗格 <a name="navigation-pane" />
 

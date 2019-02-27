@@ -2,16 +2,16 @@
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: 在 Microsoft Store 收集 API 中使用此方法，以获取客户在与你的 Azure AD 客户端 ID 相关联的应用中所拥有的所有产品。 你可以将查询范围设置为特定产品，或使用其他筛选器。
 title: 查询产品
-ms.date: 03/16/2018
+ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 收集 API, 查看产品
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e0f7f8c0f682eaa129f44eaa421fabd63dbfce4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 700cb111f74a4534f2f5e1de70eddfb88b456aa7
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922464"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116189"
 ---
 # <a name="query-for-products"></a>查询产品
 
@@ -41,7 +41,7 @@ ms.locfileid: "8922464"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头         | 类型   | 描述                                                                                           |
+| 标头         | 类型   | 说明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
 | 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。                           |
 | Host           | 字符串 | 必须设置为值 **collections.mp.microsoft.com**。                                            |
@@ -67,8 +67,8 @@ UserIdentity 对象包含以下参数。
 
 | 参数            | 类型   |  说明      | 必需 |
 |----------------------|--------|----------------|----------|
-| IdentityType         | 字符串 | 指定字符串值 **b2b**。    | 是      |
-| identityValue        | string | [Microsoft Store ID 密钥](view-and-grant-products-from-a-service.md#step-4)，表示要查询其产品的用户的身份。  | 是      |
+| IdentityType         | string | 指定字符串值 **b2b**。    | 是      |
+| identityValue        | 字符串 | [Microsoft Store ID 密钥](view-and-grant-products-from-a-service.md#step-4)，表示要查询其产品的用户的身份。  | 是      |
 | localTicketReference | 字符串 | 已返回产品的请求标识符。 响应正文中返回的项目将具有匹配的 *localTicketReference*。 建议使用与 Microsoft Store ID 密钥中的 *userId* 声明相同的值。 | 是      |
 
 
@@ -76,8 +76,8 @@ ProductSkuId 对象包含以下参数。
 
 | 参数 | 类型   | 说明          | 必需 |
 |-----------|--------|----------------------|----------|
-| productId | string | Microsoft Store 目录中的[产品](in-app-purchases-and-trials.md#products-skus-and-availabilities)的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 产品的示例应用商店 ID 为 9NBLGGH42CFD。 | 是      |
-| SkuID     | string | Microsoft Store 目录中的产品 [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) 的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 SKU 的示例应用商店 ID 为 0010。       | 是      |
+| productId | 字符串 | Microsoft Store 目录中的[产品](in-app-purchases-and-trials.md#products-skus-and-availabilities)的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 产品的示例应用商店 ID 为 9NBLGGH42CFD。 | 是      |
+| SkuID     | 字符串 | Microsoft Store 目录中的产品 [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) 的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 SKU 的示例应用商店 ID 为 0010。       | 是      |
 
 
 ### <a name="request-example"></a>请求示例
@@ -133,18 +133,18 @@ CollectionItemContractV6 对象包含以下参数。
 | EndDate              | 日期/时间           | 项目的结束日期。              | 是      |
 | FulfillmentData      | 字符串             | 不适用         | 否       |
 | InAppOfferToken      | 字符串             | 分配给合作伙伴中心中的项目的开发人员指定的产品 ID 字符串。 示例产品 ID 为*product123*。 | 否       |
-| ItemID               | 字符串             | 用于从用户所拥有的其他项目标识此集合项 的 ID。 此 ID 对于每个产品都是唯一的。   | 是      |
-| localTicketReference | string             | 请求正文中上次提供的 *localTicketReference* 的 ID。                  | 是      |
+| ItemID               | string             | 用于从用户所拥有的其他项目标识此集合项 的 ID。 此 ID 对于每个产品都是唯一的。   | 是      |
+| localTicketReference | 字符串             | 请求正文中上次提供的 *localTicketReference* 的 ID。                  | 是      |
 | ModifiedDate         | 日期/时间           | 最后修改此项目的日期。              | 是      |
 | orderId              | 字符串             | 获取此项目的顺序 ID（如果存在）。              | 否       |
 | orderLineItemId      | 字符串             | 获取此项目的特定顺序的行项（如果存在） 。              | 否       |
 | OwnershipType        | string             | 字符串 *OwnedByBeneficiary*。   | 是      |
-| productId            | string             | Microsoft Store 目录中的[产品](in-app-purchases-and-trials.md#products-skus-and-availabilities)的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 产品的示例应用商店 ID 为 9NBLGGH42CFD。          | 是      |
+| productId            | 字符串             | Microsoft Store 目录中的[产品](in-app-purchases-and-trials.md#products-skus-and-availabilities)的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 产品的示例应用商店 ID 为 9NBLGGH42CFD。          | 是      |
 | productType          | 字符串             | 以下产品类型之一：**Application**、**Durable** 和 **UnmanagedConsumable**。        | 是      |
 | PurchasedCountry     | 字符串             | 不适用   | 否       |
 | 购买者            | IdentityContractV6 | 这表示项目的购买者的标识（如果存在）。 请参阅下面有关此对象的详细信息。        | 否       |
 | quantity             | 数字             | 项目的数量。 当前，这将始终为 1。      | 否       |
-| skuId                | string             | Microsoft Store 目录中的产品 [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) 的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 SKU 的示例应用商店 ID 为 0010。     | 是      |
+| skuId                | 字符串             | Microsoft Store 目录中的产品 [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) 的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 SKU 的示例应用商店 ID 为 0010。     | 是      |
 | SkuType              | 字符串             | SKU 的类型。 可能的值包括 **Trial**、**Full** 和 **Rental**。        | 是      |
 | StartDate            | 日期/时间           | 项目开始有效的日期。       | 是      |
 | status               | 字符串             | 项目的状态。 可能的值包括 **Active**、**Expired**、**Revoked** 和 **Banned**。    | 是      |

@@ -2,16 +2,16 @@
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: 使用 Microsoft Store 收集 API 中的此方法，以面向给定客户将可消费产品报告为已完成。 在用户可以重新购买可消费产品前，你的应用或服务必须面向该用户将可消费产品报告为已完成。
 title: 将可消费产品报告为已完成
-ms.date: 03/16/2018
+ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 收集 API, 完成, 可消费
 ms.localizationpriority: medium
-ms.openlocfilehash: e3271dd26a4e7eaa23d63efa3b75cf321480528d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cea8937af3df0ad1e80434d649f431d188521667
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935658"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116023"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>将可消费产品报告为已完成
 
@@ -44,7 +44,7 @@ ms.locfileid: "8935658"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头         | 类型   | 描述                                                                                           |
+| 标头         | 类型   | 说明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
 | 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。                           |
 | Host           | 字符串 | 必须设置为值 **collections.mp.microsoft.com**。                                            |
@@ -57,7 +57,7 @@ ms.locfileid: "8935658"
 | 参数     | 类型         | 说明         | 必需 |
 |---------------|--------------|---------------------|----------|
 | 受益人   | UserIdentity | 正在使用此项目的用户。 有关详细信息，请参阅下表。        | 是      |
-| ItemID        | string       | [查询产品](query-for-products.md)返回的 *itemId* 值。 将此参数与 *trackingId* 一起使用      | 否       |
+| ItemID        | 字符串       | [查询产品](query-for-products.md)返回的 *itemId* 值。 将此参数与 *trackingId* 一起使用      | 否       |
 | trackingId    | guid         | 由开发人员提供的唯一跟踪 ID。 将此参数与 *itemId* 一起使用。         | 否       |
 | productId     | string       | [查询产品](query-for-products.md)返回的 *productId* 值。 将此参数与 *transactionId* 一起使用   | 否       |
 | transactionId | guid         | 从以下源之一获取的事务 ID 值。 将此参数与 *productId* 一起使用。<ul><li>[PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) 类的 [TransactionID](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.purchaseresults.transactionid) 属性。</li><li>由 [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync)、[RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync) 或 [GetAppReceiptAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync) 返回的应用或产品收据。</li><li>[查询产品](query-for-products.md)返回的 *transactionId* 参数。</li></ul>   | 否       |
@@ -68,7 +68,7 @@ UserIdentity 对象包含以下参数。
 | 参数            | 类型   | 说明       | 必需 |
 |----------------------|--------|-------------------|----------|
 | IdentityType         | 字符串 | 指定字符串值 **b2b**。    | 是      |
-| identityValue        | string | 表示你要为其将可消费产品报告为已完成的用户身份的 [Microsoft Store ID 密钥](view-and-grant-products-from-a-service.md#step-4)。      | 是      |
+| identityValue        | 字符串 | 表示你要为其将可消费产品报告为已完成的用户身份的 [Microsoft Store ID 密钥](view-and-grant-products-from-a-service.md#step-4)。      | 是      |
 | localTicketReference | 字符串 | 已返回响应的请求标识符。 建议你使用与 Microsoft Store ID 密钥中的 *userId* [claim](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key) 相同的值。 | 是      |
 
 
