@@ -4,19 +4,19 @@ title: 传感器方向
 description: 来自 Accelerometer、Gyrometer、Compass、Inclinometer 和 OrientationSensor 类的传感器数据由其参考轴定义。 这些轴由设备的横向方向定义，并在用户转动设备时与其一起旋转。
 ms.date: 05/24/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a4c7f1ad75e1e0544486049f9bd721d8a82edf03
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941537"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623052"
 ---
 # <a name="sensor-orientation"></a>传感器方向
 
 
-**重要的 API**
+**重要的 Api**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Windows.Devices.Sensors.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn895032)
@@ -25,17 +25,17 @@ ms.locfileid: "8941537"
 
 ## <a name="display-orientation-vs-device-orientation"></a>显示方向和设备方向对比
 
-为了了解传感器的参考轴，你需要区分显示方向和设备方向。 显示方向是指方向文本且图像均显示在屏幕上，设备方向是指设备的物理定位。 在下图中，设备和显示方向都采用**横向**（请注意，所示的传感器轴仅适用于横向优先设备）。
+为了了解传感器的参考轴，你需要区分显示方向和设备方向。 显示方向是指方向文本且图像均显示在屏幕上，设备方向是指设备的物理定位。 在下图中，设备和显示方向都采用 **Landscape**（请注意，所示的传感器轴仅适用于横向优先设备）。
 
-![采用横向的显示和设备方向](images/sensor-orientation-a.PNG)
+![采用 Landscape 的显示和设备方向](images/sensor-orientation-a.PNG)
 
 下图显示了采用 **LandscapeFlipped** 的显示和设备方向。
 
 ![显示和设备方向采用 LandscapeFlipped 的显示和设备方向](images/sensor-orientation-b.PNG)
 
-下一张图片显示了采用横向的显示方向和采用横向翻转的设备方向。
+下一张图片显示了采用 Landscape 的显示方向和采用 LandscapeFlipped 的设备方向。
 
-![采用横向的显示方向和采用横向翻转的设备方向](images/sensor-orientation-c.PNG)
+![采用 Landscape 的显示方向和采用 LandscapeFlipped 的设备方向](images/sensor-orientation-c.PNG)
 
 你可以使用具有 [**CurrentOrientation**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx) 属性的 [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) 方法以通过 [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258) 类查询方向值。 然后，你可以通过与 [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142) 枚举进行比较来创建逻辑。 请记住，对于你支持的每一个方向，必须支持该方向的参考轴的转换。
 
@@ -45,10 +45,10 @@ ms.locfileid: "8941537"
 
 | Orientation | 优先横向 | 优先纵向 |
 |-------------|-----------------|----------------|
-| **横向** | ![采用横向方向的优先横向设备](images/sensor-orientation-0.PNG) | ![采用横向方向的优先纵向设备](images/sensor-orientation-1.PNG) |
-| **纵向** | ![采用纵向方向的优先横向设备](images/sensor-orientation-2.PNG) | ![采用纵向方向的优先纵向设备](images/sensor-orientation-3.PNG) |
-| **横向翻转** | ![采用横向翻转方向的优先横向设备](images/sensor-orientation-4.PNG) | ![采用横向翻转方向的优先纵向设备](images/sensor-orientation-5.PNG) | 
-| **纵向翻转** | ![采用纵向翻转方向的优先横向设备](images/sensor-orientation-6.PNG)| ![采用纵向翻转方向的优先纵向设备](images/sensor-orientation-7.PNG) |
+| **Landscape** | ![采用 Landscape 方向的优先横向设备](images/sensor-orientation-0.PNG) | ![采用 Landscape 方向的优先纵向设备](images/sensor-orientation-1.PNG) |
+| **纵向** | ![采用 Portrait 方向的优先横向设备](images/sensor-orientation-2.PNG) | ![采用 Portrait 方向的优先纵向设备](images/sensor-orientation-3.PNG) |
+| **LandscapeFlipped** | ![采用 LandscapeFlipped 方向的优先横向设备](images/sensor-orientation-4.PNG) | ![采用 LandscapeFlipped 方向的优先纵向设备](images/sensor-orientation-5.PNG) | 
+| **PortraitFlipped** | ![采用 PortraitFlipped 方向的优先横向设备](images/sensor-orientation-6.PNG)| ![采用 PortraitFlipped 方向的优先纵向设备](images/sensor-orientation-7.PNG) |
 
 ## <a name="devices-broadcasting-display-and-headless-devices"></a>广播屏幕和无外设设备的设备
 
@@ -63,10 +63,10 @@ ms.locfileid: "8941537"
 
 | 显示方向 | 用于指南针方位的参考轴 | 面朝北方时的 API 指南针方位（横向优先） | 面朝北方时的 API 指南针方位（纵向优先） |指南针方位修正（横向优先） | 指南针方位修正（纵向优先） |
 |---------------------|------------------------------------|---------------------------------------------------------|--------------------------------------------------------|------------------------------------------------|-----------------------------------------------|
-| 横向           | -Z | 0   | 270 | 方位               | （方位 + 90）% 360  |
-| 纵向            |  Y | 90  | 0   | （方位 + 270）% 360 |  方位              |
-| 横向翻转    |  Z | 180 | 90  | （方位 + 180）% 360 | （方位 + 270）% 360 |
-| 纵向翻转     |  Y | 270 | 180 | （方位 + 90）% 360  | （方位 + 180）% 360 |
+| Landscape           | -Z | 0   | 270 | 标题               | （方位 + 90）% 360  |
+| Portrait            |  Y | 90  | 0   | （方位 + 270）% 360 |  标题              |
+| LandscapeFlipped    |  Z | 180 | 90  | （方位 + 180）% 360 | （方位 + 270）% 360 |
+| PortraitFlipped     |  Y | 270 | 180 | （方位 + 90）% 360  | （方位 + 180）% 360 |
 
 修改指南针方位（如该表中所示），以便正确显示方位。 下面的代码段将演示如何执行此操作。
 
@@ -109,10 +109,10 @@ private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
 
 | 参考轴        |  X |  Y | Z |
 |-----------------------|----|----|---|
-| **横向**         |  X |  Y | Z |
+| **Landscape**         |  X |  Y | Z |
 | **纵向**          |  Y | -X | Z |
-| **横向翻转**  | -X | -Y | Z |
-| **纵向翻转**   | -Y |  X | Z |
+| **LandscapeFlipped**  | -X | -Y | Z |
+| **PortraitFlipped**   | -Y |  X | Z |
 
 以下代码示例可将这些转换应用到陀螺测试仪。
 
@@ -172,8 +172,8 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 | 显示方向  | 围绕 Z 进行逆时针旋转 | 参考四元数（反向旋转） | 参考旋转矩阵（反向旋转） | 
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
-| **横向**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
+| **Landscape**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
 | **纵向**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
-| **横向翻转** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
-| **纵向翻转**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1  0 0<br/> 0  0 1]             |
+| **LandscapeFlipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
+| **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1  0 0<br/> 0  0 1]             |
 

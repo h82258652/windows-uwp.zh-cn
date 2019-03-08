@@ -7,22 +7,22 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 18ea6af70d4c0be068ecd79b925bff69ff149a8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947454"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617852"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>使用 Windows 内置相机 UI 捕获照片和视频
 
 
 
-本文介绍如何通过 CameraCaptureUI 类使用 Windows 内置的相机 UI 捕获照片或视频。 此功能易于使用，并允许你的应用只需几行代码即可获取用户捕获的照片或视频。
+本文介绍如何使用 CameraCaptureUI 类来使用内置于 Windows 的相机 UI 捕获照片或视频。 此功能易于使用，并允许你的应用只需几行代码即可获取用户捕获的照片或视频。
 
-如果你希望提供你自己的相机 UI 或者你的方案需要对捕获操作进行更可靠的低级别控制，你应使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 对象并实现自己的捕获体验。 有关详细信息，请参阅 [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)。
+如果你希望提供你自己的相机 UI 或者你的方案需要对捕获操作进行更可靠的低级别控制，你应使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 对象并实现自己的捕获体验。 有关详细信息，请参阅[使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)。
 
 > [!NOTE]
-> 如果你的应用仅使用 CameraCaptureUI，你不应在应用清单文件中指定**网络摄像头**或**麦克风**功能。 如果指定了这些功能，应用将显示在设备的摄像头隐私设置中，但是即使用户拒绝摄像头访问应用，也不会阻止 CameraCaptureUI 捕获媒体。 这是因为 Windows 内置的摄像头应用是受信任的第一方应用，需要用户按下按钮来启动照片、音频和视频捕获。 你的应用可能无法通过 Windows 应用认证工具包认证提交到应用商店时，如果指定了网络摄像头或麦克风功能作为唯一的照片捕获机制使用 CameraCaptureUI 时。
+> 不应指定**网络摄像头**或**麦克风**应用中的功能清单文件，如果您的应用程序仅使用 CameraCaptureUI。 如果指定了这些功能，应用将显示在设备的摄像头隐私设置中，但是即使用户拒绝摄像头访问应用，也不会阻止 CameraCaptureUI 捕获媒体。 这是因为 Windows 内置的摄像头应用是受信任的第一方应用，需要用户按下按钮来启动照片、音频和视频捕获。 您的应用程序可能会失败时提交到商店中，如果使用 CameraCaptureUI 作为唯一的照片捕获机制时指定的网络摄像机或麦克风的功能的 Windows 应用程序认证工具包认证。
 > 如果使用 MediaCapture 以编程方式捕获音频、照片或视频，必须指定应用清单文件中的网络摄像头或麦克风功能。
 
 ## <a name="capture-a-photo-with-cameracaptureui"></a>使用 CameraCaptureUI 捕获照片
@@ -36,29 +36,29 @@ ms.locfileid: "8947454"
 > [!NOTE]
 > 移动设备系列中的设备不支持 **CameraCaptureUI** 中的图像处理剪裁。 在这些设备上运行应用时，将忽略 [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) 属性的值。
 
-调用 [**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br241057) 并指定 [**CameraCaptureUIMode.Photo**](https://msdn.microsoft.com/library/windows/apps/br241040) 以指定应捕获的照片。 如果捕获成功，该方法将返回包含该图像的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 实例。 如果用户取消捕获，则返回的对象为 NULL。
+调用 [**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br241057) 并指定 [**CameraCaptureUIMode.Photo**](https://msdn.microsoft.com/library/windows/apps/br241040) 以指定应捕获的照片。 如果捕获成功，该方法将返回包含该图像的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 实例。 如果用户取消捕获，则返回的对象为 Null。
 
 [!code-cs[CapturePhoto](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCapturePhoto)]
 
-为包含捕获的照片的 **StorageFile** 提供一个动态生成的名称，并将其保存在应用的本地文件夹中。 若要更好地整理所捕获的照片，可能需要将该文件移动到其他文件夹。
+将为包含捕获的照片的 **StorageFile** 提供一个动态生成的名称，并将其保存在应用的本地文件夹中。 若要更好地组织你捕获的照片，你可能希望将该文件移动到其他文件夹。
 
 [!code-cs[CopyAndDeletePhoto](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCopyAndDeletePhoto)]
 
 若要在应用中使用你的照片，你可能希望创建可以与多个不同的通用 Windows 应用功能结合使用的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 对象。
 
-首先，应在项目中包含 [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/br226400) 命名空间。
+首先，应在你的项目中包括 [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/br226400) 命名空间。
 
 [!code-cs[UsingSoftwareBitmap](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmap)]
 
-调用 [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) 以从图像文件获得一个流。 调用 [**BitmapDecoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226182) 以获取流的位图解码器。 然后，调用 [**GetSoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887332) 来获取该图像的 **SoftwareBitmap** 表示形式。
+调用 [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) 以从图像文件获得一个流。 调用 [**BitmapDecoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226182) 以获取流的位图解码器。 然后，调用 [**GetSoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887332) 以获取该图像的 **SoftwareBitmap** 表示形式。
 
 [!code-cs[SoftwareBitmap](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSoftwareBitmap)]
 
-若要在 UI 中显示该图像，请在 XAML 页面中声明 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 控件。
+若要在你的 UI 中显示该图像，请在你的 XAML 页面中声明 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 控件。
 
 [!code-xml[ImageControl](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetImageControl)]
 
-若要在 XAML 页面中使用软件位图，请在项目中包含正在使用的 [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) 命名空间。
+若要在你的 XAML 页面中使用软件位图，请在你的项目中包括 [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) 命名空间的使用。
 
 [!code-cs[UsingSoftwareBitmapSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmapSource)]
 
@@ -70,11 +70,11 @@ ms.locfileid: "8947454"
 
 若要捕获视频，请创建新的 [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 对象。 使用对象的 [**VideoSettings**](https://msdn.microsoft.com/library/windows/apps/br241059) 属性，你可以为返回的视频指定属性，例如视频的格式。
 
-调用 [**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br241057) 并指定 [**Video**](https://msdn.microsoft.com/library/windows/apps/br241059) 以指定应捕获的视频。 如果捕获成功，该方法将返回包含该视频的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 实例。 如果用户取消捕获，则返回的对象为 NULL。
+调用 [**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br241057) 并指定 [**Video**](https://msdn.microsoft.com/library/windows/apps/br241059) 以指定应捕获的视频。 如果捕获成功，该方法将返回包含该视频的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 实例。 如果用户取消捕获，则返回的对象为 Null。
 
 [!code-cs[CaptureVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCaptureVideo)]
 
-根据应用方案处理所捕获视频文件。 本文的其余部分向你介绍了如何从一个或多个已捕获的视频快速创建媒体组合并将其显示在你的 UI 中。
+针对已捕获的视频文件可以执行的操作取决于你的应用的方案。 本文的其余部分向你介绍了如何从一个或多个已捕获的视频快速创建媒体组合并将其显示在你的 UI 中。
 
 首先，添加 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) 控件，其中的视频组合将在 XAML 页面上显示。
 
@@ -88,8 +88,8 @@ ms.locfileid: "8947454"
 
 ## <a name="related-topics"></a>相关主题
 
-* [相机](camera.md)
-* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [摄像头](camera.md)
+* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 
  
 

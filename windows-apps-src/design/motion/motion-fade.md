@@ -1,19 +1,19 @@
 ---
-Description: Use fade animations to bring items into a view or to take items out of a view. The two common fade animations are fade-in and fade-out.
+Description: 使用淡化动画将项目引入或引出视图。 两个常见淡化动画是淡入和淡出。
 title: UWP 应用中的淡化动画
 ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10，uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d3fee78f3608466f588a79d2811f1464e27a0ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940136"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620412"
 ---
 # <a name="fade-animations"></a>淡化动画
 
@@ -21,7 +21,7 @@ ms.locfileid: "8940136"
 
 使用淡化动画将项目引入或引出视图。 两个常见淡化动画是淡入和淡出。
 
-> **重要 API**：[**FadeInThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210298)、[**FadeOutThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210302)
+> **重要的 Api**:[**FadeInThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210298)， [ **FadeOutThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
@@ -35,8 +35,8 @@ ms.locfileid: "8940136"
 ## <a name="related-articles"></a>相关文章
 
 * [动画概述](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [创建淡化动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [快速入门：使用库动画创建 UI 动画](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [进行淡化动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
+* [快速入门：对 UI 使用库动画进行动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**FadeInThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210298)
 * [**FadeOutThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210302)
 

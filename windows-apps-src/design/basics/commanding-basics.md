@@ -1,5 +1,5 @@
 ---
-Description: In a Universal Windows Platform (UWP) app, command elements are the interactive UI elements that enable the user to perform actions, such as sending an email, deleting an item, or submitting a form.
+Description: 在通用 Windows 平台 (UWP) 应用中，命令元素是使用户能够执行诸如发送电子邮件、删除项或提交表单等操作的交互式 UI 元素。
 title: 通用 Windows 平台 (UWP) 应用的命令设计基础知识
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
@@ -12,19 +12,19 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ac2bd55d1cea25359c3c609148c7098532d76c46
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117587"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654052"
 ---
 # <a name="command-design-basics-for-uwp-apps"></a>UWP 应用的命令设计基础知识
 
-在通用 Windows 平台 (UWP) 应用中，*命令元素*是使用户可以执行发送一封电子邮件、 删除项或提交表单等操作的交互式 UI 元素。 *命令接口*组成常见命令元素、 承载它们的命令图面，它们支持的交互以及它们提供的体验。
+在通用 Windows 平台 (UWP) 应用中，*命令元素*是允许用户执行操作，例如发送电子邮件、 删除项，或提交窗体的交互式 UI 元素。 *命令接口*由组成常用命令元素、 命令图面，托管它们、 它们支持的交互和它们提供的体验。
 
 ## <a name="provide-the-best-command-experience"></a>提供最佳的命令体验
 
-命令界面的最重要方面是要让用户完成。 规划你的应用的功能时，请考虑完成这些任务和你想要启用的用户体验所需的步骤。 完成这些体验初始草稿之后，你可以使决定在的工具和交互来实现它们。
+一个命令接口的最重要方面是你想要让用户完成。 规划您的应用程序的功能，请考虑完成这些任务和你想要启用的用户体验所需的步骤。 完成这些体验的初稿后，你可以进行决策的工具和交互来实现它们。
 
 下面是一些常见的命令体验：
 
@@ -34,7 +34,7 @@ ms.locfileid: "9117587"
 - 打开、保存和删除文件
 - 编辑或创建内容
 
-通过使用命令体验的设计。 选择你的应用的输入设备支持，以及你的应用如何响应每台设备。 通过支持最广泛的功能和首选项你使你的应用作为可用，可移植，并尽可能可访问 （有关更多详细信息，请参阅[适用于通用 Windows 平台 (UWP) 应用的命令处理设计](../controls-and-patterns/commanding.md)）。
+要与命令体验的设计创意。 选择哪个输入设备应用程序支持，并应用到每个设备的响应方式。 通过支持广泛的功能和首选项可以将你的应用作为可用，可移植，并尽可能可访问 (请参阅[发出命令的通用 Windows 平台 (UWP) 应用的设计](../controls-and-patterns/commanding.md)以了解详细信息)。
 
 
 
@@ -44,7 +44,7 @@ When designing a command interface, the most important decision is choosing what
 
 ## <a name="choose-the-right-command-elements"></a>选择正确的命令元素
 
-在命令界面中使用正确的元素可以进行直观的易于使用应用和费解、 令人困惑的应用之间的区别。 在通用 Windows 平台 (UWP) 提供的全套命令元素。 下面是一些最常见的 UWP 命令元素的列表。
+在一个命令接口中使用正确的元素可以使直观且易于使用的应用程序和困难、 令人困惑的应用程序之间的差异。 通用 Windows 平台 (UWP) 中提供一套全面的命令的元素。 下面是一些最常见的 UWP 命令元素的列表。
 
 :::row:::
     :::column:::
@@ -100,11 +100,11 @@ When designing a command interface, the most important decision is choosing what
 
 ## <a name="place-commands-on-the-right-surface"></a>将命令放置在合适的图面上
 
-在你的应用，包括应用画布或特殊命令容器，例如命令栏、 命令栏浮出控件、 菜单栏上或对话框中，可以将命令元素放置在多个图面。
+在您的应用程序，包括应用画布或特殊命令容器，如命令栏中，命令栏浮出控件、 菜单栏或对话框中，可以将命令元素放置在数量的图面上。
 
-始终尝试让用户直接操作内容而不是通过命令作用于内容，如拖放以重新排列列表项而不是上移和下移命令按钮。 
+始终尝试让用户直接操作内容而不是通过执行命令的内容，例如拖动和删除重新排列列表的项，而不是向上和向下命令按钮。 
 
-但是，这可能不可能与某些输入设备，或适应特定用户能力和首选项。 在这些情况下，应提供尽可能多的命令提示，并将这些命令元素放置在应用中的命令图面上。
+但是，这可能无法使用某些输入设备，或当以适应特定用户的能力和首选项。 在这些情况下，应提供尽可能多的命令提示，并将这些命令元素放在应用程序中的命令表面。
 
 下面列出了一些最常见的命令图面。
 
@@ -144,10 +144,10 @@ When designing a command interface, the most important decision is choosing what
 
 ## <a name="provide-command-feedback"></a>提供命令反馈 
 
-命令反馈与用户通信，，检测到交互或命令、 如何解释和处理，该命令已和命令是成功还是失败。 这可帮助用户了解他们已经完成，以及他们下一步可以做。 理想的情况下，应该在 UI 中自然地集成反馈，这样用户就不必被打断或采取额外行动（除非绝对有必要）。
+命令反馈会传达给用户交互或命令已检测到、 如何解释和处理，该命令时，该命令是成功还是失败。 这可以帮助用户了解他们已经完成，以及他们可以执行的下一步。 理想的情况下，应该在 UI 中自然地集成反馈，这样用户就不必被打断或采取额外行动（除非绝对有必要）。
 
 > [!NOTE]
-> 提供反馈，并仅在必要时才在其他地方不可用。 保持你的应用程序 UI 干净整洁除非你要添加的值。
+> 仅在必要时，仅当其他位置不可用，请提供反馈。 保留你的应用程序 UI 清晰且整洁除非要添加值。
 
 下面是几种在应用中提供反馈的方法。
 
@@ -168,7 +168,7 @@ When designing a command interface, the most important decision is choosing what
     :::column span="2":::
         <b>Flyouts</b>
 
-       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">浮出控件</a>是可以通过点击或单击浮出控件之外的某个位置来消除轻型上下文弹出窗口。
+       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">浮出控件</a>是可以通过点击或单击浮出控件外部的某个位置来取消的轻量上下文弹出。
 :::row-end:::
 
 :::row:::
@@ -187,7 +187,7 @@ When designing a command interface, the most important decision is choosing what
 
 ### <a name="when-to-confirm-or-undo-actions"></a>何时确认或撤消操作
 
-无论如何设计你的应用程序 UI 精良，所有用户都执行某项操作后悔他们。 你的应用可帮助在这些情况下，通过要求确认某个操作，或通过提供撤消最近操作的方法。
+不论如何设计良好应用程序的 UI 是，所有用户都执行需要它们没有的操作。 您的应用程序可帮助在这些情况下，通过要求确认的操作，或通过提供一种方法，若要撤消最近的操作。
 
 :::row:::
     :::column:::

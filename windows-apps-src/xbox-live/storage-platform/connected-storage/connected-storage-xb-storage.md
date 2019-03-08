@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
 ms.localizationpriority: medium
 ms.openlocfilehash: 09fce637c50b0a03230d0808e51a9e5cfadc7179
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046762"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642052"
 ---
 # <a name="managing-local-connected-storage"></a>管理本地连接存储
 使用连接存储在云中存储游戏数据时，连接存储服务还有本地存储组件。 无论你在使用电脑还是主机，都存在包含已同步到云的数据的本地连接存储数据缓存。 无论你要创建 XDK 还是 UWP 主题作品，都有工具可用来管理本地连接存储数据。
@@ -21,11 +21,11 @@ ms.locfileid: "9046762"
 |主题作品分类  |设备  |本地存储工具  |
 |---------|---------|---------|
 |XDK     |Xbox One 主机     |*xbstorage*         |
-|UWP     |电脑         |*gamesaveutil*         |
+|UWP     |PC         |*gamesaveutil*         |
 |UWP     |Xbox One 主机     |Xbox 设备门户 (XDP |)
 
 - *Xbstorage* 是命令行工具，从 XDK 命令提示符下运行，用于管理 Xbox One 主机上本地缓存的连接存储。 *Xbstorage* 工具可以在 Xbox One XDK 的以下文件路径下找到：**/Program 文件 (x86)/Microsoft Durango XDK/bin/xbstorage.exe**
-- *Gamesaveutil* 是用于管理电脑上 UWP 本地缓存的连接存储的命令行工具。 [Windows 10 SDK](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk) Fall Creators Update 及更高版本（版本 10.0.16299.15 及更高版本）附带 *Gamesaveutil* 工具。 在安装合适版本的 Windows 10 SDK 后，可以在此文件夹下找到 *gamesaveutil*：**ProgramFiles(x86)/Windows Kits/10/bin/[SDK Version]/x64/gamesaveutil.exe**。
+- *Gamesaveutil* 是用于管理电脑上 UWP 本地缓存的连接存储的命令行工具。 [Windows 10 SDK](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk) Fall Creators Update 及更高版本（版本 10.0.16299.15 及更高版本）附带 *Gamesaveutil* 工具。 安装 Windows 10 SDK 的适当版本后*gamesaveutil*可以在文件夹下找到：**ProgramFiles(x86)/Windows 工具包/10/bin / [SDK Version]/x64/gamesaveutil.exe**。
 - *Xbox 设备门户 (XDP)* 是可用来管理 Xbox One 主机上本地缓存的连接存储 UWP 数据的在线门户。 本文不介绍 XDP 的使用方法。 若要了解如何使用 XDP，请阅读 [Xbox 设备门户](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-xbox)。
 
 ## <a name="xbstorage"></a>Xbstorage
@@ -36,7 +36,7 @@ ms.locfileid: "9046762"
 
 同样，将开发电脑上 XML 文件中的数据复制到 Xbox One 开发工具包上的连接存储容器，也会导致主机开始将此数据上传到云。 但是，在一些情况下不会发生此现象：如果开发工具包无法获取锁，或者，如果主机上的容器和云中的容器之间存在数据冲突，则主机会像用户已经决定不解决冲突（通过选取一个要保留的容器版本）那样运行，并且在下次启动主题作品之前，主机会像用户处于脱机状态一样运行。
 
-这些命令有种例外情况，即 **reset** **/force**，它会为所有 SCID 和用户清除已保存数据的本地存储，但不会改变在云中存储的数据。 如果用户漫游到控制台，并在运行一个游戏后从云中下载数据，那么，这对将控制台置于它应所处的状态非常有用。
+这些命令的一个例外是**重置** **/force**清理已保存的数据的本地存储的所有 SCIDs 和用户，但不会更改存储在云中的数据。 如果用户漫游到控制台，并在运行一个游戏后从云中下载数据，那么，这对将控制台置于它应所处的状态非常有用。
 
 ### <a name="xbstorage-commands"></a>Xbstorage 命令
 
@@ -49,7 +49,7 @@ Xbstorage 具有以下六个开发人员可以在 XDK 命令提示符下用来�
 |reset    |对连接存储执行出厂重置。         |
 |import   |将数据从指定的 XML 文件导入连接存储空间。         |
 |export   |将数据从连接存储空间导出到指定的 XML 文件。         |
-|delete   |从连接存储空间删除数据。         |
+|“删除”   |从连接存储空间删除数据。         |
 |generate |生成虚拟数据并保存到指定的 XML 文件中。         |
 |simulate |模拟存储空间不足的情况。         |
 
@@ -59,9 +59,9 @@ Xbstorage 具有以下六个开发人员可以在 XDK 命令提示符下用来�
 
 清除本地主机的连接存储中的所有本地数据，将其还原为出厂设置。 已保存到云中的数据不会修改，并会根据需要下载。
 
-|选项  |说明  |
+|选项  |描述  |
 |---------|---------|
-|/force   |确认应重置连接存储。 如果运行 reset 命令时不指定 **/force**，将显示以下消息：连接存储工厂重置操作可能具有破坏性，除非存在 **/force** 标记，否则此命令不会执行重置操作。 |
+|/force   |确认应重置连接存储。 重置命令运行而不指定 **/force**会导致显示以下消息： 为连接存储工厂进行重置，此命令不会执行重置，除非具有潜在破坏性操作 **/force**标志已存在。 |
 
 <a id="xbstorage_import"></a>
 
@@ -93,7 +93,7 @@ Xbstorage 具有以下六个开发人员可以在 XDK 命令提示符下用来�
 >
 > 如果未指定 **/replace**，将在写入输入文件中指定的 blob 之前清除输入文件中指定的容器。 输入文件中未指定的连接存储空间中的容器将保持不变。
 
-|选项  |说明  |
+|选项  |描述  |
 |---------|---------|
 |*file-name*     |指定包含要导入的数据的 XML 文件。         |
 |/scid:*SCID*    |指定服务配置标识符 (SCID)。         |
@@ -111,7 +111,7 @@ Xbstorage 具有以下六个开发人员可以在 XDK 命令提示符下用来�
 
 将数据从连接存储空间导出到 **outfile** 指定的文件。    该文件是包含该数据的 XML 文件。 请参阅 [xbstorage generate](#xbstorage_generate) 了解如何生成示例。 关于该文件的 XML 格式的详细信息，请参阅本主题后面部分的[导入和导出文件格式](#xbstorage_fileformat)。 有两种指定连接存储空间的方法：
 
-- 如果使用了 **/context**参数，并且由 \<infile> 指定文件名的文件中包含正确填充的 **ContextDescription** 小节，则将使用该文件来指定连接存储空间。
+- 如果 **/context**使用参数，并通过指定的文件名\<infile > 已**ContextDescription**正确填充，则将使用该文件以指定的部分已连接的存储空间。
 - 存储空间还可以通过命令行参数部分或完全指定，这些参数优先于 **/context** 文件中指定的存储空间对应元素。
 
 用法示例：
@@ -128,7 +128,7 @@ Xbstorage 具有以下六个开发人员可以在 XDK 命令提示符下用来�
 >
 > 如果具有相同主 SCID 的应用程序正在运行，此操作可能导致争用，并且连接存储空间的内容可能会处于不确定的状态。
 
-|选项  |说明  |
+|选项  |描述  |
 |---------|---------|
 |*outfile*             |数据将导出到其中的 XML 文件。         |
 |/context:*input-file* |指定要从中读取空间信息的输入文件。         |
@@ -146,7 +146,7 @@ Xbstorage 具有以下六个开发人员可以在 XDK 命令提示符下用来�
 从连接存储空间中删除所有数据。
 有两种指定连接存储空间的方法：
 
-- 如果使用了 **/context**参数，并且由 \<infile> 指定文件名的文件中包含正确填充的 **ContextDescription** 小节，则将使用该文件来指定连接存储空间。
+- 如果 **/context**使用参数，并通过指定的文件名\<infile > 已**ContextDescription**正确填充，则将使用该文件以指定的部分已连接的存储空间。
 - 存储空间还可以通过命令行参数部分或完全指定，这些参数优先于 **/context** 文件中指定的存储空间对应元素。
 
 用法示例：
@@ -162,7 +162,7 @@ Xbstorage 具有以下六个开发人员可以在 XDK 命令提示符下用来�
 > 删除指定连接存储空间之前，系统将尝试使用与正在运行的应用获取连接存储空间时所用的相同逻辑来与云同步。
 >> 如果具有相同主 SCID 的应用程序正在运行，此操作可能导致争用，并且连接存储空间的内容可能会处于不确定的状态。
 
-|选项  |说明 |
+|选项  |描述 |
 |---------|---------|
 |/context:*input-file*     |指定要从中读取空间信息的输入文件。         |
 |/scid:*SCID*              |指定服务配置标识符 (SCID)。         |
@@ -176,7 +176,7 @@ Xbstorage 具有以下六个开发人员可以在 XDK 命令提示符下用来�
 
 `xbstorage generate *file-name* [/containers:*n*] [/blobs:*n*] [/blobsize:*n*]`
 
-生成虚拟数据并将它保存到 \<filename> 指定的文件中。 关于该文件的 XML 格式的详细信息，请参阅本主题后面部分的[导入和导出文件格式](#xbstorage_fileformat)。    服务配置标识符 (SCID) 将设置为 00000000-0000-0000-0000-000000000000，并将为每台计算机的连接存储空间设置帐户。 如果想更改这些值，可以在它生成之后直接编辑该文件。
+生成虚拟数据，并保存到文件中指定的\<文件名 >。 关于该文件的 XML 格式的详细信息，请参阅本主题后面部分的[导入和导出文件格式](#xbstorage_fileformat)。    服务配置标识符 (SCID) 将设置为 00000000-0000-0000-0000-000000000000，并将为每台计算机的连接存储空间设置帐户。 如果想更改这些值，可以在它生成之后直接编辑该文件。
 
 用法示例：
 
@@ -189,12 +189,12 @@ Xbstorage 具有以下六个开发人员可以在 XDK 命令提示符下用来�
 ```
 
 > [!NOTE]
-> 字节数据是一种简单的升序系列；例如，五字节 blob 可能包含以下字节：00 01 02 03 04。 >> 如果要指定每位用户的连接存储空间，请将 XML 文件中的**帐户**节点更改为如下内容：
+> 字节数据是一个简单的升序序列;例如，五个字节的 blob 会具有以下个字节：00 01 02 03 04. >> 如果要指定每位用户的连接存储空间，请将 XML 文件中的**帐户**节点更改为如下内容：
 >  ```
 >    <Account msa="user@domain.com"/>
 >  ```
 
-|选项  |说明  |
+|选项  |描述  |
 |---------|---------|
 |*file-name*     | 数据将写入到其中的 XML 文件。 |
 |/containers:*n* | 指定要生成的容器数 *n*。 默认数量为 2。  |
@@ -209,7 +209,7 @@ Xbstorage 具有以下六个开发人员可以在 XDK 命令提示符下用来�
 
 模拟连接存储服务的本地存储用尽情况。
 
-|选项  |说明  |
+|选项  |描述  |
 |---------|---------|
 |/reserveremainingspace | 保留连接存储中的所有剩余空间。 从连接存储中删除内容将释放你可以使用的空间。 |
 
@@ -225,10 +225,10 @@ Xbstorage 具有以下六个开发人员可以在 XDK 命令提示符下用来�
 
 `xbstorage [/?] [/X*:address* [*+accesskey*] ]`
 
-|选项  |说明  |
+|选项  |描述  |
 |---------|---------|
 | /?                           |  显示 xbstorage.exe 帮助 |
-| /X *:address* [*+accesskey*]  | 指定目标主机的主机名称或地址（显示为主机上的**工具 IP**），但不会更改默认的主机。 如果不使用此选项，则使用默认主机。*Accesskey* 是字符串，可使用它来仅限知道访问密钥的人访问主机。 通过使用命令**xbconfig**设置访问键**accesskey = *** 你密钥*;然后，重启主机以使访问密钥生效。 若要访问配置了访问密钥的主机，必须在主机的 IP 地址或主机名后使用加号 (+)，再跟访问密钥。
+| /X *:address* [*+accesskey*]  | 指定目标主机的主机名称或地址（显示为主机上的**工具 IP**），但不会更改默认的主机。 如果不使用此选项，则使用默认主机。*Accesskey* 是字符串，可使用它来仅限知道访问密钥的人访问主机。 使用命令设置的访问密钥**xbconfig** **accesskey = * * * 你密钥*; 然后，重新启动你的控制台进行的访问密钥有效。 若要访问配置了访问密钥的主机，必须在主机的 IP 地址或主机名后使用加号 (+)，再跟访问密钥。
 > [!NOTE]
 > 如果提供了访问密钥，而默认主机由 xbconnect 设置，则该访问密钥将作为默认主机的一部分地址存储。
 |
@@ -239,11 +239,11 @@ Xbstorage 具有以下六个开发人员可以在 XDK 命令提示符下用来�
 
 ### <a name="commands"></a>命令
 
-|命令  |说明  |
+|命令  |描述  |
 |---------|---------|
 |import   |从指定的 XML 文件导入数据         |
 |export   |将数据导出到指定的 xml 文件         |
-|delete   |从指定应用删除数据        |
+|“删除”   |从指定应用删除数据        |
 |reset    |仅删除指定应用的本地数据         |
 |generate |生成虚拟数据并保存到指定的 xml 文件中         |
 |simulate |模拟难以测试的特殊情况         |
@@ -252,7 +252,7 @@ Xbstorage 具有以下六个开发人员可以在 XDK 命令提示符下用来�
 
 `gamesaveutil import <filename> [/pfn:<PFN>] [/scid:<SCID>] [/replace]`
 
-导入 \<filename> 中指定的数据
+导入数据中指定\<文件名 >
 
 该文件是包含该数据的 XML 文件。 键入 `gamesaveutil help generate` 了解如何生成示例。
 
@@ -262,7 +262,7 @@ Xbstorage 具有以下六个开发人员可以在 XDK 命令提示符下用来�
 
 该 PFN 和 SCID 还可以通过命令行参数部分或完全指定，这些参数优先于输入文件中指定的 PFN 和 SCID 对应元素。
 
-|选项  |说明  |
+|选项  |描述  |
 |---------|---------|
 |/pfn:\<PFN>       |指定为其执行导入的应用的包系列名称 (PFN)。 该应用必须已经安装。         |
 |/scid:\<SCID>     |指定服务配置标识符 (SCID)。 这是来自 Xbox Live 配置的设置。         |
@@ -286,17 +286,17 @@ gamesaveutil import mydata.xml /pfn:MyGame_xxxxxx /scid:2AAEB34B-DAB2-4879-B625-
 
 `gamesaveutil export <outfile> [/pfn:<PFN>] [/scid:<SCID>] [/context:<infile>]`
 
-将数据导出到 \<outfile> 指定的文件
+将数据导出到指定的文件\<outfile >。
 
 该文件是包含该数据的 XML 文件。 键入 gamesaveutil help generate 了解如何生成示例。
 
 有两种方式可指定要导出的数据的位置：
 
-如果使用了 /context 参数，并且由 \<infile> 指定的文件名包含正确填充的 ContextDescription 小节，则将使用该文件来指定源数据的位置。
+如果使用 /context 参数，并通过指定 filename \<infile > 具有正确填充 ContextDescription 部分，则该文件将用于指定源数据的位置。
 
 该位置还可以通过命令行参数指定，这些参数优先于 /context 文件指定的对应元素。
 
-|选项  |说明  |
+|选项  |描述  |
 |---------|---------|
 |/context:\<infile>     |使用指定文件指定应用 PFN 和 SCID。         |
 |/pfn:\<PFN>            |指定从中导出数据的应用的包系列名称 (PFN)。 该应用必须已经安装。       |
@@ -321,11 +321,11 @@ gamesaveutil export exporteddata.xml /pfn:MyGame_xxxxxx /scid:2AAEB34B-DAB2-4879
 
 有两种方式可指定要删除的数据的位置：
 
-如果使用了 /context 参数，并且由 \<infile> 指定的文件名包含正确填充的 ContextDescription 小节，则将使用该文件来指定源数据的位置。
+如果使用 /context 参数，并通过指定 filename \<infile > 具有正确填充 ContextDescription 部分，则该文件将用于指定源数据的位置。
 
 该位置还可以通过命令行参数指定，这些参数优先于 /context 文件指定的对应元素。
 
-|选项  |说明  |
+|选项  |描述  |
 |---------|---------|
 |/context:\<infile>     |使用指定文件指定应用 PFN 和 SCID。         |
 |/pfn:\<PFN>            |指定从中删除数据的应用的包系列名称 (PFN)。 该应用必须已经安装。       |
@@ -350,11 +350,11 @@ gamesaveutil delete /pfn:MyGame_xxxxxx /scid:2AAEB34B-DAB2-4879-B625-D970069C1D2
 
 有两种方式可指定要删除的数据的位置：
 
-如果使用了 /context 参数，并且由 \<infile> 指定的文件名包含正确填充的 ContextDescription 小节，则将使用该文件来指定源数据的位置。
+如果使用 /context 参数，并通过指定 filename \<infile > 具有正确填充 ContextDescription 部分，则该文件将用于指定源数据的位置。
 
 该位置还可以通过命令行参数指定，这些参数优先于 /context 文件指定的对应元素。
 
-|选项  |说明  |
+|选项  |描述  |
 |---------|---------|
 |/context:\<infile>     |使用指定文件指定应用 PFN 和 SCID。         |
 |/pfn:\<PFN>            |指定从中删除数据的应用的包系列名称 (PFN)。 该应用必须已经安装。       |
@@ -375,14 +375,14 @@ gamesaveutil reset /pfn:MyGame_xxxxxx /scid:2AAEB34B-DAB2-4879-B625-D970069C1D22
 
 `gamesaveutil generate <filename> [/containers:<n>] [/blobs:<n>] [/blobsize:<n>]`
 
-生成虚拟数据并将它保存到 \<filename> 指定的文件中。
+生成虚拟数据，并保存到文件中指定的\<文件名 >。
 服务配置标识符 (SCID) 将设置为 00000000-0000-0000-0000-000000000000。 生成后，如果需要，可手动编辑该文件以更改这些值。
 
-|选项  |说明  |
+|选项  |描述  |
 |---------|---------|
-|/containers:\<n>     |指定要生成多少容器。 默认值为 2。         |
-|/blobs:\<n>          |指定每个容器要生成多少个 blob。 默认值为 3。        |
-|/blobsize:\<n>       |指定每个 blob 包含多少字节。 默认值为 1024。         |
+|/containers:\<n >     |指定要生成多少容器。 默认值为 2。         |
+|blob /:\<n >          |指定每个容器要生成多少个 blob。 默认值为 3。        |
+|/blobsize:\<n >       |指定每个 blob 包含多少字节。 默认值为 1024。         |
 
 用法示例：
 
@@ -404,7 +404,7 @@ gamesaveutil generate dummydata.xml /containers:4 /blobs:10 /blobsize:512
 
 模拟用于测试某些情况的特殊条件。
 
-|选项  |说明  |
+|选项  |描述  |
 |---------|---------|
 |/markcontainerschanged     |当应用从暂停状态恢复并获得新提供程序时，强制使所有容器都看起来像已发生更改。 影响所有应用，直至使用 /stop 清除。      |
 |/stop                      |停止所有模拟。         |
@@ -445,8 +445,8 @@ gamesaveutil generate dummydata.xml /containers:4 /blobs:10 /blobsize:512
   </XbConnectedStorageSpace>
 ```
 
-在 *gamesaveutil* 中需要针对 **import**、**export** 和 **generate** 对此 xml 文件所做的唯一更改是将 \<ContextDescription> 节点的 \<Account> 成员节点替换为 \<PackageFamilyName> 节点。
-这将改变 \<ContextDescription> 节点，从：
+若要设置格式的此 xml 所需的唯一更改**导入**，**导出**，并**生成**中*gamesaveutil*是替换\<帐户 > 的成员节点\<ContextDescription > 节点\<PackageFamilyName > 节点。
+这将更改\<ContextDescription > 从该节点：
 
 ```xml
 <ContextDescription>

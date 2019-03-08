@@ -1,29 +1,29 @@
 ---
 title: PointOfService 设备声明和启用模型
-description: 了解 PointOfService 声明和启用模型
+description: 了解有关 PointOfService 声明并启用模型
 ms.date: 06/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e7d60c0b612a8067ac4c225dff9da5da428f1a1
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117647"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639312"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>服务点设备声明和启用模型
 
-## <a name="claiming-for-exclusive-use"></a>声明独占使用
+## <a name="claiming-for-exclusive-use"></a>供独占使用声明
 
 在成功创建 PointOfService 设备对象后，你必须使用适合的设备类型声明方法进行声明，然后才能使用该设备输入或输出。  声明授予应用程序对很多设备功能的独占访问权限，以确保一个应用程序不会干扰其他应用程序使用设备。  一次只有一个应用程序可以声明独占使用 PointOfService 设备。 
 
 > [!Note]
-> 声明操作建立独占锁定到设备，但不会将其放到运行状态。  有关详细信息，请参阅[启用设备进行 I/O 操作](#enable-device-for-io-operations)。
+> 声明操作建立到设备时，排他锁，但不会将它放到操作状态。  请参阅[启用设备的 I/O 操作](#enable-device-for-io-operations)有关详细信息。
 
-### <a name="apis-used-to-claim--release"></a>Api 用于声明 / 发布
+### <a name="apis-used-to-claim--release"></a>Api 用于声明 / 版本
 
-|设备|声明 | 版本 | 
+|设备|声明 | 发布版本 | 
 |-|:-|:-|
 |BarcodeScanner | [BarcodeScanner.ClaimScannerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync) | [ClaimedBarcodeScanner.Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.close) |
 |CashDrawer | [CashDrawer.ClaimDrawerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.cashdrawer.claimdrawerasync) | [ClaimedCashDrawer.Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.close) | 
@@ -32,9 +32,9 @@ ms.locfileid: "9117647"
 |PosPrinter | [PosPrinter.ClaimPrinterAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.claimprinterasync) |  [ClaimedPosPrinter.Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.close) | 
  | 
 
-## <a name="enable-device-for-io-operations"></a>启用设备进行 I/O 操作
+## <a name="enable-device-for-io-operations"></a>启用设备的 I/O 操作
 
-声明操作只是建立到设备，独占权限，但不会将其放到运行状态。  若要接收事件或执行任何操作，输出必须启用使用**EnableAsync**的设备。  相反，你可以调用**DisableAsync**停止侦听设备或执行输出中的事件。  你还可以使用**IsEnabled**来确定你的设备的状态。
+声明操作只需建立到设备，独占权限，但不会将它放到操作状态。  若要接收事件或执行任何输出操作必须启用设备使用**EnableAsync**。  相反，您可以调用**DisableAsync**停止侦听事件，从设备或执行输出。  此外可以使用**IsEnabled**以确定你的设备的状态。
 
 ### <a name="apis-used-enable--disable"></a>使用 Api 启用/禁用
 
@@ -47,7 +47,7 @@ ms.locfileid: "9117647"
 |ClaimedPosPrinter | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.disableasyc) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.isenabled) |
 |
 
-¹ 行显示不需要显式启用 I/O 操作的设备。  通过执行 I/O PointOfService LineDisplay Api 来自动执行启用。
+¹ 行显示不需要您以显式方式启用适用于 I/O 操作的设备。  通过执行 I/O PointOfService LineDisplay Api 自动执行启用。
 
 ## <a name="code-sample-claim-and-enable"></a>代码示例： 声明和启用
 
@@ -93,7 +93,7 @@ ms.locfileid: "9117647"
 
 如果具有有效声明的应用程序未立即使用 **RetainDevice** 响应，将假设该应用程序已暂停或不需要设备，声明将被撤销并给予新应用程序。 
 
-第一步是创建响应具有**RetainDevice** **ReleaseDeviceRequested**事件的事件处理程序。  
+第一步是创建事件处理程序的响应**ReleaseDeviceRequested**具有事件**RetainDevice**。  
 
 ```Csharp
     /// <summary>
@@ -107,7 +107,7 @@ ms.locfileid: "9117647"
     }
 ```
 
-然后与你已声明的设备注册事件处理程序
+然后在关联中与你的已声明设备注册的事件处理程序
 
 ```Csharp
     BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(DeviceId);

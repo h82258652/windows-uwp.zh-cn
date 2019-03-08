@@ -5,11 +5,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 2c7dc6fab021c11c98276ee53af161bea25601a9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926496"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57663352"
 ---
 # <a name="ssh-pins-api-reference"></a>SSH Pin 码 API 参考
 可以使用此 REST API 删除开发工具包上的所有受信任 SSH Pin 码。
@@ -20,7 +20,7 @@ ms.locfileid: "8926496"
 
 方法      | 请求 URI
 :------     | :-----
-删除 | /ext/app/sshpins
+DELETE | /ext/app/sshpins
 <br />
 **URI 参数**
 
@@ -42,14 +42,14 @@ ms.locfileid: "8926496"
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 说明
+HTTP 状态代码      | 描述
 :------     | :-----
 204 | 清除 Pin 码的请求已成功。
 4XX | 错误代码
 5XX | 错误代码
 
 <br />
-**可用设备系列**
+**可用的设备系列**
 
 * Windows Xbox
 

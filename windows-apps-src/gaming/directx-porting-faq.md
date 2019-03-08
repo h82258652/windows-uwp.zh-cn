@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx 11
 ms.localizationpriority: medium
 ms.openlocfilehash: d2f883e62cf7c61560295673cf48cf891befed91
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044451"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662612"
 ---
 # <a name="directx-11-porting-faq"></a>DirectX 11 移植常见问题
 
@@ -28,12 +28,12 @@ Direct3D 11 是对 Direct3D 9 的重大升级。 其中包含了多种范式转�
 ## <a name="what-is-the-new-device-context-for-am-i-supposed-to-replace-my-direct3d-9-device-with-the-direct3d-11-device-the-device-context-or-both"></a>新的设备上下文的作用是什么？ 我应该将我的 Direct3D 9 设备替换为 Direct3D 11 设备、设备上下文，还是替换为这两者？
 
 
-现在，Direct3D 设备用于在视频内存中创建资源，而设备上下文用于设置管道状态以及生成呈现命令。 有关详细信息，请参阅 [Direct3D 9 之后的版本中最重要的更改是什么？](understand-direct3d-11-1-concepts.md)
+现在，Direct3D 设备用于在视频内存中创建资源，而设备上下文用于设置管道状态以及生成呈现命令。 有关详细信息，请参阅：[什么是自 Direct3D 9 的最重要的更改？](understand-direct3d-11-1-concepts.md)
 
 ##  <a name="do-i-have-to-update-my-game-timer-for-uwp"></a>必须针对 UWP 更新游戏计时器吗？
 
 
-[**QueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/desktop/ms644904) 以及 [**QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905) 仍然是为 UWP 应用实现游戏计时器的最佳方法。
+[**QueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/desktop/ms644904)，连同[ **QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905)，仍是实现一个游戏计时器适用于 UWP 应用的最佳方法。
 
 你应该注意计时器和 UWP 应用生命周期的细微差别。 暂停/恢复与玩家重新启动桌面游戏有所不同，因为你的游戏将 从该游戏的上次播放时间点及时恢复一个快照。 如果经过了很长时间（例如，几周），那么某些游戏计时器实现可能无法正常工作。 当游戏恢复时，你可以使用应用生命周期事件来重置你的计时器。
 
@@ -44,10 +44,10 @@ Direct3D 11 是对 Direct3D 9 的重大升级。 其中包含了多种范式转�
 
 [DirectX 工具包 (DirectXTK)](https://go.microsoft.com/fwlink/p/?LinkID=248929) 社区项目提供用于 Direct3D 11 的帮助程序类。
 
-##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>如何保留桌面和 Microsoft 应用商店的代码路径？
+##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>如何维护桌面和 Microsoft Store 的代码路径？
 
 
-标题为[双重用途的游戏编码技术的](https://go.microsoft.com/fwlink/p/?LinkID=286210)Chuck walbourn 编写的文章系列提供有关桌面和 Microsoft 应用商店代码路径之间共享代码的指南。
+Chuck Walbourn 标题为的系列文章[两用游戏的编码技术](https://go.microsoft.com/fwlink/p/?LinkID=286210)提供了在桌面和 Microsoft Store 的代码路径之间共享代码的指南。
 
 ##  <a name="how-do-i-load-image-resources-in-my-directx-uwp-app"></a>如何在 DirectX UWP应用中加载图像资源？
 
@@ -83,7 +83,7 @@ Win32 桌面应用程序仍然使用 DirectSetup，因此如果你还要升级�
 
 -   请阅读[转换到 Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb204851)。
 -   确保游戏没有固定管道残存 - 请参阅[已弃用的功能](https://msdn.microsoft.com/library/windows/desktop/cc308047)。
--   然后，获取 DirectX 9 移植路径：[从 D3D 9 移植到 UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md)。
+-   然后执行 DirectX 9 的迁移路径：[从 D3D 端口 9 到 UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md)。
 
 ##  <a name="can-i-port-my-directx-10-or-11-game-to-uwp"></a>是否可以将 DirectX 10 或 DirectX 11 游戏移植到 UWP？
 
@@ -98,7 +98,7 @@ DirectX 10.x 和 DirectX 11 桌面游戏可轻松移植到 UWP。 请参阅 [迁
 ## <a name="how-do-i-turn-on-antialiasing"></a>如何打开抗锯齿？
 
 
-创建 Direct3D 设备时会启用抗锯齿（多重采样）。 通过调用 [**CheckMultisampleQualityLevels**](https://msdn.microsoft.com/library/windows/desktop/ff476499) 来枚举多重采样支持，然后在调用 [**CreateSurface**](https://msdn.microsoft.com/library/windows/desktop/bb174530) 时在 [**DXGI\_SAMPLE\_DESC structure**](https://msdn.microsoft.com/library/windows/desktop/bb173072) 中设置多重采样选项。
+创建 Direct3D 设备时会启用抗锯齿（多重采样）。 通过调用枚举支持多级取样[ **CheckMultisampleQualityLevels**](https://msdn.microsoft.com/library/windows/desktop/ff476499)，然后设置中的多重采样选项[ **DXGI\_示例\_DESC 结构**](https://msdn.microsoft.com/library/windows/desktop/bb173072)当你调用[**用于 CreateSurface**](https://msdn.microsoft.com/library/windows/desktop/bb174530)。
 
 ## <a name="my-game-renders-using-multithreading-andor-deferred-rendering-what-do-i-need-to-know-for-direct3d-11"></a>我的游戏使用多线程和/或延迟呈现来进行呈现。 对于 Direct3D 11，我需要了解哪些内容？
 
@@ -110,8 +110,8 @@ DirectX 10.x 和 DirectX 11 桌面游戏可轻松移植到 UWP。 请参阅 [迁
 
 请访问以下主题：
 
--   [HLSL 编程指南](https://msdn.microsoft.com/library/windows/desktop/bb509635)
--   [Direct3D 10 常见问题](https://msdn.microsoft.com/library/windows/desktop/ee416643)
+-   [Hlsl 编程指南](https://msdn.microsoft.com/library/windows/desktop/bb509635)
+-   [Direct3D 10 方面的常见问题](https://msdn.microsoft.com/library/windows/desktop/ee416643)
 
 ## <a name="what-should-i-use-instead-of-the-x-file-format-for-my-models"></a>我应该对我的模型使用哪种文件格式来替代 .x 文件格式？
 
@@ -121,14 +121,14 @@ DirectX 10.x 和 DirectX 11 桌面游戏可轻松移植到 UWP。 请参阅 [迁
 ## <a name="how-do-i-debug-my-shaders"></a>如何调试着色器？
 
 
-Microsoft Visual Studio2015 包含针对 DirectX 图形诊断工具。 请参阅[调试 DirectX 图形](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)。
+Microsoft Visual Studio 2015 包括对 DirectX 图形诊断工具。 请参阅[调试 DirectX 图形](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)。
 
 ##  <a name="what-is-the-direct3d-11-equivalent-for-x-function"></a>*x* 函数的 Direct3D 11 等同项是什么？
 
 
 请参阅“将 DirectX 9 功能映射到 DirectX 11 API”中提供的[函数映射](feature-mapping.md#function-mapping)。
 
-##  <a name="what-is-the-dxgiformat-equivalent-of-y-surface-format"></a>*y* 图面格式的 DXGI\_FORMAT 等同项是什么？
+##  <a name="what-is-the-dxgiformat-equivalent-of-y-surface-format"></a>什么是 DXGI\_格式的等效*y*图面格式？
 
 
 请参阅“将 DirectX 9 功能映射到 DirectX 11 API”中提供的[图面格式映射](feature-mapping.md#surface-format-mapping)。

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛
 ms.localizationpriority: medium
 ms.openlocfilehash: 891fa8da1ca6e26128e0a33d28a505a18e99662a
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117563"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659882"
 ---
 # <a name="arena-title-integration-guide"></a>Arena 游戏集成指南
 
@@ -49,7 +49,7 @@ Arena 协议激活 URI 包含与锦标赛有关的信息、比赛会话以及当
 
 以下部分对每个步骤进行了详细介绍。
 
-### <a name="1--protocol-activation"></a>1. 协议激活
+### <a name="1--protocol-activation"></a>1.协议激活
 
 当比赛为用户准备就绪后，Arena UI 通过对你的游戏进行协议激活来启动。 这里有两种情况：你的游戏可能在此时启动，或者已经正在运行。 这两种情况类似于用户接受多人游戏邀请后游戏被激活时发生的情况。
 
@@ -88,14 +88,14 @@ ms-xbl-{titleIdHex}://
 
 参数 | 描述
 --- | ---
-**操作** | 唯一支持的操作是“joinGame”。 如果缺少**操作**或为其指定了另一个值，则忽略激活。
+**action** | 唯一支持的操作是“joinGame”。 如果缺少**操作**或为其指定了另一个值，则忽略激活。
 **joinerXuid** | **joinerXuid** 是尝试在锦标赛比赛中进行游戏的已登录用户的 XUID。 你的游戏必须允许切换到该用户的上下文。 如果 **joinerXuid** 未登录，你的游戏必须提示用户通过调出帐户选取器来进行登录。 XUID 始终以十进制表示。
-**organizerId、tournamentId** | **organizerId** 和 **tournamentId** 一起使用时，构成与比赛关联的锦标赛的唯一标识符。 如果你选择在你的游戏中显示它，则可使用此标识符从“锦标赛中心”检索与锦标赛有关的更多详细信息。
+**organizerId tournamentId** | **organizerId** 和 **tournamentId** 一起使用时，构成与比赛关联的锦标赛的唯一标识符。 如果你选择在你的游戏中显示它，则可使用此标识符从“锦标赛中心”检索与锦标赛有关的更多详细信息。
 **teamId** | **teamId** 是在用户（由 **joinerXuid** 参数指定）加入的锦标赛上下文中团队的唯一标识符。 与 **organizerId** 和 **tournamentId** 参数类似，你可以使用 **teamId** 选择性地从“锦标赛中心”检索与团队有关的信息。
-**scid、templateName、name** | 这些参数一起用来标识会话。 这些也是在指向会话的 MPSD URI 路径中的三个参数：</br> </br>`https://sessiondirectory.xboxlive.com/serviceconfigs/{scid}/sessiontemplates/{templateName}/sessions{name}`.</br></br>在 XSAPI 中，它们是 `multiplayer_session_reference ` 构造函数的三个参数。
-**returnUri、returnPfn** | **returnUri** 是使用户返回到 Xbox Arena UI 的协议激活 URI。 **returnPfn** 参数可能存在，也可能不存在。 如果存在，它是用于处理 **returnUri** 的应用的产品系列名称 (PFN)。 有关演示如何使用这些值的示例代码，请参阅[返回到 Xbox Arena UI](#4returning-to-the-xbox-arena-ui)。
+**scid，模板名称，名称** | 这些参数一起用来标识会话。 这些也是在指向会话的 MPSD URI 路径中的三个参数：</br> </br>`https://sessiondirectory.xboxlive.com/serviceconfigs/{scid}/sessiontemplates/{templateName}/sessions{name}`”。</br></br>在 XSAPI 中，它们是 `multiplayer_session_reference ` 构造函数的三个参数。
+**returnUri returnPfn** | **returnUri** 是使用户返回到 Xbox Arena UI 的协议激活 URI。 **returnPfn** 参数可能存在，也可能不存在。 如果存在，它是用于处理 **returnUri** 的应用的产品系列名称 (PFN)。 有关演示如何使用这些值的示例代码，请参阅[返回到 Xbox Arena UI](#4returning-to-the-xbox-arena-ui)。
 
-### <a name="2--playing-the-match"></a>2. 进行比赛
+### <a name="2--playing-the-match"></a>2.播放匹配
 
 当锦标赛组织者创建 MPSD 会话时，用户被设置为该会话的非活动成员。 你的游戏必须立即使用 `multiplayer_session::join()` 将玩家设置为活动状态。 这表明对于 Xbox Live 和比赛中的其他用户而言，该用户位于你的游戏中且已准备就绪。
 
@@ -103,7 +103,7 @@ ms-xbl-{titleIdHex}://
 
 你的游戏查找每位成员的 `/member/{index}/constants/system/team` 属性 (`multiplayer_session_member::team_id()`) 以确定每位成员属于哪个团队。
 
-你的游戏还使用会话确定比赛设置，如地图和模式。 这些特定于游戏的设置可以在会话模板中设置，也可以作为锦标赛定义的一部分设置为自定义常量。 （有关详细信息，请参阅[为 Arena 配置游戏](#configuring-a-title-for-arena)。）下面是一个示例：
+你的游戏还使用会话确定比赛设置，如地图和模式。 这些特定于游戏的设置可以在会话模板中设置，也可以作为锦标赛定义的一部分设置为自定义常量。 (有关详细信息，请参阅[竞技场为配置标题](#configuring-a-title-for-arena)。)下面是一个示例：
 
 ```json
 {
@@ -122,7 +122,7 @@ ms-xbl-{titleIdHex}://
 
 一般情况下，你的游戏应将 Arena 会话与自己的 MPSD 会话一样同等对待。 例如，它可以创建句柄和订阅 RTA 通知。 但有几个区别。 例如，你的游戏无法更改游戏会话的名单或使用会话的服务质量 (QoS) 功能，且它必须参与仲裁。 此会话的完整要求包含在本文档的后面部分。
 
-### <a name="3--reporting-results"></a>3. 报告结果
+### <a name="3--reporting-results"></a>3.报告结果
 
 比赛结果使用仲裁功能通过会话报告回 Arena 和 TO。 仲裁是使用会话确保比赛安全和报告结果的框架。
 
@@ -130,11 +130,11 @@ ms-xbl-{titleIdHex}://
 
 ![](../../images/arena/arbitration-timeline.png)
 
-在作废时间（即开始时间 (`multiplayer_session_arbitration_server::arbitration_start_time()`) 加上作废超时）之前，会话中必须至少有一个玩家处于活动状态。作废超时以毫秒为单位，在会话中位于 `/constants/system/arbitration/forfeitTimeout` (`multiplayer_session_constants::forfeit_timeout()`)。 如果在作废时间前没有人作为活动状态加入会话，则比赛取消。
+至少一个播放机必须是 forfeit 时间，这是开始时间之前的会话中处于活动状态 (`multiplayer_session_arbitration_server::arbitration_start_time()`) 以及 forfeit 超时。Forfeit 超时是会话中以毫秒为单位在若干`/constants/system/arbitration/forfeitTimeout`(`multiplayer_session_constants::forfeit_timeout()`)。 如果在作废时间前没有人作为活动状态加入会话，则比赛取消。
 
 仲裁超时以毫秒为单位，位于 `/constants/system/arbitration/arbitrationTimeout`(`multiplayer_session_constants::arbitration_timeout()`)。 仲裁时间是开始时间加上仲裁超时值，表示玩家必须完成比赛并且报告结果的截止时间。 此值由游戏发布者在会话模板或游戏模式中进行设置。 将它设置为允许你的游戏完成比赛所需的最长时间。
 
-你的游戏可以在开始时间与仲裁时间之间的任何时间报告结果。 在会话的每位活动成员提交结果后，仲裁发生在作废时间与仲裁时间之间的任何时间。 例如，如果在作废时间只有一位成员在会话中处于活动状态，则他们可以（且应该）发布结果，且会发生仲裁。 无论在仲裁时间有多少结果可用，如果尚未发生仲裁，则会发生仲裁。 如果在到达仲裁时间时没有提交结果，则比赛中的所有参与者均被判输。
+你的游戏可以在开始时间与仲裁时间之间的任何时间报告结果。 在会话的每位活动成员提交结果后，仲裁发生在作废时间与仲裁时间之间的任何时间。 例如，如果在作废时间只有一位成员在会话中处于活动状态，则他们可以（且应该）发布结果，且会发生仲裁。 无论在仲裁时间有多少个结果可用，如果尚未仲裁，都会发生仲裁。 如果在到达仲裁时间时没有提交结果，则比赛中的所有参与者均被判输。
 
 也有可能游戏服务器通过在任何时间写入仲裁结果的简单方法来强制仲裁。
 
@@ -216,10 +216,10 @@ multiplayer_session_write_mode::update_existing)
 
 **resultState** 可能包括：
 
-* “completed”：所有活动的玩家均已报告结果。
-* “partialresults”：部分但不是所有活动的玩家在仲裁超时前报告了结果。
-* “noresults”：没有活动的玩家在仲裁超时前报告结果。
-* “canceled”：在作废超时前没有活动的玩家到达。
+* "已完成":所有活动的播放机报告结果。
+* "partialresults":某些但并非所有活动的播放机报告仲裁超时之前的结果。
+* "noresults":无活动的播放机报告仲裁超时之前的结果。
+* "取消":没有活动的播放机结束 forfeit 超时前到达。
 
 如果是“noresults”和“canceled”，则省略结果。
 
@@ -229,7 +229,7 @@ multiplayer_session_write_mode::update_existing)
 
 当 **resultSource** 为“仲裁”（且 **resultState** 为“completed”或“partialresults”）时，提供的结果将与至少一个玩家报告的结果完全相同。
 
-### <a name="4--returning-to-the-xbox-arena-ui"></a>4. 返回到 Xbox Arena UI
+### <a name="4--returning-to-the-xbox-arena-ui"></a>4.返回到 Xbox 竞技场 UI
 
 比赛结束（或可能响应玩家放弃正在进行的比赛的请求）时，显示一个供玩家返回到他们加入比赛的 Xbox Arena UI 位置的选项。 这可能从比赛后结果屏幕或任何其他游戏结束 UI 执行。
 
@@ -324,7 +324,7 @@ void Sample::LaunchReturnUi(Uri ^returnUri, String ^returnPfn, User ^currentUser
 
 ## <a name="configuring-a-title-for-arena"></a>为 Arena 配置游戏
 
-若要为 Arena 启用游戏，一些额外步骤都是必需时在 Xbox 开发人员门户 (XDP) 或[合作伙伴中心](https://partner.microsoft.com/dashboard)中对其进行配置。
+若要启用用于竞技场的标题，请执行一些其他步骤时所需将其配置在 Xbox 开发人员门户 (XDP) 或[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 
 ### <a name="enabling-arena-for-your-title"></a>为你的游戏启用 Arena
 
@@ -337,11 +337,11 @@ void Sample::LaunchReturnUi(Uri ^returnUri, String ^returnPfn, User ^currentUser
 * **启用 Arena** - 选择此复选框为此沙盒启用 Arena。
 * **Arena 功能** - 此部分包括在沙盒中启用用户生成的锦标赛的复选框和启用跨平台游戏，允许多个平台上的用户参加同一个锦标赛的复选框。
 * **Arena 平台** - 你可以为你的游戏选择玩锦标赛的平台。
-* **锦标赛资产** -（以前位于“多人游戏和匹配”部分。）这些是你的游戏的锦标赛图像。
+* **联赛资产**– （以前在之多人游戏和匹配部分中。）这些是你的标题的联赛映像。
 
-Arena 还可以在启用在合作伙伴中心中下的 Xbox Live 服务的**锦标赛**菜单中。
+此外可以在合作伙伴中心启用竞技场**联赛**Xbox Live 服务下的菜单。
 
-![在合作伙伴中心中的 arena 菜单](../../images/arena/Arena_On_WDC.JPG)
+![在合作伙伴中心竞技场菜单](../../images/arena/Arena_On_WDC.JPG)
 
 您必须发布服务配置，你的更改才会生效。 目前不支持通过 UDC 进行自助式 Arena 配置。 如果你使用 UDC 进行服务配置，则与你的开发客户经理一起进行 Arena 入门培训。
 
@@ -417,4 +417,4 @@ Arena 会话始终是版本 1。 将 **inviteProtocol** 设置为“tournamentGa
         }
 ```
 
-最后，需要 **maxMembersCount** 系统设置。 将其设置为可以进行锦标赛比赛的玩家的总数量。 玩家数量可以进一步通过游戏模式设置进行限制，因此请确保在会话中设定的值表示你的游戏支持的最大玩家总数量。 例如，如果你的游戏支持比赛的最大玩家数量是 5 对 5，则将 **maxMembersCount** 设置为 10。 此 MPSD 模板可用来支持最多为 **maxMembersCount** 的任何玩家数量的比赛。
+最后，需要 **maxMembersCount** 系统设置。 将其设置为可以进行锦标赛比赛的玩家的总数量。 玩家数量可以进一步通过游戏模式设置进行限制，因此请确保在会话中设定的值表示你的游戏支持的最大玩家总数量。 例如，如果匹配项支持您的游戏的玩家的最大数目为 5 vs。5，设置**maxMembersCount**为 10。 此 MPSD 模板可用来支持最多为 **maxMembersCount** 的任何玩家数量的比赛。

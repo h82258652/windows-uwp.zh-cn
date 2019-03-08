@@ -1,5 +1,5 @@
 ---
-Description: The core text APIs in the Windows.UI.Text.Core namespace enable a Universal Windows Platform (UWP) app to receive text input from any text service supported on Windows devices.
+Description: Windows.UI.Text.Core 命名空间中的核心文本 API 支持通用 Windows 平台 (UWP) 应用通过 Windows 设备上受支持的任何文本服务接收文本输入。
 title: 自定义文本输入概述
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
@@ -9,19 +9,19 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: dfb2a5203d2a8e5c497fa427c6a2a7ed5fe2302d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046177"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638702"
 ---
 # <a name="custom-text-input"></a>自定义文本输入
 
 
 
-[**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) 命名空间中的核心文本 API 支持通用 Windows 平台 (UWP) 应用通过 Windows 设备上受支持的任何文本服务接收文本输入。 该 API 类似于[文本服务框架](https://msdn.microsoft.com/library/windows/desktop/ms629032) API，因此应用不需要详细了解该文本服务。 这使应用接收的文本可以是任何语言以及来自任何输入类型，例如键盘、语音或笔。
+[  **Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) 命名空间中的核心文本 API 支持通用 Windows 平台 (UWP) 应用通过 Windows 设备上受支持的任何文本服务接收文本输入。 该 API 类似于[文本服务框架](https://msdn.microsoft.com/library/windows/desktop/ms629032) API，因此应用不需要详细了解该文本服务。 这使应用接收的文本可以是任何语言以及来自任何输入类型，例如键盘、语音或笔。
 
-> **重要 API**：[**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238)、[**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
+> **重要的 Api**:[**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238), [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
 
 ## <a name="why-use-core-text-apis"></a>为什么使用核心文本 API？
 
@@ -36,7 +36,7 @@ ms.locfileid: "9046177"
 下面简单介绍了文本输入系统。
 
 -   “应用程序”表示托管使用核心文本 API 生成的自定义编辑控件的 UWP 应用。
--   [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) API 有助于通过 Windows 与文本服务进行通信。 文本编辑控件和文本服务之间的通信主要通过 [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) 对象进行处理，该对象提供的方法和事件有利于通信。
+-   [  **Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) API 有助于通过 Windows 与文本服务进行通信。 文本编辑控件和文本服务之间的通信主要通过 [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) 对象进行处理，该对象提供的方法和事件有利于通信。
 
 ![核心文本体系结构图示](images/coretext/architecture.png)
 
@@ -54,14 +54,14 @@ ms.locfileid: "9046177"
 
 文本范围和选择由包含两个字段的 [**CoreTextRange**](https://msdn.microsoft.com/library/windows/apps/dn958201) 结构表示：
 
-| 字段                  | 数据类型                                                                 | 说明                                                                      |
+| 字段                  | 数据类型                                                                 | 描述                                                                      |
 |------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 | **StartCaretPosition** | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 范围的起始位置是紧接第一个字符前的 ACP。 |
 | **EndCaretPosition**   | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 范围的结束位置是紧接最后一个字符后的 ACP。     |
 
  
 
-例如，在前面显示的文本范围中，范围 \[0, 5\] 可指定单词 “Hello”。 **StartCaretPosition** 必须始终小于或等于 **EndCaretPosition**。 范围 \[5, 0\] 无效。
+例如，在以前，显示范围的文本范围\[0，5\]指定单词"Hello"。 **StartCaretPosition** 必须始终小于或等于 **EndCaretPosition**。 范围\[5，0\]无效。
 
 ### <a name="insertion-point"></a>插入点
 
@@ -73,12 +73,12 @@ ms.locfileid: "9046177"
 
 例如，考虑此文本流：
 
-![示例文本流图示](images/coretext/stream-2.png) 有两种选择：\[0, 1\] 和 \[6, 11\]。 编辑控件必须仅报告其中一个选择：\[0, 1\] 或 \[6, 11\]。
+![示例文本流关系图](images/coretext/stream-2.png)有两个选择：\[0，1\]并\[6、 11\]。 编辑控件必须报告仅有一人;任一\[0，1\]或\[6、 11\]。
 
 ## <a name="working-with-text"></a>使用文本
 
 
-[**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) 类通过 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件和 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 方法支持 Windows 和编辑控件之间的文本流。
+[  **CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) 类通过 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件和 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 方法支持 Windows 和编辑控件之间的文本流。
 
 你的编辑控件通过 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件接收文本，这些事件在用户与文本输入法（如键盘、语音或 IME）交互时生成。
 
@@ -94,11 +94,11 @@ ms.locfileid: "9046177"
 2.  将选定内容放置在 [**CoreTextTextUpdatingEventArgs.NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) 中指定的位置。
 3.  通知系统更新已成功，方法为将 [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 设置为 [**CoreTextTextUpdatingResult.Succeeded**](https://msdn.microsoft.com/library/windows/apps/dn958237)。
 
-例如，这是编辑控件在用户键入“d”之前的状态。 该插入点位于 \[10, 10\]。
+例如，这是编辑控件在用户键入“d”之前的状态。 插入点位于\[10、 10\]。
 
-![示例文本流图示](images/coretext/stream-3.png) 当用户键入“d”时，将引发 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件并带有以下 [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229) 数据：
+![示例文本流关系图](images/coretext/stream-3.png)当用户键入"d"， [ **TextUpdating** ](https://msdn.microsoft.com/library/windows/apps/dn958176)事件引发与以下[ **CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229)数据：
 
--   [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
+-   [**范围**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10，10\]
 -   [**Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
 -   [**NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
@@ -115,13 +115,13 @@ ms.locfileid: "9046177"
 
 有时，你的编辑控件会对文本进行更改，例如在粘贴或自动更正文本时。 在这些情况下，必须通过调用 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 方法向文本服务通知这些更改。
 
-例如，这是编辑控件在用户粘贴“World”之前的状态。 该插入点位于 \[6, 6\]。
+例如，这是编辑控件在用户粘贴“World”之前的状态。 插入点位于\[6，6\]。
 
-![示例文本流图示](images/coretext/stream-5.png) 用户执行粘贴操作，编辑控件结束时会带有以下文本：
+![示例文本流关系图](images/coretext/stream-5.png)用户执行粘贴操作并编辑控件中最终有以下文本：
 
-![示例文本流图示](images/coretext/stream-4.png) 当发生此情况时，应调用带有以下参数的 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172)：
+![示例文本流关系图](images/coretext/stream-4.png)在此情况下，应调用[ **NotifyTextChanged** ](https://msdn.microsoft.com/library/windows/apps/dn958172)用这些自变量：
 
--   *modifiedRange* = \[6, 6\]
+-   *modifiedRange* = \[6，6\]
 -   *newLength* = 5
 -   *newSelection* = \[11, 11\]
 
@@ -131,13 +131,13 @@ ms.locfileid: "9046177"
 
 在你的编辑控件中，你可能希望覆盖文本更新以提供自动更正功能。
 
-例如，请考虑提供支持形式化缩略的更正功能的编辑控件。 这是编辑控件在用户键入空格键以触发更正之前的状态。 该插入点位于 \[3, 3\]。
+例如，请考虑提供支持形式化缩略的更正功能的编辑控件。 这是编辑控件在用户键入空格键以触发更正之前的状态。 插入点位于\[3，3\]。
 
-![示例文本流图示](images/coretext/stream-6.png) 用户按空格键，将引发相应的 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件。 编辑控件将接受文本更新。 这是编辑控件在完成更正之前所处的短暂状态。 该插入点位于 \[4, 4\]。
+![示例文本流关系图](images/coretext/stream-6.png)用户按下 space 键和相应[ **TextUpdating** ](https://msdn.microsoft.com/library/windows/apps/dn958176)引发事件。 编辑控件将接受文本更新。 这是编辑控件在完成更正之前所处的短暂状态。 插入点位于\[4，4\]。
 
-![示例文本流图示](images/coretext/stream-7.png) 在 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件处理程序之外，编辑控件将进行以下更正。 这是编辑控件在完成更正之后的状态。 该插入点位于 \[5, 5\]。
+![示例文本流关系图](images/coretext/stream-7.png)之外[ **TextUpdating** ](https://msdn.microsoft.com/library/windows/apps/dn958176)事件处理程序，编辑控件进行以下的更正。 这是编辑控件在完成更正之后的状态。 插入点位于\[5，5\]。
 
-![示例文本流图示](images/coretext/stream-8.png) 当发生此情况时，应调用带有以下参数的 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172)：
+![示例文本流关系图](images/coretext/stream-8.png)在此情况下，应调用[ **NotifyTextChanged** ](https://msdn.microsoft.com/library/windows/apps/dn958172)用这些自变量：
 
 -   *modifiedRange* = \[1, 2\]
 -   *newLength* = 2
@@ -149,12 +149,12 @@ ms.locfileid: "9046177"
 
 请务必确保文本服务具有正确的文本，特别是已存在于编辑控件中的文本（例如，通过加载文档，或由编辑控件插入的文本（如前面的部分所述），以便提供诸如自动更正或预测的功能。 因此，每当引发 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件时，都必须向当前在你的编辑控件中的文本提供指定范围。
 
-[**CoreTextTextRequest**](https://msdn.microsoft.com/library/windows/apps/dn958227) 中的 [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958221) 可以多次指定你的编辑控件不能按原样容纳的某个范围。 例如，**Range** 大于发生 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件时的编辑控件的大小，或者 **Range** 的末尾超出范围。 在这些情况下，应返回有意义的任何范围，该范围通常是请求的范围的子集。
+[  **CoreTextTextRequest**](https://msdn.microsoft.com/library/windows/apps/dn958227) 中的 [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958221) 可以多次指定你的编辑控件不能按原样容纳的某个范围。 例如，**Range** 大于发生 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件时的编辑控件的大小，或者 **Range** 的末尾超出范围。 在这些情况下，应返回有意义的任何范围，该范围通常是请求的范围的子集。
 
 ## <a name="related-articles"></a>相关文章
 
 **示例**
-* [自定义编辑控件示例](https://go.microsoft.com/fwlink/?linkid=831024)
+* [自定义编辑控件样例](https://go.microsoft.com/fwlink/?linkid=831024)  
 **存档示例**
 * [XAML 文本编辑示例](https://go.microsoft.com/fwlink/p/?LinkID=251417)
 

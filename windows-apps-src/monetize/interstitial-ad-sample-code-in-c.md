@@ -7,13 +7,13 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, 间隙, c#, 示例代码
 ms.localizationpriority: medium
 ms.openlocfilehash: 075d98d49ba7e878abc7e800af84984bdb93e3a2
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045083"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640982"
 ---
-# <a name="interstitial-ad-sample-code-in-c"></a>C\# 间隙广告示例代码 #  
+# <a name="interstitial-ad-sample-code-in-c"></a>在 C 中的插播式广告示例代码\# #  
 
 本主题提供了显示间隙视频广告的基本 C# 和 XAML 通用 Windows 平台 (UWP) 应用的完整示例代码。 有关显示如何配置项目以使用此代码的分步说明，请参阅[间隙广告](interstitial-ads.md)。 有关完整示例项目，请参阅 [GitHub 上的广告示例](https://aka.ms/githubads)。
 
@@ -21,7 +21,7 @@ ms.locfileid: "9045083"
 
 本部分显示了显示间隙广告的基本应用中的 MainPage.xaml 和 MainPage.xaml.cs 文件内容。 若要使用这些示例，请将代码复制到 Visual Studio 中的 Visual C# **空白应用（通用 Windows）** 项目中。
 
-此示例应用使用两个按钮请求和启动间隙广告。 值替换为```myAppId```和```myAdUnitId```字段从合作伙伴中心提交到应用商店应用之前的实时值。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
+此示例应用使用两个按钮请求和启动间隙广告。 值替换```myAppId```和```myAdUnitId```具有从合作伙伴中心之前将应用提交到应用商店的实时值的字段。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
 > [!NOTE]
 > 若要更改此示例以显示间隙横幅广告而不是间隙视频广告，请将值 **AdType.Display** 传递至 [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法的第一个参数而不是 **AdType.Video**。 有关详细信息，请参阅[间隙广告](interstitial-ads.md)。

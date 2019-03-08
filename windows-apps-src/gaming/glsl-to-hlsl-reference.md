@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, glsl, hlsl, opengl, directx, 着色器
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f468584d995de40ff14df1527ab1df8275c36a8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938906"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611162"
 ---
 # <a name="glsl-to-hlsl-reference"></a>GLSL 到 HLSL 参考
 
@@ -19,15 +19,15 @@ ms.locfileid: "8938906"
 
 [将图形体系结构从 OpenGL ES 2.0 移植到 Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md) 以便为通用 Windows 平台 (UWP) 创建游戏时，需要将 OpenGL 着色器语言 (GLSL) 代码移植到 Microsoft 高级着色器语言 (HLSL) 代码。 此处所谈到的 GLSL 兼容 OpenGL ES 2.0；HLSL 兼容 Direct3D 11。 有关 Direct3D 11 和之前版本的 Direct3D 之间差别的信息，请参阅[功能映射](feature-mapping.md)。
 
--   [比较 OpenGL ES 2.0 与 Direct3D 11](#comparing-opengl-es-20-with-direct3d-11)
--   [将 GLSL 变量移植到 HLSL](#porting-glsl-variables-to-hlsl)
--   [将 GLSL 类型移植到 HLSL](#porting-glsl-types-to-hlsl)
--   [将 GLSL 预定义的全局变量移植到 HLSL](#porting-glsl-pre-defined-global-variables-to-hlsl)
--   [将 GLSL 变量移植到 HLSL 的示例](#examples-of-porting-glsl-variables-to-hlsl)
-    -   [GLSL 中的 uniform、attribute 和 varying](#uniform-attribute-and-varying-in-glsl)
-    -   [HLSL 中的常量缓冲区和数据传输](#constant-buffers-and-data-transfers-in-hlsl)
--   [将 OpenGL 呈现代码移植到 Direct3D 的示例](#examples-of-porting-opengl-rendering-code-to-direct3d)
--   [相关主题](#related-topics)
+-   [比较 OpenGL ES 2.0 使用 Direct3D 11](#comparing-opengl-es-20-with-direct3d-11)
+-   [移植到 HLSL GLSL 变量](#porting-glsl-variables-to-hlsl)
+-   [移植到 HLSL GLSL 类型](#porting-glsl-types-to-hlsl)
+-   [移植 GLSL 预定义的全局变量为 HLSL](#porting-glsl-pre-defined-global-variables-to-hlsl)
+-   [移植到 HLSL GLSL 变量的示例](#examples-of-porting-glsl-variables-to-hlsl)
+    -   [统一、 特性和在 GLSL 改变](#uniform-attribute-and-varying-in-glsl)
+    -   [HLSL 常量缓冲区和数据传输](#constant-buffers-and-data-transfers-in-hlsl)
+-   [OpenGL 呈现将代码移植到 Direct3D 示例](#examples-of-porting-opengl-rendering-code-to-direct3d)
+-   [相关的主题](#related-topics)
 
 ## <a name="comparing-opengl-es-20-with-direct3d-11"></a>比较 OpenGL ES 2.0 与 Direct3D 11
 
@@ -65,7 +65,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <td align="left">着色器编译被集成到了图形 API 中</td>
 <td align="left">HLSL 编译器<a href="https://msdn.microsoft.com/library/windows/desktop/bb509633">将着色器编译为</a>中间二进制表示，然后 Direct3D 将其传递给驱动程序。
 <div class="alert">
-<strong>注意</strong>此二进制表示与硬件无关。 通常在应用生成时对其进行编译，而不是在应用运行时编译。
+<strong>请注意</strong>  此二进制表示形式是独立于硬件。 通常在应用生成时对其进行编译，而不是在应用运行时编译。
 </div>
 <div>
  
@@ -94,7 +94,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <td align="left">行主序矩阵（默认设置）</td>
 <td align="left">列主序矩阵（默认设置）
 <div class="alert">
-<strong>注意</strong>使用<strong>row_major</strong>类型修饰符来更改一个变量的布局。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">变量语法</a>。 还可以指定编译器标志或 pragma 来更改全局默认设置。
+<strong>请注意</strong>  使用<strong>row_major</strong>类型的修饰符来更改布局的一个变量。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">变量语法</a>。 还可以指定编译器标志或 pragma 来更改全局默认设置。
 </div>
 <div>
  
@@ -109,11 +109,11 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 
  
 
-> **注意**HLSL 让纹理和采样器作为两个不同的对象。 在 GLSL（如 Direct3D 9）中，纹理绑定是采样器状态的一部分。
+> **请注意**  HLSL，并且在纹理取样器为两个单独的对象。 在 GLSL（如 Direct3D 9）中，纹理绑定是采样器状态的一部分。
 
  
 
-在 GLSL 中，将大多数 OpenGL 状态呈现为预定义的全局变量。 例如，使用 GLSL，**gl\_Position** 变量可用于指定顶点位置，而 **gl\_FragColor** 变量可用于指定片段颜色。 在 HLSL 中，将 Direct3D 状态从应用代码显式传递到着色器。 例如，对于 Direct3D 和 HLSL，顶点着色器的输入必须与顶点缓冲区中的数据格式相匹配，并且应用代码中常量缓冲区的结构必须与着色器代码中常量缓冲区 ([cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)) 的结构相匹配。
+在 GLSL 中，将大多数 OpenGL 状态呈现为预定义的全局变量。 例如，借助 GLSL，你使用**gl\_位置**变量以指定顶点位置并**gl\_FragColor**变量以指定片段颜色。 在 HLSL 中，将 Direct3D 状态从应用代码显式传递到着色器。 例如，对于 Direct3D 和 HLSL，顶点着色器的输入必须与顶点缓冲区中的数据格式相匹配，并且应用代码中常量缓冲区的结构必须与着色器代码中常量缓冲区 ([cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)) 的结构相匹配。
 
 ## <a name="porting-glsl-variables-to-hlsl"></a>将 GLSL 变量移植到 HLSL
 
@@ -137,7 +137,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <p>将 uniform 变量从应用代码传递到顶点着色器和分段着色器或传递到两者。 必须在使用这些着色器绘制任何三角形之前，设置所有 uniform 的值，以便它们的值在绘制三角形网格的整个过程中保持不变。 这些值都是 uniform。 一些 uniform 是针对整个帧设置的，另一些 uniform 唯一对应于一个特定的顶点像素着色器对。</p>
 <p>uniform 变量是每个多边形的变量。</p></td>
 <td align="left"><p>使用常量缓冲区。</p>
-<p>请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/ff476896">如何：创建常量缓冲区</a>和<a href="https://msdn.microsoft.com/library/windows/desktop/bb509581">着色器常量</a>。</p></td>
+<p>请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/ff476896">如何：创建常量缓冲区</a>并<a href="https://msdn.microsoft.com/library/windows/desktop/bb509581">着色器常量</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>varying</strong></p>
@@ -145,7 +145,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <td align="left">使用从顶点着色器返回的结构作为像素着色器的输入。 确保语义值相匹配。</td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性</strong></p>
+<td align="left"><p><strong>attribute</strong></p>
 <p>attribute 只是你从应用代码传递到顶点着色器的顶点描述的一部分。 与 uniform 不同，你为每个顶点设置每个 attribute 的值，但却允许每个顶点拥有不同的值。 attribute 变量是每个顶点的变量。</p></td>
 <td align="left"><p>在 Direct3D 应用代码中定义顶点缓冲区并将其与顶点着色器中定义的顶点输入相匹配。 也可以定义索引缓冲区。 请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/ff476899">如何：创建顶点缓冲区</a>和<a href="https://msdn.microsoft.com/library/windows/desktop/ff476897">如何：创建索引缓冲区</a>。</p>
 <p>在 Direct3D 应用代码中创建输入布局并将语义值与顶点输入中的值相匹配。 请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout">创建输入布局</a>。</p></td>
@@ -213,9 +213,9 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <tr class="odd">
 <td align="left"><p>矩阵类型</p>
 <ul>
-<li>mat2: 2x2 浮点矩阵</li>
-<li>mat3: 3x3 浮点矩阵</li>
-<li>mat4: 4x4 浮点矩阵</li>
+<li>mat2:2x2 浮点矩阵</li>
+<li>mat3:3 x 3 个浮点矩阵</li>
+<li>mat4:4 × 4 浮点矩阵</li>
 </ul></td>
 <td align="left"><p>矩阵类型</p>
 <ul>
@@ -299,7 +299,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <p>该语义为 <strong>float4</strong> 类型。</p>
 <p>顶点着色器输出</p>
 <p>顶点位置</p>
-<p>例如 - float4 vPosition : SV_Position;</p></td>
+<p>例如-float4 vPosition:SV_Position;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_PointSize</strong></p>
@@ -321,7 +321,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <p>该语义为 <strong>float4</strong> 类型。</p>
 <p>像素着色器输出</p>
 <p>像素颜色</p>
-<p>例如 - float4 Color[4] : SV_Target;</p></td>
+<p>例如-float4 颜色 [4]:SV_Target;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_FragData[n]</strong></p>
@@ -340,7 +340,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <p>该语义为 <strong>float4</strong> 类型。</p>
 <p>像素着色器输入</p>
 <p>屏幕空间坐标</p>
-<p>例如 - float4 screenSpace : SV_Position</p></td>
+<p>例如-float4 screenSpace:SV_Position</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_FrontFacing</strong></p>
@@ -363,7 +363,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <p>VPOS 为 <strong>float2</strong> 类型。</p>
 <p>像素着色器输入</p>
 <p>屏幕空间中的像素或示例位置</p>
-<p>例如 - float4 pos : SV_Position</p></td>
+<p>例如-float4 pos:SV_Position</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_FragDepth</strong></p>

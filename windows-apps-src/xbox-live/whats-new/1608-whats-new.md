@@ -4,14 +4,14 @@ description: Xbox Live SDK 的新增功能 - 2016 年 8 月
 ms.assetid: fa52e7bd-2c2c-4c25-94ab-761036a7ca79
 ms.date: 04/04/2017
 ms.topic: article
-keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
+keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a498fea1ed0974935a273c9ee72ba2c95d15959
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926075"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627902"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---august-2016"></a>Xbox Live SDK 的新增功能 - 2016 年 8 月
 
@@ -49,7 +49,7 @@ Xbox Live SDK 支持 Windows 10 RTM [版本 10.0.10240] 和 Visual Studio 2015 R
 
 使用新 API，你可以对标记、字符串和其他丰富的数据进行筛选，以便用户可以更轻松地找到他们想要播放的会话。
 
-我们将在接下来的几个月内发布更全面的文档，不过你现在可以暂时使用 ```set_search_handle``` 来将“搜索句柄”与 MPSD 会话关联，然后用户便可以通过标题调用使用可靠的筛选机制搜索会话 ```get_search_handles```
+我们将发布更全面的文档，在未来几个月，但简要你现在可以使用 MPSD 会话使用关联"的搜索句柄" ```set_search_handle``` ，然后用户可以搜索会话通过标题调用使用功能强大的筛选机制 ```get_search_handles```
 
 新 API 已在下面列出。  请试用一下，如果你遇到任何问题，请在[论坛](https://forums.xboxlive.com)中发布支持线程或联系你的 DAM。  我们很快将提供如何使用这些 API 的示例。
 
@@ -73,13 +73,13 @@ _XSAPIIMP pplx::task<xbox_live_result<std::vector<multiplayer_search_handle_deta
 _XSAPIIMP pplx::task<xbox_live_result<void>> clear_search_handle(_In_ const string_t& handleId);
 ```
 
-### <a name="xbox-integrated-multiplayer"></a>Xbox 集成多人游戏
+### <a name="xbox-integrated-multiplayer"></a>Xbox 集成的多人游戏
 
 我们已包括了 Xbox 集成多人游戏 (XIM) API 的文档。  API 本身将在 Xbox Live SDK 的后续版本中提供，但文档和标头即将提供预览。
 
 XIM 是一个自包含界面，可通过 Xbox Live 服务功能向你的游戏轻松添加多人游戏实时网络和聊天通信。
 
-我们在此处共享 API 文档预览是为了鼓励客户提供反馈、询问问题。 我们谈到之前在 Xfest 2016 中，此 API，你可以看到存档的[托管的合作伙伴开发人员站点上的演示材料](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2016.aspx)从"打开密钥多人游戏网络和聊天"交谈。 请注意，此预览文档仅用于 C++ API。 C# 和其他语言的 WinRT 等效项将在今年晚些时候发布。
+我们在此处共享 API 文档预览是为了鼓励客户提供反馈、询问问题。 我们讨论了此 API 之前，Xfest 2016，并可以看到存档[托管的合作伙伴开发人员站点上的演示文稿材料](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2016.aspx)从"统包式多人游戏网络和聊天"对话。 请注意，此预览文档仅用于 C++ API。 C# 和其他语言的 WinRT 等效项将在今年晚些时候发布。
 
 如果你对 XIM 的功能感兴趣，或希望提供有关此项目的反馈或有其他相关问题，请随时在 [Xbox 开发人员论坛](https://forums.xboxlive.com/)上发帖子，或通过你的开发者帐户管理器联系我们。
 

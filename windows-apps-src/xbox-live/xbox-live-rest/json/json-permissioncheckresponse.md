@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7623a45fa21e30a015bd5c6a7c1f5add19cc189b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926860"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623362"
 ---
 # <a name="permissioncheckresponse-json"></a>PermissionCheckResponse (JSON)
-从单个权限设置针对单个目标用户的单个用户检查的结果。 
+从单个用户针对单个目标用户的单个权限设置的检查结果。 
 <a id="ID4EN"></a>
 
  
@@ -23,15 +23,15 @@ ms.locfileid: "8926860"
  
 PermissionCheckResponse 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| IsAllowed| 布尔值| 必需。 如果请求的用户允许执行与目标用户所请求的操作，此成员为<b>true</b> 。| 
-| 结果| [PermissionCheckResult (JSON)](json-permissioncheckresult.md)的数组| 可选。 如果<b>IsAllowed</b>已 false 检查已被并被拒绝请求者相关的内容，指示的权限被拒绝的原因。| 
+| IsAllowed| 布尔值| 必需。 此成员是<b>，则返回 true</b>如果请求用户允许执行与目标用户请求的操作。| 
+| 结果| 数组[PermissionCheckResult (JSON)](json-permissioncheckresult.md)| 可选。 如果<b>IsAllowed</b> false，则检查被拒绝通过向请求者相关的内容，可以指示的权限被拒绝的原因。| 
   
 <a id="ID4E3B"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -57,6 +57,6 @@ PermissionCheckResponse 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
    

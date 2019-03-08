@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 25ddc8120f05f04d5285fbbe4efc5a41f98265ef
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943059"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617552"
 ---
 # <a name="usersxuidxuidgroupsmoniker"></a>/users/xuid({xuid})/groups/{moniker}
-访问 presencerecord，他的一组。 这些 Uri 的域是`userpresence.xboxlive.com`。
+访问组 PresenceRecord。 这些 Uri 的域是`userpresence.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -24,10 +24,10 @@ ms.locfileid: "8943059"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| xuid| 字符串| Xbox 用户 ID (XUID) 相关的组中的 Xuid 的用户。| 
-| 名字对象| 字符串| 定义的用户组的字符串。 目前仅接受名字对象以大写 P 是"People"。| 
+| xuid| 字符串| Xbox 用户 ID (XUID) 与组中 XUIDs 相关的用户。| 
+| 名字对象| 字符串| 定义用户组的字符串。 目前唯一接受的名字对象带有大写字母 P 是"People"。| 
   
 <a id="ID4E4B"></a>
 
@@ -36,7 +36,7 @@ ms.locfileid: "8943059"
 
 [GET (/users/xuid({xuid})/groups/{moniker} )](uri-usersxuidgroupsmonikerget.md)
 
-&nbsp;&nbsp;获取 presencerecord，他的一组。
+&nbsp;&nbsp;获取一组 PresenceRecord。
  
 <a id="ID4EHC"></a>
 
@@ -48,6 +48,6 @@ ms.locfileid: "8943059"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[状态 URI](atoc-reference-presence.md)
+[存在 Uri](atoc-reference-presence.md)
 
    

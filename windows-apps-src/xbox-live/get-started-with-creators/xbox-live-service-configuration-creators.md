@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 76d25a48caadb908e30e6e1897c19178e2b837e1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933508"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662232"
 ---
 # <a name="xbox-live-service-configuration-for-the-creators-program"></a>创意者计划的 Xbox Live 服务配置
 
@@ -19,17 +19,17 @@ ms.locfileid: "8933508"
 
 你可能熟悉 Xbox Live 的一些功能，例如[排行榜](../leaderboards-and-stats-2017/leaderboards.md)和[连接存储](../storage-platform/connected-storage/connected-storage-technical-overview.md)。
 
-如果不熟悉的话，我们将以排行榜为例简要介绍一下。 排行榜让玩家可以查看表示自己相比其他玩家取得的成就的值。 例如，街机游戏中的高分、赛车游戏中的圈速，或第一人称射击游戏中的爆头数。 但不同的是，街机只显示在该物理计算机上玩过的玩家所取得的最高分，而 Xbox Live 可以显示来自世界各地的高分。
+如果不熟悉的话，我们将以“排行榜”为例简要介绍一下。 排行榜让玩家可以查看表示自己相比其他玩家取得的成就的值。 例如，街机游戏中的高分、赛车游戏中的单圈时间，或第一人称射击游戏中的爆头数。 但不同的是，街机只显示在该物理计算机上玩过的玩家所取得的最高分，而 Xbox Live 可显示来自世界各地的玩家取得的高分。
 
 不过，要做到这一点，你需要执行某种一次性配置，使 Xbox Live 了解你的排行榜。 例如，值应以升序还是降序排序，以及应对哪部分数据进行排序。
 
-此配置发生在[合作伙伴中心](https://partner.microsoft.com/dashboard)中的 Xbox Live 创意者计划，并且你可以读取[Xbox Live 入门](get-started-with-xbox-live-creators.md)若要了解如何获取设置。
+此配置中发生[合作伙伴中心](https://partner.microsoft.com/dashboard)的 Xbox Live Creators 计划，并且您可以读取[获取启动与 Xbox Live](get-started-with-xbox-live-creators.md)若要了解如何进行设置。
 
 ## <a name="get-your-ids"></a>获取你的 ID
 
 若要启用 Xbox Live 服务，你需要获取多个 ID，以配置你的开发环境和作品。 这些 ID 可通过更新你的 Xbox Live 服务配置获得。
 
-如果你当前没有游戏在合作伙伴中心中，请参阅[创建和测试新的创意者主题作品](create-and-test-a-new-creators-title.md)，以获取指导信息。
+如果你当前没有标题在合作伙伴中心，请参阅[创建和测试新的创建者标题](create-and-test-a-new-creators-title.md)有关的指南。
 
 ### <a name="critical-ids"></a>重要 ID
 
@@ -53,7 +53,7 @@ ms.locfileid: "8933508"
 
 作品 ID 用于向 Xbox Live 服务唯一地标识你的作品。 该 ID 用于整个服务中，使你的用户可以访问你的主题作品的实时内容、其用户统计数据和成就等内容，并支持实时多人游戏功能。
 
-作品 ID 可以区分大小写，具体视使用方式和位置而定。
+主题作品 ID 可以区分大小写，具体视使用方式和位置而定。
 
 ## <a name="publish-your-xbox-live-service-configuration"></a>发布你的 Xbox Live 服务配置
 

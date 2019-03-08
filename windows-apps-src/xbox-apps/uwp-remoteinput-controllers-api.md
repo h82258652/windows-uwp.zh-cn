@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b5061f9193d78d4ff23f5fa707b0bea67a10f98
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929832"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657002"
 ---
 # <a name="controller-api-reference"></a>控制器 API 参考   
 通过使用此 REST API，可以获取附加物理控制器的数量并将其关闭。
@@ -23,7 +23,7 @@ ms.locfileid: "8929832"
 
 方法      | 请求 URI
 :------     | :-----
-获取 | /ext/remoteinput/controllers
+GET | /ext/remoteinput/controllers
 <br />
 **URI 参数**
 
@@ -45,7 +45,7 @@ ms.locfileid: "8929832"
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 说明
+HTTP 状态代码      | 描述
 :------     | :-----
 200 | 成功
 4XX | 错误代码
@@ -59,7 +59,7 @@ HTTP 状态代码      | 说明
 
 方法      | 请求 URI
 :------     | :-----
-删除 | /ext/remoteinput/controllers
+DELETE | /ext/remoteinput/controllers
 <br />
 **URI 参数**
 
@@ -81,13 +81,13 @@ HTTP 状态代码      | 说明
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 说明
+HTTP 状态代码      | 描述
 :------     | :-----
 204 | 断开控制器的请求已成功。
 4XX | 错误代码
 5XX | 错误代码
 
 <br />
-**可用设备系列**
+**可用的设备系列**
 
 * Windows Xbox

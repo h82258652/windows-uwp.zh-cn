@@ -1,6 +1,6 @@
 ---
 title: 资源类型
-description: 不同类型的资源具有不同的布局（或内存占用量）。
+description: 不同类型的资源具有不同的布局（或内存占用）。
 ms.assetid: BCDDF227-1837-44DA-ABD4-E39BCFF2B8EF
 keywords:
 - 资源类型
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4138fd7275f7e1f9addb7685ff0846e756701003
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942923"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661982"
 ---
 # <a name="resource-types"></a>资源类型
 
 
-不同类型的资源具有不同的布局（或内存占用）。 Direct3D 使用的所有资源派生自两种基础资源类型：[缓冲区](#buffer-resources)和[纹理](#texture-resources)。 缓冲区是原始数据（元素）的集合；纹理是纹素（纹理元素）的集合。
+不同类型的资源具有不同的布局（或内存占用）。 Direct3D 使用的所有资源派生自两种基础资源类型：[缓冲区](#buffer-resources)和[纹理](#texture-resources)。 缓冲区是原始数据（元素）集合；纹理是纹理（纹理元素）集合。
 
 可通过两种方式完全指定资源的布局（或内存占用量）：
 
@@ -34,11 +34,11 @@ ms.locfileid: "8942923"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>类型化</p></td>
+<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>Typed</p></td>
 <td align="left"><p>在创建资源时完全指定类型。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Typeless"></span><span id="typeless"></span><span id="TYPELESS"></span>无类型</p></td>
+<td align="left"><p><span id="Typeless"></span><span id="typeless"></span><span id="TYPELESS"></span>Typeless</p></td>
 <td align="left"><p>在资源绑定到管道时完全指定类型。</p></td>
 </tr>
 </tbody>
@@ -115,24 +115,24 @@ Direct3D 具有一个提供着色器常量的缓冲区，此缓冲区称为“�
 ## <a name="span-idtextureresourcesspanspan-idtextureresourcesspanspan-idtextureresourcesspanspan-idtexture-resourcesspantexture-resources"></a><span id="Texture_Resources"></span><span id="texture_resources"></span><span id="TEXTURE_RESOURCES"></span><span id="texture-resources"></span>纹理资源
 
 
-纹理资源是用于存储纹素的数据的结构化集合。 与缓冲区不同，在着色器单元读取纹理时，纹理采样器可筛选纹理。 纹理的类型将影响筛选纹理的方式。 纹素表示可由管道读取的或可写入管道的纹理的最小单位。 每个纹理包含 1 到 4 个组件，这些组件采用一种 DXGI 格式排列（请参阅 [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059)）。
+纹理资源是用于存储纹素的数据的结构化集合。 与缓冲区不同，在着色器单元读取纹理时，纹理采样器可筛选纹理。 纹理的类型将影响筛选纹理的方式。 纹素表示可由管道读取的或可写入管道的纹理的最小单位。 每个纹素包含 1 到 4 的组件，排列 DXGI 格式之一 (请参阅[ **DXGI\_格式**](https://msdn.microsoft.com/library/windows/desktop/bb173059))。
 
 纹理作为结构化资源创建，以使其大小众所周知。 但是，只要在将纹理绑定到管道时使用视图完全指定类型，在创建资源时，每个纹理可以是类型化的，也可以是无类型的。
 
 -   [纹理类型](#texture-types)
--   [子资源](#subresources)
--   [强与弱类型化](#typed)
+-   [子](#subresources)
+-   [强 vs。弱类型化](#typed)
 
 ### <a name="span-idtexturetypesspanspan-idtexturetypesspanspan-idtexturetypesspanspan-idtexture-typesspantexture-types"></a><span id="Texture_Types"></span><span id="texture_types"></span><span id="TEXTURE_TYPES"></span><span id="texture-types"></span>纹理类型
 
-有几种类型的纹理：1D、2D、3D，其中每种类型均可在有或没有 mipmap 的情况下创建。 Direct3D 还支持纹理数组和多重采样纹理。
+有几种类型的纹理：1 D，二维、 三维，其中每个可以创建带有或不带 mipmap。 Direct3D 还支持纹理数组和多重采样纹理。
 
--   [1D 纹理](#texture1d-resource)
--   [1D 纹理数组](#texture1d-array-resource)
+-   [1d 纹理](#texture1d-resource)
+-   [1d 纹理数组](#texture1d-array-resource)
 -   [2D 纹理和 2D 纹理数组](#texture2d-resource)
 -   [3D 纹理](#texture3d-resource)
 
-### <a name="span-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1d-resourcespan1d-texture"></a><span id="Texture1D_Resource"></span><span id="texture1d_resource"></span><span id="TEXTURE1D_RESOURCE"></span><span id="texture1d-resource"></span>1D 纹理
+### <a name="span-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1d-resourcespan1d-texture"></a><span id="Texture1D_Resource"></span><span id="texture1d_resource"></span><span id="TEXTURE1D_RESOURCE"></span><span id="texture1d-resource"></span>1d 纹理
 
 最简单形式的 1D 纹理包含可使用单个纹理坐标寻址的纹理数据；它可以可视化为纹素数组，如下图所示。
 
@@ -144,7 +144,7 @@ Direct3D 具有一个提供着色器常量的缓冲区，此缓冲区称为“�
 
 mipmap 级别是一个比它上面的级别小二次幂的纹理。 最高级别包含最多细节，每个后续级别递减；对于 1D mipmap，最小级别包含一个纹理。 不同的级别由名为 LOD（细节级别）的索引标识；在呈现未靠近相机的几何图形时，你可使用 LOD 访问较小的纹理。
 
-### <a name="span-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1d-array-resourcespan1d-texture-array"></a><span id="Texture1D_Array_Resource"></span><span id="texture1d_array_resource"></span><span id="TEXTURE1D_ARRAY_RESOURCE"></span><span id="texture1d-array-resource"></span>1D 纹理数组
+### <a name="span-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1d-array-resourcespan1d-texture-array"></a><span id="Texture1D_Array_Resource"></span><span id="texture1d_array_resource"></span><span id="TEXTURE1D_ARRAY_RESOURCE"></span><span id="texture1d-array-resource"></span>1d 纹理数组
 
 Direct3D 10 也具有一个适用于纹理数组的新数据结构。 从概念上说，1D 纹理数组与下图类似。
 
@@ -168,7 +168,7 @@ Texture2DArray 资源是一个同类 2D 纹理数组；也就是说，每个纹�
 
 此纹理数组包含三个纹理；每个纹理均为具有两个 mipmap 级别的 3x5 纹理。
 
-### <a name="span-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanusing-a-texture2darray-as-a-texture-cube"></a><span id="Texture2DArray_Resource_as_a_Texture_Cube"></span><span id="texture2darray_resource_as_a_texture_cube"></span><span id="TEXTURE2DARRAY_RESOURCE_AS_A_TEXTURE_CUBE"></span>使用 Texture2DArray 作为纹理立方体
+### <a name="span-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanusing-a-texture2darray-as-a-texture-cube"></a><span id="Texture2DArray_Resource_as_a_Texture_Cube"></span><span id="texture2darray_resource_as_a_texture_cube"></span><span id="TEXTURE2DARRAY_RESOURCE_AS_A_TEXTURE_CUBE"></span>使用 Texture2DArray 为纹理多维数据集
 
 纹理立方体是一个包含 6 个纹理的 2D 纹理数组，其中每个纹理均表示立方体的一个面。 完全填充的纹理立方体如下图所示。
 
@@ -186,7 +186,7 @@ Texture3D 资源（也称作“体纹理”）包含纹素的 3D 体。 由于�
 
 不存在 3D 纹理数组的概念；因此，3D 纹理子资源是单个 mipmap 级别。
 
-### <a name="span-idsubresourcesspanspan-idsubresourcesspanspan-idsubresourcesspansubresources"></a><span id="Subresources"></span><span id="subresources"></span><span id="SUBRESOURCES"></span>子资源
+### <a name="span-idsubresourcesspanspan-idsubresourcesspanspan-idsubresourcesspansubresources"></a><span id="Subresources"></span><span id="subresources"></span><span id="SUBRESOURCES"></span>子
 
 Direct3D API 引用整个资源或多个资源子集。 为了明确资源的各个部分，Direct3D 创造了*子资源*一词，意指资源的子集。
 
@@ -204,7 +204,7 @@ Direct3D API 引用整个资源或多个资源子集。 为了明确资源的各
 
 ![从零开始的子资源索引的图示](images/d3d10-resource-texture1darray-sub-indexing.png)
 
-### <a name="span-idselectingsubresourcesspanspan-idselectingsubresourcesspanspan-idselectingsubresourcesspanselecting-subresources"></a><span id="Selecting_Subresources"></span><span id="selecting_subresources"></span><span id="SELECTING_SUBRESOURCES"></span>选择子资源
+### <a name="span-idselectingsubresourcesspanspan-idselectingsubresourcesspanspan-idselectingsubresourcesspanselecting-subresources"></a><span id="Selecting_Subresources"></span><span id="selecting_subresources"></span><span id="SELECTING_SUBRESOURCES"></span>选择子
 
 一些 API 访问整个资源，其他 API 访问一部分资源。 访问一部分资源的 API 通常使用视图描述来指定要访问的子资源。
 
@@ -228,7 +228,7 @@ mip 切片（用白色矩形表示）为数组中的每个纹理包含一个 mip
 
 ![使用数组切片和 mip 切片选择子资源的图示](images/d3d10-resource-subresources-1.png)
 
-### <a name="span-idselectingmultiplesubresourcesspanspan-idselectingmultiplesubresourcesspanspan-idselectingmultiplesubresourcesspanselecting-multiple-subresources"></a><span id="Selecting_Multiple_Subresources"></span><span id="selecting_multiple_subresources"></span><span id="SELECTING_MULTIPLE_SUBRESOURCES"></span>选择多个子资源
+### <a name="span-idselectingmultiplesubresourcesspanspan-idselectingmultiplesubresourcesspanspan-idselectingmultiplesubresourcesspanselecting-multiple-subresources"></a><span id="Selecting_Multiple_Subresources"></span><span id="selecting_multiple_subresources"></span><span id="SELECTING_MULTIPLE_SUBRESOURCES"></span>选择多个子
 
 你也可使用这两种包含 mipmap 级别数和/或纹理数的切片来选择多个子资源。
 
@@ -236,7 +236,7 @@ mip 切片（用白色矩形表示）为数组中的每个纹理包含一个 mip
 
 无论你使用哪种纹理类型，是否有 mipmap 或纹理数组，通常都会提供 Helper 函数来计算特殊子资源的索引。
 
-### <a name="span-idtypedspanspan-idtypedspanspan-idtypedspanstrong-vs-weak-typing"></a><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>强与弱类型化
+### <a name="span-idtypedspanspan-idtypedspanspan-idtypedspanstrong-vs-weak-typing"></a><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>强 vs。弱类型化
 
 创建完全类型化的资源会将资源限制为创建时采用的格式。 这使运行时能够优化访问，尤其是在创建的资源带有指示其无法由应用程序映射的标志时。 无法使用视图机制解释使用特定类型创建的资源。
 

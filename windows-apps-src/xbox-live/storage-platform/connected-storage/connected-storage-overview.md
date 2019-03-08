@@ -1,17 +1,17 @@
 ---
 title: 连接存储概述
-description: 了解如何使用连接存储保存和加载设备中的游戏数据。
+description: 了解使用连接存储来保存和加载设备中的游戏数据。
 ms.assetid: a0bacf59-120a-4ffc-85e1-fbeec5db1308
 ms.date: 02/27/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
 ms.localizationpriority: medium
 ms.openlocfilehash: 40ad13e46e074154d72d7aad236747c3374110ef
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920427"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639052"
 ---
 # <a name="connected-storage"></a>连接存储
 连接存储旨在允许游戏保存游戏数据以及应在设备之间漫游的其他相关状态数据。 连接存储 API 允许 Xbox One 和通用 Windows 平台 (UWP) 上的游戏保存、加载和删除本地存储的游戏数据，并在 Xbox One 或 UWP 游戏连接到 Internet 时保存、加载和删除同步到云的数据。 在同步发生后运行游戏的任何其他设备都可以使用保存的数据。 建议开发人员尽可能准确地保存游戏状态以提供最佳外出游戏体验。 连接存储允许你在家里玩游戏，然后在支持相同游戏的任何其他设备上从离开的游戏进度处继续游戏。
@@ -26,7 +26,7 @@ ms.locfileid: "8920427"
 - 对于 Xbox Live 创意者计划开发人员：
     - 每个云存储的用户/应用 64 MB。
 - 电源失败的可靠响应—应用无需处理正在保存的部分数据。
-- 即使应用没在运行，数据也会自动上传到云中。
+- 数据会自动上传到云，即使应用没有运行。
 - 数据在连接到 Xbox Live 的 Xbox One 或 UWP 设备中可用。
 - Xbox Live 可以处理跨设备的同步和冲突管理，无需应用参与。
 
@@ -60,22 +60,22 @@ ms.locfileid: "8920427"
 
 [将 Xbox Live 代码从 XDK 移植到 UWP](../../using-xbox-live/porting-xbox-live-code-from-xdk-to-uwp.md) 的连接存储部分详细介绍这两种连接存储 API 之间的更多差异。
 
-可以在以下路径找到 XDK .chm 文件中介绍的 XDK 连接存储 API：**Xbox ONE XDK >> API Reference >> Platform API Reference >> System API Reference >> Windows.Xbox.Storage**。
+您可以找到 XDK 连接存储 Api 在路径下的 XDK.chm 文件中所述：**Xbox 一个 XDK >> API 参考 >> 平台 API 参考 >> 系统 API 参考 >> Windows.Xbox.Storage**。
 在 [developer.microsoft.com 网站](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/storage-xbox-microsoft-n)也可查阅 XDK API。
-XDK API 链接要求你具有启用了 Xbox 开发人员工具包 (XDK) 访问的 Microsoft 帐户 (MSA)。
+XDK API 链接要求你具有启用了 Xbox 开发人员工具包(XDK) 访问的 Microsoft 帐户 (MSA)。
 Windows.Xbox.Storage 是 Xbox One 主机的连接存储命名空间的名称。
 
-可以在以下路径找到 Xbox Live SDK .chm 文件中介绍的 UWP 连接存储 API：**Xbox Live APIs >> Xbox Live Platform Extensions SDK API Reference >> Windows.Gaming.XboxLive.Storage**。
+您可以找到 UWP 连接存储 Api 路径下的 Xbox Live SDK.chm 文件中所述：**Xbox Live Api >> Xbox Live 平台扩展 SDK API 参考 >> Windows.Gaming.XboxLive.Storage**。
 [Windows.Gaming.XboxLive.Storage 命名空间参考](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.xboxlive.storage)也联机介绍 UWP 连接存储 API。
 Windows.Gaming.XboxLive.Storage 是适用于 UWP 应用的连接存储命名空间的名称。
 
-要开始使用连接存储，需要获取连接存储*空间*。 连接存储空间与用户或计算机关联，以*容器* 和 *blob* 的形式存储所有与相应用户或计算机关联的连接存储数据。 获取用于计算机或用户的连接存储空间将允许你进行访问以从相应实体读取或写入存储数据。 要获取连接存储空间，XDK 和 UWP 游戏都将调用 `GetForUserAsync` 方法，XDK 游戏可能还会调用 `GetForMachineAsync` 方法，UWP 游戏无法调用 `GetForMachineAsync`。 `GetForUserAsync` 和 `GetForMachineAsync` 包含在 XDK 的 `ConnectedStorageSpace` 类中。 `GetForUserAsync` 包含在 UWP API 的 `GameSaveProvider` 类中。 这些方法可能是长时间运行的操作，尤其是当用户在一台设备上保存数据并且第一次在其他设备上继续游戏时。 `GetForUserAsync` 检索某一用户的连接存储空间，然后就可以用来创建、访问和删除容器。
+要开始使用连接存储，需要获取连接存储*空间*。 连接存储空间与用户或计算机关联，以*容器* 和 *blob* 的形式存储所有与相应用户或计算机关联的连接存储数据。 获取用于计算机或用户的连接存储空间将允许你进行访问以从相应实体读取或写入存储数据。 要获取连接存储空间，XDK 和 UWP 游戏都将调用 `GetForUserAsync` 方法，XDK 游戏可能还会调用 `GetForMachineAsync` 方法，UWP 游戏无法调用 `GetForMachineAsync`。 `GetForUserAsync` 并`GetForMachineAsync`中包含`ConnectedStorageSpace`XDK 中的类。 `GetForUserAsync` 中包含`GameSaveProvider`UWP API 中的类。 这些方法可能是长时间运行的操作，尤其是当用户在一台设备上保存数据并且第一次在其他设备上继续游戏时。 `GetForUserAsync` 检索有关您可以使用它来创建、 访问和删除的容器的用户连接的存储空间。
 
 要创建容器或访问之前创建的容器，请调用 `ConnectedStorageSpace` 或 `GameSaveProvider` 类的 `CreateContainer` 函数，这将允许你访问与用于创建容器的 `ConnectedStorageSpace` 或 `GameSaveProvider` 关联的用户或计算机的指定容器。 `ConnectedStorageSpace` 和 `GameSaveProvider` 类还包含 `DeleteContainerAsync` 函数，该函数允许你在给出要删除容器的名称时删除容器。
 
-要更新容器中的 blob，请调用 `SubmitUpdatesAsync`（在 XDK 中的 `ConnectedStorageContainer` 类中或 UWP API 的 `GameSaveContainer` 类中）。 `SubmitUpdatesAsync` 允许你提供名称和缓冲区列表作为要写入 blob 的数据、要删除的 blob 的名称列表和调用保存容器的显示名称。 这是更新连接存储空间中的数据最终需要调用的函数。
+要更新容器中的 blob，请调用 `SubmitUpdatesAsync`（在 XDK 中的 `ConnectedStorageContainer` 类中或 UWP API 的 `GameSaveContainer` 类中）。 `SubmitUpdatesAsync` 使您可以提供名称和缓冲区的列表作为数据写入到 blob，要删除的 blob 的名称的列表，以及调用的显示名称保存容器。 这是更新连接存储空间中的数据最终需要调用的函数。
 
-要查看连接存储 API 使用示例，请参阅以下连接存储文章：[保存数据](connected-storage-saving.md)
+若要查看使用阅读以下连接存储文章中的连接存储 api 的示例：[将数据保存](connected-storage-saving.md)
 [加载数据](connected-storage-loading.md)
 [删除数据](connected-storage-deleting.md)
 
@@ -100,9 +100,9 @@ xbstorage 是 XDK 附带的命令行工具，可用于在开发控制台上操�
 |reset    | 对连接存储执行出厂重置。 |
 |import   | 将数据从指定的 XML 文件导入连接存储空间。 |
 |export   | 将数据从连接存储空间导出到指定的 XML 文件。 |
-|delete   | 从连接存储空间删除数据。 |
+|“删除”   | 从连接存储空间删除数据。 |
 |generate | 生成虚拟数据并保存到指定的 XML 文件中。 |
-|模拟 | 模拟存储空间不足的情况。 |
+|simulate | 模拟存储空间不足的情况。 |
 
 要了解有关 xbstorage 工具中的可用函数和 gamesaveutils.exe 的更多信息，请参阅[管理本地连接存储](connected-storage-xb-storage.md)。
 

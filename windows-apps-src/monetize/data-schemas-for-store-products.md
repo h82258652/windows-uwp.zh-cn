@@ -6,13 +6,13 @@ ms.topic: article
 keywords: windows 10, uwp, ExtendedJsonData, Microsoft Store 产品, 架构
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f51f0fffae3fa8e9a54214f78aa93fe39eab080
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937665"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656102"
 ---
-# <a name="data-schemas-for-store-products"></a>Microsoft Store 产品的数据架构
+# <a name="data-schemas-for-store-products"></a>应用商店产品的数据架构
 
 当你向应用商店提交产品（如应用或加载项）时，应用商店将维护该产品及其许可的全套数据。 在你的应用代码中，可通过使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中的属性以编程方式访问部分数据。 例如，可以使用 [StoreProduct.Description](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Description) 和 [StoreProduct.Price](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Price) 属性检索当前应用或当前应用的加载项的描述和价格。
 
@@ -71,9 +71,9 @@ ms.locfileid: "8937665"
 
 ## <a name="related-topics"></a>相关主题
 
-* [应用内购买和试用](in-app-purchases-and-trials.md)
-* [获取应用和加载项的产品信息](get-product-info-for-apps-and-add-ons.md)
-* [获取应用和加载项的许可证信息](get-license-info-for-apps-and-add-ons.md)
-* [支持应用内购买应用和加载项](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [支持购买易耗型加载项](enable-consumable-add-on-purchases.md)
-* [实现应用的试用版](implement-a-trial-version-of-your-app.md)
+* [应用内购买和试用版](in-app-purchases-and-trials.md)
+* [获取产品信息的应用程序和外接程序](get-product-info-for-apps-and-add-ons.md)
+* [获取应用程序和外接程序的许可证信息](get-license-info-for-apps-and-add-ons.md)
+* [启用应用内购买的应用程序和外接程序](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [启用可使用外接程序购买](enable-consumable-add-on-purchases.md)
+* [实现您的应用程序的试用版](implement-a-trial-version-of-your-app.md)

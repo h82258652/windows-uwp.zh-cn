@@ -1,5 +1,5 @@
 ---
-Description: Learn to develop accessible Windows 10 UWP apps that include keyboard navigation, color and contrast settings, and support for assistive technologies.
+Description: 了解如何开发辅助 Windows 10 UWP 应用，其中包含键盘导航、颜色和对比度设置以及对辅助技术的支持。
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: 开发非独占 Windows 10 应用
 label: Developing inclusive Windows 10 apps
@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 58e9ab90115566059fb79220b7b8c0b9c5ce677e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047964"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649722"
 ---
 # <a name="developing-inclusive-windows-apps"></a>开发非独占 Windows 应用  
 
-本文讨论了如何开发辅助通用 Windows 平台 (UWP) 应用。 具体而言，它假定你了解如何为应用设计逻辑层次结构。 了解如何开发辅助 Windows 10 UWP 应用，该应用包含键盘导航、颜色和对比度设置以及对辅助技术的支持。
+本文讨论了如何开发辅助通用 Windows 平台 (UWP) 应用。 具体而言，它假定你了解如何为应用设计逻辑层次结构。 了解如何开发辅助 Windows 10 UWP 应用，其中包含键盘导航、颜色和对比度设置以及对辅助技术的支持。
 
 如果你尚未了解，请首先阅读[设计非独占软件](designing-inclusive-software.md)。
 
@@ -71,19 +71,19 @@ XAML
 ## <a name="accessibility-checklist"></a>辅助功能清单  
 下面是简化版的辅助功能清单：
 
-1. 为应用中的内容和交互式 UI 元素设置辅助名称（必选）和描述（可选）。
+1. 为应用中的内容和交互 UI 元素设置辅助名称（必选）和辅助说明（可选）。
 2. 实现键盘辅助功能。
-3. 以直观方式验证你的 UI 以确保文本对比度足够大、元素以高对比度主题正确呈现以及使用了正确的颜色。
-4. 运行辅助功能工具、解决报告的问题并验证屏幕阅读体验。 （请参阅辅助功能测试主题。）
+3. 以直观的方式验证你的 UI 以确保文本对比度足够大，元素以高对比度主题正确呈现以及使用了正确颜色。
+4. 运行辅助功能工具，解决报告的问题以及验证屏幕读取体验。 （请参阅辅助功能测试主题。）
 5. 确保你的应用清单设置遵循辅助功能指南。
-6. 在 Microsoft Store 中将你的应用声明为辅助应用。 （请参阅 [Microsoft Store 中的辅助功能](accessibility-in-the-store.md)主题。）
+6. 在 Microsoft Store 中将你的应用声明为辅助应用。 （请参阅[应用商店中的辅助功能](accessibility-in-the-store.md)主题。）
 
 有关更多详细信息，请参阅完整的[辅助功能清单](accessibility-checklist.md)主题。
 
 ## <a name="related-topics"></a>相关主题  
 * [设计非独占软件](designing-inclusive-software.md)  
 * [非独占设计](https://design.microsoft.com/inclusive)
-* [要避免的辅助功能做法](practices-to-avoid.md)
-* [针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)
+* [要避免的可访问性做法](practices-to-avoid.md)
+* [可访问性的工程软件](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 辅助功能开发人员中心](https://msdn.microsoft.com/enable)
 * [辅助功能](accessibility.md)

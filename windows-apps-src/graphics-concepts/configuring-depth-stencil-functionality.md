@@ -1,23 +1,23 @@
 ---
-title: 配置深度模具功能
-description: 本节介绍了设置深度模具缓冲区的步骤以及输出合并器阶段的深度模具状态。
+title: 配置深度模板功能
+description: 本节介绍了设置深度模板缓冲区的步骤以及输出合并阶段的深度模板状态。
 ms.assetid: B3F6CDAA-93ED-4DC1-8E69-972C557C7920
 keywords:
-- 配置深度模具功能
+- 配置深度模板功能
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 98cb6c62248fbf273a9d7ca1ef0d1d82293122eb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936441"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656182"
 ---
 # <a name="span-iddirect3dconceptsconfiguringdepth-stencilfunctionalityspanconfiguring-depth-stencil-functionality"></a><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>配置深度模具功能
 
 
-本节介绍了设置深度模具缓冲区的步骤以及输出合并器阶段的深度模具状态。
+本节介绍了设置深度模板缓冲区的步骤以及输出合并阶段的深度模板状态。
 
 了解如何使用深度模具缓冲区和相应的深度模具状态，请参阅[高级模具技术](#advanced-stencil-techniques)。
 
@@ -38,28 +38,28 @@ ms.locfileid: "8936441"
 当使用缓冲区作为呈现器目标时，深度模具测试和多个呈现器目标不受支持。
 
 -   可以同时绑定多达 8 个呈现器目标。
--   所有呈现器目标在所有维度上的尺寸必须相同（宽度和高度，3D 深度或 \*Array 类型的数组大小）。
+-   所有呈现器目标必须在所有维度中具有相同的大小 (宽度和高度，并为 3D 或数组大小的深度\*数组类型)。
 -   每个呈现器目标都可能有不同的数据格式。
 -   写掩码控制将哪些数据写入呈现器目标。 输出写掩码控制在每个呈现器目标、每个组件级别上将哪些数据写入呈现器目标。
 
-## <a name="span-idadvancedstenciltechniquesspanspan-idadvancedstenciltechniquesspanspan-idadvancedstenciltechniquesspanspan-idadvanced-stencil-techniquesspanadvanced-stencil-techniques"></a><span id="Advanced_Stencil_Techniques"></span><span id="advanced_stencil_techniques"></span><span id="ADVANCED_STENCIL_TECHNIQUES"></span><span id="advanced-stencil-techniques"></span>高级模具技术
+## <a name="span-idadvancedstenciltechniquesspanspan-idadvancedstenciltechniquesspanspan-idadvancedstenciltechniquesspanspan-idadvanced-stencil-techniquesspanadvanced-stencil-techniques"></a><span id="Advanced_Stencil_Techniques"></span><span id="advanced_stencil_techniques"></span><span id="ADVANCED_STENCIL_TECHNIQUES"></span><span id="advanced-stencil-techniques"></span>高级的模具技术
 
 
 深度模具缓冲区的模具部分可用于创建合成、贴纸和轮廓等呈现效果。
 
--   [合成](#compositing)
--   [贴纸](#decaling)
--   [轮廓与剪影](#outlines-and-silhouettes)
--   [双面模具](#two-sided-stencil)
--   [将深度模具缓冲区读作纹理](#reading-the-depth-stencil-buffer-as-a-texture)
+-   [组合的情况下](#compositing)
+-   [Decaling](#decaling)
+-   [概述了和轮廓](#outlines-and-silhouettes)
+-   [双侧模具](#two-sided-stencil)
+-   [深度模具缓冲区读取作为纹理](#reading-the-depth-stencil-buffer-as-a-texture)
 
-### <a name="span-idcompositingspanspan-idcompositingspanspan-idcompositingspancompositing"></a><span id="Compositing"></span><span id="compositing"></span><span id="COMPOSITING"></span>合成
+### <a name="span-idcompositingspanspan-idcompositingspanspan-idcompositingspancompositing"></a><span id="Compositing"></span><span id="compositing"></span><span id="COMPOSITING"></span>组合的情况下
 
-你的应用程序可以使用模板缓冲区将 2D 或 3D 图像合成到 3D 场景中。 模具缓冲区中的掩码用于遮挡渲染目标图面的区域。 然后，可以将已存储 2D 信息（如文本或位图）写入遮挡区域。 或者，你的应用程序也可以将额外的 3D 基元渲染到渲染目标图面的已屏蔽模具区域。 它甚至可以渲染整个场景。
+你的应用程序可以使用模具缓冲区将 2D 或 3D 图像合成到 3D 场景中。 模具缓冲区中的掩码用于遮挡渲染目标图面的区域。 然后，可以将已存储 2D 信息（如文本或位图）写入遮挡区域。 或者，你的应用程序也可以将额外的 3D 基元渲染到渲染目标图面的已屏蔽模具区域。 它甚至可以渲染整个场景。
 
 游戏通常会合成多个 3D 场景。 例如，赛车游戏通常会显示后视镜。 镜中呈现驾驶员身后的 3D 场景视图。 它本质上是与驾驶员前方视图合成的第二个 3D 场景。
 
-### <a name="span-iddecalingspanspan-iddecalingspanspan-iddecalingspandecaling"></a><span id="Decaling"></span><span id="decaling"></span><span id="DECALING"></span>贴纸
+### <a name="span-iddecalingspanspan-iddecalingspanspan-iddecalingspandecaling"></a><span id="Decaling"></span><span id="decaling"></span><span id="DECALING"></span>Decaling
 
 Direct3D 应用程序使用贴纸来控制将特定基元图像中的哪些像素绘制到渲染目标图面。 应用程序将贴纸用于基元图像以使共面多边形正确渲染。
 
@@ -69,7 +69,7 @@ Direct3D 应用程序使用贴纸来控制将特定基元图像中的哪些像�
 
 可以使用多个纹理混合来解决此问题。
 
-### <a name="span-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanspan-idoutlines-and-silhouettesoutlines-and-silhouettes"></a><span id="Outlines_and_Silhouettes"></span><span id="outlines_and_silhouettes"></span><span id="OUTLINES_AND_SILHOUETTES"></span><span id="outlines-and-silhouettes">轮廓与剪影
+### <a name="span-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanspan-idoutlines-and-silhouettesoutlines-and-silhouettes"></a><span id="Outlines_and_Silhouettes"></span><span id="outlines_and_silhouettes"></span><span id="OUTLINES_AND_SILHOUETTES"></span><span id="outlines-and-silhouettes">概述了和轮廓
 
 你可以使用模具缓冲区生成更抽象的效果，例如轮廓与剪影。
 
@@ -77,17 +77,17 @@ Direct3D 应用程序使用贴纸来控制将特定基元图像中的哪些像�
 
 如果模具掩码与你正在渲染的基元的大小和形状相同，则在生成的图像中，基元应在的位置有一个洞。 然后，应用程序可以用黑色填充这个洞，以生成基元剪影。
 
-### <a name="span-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwosidedstencilspantwo-sided-stencil"></a><span id="Two_Sided_Stencil"></span><span id="two_sided_stencil"></span><span id="TWO_SIDED_STENCIL"></span>双面模具
+### <a name="span-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwosidedstencilspantwo-sided-stencil"></a><span id="Two_Sided_Stencil"></span><span id="two_sided_stencil"></span><span id="TWO_SIDED_STENCIL"></span>双侧模具
 
-阴影卷用于在模板缓冲区中绘制阴影。 应用程序通过遮挡几何图形计算阴影卷大小，方法是计算剪影边缘并将它们从光线中挤压到一组 3D 卷中。 然后，这些卷将两次渲染到模具缓冲区中。
+阴影卷用于在模具缓冲区中绘制阴影。 应用程序通过遮挡几何图形计算阴影卷大小，方法是计算剪影边缘并将它们从光线中挤压到一组 3D 卷中。 然后，这些卷将两次渲染到模具缓冲区中。
 
 第一次渲染绘制前向多边形，并增加模具缓冲区值。 第二次渲染绘制阴影卷的后向多边形，并减少模具缓冲区值。
 
-正常情况下，所有增加和减少值相互抵消。但是，使用常规几何图形导致部分像素无法通过 z 缓冲测试呈现阴影卷已呈现场景。 留在模具缓冲区的值域阴影中像素相对应。 使用这些保留的模具缓冲区内容作为掩码，以在场景中 alpha 混合大面积、全环绕的黑色间隙。 将模具缓冲区作为掩码，结果是将位于阴影处的像素变暗。
+通常，所有增加和减少值会相互抵消。但是，由于阴影卷已被渲染，使用常规几何图形渲染的场景会导致部分像素无法通过 z 缓冲测试。 留在模具缓冲区的值域阴影中像素相对应。 使用这些保留的模具缓冲区内容作为掩码，以在场景中 alpha 混合大面积、全环绕的黑色间隙。 将模具缓冲区作为掩码，结果是将位于阴影处的像素变暗。
 
 这意味着每个光源的阴影几何图形将绘制两次，因此为 GPU 的顶点吞吐量带来了压力。 双面模具功能旨在缓解此问题。 这种方法使用两组模具状态（如下文所列），一组用于前向三角形，另一组用于后向三角形。 这样，每个阴影卷每个光源只需绘制一次。
 
-### <a name="span-idreadingthedepth-stencilbufferasatexturespanspan-idreadingthedepth-stencilbufferasatexturespanspan-idreadingthedepth-stencilbufferasatexturespanspan-idreading-the-depth-stencil-buffer-as-a-texturespanreading-the-depth-stencil-buffer-as-a-texture"></a><span id="Reading_the_Depth-Stencil_Buffer_as_a_Texture"></span><span id="reading_the_depth-stencil_buffer_as_a_texture"></span><span id="READING_THE_DEPTH-STENCIL_BUFFER_AS_A_TEXTURE"></span><span id="reading-the-depth-stencil-buffer-as-a-texture"></span>将深度模具缓冲区读作纹理
+### <a name="span-idreadingthedepth-stencilbufferasatexturespanspan-idreadingthedepth-stencilbufferasatexturespanspan-idreadingthedepth-stencilbufferasatexturespanspan-idreading-the-depth-stencil-buffer-as-a-texturespanreading-the-depth-stencil-buffer-as-a-texture"></a><span id="Reading_the_Depth-Stencil_Buffer_as_a_Texture"></span><span id="reading_the_depth-stencil_buffer_as_a_texture"></span><span id="READING_THE_DEPTH-STENCIL_BUFFER_AS_A_TEXTURE"></span><span id="reading-the-depth-stencil-buffer-as-a-texture"></span>深度模具缓冲区读取作为纹理
 
 着色器可以将非活动深度模具缓冲区读作纹理。 将深度模具缓冲区读作纹理的应用程序在两个通道中呈现，第一个通道写入深度模具缓冲区，第二个通道从缓冲区读取。 这样着色器可以将之前写入缓冲区的深度或模具值与当前正在呈现的像素值进行比较。 比较结果可用于创建效果，例如阴影贴图或粒子系统中的软粒子。
 

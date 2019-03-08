@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9746706c00a09cd8b64913b4ae8b5c3426551e48
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932342"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646142"
 ---
 # <a name="devicerecord-json"></a>DeviceRecord (JSON)
-有关设备，包括其类型和游戏在其上的信息。 
+有关设备，包括其类型和在其上的标题的信息。 
 <a id="ID4EN"></a>
 
  
@@ -23,15 +23,15 @@ ms.locfileid: "8932342"
  
 DeviceRecord 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| type| 字符串| 设备的设备类型。 可能性包括"D"、"Xbox360"、"MoLIVE"(Windows)、"WindowsPhone"、"WindowsPhone7"和"PC"(G4WL)。 如果的类型是未知 （适用于示例 iOS、 Android 或 web 浏览器中嵌入一个标题），则返回"Web"。| 
-| 主题作品| [TitleRecord](json-titlerecord.md)的数组| 此设备上的活动的标题的列表。| 
+| type| 字符串| 设备的设备类型。 可能性包括"D"、"Xbox360"、"MoLIVE"(Windows)、"WindowsPhone"、"WindowsPhone7"和"PC"(G4WL)。 如果该类型是未知 （适用于示例 iOS、 Android 或嵌入 web 浏览器中的标题），则返回"Web"。| 
+| 标题| 数组[TitleRecord](json-titlerecord.md)| 此设备上活动的标题的列表。| 
   
 <a id="ID4EWB"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -75,7 +75,7 @@ DeviceRecord 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4ENC"></a>

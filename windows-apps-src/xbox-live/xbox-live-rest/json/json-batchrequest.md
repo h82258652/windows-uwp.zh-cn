@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 51073c71700613edcd7c22e18cc0c00a9222d7e5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920492"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654152"
 ---
 # <a name="batchrequest-json"></a>BatchRequest (JSON)
-用来筛选状态信息，如用户、 设备和标题属性的数组。
+要用于筛选状态显示信息，例如用户、 设备和标题的属性的数组。
 <a id="ID4EN"></a>
 
 
@@ -23,18 +23,18 @@ ms.locfileid: "8920492"
 
 BatchRequest 对象具有以下规范。
 
-| 成员| 类型| 描述|
+| 成员| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- |
-| 用户| 字符串的数组| 用户想要了解，最多个一次 1100 Xuid 其状态的列表 XUIDs。|
-| deviceTypes| 字符串的数组| 使用你想要了解有关用户的设备类型的列表。 如果该数组留空，则默认为所有可能的设备类型 （即，不会被筛选掉）。|
-| 主题作品| 32 位无符号整数的数组| 设备的列表类型你想要了解有关其的用户。 如果该数组留空，则默认为所有可能的游戏 （即，不会被筛选掉）。|
-| level| 字符串| 可能值： <ul><li>用户-获取用户节点</li><li>设备-获取用户和设备节点</li><li>游戏-获取基本标题级别信息</li><li>所有-获取完整状态信息和媒体信息</li></ul>默认值为"标题"。| 
-| onlineOnly| 布尔值| 如果此属性为 true，批处理操作会筛选掉记录脱机用户 （包括遮盖的）。 如果未提供，则将返回在线和离线用户。|
+| 用户| 字符串数组| 用户想要了解，最多一次 1100 XUIDs 其存在状态的列表 XUIDs。|
+| deviceTypes| 字符串数组| 你想要了解有关的用户使用的设备类型的列表。 如果数组为空，则默认为所有可能的设备类型 （即，不过滤掉）。|
+| 标题| 32 位无符号整数数组| 你想要了解有关其的用户类型的设备的列表。 如果数组为空，则默认为所有可能的标题 （即，不过滤掉）。|
+| level| 字符串| 可能值： <ul><li>用户-获取用户节点</li><li>设备-获取用户和设备节点</li><li>标题-获取基本标题级别信息</li><li>全部-获取丰富的状态显示信息、 媒体信息和 / 或</li></ul>默认值为"title"。| 
+| onlineOnly| 布尔值| 如果此属性为 true，批处理操作将筛选出为脱机用户 （包括掩蔽的） 记录。 如果未提供，将返回联机和脱机用户。|
 
 <a id="ID4EAD"></a>
 
 
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
 
 
 ```json
@@ -61,7 +61,7 @@ BatchRequest 对象具有以下规范。
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
 
 <a id="ID4EXD"></a>

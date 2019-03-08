@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 60c2e2221cd174ffd75a45d6fe8e2f66744d67a0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936200"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657872"
 ---
 # <a name="passing-arrays-to-a-windows-runtime-component"></a>将数组传递到 Windows 运行时组件
 
@@ -22,7 +22,7 @@ ms.locfileid: "8936200"
 
 -   对于返回值或输出参数（在 Visual Basic 中为带有 [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) 属性的 **ByRef** 参数），数组始终仅用于输出。 不会应用 ReadOnlyArrayAttribute 属性。 输出参数上允许有 WriteOnlyArrayAttribute 属性，但是多余的。
 
-    > **警告**Visual Basic 编译器不强制执行仅输出规则。 你绝不应从输出参数中进行读取；它可能包含 **Nothing**。 始终分配新数组。
+    > **谨慎**  的 Visual Basic 编译器不强制实施只可输出规则。 你绝不应从输出参数中进行读取；它可能包含 **Nothing**。 始终分配新数组。
  
 -   不允许具有 **ref** 修饰符（在 Visual Basic 中为 **ByRef**）的参数。 Winmdexp.exe 会生成错误。
 -   对于通过值传递的参数，必须通过应用 [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) 属性或 [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx) 属性来指定数组内容是用于输入还是用于输出。 同时指定这两个属性是一个错误。
@@ -55,8 +55,8 @@ ms.locfileid: "8936200"
 
 对于具有 ReadOnlyArrayAttribute 属性或 WriteOnlyArrayAttribute 属性的参数，其行为会有所不同，具体取决于调用方是在本机代码中编写还是在托管代码中编写。 如果调用方为本机代码（JavaScript 或 Visual C++ 组件扩展），对数组内容的处理如下所示：
 
--   ReadOnlyArrayAttribute：当调用跨应用程序二进制接口 (ABI) 边界时，将复制该数组。 如有必要，将转换元素。 因此，该方法对仅输入数组所做的任何意外更改对调用方均不可见。
--   WriteOnlyArrayAttribute：调用的方法不可以做任何有关原始数组内容的假设。 例如，该方法接收的数组可能不会进行初始化，也可能包含默认值。 该方法预计会设置数组中所有元素的值。
+-   ReadOnlyArrayAttribute:在调用跨越应用程序二进制接口 (ABI) 边界时，会复制该数组。 如有必要，将转换元素。 因此，该方法对仅输入数组所做的任何意外更改对调用方均不可见。
+-   WriteOnlyArrayAttribute:所调用的方法不能进行任何假设内容的原始数组。 例如，该方法接收的数组可能不会进行初始化，也可能包含默认值。 该方法预计会设置数组中所有元素的值。
 
 如果调用方为托管代码，则原始数组可用于调用的方法，就像在 .NET Framework 中使用任何方法调用那样。 数组内容在 .NET Framework 代码中具有可变性，因此该方法对数组所做的任何更改对调用方均可见。 记住这一点很重要，因为它会影响为 Windows 运行时组件编写的单元测试。 如果测试在托管代码中编写，数组的内容将在测试期间显示为可变。
 
@@ -64,4 +64,4 @@ ms.locfileid: "8936200"
 
 * [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
 * [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
-* [使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [在 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)

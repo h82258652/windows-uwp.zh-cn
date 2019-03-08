@@ -1,17 +1,17 @@
 ---
 ms.assetid: E1943DCE-833F-48AE-8402-CD48765B24FC
 title: 优化暂停/恢复
-description: 创建通用 Windows 平台 (UWP) 应用，以简化其进程生存期系统的使用，从而在暂停或终止后高效地恢复。
+description: 创建通用 Windows 平台 (UWP) 应用，以简化其生存期系统的使用过程，从而在暂停或终止后高效地恢复。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 06af6241bdd75efdd3ff71e02f74252d60540669
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947425"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653652"
 ---
 # <a name="optimize-suspendresume"></a>优化暂停/恢复
 
@@ -42,7 +42,7 @@ ms.locfileid: "8947425"
 
 理想情况下，你的应用将在 1 秒内结束暂停逻辑。 暂停速度越快，效果越好。这样会为其他应用或部分系统带来更快速的用户体验。 如果必须这样做，你的暂停逻辑在桌面设备上可能需要 5 秒钟，在移动设备上可能需要 10 秒钟。 如果超出了这些时间，你的应用会突然终止。 你不希望发生这种情况 - 因为如果发生此情况，当用户切换回你的应用时，将启动一个新进程，并且与恢复暂停的应用相比，体验也会慢很多。
 
-## <a name="resume"></a>恢复
+## <a name="resume"></a>继续
 
 大多数应用无需在恢复时执行任何特殊操作，因此通常情况下，你不会处理此事件。 某些应用使用恢复来还原暂停期间关闭的连接，或者刷新可能已过时的数据。 设计你的应用以根据需要启动这些活动，而不是急着执行此类工作。 这将在用户切换回暂停的应用时带来更快速的体验，并确保你仅执行用户真正需要的工作。
 
@@ -64,7 +64,7 @@ UWP 进程生存期系统可以出于各种原因暂停或终止应用。 此进
 
 从性能角度看，我们建议使用 [**XmlSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx) 类。 **XmlSerializer** 的序列化和反序列化时间最短，并保持很低的内存占用。 **XmlSerializer** 对 .NET 框架的依赖很少；这意味着与其他序列化技术相比较，使用 **XmlSerializer** 时需要加载到你的应用中的模块会更少。
 
-[**DataContractSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) 使自定义类序列化更加容易，尽管它具有比 **XmlSerializer** 更高的性能影响。 如果需要更好的性能，请考虑切换。 一般情况下，不应加载多个序列化程序，并且应首选 **XmlSerializer**，除非需要使用其他序列化程序的功能。
+[**DataContractSerializer** ](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx)可以更轻松地序列化自定义类，尽管它具有更大的性能影响比**XmlSerializer**。 如果需要更好的性能，请考虑切换。 一般情况下，不应加载多个序列化程序，并且应首选 **XmlSerializer**，除非需要使用其他序列化程序的功能。
 
 ### <a name="reduce-memory-footprint"></a>减少内存占用
 
@@ -85,7 +85,7 @@ UWP 进程生存期系统可以出于各种原因暂停或终止应用。 此进
 
 ## <a name="related-topics"></a>相关主题
 
-* [应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/Hh465088)
+* [应用程序的指导原则挂起和继续](https://msdn.microsoft.com/library/windows/apps/Hh465088)
  
 
  

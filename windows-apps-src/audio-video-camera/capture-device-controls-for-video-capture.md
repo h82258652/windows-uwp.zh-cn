@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f144ef398fc55e79d2f0190c61214cdf1aa93b68
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924075"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607652"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>用于视频捕获的手动相机控件
 
@@ -51,7 +51,7 @@ HDR 视频控件支持以下三种模式：开、关和自动。这意味着设�
 ## <a name="temporal-denoising"></a>临时降噪
 自 Windows 10 版本 1803 起，可在支持临时降噪的设备上为视频启用此功能。 此功能实时融合来自多个相邻帧的图像数据，生成视觉噪音较少的视频帧。
 
-应用可通过 [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol) 确定当前设备是否支持临时降噪，如果支持，则还确定设备支持哪种降噪模式。 三种可用的降噪模式为：[**关**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)、[**开**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)和[**自动**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)。设备可能不支持所有模式，但每台设备必须支持**自动**或支持**开**和**关**。
+应用可通过 [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol) 确定当前设备是否支持临时降噪，如果支持，则还确定设备支持哪种降噪模式。 可用 denoising 模式[**关闭**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)， [**上**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)，并[**自动**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode).设备可能不支持所有模式，但每个设备必须都支持这两**自动**或**上**并**关闭**。
 
 以下示例使用简单的 UI 来提供单选按钮，让用户切换降噪模式。
 
@@ -86,9 +86,9 @@ HDR 视频控件支持以下三种模式：开、关和自动。这意味着设�
 
 ## <a name="related-topics"></a>相关主题
 
-* [相机](camera.md)
-* [使用 MediaCapture 进行照片、视频和音频的基本捕获](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [使用 MediaFrameReader 处理媒体帧](process-media-frames-with-mediaframereader.md)
+* [摄像头](camera.md)
+* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [处理媒体帧与 MediaFrameReader](process-media-frames-with-mediaframereader.md)
 *  [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
  
 

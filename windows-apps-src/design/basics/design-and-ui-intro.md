@@ -1,5 +1,5 @@
 ---
-Description: The universal design features included in every UWP app help you build apps that scale beautifully across a range of devices.
+Description: 每个 UWP 应用的帮助中包括的通用设计功能生成美观地缩放各种各样的设备的应用。
 title: 通用 Windows 平台 (UWP) 应用设计（Windows 应用）简介
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 ms.date: 05/05/2018
@@ -8,11 +8,11 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 32838e2c3369535928c9e9311f62654eba54e4e0
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058778"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611752"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP 应用设计简介
 
@@ -26,13 +26,13 @@ ms.locfileid: "9058778"
 
 ## <a name="effective-pixels-and-scaling"></a>有效像素和缩放
 
-UWP 应用在所有运行[Windows 10 设备](../devices/index.md)，从电视到平板电脑或电脑。 那么，如何设计在各种设备和屏幕大小外观良好的 UI？
+在所有上运行 UWP 应用[Windows 10 设备](../devices/index.md)，从您的平板电脑或 PC 到电视。 那么，如何设计 UI 看起来在各种设备和屏幕尺寸上很好？
 
 ![各种设备上的同一应用](images/universal-image-1.jpg)
 
-UWP 有助于通过自动调整 UI 元素，以便它们清晰可见并易于交互在所有设备和屏幕大小上。
+UWP 帮助通过自动调整 UI 元素，以便它们可以清晰且易于与所有设备和屏幕大小进行都交互。
 
-当你的应用在设备上运行时，系统将使用算法使 UI 元素在屏幕上的显示方式规范化。 此缩放算法考虑了观看距离和屏幕密度（每英寸像素），以针对感知大小（而不是物理大小）进行优化。 该缩放算法确保用户可从 10 英尺远处识别 Surface Hub 上高 24 像素的字体，正如从几英寸远处识别 5 英寸手机上高 24 像素的字体。
+当你的应用在设备上运行时，系统将使用算法来使 UI 元素在屏幕上的显示方式规范化。 此缩放算法考虑了观看距离和屏幕密度（每英寸像素），以针对感知大小（而不是物理大小）进行优化。 该缩放算法确保用户可从 10 英尺远处识别 Surface Hub 上高 24 像素的字体，正如从几英寸远处识别 5 英寸手机上高 24 像素的字体。
 
 ![不同设备的观看距离](images/scaling-chart.png)
 
@@ -96,7 +96,7 @@ UWP 有助于通过自动调整 UI 元素，以便它们清晰可见并易于交
 
 也可以在 Visual Studio 中使用 [Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master) 为应用设计布局。
 
-## <a name="controls"></a>控件
+## <a name="controls"></a>控制
 
 UWP 的设计平台提供了一系列保证在所有支持 Windows 的设备上都能正常工作的常用控件，它们遵循 [Fluent Design 系统](../fluent-design-system/index.md)原则。 这些控件包括从简单控件（如按钮和文本元素）到复杂控件（可从一组数据和一个模板生成列表）的一切控件。
 
@@ -112,7 +112,7 @@ UWP 的设计平台提供了一系列保证在所有支持 Windows 的设备上�
 
 ![主题色 gif](images/intro-style.gif)
 
-## <a name="shell"></a>Shell
+## <a name="shell"></a>壳体
 
 :::row:::
     :::column:::
@@ -177,5 +177,5 @@ UWP 的设计平台提供了一系列保证在所有支持 Windows 的设备上�
 ## <a name="related-articles"></a>相关文章
 
 - [UWP 应用是什么？](../../get-started/universal-application-platform-guide.md)
-- [Fluent Design 系统](../fluent-design-system/index.md)
+- [Fluent 设计系统](../fluent-design-system/index.md)
 - [XAML 平台概述](../../xaml-platform/index.md)

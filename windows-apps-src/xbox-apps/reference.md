@@ -1,17 +1,17 @@
 ---
 title: Xbox 设备门户 REST API
-description: 适用于 Xbox One 上的 UWP 的 API 参考。
+description: 适用于 Xbox One 上的 UWP 的 API 参考
 ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 5ae8e953-0465-487b-81dd-54a85c904daf
 ms.localizationpriority: medium
 ms.openlocfilehash: d8fdcf01d7d1f72624d73acf2d10ce28dfb75e04
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945829"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656992"
 ---
 # <a name="xbox-device-portal-rest-api"></a>Xbox 设备门户 REST API
 
@@ -37,5 +37,5 @@ ms.locfileid: "8945829"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Xbox One 上的 UWP](index.md)
-- [Windows 设备门户](../debug-test-perf/device-portal.md)
+- [在 Xbox One 上 UWP](index.md)
+- [Windows Device Portal](../debug-test-perf/device-portal.md)

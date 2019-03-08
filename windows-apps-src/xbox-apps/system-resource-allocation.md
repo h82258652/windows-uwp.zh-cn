@@ -1,5 +1,5 @@
 ---
-title: Xbox One 上 UWP 应用和游戏的系统资源
+title: 用于 Xbox One 上 UWP 应用和游戏的系统资源
 description: Xbox 上的 UWP 系统资源
 ms.date: 02/08/2017
 ms.topic: article
@@ -7,18 +7,18 @@ keywords: windows 10, uwp
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
 ms.localizationpriority: medium
 ms.openlocfilehash: 0869f5cfc2499a00577f0196cd9f9f84987c0321
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048364"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57647322"
 ---
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>用于 Xbox One 上 UWP 应用和游戏的系统资源
 
 Xbox One 上运行的 UWP 应用与系统和其他应用共享资源。 Xbox One 上的 UWP 可以使用的资源取决于你提交为应用还是提交为 Xbox Live 创意者计划游戏。
 
 * 在前台运行时的最大可用内存：
-    * 应用：1 GB
+    * 应用程序：1 GB
     * 游戏：5 GB
 
 后台运行的应用最多可使用 128 MB 内存。 背景模式仅适用于并发应用程序，如后台音乐播放器。  游戏会暂停，并在后台终止。
@@ -30,15 +30,15 @@ Xbox One 上运行的 UWP 应用与系统和其他应用共享资源。 Xbox One
 
 * CPU
     * 应用：共享 2-4 CPU 内核具体取决于系统上运行的应用和游戏数量。
-    * 游戏：4 个独占 CPU 内核，2 个共享 CPU 内核。
+    * 游戏：4 独占和 2 个共享 CPU 核心数。
 
 * GPU
     * 应用：共享 45% 的 GPU 具体取决于系统上运行的应用和游戏数量。
     * 游戏：对可用 GPU 周期的完全访问权限。
 
 * DirectX 支持
-    * 应用：DirectX 11 功能级别 10。
-    * 游戏：DirectX 12 以及 DirectX 11 功能级别 10。
+    * 应用程序：DirectX 11 功能级别为 10。
+    * 游戏：DirectX 12 和 DirectX 11 功能级别为 10。
 
 * 所有应用和游戏必须面向 x64 体系结构以进行开发或提交到 Xbox 应用商店。  
 
@@ -53,7 +53,7 @@ Xbox One 上运行的 UWP 应用与系统和其他应用共享资源。 Xbox One
 <iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developing-xbox-one-applications-16860/Video-What-s-Unique--vk0fOPf9C_2006218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="see-also"></a>另请参阅
-- [Xbox One 上的 UWP](index.md)
-- [Xbox Live 创意者计划入门](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)
-- [DirectX 和 Xbox One 上的 UWP](https://blogs.msdn.microsoft.com/chuckw/2017/12/15/directx-and-uwp-on-xbox-one/)
+- [在 Xbox One 上 UWP](index.md)
+- [开始使用 Xbox Live Creators 计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)
+- [DirectX 和 Xbox One 上 UWP](https://blogs.msdn.microsoft.com/chuckw/2017/12/15/directx-and-uwp-on-xbox-one/)
 

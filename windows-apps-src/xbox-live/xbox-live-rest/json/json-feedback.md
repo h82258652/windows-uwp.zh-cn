@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cc1cb4ecc12219d54af1c4ab420671f2bbfa81f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921422"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644762"
 ---
 # <a name="feedback-json"></a>Feedback (JSON)
-包含有关玩家的反馈信息。
+包含有关播放器的反馈信息。
 <a id="ID4EN"></a>
 
 
@@ -23,61 +23,61 @@ ms.locfileid: "8921422"
 
 反馈对象具有以下规范。
 
-| 成员| 类型| 描述|
+| 成员| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- |
 | sessionRef| 对象 | 描述此反馈与之相关的 MPSD 会话的对象，或为 null。 |
-| feedbackType| 字符串 | 反馈的类型。 <b>Microsoft.Xbox.Services.Social.ReputationFeedbackType</b>中定义了可能的值。 |
+| feedbackType| 字符串 | 反馈的类型。 可能的值中定义<b>Microsoft.Xbox.Services.Social.ReputationFeedbackType</b>。 |
 | textReason| 字符串| 发件人添加的用来说明反馈提交原因的用户提供的文本。 |
-| voiceReasonId| 字符串| 从 Kinect 添加以解释原因反馈发件人为用户提供语音文件的 ID 提交 (base-64)。 |
-| evidenceId| 字符串| 记录的 ID 可用作所提交反馈的证据的资源，例如，视频文件玩游戏过程。 |
+| voiceReasonId| 字符串| 发件人添加以解释反馈的原因是 Kinect 中的用户提供语音文件的 ID 提交 (Base-64)。 |
+| evidenceId| 字符串| 可以用作要提交的反馈的证据的资源的 ID，例如，视频文件记录在玩游戏期间。 |
 
 <a id="ID4EVC"></a>
 
 
 ### <a name="feedback-types"></a>反馈类型
 
-"发送"列指示谁可以提交反馈。
+"发送"列将指示谁可以提交反馈。
 
-   * "用户"意味着它才能提交用于 XToken 身份验证，因此控制台 API 可以接受**SubmitFeedback**。
-   * "合作伙伴"意味着可以提交它由合作伙伴使用声明证书，因此该 API 可接受**SubmitBatchFeedback**。
+   * "用户"意味着它可以通过在控制台中的身份验证使用 XToken 提交，因此该 API 可以接受**SubmitFeedback**。
+   * "合作伙伴"意味着它可以由合作伙伴提交使用声明证书，因此该 API 可以接受**SubmitBatchFeedback**。
    * "隐私"意味着只有 SLS 隐私服务可以发送反馈。
-   * "None"意味着反馈通过适用于审核的 SLS 信誉服务内部生成，并且无法发送的任何调用方。
+   * "None"意味着反馈在内部生成的审核的 SLS 信誉服务和不能发送的任何调用方。
 
-| 类型| 由发送| 注释|
+| 在任务栏的搜索框中键入| 由发送| 注释|
 | --- | --- | --- | --- | --- | --- |
-| CommsAbusiveVoice| 用户| 用户向报告不恰当的语音通信从游戏内和 Xbox 仪表板发送反馈。 |
-| CommsInappropriateVideo| 用户合作伙伴| 用户和合作伙伴发送反馈报告不恰当视频从游戏内和 Xbox 仪表板。 |
-| CommsMuted| 隐私| 当用户静音另一个玩家时，隐私向信誉服务发送此反馈。 |
-| CommsPhishing| 用户| 用户发送此反馈报告网络钓鱼消息。 |
-| CommsPictureMessage| 用户| 收件箱服务调用信誉服务，它会更新发件人的信誉，具体取决于图片的通信并报告给执行团队的反馈。 |
-| CommsSpam| 用户| 用户发送此反馈报告垃圾邮件。 |
-| CommsTextMessage| 用户| 收件箱服务调用信誉服务，该更新发件人的信誉，报告给执行团队的反馈。 **注意：** 收件箱 UI 应该有一个按钮，以允许用户在标志一条消息。 |
-  | CommsVoiceMessage | 用户 | 收件箱服务调用信誉服务，它会更新发件人的信誉，具体取决于语音消息的通信并报告给执行团队的反馈。  |
-  | FairPlayBlock | 隐私 | 当用户阻止其他玩家，隐私向信誉服务发送此反馈。  |
-  | FairPlayCheater | 用户合作伙伴 | 确定用户在作弊的游戏可以发送此反馈无需用户干预。  |
-  | FairPlayConsoleBanRequest | 合作伙伴 | 合作伙伴将作为建议禁止从 Xbox Live 的主机发送此反馈。  |
-  | FairPlayIdler | 用户合作伙伴 | 如果用户处于空闲状态目的游戏时，通常圆形后舍入，确定的游戏可以发送此反馈无需用户干预。  |
-  | FairPlayKicked | 用户合作伙伴 | 检测用户已进行投票退出 （踢） 的游戏的游戏可以发送此反馈无需用户干预。  |
-  | FairPlayKillsTeammates | 用户合作伙伴 | 当玩家 killls 可以自动确定的游戏他名队友就可以发送此反馈无需用户干预。  |
-  | FairPlayQuitter | 用户合作伙伴 | 确定用户提前退出游戏的游戏可以发送此反馈无需用户干预。  |
-  | FairPlayTampering | 用户合作伙伴 | 确定用户已篡改磁盘上的内容的游戏可以发送此反馈无需用户干预。  |
-  | FairPlayUnblock | 隐私 | 当用户取消阻止其他玩家，隐私向信誉服务发送此反馈。  |
-  | FairPlayUserBanRequest | 合作伙伴 | 合作伙伴将作为建议禁止从 Xbox Live 用户发送此反馈。  |
-  | InternalAmbassadorScoreUpdated | 无 | 这是不用于由调用方内部反馈类型。  |
-  | InternalReputationReset | 无 | 这是不用于由调用方内部反馈类型。  |
-  | InternalReputationUpdated | 无 | 这是不用于由调用方内部反馈类型。  |
-  | PositiveHelpfulPlayer | 用户合作伙伴 | 用户和合作伙伴发送此反馈提交正从游戏、 论坛、 等内的有用同事的玩家有关的信息。  |
-  | PositiveHighQualityUGC | 用户合作伙伴 | 用户和合作伙伴发送此反馈以指示游戏应允许用户提交的游戏内从共享 UGC 上的正面反馈例如，调节 Forza 中的设置。  |
-  | PositiveSkilledPlayer | 用户合作伙伴 | 用户和合作伙伴发送此反馈以指示游戏可以让用户能够 MPSD 会话结束时对 MVP 投票。  |
-  | UserContentGamerpic | 用户 | 用户发送此反馈报告直接从玩家卡片不恰当的玩家图片。  |
-  | UserContentGamertag | 用户 | 用户发送此反馈报告直接从玩家卡片不恰当玩家标记。  |
-  | UserContentInappropriateUGC | 用户合作伙伴 | 用户和合作伙伴发送此反馈以指示游戏应允许用户标志在游戏中的不恰当共享的 UGC 画图作业例如，Forza 中。  |
-  | UserContentPersonalInfo | 用户 | 用户发送此反馈报告简介和玩家卡片直接从其他个人信息。  |
+| CommsAbusiveVoice| 用户| 用户将反馈发送到报表不合适的语音内的通信从标题从 Xbox 仪表板。 |
+| CommsInappropriateVideo| 用户、 合作伙伴| 用户和合作伙伴发送反馈，报告来自不适合视频标题内以及从 Xbox 仪表板。 |
+| CommsMuted| 隐私| 当用户使静音其他播放机时，隐私将此反馈发送到信誉服务。 |
+| CommsPhishing| 用户| 用户发送此反馈，报告仿冒网站邮件。 |
+| CommsPictureMessage| 用户| 收件箱服务调用更新基于图片的通信的发件人信誉，并向强制执行团队报告反馈的信誉服务。 |
+| CommsSpam| 用户| 用户发送此反馈，报告垃圾邮件消息。 |
+| CommsTextMessage| 用户| 收件箱服务调用的更新的发件人信誉，并向强制执行团队报告反馈的信誉服务。 **注意：** 收件箱 UI 应具有一个按钮，让用户能够将邮件标记。 |
+  | CommsVoiceMessage | 用户 | 收件箱服务调用更新基于通信的语音消息的发件人信誉，并向强制执行团队报告反馈的信誉服务。  |
+  | FairPlayBlock | 隐私 | 当用户阻止其他播放器时，隐私会将此反馈发送到信誉服务。  |
+  | FairPlayCheater | 用户、 合作伙伴 | 确定用户不真实的标题可以发送此反馈而无需用户干预。  |
+  | FairPlayConsoleBanRequest | 合作伙伴 | 合作伙伴发送此反馈建议禁止从 Xbox Live 的控制台。  |
+  | FairPlayIdler | 用户、 合作伙伴 | 确定是否用户代表空闲有意在游戏中，通常在轮之后, 倒圆角的标题可以发送此反馈而无需用户干预。  |
+  | FairPlayKicked | 用户、 合作伙伴 | 检测用户获赞成票数超出 （启动） 的游戏的标题可以发送此反馈而无需用户干预。  |
+  | FairPlayKillsTeammates | 用户、 合作伙伴 | 可以在播放机 killls 时自动确定的标题他的队友可以发送此反馈而无需用户干预。  |
+  | FairPlayQuitter | 用户、 合作伙伴 | 确定用户提前退出游戏的标题可以发送此反馈而无需用户干预。  |
+  | FairPlayTampering | 用户、 合作伙伴 | 确定用户已篡改磁盘上内容的标题可以发送此反馈而无需用户干预。  |
+  | FairPlayUnblock | 隐私 | 隐私将此反馈发送到信誉服务，当用户取消阻止其他播放器。  |
+  | FairPlayUserBanRequest | 合作伙伴 | 合作伙伴将作为一个建议，禁止从 Xbox Live 用户发送此反馈。  |
+  | InternalAmbassadorScoreUpdated | 无 | 这是不以供调用方内部的反馈类型。  |
+  | InternalReputationReset | 无 | 这是不以供调用方内部的反馈类型。  |
+  | InternalReputationUpdated | 无 | 这是不以供调用方内部的反馈类型。  |
+  | PositiveHelpfulPlayer | 用户、 合作伙伴 | 用户和合作伙伴发送此反馈，提交正信息很有帮助的资深玩家通过中的游戏、 论坛和等等。  |
+  | PositiveHighQualityUGC | 用户、 合作伙伴 | 用户和合作伙伴发送此反馈，指示标题应允许用户提交上从游戏中的共享 UGC 的正面反馈等优化 Forza 中的设置。  |
+  | PositiveSkilledPlayer | 用户、 合作伙伴 | 用户和合作伙伴发送此反馈，指示标题可以允许用户对 MVP 投票 MPSD 会话结束时。  |
+  | UserContentGamerpic | 用户 | 用户发送此反馈，报告的不适当的玩家图片直接从玩家卡。  |
+  | UserContentGamertag | 用户 | 用户发送此反馈，报告的不适当的玩家标记直接从玩家的卡。  |
+  | UserContentInappropriateUGC | 用户、 合作伙伴 | 用户和合作伙伴发送此反馈，指示标题应允许用户标记不适当的共享的 UGC 从内游戏时，例如，油漆 Forza 中的作业。  |
+  | UserContentPersonalInfo | 用户 | 用户发送此反馈，报表作者简介和直接从玩家卡其他个人信息。  |
 
 <a id="ID4EFEAC"></a>
 
 
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
 
 
 ```json
@@ -106,4 +106,4 @@ ms.locfileid: "8921422"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)

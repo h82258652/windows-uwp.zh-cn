@@ -1,5 +1,5 @@
 ---
-Description: Follow these best practices for geofencing in your app.
+Description: 在应用中遵循这些适用于地理围栏的最佳做法。
 title: 地理围栏应用指南
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 ms.date: 02/08/2017
@@ -7,21 +7,21 @@ ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 地理围栏
 ms.localizationpriority: medium
 ms.openlocfilehash: e3fe7cb84d4ae265ed20a6a74b76e4f08dd4c1dd
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047402"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622472"
 ---
 # <a name="guidelines-for-geofencing-apps"></a>地理围栏应用指南
 
 
 
 
-**重要的 API**
+**重要的 Api**
 
--   [**Geofence 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn263587)
--   [**Geolocator 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br225534)
+-   [**地域隔离区类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn263587)
+-   [**定位类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br225534)
 
 在应用中遵循这些适用于[**地理围栏**](https://msdn.microsoft.com/library/windows/apps/dn263744)的最佳做法。
 
@@ -122,14 +122,14 @@ function onVisibilityChanged() {
 
 虽说 GPS 可以提供最精确的位置信息，但是地理围栏也可以使用 Wi-Fi 或其他位置传感器来确定用户的当前位置。 不过，使用这些方法会影响你创建地理围栏的大小范围。 如果精确度较低，创建较小的地理围栏不会有任何帮助。 通常，建议不要创建半径小于 50 米的地理围栏。 同样，地理围栏后台任务仅在 Windows 上定期运行；如果你使用较小的地理围栏，你可能会完全错过 [**Enter**](https://msdn.microsoft.com/library/windows/apps/dn263660) 或 **Exit** 事件。
 
-如果应用需要使用半径较小的的地理围栏，最好建议用户在具备 GPS 无线电的设备上使用该应用，确保获得最佳性能。
+如果应用必须带有小型 radius 的地理围栏，则最好建议用户在具备 GPS 无线电的设备上使用该应用，确保获得最佳性能。
 
 ## <a name="related-topics"></a>相关主题
 
 
-* [设置地理围栏](https://msdn.microsoft.com/library/windows/apps/mt219702)
-* [获取当前位置](https://msdn.microsoft.com/library/windows/apps/mt219698)
-* [UWP 位置示例（地理位置）](https://go.microsoft.com/fwlink/p/?linkid=533278)
+* [设置地域隔离区](https://msdn.microsoft.com/library/windows/apps/mt219702)
+* [获取当前的位置](https://msdn.microsoft.com/library/windows/apps/mt219698)
+* [UWP 位置示例 （地理位置）](https://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  

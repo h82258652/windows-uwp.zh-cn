@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, mpsd, 多人游戏会话目录。
 ms.localizationpriority: medium
 ms.openlocfilehash: 1681fe59533ebaf0db197efb95ca46b828846f5d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947284"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662542"
 ---
 # <a name="multiplayer-session-directory-mpsd"></a>多人游戏会话目录 (MPSD)
 
@@ -31,12 +31,12 @@ ms.locfileid: "8947284"
 
 多人游戏会话目录 (MPSD) 是在 Xbox Live 云中运行的一项服务，它集中游戏跨多个客户端的多人游戏系统元数据。 它由 **MultiplayerService 类**包装。
 
-MPSD 允许作品分享连接用户组所需的基本信息。 它确保会话功能同步并保持一致。 它通过玩家卡片在发送/接收邀请并加入方面协调 shell 和主机操作系统。
+MPSD 允许作品分享连接用户组所需的基本信息。 它确保会话功能已同步并保持一致。 它通过玩家卡片在发送/接收邀请并加入方面协调 shell 和主机操作系统。
 
 
 ### <a name="mpsd-sessions"></a>MPSD 会话
 
-MPSD 会话由 **MultiplayerSession 类**表示为有一个或多个联系人使用游戏的场景。 会话由 MPSD 存储为在 Xbox Live 云中驻留的安全 JSON 文档。 具体来说，MPSD 会话具有以下特点：由作品创建和管理。
+MPSD 会话由 **MultiplayerSession 类**表示为有一个或多个联系人使用游戏的场景。 会话由 MPSD 存储为在 Xbox Live 云中驻留的安全 JSON 文档。 具体而言，MPSD 会话具有以下特征： 创建和管理的标题。
 
 -   具有唯一的 URI。 有关详细信息，请参阅**会话目录 URI**。
 -   支持用户（称为会话成员）之间的连接。
@@ -72,7 +72,7 @@ XSAPI 库管理客户端与 MPSD 之间的连接。 作品首先调用 **Multipl
 
 ### <a name="subscribing-for-session-changes"></a>订阅会话更改
 
-MPSD 使用“即时点击”作为感兴趣事物发生更改时发出的轻型通知。 作品应该检索经过修改的资源来确定更改的真正性质。 订阅启用后，游戏可以使用对 **MultiplayerSession.SetSessionChangeSubscription 方法**的调用订阅会话更改的“即时点击”。 请参阅[操作方法：订阅 MPSD 会话更改通知](multiplayer-how-tos.md)。
+MPSD 使用“即时点击”作为感兴趣事物发生更改时发出的轻型通知。 作品应该检索经过修改的资源来确定更改的真正性质。 订阅启用后，游戏可以使用对 **MultiplayerSession.SetSessionChangeSubscription 方法**的调用订阅会话更改的“即时点击”。 请参阅[如何：MPSD 会话更改通知订阅](multiplayer-how-tos.md)。
 
 
 ### <a name="handling-shoulder-taps"></a>处理“即时点击”
@@ -182,7 +182,7 @@ MPSD 执行的会话更新同步使用两个相关的高级实现模式：
 
 | 注意                                                                                                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 如果作品使用 **TryWrite\*** 方法之一，更新的会话在收到 HTTP/412 状态代码时返回。 此行为避免了对调用 **GetCurrentSessionAsync** 的需要。 |
+| 如果标题使用一种**TryWrite\*** 方法，在 HTTP/412 状态代码的情况下返回更新后的会话。 此行为避免了对调用 **GetCurrentSessionAsync** 的需要。 |
 
 当作品调用写入会话方法之一时，可能会返回更新的会话版本。 如果是这样，作品应该以线程安全的方式将本地缓存的副本切换为此新版本。
 
@@ -211,7 +211,7 @@ MPSD 通过 REST 功能在会话更新中支持开放式并发，方法是使用
 
 ### <a name="using-the-multiplayer-rest-api-to-interact-with-mpsd"></a>使用多人游戏 REST API 与 MPSD 交互
 
-游戏或其服务可以使用对多人游戏 REST API 和匹配 REST API 的标准 HTTP 调用。 在直接使用 REST 功能时，调用方针对大多数操作的会话目录 URI 发出 DELETE、PUT、POST 和 GET 调用。 在 PUT 请求中，请求正文合并到现有会话中。 如果没有现有会话，请求正文用于创建新会话，以及存储在[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)上的会话模板。 所有字段都是可选的，只有增量必须指定。 因此，{}是增量为零的有效 PUT 请求。
+游戏或其服务可以使用对多人游戏 REST API 和匹配 REST API 的标准 HTTP 调用。 在直接使用 REST 功能时，调用方针对大多数操作的会话目录 URI 发出 DELETE、PUT、POST 和 GET 调用。 在 PUT 请求中，请求正文合并到现有会话中。 如果没有现有会话，用于创建新的会话，以及会话模板存储在请求正文[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)。 所有字段都是可选的，只有增量必须指定。 因此，{}为有效的 PUT 请求与零增量。
 
 若要执行返回合并结果的假设 PUT 请求而不影响服务器的官方会话副本，可以将查询字符串“?nocommit=true”附加到 PUT 请求中。
 
@@ -275,7 +275,7 @@ MPSD 通过 REST 功能在会话更新中支持开放式并发，方法是使用
 #### <a name="display-available-sessions-and-templates"></a>显示可用会话和模板
 
 1.  在工具中单击 SCID 以在登录用户属于其成员的 SCID 中显示会话列表。
-2.  在同一页面上，你可以单击 SCID，显示 SCID 的服务配置中的会话模板和本地化字符串。 这些项目通过[XDP](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)引入。
+2.  在同一页面上，你可以单击 SCID，显示 SCID 的服务配置中的会话模板和本地化字符串。 这些项通过引入[XDP](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 
 
 #### <a name="display-the-full-contents-of-a-session"></a>显示会话的完整内容
@@ -294,10 +294,10 @@ MPSD 显示的会话可能由于以下几个原因与会话 URI 的标准 GET �
 
 [多人游戏会话状态代码](multiplayer-session-status-codes.md)
 
-[操作方法：更新多人游戏会话](multiplayer-how-tos.md)
+[How to:更新多人游戏会话](multiplayer-how-tos.md)
 
-[操作方法：从作品激活加入 MPSD 会话](multiplayer-how-tos.md)
+[How to:加入从标题激活 MPSD 会话](multiplayer-how-tos.md)
 
-[操作方法：订阅 MPSD 会话更改通知](multiplayer-how-tos.md)
+[How to:MPSD 会话更改通知订阅](multiplayer-how-tos.md)
 
 [SmartMatch 匹配](smartmatch-matchmaking.md)

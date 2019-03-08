@@ -6,11 +6,11 @@ ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2756231b067176da66c6dbcedf7a1452d5d109f4
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114543"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641152"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>即便跨设备，也继续用户活动
 
@@ -32,14 +32,14 @@ ms.locfileid: "9114543"
 
 一个 [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity) 是 Windows 中一个用户参与单位。 它包含三个部分：用于激活该活动所属应用的 URI、视觉对象和用于描述该活动的元数据。
 
-1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) 用于通过特定上下文继续执行应用程序操作。 通常情况下，此链接采用两种形式：方案的协议处理程序（例如“my-app://page2?action=edit”）或 AppUriHandler（例如，http://constoso.com/page2?action=edit)。
+1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) 用于通过特定上下文继续执行应用程序操作。 通常情况下，此链接采用两种形式：方案的协议处理程序（例如“my-app://page2?action=edit”）或 AppUriHandler（例如， http://constoso.com/page2?action=edit)。
 2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) 公开一个类，允许用户使用标题、描述或自适应卡片元素来直观标识活动。
 3. 最后，[内容](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content)是可用于存储活动元数据的位置，通过这一位置，可按特定上下文来对活动进行归组和检索。 通常，它采用 [https://schema.org](https://schema.org) 数据的形式。
 
 向应用添加 **UserActivity**：
 
 1. 在应用（例如，页面导航、新游戏级别等）中用户的上下文更改时，生成 **UserActivity** 对象。
-2. 使用最少的必填字段填充 **UserActivity** 对象：[ActivityId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activityid#Windows_ApplicationModel_UserActivities_UserActivity_ActivityId)、[ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri) 和 [UserActivity.VisualElements.DisplayText](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.displaytext#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_DisplayText)。
+2. 填充**UserActivity**具有必填字段的最小集的对象：[ActivityId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activityid#Windows_ApplicationModel_UserActivities_UserActivity_ActivityId)， [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri)，和[UserActivity.VisualElements.DisplayText](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.displaytext#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_DisplayText)。
 3. 向应用添加自定义方案处理程序，以便 **UserActivity** 可以重新激活它。
 
 只需几行代码，即可将 **UserActivity** 集成到应用。 例如，假设此代码在 MainPage 类内的 MainPage.xaml.cs 中（请注意：假设 `using Windows.ApplicationModel.UserActivities;`）：
@@ -99,7 +99,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-此代码用于检测应用是否是通过协议激活的。 如果是，它会设法确定应用应执行什么操作来继续之前的任务（应用因此任务被激活）。 由于一个简单应用，此应用恢复的唯一活动将你至辅助页面应用弹出时。
+此代码用于检测应用是否是通过协议激活的。 如果是，它会设法确定应用应执行什么操作来继续之前的任务（应用因此任务被激活）。 作为一个简单的应用，此应用程序恢复的唯一活动是在页面上放置辅助当应用启动后。
 
 ## <a name="use-adaptive-cards-to-improve-the-timeline-experience"></a>使用自适应卡片来改善时间线体验
 
@@ -152,10 +152,10 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 如果应用跨平台（例如，在 Android 和 iOS 上）运行，或在云中维护用户状态，可通过 [Microsoft Graph](https://developer.microsoft.com/graph/) 发布 UserActivities。
 在使用 Microsoft 帐户对应用程序或服务进行了身份验证后，只需通过两个简单 REST 调用，使用上文所述的相同数据，生成[活动](https://developer.microsoft.com/graph/docs/api-reference/beta/api/projectrome_put_activity)和[历史记录](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/projectrome_historyitem)对象。
 
-## <a name="summary"></a>小结
+## <a name="summary"></a>摘要
 
 可使用 [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) API 在时间线和 Cortana 中显示应用。
-* 详细了解[**UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* 详细了解如何[ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * 查看[示例代码](https://github.com/Microsoft/project-rome)。
 * 请参阅[更复杂的自适应卡片](https://adaptivecards.io/)。
 * 通过 [Microsoft Graph](https://developer.microsoft.com/graph/) 从 iOS、Android 或 web 服务发布 **UserActivity**。
@@ -167,9 +167,9 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 ## <a name="related-topics"></a>相关主题
 
-* [用户活动 （项目 rome 文档）](https://docs.microsoft.com/windows/project-rome/user-activities/)
-* [自适应卡片](https://docs.microsoft.com/adaptive-cards/)
-* [自适应卡片可视化工具，示例](https://adaptivecards.io/)
-* [处理 URI 激活](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-* [使用 Microsoft Graph、活动源和自适应卡片在任何平台上与客户互动](https://channel9.msdn.com/Events/Connect/2017/B111)
+* [用户活动 (项目罗马 docs)](https://docs.microsoft.com/windows/project-rome/user-activities/)
+* [自适应卡](https://docs.microsoft.com/adaptive-cards/)
+* [自适应卡可视化工具示例](https://adaptivecards.io/)
+* [句柄 URI 激活](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+* [使用 Microsoft Graph、 活动源，和自适应卡任何平台上的客户参与](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)

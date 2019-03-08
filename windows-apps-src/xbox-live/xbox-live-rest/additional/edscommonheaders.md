@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 51a85383ee75fa51cb8376451ac955dcc4fa2edf
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044105"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630702"
 ---
 # <a name="eds-common-headers"></a>EDS 通用标头
 
@@ -20,36 +20,36 @@ ms.locfileid: "9044105"
 
 
 
-## <a name="entertainment-discovery-services-eds-common-request-headers"></a>娱乐发现服务 (EDS) 公共请求标头
+## <a name="entertainment-discovery-services-eds-common-request-headers"></a>娱乐发现服务 (EDS) 常见请求标头
 
-| 标头名称| 说明| 是否为必需？| 注释|
+| 头名称| 描述| 是否为必需？| 注释|
 | --- | --- | --- | --- |
-| <b>x xbl 协定版本</b>| EDS 服务版本| 是| 3.2|
-| <b>x xbl 客户端类型</b>| 客户端类型标头| 是| 交谈团队，获取客户端类型。|
-| <b>x xbl 客户端版本</b>| 客户端版本| 是| 任何非空字符串。|
-| <b>x xbl 父 ig</b>| 印象 guid| 是| 用于跟踪日志中记录和其他服务调用的请求。|
-| <b>x xbl 设备类型</b>| 设备类型| 是| 表示客户端的设备。|
-| <b>接受</b>| 接受类型| 是| XML 或 JSON。|
-| <b>授权</b>| 身份验证标头| 是|  |
-| <b>x xbl 自动建议-种子-文本转换功能</b>| 自动建议种子文本| 否| 使用 BI 和相关性|
-| <b>x xbl 搜索词</b>| 搜索词| 否|  |
-| <b>x xbl 输入方法</b>| 用户使用的输入的法| 否| 控制器，语音，Kinect。|
-| <b>x-xbl-kinect 启用</b>| 启用 Kinect| 否| 是/否。|
-| <b>x-xbl-语音的会话的 id</b>| 语音会话 ID| 否| 是否使用语音启动会话。|
-| <b>x xbl 客户端 id</b>| 匿名客户端 Id| 否| 用于 BI 报告和相关性。|
-| <b>x xbl 设备 id</b>| 设备 ID| 否| 用于 BI 报告和相关性。|
-| <b>x xbl 用户代理</b>| 客户端用户代理| 否| 用于 BI。 "&lt;name> /&lt;version> (&lt;操作系统 version>;&lt;platform>;&lt;capability>;&lt;manufacture>;&lt;model>)"。|
-| <b>x xbl 父 ig</b>| 对于"Chained"调用之前印象 Guid| 否 （但强烈建议）| BI 相关性来说很重要。 例如，浏览调用 IG 是以下父 IG 设置详细信息调用。|
-| <b>delid</b>| 委托标识| 否| 使用内部服务来代表用户工作。|
+| <b>x-xbl-contract-version</b>| EDS 服务版本| 是| 3.2|
+| <b>x-xbl-client-type</b>| 客户端类型标头| 是| 团队以获取您自己的客户端类型进行朗读。|
+| <b>x-xbl-client-version</b>| 客户端版本| 是| 任何非空字符串。|
+| <b>x-xbl-parent-ig</b>| 印象 guid| 是| 用于跟踪日志中并在其他服务调用之间的请求。|
+| <b>x-xbl-device-type</b>| 设备类型| 是| 表示客户端的设备。|
+| <b>接受</b>| 接受的类型| 是| XML 或 JSON。|
+| <b>Authorization</b>| 身份验证标头| 是|  |
+| <b>x-xbl-autoSuggest-seed-text</b>| 自动建议的种子| 否| 使用 BI 和相关性|
+| <b>x-xbl-search-term</b>| 搜索词| 否|  |
+| <b>x-xbl-input-method</b>| 用户使用的输入的法| 否| 控制器、 语音、 Kinect。|
+| <b>x-xbl-kinect-enabled</b>| 已启用的 Kinect| 否| 是/否。|
+| <b>x-xbl-speech-session-id</b>| 语音会话 ID| 否| 是否使用语音启动会话。|
+| <b>x-xbl-client-id</b>| 匿名客户端 Id| 否| 用于 BI 报告和相关性。|
+| <b>x-xbl-device-id</b>| 设备 ID| 否| 用于 BI 报告和相关性。|
+| <b>x-xbl-user-agent</b>| 客户端用户代理| 否| 使用 bi。 "&lt;名称 > /&lt;版本 > (&lt;OS 版本 >;&lt;平台 >;&lt;功能 >;&lt;制造 >;&lt;模型 >)"。|
+| <b>x-xbl-parent-ig</b>| 对于"Chained"调用的上一印象 Guid| 否 （但强烈建议）| 重要 BI 相关性。 例如，浏览调用的 IG 是以下父 IG 详细信息调用。|
+| <b>delid</b>| 将标识委托| 否| 内部服务使用它来代表用户工作。|
 
-## <a name="common-response-headers"></a>常见的响应标头
+## <a name="common-response-headers"></a>常见响应标头
 
-| 标头名称| 说明| 是否为必需？| 注释|
+| 头名称| 描述| 是否为必需？| 注释|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| <b>缓存</b>| 缓存标头| 是| 请参阅<a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>。|
-| <b>x xbl 错误</b>| 错误| 否| 从各种数据提供程序的错误列表。|
-| <b>x xbl traceid</b>| 从日志的跟踪 Id| 是| 用于跟踪回请求特定日志。|
-| <b>x 服务器名称</b>| 处理请求的服务器名称混淆。| 是| 用于内部调试。|
+| <b>Cache</b>| 缓存标头| 是| 请参阅<a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9"> http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9 </a>。|
+| <b>x-xbl-errors</b>| 错误| 否| 从各种数据提供程序错误的列表。|
+| <b>x-xbl-traceid</b>| 日志中的跟踪 Id| 是| 用于跟踪请求特定日志。|
+| <b>x-server-name</b>| 处理请求的服务器的经过模糊处理的名称。| 是| 用于内部调试。|
 
 <a id="ID4EECAC"></a>
 
@@ -69,4 +69,4 @@ ms.locfileid: "9044105"
 
 ##### <a name="further-information"></a>详细信息
 
-[市场 URI](../uri/marketplace/atoc-reference-marketplace.md)
+[Marketplace Uri](../uri/marketplace/atoc-reference-marketplace.md)

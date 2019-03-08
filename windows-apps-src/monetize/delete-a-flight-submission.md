@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交, 删除, 软件包外部测试版
 ms.localizationpriority: medium
 ms.openlocfilehash: 1222c730f4e7819037ee42fc0897cf2924586b25
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933009"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651052"
 ---
 # <a name="delete-a-package-flight-submission"></a>删除软件包外部测试版提交
 
 在 Microsoft Store 提交 API 中使用此方法，可删除现有软件包外部测试版提交。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -33,20 +33,20 @@ ms.locfileid: "8933009"
 | DELETE    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/flights/{flightId}/submissions/{submissionId}``` |
 
 
-### <a name="request-header"></a>请求标头
+### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 描述                                                                 |
+| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
-| 名称        | 类型   | 描述                                                                 |
+| 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字符串 | 必需。 应用（包含要删除的软件包外部测试版提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| flightId | 字符串 | 必需。 软件包外部测试版（包含要删除的提交）的 ID。 此 ID 包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。 对于在合作伙伴中心中创建的外部测试版，此 ID 也包含在合作伙伴中心中的外部测试版页面的 URL 中可用。  |
-| submissionId | 字符串 | 必需。 要删除的提交的 ID。 此 ID 包含在[创建软件包外部测试版提交](create-a-flight-submission.md)请求的响应数据中。 对于在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
+| flightId | 字符串 | 必需。 软件包外部测试版（包含要删除的提交）的 ID。 [创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中包含此 ID。 在合作伙伴中心创建航班，此 ID 是也可用在合作伙伴中心中的航班页的 URL。  |
+| submissionId | 字符串 | 必需。 要删除的提交的 ID。 此 ID 包含在[创建软件包外部测试版提交](create-a-flight-submission.md)请求的响应数据中。 在合作伙伴中心创建的提交，此 ID 是也可用在合作伙伴中心中的提交页的 URL。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -56,7 +56,7 @@ ms.locfileid: "8933009"
 
 ### <a name="request-example"></a>请求示例
 
-以下示例演示如何删除软件包外部测试版的提交。
+以下示例演示了如何删除软件包外部测试版的提交。
 
 ```
 DELETE https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243649 HTTP/1.1
@@ -75,15 +75,15 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 请求参数无效。 |
 | 404  | 找不到指定提交。 |
-| 409  | 指定的提交已找到，但它无法删除在其当前状态，或者应用使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |
+| 409  | 找到指定的提交，但无法在其当前状态下，删除或应用程序使用的合作伙伴中心功能[目前不支持通过 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |
 
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-* [管理软件包外部测试版提交](manage-flight-submissions.md)
-* [获取软件包外部测试版提交](get-a-flight-submission.md)
-* [创建软件包外部测试版提交](create-a-flight-submission.md)
-* [确认软件包外部测试版提交](commit-a-flight-submission.md)
-* [更新软件包外部测试版提交](update-a-flight-submission.md)
-* [获取软件包外部测试版提交的状态](get-status-for-a-flight-submission.md)
+* [创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)
+* [管理包航班提交](manage-flight-submissions.md)
+* [获取包航班提交](get-a-flight-submission.md)
+* [创建包航班提交](create-a-flight-submission.md)
+* [提交包航班提交](commit-a-flight-submission.md)
+* [更新包航班提交](update-a-flight-submission.md)
+* [获取包航班提交状态](get-status-for-a-flight-submission.md)

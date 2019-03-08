@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 53a6c7bb0e7390b024b01e221d8061316a80509e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933276"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650412"
 ---
 # <a name="usersxuidxuidscidsscidstats"></a>/users/xuid({xuid})/scids/{scid}/stats
-访问代表指定用户的用户统计信息名称的以逗号分隔列表范围的服务配置。 这些 Uri 的域是`userstats.xboxlive.com`。
+访问作用域由代表指定用户的用户统计信息名称的逗号分隔列表的服务配置。 这些 Uri 的域是`userstats.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -24,10 +24,10 @@ ms.locfileid: "8933276"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| xuid| GUID| Xbox 用户 ID (XUID) 的用户的名义访问的服务配置。| 
-| scid| GUID| 服务配置，其中包含所访问的资源的标识符。| 
+| xuid| GUID| Xbox 用户 ID (XUID) 的用户的名义访问服务配置。| 
+| scid| GUID| 服务配置，其中包含要访问的资源的标识符。| 
   
 <a id="ID4E4B"></a>
 
@@ -36,11 +36,11 @@ ms.locfileid: "8933276"
 
 [GET](uri-usersxuidscidsscidstatsget.md)
 
-&nbsp;&nbsp;获取由逗号分隔列表的代表指定用户的用户统计数据名称范围的服务配置。
+&nbsp;&nbsp;获取代表指定用户的用户统计信息名称的逗号分隔列表的范围扩展的服务配置。
 
-[获取与值元数据](uri-usersxuidscidsscidstatsgetvaluemetadata.md)
+[获取与值的元数据](uri-usersxuidscidsscidstatsgetvaluemetadata.md)
 
-&nbsp;&nbsp;获取指定的统计数据，包括与统计信息值，指定的服务配置中的用户相关联的元数据的列表。
+&nbsp;&nbsp;获取指定的统计信息，包括与统计信息值，指定的服务配置中的用户相关联的元数据的列表。
  
 <a id="ID4EKC"></a>
 
@@ -52,6 +52,6 @@ ms.locfileid: "8933276"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[用户统计信息 URI](atoc-reference-userstats.md)
+[用户统计信息的 Uri](atoc-reference-userstats.md)
 
    

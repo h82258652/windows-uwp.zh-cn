@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 输入, 原始游戏控制器
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b5f4d49ad49cf9f9065fe17788456e9dd2a4a4e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946793"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644622"
 ---
 # <a name="raw-game-controller"></a>原始游戏控制器
 
@@ -112,7 +112,7 @@ for (uint32_t i = 0; i < switchCount; i++)
 
 ## <a name="reading-the-raw-game-controller"></a>读取原始游戏控制器
 
-了解原始游戏控制器上的输入数之后，便准备好从它收集输入。 不过，与你可能已习惯的某些其他输入类型不同，原始游戏控制器不会通过引发事件来传达状态的更改。 相反，你需要通过对它进行“轮询”__ 来定期读取其当前状态。
+了解原始游戏控制器上的输入数之后，便准备好从它收集输入。 不过，与你可能已习惯的某些其他输入类型不同，原始游戏控制器不会通过引发事件来传达状态的更改。 相反，你需要通过对它进行“轮询”来定期读取其当前状态。
 
 ### <a name="polling-the-raw-game-controller"></a>轮询原始游戏控制器
 
@@ -168,7 +168,7 @@ for (uint32_t i = 0; i < buttonCount; i++)
 }
 ```
 
-有时你可能需要确定：何时将按钮从按下转换为释放或从释放转换为按下，是按下还是释放多个按钮，或者是否按特定方式安排一组按钮（按下一些按钮，释放一些按钮）。 有关如何检测这些条件的详细信息，请参阅[检测按钮转换](input-practices-for-games.md#detecting-button-transitions)和[检测复杂按钮安排](input-practices-for-games.md#detecting-complex-button-arrangements)。
+有时你可能需要确定：何时将按钮从按下转换为释放或从释放转换为按下，是按下还是释放多个按钮，或者是否按特定方式安排一组按钮（按下一些按钮，释放一些按钮）。 有关如何检测这些条件的详细信息，请参阅 [检测按钮转换](input-practices-for-games.md#detecting-button-transitions) 和 [检测复杂按钮安排](input-practices-for-games.md#detecting-complex-button-arrangements)。
 
 开关值作为 [GameControllerSwitchPosition](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerswitchposition) 的数组进行提供。 由于此属性为位域，因此使用按位掩码隔离开关的方向。
 
@@ -205,7 +205,7 @@ float leftTrigger = currentAxisReading[4];
 float rightTrigger = currentAxisReading[5];
 ```
 
-读取摇杆值时，你会注意到，当摇杆处于中心位置静止时，它们不会稳定地生成中性读数 0.5；而是每次移动摇杆并返回到中心位置时，才会生成不同的接近 0.5 的值。 要减小这些误差，你可以使用小“死区”__（一系列被忽略的接近理想中心位置的值）。
+读取摇杆值时，你会注意到，当摇杆处于中心位置静止时，它们不会稳定地生成中性读数 0.5；而是每次移动摇杆并返回到中心位置时，才会生成不同的接近 0.5 的值。 要减小这些误差，你可以使用小“死区”（一系列被忽略的接近理想中心位置的值）。
 
 使用死区的一种方法是，确定摇杆被移动远离中心的距离，并忽略比你选择的某些距离更近的读数。 你可以使用勾股定理粗略计算这一距离，该值并不精确，因为摇杆读数实际上是极值，不是平面值。 这会生成一个径向死区。
 
@@ -233,8 +233,8 @@ The [RawGameControllerUWP sample (GitHub)](TODO: Link) demonstrates how to use r
 
 ## <a name="see-also"></a>另请参阅
 
-* [游戏输入](input-for-games.md)
-* [游戏输入实践](input-practices-for-games.md)
+* [游戏的输入](input-for-games.md)
+* [输入的游戏方案](input-practices-for-games.md)
 * [Windows.Gaming.Input 命名空间](https://docs.microsoft.com/uwp/api/windows.gaming.input)
 * [Windows.Gaming.Input.RawGameController 类](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller)
 * [Windows.Gaming.Input.IGameController 接口](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)

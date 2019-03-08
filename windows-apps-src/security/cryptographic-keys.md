@@ -4,14 +4,14 @@ description: 本文显示了如何使用标准密钥派生函数来派生密钥�
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全
+keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b74eccd5f6138e5a9d670aa3a0a93239813cf4d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918610"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658352"
 ---
 # <a name="cryptographic-keys"></a>加密密钥
 
@@ -69,7 +69,7 @@ ms.locfileid: "8918610"
 
 通常有必要从共享机密派生附加密钥。 你可以使用 [**KeyDerivationAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241518) 类以及 [**KeyDerivationParameters**](https://msdn.microsoft.com/library/windows/apps/br241524) 类中的以下特殊方法之一来派生密钥。
 
-| 对象                                                                            | 说明                                                                                                                                |
+| 对象                                                                            | 描述                                                                                                                                |
 |-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | [**BuildForPbkdf2**](https://msdn.microsoft.com/library/windows/apps/br241525)    | 创建一个 KeyDerivationParameters 对象以在基于密码的密钥派生函数 2 (PBKDF2) 中使用。                                 |
 | [**BuildForSP800108**](https://msdn.microsoft.com/library/windows/apps/br241526)  | 创建一个 KeyDerivationParameters 对象以在某个计数器模式的、基于哈希的邮件身份验证代码 (HMAC) 密钥派生函数中使用。 |

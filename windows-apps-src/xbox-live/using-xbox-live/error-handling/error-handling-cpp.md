@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 错误, 处理
 ms.localizationpriority: medium
 ms.openlocfilehash: 90fd816f8d44b27c1df0ded9bee6473f642478a9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935565"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636522"
 ---
 # <a name="c-api-error-handling"></a>C++ API 错误处理
 
@@ -89,4 +89,4 @@ else if (achievementResult.err() == xbox_live_error_condition::auth)
 
 但一般情况下，这并不是你想要进行的操作，你想要的是将一类错误作为一个错误进行测试。  因此，你可以使用 ```xbox_live_error_condition``` 类中提供的枚举测试一类错误。  我们对相等运算符实施重载，这将会自动测试多个错误代码。  除了 ```auth``` 外，还有诸如 ```rta``` 和 ```http``` 之类的类别。  完整列表位于 *errors.h* 或 *xblsdk_cpp.chm* 中。
 
-如需观看介绍此功能以及其他 C++ Xbox 服务 API 功能的视频，请参阅 *XSAPI：C++，无异常！* 下面的 [Xfest 2015 视频](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2015.aspx)中的 XFest 访谈
+介绍了此操作，和 c + + Xbox 服务 API 的一些其他功能的视频，请参阅中我们 XFest 讨论[Xfest 2015 视频](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2015.aspx)下*XSAPI:C + +，存在例外情况 ！*

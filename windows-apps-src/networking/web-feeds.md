@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b5312614c7060118fdb4678aa80ae51d6734486
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921322"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660302"
 ---
 # <a name="rssatom-feeds"></a>RSS/Atom 源
 
 
-**重要的 API**
+**重要的 Api**
 
 -   [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819)
 -   [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)
@@ -30,7 +30,7 @@ Web 订阅源是一个文档，其中包含任意数量的由文本、链接和�
 
 ## <a name="which-feed-format-standards-are-supported"></a>支持哪些订阅源格式标准？
 
-通用 Windows 平台 (UWP) 支持从 RSS 0.91 到 RSS 2.0 的 RSS 格式标准的订阅源检索，也支持从 0.3 到 1.0 的 Atom 标准的订阅源检索。 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空间中的类可定义订阅源和能够表示 RSS 和 Atom 元素的订阅源项目。
+通用 Windows 平台 (UWP) 支持从 RSS 0.91 到 RSS 2.0 的 RSS 格式标准的订阅源检索，也支持从 0.3 到 1.0 的 Atom 标准的订阅源检索。 [  **Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空间中的类可定义订阅源和能够表示 RSS 和 Atom 元素的订阅源项目。
 
 此外，Atom 1.0 和 RSS 2.0 格式都允许各自的订阅源文档包含在正式规范中未定义的元素或属性。 随着时间的推移，这些自定义元素和属性已经成为其他 Web 服务数据格式（如 GDATA 和 OData）用于指定域的特定信息的一种方式。 为了支持这一新增功能，[**SyndicationNode**](https://msdn.microsoft.com/library/windows/apps/br243585) 类表示泛型 XML 元素。 通过结合使用 **SyndicationNode** 和 [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819) 命名空间中的类，应用可以访问属性、扩展以及它们可能包含的任何内容。
 
@@ -44,7 +44,7 @@ UWP 中的网络隔离功能使开发人员能够控制和限制 UWP 应用的�
 
 网络隔离功能可影响尝试访问网络的 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 和 [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609) 命名空间中的任何类元素。 Windows 会主动强制实现网络隔离。 如果尚未启用相应的网络功能，则调用 **Windows.Web.Syndication** 或 **Windows.Web.AtomPub** 命名空间中的类元素可能会因为网络隔离导致网络访问失败。
 
-在生成应用时，在应用清单中配置其网络功能。 网络功能通常添加开发应用时使用 Microsoft Visual Studio2015。 也可使用文本编辑器在应用清单文件中手动设置网络功能。
+在生成应用时，在应用清单中配置其网络功能。 通常，使用 Microsoft Visual Studio 2015 开发应用程序时添加网络功能。 也可使用文本编辑器在应用清单文件中手动设置网络功能。
 
 有关网络隔离和网络功能的详细信息，请参阅[网络基础知识](networking-basics.md)主题中的“功能”部分。
 
@@ -52,11 +52,11 @@ UWP 中的网络隔离功能使开发人员能够控制和限制 UWP 应用的�
 
 此部分展示了如何在采用 C# 或 Javascript 编写的 UWP 应用中使用 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空间中的类检索和显示 Web 订阅源。
 
-**先决条件**
+**必备条件**
 
 若要确保你的 UWP 应用能够使用网络，必须设置在项目 **Package.appxmanifest** 文件中所需的任何网络功能。 如果你的应用需要作为客户端连接到 Internet 上的远程服务，则需要具有 **“internetClient”** 功能。 有关详细信息，请参阅[网络基础知识](networking-basics.md)主题中的“功能”部分。
 
-**检索来自 Web 订阅源的综合内容**
+**从 web 源中检索整合的内容**
 
 现在，我们将查看一些代码，用于演示如何检索订阅源，然后显示订阅源所包含的每个单独项。 在我们可以配置和发送请求前，我们将定义一些将在操作期间使用的变量，并初始化 [**SyndicationClient**](https://msdn.microsoft.com/library/windows/apps/br243456) 的实例，该实例定义我们将用于检索和显示订阅源的方法和属性。
 

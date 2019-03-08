@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d84c6eb678bf884709e13ecefd81e64097ee738
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940219"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630202"
 ---
 # <a name="manage-targeting-profiles"></a>管理目标市场配置文件
 
@@ -20,7 +20,7 @@ ms.locfileid: "8940219"
 
 有关目标市场配置文件与广告活动、投放渠道和创意之间关系的详细信息，请参阅[使用 Microsoft Store 服务开展广告活动](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要使用这些方法，首先需要执行以下操作：
 
@@ -38,12 +38,12 @@ ms.locfileid: "8940219"
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile/{targetingProfileId}``` |  获取通过 *targetingProfileId* 指定的目标市场配置文件。  |
 
 
-### <a name="header"></a>Header
+### <a name="header"></a>标头
 
-| 标头        | 类型   | 描述         |
+| 标头        | 在任务栏的搜索框中键入   | 描述         |
 |---------------|--------|---------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
-| 跟踪 ID   | GUID   | 选填。 跟踪调用流的 ID。                                  |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 跟踪 ID   | GUID   | 可选。 跟踪调用流的 ID。                                  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -139,11 +139,11 @@ Authorization: Bearer <your access token>
 
 这些方法的请求和响应正文包含以下字段。 这张表列出了 POST 方法请求正文中的哪些字段是只读字段（意味着不能在 PUT 方法中更改它们）以及哪些字段是必填字段。
 
-| 字段        | 类型   |  描述      |  只读  | 默认值  | POST 必填字段 |  
+| 字段        | 在任务栏的搜索框中键入   |  描述      |  只读  | 默认  | POST 必填字段 |  
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整数   |  目标市场配置文件的 ID。     |   是    |       |   否      |       
 |  name   |  字符串   |   目标市场配置文件的名称。    |    否   |      |  是     |       
-|  targetingType   |  字符串   |  以下值之一： <ul><li>**自动**： 指定此值可允许 Microsoft 选择目标市场配置文件基于你的应用在合作伙伴中心中的设置。</li><li>**Manual**：指定此值可定义你自己的目标市场配置文件。</li></ul>     |  否     |  Auto    |   是    |       
+|  targetingType   |  字符串   |  以下值之一： <ul><li>**自动**：指定此值可使 Microsoft 能够选择基于合作伙伴中心中的应用设置的目标配置文件。</li><li>**手动**：指定此值来定义自己的目标配置文件。</li></ul>     |  否     |  自动    |   是    |       
 |  age   |  数组   |   一个或多个整数，用于标识要针对的用户的年龄范围。 有关整数的完整列表，请参阅本文章中的[年龄值](#age-values)。    |    否    |  null    |     否    |       
 |  gender   |  数组   |  一个或多个整数，用于标识要针对的用户的性别。 有关整数的完整列表，请参阅本文章中的[性别值](#gender-values)。       |  否    |  null    |     否    |       
 |  country   |  数组   |  一个或多个整数，用于标识要针对的用户所在的国家或地区代码。 有关整数的完整列表，请参阅本文章中的[国家或地区代码值](#country-code-values)。    |  否    |  null   |      否   |       
@@ -166,7 +166,7 @@ Authorization: Bearer <your access token>
 |     654     |            35 到 49             |
 |     655     |            50 及以上             |
 
-要以编程方式获取 *age* 字段的支持值，你可以调用下面的 GET 方法。  对于 ```Authorization``` 标头，请以 **Bearer** &lt;*token*&gt; 形式传递你的 Azure AD 访问令牌。
+要以编程方式获取 *age* 字段的支持值，你可以调用下面的 GET 方法。  有关```Authorization```标头，在窗体中传递你的 Azure AD 访问令牌**持有者** &lt;*令牌*&gt;。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/age
@@ -197,10 +197,10 @@ Authorization: Bearer <your access token>
 
 |  *gender* 字段的整数值  |  对应的性别  |  
 |---------------------------------|---------------------------|
-|     700     |            男性             |
+|     3.     |            男性             |
 |     701     |           女性             |
 
-要以编程方式获取 *gender* 字段的支持值，你可以调用下面的 GET 方法。  对于 ```Authorization``` 标头，请以 **Bearer** &lt;*token*&gt; 形式传递你的 Azure AD 访问令牌。
+要以编程方式获取 *gender* 字段的支持值，你可以调用下面的 GET 方法。  有关```Authorization```标头，在窗体中传递你的 Azure AD 访问令牌**持有者** &lt;*令牌*&gt;。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/gender
@@ -238,9 +238,9 @@ Authorization: Bearer <your access token>
 |     506     |           Windows 8.0             |
 |     507     |           Windows 8.1             |
 |     508     |           Windows 10             |
-|     509     |           Windows10 移动版             |
+|     509     |           Windows 10 移动版             |
 
-要以编程方式获取 *osVersion* 字段的支持值，你可以调用下面的 GET 方法。  对于 ```Authorization``` 标头，请以 **Bearer** &lt;*token*&gt; 形式传递你的 Azure AD 访问令牌。
+要以编程方式获取 *osVersion* 字段的支持值，你可以调用下面的 GET 方法。  有关```Authorization```标头，在窗体中传递你的 Azure AD 访问令牌**持有者** &lt;*令牌*&gt;。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/osversion
@@ -278,9 +278,9 @@ Authorization: Bearer <your access token>
 |  *deviceType* 字段的整数值  |  对应的设备类型  |  描述  |
 |---------------------------------|---------------------------|---------------------------|
 |     710     |  Windows   |  代表运行 Windows 10 或 Windows 8.x 桌面版的设备。  |
-|     711     |  手机     |  代表运行 Windows 10 移动版、Windows Phone 8.x 或 Windows Phone 7.x 的设备。
+|     711     |  Phone     |  代表运行 Windows 10 移动版、Windows Phone 8.x 或 Windows Phone 7.x 的设备。
 
-要以编程方式获取 *deviceType* 字段的支持值，你可以调用下面的 GET 方法。  对于 ```Authorization``` 标头，请以 **Bearer** &lt;*token*&gt; 形式传递你的 Azure AD 访问令牌。
+要以编程方式获取 *deviceType* 字段的支持值，你可以调用下面的 GET 方法。  有关```Authorization```标头，在窗体中传递你的 Azure AD 访问令牌**持有者** &lt;*令牌*&gt;。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/devicetype
@@ -312,7 +312,7 @@ Authorization: Bearer <your access token>
 |     11470     |  应用        |  指只在应用中展示的广告。  |
 |     11471     |  通用        |  指在应用、Web 及其他显示表面上展示的广告。  |
 
-要以编程方式获取 *supplyType* 字段的支持值，你可以调用下面的 GET 方法。  对于 ```Authorization``` 标头，请以 **Bearer** &lt;*token*&gt; 形式传递你的 Azure AD 访问令牌。
+要以编程方式获取 *supplyType* 字段的支持值，你可以调用下面的 GET 方法。  有关```Authorization```标头，在窗体中传递你的 Azure AD 访问令牌**持有者** &lt;*令牌*&gt;。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/supplytype
@@ -340,7 +340,7 @@ Authorization: Bearer <your access token>
 
 |  *country* 字段的整数值  |  对应的国家或地区代码  |  
 |-------------------------------------|------------------------------|
-|     1      |            US                  |
+|     1      |            美国                  |
 |     2      |            AU                  |
 |     3      |            AT                  |
 |     4      |            BE                  |
@@ -360,7 +360,7 @@ Authorization: Bearer <your access token>
 |     18      |            MX                  |
 |     19      |            NL                  |
 |     20      |            NZ                  |
-|     21      |            NO                  |
+|     21      |            否                  |
 |     22      |            PL                  |
 |     23      |            PT                  |
 |     24      |            SG                  |
@@ -464,13 +464,13 @@ Authorization: Bearer <your access token>
 |     185      |            UY                  |
 |     186      |            UZ                  |
 |     189      |            ZM                  |
-|     为 190      |            ZW                  |
+|     190      |            ZW                  |
 |     219      |            MD                  |
 |     224      |            PS                  |
 |     225      |            RE                  |
 |     246      |            PR                  |
 
-要以编程方式获取 *country* 字段的支持值，你可以调用下面的 GET 方法。  对于 ```Authorization``` 标头，请以 **Bearer** &lt;*token*&gt; 形式传递你的 Azure AD 访问令牌。
+要以编程方式获取 *country* 字段的支持值，你可以调用下面的 GET 方法。  有关```Authorization```标头，在窗体中传递你的 Azure AD 访问令牌**持有者** &lt;*令牌*&gt;。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/country
@@ -619,8 +619,8 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 Microsoft Store 服务开展广告市场活动](run-ad-campaigns-using-windows-store-services.md)
-* [管理广告活动](manage-ad-campaigns.md)
-* [管理广告活动的投放渠道](manage-delivery-lines-for-ad-campaigns.md)
-* [管理广告活动的创意](manage-creatives-for-ad-campaigns.md)
-* [获取广告活动效果数据](get-ad-campaign-performance-data.md)
+* [运行使用 Microsoft 应用商店服务广告市场活动](run-ad-campaigns-using-windows-store-services.md)
+* [管理广告市场活动](manage-ad-campaigns.md)
+* [管理 ad 市场活动传递行](manage-delivery-lines-for-ad-campaigns.md)
+* [管理 creatives ad 市场活动](manage-creatives-for-ad-campaigns.md)
+* [获取 ad 市场活动的性能数据](get-ad-campaign-performance-data.md)

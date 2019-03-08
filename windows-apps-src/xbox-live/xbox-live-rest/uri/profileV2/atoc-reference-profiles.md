@@ -8,17 +8,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b381243bec00faa68b37706146769402e3b799a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946331"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628092"
 ---
 # <a name="profiles-uris"></a>配置文件 URI
  
-本部分提供有关的个人资料通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务*配置文件*。
+本部分提供有关配置文件的通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务中针对*配置文件*。
  
-仅在 Windows 8 上运行的游戏，或在 Windows Phone 上 Xbox 360，设备可以使用此服务。
+仅在 Windows 8 上运行的游戏，在 Xbox 360，或在 Windows Phone 设备可以使用此服务。
  
 这些 Uri 的域是 profile.xboxlive.com。
  
@@ -29,11 +29,11 @@ ms.locfileid: "8946331"
 
 [/users/batch/profile/settings](uri-usersbatchprofilesettings.md)
 
-&nbsp;&nbsp;访问用户或用户的配置文件。
+&nbsp;&nbsp;访问一个用户或用户的配置文件。
 
 [/users/{userId}/profile/settings/people/{userList}?settings={settings}](uri-usersuseridprofilesettingspeopleuserlist.md)
 
-&nbsp;&nbsp;访问用户或用户，人脉名字对象支持的配置文件。
+&nbsp;&nbsp;访问一个用户或用户的人员名字对象支持的配置文件。
  
 <a id="ID4EYB"></a>
 
@@ -45,6 +45,6 @@ ms.locfileid: "8946331"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
+[通用资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
 
    

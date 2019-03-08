@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use custom audio on your toast notifications.
+Description: 了解如何使用自定义音频 toast 通知。
 title: toast 上的自定义音频
 label: Custom audio on toasts
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, toast, 自定义音频, 通知, 音频, 声音
 ms.localizationpriority: medium
 ms.openlocfilehash: 982340901d13f17945c1e7ffa11099f52732f619
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944696"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644062"
 ---
 # <a name="custom-audio-on-toasts"></a>toast 上的自定义音频
 
@@ -27,7 +27,7 @@ Toast 通知可使用自定义音频，从而让你的应用展现品牌的独�
 
 ## <a name="add-namespace-declarations"></a>添加命名空间声明
 
-`Windows.UI.Notifications` 包含磁贴和 toast API。 `Microsoft.Toolkit.Uwp.Notifications` 包含通知库。
+`Windows.UI.Notifications` 包括的磁贴和 Toast API。 `Microsoft.Toolkit.Uwp.Notifications` 包括通知库。
 
 ```csharp
 using Microsoft.Toolkit.Uwp.Notifications;
@@ -54,7 +54,7 @@ ToastContent toastContent = new ToastContent()
 
 Windows 移动版始终支持 toast 通知中的自定义音频。 但是，只有版本 1511（内部版本 10586）的桌面设备添加了对自定义音频的支持。 如果将包含自定义音频的 toast 发送到版本 1511 之前的桌面设备，该 toast 将处于静音模式。 因此，对于版本 1511 之前的桌面设备，toast 通知中不应包含自定义音频，这样通知至少会使用默认通知声音。
 
-**已知问题**：如果使用版本 1511 的桌面设备，只有在通过 Microsoft Store 安装应用时，自定义 toast 音频才能正常工作。 这意味着在提交到 Microsoft Store 之前无法在本地测试桌面设备上的自定义音频，但只要从 Microsoft Store 安装应用，音频便可正常工作。 我们已在周年更新中修复了此问题，因此本地部署的应用中的自定义音频将正常工作。
+**已知问题**:如果您使用的桌面版本 1511年，如果通过应用商店安装了应用仅适用的自定义 toast 音频。 这意味着在提交到 Microsoft Store 之前无法在本地测试桌面设备上的自定义音频，但只要从 Microsoft Store 安装应用，音频便可正常工作。 我们已在周年更新中修复了此问题，因此本地部署的应用中的自定义音频将正常工作。
 
 ```csharp
 ?
@@ -103,5 +103,5 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 ## <a name="related-topics"></a>相关主题
 
 - [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/quickstart-toast-with-custom-audio)
-- [发送本地 toast](send-local-toast.md)
-- [toast 内容文档](adaptive-interactive-toasts.md)
+- [发送本地 toast 通知](send-local-toast.md)
+- [Toast 通知内容文档](adaptive-interactive-toasts.md)

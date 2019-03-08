@@ -5,11 +5,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
 ms.openlocfilehash: fb68b4bbd1b751591e9f336efe5dad3c22b3bf92
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937196"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618302"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>自动启动 Windows 10 UWP 应用
 
@@ -28,15 +28,15 @@ ms.locfileid: "8937196"
 按照以下步骤来设置适用于应用的协议激活： 
 
 1. 在 Visual Studio 中打开 **Package.appxmanifest** 文件。
-2. 选择“声明”**** 选项卡。
-3. 在“可用声明”**** 下拉列表中，选择“协议”****，然后选择“添加”****。
-4. 在“属性”**** 下的“名称”**** 字段中，输入唯一名称以启动应用。 
+2. 选择“声明”选项卡。
+3. 在“可用声明”下拉列表中，选择“协议”，然后选择“添加”。
+4. 在“属性”下的“名称”字段中，输入唯一名称以启动应用。 
 
     ![协议激活](images/automate-uwp-apps-1.png)
 
 5. 保存文件并部署项目。 
 6. 在部署项目后，应设置协议激活。 
-7. 转到“控制面板”\“所有控制面板项”\“默认程序”****，然后选择“将文件类型或协议与特定程序关联”****。 滚动到“协议”**** 部分，查看协议是否列出。 
+7. 转到“控制面板”\“所有控制面板项”\“默认程序”，然后选择“将文件类型或协议与特定程序关联”。 滚动到“协议”部分，查看协议是否列出。 
 
 现在设置了协议激活，你可以通过两个选项（命令行或启动器应用程序）使用协议激活应用。 
 
@@ -110,11 +110,11 @@ Uri(URI));
 获取程序包系列名称的最佳方法是完成以下步骤：
 
 1. 打开 **Package.appxmanifest** 文件。
-2. 在“打包”**** 选项卡上，输入“程序包名称”****。
+2. 在“打包”选项卡上，输入“程序包名称”。
 
     ![启动激活](images/automate-uwp-apps-2.png)
 
-3. 如果“程序包系列名称”**** 未列出，请打开 PowerShell 并运行 `>get-appxpackage MyPackageName` 来查找 **PackageFamilyName**。
+3. 如果“程序包系列名称”未列出，请打开 PowerShell 并运行 `>get-appxpackage MyPackageName` 来查找 **PackageFamilyName**。
 
 在 `<Applications>` 元素下的 **Package.appxmanifest** 文件（在 XML 视图中打开）中可找到应用程序 ID。
 
@@ -211,5 +211,5 @@ void OnActivated(IActivatedEventArgs^ args)
 总之，你可以使用各种方法来启动 UWP 应用。 根据要求和使用情况，可能还有更适合的其他方法。 
 
 ## <a name="see-also"></a>另请参阅
-- [Xbox One 上的 UWP](index.md)
+- [在 Xbox One 上 UWP](index.md)
 

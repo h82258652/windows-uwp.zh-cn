@@ -4,16 +4,16 @@ description: 了解如何在 Xbox Live 标题存储中读取 JSON blob。
 ms.assetid: 3697af16-d054-4835-af7f-7fee8c628345
 ms.date: 04/04/2017
 ms.topic: article
-keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
+keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 30d2b9f6539e73df1c5ea5ae18b3d1a6ca061d60
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947703"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613482"
 ---
-# <a name="reading-a-json-blob-in-xbox-live-title-storage"></a>在 Xbox Live 标题存储中读取 JSON blob
+# <a name="reading-a-json-blob-in-xbox-live-title-storage"></a>读取 Xbox Live 作品存储中的 JSON blob
 
 1.  使用 *GET* 方法发送请求，以从标题存储中读取数据。 此示例使用全局标题存储。
 
@@ -27,6 +27,6 @@ ms.locfileid: "8947703"
 
 -   STSTokenString 是为简便起见使用的占位符，应该将其替换为由身份验证请求返回的令牌。
 
-#### <a name="reference"></a>引用
+#### <a name="reference"></a>参考
 
 **/global/scids/{scid}/data/{pathAndFileName},{type}**

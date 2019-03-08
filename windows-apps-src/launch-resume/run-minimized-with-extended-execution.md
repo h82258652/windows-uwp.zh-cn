@@ -7,11 +7,11 @@ keywords: windows 10, uwp, 扩展执行, 最小化, ExtendedExecutionSession, �
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cc67a7593a340ada8f807fc0fb0c1b846c6f05b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944019"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641302"
 ---
 # <a name="postpone-app-suspension-with-extended-execution"></a>使用扩展执行来推迟应用挂起
 
@@ -23,7 +23,7 @@ ms.locfileid: "8944019"
 
 如果应用需要保持运行，操作系统可以让它保持运行，或者它也可以请求保持运行。 例如，在后台播放音频时，如果按照[后台媒体播放](../audio-video-camera/background-audio.md)的以下步骤进行操作，操作系统可以保持应用运行更长时间。 否则，你必须多次手动请求。 你用来执行后台执行的时间可能只有几分钟，但你必须随时准备处理被吊销的会话。 当应用在调试程序下运行时，这些应用程序生命周期时间限制会被禁用。 出于这一原因，在测试推迟应用挂起的扩展执行和其他工具时，一定不要使用调试程序运行；或者，也可以借助 Visual Studio 中提供的生命周期事件进行测试。 
  
-创建 [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) 来多次请求在后台完成操作。 你创建的 **ExtendedExecutionSession** 种类由你在创建它时提供的 [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) 来决定。 有三个 **ExtendedExecutionReason** 枚举值：**Unspecified、LocationTracking** 和 **SavingData**。 任何时候都只能请求一个 **ExtendedExecutionSession**；在已批准的会话请求当前处于活动状态时，尝试创建另一个会话将导致 **ExtendedExecutionSession** 构造函数引发异常 0x8007139F，指示组或资源不处于执行请求的操作的正确状态。 不要使用 [ExtendedExecutionForegroundSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession.aspx) 和 [ExtendedExecutionForegroundReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason.aspx)；它们需要受限功能，并且不能在 Microsoft Store 应用程序中使用。
+创建 [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) 来多次请求在后台完成操作。 你创建的 **ExtendedExecutionSession** 种类由你在创建它时提供的 [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) 来决定。 有三个**ExtendedExecutionReason**枚举值：**未指定，LocationTracking**并**SavingData**。 任何时候都只能请求一个 **ExtendedExecutionSession**；在已批准的会话请求当前处于活动状态时，尝试创建另一个会话将导致 **ExtendedExecutionSession** 构造函数引发异常 0x8007139F，指示组或资源不处于执行请求的操作的正确状态。 不要使用 [ExtendedExecutionForegroundSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession.aspx) 和 [ExtendedExecutionForegroundReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason.aspx)；它们需要受限功能，并且不能在 Microsoft Store 应用程序中使用。
 
 ## <a name="run-while-minimized"></a>最小化时运行
 
@@ -257,11 +257,11 @@ static class ExtendedExecutionHelper
 
 ## <a name="see-also"></a>另请参阅
 
-[扩展执行示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
+[扩展的执行示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
 [应用程序生命周期](https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle)  
 [应用生命周期 - 借助后台任务和扩展执行使应用保持活动状态](https://msdn.microsoft.com/en-us/magazine/mt590969.aspx)
 [后台内存管理](https://msdn.microsoft.com/windows/uwp/launch-resume/reduce-memory-usage)  
 [后台传输](https://msdn.microsoft.com/windows/uwp/networking/background-transfers)  
-[电池感知和后台活动](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
+[电池意识和后台活动](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
 [MemoryManager 类](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)  
-[在后台播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)  
+[在背景中播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)  

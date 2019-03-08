@@ -1,19 +1,19 @@
 ---
 title: 创建新主题作品
-description: 了解如何通过使用合作伙伴中心为 Xbox Live 创建新主题作品。
+description: 了解如何使用合作伙伴中心为 Xbox Live 中创建新的标题。
 ms.assetid: b8bd69e6-887a-4b1f-a42d-8affdbec0234
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1aa2447a2044bec9b2013b30c05e45342b763fc3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947579"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656562"
 ---
-# <a name="create-a-new-title-for-xbox-live"></a>为 Xbox Live 创建新主题作品
+# <a name="create-a-new-title-for-xbox-live"></a>创建适用于 Xbox Live 的新主题作品
 
 ## <a name="introduction"></a>简介
 
@@ -22,29 +22,29 @@ ms.locfileid: "8947579"
 本文将通过以下假设引导你完成这一过程
 
 1. 你正在开发通用 Windows 平台 (UWP) 主题作品。  UWP 主题作品在 Xbox One、Windows 10 台式电脑和移动设备上运行
-2. 你要在[合作伙伴中心](https://partner.microsoft.com/dashboard)中配置你的游戏。
+2. 要配置你的标题中[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 3. 你正在使用带有自定义游戏引擎的 Visual Studio 或 Unity。
 4. 开发计算机运行的是 Windows 10。
 
-假设上述条件均成立，本文的其余部分将指导完成需要获取游戏在合作伙伴中心，创建新项目和 Xbox Live 登录代码编写和测试中配置的所有内容。
+前提是上述条件均成立，本文的其余部分将引导完成配置合作伙伴中心、 创建，新项目和 Xbox Live 登录代码编写并测试过的标题所需的所有内容。
 
 > [!NOTE]
 > 如果你是 Xbox Live 创意者计划的一员，则上述假设适用你，并应遵循本文中的内容。
 
-## <a name="partner-center-setup"></a>合作伙伴中心设置
+## <a name="partner-center-setup"></a>合作伙伴中心安装程序
 
-你需要作为先决条件任何 Xbox Live 功能在[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建一个支持 Xbox Live 的主题作品。
+您需要在中创建的 Xbox Live 启用标题[合作伙伴中心](https://partner.microsoft.com/dashboard)作为必备组件到任何 Xbox Live 功能发挥作用。
 
 ### <a name="create-a-microsoft-account"></a>创建 Microsoft 帐户
-如果你没有 Microsoft 帐户 (也称为 MSA)，你将需要先创建一个在[https://go.microsoft.com/fwlink/p/?LinkID=254486](https://go.microsoft.com/fwlink/p/?LinkID=254486)。  如果你有 Office 365 帐户、使用 Outlook.com 或拥有 Xbox Live 帐户，则你可能已经有 MSA 了。
+如果没有 Microsoft 帐户 (也称为 MSA)，您需要先创建一个在[ https://go.microsoft.com/fwlink/p/?LinkID=254486 ](https://go.microsoft.com/fwlink/p/?LinkID=254486)。  如果你有 Office 365 帐户、使用 Outlook.com 或拥有 Xbox Live 帐户，则你可能已经有 MSA 了。
 
 ### <a name="register-as-an-app-developer"></a>注册成为应用开发人员。
-你将需要先注册成为应用开发人员，然后允许你在合作伙伴中心中创建新主题作品。
+需要注册为应用程序开发人员之前您可以在合作伙伴中心中创建新的标题。
 
-若要注册，请转到https://developer.microsoft.com/en-us/store/register并按照注册流程。
+若要注册，请为 https://developer.microsoft.com/en-us/store/register并按照注册过程。
 
 ### <a name="create-a-new-uwp-title"></a>创建新的 UWP 主题作品
-接下来，你需要在合作伙伴中心中定义一个 UWP 主题作品。  需要先转到仪表板才能执行此操作
+接下来，需要在合作伙伴中心中定义的 UWP 标题。  需要先转到仪表板才能执行此操作
 
 ![](../images/getting_started/first_xbltitle_dashboard.png)
 
@@ -54,7 +54,7 @@ ms.locfileid: "8947579"
 <p>
 </p>
 
-然后，创建新主题作品。  你需要保留一个名称。
+然后，创建一个新标题。  你需要保留一个名称。
 
 ![](../images/getting_started/first_xbltitle_newapp.png)
 

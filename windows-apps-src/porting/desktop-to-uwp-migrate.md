@@ -1,5 +1,5 @@
 ---
-Description: Share code between a desktop application and a UWP app
+Description: 桌面应用程序和 UWP 应用之间共享代码
 Search.Product: eADQiWindows 10XVcnh
 title: 桌面应用程序和 UWP 应用之间共享代码
 ms.date: 10/03/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 151584f15013c9d4ab7d9566e175b957a7a84149
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9045736"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644342"
 ---
 # <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>桌面应用程序和 UWP 应用之间共享代码
 
@@ -61,9 +61,9 @@ ms.locfileid: "9045736"
 
 某些代码将特定于平台，并且将需要保留在你的桌面应用程序项目中。
 
-### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>示例：将数据访问代码迁移到 .NET Standard 2.0 库
+### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>示例：迁移到.NET Standard 2.0 库的数据访问代码
 
-假设我们有的非常基本的 Windows 窗体应用程序显示我们 Northwind 示例数据库中的客户。
+假设我们有一个非常基本的 Windows 窗体应用程序显示了我们 Northwind 示例数据库中的客户。
 
 ![Windows 窗体应用](images/desktop-to-uwp/win-forms-app.png)
 

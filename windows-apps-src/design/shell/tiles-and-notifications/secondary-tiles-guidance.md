@@ -1,5 +1,5 @@
 ---
-Description: Learn about when and where you should use secondary tiles in your UWP app.
+Description: 了解应该在何时以及何处使用 UWP 应用中的辅助磁贴。
 title: 辅助磁贴
 label: Secondary tiles
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp, 辅助磁贴, 指南, 指导, 最佳做法
 ms.localizationpriority: medium
 ms.openlocfilehash: de3bfa94de1152b3945d42169143a5ae36328c75
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943313"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625342"
 ---
 # <a name="secondary-tile-guidance"></a>辅助磁贴指南
 
@@ -32,7 +32,7 @@ ms.locfileid: "8943313"
 * 如果已固定重点关注的内容，请将应用栏上的“固定到‘开始’”按钮替换为“从‘开始’取消固定”按钮。 “从‘开始’取消固定”按钮应该会删除现有辅助磁贴。
 * 如果无法固定重点关注的内容，则不会显示“固定到‘开始’”按钮（或者会显示一个被禁用的“固定到‘开始’”按钮）。
 * 请对“固定到‘开始’”按钮和“从‘开始’取消固定”按钮使用系统提供的字形（请参阅 Windows.UI.Xaml.Controls.Symbol 或 WinJS.UI.AppBarIcon 中的 Pin 和 Unpin 成员)。
-* 使用标准按钮文本：“固定到‘开始’”和“从‘开始’取消固定”。 使用系统提供的固定和取消固定字形时，必须替代默认文本。
+* 使用标准按钮文本："' 开始 ' 屏幕"和"从开始解除固定"。 使用系统提供的固定和取消固定字形时，必须替代默认文本。
 * 不要将辅助磁贴用作虚拟命令按钮来与父应用交互，如“跳至下一曲目”磁贴。
 
 
@@ -49,6 +49,6 @@ ms.locfileid: "8943313"
 
 * [辅助磁贴概述](secondary-tiles.md)
 * [固定辅助磁贴](secondary-tiles-pinning.md)
-* [磁贴资源](app-assets.md)
+* [磁贴资产](app-assets.md)
 * [磁贴内容文档](create-adaptive-tiles.md)
 * [发送本地磁贴通知](sending-a-local-tile-notification.md)

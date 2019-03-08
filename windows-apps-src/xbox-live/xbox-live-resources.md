@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, xbox, xbox live, 资源, API, 参考
 ms.localizationpriority: medium
 ms.openlocfilehash: c3ed5a76791bebfb1b82afaf12c699bfdd7c7437
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044079"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632512"
 ---
 # <a name="xbox-live-resources"></a>Xbox Live 资源
 
@@ -18,19 +18,19 @@ ms.locfileid: "9044079"
 
 ## <a name="api-reference"></a>API 参考
 
-WinRT SDK API 参考可以在联机此处找到：
+WinRT SDK API 参考可在联机此处找到：
 
 * [Xbox Live WinRT SDK](https://docs.microsoft.com/en-us/dotnet/api/?view=xboxlive-dotnet-2017.11.20171204.01)
 
-C + + SDK 目前仅在脱机格式中可用。
+C + + SDK 目前仅在离线的格式中可用。
 
-你可以在下载的完整的 API 参考文档 （这包括 c + + 和 WinRT）：
+您可以在下载的完整 API 参考文档 （其中包括与 WinRT 或 c + +）：
 
 * [Xbox Live API 参考](https://aka.ms/xboxliveuwpdocs)
 
 你可以在以下位置找到 REST API 信息：
 
-* [Xbox Live RESTful 参考](xbox-live-rest/atoc-xboxlivews-reference.md)
+* [Xbox Live rest 风格的引用](xbox-live-rest/atoc-xboxlivews-reference.md)
 
 
 ## <a name="xbox-live-api-source-code"></a>Xbox Live API 源代码
@@ -62,15 +62,15 @@ Xbox Live API 源代码在 GitHub 上的以下位置公开发布：
 
 你可以使用多个有用的工具帮助你进行 Xbox Live 开发。 有关详细信息，请参阅：
 
-* [适用于 Xbox Live 的开发工具](tools/tools.md)
+* [适用于 Xbox Live 开发工具](tools/tools.md)
 
 ## <a name="xbox-live-code-samples"></a>Xbox Live 代码示例
 
 公开的 Xbox Live 代码示例在 GitHub 中可用。
 
-* [Xbox Live 创意者计划示例](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/CreatorsSDK)
+* [适用于 Xbox Live Creators 计划示例](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/CreatorsSDK)
 
-* [ID@Xbox 示例](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK)
+* [适用于示例 ID@Xbox](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK)
 
 在游戏开发人员网络门户上可以找到仅限于托管合作伙伴的示例。
 

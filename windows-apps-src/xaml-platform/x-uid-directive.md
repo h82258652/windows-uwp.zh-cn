@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 03cf647fdb243fd18212ca894f7682e913378907
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943178"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609632"
 ---
 # <a name="xuid-directive"></a>x:Uid 指令
 
@@ -26,7 +26,7 @@ ms.locfileid: "8943178"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 术语 | 说明 |
+| 术语 | 描述 |
 |------|-------------|
 | stringID | 一个唯一标识应用中的 XAML 元素并且是资源文件中资源路径一部分的字符串。 请参阅备注。| 
 
@@ -38,7 +38,7 @@ ms.locfileid: "8943178"
 <Button x:Uid="GoButton" Content="Go"/>
 ```
 
-若要指定要替换显示文本 **“Go”** 的内容，必须指定来自资源文件的新资源。 资源文件中应当包含一个与名为“GoButton.Content”的资源相对应的条目。 在本例中，[**Content**](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 是由 [**Button**](/uwp/api/windows.ui.xaml.controls.button) 类继承的特定属性。 你还可以为该按钮的其他属性提供本地化值，例如，可以为“GoButton.FlowDirection”提供基于资源的值。 有关如何同时使用 **x:Uid** 和资源文件的详细信息，请参阅[本地化 UI 和应用包清单中的字符串](../app-resources/localize-strings-ui-manifest.md)。
+若要指定要替换显示文本 **“Go”** 的内容，必须指定来自资源文件的新资源。 资源文件中应当包含一个与名为“GoButton.Content”的资源相对应的条目。 [**内容**](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)在这种情况下是由继承的特定属性[**按钮**](/uwp/api/windows.ui.xaml.controls.button)类。 你还可以为该按钮的其他属性提供本地化值，例如，可以为“GoButton.FlowDirection”提供基于资源的值。 有关如何同时使用 **x:Uid** 和资源文件的详细信息，请参阅[本地化 UI 和应用包清单中的字符串](../app-resources/localize-strings-ui-manifest.md)。
 
 在实际意义上，要证明哪些字符串可用于 **x:Uid** 值，这取决于哪些字符串是 resw 文件和资源路径中的合法标识符。
 

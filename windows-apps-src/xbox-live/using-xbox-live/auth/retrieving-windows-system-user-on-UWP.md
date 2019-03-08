@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, 系统用户
 ms.localizationpriority: medium
 ms.openlocfilehash: c46f7e98c2dea3b23beb2cec80816067d4c4e341
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940542"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632752"
 ---
 # <a name="retrieving-the-windows-system-user-in-a-universal-windows-platform-uwp-title"></a>在通用 Windows 平台 (UWP) 作品中检索 Windows 系统用户
 
@@ -20,7 +20,7 @@ ms.locfileid: "8940542"
 
 ## <a name="ways-to-retrieve-windows-system-user"></a>检索 Windows 系统用户的方式
 
-* **使用 [Windows.System.User](https://docs.microsoft.com/en-us/uwp/api/windows.system.user) 类中的静态方法。**
+* **使用从静态方法[Windows.System.User](https://docs.microsoft.com/en-us/uwp/api/windows.system.user)类。**
 
   [Windows.System.User](https://docs.microsoft.com/en-us/uwp/api/windows.system.user) 类可提供一组静态方法，以帮助检索 Windows.System.User 对象。 例如，你可以通过调用 FindAllAsync 来获取所有活动的 windows 用户。
 
@@ -36,4 +36,4 @@ ms.locfileid: "8940542"
 
 * **[UserDeviceAssociation](https://docs.microsoft.com/en-us/uwp/api/windows.system.userdeviceassociation)**
 
-  你可以通过调用静态方法 FindUserFromDeviceId 来查找与设备 ID 关联的用户。你可以经常通过 Windows 输入事件来获取设备 ID，如 [Windows.UI.Xaml.Input.KeyRoutedEventArgs](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs)、[Windows.UI.Core.KeyEventArgs](https://docs.microsoft.com/en-us/uwp/api/windows.ui.core.keyeventargs)
+  你可以通过调用静态方法 FindUserFromDeviceId 来查找与设备 id 关联的用户。你可以经常通过 windows 输入事件来获取设备 id，如 [Windows.UI.Xaml.Input.KeyRoutedEventArgs](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs)、[Windows.UI.Core.KeyEventArgs](https://docs.microsoft.com/en-us/uwp/api/windows.ui.core.keyeventargs)

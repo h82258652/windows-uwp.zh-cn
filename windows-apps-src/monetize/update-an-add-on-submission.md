@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 更新, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: fd0bb8df9b9fc36216da72e4ad01ebd2e650ad1a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939055"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620612"
 ---
 # <a name="update-an-add-on-submission"></a>更新加载项提交
 
@@ -20,13 +20,13 @@ ms.locfileid: "8939055"
 
 有关此方法如何适用通过使用 Microsoft Store 提交 API 创建应用提交过程的详细信息，请参阅[管理加载项提交](manage-add-on-submissions.md)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，首先需要执行以下操作：
 
 * 如果尚未开始操作，请先完成 Microsoft Store 提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 创建一个应用的加载项提交。 你可以执行此操作在合作伙伴中心，或者你可以执行此操作通过使用[创建加载项提交](create-an-add-on-submission.md)的方法。
+* 创建外接程序提交的其中一个应用。 可以执行此操作在合作伙伴中心，也可以执行此操作通过使用[创建外接程序提交](create-an-add-on-submission.md)方法。
 
 ## <a name="request"></a>请求
 
@@ -37,36 +37,36 @@ ms.locfileid: "8939055"
 | PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId} ``` |
 
 
-### <a name="request-header"></a>请求标头
+### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 描述                                                                 |
+| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
-| 名称        | 类型   | 描述                                                                 |
+| 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | 字符串 | 必需。 要更新提交的加载项的应用商店 ID。 在合作伙伴中心中，会提供应用商店 ID，它包含在[创建加载项](create-an-add-on.md)，或[获取加载项的详细信息](get-all-add-ons.md)向请求的响应数据中。  |
-| submissionId | 字符串 | 必需。 要更新的提交的 ID。 此 ID 包含在[创建加载项提交](create-an-add-on-submission.md)请求的响应数据中。 对于在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
+| inAppProductId | 字符串 | 必需。 要更新提交的加载项的应用商店 ID。 Store ID 可在合作伙伴中心，并且它包含在对请求的响应数据[创建一个外接程序](create-an-add-on.md)或[获取外接程序的详细信息](get-all-add-ons.md)。  |
+| submissionId | 字符串 | 必需。 要更新的提交的 ID。 此 ID 包含在[创建加载项提交](create-an-add-on-submission.md)请求的响应数据中。 在合作伙伴中心创建的提交，此 ID 是也可用在合作伙伴中心中的提交页的 URL。  |
 
 
 ### <a name="request-body"></a>请求正文
 
 请求正文具有以下参数。
 
-| 值      | 类型   | 描述                                                                                                                                                                                                                                                                         |
+| 值      | 在任务栏的搜索框中键入   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | contentType           | 字符串  |  加载项中提供的[内容类型](../publish/enter-add-on-properties.md#content-type)。 这可以是以下值之一： <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
 | keywords           | 数组  | 字符串数组，其中最多包含加载项的 10 个[关键字](../publish/enter-add-on-properties.md#keywords)。 应用可以使用这些关键字来查询加载项。   |
 | lifetime           | 字符串  |  加载项的生存期。 这可以是以下值之一： <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | listings           | 对象  | 包含加载项列表信息的对象。 有关详细信息，请参阅[列表资源](manage-add-on-submissions.md#listing-object)。  |
 | pricing           | 对象  | 包含加载项定价信息的对象。 有关详细信息，请参阅[定价资源](manage-add-on-submissions.md#pricing-object)。  |
-| targetPublishMode           | 字符串  | 提交的发布模式。 这可以是以下值之一： <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
+| targetPublishMode           | 字符串  | 提交的发布模式。 这可以是以下值之一： <ul><li>立即</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | 字符串  | 提交的发布日期采用 ISO 8601 格式（如果 *targetPublishMode* 设为“SpecificDate”）。  |
 | tag           | 字符串  |  加载项的[自定义开发人员数据](../publish/enter-add-on-properties.md#custom-developer-data)（此信息之前称为 *tag*）。   |
-| 可见性  | 字符串  |  加载项的可见性。 这可以是以下值之一： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
+| visibility  | 字符串  |  加载项的可见性。 这可以是以下值之一： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
 
 
 ### <a name="request-example"></a>请求示例
@@ -189,15 +189,15 @@ Content-Type: application/json
 | 错误代码 |  描述   |
 |--------|------------------|
 | 400  | 由于请求无效，无法更新提交。 |
-| 409  | 由于该加载项的当前状态，无法更新提交，或者加载项使用的是[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
+| 409  | 由于外接程序的当前状态，无法更新提交或外接程序使用的合作伙伴中心功能[目前不支持通过 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
 
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-* [管理加载项提交](manage-add-on-submissions.md)
-* [获取加载项提交](get-an-add-on-submission.md)
-* [创建加载项提交](create-an-add-on-submission.md)
-* [确认加载项提交](commit-an-add-on-submission.md)
-* [删除加载项提交](delete-an-add-on-submission.md)
-* [获取加载项提交的状态](get-status-for-an-add-on-submission.md)
+* [创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)
+* [管理外接程序提交](manage-add-on-submissions.md)
+* [获取外接程序提交](get-an-add-on-submission.md)
+* [创建外接程序提交](create-an-add-on-submission.md)
+* [提交外接程序提交](commit-an-add-on-submission.md)
+* [删除外接程序提交](delete-an-add-on-submission.md)
+* [获取外接程序提交的状态](get-status-for-an-add-on-submission.md)

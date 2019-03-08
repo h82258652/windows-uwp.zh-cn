@@ -1,23 +1,23 @@
 ---
-Description: Panning and scrolling allows users to reach content that extends beyond the bounds of the screen.
+Description: 平移和滚动使用户可以获取超出屏幕边界的内容。
 title: 滚动查看器控件
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scrollbars
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: Abarlow, pagildea
 design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 6578ddfd077e121e0eca5a5fcc8c06cdec26aa42
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058608"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656052"
 ---
 # <a name="scroll-viewer-controls"></a>滚动查看器控件
 
@@ -25,11 +25,11 @@ ms.locfileid: "9058608"
 
 当 UI 内容超出一个区域的容量时，可以使用滚动查看器控件。
 
-> **重要 API**：[ScrollViewer 类](https://msdn.microsoft.com/library/windows/apps/br209527)，[ScrollBar 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)
+> **重要的 Api**:[ScrollViewer 类](https://msdn.microsoft.com/library/windows/apps/br209527)，[滚动条类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)
 
 滚动查看器允许内容延伸到视区（可见区域）边界外。 用户可以通过触摸、鼠标滚轮、键盘或游戏板操作滚动查看器图面或者使用鼠标或笔光标操作滚动查看器滚动条查看此内容。 此图显示了滚动查看器控件的几个示例。
 
-![说明标准滚动条控件的屏幕截图](images/ScrollBar_Standard.jpg)
+![说明标准滚动栏控件的屏幕截图](images/ScrollBar_Standard.jpg)
 
 根据情况，滚动查看器的滚动条使用两种不同的可视化效果，如下图所示：平移指示器（左）和传统滚动条（右）。
 
@@ -60,7 +60,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/ScrollViewer">打开此应用，了解 ScrollViewer 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -87,7 +87,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 </Page>
 ```
 
-此 XAML 显示了如何启用水平滚动、 滚动查看器中放置图像并启用缩放。
+此 XAML 演示如何启用水平滚动，在滚动查看器中将图像，并启用缩放。
 
 ```xaml
 <ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10"
@@ -151,6 +151,6 @@ ScrollViewer 定义以下 XAML 附加属性：
 
 ## <a name="related-topics"></a>相关主题
 
-**对于开发人员 (XAML)**
+**面向开发人员 (XAML)**
 
 * [ScrollViewer 类](https://msdn.microsoft.com/library/windows/apps/br209527)

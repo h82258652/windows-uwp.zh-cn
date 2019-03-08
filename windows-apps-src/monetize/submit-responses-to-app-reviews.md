@@ -7,29 +7,29 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 评价 API, 加载项购置
 ms.localizationpriority: medium
 ms.openlocfilehash: c08dcda52940f0218b6fdb5be147f058eca7479a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919505"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623832"
 ---
 # <a name="submit-responses-to-reviews"></a>提交评价回复
 
 
 在 Microsoft Store 评价 API 中使用此方法，以编程方式回复应用评价。 调用此方法时，必须指定要回复的评价 ID。 评价 ID 位于 Microsoft Store 分析 API 中的[获取应用评价](get-app-reviews.md)方法的回复数据中，以及[评价报告](../publish/reviews-report.md)的[脱机下载](../publish/download-analytic-reports.md)中。
 
-当客户提交评价时，他们可以选择不接收针对其评价的回复。 如果你尝试回复客户已选择不接收回复的评价，此方法的回复正文将显示回复尝试未成功。 调用此方法前，你可以选择使用[获取应用评价的回复信息](get-response-info-for-app-reviews.md)方法确定是否可以回复给定评价。
+当客户提交评价时，他们可以选择不接收对其评价的回复。 如果你尝试回复客户已选择不接收回复的评价，此方法的回复正文将显示回复尝试未成功。 调用此方法前，你可以选择使用[获取应用评价的回复信息](get-response-info-for-app-reviews.md)方法确定是否可以回复给定评价。
 
 > [!NOTE]
-> 除了使用此方法以编程方式回复评价之外，你可以回复评价[使用合作伙伴中心](../publish/respond-to-customer-reviews.md)。
+> 除了使用此方法以编程方式对评审的响应，您可以或者响应评论[使用合作伙伴中心](../publish/respond-to-customer-reviews.md)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，首先需要执行以下操作：
 
 * 如果尚未开始操作，请先完成 Microsoft Store 评价 API 的所有[先决条件](respond-to-reviews-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](respond-to-reviews-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 获取要回复的评价 ID。 评价 ID 位于 Microsoft Store 分析 API 中的[获取应用评价](get-app-reviews.md)方法的回复数据中，以及[评价报告](../publish/reviews-report.md)的[脱机下载](../publish/download-analytic-reports.md)中。
+* 获取要回复的评价的 ID。 评价 ID 位于 Microsoft Store 分析 API 中的[获取应用评价](get-app-reviews.md)方法的回复数据中，以及[评价报告](../publish/reviews-report.md)的[脱机下载](../publish/download-analytic-reports.md)中。
 
 ## <a name="request"></a>请求
 
@@ -40,11 +40,11 @@ ms.locfileid: "8919505"
 | POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/reviews/responses``` |
 
 
-### <a name="request-header"></a>请求标头
+### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 描述                                                                 |
+| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
@@ -56,20 +56,20 @@ ms.locfileid: "8919505"
 
 请求正文具有以下值。
 
-| 值        | 类型   | 描述                                                                 |
+| 值        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------|
-| Responses | 数组 | 包含要提交的回复数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下表格。 |
+| Responses | 数组 | 包含要提交的回复数据的对象数组。 有关每个对象中的数据的详细信息，请参阅下表。 |
 
 
 *Responses* 数组中的每个对象包含以下值。
 
-| 值        | 类型   | 说明           |  必需  |
+| 值        | 在任务栏的搜索框中键入   | 描述           |  必需  |
 |---------------|--------|-----------------------------|-----|
-| ApplicationId | 字符串 |  要回复评价的应用的应用商店 ID。 应用商店 ID 在合作伙伴中心的[应用标识页](../publish/view-app-identity-details.md)上可用。 Store ID 示例：9WZDNCRFJ3Q8。   |  是  |
+| ApplicationId | 字符串 |  要回复评价的应用的应用商店 ID。 Store ID 位于[应用程序标识页](../publish/view-app-identity-details.md)的合作伙伴中心。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。   |  是  |
 | ReviewId | 字符串 |  要回复的评价 ID（这是一个 GUID）。 评价 ID 位于 Microsoft Store 分析 API 中的[获取应用评价](get-app-reviews.md)方法的回复数据中，以及[评价报告](../publish/reviews-report.md)的[脱机下载](../publish/download-analytic-reports.md)中。   |  是  |
 | ResponseText | 字符串 | 要提交的回复。 你的回复必须遵循[以下准则](../publish/respond-to-customer-reviews.md#guidelines-for-responses)。   |  是  |
 | SupportEmail | 字符串 | 应用的支持电子邮件地址，客户可以用它来直接与你联系。 必须为有效的电子邮件地址。     |  是  |
-| IsPublic | 布尔值 |  如果你指定**为 true**，你的回复将显示在你的应用的应用商店一览中，客户评价的正下方，并且将向所有客户可见。 如果你指定**为 false** ，且用户未选择退出接收电子邮件回复，你的回复将发送给客户通过电子邮件，并且它不会对你的应用的应用商店一览中的其他客户可见。 如果你指定**为 false** ，用户已选择不接收电子邮件回复，则将返回错误。   |  是  |
+| IsPublic | 布尔 |  如果指定 **，则返回 true**，您的响应将显示在应用程序的应用商店，直接在下方列出客户的评审，并将对所有客户可见。 如果指定**false**和用户尚未选择不接收电子邮件响应、 您的响应将发送到通过电子邮件、 客户和它不会对应用商店的应用程序的列表中的其他客户可见。 如果指定**false**并且用户已选择不接收电子邮件响应，就会返回错误。   |  是  |
 
 
 ### <a name="request-example"></a>请求示例
@@ -100,26 +100,26 @@ Content-Type: application/json
 }
 ```
 
-## <a name="response"></a>回复
+## <a name="response"></a>响应
 
 ### <a name="response-body"></a>响应正文
 
-| 值        | 类型   | 描述            |
+| 值        | 在任务栏的搜索框中键入   | 描述            |
 |---------------|--------|---------------------|
-| Result | 数组 | 包含每个已提交回复的相关数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下表格。  |
+| 结果 | 数组 | 包含每个已提交回复的相关数据的对象数组。 有关每个对象中的数据的详细信息，请参阅下表。  |
 
 
 *Result* 数组中的每个对象包含以下值。
 
-| 值        | 类型   | 描述                                                                 |
+| 值        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------|
-| ApplicationId | 字符串 |  已回复评价的应用的应用商店 ID。 应用商店 ID 的一个示例是 9WZDNCRFJ3Q8。   |
+| ApplicationId | 字符串 |  已回复评价的应用的应用商店 ID。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。   |
 | ReviewId | 字符串 |  已回复评价的 ID。 这是一个 GUID。   |
-| Successful | 字符串 | 值 **true** 表示你的回复已发送成功。 值 **false** 表示你的回复失败。    |
+| 成功 | 字符串 | 值 **true** 表示你的回复已发送成功。 值 **false** 表示你的回复失败。    |
 | FailureReason | 字符串 | 如果 **Successful** 为 **false**，此值包含失败的原因。 如果 **Successful** 为 **true**，此值为空。      |
 
 
-### <a name="response-example"></a>回复示例
+### <a name="response-example"></a>响应示例
 
 以下示例举例说明此请求的 JSON 响应正文。
 
@@ -144,7 +144,7 @@ Content-Type: application/json
 
 ## <a name="related-topics"></a>相关主题
 
-* [回复客户评论使用合作伙伴中心](../publish/respond-to-customer-reviews.md)
-* [使用 Microsoft Store 服务回复评价](respond-to-reviews-using-windows-store-services.md)
-* [获取应用评价的回复信息](get-response-info-for-app-reviews.md)
-* [获取应用评价](get-app-reviews.md)
+* [使用合作伙伴中心客户评论进行响应](../publish/respond-to-customer-reviews.md)
+* [对使用 Microsoft Store 服务评审的响应](respond-to-reviews-using-windows-store-services.md)
+* [获取响应信息的应用程序评论](get-response-info-for-app-reviews.md)
+* [获取应用程序评论](get-app-reviews.md)

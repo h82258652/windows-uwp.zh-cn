@@ -7,23 +7,23 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fcbdaa90f09ba1a813612d6104268c4930c9a6d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935632"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656512"
 ---
 # <a name="get-a-package-flight-submission"></a>获取软件包外部测试版提交
 
 在 Microsoft Store 提交 API 中使用此方法，可获取现有软件包外部测试版提交的数据。 有关通过使用 Microsoft Store 提交 API 创建软件包外部测试版提交过程的详细信息，请参阅[管理软件包外部测试版提交](manage-flight-submissions.md)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，首先需要执行以下操作：
 
 * 如果尚未开始操作，请先完成 Microsoft Store 提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 在合作伙伴中心中创建软件包外部测试版提交的应用。 你可以执行此操作在合作伙伴中心，或者你可以执行此操作通过使用[创建软件包外部测试版提交](create-a-flight-submission.md)的方法。
+* 在合作伙伴中心中创建应用包航班提交。 可以执行此操作在合作伙伴中心，也可以执行此操作通过使用[创建包航班提交](create-a-flight-submission.md)方法。
 
 ## <a name="request"></a>请求
 
@@ -36,18 +36,18 @@ ms.locfileid: "8935632"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 描述                                                                 |
+| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
-| 名称        | 类型   | 描述                                                                 |
+| 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字符串 | 必需。 应用（包含要获取的软件包外部测试版提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| flightId | 字符串 | 必需。 软件包外部测试版（包含要获取的提交）的 ID。 在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中提供了此 ID。 对于在合作伙伴中心中创建的外部测试版，此 ID 也包含在合作伙伴中心中的外部测试版页面的 URL 中可用。  |
-| submissionId | 字符串 | 必需。 要获取的提交的 ID。 此 ID 包含在[创建软件包外部测试版提交](create-a-flight-submission.md)请求的响应数据中。 对于在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
+| flightId | 字符串 | 必需。 软件包外部测试版（包含要获取的提交）的 ID。 [创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中包含此 ID。 在合作伙伴中心创建航班，此 ID 是也可用在合作伙伴中心中的航班页的 URL。  |
+| submissionId | 字符串 | 必需。 要获取的提交的 ID。 此 ID 包含在[创建软件包外部测试版提交](create-a-flight-submission.md)请求的响应数据中。 在合作伙伴中心创建的提交，此 ID 是也可用在合作伙伴中心中的提交页的 URL。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -56,7 +56,7 @@ ms.locfileid: "8935632"
 
 ### <a name="request-example"></a>请求示例
 
-以下示例演示如何为具有应用商店 ID 9WZDNCRD91MD 的应用获取软件包外部测试版提交。
+以下示例演示了如何为具有应用商店 ID 9WZDNCRD91MD 的应用获取软件包外部测试版提交。
 
 ```
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243649 HTTP/1.1
@@ -113,14 +113,14 @@ Authorization: Bearer <your access token>
 | 错误代码 |  描述   |
 |--------|------------------|
 | 404  | 找不到软件包外部测试版提交。 |
-| 409  | 软件包外部测试版提交不属于指定的软件包外部测试版，或者应用使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
+| 409  | 包航班提交不属于指定的包航班，或该应用使用的合作伙伴中心功能[目前不支持通过 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
 
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-* [管理软件包外部测试版提交](manage-flight-submissions.md)
-* [创建软件包外部测试版提交](create-a-flight-submission.md)
-* [确认软件包外部测试版提交](commit-a-flight-submission.md)
-* [更新软件包外部测试版提交](update-a-flight-submission.md)
-* [删除软件包外部测试版提交](delete-a-flight-submission.md)
+* [创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)
+* [管理包航班提交](manage-flight-submissions.md)
+* [创建包航班提交](create-a-flight-submission.md)
+* [提交包航班提交](commit-a-flight-submission.md)
+* [更新包航班提交](update-a-flight-submission.md)
+* [删除包航班提交](delete-a-flight-submission.md)

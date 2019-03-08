@@ -8,32 +8,32 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 175d66ffc7744ca8203fe7681fcb0167e150f012
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935736"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640862"
 ---
 # <a name="person-json"></a>Person (JSON)
-有关单个人员人脉系统中的元数据。 
+用户系统中的单个用户相关的元数据。 
 <a id="ID4EN"></a>
 
  
-## <a name="person"></a>联系人
+## <a name="person"></a>Person
  
 Person 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| xuid| 字符串| 必需。 Xbox 用户 ID (XUID) 以十进制格式。 示例值： 2603643534573573。| 
-| isFavorite| 布尔值| 必需。 此人是否一个用户关注的详细信息。 因为用户可以在其人脉列表中有大量的用户，应在体验优先级和先于其他不是收藏夹显示常用联系人。| 
-| isFollowingCaller| 布尔值| 可选。 是否此人是遵循用户的名义 API 调用。| 
-| socialNetworks| 字符串的数组| 可选。 内的外部网络用户，并且此人具有关系。| 
+| xuid| 字符串| 必需。 Xbox 用户 ID (XUID) 以十进制格式。 示例值：2603643534573573.| 
+| isFavorite| 布尔值| 必需。 无论此人是一个用户关心的详细信息。 因为用户可以非常大量的人在其用户列表中，应优先体验中并先于其他不是收藏夹显示常用联系人。| 
+| isFollowingCaller| 布尔值| 可选。 此人是关注用户的用户是否以其名义 API 调用。| 
+| socialNetworks| 字符串数组| 可选。 中的外部网络用户和此人具有关系。| 
   
 <a id="ID4EHC"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -57,7 +57,7 @@ Person 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E3C"></a>

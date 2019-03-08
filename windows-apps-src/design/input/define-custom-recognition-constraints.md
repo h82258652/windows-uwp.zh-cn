@@ -1,19 +1,19 @@
 ---
-Description: Learn how to define and use custom constraints for speech recognition.
+Description: 了解如何为语音识别定义和使用自定义约束。
 title: 定义自定义识别约束
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
 template: detail.hbs
-keywords: 语音, 语音, 语音识别, 自然语言, 听写, 输入, 用户交互
+keywords: 语音，语音，语音识别，自然语言，听写，输入，用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 539acb242cfe6ee70d1311133a3f1a193860541a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047552"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631722"
 ---
 # <a name="define-custom-recognition-constraints"></a>定义自定义识别约束
 
@@ -21,7 +21,7 @@ ms.locfileid: "9047552"
 
 了解如何为语音识别定义和使用自定义约束。
 
-> **重要 API**：[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)、[**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)、[**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
+> **重要的 Api**:[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446), [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421), [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
 
 
 语音识别至少需要一个约束，才能定义可识别的词汇。 如果未指定任何约束，将使用通用 Windows 应用的预定义听写语法。 请参阅[语音识别](speech-recognition.md)。
@@ -34,9 +34,9 @@ ms.locfileid: "9047552"
 
 我们在此处介绍三种可在应用内使用的语音识别约束。 （有关语音命令约束，请参阅[在 Cortana 中使用语音命令启动前台应用](https://msdn.microsoft.com/cortana/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana)。）
 
--   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) - 基于预定义语法的约束（听写或 Web 搜索）。
--   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) - 基于字词或短语列表的约束。
--   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) - 在语音识别语法规范 (SRGS) 文件中定义的约束。
+-   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)— 约束基于预定义的语法 （听写或 web 搜索）。
+-   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)— 约束基于词或短语的列表。
+-   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)-语音识别语法规范 (SRGS) 文件中定义的约束。
 
 每个语音识别器都可具有一个约束集合。 只有以下约束组合有效：
 
@@ -178,7 +178,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-该 SRGS 文件 (srgs.grxml) 包含语义翻译标记。 这些标记提供了用于将语法匹配数据返回应用的机制。 语法必须符合万维网联合会 (W3C)[用于语音识别的语义翻译 (SISR) 1.0](https://go.microsoft.com/fwlink/p/?LinkID=201765) 规范。
+该 SRGS 文件 (srgs.grxml) 包含语义翻译标记。 这些标记提供了用于将语法匹配数据返回应用的机制。 World Wide Web 联合会 (W3C) 语法必须符合 [语义转译为语音识别 (SISR) 1.0](https://go.microsoft.com/fwlink/p/?LinkID=201765)规范。
 
 我们在此处侦听“是”和“否”的变体。
 

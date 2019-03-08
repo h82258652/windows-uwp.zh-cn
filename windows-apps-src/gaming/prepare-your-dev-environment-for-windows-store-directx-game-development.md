@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 模板, 工具, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: a272c579fb3ead676fe76f16c33b70f557de4ed8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941170"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653762"
 ---
 # <a name="project-templates-and-tools-for-games"></a>适用于游戏的项目模板和工具
 
@@ -25,7 +25,7 @@ ms.locfileid: "8941170"
 ## <a name="get-visual-studio"></a>获取 Visual Studio
 
 
-[下载并安装 Microsoft Visual Studio2015](https://www.visualstudio.com/vs-2015-product-editions)。
+[下载并安装 Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions)。
 
 <table>
 <colgroup>
@@ -44,7 +44,7 @@ ms.locfileid: "8941170"
 <td align="left"><p>了解用于创建 UWP 和 DirectX 游戏的模板。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="set-up-visual-studio-for-game-development.md">用于游戏编程的 Visual Studio 工具</a></p></td>
+<td align="left"><p><a href="set-up-visual-studio-for-game-development.md">适用于游戏编程的 visual Studio 工具</a></p></td>
 <td align="left"><p>概要介绍了 Visual Studio 中提供的 DirectX 特定工具。</p></td>
 </tr>
 <tr class="odd">
@@ -62,12 +62,12 @@ ms.locfileid: "8941170"
 如果你要移植现有游戏，请参阅下列主题。
 
 -   [从 OpenGL ES 2.0 移植到 DirectX 11](port-from-opengl-es-2-0-to-directx-11-1.md)
--   [从 Direct3D 9 移植到 UWP](porting-your-directx-9-game-to-windows-store.md)
+-   [从 DirectX 9 移植到 UWP](porting-your-directx-9-game-to-windows-store.md)
 
 如果你要创建新的 DirectX 游戏，请参阅下列主题。
 
--   [使用 DirectX 创建一款简单的 UWP 游戏](tutorial--create-your-first-uwp-directx-game.md)
--   [开发 Marble Maze，一款使用 C++ 和 DirectX 的通用 Windows 平台游戏](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+-   [使用 DirectX 创建简单的 UWP 游戏](tutorial--create-your-first-uwp-directx-game.md)
+-   [开发 c + + 和 DirectX 中通用 Windows 平台游戏 Marble Maze](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use Notification Listener to access all of the user's notifications.
+Description: 了解如何使用通知侦听器访问用户的所有通知。
 title: 通知侦听器
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tiles
@@ -9,21 +9,21 @@ ms.topic: article
 keywords: windows 10, uwp, 通知侦听器, usernotificationlistener, 文档, 访问通知
 ms.localizationpriority: medium
 ms.openlocfilehash: de1032eb3d0d364a62beff0a1af8f84240c11d87
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942259"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649612"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知侦听器：访问所有通知
 
-通知侦听器提供对用户通知的访问。 Smartwatch 和其他可穿戴设备可以使用通知侦听器将手机通知发送到可穿戴设备。 家庭自动化应用可以使用通知侦听器时收到通知，如闪灯接到来电时执行特定操作。 
+通知侦听器提供对用户通知的访问。 Smartwatch 和其他可穿戴设备可以使用通知侦听器将手机通知发送到可穿戴设备。 家庭自动化应用程序可以使用通知侦听器执行特定操作时接收通知，例如使灯光闪烁时接收调用。 
 
 > [!IMPORTANT]
-> **需要周年更新**：目标必须为 SDK 14393，并且必须运行版本 14393 或更高版本才能使用通知侦听器。
+> **需要周年更新**:必须为目标 SDK 14393 和运行生成 14393 或更高版本才能使用通知侦听器。
 
 
-> **重要 API**：[UserNotificationListener 类](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener)、[UserNotificationChangedTrigger 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
+> **重要的 Api**:[UserNotificationListener 类](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener)， [UserNotificationChangedTrigger 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
 
 
 ## <a name="enable-the-listener-by-adding-the-user-notification-capability"></a>通过添加用户通知功能支持侦听器 
@@ -91,7 +91,7 @@ switch (accessStatus)
 }
 ```
 
-用户随时可以通过 Windows“设置”撤销访问权限。 因此，你的应用应始终在执行使用通知侦听器的代码之前检查通过[GetAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus)方法的访问权限状态。 如果用户撤销访问权限，API 将在不发出提示的情况下失败，而不引发异常（例如，用于获取所有通知的 API 将只返回空列表）。
+用户随时可以通过 Windows“设置”撤销访问权限。 因此，您的应用程序应始终检查通过访问状态[GetAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus)方法，然后再执行使用通知侦听器的代码。 如果用户撤销访问权限，API 将在不发出提示的情况下失败，而不引发异常（例如，用于获取所有通知的 API 将只返回空列表）。
 
 
 ## <a name="access-the-users-notifications"></a>访问用户通知
@@ -138,7 +138,7 @@ await appLogo.SetSourceAsync(await appLogoStream.OpenReadAsync());
 
 通知本身的内容（如通知文本）包含在 [Notification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification.Notification) 属性中。 此属性包含通知的可视部分。 （如果对在 Windows 上发送通知很熟悉，可以注意到 [Notification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification) 对象中的 [Visual](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification.Visual) 和 [Visual.Bindings](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationvisual.Bindings) 属性对应于开发人员在弹出通知时发送的内容。）
 
-我们需要寻找 toast 绑定（对于错误证明代码，应检查绑定是否为 null）。 你可以从绑定中获取文本元素。 可以选择显示任意多的文本元素。 （理想情况下应全部显示。）可以选择对文本元素区别处理；例如，将第一个文本视为标题文本，将后续元素视为正文文本。
+我们需要寻找 toast 绑定（对于错误证明代码，应检查绑定是否为 null）。 你可以从绑定中获取文本元素。 可以选择显示任意多的文本元素。 （理想情况下，您应显示所有这些。）您可以选择区别对待文本元素;例如，将为标题文本的第一个和后续元素视为正文文本。
 
 ```csharp
 // Get the toast binding, if present
@@ -229,7 +229,7 @@ protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs
 
 后台任务只是“即时点击”：它不会提供有关添加或删除了哪个具体通知的任何信息。 触发后台任务时，应在同步可穿戴设备上的通知，以反映平台中的通知。 这可以确保在后台任务失败时，在后台任务下一次执行时仍然可以恢复可穿戴设备上的通知。
 
-`SyncNotifications` 是一种你实现的方法；下一节介绍如何实现。 
+`SyncNotifications` 是一种方法实现;下一个部分将显示如何。 
 
 
 ## <a name="determining-which-notifications-were-added-and-removed"></a>确定添加和删除了哪些通知
@@ -277,9 +277,9 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>已添加/已消除的通知的前台事件
 
 > [!IMPORTANT] 
-> 已知问题： 前台事件将导致 CPU 循环上最新版本的 Windows，并且之前无法正常工作之前的。 不要使用前台事件。 在即将推出更新到 Windows 中，我们将解决此问题。
+> 已知的问题：前景事件将导致 CPU 循环上最新版本的 Windows，并且以前不起作用之前。 不要使用前景色事件。 在即将发布到 Windows 更新中，我们将解决此问题。
 
-而不是使用前台事件，使用前面显示的[单进程模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)后台任务的代码。 后台任务还允许你收到的更改事件通知这两个应用已关闭或运行时。
+而不是使用前景事件，使用前面所示的代码[单个进程模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)后台任务。 后台任务还允许您在应用处于已关闭或正在运行时接收更改事件的通知这两个。
 
 ```csharp
 // Subscribe to foreground event (DON'T USE THIS)
@@ -292,6 +292,6 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 ```
 
 
-## <a name="howto-fixdelays-in-the-background-task"></a>后台任务中如何 fixdelays
+## <a name="howto-fixdelays-in-the-background-task"></a>如何修复中的后台任务的延迟
 
-测试你的应用，你可能会注意到后台任务有时延迟并不能触发几分钟时间。 若要修复延迟，提示用户多哥对系统设置-> 系统-> 电池-> 应用的电池使用情况、 列表中找到你的应用、 选择它，并将其设置为"始终允许在后台运行"。在此之后，后台任务应始终触发内收到通知后一秒。
+测试您的应用程序，可能会注意到后台任务有时延迟并不会触发几分钟的时间。 若要解决延迟，将提示用户转到系统设置-> 系统-> 电池-> 应用的电池使用情况、 查找您的应用程序列表中，选择它，和将其设置为"始终允许在背景中使用。" 在此之后，后台任务应始终触发中围绕正在接收的通知的第二个。

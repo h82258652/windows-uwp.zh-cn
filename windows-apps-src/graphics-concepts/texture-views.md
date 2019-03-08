@@ -1,6 +1,6 @@
 ---
 title: 纹理视图
-description: 在 Direct3D 中，使用视图访问纹理资源，这是适用于内存中资源的硬件转译机制。
+description: 在 Direct3D 中，使用视图访问纹理资源，这是适用于内存中资源的硬件解释的机制。
 ms.assetid: 18DABFCE-8A36-4C4E-B08E-10428B05D701
 keywords:
 - 纹理视图
@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e9167db4648dd193acaff0a224f3378486d171ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941061"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638442"
 ---
 # <a name="texture-views"></a>纹理视图
 

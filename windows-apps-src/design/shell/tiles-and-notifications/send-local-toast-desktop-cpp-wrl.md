@@ -1,5 +1,5 @@
 ---
-Description: Learn how Win32 C++ WRL apps can send local toast notifications and handle the user clicking the toast.
+Description: 了解如何将本地 toast 通知发送和处理用户单击 toast Win32 c + + WRL 应用。
 title: 从桌面 C++ WRL 应用发送本地 toast 通知
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, win32, 桌面, toast 通知, 发送 toast, 发送本地 toast, 桌面桥, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
 ms.openlocfilehash: 82de349009350c970fce923a2aa503df0801c3b7
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116259"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609842"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>从桌面 C++ WRL 应用发送本地 toast 通知
 
@@ -22,7 +22,7 @@ ms.locfileid: "9116259"
 > 如果要编写 UWP 应用，请参阅 [UWP 文档](send-local-toast.md)。 有关其他桌面语言，请参阅[桌面 C#](send-local-toast-desktop.md)。
 
 
-## <a name="step-1-enable-the-windows-10-sdk"></a>步骤 1：启用 Windows 10 SDK
+## <a name="step-1-enable-the-windows-10-sdk"></a>第 1 步：启用 Windows 10 SDK
 
 如果尚未对 Win32 应用启用 Windows 10 SDK，必须先执行该操作。 下面是几个关键步骤...
 
@@ -45,7 +45,7 @@ ms.locfileid: "9116259"
 如果使用预编译标头，确保 `#include "stdafx.h"`，并将其用作 DesktopNotificationManagerCompat.cpp 文件的第一行。
 
 
-## <a name="step-3-include-the-header-files-and-namespaces"></a>步骤 3：包括头文件和命名空间
+## <a name="step-3-include-the-header-files-and-namespaces"></a>步骤 3:包括标头文件和命名空间
 
 包括兼容库头文件，以及与使用 UWP toast API 相关的头文件和命名空间。
 
@@ -143,7 +143,7 @@ CoCreatableClass(NotificationActivator);
 
 选取用于识别 Win32 应用的唯一 AUMID。 通常采用 [CompanyName].[AppName] 的形式，但需确保它在所有应用中均为唯一（可根据需要在末尾添加一些数字）。
 
-#### <a name="step-51-wix-installer"></a>步骤 5.1：WiX 安装程序
+#### <a name="step-51-wix-installer"></a>步骤 5.1:WiX 安装程序
 
 如果对安装程序使用 WiX，则编辑 **Product.wxs** 文件，将两种快捷方式属性添加到“开始”菜单快捷方式中，如下所示。 确保步骤 #4 中的 GUID 包含在 `{}` 中，如下所示。
 
@@ -165,7 +165,7 @@ CoCreatableClass(NotificationActivator);
 > 为使用通知，必须在正常调试之前通过安装程序安装应用，以便显示包含有 AUMID 和 CLSID 的“开始”快捷方式。 出现“开始”快捷方式后，可以从 Visual Studio 中使用 F5 进行调试。
 
 
-#### <a name="step-52-register-aumid-and-com-server"></a>步骤 5.2：注册 AUMID 和 COM 服务器
+#### <a name="step-52-register-aumid-and-com-server"></a>步骤 5.2:注册 AUMID 和 COM 服务器
 
 然后，在不考虑安装程序的情况下，在应用的启动代码中（在调用任何通知 API 之前），调用 **RegisterAumidAndComServer** 方法，指定步骤 #4 中的通知激活器类和上面使用的 AUMID。
 
@@ -363,12 +363,12 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR cm
 
 如果应用已在运行：
 
-1. 调用 **NotificationActivator** 中的 **Activate** 
+1. 调用 **NotificationActivator** 中的 **Activate**
 
 如果应用未运行：
 
 1. 应用已实施 EXE 启动，会得到一个“-ToastActivated”的命令行参数
-2. 调用 **NotificationActivator** 中的 **Activate** 
+2. 调用 **NotificationActivator** 中的 **Activate**
 
 
 ### <a name="foreground-vs-background-activation"></a>前台与后台激活
@@ -420,7 +420,7 @@ Windows 8 引入了 toast 通知，但使用的是[旧版 toast 模板](https://
 
 | 操作系统 | ToastGeneric | COM 激活器 | 旧版 toast 模板 |
 | -- | ------------ | ------------- | ---------------------- |
-| Windows10 | 支持 | 支持 | 支持（但不会激活 COM 服务器） |
+| Windows 10 | 支持 | 支持 | 支持（但不会激活 COM 服务器） |
 | Windows 8.1/8 | 不适用 | 不适用 | 支持 |
 | Windows 7 及更低版本 | 不适用 | 不适用 | 不适用 |
 
@@ -438,11 +438,11 @@ if (IsWindows10OrGreater())
 
 ## <a name="known-issues"></a>已知问题
 
-**已修复：单击 toast 后焦点未移动至应用**：在内部版本 15063 和更早版本中，激活 COM 服务器时，前台权限未转移给应用程序。 因此，在尝试将应用移动到前台时，它只会闪现。 此前此问题没有任何解决方法。 我们在内部版本 16299 和更高版本中修复了此问题。
+**已修复：单击 toast 通知后，应用不会获得焦点**:中内部版本 15063 及更早版本，前台权限未在传送到你的应用程序时我们激活 COM 服务器。 因此，在尝试将应用移动到前台时，它只会闪现。 此前此问题没有任何解决方法。 我们在内部版本 16299 和更高版本中修复了此问题。
 
 
 ## <a name="resources"></a>资源
 
 * [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/desktop-toasts)
-* [来自桌面应用的 Toast 通知](toast-desktop-apps.md)
-* [Toast 内容文档](adaptive-interactive-toasts.md)
+* [从桌面应用的 toast 通知](toast-desktop-apps.md)
+* [Toast 通知内容文档](adaptive-interactive-toasts.md)

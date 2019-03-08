@@ -1,6 +1,6 @@
 ---
 title: 可用于流式资源的操作
-description: 本节列出了可对流式资源执行的操作。
+description: 此部分列出了可对流式资源执行的操作。
 ms.assetid: 700D8C54-0E20-4B2B-BEA3-20F6F72B8E24
 keywords:
 - 可用于流式资源的操作
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 922798fad97754421541297a5434a81e9c660b2b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937366"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655512"
 ---
 # <a name="operations-available-on-streaming-resources"></a>可用于流式资源的操作
 
 
-本节列出了可对流式资源执行的操作。
+此部分列出了可对流式资源执行的操作。
 
 -   返回 void 的 Update Tile Mappings 操作和返回 void 的 Copy Tile Mappings 操作 - 这些操作将流式资源中的磁贴位置指向磁贴池中的位置，或指向 NULL，或同时指向两者。 这些操作可以更新磁贴指针的不相交子集。
 -   复制和更新操作 - 所有可将数据复制到默认池表面及可从默认池表面复制数据的 API 都适用于流式资源。 从未映射的磁贴读取将产生 0，到未映射磁贴的写入会被丢弃。
@@ -29,7 +29,7 @@ ms.locfileid: "8937366"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[创建流式资源](creating-streaming-resources.md)
+[创建流式处理资源](creating-streaming-resources.md)
 
  
 

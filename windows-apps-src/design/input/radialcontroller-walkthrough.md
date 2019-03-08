@@ -7,15 +7,15 @@ ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d8729826c2f372b3d3b5607ce828aaf515e47f3d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933908"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643982"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>教程：在 UWP 应用中支持 Surface Dial（和其他滚轮设备）
 
-![适配 Surface Studio 的 Surface Dial 的图像](images/radialcontroller/dial-pen-studio-600px.png)  
+![使用图面上 Studio 图面上拨号的图像](images/radialcontroller/dial-pen-studio-600px.png)  
 *适配 Surface Studio 和 Surface 触控笔的 Surface Dial*（可通过 [Microsoft 官方商城](https://aka.ms/purchasesurfacedial)购买）。
 
 此教程逐步介绍如何自定义 Surface Dial 等滚轮设备支持的用户交互体验。 我们使用可以从 GitHub 下载的示例应用中的代码段（参阅[示例代码](#sample-code)），来展示各个步骤所讨论的各种功能和关联的 [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) API。
@@ -38,15 +38,15 @@ Dial 支持三种基本手势：
 - 旋转以突出显示菜单项（如果菜单处于活动状态）或在应用中修改当前操作（如果菜单处于非活动状态）。
 - 单击以选择突出显示的菜单项（如果菜单处于活动状态）或在应用中调用命令（如果菜单处于非活动状态）。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 * 运行 Windows 10 创意者更新或更高版本的计算机（或虚拟机）
 * [Visual Studio 2017 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * 滚轮设备（现在仅限 [Surface Dial](https://aka.ms/purchasesurfacedial)）
 * 如果你还不熟悉使用 Visual Studio 进行通用 Windows 平台 (UWP) 应用开发，请在开始此教程前浏览一下这些主题：  
     * [准备工作](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
-    * [创建“Hello, world”应用 \(XAML\)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+    * [创建"Hello，world"应用 (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 
 ## <a name="set-up-your-devices"></a>设置你的设备
 
@@ -58,7 +58,7 @@ Dial 支持三种基本手势：
 6. 返回到 Windows 设备，选择**添加蓝牙或其他设备**。
 7. 在**设备添加**对话框中，选择**蓝牙** > **Surface Dial**。 Surface Dial 现在应已连接，并被添加到**蓝牙和其他设备**设置页中**鼠标、键盘和笔**下的设备列表中。
 8. 长按 Dial 几秒钟以显示内置菜单，通过此方法对 Dial 进行测试。
-9. 如果菜单未显示 （Dial 还应出现振动） 在屏幕上，转返回蓝牙设置，删除该设备，然后尝试重新连接设备。
+9. 如果菜单未显示 （应该也振动拨） 在屏幕上，请转回蓝牙设置，删除该设备，并再次尝试连接设备。
 
 > [!NOTE]
 > 可以通过**滚轮**设置配置滚轮设备：
@@ -79,18 +79,18 @@ Dial 支持三种基本手势：
 3. 如果你没有 GitHub 帐户，或者只是想要项目的本地副本，则选择**下载 ZIP**（你需要以后定期查看以下载最新的更新）。
 
 > [!IMPORTANT]
-> 示例中的大部分代码已被注释掉。在我们介绍本主题中的各个步骤时，系统将要求你取消代码各个部分的注释。 在 Visual Studio 中，只需突出显示代码行，并按 CTRL-K，然后按 CTRL-U。
+> 示例中的大部分代码已被注释掉。在我们介绍本主题的各个步骤时，系统将要求你取消代码各个部分的注释。 在 Visual Studio 中，只需突出显示代码行，并按 CTRL-K，然后按 CTRL-U。
 
 ## <a name="components-that-support-wheel-functionality"></a>支持滚轮功能的组件
 
 这些对象为 UWP 应用提供大部分滚轮设备体验。
 
-| 组件 | 描述 |
+| Component | 描述 |
 | --- | --- |
-| [**RadialController** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)和相关项 | 表示滚轮输入设备或附件，例如 Surface Dial。 |
+| [**RadialController**类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)和相关 | 表示滚轮输入设备或附件，例如 Surface Dial。 |
 | [**IRadialControllerConfigurationInterop**](https://msdn.microsoft.com/library/windows/desktop/mt790709) / [**IRadialControllerInterop**](https://msdn.microsoft.com/library/windows/desktop/mt790711)<br/>我们不在这里介绍此功能，有关详细信息，请参阅 [Windows 经典桌面示例](https://aka.ms/radialcontrollerclassicsample)。 | 通过 UWP 应用支持互操作性。 |
 
-## <a name="step-1-run-the-sample"></a>步骤 1：运行示例
+## <a name="step-1-run-the-sample"></a>第 1 步：运行示例
 
 下载 RadialController 示例应用后，确认它在运行：
 1. 在 Visual Studio 中打开示例项目。
@@ -98,7 +98,7 @@ Dial 支持三种基本手势：
 3. 按 F5 编译、部署和运行。 
 
 > [!NOTE]
-> 或者，你可以选择**调试** > **开始调试**菜单项，或选择此处显示的**本地计算机**运行按钮：![Visual Studio 生成项目按钮](images/radialcontroller/wheel-vsrun.png)
+> 或者，可以选择**调试** > **开始调试**菜单项或选择**本地计算机**运行按钮如下所示：![Visual Studio 生成项目按钮](images/radialcontroller/wheel-vsrun.png)
 
 应用窗口打开，在初始屏幕出现几秒钟后，你将看到此初始屏幕。
 
@@ -120,12 +120,12 @@ Dial 支持三种基本手势：
 
 现在，我们将开始执行一些基本的自定义。
 
-## <a name="step-3-add-controls-for-wheel-input"></a>步骤 3：添加滚轮输入的控件
+## <a name="step-3-add-controls-for-wheel-input"></a>步骤 3:添加滚轮输入的控件
 
 首先，我们来为应用添加 UI：
 
 1. 打开 MainPage_Basic.xaml 文件。
-2. 找到标有此步骤标题的代码 ("\<!-- Step 3: Add controls for wheel input -->")。
+2. 找到与此步骤的标题标记的代码 ("\<！-步骤 3:添加控制滚轮输入-->")。
 3. 取消以下各行的注释。
 
     ```xaml
@@ -164,7 +164,7 @@ Dial 支持三种基本手势：
 现在我们来添加支持对我们的控件进行 **RadialController** 访问所需的代码。
 
 1. 打开 MainPage_Basic.xaml.cs 文件。
-2. 找到标有此步骤标题的代码 ("// Step 4: Basic RadialController menu customization")。
+2. 找到与此步骤的标题标记的代码 ("/ / 第 4 步：基本 RadialController 菜单自定义项"）。
 3. 取消以下各行的注释：
     - [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input) 和 [Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/windows.storage.streams) 类型引用用于后续步骤中的功能：  
     
@@ -287,7 +287,7 @@ Dial 支持三种基本手势：
 在此步骤中，我们将关联**添加/删除项目**和**重置 RadialController 菜单**按钮，以向你展示如何能够动态自定义菜单。
 
 1. 打开 MainPage_Basic.xaml.cs 文件。
-2. 找到标有此步骤标题的代码 ("// Step 5: Configure menu at runtime")。
+2. 找到与此步骤的标题标记的代码 ("/ / 步骤 5:菜单在运行时配置"）。
 3. 取消下列方法中代码的注释并重新运行应用，但不选择任何按钮（保存供下一步骤使用）。  
 
     ``` csharp
@@ -340,7 +340,7 @@ Dial 支持三种基本手势：
 
     请注意，菜单返回原始状态。
 
-## <a name="step-6-customize-the-device-haptics"></a>步骤 6：自定义设备触觉
+## <a name="step-6-customize-the-device-haptics"></a>步骤 6：自定义设备 haptics
 Surface Dial 和其他滚轮设备可以向用户提供与当前交互对应的触觉反馈（基于单击或旋转）。
 
 在此步骤中，我们向你展示，如何通过关联滑块和切换开关控件并使用它们动态指定触觉反馈行为，来自定义触觉反馈。 对于此示例，切换开关必须设置为开启以已启用反馈，滑块值指定单击反馈的重复频率。 
@@ -349,7 +349,7 @@ Surface Dial 和其他滚轮设备可以向用户提供与当前交互对应的�
 > 用户可以在**设置** >  **设备** > **滚轮**页中禁用触觉反馈。
 
 1. 打开 App.xaml.cs 文件。
-2. 找到标有此步骤标题的代码 ("Step 6: Customize the device haptics")。
+2. 找到与此步骤的标题标记的代码 ("步骤 6:自定义设备 haptics"）。
 3. 为第一行和第三行（“MainPage_Basic”和“MainPage”）添加注释，取消第二行（“MainPage_Haptics”）的注释。  
 
     ``` csharp
@@ -358,7 +358,7 @@ Surface Dial 和其他滚轮设备可以向用户提供与当前交互对应的�
     rootFrame.Navigate(typeof(MainPage), e.Arguments);
     ```
 4. 打开 MainPage_Haptics.xaml 文件。
-5. 找到标有此步骤标题的代码 ("\<!-- Step 6: Customize the device haptics -->")。
+5. 找到与此步骤的标题标记的代码 ("\<！-步骤 6:自定义的设备 haptics-->")。
 6. 取消以下各行的注释。 （此 UI 代码仅指示当前设备支持哪些触觉功能。）    
 
     ```xaml
@@ -431,7 +431,7 @@ Surface Dial 和其他滚轮设备可以向用户提供与当前交互对应的�
     </StackPanel>
     ```
 7. 打开 MainPage_Haptics.xaml.cs 文件。
-8. 找到标有此步骤标题的代码 ("Step 6: Haptics customization")
+8. 找到与此步骤的标题标记的代码 ("步骤 6:Haptics 自定义"）
 9. 取消以下各行的注释：  
 
     - [Windows.Devices.Haptics](https://docs.microsoft.com/uwp/api/windows.devices.haptics) 类型引用用于后续步骤中的功能。  
@@ -580,7 +580,7 @@ Surface Dial 和其他滚轮设备可以向用户提供与当前交互对应的�
 
 现在重新运行应用，更改滑块值和切换开关的状态，尝试一下自定义触觉。
 
-## <a name="step-7-define-on-screen-interactions-for-surface-studio-and-similar-devices"></a>步骤 7：为 Surface Studio 和类似设备定义屏幕交互
+## <a name="step-7-define-on-screen-interactions-for-surface-studio-and-similar-devices"></a>步骤 7：屏幕上定义的图面 Studio 和类似的设备交互
 与 Surface Studio 搭配使用，Surface Dial 可提供更为独特的用户体验。 
 
 除了所述的默认长按菜单体验之外，还可以将 Surface Dial 直接置于 Surface Studio 的屏幕上。 这会启用一个特殊的“屏幕”菜单。 
@@ -594,7 +594,7 @@ Surface Dial 和其他滚轮设备可以向用户提供与当前交互对应的�
 1. 在 Surface Studio 设备（已安装 Visual Studio）上下载示例
 2. 在 Visual Studio 中打开示例
 3. 打开 App.xaml.cs 文件
-4. 找到标有此步骤标题的代码 ("Step 7: Define on-screen interactions for Surface Studio and similar devices")
+4. 找到与此步骤的标题标记的代码 ("步骤 7:屏幕上定义的图面 Studio 和类似的设备交互")
 5. 为第一行和第二行（“MainPage_Basic”和“MainPage_Haptics”）添加注释，取消第三行（“MainPage”）的注释。  
 
     ``` csharp
@@ -609,6 +609,6 @@ Surface Dial 和其他滚轮设备可以向用户提供与当前交互对应的�
 
     <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe>  
 
-## <a name="summary"></a>小结
+## <a name="summary"></a>摘要
 
-恭喜，你已完成了*入门教程：在 UWP 应用中支持 Surface Dial（和其他滚轮设备）*！ 我们向你展示了在 UWP 应用中支持滚轮设备所需的基本代码，以及如何提供 **RadialController** API 支持的一些更加丰富的用户体验。
+祝贺你，你已完成*入门教程：在 UWP 应用中支持面拨 （和其他滚轮设备）*！ 我们向你展示了在 UWP 应用中支持滚轮设备所需的基本代码，以及如何提供 **RadialController** API 支持的一些更加丰富的用户体验。

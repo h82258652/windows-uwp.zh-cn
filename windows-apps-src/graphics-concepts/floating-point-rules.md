@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4de5ba146c8241598527dd268d604fcc9bb97d6d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921041"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662352"
 ---
 # <a name="span-iddirect3dconceptsfloating-pointrulesspanfloating-point-rules"></a><span id="direct3dconcepts.floating-point_rules"></span>浮点规则
 
@@ -24,7 +24,7 @@ Direct3D 支持多种浮点表示。 所有浮点计算都依照 IEEE 754 32 位
 
 有两组规则：符合 IEEE-754 的规则和那些偏离标准的规则。
 
-### <a name="span-idalpha754rulesspanspan-idalpha754rulesspanspan-idalpha754rulesspanhonored-ieee-754-rules"></a><span id="alpha_754_Rules"></span><span id="alpha_754_rules"></span><span id="ALPHA_754_RULES"></span>推崇的 IEEE-754 规则
+### <a name="span-idalpha754rulesspanspan-idalpha754rulesspanspan-idalpha754rulesspanhonored-ieee-754-rules"></a><span id="alpha_754_Rules"></span><span id="alpha_754_rules"></span><span id="ALPHA_754_RULES"></span>遵循的 IEEE 754 规则
 
 这些规则中的一些是 IEEE-754 提供选择的单个选项。
 
@@ -44,13 +44,13 @@ Direct3D 支持多种浮点表示。 所有浮点计算都依照 IEEE 754 32 位
 -   当任一或两个操作数都是 NaN 时，比较运算符 NE 返回 **TRUE**。
 -   任何非 NaN 值与 +/- INF 的比较运算都会返回正确的结果。
 
-### <a name="span-idalpha754deviationsspanspan-idalpha754deviationsspanspan-idalpha754deviationsspandeviations-or-additional-requirements-from-ieee-754-rules"></a><span id="alpha_754_Deviations"></span><span id="alpha_754_deviations"></span><span id="ALPHA_754_DEVIATIONS"></span>IEEE-754 规则的偏差或其他要求
+### <a name="span-idalpha754deviationsspanspan-idalpha754deviationsspanspan-idalpha754deviationsspandeviations-or-additional-requirements-from-ieee-754-rules"></a><span id="alpha_754_Deviations"></span><span id="alpha_754_deviations"></span><span id="ALPHA_754_DEVIATIONS"></span>偏差或从 IEEE-754 规则的其他要求
 
 -   IEEE-754 要求浮点运算产生结果，该结果是最接近无限精确结果的可表示值，称为最近舍入。
 
-    Direct3D 11 及以上定义了与 IEEE-754 相同的要求：32 位浮点运算产生的结果在无限精确结果的 0.5 最后位置单位 (ULP) 内。 这意味着，例如，硬件允许将结果截断到 32 位，而不是执行最近舍入，因为后者将导致至多 0.5 ULP 的误差。 此规则仅适用于加法、减法和乘法。
+    Direct3D 11 和最多为 IEEE-754 定义相同的要求：32 位浮点运算产生的结果的 0.5 单元上一次-就地 （ulp 范围） 的无限精确结果。 这意味着，例如，硬件允许将结果截断到 32 位，而不是执行最近舍入，因为后者将导致至多 0.5 ULP 的误差。 此规则仅适用于加法、减法和乘法。
 
-    Direct3D 的早期版本定义了比 IEEE-754 更宽松的要求：32 位浮点运算产生的结果在无限精确结果的一个最后位置单位 (1 ULP) 内。 这意味着，例如，硬件允许将结果截断到 32 位，而不是执行最近舍入，因为后者将导致至多 1 ULP 的误差。
+    Direct3D 的早期版本定义了比 IEEE-754 更松散的要求：32 位浮点运算产生的结果的一个单元-上一次的位置 （1 ulp 范围） 的无限精确结果。 这意味着，例如，硬件允许将结果截断到 32 位，而不是执行最近舍入，因为后者将导致至多 1 ULP 的误差。
 
 -   不支持浮点异常、状态位或陷阱。
 -   Denorm 在任何浮点数学运算的输入和输出上被刷新为符号保留的零。 不处理数据的任何 I/O 或数据移动运算属于例外情况。
@@ -72,12 +72,12 @@ Direct3D 支持多种浮点表示。 所有浮点计算都依照 IEEE 754 32 位
      
     ```
 
-    一般情况下，Direct3D 会遵循算术标准：IEEE-754 和 IEEE-754R。 但这种情况下会存在偏差。
+    通常情况下，Direct3D 符合算法标准：IEEE-754 和 IEEE 754R。 但这种情况下会存在偏差。
 
     Direct3D 10 和更高版本中的算术规则不对静止和信号 NaN 值（QNaN与SNaN）进行区分。 所有 NaN 值都以相同的方式处理。 在最小值和最大值的情况下，任何 NaN 值的 Direct3D 行为都类似于 QNaN 在 IEEE-754R 定义中的处理方式。 （为了保持完整性 - 如果两个输入都是 NaN，则返回任何 NaN 值。）
 
 -   另一个 IEEE 754R 规则是 min(-0,+0) == min(+0,-0) == -0 和 max(-0,+0) == max(+0,-0) == +0，该规则推崇符号，与符号零的比较规则相反（如我们前面所看到的）。 Direct3D 推荐此处的 IEEE 754R 行为，但不强制使用；比较零的结果也可以通过使用忽略符号的比较运算符取决于参数的顺序。
--   x\*1.0f 的结果始终是 x（除了 denorm 刷新）。
+-   x\*1.0f 总是会导致 x （除 denorm 刷新)。
 -   x/1.0f 的结果始终是 x（除了 denorm 刷新）。
 -   x +/- 0.0f 的结果始终是 x（除了 denorm 刷新）。 但是 -0 + 0 = +0。
 -   融合运算（例如 mad、dp3）产生的结果与运算的未融合扩展的评估的最差的串行排序一样准确。 对于给定的融合运算，出于容差的目的，最差的排序的定义不是固定的定义；它取决于输入的特定值。 允许未融合扩展中的各个步骤出现 1 个 ULP 容差（或者，Direct3D 调用的命令具有比 1 个 ULP 更宽松的容差，则允许出现更宽松的容差）。
@@ -85,10 +85,10 @@ Direct3D 支持多种浮点表示。 所有浮点计算都依照 IEEE 754 32 位
 -   sqrt 和 rcp 有 1 个 ULP 容差。 着色器倒数指令和倒数平方根指令 [**rcp**](https://msdn.microsoft.com/library/windows/desktop/hh447205) 和 [**rsq**](https://msdn.microsoft.com/library/windows/desktop/hh447221) 拥有各自的宽松精度要求。
 -   乘法和除法运算为 32 位浮点精度水平（乘法的精度为 0.5 ULP，倒数的精度为 1.0 ULP）。 如果直接实现 x/y，结果必须比两步法具有更大或相等的精度。
 
-## <a name="span-iddoubleprec64bitspanspan-iddoubleprec64bitspan64-bit-double-precision-floating-point-rules"></a><span id="double_prec_64_bit"></span><span id="DOUBLE_PREC_64_BIT"></span>64 位（双精度）浮点规则
+## <a name="span-iddoubleprec64bitspanspan-iddoubleprec64bitspan64-bit-double-precision-floating-point-rules"></a><span id="double_prec_64_bit"></span><span id="DOUBLE_PREC_64_BIT"></span>64 位 （双精度） 浮动点规则
 
 
-硬件和显示驱动程序可选择支持双精度浮点。 要指示支持，当使用 [**D3D11\_FEATURE\_DOUBLES**](https://msdn.microsoft.com/library/windows/desktop/ff476124#d3d11-feature-doubles) 调用 [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) 时，驱动程序将 [**D3D11\_FEATURE\_DATA\_DOUBLES**](https://msdn.microsoft.com/library/windows/desktop/ff476127) 的 **DoublePrecisionFloatShaderOps** 设置为 TRUE。 驱动程序和硬件必须支持所有双精度浮点指令。
+硬件和显示驱动程序可选择支持双精度浮点。 若要指示的支持，在调用时[ **ID3D11Device::CheckFeatureSupport** ](https://msdn.microsoft.com/library/windows/desktop/ff476497)与[ **D3D11\_功能\_双精度型值**](https://msdn.microsoft.com/library/windows/desktop/ff476124#d3d11-feature-doubles)，驱动程序集**DoublePrecisionFloatShaderOps**的[ **D3D11\_功能\_数据\_DOUBLE**](https://msdn.microsoft.com/library/windows/desktop/ff476127)为 TRUE。 驱动程序和硬件必须支持所有双精度浮点指令。
 
 双精度指令遵循 IEEE 754R 行为要求。
 
@@ -108,17 +108,17 @@ Direct3D 还支持浮点数的 16 位表示形式。
 float16 值 (v) 遵循以下规则：
 
 -   如果 e == 31 且 f != 0，那么 v 是 NaN，无论 s 是什么
--   如果 e == 31 且 f == 0，则 v =（-1）s\*无穷大（有符号无穷大）
--   如果 e 在 0 和 31 之间，那么 v = (-1)s\*2(e-15)\*(1.f)
--   如果 e == 0 且 f != 0，那么 v = (-1)s\*2(e-14)\*(0.f)（非标准化数字）
--   如果 e == 0 且 f == 0，那么 v = (-1)s\*0（符号零）
+-   如果 e = = 31 和 f = = 0，则 v = (-1) s\*无穷大 （有符号无穷大）
+-   如果 e 介于 0 和 31，则 v = (-1) s\*2(e-15)\*(1.f)
+-   如果 e = = 0 和 f ！ = 0，则 v = (-1) s\*2(e-14)\*(0.f) （非标准化数）
+-   如果 e = = 0 和 f = = 0，则 v = (-1) s\*0 （带符号的零）
 
 32 位浮点规则也适用于 16 位浮点数，根据前面描述的位布局进行调整。 这种情况的例外情况包括：
 
--   精度：16 位浮点数上的未融合运算产生的结果是最接近无限精确结果（根据 IEEE-754 执行最近舍入，应用于 16 位值）的可表示值。 32 位浮点规则遵守 1 个 ULP 容差，在16 位浮点规则中，未融合运算遵守 0.5 ULP，融合运算遵守 0.6 ULP。
+-   精度：对 16 位浮点数字的 unfused 的操作生成的结果是最近的可表示值为无限精确结果 （舍入接近甚至每 IEEE-754，应用于 16 位值）。 32 位浮点规则遵守 1 个 ULP 容差，在16 位浮点规则中，未融合运算遵守 0.5 ULP，融合运算遵守 0.6 ULP。
 -   16 位浮点数保留 denorm。
 
-## <a name="span-idalpha11bitspanspan-idalpha11bitspan11-bit-and-10-bit-floating-point-rules"></a><span id="alpha_11_bit"></span><span id="ALPHA_11_BIT"></span>11 位和 10 位浮点规则
+## <a name="span-idalpha11bitspanspan-idalpha11bitspan11-bit-and-10-bit-floating-point-rules"></a><span id="alpha_11_bit"></span><span id="ALPHA_11_BIT"></span>11 位和 10 位的浮点规则
 
 
 Direct3D 还支持 11 位和 10 位浮点格式。
@@ -133,20 +133,20 @@ float11/float10 值 (v) 遵循以下规则：
 
 -   如果 e == 31 且 f != 0，那么 v 是 NaN
 -   如果 e == 31 且 f == 0，那么 v = 正无穷
--   如果 e 在 0 和 31 之间，那么 v = 2(e-15)\*(1.f)
--   如果 e == 0 且 f != 0，那么 v = \*2(e-14)\*(0.f)（非标准化数字）
+-   如果 e 具有之间为 0，31，然后 v = 2(e-15)\*(1.f)
+-   如果 e = = 0 和 f ！ = 0，则 v = \*2(e-14)\*(0.f) （非标准化数）
 -   如果 e == 0 且 f == 0，那么 v = 0（零）
 
 32 位浮点规则也适用于 11 位和 10 位浮点数，根据前面描述的位布局进行调整。 例外情况包括：
 
--   精度：32 位浮点规则遵守 0.5 ULP。
+-   精度：32 位浮点规则遵循 0.5 ulp 范围。
 -   10/11 位浮点数保留 denorm。
 -   所得结果小于零的任何运算都固定为零。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[附录](appendix.md)
+[Appendices](appendix.md)
 
 [资源](https://msdn.microsoft.com/library/windows/desktop/ff476894)
 

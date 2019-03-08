@@ -1,6 +1,6 @@
 ---
-Description: This topic describes the use of contact geometry for touch targeting and provides best practices for targeting in Windows Runtime apps.
-title: 目标
+Description: 本主题介绍使用接触几何图形来确定触摸目标并提供在 Windows 运行时应用中确定目标的最佳实践。
+title: 定位
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e8425232512650d5c80bf6fee9745b261aee8d9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929001"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646052"
 ---
 # <a name="guidelines-for-targeting"></a>目标指南
 
 
-在 Windows 中确定触摸目标需使用触控数字化器检测到的每个手指的全部接触区域。 确定用户的预期（或最可能）目标时，数字化器报告的输入数据集越大、越复杂，精度越高。
+Windows 中的触摸定位使用触摸数字化器检测到的每个手指的全部接触区域。 确定用户的预期（或最可能）目标时，数字化器报告的输入数据集越大、越复杂，精度越高。
 
-> **重要 API**：[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)、[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)、[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **重要的 Api**:[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)， [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 本主题介绍使用接触几何图形来确定触摸目标并提供在 UWP 应用中确定目标的最佳实践。
 
@@ -104,8 +104,8 @@ ms.locfileid: "8929001"
 
 可以根据你的特定方案的需要调整这些目标大小的建议。 这些建议中需要考虑的一些注意事项包括：
 
--   触摸频率：考虑使重复或经常按的目标大于最小大小。
--   错误后果：由于触摸错误而产生严重后果的目标应该具有较大的填充，并且应该放置在距离内容区域边缘较远的位置。 尤其是经常触摸的目标更是如此。
+-   收尾工作了频率：请考虑进行重复或经常按下大于最小大小的目标。
+-   错误结果：如果错误涉及具有导致严重后果的目标应具有更高的填充和放置最荒谬不过的内容区域的边缘。 尤其是经常触摸的目标更是如此。
 -   放置在内容区域中
 -   组成要素和屏幕大小
 -   手指姿势
@@ -131,7 +131,7 @@ Windows 提供目标协助以支持此处提供的最小大小或填充建议不
 
 此功能不会向使用 JavaScript 的 UWP 应用开发人员显示。
 
-## <a name="scrubbing"></a>清理
+## <a name="scrubbing"></a>推移
 
 
 推移表示触摸目标领域内的任意位置并滑动以选择所需目标，在到达所需目标上之前不抬起手指。 该手势也称为“离开激活”，即当手指抬离屏幕时激活最后一个触摸的对象。
@@ -150,20 +150,20 @@ Windows 提供目标协助以支持此处提供的最小大小或填充建议不
 
 
 **示例**
-* [基本输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **存档示例**
-* [输入：XAML 用户输入事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [输入：XAML 用户输入的事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
 * [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：触摸点击测试示例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 滚动、平移以及缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [输入：触控命中测试示例](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
 * [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
 * [输入：Windows 8 手势示例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [输入：操作和手势 (C++) 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 触控输入示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [输入：操作和手势 （c + +） 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX 触摸输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

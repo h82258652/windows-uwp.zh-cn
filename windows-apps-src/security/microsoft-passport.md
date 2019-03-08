@@ -4,18 +4,18 @@ description: 本文介绍了作为 Windows 10 操作系统的一部分随附的�
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全
+keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: aacce5710f8ed0066e5efdfb5e0344473f718f9b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049444"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651542"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
-本文介绍的新 Windows Hello 技术，作为 Windows 10 操作系统的一部分进行提供，并讨论了开发人员可如何实现此技术来保护他们的通用 Windows 平台 (UWP) 应用和后端服务。 它重点介绍了这些技术的特定功能，这些功能有助于缓解由使用传统凭据引发的威胁，并提供有关设计和部署这些技术作为 Windows 10 部署的一部分的指南。
+本文介绍的新 Windows Hello 技术作为 Windows 10 操作系统的一部分提供，并讨论了如何开发人员可以实现这一技术来保护其通用 Windows 平台 (UWP) 应用和后端服务。 它重点介绍了这些技术的特定功能，这些功能有助于缓解由使用传统凭据引发的威胁，并提供有关设计和部署这些技术作为 Windows 10 部署的一部分的指南。
 
 请注意，本文侧重于应用开发。 有关 Windows Hello 的体系结构和实现细节的信息，请参阅 [TechNet 上的 Windows Hello 指南](https://technet.microsoft.com/library/mt589441.aspx)。
 
@@ -43,14 +43,14 @@ ms.locfileid: "9049444"
 
 ### <a name="12-solving-credential-problems"></a>1.2 解决凭据问题
 
-解决密码带来的问题很棘手。 仅收紧密码策略不会起效：用户可能只会循环使用、共享或者写下密码。 尽管用户教育对于身份验证安全至关重要，但仅凭教育也无法消除该问题。
+解决密码带来的问题很棘手。 仅收紧密码策略不会起效：用户可能只会循环使用、共享或者写下密码。 尽管用户教育对于身份验证安全很关键，但仅凭教育也无法消除该问题。
 
 Windows Hello 使用强有力的双因素身份验证 (2FA) 来替换密码，方法是验证现有凭据并创建一个受用户手势（基于生物识别或 PIN）保护的特定于设备的凭据。 
 
 
 ## <a name="2-what-is-windows-hello"></a>2 什么是 Windows Hello？
 
-Windows Hello 是 Microsoft 为内置于 Windows10 的新生物识别登录系统所取的名称。 因为它直接内置于操作系统，所以 Windows Hello 允许面部或指纹标识解锁用户的设备。 当用户提供其唯一生物识别标识符来访问特定于设备的凭据时会发生身份验证，这意味着窃取设备的攻击者无法登录它，除非该攻击者具有 PIN。 Windows 安全凭据存储可保护设备上的生物识别数据。 通过使用 Windows Hello 解锁设备，未经授权的用户可以获取其所有 Windows 体验、应用、数据、网站和服务的访问权限。
+Windows Hello 是 Microsoft 为内置于 Windows 10 的新生物识别登录系统所取的名称。 因为它直接内置于操作系统，所以 Windows Hello 允许面部或指纹标识解锁用户的设备。 当用户提供其唯一生物识别标识符来访问特定于设备的凭据时会发生身份验证，这意味着窃取设备的攻击者无法登录它，除非该攻击者具有 PIN。 Windows 安全凭据存储可保护设备上的生物识别数据。 通过使用 Windows Hello 解锁设备，未经授权的用户可以获取其所有 Windows 体验、应用、数据、网站和服务的访问权限。
 
 Windows Hello 验证器称为 Hello。 Hello 特定于单个设备和特定用户的组合。 它不会跨设备漫游、不与服务器或调用应用共享，并且无法轻易地从设备中提取。 如果多个用户共享一台设备，每个用户都需要设置他或她自己的帐户。 每个帐户都获取该设备的唯一 Hello。 你可以将 Hello 视为可用于解锁（或释放）已存储凭据的令牌。 Hello 本身不会针对应用或服务对你进行身份验证，但它会释放可以执行此操作的凭据。 换言之，Hello 不是用户凭据，而是身份验证流程的第二个因素。
 
@@ -68,9 +68,9 @@ Windows Hello 为设备识别个人用户提供了可靠的方法；这解决了
 
 #### <a name="221-how-keys-are-protected"></a>2.2.1 如何保护密钥
 
-每当生成密钥材料时，必须保护它免受攻击。 执行此操作的最可靠方法是通过专用硬件。 使用硬件安全模块 (HSM) 为安全关键应用程序生成、存储和处理密钥有很长的历史。 智能卡是一种特殊类型的 HSM，符合受信任的计算组 TPM 标准的设备也是如此。 在任何可能的情况下，Windows Hello 实现充分利用板载 TPM 硬件来生成、存储和处理密钥。 但是，Windows Hello 和 Windows Hello for Work 不需要板载 TPM。
+每当生成密钥材料时，必须保护它免受攻击。 执行此操作的最可靠方法是通过专门的硬件。 使用硬件安全模块 (HSM) 为安全关键应用程序生成、存储和处理密钥有很长的历史。 智能卡是一种特殊类型的 HSM，符合受信任的计算组 TPM 标准的设备也是如此。 在任何可能的情况下，Windows Hello 实现充分利用板载 TPM 硬件来生成、存储和处理密钥。 但是，Windows Hello 和 Windows Hello for Work 不需要板载 TPM。
 
-在任何可行的情况下，Microsoft 建议使用 TPM 硬件。 TPM 可抵御各种已知和潜在的攻击，包括 PIN 暴力攻击。 TPM 在帐户锁定后也会提供一层额外的保护。 当 TPM 已锁定密钥材料时，用户必须重置 PIN。 重置 PIN 意味着使用旧密钥材料加密的所有密钥和证书都将删除。
+在任何可行的情况下，Microsoft 建议使用 TPM 硬件。 TPM 可抵御各种已知和潜在的攻击，包括 PIN 强力攻击。 TPM 在帐户锁定后也会提供一层额外的保护。 当 TPM 已锁定密钥材料时，用户必须重置 PIN。 重置 PIN 意味着使用旧密钥材料加密的所有密钥和证书都将删除。
 
 #### <a name="222-authentication"></a>2.2.2 身份验证
 
@@ -124,7 +124,7 @@ var keyCreationResult = await KeyCredentialManager.RequestCreateAsync(
     AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
-[**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) 是创建公钥和私钥的部分。 如果设备具有正确的 TPM 芯片，API 将请求 TPM 芯片创建私钥和公钥并存储结果；如果不存在可用的 TPM 芯片，操作系统将在代码中创建密钥对。 应用无法直接访问所创建的私钥。 部分创建的密钥对也是生成的证明信息。 （有关证明的详细信息，请参阅下一部分。）
+[  **RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) 是创建公钥和私钥的部分。 如果设备具有正确的 TPM 芯片，API 将请求 TPM 芯片创建私钥和公钥并存储结果；如果不存在可用的 TPM 芯片，操作系统将在代码中创建密钥对。 应用无法直接访问所创建的私钥。 部分创建的密钥对也是生成的证明信息。 （有关证明的详细信息，请参阅下一部分。）
 
 在设备上创建密钥对和证明信息后，需要将公钥、可选证明信息和唯一标识符（如电子邮件地址）发送到后端注册服务并存储在后端中。
 
@@ -208,7 +208,7 @@ static async void RegisterUser(string AccountId)
 - AIK 证书具有有效期。
 - 链中所有颁发的 CA 证书都具有有效期，并且不会撤销。
 - 证明语句格式正确。
-- [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 上的签名使用 AIK 公钥。
+- [  **KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 上的签名使用 AIK 公钥。
 - 包含在 [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 中的公钥与和证明语句一起发送的公共 RSA 密钥匹配。
 
 你的应用可能为用户分配不同的授权级别，具体取决于这些条件。 例如，如果其中一项检查失败，它可能不会注册用户或可能限制用户可以执行的操作。
@@ -275,9 +275,9 @@ if (openKeyResult.Status == KeyCredentialStatus.Success)
 
 ![Windows Hello 质询响应](images/passport-challenge-response.png)
 
-接下来，服务器必须验证签名。 当你请求公钥并将其发送到服务器以供将来验证时，它是 ASN.1 编码的 publicKeyInfo blob。 如果你看一下[GitHub 上的 Windows Hello 代码示例](https://go.microsoft.com/fwlink/?LinkID=717812)，你将看到有用于封装 Crypt32 函数以将 ASN.1 编码的 blob 转换到 CNG blob，这会更加常用的帮助程序类。 该 blob 包含公钥算法（即 RSA ）和 RSA 公钥。
+接下来，服务器必须验证签名。 当您请求的公钥并将其发送到服务器以用于将来的验证时，它是 (ASN.1） 编码 publicKeyInfo blob 中。 如果您看一下[Windows Hello 的代码示例在 GitHub 上](https://go.microsoft.com/fwlink/?LinkID=717812)，您将看到有帮助程序类来包装 Crypt32 函数转换到 CNG blob，更常用于 (ASN.1） 编码的 blob。 该 blob 包含公钥算法（即 RSA ）和 RSA 公钥。
 
-在此示例中，我们将 ASN.1 编码的 blob 转换到 CNG blob 的原因是，以便它可以使用与 CNG （/windows/桌面/SecCNG/cng-门户） 和 BCrypt API。 如果你查找 CNG blob，它将指向你相关[BCRYPT_KEY_BLOB 结构](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob)。 此 API 图面可以用于身份验证和 Windows 应用程序中的加密。 ASN.1 是记录用于通信数据结构可序列化，标准，并且它通常用于在公钥加密和证书。 这就是为什么公钥信息返回这种方式。 公钥是 RSA 密钥;并且这是 Windows Hello 时使用它对数据进行签名的算法。
+在示例中，我们将 (ASN.1） 编码 blob 转换为 CNG blob 的原因是，以便它可以使用 cng （/windows/desktop/SecCNG/cng-门户） 和 BCrypt API。 如果查找 CNG blob 时，它将指向您的相关[BCRYPT_KEY_BLOB 结构](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob)。 可以进行身份验证和加密在 Windows 应用程序中的使用此 API 图面。 ASN.1 是有案可稽的标准用于通信的可序列化数据结构，并且它通常用于在公钥加密和证书。 这就是为什么这种方式返回公钥信息。 公钥是 RSA 密钥;而这是 Windows Hello 时使用数据进行签名的算法。
 
 具有 CNG blob 后，你需要针对用户的公钥验证已签名的质询。 由于每个人都使用他或她自己的系统或后端技术，因此没有实现此逻辑的通用方法。 我们正在使用 SHA256 作为哈希算法并针对 SignaturePadding 使用 Pkcs1，因此请确保你在从客户端验证已签名的响应时使用它们。 同样，指向该示例作为在服务器上使用 .NET 4.6 执行此操作的方法，但它大致上如下所示：
 
@@ -408,8 +408,8 @@ Windows 10 引入了更高级别且易于实施的安全性。 Windows Hello 提
 ### <a name="61-articles-and-sample-code"></a>6.1 文章和示例代码
 
 - [Windows Hello 概述](https://windows.microsoft.com/windows-10/getstarted-what-is-hello)
-- [Windows Hello 的实现细节](https://msdn.microsoft.com/library/mt589441)
-- [GitHub 上的 Windows Hello 代码示例](https://go.microsoft.com/fwlink/?LinkID=717812)
+- [Windows hello 企业实现详细信息](https://msdn.microsoft.com/library/mt589441)
+- [Windows Hello 的代码示例在 GitHub 上](https://go.microsoft.com/fwlink/?LinkID=717812)
 
 ### <a name="62-terminology"></a>6.2 术语
 

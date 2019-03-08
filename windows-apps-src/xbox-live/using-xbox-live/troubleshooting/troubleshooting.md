@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 疑难解答
 ms.localizationpriority: medium
 ms.openlocfilehash: ba8006b235da2ae4beded9a2b559419b126fca44
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944636"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651312"
 ---
 # <a name="troubleshooting-xbox-live"></a>Xbox Live 疑难解答
 
@@ -19,10 +19,10 @@ ms.locfileid: "8944636"
 
 ## <a name="in-this-section"></a>本部分内容
 
-[Xbox Live API 疑难解答](troubleshooting-the-xbox-live-services-api.md)
+[故障排除的 Xbox Live Api](troubleshooting-the-xbox-live-services-api.md)
 
-[Windows 电脑上的 Xbox Live 设置疑难解答](troubleshooting-pc-setup.md)
+[Xbox Live Windows PC 上的安装程序疑难解答](troubleshooting-pc-setup.md)
 
-[Xbox Live 登录疑难解答](troubleshooting-sign-in.md)
+[Xbox Live 的单一登录故障排除](troubleshooting-sign-in.md)
 
-[使用 Fiddler 的 Xbox Live 疑难解答](how-to-set-up-fiddler-for-debugging.md)
+[使用 Fiddler 的故障排除 Xbox Live](how-to-set-up-fiddler-for-debugging.md)

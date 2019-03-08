@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 558d7e655a54b22f1fc74591a718a7180d90366f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934436"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57663642"
 ---
 # <a name="ambient-lighting"></a>环境光
 
@@ -23,34 +23,34 @@ ms.locfileid: "8934436"
 
 通过以下公式介绍场景的环境光。
 
-环境光 = Cₐ\*\[Gₐ + sum(Atten<sub>i</sub>\*Spot<sub>i</sub>\*L<sub>ai</sub>)\]
+环境照明 = Cₐ\*\[Gₐ + sum (输入<sub>我</sub>\*位置<sub>我</sub>\*L<sub>ai</sub>)\]
 
 其中：
 
-| 参数         | 默认值 | 类型          | 描述                                                                                                       |
+| 参数         | 默认值 | 在任务栏的搜索框中键入          | 描述                                                                                                       |
 |-------------------|---------------|---------------|-------------------------------------------------------------------------------------------------------------------|
 | Cₐ                | (0,0,0,0)     | D3DCOLORVALUE | 材料环境颜色                                                                                            |
 | Gₐ                | (0,0,0,0)     | D3DCOLORVALUE | 全局环境颜色                                                                                              |
 | Atten<sub>i</sub> | (0,0,0,0)     | D3DCOLORVALUE | 第 i 道光的光线衰减。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。 |
 | Spot<sub>i</sub>  | (0,0,0,0)     | D3DVECTOR     | 第 i 道光的聚焦因素。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。  |
-| sum               | 不适用           | 不适用           | 环境光的总和                                                                                          |
+| 总和               | 不适用           | 不适用           | 环境光的总和                                                                                          |
 | L<sub>ai</sub>    | (0,0,0,0)     | D3DVECTOR     | 第 i 道光的光环境颜色                                                                              |
 
  
 
 Cₐ 的值为：
 
--   vertex color1，如果 AMBIENTMATERIALSOURCE = D3DMCS\_COLOR1，并在顶点声明中提供第一个顶点颜色。
--   vertex color2，如果 AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2，并在顶点声明中提供第二个顶点颜色。
+-   顶点 color1 如果 AMBIENTMATERIALSOURCE = D3DMCS\_顶点声明中提供 COLOR1 和的第一个顶点的颜色。
+-   顶点 color2 如果 AMBIENTMATERIALSOURCE = D3DMCS\_顶点声明中提供 COLOR2 和的第二个顶点的颜色。
 -   材料环境颜色。
 
-**注意**如果使用任一 AMBIENTMATERIALSOURCE 选项，并且未提供顶点颜色，则使用材料环境颜色。
+**请注意**  如果使用任一 AMBIENTMATERIALSOURCE 选项，并且未提供的顶点的颜色，则使用材料环境颜色。
 
  
 
 若要使用材料环境颜色，请使用 SetMaterial，如以下示例代码所示。
 
-Gₐ 是全局环境颜色。 它被设置为使用 SetRenderState(D3DRS\_AMBIENT)。 Direct3D 场景中有一种全局环境颜色。 此参数不与 Direct3D 光对象关联。
+Gₐ 是全局环境颜色。 设置使用 SetRenderState (D3DRS\_AMBIENT)。 Direct3D 场景中有一种全局环境颜色。 此参数不与 Direct3D 光对象关联。
 
 L<sub>ai</sub> 是场景中第 i 道光的环境颜色。 每个 Direct3D 灯都有一组属性，其中一个属性是环境光。 sum(L<sub>ai</sub>) 术语是场景中所有环境光的总和。
 
@@ -83,7 +83,7 @@ Ambient.a = 0.0f;
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[照明的数学运算](mathematics-of-lighting.md)
+[照明的数学](mathematics-of-lighting.md)
 
  
 

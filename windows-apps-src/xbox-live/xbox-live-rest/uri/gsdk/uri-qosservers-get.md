@@ -8,16 +8,16 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 02d24dbf1d189b759784dbbfa7052e2c218ec27e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947518"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632062"
 ---
 # <a name="get-qosservers"></a>GET (/qosservers)
-URI 由客户端使用 Xbox Live 计算获取可用的 QoS 服务器的列表。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+客户端以获取可用的 QoS 服务器的列表用于 Xbox Live 计算调用的 URI。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
-  * [需的请求标头](#ID4EBB)
+  * [所需的请求标头](#ID4EBB)
   * [所需的响应标头](#ID4EUC)
   * [响应正文](#ID4EVD)
  
@@ -31,16 +31,16 @@ gameserverds.xboxlive.com
 <a id="ID4EBB"></a>
 
  
-## <a name="required-request-headers"></a>需的请求标头
+## <a name="required-request-headers"></a>所需的请求标头
  
-当发出请求下, 表中所示的标头是必需的。
+当发出请求，如下表中所示的标头是必需的。
  
 | 标头| 值| 描述| 
 | --- | --- | --- | 
-| 内容类型| 应用程序/json| 提交的数据的类型。| 
-| Host| gameserverds.xboxlive.com|  | 
-| Content-Length|  | 请求对象的长度。| 
-| x xbl 协定版本| 1| API 协定版本。| 
+| 内容类型| 应用程序/json| 正在提交的数据类型。| 
+| 主机| gameserverds.xboxlive.com|  | 
+| 内容长度|  | 请求对象的长度。| 
+| x-xbl-contract-version| 1| API 协定版本。| 
   
 <a id="ID4EUC"></a>
 
@@ -51,15 +51,15 @@ gameserverds.xboxlive.com
  
 | 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | 
-| 内容类型| 应用程序/json| 响应正文中的数据的类型。| 
-| Content-Length|  | 响应正文的长度。| 
+| 内容类型| 应用程序/json| 响应正文中的数据类型。| 
+| 内容长度|  | 响应正文的长度。| 
   
 <a id="ID4EVD"></a>
 
  
 ## <a name="response-body"></a>响应正文
  
-如果在调用成功，该服务将返回一个具有以下成员的 JSON 对象。
+如果调用成功，服务将返回具有以下成员的 JSON 对象。
  
 | 成员| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 

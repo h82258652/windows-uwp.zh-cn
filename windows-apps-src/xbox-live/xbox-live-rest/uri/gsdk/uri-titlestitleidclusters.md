@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 821b346958846b56a55c0ec5920d71f4b3cc13c4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931878"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659852"
 ---
 # <a name="titlestitleidclusters"></a>/titles/{titleId}/clusters
-允许客户端创建游戏的 Xbox Live 计算服务器实例的 URI。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+允许客户端创建标题的 Xbox Live 计算服务器实例的 URI。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [URI 参数](#ID4EU)
   * [主机名](#ID4EIB)
@@ -28,7 +28,7 @@ ms.locfileid: "8931878"
  
 | 参数| 描述| 
 | --- | --- | 
-| titleId| 游戏应在其中操作该请求 ID。| 
+| titleId| 请求应作用于的标题的 ID。| 
   
 <a id="ID4EIB"></a>
 

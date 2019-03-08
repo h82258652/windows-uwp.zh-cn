@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ad2d35431cb4c40690978f4f3920f2e47f2b9bc0
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115409"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606562"
 ---
 # <a name="gameclipthumbnail-json"></a>GameClipThumbnail (JSON)
-包含与单个缩略图相关的信息。 可以有多个大小每个剪辑，并将由客户端选择正确显示。 
+包含与单个缩略图相关的信息。 可以有多种大小，每个剪辑，并且由客户端选择了正确的租户进行显示。 
 <a id="ID4EN"></a>
 
  
@@ -23,16 +23,16 @@ ms.locfileid: "9115409"
  
 GameClipThumbnail 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
 | <b>uri</b>| 字符串| 缩略图图像的 URI。| 
-| <b>文件大小</b>| 32 位无符号的整数| 缩略图图像的总文件大小。| 
-| <b>thumbnailType</b>| ThumbnailType| 缩略图图像的类型。| 
+| <b>fileSize</b>| 32 位无符号的整数| 总文件大小的缩略图。| 
+| <b>thumbnailType</b>| ThumbnailType| 缩略图的类型。| 
   
 <a id="ID4EAC"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -56,6 +56,6 @@ GameClipThumbnail 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
    

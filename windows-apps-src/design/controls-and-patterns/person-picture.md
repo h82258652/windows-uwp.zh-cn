@@ -12,17 +12,17 @@ dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1897eded4d18a00a3c11cf1926adb1ebec6ae69a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044644"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638932"
 ---
 # <a name="person-picture-control"></a>个人图片控件
 
 如果用户头像可用，个人图片控件将显示用户头像；否则，将显示该用户的姓名缩写或通用字形。 你可以使用该控件来显示 [Contact 对象](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact)（该对象管理用户的联系信息），你也可以手动提供联系信息，例如显示名称和个人资料图片。  
 
-> **重要 API**：[PersonPicture 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact 类](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager 类](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> **重要的 Api**:[PersonPicture 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture)，[联系类](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact)， [ContactManager 类](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
 该图显示两个人图片控件，附带两个显示用户名的[文本块](text-block.md)元素。 
 ![个人图片控件](images/person-picture/person-picture_hero.png)
@@ -36,7 +36,7 @@ ms.locfileid: "9044644"
 * 显示消息的发送者 
 * 显示社交媒体联系人
 
-该图在联系人列表中显示个人图片控件：![个人图片控件](images/person-picture/person-picture-control.png)
+该图中的联系人列表显示人员图片控件：![个人图片控件](images/person-picture/person-picture-control.png)
 
 ## <a name="examples"></a>示例
 
@@ -47,7 +47,7 @@ ms.locfileid: "9044644"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/PersonPicture">打开此应用，了解 PersonPicture 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -190,4 +190,4 @@ namespace SampleApp
 ## <a name="related-articles"></a>相关文章
 
 * [联系人和日历](../../contacts-and-calendar/index.md)
-* [联系人卡片示例](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+* [联系人卡示例](https://go.microsoft.com/fwlink/p/?LinkId=624040)

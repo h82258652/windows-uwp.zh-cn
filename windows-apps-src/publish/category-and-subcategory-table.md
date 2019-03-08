@@ -1,5 +1,5 @@
 ---
-Description: Listing your app in the right category and subcategory helps customers find your app and understand more about it.
+Description: 将你的应用列在正确的类别和子类别中，可帮助客户找到你的应用，并且更好地了解它。
 title: 类别和子类别表
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.date: 10/31/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 类别, 子类别, 流派
 ms.localizationpriority: medium
 ms.openlocfilehash: f8c28db9b0ca4437579e98ae156392c7b7b383ea
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935811"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653642"
 ---
 # <a name="category-and-subcategory-table"></a>类别和子类别表
 
@@ -20,7 +20,7 @@ ms.locfileid: "8935811"
 
 你必须选择最能描述你的应用的类别。 可以选择一个子类别（如果可用）。 如果你不确定要使用哪一类别或子类别，或者无法找到看起来完全相符的类别或子类别，请选择你认为客户在尝试查找与你的应用类似的应用时，最有可能查看的类别或子类别。
 
-如果你选择**游戏**作为类别，你需要选择至少一个子类别 （*流派*名为适用于游戏）。 可以为游戏适当地选择多个流派。 注意：为了向 Xbox 客户发布游戏，你必须启用[Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)或完成[概念批准](../gaming/concept-approval.md)过程）。 
+如果选择**游戏**类别，需要选择至少一个子类别 (称为*流派*游戏)。 可以为游戏适当地选择多个流派。 注意：为了向 Xbox 客户发布游戏，你必须启用[Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)或完成[概念批准](../gaming/concept-approval.md)过程）。 
 
 > [!IMPORTANT] 
 > 如果以**游戏**类别发布应用，则你无法在新提交中选择不同类别；它必须继续以**游戏**类别分布（但你可以在新提交中更改流派选择）。 同样，更新先前以其他类别发布的应用时，你也无法选择**游戏**类别。
@@ -46,7 +46,7 @@ Microsoft Store 将应用整理为以下类别和子类别。
     <td>电子阅读器 <br> 小说 <br> 非小说 <br> 参考</td>
   </tr>
   <tr>
-    <td>商务</td>
+    <td>商用版</td>
     <td>会计 + 财务 <br> 协作 <br> CRM <br> 数据 + 分析 <br> 文件管理 <br> 库存 + 物流 <br> 法务信息 + 人力资源 <br> 项目管理 <br> 远程桌面 <br> 销售 + 营销 <br> 时间 + 费用</td>
   </tr>
   <tr>
@@ -54,7 +54,7 @@ Microsoft Store 将应用整理为以下类别和子类别。
     <td>数据库 <br> 设计工具 <br> 开发工具包 <br> 网络 <br> 参考 + 培训 <br> 服务器 <br> 实用工具 <br> Web 托管</td>
   </tr>
   <tr>
-    <td>教育</td>
+    <td>教育版</td>
     <td>书籍 + 参考 <br> 早期学习 <br> 教学工具 <br> 语言 <br> 学习帮手</td>
   </tr>
   <tr>
@@ -67,7 +67,7 @@ Microsoft Store 将应用整理为以下类别和子类别。
   </tr>
   <tr>
     <td>游戏</td>
-    <td>动作 + 冒险 <br> 纸牌 + 棋类 <br> 赌场 <br> 经典游戏 <br> 教育 <br> 家庭 + 儿童 <br> 格斗 <br> 多玩家在线竞技场 <br> 音乐 <br> 其他 <br> 平台动作游戏 <br> 拼图 + 益智 <br> 赛车 + 飞行 <br> 角色扮演 <br> 射击 <br> 模拟 <br> 运动 <br> 策略 <br> 工具 <br> 文字</td>
+    <td>动作 + 冒险 <br> 纸牌 + 棋类 <br> 赌场 <br> 经典游戏 <br> 教育 <br> 家庭 + 儿童 <br> 格斗 <br> 多玩家在线竞技场 <br> 音乐 <br> 其他 <br> 平台动作游戏 <br> 拼图 + 益智 <br> 赛车 + 飞行 <br> 角色扮演 <br> 射击 <br> 模拟 <br> 体育 <br> 策略 <br> 工具 <br> Word</td>
   </tr>
   <tr>
     <td>政策 + 时政</td>
@@ -103,7 +103,7 @@ Microsoft Store 将应用整理为以下类别和子类别。
   </tr>
   <tr>
     <td>新闻 + 天气</td>
-    <td>新闻 <br> 天气</td>
+    <td>资讯 <br> 天气</td>
   </tr>
   <tr>
     <td>个人理财</td>
@@ -122,7 +122,7 @@ Microsoft Store 将应用整理为以下类别和子类别。
     <td>（无）</td>
   </tr>
   <tr>
-    <td>安全</td>
+    <td>安全性</td>
     <td>电脑保护 <br> 个人安全</td>
   </tr>
   <tr>

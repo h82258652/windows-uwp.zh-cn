@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c5e1c294da2b4ef24ff8f62b686890cb8c69c06
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942939"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646282"
 ---
 # <a name="input-assembler-ia-stage"></a>输入装配器 (IA) 阶段
 
 
 输入装配器 (IA) 阶段向管道提供基元和邻接数据，例如三角形、线和点，包括语义 ID，以减少对尚未处理基元的处理，从而提高着色器的效率。
 
-## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>用途和用法
+## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>用途，并使用
 
 
 输入装配器 (IA) 阶段的目的是从用户填充缓冲区读取基元数据（点、线和三角形），并将数据装配成将被其他管道阶段使用的基元，并附加[系统生成的值](https://msdn.microsoft.com/library/windows/desktop/bb509647)，以帮助提高着色器的效率。 系统生成的值是又称作语义的文本字符串。 可编程着色器阶段是从使用系统生成值（如基元 ID、实例 ID 或顶点 ID）的常用着色器核心构建的，这使得着色器阶段可以将处理减少到仅限尚未处理的基元、实例或顶点。
@@ -35,12 +35,12 @@ IA 阶段可以将顶点装配成多种不同的[基元类型](primitive-topolog
 
 IA 阶段从内存读取数据：来自用户填充缓冲区的基元数据（点、线和/或三角形）。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 IA 阶段将数据装配成基元并附加系统生成的值，然后将其输出为被[顶点着色器 (VS) 阶段](vertex-shader-stage--vs-.md)及之后的其他管道阶段使用的基元。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>
@@ -56,8 +56,8 @@ IA 阶段将数据装配成基元并附加系统生成的值，然后将其输�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="primitive-topologies.md">基元拓扑</a></p></td>
-<td align="left"><p>Direct3D 支持多种基元拓扑，后者定义管道将如何解释和渲染顶点，如点列表、线列表和三角形带。</p></td>
+<td align="left"><p><a href="primitive-topologies.md">基元的拓扑</a></p></td>
+<td align="left"><p>Direct3D 支持多种基元拓扑，后者定义管道（如点列表、线列表和三角形带）将如何解释和呈现顶点。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="using-system-generated-values.md">使用系统生成的值</a></p></td>

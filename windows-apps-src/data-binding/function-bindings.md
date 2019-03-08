@@ -1,29 +1,29 @@
 ---
-description: XBind 标记扩展允许函数在标记中使用。
+description: XBind 标记扩展允许在标记中使用的函数。
 title: x:Bind 中的函数
 ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10，uwp xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b85777c254c36cc7bf5b156569c7cef267a6c567
-ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9060031"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626212"
 ---
 # <a name="functions-in-xbind"></a>x:Bind 中的函数
 
 > [!NOTE]
-> 有关在应用中使用 **{x: Bind}** 使用数据绑定的常规信息 （和 **{x: Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](data-binding-in-depth.md)。
+> 有关使用在应用中使用数据绑定的常规信息 **{x： 绑定}** (和之间的全部比较 **{x： 绑定}** 并 **{Binding}**)，请参阅[数据在深度绑定](data-binding-in-depth.md)。
 
-从 Windows10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这样做可以实现以下操作：
+从 Windows 10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这样：
 
 - 实现值转换的更简单方法
 - 依赖多个参数适用于绑定的方法
 
 > [!NOTE]
-> 若要使用 **{x:Bind}** 的函数，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows10 时，无法使用这些函数。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 若要使用 **{x:Bind}** 的函数，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，无法使用这些函数。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 在以下示例中，项目的背景和前景会绑定到这些函数，根据颜色参数执行转换。
 
@@ -63,7 +63,7 @@ class ColorEntry
 
 与其他属性路径一样指定该函数的路径，可以包含用于定位该函数的点 (.)、索引器或强制转换。
 
-可以使用 XMLNamespace:ClassName.MethodName 语法指定静态函数。 例如，使用以下语法用于绑定到代码隐藏部分中的静态函数。
+可以使用 XMLNamespace:ClassName.MethodName 语法指定静态函数。 例如，使用以下语法用于绑定到代码隐藏中的静态函数。
 
 ```xaml
 <Page 
@@ -87,7 +87,7 @@ namespace MyNamespace
 }
 ```
 
-你还可以直接在标记中使用系统功能，例如完成诸如日期格式设置、 文本格式、 文本串联、 等的简单方案：
+您可以在标记中直接使用系统函数来完成简单的方案，例如，日期格式设置、 文本格式设置、 文本串联、 等，例如：
 
 ```xaml
 <Page 
@@ -108,7 +108,7 @@ namespace MyNamespace
 - 参数类型需要匹配将传入的数据 - 我们不执行收缩转换
 - 函数的返回类型需要匹配正使用绑定的属性的类型
 
-对属性更改通知触发的函数名称和重新评估绑定在必要时，绑定引擎做出反应。 例如：
+绑定引擎响应属性更改通知触发的函数名称和重新评估在必要时绑定。 例如：
 
 ```xaml
 <DataTemplate x:DataType="local:Person">
@@ -164,7 +164,7 @@ public class Person:INotifyPropertyChanged
 ```
 
 > [!TIP]
-> 可以使用 X:bind 中的函数来实现作为内容已通过转换器和多重绑定在 WPF 所支持的方案相同。
+> 您可以使用中 x： 绑定函数实现为通过转换器和 MultiBinding 在 WPF 中的支持的功能是相同的方案。
 
 ## <a name="function-arguments"></a>函数参数
 
@@ -178,7 +178,7 @@ public class Person:INotifyPropertyChanged
 
 ### <a name="two-way-function-bindings"></a>双向函数绑定
 
-在双向绑定方案中，必须针对绑定的相反方向指定第二个函数。 这是使用**绑**绑定属性。 在以下示例中，该函数应该具有一个参数，其值需要返回给模型。
+在双向绑定方案中，必须针对绑定的相反方向指定第二个函数。 这是使用**绑**属性绑定。 在以下示例中，函数应采用一个参数是需要推送回该模型的值。
 
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />

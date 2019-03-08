@@ -1,5 +1,5 @@
 ---
-Description: You create the UI for your app by using controls such as buttons, text boxes, and combo boxes to display data and get user input. Here, we show you how to add controls to your app.
+Description: 通过使用如按钮、文本框和组合框等控件显示数据并获取用户输入，你可以为你的应用创建 UI。 下面我们将介绍如何向控件添加应用。
 title: 控件和模式简介
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
@@ -9,19 +9,19 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ff3f89887235fc9c8d9d7afbbdea3d79bace810
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923081"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630792"
 ---
 # <a name="intro-to-controls-and-patterns"></a>控件和模式简介
 
-在 UWP 应用开发中，*控件*是一种显示内容或支持交互的 UI 元素。 通过使用按钮、文本框和组合框等控件来显示数据和获取用户输入，你可以为你的应用创建 UI。
+在 UWP 应用开发中，*控件*是一种显示内容或支持交互的 UI 元素。 通过使用如按钮、文本框和组合框等控件显示数据并获取用户输入，你可以为你的应用创建 UI。
 
-> **重要 API**：[Windows.UI.Xaml.Controls 命名空间](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+> **重要的 Api**:[Windows.UI.Xaml.Controls 命名空间](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
 
-*模式* 是修改控件或组合多个控件来创造新内容的一种诀窍。 例如，[大纲/细节](master-details.md)模式是一种方法，你可以使用[SplitView](split-view.md)控件，用于应用导航。 同样，你可以自定义实现选项卡模式[NavigationView](navigationview.md)控件的模板。
+*模式*是修改控件或组合多个控件来创造新内容的一种诀窍。 例如，[母版/详细信息](master-details.md)模式是可以使用一种方法[SplitView](split-view.md)应用导航的控件。 同样，您可以自定义的模板[NavigationView](navigationview.md)控件实现选项卡模式。
 
 在许多情况下，你可以按原样使用控件。 但 XAML 控件将函数与结构和外观分离开来，因此你可以进行各种级别的修改来使它们符合你的需求。 在[样式](../style/index.md)部分中，你可以了解如何使用 [XAML 样式](xaml-styles.md)和[控件模板](control-templates.md)来修改控件。
 
@@ -143,7 +143,7 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 
 ## <a name="related-topics"></a>相关主题
 
--   [按功能的控件索引](controls-by-function.md)
+-   [按功能列出控件索引](controls-by-function.md)
 -   [Windows.UI.Xaml.Controls 命名空间](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
 -   [布局](../layout/index.md)
 -   [样式](../style/index.md)

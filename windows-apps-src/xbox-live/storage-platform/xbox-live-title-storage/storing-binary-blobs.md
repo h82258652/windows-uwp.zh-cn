@@ -7,13 +7,13 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 标题存储
 ms.localizationpriority: medium
 ms.openlocfilehash: 70e620f2e992dfdd240f71b5c73165f13d4ef5cb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918088"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660092"
 ---
-# <a name="storing-a-binary-blob-in-xbox-live-title-storage"></a>在 Xbox Live 标题存储中存储二进制文件 blob
+# <a name="storing-a-binary-blob-in-xbox-live-title-storage"></a>在 Xbox Live 作品存储中存储二进制文件 blob
 
 1.  使用以下方法发送请求，以向标题存储发送数据。
 
@@ -37,6 +37,6 @@ d
   CF00
 ```
 
-#### <a name="reference"></a>引用
+#### <a name="reference"></a>参考
 
 **/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}**

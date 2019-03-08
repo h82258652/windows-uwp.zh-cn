@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use headers to visually group your toast notifications in Action Center.
+Description: 了解如何使用标头来直观地分组操作中心 toast 通知。
 title: Toast 标题
 label: Toast headers
 template: detail.hbs
@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10, uwp, toast, 标题, toast 标题, 通知, toast 分组, 操作中心
 ms.localizationpriority: medium
 ms.openlocfilehash: 361b161b8cf323596a3b07665819300c78f1dcc5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946089"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612102"
 ---
 # <a name="toast-headers"></a>Toast 标题
 
 通过在通知中使用 toast 标题，可在操作中心中直观地将相关通知进行归组。
 
 > [!IMPORTANT]
-> **需要桌面创意者更新和 1.4.0 的通知库**：必须运行桌面内部版本 15063 或更高版本才可查看 toast 标题。 必须使用版本 1.4.0 或更高版本的 [UWP 社区工具包通知 NuGet 库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)来构造 toast 内容中的标题。 仅桌面设备支持标题。
+> **需要桌面创意者更新和通知库 1.4.0**:您必须运行桌面版本 15063 或更高版本，请参阅 toast 标头。 必须使用版本 1.4.0 或更高版本的 [UWP 社区工具包通知 NuGet 库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)来构造 toast 内容中的标题。 仅桌面设备支持标题。
 
 如下所示，这组对话统一在标题“野营！！”下。 对话中的每条单独消息都是一个独立的 toast 通知，它们具有相同的 toast 标题。
 
@@ -96,7 +96,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 标题可直观地分离通知并将其归组。 它不会更改有关应用可以具有的最大通知数 (20) 以及通知列表的先入先出行为的任何其他逻辑。
 
-标题内的通知顺序如下... 对于给定的应用，会首先显示应用（如果是标题的一部分，则为整个标题组）中最新的通知。
+通知标头中的顺序如下所示...对于给定的应用程序，从应用程序 （和整个标头组标头的一部分） 的最新通知将显示第一个。
 
 **Id** 可以是所选择的任何字符串。 **ToastHeader** 中的任何属性都没有长度或字符限制。 唯一的限制是整个 XML toast 内容不能大于 5KB。
 
@@ -107,5 +107,5 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 ## <a name="related-topics"></a>相关主题
 
-- [发送本地 toast 和处理激活](send-local-toast.md)
-- [toast 内容文档](adaptive-interactive-toasts.md)
+- [发送本地 toast 和句柄激活](send-local-toast.md)
+- [Toast 通知内容文档](adaptive-interactive-toasts.md)

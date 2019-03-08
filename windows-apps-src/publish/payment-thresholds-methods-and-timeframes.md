@@ -1,5 +1,5 @@
 ---
-Description: The estimated time to transfer payments, applicable payment thresholds, and Microsoft marketplaces from which you can receive payments can vary depending on your country/region and payout account type.
+Description: 转移支付的预计时间、适用的付款阈值和可以收到付款的 Microsoft 市场可能会有所不同，具体取决于你所在的国家/地区和付款帐户类型。
 title: 付款阈值、方法和时间范围
 ms.date: 10/18/2018
 ms.topic: article
@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f837674ff9af123c7535e3aea00b632b8b35bfc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932810"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610662"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>付款阈值、方法和时间范围
 
@@ -42,9 +42,9 @@ ms.locfileid: "8932810"
 > [!NOTE]
 > 付款阈值将以美元列出。 在某些市场中，使用等值的当地货币。 
 
-- [Microsoft Store](#microsoft-store)
+- [Microsoft 官方商城](#microsoft-store)
 - [Microsoft Advertising](#microsoft-advertising)
-- [Azure 应用商店](#azure-marketplace)
+- [Azure Marketplace](#azure-marketplace)
 - [Office 应用商店](#office-store)
 
 ### <a name="microsoft-store"></a>Microsoft Store 
@@ -58,9 +58,9 @@ ms.locfileid: "8932810"
   <tr>
     <td><strong>国家/地区</strong></td>
     <td><strong>付款阈值</strong></td>
-    <td><strong>付款方式</strong></td>
+    <td><strong>付款方法</strong></td>
     <td><strong>付款阈值</strong></td>
-    <td><strong>付款方式</strong></td>
+    <td><strong>付款方法</strong></td>
   </tr>
   <tr>
     <td>阿富汗</td>
@@ -287,7 +287,7 @@ ms.locfileid: "8932810"
     <td>不适用</td>
   </tr>
   <tr>
-    <td>刚果（金）</td>
+    <td>刚果（民主共和国）</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>不适用</td>
@@ -469,7 +469,7 @@ ms.locfileid: "8932810"
     <td>不适用</td>
   </tr>
   <tr>
-    <td>香港特別行政区</td>
+    <td>香港特别行政区</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
@@ -630,7 +630,7 @@ ms.locfileid: "8932810"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>马其顿（前南斯拉夫共和国）</td>
+    <td>马其顿语(马其顿共和国)</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>不适用</td>
@@ -1120,9 +1120,9 @@ ms.locfileid: "8932810"
   <tr>
     <td><strong>国家/地区</strong></td>
     <td><strong>付款阈值</strong></td>
-    <td><strong>付款方式</strong></td>
+    <td><strong>付款方法</strong></td>
     <td><strong>付款阈值</strong></td>
-    <td><strong>付款方式</strong></td>
+    <td><strong>付款方法</strong></td>
   </tr>
   <tr>
     <td>阿富汗</td>
@@ -1349,7 +1349,7 @@ ms.locfileid: "8932810"
     <td>不适用</td>
   </tr>
   <tr>
-    <td>刚果（金）</td>
+    <td>刚果（民主共和国）</td>
     <td>50 USD</td>
     <td>电汇</td>
     <td>不适用</td>
@@ -1531,7 +1531,7 @@ ms.locfileid: "8932810"
     <td>不适用</td>
   </tr>
   <tr>
-    <td>香港特別行政区</td>
+    <td>香港特别行政区</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
@@ -1692,7 +1692,7 @@ ms.locfileid: "8932810"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>马其顿（前南斯拉夫共和国）</td>
+    <td>马其顿语(马其顿共和国)</td>
     <td>50 USD</td>
     <td>电汇</td>
     <td>不适用</td>
@@ -2182,9 +2182,9 @@ ms.locfileid: "8932810"
   <tr>
     <td><strong>国家/地区</strong></td>
     <td><strong>付款阈值</strong></td>
-    <td><strong>付款方式</strong></td>
+    <td><strong>付款方法</strong></td>
     <td><strong>付款阈值</strong></td>
-    <td><strong>付款方式</strong></td>
+    <td><strong>付款方法</strong></td>
   </tr>
   <tr>
     <td>阿富汗</td>
@@ -2404,7 +2404,7 @@ ms.locfileid: "8932810"
     <td>不适用</td>
   </tr>
   <tr>
-    <td>刚果（金）</td>
+    <td>刚果（民主共和国）</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>不适用</td>
@@ -2586,7 +2586,7 @@ ms.locfileid: "8932810"
     <td>不适用</td>
   </tr>
    <tr>
-    <td>香港特別行政区</td>
+    <td>香港特别行政区</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
@@ -2747,7 +2747,7 @@ ms.locfileid: "8932810"
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>马其顿（前南斯拉夫共和国）</td>
+    <td>马其顿语(马其顿共和国)</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>不适用</td>
@@ -3229,9 +3229,9 @@ ms.locfileid: "8932810"
   <tr>
     <td><strong>国家/地区</strong></td>
     <td><strong>付款阈值</strong></td>
-    <td><strong>付款方式</strong></td>
+    <td><strong>付款方法</strong></td>
     <td><strong>付款阈值</strong></td>
-    <td><strong>付款方式</strong></td>
+    <td><strong>付款方法</strong></td>
   </tr>
   <tr>
     <td>阿尔巴尼亚</td>
@@ -3430,7 +3430,7 @@ ms.locfileid: "8932810"
     <td>不适用</td>
   </tr>
   <tr>
-    <td>刚果（金）</td>
+    <td>刚果（民主共和国）</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>不适用</td>
@@ -3598,7 +3598,7 @@ ms.locfileid: "8932810"
     <td>不适用</td>
   </tr>
   <tr>
-    <td>香港特別行政区</td>
+    <td>香港特别行政区</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
@@ -3752,7 +3752,7 @@ ms.locfileid: "8932810"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>马其顿（前南斯拉夫共和国）</td>
+    <td>马其顿语(马其顿共和国)</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>不适用</td>

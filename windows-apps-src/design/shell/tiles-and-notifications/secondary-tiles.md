@@ -1,5 +1,5 @@
 ---
-Description: Secondary tiles allow users to pin specific content and deep links from your app onto their Start menu, providing easy future access to the content within your app.
+Description: 利用辅助磁贴，用户可将应用中的特定内容和深层链接固定到“开始”菜单上，方便将来访问应用中的内容。
 title: 辅助磁贴
 label: Secondary tiles
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 辅助磁贴
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f95699fd6eb0803824c9bcdea46d275ab4383ac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940616"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653182"
 ---
 # <a name="secondary-tiles"></a>辅助磁贴
 
@@ -31,7 +31,7 @@ ms.locfileid: "8940616"
 
 | 文章 | 描述 |
 | --- | --- |
-| [有关辅助磁贴的指南](secondary-tiles-guidance.md) | 了解应该在何时以及何处使用辅助磁贴。 |
+| [辅助磁贴的指南](secondary-tiles-guidance.md) | 了解应该在何时以及何处使用辅助磁贴。 |
 | [固定辅助磁贴](secondary-tiles-pinning.md) | 了解固定辅助磁贴的方法。 |
 | [从桌面应用程序固定](secondary-tiles-desktop-pinning.md) | 借助于桌面桥，Windows 桌面应用程序可以固定辅助磁贴！ |
 
@@ -68,7 +68,7 @@ ms.locfileid: "8940616"
 * 在添加辅助磁贴之前，浮出控件会提示用户进行确认。
 * 不能请求用户以编程方式为锁屏界面选择辅助磁贴。 在电脑设置，用户必须手动添加辅助磁贴通过个性化页面。
 
-为了发送通知，为与辅助磁贴配合使用的磁贴和锁屏提醒更新程序以及推送通知通道提供了特定方法。 这些特定方法与同主要磁贴配合使用的版本相对应。 例如，CreateBadgeUpdaterForApplication 与 CreateBadgeUpdaterForSecondaryTile 相对应。
+为了发送通知，为与辅助磁贴配合使用的磁贴和锁屏提醒更新程序以及推送通知通道提供了特定方法。 这些特定方法与同主要磁贴配合使用的版本相对应。 例如，CreateBadgeUpdaterForApplication vs。CreateBadgeUpdaterForSecondaryTile。
 
 
 ## <a name="guidance-on-secondary-tiles"></a>有关辅助磁贴的指南

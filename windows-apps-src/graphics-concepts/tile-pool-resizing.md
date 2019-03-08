@@ -1,23 +1,23 @@
 ---
-title: 调整磁贴池的大小
-description: 如果应用程序需要更多工作集以支持针对其的流式资源映射，可以扩大磁贴池，或者在需要更少空间时缩小磁贴池。
+title: 磁贴池调整大小
+description: 如果应用程序需要更多工作集以容纳流式资源映射，可以扩大磁贴池，如果需要更少空间，可以缩小磁贴池。
 ms.assetid: A54A06DC-BDDB-42DC-85E8-C64241100ED5
 keywords:
-- 调整磁贴池的大小
+- 磁贴池调整大小
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e08447c575e99178e503e99eb651cd5e225a898
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921986"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607772"
 ---
-# <a name="tile-pool-resizing"></a>调整磁贴池的大小
+# <a name="tile-pool-resizing"></a>磁贴池调整大小
 
 
-如果应用程序需要更多工作集以支持针对其的流式资源映射，可以扩大磁贴池，或者在需要更少空间时缩小磁贴池。 另外，应用程序还可以分配额外的磁贴池用于新的流式资源。 但是，如果任何单一流式资源需要的空间超出其磁贴池中原本可用的空间，扩大磁贴池则是一个不错的选择。 流式资源无法同时映射到多个磁贴池中。
+如果应用程序需要更多工作集以容纳流式资源映射，可以扩大磁贴池，如果需要更少空间，可以缩小磁贴池。 另外，应用程序还可以分配额外的磁贴池用于新的流式资源。 但是，如果任何单一流式资源需要的空间超出其磁贴池中原本可用的空间，扩大磁贴池则是一个不错的选择。 流式资源无法同时映射到多个磁贴池中。
 
 磁贴池扩大后，显示驱动程序将通过一个或多个新分配空间将额外的磁贴添加到末端。 各个分配空间的细分内容对应用程序不可见。 磁贴池的现有内存保持不变，进入内存的现有流式资源映射保持不变。
 
@@ -30,7 +30,7 @@ ms.locfileid: "8921986"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[映射到磁贴池](mappings-are-into-a-tile-pool.md)
+[到磁贴池中的映射](mappings-are-into-a-tile-pool.md)
 
  
 

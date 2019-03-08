@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c6664d13e76a5774172094d632de9db25109fdc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923374"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613082"
 ---
 # <a name="http-live-streaming-hls-tag-support"></a>HTTP Live Streaming (HLS) 标记支持
 下表列出了 UWP 应用支持的 HLS 标记。
@@ -19,7 +19,7 @@ ms.locfileid: "8923374"
 > [!NOTE] 
 > 以“X-”开头的自定义标记可以作为定时元数据加以访问，如文章[媒体项、播放列表和曲目](media-playback-with-mediasource.md)中所述。
 
-|标记 |已引入 HLS 协议版本中|HLS 协议文档草案版本|客户端要求|7 月发布的 Windows 10|Windows 10 版本 1511|Windows 10 版本 1607 |
+|Tag |已引入 HLS 协议版本中|HLS 协议文档草案版本|客户端要求|7 月发布的 Windows 10|Windows 10 版本 1511|Windows 10 版本 1607 |
 |---------------------|-----------|--------------|---------|--------------|-----|-----|
 |4.3.1.  基本标记                 |             |                   |         |             |     |    |
 | 4.3.1.1.  EXTM3U |1|0|必填|支持|支持|支持|
@@ -29,7 +29,7 @@ ms.locfileid: "8923374"
 | 4.3.2.2.  EXT-X-BYTERANGE |4|7|可选|支持|支持|支持|
 | 4.3.2.3.  EXT-X-DISCONTINUITY |1|2|可选|支持|支持|支持|
 | 4.3.2.4.  EXT-X-KEY |1|0|可选|支持|支持|支持|
-|&nbsp;&nbsp;&nbsp; METHOD|1|0|属性|“NONE、AES-128”|“NONE、AES-128”|“NONE、AES-128、SAMPLE-AES”|
+|&nbsp;&nbsp;&nbsp; 方法|1|0|属性|“NONE、AES-128”|“NONE、AES-128”|“NONE、AES-128、SAMPLE-AES”|
 |&nbsp;&nbsp;&nbsp; URI|1|0|属性|支持|支持|支持|
 |&nbsp;&nbsp;&nbsp; IV|2|3|属性|支持|支持|支持|
 |&nbsp;&nbsp;&nbsp; KEYFORMAT|5|9|属性|不支持|不支持|不支持|
@@ -47,28 +47,28 @@ ms.locfileid: "8923374"
 | 4.3.3.6.  EXT-X-I-FRAMES-ONLY |4|7|可选|不支持|不支持|不支持|
 |4.3.4.  主播放列表标记                 |             |                   |         |             |     |    |
 | 4.3.4.1.  EXT-X-MEDIA |4|7|可选|支持|支持|支持|
-|&nbsp;&nbsp;&nbsp;  TYPE|4|7|属性|“AUDIO、VIDEO”|“AUDIO、VIDEO”|“AUDIO、VIDEO、SUBTITLES”|
+|&nbsp;&nbsp;&nbsp;  类型|4|7|属性|“AUDIO、VIDEO”|“AUDIO、VIDEO”|“AUDIO、VIDEO、SUBTITLES”|
 |&nbsp;&nbsp;&nbsp;  URI|4|7|属性|支持|支持|支持|
 |&nbsp;&nbsp;&nbsp;  GROUP-ID|4|7|属性|支持|支持|支持|
-|&nbsp;&nbsp;&nbsp;  LANGUAGE|4|7|属性|支持|支持|支持|
-|&nbsp;&nbsp;&nbsp;  ASSOC-LANGUAGE|6|13|属性|不支持|不支持|不支持|
+|&nbsp;&nbsp;&nbsp;  语言|4|7|属性|支持|支持|支持|
+|&nbsp;&nbsp;&nbsp;  ASSOC 语言|6|13|属性|不支持|不支持|不支持|
 |&nbsp;&nbsp;&nbsp;  NAME|4|7|属性|不支持|不支持|支持|
 |&nbsp;&nbsp;&nbsp;  DEFAULT|4|7|属性|不支持|不支持|不支持|
 |&nbsp;&nbsp;&nbsp;  AUTOSELECT|4|7|属性|不支持|不支持|不支持|
-|&nbsp;&nbsp;&nbsp;  FORCED|5|9|属性|不支持|不支持|不支持|
+|&nbsp;&nbsp;&nbsp;  强制|5|9|属性|不支持|不支持|不支持|
 |&nbsp;&nbsp;&nbsp;  INSTREAM-ID|6|12|属性|不支持|不支持|不支持|
-|&nbsp;&nbsp;&nbsp;  CHARACTERISTICS|5|9|属性|不支持|不支持|不支持|
+|&nbsp;&nbsp;&nbsp;  特征|5|9|属性|不支持|不支持|不支持|
 | 4.3.4.2.  EXT-X-STREAM-INF  |1|0|必填|支持|支持|支持|
 |&nbsp;&nbsp;&nbsp;  BANDWIDTH|1|0|属性|支持|支持|支持|
 |&nbsp;&nbsp;&nbsp;  PROGRAM-ID|1|0|属性|NA|NA|NA|
 |&nbsp;&nbsp;&nbsp;  AVERAGE-BANDWIDTH|7|14|属性|不支持|不支持|不支持|
-|&nbsp;&nbsp;&nbsp;  CODECS|1|0|属性|支持|支持|支持|
-|&nbsp;&nbsp;&nbsp;  RESOLUTION|2|3|属性|支持|支持|支持|
+|&nbsp;&nbsp;&nbsp;  编解码器|1|0|属性|支持|支持|支持|
+|&nbsp;&nbsp;&nbsp;  解决方法|2|3|属性|支持|支持|支持|
 |&nbsp;&nbsp;&nbsp;  FRAME-RATE|7|15|属性|NA|NA|NA|
 |&nbsp;&nbsp;&nbsp;  AUDIO|4|7|属性|支持|支持|支持|
 |&nbsp;&nbsp;&nbsp;  VIDEO|4|7|属性|支持|支持|支持|
-|&nbsp;&nbsp;&nbsp;  SUBTITLES|5|9|属性|不支持|不支持|支持|
-|&nbsp;&nbsp;&nbsp;  CLOSED-CAPTIONS|6|12|属性|不支持|不支持|不支持|
+|&nbsp;&nbsp;&nbsp;  对白字幕|5|9|属性|不支持|不支持|支持|
+|&nbsp;&nbsp;&nbsp;  关闭字幕|6|12|属性|不支持|不支持|不支持|
 | 4.3.4.3.  EXT-X-I-FRAME-STREAM-INF  |4|7|可选|不支持|不支持|不支持|
 | 4.3.4.4.  EXT-X-SESSION-DATA  |7|14|可选|不支持|不支持|不支持|
 | 4.3.4.5.  EXT-X-SESSION-KEY |7|17|可选|不支持|不支持|不支持|

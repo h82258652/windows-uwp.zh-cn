@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 827bdd417377856dcd70fd42d00febdf908ef339
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919086"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661792"
 ---
 # <a name="usersxuidxuid"></a>/users/xuid({xuid})
-访问其他用户或客户端存在。 这些 Uri 的域是`userpresence.xboxlive.com`。
+存在另一个用户或客户端的访问。 这些 Uri 的域是`userpresence.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -24,9 +24,9 @@ ms.locfileid: "8919086"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 目标用户。| 
+| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的目标用户。| 
   
 <a id="ID4EUB"></a>
 
@@ -35,7 +35,7 @@ ms.locfileid: "8919086"
 
 [GET (/users/xuid({xuid}))](uri-usersxuidget.md)
 
-&nbsp;&nbsp;发现其他用户或客户端存在。
+&nbsp;&nbsp;发现另一个用户或客户端的存在。
  
 <a id="ID4E5B"></a>
 
@@ -47,6 +47,6 @@ ms.locfileid: "8919086"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[状态 URI](atoc-reference-presence.md)
+[存在 Uri](atoc-reference-presence.md)
 
    

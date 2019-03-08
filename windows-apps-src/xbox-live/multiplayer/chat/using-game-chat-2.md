@@ -6,32 +6,32 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天 2, 游戏聊天, 语音通信
 ms.localizationpriority: medium
 ms.openlocfilehash: 43fbd7cec037df735686aa60bc6cd57217875e33
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116125"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639252"
 ---
 # <a name="using-game-chat-2-c"></a>使用游戏聊天 2 (C++)
 
 这是关于使用游戏聊天 2 的 C++ API 的简短演练。 需要通过 C# 访问游戏聊天 2 的游戏开发人员应查看[使用游戏聊天 2 WinRT 投影](using-game-chat-2-winrt.md)。
 
-1. [先决条件](#prerequisites)
+1. [必备条件](#prerequisites)
 2. [初始化](#initialization)
 3. [配置用户](#configuring-users)
 4. [处理数据帧](#processing-data-frames)
 5. [处理状态更改](#processing-state-changes)
-6. [文字聊天](#text-chat)
+6. [文本聊天](#text-chat)
 7. [辅助功能](#accessibility)
 8. [UI](#ui)
 9. [静音](#muting)
-10. [信誉差者自动静音](#bad-reputation-auto-mute)
-11. [特权和隐私](#privilege-and-privacy)
-12. [清除](#cleanup)
+10. [因简洁性自动静音](#bad-reputation-auto-mute)
+11. [权限和隐私](#privilege-and-privacy)
+12. [清理](#cleanup)
 13. [失败模型](#failure-model)
-14. [如何配置热门场景](#how-to-configure-popular-scenarios)
+14. [如何配置热门方案](#how-to-configure-popular-scenarios)
 
-## <a name="prerequisites"></a>必备软件
+## <a name="prerequisites"></a>必备条件
 
 在使用游戏聊天 2 开始编码前，必须先配置应用的 AppXManifest，以便声明“麦克风”设备功能。 平台文档的相应部分更详细地介绍了 AppXManifest 功能；下面的代码段演示了“麦克风”设备功能节点应该位于“包/功能”节点下，否则将阻止聊天：
 
@@ -48,7 +48,7 @@ ms.locfileid: "9116125"
 
 编译游戏聊天 2 需要包括 GameChat2.h 主标头。 为了进行正确地链接，你的项目还必须在至少一个编译单元中包含 GameChat2Impl.h（建议使用通用的预编译标头，因为这些存根功能实现很小，编译器很容易将其生成为“内联”）。
 
-在使用游戏聊天 2 接口时，项目无需在使用 C++/CX 或传统 C++ 进行编译之间作出选择；该接口可与以上两者一起使用。 此外，该实现也不会将引发异常作为报告非致命错误的手段，因此你可以根据需要在无异常项目中轻松使用它。 然而，该实现确实将引发异常作为报告致命错误的手段（请参阅[失败模型](#failure)了解详细信息）。
+在使用游戏聊天 2 接口时，项目无需在使用 C++/CX 或传统 C++ 进行编译之间作出选择；该接口可与以上两者一起使用。 此外，该实现也不会将引发异常作为报告非致命错误的手段，因此，你可以根据需要在无异常项目中轻松使用它。 然而，该实现确实将引发异常作为报告致命错误的手段（请参阅[失败模型](#failure)了解详细信息）。
 
 ## <a name="initialization"></a>初始化
 
@@ -74,13 +74,13 @@ chat_user* chatUserC = chat_manager::singleton_instance().add_remote_user(<user_
 chat_user* chatUserD = chat_manager::singleton_instance().add_remote_user(<user_d_xuid>, 2);
 ```
 
-现在，你可以配置每个远程用户和本地用户之间的通信关系。 在本示例中，假设用户 A 和用户 B 处于同一团队中，并允许进行双向通信。 `c_communicationRelationshipSendAndReceiveAll`  是 GameChat2.h 中定义的常量，用于表示双向通信。 使用以下示例定义用户 A 与用户 B 的关系：
+现在，你可以配置每个远程用户和本地用户之间的通信关系。 在本示例中，假设用户 A 和用户 B 处于同一团队中，并允许进行双向通信。 `c_communicationRelationshipSendAndReceiveAll` GameChat2.h 来表示的双向通信中定义一个常量。 使用以下示例定义用户 A 与用户 B 的关系：
 
 ```cpp
 chatUserA->local()->set_communication_relationship(chatUserB, c_communicationRelationshipSendAndReceiveAll);
 ```
 
-现在假设用户 C 和 D 是“观众”，他们能倾听用户 A，但是无法与之交谈。 `c_communicationRelationshipSendAll`  是 GameChat2.h 中定义的常量，用于表示这种单向通信。 使用以下示例设置这种通信关系：
+现在假设用户 C 和 D 是“观众”，他们能倾听用户 A，但是无法与之交谈。 `c_communicationRelationshipSendAll` GameChat2.h 来表示此单向通信中定义一个常量。 使用以下示例设置这种通信关系：
 
 ```cpp
 chatUserA->local()->set_communication_relationship(chatUserC, c_communicationRelationshipSendAll);
@@ -188,7 +188,7 @@ chat_userA->local()->synthesize_text_to_speech(L"Hello");
 
 当用户启用语音到文本转换时，`chat_user::chat_user_local::speech_to_text_conversion_preference_enabled()` 将返回 true。 当检测到此状态时，应用必须准备提供与转录聊天消息相关联的 UI。 游戏聊天 2 将自动转录每个远程用户的音频，并通过 `game_chat_transcribed_chat_received_state_change` 公开它。
 
-> `Windows::Xbox::UI::Accessibility`  是一种专门用于使用语言到文本转换辅助技术来简单呈现游戏内文字聊天的 Xbox One 类。
+> `Windows::Xbox::UI::Accessibility` Xbox One 类专门用于语音转文本辅助技术讲解如何提供简单呈现方式的游戏中的文本聊天。
 
 ### <a name="speech-to-text-performance-considerations"></a>语音到文本转换性能注意事项
 
@@ -224,7 +224,7 @@ switch (chatUserA->chat_indicator())
 }
 ```
 
-例如，当玩家开始和停止说话时，`xim_player::chat_indicator()` 报告的值预计会频繁更改。 它旨在支持应用在每个 UI 框架将其作为结果进行轮询。
+例如，由 `xim_player::chat_indicator()` 报告的值预计会在玩家开始和停止说话时频繁改变。 它旨在支持应用在每个 UI 框架将其作为结果进行轮询。
 
 ## <a name="muting"></a>静音
 
@@ -242,9 +242,9 @@ switch (chatUserA->chat_indicator())
 
 除了由游戏配置的通信关系之外，游戏聊天 2 还会强制执行特权和隐私限制。 游戏聊天 2 在首次添加用户时执行特权和隐私限制查找；在这些操作完成之前，用户的 `chat_user::chat_indicator()` 将始终返回 `game_chat_user_chat_indicator::silent`。 如果与用户的通信受到了特权或隐私限制的影响，则用户的 `chat_user::chat_indicator()` 将返回 `game_chat_user_chat_indicator::platform_restricted`。 平台通信限制将同时应用于语音和文字聊天；绝不会出现平台限制阻止文字聊天但不阻止语音聊天的情况，反之亦然。
 
-`chat_user::chat_user_local::get_effective_communication_relationship()`  可用于帮助区分用户由于不完备的特权和隐私操作而无法通信的情况。 它将返回由游戏聊天 2 强制执行的通信关系（其形式为 `game_chat_communication_relationship_flags`），以及该通信关系不等于配置关系的原因（其形式为 `game_chat_communication_relationship_adjuster`）。 例如，如果查找操作仍在进行中，则 `game_chat_communication_relationship_adjuster` 将是 `game_chat_communication_relationship_adjuster::intializing`。 此方法有望用于开发和调试场景中；不应用于影响 UI（请参阅 [UI](#UI)）。
+`chat_user::chat_user_local::get_effective_communication_relationship()` 可以使用以帮助区分时用户不完整的权限和隐私操作由于不能进行通信。 它将返回由游戏聊天 2 强制执行的通信关系（其形式为 `game_chat_communication_relationship_flags`），以及该通信关系不等于配置关系的原因（其形式为 `game_chat_communication_relationship_adjuster`）。 例如，如果查找操作仍在进行中，则 `game_chat_communication_relationship_adjuster` 将是 `game_chat_communication_relationship_adjuster::intializing`。 此方法有望用于开发和调试场景中；不应用于影响 UI（请参阅 [UI](#UI)）。
 
-## <a name="cleanup"></a>清除
+## <a name="cleanup"></a>Cleanup
 
 当应用不再需要通过游戏聊天 2 进行通信时，应该调用 `chat_manager::cleanup()`。 这使游戏聊天 2 能够回收已分配的资源，以管理通信。
 

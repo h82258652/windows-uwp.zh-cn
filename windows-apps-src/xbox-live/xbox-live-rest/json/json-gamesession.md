@@ -8,40 +8,40 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ca7276ccdc13d896d19873811b4fa9df9a831cd1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927754"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646512"
 ---
 # <a name="gamesession-json"></a>GameSession (JSON)
-多人游戏会话表示游戏数据的 JSON 对象。 
+多玩家会话表示游戏数据的 JSON 对象。 
 <a id="ID4ER"></a>
 
   
  
 GameSession JSON 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| creationTime| DateTime| 日期和时间会话创建时，采用 UTC。 | 
-| customData| 8 位无符号整数数组| 1024 字节的特定于游戏的会话数据。 此值不透明到服务器。 | 
-| displayName| 字符串| 显示名称的游戏会话，具有 128 个字符的最大长度。 此值不透明到服务器。 | 
-| hasEnded| 布尔值| 如果会话已结束，则为 true 和 false 否则为。 设置为 true 标记为只读，游戏会话提交到会话阻止更多数据此字段。 | 
-| 关闭| 布尔值| 如果会话已关闭，并且没有更多玩家可以否则是已添加，并且 false，则为 true。 如果此值为 true，将拒绝加入会话的请求。 | 
-| maxPlayers| 32 位有符号整数| 可以同时在会话中的玩家的最大数。 值的范围是 2-16。 一旦会话包含的最大玩家数，进一步请求加入会话被拒绝。 | 
-| playersCanBeRemovedBy| PlayerAcl| 一个值，指示允许从会话中删除其他玩家的玩家。 可能的值为 NoOne、 自行，和 AnyPlayer。 | 
-| 名单| 玩家对象的数组| 在会话中的玩家的数组。 名单包含当前玩家和玩家之前在会话中，但留下的反馈。 名单中玩家的顺序永远不会更改。 新玩家将添加到该数组的末尾。 | 
-| seatsAvailable| 32 位有符号整数| 仍可以加入会话的最大玩家数达到之前的玩家数。 此值是只读的并且始终小于 maxPlayers 字段的值。 | 
-| sessionId| 字符串| 在创建会话时分配由 MPSD 会话 ID。 访问存储在会话中的信息时，此值通常包含 URI 中。| 
-| titleId| 32 位无符号的整数| 游戏创建游戏会话的 ID。| 
-| variant| 32 位有符号整数| 游戏的变体。 此值不透明到服务器。| 
-| 可见性| VisibilityLevel| 指示会话可见性的值。 可能的值为： PlayersCurrentlyInSession、 PlayersEverInSession，并且所有人。| 
+| creationTime| DateTime| 日期和会话的创建时间，采用 UTC 时间。 | 
+| customData| 8 位无符号整数数组| 1024 字节的游戏特定的会话数据。 此值是不透明的服务器。 | 
+| displayName| 字符串| 显示名称游戏的会话，最大长度为 128 个字符。 此值是不透明的服务器。 | 
+| hasEnded| 布尔值| 如果会话已结束，则为 true 和 false 否则为。 设置阻止进一步的数据提交到该会话，则返回 true 标记游戏会话为只读的此字段。 | 
+| isClosed| 布尔值| 如果会话已关闭，并且没有更多游戏玩家可以否则是已添加，和 false，则为 true。 如果此值为 true，将拒绝请求要加入会话。 | 
+| maxPlayers| 32 位有符号的整数| 可以在会话中并发的播放机的最大数目。 值的范围是 2-16。 此会话包含玩家的最大数目，一旦进一步拒绝加入会话的请求。 | 
+| playersCanBeRemovedBy| PlayerAcl| 一个值，指示允许从会话中删除其他播放机播放机。 可能的值为 NoOne、 Self 和 AnyPlayer。 | 
+| 名册| player 对象的数组| 在会话中的播放机的数组。 名册包含当前播放机和球员以前在会话中，但已离开。 永远不会更改播放机在名单中的顺序。 新的播放机将添加到数组末尾。 | 
+| seatsAvailable| 32 位有符号的整数| 仍可以加入会话之前，在达到的播放机的最大数目的球员的数。 此值是只读的并且将始终小于 maxPlayers 字段的值。 | 
+| sessionId| 字符串| 创建会话时由 MPSD 分配的会话 ID。 访问存储在会话中的信息时，此值通常包含在 URI 中。| 
+| titleId| 32 位无符号的整数| 标题创建游戏会话的 ID。| 
+| variant| 32 位有符号的整数| 游戏变体。 此值是不透明的服务器。| 
+| visibility| VisibilityLevel| 一个值，指示会话可见性。 可能的值为：PlayersCurrentlyInSession、 PlayersEverInSession，和每个人。| 
   
 <a id="ID4EEF"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -74,7 +74,7 @@ GameSession JSON 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EZF"></a>
@@ -86,6 +86,6 @@ GameSession JSON 对象具有以下规范。
 
  [GameSessionSummary (JSON)](json-gamesessionsummary.md)
 
- [Player (JSON)](json-player.md)
+ [播放机 (JSON)](json-player.md)
 
    

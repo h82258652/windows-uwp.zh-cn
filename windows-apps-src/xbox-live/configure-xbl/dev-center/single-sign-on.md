@@ -1,19 +1,19 @@
 ---
-title: 在合作伙伴中心配置单一登录
-description: 介绍如何配置单一登录合作伙伴中心，以允许游戏用户登录你的服务使用其 Xbox Live id。
+title: 在合作伙伴中心中配置单一登录
+description: 介绍如何配置单一登录在合作伙伴中心，以允许要通过使用其 Xbox Live id。 用户登录到你的服务的标题
 ms.assetid: ''
 ms.date: 02/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心, 单一登录
 ms.openlocfilehash: 32f06edd407d8c1fa74795d0a230c7d56ba8e838
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941787"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632872"
 ---
-# <a name="configure-single-sign-on-in-partner-center"></a>在合作伙伴中心配置单一登录
+# <a name="configure-single-sign-on-in-partner-center"></a>在合作伙伴中心中配置单一登录
 
 单一登录允许使用你游戏的玩家使用他们的 Xbox Live 登录来登录你的服务。 这样，登录 Xbox Live 的玩家就可以运行你的提供服务的应用或游戏，而无需使用特定于你的服务的其他帐户凭据再次登录。
 
@@ -30,13 +30,13 @@ ms.locfileid: "8941787"
 
 通过执行以下操作添加配置：
 
-1. 选择后您的游戏在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，导航到**服务** > **Xbox Live**。
+1. 选择你在中的标题后[合作伙伴中心](https://partner.microsoft.com/dashboard)，导航到**Services** > **Xbox Live**。
 
 2. 点击以下 **Xbox Live 单一登录**链接。
 
 3. 点击**添加 URL** 按钮，创建新的单一登录条目。 此后会在配置列表的底部添加新行。
 
-4. 在 URL 框中，使用完全限定的域名输入服务的 URL。 可使用通配符 ('\ *') 替换最低级别子域。 替换后，会匹配具有相同高等级域的任何 URL。 例如，“* .example.com”将匹配“bar.example.com”或“foo.bar.example.com”。
+4. 在 URL 框中，使用完全限定的域名输入服务的 URL。 可能将最低级别子域的通配符字符替换为 (\*)。 替换后，会匹配具有相同高等级域的任何 URL。 例如，“* .example.com”将匹配“bar.example.com”或“foo.bar.example.com”。
 
 5. 在信赖方框中，选择指定 XSTS 令牌编码方式的信赖方配置。
 

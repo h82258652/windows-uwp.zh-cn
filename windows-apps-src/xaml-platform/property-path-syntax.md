@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f0f49792a92010f97c8388540fd63c38eed5f75e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919293"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632362"
 ---
 # <a name="property-path-syntax"></a>Property-path 语法
 
@@ -50,11 +50,11 @@ ms.locfileid: "8919293"
 
 ### <a name="indexers"></a>索引器
 
-数据绑定的属性路径可以包括对编制了索引的属性的引用。 这样便可绑定到已排序的列表/矢量，或绑定到字典/地图。 使用方括号“\[\]”字符指示编制了索引的属性。 位于这些括号中的内容可以是整数（对于排序列表），也可以是不加引号的字符串（对于字典）。 还可以绑定到键为整数的字典。 可以在同一路径中使用不同的编制了索引的属性，使用点分隔对象-属性。
+数据绑定的属性路径可以包括对编制了索引的属性的引用。 这样便可绑定到已排序的列表/矢量，或绑定到字典/地图。 使用方括号"\[\]"字符，它指示索引的属性。 位于这些括号中的内容可以是整数（对于排序列表），也可以是不加引号的字符串（对于字典）。 还可以绑定到键为整数的字典。 可以在同一路径中使用不同的编制了索引的属性，使用点分隔对象-属性。
 
-例如，考虑一个业务对象，它有一个“Teams”的列表（排序列表），每个队有一本名为“Players”的字典，每个队员使用姓氏作为键。 指向二队的一个特定队员的示例属性路径为：“Teams[1].Players[Smith]”。 （使用 1 来指示“Teams”中的第二个项，因为该列表的索引是从零开始编制的。）
+例如，考虑一个业务对象，它有一个“Teams”的列表（排序列表），每个队有一本名为“Players”的字典，每个队员使用姓氏作为键。 第二个团队的特定播放器示例属性路径为："团队\[1\]。玩家\[Smith\]"。 （使用 1 来指示“Teams”中的第二个项，因为该列表的索引是从零开始编制的。）
 
-**注意**对于 c + + 数据源的索引支持受到限制;请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**请注意**  c + + 数据源的索引编制支持是有限的; 请参阅[深度中的数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 ### <a name="attached-properties"></a>附加属性
 
@@ -84,15 +84,15 @@ ms.locfileid: "8919293"
 
 ## <a name="specifying-a-particular-child-in-a-collection"></a>指定集合中的特定子项
 
-若要指定集合属性中的子项，可以使用数值索引器。 使用方括号“\[\]”字符将整数索引值括起来。 可以只引用排序列表，不引用字典。 因为集合不是可进行动画处理的值，所以使用索引器时绝不能将索引器作为属性路径中的结束属性。
+若要指定集合属性中的子项，可以使用数值索引器。 使用方括号"\[\]"围绕整数的字符索引值。 可以只引用排序列表，不引用字典。 因为集合不是可进行动画处理的值，所以使用索引器时绝不能将索引器作为属性路径中的结束属性。
 
-例如，若要指定你希望对应用到控件的 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 属性的 [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/br210108) 中的第一个彩色停止颜色进行动画处理，属性路径可以是：“(Control.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)”。 注意如何实现不将索引器作为路径中的最后一步，尤其要注意最后一步必须引用集合中项 0 的 [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) 属性来对它应用 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 动画值。
+例如，若要指定要进行动画处理的第一个颜色停止中的颜色[ **LinearGradientBrush** ](https://msdn.microsoft.com/library/windows/apps/br210108)应用于控件的[**背景**](https://msdn.microsoft.com/library/windows/apps/br209395)属性，这是属性路径:"(Control.Background)。(GradientBrush.GradientStops)\[0\]。 (GradientStop.Color)"。 注意如何实现不将索引器作为路径中的最后一步，尤其要注意最后一步必须引用集合中项 0 的 [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) 属性来对它应用 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 动画值。
 
 ## <a name="animating-an-attached-property"></a>对附加属性进行动画处理
 
 虽然并不是常见情形，但可以对附加属性进行动画处理，前提是附加属性具有与动画类型匹配的属性值。 因为附加属性的识别名称中已包括点，所以你必须将任何附加属性名称括在括号内，以便不会将点视为对象-属性的分隔符。 例如，用于指定你希望对某个对象上的 [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/hh759795) 附加属性进行动画处理的字符串使用属性路径“(Grid.Row)”。
 
-**注意**此示例中，对于[**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795)的值是**Int32**属性类型。 因此无法使用 **Double** 动画对其进行动画处理， 而应该定义一个具有 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 组件的 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)，其中 [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) 设置为整数（如“0”或“1”）。
+**请注意**  对于此示例的值[**了一个 Grid.Row** ](https://msdn.microsoft.com/library/windows/apps/hh759795)是**Int32**属性类型。 因此无法使用 **Double** 动画对其进行动画处理， 而应该定义一个具有 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 组件的 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)，其中 [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) 设置为整数（如“0”或“1”）。
 
 ## <a name="rules-for-the-properties-in-an-animation-targeting-property-path"></a>动画目标属性路径中的属性所遵守的规则
 
@@ -103,19 +103,19 @@ ms.locfileid: "8919293"
 
 ## <a name="the-propertypath-class"></a>PropertyPath 类
 
-[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 类是用于绑定方案的 [**Binding.Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的基础属性类型。
+[  **PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 类是用于绑定方案的 [**Binding.Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的基础属性类型。
 
 大多数情况下，你可以在 XAML 中应用 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)，而根本不使用任何代码。 但在某些情况下，你可能希望使用代码定义一个 **PropertyPath** 对象并在运行时将其分配给某个属性。
 
-[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 有一个 [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261) 构造函数，没有默认构造函数。 你传递给此构造函数的字符串是一个使用我们前面介绍的属性路径语法定义的字符串。 这也是你用于将 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 分配为 XAML 属性的同一字符串。 **PropertyPath** 类的另一个（也是唯一一个）API 是 [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) 属性，该属性是只读的。 你可以将此属性用作另一个 **PropertyPath** 实例的构造字符串。
+[**PropertyPath** ](https://msdn.microsoft.com/library/windows/apps/br244259)已[ **PropertyPath(String)** ](https://msdn.microsoft.com/library/windows/apps/br244261)构造函数，并且没有默认构造函数。 你传递给此构造函数的字符串是一个使用我们前面介绍的属性路径语法定义的字符串。 这也是你用于将 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 分配为 XAML 属性的同一字符串。 **PropertyPath** 类的另一个（也是唯一一个）API 是 [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) 属性，该属性是只读的。 你可以将此属性用作另一个 **PropertyPath** 实例的构造字符串。
 
 ## <a name="related-topics"></a>相关主题
 
-* [深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
-* [情节提要动画](https://msdn.microsoft.com/library/windows/apps/mt187354)
+* [深度中的数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [可形成演示图板动画](https://msdn.microsoft.com/library/windows/apps/mt187354)
 * [{Binding} 标记扩展](binding-markup-extension.md)
 * [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
-* [**绑定**](https://msdn.microsoft.com/library/windows/apps/br209820)
+* [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**绑定构造函数**](https://msdn.microsoft.com/library/windows/apps/br209825)
 * [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)
 

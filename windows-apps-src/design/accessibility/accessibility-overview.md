@@ -1,5 +1,5 @@
 ---
-Description: This article is an overview of the concepts and technologies related to accessibility scenarios for Universal Windows Platform (UWP) apps.
+Description: 本文概述了与通用 Windows 平台 (UWP) 应用的辅助功能方案相关的概念和技术。
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: 辅助功能概述
 label: Accessibility overview
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0c3bea228cae8d9482a8e0cb24c958e36992848
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046570"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649732"
 ---
 # <a name="accessibility-overview"></a>辅助功能概述  
 
@@ -103,7 +103,7 @@ ms.locfileid: "9046570"
 
 * 工具必须确定文本是在 Tab 序列遍历过程中读取，还是仅作为整个文档表示形式的一部分进行读取。 你还可以通过选择要用来显示文本的相应元素或者通过调整这些文本元素的属性来帮助控件确定上述内容。 每个文本元素都有一种特定的用途，而且该用途通常具有相应的 UI 自动化角色。 如果使用错误的元素，可能会导致向 UI 自动化报告错误的角色，而且可能会为辅助技术用户创建令人混淆的体验。
 * 除非文本与背景的对比度很大，否则，许多用户都会因视觉上的局限而很难阅读文本。 对于没有该视觉局限的应用设计人员来说，这对用户造成的影响不太直观。 例如，对于色盲用户，如果设计中的颜色选项不好，可能会使某些用户无法阅读文本。 最初为 Web 内容提出的辅助功能建议还定义了可能会避免这些应用问题的对比度标准。 有关详细信息，请参阅[辅助文本要求](accessible-text-requirements.md)。
-* 对于太小的文本，许多用户都有阅读困难。 你可以通过使应用 UI 中的文本在首次出现时合理变大来避免发生此问题。 但是，对于显示大量文本的应用或者对于与其他视觉元素穿插在一起的文本，则具有一定的挑战性。 在这些情况下，请确保应用与能够放大显示器的系统功能正确交互，以便应用中的任何文本都能够随控件一起放大。 （某些用户可采用辅助功能选项方式更改 DPI 值。 该选项可从“轻松使用”**** 的“放大屏幕上显示的内容”**** 中获得，可重定向到“外观和个性化”**** / “屏幕”**** 的“控制面板”**** UI。）
+* 对于太小的文本，许多用户都有阅读困难。 你可以通过使应用 UI 中的文本在首次出现时合理变大来避免发生此问题。 但是，对于显示大量文本的应用或者对于与其他视觉元素穿插在一起的文本，则具有一定的挑战性。 在这些情况下，请确保应用与能够放大显示器的系统功能正确交互，以便应用中的任何文本都能够随控件一起放大。 （某些用户可采用辅助功能选项方式更改 DPI 值。 该选项可从“轻松使用”的“放大屏幕上显示的内容”中获得，可重定向到“外观和个性化” / “屏幕”的“控制面板”UI。）
 
 <span id="Supporting_high-contrast_themes"/>
 <span id="supporting_high-contrast_themes"/>
@@ -171,7 +171,7 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 <span id="VERIFICATION_AND_PUBLISHING"/>
 
 ## <a name="verification-and-publishing"></a>验证和发布  
-有关辅助功能声明和发布应用的详细信息，请参阅 [Microsoft Store 中的辅助功能](accessibility-in-the-store.md)。
+有关辅助功能声明和发布应用的详细信息，请参阅[应用商店中的辅助功能](accessibility-in-the-store.md)。
 
 > [!NOTE]
 > 将应用声明为辅助应用仅与 Microsoft Store 有关。
@@ -181,7 +181,7 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 <span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_CUSTOM_CONTROLS"/>
 
 ## <a name="assistive-technology-support-in-custom-controls"></a>自定义控件中的辅助技术支持  
-创建自定义控件时，建议你同时实现或扩展一个或多个 [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 子类以提供辅助功能支持。 在某些情况下，只要你使用与基本控件类所用相同的对等类，对你的派生类的自动化支持在基本级别上便足够了。 但是，你应该对此进行测试，并且作为最佳做法，仍然建议你实现一个对等，以便对等可以正确地报告你的新控件类的类名称。 实现自定义自动化对等涉及多个步骤。 有关详细信息，请参阅[自定义自动化对等](custom-automation-peers.md)。
+创建自定义控件时，建议你同时实现或扩展一个或多个 [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 子类以提供辅助功能支持。 在某些情况下，只要你使用与基本控件类所用相同的对等类，对你的派生类的自动化支持在基本级别上便足够了。 但是，你应该对此进行测试，并且作为最佳做法，仍然建议你实现一个对等，以便对等可以正确地报告你的新控件类的类名称。 实现自定义自动化对等涉及多个步骤。 有关详细信息，请参阅[自定义的自动化对等](custom-automation-peers.md)。
 
 <span id="Assistive_technology_support_in_apps_that_support_XAML___Microsoft_DirectX_interop"/>
 <span id="assistive_technology_support_in_apps_that_support_xaml___microsoft_directx_interop"/>
@@ -192,7 +192,7 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-topics"></a>相关主题  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
-* [辅助功能设计](https://msdn.microsoft.com/library/windows/apps/Hh700407)
-* [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [可访问性的设计](https://msdn.microsoft.com/library/windows/apps/Hh700407)
+* [XAML 可访问性示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [辅助功能](accessibility.md)
-* [讲述人入门](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)
+* [开始使用讲述人](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

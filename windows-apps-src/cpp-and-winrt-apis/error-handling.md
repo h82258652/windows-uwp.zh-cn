@@ -1,20 +1,20 @@
 ---
 description: 本主题讨论处理使用 C++/WinRT 编程时出现的错误的策略。
-title: 使用 C++/WinRT 的错误处理
+title: C++/WinRT 的错误处理
 ms.date: 05/21/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 错误, 处理, 异常
 ms.localizationpriority: medium
 ms.openlocfilehash: c6f7135e85ab63ddfe92bd0de8c656b58fb1a020
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937505"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626572"
 ---
 # <a name="error-handling-with-cwinrt"></a>C++/WinRT 的错误处理
 
-本主题讨论使用编程时处理错误的策略[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。 更多常规信息和背景，请参阅[错误和异常处理 (Modern C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp)。
+本主题还讨论了与进行编程时的错误处理策略[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。 更多常规信息和背景，请参阅[错误和异常处理 (Modern C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp)。
 
 ## <a name="avoid-catching-and-throwing-exceptions"></a>避免捕获和抛出异常
 我们建议你继续编写[异常安全代码](/cpp/cpp/how-to-design-for-exception-safety)，但最好尽量避免捕获和抛出异常。 如果没有异常处理程序，Windows 将自动生成错误报告（包括故障的小型转储），这将帮助你跟踪问题所在位置。
@@ -63,7 +63,7 @@ IAsyncAction MakeThumbnailsAsync()
 
 请在调用 `co_await` 的函数时在协调程序中使用相同模式。 此 HRESULT 到异常转换的另一个示例是当组件 API 返回 E_OUTOFMEMORY 时，会导致抛出 **std::bad_alloc**。
 
-## <a name="throwing-exceptions"></a>抛出异常
+## <a name="throwing-exceptions"></a>引发异常
 将存在你作此决定的情况，如果你对给定函数的调用失败，你的应用程序将无法恢复（无法再期待它能够如期工作）。 下方代码示例使用 [**winrt::handle**](/uwp/cpp-ref-for-winrt/handle) 值作为从 [**CreateEvent**](https://msdn.microsoft.com/library/windows/desktop/ms682396) 返回的 HANDLE 的包装。 然后将该句柄（从其创建 `bool` 值）传递到 [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) 函数模板。 **winrt::check_bool** 使用 `bool` 或任何可转换为 `false`（错误条件）或 `true`（成功条件）的值。
 
 ```cppwinrt
@@ -75,7 +75,7 @@ winrt::check_bool(::SetEvent(h.get()));
 如果你传递到 [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) 的值为 false，那么以下操作序列将生效。
 
 - **winrt::check_bool** 调用 [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) 函数。
-- **winrt:: throw_last_error**调用[**时出错**](https://msdn.microsoft.com/library/windows/desktop/ms679360)检索调用线程的最后一个错误代码值，然后调用的[**winrt:: throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)函数。
+- **winrt::throw_last_error**调用[ **GetLastError** ](https://msdn.microsoft.com/library/windows/desktop/ms679360)检索调用线程的上一个错误代码值，然后调用[ **winrt::throw_hresult** ](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)函数。
 - **winrt::throw_hresult** 使用表示该错误代码的 [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) 对象（或标准对象）抛出异常。
 
 由于 Windows API 使用各个返回值类型报告运行时错误，因此除 **winrt::check_bool** 外，还有其他一些用于检查值和抛出异常的有用的帮助程序函数。
@@ -83,12 +83,12 @@ winrt::check_bool(::SetEvent(h.get()));
 - [**winrt::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)。 检查 HRESULT 代码是否表示错误，如果是，则调用 **winrt::throw_hresult**。
 - [**winrt::check_nt**](/uwp/cpp-ref-for-winrt/error-handling/check-nt)。 检查代码是否表示错误，如果是，则调用 **winrt::throw_hresult**。
 - [**winrt::check_pointer**](/uwp/cpp-ref-for-winrt/error-handling/check-pointer)。 检查指针是否为 null，如果是，则调用 **winrt::throw_last_error**。
-- [**winrt::check_win32**](/uwp/cpp-ref-for-winrt/error-handling/check-win32)。 检查代码是否表示错误，如果是，则调用 **winrt::throw_hresult**。
+- [**winrt::check_win32**](/uwp/cpp-ref-for-winrt/error-handling/check-win32). 检查代码是否表示错误，如果是，则调用 **winrt::throw_hresult**。
 
 你可以对常见的返回代码类型使用这些帮助程序函数，也可以响应任何错误条件并调用 [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) 或 [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)。 
 
 ## <a name="throwing-exceptions-when-authoring-an-api"></a>在创作 API 时抛出异常
-由于对跨 [Windows 运行时 ABI](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) 边界的异常无效，在实现中出现的错误条件以 HRESULT 错误代码的形式跨 ABI 层返回。 在使用 C++/WinRT 创作 API 时，将生成代码以供你将在实现中*抛出*的任何异常转换为 HRESULT。 [**Winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) 函数以与此类似的模式用于生成的代码。
+由于对跨 [Windows 运行时 ABI](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) 边界的异常无效，在实现中出现的错误条件以 HRESULT 错误代码的形式跨 ABI 层返回。 在使用 C++/WinRT 创作 API 时，将生成代码以供你将在实现中*抛出*的任何异常转换为 HRESULT。 [  **Winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) 函数以与此类似的模式用于生成的代码。
 
 ```cppwinrt
 HRESULT DoWork() noexcept
@@ -105,7 +105,7 @@ HRESULT DoWork() noexcept
 }
 ```
 
-[**winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) 处理派生自 **std::exception** 和 [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) 及其派生类型的异常。 在你的实现中，最好使用 **winrt::hresult_error** 或派生类型，以便你的 API 的使用者可以收到丰富的错误信息。 **std::exception**（映射到 E_FAIL）在你使用标准模板库时引发异常的情况下受支持。
+[**winrt::to_hresult** ](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)处理异常派生自**std:: exception**，并[ **winrt::hresult_error** ](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)及其派生类型。 在你的实现中，最好使用 **winrt::hresult_error** 或派生类型，以便你的 API 的使用者可以收到丰富的错误信息。 **std::exception**（映射到 E_FAIL）在你使用标准模板库时引发异常的情况下受支持。
 
 ## <a name="assertions"></a>断言
 对应用程序中的内部假设，存在断言。 最好尽可能地为编译时间验证使用 **static_assert**。 对于运行时条件，请使用带布尔值表达式的 WINRT_ASSERT。
@@ -129,12 +129,12 @@ WINRT_VERIFY_(TRUE, ::CloseHandle(value));
 * [winrt::check_nt 函数模板](/uwp/cpp-ref-for-winrt/error-handling/check-nt)
 * [winrt::check_pointer 函数模板](/uwp/cpp-ref-for-winrt/error-handling/check-pointer)
 * [winrt::check_win32 函数模板](/uwp/cpp-ref-for-winrt/error-handling/check-win32)
-* [winrt::handle 结构](/uwp/cpp-ref-for-winrt/handle)
-* [winrt::hresult_error 结构](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+* [winrt::handle struct](/uwp/cpp-ref-for-winrt/handle)
+* [winrt::hresult_error struct](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 * [winrt::throw_hresult 函数](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)
 * [winrt::throw_last_error 函数](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error)
-* [winrt::to_hresult 函数](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)
+* [winrt::to_hresult function](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)
 
 ## <a name="related-topics"></a>相关主题
-* [错误和异常处理 (Modern C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp)
-* [操作方法：针对异常安全设计](/cpp/cpp/how-to-design-for-exception-safety)
+* [错误和异常处理 （现代 c + +）](/cpp/cpp/errors-and-exception-handling-modern-cpp)
+* [How to:设计异常安全性](/cpp/cpp/how-to-design-for-exception-safety)

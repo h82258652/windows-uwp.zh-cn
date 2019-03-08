@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 输入, 注册表, 自定义
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d30c19a7fd7641d76e810912d33a96dbbeb3132
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936972"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633602"
 ---
 # <a name="registry-data-for-game-controllers"></a>游戏控制器注册表数据
 
@@ -31,8 +31,8 @@ ms.locfileid: "8936972"
 <table>
     <tr>
         <th>名称</th>
-        <th>类型</th>
-        <th>是否必需？</th>
+        <th>在任务栏的搜索框中键入</th>
+        <th>是否为必需？</th>
         <th>信息</th>
     </tr>
     <tr>
@@ -40,15 +40,15 @@ ms.locfileid: "8936972"
         <td>DWORD</td>
         <td>否</td>
         <td>
-            <p>指示此特定设备应该处于禁用状态。</p>
+            <p>指示应禁用此特定设备。</p>
             <ul>
-                <li><b>0</b>：未禁用设备。</li>
-                <li><b>1</b>：已禁用设备。</li>
+                <li><b>0</b>:未禁用设备。</li>
+                <li><b>1</b>:设备已被禁用。</li>
             </ul>
         </td>
     </tr>
     <tr>
-        <td>Description</td>
+        <td>描述</td>
         <td>REG_SZ <td>否</td>
         <td>设备的简短说明。</td>
     </tr>
@@ -58,23 +58,23 @@ ms.locfileid: "8936972"
 
 以下部分中详细说明了设备根位置下面的子项。
 
-### <a name="gamepad"></a>Gamepad
+### <a name="gamepad"></a>游戏板
 
 下表列出了 **Gamepad** 子项下面的必需子项和可选子项：
 
 <table>
     <tr>
         <th>子项</th>
-        <th>是否必需？</th>
+        <th>是否为必需？</th>
         <th>信息</th>
     </tr>
     <tr>
-        <td>Menu</td>
+        <td>菜单</td>
         <td>是</td>
         <td rowspan="18" style="vertical-align: middle;">请参阅<a href="#button-mapping">按钮映射</a></td>
     </tr>
     <tr>
-        <td>View</td>
+        <td>视图</td>
         <td>是</td>
     </tr>
     <tr>
@@ -178,7 +178,7 @@ ms.locfileid: "8936972"
 <table>
     <tr>
         <th>子项</th>
-        <th>是否必需？</th>
+        <th>是否为必需？</th>
         <th>信息</th>
     </tr>
     <tr>
@@ -337,7 +337,7 @@ ms.locfileid: "8936972"
 <table>
     <tr>
         <th>子项</th>
-        <th>是否必需？</th>
+        <th>是否为必需？</th>
         <th>信息</th>
     </tr>
     <tr>
@@ -398,7 +398,7 @@ ms.locfileid: "8936972"
 <table>
     <tr>
         <th>子项</th>
-        <th>是否必需？</th>
+        <th>是否为必需？</th>
         <th>信息</th>
     </tr>
     <tr>
@@ -416,7 +416,7 @@ ms.locfileid: "8936972"
         <td rowspan="4" style="vertical-align: middle;">请参阅<a href="#axis-mapping">轴映射</a></td>
     </tr>
     <tr>
-        <td>Pitch</td>
+        <td>俯仰</td>
         <td>是</td>
     </tr>
     <tr>
@@ -441,20 +441,20 @@ ms.locfileid: "8936972"
 <table>
     <tr>
         <th>子项</th>
-        <th>是否必需？</th>
+        <th>是否为必需？</th>
         <th>信息</th>
     </tr>
     <tr>
-        <td>Menu</td>
+        <td>菜单</td>
         <td>是</td>
         <td rowspan="24" style="vertical-align: middle;">请参阅<a href="#button-mapping">按钮映射</a></td>
     </tr>
     <tr>
-        <td>View</td>
+        <td>视图</td>
         <td>是</td>
     </tr>
     <tr>
-        <td>Accept</td>
+        <td>接受</td>
         <td>是</td>
     </tr>
     <tr>
@@ -555,14 +555,14 @@ ms.locfileid: "8936972"
 
 <table>
     <tr>
-        <th>源</th>
+        <th>来源</th>
         <th>值名称</th>
         <th>值类型</th>
-        <th>是否必需？</th>
+        <th>是否为必需？</th>
         <th>值信息</th>
     </tr>
     <tr>
-        <td>Button</td>
+        <td>按钮</td>
         <td>ButtonIndex</td>
         <td>DWORD</td>
         <td>是</td>
@@ -576,7 +576,7 @@ ms.locfileid: "8936972"
         <td><b>RawGameController</b> 轴阵列中的索引。</td>
     </tr>
     <tr>
-        <td>Invert</td>
+        <td>反转</td>
         <td>DWORD</td>
         <td>否</td>
         <td>指明在应用 <b>ThresholdPercent</b> 和 <b>DebouncePercent</b> 系数之前应该反转轴值。</td>
@@ -610,13 +610,13 @@ ms.locfileid: "8936972"
         <td>
             <p>指示将导致映射的按钮报告自己正在被按下的开关位置。 位置值可以为以下字符串之一：</p>
             <ul>
-                <li>Up</li> 
+                <li>向上</li> 
                 <li>UpRight</li>
-                <li>Right</li>
+                <li>向右</li>
                 <li>DownRight</li>
-                <li>Down</li>
+                <li>向下</li>
                 <li>DownLeft</li>
-                <li>Left</li>
+                <li>向左</li>
                 <li>UpLeft</li>
             </ul>
         </td>
@@ -635,14 +635,14 @@ ms.locfileid: "8936972"
 
 <table>
     <tr>
-        <th>源</th>
+        <th>来源</th>
         <th>值名称</th>
         <th>值类型</th>
-        <th>是否必需？</th>
+        <th>是否为必需？</th>
         <th>值信息</th>
     </tr>
     <tr>
-        <td rowspan="2" style="vertical-align: middle;">Button</td>
+        <td rowspan="2" style="vertical-align: middle;">按钮</td>
         <td>MaxValueButtonIndex</td>
         <td>DWORD</td>
         <td>是</td>
@@ -707,7 +707,7 @@ ms.locfileid: "8936972"
         <td><b>RawGameController</b> 轴阵列中的索引。</td>
     </tr>
     <tr>
-        <td>Invert</td>
+        <td>反转</td>
         <td>DWORD</td>
         <td>否</td>
         <td>指示在返回映射的轴值之前应该反转该值。</td>
@@ -726,13 +726,13 @@ ms.locfileid: "8936972"
         <td>
             <p>以下字符串之一：</p>
             <ul>
-                <li>Up</li>
+                <li>向上</li>
                 <li>UpRight</li>
-                <li>Right</li>
+                <li>向右</li>
                 <li>DownRight</li>
-                <li>Down</li>
+                <li>向下</li>
                 <li>DownLeft</li>
-                <li>Left</li>
+                <li>向左</li>
                 <li>UpLeft</li>
             </ul>
             <p>它指示导致将映射的轴值报告为 1.0 的开关位置。 <b>MaxValueSwitchPosition</b> 的相反方向被视为 0.0。 例如，如果 <b>MaxValueSwitchPosition</b> 是 <b>Up</b>，则轴值的转换如下所示：</p>
@@ -742,7 +742,7 @@ ms.locfileid: "8936972"
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>Up</td>
+                    <td>向上</td>
                     <td>1.0</td>
                 </tr>
                 <tr>
@@ -750,7 +750,7 @@ ms.locfileid: "8936972"
                     <td>0.5</td>
                 </tr>
                 <tr>
-                    <td>Down</td>
+                    <td>向下</td>
                     <td>0.0</td>
                 </tr>
             </table>
@@ -768,7 +768,7 @@ ms.locfileid: "8936972"
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>Up</td>
+                    <td>向上</td>
                     <td>1.0</td>
                 </tr>
                 <tr>
@@ -784,7 +784,7 @@ ms.locfileid: "8936972"
                     <td>0.5</td>
                 </tr>
                 <tr>
-                    <td>Down</td>
+                    <td>向下</td>
                     <td>0.0</td>
                 </tr>
                 <tr>
@@ -806,13 +806,13 @@ ms.locfileid: "8936972"
 
 <table>
     <tr>
-        <th>源</th>
+        <th>来源</th>
         <th>值名称</th>
         <th>值类型</th>
         <th>值信息</th>
     </tr>
     <tr>
-        <td rowspan="10" style="vertical-align: middle;">Button</td>
+        <td rowspan="10" style="vertical-align: middle;">按钮</td>
         <td>ButtonCount</td>
         <td>DWORD</td>
         <td>2、4 或 8</td>
@@ -820,7 +820,7 @@ ms.locfileid: "8936972"
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>、<b>FourWay</b> 或 <b>EightWay</b>
+        <td><b>TwoWay</b>， <b>FourWay</b>，或<b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -904,7 +904,7 @@ ms.locfileid: "8936972"
         <td><b>RawGameController</b> 开关阵列中的索引。
     </tr>
     <tr>
-        <td>Invert</td>
+        <td>反转</td>
         <td>DWORD</td>
         <td>指示开关以逆时针顺序而不是默认的顺时针顺序来报告其位置。</td>
     </tr>
@@ -926,7 +926,7 @@ ms.locfileid: "8936972"
                     <td>3</td>
                 </tr>
                 <tr>
-                    <td>Right</td>
+                    <td>向右</td>
                     <td>1</td>
                     <td>2</td>
                 </tr>
@@ -936,7 +936,7 @@ ms.locfileid: "8936972"
                     <td>1</td>
                 </tr>
                 <tr>
-                    <td>Up</td>
+                    <td>向上</td>
                     <td>3</td>
                     <td>0</td>
                 </tr>
@@ -946,7 +946,7 @@ ms.locfileid: "8936972"
                     <td>7</td>
                 </tr>
                 <tr>
-                    <td>Left</td>
+                    <td>向左</td>
                     <td>5</td>
                     <td>6</td>
                 </tr>
@@ -956,7 +956,7 @@ ms.locfileid: "8936972"
                     <td>5</td>
                 </tr>
                 <tr>
-                    <td>Down</td>
+                    <td>向下</td>
                     <td>7</td>
                     <td>4</td>
                 </tr>
@@ -966,7 +966,7 @@ ms.locfileid: "8936972"
 
 #### <a name="buttonindex-values"></a>*ButtonIndex 值
 
-\***RawGameController** 的按钮阵列中的 ButtonIndex 值索引：
+\*ButtonIndex 值中的索引**RawGameController**的按钮数组：
 
 <table>
     <tr>
@@ -1047,7 +1047,7 @@ ms.locfileid: "8936972"
 
 ## <a name="labels"></a>标签
 
-标签应存在于设备根位置下的 **Labels** 项下面。 **Labels** 可能有以下 3 个子项：**Buttons**、**Axes** 和 **Switches**。
+标签应存在于设备根位置下的 **Labels** 项下面。 **标签**可以有 3 个子项：**按钮**，**轴**，和**交换机**。
 
 ### <a name="button-labels"></a>按钮标签
 
@@ -1071,15 +1071,15 @@ RightBumper         // Index 9
 <table>
     <tr>
         <th>名称</th>
-        <th>值（类型：REG_SZ）</th>
+        <th>值 (类型：REG_SZ)</th>
     </tr>
     <tr>
         <td>Button0</td>
-        <td>Menu</td>
+        <td>菜单</td>
     </tr>
     <tr>
         <td>Button1</td>
-        <td>View</td>
+        <td>视图</td>
     </tr>
     <tr>
         <td>Button2</td>
@@ -1137,7 +1137,7 @@ RightBumper         // Index 9
 <table>
     <tr>
         <th>名称</th>
-        <th>值（类型：REG_SZ）</th>
+        <th>值 (类型：REG_SZ)</th>
     </tr>
     <tr>
         <td>Switch0Up</td>
@@ -1347,6 +1347,6 @@ Windows Registry Editor Version 5.00
 
 ## <a name="see-also"></a>另请参阅
 
-* [Windows.Gaming.Input 命名空间](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.Custom 命名空间](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [Windows.Gaming.Input Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+* [Windows.Gaming.Input.Custom Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
 * [INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)

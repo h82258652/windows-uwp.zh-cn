@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 911546f1c2973a79aea4b597a47352149a4e4210
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929700"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651112"
 ---
 # <a name="compute-pipeline"></a>计算管道
 
 
-\[在商业发行之前可能会实质性修改与预发布产品相关的一些信息。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
+\[有些信息与预发布产品的商业发布之前可能有大幅度修改。 Microsoft 不做任何明示或暗示的担保，此处提供的信息。\]
 
 
 Direct3D 计算管道旨在处理大部分可与图形管道并行完成的计算。 计算管道仅需几步即可完成，其中数据在可编程计算着色器阶段从输入流向输出。
@@ -24,7 +24,7 @@ Direct3D 计算管道旨在处理大部分可与图形管道并行完成的计�
 | | |
 |-|-|
 |用途|与其他可编程着色器一样，[计算着色器 (CS) 阶段](compute-shader-stage--cs-.md)通过 HLSL 设计并实现。 计算着色器提供常规目的的高速计算并利用图形处理单元 (GPU) 上的大量并行处理器。 计算着色器提供内存共享和线程同步功能，允许采用更有效的并行编程方法。|
-|输入|与其他可编程着色器不同，输入的定义是抽象的。 本质上，输入可以是一维、二维或三维，其决定了计算着色器要执行的调用数量。 它还可以定义一组调用要读取的共享数据。|
+|Input|与其他可编程着色器不同，输入的定义是抽象的。 本质上，输入可以是一维、二维或三维，其决定了计算着色器要执行的调用数量。 它还可以定义一组调用要读取的共享数据。|
 |输出|计算着色器的输出数据可能会高度变化，需要计算的数据时，其可与图形呈现管道一起同步。|
 | | |
 

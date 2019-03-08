@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 暂停, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b588d6bf6e7cbf43651d94a7fd46e9a767c6f09
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945709"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656032"
 ---
 # <a name="how-to-suspend-an-app-directx-and-c"></a>如何暂停应用（DirectX 和 C++）
 
@@ -97,7 +97,7 @@ void App::Run()
 ## <a name="call-trim"></a>调用 Trim()
 
 
-从 Windows8.1 开始，所有 DirectX UWP 应用时必须都调用[**idxgidevice3:: Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346)暂停。 此调用指示图形驱动程序释放为该应用分配的所有临时缓冲区，这样可以减少应用在暂停状态时被终止以回收内存资源的情况。 这是针对 Windows8.1 的认证要求。
+从 Windows 8.1，必须调用所有 DirectX UWP 应用[ **IDXGIDevice3::Trim** ](https://msdn.microsoft.com/library/windows/desktop/dn280346)在挂起状态。 此调用指示图形驱动程序释放为该应用分配的所有临时缓冲区，这样可以减少应用在暂停状态时被终止以回收内存资源的情况。 这是 Windows 8.1 认证要求。
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
@@ -139,14 +139,14 @@ void DX::DeviceResources::Trim()
 
 每当用户切换到桌面或其他应用时，系统都会挂起你的应用。 每当用户切回到你的应用时，系统就会恢复你的应用。 当系统恢复你的应用时，你的变量和数据结构的内容与系统将你的应用暂停之前的内容相同。 系统会将你的应用完全恢复到你离开时的状态，使用户感觉你的应用好像一直在后台运行一样。
 
-当你的应用被暂停后，系统会尝试将你的应用及其数据保留在内存中。 但是，如果系统没有资源将你的应用保存在内存里，则将终止你的应用。 当用户切换回已终止的暂停应用时，系统会发送 [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件，且应该在其处理程序中为 **CoreApplicationView::Activated** 事件还原其应用程序数据。
+当你的应用暂停时，系统会尝试将你的应用及其数据保留在内存中。 但是，如果系统没有资源将你的应用保存在内存里，则将终止你的应用。 当用户切换回已终止的暂停应用时，系统会发送 [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件，且应该在其处理程序中为 **CoreApplicationView::Activated** 事件还原其应用程序数据。
 
 当终止应用时系统不会通知应用，因此当暂停应用时，你的应用必须保存其应用程序数据并释放独占资源和文件句柄，并且在终止后又激活应用时还原这些内容。
 
 ## <a name="related-topics"></a>相关主题
 
-* [如何恢复应用（DirectX 和 C++）](how-to-resume-an-app-directx-and-cpp.md)
-* [如何激活应用（DirectX 和 C++）](how-to-activate-an-app-directx-and-cpp.md)
+* [如何恢复应用程序 （DirectX 和 c + +）](how-to-resume-an-app-directx-and-cpp.md)
+* [如何激活应用 （DirectX 和 c + +）](how-to-activate-an-app-directx-and-cpp.md)
 
  
 

@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 呈现, 场景, 深度测试, direct3d, 阴影
 ms.localizationpriority: medium
 ms.openlocfilehash: 237da82ef51466ae2460c3be27486091bf4066f3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924516"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630452"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>通过深度测试呈现场景
 
 
 
 
-通过向顶点（或几何图形）着色器和像素着色器中添加深度测试来创建阴影效果。 [操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷](implementing-depth-buffers-for-shadow-mapping.md)的第 3 部分。
+通过向顶点（或几何图形）着色器和像素着色器中添加深度测试来创建阴影效果。 第 3 部分[演练：实现在 Direct3D 11 中使用深度缓冲区的卷影卷](implementing-depth-buffers-for-shadow-mapping.md)。
 
 ## <a name="include-transformation-for-light-frustum"></a>包括用于光锥的转换
 
@@ -67,7 +67,7 @@ PixelShaderInput main(VertexShaderInput input)
 ## <a name="test-whether-the-position-is-in-the-light-frustum"></a>测试位置是否位于光锥之内
 
 
-首先，通过将 X 和 Y 坐标规范化来检查像素是否位于视锥之内。 如果它们都在 \[0, 1\] 范围内，那么该像素有可能位于阴影中。 否则，你可以跳过深度测试。 通过调用 [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) 并将结果与原始值进行比较来快速对着色器进行此项测试。
+首先，通过将 X 和 Y 坐标规范化来检查像素是否位于视锥之内。 如果两个类型都在范围内\[0，1\] ，那么很可能要在卷影的像素。 否则，你可以跳过深度测试。 通过调用 [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) 并将结果与原始值进行比较来快速对着色器进行此项测试。
 
 ```cpp
 // Compute texture coordinates for the current point's location on the shadow map.

@@ -1,5 +1,5 @@
 ---
-Description: Extend the basic functionality of Cortana with voice commands that activate a UWP app and execute a single action.
+Description: 通过语音命令扩展 Cortana 的基本功能，这些命令用于激活 UWP 应用并执行一个单独操作。
 title: Cortana 交互
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 49290d0e0ba96a5dce562ca4148b0ebf53bf0ff5
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051120"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648162"
 ---
 # <a name="cortana-interactions-in-uwp-apps"></a>UWP 应用中的 Cortana 交互
 
@@ -31,9 +31,9 @@ ms.locfileid: "9051120"
 
 * [**VCD 元素和属性 v1.2**](https://docs.microsoft.com/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 
-**设计人员**
+**设计器**
 * [语音设计指南](speech-interactions.md)
-* [适用于语音命令的 Cortana 设计指南](https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines)
+* [Cortana 语音命令的设计准则](https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines)
 
 **示例**
 * [Cortana 语音命令示例](https://go.microsoft.com/fwlink/p/?LinkID=619899)

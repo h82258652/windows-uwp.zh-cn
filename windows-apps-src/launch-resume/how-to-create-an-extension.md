@@ -6,11 +6,11 @@ ms.date: 10/05/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a7bb6f719f95766c07c1e5f92b50148cf0f2cce
-ms.sourcegitcommit: b589795bedbff993867ddce16ed1f1a4a4b39e8c
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "9070338"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642362"
 ---
 # <a name="create-and-host-an-app-extension"></a>创建和托管应用扩展
 
@@ -19,7 +19,7 @@ ms.locfileid: "9070338"
 本文伴有代码示例：
 - 下载并解压缩[数学扩展代码示例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip)。
 - 在 Visual Studio 2017 中，打开 MathExtensionSample.sln。 将生成类型设置为 x86（**生成** > **Configuration Manager**，然后针对两个项目将**平台**更改为 **x86**）。
-- 部署解决方案：**生成** > **部署解决方案**。
+- 部署解决方案：**构建** > **部署解决方案**。
 
 ## <a name="introduction-to-app-extensions"></a>应用扩展简介
 
@@ -29,7 +29,7 @@ UWP 应用扩展是 UWP 应用，这些应用具有的扩展声明允许它们�
 
 由于应用扩展只是 UWP 应用，因此它们也可以是功能齐全的应用、托管扩展以及向其他应用提供扩展，所有这一切都无需创建单独的应用包。
 
-当你创建应用扩展主机时，就创造了围绕应用开发生态系统的机会，在此生态系统中，其他开发人员可以通过你可能未曾想到或无资源进行实施的方法来增强你的应用。 请考虑 Microsoft Office 扩展、Visual Studio 扩展、浏览器扩展等。这些扩展会针对应用创建更丰富的体验，远远超出了应用附带的功能。 扩展可以增加你的应用的价值和寿命。
+当你创建应用扩展主机时，就创造了围绕应用开发生态系统的机会，在此生态系统中，其他开发人员可以通过你可能未曾想到或无资源进行实施的方法来增强你的应用。 请考虑扩展 Microsoft Office、 Visual Studio 扩展、 浏览器扩展，等等。这些模板用于创建这些应用不随其功能的更丰富的体验。 扩展可以增加你的应用的价值和寿命。
 
 **概述**
 
@@ -49,7 +49,7 @@ UWP 应用扩展是 UWP 应用，这些应用具有的扩展声明允许它们�
 
 应用通过在其 Package.appxmanifest 文件中声明 `<AppExtensionHost>` 元素，将自己标识为应用扩展主机。 请参阅 **MathExtensionHost** 项目中的 **Package.appxmanifest** 文件以查看如何完成此操作。
 
-_MathExtensionHost 项目中的 Package.appxmanifest_
+_Package.appxmanifest MathExtensionHost 项目中_
 ```xml
 <Package
   ...
@@ -74,9 +74,9 @@ _MathExtensionHost 项目中的 Package.appxmanifest_
 
 请注意 `xmlns:uap3="http://..."`，以及 `IgnorableNamespaces` 中 `uap3` 的状态。 由于我们使用的是 uap3 命名空间，因此这些项是必需的。
 
-`<uap3:Extension Category="windows.appExtensionHost">` 将此应用标识为扩展主机。
+`<uap3:Extension Category="windows.appExtensionHost">` 将此应用程序标识为扩展主机。
 
-`<uap3:AppExtensionHost>` 中的 **Name ** 元素是_扩展约定_名称。 当扩展指定相同的扩展约定名称时，主机将能够找到它。 按照惯例，我们建议使用你的应用或发布者名称来生成扩展约定名称，以避免可能与其他扩展约定名称发生冲突。
+`<uap3:AppExtensionHost>` 中的 **Name**  元素是_扩展约定_名称。 当扩展指定相同的扩展约定名称时，主机将能够找到它。 按照惯例，我们建议使用你的应用或发布者名称来生成扩展约定名称，以避免可能与其他扩展约定名称发生冲突。
 
 你可以在同一应用中定义多个主机和多个扩展。 在此示例中，我们将声明一个主机。 另一个应用中定义了扩展。
 
@@ -84,7 +84,7 @@ _MathExtensionHost 项目中的 Package.appxmanifest_
 
 应用通过在其 **Package.appxmanifest** 文件中声明 `<uap3:AppExtension>` 元素，将自己标识为应用扩展。 打开 **MathExtension** 项目中的 **Package.appxmanifest** 文件以查看如何完成此操作。
 
-_MathExtension 项目中的 Package.appxmanifest：_
+_Package.appxmanifest MathExtension 项目中：_
 ```xml
 <Package
   ...
@@ -116,19 +116,19 @@ _MathExtension 项目中的 Package.appxmanifest：_
 
 同样，请注意 `xmlns:uap3="http://..."` 行，以及 `IgnorableNamespaces` 中 `uap3` 的状态。 由于我们使用的是 `uap3` 命名空间，因此这些项是必需的。
 
-`<uap3:Extension Category="windows.appExtension">` 将此应用标识为扩展。
+`<uap3:Extension Category="windows.appExtension">` 将此应用程序标识为扩展。
 
 `<uap3:AppExtension>` 属性的含义如下：
 
-|属性|说明|必需|
+|属性|描述|必需|
 |---------|-----------|:------:|
-|**Name**|这是扩展约定名称。 当它与主机中声明的 **Name** 匹配时，该主机将能够找到此扩展。| :heavy_check_mark: |
+|**名称**|这是扩展约定名称。 当它与主机中声明的 **Name** 匹配时，该主机将能够找到此扩展。| :heavy_check_mark: |
 |**ID**| 唯一标识此扩展。 因为可能存在多个使用相同扩展约定名称的扩展（请设想一个支持一些扩展的画图应用），所以你可以使用 ID 将它们区分开来。 应用扩展主机可以使用 ID 推断有关扩展类型的内容。 例如，你可能具有一个针对桌面设计的扩展和另一个针对移动设备设计的扩展，并且可以用 ID 进行区分。 为此，你还可以使用以下讨论的 **Properties** 元素。| :heavy_check_mark: |
 |**DisplayName**| 可以从主机应用中使用它来识别用户的扩展。 它可以从[新资源管理系统](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) 中查询，并且可以使用该系统进行本地化。 本地化的内容从应用扩展包中加载，而不是从主机应用中加载。 | |
-|**Description** | 可以从主机应用中使用它来描述用户的扩展。 它可以从[新资源管理系统](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) 中查询，并且可以使用该系统进行本地化。 本地化的内容从应用扩展包中加载，而不是从主机应用中加载。 | |
+|**描述** | 可以从主机应用中使用它来描述用户的扩展。 它可以从[新资源管理系统](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) 中查询，并且可以使用该系统进行本地化。 本地化的内容从应用扩展包中加载，而不是从主机应用中加载。 | |
 |**PublicFolder**|相对于程序包根目录的文件夹（你可以与扩展主机共享该文件夹中的内容）的名称。 按照惯例，此名称是“Public”，但是你可以使用与扩展中的文件夹匹配的任何名称。| :heavy_check_mark: |
 
-`<uap3:Properties>` 是一个包含主机可在运行时读取的自定义元数据的可选元素。 在代码示例中，扩展以应用服务形式来实现，因此主机需要一种方法来获取该应用服务的名称，以便主机可以调用该服务。 此应用服务的名称在我们所定义的 <Service> 元素中定义（我们可以将其叫做我们想要的任何名称）。 此代码示例中的主机会在运行时查找此属性以了解应用服务的名称。
+`<uap3:Properties>` 是可选元素，它包含自定义主机可以在运行时读取的元数据。 在代码示例中，扩展以应用服务形式来实现，因此主机需要一种方法来获取该应用服务的名称，以便主机可以调用该服务。 此应用服务的名称在我们所定义的 <Service> 元素中定义（我们可以将其叫做我们想要的任何名称）。 此代码示例中的主机会在运行时查找此属性以了解应用服务的名称。
 
 ## <a name="decide-how-you-will-implement-the-extension"></a>确定你将如何实现扩展。
 
@@ -145,7 +145,7 @@ _MathExtension 项目中的 Package.appxmanifest：_
 
 下面是调用扩展的应用服务的主机代码：
 
-_MathExtensionHost 项目中的 ExtensionManager.cs_
+_ExtensionManager.cs MathExtensionHost 项目中_
 ```cs
 public async Task<double> Invoke(ValueSet message)
 {
@@ -195,7 +195,7 @@ public async Task<double> Invoke(ValueSet message)
 
 需要注意的一点是如何确定要调用的应用服务的名称。 因为主机没有关于扩展实现的信息，所以扩展需要提供其应用服务的名称。 在此代码示例中，扩展在 `<uap3:Properties>` 元素中声明其文件中的应用服务的名称：
 
-_MathExtension 项目中的 Package.appxmanifest_
+_Package.appxmanifest MathExtension 项目中_
 ```xml
     ...
     <uap3:Extension Category="windows.appExtension">
@@ -211,7 +211,7 @@ _MathExtension 项目中的 Package.appxmanifest_
 
 当主机加载扩展时，像这样的代码会从扩展的 Package.appxmanifest 中定义的属性中提取服务的名称：
 
-_`Update()` 在 MathExtensionHost 项目内的 ExtensionManager.cs 中_
+_`Update()` 在 ExtensionManager.cs，MathExtensionHost 项目中_
 ```cs
 ...
 var properties = await ext.GetExtensionPropertiesAsync() as PropertySet;
@@ -233,7 +233,7 @@ if (_properties != null)
 
 在 `_serviceName` 中存储应用服务的名称后，主机可以使用它来调用应用服务。
 
-调用应用服务还需要包含应用服务的程序包的包系列名称。 幸运的是，应用扩展 API 可提供此信息，此信息从以下行中获取： `connection.PackageFamilyName = AppExtension.Package.Id.FamilyName;`
+调用应用服务还需要包含应用服务的程序包的包系列名称。 幸运的是，应用程序扩展插件 API 提供了此信息在一行中获取此信息： `connection.PackageFamilyName = AppExtension.Package.Id.FamilyName;`
 
 ### <a name="define-how-the-host-and-the-extension-will-communicate"></a>定义主机和扩展的通信方式
 
@@ -303,7 +303,7 @@ Microsoft Store 提供程序包形式的扩展。 [AppExtensionCatalog](https://
 
 `ExtensionManager` 构造函数使用 `AppExtensionCatalog` 查找系统上与主机具有相同扩展约定名称的应用扩展：
 
-_MathExtensionHost 项目中的 ExtensionManager.cs。_
+_ExtensionManager.cs MathExtensionHost 项目中。_
 ```cs
 public ExtensionManager(string extensionContractName)
 {
@@ -342,7 +342,7 @@ public ExtensionManager(string extensionContractName)
 现在，你将能够在主机和扩展中命中断点。
 如果你开始调试扩展应用本身，则将看到空白的应用窗口。 如果你不希望看到空白窗口，则可以更改扩展项目的调试设置，从而不启动应用，但改为在启动时调试应用（右键单击扩展项目，选择**属性** > **调试**> 选择**不启动，但在启动时调试代码**）。你仍然需要开始调试 (**F5**) 扩展项目，但它将等到主机激活扩展，然后将命中扩展中的断点。
 
-**调试代码示例**
+**调试的代码示例**
 
 在此代码示例中，主机和扩展在同一个解决方案中。 请执行下列操作以进行调试：
 
@@ -353,11 +353,11 @@ public ExtensionManager(string extensionContractName)
 5. 开始调试 **MathExtension** 项目（右键单击 **MathExtension** 项目，选择**调试 > 启动新实例**），这将部署此项目并在主机中触发程序包安装事件。
 6. 在 **MathExtensionHost** 应用中，导航到**计算**页面，然后单击 **x^y** 以激活扩展。 首先会命中 `Invoke()` 断点，并且你可以看到正在进行的扩展应用服务调用。 然后会命中扩展中的 `OnAppServiceRequestReceived()` 方法，并且你可以看到该应用服务计算结果并返回结果。
 
-**作为应用服务实现的扩展疑难解答**
+**作为应用服务实现的扩展故障排除**
 
 如果你的扩展主机在连接到扩展的应用服务时遇到问题，请确保 `<uap:AppService Name="...">` 属性与你放入 `<Service>` 元素中的内容匹配。 如果它们不匹配，则你的扩展提供给主机的服务名称将与你实现的应用服务名称不匹配，并且主机将无法激活你的扩展。
 
-_MathExtension 项目中的 Package.appxmanifest：_
+_Package.appxmanifest MathExtension 项目中：_
 ```xml
 <Extensions>
    <uap:Extension Category="windows.appService">
@@ -386,7 +386,7 @@ _MathExtension 项目中的 Package.appxmanifest：_
 - 运行主机，然后将扩展应用更新为较新的版本。
     - 主机是否会选择更改并正确卸载旧版本的扩展？  
 
-**要测试的高级方案：**
+**若要测试的高级的方案：**
 
 - 运行主机，将扩展应用移动到可移动媒体，删除该媒体
     - 主机是否会检测到程序包状态的变化并禁用扩展？
@@ -407,7 +407,7 @@ _MathExtension 项目中的 Package.appxmanifest：_
 
 应用扩展属于开放式生态系统。 如果你的应用可以托管应用扩展，则只要遵循你的扩展信息传递/接收方法，任何人都可以为你的主机编写扩展。 这与属于封闭式生态系统的可选包不同，在该系统中，发布者决定允许谁制作可与应用配合使用的可选包。
 
-应用扩展是独立的程序包，并且可能是独立的应用。 它们不能依赖于另一个应用进行部署。可选包需要主程序包，并且没有主程序包就无法运行。
+应用扩展是独立的程序包，并且可能是独立的应用。 它们不能依赖于另一个应用进行部署。 可选包需要主程序包，并且没有主程序包就无法运行。
 
 游戏扩展包将非常适合作为可选包，因为它紧紧地绑定到游戏上，不能独立于游戏而运行，并且你可能不希望扩展包随便由生态系统中的任何开发者进行创建。
 
@@ -419,10 +419,10 @@ _MathExtension 项目中的 Package.appxmanifest：_
 
 ## <a name="related-topics"></a>相关主题
 
-* [应用扩展简介](https://blogs.msdn.microsoft.com/appinstaller/2017/05/01/introduction-to-app-extensions/)
-* [版本 2016 的应用扩展相关会话](https://channel9.msdn.com/Events/Build/2016/B808)
-* [版本 2016 的应用扩展代码示例](https://github.com/Microsoft/App-Extensibility-Sample)
-* [使用后台任务支持应用](support-your-app-with-background-tasks.md)
+* [应用程序扩展插件简介](https://blogs.msdn.microsoft.com/appinstaller/2017/05/01/introduction-to-app-extensions/)
+* [有关应用程序扩展的 build 2016 会议](https://channel9.msdn.com/Events/Build/2016/B808)
+* [Build 2016 应用扩展的代码示例](https://github.com/Microsoft/App-Extensibility-Sample)
+* [支持使用后台任务对应用程序](support-your-app-with-background-tasks.md)
 * [如何创建和使用应用服务](how-to-create-and-consume-an-app-service.md)。
-* [AppExtensions 命名空间](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions)
-* [用服务、扩展和包扩展应用](https://docs.microsoft.com/windows/uwp/launch-resume/extend-your-app-with-services-extensions-packages)
+* [下面将 Appextension 命名空间](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions)
+* [扩展使用服务、 扩展和包对应用程序](https://docs.microsoft.com/windows/uwp/launch-resume/extend-your-app-with-services-extensions-packages)

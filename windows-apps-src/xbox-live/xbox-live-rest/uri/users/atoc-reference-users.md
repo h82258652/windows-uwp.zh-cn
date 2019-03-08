@@ -8,15 +8,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c5a4fc825555cb3ae7e6359178977914d6f65e3a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947447"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632112"
 ---
 # <a name="users-uris"></a>用户 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的*用户*。
+本部分提供有关通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务中针对*用户*。
  
 这些 Uri 的域是 msg.xboxlive.com。
  
@@ -27,11 +27,11 @@ ms.locfileid: "8947447"
 
 [/users/xuid({xuid})/inbox](uri-usersxuidinbox.md)
 
-&nbsp;&nbsp;提供给用户的访问权限的 Xbox LIVE 服务的邮件收件箱。 
+&nbsp;&nbsp;提供的 Xbox LIVE 服务的用户访问的消息传递收件箱。 
 
 [/users/xuid({xuid})/outbox](uri-usersxuidoutbox.md)
 
-&nbsp;&nbsp;提供仅发送给用户的访问权限的邮件发件箱为 Xbox LIVE 服务。 
+&nbsp;&nbsp;提供了仅限发送的用户访问的邮件发件箱的 Xbox LIVE 服务。 
  
 <a id="ID4EOB"></a>
 
@@ -43,6 +43,6 @@ ms.locfileid: "8947447"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
+[通用资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
 
    

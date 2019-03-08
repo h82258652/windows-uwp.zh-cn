@@ -8,23 +8,23 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 793d634bc1e3dc431b3797759751afb6dfd9c00a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927721"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650852"
 ---
 # <a name="get-titlestitleidsessionssessionidallocationstatus"></a>GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
-返回由其 sessionId sessionhost 分配状态。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+返回由其 sessionId sessionhost 的分配状态。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
-  * [需的请求标头](#ID4E4)
+  * [所需的请求标头](#ID4E4)
   * [所需的响应标头](#ID4EEB)
   * [响应正文](#ID4ELB)
  
 <a id="ID4E4"></a>
 
  
-## <a name="required-request-headers"></a>需的请求标头
+## <a name="required-request-headers"></a>所需的请求标头
  
 无。
   
@@ -40,21 +40,21 @@ ms.locfileid: "8927721"
  
 ## <a name="response-body"></a>响应正文
  
-如果在调用成功，该服务将返回一个具有以下成员的 JSON 对象。
+如果调用成功，服务将返回具有以下成员的 JSON 对象。
  
-| 成员| 说明| 
+| 成员| 描述| 
 | --- | --- | 
-| description| 返回空字符串 （左中的向后兼容性）。| 
-| clusterId| 返回空字符串 （左中的向后兼容性）。| 
-| 主机名| 会话主机的 URL。| 
-| status| 指示排队、 已完成，或者中止。| 
+| description| 返回空字符串 （左图中的向后兼容性）。| 
+| clusterId| 返回空字符串 （左图中的向后兼容性）。| 
+| hostName| 会话主机的 URL。| 
+| status| 指示已排队、 完成，或已中止。| 
 | sessionHostId| 会话主机 id。| 
-| sessionId| （在分配时） 提供的客户端会话 id。| 
-| secureContext| 安全设备地址。| 
-| portMappings| 实例的端口映射。| 
+| sessionId| （在分配时） 提供的客户端的会话 id。| 
+| secureContext| 安全设备的地址。| 
+| portMappings| 实例端口映射。| 
 | 区域| 实例的位置。| 
-| 票证 Id| 当前会话 ID （左中的向后兼容性）。| 
-| gameHostId| 当前 sessionHostId （左中的向后兼容性）。| 
+| ticketId| 当前会话 ID （左图中的向后兼容性）。| 
+| gameHostId| 当前 sessionHostId （左图中的向后兼容性）。| 
  
 <a id="ID4EGD"></a>
 
@@ -100,11 +100,11 @@ ms.locfileid: "8927721"
  
 ### <a name="remarks"></a>备注
  
-收到以下响应代码时，游戏应仅重试对服务调用：
+接收到以下的响应代码时，标题应仅重试对服务调用：
  
-   * 200 — 成功 
-   * 400-请求包含无效参数 
-   * 401-未授权 
-   * 404-的主题作品 ID 或票证 ID 已无效，或未找到 
+   * 200-成功 
+   * 400-请求包含无效的参数 
+   * 401-未经授权 
+   * 404-标题 ID 或票证 ID 为无效或找不到 
    * 500-意外的服务器错误。 
     

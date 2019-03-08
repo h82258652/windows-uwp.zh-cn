@@ -1,5 +1,5 @@
 ---
-Description: MakePri.exe is a command line tool that you can use to create and dump PRI files. It is integrated as part of MSBuild within Microsoft Visual Studio, but it could be useful to you for creating packages manually or with a custom build system.
+Description: MakePri.exe 是可用于创建和转储 PRI 文件的命令行工具。 它作为 MSBuild 的一部分集成到 Microsoft Visual Studio 中，但它可用来手动或使用自定义生成系统创建包。
 title: 使用 MakePri.exe 手动编译资源
 template: detail.hbs
 ms.date: 10/23/2017
@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f4feff88507ae5f84bccf044aa9ab6711d6b8bb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919858"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645762"
 ---
 # <a name="compile-resources-manually-with-makepriexe"></a>使用 MakePri.exe 手动编译资源
 
 MakePri.exe 是可用于创建和转储 PRI 文件的命令行工具。 它作为 MSBuild 的一部分集成到 Microsoft Visual Studio 中，但它可用来手动或使用自定义生成系统创建包。
 
 > [!NOTE]
-> 检查安装 Windows 软件开发工具包时**适用于 UWP 管理应用的 Windows SDK**选项时，MakePri.exe 会安装。 它安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及中名为其他体系结构的文件夹）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 选中时安装 MakePri.exe**适用于 UWP 的托管应用的 Windows SDK**选项的同时，安装 Windows 软件开发工具包。 安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及其他体系结构对于命名的文件夹）。 例如， `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
 PRI 文件的大小限制为 64 千字节。
 
@@ -26,8 +26,8 @@ PRI 文件的大小限制为 64 千字节。
 |主题|描述|
 |-|-|
 | [MakePri.exe 命令行选项](makepri-exe-command-options.md) | MakePri.exe 具有命令集 `createconfig`、`dump`、`new`、`resourcepack` 和 `versioned`。 本主题对命令行选项的使用进行详细介绍。 |
-| [MakePri.exe 配置文件](makepri-exe-configuration.md) | 本主题介绍 MakePri.exe XML 配置文件架构。 |
-| [MakePri.exe 特定格式索引器](makepri-exe-format-specific-indexers.md) | 本主题介绍 MakePri.exe 工具用于生成其资源索引的特定格式索引器。 |
+| [MakePri.exe 配置文件](makepri-exe-configuration.md) | 本主题介绍 MakePri.exe XML 配置文件的架构。 |
+| [MakePri.exe 特定格式的索引器](makepri-exe-format-specific-indexers.md) | 本主题介绍 MakePri.exe 工具用于生成其资源索引的特定格式索引器。 |
 
 ## <a name="makepriexe-command-line-options"></a>MakePri.exe 命令行选项
 
@@ -68,5 +68,5 @@ No default or neutral resource given for '<resource identifier>'. The applicatio
 ## <a name="related-topics"></a>相关主题
 * [MakePri.exe 命令行选项](makepri-exe-command-options.md)
 * [MakePri.exe 配置](makepri-exe-configuration.md)
-* [MakePri.exe 特定格式索引器](makepri-exe-format-specific-indexers.md)
-* [定制语言、比例和其他限定符的资源](tailor-resources-lang-scale-contrast.md)
+* [MakePri.exe 特定格式的索引器](makepri-exe-format-specific-indexers.md)
+* [定制您的语言、 缩放性和其他限定符的资源](tailor-resources-lang-scale-contrast.md)

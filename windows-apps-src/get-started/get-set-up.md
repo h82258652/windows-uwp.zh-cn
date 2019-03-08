@@ -1,29 +1,29 @@
 ---
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: 准备工作
-description: 准备工作比想像中的简单。 请按照以下说明和开始菜单适用于 windows 10 创建通用 Windows 平台 (UWP) 应用。
+description: 准备工作比想像中的简单。 按照这些说明进行操作并开始创建适用于 Windows 10 通用 Windows 平台 (UWP) 应用。
 ms.date: 05/07/2018
 ms.topic: article
-keywords: windows 10，uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a92b8d0f921bc747108b802d285b783e7f2bcaa8
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047934"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658642"
 ---
 # <a name="get-set-up"></a>准备工作
 
 ![使用 Visual Studio 的准备工作](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-准备工作比想像中的简单。 请按照以下说明和开始菜单适用于 windows 10 创建通用 Windows 平台 (UWP) 应用。
+准备工作比想像中的简单。 按照这些说明进行操作并开始创建适用于 Windows 10 通用 Windows 平台 (UWP) 应用。
 
-## <a name="1-download-or-update-visual-studio"></a>1. 下载或更新 Visual Studio
+## <a name="1-download-or-update-visual-studio"></a>1.下载或更新 Visual Studio
 
-Microsoft Visual Studio2017 有助于设计、 编码、 测试和调试应用。
+Microsoft Visual Studio 2017 可帮助设计、 编码、 测试和调试您的应用程序。
 
-如果你尚未获得 Visual Studio2017，你可以安装免费的 Microsoft Visual Studio Community2017。 此下载包含用于测试应用的设备模拟器：
+如果还没有 Visual Studio 2017，可以安装免费 Microsoft Visual Studio Community 2017。 此下载包含用于测试应用的设备模拟器：
 
 -   [下载 Windows 10 开发人员工具](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 
@@ -38,13 +38,13 @@ Microsoft Visual Studio2017 有助于设计、 编码、 测试和调试应用�
    ![如何重复安装流程](images/win10-cs-install.png)
 
 
-## <a name="2-enable-your-device-for-development"></a>2. 启用设备进行开发
+## <a name="2-enable-your-device-for-development"></a>2.启用设备进行开发
 
 在真实的电脑和手机上测试 UWP 应用非常重要。 你必须先使你的电脑或 Windows Phone 能够进行开发，然后才能将应用部署到它。
 
 -   有关详细说明，请参阅[启用设备进行开发](enable-your-device-for-development.md)。
 
-## <a name="3-register-as-an-app-developer"></a>3. 注册为应用开发人员
+## <a name="3-register-as-an-app-developer"></a>3.注册成为应用开发人员
 
 你可以立即开始开发应用，但需要一个开发人员帐户才能将它们提交到应用商店。
 
@@ -54,13 +54,13 @@ Microsoft Visual Studio2017 有助于设计、 编码、 测试和调试应用�
 
 在安装工具并启用用于开发的设备后，请查看我们有关如何开始创建 Windows 10 应用的指南。
 
--   [开始编写代码](create-uwp-apps.md)
+-   [开始编码](create-uwp-apps.md)
 
 ## <a name="windows-development-setup-scripts"></a>Windows 开发安装脚本
 
 如果想要自定义设备并安装其他功能或包，请查看该项目的系统安装脚本。
 
-- [开发人员安装脚本](https://github.com/Microsoft/windows-dev-box-setup-scripts)
+- [开发人员安装程序脚本](https://github.com/Microsoft/windows-dev-box-setup-scripts)
 
 ## <a name="want-more-tools-and-downloads"></a>需要更多的工具和下载吗？
 
@@ -68,6 +68,6 @@ Microsoft Visual Studio2017 有助于设计、 编码、 测试和调试应用�
 
 ## <a name="see-also"></a>另请参阅
 
-* [适用于 UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
+* [UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
 * [UWP 应用是什么？](universal-application-platform-guide.md)
 * [注册 Windows 帐户](sign-up.md)

@@ -1,19 +1,19 @@
 ---
-Description: This section contains user experience guidelines for presenting app settings and storing those settings as app data.
+Description: 本部分包含显示应用设置和将这些设置存储为应用数据的用户体验指南。
 title: 应用设置和数据
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5790e9fcd05cb873958e53786e3282094ec0a3d4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938428"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639892"
 ---
 # <a name="app-settings-and-data"></a>应用设置和数据
 
@@ -34,7 +34,7 @@ ms.locfileid: "8938428"
 <thead>
 <tr class="header">
 <th align="left">文章</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -43,7 +43,7 @@ ms.locfileid: "8938428"
 <td align="left"><p>有关创建和显示应用设置的最佳做法。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="store-and-retrieve-app-data.md">存储和检索应用数据</a></p></td>
+<td align="left"><p><a href="store-and-retrieve-app-data.md">存储和检索应用程序数据</a></p></td>
 <td align="left"><p>如何存储和检索本地、漫游和临时应用数据。</p></td>
 </tr>
 </tbody>

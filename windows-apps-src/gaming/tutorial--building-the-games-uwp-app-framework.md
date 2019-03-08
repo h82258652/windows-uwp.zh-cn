@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 175009773f7969adbaf36a036e733443f593467f
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117767"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620552"
 ---
 #  <a name="define-the-uwp-app-framework"></a>定义 UWP 应用框架
 
@@ -22,11 +22,11 @@ ms.locfileid: "9117767"
 视图提供程序对象实现 __IFrameworkView__ 界面，其包括一系列创建此游戏示例需要配置的方法。
 
 你需要实现应用单一实例调用的以下五个方法：
-* [__Initialize__](#initialize-the-view-provider)
+* [__初始化__](#initialize-the-view-provider)
 * [__SetWindow__](#configure-the-window-and-display-behaviors)
-* [__Load__](#load-method-of-the-view-provider)
+* [__负载__](#load-method-of-the-view-provider)
 * [__Run__](#run-method-of-the-view-provider)
-* [__Uninitialize__](#uninitialize-method-of-the-view-provider)
+* [__取消初始化__](#uninitialize-method-of-the-view-provider)
 
 __Initialize__ 方法在应用程序启动时调用。 __SetWindow__ 方法在 __Initialize__ 之后调用。 然后调用 __Load__ 方法。 __Run__ 方法在游戏运行时调用。 当游戏结束时，调用 __Uninitialize__ 方法。 有关详细信息，请参阅 [__IFrameworkView__ API 参考](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview)。 
 
@@ -186,7 +186,7 @@ void App::Load(
 
 ### <a name="gamemain-constructor"></a>GameMain 构造函数
 
-* 创建和初始化游戏呈现器。 有关详细信息，请参阅[呈现框架 I：呈现简介](tutorial--assembling-the-rendering-pipeline.md)。
+* 创建和初始化游戏呈现器。 有关详细信息，请参阅[呈现框架实现：简介呈现](tutorial--assembling-the-rendering-pipeline.md)。
 * 创建和初始化 Simple3Dgame 对象。 有关详细信息，请参阅[定义主游戏对象](tutorial--defining-the-main-game-loop.md)。    
 * 创建游戏 UI 控件对象和显示游戏信息覆盖层以在加载资源文件时显示进度栏。 有关详细信息，请参阅[添加用户界面](tutorial--adding-a-user-interface.md)。
 * 创建控制器，使它可以从控制器（触摸、鼠标或 XBox 无线控制器）读取输入。 有关详细信息，请参阅[添加控件](tutorial--adding-controls.md)。
@@ -298,19 +298,19 @@ GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) 
 
 ## <a name="run-method-of-the-view-provider"></a>视图提供程序的 Run 方法
 
-之前的三种方法：__Initialize__、__SetWindow__ 和 __Load__ 已设置了此阶段。 现在游戏可进入 **Run** 方法了，启动有趣的游戏吧！ 用于在游戏状态之间转换的事件将被发送和处理。 在游戏循环周期，图形被更新。
+早期的三种方法：__初始化__， __SetWindow__，和__负载__已设置此阶段。 现在游戏可进入 **Run** 方法了，启动有趣的游戏吧！ 用于在游戏状态之间转换的事件将被发送和处理。 在游戏循环周期，图形被更新。
 
 ### <a name="apprun"></a>App::Run
 
 启动一个 __while__ 循环，当玩家关闭游戏窗口时该循环将终止。
 
 示例代码在游戏引擎状态机中转换为以下两个状态之一：
-    * __Deactivated__：游戏窗口停用（失去焦点）或贴靠。 在发生此事件时，游戏将暂停事件处理并等待窗口获得焦点或取消贴靠。
-    * __TooSmall__：游戏将更新自己的状态并呈现要显示的图形。
+    * __停用__:游戏窗口停用（失去焦点）或贴靠。 在发生此事件时，游戏将暂停事件处理并等待窗口获得焦点或取消贴靠。
+    * __TooSmall__:游戏更新其自己的状态，并将呈现用于显示图形。
 
 在你的游戏获得焦点时，必须处理消息队列中到达的每个事件，因此必须使用 **ProcessAllIfPresent** 选项调用 [**CoreWindowDispatch.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)。 其他选项可能导致延迟处理消息事件，这会让人感到游戏停止响应，或者导致触摸行为反应慢和没有“粘合力”。
 
-当游戏不可见、暂停或贴靠时，你不希望应用使用任何资源循环去调度永不会到达的消息。 这种情况下，你的游戏必须使用 **ProcessOneAndAllPending**，它在获得事件前将进行阻止，随即在获得事件后处理该事件以及处理队列中在处理第一个事件期间到达的任何其他事件。 然后，[**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 将在处理队列之后立即返回。
+当游戏不可见、暂停或贴靠时，你不希望应用使用任何资源循环去调度永不会到达的消息。 这种情况下，你的游戏必须使用 **ProcessOneAndAllPending**，它在获得事件前将进行阻止，随即在获得事件后处理该事件以及处理队列中在处理第一个事件期间到达的任何其他事件。 [**ProcessEvents** ](https://msdn.microsoft.com/library/windows/apps/br208215)然后立即返回处理队列后。
 
 ```cpp
 void App::Run()
@@ -384,9 +384,9 @@ void GameMain::Run()
 
 当用户最终结束游戏会话时，我们需要清理。 这时要使用 **Uninitialize**。
 
-在 windows 10 中，关闭应用窗口不会终止应用的进程，而改为写入内存应用 singleton 的状态。 如果在系统回收此内存时必须执行一些特殊操作（包括任何特殊的资源清除），则将执行该清除的代码放入此方法。
+在 Windows 10 中，关闭应用窗口不会终止应用程序的进程，但改为写入内存的应用程序的单一实例的状态。 如果在系统回收此内存时必须执行一些特殊操作（包括任何特殊的资源清除），则将执行该清除的代码放入此方法。
 
-### <a name="app-uninitialize"></a>App:: Uninitialize
+### <a name="app-uninitialize"></a>应用程序::Uninitialize
 
 ```cpp
 void App::Uninitialize()

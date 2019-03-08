@@ -1,5 +1,5 @@
 ---
-Description: Learn how Fluent motion uses timing and easing functions.
+Description: 了解如何 Fluent motion 使用计时和缓动函数。
 title: 计时和缓动 - UWP 应用中的动画
 label: Timing and easing
 template: detail.hbs
@@ -12,11 +12,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 5b9a0719e4967f9d527d2b2565818a0dea1be0a6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945488"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645262"
 ---
 # <a name="timing-and-easing"></a>计时和缓动
 
@@ -204,5 +204,5 @@ CubicBezierEasingFunction standard =
 
 ## <a name="related-articles"></a>相关文章
 
-- [运动概述](index.md)
-- [方向性和引力](directionality-and-gravity.md)
+- [Motion 概述](index.md)
+- [方向性和重力](directionality-and-gravity.md)

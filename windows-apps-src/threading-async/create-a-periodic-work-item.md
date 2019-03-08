@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp, 定期工作项, 线程处理, 计时器
 ms.localizationpriority: medium
 ms.openlocfilehash: 05ed3b4bc4fa6dbe1119dca40d22107e94cea576
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981541"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636902"
 ---
 # <a name="create-a-periodic-work-item"></a>创建定期工作项
 
 
-<b>重要的 API</b>
+<b>重要的 Api</b>
 
 -   [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915)
 -   [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587)
@@ -27,11 +27,11 @@ ms.locfileid: "8981541"
 
 使用 [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) 方法创建定期工作项。 提供用于完成工作的 lambda，并使用 *period* 参数指定两次提交之间的间隔。 使用 [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) 结构指定此期限。 每次在此期限到期时将重新提交工作项，因此请确保该期限足够长，以便完成工作。
 
-[**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) 返回一个 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) 对象。 存储该对象，以防需要取消计时器。
+[**CreateTimer** ](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx)返回[ **ThreadPoolTimer** ](https://msdn.microsoft.com/library/windows/apps/BR230587)对象。 存储该对象，以防需要取消计时器。
 
-> **注意**避免指定值为零 （或小于 1 微秒的任何值） 的间隔。 这将导致定期计时器像单次计时器一样操作。
+> **请注意**  避免指定的值为零 （或小于一毫秒的任何值） 的间隔。 这将导致定期计时器像单次计时器一样操作。
 
-> **注意** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)可用于访问 UI 并显示工作项的进度。
+> **请注意**  可以使用[ **CoreDispatcher.RunAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh750317)访问 UI 并显示从工作项的进度。
 
 以下示例创建每 60 秒运行一次的工作项：
 
@@ -202,7 +202,7 @@ ms.locfileid: "8981541"
 
 ## <a name="related-topics"></a>相关主题
 
-* [向线程池提交工作项](submit-a-work-item-to-the-thread-pool.md)
+* [提交到线程池工作项](submit-a-work-item-to-the-thread-pool.md)
 * [使用线程池的最佳实践](best-practices-for-using-the-thread-pool.md)
 * [使用计时器提交工作项](use-a-timer-to-submit-a-work-item.md)
  

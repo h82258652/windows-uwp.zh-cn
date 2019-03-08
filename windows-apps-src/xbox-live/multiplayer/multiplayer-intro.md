@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏
 ms.localizationpriority: medium
 ms.openlocfilehash: c71fc28a9bb8668d0253834c1a2c9c6ca7736fd1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936404"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651152"
 ---
 # <a name="xbox-live-multiplayer-platform"></a>Xbox Live 多人游戏平台
 
@@ -25,7 +25,7 @@ Xbox Live 多人游戏平台授权你的游戏通过 Internet 将 Xbox Live 玩�
 Xbox Live 多人游戏平台是一组你可以用来实现实时多人游戏的客户端 API。 API 套件中的主要子系统是：
 
 -   **Xbox Live 多人游戏会话目录 (MPSD)** 服务。 MPSD 服务通过集成的 UI 体验帮助用户在玩游戏时互相进行查找和邀请。 与 Xbox Live 服务集成还可以允许客户使用 Xbox Live 群聊天集合。
--   **简单且高级的匹配工具。** Xbox Live 不仅提供传统的 quickmatch 功能，还提供会话浏览功能并支持高度自定义的匹配场景。 Xbox Live 查找组 (LFG) 还允许玩家相互查找，在群聊天中集合，然后玩游戏。
+-   **简单和高级匹配功能。** Xbox Live 不仅提供传统的 quickmatch 功能，还提供会话浏览功能并支持高度自定义的匹配场景。 Xbox Live 查找组 (LFG) 还允许玩家相互查找，在群聊天中集合，然后玩游戏。
 -   **对等和客户端服务器网络 API** 提供安全的实时通信，该通信采用现代的 Internet 标准并且被 Xbox Live 主动监控。 标准化和集成化 Xbox Live 网络疑难解答体验可以使用户快速更正连接性问题。  
 -   **集成的语音和文字聊天解决方案**促进了游戏内的安全通信，该通信利用了 Xbox Live 社交图表、媒体服务和 Xbox One 设备上的专用编码硬件。
 
@@ -34,7 +34,7 @@ Xbox Live 多人游戏平台是一组你可以用来实现实时多人游戏的�
 ## <a name="how-can-i-implement-xbox-live-multiplayer-in-my-game"></a>如何在我的游戏中实现 Xbox Live 多人游戏？
 取决于你的场景，Xbox Live 多人游戏平台提供了多种可在你的游戏中实现 Xbox Live 多人游戏的方法。
 
-### <a name="xbox-integrated-multiplayer-xim"></a>Xbox 集成的多人游戏 (XIM)
+### <a name="xbox-integrated-multiplayer-xim"></a>Xbox 集成多人游戏 (XIM)
 XIM 是通过 Xbox Live 服务的功能向你的游戏添加实时多人游戏网络和通信的一站式解决方案。 XIM 的目标是使在 Xbox One 和 Windows 10 上生成高质量对等 (P2P) 多人游戏变得比以往更容易。
 
 XIM 提供以下功能：

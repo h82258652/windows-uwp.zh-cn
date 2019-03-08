@@ -6,21 +6,21 @@ ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 869ee88eea6161f8d308f2e5cd72773dc7162b0b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8948064"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643952"
 ---
 ## <a name="support-and-feedback"></a>支持和反馈
 
 ### <a name="find-answers-to-your-questions"></a>查找问题的答案
 
-有问题？ 向我们提问[Stack Overflow](https://aka.ms/pos-stackoverflow)或[MSDN UWP 论坛](https://aka.ms/pos-msdn-uwpforum)上
+有问题？ 在问我们[Stack Overflow](https://aka.ms/pos-stackoverflow)或[UWP 的 MSDN 论坛](https://aka.ms/pos-msdn-uwpforum)
 
-帮助我们找到问题：
-- 将[pointofservice](https://aka.ms/pos-stackoverflow)标记添加到您 Stack Overflow 上的问题。 
-- 在你在 MSDN UWP 论坛文章中包含["pointofservice"](https://aka.ms/pos-msdn-uwpforum)术语
+帮助我们找到您的问题：
+- 添加[pointofservice](https://aka.ms/pos-stackoverflow)标记添加到您在 Stack Overflow 的问题。 
+- 包括["pointofservice"](https://aka.ms/pos-msdn-uwpforum)在 UWP 的 MSDN 论坛上张贴的术语
 
-### <a name="make-feature-suggestions-or-give-feedback"></a>提出功能建议或提供反馈
-请参阅[开发人员反馈 UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform?category_id=202594)。
+### <a name="make-feature-suggestions-or-give-feedback"></a>对功能提出建议或提供反馈
+请参阅[开发人员的反馈 UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform?category_id=202594)。

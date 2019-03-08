@@ -7,21 +7,21 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 940f82e5e4cff30a2756c32c80d2f3ab02ae440a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050500"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660502"
 ---
 # <a name="use-the-gyrometer"></a>使用陀螺测试仪
 
 
-**重要的 API**
+**重要的 Api**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**陀螺测试仪**](https://msdn.microsoft.com/library/windows/apps/BR225718)
+-   [**陀螺测试仪感应**](https://msdn.microsoft.com/library/windows/apps/BR225718)
 
-**示例**
+**Sample**
 
 -   有关更完整的实现，请参阅[陀螺测试仪示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/gyrometer)。
 
@@ -29,9 +29,9 @@ ms.locfileid: "9050500"
 
 陀螺测试仪补充了加速计来一起作为游戏控制器。 加速计可以测量线性运动，而陀螺测试仪测量角度矢量或旋转运动。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
-你应熟悉 Extensible Application Markup Language (XAML)、 Microsoft VisualC #，和事件。
+您应了解与 Extensible Application Markup Language (XAML)，Microsoft Visual C#，和事件。
 
 你使用的设备或仿真器必须支持陀螺测试仪。
 
@@ -41,7 +41,7 @@ ms.locfileid: "9050500"
 
 ###  <a name="instructions"></a>说明
 
--   创建新项目，从“Visual C#”**** 项目模板中选择“空白应用(通用 Windows)”****。
+-   创建新项目，从“Visual C#”项目模板中选择“空白应用(通用 Windows)”。
 
 -   打开项目的 MainPage.xaml.cs 文件，使用下列内容替换现有代码。
 
@@ -134,15 +134,15 @@ ms.locfileid: "9050500"
     </Page>
 ```
 
-你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**GyrometerCS**的项目，则使用 `x:Class="GyrometerCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:GyrometerCS"` 替换 `xmlns:local="using:App1"`。
+你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**GyrometerCS**的项目，则使用 `x:Class="GyrometerCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 还应当将 `xmlns:local="using:App1"` 替换为 `xmlns:local="using:GyrometerCS"`。
 
--   按 F5 或依次选择“调试”**** > “开始调试”**** 来生成、部署并运行应用。
+-   按 F5 或依次选择“调试” > “开始调试”来生成、部署并运行应用。
 
 应用运行后，你可以通过移动设备或使用仿真器工具更改陀螺测试仪的值。
 
--   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”**** > “停止调试”**** 来停止应用。
+-   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试” > “停止调试”来停止应用。
 
-###  <a name="explanation"></a>描述
+###  <a name="explanation"></a>说明
 
 前面的示例演示了，只需要写入极少的代码即可将陀螺测试仪输入集成到你的应用。
 
@@ -167,7 +167,7 @@ _gyrometer.ReadingChanged += new TypedEventHandler<Gyrometer,
 GyrometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-这些新值写入项目 XAML 中的 TextBlock 中。
+这些新值将写入位于项目 XAML 中的 TextBlock。
 
 ```xml
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="8,8,0,0" TextWrapping="Wrap" Text="X-Axis:" VerticalAlignment="Top" Width="46" Foreground="#FFFDFDFD"/>
@@ -180,4 +180,4 @@ GyrometerReadingChangedEventArgs>(ReadingChanged);
 
  ## <a name="related-topics"></a>相关主题
 
-* [陀螺测试仪示例](https://go.microsoft.com/fwlink/p/?linkid=241379)
+* [陀螺测试仪感应示例](https://go.microsoft.com/fwlink/p/?linkid=241379)

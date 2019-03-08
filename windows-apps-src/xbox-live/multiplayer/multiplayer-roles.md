@@ -6,15 +6,15 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 角色
 ms.localizationpriority: medium
 ms.openlocfilehash: ac5e7758bd8e068681d1c8dab2d47d11374c2616
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920212"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662082"
 ---
 # <a name="roles"></a>角色
 
-对于某些游戏会话，你可能想要指定特定成员拥有特定游戏角色（如支持、医师、攻击等）。你可能还想为填补特定游戏角色的玩家保留游戏空位。 通过使用 Xbox Live 角色功能，此服务可跟踪哪些玩家分配到了哪些游戏角色，并强制可选择特定游戏角色的最大玩家人数。
+对于某些游戏会话，可能想要指定特定成员具有某些游戏玩法角色，例如支持、 medic、 袭击，等等。你也可以 wat 中的播放机将填充特定游戏玩法角色保留游戏槽。 通过使用 Xbox Live 角色功能，此服务可跟踪哪些玩家分配到了哪些游戏角色，并强制可选择特定游戏角色的最大玩家人数。
 
 角色的最常见用法是确定游戏会话的游戏特定角色。 例如，你可以使用满足以下条件的游戏模式：1 到 2 个支持类、至少 1 个坦克/重型类，以及不超过 5 个攻击类。
 
@@ -30,7 +30,7 @@ ms.locfileid: "8920212"
 
 你可以定义多个角色类型，一位成员可以分配到各角色类型中的一个角色。 在之前的方案中，成员可能选择了医师角色，但可能分配到的是队长角色（如果单独角色类型中定义了队长角色）。
 
-> **重要提示：** Xbox Live SDK 当前仅支持每个成员拥有单个角色类型和单个角色。
+> **重要说明：** Xbox Live SDK 目前仅支持单个角色类型和每个成员的一个角色。
 
 ## <a name="role-type-properties"></a>角色类型属性
 

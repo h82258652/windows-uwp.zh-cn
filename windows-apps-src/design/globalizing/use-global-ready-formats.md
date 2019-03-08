@@ -1,5 +1,5 @@
 ---
-Description: Design your app to be global-ready by appropriately formatting dates, times, numbers, phone numbers, and currencies. You'll then be able later to adapt your app for additional cultures, regions, and languages in the global market.
+Description: 通过适当设置日期、时间、数字、电话号码和货币的格式，设计全球通用的应用。 稍后即可调整应用，以适应全球市场中更多的文化、区域和语言。
 title: 全球化日期/时间/数字格式
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
 ms.openlocfilehash: d641bcff48b830c56a1d03ee861ec2a4c5f433b6
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048604"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634132"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a>全球化日期/时间/数字格式
 
@@ -70,7 +70,7 @@ ms.locfileid: "9048604"
     var results = "Short Date: " + shortDateFormatter.Format(DateTime.Now);
 ```
 
-## <a name="format-numbers-and-currencies-appropriately"></a>设置适当的数字和货币格式
+## <a name="format-numbers-and-currencies-appropriately"></a>设置相应的数字和货币格式
 
 不同的文化设置数字格式的方式也不相同。 格式差异可能包括显示多少小数位数、什么字符用作小数分隔符以及要使用什么货币符号。 使用 [**NumberFormatting**](/uwp/api/windows.globalization.numberformatting?branch=live) 命名空间中的类来显示小数、分数、千分比和货币。 大多数情况下，建议使用这些格式化程序类，将最佳格式用于用户配置文件。 但是你可以使用格式化程序显示任何区域或格式的货币。
 
@@ -116,9 +116,9 @@ ms.locfileid: "9048604"
 
 设置电话号码格式的方式因区域而异。 电话号码的数字位数、数字组合方式和某些部分的重要性因国家/地区而异。 从 Windows 10 版本 1607 开始，可以使用 [**PhoneNumberFormatting**](/uwp/api/windows.globalization.phonenumberformatting?branch=live) 命名空间中的类为当前区域设置适当的电话号码格式。
 
-[**PhoneNumberInfo**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live) 可解析一串数字，并允许你：确定这些数字在当前区域中是否是有效的电话号码；比较两组数字是否相等；提取电话号码的不同功能部分，例如国家/地区代码或地理区域代码。
+[**PhoneNumberInfo** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live)分析数字的字符串，并且可以： 确定是否数字是否为有效的电话号码中的当前区域; 比较两个数字的相等性; 并提取手机的不同功能部分数，例如国家/地区代码或地理区域代码。
 
-[**PhoneNumberFormatter**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live) 可设置一串数字或 **PhoneNumberInfo** 的格式以供显示，即使该串数字表示部分电话号码。 你可以使用此部分号码格式设置，将号码设置为用户输入该号码时所示的格式。
+[**PhoneNumberFormatter** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live)格式的数字的字符串，或者**PhoneNumberInfo**进行显示，即使数字的字符串表示部分电话号码。 你可以使用此部分号码格式设置，将号码设置为用户输入该号码时所示的格式。
 
 下面的示例显示了如何使用 **PhoneNumberFormatter** 将电话号码设置为输入时所示的格式。 每当名为 phoneNumberInputTextBox 的 **TextBox** 中的文本发生更改时，文本框内容都会使用当前默认区域进行格式设置并显示在名为 phoneNumberOutputTextBlock 的 **TextBlock** 中。 出于演示目的，该字符串也使用新西兰区域进行格式设置，并显示在名为 phoneNumberOutputTextBlockNZ 的 TextBlock 中。
   
@@ -167,13 +167,13 @@ ms.locfileid: "9048604"
 
 ## <a name="related-topics"></a>相关主题
 
-* [日历、日期和时间控件](../controls-and-patterns/date-and-time.md)
-* [了解用户配置文件语言和应用清单语言](manage-language-and-region.md)
-* [定制语言、比例、高对比度和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [日历、 日期和时间控件](../controls-and-patterns/date-and-time.md)
+* [了解用户配置文件的语言和应用程序清单语言](manage-language-and-region.md)
+* [定制您的语言、 缩放、 高对比度和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)
 
 ## <a name="samples"></a>示例
 
-* [日历详细信息和数学示例](https://go.microsoft.com/fwlink/p/?linkid=231636)
-* [设置日期和时间格式示例](https://go.microsoft.com/fwlink/p/?linkid=231618)
+* [日历的详细信息和数学示例](https://go.microsoft.com/fwlink/p/?linkid=231636)
+* [日期和时间格式设置示例](https://go.microsoft.com/fwlink/p/?linkid=231618)
 * [全球化首选项示例](https://go.microsoft.com/fwlink/p/?linkid=231608)
-* [数字格式和分析示例](https://go.microsoft.com/fwlink/p/?linkid=231620)
+* [数字格式设置和分析示例](https://go.microsoft.com/fwlink/p/?linkid=231620)

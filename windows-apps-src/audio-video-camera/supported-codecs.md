@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 02d8c67c92a070fbeaaab81ef6c5145dec90e411
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929229"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631352"
 ---
 # <a name="supported-codecs"></a>支持的编解码器
 
@@ -28,7 +28,7 @@ ms.locfileid: "8929229"
 
  
 
-### <a name="desktop"></a>桌面
+### <a name="desktop"></a>桌面设备
 
 <table>
 <colgroup>
@@ -339,7 +339,7 @@ ms.locfileid: "8929229"
 
  
 
-### <a name="mobile"></a>移动体验
+### <a name="mobile"></a>移动版
 
 <table>
 <colgroup>
@@ -1593,7 +1593,7 @@ ms.locfileid: "8929229"
 
  
 
-### <a name="desktop"></a>桌面
+### <a name="desktop"></a>桌面设备
 
 <table>
 <colgroup>
@@ -1812,7 +1812,7 @@ ms.locfileid: "8929229"
 
  
 
-### <a name="mobile"></a>移动体验
+### <a name="mobile"></a>移动版
 
 <table>
 <colgroup>
@@ -2697,7 +2697,7 @@ ms.locfileid: "8929229"
 <thead>
 <tr class="header">
 <th align="left">编解码器</th>
-<th align="left">桌面</th>
+<th align="left">桌面设备</th>
 <th align="left">其他设备系列</th>
 </tr>
 </thead>

@@ -7,13 +7,13 @@ ms.topic: article
 keywords: windows 10, uwp, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 127d600b840c21eb78c3f6b98a100b7639ea25bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929140"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660222"
 ---
-# <a name="directx-getting-started"></a>DirectX：入门
+# <a name="directx-getting-started"></a>DirectX:即刻体验
 
 本部分提供了有关使用 DirectX 开发 UWP 游戏的入门信息。 
 
@@ -36,15 +36,15 @@ ms.locfileid: "8929140"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="about-the-uwp-user-interface-and-directx.md">应用对象和 DirectX</a></p></td>
+<td align="left"><p><a href="about-the-uwp-user-interface-and-directx.md">应用程序对象和 DirectX</a></p></td>
 <td align="left"><p>直接访问应用对象并与之互操作。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="prepare-your-dev-environment-for-windows-store-directx-game-development.md">适用于游戏的项目模板和工具</a></p></td>
+<td align="left"><p><a href="prepare-your-dev-environment-for-windows-store-directx-game-development.md">项目模板和游戏的工具</a></p></td>
 <td align="left"><p>为 UWP DirectX 游戏开发准备开发人员环境。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="launching-and-resuming-apps-directx-and-cpp.md">启动和恢复应用</a></p></td>
+<td align="left"><p><a href="launching-and-resuming-apps-directx-and-cpp.md">启动和恢复应用程序</a></p></td>
 <td align="left"><p>启动、挂起和恢复 UWP DirectX 游戏。</p></td>
 </tr>
 </tbody>

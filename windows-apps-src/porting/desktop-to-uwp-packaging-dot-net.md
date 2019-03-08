@@ -1,31 +1,31 @@
 ---
-Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop application.
+Description: 本指南介绍如何配置 Visual Studio 解决方案来编辑、 调试和打包桌面应用程序。
 Search.Product: eADQiWindows 10XVcnh
-title: 使用 Visual Studio 打包的桌面应用程序
+title: 通过使用 Visual Studio 打包桌面应用程序
 ms.date: 08/30/2017
 ms.topic: article
-keywords: windows 10，uwp
+keywords: windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: 04a16b5e824621b0e7f32c8cb012db326f591d48
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048254"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655962"
 ---
-# <a name="package-a-desktop-application-by-using-visual-studio"></a>使用 Visual Studio 打包的桌面应用程序
+# <a name="package-a-desktop-application-by-using-visual-studio"></a>通过使用 Visual Studio 打包桌面应用程序
 
-可以使用 Visual Studio 为你的桌面应用生成一个包。 然后，你可以将该包发布到 Microsoft 应用商店或旁加载其到一个或多个电脑上。
+可以使用 Visual Studio 为你的桌面应用生成一个包。 然后，你可以发布的 Microsoft Store 或旁加载到其打包到一个或多台电脑上。
 
 Visual Studio 的最新版本提供了新版本的打包项目，能够消除在打包应用时必需的所有手动步骤。 只需添加打包项目，参考桌面项目，再按 F5 进行应用调试。 无需手动调整。 相比于使用以往版本的 Visual Studio 的体验，新的简洁体验是一个巨大的改进。
 
 >[!IMPORTANT]
->在 Windows 10 版本 1607年中引入能够创建桌面应用程序 （也称为桌面桥） 的 Windows 应用包和它仅用于在项目中面向 Windows 10 周年更新 (10.0;内部版本 14393） 或更高版本的 Visual Studio。
+>在 Windows 10，版本 1607，引入的功能来创建 Windows 应用程序包为桌面应用程序 （也称为桌面桥） 且不能仅用在面向 Windows 10 周年更新 (10.0; 项目Build 14393) 或更高版本在 Visual Studio 中的。
 
 ## <a name="first-prepare-your-application"></a>首先，准备应用程序
 
-在开始为你的应用程序创建程序包之前查看本指南：[准备打包的桌面应用程序](desktop-to-uwp-prepare.md)。
+在开始创建你的应用程序的包之前，请查看本指南：[准备将桌面应用程序打包](desktop-to-uwp-prepare.md)。
 
 <a id="new-packaging-project"/>
 
@@ -58,13 +58,13 @@ Visual Studio 的最新版本提供了新版本的打包项目，能够消除在
 
    ![设置入口点](images/desktop-to-uwp/entry-point-set.png)
 
-6. 生成打包项目，以确保未显示任何错误。  如果你收到错误，打开**配置管理器**，并确保你的项目面向相同的平台。
+6. 生成打包项目，以确保未显示任何错误。  如果收到错误，打开**Configuration Manager** ，并确保你的项目面向同一平台。
 
    ![配置管理器](images/desktop-to-uwp/config-manager.png)
 
 7. 使用[创建应用包](../packaging/packaging-uwp-apps.md)向导生成 appxupload 文件。
 
-   你可以直接向应用商店上传该文件。
+   可以将该文件上载到应用商店直接。
 
 **视频**
 
@@ -83,16 +83,16 @@ Visual Studio 的最新版本提供了新版本的打包项目，能够消除在
 
 **运行、 调试或测试桌面应用程序**
 
-请参阅[运行、 调试和测试打包的桌面应用程序](desktop-to-uwp-debug.md)
+请参阅[运行、 调试和测试打包桌面应用程序](desktop-to-uwp-debug.md)
 
-**通过添加 UWP Api 来增强桌面应用程序**
+**通过添加 UWP Api 增强您的桌面应用程序**
 
 请参阅[增强用于 Windows 10 的桌面应用程序](desktop-to-uwp-enhance.md)
 
-**通过添加 UWP 项目和 Windows 运行时组件扩展桌面应用程序**
+**通过添加 UWP 项目和 Windows 运行时组件来扩展你的桌面应用程序**
 
 请参阅[使用新式 UWP 组件扩展桌面应用程序](desktop-to-uwp-extend.md)。
 
-**分发应用**
+**将应用分发**
 
-请参阅[发布已打包的桌面应用程序](desktop-to-uwp-distribute.md)
+请参阅[分发打包桌面应用程序](desktop-to-uwp-distribute.md)

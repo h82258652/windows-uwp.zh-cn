@@ -1,23 +1,23 @@
 ---
-Description: A progress control provides feedback to the user that a long-running operation is underway.
+Description: 进度控件将为用户提供关于正在处理运行时间较长的操作的反馈。
 title: 进度控件指南
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: a162d992390e8fc7d05d52303ec292fcf8e920a9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044391"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634422"
 ---
 # <a name="progress-controls"></a>进度控件
 
@@ -25,7 +25,7 @@ ms.locfileid: "9044391"
 
 进度控件将为用户提供关于正在处理运行时间较长的操作的反馈。 这意味着，在进度指示器可见，并且还可以根据所使用的指示器指示等待时长时，用户无法与该应用交互。
 
-> **重要 API**：[ProgressBar 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)，[IsIndeterminate 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)，[ProgressRing 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)，[IsActive 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
+> **重要的 Api**:[ProgressBar 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)， [IsIndeterminate 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)， [ProgressRing 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)， [IsActive 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
 
 ## <a name="types-of-progress"></a>进度类型
 
@@ -39,7 +39,7 @@ ms.locfileid: "9044391"
 
 ![ProgressBar 状态](images/ProgressBar_TwoStates.png)
 
-*自顶到底 - 不确定 ProgressBar 和确定 ProgressBar*
+*从上到下的不确定的进度条和确定的进度栏*
 
 ![ProgressRing 状态](images/ProgressRing_SingleState.png)
 
@@ -54,7 +54,7 @@ ms.locfileid: "9044391"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/ProgressBar">ProgressBar</a> 或 <a href="xamlcontrolsgallery:/item/ProgressRing">ProgressRing</a> 的实际应用。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -65,12 +65,12 @@ ms.locfileid: "9044391"
 
 在尝试显示正在执行的操作时，通常不清楚要使用的控件和所处的状态（确定和不确定）。 有时，任务明显不需要进度控件，但有时即使使用了进度控件，仍需要使用一行文本才能向用户解释正在进行的操作。
 
-### <a name="progressbar"></a>ProgressBar
--   **该控件是否具有已定义的持续时间，或者结束时间是否已预测？**
+### <a name="progressbar"></a>进度栏
+-   **控件是否具有定义的持续时间或可预测结束？**
 
     使用确定 ProgressBar，并且相应地更新百分比或值。
 
--   **用户是否可以在不监视操作进度的情况下继续操作？**
+-   **用户是否可以继续而无需监视操作的进度？**
 
     当 ProgressBar 处在使用状态下时，交互为非模式交互，这通常意味着用户没有因操作未完成而受到阻止，并且可以继续以其他方式使用应用，直到这个方面完成。
 
@@ -79,16 +79,16 @@ ms.locfileid: "9044391"
     如果操作属于这些关键字范围内，或者显示进度操作旁边与这些关键字匹配的文本，请考虑使用 ProgressBar：
 
     - *正在加载...*
-    - *正在检索*
-    - *正在处理...*
+    - *检索*
+    - *工作...*
 
 ### <a name="progressring"></a>ProgressRing
 
--   **该操作会使用户等候继续操作吗？**
+-   **该操作将导致用户等待若要继续？**
 
     如果操作需要全部（或大部分）应用交互等到它完成后才能进行，则最好选择 ProgressRing。 ProgressRing 控件用于模式交互，这意味着用户受到阻止，直到 ProgressRing 消失。
 
--   **应用是否需要等待用户完成某个任务？**
+-   **应用程序等待用户完成一项任务？**
 
     如果是，请使用 ProgressRing，因为它们为用户指示未知的等待时间。
 
@@ -101,15 +101,15 @@ ms.locfileid: "9044391"
     - *正在连接...*
 
 ### <a name="no-progress-indication-necessary"></a>不需要进度指示
--   **用户需要知道发生了什么情况吗？**
+-   **用户是否需要知道发生了某些内容？**
 
     例如，如果应用正在后台下载文件，但是用户没有启动下载，则用户不一定需要知道有关该下载的信息。
 
--   **操作是否属于不会阻止用户活动且用户基本不感兴趣（但略有趣）的后台活动？**
+-   **是该操作不会阻止用户活动、 属于用户的最小 （但仍有些） 感兴趣的后台活动？**
 
     如果应用执行的任务不必始终可见，但仍然需要显示状态时，请使用文本。
 
--   **用户是否仅仅关注操作完成与否？**
+-   **用户没有只关心关于完成的操作？**
 
     有时最好仅在操作完成后显示一条通知，或者提供操作刚才已完成的视觉效果，最后在后台进行处理。
 
@@ -117,23 +117,23 @@ ms.locfileid: "9044391"
 
 有时最好可以看到何时在何处使用这些不同进度控件的视觉表示形式：
 
-**ProgressBar - 确定**
+**进度栏-确定**
 
 ![ProgressBar 确定示例](images/PB_DeterminateExample.png)
 
 第一个示例是确定 ProgressBar。 如果已知操作持续时间，则最好使用确定 ProgressBar 显示何时安装、下载、设置等。
 
-**ProgressBar - 不确定**
+**ProgressBar - Indeterminate**
 
 ![ProgressBar 不确定示例](images/PB_IndeterminateExample.png)
 
 如果不知道操作持续时间，请使用不确定 ProgressBar。 在填充虚拟化列表和在不确定和确定 ProgressBar 之间创建流畅的视觉过渡时，也可以使用不确定 ProgressBar。
 
--   **操作是否在虚拟化集合中？**
+-   **是虚拟化集合中的操作？**
 
     如果是，则不要在显示列表项目时在这些项目上放置进度指示器。 相反，使用 ProgressBar，并将其放置在所加载的项目集合顶部，以显示正在提取项目。
 
-**ProgressRing - 不确定**
+**ProgressRing-不确定**
 
 ![ProgressRing 不确定示例](images/PR_IndeterminateExample.png)
 
@@ -143,7 +143,7 @@ ms.locfileid: "9044391"
 
 两个进度控件都非常简单，但控件的某些视觉功能看起来不能自定义。
 
-**调整 ProgressRing 大小**
+**大小调整 ProgressRing**
 
 ProgressRing 的大小可以调整到所需大小，但最小只能为 20x20epx。 为了调整 ProgressRing 大小，必须设置其高度和宽度。 如果仅设置高度或宽度，控件将假定最小大小 (20x20epx)；相反，如果高度和宽度设为两个不同大小，将假定两个大小中较小的一个。
 若要确保 ProgressRing 符合需要，请将高度和宽度设为相同值：
@@ -162,7 +162,7 @@ ProgressRing 的大小可以调整到所需大小，但最小只能为 20x20epx�
 progressRing.IsActive = true;
 ```
 
-**为进度控件着色**
+**着色进度控件**
 
 默认情况下，进度控件的主色设置为系统的主题色。 若要替代此画笔，只需更改任一控件的前景属性。
 
@@ -190,6 +190,6 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 - [ProgressBar 类](https://msdn.microsoft.com/library/windows/apps/br227529)
 - [ProgressRing 类](https://msdn.microsoft.com/library/windows/apps/br227538)
 
-**对于开发人员 (XAML)**
+**面向开发人员 (XAML)**
 - [添加进度控件](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
-- [如何为 Windows Phone 创建自定义不确定进度栏](https://go.microsoft.com/fwlink/p/?LinkID=392426)
+- [如何为 Windows Phone 创建自定义不确定的进度栏](https://go.microsoft.com/fwlink/p/?LinkID=392426)

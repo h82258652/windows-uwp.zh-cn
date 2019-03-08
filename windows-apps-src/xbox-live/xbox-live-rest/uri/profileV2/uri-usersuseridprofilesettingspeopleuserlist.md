@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 24b58c817156a7c372a8e6acfab895e6b7c51207
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935393"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636962"
 ---
 # <a name="usersuseridprofilesettingspeopleuserlistsettingssettings"></a>/users/{userId}/profile/settings/people/{userList}?settings={settings}
-访问用户或用户，人脉名字对象支持的配置文件。 这些 Uri 的域是`profile.xboxlive.com`。
+访问一个用户或用户的人员名字对象支持的配置文件。 这些 Uri 的域是`profile.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -24,10 +24,10 @@ ms.locfileid: "8935393"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| userId| 字符串| 可以是 xuid(12345)'、 'gt(myGamertag) 或 me。| 
-| userList| 字符串| 命名的人员，获取设置列表。 目前，用户是唯一受支持的列表。| 
+| userId| 字符串| 可以是 xuid(12345)、 gt(myGamertag) 或 me。| 
+| userList| 字符串| 若要获取设置的联系人的命名的列表。 目前，人是受支持的唯一列表。| 
   
 <a id="ID4E1B"></a>
 
@@ -36,7 +36,7 @@ ms.locfileid: "8935393"
 
 [GET (/users/{userId}/profile/settings/people/{userList})](uri-usersuseridprofilesettingspeopleuserlistget.md)
 
-&nbsp;&nbsp;获取用户的个人资料或支持用户，与人脉名字对象。
+&nbsp;&nbsp;获取用户的配置文件或支持用户与用户的名字对象。
  
 <a id="ID4EEC"></a>
 
@@ -48,8 +48,8 @@ ms.locfileid: "8935393"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[配置文件 URI](atoc-reference-profiles.md)
+[配置文件的 Uri](atoc-reference-profiles.md)
 
- [Profile (JSON)](../../json/json-profile.md)
+ [配置文件 (JSON)](../../json/json-profile.md)
 
    

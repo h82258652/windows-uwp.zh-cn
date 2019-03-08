@@ -1,5 +1,5 @@
 ---
-Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
+Description: 在提交加载项时，“属性”页面上的选项有助于确定在提供给客户时加载项的行为。
 title: 输入加载项属性
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.date: 10/31/2018
@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, 加载项, 属性, 订阅期, 产品生命周期, 内容类型, iap, 应用内购买, 应用内产品
 ms.localizationpriority: medium
 ms.openlocfilehash: 17025282aec18da01f14431996a3942ffdd90312
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925821"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629672"
 ---
 # <a name="enter-add-on-properties"></a>输入加载项属性
 
-在提交加载项时，“属性”**** 页面上的选项有助于确定在提供给客户时加载项的行为。
+在提交加载项时，“属性”页面上的选项有助于确定在提供给客户时加载项的行为。
 
 ## <a name="product-type"></a>产品类型
 
@@ -29,17 +29,17 @@ ms.locfileid: "8925821"
 
 ## <a name="product-lifetime"></a>产品生命周期
 
-如果选择的产品类型为**耐用品**，此处将显示**产品生命周期**。 耐用型加载项的默认**产品生命周期**为**永久**，这意味着加载项永不过期。 如果你愿意，你可以更改**产品生命周期**，以便加载项后一段时间 （可选择 1 至 365 天） 过期。
+如果选择的产品类型为**耐用品**，此处将显示**产品生命周期**。 持久型加载项的默认“产品生命周期”为“永久”，这意味着加载项永不过期。 如果您愿意，可以更改**产品生命周期内**，以便该外接程序将在 （与选项 1-365 天内） 设置的期限后过期。
 
 
 ## <a name="quantity"></a>数量
 
-如果选择的产品类型为**应用商店管理的易耗品**，此处将显示**数量**。 将需要输入一个 1 到 1000000 之间的数字。 此数量将在客户获取你的加载项时授予他们，并且应用商店将在应用报告客户使用该加载项时跟踪平衡。
+如果选择的产品类型为**应用商店管理的易耗品**，此处将显示**数量**。 你将需要输入 1 到 1000000 之间的数字。 此数量将在客户获取你的加载项时授予他们，并且应用商店将在应用报告客户使用该加载项时跟踪平衡。
 
 
 ## <a name="subscription-period"></a>订阅期限
 
-如果选择的产品类型为**订阅**，此处将显示**订阅期限**。 选择一个选项以指定向客户收取订阅费用的频率。 默认选项是**每月**，但你也可以选择**3 个月**、 **6 个月**，**每年**，还是**24 个月**。
+如果选择的产品类型为**订阅**，此处将显示**订阅期限**。 选择一个选项以指定向客户收取订阅费用的频率。 默认选项是**每月**，但也可以选择**3 个月**， **6 个月**，**每年一次**，或**24 个月**.
 
 > [!IMPORTANT]
 > 加载项发布之后，将无法更改**订阅期限**选择。
@@ -55,7 +55,7 @@ ms.locfileid: "8925821"
 
 ## <a name="content-type"></a>内容类型
 
-无论加载项的产品类型是什么，将需要指示所提供内容的类型。 对于大部分加载项，内容类型应为**电子软件下载**。 如果列表中的另一个选项可以更好地描述加载项（例如，如果要提供音乐下载或电子书），请改为选择该选项。
+无论加载项的产品类型是什么，将需要指示所提供内容的类型。 对于大部分加载项，内容类型应为“电子软件下载”。 如果列表中的另一个选项可以更好地描述加载项（例如，如果要提供音乐下载或电子书），请改为选择该选项。
 
 以下是加载项内容类型的可能选项：
 
@@ -84,7 +84,7 @@ ms.locfileid: "8925821"
 若要查询此字段，请使用 [Windows.Services.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.Services.Store)中的 [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) 属性。 （或者，如果使用的是 [Windows.ApplicationModel.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，则使用 [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords) 属性。）
 
 > [!NOTE]
-> 关键字不是可用于面向 Windows8 和 Windows8.1 的程序包。
+> 关键字不是可用于在包面向 Windows 8 和 Windows 8.1 中使用。
 
 <span id="custom-developer-data" />
 
@@ -97,7 +97,7 @@ ms.locfileid: "8925821"
 若要查询此字段，请使用 [Windows.Services.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.Services.Store)中的 [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) 属性。 （或者，如果使用的是 [Windows.ApplicationModel.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，则使用 [ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag) 属性。）
 
 > [!NOTE]
-> **自定义开发人员数据**字段不是可用于面向 Windows8 和 Windows8.1 的程序包的。
+> **自定义开发人员数据**字段不是可用于在包面向 Windows 8 和 Windows 8.1 中使用。
 
  
 

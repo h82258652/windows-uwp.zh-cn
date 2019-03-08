@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 示例, directx, 结构
 ms.localizationpriority: medium
 ms.openlocfilehash: 55b933db7f9b26de2caa3877bde445f96c08d561
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049874"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653722"
 ---
 # <a name="marble-maze-application-structure"></a>Marble Maze 应用程序结构
 
@@ -38,7 +38,7 @@ DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构�
 
 Marble Maze 中的一些组件只需很少或无需修改即可在任何游戏中重用。 对于你自己的游戏，可以调整这些文件所提供的结构和观点。 下表简短描述了重要的源代码文件。
 
-| 文件                                      | 说明                                                                                                                                                                          |
+| 文件                                      | 描述                                                                                                                                                                          |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | App.h、App.cpp               | 定义 **App** 和 **DirectXApplicationSource** 类，可封装应用的视图（窗口、线程和事件）。                                                     |
 | Audio.h、Audio.cpp                         | 定义 **Audio** 类，可管理音频资源。                                                                                                                          |
@@ -105,7 +105,7 @@ UWP 游戏初始化时，它通常会初始化运行时组件（例如 Direct3D�
 ## <a name="loading-game-assets-in-the-background"></a>在后台加载游戏资源
 
 
-若要确保游戏可在启动后的 5 秒内响应窗口事件，我们建议以异步方式或在后台加载游戏资源。 资源加载到后台后，游戏即可响应窗口事件。
+若要确保游戏可在启动后的 5 秒内响应窗口事件，我们建议以异步方式或在后台加载游戏资源。 资产加载到后台后，游戏即可响应窗口事件。
 
 > [!NOTE]
 > 也可在主菜单准备好后显示主菜单，允许剩余资源继续在后台加载。 例如，如果用户在所有资源加载完之前从菜单选择一个选项，你可显示一个进度栏来表明正在继续加载场景资源。
@@ -123,7 +123,7 @@ UWP 游戏初始化时，它通常会初始化运行时组件（例如 Direct3D�
     });
 ```
 
-**MarbleMazeMain** 类定义 *m\_deferredResourcesReady* 标志来表明异步加载已完成。 **MarbleMazeMain::LoadDeferredResources** 方法加载游戏资源，然后设置此标志。 应用的更新 (**MarbleMazeMain::Update**) 和呈现 (**MarbleMazeMain::Render**) 阶段会检查此标志。 设置此标志后，游戏会像平常一样继续运行。 如果未设置此标志，则游戏会显示加载屏幕。
+**MarbleMazeMain**类定义*m\_deferredResourcesReady*标志，用于指示异步加载已完成。 **MarbleMazeMain::LoadDeferredResources** 方法加载游戏资源，然后设置此标志。 应用的更新 (**MarbleMazeMain::Update**) 和呈现 (**MarbleMazeMain::Render**) 阶段会检查此标志。 设置此标志后，游戏会像平常一样继续运行。 如果未设置此标志，则游戏会显示加载屏幕。
 
 有关 UWP 应用的异步编程的详细信息，请参阅[使用 C++ 进行异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
@@ -195,7 +195,7 @@ enum class GameState
 };
 ```
 
-例如，**MainMenu** 状态定义主菜单显示和游戏未活动。 相反，**InGameActive** 状态定义游戏是活动的和菜单未显示。 **MarbleMazeMain** 类定义 **m\_gameState** 成员变量来保留活动的游戏状态。
+例如，**MainMenu** 状态定义主菜单显示和游戏未活动。 相反，**InGameActive** 状态定义游戏是活动的和菜单未显示。 **MarbleMazeMain**类定义**m\_gameState**成员变量来保存 active 游戏状态。
 
 **MarbleMazeMain::Update** 和 **MarbleMazeMain::Render** 方法使用 switch 语句执行当前状态的逻辑。 下面的示例展示了 **MarbleMazeMain::Update** 方法的 switch 语句的可能形式（为了演示结构，已删除了详细内容）。
 
@@ -423,9 +423,9 @@ void MarbleMazeMain::LoadState()
 
 ## <a name="related-topics"></a>相关主题
 
-* [向 Marble Maze 添加可视内容示例](adding-visual-content-to-the-marble-maze-sample.md)
-* [Marble Maze 示例基础](marble-maze-sample-fundamentals.md)
-* [开发 Marble Maze，一款使用 C++ 和 DirectX 的 UWP 游戏](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [向 Marble Maze 示例添加可视内容](adding-visual-content-to-the-marble-maze-sample.md)
+* [Marble Maze 示例基础知识](marble-maze-sample-fundamentals.md)
+* [Marble Maze、 c + + 和 DirectX 的 UWP 游戏开发](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

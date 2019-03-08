@@ -8,19 +8,19 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 408b4df30f53e27b04e2a1e654e9686d2b359637
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940251"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632672"
 ---
 # <a name="get-usersowneridpeopletargetid"></a>GET (/users/{ownerId}/people/{targetid})
-目标 ID 由用户从集合中获取调用方的人。 这些 Uri 的域是`social.xboxlive.com`。
+从调用方的用户集合中获取目标 ID 的人员。 这些 Uri 的域是`social.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4E5)
-  * [授权](#ID4EJB)
-  * [需的请求标头](#ID4ERC)
+  * [Authorization](#ID4EJB)
+  * [所需的请求标头](#ID4ERC)
   * [可选的请求标头](#ID4EQD)
   * [请求正文](#ID4EWE)
   * [HTTP 状态代码](#ID4EBF)
@@ -32,83 +32,83 @@ ms.locfileid: "8940251"
  
 ## <a name="remarks"></a>备注
  
-获取操作不会修改任何资源，因此如果执行一次或多次，这将产生相同的结果。
+GET 操作不会修改任何资源，因此如果执行一次或多次，这将产生相同的结果。
   
 <a id="ID4E5"></a>
 
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| ownerId| 字符串| 正在访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。| 
-| targetid| 字符串| 正在从所有者的人脉列表中，Xbox 用户 ID (XUID) 或玩家代号检索其数据的用户的标识符。 示例值： xuid(2603643534573581)、 gt(SomeGamertag)。| 
+| ownerId| 字符串| 其资源的访问的用户的标识符。 必须与匹配身份验证的用户。 可能的值为"me"、 xuid({xuid}) 或 gt({gamertag})。| 
+| targetid| 字符串| 正在从所有者的用户列表中，Xbox 用户 ID (XUID) 或玩家代号检索其数据的用户的标识符。 示例值： xuid(2603643534573581)、 gt(SomeGamertag)。| 
   
 <a id="ID4EJB"></a>
 
  
 ## <a name="authorization"></a>授权
  
-| 类型| 必需| 描述| 如果缺少的响应| 
+| 在任务栏的搜索框中键入| 必需| 描述| 如果缺少的响应| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| XUID| 是| 调用方具有用户的 Xbox 用户 ID (XUID)。| 401 未授权| 
+| XUID| 是| 调用方具有用户的 Xbox 用户 ID (XUID)。| 401 未经授权| 
   
 <a id="ID4ERC"></a>
 
  
-## <a name="required-request-headers"></a>需的请求标头
+## <a name="required-request-headers"></a>所需的请求标头
  
-| 标题| 描述| 
+| 标头| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 授权| 字符串。 授权 Xbox LIVE 的数据。 这通常是加密的 XSTS 令牌。 示例值： <b>XBL3.0 x =&lt;userhash >;&lt;令牌 ></b>。| 
+| 授权| 字符串。 用于 Xbox LIVE 的授权数据。 这通常是加密的 XSTS 令牌。 示例值：<b>XBL3.0 x=&lt;userhash>;&lt;token></b>.| 
   
 <a id="ID4EQD"></a>
 
  
 ## <a name="optional-request-headers"></a>可选的请求标头
  
-| 标题| 描述| 
+| 标头| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
-| 接受| 字符串。 内容类型的调用方接受在响应中。 所有响应都是<b>application/json</b>。| 
+| X-RequestedServiceVersion| 生成此请求应定向到 Xbox LIVE 的服务的名称/编号。 验证标头中的身份验证令牌等的声明的有效性后仅为将请求路由到该服务。默认值：1.| 
+| 接受| 字符串。 内容类型的调用方接受在响应中。 所有响应都都<b>应用程序 /json</b>。| 
   
 <a id="ID4EWE"></a>
 
  
 ## <a name="request-body"></a>请求正文
  
-此请求的正文中不发送任何对象。
+此请求的正文中不发送的任何对象。
   
 <a id="ID4EBF"></a>
 
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+服务将返回其中一个状态代码在本部分中使用此方法在此资源上发出的请求的响应中。 有关与 Xbox Live 服务一起使用的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 200| “确定”| 成功。| 
-| 400| 错误请求| 用户 Id 的格式不正确。| 
-| 403| 已禁止| 无法分析 XUID 声明与授权标头中。| 
-| 404| 找不到| 所有者的人脉列表中找不到目标用户。| 
+| 200| 确定| 成功。| 
+| 400| 无效的请求| 用户 Id 的格式不正确。| 
+| 403| 已禁止| 无法从授权标头分析 XUID 声明。| 
+| 404| 未找到| 所有者的用户列表中找不到目标用户。| 
   
 <a id="ID4EDH"></a>
 
  
 ## <a name="required-response-headers"></a>所需的响应标头
  
-| 标头| 类型| 描述| 
+| 标头| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Content-Length| 32 位无符号的整数| 长度，以字节为单位，响应正文。 示例值： 22。| 
-| Content-Type| 字符串| 响应正文的 MIME 类型。 这将始终为<b>application/json</b>。| 
+| 内容长度| 32 位无符号的整数| 长度 （字节），响应正文中。 示例值：22.| 
+| 内容类型| 字符串| 响应正文的 MIME 类型。 此属性始终为<b>应用程序 /json</b>。| 
   
 <a id="ID4EQAAC"></a>
 
  
 ## <a name="response-body"></a>响应正文
  
-如果在调用成功，该服务返回的目标人员。 请参阅[Person (JSON)](../../json/json-person.md)。
+如果调用成功，服务将返回目标用户。 请参阅[Person (JSON)](../../json/json-person.md)。
  
 <a id="ID4E3AAC"></a>
 

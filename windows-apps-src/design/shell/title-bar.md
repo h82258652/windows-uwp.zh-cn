@@ -8,11 +8,11 @@ keywords: windows 10, uwp, 标题栏
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 88c613456525648883735850fe831cb3b67f145c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923447"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648812"
 ---
 # <a name="title-bar-customization"></a>标题栏自定义
 
@@ -20,7 +20,7 @@ ms.locfileid: "8923447"
 
 当你的应用在桌面窗口中运行时，你可以自定义标题栏以匹配应用的个性。 利用标题栏自定义 API，你可以为标题栏元素指定颜色，或者将应用内容扩展到标题栏区域并完全控制该内容。
 
-> **重要 API**：[ApplicationView.TitleBar 属性](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)、[ApplicationViewTitleBar 类](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、[CoreApplicationViewTitleBar 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
+> **重要的 Api**:[ApplicationView.TitleBar 属性](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)， [ApplicationViewTitleBar 类](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)， [CoreApplicationViewTitleBar 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
 
 ## <a name="how-much-to-customize-the-title-bar"></a>标题栏的自定义程度
 
@@ -166,7 +166,7 @@ UIElement (`AppTitleBar`) 是应用的 XAML 的一部分。 你可以在不变�
 
 你可以处理 [LayoutMetricsChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.LayoutMetricsChanged) 事件，以响应标题按钮的大小变化。 例如，显示或隐藏系统后退按钮时，可能会发生这种情况。 处理此事件可验证并更新取决于标题栏大小的 UI 元素的定位。
 
-此示例介绍如何调整标题栏的布局，以考虑系统后退按钮的显示或隐藏等变化。 `AppTitleBar`、`LeftPaddingColumn` 和 `RightPaddingColumn` 在之前显示的 XAML 中已声明。
+此示例介绍如何调整标题栏的布局，以考虑系统后退按钮的显示或隐藏等变化。 `AppTitleBar``LeftPaddingColumn`，和`RightPaddingColumn`前面所示的 XAML 中声明。
 
 ```csharp
 private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -275,7 +275,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 >[!NOTE]
->仅在应用支持时才能进入_全屏_模式。 有关详细信息，请参阅 [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode)。 [_平板模式_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet)是受支持的硬件上的用户选项，以便用户可以选择在平板模式下运行任何应用。
+>仅在应用支持时才能进入_全屏_模式。 有关详细信息，请参阅 [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode)。 [_平板电脑模式_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet)是支持的硬件上的用户选项，因此用户可以选择在平板电脑模式下运行任何应用。
 
 ## <a name="full-customization-example"></a>完全自定义示例
 
@@ -381,5 +381,5 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 
 ## <a name="related-articles"></a>相关文章
 
-- [亚克力](../style/acrylic.md)
-- [颜色](../style/color.md)
+- [Acrylic](../style/acrylic.md)
+- [Color](../style/color.md)

@@ -8,17 +8,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: eb30561c91a085902dd9d79b6c4a2045dc709bfb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939235"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632552"
 ---
 # <a name="post-handlesqueryincluderelatedinfo"></a>POST (/handles/query?include=relatedInfo)
-创建会话句柄包含相关的会话信息的查询。
+创建包含相关的会话信息的会话句柄的查询。
 
 > [!IMPORTANT]
-> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
+> 此方法由 2015年之多人游戏，并且仅适用于该多玩家版本和更高版本。 它旨在用于具有模板协定 104/105 或更高版本，并需要标头元素的 X Xbl 协定版本：104/105 或更高版本上的每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4ECB)
@@ -32,9 +32,9 @@ ms.locfileid: "8939235"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法创建句柄数据查询使用"包含"查询字符串中指定的会话信息。 查询字符串值旨在作为扩展以支持将来的查询选项，支持以逗号分隔的列表，例如，"？ 包括 = relatedInfo，会话"。 可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetActivitiesForUsersAsync**包装的 POST 方法。
+此 HTTP/REST 方法"include"查询字符串中指定的会话信息一起创建句柄数据的查询。 查询字符串值设计为可扩展以支持未来的查询选项，支持的以逗号分隔列表，例如，"？ 包括 = relatedInfo，会话"。 POST 方法的两端可加**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetActivitiesForUsersAsync**。
 
-对于此方法，请求正文中的类型字段必须设置为"活动"。 响应正文中的项直接映射到**Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**的属性。
+此方法在请求正文中的类型字段必须设置为"活动"。 响应正文中的项直接映射到的属性**Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**。
 
 <a id="ID4ECB"></a>
 
@@ -46,27 +46,27 @@ ms.locfileid: "8939235"
 
 ## <a name="query-string-parameters"></a>查询字符串参数
 
-可以使用下表中的查询字符串参数修改查询。
+在下一个表中使用查询字符串参数，可以修改查询。
 
-| <b>参数</b>| <b>类型</b>| <b>描述</b>|
+| <b>参数</b>| <b>Type</b>| <b>描述</b>|
 | --- | --- | --- | --- |
-| 关键字| 字符串| 一个关键字，例如，"foo"，它们是否要检索必须在会话或模板中找到的。 |
-| xuid| 64 位无符号的整数| Xbox 用户 ID，例如，"123"，以在查询中包括的会话。 默认情况下，用户必须是它要包括在会话中处于活动状态。 |
-| 预订| 布尔型| 若要包括的会话用户设置为保留玩家，但并未加入成为活动玩家。 在查询你自己的会话，或查询特定用户的会话服务器到服务器时，仅使用此参数。 |
-| 处于非活动状态| 布尔型| 若要包括用户已接受但不是会主动玩游戏的会话，则为 true。 计数为非活动状态的用户已"准备好"但不是"活动"的会话。 |
-| 专用| 布尔型| 如果为 true，以包含专用会话。 在查询你自己的会话，或查询特定用户的会话服务器到服务器时，仅使用此参数。 |
-| 可见性| 字符串| 会话的可见性状态。 由<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionVisibility</b>定义可能的值。 如果此参数设置为"打开"，该查询应包括仅打开的会话。 如果它被设置为"private"，<i>专用</i>参数必须设置为 true。 |
-| version| 32 位有符号整数| 应包含最大会话版本。 例如，值为 2 指定主要会话版本的 2 的唯一会话或更少应包含。 版本号必须小于或等于请求的协定版本 mod 100。 |
-| 参加| 32 位有符号整数| 若要检索的会话的最大数量。 此数字必须介于 0 和 100 之间。 |
+| 关键字| 字符串| 一个关键字，例如，"foo"，若要检索必须在会话或模板中找到的。 |
+| xuid| 64 位无符号的整数| Xbox 用户 ID，例如，"123"，对于要包含在查询中的会话。 默认情况下，用户必须是它要包含的会话中处于活动状态。 |
+| 保留项| 布尔值| 为 true，包括会话为其用户设置为保留的播放机，但未联接变为活动状态的播放机。 当查询您自己的会话，或查询特定用户的会话的服务器时，才使用此参数。 |
+| 非活动状态| 布尔值| 若要包括的用户已接受但不是播放会话，则为 true。 在其中用户已"就绪"，但不是"活动"的会话计数为非活动状态。 |
+| 专用| 布尔值| 若要包含专用会话，则为 true。 当查询您自己的会话，或查询特定用户的会话的服务器时，才使用此参数。 |
+| visibility| 字符串| 会话的可见性状态。 可能的值定义由<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionVisibility</b>。 如果此参数设置为"打开"，该查询应包含仅打开的会话。 如果将其设置为"专用，"<i>专用</i>参数必须设置为 true。 |
+| version| 32 位有符号的整数| 应包含会话最大版本。 例如，值 2 指定 2 的主要会话版本具有该唯一会话或小于应将包括在内。 版本号必须小于或等于请求的协定版本 mod 100。 |
+| Take| 32 位有符号的整数| 若要检索的会话的数目上限。 此数字必须介于 0 和 100 之间。 |
 
 
-设置为 true 的*私有*或*预订*需要对会话的服务器级访问权限。 或者，这些设置要求调用方的 XUID 声明以匹配 URI 中的 XUID 筛选器。 否则，HTTP/403 状态代码返回，无论确实存在任何此类会话。
+设置*私有*或*预订*以 true 需要对该会话的服务器级访问权限。 或者，这些设置要求调用方的 XUID 声明以在 URI 中的 XUID 筛选器匹配。 否则，HTTP/403 状态代码返回，无论实际存在任何此类会话。
 
 <a id="ID4EAF"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
-该服务返回 HTTP 状态代码，因为它适用于 MPSD。  
+同样适用于 MPSD，服务将返回 HTTP 状态代码。  
 <a id="ID4EHF"></a>
 
 
@@ -77,7 +77,7 @@ ms.locfileid: "8939235"
 
 ### <a name="sample-request"></a>示例请求
 
-若要获取所有活动用户的"收藏夹"社交图片，发布正文如下所示：
+若要获取用户的"收藏夹"社交图的所有活动，POST 正文如下所示：
 
 
 ```cpp
@@ -100,7 +100,7 @@ ms.locfileid: "8939235"
 
 ## <a name="response-body"></a>响应正文
 
-结果将返回为一个句柄结构数组具有嵌入在每个句柄的唯一 ID。 **RelatedInfo**对象中返回的特定会话信息。 请注意，此信息不会对返回的常规的 POST 方法在此 URI。
+使用嵌入在每个句柄的唯一 ID，句柄结构的数组形式返回结果。 中返回特定的会话信息**relatedInfo**对象。 请注意此信息针对此 URI 不返回的正则 POST 方法。
 
 <a id="ID4EDG"></a>
 

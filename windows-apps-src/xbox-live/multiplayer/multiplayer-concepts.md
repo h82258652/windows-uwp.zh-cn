@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e2ba32b2eaff757cfa6401952567f6b0163f632
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933030"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623792"
 ---
 # <a name="xbox-live-multiplayer-concepts"></a>Xbox Live 多人游戏概念
 
@@ -28,7 +28,7 @@ ms.locfileid: "8933030"
 游戏可以选择使用多个会话，但通常实现多人游戏会使用两个会话：
 
 * 大厅会话 - 表示一组好友的会话，这些好友想在游戏的多个回合、等级和地图等中始终在一起。
-* 游戏会话 - 表示在游戏的特定会话实例（如回合、比赛、等级等）中游戏的玩家的会话。该会话可以包括已加入会话实例的多个大厅会话中的成员（通常通过匹配服务）。
+* 游戏会话-这是游戏的一个表示所播放，例如轮、 匹配、 级别等的特定会话实例中的用户的会话。此会话可以包含多个已加入会话实例一起，通常通过匹配服务的大厅会话中的成员。
 
 下面是示例场景：Sally 想和她的朋友 John 和 Lisa 进行多人游戏。 Sally 启动一个游戏，并邀请 John 和 Lisa 进入她的游戏。 加入后，Sally、John 和 Lisa 都在大厅会话中。 在此会话中，他们决定在线和其他玩家比赛。 该游戏创建游戏会话，并使用 Xbox Live 匹配服务和其他 Xbox Live 玩家一起填补剩余空位。
 
@@ -138,7 +138,7 @@ SmartMatch 是适用于匿名匹配的 Xbox Live 服务的名称。 该服务基
 
 ### <a name="hoppers"></a>漏斗
 
-漏斗是在匹配开始时收集并指定票证的逻辑位置。 仅可匹配同一漏斗内的票证。 作品可能具有多个漏斗，但每次只能对一个开始匹配。 例如，游戏可以创建一个漏斗，对于该漏斗来说，玩家技能是最重要的匹配项目。 它可以使用另一个漏斗，在该漏斗中，只有玩家购买了相同的可下载内容才会匹配。
+漏斗是在匹配开始时收集并指定票证的逻辑位置。 仅可匹配同一漏斗内的票证。 作品可能具有多个漏斗，但每次只能对一个开始匹配。 例如，游戏可以创建一个玩家技能是最重要的匹配项目的 Hopper。 它可以使用另一个漏斗，在该漏斗中，只有玩家购买了相同的可下载内容才会匹配。
 
 在服务配置中配置漏斗以进行匹配。 待定。
 

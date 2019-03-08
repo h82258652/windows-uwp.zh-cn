@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6def088b3e7f6410f12d1b2e411bcb547c90a09a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918558"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613282"
 ---
 # <a name="xphase-attribute"></a>x:Phase 属性
 
@@ -28,7 +28,7 @@ ms.locfileid: "8918558"
 ## <a name="xaml-values"></a>XAML 值
 
 
-| 术语 | 说明 |
+| 术语 | 描述 |
 |------|-------------|
 | PhaseValue | 一个用于指示将处理的元素所处的阶段的数字。 默认值为 0。 | 
 
@@ -79,5 +79,5 @@ ms.locfileid: "8918558"
 
 阶段仅影响 [{x:Bind}](x-bind-markup-extension.md) 绑定，而不会影响 [{Binding}](binding-markup-extension.md) 绑定。
 
-仅当项目模板使用阶段感知的控件进行呈现时，才应用阶段。 对于 windows 10，这意味着[**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)和[**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)。 阶段既不会应用于其他项目控件中所使用的数据模板，也不会应用于诸如 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) 或 [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 等部分中的方案，因为在这些用例中，将一次数据绑定所有 UI 元素。
+仅当项目模板使用阶段感知的控件进行呈现时，才应用阶段。 适用于 Windows 10，这意味着[ **ListView** ](https://msdn.microsoft.com/library/windows/apps/br242878)并[ **GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)。 阶段既不会应用于其他项目控件中所使用的数据模板，也不会应用于诸如 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) 或 [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 等部分中的方案，因为在这些用例中，将一次数据绑定所有 UI 元素。
 

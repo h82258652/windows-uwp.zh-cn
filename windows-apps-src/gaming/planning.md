@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 规划, 辅助功能, 云, 盈利, 软件包, 技术, 概念, 审批
 ms.localizationpriority: medium
 ms.openlocfilehash: 47f613ff814788df947ee39590af0e01b7e3622f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945999"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653772"
 ---
 # <a name="planning-for-uwp-games"></a>UWP 游戏规划
 
@@ -30,23 +30,23 @@ ms.locfileid: "8945999"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="game-development-platform-guide.md">游戏技术</a></p></td>
+<td align="left"><p><a href="game-development-platform-guide.md">游戏的技术</a></p></td>
 <td align="left"><p>帮助游戏开发的技术列表。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="accessibility-for-games.md">游戏的辅助功能</a></p></td>
+<td align="left"><p><a href="accessibility-for-games.md">游戏的的辅助功能</a></p></td>
 <td align="left"><p>了解如何使游戏更易于访问。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="cloud-for-games.md">游戏的云</a></p></td>
+<td align="left"><p><a href="cloud-for-games.md">云游戏</a></p></td>
 <td align="left"><p>为游戏使用云。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="monetization-for-games.md">通过游戏盈利</a></p></td>
+<td align="left"><p><a href="monetization-for-games.md">游戏盈利</a></p></td>
 <td align="left"><p>销售游戏的方法。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="package-your-windows-store-directx-game.md">打包游戏</a></p></td>
+<td align="left"><p><a href="package-your-windows-store-directx-game.md">打包您的游戏</a></p></td>
 <td align="left"><p>准备适用于 Microsoft Store 的游戏程序包。</p></td>
 </tr>
 <tr class="even">

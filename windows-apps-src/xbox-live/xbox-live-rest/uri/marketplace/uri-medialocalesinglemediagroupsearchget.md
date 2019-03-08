@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e9295459c3eb715f1120d4287e69c596654d65fa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947657"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621432"
 ---
 # <a name="get-mediamarketplaceidsinglemediagroupsearch"></a>GET (media/{marketplaceId}/singleMediaGroupSearch)
-允许搜索单个媒体组中的项。 这些 Uri 的域是`eds.xboxlive.com`。
+允许单个媒体组内的项的搜索。 这些 Uri 的域是`eds.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4EEB)
@@ -27,27 +27,27 @@ ms.locfileid: "8947657"
  
 ## <a name="remarks"></a>备注
  
-非连续而不使用延续令牌使用 skipItems 参数可以访问页面从此搜索返回的数据。 此 API 将接受查询精简将。 
+可以使用而不使用继续标记不按顺序 skipItems 参数访问页面的搜索返回的数据。 此 API 接受查询精简将。 
  
-**SandboxId**现在从 XToken 声明检索并强制执行。 如果不存在**SandboxId** ，则娱乐发现服务 (EDS) 将引发 400 错误请求错误。
+**SandboxId**现在从声明中 XToken 检索，并强制执行。 如果**SandboxId**不存在，则娱乐发现服务 (EDS) 将会引发一个 400 错误请求错误。
   
 <a id="ID4EEB"></a>
 
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。| 
+| marketplaceId| 字符串| 必需。 从获取值的字符串<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>。| 
   
 <a id="ID4EPB"></a>
 
  
 ## <a name="query-string-parameters"></a>查询字符串参数
  
-此 API 接受以下查询参数： combinedContentRating，desiredMediaItemTypes，字段、 maxItems、 preferredProvider、 q、 queryRefiners、 skipItems、 firstPartyOnly、 freeOnly、 hasTrailer、 latestOnly、 subscriptionLevel，以及 topRatedOnly.
+此 API 接受以下的查询参数： combinedContentRating，desiredMediaItemTypes，字段、 maxItems、 preferredProvider、 q、 queryRefiners、 skipItems、 firstPartyOnly、 freeOnly、 hasTrailer、 latestOnly、 subscriptionLevel 和 topRatedOnly.
  
-有关这些参数的详细信息，请参阅[EDS 参数](../../additional/edsparameters.md)。
+请参阅[EDS 参数](../../additional/edsparameters.md)有关这些参数的详细信息。
   
 <a id="ID4E5B"></a>
 
@@ -59,7 +59,7 @@ ms.locfileid: "8947657"
  
 ### <a name="sample-response"></a>示例响应
  
-下面的代码 JSON 是为了响应在调用`/media/en-us/singleMediaGroupSearch?q=vector&desiredMediaItemTypes=DGame&fields=all`。
+以下 JSON 代码是为了响应调用`/media/en-us/singleMediaGroupSearch?q=vector&desiredMediaItemTypes=DGame&fields=all`。
  
 
 ```cpp
@@ -179,13 +179,13 @@ ms.locfileid: "8947657"
  
 ##### <a name="further-information"></a>详细信息 
 
-[EDS 通用标头](../../additional/edscommonheaders.md)
+[EDS 常见标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询优化器](../../additional/edsqueryrefiners.md)
+ [EDS 查询精简将](../../additional/edsqueryrefiners.md)
 
- [市场 URI](atoc-reference-marketplace.md)
+ [Marketplace Uri](atoc-reference-marketplace.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)
 

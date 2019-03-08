@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ded70b32dfd291d17a43a1741b26710f681a397
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922073"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640892"
 ---
 # <a name="usersxuidxuidinbox"></a>/users/xuid({xuid})/inbox
-提供给用户的访问权限的 Xbox LIVE 服务的邮件收件箱。 这些 Uri 的域是`msg.xboxlive.com`。
+提供的 Xbox LIVE 服务的用户访问的消息传递收件箱。 这些 Uri 的域是`msg.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -24,10 +24,10 @@ ms.locfileid: "8922073"
  
 ## <a name="uri-parameters"></a>URI 参数 
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 发出请求的玩家。 | 
-| 邮件 Id | string [50] | 要检索或删除该消息的 ID。 | 
+| xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 正在发出请求的播放器。 | 
+| messageId | string[50] | 正在检索或删除的消息的 ID。 | 
   
 <a id="ID4EDC"></a>
 
@@ -36,15 +36,15 @@ ms.locfileid: "8922073"
 
 [GET (/users/xuid({xuid})/inbox)](uri-usersxuidinboxget.md)
 
-&nbsp;&nbsp;从服务检索指定的数量的用户消息摘要。 
+&nbsp;&nbsp;从服务中检索指定的数量的用户消息摘要。 
 
 [DELETE (/users/xuid({xuid})/inbox/{messageId})](uri-usersxuidinboxmessageiddelete.md)
 
-&nbsp;&nbsp;删除用户的收件箱中用户消息。
+&nbsp;&nbsp;删除用户的收件箱中的用户消息。
 
 [GET (/users/xuid({xuid})/inbox/{messageId})](uri-usersxuidinboxmessageidget.md)
 
-&nbsp;&nbsp;检索特定用户消息，将其标记为已在服务上读的详细的消息文本。 
+&nbsp;&nbsp;检索特定用户消息，将其标记为已读对服务的详细的消息文本。 
  
 <a id="ID4EVC"></a>
 
@@ -56,6 +56,6 @@ ms.locfileid: "8922073"
  
 ##### <a name="parent"></a>Parent 的子磁盘）  
 
-[用户 URI](atoc-reference-users.md)
+[用户 Uri](atoc-reference-users.md)
 
    

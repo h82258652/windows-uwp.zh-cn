@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 实时活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 7733aab9330c316ad5938cf9a2ef763e06f19b9a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926929"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613562"
 ---
 # <a name="real-time-activity-rta-best-practices"></a>实时活动 (RTA) 最佳实践
 这些最佳实践将有助于你在作品中充分利用 RTA。
@@ -30,12 +30,12 @@ RTA 使用 WebSocket 会话创建与客户端的持续性连接。 这就是该�
 
 作品应了解，当用户的身份验证标记到期时，其会话将由该服务终止。 作品需要能够检测到出现此类事件的时间，然后重新连接，并重新订阅之前订阅的所有统计数据。
 
-根据设计，将强制重新连接的客户端两个小时后关闭 RTA 连接。 这是因为连接的身份验证令牌缓存要保存在消息带宽。 最终令牌将会过期。 关闭连接并强制重新连接的客户端通过客户端将强制刷新身份验证令牌。
+根据设计，这将强制客户端重新连接两个小时后关闭 RTA 连接。 这是因为连接的身份验证令牌缓存以节省消息带宽。 最终该令牌将过期。 通过关闭连接并强制客户端重新连接客户端强制刷新身份验证令牌。
 
 由于用户的 ISP 遇到问题，或者当作品的处理被暂停时，客户端可能也会断开连接。 如果发生这种情况，将触发 WebSocket 事件，以通知客户端。 一般情况下，最好是能够处理与该服务的断开连接。
 
 > [!WARNING]
-> 如果客户端使用 RTA 为多人游戏会话，并且断开连接时 30 秒，[多人游戏会话 Directory(MPSD)](../multiplayer/multiplayer-appendix/multiplayer-session-directory.md)检测到 RTA 会话已关闭，并且开始用户退出会话。 它是对 RTA 客户端以检测时关闭连接并启动重新连接并重新订阅之前 MPSD 结束会话。
+> 如果在客户端的多玩家会话使用 RTA 和三十秒断开[多玩家会话 Directory(MPSD)](../multiplayer/multiplayer-appendix/multiplayer-session-directory.md)检测 RTA 会话已关闭，并启动了从会话中注销用户。 它是为 RTA 客户端连接已关闭时进行检测并启动重新连接，并重新订阅短 MPSD 结束会话之前。
 
 ## <a name="managing-subscriptions"></a>管理订阅
 
@@ -67,8 +67,8 @@ RTA 使用 WebSocket 会话创建与客户端的持续性连接。 这就是该�
 
 RTA 可对服务强制实施某些限制：
 
--   UserStats：1000
--   状态：2500
+-   UserStats:1000
+-   存在：2500
 
 如果客户端达到限制，将会在订阅/取消订阅调用中收到错误消息，或者断开连接。 无论属于哪种情况，都将为客户端提供有关达到该限制的详细信息，以及错误消息或断开连接消息。
 

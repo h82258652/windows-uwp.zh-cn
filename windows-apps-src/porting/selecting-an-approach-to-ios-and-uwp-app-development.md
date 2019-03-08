@@ -4,19 +4,19 @@ title: 选择一种方法进行 iOS 和 UWP 应用开发
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bf23926a1c17615db5ef838d21f9a46a8921c8c
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114663"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655782"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>选择一种方法进行 iOS 和 UWP 应用开发
 
 
-在开发跨平台应用时，应该作何选择？
+在开发跨平台应用时，应如何选择？
 
 ## <a name="whats-the-best-way-to-support-both-ios-and-windows"></a>同时支持 iOS 和 Windows 的最佳方式是什么？
 
@@ -46,7 +46,7 @@ Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这�
 
 使用现有的 iOS 应用，你的选项将受到稍多限制。 但是，一切都肯定不会丢失。
 
--   [面向 iOS 的 Windows 桥](https://go.microsoft.com/fwlink/p/?LinkId=619014)
+-   [适用于 iOS 的 Windows 桥](https://go.microsoft.com/fwlink/p/?LinkId=619014)
 
     也称为 Project Islandwood，它是一种可以直接将 Xcode 项目导入到 Visual Studio 的工具，现在仍处于开发中。 OBJECTIVE-C 代码可以在 Visual Studio 中生成并调试。 如果你的项目要为图形使用诸如 Cocos 此类的库，你可能会发现这一种快速移植应用的方法。
 
@@ -54,9 +54,9 @@ Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这�
 
     如果你的核心业务逻辑采用 C++（而不是 OBJECTIVE-C 或 Swift）编写，通常在你的项目中仅需细微的改动就可以使用此代码。 然后可以使用 XAML 定义 UI（与其他的 Windows 应用一样），并在必要时调用 C++ 代码。
 
--   [在 Windows 上使用 ANGLE 运行 OpenGL ES](https://go.microsoft.com/fwlink/p/?linkid=618387)
+-   [用于在 Windows 上运行 OpenGL ES 角度](https://go.microsoft.com/fwlink/p/?linkid=618387)
 
-    移植 OpenGL ES 2.0 项目的中间步骤是使用 ANGLE。 ANGLE 通过将 OpenGL ES API 调用平移到 DirectX 11 API 调用，允许你在 Windows 上运行 OpenGL ES 内容。
+    移植 OpenGL ES 2.0 项目的中间步骤是使用 ANGLE。 ANGLE 通过将 OpenGL ES API 调用转换为 DirectX 11 API 调用，允许你在 Windows 上运行 OpenGL ES 内容。
 
 ## <a name="other-cross-platform-authoring-tools"></a>其他跨平台创作工具
 
@@ -64,11 +64,11 @@ Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这�
 
     一个游戏创作环境。
 
--   [Construct 2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
+-   [构造 2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
 
     一个游戏创作环境。
 
--   [Titanium Studio](https://go.microsoft.com/fwlink/p/?LinkID=320482)
+-   [钛金 Studio](https://go.microsoft.com/fwlink/p/?LinkID=320482)
 
     一个跨平台创作环境。
 
@@ -80,7 +80,7 @@ Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这�
 
     一个基于 HTML 的游戏库。
 
--   [Marmalade](https://go.microsoft.com/fwlink/p/?LinkID=320487)
+-   [酱](https://go.microsoft.com/fwlink/p/?LinkID=320487)
 
     一个跨平台 SDK。
 

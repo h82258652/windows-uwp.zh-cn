@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 成就, 奖励
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fbbcb06a2aba927301cf982d09fdb55192ec84c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922628"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617692"
 ---
 # <a name="achievement-rewards"></a>成就奖励
 
@@ -36,7 +36,7 @@ Xbox Live 支持以下类型的奖励：
 
 当用户解锁玩家分数成就时，Xbox Live 会自动将用户的玩家分数提高配置的数量。
 
-在可将玩家分数作为成就奖励的游戏方面存在限制。 请参阅上策略文档https://developer.xboxlive.com/最新信息。
+在可将玩家分数作为成就奖励的游戏方面存在限制。 请参阅上的策略文档 https://developer.xboxlive.com/的最新信息。
 
 #### <a name="art"></a>艺术作品 ####
 你是否拥有一些设计人员在游戏早期初始阶段绘制的有趣的概念艺术作品？ 你是否拥有漂亮、分辨率高的图像，用于在玩家访问时装饰中心应用程序？ 也许你的应用支持多种皮肤？ 通过艺术奖励，你可以在游戏中获得华丽、美观的体验，除此以外，玩家必须赢取才能获得。
@@ -64,7 +64,7 @@ Xbox Live 支持以下类型的奖励：
 
 1. 在游戏启动或游戏从挂起状态恢复时查询成就服务，以确定哪些已解锁的成就具有应用内奖励并获得各自的奖励代码。 应始终完成此操作，以确保你能够在游戏未运行时或在其他主机上捕获已解锁的任何成就。  
 
-    若要查询，你可以在 Microsoft.Xbox.Services.Achievements Namespace 中使用 RESTful 成就 Uri 或 Api。
+    若要查询，可以使用 RESTful 成就 Uri 或 Api 中 Microsoft.Xbox.Services.Achievements Namespace。
 
 2. 注册即可在其中一个成就解锁时收到通知。 这是可选项，但对大部分游戏来说可能是必须的。 请注意，在发生解锁时，仅当游戏实际运行时才会收到此通知。 这是上一步骤之所以如此重要的另一个原因。
 

@@ -8,18 +8,18 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9722d06af64c5fd24f53485a1bcfe765f89b08cf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920938"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627312"
 ---
 # <a name="serviceconfigsscidhoppershoppernameticketsticketid"></a>/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}
 
-支持的匹配票证的删除操作。
+支持的匹配项票证的删除操作。
 
 > [!IMPORTANT]
-> 此 URI 旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
+> 此 URI 适用于使用具有协定 103 或更高版本，并需要标头元素的 X Xbl 协定版本：103 或更高版本上的每个请求。
 
 <a id="ID4ER"></a>
 
@@ -30,17 +30,17 @@ momatch.xboxlive.com
 
 
 ## <a name="remarks"></a>备注
-此 URI 支持值 xuid、 gt，和我的目标用户的配置中配置的所有者标识符。  
+此 URI 支持值 xuid、 gt、 和我的目标用户的配置中的所有者标识符。  
 <a id="ID4E2"></a>
 
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- | --- |
-| scid| GUID| 服务配置标识符 (SCID) 的会话。|
-| name| 字符串| 漏斗的名称。|
-| 票证 Id| GUID| 票证 id。|
+| scid| GUID| 服务配置 (SCID) 会话标识符。|
+| name| 字符串| Hopper 的名称。|
+| ticketId| GUID| 票证 id。|
 
 <a id="ID4EJC"></a>
 
@@ -49,7 +49,7 @@ momatch.xboxlive.com
 
 [DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})](uri-scidhoppernameticketiddelete.md)
 
-&nbsp;&nbsp;删除匹配票证。
+&nbsp;&nbsp;移除匹配票证。
 
 <a id="ID4ETC"></a>
 
@@ -61,4 +61,4 @@ momatch.xboxlive.com
 
 ##### <a name="parent"></a>Parent 的子磁盘）  
 
-[匹配 URI](atoc-reference-matchtickets.md)
+[匹配 Uri](atoc-reference-matchtickets.md)

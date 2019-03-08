@@ -8,30 +8,30 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 5986079e1cae3338d8cc24a9e85f6941cf4fbec4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933864"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651242"
 ---
 # <a name="multiplayersessionreference-json"></a>MultiplayerSessionReference (JSON)
-表示**MultiplayerSessionReference**的 JSON 对象。 
+一个 JSON 对象，表示**MultiplayerSessionReference**。 
 <a id="ID4EQ"></a>
 
   
  
 MultiplayerSessionReference JSON 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。| 
-| templateName | 字符串 | 会话模板的当前实例的名称。 第 2 部分会话标识符。 | 
-| name | 字符串 | 会话名称。 会话标识符的第 3 部分。 | 
+| scid| GUID| 服务配置标识符 (SCID)。 会话标识符的第 1 部分中。| 
+| templateName | 字符串 | 会话模板的当前实例的名称。 会话标识符的第 2 部分中。 | 
+| name | 字符串 | 会话的名称。 会话标识符的第 3 部分。 | 
   
 <a id="ID4EZ"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例 
+## <a name="sample-json-syntax"></a>示例 JSON 语法 
  
 
 ```json
@@ -55,7 +55,7 @@ MultiplayerSessionReference JSON 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EVB"></a>

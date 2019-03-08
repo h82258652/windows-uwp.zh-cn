@@ -1,52 +1,52 @@
 ---
-title: Xbox Arena 操作门户
-description: 了解如何使用操作门户管理 Xbox 锦标赛。
+title: Xbox 竞技场操作门户
+description: 了解如何使用操作门户来管理你的 Xbox 比赛。
 ms.date: 10/12/2017
 ms.topic: article
-keywords: xbox live，xbox，游戏，uwp，windows 10，xbox one，arena、 锦标赛、 操作，门户
+keywords: xbox live、 xbox、 游戏、 uwp、 windows 10、 一个 xbox、 竞技场、 竞赛、 操作、 门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 0203625c9ea14ec185b8b67ff655719e99f067cf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927676"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643732"
 ---
-# <a name="xbox-arena-operations-portal"></a>Xbox Arena 操作门户
+# <a name="xbox-arena-operations-portal"></a>Xbox 竞技场操作门户
 
 
 
-Xbox Arena 操作门户允许你创建和管理的游戏与 Xbox Arena 集成的官方锦标赛。 官方锦标赛由游戏运行，并允许开发人员更大程度的可自定义性和可管理性比创建锦标赛的用户。
+Xbox 竞技场操作门户，可创建和管理的标题的 Xbox 竞技场与集成的正式比赛。 官方比赛运行标题和允许开发人员创建的联赛的用户以外的更高的可定制性和可管理性。
 
-此门户为你提供了机会生成并运行定制为你的游戏的锦标赛体验。
+此门户使你能够生成并运行适合你的标题的联赛体验。
 
 > [!IMPORTANT]  
-> Xbox Arena 操作门户是仅适用于托管的合作伙伴和ID@Xbox成员。 不可用于 Xbox Live 创意者计划。
+> Xbox 竞技场操作门户仅为托管合作伙伴提供和ID@Xbox成员。 不可用于 Xbox Live 创意者计划。
 
 ## <a name="features"></a>功能
 
-Xbox Arena 门户提供以外的玩家创建锦标赛特征。 下表列出概述了通过创建锦标赛的玩家提供的额外功能：
+Xbox 竞技场门户提供了除播放机创建的联赛之外的功能。 以下列表概述了对创建的联赛的播放机提供的其他功能：
 
-#### <a name="tournament-creation-features"></a>锦标赛创建功能：
+#### <a name="tournament-creation-features"></a>联赛创建功能：
 
-* 创建仅邀请锦标赛
-* 指定哪些国家和地区都可以参与在锦标赛
-* 选择自定义发布通过合作伙伴中心的艺术资源
-* 设置 prizing 标志 （向玩家指示锦标赛奖励奖项赞誉的图标） 和奖锦标赛使用条款
-* 创建自定义的游戏模式解释的标题或设置匹配的相关联的游戏服务
-* 在开发人员沙盒中创建的锦标赛
+* 创建仅限邀请的比赛
+* 指定哪些国家和地区可以参与竞赛
+* 选择自定义通过合作伙伴中心发布的艺术资产
+* 设置 prizing 标志 （指示到播放机联赛奖励的获胜奖品图标） 和奖品趣事使用条款
+* 创建自定义游戏模式解释按标题或关联的标题设置匹配的服务
+* 在开发人员沙盒中创建的联赛
 
-#### <a name="tournament-management-features"></a>锦标赛管理功能：
+#### <a name="tournament-management-features"></a>联赛管理功能：
 
-* 暂停和播放活动的锦标赛
-* 替代结果
-* 视图的锦标赛的玩家和放置的整个名单
+* 暂停和播放 active 比赛
+* 重写结果
+* 视图的联赛播放机和放置整个名册
 
-## <a name="get-setup-with-the-xbox-arena-operations-portal"></a>获取与 Xbox Arena 操作门户设置
+## <a name="get-setup-with-the-xbox-arena-operations-portal"></a>获取与 Xbox 竞技场操作门户的安装程序
 
-为了获取安装程序，你需要联系你的 Microsoft 帐户管理员的有关如何注册为在门户上运算符的更多详细信息。 它们可以提供你的团队的成员可用于使用其 Microsoft 帐户登录的链接。
+若要获取安装程序，你将需要联系 Microsoft 客户经理的有关如何作为操作员在门户上注册的更多详细信息。 他们可以提供你的团队成员可用于使用其 Microsoft 帐户登录的链接。
 
-登录后，你的 Microsoft 帐户管理器将完成的步骤，以获取创建你的名义运营商。 从该处，你将能够从你的团队添加其他用户，一旦他们完成初始登录过程。 你还可以为你的团队管理角色部分通过门户的每个成员设置个性化的访问权限。
+登录后，你的 Microsoft 客户经理将经历所述步骤替你创建的运算符。 在这里，你将能够从你的团队添加其他用户，他们会经历初始登录过程后。 此外可以为你的团队通过角色管理部分在门户的每个成员设置单独的访问。
 
 > [!IMPORTANT]  
-> 你无法创建跨多个用户共享的帐户、 每个用户必须使用其自己的单个凭据登录。
+> 不能跨多个用户创建共享的帐户，每个用户必须使用其自己单独的凭据登录。

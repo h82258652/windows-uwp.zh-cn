@@ -7,28 +7,28 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xdk
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a98af637c8c60449cd2005c4fc6f83f9b0719cf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938453"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660992"
 ---
 # <a name="compile-the-xbox-developer-kit-xdk-xbox-live-api-source"></a>编译 Xbox 开发人员工具包 (XDK) Xbox Live API 源
 
 Xbox 开发人员工具包 (XDK) 包括用于生成 Microsoft.Xbox.Services.dll (XSAPI) 的源。 开发人员可以遵循以下说明更新其项目，以使用 DLL 的本地生成。
 
 如果出现以下情况，你可能要自行生成 XSAPI：
-1. 希望调试错误以了解错误代码的来源。
+1. 如果要调试错误来了解错误代码的来源。
 1. 如果我们在分发 QFE 之前，为你提供了可修复问题的源代码修补程序。
 
 ## <a name="to-compile-the-xdk-c-xsapi-project-for-yourself"></a>要自行编译 XDK C++ XSAPI 项目
 
 <ol>
-  <li> 获取 Microsoft.Xbox.Services 源。 若要执行此操作，所有文件都提取"%XboxOneExtensionSDKLatest%\ExtensionSDKs\Xbox Services API\8.0\SourceDist\Xbox.Services.zip"到"C:\Program Files (x86)"，或者你外的可写入文件夹可以克隆源<a href ="https://github.com/Microsoft/xbox-live-api">https://github.com/Microsoft/xbox-live-api</a></li>
+  <li> 获取 Microsoft.Xbox.Services 源。 若要执行此操作，提取中的所有文件"%XboxOneExtensionSDKLatest%\ExtensionSDKs\Xbox 服务 API\8.0\SourceDist\Xbox.Services.zip"到"C:\Program Files (x86)"，或您的外部的可写文件夹可以克隆中的源 <a href ="https://github.com/Microsoft/xbox-live-api">https://github.com/Microsoft/xbox-live-api</a></li>
   <li> 如果你的项目引用预生成 DLL，则需要删除此引用</li>
     <ul>
-      <li> 对于 Visual Studio 2012：在 Visual Studio 中选择“项目 ->引用...”。 如果已将 Xbox 服务 API 列为引用，请选择它，然后单击“删除引用”。 单击“确定”并保存项目文件。</li>
-      <li> 对于 Visual Studio 2015 或 2017：在 Visual Studio 中 选择“项目”->“添加引用…”。 如果 Xbox 服务 API 为选中状态，请取消选中。 单击“确定”并保存项目文件。</li>
+      <li> 对于 Visual Studio 2012：选择"项目-> 引用..."在 Visual Studio。 如果已将 Xbox 服务 API 列为引用，请选择它，然后单击“删除引用”。 单击“确定”并保存项目文件。</li>
+      <li> 对于 Visual Studio 2015 或 2017年:选择"项目-> 添加引用..." 选择“项目”->“引用…”。 如果 Xbox 服务 API 为选中状态，请取消选中。 单击“确定”并保存项目文件。</li>
     </ul>
   <li> 如果正在使用 XDK 生成，请在 Visual Studio 中依次选择“文件”->“添加”->“现有项目…”， 将以下两个项目添加到应用程序的解决方案中。 vcxproj 文件将位于将源提取到的文件夹中。</li>
 对于 Visual Studio 2017： <ul>
@@ -50,20 +50,20 @@ Xbox 开发人员工具包 (XDK) 包括用于生成 Microsoft.Xbox.Services.dll 
 ## <a name="to-compile-the-xdk-winrt-xsapi-project-for-yourself"></a>要自行编译 XDK WinRT XSAPI 项目
 
 <ol>
-  <li> 获取 Microsoft.Xbox.Services 源。 若要执行此操作，所有文件都提取"%XboxOneExtensionSDKLatest%\ExtensionSDKs\Xbox Services API\8.0\SourceDist\Xbox.Services.zip"到"C:\Program Files (x86)"，或者你外的可写入文件夹可以克隆源<a href ="https://github.com/Microsoft/xbox-live-api">https://github.com/Microsoft/xbox-live-api</a></li>
+  <li> 获取 Microsoft.Xbox.Services 源。 若要执行此操作，则提取中的所有文件"%XboxOneExtensionSDKLatest%\ExtensionSDKs\Xbox 服务 API\8.0\SourceDist\Xbox.Services.zip"到"C:\Program Files (x86)"，或您的外部的可写文件夹可以克隆中的源 <a href ="https://github.com/Microsoft/xbox-live-api">https://github.com/Microsoft/xbox-live-api</a></li>
   <li> 如果你的项目引用预生成 DLL，则需要删除此引用</li>
     <ul>
-      <li> 对于 Visual Studio 2012：在 Visual Studio 中选择“项目 ->引用...”。 如果已将 Xbox 服务 API 列为引用，请选择它，然后单击“删除引用”。 单击“确定”并保存项目文件。</li>
-      <li> 对于 Visual Studio 2015 或 2017：在 Visual Studio 中 选择“项目”->“添加引用…”。 如果 Xbox 服务 API 为选中状态，请取消选中。 单击“确定”并保存项目文件。</li>
+      <li> 对于 Visual Studio 2012：选择"项目-> 引用..."在 Visual Studio。 如果已将 Xbox 服务 API 列为引用，请选择它，然后单击“删除引用”。 单击“确定”并保存项目文件。</li>
+      <li> 对于 Visual Studio 2015 或 2017年:选择"项目-> 添加引用..." 选择“项目”->“引用…”。 如果 Xbox 服务 API 为选中状态，请取消选中。 单击“确定”并保存项目文件。</li>
     </ul>
-  <li> 如果正在使用 XDK 生成，请在 Visual Studio 中依次选择“文件”->“添加”->“现有项目…”， 将以下两个项目添加到应用程序的解决方案中。 Vcxproj 文件将位于将源提取到的文件夹中。  对于 Visual Studio 2015，项目会自动将升级为 VS2015 格式。</li>
+  <li> 如果正在使用 XDK 生成，请在 Visual Studio 中依次选择“文件”->“添加”->“现有项目…”， 将以下两个项目添加到应用程序的解决方案中。 vcxproj 文件将位于将源提取到的文件夹中。  对于 Visual Studio 2015，项目会自动将升级为 VS2015 格式。</li>
     <ul>
       <li>\Build\Microsoft.Xbox.Services.110.XDK.WinRT\Microsoft.Xbox.Services.110.XDK.WinRT.vcxproj</li> <li>\External\cpprestsdk\Release\src\build\vs11.xbox\casablanca110.Xbox.vcxproj</li>
     </ul>
   <li> 在 Visual Studio 中添加引用：</li>
     <ul>
-      <li> 对于 Visual Studio 2012：在 Visual Studio 中选择“项目 ->引用...”，然后选择“添加引用”。 在“解决方案”->“项目”下，将上述两个项目的条目选中，然后单击“确定”。</li>
-      <li> 对于 Visual Studio 2015 或 2017：在 Visual Studio 中 选择“项目”->“添加引用…”。 在“解决方案”下，将上述两个项目的条目选中，然后单击“确定”。</li>
+      <li> 对于 Visual Studio 2012：选择"项目-> 引用..."然后，在 Visual Studio 中选择"添加引用"。 在“解决方案”->“项目”下，将上述两个项目的条目选中，然后单击“确定”。</li>
+      <li> 对于 Visual Studio 2015 或 2017年:选择"项目-> 添加引用..." 选择“项目”->“引用…”。 在“解决方案”下，将上述两个项目的条目选中，然后单击“确定”。</li>
     </ul>
   <li> 确保两个应用程序项目和 Xbox 服务项目的“输出文件夹”相同。 可在 Visual Studio 项目的“属性”->“配置属性”->“常规”->“输出目录”中查找此设置。</li>
   <li> 重新生成 Visual Studio 解决方案</li>

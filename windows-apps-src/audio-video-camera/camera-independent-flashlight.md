@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fd69900995a51af806c99b25aae43149d6e30a7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919848"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622602"
 ---
 # <a name="camera-independent-flashlight"></a>独立于相机的手电筒
 
 
 
-本文介绍如何访问和使用设备灯（如果存在）。 灯功能的管理独立于设备的相机和相机闪光灯功能。 除了获取对灯的引用和调整其设置以外，本文还介绍了在不使用灯资源时如何正确地释放灯资源，以及在灯正由另一个应用使用时，如何检测灯的可用性更改。
+本文介绍如何访问和使用设备灯（如果存在）。 灯功能通过设备的相机和相机闪光灯功能单独管理。 除了获取对灯的引用和调整其设置以外，本文还介绍了在不使用灯资源时如何正确地释放灯资源，以及在灯正由另一个应用使用时，如何检测灯的可用性更改。
 
 ## <a name="get-the-devices-default-lamp"></a>获取设备的默认灯
 

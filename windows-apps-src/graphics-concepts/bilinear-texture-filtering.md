@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 437650883b4782ca02c0daf24cc8ebed01d954f6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932926"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651252"
 ---
 # <a name="bilinear-texture-filtering"></a>双线性纹理筛选
 
@@ -27,7 +27,7 @@ ms.locfileid: "8932926"
 
 ![使用固态色块的 4x4 纹理的图示](images/bilinear-fig7a.png)
 
-纹理通常看似由固态色块构成，但实际上应将纹理视为等同于光栅显像才更为准确：每个纹素均定义为位于网格单元的正中心，如下图所示。
+纹理通常表示像它们组成实心块的颜色，但实际上可以提供更正确的纹理认为您应该将光栅显示相同的方式：下图中所示，每个纹素定义的网格单元格，确切的中心。
 
 ![在网格单元的中心处定义纹素的 4x4 纹理的图示](images/bilinear-fig7b.png)
 

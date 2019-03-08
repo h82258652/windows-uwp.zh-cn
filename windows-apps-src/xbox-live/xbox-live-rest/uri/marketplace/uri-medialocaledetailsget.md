@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c5be8f144f9c39076ba880223af08a30404c759
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943973"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622712"
 ---
 # <a name="get-mediamarketplaceiddetails"></a>GET (/media/{marketplaceId}/details)
-详细信息和元数据，产品/服务返回有关的一个或多个项目。
+返回提议详细信息和元数据有关的一个或多个项。
 这些 Uri 的域是`eds.xboxlive.com`。
 
   * [备注](#ID4EV)
@@ -28,29 +28,29 @@ ms.locfileid: "8943973"
 
 ## <a name="remarks"></a>备注
 
-**SandboxId**现在从 XToken 声明检索并强制执行。 如果不存在**SandboxId** ，则娱乐发现服务 (EDS) 将引发 400 错误请求错误。
+**SandboxId**现在从声明中 XToken 检索，并强制执行。 如果**SandboxId**不存在，则娱乐发现服务 (EDS) 将会引发一个 400 错误请求错误。
 
 <a id="ID4ECB"></a>
 
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- |
-| marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。|
+| marketplaceId| 字符串| 必需。 从获取值的字符串<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>。|
 
 <a id="ID4ERB"></a>
 
 
 ## <a name="query-string-parameters"></a>查询字符串参数
 
-| 参数| 类型| 描述|
+| 参数| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- | --- | --- | --- |
-| id| string]| 必需。 所有将为其返回的详细信息 （最多 10) 的 Id。 注意，任何 ID 包含非法放置在 URL 中的字符 （ProviderContentId 类型 Id 通常是完整的 Url 本身，从而包含非法字符）<b>必须</b>使用 URL 编码，以便正确发送到娱乐发现服务 (EDS)。 另请注意，这仅可单个值的 ID 类型是否 ProviderContentId。 如果需要多个 ProviderContentId，则必须对 EDS 进行多次调用。|
-| IdType| 字符串| 可选。 Id 它在传递给 id 参数的类型。 有效值为： <ul><li><b>规范</b>（必应/市场） </li><li><b>ZuneCatalog</b></li><li><b>ZuneMediaInstance</b>（例如 132kb WMA 音乐文件） </li><li><b>AMG</b></li><li><b>MediaNet</b>(前 MusiWave) </li><li><b>XboxHexTitle</b>（在控制台上播放的应用） </li></ul>|
-| DesiredMediaItemTypes| 字符串| <b>所需如果 MediaGroup 不会传递。 两者不应将传递。</b> 媒体项从的 Id。 所提供的所有 Id 必须具有相同的类型。 如果需要多个类型，传入所有可能类型中上述 IdType 所述。 此值默认为"未知"如果它不存在，这可能不会为所有 ID 类型 valied。 |
-| MediaGroup| 字符串| <b>所需如果 DesiredMediaItemTypes 不会传递。 两者不应将传递。</b>|
-| ConditionSets| 字符串| <b>可选</b>。 客户端可以请求<b>可用性</b>修剪基于条件集，它们是通过此查询字符串指定的键 / 值对。 它们用于匹配条件集的可用性。 可以用于匹配的条件集的键列表如下所示。 <ul><li><b>平台</b>： 其中产品为生成，并且可以播放。</li><li><b>订阅</b>： 受支持的订阅 （金牌或银牌） 此可用性的列表。</li><li><b>EntitlementIds</b>： 跟踪后用户购买游戏。</li></ul> | 
+| id| string[]| 必需。 所有要返回其详细信息 （最多 10 个） 的 Id。 请注意，任何 ID 包含非法放在 URL 中的字符 （Id 通常所用的 ProviderContentId 类型的完整 Url 本身，从而包含非法字符）<b>必须</b>使用 URL 编码，以便正确地发送到娱乐发现服务 (EDS)。 另请注意，这只能是单个值 ID 类型是否为 ProviderContentId。 如果需要多个 ProviderContentId，则必须对 EDS 进行多个调用。|
+| IdType| 字符串| 可选。 Id 中传递给 'id' 参数的类型。 有效值包括： <ul><li><b>规范</b>（必应/应用商店） </li><li><b>ZuneCatalog</b></li><li><b>ZuneMediaInstance</b> （例如 132 kb WMA 音乐文件） </li><li><b>AMG</b></li><li><b>MediaNet</b> (pre MusiWave) </li><li><b>XboxHexTitle</b> （应用程序在控制台上播放） </li></ul>|
+| DesiredMediaItemTypes| 字符串| <b>如果不传递 MediaGroup 必需。同时应不能传递。</b> 媒体项类型的 Id。 所有提供的 Id 必须共享相同的类型。 如果需要多个类型，则传入所有可能类型 IdType 更高版本中所述。 此值默认为"未知"如果不存在，这可能不会 valied 所有 ID 类型。 |
+| MediaGroup| 字符串| <b>如果不传递 DesiredMediaItemTypes 必需。同时应不能传递。</b>|
+| ConditionSets| 字符串| <b>可选</b>。 客户端可能会请求<b>可用性</b>修剪基于条件集，它们已通过此查询字符串指定的键 / 值对。 它们用于匹配的可用性的条件集。 可用于匹配的条件集的密钥的列表是按如下所示。 <ul><li><b>平台</b>:其中产品构建，并可以播放。</li><li><b>订阅</b>:此可用性 （金级或银） 的支持订阅的列表。</li><li><b>EntitlementIds</b>:跟踪用户购买该游戏。</li></ul> | 
 
 <a id="ID4EYF"></a>
 
@@ -62,7 +62,7 @@ ms.locfileid: "8943973"
 
 ### <a name="sample-response"></a>示例响应
 
-下面的代码 JSON 是为了响应在调用`/media/en-us/details?ids=6c5402e4-3cd5-4b29-a9c4-bec7d2c7514a&mediaGroup=GameType`。
+以下 JSON 代码是为了响应调用`/media/en-us/details?ids=6c5402e4-3cd5-4b29-a9c4-bec7d2c7514a&mediaGroup=GameType`。
 
 
 ```cpp
@@ -195,12 +195,12 @@ ms.locfileid: "8943973"
 
 ##### <a name="further-information"></a>详细信息
 
-[EDS 通用标头](../../additional/edscommonheaders.md)
+[EDS 常见标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询优化器](../../additional/edsqueryrefiners.md)
+ [EDS 查询精简将](../../additional/edsqueryrefiners.md)
 
- [市场 URI](atoc-reference-marketplace.md)
+ [Marketplace Uri](atoc-reference-marketplace.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)

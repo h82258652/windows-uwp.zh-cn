@@ -8,11 +8,11 @@ design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 49d891888e26b6ce4c9f94e92605eaf7d619b6f3
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116149"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654252"
 ---
 # <a name="color"></a>颜色
 
@@ -82,7 +82,7 @@ ms.locfileid: "9116149"
 
 如果不为应用请求主题，请确保用浅色和深色主题测试应用，保证在应用在任何情况下均可清晰显示。
 
-**注意**：Visual Studio 中的 RequestedTheme 默认为浅色，因此需要更改 RequestedTheme 来测试两种主题。
+**注意**：在 Visual Studio 中，默认 RequestedTheme 是光，因此将需要更改 RequestedTheme 测试同时。
 
 ## <a name="theme-brushes"></a>主题画笔
 
@@ -186,8 +186,7 @@ Windows Shell 中的主题色算法可生成主题色的浅色和深色底纹。
 - `SystemAccentColorDark2`
 - `SystemAccentColorDark3`
 
-<!-- check this is true -->
-还可通过 [**UISettings.GetColorValue**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UISettings#Windows_UI_ViewManagement_UISettings_GetColorValue_Windows_UI_ViewManagement_UIColorType_) 方法和 [**UIColorType**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType) 枚举以编程方式访问主题色调色板。
+<!-- check this is true --> 您还可以访问以编程方式使用的强调文字颜色调色板[ **UISettings.GetColorValue** ](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UISettings#Windows_UI_ViewManagement_UISettings_GetColorValue_Windows_UI_ViewManagement_UIColorType_)方法和[ **UIColorType** ](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType)枚举。
 
 可将主题色调色板用于应用中的颜色主题。 以下示例介绍如何针对按钮使用主题色调色板。
 
@@ -255,32 +254,32 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 
 ## <a name="scoping-system-colors"></a>作用域的系统颜色
 
-除了在应用中定义自己的颜色，你可以使用**ColorSchemeResources**标记范围我们 systematized 的颜色以所需的区域设置整个应用。 此 API 允许你不仅着色和主题大的同时通过设置一些属性，但还提供你许多其他系统优势的控件组通常不会获取与手动定义自定义的颜色：
+除了应用程序中定义您自己的颜色，可以还的作用域限定到所需区域我们 systematized 的颜色在整个应用通过使用**ColorSchemeResources**标记。 此 API 允许你不仅为着色和控件通过设置少量属性，但还使您很多其他系统的优点，一次的主题大型组通常不会获取与手动定义您自己的自定义颜色：
 
-- 使用**ColorSchemeResources**设置任何颜色不会影响高对比度
-  * 这意味着你的应用将在无需任何额外的设计或开发人员成本更多的用户访问
-- 可以轻松地设置颜色的浅色、 深色或而言在这两种主题之间通过在该 API 上设置一个属性
-- 在**ColorSchemeResources**上设置的颜色将使用该系统颜色的所有类似控件向下级联作用
-  * 这将确保你将具有一致的颜色故事在你的应用同时保持你的品牌的外观
-- 效果无重新模板化的所有视觉状态、 动画和不透明度变体
+- 使用设置的任何颜色**ColorSchemeResources**不会影响高对比度
+  * 这意味着您的应用程序可以访问更多的人，而无需任何额外的设计或开发人员成本
+- 可以轻松地设置颜色的浅色、 深色或普遍在这两个主题通过在 API 上设置一个属性
+- 颜色集上**ColorSchemeResources**将向下级联到所有类似的控件还使用该系统颜色
+  * 这可确保的将维护自己的品牌的外观时您的应用程序中具有一致的颜色情景
+- 影响所有可视状态、 动画和不透明度变体，而无需重新创建模板
 
 ### <a name="how-to-use-colorschemeresources"></a>如何使用 ColorSchemeResources
 
-ColorSchemeResources 是 API，告知哪些资源将被系统范围的位置。 ColorSchemeResources 必须采取[X:key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)，，可在三个选项之一：
-- 默认值
-  * 将显示在[浅色](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)和[深色](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)主题的颜色更改
-- Light
-  * 将仅在[浅色主题](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)中显示颜色更改 
+ColorSchemeResources 是告知哪些资源正在的系统范围内的位置的 API。 ColorSchemeResources 必须采取[X:key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)，这可以是三个选项之一：
+- 默认
+  * 将颜色更改显示在这种[Light](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)并[深色](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)主题
+- 浅色
+  * 将显示您的颜色更改仅在[浅色主题](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme) 
 - 深色
-  * 将仅在[深色主题](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)中显示颜色更改
+  * 将显示您的颜色更改仅在[深色主题](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)
 
-设置该 X:key 将确保你的颜色相应地更改为系统或应用主题中，你希望在任何一种主题时不同的自定义外观。
+设置该注册表项 x： 将确保您的颜色相应地更改为系统或应用主题，你应该在任一主题时不同的自定义外观。
 
-### <a name="how-to-apply-scoped-colors"></a>如何将应用限定作用域的颜色
+### <a name="how-to-apply-scoped-colors"></a>如何将应用作用域内的颜色
 
-限定作用域通过**ColorSchemeResources** API 在 XAML 中的资源可以采用任何系统颜色或在我们[主题资源](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources)库，并且重页面或容器的范围内定义它们的画笔。
+范围通过资源**ColorSchemeResources**在 XAML 中的 API，可采用任何系统颜色或画笔中我们[主题资源](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources)库和页范围内重新定义它们或容器。
 
-例如，如果定义两个系统颜色- **SystemBaseLowColor**和**SystemBaseMediumLowColor**内网格，并将两个按钮放在你的页面上： 一个在该网格和一个外部：
+例如，如果定义了两种系统颜色的**SystemBaseLowColor**并**SystemBaseMediumLowColor**内一个网格，并将其放在页面上的两个按钮： 一个在该网格内的，一个外部：
 
 ```xaml
 <Grid x:Name="Grid_A">
@@ -295,12 +294,12 @@ ColorSchemeResources 是 API，告知哪些资源将被系统范围的位置。 
 <Buton Content="Button_B"/>
 ```
 
-你将获得**Button_A**的应用的新颜色，并且**Button_B**将保持外观类似我们系统默认按钮：
+你会得到**Button_A**与应用的新颜色，并**Button_B**仍将像我们系统默认按钮外观：
 
-![按钮上的限定作用域的系统颜色](images/color/scopedcolors_cyan_button.png)
+![在按钮上的作用域内的系统颜色](images/color/scopedcolors_cyan_button.png)
 
-但是，由于我们的所有系统颜色太都层叠到其他控件，则设置**SystemBaseLowColor**和**SystemBaseMediumLowColor**将影响不仅仅按钮。 在此情况下，控件像**切换按钮**、**单选按钮**和**滑块**还将影响通过这些系统的颜色更改，应这些控件放置上面 exampl 网格的作用域。
-如果你想要范围设置系统颜色更改*单个控件仅*可以通过该控件的资源中定义**ColorSchemeResources**执行此操作：
+但是，由于我们的所有系统颜色向下级都联到其他控件过，则将设置**SystemBaseLowColor**并**SystemBaseMediumLowColor**将影响多个只是按钮。 在这种情况下，控件，如**ToggleButton**， **RadioButton**和**滑块**将也会受到影响通过这些系统的颜色更改，将这些控件被放入以上 exampl网格的作用域。
+如果你想要一种系统颜色更改作用域*到单个控件，仅*就可以做到定义**ColorSchemeResources**该控件的资源中：
 
 ```xaml
 <Grid x:Name="Grid_A">
@@ -314,11 +313,11 @@ ColorSchemeResources 是 API，告知哪些资源将被系统范围的位置。 
 </Grid>
 <Button Content="Button_B"/>
 ```
-本质上具有完全相同的操作作为之前，但现在添加到网格中的任何其他控件将无法获取颜色更改。 这是因为这些系统颜色仅限于**Button_A** 。
+实质上是具有完全相同的操作为之前，但现在将向网格添加的任何其他控件不会选取颜色更改。 这是因为这些系统颜色都只限于**Button_A**仅。
 
-### <a name="nesting-scoped-resources"></a>嵌套限定资源
+### <a name="nesting-scoped-resources"></a>嵌套作用域内的资源
 
-嵌套系统颜色也可能，是和完成此操作通过将**ColorSchemeResources**放在应用布局的标记内的嵌套的元素的资源：
+嵌套的系统颜色也是有可能，和执行此操作通过将放**ColorSchemeResources**应用布局的标记内的嵌套的元素的资源中：
 
 ```xaml
 <Grid x:Name="Grid_A">
@@ -341,17 +340,17 @@ ColorSchemeResources 是 API，告知哪些资源将被系统范围的位置。 
 </Grid>
 ```
 
-在此示例中，继承**Button_A** **Grid_A**资源中定义的颜色和**嵌套按钮**从**Grid_B**资源继承的颜色。 通过扩展，这意味着，任何其他控件放在**Grid_B**内将检查或之前检查或应用**Grid_A**资源，首先，应用**Grid_B**资源和最后应用我们的默认颜色，如果不在页面或应用级别。
+在此示例中， **Button_A**是在中定义继承的颜色**Grid_A**的资源，并**嵌套按钮**颜色从其继承**Grid_B**的资源。 通过扩展，这意味着任何其他控件放在**Grid_B**将检查或应用**Grid_B**的资源前，之前检查或应用**Grid_A**的资源，以及最后应用我们默认颜色，在页面或应用程序级别定义的任何内容。
 
-这适用于任意数量的其资源具有颜色定义的嵌套元素。
+这适用于任意数量的嵌套元素的资源具有颜色定义。
 
-### <a name="scoping-with-a-resourcedictionary"></a>使用 ResourceDictionary 范围
+### <a name="scoping-with-a-resourcedictionary"></a>使用 ResourceDictionary 作用域
 
-并不局限于容器或页面的资源，并且还可以以后可合并在任何范围通常会合并字典的方式在 ResourceDictionary 中定义这些系统颜色。
+并不局限于一个容器或页面的资源，并还可以在以后可合并在任何范围内通常将合并字典的方法的 ResourceDictionary 中定义这些系统颜色。
 
 #### <a name="mycustomthemexaml"></a>MyCustomTheme.xaml
 
-首先，你将创建 ResourceDictionary。 然后将**ColorPaletteResources** ThemeDictionaries 内，然后重写所需的系统颜色：
+首先，您需要创建 ResourceDictionary。 然后将放**ColorPaletteResources** ThemeDictionaries 中重写所需的系统颜色和：
 
 ```xaml
 <ResourceDictionary
@@ -376,7 +375,7 @@ ColorSchemeResources 是 API，告知哪些资源将被系统范围的位置。 
 
 #### <a name="mainpagexaml"></a>MainPage.xaml
 
-包含你的布局的页面上, 只需将所需的作用域上在该字典合并：
+在包含你的布局页上，只需合并该字典中在所需的作用域：
 
 ```xaml
 <Grid x:Name="Grid_A">
@@ -392,11 +391,11 @@ ColorSchemeResources 是 API，告知哪些资源将被系统范围的位置。 
 </Grid>
 ```
 
-现在，可在所有资源、 主题、 和自定义颜色放在单个**MyCustomTheme**资源字典中并限定在需要时无需担心在布局标记中的额外待筛选邮件。
+现在，在单个放置所有资源、 主题和自定义颜色**MyCustomTheme**资源字典，而范围限定在需要时无需担心如何布局标记中的额外混乱。
 
-### <a name="other-ways-to-define-color-resources"></a>定义颜色资源的其他方法
+### <a name="other-ways-to-define-color-resources"></a>其他方法来定义颜色资源
 
-ColorSchemeResources 还允许系统颜色放置和作为的包装器，而不在行中直接在其中定义：
+ColorSchemeResources 也允许放置种系统颜色和为一个包装，而不在行中直接在其中定义：
 
 ``` xaml
 <ColorSchemeResources x:Key="Dark">

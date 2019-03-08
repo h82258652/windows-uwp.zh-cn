@@ -1,22 +1,22 @@
 ---
-Description: A semantic zoom control allows the user to zoom between two different semantic views of the same data set.
+Description: 语义式缩放控件可使用户在同一数据集的两个不同语义式视图之间缩放。
 title: 语义式缩放
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 210cca8a4b17b77e8c1f9cb490a79bcd1a53b6c7
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058788"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627612"
 ---
 # <a name="semantic-zoom"></a>语义式缩放
 
@@ -29,7 +29,7 @@ ms.locfileid: "9058788"
 
 例如，当查看地址簿时，用户可以通过缩小快速跳转到字母“W”，然后在该字母上放大并查看与之相关联的名称。 
 
-> **重要 API**：[SemanticZoom 类](https://msdn.microsoft.com/library/windows/apps/hh702601)、[ListView 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx)、[GridView 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)
+> **重要的 Api**:[SemanticZoom 类](https://msdn.microsoft.com/library/windows/apps/hh702601)， [ListView 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx)， [GridView 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)
 
 **功能**：
 
@@ -52,14 +52,14 @@ ms.locfileid: "9058788"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/SemanticZoom">打开此应用，了解 SemanticZoom 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-**“照片”应用**
+**照片应用**
 
 下面是在“照片”应用中使用的语义式缩放。 照片按月分组。 为了实现更快的导航，在默认网格视图中选择月标头可缩小到月列表视图。
 
@@ -82,7 +82,7 @@ ms.locfileid: "9058788"
 
 在使用语义式缩放前，应了解如何将列表视图用于分组数据。 有关详细信息，请参阅[列表视图和网格视图](listview-and-gridview.md)。 
 
-> **注意**&nbsp;&nbsp;若要定义 SemanticZoom 控件的放大视图和缩小视图，可以使用任意两个可实现 [ISemanticZoomInformation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.isemanticzoominformation.aspx) 接口的控件。 XAML 框架提供 3 个可实现此接口的控件：ListView、GridView 和 Hub。
+> **注意**&nbsp;&nbsp;若要定义 SemanticZoom 控件的放大视图和缩小视图，可以使用任意两个可实现 [ISemanticZoomInformation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.isemanticzoominformation.aspx) 接口的控件。 XAML 框架提供了实现此接口的 3 个控件：ListView、 GridView 和中心。
  
  此 XAML 显示 SemanticZoom 控件的结构。 将其他控件分配到 ZoomedInView 和 ZoomedOutView 属性。
  
@@ -100,7 +100,7 @@ ms.locfileid: "9058788"
  
 下面的示例摘自 [XAML UI 基本示例](https://go.microsoft.com/fwlink/p/?LinkId=619992)的 SemanticZoom 页面。 可以下载该示例来查看完整代码，包括数据源。 此语义式缩放使用 GridView 提供放大视图，使用 ListView 提供缩小视图。
   
-**定义放大视图**
+**定义放大的视图**
 
 下面是用于放大视图的 GridView 控件。 放大视图应分组显示个别数据项。 此示例介绍如何在具有图像和文本的网格中显示项目。 
 
@@ -140,7 +140,7 @@ ms.locfileid: "9058788"
 </DataTemplate>
 ```
 
-**定义放大视图**
+**定义缩小的视图**
 
 此 XAML 为缩小视图定义 ListView 控件。 此示例介绍如何在列表中将组标头显示为文本。
 
@@ -202,7 +202,7 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 
 - [导航设计基础知识](../basics/navigation-basics.md)
 - [列表视图和网格视图](listview-and-gridview.md)
-- [项目容器和模板](item-containers-templates.md)
+- [项容器和模板](item-containers-templates.md)
 
 
 

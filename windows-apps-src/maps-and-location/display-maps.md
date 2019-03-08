@@ -1,5 +1,5 @@
 ---
-title: 使用 2D、3D 和街景视图方式显示地图
+title: 使用 2D、3D 和街景视图显示地图
 description: 你可以在名为地图*地点卡* 的可轻型消除窗口中或在功能齐全的地图控件中显示地图。
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
 ms.date: 03/19/2018
@@ -7,13 +7,13 @@ ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 地图控件, 地图视图
 ms.localizationpriority: medium
 ms.openlocfilehash: 41d44f75c80e10123c21fc310bff46371ede0fca
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116379"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641172"
 ---
-# <a name="display-maps-with-2d-3d-and-streetside-views"></a>使用 2D、3D 和 Streetside 视图显示地图
+# <a name="display-maps-with-2d-3d-and-streetside-views"></a>使用 2D、3D 和街景视图显示地图
 
 你可以在名为地图*地点卡* 的可轻型消除窗口中或在功能齐全的地图控件中显示地图。
 
@@ -85,7 +85,7 @@ private void SpaceNeedle_Click(object sender, RoutedEventArgs e)
 
 ## <a name="display-map-in-a-control"></a>在控件中显示地图
 
-在你的应用中使用地图控件来显示丰富且可自定义的地图数据。 地图控件可以显示道路地图、鸟瞰图、3D、视图、路线、搜索结果和交通。 在地图上，你可以显示用户的位置、路线和目标点。 地图还可以显示 3D 鸟瞰图、Streetside 视图、交通、公交和本地企业。
+在你的应用中使用地图控件来显示丰富且可自定义的地图数据。 地图控件可以显示道路地图、鸟瞰图、3D、视图、路线、搜索结果和交通。 在地图上，你可以显示用户的位置、路线和目标点。 地图还可以显示 3D 鸟瞰图、街景视图、交通、公交和本地企业。
 
 当你希望应用内具有一个允许用户查看特定于应用或通用地理信息的地图时，请使用地图控件。 在应用中有一个地图控件意味着用户无需为了获取该信息而离开应用。
 
@@ -137,7 +137,7 @@ pageGrid.Children.Add(MapControl2);
 
 ### <a name="get-and-set-a-maps-authentication-key"></a>获取和设置地图验证密钥
 
-在可以使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和地图服务之前，你必须将地图身份验证密钥指定为 [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) 属性的值。 在上一个示例中，将 `EnterYourAuthenticationKeyHere` 替换为你从[必应地图开发人员中心](https://www.bingmapsportal.com/)获取的密钥。 在你指定地图身份验证密钥之前，文本 **“警告：未指定 MapServiceToken”** 会继续显示在控件下方。 有关获取和设置地图身份验证密钥的详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
+在可以使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和地图服务之前，你必须将地图身份验证密钥指定为 [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) 属性的值。 在上一个示例中，将 `EnterYourAuthenticationKeyHere` 替换为你从[必应地图开发人员中心](https://www.bingmapsportal.com/)获取的密钥。 文本**警告：未指定 MapServiceToken**仍会显示在控件的下方，直到指定的地图身份验证密钥。 有关获取和设置地图身份验证密钥的详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
 
 ## <a name="set-the-location-of-a-map"></a>设置地图的位置
 将地图指向你所需的任何位置，或使用用户的当前位置。  
@@ -222,7 +222,7 @@ myMap.StyleSheet = MapStyleSheet.RoadDark();
 
 你还可以使用 JSON 来定义自定义样式，然后使用该 JSON 创建 [**MapStyleSheet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet)对象。
 
-可以以交互方式使用[地图样式表编辑器](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft)应用程序创建样式表 JSON。
+样式表可以以交互方式使用创建 JSON[地图样式表编辑器](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft)应用程序。
 
 ```csharp
 myMap.StyleSheet = MapStyleSheet.ParseFromJson(@"
@@ -312,7 +312,7 @@ myMap.StyleSheet = MapStyleSheet.Combine(new List<MapStyleSheet> { builtInSheet,
 
 ![地图控件的街景视图的示例。](images/onlystreetside-730width.png)
 
-考虑“内部”街景视图与地图控件中最初显示的地图有所不同的体验。 例如，更改街景视图中的位置不会改变街景视图“之下”的地图的位置或外观。 在你关闭街景视图（通过单击控件右上角的 **X**）之后，原始地图将保持不变。
+考虑“内部”街景视图与地图控件中最初显示的地图有所不同的体验。 例如，更改街景视图中的位置不会改变街景视图“之下”的地图的位置或外观。 在你关闭街景视图（通过单击控件右上角的“X”）之后，原始地图将保持不变。
 
 显示街景视图
 
@@ -323,7 +323,7 @@ myMap.StyleSheet = MapStyleSheet.Combine(new List<MapStyleSheet> { builtInSheet,
 
 此示例介绍如何显示类似于上一个图像的街景视图。
 
-**注意**如果地图控件的大小太小，将不会显示总览。
+**请注意**  如果地图控件调整大小太小，将不会显示摘要图。
 
  
 
@@ -365,7 +365,7 @@ private async void showStreetsideView()
 ## <a name="display-aerial-3d-views"></a>显示鸟瞰图 3D 视图
 
 
-使用 [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) 类指定地图的 3D 视角。 地图场景表示显示在地图上的 3D 视图。 [**MapCamera**](https://msdn.microsoft.com/library/windows/apps/dn974244) 类表示可能显示如此一个视图的相机的位置。
+使用 [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) 类指定地图的 3D 视角。 地图场景表示显示在地图上的 3D 视图。 [  **MapCamera**](https://msdn.microsoft.com/library/windows/apps/dn974244) 类表示可能显示如此一个视图的相机的位置。
 
 ![MapCamera 位置与地图场景位置图示](images/mapcontrol-techdiagram.png)
 
@@ -421,10 +421,10 @@ private async void display3DLocation()
 
 通过调用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的以下方法，在地图上获取有关位置的信息。
 
--   [**TryGetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016)方法-获取与地图控件视口中指定点相对应的地理位置。
--   [**GetOffsetFromLocation**](https://msdn.microsoft.com/library/windows/apps/dn637018) 方法 - 在地图控件的视口中获取与指定地理位置相对应的点。
--   [**IsLocationInView**](https://msdn.microsoft.com/library/windows/apps/dn637022) 方法 - 确定指定的地理位置当前在地图控件的视口中是否可见。
--   [**FindMapElementsAtOffset**](https://msdn.microsoft.com/library/windows/apps/dn637014) 方法 - 在位于地图控件视口中指定点的地图上获取元素。
+-   [**TryGetLocationFromOffset** ](https://msdn.microsoft.com/library/windows/apps/dn637016)方法-获取对应于视区中的地图控件的指定点的地理位置。
+-   [**GetOffsetFromLocation** ](https://msdn.microsoft.com/library/windows/apps/dn637018)方法-获取对应于指定的地理位置的地图控件的视区中的点。
+-   [**IsLocationInView** ](https://msdn.microsoft.com/library/windows/apps/dn637022)方法-确定指定的地理位置是否为当前地图控件的视区中可见。
+-   [**FindMapElementsAtOffset** ](https://msdn.microsoft.com/library/windows/apps/dn637014)方法-代码图上的元素位于地图控件的视区中的指定点处获取。
 
 ## <a name="handle-interaction-and-changes"></a>处理交互和更改
 
@@ -437,7 +437,7 @@ private async void display3DLocation()
 
 通过处理控件的 [**LoadingStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn637028) 事件，确定地图是正在加载还是已完全加载。
 
-通过处理 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的以下事件，处理用户或应用更改地图的设置时所发生的更改。 [地图指南](https://msdn.microsoft.com/library/windows/apps/dn596102)
+通过处理 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的以下事件，处理用户或应用更改地图的设置时所发生的更改。 [映射的准则](https://msdn.microsoft.com/library/windows/apps/dn596102)
 
 -   [**CenterChanged**](https://msdn.microsoft.com/library/windows/apps/dn637006)
 -   [**HeadingChanged**](https://msdn.microsoft.com/library/windows/apps/dn637020)
@@ -455,10 +455,10 @@ private async void display3DLocation()
 ## <a name="related-topics"></a>相关主题
 
 * [必应地图开发人员中心](https://www.bingmapsportal.com/)
-* [UWP 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [获取当前位置](get-location.md)
-* [位置感知应用设计指南](https://msdn.microsoft.com/library/windows/apps/hh465148)
-* [地图设计指南](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [版本 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 路况应用示例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 映射示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [获取当前的位置](get-location.md)
+* [位置感知应用的设计准则](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [映射的设计准则](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 视频：利用跨手机、 平板电脑和 Windows 应用程序中的 PC 的地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP 流量应用示例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)

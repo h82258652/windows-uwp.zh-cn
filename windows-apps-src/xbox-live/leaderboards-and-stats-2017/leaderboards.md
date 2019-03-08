@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fd7e30b99418fda614a888d9269548cdc57a88a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944443"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662022"
 ---
 # <a name="leaderboards"></a>排行榜
 
@@ -19,21 +19,21 @@ ms.locfileid: "8944443"
 
 如[数据平台概述](../data-platform/data-platform.md)中所述，排行榜不仅是鼓励玩家进行竞争的好办法，也是确保玩家积极参与尝试突破个人及好友的历史最好成绩的绝佳方式。
 
-[特别推荐的统计数据](stats2017.md#configured-stats-and-featured-leaderboards)的排行榜始终显示在游戏的游戏中心并时它已固定到主页，有时显示为游戏的 UI 的一部分。 你还可以使用你配置的特别推荐的统计数据以你的游戏内创建排行榜。
+有关排行榜[特色统计信息](stats2017.md#configured-stats-and-featured-leaderboards)始终显示在标题的游戏中心和它所固定到主页时，有时显示标题的 UI 的一部分。 你配置特色统计信息还可用于在你的标题内创建排行榜。
 
 ## <a name="choosing-good-leaderboards"></a>选择合适的排行榜
 
 正如[玩家统计数据](player-stats.md)中所讨论的，排行榜与所定义的统计数据相对应。  你应该选择与玩家可以努力提升的成就相对应的排行榜。
 
-例如，在赛车游戏中的最快时间是合适的排行榜，因为玩家想要努力缩短其最快时间。  其他示例是格斗游戏中的击杀/死亡比射击游戏，或最大组合大小。
+例如，赛车游戏中的最佳 Lap 时间是很好的排行榜，因为播放机将想要寻找改进其最佳 Lap 时间。  其他示例包括射击游戏或最大组合大小 Kill/死亡比情况游戏中。
 
 ## <a name="when-to-display-leaderboards"></a>何时显示排行榜
 
-你可以在作品中随时显示排行榜。  你应该选择排行榜不会影响玩游戏或者作品流的时间。  在各局之间和匹配后两个合适的时间。
+你可以在作品中随时显示排行榜。  你应该选择排行榜不会影响玩游戏或者作品流的时间。  之间将向上舍入和之后的匹配项是这两个很好的时间。
 
 ## <a name="how-to-display-leaderboards"></a>如何显示排行榜
 
-有很多选项都可以用于显示 Xbox Live SDK 中提供的排行榜。  如果你要使用 Xbox Live 创意者计划使用 Unity，你可以开始使用排行榜 Prefab 来显示你的排行榜数据。  请参阅[在 Unity 中配置 Xbox Live](../get-started-with-creators/configure-xbox-live-in-unity.md) 文章以了解具体信息。
+有很多选项都可以用于显示 Xbox Live SDK 中提供的排行榜。  如果使用 Xbox Live Creators 计划使用 Unity，你可以开始使用排行榜预设来显示排行榜数据。  请参阅[在 Unity 中配置 Xbox Live](../get-started-with-creators/configure-xbox-live-in-unity.md) 文章以了解具体信息。
 
 如果你直接对 Xbox Live SDK 进行编码，请阅读下文，以了解你可以使用的 API。
 
@@ -45,7 +45,7 @@ ms.locfileid: "8944443"
 
 ## <a name="leaderboards-2013-apis"></a>排行榜 2013 Api
 
-你可以看到`leaderboard_service`所有统计数据 2013年排行榜 api 的命名空间。
+您可以看到`leaderboard_service`的所有统计信息 2013年排行榜 API 命名空间。
 
 <table>
 
@@ -83,7 +83,7 @@ Windows::Foundation::IAsyncOperation< LeaderboardResult^> ^  GetLeaderboardAsync
 
 </td>
 
-<td>WinRT C# 代码-获取给定服务配置 ID 和排行榜名称的单个排行榜的排行榜。</td>
+<td>WinRTC#代码-获取给定服务的配置 ID 和排行榜名称的单个排行榜排行榜。</td>
 
 </tr>
 
@@ -122,7 +122,7 @@ Windows::Foundation::IAsyncOperation< LeaderboardResult^> ^  GetLeaderboardAsync
 
 </td>
 
-<td>WinRT C# 代码-获取排行榜的页面的单个排行榜结果提供的服务配置 ID 和排行榜名称、 排行榜结果将开始在"skipToRank"排名。</td>
+<td>WinRTC#代码-单个排行榜为服务配置 ID 和排行榜名称，排行榜结果会开始在"skipToRank"级别获得的排行榜结果页。</td>
 
 </tr>
 
@@ -166,7 +166,7 @@ Windows::Foundation::IAsyncOperation< LeaderboardResult^> ^  GetLeaderboardWithS
 
 </td>
 
-<td>WinRT C# 代码-获取开始在指定的玩家，无论玩家的排名的排行榜或分数，按玩家的百分比排名排序</td>
+<td>WinRTC#代码-获取开始指定播放机，而不考虑玩家的排名或评分，播放机的百分位排名按排序的排行榜</td>
 
 </tr>
 
@@ -174,13 +174,13 @@ Windows::Foundation::IAsyncOperation< LeaderboardResult^> ^  GetLeaderboardWithS
 
 ## <a name="2013-c-example"></a>2013 c + + 示例
 
-使用 c + + API 层时然后，你可以设置要从该服务返回排行榜结果后调用的回调。  我们将在下面介绍此过程的示例。
+使用 c + + API 层时可以再设置后的排行榜结果将从服务返回要调用的回调。  我们将在下面介绍此过程的示例。
 
 如果你不熟悉要从这些 API 返回的 `pplx::task`，则这是来自 Microsoft 并行编程库 (PPL) 的异步任务对象。  你可以到 [https://github.com/Microsoft/cpprestsdk/wiki/Programming-with-Tasks](https://github.com/Microsoft/cpprestsdk/wiki/Programming-with-Tasks) 了解更多。
 
 以下部分介绍如何检索和使用排行榜结果。
 
-### <a name="1-create-an-async-task-to-retrieve-leaderboard-results"></a>1. 创建异步任务以检索排行榜结果
+### <a name="1-create-an-async-task-to-retrieve-leaderboard-results"></a>1.创建一个异步任务以检索排行榜的结果
 
 第一步是调用排行榜服务，以检索特定排行榜的结果。
 
@@ -191,9 +191,9 @@ auto& leaderboardService = xboxLiveContext->leaderboard_service();
 asyncTask = leaderboardService.get_leaderboard(m_liveResources->GetServiceConfigId(), LeaderboardIdEnemyDefeats);
 ```
 
-### <a name="2-setup-a-callback"></a>2. 设置回调
+### <a name="2-setup-a-callback"></a>2.安装程序回调
 
-你可以设置要返回排行榜结果后调用的[延续任务](https://msdn.microsoft.com/en-us/library/dd492427(v=vs.110).aspx#continuations)。  你可以按照以下方式执行该操作。
+你可以设置[延续任务](https://msdn.microsoft.com/en-us/library/dd492427(v=vs.110).aspx#continuations)后的排行榜结果将返回调用。  你可以按照以下方式执行该操作。
 
 ```cpp
 asyncTask.then([this](xbox::services::xbox_live_result<xbox::services::leaderboard::leaderboard_result> result)
@@ -205,7 +205,7 @@ asyncTask.then([this](xbox::services::xbox_live_result<xbox::services::leaderboa
 此延续任务在最初调用它的对象上下文中调用，将检索可以适合作品的方式显示的 ```leaderboard_result```。
 
 
-### <a name="3-display-leaderboard"></a>3. 显示排行榜
+### <a name="3-display-leaderboard"></a>3.显示排行榜
 
 排行榜数据包含在 ```leaderboard_result``` 中，并且字段具有自解释性。  有关示例，请参阅下文。
 
@@ -225,13 +225,13 @@ for (const xbox::services::leaderboard::leaderboard_row& row : leaderboard.rows(
 
 ```
 
-## <a name="2013-winrt-c-example"></a>2013 WinRT C# 示例
+## <a name="2013-winrt-c-example"></a>2013 WinRTC#示例
 
-使用 WinRT C# 层时将不需要进行单独回调任务并将只需使用`await`关键字调用排行榜服务时。
+使用 WinRT 时C#层不需要使任务并将只需使用单独的回调`await`关键字调用 leaderboard 服务时。
 
 ### <a name="1-access-the-leaderboardservice"></a>1.访问 LeaderboardService
 
-`LeaderboardService`可从检索`XboxLiveContext`创建游戏用户登录时，你将需要它来调用排行榜数据。
+`LeaderboardService`可以从检索`XboxLiveContext`创建游戏的用户登录时，你将需要它来调用排行榜数据。
 
 ```csharp
 XboxLiveContext xboxLiveContext = idManager.xboxLiveContext;
@@ -249,22 +249,22 @@ LeaderboardResult boardResult = await boardService.GetLeaderboardAsync(
 
 ### <a name="3-retrieve-leaderboard-data"></a>3.检索排行榜数据
 
-`GetLeaderboardAsync()` 返回`LeaderboardResult`这将包含填充命名的排行榜的统计信息。
+`GetLeaderboardAsync()` 返回`LeaderboardResult`其中包含填充命名的排行榜的统计信息。
 
-`LeaderboardResult` 有多个函数和属性来促进排行榜数据的读数。
+`LeaderboardResult` 具有多个函数和属性以便于读取排行榜数据。
 
 |属性  |描述  |
 |---------|---------|
-|公共 IAsyncOperation<LeaderboardResult> GetNextAsync (uint maxItems);     |检索下一组提高排名达到 maxItems 参数的数量。 这是本质上再次调用 `GetLeaderboard()`         |
-|公共 LeaderboardQuery GetNextQuery();     |检索可用于进行排行榜调用来检索数据的下一组 LeaderboardQuery。         |
-|公共 bool HasNext {get;}    |指定有要检索的多个排行榜行         |
-|公共 IReadOnlyList<LeaderboardRow>行 {get;}     | 包含每个排名的排行榜数据行        |
-|公共 IReadOnlyList<LeaderboardColumn>列 {get;}     | 构成排行榜的列的列表        |
-|公共 uint TotalRowCount {get;}     | 排行榜中的行的总金额        |
-|public 字符串 DisplayName {get;}     | 名称以显示排行榜       |
+|public IAsyncOperation<LeaderboardResult> GetNextAsync(uint maxItems);     |检索下一组排名 maxItems 参数数量。 这是实质上是另一个调用 `GetLeaderboard()`         |
+|public LeaderboardQuery GetNextQuery();     |检索可用于进行排行榜调用以检索下一个数据集 LeaderboardQuery。         |
+|public bool HasNext { get; }    |指定有更多要检索的排行榜行         |
+|public IReadOnlyList<LeaderboardRow> Rows { get; }     | 包含每个级别的排行榜数据的行        |
+|public IReadOnlyList<LeaderboardColumn> Columns { get; }     | 排行榜构成列的列表        |
+|public uint TotalRowCount { get; }     | 排行榜中的行的总金额        |
+|public string DisplayName { get; }     | 排行榜显示名称       |
 
-排行榜数据将提供一个页面一次。 你可能会循环访问`LeaderboardResult`若要检索数据的行和列。  
-使用`HasNext`布尔和`GetNextAsync()`函数以检索排行榜数据的更高版本页。
+排行榜数据将提供一页一次。 您可能会依次通过`LeaderboardResult`行和列来检索数据。  
+使用`HasNext`布尔值和`GetNextAsync()`函数来检索更高版本的排行榜数据页。
 
 ```csharp
 if (boardResult != null)
@@ -278,7 +278,7 @@ if (boardResult != null)
 
 ## <a name="leaderboard-2017"></a>排行榜 2017
 
-若要使你将使用的统计数据 2017年排行榜服务的调用`StatisticManager`而不是排行榜 api`LeaderboardService`排行榜 api。  
+若要对将使用的统计信息 2017年排行榜服务进行调用`StatisticManager`排行榜 api 而不是`LeaderboardService`排行榜 api。  
 
 `xbox::services::stats:manager::stats_manager::get_leaderboard`  
 
@@ -325,7 +325,7 @@ public void GetSocialLeaderboard(
 
 ### <a name="1-get-a-singleton-instance-of-the-statsmanager"></a>1.获取 stats_manager 单一实例
 
-你可以调用前`stats_manager`你将需要将变量设置为单一实例的函数。
+可以调用之前`stats_manager`函数需要将变量设置为单一实例。
 
 ```csharp
 m_statsManager = stats_manager::get_singleton_instance();
@@ -333,18 +333,18 @@ m_statsManager = stats_manager::get_singleton_instance();
 
 ### <a name="2-create-a-leaderboardquery"></a>2.创建 LeaderboardQuery
 
-`leaderboard_query`将听写量，顺序，以及起点将数据从调用返回的排行榜。
+`leaderboard_query`将听写量顺序，以及从排行榜调用返回的起始点的数据。
 
-A`leaderboard_query`有几个属性可以设置这将影响返回的数据：
+一个`leaderboard_query`具有几个可以设置这将影响返回的数据属性：
 
 |属性 |描述  |
 |---------|---------|
-|m_skipResultToRank     |此 uint 变量将确定哪些排名的排行榜数据将从开始时返回。 排名开始排名 1。         |
-|m_skipResultToMe     |如果设置为 true，此布尔值将导致返回从开始的排行榜数据`XboxLiveUser`中使用`get_leaderboard()`调用。  |
-|m_order     |枚举类型的`xbox::services::leaderboard::sort_order`有两个可能的值，升序，和降序。 设置你的查询此变量将确定你的排行榜的排序顺序。        |
-|m_maxItems     |此 uint 确定最大行数的每次调用返回`get_leaderboard`或`get_social_leaderboard()`。         |
+|m_skipResultToRank     |此 uint 变量将决定什么排名排行榜数据将从开始时返回。 排名开始秩为 1。         |
+|m_skipResultToMe     |如果设置为 true，此布尔值将导致返回启动时开始的排行榜数据`XboxLiveUser`中使用`get_leaderboard()`调用。  |
+|m_order     |枚举类型的`xbox::services::leaderboard::sort_order`具有两个可能的值，升序排序，并按降序。 设置此变量用于您的查询将确定你排行榜的排序顺序。        |
+|m_maxItems     |此 uint 确定要在每次调用返回的行的最大数`get_leaderboard`或`get_social_leaderboard()`。         |
 
-`leaderboard_query` 具有多个组功能，你可以使用对这些属性分配值。 以下代码将向你介绍如何设置你 `leaderboard_query`
+`leaderboard_query` 有几个可用于将值分配给这些属性的 set 函数。 下面的代码将演示如何设置应用 `leaderboard_query`
 
 ```cpp
 leaderboard::leaderboard_query leaderboardQuery;
@@ -353,10 +353,10 @@ leaderboardQuery.set_max_items(10);
 leaderboardQuery.set_order(sort_order::descending);
 ```
 
-此查询将返回的起点 100th 排行榜的十个行排名个别。
+此查询将返回十行开始 100th 排行榜排名单个。
 
 > [!WARNING]
-> 设置 SkipResultToRank 高于排行榜中包含的玩家数量将导致排行榜数据，以返回包含零个行。
+> 设置 SkipResultToRank 大于玩家在排行榜中包含的数将导致排行榜数据返回零行。
 
 ### <a name="3-call-getleaderboard"></a>3.调用 get_leaderboard
 
@@ -366,11 +366,11 @@ m_statsManager->get_leaderboard(user, statName, leaderboardQuery);
 ```
 
 > [!IMPORTANT]
-> `statName`中使用`GetLeaderboard()`调用必须配置为你的游戏在[合作伙伴中心](https://partner.microsoft.com/dashboard)，这是区分大小写的统计数据的名称相同。
+> `statName`中使用`GetLeaderboard()`调用必须是为你的标题中配置状态的名称相同[合作伙伴中心](https://partner.microsoft.com/dashboard)，这是区分大小写。
 
 ### <a name="4-read-the-leaderboard-data"></a>4.读取排行榜数据
 
-若要读取的排行榜数据，你将需要调用`stats_manager::do_work()`函数将返回的列表`stat_event`值。 排行榜数据将包含在`stat_event`类型的`stat_event_type::get_leaderboard_complete`。 当遇到这种类型的列表中的事件`stat_event`你可能看起来通过 s`leaderboard_result`中包含`stat_event`访问数据。
+若要读取排行榜数据将需要调用`stats_manager::do_work()`函数将返回一系列`stat_event`值。 排行榜数据将包含在`stat_event`类型的`stat_event_type::get_leaderboard_complete`。 当遇到这种类型的列表中的事件`stat_event`s 可能仔细`leaderboard_result`中包含`stat_event`来访问数据。
 
 示例`do_work()`处理程序
 
@@ -415,7 +415,7 @@ void Sample::UpdateStatsManager()
 }
 ```
 
-排行榜数据读取排行榜结果  
+从排行榜结果读取排行榜数据  
 
 ```cpp
 void Sample::PrintLeaderboard(const xbox::services::leaderboard::leaderboard_result& leaderboard)
@@ -438,7 +438,7 @@ void Sample::PrintLeaderboard(const xbox::services::leaderboard::leaderboard_res
 }
 ```  
 
-从排行榜检索进一步的数据的页面。  
+从排行榜检索更多的数据页。  
 
 ```cpp
 void Sample::ProcessLeaderboards(
@@ -471,11 +471,11 @@ void Sample::ProcessLeaderboards(
 }
 ```  
 
-## <a name="2017-winrt-c-example"></a>2017 WinRT C# 示例
+## <a name="2017-winrt-c-example"></a>2017 WinRTC#示例
 
 ### <a name="1-get-a-singleton-instance-of-the-statisticmanager"></a>1.获取 StatisticManager 的单一实例
 
-你可以调用前`StatisticManager`你将需要将变量设置为单一实例的函数。
+可以调用之前`StatisticManager`函数需要将变量设置为单一实例。
 
 ```csharp
 statManager = StatisticManager.SingletonInstance;
@@ -483,7 +483,7 @@ statManager = StatisticManager.SingletonInstance;
 
 ### <a name="2-create-a-leaderboardquery"></a>2.创建 LeaderboardQuery
 
-`LeaderboardQuery`将听写量，顺序，以及起点将数据从调用返回的排行榜。  
+`LeaderboardQuery`将听写量顺序，以及从排行榜调用返回的起始点的数据。  
 
 ```csharp
 public sealed class LeaderboardQuery : __ILeaderboardQueryPublicNonVirtuals
@@ -501,16 +501,16 @@ public sealed class LeaderboardQuery : __ILeaderboardQueryPublicNonVirtuals
     }
 ```
 
-A`LeaderboardQuery`有几个属性可以设置这将影响返回的数据：
+一个`LeaderboardQuery`具有几个可以设置这将影响返回的数据属性：
 
 |属性 |描述  |
 |---------|---------|
-|SkipResultToRank     |此 uint 变量将确定哪些排名的排行榜数据将从开始时返回。 排名开始排名 1。         |
-|SkipResultToMe     |如果设置为 true，此布尔值将导致返回从开始的排行榜数据`XboxLiveUser`中使用`GetLeaderboard()`调用。  |
-|顺序     |枚举类型的`Microsoft.Xbox.Services.Leaderboard.SortOrder`有两个可能的值，升序，和降序。 设置你的查询此变量将确定你的排行榜的排序顺序。        |
-|MaxItems     |此 uint 确定最大行数的每次调用返回`GetLeaderboard()`或`GetSocialLeaderboard()`。         |
+|SkipResultToRank     |此 uint 变量将决定什么排名排行榜数据将从开始时返回。 排名开始秩为 1。         |
+|SkipResultToMe     |如果设置为 true，此布尔值将导致返回启动时开始的排行榜数据`XboxLiveUser`中使用`GetLeaderboard()`调用。  |
+|顺序     |枚举类型的`Microsoft.Xbox.Services.Leaderboard.SortOrder`具有两个可能的值，升序排序，并按降序。 设置此变量用于您的查询将确定你排行榜的排序顺序。        |
+|MaxItems     |此 uint 确定要在每次调用返回的行的最大数`GetLeaderboard()`或`GetSocialLeaderboard()`。         |
 
-形成你`LeaderboardQuery`可能如下所示：
+构成您`LeaderboardQuery`可能如下所示：
 
 ```csharp
 using Microsoft.Xbox.Services.Leaderboard;
@@ -522,25 +522,25 @@ LeaderboardQuery query = new LeaderboardQuery
         };
 ```
 
-此查询将返回五个行的起点 100th 排行榜排名个别。
+此查询将返回 5 行的开始 100th 排行榜排名单个。
 
 > [!WARNING]
-> 设置 SkipResultToRank 高于排行榜中包含的玩家数量将导致排行榜数据，以返回包含零个行。
+> 设置 SkipResultToRank 大于玩家在排行榜中包含的数将导致排行榜数据返回零行。
 
 ### <a name="3-call-getleaderboard"></a>3.调用 GetLeaderboard()
 
-现在，你可以调用`GetLeaderboard()`与你`XboxLiveUser`，你的统计数据的名称和`LeaderboardQuery`。
+现在，可以调用`GetLeaderboard()`与你`XboxLiveUser`，在统计信息的名称和一个`LeaderboardQuery`。
 
 ```csharp
 statManager.GetLeaderboard(xboxLiveUser, statName, leaderboardQuery);
 ```
 
 > [!IMPORTANT]
-> `statName`中使用`GetLeaderboard()`调用必须配置为你的游戏在[合作伙伴中心](https://partner.microsoft.com/dashboard)，这是区分大小写的统计数据的名称相同。
+> `statName`中使用`GetLeaderboard()`调用必须是为你的标题中配置状态的名称相同[合作伙伴中心](https://partner.microsoft.com/dashboard)，这是区分大小写。
 
 ### <a name="4-read-leaderboard-data"></a>4.读取排行榜数据
 
-若要读取的排行榜数据，你将需要调用`StatisticManager.DoWork()`函数将返回的列表`StatisticEvent`值。 排行榜数据将包含在`StatisticEvent`类型的`GetLeaderboardComplete`。 当遇到这种类型的列表中的事件`StatisticEvent`你可能看起来通过 s`LeaderboardResult`中包含`StatisticEvent`访问数据。
+若要读取排行榜数据将需要调用`StatisticManager.DoWork()`函数将返回一系列`StatisticEvent`值。 排行榜数据将包含在`StatisticEvent`类型的`GetLeaderboardComplete`。 当遇到这种类型的列表中的事件`StatisticEvent`s 可能仔细`LeaderboardResult`中包含`StatisticEvent`来访问数据。
 
 ```csharp
 IReadOnlyList<StatisticEvent> statEvents = statManager.DoWork(); //In practice this should be called every update frame
@@ -560,14 +560,14 @@ foreach(StatisticEvent statEvent in statEvents)
 }
 ```
 
-在你的作品代码中`StatisticManager.DoWork()`应该用于处理所有传入的统计数据管理器事件并不是个排行榜。 
+在标题代码中`StatisticManager.DoWork()`应该用于处理传入的所有统计信息管理器事件而不只是为排行榜。 
 
 > [!NOTE]
-> 若要检索`LeaderboardResultEventArgs`你将需要强制转换`StatisticEvent.EventArgs`作为`LeaderboardResultEventArgs`变量。
+> 若要检索`LeaderboardResultEventArgs`将需要强制转换`StatisticEvent.EventArgs`作为`LeaderboardResultEventArgs`变量。
 
-### <a name="5-retrieve-more-leaderboard-data"></a>5.检索更多的排行榜数据
+### <a name="5-retrieve-more-leaderboard-data"></a>5.检索更多排行榜数据
 
-若要检索的排行榜数据，你将需要使用更高版本页面`LeaderboardResult.HasNext`属性和`LeaderboardResult.GetNextQuery()`函数以检索`LeaderboardQuery`，将为你带来数据的下一页。
+若要检索的排行榜数据将需要使用更高版本页`LeaderboardResult.HasNext`属性和`LeaderboardResult.GetNextQuery()`函数来检索`LeaderboardQuery`这会显示数据的下一页面。
 
 ```csharp
 while (leaderboardResult.HasNext)

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, 打包, 资产包布局, 资产包
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e54b74cf3052fdeb5b70cc90f59ab0ea59aef76
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941924"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627652"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>使用包布局创建包  
 
@@ -51,7 +51,7 @@ ms.locfileid: "8941924"
 我们一起来分析这个示例，以了解其工作原理。
 
 ### <a name="packagefamily"></a>PackageFamily
-此包布局将创建单个平面应用捆绑包文件，其中包含一个 x64 体系结构程序包和一个"Media"资产包。 
+此打包布局将创建单个平面应用捆绑文件具有 x64 体系结构包和"媒体"资产包。 
 
 **PackageFamily** 元素用于定义应用程序包。 你必须使用 **ManifestPath** 属性为该捆绑包提供一个 **AppxManifest**，**AppxManifest** 应该与该捆绑包的体系结构包的 **AppxManifest** 相对应。 此外，还必须提供 **ID** 属性。 ID 在包创建过程中与 MakeAppx.exe 配合使用，因此你可以根据需要创建该包，并且它将用作生成的包的文件名。 **FlatBundle** 属性用于描述要创建的捆绑包的类型，对于平面捆绑包（本文详细介绍的包类型），该属性为 **true**；对于经典捆绑包，该属性为 **false**。 **ResourceManager** 属性用于指定该捆绑包中的资源包是否将使用 MRT 来访问文件。 该属性默认为 **true**，但截止 Windows 10 版本 1803，该功能还没准备好，因此必须将其设置为 **false**。
 
@@ -59,9 +59,9 @@ ms.locfileid: "8941924"
 ### <a name="package-and-assetpackage"></a>Package 和 AssetPackage
 在 **PackageFamily** 中，定义了应用程序包包含或引用的包。 这里，体系结构程序包（也称为主要包）使用 **Package** 元素定义，资产包使用 **AssetPackage** 元素定义。 体系结构程序包必须指定包适用的体系结构：“x64”、“x86”、“arm”或“neutral”。 你还可以（可选）使用 **ManifestPath** 属性直接为该包提供专门的 **AppxManifest**。 如果没有提供 **AppxManifest**，则从为 **PackageFamily** 提供的 **AppxManifest** 自动生成一个。 
 
-默认情况下，将为捆绑包中的每一个包生成 **AppxManifest**。 对于资产包，你还可以设置 **AllowExecution** 属性。 将该属性设置为 **false**（默认值）有助于缩短应用发布时间，因为病毒扫描程序不会阻止不需要执行的包的发布过程（有关详细信息，请参阅[资产包简介](asset-packages.md)]）。 
+默认情况下，将为捆绑包中的每一个包生成 **AppxManifest**。 对于资产包，你还可以设置 **AllowExecution** 属性。 将该属性设置为 **false**（默认值）有助于缩短应用发布时间，因为病毒扫描程序不会阻止不需要执行的包的发布过程（有关详细信息，请参阅[资产包简介](asset-packages.md)）。 
 
-### <a name="files"></a>File
+### <a name="files"></a>文件
 在每个包定义中，可以使用 **File** 元素选择要包含在该包中的文件。 **SourcePath** 属性是文件在本地的位置。 你可以从不同的文件夹（通过提供相对路径）、不同的驱动器（通过提供绝对路径）、甚至网络共享（通过提供类似于 `\\myshare\myapp\*` 的路径）选择文件。 **DestinationPath** 是文件在包中的最终位置（相对于包根目录而言）。 可以使用 **ExcludePath**（而不是其他两个属性）选择要从同一个包中其他 **File** 元素的 **SourcePath** 属性选择的文件中排除的文件。
 
 每个 **File** 元素都可以使用通配符来选择多个文件。 通常，可以在路径中的任意位置使用单通配符 (`*`) 任意次。 但是，单通配符将只匹配文件夹中的文件，不匹配任何子文件夹。 例如，可以在 **SourcePath** 中使用 `C:\MyGame\*\*` 选择文件 `C:\MyGame\Audios\UI.mp3` 和 `C:\MyGame\Videos\intro.mp4`，但它无法选择 `C:\MyGame\Audios\Level1\warp.mp3`。 也可以使用双通配符 (`**`) 代替文件夹或文件名来递归匹配任何内容（但它不能与部分名称连用）。 例如，`C:\MyGame\**\Level1\**` 可以选择 `C:\MyGame\Audios\Level1\warp.mp3` 和 `C:\MyGame\Videos\Bonus\Level1\DLC1\intro.mp4`。 在打包过程中，也可以使用通配符直接更改文件名 - 即在源和目标之间的不同位置使用通配符。 例如，为 **SourcePath** 指定 `C:\MyGame\Audios\*` 和为 **DestinationPath** 指定 `Sound\copy_*` 可以选择 `C:\MyGame\Audios\UI.mp3` 并使其在包中显示为 `Sound\copy_UI.mp3`。 一般情况下，对于单一 **File** 元素的 **SourcePath** 和 **DestinationPath**，单通配符和双通配符的数量必须相同。
@@ -143,7 +143,7 @@ ms.locfileid: "8941924"
 
 每个可选包都有自己独特的包系列名称，必须使用 **PackageFamily** 元素进行定义，同时将 **Optional** 属性指定为 **true**。 **RelatedSet** 属性用于指定可选包是否在相关集中（默认为 true）- 可选包是否应随主包一起更新。
 
-**PrebuiltPackage**元素用于添加包布局以包含或引用要构建的应用包文件中未定义的包。 在此情况下，另一个 DLC 可选包所包含在此处，以便在主应用包文件可以引用它并使其成为相关集的一部分。
+**PrebuiltPackage**元素用于添加要包含或引用要生成应用捆绑包文件中的打包布局中未定义的包。 在这种情况下，另一个 DLC 可选包包括此处，以便主应用程序捆绑文件可以引用它，并使其成为相关集的一部分。
 
 
 ## <a name="build-app-packages-with-a-packaging-layout-and-makeappxexe"></a>使用包布局和 MakeAppx.exe 构建应用包
@@ -159,13 +159,13 @@ MakeAppx.exe build /f PackagingLayout.xml /op OutputPackages\
 MakeAppx.exe build /f PackagingLayout.xml /id "x64" /ip PreviousVersion\ /op OutputPackages\ /iv
 ```
 
-`/id` 标志可用于从包布局中选择要构建的包，它与布局中的 **ID** 属性相对应。 在本例中，`/ip` 用于指示包的以前版本所在的位置。 必须提供以前的版本，因为应用捆绑包文件仍需要引用以前版本的**媒体**包。 `/iv` 标志用于自动递增要构建的包的版本（而不是在 **AppxManifest** 中更改版本）。 或者，也可以使用 `/pv` 和 `/bv` 开关分别直接提供包版本（用于要创建的所有包）和捆绑包版本（用于要创建的所有捆绑包）。
+`/id` 标志可用于从包布局中选择要构建的包，它与布局中的 **ID** 属性相对应。 在本例中，`/ip` 用于指示包的以前版本所在的位置。 必须提供以前的版本，因为仍需要引用以前版本的应用程序捆绑包文件**媒体**包。 `/iv` 标志用于自动递增要构建的包的版本（而不是在 **AppxManifest** 中更改版本）。 或者，也可以使用 `/pv` 和 `/bv` 开关分别直接提供包版本（用于要创建的所有包）和捆绑包版本（用于要创建的所有捆绑包）。
 以本页面上的高级包布局示例为例，要只构建 **Themes** 可选捆绑包和它引用的 **Themes.main** 应用包，可以使用以下命令：
 
 ``` example 
 MakeAppx.exe build /f PackagingLayout.xml /id "Themes" /op OutputPackages\ /bc /nbp
 ```
 
-`/bc` 标志用于表示还应该构建 **Themes** 捆绑包的子项（在本例中，这将构建 **Themes.main**）。 `/nbp` 标志用于表示不应该构建 **Themes** 捆绑包的父项。 **Themes** 的父项是主应用程序包 **MyGame**，这是一个可选应用程序包。 通常，对于相关集中的可选包，还必须构建主应用程序包以便能够安装可选包，因为当可选包位于相关集中时，主应用程序包也会引用它（以确保在主包和可选包之间实施版本控制）。 下图说明了包之间的父子关系：
+`/bc` 标志用于表示还应该构建 **Themes** 捆绑包的子项（在本例中，这将构建 **Themes.main**）。 `/nbp` 标志用于表示不应该构建 **Themes** 捆绑包的父项。 父**主题**，这就是可选的应用程序捆绑，是对主应用捆绑包：**MyGame**。 通常，对于相关集中的可选包，还必须构建主应用程序包以便能够安装可选包，因为当可选包位于相关集中时，主应用程序包也会引用它（以确保在主包和可选包之间实施版本控制）。 下图说明了包之间的父子关系：
 
 ![包布局图](images/packaging-layout.png)

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 服务配置, 会话模板, 自定义邀请字符串, smartmatch hopper
 ms.localizationpriority: medium
 ms.openlocfilehash: bf829069824443cdc1c8c0658fcfdfcbe72d0b93
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938154"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655872"
 ---
 # <a name="multiplayer-service-configuration"></a>多人游戏服务配置
 为了让你的作品充分利用 Xbox Live 提供的服务，你必须先定义服务配置。 此服务配置位于 Xbox Live 云服务中，可定义 Xbox Live 服务与任何运行你的作品/游戏的设备的交互方式。
@@ -38,7 +38,7 @@ ms.locfileid: "8938154"
 
 有关多人游戏会话模板的更多信息，包括可用作 JSON 文本的基础的若干预定义模板，请参阅[多人游戏会话模板](session-templates.md)。
 
-> **重要提示：** 在作品通过最终认证后，该作品中现有的多人游戏会话将再也不能更改或删除。
+> **重要说明：** 标题传递最终通过认证后，可以不能再更改或删除现有的多玩家会话，该标题中。
 
 ## <a name="smartmatch-hoppers"></a>SmartMatch Hopper
 
@@ -59,14 +59,14 @@ ms.locfileid: "8938154"
 | 排名 hopper | 如果 hopper 标记为排名 hopper，则允许对该 hopper 中的玩家进行互配，即使他们阻止对方。 这有助于防止玩家通过阻止对方试图避开技能更高的玩家。 |
 | 从会话自动更新 | 如果启用此字段，则对会话的成员列表或成员的自定义属性所做的更改，将自动传播到以前提交的票证。 |
 
-> **重要提示：** 在作品通过最终认证后，该作品中现有的匹配 hopper 将再也不能更改或删除。
+> **重要说明：** 标题传递最终通过认证后，可以不能再更改或删除该标题中的现有匹配 hoppers。
 
 ## <a name="custom-invite-strings"></a>自定义邀请字符串
 当你的作品向玩家发送加入多人游戏的邀请时，你可以选择显示自定义邀请文本字符串，而非默认邀请字符串。
 
 创建新的自定义邀请字符串时，你必须定义以下各项：
 
-| 字段 | 说明 |
+| 字段 | 描述 |
 |---|---|
 | ID | 要用于标识字符串的自定义邀请字符串的 ID。 “custominvitestrings_”将自动追加到你的 ID 的开头。 最多包含 100 个字符 |
 | 值 | 将显示在自定义邀请 toast 中的自定义邀请字符串文本。 最多包含 100 个字符 |
@@ -75,9 +75,9 @@ ms.locfileid: "8938154"
 
 有关如何配置多人游戏服务的详细信息，请参阅以下文章：
 
-**文章** | **描述**
+**Article** | **描述**
 --- | ---
-[为多人游戏配置 AppXManifest](configure-your-appxmanifest-for-multiplayer.md) | 介绍如何配置 UWP AppXManifest 文件，以使用 Xbox Live 多人游戏服务。
+[为之多人游戏配置在 AppXManifest](configure-your-appxmanifest-for-multiplayer.md) | 介绍如何配置 UWP AppXManifest 文件，以使用 Xbox Live 多人游戏服务。
 [多人游戏会话模板](session-templates.md) | 简要概述了多人游戏会话模板，并提供了可复制和修改的多人游戏会话模板的几个示例。
 [会话模板常量](session-template-constants.md) | 介绍多人游戏会话模板的预定义元素。
 [大型会话](large-sessions.md) | 介绍使用大型会话的时间和方式。

@@ -1,5 +1,5 @@
 ---
-Description: This topic describes the format-specific indexers used by the MakePri.exe tool to generate its index of resources.
+Description: 本主题介绍 MakePri.exe 工具用于生成其资源索引的特定格式索引器。
 title: MakePri.exe 特定格式索引器
 template: detail.hbs
 ms.date: 10/18/2017
@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a245c4ec0280f687cf34e85123960e64fe36a57
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044624"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645872"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>MakePri.exe 特定格式索引器
 
 本主题介绍 [MakePri.exe](compile-resources-manually-with-makepri.md) 工具生成其资源索引时所使用的特定格式索引器。
 
 > [!NOTE]
-> MakePri.exe 在安装时检查安装 Windows 软件开发工具包时**适用于 UWP 管理应用的 Windows SDK**选项。 安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及中名为其他体系结构的文件夹）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 选中时安装 MakePri.exe**适用于 UWP 的托管应用的 Windows SDK**选项的同时，安装 Windows 软件开发工具包。 安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及其他体系结构对于命名的文件夹）。 例如， `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
 MakePri.exe 通常与 `new`、`versioned` 或 `resourcepack` 命令一起使用。 请参阅 [MakePri.exe 命令行选项](makepri-exe-command-options.md)。 在这些情况下，它索引源文件以生成资源索引。 MakePri.exe 使用各种单独的索引器读取不同的源资源文件或资源容器。 最简单的索引器是文件夹索引器，它索引文件夹的内容，如 `.jpg` 或 `.png` 图像。
 
@@ -282,7 +282,7 @@ ResFiles 索引器由 RESFILES 的 `type` 属性进行标识。 它索引 `.resf
 </xs:schema>\
 ```
 
-`.resfiles` 文件是包含一个文件路径简单列表的文本文件。 `.resfiles` 文件可以包含“//”评论。 以下提供了一个示例。
+`.resfiles` 文件是包含一个文件路径简单列表的文本文件。 `.resfiles` 文件可以包含“//”评论。 下面提供了一个示例。
 
 ```
 Strings\component1\fr\elements.resjson
@@ -317,7 +317,7 @@ ResJSON 索引器由 RESJSON 的 `type` 属性进行标识。 它索引 `.resjso
 
 文件还可以包含“//”评论，该评论在分析过程中被忽略。
 
-`initialPath` 属性通过将此初始路径追加在资源名称前面的方式将所有资源放在此初始路径下。 这通常在为类库资源编制索引时会用到。 默认值为空。
+`initialPath` 属性通过将此初始路径追加在资源名称前面的方式将所有资源放在此初始路径下。 这通常在为类库资源编制索引时会用到。 默认值为空值。
 
 ## <a name="resw"></a>ResW
 
@@ -397,7 +397,7 @@ ResW 索引器由 RESW 的 `type` 属性进行标识。 它索引 `.resw` 文件
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)
+* [编译手动与 MakePri.exe 的资源](compile-resources-manually-with-makepri.md)
 * [MakePri.exe 命令行选项](makepri-exe-command-options.md)
 * [MakePri.exe 配置文件](makepri-exe-configuration.md)
-* [JavaScript 对象表示法 (JSON) 的应用程序/json 媒体类型](https://www.ietf.org/rfc/rfc4627.txt)
+* [应用程序/json 媒体类型的 JavaScript 对象表示法 (JSON)](https://www.ietf.org/rfc/rfc4627.txt)

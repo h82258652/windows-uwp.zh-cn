@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, visual studio, 工具, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a3938f486d52942031944b1184a711ddbc579db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924641"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653472"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>用于游戏编程的 Visual Studio 工具
 
@@ -45,7 +45,7 @@ ms.locfileid: "8924641"
 
 有关详细信息，请参阅[使用纹理和图像](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx)。
 
-> **注意**： 图像编辑器并非为了取代功能全面的图像编辑应用，而是适合于很多简单的查看和编辑方案。
+> **请注意**  使用图像编辑器不是为了替代完整功能图像编辑应用，但适用于许多简单查看和编辑方案。
 
  
 
@@ -64,7 +64,7 @@ ms.locfileid: "8924641"
 
 有关详细信息，请参阅[使用 3D 模型](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx)。
 
-> **注意**： 模型编辑器并非为了取代功能全面的模型编辑应用，而是适合于很多简单的查看和编辑方案。
+> **请注意**  使用模型编辑器不是为了替代完整的功能模型编辑应用，但适用于许多简单查看和编辑方案。
 
  
 
@@ -116,7 +116,7 @@ float3 LambertLighting(
 
 你可以向项目中添加生成自定义以便 Visual Studio 将资源转换为可以使用的格式。 在此之后，你可以将资源加载到应用中 并通过创建和填充 DirectX 资源来使用它们，就像在任何其他 DirectX 应用中一样。
 
-若要添加生成自定义，你在**解决方案资源管理器**中的项目上右键单击并选择**生成自定义...**。你可以将以下类型的生成自定义项添加到你的项目。
+若要添加生成自定义，请在“解决方案资源管理器”中右键单击该项目，然后选择“生成自定义...”。可以向项目中添加以下类型的生成自定义。
 
 -   图像内容管道获取图像文件作为输入，并输出 DirectDraw 表面 (.dds) 文件。
 -   网格内容管道获取网格文件（如 .fbx）并输出 .cmo 网格文件。

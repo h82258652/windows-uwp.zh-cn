@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use page transitions in your UWP apps.
+Description: 了解如何在 UWP 应用中使用页面过渡。
 title: UWP 应用中的页面过渡
 template: detail.hbs
 ms.date: 04/08/2018
@@ -9,11 +9,11 @@ pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 38fe6b92828459f91ba6ea2f836d274c2cc8d761
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942239"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646452"
 ---
 # <a name="page-transitions"></a>页面过渡
 
@@ -37,7 +37,7 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 
 ```
 
-**注意**：[**帧**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame)自动使用 [**NavigationThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) 对两个页面之间的导航进行动画处理。 默认情况下，动画是页面刷新。
+**注意**：一个[**帧**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame)会自动使用[ **NavigationThemeTransition** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition)进行动画处理两个页面间导航。 默认情况下，动画是页面刷新。
 
 ## <a name="drill"></a>钻取
 
@@ -54,11 +54,11 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 ```
 
-## <a name="horizontal-slide"></a>水平方向滑动
+## <a name="horizontal-slide"></a>水平幻灯片
 
-使用水平滑动显示同级页面显示旁边彼此。 [NavigationView](../controls-and-patterns/navigationview.md)控件会自动将此动画用于顶级导航，但如果你构建自己的水平导航体验，然后可以实现与 SlideNavigationTransitionInfo 水平滑动。
+使用水平幻灯片来显示同级页挨着出现。 [NavigationView](../controls-and-patterns/navigationview.md)控件将自动使用为顶部导航栏中的此动画，但如果要构建自己的水平导航体验，则可以实现与 SlideNavigationTransitionInfo 水平幻灯片。
 
-所需的感觉是用户正在是并排的页面之间进行导航。 
+所需的感受是用户在彼此相邻的页之间导航。 
 
 ```csharp
 // Navigate to the right, ie. from LeftPage to RightPage
@@ -87,5 +87,5 @@ myFrame.Navigate(typeof(Page2), null, new SuppressNavigationTransitionInfo());
 
 ## <a name="related-topics"></a>相关主题
 
-- [在两个页面之间导航](../basics/navigate-between-two-pages.md)
-- [UWP 应用中运动](index.md)
+- [两个页面之间导航](../basics/navigate-between-two-pages.md)
+- [在 UWP 应用中的动作](index.md)

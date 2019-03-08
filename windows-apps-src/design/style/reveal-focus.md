@@ -1,5 +1,5 @@
 ---
-description: 显示焦点是一种灯光效果，当用户将游戏板或键盘焦点移向它们时，可聚焦元素的边框进行动画处理。
+description: 显示重点是用户将游戏板或键盘焦点移到它们时可获得焦点的元素的边框之间进行动画处理的光照效果。
 title: 显示焦点
 template: detail.hbs
 ms.date: 03/01/2018
@@ -10,29 +10,29 @@ design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bcceb8d44b6d92cab05a9c077531b3fe1b05c79
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115964"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651752"
 ---
 # <a name="reveal-focus"></a>显示焦点
 
 ![主图](images/header-reveal-focus.svg)
 
-显示焦点是[10 英尺体验](/windows/uwp/design/devices/designing-for-tv)，例如 Xbox One 和电视屏幕的照明效果。 当用户将游戏板或键盘焦点移向可聚焦元素（如按钮）时，它会将这些元素的边框进行动画处理。 默认情况下，它是关闭状态，但启用很简单。 
+显示焦点位于的光照效果[10 英尺体验](/windows/uwp/design/devices/designing-for-tv)，如 Xbox One 和电视屏幕。 当用户将游戏板或键盘焦点移向可聚焦元素（如按钮）时，它会将这些元素的边框进行动画处理。 默认情况下，它是关闭状态，但启用很简单。 
 
-（展示突出显示效果，突出显示交互性元素的灯光请参阅[展示突出显示文章](/windows/uwp/design/style/reveal)）。
+(突出显示交互元素照明影响显示突出显示效果，请参阅[显示突出显示文章](/windows/uwp/design/style/reveal)。)
 
 
-> **重要 API**：[Application.FocusVisualKind 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind)、[FocusVisualKind 枚举](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind)、[Control.UseSystemFocusVisuals 属性](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
+> **重要的 Api**:[Application.FocusVisualKind 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind)， [FocusVisualKind 枚举](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind)， [Control.UseSystemFocusVisuals 属性](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
 ## <a name="how-it-works"></a>工作原理
-通过添加动画的明亮辉光元素边框周围显示焦点引起对聚焦元素：
+通过添加元素的边框四周动画的发光显示将调用注意力集中到已设定焦点的元素：
 
 ![显示视觉](images/traveling-focus-fullscreen-light-rf.gif)
 
-这是 10 英尺场景中，用户可能不会完全注意整个电视屏幕尤其有用。 
+这是在其中用户可能不会关注完整整个电视屏幕 10 英尺方案中尤其有用。 
 
 ## <a name="examples"></a>示例
 
@@ -41,9 +41,9 @@ ms.locfileid: "9115964"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果你安装了该<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，单击此处<a href="xamlcontrolsgallery:/item/RevealFocus">打开该应用，请参阅展示的实际的焦点</a>。</p>
+    <p>如果有<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序安装，请单击此处<a href="xamlcontrolsgallery:/item/RevealFocus">打开应用并在操作中看到显示焦点</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -52,7 +52,7 @@ ms.locfileid: "9115964"
 
 ## <a name="how-to-use-it"></a>如何使用
 
-显示焦点是关闭默认情况下。 如何启用：
+显示焦点默认处于关闭状态。 如何启用：
 1. 在应用的构造函数中，调用 [AnalyticsInfo.VersionInfo.DeviceFamily](/uwp/api/windows.system.profile.analyticsversioninfo.DeviceFamily) 属性，并检查当前设备系列是否是 `Windows.Xbox`。
 2. 如果设备系列是 `Windows.Xbox`，将 [Application.FocusVisualKind](/uwp/api/windows.ui.xaml.application.FocusVisualKind) 属性设置为 `FocusVisualKind.Reveal`。 
 
@@ -63,20 +63,20 @@ ms.locfileid: "9115964"
     }
 ```
 
-设置**FocusVisualKind**属性后，系统自动将展示焦点效果应用于其[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)属性设置为**True** （大多数控件的默认值） 的所有控件。 
+在设置后**FocusVisualKind**属性，系统会自动显示焦点将效果应用到所有控件[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)属性设置为**True**（大多数控件默认值）。 
 
-## <a name="why-isnt-reveal-focus-on-by-default"></a>为什么默认情况下不上的展示焦点？ 
-如你所见，很容易启用展示焦点时在应用检测到它正在 Xbox 上运行。 那么，系统为何不为你打开它？ 由于展示焦点会增加焦点视觉对象的大小，这可能导致你的 UI 布局问题。 在某些情况下，你会想要自定义显示焦点效果来优化你的应用。
+## <a name="why-isnt-reveal-focus-on-by-default"></a>为什么默认情况下不上的显示焦点？ 
+正如您所看到的它是相当容易，若要打开显示焦点时该应用程序检测到它在 Xbox 上运行。 那么，系统为何不为你打开它？ 由于显示焦点会增加的焦点视觉对象的大小，这可能导致问题，与 UI 布局。 在某些情况下，你将想要自定义显示焦点效果来优化你的应用。
 
 ## <a name="customizing-reveal-focus"></a>自定义显示焦点
 
-你可以通过修改每个控件的焦点视觉属性来自定义显示焦点效果： [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)、 [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)、 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)，以及[FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)。 这些属性让你可以自定义焦点矩形的颜色和粗细。 （它们与你用于创建[高可见性焦点视觉](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals)的属性相同。） 
+可以通过修改每个控件的焦点视觉属性自定义显示焦点效果：[FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)， [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)， [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)，并且[FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)。 这些属性让你可以自定义焦点矩形的颜色和粗细。 （它们与你用于创建[高可见性焦点视觉](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals)的属性相同。） 
 
-但在开始对构成前，最好先多一些了解构成展示焦点的组件。
+但在开始阅读之前，最好先稍微了解构成显示焦点的组件。
 
-有默认的展示焦点视觉的三个部分： 主边框、 辅助边框和显示明亮辉光。 主边框为 **2px** 粗，在辅助边框的*外部*周围运行。 辅助边框为 **1px** 粗，在主边框的*内部*周围运行。 展示焦点发光具有粗细与主边框的粗细成比例，并且*之外*的主边框周围运行。
+有三个部分默认显示焦点视觉对象： 主边框、 辅助边框和显示发光。 主边框为 **2px** 粗，在辅助边框的*外部*周围运行。 辅助边框为 **1px** 粗，在主边框的*内部*周围运行。 显示焦点发光具有与主边框的粗细成比例的粗细和运行*外部*主边框。
 
-除了静态元素中，展示焦点视觉功能可跳动时移动焦点时移动焦点的方向采用动画的灯光。
+除了静态元素，显示焦点视觉对象功能在悬停时 pulsates 和移动焦点时焦点的方向移动动画的光。
 
 ![显示焦点层](images/reveal-breakdown.svg)
 
@@ -87,7 +87,7 @@ ms.locfileid: "9115964"
 | 边框类型 | 属性 |
 | --- | --- |
 | 主边框、明亮辉光   | [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)<br/> （更改主边框将按比例改变明亮辉光的粗细。）   |
-| 辅助边框   | [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)   |
+| 辅助   | [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)   |
 
 
 此示例中更改按钮焦点视觉的边框粗细：
@@ -108,7 +108,7 @@ ms.locfileid: "9115964"
 
 ## <a name="customize-the-color"></a>自定义颜色
 
-若要更改显示焦点视觉的颜色，使用[FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)和[FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)属性。
+若要更改显示焦点视觉对象的颜色，请使用[FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)并[FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)属性。
 
 | 属性 | 默认资源 | 默认资源值 |
 | ---- | ---- | --- | 
@@ -163,19 +163,19 @@ ms.locfileid: "9115964"
 
 ## <a name="use-your-own-focus-visuals"></a>使用你自己的焦点视觉
 
-若要自定义显示焦点的另一个方法是通过使用视觉状态绘制你自己选择退出系统提供的焦点视觉。 若要了解详细信息，请参阅[焦点视觉示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)。
+自定义显示焦点另一种方法是通过绘制您自己使用的视觉状态来选择退出系统提供的焦点视觉对象。 若要了解详细信息，请参阅[焦点视觉示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)。
 
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>显示焦点和 Fluent 设计系统
 
-显示焦点是 Fluent 设计系统组件，它将光线添加到你的应用。 若要了解有关 Fluent Design 系统及其其他组件的详细信息，请参阅 [UWP 的 Fluent Design 概述](../fluent-design-system/index.md)。
+显示焦点是将光添加到您的应用程序的 Fluent 设计系统组件。 若要了解有关 Fluent Design 系统及其其他组件的详细信息，请参阅 [UWP 的 Fluent Design 概述](../fluent-design-system/index.md)。
 
 ## <a name="related-articles"></a>相关文章
 
 - [显示突出显示](https://docs.microsoft.com/windows/uwp/design/style/reveal)
 - [针对 Xbox 和电视进行设计](/windows/uwp/design/devices/designing-for-tv)
-- [游戏板和遥控器交互](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
-- [焦点视觉示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
-- [合成效果](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
-- [系统内的科学：Fluent Design 和深色](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
-- [系统内的科学：Fluent 设计和浅色](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)
+- [游戏手柄和遥控器之间的交互](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
+- [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [组合效果](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
+- [在系统中的科学：Fluent 设计和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
+- [在系统中的科学：Fluent 设计和轻型这类](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

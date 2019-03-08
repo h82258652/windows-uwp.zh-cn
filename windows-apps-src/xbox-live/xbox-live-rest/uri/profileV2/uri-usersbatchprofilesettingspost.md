@@ -8,18 +8,18 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f859a58e32624223d59d918d46f6230a3abd6db
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115435"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662222"
 ---
 # <a name="post-usersbatchprofilesettings"></a>POST (/users/batch/profile/settings)
-获取用户或用户配置文件。 这些 Uri 的域是`profile.xboxlive.com`。
+获取一个用户或用户的配置文件。 这些 Uri 的域是`profile.xboxlive.com`。
  
   * [备注](#ID4EV)
-  * [授权](#ID4EFB)
-  * [需的请求标头](#ID4EOB)
+  * [Authorization](#ID4EFB)
+  * [所需的请求标头](#ID4EOB)
   * [请求正文](#ID4EZC)
   * [响应正文](#ID4EJD)
  
@@ -28,24 +28,24 @@ ms.locfileid: "9115435"
  
 ## <a name="remarks"></a>备注
  
-这是仅完全限定的配置文件 URL 中允许。 从客户端的所有其他配置文件 Api 会被阻止。
+这是中允许使用仅完全限定配置文件 URL。 所有其他配置文件 Api 的客户端会被阻止。
   
 <a id="ID4EFB"></a>
 
  
 ## <a name="authorization"></a>授权
  
-若要访问配置文件，仅正常身份验证令牌和声明需要。
+若要访问配置文件，只有正常的身份验证令牌和声明需要。
   
 <a id="ID4EOB"></a>
 
  
-## <a name="required-request-headers"></a>需的请求标头
+## <a name="required-request-headers"></a>所需的请求标头
  
-| 标头| 类型| 说明| 
+| 标头| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| x xbl 协定版本| 32 位无符号的整数| 协定版本必须设置为 2，来区分从 Xbox 360 API 此调用。| 
-| 内容类型| 字符串| 值 = <code>application/json</code>| 
+| x-xbl-contract-version| 32 位无符号的整数| 协定版本必须设置为 2，以区分从 Xbox 360 API 此调用。| 
+| content-type| 字符串| 值 = <code>application/json</code>| 
   
 <a id="ID4EZC"></a>
 
@@ -134,6 +134,6 @@ POST /users/batch/profile/settings
  
 ##### <a name="reference"></a>参考 
 
-[Profile (JSON)](../../json/json-profile.md)
+[配置文件 (JSON)](../../json/json-profile.md)
 
    

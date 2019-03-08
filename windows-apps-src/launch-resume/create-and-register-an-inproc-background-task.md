@@ -7,15 +7,15 @@ keywords: windows 10，uwp，后台任务
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
 ms.openlocfilehash: 50e818059436cf7653bf7ac7b2203b0761b93377
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045040"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615792"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>创建和注册进程内后台任务
 
-**重要的 API**
+**重要的 Api**
 
 -   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
@@ -29,7 +29,7 @@ ms.locfileid: "9045040"
 
 ## <a name="fundamentals"></a>基础
 
-进程内模型可通过应用在前台运行还是在后台运行的改进通知增强应用程序生命周期。 对于这些过渡，Application 对象提供了两个新事件：[**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 和 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)。 基于你的应用程序的可见性状态，这些事件适合应用程序生命周期。在[应用生命周期](app-lifecycle.md)中阅读有关这些事件的详细信息，以及它们如何影响应用程序生命周期。
+进程内模型可通过应用在前台运行还是在后台运行的改进通知增强应用程序生命周期。 两个新事件中的这些转换应用程序对象有：[**EnteredBackground** ](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground)并[ **LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)。 基于你的应用程序的可见性状态，这些事件适合应用程序生命周期。在[应用生命周期](app-lifecycle.md)中阅读有关这些事件的详细信息，以及它们如何影响应用程序生命周期。
 
 在较高级别上，处理 **EnteredBackground** 事件以运行将在应用在后台运行时执行的代码，处理 **LeavingBackground** 以了解应用何时移至前台。
 
@@ -68,7 +68,7 @@ ms.locfileid: "9045040"
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>将你的后台活动代码放置在 OnBackgroundActivated() 中
 
-将你的后台活动代码放在[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)以它将会触发时响应后台触发器。 就像[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)可以视为**OnBackgroundActivated** 。 该方法具有[BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)参数，其中包含**Run**方法提供的所有内容。 例如，在 App.xaml.cs 中：
+将在后台活动代码放入[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)后台触发器激发时响应。 可将 **OnBackgroundActivated** 视为 [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396) 进行处理。 该方法具有[BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)参数，它包含的所有内容的**运行**方法提供。 例如，在 App.xaml.cs 中：
 
 ``` cs
 using Windows.ApplicationModel.Background;
@@ -88,7 +88,7 @@ sealed partial class App : Application
 }
 ```
 
-有关的更丰富的**OnBackgroundActivated**示例，请参阅[将转换应用服务在其托管应用所在的同一进程中运行](convert-app-service-in-process.md)。
+有关更丰富**OnBackgroundActivated**示例中，请参阅[转换为其主机应用程序在同一进程中运行的应用服务](convert-app-service-in-process.md)。
 
 ## <a name="handle-background-task-progress-and-completion"></a>处理后台任务进度和完成
 
@@ -110,25 +110,25 @@ sealed partial class App : Application
 
 ## <a name="related-topics"></a>相关主题
 
-**详细的后台任务说明主题**
+**详细的后台任务的指导性主题**
 
-* [将进程外后台任务转换为进程内后台任务](convert-out-of-process-background-task.md)
-* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
-* [在后台播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
-* [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
+* [将进程外后台任务转换为进程内的后台任务](convert-out-of-process-background-task.md)
+* [创建并注册进程外后台任务](create-and-register-a-background-task.md)
+* [在背景中播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [响应通过后台任务的系统事件](respond-to-system-events-with-background-tasks.md)
 * [注册后台任务](register-a-background-task.md)
-* [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
+* [设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)
 * [使用维护触发器](use-a-maintenance-trigger.md)
-* [处理取消的后台任务](handle-a-cancelled-background-task.md)
-* [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
+* [处理已取消的后台任务](handle-a-cancelled-background-task.md)
+* [监视器后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
 
 **后台任务指南**
 
-* [后台任务指南](guidelines-for-background-tasks.md)
+* [后台任务的指导原则](guidelines-for-background-tasks.md)
 * [调试后台任务](debug-a-background-task.md)
-* [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在触发挂起、 继续和后台 UWP 应用中的事件 （在调试）](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
-**后台任务 API 引用**
+**后台任务 API 参考**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)

@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f9ab412088707752d62cc20fd54da2639f26ddc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919723"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613322"
 ---
 # <a name="peoplelist-json"></a>PeopleList (JSON)
-[Person](json-person.md)对象的集合。 
+集合[人员](json-person.md)对象。 
 <a id="ID4ER"></a>
 
  
@@ -23,15 +23,15 @@ ms.locfileid: "8919723"
  
 PeopleList 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| 人脉| [人](json-person.md)的数组| [Person](json-person.md)对象构成人脉列表。| 
-| totalCount| 32 位无符号的整数| 可用设置中的[人员](json-person.md)对象总数。 对于页面，因为它代表整个集，而不只是最新的响应的大小，客户端可以使用此值。 示例值： 680。| 
+| people| 数组[人员](json-person.md)| [人员](json-person.md)构成的人员列表对象。| 
+| totalCount| 32 位无符号的整数| 总数[人员](json-person.md)可集中的对象。 有关分页，因为它代表整个集，而不仅仅是最新的响应的大小，客户端可以使用此值。 示例值：680.| 
   
 <a id="ID4EAC"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -71,7 +71,7 @@ PeopleList 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EVC"></a>

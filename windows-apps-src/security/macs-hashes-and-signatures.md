@@ -4,14 +4,14 @@ description: 本文讨论了如何在通用 Windows 平台 (UWP) 应用中使用
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全
+keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 6517241826d06b63fd88b45237552acffbdc62da
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922318"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651232"
 ---
 # <a name="macs-hashes-and-signatures"></a>MAC、哈希以及签名
 
@@ -27,7 +27,7 @@ ms.locfileid: "8922318"
 
 -   鲍勃和艾丽斯共享密钥并就要使用的 MAC 功能达成一致意见。
 -   Bob 创建了消息并将该消息和密钥输入至 MAC 功能以检索 MAC 值。
--   Bob 将 \[unencrypted\] 消息和 MAC 值通过网络发送给 Alice。
+-   Bob 将发送\[未加密\]消息和 MAC 值向 Alice 通过网络。
 -   Alice 使用密钥和消息作为 MAC 功能的输入。 她将生成的 MAC 值与鲍勃发送的 MAC 值进行比较。 如果二者相同，则消息在传输中未进行更改。
 
 注意，偷听鲍勃和艾丽斯之间对话的第三方伊夫无法有效操纵消息。 伊夫没有私钥访问权限，因此，无法创建 MAC 值，该值看上去可让艾丽斯感觉出现的篡改消息合法。
@@ -125,14 +125,14 @@ namespace SampleMacAlgorithmProvider
 }
 ```
 
-## <a name="hashes"></a>哈希
+## <a name="hashes"></a>Hashes
 
 
 加密哈希函数获取任意长度的数据块并返回固定大小的位字符串。 哈希函数通常在对数据进行签名时使用。 由于大多数公钥签名操作是计算密集型的操作，因此对消息哈希进行签名（加密）比对原始消息进行签名通常更高效。 以下过程显示了一个常用的简化方案：
 
--   Bob 和 Alice 共享密钥并就要使用的 MAC 功能达成一致意见。
+-   鲍勃和艾丽斯共享密钥并就要使用的 MAC 功能达成一致意见。
 -   Bob 创建了消息并将该消息和密钥输入至 MAC 功能以检索 MAC 值。
--   Bob 将 \[unencrypted\] 消息和 MAC 值通过网络发送给 Alice。
+-   Bob 将发送\[未加密\]消息和 MAC 值向 Alice 通过网络。
 -   Alice 使用密钥和消息作为 MAC 功能的输入。 她将生成的 MAC 值与鲍勃发送的 MAC 值进行比较。 如果二者相同，则消息在传输中未进行更改。
 
 请注意，Alice 发送了一个未加密的消息。 只对哈希进行加密。 该过程只能确保原始消息未经修改，以及消息哈希是由对 Alice 的私钥（推测是 Alice）具有访问权限的人进行的签名，后者是通过使用通过使用 Alice 的公钥来实现的。
@@ -141,7 +141,7 @@ namespace SampleMacAlgorithmProvider
 
 数字签名为等同于私钥消息验证代码 (MAC) 的公钥。 但是 MAC 使用私钥使消息接受者能够验证消息在传输期间是否尚未改变，签名使用私钥/公钥对。
 
-[**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 对象可用于重复哈希不同的数据，不必在每次使用时重新创建该对象。 [**Append**](https://msdn.microsoft.com/library/windows/apps/br241499) 方法将新数据添加到要进行哈希操作的缓冲区。 [**GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法对数据进行哈希操作并重置对象以用于另一个用途。 下面的示例对此进行了展示。
+[  **CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 对象可用于重复哈希不同的数据，不必在每次使用时重新创建该对象。 [  **Append**](https://msdn.microsoft.com/library/windows/apps/br241499) 方法将新数据添加到要进行哈希操作的缓冲区。 [  **GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法对数据进行哈希操作并重置对象以用于另一个用途。 下面的示例对此进行了展示。
 
 ```cs
 public void SampleReusableHash()

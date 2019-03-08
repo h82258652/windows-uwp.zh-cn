@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ab1279a8744d6dc9cddc88abaa064058f1259c2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943073"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631802"
 ---
 # <a name="image-metadata"></a>图像元数据
 
@@ -19,13 +19,13 @@ ms.locfileid: "8943073"
 
 本文介绍如何读写图像元数据属性以及如何使用 [**GeotagHelper**](https://msdn.microsoft.com/library/windows/apps/dn903683) 实用程序类标注文件。
 
-## <a name="image-properties"></a>图像属性
+## <a name="image-properties"></a>映像属性
 
-[**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) 属性返回对关于文件的相关内容信息提供访问的 [**StorageItemContentProperties**](https://msdn.microsoft.com/library/windows/apps/hh770642) 对象。 通过调用 [**GetImagePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770646) 获取特定于图像的属性。 返回的 [**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/br207718) 对象公开包含基本图像元数据字段（如图像的标题和捕获日期）的成员。
+[  **StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) 属性返回对关于文件的相关内容信息提供访问的 [**StorageItemContentProperties**](https://msdn.microsoft.com/library/windows/apps/hh770642) 对象。 通过调用 [**GetImagePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770646) 获取特定于图像的属性。 返回的 [**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/br207718) 对象公开包含基本图像元数据字段（如图像的标题和捕获日期）的成员。
 
 [!code-cs[GetImageProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetImageProperties)]
 
-若要访问较大的文件元数据集，请使用 Windows 属性系统，一组可以使用唯一的字符串标识符进行检索的文件元数据。 创建字符串列表，并为想要检索的每个属性添加标识符。 [**ImageProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br207732) 方法采用此字符串列表，并返回键/值对的字典，其中键是属性标识符，值是属性值。
+若要访问较大的文件元数据集，请使用 Windows 属性系统，一组可以使用唯一的字符串标识符进行检索的文件元数据。 创建字符串列表，并为想要检索的每个属性添加标识符。 [  **ImageProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br207732) 方法采用此字符串列表，并返回键/值对的字典，其中键是属性标识符，值是属性值。
 
 [!code-cs[GetWindowsProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetWindowsProperties)]
 
@@ -69,7 +69,7 @@ GeotagHelper 是一个实用工具类，可以方便地直接使用 [**Windows.D
 
 -   有关 WIC 元数据查询语言和支持的属性的信息，请参阅 [WIC 图像格式本机元数据查询](https://msdn.microsoft.com/library/windows/desktop/ee719904)。
 
--   许多元数据属性仅受图形类型的一个子集支持。 如果请求的属性中的某一个属性不受与解码器关联的图像支持，[**GetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226250) 将失败，错误代码为 0x88982F41；如果图像完全不支持元数据，错误代码为 0x88982F81。 与这些错误代码相关联的常量是 WINCODEC\_ERR\_PROPERTYNOTSUPPORTED 和 WINCODEC\_ERR\_UNSUPPORTEDOPERATION，它们在 winerror.h 标头文件中定义。
+-   许多元数据属性仅受图形类型的一个子集支持。 [**GetPropertiesAsync** ](https://msdn.microsoft.com/library/windows/apps/br226250)如果与其关联的图像解码器和 0x88982F81 如果映像不支持元数据根本不支持请求的属性之一则将失败，错误代码 0x88982F41。 与这些错误代码关联的常量是 WINCODEC\_ERR\_PROPERTYNOTSUPPORTED 和 WINCODEC\_ERR\_UNSUPPORTEDOPERATION 和是否 winerror.h 标头文件中定义。
 -   由于不确定图像是否包含特定属性的值，在尝试访问它之前，请使用 **IDictionary.ContainsKey** 来验证属性是否出现在结果中。
 
 将图像元数据写入流需要与图像输出文件关联的 **BitmapEncoder**。
@@ -80,7 +80,7 @@ GeotagHelper 是一个实用工具类，可以方便地直接使用 [**Windows.D
 
 -   有关图像文件类型支持的属性的详细信息，请参阅 [Windows 属性](https://msdn.microsoft.com/library/windows/desktop/dd561977)、[照片元数据策略](https://msdn.microsoft.com/library/windows/desktop/ee872003)和 [WIC 图像格式本机元数据查询](https://msdn.microsoft.com/library/windows/desktop/ee719904)。
 
--   如果请求的属性之一不受与编码器关联的图像支持，[**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) 将失败，错误代码为 0x88982F41。
+-   [**SetPropertiesAsync** ](https://msdn.microsoft.com/library/windows/apps/br226252)如果与编码器关联的图像不支持请求的属性之一则将失败，错误代码 0x88982F41。
 
 ## <a name="related-topics"></a>相关主题
 

@@ -1,5 +1,5 @@
 ---
-Description: This guide helps you enlighten your app to handle enterprise data managed by Windows Information Protection (WIP) policy as well as personal data.
+Description: 本指南帮助你启发你的应用，以处理由 Windows 信息保护 (WIP) 策略管理的企业数据以及个人数据。
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Windows 信息保护 (WIP) 开发人员指南
@@ -9,21 +9,21 @@ keywords: windows 10, uwp, wip, Windows 信息保护, 企业数据, 企业数据
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f022045787512f6baea679633d5327b6ba4caf8
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048354"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657932"
 ---
 # <a name="windows-information-protection-wip-developer-guide"></a>Windows 信息保护 (WIP) 开发人员指南
 
 *启发式*应用可区分公司和个人数据，并且知道应基于管理员定义的 Windows 信息保护 (WIP) 策略保护哪些数据。
 
-在本指南中，我们将向你介绍如何生成一个启发式应用。 完成此操作后，策略管理员将能够信任你的应用，允许它们使用组织数据。 员工会爱戴你，因为即使在他们从组织的移动设备管理 (MDM) 注销或完全退出组织后，你仍然将他们的个人数据完好无损保留在他们的设备上。
+在本指南中，我们将向你介绍如何生成一个启发式应用。 完成此操作后，策略管理员将能够信任你的应用，允许它们使用组织数据。 员工也愿意他们的个人数据在设备上保持不变，即使取消注册组织的移动设备管理 (MDM) 或完全退出组织也是如此。
 
 __注意__ 本指南有助于启发你创建 UWP 应用。 如果你想要启发 C++ Windows 桌面应用，请参阅 [Windows 信息保护 (WIP) 开发人员指南 (C++)](https://go.microsoft.com/fwlink/?LinkId=822192)。
 
-可以在此处阅读有关 WIP 和启发式应用的详细信息：[Windows 信息保护 (WIP)](wip-hub.md)。
+你可以阅读更多有关 WIP 和已启用以下应用：[Windows 信息保护 (WIP)](wip-hub.md)。
 
 可以在[此处](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)找到完整示例。
 
@@ -33,21 +33,21 @@ __注意__ 本指南有助于启发你创建 UWP 应用。 如果你想要启发
 
 你将需要以下内容：
 
-* 运行 Windows10 版本 1607 或更高版本的测试虚拟机 (VM)。 你将针对此测试 VM 调试你的应用。
+* 运行 Windows 10 版本 1607 或更高版本的测试虚拟机 (VM)。 你将针对此测试 VM 调试你的应用。
 
-* 运行 Windows10 版本 1607 或更高版本的开发计算机。 这可能是你的测试 VM，前提是你已在其上安装了 Visual Studio。
+* 运行 Windows 10 版本 1607 或更高版本的开发计算机。 这可能是你的测试 VM，前提是你已在其上安装了 Visual Studio。
 
 ## <a name="setup-your-development-environment"></a>设置你的开发环境
 
 你将执行以下操作：
 
-* [在测试 VM 上安装 WIP 设置开发人员助手](#install-assistant)
+* [WIP 设置开发人员助理到你的测试 VM 上安装](#install-assistant)
 
-* [通过使用 WIP 设置开发人员助手创建保护策略](#create-protection-policy)
+* [使用 WIP 设置助理开发人员创建保护策略](#create-protection-policy)
 
-* [设置 Visual Studio 项目](#setup-vs-project)
+* [安装 Visual Studio 项目](#setup-vs-project)
 
-* [设置远程调试](#setup-remote-debugging)
+* [安装远程调试](#setup-remote-debugging)
 
 * [将命名空间添加到你的代码文件](#add-namespaces)
 
@@ -57,7 +57,7 @@ __注意__ 本指南有助于启发你创建 UWP 应用。 如果你想要启发
 
  使用此工具在测试 VM 上设置 Windows 信息保护策略。
 
- 在此处下载工具：[WIP 设置开发人员助手](https://www.microsoft.com/store/p/wip-setup-developer-assistant/9nblggh526jf)。
+ 下载以下工具：[WIP 设置开发人员助理](https://www.microsoft.com/store/p/wip-setup-developer-assistant/9nblggh526jf)。
 
 <a id="create-protection-policy" />
 
@@ -82,7 +82,7 @@ __注意__ 本指南有助于启发你创建 UWP 应用。 如果你想要启发
     ```xml
        <rescap:Capability Name="enterpriseDataPolicy"/>
     ```
-   >*可选阅读*：“rescap”前缀表示*受限功能*。 请参阅[特殊和受限功能](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
+   >*可选读取*:"Rescap"前缀意味着*受限功能*。 请参阅[特殊和受限功能](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
 
 4. 将此命名空间添加到程序包清单文件：
 
@@ -157,12 +157,12 @@ else
 
 如果你的应用在保护策略的允许列表上，则 Windows 信息保护会为你的应用提供权限。
 
-**本节内容：**
+**在本部分中：**
 
 * [从文件中读取数据](#read-file)
 * [从网络终结点读取数据](#read-network)
-* [从剪贴板中读取数据](#read-clipboard)
-* [从“共享”合约读取数据](#read-share)
+* [从剪贴板读取数据](#read-clipboard)
+* [从共享合约中读取数据](#read-share)
 
 <a id="read-file" />
 
@@ -178,7 +178,7 @@ else
         await storageFolder.GetFileAsync(fileName);
 ```
 
-**步骤 2：确定你的应用是否可以打开该文件**
+**步骤 2：确定您的应用程序是否可以打开的文件**
 
 调用 [FileProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync.aspx) 以确定你的应用是否可以打开该文件。
 
@@ -201,21 +201,21 @@ else if (protectionInfo.Status == FileProtectionStatus.Revoked)
 
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx) 值 **UnProtected** 表示文件不受保护，即使你的应用不在策略的允许列表中，你的应用仍然可以打开该文件。
 
-> **API** <br>
+> **Api** <br>
 [FileProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync.aspx)<br>
 [FileProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.aspx)<br>
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
 [ProtectionPolicyManager.IsIdentityManaged](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged.aspx)
 
-**步骤 3：将文件读取到流或缓冲区中**
+**步骤 3：将文件读入流或缓冲区**
 
-*将文件读取到流中*
+*该文件读入流*
 
 ```csharp
 var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
 ```
 
-*将文件读取到缓冲区中*
+*将文件读入缓冲区*
 
 ```csharp
 var buffer = await Windows.Storage.FileIO.ReadBufferAsync(file);
@@ -226,7 +226,7 @@ var buffer = await Windows.Storage.FileIO.ReadBufferAsync(file);
 
 创建受保护的线程上下文，以从企业终结点读取。
 
-**步骤 1：获取网络终结点的标识**
+**步骤 1：获取标识的网络终结点**
 
 ```csharp
 Uri resourceURI = new Uri("http://contoso.com/stockData.xml");
@@ -240,7 +240,7 @@ string identity = await ProtectionPolicyManager.
 
 如果终结点不由策略管理，你将得到一个空字符串。
 
-> **API** <br>
+> **Api** <br>
 [ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getprimarymanagedidentityfornetworkendpointasync.aspx)
 
 
@@ -270,12 +270,12 @@ else
 
 无论终结点是否由策略管理，[**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx) 方法都会返回一个 [**ThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.threadnetworkcontext.aspx) 对象。 如果应用处理个人和企业资源，请为所有标识调用 [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx)。  获取资源后，处置 ThreadNetworkContext 以从当前线程中清除所有标识标记。
 
-> **API** <br>
+> **Api** <br>
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)<br>
 [ProtectionPolicyManager.CreateCurrentThreadNetworkContext](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx)
 
-**步骤 3：将资源读取到缓冲区中**
+**步骤 3：读取到缓冲区中的资源**
 
 ```csharp
 private static async Task<IBuffer> GetDataFromNetworkHelperMethod(Uri resourceURI)
@@ -290,7 +290,7 @@ private static async Task<IBuffer> GetDataFromNetworkHelperMethod(Uri resourceUR
 }
 ```
 
-**（可选）使用标头令牌，而不是创建受保护的线程上下文**
+**（可选）而不是创建受保护的线程上下文中使用的标头令牌**
 
 ```csharp
 public static async Task<IBuffer> GetDataFromNetworkbyUsingHeader(Uri resourceURI)
@@ -330,7 +330,7 @@ private static async Task<IBuffer> GetDataFromNetworkbyUsingHeaderHelperMethod(H
 }
 ```
 
-**处理页面重定向**
+**句柄的页面重定向**
 
 有时，Web 服务器将通信重定向到资源的更新版本。
 
@@ -379,7 +379,7 @@ private static async Task<IBuffer> GetDataFromNetworkRedirectHelperMethod(Uri re
 
 ```
 
-> **API** <br>
+> **Api** <br>
 [ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getprimarymanagedidentityfornetworkendpointasync.aspx)<br>
 [ProtectionPolicyManager.CreateCurrentThreadNetworkContext](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx)<br>
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
@@ -389,7 +389,7 @@ private static async Task<IBuffer> GetDataFromNetworkRedirectHelperMethod(Uri re
 
 ### <a name="read-data-from-the-clipboard"></a>从剪贴板中读取数据
 
-**获取从剪贴板中使用数据的权限**
+**获取使用剪贴板中的数据的权限**
 
 若要从剪贴板中获取数据，请要求 Windows 提供权限。 使用 [**DataPackageView.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706645.aspx) 执行该操作。
 
@@ -411,7 +411,7 @@ public static async Task PasteText(TextBox textBox)
 }
 ```
 
-> **API** <br>
+> **Api** <br>
 [DataPackageView.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/dn706645.aspx)
 
 **隐藏或禁用使用剪贴板数据的功能**
@@ -438,12 +438,12 @@ private bool IsClipboardAllowedAsync()
 }
 ```
 
-> **API** <br>
+> **Api** <br>
 [ProtectionPolicyEvaluationResult](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicyevaluationresult.aspx)<br>
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
-**防止用户收到同意对话框提示**
+**防止用户同意对话框提示**
 
 新文档不属于*个人*，也不属于*企业*。 它只是新文档。 如果用户将企业数据复制到该文档中，Windows 会强制执行策略，并且用户会收到同意对话框提示。 此代码可防止此情况发生。 此任务不是为了帮助保护数据。 它更多是为了在你的应用创建全新的项目时防止用户收到同意对话框。
 
@@ -478,7 +478,7 @@ private async void PasteText(bool isNewEmptyDocument)
 }
 ```
 
-> **API** <br>
+> **Api** <br>
 [DataPackageView.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/dn706645.aspx)<br>
 [ProtectionPolicyEvaluationResult](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicyevaluationresult.aspx)<br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
@@ -534,7 +534,7 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 }
 ```
 
-> **API** <br>
+> **Api** <br>
 [ProtectionPolicyManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/dn705789.aspx)<br>
 [ProtectionPolicyEvaluationResult](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicyevaluationresult.aspx)<br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
@@ -543,16 +543,16 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 
 保护离开应用的企业数据。 当你在页面中显示数据、将数据保存到文件或网络终结点或者通过“共享”合约时，数据会离开你的应用。
 
-**本节内容：**
+**在本部分中：**
 
-* [保护显示在页面中的数据](#protect-pages)
-* [将数据作为后台进程保护到文件](#protect-background)
+* [保护页中显示的数据](#protect-pages)
+* [作为后台进程进行保护的数据写入文件](#protect-background)
 * [保护文件的一部分](#protect-part-file)
-* [读取文件的受保护部分](#read-protected)
-* [将数据保护到文件夹](#protect-folder)
-* [将数据保护到网络终结点](#protect-network)
-* [保护你的应用通过“共享”合约共享的数据](#protect-share)
-* [将你复制的文件保护到另一个位置](#protect-other-location)
+* [读取文件的受保护的部分](#read-protected)
+* [保护数据的文件夹](#protect-folder)
+* [保护网络终结点的数据](#protect-network)
+* [保护您的应用程序共享通过共享协定的数据](#protect-share)
+* [保护复制到其他位置的文件](#protect-other-location)
 * [在设备屏幕处于锁定状态时保护企业数据](#protect-locked)
 
 <a id="protect-pages" />
@@ -563,7 +563,7 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 
 当你标记视图或进程时，Windows 将对它强制执行策略。 这有助于防止不受应用控制的操作所导致的数据泄露。 例如，在计算机上，用户可能使用 CTRL-V 从视图复制企业信息，然后将该信息粘贴到另一个应用中。 Windows 可以防范此风险。 Windows 还有助于强制执行“共享”合约。
 
-**标记当前应用视图**
+**标记当前的应用视图**
 
 如果你的应用具有多个视图，其中一些视图使用企业数据，而另一些视图使用个人数据，请执行此操作。
 
@@ -577,11 +577,11 @@ ProtectionPolicyManager.GetForCurrentView().Identity = identity;
 ProtectionPolicyManager.GetForCurrentView().Identity = String.Empty;
 ```
 
-> **API** <br>
+> **Api** <br>
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
-**标记进程**
+**标记过程**
 
 如果你的应用中的所有视图都仅使用一种类型的数据（个人或企业），请执行此操作。
 
@@ -599,7 +599,7 @@ bool result =
 ProtectionPolicyManager.ClearProcessUIPolicy();
 ```
 
-> **API** <br>
+> **Api** <br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
 <a id="protect-file" />
@@ -608,7 +608,7 @@ ProtectionPolicyManager.ClearProcessUIPolicy();
 
 创建受保护的文件，然后对该文件进行写入。
 
-**步骤 1：确定你的应用是否可以创建企业文件**
+**步骤 1：确定您的应用程序可以创建企业级文件**
 
 如果标识字符串由策略管理，并且你的应用在该策略的允许列表上，则你的应用可以创建企业文件。
 
@@ -616,11 +616,11 @@ ProtectionPolicyManager.ClearProcessUIPolicy();
   if (!ProtectionPolicyManager.IsIdentityManaged(identity)) return false;
 ```
 
-> **API** <br>
+> **Api** <br>
 [ProtectionPolicyManager.IsIdentityManaged](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged.aspx)
 
 
-**步骤 2：创建文件，并将其保护到标识**
+**步骤 2：创建文件并保护标识**
 
 ```csharp
 StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
@@ -631,12 +631,12 @@ FileProtectionInfo fileProtectionInfo =
     await FileProtectionManager.ProtectAsync(storageFile, identity);
 ```
 
-> **API** <br>
+> **Api** <br>
 [FileProtectionManager.ProtectAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.protectasync.aspx)
 
-**步骤 3：将该流或缓冲区写入文件**
+**步骤 3：向文件写入该流或缓冲区**
 
-*写入流*
+*编写流*
 
 ```csharp
     if (fileProtectionInfo.Status == FileProtectionStatus.Protected)
@@ -667,7 +667,7 @@ FileProtectionInfo fileProtectionInfo =
       }
 ```
 
-> **API** <br>
+> **Api** <br>
 [FileProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.aspx)<br>
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
 
@@ -679,7 +679,7 @@ FileProtectionInfo fileProtectionInfo =
 
 在创建文件时，你将需要使用一种使文件句柄保持打开的方法。  
 
-**步骤 1：确定你是否可以创建企业文件**
+**步骤 1：确定是否可以创建企业级文件**
 
 如果你正在使用的标识由策略管理，并且你的应用在该策略的允许列表上，则你可以创建企业文件。
 
@@ -687,12 +687,12 @@ FileProtectionInfo fileProtectionInfo =
 if (!ProtectionPolicyManager.IsIdentityManaged(identity)) return false;
 ```
 
-> **API** <br>
+> **Api** <br>
 [ProtectionPolicyManager.IsIdentityManaged](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged.aspx)
 
-**步骤 2：创建文件，并将其保护到标识**
+**步骤 2：创建一个文件并保护标识**
 
-[**FileProtectionManager.CreateProtectedAndOpenAsync**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.createprotectedandopenasync.aspx) 创建受保护的文件，并在你对其进行写入时使文件句柄保持打开状态。
+[  **FileProtectionManager.CreateProtectedAndOpenAsync**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.createprotectedandopenasync.aspx) 创建受保护的文件，并在你对其进行写入时使文件句柄保持打开状态。
 
 ```csharp
 StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
@@ -702,10 +702,10 @@ ProtectedFileCreateResult protectedFileCreateResult =
         "sample.txt", identity, CreationCollisionOption.ReplaceExisting);
 ```
 
-> **API** <br>
+> **Api** <br>
 [FileProtectionManager.CreateProtectedAndOpenAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.createprotectedandopenasync.aspx)
 
-**步骤 3：将流或缓冲区写入文件**
+**步骤 3：写入文件流或缓冲区**
 
 此示例将流写入文件。
 
@@ -731,7 +731,7 @@ else if (protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus
 
 ```
 
-> **API** <br>
+> **Api** <br>
 [ProtectedFileCreateResult.ProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedfilecreateresult.protectioninfo.aspx)<br>
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
 [ProtectedFileCreateResult.Stream](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedfilecreateresult.stream.aspx)<br>
@@ -758,7 +758,7 @@ BufferProtectUnprotectResult result =
 enterpriseData= result.Buffer;
 ```
 
-> **API** <br>
+> **Api** <br>
 [DataProtectionManager.ProtectAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectionmanager.protectasync.aspx)<br>
 [BufferProtectUnprotectResult.buffer](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.bufferprotectunprotectresult.buffer.aspx)
 
@@ -772,7 +772,7 @@ var personalData = Windows.Security.Cryptography.CryptographicBuffer.ConvertStri
     personalDataString, Windows.Security.Cryptography.BinaryStringEncoding.Utf8);
 ```
 
-**步骤 3：将流或缓冲区写入文件**
+**步骤 3：向文件写入流或缓冲区**
 
 ```csharp
 StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
@@ -797,7 +797,7 @@ using (var outputStream = stream.GetOutputStreamAt(0))
 }
 ```
 
-**步骤 4：跟踪文件中的企业数据位置**
+**步骤 4：跟踪的企业数据文件中的位置**
 
 跟踪该文件中企业所有的数据是你的应用的责任。
 
@@ -841,7 +841,7 @@ uint endPosition =
     Convert.ToUInt16((doc.FirstChild.Attributes.GetNamedItem("end")).InnerText);
 ```
 
-**步骤 2：打开数据文件并确保它不受保护**
+**步骤 2：打开数据文件，并确保未受到保护**
 
 ```csharp
 Windows.Storage.StorageFile dataFile =
@@ -854,7 +854,7 @@ if (protectionInfo.Status == FileProtectionStatus.Protected)
     return false;
 ```
 
-> **API** <br>
+> **Api** <br>
 [FileProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync.aspx)<br>
 [FileProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.aspx)<br>
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
@@ -890,7 +890,7 @@ else if (dataProtectionInfo.Status == DataProtectionStatus.Revoked)
 
 ```
 
-> **API** <br>
+> **Api** <br>
 [DataProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectioninfo.aspx)<br>
 [DataProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectionmanager.getstreamprotectioninfoasync.aspx)<br>
 
@@ -923,7 +923,7 @@ private async Task<bool> CreateANewFolderAndProtectItAsync(string folderName, st
 
 在保护该文件夹前，确保它是空的。 你无法保护已经包含项目的文件夹。
 
-> **API** <br>
+> **Api** <br>
 [ProtectionPolicyManager.IsIdentityManaged](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged.aspx)<br>
 [FileProtectionManager.ProtectAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.protectasync.aspx)<br>
 [FileProtectionInfo.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.identity.aspx)<br>
@@ -935,7 +935,7 @@ private async Task<bool> CreateANewFolderAndProtectItAsync(string folderName, st
 
 创建受保护的线程上下文以将该数据发送到企业终结点。  
 
-**步骤 1：获取网络终结点的标识**
+**步骤 1：获取标识的网络终结点**
 
 ```csharp
 Windows.Networking.HostName hostName =
@@ -945,10 +945,10 @@ string identity = await ProtectionPolicyManager.
     GetPrimaryManagedIdentityForNetworkEndpointAsync(hostName);
 ```
 
-> **API** <br>
+> **Api** <br>
 [ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getprimarymanagedidentityfornetworkendpointasync.aspx)
 
-**步骤 2：创建受保护的线程上下文，并将数据发送到网络终结点**
+**步骤 2：创建受保护的线程上下文并将数据发送到的网络终结点**
 
 ```csharp
 HttpClient client = null;
@@ -978,7 +978,7 @@ else
 }
 ```
 
-> **API** <br>
+> **Api** <br>
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)<br>
 [ProtectionPolicyManager.CreateCurrentThreadNetworkContext](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx)
@@ -1012,7 +1012,7 @@ private void OnDataRequested(DataTransferManager sender, DataRequestedEventArgs 
 }
 ```
 
-> **API** <br>
+> **Api** <br>
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
@@ -1036,7 +1036,7 @@ private async void CopyProtectionFromOneFileToAnother
 }
 ```
 
-> **API** <br>
+> **Api** <br>
 [FileProtectionManager.CopyProtectionAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.copyprotectionasync.aspx)<br>
 
 <a id="protect-locked" />
@@ -1086,7 +1086,7 @@ private async void ProtectionPolicyManager_ProtectedAccessSuspending(object send
 }
 ```
 
-> **API** <br>
+> **Api** <br>
 [ProtectionPolicyManager.ProtectedAccessSuspending](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccesssuspending.aspx)<br>
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)</br>
@@ -1097,9 +1097,9 @@ private async void ProtectionPolicyManager_ProtectedAccessSuspending(object send
 
 #### <a name="add-back-sensitive-data-when-the-device-is-unlocked"></a>当设备解锁时，添加回敏感数据
 
-当设备解锁并且密钥在设备上再次可用时，将引发 [**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed.aspx)。
+[**ProtectionPolicyManager.ProtectedAccessResumed** ](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed.aspx)解除和密钥会重新在设备上可用时引发。
 
-如果管理员未配置锁屏下的安全数据保护策略，则 [**ProtectedAccessResumedEventArgs.Identities**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedaccessresumedeventargs.identities.aspx) 是空的集合。
+[**ProtectedAccessResumedEventArgs.Identities** ](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedaccessresumedeventargs.identities.aspx)为空集合，如果管理员尚未配置锁定策略下的安全数据保护。
 
 此示例执行上一示例的反向操作。 它解密缓冲区、将信息从缓冲区添加回文本块，然后释放该缓冲区。
 
@@ -1123,7 +1123,7 @@ private async void ProtectionPolicyManager_ProtectedAccessResumed(object sender,
 }
 ```
 
-> **API** <br>
+> **Api** <br>
 [ProtectionPolicyManager.ProtectedAccessResumed](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed.aspx)<br>
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)</br>
@@ -1158,7 +1158,7 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 }
 ```
 
-> **API** <br>
+> **Api** <br>
 [ProtectionPolicyManager_ProtectedContentRevoked](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked.aspx)<br>
 
 ## <a name="related-topics"></a>相关主题

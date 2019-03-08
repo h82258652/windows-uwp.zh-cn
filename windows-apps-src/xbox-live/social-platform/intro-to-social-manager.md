@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 5dff3dcfd79fe43ff8af1513a4358bd0ff98b8d1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931721"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609002"
 ---
 # <a name="introduction-to-social-manager"></a>社交管理器简介
 
@@ -45,17 +45,17 @@ Xbox Live 提供了作品可用于各种场景的丰富社交图片。
 
 ## <a name="core-concepts"></a>核心概念
 
-**社交图片**：*社交图片*为设备上的本地用户创建。 这将创建一个让用户好友的所有信息保持最新的结构。
+**社交图**:一个*社交图*为设备上的本地用户创建。 这将创建一个让用户好友的所有信息保持最新的结构。
 
 > [!NOTE]
 > 在 Windows 上只能有一个本地用户
 
-**Xbox 社交用户**：*Xbox 社交用户*是与来自组的用户关联的完整社交数据集
+**Xbox 社会用户**:*Xbox 社交用户*是一套完整的社交数据与从一组用户关联
 
-**Xbox 社交用户组**：组是用于诸如填充 UI 这样的操作的用户集合。 组有两种类型
+**Xbox 社会用户组**:组是用于填充 UI 等用户的集合。 组有两种类型
 
-* **筛选组**：筛选组获取本地（调用）用户的*社交图片*，并始终根据指定的筛选参数返回最新用户集
-* **用户组**：用户组获取用户列表，并返回这些用户的视图（始终为最新）。 这些用户可能不在用户好友列表中。
+* **筛选组**:筛选器组采用本地 （调用） 用户*社交图*，并返回一组一致地全新的基于指定的筛选器参数的用户
+* **用户组**:用户组使用的用户列表，并返回这些用户的始终最新视图。 这些用户可能不在用户好友列表中。
 
 为了使*社交用户组*保持最新，必须在每个帧上调用 `social_manager::do_work()` 函数。
 
@@ -66,7 +66,7 @@ Xbox Live 提供了作品可用于各种场景的丰富社交图片。
 ### <a name="social-manager"></a>社交管理器
 
 * C++ API 类名称：social_manager
-* WinRT(C#) API 类名称：[SocialManager](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xbox.services.social.manager.socialmanager?view=xboxlive-dotnet-2017.11.20171204.01)
+* WinRT (C#) API 类名称：[SocialManager](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xbox.services.social.manager.socialmanager?view=xboxlive-dotnet-2017.11.20171204.01)
 
 这是可用于获取 **Xbox 社交用户组**（上述视图）的单一实例类。
 
@@ -75,14 +75,14 @@ Xbox Live 提供了作品可用于各种场景的丰富社交图片。
 ### <a name="xbox-social-user-group"></a>Xbox 社交用户组
 
 * C++ API 类名称：xbox_social_user_group
-* WinRT(C#) API 类名称：[XboxSocialUserGroup](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xbox.services.social.manager.xboxsocialusergroup?view=xboxlive-dotnet-2017.11.20171204.01)
+* WinRT (C#) API 类名称：[XboxSocialUserGroup](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xbox.services.social.manager.xboxsocialusergroup?view=xboxlive-dotnet-2017.11.20171204.01)
 
 满足某些条件的用户组，如上所述。 Xbox 社交用户组显示它们是哪类组，在跟踪哪些用户或它们的筛选器设置，以及组所属的本地用户。
 
 可以在 [Xbox Live API 参考](https://aka.ms/xboxliveuwpdocs)中找到完整的社交管理器 API 说明。
 还可以在 [Microsoft.Xbox.Services.Social.Manager.Namespace 文档](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xbox.services.social.manager?view=xboxlive-dotnet-2017.11.20171204.01)中找到 WinRT API
 
-## <a name="usage"></a>使用
+## <a name="usage"></a>用法
 
 ### <a name="creating-a-social-user-group-from-filters"></a>从筛选器创建社交用户组
 
@@ -145,11 +145,11 @@ while(true)
 
 #### <a name="events-returned"></a>返回的事件
 
-`local_user_added`(C++) | `LocalUserAdded`(C#) - 在完成用户社交图片的加载时触发。 指示初始化期间是否出现任何错误
+`local_user_added`（C + +） |`LocalUserAdded`(C#)-当用户社交关系图的加载已完成时触发。 指示初始化期间是否出现任何错误
 
-`social_user_group_loaded`(C++) | `SocialUserGroupLoaded`(C#) - 在创建了社交用户组时触发
+`social_user_group_loaded`（C + +） |`SocialUserGroupLoaded`(C#)-当创建社交用户组时，触发
 
-`users_added_to_social_graph`(C++) | `UsersAddedToSocialGraph`(C#) - 在用户载入时触发
+`users_added_to_social_graph`（C + +） |`UsersAddedToSocialGraph`(C#)-当用户加载中时，触发
 
 #### <a name="additional-details"></a>其他详细信息
 
@@ -219,11 +219,11 @@ while(true)
 
 #### <a name="events-returned"></a>返回的事件
 
-`local_user_added`(C++) | `LocalUserAdded`(C#) - 在完成用户社交图片的加载时触发。 指示初始化期间是否出现任何错误
+`local_user_added`（C + +） |`LocalUserAdded`(C#)-当用户社交关系图的加载已完成时触发。 指示初始化期间是否出现任何错误
 
-`social_user_group_loaded`(C++) | `SocialUserGroupLoaded`(C#) - 在创建了社交用户组时触发
+`social_user_group_loaded`（C + +） |`SocialUserGroupLoaded`(C#)-当创建社交用户组时，触发
 
-`users_added_to_social_graph`(C++) | `UsersAddedToSocialGraph`(C#) - 在用户载入时触发
+`users_added_to_social_graph`（C + +） |`UsersAddedToSocialGraph`(C#)-当用户加载中时，触发
 
 ### <a name="updating-social-user-group-from-list"></a>从列表更新社交用户组
 
@@ -267,9 +267,9 @@ while(true)
 
 #### <a name="events-returned"></a>返回的事件
 
-`social_user_group_updated`(C++) | `SocialUserGroupUpdated`(C#) - 社交用户组更新完成时触发。
+`social_user_group_updated`（C + +） |`SocialUserGroupUpdated`(C#)-当社交用户组更新已完成时触发。
 
-`users_added_to_social_graph` | `UsersAddedToSocialGraph`(C#) - 在用户载入时触发。 如果用户通过图片中已有的列表添加，将不会触发此事件
+`users_added_to_social_graph` | `UsersAddedToSocialGraph`(C#)-当用户加载中时，触发。 如果用户通过图片中已有的列表添加，将不会触发此事件
 
 ### <a name="using-social-manager-events"></a>使用社交管理器事件
 
@@ -345,17 +345,17 @@ while(true)
 
 #### <a name="events-returned"></a>返回的事件
 
-`local_user_added`(C++) | `LocalUserAdded`(C#) - 在完成用户社交图片的加载时触发。 指示初始化期间是否出现任何错误
+`local_user_added`（C + +） |`LocalUserAdded`(C#)-当用户社交关系图的加载已完成时触发。 指示初始化期间是否出现任何错误
 
-`social_user_group_loaded`(C++) | `SocialUserGroupLoaded`(C#) - 在创建了社交用户组时触发
+`social_user_group_loaded`（C + +） |`SocialUserGroupLoaded`(C#)-当创建社交用户组时，触发
 
-`users_added_to_social_graph`(C++) | `UsersAddedToSocialGraph`(C#) - 在用户载入时触发
+`users_added_to_social_graph`（C + +） |`UsersAddedToSocialGraph`(C#)-当用户加载中时，触发
 
 #### <a name="additional-details"></a>其他详细信息
 
-此示例显示了一些提供的其他控件。  与依靠社交用户组筛选器在游戏循环中提供新用户列表不同，社交图片在游戏循环外初始化。  然后标题依靠 `socialManager->do_work()` 函数返回的 `events`。  `events` 是一个 `social_event` 列表，每个 `social_event` 包含对最后一帧中出现的社交图片的更改。  例如，`profiles_changed`、`users_added` 等。详细信息可以在 `social_event` API 文档中找到。
+此示例显示了一些提供的其他控件。  与依靠社交用户组筛选器在游戏循环中提供新用户列表不同，社交图片在游戏循环外初始化。  然后标题依靠 `socialManager->do_work()` 函数返回的 `events`。  `events` 是一系列`social_event`，和每个`social_event`包含对过程的最后一帧中发生的社交图的更改。  例如`profiles_changed`， `users_added`，等等。详细信息可在`social_event`API 文档。
 
-### <a name="cleanup"></a>清除
+### <a name="cleanup"></a>Cleanup
 
 #### <a name="cleaning-up-social-user-groups"></a>清除社交用户组
 
@@ -399,4 +399,4 @@ socialManager.RemoveLocalUser(
 
 #### <a name="events-returned"></a>返回的事件
 
-`local_user_removed`(C++) | `LocalUserRemoved`(C#) - 成功删除本地用户时触发
+`local_user_removed`（C + +） |`LocalUserRemoved`(C#)-已成功删除本地用户时触发

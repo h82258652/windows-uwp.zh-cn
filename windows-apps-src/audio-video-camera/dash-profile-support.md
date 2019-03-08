@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d680f7d4a3510f66cba74d1c8b30d8883b07369a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926057"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627202"
 ---
 # <a name="dynamic-adaptive-streaming-over-http-dash-profile-support"></a>HTTP 动态自适应流式处理 (DASH) 配置文件支持
 
@@ -19,11 +19,11 @@ ms.locfileid: "8926057"
 ## <a name="supported-dash-profiles"></a>支持的 DASH 配置文件
 下表列出了 UWP 应用支持的 DASH 配置文件。
 
-|标记 | 清单类型 | 备注|7 月发布的 Windows 10|Windows 10 版本 1511|Windows 10 版本 1607 |Windows 10 版本 1607 |Windows 10 版本 1703|
+|Tag | 清单类型 | 注释|7 月发布的 Windows 10|Windows 10 版本 1511|Windows 10 版本 1607 |Windows 10 版本 1607 |Windows 10 版本 1703|
 |----------------|------|-------|-----------|--------------|---------|-------|--------|
-|urn:mpeg&#58;dash:profile:isoff-live:2011 | 静态 |     |支持            |  支持              | 支持        |支持| 受支持|
-|urn:mpeg&#58;dash:profile:isoff-main:2011 |        | 最大努力 | 支持            |  支持              | 支持        |支持| 受支持|
-|urn:mpeg&#58;dash:profile:isoff-live:2011 | 动态 | $Time$ 受支持，但 $Number$ 在类别模板中不受支持 | 不支持            | 不支持              | 不支持        |不支持| 受支持|
+|urn:mpeg&#58;dash:profile:isoff-live:2011 | 静态 |     |支持            |  支持              | 支持        |支持| 支持|
+|urn:mpeg&#58;dash:profile:isoff-main:2011 |        | 最大努力 | 支持            |  支持              | 支持        |支持| 支持|
+|urn:mpeg&#58;dash:profile:isoff-live:2011 | 动态 | $Time$ 受支持，但 $Number$ 在类别模板中不受支持 | 不支持            | 不支持              | 不支持        |不支持| 支持|
 
 
 ## <a name="unsupported-dash-profiles"></a>不支持的 DASH 配置文件

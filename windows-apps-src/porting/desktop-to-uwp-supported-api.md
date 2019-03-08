@@ -1,5 +1,5 @@
 ---
-Description: Packaged desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your packaged app can use.
+Description: 已打包的桌面应用可以使用各种不同的通用 Windows 平台 (UWP) API，即使它们没有完全转换为 UWP 应用也是如此。 本文列出了已打包的应用可以使用的可用类。
 Search.Product: eADQiWindows 10XVcnh
 title: 适用于打包桌面应用（桌面桥）的 UWP API
 ms.date: 10/27/2017
@@ -8,13 +8,13 @@ keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
 ms.openlocfilehash: c3131207c04b421a6d8ab6aeeb16aa3107bbf21d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048847"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644712"
 ---
-# <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>适用于打包的桌面应用的 UWP Api
+# <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>UWP Api 可用于打包桌面应用程序
 
 已打包的桌面应用可以使用各种不同的通用 Windows 平台 (UWP) API，即使它们没有完全转换为 UWP 应用也是如此。 本文列出了已打包的应用可以使用的可用类。
 
@@ -26,11 +26,11 @@ ms.locfileid: "9048847"
 <tr><td>后台任务</td><td>尽管已打包的应用可以注册后台任务，但仅完全转换的 UWP 应用可以<i>作为</i>后台任务运行。 有关详细信息，请参阅 <a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample">GitHub 上的后台任务示例</a>。</td></tr>
 <tr><td>蓝牙</td><td>已打包的应用当前并不能支持所有 API。</td></tr>
 <tr><td>聊天和电话呼叫</td><td>已打包的应用只有完全移植到 UWP 才能在移动设备上运行。</td></tr>
-<tr><td>合约激活</td><td>只有完全转换的 UWP 应用可以由合约激活。</td></tr>
+<tr><td>合约激活</td><td>仅完整的 UWP 应用可以通过一个协定激活。</td></tr>
 <tr><td>加密</td><td>已打包的应用当前并不能支持所有 API。</td></tr>
 <tr><td>地理位置</td><td>已打包的应用当前并不能支持所有 API。</td></tr>
 <tr><td>文件和文件夹选取器</td><td>已打包的应用具有完全的文件系统访问权限，并且不需要 UWP 选取器。</td></tr>
-<tr><td>媒体</td><td>已打包的应用当前并不能支持所有 API。</td></tr>
+<tr><td>Media</td><td>已打包的应用当前并不能支持所有 API。</td></tr>
 <tr><td>服务点</td><td>已打包的应用当前并不能支持所有 API。</td></tr>
 <tr><td>智能卡</td><td>已打包的应用当前并不能支持所有 API。</td></tr>
 <tr><td>PlayReady</td><td>已打包的应用当前并不能支持所有 API。</td></tr>
@@ -634,15 +634,15 @@ ms.locfileid: "9048847"
 * [Windows.Devices.WiFiDirect.WiFiDirectDevice](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectDevice)
 * [Windows.Devices.WiFiDirect.WiFiDirectInformationElement](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectInformationElement)
 * [Windows.Devices.WiFiDirect.WiFiDirectLegacySettings](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectLegacySettings)
-* [Windows.Foundation.AsyncOperationProgressHandler&lt;Tresult,.TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206573.aspx(d=robot))
-* [Windows.Foundation.AsyncOperationWithProgressCompletedHandler&lt;Tresult,.TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>)
-* [Windows.Foundation.Collections.MapChangedEventHandler&lt;K,.V&gt;](https://msdn.microsoft.com/library/windows/apps/br206644.aspx)
+* [Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/br206573.aspx(d=robot))
+* [Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>)
+* [Windows.Foundation.Collections.MapChangedEventHandler<K,.V>](https://msdn.microsoft.com/library/windows/apps/br206644.aspx)
 * [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet)
 * [Windows.Foundation.Collections.StringMap](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.StringMap)
 * [Windows.Foundation.Collections.ValueSet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.ValueSet)
 * [Windows.Foundation.Deferral](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Deferral)
 * [Windows.Foundation.PropertyValue](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.PropertyValue)
-* [Windows.Foundation.TypedEventHandler&lt;Tsender,.TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx(d=robot))
+* [Windows.Foundation.TypedEventHandler<Tsender,.TResult>](https://msdn.microsoft.com/library/windows/apps/br225997.aspx(d=robot))
 * [Windows.Foundation.Uri](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Uri)
 * [Windows.Foundation.WwwFormUrlDecoder](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoder)
 * [Windows.Foundation.WwwFormUrlDecoderEntry](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoderEntry)

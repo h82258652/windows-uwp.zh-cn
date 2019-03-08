@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 线程, 线程池
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c004feabf561c5a94fadba858762bf683c9ff0e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935871"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628042"
 ---
 # <a name="best-practices-for-using-the-thread-pool"></a>使用线程池的最佳做法
 
@@ -39,7 +39,7 @@ ms.locfileid: "8935871"
 ## <a name="donts"></a>禁止事项
 
 
--   不要创建 *period* 值 &lt;1 毫秒（包括 0）的定期计时器。 这样将使工作项像单次计时器一样操作。
+-   不要创建 *period* 值为&lt;1 毫秒（包括 0）的定期计时器。 这样将使工作项像单次计时器一样操作。
 
 -   不要提交需要花费比 *period* 参数指定的时间量更长的时间才能完成的定期工作项。
 
@@ -47,11 +47,11 @@ ms.locfileid: "8935871"
 
 -   当使用的工作项处理程序使用 **async** 关键字时，请注意，在执行处理程序中的所有代码之前，线程池工作项可能会设置为完成状态。 在工作项已设置为完成状态后，可能会执行处理程序中 **await** 关键字之后的代码。
 
--   不要在未重新初始化的情况下尝试运行预分配的工作项多次。 [创建定期工作项](create-a-periodic-work-item.md)
+-   不要在未重新初始化的情况下尝试运行预分配的工作项多次。 [创建一个定期工作项](create-a-periodic-work-item.md)
 
 ## <a name="related-topics"></a>相关主题
 
 
-* [创建定期工作项](create-a-periodic-work-item.md)
-* [向线程池提交工作项](submit-a-work-item-to-the-thread-pool.md)
+* [创建一个定期工作项](create-a-periodic-work-item.md)
+* [提交到线程池工作项](submit-a-work-item-to-the-thread-pool.md)
 * [使用计时器提交工作项](use-a-timer-to-submit-a-work-item.md)

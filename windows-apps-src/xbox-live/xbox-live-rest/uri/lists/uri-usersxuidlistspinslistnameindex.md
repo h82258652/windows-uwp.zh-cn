@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b56b563c72c206340aa2c1ce9f73aa8dfe50809d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932695"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641222"
 ---
 # <a name="usersxuidxuidlistspinslistnameindexindexinsertindexinsertindex"></a>/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}
-将移动列表中的一项。 这些 Uri 的域是`eplists.xboxlive.com`。
+将移动列表中的项。 这些 Uri 的域是`eplists.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -24,11 +24,11 @@ ms.locfileid: "8932695"
  
 ## <a name="uri-parameters"></a>URI 参数 
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
 | XUID| 字符串| 用户的 XUID。| 
-| listname| 字符串| 列表来操作的名称。| 
-| 索引| 字符串| 指定要移动的项的当前索引。 零个或正整数索引值时，这是指项的当前索引和呼叫的请求正文应为空。 但是，如果的索引值为"-1"，必须由 ItemId 或提供商/ProviderID 呼叫的请求正文中指定要移动的项。 | 
+| listname| 字符串| 要操作的列表的名称。| 
+| index| 字符串| 指定要移动的项的当前索引。 如果索引值为零个或一个正整数，这是指当前项的索引，并且在调用的请求正文应为空。 但是，如果索引值为"-1"，必须由 ItemId 或提供程序/ProviderID 调用的请求正文中指定要移动的项。 | 
   
 <a id="ID4EHC"></a>
 
@@ -37,7 +37,7 @@ ms.locfileid: "8932695"
 
 [POST](uri-usersxuidlistspinslistnameindexpost.md)
 
-&nbsp;&nbsp;将列表中的项移到列表中的不同位置。
+&nbsp;&nbsp;将在列表中的项移至列表中的其他位置。
  
 <a id="ID4ERC"></a>
 
@@ -49,6 +49,6 @@ ms.locfileid: "8932695"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
+[通用资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
 
    

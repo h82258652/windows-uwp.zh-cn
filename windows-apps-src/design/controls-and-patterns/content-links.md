@@ -1,5 +1,5 @@
 ---
-Description: Use content links to embed rich data in your text controls.
+Description: 使用链接内容，以在文本控件中嵌入丰富的数据。
 title: 文本控件中的内容链接
 label: Content links
 template: detail.hbs
@@ -11,11 +11,11 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: a984e30bbdc569522b04d328087775aa9e8ce2bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946445"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648532"
 ---
 # <a name="content-links-in-text-controls"></a>文本控件中的内容链接
 
@@ -23,10 +23,10 @@ ms.locfileid: "8946445"
 
 当用户在 RichEditBox 中对某个条目使用与号 (@) 前缀时，它们会显示人员列表和/或与相应条目匹配的位置建议。 例如，当用户选取一个位置时，该位置的 ContentLink 就会插入文本中。 当用户从 RichEditBox 调用内容链接时，就会显示一个浮出控件，该控件具有地图和与位置有关的其他信息。
 
-> **重要 API**：[ContentLink 类](/uwp/api/windows.ui.xaml.documents.contentlink)、[ContentLinkInfo 类](/uwp/api/windows.ui.text.contentlinkinfo)、[RichEditTextRange 类](/uwp/api/windows.ui.text.richedittextrange)
+> **重要的 Api**:[ContentLink 类](/uwp/api/windows.ui.xaml.documents.contentlink)， [ContentLinkInfo 类](/uwp/api/windows.ui.text.contentlinkinfo)， [RichEditTextRange 类](/uwp/api/windows.ui.text.richedittextrange)
 
 > [!NOTE]
-> 内容链接 Api 分布在以下命名空间： Windows.UI.Xaml.Controls、 Windows.UI.Xaml.Documents 和 Windows.UI.Text。
+> 有关内容的链接 Api 分布在以下命名空间：Windows.UI.Xaml.Controls、 Windows.UI.Xaml.Documents 和 Windows.UI.Text。
 
 
 
@@ -39,14 +39,14 @@ ms.locfileid: "8946445"
 
 下面是内容链接在 RichEditBox 和 TextBlock 中的默认外观。
 
-![格式文本编辑框中的内容链接](images/content-link-default-richedit.png)
+![内容链接中丰富的编辑框](images/content-link-default-richedit.png)
 ![文本块中的内容链接](images/content-link-default-textblock.png)
 
 下面几节详细介绍在用法、呈现和行为方面的不同。 此表快速比较了 RichEditBox 和文本块中的内容链接之间的主要不同。
 
 | 功能   | RichEditBox | 文本块 |
 | --------- | ----------- | ---------- |
-| Usage | ContentLinkInfo 实例 | ContentLink 文本元素 |
+| 用法 | ContentLinkInfo 实例 | ContentLink 文本元素 |
 | Cursor | 由内容链接的类型决定，无法更改 | 由 Cursor 属性决定，默认为 **null** |
 | ToolTip | 不会呈现 | 显示辅助文本 |
 
@@ -129,7 +129,7 @@ ContentLinkInfo 对象包含用于显示、调用和管理内容链接的信息�
 - **SecondaryText** - 此字符串显示在呈现的内容链接的 ToolTip 中。
   - 在选取器创建的 Place 内容链接中，它包含位置的地址（如果可用）。
 - **Uri** – 指向有关内容链接主题的更多信息的链接。 此 Uri 可打开已安装的应用或网站。
-- **Id** - 这是 RichEditBox 控件创建的基于每个控件的只读计数器。 它用于在操作（如删除或编辑）期间跟踪此 ContentLinkInfo。 如果 ContentLinkInfo 被剪切并重新粘贴到控件中，它将获得一个新 Id。Id 值是递增的。
+- **Id** - 这是 RichEditBox 控件创建的基于每个控件的只读计数器。 它用于在操作（如删除或编辑）期间跟踪此 ContentLinkInfo。 如果 ContentLinkInfo 剪切并粘贴返回到该控件，它将获取新的 id。Id 值是递增的。
 - **LinkContentKind** – 描述内容链接类型的字符串。 内置内容类型为 _Places_ 和 _Contacts_。 值区分大小写。
 
 #### <a name="link-content-kind"></a>链接内容类型
@@ -154,7 +154,7 @@ Places 选取器创建 Uri 根为 https://maps.windows.com/ 的 ContentLinkInfo�
 - 如果 LinkContentKind 不是 "Places"，则将打开**地图**应用到指定的位置。 例如，如果你在 ContentLinkChanged 事件处理程序中修改了 LinkContentKind，就会发生这种情况。
 - 如果 Uri 在“地图”应用中无法打开，则会在默认浏览器中打开地图。 这通常发生在用户的_网站应用_ 设置不允许使用**地图**应用打开 Uri 的情况下。
 
-##### <a name="people"></a>People
+##### <a name="people"></a>人脉
 
 People 选取器创建 Uri 使用 **ms-people** 协议的 ContentLinkInfo。
 
@@ -162,7 +162,7 @@ People 选取器创建 Uri 使用 **ms-people** 协议的 ContentLinkInfo。
 - 如果 LinkContentKind 不是 "People"，则将打开**人脉**应用。 例如，如果你在 ContentLinkChanged 事件处理程序中修改了 LinkContentKind，就会发生这种情况。
 
 > [!TIP]
-> 有关从你的应用打开其他应用和网站的详细信息，请参阅下[使用 Uri 启动应用](/windows/uwp/launch-resume/launch-app-with-uri)的主题。
+> 有关从您的应用程序中打开其他应用程序和网站的详细信息，请参阅下的主题[启动应用程序的 Uri](/windows/uwp/launch-resume/launch-app-with-uri)。
 
 #### <a name="invoked"></a>Invoked
 

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 85d1c41fc10f509f3872fb1e4a0af5fa1e1e7c30
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924757"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631392"
 ---
 # <a name="primitive-topologies"></a>基元拓扑
 
@@ -26,15 +26,15 @@ Direct3D 支持多种基元拓扑，后者定义管道（如点列表、线列�
 
 -   [点列表](point-lists.md)
 -   [行列表](line-lists.md)
--   [线条带](line-strips.md)
+-   [条带线](line-strips.md)
 -   [三角形列表](triangle-lists.md)
--   [三角形带](triangle-strips.md)
+-   [三角形条带](triangle-strips.md)
 
 有关每个基元类型的可视化，请参阅[缠绕方向和前导顶点位置](#winding-direction-and-leading-vertex-positions)中本主题后面的图示。
 
 [输入装配器 (IA) 阶段](input-assembler-stage--ia-.md)从顶点和索引缓冲区读取数据，将数据装配到这些基元中，然后将数据发送到剩余的管道阶段。
 
-## <a name="span-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanprimitive-adjacency"></a><span id="Primitive_Adjacency"></span><span id="primitive_adjacency"></span><span id="PRIMITIVE_ADJACENCY"></span>基元邻近度
+## <a name="span-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanprimitive-adjacency"></a><span id="Primitive_Adjacency"></span><span id="primitive_adjacency"></span><span id="PRIMITIVE_ADJACENCY"></span>基元相邻
 
 
 所有 Direct3D 基元类型（点列表除外）以两个版本提供：带邻近度的基元类型和不带邻近度的基元类型。 带邻近度的基元包含一些周围的顶点，而不带邻近度的基元仅包含目标基元的顶点。 例如，线列表基元具有包含邻近度的对应线列表基元。
@@ -43,7 +43,7 @@ Direct3D 支持多种基元拓扑，后者定义管道（如点列表、线列�
 
 例如，假设你想要绘制带邻近度的三角形列表。 包含 36 个顶点的三角形列表（带邻近度）将产生 6 个已完成的基元。 带邻近度的基元（线条带除外）包含的顶点数正好是不带邻近度的等效基元的顶点数的两倍，其中每个多出的顶点都是相邻顶点。
 
-## <a name="span-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwinding-direction-and-leading-vertex-positionsspanwinding-direction-and-leading-vertex-positions"></a><span id="Winding_Direction_and_Leading_Vertex_Positions"></span><span id="winding_direction_and_leading_vertex_positions"></span><span id="WINDING_DIRECTION_AND_LEADING_VERTEX_POSITIONS"></span><span id="winding-direction-and-leading-vertex-positions"></span>缠绕方向和前导顶点位置
+## <a name="span-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwinding-direction-and-leading-vertex-positionsspanwinding-direction-and-leading-vertex-positions"></a><span id="Winding_Direction_and_Leading_Vertex_Positions"></span><span id="winding_direction_and_leading_vertex_positions"></span><span id="WINDING_DIRECTION_AND_LEADING_VERTEX_POSITIONS"></span><span id="winding-direction-and-leading-vertex-positions"></span>出现在缠绕方向和领先的顶点位置
 
 
 如下图中所示，前导顶点是基元中的第一个非相邻顶点。 基元类型可以定义多个前导顶点，只要每个顶点都用于不同的基元。

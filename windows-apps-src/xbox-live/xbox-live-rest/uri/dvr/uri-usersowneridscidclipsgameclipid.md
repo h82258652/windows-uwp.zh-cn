@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e7ea92e89d54df17e8d82084d840a7ee9ef7d032
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943476"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658332"
 ---
 # <a name="usersowneridscidsscidclipsgameclipid"></a>/users/{ownerId}/scids/{scid}/clips/{gameClipId}
-如果已知的所有 Id，以找到它，请从系统中访问单个游戏剪辑。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+从系统访问单个游戏剪辑，如果已知的所有 Id，以找到它。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，取决于 URI 相关的函数。
  
   * [URI 参数](#ID4EX)
  
@@ -24,11 +24,11 @@ ms.locfileid: "8943476"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| ownerId| 字符串| 用户的用户身份的正在访问其资源。 支持的格式:"me"或"xuid(123456789)"。 最大长度： 16。| 
-| scid| 字符串| 正在访问的资源的服务配置 ID。 必须匹配的身份验证的用户的 SCID。| 
-| gameClipId| 字符串| GameClip 所访问的资源的 ID。| 
+| ownerId| 字符串| 其资源的访问的用户的用户标识。 支持的格式:"me"或"xuid(123456789)"。 最大长度：16.| 
+| scid| 字符串| 正在访问的资源的服务的配置 ID。 必须与匹配身份验证的用户的 SCID。| 
+| gameClipId| 字符串| GameClip 正在访问的资源 ID。| 
   
 <a id="ID4EFC"></a>
 
@@ -37,7 +37,7 @@ ms.locfileid: "8943476"
 
 [GET (/users/{ownerId}/scids/{scid}/clips/{gameClipId})](uri-usersowneridscidclipsgameclipidget.md)
 
-&nbsp;&nbsp;如果已知的所有 Id，以找到它，请从系统中获取单个游戏剪辑。
+&nbsp;&nbsp;如果已知的所有 Id，以找到它从系统获取单个游戏剪辑。
  
 <a id="ID4EPC"></a>
 
@@ -49,6 +49,6 @@ ms.locfileid: "8943476"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[游戏 DVR URI](atoc-reference-dvr.md)
+[游戏 DVR Uri](atoc-reference-dvr.md)
 
    

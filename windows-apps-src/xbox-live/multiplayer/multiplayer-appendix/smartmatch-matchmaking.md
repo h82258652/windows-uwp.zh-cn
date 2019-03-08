@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 匹配, smartmatch
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bc5f15e6fdb7d2f393daef8d21c134579610a9b
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058491"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57647292"
 ---
 # <a name="smartmatch-matchmaking"></a>SmartMatch 匹配
 
@@ -26,7 +26,7 @@ ms.locfileid: "9058491"
 
 XSAPI 提供了一种叫做 SmartMatch 的匹配服务，它由[多人游戏管理器 API](../multiplayer-manager/multiplayer-manager-api-overview.md) 包装。  有关高级 API 使用情况的信息，可参考 **MatchmakingService 类**，但如果你发现有使用多人游戏管理器无法实现的匹配场景，请通过 DAM 向我们提供反馈。  无论你使用何种 API，本文中的概念信息均适用。
 
-SmartMatch 匹配基于用户信息以及想要一起游戏的用户的匹配请求来对玩家进行分组。 匹配基于服务器，这意味着用户可以提供对该服务的请求，然后他们稍后会在找到匹配时收到通知。 在为 Xbox one 创建游戏时，你可以如[使用 SmartMatch 匹配](using-smartmatch-matchmaking.md)中所述使用 SmartMatch。 或者，你可以如[使用你自己的匹配服务](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/multiplayer-and-networking/using-your-own-matchmaking-service)中所述使用你自己的匹配服务。 请注意，访问该链接要求你拥有为 Xbox Live 开发启用的[合作伙伴中心](https://partner.microsoft.com/dashboard)帐户。
+SmartMatch 匹配基于用户信息以及想要一起游戏的用户的匹配请求来对玩家进行分组。 匹配基于服务器，这意味着用户可以提供对该服务的请求，然后他们稍后会在找到匹配时收到通知。 在为 Xbox one 创建游戏时，你可以如[使用 SmartMatch 匹配](using-smartmatch-matchmaking.md)中所述使用 SmartMatch。 或者，你可以如[使用你自己的匹配服务](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/multiplayer-and-networking/using-your-own-matchmaking-service)中所述使用你自己的匹配服务。 请注意，访问此链接需要能够[合作伙伴中心](https://partner.microsoft.com/dashboard)对 Xbox Live 开发的启用的帐户。
 
 ### <a name="about-smartmatch"></a>关于 SmartMatch
 
@@ -49,12 +49,12 @@ SmartMatch 匹配基于用户信息以及想要一起游戏的用户的匹配请
 向匹配提交票证会话会创建跟踪匹配尝试的匹配票证。 票证中的属性（例如游戏地图或者玩家级别）以及票证会话中的玩家的属性用于确定匹配。
 #### <a name="hoppers"></a>漏斗
 
-漏斗是收集匹配票证的逻辑位置。 仅可匹配同一漏斗内的票证。 一个游戏可以有多个漏斗。 例如，游戏可以创建一个漏斗，对于该漏斗来说，玩家技能是最重要的匹配项目。 它可以使用另一个漏斗，在该漏斗中，只有玩家购买了相同的可下载内容才会匹配。
+漏斗是收集匹配票证的逻辑位置。 仅可匹配同一漏斗内的票证。 一个游戏可以有多个漏斗。 例如，游戏可以创建一个玩家技能是最重要的匹配项目的 Hopper。 它可以使用另一个漏斗，在该漏斗中，只有玩家购买了相同的可下载内容才会匹配。
 
 
 #### <a name="hopper-rules"></a>漏斗规则
 
-漏斗规则提供匹配服务用于确定要将哪些玩家分组在一起的条件的定义。 有两种类型的规则：MUST 规则 -- 必须满足这些规则，匹配票证才会被视为兼容。
+漏斗规则提供匹配服务用于确定要将哪些玩家分组在一起的条件的定义。 有两种类型的规则： 必须规则-一定要满足匹配票证才能被视为兼容的。
 -   SHOULD 规则 -- 匹配规则的匹配票证要优于不匹配规则的票证。
 
 在每个类别中，有以下几种特定类型的规则。 有关更多信息，请参阅 **SmartMatch 运行时操作**中的运行时操作配置信息。
@@ -103,7 +103,7 @@ SmartMatch 匹配基于用户信息以及想要一起游戏的用户的匹配请
 
 游戏指定匹配票证会话内的各成员的每个成员属性。 通过使用“matchAttrs”的属性名称并调用 MultiplayerSession.SetCurrentUserMemberCustomPropertyJson 方法来对它们进行设置。 此调用将 /members/{index}/properties/custom/matchAttrs 字段中的属性置于票证会话中的每个玩家上。
 
-匹配过程将"平展"每个成员为单个票证级别属性，基于为漏斗的 Xbox Live 配置 UI 中的属性指定的平展方法。 这可以在[XDP](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)上配置。
+匹配进程"平展"每个每个成员到单个票证级特性，指定该属性中的 Xbox Live 配置 UI hopper flatten 方法。 这可以在配置[XDP](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 
 
 ### <a name="making-the-match"></a>进行匹配
@@ -173,22 +173,22 @@ SmartMatch 匹配基于用户信息以及想要一起游戏的用户的匹配请
 
 ### <a name="configuration-of-smartmatch-matchmaking-runtime-operations"></a>SmartMatch 匹配运行时操作配置
 
-SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)都进行。 配置使用游戏的“ServiceConfiguration-&gt;多人游戏和匹配”部分。
+SmartMatch 匹配的所有配置都是通过[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)。 配置使用游戏的“ServiceConfiguration-&gt;多人游戏和匹配”部分。
 
 
 #### <a name="matchmaking-session-template-configuration"></a>匹配会话模板配置
 
-如 [SmartMatch 匹配](/windows/uwp/xbox-live/multiplayer/multiplayer-appendix/smartmatch-matchmaking)中所述，有两种类型的会话与匹配相关：匹配票证会话和匹配目标会话。 基本上，票证会话是匹配服务的输入，而目标会话是输出。 配置会话模板时，你应创建每个会话类型的模板。
+如 [SmartMatch 匹配](/windows/uwp/xbox-live/multiplayer/multiplayer-appendix/smartmatch-matchmaking)中所述，有两种类型的会话与匹配相关：匹配票证会话和匹配目标会话。 基本上，票证会话是匹配服务的输入，而目标会话是输出。 在配置会话模板时，应创建每个会话类型的模板。
 
 对于票证会话，你可以使用专用模板。 或者，你可以将模板重新用于大厅会话或其他不用于游戏的会话。
 
-| 重要提示                                                                                      |
+| 重要                                                                                      |
 |-------------------------------------------------------------------------------------------------------------|
 | 票证会话不能启用 QoS 检查，并且不得标有“游戏”功能。 |
 
 对于目标会话，你必须创建用于配对游戏的模板。 它应具备可在开始游戏之前在玩家间启用 QoS 检查的设置，并且必须标有“游戏”功能。
 
-与配置的 XDP 或合作伙伴中心的用户界面中，你可以将每个会话映射到一个或多个漏斗，确定如何会话匹配在一起该 hopper 中每个包含规则。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
+与 config XDP 或合作伙伴中心 UI 中，您可以映射到一个或多个 hoppers，每个包含规则，用于确定如何会话中该 hopper 一起匹配每个会话。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
 
 
 #### <a name="basic-hopper-configuration-for-matchmaking"></a>用于匹配的基本漏斗配置
@@ -208,13 +208,13 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 从漏斗中的会话创建的玩家组的最小和最大大小。 匹配服务尝试创建尽可能大的匹配组，达到最大组大小。 但是，如果可以将足够数量的玩家汇集到一起以满足最小组大小，即创建了匹配组。
 
 
-###### <a name="should-rule-expansion-cycles"></a>Should 规则扩展周期
+###### <a name="should-rule-expansion-cycles"></a>应控制扩展周期
 
 对于 SHOULD 规则，匹配服务将尝试扩大搜索位置，如果未成功找到匹配，会逐渐放宽提供的匹配规则。 此过程在多个周期中执行，如使用“Should 规则扩展周期“字段所指定。 到最后一个扩展周期时，SHOULD 规则会被删除，以便它们不会再阻止票证进行匹配。 但是，它们仍然可用于确定最佳匹配项（如果有多个票证可用）。 在删除它们之前，仅扩展数字和 QoS 类型。 另请参阅本主题中的“漏斗规则配置”。
 
 增大“Should 规则扩展周期”设置的值会为 SHOULD 规则扩展提供更多周期，而且还会延长匹配持续时间。 默认值为 3，通常这对于大多数配置已足够。
 
-| 重要提示                                                                                                                                                                        |
+| 重要                                                                                                                                                                        |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 扩展周期的固定时间间隔为 5 秒。 到最后一个扩展周期时，其余匹配尝试都将不再考虑所有的“Should”规则。 |
 
@@ -240,7 +240,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 
 **数据类型**
 
-匹配规则属性的数据类型。 可能的值为：数字。 指定简单的 32 位数值。
+匹配规则属性的数据类型。 可能的值为： 数。 指定简单的 32 位数值。
 -   字符串。 指定最多 128 个字符的 Unicode 字符串。
 -   集合。 指定一组字符串。 使用此值确定可下载内容 (DLC)、会员阵容或玩家的角色偏好。
 -   服务质量。 指定用于在匹配中包含延迟 QoS 数据的自定义数据类型。 每个匹配漏斗只能使用一个此类规则。
@@ -255,7 +255,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 
 ###### <a name="data-type-specific-rule-fields"></a>数据类型特定规则字段
 
-本部分定义了用于定义适用于某些数据类型但不适用于其他数据类型的规则的字段。 UI 应该能够阐明哪些数据类型适用于特定规则。
+本部分定义了用于定义适用于某些数据类型但不适用于其他数据类型的规则的字段。 UI 应该能够明确的数据类型适用于特定规则。
 
 **允许使用通配符**
 
@@ -284,14 +284,14 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 规则的重要性。 权重可用于指示匹配和规则扩展期间哪些规则优先使用。 权重值必须为正数，默认值为 1。
 
 
-**平展方法**
+**Flatten 方法**
 
 仅支持“数字”数据类型。 指示如何合并多个值以满足匹配的值。 它适用于单个匹配票证中以及跨多个票证的不同玩家的多个值。 可能的值为：
 -  最小值/最大值。 使用来自不同匹配票证的多个值的最小值或最大值。
 -   平均值。 使用来自不同匹配票证的多个值的平均值。
 
 
-**最大差值**
+**最大差异**
 
 仅支持“数字”数据类型。 为满足规则两个比较值之间可接受的最大数值差。 对于 SHOULD 规则，此值为规则扩展的起点。
 
@@ -314,7 +314,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 仅支持“服务质量”数据类型。 用于 QoS 的网络拓扑。 可能的值为“对等”、“端点对主机”以及“客户端/服务器”。
 
 
-**最大延迟/最大缩放**  
+**最大延迟/缩放最大值**  
 仅支持“服务质量”数据类型。 指定的网络拓扑内成功匹配的最大延迟。 使用客户端服务器服务质量的 should 规则时，此值会被视为缩放值（相对于必要的延迟）。
 
 
@@ -344,7 +344,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 
 <tr>
 <td>
-<b>1. MaxLatency < 256。</b><p/><p/>
+<b>1. MaxLatency < 256.</b><p/><p/>
 
 在 MaxLatency * 扩展周期执行扩展。<p/>
 例如，如果初始值为 200，则在第一个周期中使用 200，在第二个周期中使用 400，以此类推。
@@ -353,7 +353,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 
 <tr>
 <td>
-<b>2. MaxLatency > 或 = 256</b><p/><p/>
+<b>2. MaxLatency > 或等于 256</b><p/><p/>
 
 扩展以线性方式从 50 扩大到 MaxLatency - 256。<p/>
 例如，如果初始值为 556，值基于周期数以线性方式从 50 扩大到 300。 也就是说，如果我们选择了六个周期，那么值将为 50、100、150、200、250 和 300。 如果选择了五个周期，则值将为 50、112.5、175、237.5 和 300。
@@ -371,11 +371,11 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 使用玩家级别进行匹配，将基于玩家级别的接近程度对玩家进行松散匹配。 级别差值最小的玩家将视为首选玩家。
 
 -   玩家级别规则
--   规则类型：SHOULD
--   数据类型：数字
--   最大差值：1
+-   规则类型：应
+-   数据类型：编号
+-   最大差异：1
 -   扩展增量：2
--   平展方法：平均
+-   Flatten 方法：平均值
 
 默认情况下，玩家级别之间所需的差值为 1 或者更小。 如果在此差值内发现匹配，表示玩家相互匹配。 如果未发现初始匹配项，会针对每个迭代将玩家级别扩大 2（默认情况下是三个迭代）。 此方案会导致 20 级玩家的匹配行为，如下表中所示。
 
@@ -394,7 +394,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 游戏发布了三种适用于玩家的 DLC 类型。 该匹配规则适用于“仅 DLC”游戏匹配，一个玩家应拥有至少一个 DLC 才能与其他玩家配对。
 
 -   玩家 DLC 规则
--   规则类型：MUST
+-   规则类型：必须
 -   数据类型：集合
 -   设置操作：交集
 -   目标交集：1
@@ -415,7 +415,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 
 #### <a name="example-3-avoid-previous-players"></a>示例 3（避免以前的玩家）
 游戏倾向于避免最近有玩家玩过的游戏。
-* 规则类型：MUST
+* 规则类型：必须
 * 数据类型：集合
 * 设置操作：差异
 * 目标交集：0
@@ -424,7 +424,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 
 ### <a name="configuring-team-rules"></a>配置团队规则
 
-若要设置团队规则，首先创建一个选择的配置平台 （XDP 或合作伙伴中心） 上。 填写你的游戏预期从此漏斗中匹配的票证创建的团队大小。 例如，如果你的游戏预期是 4v4，你应创建两项，预期每个项的最大大小为 4，并采用不同名称。 还有最小团队大小，如果某个游戏在团队的玩家较少时也能玩，则使用此大小。 否则，最小值和最大值应相同。
+若要设置团队规则，首先创建一个在你选择的配置的平台 （XDP 或合作伙伴中心） 上。 填写你的游戏预期从此漏斗中匹配的票证创建的团队大小。 例如，如果你的游戏预期是 4v4，你应创建两项，预期每个项的最大大小为 4，并采用不同名称。 还有最小团队大小，如果某个游戏在团队的玩家较少时也能玩，则使用此大小。 否则，最小值和最大值应相同。
 
 
 #### <a name="using-team-rules"></a>使用团队规则

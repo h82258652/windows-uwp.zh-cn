@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 3f92c8fd-4096-4972-97da-01ae5db6423c
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a27d13f7ceedd14a84d5b4b4aa1233445037a1f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934326"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640762"
 ---
 # <a name="media-capture-api-reference"></a>媒体捕获 API 参考 #
 
@@ -48,13 +48,13 @@ ms.locfileid: "8934326"
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码   | 说明     | 
+| HTTP 状态代码   | 描述     | 
 | ------------------ |-----------------|
 | 200                | 屏幕截图请求成功，并且捕获已返回 |
 | 5XX                | 意外失败的错误代码 |
 <br>
 
-**可用设备系列**
+**可用的设备系列**
 
 * Windows Xbox
 

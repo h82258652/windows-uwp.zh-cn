@@ -8,20 +8,20 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c622c037f878d1ad34cdadf897dde10683532832
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932820"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660862"
 ---
 # <a name="rasterization-rules"></a>光栅化规则
 
 
-光栅化规则定义矢量数据如何映射到光栅数据。 光栅数据将贴靠到随后会被剔除和剪裁的整数位置（目的是绘制最低数量的像素），并且每像素属性在传递到像素着色器之前会被内插（从每顶点属性）。
+光栅化规则定义矢量数据如何映射到光栅数据。 光栅数据贴靠到会进行剔除和裁剪的整数位置（以绘制最低像素数量），并在传递到像素着色器之前对每像素属性进行插值（从每顶点属性）。
 
 存在几种类型的规则，这些规则依赖于正在映射的基元的类型以及数据是否使用多重采样来减少失真。 以下各个图示展示了如何处理极端情况。
 
-## <a name="span-idtrianglespanspan-idtrianglespanspan-idtrianglespantriangle-rasterization-rules-without-multisampling"></a><span id="Triangle"></span><span id="triangle"></span><span id="TRIANGLE"></span>三角形光栅化规则（未使用多重采样）
+## <a name="span-idtrianglespanspan-idtrianglespanspan-idtrianglespantriangle-rasterization-rules-without-multisampling"></a><span id="Triangle"></span><span id="triangle"></span><span id="TRIANGLE"></span>三角形光栅化规则 （不带多重采样）
 
 
 落到三角形内的任何像素中心都会被绘制；如果像素通过了左上规则，则假定该像素位于内部。 左上规则是，如果某个像素中心位于三角形的上边缘或左边缘，则将其定义为位于三角形内。
@@ -39,7 +39,7 @@ ms.locfileid: "8932820"
 
 像素的浅灰色和深色灰色覆盖将它们显示为成组的像素以指示它们位于哪个三角形内。
 
-## <a name="span-idline1spanspan-idline1spanspan-idline1spanline-rasterization-rules-aliased-without-multisampling"></a><span id="Line_1"></span><span id="line_1"></span><span id="LINE_1"></span>线光栅化规则（已失真，未使用多重采样）
+## <a name="span-idline1spanspan-idline1spanspan-idline1spanline-rasterization-rules-aliased-without-multisampling"></a><span id="Line_1"></span><span id="line_1"></span><span id="LINE_1"></span>线条光栅化规则 （别名，而无需多重采样）
 
 
 线光栅化规则使用菱形测试区确定线是否覆盖像素。 对于 x 主线（-1 &lt;= 斜率 &lt;= + 1 的线），菱形测试区包括（显示为实线）左下边缘、右下边缘和底部角；菱形不包括（显示为虚线）左上边缘、右上边缘、顶部角、左上角和右上角。 y 主线是非 x 主线的所有线；其菱形测试区与为 x 主线描述的相同，只不过还包括了右侧角。
@@ -50,7 +50,7 @@ ms.locfileid: "8932820"
 
 ![失真的线光栅化的示例](images/d3d10-rasterrulesline.png)
 
-## <a name="span-idline2spanspan-idline2spanspan-idline2spanline-rasterization-rules-antialiased-without-multisampling"></a><span id="Line_2"></span><span id="line_2"></span><span id="LINE_2"></span>线光栅化规则（已抗锯齿，未使用多重采样）
+## <a name="span-idline2spanspan-idline2spanspan-idline2spanline-rasterization-rules-antialiased-without-multisampling"></a><span id="Line_2"></span><span id="line_2"></span><span id="LINE_2"></span>线条光栅化规则 （而无需多重采样抗锯齿）
 
 
 抗锯齿线将被光栅化为像是矩形一样（宽度 = 1）。 该矩形将与生成每像素覆盖值的呈现目标相交，这些值将相乘得到像素着色器输出 alpha 分量。 当在已进行多重采样的呈现目标上绘制线时，不会执行抗锯齿。
@@ -67,7 +67,7 @@ ms.locfileid: "8932820"
 
 srcColor \* srcAlpha + destColor \* (1-srcAlpha)
 
-## <a name="span-idpointspanspan-idpointspanspan-idpointspanpoint-rasterization-rules-without-multisampling"></a><span id="Point"></span><span id="point"></span><span id="POINT"></span>点光栅化规则（不使用多重采样）
+## <a name="span-idpointspanspan-idpointspanspan-idpointspanpoint-rasterization-rules-without-multisampling"></a><span id="Point"></span><span id="point"></span><span id="POINT"></span>点光栅化规则 （不带多重采样）
 
 
 点被解释为好像由 Z 模式（使用三角形光栅化规则）中的两个三角形组成一样。 坐标标识了一个像素宽的正方形的中心。 不需要对点进行任何剔除。
@@ -99,16 +99,16 @@ srcColor \* srcAlpha + destColor \* (1-srcAlpha)
 
 多重采样格式可在呈现目标中使用，该目标可通过[加载](https://msdn.microsoft.com/library/windows/desktop/bb509694)读回到着色器中，因为着色器访问的各个样本不需要解析。 多重采样资源不支持深度格式，因此，深度格式被限制为仅限呈现目标。
 
-无类型格式支持多重采样以允许资源视图以不同的方式解释数据。 例如，你可以使用 R8G8B8A8\_TYPELESS 创建多重采样资源，通过将呈现目标视图资源与 R8G8B8A8\_UINT 格式结合使用来对资源进行呈现，然后使用 R8G8B8A8\_UNORM 数据格式将内容解析到另一个资源。
+无类型格式支持多重采样以允许资源视图以不同的方式解释数据。 例如，可创建多重采样资源使用 R8G8B8A8\_TYPELESS，呈现到该呈现目标视图资源使用 R8G8B8A8\_UINT 格式，然后将内容解析为与 R8G8B8A8 的另一个资源\_UNORM 数据格式。
 
 ### <a name="span-idhardwaresupportspanspan-idhardwaresupportspanspan-idhardwaresupportspanhardware-support"></a><span id="Hardware_Support"></span><span id="hardware_support"></span><span id="HARDWARE_SUPPORT"></span>硬件支持
 
 API 通过质量级别号报告对多重采样的硬件支持。 例如，质量级别 0 表示硬件不支持多重采样（在特定格式和质量级别）。 质量级别 3 表示硬件支持三种不同的样本布局和/或求解算法。 还可进行以下假设：
 
 -   支持多重采样的任何格式都对该系列中的每个格式支持相同的质量级别号。
--   支持多重采样且具有 \_UNORM、\_SRGB、\_SNORM 或 \_FLOAT 格式的每个格式也支持求解。
+-   每种格式支持多重采样，并具有\_UNORM， \_SRGB， \_SNORM 或\_浮点格式还支持解决。
 
-### <a name="span-idcentroidsamplingspanspan-idcentroidsamplingspanspan-idcentroidsamplingspancentroid-sampling-of-attributes-when-multisample-antialiasing"></a><span id="Centroid_Sampling"></span><span id="centroid_sampling"></span><span id="CENTROID_SAMPLING"></span>使用多重采样抗锯齿时的属性的质心采样
+### <a name="span-idcentroidsamplingspanspan-idcentroidsamplingspanspan-idcentroidsamplingspancentroid-sampling-of-attributes-when-multisample-antialiasing"></a><span id="Centroid_Sampling"></span><span id="centroid_sampling"></span><span id="CENTROID_SAMPLING"></span>质心采样的属性时多重采样抗锯齿
 
 默认情况下，顶点属性在多重采样抗锯齿期间将内插到像素中心；如果未覆盖像素中心，属性将外推到像素中心。 如果包含质心语义（假定像素未完全覆盖）的像素着色器输入将在像素的覆盖区域内的某个位置被采样（可能位于覆盖的样本位置之一）。 样本掩码（由光栅器状态指定）将在质心计算之前应用。 因此，被掩盖的样本不会用作质心位置。
 
@@ -117,7 +117,7 @@ API 通过质量级别号报告对多重采样的硬件支持。 例如，质量
 -   样本掩码允许所有样本。 如果覆盖了像素或未覆盖任何样本，则使用像素中心。 否则，将选择第一个覆盖的样本 - 从像素中心开始并向外移动。
 -   样本掩码将关闭除一个样本之外的所有样本（常见方案）。 应用程序可通过循环浏览一位样本掩码值并为使用质心采样的每个样本重新呈现场景来实现多通道超采样。 这要求应用程序调整派生对象以相应地选择更详细的纹理 mip，从而提高纹理采样密度。
 
-### <a name="span-idderivativecalculationsspanspan-idderivativecalculationsspanspan-idderivativecalculationsspanderivative-calculations-when-multisampling"></a><span id="Derivative_Calculations"></span><span id="derivative_calculations"></span><span id="DERIVATIVE_CALCULATIONS"></span>在多重取样时派生计算
+### <a name="span-idderivativecalculationsspanspan-idderivativecalculationsspanspan-idderivativecalculationsspanderivative-calculations-when-multisampling"></a><span id="Derivative_Calculations"></span><span id="derivative_calculations"></span><span id="DERIVATIVE_CALCULATIONS"></span>派生的计算时多级取样
 
 像素着色器始终使用最小为 2x2 的像素区域运行，以支持派生计算 - 从相邻像素中选取数据之间的增量（假设已在单位间距为水平或垂直的情况下对每个像素中的数据进行采样）。 这不受多重采样的影响。
 
@@ -128,7 +128,7 @@ API 通过质量级别号报告对多重采样的硬件支持。 例如，质量
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[附录](appendix.md)
+[Appendices](appendix.md)
 
 [光栅器 (RS) 阶段](rasterizer-stage--rs-.md)
 

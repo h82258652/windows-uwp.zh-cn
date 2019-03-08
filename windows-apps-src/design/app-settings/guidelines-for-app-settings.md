@@ -1,5 +1,5 @@
 ---
-Description: This article describes best practices for creating and displaying app settings.
+Description: 本文将介绍有关创建和显示应用设置的最佳做法。
 title: 应用设置指南
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a31464d208e8d9abe68703560552c99e5d957463
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049132"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638232"
 ---
 # <a name="guidelines-for-app-settings"></a>应用设置指南
 
@@ -30,13 +30,13 @@ ms.locfileid: "9049132"
 -   取决于用户首选项的选项，如音乐、音效或颜色主题。
 -   不经常访问的应用信息，例如隐私策略、帮助、应用版本或版权信息。
 
-包含在典型应用工作流中的命令（例如在艺术应用中更改画笔大小）不应该在设置页面上。 若要了解有关命令放置的详细信息，请参阅 [命令设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958433)。
+包含在典型应用工作流中的命令（例如在艺术应用中更改画笔大小）不应该在设置页面上。 若要了解有关命令放置的详细信息，请参阅[命令设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958433)。
 
 ## <a name="general-recommendations"></a>常规建议
 
 
 -   保持设置页面简洁，并使用二进制（开/关）控件。 通常，[切换开关](../controls-and-patterns/toggles.md)是二进制设置的最佳控件。
--   对于让用户从最多 5 个互相排斥的一组相关选项中选择一项的设置，请使用[单选按钮](../controls-and-patterns/radio-button.md)。
+-   对于让用户从最多 5 个互相排斥的一组相关选项中选择一个项的设置，请使用[单选按钮](../controls-and-patterns/radio-button.md)。
 -   在应用设置页面上为所有应用设置创建入口点。
 -   使设置保持简单。 定义智能默认值，并使设置数保持最少。
 -   当用户更改设置时，应用应当立即反映所做的更改。
@@ -63,11 +63,11 @@ ms.locfileid: "9049132"
 
 如果你要使用中心布局，应用设置的入口点应放置在应用栏的“更多”溢出菜单中。
 
-**选项卡/透视表**
+**选项卡/数据透视表**
 
 对于表或透视表布局，我们不推荐将应用设置入口点作为顶部项之一放在导航中。 相反，应用设置的入口点应放置在应用栏的“更多”溢出菜单中。
 
-**大纲-细节**
+**Master-details**
 
 与其将应用设置入口点深埋在大纲-细节窗格中，不如将其设置为高级大纲窗格上的最后一个固定项。
 
@@ -129,11 +129,11 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 -   在单个列中从上至下展示内容，支持滚动（如果需要）。 滚动限制的最大值是屏幕高度的两倍。
 -   使用以下应用设置控件：
 
-    -   [切换开关](../controls-and-patterns/toggles.md)：用于让用户将值设置为打开或关闭。
-    -   [单选按钮](../controls-and-patterns/radio-button.md)：用于让用户从多达 5 个互相排斥的一组相关选项中选择一个项。
-    -   [文本输入框](../controls-and-patterns/text-block.md)：用于让用户输入文本。 使用与要从用户那里获取的文本类型（如电子邮件或密码）相对应的文本输入框类型。
-    -   [超链接](../controls-and-patterns/hyperlinks.md)：用于将用户带到应用中的其他页面或外部网站。 当用户单击超链接时，“设置”浮出控件将会消失。
-    -   [按钮](../controls-and-patterns/buttons.md)：用于让用户立即启动操作，不会消除当前的“设置”浮出控件。
+    -   [切换开关](../controls-and-patterns/toggles.md):若要让用户可打开或关闭设置值。
+    -   [单选按钮](../controls-and-patterns/radio-button.md):若要使用户可以从一组最多 5 互斥的选择一项相关的选项。
+    -   [文本输入的框](../controls-and-patterns/text-block.md):若要使用户可以输入文本。 使用与要从用户那里获取的文本类型（如电子邮件或密码）相对应的文本输入框类型。
+    -   [超链接](../controls-and-patterns/hyperlinks.md):若要将用户转到应用中的另一个页面或外部网站。 当用户单击超链接时，“设置”浮出控件将会消失。
+    -   [按钮](../controls-and-patterns/buttons.md):若要使用户可以启动即时操作，而关闭当前的设置浮出控件。
 -   如果禁用其中一个控件，则添加描述性消息。 将此消息置于禁用的控件上。
 -   在为“设置”浮出控件和标头设置动画后，将内容和控件作为单个块进行动画处理。 使用左偏移 100px 的 [**enterPage**](https://msdn.microsoft.com/library/windows/apps/br212672) 或 [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) 动画为内容创建动画。
 -   使用节标题、段落和标签来协助组织和阐述内容（如果需要）。
@@ -146,6 +146,6 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 ## <a name="related-articles"></a>相关文章
 
 * [命令设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958433)
-* [进度控件指南](https://msdn.microsoft.com/library/windows/apps/hh465469)
-* [存储和检索应用数据](https://msdn.microsoft.com/library/windows/apps/mt299098)
+* [进度控件的指导原则](https://msdn.microsoft.com/library/windows/apps/hh465469)
+* [存储和检索应用程序数据](https://msdn.microsoft.com/library/windows/apps/mt299098)
 * [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)

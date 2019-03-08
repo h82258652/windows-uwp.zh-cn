@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c2da31f0f9c4673c818df216a3438cdcfd504894
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941199"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656122"
 ---
 # <a name="usersmegroupsmoniker"></a>/users/me/groups/{moniker}
-访问 presencerecord，他的有关我的用户组。 这些 Uri 的域是`userpresence.xboxlive.com`。
+访问我的小组 PresenceRecord。 这些 Uri 的域是`userpresence.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -24,9 +24,9 @@ ms.locfileid: "8941199"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| 名字对象| 字符串| 定义的用户组的字符串。 目前仅接受名字对象以大写 P 是"People"。| 
+| 名字对象| 字符串| 定义用户组的字符串。 目前唯一接受的名字对象带有大写字母 P 是"People"。| 
   
 <a id="ID4ERB"></a>
 
@@ -35,7 +35,7 @@ ms.locfileid: "8941199"
 
 [GET (/users/me/groups/{moniker} )](uri-usersmegroupsmonikerget.md)
 
-&nbsp;&nbsp;Presencerecord，他获取我的用户组。
+&nbsp;&nbsp;获取我的组 PresenceRecord。
  
 <a id="ID4E2B"></a>
 
@@ -47,6 +47,6 @@ ms.locfileid: "8941199"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[状态 URI](atoc-reference-presence.md)
+[存在 Uri](atoc-reference-presence.md)
 
    

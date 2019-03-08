@@ -6,22 +6,22 @@ ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
 ms.openlocfilehash: 3512d47c8b3e689b0baadec26c1d8f0f510e03ef
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931398"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639922"
 ---
 # <a name="pointer-based-animations"></a>基于指针的动画
 
 本文介绍了如何使用指针位置来创建动态的“紧随光标”体验。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 我们在此假设你熟悉这些文章中所述的概念：
 
-- [输入驱动的动画](input-driven-animations.md)
-- [基于关系的动画](relation-animations.md)
+- [输入驱动动画](input-driven-animations.md)
+- [关系基于动画](relation-animations.md)
 
 ## <a name="why-create-pointer-position-driven-experiences"></a>为何要创建指针位置驱动的体验？
 
@@ -43,7 +43,7 @@ ms.locfileid: "8931398"
 
 可以使用 PointerPositionPropertySet 来创建这些体验。 此 PropertySet 将为 UIElement 创建，以便在 UIElement 进行积极命中测试时保持指针的位置。 位置值为相对于 UIElement 坐标空间的值（位置 <0,0> 在 UIElement 的左上角）。 然后，可以利用在 Animation 中的此属性集来驱动另一个属性的运动。
 
-对于每个不同的指针输入形式，位置变化时输入可能有多种输入状态：Hover、Pressed、Pressed&Moved。 PointerPositionPropertySet 仅对鼠标和触控笔将指针保留在 Hover、Pressed 和 Pressed and Moved 状态。
+对于每个不同的指针输入形式，有多个输入该输入可能是在其中的位置发生更改的状态：悬停时，按下，按下和移动。 PointerPositionPropertySet 仅对鼠标和触控笔将指针保留在 Hover、Pressed 和 Pressed and Moved 状态。
 
 一般的开始步骤：
 

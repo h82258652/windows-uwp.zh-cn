@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 37bcf2ff6eee6c272339fdc997ee7bbb046f85e9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946485"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654082"
 ---
 # <a name="uwp-components-and-optimizing-interop"></a>UWP 组件和优化互操作
 
@@ -22,7 +22,7 @@ ms.locfileid: "8946485"
 
 如果你不够细心，使用 UWP 组件可对你的应用性能造成很大的影响。 本章节讨论了在你的应用使用 UWP 组件时如何获取良好的性能。
 
-### <a name="introduction"></a>介绍
+### <a name="introduction"></a>简介
 
 互操作性 可对性能造成很大的影响，你可能在使用互操作性的时甚至都未意识到你正在使用它。 UWP 将为你处理大量互操作，以便你提高效率，和重复使用以其他语言编写的代码。 我们鼓励你利用 UWP 为你所做的一切，但请注意，这可能会影响性能。 本节内容讨论了你为减少互操作对应用性能的影响而采取的行动。
 
@@ -30,7 +30,7 @@ UWP 具有一个类型库，可通过编写 UWP 应用的任何语言来访问�
 
 当你使用 C# 或 Visual Basic 开发 UWP 应用时，你所使用的两个最常见的 API 组合是 UWP API 和 UWP 应用的 .NET API。 通常，在 UWP 中定义的类型位于以“Windows”开头的命名空间中。 而 .NET 类型位于以“System”开头的命名空间中。 但是，存在例外情况。 UWP 应用的 .NET 中的类型在使用时不要求互操作性。 如果你发现在使用 UWP 的区域出现较差性能，你可以使用适用于 UWP 应用的 .NET 来获取更佳性能。
 
-**注意**与 windows 10 交付的 UWP 组件的大多数 c + + 实现，因此你从 C# 或 Visual Basic 使用它们时可跨越互操作性边界。 如往常一样，在更改代码前，请务必监测你的应用，确认使用 UWP 组件是否影响你的应用性能。
+**请注意**  以便在您将它们从跨互操作性边界大部分与 Windows 10 UWP 组件附带在 c + + 中实现C#或 Visual Basic。 如往常一样，在更改代码前，请务必监测你的应用，确认使用 UWP 组件是否影响你的应用性能。
 
 在本主题中，我们提及“UWP 组件”时，我们是指以 C# 或 Visual Basic 以外的语言编写的组件。
 
@@ -78,7 +78,7 @@ UWP 具有一个类型库，可通过编写 UWP 应用的任何语言来访问�
 
 从 C# 或 Visual Basic 使用时，在 [**.NET for Windows apps**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) 上列出的类型不会产生此互操作成本。 根据经验，你可以假定命名空间中以“Windows.”开头的类型 是 UWP 的一部分，以及命名空间中以“System.”开头的类型 属于 .NET 类型。 谨记，即使简单使用 UWP 类型（例如，分配或属性访问）也会产生互操作成本。
 
-你应衡量你的应用并在优化你的互操作成本前确定互操作是否占据你的应用执行时间的一大部分时间。 当使用 Visual Studio 分析你的应用的性能时，可以通过使用“函数”**** 视图并查看调用 UWP 的方法所花费的包含时间，来轻松获取你的互操作成本上限。
+你应衡量你的应用并在优化你的互操作成本前确定互操作是否占据你的应用执行时间的一大部分时间。 当使用 Visual Studio 分析你的应用的性能时，可以通过使用“函数”视图并查看调用 UWP 的方法所花费的包含时间，来轻松获取你的互操作成本上限。
 
 如果你的应用由于互操作开销变得很慢，你可以通过减少对热门代码路径上的 UWP API 的调用来提高应用的性能。 例如，通过定期查询 [**UIElements**](https://msdn.microsoft.com/library/windows/apps/BR208911) 的位置和维数来执行大量物理计算的某个游戏引擎可以通过以下操作节省大量时间：存储从 **UIElements** 到本地变量的必要信息、对这些已缓存值执行计算，以及在完成计算后将最终结果分配回 **UIElements**。 另一个示例：如果 C# 或 Visual Basic 代码频繁访问某个集合，则从 [**System.Collections**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.aspx) 命名空间使用该集合比从 [**Windows.Foundation.Collections**](https://msdn.microsoft.com/library/windows/apps/BR206657) 命名空间使用该集合更加有效。 你还应考虑组合调用 UWP 组件；一个可行的示例是使用 [**Windows.Storage.BulkAccess**](https://msdn.microsoft.com/library/windows/apps/BR207676) API。
 

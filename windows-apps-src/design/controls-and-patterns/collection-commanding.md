@@ -13,11 +13,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d520f811c9929721bfcb9d1c83fbff6a4891091
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925609"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658592"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>用于集合和列表的上下文命令
 
@@ -25,7 +25,7 @@ ms.locfileid: "8925609"
 
 许多应用包含用户可以操作的列表、网格和树形式的内容集合。 例如，用户可能能够删除、重命名、标记或刷新项。 本文演示如何通过为所有输入类型提供可能的最佳体验的方式，使用上下文命令来实现这些类型的操作。  
 
-> **重要 API**：[ICommand 接口](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)、[UIElement.ContextFlyout 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout)、[INotifyPropertyChanged 接口](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
+> **重要的 Api**:[ICommand 接口](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)， [UIElement.ContextFlyout 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout)， [INotifyPropertyChanged 接口](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
 
 ![使用各种输入执行收藏命令](images/ContextualCommand_AddFavorites.png)
 
@@ -39,13 +39,13 @@ ms.locfileid: "8925609"
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
 | 删除项      | 上下文菜单   | 悬停按钮      | DEL 键              | 轻扫以删除   |
 | 标记项        | 上下文菜单   | 悬停按钮      | Ctrl+Shift+G         | 轻扫以标记     |
-| 刷新数据     | 上下文菜单   | 不适用               | F5 键               | 下拉以刷新   |
+| 刷新数据     | 上下文菜单   | 不适用               | F5 键               | 下拉刷新   |
 | 收藏项 | 上下文菜单   | 悬停按钮      | F、Ctrl+S            | 轻扫以收藏 |
 
 
-* **一般情况下，应在项的[上下文菜单](menus.md)中提供用于项的所有命令。** 无论是何种输入类型，上下文菜单都可供用户访问，且应包含用户可以执行的所有上下文命令。
+* **一般情况下，您应提供的项的所有命令中的项[上下文菜单](menus.md)。** 无论是何种输入类型，上下文菜单都可供用户访问，且应包含用户可以执行的所有上下文命令。
 
-* **对于经常访问的命令，请考虑使用输入快捷方式。** 输入快捷方式使用户可以基于其输入设备快速执行操作。 输入快捷方式包括：
+* **对于频繁访问的命令，请考虑使用输入的加速器。** 输入快捷方式使用户可以基于其输入设备快速执行操作。 输入快捷方式包括：
     - 轻扫进行操作（触控快捷方式）
     - 下拉以刷新数据（触控快捷方式）
     - 键盘快捷键（键盘快捷方式）
@@ -234,15 +234,15 @@ public sealed partial class PodcastUserControl : UserControl
 
 用户可以使用以下这些“上下文操作”调用上下文菜单：
 
-| 输入    | 上下文操作                          |
+| Input    | 上下文操作                          |
 | -------- | --------------------------------------- |
 | 鼠标    | 右键单击                             |
 | 键盘 | Shift+F10、“菜单”按钮                  |
 | 触控    | 长按项                      |
-| 手写笔      | 按筒状按钮、长按项 |
+| 笔      | 按筒状按钮、长按项 |
 | 游戏板  | “菜单”按钮                             |
 
-**由于无论是何种输入类型用户都可以打开上下文菜单，因此上下文菜单应包含所有可用于列表项的上下文命令。**
+**由于用户可以打开一个上下文菜单，而不考虑输入类型，上下文菜单应包含所有可用的列表项的上下文命令。**
 
 ### <a name="contextflyout"></a>ContextFlyout
 
@@ -273,7 +273,7 @@ public sealed partial class PodcastUserControl : UserControl
 
 在播客应用中，经常执行的命令是“收藏”命令。
 
-### <a name="keyboard-accelerators"></a>键盘快捷方式
+### <a name="keyboard-accelerators"></a>键盘加速键
 
 #### <a name="shortcuts-and-direct-key-handling"></a>快捷键和直接键处理
 
@@ -370,13 +370,13 @@ protected override void OnPointerExited(PointerRoutedEventArgs e)
 
 ### <a name="touch-accelerators"></a>触控快捷方式
 
-#### <a name="swipe"></a>轻扫
+#### <a name="swipe"></a>Swipe
 
 ![轻扫某个项以显示命令](images/ContextualCommand_Swipe.png)
 
 轻扫命令是使触控设备上的用户可以使用触控执行常用辅助操作的触控快捷方式。 轻扫使触控用户能够使用常用操作（如轻扫以删除或轻扫以调用）快速且自然地与内容进行交互。 请参阅[轻扫命令](swipe.md)一文以了解详细信息。
 
-若要将轻扫集成到集合中，需要两个组件：承载命令的 SwipeItems，以及包装项并允许进行轻扫交互的 SwipeControl。
+若要将轻扫集成到你的集合，需要两个组件：SwipeItems，承载命令;和 SwipeControl，该包装项，并允许重击交互。
 
 SwipeItems 可以定义为 PodcastUserControl 中的资源。 在此示例中，SwipeItems 包含用于收藏项的命令。
 
@@ -432,7 +432,7 @@ private void SwipeItem_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 }
 ```
 
-#### <a name="pull-to-refresh"></a>下拉以刷新
+#### <a name="pull-to-refresh"></a>下拉刷新
 
 下拉以刷新使用户可以使用触控下拉数据集合，以检索更多数据。 请参阅[下拉以刷新](pull-to-refresh.md)一文以了解详细信息。
 
@@ -453,7 +453,7 @@ private void SwipeItem_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 ## <a name="related-topics"></a>相关主题
 * [ICommand 接口](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)
 * [菜单和上下文菜单](menus.md)
-* [轻扫](swipe.md)
+* [Swipe](swipe.md)
 * [下拉以刷新](pull-to-refresh.md)
-* [手写笔和触笔交互](../input/pen-and-stylus-interactions.md)
-* [针对游戏板和 Xbox 定制应用](../devices/designing-for-tv.md)
+* [笔和触笔的交互](../input/pen-and-stylus-interactions.md)
+* [定制您的游戏手柄和 Xbox 应用](../devices/designing-for-tv.md)

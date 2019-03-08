@@ -6,11 +6,11 @@ ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a296cc877279292f73b591a86ede9136b0d9758
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044165"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645192"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>2017 年 9 月 Windows 开发人员文档中的新增功能
 
@@ -18,7 +18,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 当然，Fall Creators Update 即将推出，敬请继续关注即将在下个月发布的大量文档。
 
-只需在 Windows10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/your-first-app.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/your-first-app.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -36,10 +36,10 @@ Xbox Live 创意者计划现已推出，你可以通过该计划轻松构建和�
 
 以下是新文章概览：
 
-+ [**创建用户界面**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-ui)介绍了如何创建基本的照片库界面。
-+ [**创建数据绑定**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-data-binding)介绍了如何为照片库添加数据绑定，以使用实时图像数据对其进行填充。
-+ [**创建自定义样式**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-style)介绍了如何为照片编辑菜单添加奇特的自定义样式。
-+ [**创建自适应布局**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-adaptive-layout)介绍了如何让照片库不会实现自适应，从而使其在每个设备和屏幕大小上均适用。
++ [**创建用户界面**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-ui)演示如何创建基本的照片库接口。
++ [**创建数据绑定**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-data-binding)演示如何将数据绑定添加到照片库中，使用实际的图像数据填充它。
++ [**创建自定义样式**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-style)演示如何将复杂的自定义样式添加到照片编辑菜单。
++ [**创建自适应布局**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-adaptive-layout)演示如何使库布局自适应的因此它看起来不错上每个设备和屏幕大小。
 
 ### <a name="get-started-tutorials"></a>入门教程
 
@@ -47,7 +47,7 @@ UWP 文档的“入门”部分已更新为[新的教程登录页面部分](http
 
 ### <a name="voice-and-tone"></a>语音和声调
 
-我们添加了新的 [UWP 应用中的语音和声调指南](https://docs.microsoft.com/windows/uwp/in-app-help/voice-and-tone)，为你提供了有关在应用中编写文本的建议。 无论你创建什么内容，所使用语言的可行性、友好性和信息性都非常重要。
+我们添加了新的 [UWP 应用中的语音和声调指南](https://docs.microsoft.com/windows/uwp/in-app-help/voice-and-tone)，为你提供了有关在应用中编写文本的建议。 无论你创建什么内容，用语应亲切、友好并提供有用信息。
 
 ## <a name="samples"></a>示例
 

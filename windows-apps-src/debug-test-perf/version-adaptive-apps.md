@@ -3,16 +3,16 @@ title: 版本自适应应用
 description: 了解如何在保持与以前版本的兼容性的同时利用新 API
 ms.date: 09/17/2018
 ms.topic: article
-keywords: windows 10，uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 435bbdbfaaf1bec90fa1ee2d598b4a3fe78d3789
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944948"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631652"
 ---
-# <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>版本自适应应用：在保持与以前版本的兼容性的同时使用新 API
+# <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>自适应应用程序版本：使用新的 Api，同时保持与早期版本兼容性
 
 每个 Windows 10 SDK 版本都添加你会想要利用的精彩的新功能。 然而，并非所有客户都会同时将其设备更新为最新版本的 Windows 10，因此你希望确保你的应用所适用的设备范围能够尽可能的广泛。 我们在此处显示如何设计应用，以便它不仅可以在较早版本的 Windows 10 上运行，还可以在应用运行在装有最新更新的设备上运行时利用新功能。
 
@@ -26,8 +26,8 @@ ms.locfileid: "8944948"
 
 支持多个 Windows 10 版本的第一步是在 Visual Studio 项目中指定*目标*和*最低*支持的操作系统/SDK 版本。
 
-- *目标*：Visual Studio 编译应用代码和运行所有工具所面向的 SDK 版本。 编译时，此 SDK 版本中的所有 API 和资源均可在你的应用代码中使用。
-- *最低*：支持可在其上运行应用的最早操作系统版本的 SDK 版本（并且将通过应用商店部署到它），以及 Visual Studio 编译应用标记代码时所面向的版本。 
+- *目标*：SDK 版本 Visual Studio 编译您的应用程序代码和运行针对的所有工具。 编译时，此 SDK 版本中的所有 API 和资源均可在你的应用代码中使用。
+- *最低*：支持的最早 OS 版本，您的应用程序上可以运行 （并将部署到应用商店） 和 Visual Studio 会编译应用程序标记代码针对的版本的 SDK 版本。 
 
 在运行时，你的应用将针对其部署到的操作系统版本运行，因此如果使用资源或调用 API（它们在该版本中并未提供），应用将引发异常。 我们将在本文的后面部分介绍如何使用运行时检查来调用正确的 API。
 
@@ -53,14 +53,14 @@ ms.locfileid: "8944948"
 | RTM | 1507 | 10240 |
 | 11 月更新 | 1511 | 10586 |
 | 周年更新 | 1607 | 14393 |
-| 创意者更新 | 1703 | 15063 |
+| Creators 更新 | 1703 | 15063 |
 | 秋季创意者更新 | 1709 | 16299 |
 | 2018 年 4 月更新 | 1803 | 17134 |
 | 2018 年 10 月更新 | 1809 | 17763 |
 
-可以从 [Windows SDK 和模拟器存档](https://developer.microsoft.com/downloads/sdk-archive)下载任何已发布的 SDK 版本。 可以从 [Windows 预览体验成员](https://insider.windows.com/Home/BuildWithWindows) 站点的开发人员部分下载最新的 Windows Insider Preview SDK。
+可以从 [Windows SDK 和仿真器存档](https://developer.microsoft.com/downloads/sdk-archive)下载任何发布的 SDK 版本。 可以从 [Windows 预览体验成员](https://insider.windows.com/Home/BuildWithWindows)站点的开发人员部分下载最新的 Windows Insider Preview SDK。
 
- 有关 Windows 10 更新的详细信息，请参阅[Windows 10 版本信息](https://technet.microsoft.com/windows/release-info)。 有关 Windows 10 的重要信息支持生命周期，请参阅[Windows 生命周期事实表](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)。
+ 有关 Windows 10 更新的详细信息，请参阅[Windows 10 发布信息](https://technet.microsoft.com/windows/release-info)。 有关 Windows 10 的支持生命周期的重要信息，请参阅[Windows 生命周期简报](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)。
 
 ## <a name="perform-api-checks"></a>执行 API 检查
 
@@ -68,7 +68,7 @@ ms.locfileid: "8944948"
 
 ### <a name="api-contracts"></a>API 协定
 
-设备系列中的 API 集将细分为 API 协定。 你可以使用 **ApiInformation.IsApiContractPresent** 方法来测试是否存在 API 协定。 如果你想要测试大量 API（它们均位于同一版 API 协定中）的存在，这会很有用。
+设备系列中的 API 集将细分为 API 协定。 你可以使用 **ApiInformation.IsApiContractPresent** 方法来测试是否存在 API 合约。 如果你想要测试大量 API（它们均位于同一版 API 协定中）的存在，这会很有用。
 
 ```csharp
     bool isScannerDeviceContract_1_Present =
@@ -83,7 +83,7 @@ ms.locfileid: "8944948"
 最大和最常用的 API 协定是 **Windows.Foundation.UniversalApiContract**。 它包含通用 Windows 平台中的大部分 API。 [设备系列扩展 SDK 和 API 协定](https://docs.microsoft.com/uwp/extension-sdks/) 文档介绍了各种可用的 API 协定。 你将看到其中大部分表示一组功能相关的 API。
 
 > [!NOTE]
-> 如果你安装了尚未在文档中介绍的预览 Windows 软件开发工具包 (SDK)，也可以在“Platform.xml”文件中找到关于 API 协定的信息，该文件位于 SDK 安装文件夹“\(Program Files (x86))\Windows Kits\10\Platforms\<platform>\<SDK version>\Platform.xml”。
+> 如果尚不相关文档的预览 Windows 软件开发工具包 (SDK) 安装，还发现在 SDK 安装文件夹中的 Platform.xml 文件中的 API 协定支持的信息\(Program Files (x86)) \Windows Kits\10\Platforms\<平台 >\<SDK 版本 > \Platform.xml。
 
 ### <a name="version-adaptive-code-and-conditional-xaml"></a>版本自适应代码和条件 XAML
 
@@ -104,6 +104,6 @@ ms.locfileid: "8944948"
 
 ## <a name="related-articles"></a>相关文章
 
-- [UWP 应用是什么](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-- [使用 API 协定动态检测功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
+- [什么是 UWP 应用](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+- [动态检测使用 API 协定的功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [API 协定](https://channel9.msdn.com/Events/Build/2015/3-733)（版本 2015 视频）

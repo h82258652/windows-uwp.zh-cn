@@ -2,16 +2,16 @@
 title: 在后台无限期运行
 description: 使用 extendedExecutionUnconstrained 功能可在后台无限期运行后台任务或扩展执行会话。
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: 后台任务，扩展执行，资源、 限制，后台任务
-ms.date: 10/3/2017
+keywords: 扩展执行、 资源、 限制、 后台任务的后台任务
+ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aedd948fe58efcc3edc160db971478189d9cb4ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: faac1d8d47ddcff4e5ec32d35f2e46bab7a3f4aa
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933921"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630242"
 ---
 # <a name="run-in-the-background-indefinitely"></a>在后台无限期运行
 
@@ -75,7 +75,7 @@ _Package.appxmanifest_
 </Package>
 ```
 
-此功能将删除执行时间限制和空闲任务监视程序。 启动后台任务后，无论是通过触发器启动还是通过应用服务调用启动，一旦该任务对 **Run** 方法提供的 [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) 执行了延迟，就可以无限期运行。 如果将应用设置为**由 Windows 管理**，那么仍然可能会对它应用能耗配额，并且其后台任务在“节电模式”处于活动状态时将不会被激活。 可以使用操作系统设置对其进行更改。 [优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)中提供了详细信息。
+此功能将删除执行时间限制和空闲任务监视程序。 启动后台任务后，无论是通过触发器启动还是通过应用服务调用启动，一旦该任务对 **Run** 方法提供的 [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) 执行了延迟，就可以无限期运行。 如果将应用设置为**由 Windows 管理**，那么仍然可能会对它应用能耗配额，并且其后台任务在“节电模式”处于活动状态时将不会被激活。 这可以与 OS 设置更改。 [优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)中提供了详细信息。
 
 通用 Windows 平台会监视后台任务执行情况，以确保电池使用时间长久并且拥有顺畅的前台应用体验。 但是，个人应用和企业业务线应用可以使用扩展执行和 **extendedBackgroundTaskTime** 功能，以创建只要需要就会运行而不考虑设备资源可用性的应用。
 
@@ -83,4 +83,4 @@ _Package.appxmanifest_
 
 ## <a name="see-also"></a>另请参阅
 
-[删除后台任务资源限制](https://docs.microsoft.com/windows/application-management/enterprise-background-activity-controls)
+[删除后台任务的资源限制](https://docs.microsoft.com/windows/application-management/enterprise-background-activity-controls)

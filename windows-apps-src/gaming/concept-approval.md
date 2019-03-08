@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 概念审批
 ms.localizationpriority: medium
 ms.openlocfilehash: 289da691766e0f2f78bd40aff2ac294ac6852463
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050450"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637172"
 ---
 # <a name="concept-approval"></a>概念审批
 
@@ -21,7 +21,7 @@ ms.locfileid: "9050450"
 
 仅当你通过 [ID@Xbox](https://www.xbox.com/Developers/id) 或作为托管合作伙伴将游戏发布到 Xbox 时，才需要完成此过程。 如果你加入 [Xbox Live 创意者计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)，并制作以后可自行发布到 Xbox 的通用 Windows 平台 (UWP) 游戏，则无需完成此过程。 但是，通过该计划制作的游戏将在应用商店的单独部分中予以特别推荐。 如果你希望你的游戏与大型 AAA 游戏一起被特别推荐，或者你想使用 Xbox 开发套件 (XDK) 创建更加精彩的游戏，则将需要完成概念审批过程。
 
-如果你要开发适用于 Windows 桌面或移动设备的 UWP 游戏（或者你要发布的 UWP 应用*不*是一款面向任何设备的游戏），则你也不需要概念审批。 你只需要是[开发人员帐户](https://go.microsoft.com/fwlink/?LinkId=817223)，并且你可以自由配置应用并向通过合作伙伴中心的应用商店提交应用。
+如果你要开发适用于 Windows 桌面或移动设备的 UWP 游戏（或者你要发布的 UWP 应用*不*是一款面向任何设备的游戏），则你也不需要概念审批。 你只需[开发人员帐户](https://go.microsoft.com/fwlink/?LinkId=817223)，并且可以自由地配置和将应用提交到合作伙伴中心通过应用商店。
 
 ## <a name="submit-your-concept-for-approval"></a>提交概念以供审批
 

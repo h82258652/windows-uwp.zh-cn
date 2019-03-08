@@ -1,5 +1,5 @@
 ---
-Description: Used to select or deselect action items. Can be used for a single list item or for multiple list items.
+Description: 用于选择或取消选择操作项目。 可以用于单个列表项目或多个列表项目。
 title: 复选框
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
@@ -13,11 +13,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a13c0c3d0e91a3932b4f9a26e564fbf364e5551
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037119"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648892"
 ---
 # <a name="check-boxes"></a>复选框
 
@@ -25,20 +25,20 @@ ms.locfileid: "9037119"
 
 复选框用于选择或取消选择操作项目。 它可用于单个项目或用户可以选择的多个项目列表。 该控件具有三个选择状态：未选中、已选中和不确定。 在子选择集具有未选中和已选中两种状态时，使用不确定状态。
 
-> **重要 API**：[CheckBox 类](https://msdn.microsoft.com/library/windows/apps/br209316)、[Checked 事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)、[IsChecked 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
+> **重要的 Api**:[复选框类](https://msdn.microsoft.com/library/windows/apps/br209316)，[选中的事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)， [IsChecked 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
 
 ![复选框状态示例](images/templates-checkbox-states-default.png)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-将**单个复选框**用于二元是/否选项，例如“记住我？” 登录方案或服务协议的条款选项。
+将“单个复选框”用于二元是/否选项，例如“记住我？” 登录方案或服务协议的条款选项。
 
 ![为单个选项使用的单个复选框](images/checkbox1.png)
 
 对于二元选项，**复选框**和[切换开关](toggles.md)之间的主要差别是：复选框用于表示状态，而切换开关用于表示操作。 你可以延迟提交复选框交互（例如作为表单提交的一部分），然而应该立即提交切换开关交互。 另外，仅复选框允许多选。
 
-使用多选方案的**多个复选框**，在这些方案中，用户从非相互排斥的选项组中选择一个或多个项目。
+使用多选方案的“多个复选框”，在这些方案中，用户从非相互排斥的选项组中选择一个或多个项目。
 
 当用户需要选择任何选项组合时创建一组复选框。
 
@@ -48,7 +48,7 @@ ms.locfileid: "9037119"
 
 ![用于显示混合选项的复选框](images/checkbox3.png)
 
-**复选框**和**单选按钮**控件都能让用户选择选项列表中的内容。 复选框让用户选择选项组合。 相比之下，单选按钮允许用户在相互排斥的选项中选择单个选项。 当存在多个选项，但只能选择一个选项时，应使用单选按钮。
+“复选框”和“单选按钮”控件都能让用户选择选项列表中的内容。 复选框让用户选择选项组合。 相比之下，单选按钮允许用户在相互排斥的选项中选择单个选项。 当存在多个选项，但只能选择一个选项时，应使用单选按钮。
 
 ## <a name="examples"></a>示例
 
@@ -58,7 +58,7 @@ ms.locfileid: "9037119"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/CheckBox">打开此应用，了解 CheckBox 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -136,7 +136,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 
 **Checked** 和 **Unchecked** 事件独立发生。 如果你处理这些事件，应同时处理它们以响应复选框中的状态更改。
 
-下面的示例介绍如何处理 Click 事件以及 Checked 和 Unchecked 事件。
+在以下示例中，我们展示了处理 Click 事件以及 Checked 和 Unchecked 事件。
 
 多个复选框可共享相同的事件处理程序。 本示例创建了四个用于选择披萨料的复选框。 这四个复选框共享相同的 **Click** 事件处理程序以更新选择的佐料列表。
 
@@ -294,9 +294,9 @@ private void SetCheckedState()
 
     ![不确定复选框](images/checkbox4_spicy.png)
 
-    相反，请使用有三个选项的单选按钮组：“不辣”、“辛辣”和“超辣”。
+    相反，使用具有三个选项的单选按钮组：不辣味、 辣味，和额外辣味。
 
-    ![具有三个选项的单选按钮组：“不辣”、“辛辣”和“超辣”](images/spicyoptions.png)
+    ![包含三个选项的单选按钮组：不辣味、 辣味，和额外辣味](images/spicyoptions.png)
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
@@ -304,6 +304,6 @@ private void SetCheckedState()
 
 ## <a name="related-articles"></a>相关文章
 
-- [CheckBox 类](https://msdn.microsoft.com/library/windows/apps/br209316) 
+- [复选框类](https://msdn.microsoft.com/library/windows/apps/br209316) 
 - [单选按钮](radio-button.md)
 - [切换开关](toggles.md)

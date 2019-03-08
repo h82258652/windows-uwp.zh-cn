@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
+Description: 了解如何使用磁贴、锁屏提醒、Toast 以及通知提供应用入口点并使用户了解最新信息。
 title: 适用于 UWP 应用的锁屏提醒通知
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b41069f1ca964f978ba0cff73f5c34a9db133a10
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920282"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649082"
 ---
 # <a name="badge-notifications-for-uwp-apps"></a>适用于 UWP 应用的锁屏提醒通知
 
@@ -35,7 +35,7 @@ ms.locfileid: "8920282"
 <table>
     <tr>
         <th>值</th>
-        <th>锁屏提醒</th>
+        <th>Badge</th>
         <th>XML</th>
     </tr>
     <tr>
@@ -105,7 +105,7 @@ ms.locfileid: "8920282"
     <td>`<badge value="error"/>`</td>
 </tr>
 <tr>
-    <td>newMessage</td>
+    <td>新邮件</td>
     <td><img src="images/badges/badge-newMessage.png" alt="Glyph" /></td>
     <td>`<badge value="newMessage"/>`</td>
 </tr>
@@ -128,7 +128,7 @@ ms.locfileid: "8920282"
 
 ## <a name="create-a-badge"></a>创建锁屏提醒
 
-这些示例显示了如何创建锁屏提醒更新。
+这些示例演示了如何创建锁屏提醒更新。
 
 ### <a name="create-a-numeric-badge"></a>创建数字锁屏提醒
 

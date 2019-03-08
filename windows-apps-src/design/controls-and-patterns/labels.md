@@ -1,5 +1,5 @@
 ---
-Description: Use a label to indicate to the user what they should enter into an adjacent control. You can also label a group of related controls, or display instructional text near a group of related controls.
+Description: 使用标签向用户指示他们应向邻近控件输入的内容。 还可以为一组相关控件添加标签，或在一组相关控件旁显示说明文本。
 title: 标签
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
@@ -12,11 +12,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4345daf5b879fed7ba9805e4a448c473299031d7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926026"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654142"
 ---
 # <a name="labels"></a>标签
 
@@ -24,7 +24,7 @@ ms.locfileid: "8926026"
 
 标签是一个控件或一组相关控件的名称或标题。
 
-> **重要 API**：Header 属性，[TextBlock 类](https://msdn.microsoft.com/library/windows/apps/br209652)
+> **重要的 Api**:标头属性[TextBlock 类](https://msdn.microsoft.com/library/windows/apps/br209652)
 
 在 XAML 中，许多控件都具有用于显示标签的内置 Header 属性。 对于没有 Header 属性的控件，或要为多组控件添加标签，你可以改用 [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)。
 
@@ -39,7 +39,7 @@ ms.locfileid: "8926026"
 
 
 ## <a name="get-the-sample-code"></a>获取示例代码
-* [XAML UI 基本示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+* [XAML UI 基础知识示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
 ## <a name="related-topics"></a>相关主题
 * [文本控件](text-controls.md)

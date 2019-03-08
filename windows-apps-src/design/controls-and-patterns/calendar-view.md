@@ -1,29 +1,29 @@
 ---
-Description: A calendar view lets a user view and interact with a calendar that they can navigate by month, year, or decade.
+Description: 日历视图让用户查看可按月份、年份或十年期浏览的日历，并与之交互。
 title: 日历视图
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 9214ec2f2a1e352f94205675f2200920b8a00bd2
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037249"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654512"
 ---
 # <a name="calendar-view"></a>日历视图
 
 日历视图让用户查看可按月份、年份或十年期浏览的日历，并与之交互。 用户可选择单个日期或一组日期。 它没有选取器图面，并且日历始终可见。 
 
-> **重要 API**：[CalendarView 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)、[SelectedDatesChanged 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)
+> **重要的 Api**:[日历视图类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)， [SelectedDatesChanged 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
@@ -42,7 +42,7 @@ ms.locfileid: "9037249"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/CalendarView">打开此应用，了解 CalendarView 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -134,7 +134,7 @@ calendarView1.MaxDate = new DateTime(2099, 12, 31);
 
 通过调用 [CalendarViewDayItem.SetDensityColors](https://msdn.microsoft.com/library/windows/apps/xaml/dn890067.aspx) 方法，可显示有关一天中事件密度的上下文信息。 你可以为每个日期显示 0 到 10 个密度条，并设置每个密度条的颜色。 
 
-以下是日历中的某些日常项目。 第 1 和 2 天已排除。第 2、3 和 4 天设置了不同的密度条。
+以下是日历中的某些日常项目。 第 1 和 2 天已排除。第 2、3、4 天设置了不同的密度条。
 
 ![有密度条的日历天数](images/calendar-view-density-bars.png)
 
@@ -147,7 +147,7 @@ calendarView1.MaxDate = new DateTime(2099, 12, 31);
 - 在第 1 阶段，你排除不可预订的日期。 这包括过去的日期、星期日和已全部预订的日期。 
 - 在第 2 阶段，你查看当天已预订的每个约会。 每个已确定的约会显示绿色密度条，而每个暂定的约会显示蓝色密度条。 
 
-本示例中的 `Bookings` 类来源于虚构的约会预订应用，不会显示。
+本示例中的 `Bookings` 类来源于虚构的约会预订应用，并且不会显示。
 
 ```xaml
 <CalendarView CalendarViewDayItemChanging="CalendarView_CalendarViewDayItemChanging"/>

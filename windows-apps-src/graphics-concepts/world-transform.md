@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: af694ed32d845e518f4189f75309f1f371743f90
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920342"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662412"
 ---
 # <a name="world-transform"></a>世界转换
 
 
-世界转换将坐标从模型空间（其中相对于模型的本地原点定义顶点）更改为世界空间。 在世界空间中，相对于场景中所有对象的共用原点定义顶点。 世界转换将模型放入世界空间中。
+世界转换将坐标从相对模型的本地原点定义顶点的世界空间更改到世界空间。 在世界空间中，顶点是相对场景中所有对象共同的原点定义的。 世界转换将模型放入世界空间中。
 
 ## <span id="What_Is_a_World_Transform"></span><span id="what_is_a_world_transform"></span><span id="WHAT_IS_A_WORLD_TRANSFORM"></span>
 
