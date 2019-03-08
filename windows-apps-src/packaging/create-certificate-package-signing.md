@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
 ms.openlocfilehash: 963c73bb7667ced5bbe9e33fef0cac561fe1183a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928971"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57591542"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>为程序包签名创建证书
 
@@ -21,9 +21,9 @@ ms.locfileid: "8928971"
 > [!IMPORTANT] 
 > 如果你使用 Visual Studio 开发应用，建议使用 Visual Studio 向导导入证书并对你的应用包签名。 有关详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
-- **打包或未打包的应用**  
+- **打包或未打包应用**  
 包含 AppxManifest.xml 文件的应用。 在创建用于给最终应用包签名的证书时，你将需要参考清单文件。 有关如何手动打包应用的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。
 
 - **公钥基础结构 (PKI) Cmdlet**  
@@ -54,7 +54,7 @@ ms.locfileid: "8928971"
 New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName <Your Friendly Name> -CertStoreLocation "Cert:\LocalMachine\My"
 ```
 
-运行此命令后，证书将被添加到本地证书存储中，如“-CertStoreLocation”参数中指定。 该命令的结果还会产生证书指纹。  
+运行此命令后，证书将被添加到本地证书存储中，如“-CertStoreLocation”参数中指定。 命令的结果还将生成证书的指纹。  
 
 **注意**  
 你可以使用以下命令在 PowerShell 窗口中查看你的证书：
@@ -70,13 +70,13 @@ Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 
 使用 **Export-PfxCertificate** 时，你必须创建并使用密码或使用“-ProtectTo”参数指定哪些用户或组可以不使用密码访问该文件。 注意，如果不使用“-Password”或“-ProtectTo”参数，将显示错误。
 
-- **密码使用**
+- **密码的使用**
 ```
 $pwd = ConvertTo-SecureString -String <Your Password> -Force -AsPlainText 
 Export-PfxCertificate -cert "Cert:\LocalMachine\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd
 ```
 
-- **ProtectTo 使用**
+- **ProtectTo 使用情况**
 ```
 Export-PfxCertificate -cert Cert:\LocalMachine\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
 ```

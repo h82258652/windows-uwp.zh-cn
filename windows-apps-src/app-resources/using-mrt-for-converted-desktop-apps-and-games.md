@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, mrt, pri. 资源, 游戏, centennial, desktop app converter, mui, 卫星程序集
 ms.localizationpriority: medium
 ms.openlocfilehash: 287c22cbd50f1b69f505bbddd445740fe9422c31
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981451"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597012"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>在旧应用或游戏中使用 Windows 10 资源管理系统
 
@@ -28,8 +28,8 @@ ms.locfileid: "8981451"
 
 <table>
 <tr>
-<th>工作</th>
-<th>好处</th>
+<th>Work</th>
+<th>益处</th>
 <th>估计成本</th>
 </tr>
 <tr>
@@ -40,7 +40,7 @@ ms.locfileid: "8981451"
 <tr>
 <td>使用 MRT 确定并找到资源</td>
 <td>最小化下载和安装大小的先决条件；自动语言回退</td>
-<td>中</td>
+<td>中等</td>
 </tr>
 <tr>
 <td>生成资源包</td>
@@ -70,25 +70,25 @@ ms.locfileid: "8981451"
 
 如果用户使用英语或德语以外的语言，或者显示比例系数不是 100% 或 300%，MRT 将基于一组回退规则选取“最接近”的匹配候选项（请参阅 [MSDN 中的**资源管理系统**主题](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.aspx)了解更多背景）。 
 
-请注意，MRT 支持针对多个限定符定制的资源 - 例如，如果徽标图像包含还需要进行本地化的嵌入文本，徽标将有四个候选项：EN/Scale-100、DE/Scale-100、EN/Scale-300 和 DE/Scale-300。
+请注意，MRT 支持专门针对于多个限定符的资源-例如，如果徽标图像包含嵌入的文本，也需要进行本地化，徽标将有四个候选项：EN/规模-100、 DE/规模-100、 EN/规模-300 和 DE/规模-300。
 
 ### <a name="sections-in-this-document"></a>本文档的各个部分
 
 以下部分概述了将 MRT 与你的应用程序集成所需执行的高级任务。
 
-**阶段 0：生成应用程序包**
+**阶段 0:生成应用程序包**
 
 此部分概述了如何将现有的桌面应用程序生成为一个应用程序包。 在此阶段不使用任何 MRT 功能。
 
-**阶段 1：本地化应用程序清单**
+**第 1 阶段：本地化应用程序清单**
 
 此部分概述了如何本地化应用程序的清单（以使其在 Windows Shell 中正确显示），同时仍使用旧的源格式和 API 打包并找到资源。 
 
-**阶段 2：使用 MRT 确定并找到资源**
+**阶段 2:使用 MRT 来识别和查找资源**
 
 此部分概述了如何修改应用程序代码（以及可能的资源布局）来使用 MRT 找到资源，同时仍使用现有资源格式和 API 加载和使用资源。 
 
-**阶段 3：生成资源包**
+**阶段 3:生成资源包**
 
 此部分概述了将你的资源分成单独的*资源包*所需的最终更改，这可以最小化应用的下载（和安装）大小。
 
@@ -96,13 +96,13 @@ ms.locfileid: "8981451"
 
 完成上述阶段 0-3 之后，你将有一个可以提交到 Microsoft Store 的应用程序“捆绑包”，它们还可以让用户通过忽略不需要的资源（例如，他们不使用的语言）最小化下载和安装大小。 可以采用一个最终步骤对应用程序的大小和功能进行进一步的改进。 
 
-**阶段 4：迁移到 MRT 资源格式和 API**
+**阶段 4:迁移到 MRT 的资源格式和 Api**
 
 此阶段超出了本文档的范围；它要求将资源（特别是字符串）从旧格式（如 MUI DLL 或 .NET 资源程序集）移入 PRI 文件。 这能够为下载和安装进一步节省空间。 它还允许使用其他 MRT 功能，例如根据比例系数、辅助功能设置等最小化图像文件的下载和安装。
 
 - - -
 
-## <a name="phase-0-build-an-application-package"></a>阶段 0：生成应用程序包
+## <a name="phase-0-build-an-application-package"></a>阶段 0:生成应用程序包
 
 在对应用程序资源进行任何更改之前，必须先将当前的打包和安装技术替换为标准 UWP 打包和部署技术。 有三种方法可执行此操作：
 
@@ -110,7 +110,7 @@ ms.locfileid: "8981451"
 0. 如果你有文件相对较少或安装程序简单的较小的桌面应用程序，且不连接扩展点，你可以手动创建文件布局和清单信息
 0. 如果你在从源重建，并且想要将应用更新为“纯”UWP 应用程序，你可以在 Visual Studio 中创建新项目，并依靠 IDE 为你完成大量工作
 
-如果你想要使用 [Desktop App Converter](https://aka.ms/converter)，请参阅 [MSDN 中的**桌面到 UWP 桥：Desktop App Converter** 主题](https://aka.ms/converterdocs)了解有关转换过程的详细信息。 可以在[**桌面桥到 UWP 示例** GitHub 存储库](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)中找到一整套桌面转换器示例。
+如果你想要使用[Desktop App Converter](https://aka.ms/converter)，请参阅[**桌面到 UWP 桥：Desktop App Converter** MSDN 上的主题](https://aka.ms/converterdocs)的转换过程的详细信息。 可以在[**桌面桥到 UWP 示例** GitHub 存储库](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)中找到一整套桌面转换器示例。
 
 如果你想要手动创建程序包，你将需要创建包含所有应用程序文件（可执行文件和内容，但不包括源代码）和 `AppXManifest.xml` 文件的目录结构。 示例可以在 [**Hello, World** GitHub 示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/blob/master/Samples/HelloWorldSample/CentennialPackage/AppxManifest.xml)中找到，但运行名为 `ContosoDemo.exe` 的桌面可执行文件的基本 `AppXManifest.xml` 文件如下所示，其中的<span style="background-color: yellow">突出显示文本</span>会被替换为你自己的值：
 
@@ -160,9 +160,9 @@ ms.locfileid: "8981451"
 
 ---
 
-## <a name="phase-1-localize-the-application-manifest"></a>阶段 1：本地化应用程序清单
+## <a name="phase-1-localize-the-application-manifest"></a>第 1 阶段：本地化应用程序清单
 
-### <a name="step-11-update-strings--assets-in-the-appxmanifest"></a>步骤 1.1：更新 AppXManifest 中的字符串和资源
+### <a name="step-11-update-strings--assets-in-the-appxmanifest"></a>步骤 1.1:更新字符串和 AppXManifest 中的资产
 
 在阶段 0 中，你为应用程序创建了一个基本 `AppXManifest.xml` 文件（基于提供给转换器、从 MSI 提取或手动输入到清单的值），但它既不包含本地化的信息，也不会支持其他功能，如高分辨率“开始”磁贴资源等。 
 
@@ -178,7 +178,7 @@ ms.locfileid: "8981451"
  * 如果你的默认语言不是美国英语，应使用合适的 BCP-47 代码 
 0. 在 XML 文件中，添加以下内容，其中<span style="background-color: yellow">突出显示文本</span>替换为你的应用的相应文本（使用你的默认语言）。
 
-[!Note] 有一些字符串的长度限制。 有关详细信息，请参阅 [VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements?branch=live)。
+[!Note] 有一些这些字符串的长度限制。 有关详细信息，请参阅 [VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements?branch=live)。
 
 <blockquote>
 <pre>
@@ -205,7 +205,7 @@ ms.locfileid: "8981451"
 
 如果你想要使用 Visual Studio 中的设计器：
 
-0. 在你的项目中创建 `Strings\en-us` 文件夹（或视情况使用其他语言），将**新项目**添加到你的项目的根文件夹中（使用默认名称） `resources.resw`
+0. 创建`Strings\en-us`在你的项目文件夹 （或根据需要其他语言），并添加**新项**到你的项目的根文件夹，使用的默认名称 `resources.resw`
  * 请务必选择**资源文件 (.resw)** 而非**资源字典** -“资源字典”是 XAML 应用程序使用的文件
 0. 使用设计器，输入以下字符串（使用同一个 `Names`，但将 `Values` 替换为你的应用程序的相应文本）：
 
@@ -219,7 +219,7 @@ ms.locfileid: "8981451"
 
 如果你直接编辑 XML，打开 `AppxManifest.xml` 文件，对<span style="background-color: lightgreen">突出显示值</span>进行以下更改 - 使用此*确切*文本，而不是特定于应用程序的文本。 对于使用这些具体的资源名称没有要求（你可以选择自己的名称），但不论你如何选择，所选名称都必须与 `.resw` 文件中的名称完全一致。 这些名称应与你在 `.resw` 文件中创建的 `Names` 一致，带有前缀 `ms-resource:` 架构和 `Resources/` 命名空间。 
 
-*注意：已从此代码段省略了清单的许多元素 - 不要再删除任何内容！*
+*注意： 许多的清单元素中省略了此代码段-不删除任何内容 ！*
 
 <blockquote>
 <pre>
@@ -250,7 +250,7 @@ ms.locfileid: "8981451"
 <img src="images\editing-application-info.png"/>
 <img src="images\editing-packaging-info.png"/>
 
-### <a name="step-12-build-pri-file-make-an-appx-package-and-verify-its-working"></a>步骤 1.2：生成 PRI 文件、进行 AppX 打包，确认是否能够正常使用
+### <a name="step-12-build-pri-file-make-an-appx-package-and-verify-its-working"></a>步骤 1.2:生成 PRI 文件，使一个 AppX 包，并验证它是否正常工作
 
 你现在应该能够生成 `.pri` 文件，并部署应用程序，确认是否在“开始”菜单中显示正确的信息（使用你的默认语言）。 
 
@@ -267,31 +267,31 @@ ms.locfileid: "8981451"
 ```
 
 0. 你可以键入 `makepri createconfig /?` 查看每个参数的作用，但概括起来：
- * `/cf` 设置配置文件（此命令的输出）
- * `/dq` 设置默认限定符，在此为语言 `en-US`
- * `/pv` 设置平台版本，在此为 Windows 10
- * `/o` 设置为“覆盖输出文件”（如果存在）
+ * `/cf` 设置配置文件名 （此命令的输出）
+ * `/dq` 设置在此情况下的默认限定符的语言 `en-US`
+ * `/pv` 在此事例的 Windows 10 设置平台版本中，
+ * `/o` 将其覆盖输出文件，如果存在设置
 0. 现在你有了配置文件，再次运行 `MakePRI` 以实际上搜索磁盘查找资源，并将它们打包为一个 PRI 文件。 将“Contoso_demop.xml”替换为你在上一个步骤中使用的 XML 文件名，请务必指定输入和输出的父目录： 
 
     `makepri new /pr . /cf ..\contoso_demo.xml /of ..\resources.pri /mf AppX /o`
 0. 你可以键入 `makepri new /?` 查看每个参数的作用，但概括起来：
- * `/pr` 设置项目根目录（在此为当前目录）
+ * `/pr` 设置项目根目录 （在本例中为当前目录）
  * `/cf` 设置配置文件名，在上一步中创建
  * `/of` 设置输出文件 
- * `/mf` 创建映射文件（以便我们可以在后面的步骤排除包中的文件）
- * `/o` 设置为“覆盖输出文件”（如果存在）
+ * `/mf` （因此，我们可以排除在更高版本的步骤中的包中的文件） 创建映射文件
+ * `/o` 将其覆盖输出文件，如果存在设置
 0. 现在你有一个拥有默认语言资源（例如，en-US）的 `.pri` 文件。 若要验证能否正常使用，可以运行以下命令：
 
     `makepri dump /if ..\resources.pri /of ..\resources /o`
 0. 你可以键入 `makepri dump /?` 查看每个参数的作用，但概括起来：
  * `/if` 设置输入文件名 
- * `/of` 设置输出文件名（`.xml` 将自动附加）
- * `/o` 设置为“覆盖输出文件”（如果存在）
+ * `/of` 设置输出文件名 (`.xml`将会自动追加)
+ * `/o` 将其覆盖输出文件，如果存在设置
 0. 最后，你可以在文本编辑器中打开 `..\resources.xml`，确认其中列出了你的 `<NamedResource>` 值（如 `ApplicationDescription` 和 `PublisherDisplayName`），以及你选择的默认语言的 `<Candidate>` 值（文件开头将为其他内容；暂时忽略）。
 
 如果你愿意，你可以打开映射文件 `..\resources.map.txt` 以确认其中含有项目所需的文件（包括 PRI 文件，它不是项目目录的一部分）。 重要的是，映射文件将*不*包括对你的 `resources.resw` 文件的引用，因为该文件的内容已嵌入到 PRI 文件中。 但它将包含其他资源，如你的映像的文件名。
 
-**生成程序包并签名**
+**生成和对程序包进行签名**
 
 现在 PRI 文件已生成，你可以生成程序包，并进行签名：
 
@@ -300,18 +300,18 @@ ms.locfileid: "8981451"
     `makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.appx /o`
 0. 你可以键入 `makeappx pack /?` 查看每个参数的作用，但概括起来：
  * `/m` 设置要使用的清单文件
- * `/f` 设置要使用的映射文件（在上一步中创建） 
- * `/p` 设置输出程序包名称
- * `/o` 设置为“覆盖输出文件”（如果存在）
-0. 创建程序包后，必须对它进行签名。 获取签名证书的最简单方法是在 Visual Studio 中创建一个空的通用 Windows 项目，然后复制`.pfx`文件创建，但你可以创建一个使用手动`MakeCert`和`Pvk2Pfx`中所述<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832.aspx">如何创建实用程序应用包签名证书</a>，在 MSDN 上的主题。 
- * **重要提示：** 如果你手动创建签名证书，请确保将文件放在不同于源项目或包源的目录中，否则它可能会被作为程序包的一部分，包括私钥！
+ * `/f` 设置映射要使用的文件 （在上一步中创建） 
+ * `/p` 将输出设置包名称
+ * `/o` 将其覆盖输出文件，如果存在设置
+0. 创建程序包后，必须对它进行签名。 若要获取签名证书的最简单方法是通过在 Visual Studio 中创建一个空的通用 Windows 项目，并将复制`.pfx`它创建的文件，但你可以创建一个使用手动`MakeCert`和`Pvk2Pfx`中所述的实用程序<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832.aspx">如何创建应用程序包签名证书</a>，MSDN 上的主题。 
+ * **重要说明：** 如果手动创建一个签名证书，请确保你在不同的目录将文件放比源项目或你的包源，否则为可能会收到包含包，包括私钥 ！
 0. 若要对包签名，请使用以下命令。 请注意，`AppxManifest.xml` 的 `Identity` 元素中指定的 `Publisher` 必须与证书的 `Subject` 匹配（这**不**是 `<PublisherDisplayName>` 元素，是向用户显示的本地化显示名称）。 像往常一样，将 `contoso_demo...` 文件名替换为适合你的项目的名称，并（**非常重要**）确保 `.pfx` 文件不在当前目录中（否则它可能被作为你的程序包的一部分创建，包括签名私钥！）：
 
     `signtool sign /fd SHA256 /a /f ..\contoso_demo_key.pfx ..\contoso_demo.appx`
 0. 你可以键入 `signtool sign /?` 查看每个参数的作用，但概括起来：
- * `/fd` 设置文件摘要算法（SHA256 是 AppX 的默认值）
- * `/a` 将自动选择最佳证书
- * `/f` 指定包含签名证书的输入文件
+ * `/fd` 设置文件摘要算法 （SHA256 为 AppX 的默认值）
+ * `/a` 将自动选择最佳的证书
+ * `/f` 指定包含签名证书的输入的文件
 
 最后，你现在可以双击 `.appx` 文件以安装它，或如果你更喜欢命令行，你可以打开 PowerShell 提示，更改为包含程序包的目录，然后键入以下内容（将 `contoso_demo.appx` 替换为你的程序包名称）：
 
@@ -330,28 +330,28 @@ ms.locfileid: "8981451"
     `certutil -addstore TrustedPeople contoso_demo.cer`
 0. 你可以运行 `certutil -addstore /?` 来查看每个参数的作用，但概括起来：
  * `-addstore` 将证书添加到证书存储
- * `TrustedPeople` 指示证书放置的存储
+ * `TrustedPeople` 指示在其中放置证书存储区
 
 如何 Windows 资源管理器：
 
 0. 导航到包含 `.pfx` 文件的文件夹
 0. 双击 `.pfx` 文件，**证书导入向导**应该会显示
-0. 选择 `Local Machine` 并单击 `Next`
-0. 接受用户帐户控制管理员提升权限提示（如果显示）并单击 `Next`
-0. 输入私钥的密码（如果有），然后单击 `Next`
+0. 选择`Local Machine`单击 `Next`
+0. 接受用户帐户控制管理员的提升提示，如果它出现，然后单击 `Next`
+0. 如果有的话，私钥，输入密码，然后单击 `Next`
 0. 选择 `Place all certificates in the following store`
 0. 单击 `Browse`，然后选择 `Trusted People` 文件夹（**不是**”受信任的发布者“）
-0. 单击 `Next`，然后 `Finish`
+0. 单击`Next`，然后 `Finish`
 
 将证书添加到 `Trusted People` 存储后，尝试再次安装程序包。
 
 现在，你应该看到你的应用显示在”开始“菜单的”所有应用“列表中，并具有来自 `.resw` / `.pri` 文件的正确信息。 如果你看到空白字符串或字符串 `ms-resource:...`，表示出现了错误 - 仔细检查你的编辑，确保它们正确无误。 如果右键单击”开始“菜单中的应用，你可以将它固定为磁贴，并确认同时显示正确的信息。
 
-### <a name="step-13-add-more-supported-languages"></a>步骤 1.3：添加更多支持的语言
+### <a name="step-13-add-more-supported-languages"></a>步骤 1.3:添加更多受支持的语言
 
 对 AppX 清单进行更改并且 `resources.resw` 文件已创建后，添加其他语言很简单。
 
-**创建其他本地化后的资源**
+**创建其他的本地化的资源**
 
 首先，创建其他本地化的资源值。 
 
@@ -384,7 +384,7 @@ ms.locfileid: "8981451"
 
 下面的步骤假定你为 `de-DE` 和 `fr-FR` 添加了资源，不过任何语言都可以按照相同方式操作。
 
-**更新 AppX 清单，列出支持的语言**
+**AppX 清单更新为列出支持的语言更新**
 
 AppX 清单必须更新，以列出应用支持的语言。 Desktop App Converter 添加默认语言，但必须明确添加其他语言。 如果直接编辑 `AppxManifest.xml` 文件，按照如下方法更新 `Resources` 节点，根据需要多添加一些元素，替换<span style="background-color: yellow">你支持的适当语言</span>，并确保列表中的第一个条目为默认（回退）语言。 在此示例中，默认语言为英语（美国），另外还支持德语（德国）和法语（法国）：
 
@@ -408,7 +408,7 @@ AppX 清单必须更新，以列出应用支持的语言。 Desktop App Converte
 </pre>
 </blockquote>
 
-**使用本地化的值重新生成**
+**重新生成的本地化值**
 
 现在你可以生成和部署应用程序，同样，如果你更改 Windows 中的语言首选项，你应该看到重新本地化的值显示在“开始”菜单中（下面是有关如何更改语言的说明）。
 
@@ -422,7 +422,7 @@ AppX 清单必须更新，以列出应用支持的语言。 Desktop App Converte
 
 这将创建包含你可以轻松用来测试的所有指定语言的 PRI 文件。 如果资源的总大小较小，或仅支持少数语言，这可能适用于应用发货；仅当你需要利用最小化资源（你执行生成单独语言包的其他工作所需的资源）的安装/下载大小的好处时。
 
-**使用本地化的值测试**
+**使用本地化的值进行测试**
 
 若要测试新的本地化的更改，你只需将新的 UI 首选语言添加到 Windows。 无需下载语言包、重新启动系统，或让整个 Windows UI 使用外语显示。 
 
@@ -437,7 +437,7 @@ AppX 清单必须更新，以列出应用支持的语言。 Desktop App Converte
 
 现在，打开“开始”菜单并搜索应用程序，你应该可以看到所选语言的本地化的值（其他应用也可能显示为本地化值）。 如果你未看到本地化的名称，请立即，请等待几分钟，直到刷新开始菜单的缓存。 若要返回到你的本地语言，只需在语言列表中将其设置为默认语言。 
 
-### <a name="step-14-localizing-more-parts-of-the-appx-manifest-optional"></a>步骤 1.4：本地化更多 AppX 清单部分（可选）
+### <a name="step-14-localizing-more-parts-of-the-appx-manifest-optional"></a>步骤 1.4:本地化 AppX 清单 （可选） 的多个的部件
 
 可以本地化 AppX 清单的其他部分。 例如，如果你的应用程序处理文件扩展名，那么它在清单中应有 `windows.fileTypeAssociation` 扩展名，使用与显示的文本完全相同的<span style="background-color: lightgreen">绿色突出显示文本</span>（因为它将参考资源），将<span style="background-color: yellow">黄色突出显示文本</span>替换为特定于你的应用程序的信息：
 
@@ -485,7 +485,7 @@ AppX 清单必须更新，以列出应用支持的语言。 Desktop App Converte
 
 - - -
 
-## <a name="phase-2-use-mrt-to-identify-and-locate-resources"></a>阶段 2：使用 MRT 确定并找到资源
+## <a name="phase-2-use-mrt-to-identify-and-locate-resources"></a>阶段 2:使用 MRT 确定并找到资源
 
 上一部分介绍了如何使用 MRT 本地化应用的清单文件，以使 Windows Shell 可以正确显示应用的名称和其他元数据。 此任务不需要更改代码；它只需要使用 `.resw` 文件和其他一些工具。 此部分将介绍如何使用 MRT 找到你现有资源格式的资源，以及如何在最小改动的情况下使用现有的资源处理代码。
 
@@ -495,7 +495,7 @@ AppX 清单必须更新，以列出应用支持的语言。 Desktop App Converte
 
 **资源文件布局**
 
-此白皮书假设你的本地化的资源均具有相同的文件名（例如，`contoso_demo.exe.mui` 或 `contoso_strings.dll` 或 `contoso.strings.xml`），但放在具有 BCP-47 名称（`en-US`、`de-DE` 等）的不同文件夹内。 你有多少资源文件、其名称是什么、其文件格式/关联的 API 是什么等，这些都不重要。唯一重要的是每一个*逻辑*资源具有相同的文件名（但放在不同的*物理*目录下）。 
+此白皮书假设你的本地化的资源均具有相同的文件名（例如，`contoso_demo.exe.mui` 或 `contoso_strings.dll` 或 `contoso.strings.xml`），但放在具有 BCP-47 名称（`en-US`、`de-DE` 等）的不同文件夹内。 它有多少个资源文件，则其名称是，哪些其文件格式并不重要 / 关联 Api，等等。重要的是，每个唯一*逻辑*资源具有相同文件名 (但位于不同*物理*目录)。 
 
 作为一个反例，如果你的应用程序使用平面文件结构（具有包含文件 `english_strings.dll` 和 `french_strings.dll` 的单个 `Resources` 目录），它不会很好地映射到 MRT。 更好的结构是 `Resources` 目录，有子目录和文件 `en\strings.dll` 和 `fr\strings.dll`。 也可以使用相同的基本文件名，但具有嵌入限定符，如 `strings.lang-en.dll` 和 `strings.lang-fr.dll`，不过使用具有语言代码的目录在概念上更简单，所以我们将重点关注这一点。
 
@@ -537,7 +537,7 @@ MRT 只需要更改此流程的前两个步骤 - 如何确定最佳候选资源�
  
 例如，应用程序可能会使用 Win32 API `GetUserPreferredUILanguages`、CRT 函数 `sprintf` 和 Win32 API `CreateFile` 来替换上述三个伪代码函数，然后手动分析查找 `name=value` 对的文本文件。 （细节并不重要；这只是为了说明 MRT 对找到资源后对用于处理资源的技巧没有影响）。
 
-### <a name="step-21-code-changes-to-use-mrt-to-locate-files"></a>步骤 2.1：代码更改为使用 MRT 查找文件
+### <a name="step-21-code-changes-to-use-mrt-to-locate-files"></a>步骤 2.1:若要使用 MRT 来查找文件的代码更改
 
 将代码切换为使用 MRT 查找资源并不困难。 这需要使用一些 WinRT 类型和几行代码。 你将使用的主要类型如下所示：
 
@@ -574,7 +574,7 @@ set absoluteFileName = bestCandidate.ValueAsString
 
 在这里，示例应用可以和以前一样继续使用 `CreateFile` 加载 `absoluteFileName`，并分析 `name=value` 对；不需要在应用中对该逻辑进行更改。 如果你在 C# 或 C++/CX 中编写，实际代码不会比此代码复杂多少（实际上，许多中间变量可以删去）- 请参见下方**加载 .NET 资源**的内容。 由于用于激活和调用 WinRT API 的基于 COM 的低级别 API，基于 C++/WRL 的应用程序将更加复杂，但所采取的基本步骤是相同的 - 请参见下方**加载 Win32 MUI 资源**的内容。
 
-**加载 .NET 资源**
+**正在加载.NET 资源**
 
 因为 .NET 具有查找和加载资源的内置机制（称为“卫星集”），因此没有上方人为示例中要替换的明确代码 - 在 .NET 中，只需在相应的目录中有资源 DLL，系统将自动为你定位。 当应用使用资源包打包为 AppX 时，目录结构会稍有不同 - 不会将资源目录作为应用程序主目录的子目录，它们是对等的（或者如果用户没有在首选项中列出语言，它们根本不会显示）。 
 
@@ -648,7 +648,7 @@ void EnableMrtResourceLookup()
 
 **注意**如果你的应用已有用于其他用途的 `AssemblyResolve` 处理程序，你需要将资源解决代码与现有代码结合。
 
-**加载 Win32 MUI 资源**
+**Win32 MUI 资源加载**
 
 加载 Win32 MUI 资源本质上与加载 .NET 卫星集相同，但使用 C++/CX 或 C++/WRL 代码。 使用 C++/CX 允许使用与上方的 C# 代码非常接近但简单得多的代码，不过它使用 C++ 语言扩展、编译器开关，且会产生你可能想要避免的其他运行时开销。 如果是这种情况，使用 C++/WRL 提供影响更小的解决方案，代价是使用更冗长的代码。 不过，如果你熟悉 ATL 编程（或一般是 COM），那么 WRL 应该感觉熟悉。 
 
@@ -708,16 +708,16 @@ HRESULT GetMrtResourceHandle(LPCWSTR resourceFilePath,  HINSTANCE* resourceHandl
 }
 ```
 
-## <a name="phase-3-building-resource-packs"></a>阶段 3：生成资源包
+## <a name="phase-3-building-resource-packs"></a>阶段 3:构建资源包
 
 既然你有了一个包含所有资源的“大满包”，有两条途径可以分别生成主包和资源包，以最小化下载和安装大小：
 
 0. 获取现有的大满包，并通过[捆绑包生成器工具](https://aka.ms/bundlegen)运行，来自动创建资源包。 如果你拥有已生成大满包的生成系统，并且你想要后处理它来生成资源包，这是首选方法。
 0. 直接生成单个资源包，并将它们生成为一个捆绑包。 如果你对生成系统有更多控制，并且可以直接生成包，这是首选方法。
 
-### <a name="step-31-creating-the-bundle"></a>步骤 3.1：创建捆绑包
+### <a name="step-31-creating-the-bundle"></a>步骤 3.1:创建捆绑
 
-**使用捆绑包生成器工具**
+**使用绑定生成器工具**
 
 要使用捆绑包生成器工具，为包创建的 PRI 配置文件需要手动更新，以删除 `<packaging>` 部分。
 
@@ -755,9 +755,9 @@ makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.app
 
 现在，你可以进入到最后一步，即签名（见下方）。
 
-**手动创建资源包**
+**手动创建的资源包**
 
-手动创建资源包需要运行一组略有不同的命令来生成单独的 `.pri` 和 `.appx` 文件 - 这些命令均与上方用于创建大满包的命令类似，因此只给出最基本的说明。 注意：所有命令均假设当前目录是包含 `AppXManifest.xml` 文件的目录，但所有文件将被放入父目录中（如有必要，可以使用其他目录，但不应该在项目目录中放入这些文件中的任何一个，这会造成破坏）。 像往常一样，将“Contoso”文件名替换为你自己的文件名。
+手动创建资源包需要运行一组略有不同的命令来生成单独的 `.pri` 和 `.appx` 文件 - 这些命令均与上方用于创建大满包的命令类似，因此只给出最基本的说明。 注意：所有命令都假设当前目录是该目录包含`AppXManifest.xml`文件，但所有文件放入 （您可以使用不同的目录，如果有必要，但您不应影响任何的项目目录的父目录这些文件）。 像往常一样，将“Contoso”文件名替换为你自己的文件名。
 
 0. 使用以下命令创建**仅**将默认语言指定为默认限定符的配置文件 - 在此为 `en-US`：
 
@@ -777,7 +777,7 @@ makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.app
 
 生成程序包的最后一步是签名。
 
-### <a name="step-32-signing-the-bundle"></a>步骤 3.2：为捆绑包签名
+### <a name="step-32-signing-the-bundle"></a>步骤 3.2:对捆绑进行签名
 
 创建了 `.appxbundle` 文件后（通过捆绑包生成器工具或手动创建），你将有一个包含主程序包以及所有资源包的单个文件。 最后一步是为此文件签名，以便 Windows 进行安装：
 
@@ -787,4 +787,4 @@ makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.app
 
 ## <a name="related-topics"></a>相关主题
 
-* [定制语言、比例、高对比度和其他限定符的资源](tailor-resources-lang-scale-contrast.md)
+* [定制您的语言、 缩放、 高对比度和其他限定符的资源](tailor-resources-lang-scale-contrast.md)

@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 定向优惠 API, 定向优惠
 ms.localizationpriority: medium
 ms.openlocfilehash: bcf270bd56d17936ef404adbc3663034b58e7a2c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045020"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615682"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>使用应用商店服务管理定向优惠
 
-如果你创建*定向优惠*中你的应用在合作伙伴中心，使用*Microsoft Store 定向优惠 API*来检索信息，可帮助你的应用的代码中实现应用内体验的**定向优惠与 >** 页面定向的优惠。 有关定向优惠和如何在仪表板中创建定向优惠的更多信息，请参阅[使用定向优惠最大化参与度和转换率](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)。
+如果您创建*目标产品/服务*中**参与 > 目标产品/服务**在合作伙伴中心，使用应用程序页*目标的 Microsoft Store 提供 API*到您的应用程序代码中检索可帮助您实现目标的产品/服务的应用内体验的信息。 有关定向优惠和如何在仪表板中创建定向优惠的更多信息，请参阅[使用定向优惠最大化参与度和转换率](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)。
 
 定向优惠 API 是一个简单的 REST API，可用来获取为当前用户提供的定向优惠，具体取决于用户是否属于该定向优惠所针对的客户细分的一部分。 若要在你的应用中使用此 API，请执行以下步骤：
 
@@ -31,7 +31,7 @@ ms.locfileid: "9045020"
 
 在你的应用代码中，为当前已登录的用户获取 Microsoft 帐户 (MSA) 令牌。 对于 Microsoft Store 定向优惠 API 中的每种方法，你都必须将此令牌传递到 ```Authorization``` 请求标头中。 此令牌供 Microsoft Store 用于检索为当前用户提供的定向优惠。
 
-若要获取 MSA 令牌，请使用 [WebAuthenticationCoreManager](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webauthenticationcoremanager) 类来获取使用范围为 ```devcenter_implicit.basic,wl.basic``` 的令牌。 以下示例展示了如何进行此操作。 此示例是[完整示例](#code-example)]的一个片段，它需要完整示例中提供的 **using** 语句。
+若要获取 MSA 令牌，请使用 [WebAuthenticationCoreManager](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webauthenticationcoremanager) 类来获取使用范围为 ```devcenter_implicit.basic,wl.basic``` 的令牌。 以下示例展示了如何进行此操作。 此示例是[完整示例](#code-example)的一个片段，它需要完整示例中提供的 **using** 语句。
 
 [!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetMSAToken)]
 
@@ -65,5 +65,5 @@ ms.locfileid: "9045020"
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用定向优惠最大程度地提高参与度和转换率](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)
-* [获取定向优惠](get-targeted-offers.md)
+* [使用目标产品/服务来最大程度提高参与度和转换](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)
+* [获取目标产品/服务](get-targeted-offers.md)

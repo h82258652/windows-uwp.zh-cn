@@ -1,5 +1,5 @@
 ---
-Description: This is a hub topic covering the full developer picture of how Windows Information Protection (WIP) relates to files, buffers, clipboard, networking, background tasks, and data protection under lock.
+Description: 此中心主题涉及关于 Windows 信息保护 (EDP) 与文件、缓冲区、剪贴板、网络、后台任务以及锁屏下的数据保护有何关联的完整开发人员蓝图。
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -10,16 +10,15 @@ keywords: windows 10, uwp, Windows 信息保护, 企业数据, 企业数据保�
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
 ms.openlocfilehash: f6938118b3a9041eea27367c3916e94ce34d468e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049494"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595472"
 ---
 # <a name="windows-information-protection-wip"></a>Windows 信息保护 (WIP)
 
-
-  __注意__ Windows 信息保护 (WIP) 策略可以应用于 Windows10 版本 1607。
+__注意__ Windows 信息保护 (WIP) 策略可以应用于 Windows 10 版本 1607。
 
 WIP 通过强制执行组织定义的策略来保护属于组织的数据。 如果你的应用包括在这些策略中，则你的应用生成的所有数据都将受到策略限制。 本主题帮助你生成可更流畅地强制执行这些策略的应用，而不对用户的个人数据造成任何影响。
 <iframe src="https://channel9.msdn.com/Blogs/Windows-Development-for-the-Enterprise/Securing-Enterprise-Data-with-Windows-Information-Protection/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
@@ -42,9 +41,9 @@ WIP 和 MDM 一起使组织可以更好地控制如何处理组织所管理的�
 
 ![WIP 生命周期](images/wip-lifecycle.png)
 
-> **阅读关于 WIP 的详细信息** <br>
-* [介绍 Windows 信息保护](https://blogs.technet.microsoft.com/windowsitpro/2016/06/29/introducing-windows-information-protection/)
-* [使用 Windows 信息保护 (WIP) 保护企业数据](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx)
+> **了解有关 WIP 的更多信息** <br>
+* [引入 Windows 信息保护](https://blogs.technet.microsoft.com/windowsitpro/2016/06/29/introducing-windows-information-protection/)
+* [保护企业数据使用 Windows 信息保护 (WIP)](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx)
 
 如果你的应用在允许列表上，则你的应用生成的所有数据都将受到策略限制。 这意味着，如果管理员吊销用户对企业数据的访问权限，则这些用户将失去对你的应用所生成的所有数据的访问权限。
 
@@ -62,11 +61,11 @@ WIP 和 MDM 一起使组织可以更好地控制如何处理组织所管理的�
 
 如果你已准备好启发你的应用，请参阅以下指南之一：
 
-**对于使用 C# 生成的通用 Windows 平台 (UWP) 应用**
+**使用生成的通用 Windows 平台 (UWP) 应用C#**
 
 [Windows 信息保护 (WIP) 开发人员指南](wip-dev-guide.md)。
 
-**对于使用 C++ 生成的桌面应用**
+**使用 c + + 生成的桌面应用程序**
 
 [Windows 信息保护 (WIP) 开发人员指南 (C++)](https://go.microsoft.com/fwlink/?LinkId=822192)。
 

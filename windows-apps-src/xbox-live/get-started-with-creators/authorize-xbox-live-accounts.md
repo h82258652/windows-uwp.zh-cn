@@ -7,17 +7,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 帐户, 测试帐户
 ms.localizationpriority: medium
 ms.openlocfilehash: 662f85f985baf58eef050060f8132f5a4b92444d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049250"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57663852"
 ---
-# <a name="authorize-xbox-live-accounts-for-testing-in-your-environment"></a>在你的环境中授权 Xbox Live 帐户以进行测试
+# <a name="authorize-xbox-live-accounts-for-testing-in-your-environment"></a>授权 Xbox Live 帐户在你的环境中进行测试
 
 本主题将介绍使用发布者测试环境设置 Xbox Live 帐户的过程
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 你需要以下内容才能授权 Xbox Live 测试帐户：
 
@@ -29,7 +29,7 @@ ms.locfileid: "9049250"
 
 你可以使用两种方式中的任一种到达此部分
 
-1. 在[合作伙伴中心](https://partner.microsoft.com/dashboard/windows/overview)，单击设置齿轮 ⚙ 的右上方在仪表板中，从下拉列表中选择**开发人员设置**。 此操作将打开你将在其中选择 Xbox Live 下拉列表，然后选择**Xbox 测试帐户**链接在屏幕左侧导航菜单。
+1. 在中[合作伙伴中心](https://partner.microsoft.com/dashboard/windows/overview)，单击设置齿轮 ⚙️ 中的仪表板右上角并选择**开发人员设置**从下拉列表。 这将打开在您将在其中选择 Xbox Live 的下拉列表中的屏幕的左侧导航菜单，然后**Xbox 测试帐户**链接。
 2. 从“Xbox Live 创意者配置”页中找到测试部分，然后单击名为**为测试环境授权 Xbox Live 帐户**的链接
 
 ## <a name="authorize-an-xbox-live-account-for-your-test-environment"></a>为测试环境授权 Xbox Live 帐户

@@ -6,15 +6,15 @@ ms.topic: article
 keywords: Windows 10, uwp, 广告, 投放广告, 广告中介
 ms.localizationpriority: medium
 ms.openlocfilehash: 9197dd4b62df26ff63e469063573789da948c767
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049814"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592252"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Microsoft 广告中介服务
 
-当你使用 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp) [在应用中显示广告](display-ads-in-your-app.md)时，可以选择使用 Microsoft 广告中介服务来最大程度地增加广告收益。 本文概要介绍广告中介服务及其目标。
+当你使用 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)[在应用中显示广告](display-ads-in-your-app.md)时，可以选择使用 Microsoft 广告中介服务来最大程度地增加广告收益。 本文概要介绍广告中介服务及其目标。
 
 广告中介服务是 [Microsoft 广告盈利平台](https://developer.microsoft.com/windows/ad-monetization-platform)的一部分。 该平台由以下部分组成。
 
@@ -28,7 +28,7 @@ ms.locfileid: "9049814"
 
 ## <a name="manage-complexity-of-ad-network-relationships"></a>管理广告网络关系的复杂性  
 
-广告中介服务与大量广告网络集成，你无需进行此项工作。 使用 Microsoft 广告 SDK 在应用中显示广告后，你可以修改广告中介设置[合作伙伴中心中](../publish/in-app-ads.md#mediation-settings)以显示来自多个广告网络的广告。 无需对代码进行任何更改，便可以收到来自新广告网络的广告。
+广告中介服务与大量广告网络集成，你无需进行此项工作。 使用 Microsoft Advertising SDK 在应用中显示广告后，可以修改 ad 中介设置[在合作伙伴中心](../publish/in-app-ads.md#mediation-settings)显示从多个 ad 网络的广告。 无需对代码进行任何更改，便可以收到来自新广告网络的广告。
 
 我们代表你管理与广告网络的端到端关系。 从网络集成到投放广告、报告和付款，所有工作都由我们来处理，你无需进行任何操作。
 
@@ -47,7 +47,7 @@ ms.locfileid: "9049814"
 
 新的广告网络通过学习预算自动包含并评估性能。 在很短的时间内，它们就会在瀑布中找到自己的位置。 这使得广告网络更具竞争力，并且可以帮助开发人员通过应用获得最大收益。
 
-强烈建议使用[推荐的中介设置](../publish/in-app-ads.md#mediation-settings)使应用中的广告产生的收益最大化。 我们的算法可以借此让你的应用产生最大收益。 但是，你也可以自由地在合作伙伴中心，以更好地控制投放广告和广告投放的顺序广告网络中选择你自己的中介设置。
+强烈建议使用[推荐的中介设置](../publish/in-app-ads.md#mediation-settings)使应用中的广告产生的收益最大化。 我们的算法可以借此让你的应用产生最大收益。 但是，也可以自由地在合作伙伴中心，更好地控制为广告和在其中它们执行操作的顺序提供服务的 ad 网络中选择自己中介的设置。
 
 ## <a name="rich-data-and-signals"></a>丰富的数据和信号
 
@@ -57,4 +57,4 @@ ms.locfileid: "9049814"
 
 * [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)
 * [中介设置](../publish/in-app-ads.md#mediation-settings)
-* [广告性能报告](../publish/advertising-performance-report.md)
+* [广告效果报告](../publish/advertising-performance-report.md)

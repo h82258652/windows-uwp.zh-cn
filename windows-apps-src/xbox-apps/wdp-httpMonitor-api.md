@@ -5,11 +5,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 8b8828b060e0401e7938517e497bae20e1234baf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927483"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645672"
 ---
 # <a name="http-monitor-api-reference"></a>HTTP 监视器 API 参考   
 如果已通过在开发人员主页选中相应的框在 Xbox 主机上启用 HTTP 监视器，则可使用此 API 访问侧重型应用的实时 HTTP 流量。
@@ -45,7 +45,7 @@ GET | /ext/httpmonitor/sessions
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 说明
+HTTP 状态代码      | 描述
 :------     | :-----
 200 | 请求已成功
 4XX | 错误代码
@@ -91,7 +91,7 @@ Websocket | /ext/httpmonitor/sessions
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 说明
+HTTP 状态代码      | 描述
 :------     | :-----
 200 | 请求已成功
 4XX | 错误代码
@@ -99,6 +99,6 @@ HTTP 状态代码      | 说明
 5XX | 错误代码
 
 <br />
-**可用设备系列**
+**可用的设备系列**
 
 * Windows Xbox

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c55a12dfa7757a48874b6857c95af592e818c2b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939567"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590762"
 ---
 # <a name="bc7-format"></a>BC7 格式
 
@@ -21,14 +21,14 @@ BC7 格式是一种用于对 RGB 和 RGBA 数据进行高质量压缩的纹理�
 
 有关 BC7 格式的块模式的信息，请参阅 [BC7 格式模式参考](https://msdn.microsoft.com/library/windows/desktop/hh308954)。
 
-## <a name="span-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanabout-bc7dxgiformatbc7"></a><span id="About-BC7-DXGI-FORMAT-BC7"></span><span id="about-bc7-dxgi-format-bc7"></span><span id="ABOUT-BC7-DXGI-FORMAT-BC7"></span>关于 BC7/DXGI\_FORMAT\_BC7
+## <a name="span-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanabout-bc7dxgiformatbc7"></a><span id="About-BC7-DXGI-FORMAT-BC7"></span><span id="about-bc7-dxgi-format-bc7"></span><span id="ABOUT-BC7-DXGI-FORMAT-BC7"></span>有关 BC7/DXGI\_格式\_BC7
 
 
-BC7 由以下 DXGI\_FORMAT 枚举值指定：
+由以下 DXGI 指定 BC7\_格式枚举值：
 
--   **DXGI\_FORMAT\_BC7\_TYPELESS**。
--   **DXGI\_FORMAT\_BC7\_UNORM**。
--   **DXGI\_FORMAT\_BC7\_UNORM\_SRGB**。
+-   **DXGI\_格式\_BC7\_TYPELESS**。
+-   **DXGI\_格式\_BC7\_UNORM**。
+-   **DXGI\_格式\_BC7\_UNORM\_SRGB**。
 
 BC7 格式可用于 [Texture2D](https://msdn.microsoft.com/library/windows/desktop/bb205277)（包括阵列）、Texture3D 或 TextureCube（包括阵列）纹理资源。 同样，此格式适用于与这些资源相关联的任何 MIP 贴图表面。
 
@@ -51,15 +51,15 @@ BC7 块可以包含多个终结点对。 与某个终结点对对应的索引集
 
 对于已组合了颜色分量和 alpha 分量的 BC7 块，一个块由多个模式位、多个压缩的终结点、多个压缩的索引以及多个可选分区位和一个 P 位组成。 在这些块中，终结点颜色是用 RGBA 格式表示的，而 alpha 分量值会与颜色分量值一起以内插值替换。
 
-对于具有单独的颜色和 alpha 分量的 BC7 块，一个块由多个模式位、多个旋转位、多个压缩的终结点、多个压缩的索引和一个可选索引选择器位组成。 这些块有一个有效的 RGB 矢量 \[R, G, B\] 和一个单独进行编码的标量 alpha 通道 \[A\]。
+对于具有单独的颜色和 alpha 分量的 BC7 块，一个块由多个模式位、多个旋转位、多个压缩的终结点、多个压缩的索引和一个可选索引选择器位组成。 这些块是否包含有效的 RGB 向量\[R、 G、 B\]和标量的 alpha 通道\[A\]单独编码。
 
 下表列出了每个块类型的分量。
 
 | BC7 块包含的项目     | 多个模式位 | 多个旋转位 | 索引选择器位 | 多个分区位 | 多个压缩终结点 | P 位    | 多个压缩的索引 |
 |---------------------------|-----------|---------------|--------------------|----------------|----------------------|----------|--------------------|
-| 仅颜色分量     | 必需  | 不适用           | 不适用                | 必需       | 必需             | 可选 | 必需           |
-| 组合的颜色 + alpha    | 必需  | 不适用           | 不适用                | 可选       | 必需             | 可选 | 必需           |
-| 单独的颜色和 alpha | 必需  | 必需      | 可选           | 不适用            | 必需             | 不适用      | 必需           |
+| 仅颜色分量     | 必需的  | 不适用           | 不适用                | 必需的       | 必需的             | 可选 | 必需的           |
+| 组合的颜色 + alpha    | 必需的  | 不适用           | 不适用                | 可选       | 必需的             | 可选 | 必需的           |
+| 单独的颜色和 alpha | 必需的  | 必需的      | 可选           | 不适用            | 必需的             | 不适用      | 必需的           |
 
  
 
@@ -331,7 +331,7 @@ BC7 模式 7 具有以下特征：
 
 ![模式 7 位布局](images/bc7-mode7.png)
 
-### <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注释
+### <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 模式 8（最低有效字节设置为 0x00）会被保留。 请勿在你的编码器中使用此模式。 如果你将此模式传递给硬件，则会返回初始化为全部零的一个块。
 
@@ -339,13 +339,13 @@ BC7 模式 7 具有以下特征：
 
 -   未进行显式 alpha 分量编码的块类型。 在这些块中，颜色终结点有一个仅 RGB 编码，并且对于所有纹素，alpha 分量被解码为 1.0。
 -   具有组合的颜色和 alpha 分量的块类型。 在这些块中，终结点颜色值是用 RGBA 格式指定的，而 alpha 分量值会与颜色值一起以内插值替换。
--   具有单独的颜色和 alpha 分量的块类型。 在这些块中，颜色和 alpha 值是单独指定的，每个都有它们自己的索引集。 因此，它们有一个有效矢量和一个单独编码的标量通道，其中矢量通常指定颜色通道 \[R, G, B\]，而标量指定 alpha 通道 \[A\]。 为支持此方法，在编码中会提供一个单独的 2 位字段，该字段允许将单独通道编码指定为一个标量值。 因此，块可以具有此 alpha 编码的以下四种不同表示之一（由 2 位字段指示）：
+-   具有单独的颜色和 alpha 分量的块类型。 在这些块中，颜色和 alpha 值是单独指定的，每个都有它们自己的索引集。 因此，它们具有有效的矢量和标量通道分别编码，向量通常指定颜色通道\[R、 G、 B\] ，并与标量指定 alpha 通道\[A\]。 为支持此方法，在编码中会提供一个单独的 2 位字段，该字段允许将单独通道编码指定为一个标量值。 因此，块可以具有此 alpha 编码的以下四种不同表示之一（由 2 位字段指示）：
     -   RGB|A：单独的 alpha 通道
     -   AGB|R：单独的“红”色通道
     -   RAB|G：单独的“绿”色通道
     -   RGA|B：单独的“蓝”色通道
 
-    解码器在解码之后将通道顺序重新排序回到 RGBA，这样，内部块格式会对于开发者不可见。 具有单独的颜色和 alpha 分量的块也有两组索引数据：一组用于矢量通道集，一组用于标量通道。 （在模式 4 的情况下，这些索引具有不同的宽度 \[2 或 3 位\]。 模式 4 还包含一个 1 位选择器，该选择器指定矢量或标量通道是否使用 3 位索引。）
+    解码器在解码之后将通道顺序重新排序回到 RGBA，这样，内部块格式会对于开发者不可见。 具有单独的颜色和 alpha 分量的块也有两组索引数据：一组用于矢量通道集，一组用于标量通道。 (在模式 4 的情况下这些索引是宽度不同\[2 或 3 位\]。 模式 4 还包含一个 1 位选择器，该选择器指定矢量或标量通道是否使用 3 位索引。）
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 

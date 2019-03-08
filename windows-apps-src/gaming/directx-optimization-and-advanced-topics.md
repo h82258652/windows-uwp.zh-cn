@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 优化, 多重采样, 交换链
 ms.localizationpriority: medium
 ms.openlocfilehash: e9618a35ecd8f9d1a37b627494c0f00a5ed84806
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940386"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595012"
 ---
 # <a name="optimization-and-advanced-topics-for-directx-games"></a>DirectX 游戏的优化和高级主题
 
@@ -42,15 +42,15 @@ ms.locfileid: "8940386"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="asynchronous-programming-directx-and-cpp.md">游戏异步编程</a></p></td>
+<td align="left"><p><a href="asynchronous-programming-directx-and-cpp.md">对游戏进行异步编程</a></p></td>
 <td align="left"><p>了解使用 DirectX 进行异步编程和线程处理。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="handling-device-lost-scenarios.md">在 Direct3D 11 中处理设备删除方案</a></p></td>
+<td align="left"><p><a href="handling-device-lost-scenarios.md">处理在 Direct3D 11 中的设备已删除方案</a></p></td>
 <td align="left"><p>图形适配器被删除或重新初始化时，如何重新创建 Direct3D 和 DXGI 的设备界面链。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md">UWP 应用中的多重采样</a></p></td>
+<td align="left"><p><a href="multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md">在 UWP 应用中的多重采样</a></p></td>
 <td align="left"><p>在使用 Direct3D 构建的 UWP 游戏中使用多重采样。</p></td>
 </tr>
 <tr class="even">
@@ -58,11 +58,11 @@ ms.locfileid: "8940386"
 <td align="left"><p>减少输入延迟和优化呈现循环。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="reduce-latency-with-dxgi-1-3-swap-chains.md">利用 DXGI 1.3 交换链减少延迟</a></p></td>
+<td align="left"><p><a href="reduce-latency-with-dxgi-1-3-swap-chains.md">减少延迟，DXGI 1.3 交换链</a></p></td>
 <td align="left"><p>使用 DXGI 1.3 减少有效的帧延迟。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="multisampling--scaling--and-overlay-swap-chains.md">交换链缩放和覆盖</a></p></td>
+<td align="left"><p><a href="multisampling--scaling--and-overlay-swap-chains.md">交换链缩放和覆盖层</a></p></td>
 <td align="left"><p>创建已缩放的交换链以提高在移动设备上的呈现速度，以及使用覆盖交换链来提高视觉质量。</p></td>
 </tr>
 </tbody>

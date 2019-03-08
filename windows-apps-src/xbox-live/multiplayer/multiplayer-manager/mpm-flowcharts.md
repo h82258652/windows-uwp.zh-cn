@@ -7,28 +7,28 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏管理器, 流程图
 ms.localizationpriority: medium
 ms.openlocfilehash: 397c8a0fa95299326c56b2633db5532a70aca0ba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920869"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661602"
 ---
 # <a name="multiplayer-manager-flowcharts"></a>多人游戏管理器流程图
 
 此部分包含可帮你可视化代码流以实现特定的多人游戏管理器场景的流程图。
 
-* [与好友进行多人/合作游戏](mpm-flowcharts/mpm-play-with-friends.md)
+* [多人/共同 op 与朋友玩游戏](mpm-flowcharts/mpm-play-with-friends.md)
 
-* [使用 SmartMatch 匹配进行多人游戏](mpm-flowcharts/mpm-play-with-smartmatch-matchmaking.md)
+* [使用 SmartMatch 匹配玩多玩家游戏](mpm-flowcharts/mpm-play-with-smartmatch-matchmaking.md)
 
-* [使用匹配并管理服务质量](mpm-flowcharts/mpm-use-matchmaking-and-qos.md)
+* [使用匹配和管理服务质量](mpm-flowcharts/mpm-use-matchmaking-and-qos.md)
 
-* [向其他玩家发送邀请](mpm-flowcharts/mpm-send-invites.md)
+* [向其他播放机发送邀请](mpm-flowcharts/mpm-send-invites.md)
 
-* [处理协议激活](mpm-flowcharts/mpm-on-protocol-activation.md)
+* [句柄协议激活](mpm-flowcharts/mpm-on-protocol-activation.md)
 
-* [在多人游戏中填补空位](mpm-flowcharts/mpm-fill-open-slots.md)
+* [填充开放槽中的多玩家游戏](mpm-flowcharts/mpm-fill-open-slots.md)
 
-* [处理主机迁移](mpm-flowcharts/mpm-host-migration.md)
+* [句柄主机迁移](mpm-flowcharts/mpm-host-migration.md)
 
-* [关闭多人游戏会话](mpm-flowcharts/mpm-shut-down.md)
+* [关闭多玩家会话](mpm-flowcharts/mpm-shut-down.md)

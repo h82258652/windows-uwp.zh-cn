@@ -4,20 +4,20 @@ description: 以下部分提供了深层次的技术细节。
 ms.assetid: 461CCE6F-BAF0-4965-90A5-FD36B511F72C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f4cd2e17754dc5b5958e8bca208e30b87718cdd8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922860"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632492"
 ---
 # <a name="appendices"></a>附录
 
 以下部分提供了深层次的技术细节。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>

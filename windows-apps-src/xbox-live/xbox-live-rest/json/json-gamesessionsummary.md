@@ -8,34 +8,34 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8dace19404ae7c8b1d1ef296a21c874e4dd14c6f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935191"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613382"
 ---
 # <a name="gamesessionsummary-json"></a>GameSessionSummary (JSON)
-为游戏会话表示摘要数据的 JSON 对象。 
+表示为游戏会话的摘要数据的 JSON 对象。 
 <a id="ID4EN"></a>
 
   
  
 GameSessionSummary JSON 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| creationTime| DateTime| 日期和时间会话创建时，采用 UTC。 | 
-| customData| 8 位无符号整数数组| 1024 字节的特定于游戏的会话数据。 此值不透明到服务器。 | 
-| displayName| 字符串| 显示名称的游戏会话，具有 128 个字符的最大长度。 此值不透明到服务器。 | 
-| hasEnded| 布尔值| 如果会话已结束，则为 true 和 false 否则为。 设置为 true 标记为只读，游戏会话提交到会话阻止更多数据此字段。 | 
+| creationTime| DateTime| 日期和会话的创建时间，采用 UTC 时间。 | 
+| customData| 8 位无符号整数数组| 1024 字节的游戏特定的会话数据。 此值是不透明的服务器。 | 
+| displayName| 字符串| 显示名称游戏的会话，最大长度为 128 个字符。 此值是不透明的服务器。 | 
+| hasEnded| 布尔值| 如果会话已结束，则为 true 和 false 否则为。 设置阻止进一步的数据提交到该会话，则返回 true 标记游戏会话为只读的此字段。 | 
 | sessionId| 字符串会话 id。 | 
-| titleId| 32 位无符号的整数| 游戏创建游戏会话的 ID。| 
-| variant| 32 位有符号整数| 游戏的变体。 此值不透明到服务器。| 
+| titleId| 32 位无符号的整数| 标题创建游戏会话的 ID。| 
+| variant| 32 位有符号的整数| 游戏变体。 此值是不透明的服务器。| 
   
 <a id="ID4EID"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -62,7 +62,7 @@ GameSessionSummary JSON 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E4D"></a>

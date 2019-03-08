@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2175ce19824068a850ff70340b467f09e5c76540
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941580"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592742"
 ---
 # <a name="texture2d-and-texture2darray-subresource-tiling"></a>Texture2D 和 Texture2DArray 子资源平铺
 
 
 这些表说明了 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) 和 [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) 子资源的平铺方式。 这些表中的值未计入尾部 mip 打包。
 
-## <a name="span-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spansubresources-with-multisample-counts-of-1"></a><span id="Subresources-with-multisample-counts-of-1"></span><span id="subresources-with-multisample-counts-of-1"></span><span id="SUBRESOURCES-WITH-MULTISAMPLE-COUNTS-OF-1"></span>多重采样数为 1 的子资源
+## <a name="span-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spansubresources-with-multisample-counts-of-1"></a><span id="Subresources-with-multisample-counts-of-1"></span><span id="subresources-with-multisample-counts-of-1"></span><span id="SUBRESOURCES-WITH-MULTISAMPLE-COUNTS-OF-1"></span>多重采样计数 1 与子
 
 
 此表说明了多重采样计数为 1 的 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) 和 [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) 子资源的平铺方式。
@@ -36,9 +36,9 @@ ms.locfileid: "8941580"
 
  
 
-流式资源不支持以下格式位数：96 位格式、视频格式、DXGI\_FORMAT\_R1\_UNORM、DXGI\_FORMAT\_R8G8\_B8G8\_UNORM 以及 DXGI\_FORMAT\_R8R8\_G8B8\_UNORM。
+不支持流式处理资源的格式位计数是 96 bpp 格式，视频格式，DXGI\_格式\_R1\_UNORM、 DXGI\_格式\_R8G8\_B8G8\_UNORM，和 DXGI\_格式\_R8R8\_G8B8\_UNORM。
 
-## <a name="span-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspansubresources-with-various-multisample-counts"></a><span id="Subresources-with-various-multisample-counts"></span><span id="subresources-with-various-multisample-counts"></span><span id="SUBRESOURCES-WITH-VARIOUS-MULTISAMPLE-COUNTS"></span>多重采样数各不相同的子资源
+## <a name="span-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspansubresources-with-various-multisample-counts"></a><span id="Subresources-with-various-multisample-counts"></span><span id="subresources-with-various-multisample-counts"></span><span id="SUBRESOURCES-WITH-VARIOUS-MULTISAMPLE-COUNTS"></span>子与各种多重采样计数
 
 
 此表说明了多重采样数各不相同的 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) 和 [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) 子资源的平铺方式。
@@ -64,7 +64,7 @@ ms.locfileid: "8941580"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[流式资源区域的平铺方式](how-a-streaming-resource-s-area-is-tiled.md)
+[如何平铺流式处理资源的区域](how-a-streaming-resource-s-area-is-tiled.md)
 
  
 

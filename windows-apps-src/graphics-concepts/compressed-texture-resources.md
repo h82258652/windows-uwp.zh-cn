@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9318479fffc415e94407166bd1be20a93691a179
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945291"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646212"
 ---
 # <a name="compressed-texture-resources"></a>压缩的纹理资源
 
@@ -26,16 +26,16 @@ ms.locfileid: "8945291"
 
 尽管最低级别有浪费的位，但是整体增益仍然可观。 从理论上说，最糟糕的情况是 2K x 1 纹理（2⁰ 幂）。 此处，仅对每个块的单行像素进行编码，而未使用块的剩余部分。
 
-## <a name="span-idmixing-formats-within-a-single-texturespanspan-idmixing-formats-within-a-single-texturespanspan-idmixing-formats-within-a-single-texturespanmixing-formats-within-a-single-texture"></a><span id="Mixing-Formats-Within-a-Single-Texture"></span><span id="mixing-formats-within-a-single-texture"></span><span id="MIXING-FORMATS-WITHIN-A-SINGLE-TEXTURE"></span>混合单个纹理中的格式
+## <a name="span-idmixing-formats-within-a-single-texturespanspan-idmixing-formats-within-a-single-texturespanspan-idmixing-formats-within-a-single-texturespanmixing-formats-within-a-single-texture"></a><span id="Mixing-Formats-Within-a-Single-Texture"></span><span id="mixing-formats-within-a-single-texture"></span><span id="MIXING-FORMATS-WITHIN-A-SINGLE-TEXTURE"></span>混合使用单纹理中的格式
 
 
-任何一个纹理必须指定其数据存储为 64 位还是 128 位（每个 16 纹素组）。 如果纹理使用 64 位块（即块压缩格式 BC1），则可以对同一纹理中的块混合使用透明度和 1 位 alpha 格式。 换言之，分别为每个 16 纹素块比较 color\_0 和 color\_1 的无符号整数度量值。
+任何一个纹理必须指定其数据存储为 64 位还是 128 位（每个 16 纹素组）。 如果纹理使用 64 位块（即块压缩格式 BC1），则可以对同一纹理中的块混合使用透明度和 1 位 alpha 格式。 换而言之的颜色量的无符号的整数的比较\_0 和颜色\_对于 16 纹素的每个块的唯一执行 1。
 
-如果使用 128 位块，必须在显式（格式 BC2）或内插（格式 BC3）模式下为整个纹理指定 alpha 通道。 与颜色一样，选择内插模式（格式 BC3）时，块可以使用八个内插 alpha 模式或六个内插 alpha 模式。 同样，分别为每个块比较 alpha\_0 和 alpha\_1 的度量值。
+如果使用 128 位块，必须在显式（格式 BC2）或内插（格式 BC3）模式下为整个纹理指定 alpha 通道。 与颜色一样，选择内插模式（格式 BC3）时，块可以使用八个内插 alpha 模式或六个内插 alpha 模式。 再次 alpha 的量值比较\_0 和 alpha\_1 是唯一的块为基础完成的。
 
 Direct3D 提供了压缩用于对 3D 模型进行纹理处理的曲面的服务。 此部分提供了有关如何在压缩纹理曲面中创建和操作数据的信息。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>
@@ -51,11 +51,11 @@ Direct3D 提供了压缩用于对 3D 模型进行纹理处理的曲面的服务�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="opaque-and-1-bit-alpha-textures.md">不透明和 1 位 alpha 纹理</a></p></td>
+<td align="left"><p><a href="opaque-and-1-bit-alpha-textures.md">不透明和 1 位 alpha 的纹理</a></p></td>
 <td align="left"><p>纹理格式 BC1 适用于不透明或具有一种透明色的纹理。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="textures-with-alpha-channels.md">使用 alpha 通道的纹理</a></p></td>
+<td align="left"><p><a href="textures-with-alpha-channels.md">具有 alpha 通道的纹理</a></p></td>
 <td align="left"><p>有两种方法可用于对展现更复杂透明度的纹理贴图进行编码。 在每种情况下，描述透明度的块都在已描述的 64 位块之前。 透明度以 4 x 4 位图表示，其中每个像素具有 4 位（显式编码）或者具有更少位和线性插值（与用于颜色编码的值类似）。</p></td>
 </tr>
 <tr class="odd">

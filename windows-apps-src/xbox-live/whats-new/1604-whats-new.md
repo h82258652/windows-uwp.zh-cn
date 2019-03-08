@@ -4,14 +4,14 @@ description: Xbox Live SDK 的新增功能 - 2016 年 4 月
 ms.assetid: a6f26ffd-f136-4753-b0cd-92b0da522d93
 ms.date: 04/04/2017
 ms.topic: article
-keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
+keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ce63a0174fa0c4158764b8bca2443d58d0aefd9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944715"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660762"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---april-2016"></a>Xbox Live SDK 的新增功能 - 2016 年 4 月
 
@@ -27,7 +27,7 @@ Xbox Live SDK 支持 Windows 10 RTM [版本 10.0.10240] 和 Visual Studio 2015 R
 
 ## <a name="documentation"></a>文档
 - [登录疑难解答指南](../using-xbox-live/troubleshooting/troubleshooting-sign-in.md)列出了一些调试登录失败的一般策略，以及根据错误代码要执行的步骤。
-- 面向 Xbox One 开发人员的[应用商店](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/xbox-marketplace/marketplace-and-downloadable-content)文档现在只能在“编程指南”中找到。  UWP 开发人员应继续咨询合作伙伴中心了解在应用商店的文档。
+- 面向 Xbox One 开发人员的[应用商店](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/xbox-marketplace/marketplace-and-downloadable-content)文档现在只能在“编程指南”中找到。  UWP 开发人员应继续有关对存储的文档，请参考合作伙伴中心。
 - 如果你有兴趣将 Xbox One 游戏带入通用 Windows 平台，可以参阅[从 XDK 到 UWP 的移植指南](../using-xbox-live/porting-xbox-live-code-from-xdk-to-uwp.md)。
 - 请参阅[细化速率限制](../using-xbox-live/best-practices/fine-grained-rate-limiting.md)一文，了解如何对各个 Xbox Live 服务终结点和方案强制执行这些限制，以及有关具体限制的信息。
 
@@ -67,33 +67,33 @@ _XSAPIIMP xbox_live_result<void> set_properties(
 
 1.  两个邀请 API (```invite_friends``` & ```invite_users```) 现在是同步的。 完成后，它将返回 invite_sent 事件。
 
-2.  ```write_synchronized_properties_and_commit``` 重命名为 ```set_synchronized_properties```。 完成后，它将返回 ```session_synchronized_property_write_completed``` 事件。
+2.  ```write_synchronized_properties_and_commit``` 已重命名为```set_synchronized_properties```。 完成后，它将返回 ```session_synchronized_property_write_completed``` 事件。
 
-3.  ```write_synchronized_host_and_commit``` 重命名为 ```set_synchronized_host```。 完成后，它将返回 ```synchronized_host_write_completed``` 事件。
+3.  ```write_synchronized_host_and_commit``` 已重命名为```set_synchronized_host```。 完成后，它将返回 ```synchronized_host_write_completed``` 事件。
 
-4.  开 ```lobby_session()```
+4.  在 ```lobby_session()```
 
-  *已删除*
+  *删除*
 
 ```cpp
 _XSAPIIMP const std::unordered_map<string_t, xbox::services:: multiplayer::multiplayer_session_tournaments_server& tournaments_server() const;
 ```
 
-  *已添加*
+  *添加*
 
 ```cpp
 _XSAPIIMP const std::unordered_map<string_t, xbox::services::tournaments::tournament_team_result>& tournament_team_results() const;
 ```
 
-5.  开 ```game_session()```
+5.  在 ```game_session()```
 
-  *已删除*
+  *删除*
 
 ```cpp
 _XSAPIIMP const std::unordered_map<string_t, xbox::services:: multiplayer::multiplayer_session_tournaments_server& tournaments_server() const;
 _XSAPIIMP const std::unordered_map<string_t, xbox::services:: multiplayer::multiplayer_session_arbitration_server& arbitration_server() const;
 ```
-  *已添加*
+  *添加*
 
 ```cpp
 _XSAPIIMP const std::unordered_map<string_t, multiplayer_session_reference>& tournament_teams() const;
@@ -102,7 +102,7 @@ _XSAPIIMP const std::unordered_map<string_t, xbox::services::tournaments::tourna
 
 6.  事件类型的更改：
 
-  *已删除*
+  *删除*
 
 ```cpp
 write_pending_changes_failed,
@@ -110,7 +110,7 @@ tournament_property_changed,
 arbitration_property_changed
 ```
 
-  *已重命名*
+  *重命名*
 
   ```write_synchronized_properties_completed``` 重命名为 ```session_synchronized_property_write_completed```
 

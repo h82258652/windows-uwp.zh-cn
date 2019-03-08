@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载
 ms.localizationpriority: medium
 ms.openlocfilehash: f74a7bbfdfd5abe6a32c0ca3d81000e6f2d4758d
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116139"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660142"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>使用应用安装程序文件遇到的安装问题的疑难解答
 
@@ -63,8 +63,8 @@ ms.locfileid: "9116139"
 
 在从 HTTP 终结点安装时，务必验证是否可以访问具有正确 MIME 类型的所有文件。 验证这些文件的最简单方法是遵循 Visual Studio 所生成 HTML 页面中提供的链接。 你必须检查这些文件：
 
-- `.appinstaller` 文件，提供形式为 `application/xml`
-- `.appx` 和 `.appxbundle` 文件，提供形式为 `application/vns.ms-appx`
+- `.appinstaller` 文件，可用作 `application/xml`
+- `.appx` 和`.appxbundle`文件，可用作 `application/vns.ms-appx`
 
 ## <a name="isolate-app-installer-app-issues"></a>隔离应用安装程序应用问题
 
@@ -72,13 +72,13 @@ ms.locfileid: "9116139"
 
 ### <a name="verify-app-package-file-installation"></a>验证应用包文件安装
 
-- 应用包文件下载到本地文件夹，并尝试使用[Add-appxpackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) PowerShell 命令进行安装。
+- 应用包文件下载到本地文件夹，然后尝试安装使用其[Add-appxpackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) PowerShell 命令。
 
 - 将 `.appinstaller` 文件下载到本地文件夹，并尝试使用 `Add-AppxPackage -Appinstaller` PowerShell 命令进行安装。
 
 ## <a name="related-logs"></a>相关日志
 
-应用部署基础结构提供 Windows 事件查看器中的调试日志。 这些日志位于： `Application and Services Logs->Microsoft->Windows->AppxDeployment-Server`
+应用部署基础结构提供 Windows 事件查看器中的调试日志。 这些日志位于此处： `Application and Services Logs->Microsoft->Windows->AppxDeployment-Server`
 
 
 

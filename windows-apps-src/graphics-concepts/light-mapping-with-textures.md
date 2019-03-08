@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b5d245247d33f3c04839620615f2778ef7dfb59
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944673"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660022"
 ---
 # <a name="light-mapping-with-textures"></a>使用纹理的光映射
 
@@ -31,7 +31,7 @@ ms.locfileid: "8944673"
 
 有关使用 Direct3D 纹理混合执行光映射的信息，请参阅以下主题。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>
@@ -47,20 +47,20 @@ ms.locfileid: "8944673"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="monochrome-light-maps.md">单色光映射</a></p></td>
+<td align="left"><p><a href="monochrome-light-maps.md">单色 light 映射</a></p></td>
 <td align="left"><p>当较旧的 3D 加速器板不支持使用目标像素 Alpha 值的纹理混合时，单色光映射使较旧的适配器能够执行多通道纹理混合。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="color-light-maps.md">彩色光映射</a></p></td>
+<td align="left"><p><a href="color-light-maps.md">颜色浅映射</a></p></td>
 <td align="left"><p>彩色光映射使用光映射中的 RGB 数据展示光线信息。 如果应用程序使用彩色光映射，则其通常可以更真实地呈现 3D 场景。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="specular-light-maps.md">高光映射</a></p></td>
+<td align="left"><p><a href="specular-light-maps.md">反射光映射</a></p></td>
 <td align="left"><p>通过光源照亮时，采用高反光材质的闪光对象会接收反射高光。 有时，相较于使用照明模块产生的反射高光，你可通过将高光映射应用至基元获取更精确的高光。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="diffuse-light-maps.md">漫射光映射</a></p></td>
-<td align="left"><p>亚光表面会反射漫射光。 漫反射光的亮度取决于与光源的距离以及表面法线与光源方向矢量之间的角度。 纹理光照图可以模拟复杂的漫射照明。</p></td>
+<td align="left"><p>亚光表面具有漫反射光。 漫反射光的亮度取决于与光源的距离以及表面法线与光源方向矢量之间的角度。 纹理光照贴图可以模拟复杂的漫射照明。</p></td>
 </tr>
 </tbody>
 </table>

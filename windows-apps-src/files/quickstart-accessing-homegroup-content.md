@@ -7,40 +7,40 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 06c42cff51852f7d0456d533af60455d7d1b9caf
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980295"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613892"
 ---
 # <a name="accessing-homegroup-content"></a>访问家庭组内容
 
 
 
-**重要的 API**
+**重要的 Api**
 
 -   [**Windows.Storage.KnownFolders 类**](https://msdn.microsoft.com/library/windows/apps/br227151)
 
 访问存储在用户的“家庭组”文件夹中的内容，包括图片、音乐和视频。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
     若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](https://msdn.microsoft.com/library/windows/apps/mt187337)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://msdn.microsoft.com/library/windows/apps/mt187334)。
 
--   **应用功能声明**
+-   **应用 capabilty 声明**
 
     若要访问家庭组内容，用户的计算机必须已设置家庭组，且你的应用必须至少具有以下功能之一：**picturesLibrary**、**musicLibrary** 或 **videosLibrary**。 当你的应用访问“家庭组”文件夹时，它将仅看到与在你的应用清单中声明的功能相对应的库。 若要了解详细信息，请参阅[文件访问权限](file-access-permissions.md)。
 
     > [!NOTE]
-    > 无论在你的应用的清单中声明了什么功能，也无论用户的共享设置如何，你的应用都看不到家庭组的文档库中的内容。     
+    > 家庭组在文档库中的内容看不到你的应用而不考虑您的应用程序清单中声明的功能，而不考虑用户的共享设置。     
 
 -   **了解如何使用文件选取器**
 
     你通常使用文件选取器访问家庭组中的文件和文件夹。 若要了解如何使用文件选取器，请参阅[使用选取器打开文件和文件夹](quickstart-using-file-and-folder-pickers.md)
 
--   **了解文件和文件夹查询**
+-   **了解文件和文件夹的查询**
 
     你可以使用查询来枚举家庭组中的文件和文件夹。 若要了解有关文件和文件夹查询的信息，请参阅[枚举和查询文件和文件夹](quickstart-listing-files-and-folders.md)。
 
@@ -48,7 +48,7 @@ ms.locfileid: "8980295"
 
 按以下步骤打开文件选取器的一个实例，让用户从家庭组中选取文件和文件夹：
 
-1.  **创建并自定义文件选取器**
+1.  **创建和自定义文件选取器**
 
     使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 创建文件选取器，然后将选取器的 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 设置为 [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890)。 或者，设置与你的用户和你的应用相关的其他属性。 有关帮助你确定如何自定义文件选取器的指南，请参阅[文件选取器指南和清单](https://msdn.microsoft.com/library/windows/apps/hh465182)。
 
@@ -61,7 +61,7 @@ ms.locfileid: "8980295"
     picker.FileTypeFilter.Add("*");
     ```
 
-2.  **显示文件选取器并处理已选取的文件。**
+2.  **显示文件选取器和处理选取的文件。**
 
     在你创建并自定义文件选取器之后，让用户通过调用 [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) 来选取一个文件，或通过调用 [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) 来选取多个文件。
 
@@ -126,7 +126,7 @@ ms.locfileid: "8980295"
 
 此部分介绍如何查找由特定用户共享的家庭组文件。
 
-1.  **获取家庭组用户的集合。**
+1.  **获取一个家庭组用户的集合。**
 
     家庭组中每个第一级文件夹表示单个家庭组用户。 因此，若要获取家庭组用户的集合，请调用 [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) 检索顶级家庭组文件夹。
     ```cs
@@ -134,7 +134,7 @@ ms.locfileid: "8980295"
         await Windows.Storage.KnownFolders.HomeGroup.GetFoldersAsync();    
     ```
 
-2.  **查找目标用户的文件夹，然后创建一个限定于该用户的文件夹的文件查询。**
+2.  **查找目标用户的文件夹，然后创建文件查询作用域为该用户的文件夹。**
 
     以下示例循环访问检索的文件夹以查找目标用户的文件夹。 然后，它设置查询选项以查找文件夹中的所有文件，这些文件先按相关性然后按数据修改日期进行排序。 此示例构建一个字符串，此字符串报告找到的文件数以及文件的名称。
     ```cs
@@ -171,16 +171,16 @@ ms.locfileid: "8980295"
 
 请按以下步骤从家庭组流式传输视频内容：
 
-1.  **在你的应用中包含一个 MediaElement。**
+1.  **应用程序中包括 MediaElement。**
 
-    [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 允许你在你的应用中播放音频和视频内容。 有关音频和视频播放的详细信息，请参阅[创建自定义传输控件](https://msdn.microsoft.com/library/windows/apps/mt187271)和[音频、视频和相机](https://msdn.microsoft.com/library/windows/apps/mt203788)。
+    [  **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 允许你在你的应用中播放音频和视频内容。 有关音频和视频播放的详细信息，请参阅[创建自定义传输控件](https://msdn.microsoft.com/library/windows/apps/mt187271)和[音频、视频和相机](https://msdn.microsoft.com/library/windows/apps/mt203788)。
     ```HTML
     <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
         <MediaElement x:Name="VideoBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="400" Height="300"/>
     </Grid>    
     ```
 
-2.  **在家庭组打开某个文件选取器，并应用某个筛选器，该筛选器包含采用你的应用支持的格式的视频文件。**
+2.  **打开文件选取器在家庭组和应用筛选器，其中包含在您的应用程序支持的格式的视频文件。**
 
     此示例在文件打开选取器中包含 .mp4 和 .wmv 文件。
     ```cs
@@ -193,7 +193,7 @@ ms.locfileid: "8980295"
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **打开用户的文件选择的读取访问权限，并将文件流设置为的源**[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)，，然后播放该文件。
+3.  **打开用户的文件所选内容进行读取访问，并将文件流设置为的源** [ **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)，，然后播放该文件。
     ```cs
     if (file != null)
     {

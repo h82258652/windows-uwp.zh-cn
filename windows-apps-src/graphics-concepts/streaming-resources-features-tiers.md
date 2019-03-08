@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c872d289c67161e414671d3d509401f0539a7675
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941473"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631442"
 ---
 # <a name="streaming-resources-features-tiers"></a>流式资源功能层
 
@@ -27,7 +27,7 @@ Direct3D 具有三层功能，可为流式资源提供支持。
 
 Direct3D 版本提供查询功能，可验证支持流式资源的硬件和驱动程序及其所处的层级别。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>
@@ -38,7 +38,7 @@ Direct3D 版本提供查询功能，可验证支持流式资源的硬件和驱�
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -62,7 +62,7 @@ Direct3D 版本提供查询功能，可验证支持流式资源的硬件和驱�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[流式资源](streaming-resources.md)
+[流式处理资源](streaming-resources.md)
 
  
 

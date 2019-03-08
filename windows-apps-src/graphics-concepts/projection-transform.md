@@ -1,6 +1,6 @@
 ---
 title: 投影转换
-description: 投影转换控制相机的内部结构，如选择相机的镜头。 这是三种转换类型中最复杂的。
+description: 投影转换控制相机的内部结构，如选择相机的镜头。 这是三种转换类型中最复杂的类型。
 ms.assetid: 378F205D-3800-4477-9820-5EBE6528B14A
 keywords:
 - 投影转换
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f0806c0aa7a130a080457f4361d17f64451846f9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931213"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634542"
 ---
 # <a name="projection-transform"></a>投影转换
 
 
-*投影转换* 控制相机的内部结构，如选择相机的镜头。 这是三种转换类型中最复杂的。
+*投影转换* 控制相机的内部结构，如选择相机的镜头。 这是三种转换类型中最复杂的类型。
 
 投影矩阵通常是缩放和透视投影。 投影转换可将视锥转换为长方体形状。 由于视锥的近端小于远端，这将产生拉伸靠近相机的对象的效果；这是透视应用于场景的方式。
 
@@ -29,7 +29,7 @@ ms.locfileid: "8931213"
 
 ![平移矩阵的图示](images/projmat2.png)
 
-平移矩阵乘以投影矩阵 (T\*P) 将生成复合投影矩阵，如下图所示。
+将投影矩阵转换矩阵乘以 (T\*P)，如下图中所示提供复合投影矩阵。
 
 ![复合投影矩阵的图示](images/projmat3.png)
 
@@ -55,7 +55,7 @@ ms.locfileid: "8931213"
 
 无论你决定使用哪个公式，请务必将 Zₙ 的值设置得尽可能大，因为非常靠近相机 z 值变化不会很大。 这在某种程度上增加了使用 16 位 z 缓冲区的深度比较得复杂度。
 
-## <a name="span-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspana-w-friendly-projection-matrix"></a><span id="A_W_Friendly_Projection_Matrix"></span><span id="a_w_friendly_projection_matrix"></span><span id="A_W_FRIENDLY_PROJECTION_MATRIX"></span>w 友好投影矩阵
+## <a name="span-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspana-w-friendly-projection-matrix"></a><span id="A_W_Friendly_Projection_Matrix"></span><span id="a_w_friendly_projection_matrix"></span><span id="A_W_FRIENDLY_PROJECTION_MATRIX"></span>W 友好投影矩阵
 
 
 Direct3D 可使用已由世界矩阵、视图矩阵和投影矩阵转换的顶点的 w 分量在深度缓冲区或雾效果中执行基于深度的计算。 这样的计算要求你的投影矩阵将 w 规范化为与世界空间 z 等效。 简而言之，如果投影矩阵包含不为 1 的 (3,4) 系数，你必须以 (3,4) 系数的倒数为缩放度来缩放所有系数以生成正确的矩阵。 如果你不提供符合要求的矩阵，则雾效果和深度缓冲无法正确应用。

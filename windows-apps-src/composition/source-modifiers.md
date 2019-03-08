@@ -6,23 +6,23 @@ ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
 ms.openlocfilehash: 834f631cd5c4b8696e75f83f194b95f809b1cf8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932593"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649862"
 ---
 # <a name="pull-to-refresh-with-source-modifiers"></a>使用 SourceModifier 的下拉刷新
 
 在本文中，我们将深入探讨如何使用 InteractionTracker 的 SourceModifier 功能，并通过创建自定义的下拉刷新控件展示其用法。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 我们在此假设你熟悉这些文章中所述的概念：
 
-- [输入驱动的动画](input-driven-animations.md)
-- [InteractionTracker 的自定义操作体验](interaction-tracker-manipulations.md)
-- [基于关系的动画](relation-animations.md)
+- [输入驱动动画](input-driven-animations.md)
+- [自定义操作经验 InteractionTracker](interaction-tracker-manipulations.md)
+- [关系基于动画](relation-animations.md)
 
 ## <a name="what-is-a-sourcemodifier-and-why-are-they-useful"></a>什么是 SourceModifier？为什么它们很有用？
 
@@ -67,7 +67,7 @@ ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.IsScrollInertiaEnabled="F
 </StackPanel>
 ```
 
-因为 ListView (`ThumbnailList`) 是已滚动的 XAML 控件，需要在它到达顶部项目不能再滚动时让滚动链接到其父级 (`ContentPanel`)。 （ContentPanel 是应用 SourceModifier 的位置。）为此，需要在 ListView 标记中将 ScrollViewer.IsVerticalScrollChainingEnabled 设置为 **true**。 你还需要在 VisualInteractionSource 上将链接模式设置为 **Always**。
+因为 ListView (`ThumbnailList`) 是已滚动的 XAML 控件，需要在它到达顶部项目不能再滚动时让滚动链接到其父级 (`ContentPanel`)。 （ContentPanel 情况是您将应用源修饰符）。这种情况发生需要设置为 ScrollViewer.IsVerticalScrollChainingEnabled **，则返回 true** ListView 标记中。 你还需要在 VisualInteractionSource 上将链接模式设置为 **Always**。
 
 需要使用 _handledEventsToo_ 将 PointerPressedEvent 处理程序设置为 **true**。 如果没有此选项，PointerPressedEvent 不会链接到 ContentPanel，因为 ListView 控件将这些事件标记为已处理，因此不会发送到视觉链上。
 

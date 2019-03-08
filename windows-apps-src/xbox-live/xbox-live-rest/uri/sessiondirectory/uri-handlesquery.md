@@ -8,17 +8,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: eaa148972ce1e65056470a6c4082cb4e50de3f09
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918314"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598562"
 ---
 # <a name="handlesquery"></a>/handles/query
-支持 POST 操作以创建用于会话句柄查询。 
+支持 POST 操作创建的会话句柄的查询。 
 
 > [!NOTE] 
-> 此 URI 使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在使用模板合约 104/105 或更高版本。  
+> 此 URI 由 2015年之多人游戏，并且仅适用于该多玩家版本和更高版本。 它旨在用于模板协定 104/105 或更高版本。  
 
  
 <a id="ID4EQ"></a>
@@ -30,7 +30,7 @@ sessiondirectory.xboxlive.com
 
  
 ## <a name="remarks"></a>备注
-此 URI 支持的句柄查询。 会话与查询不同，这些字符串和批处理查询句柄查询使用查询处理器样式。 最多 100 句柄均受支持。  
+此 URI 支持的句柄的查询。 与会话查询，这是字符串和批处理的查询，不同句柄的查询使用查询处理器样式。 支持多达 100 句柄。  
 <a id="ID4E2"></a>
 
  
@@ -42,13 +42,13 @@ sessiondirectory.xboxlive.com
  
 ## <a name="valid-methods"></a>有效的方法
 
-[POST (/handles/query)](uri-handlesquerypost.md)
+[POST （/处理/查询）](uri-handlesquerypost.md)
 
-&nbsp;&nbsp;创建查询会话句柄。
+&nbsp;&nbsp;创建查询的会话句柄。
 
 [POST (/handles/query?include=relatedInfo)](uri-handlesqueryincludepost.md)
 
-&nbsp;&nbsp;创建会话句柄包含相关的会话信息的查询。
+&nbsp;&nbsp;创建包含相关的会话信息的会话句柄的查询。
  
 <a id="ID4EQB"></a>
 
@@ -60,6 +60,6 @@ sessiondirectory.xboxlive.com
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[会话目录 URI](atoc-reference-sessiondirectory.md)
+[会话目录 Uri](atoc-reference-sessiondirectory.md)
 
    

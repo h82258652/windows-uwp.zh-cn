@@ -8,22 +8,22 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7682b92ec61c98679904825e360d73318e9fee90
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115521"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659832"
 ---
 # <a name="post-serviceconfigsscidhoppershoppername"></a>POST (/serviceconfigs/{scid}/hoppers/{hoppername})
 
 创建指定的匹配票证。
 
 > [!IMPORTANT]
-> 此方法旨在用于合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
+> 此方法旨在用于具有协定 103 或更高版本，并要求 X Xbl 约定版本标头元素：103 或更高版本上的每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4E5)
-  * [授权](#ID4EJB)
+  * [Authorization](#ID4EJB)
   * [HTTP 状态代码](#ID4E3C)
   * [请求正文](#ID4EFD)
   * [响应正文](#ID4E3G)
@@ -33,33 +33,33 @@ ms.locfileid: "9115521"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法创建具有特定名称在服务配置 ID (SCID) 级别的漏斗的匹配票证。 此方法可以由**Microsoft.Xbox.Services.Matchmaking.MatchmakingService.CreateMatchTicketAsync**方法包装。  
+此 HTTP/REST 方法创建具有特定名称 ID (SCID) 级别的服务配置在 hopper 的匹配项票证。 此方法的两端可加**Microsoft.Xbox.Services.Matchmaking.MatchmakingService.CreateMatchTicketAsync**方法。  
 <a id="ID4E5"></a>
 
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- | --- |
-| scid| GUID| 服务配置标识符 (SCID) 会话。|
-| hoppername | 字符串 | 漏斗的名称。 |
+| scid| GUID| 服务配置 (SCID) 会话标识符。|
+| hoppername | 字符串 | Hopper 的名称。 |
 
 <a id="ID4EJB"></a>
 
 
 ## <a name="authorization"></a>授权
 
-| 类型| 必需| 描述| 如果缺少的响应|
+| 在任务栏的搜索框中键入| 必需| 描述| 如果缺少的响应|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 权限和设备类型| 是| 当用户的 deviceType 设置为主机时，仅具有多人游戏中其声明特权的用户允许对匹配服务进行调用。 | 403|
-| 设备类型| 是| 当用户的 deviceType 不存在或设置为非控制台，匹配到标题不能仅控制台标题。 | 403|
-| 主题作品 ID/购买/设备类型的概念证明| 是| 正在匹配到游戏必须允许指定的主题作品声明，设备类型组合匹配。 | 403|
+| 权限和设备类型| 是| 当用户的设备类型设置为控制台时，只有具有在其声明中的多玩家特权的用户允许对匹配服务进行调用。 | 403|
+| 设备类型| 是| 当用户的设备类型不存在或设置为非控制台，到匹配的标题不能仅限控制台的标题。 | 403|
+| 标题 ID/采购/设备类型的概念验证| 是| 要匹配到标题必须允许指定的标题声明、 设备类型组合匹配。 | 403|
 
 <a id="ID4E3C"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
-该服务返回 HTTP 状态代码，因为它适用于 MPSD。  
+同样适用于 MPSD，服务将返回 HTTP 状态代码。  
 <a id="ID4EFD"></a>
 
 
@@ -70,30 +70,30 @@ ms.locfileid: "9115521"
 
 ### <a name="required-members"></a>所需的成员
 
-| 成员| 类型| 说明|
+| 成员| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| serviceConfig| GUID| 会话的 SCID。|
-| hopperName| 字符串| 漏斗的名称。|
-| giveUpDuration| 32 位有符号的整数| 最大的等待时间 （不可或缺的秒数）。|
-| preserveSession| 枚举| 指示是否会话匹配到会话作为重复使用的值。 可能的值为"始终"和"从不"。 |
-| ticketSessionRef| MultiplayerSessionReference| 在其中的玩家或组当前播放会话的 MultiplayerSessionReference 对象。 |
-| ticketAttributes| 对象的集合| 属性和有关的玩家组用户提供的值。|
+| serviceConfig| GUID| 会话 SCID。|
+| hopperName| 字符串| Hopper 的名称。|
+| giveUpDuration| 32 位有符号的整数| 最长等待时间 （整秒数）。|
+| preserveSession| 枚举| 一个值，该值指示是否在会话将重复使用作为要匹配到的会话。 可能的值为"始终"和"从不"。 |
+| ticketSessionRef| MultiplayerSessionReference| 在其中的播放机或组当前正在播放的会话 MultiplayerSessionReference 对象。 |
+| ticketAttributes| 对象的集合| 特性和有关的播放机组用户提供的值。|
 
 <a id="ID4EXF"></a>
 
 
 ### <a name="prohibited-members"></a>禁止的成员
 
-在请求中禁止使用所有其他成员。
+所有其他成员禁止在请求中使用。
 
 <a id="ID4ECG"></a>
 
 
 ### <a name="sample-request"></a>示例请求
 
-可以创建匹配票证，并将该会话必须包含的玩家以进行匹配，以及其特定于玩家的属性之前，必须创建由**ticketSessionRef**对象引用会话。 每个玩家必须创建或加入针对 MPSD，将相关的匹配属性添加到会话的会话。 匹配属性均放置在每个玩家上调用 matchAttrs 的自定义属性字段。
+由引用会话**ticketSessionRef**可以创建匹配票证，并将该会话必须包含玩家匹配，以及其特定于播放机的属性之前，必须创建对象。 每个玩家必须创建或加入针对 MPSD，将相关的匹配属性添加到会话的会话。 匹配属性放置在名为 matchAttrs 上每个玩家的自定义属性字段。
 
-创建或加入请求提交到**https://sessiondirectory.xboxlive.com/serviceconfigs/{scid}/sessiontemplates/{templatename}/sessions/{sessionname}** 和可能如下所示：
+创建或联接请求提交到**https://sessiondirectory.xboxlive.com/serviceconfigs/{scid}/sessiontemplates/{templatename}/sessions/{sessionname}** 和可能如下所示：
 
 
 ```cpp
@@ -120,11 +120,11 @@ ms.locfileid: "9115521"
 ```
 
 
-一旦创建会话，游戏可以调用匹配服务将为该会话创建票证。
+一旦创建会话后，标题可以调用的匹配服务要为该会话创建票证。
 
 
 > [!NOTE] 
-> 游戏可以使用户重试此调用中，但应不自动重试它如果数据失败。  
+> 标题可以使用户能够重试此调用，但不是应重试它会自动在数据未能通过。  
 
 
 
@@ -153,10 +153,10 @@ POST /serviceconfigs/{scid}/hoppers/{hoppername}
 
 ## <a name="response-body"></a>响应正文
 
-| 成员| 说明|
+| 成员| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 票证 Id| GUID| 正在创建票证的 ID。|
-| waitTime| 32 位有符号的整数| 平均等待时间漏斗 （不可或缺的秒数）。|
+| ticketId| GUID| 正在创建的票证 ID。|
+| waitTime| 32 位有符号的整数| 平均等待时间 hopper （整秒数）。|
 
 
 ```cpp

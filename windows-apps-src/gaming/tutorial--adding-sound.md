@@ -1,66 +1,66 @@
 ---
 title: 添加声音
-description: 开发播放游戏音乐和声音效果使用 XAudio2 Api 的一个简单的声音引擎。
+description: 开发一个简单的声音引擎使用 XAudio2 Api 到游戏播放音乐和声音效果。
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
 ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 声音
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d5a976ef65bee5efc3329afc98bf198d094b037
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117837"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589932"
 ---
 # <a name="add-sound"></a>添加声音
 
-在本主题中，我们将创建一个简单的声音引擎使用[XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) Api。 如果你不熟悉__XAudio2__，我们已包括简短下[音频概念](#audio-concepts)简介。
+在本主题中，我们创建一个简单的声音引擎 using [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) Api。 如果您不熟悉__XAudio2__，现已下的简短介绍[音频概念](#audio-concepts)。
 
 >[!Note]
 >如果你尚未下载适用于此示例的最新游戏代码，请转到 [Direct3D 游戏示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此示例是大型 UWP 功能示例集合的一部分。 有关如何下载示例的说明，请参阅[从 GitHub 获取 UWP 示例](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
 
 ## <a name="objective"></a>目标
 
-添加到使用[XAudio2](/windows/desktop/xaudio2/xaudio2-introduction)该示例游戏声音。
+将声音添加到示例游戏使用[XAudio2](/windows/desktop/xaudio2/xaudio2-introduction)。
 
 ## <a name="define-the-audio-engine"></a>定义音频引擎
 
 在游戏示例中，音频对象和行为在三个文件中定义：
 
-* __[Audio.h](#audioh)/.cpp__： 定义__音频__对象，其中包含用于声音播放的__XAudio2__资源。 它还定义了在游戏暂停或停用的情况下暂停音频播放和恢复音频播放的方法。
-* __ [MediaReader.h](#mediareaderh)/.cpp__： 定义从本地存储中读取.wav 音频文件的方法。
-* __ [SoundEffect.h](#soundeffecth)/.cpp__： 定义一个用于游戏内声音播放对象。
+* __[Audio.h](#audioh)/.cpp__:定义__音频__对象，它包含__XAudio2__声音播放的资源。 它还定义了在游戏暂停或停用的情况下暂停音频播放和恢复音频播放的方法。
+* __[MediaReader.h](#mediareaderh)/.cpp__:定义用于从本地存储中读取音频.wav 文件的方法。
+* __[SoundEffect.h](#soundeffecth)/.cpp__:定义一个对象，用于在游戏声音播放。
 
 ## <a name="overview"></a>概述
 
-获取到你的游戏的音频播放设置中有三个主要部分。
+对于音频播放到您的游戏设置中有三个主要部分。
 
-1. [创建和初始化音频资源](#create-and-initialize-the-audio-resources)
+1. [创建和初始化的音频资源](#create-and-initialize-the-audio-resources)
 2. [加载音频文件](#load-audio-file)
-3. [关联到对象的声音](#associate-sound-to-object)
+3. [将关联到对象的声音](#associate-sound-to-object)
 
-所有[simple3dgame:: initialize](#simple3dgameinitialize-method)方法中定义它们。 因此，让我们先检查此方法，然后探讨在每个部分中的更多详细信息。
+它们都被定义为在[Simple3DGame::Initialize](#simple3dgameinitialize-method)方法。 因此，让我们首先检查此方法，然后深入了解每个部分中的更多详细信息。
 
-设置后，我们将了解如何触发要播放的声音效果。 有关详细信息，请转到[播放声音](#play-the-sound)。
+设置后，我们将了解如何在触发要播放的声音效果。 有关详细信息，请转到[播放声音](#play-the-sound)。
 
-### <a name="simple3dgameinitialize-method"></a>Simple3dgame:: initialize 方法
+### <a name="simple3dgameinitialize-method"></a>Simple3DGame::Initialize 方法
 
-在__simple3dgame:: initialize__，其中还初始化__m\_controller__和__m\_renderer__ ，我们设置音频引擎，并准备以播放声音。
+在中__Simple3DGame::Initialize__，其中__m\_控制器__并__m\_呈现器__是还初始化，我们设置音频引擎，并获取它已准备好播放声音。
 
- * 创建__m\_audioController__，这是[音频](#audioh)类的实例。
- * 创建使用[Audio::CreateDeviceIndependentResources](#audiocreatedeviceindependentresources-method)方法所需的音频资源。 此处，两个__XAudio2__对象&mdash;创建一个音乐引擎对象和声音引擎对象，以及为每个主语音。 音乐引擎对象可用于播放为你的游戏的背景音乐。 声音引擎可以用于在游戏中播放声音效果。 有关详细信息，请参阅[创建并初始化音频资源](#create-and-initialize-the-audio-resources)。
- * 创建__mediaReader__，即[MediaReader](#mediareaderh)类的实例。 [MediaReader](#mediareaderh)，这是一个帮助程序类，用于[SoundEffect](#soundeffecth)类，从文件位置同步读取小音频文件，并返回字节数组的形式的声音数据。
- * 使用[mediareader:: Loadmedia](#mediareaderloadmedia-method)从其位置加载声音文件并创建某个__targetHitSound__变量以保留加载的.wav 声音数据。 有关详细信息，请参阅[加载音频文件](#load-audio-file)。 
+ * 创建__m\_audioController__，这是实例[音频](#audioh)类。
+ * 创建使用所需的音频资源[Audio::CreateDeviceIndependentResources](#audiocreatedeviceindependentresources-method)方法。 此处，两个__XAudio2__对象&mdash;创建音乐引擎对象和一个声音引擎对象和为每个掌握语音。 音乐引擎对象可以用于播放背景音乐，为您的游戏。 声音引擎可用于在您的游戏中播放声音效果。 有关详细信息，请参阅[创建并初始化的音频资源](#create-and-initialize-the-audio-resources)。
+ * 创建__mediaReader__，即实例[MediaReader](#mediareaderh)类。 [MediaReader](#mediareaderh)，这是一个帮助器类[SoundEffect](#soundeffecth)类的读取较小的音频文件以同步方式从文件位置和声音数据作为字节数组返回。
+ * 使用[MediaReader::LoadMedia](#mediareaderloadmedia-method)若要从其位置加载声音文件，并创建__targetHitSound__变量以保存已加载的.wav 声音数据。 有关详细信息，请参阅[加载音频文件](#load-audio-file)。 
 
-声音效果都与游戏对象关联。 因此发生冲突时与该游戏的对象，它会触发要播放的声音效果。 在此游戏示例中，我们有声音效果 （我们使用全与目标） 弹药和目标。 
+声音效果与相关联的游戏对象。 因此时与该游戏对象发生冲突时，它将触发要播放的声音效果。 在此游戏的示例中，我们有声音效果 （什么我们使用投篮机会控制在具有目标） ammo 和目标。 
     
-* 在__GameObject__类中，没有用于关联到对象的声音效果__HitSound__属性。
-* 创建[SoundEffect](#soundeffecth)类的新实例并对其进行初始化。 在初始化期间，将创建源语音声音效果。 
-* 此类播放声音使用主语音的[音频](#audioh)类中提供。 声音数据读取使用[MediaReader](#mediareaderh)类的文件位置。 有关详细信息，请参阅[将声音对象相关联](#associate-sound-to-object)。
+* 在中__GameObject__类，因此存在__HitSound__用于将声音效果与对象相关联的属性。
+* 创建的新实例[SoundEffect](#soundeffecth)类，并对其进行初始化。 在初始化期间，创建声音效果的源语音。 
+* 此类播放声音使用从提供的掌握语音[音频](#audioh)类。 声音数据从文件位置使用读取[MediaReader](#mediareaderh)类。 有关详细信息，请参阅[将关联到对象的声音](#associate-sound-to-object)。
 
 >[!Note]
->播放声音的实际触发器取决于移动和这些游戏对象的碰撞。 因此，调用实际播放这些声音[Simple3DGame::UpdateDynamics](#simple3dgameupdatedynamics-method)方法中定义。 有关详细信息，请转到[播放声音](#play-the-sound)。
+>要播放声音的实际触发器取决于移动和这些游戏对象的冲突。 因此，在定义调用实际上播放这些声音[Simple3DGame::UpdateDynamics](#simple3dgameupdatedynamics-method)方法。 有关详细信息，请转到[播放声音](#play-the-sound)。
 
 ```cpp
 void Simple3DGame::Initialize(
@@ -127,12 +127,12 @@ void Simple3DGame::Initialize(
 }
 ```
 
-## <a name="create-and-initialize-the-audio-resources"></a>创建和初始化音频资源
+## <a name="create-and-initialize-the-audio-resources"></a>创建和初始化的音频资源
 
-* [XAudio2Create](https://msdn.microsoft.com/library/windows/desktop/ee419212)，XAudio2 API，用于创建两个新的 XAudio2 对象的定义的音乐和声音效果引擎。 此方法返回到管理所有音频引擎状态，音频处理线程、 语音图和的详细信息的对象的[IXAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415908)接口指针。
-* 后引擎已实例化，请使用[ixaudio2:: Createmasteringvoice](https://msdn.microsoft.com/library/windows/desktop/hh405048)为每个声音引擎对象创建主语音。
+* 使用[XAudio2Create](https://msdn.microsoft.com/library/windows/desktop/ee419212)，XAudio2 API，以创建两个新 XAudio2 对象定义的音乐和声音效果引擎。 此方法返回一个指向对象的[IXAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415908)界面，用于管理所有音频引擎指出，音频处理线程、 语音图形和的详细信息。
+* 引擎已实例化后，使用[IXAudio2::CreateMasteringVoice](https://msdn.microsoft.com/library/windows/desktop/hh405048)掌握语音创建的每个声音引擎对象。
 
-有关详细信息，请转到[如何： 初始化 XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx)。
+有关详细信息，请转到[如何：初始化 XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx)。
 
 ### <a name="audiocreatedeviceindependentresources-method"></a>Audio::CreateDeviceIndependentResources 方法
 
@@ -168,33 +168,33 @@ void Audio::CreateDeviceIndependentResources()
 
 ## <a name="load-audio-file"></a>加载音频文件
 
-在游戏示例中，用于读取音频格式文件的代码中[MediaReader.h](#mediareaderh)/cpp__ 定义。  若要读取编码的.wav 音频文件，请调用[mediareader:: Loadmedia](#mediareaderloadmedia-method)，传入.wav 文件作为输入参数的文件名。
+在游戏的示例中，用于读取音频格式文件的代码中定义[MediaReader.h](#mediareaderh)/cpp__。  若要读取编码的.wav 音频文件，调用[MediaReader::LoadMedia](#mediareaderloadmedia-method)、 传入作为输入参数.wav 文件的文件名。
 
-### <a name="mediareaderloadmedia-method"></a>Mediareader:: Loadmedia 方法
+### <a name="mediareaderloadmedia-method"></a>MediaReader::LoadMedia 方法
 
 此方法使用[媒体基础](https://msdn.microsoft.com/library/windows/desktop/ms694197) API 作为脉冲编码调制 (PCM) 缓冲区读入 .wav 音频文件。
 
-#### <a name="set-up-the-source-reader"></a>设置源阅读器
+#### <a name="set-up-the-source-reader"></a>设置源读取器
 
-1. 使用[MFCreateSourceReaderFromURL](https://msdn.microsoft.com/library/windows/desktop/dd388110)创建媒体源阅读器 ([IMFSourceReader](https://msdn.microsoft.com/library/windows/desktop/dd374655))。
-2. 使用[MFCreateMediaType](https://msdn.microsoft.com/library/windows/desktop/ms693861)创建的媒体类型 ([IMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms704850)) 对象 (_媒体类型_)。 它表示媒体格式的说明。 
-3. 指定_媒体类型_的已解码的输出是 PCM 音频，它是__XAudio2__可以使用的音频类型。
-4. 设置解码的输出媒体类型为通过调用[imfsourcereader:: Setcurrentmediatype](https://msdn.microsoft.com/library/windows/desktop/dd374667.aspx)源阅读器。
+1. 使用[MFCreateSourceReaderFromURL](https://msdn.microsoft.com/library/windows/desktop/dd388110)若要创建媒体源读取器 ([IMFSourceReader](https://msdn.microsoft.com/library/windows/desktop/dd374655))。
+2. 使用[MFCreateMediaType](https://msdn.microsoft.com/library/windows/desktop/ms693861)若要创建的媒体类型 ([IMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms704850)) 对象 (_mediaType_)。 它表示媒体格式的说明。 
+3. 指定的_mediaType_解码的输出是 PCM 音频，这是一个音频类型__XAudio2__可以使用。
+4. 集的已解码的输出媒体类型的源读取器通过调用[IMFSourceReader::SetCurrentMediaType](https://msdn.microsoft.com/library/windows/desktop/dd374667.aspx)。
 
-有关我们为什么要使用源阅读器的详细信息，请转到[源阅读器](https://msdn.microsoft.com/library/windows/desktop/dd940436.aspx)。
+我们为什么使用源读取器的详细信息，请转到[源读取器](https://msdn.microsoft.com/library/windows/desktop/dd940436.aspx)。
 
-#### <a name="describe-the-data-format-of-the-audio-stream"></a>描述音频流的数据格式
+#### <a name="describe-the-data-format-of-the-audio-stream"></a>描述数据格式的音频流
 
-1. [Imfsourcereader:: Getcurrentmediatype](https://msdn.microsoft.com/library/windows/desktop/dd374660)用于获取流的当前的媒体类型。
-2. 使用[IMFMediaType::MFCreateWaveFormatExFromMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms702177)将当前的音频媒体类型转换为[WAVEFORMATEX](https://msdn.microsoft.com/library/windows/hardware/ff538799)缓冲区，作为输入使用更早版本的操作的结果。 此结构指定加载音频后，使用波形音频流的数据格式。 
+1. 使用[IMFSourceReader::GetCurrentMediaType](https://msdn.microsoft.com/library/windows/desktop/dd374660)的流中获取当前的媒体类型。
+2. 使用[IMFMediaType::MFCreateWaveFormatExFromMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms702177)要转换到当前的音频媒体类型[WAVEFORMATEX](https://msdn.microsoft.com/library/windows/hardware/ff538799)缓冲区，使用早期的操作的结果作为输入。 此结构指定 wave 音频流后加载音频时使用的数据格式。 
 
-__WAVEFORMATEX__格式可以用于描述 PCM 缓冲区。 与相比[WAVEFORMATEXTENSIBLE](https://msdn.microsoft.com/library/windows/hardware/ff538802)结构，它仅可用于来描述音频波形格式的子集。 有关__WAVEFORMATEX__和__WAVEFORMATEXTENSIBLE__之间的区别的详细信息，请参阅[可扩展波形格式描述符](https://docs.microsoft.com/windows-hardware/drivers/audio/extensible-wave-format-descriptors)。
+__WAVEFORMATEX__格式可用于描述 PCM 缓冲区。 相比[WAVEFORMATEXTENSIBLE](https://msdn.microsoft.com/library/windows/hardware/ff538802)结构，它仅可用于描述波形音频格式的子集。 有关详细信息之间的差异__WAVEFORMATEX__并__WAVEFORMATEXTENSIBLE__，请参阅[可扩展波形格式说明符](https://docs.microsoft.com/windows-hardware/drivers/audio/extensible-wave-format-descriptors)。
 
-#### <a name="read-the-audio-stream"></a>读取音频流
+#### <a name="read-the-audio-stream"></a>读取的音频流
 
-1.  获取的持续时间，以秒为单位，通过调用[imfsourcereader:: Getpresentationattribute](https://msdn.microsoft.com/library/windows/desktop/dd374662) ，然后转换为字节的持续时间的音频流。
-2.  通过调用[IMFSourceReader::ReadSample](https://msdn.microsoft.com/library/windows/desktop/dd374665)流的形式读取音频文件中。 __ReadSample__从媒体源读取下一个示例。
-3.  使用[IMFSample::ConvertToContiguousBuffer](https://msdn.microsoft.com/library/windows/desktop/ms698917.aspx)将音频示例缓冲区 （_示例_） 的内容复制到数组 (_mediaBuffer_)。
+1.  获取的持续时间，以秒为单位，通过调用的音频流[IMFSourceReader::GetPresentationAttribute](https://msdn.microsoft.com/library/windows/desktop/dd374662) ，然后将持续时间转换为字节。
+2.  读取流的形式中的音频文件，通过调用[IMFSourceReader::ReadSample](https://msdn.microsoft.com/library/windows/desktop/dd374665)。 __ReadSample__从媒体源中读取下一个示例。
+3.  使用[IMFSample::ConvertToContiguousBuffer](https://msdn.microsoft.com/library/windows/desktop/ms698917.aspx)音频采样缓冲区的内容复制 (_示例_) 到一个数组 (_mediaBuffer_)。
 
 ```cpp
 Platform::Array<byte>^ MediaReader::LoadMedia(_In_ Platform::String^ filename)
@@ -293,17 +293,17 @@ Platform::Array<byte>^ MediaReader::LoadMedia(_In_ Platform::String^ filename)
     return fileData;
 }
 ```
-## <a name="associate-sound-to-object"></a>关联到对象的声音
+## <a name="associate-sound-to-object"></a>将关联到对象的声音
 
-关联到对象的声音进行游戏初始化时，在[simple3dgame:: initialize](#simple3dgameinitialize-method)方法中。
+游戏初始化时，将相关联的对象的声音将进行[Simple3DGame::Initialize](#simple3dgameinitialize-method)方法。
 
-概述：
-* 在__GameObject__类中，没有用于关联到对象的声音效果__HitSound__属性。
-* 创建[SoundEffect](#soundeffecth)类对象的新实例并将其与游戏对象关联。 此类播放声音使用__XAudio2__ Api。  它使用[音频](#audioh)类提供一个主语音。 可以从使用[MediaReader](#mediareaderh)类的文件位置读取声音数据。
+回顾一下：
+* 在中__GameObject__类，因此存在__HitSound__用于将声音效果与对象相关联的属性。
+* 创建的新实例[SoundEffect](#soundeffecth)类对象，并将其与游戏对象相关联。 此类播放声音 using __XAudio2__ Api。  它使用提供的掌握语音[音频](#audioh)类。 可以从文件位置使用读取声音数据[MediaReader](#mediareaderh)类。
 
-[Soundeffect:: Initialize](#soundeffectinitialize-method)用于的初始化__SoundEffect__实例使用以下输入参数： 指向声音引擎对象 （IXAudio2 对象在[Audio::CreateDeviceIndependentResources](#audiocreatedeviceindependentresources-method)方法中创建），指针设置格式的.wav 文件使用__mediareader:: Getoutputwaveformatex__和声音数据加载使用[mediareader:: Loadmedia](#mediareaderloadmedia-method)方法。 在初始化期间，还会创建声音效果的源语音。
+[SoundEffect::Initialize](#soundeffectinitialize-method)来初始化__SoundEffect__实例使用以下输入参数： 指向声音引擎对象的指针 (中创建的 IXAudio2 对象[音频::CreateDeviceIndependentResources](#audiocreatedeviceindependentresources-method)方法)，用于设置格式的指针的.wav 文件使用__MediaReader::GetOutputWaveFormatEx__，并使用声音数据加载[MediaReader::LoadMedia](#mediareaderloadmedia-method)方法。 在初始化期间，还会创建源语音声音效果。
 
-### <a name="soundeffectinitialize-method"></a>Soundeffect:: Initialize 方法
+### <a name="soundeffectinitialize-method"></a>SoundEffect::Initialize 方法
 
 ```cpp
 void SoundEffect::Initialize(
@@ -333,17 +333,17 @@ void SoundEffect::Initialize(
 
 ## <a name="play-the-sound"></a>播放声音
 
-触发器播放声音效果定义了[Simple3DGame::UpdateDynamics](#simple3dgameupdatedynamics-method)方法，因为这是更新对象的运动，其中确定对象之间的冲突。
+在定义触发器以播放声音效果[Simple3DGame::UpdateDynamics](#simple3dgameupdatedynamics-method)确定方法由于这是更新的对象移动的位置和对象之间的冲突。
 
-由于交互的对象之间有何不同很大，具体取决于游戏中，我们不打算讨论了动态的游戏对象。 如果你有兴趣了解它的实现，请转到[Simple3DGame::UpdateDynamics](#simple3dgameupdatedynamics-method)方法。
+因为对象之间的交互不同很大，具体取决于游戏时，我们不打算讨论游戏对象的动态。 如果您感兴趣，以了解其实现，请转到[Simple3DGame::UpdateDynamics](#simple3dgameupdatedynamics-method)方法。
 
-原则上，发生冲突时，它会触发通过调用**soundeffect:: Playsound**播放声音效果。 此方法停止任何声音效果，则当前没有播放和队列使用所需的声音数据内存中的缓冲区。 它使用源语音来设置卷、 提交声音数据，并开始播放。
+从原理上讲，当发生冲突时，将触发要通过调用播放的声音效果**SoundEffect::PlaySound**。 此方法停止当前播放和队列具有所需的声音数据的内存中缓冲区的任何声音效果。 它使用源语音的卷设置、 提交良好的数据，并开始播放。
 
-### <a name="soundeffectplaysound-method"></a>Soundeffect:: Playsound 方法
+### <a name="soundeffectplaysound-method"></a>SoundEffect::PlaySound 方法
 
-* 使用源语音对象**m\_sourceVoice**以开始播放声音数据缓冲区**m\_soundData**
-* 创建[XAUDIO2\_BUFFER](https://msdn.microsoft.com/library/windows/desktop/ee419228)，到它提供对声音数据缓冲区的引用，然后通过调用[ixaudio2sourcevoice:: Submitsourcebuffer](https://msdn.microsoft.com/library/windows/desktop/ee418473)提交它。 
-* 在声音数据排好队列之后，**SoundEffect::PlaySound** 将通过调用 [IXAudio2SourceVoice::Start](https://msdn.microsoft.com/library/windows/desktop/ee418471) 开始播放。
+* 使用源语音对象**m\_sourceVoice**若要开始播放的声音数据缓冲区**m\_soundData**
+* 创建[XAUDIO2\_缓冲区](https://msdn.microsoft.com/library/windows/desktop/ee419228)到它提供对声音数据缓冲区的引用的其中，然后将其提交到调用[IXAudio2SourceVoice::SubmitSourceBuffer](https://msdn.microsoft.com/library/windows/desktop/ee418473)。 
+* 使用声音数据排队等候， **SoundEffect::PlaySound**开始播放通过调用[IXAudio2SourceVoice::Start](https://msdn.microsoft.com/library/windows/desktop/ee418471)。
 
 ```cpp
 void SoundEffect::PlaySound(_In_ float volume)
@@ -382,7 +382,7 @@ void SoundEffect::PlaySound(_In_ float volume)
 
 ### <a name="simple3dgameupdatedynamics-method"></a>Simple3DGame::UpdateDynamics 方法
 
-__Simple3DGame::UpdateDynamics__方法负责交互和游戏对象之间的冲突。 当对象碰撞 （或相交也是如此） 时，它会触发关联的声音效果以播放。
+__Simple3DGame::UpdateDynamics__方法负责的交互和游戏对象之间的冲突。 当对象发生冲突 （或 intersect） 时，将触发关联要播放的声音效果。
 
 ```cpp
 void Simple3DGame::UpdateDynamics()
@@ -453,35 +453,35 @@ void Simple3DGame::UpdateDynamics()
 ```
 ## <a name="next-steps"></a>后续步骤
 
-我们已介绍的 UWP 框架、 图形、 控件、 用户界面和 Windows 10 游戏的音频。 本教程中，[扩展游戏示例](tutorial-resources.md)的下一部分介绍了开发游戏时，可以使用其他选项。
+我们已介绍的 UWP 框架、 图形、 控件、 用户界面和 Windows 10 游戏的音频。 本教程的下一部分[扩展游戏示例](tutorial-resources.md)，介绍了开发游戏时可以使用其他选项。
 
 ## <a name="audio-concepts"></a>音频概念
 
-对于 Windows 10 游戏开发，使用 XAudio2 版本 2.9。 此版本随 Windows 10。 有关详细信息，请转到[XAudio2 版本](https://msdn.microsoft.com/library/windows/desktop/ee415802.aspx)。
+对于 Windows 10 游戏开发，使用 XAudio2 版本为 2.9。 此版本随附于 Windows 10。 有关详细信息，请转到[XAudio2 版本](https://msdn.microsoft.com/library/windows/desktop/ee415802.aspx)。
 
-__AudioX2__是一个低级别 API，可提供信号处理和混合的基础。 有关详细信息，请参阅[XAudio2 重要概念](https://msdn.microsoft.com/library/windows/desktop/ee415764.aspx)。
+__AudioX2__是信号处理和混合 foundation 提供了一个低级别 API。 有关详细信息，请参阅[XAudio2 的基础概念](https://msdn.microsoft.com/library/windows/desktop/ee415764.aspx)。
 
 ### <a name="xaudio2-voices"></a>XAudio2 语音
 
-有三种类型的 XAudio2 语音对象： 源、 子混合和主语音。 语音是 XAudio2 的对象使用处理、 操作，并播放音频数据。 
+有三种类型的 XAudio2 语音对象： 源、 submix，和掌握语音。 语音是 XAudio2 中的对象使用来处理、 操作和播放的音频数据。 
 * 源语音对客户提供的音频数据操作。 
 * 源语音和子混合语音将其输出发送到一个或多个子混合语音或主语音。 
 * 子混合语音和主语音将传入的所有音频混合在一起，并对结果进行操作。 
-* 主语音接收数据来自源语音和子混合语音，并将该数据发送给音频硬件。
+* 掌握语音接收来自源语音和 submix 语音数据并将该数据发送到的音频硬件。
 
 有关详细信息，请转到[XAudio2 语音](/windows/desktop/xaudio2/xaudio2-voices)。
 
-### <a name="audio-graph"></a>音频图
+### <a name="audio-graph"></a>音频图形
 
-音频图是[XAudio2 语音](/windows/desktop/xaudio2/xaudio2-voices)的集合。 音频在一侧的源语音中的音频图开始、 （可选） 通过一个或多个子混合语音，结束主语音。 音频图将包含当前正在播放，零个或多个子混合语音，每种声音源语音和一个主语音。 最简单的音频图中，并在 XAudio2 中，使噪音所需的最小值是单个源语音输出直接到主语音。 有关详细信息，请转到[音频图](https://msdn.microsoft.com/library/windows/desktop/ee415739.aspx)。
+音频图形是一系列[XAudio2 语音](/windows/desktop/xaudio2/xaudio2-voices)。 音频开始在源语音在音频图形的一侧，根据需要通过一个或多个 submix 语音，并结束于掌握语音。 音频图形将包含当前正在播放，零个或多个 submix 语音，每个声音的源语音和掌握语音。 最简单的音频图形和 XAudio2，在发出任何声音所需的最低要求是单个源语音输出直接到掌握语音。 有关详细信息，请转到[音频图形](https://msdn.microsoft.com/library/windows/desktop/ee415739.aspx)。
 
-### <a name="additional-reading"></a>其他阅读
+### <a name="additional-reading"></a>其他阅读材料
 
-* [如何：初始化 XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx)
-* [如何：在 XAudio2 中加载音频数据文件](https://msdn.microsoft.com/library/windows/desktop/ee415781(v=vs.85).aspx)
-* [如何：使用 XAudio2 播放声音](https://msdn.microsoft.com/library/windows/desktop/ee415787.aspx)
+* [How to:Initialize XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx)
+* [How to:加载中 XAudio2 音频数据文件](https://msdn.microsoft.com/library/windows/desktop/ee415781(v=vs.85).aspx)
+* [How to:播放声音，XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415787.aspx)
 
-## <a name="key-audio-h-files"></a>关键音频.h 文件
+## <a name="key-audio-h-files"></a>密钥音频.h 文件
 
 ### <a name="audioh"></a>Audio.h
 

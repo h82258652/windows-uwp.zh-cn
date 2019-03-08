@@ -1,12 +1,12 @@
 ---
-Description: Command bars give users easy access to your app's most common tasks.
+Description: 命令栏使用户能够轻松地访问应用的最常见任务。
 title: 命令栏
 label: App bars/command bars
 template: detail.hbs
 op-migration-status: ready
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
 pm-contact: yulikl
 design-contact: ksulliv
@@ -14,17 +14,17 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d2a7d34f00d40429863f08ffe6a9c34222daa32
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050024"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649302"
 ---
 # <a name="command-bar"></a>命令栏
 
 命令栏使用户能够轻松地访问应用的最常见任务。 命令栏可以提供对应用级别或特定于页面的命令的访问，并且可以与任何导航模式一起使用。
 
-> **重要 API**：[CommandBar 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx)、[AppBarButton 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx)、[AppBarToggleButton 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx)、[AppBarSeparator 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)
+> **重要的 Api**:[CommandBar 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx)， [AppBarButton 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx)， [AppBarToggleButton 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx)， [AppBarSeparator 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)
 
 ![带有图标的命令栏示例](images/controls_appbar_icons.png)
 
@@ -44,7 +44,7 @@ CommandBar 控件是一款通用、灵活、轻型的控件，可显示复杂内
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/CommandBar">打开此应用，了解 CommandBar 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -61,7 +61,7 @@ Windows Phone 的 Outlook 日历中的命令栏。
 
 ## <a name="anatomy"></a>结构
 
-默认情况下，命令栏显示一行图标按钮和一个可选的“查看更多”按钮，该按钮由省略号 \[•••\] 表示。 下面是由稍后所示的示例代码创建的命令栏。 它在其关闭、精简状态下显示。
+默认情况下，命令栏中显示的图标按钮和可选"查看更多"按钮，由省略号表示行\[• • • 以\]。 下面是由稍后所示的示例代码创建的命令栏。 它在其关闭、精简状态下显示。
 
 ![关闭的命令栏](images/command-bar-compact.png)
 
@@ -76,8 +76,8 @@ Windows Phone 的 Outlook 日历中的命令栏。
 命令栏分为 4 个主要区域：
 - 内容区域与栏的左侧对齐。 如果填充了 [Content](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx) 属性，将显示该区域。
 - 主要命令区域与栏的右侧对齐。 如果填充了 [PrimaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx) 属性，将显示该区域。  
-- “查看更多”\[•••\] 按钮显示在该栏的右侧。 按“查看更多”\[•••\] 按钮会显示主要命令标签并在存在辅助命令的情况下打开溢出菜单。 当不存在任何主要命令标签或辅助标签时，该按钮将不可见。 要更改默认行为，请使用 [OverflowButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) 属性。
-- 仅在命令栏处于打开状态并且填充了 [SecondaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) 属性时才会显示溢出菜单。 当空间有限时，主要命令会移到 SecondaryCommands 区域中。 要更改默认行为，请使用 [IsDynamicOverflowEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.isdynamicoverflowenabled.aspx) 属性。
+- "详细信息，参阅更多" \[• • • 以\]按钮是否显示在栏的右侧。 按"详细信息，参阅更多" \[• • • 以\]按钮会显示主命令标签，并打开在溢出菜单，如果有辅助命令。 当不存在任何主要命令标签或辅助标签时，该按钮将不可见。 要更改默认行为，请使用 [OverflowButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) 属性。
+- 仅在命令栏处于打开状态并且填充了 [SecondaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) 属性时才显示溢出菜单。 当空间有限时，主要命令会移到 SecondaryCommands 区域中。 要更改默认行为，请使用 [IsDynamicOverflowEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.isdynamicoverflowenabled.aspx) 属性。
 
 当 [FlowDirection](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.flowdirection.aspx) 为 **RightToLeft** 时，布局会反转。
 
@@ -106,7 +106,7 @@ Windows Phone 的 Outlook 日历中的命令栏。
 ```
 
 ## <a name="commands-and-content"></a>命令和内容
-CommandBar 控件具有三个可用于添加命令和内容的属性：[PrimaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx)、[SecondaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) 和 [Content](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx)。
+命令栏控件具有可用于添加命令和内容的 3 个属性：[PrimaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx)， [SecondaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx)，和[内容](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx)。
 
 
 ### <a name="commands"></a>命令
@@ -121,12 +121,12 @@ CommandBar 控件具有三个可用于添加命令和内容的属性：[PrimaryC
 
 你可以根据需要以编程方式在 PrimaryCommands 和 SecondaryCommands 之间移动命令。
 
-- *如果某个命令会一直显示在各个页面上，则最好将该命令放置在一个一致的位置上。*
-- *我们建议将“接受”、“是”和“确定”命令放置在“拒绝”、“否”和“取消”的左侧。 一致性可以增加用户浏览系统的信心，并帮助他们在应用之间传递应用导航知识。*
+- *如果没有将一致地显示在页面之间的命令，最好将该命令保存在一致的位置。*
+- *我们建议将接受，的放置和左侧的确定命令拒绝，不会，和取消。一致性为用户提供的置信度移动系统，帮助他们传输他们的应用导航的知识应用到应用程序。*
 
 ### <a name="app-bar-buttons"></a>应用栏按钮
 
-PrimaryCommands 和 SecondaryCommands 都只能使用 [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx)、[AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) 和 [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) 命令元素填充。 
+PrimaryCommands 和 SecondaryCommands 都只能使用[AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx)、[AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) 和 [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) 命令元素填充。 
 
 应用栏按钮控件以一个图标和文本标签为特征。 这些控件经过优化以便在命令栏中使用，它们的外观根据控件是用在命令栏中还是溢出菜单中进行更改。
 
@@ -179,7 +179,7 @@ The AppBarButton [IsCompact](https://docs.microsoft.com/uwp/api/windows.ui.xaml.
 
 可以打开或关闭命令栏。 处于打开状态时，主要命令按钮将带文本标签显示，并且如果存在辅助命令，溢出菜单也将处于打开状态。
 
-用户可通过按“查看更多”\[•••\] 按钮在这些状态之间切换。 你可以通过设置 [IsOpen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) 属性来以编程方式在它们之间切换。 
+用户可以通过按"详细信息，参阅更多"这些状态之间切换\[• • • 以\]按钮。 你可以通过设置 [IsOpen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) 属性来以编程方式在它们之间切换。 
 
 你可以使用 [Opening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx)、[Opened](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opened.aspx)、[Closing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closing.aspx) 和 [Closed](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) 事件来响应要打开或关闭的命令栏。  
 - Opening 和 Closing 事件在过渡动画开始前发生。
@@ -214,16 +214,16 @@ private void CommandBar_Closing(object sender, object e)
 
 ### <a name="issticky"></a>IsSticky
 
-如果用户在命令栏处于打开状态时与应用的其他部分交互，命令栏将自动关闭。 这称为*轻型消除*。 可以通过设置 [IsSticky](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx) 属性来控制轻型消除行为。 当 `IsSticky="true"` 时，该栏将保持打开状态，直到用户按“查看更多”\[•••\] 按钮或从溢出菜单中选择项目。 
+如果用户在命令栏处于打开状态时与应用的其他部分交互，命令栏将自动关闭。 这称为*轻型消除*。 可以通过设置 [IsSticky](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx) 属性来控制轻型消除行为。 当`IsSticky="true"`，直到用户按"详细信息，参阅更多"，此栏保持打开\[• • • 以\]按钮或从溢出菜单上选择某个项。 
 
-建议避免使用粘滞命令栏，因为它们不符合用户对轻型消除的预期。
+我们建议避免使用粘滞命令栏，因为它们不符合用户对轻型消除的预期。
 
 ### <a name="display-mode"></a>显示模式
 
 你可以通过设置 [ClosedDisplayMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) 属性来控制命令栏在关闭状态下的显示方式。 有三种可供选择的关闭显示模式：
-- **精简**：默认模式。 显示内容、不带有标签的主要命令图标和“查看更多”\[•••\] 按钮。
-- **最小**：仅显示充当“查看更多”\[•••\] 按钮的细栏。 用户可以按栏上的任意位置来将其打开。
-- **隐藏**：命令栏在关闭时不显示。 这对于显示带有内联命令栏的上下文命令非常有用。 在此情况下，你必须通过设置 **IsOpen** 属性或将 ClosedDisplayMode 更改为**最小**或**精简**来以编程方式打开命令栏。
+- **Compact**:默认模式。 显示内容、 不带标签，主命令图标和"详细信息，参阅"更多\[• • • 以\]按钮。
+- **最小**:显示仅精简栏，充当"查看更多" \[• • • 以\]按钮。 用户可以按栏上的任意位置来将其打开。
+- **隐藏**：在关闭时不会显示在命令栏。 这对于显示带有内联命令栏的上下文命令非常有用。 在此情况下，你必须通过设置 **IsOpen** 属性或将 ClosedDisplayMode 更改为**最小**或**精简**来以编程方式打开命令栏。
 
 此处，命令栏用于为 [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) 承载简单格式化命令。 当编辑框没有焦点时，格式化命令可能令人分心，因此隐藏它们。 当使用编辑框时，命令栏的 ClosedDisplayMode 更改为精简，以便使格式化命令可见。
 
@@ -263,16 +263,16 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ![应用栏放置示例 1](images/AppbarGuidelines_Placement1.png)
 
--   对于较小的手持设备，建议将命令栏定位在屏幕底部以易于操作。
+-   对于较小的手持设备，我们建议将命令栏定位在屏幕底部以易于操作。
 -   对于具有较大屏幕的设备，将命令栏靠近窗口顶部放置会使它们更为醒目，并且更易于发现。
 
-使用 [DiagonalSizeInInches](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.diagonalsizeininches.aspx) API 可确定物理屏幕大小。
+使用 [DiagonalSizeInInches](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.diagonalsizeininches.aspx) API 确定物理屏幕大小。
 
 命令栏可以放置在单视图屏幕（左边的示例）和多视图屏幕（右边的示例）上的以下屏幕区域中。 内联命令栏可以放置在操作空间中的任意位置。
 
 ![应用栏放置示例 2](images/AppbarGuidelines_Placement2.png)
 
->**触摸设备**：如果命令栏必须在触摸键盘或软输入面板 (SIP) 出现时对用户保持可见，则可以将命令栏分配到某个页面的 [BottomAppBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.bottomappbar.aspx) 属性，它将转换为在 SIP 出现时保持可见。 否则，应内联放置命令栏，并根据应用内容定位。
+>**触摸设备**:如果在命令栏必须保持对用户可见时触摸键盘或软输入面板 (SIP) 显示只能将分配到的命令栏[BottomAppBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.bottomappbar.aspx)属性页，它将存在 SIP 时保持可见. 否则，你应内联放置命令栏，并根据应用内容定位。
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
@@ -281,5 +281,5 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>相关文章
 
-* [UWP 应用的命令设计基础知识](../basics/commanding-basics.md)
+* [适用于 UWP 应用的命令设计基础知识](../basics/commanding-basics.md)
 * [CommandBar 类](https://msdn.microsoft.com/library/windows/apps/dn279427)

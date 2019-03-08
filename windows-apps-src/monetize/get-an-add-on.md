@@ -1,23 +1,23 @@
 ---
 ms.assetid: 78278741-09A4-4406-A112-9AF3C73F5C16
-description: 在 Microsoft Store 提交 API 中使用此方法可检索注册到你的合作伙伴中心帐户的应用的加载项相关的信息。
+description: 此方法用于在 Microsoft Store 提交 API 中检索到合作伙伴中心帐户注册的应用外接程序有关的信息。
 title: 获取加载项
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: cc02cd5ae94b51b274c0e3ce1245020222e101f1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936352"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645912"
 ---
 # <a name="get-an-add-on"></a>获取加载项
 
-在 Microsoft Store 提交 API 中使用此方法可检索注册到你的合作伙伴中心帐户的应用的加载项 （也称为应用内产品或 IAP） 相关的信息。
+在 Microsoft Store 提交 API 中使用此方法来检索有关外接程序 （也称为应用产品或、 IAP） 到合作伙伴中心帐户注册的应用的信息。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -35,16 +35,16 @@ ms.locfileid: "8936352"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 描述                                                                 |
+| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
-| 名称        | 类型   | 描述                                                                 |
+| 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| id | 字符串 | 必需。 要检索的加载项的应用商店 ID。 在合作伙伴中心中，会提供应用商店 ID。  |
+| id | 字符串 | 必需。 要检索的加载项的应用商店 ID。 合作伙伴中心中提供了 Store ID。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -97,13 +97,13 @@ Authorization: Bearer <your access token>
 | 错误代码 |  描述   |
 |--------|------------------|
 | 404  | 找不到指定的加载项。 |
-| 409  | 加载项使用的是[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。  |
+| 409  | 外接程序使用的合作伙伴中心功能[目前不支持通过 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。  |
 
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-* [管理加载项提交](manage-add-on-submissions.md)
-* [获取所有加载项](get-all-add-ons.md)
-* [创建加载项](create-an-add-on.md)
-* [删除加载项](delete-an-add-on.md)
+* [创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)
+* [管理外接程序提交](manage-add-on-submissions.md)
+* [获取所有外接程序](get-all-add-ons.md)
+* [创建外接程序](create-an-add-on.md)
+* [删除外接程序](delete-an-add-on.md)

@@ -1,31 +1,31 @@
 ---
-description: 本主题介绍了各种类别的 c + + 中存在的值。 你将肯定所知，左值和 rvalues，但也有其他类型。
-title: 值类别和对它们的引用
+description: 本主题介绍了各种类别的 c + + 中存在的值。 你将肯定听说过的左值和右值，但也有其他类型。
+title: 值的分类，并对其的引用
 ms.date: 08/11/2018
 ms.topic: article
-keywords: windows 10，uwp、 标准、 c + +，cpp，winrt、 投影、 移动、 转发、 值的分类、 移动语义、 完全转发、 左值、 rvalue、 glvalue，prvalue，xvalue
+keywords: windows 10、 uwp、 标准版、 c + +、 cpp、 winrt、 投影、 移动、 转发、 值的分类，移动语义，完美转发、 左值、 右值、 glvalue、 prvalue，xvalue
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 1860f562233ceefa6d9ebb3741378b3265b4c3a9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924379"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593012"
 ---
-# <a name="value-categories-and-references-to-them"></a>值类别和对它们的引用
-本主题介绍了 c + + 中存在值 （以及对值的引用） 的各种的类别。 你将肯定所知，*左值*和*rvalues*，但你可能不将其视为它们在本主题提供的条款。 还有其他类型的值，太。
+# <a name="value-categories-and-references-to-them"></a>值的分类，并对其的引用
+本主题介绍在 c + + 中存在各种类别的值 （和值对的引用）。 您将肯定听说过*左值*并*右值*，但您可能不会考虑它们在本主题介绍了术语。 还有其他类型的值，过。
 
-C + + 中的每个表达式将产生一个值，属于本主题中讨论的类别之一。 有方面的 c + + 语言、 其 facilies 和规则，要求正确了解这些值类别，以及对它们的引用。 例如，获取一个值，将值复制、 移动一个值，和转发到另一个函数的值的地址。 本主题不会进入所有这些方面防御，但它提供了有关清楚地了解它们的基本信息。
+C + + 中的每个表达式会生成一个值，属于本主题中讨论的类别之一。 没有 c + + 语言和其 facilies，规则，需要正确理解这些值的分类，并对其的引用的方面。 例如，采用一个值，将值复制、 移动一个值，以及转发到另一个函数的值的地址。 本主题不会转到所有这些方面深入，但它提供用于深入了解其中的基本信息。
 
-本主题中的信息的标识和 movability [Stroustrup，2013年] 的两个独立属性本身方面的值的分类 Stroustrup 的分析。
+通过标识和 movability [Stroustrup，2013年] 的两个独立属性方面的值的分类的 Stroustrup 分析包含在本主题中的信息。
 
-## <a name="an-lvalue-has-identity"></a>左值具有标识
-它为某个值具有*标识*意味着什么？ 如果你有 （或者你可以采取） 值的内存地址和安全，使用它，然后的值具有标识。 这样一来，你可以执行多个比较值的内容： 你可以比较或标识来区分它们。
+## <a name="an-lvalue-has-identity"></a>左值的标识
+是什么意思值能够*标识*？ 如果你有 （或可能需要） 的内存地址的一个值，并安全地，使用它，则值都具有标识。 这样一来，你可以执行多个比较值的内容： 可以比较或将它们区分开来的标识。
 
-*左值*具有标识。 现在是一种仅历史感兴趣"左值"中的"l"是"左"（如中所示，左左分配的） 的缩写。 在 c + +，左值可以显示的左侧*或*右侧的分配。 "L"中"左值"，然后，不会实际可帮助你理解，也不会定义它们是。 你只需要了解，我们调用左值是具有标识的值。
+*左值*具有标识。 现在，这是分配的"左值"中的"l"是分配的"left"（如下所示，左侧元） 的缩写的仅历史感兴趣的问题。 在 c + +，左值可以出现在左侧*或*在赋值的右侧。 "左值"中的"l"然后，不会实际帮助你理解也不能定义是什么。 只需了解我们所说的左值是具有标识的值。
 
-左值表达式的示例包括： 命名的变量或常数;或返回的引用的函数。 *不*左值表达式的示例包括： 一个临时;或返回值的函数。
+都是左值的表达式的示例包括： 已命名的变量或常量;或函数返回的引用。 使用的表达式的示例*不*左值包括： 临时; 或返回值的函数。
 
 ```cppwinrt
 int& get_by_ref() { ... }
@@ -42,53 +42,53 @@ int main()
 }
 ```
 
-现在，尽管左值具有标识的 true 语句，因此不要 xvalues。 我们将转到哪些*xvalue*是本主题后面的更多。 现在，只需注意，如果没有 glvalue，名为"一般化左值"的值类别。 Glvalues 超集包含左值 (也称为*传统左值*) 和 xvalues。 因此，而"左值具有标识"为 true 时，具有标识的事项的完整集合是一套 glvalues，此图中所示。
+现在，尽管是左值具有标识为 true 的语句，因此为由于将 xvalues。 我们将转到内容的详细信息*xvalue*是本主题中更高版本。 现在，只需注意，存在称为 glvalue，为"通用化左值"的值类别。 Glvalues 的超集包含这两个左值 (也称为*经典的左值*) 和由于将 xvalues。 因此，尽管"左值具有标识"为 true 时，具有标识的操作的完整集合是一套 glvalues，此图中所示。
 
-![左值具有标识](images/has-identity1.png)
+![左值的标识](images/has-identity1.png)
 
-## <a name="an-rvalue-is-movable-an-lvalue-is-not"></a>Rvalue 是可移动;左值不是
-但不是 glvalues 的值。 因此，存在你*不能*获得的内存地址 （或不能依靠它才能有效） 的值。 我们看到上面的代码示例中的某些此类值。 这听起来像一个缺点。 但实际上值利用喜欢也就是说，你可以从它 （这是通常成本低廉），*移动*，而不是从它 （这是通常成本高昂） 的复制。 从一个值意味着它不会再在它所使用的位置。 因此，尝试在它所使用的位置中访问它是要避免的事情。 从讨论了何时以及*如何*移动值已超出本主题的范围。 对于本主题中，我们只需要知道的值是可移动称为*rvalue* （或*传统 rvalue*）。
+## <a name="an-rvalue-is-movable-an-lvalue-is-not"></a>左值是可移动;不是左值
+但是，不 glvalues 的值。 因此，有值，这些值*不能*获取的内存地址 （或不能依赖于其才会生效）。 我们已了解上面的代码示例中的某些此类值。 这听起来像一个缺点。 但事实上值的优势等，它是你可以*移动*从它 （这是通常比较便宜），而不是从它的副本 （这是成本通常很高）。 从值将移意味着，就不能再使用它来进行就地。 因此，尝试访问在要使用的位置是要避免的内容。 当讨论和*如何*移动值不在此主题的讨论范围。 对于本主题中，我们只需知道为可移动的值被称为*rvalue* (或*经典的右值*)。
 
-在"rvalue"中的"r"是"权限"（如中所示，右键左分配的） 的缩写。 但你可以使用 rvalues，并对 rvalues，之外分配的引用。 在"rvalues"，"r"，则不需要关注的件事。 你只需要了解，我们调用 rvalue 是可移动的值。
+"右值"中的"r"是分配的"right"（如下所示，-右侧） 的缩写。 但可以使用右值，并对右值，外部分配的引用。 "右值"中的"r"，则不需要关注的一点。 只需了解我们所说的右值都为可移动的值。
 
-左值，相反，不是可移动，此图中所示。 移动左值会 defy 的定义*左值*，并且它会非常合理预期能够继续访问左值的代码意外的问题。
+左值，与之相反，不是可移动的此图中所示。 左值移动会迎接的定义*左值*，而且它会是非常合理预期能够继续访问左值的代码出现意外的问题。
 
-![Rvalue 是可移动;左值不是](images/is-movable.png)
+![左值是可移动;不是左值](images/is-movable.png)
 
-你无法移动左值。 但有** 一种 glvalue （与标识的内容的一组），可以移动&mdash;如果你知道你正在执行的操作 （包括小心不要访问它在移动后）&mdash;这是 xvalue。 我们将重新这一想法访问一次下方，当我们看一下值类别的全面地了解情况。
+不能移动左值。 但有*是*glvalue （标识操作组），则可将一种&mdash;如果您知道自己在做什么 （包括要小心，不要在移动后访问）&mdash;即 xvalue。 我们将再度讨论这一想法一次，当我们查看在全面的值的分类。
 
-## <a name="rvalue-references-and-reference-binding-rules"></a>Rvalue 引用和参考绑定规则
-本部分介绍对 rvalue 引用的语法。 我们将需要等待另一个主题，以转到大量移动和转发，处理，但这些都是通过 rvalue 引用解决的问题。 我们看一下 rvalue 引用之前，不过，我们首先需要有关清晰`T&`&mdash;件事我们已以前已调用只是"引用"。 它实际上是"左值 (非 const) 引用"，这是指引用的用户可写入的值。
+## <a name="rvalue-references-and-reference-binding-rules"></a>右值引用和引用绑定规则
+本部分介绍对 rvalue 引用的语法。 我们必须等待另一个主题，以转到移动和转发，大量处理，但这些都是通过右值引用，来解决问题。 我们看一下右值引用之前，不过，我们首先需要更为清晰有关`T&`&mdash;操作中，我们已以前已调用只是"参考"。 这就是"的左值 (非 const) 引用"，它是指所引用的用户可以写入的值。
 
 ```cppwinrt
 template<typename T> T& get_by_lvalue_ref() { ... } // Get by lvalue (non-const) reference.
 template<typename T> void set_by_lvalue_ref(T&) { ... } // Set by lvalue (non-const) reference.
 ```
 
-左值引用可以绑定到左值，但不能向 rvalue。
+左值引用可以绑定到左值，而不是右值。
 
-然后有左值 const 引用 (`T const&`)，它引用的对象向其用户*不能*引用写入 （例如，常量）。
+则 const 左值引用 (`T const&`)，该引用到的对象引用的用户*不能*写 （例如，常量）。
 
 ```cppwinrt
 template<typename T> T const& get_by_lvalue_cref() { ... } // Get by lvalue const reference.
 template<typename T> void set_by_lvalue_cref(T const&) { ... } // Set by lvalue const reference.
 ```
 
-左值 const 引用可以绑定到左值或 rvalue。
+Const 左值引用可以绑定到左值或右值。
 
-参考 rvalue 类型的语法`T`编写为`T&&`。 Rvalue 引用是指可移动值&mdash;我们不需要保留后，我们使用它 （例如，一个临时） 其内容的值。 由于整个点将从移动 （从而修改） 值绑定到 rvalue 引用，`const`和`volatile`限定符 （也称为 cv 限定符） 不能应用于 rvalue 引用。
+对类型的右值引用的语法`T`编写为`T&&`。 右值引用所引用的可移动值&mdash;我们不需要保留后我们使用它 （例如，临时） 其内容的值。 因为整个点是从移动 （从而修改） 值绑定到右值引用，`const`和`volatile`限定符 （也称为 cv 限定符） 不会应用于右值引用。
 
 ```cppwinrt
 template<typename T> T&& get_by_rvalue_ref() { ... } // Get by rvalue reference.
 struct A { A(A&& other) { ... } }; // A move constructor takes an rvalue reference.
 ```
 
-Rvalue 引用将绑定到 rvalue。 事实上，根据重载分辨率，rvalue*首选*绑定到左值 const 引用比 rvalue 引用。 但 rvalue 引用无法绑定到左值，因为我们已经说过，rvalue 引用是指值假设我们无需保留 （比如，移动构造函数的参数） 其内容。
+右值引用绑定到右值。 事实上，在右值的重载解析方面*首选*绑定到左值常量引用比的右值引用。 但是，因为如我们所说，右值引用所引用的一个值，假定我们不需要保留 （例如，移动构造函数的参数） 其内容的右值引用不能将绑定到左值。
 
-你还可以传递 rvalue 的值通过参数的地方，通过复制构造 （或移动构造，如果该右值是 xvalue）。
+此外可以传递右值的按值参数的地方，通过复制构造 （或移动构造，如果左值是 xvalue）。
 
-## <a name="a-glvalue-has-identity-a-prvalue-does-not"></a>Glvalue 具有标识;prvalue 没有
-在此阶段，我们知道什么有身份。 并且，我们了解什么是可移动，什么不是。 但我们尚未名为一组值*不*具有标识。 这组称为*prvalue*或*纯 rvalue*。
+## <a name="a-glvalue-has-identity-a-prvalue-does-not"></a>Glvalue 具有标识;prvalue 却不
+在此阶段，我们知道必须标识的内容。 我们知道什么是可移动，什么不是。 我们未尚未命名的值集，但是*不*具有标识。 组被称为*prvalue*，或*纯右值*。
 
 ```cppwinrt
 int& get_by_ref() { ... }
@@ -101,21 +101,21 @@ int main()
 }
 ```
 
-![左值具有标识;prvalue 没有](images/has-identity2.png)
+![左值具有标识;prvalue 却不](images/has-identity2.png)
 
-## <a name="the-complete-picture-of-value-categories"></a>值类别的完整图片
-它仅保留组合的信息和上面到单个、 大图片的插图。
+## <a name="the-complete-picture-of-value-categories"></a>完整的值的分类图
+它仅将保持以便合并的信息和上述插图到单一的大图片。
 
-![值类别的完整图片](images/value-categories.png)
+![完整的值的分类图](images/value-categories.png)
 
 ### <a name="glvalue-i"></a>glvalue (i)
-Glvalue （一般化左值） 具有标识。
+Glvalue （通用左值） 都有标识。
 
-### <a name="lvalue-im"></a>左值 (i\ & \!m)
-左值 （一种 glvalue） 具有标识，但不可移动。 以下是你传递通过引用 const 参考，或通过值如果复制是便宜的通常读写值。 左值无法绑定到 rvalue 引用。
+### <a name="lvalue-im"></a>左值 (我\&\!m)
+左值 （一种 glvalue） 都有标识，但不是可移动。 这些是你传递通过引用或常量引用或值如果复制成本低廉的通常读 / 写值。 左值不能绑定到右值引用。
 
-### <a name="xvalue-im"></a>xvalue (i\ & m)
-Xvalue （一种 glvalue，但也一种 rvalue） 具有标识，并且还可移动。 这可能是你已决定移动复制的成本很高，因为 erstwhile 左值，你将注意不要以后访问它。 下面介绍了如何将左值转换 xvalue。
+### <a name="xvalue-im"></a>xvalue (我\&m)
+Xvalue （一种类型的 glvalue，但也有一种类型的右值） 标识，因此还可移动。 这可能是您已决定移动，因为复制成本很高，归拢左值，就可以小心以免以后访问。 下面是如何到 xvalue 将左值。
 
 ```cppwinrt
 struct A { ... };
@@ -123,9 +123,9 @@ A a; // a is an lvalue...
 static_cast<A&&>(a); // ...but this expression is an xvalue.
 ```
 
-在上面的代码示例中，我们尚未移动任何尚未。 我们只需创建了 xvalue 通过强制转换到未命名的 rvalue 引用左值。 它仍然可以标识通过其左值名称;但是，xvalue，它是现在*能够*在移动。 执行此操作的原因，以及哪些移动实际上如下所示，将具有等待另一个主题。 但是，你可以将其视为"xvalue"作为含义"专家仅"如果，可帮助中的"x"。 通过强制左值转换到 xvalue （一种 rvalue），则该值将成为能够要绑定到 rvalue 引用。
+在上面的代码示例中，我们尚未迁移任何内容。 我们刚刚创建了 xvalue 通过强制转换为命名的右值引用的左值。 仍可以通过左值名称; 标识但作为 xvalue 现*能够*的移动。 执行此操作，原因，哪些移动实际上如下所示，将需要等待另一个主题。 但您可以将"xvalue"含义"专家仅"如果，它可帮助为中的"x"。 通过将左值强制转换到 xvalue （一种的右值），值然后将成为能够绑定到右值引用。
 
-下面是两个 xvalues 其他示例&mdash;调用返回命名的 rvalue 引用、 函数和访问 xvalue 的成员。
+以下是两个其他示例由于将 xvalues&mdash;调用函数返回命名的右值引用，并访问 xvalue 的成员。
 
 ```cppwinrt
 struct A { int m; };
@@ -134,13 +134,13 @@ f(); // This expression is an xvalue...
 f().m; // ...and so is this.
 ```
 
-### <a name="prvalue-im"></a>prvalue (\!i\ & m)
-Prvalue （纯 rvalue; 一种 rvalue） 不具有标识，但可移动。 这些通常是临时变量，调用的函数的结果返回的值或不是 glvalue 的任何其他表达式的计算的结果
+### <a name="prvalue-im"></a>prvalue (\!我\&m)
+Prvalue （纯右值; 一种类型的右值） 中没有标识，但可移动。 这些通常是临时内存，调用函数的结果返回的值或不是 glvalue 的任何其他表达式的计算结果
 
-### <a name="rvalue-m"></a>rvalue (m)
-Rvalue 是可移动。 Rvalue*引用*始终是指 rvalue （假设我们无需保留其内容的值）。
+### <a name="rvalue-m"></a>右值 (m)
+左值是可移动。 右值*引用*始终引用右值 （值假定我们不需要保留其内容）。
 
-但是，是 rvalue 引用本身 rvalue 吗？ *未命名*rvalue 引用 （一样在上面的 xvalue 代码示例中所示） 是 xvalue 因此，它是的 rvalue。 它倾向于绑定到 rvalue 引用函数参数，如移动构造函数。 相反，或许 counter-intuitively） 如果 rvalue 引用具有一个名称，则包含该名称的表达式是左值。 因此它*无法*绑定到 rvalue 引用参数。 很容易使其执行此操作，但是&mdash;再次只需将其转换到未命名的 rvalue 引用 (xvalue)。
+但是，是右值的右值引用本身呢？ *未命名*右值引用 （如上面的 xvalue 代码示例中所示） 是 xvalue 因此，是的它是右值。 它首选绑定到一个右值引用函数参数，如移动构造函数。 与之相反 （和可能是 counter-intuitively），如果右值引用具有一个名称，则包含该名称的表达式是左值。 因此它*不能*绑定到右值引用参数。 但很容易以使其执行此操作&mdash;再次只需将其转换为未命名的右值引用 (xvalue)。
 
 ```cppwinrt
 void foo(A&) { ... }
@@ -153,40 +153,40 @@ void bar(A&& a) // a is a named rvalue reference; it's an lvalue.
 A&& get_by_rvalue_ref() { ... } // This unnamed rvalue reference is an xvalue.
 ```
 
-### <a name="im"></a>\!i\ 和 \!m
-值，不具有标识，不是可移动的类型是一个组合，我们尚未尚未讨论。 但是，我们可以忽略它，因为该类别不是在 c + + 语言中非常有用的想法。
+### <a name="im"></a>\!i\&\!m
+未标识并且不是可移动的值的类型为一个组合，我们还没有介绍。 但我们可以忽略它，因为该类别不是一个有用的想法在 c + + 语言中。
 
-## <a name="reference-collapsing-rules"></a>参考折叠规则
-表达式 （左值引用，左值引用或 rvalue 引用到 rvalue 引用） 中的多个类似引用取消一个另一个出。
+## <a name="reference-collapsing-rules"></a>引用折叠规则
+表达式 （左值引用为左值引用或右值引用的右值引用） 中的多个 like 引用取消一个另一个扩展。
 
 - `A& &` 折叠到`A&`。
 - `A&& &&` 折叠到`A&&`。
 
-与在 expression 中引用不同的多个折叠到左值引用。
+与在表达式中引用不同的多个折叠到左值引用。
 
 - `A& &&` 折叠到`A&`。
 - `A&& &` 折叠到`A&`。
 
 ## <a name="forwarding-references"></a>转发引用
-此最后一节对比 rvalue 引用，我们已经讨论，与*转发引用*的不同的概念。
+此最后一节将进行比较的右值引用，我们已经讨论，不同的概念*转发引用*。
 
 ```cppwinrt
 void foo(A&& a) { ... }
 ```
 
-- `A&&` 是 rvalue 引用，正如我们所见。 Const 和易失性不应用于 rvalue 引用。
-- `foo` 接受仅 rvalues 的**类型**。
-- 该原因右值引用 (如`A&&`) 存在，以便你可以编写一个重载，针对一个临时 （或其他 rvalue） 传递的情况下进行了优化。
+- `A&&` 是右值引用，正如我们所见。 固定和可变不会应用于右值引用。
+- `foo` 接受仅右值的类型**A**。
+- 原因右值引用 (如`A&&`) 存在，以便可以创作一个临时 （或其他右值） 传递的情况下进行了优化的重载。
 
 ```cppwinrt
 template <typename _Ty> void bar(_Ty&& ty) { ... }
 ```
 
-- `_Ty&&` 是*转发引用*。 具体取决于你传递到`bar`，类型 **_Ty**可能是 const/非-const 独立于易失性/非易失性。
-- `bar` 接受任何左值或类型 **_Ty**的 rvalue。
-- 传递左值将导致转发参考成为`_Ty& &&`，其中折叠到左值参考`_Ty&`。
-- 该方法传递 rvalue 导致转发参考成为`_Ty&& &&`，其中折叠 rvalue 引用`_Ty&&`。
-- 转发引用的原因 (如`_Ty&&`) 存在是*不*进行优化，但以执行你传递给他们，以透明方式、 高效地将其转发上。 你可能会遇到转发参考仅当你编写 （或仔细研究） 库代码&mdash;例如，将转发的构造函数参数的工厂函数。
+- `_Ty&&` 是*转发引用*。 具体取决于传递给`bar`，类型 **_Ty**可能是 const/非 const 独立于易失性/非易失性。
+- `bar` 接受任何左值或右值的类型 **_Ty**。
+- 传递左值会导致转发引用变得`_Ty& &&`，其中将折叠为左值引用`_Ty&`。
+- 传递右值会导致转发引用变得`_Ty&& &&`，其中将折叠为右值引用`_Ty&&`。
+- 转发引用的原因 (如`_Ty&&`) 存在是*不*进行优化，但以执行你传递给它们，透明且有效地将其转发上。 您可能会遇到的转发引用仅当编写 （或步仔细研究） 库代码&mdash;例如，在构造函数自变量将转发的工厂函数。
 
 ## <a name="sources"></a>源
-* \[Stroustrup、 2013\] b。 Stroustrup: c + + 编程语言，第四个版本。 艾迪逊 Wesley。 2013。
+* \[Stroustrup，2013年\]B.Stroustrup:C + + 编程语言，第四版。 Addison-Wesley。 2013.

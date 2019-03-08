@@ -1,16 +1,16 @@
 ---
-Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
+Description: 成功上传程序包后，将看到一个表格，指示将以排名顺序向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包。
 title: 设备系列可用性
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 程序包, 上传, 设备系列可用性
 ms.localizationpriority: medium
 ms.openlocfilehash: 217a6ab9f25ee533a754138db5cf83c2ac81e3e9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929044"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605352"
 ---
 # <a name="device-family-availability"></a>设备系列可用性
 
@@ -42,28 +42,28 @@ ms.locfileid: "8929044"
 > 若要解决此错误，可以执行以下操作之一：
 > - 将适用的程序包替换为使用 Windows SDK 版本 14393 或更高版本编译的新程序包。
 > - 如果已有的程序包支持 Xbox 并使用 Windows SDK 版本 14393 或更高版本进行了编译，则增加它的版本号，以便它提交中版本最高的程序包。
-> - 取消选中“Windows 10 Xbox”**** 复选框。
+> - 取消选中“Windows 10 Xbox”复选框。
 >   
 > 如果仍然无法解决该问题，请联系支持人员。
 
 如果要为 Windows 10 IoT 核心版提交 UWP 应用，你不应该在上载软件包后对默认选择进行更改；Windows 10 IoT 没有单独的复选框。 有关发布 IoT 核心版 UWP 应用的详细信息，请参阅 [IoT 核心版 UWP 应用的 Microsoft Store 支持](https://docs.microsoft.com/windows/iot-core/commercialize-your-device/installingandservicing)。
 
-如果你以前发布的应用的提交包含可以在**Windows 8/8.1**运行的程序包，并**Windows Phone 8.x 及更早版本**，这些程序包将提供给这些操作系统版本上的客户。 若要停止向这些客户提供应用，请从提交中删除相应的程序包。
+如果你以前已发布的应用的提交包含可以在运行的包**Windows 8/8.1**并**Windows Phone 8.x 及更早版本**，这些包将可供这些操作系统上的客户版本。 若要停止向这些客户提供应用，请从提交中删除相应的程序包。
 
 > [!IMPORTANT]
-> 若要完全阻止特定 Windows 10 设备系列获取你的提交，更新清单以面向你想要支持的设备系列中的[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)元素 （即，Windows.Mobile 或 Windows.Desktop），而是比其保留为 Windows.Universal 值 （面向通用设备系列） 的 Microsoft Visual Studio 的清单中默认包含。
+> 若要完全阻止特定的 Windows 10 设备系列获取你的提交，更新[ **TargetDeviceFamily** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)针对仅设备系列您要在清单中的元素支持 （即，Windows.Mobile 或 Windows.Desktop），而不是保留它作为 Windows.Universal 值 （适用于通用设备系列中） 的 Microsoft Visual Studio 包含在清单中默认情况下。
 
-请务必了解：你在**设备系列可用性**部分中所做的选择仅应用于全新购买。 已拥有你的应用的任何用户都可以继续使用它，并且将获得你提交的任何更新，即使你在此处删除了设备系列也是如此。 这甚至适用于在升级到 Windows 10 之前获取你的应用的客户。 例如，如果你有一个已发布的应用与 Windows Phone 8.1 程序包，并添加 Windows 10 (UWP) 程序包面向 Windows.Universal 设备系列，Windows 10 移动客户拥有 Windows Phone 8.1 程序包将提供更新到此 Windows10 (UWP) 程序包，即使你已取消选中**Windows 10 移动**版框。
+请务必了解：你在**设备系列可用性**部分中所做的选择仅应用于全新购买。 已拥有你的应用的任何用户都可以继续使用它，并且将获得你提交的任何更新，即使你在此处删除了设备系列也是如此。 这甚至也适用于在升级到 Windows 10 之前获取你的应用的客户。 例如，如果具有已发布的应用与 Windows Phone 8.1 软件包，并添加面向 Windows.Universal 设备系列的 Windows 10 (UWP) 包，必须在 Windows Phone 8.1 包的 Windows 10 移动客户将提供更新到此 Windows10 (UWP) 包，即使你已取消选中的框**Windows 10 移动版**。
 
 有关设备系列的详细信息，请参阅[**设备系列概述**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)。
 
 
 ## <a name="understanding-ranking"></a>了解分级
 
-除了指示哪些 Windows 10 设备系列可以下载你的提交，**设备系列可用性**部分介绍了将提供的不同设备系列的特定程序包。 如果你有多个程序包可以在某个设备系列上运行，该表格将基于程序包的版本号指示程序包的提供顺序。 有关 Store 如何基于版本号对程序包分级的详细信息，请参阅[程序包版本编号](package-version-numbering.md)。 
+除了使您可以指定的 Windows 10 设备系列的类别可以下载你的提交内容**设备系列可用性**部分显示了特定的包，将可用于为不同的设备系列。 如果你有多个程序包可以在某个设备系列上运行，该表格将基于程序包的版本号指示程序包的提供顺序。 有关应用商店如何基于版本号对程序包分级的详细信息，请参阅[程序包版本编号](package-version-numbering.md)。 
 
-例如，假设你有两个程序包：Package_A.appxupload 和 Package_B.appxupload。 对于给定的设备系列，如果 Package_A.appxupload 排名第 1 而 Package_B.appxupload 排名第 2，这意味着当该设备类型上的客户获取应用时，Store 将先尝试提供 Package_A.appxupload。 如果客户设备无法运行 Package_A.appxupload，Store 将提供 Package_B.appxupload。 如果客户设备无法运行任何该设备系列的程序包 （例如，如果**最低版本为**你的应用支持是高于客户设备上的版本），然后客户将无法下载该设备上的应用。
+例如，假设您有两个包：Package_A.appxupload 和 Package_B.appxupload。 对于给定的设备系列，如果 Package_A.appxupload 排名第 1 而 Package_B.appxupload 排名第 2，这意味着当该设备类型上的客户获取应用时，应用商店将先尝试提供 Package_A.appxupload。 如果客户设备无法运行 Package_A.appxupload，应用商店将提供 Package_B.appxupload。 如果客户的设备无法运行任何为该设备系列的包 (例如，如果**MinVersion**应用支持高于客户的设备上的版本) 客户将无法下载上的应用程序，然后该设备。
 
 > [!NOTE]
-> 当确定向给定的客户提供哪个程序包时，不考虑.xap 程序包 （适用于以前发布的应用） 中的版本号。 因此，如果你有多个相同等级的 .xap 程序包，你将看到一个星号而非数字，客户可能会收到任一程序包。 若要将客户从一个 .xap 程序包更新到较新的程序包，请确保在新提交中删除旧的 .xap 程序包。
+> 确定要提供给定的客户将哪个包时不考虑 （适用于以前发布的应用） 的.xap 程序包中的版本号。 因此，如果你有多个相同等级的 .xap 程序包，你将看到一个星号而非数字，客户可能会收到任一程序包。 若要将客户从一个 .xap 程序包更新到较新的程序包，请确保在新提交中删除旧的 .xap 程序包。
 

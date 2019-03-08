@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 36d08006fa2f32812f97daef5135a98dce16c4e5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929591"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594612"
 ---
 # <a name="index-buffers"></a>索引缓冲区
 
@@ -23,7 +23,7 @@ ms.locfileid: "8929591"
 
 顶点缓冲区包含顶点；因此，你可以绘制包含或不包含索引基元的顶点缓冲区。 但是，由于索引缓冲区包含索引，因此不能使用没有对应顶点缓冲区的索引缓冲区。
 
-## <a name="span-idindexbufferdescriptionspanspan-idindexbufferdescriptionspanspan-idindexbufferdescriptionspanindex-buffer-description"></a><span id="Index_Buffer_Description"></span><span id="index_buffer_description"></span><span id="INDEX_BUFFER_DESCRIPTION"></span>索引缓冲区描述
+## <a name="span-idindexbufferdescriptionspanspan-idindexbufferdescriptionspanspan-idindexbufferdescriptionspanindex-buffer-description"></a><span id="Index_Buffer_Description"></span><span id="index_buffer_description"></span><span id="INDEX_BUFFER_DESCRIPTION"></span>索引缓冲区说明
 
 
 索引缓冲区在功能方面进行描述，例如其存在于内存中的位置、其是否支持读取和写入以及其能够包含的索引的类型和数量。

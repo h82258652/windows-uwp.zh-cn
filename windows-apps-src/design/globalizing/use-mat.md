@@ -1,5 +1,5 @@
 ---
-Description: The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2017 to provide UWP apps with translation support, translation file management, and editor tools.
+Description: 多语言应用工具包 (MAT) 4.0 与 Microsoft Visual Studio 2017 集成，为 UWP 应用提供翻译支持、翻译文件管理和编辑工具。
 title: 使用多语言应用工具包
 template: detail.hbs
 ms.date: 01/23/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
 ms.openlocfilehash: 74ad832d5516a4fa9bef849c5f691e2909c6c3d4
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047612"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610112"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>使用多语言应用工具包 4.0
 
@@ -119,9 +119,9 @@ ms.locfileid: "9047612"
 
 若要将翻译和编辑工作外包给本地化人员，在解决方案资源管理器中选择所需 .xlf 文件，右键单击这些文件，然后单击**多语言应用工具包** > **导出翻译...**。
 
-选择“导出字符串资源”对话框中的**输出: 邮件收件人**，然后单击“确定”，你的文件将被压缩并附加到新电子邮件。 选择**输出: 文件文件夹位置**，浏览文件夹，然后单击“确定”，还可根据需要选择压缩此文件，并再次单击“确定”，你的文件将被（压缩并）保存在所选位置处得名于项目的新文件夹内。
+选择**输出：邮件收件人**在导出字符串资源对话框中，单击确定，文件将压缩并连接到新的电子邮件。 选择**输出：文件文件夹位置**，浏览器的某个文件夹，然后单击确定，根据需要选择对所有文件进行压缩，单击确定，并且为你的文件 (zip 格式和) 保存在你选择为你的项目名为的新文件夹内的位置。
 
-在本地化人员完成翻译工作并向你发送已翻译的 .xlf 文件后，便可以将这些文件导入项目。 在解决方案资源管理器中选择所需 .xlf 文件，右键单击这些文件，然后单击**多语言应用工具包** > **导入/循环使用翻译...**。单击**添加**，导航到 .xlf 或 .zip 文件，然后单击**导入**。
+在本地化人员完成翻译工作并向你发送已翻译的 .xlf 文件后，便可以将这些文件导入项目。 在解决方案资源管理器中选择所需的.xlf 文件，右键单击它们，然后单击**多语言应用工具包** > **导入/回收翻译...**.单击**外**，导航到.xlf 或.zip 文件，然后单击**导入**。
 
 **注意**导入过程在导入之前会执行基本的验证。 这将确保正在导入的文件中的目标文化信息与现有 .xlf 文件中的目标文化信息相匹配。
 
@@ -152,7 +152,7 @@ ms.locfileid: "9047612"
 - [Microsoft 语言门户](https://go.microsoft.com/fwlink/p/?LinkId=330295)提供程序基于 Microsoft 产品和服务的用户界面文本翻译启用翻译循环使用和术语匹配支持。
 - [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220) 提供程序启用按需机器翻译服务。
 
-你和你的翻译人员可以管理多语言编辑器中的翻译状态，以便稍后查看不确定的翻译。 可以在**属性**选项卡中设置每个字符串的状态。状态值为：**新**、**需审阅**、**已翻译**、**最终**和**签核**。 位于行左侧的指示器显示状态。 当多语言编辑器中的所有行都显示为绿色时，即表示翻译工作已完成。
+你和你的翻译人员可以管理多语言编辑器中的翻译状态，以便稍后查看不确定的翻译。 您可以设置每个字符串中的状态**属性**选项卡。状态的值为：**新**，**需要评审**，**经过机器翻译**，**最终**，并且**签核**。 位于行左侧的指示器显示状态。 当多语言编辑器中的所有行都显示为绿色时，即表示翻译工作已完成。
 
 重新生成项目，以便系统将已翻译的字符串复制到与你刚刚编辑的 .xlf 文件相对应的资源文件 (.resw) 中。
 
@@ -162,16 +162,16 @@ ms.locfileid: "9047612"
 
 ## <a name="related-topics"></a>相关主题
 
-* [对 UI 和应用包清单中的字符串实施本地化](../../app-resources/localize-strings-ui-manifest.md)
+* [本地化用户界面和应用包清单中的字符串](../../app-resources/localize-strings-ui-manifest.md)
 * [全球化和本地化](globalizing-portal.md)
-* [全球化指南](guidelines-and-checklist-for-globalizing-your-app.md)
-* [对应用进行可本地化处理](prepare-your-app-for-localization.md)
+* [全球化](guidelines-and-checklist-for-globalizing-your-app.md)
+* [使您的应用程序可本地化](prepare-your-app-for-localization.md)
 * [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)
 
 ## <a name="downloads"></a>下载
 
-* [多语言应用工具包 4.0 .vsix 安装程序](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
-* [多语言应用工具包 4.0 .msi 安装程序](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
+* [多语言应用工具包 4.0.vsix 安装程序](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
+* [多语言应用工具包 4.0.msi 安装程序](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
 
 ## <a name="translation-services"></a>翻译服务
 

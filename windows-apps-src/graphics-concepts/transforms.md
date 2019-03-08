@@ -1,6 +1,6 @@
 ---
 title: 转换
-description: 转换引擎是 Direct3D 的一部分，用于将几何图形穿过固定函数几何图形管道。
+description: 将几何图形推过固定函数几何图形管道的 Direct3D 部分是转换引擎。
 ms.assetid: 0DF2A99A-335C-4D14-9720-6D7996DD635A
 keywords:
 - 转换
@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a29d42a9254ca47402a38ea71c8c1ef69de5c6c7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938678"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639642"
 ---
 # <a name="transforms"></a>转换
 
 
-转换引擎是 Direct3D 的一部分，用于将几何图形穿过固定函数几何图形管道。 它会找到世界中的模型和查看器、投影显示在屏幕上的顶点，并将顶点剪切到视区上。 转换引擎还会执行照明计算来确定每个顶点的漫射和反射组件。
+将几何图形推过固定函数几何图形管道的 Direct3D 部分是转换引擎。 它会找到世界中的模型和查看器、投影显示在屏幕上的顶点，并将顶点剪切到视区上。 转换引擎还会执行照明计算来确定每个顶点的漫射和反射组件。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>
@@ -40,11 +40,11 @@ ms.locfileid: "8938678"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="world-transform.md">世界转换</a></p></td>
-<td align="left"><p>世界转换将坐标从模型空间（其中相对于模型的本地原点定义顶点）更改为世界空间。 在世界空间中，相对于场景中所有对象的共用原点定义顶点。 世界转换将模型放入世界中。</p></td>
+<td align="left"><p>世界转换将坐标从相对模型的本地原点定义顶点的世界空间更改到世界空间。 在世界空间中，顶点是相对场景中所有对象共同的原点定义的。 世界转换将模型放入世界空间中。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="view-transform.md">视图转换</a></p></td>
-<td align="left"><p><em>视图转换</em> 在世界空间中定位查看器，并将顶点转换为相机空间。 在相机空间中，相机或查看器位于原点，并面向正 z 方向。 视图矩阵会在围绕相机的位置（相机空间的原点）和方向的世界中重新定位各个对象。</p></td>
+<td align="left"><p><em>视图转换</em> 在世界空间中定位查看器，并将顶点转换为相机空间。 在相机空间中，相机或查看器位于原点，并面向正 z 方向。 视图矩阵会在围绕相机的位置（相机空间的原点）和方向的世界空间中重新定位各个对象。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="projection-transform.md">投影转换</a></p></td>
@@ -58,7 +58,7 @@ ms.locfileid: "8938678"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[坐标系和几何图形](coordinate-systems-and-geometry.md)
+[坐标系和坐标 geometry](coordinate-systems-and-geometry.md)
 
  
 

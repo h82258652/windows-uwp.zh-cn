@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, 呈现框架, 转换, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: aba723a5ee2443664d6d640adc124b991ff0da7e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919243"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608822"
 ---
 # <a name="convert-the-rendering-framework"></a>转换呈现框架
 
@@ -21,7 +21,7 @@ ms.locfileid: "8919243"
 
 -   [第 1 部分：初始化 Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
 -   第 2 部分：转换呈现框架
--   [第 3 部分：移植游戏循环](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
+-   [第 3 部分：端口游戏循环](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
 
 
 介绍如何将简单的呈现框架从 Direct3D 9 转换到 Direct3D 11，包括如何移植几何图形缓冲区、如何编译和加载 HLSL 着色器程序以及如何在 Direct3D 11 中实现呈现链。 [将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 演练的第 2 部分。
@@ -93,19 +93,19 @@ technique RenderSceneSimple
 }
 ```
 
-在 Direct3D 11 中，我们仍然可以使用我们的 HLSL 着色器。 我们将每个着色器放置到它自己的 HLSL 文件中以便 Visual Studio 将它们编译成单独的文件，之后我们会将它们作为单独的 Direct3D 资源加载。 我们将目标级别设置为[着色器模型 4 级别 9\_1 (/4\_0\_level\_9\_1)](https://msdn.microsoft.com/library/windows/desktop/ff476876)，因为这些着色器是针对 DirectX 9.1 GPU 编写的。
+在 Direct3D 11 中，我们仍然可以使用我们的 HLSL 着色器。 我们将每个着色器放置到它自己的 HLSL 文件中以便 Visual Studio 将它们编译成单独的文件，之后我们会将它们作为单独的 Direct3D 资源加载。 我们在目标级别设置为[着色器模型 4 级别 9\_1 (/ 4\_0\_级别\_9\_1)](https://msdn.microsoft.com/library/windows/desktop/ff476876)因为 DirectX 9.1 gpu 编写这些着色器。
 
 定义了输入布局之后，我们要确保它表示我们用来在系统内存和 GPU 内存中存储每个顶点数据的相同数据结构。 同样，顶点着色器的输出应该与用作像素着色器输入的结构相匹配。 在 C++ 中，将数据从一个函数传递到另一个函数时的规则并不相同；你可以忽略位于结构结尾部分的未使用的变量。 但不能重新排列顺序，并且不能跳过数据结构中间的内容。
 
-> **注意** Direct3D 9 中为顶点着色器绑定到像素着色器的规则比更宽松 Direct3D 11 中的规则。 Direct3D 9 排列比较灵活，但效率低。
+> **请注意**   Direct3D 9 中的规则绑定到像素着色器的顶点着色器的已于 Direct3D 11 中的规则更宽松。 Direct3D 9 排列比较灵活，但效率低。
 
  
 
-你的 HLSL 文件可以使用较旧的语法作为着色器语义 - 例如，使用 COLOR 而不是 SV\_TARGET。 如果是这样，那么你将需要启用 HLSL 兼容模式（/Gec 编译器选项）或将着色器[语义](https://msdn.microsoft.com/library/windows/desktop/bb509647)更新为当前语法。 该示例中的顶点着色器已经使用当前语法进行了更新。
+可以在 HLSL 文件，使用较旧的语法着色器语义-例如，而不是 SV 的颜色\_目标。 如果是这样，那么你将需要启用 HLSL 兼容模式（/Gec 编译器选项）或将着色器[语义](https://msdn.microsoft.com/library/windows/desktop/bb509647)更新为当前语法。 该示例中的顶点着色器已经使用当前语法进行了更新。
 
 下面是我们的硬件转换顶点着色器，这次是在它自己的文件中定义的。
 
-> **注意**需要使用顶点着色器来输出 SV\_POSITION 系统值语义。 该语义将顶点位置数据解析为坐标值，其中 x 介于 -1 和 1 之间，y 介于 -1 和 1 之间，z 除以原始齐次坐标 w 值 (z/w) ，并且 w 为 1 除以原始的 w 值 (1/w)。
+> **请注意**  顶点着色器所需输出 SV\_位置系统值语义。 该语义将顶点位置数据解析为坐标值，其中 x 介于 -1 和 1 之间，y 介于 -1 和 1 之间，z 除以原始齐次坐标 w 值 (z/w)，并且 w 为 1 除以原始的 w 值 (1/w)。
 
  
 
@@ -150,9 +150,9 @@ VS_OUTPUT main(VS_INPUT input) // main is the default function name
 }
 ```
 
-这是我们使用传递像素着色器所全部需要的。 尽管我们称它为传递，但实际上是获取每个像素的透视校正插值颜色数据。 请注意，我们的像素着色器会根据 API 的需要将 SV\_TARGET 系统值语义应用于颜色值输出。
+这是我们使用传递像素着色器所全部需要的。 尽管我们称它为传递，但实际上是获取每个像素的透视校正插值颜色数据。 请注意，SV\_目标系统值语义由我们所需的 API 的像素着色器应用于生成的颜色值输出。
 
-> **注意**着色器级别 9 \_x 像素着色器无法从 SV\_POSITION 系统值语义读取。 模型 4.0（或更高版本）像素着色器可以使用 SV\_POSITION 来检索屏幕上的像素位置，其中 x 介于 0 和呈现目标宽度之间，y 介于 0 和呈现目标高度（每个偏移 0.5）之间。
+> **请注意**  着色器级别 9\_像素着色器无法从 SV 中读取 x\_位置系统值语义。 模型 4.0 （及更高版本） 像素着色器可以使用 SV\_位置来检索其中 x 是介于 0 和呈现器目标的宽度和 y 之间的像素位置在屏幕上，为 0 到呈现目标高度 （0.5 的每个偏移量）。
 
  
 
@@ -236,17 +236,17 @@ m_d3dDevice->CreateVertexShader(
 
 若要在编译的应用程序包中包含着色器字节码，只需将 HLSL 文件添加到 Visual Studio 项目。 Visual Studio 将使用[效果编译器工具](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC) 将 HLSL 文件编译到编译的着色器对象（.CSO 文件）中，并将其包含在应用包中。
 
-> **注意**请确保为 HLSL 编译器设置正确的目标功能级别： 右键单击 HLSL 源文件，在 Visual Studio 中的，选择属性并更改下的**着色器模型**设置**HLSL 编译器-&gt;常规**。 当你的应用创建 Direct3D 着色器资源时，Direct3D 会针对硬件功能检查此属性。
+> **请注意**  请确保将正确的目标功能级别设置为 HLSL 编译器： 右键单击 Visual Studio 中的 HLSL 源代码文件，选择属性，并更改**着色器模型**下设置**HLSL 编译器-&gt;常规**。 当你的应用创建 Direct3D 着色器资源时，Direct3D 会针对硬件功能检查此属性。
 
  
 
 ![hlsl 着色器属性](images/hlslshaderpropertiesmenu.png)![hlsl 着色器类型](images/hlslshadertypeproperties.png)
 
-这是创建输入布局的最佳位置，它对应于 Direct3D 9 中的顶点流声明。 每个顶点数据结构需要与顶点着色器使用的数据结构相匹配；在 Direct3D 11 中，我们对输入布局拥有更多控制；我们可以定义数组大小、浮点矢量的位长度，并可为顶点着色器指定语义。 我们创建一个 [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 结构并使用该结构来告知 Direct3D 每个顶点数据的内容。 我们一直等到加载完顶点着色器之后才定义输入布局，因为 API 要针对顶点着色器资源对输入布局进行验证。 如果输入布局不兼容，则 Direct3D 会引发异常。
+这是创建输入布局的最佳位置，它对应于 Direct3D 9 中的顶点流声明。 每个顶点数据结构需要与顶点着色器使用的数据结构相匹配；在 Direct3D 11 中，我们对输入布局拥有更多控制；我们可以定义数组大小、浮点矢量的位长度，并可为顶点着色器指定语义。 我们将创建[ **D3D11\_输入\_元素\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180)结构并使用它可以通知 Direct3D 的每个顶点数据的外观。 我们一直等到加载完顶点着色器之后才定义输入布局，因为 API 要针对顶点着色器资源对输入布局进行验证。 如果输入布局不兼容，则 Direct3D 会引发异常。
 
-每个顶点数据必须采用兼容的类型存储在系统内存中。 DirectXMath 数据类型可能有所帮助；例如，DXGI\_FORMAT\_R32G32B32\_FLOAT 对应于 [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475)。
+每个顶点数据必须采用兼容的类型存储在系统内存中。 可帮助 DirectXMath 数据类型;例如，DXGI\_格式\_R32G32B32\_FLOAT 对应于[ **XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475)。
 
-> **注意**常量缓冲区使用一个固定的一次对齐四个浮点数的输入的布局。 建议对常量缓冲区数据使用 [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608)（及其派生对象）。
+> **请注意**  常量缓冲区使用一次将对齐到四个浮点数的固定输入的布局。 [**XMFLOAT4** ](https://msdn.microsoft.com/library/windows/desktop/ee419608) （和其衍生产品） 的常量缓冲区数据建议。
 
  
 
@@ -483,7 +483,7 @@ m_d3dContext->DrawIndexed(
 m_swapChain->Present(1, 0);
 ```
 
-将从在 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中实现的游戏循环调用我们刚刚创建的呈现链。 [第 3 部分：视口和游戏循环](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)中对此进行了介绍。
+将从在 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中实现的游戏循环调用我们刚刚创建的呈现链。 如下所示[第 3 部分：视区和游戏循环](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)。
 
  
 

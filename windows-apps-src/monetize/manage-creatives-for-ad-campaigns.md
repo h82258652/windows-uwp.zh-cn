@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 41c11ee9c5decffff57a2d443e1385398ce40d89
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934532"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658462"
 ---
 # <a name="manage-creatives"></a>管理创意
 
@@ -43,12 +43,12 @@ ms.locfileid: "8934532"
 > 此 API 当前不支持 PUT 方法。
 
 
-### <a name="header"></a>Header
+### <a name="header"></a>标头
 
-| 标头        | 类型   | 描述         |
+| 标头        | 在任务栏的搜索框中键入   | 描述         |
 |---------------|--------|---------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
-| 跟踪 ID   | GUID   | 选填。 跟踪调用流的 ID。                                  |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 跟踪 ID   | GUID   | 可选。 跟踪调用流的 ID。                                  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -113,7 +113,7 @@ Authorization: Bearer <your access token>
 
 这些方法的请求和响应正文包含以下字段。 这张表列出了 POST 方法请求正文中的哪些字段是只读字段（意味着不能在 PUT 方法中更改它们）以及哪些字段是必填字段。
 
-| 字段        | 类型   |  描述      |  只读  | 默认值  |  POST 必填字段 |  
+| 字段        | 在任务栏的搜索框中键入   |  描述      |  只读  | 默认  |  POST 必填字段 |  
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整数   |  创意的 ID。     |   是    |      |    否   |       
 |  name   |  字符串   |   创意的名称。    |    否   |      |  是     |       
@@ -121,7 +121,7 @@ Authorization: Bearer <your access token>
 |  height   |  整数   |   创意的高度。    |    否    |      |   是    |       
 |  width   |  整数   |  创意的宽度。     |  否    |     |    是   |       
 |  landingUrl   |  字符串   |  如果使用市场活动跟踪服务（如 Kochava、AppsFlyer 或 Tune）测量应用的安装分析，则在调用 POST 方法时，请在此字段指定跟踪 URL（如已指定，则此值必须为有效 URL）。 如果未使用市场活动跟踪服务，则在调用 POST 方法时，请忽略此值（在此情况下，将会成功创建此 URL）。   |  否    |     |   是    |       
-|  format   |  字符串   |   广告的格式。 当前，唯一受支持的值为 **Banner**。    |   否    |  Banner   |  否     |       
+|  format   |  字符串   |   广告的格式。 当前，唯一受支持的值为 **Banner**。    |   否    |  横幅   |  否     |       
 |  imageAttributes   | [ImageAttributes](#image-attributes)    |   提供创意的属性。     |   否    |      |   是    |       
 |  storeProductId   |  字符串   |   与广告活动关联的应用的[应用商店 ID](in-app-purchases-and-trials.md#store-ids)。 产品应用商店 ID 示例：9nblggh42cfd。    |   否    |    |  否     |   |  
 
@@ -130,15 +130,15 @@ Authorization: Bearer <your access token>
 
 ## <a name="imageattributes-object"></a>ImageAttributes 对象
 
-| 字段        | 类型   |  描述      |  只读  | 默认值  | POST 必填字段 |  
+| 字段        | 在任务栏的搜索框中键入   |  描述      |  只读  | 默认值  | POST 必填字段 |  
 |--------------|--------|---------------|------|-------------|------------|
-|  imageExtension   |   字符串  |   以下值之一：**PNG** 或 **JPG**。    |    否   |      |   是    |       |
+|  imageExtension   |   字符串  |   以下值之一：**PNG**或**JPG**。    |    否   |      |   是    |       |
 
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 Microsoft Store 服务开展广告市场活动](run-ad-campaigns-using-windows-store-services.md)
-* [管理广告活动](manage-ad-campaigns.md)
-* [管理广告活动的投放渠道](manage-delivery-lines-for-ad-campaigns.md)
-* [管理广告活动的目标市场配置文件](manage-targeting-profiles-for-ad-campaigns.md)
-* [获取广告活动效果数据](get-ad-campaign-performance-data.md)
+* [运行使用 Microsoft 应用商店服务广告市场活动](run-ad-campaigns-using-windows-store-services.md)
+* [管理广告市场活动](manage-ad-campaigns.md)
+* [管理 ad 市场活动传递行](manage-delivery-lines-for-ad-campaigns.md)
+* [管理 ad 市场活动的目标配置文件](manage-targeting-profiles-for-ad-campaigns.md)
+* [获取 ad 市场活动的性能数据](get-ad-campaign-performance-data.md)

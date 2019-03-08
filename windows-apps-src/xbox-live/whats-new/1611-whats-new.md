@@ -4,14 +4,14 @@ description: Xbox Live SDK 的新增功能 - 2016 年 11 月
 ms.assetid: 5cf9ba9d-5a15-4e62-bc1f-45ff8b8bf3b0
 ms.date: 04/04/2017
 ms.topic: article
-keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
+keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a9efeec63399916444de9ba33d4e587a914f2a7
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114423"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658562"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---november-2016"></a>Xbox Live SDK 的新增功能 - 2016 年 11 月
 
@@ -36,16 +36,16 @@ ms.locfileid: "9114423"
 * 大量[社交管理器](../social-platform/intro-to-social-manager.md) API 更改：
     * 社交管理器已经离开了实验命名空间。 特别感谢那些成为早期采用者并提供反馈的用户！
     * `xbox_social_user`
-        * `string_t` 对象已更改为 `char*` 对象
-        * 每个自定义状态记录有六个 `social_manager_presence_title_record` 限制 `social_manager_presence_record`
+        * `string_t` 对象已更改为`char*`对象
+        * 限制为六个自定义是否存在记录`social_manager_presence_title_record`每个 `social_manager_presence_record`
     * `social_event`
-        * 改为返回 `std::vector<xbox_user_id_container>` `std::vector<xbox_social_user>`
-        * 此矢量可以传入新 API， `xbox_social_user_group::get_users_from_xbox_user_ids()`
+        * 返回`std::vector<xbox_user_id_container>`而不是 `std::vector<xbox_social_user>`
+        * 此向量可传递到新的 API， `xbox_social_user_group::get_users_from_xbox_user_ids()`
     * `xbox_social_user_group`
-        * `users()` API 现在返回 `std::vector<xbox_social_user*>`。 这些指针在下一次调用中失效， `social_manager::do_work()`
-        * `get_copy_of_users` 以在 social_user_group 中将 `std::vector<xbox_social_user>` 作为当前用户的副本返回给呼叫方。 调用此函数可能会影响 `do_work` 的完成时间。
+        * `users()` API 现返回`std::vector<xbox_social_user*>`。 这些指针变为无效到下一次调用 `social_manager::do_work()`
+        * `get_copy_of_users` 返回`std::vector<xbox_social_user>`为 social_user_group 给调用方中的当前用户的副本。 调用此函数可能会影响 `do_work` 的完成时间。
 * “社交管理器”现在永远不会在初始化后失败。 “社交管理器”将在断开连接时自动重试 RTA。 `error` 和 `rta_disconnect_error` 事件已弃用并删除
-* 标题可以指定自定义内存分配器。 请参阅新文档：[社交管理器内存和性能](../social-platform/social-manager-memory-and-performance-overview.md)
+* 标题可以指定自定义内存分配器。 请参阅新文档：[社会管理器内存和性能](../social-platform/social-manager-memory-and-performance-overview.md)
 
 ### <a name="xbox-one-uwp"></a>Xbox One UWP
 * TCUI API 为 Xbox One UWP 应用增加了多用户支持。  XSAPI C++ 增加了用于指定用户的新 Windows::System::User^ 参数，XSAPI WinRT API 增加了 ForUserAsync API。
@@ -61,5 +61,5 @@ ms.locfileid: "9114423"
 * [Xbox Live 简介](../get-started-with-partner/get-started-with-xbox-live-partner.md)部分已经重写。  如果你要创建启用了 Xbox Live 的新游戏，或好奇如何在你的游戏中集成其他 Xbox Live 功能，你可以参阅[此处](../get-started-with-partner/get-started-with-xbox-live-partner.md)的新文档。
 
 ## <a name="tools"></a>工具
-* Xbox Live 跟踪分析器，你可以找到在[https://aka.ms/XboxLiveTools](https://aka.ms/XboxLiveTools)现在具有 CERT 模式。  
+* 在 Xbox Live 跟踪分析器处可以找到[ https://aka.ms/XboxLiveTools ](https://aka.ms/XboxLiveTools)现在具有证书模式。  
 * 同样，Xbox Live 跟踪分析器具有多主机支持。  如果你传入包含多个主机的 HTTP 请求的 Fiddler 跟踪，将为每个请求生成单独的报告。

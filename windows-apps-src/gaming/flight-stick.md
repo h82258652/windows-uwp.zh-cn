@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, 输入, 飞行杆
 ms.localizationpriority: medium
 ms.openlocfilehash: 5eceb30c62f1e803397aff71d59b560c39736cf9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927970"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609012"
 ---
 # <a name="flight-stick"></a>飞行杆
 
@@ -54,7 +54,7 @@ Xbox One 飞行杆配有以下控件：
 |               视图 | **视图**按钮                     |
 |               菜单 | **菜单**按钮                     |
 |             接受 | **主射击**按钮              |
-|             取消 | **辅助射击**按钮            |
+|             Cancel | **辅助射击**按钮            |
 
 飞行杆不会映射导航命令的任何[可选集](ui-navigation-controller.md#optional-set)。
 
@@ -116,7 +116,7 @@ Each flight stick can be associated with a user account to link their identity t
 
 ## <a name="reading-the-flight-stick"></a>读取飞行杆
 
-确定感兴趣的飞行杆之后，便可以从飞行杆收集输入了。 但是，与你可能已习惯的某些其他输入类型不同，飞行杆不会通过触发事件来表达状态更改。 相反，你需要通过对它们进行“轮询”__ 来定期读取其当前状态。
+确定感兴趣的飞行杆之后，便可以从飞行杆收集输入了。 但是，与你可能已习惯的某些其他输入类型不同，飞行杆不会通过触发事件来表达状态更改。 相反，你需要通过对它们进行“轮询”来定期读取其当前状态。
 
 ### <a name="polling-the-flight-stick"></a>轮询飞行杆
 
@@ -148,7 +148,7 @@ float pitch = reading.Pitch;
 float yaw = reading.Yaw;
 ```
 
-读取游戏杆的值时，你会注意到，当游戏杆处于中心位置静止时，它们不会稳定地生成中性读数 0.0；而是每次移动游戏杆并返回到中心位置时，才会生成不同的接近 0.0 的值。 要减小这些误差，你可以使用小“死区”__（一系列被忽略的接近理想中心位置的值）。
+读取游戏杆的值时，你会注意到，当游戏杆处于中心位置静止时，它们不会稳定地生成中性读数 0.0；而是每次移动游戏杆并返回到中心位置时，才会生成不同的接近 0.0 的值。 要减小这些误差，你可以使用小“死区”（一系列被忽略的接近理想中心位置的值）。
 
 使用死区的一种方法是，确定游戏杆被移动远离中心的距离，并忽略比你选择的某些距离更近的读数。 你可以使用勾股定理粗略计算这一距离，该值并不精确，因为游戏杆读数实际上是极值，不是平面值。 这会生成一个径向死区。
 
@@ -177,7 +177,7 @@ if ((oppositeSquared + adjacentSquared) < deadzoneSquared)
 > [!NOTE]
 > 飞行杆配备了用于 UI 导航的其他按钮，例如**视图**和**菜单**按钮。 这些按钮不是 `FlightStickButtons` 枚举的一部分，只能作为 UI 导航设备通过访问飞行杆进行读取。 有关详细信息，请参阅 [UI 导航控制器](ui-navigation-controller.md)。
 
-按钮值从 [FlightStickReading.Buttons](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.Buttons) 属性进行读取。 因为此属性是位域，所以使用按位掩码隔离你感兴趣的按钮值。 设置相应位时按钮为按下（向下）；否则，按钮为释放（向上）。
+按钮值从 [FlightStickReading.Buttons](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.Buttons) 属性进行读取。 由于此属性为位域，因此使用按位掩码隔离你感兴趣的按钮值。 设置相应位时按钮为按下（向下）；否则，按钮为释放（向上）。
 
 以下示例确定是否按下**主射击**按钮：
 
@@ -197,7 +197,7 @@ if (FlightStickButtons::None == (reading.Buttons & FlightStickButtons::FirePrima
 }
 ```
 
-有时你可能需要确定：何时将按钮从按下转换为释放或从释放转换为按下，是按下还是释放多个按钮，或者是否按特定方式安排一组按钮（按下一些按钮，释放一些按钮）。 有关如何检测这些条件的详细信息，请参阅[检测按钮转换](input-practices-for-games.md#detecting-button-transitions)和[检测复杂按钮安排](input-practices-for-games.md#detecting-complex-button-arrangements)。
+有时你可能需要确定：何时将按钮从按下转换为释放或从释放转换为按下，是按下还是释放多个按钮，或者是否按特定方式安排一组按钮（按下一些按钮，释放一些按钮）。 有关如何检测这些条件的详细信息，请参阅 [检测按钮转换](input-practices-for-games.md#detecting-button-transitions) 和 [检测复杂按钮安排](input-practices-for-games.md#detecting-complex-button-arrangements)。
 
 顶帽控制器值从 [FlightStickReading.HatSwitch](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.HatSwitch) 属性进行读取。 因为此属性也是位域，所以再次使用按位掩码隔离顶帽控制器的位置。
 
@@ -227,4 +227,4 @@ The [InputInterfacingUWP sample _(github)_](https://github.com/Microsoft/Xbox-AT
 
 * [Windows.Gaming.Input.UINavigationController 类](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller)
 * [Windows.Gaming.Input.IGameController 接口](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [游戏输入实践](input-practices-for-games.md)
+* [输入的游戏方案](input-practices-for-games.md)

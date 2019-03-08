@@ -1,5 +1,5 @@
 ---
-Description: There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files that come from your app's package, your app's data folders, or the cloud. You can also use a URI scheme to refer to strings loaded from your app's Resources Files (.resw).
+Description: 你可以使用几种 URI（统一资源标识符）方案引用来自应用包、应用的数据文件夹或云的文件。 还可以使用 URI 方案引用从应用的资源文件 (.resw) 加载的字符串。
 title: URI 方案
 template: detail.hbs
 ms.date: 10/16/2017
@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048344"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632052"
 ---
 # <a name="uri-schemes"></a>URI 方案
 
-你可以使用几种 URI（统一资源标识符）方案引用来自应用包、应用的数据文件夹或云的文件。 你还可以使用 URI 方案引用从应用的资源文件 (.resw) 加载的字符串。 你可以在代码中、在 XAML 标记中、在应用包清单中或在磁贴和 toast 通知模板中使用这些 URI 方案。
+你可以使用几种 URI（统一资源标识符）方案引用来自应用包、应用的数据文件夹或云的文件。 还可以使用 URI 方案引用从应用的资源文件 (.resw) 加载的字符串。 你可以在代码中、在 XAML 标记中、在应用包清单中或在磁贴和 toast 通知模板中使用这些 URI 方案。
 
 ## <a name="common-features-of-the-uri-schemes"></a>URI 方案的常见功能
 
@@ -251,9 +251,9 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 有关示例和详细信息，请参阅[本地化 UI 和应用包清单中的字符串](localize-strings-ui-manifest.md)和[磁贴和 toast 通知的语言、比例和高对比度支持](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)。
 
-`ms-resource` 的路径组件同通用 URI 一样区分大小写。 不过，基础检索执行此操作[CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628)与*ignoreCase*设置为`true`。
+`ms-resource` 的路径组件同通用 URI 一样区分大小写。 但却提供了基础检索[CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628)与*ignoreCase*设置为`true`。
 
-URI 的标准化形式保持大小写，并对 RFC 3986 未保留的字符进行百分比解码（“%”符号后紧跟两位十六进制表示形式）。 字符“？”、“#”、“/”、“*”和‘”’（双引号）在路径中必须为百分比编码以表示文件或文件名等数据。 所有百分比编码字符在检索前解码。 因此，若要从资源文件中检索的字符串资源名为`Hello#World.resw`，使用此 URI。
+URI 的标准化形式保持大小写，并对 RFC 3986 未保留的字符进行百分比解码（“%”符号后紧跟两位十六进制表示形式）。 字符“？”、“#”、“/”、“*”和‘”’（双引号）在路径中必须为百分比编码以表示文件或文件名等数据。 所有百分比编码字符在检索前解码。 因此，若要从资源文件中检索字符串资源名为`Hello#World.resw`，使用此 URI。
 
 ```xml
 ms-resource:///Hello%23World/String1
@@ -267,10 +267,10 @@ ms-resource:///Hello%23World/String1
 
 ## <a name="related-topics"></a>相关主题
 
-* [统一资源标识符 (URI)：通用语法](https://go.microsoft.com/fwlink/p/?LinkId=263444)
+* [统一资源标识符 (URI):常规语法](https://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [打包应用](../packaging/index.md)
-* [引用 XAML 标记和代码中的图像或其他资产](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
-* [存储和检索设置以及其他应用数据](../design/app-settings/store-and-retrieve-app-data.md)
-* [本地化 UI 和应用包清单中的字符串](localize-strings-ui-manifest.md)
+* [从 XAML 标记和代码中引用图像或其他资产](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
+* [存储和检索设置和其他应用程序数据](../design/app-settings/store-and-retrieve-app-data.md)
+* [本地化用户界面和应用包清单中的字符串](localize-strings-ui-manifest.md)
 * [资源管理系统](https://msdn.microsoft.com/library/windows/apps/jj552947)
-* [磁贴和 toast 通知的语言、比例和高对比度支持](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
+* [磁贴和 toast 通知支持的语言、 缩放性和高对比度](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

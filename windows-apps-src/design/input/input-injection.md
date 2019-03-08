@@ -1,5 +1,5 @@
 ---
-Description: Simulate and automate input from devices such as keyboard, mouse, touch, pen, and gamepad in your UWP apps.
+Description: 模拟和自动执行从键盘、 鼠标、 触控、 笔和 UWP 应用程序中的游戏板等设备的输入。
 title: 通过输入式注入模拟用户输入
 label: Input injection
 template: detail.hbs
@@ -8,17 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: de3f0b1377d4f4209dc012ff56adb2de9c68625f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933971"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602322"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>通过输入式注入模拟用户输入
 
 在 UWP 应用程序中从键盘、鼠标、触控、触控笔和游戏板等设备模拟和自动完成用户输入。
 
-> **重要 API**：[**Windows.UI.Input.Preview.Injection**](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
+> **重要的 Api**:[**Windows.UI.Input.Preview.Injection**](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
 
 ## <a name="overview"></a>概述
 
@@ -41,11 +41,11 @@ ms.locfileid: "8933971"
 
 | ![触控输入注入示例](images/injection/touch-input-injection.gif) | 
 |:--:|
-| *触控输入注入示例* |
+| *触控输入的注入示例* |
 
 在此示例中，我们演示了如何使用输入式注入 API ([Windows.UI.Input.Preview.Injection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)) 侦听应用一个区域的鼠标输入事件，并模拟其他区域中对应的触控输入事件。
 
-**从[输入式注入示例（鼠标到触控）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)下载此示例**
+**下载此示例从[输入注入示例 （触摸和鼠标）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)**
 
 1. 首先，我们设置 UI (MainPage.xaml)。
 
@@ -364,4 +364,4 @@ ms.locfileid: "8933971"
 
 ### <a name="topic-samples"></a>主题示例
 
-- [输入式注入示例（鼠标到触控）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)
+- [输入的注入示例 （触摸和鼠标）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)

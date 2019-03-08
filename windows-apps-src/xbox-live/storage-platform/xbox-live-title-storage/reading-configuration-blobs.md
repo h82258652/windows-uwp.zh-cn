@@ -4,14 +4,14 @@ description: 了解如何在 Xbox Live 标题存储中读取配置 blob。
 ms.assetid: ee62d221-69b9-4f52-9b5d-5a44d04de548
 ms.date: 04/04/2017
 ms.topic: article
-keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
+keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 71607f05f07ee4a98f73a19c28c85dc325041a10
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926402"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599392"
 ---
 # <a name="reading-a-configuration-blob-in-xbox-live-title-storage"></a>在 Xbox Live 标题存储中读取配置 blob
 
@@ -31,7 +31,7 @@ ms.locfileid: "8926402"
 -   用户必须在会话中才能更新。
 -   STSTokenString 是为简便起见使用的占位符，应该将其替换为由身份验证请求返回的令牌。
 
-#### <a name="reference"></a>引用
+#### <a name="reference"></a>参考
 
 **/global/scids/{scid}/data/{pathAndFileName},{type}**
 **GET (/global/scids/{scid}/data/{pathAndFileName},{type})**

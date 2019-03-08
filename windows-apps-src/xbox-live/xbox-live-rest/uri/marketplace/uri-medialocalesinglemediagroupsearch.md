@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b26b4c2dc51ef5591480372aa9908a49d2f8cbe2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926719"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661752"
 ---
 # <a name="mediamarketplaceidsinglemediagroupsearch"></a>/media/{marketplaceId}/singleMediaGroupSearch
-允许搜索单个媒体组中的项。 请注意，此搜索从返回的数据的页面使用可以访问非连续 skipItems 参数而不是使用延续令牌。 此 API 将接受查询精简将。
+允许单个媒体组内的项的搜索。 请注意，可以使用而不使用继续标记不按顺序 skipItems 参数访问页面的搜索返回的数据。 此 API 接受查询精简将。
  
 这些 Uri 的域是`eds.xboxlive.com`。
  
@@ -26,9 +26,9 @@ ms.locfileid: "8926719"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。| 
+| marketplaceId| 字符串| 必需。 从获取值的字符串<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>。| 
   
 <a id="ID4EYB"></a>
 
@@ -37,7 +37,7 @@ ms.locfileid: "8926719"
 
 [GET (media/{marketplaceId}/singleMediaGroupSearch)](uri-medialocalesinglemediagroupsearchget.md)
 
-&nbsp;&nbsp;允许搜索单个媒体组中的项。 
+&nbsp;&nbsp;允许单个媒体组内的项的搜索。 
  
 <a id="ID4ECC"></a>
 
@@ -49,7 +49,7 @@ ms.locfileid: "8926719"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[市场 URI](atoc-reference-marketplace.md)
+[Marketplace Uri](atoc-reference-marketplace.md)
 
   
 <a id="ID4EOC"></a>
@@ -57,11 +57,11 @@ ms.locfileid: "8926719"
  
 ##### <a name="further-information"></a>详细信息 
 
-[EDS 通用标头](../../additional/edscommonheaders.md)
+[EDS 常见标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询优化器](../../additional/edsqueryrefiners.md)
+ [EDS 查询精简将](../../additional/edsqueryrefiners.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)
 

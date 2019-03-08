@@ -6,17 +6,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天 2, 游戏聊天, 语音通信
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cb0578151d4262d61f5fbc078bebab721fb3bfe
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117547"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639162"
 ---
 # <a name="using-game-chat-2-winrt-projections"></a>使用游戏聊天 2（WinRT 投影）
 
 这是关于使用游戏聊天 2 的 C# API 的简短演练。 需要通过 C++ 访问游戏聊天 2 的游戏开发人员应查看[使用游戏聊天 2](using-game-chat-2.md)。
 
-## <a name="prerequisites-a-nameprereq"></a>系统必备 <a name="prereq">
+## <a name="prerequisites-a-nameprereq"></a>先决条件 <a name="prereq">
 
 若要使用游戏聊天 2，必须添加 [Microsoft.Xbox.Services.GameChat2 nuget 包](https://www.nuget.org/packages/Microsoft.Xbox.Game.Chat.2.WinRT.UWP/)。
 
@@ -106,14 +106,14 @@ IGameChat2ChatUser remoteUserC = myGameChat2ChatManager.AddRemoteUser(userCXuid,
 IGameChat2ChatUser remoteUserD = myGameChat2ChatManager.AddRemoteUser(userDXuid, myRemoteEndpointTwo);
 ```
 
-现在，你可以配置每个远程用户和本地用户之间的通信关系。 在本示例中，假设用户 A 和用户 B 处于同一团队中，并允许进行双向通信。 `GameChat2CommunicationRelationship.SendAndReceiveAll`  定义为表示双向通信。 使用以下示例定义用户 A 与用户 B 的关系：
+现在，你可以配置每个远程用户和本地用户之间的通信关系。 在本示例中，假设用户 A 和用户 B 处于同一团队中，并允许进行双向通信。 `GameChat2CommunicationRelationship.SendAndReceiveAll` 被定义为表示双向通信。 使用以下示例定义用户 A 与用户 B 的关系：
 
 ```cs
 GameChat2ChatUserLocal localUserA = userA as GameChat2ChatUserLocal;
 localUserA.SetCommunicationRelationship(remoteUserB, GameChat2CommunicationRelationship.SendAndReceiveAll);
 ```
 
-现在假设用户 C 和 D 是“观众”，他们能倾听用户 A，但是无法与之交谈。 `GameChat2CommunicationRelationship.ReceiveAll`  定义为单向通信。 使用以下示例设置这种通信关系：
+现在假设用户 C 和 D 是“观众”，他们能倾听用户 A，但是无法与之交谈。 `GameChat2CommunicationRelationship.ReceiveAll` 定义此单向通信。 使用以下示例设置这种通信关系：
 
 ```cs
 localUserA.SetCommunicationRelationship(remoteUserC, GameChat2CommunicationRelationship.ReceiveAll);
@@ -132,7 +132,7 @@ remoteUserD.Remove();
 
 ## <a name="processing-data-frames-a-namedata"></a>处理数据帧 <a name="data">
 
-游戏聊天 2 没有自己的传输层；这必须由应用提供。 通过应用定期频繁地调用 `GameChat2ChatManager.GetDataFrames()` 来管理此插件。 此方法是游戏聊天 2 向应用提供传出数据的方法。 它旨在加快运行速度，以便在专用网络线程上可频繁进行轮询。 这提供了可检索所有已排队数据的方便位置，而不必担心网络计时的不可预测性或多线程回调的复杂性。
+游戏聊天 2 没有自己的传输层；这必须由应用提供。 通过应用定期频繁地调用 `GameChat2ChatManager.GetDataFrames()` 来管理此插件。 此方法是游戏聊天 2 向应用提供传出数据的方法。 它旨在加快运行速度，以便在专用网络线程上可频繁进行轮询。 这提供了一个可检索所有已排队数据的方便位置，而不必担心网络计时的不可预测性或多线程回调的复杂性。
 
 当调用 `GameChat2ChatManager.GetDataFrames()` 时，在 `IGameChat2DataFrame` 对象列表中报告所有已排队数据。 应用应迭代该列表，并检查 `TargetEndpointIdentifiers`，然后使用应用的网络层将数据传送到相应的远程应用实例。 在此示例中，`HandleOutgoingDataFrame` 是函数，可根据 `TransportRequirement`，将 `Buffer` 中的数据发送到 `TargetEndpointIdentifiers` 中指定的每个“终结点”上的所有用户。
 
@@ -152,7 +152,7 @@ foreach (IGameChat2DataFrame dataFrame in frames)
 
 ## <a name="processing-state-changes-a-namestate"></a>处理状态更改 <a name="state">
 
-通过应用定期频繁调用 `GameChat2ChatManager.GetStateChanges()` 方法，游戏聊天 2 为应用提供更新，例如收到的文本消息。 它旨在加快运行速度，以便在 UI 呈现循环中对每个图形帧执行调用。 这提供了可检索所有已排队更改的方便位置，而不必担心网络计时的不可预测性或多线程回调的复杂性。
+通过应用定期频繁调用 `GameChat2ChatManager.GetStateChanges()` 方法，游戏聊天 2 为应用提供更新，例如收到的文本消息。 它旨在加快运行速度，以便在 UI 呈现循环中对每个图形帧执行调用。 这提供了一个可检索所有已排队更改的方便位置，而不必担心网络计时的不可预测性或多线程回调的复杂性。
 
 当调用 `GameChat2ChatManager.GetStateChanges()` 时，在 `IGameChat2StateChange` 对象列表中报告所有已排队更新。 应用应该：
 1. 迭代该列表
@@ -220,7 +220,7 @@ localUserA.SynthesizeTextToSpeech("Hello");
 
 ## <a name="ui-a-nameui"></a>UI<a name="UI">
 
-建议在显示玩家的任意位置中，尤其是在玩家代号列表（例如记分牌）中，还应将静音/说话图标显示为用户的反馈。 `IGameChat2ChatUser.ChatIndicator` 属性表示该玩家当前的即时聊天状态。 以下示例展示了如何检索由变量“userA”指向的 `IGameChat2ChatUser` 对象的指标值，以确定要分配给“iconToShow”变量的特定图标常量值：
+无论玩家在什么地方显示（尤其是显示在记分牌等玩家代号列表中），都建议你也为用户显示静音/说话图标作为反馈。 `IGameChat2ChatUser.ChatIndicator` 属性表示该玩家当前的即时聊天状态。 以下示例展示了如何检索由变量“userA”指向的 `IGameChat2ChatUser` 对象的指标值，以确定要分配给“iconToShow”变量的特定图标常量值：
 
 ```cs
 switch (userA.ChatIndicator)
@@ -261,7 +261,7 @@ switch (userA.ChatIndicator)
 
 除了由游戏配置的通信关系之外，游戏聊天 2 还会强制执行特权和隐私限制。 游戏聊天 2 在首次添加用户时执行特权和隐私限制查找；在这些操作完成之前，用户的 `IGameChat2ChatUser.ChatIndicator` 将始终返回 `GameChat2UserChatIndicator.Silent`。 如果与用户的通信受到了特权或隐私限制的影响，则用户的 `IGameChat2ChatUser.ChatIndicator` 将返回 `GameChat2UserChatIndicator.PlatformRestricted`。 平台通信限制将同时应用于语音和文字聊天；绝不会出现平台限制阻止文字聊天但不阻止语音聊天的情况，反之亦然。
 
-`GameChat2ChatUserLocal.GetEffectiveCommunicationRelationship()`  可用于帮助区分用户由于不完备的特权和隐私操作而无法通信的情况。 它将返回由游戏聊天 2 强制执行的通信关系（其形式为 `GameChat2CommunicationRelationship`），以及该通信关系不等于配置关系的原因（其形式为 `GameChat2CommunicationRelationshipAdjuster`）。 例如，如果查找操作仍在进行中，则 `GameChat2CommunicationRelationshipAdjuster` 将是 `GameChat2CommunicationRelationshipAdjuster.Initializing`。 此方法有望用于开发和调试场景中；不应用于影响 UI（请参阅 [UI](#UI)）。
+`GameChat2ChatUserLocal.GetEffectiveCommunicationRelationship()` 可以使用以帮助区分时用户不完整的权限和隐私操作由于不能进行通信。 它将返回由游戏聊天 2 强制执行的通信关系（其形式为 `GameChat2CommunicationRelationship`），以及该通信关系不等于配置关系的原因（其形式为 `GameChat2CommunicationRelationshipAdjuster`）。 例如，如果查找操作仍在进行中，则 `GameChat2CommunicationRelationshipAdjuster` 将是 `GameChat2CommunicationRelationshipAdjuster.Initializing`。 此方法有望用于开发和调试场景中；不应用于影响 UI（请参阅 [UI](#UI)）。
 
 ## <a name="cleanup-a-namecleanup"></a>清除 <a name="cleanup">
 

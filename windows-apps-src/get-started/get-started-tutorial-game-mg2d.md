@@ -1,17 +1,17 @@
 ---
 title: 用 MonoGame 2D 创建 UWP 游戏
-description: 简单的 UWP 游戏的 Microsoft 应用商店、 用 C# 和 MonoGame 编写
+description: 为 Microsoft Store，以编写游戏的简单 UWPC#和 MonoGame
 ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ms.openlocfilehash: dbd2c6c9f5e3cf2200f9b260687f05718178868a
-ms.sourcegitcommit: 4dd9f76bd7f0ebdb42d78eab472d33a979dce60d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "9082880"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57619152"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>用 MonoGame 2D 创建 UWP 游戏
 
@@ -26,21 +26,21 @@ MonoGame 是一款轻型游戏开发框架。 本教程介绍了用 MonoGame 进
 
 ## <a name="prerequisites"></a>必备条件
 +   Windows 10 和 Microsoft Visual Studio 2017。  [单击此处了解如何设置 Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
-+ .NET 的桌面开发框架。 如果你尚未获得此安装，你可以通过重新运行 Visual Studio 安装程序和修改你安装的 Visual Studio 2017 获取它。
++ .NET 桌面开发框架。 如果你尚未安装，你可以通过重新运行 Visual Studio 安装程序和修改 Visual Studio 2017 安装来获得。
 +   C# 或类似面向对象的编程语言的基础知识。 [单击此处以了解如何开始使用 C#](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 +   熟悉基本的计算机科学概念如类、方法以及变量，将有所帮助。
 
 ## <a name="why-monogame"></a>为什么选择 MonoGame？
-谈及游戏开发环境时，我们并不缺少选择。 从功能齐全的引擎（如 Unity）到全面、复杂的多媒体 API（如 DirectX），但这些都让人很难知道从何处入手。 MonoGame 是一组工具，其复杂度处于游戏引擎与更专业的 API（如 DirectX）之间。 它提供了易于使用的内容管道，以及用于创建在各种平台上运行的轻型游戏所需的所有功能。 最重要的是，MonoGame 应用用纯 C#，编写，并通过 Microsoft 应用商店或其他类似的分发平台，可以快速分发它们。
+谈及游戏开发环境时，我们并不缺少选择。 从功能齐全的引擎（如 Unity）到全面、复杂的多媒体 API（如 DirectX），但这些都让人很难知道从何处入手。 MonoGame 是一组工具，其复杂度处于游戏引擎与更专业的 API（如 DirectX）之间。 它提供了易于使用的内容管道，以及用于创建在各种平台上运行的轻型游戏所需的所有功能。 最重要的应用程序用纯所有，MonoGame C#，并快速通过 Microsoft Store 或其他类似分发平台分发。
 
 ## <a name="get-the-code"></a>获取代码
 如果你不想跟着教程逐步学习，只想了解 MonoGame 的实际应用，[请单击此处以获得完成后的应用](https://github.com/Microsoft/Windows-appsample-get-started-mg2d)。
 
-在 Visual Studio 2017 中，打开项目，然后按**F5**以运行样本。 首次进行此操作可能会需要一段时间，因为 Visual Studio 需要提取安装中缺少的所有 NuGet 包。
+在 Visual Studio 2017 中打开项目，并按 **F5** 以运行样本。 首次进行此操作可能会需要一段时间，因为 Visual Studio 需要提取安装中缺少的所有 NuGet 包。
 
 如果已完成此操作，则请跳至下一节“设置 MonoGame”，以查看代码的分步操作实例。
 
-**注意：** 此示例中创建的游戏并不完整（或完全没有乐趣）。 其唯一目的是为了演示用 MonoGame 2d 游戏开发的所有核心概念。 你可随意使用此代码并进行改进，或者在掌握基础知识之后从头开始。
+**注意：** 此示例中创建的游戏不应为完整 （或任何有趣的根本）。 其唯一目的是演示所有 2D 中 MonoGame 开发的核心概念。 你可随意使用此代码并进行改进，或者在掌握基础知识之后从头开始。
 
 ## <a name="set-up-monogame-project"></a>设置 MonoGame 项目
 1. 从 [MonoGame.net](https://www.monogame.net/) 中安装适用于 Visual Studio 的 **MonoGame 3.6**。
@@ -66,7 +66,7 @@ MonoGame 是一款轻型游戏开发框架。 本教程介绍了用 MonoGame 进
 
 **protected override void UnloadContent()** 此方法用于卸载非内容管理器内容。 我们不会用到此方法。
 
-**受保护的 override void Update (GameTime gameTime)** 每个游戏循环周期调用此方法一次。 我们在此更新游戏中使用的任何对象或变量的状态。 这包括对象的位置、速度或颜色等等。 这是在其中处理用户输入。 简而言之，此方法用于处理游戏逻辑的每个部分（在屏幕上绘制对象除外）。
+**受保护的重写 void Update (GameTime gameTime)** 针对游戏循环的每个周期一次调用此方法。 我们在此更新游戏中使用的任何对象或变量的状态。 这包括对象的位置、速度或颜色等等。 这是在其中处理用户输入。 简而言之，此方法用于处理游戏逻辑的每个部分（在屏幕上绘制对象除外）。
 
 **protected override void Draw(GameTime gameTime)** 这是在屏幕上使用“Update”方法提供的位置绘制对象的地方。
 
@@ -74,17 +74,17 @@ MonoGame 是一款轻型游戏开发框架。 本教程介绍了用 MonoGame 进
 你已运行新的 MonoGame 项目并看到了美丽的蓝天，让我们再添加一些地面背景。
 在 MonoGame 中，2D 艺术将以“子画面”形式添加到应用中。 子画面只是一种作为单一实体操纵的计算机图形。 可以对子画面实施移动、缩放、成形、添加动画效果和组合操作，以在 2D 空间中创建你能想象到的任何效果。
 
-### <a name="1-download-a-texture"></a>1. 下载纹理
+### <a name="1-download-a-texture"></a>1.下载纹理
 对我们来说，第一个子画面会非常乏味。 [单击此处以下载此无特色的绿色矩形](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/grass.png)。
 
-### <a name="2-add-the-texture-to-the-content-folder"></a>2. 为“Content”文件夹添加纹理
+### <a name="2-add-the-texture-to-the-content-folder"></a>2.将纹理添加到内容的文件夹
 - 打开**解决方案资源管理器**
-- 右键单击 **Content** 文件夹中的** Content.mgcb** 并选择**打开方式**。 从弹出菜单中选择 **Monogame 管道**，并选择**确定**。
+- 右键单击 **Content** 文件夹中的 **Content.mgcb** 并选择**打开方式**。 从弹出菜单中选择 **Monogame 管道**，并选择**确定**。
 - 在新窗口中，右键单击**内容**项并选择**添加 -> 现有项目**。
-- 查找并在文件浏览器中选择绿色矩形。
+- 找到并选择绿色矩形文件浏览器中。
 - 将此项命名为“grass.png”并选择**添加**。
 
-### <a name="3-add-class-variables"></a>3. 添加类变量
+### <a name="3-add-class-variables"></a>3.添加类变量
 若要将此图像加载为子画面纹理，请打开 **Game1.cs** 并添加以下类变量。
 
 ```CSharp
@@ -96,7 +96,7 @@ Texture2D grass;
 
 SKYRATIO 变量用于表示场景中的蓝天与草地比例，在本案例中为 2/3。 **screenWidth** 和 **screenHeight** 用于跟踪应用窗口的大小，而 **grass** 则是我们存储绿色矩形的地方。
 
-### <a name="4-initialize-class-variables-and-set-window-size"></a>4. 初始化类变量并设置窗口大小
+### <a name="4-initialize-class-variables-and-set-window-size"></a>4.初始化类变量并设置窗口大小
 **screenWidth** 和 **screenHeight** 变量仍需初始化，因此请将此代码添加到 **Initialize** 方法：
 
 ```CSharp
@@ -110,14 +110,14 @@ this.IsMouseVisible = false;
 
 除了获得屏幕的高度和宽度外，我们还可以将应用窗口模式设为**全屏**并隐藏鼠标。
 
-### <a name="5-load-the-texture"></a>5. 加载纹理
+### <a name="5-load-the-texture"></a>5.纹理加载到
 若要将纹理加载到草地变量中，请将以下内容添加到 **LoadContent** 方法：
 
 ```CSharp
 grass = Content.Load<Texture2D>("grass");
 ```
 
-### <a name="6-draw-the-sprite"></a>6. 绘制子画面
+### <a name="6-draw-the-sprite"></a>6.绘制 sprite
 若要绘制矩形，请将以下行添加到 **Draw** 方法：
 
 ```CSharp
@@ -156,10 +156,10 @@ screenWidth = ScaleToHighDPI((float)ApplicationView.GetForCurrentView().VisibleB
 ## <a name="build-the-spriteclass"></a>构建 SpriteClass
 在开始为子画面添加动画效果之前，我们将制作一个名为“SpriteClass”的新类，使我们能够降低子画面操纵的表层复杂性。
 
-### <a name="1-create-a-new-class"></a>1. 创建新类
+### <a name="1-create-a-new-class"></a>1.创建一个新类
 在**解决方案资源管理器**中，右键单击 **MonoGame2D（通用 Windows）** 并选择**添加 -> 类**。 将该类命名为“SpriteClass.cs”，然后选择**添加**。
 
-### <a name="2-add-class-variables"></a>2. 添加类变量
+### <a name="2-add-class-variables"></a>2.添加类变量
 将此类添加到刚创建的类中：
 
 ```CSharp
@@ -215,7 +215,7 @@ public float scale
 
 随后，我们将设置 **dX**、**dY** 和 **dA**，它们分别表示 **x**、**y** 和 **angle** 变量的每秒变化率。
 
-### <a name="3-create-a-constructor"></a>3. 创建构造函数
+### <a name="3-create-a-constructor"></a>3.创建一个构造函数
 创建 **SpriteClass** 实例时，我们通过 **Game1.cs** 为图形设备提供构造函数、纹理相对于项目文件夹的路径以及纹理相对于其原始尺寸的缩放比例。 开始游戏后，我们需要设置“Update”方法中的其他类变量。
 
 ```CSharp
@@ -232,7 +232,7 @@ public SpriteClass (GraphicsDevice graphicsDevice, string textureName, float sca
 }
 ```
 
-### <a name="4-update-and-draw"></a>4. 更新和绘制
+### <a name="4-update-and-draw"></a>4.Update 和 Draw
 我们还需将几个方法添加到 SpriteClass 声明中：
 
 ```CSharp
@@ -255,16 +255,16 @@ Game1.cs 中的 **Update** 方法调用 **Update** SpriteClass 方法，后者�
 Game1.cs 中的 **Draw** 方法调用 **Draw** 方法，后者用于在游戏窗口中绘制子画面。
 
 ## <a name="user-input-and-animation"></a>用户输入和动画
-现在，我们已经构建了 SpriteClass，接下来我们将用其创建两个新的游戏对象：第一个是玩家可通过箭头键和空格键控制的头像。 第二个是玩家必须避让的对象。
+现在，我们已经构建了 SpriteClass，接下来我们将用其创建两个新的游戏对象：第一个是玩家可通过箭头键和空格键控制的头像。 第二个是播放机必须避免的对象。
 
-### <a name="1-get-the-textures"></a>1. 获取纹理
+### <a name="1-get-the-textures"></a>1.获取纹理
 对于玩家的头像，我们将使用 Microsoft 独有的忍者神猫，它骑在它信赖的霸王龙身上。 [单击此处以下载此图像](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/ninja-cat-dino.png)。
 
 现在就来谈谈玩家需要避让的障碍物。 忍者神猫和肉食恐龙都最讨厌什么呢？ 吃蔬菜！ [单击此处以下载此图像](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/broccoli.png)。
 
 如同先前的绿色矩形一样，通过 **MonoGame 管道**将这些图像添加到 **Content.mgcb**，然后将其分别命名为“ninja-cat-dino.png”和“broccoli.png”。
 
-### <a name="2-add-class-variables"></a>2. 添加类变量
+### <a name="2-add-class-variables"></a>2.添加类变量
 将以下代码添加到 **Game1.cs** 中的类变量列表中：
 
 ```CSharp
@@ -298,7 +298,7 @@ Random random;
 
 最后，**random** 用于为花椰菜障碍物的行为添加一些随机性。
 
-### <a name="3-initialize-variables"></a>3. 初始化变量
+### <a name="3-initialize-variables"></a>3.初始化变量
 接下来，我们需要初始化这些变量。 将以下代码添加到“Initialize”方法中：
 
 ```CSharp
@@ -314,7 +314,7 @@ gravitySpeed = ScaleToHighDPI(30f);
 
 请注意，对于高分辨率设备，需要缩放最后三个变量，因为它们是用于指定像素变化率的。
 
-### <a name="4-construct-spriteclasses"></a>4. 构建 SpriteClasses
+### <a name="4-construct-spriteclasses"></a>4.构造 SpriteClasses
 我们将在 **LoadContent** 方法中构建 SpriteClass 对象。 将此代码添加到已有对象中：
 
 ```CSharp
@@ -324,8 +324,8 @@ broccoli = new SpriteClass(GraphicsDevice, "Content/broccoli.png", ScaleToHighDP
 
 花椰菜在游戏中的显示大小比我们期望的大得多，因此，我们需要将其缩小至其原始尺寸的 1/5。
 
-### <a name="5-program-obstacle-behaviour"></a>5.设置障碍物行为
-我们希望花椰菜在屏幕以外的地方繁殖，并朝玩家头像的方向生长，从而使玩家需要躲避它。 为此，请将此方法添加到**Game1.cs**类：
+### <a name="5-program-obstacle-behaviour"></a>5.程序障碍行为
+我们希望花椰菜在屏幕以外的地方繁殖，并朝玩家头像的方向生长，从而使玩家需要躲避它。 若要完成此操作，将添加到此方法**Game1.cs**类：
 
 ```CSharp
 public void SpawnBroccoli()
@@ -365,7 +365,7 @@ public void SpawnBroccoli()
 
 第三部分用于设置花椰菜子画面的移动方向。 花椰菜繁殖时，它会朝玩家头像（恐龙）的方向生长。 此外，我们还将 **dA** 值设为 7f，使得花椰菜在追逐玩家时在空中旋转。
 
-### <a name="6-program-game-starting-state"></a>6. 设置游戏开始状态
+### <a name="6-program-game-starting-state"></a>6.程序游戏的起始状态
 在处理键盘输入之前，我们需要一个方法，以便为我们创建的两个对象设置初始游戏状态。 除了在应用运行时就立即开始游戏外，我们希望用户通过按空格键来手动开始游戏。 添加以下代码，以设置动画对象的初始状态并重置得分：
 
 ```CSharp
@@ -380,7 +380,7 @@ public void StartGame()
 ```
 
 ### <a name="7-handle-keyboard-input"></a>7.处理键盘输入
-接下来，我们需要通过键盘处理用户输入的新方法。 将此方法添加到**Game1.cs**:
+接下来，我们需要添加一个新方法，以通过键盘处理用户输入。 将以下方法添加到**Game1.cs**:
 
 ```CSharp
 void KeyboardHandler()
@@ -429,13 +429,13 @@ void KeyboardHandler()
 
 如果在游戏尚未开始时按下**空格**键，则第二个将会开始游戏。
 
-如果按下**空格**键，则第三个将会通过更改其 **dY** 属性来使恐龙头像跳跃。 请注意，玩家无法跳跃，除非它们是在"地面"上 (dino.y = screenHeight * SKYRATIO)，也将无法跳跃如果空间是否被按下键而不是按下一次。 游戏开始后，这将使恐龙无法跳跃，通过按下相同的按键即可开始游戏。
+如果按下**空格**键，则第三个将会通过更改其 **dY** 属性来使恐龙头像跳跃。 请注意，播放机不能跳转，除非它们位于"地面"(dino.y = screenHeight * SKYRATIO)，并将不跳转如果空间是否被按下键而不是按下一次。 游戏开始后，这将使恐龙无法跳跃，通过按下相同的按键即可开始游戏。
 
 最后，最后一个条件从句用于检查是否按下向左或向右方向箭头，如果是，则相应地更改恐龙的 **dX** 属性。
 
 **挑战：** 你能否使上面的键盘处理方法能够处理 WASD 输入方案以及箭头键？
 
-### <a name="8-add-logic-to-the-update-method"></a>8. 为“Update”方法添加逻辑
+### <a name="8-add-logic-to-the-update-method"></a>8.将逻辑添加到更新方法
 接下来，我们需要将所有这些部分的逻辑添加到 **Game1.cs** 的 **Update** 方法中：
 
 ```CSharp
@@ -475,7 +475,7 @@ if (broccoli.y > screenHeight+100 || broccoli.y < -100 || broccoli.x > screenWid
 }
 ```
 
-### <a name="9-draw-spriteclass-objects"></a>9. 绘制 SpriteClass 对象
+### <a name="9-draw-spriteclass-objects"></a>9.绘制 SpriteClass 对象
 最后，在最后调用 **spriteBatch.Draw**后，请将以下代码添加到 **Game1.cs** 的 **Draw** 方法中：
 
 ```CSharp
@@ -483,9 +483,9 @@ broccoli.Draw(spriteBatch);
 dino.Draw(spriteBatch);
 ```
 
-在 MonoGame 中，对 **spriteBatch.Draw** 的新调用将会覆盖任何先前的调用。 这意味着，花椰菜和恐龙子画面将绘制现有的草地子画面，因此它们可以永远不会隐藏无论其位置。
+在 MonoGame 中，对 **spriteBatch.Draw** 的新调用将会覆盖任何先前的调用。 这意味着，broccoli 和 dino sprite 将绘制通过现有的草地 sprite，因此它们可以永远不会隐藏在它而不考虑其位置。
 
-现在尝试运行游戏，并通过箭头键和空格键移动恐龙。 如果已遵循以上步骤，你应该能够让你在游戏窗口内移动的头像和花椰菜应生成速度不断增长。
+现在尝试运行游戏，并通过箭头键和空格键移动恐龙。 如果按照上述步骤，您应该能够使您在游戏窗口内移动的虚拟形象和 broccoli 应生成速度不断增加。
 
 ![玩家头像和障碍物](images/monogame-tutorial-2.png)
 
@@ -494,10 +494,10 @@ dino.Draw(spriteBatch);
 
 若要修复这两个问题，我们将使用名为 **SpriteFont** 的新型 MonoGame 对象。
 
-### <a name="1-create-spritefont-description-files"></a>1. 创建 SpriteFont 描述文件
+### <a name="1-create-spritefont-description-files"></a>1.创建 SpriteFont 说明文件
 在**解决方案资源管理器**中找到 **Content** 文件夹。 在此文件夹中，右键单击 **Content.mgcb** 文件并选择**打开方式**。 从弹出菜单中，选择 **MonoGame Pipeline**，然后按**确定**。 在新窗口中，右键单击**内容**项并选择**添加 -> 新项目**。 选择 **SpriteFont Description**，将其命名为“得分”并按**确定**。 然后，通过相同的步骤添加另一个名为“GameState”的 SpriteFont 描述。
 
-### <a name="2-edit-descriptions"></a>2. 编辑描述
+### <a name="2-edit-descriptions"></a>2.编辑说明
 右键单击 **MonoGame 管道**中的 **Content** 文件夹，然后选择**打开文件位置**。 你应该会看到一个文件夹和刚刚创建的 SpriteFont 描述文件，以及已添加到“Content”文件夹的所有图像。 现在，你可以关闭并保存 MonoGame 管道窗口。 通过**文件资源管理器**，在文本编辑器（Visual Studio、NotePad++、Atom 等）中打开两个描述文件。
 
 每个描述包含多个用于描述 SpriteFont 的值。 我们将进行一些更改：
@@ -506,7 +506,7 @@ dino.Draw(spriteBatch);
 
 在 **GameState.spritefont** 中，将 **<Size>** 值从 12 改为 72，并将 **<FontName>** 值从 Arial 改为 Agency。 Agency 是 Windows 10 计算机标配随带的另一种字体，将为我们的介绍屏幕添加别样的风格。
 
-### <a name="3-load-spritefonts"></a>3. 加载 SpriteFont
+### <a name="3-load-spritefonts"></a>3.加载 SpriteFonts
 返回 Visual Studio，我们将先为介绍初始屏幕添加新的纹理。 [单击此处以下载此图像](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/start-splash.png)。
 
 如同先前一样，右键单击“内容”并选择**添加 -> 现有项**即可为项目添加纹理。 将此新项命名为“start-splash.png”。
@@ -527,7 +527,7 @@ scoreFont = Content.Load<SpriteFont>("Score");
 stateFont = Content.Load<SpriteFont>("GameState");
 ```
 
-### <a name="4-draw-the-score"></a>4. 绘制得分
+### <a name="4-draw-the-score"></a>4.绘制分数
 转到 **Game1.cs** 的 **Draw** 方法，并将以下代码添加到 **spriteBatch.End();** 前面
 
 ```CSharp
@@ -537,7 +537,7 @@ new Vector2(screenWidth - 100, 50), Color.Black);
 
 以上代码使用我们创建的子画面描述（Arial 36 号）在屏幕右上角附近绘制玩家的当前得分。
 
-### <a name="5-draw-horizontally-centered-text"></a>5. 绘制水平居中的文本
+### <a name="5-draw-horizontally-centered-text"></a>5.绘制文本水平居中
 制作游戏时，你经常需要绘制水平居中或垂直居中的文本。 若要将介绍文本水平居中，请将此代码添加到 **spriteBatch.End();** 之前的 **Draw** 方法中。
 
 ```CSharp
@@ -566,7 +566,7 @@ if (!gameStarted)
 
 首先，我们需要创建两个字符串，分别代表我们想要绘制的文本的每一条线。 接下来，我们需要使用 **SpriteFont.MeasureString(String)** 方法测量每行的打印宽度和高度。 这将为我们提供如 **Vector2** 对象一样的尺寸，其中 **X** 属性包含其宽度，**Y** 属性包含其高度。
 
-最后，我们绘制每条线。 若要将文本水平居中，我们使其位置矢量的**X**值等于**screenWidth / 2-textSize.X / 2**。
+最后，我们绘制每条线。 若要使文本水平居中，我们请**X**矢量的值的位置等于**screenWidth / 2-textSize.X / 2**。
 
 **挑战：** 你应该对以上步骤做出哪些调整才能对文本进行垂直及水平居中？
 
@@ -577,12 +577,12 @@ if (!gameStarted)
 ## <a name="collision-detection"></a>碰撞检测
 现在，我们已经让花椰菜围绕在你周围，并且花椰菜繁殖一次得分就会递增，但实际上没有办法输掉游戏。 我们需要使用一种方法来知道恐龙和花椰菜子画面是否碰撞，以宣布游戏结束。
 
-### <a name="1-get-the-textures"></a>1. 获取纹理
-我们需要的最后一个图像是一个用于"游戏通过"。 [单击此处以下载此图像](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/game-over.png)。
+### <a name="1-get-the-textures"></a>1.获取纹理
+我们需要的最后一个映像是一个用于"游戏转移"。 [单击此处以下载此图像](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/game-over.png)。
 
-就像之前绿色矩形时，者神猫和花椰菜图像，将该图像添加到**Content.mgcb**通过**MonoGame 管道**，它"游戏 over.png"命名。
+可以像以前一样绿色矩形时，ninja cat 和 broccoli 映像，将该图像添加到**Content.mgcb**通过**MonoGame 管道**，其"游戏 over.png"命名。
 
-### <a name="2-rectangular-collision"></a>2.矩形碰撞
+### <a name="2-rectangular-collision"></a>2.矩形冲突
 在游戏中检测到碰撞时，对象往往会被简化，以降低所涉及的数学知识的复杂性。 我们会将玩家头像和花椰菜障碍视作矩形，以检测两者之间是否存在碰撞。
 
 打开 **SpriteClass.cs** 并添加新的类变量：
@@ -606,9 +606,9 @@ public bool RectangleCollision(SpriteClass otherSprite)
 }
 ```
 
-此方法用于检测两个矩形对象是否发生了碰撞。 此算法通过测试，以查看是否有任何矩形的边平行之间的间距。 如果存在间隙，则没有发生碰撞；如果没有间隙，则必定发生了碰撞。
+此方法用于检测两个矩形对象是否发生了碰撞。 通过测试，以查看是否有任何矩形的边之间间隙的算法。 如果存在间隙，则没有发生碰撞；如果没有间隙，则必定发生了碰撞。
 
-### <a name="3-load-new-textures"></a>3.加载新纹理
+### <a name="3-load-new-textures"></a>3.加载新的纹理
 
 然后，打开 **Game1.cs** 并添加两个新的类变量，一个用于存储游戏结束子画面纹理，另一个布尔类变量用于跟踪游戏状态：
 
@@ -629,7 +629,7 @@ gameOver = false;
 gameOverTexture = Content.Load<Texture2D>("game-over");
 ```
 
-### <a name="4-implement-game-over-logic"></a>4.实施"游戏结束"逻辑
+### <a name="4-implement-game-over-logic"></a>4.实现游戏结束逻辑
 调用 **KeyboardHandler** 方法之后，将此代码添加到 **Update** 方法：
 
 ```CSharp
@@ -653,8 +653,8 @@ if (dino.RectangleCollision(broccoli)) gameOver = true;
 
 这将调用我们在 **SpriteClass** 中创建的 **RectangleCollision** 方法，如果返回 True，则会将游戏标记为结束。
 
-### <a name="5-add-user-input-for-resetting-the-game"></a>5.添加用于重置游戏的用户输入
-将此代码添加到**KeyboardHandler**方法，以允许用户按 Enter 时重置游戏：
+### <a name="5-add-user-input-for-resetting-the-game"></a>5.添加用于重置该游戏的用户输入
+添加到此代码**KeyboardHandler**方法，以允许用户重置该游戏，如果他们按 Enter:
 
 ```CSharp
 if (gameOver && state.IsKeyDown(Keys.Enter))
@@ -664,7 +664,7 @@ if (gameOver && state.IsKeyDown(Keys.Enter))
 }
 ```
 
-### <a name="6-draw-game-over-splash-and-text"></a>6.绘制游戏结束初始屏幕和文本
+### <a name="6-draw-game-over-splash-and-text"></a>6.初始屏幕和文本上绘制游戏
 最后，在首次调用 **spriteBatch.Draw** 后（此调用应用于绘制草地纹理），将此代码添加至“Draw”方法。
 
 ```CSharp
@@ -689,8 +689,8 @@ if (gameOver)
 
 ![游戏结束](images/monogame-tutorial-4.png)
 
-## <a name="publish-to-the-microsoft-store"></a>发布到 Microsoft 应用商店
-因为我们构建为 UWP 应用此游戏，则可以将此项目发布到 Microsoft Store。 此流程包含几个步骤。
+## <a name="publish-to-the-microsoft-store"></a>将发布到 Microsoft Store
+因为我们也为 UWP 应用此游戏，则可以将此项目发布到 Microsoft Store。 此流程包含几个步骤。
 
 你必须以 Windows 开发人员的身份[注册](https://developer.microsoft.com/en-us/store/register)。
 
@@ -698,4 +698,4 @@ if (gameOver)
 
 必须将此应用提交以进行[认证](https://docs.microsoft.com/en-us/windows/uwp/publish/the-app-certification-process)。
 
-有关详细信息，请参阅[发布你的 UWP 应用](https://developer.microsoft.com/en-us/store/publish-apps)。
+有关更多详细信息，请参阅[UWP 应用程序发布](https://developer.microsoft.com/en-us/store/publish-apps)。

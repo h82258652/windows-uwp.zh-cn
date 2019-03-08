@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 63660883f327547a82eac4a3accec475995a651a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919223"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593582"
 ---
 # <a name="view-transform"></a>视图转换
 
@@ -32,7 +32,7 @@ ms.locfileid: "8919223"
 ## <a name="span-idsettingupaviewmatrixspanspan-idsettingupaviewmatrixspanspan-idsettingupaviewmatrixspansetting-up-a-view-matrix"></a><span id="Setting_Up_a_View_Matrix"></span><span id="setting_up_a_view_matrix"></span><span id="SETTING_UP_A_VIEW_MATRIX"></span>设置视图矩阵
 
 
-Direct3D 使用世界矩阵和视图矩阵来配置多个内部数据结构。 每次设置新的世界矩阵或视图矩阵时，系统都将重新计算关联的内部结构。 从计算方面来看，频繁设置这些矩阵需要耗费大量时间。 你可以通过将世界矩阵和视图矩阵连接到设为世界矩阵的世界-视图矩阵，并将视图矩阵设置为标识来最大程度地减少所需的计算次数。 保留可修改和连接的单个世界矩阵和视图矩阵的缓存副本，并根据需要重置世界矩阵。
+Direct3D 使用世界矩阵和视图矩阵来配置多个内部数据结构。 每当你设置新的世界矩阵或视图矩阵时，系统将重新计算关联的内部结构。 从计算方面来看，频繁设置这些矩阵需要耗费大量时间。 你可以通过将世界矩阵和视图矩阵连接到设为世界矩阵的世界-视图矩阵，并将视图矩阵设置为标识来最大程度地减少所需的计算次数。 保留可修改和连接的单个世界矩阵和视图矩阵的缓存副本，并根据需要重置世界矩阵。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 

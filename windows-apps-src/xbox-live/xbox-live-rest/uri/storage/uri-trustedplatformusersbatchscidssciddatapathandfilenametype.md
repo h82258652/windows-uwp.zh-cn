@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 716632e355fd37512f6777f1b877f11280c689eb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923178"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661662"
 ---
 # <a name="trustedplatformusersbatchscidssciddatapathandfilenametype"></a>/trustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}
-将多个文件下载从多个用户具有相同的文件名。 这些 Uri 的域是`titlestorage.xboxlive.com`。
+下载多个文件从多个用户具有相同的文件名。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -24,11 +24,11 @@ ms.locfileid: "8923178"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| scid| guid| 若要查找的服务配置 ID。| 
-| pathAndFileName| 字符串| 要访问的项的路径和文件名。 有效的字符 （至当前阶段并包括最终正斜杠） 的路径部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9) 下划线 (_)，并且反斜杠 （/）。路径部分可能为空。有效的字符的文件名称部分 （最终正斜杠后面的所有内容） 包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
-| type| 字符串| 数据的格式。 可能的值为二进制文件或 json。| 
+| scid| GUID| 要查找服务配置的 ID。| 
+| pathAndFileName| 字符串| 要访问的项的路径和文件名称。 有效的字符 （直至并包括最后的正斜杠） 的路径部分包括大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_)，和正斜杠 （/）。路径部分可能为空。有效的字符 （最后一个正斜杠之后的所有内容） 的文件部分包括大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_)、 句点 （.） 和连字符 （-）。 文件名称不为空、 以句点结尾或包含两个连续句点。| 
+| type| 字符串| 数据的格式。 可能的值为二进制或 json。| 
   
 <a id="ID4EFC"></a>
 
@@ -37,7 +37,7 @@ ms.locfileid: "8923178"
 
 [POST](uri-trustedplatformusersbatchscidssciddatapathandfilenametype-post.md)
 
-&nbsp;&nbsp;将多个文件下载从多个用户具有相同的文件名。
+&nbsp;&nbsp;下载多个文件从多个用户具有相同的文件名。
  
 <a id="ID4EPC"></a>
 
@@ -49,6 +49,6 @@ ms.locfileid: "8923178"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[标题存储 URI](atoc-reference-storagev2.md)
+[标题存储 Uri](atoc-reference-storagev2.md)
 
    

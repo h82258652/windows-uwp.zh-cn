@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏管理器, 协议激活
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b5dead742e18bbf5f3e9c271109352ae48e8fef
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926942"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655832"
 ---
 # <a name="handle-protocol-activation"></a>处理协议激活
 
@@ -24,7 +24,7 @@ ms.locfileid: "8926942"
 
 此场景涵盖了如何在发布游戏和加入大厅以及游戏（如果存在）时处理协议激活。
 
-你可以在此处查看过程流程图：[流程图 - 处理协议激活玩家](mpm-flowcharts/mpm-on-protocol-activation.md)。
+您所见的过程流程图：[流程图-句柄协议激活播放机](mpm-flowcharts/mpm-on-protocol-activation.md)。
 
 | 方法 | 触发的事件 |
 | -----|----------------|
@@ -55,7 +55,7 @@ mpInstance->lobby_session()->set_local_member_connection_address(
 
 通过 `join_lobby_completed` 事件处理错误/成功
 
-**多人游戏管理器执行的功能**
+**由多人管理器中执行的函数**
 
 * 注册 RTA 和多人游戏订阅
 * 加入大厅会话

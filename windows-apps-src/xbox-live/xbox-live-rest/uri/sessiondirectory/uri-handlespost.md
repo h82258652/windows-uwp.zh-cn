@@ -8,17 +8,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ed3482b8e629749d294ed25944db16372cc7fee6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943615"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594742"
 ---
 # <a name="post-handles"></a>POST (/handles)
-设置用户的当前活动的多人游戏会话，并邀请会话成员，如果需要。
+设置用户的当前活动的多玩家会话，并根据需要会话成员。
 
 > [!IMPORTANT]
-> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
+> 此方法由 2015年之多人游戏，并且仅适用于该多玩家版本和更高版本。 它旨在用于具有模板协定 104/105 或更高版本，并需要标头元素的 X Xbl 协定版本：104/105 或更高版本上的每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4EHB)
@@ -31,9 +31,9 @@ ms.locfileid: "8943615"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法可用于设置的当前活动会话。 在此情况下，该方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SetActivityAsync**换行。 请求正文必须定义在 JSON 文件中，为"活动"类型字段使用**sessionRef**对象的会话引用。 检索没有响应正文。 会话引用中指定的项目的定义，请参阅**Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference**。
+此 HTTP/REST 方法可以用于设置当前活动会话。 在这种情况下，该方法可以被包装**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SetActivityAsync**。 请求正文必须定义会话使用的引用**sessionRef**在 JSON 文件中，使用"活动"的类型字段的对象。 不检索任何响应正文。 中的会话引用指定的项的定义，请参阅**Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference**。
 
-此外可以使用此 POST 方法邀请用户指定的会话句柄。 在此情况下，该方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SendInvitesAsync**换行。 此，请使用的 POST 方法需要你请求正文定义的会话引用，但它具有类型字段设置为"邀请"。 响应正文是邀请句柄。
+此 POST 方法还可以用于邀请到会话句柄所指定的用户。 在这种情况下，该方法可以被包装**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SendInvitesAsync**。 POST 方法的这种用法需要请求正文来定义的会话引用，但与类型字段设置为"邀请"。 响应正文是邀请句柄。
 
 <a id="ID4EHB"></a>
 
@@ -46,7 +46,7 @@ ms.locfileid: "8943615"
 
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
-该服务返回 HTTP 状态代码，因为它适用于 MPSD。  
+同样适用于 MPSD，服务将返回 HTTP 状态代码。  
 <a id="ID4EVB"></a>
 
 
@@ -55,7 +55,7 @@ ms.locfileid: "8943615"
 <a id="ID4E1B"></a>
 
 
-### <a name="request-body-for-setting-activity"></a>请求正文用于设置活动
+### <a name="request-body-for-setting-activity"></a>请求正文来设置活动
 
 
 ```cpp
@@ -76,7 +76,7 @@ ms.locfileid: "8943615"
 <a id="ID4EBC"></a>
 
 
-### <a name="request-body-for-sending-invites"></a>请求正文用于发送邀请
+### <a name="request-body-for-sending-invites"></a>请求正文发送邀请
 
 
 ```cpp
@@ -115,7 +115,7 @@ ms.locfileid: "8943615"
 <a id="ID4ESC"></a>
 
 
-### <a name="response-body-for-sending-invites"></a>响应正文用于发送邀请
+### <a name="response-body-for-sending-invites"></a>发送邀请的响应正文
 邀请句柄。   
 <a id="ID4EXC"></a>
 

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 35a591d805870df97ee03169b20e664316e094a7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925042"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57652372"
 ---
 # <a name="address-space-available-for-streaming-resources"></a>可用于流式资源的地址空间
 
@@ -30,7 +30,7 @@ ms.locfileid: "8925042"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[流式资源创建参数](streaming-resource-creation-parameters.md)
+[流式处理资源的创建参数](streaming-resource-creation-parameters.md)
 
  
 

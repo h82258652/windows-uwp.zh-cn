@@ -8,30 +8,30 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 38e345fc20e92cdf6446c6ae1100e347fe634eff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936792"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646202"
 ---
 # <a name="hopperstatsresults-json"></a>HopperStatsResults (JSON)
-表示漏斗的统计信息的 JSON 对象。 
+表示 hopper 的统计信息的 JSON 对象。 
 <a id="ID4EN"></a>
 
   
  
 HopperStatsResults JSON 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| hopperName| 字符串| 所选的漏斗的名称。| 
-| waitTime| 32 位有符号整数| 匹配漏斗 （不可或缺秒数） 时间的平均。 | 
-| 填充| 32 位有符号整数| 等待匹配漏斗中的用户数。| 
+| hopperName| 字符串| 所选 hopper 的名称。| 
+| waitTime| 32 位有符号的整数| 平均匹配 hopper （整数秒数） 的时间。 | 
+| 填充| 32 位有符号的整数| 等待 hopper 中的匹配项的人员数。| 
   
 <a id="ID4EW"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例 
+## <a name="sample-json-syntax"></a>示例 JSON 语法 
  
 
 ```json
@@ -55,7 +55,7 @@ HopperStatsResults JSON 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EUB"></a>

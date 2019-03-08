@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
 ms.localizationpriority: medium
 ms.openlocfilehash: d05528ecf4408a7e7483b909b75722037c6528b7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937442"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645692"
 ---
 # <a name="xbox-live-sandbox-api-reference"></a>Xbox Live 沙盒 API 参考   
 你可以使用此 REST API 获取和设置 Xbox Live 沙盒。
@@ -45,7 +45,7 @@ Sandbox -（字符串）设备当前所在的沙盒。
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 说明
+HTTP 状态代码      | 描述
 :------     | :-----
 200 | 已授予访问文件共享凭据的请求。
 4XX | 错误代码
@@ -81,14 +81,14 @@ Sandbox -（字符串）设备当前所在的沙盒。
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 说明
+HTTP 状态代码      | 描述
 :------     | :-----
 200 | 已授予访问文件共享凭据的请求。
 4XX | 错误代码
 5XX | 错误代码
 
 <br />
-**可用设备系列**
+**可用的设备系列**
 
 * Windows Xbox
 

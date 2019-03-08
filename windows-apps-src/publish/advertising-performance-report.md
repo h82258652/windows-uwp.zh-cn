@@ -1,24 +1,24 @@
 ---
-Description: To view performance data for the ad units in your apps, use the advertising performance report in Partner Center.
-title: 广告效果报告
+Description: 若要查看性能数据的应用程序中的 ad 单位，请在合作伙伴中心使用广告性能报告。
+title: 广告性能报告
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a96f6f6593a8ccc6714f67b6f825a6416750b432
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944124"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640272"
 ---
-# <a name="advertising-performance-report"></a>广告效果报告
+# <a name="advertising-performance-report"></a>广告性能报告
 
 
-[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**广告性能报告**显示了如何执行你的[广告单元](in-app-ads.md)，包括社区广告。 此报告包含来自使用[广告中介](in-app-ads.md#mediation)的 UWP 应用中的多个广告提供商的数据。
+**广告性能报告**中[合作伙伴中心](https://partner.microsoft.com/dashboard)演示了如何在[广告单元](in-app-ads.md)正在执行，包括社区广告。 此报告包含来自使用[广告中介](in-app-ads.md#mediation)的 UWP 应用中的多个广告提供商的数据。
 
-若要查看此报告，请展开左侧导航菜单中的**分析**，然后选择**广告效果**。 你可以在合作伙伴中心中查看此数据或下载的报告数据以供脱机查看通过单击该页面上的箭头图标。 或者，你也可以使用我们的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[获取广告效果数据](../monetize/get-ad-performance-data.md)方法以编程方式检索此数据。
+若要查看此报告，请展开左侧导航菜单中的**分析**，然后选择**广告效果**。 可以在合作伙伴中心，查看此数据，或下载报告数据用于脱机查看通过单击页面上的箭头图标。 或者，你也可以使用我们的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[获取广告效果数据](../monetize/get-ad-performance-data.md)方法以编程方式检索此数据。
 
 查看广告效果报告时，请注意最近三天的报告数据可能会发生更改，因为我们会收到并处理来自各种来源的新数据。 此外，数据重述可能发生在过去最多 90 天内。
 
@@ -28,9 +28,9 @@ ms.locfileid: "8944124"
 
 还可以展开**筛选器**，以按照广告单元、应用、广告提供商和设备类型筛选该页面上的所有数据。 你可以从下列选项中进行选择：
 
-* **聚合**：选择聚合此报告数据以及进一步进行筛选的方式。 默认情况下，此筛选器设置为**所有广告单元**。 你可以选择将此筛选器更改为**所有应用**或**所有广告提供商**，也可以选择按在其中使用广告的特定应用来聚合数据。
-* **广告提供商**：按特定[广告提供商](in-app-ads.md#paid-networks)的效果数据筛选报告。 默认情况下，此报告显示来自所有广告提供商的数据。 如果你选择**聚合**下拉列表中的**所有广告提供商**，则会禁用此选项。
-* **设备**：按特定设备类型的效果数据筛选报告。 默认情况下，此报告显示所有设备类型的数据。
+* **聚合**:选择报表数据的聚合方式以及如何则可能会被筛选掉进一步。 默认情况下，此筛选器设置为**所有广告单元**。 你可以选择将此筛选器更改为**所有应用**或**所有广告提供商**，也可以选择按在其中使用广告的特定应用来聚合数据。
+* **Ad 提供程序**:对于某些筛选性能数据报告[ad 提供程序](in-app-ads.md#paid-networks)。 默认情况下，此报告显示来自所有广告提供商的数据。 如果你选择**聚合**下拉列表中的**所有广告提供商**，则会禁用此选项。
+* **设备**:将报表筛选到特定设备类型的性能数据。 默认情况下，此报告显示所有设备类型的数据。
 
 ## <a name="overall-performance"></a>总体效果
 
@@ -53,20 +53,20 @@ ms.locfileid: "8944124"
 |----------|---------------|
 | 预计收入  |  从应用上运行的广告中获得的预计金额。 |
 | eCPM  |  每千次印象有效成本。 |
-| 请求数  | 你的应用发送某条广告请求的次数。  |
+| 请求  | 你的应用发送某条广告请求的次数。  |
 | 曝光数  | 应用中显示广告的次数。  |
 | 填充率  | 从显示广告的应用发送广告请求的百分比。  |
 | 点击量  |  客户单击应用中的广告的次数。 |
 | CTR  |  点击率，是指单击广告的次数与曝光数之比。 |
-| 可见性 | 在应用中查看广告曝光的百分比。 有关如何计算此值的更多详细信息，请参阅[优化广告单元的可见性](../monetize/optimize-ad-unit-viewability.md)。 |
+| 在工作场所内 | 可查看应用程序中的广告的百分比。 有关如何计算此值的更多详细信息，请参阅[优化的广告单元可视性](../monetize/optimize-ad-unit-viewability.md)。 |
 | 获取的积分数  | 如果正在开展[社区广告](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)活动，那么这表示你通过在应用中展示社区广告提升广告空间而获得的积分数。  |
 | 花费的积分数  | 如果正在开展[社区广告](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)活动，那么这表示你已为自己的应用广告花费的积分数。  |
 
 ## <a name="related-topics"></a>相关主题
 
 * [应用内广告](in-app-ads.md)
-* [使用 Microsoft 广告 SDK 在你的应用中显示广告](../monetize/display-ads-in-your-app.md)
-* [优化广告单元的可见性](../monetize/optimize-ad-unit-viewability.md)
+* [使用 Microsoft Advertising SDK 在应用程序显示广告](../monetize/display-ads-in-your-app.md)
+* [优化广告单元的可视性](../monetize/optimize-ad-unit-viewability.md)
 
 
  

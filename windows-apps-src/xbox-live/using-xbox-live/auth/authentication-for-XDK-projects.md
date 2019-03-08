@@ -4,14 +4,14 @@ description: 了解如何在 Xbox 开发工具包 (XDK) 游戏中登录 Xbox Liv
 ms.assetid: 713bb2e3-80c5-4ac9-8697-257525f243d3
 ms.date: 04/04/2017
 ms.topic: article
-keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
+keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 597b3becfa2083955d8bd4e0adc91e4ae9b827a1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924637"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613492"
 ---
 # <a name="authentication-for-xdk-projects"></a>XDK 项目的身份验证
 

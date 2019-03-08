@@ -7,33 +7,33 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, Unity
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c4ca9d58f89e215563adcc7985b978641efdf07
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921353"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594082"
 ---
 # <a name="add-xbox-live-support-to-unity-for-uwp-with-net-scripting-backend-for-idxbox-and-managed-partners"></a>针对 ID@Xbox 和托管的合作伙伴，为适用于 UWP 带有 .NET 脚本后端的 Unity 添加 Xbox Live 支持
 
-**1) 安装 Unity**
+**1） 安装 Unity**
 
 安装 Unity 5.3 或更高版本，在安装过程中勾选“Windows 应用商店 .NET 脚本后端”组件。
 
 ![](../images/unity/unity1-install.png)
 
-**2) 打开新的或现有的 Unity 项目**
+**2） 打开新的或现有的 Unity 项目**
 
 它可以是 3D 或 2D 项目。 两种类型都适用于 Xbox Live SDK。
 
-**3) 导入最新版本的 Xbox Live WinRT Unity 资源包，位置在 https://github.com/Microsoft/xbox-live-api/releases**
+**3） 导入此可以找到在 Xbox Live WinRT Unity 资产包的最新版本 https://github.com/Microsoft/xbox-live-api/releases**
 
-**4) 将新的 C\# 脚本添加并附加到 Unity 对象。**
+**4） 将添加并附加新的 C\#对 Unity 对象的脚本。**
 
-例如，单击“主相机”等 Unity 对象，然后依次单击“添加组件”\|“新建脚本”\| C\# Script \|，然后将其命名为“XboxLiveScript”。 可对任何游戏对象执行此操作。
+例如，单击一个 Unity 对象，如"Main Camera"，然后单击"添加组件" \| "新脚本" \| C\#脚本\|并将其命名为"XboxLiveScript"。 可对任何游戏对象执行此操作。
 
-**5) 在 Unity 中生成项目。**
+**5） 生成在 Unity 项目。**
 
-1.  转到“文件”\|“生成设置”，单击 Windows 应用商店，并确保你单击了“切换平台”
+1.  转到文件\|生成设置，单击 Windows 应用商店，并确保单击"切换平台"
 
 2.  单击“添加打开的场景”将当前场景添加到版本中
 
@@ -41,14 +41,14 @@ ms.locfileid: "8921353"
 
 4.  在 UWP 构建类型组合框中，选择“D3D”。如果你愿意，也可以选择“XAML”。
 
-5.  单击“Unity C\# 项目”复选框，以生成 Assembly-Csharp.dll 项目
+5.  单击"Unity C\#项目"复选框可生成程序集 Csharp.dll 项目
 
 6.  单击 Unity 的“生成”，生成 UWP Visual Studio 项目，该项目将你的 Unity 游戏包装在 UWP 应用程序中。 当提示你选择位置时，新建一个文件夹，以避免混淆，因为将创建大量新文件。 建议将该文件夹命名为“Build”，然后选择该文件夹
 
 ![](../images/unity/unity3-buildsettings.png)
 
 
-**6) 在 Visual Studio 中打开生成的 UWP 项目**
+**6） 在 Visual Studio 中打开生成的 UWP 项目**
 
 Unity 将打开资源管理器中的输出项目文件夹。  忽略此处的 .sln 文件。  而是导航到“Build”文件夹，然后在 Visual Studio 中打开生成的 .sln。  
 
@@ -61,11 +61,11 @@ Unity 将打开资源管理器中的输出项目文件夹。  忽略此处的 .s
 3.  基于项目名称的 UWP 应用。 这是托管 Unity 引擎的传统 UWP 应用。 你将在此处设置一些类似于传统 UWP 应用的 Xbox Live 配置。
 
 
-**7) 将 Xbox Live 配置添加到 UWP 应用中**
+**7） 将 Xbox Live 配置添加到 UWP 应用**
 
 按照名为[将 Xbox Live 添加到新的或现有的 UWP 项目](get-started-with-visual-studio-and-uwp.md)的文档中的指示操作
 
-**8) 将 Xbox Live 代码添加到脚本中**
+**8） 将 Xbox Live 代码添加到您的脚本**
 
 将此 Xbox Live 代码示例复制/粘贴到已附加到游戏对象的脚本中。 此脚本将显示在“Assembly-CSharp”项目中。 你可以根据需要更改代码。
 
@@ -116,17 +116,16 @@ public class XboxLiveScript : MonoBehaviour
 #endif
 ```
 
-**9) 在 Visual Studio 中编译并运行 UWP 应用**
+**9） 编译并从 Visual Studio 运行 UWP 应用**
 
 这将启动类似正常的 UWP 应用的应用，并允许进行 Xbox Live 调用，因为它们需要 UWP 应用容器才能正常工作。
 
-**10) 如果对 Unity 中的任何内容进行更改，请重新生成**
-  
+**10） 重新生成如果对在 Unity 中进行更改**  
 如果你在 Unity 中更改任何内容，则必须重新生成 UWP 项目。
 
 请注意，当重新编译时，Unity 将替换你的 pfx 文件，这将导致 Xbox Live 登录失败，因此，你必须在 Unity 项目中更新它以避免此问题。
 
-若要执行此操作，请转到“文件”\|“生成设置”，单击 Windows 应用商店播放器上的“生成设置”，然后单击 PFX 按钮以将 PFX 文件替换为上述文件。 你也可以在每次从 Unity 中重新生成项目时删除 PFX 文件。
+若要执行此操作，请转到文件\|生成设置，Windows 应用商店播放器上单击"生成设置"，然后单击 PFX 按钮以 PFX 文件替换为上面获取的一个。 你也可以在每次从 Unity 中重新生成项目时删除 PFX 文件。
 
 ## <a name="troubleshooting-common-issues"></a>常见问题疑难解答
 
@@ -154,8 +153,8 @@ public class XboxLiveScript : MonoBehaviour
 
 a) 计算机已设置为开发人员沙盒。  使用 Xbox Live SDK 中 \Tools 文件夹下的 SwitchSandbox.cmd 脚本来执行此操作。
 
-b) 你当前用于登录的 Xbox Live 帐户登录有权限访问开发人员沙盒。  常规的零售版 Xbox Live 帐户没有访问权限。  你可以使用 XDP 或合作伙伴中心创建测试帐户。
+b) 你当前用于登录的 Xbox Live 帐户登录有权限访问开发人员沙盒。  常规的零售版 Xbox Live 帐户没有访问权限。  可以使用 XDP 或合作伙伴中心创建的测试帐户。
 
-c) UWP 应用中的 package.appxmanfiest 已设为正确的标识。  你可以手动编辑它，但最简单的方法是在 Visual Studio 中右键单击项目，然后选择“应用商店”\|“将应用程序与应用商店关联”。
+c) UWP 应用中的 package.appxmanfiest 已设为正确的标识。  可以手动编辑此字段，但若要解决此问题的最简单方法是右键单击 Visual Studio 中的项目，然后选择"存储" \| "关联应用程序与应用商店关联"。
 
-d) Unity 提供的 stock .pfx 文件没有正确的标识，可从磁盘中删除它，并在 .csproj 中删除引用它的行，或者在 Visual Studio 中右键单击项目，然后依次选择“应用商店”\|“将应用程序与应用商店关联”，该操作将放置正确的 .pfx 文件。  然后，请务必返回到 Unity，单击 Windows 应用商店播放器上的“生成设置”，然后单击 PFX 按钮，以将 .pfx 文件替换为通过 Visual Studio 的“将应用程序与应用商店关联”操作获得的文件。
+通过 Unity 提供 d） 该股票的.pfx 文件不会具有正确的标识，以便可以从磁盘中删除它，并删除在引用它，.csproj 或右侧单击 Visual Studio 中的项目，然后选择"存储" \| "关联应用程序与应用商店关联"这会将放在下一个适当的.pfx 文件。  然后，请务必返回到 Unity，单击 Windows 应用商店播放器上的“生成设置”，然后单击 PFX 按钮，以将 .pfx 文件替换为通过 Visual Studio 的“将应用程序与应用商店关联”操作获得的文件。

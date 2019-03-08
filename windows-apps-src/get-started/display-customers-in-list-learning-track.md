@@ -7,11 +7,11 @@ keywords: 入门, uwp, windows 10, 了解轨迹, 数据绑定, 列表
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: bd4a1f6747ea68623039b7eac22ac08aaa15d9ea
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947739"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651372"
 ---
 # <a name="display-customers-in-a-list"></a>以列表形式显示客户
 
@@ -32,8 +32,8 @@ ms.locfileid: "8947739"
 
 若要实现数据绑定，你需要将代码添加到向绑定提供数据的源。 你还需要将两个标记扩展中的一个添加到你的 XAML 以指定数据源属性。 以下是两者之间的主要区别：
 
-* [**x:Bind**](../xaml-platform/x-bind-markup-extension.md) 为强类型，在编译时生成代码以达到更好的性能。 x:Bind 默认为一次性绑定，其针对不改变的只读数据的快速显示进行了优化。
-* [**Binding**](../xaml-platform/binding-markup-extension.md) 为弱类型，在运行时组合。 这将使性能比使用 x:Bind 时更差。 在几乎所有情况下，都应使用 x:Bind 而不是 Binding。 不过，你可能会在较旧的代码中遇到后者。 Binding 默认为单向数据传输，其针对可能在源改变的只读数据进行了优化。
+* [**x： 绑定**](../xaml-platform/x-bind-markup-extension.md)强类型，并在更好的性能的编译时生成代码。 x:Bind 默认为一次性绑定，其针对不改变的只读数据的快速显示进行了优化。
+* [**绑定**](../xaml-platform/binding-markup-extension.md)是弱类型化并在运行时组合。 这将使性能比使用 x:Bind 时更差。 在几乎所有情况下，都应使用 x:Bind 而不是 Binding。 不过，你可能会在较旧的代码中遇到后者。 Binding 默认为单向数据传输，其针对可能在源改变的只读数据进行了优化。
 
 建议你尽可能使用 **x:Bind**，我们将在本文的代码段中介绍它。 有关具体区别的详细信息，请参阅 [{x:Bind} 和 {Binding} 功能比较](../data-binding/data-binding-in-depth.md#xbind-and-binding-feature-comparison)。
 
@@ -104,9 +104,9 @@ public sealed partial class MainPage : Page
 
 你已经以列表形式显示了客户，而数据 B=binding 可以让你做得更多。 如果可以直接从 UI 编辑你的数据会怎样？ 若要执行此操作，我们首先来讨论一下三种数据绑定模式：
 
-* *一次性*：此数据绑定只激活一次，并且不会对更改作出响应。
-* *单向*：此数据绑定将使用对数据源所做的所有更改更新 UI。
-* *双向*：此数据绑定将使用对数据源所做的所有更改更新 UI，并使用在 UI 内进行的所有更改更新数据。
+* *一次性*:此数据绑定，才会激活一次，并不会对更改做出响应。
+* *单向*:此数据绑定将使用与数据源所做的任何更改来更新 UI。
+* *双向*:此数据绑定将使用与数据源所做的任何更改更新 UI，并还与任何用户界面内所做的更改更新的数据。
 
 如果你已遵循之前的代码段，你所做的绑定将使用 x:Bind 且不指定模式，这使其成为一次性绑定。 如果你想要直接从 UI 编辑客户，则需要将其更改为双向绑定，以便对数据的更改传递回客户对象。 [深入了解数据绑定](../data-binding/data-binding-in-depth.md)提供了详细信息。
 
@@ -167,7 +167,7 @@ public class Customer : INotifyPropertyChanged
 |------|---------------|
 | [数据模板](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) | 描述数据对象的可视结构，以允许在 UI 中显示特定元素。 |
 | [x:Bind](../xaml-platform/x-bind-markup-extension.md) | 有关推荐的 x:Bind 标记扩展的文档。 |
-| [绑定](../xaml-platform/binding-markup-extension.md) | 有关以前的 Binding 标记扩展的文档。 |
+| [Binding](../xaml-platform/binding-markup-extension.md) | 有关以前的 Binding 标记扩展的文档。 |
 | [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) | 显示垂直堆栈中的数据项的 UI 控件。 |
 | [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | 在 UI 中显示可编辑文本数据的基本文本控件。 |
 | [INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged(d=robot).aspx) | 让数据可供观察、将数据提供给数据绑定的接口。 |
@@ -177,7 +177,7 @@ public class Customer : INotifyPropertyChanged
 
 | 主题 | 描述 |
 |-------|----------------|
-| [深入了解数据绑定](../data-binding/data-binding-in-depth.md) | 数据绑定原则的基本概述 |
+| [深度中的数据绑定](../data-binding/data-binding-in-depth.md) | 数据绑定原则的基本概述 |
 | [数据绑定概述](../data-binding/data-binding-quickstart.md) | 有关数据绑定的详细概念信息。 |
 | [列表视图](../design/controls-and-patterns/listview-and-gridview.md) | 有关创建和配置 ListView 的信息（包括 **DataTemplate** 的实现） |
 

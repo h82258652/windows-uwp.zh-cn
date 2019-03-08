@@ -1,5 +1,5 @@
 ---
-Description: Learn how to enable peer-to-peer navigation between two basic pages in an Universal Windows Platform (UWP) app.
+Description: 了解如何启用对等通用 Windows 平台 (UWP) 应用程序中的两个基本页之间导航。
 title: 两个页面之间的对等导航
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
@@ -14,39 +14,39 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: e72dc726143d17f605283fa801f8e286c2c58878
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943050"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616202"
 ---
 # <a name="implement-navigation-between-two-pages"></a>实现两个页面之间的导航
 
 了解如何使用框架和页面在你的应用中启用基本对等导航。 
 
-> **重要 API**：[**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 类、[**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 类、[**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300) 命名空间
+> **重要的 Api**:[**Windows.UI.Xaml.Controls.Frame** ](https://msdn.microsoft.com/library/windows/apps/br242682)类， [ **Windows.UI.Xaml.Controls.Page** ](https://msdn.microsoft.com/library/windows/apps/br227503)类[ **Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300)命名空间
 
 ![对等导航](images/peertopeer.png)
 
-## <a name="1-create-a-blank-app"></a>1. 创建空白应用
+## <a name="1-create-a-blank-app"></a>1.创建空白应用程序
 
 1.  在 Microsoft Visual Studio 菜单上，依次选择**文件** > **新建项目**。
 2.  在**新建项目**对话框的左侧窗格中，依次选择**Visual C#** > **Windows** > **通用**节点或 **Visual C++** > **Windows** > **通用**节点。
-3.  在中心窗格中，选择**空白应用**。
-4.  在**名称**框中，输入 **NavApp1**，然后选择**确定**按钮。
+3.  在中心窗格中，选择“空白应用”。
+4.  在“名称”框中，输入 **NavApp1**，然后选择“确定”按钮。
     解决方案已创建，并且项目文件显示在**解决方案资源管理器**中。
-5.  若要运行程序，请从菜单中依次选择**调试** > **开始调试**，或按 F5。
-    将显示一个空白页。
+5.  若要运行程序，请从菜单中依次选择“调试” > “启动调试”，或按 F5。
+    将显示一个空白页面。
 6.  要停止调试并返回到 Visual Studio，退出该应用，或从菜单中单击**停止调试**。
 
-## <a name="2-add-basic-pages"></a>2. 添加基本页面
+## <a name="2-add-basic-pages"></a>2.添加基本页面
 
 接下来，将两个页面添加到项目。
 
-1.  在**解决方案资源管理器**中，右键单击**空白应用**项目节点打开快捷菜单。
-2.  从快捷菜单中依次选择**添加** > **新建项**。
-3.  在**添加新项**对话框中，选择中间窗格中的**空白页面**。
-4.  在**名称**框中，输入 **Page1**（或 **Page2**），然后按**添加**按钮。
+1.  在“解决方案资源管理器”中，右键单击“空白应用”项目节点打开快捷菜单。
+2.  从快捷菜单中依次选择“添加” > “新建项”。
+3.  在“添加新项”对话框中，选择中间窗格中的“空白页面”。
+4.  在“名称”框中，输入 **Page1**（或 **Page2**）并按“添加”按钮。
 5. 重复步骤 1-4 以添加第二个页面。
 
 现在，这些文件应列为 NavApp1 项目的一部分。
@@ -87,7 +87,7 @@ ms.locfileid: "8943050"
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)元素作为根[**网格**](https://msdn.microsoft.com/library/windows/apps/br242704)中和之后的子元素`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)元素。
+-   [  **HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 元素作为根 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 的子元素并位于 `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素之后。
 ```xaml
 <HyperlinkButton Content="Click to go to page 2"
                  Click="HyperlinkButton_Click"
@@ -124,7 +124,7 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)元素作为根[**网格**](https://msdn.microsoft.com/library/windows/apps/br242704)中和之后的子元素`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)元素。
+-   [  **HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 元素作为根 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 的子元素并位于 `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素之后。
 ```xaml
 <HyperlinkButton Content="Click to go to page 1" 
                  Click="HyperlinkButton_Click"
@@ -296,7 +296,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ```
 
 > [!NOTE]
-> 下面的代码使用[**导航**](https://msdn.microsoft.com/library/windows/apps/br242694)的返回值引发应用异常，如果导航至应用的初始窗口框架失败。 当 **Navigate** 返回 **true** 时，就会进行导航。
+> 下面的代码使用的返回值[ **Navigate** ](https://msdn.microsoft.com/library/windows/apps/br242694)引发应用程序异常，如果到应用程序的初始窗口框架的导航失败。 当 **Navigate** 返回 **true** 时，就会进行导航。
 
 现在，生成并运行应用。 单击显示“单击以转到第 2 页”的链接。 在顶部显示“第 2 页”的第二个页面应加载并显示在框架中。
 
@@ -306,19 +306,19 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 首先，为 App.xaml 代码隐藏文件中 `App.OnLaunched` 方法中的应用创建一个名为 `rootFrame` 的 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 **Frame** 类支持 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)、[**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) 和 [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693) 等各种导航方法以及 [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543)、[**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) 和 [**BackStackDepth**](https://msdn.microsoft.com/library/windows/apps/hh967995) 等属性。
  
-[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) 方法用于在此 **Frame** 中显示内容。 默认情况下，此方法加载 MainPage.xaml。 在我们的示例中，`Page1` 将传递到 **Navigate** 方法，因此该方法会加载 **Frame** 中的 `Page1`。 
+[  **Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) 方法用于在此 **Frame** 中显示内容。 默认情况下，此方法加载 MainPage.xaml。 在我们的示例中，`Page1` 将传递到 **Navigate** 方法，因此该方法会加载 **Frame** 中的 `Page1`。 
 
-`Page1` 是 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 类的子类。 **Page** 类具有一个只读 **Frame** 属性，可获取包含 **Page** 的 **Frame**。 当 `Page1` 中 **HyperlinkButton** 的 **Click** 事件处理程序调用 `this.Frame.Navigate(typeof(Page2))` 时，**Frame** 将显示 Page2.xaml 的内容。
+`Page1` 是的子类[**页面**](https://msdn.microsoft.com/library/windows/apps/br227503)类。 **Page** 类具有一个只读 **Frame** 属性，可获取包含 **Page** 的 **Frame**。 当 `Page1` 中 **HyperlinkButton** 的 **Click** 事件处理程序调用 `this.Frame.Navigate(typeof(Page2))` 时，**Frame** 将显示 Page2.xaml 的内容。
 
 最后，每当页面加载到框架中时，该页面作为 [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) 添加到 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504) 的 [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) 或 [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547)，从而支持[历史记录和向后导航](navigation-history-and-backwards-navigation.md)。
 
-## <a name="3-pass-information-between-pages"></a>3. 在页面之间传递信息
+## <a name="3-pass-information-between-pages"></a>3.在页面之间传递信息
 
 我们的应用可在两个页面之间导航，但它还没有什么真正有趣的功能。 当一个应用包含多个页面时，这些页面经常需要共享信息。 让我们将一些信息从第一页传递到第二页。
 
-在 Page1.xaml 中，替换为你添加**HyperlinkButton**更早版本以下[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)。
+在 Page1.xaml，替换**HyperlinkButton**前面添加以下[ **StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)。
 
-我们在此处添加 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 标签和 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) `name`，用于输入文本字符串。
+在这里，我们添加[ **TextBlock** ](https://msdn.microsoft.com/library/windows/apps/br209652)标签和一个[**文本框**](https://msdn.microsoft.com/library/windows/apps/br209683) `name`用于输入文本字符串。
 
 ```xaml
 <StackPanel>
@@ -330,7 +330,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 </StackPanel>
 ```
 
-在`HyperlinkButton_Click`Page1.xaml 代码隐藏文件中，事件处理程序添加参数引用`Text`属性`name` **TextBox**到`Navigate`方法。
+在 Page1.xaml 代码隐藏文件的 `HyperlinkButton_Click` 事件处理程序中，向 `Navigate` 方法添加引用 `name` **TextBox** 的 `Text` 属性的参数。
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -414,11 +414,11 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 }
 ```
 
-运行应用、在文本框中键入你的名字，然后单击显示**单击以转到第 2 页**的链接。 
+运行应用、在文本框中键入你的名字，然后单击显示“单击以转到第 2 页”的链接。 
 
 当 `Page1` 中 **HyperlinkButton** 的 **Click** 事件调用 `this.Frame.Navigate(typeof(Page2), name.Text)` 时，`name.Text` 属性将传递给 `Page2`，并且事件数据中的值将用于在页面上显示的消息。
 
-## <a name="4-cache-a-page"></a>4. 缓存页面
+## <a name="4-cache-a-page"></a>4.缓存页面
 
 默认情况下不缓存页面内容和状态，因此如果你要缓存信息，必须在应用的每个页面中启用它。
 
@@ -451,6 +451,6 @@ Page1::Page1()
 ```
 
 ## <a name="related-articles"></a>相关文章
-* [UWP 应用的导航设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958438)
-* [表和透视表指南](https://msdn.microsoft.com/library/windows/apps/dn997788)
-* [导航窗格指南](https://msdn.microsoft.com/library/windows/apps/dn997766)
+* [适用于 UWP 应用的导航设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958438)
+* [选项卡和数据透视表的准则](https://msdn.microsoft.com/library/windows/apps/dn997788)
+* [导航窗格的准则](https://msdn.microsoft.com/library/windows/apps/dn997766)

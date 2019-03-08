@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 联网, websocket, messagewebsocket, streamwebsocketwindows 10, uwp, networking, websocket, messagewebsocket, streamwebsocket
 ms.localizationpriority: medium
 ms.openlocfilehash: 8af1f478bc466719eef3c5e19d055ac6073a0b11
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045403"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615412"
 ---
 # <a name="websockets"></a>WebSockets
 WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与服务器之间进行既快捷又安全的双向通信，同时支持 UTF-8 和二进制消息。
@@ -22,7 +22,7 @@ WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与�
 
 **注意** 除非服务器也使用 WebSocket 协议，否则客户端无法使用 Websocket 传输数据。 如果服务器不支持 WebSocket，你必须使用其他数据传输方法。
 
-通用 Windows 平台 (UWP) 支持客户端和服务器都使用 Websocket。 [**Windows.Networking.Sockets**](/uwp/api/windows.networking.sockets) 命名空间定义两个供客户端使用的 WebSocket 类&mdash;[**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket) 和 [**StreamWebSocket **](/uwp/api/windows.networking.sockets.streamwebsocket)。 下面对这两个 WebSocket 类进行了比较。
+通用 Windows 平台 (UWP) 支持客户端和服务器都使用 Websocket。 [  **Windows.Networking.Sockets**](/uwp/api/windows.networking.sockets) 命名空间定义两个供客户端使用的 WebSocket 类&mdash;[**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket) 和 [**StreamWebSocket** ](/uwp/api/windows.networking.sockets.streamwebsocket)。 下面对这两个 WebSocket 类进行了比较。
 
 | [MessageWebSocket](/uwp/api/windows.networking.sockets.messagewebsocket) | [StreamWebSocket](/uwp/api/windows.networking.sockets.streamwebsocket) |
 | - | - |
@@ -67,7 +67,7 @@ IAsyncAction OnNavigatedTo(NavigationEventArgs /* e */)
 ```
 
 ## <a name="use-messagewebsocket-to-connect"></a>使用 MessageWebSocket 连接
-[**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket) 允许在单个操作中读取/写入整个 WebSocket 消息。 因此，它适用于消息不太长的情况。 该类同时支持 UTF-8 和二进制消息。
+[**MessageWebSocket** ](/uwp/api/windows.networking.sockets.messagewebsocket)允许整个的 WebSocket 消息，需要在单个操作中读取/写入。 因此，它适用于消息不太长的情况。 该类同时支持 UTF-8 和二进制消息。
 
 下面的代码示例使用了 WebSocket.org 回显服务器 &mdash; 将服务回显到向其发送任一消息的发送方。
 
@@ -300,10 +300,10 @@ private:
 ### <a name="send-data-on-a-messagewebsocket"></a>通过 MessageWebSocket 发送数据
 在建立连接后，可以向服务器发送数据。 执行此操作的方法是使用 [**MessageWebSocket.OutputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream) 属性和 [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) 写入数据。 
 
-**注意** **DataWriter** 获得输出流的所有权。 当 **DataWriter** 超出范围时，如果输出流与之连接，**DataWriter** 将解除分配输出流。 此后，使用该输出流的任何后续尝试都会失败，HRESULT 值为 0x80000013。 但你可以调用 [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream) 使输出流与 **DataWriter** 分离并将该流的所有权返回给 **MessageWebSocket**。
+**注意****DataWriter** 获得输出流的所有权。 当 **DataWriter** 超出范围时，如果输出流与之连接，**DataWriter** 将解除分配输出流。 此后，使用该输出流的任何后续尝试都会失败，HRESULT 值为 0x80000013。 但你可以调用 [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream) 使输出流与 **DataWriter** 分离并将该流的所有权返回给 **MessageWebSocket**。
 
 ## <a name="use-streamwebsocket-to-connect"></a>使用 StreamWebSocket 连接
-[**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket) 允许通过每个读取操作读取消息的各部分。 因此，它适用于传输大文件（如照片或视频）的情况。 该类仅支持二进制消息。
+[**StreamWebSocket** ](/uwp/api/windows.networking.sockets.streamwebsocket)允许浏览器进行每次读取操作的消息的区域。 因此，它适用于传输大文件（如照片或视频）的情况。 该类仅支持二进制消息。
 
 下面的代码示例使用了 WebSocket.org 回显服务器 &mdash; 将服务回显到向其发送任一消息的发送方。
 
@@ -603,19 +603,19 @@ streamWebSocket->Control->NoDelay = false;
 auto connectTask = Concurrency::create_task(streamWebSocket->ConnectAsync(ref new Uri(L"wss://echo.websocket.org")));
 ```
 
-**注意** 不要尝试在调用 **ConnectAsync** *之后* 更改控件属性。 该规则的唯一例外是 [MessageWebSocketControl.MessageType](/uwp/api/windows.networking.sockets.messagewebsocketcontrol.MessageType)。
+**注意** 不要尝试在调用 **ConnectAsync***之后* 更改控件属性。 该规则的唯一例外是 [MessageWebSocketControl.MessageType](/uwp/api/windows.networking.sockets.messagewebsocketcontrol.MessageType)。
 
 ## <a name="websocket-information-classes"></a>WebSocket 信息类
-[**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket) 和 [**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket) 都具有相应的类，用于提供有关对象的其他信息。
+[**MessageWebSocket** ](/uwp/api/windows.networking.sockets.messagewebsocket)并[ **StreamWebSocket** ](/uwp/api/windows.networking.sockets.streamwebsocket)每个具有一个对应类，提供有关对象的其他信息。
 
-[**MessageWebSocketInformation**](/uwp/api/windows.networking.sockets.messagewebsocketinformation) 提供有关 **MessageWebSocket** 的信息，以便于使用 [**MessageWebSocket.Information**](/uwp/api/windows.networking.sockets.messagewebsocket.Information) 属性检索它的实例。
+[**MessageWebSocketInformation** ](/uwp/api/windows.networking.sockets.messagewebsocketinformation)提供以下信息**MessageWebSocket**，并检索它使用的一个实例[ **MessageWebSocket.Information**](/uwp/api/windows.networking.sockets.messagewebsocket.Information)属性。
 
-[**StreamWebSocketInformation**](/uwp/api/Windows.Networking.Sockets.StreamWebSocketInformation) 提供有关 **StreamWebSocket** 的信息，以便于使用 [**StreamWebSocket.Information**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket.Information) 属性检索它的实例。
+[**StreamWebSocketInformation** ](/uwp/api/Windows.Networking.Sockets.StreamWebSocketInformation)提供以下信息**StreamWebSocket**，并检索它使用的一个实例[ **StreamWebSocket.Information**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket.Information)属性。
 
 请注意，这些信息类上的属性均为只读形式，但你能够在 Web 套接字对象的生存期内随时使用它们来检索信息。
 
 ## <a name="handling-exceptions"></a>处理异常
-在 [**MessageWebSocket**](/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 操作期间发生的错误将以 **HRESULT** 值的形式返回。 可将 **HRESULT** 值传递给 [**WebSocketError.GetStatus**](/uwp/api/windows.networking.sockets.websocketerror.getstatus) 方法，将其转换为 [**WebErrorStatus**](/uwp/api/Windows.Web.WebErrorStatus) 枚举值。
+在进行 [**MessageWebSocket**](/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 操作时发生的错误将以 **HRESULT** 值的形式返回。 可将 **HRESULT** 值传递给 [**WebSocketError.GetStatus**](/uwp/api/windows.networking.sockets.websocketerror.getstatus) 方法，将其转换为 [**WebErrorStatus**](/uwp/api/Windows.Web.WebErrorStatus) 枚举值。
 
 大部分 **WebErrorStatus** 枚举值对应由本机 HTTP 客户端操作返回的错误。 应用可以打开 **WebErrorStatus** 枚举值来基于异常原因修改应用行为。
 
@@ -834,8 +834,8 @@ protected:
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
 ## <a name="related-topics"></a>相关主题
-* [WebSocket 协议](https://tools.ietf.org/html/rfc6455)
-* [套接字](sockets.md)
+* [WebSocket Protocol](https://tools.ietf.org/html/rfc6455)
+* [Sockets](sockets.md)
 
 ## <a name="samples"></a>示例
-* [WebSocket 示例](https://go.microsoft.com/fwlink/p/?LinkId=620623)
+* [WebSocket sample](https://go.microsoft.com/fwlink/p/?LinkId=620623)

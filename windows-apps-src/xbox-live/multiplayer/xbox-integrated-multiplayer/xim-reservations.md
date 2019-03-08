@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xbox 集成多人游戏, xim, 聊天
 ms.localizationpriority: medium
 ms.openlocfilehash: 82b38b8d0d94e4cccf501a101faee0e28a6b43c0
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117544"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660832"
 ---
 # <a name="using-xim-as-a-dedicated-chat-solution-via-out-of-band-reservations"></a>通过带外保留将 XIM 用作专门的聊天解决方案
 
@@ -69,7 +69,7 @@ ms.locfileid: "9117544"
 
 ## <a name="adding-players-to-a-xim-network-managed-using-out-of-band-reservations"></a>添加玩家至使用带外保留托管的 XIM 网络 
 
-使用带外保留托管的 XIM 网络会始终报告 `xim::allowed_player_joins()` 方法中的 `xim_allowed_player_joins::out_of_band_reservation` 值；除了通过调用 `xim::create_out_of_band_reservation()` 具有保留位置的 Xbox 用户 ID 以外的玩家，该网络将对所有其他玩家关闭。 `xim::create_out_of_band_reservation()` 获取了一组用户，因此你可以一次性或在一段时间后为在外部聚集的玩家创建此类保留。 此外，已忽略让玩家加入 XIM 网络的用户，因此，你还可以提供其他 Xbox 用户 ID 作为完整的替换集或增量更改（以操作更方便者为准）。 下面的示例假设你已经将完全收集的 Xbox 用户 ID 字符串指针集合赋予具有“xboxUserIdCount”数字元素的数组变量“xboxUserIds”：
+使用带外保留托管的 XIM 网络会始终报告 `xim::allowed_player_joins()` 方法中的 `xim_allowed_player_joins::out_of_band_reservation` 值；除了通过调用 `xim::create_out_of_band_reservation()` 具有保留位置的 Xbox 用户 ID 以外的玩家，该网络将对所有其他玩家关闭。 `xim::create_out_of_band_reservation()` 采用用户，的数组，因此你可以创建外部收集到播放器的此类保留项，所有在一次或一段时间。 此外，已忽略让玩家加入 XIM 网络的用户，因此，你还可以提供其他 Xbox 用户 ID 作为完整的替换集或增量更改（以操作更方便者为准）。 下面的示例假设你已经将完全收集的 Xbox 用户 ID 字符串指针集合赋予具有“xboxUserIdCount”数字元素的数组变量“xboxUserIds”：
 
 ```cpp
  xim::singleton_instance().create_out_of_band_reservation(xboxUserIdCount, xboxUserIds);
@@ -77,9 +77,9 @@ ms.locfileid: "9117544"
 
 这会开始为指定的 Xbox 用户 ID 创建保留的异步过程。 操作完成后，XIM 将会提供一个用于报告成功或失败的 `xim_create_out_of_band_reservation_completed_state_change`。 如果成功，将会为你的系统创建一个保留字符串，以便提供给为操作提供的那些 Xbox 用户 ID。 成功创建的保留字符串仅在一定时间内有效。 该时间在 `xim_create_out_of_band_reservation_completed_state_change` 内返回。
 
-有了有效的保留字符串后，可以使用用于聚集 XIM 外部玩家的“带外”外部机制将该字符串分配给枚举的玩家。 例如，如果你使用的多人游戏会话目录 (MPSD) Xbox Live 服务，你可以编写此字符串作为会话文档中的自定义共享的会话属性 (注意： 保留字符串将始终包含仅一组受限的字符安全地在 JSON 而无需转义或 Base64 编码）。
+有了有效的保留字符串后，可以使用用于聚集 XIM 外部玩家的“带外”外部机制将该字符串分配给枚举的玩家。 例如，如果您使用之多人游戏会话目录 (MPSD) Xbox Live 服务，您可以编写此字符串作为会话文档中的自定义共享的会话属性 (请注意： 保留项字符串将始终包含仅有限的字符在中安全使用 JSON 而无需转义或 Base64 编码）。
 
-一旦其他用户从共享的会话文档属性检索到各自的保留字符串，他们可以开始移动到 XIM 网络将其用作参数设置为`xim::move_to_network_using_out_of_band_reservation()`。 以下示例假设已将保留字符串提取到名为“reservationString”的变量。
+后其他用户拥有的共享的会话文档属性检索它们保留的字符串，它们可以开始将移动到 XIM 网络使用的参数作为`xim::move_to_network_using_out_of_band_reservation()`。 以下示例假设已将保留字符串提取为一个名为“reservationString”的变量。
 
 ```cpp
 xim::singleton_instance().move_to_network_using_out_of_band_reservation(reservationString);
@@ -126,7 +126,7 @@ xim::singleton_instance().kick_player(playerToRemove);
 
 请注意，当玩家由于环境困难离开 XIM 网络时，XIM 对等通信可随时自行决定。 应用应准备好处理“未经请求的”`xim_player_left_state_change`，并以适用于特定应用的方式协调 XIM 的状态和外部玩家管理架构之间的任何差异。
 
-## <a name="cleaning-up-a-xim-network-managed-using-out-of-band-reservations"></a>清理使用带外保留托管的 XIM 网络 
+## <a name="cleaning-up-a-xim-network-managed-using-out-of-band-reservations"></a>清理使用带外保留托管的 XIM 网络
 
 任何尚未从 XIM 网络中踢出并想要返回就像已经调用了 xim::initialize() 和 `xim::set_intended_local_xbox_user_ids()` 状态的玩家，可以使用 `xim::leave_network()` 方法开始执行此操作：
 

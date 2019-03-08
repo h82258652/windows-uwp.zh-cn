@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, 游戏选项, 预告片, 高级应用一览, python
 ms.localizationpriority: medium
 ms.openlocfilehash: 59306e32fe1fcc68978c977b89934e64d85b8cc8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924283"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629912"
 ---
 # <a name="python-sample-app-submission-with-game-options-and-trailers"></a>Python 示例：使用游戏选项和预告片的应用提交
 
@@ -28,7 +28,7 @@ ms.locfileid: "8924283"
 
 此代码调用其他示例类和函数，以使用 Microsoft Store 提交 API 来创建并确认包含游戏选项和预告片的应用提交。 要调整此代码以供自己使用，请执行以下操作：
 
-* 将 ```tenant``` 变量指定为你应用的租户 ID，将 ```client``` 和 ```secret``` 变量指定为你应用的客户端 ID 和密钥。 有关详细信息，请参阅[如何将 Azure AD 应用程序与合作伙伴中心帐户相关联](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
+* 将 ```tenant``` 变量指定为你应用的租户 ID，将 ```client``` 和 ```secret``` 变量指定为你应用的客户端 ID 和密钥。 有关详细信息，请参阅[如何与合作伙伴中心帐户关联的 Azure AD 应用程序](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
 * 将 ```application_id``` 变量指定为要为其创建提交的应用的[应用商店 ID](in-app-purchases-and-trials.md#store-ids)。
 
 > [!div class="tabbedCodeSnippets"]
@@ -57,4 +57,4 @@ ms.locfileid: "8924283"
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
+* [创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)

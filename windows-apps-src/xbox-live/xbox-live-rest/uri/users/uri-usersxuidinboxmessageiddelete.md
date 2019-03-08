@@ -8,18 +8,18 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 80ec2a462648177cc6bfc846b9c84278821b0e5e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925416"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594102"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a>DELETE (/users/xuid({xuid})/inbox/{messageId})
-删除用户的收件箱中用户消息。 这些 Uri 的域是`msg.xboxlive.com`。
+删除用户的收件箱中的用户消息。 这些 Uri 的域是`msg.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4ECB)
-  * [授权](#ID4EPB)
+  * [Authorization](#ID4EPB)
   * [请求正文](#ID4E1B)
   * [HTTP 状态代码](#ID4EHC)
   * [JavaScript 对象表示法 (JSON) 响应](#ID4EAE)
@@ -32,44 +32,44 @@ ms.locfileid: "8925416"
  
 删除操作是幂等。
  
-此 API 支持仅内容类型是"application/json"，这必需的每个调用的 HTTP 标头中。 
+此 API 支持只包含内容类型为"application/json"; 所需的每个调用的 HTTP 标头中。 
   
 <a id="ID4ECB"></a>
 
  
 ## <a name="uri-parameters"></a>URI 参数 
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 发出请求的玩家。 | 
-| 邮件 Id | string [50] | 要检索或删除该消息的 ID。 | 
+| xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 正在发出请求的播放器。 | 
+| messageId | string[50] | 正在检索或删除的消息的 ID。 | 
   
 <a id="ID4EPB"></a>
 
  
 ## <a name="authorization"></a>授权 
  
-你必须拥有自己声明要删除的用户消息的用户。
+您必须具有用户声明以删除用户消息。
   
 <a id="ID4E1B"></a>
 
  
 ## <a name="request-body"></a>请求正文 
  
-此请求的正文中不发送任何对象。
+此请求的正文中不发送的任何对象。
   
 <a id="ID4EHC"></a>
 
  
 ## <a name="http-status-codes"></a>HTTP 状态代码 
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+服务将返回其中一个状态代码在本部分中使用此方法在此资源上发出的请求的响应中。 有关与 Xbox Live 服务一起使用的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
-| 代码| 说明| 
+| 代码| 描述| 
 | --- | --- | --- | --- | --- | 
 | 204| 成功。| 
-| 403| 不能转换 XUID 或无法找到有效的 XUID 声明。| 
-| 404| 无法分析 URI 中的消息 ID 或 XUID 是在 URI 中丢失。| 
+| 403| 不能转换 XUID 或找不到有效的 XUID 声明。| 
+| 404| 无法分析在 URI 中的消息 ID 或 XUID 缺少在 URI 中。| 
 | 500| 常规服务器端错误。| 
   
 <a id="ID4EAE"></a>
@@ -77,12 +77,12 @@ ms.locfileid: "8925416"
  
 ## <a name="javascript-object-notation-json-response"></a>JavaScript 对象表示法 (JSON) 响应 
  
-发生错误，该服务可能会返回一个服务器对象，其中可能包含的服务的环境中的值。
+如果出现错误，该服务可能返回 errorResponse 对象，其中可能包含服务的环境中的值。
  
-| 属性| 类型| 描述| 
+| 属性| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 错误码| 字符串| 指示错误的来源。| 
-| 错误代码| int| 与 （可以为 null） 的错误相关联的数字代码。| 
+| errorSource| 字符串| 指示错误源于何处。| 
+| errorCode| int| 与错误 （可以为 null） 关联的数值代码。| 
 | errorMessage| 字符串| 如果配置为显示详细信息的错误的详细信息。| 
   
 <a id="ID4EYF"></a>
@@ -90,7 +90,7 @@ ms.locfileid: "8925416"
  
 ## <a name="effect-of-privacy-settings-on-resource"></a>资源上的隐私设置的效果 
  
-仅可以删除自己用户的消息。 
+仅可以删除您自己的用户消息。 
   
 <a id="ID4EDG"></a>
 
@@ -108,6 +108,6 @@ ms.locfileid: "8925416"
 <a id="ID4ETG"></a>
 
  
-##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>参考[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
+##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>引用[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
 
    

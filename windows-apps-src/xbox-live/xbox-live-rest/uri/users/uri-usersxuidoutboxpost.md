@@ -8,19 +8,19 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b225e8441fee3d499f172e2e5701096cdbc161a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920640"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594282"
 ---
 # <a name="post-usersxuidxuidoutbox"></a>POST (/users/xuid({xuid})/outbox)
-指定的消息发送到收件人的列表。
+将指定的消息发送到收件人列表。
 这些 Uri 的域是`msg.xboxlive.com`。
 
   * [备注](#ID4EV)
   * [URI 参数](#ID4EAB)
-  * [授权](#ID4ENB)
+  * [Authorization](#ID4ENB)
   * [资源上的隐私设置的效果](#ID4EYB)
   * [请求正文](#ID4E3F)
   * [HTTP 状态代码](#ID4ETCAC)
@@ -31,73 +31,73 @@ ms.locfileid: "8920640"
 
 ## <a name="remarks"></a>备注
 
-此 API 支持仅内容类型是"application/json"，这必需的每个调用的 HTTP 标头中。
+此 API 支持只包含内容类型为"application/json"; 所需的每个调用的 HTTP 标头中。
 
 <a id="ID4EAB"></a>
 
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- |
-| xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 发出请求的玩家。 |
+| xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 正在发出请求的播放器。 |
 
 <a id="ID4ENB"></a>
 
 
 ## <a name="authorization"></a>授权
 
-你必须具有用户声明并有效金会员订阅发送用户消息。
+必须具有自己的用户声明和有效的金牌订阅发送用户消息。
 
 <a id="ID4EYB"></a>
 
 
 ## <a name="effect-of-privacy-settings-on-resource"></a>资源上的隐私设置的效果
 
-成功用户将消息发送到玩家，无论该玩家好友，会导致的结果代码为 200。 但是，如果你向已阻止你的任何人发送一条消息，接收者不会收到消息，并将不会收到你的消息未成功任何指示。
+成功将用户消息发送到播放机，该播放机一位朋友，还是不是，会导致结果代码 200。 但是，如果向已阻止你的任何人发送一条消息，接收方将收到消息，并且将不会收到您的消息未成功的任何指示。
 
-在多少消息可发送每日和多少好友和非好友，如下所示还存在限制。
+消息可以发送每日和到多少个朋友和非朋友，如下所示上也有限制。
 
-   * 每个消息 20 陌生人
-   * 200 陌生人 / 24 小时
-   * 250 邮件总数 / 24 小时
-   * 每 24 小时的收件人 2500年总数
+   * 每个消息的 20 陌生人
+   * 每 24 小时 200 陌生人
+   * 250 的邮件总数每 24 小时
+   * 每 24 小时 2500年个收件人
 
-| 请求的用户| 目标用户的隐私设置| 行为|
+| 发出请求的用户| 面向用户的隐私设置| 行为|
 | --- | --- | --- | --- | --- | --- |
-| 我| -| 所述。|
-| 好友| 每个人都| 200 OK|
-| 好友| 仅好友| 200 OK|
-| 好友| 阻止| 200 OK|
-| 非好友用户| 每个人都| 200 OK|
-| 非好友用户| 仅好友| 200 OK|
-| 非好友用户| 阻止| 200 OK|
-| 第三方网站| 每个人都| 200 OK|
-| 第三方网站| 仅好友| 200 OK|
-| 第三方网站| 阻止| 200 OK|
+| 我| -| 如所述。|
+| 友元| 每个人| 200 OK|
+| 友元| 仅朋友| 200 OK|
+| 友元| 已阻止| 200 OK|
+| 非友元用户| 每个人| 200 OK|
+| 非友元用户| 仅朋友| 200 OK|
+| 非友元用户| 已阻止| 200 OK|
+| 第三方站点| 每个人| 200 OK|
+| 第三方站点| 仅朋友| 200 OK|
+| 第三方站点| 已阻止| 200 OK|
 
 <a id="ID4E3F"></a>
 
 
 ## <a name="request-body"></a>请求正文
 
-| 属性| 类型| 最大长度| 使用者| 备注|
+| 属性| 在任务栏的搜索框中键入| 最大长度| 使用者| 备注|
 | --- | --- | --- | --- | --- |
-| 标题| 标题|  | 全部| 用户消息标头|
-| messageText| 字符串| 250| 除了 Windows 8 的所有平台| 用户的消息文本 (utf-8)|
+| 标题| 标头|  | 全部| 用户消息标头|
+| messageText| 字符串| 250| 不包括 Windows 8 的所有平台| 用户消息文本 (utf-8)|
 
-#### <a name="header"></a>标题
+#### <a name="header"></a>标头
 
-| 属性| 类型| 最大长度| 使用者| 备注|
+| 属性| 在任务栏的搜索框中键入| 最大长度| 使用者| 备注|
 | --- | --- | --- | --- | --- |
-| 收件人| 用户]| 20| 全部| 邮件收件人的列表|
+| 收件人| User[]| 20| 全部| 邮件收件人列表|
 
 #### <a name="user"></a>用户
 
-| 属性| 类型| 最大长度| 使用者| 备注|
+| 属性| 在任务栏的搜索框中键入| 最大长度| 使用者| 备注|
 | --- | --- | --- | --- | --- |
-| xuid| ulong|  | 全部| 收件人的 XUID。 如果玩家代号，将会发送不使用。|
-| 玩家代号| 字符串| 15| 全部| 收件人的玩家代号。 如果发送 XUID 不使用。|
+| xuid| ulong|  | 全部| 收件人的 XUID。 如果玩家代号发送不使用。|
+| 玩家代号| 字符串| 15| 全部| 接收方的玩家代号。 如果发送 XUID 不使用。|
 
 #### <a name="sample-request-body"></a>示例请求正文 
 
@@ -120,15 +120,15 @@ ms.locfileid: "8920640"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+服务将返回其中一个状态代码在本部分中使用此方法在此资源上发出的请求的响应中。 有关与 Xbox Live 服务一起使用的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
-| 代码| 说明|
+| 代码| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| 成功。|
-| 400| 收件人的列表为空或超过最大长度。指定的玩家代号和 XUID; 或或 messageText 太长。|
-| 403| XUID 无法转换。|
+| 400| 收件人列表为空或超过最大长度;指定玩家代号和 XUID; 或或 messageText 太长。|
+| 403| 不能转换 XUID。|
 | 404| 玩家代号无效或找不到用户。|
-| 409| 用户已到达由系统的每日限制。|
+| 409| 用户已达到系统的每日限制。|
 | 500| 常规服务器端错误。|
 
 <a id="ID4E1EAC"></a>
@@ -136,7 +136,7 @@ ms.locfileid: "8920640"
 
 ## <a name="response-body"></a>响应正文
 
-该响应正文中不发送任何对象。
+响应正文中不发送任何对象。
 
 <a id="ID4EJFAC"></a>
 
@@ -154,4 +154,4 @@ ms.locfileid: "8920640"
 <a id="ID4EZFAC"></a>
 
 
-##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>参考[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
+##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>引用[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)

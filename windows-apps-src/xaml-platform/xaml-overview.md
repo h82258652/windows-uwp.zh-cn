@@ -12,11 +12,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 639f552a240cf8d28d1a2a0ce530315671128746
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931725"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599802"
 ---
 # <a name="xaml-overview"></a>XAML 概述
 
@@ -48,7 +48,7 @@ XAML 的基本语法基于 XML。 依照定义，有效的 XAML 必须也是有�
 -   在 XAML 文件或构造中，命名空间定义从父元素继承到子元素。 例如，如果你在 XAML 文件的根元素中定义命名空间，该文件中的所有元素都将继承该命名空间定义。 如果以后添加到该页面中的某个元素重新定义了命名空间，则该元素的后代将继承新定义。
 -   一个元素的属性继承该元素的命名空间。 XAML 属性很少有前缀。
 
-XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。 默认 XAML 命名空间定义了无需使用前缀限定即可声明的元素。 对于典型的 Windows 运行时应用项目，此默认命名空间包含用于 UI 定义的所有 Windows 运行时的内置 XAML 词汇：默认控件、文本元素、XAML 图形和动画、数据绑定和样式支持类型等。 因此，为 Windows 运行时应用编写的大部分 XAML 在引用常见 UI 元素时都将避免使用 XAML 命名空间和前缀。
+XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。 默认 XAML 命名空间定义了无需使用前缀来限定即可声明哪些元素。 对于典型的 Windows 运行时应用项目，此默认命名空间包含用于 UI 定义的所有 Windows 运行时的内置 XAML 词汇：默认控件、文本元素、XAML 图形和动画、数据绑定和样式支持类型等。 因此，为 Windows 运行时应用编写的大部分 XAML 在引用常见 UI 元素时都将避免使用 XAML 命名空间和前缀。
 
 如下代码段显示了用模板创建的一个应用初始页面的 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 根（仅显示了开始标记并且进行了简化）。 它声明了默认命名空间，还有 **x** 命名空间（将在下面加以介绍）。
 
@@ -66,13 +66,13 @@ XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。
 
 “x”前缀/XAML 语言 XAML 命名空间包含你在 XAML 中经常使用的多种编程结构。 下面是一些最常见的结构：
 
-| 术语 | 说明 |
+| 术语 | 描述 |
 |------|-------------|
 | [x:Key](x-key-attribute.md) | 为 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的每个资源设置一个唯一的用户定义密钥。 该密钥的令牌字符串是 **StaticResource** 标记扩展的参数，你可以在以后使用此密钥在应用 XAML 的其他位置检索其他 XAML 用法中的 XAML 资源。 |
-| [x:Class](x-class-attribute.md) | 为 XAML 页面提供代码隐藏的类指定代码命名空间和代码类名称。 这可为构建你的应用时通过构建操作创建或加入的类命名。 这些构建操作支持 XAML 标记编译器，并在编译应用时，将你的标记和代码隐藏文件组合到一起。 必须具有此类才能支持对 XAML 页面实现代码隐藏。 默认 Windows 运行时激活模型中的 [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/br209051)。 |
-| [x:Name](x-name-attribute.md) | 在处理 XAML 中定义的对象元素后，为运行时代码中存在的实例指定一个运行时对象名。 你可以将在 XAML 中设置 **x:Name** 看作是在代码中声明命名变量。 稍后你会了解，这是将 XAML 加载为 Windows 运行时应用的一个组件时发生的实际情况。 <br/><div class="alert">**注意**[**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)是框架中的一个类似属性，但并非所有元素都支持它。 因此，当 **FrameworkElement.Name** 在该元素类型上不受支持时，你可以将 **x:Name** 用于元素标识。 |
-| [x:Uid](x-uid-directive.md) | 标识某些元素，应将本地化后的资源用于该元素的一些属性值。 有关如何使用 **x:Uid** 的详细信息，请参阅[快速入门：翻译 UI 资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。 |
-| [XAML 固有数据类型](xaml-intrinsic-data-types.md) | 当属性或资源需要值时，这些类型可以为简单值类型指定值。 这些固有类型与通常定义为每个编程语言固有定义的一部分的简单值类型相对应。 例如，你可能需要一个表示 **true** 布尔值的对象，以便在 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) 情节提要视觉状态中使用。 对于 XAML 中的该值，可将 **x:Boolean** 固有类型用作对象元素，例如： <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
+| [x:Class](x-class-attribute.md) | 为 XAML 页面提供代码隐藏的类指定代码命名空间和代码类名称。 这可为构建你的应用时通过构建操作创建或加入的类命名。 这些构建操作支持 XAML 标记编译器，并在编译应用时，将你的标记和代码隐藏文件组合到一起。 必须具有此类才能支持对 XAML 页面实现代码隐藏。 [**Window.Content** ](https://msdn.microsoft.com/library/windows/apps/br209051)默认 Windows 运行时激活模型中。 |
+| [x:Name](x-name-attribute.md) | 在处理 XAML 中定义的对象元素后，为运行时代码中存在的实例指定一个运行时对象名。 你可以将在 XAML 中设置 **x:Name** 看作是在代码中声明命名变量。 稍后你会了解，这是将 XAML 加载为 Windows 运行时应用的一个组件时发生的实际情况。 <br/><div class="alert">**注意**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 是框架中的一个类似属性，并非所有元素都支持它。 因此，当 **FrameworkElement.Name** 在该元素类型上不受支持时，你可以将 **x:Name** 用于元素标识。 |
+| [x:Uid](x-uid-directive.md) | 标识某些元素，应将本地化后的资源用于该元素的一些属性值。 有关如何使用的详细信息**X:uid**，请参阅[快速入门：将 UI 资源翻译](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。 |
+| [XAML 内部数据类型](xaml-intrinsic-data-types.md) | 当属性或资源需要值时，这些类型可以为简单值类型指定值。 这些固有类型与通常定义为每个编程语言固有定义的一部分的简单值类型相对应。 例如，你可能需要一个表示 **true** 布尔值的对象，以便在 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) 情节提要视觉状态中使用。 对于在 XAML 中的值，将使用**x： 布尔值**作为对象元素，此类的内部类型： <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
 
 在 XAML 语言 XAML 命名空间中还存在其他编程结构，但没有这么常用。
 
@@ -86,9 +86,9 @@ XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。
 
 该前缀定义的标记令牌用于在该 XAML 文件中标记的剩余部分中引用该 XAML 命名空间。 前缀与要在 XAML 命名空间中引用的实体之间有一个冒号字符 (:)。
 
-例如，将前缀 `myTypes` 映射到命名空间 `myCompany.myTypes` 的属性语法为：`    xmlns:myTypes="using:myCompany.myTypes"`，而代表的元素用法为： `<myTypes:CustomButton/>`
+例如，特性语法映射前缀`myTypes`命名空间`myCompany.myTypes`是： `    xmlns:myTypes="using:myCompany.myTypes"`，代表元素用法是： `<myTypes:CustomButton/>`
 
-有关自定义类型映射 XAML 命名空间的详细信息，包括特殊注意事项 VisualC + + 组件扩展 (C + + CX)，请参阅[XAML 命名空间和命名空间映射](xaml-namespaces-and-namespace-mapping.md)。
+有关为自定义类型映射 XAML 命名空间的详细信息，包括有关 Visual c + + 组件扩展的特殊注意事项 (C + + /cli CX)，请参阅[XAML 命名空间和命名空间映射](xaml-namespaces-and-namespace-mapping.md)。
 
 ## <a name="other-xaml-namespaces"></a>其他 XAML 命名空间
 
@@ -114,11 +114,11 @@ Windows 运行时还支持 [{x:Null} 标记扩展](x-null-markup-extension.md)�
 
 标记扩展一般会从应用的对象图的其他某个部分返回一个现有实例，或者将一个值延迟到运行时。 因为可以将标记扩展用作属性值，并且这是典型用法，所以你经常可以看到标记扩展被用来为引用类型的属性提供值，而采用其他方式时，这些属性可能需要使用属性元素语法。
 
-例如，下面是用于从 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中引用可重用的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 的语法：`<Button Style="{StaticResource SearchButtonStyle}"/>`。 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 是一种引用类型而非一个简单值，因此如果没有 `{StaticResource}` 用法，你需要使用 `<Button.Style>` 属性元素和其中的 `<Style>` 定义来设置 [**FrameworkElement.Style**](https://msdn.microsoft.com/library/windows/apps/br208743) 属性。
+例如，下面是用于从 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中引用可重用的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 的语法：`<Button Style="{StaticResource SearchButtonStyle}"/>`。 [  **Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 是一种引用类型而非一个简单值，因此如果没有 `{StaticResource}` 用法，你需要使用 `<Button.Style>` 属性元素和其中的 `<Style>` 定义来设置 [**FrameworkElement.Style**](https://msdn.microsoft.com/library/windows/apps/br208743) 属性。
 
 通过使用标记扩展，在 XAML 中可设置的所有属性都可能采用属性语法进行设置。 你可以使用属性语法提供一个属性的引用值，即使它不支持通过其他方法用于直接对象实例化的属性语法也是如此。 或者可以实现一种特定的行为，通过值类型或新创建的引用类型来延迟需填充 XAML 属性的一般需求。
 
-为举例说明，接下来的 XAML 示例使用属性语法来设置一个 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) 属性的值。 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) 属性接受 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 类的一个实例，一个在默认情况下无法使用属性语法字符串创建的引用类型。 但在本例中，该属性引用一个特定的标记扩展 [StaticResource](staticresource-markup-extension.md)。 当处理该标记扩展时，它返回对之前已被定义为资源字典中的键控资源的一个 **Style** 元素的引用。
+为举例说明，接下来的 XAML 示例使用属性语法来设置一个 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) 属性的值。 [  **Style**](https://msdn.microsoft.com/library/windows/apps/br208743) 属性接受 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 类的一个实例，一个在默认情况下无法使用属性语法字符串创建的引用类型。 但在本例中，该属性引用一个特定的标记扩展 [StaticResource](staticresource-markup-extension.md)。 当处理该标记扩展时，它返回对之前已被定义为资源字典中的键控资源的一个 **Style** 元素的引用。
 
 ```xml
 <Canvas.Resources>
@@ -141,7 +141,7 @@ Windows 运行时还支持 [{x:Null} 标记扩展](x-null-markup-extension.md)�
 
 XAML 是一种用于对象及其属性的声明性语言，但它也包含向标记中的对象附加事件处理程序的语法。 XAML 事件语法可通过 Windows 运行时编程模型集成 XAML 声明的事件。 在处理事件的对象上，将事件的名称指定为一个属性名称。 对于属性值，指定你在代码中定义的一个事件处理函数的名称。 XAML 处理器使用此名称在加载的对象树中创建一个委托表示，将指定的处理程序添加到内部处理程序列表中。 几乎所有 Windows 运行时应用都是同时通过标记和代码隐藏源文件定义的。
 
-下面是一个简单示例。 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 类支持一个名为 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 的事件。 你可以为 **Click** 编写处理程序，用于运行在用户单击 **Button** 之后应当调用的代码。 在 XAML 中，你可以将 **Click** 指定为 **Button** 上的一个属性。 对于属性值，请提供一个表示你的处理程序的方法名称的字符串。
+下面是一个简单示例。 [  **Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 类支持一个名为 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 的事件。 你可以为 **Click** 编写处理程序，用于运行在用户单击 **Button** 之后应当调用的代码。 在 XAML 中，你可以将 **Click** 指定为 **Button** 上的一个属性。 对于属性值，请提供一个表示你的处理程序的方法名称的字符串。
 
 ```xml
 <Button Click="showUpdatesButton-Click">Show updates</Button>
@@ -198,7 +198,7 @@ namespace App1
 
 在一个项目中，将 XAML 编写为 .xaml 文件，使用你最喜欢的语言（C#、Visual Basic、C++/CX）编写一个代码隐藏文件。 当在项目的生成操作中对 XAML 文件进行标记编译时，可以通过将一个命名空间和类指定为 XAML 页面根元素的 [x:Class](x-class-attribute.md) 属性来标识每个 XAML 页面的 XAML 代码隐藏文件的位置。 有关这些机制在 XAML 中如何工作以及它们与编程和应用程序模型之间的关系的详细信息，请参阅[事件和路由事件概述](events-and-routed-events-overview.md)。
 
-**注意**对于 C + /CX，存在两个代码隐藏文件，一个是标头 (。 xaml.h)，另一个是实现 (。 xaml.cpp)。 该实现引用标头，从技术上讲，标头表示代码隐藏连接的入口点。
+**请注意**  的 c + + /cli CX 有两个代码隐藏文件，其中一个是标头 (。 xaml.h)，另一个实现 (。 xaml.cpp)。 该实现引用标头，从技术上讲，标头表示代码隐藏连接的入口点。
 
 ## <a name="resource-dictionaries"></a>资源字典
 
@@ -252,6 +252,6 @@ XAML 在应用开发过程中发挥着多项重要作用。
 
 一旦应用真正运行，如果任何 XAML 分析错误在设计时未经检测，公共语言运行时 (CLR) 就会报告这些错误作为 [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 有关可以对运行时 **XamlParseException** 执行的操作的详细信息，请参阅[采用 C# 或 Visual Basic 的 Windows 运行时应用的异常处理](https://msdn.microsoft.com/library/windows/apps/dn532194)。
 
-**注意**应用使用 C + + /CX 代码为未获取特定[**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 但是该异常与 **XamlParseException** 一样，包含的消息可阐明错误源与 XAML 相关，并且在 XAML 文件中包括上下文信息（例如行数）。
+**请注意**  应用程序使用 C + + /cli CX 代码别让我打开特定于[ **XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 但是该异常与 **XamlParseException** 一样，包含的消息可阐明错误源与 XAML 相关，并且在 XAML 文件中包括上下文信息（例如行数）。
 
 有关调试 Windows 运行时应用的详细信息，请参阅[启动调试会话](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx)。

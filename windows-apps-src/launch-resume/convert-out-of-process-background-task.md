@@ -1,21 +1,21 @@
 ---
 title: 将进程外后台任务移植到进程内后台任务
-description: 进程外后台任务移植到在前台应用进程中运行的进程内后台任务。
+description: 移植到在前台应用程序进程中运行的进程在后台任务进程外后台任务。
 ms.date: 09/19/2018
 ms.topic: article
-keywords: windows 10，uwp，后台任务，应用服务
+keywords: windows 10、 uwp、 后台任务、 应用服务
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
 ms.openlocfilehash: 97dd249165877591743892a136d51e0969dd902a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932083"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601202"
 ---
 # <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a>将进程外后台任务移植到进程内后台任务
 
-移植你的进程外 (OOP) 后台活动进程内活动的最简单方法是将[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)方法代码内的应用程序，并从[OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated)启动它。 在此处所述的技术不是有关创建大幅从 OOP 后台任务与进程内后台任务。它的有关重写 （或移植） OOP 版本到进程内版本。
+移植您的进程外 (OOP) 的后台活动以进程内活动的最简单方法是将您[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)方法在应用程序的代码，并启动从[OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated). 此处所述的技术不是使用进程内的后台任务; 从 OOP 后台任务创建填充码它的有关重写 （或移植） 到进程内版本的 OOP 版本。
 
 如果应用具有多个后台任务，[后台激活示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BackgroundActivation)可显示如何使用 `BackgroundActivatedEventArgs.TaskInstance.Task.Name` 确定启动的任务。
 
@@ -24,4 +24,4 @@ ms.locfileid: "8932083"
 ## <a name="background-tasks-and-trigger-types-that-cannot-be-converted"></a>无法转换的后台任务和触发器类型
 
 * 进程内后台任务不支持激活 VoIP 后台任务。
-* 进程内后台任务不支持以下触发器：[DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396)、[DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) 和 **IoTStartupTask**。
+* 进程内的后台任务不支持以下触发器：[DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396)， [DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx)和**IoTStartupTask**

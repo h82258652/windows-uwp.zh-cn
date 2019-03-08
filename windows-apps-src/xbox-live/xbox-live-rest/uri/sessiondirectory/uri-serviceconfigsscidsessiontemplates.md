@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e7ca5fdc7f418895cb23ee0e3b03d4ca39c33756
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933596"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632462"
 ---
 # <a name="serviceconfigsscidsessiontemplates"></a>/serviceconfigs/{scid}/sessiontemplates
-支持 GET 操作以检索一组的 MPSD 会话模板。 
+支持 GET 操作来检索一组 MPSD 会话模板。 
 <a id="ID4EO"></a>
 
  
@@ -26,18 +26,18 @@ sessiondirectory.xboxlive.com
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。| 
+| scid| GUID| 服务配置标识符 (SCID)。 会话标识符的第 1 部分中。| 
   
 <a id="ID4EPB"></a>
 
  
 ## <a name="valid-methods"></a>有效的方法
 
-[GET (/serviceconfigs/{scid}/sessiontemplates)](uri-serviceconfigsscidsessiontemplatesget.md)
+[获取 (/serviceconfigs/ {scid} / sessiontemplates)](uri-serviceconfigsscidsessiontemplatesget.md)
 
-&nbsp;&nbsp;检索一组的 MPSD 会话模板。
+&nbsp;&nbsp;检索一组 MPSD 会话模板。
  
 <a id="ID4EZB"></a>
 
@@ -49,6 +49,6 @@ sessiondirectory.xboxlive.com
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[会话目录 URI](atoc-reference-sessiondirectory.md)
+[会话目录 Uri](atoc-reference-sessiondirectory.md)
 
    

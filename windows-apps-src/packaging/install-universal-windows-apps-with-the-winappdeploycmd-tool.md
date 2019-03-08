@@ -1,32 +1,32 @@
 ---
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: 使用 WinAppDeployCmd.exe 工具安装应用
-description: Windows 应用程序部署 (WinAppDeployCmd.exe) 是可用于将部署到任意 windows 10 设备从 windows 10 电脑的通用 Windows 平台 (UWP) 应用的命令行工具。
+description: Windows 应用程序部署 (WinAppDeployCmd.exe) 是一个命令行工具，可用于部署 Windows 10 电脑到任意 Windows 10 设备的通用 Windows 平台 (UWP) 应用。
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 479c4410384613b22ba86bc976a360125bb73c3a
-ms.sourcegitcommit: d6bc0c73df105482cab00c41e80c7c98d6834874
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "9079770"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632802"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>使用 WinAppDeployCmd.exe 工具安装应用
 
 
-Windows 应用程序部署 (WinAppDeployCmd.exe) 是可用于将部署到任意 windows 10 设备从 windows 10 电脑的通用 Windows 平台 (UWP) 应用的命令行工具。 此工具可用于在 windows 10 设备而无需为该应用的 Microsoft Visual Studio 或解决方案是通过 USB 连接或同一子网的情况下部署应用包。 你还可以将事先未打包的应用部署到远程电脑或 Xbox One。 本文介绍如何使用此工具安装 UWP 应用。
+Windows 应用程序部署 (WinAppDeployCmd.exe) 是一个命令行工具，可用于部署 Windows 10 电脑到任意 Windows 10 设备的通用 Windows 平台 (UWP) 应用。 此工具可用于部署应用包时在 Windows 10 设备是通过 USB 连接或位于同一子网，而无需对该应用的 Microsoft Visual Studio 或解决方案。 你还可以将事先未打包的应用部署到远程电脑或 Xbox One。 本文介绍如何使用此工具安装 UWP 应用。
 
-你只需从命令提示符或脚本文件中运行 WinAppDeployCmd 工具安装在 windows 10 SDK。 使用 WinAppDeployCmd.exe 安装应用时，这会使用.appx/.msix 文件或 AppxManifest （适用于松散文件） 将旁加载到 windows 10 设备上的应用。 此命令不会安装应用所需的证书。 若要运行应用时，windows 10 设备必须处于开发人员模式或已安装的证书。
+只需 Windows 10 SDK 安装为从命令提示符或脚本文件运行 WinAppDeployCmd 工具。 借助 WinAppDeployCmd.exe 安装应用时，这使用.appx/.msix 文件或 AppxManifest （适用于松散文件） 来加载到 Windows 10 设备上的应用。 此命令不会安装应用所需的证书。 若要运行该应用，在 Windows 10 设备必须在开发人员模式下或已安装的证书。
 
 若要部署到移动设备，必须首先创建程序包。 有关详细信息，请查看[此处](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
-**WinAppDeployCmd.exe**工具位于以下在 windows 10 电脑上： **C:\\Program Files (x86) \\Windows Kits\\10\\bin\\&lt;SDK 版本&gt;\\x86\\WinAppDeployCmd.exe** （基于 sdk 的安装路径表示）。 
+**WinAppDeployCmd.exe**工具位于 Windows 10 电脑上：**C:\\Program Files (x86)\\Windows 工具包\\10\\bin\\&lt;SDK 版本&gt;\\x86\\WinAppDeployCmd.exe** (基于你的安装路径的 sdk）。 
 > [!NOTE]
 > 在 15063 版本及更高版本的 SDK 中，SDK 并行安装到版本特定的文件夹中。  以前的 SDK（14393 及以前）直接写入父文件夹。
 
-首先，将 windows 10 设备连接到同一子网，或将其连接到 windows 10 计算机中，通过 USB 连接直接。 然后使用以下语法和本文后面的此命令的示例部署 UWP 应用：
+首先，将 Windows 10 设备连接到同一子网，或将其连接到 Windows 10 计算机的 USB 连接与直接。 然后使用以下语法和本文后面的此命令的示例部署 UWP 应用：
 
 ## <a name="winappdeploycmd-syntax-and-options"></a>WinAppDeployCmd 语法和选项
 
@@ -60,7 +60,7 @@ WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 下表介绍了 **WinAppDeployCmd.exe** 命令。
 
 
-| **命令**  | **说明**                                                     |
+| **命令**  | **描述**                                                     |
 |--------------|---------------------------------------------------------------------|
 | 设备      | 显示可用网络设备列表。                         |
 | 安装      | 将 UWP 应用包安装到目标设备。                     |
@@ -74,10 +74,10 @@ WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 | deletecreds  | 从网络共享运行应用程序时，删除目标使用的网络凭据。|
 
 
-下表介绍了用于 **WinAppDeployCmd.exe** 的选项。
+下表介绍了 **WinAppDeployCmd.exe** 的选项。
 
 
-| **命令**  | **说明**  |
+| **命令**  | **描述**  |
 |--------------|------------------|
 | -h (-help)       | 显示命令、选项和参数。 |
 | -ip              | 目标设备的 IP 地址。 |
@@ -96,7 +96,7 @@ WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 
 下表介绍了 **WinAppDeployCmd.exe** 的选项。
 
-| **参数**           | **描述**                                                              |
+| **自变量**           | **描述**                                                              |
 |------------------------|------------------------------------------------------------------------------|
 | &lt;x&gt;              | 超时（以秒为单位）。 （默认值为 10 秒）                                          |
 | &lt;地址&gt;        | 目标设备的 IP 地址或唯一标识符。                        |
@@ -120,7 +120,7 @@ WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 WinAppDeployCmd devices 3
 ```
 
-从电脑的下载目录到 IP 地址为 192.168.0.1、 PIN 为 A1B2C3 与设备建立连接的 windows 10 设备中的 MyApp.appx 程序包安装应用
+安装应用程序从 Windows 10 设备的 IP 地址为 192.168.0.1 使用 PIN 的 A1B2C3 与设备建立的连接到你的电脑的下载目录中的 MyApp.appx 包
 
 ``` syntax
 WinAppDeployCmd install -file "Downloads\MyApp.appx" -ip 192.168.0.1 -pin A1B2C3
@@ -132,7 +132,7 @@ WinAppDeployCmd install -file "Downloads\MyApp.appx" -ip 192.168.0.1 -pin A1B2C3
 WinAppDeployCmd uninstall -package Company.MyApp_1.0.0.1_x64__qwertyuiop -ip 192.168.0.1
 ```
 
-更新已经安装在 IP 地址为 192.168.0.1 使用指定的应用包的 windows 10 设备的应用。
+更新 IP 地址为 192.168.0.1 使用指定的应用包在 Windows 10 设备已安装的应用程序。
 
 ``` syntax
 WinAppDeployCmd update -file "Downloads\MyApp.appx" -ip 192.168.0.1

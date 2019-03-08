@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ebba5abe0de8014a21d2e651534dacc118705fff
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050154"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610622"
 ---
-# <a name="getting-started-common-controls"></a>入门：常见控件
+# <a name="getting-started-common-controls"></a>入门：公共控件
 
 
-## <a name="common-controls-list"></a>常用控件列表
+## <a name="common-controls-list"></a>常见控件列表
 
-在前面的部分中，你仅使用了两个控件：按钮和文本块。 还有，当然，许多控件可供你。 下面是一些可在你的应用和与其等效的 iOS 中使用的常用控件。 iOS 控件按字母顺序列出，后跟最为相似的通用 Windows 平台 (UWP) 控件。
+在前面的部分中，你仅使用了两个控件：按钮和文本块。 有，当然，可供您的许多其他控件。 下面是一些可在你的应用和与其等效的 iOS 中使用的常用控件。 iOS 控件按字母顺序列出，后跟最为相似的通用 Windows 平台 (UWP) 控件。
 
 UWP 控件相当智能的方面是，它们可以感知到在其上运行的设备类型，并相应地更改外观和功能。 例如，如果项目使用 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681) 控件，能够优化自身以在桌面计算机上呈现不同于手机上的外观和行为，这就足够智能。 你无需执行任何操作，因为控件会在运行时对自身进行调整。
 
@@ -28,15 +28,15 @@ UWP 控件相当智能的方面是，它们可以感知到在其上运行的设�
 | 广告横幅视图 (**ADBannerView**) 和广告横幅视图委托 (**ADBannerViewDelegate**) | [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) <br/> 另请参阅[在应用中显示广告](../monetize/display-ads-in-your-app.md) |
 | 按钮 (UIButton) | [按钮](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> 另请参阅[快速入门：添加按钮控件](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346) |
 | 日期选取器 (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
-| 图像视图 (UIDatePicker) | [图像](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> 另请参阅[图像和 ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
+| 图像视图 (UIDatePicker) | [映像](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> 另请参阅[图像和 ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
 | 标签 (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> 另请参阅[快速入门：显示文本](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392) |
-| 地图视图 (MKMapView) 和地图视图委派 (MKMapViewDelegate) | 请参阅[适用于 UWP 应用的必应地图](https://go.microsoft.com/fwlink/p/?LinkId=263496) |
+| 地图视图 (MKMapView) 和地图视图委派 (MKMapViewDelegate) | 请参阅[必应地图适用于 UWP 应用](https://go.microsoft.com/fwlink/p/?LinkId=263496) |
 | 导航控制器 (UINavigationController) 和导航控制器委托 (UINavigationControllerDelegate) | [帧](https://msdn.microsoft.com/library/windows/apps/br242682) <br/> 另请参阅[导航](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 | 页面控件 (UIPageControl) | [页面](https://msdn.microsoft.com/library/windows/apps/br227503) <br/> 另请参阅[导航](https://msdn.microsoft.com/library/windows/apps/mt187344) |
-| 选取器视图 (UIPickerView) 和选取器视图委托 (UIPickerViewDelegate) | [组合框](https://msdn.microsoft.com/library/windows/apps/br209348) <br/> 另请参阅[添加组合框和列表框](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616) |
-| 进度条 (UIProgressView) | [进度栏](https://msdn.microsoft.com/library/windows/apps/br227529) <br/> 另请参阅[快速入门：添加进度控件](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
+| 选取器视图 (UIPickerView) 和选取器视图委托 (UIPickerViewDelegate) | [ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348) <br/> 另请参阅[添加组合框和列表框](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616) |
+| 进度条 (UIProgressView) | [ProgressBar](https://msdn.microsoft.com/library/windows/apps/br227529) <br/> 另请参阅[快速入门：添加进度控件](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
 | 滚动视图 (UIScrollView) 和滚动视图委托 (UIScrollViewDelegate) | [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527) <br/>  另请参阅[Extensible Application Markup Language (XAML) 滚动、平移以及缩放示例](https://go.microsoft.com/fwlink/p/?LinkId=238577) |
-| 搜索栏 (UISearchBar) 和搜索栏委派 (UISearchBarDelegate) | 请参阅[向应用添加搜索](https://msdn.microsoft.com/library/windows/apps/xaml/jj130767) <br/>  另请参阅[快速入门：向应用添加搜索](https://msdn.microsoft.com/library/windows/apps/xaml/hh868180) |
+| 搜索栏 (UISearchBar) 和搜索栏委派 (UISearchBarDelegate) | 请参阅[向应用添加搜索](https://msdn.microsoft.com/library/windows/apps/xaml/jj130767) <br/>  另请参阅[快速入门：将搜索添加到应用程序](https://msdn.microsoft.com/library/windows/apps/xaml/hh868180) |
 | 分段控件 (UISegmentedControl) | 无 |
 | 滑块 (UISlider) | [滑块](https://msdn.microsoft.com/library/windows/apps/br209614) <br/>  另请参阅[如何添加滑块](https://msdn.microsoft.com/library/windows/apps/xaml/hh868197) |
 | 拆分视图控制器 (UISplitViewController) 和拆分视图控制器委派 (UISplitViewControllerDelegate) | 无 |
@@ -51,7 +51,7 @@ UWP 控件相当智能的方面是，它们可以感知到在其上运行的设�
 
 有关其他更多控件，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)。
 
-**注意**控件适用于使用 JavaScript 和 HTML 的 UWP 应用的列表，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/hh465453)。
+**请注意**  使用 JavaScript 和 HTML 的 UWP 应用的控件的列表，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/hh465453)。
 
 ### <a name="next-step"></a>下一步
 
@@ -59,6 +59,6 @@ UWP 控件相当智能的方面是，它们可以感知到在其上运行的设�
 
 ## <a name="related-topics"></a>相关主题
 
-* [版本 2014：XAML UI 和控件如何？](https://go.microsoft.com/fwlink/p/?LinkID=397897)
-* [版本 2014：使用常见 XAML UI 框架开发应用](https://go.microsoft.com/fwlink/p/?LinkID=397898)
-* [版本 2014：使用 Visual Studio 构建 XAML 融合应用](https://go.microsoft.com/fwlink/p/?LinkID=397876)
+* [生成 2014年中：XAML UI 和控件呢？](https://go.microsoft.com/fwlink/p/?LinkID=397897)
+* [生成 2014年中：开发应用程序使用通用的 XAML UI 框架](https://go.microsoft.com/fwlink/p/?LinkID=397898)
+* [生成 2014年中：使用 Visual Studio 构建 XAML 融合应用](https://go.microsoft.com/fwlink/p/?LinkID=397876)

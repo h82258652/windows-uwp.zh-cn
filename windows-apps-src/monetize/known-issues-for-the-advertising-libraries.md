@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, 已知问题, 疑难解答
 ms.localizationpriority: medium
 ms.openlocfilehash: 029d595c41301e62f74c9b08b633bb22bfb12786
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049175"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641062"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>有关应用内广告的已知问题和疑难解答
 
 本主题列出了当前版本的 Microsoft 广告 SDK 的已知问题。 有关其他疑难解答指南，请参阅以下主题。
 
-* [HTML 和 JavaScript 疑难解答指南](html-and-javascript-troubleshooting-guide.md)
-* [XAML 和 C# 疑难解答指南](xaml-and-c-troubleshooting-guide.md)
+* [HTML 和 JavaScript 故障排除指南](html-and-javascript-troubleshooting-guide.md)
+* [XAML 和C#故障排除指南](xaml-and-c-troubleshooting-guide.md)
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>XAML 中的 AdControl 接口未知
 
@@ -40,13 +40,13 @@ ms.locfileid: "9049175"
 
 你没有看到广告的原因有很多，其中包括网络错误。 其他原因可能包括：
 
-* 在合作伙伴中心中选择某个广告单元，大小大于或小于应用代码中的**AdControl**的大小。
+* 使用大小大于或小于的大小在合作伙伴中心选择广告单元**AdControl**在应用程序的代码。
 
 * 在运行动态应用时，如果将[测试模式值](set-up-ad-units-in-your-app.md#test-ad-units)用于广告单元 ID，则广告不会显示。
 
 * 如果你在过去半小时创建了新的广告单元 ID，可能无法看到广告，直到服务器通过系统传播新数据为止。 之前显示了广告的现有 ID 应会立即显示广告。
 
-如果你可以在应用中看到测试广告，则代码有效，并且能够显示广告。 如果遇到问题，请联系[产品支持人员](https://developer.microsoft.com/en-us/windows/support)。 在该页面上，选择**联系我们**。
+如果你可以在应用中看到测试广告，则代码有效，并且能够显示广告。 如果你遇到问题，请联系[产品支持人员](https://developer.microsoft.com/en-us/windows/support)。 在此页上，选择**联系我们**。
 
 你还可在[论坛](https://go.microsoft.com/fwlink/p/?LinkId=401266)发布问题。
 
@@ -58,18 +58,18 @@ ms.locfileid: "9049175"
 
 * 旁加载应用或在仿真器中运行的应用不会显示实时广告。
 
-当实时广告单元服务测试广告时，该广告单元的状态将显示**活动并服务测试广告**在合作伙伴中心。 这当前不适用于手机应用。
+实时广告单元为测试广告提供服务，ad 单元状态会显示**活动和服务测试广告**在合作伙伴中心。 这当前不适用于手机应用。
 
 
 <span id="reference_errors"/>
 
 ## <a name="reference-errors-caused-by-targeting-any-cpu-in-your-project"></a>项目中通过面向任何 CPU 引起的引用错误
 
-在使用 Microsoft 广告 SDK 时，你无法在项目中面向**任何 CPU**。 如果你的项目面向**任何 CPU** 平台，可能会在添加类似于此引用的引用后看到警告。
+在使用 Microsoft 广告 SDK 时，你无法在项目中面向**任何 CPU**。 如果你的项目面向**任何 CPU** 平台，可能在添加类似于此引用的引用后会看到警告。
 
 ![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
-若要删除此警告，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 使用**配置管理器**以设置适用于调试和版本配置的平台目标。
+若要删除此警告，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 使用“配置管理器”以设置适用于调试和版本配置的平台目标。
 
 ![configurationmanagerwin10](images/13-87074274-c10d-4dbd-9a06-453b7184f8de.png)
 

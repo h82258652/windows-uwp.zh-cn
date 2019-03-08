@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c98e4d5581355510e349a48e797dfbfc959e9577
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932043"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632562"
 ---
 # <a name="usersbatchfeedback"></a>/users/batchfeedback
  
@@ -23,7 +23,7 @@ ms.locfileid: "8932043"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-没有此请求 URI 参数。
+没有为此请求 URI 参数。
   
 <a id="ID4E6"></a>
 
@@ -32,7 +32,7 @@ ms.locfileid: "8932043"
 
 [POST](uri-reputationusersbatchfeedbackpost.md)
 
-&nbsp;&nbsp;使用你的游戏服务来在你的游戏界面之外的批处理窗体中发送反馈。
+&nbsp;&nbsp;标题的服务用于标题的接口之外的批处理形式发送反馈。
  
 <a id="ID4EJB"></a>
 
@@ -44,6 +44,6 @@ ms.locfileid: "8932043"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[信誉 URI](atoc-reference-reputation.md)
+[信誉 Uri](atoc-reference-reputation.md)
 
    

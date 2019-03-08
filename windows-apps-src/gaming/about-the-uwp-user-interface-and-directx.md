@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, directx, 应用对象
 ms.localizationpriority: medium
 ms.openlocfilehash: e12ad6ce221440e8840006b3883980721b899ae6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922972"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616972"
 ---
 # <a name="the-app-object-and-directx"></a>应用对象和 DirectX
 
@@ -19,7 +19,7 @@ ms.locfileid: "8922972"
 
 使用 DirectX 的通用 Windows 平台 (UWP) 游戏不会使用许多 Windows UI 用户界面元素和对象。 相反，因为它们在 Windows 运行时堆栈中的较低级别上运行，所以它们必须以更加基本的方式与用户界面框架互操作： 直接访问应用对象并与之互操作。 了解何时以及如何执行此互操作，以及作为 DirectX 开发人员， 你可以如何在 UWP 应用的开发中高效使用此模型。
 
-请参阅有关不熟悉图形条款或读取时遇到的概念信息[Direct3D 图形词汇表](../graphics-concepts/index.md)。
+请参阅[Direct3D 图形词汇表](../graphics-concepts/index.md)获得不熟悉的图形条款或读取时遇到的概念的信息。
 
 ## <a name="the-important-core-user-interface-namespaces"></a>重要的核心用户界面命名空间
 
@@ -32,7 +32,7 @@ ms.locfileid: "8922972"
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **注意**如果你未开发 UWP 应用，请使用特定于 JavaScript 或 XAML 的库和命名空间，而不是这些命名空间中提供的类型中提供的用户界面组件。
+> **请注意**  如果不开发 UWP 应用，使用 JavaScript 或 XAML 特定的类库，而不是这些命名空间中提供的类型的命名空间中提供的用户界面组件。
 
  
 
@@ -87,14 +87,14 @@ ms.locfileid: "8922972"
 ## <a name="coreapplicationview-behaviors-and-properties"></a>CoreApplicationView 行为和属性
 
 
-[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 表示当前的应用视图。 应用单一实例在初始化期间创建应用视图，但在激活之前，视图将保持休眠。 你可获得 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，可访问它之上的 [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) 属性来显示视图，你也可以向 [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件注册委托来处理视图的激活和停用事件。
+[**CoreApplicationView** ](https://msdn.microsoft.com/library/windows/apps/br225017)表示当前应用程序视图。 应用单一实例在初始化期间创建应用视图，但在激活之前，视图将保持休眠。 你可获得 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，可访问它之上的 [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) 属性来显示视图，你也可以向 [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件注册委托来处理视图的激活和停用事件。
 
 ## <a name="corewindow-behaviors-and-properties"></a>CoreWindow 行为和属性
 
 
 在应用对象初始化时，会创建父窗口（一个 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 实例）并传递给视图提供程序。 如果应用有一个窗口要显示，它会显示它，否则它会初始化视图。
 
-[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 提供了许多特定于输入和基本窗口行为的事件。 你可以向这些事件注册自己的委托来处理它们。
+[**CoreWindow** ](https://msdn.microsoft.com/library/windows/apps/br208225)提供特定于输入和基本窗口行为的事件数。 你可以向这些事件注册自己的委托来处理它们。
 
 你也可以访问 [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264) 属性来获得窗口的窗口事件调度程序，该属性提供了一个 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 实例。
 
@@ -103,7 +103,7 @@ ms.locfileid: "8922972"
 
 你可以确定为具有 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 类型的窗口调度的事件线程行为。 在此类型中，有一个特别重要的方法：即 [**CoreDispatcher.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 方法，该方法启动窗口事件处理。 使用应用的错误选项调用此方法可能导致各种异常的事件处理行为。
 
-| CoreProcessEventsOption 选项                                                           | 说明                                                                                                                                                                                                                                  |
+| CoreProcessEventsOption 选项                                                           | 描述                                                                                                                                                                                                                                  |
 |------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**CoreProcessEventsOption.ProcessOneAndAllPending**](https://msdn.microsoft.com/library/windows/apps/br208217) | 调度队列中所有当前可用的事件。 如果没有正在等待的事件，则等待下一个新事件。                                                                                                                                 |
 | [**CoreProcessEventsOption.ProcessOneIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217)     | 如果在队列中有正在等待的事件，则调度一个事件。 如果没有正在等待的事件，则不等待引发新事件，而是立即返回。                                                                                          |

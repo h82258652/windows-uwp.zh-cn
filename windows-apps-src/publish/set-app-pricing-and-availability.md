@@ -1,5 +1,5 @@
 ---
-Description: The Pricing and availability page of the app submission process lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers.
+Description: 应用提交过程的定价和可用性页可让你确定你的应用价格应为多少钱、是否提供免费试用版以及向客户提供的方式、时间和地点。
 title: 设置应用定价和可用性
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.date: 10/31/2018
@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Windows 10, uwp, 价格, 可用, 可发现, 免费试用版, 试用版, 试用, 应用, 发布日期
 ms.localizationpriority: medium
 ms.openlocfilehash: d5fa6c3e23516a5255f8bd3252f6ded233101625
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922090"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640162"
 ---
 # <a name="set-app-pricing-and-availability"></a>设置应用定价和可用性
 
 
-[应用提交过程](app-submissions.md)的“定价和可用性”**** 页可让你确定你的应用价格应为多少钱、是否提供免费试用以及向客户提供的方式、时间和地点。 此处，我们将演练此页面上的选项以及你在输入此信息时应考虑的事项。
+[应用提交过程](app-submissions.md)的“定价和可用性”页可让你确定你的应用价格应为多少钱、是否提供免费试用以及向客户提供的方式、时间和地点。 此处，我们将演练此页面上的选项以及你在输入此信息时应考虑的事项。
 
 
 ## <a name="markets"></a>市场
@@ -55,9 +55,9 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 默认情况�
 
 ### <a name="time-limited"></a>限期提供
 
-选择**限期提供**以使客户能够在指定的一段时间内免费试用应用：**1 天**，**7 天**，**15 天**或 **30 天**。 可通过向[排除或限制试用版中的功能](../monetize/in-app-purchases-and-trials.md)中添加代码来限制功能，也可允许客户在试用期间访问完整功能。 
+选择**限时**若要允许客户特定几天的免费试用您的应用程序：**1 天**， **7 天**， **15 天**，或**30 天**。 可通过向[排除或限制试用版中的功能](../monetize/in-app-purchases-and-trials.md)中添加代码来限制功能，也可允许客户在试用期间访问完整功能。 
 > [!NOTE]
-> 使用 Windows 10（内部版本号为 10.0.10586 或更早版本）系统或 Windows Phone 8.1 及更早版本系统的客户将看不到限期提供的试用版。
+> 限时试用版不会显示给客户可在 Windows 10 生成 10.0.10586 或更早版本，或在 Windows Phone 8.1 及更早版本的客户。
 
 ### <a name="unlimited"></a>无限制
 
@@ -70,10 +70,10 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 默认情况�
 >[!NOTE]
 > 这些日期仅适用于使用 Windows 10（包括 Xbox）的客户。 如果你的应用对使用更早操作系统版本的客户可用，则只要产品可用，试用版将一直向这些客户提供。 
 
-要设置何时应将试用版提供给 Windows 10 上的客户的日期，请将**开始日期**和/或**结束日期**下拉列表更改为**开始/结束时间**，然后选择日期和时间。 如果执行此操作，可选择 **UTC**，这样所选择的时间便为协调世界时 (UTC)，或选择**本地**，这样这些时间便会应用于分别与某个市场相关联的各时区。 （请注意，对于跨多个时区的市场，将仅使用该市场中的某一个时区。 对于美国东部时区使用。）如果你想要设置的任何市场的不同日期，你可以选择**针对特定市场自定义**。
+要设置何时应将试用版提供给 Windows 10 上的客户的日期，请将**开始日期**和/或**结束日期**下拉列表更改为**开始/结束时间**，然后选择日期和时间。 如果执行此操作，可选择 **UTC**，这样所选择的时间便为协调世界时 (UTC)，或选择**本地**，这样这些时间便会应用于分别与某个市场相关联的各时区。 （请注意，对于跨多个时区的市场，将仅使用该市场中的某一个时区。 对于美国，将使用东部时区。）可以选择**为特定市场进行自定义**如果你想要设置的任何 market(s) 不同日期。
 
 
-## <a name="sale-pricing"></a>销售定价
+## <a name="sale-pricing"></a>促销价格
 
 如果你想要限时降价出售你的应用，可以创建和计划一次促销。
 

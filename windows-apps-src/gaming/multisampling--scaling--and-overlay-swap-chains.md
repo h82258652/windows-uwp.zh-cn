@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 交换链缩放, 覆盖, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 12aede6c4af61c4b86d1f1090a2ec3d0e5ecce68
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943782"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644192"
 ---
 # <a name="swap-chain-scaling-and-overlays"></a>交换链缩放和覆盖
 
 
 
-了解如何创建已缩放的交换链以提高在移动设备上的呈现速度，以及如何使用覆盖交换链（可用时）来提高视觉质量。
+了解如何创建已缩放的交换链以提高在移动设备上的渲染速度，以及如何使用覆盖交换链（如果可用）来提高视觉质量。
 
 ## <a name="swap-chains-in-directx-112"></a>DirectX 11.2 中的交换链
 
@@ -148,15 +148,15 @@ Direct3D 11.2 中还引入了一项通过翻转模型交换链来减少延迟的
     m_overlaySupportExists = dxgiOutput2->SupportsOverlays() ? true : false;
     ```
     
-    > **注意**如果 DXGI 适配器支持覆盖，则继续下一步。 如果设备不支持覆盖，使用多个交换链进行呈现时速度将会下降。 这时需要在相同的交换链中以降低的分辨率作为实时游戏内容来呈现 UI。
+    > **请注意**  如果 DXGI 适配器支持覆盖，则继续下一步。 如果设备不支持覆盖，使用多个交换链进行呈现时速度将会下降。 这时需要在相同的交换链中以降低的分辨率作为实时游戏内容来呈现 UI。
 
      
 
-2.  使用 [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) 创建前台交换链。 必须在提供给 *pDesc* 参数的 [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中设置以下选项：
+2.  使用 [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) 创建前台交换链。 必须设置以下选项[ **DXGI\_交换\_链\_DESC1** ](https://msdn.microsoft.com/library/windows/desktop/hh404528)提供给*pDesc*参数：
 
-    -   指定 [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) 交换链标志，以指示前台交换链。
-    -   使用 [**DXGI\_ALPHA\_MODE\_PREMULTIPLIED**](https://msdn.microsoft.com/library/windows/desktop/hh404496) Alpha 模式标志。 始终对前台交换链进行预乘。
-    -   设置 [**DXGI\_SCALING\_NONE**](https://msdn.microsoft.com/library/windows/desktop/hh404526) 标志。 前台交换链始终以原生分辨率运行。
+    -   指定[ **DXGI\_交换\_链\_标志\_前台\_层**](https://msdn.microsoft.com/library/windows/desktop/bb173076)交换链标志，用于指示前台交换链。
+    -   使用[ **DXGI\_ALPHA\_模式\_预先正片叠加**](https://msdn.microsoft.com/library/windows/desktop/hh404496) alpha 模式标志。 始终对前台交换链进行预乘。
+    -   设置[ **DXGI\_缩放\_NONE** ](https://msdn.microsoft.com/library/windows/desktop/hh404526)标志。 前台交换链始终以原生分辨率运行。
 
     ```cpp
      foregroundSwapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER;
@@ -164,7 +164,7 @@ Direct3D 11.2 中还引入了一项通过翻转模型交换链来减少延迟的
      foregroundSwapChainDesc.AlphaMode = DXGI_ALPHA_MODE_PREMULTIPLIED; // Foreground swap chain alpha values must be premultiplied.
     ```
 
-    > **注意**重新设置[**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) ，每次调整交换链的大小时。
+    > **请注意**  设置[ **DXGI\_交换\_链\_标志\_前台\_层**](https://msdn.microsoft.com/library/windows/desktop/bb173076)试每个调整交换链的大小时的时间。
 
     ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
@@ -199,7 +199,7 @@ Direct3D 11.2 中还引入了一项通过翻转模型交换链来减少延迟的
 
 4.  前台交换链始终使用预乘 Alpha。 每个像素的颜色值都应该在显示帧之前已经预乘 Alpha 值。 例如，一个 Alpha 值为 50% 的 100% 白色 BGRA 像素设置为 (0.5, 0.5, 0.5, 0.5)。
 
-    可以通过应用一个应用混合状态（请参阅 [**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349)），并将 [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) 结构的 **SrcBlend** 字段设置为 **D3D11\_SRC\_ALPHA**，在输出合并阶段完成 Alpha 预乘步骤。 还可以使用已经预乘了 Alpha 值的资源。
+    可以通过应用应用 blend 状态中的输出合并器阶段完成 alpha premultiplication 步骤 (请参阅[ **ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349)) 与[ **D3D11\_呈现\_目标\_BLEND\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476200)结构的**SrcBlend**字段设置为**D3D11\_SRC\_ALPHA**。 还可以使用已经预乘了 Alpha 值的资源。
 
     如果未完成 Alpha 预乘步骤，前台交换链上的颜色会比预期明亮。
 

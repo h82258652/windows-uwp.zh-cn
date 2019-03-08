@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 0943273dab239669be75b30070222d698246aa41
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944719"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610022"
 ---
 # <a name="typography"></a>版式
 
@@ -19,7 +19,7 @@ ms.locfileid: "8944719"
 
 作为语言的视觉表示形式，版式的主要任务是传达信息。 它的样式应永远不妨碍该目标。 本文介绍如何在 UWP 应用中设计版式以帮助用户轻松高效地了解内容。
 
-## <a name="font"></a>字体
+## <a name="font"></a>Font
 
 应在应用的全部 UI 中使用同一种字体，建议始终使用 UWP 应用的默认字体 **Segoe UI**。 其设计目的是为保持不同字体大小和像素密度下的最佳可读性，并提供可润色系统内容的清晰、明朗的美学效果。
 
@@ -133,11 +133,11 @@ UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻�
     :::column-end:::
 :::row-end:::
 
-## <a name="clipping-and-ellipses"></a>剪裁和省略号
+## <a name="clipping-and-ellipses"></a>剪切和省略号
 
 当文本数量超出可用空间时，建议剪裁文本，这是大多数 [UWP 文本控件](../controls-and-patterns/text-controls.md)的默认行为。
 
-![显示剪裁了一些文本之后的设备框架](images/type/clipping.svg)
+![显示剪裁一些文字的设备框架](images/type/clipping.svg)
 
 ```xaml
 <TextBlock TextWrapping="WrapWholeWords" TextTrimming="Clip"/>
@@ -154,7 +154,7 @@ UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻�
     :::column-end:::
 :::row-end:::
 
-**注意**：如果未对容器进行完善定义（例如，不区分背景颜色），或者当存在用于查看更多文本的链接时，则使用省略号。
+**注意**：如果容器不是明确定义 （例如没有区别性背景色），或如果有一个链接来查看更多的文本，然后使用省略号。
 
 ## <a name="languages"></a>语言 
 
@@ -171,7 +171,7 @@ Segoe UI 适用于英语、欧洲语言、希腊语、希伯来语、亚美尼�
 <tr class="header">
 <th align="left">字体系列</th>
 <th align="left">样式</th>
-<th align="left">注意</th>
+<th align="left">注释</th>
 </tr>
 </thead>
 <tbody>
@@ -183,7 +183,7 @@ Segoe UI 适用于英语、欧洲语言、希腊语、希伯来语、亚美尼�
 <tr class="even">
 <td style="font-family: Gadugi;">Gadugi</td>
 <td align="left">常规、粗体</td>
-<td align="left">北美语言脚本的用户界面字体（加拿大音节文字、切罗基语）。</td>
+<td align="left">北美语言脚本的用户界面字体（加拿大音节文字、切罗基语）</td>
 </tr>
 <tr class="odd">
 <td align="left" style="font-family: Leelawadee UI;">Leelawadee UI</td>
@@ -244,7 +244,7 @@ Sans-serif 字体是用于标题和 UI 元素的不错选择。
 <tr class="header">
 <th align="left">字体系列</th>
 <th align="left">样式</th>
-<th align="left">注意</th>
+<th align="left">注释</th>
 </tr>
 </thead>
 <tbody>
@@ -272,7 +272,7 @@ Sans-serif 字体是用于标题和 UI 元素的不错选择。
 <tr class="even">
 <td style="font-family: Selawik;">Selawik</td>
 <td align="left">常规、半细、细体、粗体、半粗</td>
-<td align="left">计量方面与 Segoe UI 兼容的开源字体，用于其它平台上不希望包含 Segoe UI 的应用。 <a href="https://github.com/Microsoft/Selawik">在 GitHub 上获取 Selawik。</a></td>
+<td align="left">计量方面与 Segoe UI 兼容的开源字体，用于其它平台上不希望包含 Segoe UI 的应用。 <a href="https://github.com/Microsoft/Selawik">GitHub 上获取 Selawik。</a></td>
 </tr>
 
 </tbody>
@@ -287,7 +287,7 @@ Serif 字体适合用于显示大量文本。
 <tr class="header">
 <th align="left">字体系列</th>
 <th align="left">样式</th>
-<th align="left">注意</th>
+<th align="left">注释</th>
 </tr>
 </thead>
 <tbody>
@@ -302,7 +302,7 @@ Serif 字体适合用于显示大量文本。
 <td align="left">支持欧洲和中东语言脚本（拉丁文、希腊语、西里尔文、阿拉伯语、亚美尼亚语和希伯来语）的 Serif 固定宽度字体。</td>
 </tr>
 <tr class="odd">
-<td style="font-family: Georgia;">Georgia</td>
+<td style="font-family: Georgia;">格鲁吉亚</td>
 <td align="left">常规、斜体、粗体、粗斜体</td>
 <td align="left">支持欧洲语言脚本（拉丁文、希腊语和西里尔文）。</td>
 </tr>
@@ -323,7 +323,7 @@ Serif 字体适合用于显示大量文本。
 <tr class="header">
 <th align="left">字体系列</th>
 <th align="left">样式</th>
-<th align="left">注意</th>
+<th align="left">注释</th>
 </tr>
 </thead>
 <tbody>
@@ -350,4 +350,4 @@ Serif 字体适合用于显示大量文本。
 * [文本控件](../controls-and-patterns/text-controls.md)
 * [XAML 主题资源](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
 * [XAML 样式](../controls-and-patterns/xaml-styles.md)
-* [Microsoft 版式](https://docs.microsoft.com/typography/)
+* [Microsoft Typography](https://docs.microsoft.com/typography/)

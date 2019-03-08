@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d58d34263e7e0e90091c41c1df4fd5e078f5055
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945500"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607492"
 ---
 # <a name="reward-json"></a>Reward (JSON)
-与成就关联的奖励。
+这种成就与相关联的回报。
 <a id="ID4EN"></a>
 
 
@@ -23,18 +23,18 @@ ms.locfileid: "8945500"
 
 奖励对象具有以下规范。
 
-| 成员| 类型| 说明|
+| 成员| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- |
-| name| 字符串| 奖励面向用户的名称。|
-| description| 字符串| 奖励面向用户的描述。|
-| 值| 字符串| 奖励的值。|
-| type| RewardType 枚举| 奖励类型： <ul><li>无效 (0): 未知和不受支持的奖励类型已配置。</li><li>玩家分数 (1): 奖励将点添加到玩家的玩家分数。</li><li>inApp (2): 定义并由游戏提供奖励。</li><li>插图 (3): 奖励是数字资产。</li></ul> | 
-| valueType| ProgressValueDataType 枚举| 值的类型。 有关详细信息，请参阅[要求 (JSON)](json-requirement.md) 。|
+| name| 字符串| 这种回报面向用户的名称。|
+| description| 字符串| 这种回报面向用户的说明。|
+| value| 字符串| 奖励的值。|
+| type| RewardType 枚举| 奖励类型中： <ul><li>无效 (0):未知和不受支持的奖励类型已配置。</li><li>所有 (1):这种回报向播放机的所有点。</li><li>应用内 (2):定义和提供标题的回报。</li><li>Art (3):获得的回报是数字资产。</li></ul> | 
+| valueType| ProgressValueDataType 枚举| 值的类型。 请参阅[要求 (JSON)](json-requirement.md)有关详细信息。|
 
 <a id="ID4EBD"></a>
 
 
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
 
 
 ```json
@@ -59,4 +59,4 @@ ms.locfileid: "8945500"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)

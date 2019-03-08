@@ -8,19 +8,19 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a8973390ccbf5dd9980410f60f03a7edd78c134
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918072"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608782"
 ---
 # <a name="post-usersmescidsscidclips"></a>POST (/users/me/scids/{scid}/clips)
-发出初始上载请求。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+发出初始上传请求。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，取决于 URI 相关的函数。
  
   * [备注](#ID4EX)
   * [URI 参数](#ID4EFB)
-  * [授权](#ID4EQB)
-  * [需的请求标头](#ID4EKC)
+  * [Authorization](#ID4EQB)
+  * [所需的请求标头](#ID4EKC)
   * [可选的请求标头](#ID4ENE)
   * [请求正文](#ID4ENF)
   * [示例请求](#ID4E1F)
@@ -33,28 +33,28 @@ ms.locfileid: "8918072"
  
 ## <a name="remarks"></a>备注
  
-这是 GameClip 上载过程的第一部分。 在视频的捕获，建议调用 GameClips 服务，立即以获取的位上, 传的 ID 和 URI，即使上传未计划立即开始。 用户配额检查和内容隔离，隐私，依此类推，若要查看是否视频应甚至计划用于上传客户端通过其他检查，将执行此调用。 肯定响应来自此调用指示服务愿意接受视频剪辑的上传。 上传的所有剪辑必须与特定标题 （通过 SCID) 都关联，以接受系统中。
+这是 GameClip 上传过程的第一部分。 在捕获的视频，建议调用 GameClips 服务立即获取的 ID 和 URI 的位数上, 传，即使在上传不计划立即启动。 此调用将执行用户配额检查和其他检查，通过内容隔离、 隐私性，依此类推，若要查看是否视频应甚至计划进行上传客户端。 此调用的积极响应指示服务是愿意接受上传的视频剪辑。 上传的所有剪辑必须都关联具有特定标题 （通过 SCID) 接受系统中。
  
-此调用不是幂等;后续调用将导致不同 Id 和要颁发的 Uri。 重试失败应遵循标准客户端后关闭行为。
+此调用不是幂等;后续调用将导致不同 Id 和要颁发的 Uri。 重试次数失败时应遵循标准的客户端回退行为。
   
 <a id="ID4EFB"></a>
 
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| scid| 字符串| 正在访问的资源的服务配置 ID。 必须匹配的身份验证的用户的 SCID。| 
+| scid| 字符串| 正在访问的资源的服务的配置 ID。 必须与匹配身份验证的用户的 SCID。| 
   
 <a id="ID4EQB"></a>
 
  
 ## <a name="authorization"></a>授权
  
-以下声明所需的此方法：
+此方法需要有以下声明：
  
-   * Xuid
-   * DeviceType-必须上传的设备
+   * xuid
+   * 设备类型-必须是要上传的设备
    * DeviceId
    * TitleId
    * TitleSandboxId
@@ -62,30 +62,30 @@ ms.locfileid: "8918072"
 <a id="ID4EKC"></a>
 
  
-## <a name="required-request-headers"></a>需的请求标头
+## <a name="required-request-headers"></a>所需的请求标头
  
-| 标头| 类型| 描述| 
+| 标头| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | --- | --- | --- | 
-| 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值： <b>Xauth =&lt;authtoken ></b>| 
-| X RequestedServiceVersion| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
-| Content-Type| 字符串| 响应正文的 MIME 类型。 示例： <b>application/json</b>。| 
-| 接受| 字符串| 内容类型的可接受的值。 示例： <b>application/json</b>。| 
+| 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值：<b>Xauth=&lt;authtoken></b>| 
+| X-RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/编号。 验证标头中的身份验证令牌等的声明的有效性后仅为将请求路由到该服务。示例：1，vnext。| 
+| 内容类型| 字符串| 响应正文的 MIME 类型。 示例：<b>应用程序 /json</b>。| 
+| 接受| 字符串| 内容类型的可接受的值。 示例：<b>应用程序 /json</b>。| 
   
 <a id="ID4ENE"></a>
 
  
 ## <a name="optional-request-headers"></a>可选的请求标头
  
-| 标头| 类型| 描述| 
+| 标头| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Accept-Encoding| 字符串| 可接受的压缩编码。 示例值： gzip，桥，标识。| 
+| Accept-Encoding| 字符串| 可接受的压缩编码。 示例值： gzip、 deflate，标识。| 
   
 <a id="ID4ENF"></a>
 
  
 ## <a name="request-body"></a>请求正文
  
-请求的正文应采用 JSON 格式的[InitialUploadRequest](../../json/json-initialuploadrequest.md)对象。
+请求的正文应是[InitialUploadRequest](../../json/json-initialuploadrequest.md)以 JSON 格式的对象。
   
 <a id="ID4E1F"></a>
 
@@ -120,22 +120,22 @@ ms.locfileid: "8918072"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+服务将返回其中一个状态代码在本部分中使用此方法在此资源上发出的请求的响应中。 有关与 Xbox Live 服务一起使用的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 200| “确定”| 已成功检索会话。| 
-| 400| 错误请求| 在请求正文中，没有错误或用户通过他们的配额。| 
-| 401| 未授权| 没有在请求中的身份验证令牌格式问题。| 
-| 403| 已禁止| 声明丢失，或 DeviceType 不需要一些。| 
-| 503| 不允许| 该服务或一些下游依赖项都已关闭。 使用标准后关闭行为重试。| 
+| 200| 确定| 已成功检索该会话。| 
+| 400| 无效的请求| 请求正文中出现错误或用户通过其配额。| 
+| 401| 未经授权| 没有在请求中的身份验证令牌格式的问题。| 
+| 403| 已禁止| 一些必需的声明丢失，或者不是设备类型。| 
+| 503| 不可接受| 此服务或某些下游的依赖关系都已关闭。 使用标准的回退行为重试。| 
   
 <a id="ID4EVAAC"></a>
 
  
 ## <a name="response-body"></a>响应正文
  
-[InitialUploadResponse](../../json/json-initialuploadresponse.md)对象或 JSON 格式的[ServiceErrorResponse](../../json/json-serviceerrorresponse.md)对象可以响应。
+响应可进行[InitialUploadResponse](../../json/json-initialuploadresponse.md)对象或[ServiceErrorResponse](../../json/json-serviceerrorresponse.md)以 JSON 格式的对象。
   
 <a id="ID4EFBAC"></a>
 

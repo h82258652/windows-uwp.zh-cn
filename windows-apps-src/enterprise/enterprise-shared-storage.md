@@ -1,17 +1,17 @@
 ---
 ms.assetid: B48E21AB-0EA5-444B-8333-393DD8D1B76D
-title: 企业共享的存储
+title: 企业共享存储
 description: 企业共享的存储为要共享数据的业务线应用定义本地数据位置。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f9e1f285f53f2f4c9f160b573141666609560c00
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049754"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633652"
 ---
 # <a name="enterprise-shared-storage"></a>企业共享存储
 

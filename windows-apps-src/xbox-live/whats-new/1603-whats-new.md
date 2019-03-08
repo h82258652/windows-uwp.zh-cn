@@ -4,14 +4,14 @@ description: Xbox Live SDK 的新增功能 - 2016 年 3 月
 ms.assetid: 6c5d6723-cb61-4e7a-b72d-e6f4c328c37e
 ms.date: 04/04/2017
 ms.topic: article
-keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
+keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 83ddea2991eb65b06e079ab980650ee791023080
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929298"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618662"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---march-2016"></a>Xbox Live SDK 的新增功能 - 2016 年 3 月
 

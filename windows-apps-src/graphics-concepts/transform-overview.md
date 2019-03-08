@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b6be8ee8aa67196581907087d99e0324d741a00
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928066"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640142"
 ---
 # <a name="transform-overview"></a>转换概述
 
@@ -72,7 +72,7 @@ D3DMATRIX scale = {
 };
 ```
 
-## <a name="span-idtranslatespanspan-idtranslatespanspan-idtranslatespantranslate"></a><span id="Translate"></span><span id="translate"></span><span id="TRANSLATE"></span>转换
+## <a name="span-idtranslatespanspan-idtranslatespanspan-idtranslatespantranslate"></a><span id="Translate"></span><span id="translate"></span><span id="TRANSLATE"></span>翻译
 
 
 以下等式将点 (x, y, z) 转换为新点 (x', y', z')。
@@ -100,7 +100,7 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 
 ![新点的缩放矩阵的等式](images/matscale.png)
 
-## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>旋转
+## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>Rotate
 
 
 此处描述的转换是针对左手坐标系的，因此可能不同于你在其他地方看到的转换矩阵。
@@ -135,7 +135,7 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 }
 ```
 
-## <a name="span-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanconcatenating-matrices"></a><span id="Concatenating_Matrices"></span><span id="concatenating_matrices"></span><span id="CONCATENATING_MATRICES"></span>连接矩阵
+## <a name="span-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanconcatenating-matrices"></a><span id="Concatenating_Matrices"></span><span id="concatenating_matrices"></span><span id="CONCATENATING_MATRICES"></span>串联矩阵
 
 
 使用矩阵的一个优势在于，你可通过将两个或两个以上的矩阵相乘来组合其效果。 这意味着，要旋转模型并将其转换到某个位置，你无需应用两个矩阵。 相反，你将旋转矩阵和转换矩阵相乘以产生包含其所有效果的复合矩阵。 此过程称为矩阵连接，可使用以下等式进行编写。

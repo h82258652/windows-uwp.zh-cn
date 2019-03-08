@@ -7,18 +7,18 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 仲裁程序, 多人游戏 2015
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e250841fb0731a903c0e9c5bdeeecd42f07ac84
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919821"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629702"
 ---
 # <a name="migrating-an-arbiter"></a>迁移仲裁程序
 
 在完整会话期间的某个时刻，你可能需要使用仲裁程序迁移来选择新的仲裁程序。 迁移有两类：
 
--   **正常的仲裁程序迁移**
--   **故障转移仲裁程序迁移**
+-   **正常的仲裁器迁移**
+-   **故障转移仲裁器迁移**
 
 以下流程图说明如何迁移仲裁程序。
 
@@ -26,7 +26,7 @@ ms.locfileid: "8919821"
 
 ## <a name="graceful-arbiter-migration"></a>正常的仲裁程序迁移
 
-在正常的仲裁程序迁移中，传出仲裁程序可以协助迁移任务并确定新仲裁程序。 此类迁移使用[操作方法：设置 MPSD 会话的仲裁程序](multiplayer-how-tos.md)所介绍的仲裁程序设置。
+在正常的仲裁程序迁移中，传出仲裁程序可以协助迁移任务并确定新仲裁程序。 此迁移类型使用的仲裁器设置，如中所述[如何：为 MPSD 会话设置仲裁器](multiplayer-how-tos.md)。
 
 
 ## <a name="failover-arbiter-migration"></a>故障转移仲裁程序迁移
@@ -49,7 +49,7 @@ ms.locfileid: "8919821"
 
 ### <a name="select-arbiter-using-peer-voting"></a>使用对等方投票选择仲裁程序
 
-如果在所有对等方之间存在完整连接，他们可以使用对等方消息进行投票，然后选择新的仲裁程序。 新仲裁程序然后使用同步更新更新会话的主机设备令牌。 请参阅[操作方法：更新多人游戏会话](multiplayer-how-tos.md)。
+如果在所有对等方之间存在完整连接，他们可以使用对等方消息进行投票，然后选择新的仲裁程序。 新仲裁程序然后使用同步更新更新会话的主机设备令牌。 请参阅[如何：更新多人游戏会话](multiplayer-how-tos.md)。
 
 
 ### <a name="use-greedy-arbiter-selection"></a>使用贪婪仲裁程序选择

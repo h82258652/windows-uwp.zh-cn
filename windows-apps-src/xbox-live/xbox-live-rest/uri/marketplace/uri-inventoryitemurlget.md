@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 446197eb20820304088ddac4a6379fa3b2510873
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058482"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606692"
 ---
 # <a name="get-inventoryitemid"></a>GET (/inventory/{itemID})
-提供特定清单项完整的详细信息集。 这些 Uri 的域是`inventory.xboxlive.com`。
+提供特定清单项的详细信息的完整集。 这些 Uri 的域是`inventory.xboxlive.com`。
  
   * [备注](#ID4EX)
   * [URI 参数](#ID4EAB)
@@ -26,16 +26,16 @@ ms.locfileid: "9058482"
  
 ## <a name="remarks"></a>备注
  
-没有策略检查，强制执行，否则筛选会出现作为此调用的一部分。
+无策略检查，强制执行，或筛选将发生此调用的一部分。
   
 <a id="ID4EAB"></a>
 
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| itemID| 字符串| 唯一单数库存项目的每个用户的 ID| 
+| itemID| 字符串| 唯一的单数形式的清单项的每个用户 ID| 
   
 <a id="ID4ELB"></a>
 
@@ -47,7 +47,7 @@ ms.locfileid: "9058482"
  
 ### <a name="sample-response"></a>示例响应
  
-GET 请求，假设传递身份验证并分配适当授权上下文中，该响应是具有完整的项目属性集的单个清单项。
+对 GET 请求中，假定它将传递身份验证，并分配适当的授权上下文的响应是项属性的完整集的单个清单项。
  
 
 ```cpp
@@ -74,13 +74,13 @@ GET 请求，假设传递身份验证并分配适当授权上下文中，该响�
  
 ##### <a name="further-information"></a>详细信息 
 
-[EDS 通用标头](../../additional/edscommonheaders.md)
+[EDS 常见标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询优化器](../../additional/edsqueryrefiners.md)
+ [EDS 查询精简将](../../additional/edsqueryrefiners.md)
 
- [市场 URI](atoc-reference-marketplace.md)
+ [Marketplace Uri](atoc-reference-marketplace.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)
 

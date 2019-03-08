@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 实时活动服务
 ms.localizationpriority: medium
 ms.openlocfilehash: 36389fac3bd6dea2d2e24c0935087781118d8046
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931990"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592082"
 ---
 # <a name="real-time-activity-service"></a>实时活动服务
 
@@ -63,14 +63,14 @@ RTA 支持很多方案。 这里只列出其中几个方案，但是，RTA 的�
 
 ## <a name="in-this-section"></a>本部分内容
 
-[注册获得玩家统计数据更改通知](register-for-stat-notifications.md)  
+[注册以播放机状态更改通知](register-for-stat-notifications.md)  
 介绍如何启用实时活动 (RTA) 以获得统计数据或状态信息。
 
-[使用 winrt API 对实时活动 (RTA) 服务进行编程](programming-the-real-time-activity-service.md)  
+[编程使用 winrt api 的实时活动 (rta) 服务](programming-the-real-time-activity-service.md)  
 介绍如何使用 WinRT API 对实时活动 (RTA) 服务进行编程。
 
-[使用 RESTful 接口对实时活动 (RTA) 服务进行编程](programming-the-real-time-activity-service.md)  
+[编程实时活动 (rta) 服务使用 restful 接口](programming-the-real-time-activity-service.md)  
 介绍如何使用 RESTful 接口对实时活动 (RTA) 服务进行编程。
 
-[实时活动 (RTA) 最佳实践](rta-best-practices.md)  
+[实时活动 (rta) 最佳实践](rta-best-practices.md)  
 使用 Xbox 实时活动 (RTA) 服务从 Xbox 数据平台订阅统计数据和状态数据的最佳实践。

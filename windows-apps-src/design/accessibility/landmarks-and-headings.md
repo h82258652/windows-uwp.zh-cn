@@ -1,5 +1,5 @@
 ---
-Description: Describes the landmarks and headings features of accessibility.
+Description: 介绍可访问性的界标和标题功能。
 ms.assetid: 019CC63D-D915-4EBD-9442-DE899AB973C9
 title: 标志和标题
 label: Landmarks and Headings
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d81957c379bd948a50d08b980ff20debc6c223c5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927381"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611262"
 ---
 # <a name="landmarks-and-headings"></a>标志和标题
 

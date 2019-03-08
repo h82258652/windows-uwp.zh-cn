@@ -4,14 +4,14 @@ title: StaticResource 标记扩展
 ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f8c723dee8e943351d268ac678c8acc77efcbf4
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051130"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659552"
 ---
 # <a name="staticresource-markup-extension"></a>{StaticResource} 标记扩展
 
@@ -26,7 +26,7 @@ ms.locfileid: "9051130"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 术语 | 说明 |
+| 术语 | 描述 |
 |------|-------------|
 | 键 | 所请求资源的键。 此键最初通过 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 分配。 资源键可以是以 XamlName 语法定义的任何字符串。 |
 
@@ -38,7 +38,7 @@ ms.locfileid: "9051130"
 
 本主题未介绍 **StaticResource** 解析为资源字典中的项时所遵循的规则。 这些规则取决于引用和资源是否都存在于模板中，以及是否使用了合并的资源字典，等等。 有关如何定义资源和正确使用 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的详细信息（包括示例代码），请参阅 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)。
 
-**重要提示** **StaticResource**不应尝试进行前向引用定义资源的 XAML 文件中按词法进一步。 这样的尝试不受支持。 即使前向引用没有失败，尝试进行这样的引用也会对性能造成不利影响。 为实现最佳效果，请调整你的资源字典的组成，以避免使用前向引用。
+**重要**   A **StaticResource**必须尝试使对资源定义前向引用从词法上进一步 XAML 文件中。 这样的尝试不受支持。 即使前向引用没有失败，尝试进行这样的引用也会对性能造成不利影响。 为实现最佳效果，请调整你的资源字典的组成，以避免使用前向引用。
 
 尝试为无法解析的键指定 **StaticResource** 会在运行时引发 XAML 分析异常。 设计工具还可能会提供警告或错误。
 
@@ -46,7 +46,7 @@ ms.locfileid: "9051130"
 
 [{ThemeResource} 标记扩展](themeresource-markup-extension.md)是在其他位置中引用命名资源的类似标记扩展。 不同之处在于 {ThemeResource} 标记扩展能够返回不同的资源，具体取决于处于活动状态的系统主题。 有关详细信息，请参阅 [{ThemeResource} 标记扩展](themeresource-markup-extension.md)。
 
-**StaticResource** 是标记扩展。 当需要将属性值转义为除文字值或处理程序名称之外的值时，以及当需求更具全局性而不是仅仅将类型转换器放在某些类型或属性上时，通常需要实现标记扩展。 XAML 中的所有标记扩展在其属性语法中都使用“\{”和“\}”字符，通过此约定，XAML 处理器可以知道标记扩展必须处理属性。
+**StaticResource** 是标记扩展。 当需要将属性值转义为除文字值或处理程序名称之外的值时，以及当需求更具全局性而不是仅仅将类型转换器放在某些类型或属性上时，通常需要实现标记扩展。 在 XAML 使用的所有标记扩展"\{"和"\}"约定所依据的 XAML 处理器识别标记扩展必须处理该属性其特性语法中的字符。
 
 ### <a name="an-example-staticresource-usage"></a>示例 {StaticResource} 用法
 
@@ -75,14 +75,14 @@ ms.locfileid: "9051130"
 
 ## <a name="design-time-tools-support-for-the-staticresource-markup-extension"></a>设计时工具支持 **{StaticResource}** 标记扩展
 
-当你在 XAML 页面中使用 **{StaticResource}** 标记扩展时，Microsoft Visual Studio2013 可以在 Microsoft IntelliSense 下拉菜单中包含可能的键值。 例如，只要键入“{StaticResource”，来自当前查找作用域的任何资源键就会显示在 IntelliSense 下拉菜单中。 除了你在页面级别 ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) 和应用级别 ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)) 上具有的典型资源外，你还可以查看 [XAML 主题资源](https://msdn.microsoft.com/library/windows/apps/mt187274)以及你的项目正在使用的任何扩展中的资源。
+Microsoft Visual Studio 2013 可以包括可能的键值在 Microsoft IntelliSense 下拉列表中使用时 **{StaticResource}** XAML 页面中的标记扩展。 例如，只要键入“{StaticResource”，来自当前查找作用域的任何资源键就会显示在 IntelliSense 下拉菜单中。 除了你在页面级别 ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) 和应用级别 ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)) 上具有的典型资源外，你还可以查看 [XAML 主题资源](https://msdn.microsoft.com/library/windows/apps/mt187274)以及你的项目正在使用的任何扩展中的资源。
 
-在资源键作为任何 **{StaticResource}** 用法的一部分存在后，“转至定义”****(F12) 功能可以解析该资源并向你显示其定义所在的字典。 若要获取主题资源，请转到设计时 generic.xaml。
+在资源键作为任何 **{StaticResource}** 用法的一部分存在后，“转至定义”(F12) 功能可以解析该资源并向你显示其定义所在的字典。 若要获取主题资源，请转到设计时 generic.xaml。
 
 ## <a name="related-topics"></a>相关主题
 
 * [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
-* [x:Key 特性](x-key-attribute.md)
+* [X:key 特性](x-key-attribute.md)
 * [{ThemeResource} 标记扩展](themeresource-markup-extension.md)
 

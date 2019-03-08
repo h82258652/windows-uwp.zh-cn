@@ -8,18 +8,18 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: fc770673ac7e4034004f58032c7fa66cb28413e7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928779"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632682"
 ---
 # <a name="post-usersmeresetreputation"></a>POST (/users/me/resetreputation)
-使执行团队后 （例如） 帐户劫持将当前用户的信誉评分设置为某些任意值。 这些 Uri 的域是`reputation.xboxlive.com`。
+启用强制执行团队后 （例如） 帐户劫持为一些任意的值设置当前用户的信誉分数。 这些 Uri 的域是`reputation.xboxlive.com`。
  
   * [备注](#ID4EV)
-  * [授权](#ID4E5)
-  * [需的请求标头](#ID4ETB)
+  * [Authorization](#ID4E5)
+  * [所需的请求标头](#ID4ETB)
   * [请求正文](#ID4END)
   * [HTTP 状态代码](#ID4EDE)
   * [响应正文](#ID4EFH)
@@ -29,32 +29,32 @@ ms.locfileid: "8928779"
  
 ## <a name="remarks"></a>备注
  
-通过任何其他合作伙伴的所有除零售沙盒和 Retail，除非出于测试目的的所有沙盒中的用户，也可能会调用此方法。 请注意，此请求用于设置用户的"基本"信誉评分，他正面反馈权重将全部归零。在执行此调用后用户的实际信誉将这些基本评分以及他大使奖金他关注者奖金。
+通过为所有沙箱零售，除任何其他合作伙伴和零售，除用于测试目的的所有沙盒中的用户，也可能会调用此方法。 请注意，此请求设置用户的"基本"信誉分数，他积极的反馈加权值将所有清。用户的实际信誉进行此调用后将这些基本分数加上他代表奖金再加上他跟踪块奖金。
   
 <a id="ID4E5"></a>
 
  
 ## <a name="authorization"></a>授权
  
-从合作伙伴： 为零售沙盒， **PartnerClaim**来自强制执行团队;对于所有其他沙盒， **PartnerClaim**。
+从合作伙伴：零售沙盒**PartnerClaim**强制实施团队; 对于所有其他沙盒**PartnerClaim**。
  
-从用户： 以外的所有沙盒零售、 **XuidClaim**和**TitleClaim**除外。
+从用户：为所有除零售，沙箱**XuidClaim**并**TitleClaim**。
   
 <a id="ID4ETB"></a>
 
  
-## <a name="required-request-headers"></a>需的请求标头
+## <a name="required-request-headers"></a>所需的请求标头
  
-来自所有： **Content-type: application/json**。
+从所有：**内容类型： application/json**。
  
-从合作伙伴： **X Xbl 协定版本**（当前版本是 101）， **X Xbl 沙盒**。
+从合作伙伴：**X Xbl 协定版本**（当前版本为 101）， **X Xbl 沙盒**。
  
-从用户: （当前版本是 101） **X Xbl 协定版本**。
+从用户：**X Xbl 协定版本**（当前版本为 101）。
  
-| 标头| 类型| 描述| 
+| 标头| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
-| X RequestedServiceVersion|  | 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 101。| 
+| 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值："XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
+| X-RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/编号。 请求将只路由到的服务验证标头身份验证令牌中声明的有效性后，依次类推。 默认值：101.| 
   
 <a id="ID4END"></a>
 
@@ -66,7 +66,7 @@ ms.locfileid: "8928779"
  
 ### <a name="sample-request"></a>示例请求
  
-请求正文是一个简单的[ResetReputation (JSON)](../../json/json-resetreputation.md)文档。
+请求正文是一个简单[ResetReputation (JSON)](../../json/json-resetreputation.md)文档。
  
 
 ```cpp
@@ -84,23 +84,23 @@ ms.locfileid: "8928779"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+服务将返回其中一个状态代码在本部分中使用此方法在此资源上发出的请求的响应中。 有关与 Xbox Live 服务一起使用的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 描述| 
 | --- | --- | --- | --- | --- | --- | 
-| 200| “确定”| 确定。| 
-| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常无效参数。| 
-| 401| 未授权| 请求要求用户身份验证。| 
-| 404| 找不到| 找不到指定的资源。| 
-| 500| 内部服务器错误| 服务器时遇到意外的情况，执行此请求将阻止它。| 
-| 503| 服务不可用| 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
+| 200| 确定| 确定。| 
+| 400| 无效的请求| 服务无法理解请求格式不正确。 通常是一个无效的参数。| 
+| 401| 未经授权| 请求需要用户身份验证。| 
+| 404| 未找到| 找不到指定的资源。| 
+| 500| 内部服务器错误| 服务器遇到意外的情况，致使无法履行请求。| 
+| 503| 服务不可用| 请求已达到限制，以秒为单位 （例如 5 秒更高版本） 的客户端-重试值后重试请求。| 
   
 <a id="ID4EFH"></a>
 
  
 ## <a name="response-body"></a>响应正文
  
-成功时，响应正文为空。 失败时，会返回一个[ServiceError (JSON)](../../json/json-serviceerror.md)文档。
+如果成功，响应正文为空。 在失败时，[服务错误 (JSON)](../../json/json-serviceerror.md)返回文档。
  
 <a id="ID4ERH"></a>
 

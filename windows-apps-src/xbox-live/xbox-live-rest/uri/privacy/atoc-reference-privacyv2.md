@@ -8,17 +8,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 588d949671c52965549d963e200355dac720d513
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936767"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632142"
 ---
 # <a name="privacy-uris"></a>隐私 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的*隐私*。
+本部分提供有关通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务中针对*隐私*。
  
-仅在 Windows 8 上运行的游戏，Xbox 360 或 Windows Phone 上设备可以使用此服务。
+仅 Windows 8 上运行的游戏，在 Xbox 360 或 Windows Phone 设备可以使用此服务。
  
 这些 Uri 的域是 privacy.xboxlive.com。
  
@@ -35,7 +35,7 @@ ms.locfileid: "8936767"
 
 [/users/{ownerId}/people/avoid](uri-privacyusersxuidpeopleavoid.md)
 
-&nbsp;&nbsp;访问用户的避免列表
+&nbsp;&nbsp;访问用户避免列表
  
 <a id="ID4E2B"></a>
 
@@ -47,6 +47,6 @@ ms.locfileid: "8936767"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
+[通用资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
 
    
