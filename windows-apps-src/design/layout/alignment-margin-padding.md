@@ -1,5 +1,5 @@
 ---
-Description: Use alignment, margin, and padding properties to arrange the layout of elements on a page.
+Description: 使用对齐、 边距和填充属性排列的页面上的元素布局。
 title: 布局的对齐、边距和填充
 ms.date: 03/19/2018
 ms.topic: article
@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3c7ca724279a6a4d41b1f7757428af8eab403549
-ms.sourcegitcommit: 58783d1ea22e632b9c50dcfbaa1cc57686bcdd8e
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024204"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57600932"
 ---
 # <a name="alignment-margin-padding"></a>对齐、边距和填充
 
@@ -22,26 +22,26 @@ ms.locfileid: "9024204"
 
 ![显示尺寸的图示](images/dimensions.svg)
 
-- [**Height**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) 和 [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width) 指定元素的大小。 默认值是数学意义上的 NaN（非数字）。 可以使用固定的值（以[有效像素](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)为单位测量），或者可以针对流行为使用 **Auto** 或[成比例调整大小](layout-panels.md#grid)。
+- [**高度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height)并[**宽度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width)指定元素的大小。 默认值是数学意义上的 NaN（非数字）。 可以使用固定的值（以[有效像素](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)为单位测量），或者可以针对流行为使用 **Auto** 或[成比例调整大小](layout-panels.md#grid)。
 
-- [**ActualHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualheight) 和 [**ActualWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) 是只读属性，用于提供元素在运行时的大小。 如果流布局放大或缩小，则值会在 [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) 事件中发生更改。 请注意，[**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) 不会更改 ActualHeight 和 ActualWidth 的值。
+- [**ActualHeight** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualheight)并[ **ActualWidth** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth)是只读的属性，提供在运行时的元素的大小。 如果流布局放大或缩小，则值会在 [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) 事件中发生更改。 请注意，[**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) 不会更改 ActualHeight 和 ActualWidth 的值。
 
-- [**MinWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.minwidth)/[**MaxWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxwidth) 和 [**MinHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.minheight)/[**MaxHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight) 指定用于限定元素在流大小调整过程中的大小。
+- [**MinWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.minwidth)/[**MaxWidth** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxwidth)并[ **MinHeight** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.minheight) / [**MaxHeight** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight)指定约束同时允许流畅调整元素大小的值。
 
-- [**FontSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.fontsize) 和其他文本属性控制文本元素的布局大小。 尽管文本元素没有明确声明尺寸，但它们具有计算得到的 ActualWidth 和 ActualHeight。 
+- [**FontSize** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.fontsize)和其他文本属性控制文本元素的布局大小。 尽管文本元素没有明确声明尺寸，但它们具有计算得到的 ActualWidth 和 ActualHeight。 
 
 ## <a name="alignment"></a>对齐
 通过对齐，可以让 UI 看起来整洁、有序和均衡，此外还可以建立视觉层次和关系。
 
 ![显示对齐的图示](images/alignment.svg)
 
-- [**HorizontalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) 和 [**VerticalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment) 指定应如何将一个元素放置在其父容器中。
+- [**HorizontalAlignment** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment)并[ **VerticalAlignment** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment)指定应该如何在其父容器内定位元素。
     - **HorizontalAlignment** 的值是 **Left**、**Center**、**Right** 和 **Stretch**。
     - **VerticalAlignment** 的值是 **Top**、**Center**、**Bottom** 和 **Stretch**。
 
 - **Stretch** 是这两个属性的默认值，元素将填充父容器提供给它们的全部空间。 为 Height 和 Width 设定实际的数值之后，Stretch 值将被取消并改为充当 Center 值。 某些控件（如 Button）会在其默认样式中替换默认的 Stretch 值。
 
-- [**HorizontalContentAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.horizontalcontentalignment) 和 [**VerticalContentAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.verticalcontentalignment) 指定如何将子元素放置在一个容器中。
+- [**HorizontalContentAlignment** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.horizontalcontentalignment)并[ **VerticalContentAlignment** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.verticalcontentalignment)指定子元素的容器中的位置如何。
 
 - 对齐方式可能会影响布局面板中的剪切。 例如，在使用 `HorizontalAlignment="Left"` 时，如果内容大于 ActualWidth，则会剪切元素的右侧。
 
@@ -53,7 +53,7 @@ ms.locfileid: "9024204"
 ![xaml 边距和填充图示](images/xaml-layout-margins-padding.svg)
 
 ### <a name="margin"></a>边距
-[**Margin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.margin) 控制元素周围的空白空间量。 对于点击测试和源输入事件，Margin 不会向 ActualHeight 和 ActualWidth 添加像素，也不会被视为元素的一部分。
+[**边距**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.margin)控制元素周围的空白空间量。 对于点击测试和源输入事件，Margin 不会向 ActualHeight 和 ActualWidth 添加像素，也不会被视为元素的一部分。
 
 - Margin 值可以是统一的，也可以是不同的。 在使用 `Margin="20"` 时，将对元素的左侧、顶部、右侧和底部应用 20 像素的统一边距。 在使用 `Margin="0,10,5,25"` 时，将左侧、顶部、右侧和底部（按此顺序）分别应用不同的值。 
 
@@ -64,14 +64,14 @@ ms.locfileid: "9024204"
 - Margin 值将在最后受到限制，由于容器可以剪裁或限制元素，因此在使用边距时要谨慎。 Margin 值可能会造成元素无法呈现；在应用边距后，元素的尺寸可以限制为 0。
 
 ### <a name="padding"></a>填充
-[**Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.padding) 控制元素的内部边框与其子内容或子元素之间的空间量。 正 Padding 值会降低该元素的内容区域。 
+[**填充**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.padding)控制元素及其子内容或元素的内部边框之间的空间量。 正 Padding 值会降低该元素的内容区域。 
 
 与 Margin 不同，Padding 不是 FrameworkElement 的属性。 有几个类定义了自己的 Padding 属性：
 
--   [**Control.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.padding)：继承到所有 [**Control**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls) 派生的类。 并非所有控件都有内容，因此对一些控件来说，设置属性不会执行任何操作。 如果控件有边框，填充将应用到该边框内部。
--   [**Border.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.padding)：定义由 [**BorderThickness**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.borderthickness)/[**BorderBrush**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.borderbrush) 创建的矩形线和 [**Child**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.child) 元素之间的空间。
--   [**ItemsPresenter.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemspresenter.padding)：帮助显示项目控件中的项目的视觉形象，在每个项目周围放置指定的填充。
--   [**TextBlock.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.padding) 和 [**RichTextBlock.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.padding)：扩展文本元素的文本周围的边界框。 这些文本元素没有**背景**，因此很难直观地看见。 出于这个原因，请在 [**Block**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block) 容器中改为使用[**Margin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block.margin) 设置。
+-   [**Control.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.padding)： 所有继承[**控制**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)派生的类。 并非所有控件都有内容，因此对一些控件来说，设置属性不会执行任何操作。 如果控件有边框，填充将应用到该边框内部。
+-   [**Border.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.padding)： 定义由创建的矩形行之间的空间[ **BorderThickness**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.borderthickness)/[**BorderBrush** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.borderbrush)并[**子**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.child)元素。
+-   [**ItemsPresenter.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemspresenter.padding)： 可能会导致在项控件中，将指定的填充每个项周围放置的项的外观。
+-   [**TextBlock.Padding** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.padding)并[ **RichTextBlock.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.padding)： 展开的文本元素的文本周围的边界框。 这些文本元素没有**背景**，因此很难直观地看见。 出于这个原因，请在 [**Block**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block) 容器中改为使用[**Margin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block.margin) 设置。
 
 在每一种情况下，元素还具有 Margin 属性。 如果同时应用了 Margin 和 Padding，它们可以累加：外部容器和任何内部内容之间的明显距离将是边距加填充。
 

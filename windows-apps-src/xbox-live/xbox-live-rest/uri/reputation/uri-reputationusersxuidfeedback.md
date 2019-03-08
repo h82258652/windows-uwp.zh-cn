@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bf186091eacfcdb39c41bf256000990613d3685
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925487"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613412"
 ---
 # <a name="usersxuidxuidfeedback"></a>/users/xuid({xuid})/feedback
  
@@ -23,7 +23,7 @@ ms.locfileid: "8925487"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
 | xuid| ulong| Xbox 用户 ID (XUID) 所报告的用户。| 
   
@@ -34,7 +34,7 @@ ms.locfileid: "8925487"
 
 [POST](uri-reputationusersxuidfeedbackpost.md)
 
-&nbsp;&nbsp;如果你希望在游戏中，而不是使用 shell 添加反馈选项，用于从你的游戏。
+&nbsp;&nbsp;如果要在您的游戏，而不被使用命令行程序中添加反馈选项，则使用从您的标题。
  
 <a id="ID4EDC"></a>
 
@@ -46,6 +46,6 @@ ms.locfileid: "8925487"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[信誉 URI](atoc-reference-reputation.md)
+[信誉 Uri](atoc-reference-reputation.md)
 
    

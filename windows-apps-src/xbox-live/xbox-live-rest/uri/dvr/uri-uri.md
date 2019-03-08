@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 58df5fba21d207e352b6c6915ef21688cde8a7a4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919591"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623012"
 ---
 # <a name="uri"></a>/{uri}
-访问游戏剪辑数据。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+访问游戏剪辑数据。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，取决于 URI 相关的函数。
  
   * [URI 参数](#ID4EX)
  
@@ -24,9 +24,9 @@ ms.locfileid: "8919591"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| <b>uri</b>| 字符串| 要使用的 URI。 请参阅方法的详细信息页面。| 
+| <b>uri</b>| 字符串| 要使用的 URI。 请参阅方法的详细信息页。| 
   
 <a id="ID4ETB"></a>
 
@@ -37,9 +37,9 @@ ms.locfileid: "8919591"
 
 &nbsp;&nbsp;下载游戏剪辑。
 
-[PUT (/{uri})](uri-uriput.md)
+[放置 (/ {uri})](uri-uriput.md)
 
-&nbsp;&nbsp;上传游戏剪辑数据。
+&nbsp;&nbsp;游戏剪辑数据上传。
  
 <a id="ID4EAC"></a>
 
@@ -51,6 +51,6 @@ ms.locfileid: "8919591"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[游戏 DVR URI](atoc-reference-dvr.md)
+[游戏 DVR Uri](atoc-reference-dvr.md)
 
    

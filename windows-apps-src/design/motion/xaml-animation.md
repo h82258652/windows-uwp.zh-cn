@@ -1,17 +1,17 @@
 ---
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
 title: 动画概述
-description: 使用 Windows 运行时动画库中的动画将 Windows 外观集成到应用中。
+description: 使用 Windows 运行时动画库中的动画将 Windows 外观集成到你的应用中。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: de2544bbd8c7abe9b1852268373cc88913a30227
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940963"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621122"
 ---
 # <a name="animations-in-xaml"></a>XAML 中的动画
 
@@ -48,15 +48,15 @@ Windows 运行时动画系统和动画库实现了更大的目标，即允许控
 
 动画库提供以下动画。 单击动画的名称即可了解有关其主要使用方案、这些方案的定义方式的详细信息，还可以查看动画示例。
 
--   [页面过渡](#page-transition)：在 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 中设置页面过渡动画。
--   [内容和进入过渡](#content-transition-and-entrance-transition)：让一条或一组内容以动画方式进入或退出视图。
--   [淡入/淡出和交叉进出](#fade-in-out-and-crossfade)：显示过渡元素或控件，或者刷新内容区域。
--   [指针向上/向下](#pointer-up-down)：提供点击或单击磁贴的视觉反馈。
--   [重新定位](#reposition)：将元素移动到新位置。
--   [显示/隐藏弹出元素](#show-hide-popup)：在视图顶部显示上下文 UI。
--   [显示/隐藏边缘 UI](#show-hide-edge-ui)：将基于边缘的 UI（包括诸如面板的较大 UI）滑入或滑出视图。
--   [列表项更改](#list-item-changes)：从列表中添加或删除某个项目，或者重新排序项目。
--   [拖放](#drag-drop)：在拖放操作期间提供视觉反馈。
+-   [页转换](#page-transition):中的页面过渡效果进行动画处理[**帧**](https://msdn.microsoft.com/library/windows/apps/br242682)。
+-   [内容和 entrance 转换](#content-transition-and-entrance-transition):动画处理一个部分或一组内容的传入或传出视图。
+-   [输入/输出，淡入淡出和交叉进出](#fade-in-out-and-crossfade):显示暂时性元素或控件，或刷新内容区域。
+-   [指针向上/向下](#pointer-up-down):在磁贴上提供单击或点击的可视的反馈。
+-   [重新定位](#reposition):将元素移入到新位置。
+-   [显示/隐藏弹出](#show-hide-popup):显示基于视图的上下文 UI。
+-   [显示/隐藏边缘 UI](#show-hide-edge-ui):幻灯片基于边缘的 UI，包括大型 UI，例如面板，传入或传出视图。
+-   [列表项更改](#list-item-changes):添加或删除列表或项重新排序中的项。
+-   [拖/放](#drag-drop):拖放操作期间提供可视反馈。
 
 ### <a name="page-transition"></a>页面过渡
 
@@ -68,7 +68,7 @@ Windows 运行时动画系统和动画库实现了更大的目标，即允许控
 
 使用内容过渡动画 ([**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103)) 可以将一条或一组内容移入或移出当前视图。 例如，内容过渡动画显示在首次加载页面时或者在更改页面某部分的内容时，不准备显示的内容。
 
-[**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 表示可以在首次加载页面或大部分 UI 时应用到内容的动作。 这样，首次出现的内容可以提供不同于对内容的更改的反馈。 [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 等同于具有默认参数的 [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition)，但可在 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 外部使用。
+[**EntranceThemeTransition** ](https://msdn.microsoft.com/library/windows/apps/BR210288)表示首次加载页面或大型用户界面部分时可以应用于内容的运动。 这样，首次出现的内容可以提供不同于对内容的更改的反馈。 [**EntranceThemeTransition** ](https://msdn.microsoft.com/library/windows/apps/BR210288)等效于[ **NavigationThemeTransition** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition)具有默认参数，但可能的外部使用[ **帧**](https://msdn.microsoft.com/library/windows/apps/br242682)。
  
  
 <span id="fade-in-out-and-crossfade"/>
@@ -93,7 +93,7 @@ Windows 运行时动画系统和动画库实现了更大的目标，即允许控
 
 ### <a name="showhide-popup"></a>显示/隐藏弹出元素
 
-当你在当前视图顶部显示和隐藏 [**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) 或类似的上下文 UI 时，请使用 [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) 和 [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391)。 [**PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969172) 是主题过渡，如果要轻型消除弹出元素，它是有用的反馈。
+当你在当前视图顶部显示和隐藏 [**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) 或类似的上下文 UI 时，请使用 [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) 和 [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391)。 [**PopupThemeTransition** ](https://msdn.microsoft.com/library/windows/apps/Hh969172)是如果想 light 是有用的反馈的主题转换关闭弹出窗口。
 
 <span id="show-hide-edge-ui"/>
 
@@ -125,14 +125,14 @@ Windows 运行时动画系统和动画库实现了更大的目标，即允许控
 
 | UI 类型 | 推荐动画 |
 |---------|-----------------------|
-| 对话框 | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
-| 浮出控件 | [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) 和 [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
-| 工具提示 | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
-| 上下文菜单 | [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) 和 [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| 对话框 | [**FadeInThemeAnimation** ](https://msdn.microsoft.com/library/windows/apps/BR210298)并[ **FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| 浮出控件 | [**PopInThemeAnimation** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx)并[ **PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| 工具提示 | [**FadeInThemeAnimation** ](https://msdn.microsoft.com/library/windows/apps/BR210298)并[ **FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| 上下文菜单 | [**PopInThemeAnimation** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx)并[ **PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
 | 命令栏 | [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.edgeuithemetransition.edgeuithemetransition) |
 | 任务窗格或基于边缘的面板 | [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.panethemetransition.panethemetransition) |
 | 任意 UI 容器的内容 | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
-| 适用于控件或不应用其他动画时 | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| 适用于控件或不应用其他动画时 | [**FadeInThemeAnimation** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx)并[ **FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
 
  
 
@@ -208,7 +208,7 @@ Windows 运行时动画系统和动画库实现了更大的目标，即允许控
 </ItemsControl>
 ```
 
-[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 的多个子矩形以令人视觉愉悦的方式一个接一个过渡到视图中，而如果你将此动画分别应用到每个矩形，这些矩形将一次全部显示过渡到视图。
+[  **Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 的多个子矩形以令人视觉愉悦的方式一个接一个过渡到视图中，而如果你将此动画分别应用到每个矩形，这些矩形将一次全部显示过渡到视图。
 
 下面是此动画的演示：
 
@@ -349,13 +349,13 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 与过渡动画不同，主题动画没有自动运行的内置触发器（过渡）。 你必须使用 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 来包含主题动画，才能在 XAML 中定义它。 还可以更改动画的默认表现方式。 例如，可以通过增加 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) 上的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 时间值来放缓淡出。
 
-**注意**对于显示基本动画技术的用途，我们将使用应用代码启动动画，通过调用[**情节提要**](https://msdn.microsoft.com/library/windows/apps/BR210490)的方法。 你可以使用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop)、[**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) 和 [**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) **Storyboard** 方法来控制 **Storyboard** 动画的运行方式。 但是，这并不是你将库动画包含在应用中的典型操作。 相反，你通常将库动画集成到应用于控件或元素的 XAML 样式和模板中。 了解模板和视觉状态会稍微复杂一些。 但是我们介绍了你可以如何使用视觉状态中的库动画，并将其作为[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)主题的一部分。
+**请注意**  为为了说明基本动画的技术，我们会使用应用程序代码通过调用的方法来启动动画[**情节提要**](https://msdn.microsoft.com/library/windows/apps/BR210490)。 您可以控制如何**情节提要**使用运行的动画[**开始**](https://msdn.microsoft.com/library/windows/apps/BR210491)， [**停止**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop)， [**暂停**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx)，和[**恢复**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) **情节提要**方法。 但是，这并不是你将库动画包含在应用中的典型操作。 相反，你通常将库动画集成到应用于控件或元素的 XAML 样式和模板中。 了解模板和视觉状态会稍微复杂一些。 但是我们介绍了你可以如何使用视觉状态中的库动画，并将其作为[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)主题的一部分。
 
  
 
 你可以为 UI 元素应用多个其他主题动画以创建动画效果。 这些 API 的名称都包含“ThemeAnimation”：
 
-| API | 说明 |
+| API | 描述 |
 |-----|-------------|
 | [**DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243173) | 表示应用到正在拖动的项元素的预配置动画。 |
 | [**DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243177) | 表示应用到位于正在拖动的元素下方的元素的预配置动画。 |

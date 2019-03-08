@@ -1,5 +1,5 @@
 ---
-Description: Ink tools described
+Description: 所述的墨迹工具
 title: 墨迹书写控件
 label: Inking Controls
 template: detail.hbs
@@ -9,17 +9,17 @@ keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
 ms.openlocfilehash: fcbed8400b31616f92f20aa3a64a4dd8603dc7b0
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047891"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650892"
 ---
 # <a name="inking-controls"></a>墨迹书写控件
 
 
 
-有两种不同的控件可促进通用 Windows 平台 (UWP) 应用中的墨迹书写：[InkCanvas](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) 和 [InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)。
+有两个不同的控件，可协助墨迹书写在通用 Windows 平台 (UWP) 应用程序中：[在 InkCanvas](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)并[InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)。
 
 InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默认设置）或擦除笔划。 此控件是一个透明的覆盖层，该覆盖层不包含任何用于更改默认笔划墨迹属性的内置 UI。
 
@@ -35,7 +35,7 @@ InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默�
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
 
-> **重要 API**：[InkCanvas 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)，[InkToolbar 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)，[InkPresenter 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)，[Windows.UI.Input.Inking](https://msdn.microsoft.com/library/windows/apps/br208524)
+> **重要的 Api**:[InkCanvas 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)， [InkToolbar 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)， [InkPresenter 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)， [Windows.UI.Input.Inking](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
@@ -58,7 +58,7 @@ InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默�
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/InkCanvas">打开此应用，了解 InkCanvas 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -68,12 +68,12 @@ InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默�
 **Microsoft Edge**
 
 Microsoft Edge 针对 **Web 笔记**使用 InkCanvas 和 InkToolbar。  
-![InkCanvas 用于在 Microsoft Edge 中进行墨迹书写](images/ink-tools-edge.png)
+![在 InkCanvas 用于 Microsoft Edge 中的手写内容](images/ink-tools-edge.png)
 
 **Windows Ink 工作区**
 
 InkCanvas 和 InkToolbar 还用于 **Windows Ink 工作区**中的**草图板**和**屏幕草图**。  
-![Windows Ink 工作区中的 InkToolbar](images/ink-tools-ink-workspace.png)
+![在 Windows Ink 工作区中的 InkToolbar](images/ink-tools-ink-workspace.png)
 
 ## <a name="create-an-inkcanvas-and-inktoolbar"></a>创建 InkCanvas 和 InkToolbar
 
@@ -107,7 +107,7 @@ InkToolbar 包含以下内置按钮：
 
 你可以为每支笔在浮出控件中自定义调色板和大小属性（最小值、最大值、默认值）。
 
-**工具**
+**Tool**
 
 - 橡皮擦：删除接触到的任何墨迹笔划。 请注意，将检测到整个笔划墨迹，而不仅仅是擦除笔划下的部分。
 
@@ -137,7 +137,7 @@ InkToolbar 由两组不同的按钮类型组成：
 - 自定义切换：将应用定义的功能状态设置为开或关。 当打开时，功能将与活动工具结合使用。
 
 > [!NOTE]
-> 你无法更改内置按钮的显示顺序。 默认的显示顺序为：圆珠笔、铅笔、荧光笔、橡皮擦和标尺。 自定义笔附加到最后一个默认笔，自定义工具按钮添加到最后一个笔按钮和橡皮擦按钮之间，而自定义切换按钮添加到标尺按钮之后。 （自定义按钮按照指定它们的顺序添加。）
+> 你无法更改内置按钮的显示顺序。 默认的显示顺序是：圆珠笔、 铅笔、 荧光笔、 橡皮擦，和标尺中。 自定义笔附加到最后一个默认笔，自定义工具按钮添加到最后一个笔按钮和橡皮擦按钮之间，而自定义切换按钮添加到标尺按钮之后。 （自定义按钮按照指定它们的顺序添加。）
 
 尽管 InkToolbar 可以是顶级项目，但它通常通过“墨迹书写”按钮或命令公开。 我们建议使用 Segoe MLD2 Assets 字体中的 EE56 字形作为顶级图标。
 
@@ -148,7 +148,7 @@ InkToolbar 由两组不同的按钮类型组成：
 当再次选择活动工具的按钮时，会显示浮出控件。 当颜色或大小更改时，将自动消除浮出控件，并且可以恢复墨迹书写。 自定义笔和工具可以使用默认的浮出控件或指定自定义布局。
 
 橡皮擦也有提供**擦除所有墨迹**命令的浮出控件。  
-![调用了橡皮擦浮出控件的 InkToolbar](images/ink-tools-erase-all-ink.png)
+![使用橡皮擦浮出控件调用 InkToolbar](images/ink-tools-erase-all-ink.png)
 
  有关自定义和可扩展性的信息，请查看 [SimpleInk 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)。
 
@@ -171,5 +171,5 @@ InkToolbar 由两组不同的按钮类型组成：
 ## <a name="related-articles"></a>相关文章
 
 - [UWP 应用中的笔和触笔交互](https://windowsstyleguide/input/pen-and-stylus-interactions/)
-- [识别笔划墨迹](https://windowsstyleguide/input/convert-ink-to-text/)
-- [存储和检索笔划墨迹](https://windowsstyleguide/input/save-and-load-ink/)
+- [识别墨迹笔画](https://windowsstyleguide/input/convert-ink-to-text/)
+- [存储和检索墨迹笔画](https://windowsstyleguide/input/save-and-load-ink/)

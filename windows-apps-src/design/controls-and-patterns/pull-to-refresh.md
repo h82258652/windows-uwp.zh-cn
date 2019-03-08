@@ -1,6 +1,6 @@
 ---
-Description: Use the pull-to-refresh control to get new content into a list.
-title: 下拉以刷新
+Description: 下拉刷新控件用于将新内容放入列表。
+title: 下拉刷新
 label: Pull-to-refresh
 template: detail.hbs
 ms.date: 03/07/2018
@@ -13,17 +13,17 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2efd091d90a856e45d76c0b1357f30417812160a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932833"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659252"
 ---
-# <a name="pull-to-refresh"></a>下拉以刷新
+# <a name="pull-to-refresh"></a>下拉刷新
 
 下拉以刷新使用户可以使用触控下拉数据列表以检索更多数据。 下拉以刷新广泛用于具有触摸屏的设备。 你可以使用这里显示的 API 在应用中实现下拉以刷新。
 
-> **重要 API**：[RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer)、[RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
+> **重要的 Api**:[RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer)， [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
 
 ![下拉以刷新 gif](images/Pull-To-Refresh.gif)
 
@@ -48,7 +48,7 @@ ms.locfileid: "8932833"
 
  用户需要下拉列表以启动刷新的距离称为_阈值_。 可视化工具[状态](/uwp/api/windows.ui.xaml.controls.refreshvisualizer.State)是由下拉状态相对于此阈值的关系决定的。 可能的值包含在 [RefreshVisualizerState](/uwp/api/windows.ui.xaml.controls.refreshvisualizerstate) 枚举中。
 
-### <a name="idle"></a>Idle
+### <a name="idle"></a>空闲
 
 可视化工具的默认状态为 **Idle**。 用户目前不通过触控与 RefreshContainer 交互，也没有正在进行的刷新。
 
@@ -81,7 +81,7 @@ ms.locfileid: "8932833"
 
 可以看到，图标大小和不透明度均为 100%。 在这种状态下，图标继续随滚动操作向下移动，但不再旋转。
 
-### <a name="refreshing"></a>Refreshing
+### <a name="refreshing"></a>正在刷新
 
 当用户释放可视化工具的距离超过阈值时，就会处于 **Refreshing** 状态。
 
@@ -101,11 +101,11 @@ ms.locfileid: "8932833"
 
 默认情况下，用户从上到下拉动列表以启动刷新。 如果你的列表或网格具有不同的方向，则应更改刷新容器的拉动方向以便匹配列表或网格的方向。
 
-[PullDirection](/uwp/api/windows.ui.xaml.controls.refreshcontainer.PullDirection) 属性采用以下 [RefreshPullDirection](/uwp/api/windows.ui.xaml.controls.refreshpulldirection) 值之一： **BottomToTop**、**TopToBottom**、**RightToLeft** 或 **LeftToRight**。
+[PullDirection](/uwp/api/windows.ui.xaml.controls.refreshcontainer.PullDirection)属性采用下列任一[RefreshPullDirection](/uwp/api/windows.ui.xaml.controls.refreshpulldirection)值：**BottomToTop**， **TopToBottom**， **RightToLeft**，或**LeftToRight**。
 
 更改拉动方向时，可视化工具的进度旋转图标的起始位置会自动旋转，以便箭头与拉动方向的相应位置对应。 如果需要，你可以更改 [RefreshVisualizer.Orientation](/uwp/api/windows.ui.xaml.controls.refreshvisualizer.Orientation) 属性以覆盖自动行为。 在大多数情况下，建议保留默认值 **Auto**。
 
-## <a name="implement-pull-to-refresh"></a>实现下拉以刷新
+## <a name="implement-pull-to-refresh"></a>实现下拉刷新
 
 向列表添加下拉以刷新功能只需要几个步骤。
 
@@ -116,7 +116,7 @@ ms.locfileid: "8932833"
 > [!NOTE]
 > 你可以实例化 RefreshVisualizer 本身。 但是，即使针对非触控场景，我们还是建议你将内容包装到一个 RefreshContainer 中并使用 RefreshContainer.Visualizer 属性提供的 RefreshVisualizer。 在本文中，我们假设可视化工具始终是从刷新容器获得的。
 
-> 此外，为方便期间，应使用刷新容器的 RequestRefresh 和 RefreshRequested 成员。 `refreshContainer.RequestRefresh()` 与 `refreshContainer.Visualizer.RequestRefresh()` 等效，任何一个都会同时引发 RefreshContainer.RefreshRequested 事件和 RefreshVisualizer.RefreshRequested 事件。
+> 此外，为方便期间，应使用刷新容器的 RequestRefresh 和 RefreshRequested 成员。 `refreshContainer.RequestRefresh()` 等效于`refreshContainer.Visualizer.RequestRefresh()`，并且可以将发出 RefreshContainer.RefreshRequested 事件和 RefreshVisualizer.RefreshRequested 事件。
 
 ### <a name="request-a-refresh"></a>请求刷新
 
@@ -333,7 +333,7 @@ public class ListItemData
 
 ## <a name="related-articles"></a>相关文章
 
-- [触控交互](../input/touch-interactions.md)
+- [触摸式交互](../input/touch-interactions.md)
 - [列表视图和网格视图](listview-and-gridview.md)
-- [项目容器和模板](item-containers-templates.md)
+- [项容器和模板](item-containers-templates.md)
 - [表达式动画](../../composition/composition-animation.md)

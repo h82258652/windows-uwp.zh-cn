@@ -8,17 +8,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e70c2412728eafe76e520e871fbe106c4b1a8ea3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918101"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590742"
 ---
 # <a name="get-serviceconfigsscidsessiontemplatessessiontemplatename"></a>GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})
 检索一组会话模板名称。
 
 > [!IMPORTANT]
-> 此 URI 方法需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
+> 此 URI 方法需要 X Xbl 约定版本标头元素：104/105 或更高版本上的每个请求。
 
   * [URI 参数](#ID4ET)
   * [HTTP 状态代码](#ID4E5)
@@ -30,7 +30,7 @@ ms.locfileid: "8918101"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- | --- |
 | scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话的 id。|
 | sessionTemplateName| 字符串| 会话模板的当前实例的名称。 第 2 部分会话的 id。 |
@@ -39,13 +39,13 @@ ms.locfileid: "8918101"
 
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
-该服务返回 HTTP 状态代码，因为它适用于 MPSD。  
+同样适用于 MPSD，服务将返回 HTTP 状态代码。  
 <a id="ID4EFB"></a>
 
 
 ## <a name="request-body"></a>请求正文
 
-此请求的正文中不发送任何对象。
+此请求的正文中不发送的任何对象。
 
 <a id="ID4EQB"></a>
 

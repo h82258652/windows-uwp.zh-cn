@@ -1,5 +1,5 @@
 ---
-Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touchpad but are functionally consistent across input devices.
+Description: 创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸板进行了优化，但在不同的输入设备上功能一致。
 title: 触摸板交互
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
@@ -9,16 +9,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 895bf1ffe4fc79a65fdf452235ee9466e91b7215
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046703"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593902"
 ---
 # <a name="touchpad-design-guidelines"></a>触摸板设计指南
 
 
-设计你的应用，以便用户可以通过触摸板与其交互。 触摸板将间接式多点触控输入和定位设备（如鼠标）的精确输入结合起来。 这种结合使触摸板既适用于触摸优化的 UI，也适用于效率应用的较小目标。
+设计你的应用，以便用户可以通过触摸板与其交互。 触摸板将间接的多点触摸输入和定位设备（如鼠标）的精确输入结合起来。 这种结合使触摸板既适用于触摸优化的 UI，也适用于效率应用的较小目标。
 
  
 
@@ -55,11 +55,11 @@ ms.locfileid: "9046703"
 
 ![标准触摸板设置](images/mouse-touchpad-settings-standard.png)
 
-<sup>标准\\ 触摸板\\ 设置</sup>
+<sup>标准\\触摸板\\设置</sup>
 
 ![Windows 精确式触摸板设置](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Windows\\ 精确式\\ 触摸板\\ 设置</sup>
+<sup>Windows\\精度\\触摸板\\设置</sup>
 
 下面是一些用于执行常见任务的触摸板优化手势的示例。
 
@@ -71,7 +71,7 @@ ms.locfileid: "9046703"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -146,8 +146,8 @@ ms.locfileid: "9046703"
 -   对于可单击元素，始终使用箭头光标（![箭头光标](images/cursor-arrow.png)）。 对于链接或其他交互元素，不使用指向手光标（![指向手光标](images/cursor-pointinghand.png)）。 而应使用悬停效果（上文中有介绍）。
 -   对于可选择文本，使用文本光标（![文本光标](images/cursor-text.png)）。
 -   当主要操作是移动（如拖动或裁剪）时，使用移动光标（![移动光标](images/cursor-move.png)）。 对于主要操作是导航的元素（如“开始”菜单磁贴），不使用移动光标。
--   当对象的大小可调整时，使用水平、垂直和对角调整大小光标（![垂直调整光标](images/cursor-vertical.png), ![水平调整光标](images/cursor-horizontal.png), ![对角调整光标（左下和右上）](images/cursor-diagonal2.png), ![对角调整光标（左上和右下）](images/cursor-diagonal1.png)）。
--   当在固定画布（如地图）内平移内容时，使用手掌型光标（![手掌型光标（张开）](images/cursor-pan1.png), ![手掌型光标（闭合）](images/cursor-pan2.png)当在固定画布（例如地图）中平移内容时。
+-   当对象的大小可调整时，使用水平、垂直和对角调整大小光标（![垂直调整光标](images/cursor-vertical.png)， ![水平调整光标](images/cursor-horizontal.png)， ![对角调整光标（左下和右上）](images/cursor-diagonal2.png)， ![对角调整光标（左上和右下）](images/cursor-diagonal1.png)）。
+-   当在固定画布（如地图）内平移内容时，使用手掌型光标（![手掌型光标（张开）](images/cursor-pan1.png)， ![手掌型光标（闭合）](images/cursor-pan2.png)当在固定画布（例如地图）中平移内容时。
 
 ## <a name="related-articles"></a>相关文章
 
@@ -155,15 +155,15 @@ ms.locfileid: "9046703"
 * [处理指针输入](handle-pointer-input.md)
 * [标识输入设备](identify-input-devices.md)
 **示例**
-* [基本输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦点视觉效果示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 **存档示例**
 * [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：XAML 用户输入事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML 滚动、平移以及缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [输入：使用 GestureRecognizer 的笔势和操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [输入：XAML 用户输入的事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [输入：笔势和 GestureRecognizer 操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
 

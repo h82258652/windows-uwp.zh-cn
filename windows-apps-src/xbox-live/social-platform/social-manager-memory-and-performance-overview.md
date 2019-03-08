@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 社交管理器, 人脉
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c6a0a31c8fe82faa644a59147060f9323d42eb0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947635"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618452"
 ---
 # <a name="social-manager-memory-and-performance-overview"></a>社交管理器内存和性能概述
 
@@ -30,5 +30,5 @@ ms.locfileid: "8947635"
 
 社交管理器通过不允许列表中的社交用户组包含超过 100 个用户来传达此限制。 任何时候通过 `create_social_user_group_from_list` 加入系统的其他用户有 100 个用户总数的全局限制。
 
-## <a name="processing-time"></a>处理时间
+## <a name="processing-time"></a>Processing Time
 社交管理器最糟糕的情况是 1100 个用户。 Xbox One 上社交管理器的性能特征的最糟糕情况是 `do_work` 的时间为 0.3 ms 到 0.5 ms，具体取决于所创建社交图片的数量。 典型情况是不创建组时为 0.01 ms，创建 1000 个用户的组最多 0.2 ms。

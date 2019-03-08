@@ -1,25 +1,25 @@
 ---
-Description: Learn how to store and retrieve local, roaming, and temporary app data.
+Description: 了解如何存储和检索本地、漫游和临时应用数据。
 title: 存储和检索设置以及其他应用数据
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
 ms.date: 11/14/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c4f8de32be13f9de776a1c2d0ba0f6af2797329
-ms.sourcegitcommit: be52da74f0b3f24973286792afa4f5e80799161b
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "9009514"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602672"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>存储和检索设置以及其他应用数据
 
 *应用数据*是特定于具体应用的可变数据。 它包含运行时状态、用户首选项和其他设置。 应用数据不同于*用户数据*，它是用户使用应用时创建和管理的数据。 用户数据包含文档或媒体文件、电子邮件或通信脚本或保留用户所创建内容的数据库记录。 用户数据可能对于多个应用都非常有用或有意义。 通常，此为用户要操作或作为独立于应用自身的实体进行传输的数据，例如文档。
 
-**关于应用数据的重要事项：** 应用数据的生命周期与应用的生命周期相关联。 如果应用被删除，则会丢失所有应用数据。 不要使用应用数据存储用户数据或用户可能视作有价值和不可替代内容的任何数据。 我们建议使用用户的库和 Microsoft OneDrive 存储此类信息。 应用数据非常适合存储特定于应用的用户首选项、设置和收藏夹。
+**有关应用程序数据的重要说明：** 应用数据的生命周期与应用的生命周期相关联。 如果应用被删除，则会丢失所有应用数据。 不要使用应用数据存储用户数据或用户可能视作有价值和不可替代内容的任何数据。 我们建议使用用户的库和 Microsoft OneDrive 存储此类信息。 应用数据非常适合存储特定于应用的用户首选项、设置和收藏夹。
 
 ## <a name="types-of-app-data"></a>应用数据类型
 
@@ -33,11 +33,11 @@ ms.locfileid: "9009514"
     下面是可以用于应用设置的数据类型：
 
     -   **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
-    -   **布尔值**
+    -   **Boolean**
     -   **Char16**、**String**
-    -   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
+    -   [**日期时间**](https://msdn.microsoft.com/library/windows/apps/br206576)， [ **TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
     -   **GUID**、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)、[**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)、[**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)
-    -   [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588)：一组必须按原子方式序列化和反序列化的相关应用设置。 使用复合设置可轻松处理相互依赖的设置的原子更新。 系统会在并发访问和漫游时确保复合设置的完整性。 复合设置针对少量数据进行了优化，如果将它们用于大型数据集，性能可能很差。
+    -   [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588):一组相关的应用设置必须序列化和反序列化以原子方式。 使用复合设置可轻松处理相互依赖的设置的原子更新。 系统会在并发访问和漫游时确保复合设置的完整性。 复合设置针对少量数据进行了优化，如果将它们用于大型数据集，性能可能很差。
 -   **文件**
 
     使用文件存储二进制数据，或支持自己的自定义序列化类型。
@@ -117,7 +117,7 @@ else
 
 ### <a name="create-and-read-a-local-file"></a>创建和读取本地文件
 
-若要创建和更新本地应用数据存储中的文件，请使用文件 API，如 [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) 和 [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505)。 此示例会在 `localFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
+若要创建和更新本地应用数据存储中的文件，请使用文件 API，如 [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) 和 [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505)。 此示例会在 `localFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [  **CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
 
 ```csharp
 async void WriteTimestamp()
@@ -168,13 +168,13 @@ async void ReadTimestamp()
 -   不要漫游特定于设备的应用数据。 某些信息仅在本地才合理，例如指向本地文件资源的路径名。 如果你决定漫游本地信息，请确保信息在第二台设备上无效时该应用可以进行恢复。
 -   不要漫游较大的应用数据集。 应用可以漫游的应用数据量存在限制；使用 [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) 属性获取这个最大值。 如果应用达到该上限，在应用数据存储的大小不再超过该限制之前，不能漫游任何数据。 在你设计应用时，必须考虑如何为较大数据设置一个限制以免超过此限值。 例如，如果每保存一个游戏状态需要 10KB，则应用可能仅允许用户最多储存 10 个游戏。
 -   不要为依赖即时同步的数据使用漫游。 Windows 不保证实现即时同步；如果用户脱机或在严重延迟的网络上，漫游可能会大大延迟。 请确保你的 UI 不依赖即时同步。
--   不要为使用漫游频繁更改数据。 例如，如果你的应用跟踪频繁更改信息（例如歌曲中每秒的进度位置），则不要将此类信息存储为漫游应用数据。 相反，选取较不频繁但仍提供良好用户体验的表示形式，例如当前播放的歌曲。
+-   不要使用用于频繁更改的数据漫游。 例如，如果你的应用跟踪频繁更改信息（例如歌曲中每秒的进度位置），则不要将此类信息存储为漫游应用数据。 相反，选取较不频繁但仍提供良好用户体验的表示形式，例如当前播放的歌曲。
 
 ### <a name="roaming-pre-requisites"></a>漫游先决条件
 
-如果用户使用 Microsoft 帐户登录相应的设备，则任何用户都可以享受到漫游应用数据的益处。 但是，用户和组策略管理员可以随时在设备上关闭漫游应用数据。 如果用户选择不使用 Microsoft 帐户或者禁用漫游数据功能，她仍将能够使用你的应用，但将每台设备的本地应用数据。
+如果用户使用 Microsoft 帐户登录相应的设备，则任何用户都可以享受到漫游应用数据的益处。 但是，用户和组策略管理员可以随时在设备上关闭漫游应用数据。 如果用户选择不使用 Microsoft 帐户或禁用漫游数据功能，她仍将能够使用你的应用，但将每个设备的本地应用程序数据。
 
-[**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) 中存储的数据仅将在用户使设备成为“受信任”设备的情况下传输。 如果设备不受信任，则不会漫游在该保管库中安全存储的数据。
+[  **PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) 中存储的数据仅将在用户使设备成为“受信任”设备的情况下传输。 如果设备不受信任，则不会漫游在该保管库中安全存储的数据。
 
 ### <a name="conflict-resolution"></a>冲突解决
 
@@ -281,7 +281,7 @@ else
 
 ### <a name="create-and-retrieve-roaming-files"></a>创建和检索漫游文件
 
-若要在漫游应用数据存储中创建和更新文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) 和 [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505)）。 此示例会在 `roamingFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
+若要在漫游应用数据存储中创建和更新文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) 和 [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505)）。 此示例会在 `roamingFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [  **CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
 
 ```csharp
 async void WriteTimestamp()
@@ -329,7 +329,7 @@ Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.Temporar
 
 ### <a name="create-and-read-temporary-files"></a>创建和读取临时文件
 
-若要在临时应用数据存储中创建和更新文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) 和 [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505)）。 此示例会在 `temporaryFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
+若要在临时应用数据存储中创建和更新文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) 和 [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505)）。 此示例会在 `temporaryFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [  **CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
 
 
 ```csharp
@@ -367,7 +367,7 @@ async void ReadTimestamp()
 
 若要帮助你组织应用数据设置和文件，请创建容器（由 [**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599) 对象表示），而不是直接使用目录。 你可以向本地、漫游和临时应用数据存储添加容器。 容器的嵌套深度可达 32 层。
 
-若要创建设置容器，请调用 [**ApplicationDataContainer.CreateContainer**](https://msdn.microsoft.com/library/windows/apps/br241611) 方法。 此示例将创建一个名为 `exampleContainer` 的本地设置容器并添加一个名为 `exampleSetting` 的设置。 [**ApplicationDataCreateDisposition**](https://msdn.microsoft.com/library/windows/apps/br241616) 枚举中的 **Always** 值指示已创建容器（如果尚不存在的话）。
+若要创建设置容器，请调用 [**ApplicationDataContainer.CreateContainer**](https://msdn.microsoft.com/library/windows/apps/br241611) 方法。 此示例将创建一个名为 `exampleContainer` 的本地设置容器并添加一个名为 `exampleSetting` 的设置。 [  **ApplicationDataCreateDisposition**](https://msdn.microsoft.com/library/windows/apps/br241616) 枚举中的 **Always** 值指示已创建容器（如果尚不存在的话）。
 
 ```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 

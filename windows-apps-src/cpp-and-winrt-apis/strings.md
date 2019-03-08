@@ -6,20 +6,20 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 字符串
 ms.localizationpriority: medium
 ms.openlocfilehash: 9572d9ba8b96d245b783535e159acbae9043ea3e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934612"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649632"
 ---
 # <a name="string-handling-in-cwinrt"></a>C++/WinRT 中的字符串处理
 
-与[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，你可以调用 Windows 运行时 Api 使用 c + + 标准库宽字符串类型，例如**std:: wstring** (注意： 不使用窄字符串类型，例如**std:: string**)。 C++/WinRT 确实有名为 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的自定义字符串类型（在 C++/WinRT 基础库 `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h` 中定义）。 这是 Windows 运行时构造函数、函数和属性实际上采用并返回的字符串类型。 但在很多情况下（由于 **hstring** 的转换构造函数和转换运算符），你可以选择是否要注意客户端代码中的 **hstring**。 如果你要*创作* API，则很可能需要了解 **hstring**。
+与[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，可以调用 Windows 运行时 Api 使用 c + + 标准库宽字符串类型，如**std:: wstring** (注意： 不能与窄字符串类型如**std:: string**). C++/WinRT 确实有名为 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的自定义字符串类型（在 C++/WinRT 基础库 `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h` 中定义）。 这是 Windows 运行时构造函数、函数和属性实际上采用并返回的字符串类型。 但在很多情况下（由于 **hstring** 的转换构造函数和转换运算符），你可以选择是否要注意客户端代码中的 **hstring**。 如果你要*创作* API，则很可能需要了解 **hstring**。
 
-C++ 中有很多字符串类型。 除了 C++ 标准库中的 **std::basic_string** 之外，变体还存在于很多库中。 C++17 具有字符串转换实用程序和 **std::basic_string_view**，用来消除所有字符串类型之间的差别。  [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 利用 **std::wstring_view** 提供了可转换性，以实现 **std::basic_string_view** 应有的互操作性。
+C++ 中有很多字符串类型。 除了 C++ 标准库中的 **std::basic_string** 之外，变体还存在于很多库中。 C++17 具有字符串转换实用程序和 **std::basic_string_view**，用来消除所有字符串类型之间的差别。  [**winrt::hstring** ](/uwp/cpp-ref-for-winrt/hstring)提供了与可转换**std::wstring_view**提供互操作性的**std::basic_string_view**适用。
 
-## <a name="using-stdwstring-and-optionally-winrthstring-with-uri"></a>将 **std::wstring**（也可以选择 **winrt::hstring**）与 **Uri** 结合使用
-[**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) 从 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 构建。
+## <a name="using-stdwstring-and-optionally-winrthstring-with-uri"></a>使用**std:: wstring** (并选择性地**winrt::hstring**) 与**Uri**
+[**Windows::Foundation::Uri** ](/uwp/api/windows.foundation.uri)从构造[ **winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)。
 
 ```cppwinrt
 public:
@@ -173,5 +173,5 @@ void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
 
 ## <a name="important-apis"></a>重要的 API
 * [winrt::hstring 结构](/uwp/cpp-ref-for-winrt/hstring)
-* [winrt:: to_hstring 函数](/uwp/cpp-ref-for-winrt/to-hstring)
-* [winrt:: to_string 函数](/uwp/cpp-ref-for-winrt/to-string)
+* [winrt::to_hstring 函数](/uwp/cpp-ref-for-winrt/to-hstring)
+* [winrt::to_string 函数](/uwp/cpp-ref-for-winrt/to-string)

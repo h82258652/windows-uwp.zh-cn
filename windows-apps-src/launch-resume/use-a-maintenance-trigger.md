@@ -11,15 +11,15 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 53107ca6add4193737ab0d00497bbe6324bee44f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047006"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661852"
 ---
 # <a name="use-a-maintenance-trigger"></a>使用维护触发器
 
-**重要的 API**
+**重要的 Api**
 
 - [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517)
 - [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
@@ -36,9 +36,9 @@ ms.locfileid: "9047006"
 创建新的 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 对象。 第二个参数 *OneShot* 指定维护任务是只运行一次还是继续定期运行。 如果 *OneShot* 设置为 true，则第一个参数 (*FreshnessTime*) 会指定在计划后台任务之前需等待的分钟数。 如果 *OneShot* 设置为 false，则 *FreshnessTime* 会指定后台任务运行的频率。
 
 > [!NOTE]
-> 如果*FreshnessTime*设置为少于 15 分钟，在尝试注册后台任务时，会引发异常。
+> 如果*FreshnessTime*设置为少于 15 分钟，尝试注册后台任务时引发异常。
 
-此示例代码创建运行一小时一次的触发器。
+此示例代码创建小时运行一次的触发器。
 
 ```csharp
 uint waitIntervalMinutes = 60;
@@ -108,25 +108,25 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 > 对于除台式机以外的所有设备系列，如果设备内存不足，后台任务可能会终止。 如果没有呈现内存不足异常，或者应用没有处理该异常，则后台任务将在没有警告且不引发 OnCanceled 事件的情况下终止。 这有助于确保前台中应用的用户体验。 应该将后台任务设计为处理此情形。
 
 > [!NOTE]
-> 通用 Windows 平台应用必须在注册任何后台触发器类型之前调用[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) 。
+> 通用 Windows 平台应用程序必须调用[ **RequestAccessAsync** ](https://msdn.microsoft.com/library/windows/apps/hh700485)之前注册的任何后台触发器类型。
 
 若要确保通用 Windows 应用在你发布应用的更新后继续正常运行，则必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然后调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
 > [!NOTE]
-> 后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，它可能会崩溃。
+> 后台任务注册参数在注册时验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
 
 ## <a name="related-topics"></a>相关主题
 
 * [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
-* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
-* [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
-* [处理取消的后台任务](handle-a-cancelled-background-task.md)
-* [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
+* [创建并注册进程外后台任务](create-and-register-a-background-task.md)
+* [声明应用程序清单中的后台任务](declare-background-tasks-in-the-application-manifest.md)
+* [处理已取消的后台任务](handle-a-cancelled-background-task.md)
+* [监视器后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 * [注册后台任务](register-a-background-task.md)
-* [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
-* [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
-* [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
+* [响应通过后台任务的系统事件](respond-to-system-events-with-background-tasks.md)
+* [设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)
+* [更新动态磁贴通过后台任务](update-a-live-tile-from-a-background-task.md)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
-* [后台任务指南](guidelines-for-background-tasks.md)
+* [后台任务的指导原则](guidelines-for-background-tasks.md)
 * [调试后台任务](debug-a-background-task.md)
-* [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在触发挂起、 继续和后台 UWP 应用中的事件 （在调试）](https://go.microsoft.com/fwlink/p/?linkid=254345)

@@ -1,35 +1,35 @@
 ---
 ms.assetid: C09F4B7C-6324-4973-980A-A60035792EFC
-description: 在 Microsoft Store 提交 API 中使用此方法，以创建新的加载项提交，为注册到合作伙伴中心的应用。
+description: 在 Microsoft Store 提交 API 中使用此方法以创建新的外接程序提交到合作伙伴中心注册的应用。
 title: 创建加载项提交
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: fcc98252efb1157bc539b68656c96f7afec7104a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919313"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661702"
 ---
 # <a name="create-an-add-on-submission"></a>创建加载项提交
 
 
-在 Microsoft Store 提交 API 中使用此方法，以创建新的加载项 （也称为应用内产品或 IAP） 提交，为注册到你的合作伙伴中心帐户的应用。 使用此方法成功创建新提交后，[更新提交](update-an-add-on-submission.md)以对提交数据进行任何必要更改，然后[确认提交](commit-an-add-on-submission.md)以供引入和发布。
+在 Microsoft Store 提交 API 中使用此方法以创建新的外接程序 （也称为应用产品或、 IAP） 提交到合作伙伴中心帐户注册的应用。 使用此方法成功创建新提交后，[更新提交](update-an-add-on-submission.md)以对提交数据进行任何必要更改，然后[确认提交](commit-an-add-on-submission.md)以供引入和发布。
 
 有关此方法如何适用通过使用 Microsoft Store 提交 API 创建应用提交过程的详细信息，请参阅[管理加载项提交](manage-add-on-submissions.md)。
 
 > [!NOTE]
 > 此方法可为现有加载项创建提交。 若要创建加载项，请使用[创建加载项](create-an-add-on.md)方法。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，首先需要执行以下操作：
 
 * 如果尚未开始操作，请先完成 Microsoft Store 提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 创建一个应用的加载项。 你可以执行此操作在合作伙伴中心，或者你可以执行此操作通过使用[创建加载项](create-an-add-on.md)的方法。
+* 创建一个您的应用程序外接程序。 可以执行此操作在合作伙伴中心，也可以执行此操作通过使用[创建一个外接程序](create-an-add-on.md)方法。
 
 ## <a name="request"></a>请求
 
@@ -40,18 +40,18 @@ ms.locfileid: "8919313"
 | POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions``` |
 
 
-### <a name="request-header"></a>请求标头
+### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 描述                                                                 |
+| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
-| 名称        | 类型   | 描述                                                                 |
+| 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | 字符串 | 必需。 要创建提交的加载项的应用商店 ID。 在合作伙伴中心中，会提供应用商店 ID，它包含在[创建加载项](create-an-add-on.md)，或[获取加载项的详细信息](get-all-add-ons.md)向请求的响应数据中。  |
+| inAppProductId | 字符串 | 必需。 要创建提交的加载项的应用商店 ID。 Store ID 可在合作伙伴中心，并且它包含在对请求的响应数据[创建一个外接程序](create-an-add-on.md)或[获取外接程序的详细信息](get-all-add-ons.md)。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -151,15 +151,15 @@ Authorization: Bearer <your access token>
 | 错误代码 |  描述   |
 |--------|------------------|
 | 400  | 由于请求无效，无法创建提交。 |
-| 409  | 由于应用的当前状态，无法创建提交，或者应用使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
+| 409  | 由于应用程序中的当前状态，无法创建提交或应用程序使用的合作伙伴中心功能[目前不支持通过 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
 
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-* [管理加载项提交](manage-add-on-submissions.md)
-* [获取加载项提交](get-an-add-on-submission.md)
-* [确认加载项提交](commit-an-add-on-submission.md)
-* [更新加载项提交](update-an-add-on-submission.md)
-* [删除加载项提交](delete-an-add-on-submission.md)
-* [获取加载项提交的状态](get-status-for-an-add-on-submission.md)
+* [创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)
+* [管理外接程序提交](manage-add-on-submissions.md)
+* [获取外接程序提交](get-an-add-on-submission.md)
+* [提交外接程序提交](commit-an-add-on-submission.md)
+* [更新外接程序提交](update-an-add-on-submission.md)
+* [删除外接程序提交](delete-an-add-on-submission.md)
+* [获取外接程序提交的状态](get-status-for-an-add-on-submission.md)

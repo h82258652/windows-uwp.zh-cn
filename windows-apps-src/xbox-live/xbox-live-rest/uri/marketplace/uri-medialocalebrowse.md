@@ -8,27 +8,27 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f692fb66580e20ffeefb3595b8cf9d795f504311
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938512"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589682"
 ---
 # <a name="mediamarketplaceidbrowse"></a>/media/{marketplaceId}/browse
-允许浏览单个媒体组中的项。 浏览 API 允许客户端浏览的单个媒体组内从项。 非连续而不使用延续令牌使用 skipItems 参数可以访问的数据的页面。
+允许浏览单个媒体组中的项。 浏览 API 允许客户端浏览的单个媒体组中从项。 可以使用而不使用继续标记不按顺序 skipItems 参数访问的数据页。
  
-此 API 还允许在给定的项的子项的浏览。 例如，通过为 Xbox 360 游戏 ID 和 MediaItemType 参数中传递，这允许浏览和 diltering 该项目，如虚拟形象项目或 DLC 游戏的子元素上。
+此 API 还允许浏览内给定项的子级。 例如，通过传入一个 ID 和 MediaItemType 参数的 Xbox 360 游戏，这允许浏览和 diltering 对该项目，如虚拟形象项或游戏 DLC 的子对象。
  
-此 API 将接受查询精简将。
+此 API 接受查询精简将。
  
-检索子元素的某些方案包括：
+检索子级的一些方案包括：
  
-   * 到轨唱片集
-   * 季节系列
-   * 季节到剧集：
+   * 唱片集曲目翻录的曲目
+   * 序列为季节
+   * 季节到剧集
    * 跟踪对音乐视频
-   * 照相艺术家
-   * 游戏的游戏加载项 （DLC、 头像、 主题、 等。）
+   * 到唱片集艺术家
+   * 游戏到游戏外接程序 （DLC、 头像、 主题等）
   
 这些 Uri 的域是`eds.xboxlive.com`。
  
@@ -39,9 +39,9 @@ ms.locfileid: "8938512"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。| 
+| marketplaceId| 字符串| 必需。 从获取值的字符串<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>。| 
   
 <a id="ID4ENC"></a>
 
@@ -62,7 +62,7 @@ ms.locfileid: "8938512"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[市场 URI](atoc-reference-marketplace.md)
+[Marketplace Uri](atoc-reference-marketplace.md)
 
   
 <a id="ID4EDD"></a>
@@ -70,11 +70,11 @@ ms.locfileid: "8938512"
  
 ##### <a name="further-information"></a>详细信息 
 
-[EDS 通用标头](../../additional/edscommonheaders.md)
+[EDS 常见标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询优化器](../../additional/edsqueryrefiners.md)
+ [EDS 查询精简将](../../additional/edsqueryrefiners.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)
 

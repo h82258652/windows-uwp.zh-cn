@@ -6,11 +6,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天 2, 游戏聊天, 语音通信
 ms.localizationpriority: medium
 ms.openlocfilehash: e963210091694a07114f10d5a3dc531a353621df
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117541"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653582"
 ---
 # <a name="migration-from-game-chat-to-game-chat-2"></a>从游戏聊天迁移到游戏聊天 2
 
@@ -31,7 +31,7 @@ ms.locfileid: "9117541"
 
 本文档详细介绍游戏聊天与游戏聊天 2 之间的相似之处，以及如何从游戏聊天迁移到游戏聊天 2 C++ API。 如果你有意从游戏聊天迁移到游戏聊天 2 WinRT API，建议阅读本文了解游戏聊天与游戏聊天 2 的对应概念，然后参阅[使用游戏聊天 2 WinRT 投影](using-game-chat-2-winrt.md)了解特定于 WinRT 的模式。 本文中，原游戏聊天的示例代码将使用 C++/CX。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 在使用游戏聊天 2 开始编码前，必须先配置应用的 AppXManifest，以便声明“麦克风”设备功能。 平台文档的相应部分更详细地介绍了 AppXManifest 功能；下面的代码段演示了“麦克风”设备功能节点应该位于“包/功能”节点下，否则将阻止聊天：
 
@@ -48,7 +48,7 @@ ms.locfileid: "9117541"
 
 编译游戏聊天 2 需要包括 GameChat2.h 主标头。 为了进行正确地链接，你的项目还必须在至少一个编译单元中包含 GameChat2Impl.h（建议使用通用的预编译标头，因为这些存根功能实现很小，编译器很容易将其生成为“内联”）。
 
-在使用游戏聊天 2 接口时，项目无需在使用 C++/CX 或传统 C++ 进行编译之间作出选择；该接口可与以上两者一起使用。 此外，该实现也不会将引发异常作为报告非致命错误的手段，因此你可以根据需要在无异常项目中轻松使用它。 然而，该实现确实将引发异常作为报告致命错误的手段（请参阅[失败模型](#failure-model-and-debugging)了解详细信息）。
+在使用游戏聊天 2 接口时，项目无需在使用 C++/CX 或传统 C++ 进行编译之间作出选择；该接口可与以上两者一起使用。 此外，该实现也不会将引发异常作为报告非致命错误的手段，因此，你可以根据需要在无异常项目中轻松使用它。 然而，该实现确实将引发异常作为报告致命错误的手段（请参阅[失败模型](#failure-model-and-debugging)了解详细信息）。
 
 ## <a name="initialization"></a>初始化
 
@@ -98,7 +98,7 @@ chatManager->HandleNewRemoteConsole(newDeviceIdentifier);
 
 一旦游戏聊天获得有关此设备的通知，就会生成包含有关任何本地用户的信息的数据包，并将这些数据包提供给该作品以传输到远程设备上的游戏聊天实例。 同样，远程设备上的游戏聊天实例也会生成包含该远程设备上用户相关信息的数据包，将由作品传输给游戏聊天的本地实例。 当本地实例收到包含新远程用户相关信息的数据包时，新的远程用户将添加到本地实例的用户列表中，可供通过 `ChatManager::GetUsers()` 使用。
 
-从游戏聊天实例删除用户通过与 `ChatManager::RemoveLocalUserFromChatChannelAsync()` 类似的调用执行。 `ChatManager::RemoveRemoteConsoleAsync()`
+通过对类似调用执行从游戏聊天实例中删除用户，则`ChatManager::RemoveLocalUserFromChatChannelAsync()`和 `ChatManager::RemoveRemoteConsoleAsync()`
 
 ### <a name="game-chat-2"></a>游戏聊天 2
 
@@ -116,7 +116,7 @@ chat_user* chatUserA = chat_manager::singleton_instance().add_local_user(L"myLoc
 chat_user* chatUserB = chat_manager::singleton_instance().add_remote_user(L"remoteXboxUserId", 1);
 ```
 
-将用户添加到该实例之后，你应在每个远程用户和每个本地用户之间配置“通信关系”。 在本示例中，假设用户 A 和用户 B 处于同一团队中，并允许进行双向通信。 `c_communicationRelationshiSendAndReceiveAll`  是 GameChat2.h 中定义的常量，用于表示双向通信。 关系可以通过以下方式配置：
+将用户添加到该实例之后，你应在每个远程用户和每个本地用户之间配置“通信关系”。 在本示例中，假设用户 A 和用户 B 处于同一团队中，并允许进行双向通信。 `c_communicationRelationshiSendAndReceiveAll` GameChat2.h 来表示的双向通信中定义一个常量。 关系可以通过以下方式配置：
 
 ```cpp
 chatUserA->local()->set_communication_relationship(chatUserB, c_communicationRelationshipSendAndReceiveAll);
@@ -214,7 +214,7 @@ auto token = chatManager->OnTextMessageReceived +=
 
 ### <a name="game-chat-2"></a>游戏聊天 2
 
-游戏聊天 2 通过由应用定期、频繁地调用 `chat_manager::start_processing_state_changes()` 和 `chat_manager::finish_processing_state_changes()` 方法对向用应程序提供更新（例如收到的文本消息）。 它们旨在加快运行速度，以便在 UI 呈现循环中对每个图形帧执行调用。 这提供了一个可检索所有已排队更改的方便位置，而不必担心网络计时的不可预测性或多线程回调的复杂性。
+游戏聊天 2 通过应用对方法的 `chat_manager::start_processing_state_changes()` 和 `chat_manager::finish_processing_state_changes()` 对的常规且频繁的调用来为应用（例如收到的文本消息）提供更新。 它们旨在加快运行速度，以便在 UI 呈现循环中对每个图形帧执行调用。 这提供了一个可检索所有已排队更改的方便位置，而不必担心网络计时的不可预测性或多线程回调的复杂性。
 
 当调用 `chat_manager::start_processing_state_changes()` 时，在 `game_chat_state_change` 结构指针数组中报告所有已排队更新。 应用应迭代该数组，并检查更具体类型的基本结构，将基本结构转换为相应更详细的类型，然后根据需要处理更新。 完成所有当前可用的 `game_chat_state_change` 对象的操作后，应通过调用 `chat_manager::finish_processing_state_changes()` 来将该数组应传递回游戏聊天 2 以释放资源。 例如：
 
@@ -257,7 +257,7 @@ chat_manager::singleton_instance().finish_processing_state_changes(gameChatState
 chatUser->GenerateTextMessage(L"Hello", false);
 ```
 
-第二个布尔参数控制文本到语音转换。 有关更多详细信息，请参阅[辅助功能](#accessibility)。 然后，游戏聊天生成包含此消息的聊天数据包。 游戏聊天的远程实例将通过 `OnTextMessageReceived` 事件获得该文本消息的通知。
+第二个布尔参数控制文本到语音转换。 有关更多详细信息，请参阅[可访问性](#accessibility)。 游戏聊天然后生成包含此消息的聊天数据包。 游戏聊天的远程实例将通过 `OnTextMessageReceived` 事件获得该文本消息的通知。
 
 ### <a name="game-chat-2"></a>游戏聊天 2
 
@@ -287,7 +287,7 @@ chatUser->GenerateTextMessage(L"Hello", true);
 
 ### <a name="text-to-speech---game-chat-2"></a>文本到语音转换 - 游戏聊天 2
 
-当用户启用文本到语音转换时，`chat_user::chat_user_local::text_to_speech_conversion_preference_enabled()` 将返回 "true"。 当检测到此状态时，应用必须提供文本输入方法。 当通过实体或虚拟键盘输入文本时，将此字符串传递给 `chat_user::chat_user_local::synthesize_text_to_speech()` 方法。 游戏聊天 2 将根据该字符串和用户可访问的语音偏好来检测和合成音频数据。 例如：
+当用户启用文本到语音转换时，`chat_user::chat_user_local::text_to_speech_conversion_preference_enabled()` 将返回“true”。 当检测到此状态时，应用必须提供文本输入方法。 当通过实体或虚拟键盘输入文本时，将此字符串传递给 `chat_user::chat_user_local::synthesize_text_to_speech()` 方法。 游戏聊天 2 将根据该字符串和用户可访问的语音偏好来检测和合成音频数据。 例如：
 
 ```cpp
 chat_userA->local()->synthesize_text_to_speech(L"Hello");
@@ -303,7 +303,7 @@ chat_userA->local()->synthesize_text_to_speech(L"Hello");
 
 当用户启用语音到文本转换时，`chat_user::chat_user_local::speech_to_text_conversion_preference_enabled()` 将返回 true。 当检测到此状态时，应用必须准备提供与转录聊天消息相关联的 UI。 游戏聊天 2 将自动转录每个远程用户的音频，并通过 `game_chat_transcribed_chat_received_state_change` 公开它。
 
-> `Windows::Xbox::UI::Accessibility`  是专门为提供游戏内文字聊天的简单呈现而设计的 Xbox One 类，专注于语音到文本转换辅助技术。
+> `Windows::Xbox::UI::Accessibility` Xbox One 类专门用于语音转文本辅助技术讲解如何提供简单呈现方式的游戏中的文本聊天。
 
 请参阅[使用游戏聊天 2 - 语音到文本性能注意事项](using-game-chat-2.md#speech-to-text-performance-considerations)了解有关语音到文本转换性能注意事项的详细信息。
 
@@ -392,21 +392,21 @@ switch (chatUser->chat_indicator())
 
 ### <a name="game-chat"></a>游戏聊天
 
-游戏聊天公开特权和隐私信息通过`RestrictionMode`属性。 该属性可通过检查 `GameChatUser::RestrictionMode` 进行检索。
+游戏聊天公开权限和隐私信息通过`RestrictionMode`属性。 该属性可通过检查 `GameChatUser::RestrictionMode` 进行检索。
 
 ### <a name="game-chat-2"></a>游戏聊天 2
 
 游戏聊天 2 在首次添加用户时执行特权和隐私限制查找；在这些操作完成之前，用户的 `chat_user::chat_indicator()` 将始终返回 `game_chat_user_chat_indicator::silent`。 如果与用户的通信受到了特权或隐私限制的影响，则用户的 `chat_user::chat_indicator()` 将返回 `game_chat_user_chat_indicator::platform_restricted`。 平台通信限制将同时应用于语音和文字聊天；绝不会出现平台限制阻止文字聊天但不阻止语音聊天的情况，反之亦然。
 
-`chat_user::chat_user_local::get_effective_communication_relationship()`  可用于帮助区分用户由于不完备的特权和隐私操作而无法通信的情况。 它将返回由游戏聊天 2 强制执行的通信关系（其形式为 `game_chat_communication_relationship_flags`），以及该通信关系不等于配置关系的原因（其形式为 `game_chat_communication_relationship_adjuster`）。 例如，如果查找操作仍在进行中，则 `game_chat_communication_relationship_adjuster` 将是 `game_chat_communication_relationship_adjuster::intializing`。 此方法有望用于开发和调试场景中；不应用于影响 UI（请参阅 [UI](#UI)）。
+`chat_user::chat_user_local::get_effective_communication_relationship()` 可以使用以帮助区分时用户不完整的权限和隐私操作由于不能进行通信。 它将返回由游戏聊天 2 强制执行的通信关系（其形式为 `game_chat_communication_relationship_flags`），以及该通信关系不等于配置关系的原因（其形式为 `game_chat_communication_relationship_adjuster`）。 例如，如果查找操作仍在进行中，则 `game_chat_communication_relationship_adjuster` 将是 `game_chat_communication_relationship_adjuster::intializing`。 此方法有望用于开发和调试场景中；不应用于影响 UI（请参阅 [UI](#UI)）。
 
-## <a name="cleanup"></a>清理
+## <a name="cleanup"></a>Cleanup
 
 原游戏聊天的 `ChatManager` 是 WinRT 运行时类 - 一个引用计数接口。 因此，当最后一个引用计数降为零时，将回收其内存资源，并进行清理。 与游戏聊天 2 的 C++ API 的交互通过单一实例进行；当应用不再需要通过游戏聊天 2 通信时，你应调用 `chat_manager::cleanup()`。 这使游戏聊天 2 能够立即释放已分配用于管理通信的所有资源。 有关游戏聊天 2 的 WinRT API 和资源管理的详细信息，请参阅[使用游戏聊天 2 WinRT 投影](using-game-chat-2-winrt.md#cleanup)。
 
 ## <a name="failure-model-and-debugging"></a>失败模型和调试
 
-原来的游戏聊天是一个 WinRT API，因此通过异常来报告错误。 非致命错误或警告通过可选的调试回调进行报告。 游戏聊天 2 的 C++ API 不会将引发异常作为报告非致命错误的手段，因此，可以根据需要在无异常项目中轻松使用它。 然而，游戏聊天 2 确实会引发异常，以报告致命错误。 这些错误是误用 API 的结果，例如在初始化实例前将用户添加到游戏聊天实例，或者从游戏聊天实例中删除用户对象后访问该用户对象。 应该在开发阶段早期阶段发现这些错误，通过修改与游戏聊天 2 交互所用的模式可以更正错误。 发生此类错误时，在引发异常前，有关错误原因的提示会输出到调试程序中。 游戏聊天 2 的 WinRT API 遵循通过异常报告错误的 WinRT 模式。
+原来的游戏聊天是一个 WinRT API，因此通过异常来报告错误。 非致命错误或警告通过可选的调试回调进行报告。 游戏聊天 2 的 C++ API 不会将引发异常作为报告非致命错误的手段，因此，可以根据需要在无异常项目中轻松使用它。 然而，游戏聊天 2 确实会引发异常，以报告致命错误。 这些错误是误用 API 的结果，例如在初始化实例前将用户添加到游戏聊天实例，或者从游戏聊天实例中删除用户对象后访问该用户对象。 应该在开发阶段早期阶段发现这些错误，通过修改与游戏聊天 2 交互所用的模式可以更正错误。 发生此类错误时，在引发异常前，有关错误原因的提示会打印到调试程序中。 游戏聊天 2 的 WinRT API 遵循通过异常报告错误的 WinRT 模式。
 
 ## <a name="how-to-configure-popular-scenarios"></a>如何配置热门场景
 

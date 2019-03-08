@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xdk
 ms.localizationpriority: medium
 ms.openlocfilehash: f17765b09dcb0b6f5c89d168f2d3d9611a60ffa6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932642"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649042"
 ---
 # <a name="add-xbox-live-to-a-new-or-existing-xdk-project"></a>向新的或现有的 XDK 项目添加 Xbox Live
 
@@ -21,7 +21,7 @@ ms.locfileid: "8932642"
 
 - 设置你的 Xbox One 开发环境
 - 获取你的 ID
-- 配置你的开发主机
+- 配置开发主机
 - 向二进制文件添加 TitleID 和 SCID
 
 
@@ -34,7 +34,7 @@ ms.locfileid: "8932642"
 
 你将需要通过执行 [Xbox Live 服务配置](../xbox-live-service-configuration.md)中的操作来获取你的 ID
 
-## <a name="configure-your-development-console"></a>配置你的开发主机
+## <a name="configure-your-development-console"></a>配置开发主机
 
 拥有 ID 后，请遵循[配置你的开发主机](configure-your-development-console.md)指南来设置你的开发主机。
 

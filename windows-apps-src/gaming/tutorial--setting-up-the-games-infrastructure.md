@@ -1,21 +1,21 @@
 ---
 title: 设置游戏项目
-description: 装配游戏的第一步是在 Microsoft Visual Studio 中设置项目，以便最大限度减少需要执行的代码基础结构工作量。
+description: 装配游戏的第一步是在 Microsoft Visual Studio 中设置项目，以便让基础架构正常工作所需的代码量减至最小。
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 设置, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944581"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608702"
 ---
 # <a name="set-up-the-game-project"></a>设置游戏项目
 
-本主题介绍如何使用 Visual Studio 中的模板设置简单的 UWP DirectX 游戏。 装配游戏的第一步是在 Microsoft Visual Studio 中设置项目，以便最大限度减少需要执行的代码基础结构工作量。 了解如何在使用正确的模板以及专门为游戏开发配置项目时节省设置时间。
+本主题介绍如何使用 Visual Studio 中的模板设置简单的 UWP DirectX 游戏。 装配游戏的第一步是在 Microsoft Visual Studio 中设置项目，以便让基础架构正常工作所需的代码量减至最小。 了解如何在使用正确的模板以及专门为游戏开发配置项目时节省设置时间。
 
 ## <a name="objectives"></a>目标
 
@@ -33,15 +33,15 @@ ms.locfileid: "8944581"
 
 ### <a name="use-directx-template-to-create-a-project"></a>使用 DirectX 模板创建项目
 
-Visual Studio 模板是一个设置和代码文件集合，专用于基于首选语言和技术的特定类型的应用。 在 Microsoft Visual Studio2017，你可以找到许多模板，这可以大大简化游戏和图形应用开发。 如果不使用模板，则必须亲自开发大量的基本图形呈现和显示框架，这对于游戏开发新手而言可能是一件苦差事。
+Visual Studio 模板是一个设置和代码文件集合，专用于基于首选语言和技术的特定类型的应用。 在 Microsoft Visual Studio 2017 中，您会发现多个可以极大地简化游戏和图形应用程序开发的模板。 如果不使用模板，则必须亲自开发大量的基本图形呈现和显示框架，这对于游戏开发新手而言可能是一件苦差事。
 
 用于本教程的模板是标题为 **DirectX 11 应用(通用 Windows)** 的模板。 
 
 在 Visual Studio 中创建 DirectX 11 游戏项目的步骤：
-1.  依次选择**文件...** &gt; **新建** &gt; **项目...**
-2.  在左侧窗格中，选择**已安装** &gt; **模板** &gt; **Visual C++** &gt; **Windows 通用**
+1.  选择**文件...**&gt; **新**&gt; **项目...** 
+2.  在左窗格中，选择**已安装** &gt; **模板** &gt; **Visual c + +** &gt; **Windows 通用**
 3.  在中心窗格中，选择 **DirectX 11 应用（通用 Windows）**
-4.  为你的游戏项目命名，并单击**确定**。
+4.  为你的游戏项目命名，并单击“确定”。
 
 ![显示如何选择 directx11 模板来创建新游戏项目的屏幕截图](images/simple-dx-game-setup-new-project.png)
 
@@ -53,7 +53,7 @@ Visual Studio 模板是一个设置和代码文件集合，专用于基于首选
 
 ### <a name="inspect-apph"></a>检查 **App.h**。
 
-在实现定义视图提供程序的 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700469) 时，我们来通过 **App.h** 快速了解一下这 5 个方法 &mdash; [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)、[**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)、[**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501)、[**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 和 [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)。 这些方法由启动游戏时创建的应用单一实例运行，并加载应用的所有资源以及连接相应的事件处理程序。
+让我们快速看一下中的 5 个方法**app.h 中** &mdash; [**初始化**](https://msdn.microsoft.com/library/windows/apps/hh700495)， [ **SetWindow** ](https://msdn.microsoft.com/library/windows/apps/hh700509)， [**负载**](https://msdn.microsoft.com/library/windows/apps/hh700501)， [**运行**](https://msdn.microsoft.com/library/windows/apps/hh700505)，以及[**取消初始化**](https://msdn.microsoft.com/library/windows/apps/hh700523)实现时[ **IFrameworkView** ](https://msdn.microsoft.com/library/windows/apps/hh700469)定义的视图提供程序的接口。 这些方法由启动游戏时创建的应用单一实例运行，并加载应用的所有资源以及连接相应的事件处理程序。
 
 ```cpp
     // Main entry point for our app. Connects the app with the Windows shell and handle application lifecycle events.
@@ -118,7 +118,7 @@ void App::Run()
 }
 ```
 
-此方法的作用：如果游戏窗口没有关闭，则发送所有事件，更新计时器，然后呈现和提供图形管道的结果。 我们将在[定义 UWP 应用框架](tutorial--building-the-games-uwp-app-framework.md)、[呈现框架 I：呈现简介](tutorial--assembling-the-rendering-pipeline.md)和[呈现框架 II：游戏呈现](tutorial-game-rendering.md)中对此加以详尽地介绍。 现在，你应了解 UWP DirectX 游戏的基本代码结构。
+此方法的作用：如果为您的游戏窗口未关闭，它将所有事件，更新计时器，然后呈现并显示结果的图形管道。 我们将讨论这中更详细地[定义 UWP 应用程序框架](tutorial--building-the-games-uwp-app-framework.md)，[呈现框架实现：对呈现简介](tutorial--assembling-the-rendering-pipeline.md)，和[呈现框架 II:游戏渲染](tutorial-game-rendering.md)。 现在，你应了解 UWP DirectX 游戏的基本代码结构。
 
 ## <a name="review-and-update-the-packageappxmanifest-file"></a>检查和更新 package.appxmanifest 文件
 
@@ -129,11 +129,11 @@ void App::Run()
 
 ![package.appx 清单编辑器的屏幕截图。](images/simple-dx-game-setup-app-manifest.png)
 
-有关 **package.appxmanifest** 文件和打包的详细信息，请参阅[清单设计器](https://msdn.microsoft.com/library/windows/apps/br230259.aspx)。 现在，请看一下**功能**选项卡并查看提供的选项。
+有关 **package.appxmanifest** 文件和打包的详细信息，请参阅[清单设计器](https://msdn.microsoft.com/library/windows/apps/br230259.aspx)。 现在，请看一下“功能”选项卡并查看提供的选项。
 
 ![显示 Direct3D 应用的默认功能的屏幕截图。](images/simple-dx-game-setup-capabilities.png)
 
-如果不选择游戏使用的功能（如用于全球高分榜的“Internet”****），你将无法访问相应的资源或功能。 在创建新游戏时，请确保选择了运行游戏所需的功能！
+如果不选择游戏使用的功能（如用于全球高分榜的“Internet”），你将无法访问相应的资源或功能。 在创建新游戏时，请确保选择了运行游戏所需的功能！
 
 现在，我们看一下 **DirectX 11 应用（通用 Windows）** 模板附带的其他文件。
 
@@ -141,7 +141,7 @@ void App::Run()
 
 有一些文件我们还没有碰到过。 这些文件提供 Direct3D 游戏开发场景通用的附加工具和支持。 要获取基本 DirectX 游戏项目附带的文件的完整列表，请参阅 [DirectX 游戏项目模板](user-interface.md#template-structure)。
 
-| 模板源文件         | 文件夹            | 说明 |
+| 模板源文件         | 文件夹            | 描述 |
 |------------------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | DeviceResources.h/.cpp       | 通用                 | 定义控制所有 DirectX [设备资源](tutorial--assembling-the-rendering-pipeline.md#resource)的类对象。 它还提供了一个界面，让拥有 DeviceResources 的应用程序在设备丢失或创建时收到通知。                                                |
 | DirectXHelper.h              | 通用                 | 实现包括 **DX::ThrowIfFailed**、**ReadDataAsync** 和 **ConvertDipsToPixels 在内的方法。 **DX::ThrowIfFailed** 可将 DirectX Win32 API 返回的错误 HRESULT 值转换为 Windows 运行时异常。 使用此方法为调试 DirectX 错误放置断点。 有关详细信息，请参阅 [ThrowIfFailed](https://github.com/Microsoft/DirectXTK/wiki/ThrowIfFailed)。 **ReadDataAsync** 从二进制文件异步读取。 **ConvertDipsToPixels** 将以与设备无关的像素 (DIP) 为单位的长度转换为以物理像素为单位的长度。 |
@@ -151,7 +151,7 @@ void App::Run()
 | SamplePixelShader.hlsl       | 内容                | 包含最基本的像素着色器的高级着色器语言 (HLSL) 代码。                                            |
 | SampleVertexShader.hlsl      | 内容                | 包含最基本的顶点着色器的高级着色器语言 (HLSL) 代码。                                           |
 | ShaderStructures.h           | 内容                | 包含可用于将 MVP 矩阵和每顶点数据发送到顶点着色器的着色器结构。  |
-| pch.h/.cpp                   | 主                   | 包含所有 Windows 系统中包括的 Direct3D 应用使用的 API，包括 DirectX 11 API。| 
+| pch.h/.cpp                   | Main                   | 包含所有 Windows 系统中包括的 Direct3D 应用使用的 API，包括 DirectX 11 API。| 
 
 ### <a name="next-steps"></a>后续步骤
 

@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use the powerful Visits Tracking feature for more practical location tracking.
+Description: 了解如何使用功能强大的访问跟踪功能进行更实用的位置跟踪。
 title: 有关使用访问跟踪的指南
 ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
 ms.date: 05/18/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, geovisit, geovisits
 ms.localizationpriority: medium
 ms.openlocfilehash: db351660722cd13a4e8f14bebb651d60f33d1671
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927536"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640772"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a>有关使用访问跟踪的指南
 
@@ -269,6 +269,6 @@ private async void RegisterBackgroundTask(object sender, RoutedEventArgs e) {
 你的应用现在应该能够注册访问处理后台任务，并且每当设备记录与访问相关的状态变化时，应该会激活此任务。 你将需要在后台任务类中填写逻辑，以确定如何处理此状态变化信息。
 
 ## <a name="related-topics"></a>相关主题
-* [创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
-* [获取用户位置](get-location.md)
+* [创建并注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+* [获取用户的位置](get-location.md)
 * [Windows.Devices.Geolocation 命名空间](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)

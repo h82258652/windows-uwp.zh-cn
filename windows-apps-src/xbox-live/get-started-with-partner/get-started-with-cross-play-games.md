@@ -1,5 +1,5 @@
 ---
-title: 跨平台游玩游戏入门
+title: 跨平台游戏入门
 description: 了解如何开发在电脑和 Xbox One 主机上运行的跨平台游玩游戏。
 ms.assetid: 6c8e9d08-a3d2-4bfc-90ee-03c8fde3e66d
 ms.date: 04/04/2017
@@ -7,13 +7,13 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 跨平台游玩, 随处游戏
 ms.localizationpriority: medium
 ms.openlocfilehash: 79b0c211291d8a27456126ea0378f9093d1dccab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929696"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646722"
 ---
-# <a name="get-started-with-cross-play-games"></a>跨平台游玩游戏入门
+# <a name="get-started-with-cross-play-games"></a>跨平台游戏入门
 
 ## <a name="summary"></a>摘要
 
@@ -21,7 +21,7 @@ ms.locfileid: "8929696"
 
 引入 XDK+UWP 今日游戏需要 4 个主要步骤：
 
-1.  在合作伙伴中心中创建 UWP 产品
+1.  在合作伙伴中心创建 UWP 产品
 
 2.  在 XDP 中创建 XDK 游戏，选择你要在其中共享 XBL 配置的平台
 
@@ -35,23 +35,23 @@ ms.locfileid: "8929696"
 
 ### <a name="scenario-terms"></a>场景术语
 
-1.  跨平台游玩：在多个平台上发布一个游戏，但共享单个 Xbox 主题作品 ID 和服务配置。 最终结果是，游戏的两个版本共享同样的 Xbox Live 配置 - 成就、排行榜、游戏保存、多人游戏等。
+1.  跨 Play:释放在多个平台上，但共享单个 Xbox 游戏标题 ID 和服务配置。 最终结果是，游戏的两个版本共享同样的 Xbox Live 配置 - 成就、排行榜、游戏保存、多人游戏等。
 
-2.  合作伙伴中心： 在[门户](https://partner.microsoft.com/dashboard)其中可以保留用于 UWP 开发今天和设置 Xbox Live 配置适用于 UWP 的应用标识。
+2.  合作伙伴中心：[门户](https://partner.microsoft.com/dashboard)可以用来保留 UWP 开发今天和设置 Xbox Live 在配置中使用适用于 UWP 的应用程序标识。
 
-3.  XDP：现存的 Xbox 开发人员门户，可引入、配置和发布 Xbox One XDK 和 SRA 游戏，还将看到对引入、配置和发布 XDK+UWP 跨平台游玩游戏的额外使用。
+3.  XDP:Xbox 开发人员门户中，当前存在引入，配置，并发布 Xbox One XDK 和 SRA 游戏，将看到添加了的用于引入、 配置和发布 XDK + UWP 跨玩游戏。
 
 ### <a name="identity-terms"></a>标识条款
 
-1.  主题作品 ID：这是 Xbox 主题作品 ID，用于将每个游戏标识到 Xbox Live 中。 映射到单个产品的主题作品 ID，可能会跨越多个平台。
+1.  标题 ID:这是 Xbox 标题 ID，用于标识每个游戏到 Xbox Live。 映射到单个产品的主题作品 ID，可能会跨越多个平台。
 
-2.  服务配置 ID (SCID)：每个 Xbox 主题作品（由主题作品 ID 标识）都有相应的服务配置 ID（即 SCID）。 与主题作品交互时，此 ID 允许 Xbox Live 唯一标识要使用的规则/配置。
+2.  服务配置 ID (SCID):（标题 ID 标识） 每个 Xbox 标题有相应的服务配置 ID (也称为 SCID)。 与主题作品交互时，此 ID 允许 Xbox Live 唯一标识要使用的规则/配置。
 
-3.  程序包系列名称 (PFN): 这是分配给合作伙伴中心中创建的每个产品的标识。 一旦将 UWP 绑定到此合作伙伴中心产品的标识后，它将采用此 PFN。 PFN 是唯一的产品标识符，可能会跨越多个平台。 PFN 与 Xbox 主题作品 ID 的比例为 1:1。
+3.  包系列名称 (PFN):这是分配给在合作伙伴中心创建的每个产品的标识。 一旦您 UWP 绑定到此合作伙伴中心产品的标识时，它将承担起此 PFN。 PFN 是唯一的产品标识符，可能会跨越多个平台。 PFN 与 Xbox 主题作品 ID 的比例为 1:1。
 
-4.  MSA 应用 ID： 也称为 MSA 客户端 ID，这是分配创建产品时 MSA 在合作伙伴中心中的另一个应用标识。 此标识有助于 Microsoft 服务识别你的应用。 MSA 应用与 PFN 的比例（以及相应地与 Xbox 主题作品 ID 的比例）为 1:1。
+4.  MSA 应用程序 ID:也称为 MSA 客户端 ID，这是分配在产品创建时 MSA 在合作伙伴中心中的另一个应用程序标识。 此标识有助于 Microsoft 服务识别你的应用。 MSA 应用与 PFN 的比例（以及相应地与 Xbox 主题作品 ID 的比例）为 1:1。
 
-## <a name="scenario-overview"></a>场景概述
+## <a name="scenario-overview"></a>方案概述
 
 ### <a name="what-is-cross-play"></a>什么是跨平台游玩？
 
@@ -61,7 +61,7 @@ Windows 10 展示型体验；跨平台游玩是 Xbox One 和电脑之间的跨�
 
 如果你想让游戏的 XDK 和 UWP 版本进行以下操作，跨平台游玩可能是正确的方法：
 
--   采用至少一种多人游戏模式参与跨设备的多人游戏（Xbox One 与电脑）
+-   参与跨设备之多人游戏 (Xbox One vs。PC) 中至少一个多玩家游戏模式
 
 -   共享用户可以在两台设备上使用的单个游戏保存
 
@@ -81,7 +81,7 @@ Windows 10 展示型体验；跨平台游玩是 Xbox One 和电脑之间的跨�
 
 -   以 Xbox One 和电脑之间的跨设备多人游戏为特征的游戏
 
-**注意**：跨平台游玩适用于同时发布了游戏的 XDK 和 UWP 版本的新游戏，以及已经提供了 XDK，但正在添加 UWP 版本的游戏。
+**注意**：同时将同时发布他们的游戏的 XDK 和 UWP 版本的新游戏，以及已发货 XDK，但要添加的 UWP 版本的游戏提供跨播放。
 
 ### <a name="what-are-the-restrictions-of-cross-play"></a>跨平台游玩有哪些限制？
 
@@ -89,15 +89,15 @@ Windows 10 展示型体验；跨平台游玩是 Xbox One 和电脑之间的跨�
 
 所有 XDK + UWP 跨平台游玩游戏都会有一些重要的限制：
 
-1.  **XDK 主题作品必须引入到 XDP 中**。 凭借服务配置和主线发布体验，合作伙伴中心不需要配备即可支持基于 XDK 主题作品。
+1.  **XDK 主题作品必须引入到 XDP 中**。 同时从服务配置和主线发布体验，合作伙伴中心未配备以支持基于 XDK 标题。
 
-2.  **游戏的 XDK 和 UWP 版本均可使用在 XDP 中创建的单个服务配置**。 我们已经向 XDP 添加了新功能，允许游戏在其 XDK 和 UWP 版本之间共享单个服务配置。 UWP 版本仍然需要在合作伙伴中心中发布的程序包 / 目录，但所有服务配置发布可以在 XDP 中完成。
+2.  **游戏的 XDK 和 UWP 版本均可使用在 XDP 中创建的单个服务配置**。 我们已经向 XDP 添加了新功能，允许游戏在其 XDK 和 UWP 版本之间共享单个服务配置。 UWP 版本仍将需要对在合作伙伴中心发布的包 / 目录，但所有服务配置发布可进行 XDP。
 
-3.  **不能在 XDP 和合作伙伴中心之间拆分服务配置**。 XDP 和合作伙伴中心不能注意的在另一个 – 一个中发布会中的任何现有发布。 这可能会无法修复地破坏服务配置并创建糟糕的用户体验（使成就消失、丢失游戏保存等），因此，我们需要在 XDP 中为 XDK+UWP 跨平台游玩游戏完成所有服务配置。
+3.  **服务配置不能 XDP 和合作伙伴中心之间拆分**。 XDP 和合作伙伴中心不了解的另一个 – 在一个过度的写入操作将从其他任何现有发布中发布。 这可能会无法修复地破坏服务配置并创建糟糕的用户体验（使成就消失、丢失游戏保存等），因此，我们需要在 XDP 中为 XDK+UWP 跨平台游玩游戏完成所有服务配置。
 
-### <a name="create-your-uwp-product-in-partner-center"></a>在合作伙伴中心中创建 UWP 产品
+### <a name="create-your-uwp-product-in-partner-center"></a>在合作伙伴中心创建 UWP 产品
 
-在合作伙伴中心中创建 UWP 产品，按照以下指南：[将 Xbox Live 添加到新的或现有的 UWP 项目](get-started-with-visual-studio-and-uwp.md)
+创建 UWP 产品在合作伙伴中心中的指导：[添加到新的或现有的 UWP 项目的 Xbox Live](get-started-with-visual-studio-and-uwp.md)
 
 ## <a name="setup-your-xdk-product-in-xdp"></a>在 XDP 中设置你的 XDK 产品
 
@@ -105,7 +105,7 @@ Windows 10 展示型体验；跨平台游玩是 Xbox One 和电脑之间的跨�
 
 ### <a name="create-your-xdp-product"></a>创建 XDP 产品
 
-使用帐户管理器在 XDP 中创建新产品下你的发布者 ([https://xdp.xboxlive.com/](https://xdp.xboxlive.com/User/Publisher))。
+使用你的客户经理在 XDP 中创建一个新的产品在发布服务器 ([https://xdp.xboxlive.com/](https://xdp.xboxlive.com/User/Publisher))。
 
 在 XDP 中创建产品时，确保滚动到 UI 左侧部分的底部选择你的平台。 检查每个你**希望某天**在其上使用 Xbox Live 跨平台游玩集成发布游戏的平台。
 
@@ -133,11 +133,11 @@ Windows 10 展示型体验；跨平台游玩是 Xbox One 和电脑之间的跨�
 
 ![](../images/ingesting_crossplay_games_xdp/image12.png)
 
-**你****无需输入姓名和发布者属性**，**尤其是不应使用页面上的“获取应用程序 ID”链接**，因为你已经有需要在此字段中输入的 MSA 应用 ID，且不需要再为应用程序生成一个新的。
+**您****无需输入名称和发布者归属**，**并且专门不应使用"获取应用程序 ID"链接的页上**，因为已有你需要在此输入 MSA 应用程序 ID字段，并且不希望为你的应用程序生成一个新密码。
 
-在“应用程序 ID”字段中输入你的 MSA 应用 ID 后，单击“提交应用程序 ID 设置”按钮。 这会保存你的 MSA 应用 ID 信息使用 Xbox Live 安全 – 无论你何时发出从你的 UWP 检索 XToken 的请求中包含的主题作品声明都会映射到此 XDP 产品 （只要 UWP 正确使用你创建了 AppX 清单标识在合作伙伴中心 d ！)
+在“应用程序 ID”字段中输入你的 MSA 应用 ID 后，单击“提交应用程序 ID 设置”按钮。 这样做可以节约将 MSA 应用程序 ID 信息与 Xbox Live 安全 – 每当发出请求，以从你 UWP，检索 XToken 标题声明中包含将现在映射到此 XDP 产品 （只要 UWP 正确使用你创建的 AppX 清单标识在合作伙伴中心 d ！)
 
-### <a name="enter-the-partner-center-pfn-into-xdp"></a>合作伙伴中心 PFN 输入到 XDP 中
+### <a name="enter-the-partner-center-pfn-into-xdp"></a>输入到 XDP 合作伙伴中心 PFN
 
 虽然上述步骤足以对 UWP 游戏进行身份验证和通过在 XDP 中创建和发布的服务配置使用 Xbox Live，某些 Xbox Live 功能（例如多人游戏邀请）需要感知 UWP 游戏的 PFN 才能正确运行。
 
@@ -149,29 +149,29 @@ Windows 10 展示型体验；跨平台游玩是 Xbox One 和电脑之间的跨�
 
 此配置不会立即实现。 它会通过发布到沙盒的未来的服务配置实现。 因此，此信息会沙盒化，并需要发布到每个沙盒才可用。
 
-### <a name="flag-your-app-for-xbox-cert-in-partner-center"></a>标记应用以备 Xbox 认证在合作伙伴中心
+### <a name="flag-your-app-for-xbox-cert-in-partner-center"></a>在合作伙伴中心 Xbox 证书标记您的应用程序
 
-如今，将游戏识别为支持 Xbox Live 以便进行 Xbox 认证的过程需要一些手动干预。 使用版本管理器标记你的应用是 Xbox Live 以便进行智能认证检测在合作伙伴中心中启用。
+如今，将游戏识别为支持 Xbox Live 以便进行 Xbox 认证的过程需要一些手动干预。 使用发布管理员来标记你的应用是 Xbox Live 启用在合作伙伴中心 SmartCert 检测。
 
 ### <a name="update-your-uwp-game-in-the-xbox-app"></a>在 Xbox 应用中更新 UWP 游戏
 
-通常情况下，Xbox 应用会使用 UWP 游戏的所有自动生成的主题作品 ID 来提供 Xbox 应用内的 Xbox Live 体验。 为了让 UWP 游戏正确使用 Xbox 应用 XDP 生成的主题作品 ID，一次数据更新需要在合作伙伴中心内进行**提交你的 UWP 游戏进行发布之前。**
+通常情况下，Xbox 应用会使用 UWP 游戏的所有自动生成的主题作品 ID 来提供 Xbox 应用内的 Xbox Live 体验。 若要对 UWP 游戏进行正确的 Xbox 应用中使用 XDP 生成标题 ID，数据更新必须在合作伙伴中心内进行**提交你 UWP 版游戏之前。**
 
-要执行此操作，请联系你的 DAM，并告知他们你要为主题作品名称更新 Xbox 应用主题作品 ID。  请务必包括在 XDP 中创建的作品 ID (在产品设置下的 XDP 中可见&gt;产品详细信息) 和 URL 适用于 Windows 10 为 UWP (显示在合作伙伴中心下应用管理&gt;应用标识)。
+要执行此操作，请联系你的 DAM，并告知他们你要为主题作品名称更新 Xbox 应用主题作品 ID。  务必要包含在 XDP 中创建的标题 ID (XDP 下产品安装程序中可见&gt;产品的详细信息) 和 URL 适用于 Windows 10 的适用于在 UWP (在应用管理下显示在合作伙伴中心&gt;应用标识)。
 
 ## <a name="configure-xbox-live-in-xdp"></a>在 XDP 中配置 Xbox Live
 
 ### <a name="service-configuration"></a>服务配置
 
-XDP 和合作伙伴中心产品正确配置和绑定，你可以随意设置 XDP 中的共享的 Xbox Live 配置，就像通常 XDK 主题作品。
+我们的 XDP 和合作伙伴中心产品正确地配置和绑定，你可以随意设置内 XDP 共享的 Xbox Live 配置便可正常 XDK 标题。
 
-**提醒**– 绑定 XDK + UWP 游戏应、 在任何情况下，启用、 配置或发布通过合作伙伴中心的 Xbox Live 服务配置。 未遵循本指南可能会永久损害游戏的 Xbox Live 配置。
+**提醒**– 绑定 XDK + UWP 游戏应、 在任何情况下，启用、 配置或发布通过合作伙伴中心 Xbox Live 服务配置。 未遵循本指南可能会永久损害游戏的 Xbox Live 配置。
 
 ### <a name="catalog-configuration"></a>目录配置
 
-对于 XDK + UWP 游戏，目录配置需要设置两次： 一次在 XDP 中为 XDK，以及在合作伙伴中心为你的 UWP。
+对于 XDK + UWP 游戏，目录配置需要设置两次： 一次在为你 XDK XDP 和合作伙伴中心适用于在 UWP 中。
 
-对于 XDP 配置，设置过程与一般的 XDK 产品完全相同。 对于合作伙伴中心配置，更多详细的步骤找不到[此处](https://dev.windows.com/en-us/publish)。
+对于 XDP 配置，设置过程与一般的 XDK 产品完全相同。 合作伙伴中心配置更详细的步骤，请参阅[此处](https://dev.windows.com/en-us/publish)。
 
 <table>
   <tr>
@@ -183,9 +183,9 @@ XDP 和合作伙伴中心产品正确配置和绑定，你可以随意设置 XDP
 
 ### <a name="binary-configuration"></a>二进制文件配置
 
-对于 XDK + UWP 游戏，二进制文件配置需要设置两次： 一次在 XDP 中为 XDK，以及在合作伙伴中心为你的 UWP。
+对于 XDK + UWP 游戏，二进制配置需要设置两次： 一次在为你 XDK XDP 和合作伙伴中心适用于在 UWP 中。
 
-对于 XDP 配置，设置过程与一般的 XDK 产品完全相同。 对于合作伙伴中心配置，更多详细的步骤找不到[此处](https://dev.windows.com/en-us/publish)。
+对于 XDP 配置，设置过程与一般的 XDK 产品完全相同。 合作伙伴中心配置更详细的步骤，请参阅[此处](https://dev.windows.com/en-us/publish)。
 
 <table>
   <tr>
@@ -197,7 +197,7 @@ XDP 和合作伙伴中心产品正确配置和绑定，你可以随意设置 XDP
 
 ## <a name="publish-in-xdp"></a>在 XDP 中发布
 
-一般来说，发布 XDK + UWP 游戏都遵循相同的进程分别在 XDP 和合作伙伴中心中的 UWP 中发布 XDK 主题作品。 因此，下面将重点介绍制作跨平台游玩游戏的独特过程和注意事项。
+通常情况下，发布 XDK + UWP 游戏遵循与单独 XDP 和在合作伙伴中心在 UWP 中发布的 XDK 标题相同的进程。 因此，下面将重点介绍制作跨平台游玩游戏的独特过程和注意事项。
 
 ### <a name="dev-sandbox-publishing"></a>开发人员沙盒发布
 
@@ -215,42 +215,42 @@ XDP 和合作伙伴中心产品正确配置和绑定，你可以随意设置 XDP
 
 ### <a name="cert-sandbox-publishing"></a>CERT 沙盒发布
 
-### <a name="coordination-between-xdp-publishing-and-partner-center-publishing"></a>XDP 发布和合作伙伴中心发布之间的协调
+### <a name="coordination-between-xdp-publishing-and-partner-center-publishing"></a>XDP 发布与合作伙伴中心发布之间进行协调
 
-在 XDP 中，从 CERT 移动到 RETAIL 是两个独立的显式操作。 但是，在合作伙伴中心，提交过程中自动移动游戏通过认证并到达零售。 因此，请遵循操作顺序。
+在 XDP 中，从 CERT 移动到 RETAIL 是两个独立的显式操作。 但是，在合作伙伴中心提交过程自动将移动通过认证和零售到您的游戏。 因此，请遵循操作顺序。
 
 当你准备好转到认证时，应按顺序遵循以下步骤：
 
 1.  在 XDP 中，将你的 XDK 产品发布到 CERT（包括目录、二进制文件和服务配置）
 
-2.  启动合作伙伴中心提交你的 UWP 产品
+2.  启动 UWP 产品在合作伙伴中心提交
 
-    1.  **务必在“发布日期”字段中选择“手动发布此应用”或“不早于 \[日期\]”。** 如果未执行此操作，UWP 游戏可能会不经干预就自动发布到零售。
+    1.  **请务必选择"手动发布此应用"或"不会早于\[日期\]"中的发布日期字段 ！** 如果未执行此操作，UWP 游戏可能会不经干预就自动发布到零售。
 
 <table>
   <tr>
     <td>
-      对于仅 UWP 游戏时，它是仍需要发布目录和服务配置到 XDP 中的 CERT 之前启动你的合作伙伴中心提交，即使你没有正在发布 XDK 主题作品二进制文件。
+      仅限 UWP 游戏时，是仍需要将发布目录和服务配置到 XDP 的证书之前启动你的合作伙伴中心提交，即使你没有要发布 XDK 标题二进制文件。
     </td>
   </tr>
 </table>
 
 ### <a name="retail-sandbox-publishing"></a>RETAIL 沙盒发布
 
-### <a name="coordination-between-xdp-publishing-and-partner-center-publishing"></a>XDP 发布和合作伙伴中心发布之间的协调
+### <a name="coordination-between-xdp-publishing-and-partner-center-publishing"></a>XDP 发布与合作伙伴中心发布之间进行协调
 
 完成 XDK 主题作品的认证，且 UWP 已离开认证并准备好发布后，你可以将应用发布到 RETAIL。 同样，请务必按照特定顺序遵循此过程，确保 XDK 主题作品和 UWP 保持对齐。
 
 1.  准备就绪后，将 XDP 中的 XDK 产品发布到 RETAIL（包括目录、二进制文件和服务配置）
 
-2.  在合作伙伴中心，你的产品的认证页上选择"立即发布"如果之前已选择"手动发布此应用"，或者等待发布发生如果你选择了"不早于 \[date\]"。
+2.  在合作伙伴中心，在您的产品，证书页上选择"立即发布"如果你以前已选择"手动发布此应用程序"，或等待发布后，如果选择了"不会早于\[日期\]"。
 
-完成这些步骤后，应该将你的 XDK 主题作品和 UWP 游戏发布到全世界，并在 RETAIL 中进行共享服务配置。 恭喜你！
+完成这些步骤后，应该将你的 XDK 主题作品和 UWP 游戏发布到全世界，并在 RETAIL 中进行共享服务配置。 祝贺你！
 
 <table>
   <tr>
     <td>
-      对于仅 UWP 游戏时，仍需要发布你的目录和服务配置为在 XDP 中完成发布之前合作伙伴中心中，否则，发布的 UWP 中的零售版将不能访问 Xbox Live。
+      对于仅限 UWP 的游戏中，仍需要发布你的目录和零售 XDP 发布完成之前在合作伙伴中心，否则发布的 UWP 中的服务配置将不能访问 Xbox Live。
     </td>
   </tr>
 </table>

@@ -1,5 +1,5 @@
 ---
-Description: Use nested UI to enable multiple actions on a list item
+Description: 使用嵌套的 UI 来支持列表项上的多个操作
 title: 列表项中嵌套的 UI
 label: Nested UI in list items
 template: detail.hbs
@@ -12,11 +12,11 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8edb38b8ae91d836e283a8eb37830850bf504db4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929100"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661302"
 ---
 # <a name="nested-ui-in-list-items"></a>列表项中嵌套的 UI
 
@@ -26,7 +26,7 @@ ms.locfileid: "8929100"
 
 你可以使用嵌套的 UI 来向用户显示附加选项，从而有助于促使用户采取重要的操作。 但是，公开的操作越多，UI 就变得越复杂。 在选择使用此 UI 模式时需要格外谨慎。 本文提供了指南来帮助你针对特定 UI 确定最佳做法。
 
-> **重要 API**：[ListView 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)，[GridView 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
+> **重要的 Api**:[ListView 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)， [GridView 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
 
 在本文中，我们将讨论如何在 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 和 [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 项目中创建嵌套的 UI。 尽管本部分不讨论其他嵌套的 UI 情形，但是这些概念是可转移的。 在开始之前，你应当熟悉在 UI 中使用 ListView 或 GridView 控件的常规指南，可在[列表](lists.md)以及[列表视图和网格视图](listview-and-gridview.md)文章中找到它。
 
@@ -109,7 +109,7 @@ ms.locfileid: "8929100"
 
 ![嵌套的 UI 部分](images/nested-ui-navigation.png)
 
-**游戏板**
+**Gamepad**
 
 当输入来自游戏板时，提供此用户体验：
 
@@ -167,7 +167,7 @@ ms.locfileid: "8929100"
 
 当列表项不执行操作时，建议使用本指南处理使用游戏板或键盘进行的导航。
 
-**游戏板**
+**Gamepad**
 
 当输入来自游戏板时，提供此用户体验：
 

@@ -6,22 +6,22 @@ ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d2c965bcfbf81efe73ce8aff93cdb8b31163fbd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941732"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653842"
 ---
 # <a name="custom-manipulation-experiences-with-interactiontracker"></a>InteractionTracker 的自定义操作体验
 
 在本文中，我们将介绍如何使用 InteractionTracker 来创建自定义操作体验。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 我们在此假设你熟悉这些文章中所述的概念：
 
-- [输入驱动的动画](input-driven-animations.md)
-- [基于关系的动画](relation-animations.md)
+- [输入驱动动画](input-driven-animations.md)
+- [关系基于动画](relation-animations.md)
 
 ## <a name="why-create-custom-manipulation-experiences"></a>为什么要创建自定义操作体验？
 
@@ -59,11 +59,11 @@ ms.locfileid: "8941732"
 
 ### <a name="interactiontracker-state-machine"></a>InteractionTracker 状态机
 
-如前面所述，InteractionTracker 是具有 4 种状态 – 其中每个都可过渡到任何其他 fourstates 的状态机。 (有关 InteractionTracker 如何在这些状态之间过渡的详细信息，请参阅 [InteractionTracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker) 类文档。)
+正如前面提到，InteractionTracker 是包含 4 种状态 – 其中每个可以转换为任何其他四个状态的状态机。 (有关 InteractionTracker 如何在这些状态之间过渡的详细信息，请参阅 [InteractionTracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker) 类文档。)
 
 | 状态 | 描述 |
 |-------|-------------|
-| Idle | 不活动状态，驱动输入或动画 |
+| 空闲 | 不活动状态，驱动输入或动画 |
 | Interacting | 检测到活动用户输入 |
 | Inertia | 因活动输入或编程速度导致的活动运动 |
 | CustomAnimation | 因自定义动画导致的活动运动 |
@@ -78,8 +78,8 @@ ms.locfileid: "8941732"
 
 1. 将在其中跟踪输入并检测坐标空间手势的命中测试区域
 1. 将检测和路由的输入的配置，其中包括以下几种：
-    - 可检测到的手势：位置 X 和 Y（水平和垂直平移）、伸缩（缩放）
-    - 惯性
+    - 可检测手势：位置 X 和 Y （水平和垂直平移），小数位数 （捏合）
+    - Inertia
     - 轨道和链
     - 重定向模式：哪些输入数据将自动重定向到 InteractionTracker
 
@@ -121,7 +121,7 @@ var opacityExp = -_tracker.GetReference().Position;
 > [!NOTE]
 > 在 Expression 中引用 InteractionTracker 的 Position 时，必须将该值取反，生成的 Expression 才能转为正确的方向。 这是因为 InteractionTracker 的进度在图表中以到原点的距离表示，这样可以将 InteractionTracker 的进度视为“真实世界”坐标，如相距原点的距离。
 
-## <a name="get-started"></a>即刻体验
+## <a name="get-started"></a>入门
 
 开始使用 InteractionTracker 创建自定义操作体验：
 
@@ -167,5 +167,5 @@ private void InteractionTrackerSetup(Compositor compositor, Visual hitTestRoot)
 
 有关 InteractionTracker 的更多高级用法，请参阅下面的文章：
 
-- [使用 InertiaModifier 创建吸附点](inertia-modifiers.md)
-- [使用 SourceModifier 的下拉刷新](source-modifiers.md)
+- [创建具有 InertiaModifiers 吸附点](inertia-modifiers.md)
+- [使用 SourceModifiers-刷新请求](source-modifiers.md)

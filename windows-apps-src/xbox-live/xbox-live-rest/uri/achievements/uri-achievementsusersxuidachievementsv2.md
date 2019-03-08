@@ -8,15 +8,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d4ac8c1fbf3d5f3fcc645e284059c1644495d62
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945257"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607982"
 ---
 # <a name="usersxuidxuidachievements"></a>/users/xuid({xuid})/achievements
  
-此通用资源标识符 (URI) 提供对用户的成就访问。
+此通用资源标识符 (URI) 提供访问权限用户获得的成就。
  
 这些 Uri 的域是`achievements.xboxlive.com`。
  
@@ -25,9 +25,9 @@ ms.locfileid: "8945257"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 所访问其 （资源） 的用户。 必须匹配的身份验证的用户的 XUID。| 
+| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的用户正在访问的 （资源）。 必须与匹配身份验证的用户的 XUID。| 
   
 <a id="ID4EAC"></a>
 
@@ -36,7 +36,7 @@ ms.locfileid: "8945257"
 
 [GET](uri-achievementsusersxuidachievementsgetv2.md)
 
-&nbsp;&nbsp;获取的游戏，这些用户，通过解锁或这些用户具有正在上定义的成就的列表。
+&nbsp;&nbsp;获取成就上标题、 取消锁定的用户，或有正在进行中的用户定义的列表。
  
 <a id="ID4EKC"></a>
 
@@ -48,6 +48,6 @@ ms.locfileid: "8945257"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[成就 URI](atoc-reference-achievementsv2.md)
+[获得的成就 Uri](atoc-reference-achievementsv2.md)
 
    

@@ -4,14 +4,14 @@ title: 自定义打印工作流
 description: 创建自定义打印工作流体验以满足组织的需求。
 ms.date: 08/10/2017
 ms.topic: article
-keywords: windows 10，uwp 打印
+keywords: windows 10、 uwp、 打印
 ms.localizationpriority: medium
 ms.openlocfilehash: 96e308793e60c0367c712fb93a5d25a056397568
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927172"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653232"
 ---
 # <a name="customize-the-print-workflow"></a>自定义打印工作流
 
@@ -22,10 +22,9 @@ ms.locfileid: "8927172"
 
 因为它涉及了后台和前台组件，并且它在功能上要与其他应用配合使用，打印工作流应用比起其他类型的 UWP 应用实现起来可能更复杂。 建议在阅读本指南时查看[工作流应用示例](https://github.com/Microsoft/print-oem-samples)，更好地了解如何实现不同功能。 为简单起见，本指南中不介绍某些功能，如各种错误检查和 UI 管理。
 
-## <a name="getting-started"></a>入门
+## <a name="getting-started"></a>即刻体验
 
-工作流应用必须指明其到打印系统的入口点，以便在适当的时间启动它。 这是通过在 UWP 项目的 *package.appxmanifest* 文件的
- `Application/Extensions` 元素中插入以下声明来实现的。 
+工作流应用必须指明其到打印系统的入口点，以便在适当的时间启动它。 这是通过在 UWP 项目的 *package.appxmanifest* 文件的`Application/Extensions` 元素中插入以下声明来实现的。 
 
 ```xml
 <uap:Extension Category="windows.printWorkflowBackgroundTask"  
@@ -241,9 +240,9 @@ UI 在 **PrintTaskXpsDataAvailable** 事件中完成延迟（或绕过 UI 步骤
 
 ### <a name="set-the-workflow-apps-policy"></a>设置工作流应用的策略
 工作流应用策略通过在要运行工作流应用的设备上的 Powershell 命令设置。 将修改 Set-Printer、Add-Printer（现有端口）和 Add-Printer（新 WSD 端口）命令以允许设置工作流策略。 
-* `Disabled`：不会激活工作流应用。
-* `Uninitialized`：如果工作流 DCA 已安装在系统中，则将激活工作流应用。 如果未安装该应用，仍将继续进行打印。 
-* `Enabled`：如果工作流 DCA 已安装在系统中，则将激活工作流合同。 如果未安装该应用，打印将失败。 
+* `Disabled`：工作流应用程序不会被激活。
+* `Uninitialized`：如果工作流 DCA 安装在系统中，将激活工作流应用程序。 如果未安装该应用，仍将继续进行打印。 
+* `Enabled`：如果工作流 DCA 安装在系统中，将激活工作流协定。 如果未安装该应用，打印将失败。 
 
 以下命令可使工作流应用在指定打印机上成为必需。
 ```Powershell
@@ -254,7 +253,7 @@ Set-Printer –Name "Microsoft XPS Document Writer" -WorkflowPolicy On
 
 ## <a name="see-also"></a>另请参阅
 
-[工作流应用示例](https://github.com/Microsoft/print-oem-samples)
+[工作流应用程序示例](https://github.com/Microsoft/print-oem-samples)
 
 [Windows.Graphics.Printing.Workflow 命名空间](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow)
 

@@ -4,26 +4,26 @@ description: 了解用于 Xbox Live 开发的沙盒。
 ms.assetid: a5acb5bf-dc11-4dff-aa94-6d1f01472d2a
 ms.date: 04/04/2017
 ms.topic: article
-keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
+keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ee284550a9b508a8d46556bf0353bd75d55014f3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933805"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599472"
 ---
 # <a name="xbox-live-sandboxes-intro"></a>Xbox Live 沙盒简介
 
-在[Xbox Live 服务配置](xbox-live-service-configuration.md)中，它说明了你必须配置信息与你的作品联机，有关通常在[合作伙伴中心](https://partner.microsoft.com/dashboard)。  此信息包括你的作品要显示的排行榜和玩家可解锁的成就，以及匹配配置等内容。
+在中[Xbox Live 服务配置](xbox-live-service-configuration.md)，它所述，必须配置有关的信息在标题上联机，通常在[合作伙伴中心](https://partner.microsoft.com/dashboard)。  此信息包括你的作品要显示的排行榜和玩家可解锁的成就，以及匹配配置等内容。
 
-当你对你的服务配置进行更改时，需要这些之前更改由 Xbox Live 的其余部分进行选取，并可以由你的游戏中看到从合作伙伴中心中发布。
+当对你的服务配置进行更改时，这些需要之前所做的更改会拾取的 Xbox Live rest 和通过您的标题，可以查看从合作伙伴中心发布。
 
 你可以发布到所谓的开发沙盒。  利用这些沙盒，你可以在隔离环境中执行对作品的更改。  这些沙盒具有很多优点，如以下部分中所述。
 
 默认情况下，Xbox One 主机和 Windows 10 电脑均位于 RETAIL 沙盒中。
 
-## <a name="benefits"></a>优点
+## <a name="benefits"></a>优势
 
 开发沙盒具有以下几个优点：
 
@@ -39,19 +39,15 @@ ms.locfileid: "8933805"
 
 ## <a name="finding-out-about-your-sandbox"></a>了解你的沙盒
 
-绝大多数的开发人员都只需要一个沙盒。  幸运的是，在你创建作品时，系统将为你创建沙盒。
+绝大多数的开发人员都只需一个沙盒。  幸运的是，在你创建作品时，系统将为你创建沙盒。
 
-1. 你了解你的沙盒通过此处转到合作伙伴中心：
-![](images/getting_started/first_xbltitle_dashboard.png)
+1. 您找出有关您的沙盒通过到合作伙伴中心转到此处： ![](images/getting_started/first_xbltitle_dashboard.png)
 
-1. 然后，单击你的作品：
-![](images/getting_started/first_xbltitle_dashboard_overview.png)
+1. 然后单击你的标题： ![](images/getting_started/first_xbltitle_dashboard_overview.png)
 
-1. 最后，在左侧菜单中，单击“服务->Xbox Live”
-![](images/getting_started/first_xbltitle_leftnav.png)
+1. 最后单击服务-> Xbox Live 在左侧菜单中 ![](images/getting_started/first_xbltitle_leftnav.png)
 
-1. 现在，你便可以看到沙盒，如下所列
-![](images/getting_started/devcenter_sandbox_id.png)
+1. 现在，可以看到，如下所示列出你沙盒 ![](images/getting_started/devcenter_sandbox_id.png)
 
 ## <a name="how-your-sandbox-impacts-your-workflow"></a>沙盒对工作流有何影响
 
@@ -70,7 +66,7 @@ ms.locfileid: "8933805"
 
 ### <a name="windows-device-portal"></a>Windows Device Portal
 
-如果你尚未在电脑上启用 WDP，请按照以下说明进行操作。 [在 Windows 桌面上设置 Device Portal](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop)
+如果你尚未在电脑上启用 WDP，请按照以下说明进行操作。 [在 Windows 桌面上安装设备门户](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop)
 
 执行完此操作后，在 Web 浏览器中连接 Windows 开发人员门户以将其打开，如上文中所述。
 
@@ -78,7 +74,7 @@ ms.locfileid: "8933805"
 
 ![](images/getting_started/wdp_switch_sandbox.png)
 
-然后，你可以输入通过执行*查找你的沙盒*中的步骤获得的沙盒，并单击“更改”。
+然后，你可以输入在执行*查找你的沙盒*步骤中获得的沙盒，并单击“更改”。
 
 若要切换回 RETAIL，你可以在此处输入 RETAIL。
 
@@ -88,10 +84,10 @@ ms.locfileid: "8933805"
 
 * 若要从 [PowerShell 库](https://www.powershellgallery.com/packages/XboxlivePSModule)使用该模块，请打开 PowerShell 窗口：
     1. 下载并安装该模块： `Install-Module XboxlivePSModule -Scope CurrentUser`
-    2. 通过运行开始使用 `Import-Module XboxlivePSModule`
+    2. 开始使用通过运行 `Import-Module XboxlivePSModule`
     3. 运行 cmdlet，即 Set-XblSandbox XDKS.1 或 Get-XblSandbox
 
-* 若要使用它从 zip 文件在[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)，打开 PowerShell 窗口，
+* 若要使用的 zip 文件，网址[ https://aka.ms/xboxliveuwptools ](https://aka.ms/xboxliveuwptools)，打开 PowerShell 窗口，
     1. 运行 `Import-Module <path to unzipped folder>\XboxLivePsModule\XboxLivePsModule.psd1`
     2. 运行 cmdlet，即 Set-XblSandbox XDKS.1 或 Get-XblSandbox
 
@@ -99,7 +95,7 @@ ms.locfileid: "8933805"
 
 从 [https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools) 下载 Xbox Live 工具包并解压缩。  你将会在其中找到 SwitchSandbox.cmd 批处理文件。
 
-在管理员模式下，运行此文件以切换你的沙盒。  第一个参数是沙盒。  例如，如果你要尝试切换到 XDKS.1 沙盒，则应执行以下操作：
+在管理员模式下，运行此文件以切换你的沙盒。  第一个变量是沙盒。  例如，如果你要尝试切换到 XDKS.1 沙盒，则应执行以下操作：
 
 ```
 SwitchSandbox.cmd XDKS.1
@@ -129,7 +125,7 @@ SwitchSandbox.cmd RETAIL
 
 ### <a name="using-xbox-one-console-ui"></a>使用 Xbox One 主机 UI
 
-如果你要直接通过主机更改你的开发沙盒，则可以转到“设置”。  然后，转到“开发人员设置”，此时，将显示一个用于更改沙盒的选项。
+如果你要直接通过主机更改开发沙盒，则可以转到“设置”。  然后，转到“开发人员设置”，此时，将显示一个用于更改沙盒的选项。
 
 ## <a name="sandbox-uses"></a>沙盒的使用
 
@@ -146,10 +142,10 @@ SwitchSandbox.cmd RETAIL
 ### <a name="examples"></a>示例
 下面将列举一些示例，以帮助说明你可能需要使用多个沙盒的原因以及所带来的一些好处。
 
-> **注意**：如果你加入 Xbox 创意者计划，则只能拥有一个沙盒。  如果你需要创建多个沙盒，请申请加入 ID@Xbox 计划。
+> **注意**：如果您是在 Xbox Creators 计划，可能只有一个沙盒。  如果你需要创建多个沙盒，请申请加入 ID@Xbox 计划。
 
 #### <a name="service-config-isolation"></a>服务配置隔离
-如上所述，服务配置特定于沙盒。  因此，你可能既有*开发*沙盒，又有*测试*沙盒。  向测试人员提供你的作品版本时，你需要将[服务配置](xbox-live-service-configuration.md)发布到*测试*沙盒。
+如上所述，服务配置特定于沙盒。  因此，你可能既有*开发*沙盒，又有*测试*沙盒。  向测试人员提供你的主题作品版本时，你需要将[服务配置](xbox-live-service-configuration.md)发布到*测试*沙盒。
 
 与此同时，你可以向*开发*沙盒中添加成就，或不同的多人游戏会话类型，而不影响测试人员正在查看的服务配置。
 

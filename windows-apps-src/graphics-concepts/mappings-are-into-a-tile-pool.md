@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a0474345e21161e76fbfeebe0086e5d433b2d219
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932254"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607352"
 ---
 # <a name="mappings-are-into-a-tile-pool"></a>映射到磁贴池
 
@@ -31,19 +31,19 @@ ms.locfileid: "8932254"
 
 假设每个页表条目为 64 位。
 
-对于最坏情况页表单个表面，给定 Direct3D11 中的资源限制，假设流式资源创建使用 128 位 / 元素格式 （如 RGBA 浮点值），因此 64KB 磁贴大小包含仅 4096 个像素。 最大支持的 [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) 大小为 16384\*16384\*2048（但只有一个 mipmap），如果使用 64 位表条目完全填充（不包括 mipmap），则其在页表中需要约 1GB 的存储空间。 添加 mipmap 会使完全映射（最坏情况）的页表存储增长约三分之一，达到约 1.3GB。
+对于最坏的页表大小达到的单一表面，给定的资源限制在 Direct3D 11 中，假设流创建一个资源是具有 128 位每个元素格式 （例如，RGBA 浮点数），因此 64KB 磁贴包含仅 4096 像素为单位。 支持的最大[ **Texture2DArray** ](https://msdn.microsoft.com/library/windows/desktop/ff471526)大小为 16384\*16384\*2048 （不过，仅单一 mipmap） 将需要大约 1 GB 的页表中的存储，如果完全填充（不包括 mipmap) 使用 64 位表项。 添加 mipmap 会使完全映射（最坏情况）的页表存储增长约三分之一，达到约 1.3GB。
 
 这种情况需要访问约 10.6 TB 的可寻址内存。 但可寻址内存的量可能存在限制，这将减少这些数量，可能缩减至约 TB 范围。
 
-另一个需要考虑的情况是大小为 16384\*16384 的单个 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) 流式资源（32 位/元素格式，包括 mipmap）。 在完全填充的页表中，其需要约 170KB 的空间（64 位表条目）。
+要考虑的另一种情况是单个[ **Texture2D** ](https://msdn.microsoft.com/library/windows/desktop/ff471525)流式处理资源 16384\*使用 32 位每个元素格式，包括 mipmap 16384。 在完全填充的页表中，其需要约 170KB 的空间（64 位表条目）。
 
-最后，考虑一个使用 BC 格式的示例，假设有一个 128 位的 BC7，每个磁贴为 4x4 像素。 每个像素占一个字节。 包括 mipmap 的大小为 16384\*16384\*2048 的 [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) 将需要约 85MB 的空间才能在页表中完全填充此内存。 考虑到这允许一个流式资源覆盖 5500 亿个像素（在这种情况下为 512 GB 的内存），结果还不错。
+最后，考虑一个使用 BC 格式的示例，假设有一个 128 位的 BC7，每个磁贴为 4x4 像素。 每个像素占一个字节。 一个[ **Texture2DArray** ](https://msdn.microsoft.com/library/windows/desktop/ff471526)的 16384\*16384\*2048年包括 mipmap 需要大约 85 MB，以完全填充此内存页表中的。 考虑到这允许一个流式资源覆盖 5500 亿个像素（在这种情况下为 512 GB 的内存），结果还不错。
 
 实际上，受可用物理内存容量的限制，每次能够映射和引用的位置要少得多，远远达不到完全映射的程度。 但借助磁贴池，应用程序可以选择重复使用磁贴（举个简单的示例，对于图像中的大块黑色区域，可以重复使用“黑色”磁贴），从而有效地将磁贴池（也就是页表映射）当作内存压缩工具使用。
 
 对于所有条目，页表的初始内容为 **NULL**。 应用程序也不能为表面的内存内容传递初始数据，因为它开始时没有内存支持。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>
@@ -59,15 +59,15 @@ ms.locfileid: "8932254"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="tile-pool-creation.md">创建磁贴池</a></p></td>
-<td align="left"><p>应用程序可以为每个 Direct3D 设备创建一个或多个磁贴池。 每个磁贴池的总大小仅限于 Direct3D11 的资源大小限制，约为 GPU RAM 的 1/4。</p></td>
+<td align="left"><p><a href="tile-pool-creation.md">池创建磁贴</a></p></td>
+<td align="left"><p>应用程序可以为每个 Direct3D 设备创建一个或多个磁贴池。 每个磁贴池的总大小仅限于 Direct3D 11 资源大小限制，它大约等于 1/4 的 GPU RAM。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="tile-pool-resizing.md">磁贴池调整大小</a></p></td>
 <td align="left"><p>如果应用程序需要更多工作集以容纳流式资源映射，可以扩大磁贴池，如果需要更少空间，可以缩小磁贴池。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="hazard-tracking-versus-tile-pool-resources.md">危险跟踪与磁贴池资源</a></p></td>
+<td align="left"><p><a href="hazard-tracking-versus-tile-pool-resources.md">跟踪与磁贴创建资源池的危险</a></p></td>
 <td align="left"><p>对于非流式资源，Direct3D 可以在渲染期间避免某些危险情况；但对于流式资源，危险跟踪将在磁贴级别进行，因而在渲染流式资源期间跟踪危险情况的代价可能极其高昂。</p></td>
 </tr>
 </tbody>
@@ -78,7 +78,7 @@ ms.locfileid: "8932254"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[创建流式资源](creating-streaming-resources.md)
+[创建流式处理资源](creating-streaming-resources.md)
 
  
 

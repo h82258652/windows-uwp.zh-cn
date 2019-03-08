@@ -10,18 +10,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c15c8a82219109a96d0a9ca192c4dfff5d86c9aa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940285"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598232"
 ---
 # <a name="streaming-resources"></a>流式资源
 
 
 *流式资源*是使用少量物理内存的大型逻辑资源。 整个大型资源不是一次传入，而是在需要时流式传输小部分资源。 流式资源以前称作*平铺资源*。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>
@@ -32,24 +32,24 @@ ms.locfileid: "8940285"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="the-need-for-streaming-resources.md">需要流式资源</a></p></td>
+<td align="left"><p><a href="the-need-for-streaming-resources.md">有关流式处理资源需求</a></p></td>
 <td align="left"><p>流式资源可保证 GPU 内存不会浪费无法访问的表面存储区域，并告知硬件如何跨相邻的磁贴进行过滤。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="creating-streaming-resources.md">创建流式资源</a></p></td>
+<td align="left"><p><a href="creating-streaming-resources.md">创建流式处理资源</a></p></td>
 <td align="left"><p>创建资源时通过指定标志即可创建流式资源，指明该资源为流式资源。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="pipeline-access-to-streaming-resources.md">对流式资源的管道访问</a></p></td>
+<td align="left"><p><a href="pipeline-access-to-streaming-resources.md">管道到流式处理资源的访问权限</a></p></td>
 <td align="left"><p>流式资源可用于着色器资源视图 (SRV)、呈现目标视图 (RTV)、深度模板视图 (DSV) 和无序访问视图 (UAV)，以及未使用视图的某些盲点（如顶点缓冲区绑定）。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="streaming-resources-features-tiers.md">流式资源功能层</a></p></td>
+<td align="left"><p><a href="streaming-resources-features-tiers.md">流式处理资源的功能层</a></p></td>
 <td align="left"><p>Direct3D 具有三层功能，可为流式资源提供支持。</p></td>
 </tr>
 </tbody>

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, xbox one, xbox 集成多人游戏
 ms.localizationpriority: medium
 ms.openlocfilehash: 798d1a1bc738cbdc7bb2b3fb34076f0897fc76ff
-ms.sourcegitcommit: 2a81d71e799eb167c7a26bf33c9ac847b8e6bc66
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "8992080"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644052"
 ---
 # <a name="using-xim-c"></a>使用 XIM (C++)
 
@@ -20,29 +20,29 @@ ms.locfileid: "8992080"
 
 这是关于使用 XIM 的 C++ API 的简短演练。 需要通过 C# 访问 XIM 的游戏开发人员应查看[使用 XIM (C#)](using-xim-cs.md)。
 
-- [使用 XIM (C++)](#using-xim-c)
-    - [先决条件](#prerequisites)
+- [使用 XIM （c + +）](#using-xim-c)
+    - [必备条件](#prerequisites)
     - [初始化和启动](#initialization-and-startup)
     - [异步操作和处理状态更改](#asynchronous-operations-and-processing-state-changes)
-    - [处理 XIM 玩家对象](#handling-xim-player-objects)
-    - [允许好友加入并邀请他们](#enabling-friends-to-join-and-inviting-them)
-    - [基本匹配和随他人移动到其他 XIM 网络](#basic-matchmaking-and-moving-to-another-xim-network-with-others)
-    - [禁用匹配 NAT 规则以进行调试](#disabling-matchmaking-nat-rule-for-debugging-purposes)
-    - [离开 XIM 网络并清理](#leaving-a-xim-network-and-cleaning-up)
+    - [处理 XIM player 对象](#handling-xim-player-objects)
+    - [启用要加入的朋友并邀请他们](#enabling-friends-to-join-and-inviting-them)
+    - [基本比赛或移动到另一个 XIM 网络与其他人](#basic-matchmaking-and-moving-to-another-xim-network-with-others)
+    - [禁用匹配 NAT 规则，以便进行调试](#disabling-matchmaking-nat-rule-for-debugging-purposes)
+    - [离开 XIM 网络和清理](#leaving-a-xim-network-and-cleaning-up)
     - [发送和接收消息](#sending-and-receiving-messages)
     - [评估数据路径质量](#assessing-data-pathway-quality)
-    - [使用玩家自定义属性共享数据](#sharing-data-using-player-custom-properties)
-    - [使用网络自定义属性共享数据](#sharing-data-using-network-custom-properties)
-    - [使用按玩家技能匹配](#matchmaking-using-per-player-skill)
-    - [使用按玩家角色匹配](#matchmaking-using-per-player-role)
-    - [XIM 如何与玩家团队配合工作](#how-xim-works-with-player-teams)
+    - [共享数据使用播放机自定义属性](#sharing-data-using-player-custom-properties)
+    - [共享数据使用网络自定义属性](#sharing-data-using-network-custom-properties)
+    - [使用每个播放机技能的匹配](#matchmaking-using-per-player-skill)
+    - [使用每个玩家角色匹配](#matchmaking-using-per-player-role)
+    - [XIM 与播放机团队的工作方式](#how-xim-works-with-player-teams)
     - [使用聊天](#working-with-chat)
-    - [将玩家静音](#muting-players)
-    - [使用玩家团队配置聊天目标](#configuring-chat-targets-using-player-teams)
-    - [玩家空位的自动后台填充（“回填”匹配）](#automatic-background-filling-of-player-slots-backfill-matchmaking)
+    - [静音播放器](#muting-players)
+    - [配置使用播放机团队聊天目标](#configuring-chat-targets-using-player-teams)
+    - [自动的后台填满的 player 槽 （"回填"匹配）](#automatic-background-filling-of-player-slots-backfill-matchmaking)
     - [查询可加入的网络](#querying-joinable-networks)
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 开始使用 XIM 编码之前，有两个先决条件。
 
@@ -89,11 +89,11 @@ xim::singleton_instance().move_to_new_network(8, xim_players_to_move::bring_only
 
 ## <a name="asynchronous-operations-and-processing-state-changes"></a>异步操作和处理状态更改
 
-XIM 的核心是应用对方法的 `xim::start_processing_state_changes()` 和 `xim::finish_processing_state_changes()` 对的定期且频繁的调用。 这些方法是，如何通知 XIM 应用已准备好处理多人游戏状态的更新，以及 XIM 如何提供这些更新。 它们被设计为可快速操作，以便可以在 UI 呈现循环中的每个图形帧调用它们。 这提供了方便的位置来检索所有已排队更改，而不必担心网络计时的不可预测性或多线程回调的复杂性。 XIM API 确实针对此单线程模式进行了优化。 它保证其状态在这两个函数之外将保持不变，因此，你可以直接、高效地使用它。
+XIM 的核心是应用对方法的 `xim::start_processing_state_changes()` 和 `xim::finish_processing_state_changes()` 对的定期且频繁的调用。 这些方法是，如何通知 XIM 应用已准备好处理多人游戏状态的更新，以及 XIM 如何提供这些更新。 它们旨在加快运行速度，以便在 UI 呈现循环中对每个图形帧执行调用。 这提供了方便的位置来检索所有已排队更改，而不必担心网络计时的不可预测性或多线程回调的复杂性。 XIM API 确实针对此单线程模式进行了优化。 它保证其状态在这两个函数之外将保持不变，因此，你可以直接、高效地使用它。
 
 出于相同的原因，*不*应认为 XIM API 返回的所有对象都是线程安全的。 库拥有内部多线程保护，但是，如果你需要任意线程访问任意 XIM 值，则仍需要执行自身锁定。 例如，一个线程遍历 `xim::players()` 列表，而另一线程可能调用 `xim::start_processing_state_changes()` 或 `xim::finish_processing_state_changes()` 并更改与该玩家列表关联的内存。
 
-调用 `xim::start_processing_state_changes()` 时，会在 `xim_state_change` 结构指针数组中报告所有已排队更新。
+当调用 `xim::start_processing_state_changes()` 时，在 `xim_state_change` 结构指针数组中报告所有已排队更新。
 
 应用应该：
 
@@ -143,7 +143,7 @@ for (uint32_t stateChangeIndex = 0; stateChangeIndex < stateChangeCount; stateCh
 
 `xim_player` 对象有很多有用的方法，例如，`xim_player::gamertag()` 可检索与玩家关联的当前 Xbox Live 玩家代号字符串，以用于显示。 如果 `xim_player` 位于设备本地，则它将报告 `xim_player::local()` 中的非 null `xim_player::xim_local` 对象指针，其中有其他仅适用于本地玩家的方法。
 
-当然，对玩家而言，最重要的状态不是 XIM 知道的通用信息，而是特定应用要跟踪的信息。由于你对该跟踪信息可能有自己的构造，因此，可能需要将 `xim_player` 对象链接到自己的玩家构造对象，这样，每当 XIM 报告 `xim_player` 时，你都可以快速检索状态，而无需填充和查找自定义的玩家上下文指针。 以下示例假定你的隐私状态指针已经在变量“myPlayerStateObject”中，且新添加的 `xim_player` 对象已经在变量“newXimPlayer”中：
+当然，玩家的最重要的状态不是将公共信息 XIM 知道，但要跟踪的特定应用程序。由于可能有自己构造，它用于该跟踪信息，你将想要链接`xim_player`对象复制到你自己的播放机构造对象，以便任何时候，只要 XIM 报表`xim_player`，您可以快速检索你的状态，而无需填充和查找自定义播放机的上下文指针。 以下示例假定你的隐私状态指针已经在变量“myPlayerStateObject”中，且新添加的 `xim_player` 对象已经在变量“newXimPlayer”中：
 
 ```cpp
 newXimPlayer->set_custom_player_context(myPlayerStateObject);
@@ -167,7 +167,7 @@ networkConfiguration.allowed_player_joins = xim_allowed_player_joins::local | xi
 xim::singleton_instance().set_network_configuration(&networkConfiguration);
 ```
 
-`xim::set_network_configuration()` 异步执行。 完成前一代码示例调用后，将会提供 `xim_network_configuration_changed_state_change` 以通知应用，可加入性值已更改，不再是默认值 `xim_allowed_player_joins::none`。 然后，你可以通过检查 `xim::network_configuration()` 返回 `xim_network_configuration` 的 `allowed_player_joins` 属性来查询新值。 
+`xim::set_network_configuration()` 执行 asynchronoulsy。 完成前一代码示例调用后，将会提供 `xim_network_configuration_changed_state_change` 以通知应用，可加入性值已更改，不再是默认值 `xim_allowed_player_joins::none`。 然后，你可以通过检查 `xim::network_configuration()` 返回 `xim_network_configuration` 的 `allowed_player_joins` 属性来查询新值。 
 
 当设备在 XIM 网络中时，可以通过检查 `allowed_player_joins` 确定该网络的可加入性。
 
@@ -270,7 +270,7 @@ xim::singleton_instance().leave_network();
 xim::singleton_instance().cleanup();
 ```
 
-当尚未提供 `xim_network_exited_state_change` 时，始终强烈建议调用 `xim::leave_network()` 并等待 `xim_network_exited_state_change` 以便顺利退出 XIM 网络。
+当尚未提供 `xim_network_exited_state_change` 时，始终强烈建议调用 `xim::leave_network()` 并等待 `xim_network_exited_state_change`，以便顺利退出 XIM 网络。
 
 如果直接调用 `xim::cleanup()` 而没有调用 `xim::leave_network()`，其余参与者会发生通信性能问题，因为系统会强制他们向因调用 `xim::cleanup()` 而“消失的”设备发送无法交付的消息。
 
@@ -459,7 +459,7 @@ localPlayer->local()->set_team_index(1);
 
 通过调用 `xim_player::xim_local::chat_text_to_speech_conversion_preference_enabled()` 和 `xim_player::xim_local::chat_speech_to_text_conversion_preference_enabled()` 方法可以在本地玩家中检测到这些首选项，并且，你可能想要有条件地启用文本机制。 但是，建议考虑进行文本输入，并显示始终可用的选项。
 
- `Windows::Xbox::UI::Accessability`  是专门为提供游戏内文字聊天的简单呈现而设计的 Xbox One 类，专注于语音到文本转换辅助技术。
+ `Windows::Xbox::UI::Accessability` Xbox One 类专门用于语音转文本辅助技术讲解如何提供简单呈现方式的游戏中的文本聊天。
 
 获得由真实或虚拟键盘提供的文本输入后，请将字符串传递给 `xim_player::xim_local::send_chat_text()` 方法。 以下代码显示了从变量“localPlayer”指向的本地 `xim_player` 对象发送示例硬编码字符串：
 
@@ -471,7 +471,7 @@ localPlayer->local()->send_chat_text(L"Example chat text");
 
 你的应用应该对收到的任意文本字符串进行复制，并将它与原始玩家的某些标识一起显示适当时间（或在可滚动窗口中显示）。
 
-还有一些有关聊天的最佳做法。 无论玩家在什么地方显示（尤其是显示在记分牌等玩家代号列表中），都建议你也为用户显示静音/说话图标作为反馈。 通过调用 `xim_player::chat_indicator()` 来检索 `xim_player_chat_indicator`（表示此玩家聊天的当前、即时状态）可完成此操作。 以下示例演示了检索变量“ximPlayer”指向的 `xim_player` 对象的指示器值，以确定要分配给“iconToShow”变量的特定图标常量值：
+还有一些有关聊天的最佳做法。 无论玩家在什么地方显示（尤其是显示在记分牌等玩家代号列表中），都建议你也为用户显示静音/说话图标作为反馈。 通过调用 `xim_player::chat_indicator()` 以检索表示玩家当前的即时聊天状态的 `xim_player_chat_indicator` 来完成此操作。 以下示例演示了检索变量“ximPlayer”指向的 `xim_player` 对象的指示器值，以确定要分配给“iconToShow”变量的特定图标常量值：
 
 ```cpp
 switch (ximPlayer->chat_indicator())
@@ -500,7 +500,7 @@ switch (ximPlayer->chat_indicator())
 例如，由 `xim_player::chat_indicator()` 报告的值预计会在玩家开始和停止说话时频繁改变。 它旨在支持应用在每个 UI 框架将其作为结果进行轮询。
 
 > [!NOTE]
-> 如果本地用户因其设备设置而无足够的通信权限，`xim_player::chat_indicator()` 将返回 `xim_player_chat_indicator::platform_restricted`。 满足平台要求的期望是指应用可显示图标，为语音聊天或发送消息指示平台限制，以及显示发送给用户的消息，以指示问题。 我们建议的示例消息为：“抱歉，当前不允许聊天。”
+> 如果本地用户因其设备设置而无足够的通信权限，`xim_player::chat_indicator()` 将返回 `xim_player_chat_indicator::platform_restricted`。 满足平台要求的期望是指应用可显示图标，为语音聊天或发送消息指示平台限制，以及显示发送给用户的消息，以指示问题。 我们建议的一个示例消息为："很抱歉，你不是允许聊天稍后再试。"
 
 ## <a name="muting-players"></a>将玩家静音
 
@@ -510,7 +510,7 @@ switch (ximPlayer->chat_indicator())
 remotePlayer->set_chat_muted(true);
 ```
 
-静音立即生效，且没有与之关联的 `xim_state_change`。 通过使用 false 值再次调用 `xim_player::set_chat_muted()` 可以将其撤销。 以下示例取消了变量“remotePlayer”指向的 `xim_player` 对象的静音：
+静音立即生效，且没有与之关联的 `xim_state_change`。 通过使用 false 值再次调用 `xim_player::set_chat_muted()` 可以将其撤销。 下面的示例取消变量“remotePlayer”指向的远程 `xim_player` 对象的静音：
 
 ```cpp
 remotePlayer->set_chat_muted(false);
@@ -634,4 +634,4 @@ xim::move_to_network_using_joinable_network_information(selectedNetwork, nullptr
 当通过 xim_team_configuration（声明了两个或更多团队）启用网络查询时，通过调用 `xim::move_to_network_using_joinable_network_information()` 加入的玩家将拥有默认团队索引值 0。
 
 > [!NOTE]
-> 如果应用具有指定多个本地用户，并且正在加入的网络具有比本地用户数较少空间，仍可以成功加入。 但是，仅允许本地用户的次数可加入网络。
+> 如果应用已指定多个本地用户，并加入网络具有更少的空间比本地用户数，联接仍然能够成功执行。 但是，仅允许本地用户的数量可能加入网络。

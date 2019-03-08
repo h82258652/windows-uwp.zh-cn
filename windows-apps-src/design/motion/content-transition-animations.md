@@ -1,29 +1,29 @@
 ---
-Description: Content transition animations let you change the content of an area of the screen while keeping the container or background constant. New content fades in. If there is existing content to be replaced, that content fades out.
+Description: 内容过渡动画可让你更改屏幕区域的内容，同时保持容器或背景不变。 新的内容将淡入。 如果存在要替换的现有内容，则该内容将淡出。
 title: 内容过渡动画指南
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10，uwp
+keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 096cc0aaa9b0580eb6b45328a3243ba75d82f202
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940566"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649802"
 ---
-# <a name="content-transition-animations"></a>内容转换动画
+# <a name="content-transition-animations"></a>内容过渡动画
 
 
 
 内容过渡动画可让你更改屏幕区域的内容，同时保持容器或背景不变。 新的内容将淡入。 如果存在要替换的现有内容，则该内容将淡出。
 
-> **重要 API**：[**ContentThemeTransition 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
+> **重要的 Api**:[**ContentThemeTransition 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
 
@@ -42,8 +42,8 @@ ms.locfileid: "8940566"
 
 **面向开发人员 (XAML)**
 * [动画概述](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [创建内容过渡动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj649426)
-* [快速入门：使用库动画创建 UI 动画](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [对内容的转换进行动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/jj649426)
+* [快速入门：对 UI 使用库动画进行动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**ContentThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
  

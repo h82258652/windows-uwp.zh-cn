@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 9ac96766-df89-4403-89f2-200549436921
 ms.localizationpriority: medium
 ms.openlocfilehash: 11af5f09d9c66fc9103b36dc80eae8b8bbc88854
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945353"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595162"
 ---
 # <a name="bringing-existing-games-to-xbox"></a>将现有游戏移植到 Xbox
 
@@ -23,10 +23,10 @@ ms.locfileid: "8945353"
 
 | 引擎      | 描述 |
 |------------|-------------|
-|[自定义 C++](development-lanes-custom-cpp.md)| 与在 Xbox 上使用 UWP 进行 C++ 游戏开发有关的信息。 |
+|[自定义 c + +](development-lanes-custom-cpp.md)| 与在 Xbox 上使用 UWP 进行 C++ 游戏开发有关的信息。 |
 |[Unity](development-lanes-unity.md)| 有助于将现有游戏从 Unity 引入 Xbox 的教程。 |
 |[HTML / JS](development-lanes-html.md)| 与 Xbox 上的 HTML 游戏开发有关的信息。 |
 
 ## <a name="see-also"></a>另请参阅
 
-- [Xbox One 上的 UWP](index.md)
+- [在 Xbox One 上 UWP](index.md)

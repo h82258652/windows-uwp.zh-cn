@@ -1,5 +1,5 @@
 ---
-Description: Learn how to programmatically manage focus navigation with keyboard, gamepad, and accessibility tools in a UWP app.
+Description: 了解如何以编程方式管理焦点导航键盘、 游戏板，与 UWP 应用中的辅助工具。
 title: 使用键盘、手柄和辅助功能工具的编程焦点导航
 label: Programmatic focus navigation
 keywords: 键盘, 游戏控制器, 遥控器, 导航, 导航策略, 输入, 用户交互, 辅助功能, 可用性
@@ -11,11 +11,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 00d25896a490b0a6b1d65075852f44dfb89c2e53
-ms.sourcegitcommit: 9af94470480ef67438f6fd189edab47395fb77e6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "9075130"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662712"
 ---
 # <a name="programmatic-focus-navigation"></a>编程焦点导航
 
@@ -211,7 +211,7 @@ private void OnNoFocusCandidateFound (
 
 ![更改 GettingFocus 事件的焦点导航目标](images/keyboard/focus-events.png)
 
-*更改 GettingFocus 事件的焦点导航目标*
+*更改焦点导航目标 GettingFocus 事件*
 
 此处，我们显示了如何处理 [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) 事件并重定向焦点。
 
@@ -327,6 +327,6 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 
 ## <a name="related-articles"></a>相关文章
 
-- [适用于键盘、手柄、遥控器和辅助功能工具的焦点导航](focus-navigation.md)
+- [焦点导航的键盘、 游戏板、 远程控制和可访问性工具](focus-navigation.md)
 - [键盘交互](keyboard-interactions.md)
 - [键盘辅助功能](../accessibility/keyboard-accessibility.md)

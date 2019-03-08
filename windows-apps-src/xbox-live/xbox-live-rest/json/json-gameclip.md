@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cfc2ac0a635e4aacdc9eeefb5097c6bd946a518
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115390"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646502"
 ---
 # <a name="gameclip-json"></a>GameClip (JSON)
  
@@ -23,32 +23,32 @@ ms.locfileid: "9115390"
  
 GameClip 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| <b>gameClipId</b>| 字符串| 分配到游戏剪辑的 ID。| 
-| <b>状态</b>| GameClipState| 在系统中的游戏剪辑的状态。| 
-| <b>dateRecorded</b>| DateTime| 日期和时间开始录制，采用 UTC （ISO 8601 格式）。| 
-| <b>lastModified</b>| DateTime| 上次修改时间的游戏剪辑或其元数据，采用 UTC （ISO 8601 格式）。| 
-| <b>userCaption</b>| 字符串| 用户输入非本地化字符串的游戏剪辑。| 
-| <b>type</b>| GameClipTypes| 剪辑的类型。 可以是多个值，并将逗号分隔的如果是这样。| 
-| <b>源</b>| GameClipSource| 如何确定该剪辑的源。| 
-| <b>可见性</b>| GameClipVisibility| 一旦系统中发布的游戏剪辑的可见性。| 
+| <b>gameClipId</b>| 字符串| 分配给游戏剪辑的 ID。| 
+| <b>state</b>| GameClipState| 在系统中的游戏剪辑的状态。| 
+| <b>dateRecorded</b>| DateTime| 日期和时间的记录已启动，以 UTC （ISO 8601 格式）。| 
+| <b>lastModified</b>| DateTime| 上次修改时间的游戏的剪辑或其元数据，以 UTC （ISO 8601 格式）。| 
+| <b>userCaption</b>| 字符串| 用户输入未本地化的字符串对于游戏剪辑。| 
+| <b>type</b>| GameClipTypes| 剪辑类型。 可以是多个值，并且将是以逗号分隔的如果是这样。| 
+| <b>source</b>| GameClipSource| 如何剪辑被源。| 
+| <b>visibility</b>| GameClipVisibility| 一旦系统中发布的游戏剪辑的可见性。| 
 | <b>durationInSeconds</b>| 32 位无符号的整数| 持续时间的游戏剪辑以秒为单位。| 
-| <b>scid</b>| 字符串| 到游戏剪辑相关联的 SCID。| 
-| <b>rating</b>| 双精度浮点数| 与游戏剪辑，范围介于 0.0 到 5.0 中相关评分。| 
+| <b>scid</b>| 字符串| SCID 游戏的剪辑所关联到的。| 
+| <b>rating</b>| 双精度浮点数| 与游戏的剪辑，范围介于 0.0 到 5.0 中关联的等级。| 
 | <b>ratingCount</b>| 32 位无符号的整数| 此代码片段进行分级次数。| 
-| <b>视图</b>| 32 位无符号的整数| 与游戏剪辑相关的视图数。| 
-| <b>titleData</b>| 字符串| 特定于游戏的属性包中。| 
+| <b>views</b>| 32 位无符号的整数| 与游戏剪辑相关联的视图的数目。| 
+| <b>titleData</b>| 字符串| 特定于标题的属性包中。| 
 | <b>titleData</b>| 字符串| 特定于控制台的属性包中。| 
-| <b>缩略图</b>| GameClipThumbnail 的数组| GameClipThumbnail 对象数组。| 
-| <b>gameClipUris</b>| GameClipUri 的数组| GameClipUri 对象数组。| 
-| <b>xuid</b>| 字符串| 游戏剪辑，作为字符串封送的所有者的 XUID。| 
-| <b>clipName</b>| 字符串| 该剪辑的名称，基于将请求作为输入区域设置的本地化的版本从标题管理系统中查找。| 
+| <b>thumbnails</b>| GameClipThumbnail 的数组| GameClipThumbnail 对象的数组。| 
+| <b>gameClipUris</b>| GameClipUri 的数组| GameClipUri 对象的数组。| 
+| <b>xuid</b>| 字符串| 所有者的游戏的剪辑，作为一个字符串封送 XUID。| 
+| <b>clipName</b>| 字符串| 剪辑的名称，基于请求的输入法区域设置，如标题管理系统中查找的本地化的版本。| 
   
 <a id="ID4ERH"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -98,6 +98,6 @@ GameClip 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
    

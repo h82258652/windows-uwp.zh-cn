@@ -1,5 +1,5 @@
 ---
-Description: Radio buttons let users select one option from two or more choices.
+Description: 单选按钮允许用户从两个或多个选项中选择一个选项。
 title: 单选按钮指南
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
@@ -13,15 +13,15 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 91903365a258d54804b420cd217dd7c25d79406a
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037229"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606132"
 ---
 # <a name="radio-buttons"></a>单选按钮
 
-> **重要 API**：[RadioButton 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)、[Checked 事件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)、[IsChecked 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
+> **重要的 Api**:[RadioButton 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)，[选中的事件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)， [IsChecked 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 单选按钮允许用户从一组中选择一个选项。 每个选项都表示为一个单选按钮，用户只能选择单选按钮组中的一个单选按钮。
 
@@ -35,7 +35,7 @@ ms.locfileid: "9037229"
 
 ![一组单选按钮](images/radiobutton_basic.png)
 
-当用户需要查看所有选项来进行选择时可以使用单选按钮。 因为单选按钮平等地强调所有选项，所以可以引起对这些选项的更多关注。 除非选项值得用户额外关注，否则请考虑使用其他控件。 例如，如果在大部分情况下推荐大多数用户使用默认选项，请改用[下拉列表](lists.md)。
+当用户需要查看所有选项来进行选择时可以使用单选按钮。 因为单选按钮平等地强调所有选项，所以可以引起对这些选项的更多关注。 除非选项值得用户额外关注，否则请考虑使用其他控件。 例如， 如果在大部分情况下为大多数用户推荐默认选项，请改用[下拉菜单](lists.md)。
 
 ![下拉列表](images/combo_box_collapsed.png)
 
@@ -66,7 +66,7 @@ ms.locfileid: "9037229"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/RadioButton">打开此应用，了解 RadioButton 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -81,7 +81,7 @@ Microsoft Edge 浏览器设置中的单选按钮。
 
 单选按钮成组工作。 可通过以下两种方法组合单选按钮控件：
 - 将它们放在同一个父容器内。
-- 将每个单选按钮的 [GroupName](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton.GroupName) 属性设置为相同的值。
+- 在每个单选按钮上将 [GroupName](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton.GroupName) 属性设置为相同的值。
 
 在此示例中，单选按钮的第一组在相同的堆栈面板中进行隐式分组。 第二组分为两个堆栈面板，以便它们按照 GroupName 进行显式分组。
 
@@ -175,7 +175,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 -   请确保一组单选按钮的目的和当前状态十分明确。
 -   将单选按钮的文本内容限制为单行。
--   如果文本内容是动态的，应考虑按钮大小将如何调整以及其周围的视觉对象将有哪些影响。
+-   如果文本内容是动态的，请考虑如何调整按钮大小，以及它周围的视觉对象将发生什么情况。
 -   请使用默认字体，除非你的品牌指南告诉你使用另一种字体。
 -   不要并排放置两个单选按钮组。 当两个两个单选按钮组并排放置时，很难确定哪些按钮属于哪个组。
 
@@ -189,12 +189,12 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 ## <a name="related-topics"></a>相关主题
 
-**对于设计人员**
+**面向设计人员**
 - [按钮](buttons.md)
 - [切换开关](toggles.md)
 - [复选框](checkbox.md)
 - [列表和组合框](lists.md)
 - [滑块](slider.md)
 
-**对于开发人员 (XAML)**
+**面向开发人员 (XAML)**
 - [RadioButton 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.radiobutton)

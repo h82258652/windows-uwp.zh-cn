@@ -1,22 +1,22 @@
 ---
 title: 使用通用 Windows 平台创建应用
-description: 它实际上比你想像适用于 windows 10 创建通用 Windows 平台 (UWP) 应用。
+description: 它实际上比您认为适用于 Windows 10 创建的通用 Windows 平台 (UWP) 应用程序。
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 入门
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f45bf66854fbf51fc6f5b42418e0faa107eb2f6
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116299"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658232"
 ---
 # <a name="start-coding"></a>开始编写代码
 
-![生成应用](images/build-your-app.png)
+![生成你的应用](images/build-your-app.png)
 
-欢迎使用 [UWP 平台](universal-application-platform-guide.md)！ 在此页上，我们将指向你开始编码你想要创建的 Windows 10 应用所需的正确信息。
+欢迎使用 [UWP 平台](universal-application-platform-guide.md)！ 在此页上，我们会告诉您在开始编码你想要创建的 Windows 10 应用所需的正确信息。
 
 开始开发之前，你应该已完成[准备工作](get-set-up.md)。
 
@@ -26,10 +26,10 @@ ms.locfileid: "9116299"
 
 | 任务 | 描述 |
 | --- | --- |
-| [构建表单](construct-form-learning-track.md) | 了解如何创建易于使用并且能够适应任何屏幕大小的表单。 | 
-| [以列表形式显示客户](display-customers-in-list-learning-track.md) | 了解如何在 UI 中显示和编辑数据。 | 
-| [保存并加载设置](settings-learning-track.md) | 了解如何以及在何处保存和检索设置。 |
-| [使用文件](fileio-learning-track.md) | 了解如何读取和写入文件，以及你可以访问和无法访问哪些文件夹。 | 
+| [构建窗体](construct-form-learning-track.md) | 了解如何创建易于使用并且能够适应任何屏幕大小的表单。 | 
+| [显示在列表中的客户](display-customers-in-list-learning-track.md) | 了解如何在 UI 中显示和编辑数据。 | 
+| [保存和加载设置](settings-learning-track.md) | 了解如何以及在何处保存和检索设置。 |
+| [使用的文件](fileio-learning-track.md) | 了解如何读取和写入文件，以及你可以访问和无法访问哪些文件夹。 | 
 
 我们所有的学习轨迹都是为熟悉 Windows 10 的经验丰富的开发人员编写的。 如果是初学者，请从[开发入门](#For-new-developers)开始。
 
@@ -37,32 +37,32 @@ ms.locfileid: "9116299"
 
 如果是开发初学者，Microsoft 有很多资源可以帮助你了解如何使用进行 Windows 10 开发所需的代码和工具。 
 
-* [创建“Hello World”应用](your-first-app.md)
+* [创建一个"Hello World"应用程序](your-first-app.md)
 
 如果要更深入地演练编写代码、C# 语言、Visual Studio 的基础知识或通用 Windows 平台的功能，请参阅以下资源：
 
 **文档：**
 
-* [C# 入门](https://docs.microsoft.com/dotnet/csharp/getting-started/)
-* [C# 快速入门](https://docs.microsoft.com/dotnet/csharp/quick-starts/index)
-* [Visual Studio 入门](https://docs.microsoft.com/visualstudio/ide/)
+* [开始使用C#](https://docs.microsoft.com/dotnet/csharp/getting-started/)
+* [C#快速入门](https://docs.microsoft.com/dotnet/csharp/quick-starts/index)
+* [开始使用 Visual Studio](https://docs.microsoft.com/visualstudio/ide/)
 
 **视频**
 
-* [Microsoft virtual academy](https://mva.microsoft.com/training-topics/c-app-development#!level=Beginner&lang=1033)
-* [LinkedIn Learning](https://www.linkedin.com/learning/learning-universal-windows-app-development/welcome)
+* [Microsoft 虚拟学院](https://mva.microsoft.com/training-topics/c-app-development#!level=Beginner&lang=1033)
+* [LinkedIn 学习](https://www.linkedin.com/learning/learning-universal-windows-app-development/welcome)
 
 ## <a name="using-the-docs"></a>使用文档
 
 如果浏览过我们的学习轨迹，或对学习轨迹未涉及的内容感兴趣，请自行浏览我们的文档。 下面简要介绍你可以在各个区域找到的内容：
 
-| 区域 | 描述 |
+| 领域 | 描述 |
 | --- | --- |
-| **新增功能？** | 每次发布 Windows 10 的主要更新，我们的文档库都会增加一些新的指南。 这些文档包含有关我们为每个版本添加的功能和开发人员指南的信息，以及新 API 的列表： </br>   [最新的 Windows 10 版本中面向开发人员的新增功能](../whats-new/windows-10-version-latest.md) </br> 但是，我们不是只在发布主要版本时才更新文档。 我们不断添加新的信息供你浏览，并且帮助你了解最新动向： </br>   [文档中的新增内容](../whats-new/windows-docs-latest.md) |
-| **设计和 UI** | 有关应用的可视化表示形式和 UI 的所有信息均包含在文档的此区域中。如果对 XAML 标记语言的细节感兴趣，或只是想为文档创建独特的外观，请从这里开始： </br>   [UWP 应用的设计基础知识](../design/basics/index.md) |
+| **新增功能** | 每次发布 Windows 10 的主要更新，我们的文档库都会增加一些新的指南。 这些文档包含有关我们为每个版本添加的功能和开发人员指南的信息，以及新 API 的列表： </br>   [什么是最新的 Windows 10 版本中的开发人员的新增功能](../whats-new/windows-10-version-latest.md) </br> 但是，我们不是只在发布主要版本时才更新文档。 我们不断添加新的信息供你浏览，并且帮助你了解最新动向： </br>   [什么是文档中的新增功能](../whats-new/windows-docs-latest.md) |
+| **设计和 UI** | 上的可视化展示和您的应用程序 UI 的所有信息都包含在文档的此区域中。如果您感兴趣的 XAML 标记语言的细节或只是想要为你的文档创建独特的外观，从此处开始： </br>   [适用于 UWP 应用的设计基础知识](../design/basics/index.md) |
 | **开发应用** | 如果要了解特定的 Windows 10 功能的详细信息，或只是想了解可以通过 UWP 开发做些什么事情，请查看文档的这一区域： </br>   [UWP 应用功能](../develop/index.md)。 </br> Windows 10 应用的 API 参考托管在一组相关的文档中，可以在这里找到它们： </br>   [Windows UWP 命名空间](https://docs.microsoft.com/en-us/uwp/api/) </br>   [文件和 XML 架构](https://docs.microsoft.com/uwp/schemas/) |
 | **开发游戏** | 这些文档包含有关如何在 Windows 或 Xbox 上开发游戏的信息。 这包括设置说明、开发人员计划以及使用 DirectX 或 Xbox 功能进行编程的说明。 </br>   [游戏开发入门](../gaming/getting-started.md) |
-| **发布** | 这些文档包含有关如何将应用发布到 Microsoft Store（从应用提交到定价再到推广和客户互动）的信息： </br>   [将应用发布到 Microsoft Store](../publish/index.md) |
+| **发布** | 这些文档包含有关如何将应用发布到 Microsoft Store（从应用提交到定价再到推广和客户互动）的信息： </br>   [将您的应用程序发布到 Windows 应用商店](../publish/index.md) |
 
 ## <a name="other-docs"></a>其他文档
 

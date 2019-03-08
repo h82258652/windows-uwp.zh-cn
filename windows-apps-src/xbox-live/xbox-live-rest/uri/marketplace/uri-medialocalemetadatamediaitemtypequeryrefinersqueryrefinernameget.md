@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: aaff80d0b3ec3caa0439ec23f3deeff280f0309d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945254"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632152"
 ---
 # <a name="get-mediamarketplaceidmetadatamediaitemtypesmediaitemtypequeryrefinersqueryrefinername"></a>GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryrefinername})
-列出了可接受的值为给定的查询精简名称和给定的媒体项类型。 这些 Uri 的域是`eds.xboxlive.com`。
+列出了可接受的值为给定的查询精选器名称和给定媒体项类型。 这些 Uri 的域是`eds.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -24,11 +24,11 @@ ms.locfileid: "8945254"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。| 
-| mediaitemtype| 字符串| 必需。 从值之一[GET (/media/ {marketplaceId} / /metadata/mediagroups/ {mediagroup} / mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md)。| 
-| queryrefinername| 字符串| 必需。 名称查询精简的所需的值，如"流派"或"十年期"。 请参阅 QueryRefiners。| 
+| marketplaceId| 字符串| 必需。 从获取值的字符串<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>。| 
+| mediaitemtype| 字符串| 必需。 中的值之一[获取 (/media/ {marketplaceId} / 元数据/mediaGroups / {mediagroup} / mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md)。| 
+| queryrefinername| 字符串| 必需。 名称查询精选器所需的值，例如"Genre"或"十年"。 请参阅 QueryRefiners。| 
   
 <a id="ID4EAB"></a>
 
@@ -48,13 +48,13 @@ ms.locfileid: "8945254"
  
 ##### <a name="further-information"></a>详细信息 
 
-[EDS 通用标头](../../additional/edscommonheaders.md)
+[EDS 常见标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询优化器](../../additional/edsqueryrefiners.md)
+ [EDS 查询精简将](../../additional/edsqueryrefiners.md)
 
- [市场 URI](atoc-reference-marketplace.md)
+ [Marketplace Uri](atoc-reference-marketplace.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)
 

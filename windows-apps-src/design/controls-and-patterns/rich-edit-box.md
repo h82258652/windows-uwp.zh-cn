@@ -1,30 +1,30 @@
 ---
-Description: You can use a RichEditBox control to enter and edit rich text documents that contain formatted text, hyperlinks, and images. You can make a RichEditBox read-only by setting its IsReadOnly property to true.
+Description: 你可以使用 RichEditBox 控件来输入和编辑包含格式文本、超链接和图像的 RTF 文档。 你可以通过将 IsReadOnly 属性设置为 true，将 RichEditBox 设置为只读。
 title: RichEditBox
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: fea636f78f4430d5bf8917c1ed720faeac7c4017
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036929"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651732"
 ---
-# <a name="rich-edit-box"></a>可编辑对话框
+# <a name="rich-edit-box"></a>富编辑框
 
  
 
-你可以使用 RichEditBox 控件来输入和编辑包含格式文本、超链接和图像的富文本文档。 你可以通过将 IsReadOnly 属性设置为 **true**，从而将 RichEditBox 设置为只读。
+你可以使用 RichEditBox 控件来输入和编辑包含格式文本、超链接和图像的 RTF 文档。 你可以通过将 IsReadOnly 属性设置为 **true**，从而将 RichEditBox 设置为只读。
 
-> **重要 API**：[RichEditBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)、[Document 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx)、[IsReadOnly 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx)、[IsSpellCheckEnabled 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)
+> **重要的 Api**:[RichEditBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)，[文档属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx)， [IsReadOnly 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx)， [IsSpellCheckEnabled 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -34,7 +34,7 @@ ms.locfileid: "9036929"
 -   在捕获将仅供使用但不向用户重新显示的文本时，请使用纯文本输入控件。
 -   对于所有其他情况，请使用纯文本输入控件。
 
-有关选择正确文本控件的详细信息，请参阅[文本控件](text-controls.md)文章。
+有关选择正确的文本控件的详细信息，请参阅[文本控件](text-controls.md)文章。
 
 ## <a name="examples"></a>示例
 
@@ -45,7 +45,7 @@ ms.locfileid: "9036929"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/RichEditBox">打开此应用，了解 RichEditBox 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -214,7 +214,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 - 使文本控件的高度足够大，以便容纳典型输入。
 - 不要让文本输入控件在用户键入时增加高度。
 - 当用户仅需要一行时，不要使用多行文本框。
-- 如果纯文本控件足够使用，不要使用富文本控件。
+- 如果纯文本控件足够使用，不要使用 RTF 控件。
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
@@ -223,8 +223,8 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 ## <a name="related-articles"></a>相关文章
 
 - [文本控件](text-controls.md)
-- [拼写检查指南](text-controls.md)
+- [拼写检查的准则](text-controls.md)
 - [添加搜索](search.md)
-- [文本输入指南](text-controls.md)
+- [文本输入的准则](text-controls.md)
 - [TextBox 类](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [Windows.UI.Xaml.Controls PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/br227519)

@@ -1,5 +1,5 @@
 ---
-title: 游戏联网
+title: 游戏网络
 description: 了解如何在你的 DirectX 游戏中开发并融入联网功能。
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
 ms.date: 02/08/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 网络, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: e3dc77b48feb0c7ceba9fa3cede82c1a44687d0d
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114623"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656312"
 ---
 # <a name="networking-for-games"></a>游戏网络
 
@@ -45,10 +45,10 @@ ms.locfileid: "9114623"
 
 用于游戏的较受欢迎的网络 API 包括：
 
--   TCP 和套接字 – 提供可靠连接。 可以将 TCP 用于不需要安全性的游戏操作。 因为 TCP 允许服务器轻松缩放，所以它通常用于使用基础结构（客户端服务器或 Internet 对等）模型的游戏。 临时（本地对等）游戏也可以通过 Wi-Fi Direct 和 BlueTooth 使用 TCP。 TCP 通常用于游戏对象移动、角色交互、文本聊天和其他操作。 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)类提供 TCP 套接字，可在 Microsoft Store 游戏中。 **StreamSocket** 类与 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空间中的相关类搭配使用。
--   使用 SSL 的 TCP 和套接字 – 提供防止窃听的可靠连接。 将带有 SSL 的 TCP 连接用于需要安全性的游戏操作。 由于 SSL 的加密和开销将导致延迟并降低性能，所以仅在需要安全性时使用它。 带有 SSL 的 TCP 通常用于登录、购买和交易资源、游戏角色创建和管理。 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 类提供支持 SSL 的 TCP 套接字。
--   UDP 和套接字 – 提供具有较低开销的不可靠网络传输。 UDP 用于要求较少延迟，但可以容忍一些数据包丢失的游戏操作。 它经常用于打斗游戏、射击和跟踪、网络音频以及语音聊天。 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)类提供 UDP 套接字，可在 Microsoft Store 游戏中。 **DatagramSocket** 类与 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空间中的相关类搭配使用。
--   HTTP 客户端 – 提供到 HTTP 服务器的可靠连接。 最常见的网络方案是访问网站来检索或存储信息。 一个简单的示例是使用网站来存储用户信息和游戏得分的游戏。 当与 SSL 一起使用来确保安全性时，HTTP 客户端可以用于登录、购买、交易资源、游戏角色创建以及管理。 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)类提供的现代 HTTP 客户端 API 使用的 Microsoft 应用商店游戏中。 **HttpClient** 类与 [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间中的相关类搭配使用。
+-   TCP 和套接字 – 提供可靠连接。 可以将 TCP 用于不需要安全性的游戏操作。 因为 TCP 允许服务器轻松缩放，所以它通常用于使用基础结构（客户端服务器或 Internet 对等）模型的游戏。 临时（本地对等）游戏也可以通过 Wi-Fi Direct 和 BlueTooth 使用 TCP。 TCP 通常用于游戏对象移动、角色交互、文本聊天和其他操作。 [ **StreamSocket** ](https://msdn.microsoft.com/library/windows/apps/br226882)类提供了可以在 Microsoft Store 游戏中使用的 TCP 套接字。 **StreamSocket** 类与 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空间中的相关类搭配使用。
+-   使用 SSL 的 TCP 和套接字 – 提供防止窃听的可靠连接。 将带有 SSL 的 TCP 连接用于需要安全性的游戏操作。 由于 SSL 的加密和开销将导致延迟并降低性能，所以仅在需要安全性时使用它。 带有 SSL 的 TCP 通常用于登录、购买和交易资源、游戏角色创建和管理。 [  **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 类提供支持 SSL 的 TCP 套接字。
+-   UDP 和套接字 – 提供具有较低开销的不可靠网络传输。 UDP 用于要求较少延迟，但可以容忍一些数据包丢失的游戏操作。 它经常用于打斗游戏、射击和跟踪、网络音频以及语音聊天。 [ **DatagramSocket** ](https://msdn.microsoft.com/library/windows/apps/br241319)类提供了可以在 Microsoft Store 游戏中使用的 UDP 套接字。 **DatagramSocket** 类与 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空间中的相关类搭配使用。
+-   HTTP 客户端 – 提供到 HTTP 服务器的可靠连接。 最常见的网络方案是访问网站来检索或存储信息。 一个简单的示例是使用网站来存储用户信息和游戏得分的游戏。 当与 SSL 一起使用来确保安全性时，HTTP 客户端可以用于登录、购买、交易资源、游戏角色创建以及管理。 [ **HttpClient** ](https://msdn.microsoft.com/library/windows/apps/dn298639)类提供了一个现代 HTTP 客户端 API 用于在 Microsoft Store 游戏中的。 **HttpClient** 类与 [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间中的相关类搭配使用。
 
 ## <a name="handling-network-exceptions-in-your-directx-game"></a>在 DirectX 游戏中处理网络异常
 
@@ -66,7 +66,7 @@ ms.locfileid: "9114623"
 
 随时可能由网络错误（例如，连接中断或发生更改、连接失败和服务器失败）引发异常。 这些错误将引发异常。 如果应用不处理异常，它可能导致整个应用在运行时终止。
 
-当你调用大部分异步网络方法时， 必须编写代码以处理异常。 有时，在发生异常时，可以重试网络方法来解决问题。 在其他时候，应用可能需要计划使用之前的缓存数据在没有网络连接的情况下继续工作。
+当你调用大部分异步网络方法时，必须编写代码以处理异常。 有时，在发生异常时，可以重试网络方法来解决问题。 在其他时候，应用可能需要计划使用之前的缓存数据在没有网络连接的情况下继续工作。
 
 通用 Windows 平台 (UWP) 应用通常引发单个异常。 异常处理程序可以检索有关异常原因的更详细信息，以更好地了解此次失败，并作出适当的决策。
 
@@ -117,11 +117,11 @@ ms.locfileid: "9114623"
     // ... Continue with code to execute with a valid hostname.
 ```
 
-[**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空间具有方便的帮助程序方法和枚举，以便在使用套接字时处理错误。 这有助于在应用中分别处理特定网络异常。
+[  **Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空间具有方便的帮助程序方法和枚举，以便在使用套接字时处理错误。 这有助于在应用中分别处理特定网络异常。
 
-[**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 操作上发生的错误将引发异常。 异常原因是一个错误值，表示为 **HRESULT** 值。 [**SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) 方法用于将来自套接字操作的网络错误转换为 [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) 枚举值。 大部分 **SocketErrorStatus** 枚举值对应由本机 Windows 套接字操作返回的错误。 应用可以筛选特定 **SocketErrorStatus** 枚举值来基于异常原因修改应用行为。
+[  **DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 操作上发生的错误将引发异常。 异常原因是一个错误值，表示为 **HRESULT** 值。 [  **SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) 方法用于将来自套接字操作的网络错误转换为 [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) 枚举值。 大部分 **SocketErrorStatus** 枚举值对应由本机 Windows 套接字操作返回的错误。 应用可以筛选特定 **SocketErrorStatus** 枚举值来基于异常原因修改应用行为。
 
-对于参数验证错误，应用还可以使用来自异常的 **HRESULT** 了解有关导致该异常的错误的更详细信息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。
+对于参数验证错误，应用还可以使用来自异常的 **HRESULT** 了解有关导致该异常的错误的更详细信息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 对于大多数参数验证错误， **HRESULT**返回是**E\_INVALIDARG**。
 
 尝试连接流套接字时，添加处理异常的代码
 
@@ -269,11 +269,11 @@ using namespace Windows::Networking::Sockets;
     // ... Continue with code to execute with a valid URI.
 ```
 
-[**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/windows.web.http.aspx) 命名空间缺少方便函数。 所以，使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 和该命名空间中其他类的应用需要使用 **HRESULT** 值。
+[  **Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/windows.web.http.aspx) 命名空间缺少方便函数。 所以，使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 和该命名空间中其他类的应用需要使用 **HRESULT** 值。
 
-在使用 C++ 的应用中，发生异常时，[**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/hh755825.aspx) 表示应用执行期间的错误。 [**Platform::Exception::HResult**](https://msdn.microsoft.com/library/windows/apps/hh763371.aspx) 属性将返回分配给特定异常的 **HRESULT**。 [**Platform::Exception::Message**](https://msdn.microsoft.com/library/windows/apps/hh763375.aspx) 属性将返回系统提供的与 **HRESULT** 值关联的字符串。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来基于异常原因修改应用行为。
+在使用 C++ 的应用中，发生异常时，[**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/hh755825.aspx) 表示应用执行期间的错误。 [  **Platform::Exception::HResult**](https://msdn.microsoft.com/library/windows/apps/hh763371.aspx) 属性将返回分配给特定异常的 **HRESULT**。 [  **Platform::Exception::Message**](https://msdn.microsoft.com/library/windows/apps/hh763375.aspx) 属性将返回系统提供的与 **HRESULT** 值关联的字符串。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来根据异常原因修改应用行为。
 
-对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。 对于非法的方法调用，返回的 **HRESULT** 为 **E_ILLEGAL_METHOD_CALL**。
+对于大多数参数验证错误， **HRESULT**返回是**E\_INVALIDARG**。 对于某些非法方法调用， **HRESULT**返回是**E\_非法\_方法\_调用**。
 
 当尝试使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 连接到 HTTP 服务器时，添加处理异常的代码
 
@@ -370,15 +370,15 @@ using namespace Windows::Web::Http;
 
 **其他资源**
 
-* [使用数据报套接字进行连接](https://msdn.microsoft.com/library/windows/apps/xaml/jj635238)
-* [借助流套接字连接到网络资源](https://msdn.microsoft.com/library/windows/apps/xaml/jj150599)
+* [使用数据报套接字连接](https://msdn.microsoft.com/library/windows/apps/xaml/jj635238)
+* [连接到使用流套接字的网络资源](https://msdn.microsoft.com/library/windows/apps/xaml/jj150599)
 * [连接到网络服务](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
-* [连接到 Web 服务](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
+* [连接到 web 服务](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
 * [网络基础知识](https://msdn.microsoft.com/library/windows/apps/mt280233)
 * [如何配置网络隔离功能](https://msdn.microsoft.com/library/windows/apps/hh770532)
 * [如何启用环回和调试网络隔离](https://msdn.microsoft.com/library/windows/apps/hh780593)
 
-**引用**
+**参考**
 
 * [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)
 * [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)
@@ -390,5 +390,5 @@ using namespace Windows::Web::Http;
 
 * [DatagramSocket 示例](https://go.microsoft.com/fwlink/p/?LinkID=243037)
 * [HttpClient 示例]( https://go.microsoft.com/fwlink/p/?linkid=242550)
-* [邻近感应示例](https://go.microsoft.com/fwlink/p/?linkid=245082)
+* [邻近示例](https://go.microsoft.com/fwlink/p/?linkid=245082)
 * [StreamSocket 示例](https://go.microsoft.com/fwlink/p/?linkid=243037)

@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a0369de617fd60fcc71e7d69b46ced6b499e8de5
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115351"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650502"
 ---
 # <a name="queryclipsresponse-json"></a>QueryClipsResponse (JSON)
-换行列表的分页信息以及返回游戏剪辑的列表。 
+包装返回的游戏剪辑，以及分页信息的列表的列表。 
 <a id="ID4EN"></a>
 
  
@@ -23,15 +23,15 @@ ms.locfileid: "9115351"
  
 QueryClipsResponse 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| <b>gameClips</b>| GameClip 的数组| 满足的请求限制 (<b>maxItems</b>) 查询的游戏剪辑的数组。| 
-| <b>pagingInfo</b>| PagingInfo| 包含所需的延续任务和列表的后续调用分页的超过请求限制 (<b>maxItems</b>) 的信息。| 
+| <b>gameClips</b>| GameClip 的数组| 满足最大请求限制查询的游戏剪辑的数组 (<b>maxItems</b>)。| 
+| <b>pagingInfo</b>| PagingInfo| 包含的信息所需的延续和分页以便进行后续调用列表的长度超过了请求限制 (<b>maxItems</b>)。| 
   
 <a id="ID4E2B"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -131,7 +131,7 @@ QueryClipsResponse 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4ESC"></a>

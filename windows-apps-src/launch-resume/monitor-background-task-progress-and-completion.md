@@ -11,15 +11,15 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 5417a2cded6dab98747569acc4e6e92356361482
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050820"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595812"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>监视后台任务进度和完成
 
-**重要的 API**
+**重要的 Api**
 
 - [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)
 - [**BackgroundTaskProgressEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224785)
@@ -34,9 +34,9 @@ ms.locfileid: "9050820"
 ## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>创建一个事件处理程序以处理完成的后台任务
 
 ### <a name="step-1"></a>步骤 1
-创建一个事件处理程序函数以处理完成的后台任务。 该代码需遵循特定的足迹，即获取[**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803)的对象以及[**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778)对象。
+创建一个事件处理程序函数以处理完成的后台任务。 此代码应遵循特定的内存占用、 采用[ **IBackgroundTaskRegistration** ](https://msdn.microsoft.com/library/windows/apps/br224803)对象和一个[ **BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778)对象。
 
-使用以下足迹对于**OnCompleted**后台任务事件处理程序方法。
+使用的以下占用量**OnCompleted**后台任务事件处理程序方法。
 
 ```csharp
 private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
@@ -288,15 +288,15 @@ void SampleBackgroundTask::OnNavigatedTo(NavigationEventArgs^ e)
 ## <a name="related-topics"></a>相关主题
 
 * [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
-* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
-* [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
-* [处理取消的后台任务](handle-a-cancelled-background-task.md)
+* [创建并注册进程外后台任务](create-and-register-a-background-task.md)
+* [声明应用程序清单中的后台任务](declare-background-tasks-in-the-application-manifest.md)
+* [处理已取消的后台任务](handle-a-cancelled-background-task.md)
 * [注册后台任务](register-a-background-task.md)
-* [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
-* [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
-* [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
+* [响应通过后台任务的系统事件](respond-to-system-events-with-background-tasks.md)
+* [设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)
+* [更新动态磁贴通过后台任务](update-a-live-tile-from-a-background-task.md)
 * [使用维护触发器](use-a-maintenance-trigger.md)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
-* [后台任务指南](guidelines-for-background-tasks.md)
+* [后台任务的指导原则](guidelines-for-background-tasks.md)
 * [调试后台任务](debug-a-background-task.md)
-* [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在触发挂起、 继续和后台 UWP 应用中的事件 （在调试）](https://go.microsoft.com/fwlink/p/?linkid=254345)

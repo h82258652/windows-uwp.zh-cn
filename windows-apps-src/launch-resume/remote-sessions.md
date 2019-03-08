@@ -4,14 +4,14 @@ description: 通过在远程会话中加入多个设备来创建跨多个设备�
 ms.assetid: 1c8dba9f-c933-4e85-829e-13ad784dd3e2
 ms.date: 06/28/2017
 ms.topic: article
-keywords: windows 10，uwp，连接设备，远程系统、 rome，项目 rome
+keywords: windows 10，uwp，已连接设备、 远程系统、 罗马、 项目罗马
 ms.localizationpriority: medium
 ms.openlocfilehash: 3dd23603df1f1c3fac151da2aea2f8435b3ee423
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932623"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633412"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>通过远程会话连接设备
 
@@ -321,5 +321,5 @@ public async void SendMessageToListAsync(RemoteSystemSessionMessageChannel messa
 ```
 
 ## <a name="related-topics"></a>相关主题
-* [连接的应用和设备 (Project Rome)](connected-apps-and-devices.md)
+* [连接的应用和设备 （项目罗马）](connected-apps-and-devices.md)
 * [远程系统 API 参考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)

@@ -7,21 +7,21 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 77ee3191bc41fca672a055a708523578390860b4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919143"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623702"
 ---
 # <a name="use-the-accelerometer"></a>使用加速计
 
 
-**重要的 API**
+**重要的 Api**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)
 
-**示例**
+**Sample**
 
 -   有关更完整的实现，请参阅[加速计示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer)。
 
@@ -29,9 +29,9 @@ ms.locfileid: "8919143"
 
 一个简单的游戏应用依赖于单个传感器，即加速计，作为输入设备。 这些应用通常只使用单轴或双轴进行输入，但它们也会将抖动事件作为另一个输入源使用。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
-你应熟悉 Extensible Application Markup Language (XAML)、 Microsoft VisualC # 和事件。
+您应了解与 Extensible Application Markup Language (XAML)，Microsoft Visual C#，和事件。
 
 你使用的设备或仿真器必须支持加速计。
 
@@ -41,7 +41,7 @@ ms.locfileid: "8919143"
 
 ### <a name="instructions"></a>说明
 
--   创建新项目，从“Visual C#”**** 项目模板中选择“空白应用(通用 Windows)”****。
+-   创建新项目，从“Visual C#”项目模板中选择“空白应用(通用 Windows)”。
 
 -   打开项目的 MainPage.xaml.cs 文件，使用下列内容替换现有代码。
 
@@ -134,13 +134,13 @@ ms.locfileid: "8919143"
     </Page>
 ```
 
-你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**AccelerometerCS**的项目，则将 `x:Class="App1.MainPage"` 替换为 `x:Class="AccelerometerCS.MainPage"`。 还应将 `xmlns:local="using:App1"` 替换为 `xmlns:local="using:AccelerometerCS"`。
+你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**AccelerometerCS**的项目，则将 `x:Class="App1.MainPage"` 替换为 `x:Class="AccelerometerCS.MainPage"`。 还应当将 `xmlns:local="using:App1"` 替换为 `xmlns:local="using:AccelerometerCS"`。
 
--   按 F5 或依次选择“调试”****&gt;“启动调试”**** 来生成、部署并运行应用。
+-   按 F5 或选择**调试** &gt; **开始调试**生成、 部署和运行应用程序。
 
 应用运行后，可以通过移动设备或使用仿真器工具更改加速计的值。
 
--   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”****&gt;“停止调试”**** 来停止应用。
+-   停止此应用程序通过返回到 Visual Studio 并按 Shift + F5 或选择**调试** &gt; **停止调试**以停止应用。
 
 ### <a name="explanation"></a>说明
 

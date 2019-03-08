@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 创意者, 测试
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b39a2ed67d2fe77fa8904408b81a329125d73c7
-ms.sourcegitcommit: 0373a2021c1b7144f28b08778d6a3b3dc64aa10c
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "8997388"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594592"
 ---
 # <a name="create-a-new-xbox-live-creators-program-title-and-publish-to-the-test-environment"></a>创建新的 Xbox Live 创意者计划主题作品并发布到测试环境
 
@@ -19,30 +19,30 @@ ms.locfileid: "8997388"
 
 编写任意 Xbox Live 代码之前，必须在你的服务配置门户上设置新主题作品。  你可以在 [Xbox Live 服务配置](../xbox-live-service-configuration.md)中了解有关服务配置的详细信息。
 
-本文将指导完成获取[合作伙伴中心](https://partner.microsoft.com/dashboard)中配置主题作品、 创建新项目和 Xbox Live 测试准备所需的所有内容。 本文作如下假设：
+本文将引导完成配置中的标题所需的一切[合作伙伴中心](https://partner.microsoft.com/dashboard)、 创建，并准备用于测试的 Xbox Live 的新项目。 本文作如下假设：
 
 1. 你正在使用 Xbox Live 创意者计划。
 2. 你正在开发通用 Windows 平台 (UWP) 主题作品。  UWP 主题作品可以在 Xbox One、Windows 10 台式电脑和移动设备上运行
-3. 你要在[合作伙伴中心](https://partner.microsoft.com/dashboard)中配置你的游戏。
+3. 要配置你的标题中[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 4. 开发计算机运行的是 Windows 10。
 
 > [!NOTE]
 > 如果你是 Xbox Live 创意者计划的一员，则上述假设适用你，并应遵循本文中的内容
 
-## <a name="partner-center-setup"></a>合作伙伴中心设置
+## <a name="partner-center-setup"></a>合作伙伴中心安装程序
 
-你需要作为必备条件到使用任何 Xbox Live 功能在[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建一个支持 Xbox Live 的主题作品。
+您需要在中创建的 Xbox Live 启用标题[合作伙伴中心](https://partner.microsoft.com/dashboard)作为必备组件使用 Xbox Live 的任何功能。
 
 ### <a name="create-a-microsoft-account"></a>创建 Microsoft 帐户
 如果你没有 Microsoft 帐户（也称为 MSA），则需要先在 [Microsoft 帐户 - 登录](https://go.microsoft.com/fwlink/p/?LinkID=254486) 上创建一个帐户。 如果你有 Office 365 帐户、使用 Outlook.com 或拥有 Xbox Live 帐户，则你可能已经有 MSA 了。
 
 ### <a name="register-as-an-app-developer"></a>注册成为应用开发人员。
-你将需要先注册成为应用开发人员，然后你可以在合作伙伴中心中创建新的主题作品。
+需要注册为应用程序开发人员，才能在合作伙伴中心创建新的标题。
 
 要进行注册，请转到[注册为应用开发人员](https://developer.microsoft.com/store/register)，并按照注册流程完成操作。
 
 ### <a name="create-a-new-uwp-title"></a>创建新的 UWP 主题作品
-你将需要在合作伙伴中心中定义一个 UWP 主题作品。 你执行该操作先转到[合作伙伴中心](https://partner.microsoft.com/dashboard)。
+您将需要在合作伙伴中心中定义的 UWP 标题。 您会通过先经过[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 
 然后，创建一个新主题作品。 你需要保留一个名称。
 
@@ -85,7 +85,7 @@ ms.locfileid: "8997388"
 
 仅授权的设备和用户可以访问开发沙盒中游戏的 Xbox Live 配置。
 
-默认情况下，所有的 Xbox One 开发主机已添加到你的合作伙伴中心帐户具有访问你的开发沙盒。  若要添加 Xbox One 主机，请转到[管理 Xbox One 主机](https://partner.microsoft.com/xboxconfig/devices)。 如果你已在你的合作伙伴中心帐户，则可以转到**帐户设置** > **帐户设置** > **开发人员设备** > **Xbox One 开发主机**。
+默认情况下，已添加到你的合作伙伴中心帐户所有 Xbox One 开发控制台都有权访问开发沙盒。  若要添加 Xbox One 主机，请转到[管理 Xbox One 主机](https://partner.microsoft.com/xboxconfig/devices)。 如果您已经在合作伙伴中心帐户中，则可以转到**帐户设置** > **帐户设置** > **开发设备** >  **Xbox One 开发控制台**。
 
 此外，你还可以授权常规 Xbox Live 帐户，使其有权访问你的开发沙盒。  若要授权 Xbox Live 帐户访问你的开发沙盒，请转到[管理帐户](https://developer.microsoft.com/xboxtestaccounts/configurecreators)。
 

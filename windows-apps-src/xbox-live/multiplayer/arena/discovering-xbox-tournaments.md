@@ -6,11 +6,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛, ux
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a065d6d4da290f2ce3345c7da0026d4c116335
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931023"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632472"
 ---
 # <a name="discovering-xbox-tournaments"></a>发现 Xbox 锦标赛
 
@@ -29,15 +29,15 @@ ms.locfileid: "8931023"
 人们由于对作品感兴趣而观看锦标赛。 Xbox 游戏有一个独特的机会可在关键时刻吸引玩家，即在玩家寻找扩展游戏体验的新途径时。
 
 > [!TIP]
-> **UX 建议：** 在制定决策时推广锦标赛。
+> **用户体验建议：** 在决策制定时刻提升比赛。
 >
 > 在玩家需要决定继续玩还是退出时提高锦标赛的认知度（例如，在游戏启动时、主菜单、多人游戏菜单或比赛结束时）。
 
-### <a name="1--use-a-dynamic-announcement-feature-example-message-of-the-day"></a>1. 使用动态公告功能（示例：当日消息）
+### <a name="1--use-a-dynamic-announcement-feature-example-message-of-the-day"></a>1.使用动态公告功能 (示例：在一天的消息）
 
 在游戏 UI 中内置公告功能的游戏通常使用允许即时更新的内容管理系统。 这可用于向玩家推送新内容，而不依赖内容更新或可下载的内容版本。 例如，Halo 使用“当日消息”功能突出显示社区公告和提示。 锦标赛推广特别适合这种情况。
 
-**用户影响**
+**用户的影响**
 
 * 在玩家启动游戏会话之前向其介绍新的竞争性游戏机会。
 * 曝光是间歇性的（在启动时、与其他的公告组合在一起）。
@@ -45,11 +45,11 @@ ms.locfileid: "8931023"
 * 该功能不需要内容更新来填充。
 * 推广的相关性和计时很灵活。
 
-###### <a name="ui-example-message-of-the-day"></a>UI 示例：“当日消息”
+###### <a name="ui-example-message-of-the-day"></a>UI 示例：在一天的消息
 
 ![当日的锦标赛消息](../../images/arena/arena-ux-motd.png)
 
-#### <a name="a-main-heading-ex-play-watch-learn"></a>A. 主标题示例：比赛、观看、了解  
+#### <a name="a-main-heading-ex-play-watch-learn"></a>A. 主标题:播放、 观看、 学习  
 
 向玩家通知所有锦标赛或特定锦标赛。
 
@@ -66,16 +66,16 @@ ms.locfileid: "8931023"
 ###### <a name="ui-example-exit-game-confirmation"></a>UI 示例：退出游戏确认
 ![锦标赛退出游戏确认](../../images/arena/arena-ux-exit-confirm.png)
 
-### <a name="2--promote-tournaments-on-the-main-menu"></a>2. 在主菜单上推广锦标赛
+### <a name="2--promote-tournaments-on-the-main-menu"></a>2.将提升在主菜单上的联赛
 
 在此示例中，公告是关于近期活动的交互式广告。 它提供了足够的信息来吸引玩家了解详情。 通过**选择**，玩家将转到 Arena 中心的锦标赛详细信息页面，在这里他们可以管理注册。
 
-###### <a name="ui-example-a-tournament-ad-displayed-alongside-the-main-menu"></a>UI 示例：主菜单旁边显示的锦标赛广告
+###### <a name="ui-example-a-tournament-ad-displayed-alongside-the-main-menu"></a>UI 示例：主菜单旁显示一个联赛广告
 
 ![](../../images/arena/arena-ux-promo.png)
 
 > [!TIP]
-> **UX 建议**  
+> **用户体验建议**  
 > 公告应只包含能够帮助玩家决定是否要了解详情的足够细节。 例如，***描述***、***热门程度***和***时间安排***。
 
 ## <a name="browsing-tournaments-in-game"></a>浏览游戏内锦标赛
@@ -83,11 +83,11 @@ ms.locfileid: "8931023"
 Arena API 为你的作品提供了足够数据，以用于在游戏内创建浏览体验。 如果要生成浏览功能，请在“多人游戏”部分添加**锦标赛**入口点。
 
 > [!TIP]
-> **UX 建议**  
+> **用户体验的建议**  
 > 将锦标赛呈现为多人游戏模式。  
 > 由于 Xbox Arena 是一项新功能，请确保其在第 1 层或第 2 层级别保持可见。
 
-###### <a name="ui-example-tournaments-listed-as-an-additional-mode-in-the-multiplayer-section"></a>UI 示例：锦标赛在“多人游戏”部分列为附加模式
+###### <a name="ui-example-tournaments-listed-as-an-additional-mode-in-the-multiplayer-section"></a>UI 示例：趣事列为多玩家部分中的其他模式
 
 ![锦标赛模式](../../images/arena/arena-ux-tournament-mode.png)
 
@@ -107,7 +107,7 @@ Arena API 为你的作品提供了足够数据，以用于在游戏内创建浏�
 
 
 > [!TIP]
-> **UX 建议**  
+> **用户体验建议**  
 > 创建一个可以缩放的 UI，并提供可供玩家管理大型锦标赛列表的方法。
 
 ### <a name="filters"></a>筛选器
@@ -125,7 +125,7 @@ Arena API 为你的作品提供了足够数据，以用于在游戏内创建浏�
 
 #### <a name="filter-recommendations"></a>筛选建议：
 
-##### <a name="all"></a>所有
+##### <a name="all"></a>ALL
 
 查看所有**活动**、**已取消**和**已结束**的锦标赛，从最新的开始排序。
 
@@ -147,7 +147,7 @@ Arena API 为你的作品提供了足够数据，以用于在游戏内创建浏�
 * 进入锦标赛比赛的方法（对于“比赛就绪”状态）
 * 到仪表板中锦标赛详细信息页面的深层链接
 
-##### <a name="active"></a>活动
+##### <a name="active"></a>ACTIVE
 
 查看已创建的所有锦标赛：即将推出、正在注册、报到和正在比赛。
 
@@ -176,4 +176,4 @@ Arena API 为你的作品提供了足够数据，以用于在游戏内创建浏�
 * 取消日期/时间
 
 > [!div class="nextstepaction"]
-> [使用 Arena UI 加入锦标赛](arena-ux-join-tournament.md)
+> [使用竞技场 UI 联接联赛](arena-ux-join-tournament.md)

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 实时活动
 ms.localizationpriority: medium
 ms.openlocfilehash: f8846d57343f4f7262bbeea2cec03465fa23b2ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940464"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629992"
 ---
 # <a name="programming-the-real-time-activity-service-using-c-apis"></a>使用 C++ API 对实时活动服务进行编程
 
@@ -48,7 +48,7 @@ void Example_RealTimeActivity_ConnectAsync()
 
 ### <a name="creating-a-statistic"></a>创建统计数据
 
-如果你是 XDK 开发人员，或者正在开发跨平台联机作品，则可以在 XDP 上创建统计数据。  如果你要在 Windows 10 上运行的纯 UWP，可以在合作伙伴中心中创建统计信息。
+如果你是 XDK 开发人员，或者正在开发跨平台联机作品，则可以在 XDP 上创建统计数据。  如果要使 Windows 10 上运行的纯 UWP，可以在合作伙伴中心创建统计信息。
 
 #### <a name="xdk-developers"></a>XDK 开发人员
 
@@ -56,10 +56,10 @@ void Example_RealTimeActivity_ConnectAsync()
 
 #### <a name="uwp-developers"></a>UWP 开发人员
 
-如果你要开发不是跨平台游玩游戏的 Windows 10 上的 UWP，你可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)中定义统计信息。 读取[合作伙伴中心的统计数据配置文章](../leaderboards-and-stats-2017/player-stats-configure-2017.md)以了解如何在合作伙伴中心上配置的统计数据。
+如果你正在开发不是跨播放内容的 Windows 10 上的 UWP，定义应用中的统计信息[合作伙伴中心](https://partner.microsoft.com/dashboard)。 读取[合作伙伴中心统计信息配置文章](../leaderboards-and-stats-2017/player-stats-configure-2017.md)若要了解如何在合作伙伴中心上配置统计信息。
 
 > [!NOTE]
-> Stats 2013 开发人员将需要联系其 DAM 有关[Stats 2013 配置](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-configure-stats-2013)[合作伙伴中心](https://partner.microsoft.com/dashboard)中的信息。
+> 统计信息 2013年开发人员将需要联系的信息与有关其采取[统计信息 2013年配置](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-configure-stats-2013)中[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 
 ### <a name="disconnecting-from-the-real-time-activity-service"></a>与实时活动服务断开连接
 
@@ -76,7 +76,7 @@ void Example_RealTimeActivity_Disconnect()
 
 ## <a name="subscribing-to-a-statistic-from-the-real-time-activity"></a>通过实时活动订阅统计数据
 
-应用程序可订阅实时活动 (RTA) 以在 Xbox 开发人员门户 (XDP) 或合作伙伴中心中配置的统计数据发生更改时获取更新。
+应用程序订阅到实时活动 (RTA) 以获取更新的统计信息在 Xbox 开发人员门户 (XDP) 或合作伙伴中心中配置更改时。
 
 ### <a name="subscribing-to-a-statistic-from-the-real-time-activity-service"></a>通过实时活动服务订阅统计数据
 
@@ -129,6 +129,6 @@ void Example_RealTimeActivity_UnsubscribeFromStatisticChangeAsync()
 ```
 
 > [!IMPORTANT]
-> 实时活动服务将断开连接使用两个小时后，你的代码必须能够检测到此和重新建立与实时活动服务的连接，如果仍然需要它。 这主要是为了确保身份验证标记到期时刷新。
+> 实时活动使用的两个小时后，服务将断开连接，你的代码必须能够检测到这并重新建立到实时活动服务的连接，如果仍需要它。 这主要是为了确保，到期后刷新身份验证令牌。
 > 
-> 如果客户端使用 RTA 为多人游戏会话，并且断开连接时 30 秒，多人游戏会话 Directory(MPSD) 检测到 RTA 会话已关闭，并且开始用户退出会话。 它是对 RTA 客户端以检测时关闭连接并启动重新连接并重新订阅之前 MPSD 结束会话。
+> 如果客户端的多玩家会话使用 RTA 和三十秒断开连接，多人游戏会话 Directory(MPSD) 检测到 RTA 会话已关闭，并启动了从会话中注销用户。 它是为 RTA 客户端连接已关闭时进行检测并启动重新连接，并重新订阅短 MPSD 结束会话之前。

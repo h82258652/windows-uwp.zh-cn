@@ -7,14 +7,14 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 20662a562e67ee836feb1da73a71c76228a550cb
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058678"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643812"
 ---
 # <a name="background-transfers"></a>后台传输
-使用后台传输 API 以便在网络上可靠地复制文件。 后台传输 API 提供应用暂停期间在后台运行的高级上载和下载功能，并持续至应用终止。 API 监视网络状态，并在连接丢失时自动暂停和恢复传输，并且传输还具有流量感知和电量感知功能，这意味着可以根据当前连接和设备电池状态调整下载活动。 该 API 适用于使用 HTTP 上载和下载较大文件。 还支持 FTP，但只能用于下载。
+使用后台传输 API 以通过网络可靠地复制文件。 后台传输 API 提供应用暂停期间在后台运行的高级上载和下载功能，并持续至应用终止。 API 监视网络状态，并在连接丢失时自动暂停和恢复传输，并且传输还具有流量感知和电量感知功能，这意味着可以根据当前连接和设备电池状态调整下载活动。 该 API 适用于使用 HTTP 上载和下载较大文件。 还支持 FTP，但只能用于下载。
 
 后台传输独立于调用应用单独运行，主要是针对资源（如视频、音乐和大型图像）的长期传输操作设计的。 对于这些应用场景，使用后台传输非常必要，因为即使应用已暂停，下载仍会继续进行。
 
@@ -28,7 +28,7 @@ ms.locfileid: "9058678"
 > [!NOTE]
 > 由于每个应用资源所限，应用在任何时刻的传输数均不应多于 200 (DownloadOperations + UploadOperations)。 超出该限制可能会将应用的传输队列置于无法恢复的状态。
 
-当启动应用程序时，它必须在所有现有[**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation)和[**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadoperation)对象上调用[**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) 。 不执行此操作将导致的已完成传输泄漏，并且最终将使你使用后台传输功能毫无用处。
+当启动应用程序时，它必须调用[ **AttachAsync** ](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync)在所有现有[ **DownloadOperation** ](/uwp/api/windows.networking.backgroundtransfer.downloadoperation)和[ **UploadOperation** ](/uwp/api/windows.networking.backgroundtransfer.uploadoperation)对象。 不执行此操作将导致已完成传输的泄漏，并且最终将使后台传输功能的使用变得无用。
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>使用后台传输执行经过身份验证的文件请求
 后台传输可提供支持基本的服务器和代理凭据、cookie 的方法，并且还支持每个传输操作使用自定义的 HTTP 头（通过 [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146)）。
@@ -40,11 +40,11 @@ ms.locfileid: "9058678"
 
 虽然后台传输功能具备其自己的处理网络状态更改的机制，但对于使用网络连接功能的应用还有其他需要考虑的常规连接因素。 有关其他信息，请阅读[利用可用的网络连接信息](https://msdn.microsoft.com/library/windows/apps/hh452983)。
 
-> **注意**对于移动设备上运行的应用，存在一些允许用户监控和限制的套餐传输根据连接类型、 漫游状态的数据量的功能和用户的流量。 因此，即使 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 表示传输应该继续，仍可在电话上暂停后台传输。
+> **请注意**  对于移动设备上运行的应用程序，有允许用户监视和限制的类型的连接，漫游状态，基于传输的数据量的功能和用户的数据计划。 因此，即使 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 表示传输应该继续，仍可在电话上暂停后台传输。
 
 下表指示在电话的当前给定状态下，对于每个 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 值，允许在电话上进行后台传输的时间。 你可以使用 [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) 类确定电话的当前状态。
 
-| 设备状态                                                                                                                      | UnrestrictedOnly | 默认值 | 始终 |
+| 设备状态                                                                                                                      | UnrestrictedOnly | 默认 | 始终 |
 |-----------------------------------------------------------------------------------------------------------------------------------|------------------|---------|--------|
 | 已连接到 WiFi                                                                                                                 | 允许            | 允许   | 允许  |
 | 按流量计费的连接、未漫游、受数据限制、计划不超出限制                                                   | 拒绝             | 允许   | 允许  |
@@ -60,7 +60,7 @@ ms.locfileid: "9058678"
 ### <a name="uploading-a-single-file"></a>上载单个文件
 创建上传从 [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 开始。 该类用于提供使应用能够在创建结果 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 之前配置上传的方法。 以下示例说明如何使用所需的 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 和 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 对象执行该操作。
 
-**标识文件和目标以供上传**
+**标识的文件和上传目标**
 
 我们首先需要识别要上传的目标位置的 URI 和要上传的文件，然后才能开始创建 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224)。 在以下示例中，*uriString* 值使用 UI 输入的字符串进行填充，*file* 值使用 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) 操作返回的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 对象进行填充。
 
@@ -85,7 +85,7 @@ promise = upload.startAsync().then(complete, error, progress);
 异步方法调用后跟一个 then 语句，它指示从异步方法调用返回结果时调用的方法（由应用定义）。 有关此编程模式的详细信息，请参阅[在 JavaScript 中使用 Promise 进行异步编程](https://msdn.microsoft.com/library/windows/apps/hh464930.aspx)。
 
 ### <a name="uploading-multiple-files"></a>上载多个文件
-**标识文件和目标以用于上载**
+**确定文件和上传目标**
 
 在涉及到使用单个 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 传输多个文件的方案中，这一过程将像通常一样开始，首先提供必需的目标 URI 和本地文件信息。 与上一部分中的示例类似，由最终用户以字符串形式提供 URI，并且也可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 提供通过用户界面指示文件的功能。 但在此方案中，应用应改为调用 [**PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) 方法，以便能够通过 UI 选择多个文件。
 
@@ -130,7 +130,7 @@ function uploadFiles() {
             });
 ```
 
-**创建和初始化分段上传操作**
+**创建和初始化多个部分组成的上传操作**
 
 在使用所有 [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) 对象（表示每个要上载的 [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102)）填充 contentParts 数组后，我们将准备使用 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 调用 [**CreateUploadAsync**](https://msdn.microsoft.com/library/windows/apps/hh923973) 以指示将请求发送到哪里。
 
@@ -199,7 +199,7 @@ promise = download.startAsync().then(complete, error, progress);
 1.  现在可以使用填充的列表重新启动挂起的操作。
 
 ## <a name="post-processing"></a>后处理
-Windows 10 中的新增功能是能够在后台传输完成时运行应用程序代码，即使该应用未运行时。 例如，你的应用可能希望在电影结束下载后更新电影的可用列表，而不是在每次启动应用时让应用扫描新电影。 或者，你的应用可能希望通过再次尝试使用不同的服务器或端口来处理已失败的文件传输。 针对成功的传输和失败的传输，均会调用后处理，以便你可以使用它来实现自定义错误处理和重试逻辑。
+Windows 10 中的新功能是即使在应用程序未运行时在后台传输完成运行的应用程序代码的能力。 例如，你的应用可能希望在电影结束下载后更新电影的可用列表，而不是在每次启动应用时让应用扫描新电影。 或者，你的应用可能希望通过再次尝试使用不同的服务器或端口来处理已失败的文件传输。 针对成功的传输和失败的传输，均会调用后处理，以便你可以使用它来实现自定义错误处理和重试逻辑。
 
 后处理使用现有的后台任务基础结构。 创建后台任务，并在开始传输前将后台任务与传输关联。 然后传输在后台执行，并在它们完成时，调用后台任务以执行后处理。
 
@@ -260,39 +260,39 @@ public class BackgroundDownloadProcessingTask : IBackgroundTask
 
 -   建立连接之后，将中止在两分钟内未收到响应的 HTTP 请求消息。
 
-> **注意**在任一情况下，假定存在 Internet 连接，后台传输将自动重试一个请求三次。 如果未检测到 Internet 连接，则其他请求将一直等待，直到检测到 Internet 连接。
+> **请注意**  在任一方案中，假定没有建立 Internet 连接，后台传输会自动重试请求最多三次。 如果未检测到 Internet 连接，则其他请求将一直等待，直到检测到 Internet 连接。
 
 ## <a name="debugging-guidance"></a>调试指南
 在 Microsoft Visual Studio 中停止调试会话与关闭你的应用相似；PUT 上载将暂停，POST 上载将终止。 即使在调试时，你的应用也应该枚举，然后重新启动或取消任何保持的上载。 例如，如果对该调试会话之前的操作没有兴趣，你可以使应用在应用启动时取消已枚举的持续上载操作。
 
 在调试会话期间，当系统随着应用启动开始枚举下载/上载时，如果对该调试会话之前的操作没有兴趣，你可以让应用取消它们。 请注意，如果存在 Visual Studio 项目更新（例如，对应用清单的更改），并且应用被卸载并重新部署，[**GetCurrentUploadsAsync**](https://msdn.microsoft.com/library/windows/apps/hh701149) 不能枚举使用之前的应用部署创建的操作。
 
-如果在开发过程中使用后台传输功能，则你可能会遇到活动和已完成传输操作的内部缓存不同步的情况。这可能会导致无法启动新的传输操作或者无法与现有操作和 [**BackgroundTransferGroup**](https://msdn.microsoft.com/library/windows/apps/dn279030) 对象交互。 在某些情况下，尝试与现有操作交互可能引发崩溃。 如果 [**TransferBehavior**](https://msdn.microsoft.com/library/windows/apps/dn279033) 属性设置为 **Parallel**，则可能产生该结果。 该问题仅在开发期间的某些应用场景中发生，该情况不适用于应用的最终用户。
+在部署期间使用后台传输时，你可能会遇到一种情况，即可用的和已完成的传输操作的内部缓存不同步。这可能会导致不能启动新的传输操作，或者不能与现有操作和 [**BackgroundTransferGroup**](https://msdn.microsoft.com/library/windows/apps/dn279030) 对象交互。 在某些情况下，尝试与现有操作交互可能引发崩溃。 如果 [**TransferBehavior**](https://msdn.microsoft.com/library/windows/apps/dn279033) 属性设置为 **Parallel**，则可能产生该结果。 该问题仅在开发期间的某些应用场景中发生，该情况不适用于应用的最终用户。
 
 使用 Visual Studio 的四种应用场景可能会导致该问题。
 
 -   你用于创建新项目的应用名称与现有项目相同，但语言不同（例如从 C++ 改为 C#）。
 -   你更改了现有项目中的目标体系结构（例如，从 x86 改为 x64）。
 -   你更改了现有项目中的区域性（例如，从中性改为 en-US）。
--   你在现有项目的程序包清单中添加或删除了一项功能（例如，添加**企业身份验证**）。
+-   你在现有项目的程序包清单中添加或删除了一项功能（例如，添加“企业身份验证”）。
 
 常规应用服务（包含可添加或删除功能的清单更新）不会在应用的最终用户部署时导致该问题。
-若要解决该问题，请彻底卸载应用的所有版本，并采用新的语言、体系结构、区域性或功能重新部署。 可通过**开始**屏幕或使用 PowerShell 和 **Remove-AppxPackage** cmdlet 完成此操作。
+若要解决该问题，请彻底卸载应用的所有版本，并采用新的语言、体系结构、区域性或功能重新部署。 可通过“开始”屏幕或使用 PowerShell 和 **Remove-AppxPackage** cmdlet 完成此操作。
 
 ## <a name="exceptions-in-windowsnetworkingbackgroundtransfer"></a>Windows.Networking.BackgroundTransfer 中的异常
 将统一资源标识符 (URI) 的无效字符串传递给 [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 对象的构造函数时，将引发异常。
 
-**.NET：**[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 类型在 C# 和 VB 中显示为 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)。
+**.NET:**[ **Windows.Foundation.Uri** ](https://msdn.microsoft.com/library/windows/apps/br225998)类型显示为[ **System.Uri** ](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)中C#和 vb。
 
 在 C# 和 Visual Basic 中，通过使用 .NET 4.5 中的 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) 类和 [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) 方法之一在构造 URI 之前测试从应用用户收到的字符串，可以避免该错误。
 
 在 C++ 中，没有可用于试用字符串和将其解析到 URI 的方法。 如果应用获取 [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 用户输入，则构造函数应位于 try/catch 块中。 如果引发了异常，该应用可以通知用户并请求新的主机名。
 
-[**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空间具有方便的帮助程序方法，并使用 [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空间中用于处理错误的枚举。 这有助于在应用中分别处理特定网络异常。
+[  **Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空间具有方便的帮助程序方法，并使用 [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空间中用于处理错误的枚举。 这有助于在应用中分别处理特定网络异常。
 
-在 [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空间中的异步方法上发生的错误返回为 **HRESULT** 值。 [**BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093) 方法用于将来自后台传送操作的网络错误转化为 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 枚举值。 大部分 **WebErrorStatus** 枚举值对应由本机 HTTP 或 FTP 客户端操作返回的错误。 应用可以筛选特定 **WebErrorStatus** 枚举值来基于异常原因修改应用行为。
+在 [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空间中的异步方法上发生的错误返回为 **HRESULT** 值。 [  **BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093) 方法用于将来自后台传送操作的网络错误转化为 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 枚举值。 大部分 **WebErrorStatus** 枚举值对应由本机 HTTP 或 FTP 客户端操作返回的错误。 应用可以筛选特定 **WebErrorStatus** 枚举值来基于异常原因修改应用行为。
 
-对于参数验证错误，应用还可以使用来自异常的 **HRESULT** 来了解关于导致该异常的错误的详细信息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。
+对于参数验证错误，应用还可以使用来自异常的 **HRESULT** 来了解关于导致该异常的错误的详细信息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 对于大多数参数验证错误， **HRESULT**返回是**E\_INVALIDARG**。
 
 ## <a name="important-apis"></a>重要的 API
 * [**Windows.Networking.BackgroundTransfer**](/uwp/api/windows.networking.backgroundtransfer)

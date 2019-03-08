@@ -1,22 +1,22 @@
 ---
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
-Description: The TextBox control lets a user enter text into an app.
+Description: 通过 TextBox 控件，用户可以在应用中输入文本。
 title: 文本框
 label: Text box
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e3faf82ab9786f6ba079e44d79b6ed49394b881
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117787"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602682"
 ---
 # <a name="text-box"></a>文本框
 
@@ -24,7 +24,7 @@ TextBox 控件可使用户在应用中键入文本。 它通常用于捕获单�
 
 TextBox 具有大量可简化文本输入的功能。 它附带熟悉的内置上下文菜单，并提供对复制和粘贴文本的支持。 “清除所有”按钮使用户可以快速删除所输入的所有文本。 它还内置了拼写检查功能，并且在默认情况下处于启用状态。
 
-> **重要 API**：[TextBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)、[Text 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)
+> **重要的 Api**:[TextBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)， [Text 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -38,7 +38,7 @@ TextBox 具有大量可简化文本输入的功能。 它附带熟悉的内置�
 
 使用 [RichEditBox](rich-edit-box.md) 显示和编辑 RTF 文件。
 
-有关选择正确文本控件的详细信息，请参阅 [文本控件](text-controls.md) 文章。
+有关选择正确的文本控件的详细信息，请参阅[文本控件](text-controls.md)文章。
 
 ## <a name="examples"></a>示例
 
@@ -49,7 +49,7 @@ TextBox 具有大量可简化文本输入的功能。 它附带熟悉的内置�
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/TextBox">打开此应用，了解 TextBox 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -83,7 +83,7 @@ rootGrid.Children.Add(textBox);
 
 通常使用文本框接受表单上的数据输入，并使用 [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) 属性获取来自文本框的完整文本字符串。 通常使用提交按钮单击之类的事件来访问 Text 属性，但如果你需要在文本发生更改时执行某些操作，可以处理 [TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanged.aspx) 或 [TextChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanging.aspx) 事件。
 
-此示例显示了如何获取和设置文本框中的当前内容。
+此示例演示如何获取和设置文本框中的当前内容。
 
 ```xaml
 <TextBox name="SampleTextBox" Text="Sample Text"/>
@@ -111,7 +111,7 @@ SampleTextBox.Text = "Sample text retrieved";
 - **AcceptsReturn** 为 **true**
 - **TextWrap** 具有非 **NoWrap** 的值
 
-此示例显示了如何获取和设置文本框中的当前内容。
+此示例演示如何获取和设置文本框中的当前内容。
 
 ```xaml
 <TextBox name="SampleTextBox" Text="Sample Text"/>
@@ -255,7 +255,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 若要帮助用户使用触摸键盘或软输入面板 (SIP) 输入数据，你可以将文本控件的输入范围设置为与期望用户输入的数据类型匹配。
 
-当你的应用在具有触摸屏的设备上运行时，触摸键盘可用于文本输入。 当用户点击可编辑的输入字段（如 TextBox 或 RichEditBox）时，系统会调用触摸键盘。 通过将文本控件的输入范围设置为与你期望用户输入的数据类型匹配，可以让用户在应用中更快捷地输入数据。 输入范围会针对控件所预期的文本输入类型向系统提供提示，以便系统可以为该输入类型提供专用的触摸键盘布局。
+当你的应用在具有触摸屏的设备上运行时，触摸键盘可用于文本输入。 当用户点击可编辑的输入字段（如 TextBox 或 RichEditBox）时，系统会调用触摸键盘。 通过将文本控件的输入范围设置为匹配你期望用户输入的数据类型，可以让用户在应用中更快捷地输入数据。 输入范围会针对控件所预期的文本输入类型向系统提供提示，以便系统可以为该输入类型提供专用的触摸键盘布局。
 
 例如，如果文本框中仅用于输入一个 4 位数的 PIN，请将 [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) 属性设置为 **Number**。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
 
@@ -268,7 +268,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 ## <a name="recommendations"></a>建议
 
 - 如果文本框的用途不甚清楚，请使用标签或占位符文本。 无论文本输入框是否具有值，标签都可见。 占位符文本显示在文本输入框内，并在输入值后立即消失。
-- 针对可输入值的范围，为文本框提供适当的宽度。 字词长度因语言而异，因此如果你希望应用在全世界通用，请将本地化考虑在内。
+- 针对可输入值的范围，为文本框提供适当的宽度。 单词长度因语言而异，因此如果希望应用世界通用，请将本地化考虑在内。
 - 文本输入框通常为单行 (`TextWrap = "NoWrap"`)。 当用户需要输入或编辑长字符串时，将文本输入框设置为多行 (`TextWrap = "Wrap"`)。
 - 一般而言，文本输入框用于可编辑文本。 但你可以使文本输入框变为只读，以使其内容可供阅读、选择和复制，但不能编辑。
 - 如果你需要减少视图中的混乱感，请考虑让一组文本输入框仅在选中控制复选框时显示。 你还可以将文本输入框的启用状态绑定到诸如复选框等控件上。
@@ -296,7 +296,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 ### <a name="multi-line-text-input-controls"></a>多行文本输入控件
 
-- 创建富文本框时，提供样式按钮并实现它们的操作。
+- 创建 RTF 框时，提供样式设置按钮并实现它们的操作。
 - 使用与应用样式一致的字体。
 - 使文本控件的高度足够大，以便容纳典型输入。
 - 如果要捕获具有最大字符或字词计数的长文本，请使用纯文本框并提供实时运行计数器，以便向用户显示他们在达到上限前还能输入多少字符或字词。 你需要自行创建计数器、将它放在文本框下面，并在用户输入每个字符或字词时动态更新它。
@@ -305,7 +305,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 - 不要让文本输入控件在用户键入时增加高度。
 - 当用户仅需要一行时，不要使用多行文本框。
-- 如果纯文本控件足够使用，不要使用富文本控件。
+- 如果纯文本控件足够使用，不要使用 RTF 控件。
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
@@ -314,9 +314,9 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 ## <a name="related-articles"></a>相关文章
 
 - [文本控件](text-controls.md)
-- [拼写检查指南](text-controls.md)
+- [拼写检查的准则](text-controls.md)
 - [添加搜索](https://msdn.microsoft.com/library/windows/apps/hh465231)
-- [文本输入指南](text-controls.md)
+- [文本输入的准则](text-controls.md)
 - [TextBox 类](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length 属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
