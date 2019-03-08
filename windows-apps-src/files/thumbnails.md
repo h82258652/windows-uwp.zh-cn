@@ -1,5 +1,5 @@
 ---
-Description: How to use thumbnail images to help users preview files in UWP apps.
+Description: 如何使用图像的缩略图来帮助用户预览 UWP 应用中的文件。
 title: UWP 应用中的缩略图图像指南
 label: Thumbnail images
 template: detail.hbs
@@ -8,17 +8,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 15984e00b036bf44d6e4a7f60cb6435ea1add291
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980345"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642002"
 ---
 # <a name="thumbnail-images"></a>缩略图图像
 
 这些指南介绍如何使用缩略图图像帮助用户在 UWP 应用中浏览时预览文件。 
 
-**重要的 API**
+**重要的 Api**
 
 -   [**ThumbnailMode**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
 
@@ -66,16 +66,16 @@ ms.locfileid: "8980345"
 <tr>
 <td> 图片<br /> 视频 </td>
 <td> PicturesView <br />VideosView </td>
-<td> <b>大小</b>：中等，最好至少为 190（如果图像大小为 190x130） <br />
-<b>纵横比</b>：一致，宽纵横比约为 0.7（如果大小为 190，则为 190x130） <br />
+<td> <b>大小</b>： 中等，最好是至少 190 （如果图像大小为 190 x 130） <br />
+<b>纵横比</b>: 统一、 宽纵横比的大约.7 (190 x 130 如果大小为 190) <br />
 裁剪以供预览。 <br /> 
 由于纵横比一致，因此非常适合在网格中对齐图像。  </td>
 </tr>
 <tr>
 <td> 文档<br />音乐 </td>
 <td> DocumentsView <br />MusicView <br /> ListView</td>
-<td> <b>大小</b>：小，最好至少为 40 x 40 像素 <br />
-<b>纵横比</b>：一致，平方纵横比  <br />
+<td> <b>大小</b>： 较小，最好是至少 40 x 40 像素 <br />
+<b>纵横比</b>:  统一的方形纵横比  <br />
 由于平方纵横比一致，因此非常适合预览专辑封面。 <br /> 
 文档与在文件选取器窗口中看起来相同（它使用相同的图标）。 </td>
 </tr>
@@ -83,8 +83,8 @@ ms.locfileid: "8980345"
 <tr>
 <td> 任何单个项目（不论文件类型） </td>
 <td> SingleItem </td>
-<td> <b>大小</b>：小，最好至少为 40 x 40 像素 <br />
-<b>纵横比</b>：一致，平方纵横比  <br />
+<td> <b>大小</b>： 较小，最好是至少 40 x 40 像素 <br />
+<b>纵横比</b>:  统一的方形纵横比  <br />
 由于平方纵横比一致，因此非常适合预览专辑封面。 <br /> 
 文档与在文件选取器窗口中看起来相同（它使用相同的图标）。 </td>
 </tr>
@@ -100,7 +100,7 @@ ms.locfileid: "8980345"
 <th>使用以下方法检索时： <ul><li>SingleItem</ul></th>
 <tr>
 <tr>
-<td>图片</td>
+<td>Picture</td>
 <td>缩略图使用文件的原始纵横比。 <br />
 <img src="images/thumbnail-pic-picvidmode.png" alt="Picture thumbnail in picture or video mode"/></td>
 <td>缩略图裁剪为平方纵横比。 <br />

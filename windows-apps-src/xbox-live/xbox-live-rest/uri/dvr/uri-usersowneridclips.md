@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: cd711777bcdf0b073dd0821222049b03aa35a23c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941304"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599512"
 ---
 # <a name="usersowneridclips"></a>/users/{ownerId}/clips
-访问权限的用户的剪辑的列表。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+访问用户的剪辑列表。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，取决于 URI 相关的函数。
  
   * [URI 参数](#ID4EX)
  
@@ -24,9 +24,9 @@ ms.locfileid: "8941304"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| ownerId| 字符串| 用户的用户身份的正在访问其资源。 支持的格式:"me"或"xuid(123456789)"。 最大长度： 16。| 
+| ownerId| 字符串| 其资源的访问的用户的用户标识。 支持的格式:"me"或"xuid(123456789)"。 最大长度：16.| 
   
 <a id="ID4EVB"></a>
 
@@ -35,7 +35,7 @@ ms.locfileid: "8941304"
 
 [GET (/users/{ownerId}/clips)](uri-usersowneridclipsget.md)
 
-&nbsp;&nbsp;检索用户的剪辑的列表。
+&nbsp;&nbsp;检索用户的剪辑列表。
  
 <a id="ID4E6B"></a>
 
@@ -47,6 +47,6 @@ ms.locfileid: "8941304"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[游戏 DVR URI](atoc-reference-dvr.md)
+[游戏 DVR Uri](atoc-reference-dvr.md)
 
    

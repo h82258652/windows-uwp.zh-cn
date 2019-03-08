@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 85a6470a64ceef3b154384d1ca859fb28733aad3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944630"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632572"
 ---
 # <a name="usersxuidxuidscidsscidstatsstatnamepeopleallfavorite"></a>/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite}
-访问 （排名） 的社交排行榜。
+访问社交 （排名） 排行榜。
 这些 Uri 的域是`leaderboards.xboxlive.com`。
 
   * [URI 参数](#ID4EV)
@@ -25,12 +25,12 @@ ms.locfileid: "8944630"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- |
 | xuid| 字符串| 用户的标识符。|
-| scid| 字符串| 服务配置，其中包含所访问的资源的标识符。|
-| statname| 字符串| 正在访问的用户统计数据资源的唯一标识符。|
-| all\ | 最喜爱| 枚举| 是否要排名统计数据值 （分数） 为当前用户的所有已知的联系人或仅通过该用户指定为常用联系人的联系人。|
+| scid| 字符串| 服务配置，其中包含要访问的资源的标识符。|
+| statname| 字符串| 要访问的用户统计信息资源的唯一标识符。|
+| 所有\|收藏| 枚举| 排名统计信息是否为当前用户的所有已知的联系人或仅由该用户指定为最喜欢的人的联系人的值 （分数）。|
 
 <a id="ID4EOC"></a>
 
@@ -39,7 +39,7 @@ ms.locfileid: "8944630"
 
 [GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite})](uri-usersxuidscidstatnamepeopleget.md)
 
-&nbsp;&nbsp;返回社交排行榜的统计数据值 （分数） 为当前用户的任一所有已知的联系人或仅通过该用户指定为常用联系人的联系人的排名。
+&nbsp;&nbsp;通过排名统计信息值 （分数） 为当前用户是所有已知的联系人或仅由该用户指定为最喜欢的人的联系人返回社交排行榜。
 
 <a id="ID4EYC"></a>
 
@@ -51,4 +51,4 @@ ms.locfileid: "8944630"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[排行榜 URI](atoc-reference-leaderboard.md)
+[排行榜 Uri](atoc-reference-leaderboard.md)

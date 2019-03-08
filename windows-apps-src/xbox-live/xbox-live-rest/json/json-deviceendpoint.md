@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0eaa21072ebf14b6f6d959ff40af34724a45522f
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115432"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618872"
 ---
 # <a name="deviceendpoint-json"></a>DeviceEndpoint (JSON)
  
@@ -23,20 +23,20 @@ ms.locfileid: "9115432"
  
 DeviceEndpoint 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| 设备名称| 字符串| 可选。 设备，如果适用的友好名称。 当前未使用此值。| 
-| endpointUri| 字符串| 必需。 客户端平台 （Windows 或 Windows Phone） 已获得从推送通知服务 （WNS 或 MPNS） URL。| 
-| 区域设置| 字符串| 必需。 发送到此终结点的通知所需的语言。 可以按优先顺序的逗号分隔的列表。 示例:"DE-DE、 EN-US、 en"。| 
-| 平台| 字符串| 可选。 当前受支持的值为"WindowsPhone"和"Windows"。 如果未指定，则将它派生的设备令牌。| 
+| deviceName| 字符串| 可选。 设备，如果适用的友好名称。 当前未使用此值。| 
+| endpointUri| 字符串| 必需。 客户端平台 （Windows 或 Windows Phone） 已获取其推送通知服务 （WNS 或 MPNS） URL。| 
+| locale| 字符串| 必需。 通知发送到此终结点所需的语言。 可以按优先顺序以逗号分隔值列表。 示例:"DE-DE、 EN-US，en"。| 
+| 平台| 字符串| 可选。 当前支持的值为"WindowsPhone"和"Windows"。 如果未指定，它被派生自设备令牌。| 
 | platformVersion| 字符串| 可选。 此字符串的格式是特定于每个平台。 当前未使用此值。| 
-| systemId| GUID| 必需。 "应用实例"的唯一标识符 （设备/用户组合）。 最佳做法实施应用生成一个随机的 GUID 后安装/首次运行，且继续上后续的运行的应用使用该值。| 
-| titleId| 32 位无符号的整数| 必需。 发出对服务调用的游戏的游戏 ID。| 
+| systemId| GUID| 必需。 将"应用程序实例"的唯一标识符 （设备/用户组合）。 最佳做法来实现用于应用程序以生成随机 GUID 在安装/首次运行时，继续在后续运行的应用程序上使用此值。| 
+| titleId| 32 位无符号的整数| 必需。 发出对服务调用游戏标题 ID。| 
   
 <a id="ID4EGD"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -64,7 +64,7 @@ DeviceEndpoint 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E4D"></a>

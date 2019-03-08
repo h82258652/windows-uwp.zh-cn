@@ -7,13 +7,13 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 信誉, 玩家反馈
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e8d82fc9b195f174bf7a46a8d21fb20b2df9551
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927813"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592232"
 ---
-# <a name="sending-player-feedback-from-your-title"></a>从游戏中发送玩家反馈
+# <a name="sending-player-feedback-from-your-title"></a>从你的作品发送玩家反馈
 Xbox Live 成员大部分都很出色，但有一小部分“坏苹果”损害了其他人的游戏体验。 我们通过用户和游戏提交的反馈发现了这一小部分用户。 我们通过确保让这些“坏苹果”只有有限的多玩家体验，从而无法干扰良好玩家玩游戏，来保护其余的用户。 Xbox 非常依赖用户报告其他用户行为来保持系统的准确性，但 Xbox One 中的游戏可以直接参与并显著改善用户信誉群体的准确性。
 
 ## <a name="steps-to-submit-feedback-from-title-or-title-service"></a>从游戏或游戏服务提交反馈的步骤
@@ -61,9 +61,9 @@ Xbox 系统 UI 为玩家提供了提交有关游戏中其他用户的反馈的�
 ## <a name="complete-behavior-feedback-options"></a>完成行为反馈选项
 下表列出了可用于代表你的游戏提交用户反馈的反馈类型。 信誉服务很灵活，并且可以在你认为某些行为不符合你的游戏需求时，轻松添加新反馈类型。 如果你想要看到添加的新反馈类型，请告知你的客户经理。
 
-表 1：信誉服务支持的各种合作伙伴反馈类型。
+表 1:信誉服务支持类型的各种合作伙伴的反馈意见。
 
-**公平比赛反馈类型**               | **描述**
+**Fairplay 反馈类型**               | **描述**
 ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------
 FairplayKillsTeammates                    | 报告故意杀死自己队友的玩家
 FairplayCheater                           | 报告确定作弊的玩家
@@ -75,13 +75,13 @@ FairplayIdler                             | 报告进入了多玩家匹配但不
 FairplayLeaderboardCheater                | 报告确定经过作弊在排行榜上排名靠前的玩家
 **通信反馈类型**         |
 CommsInappropriateVideo                   | 报告在视频聊天中行为不当的玩家
-**用户生成的内容反馈类型** |
+**用户生成内容的反馈类型** |
 UserContentInappropriateUGC               | 报告玩家在游戏中创建的不当内容
 UserContentReviewRequest                  | 主动报告内容，以便 XBLPET 团队进行审阅
 UserContentReviewRequestBroadcast         | 主动报告广播，以便 XBLPET 团队进行审阅
 UserContentReviewRequestGameDVR           | 主动报告 GameDVR 剪辑，以便 XBLPET 团队进行审阅
 UserContentReviewRequestScreenshot        | 主动报告屏幕截图，以便 XBLPET 团队进行审阅
-**正面反馈**                     |
+**积极的反馈**                     |
 PositiveSkilledPlayer                     | 如果用户可以通过投票来确定 MVP，在确定玩家应获得积极反馈时报告熟练的玩家
 PositiveHelpfulPlayer                     | 如果游戏为玩家提供了报告另一个有帮助用户的 UI，报告有帮助的玩家
 PositiveHighQualityUGC                    | 如果游戏为玩家提供了称赞其他用户内容的 UI，主动报告该内容
@@ -106,7 +106,7 @@ API          | URL                                                      | 身份
 ## <a name="feedback-object"></a>反馈对象
 反馈对象具有以下最新版本 101 的规范。 两个 API 均应有下面的一批对象。
 
-成员       | 类型   | 描述
+成员       | 在任务栏的搜索框中键入   | 描述
 ------------ | ------ | -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 sessionRef   | 对象 | 描述此反馈与之相关的 MPSD 会话的对象，或为 null。
 feedbackType | 字符串 | 反馈的类型。 在 ReputationFeedbackType 枚举中定义的可能值
@@ -140,23 +140,23 @@ POST https://reputation.xboxlive.com/users/batchtitlefeedback
 
 ## <a name="feedback-qa"></a>反馈常见问题
 
-### <a name="q-can-i-send-a-hint-to-the-system-to-help-with-humans-that-might-be-looking-at-the-player-report"></a>问：我能否向系统发送提示，以帮助可能在查看玩家报告的人？
-答：可以，这会很有帮助！ 请使用 "textReason" 参数帮助最终将查看所提交反馈的强制执行人员。 例如，对于空闲玩家，你可以添加这样的文本原因：“游戏开始后的前五秒过后，我们没有收到来自该玩家的用户输入”。 此文本原因对于 XBLPET 强制执行代理可能非常有价值，因此请确保文本原因有用且是描述性的。
+### <a name="q-can-i-send-a-hint-to-the-system-to-help-with-humans-that-might-be-looking-at-the-player-report"></a>问:可以将一个提示发送到系统以与人类可能查看播放机报表帮助？
+答：是的并且很有帮助 ！ 请使用 "textReason" 参数帮助最终将查看所提交反馈的强制执行人员。 例如，对于空闲玩家，你可以添加这样的文本原因：“游戏开始后的前五秒过后，我们没有收到来自该玩家的用户输入”。 此文本原因对于 XBLPET 强制执行代理可能非常有价值，因此请确保文本原因有用且是描述性的。
 
-### <a name="q-should-i-worry-about-how-often-i-send-in-feedback-on-a-user"></a>问：在发送有关某个用户的反馈时是否有频率限制？
-答：当游戏确信某个用户获得了反馈时，它们应会调用信誉服务。 系统具有多个安全措施来阻止游戏和用户过度影响其他用户。
+### <a name="q-should-i-worry-about-how-often-i-send-in-feedback-on-a-user"></a>问:我应担心中对用户的反馈发送频率如何？
+答：标题应调用信誉服务，当他们确信用户获得的反馈。 系统具有多个安全措施来阻止游戏和用户过度影响其他用户。
 
-### <a name="q-can-i-adjust-the-weight-of-the-feedback-being-sent"></a>问：我能否调整所发送反馈的权重？
-答：不能，信誉服务将确定反馈的权重。 我们始终会调整权重以改进系统。
+### <a name="q-can-i-adjust-the-weight-of-the-feedback-being-sent"></a>问:可以调整的权重所发送的反馈？
+答：否，信誉服务确定反馈的粗细。 我们始终会调整权重以改进系统。
 
-### <a name="q-can-i-undo-feedback-ive-sent-on-a-user"></a>问：我能否撤消已经发送的用户反馈？
-答：不能，反馈是最终行为。 如果你认为你的游戏存在 bug，正在发送错误反馈，请告诉我们，我们会将该游戏放入黑名单，直到你修复了 bug。
+### <a name="q-can-i-undo-feedback-ive-sent-on-a-user"></a>问:可以撤消发送用户的反馈？
+答：否，反馈是最后一个。 如果你认为你的游戏存在 bug，正在发送错误反馈，请告诉我们，我们会将该游戏放入黑名单，直到你修复了 bug。
 
-### <a name="q-can-i-see-the-feedback-sent-for-my-title-from-users"></a>问：我能否看到其他用户发送的有关我的游戏的反馈？
-答：该信息目前不能自助查看。 你可以询问客户经理，我们确实有每个游戏的数据，可以向你提供。 我们很快会让你直接看到这些信息，另外还会显示在使用你的游戏时信誉较低的一组用户。
+### <a name="q-can-i-see-the-feedback-sent-for-my-title-from-users"></a>问:可以看到我的用户的标题为发送的反馈？
+答：该信息不可用的当前自助服务。 你可以询问客户经理，我们确实有每个游戏的数据，可以向你提供。 我们很快会让你直接看到这些信息，另外还会显示在使用你的游戏时信誉较低的一组用户。
 
-### <a name="q-when-i-send-in-console-or-user-ban-review-request-how-do-i-know-what-happened"></a>问：当我在主机或用户禁止评价请求中发送时，我如何知道发生了什么？
-答：目前，评价信息将发送给 XBL 策略和执行团队，但现在你看不到禁止评价的新进展。
+### <a name="q-when-i-send-in-console-or-user-ban-review-request-how-do-i-know-what-happened"></a>问:当我在控制台中发送或用户禁止评审请求如何确定发生了什么情况？
+答：当前查看的信息发送到 XBL 策略和强制执行团队，但目前您不更新禁止评审。
 
-### <a name="q-is-there-a-reputation-score-per-title"></a>问：各个游戏有信誉评分吗？
-答：没有。 目前存在公平比赛、通信和用户生成的内容的信誉分项评分，但不是按游戏评分。 如果需求较多，我们可能会在将来增加此功能，因此，如果你需要该功能，请告知你的客户经理。
+### <a name="q-is-there-a-reputation-score-per-title"></a>问:有每个标题名声分值吗？
+答：否。 目前存在公平比赛、通信和用户生成的内容的信誉分项评分，但不是按游戏评分。 如果需求较多，我们可能会在将来增加此功能，因此，如果你需要该功能，请告知你的客户经理。

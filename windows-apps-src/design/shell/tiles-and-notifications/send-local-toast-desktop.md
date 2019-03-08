@@ -1,19 +1,19 @@
 ---
-Description: Learn how Win32 C# apps can send local toast notifications and handle the user clicking the toast.
+Description: 了解如何 Win32C#应用程序可以发送本地 toast 通知并处理用户单击 toast。
 title: 从桌面 C# 应用发送本地 toast 通知
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification from desktop C# apps
 template: detail.hbs
 ms.date: 01/23/2018
 ms.topic: article
-keywords: windows 10，uwp，win32，桌面，toast 通知，发送一个 toast，发送本地 toast，桌面桥，C#、 c 清晰，toast 通知，wpf
+keywords: windows 10、 uwp、 win32、 桌面，toast 通知，发送 toast 通知，发送本地 toast，桌面桥C#，c 尖锐，toast 通知，wpf
 ms.localizationpriority: medium
 ms.openlocfilehash: 907ba19812c9a34a7a91f42fefac4c190bfd394b
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058698"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648872"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>从桌面 C# 应用发送本地 toast 通知
 
@@ -23,7 +23,7 @@ ms.locfileid: "9058698"
 > 如果要编写 UWP 应用，请参阅 [UWP 文档](send-local-toast.md)。 有关其他桌面语言，请参阅[桌面 C++ WRL](send-local-toast-desktop-cpp-wrl.md)。
 
 
-## <a name="step-1-enable-the-windows-10-sdk"></a>步骤 1：启用 Windows 10 SDK
+## <a name="step-1-enable-the-windows-10-sdk"></a>第 1 步：启用 Windows 10 SDK
 
 如果尚未对 Win32 应用启用 Windows 10 SDK，必须先执行该操作。
 
@@ -49,7 +49,7 @@ ms.locfileid: "9058698"
 ![重新加载项目](images/win32-reload-project.png)
 
 
-## <a name="step-2-reference-the-apis"></a>步骤 2：参考 API
+## <a name="step-2-reference-the-apis"></a>步骤 2：Api 参考
 
 打开参考管理器（右键单击项目，选择**添加 -> 参考**），选择 **Windows-> 核心**并包含以下参考：
 
@@ -59,14 +59,14 @@ ms.locfileid: "9058698"
 ![参考管理器](images/win32-add-windows-reference.png)
 
 
-## <a name="step-3-copy-compat-library-code"></a>步骤 3：复制兼容库代码
+## <a name="step-3-copy-compat-library-code"></a>步骤 3:复制兼容库代码
 
 将 [GitHub 中的 DesktopNotificationManagerCompat.cs 文件](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CS/DesktopToastsApp/DesktopNotificationManagerCompat.cs)复制到项目中。 兼容库很大程度上简化了桌面通知的复杂程度。 以下指令需用到兼容库。
 
 
 ## <a name="step-4-implement-the-activator"></a>步骤 4：实现激活器
 
-必须实现的处理程序 toast 激活，以便你的应用在用户单击你的 toast，可以执行某些操作。 这就要求将 toast 保留在操作中心内（因为 toast 可能会在应用关闭几天后被单击）。 可将此类置于项目中的任何位置。
+这样，当用户单击应用的 toast 通知，您的应用程序可以执行的内容，必须实现 toast 激活的处理程序。 这就要求将 toast 保留在操作中心内（因为 toast 可能会在应用关闭几天后被单击）。 可将此类置于项目中的任何位置。
 
 扩展 **NotificationActivator** 类，然后添加下面列出的三个属性，并使用联机 GUID 生成器（有多种可选）为应用创建一个唯一的 GUID CLSID。 操作中心通过此 CLSID（类标识符）了解要对哪个类实施 COM 激活。
 
@@ -141,7 +141,7 @@ public class MyNotificationActivator : NotificationActivator
 
 选取用于识别 Win32 应用的唯一 AUMID。 通常采用 [CompanyName].[AppName] 的形式，但需确保它在所有应用中均为唯一（可根据需要在末尾添加一些数字）。
 
-#### <a name="step-51-wix-installer"></a>步骤 5.1：WiX 安装程序
+#### <a name="step-51-wix-installer"></a>步骤 5.1:WiX 安装程序
 
 如果对安装程序使用 WiX，则编辑 **Product.wxs** 文件，将两种快捷方式属性添加到“开始”菜单快捷方式中，如下所示。 确保步骤 #4 中的 GUID 包含在 `{}` 中，如下所示。
 
@@ -163,7 +163,7 @@ public class MyNotificationActivator : NotificationActivator
 > 为使用通知，必须在正常调试之前通过安装程序安装应用，以便显示包含有 AUMID 和 CLSID 的“开始”快捷方式。 出现“开始”快捷方式后，可以从 Visual Studio 中使用 F5 进行调试。
 
 
-#### <a name="step-52-register-aumid-and-com-server"></a>步骤 5.2：注册 AUMID 和 COM 服务器
+#### <a name="step-52-register-aumid-and-com-server"></a>步骤 5.2:注册 AUMID 和 COM 服务器
 
 然后，在不考虑安装程序的情况下，在应用的启动代码中（在调用任何通知 API 之前），调用 **RegisterAumidAndComServer** 方法，指定步骤 #4 中的通知激活器类和上面使用的 AUMID。
 
@@ -399,12 +399,12 @@ DesktopNotificationManagerCompat.History.Clear();
 
 ## <a name="known-issues"></a>已知问题
 
-**已修复：单击 toast 后焦点未移动至应用**：在内部版本 15063 和更早版本中，激活 COM 服务器时，前台权限未转移给应用程序。 因此，在尝试将应用移动到前台时，它只会闪现。 此前此问题没有任何解决方法。 我们在内部版本 16299 和更高版本中修复了此问题。
+**已修复：单击 toast 通知后，应用不会获得焦点**:中内部版本 15063 及更早版本，前台权限未在传送到你的应用程序时我们激活 COM 服务器。 因此，在尝试将应用移动到前台时，它只会闪现。 此前此问题没有任何解决方法。 我们在内部版本 16299 和更高版本中修复了此问题。
 
 
 ## <a name="resources"></a>资源
 
 * [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/desktop-toasts)
-* [来自桌面应用的 Toast 通知](toast-desktop-apps.md)
-* [Toast 内容文档](adaptive-interactive-toasts.md)
+* [从桌面应用的 toast 通知](toast-desktop-apps.md)
+* [Toast 通知内容文档](adaptive-interactive-toasts.md)
 

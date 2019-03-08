@@ -8,23 +8,23 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a99bfaf11074092bd4c6aa1ed822f71f65a9d62
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925549"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650382"
 ---
 # <a name="usersme"></a>/users/me
-访问当前用户的状态。 这些 Uri 的域是`userpresence.xboxlive.com`。
+访问当前用户存在。 这些 Uri 的域是`userpresence.xboxlive.com`。
   
 <a id="ID4EV"></a>
 
  
 ## <a name="valid-methods"></a>有效的方法
 
-[GET (/users/me)](uri-usersmeget.md)
+[获取 (/ 用户/我)](uri-usersmeget.md)
 
-&nbsp;&nbsp;获取当前用户的[PresenceRecord](../../json/json-presencerecord.md) ，而无需知道用户的 XUID。
+&nbsp;&nbsp;获取当前用户的[PresenceRecord](../../json/json-presencerecord.md)而无需知道用户的 XUID。
  
 <a id="ID4E6"></a>
 
@@ -36,6 +36,6 @@ ms.locfileid: "8925549"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[状态 URI](atoc-reference-presence.md)
+[存在 Uri](atoc-reference-presence.md)
 
    

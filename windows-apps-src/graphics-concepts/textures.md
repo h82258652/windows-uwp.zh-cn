@@ -1,6 +1,6 @@
 ---
 title: 纹理
-description: 纹理是在计算机生成的 3D 图像中创建逼真效果的强大工具。 Direct3D 支持广泛的纹理功能集，使开发人员能够轻松访问高级纹理技术。
+description: 纹理是在计算机生成的 3D 图像中创建逼真效果的强大工具。 Direct3D 支持广泛的纹理功能集，使开发人员能够轻松使用高级纹理技术。
 ms.assetid: B9E85C9E-B779-4852-9166-6FA2240B7046
 keywords:
 - 纹理
@@ -8,20 +8,20 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 81d77b262cc77c23d859cf76227a34bc72b15b96
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942199"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593002"
 ---
 # <a name="textures"></a>纹理
 
 
-纹理是在计算机生成的 3D 图像中创建逼真效果的强大工具。 Direct3D 支持广泛的纹理功能集，使开发人员能够轻松访问高级纹理技术。
+纹理是在计算机生成的 3D 图像中创建逼真效果的强大工具。 Direct3D 支持广泛的纹理功能集，使开发人员能够轻松使用高级纹理技术。
 
 为提升性能，可以考虑使用动态纹理。 动态纹理可以锁定、写入以及解锁每个帧。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>
@@ -38,11 +38,11 @@ ms.locfileid: "8942199"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="introduction-to-textures.md">纹理简介</a></p></td>
-<td align="left"><p>纹理资源是存储纹素的数据结构，纹素是可以读取或写入的纹理的最小单位。 在着色器读取纹理时，可以通过纹理采样器对纹理进行筛选。</p></td>
+<td align="left"><p>纹理资源是存储纹素的数据结构，纹素是可以读取或写入的纹理的最小单位。 在着色器读取纹理时，可以通过纹理采样器对纹理进行过滤。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="basic-texturing-concepts.md">基本纹理概念</a></p></td>
-<td align="left"><p>早期的计算机生成的 3D 图像，尽管在当时通常很先进，往往有一个闪亮的塑料外观。 这类图像缺少磨损、裂缝、指纹和污迹等标记类型，所以 3D 对象不具有真实的视觉复杂性。 为了增强计算机生成的 3D 图像的真实性，纹理变得非常流行。</p></td>
+<td align="left"><p><a href="basic-texturing-concepts.md">纹理绘制的基本概念</a></p></td>
+<td align="left"><p>早期的计算机生成的 3D 图像，尽管在当时通常很先进，却往往带有闪亮的塑料状外观。 这类图像缺少磨损、裂缝、指纹和污迹等标记类型，所以 3D 对象不具有真实的视觉复杂性。 为了增强计算机生成的 3D 图像的真实性，纹理变得非常流行。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="texture-addressing-modes.md">纹理寻址模式</a></p></td>
@@ -57,20 +57,20 @@ ms.locfileid: "8942199"
 <td align="left"><p>纹理是一种用于呈现的资源。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="texture-wrapping.md">纹理环绕</a></p></td>
+<td align="left"><p><a href="texture-wrapping.md">纹理换行</a></p></td>
 <td align="left"><p>纹理环绕通过使用为每个顶点指定的纹理坐标，改变 Direct3D 光栅化纹理多边形的基本方式。 实行多边形光栅化时，系统会内插入每个多边形顶点的纹理坐标之间，以确定应用于每个多边形像素的纹素。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="texture-blending.md">纹理混合</a></p></td>
+<td align="left"><p><a href="texture-blending.md">纹理值混合处理</a></p></td>
 <td align="left"><p>Direct3D 可以在单程内最多将八个纹理融合到基元。 使用多个纹理混合可以显著增加 Direct3D 应用程序的帧速率。 应用程序可通过多个纹理混合，在单程内应用纹理、阴影、镜面光、漫射照明以及其他的特殊效果。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="light-mapping-with-textures.md">使用纹理的光映射</a></p></td>
-<td align="left"><p>光照贴图是包含关于 3D 场景中照明信息的纹理或纹理组。 光照图将光和阴影的区域映射到基元上。 多纹理混合使你的应用程序能够以比着色技术更逼真的外观渲染场景。</p></td>
+<td align="left"><p><a href="light-mapping-with-textures.md">与纹理浅映射</a></p></td>
+<td align="left"><p>光照图是包含关于 3D 场景中照明信息的纹理或纹理组。 光照图将光和阴影的区域映射到基元上。 多通道及多纹理混合使你的应用程序能够以比着色技术更逼真的外观渲染场景。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="compressed-texture-resources.md">压缩的纹理资源</a></p></td>
-<td align="left"><p>纹理映射是在三维图形上绘制以添加视觉细节的数字化图像。 它们在光栅化期间被贴图到这些形状，而此过程会占用大量系统总线和内存。 为了降低纹理占用的内存量，Direct3D 支持压缩纹理曲面。 某些 Direct3D 设备支持在本地压缩的纹理表面。</p></td>
+<td align="left"><p>纹理贴图是指在三维图形上绘制以添加视觉细节的数字化图像。 它们在光栅化期间被贴图到这些形状，而此过程会占用大量系统总线和内存。 为了降低纹理占用的内存量，Direct3D 支持压缩纹理曲面。 某些 Direct3D 设备支持本机压缩纹理曲面。</p></td>
 </tr>
 </tbody>
 </table>

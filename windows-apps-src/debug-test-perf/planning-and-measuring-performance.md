@@ -1,23 +1,23 @@
 ---
 ms.assetid: A37ADD4A-2187-4767-9C7D-EDE8A90AA215
 title: 规划性能
-description: 用户希望他们的应用保持响应性、感觉自然，并且不会耗尽电池。
+description: 用户希望他们的应用保持响应状态、感觉自然，并且不会耗尽电池。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bfe034ed697661c81b2f01b67fafeee1941832d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050760"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640312"
 ---
 # <a name="planning-for-performance"></a>规划性能
 
 
 
-用户希望他们的应用保持响应性、感觉自然，并且不会耗尽电池。 从技术上讲，性能是非功能要求，但将性能视为一项功能将有助于你满足用户的期望。 指定目标与衡量是关键因素。 确定性能关键型方案是什么；定义良好的性能意味着什么。 然后及早衡量，并在项目的整个生命周期中频繁衡量，以确保达到你的目标。
+用户希望他们的应用保持响应状态、感觉自然，并且不会耗尽电池。 从技术上讲，性能是非功能要求，但将性能视为一项功能将有助于你满足用户的期望。 指定目标与衡量是关键因素。 确定性能关键型方案是什么；定义良好的性能意味着什么。 然后及早衡量，并在项目的整个生命周期中频繁衡量，以确保达到你的目标。
 
 ## <a name="specifying-goals"></a>指定目标
 
@@ -31,7 +31,7 @@ ms.locfileid: "9050760"
 
 考虑用户若要在应用中完成其任务，（*交互类*）所用时间的可接受范围。 为每个交互类分配一个标签、感知的用户情绪以及理想和最长持续时间。 下面是一些建议。
 
-| 交互类标签 | 用户感知                 | 理想时间            | 最长时间          | 示例                                                                     |
+| 交互类标签 | 用户感知                 | 理想时间            | 最多          | 示例                                                                     |
 |-------------------------|---------------------------------|------------------|------------------|------------------------------------------------------------------------------|
 | 迅速                    | 可察觉的最低延迟      | 100 毫秒 | 200 毫秒 | 显示应用栏；按一个按钮（第一个响应）                        |
 | 一般                 | 快，但不够迅速             | 300 毫秒 | 500 毫秒 | 调整大小；语义缩放                                                        |
@@ -88,7 +88,7 @@ ms.locfileid: "9050760"
 -   首选主题过渡和动画而不是情节提要动画。 有关详细信息，请参阅[动画概述](https://msdn.microsoft.com/library/windows/apps/Mt187350)。 请记住，情节提要动画需要持续更新屏幕，并保持 CPU 和图形管道处于活动状态。 若要维持电池电量，当用户未与应用交互时，请不要运行动画。
 -   你加载的图像的大小应适合将使用 [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) 方法显示它的视图。
 
-**CPU、内存和电源**
+**CPU、 内存和电源**
 
 -   将优先级较低的工作安排在优先级较低的线程和/或内核上运行。 请参阅[异步编程](https://msdn.microsoft.com/library/windows/apps/Mt187335)、[**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR209054) 属性和 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) 类。
 -   通过在应用暂停时释放开销较大的资源来最大程度减少应用的内存占用量。
@@ -102,7 +102,7 @@ ms.locfileid: "9050760"
 -   缓存访问开销较大的内容（如果可能）。 请参阅 [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/BR241621) 和 [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622) 属性。
 -   对于缓存失误，尽快显示占位符 UI 以指示应用仍在加载内容。 以一种不会让用户感到不协调的方式从占位符过渡到实时内容。 例如，在应用加载实时内容时，不要更改用户手指下或鼠标指针下的内容的位置。
 
-**应用启动和恢复**
+**应用程序启动和恢复**
 
 -   延迟应用的初始屏幕，除非有必要，否则不要延长应用的初始屏幕。 有关详细信息，请参阅[创建快速且流畅的应用启动体验](https://go.microsoft.com/fwlink/p/?LinkId=317595)和[延长显示初始屏幕的时间](https://msdn.microsoft.com/library/windows/apps/Mt187309)。
 -   禁用在欢迎屏幕消除后立即出现的动画，因为这些动画只会导致应用启动时间延迟的感觉。
@@ -165,19 +165,19 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 -   针对各种不同硬件配置进行测试，包括一体机和台式电脑、笔记本电脑、超极本和平板电脑以及其他移动设备。
 -   针对各种不同屏幕尺寸进行测试。 尽管更大的屏幕可以显示更多的内容，但呈现所有额外内容可能会对性能产生负面影响。
 -   尽量消除测试因素。
-    -   在测试设备上关闭后台应用。 若要执行此操作，请依次从 Windows 中的“开始”菜单中选择“设置”****&gt;“个性化”****&gt;“锁屏界面”****。 选择每个活动应用，然后选择“无”****。
+    -   在测试设备上关闭后台应用。 为此，请在 Windows 中，选择**设置**从开始菜单&gt;**个性化** &gt; **锁屏**。 选择每个活动应用，然后选择“无”。
     -   在将应用部署到测试设备之前，通过使用发布配置生成应用将其编译为本机代码。
-    -   若要确保自动维护不会影响测试设备的性能，请手动将其触发并等待完成。 在 Windows 的“开始”菜单中，搜索“安全和维护”****。 在“维护”**** 区域的“自动维护”**** 下，选择“开始维护”**** 并等待状态从“正在进行维护”**** 发生变化。
+    -   若要确保自动维护不会影响测试设备的性能，请手动将其触发并等待完成。 在 Windows 的“开始”菜单中，搜索“安全和维护”。 在“维护”区域的“自动维护”下，选择“开始维护”并等待状态从“正在进行维护”发生变化。
     -   多次运行应用有助于消除随机测试变量，并且有助于确保一致的测量结果。
 -   测试降低功能可用性。 用户设备的功率可能明显低于你的开发计算机。 Windows 设计时考虑到了低功率设备，例如移动电脑。 在平台上运行的应用应确保在这些设备上也可以良好地执行。 提示：预期低功率设备的运行速度大约是台式机的四分之一，请相应地设置你的目标。
 -   使用 Microsoft Visual Studio 和 Windows Performance Analyzer 等工具的组合衡量应用性能。 Visual Studio 可以提供侧重于应用的分析，如源代码链接。 Windows Performance Analyzer 可以提供侧重于系统的分析，如提供系统信息、关于触摸操作事件以及关于磁盘输入/输出 (I/O) 和图形处理单元 (GPU) 开销的信息。 这两个工具都会跟踪捕获和导出，并且都可以重新打开共享跟踪和事后跟踪。
--   你在将应用提交到应用商店进行认证之前，请务必合并到你测试计划中的[Windows 应用认证工具包测试](windows-app-certification-kit-tests.md)和中的"性能测试"部分所述与性能相关测试用例"性能和[UWP 应用测试用例](https://msdn.microsoft.com/library/windows/apps/Dn275879)的稳定性"部分。
+-   你将应用提交到应用商店进行认证之前，请务必将合并到你的测试计划与性能相关测试用例中的"性能测试"部分所述[Windows 应用认证工具包测试](windows-app-certification-kit-tests.md)并在"性能和稳定性"部分[UWP 应用的测试用例](https://msdn.microsoft.com/library/windows/apps/Dn275879)。
 
 有关详细信息，请参阅以下资源和分析工具。
 
--   [Windows 性能分析器](https://msdn.microsoft.com/library/windows/apps/xaml/hh448170.aspx)
+-   [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/apps/xaml/hh448170.aspx)
 -   [Windows 性能工具包](https://msdn.microsoft.com/library/windows/apps/xaml/hh162945.aspx)
--   [使用 Visual Studio 诊断工具分析性能](https://msdn.microsoft.com/library/windows/apps/xaml/hh696636.aspx)
+-   [分析性能使用 Visual Studio 诊断工具](https://msdn.microsoft.com/library/windows/apps/xaml/hh696636.aspx)
 -   //build/ 会话 [XAML 性能](https://channel9.msdn.com/Events/Build/2015/3-698)
 -   //build/ 会话 [Visual Studio 2015 中新增的 XAML 工具](https://channel9.msdn.com/Events/Build/2015/2-697)
 

@@ -8,19 +8,19 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f868fdf4f3d5cd36000784d9c5a3437fa5d67ffa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943046"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593852"
 ---
 # <a name="get-usersuseridprofilesettingspeopleuserlist"></a>GET (/users/{userId}/profile/settings/people/{userList})
-获取用户的个人资料或支持用户，与人脉名字对象。 这些 Uri 的域是`profile.xboxlive.com`。
+获取用户的配置文件或支持用户与用户的名字对象。 这些 Uri 的域是`profile.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4EKB)
   * [查询字符串参数](#ID4EVB)
-  * [需的请求标头](#ID4EQC)
+  * [所需的请求标头](#ID4EQC)
   * [请求正文](#ID4E2D)
  
 <a id="ID4EV"></a>
@@ -28,36 +28,36 @@ ms.locfileid: "8943046"
  
 ## <a name="remarks"></a>备注
  
-**userList**和**Userid**是互斥的参数。 如果指定了这两或任何一个，你将得到**BadRequest** 。 **userList**是数组，以便在多个命名的列表对请求有用的方案未来篡改。 **Userid**组成 Xuid 十进制字符串-JSON 已损坏时序列化 64 位无符号的整数。 最后，将设置、 使用正常的用户可读的名称，而不是 64 位无符号的整数或模糊的常量，如**XONLINE_PROFILE_ASDF**命名 Xbox One 中的设置。
+**userList**并**Userid**是互斥的参数。 如果指定了或其中一个，则将获得**BadRequest**返回。 **userList**是数组，以便前瞻性中多个命名的列表适用于请求的方案。 **Userid**是由组成的十进制字符串 XUIDs-JSON 是在 64 位无符号的整数进行序列化错误。 最后，在 Xbox One 的设置将被命名为设置，使用普通用户可读名称，而不是 64 位无符号的整数，或者模糊常量喜欢**XONLINE_PROFILE_ASDF**。
   
 <a id="ID4EKB"></a>
 
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| userId| 字符串| 可以是 xuid(12345)'、 'gt(myGamertag) 或 me。| 
-| userList| 字符串| 命名的人员，获取设置列表。 目前，用户是唯一受支持的列表。| 
+| userId| 字符串| 可以是 xuid(12345)、 gt(myGamertag) 或 me。| 
+| userList| 字符串| 若要获取设置的联系人的命名的列表。 目前，人是受支持的唯一列表。| 
   
 <a id="ID4EVB"></a>
 
  
 ## <a name="query-string-parameters"></a>查询字符串参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | --- | --- | --- | 
-| settings| 字符串| 设置名称的逗号分隔的列表。| 
+| 设置| 字符串| 设置名称的逗号分隔列表。| 
   
 <a id="ID4EQC"></a>
 
  
-## <a name="required-request-headers"></a>需的请求标头
+## <a name="required-request-headers"></a>所需的请求标头
  
-| 标头| 类型| 描述| 
+| 标头| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| x xbl 协定版本| 32 位有符号整数| 值 = 2| 
-| 内容类型| 字符串| 值 = <code>application/json</code>| 
+| x-xbl-contract-version| 32 位有符号的整数| 值 = 2| 
+| content-type| 字符串| 值 = <code>application/json</code>| 
   
 <a id="ID4E2D"></a>
 
@@ -84,7 +84,7 @@ GET /users/me/profile/settings/people/people?settings=GameDisplayName,GameDispla
 
  
 ##### <a name="response-body"></a>响应正文 
-该响应是一个**ReadMultiSettingsResponseV2**对象。 假设调用用户有只有一个好友：
+响应是**ReadMultiSettingsResponseV2**对象。 假定调用用户具有只有一个朋友：
   
 
 ```cpp
@@ -129,6 +129,6 @@ GET /users/me/profile/settings/people/people?settings=GameDisplayName,GameDispla
 
 [/users/{userId}/profile/settings/people/{userList}?settings={settings}](uri-usersuseridprofilesettingspeopleuserlist.md)
 
- [Profile (JSON)](../../json/json-profile.md)
+ [配置文件 (JSON)](../../json/json-profile.md)
 
    

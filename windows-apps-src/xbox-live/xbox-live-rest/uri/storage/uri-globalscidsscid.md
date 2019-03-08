@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ad106da41f8cd5d91cfba0ef5c58e66cf3534e06
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945136"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632442"
 ---
 # <a name="globalscidsscid"></a>/global/scids/{scid}
 检索此存储类型的配额信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
@@ -24,9 +24,9 @@ ms.locfileid: "8945136"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| scid| guid| 若要查找的服务配置 ID。| 
+| scid| GUID| 要查找服务配置的 ID。| 
   
 <a id="ID4ETB"></a>
 
@@ -47,6 +47,6 @@ ms.locfileid: "8945136"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[标题存储 URI](atoc-reference-storagev2.md)
+[标题存储 Uri](atoc-reference-storagev2.md)
 
    

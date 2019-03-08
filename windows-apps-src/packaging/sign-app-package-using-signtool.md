@@ -3,15 +3,15 @@ title: 使用 SignTool 对应用包进行签名
 description: 使用带证书的 SignTool 手动对应用包签名。
 ms.date: 09/30/2018
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a6d39a78ba73dcb598f209ea48c4b131e375ab6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922609"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594802"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>使用 SignTool 对应用包进行签名
 
@@ -23,8 +23,8 @@ ms.locfileid: "8922609"
 
 有关代码签名和证书的一般详细信息，请参阅[代码签名简介](https://msdn.microsoft.com/library/windows/desktop/aa380259.aspx#introduction_to_code_signing)。
 
-## <a name="prerequisites"></a>先决条件
-- **应用包**  
+## <a name="prerequisites"></a>必备条件
+- **打包应用程序**  
     若要了解手动创建应用包的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 
 
 - **有效的签名证书**  
@@ -32,8 +32,8 @@ ms.locfileid: "8922609"
 
 - **SignTool.exe**  
     根据 SDK 的安装路径，以下是 **SignTool** 在 Windows 10 电脑上的位置：
-    - x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\SignTool.exe
-    - x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\SignTool.exe
+    - x86：C:\Program Files (x86)\Windows Kits\10\bin\x86\SignTool.exe
+    - x64:C:\Program Files (x86)\Windows Kits\10\bin\x64\SignTool.exe
 
 ## <a name="using-signtool"></a>使用 SignTool
 
@@ -119,13 +119,13 @@ SignTool sign /debug [options]
  
 请执行以下操作，以便在事件日志中查找更多信息：
 - 运行 Eventvwr.msc
-- 打开事件日志：事件查看器（本地）-> 应用程序和服务日志 -> Microsoft -> Windows -> AppxPackagingOM -> Microsoft-Windows-AppxPackaging/Operational
+- 打开事件日志：事件查看器 （本地）-> 应用程序和服务日志-> Microsoft-> Windows-> AppxPackagingOM-> Microsoft-Windows-AppxPackaging/操作
 - 查找最新的错误事件
 
 内部错误 0x8007000B 通常与以下值之一对应：
 
-| **事件 ID** | **事件字符串示例** | **建议** |
+| **事件 ID** | **示例事件字符串** | **建议** |
 |--------------|--------------------------|----------------|
-| 150          | 错误 0x8007000B：应用部件清单发布者名称 (CN=Contoso) 必须与签名证书的使用者名称 (CN=Contoso, C=US) 匹配。 | 应用清单发布者名称必须与签名证书的使用者名称完全匹配。               |
-| 151          | 错误 0x8007000B：指定的签名哈希方法 (SHA512) 必须与应用包块映射中使用的哈希方法 (SHA256) 匹配。     | /fd 参数中指定的 hashAlgorithm 不正确。 使用与应用包块映射（创建应用包所用）匹配的 hashAlgorithm 重新运行 **SignTool**  |
-| 152          | 错误 0x8007000B：应用包内容必须针对其块映射进行验证。                                                           | 应用包已损坏，需要重建以生成新的块映射。 有关创建应用包的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 |
+| 150          | 错误 0x8007000B:应用程序清单的发布者名称 (CN = Contoso) 必须与匹配的签名证书的使用者名称 (CN = Contoso，C = US)。 | 应用清单发布者名称必须与签名证书的使用者名称完全匹配。               |
+| 151          | 错误 0x8007000B:签名哈希方法指定 (SHA512) 必须与在应用包块映射 (SHA256) 中使用的哈希方法匹配。     | /fd 参数中指定的 hashAlgorithm 不正确。 使用与应用包块映射（创建应用包所用）匹配的 hashAlgorithm 重新运行 **SignTool**  |
+| 152          | 错误 0x8007000B:针对其块映射必须验证应用包的内容。                                                           | 应用包已损坏，需要重建以生成新的块映射。 有关创建应用包的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 |

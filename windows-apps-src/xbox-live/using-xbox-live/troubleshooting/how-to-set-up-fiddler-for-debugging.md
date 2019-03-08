@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, fiddler, 服务调用, 疑难解答
 ms.localizationpriority: medium
 ms.openlocfilehash: 84c6717a4f9f5aff9fd3ff1f68c870fdd9174865
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114429"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606712"
 ---
 # <a name="troubleshooting-xbox-live-using-fiddler"></a>使用 Fiddler 的 Xbox Live 疑难解答
 
@@ -20,7 +20,7 @@ Fiddler 是一种 Web 调试代理，用于记录你的设备和 Internet 之间
 ## <a name="for-windows-uwp-pc-apps"></a>适用于 Windows UWP 电脑应用
 
 1. 确保当前用户位于电脑上的管理员组中。
-1. 下载从 Fiddler[https://www.telerik.com/fiddler](https://www.telerik.com/fiddler)
+1. 从下载 Fiddler [https://www.telerik.com/fiddler](https://www.telerik.com/fiddler)
 1. 确保你选择“适用于 .NET 4”的版本
 1. 安装完成后，转至“工具”->“Fiddler”选项并启用“捕获 HTTPS CONNECT 和解密 HTTPS 流量”。  运行时与 Xbox LIVE 服务之间的所有通信将使用 SSL 加密。  未选中此选项的话，你将无法看到任何有用信息。  接受 Fiddler 弹出的所有对话（应该有 5 个对话，包括 UAC）
 1. 转至“WinConfig”、“全部豁免”和“保存更改”。  否则，Fiddler 将不会使用应用商店应用。
@@ -39,7 +39,7 @@ Fiddler 是一种 Web 调试代理，用于记录你的设备和 Internet 之间
 
 ## <a name="for-xbox-one-uwp-based-projects"></a>对于基于 Xbox One UWP 的项目
 
-请按照此处的步骤[https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler)
+按照此处的步骤 [https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler)
 
 ## <a name="for-xbox-one-xdk-based-projects"></a>对于基于 Xbox One XDK 的项目
 
@@ -63,7 +63,7 @@ Fiddler 可能影响主机所报告的网络状态。 如果从运行 Fiddler �
 |------------------|--------------------------------|
 | 名称             | FiddlerProxy                   |
 | 组            | （不要为组设置值） |
-| 个人资料          | 全部                            |
+| 配置文件          | 全部                            |
 | 已启用          | 是                            |
 | 操作           | 允许                          |
 | 替代         | 否                             |
@@ -73,8 +73,8 @@ Fiddler 可能影响主机所报告的网络状态。 如果从运行 Fiddler �
 | 协议         | TCP                            |
 | LocalPort        | Any                            |
 | RemotePort       | Any                            |
-| AllowedUsers     | 任意                            |
-| AllowedComputers | 任意                            |
+| AllowedUsers     | Any                            |
+| AllowedComputers | Any                            |
 
 
 1. 将 Fiddler 配置为捕获和解密 HTTPS 流量。
@@ -88,7 +88,7 @@ Fiddler 可能影响主机所报告的网络状态。 如果从运行 Fiddler �
 已通过上一版本中使用的方法简化了开发工具包中的 Fiddler 配置。
 
 1. 将你导出到桌面的 Fiddler 根证书作为 ``` xs:\Microsoft\Cert\FiddlerRoot.cer``` 复制到开发工具包。  可以使用以下命令：  ```xbcp [local Fiddler Root directory]\FiddlerRoot.cer xs:\Microsoft\Cert\FiddlerRoot.cer```
-1. 创建一个名为 ```ProxyAddress.txt``` 的文本文件，使用运行 Fiddler 的开发电脑的 IP 地址或主机名称以及 Fiddler 在其中仅侦听文件中文件的端口号。 将名称/IP 地址和端口设置为以下格式：“主机:端口”。 （默认情况下，Fiddler 使用端口 8888。）例如，“10.124.220.250:8888”或“my_dev_pc.contoso.com:8888”。 将此文件作为 xs:\Microsoft\Fiddler\ProxyAddress.txt 复制到开发工具包。  可以使用以下命令：  ```xbcp [local Proxy Address file directory]\ProxyAddress.txt xs:\Microsoft\Fiddler\ProxyAddress.txt```
+1. 创建一个名为 ```ProxyAddress.txt``` 的文本文件，使用运行 Fiddler 的开发电脑的 IP 地址或主机名称以及 Fiddler 在其中仅侦听文件中文件的端口号。 设置格式的名称 /IP 地址和端口，如下所示："主机： 端口"。 （默认情况下，Fiddler 使用端口 8888。）例如，"10.124.220.250:8888"或者"my_dev_pc.contoso.com:8888"。 将此文件作为 xs:\Microsoft\Fiddler\ProxyAddress.txt 复制到开发工具包。  可以使用以下命令：  ```xbcp [local Proxy Address file directory]\ProxyAddress.txt xs:\Microsoft\Fiddler\ProxyAddress.txt```
 1. 通过将 ```xbreboot``` 键入命令提示符中来重启开发工具包
 
 ### <a name="to-stop-using-fiddler"></a>停止使用 Fiddler

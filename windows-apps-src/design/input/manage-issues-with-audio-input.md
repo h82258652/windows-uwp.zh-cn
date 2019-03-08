@@ -1,5 +1,5 @@
 ---
-Description: Learn how to manage issues with speech-recognition accuracy caused by audio-input quality.
+Description: 了解如何管理由音频输入质量所导致的语音识别准确度的问题。
 title: 管理音频输入问题
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
 label: Manage audio input issues
@@ -9,18 +9,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d2c80fd30d158f0890ed70311cdf83dce2058e5
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046620"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644902"
 ---
 # <a name="manage-issues-with-audio-input"></a>管理音频输入问题
 
 
-了解如何管理由音频输入质量所导致的语音识别准确度问题。
+了解如何管理由音频输入质量所导致的语音识别准确度的问题。
 
-> **重要 API**：[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)、[**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)、[**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
+> **重要的 Api**:[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)， [ **RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)， [ **SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
 
 
 ## <a name="assess-audio-input-quality"></a>评估音频输入质量

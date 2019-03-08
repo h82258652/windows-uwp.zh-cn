@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xdk
 ms.localizationpriority: medium
 ms.openlocfilehash: c197115bf7c71c8e794c0009d5f3435ea77f592a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941070"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655082"
 ---
 # <a name="get-started-with-using-visual-studio-for-xdk-based-games"></a>开始使用适用于基于 XDK 的游戏的 Visual Studio
 
@@ -19,14 +19,14 @@ ms.locfileid: "8941070"
 
 ## <a name="in-this-section"></a>本部分内容
 
-[获取 XDK 的位置](where-to-get-xdk.md)
+[从中获取 XDK](where-to-get-xdk.md)
 
-[配置你的开发主机](configure-your-development-console.md)
+[配置开发控制台](configure-your-development-console.md)
 
-[向新的或现有的 XDK 项目添加 Xbox Live](add-xbox-live-to-an-xdk-project.md)
+[将 Xbox Live 添加到新的或现有的 XDK 项目](add-xbox-live-to-an-xdk-project.md)
 
-[使用 Xbox 开发工具包 (XDK) 附带的 Xbox Live API](using-xbox-live-apis-built-into-the-xdk.md)
+[使用 Xbox Live Api 一起提供的与 Xbox 开发工具包 (XDK)](using-xbox-live-apis-built-into-the-xdk.md)
 
-[使用 Xbox Live API NuGet 程序包开发 XDK 主题作品](use-xbox-live-nuget-with-xdk.md)
+[使用 Xbox Live API NuGet 包开发 XDK 标题](use-xbox-live-nuget-with-xdk.md)
 
-[编译 XDK 附带的 Xbox Live 源](compile-the-xdk-xbox-live-api-source.md)
+[编译附带 XDK 的 Xbox Live 源](compile-the-xdk-xbox-live-api-source.md)

@@ -7,15 +7,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务调用, 测试, 跟踪分析器
 ms.localizationpriority: medium
 ms.openlocfilehash: fa8ca37842edfbeaab0063cd953f3a34358a82da
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921746"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623462"
 ---
 # <a name="xbox-live-trace-analyzer"></a>Xbox Live 跟踪分析器
 
-现在，游戏开发人员可以通过 Xbox Live 服务 API 捕获所有服务调用，然后对其进行离线分析，以了解调用模式中是否存在任何违规。 可以使用 xbtrace 命令行工具中的新功能或者通过协议激活更高级方案来激活服务调用跟踪。 此外，也支持通过游戏代码直接激活服务调用跟踪。 从 Xbox Live 工具程序包的一部分找不到离线分析工具，调用 Xbox Live 跟踪分析器，XBLTraceAnalyzer.exe) [https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)。
+现在，游戏开发人员可以通过 Xbox Live 服务 API 捕获所有服务调用，然后对其进行离线分析，以了解调用模式中是否存在任何违规。 可以使用 xbtrace 命令行工具中的新功能或者通过协议激活更高级方案来激活服务调用跟踪。 此外，也支持通过游戏代码直接激活服务调用跟踪。 名为 Xbox Live 跟踪分析器 (XBLTraceAnalyzer.exe) 的离线分析工具可作为从 Xbox Live 工具包的一部分[ https://aka.ms/xboxliveuwptools ](https://aka.ms/xboxliveuwptools)。
 
 
 ## <a name="gather-logs-and-analyze-the-service-calls"></a>收集日志并分析服务调用
@@ -60,7 +60,7 @@ ms.locfileid: "8921746"
     xbtrace stop
 
 
-请记住，在通过 xbtrace 开始和停止跟踪之前，必须先运行游戏并且初始化协议激活。 跟踪停止后，xbtrace 会将跟踪文件复制回你的开发电脑并将其置于名称包含“xbtrace”及其时间戳的目录中。 可以使用 xbtrace 的 \[etlfile\] 选项覆盖此目录的名称。
+请记住，在通过 xbtrace 开始和停止跟踪之前，必须先运行游戏并且初始化协议激活。 跟踪停止后，xbtrace 会将跟踪文件复制回你的开发电脑并将其置于名称包含“xbtrace”及其时间戳的目录中。 可以使用重写此目录的名称\[etlfile\] xbtrace 选项。
 
 <a name="starting-and-stopping-tracing-by-using-protocol-activation"></a>使用协议激活开始和停止跟踪
 ----------------------------------------------------------

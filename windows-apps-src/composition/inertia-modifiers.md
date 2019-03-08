@@ -6,23 +6,23 @@ ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
 ms.openlocfilehash: f99ebc4b98c87a4bc6d77fd2c626f481563e50c5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943928"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639632"
 ---
 # <a name="create-snap-points-with-inertia-modifiers"></a>使用 Inertia Modifier 创建吸附点
 
 本文将深入探讨如何使用 InteractionTracker 的 InertiaModifier 功能创建吸附到指定点的运动体验。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 我们在此假设你熟悉这些文章中所述的概念：
 
-- [输入驱动的动画](input-driven-animations.md)
-- [InteractionTracker 的自定义操作体验](interaction-tracker-manipulations.md)
-- [基于关系的动画](relation-animations.md)
+- [输入驱动动画](input-driven-animations.md)
+- [自定义操作经验 InteractionTracker](interaction-tracker-manipulations.md)
+- [关系基于动画](relation-animations.md)
 
 ## <a name="what-are-snap-points-and-why-are-they-useful"></a>什么是吸附点？为什么说它们很有用？
 

@@ -1,5 +1,5 @@
 ---
-Description: In this scenario, we'll make a new app to represent our custom build system. We'll create a resource indexer and add strings and other kinds of resources to it. Then we'll generate and dump a PRI file.
+Description: 在此方案中，我们将让新应用来代表我们的自定义生成系统。 我们将创建一个资源索引器，并向其添加字符串和其他类型的资源。 然后我们将生成和转储 PRI 文件。
 title: 方案 1 从字符串资源和资产文件生成 PRI 文件
 template: detail.hbs
 ms.date: 05/07/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ccb9447e9594f71907f0da5d0e15f9c6c65bb6b
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058838"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622752"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>方案 1：从字符串资源和资产文件生成 PRI 文件
 在此方案中，我们使用[包资源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690) 让新应用代表我们的自定义生成系统。 请记住，此自定义生成系统的目的是为目标 UWP 应用创建 PRI 文件。 因此，作为此演练的一部分，我们将创建一些示例资源文件（包含字符串和其他类型的资源）来代表该目标 UWP 应用的资源。
@@ -139,7 +139,7 @@ MrmResourceIndexerHandle indexer;
 - 默认资源限定符列表。
 - 指向资源索引器图柄的指针，以便函数可以对其进行设置。
 
-下一步是将资源添加到刚刚创建的资源索引器中。 `resources.resw` 是一个包含目标 UWP 应用中性字符串的资源文件 (.resw)。 如果想查看其内容，请向上滚动（在本主题中）。 `de-DE\resources.resw` 包含德语字符串，`en-US\resources.resw` 包含英语字符串。 若要将资源文件内的字符串资源添加到资源索引器，请调用 [**MrmIndexResourceContainerAutoQualifiers**](/windows/desktop/menurc/mrmindexresourcecontainerautoqualifiers)。 第三步，向包含资源索引器中性图像资源的文件调用 [**MrmIndexFile**](/windows/desktop/menurc/mrmindexfile) 函数。
+下一步是将资源添加到刚刚创建的资源索引器中。 `resources.resw` 是包含我们的目标 UWP 应用程序的非特定字符串的资源文件 (.resw)。 如果想查看其内容，请向上滚动（在本主题中）。 `de-DE\resources.resw` 包含我们正使用德语字符串和`en-US\resources.resw`我们英文字符串。 若要将资源文件内的字符串资源添加到资源索引器，请调用 [**MrmIndexResourceContainerAutoQualifiers**](/windows/desktop/menurc/mrmindexresourcecontainerautoqualifiers)。 第三步，向包含资源索引器中性图像资源的文件调用 [**MrmIndexFile**](/windows/desktop/menurc/mrmindexfile) 函数。
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"resources.resw"));
@@ -162,7 +162,7 @@ MrmResourceIndexerHandle indexer;
 ::ThrowIfFailed(::MrmDestroyIndexerAndMessages(indexer));
 ```
 
-由于 PRI 文件是二进制的，如果将二进制 PRI 文件转储为等效 XML，就更易于查看刚才生成的内容。 [**MrmDumpPriFile**](/windows/desktop/menurc/mrmdumpprifile)调用执行该。
+由于 PRI 文件是二进制的，如果将二进制 PRI 文件转储为等效 XML，就更易于查看刚才生成的内容。 调用[ **MrmDumpPriFile** ](/windows/desktop/menurc/mrmdumpprifile)正好。
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmDumpPriFile(filePathPRI.c_str(), nullptr, MrmDumpType::MrmDumpType_Basic, filePathPRIDumpBasic.c_str()));
@@ -227,11 +227,11 @@ MrmResourceIndexerHandle indexer;
 
 第一个字符串资源是来自 `en-US\resources.resw` 的 *EnOnlyString*，它仅有一个候选项（与 *language-en-US* 限定符匹配）。 接下来是来自 `resources.resw` 和 `en-US\resources.resw` 的 *LocalizedString1*。 因此，它有两个候选项：一个与 *language-en-US* 匹配，另一个回退与任何上下文匹配的中性候选项。 同样，*LocalizedString2* 有两个候选项：*language-de-DE* 和中性。 最后，*NeutralOnlyString* 仅以中性形式存在。 将其命名为该名称以明确不应对它进行本地化。
 
-## <a name="summary"></a>小结
+## <a name="summary"></a>摘要
 在此方案中，我们介绍了如何使用[包资源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690) 创建资源索引器。 我们将字符串资源和资产文件添加到资源索引器。 然后，我们使用资源索引器生成二进制 PRI 文件。 最后，我们以 XML 形式转储二进制 PRI 文件，以便可以确认其中含有预期的信息。
 
 ## <a name="important-apis"></a>重要的 API
-* [包资源索引 (PRI) 参考](https://msdn.microsoft.com/library/windows/desktop/mt845690)
+* [索引 (PRI) 引用的包资源](https://msdn.microsoft.com/library/windows/desktop/mt845690)
 
 ## <a name="related-topics"></a>相关主题
-* [包资源索引 (PRI) API 和自定义生成系统](pri-apis-custom-build-systems.md)
+* [包资源编制索引 (PRI) Api 和自定义生成系统](pri-apis-custom-build-systems.md)

@@ -1,6 +1,6 @@
 ---
 title: 使用 alpha 通道的纹理
-description: 有两种方式对展示更复杂的透明度的纹理映射进行编码。
+description: 有两种方法可用于对展现更复杂透明度的纹理贴图进行编码。
 ms.assetid: 768A774A-4F21-4DDE-B863-14211DA92926
 keywords:
 - 使用 alpha 通道的纹理
@@ -8,20 +8,20 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 88d150383d2be219e7f382e0e690771acbc9d2ee
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934001"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651472"
 ---
 # <a name="textures-with-alpha-channels"></a>使用 alpha 通道的纹理
 
 
-有两种方法可用于对展现更复杂透明度的纹理贴图进行编码。 在每种情况下，描述透明度的块都在已描述的 64 位块之前。 透明度以 4x4 位图表示，每个像素 4 位（显示编码）或者具有更少位和线性内插（与用于颜色编码的类似）。
+有两种方法可用于对展现更复杂透明度的纹理贴图进行编码。 在每种情况下，描述透明度的块都在已描述的 64 位块之前。 透明度以 4 x 4 位图表示，其中每个像素具有 4 位（显式编码）或者具有更少位和线性插值（与用于颜色编码的值类似）。
 
 透明数据块和颜色块的排列方式如下表所示。
 
-| Word 地址 | 64 位块                      |
+| 字地址 | 64 位块                      |
 |--------------|-----------------------------------|
 | 3:0          | 透明数据块                |
 | 7:4          | 之前所述的 64 位块 |
@@ -37,7 +37,7 @@ ms.locfileid: "8934001"
 
 ![64 位透明数据块图示](images/colors4.png)
 
-**注意**的 Direct3D 压缩法使用四个最高有效位。
+**请注意**   Direct3D 的压缩方法使用四个最高有效位。
 
  
 
@@ -91,10 +91,10 @@ word 3 的布局：
 
 在 BC1 中用于确定纹素是否透明的颜色对比并没有使用这种格式。 假定在没有颜色对比的情况下，始终将颜色数据处理成 4 颜色模式。
 
-## <a name="span-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanthree-bit-linear-alpha-interpolation"></a><span id="Three-Bit-Linear-Alpha-Interpolation"></span><span id="three-bit-linear-alpha-interpolation"></span><span id="THREE-BIT-LINEAR-ALPHA-INTERPOLATION"></span>三位线性 alpha 内插
+## <a name="span-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanthree-bit-linear-alpha-interpolation"></a><span id="Three-Bit-Linear-Alpha-Interpolation"></span><span id="three-bit-linear-alpha-interpolation"></span><span id="THREE-BIT-LINEAR-ALPHA-INTERPOLATION"></span>三位 alpha 的线性内插
 
 
-BC3 格式的透明度编码概念与针对颜色的线性编码的相似。 两个 8 位 alpha 值以及一个 4x4 位图（每个像素为 3 位）保存在块的前八个字节中。 典型的 alpha 值用于插入中间 alpha 值。 其他信息则在两个 alpha 值保存的过程中提供。 如果 alpha\_0 大于 alpha\_1，则六个中间 alpha 值可以通过插入的形式创建。 或者，四个中间 alpha 值可以插入指定的 alpha 极值之间。 其他两个隐式 alpha 值分别为 0（完全透明）以及 255（完全不透明）。
+BC3 格式的透明度编码概念与针对颜色的线性编码的相似。 两个 8 位 alpha 值以及一个 4x4 位图（每个像素为 3 位）保存在块的前八个字节中。 典型的 alpha 值用于插入中间 alpha 值。 其他信息则在两个 alpha 值保存的过程中提供。 如果 alpha\_0 大于 alpha\_1，则六个中间的 alpha 值创建的内插。 或者，四个中间 alpha 值可以插入指定的 alpha 极值之间。 其他两个隐式 alpha 值分别为 0（完全透明）以及 255（完全不透明）。
 
 以下代码示例描述了此算法。
 
@@ -124,16 +124,16 @@ else {
 
 alpha 块的内存布局如下所示：
 
-| 字节 | Alpha                                                          |
+| Byte | Alpha                                                          |
 |------|----------------------------------------------------------------|
 | 0    | Alpha\_0                                                       |
 | 1    | Alpha\_1                                                       |
-| 2    | \[0\]\[2\]（2 个 MSB）、\[0\]\[1\]、\[0\]\[0\]                    |
-| 3    | \[1\]\[1\] (1 MSB)、\[1\]\[0\]、\[0\]\[3\]、\[0\]\[2\]（1 个 LSB） |
-| 4    | \[1\]\[3\]、\[1\]\[2\]、\[1\]\[1\]（2 个 LSB）                    |
-| 5    | \[2\]\[2\]（2 个 MSB）、\[2\]\[1\]、\[2\]\[0\]                    |
-| 6    | \[3\]\[1\]（1 个 MSB）、\[3\]\[0\]、\[2\]\[3\]、\[2\]\[2\]（1 个 LSB） |
-| 7    | \[3\]\[3\]、\[3\]\[2\]、\[3\]\[1\]（2 个 LSB）                    |
+| 2    | \[0\]\[2\] (2 个 MSBs) \[0\]\[1\]， \[0\]\[0\]                    |
+| 3    | \[1\]\[1\] (1 MSB) \[1\]\[0\]， \[0\]\[3\]， \[0\]\[2\] (1 LSB) |
+| 4    | \[1\]\[3\]， \[1\]\[2\]， \[1\]\[1\] (2 个 LSBs)                    |
+| 5    | \[2\]\[2\] (2 个 MSBs) \[2\]\[1\]， \[2\]\[0\]                    |
+| 6    | \[3\]\[1\] (1 MSB) \[3\]\[0\]， \[2\]\[3\]， \[2\]\[2\] (1 LSB) |
+| 7    | \[3\]\[3\]， \[3\]\[2\]， \[3\]\[1\] (2 个 LSBs)                    |
 
  
 

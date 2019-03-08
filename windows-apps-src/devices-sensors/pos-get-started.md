@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 518529fecff9f25a83a03847b1623bf9f09a8145
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115997"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661152"
 ---
 # <a name="getting-started-with-point-of-service"></a>服务点入门
 
@@ -152,7 +152,7 @@ catch (Exception ex)
 ```
 
 ### <a name="retaining-the-device"></a>保留设备
-当通过网络或蓝牙连接使用服务点设备时，你可能希望与网络上的其他应用共享该设备。 （有关详细信息，请参阅[共享设备](#sharing-a-device-between-apps)。）在其他情况下，你可能要保留此设备以便长期使用。 此示例演示在另一个应用请求发布设备后，如何保留已声明的条形码扫描仪。
+当通过网络或蓝牙连接使用服务点设备时，你可能希望与网络上的其他应用共享该设备。 (有关详细信息，请参阅[共享的设备](#sharing-a-device-between-apps)。)在其他情况下，你可能想要保存到适用于长时间使用的设备。 此示例演示在另一个应用请求发布设备后，如何保留已声明的条形码扫描仪。
 
 ```Csharp
 claimedBarcodeScanner.ReleaseDeviceRequested += claimedBarcodeScanner_ReleaseDeviceRequested;
@@ -208,9 +208,9 @@ if (claimedBarcodeScanner != null)
 > 已声明和未声明的服务点设备类会实现 [IClosable 接口](https://docs.microsoft.com/uwp/api/windows.foundation.iclosable)。 如果设备已通过网络或蓝牙连接到应用，在连接另一个应用前必须丢弃已声明和未声明的对象。
 
 ## <a name="see-also"></a>另请参阅
-+ [条形码扫描仪示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
-+ [收银机示例]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
++ [条形码扫描程序示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
++ [现金抽屉示例]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
 + [行显示示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
-+ [磁条阅读器示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
++ [磁条读取器示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
 + [POSPrinter 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
 

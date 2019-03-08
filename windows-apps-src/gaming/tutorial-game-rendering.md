@@ -7,13 +7,13 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 呈现
 ms.localizationpriority: medium
 ms.openlocfilehash: 108e9bf21b0552ac7f88721bf4b1ee72ca2a5e2c
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117747"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610502"
 ---
-# <a name="rendering-framework-ii-game-rendering"></a>呈现框架 II：游戏呈现
+# <a name="rendering-framework-ii-game-rendering"></a>呈现框架 II:游戏渲染
 
 在[呈现框架 I](tutorial--assembling-the-rendering-pipeline.md) 中，我们介绍了如何获取场景信息并呈现在显示屏幕上。 现在，我们将后退一步，了解如何准备要呈现的数据。
 
@@ -25,10 +25,10 @@ ms.locfileid: "9117747"
 快速回顾一下目标。 了解如何设置基本呈现框架，以便为 UWP DirectX 游戏显示图形输出。 我们可以大致将其归纳为以下三个步骤。
 
  1. 与图形界面建立连接
- 2. 准备：创建绘制图形所需的资源
- 3. 显示图形：呈现框架
+ 2. 准备：创建用于绘制图形所需的资源
+ 3. 显示图形：渲染的帧
 
-[呈现框架 I：呈现简介](tutorial--assembling-the-rendering-pipeline.md)介绍图形的呈现方式，涵盖步骤 1 和 3。 
+[呈现框架实现：简介呈现](tutorial--assembling-the-rendering-pipeline.md)解释如何呈现图形，从而覆盖步骤 1 和 3。 
 
 本文介绍如何设置此框架的其他部分以及准备在发生呈现前所需的数据，即该流程的步骤 2。
 
@@ -41,15 +41,15 @@ ms.locfileid: "9117747"
 * 在此类中定义常量缓冲区是为了保留呈现所需的各种数据。
     * 使用具有不同频率的多个常量缓冲区是为了减少每帧必须发送到 GPU 的数据量。 该示例基于常量必须更新的频率将它们分为不同的缓冲区。 这是 Direct3D 编程的最佳做法。 
     * 在此游戏示例中，定义了 4 个常量缓冲区。
-        1. __m\_constantBufferNeverChanges__ 包含照明参数。 它在 __FinalizeCreateGameDeviceResources__ 方法中设置一次，此后不再更改。
-        2. __m\_constantBufferChangeOnResize__ 包含投影矩阵。 投影矩阵依赖于窗口的大小和纵横比。 它在 [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) 方法中设置一次，然后在使用 [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) 方法加载资源后进行更新。 如果在 3D 中呈现，也会每帧更改两次。
-        3. __m\_constantBufferChangesEveryFrame__ 包含视图矩阵。 此矩阵依赖于相机位置和观看方向（投影的法线），并且使用 __Render__ 方法每帧仅更改一次。 之前在__呈现框架 I：呈现简介__中的 [__GameRenderer::Render__方法](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method)中进行了讨论。
-        4. __m\_constantBufferChangesEveryPrim__ 包含每个基元的模型矩阵和材料属性。 模型矩阵将顶点从本地坐标转换为世界坐标。 这些常量特定于每个基元并在每次绘图调用时更新。 之前在__呈现框架 I：呈现简介__中的[基元呈现](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering)下进行了讨论。
+        1. __m\_constantBufferNeverChanges__包含照明参数。 它在 __FinalizeCreateGameDeviceResources__ 方法中设置一次，此后不再更改。
+        2. __m\_constantBufferChangeOnResize__包含投影矩阵。 投影矩阵基于窗口的大小和纵横比。 它在 [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) 方法中设置一次，然后在使用 [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) 方法加载资源后进行更新。 如果在 3D 中呈现，也会每帧更改两次。
+        3. __m\_constantBufferChangesEveryFrame__包含视图矩阵。 此矩阵依赖于相机位置和观看方向（投影的法线），并且使用 __Render__ 方法每帧仅更改一次。 这之前在讨论__呈现框架实现：对呈现简介__下[ __GameRenderer::Render__方法](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method)。
+        4. __m\_constantBufferChangesEveryPrim__包含每个基元的模型矩阵和材料属性。 模型矩阵将顶点从本地坐标转换为世界坐标。 这些常量特定于每个基元并在每次绘图调用时更新。 这之前在讨论__呈现框架实现：对呈现简介__下[基元呈现](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering)。
 * 保持基元纹理的着色器资源对象也在此类中定义。
     * 一些纹理已预先定义（[DDS](https://msdn.microsoft.com/library/windows/desktop/bb943991.aspx) 是可用来存储压缩和未压缩纹理的文件格式。 DDS 纹理用于游戏世界的墙壁和地面以及弹药范围。）
-    * 在此游戏示例中，着色器资源对象为：__m\_sphereTexture__、__m\_cylinderTexture__、__m\_ceilingTexture__、__m\_floorTexture__、__m\_wallsTexture__。
+    * 在此游戏的示例中，着色器资源对象是： __m\_sphereTexture__， __m\_cylinderTexture__， __m\_ceilingTexture__， __m\_floorTexture__， __m\_wallsTexture__。
 * 在此类中定义的着色器对象用于计算基元和纹理。 
-    * 在此游戏示例中，着色器对象为 __m\_vertexShader__、__m\_vertexShaderFlat__ 和 __m\_pixelShader__、__m\_pixelShaderFlat__。
+    * 在此游戏的示例中，着色器对象是__m\_vertexShader__， __m\_vertexShaderFlat__，以及__m\_pixelShader__，__m\_pixelShaderFlat__。
     * 顶点着色器处理基元和基本照明，像素着色器（有时称为碎片着色器）处理纹理和任何每像素效果。
     * 这些着色器有两个版本（即规则和平面）来呈现不同的基元。 具有不同版本的原因是平面版本要简单得多，不实现反射高光或任何每像素照明效果。 它们用于墙壁，并且使电量较低的设备的呈现速度更快。
 
@@ -168,7 +168,7 @@ GameRenderer::GameRenderer(const std::shared_ptr<DX::DeviceResources>& deviceRes
 
 在此游戏示例中，哪些内容进入此方法？
 
-* 实例化变量 (__m\_gameResourcesLoaded__ = false and __m\_levelResourcesLoaded__ = false)，指示在继续执行呈现以前是否已加载资源，因为我们正异步加载这些资源。 
+* 实例化变量 (__m\_gameResourcesLoaded__ = false 和__m\_levelResourcesLoaded__ = false)，可指示是否已在移动之前加载的资源若要呈现，因为我们以异步方式加载它们的转发。 
 * 由于 HUD 和覆盖呈现分别位于单独的类对象中，因此在此处调用 __GameHud::CreateDeviceDependentResources__ 和 __GameInfoOverlay::CreateDeviceDependentResources__ 方法。
 
 下面是适用于 __GameRenderer::CreateDeviceDependentResources__ 的代码。
@@ -241,9 +241,9 @@ GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) 
 
 ## <a name="creategamedeviceresourcesasync-method"></a>CreateGameDeviceResourcesAsync 方法
 
-由于我们正异步加载游戏资源，因此从 __create\_task__ 循环中的 __GameMain__ 构造函数方法中调用 __CreateGameDeviceResourcesAsync__。
+__CreateGameDeviceResourcesAsync__从调用__GameMain__中的构造函数方法__创建\_任务__循环由于我们以异步方式加载游戏的资源。
         
-__CreateDeviceResourcesAsync__ 是作为一组单独的异步任务运行以加载游戏资源的一种方法。 由于该方法预计将在单独的线程上运行，因此它只能访问 Direct3D 11 设备方法（在 __ID3D11Device__ 上定义），而不能访问设备上下文方法（在 __ID3D11DeviceContext__ 上定义的方法），所以它不能执行任何呈现。
+__CreateDeviceResourcesAsync__ 是一个方法，作为一组单独的异步任务运行以加载游戏资源。 由于该方法预计将在单独的线程上运行，因此它只能访问 Direct3D 11 设备方法（在 __ID3D11Device__ 上定义），而不能访问设备上下文方法（在 __ID3D11DeviceContext__ 上定义的方法），所以它不能执行任何呈现。
 
 __FinalizeCreateGameDeviceResources__ 方法在主线程上运行，并且具有 Direct3D 11 设备上下文方法的访问权限。
 
@@ -254,13 +254,13 @@ __FinalizeCreateGameDeviceResources__ 方法在主线程上运行，并且具有
 * 使用此方法将纹理（如 .dds 文件）和着色器信息（如 .cso 文件）加载到[着色器](tutorial--assembling-the-rendering-pipeline.md#shaders)中。
 
 此方法用于：
-* 创建 4 个[常量缓冲区](tutorial--assembling-the-rendering-pipeline.md#buffer)：__m\_constantBufferNeverChanges__、__m\_constantBufferChangeOnResize__、__m\_constantBufferChangesEveryFrame__、__m\_constantBufferChangesEveryPrim__
+* 创建了 4[常量缓冲区](tutorial--assembling-the-rendering-pipeline.md#buffer): __m\_constantBufferNeverChanges__， __m\_constantBufferChangeOnResize__， __m\_constantBufferChangesEveryFrame__， __m\_constantBufferChangesEveryPrim__
 * 创建封装用于纹理的采样信息的[采样器状态](tutorial--assembling-the-rendering-pipeline.md#sampler-state)对象
 * 创建一个包含由该方法创建的所有异步任务的任务组。 它等待所有这些异步任务完成，然后调用 __FinalizeCreateGameDeviceResources__。
 * 使用[基本加载器](tutorial--assembling-the-rendering-pipeline.md#basicloader)创建一个加载器。 将加载器的异步加载操作作为任务添加到之前创建的任务组。
 * __BasicLoader::LoadShaderAsync__ 和 __BasicLoader::LoadTextureAsync__ 等方法用于加载：
     * 编译的着色器对象（VertextShader.cso、VertexShaderFlat.cso、PixelShader.cso 和 PixelShaderFlat.cso）。 有关详细信息，请转到[各种着色器文件格式](tutorial--assembling-the-rendering-pipeline.md#various-shader-file-formats)。
-    * 游戏特定纹理（Assets\\seafloor.dds、metal_texture.dds、cellceiling.dds、cellfloor.dds、cellwall.dds)。
+    * 游戏特定纹理 (资产\\seafloor.dds、 metal_texture.dds、 cellceiling.dds、 cellfloor.dds、 cellwall.dds)。
 
 ```cpp
 task<void> GameRenderer::CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game)
@@ -363,8 +363,8 @@ __FinalizeCreateGameDeviceResources__ 方法在 __CreateGameDeviceResourcesAsync
 __FinalizeCreateGameDeviceResources__ 和 [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) 在以下方面共享代码的相似部分：
 * 使用 __SetProjParams__ 确保摄像头具有正确的投影矩阵。 有关详细信息，请转到[相机和坐标空间](tutorial--assembling-the-rendering-pipeline.md#camera-and-coordinate-space)。
 * 通过将放大倍数的 3D 旋转矩阵发布到相机投影矩阵的方式处理屏幕旋转。 然后使用生成的投影矩阵更新 __ConstantBufferChangeOnResize__ 常量缓冲区。
-* 设置 __m\_gameResourcesLoaded__ __布尔__全局变量，以指示资源现已加载到缓冲区，可随时执行下一步。 回想一下，我们首先通过 __GameRenderer::CreateDeviceDependentResources__ 方法在 __GameRenderer__ 的构造函数方法中将此变量初始化为 __FALSE__。 
-* 当此 __m\_gameResourcesLoaded__ 为 __TRUE__ 时，可以呈现场景对象。 在__呈现框架 I：呈现简介__文章的 [__GameRenderer::Render__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method) 方法部分对此进行了介绍。
+* 设置__m\_gameResourcesLoaded__ __布尔__全局变量，以指示现在已准备好进行下一步的缓冲区中加载资源。 回想一下，我们首先通过 __GameRenderer::CreateDeviceDependentResources__ 方法在 __GameRenderer__ 的构造函数方法中将此变量初始化为 __FALSE__。 
+* 当这__m\_gameResourcesLoaded__是__TRUE__，呈现场景对象发生。 中已包含此__呈现框架实现：对呈现简介__一文中，在[ __GameRenderer::Render 方法__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method)。
 
 ```cpp
 // When creating this sample game using the DirectX 11 App template, this method needs to be created.
@@ -581,7 +581,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 ## <a name="createwindowsizedependentresource-method"></a>CreateWindowSizeDependentResource 方法
 
-每当窗口大小、方向、启用了立体声的呈现或分辨率更改时，调用 CreateWindowSizeDependentResources 方法。 在示例游戏中，它会更新__ConstantBufferChangeOnResize__中的投影矩阵。
+每当窗口大小、方向、启用了立体声的呈现或分辨率更改时，调用 CreateWindowSizeDependentResources 方法。 在示例游戏中，它会更新中的投影矩阵__ConstantBufferChangeOnResize__。
 
 窗口大小资源按照此方法进行更新： 
 * 应用框架获取表示窗口状态更改的多个可能事件的其中一个。 

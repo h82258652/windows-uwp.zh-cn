@@ -1,5 +1,5 @@
 ---
-Description: Use a tooltip to reveal more info about a control before asking the user to perform an action.
+Description: 要求用户执行操作之前，使用工具提示显示有关控件的详细信息。
 title: 工具提示
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
@@ -13,11 +13,11 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 80591abb1e3130540ea94bc1f8d2602b90edc590
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037059"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613662"
 ---
 # <a name="tooltips"></a>工具提示
 
@@ -25,7 +25,7 @@ ms.locfileid: "9037059"
 
 ![工具提示](images/controls/tool-tip.png)
 
-> **重要 API**:[工具提示类](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)，[ToolTipService 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
+> **重要的 Api**:[工具提示类](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)， [ToolTipService 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -33,25 +33,25 @@ ms.locfileid: "9037059"
 
 应在何时使用工具提示？ 在决定之前，请考虑以下问题：
 
-- **信息是否应当基于指针悬停显示？**
+- **应基于指针悬停在信息变得可见？**
     如果不是，请使用其他控件。 仅在与用户交互时显示提示，工具提示从来不会自行显示。
 
 - **控件是否有文本标签？**
     如果没有，请使用工具提示提供标签。 比较好的 UX 设计做法是以内联方式为大多数控件添加标签，对于这些控件，你不需要使用工具提示。 仅显示图标的工具栏控件和命令按钮需要工具提示。
 
-- **对象是否受益于相关说明或更详细的信息？**
+- **一个对象是否从说明或进一步信息受益？**
     如果是，请使用工具提示。 但是，文本必须是补充性的文本，也就是说不是主要任务必需的文本。 如果是必需的文本，请将它直接放在 UI 中，这样用户便不必查找或搜寻它。
 
-- **补充信息是否为错误、警告或状态？**
+- **错误、 警告或状态是补充信息？**
     如果是，请使用其他 UI 元素（如弹出窗口）。
 
 - **用户是否需要与提示进行交互？**
     如果是，请使用其他控件。 用户不能与提示进行交互，因为移动鼠标会导致提示消失。
 
-- **用户是否需要打印补充信息？**
+- **用户是否需要打印的补充信息？**
     如果是，请使用其他控件。
 
-- **用户是否会觉得提示令人厌烦或者让人分心？**
+- **用户将找到令人讨厌的或分散注意力的提示？**
     如果是，请考虑使用其他解决方案（包括不执行任何操作）。 如果你的确使用了可能会让人分心的提示，请允许用户关闭它们。
 
 ## <a name="example"></a>示例
@@ -63,7 +63,7 @@ ms.locfileid: "9037059"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/ToolTip">打开此应用，了解 ToolTip 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -112,7 +112,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 默认情况下，工具提示在指针上方居中显示。 工具提示的放置位置不受应用窗口的约束，因此工具提示可能部分或完全显示在应用窗口边界的外部。
 
-对于广泛调整，用于[放置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)属性或**ToolTipService.Placement**附加属性指定是否在工具提示应绘制上方、 下方、 左方或右方指针。 你可以设置要更改在指针和工具提示之间的距离的[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)或[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)属性。 只有一个两个偏移量值将会影响最终位置-VerticalOffset 放置时保留放置的顶部或底部，HorizontalOffset 或向右。
+对于广泛的调整，使用[放置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)属性或**ToolTipService.Placement**附加属性指定是否应绘制工具提示，上面、 下面左侧或右侧的指针。 可以设置[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)或[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)属性以更改指针和工具提示之间的距离。 只有一个偏移量的两个值将会影响最终位置-VerticalOffset 放置时顶部或底部，HorizontalOffset 时放置左或向右。
 
 ```xaml
 <!-- An Image with an offset ToolTip. -->
@@ -125,7 +125,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 </Image>
 ```
 
-如果工具提示遮盖了它所指的内容，你可以调整它精确地使用新的**PlacementRect**属性的位置。 PlacementRect 定位工具提示的位置，并提供足够的屏幕空间，此区域之外绘制工具提示也用作工具提示将不会阻挡，一个区域。 你可以指定相对于工具提示的所有者和高度矩形的原点和排除区域的宽度。 如果工具提示应绘制上方、 下方、 左方或右方 PlacementRect，定义的[位置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)属性。 
+如果工具提示遮盖它所引用的内容，您可以调整它准确地使用新的放置位置**PlacementRect**属性。 PlacementRect 锚点的工具提示的位置，并提供足够的屏幕空间，无法在此区域外绘制工具提示还作为工具提示不会遮蔽，一个区域。 您可以指定相对于工具提示的所有者和高度的矩形的原点和排除区域的宽度。 [放置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)属性将定义如果上面、 下面左侧或右侧的 PlacementRect 应绘制工具提示。 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->
@@ -145,7 +145,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 - 适当时使用图像。 有时最好在工具提示中使用图像。 例如，当用户将鼠标指针悬停在超链接上时，你可以使用工具提示显示链接页面的预览。
 - 不要使用工具提示来显示 UI 中已有的文本。 例如，不要在按钮上放置显示内容与按钮文本相同的工具提示。
 - 不要在工具提示内部放置交互式控件。
-- 不要将看似交互式控件的图像放在工具提示内部。
+- 不要将看上去像交互式控件的图像放在工具提示内部。
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
@@ -153,4 +153,4 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 ## <a name="related-articles"></a>相关文章
 
-- [ToolTip 类](https://msdn.microsoft.com/library/windows/apps/br227608)
+- [工具提示类](https://msdn.microsoft.com/library/windows/apps/br227608)

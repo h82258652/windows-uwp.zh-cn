@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, directx, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 6779fd95d4fd1964a8ca19aa4a7a9f9c29a6179b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044378"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602122"
 ---
 # <a name="plan-your-directx-port"></a>规划 DirectX 移植
 
@@ -35,11 +35,11 @@ ms.locfileid: "9044378"
 
 你必须将 D3DX 和 DXUT 帮助程序库替换为你自己的帮助程序库或替换为社区工具。 有关详细信息，请参阅[功能映射](feature-mapping.md)部分。
 
-> **注意**你可以使用[DirectX 工具包](https://go.microsoft.com/fwlink/p/?LinkID=248929)或[DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926)来替换以前由 D3DX 和 DXUT 提供一些功能。
+> **请注意**  可以使用[DirectX 工具套件](https://go.microsoft.com/fwlink/p/?LinkID=248929)或[DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926)来替换原来由 D3DX 和 DXUT 某些功能。
 
  
 
-应该使用着色器模型 4 级别 9\_1 或 9\_3 功能将采用汇编语言编写的着色器升级到 HLSL，并且需要将为“效果”库编写的着色器更新到较新版本的 HLSL 语法。 有关详细信息，请参阅[功能映射](feature-mapping.md)部分。
+着色器程序集语言编写的应升级到使用着色器模型 4 级别 9 HLSL\_1 或 9\_3 个功能和着色器效果库都需要更新到较新版本的 HLSL 语法为编写。 有关详细信息，请参阅[功能映射](feature-mapping.md)部分。
 
 熟悉不同的 [Direct3D 功能级别](https://msdn.microsoft.com/library/windows/desktop/ff476876)。 功能级别通过定义已知的功能集对广泛的视频硬件进行分类。 每个功能集都大致与 Direct3D 的版本相对应，从 9.1 到 11.2。 所有功能级别都使用 DirectX 11 API。
 

@@ -4,14 +4,14 @@ description: 了解如何使用 Xbox Live 数据平台增强“完整状态”�
 ms.assetid: 626c1661-3be9-49e4-a5ce-d3f5abd79a9b
 ms.date: 04/04/2017
 ms.topic: article
-keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
+keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b59e26431170e933b0b73a09ce8ecbfd360716a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921419"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599332"
 ---
 # <a name="rich-presence-appendix"></a>“完整状态”附录
 

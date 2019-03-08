@@ -3,14 +3,14 @@ title: “我的人脉”通知
 description: 介绍如何创建和使用“我的人脉”通知，这类通知是一种新的 Toast。
 ms.date: 10/25/2017
 ms.topic: article
-keywords: windows 10，uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e4657c9dfb651c1e7f6bb4e2cafdc49d0a11237b
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058718"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630562"
 ---
 # <a name="my-people-notifications"></a>“我的人脉”通知
 
@@ -134,7 +134,7 @@ XmlDocument xmlContent = new XmlDocument();
 xmlContent.LoadXml(xmlText);
 ```
 
-然后，你可以使用此代码来创建和发送 Toast：
+然后，你可以使用此代码来创建和发送 toast：
 
 ```CSharp
 ToastNotification notification = new ToastNotification(xmlContent);
@@ -151,7 +151,7 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 如果“我的人脉”通知回退到 Toast，则将忽略第二个特定于“我的人脉”的绑定，并且仅使用第一个绑定来显示 Toast。 这正是为何在第一个 Toast 绑定中提供回退负载很重要。
 
 ## <a name="see-also"></a>另请参阅
-+ [“我的人脉”通知示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
-+ [添加“我的人脉”支持](my-people-support.md)
-+ [自适应 Toast 通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
++ [我的人通知示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
++ [添加我的人支持](my-people-support.md)
++ [自适应的 toast 通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
 + [ToastNotification 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)

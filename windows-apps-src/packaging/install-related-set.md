@@ -6,21 +6,21 @@ ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
 ms.openlocfilehash: 946c0ae2251d1f75ea250d43881b29b172b9ad1d
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116159"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637142"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>使用应用安装程序文件安装相关集
 
 如果你刚开始使用 UWP 可选包或相关集，那么以下文章是开始入门的优良资源。 
 
-1.  [使用可选包扩展你的应用程序](https://blogs.msdn.microsoft.com/appinstaller/2017/04/05/uwpoptionalpackages/)
-2.  [生成你的第一个可选包](https://blogs.msdn.microsoft.com/appinstaller/2017/05/09/build-your-first-optional-package/)
-3.  [从可选包加载代码](https://blogs.msdn.microsoft.com/appinstaller/2017/05/11/loading-code-from-an-optional-package/)
-4.  [用于创建相关集的工具](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)
-5.  [可选包和相关集的创作](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)
+1.  [扩展应用程序中使用可选包](https://blogs.msdn.microsoft.com/appinstaller/2017/04/05/uwpoptionalpackages/)
+2.  [生成第一个可选包](https://blogs.msdn.microsoft.com/appinstaller/2017/05/09/build-your-first-optional-package/)
+3.  [从一种可选包加载代码](https://blogs.msdn.microsoft.com/appinstaller/2017/05/11/loading-code-from-an-optional-package/)
+4.  [工具，以创建相关集](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)
+5.  [可选包和相关的一组创作](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)
 
 使用 Windows 10 Fall Creators Update，现在可以通过应用安装程序来安装相关集。 这样，可以向用户分发和部署相关集的应用包。 
 
@@ -75,7 +75,7 @@ ms.locfileid: "9116159"
 ### <a name="step-1-create-the-appinstaller-file"></a>第 1 步：创建 *.appinstaller 文件
 使用文本编辑器，创建一个文件（其中将包含 XML）并将其命名为 &lt;文件名&gt;.appinstaller 
 
-### <a name="step-2-add-the-basic-template"></a>第 2 步：添加基本模板
+### <a name="step-2-add-the-basic-template"></a>步骤 2：添加基本模板
 基本模板包括应用安装程序文件信息。 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -86,8 +86,8 @@ ms.locfileid: "9116159"
 </AppInstaller>
 ```
 
-### <a name="step-3-add-the-main-package-information"></a>第 3 步：添加主要包信息 
-如果主应用包是.appxbundle 或.msixbundle 文件，然后使用`<MainBundle>`如下所示。 如果主应用包是.appx 或.msix 文件，然后使用`<MainPackage>`替代`<MainBundle>`的代码片段中。 
+### <a name="step-3-add-the-main-package-information"></a>步骤 3:将主包信息添加 
+如果主要应用程序包是.appxbundle 或.msixbundle 文件，然后使用`<MainBundle>`如下所示。 如果主应用包的.appx 或.msix 文件，然后使用`<MainPackage>`来代替`<MainBundle>`代码段中。 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -106,7 +106,7 @@ ms.locfileid: "9116159"
 ```
 `<MainBundle>` 或 `<MainPackage>` 属性中的信息应该分别与应用程序包清单或应用包清单中的 [Package/Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) 元素匹配。 
 
-### <a name="step-4-add-the-optional-packages"></a>第 4 步：添加可选包 
+### <a name="step-4-add-the-optional-packages"></a>步骤 4：添加可选包 
 类似于主应用包属性，如果可选包可以是应用包或应用程序包，则 `<OptionalPackages>` 属性中的子元素应该分别是 `<Package>` 或 `<Bundle>`。 子元素中的包信息应该与程序包或程序包清单中的 Identity 元素相匹配。 
 
 ``` xml
@@ -146,7 +146,7 @@ ms.locfileid: "9116159"
 </AppInstaller>
 ```
 
-### <a name="step-5-add-dependencies"></a>第 5 步：添加依赖项 
+### <a name="step-5-add-dependencies"></a>步骤 5：添加依赖项 
 在依赖项元素中，你可以指定主要包或可选包所需的框架包。 
 
 ``` xml
@@ -192,7 +192,7 @@ ms.locfileid: "9116159"
 </AppInstaller>
 ```
 
-### <a name="step-6-add-update-setting"></a>第 6 步：添加更新设置 
+### <a name="step-6-add-update-setting"></a>步骤 6：添加的更新设置 
 应用安装程序文件还可以指定更新设置，以便在发布较新的应用安装程序文件时可以自动更新相关集。 **<UpdateSettings>** 是可选元素。 在 **<UpdateSettings>** 中，OnLaunch 选项指定应在应用启动时进行更细你检查，HoursBetweenUpdateChecks="12" 则指定应每隔 12 小时执行更新检查。 如果未指定 HoursBetweenUpdateChecks，则用于检查更新的默认时间间隔为 24 小时。
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>

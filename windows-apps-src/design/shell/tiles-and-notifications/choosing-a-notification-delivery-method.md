@@ -1,5 +1,5 @@
 ---
-Description: This article covers the four notification options&\#8212;local, scheduled, periodic, and push&\#8212;that deliver tile and badge updates and toast notification content.
+Description: 本文介绍了四个通知选项 &\#8212; 本地计划，定期，和推送 （& a)\#8212; 提供磁贴和徽章更新和 toast 通知内容。
 title: 选择通知传递方法
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 503f7baad0d91f4e7c29010145ecb162f98bc81c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939703"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606282"
 ---
 # <a name="choose-a-notification-delivery-method"></a>选择通知传递方法
 
@@ -27,9 +27,9 @@ ms.locfileid: "8939703"
 
 应用可使用 4 种机制传递通知：
 
--   **本地**
+-   **Local**
 -   **计划**
--   **定期**
+-   **Periodic**
 -   **推送**
 
 下表总结了通知传递类型。
@@ -103,8 +103,8 @@ ms.locfileid: "8939703"
 
 尽管这些 API 调用是本地的，但通知可引用 Web 图像。 如果 Web 图像不可供下载、已损坏或不符合图像规范，磁贴和 Toast 的反应会有所不同：
 
--   磁贴：不会显示更新
--   Toast：显示通知，但会丢弃图像
+-   图块：更新不会显示
+-   Toast 通知：将显示通知，但在删除你的映像
 
 默认情况下，本地 toast 通知在三天后过期，而本地磁贴通知永远不会过期。 我们建议使用适合你的通知的明确过期时间（toast 的最长有效期为三天）替代这些默认值。 
 
@@ -112,7 +112,7 @@ ms.locfileid: "8939703"
 
 -   [发送本地磁贴通知](sending-a-local-tile-notification.md)
 -   [发送本地 toast 通知](send-local-toast.md)
--   [通用 Windows 平台 (UWP) 通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [通用 Windows 平台 (UWP) 通知的代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="scheduled-notifications"></a>计划通知
 
@@ -125,7 +125,7 @@ ms.locfileid: "8939703"
 
 有关详细信息，请参阅以下主题：
 
--   [通用 Windows 平台 (UWP) 通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [通用 Windows 平台 (UWP) 通知的代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="periodic-notifications"></a>定期通知
 
@@ -139,7 +139,7 @@ ms.locfileid: "8939703"
 有关详细信息，请参阅以下主题：
 
 -   [定期通知概述](periodic-notification-overview.md)
--   [通用 Windows 平台 (UWP) 通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [通用 Windows 平台 (UWP) 通知的代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="push-notifications"></a>推送通知
 
@@ -153,8 +153,8 @@ ms.locfileid: "8939703"
 有关详细信息，请参阅：
 
 -   [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)
--   [推送通知指南](https://msdn.microsoft.com/library/windows/apps/hh761462)
--   [通用 Windows 平台 (UWP) 通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [推送通知指导原则](https://msdn.microsoft.com/library/windows/apps/hh761462)
+-   [通用 Windows 平台 (UWP) 通知的代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
 ## <a name="related-topics"></a>相关主题
@@ -162,11 +162,11 @@ ms.locfileid: "8939703"
 
 * [发送本地磁贴通知](sending-a-local-tile-notification.md)
 * [发送本地 toast 通知](send-local-toast.md)
-* [推送通知指南](https://msdn.microsoft.com/library/windows/apps/hh761462)
-* [Toast 通知指南](https://msdn.microsoft.com/library/windows/apps/hh465391)
+* [推送通知指导原则](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [Toast 通知准则](https://msdn.microsoft.com/library/windows/apps/hh465391)
 * [定期通知概述](periodic-notification-overview.md)
 * [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)
-* [GitHub 上的通用 Windows 平台 (UWP) 通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+* [通用 Windows 平台 (UWP) 通知的代码在 GitHub 上的示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
  
 
  

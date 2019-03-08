@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6efe7aa27721f519ba93052abf2d0e8189f58941
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933717"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622312"
 ---
 # <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>使用系统生成的值
 
 
-系统生成的值由[输入装配器 (IA) 阶段](input-assembler-stage--ia-.md)（基于用户提供的输入[语义](https://msdn.microsoft.com/library/windows/desktop/bb509647)）生成，用于在一定程度上提高着色器运算的效率。 通过附加数据，如实例 ID（对[顶点着色器 (VS) 阶段](vertex-shader-stage--vs-.md)可见）、顶点 ID（对 VS 可见）或基元 ID（对[几何着色器 (GS) 阶段](geometry-shader-stage--gs-.md)/[像素着色器 (PS) 阶段](pixel-shader-stage--ps-.md)可见），后续的着色器阶段可以查找这些系统值，从而优化相应阶段内的处理。
+系统生成的值由[输入装配器 (IA) 阶段](input-assembler-stage--ia-.md)（基于用户提供的输入[语义](https://msdn.microsoft.com/library/windows/desktop/bb509647)）生成，用于在一定程度上提高着色器运算的效率。 通过附加数据，如实例 ID（对[顶点着色器 (VS) 阶段](vertex-shader-stage--vs-.md)可见）、顶点 ID（对 VS 可见）或基元 ID（对[几何着色器 (GS) 阶段](geometry-shader-stage--gs-.md)/[像素着色器 (PS) 阶段](pixel-shader-stage--ps-.md)可见），后续的着色器阶段可以查找这些系统值，从而对当前阶段的处理进行优化。
 
 例如，VS 阶段可能查找实例 ID 以便为着色器获取更多每顶点数据，或者执行其他操作；GS 和 PS 阶段可能使用基元 ID 以相同的方式获取每基元数据。
 

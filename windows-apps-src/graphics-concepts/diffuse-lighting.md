@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1785b06aa2217e8ec15aeaa560bd98a65522df2e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939603"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603372"
 ---
 # <a name="diffuse-lighting"></a>漫射照明
 
@@ -25,9 +25,9 @@ ms.locfileid: "8939603"
 
 漫射照明可用以下公式说明。
 
-Diffuse Lighting = sum\[C<sub>d</sub>\*L<sub>d</sub>\*(N<sup>.</sup>L<sub>dir</sub>)\*Atten\*Spot\]
+漫射照明 = 总和\[C<sub>d</sub>\*L<sub>d</sub>\*(N<sup>。</sup>L<sub>dir</sub>)\*输入\*位置\]
 
-| 参数       | 默认值 | 类型          | 描述                                                                                      |
+| 参数       | 默认值 | 在任务栏的搜索框中键入          | 描述                                                                                      |
 |-----------------|---------------|---------------|--------------------------------------------------------------------------------------------------|
 | 总和             | 不适用           | 不适用           | 每束光线的漫射分量的总和。                                                     |
 | C<sub>d</sub>   | (0,0,0,0)     | D3DCOLORVALUE | 漫射颜色。                                                                                   |
@@ -67,7 +67,7 @@ Diffuse Lighting = sum\[C<sub>d</sub>\*L<sub>d</sub>\*(N<sup>.</sup>L<sub>dir</s
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[照明的数学运算](mathematics-of-lighting.md)
+[照明的数学](mathematics-of-lighting.md)
 
  
 

@@ -7,15 +7,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏 2015
 ms.localizationpriority: medium
 ms.openlocfilehash: 1092c84521271e996db0b89630d22f7e51727bfa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943328"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596882"
 ---
 # <a name="updated-flows-for-multiplayer-game-invites"></a>更新的多人游戏邀请流程
 
-由于听取了 Xbox One Beta 的反馈，从 Xbox One 恢复更新 24 起，多人游戏邀请的用户体验流程已经更改，且已于 2013 年 11 月 6 日发布。这是对**仅用户体验 (UX)** 的更改，不会从游戏角度影响任何行为或功能。 作品开发人员不需要进行任何代码更改。
+由于听取了 Xbox One Beta 的反馈，从 Xbox One 恢复更新 24 起，多人游戏邀请的用户体验流程已经更改，且已于 2013 年 11 月 6 日发布。 这是对**仅用户体验 (UX)** 的更改，不会从游戏角度影响任何行为或功能。 作品开发人员不需要进行任何代码更改。
 
 ## <a name="summary-of-changes"></a>更改摘要
 
@@ -23,7 +23,7 @@ ms.locfileid: "8943328"
 
 -   当用户选择新的“&lt;游戏标题&gt;我们一起玩吧”选项时，“派对”应用默认不贴靠。 同时进行此更改是为了让用户可以直接跳转到游戏中。
 
--   发送方一边已经添加了新的 toast，显示“向游戏添加 \[*数字*\] 个好友”。 这明确了当游戏会话与用户的派对关联时将发出邀请。
+-   已在显示的发件人一端上添加了新 toast"添加\[*数*\]向游戏的朋友"。 这明确了当游戏会话与用户的派对关联时将发出邀请。
 
 详细的用户体验流程通过以下示例加以介绍。 每个表显示两个用户 David 和 Laura 的示例流程。 这些流程在每个列中显示，并列出现。 <b style="background-color: #FFFF00">突出显示的文本</b>显示了对以前的 UX 流程进行的调整。
 
@@ -46,7 +46,7 @@ Toast 弹出指示 David 发出的邀请，并<b style="background-color: #FFFF0
     </td>
   </tr>
   <tr>
-    <td colspan="2" style="text-align:center"><b style="background-color: #FFFF00">情况 1：Laura 选择“启动并接受邀请”</b>（这是一个新选项）</td>
+    <td colspan="2" style="text-align:center"><b style="background-color: #FFFF00">案例 1:Laura 选择启动，并接受邀请</b>（这是一个新的选项）</td>
   </tr>
   <tr>
     <td>
@@ -54,21 +54,21 @@ Toast 弹出指示 Laura 已加入 David 的派对。
     <p><br>
 David 从多人游戏大厅开始游戏。                              
     <p><br>
-    <b style="background-color: #FFFF00">Toast 弹出指示游戏邀请已发送给 Laura。</b>
+    <b style="background-color: #FFFF00">它表示游戏的邀请已发送到 Laura 弹出 toast。</b>
     </td>
     <td>
 游戏启动，“派对”应用不贴靠。
     </td>
   </tr>
   <tr>
-    <td colspan="2" style="text-align:center"><b>情况 2：Laura 选择“接受邀请”</b></td>
+    <td colspan="2" style="text-align:center"><b>案例 2:Laura 选择接受邀请</b></td>
   </tr>
   <tr>
     <td style="border-bottom:solid 1px #fff"></td>
     <td style="border-bottom:solid 1px #fff">Laura 加入派对。</td>
   </tr>
   <tr>
-    <td style="border-bottom:solid 1px #fff"><b style="background-color: #FFFF00">Toast 弹出指示游戏邀请已发送给 Laura。</b></td>
+    <td style="border-bottom:solid 1px #fff"><b style="background-color: #FFFF00">它表示游戏的邀请已发送到 Laura 弹出 toast。</b></td>
     <td style="border-bottom:solid 1px #fff"></td>
   </tr>
   <tr>
@@ -76,15 +76,15 @@ David 从多人游戏大厅开始游戏。
     <td>Toast 弹出指示未为派对找到游戏。
     <p><br>
 在“通知中心”，Laura 可以选择： <ul>
-    <li>   <b>接受游戏邀请：</b>游戏启动。
-    <li>   <b>拒绝游戏邀请：</b>没有游戏启动。Laura 仍位于派对中，并将收到后来的游戏邀请。         
-    <li>   <b style="background-color: #FFFF00">离开派对：没有游戏启动。Laura 被从派对中删除。</b>
+    <li>   <b>接受游戏邀请：</b>游戏发布。
+    <li>   <b>拒绝游戏邀请：</b>无比赛会启动。 Laura 仍位于派对中，并将收到后来的游戏邀请。         
+    <li>   <b style="background-color: #FFFF00">将参与方：无比赛会启动。 Laura 将从该参与方删除。</b>
     </ul>
     </td>
   </tr>
 </table>
 
-## <a name="in-game-invite-flow-in-a-party-and-switching-titles"></a>游戏内邀请流程：在派对中，切换游戏
+## <a name="in-game-invite-flow-in-a-party-and-switching-titles"></a>在游戏邀请流：在参与方，并切换标题
 
 <table>
   <tr>
@@ -101,7 +101,7 @@ Xbox 系统 UI 询问 David 是否要将他的派对切换到新游戏，他可�
   </tr>
   <tr>
     <td colspan=2 style="text-align:center">
-      <b>情况 1：是</b>
+      <b>案例 1:是的</b>
     </td>
   </tr>
   <tr>
@@ -110,7 +110,7 @@ Xbox 系统 UI 询问 David 是否要将他的派对切换到新游戏，他可�
     <p><br>
 从多人游戏大厅，David 开始游戏。
     <p><br>
-    <b style="background-color: #FFFF00">Toast 弹出指示游戏邀请已发送给 Laura。
+    <b style="background-color: #FFFF00">它表示游戏的邀请，已发送到 Laura 弹出 toast。
     </td>
     <td style="border-bottom:solid 1px #fff">
     </td>
@@ -120,14 +120,14 @@ Xbox 系统 UI 询问 David 是否要将他的派对切换到新游戏，他可�
     <td>Toast 弹出指示未为派对找到游戏。
     <p><br>
 从“通知中心”，Laura 可以选择： <ul>
-     <li><b>接受游戏邀请</b>：新游戏启动 <li><b>拒绝游戏邀请：</b>没有游戏启动，但 Laura 仍位于派对中，并将收到后来的游戏邀请。
-     <li><b style="background-color: #FFFF00"><b>离开派对：</b>没有游戏启动，Laura 被从派对中删除。</b>
+     <li><b>接受游戏邀请</b>:新游戏启动 <li><b>拒绝游戏邀请：</b>无比赛将启动，但 Laura 仍在参与方，并将接收后续游戏邀请。
+     <li><b style="background-color: #FFFF00"><b>将参与方：</b>从该参与方中删除任何游戏发布和 Laura。</b>
      </ul>
      </td>
   </tr>
   <tr>
     <td colspan=2 style="text-align:center">
-      <b>情况 2：否</b>
+      <b>案例 2:不</b>
     </td>
   </tr>
   <tr>
@@ -171,14 +171,14 @@ David 和 Laura 讨论他们要玩什么游戏。 David 启动游戏并进入多
     <p><br>
 游戏将提供邀请好友的选项，或自动拉入派对成员。
     <p><br>
-    <b style="background-color: #FFFF00">Toast 弹出指示游戏邀请已发出。</b>
+    <b style="background-color: #FFFF00">它表示已发送游戏邀请弹出 toast。</b>
     </td>
     <td>
 Toast 弹出指示已为派对找到游戏。
     <p><br>
 在“通知中心”，Laura 可以： <ul>
-    <li>   <b>接受游戏邀请：</b>游戏启动 <li>   <b>拒绝游戏邀请：</b>没有游戏启动，Laura 仍位于派对中，并将收到后来的邀请。
-    <li>   <b style="background-color: #FFFF00">离开派对：没有游戏启动，Laura 被从派对中删除。</b>
+    <li>   <b>接受游戏邀请：</b>游戏发布 <li>   <b>拒绝游戏邀请：</b>没有游戏启动 Laura 是仍在参与方和将接收后续邀请。
+    <li>   <b style="background-color: #FFFF00">将参与方：无比赛将启动，Laura 从参与方中删除。</b>
     </ul>  
     </td>
   </tr>

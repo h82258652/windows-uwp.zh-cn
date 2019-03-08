@@ -11,22 +11,22 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: aeba4dbd734ea4b521033726968e90c232c154cb
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116399"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628662"
 ---
 # <a name="reveal-highlight"></a>显示突出显示
 
 ![主图](images/header-reveal-highlight.svg)
 
-展示突出显示是当用户将指针靠近它们突出显示交互性元素，如命令栏，一种灯光效果。 
+显示突出显示部分是，当用户将指针放在其附近突出显示交互元素，例如命令栏的光照效果。 
 
-> **重要的 API**：[RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper) 和 [VisualState 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
+> **重要的 Api**:[RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)， [RevealBackgroundBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)， [RevealBorderBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)， [RevealBrushHelper 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper)， [VisualState类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>工作原理
-显示突出显示引起对交互式元素通过显示元素的容器时指针在附近，在此图中所示：
+显示为交互元素的突出显示调用关注者泄漏元素的容器，当指针位于附近，在此图中所示：
 
 ![显示视觉](images/Nav_Reveal_Animation.gif)
 
@@ -41,7 +41,7 @@ ms.locfileid: "9116399"
 <td>
     <p>如果你已安装了 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，单击此处<a href="xamlcontrolsgallery:/item/Reveal">打开此应用，了解“展示”的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -54,7 +54,7 @@ ms.locfileid: "9116399"
 
 ## <a name="how-to-use-it"></a>如何使用
 
-“展示”针对某些控件自动运行。 对于其他控件，你可以通过向控件分配特殊样式来启用展示在本文的[其他控件上启用展示](#enabling-reveal-on-other-controls)和[自定义控件上启用展示](#enabling-reveal-on-custom-controls)部分中所述。
+“展示”针对某些控件自动运行。 对于其他控件，您可以显示启用通过将特殊样式分配给该控件，如中所述[启用显示其他控件](#enabling-reveal-on-other-controls)并[启用自定义控件上显示](#enabling-reveal-on-custom-controls)的这部分一文。
 
 ## <a name="controls-that-automatically-use-reveal"></a>自动使用“展示”的控件
 
@@ -65,7 +65,7 @@ ms.locfileid: "9116399"
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
 
-这些插图显示几种不同控件上显示突出显示：
+这些图显示多个不同的控件上显示突出显示：
 
 ![展示示例](images/RevealExamples_Collage.png)
 
@@ -113,7 +113,7 @@ ms.locfileid: "9116399"
 
 ## <a name="enabling-reveal-on-custom-controls"></a>在自定义控件上启用“展示”
 
-你可以向自定义控件添加“展示”。 在执行操作之前，最好先多一些了解展示效果的工作原理。 “展示”由两种单独的效果组成：**边框展示**和**悬停展示**。
+你可以向自定义控件添加“展示”。 在执行之前，最好先稍微了解显示效果的工作原理。 显示由两个单独的效果组成：**显示边框**并**揭示悬停**。
 
 - **边框**会在指针靠近时显示交互式元素的边框。 此效果会向你显示，这些邻近项目可以与当前的聚焦项目采用类似操作。
 - **悬停**会在悬停或聚焦的项目周围应用一个柔和的光晕形状，并在单击时播放按下动画。 
@@ -130,8 +130,8 @@ ms.locfileid: "9116399"
 
 
 这些效果由两个画笔定义： 
-* 边框展示由**RevealBorderBrush**定义
-* 悬停展示定义的**RevealBackgroundBrush**
+* 边框显示由定义**RevealBorderBrush**
+* 悬停时显示定义的**RevealBackgroundBrush**
 
 ```xaml
 <RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>
@@ -255,14 +255,14 @@ ms.locfileid: "9116399"
 
 ### <a name="fine-tuning-the-reveal-effect-on-a-custom-control"></a>微调自定义控件的“展示”效果 
 
-自定义或重新模板化控件或自定义的命令处理表面启用展示时，这些技巧可以帮助你优化此效果：
+启用时显示的自定义或重新模板化控件或自定义命令的图面上，这些提示可以帮助您优化效果：
  
-* 在邻近的未在高度或宽度上对齐（尤其是在列表中）的项目上：删除边框方法行为，并让边框只在悬停时显示。
-* 对于频繁出入禁用状态的命令处理项目：将边框方法画笔放在元素的背板及其边框上，以强调它们的状态。
-* 对于它们接触的非常靠近的邻近命令处理元素：在两个元素之间增加 1px 边距。 
+* 对大小与相邻项的不一致的高度或宽度 （尤其是在列表中）：删除边框方法行为和保留上悬停时仅显示边框。
+* 命令项，经常转入和签出的禁用状态：位置上元素的 backplates，以及其边框的边框方法画笔来强调其状态。
+* 相邻命令元素的因此关闭它们接触：添加两个元素之间 1px 边距。 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
-### <a name="do"></a>执行此操作：
+### <a name="do"></a>执行操作：
 - 应对用户可以对其执行很多操作的元素使用“展示”（命令栏、导航菜单）
 - 应在默认没有视觉分隔符的交互式元素分组中使用“展示”（列表、功能区）
 - 应在具有高密度交互式元素的区域使用“展示”（命令处理情况）
@@ -287,8 +287,8 @@ ms.locfileid: "9116399"
 ## <a name="related-articles"></a>相关文章
 
 - [RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
-- [亚克力](acrylic.md)
-- [合成效果](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
-- [UWP 的 Fluent 设计](../fluent-design-system/index.md)
-- [系统内的科学：Fluent 设计和深色](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
-- [系统内的科学：Fluent 设计和浅色](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)
+- [Acrylic](acrylic.md)
+- [组合效果](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
+- [适用于 UWP 的 Fluent 设计](../fluent-design-system/index.md)
+- [在系统中的科学：Fluent 设计和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
+- [在系统中的科学：Fluent 设计和轻型这类](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

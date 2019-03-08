@@ -8,23 +8,23 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f43244e39d825e75d6c6cd71fd9633ca158a7a16
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947626"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590442"
 ---
 # <a name="usersmeresetreputation"></a>/users/me/resetreputation
-使访问当前用户的信誉评分，强制执行团队。 这些 Uri 的域是`reputation.xboxlive.com`。
+利用强制执行团队可以访问当前用户的信誉分数。 这些 Uri 的域是`reputation.xboxlive.com`。
   
 <a id="ID4EV"></a>
 
  
 ## <a name="valid-methods"></a>有效的方法
 
-[POST (/users/me/resetreputation)](uri-usersmeresetreputationpost.md)
+[POST （/用户/我/resetreputation）](uri-usersmeresetreputationpost.md)
 
-&nbsp;&nbsp;使执行团队后 （例如） 帐户劫持将当前用户的信誉评分设置为某些任意值。
+&nbsp;&nbsp;启用强制执行团队后 （例如） 帐户劫持为一些任意的值设置当前用户的信誉分数。
  
 <a id="ID4E6"></a>
 
@@ -36,6 +36,6 @@ ms.locfileid: "8947626"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[信誉 URI](atoc-reference-reputation.md)
+[信誉 Uri](atoc-reference-reputation.md)
 
    

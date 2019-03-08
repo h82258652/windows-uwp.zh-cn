@@ -7,11 +7,11 @@ ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 keywords: windows 10, uwp, 计时器, 线程
 ms.localizationpriority: medium
 ms.openlocfilehash: f11207a774b1ffcebde95e316634592020e6ed49
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058498"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631212"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>在多线程环境中使用 Windows 运行时对象
 本文讨论了 .NET Framework 从 C# 和 Visual Basic 代码到 Windows 运行时或 Windows 运行时组件提供的对象处理调用的方式。
@@ -161,6 +161,6 @@ End Sub
 针对在 UI 线程上运行的对象，以及从除 UI 线程以外的其他线程调用时引发异常的对象，你可以使用 UI 线程的 [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029) 对象调度调用。
 
 ## <a name="see-also"></a>另请参阅
-[C# 指南](/dotnet/csharp/)
+[C#指南](/dotnet/csharp/)
 
 [Visual Basic 指南](/dotnet/visual-basic/)

@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a787992507405a70185140e879be731d72806eff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921769"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612622"
 ---
 # <a name="personsummary-json"></a>PersonSummary (JSON)
-[人 (JSON)](json-person.md)对象的集合。 
+集合[Person (JSON)](json-person.md)对象。 
 <a id="ID4ER"></a>
 
  
@@ -23,22 +23,22 @@ ms.locfileid: "8921769"
  
 PersonSummary 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| hasCallerMarkedTargetAsFavorite| 布尔值| 是否调用方已标记为常用的目标。 示例值： true| 
-| hasCallerMarkedTargetAsKnown| 布尔值| 是否已知调用方已标记为目标。 示例值： true| 
-| isCallerFollowingTarget| 布尔值| 是否调用方是遵循目标。 示例值： true| 
-| isTargetFollowingCaller| 布尔值| 目标是否关注调用方。 示例值： true| 
-| legacyFriendStatus| 字符串| 目标所示的调用方的旧好友状态。 可以是"None"，"MutuallyAccepted"、"OutgoingRequest"或"IncomingRequest"。 示例值:"MutuallyAccepted"| 
-| recentChangeCount| 32 位无符号的整数| 可选。 在目标的社交图片的最新更改的数量。 此值将仅存在时用户正在查看其自己的摘要。 示例值： 5| 
-| targetFollowerCount| > 32 位无符号的整数| 遵循的是目标用户的数量。 示例值： 1308年| 
-| targetFollowingCount| 32 位无符号的整数| 目标是遵循用户的数量。 示例值： 112| 
-| 水印| 字符串| 可选。 该目标的的最新更改水印。 此值将仅存在时用户正在查看其自己的摘要。 示例值： 5| 
+| hasCallerMarkedTargetAsFavorite| 布尔值| 是否调用方已标记为收藏的目标。 示例值： true| 
+| hasCallerMarkedTargetAsKnown| 布尔值| 是否为已知调用方已标记为目标。 示例值： true| 
+| isCallerFollowingTarget| 布尔值| 调用方是否遵循目标。 示例值： true| 
+| isTargetFollowingCaller| 布尔值| 无论目标是按照调用方。 示例值： true| 
+| legacyFriendStatus| 字符串| 目标由调用方所示的旧友元状态。 可以是"None"、"MutuallyAccepted"、"OutgoingRequest"或"IncomingRequest"。 示例值："MutuallyAccepted"| 
+| recentChangeCount| 32 位无符号的整数| 可选。 目标的社交图中的最近更改数。 此值仅在存在时用户正在查看他们自己的摘要。 示例值：5| 
+| targetFollowerCount| > 32 位无符号的整数| 以下目标的用户数。 示例值：1308| 
+| targetFollowingCount| 32 位无符号的整数| 以下目标的用户数。 示例值：112| 
+| 水印| 字符串| 可选。 目标的的最新更改水印。 此值仅在存在时用户正在查看他们自己的摘要。 示例值：5| 
   
 <a id="ID4E4D"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -67,6 +67,6 @@ PersonSummary 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
    

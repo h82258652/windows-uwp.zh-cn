@@ -6,15 +6,15 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
 ms.openlocfilehash: 488516f94a53eb26b4a9e2f49927b8399c62bff5
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117687"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645142"
 ---
 # <a name="consume-apis-with-cwinrt"></a>通过 C++/WinRT 使用 API
 
-本主题介绍如何使用[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api，无论他们使用的是 Windows 的一部分、 由第三方组件供应商或自行实现。
+本主题演示如何使用[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api 一部分的 Windows，无论他们所实现的第三方组件供应商，或自行实现。
 
 ## <a name="if-the-api-is-in-a-windows-namespace"></a>如果 API 位于 Windows 命名空间中
 这是你使用 Windows 运行时 API 最常见的情况。 对于元数据中定义的 Windows 命名空间中的每个类型，C++/WinRT 都定义了 C++ 友好等效项（称为*投影类型*）。 投影类型具有与 Windows 类型相同的完全限定名称，但使用 C++ 语法放置于 C++ **winrt** 命名空间中。 例如，[**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) 作为 **winrt::Windows::Foundation::Uri** 投影到 C++/WinRT。
@@ -42,7 +42,7 @@ int main()
 
 在上述代码示例中，在初始化 C++/WinRT 后，我们将通过其公开记录的构造函数之一（本示例中为 [**Uri(字符串)**](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_)）堆叠分配 **winrt::Windows::Foundation::Uri** 投影类型的值。 这是最常见的用例，也是一般情况下你所要做的全部工作。 在有了 C++/WinRT 投影类型值后，你可以将其视为实际 Windows 运行时类型的实例，因为它具有所有相同的成员。
 
-事实上，该投影值是一个代理；它本质上只是支持对象的智能指针。 投影值的构造函数调用 [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) 来创建 Windows 运行时支持类（本例中为 **Windows.Foundation.Uri**）的实例，并将该对象的默认接口存储在新投影值内。 如下所示，你对投影的值的成员的调用实际上通过智能指针代理，给支持对象;这是发生状态变化。
+事实上，该投影值是一个代理；它本质上只是支持对象的智能指针。 投影值的构造函数调用 [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) 来创建 Windows 运行时支持类（本例中为 **Windows.Foundation.Uri**）的实例，并将该对象的默认接口存储在新投影值内。 如下图所示，对投影的值成员的调用实际委托，通过智能指针，到后备对象;这是发生状态更改。
 
 ![投影 Windows::Foundation::Uri 类型](images/uri.png)
 
@@ -121,16 +121,16 @@ private:
 };
 ```
 
-*除* `nullptr_t` 构造函数以外的投影类型上的所有构造函数都将导致创建支持 Windows 运行时对象。 `nullptr_t` 构造函数本质上是一个无操作。 它预期投影对象会在后续时间初始化。 因此，不论运行时类是否具有默认的构造函数，你都可以使用此技巧实现有效的延迟初始化。
+*除*`nullptr_t` 构造函数以外的投影类型上的所有构造函数都将导致创建支持 Windows 运行时对象。 `nullptr_t` 构造函数本质上是一个无操作。 它预期投影对象会在后续时间初始化。 因此，不论运行时类是否具有默认的构造函数，你都可以使用此技巧实现有效的延迟初始化。
 
-此注意事项会影响其中你正在调用默认构造函数，例如矢量和地图中的其他位置。 此代码示例，请考虑。
+这种考虑因素会影响在其中调用默认构造函数，如向量和映射中其他位置。 请考虑此代码示例。
 
 ```cppwinrt
 std::map<int, TextBlock> lookup;
 lookup[2] = value;
 ```
 
-分配创建新的**TextBlock**，然后立即将其与覆盖`value`。 下面是补救措施。
+赋值会创建一个新**TextBlock**，然后立即将其与覆盖和`value`。 下面是补救措施。
 
 ```cppwinrt
 std::map<int, TextBlock> lookup;
@@ -141,7 +141,7 @@ lookup.insert_or_assign(2, value);
 无论你是自行创作该组件，还是该组件来自供应商，本部分均适用。
 
 > [!NOTE]
-> 有关信息有关安装和使用 C + + /winrt Visual Studio 扩展 (VSIX) （它提供项目模板支持），请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 了解安装和使用 C + + WinRT Visual Studio 扩展 (VSIX) （可提供项目模板支持） 请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 在应用程序项目中，引用 Windows 运行时组件的 Windows 运行时元数据 (`.winmd`) 文件，然后生成。 在生成过程中，`cppwinrt.exe` 工具生成标准 C++ 库，该库全面描述&mdash;或*投影*&mdash;该组件的 API 接口。 换言之，生成的库包含该组件的投影类型。
 
@@ -190,7 +190,7 @@ MainPage::MainPage()
 有关更多详细信息、代码以及使用在使用的项目中实现的运行时类的演练，请参阅 [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。
 
 ## <a name="instantiating-and-returning-projected-types-and-interfaces"></a>实例化和返回投影类型和接口
-以下投影类型和实例的示例可能类似于使用的项目。 请记住 （如在此示例中），一个投影的类型是工具生成的而不是某些内容，你将创作你自己。
+以下投影类型和实例的示例可能类似于使用的项目。 请记住投影的类型 （如一个在此示例中），是工具生成的而不是您将编写您自己。
 
 ```cppwinrt
 struct MyRuntimeClass : MyProject::IMyRuntimeClass, impl::require<MyRuntimeClass,
@@ -258,13 +258,13 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 ## <a name="important-apis"></a>重要的 API
 * [QueryInterface 接口](https://msdn.microsoft.com/library/windows/desktop/ms682521)
 * [RoActivateInstance 函数](https://msdn.microsoft.com/library/br224646)
-* [Windows::Foundation::Uri 类](/uwp/api/windows.foundation.uri)
+* [Windows::Foundation::Uri class](/uwp/api/windows.foundation.uri)
 * [winrt::get_activation_factory 函数模板](/uwp/cpp-ref-for-winrt/get-activation-factory)
 * [winrt::make 函数模板](/uwp/cpp-ref-for-winrt/make)
-* [winrt::Windows::Foundation::IUnknown 结构](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>相关主题
-* [在 C++/WinRT 中创作事件](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
-* [实现 C++/WinRT 与 ABI 之间的互操作](interop-winrt-abi.md)
-* [C++/WinRT 简介](intro-to-using-cpp-with-winrt.md)
-* [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [创作事件在 C + + WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
+* [互操作之间 C + + WinRT 和 ABI](interop-winrt-abi.md)
+* [介绍 C + + WinRT](intro-to-using-cpp-with-winrt.md)
+* [XAML 控件;将绑定到 C + + WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

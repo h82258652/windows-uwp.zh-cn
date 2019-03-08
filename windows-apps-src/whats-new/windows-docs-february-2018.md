@@ -6,17 +6,17 @@ ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 421fb7c973c1aaa4e9e1924548d7f11439fd5350
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115834"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632862"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>2018 年 2 月 Windows 开发人员文档中的新增功能
 
 Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 一月当月提供了以下功能概述、开发人员指南和视频，包含面向 Windows 开发人员的新的和更新的信息。
 
-只需在 Windows10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 
 ## <a name="features"></a>功能
@@ -41,7 +41,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="subscription-add-ons-are-now-available-to-all-developers"></a>订阅加载项现在可供所有开发人员使用
 
-按照自动定期帐单期间创建和发布订阅加载项来在你的应用和游戏中销售数字产品（如应用功能或数字内容）。 如需了解更多的详细信息，可参阅[启用应用加载项订阅](../monetize/enable-subscription-add-ons-for-your-app.md)。
+按照自动定期帐单期间创建和发布订阅加载项来在你的应用和游戏中销售数字产品（如应用功能或数字内容）。 有关详细信息，请参阅[启用应用加载项订阅](../monetize/enable-subscription-add-ons-for-your-app.md)。
 
 ## <a name="developer-guidance"></a>开发人员指南
 
@@ -59,7 +59,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="getting-started-for-game-development"></a>游戏开发入门
 
-对开发适用于 Windows10 的游戏感兴趣？ 新的[游戏开发入门](../gaming/getting-started.md)页面为你提供了自行完成设置、注册并准备好提交应用和游戏所需完成事项的完整概述。
+对开发适用于 Windows 10 的游戏感兴趣？ 新的[游戏开发入门](../gaming/getting-started.md)页面为你提供了自行完成设置、注册并准备好提交应用和游戏所需完成事项的完整概述。
 
 ## <a name="videos"></a>视频
 

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c31dcbcc3019538d769118b018c693174b17b4c7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922919"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631472"
 ---
 # <a name="resources"></a>资源
 
@@ -27,7 +27,7 @@ ms.locfileid: "8922919"
 
 资源视图提供用于访问资源（例如，纹理或缓冲区）的常见模型。 由于你可以使用视图来告知运行时要访问的数据以及访问数据的方式，因此资源视图允许你创建无类型资源。 也就是说，你可以在编译时创建给定大小的资源，然后在资源绑定到管道时在资源中声明数据类型。 视图公开了使用资源时可用的多种功能，例如，能够在着色器中读回深度/模板图面、在单次传递中生成动态 cubemap 以及同时呈现到卷的多个切片。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>
@@ -51,7 +51,7 @@ ms.locfileid: "8922919"
 <td align="left"><p>资源是 3D 管道所使用的数据集合。 对应用程序进行编程的第一步是创建资源并定义其行为。 本指南介绍了选择应用程序所需资源的基本主题。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="copying-and-accessing-resource-data.md">复制和访问资源数据</a></p></td>
+<td align="left"><p><a href="copying-and-accessing-resource-data.md">复制以及访问资源数据</a></p></td>
 <td align="left"><p>用法标志指示应用程序应如何使用资源数据以将资源放置到性能最佳的内存区域。 跨资源复制资源数据，以便 CPU 或 GPU 能够访问数据而不会影响性能。</p></td>
 </tr>
 <tr class="even">

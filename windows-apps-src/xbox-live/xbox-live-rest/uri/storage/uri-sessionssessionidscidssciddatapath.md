@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1af8befe28c407948dfa03d706f476458bb77c14
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931007"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655072"
 ---
 # <a name="sessionssessionidscidssciddatapath"></a>/sessions/{sessionId}/scids/{scid}/data/{path}
-列出了在指定的路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
+列出指定路径处的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -24,11 +24,11 @@ ms.locfileid: "8931007"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| sessionId| 字符串| 若要查找会话的 ID。| 
-| scid| guid| 若要查找的服务配置 ID。| 
-| path| 字符串| 要返回的数据项路径。 获取返回所有匹配的目录和子目录。 有效字符包括大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_) 和正斜杠 （/）。 可能为空。 256 的最大长度。| 
+| sessionId| 字符串| 若要查找的会话 ID。| 
+| scid| GUID| 要查找服务配置的 ID。| 
+| path| 字符串| 若要返回的数据项目的路径。 返回所有匹配的目录和子目录。 有效字符包括大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_) 和正斜杠 （/）。 可能为空。 最大长度为 256。| 
   
 <a id="ID4EFC"></a>
 
@@ -37,7 +37,7 @@ ms.locfileid: "8931007"
 
 [GET](uri-sessionssessionidscidssciddatapath-get.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。
+&nbsp;&nbsp;列出指定路径处的文件信息。
  
 <a id="ID4EPC"></a>
 
@@ -49,6 +49,6 @@ ms.locfileid: "8931007"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[标题存储 URI](atoc-reference-storagev2.md)
+[标题存储 Uri](atoc-reference-storagev2.md)
 
    

@@ -1,5 +1,5 @@
 ---
-Description: A color picker lets a user browse through and select colors.
+Description: 颜色选取器使用户可以浏览和选择颜色。
 title: 颜色选取器
 label: Color Picker
 template: detail.hbs
@@ -12,17 +12,17 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 215a15e3a8e1b0264987adcf6228ec52a696f50c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047096"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654472"
 ---
 # <a name="color-picker"></a>颜色选取器
 
 颜色选取器用于浏览和选择颜色。 默认情况下，它使用户可以在色谱上浏览颜色，或在红-绿-蓝 (RGB)、色调饱和度值 (HSV) 或十六进制文本框中指定颜色。
 
-> **重要 API**：[ColorPicker 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)、[Color 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color)、[ColorChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
+> **重要的 Api**:[颜色选取器类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)，[颜色属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color)， [ColorChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
 
 ![默认颜色选取器](images/color-picker-default.png)
 
@@ -42,7 +42,7 @@ ms.locfileid: "9047096"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/ColorPicker">打开此应用，了解 ColorPicker 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>

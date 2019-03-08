@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 48cea8c1a3a3c35a53a3376c48e3192c94caf709
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049284"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620772"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>入门：选择编程语言
 
@@ -25,24 +25,24 @@ ms.locfileid: "9049284"
 尽管我们在本文中以 C# 为重点，但其他语言也提供了你可能希望尝试的独特优势。 例如，如果应用的性能是首要关注事项，特别是对于密集图形，则 C++ 可能是正确选择。 Microsoft .NET 版本的 Visual Basic 非常适合 Visual Basic 应用的开发人员。 使用 HTML5 的 JavaScript 非常适合具有 Web 开发背景的开发人员。 有关更多信息，请参见下列内容之一：
 
 -   [创建第一个 UWP 应用使用 c + +](../get-started/create-a-basic-windows-10-app-in-cpp.md)
--   [创建第一个 UWP 应用使用 C# 或 Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
+-   [创建第一个 UWP 应用使用C#或 Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
 -   [创建第一个 UWP 应用使用 JavaScript](../get-started/create-a-hello-world-app-js-uwp.md)
 
-**注意**对于使用 3D 图形的应用，OpenGL 和 OpenGL ES 标准不是本地不适用于 UWP 应用。 如果你不愿意将 OpenGL ES 代码重新写入到 Microsoft DirectX，你可能会有兴趣了解 **“角度”**。 角度是一个持续项目，旨在将 OpenGL API 调用转换为 DirectX API 调用，以将 OpenGL 转换为 DirectX。 若要了解详细信息，请参阅以下内容：
--   [角度](https://code.google.com/p/angleproject/)
--   [创建在第一个使用 DirectX 的 UWP 应用](https://msdn.microsoft.com/library/windows/apps/br229580)
+**请注意**  对于使用 3D 图形的应用，OpenGL 和 OpenGL ES 标准不是以本机方式提供适用于 UWP 应用。 如果你不愿意将 OpenGL ES 代码重新写入到 Microsoft DirectX，你可能会有兴趣了解 **“角度”**。 角度是一个持续项目，旨在将 OpenGL API 调用转换为 DirectX API 调用，以将 OpenGL 转换为 DirectX。 若要了解详细信息，请参阅以下内容：
+-   [Angle](https://code.google.com/p/angleproject/)
+-   [创建第一个 UWP 应用使用 DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
 -   [使用 DirectX 的 UWP 应用示例](https://go.microsoft.com/fwlink/p/?LinkId=263603)
--   [DirectX SDK 在哪里？](https://msdn.microsoft.com/library/windows/desktop/ee663275)
+-   [DirectX SDK 位于何处？](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 
 ## <a name="giving-c-a-go"></a>尝试 C#
 
 作为 iOS 开发人员，你已习惯使用 Objective-C 和 Swift。 C# 是与 Objective-C 和 Swift 最相似的 Microsoft 编程语言。 对于大多数开发人员和大多数应用而言，我们认为 C# 是可供学习和使用的最容易、最快速的语言，因此本文的信息和演练将以该语言为主。 若要了解有关 C# 的详细信息，请参阅以下内容：
 
--   [创建第一个 UWP 应用使用 C# 或 Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
--   [使用 C# 的 UWP 应用示例](https://go.microsoft.com/fwlink/p/?LinkId=263453)
+-   [创建第一个 UWP 应用使用C#或 Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
+-   [使用的 UWP 应用示例C#](https://go.microsoft.com/fwlink/p/?LinkId=263453)
 -   [Visual C#](https://go.microsoft.com/fwlink/p/?LinkId=263450)
 
-下面是一个用 Objective-C 和 C# 编写的类。 首先显示 Objective-C 版本，然后是 C# 版本。
+下面是一个使用 Objective-C 和 C# 编写的类。 首先显示 Objective-C 版本，然后是 C# 版本。
 
 ```obj-c
 // Objective-C header: SampleClass.h.
@@ -142,4 +142,4 @@ C# 是一种简单易学的语言，并附带构成 .NET 的许多支持类和�
 
 ## <a name="next-step"></a>下一步
 
-[入门：熟悉 Visual Studio 环境](getting-started-getting-around-in-visual-studio.md)
+[入门：在 Visual Studio 入门](getting-started-getting-around-in-visual-studio.md)

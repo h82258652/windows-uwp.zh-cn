@@ -8,19 +8,19 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 17974ddf7dec26abac18ccee9fda5249bc9d656f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928477"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618492"
 ---
 # <a name="post-titlestitleidvariants"></a>POST (/titles/{titleId}/variants)
-URI 由客户端检索列表的游戏的变体，为指定的游戏 id。这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+检索一组 id。 指定的标题的游戏不同版本的客户端调用的 URI这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [URI 参数](#ID4EZ)
-  * [需的请求标头](#ID4EIB)
+  * [所需的请求标头](#ID4EIB)
   * [可选的请求标头](#ID4EED)
-  * [授权](#ID4E3D)
+  * [Authorization](#ID4E3D)
   * [请求正文](#ID4EEE)
   * [所需的响应标头](#ID4ELF)
   * [可选的响应标头](#ID4EMG)
@@ -33,7 +33,7 @@ URI 由客户端检索列表的游戏的变体，为指定的游戏 id。这些 
  
 | 参数| 描述| 
 | --- | --- | 
-| titleid| 游戏应在其中操作该请求 ID。| 
+| titleid| 请求应作用于的标题的 ID。| 
   
 <a id="ID5EG"></a>
 
@@ -45,47 +45,47 @@ gameserverds.xboxlive.com
 <a id="ID4EIB"></a>
 
  
-## <a name="required-request-headers"></a>需的请求标头
+## <a name="required-request-headers"></a>所需的请求标头
  
-当发出请求下, 表中所示的标头是必需的。
+当发出请求，如下表中所示的标头是必需的。
  
 | 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | 
-| 内容类型| 应用程序/json| 提交的数据的类型。| 
-| Host| gameserverds.xboxlive.com|  | 
-| Content-Length|  | 请求对象的长度。| 
-| x xbl 协定版本| 1| API 协定版本。| 
-| 授权| XBL3.0 x = [哈希];[令牌]| 身份验证令牌。| 
+| 内容类型| 应用程序/json| 正在提交的数据类型。| 
+| 主机| gameserverds.xboxlive.com|  | 
+| 内容长度|  | 请求对象的长度。| 
+| x-xbl-contract-version| 1| API 协定版本。| 
+| 授权| XBL3.0 x=[hash];[token]| 身份验证令牌。| 
   
 <a id="ID4EED"></a>
 
  
 ## <a name="optional-request-headers"></a>可选的请求标头
  
-当发出请求下, 表中所示的标头是可选的。
+当发出请求，如下表中所示的标头是可选的。
  
 | 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X XblCorrelationId|  | 请求正文中的 mime 类型。| 
+| X-XblCorrelationId|  | 请求正文的 mime 类型。| 
   
 <a id="ID4E3D"></a>
 
  
 ## <a name="authorization"></a>授权
 
-请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务返回 403 禁止在响应中。 如果在标头是无效或不存在，该服务在响应中返回 401 未经授权。
+该请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，服务在响应中返回 403 禁止访问。 如果标头无效或缺失，服务在响应中返回 401 未授权。
  
 <a id="ID4EEE"></a>
 
  
 ## <a name="request-body"></a>请求正文
  
-请求必须包含一个具有以下成员的 JSON 对象。
+请求必须包含具有以下成员的 JSON 对象。
  
 | 成员| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 区域设置| 若要返回的变体本地。| 
-| maxVariants| 变体，要返回的最大数量。| 
+| locale| 若要返回的变体本地。| 
+| maxVariants| 返回的变体的最大数目。| 
 | publisherOnly|  | 
 | 限制|  | 
  
@@ -115,46 +115,46 @@ gameserverds.xboxlive.com
  
 | 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 内容类型| 应用程序/json| 响应正文中的数据的类型。| 
-| Content-Length|  | 响应正文的长度。| 
+| 内容类型| 应用程序/json| 响应正文中的数据类型。| 
+| 内容长度|  | 响应正文的长度。| 
   
 <a id="ID4EMG"></a>
 
  
 ## <a name="optional-response-headers"></a>可选的响应标头
  
-响应可能包括的标头，如下所示。
+响应可能包括如下所示的标头。
  
 | 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X XblCorrelationId|  | 响应正文的 mime 类型。| 
+| X-XblCorrelationId|  | 响应正文的 mime 类型。| 
   
 <a id="ID4EEH"></a>
 
  
 ## <a name="response-body"></a>响应正文
  
-如果在调用成功，该服务将返回一个具有以下成员的 JSON 对象。
+如果调用成功，服务将返回具有以下成员的 JSON 对象。
  
 | 成员| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 变体| 变体的数组。| 
 | variantId| 变体的 Id。| 
-| name| 变体名称。| 
+| name| 变体的名称。| 
 | isPublisher|  | 
 | 排名|  | 
 | gameVariantSchemaId|  | 
-| variantSchemas| 数组的变体的架构。| 
+| variantSchemas| 变体的架构的数组。| 
 | variantSchemaId| 架构的 Id。| 
 | schemaContent| 架构内容| 
 | name| 架构的名称| 
 | gsiSets| GSI 集的数组。| 
-| minRequiredPlayers| 最小的变体的玩家人数。| 
-| maxAllowedPlayers| 最大为变体的玩家数。| 
+| minRequiredPlayers| 该变体的播放机中最小的数。| 
+| maxAllowedPlayers| 变体的玩家数目上限。| 
 | gsiSetId| GSI 集的 Id。| 
 | gsiSetName| GSI 集的名称。| 
 | selectionOrder|  | 
-| variantSchemaId| 设置 varaint 架构 GSI 中使用的 id。| 
+| variantSchemaId| 设置 GSI 中使用的 varaint 架构的 id。| 
  
 <a id="ID4EYBAC"></a>
 

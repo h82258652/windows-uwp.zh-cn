@@ -1,5 +1,5 @@
 ---
-Description: If your app doesn't have resources that match the particular settings of a customer device, then the app's default resources are used. This topic explains how to specify what those default resources are.
+Description: 如果应用不具有与客户设备的特定设置相匹配的资源，则使用应用的默认资源。 本主题介绍如何指定这些默认资源是什么。
 title: 指定应用使用的默认资源
 template: detail.hbs
 ms.date: 11/14/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: b11f6dfec2941ae4eaa277f37de66965bd1ea4aa
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048900"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593982"
 ---
 # <a name="specify-the-default-resources-that-your-app-uses"></a>指定应用使用的默认资源
 
@@ -102,6 +102,6 @@ ms.locfileid: "9048900"
 
 ## <a name="related-topics"></a>相关主题
 
-* [定制语言、比例、高对比度和其他限定符的资源](tailor-resources-lang-scale-contrast.md)
+* [定制您的语言、 缩放、 高对比度和其他限定符的资源](tailor-resources-lang-scale-contrast.md)
 * [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)
+* [编译手动与 MakePri.exe 的资源](compile-resources-manually-with-makepri.md)

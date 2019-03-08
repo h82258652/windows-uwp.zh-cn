@@ -1,22 +1,22 @@
 ---
-Description: Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. There are many ways to send the notifications depending on the needs of your application
+Description: Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服务发送 Toast、磁贴、锁屏提醒和原始更新。 有许多种发送通知的方法，具体取决于应用程序的需要
 title: 选择正确的推送通知通道类型
 ms.date: 07/07/2017
 ms.topic: article
-keywords: windows 10，uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 075eaf5c02e5bddb4b87d7e4aaf931cbfde53cdd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944292"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616412"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>选择正确的推送通知通道类型
 
 本文介绍了三种类型的 UWP 推送通知通道（主要、辅助和备用），帮助你将内容提供给你的应用。 
 
-（有关如何创建推送通知的详细信息，请参阅[Windows 推送通知服务 (WNS) 概述](../tiles-and-notifications/windows-push-notification-services--wns--overview.md)）。 
+(有关如何创建推送通知的详细信息，请参阅[Windows 推送通知服务 (WNS) 概述](../tiles-and-notifications/windows-push-notification-services--wns--overview.md)。) 
 
 ## <a name="types-of-push-channels"></a>推送通道的类型 
 
@@ -38,10 +38,10 @@ ms.locfileid: "8944292"
 
 ### <a name="what-do-primary-channels-enable"></a>主要通道允许执行哪些操作？
 
--   **将磁贴或锁屏提醒更新发送给主要磁贴。** 如果用户已选择将磁贴固定到“开始”屏幕，那么这是你进行展示的大好时机。 在应用中发送更新以及有用的信息或经验提醒。 
--   **发送 Toast 通知。** 利用 Toast 通知，可以将一些信息立即呈现在用户面前。 这些通知通过 shell 显示在大多数应用的顶部，并且位于操作中心，以便用户以后可以返回去与之进行交互。 
--   **发送原始通知以触发后台任务。** 有时你需要根据通知代表用户执行一些工作。 原始通知允许运行应用的后台任务 
--   **在传输过程中让 Windows 使用 TLS 提供邮件加密。** 系统会对进入 WNS 以及转至用户设备的邮件进行在线加密。  
+-   **将磁贴或徽章更新发送到主磁贴。** 如果用户已选择将磁贴固定到“开始”屏幕，那么这是你进行展示的大好时机。 在应用中发送更新以及有用的信息或经验提醒。 
+-   **发送 toast 通知。** 利用 Toast 通知，可以将一些信息立即呈现在用户面前。 这些通知通过 shell 显示在大多数应用的顶部，并且位于操作中心，以便用户以后可以返回去与之进行交互。 
+-   **发送原始通知，以触发后台任务。** 有时你需要根据通知代表用户执行一些工作。 原始通知允许运行应用的后台任务 
+-   **在传输过程提供的 Windows 使用 TLS 中的消息加密。** 系统会对进入 WNS 以及转至用户设备的邮件进行在线加密。  
 
 ### <a name="limitations-of-primary-channels"></a>主要通道的限制
 
@@ -107,20 +107,20 @@ PushNotificationChannel webChannel =
 <table>
 
 <tr class="header">
-<th align="left"><b>类型</b></th>
-<th align="left"><b>推送 Toast？</b></th>
-<th align="left"><b>推送磁贴/锁屏提醒？</b></th>
+<th align="left"><b>Type</b></th>
+<th align="left"><b>将 toast 推送？</b></th>
+<th align="left"><b>将磁贴/徽章推送？</b></th>
 <th align="left"><b>推送原始通知？</b></th>
 <th align="left"><b>身份验证</b></th>
 <th align="left"><b>API</b></th>
-<th align="left"><b>需要在应用商店中注册？</b></th>
+<th align="left"><b>所需的应用商店注册？</b></th>
 <th align="left"><b>通道</b></th>
 <th align="left"><b>加密</b></th>
 </tr>
 
 
 <tr class="odd">
-<td align="left">主要</td>
+<td align="left">主站点</td>
 <td align="left">是</td>
 <td align="left">是 - 仅限主要磁贴</td>
 <td align="left">是</td>
@@ -168,10 +168,10 @@ PushNotificationChannel webChannel =
 * [发送本地磁贴通知](../tiles-and-notifications/sending-a-local-tile-notification.md)
 * [自适应和交互式 Toast 通知](../tiles-and-notifications/adaptive-interactive-toasts.md)
 * [快速入门：发送推送通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [如何通过推送通知更新锁屏提醒](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [如何请求、创建和保存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [如何为正在运行的应用程序截获通知](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [如何使用 Windows 推送通知服务 (WNS) 进行验证](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [推送通知服务请求和响应头](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [推送通知指南和清单](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [如何更新通过推送通知徽章](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [如何请求、 创建和保存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)
+* [如何截获用于运行应用程序的通知](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [如何进行身份验证使用 Windows 推送通知服务 (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
+* [推送通知服务请求和响应标头](https://msdn.microsoft.com/library/windows/apps/hh465435)
+* [指导原则和清单的推送通知](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [原始通知](raw-notification-overview.md)

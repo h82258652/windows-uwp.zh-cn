@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, xdk, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: c6e8a6ebe716f1e062940066184e9f734441371b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940774"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590812"
 ---
 # <a name="porting-xbox-live-code-from-the-xbox-developer-kit-xdk-to-universal-windows-platform-uwp"></a>将 Xbox Live 代码从 Xbox 开发人员工具包 (XDK) 移植到通用 Windows 平台 (UWP)
 
@@ -25,17 +25,17 @@ ms.locfileid: "8940774"
 
 <a name="_Setting_up_and"></a>
 
-## <a name="setting-up-and-configuring-your-project-in-partner-center-and-xdp"></a>设置和配置你的项目在合作伙伴中心和 XDP 中
+## <a name="setting-up-and-configuring-your-project-in-partner-center-and-xdp"></a>设置和配置你的项目在合作伙伴中心和 XDP
 
-使用 Xbox Live 服务的 UWP 游戏需要在[合作伙伴中心](https://partner.microsoft.com/dashboard)中配置。 有关最新信息，请参阅 Xbox Live 编程指南中的[将 Xbox Live 添加到新的或现有的 UWP 项目](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)，该指南包含在 [Xbox Live SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) 中。
+若要在中配置所需的服务使用 Xbox Live 的 UWP 标题[合作伙伴中心](https://partner.microsoft.com/dashboard)。 有关最新信息，请参阅 Xbox Live 编程指南中的[将 Xbox Live 添加到新的或现有的 UWP 项目](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)，该指南包含在 [Xbox Live SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) 中。
 
 该页面上的主题包含在作品中使用 Xbox Live 服务的以下步骤：
 
--   在合作伙伴中心中创建 UWP 应用项目。
+-   在合作伙伴中心创建的 UWP 应用项目。
 
 -   使用 XDP 设置用于 Xbox Live 的项目。
 
--   合作伙伴中心产品链接到 XDP 产品。
+-   链接到 XDP 产品的合作伙伴中心产品。
 
 -   在 XDP 中创建开发人员帐户（在沙盒中运行 Xbox Live 作品时需要使用它）。
 
@@ -55,15 +55,15 @@ ms.locfileid: "8940774"
 
 2.  [安装 **Xbox Live 平台扩展 SDK**](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) - 如果你需要为 UWP 使用安全套接字 API 和/或游戏保存 API（也称为连接存储）。
 
-3.  在 Visual Studio 中为通用 Windows 应用项目添加 Xbox Live 支持。 你可以添加完整源或引用二进制文件，通过将 NuGet 程序包安装到 Visual Studio 项目。 程序包以 C++ 和 WinRT 的形式提供。 有关更多详细信息，请参阅[将 Xbox Live 添加到新的或现有的 UWP 项目](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)
+3.  在 Visual Studio 中为通用 Windows 应用项目添加 Xbox Live 支持。 可以添加完整的源，或通过在 Visual Studio 项目中安装 NuGet 包引用二进制文件。 程序包以 C++ 和 WinRT 的形式提供。 有关更多详细信息，请参阅[将 Xbox Live 添加到新的或现有的 UWP 项目](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)
 
-4.  将你的开发计算机配置为使用沙盒。 你可以在管理员命令提示符下运行 Xbox Live SDK 的工具目录中的命令行脚本（例如：SwitchSandbox.cmd XDKS.1）。
+4.  将你的开发计算机配置为使用沙盒。 您可以从管理员命令提示符使用 Xbox Live SDK 的 Tools 目录中没有命令行脚本 (例如：SwitchSandbox.cmd XDKS.1)。
 
   **注意**若要切换回零售沙盒，你可以删除脚本修改的注册表项，也可以切换到名为“RETAIL”的沙盒。
 
 1.  将开发人员帐户添加到开发计算机。 当你在指定的沙盒内进行开发或运行示例时，在 XDP 中创建的开发人员帐户需要在运行时与 Xbox Live 服务进行交互。 若要将一个或多个帐户添加到 Windows：
 
-    1.  打开**设置**（快捷方式：Windows 键 + I）。
+    1.  打开**设置**(快捷方式：Windows 键 + I）。
 
     2.  打开**帐户**。
 
@@ -75,7 +75,7 @@ ms.locfileid: "8940774"
 
 Xbox 与 UWP 版本的 appxmanifest.xml 文件之间的最常见更改包括：
 
-1. UWP 中的程序包标识非常重要，即使在开发期间也是如此。 标识名称和发布者*必须匹配*已定义的内容在合作伙伴中心为 UWP 应用。
+1. UWP 中的程序包标识非常重要，即使在开发期间也是如此。 在标识名称和发布服务器*必须匹配*定义的内容在合作伙伴中心为 UWP 应用。
 
 1. 需要填写“程序包依赖关系”部分。 例如：
 
@@ -103,7 +103,7 @@ Xbox 与 UWP 版本的 appxmanifest.xml 文件之间的最常见更改包括：
 
 ### <a name="define-your-title-and-scid-for-the-xbox-live-sdk-in-a-config-file"></a>在配置文件中为 Xbox Live SDK 定义作品和 SCID
 
-Xbox Live SDK 需要知道作品 ID 和 SCID，它们不再包含在 UWP 作品的 appxmanifest.xml 文件中。 相反，你需要在项目根目录中创建名为 **xboxservices.config** 的文本文件并添加以下字段，使用作品信息替换值：
+Xbox Live SDK 需要知道作品 ID 和 SCID，它们不再包含在 UWP 作品的 appxmanifest.xml 文件中。 相反，你需要在项目根目录中创建名为 **xboxservices.config** 的文本文件并添加以下字段，使用游戏信息替换值：
 
 ```
 {
@@ -127,13 +127,13 @@ Platform::String^ scid = xblConfig->ServiceConfigurationId;
 
 ### <a name="api-namespace-mapping"></a>API 命名空间映射
 
-表 1.  从 XDK 到 UWP 的命名空间映射。
+表 1. 从 XDK 到 UWP 的命名空间映射。
 
 <table>
   <tr>
     <td></td>
     <td><b>Xbox One XDK</b></td><td><b>UWP</b></td>
-    <td><b>API 随以下项目提供...</b></td>
+    <td><b>API，同时提供...</b></td>
   </tr>
   <tr>
     <td>Xbox 服务 API (XSAPI)</td>
@@ -380,7 +380,7 @@ RequestExtension();
 
 ### <a name="supporting-multiplayer-cross-play-between-xbox-one-and-pc-uwp"></a>支持在 Xbox One 与电脑 UWP 之间进行多人跨平台联机游戏
 
-除了在 XDP 中的新会话模板要求 （请参阅[设置和配置你在合作伙伴中心和 XDP 中的项目](#_Setting_up_and)），跨平台游玩附带对会话加入功能的限制。 你不能再将“无”用作会话加入限制。 你必须使用“已关注”或“本地”（默认限制是“本地”）。
+除了新的会话中 XDP 模板要求 (请参阅[设置和配置你的项目在合作伙伴中心和 XDP](#_Setting_up_and))，跨 play 有一些会话联接功能的新限制。 你不能再将“无”用作会话加入限制。 你必须使用“已关注”或“本地”（默认限制是“本地”）。
 
 此外，由于 Windows 10 多人游戏需要 **userAuthorizationStyle** 功能，加入和读取限制默认为“本地”。
 
@@ -392,7 +392,7 @@ RequestExtension();
 
 ### <a name="sending-and-receiving-invites"></a>发送和接收邀请
 
-可显示用于发送邀请的 UI 的 API 现在为 **Microsoft::Xbox::Services::System::TitleCallableUI::ShowGameInviteUIAsync()**。 你可以从活动会话（通常是大厅）中传入会话 &gt; **SessionReference** 对象。 你也可以选择传入第二个参数，该参数将引用已在 XDP 的服务配置中定义的自定义邀请字符串 ID。 你在此处定义的字符串将显示在已发送给受邀玩家的 Toast 通知中。 请注意，作为参数传入此方法的内容是 ID 号，必须针对该服务对其进行正确格式化。 例如，字符串 ID“1”必须以“///1”的格式进行传入。
+可显示用于发送邀请的 UI 的 API 现在为 **Microsoft::Xbox::Services::System::TitleCallableUI::ShowGameInviteUIAsync()**。 在会话的传递&gt; **SessionReference**从您的活动会话 （通常是您的大厅） 的对象。 你也可以选择传入第二个参数，该参数将引用已在 XDP 的服务配置中定义的自定义邀请字符串 ID。 你在此处定义的字符串将显示在已发送给受邀玩家的 Toast 通知中。 请注意，作为参数传入此方法的内容是 ID 号，必须针对该服务对其进行正确格式化。 例如，字符串 ID“1”必须以“///1”的格式进行传入。
 
 如果你希望直接使用多人游戏服务来发送邀请（即不显示任何 UI），你仍可以使用其他邀请方法，即用户 **XboxLiveContext** 中的 **Microsoft:: Xbox::Services::Multiplayer::MultiplayerService::SendInvitesAsync()**。
 
@@ -418,7 +418,7 @@ RequestExtension();
 
 安全套接字 API 包含在单独的 [Xbox Live 平台扩展 SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) 内。
 
-请参阅此论坛文章以了解 API 的用法：[设置跨平台的 SecureDeviceAssociation](https://forums.xboxlive.com/answers/45722/view.html)。
+此论坛帖子的 API 使用情况，请参阅：[跨平台设置为 SecureDeviceAssociation](https://forums.xboxlive.com/answers/45722/view.html)。
 
 **注意**对于 UWP，**SocketDescriptions** 部分已移出 appxmanifest，并包含在自身的 [networkmanifest.xml](https://forums.xboxlive.com/storage/attachments/410-networkmanifestxml.txt) 内。 &lt;SocketDescriptions&gt; 元素内的格式几乎相同，只是无 **mx:** 前缀而已。
 
@@ -437,14 +437,14 @@ RequestExtension();
 
 除了安全套接字 API 中的命名空间更改以外，某些对象名称和值也发生了更改。 可在下表中找到常用测量状态的映射。
 
-表 2.  常用测量状态映射。
+表 2. 常用测量状态映射。
 
 | XDK (Windows::Xbox::Networking::QualityOfServiceMeasurementStatus)  | UWP (Windows::Networking::XboxLive::XboxLiveQualityOfServiceMeasurementStatus)  |
 |------------------------------------|--------------------------------------------|
 | HostUnreachable                    | NoCompatibleNetworkPaths                   |
 | MeasurementTimedOut                | TimedOut                                   |
 | PartialResults                     | InProgressWithProvisionalResults           |
-| 成功                            | 已成功                                  |
+| 成功                            | 成功                                  |
 
 在比较 API 的 XDK 和 UWP 版本时，*测量* QoS（服务质量）和*处理结果*中涉及的步骤基本上相同。 但是，由于名称的更改和少量设计更改，在某些位置生成的代码看起来有所不同。
 
@@ -542,7 +542,7 @@ UWP 版本中的其他显著差异包括：
 
 4.  没有本地“计算机”存储（即 **GetForMachineAsync()** 已被删除）。 请考虑对非漫游的本地保存数据改用 **Windows::Storage::ApplicationData**。
 
-5.  将在无异常\*结果-类型对象（例如 **GameSaveProviderGetResult**）中返回异步结果；你可以通过它检查**状态**属性，如果没有任何错误，将从**值**属性读取返回的对象。
+5.  异步结果以无异常的形式返回\*结果类型对象 (例如， **GameSaveProviderGetResult**); 你可以检查此**状态**属性，并且如果没有错误，读取从返回的对象**值**属性。
 
 6.  **ConnectedStorageErrorStatus enum** 已重命名为 **GameSaveErrorStatus**，并且将在结果的**状态**属性中返回。 所有旧值均存在，并且添加了一些新值：
 
@@ -556,15 +556,15 @@ UWP 版本中的其他显著差异包括：
 
 请参阅 GameSave 示例或 NetRumble 示例以了解示例用法。
 
-**注意** Gamesaveutil.exe 等效于 xbstorage.exe（包含在 XDK 内的命令行开发人员实用工具）。 安装 Xbox Live 平台扩展 SDK 后，可以在以下位置找到此实用工具：C:\\Program Files (x86)\\Windows Kits\\10\\Extension SDKs\\XboxLive\\1.0\\Bin\\x64
+**注意** Gamesaveutil.exe 等效于 xbstorage.exe（包含在 XDK 内的命令行开发人员实用工具）。 在安装后 Xbox Live 平台扩展 SDK，该实用程序可在此处找到：C:\\程序文件 (x86)\\Windows 工具包\\10\\扩展 Sdk\\XboxLive\\1.0\\Bin\\x64
 
-## <a name="summary"></a>小结
+## <a name="summary"></a>摘要
 
 将现有游戏代码从 Xbox One XDK 移植到新的 UWP 时，你很可能会遇到本白皮书中概述的 API 更改和新要求。 它重点介绍了应用程序和环境设置以及与 Xbox Live 服务相关的功能区域，例如多人游戏和连接存储。 有关详细信息，请访问本文和以下参考中提供的链接，并确保访问[开发人员论坛](https://forums.xboxlive.com) 的“Windows 10”部分，以获取更多帮助、答案和资讯。
 
 ## <a name="references"></a>参考
 
--   [从 Xbox One 移植到 Windows10](https://developer.xboxlive.com/en-us/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx)
+-   [从 Xbox One 移植到 Windows 10](https://developer.xboxlive.com/en-us/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx)
 
 -   [Xbox One 白皮书](https://developer.xboxlive.com/en-us/platform/development/education/Pages/WhitePapers.aspx)
 

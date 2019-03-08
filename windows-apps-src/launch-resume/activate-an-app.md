@@ -1,6 +1,6 @@
 ---
 title: 处理应用激活
-description: 了解如何通过替代 OnLaunched 方法处理应用激活。
+description: 了解如何通过替代 OnLaunched 方法来处理应用激活。
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 ms.date: 07/02/2018
 ms.topic: article
@@ -12,21 +12,21 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: a75136f26aa6cfa330e4118e6709b0b4d4be4054
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929348"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626592"
 ---
 # <a name="handle-app-activation"></a>处理应用激活
 
-了解如何通过重写[**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched)方法处理应用激活。
+了解如何通过重写处理应用程序激活[ **Application.OnLaunched** ](/uwp/api/windows.ui.xaml.application.onlaunched)方法。
 
 ## <a name="override-the-launch-handler"></a>替代启动处理程序
 
-当激活应用时，出于任何原因，系统将发送[**CoreApplicationView.Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated)事件。 有关激活类型的列表，请参阅 [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) 枚举。
+激活应用程序时，出于任何原因，系统会发送[ **CoreApplicationView.Activated** ](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated)事件。 有关激活类型的列表，请参阅 [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) 枚举。
 
-[**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 类定义了为处理各种激活类型而可以替代的一些方法。 对于其中一些激活类型，有特定的方法可以替代。 对于其他激活类型，则替代 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 方法。
+[  **Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 类定义了为处理各种激活类型而可以替代的一些方法。 对于其中一些激活类型，有特定的方法可以替代。 对于其他激活类型，则替代 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 方法。
 
 为你的应用程序定义类。
 
@@ -37,10 +37,10 @@ ms.locfileid: "8929348"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 ```
 
-替代 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法。 只要用户启动该应用，就会调用此方法。 [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) 参数包含你的应用之前的状态和激活参数。
+替代 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法。 只要用户启动该应用，就会调用此方法。 [  **LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) 参数包含你的应用之前的状态和激活参数。
 
 > [!NOTE]
-> 在 Windows 上，启动开始磁贴或应用列表从暂停的应用不会调用此方法。
+> 在 Windows 中，启动从开始磁贴或应用程序列表中的挂起应用程序不会调用此方法。
 
 ```csharp
 using System;
@@ -264,14 +264,14 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ## <a name="remarks"></a>备注
 
 > [!NOTE]
-> 如果当前窗口上已有内容集，则应用可跳过初始化。 你可以检查[**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736)属性以确定是否从主或辅助磁贴启动应用，并根据该信息，确定是否应显示新或恢复应用体验。
+> 如果当前窗口上已有内容集，则应用可跳过初始化。 你可以检查[ **LaunchActivatedEventArgs.TileId** ](https://msdn.microsoft.com/library/windows/apps/br224736)属性来确定是否应用已启动从主站点还是辅助磁贴，基于该信息决定是否应该提供全新或恢复应用程序体验。
 
 ## <a name="important-apis"></a>重要的 API
 * [Windows.ApplicationModel.Activation](https://msdn.microsoft.com/library/windows/apps/br224766)
 * [Windows.UI.Xaml.Application](https://msdn.microsoft.com/library/windows/apps/br242324)
 
 ## <a name="related-topics"></a>相关主题
-* [处理应用暂停](suspend-an-app.md)
-* [处理应用恢复](resume-an-app.md)
-* [应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [句柄应用挂起](suspend-an-app.md)
+* [句柄应用恢复](resume-an-app.md)
+* [应用程序的指导原则挂起和继续](https://msdn.microsoft.com/library/windows/apps/hh465088)
 * [应用生命周期](app-lifecycle.md)

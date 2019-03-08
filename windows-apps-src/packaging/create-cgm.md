@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 内容组映射, 流式处理安装, uwp 应用流式处理安装, 源内容组映射
 ms.localizationpriority: medium
 ms.openlocfilehash: 882db0a6a97c5ee203a072156ca3eb82615607bb
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115864"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57647942"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>创建和转换源内容组映射
 
@@ -23,7 +23,7 @@ ms.locfileid: "9115864"
 
 我们将演练一个简单的方案，在此方案中利用 UWP 应用流式处理安装非常有用。 
 
-假设创建了一个 UWP 游戏，但最终应用的大小超过 100 GB。 这将需要很长的时间来下载从 Microsoft Store，非常不方便。 如果你选择使用 UWP 应用流式处理安装，则可以指定下载应用文件的顺序。 告知应用商店先下载必要的文件，用户就能够尽快地使用应用，同时在后台下载其他不重要的文件。
+假设创建了一个 UWP 游戏，但最终应用的大小超过 100 GB。 这会需要很长时间才能下载从 Microsoft Store，这可能很不方便。 如果你选择使用 UWP 应用流式处理安装，则可以指定下载应用文件的顺序。 告知应用商店先下载必要的文件，用户就能够尽快地使用应用，同时在后台下载其他不重要的文件。
 
 > [!NOTE]
 > 使用 UWP 应用流式处理安装很大程度上依赖于应用的文件结构。 建议尽快就 UWP 应用流式处理安装方面考虑应用的内容布局，使应用文件的分段更简单。
@@ -71,7 +71,7 @@ ms.locfileid: "9115864"
 
 下面是几个需注意的重要事项：
 
-- `<Required>` 元素内的 `<ContentGroup>` **必须**命名为“所需”。 此名称仅保留供所需内容组使用，不能用于最终内容组映射中的任何其他 `<ContentGroup>`。
+- `<Required>` 元素内的 `<ContentGroup>`**必须**命名为“所需”。 此名称仅保留供所需内容组使用，不能用于最终内容组映射中的任何其他 `<ContentGroup>`。
 - 只有一个 `<ContentGroup>`。 这样做是有意的，因为应只存在一组必需文件。
 - 该文件在此示例中是一个 `.exe` 文件。 所需内容组并不限于一个文件，可存在多个文件。 
 
@@ -166,4 +166,4 @@ MakeAppx convertCGM /s MyApp\SourceAppxContentGroupMap.xml /f MyApp\AppxContentG
 MakeAppx convertCGM /?
 ```
 
-这就是使最终 `AppxContentGroupMap.xml` 可供应用使用需要进行的所有操作！ 没有更多前你的应用是完全准备好的 Microsoft 应用商店, 的准备工作。 若要详细了解将 UWP 应用流式处理安装添加到应用的完整过程，请查看[此博客文章](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)。
+这就是使最终 `AppxContentGroupMap.xml` 可供应用使用需要进行的所有操作！ 没有更多，您的应用程序是完全准备好进行 Microsoft Store 前的准备工作。 若要详细了解将 UWP 应用流式处理安装添加到应用的完整过程，请查看[此博客文章](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)。

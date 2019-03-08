@@ -1,48 +1,48 @@
 ---
 title: 合作伙伴中心服务配置
-description: 详细说明了如何在合作伙伴中心中配置 Xbox Live 服务的主题的链接。
+description: 指向主题的详细说明了如何在合作伙伴中心中配置 Xbox Live 服务。
 ms.date: 07/30/2018
 ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
 ms.openlocfilehash: 83874add42f0a7656c249890857aa018028474a1
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115406"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657632"
 ---
 # <a name="partner-center-service-configuration"></a>合作伙伴中心服务配置
 
-在[合作伙伴中心](https://partner.microsoft.com/dashboard)中发布并使用完整的 Xbox Live 功能集的游戏可以在合作伙伴中心中配置其 Xbox Live 服务。
+在中发布的游戏[合作伙伴中心](https://partner.microsoft.com/dashboard)和使用完整的 Xbox Live 功能集可以在合作伙伴中心中配置其 Xbox Live 服务。
 
 > [!IMPORTANT]
-> 这些主题不适用于 Xbox Live 创意者计划中的主题作品。
+> 这些主题不适用于 Xbox Live Creators 计划中的标题。
 
-若要访问的配置页，你的游戏必须启用 Xbox Live 完全访问权限。
+若要访问的配置页，必须为 Xbox Live 的完全访问权限启用您的游戏。
 
-若要访问 Xbox Live 配置页中，在[合作伙伴中心](https://partner.microsoft.com/dashboard)，选择你的游戏后导航到**服务** > **Xbox Live**。
+若要访问 Xbox Live 配置页中，选择你在中的标题后[合作伙伴中心](https://partner.microsoft.com/dashboard)，导航到**Services** > **Xbox Live**。
 
 
-下面的主题介绍如何配置 Xbox Live，方法是使用合作伙伴中心。
+以下主题介绍如何通过使用合作伙伴中心配置 Xbox Live。
 
 ## <a name="in-this-section"></a>本部分内容
 
 * [摘要](dev-center/summary.md)
 
-* [Xbox Live 设置](dev-center/xbox-live-setup.md)
+* [Xbox Live 安装程序](dev-center/xbox-live-setup.md)
 
-* [2017 年成就](dev-center/achievements-in-udc.md)
+* [获得的成就 2017](dev-center/achievements-in-udc.md)
 
-* [2017 特别推荐的统计数据和排行榜](dev-center/featured-stats-and-leaderboards.md)
+* [功能完备的统计信息和排行榜 2017](dev-center/featured-stats-and-leaderboards.md)
 
-* [游戏 DVR](dev-center/game-dvr.md)
+* [Game DVR](dev-center/game-dvr.md)
 
-* [本地化字符串](dev-center/localized-strings.md)
+* [本地化的字符串](dev-center/localized-strings.md)
 
 * [权限](dev-center/privileges.md)
 
-* [完整状态字符串](dev-center/rich-presence-configuration.md)
+* [丰富的状态字符串](dev-center/rich-presence-configuration.md)
 
 * [标题存储](dev-center/title-storage.md)
 

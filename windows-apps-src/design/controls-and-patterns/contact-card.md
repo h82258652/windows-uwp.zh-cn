@@ -1,5 +1,5 @@
 ---
-Description: A button gives the user a way to trigger an immediate action.
+Description: 按钮为用户提供了触发即时操作的方法。
 title: 联系人卡片
 ms.date: 03/07/2018
 ms.topic: article
@@ -10,17 +10,17 @@ dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a3108e21455086e2742987db1d7125c733f6e2
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117597"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638822"
 ---
 # <a name="contact-card"></a>联系人卡片
 
 联系人卡片显示[联系人](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)（UWP 用来表示用户和企业的机制）的联系人信息，例如姓名、电话号码和地址。  联系人卡片还允许用户编辑联系人信息。 你可以选择显示紧凑式联系人卡片或包含更多信息的完整联系人卡片。
 
-> **重要 API**：[ShowContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)、[ShowFullContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_)、[IsShowContactCardSupported 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported)、[Contact 类](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
+> **重要的 Api**:[ShowContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)， [ShowFullContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_)， [IsShowContactCardSupported 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported)，[联系类](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
 有两种显示联系人卡片的方式：  
 * 以标准联系人卡片方式显示在可轻型消除的浮出控件中，当用户在联系人卡片外部单击时联系人卡片消失。 
@@ -181,5 +181,5 @@ private void onUserClickShowContactCard()
 
 ## <a name="related-articles"></a>相关文章
 - [联系人和日历](/windows/uwp/contacts-and-calendar/)
-- [联系人卡片示例](https://go.microsoft.com/fwlink/p/?LinkId=624040)
-- [个人图片控件](/windows/uwp/controls-and-patterns/person-picture/)
+- [联系人卡示例](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+- [人们图片控件](/windows/uwp/controls-and-patterns/person-picture/)

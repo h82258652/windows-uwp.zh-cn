@@ -8,15 +8,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b9e22b926f01a2020504d4d5c70eba6af9e52afb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932579"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613012"
 ---
 # <a name="leaderboards-uris"></a>排行榜 URI
 
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的*排行榜*。
+本部分提供有关通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务中针对*排行榜*。
 
 这些 Uri 的域是 leaderboards.xboxlive.com。
 
@@ -27,11 +27,11 @@ ms.locfileid: "8932579"
 
 [/scids/{scid}/leaderboards/{leaderboardname}](uri-scidsscidleaderboardsleaderboardname.md)
 
-&nbsp;&nbsp;访问预定义的全球排行榜。
+&nbsp;&nbsp;访问预定义的全局排行榜。
 
-[/ 用户/xuid ({xuid}) /scids/ {scid} /stats/{statname {) /people/{all {all\ | 最喜爱}](uri-usersxuidscidstatnamepeople.md)
+[/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite}](uri-usersxuidscidstatnamepeople.md)
 
-&nbsp;&nbsp;访问 （排名） 的社交排行榜。
+&nbsp;&nbsp;访问社交 （排名） 排行榜。
  
 <a id="ID4EMB"></a>
 
@@ -43,4 +43,4 @@ ms.locfileid: "8932579"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
+[通用资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)

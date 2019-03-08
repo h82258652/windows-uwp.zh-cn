@@ -1,23 +1,23 @@
 ---
-title: 连接的应用和设备（项目“Rome”）
+title: 连接的应用和设备 (Project Rome)
 description: 本节介绍如何使用远程系统平台发现远程设备、在远程设备上启动应用，以及与远程设备上的应用服务通信。
 ms.date: 06/08/2018
 ms.topic: article
-keywords: windows 10，uwp，连接设备、 远程系统、 rome、 项目 rome
+keywords: windows 10，uwp，已连接设备、 远程系统、 罗马、 项目罗马
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ms.openlocfilehash: c785e6d2a8021148f572df88a6d9e6ba07c4a457
-ms.sourcegitcommit: 9448348d7bc6590849db3a41e988dff9470ec111
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "9031363"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601172"
 ---
-# <a name="connected-apps-and-devices-project-rome"></a>连接的应用和设备（项目“Rome”）
+# <a name="connected-apps-and-devices-project-rome"></a>连接的应用和设备 (Project Rome)
 
-本部分介绍了如何使用[项目 rome](https://developer.microsoft.com/en-us/windows/project-rome)跨设备和平台连接应用。 若要了解如何实现项目 rome 跨平台方案中，请访问[项目 rome 的主要文档页](https://docs.microsoft.com/en-us/windows/project-rome/)。
+本部分介绍如何将应用连接跨设备和使用的平台[项目罗马](https://developer.microsoft.com/en-us/windows/project-rome)。 若要了解如何在跨平台方案中实现项目罗马，请访问[主文档页的项目罗马](https://docs.microsoft.com/en-us/windows/project-rome/)。
 
-大多数用户拥有多台设备，并且通常在一台设备上开始某项活动，而在其他设备上结束该活动。 为了满足此要求，应用需要横跨设备和平台。 可以使用项目 rome 发现远程设备、 在远程设备上启动应用以及与远程设备上的应用服务通信。
+大多数用户拥有多台设备，并且通常在一台设备上开始某项活动，而在其他设备上结束该活动。 为了满足此要求，应用需要横跨设备和平台。 项目罗马，可发现远程设备、 启动远程设备上的应用和与远程设备上的应用服务进行通信。
 
 Windows 10 版本 1607 中引入了[远程系统 API](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)，可使你编写允许用户在一台设备上开始某项任务而在另一台设备上结束该任务的应用。 将集中处理该任务，用户可在最方便的设备上执行工作。 例如，在车上用户可能会收听手机上的收音机，但当回到家中，他们可能会想将播放转到连接家庭立体声系统的 Xbox One。
 
@@ -33,7 +33,7 @@ Windows 10 版本 1607 中引入了[远程系统 API](https://msdn.microsoft.com
 |-------|-------------|
 | [启动远程设备上的应用](launch-a-remote-app.md) | 了解如何启动远程设备上的应用。 本主题介绍最简单的用例和初步设置。  |
 | [发现远程设备](discover-remote-devices.md)  | 了解如何发现可以连接的设备。 |
-| [与远程应用服务通信](communicate-with-a-remote-app-service.md) | 了解如何与远程设备上的应用交互。 |
-| [通过远程会话连接设备](remote-sessions.md) | 通过在远程会话中加入多个设备来创建跨多个设备的共享体验。 |
-| [即便跨设备，也继续用户活动](useractivities.md)| 帮助用户继续执行他们之前在应用中，即使跨多台设备。|
-| [用户活动的最佳做法](useractivities-best-practices.md)| 了解用于创建和更新用户活动的推荐的做法。|
+| [与远程应用程序服务进行通信](communicate-with-a-remote-app-service.md) | 了解如何与远程设备上的应用交互。 |
+| [通过远程会话进行连接的设备](remote-sessions.md) | 通过在远程会话中加入多个设备来创建跨多个设备的共享体验。 |
+| [即使在设备上继续用户活动](useractivities.md)| 帮助用户恢复他们在做什么在应用中，即使跨多个设备。|
+| [用户活动最佳实践](useractivities-best-practices.md)| 了解有关创建和更新用户活动的建议的做法。|

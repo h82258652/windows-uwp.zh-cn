@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox 集成多人游戏
 ms.localizationpriority: medium
 ms.openlocfilehash: 92ac7b9897b57de42fa56126b477f4db5b9b74dd
-ms.sourcegitcommit: 2a81d71e799eb167c7a26bf33c9ac847b8e6bc66
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "8992077"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57619432"
 ---
 # <a name="using-xim-c"></a>使用 XIM (C#)
 
@@ -20,28 +20,28 @@ ms.locfileid: "8992077"
 
 这是关于使用 XIM 的 C# API 的简短演练。 需要通过 C++ 访问 XIM 的游戏开发人员应查看[使用 XIM (C++)](using-xim.md)。
 - [使用 XIM (C#)](#using-xim-c)
-    - [先决条件](#prerequisites)
+    - [必备条件](#prerequisites)
     - [初始化和启动](#initialization-and-startup)
     - [异步操作和处理状态更改](#asynchronous-operations-and-processing-state-changes)
     - [基本 IXimPlayer 处理](#basic-iximplayer-handling)
-    - [允许好友加入并邀请他们](#enabling-friends-to-join-and-inviting-them)
-    - [基本匹配和随他人移动到其他 XIM 网络](#basic-matchmaking-and-moving-to-another-xim-network-with-others)
-    - [禁用匹配 NAT 规则以进行调试](#disabling-matchmaking-nat-rule-for-debugging-purposes)
-    - [离开 XIM 网络并清理](#leaving-a-xim-network-and-cleaning-up)
+    - [启用要加入的朋友并邀请他们](#enabling-friends-to-join-and-inviting-them)
+    - [基本比赛或移动到另一个 XIM 网络与其他人](#basic-matchmaking-and-moving-to-another-xim-network-with-others)
+    - [禁用匹配 NAT 规则，以便进行调试](#disabling-matchmaking-nat-rule-for-debugging-purposes)
+    - [离开 XIM 网络和清理](#leaving-a-xim-network-and-cleaning-up)
     - [发送和接收消息](#sending-and-receiving-messages)
     - [评估数据路径质量](#assessing-data-pathway-quality)
-    - [使用玩家自定义属性共享数据](#sharing-data-using-player-custom-properties)
-    - [使用网络自定义属性共享数据](#sharing-data-using-network-custom-properties)
-    - [使用按玩家技能匹配](#matchmaking-using-per-player-skill)
-    - [使用按玩家角色匹配](#matchmaking-using-per-player-role)
-    - [XIM 如何与玩家团队配合工作](#how-xim-works-with-player-teams)
+    - [共享数据使用播放机自定义属性](#sharing-data-using-player-custom-properties)
+    - [共享数据使用网络自定义属性](#sharing-data-using-network-custom-properties)
+    - [使用每个播放机技能的匹配](#matchmaking-using-per-player-skill)
+    - [使用每个玩家角色匹配](#matchmaking-using-per-player-role)
+    - [XIM 与播放机团队的工作方式](#how-xim-works-with-player-teams)
     - [使用聊天](#working-with-chat)
-    - [将玩家静音](#muting-players)
-    - [使用玩家团队配置聊天目标](#configuring-chat-targets-using-player-teams)
-    - [玩家空位的自动后台填充（“回填”匹配）](#automatic-background-filling-of-player-slots-backfill-matchmaking)
+    - [静音播放器](#muting-players)
+    - [配置使用播放机团队聊天目标](#configuring-chat-targets-using-player-teams)
+    - [自动的后台填满的 player 槽 （"回填"匹配）](#automatic-background-filling-of-player-slots-backfill-matchmaking)
     - [查询可加入的网络](#querying-joinable-networks)
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 开始使用 XIM 编码之前，有两个先决条件。
 
@@ -85,7 +85,7 @@ XboxIntegratedMultiplayer.MovetoNewNetwork(8, XimPlayersToMove.BringOnlyLocalPla
 
 ## <a name="asynchronous-operations-and-processing-state-changes"></a>异步操作和处理状态更改
 
-XIM 的核心是应用对 `XboxIntegratedMultiplayer.GetStateChanges()` 方法的定期且频繁的调用。 此方法是，如何通知 XIM 应用已准备好处理多人游戏状态的更新，以及 XIM 如何通过返回包含所有已排队更新的 `XimStateChangeCollection` 对象来提供这些更新。 `XboxIntegratedMultiplayer.GetStateChanges()` 旨在加快运行速度，以便在 UI 呈现循环中对每个图形帧执行调用。 这提供了方便的位置来检索所有已排队更改，而不必担心网络计时的不可预测性或多线程回调的复杂性。 XIM API 实际上已针对此单线程模式进行了优化。 它保证其状态在 `XimStateChangeCollection` 对象被处理且尚未释放之前将保持不变。
+XIM 的核心是应用对 `XboxIntegratedMultiplayer.GetStateChanges()` 方法的定期且频繁的调用。 此方法是，如何通知 XIM 应用已准备好处理多人游戏状态的更新，以及 XIM 如何通过返回包含所有已排队更新的 `XimStateChangeCollection` 对象来提供这些更新。 `XboxIntegratedMultiplayer.GetStateChanges()` 设计可快速操作，以便它可以在 UI 呈现循环中调用每个图形帧。 这提供了方便的位置来检索所有已排队更改，而不必担心网络计时的不可预测性或多线程回调的复杂性。 XIM API 确实针对此单线程模式进行了优化。 它保证其状态在 `XimStateChangeCollection` 对象被处理且尚未释放之前将保持不变。
 
 `XimStateChangeCollection` 是 `IXimStateChange` 对象的集合。
 应用应该：
@@ -95,7 +95,7 @@ XIM 的核心是应用对 `XboxIntegratedMultiplayer.GetStateChanges()` 方法�
 1. 将 `IXimStateChange` 类型转换为相应的更详细的类型。
 1. 根据需要处理更新。
 
-完成所有当前可用的 `IXimStateChange` 对象的操作后，应通过调用 `XimStateChangeCollection.Dispose()` 来将该数组传递回 XIM 以释放资源。 建议使用 `using` 声明，以确保资源在处理后会释放。 例如：
+完成所有当前可用的 `IXimStateChange` 对象的操作后，应通过调用 `XimStateChangeCollection.Dispose()` 来将该数组应传递回 XIM 以释放资源。 建议使用 `using` 声明，以确保资源在处理后会释放。 例如：
 
 ```cs
 using (var stateChanges = XboxIntegratedMultiplayer.GetStateChanges())
@@ -124,13 +124,13 @@ using (var stateChanges = XboxIntegratedMultiplayer.GetStateChanges())
 
 ## <a name="basic-iximplayer-handling"></a>基本 IXimPlayer 处理
 
-假定将单个本地用户移动到新的 XIM 网络的示例成功完成，则会为应用提供本地 `XimLocalPlayer` 对象的 `XimPlayerJoinedStateChange`。 在通过 `XimStateChangeCollection.Dispose()` 提供并返回对应的 `XimPlayerLeftStateChange` 之前，此对象一直保持有效。 始终为应用提供每个 `XimPlayerJoinedStateChange` 的 `XimPlayerLeftStateChange`。
+假定将单个本地用户移动到新的 XIM 网络的示例成功完成，则会为应用提供本地 `XimLocalPlayer` 对象的 `XimPlayerJoinedStateChange`。 在对应 `XimPlayerLeftStateChange` 通过 `XimStateChangeCollection.Dispose()` 提供并返回之前，此对象一直保持有效。 始终会为应用提供每个 `XimPlayerJoinedStateChange` 的 `XimPlayerLeftStateChange`。
 
 你还可以使用 `XboxIntegratedMultiplayer.GetPlayers()` 随时检索 XIM 网络中所有 `IXimPlayer` 对象的列表。
 
 `IXimPlayer` 对象有很多有用的属性和方法，例如，`IXimPlayer.Gamertag()` 可检索与玩家关联的当前 Xbox Live 玩家代号字符串，以用于显示。 如果 `IXimPlayer` 在设备本地，IXimPlayer.Local 将返回 true。 本地 `IXimPlayer` 可以转换为 `XimLocalPlayer`，它具有只有本地玩家可用的其他方法。
 
-当然，对玩家而言，最重要的状态不是 XIM 知道的常见信息，而是特定应用要跟踪的信息。由于你对该跟踪信息可能有自己的构造，因此，你可能需要将 `IXimPlayer` 对象链接到你自己的玩家构造对象，这样，每当 XIM 报告 `IXimPlayer` 时，你都可以快速检索状态，而无需通过设置自定义玩家上下文对象执行查找。 以下示例假定包含你的隐私状态的对象已经在变量“myPlayerStateObject”中，且新添加的 `IXimPlayer` 对象已经在变量“newXimPlayer”中：
+当然，玩家的最重要的状态不是将公共信息 XIM 知道，但要跟踪的特定应用程序。由于可能有自己构造，它用于该跟踪信息，你将想要链接`IXimPlayer`对象复制到你自己的播放机构造对象，以便任何时候，只要 XIM 报表`IXimPlayer`，可以快速而无需执行检索你的状态通过上下文对象设置自定义播放器的查找。 以下示例假定包含你的隐私状态的对象已经在变量“myPlayerStateObject”中，且新添加的 `IXimPlayer` 对象已经在变量“newXimPlayer”中：
 
 ```cs
 newXimPlayer.CustomPlayerContext = myPlayerStateObject;
@@ -154,11 +154,11 @@ currentConfiguration.AllowedPlayerJoins = XimAllowedPlayerJoins.Local | XimAllow
 XboxIntegratedMultiplayer.SetNetworkConfiguration(currentConfiguration);
 ```
 
-`XboxIntegratedMultiplayer.SetNetworkConfiguration()` 异步执行。 完成前一代码示例调用后，将会提供 `XimNetworkConfigurationChangedStateChange` 以通知应用，可加入性值已更改，不再是默认值 `XimAllowedPlayerJoins.None`。 然后，你可以通过检查 `XboxIntegratedMultiplayer.NetworkConfiguration.AllowedPlayerJoins` 的值来查询新值。
+`XboxIntegratedMultiplayer.SetNetworkConfiguration()` 以异步方式执行。 完成前一代码示例调用后，将会提供 `XimNetworkConfigurationChangedStateChange` 以通知应用，可加入性值已更改，不再是默认值 `XimAllowedPlayerJoins.None`。 然后，你可以通过检查 `XboxIntegratedMultiplayer.NetworkConfiguration.AllowedPlayerJoins` 的值来查询新值。
 
-`XboxIntegratedMultiplayer.NetworkConfiguration.AllowedPlayerJoins` 当设备在 XIM 网络中时，可以通过检查该值确定该网络的可加入性。
+`XboxIntegratedMultiplayer.NetworkConfiguration.AllowedPlayerJoins` 若要确定网络的 joinability XIM 网络设备时，可以检查。
 
-如果其中一个本地玩家向远程用户发送加入此 XIM 网络的邀请，则应用可以调用 `XimLocalPlayer.ShowInviteUI()` 以启动系统邀请 UI。 此处，本地用户可以选择他们希望邀请的人并发送邀请。
+如果其中一个本地玩家向远程用户发送加入此 XIM 网络的邀请，则应用可以调用 `XimLocalPlayer.ShowInviteUI()` 以启动系统邀请 UI。 此时，本地用户可以选择他们希望邀请的人并发送邀请。
 
 ```cs
 XimLocalPlayer.ShowInviteUI();
@@ -191,7 +191,7 @@ XboxIntegratedMultiplayer.MoveToNetworkUsingProtocolActivatedEventArgs(uriString
 
 使用协议激活移动到 XIM 网络和[初始化和启动](#initialization-and-startup)中所示的移动到新 XIM 网络相同。 唯一的区别是，移动成功后，会向移动的设备提供表示适用玩家的本地和远程玩家 `XimPlayerJoinedStateChange` 对象。 当然，XIM 网络中已经存在的原始设备不会移动，但会看到通过其他 `XimPlayerJoinedStateChange` 对象将新设备的用户添加为玩家。
 
-跨不同设备的玩家在 XIM 网络中连接到一起后，他们可以启动多人游戏场景、自动通过语音和文字进行通信以及发送特定于应用的消息。
+跨不同设备的玩家在 XIM 网络中集合后，可以启动多人游戏场景、自动通过语音和文字进行通信以及发送特定于应用的消息。
 
 ## <a name="basic-matchmaking-and-moving-to-another-xim-network-with-others"></a>基本匹配和随他人移动到其他 XIM 网络
 
@@ -212,7 +212,7 @@ XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking(matchmakingConfiguration
 
 和之前的移动一样，这会在所有设备上提供初始 `MoveToNetworkStartingStateChange`，并在成功完成移动后提供 `MoveToNetworkSucceededStateChange`。 由于这是从一个 XIM 网络到另一个 XIM 网络的移动，因此，其中一个区别是，已经存在为本地和远程用户添加的现有 `IXimPlayer` 对象，且会为所有一起移动到新 XIM 网络的玩家保留这些对象。 在进行匹配过程中，玩家之间的聊天和数据通信将继续工作，不会中断。
 
-匹配可能是一个漫长的过程，具体取决于匹配池中也调用了 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 的潜在玩家数量。
+匹配可能是漫长的过程，具体取决于匹配池中也调用了 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 的潜在玩家数量。
 
 整个操作过程中将定期提供 `XimMatchmakingProgressUpdatedStateChange`，使你和你的用户了解当前状态。 发现匹配时，会将其他玩家添加到具有典型 `PlayerJoinedStateChange` 的 XIM 网络中，然后，移动完成。
 
@@ -257,13 +257,13 @@ del %TEMP%\emptyfile.txt
 
 此方法会开始顺利地异步断开与其他参与者的连接的过程。 这会导致为远程设备提供已断开连接的每个本地玩家的 `PlayerLeftStateChange`。 也会为本地设备提供已断开连接的每个本地和远程玩家的 `PlayerLeftStateChange`。 完成所有断开连接操作后，将提供最终 `NetworkExitedStateChange`。
 
-当尚未提供 `NetworkExitedStateChange` 时，始终强烈建议调用 `XboxIntegratedMultiplayer.LeaveNetwork()` 并等待 `NetworkExitedStateChange` 以便顺利退出 XIM 网络。
+当尚未提供 `NetworkExitedStateChange` 时，始终强烈建议调用 `XboxIntegratedMultiplayer.LeaveNetwork()` 并等待 `NetworkExitedStateChange`，以便顺利退出 XIM 网络。
 
 ## <a name="sending-and-receiving-messages"></a>发送和接收消息
 
 XIM 及其基础组件会执行建立安全的 Internet 通信渠道的所有繁琐操作，因此你无需担心连接问题或只能访问部分玩家。 如果有任何基本对等连接问题，将无法成功移动到 XIM 网络。
 
-在组成并通过 `XimMoveToNetworkSucceededStateChange` 确认 XIM 网络后，已加入的所有设备上的所有应用实例保证获得有关已连接到 XIM 网络的每个 `IXimPlayer` 的通知，并可以向其中的任何一个发送消息。
+在组成并通过 `XimMoveToNetworkSucceededStateChange` 确认 XIM 网络后，已加入的所有设备上的所有应用实例保证获得有关已连接到 XIM 网络的每个 `IXimPlayer` 的通知，并可以向其中的任何发送消息。
 
 下面我们演示如何跨 XIM 网络发送消息。 下面的示例假定“sendingPlayer”变量是有效的本地玩家对象。 该示例使用“sendingPlayer”的方法 `SendDataToOtherPlayers()` 将已复制到“msgBuffer”中的消息结构发送给 XIM 网络中的所有玩家（本地或远程）。 请注意，由于未向该方法传递特定玩家的列表，因此会发送给所有玩家：
 
@@ -273,7 +273,7 @@ SendingPlayer.SendDataToOtherPlayers(msgBuffer, null, XimSendType.GuaranteedAndS
 
 将向该消息的所有收件人提供 `XimPlayertoPlayerDataReceivedStateChange`，其中包括数据副本、发送它的 `IXimPlayer` 对象以及本地接收它的 `IXimPlayer` 对象的列表。
 
-当然，有保证的连续传递很方便，但它也有可能成为低效率的发送类型，这是因为，如果 Internet 丢失了数据包或打乱了数据包的顺序，则 XIM 需要重新传输或延迟消息。 请务必考虑使用应用可容忍丢失或乱序到达的其他消息发送类型。 由于消息数据来自远程计算机，因此，最佳做法是明确定义数据格式，例如按特定字节顺序（“字节顺序”）打包多字节值。 对数据执行操作之前，应用还应验证数据。
+当然，有保证的连续传递很方便，但它也有可能成为低效率的发送类型，因为，如果 Internet 丢失了数据包或打乱了数据包的顺序，则 XIM 需要重新传输或延迟消息。 请务必考虑使用应用可容忍丢失或乱序到达的其他消息发送类型。 由于消息数据来自远程计算机，因此，最佳做法是明确定义数据格式，例如按特定字节顺序（“字节顺序”）打包多字节值。 对数据执行操作之前，应用还应验证数据。
 
 XIM 提供网络级别的安全，因此不需要使用额外的加密或签名方案。 不过，我们建议始终使用“深度防护”以避免受到意外应用程序错误的影响并能够处理正常共存的不同版本的应用程序协议（在开发、内容更新等期间）。 用户的 Internet 连接可能是受限且不断变化的资源。 我们强烈建议使用高效的消息数据格式，并避免采用会发送每个 UI 框架的设计。
 
@@ -291,7 +291,7 @@ XIM 提供网络级别的安全，因此不需要使用额外的加密或签名�
 
 ## <a name="sharing-data-using-player-custom-properties"></a>使用玩家自定义属性共享数据
 
-大多数应用数据交易都会通过 `XimLocalPlayer.SendDataToOtherPlayers()` 方法发生，因为它允许对接收交换的用户和时间、如何处理数据包丢失等问题进行最大程度的控制。 但有时候，能让玩家很容易地将关于自身的基本、很少更改的状态与他人分享是一个不错的选择。 例如，在进入所有玩家用来呈现其游戏内表示形式的多人游戏之前，每个玩家可能都有表示所选的人物模型的固定字符串。
+大多数应用数据交易都会通过 `XimLocalPlayer.SendDataToOtherPlayers()` 方法发生，因为它允许对接收交换的用户和时间、如何处理数据包丢失等问题进行最大程度的控制。 但有时候，能让玩家很容易地将关于自身的基本、很少更改的状态与他人分享是不错的选择。 例如，在进入所有玩家用来呈现其游戏内表示形式的多人游戏之前，每个玩家可能都有表示所选的人物模型的固定字符串。
 
 对于与玩家有关的不太频繁更改的数据，XIM 提供玩家自定义属性。 这些属性由应用定义的名称和值构成，它们是以 null 结尾的字符串对，可以应用于本地玩家，并可以在设备更改后自动传播到所有设备。
 
@@ -345,7 +345,7 @@ localPlayer.SetRolesAndSkillConfiguration(config);
 
 此操作完成时，会向所有参与者提供 `XimPlayerRolesAndSkillConfigurationChangedStateChange`，以指示此 `IXIMPlayer` 已更改其按玩家角色和技能配置。 可通过调用 `IXIMPlayer.RolesAndSkillConfiguration` 检索新值。 当所有玩家都应用非 null 匹配配置时，你可以使用匹配将其移动到 XIM 网络，并为 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 指定 `XimMatchmakingConfiguration` 结构的 `RequirePlayerRolesAndSkillConfiguration` 字段中的 true 值。
 
-下面的示例填充一个匹配配置，以便寻找共 2-8 个玩家参与无团队自由竞赛。 此外，此示例使用应用定义的常量，该常量的类型为 Uint64，名为 MYGAMEMODE_DEATHMATCH，表示要筛除的游戏模式。 这将配置匹配，将 XIM 网络的玩家与指定这些相同值的其他玩家相匹配，并且需要按玩家匹配配置。
+下面的示例填充匹配配置，以便寻找共 2-8 个玩家参与无团队自由竞赛。 此外，此示例使用应用定义的常量，该常量的类型为 Uint64，名为 MYGAMEMODE_DEATHMATCH，表示要筛除的游戏模式。 这将配置匹配，将 XIM 网络的玩家与指定这些相同值的其他玩家相匹配，并且需要按玩家匹配配置。
 
 ```cs
 XimMatchmakingConfiguration matchmakingConfiguration = new XimMatchmakingConfiguration();
@@ -358,7 +358,7 @@ matchmakingConfiguration.RequirePlayerRolesAndSkillConfiguration = true;
 
 为 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 提供此结构时，只要移动的玩家已通过非 null `XimPlayerRolesAndSkillConfiguration` 对象调用 `XimLocalPlayer.SetRolesAndSkillConfiguration()`，移动操作将正常开始。 如果任意玩家未执行此操作，则会暂停匹配过程，并为所有参与者提供值为 `WaitingForPlayerRolesAndSkillConfiguration` 的 `XimMatchmakingProgressUpdatedStateChange`。 这包括在匹配完成后，通过以前发送的邀请或通过其他社交方式（例如，调用 `XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableXboxUserId()`）加入 XIM 网络的玩家。 所有玩家都提供其 `XimPlayerRolesAndSkillConfiguration` 对象后，匹配将继续。
 
-如下一节中所述，使用按玩家技能匹配也可以与按玩家角色匹配用户结合使用。 如果只需要其中一个，你可以将另一个的值指定为 0。 这是因为声明 `XimPlayerRolesAndSkillConfiguration` 技能值为 0 的所有玩家始终会彼此匹配。
+如下一节中所述，使用按玩家技能匹配也可以结合匹配用户按玩家角色使用。 如果只需要其中一个，你可以将另一个的值指定为 0。 这是因为声明 `XimPlayerRolesAndSkillConfiguration` 技能值为 0 的所有玩家始终会彼此匹配。
 
 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 或其他 XIM 网络移动操作完成后，将把所有玩家的 `XimPlayerRolesAndSkillConfiguration` 结构自动清理为 null 指针（附带 `XimPlayerRolesAndSkillConfigurationChangedStateChange` 通知）。 如果你计划使用需要按玩家配置的匹配移动到另一个 XIM 网络，则需要通过一个包含最新信息的对象再次调用 `XimLocalPlayer.SetRolesAndSkillConfiguration()`。
 
@@ -410,7 +410,7 @@ byte playerIndex = ximPlayer.TeamIndex;
 ximLocalPlayer.SetTeamIndex(1);
 ```
 
-为所有设备提供此玩家的 `XimPlayerTeamIndexChangedStateChange` 时，会告知所有设备该玩家有一个有效的新团队索引值。 你可以随时调用 `XimLocalPlayer.SetTeamIndex()`。
+为所有设备提供此玩家的 `XimPlayerTeamIndexChangedStateChange` 时，会告知其玩家有有效的新团队索引值。 你可以随时调用 `XimLocalPlayer.SetTeamIndex()`。
 
 匹配会独立于团队评估所需的按玩家角色。 因此，不建议将团队和所需的角色用作同时匹配配置标准，因为团队是通过玩家计数（而不是履行的玩家角色）进行平衡的。
 
@@ -420,7 +420,7 @@ ximLocalPlayer.SetTeamIndex(1);
 
 如果希望有条件地启用文本机制，可以通过分别访问 `XimLocalPlayer.ChatTextToSpeechConversionPreferenceEnabled` 和 `XimLocalPlayer.ChatSpeechToTextConversionPreferenceEnabled` 字段在本地玩家中检测到这些首选项，并且，你可能希望有条件地启用文本机制。 但是，建议考虑进行文本输入，并显示始终可用的选项。
 
-`Windows::Xbox::UI::Accessability`  是专门为提供游戏内文字聊天的简单呈现而设计的 Xbox One 类，专注于语音到文本转换辅助技术。
+`Windows::Xbox::UI::Accessability` Xbox One 类专门用于语音转文本辅助技术讲解如何提供简单呈现方式的游戏中的文本聊天。
 
 获得由真实或虚拟键盘提供的文本输入后，请将字符串传递给 `XimLocalPlayer.SendChatText()` 方法。 以下代码显示了从变量“localPlayer”指向的本地 `IXIMPlayer` 对象发送示例硬编码字符串：
 
@@ -437,7 +437,7 @@ localPlayer.SendChatText(text);
 例如，由 `IXimPlayer.ChatIndicator` 报告的值预计会在玩家开始和停止说话时频繁改变。 它旨在支持应用在每个 UI 框架将其作为结果进行轮询。
 
 > [!NOTE]
-> 如果本地用户因其设备设置而没有足够的通信权限，`XimLocalPlayer.ChatIndicator` 将返回一个值为 `XIM_PLAYER_CHAT_INDICATOR_PLATFORM_RESTRICTED` 的 `XboxIntegratedMultiplayer.XimPlayerChatIndicator`。 对平台满足要求的期望指的是：应用可显示指示语音聊天或发送消息的平台限制的图标，以及指示问题的用户消息。 我们建议的示例消息为：“抱歉，当前不允许聊天。”
+> 如果本地用户因其设备设置而没有足够的通信权限，`XimLocalPlayer.ChatIndicator` 将返回一个值为 `XIM_PLAYER_CHAT_INDICATOR_PLATFORM_RESTRICTED` 的 `XboxIntegratedMultiplayer.XimPlayerChatIndicator`。 满足平台要求的期望是指应用可显示图标，为语音聊天或发送消息指示平台限制，以及显示发送给用户的消息，以指示问题。 我们建议的一个示例消息为："很抱歉，你不是允许聊天稍后再试。"
 
 ## <a name="muting-players"></a>将玩家静音
 
@@ -463,7 +463,7 @@ remotePlayer.ChatMuted = false;
 
 如本文档 [XIM 如何与玩家团队配合工作](#how-xim-works-with-player-teams)部分中所述，任何特定团队索引值的真正含义都取决于应用。 XIM 不会解释索引值，与聊天目标配置有关的相等比较除外。 如果由 `XboxIntegratedMultiplayer.ChatTargets` 报告的聊天目标配置当前 `XimChatTargets.SameTeamIndexOnly`，则任意给定玩家将仅与另一个玩家交换聊天通信，前提是两个玩家有相同的由 `IXIMPlayer.TeamIndex` 报告的值（且隐私/策略也允许）。
 
-为保持谨慎并支持竞争方案，会将新建的 XIM 网络配置为默认为 `XimChatTargets.SameTeamIndexOnly`。 但是，可能需要与其他团队中的战败对手聊天，例如，在游戏后的“大厅”中。 通过调用 `XboxIntegratedMultiplayer.SetChatTargets()`，你可以指示 XIM 允许所有人在隐私和策略允许的情况下与其他任何人交谈。 以下示例开始配置 XIM 网络中的所有参与者，以使用 `XimChatTargets.AllPlayers` 值：
+为保持谨慎并支持竞争方案，会将新建的 XIM 网络配置为默认为 `XimChatTargets.SameTeamIndexOnly`。 但是，可能需要与其他团队中的战败对手聊天，例如，在游戏后的“大厅”中。 通过调用 `XboxIntegratedMultiplayer.SetChatTargets()`，你可以指示 XIM 允许所有人在隐私和策略允许的地方与其他任何人交谈。 以下示例开始配置 XIM 网络中的所有参与者，以使用 `XimChatTargets.AllPlayers` 值：
 
 ```cs
 XboxIntegratedMultiplayer.SetChatTargets(XimChatTargets.AllPlayers)
@@ -563,4 +563,4 @@ XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableNetworkInformation(selectedN
 当通过 `XimNetworkConfiguration.TeamConfiguration`（声明了两个或更多团队）启用网络查询时，通过调用 XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableNetworkInformation() 加入的玩家将拥有默认团队索引值 0。
 
 > [!NOTE]
-> 如果应用具有指定多个本地用户，并且正在加入的网络具有比本地用户数较少空间，仍可以成功加入。 但是，仅允许本地用户的次数可加入网络。
+> 如果应用已指定多个本地用户，并加入网络具有更少的空间比本地用户数，联接仍然能够成功执行。 但是，仅允许本地用户的数量可能加入网络。

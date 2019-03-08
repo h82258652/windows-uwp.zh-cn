@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
 ms.openlocfilehash: b6fdc59e8a7203a3bb8c6ad79adabd446b884639
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926293"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597712"
 ---
 # <a name="relation-based-animations"></a>基于关系的动画
 
@@ -112,7 +112,7 @@ var orbitRotation = EF.Vector3(
 ```
 
 > [!NOTE]
-> `EF` 是一个速记使用符号，用于定义 ExpressionBuilder.ExpressionFunction。
+> `EF` 是一个简短"的使用"的注释来定义 ExpressionBuilder.ExpressionFunctions。
 
 最后，将这些部分组合起来，引用红球的位置，定义数学关系。
 

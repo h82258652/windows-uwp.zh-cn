@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ffc2f31b52e7913905c7d64ab797b2939cfb313d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045220"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651652"
 ---
 # <a name="networking-basics"></a>网络基础知识
 针对任何支持网络的应用的必做事项。
@@ -23,7 +23,7 @@ ms.locfileid: "9045220"
 
 | 功能 | 描述 |
 |------------|-------------|
-| **internetClient** | 提供对 Internet 及公共场所（如机场和咖啡厅）网络的出站访问。 多数需要进行 Internet 访问的应用都应使用此功能。 |
+| **internetClient** | 提供对 Internet 及公共场所（如机场和咖啡厅）网络的出站访问。 大部分需要 Internet 访问的应用都应使用此功能。 |
 | **internetClientServer** | 为应用提供来自 Internet 及公共场所（如机场和咖啡厅）网络的入站和出站访问。 |
 | **privateNetworkClientServer** | 为应用提供用户信任场所（如家里和办公室）中的入站和出站网络访问。 |
 
@@ -36,7 +36,7 @@ ms.locfileid: "9045220"
 | **sharedUserCertificates** | 此功能让应用可以访问软件和硬件证书，如智能卡证书。 在运行过程中调用此功能时，用户必须采取插入卡或选择证书等操作。 <br/> 使用此功能时，应用会将你的软件和硬件证书或智能卡用于识别。 你的雇主、银行或政府服务机构可以使用此功能来进行识别。 |
 
 ## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>当你的应用不在前台时通信
-[使用后台任务支持应用](https://msdn.microsoft.com/library/windows/apps/mt299103)包含了有关应用不在前台时使用后台任务进行工作的常规信息。 更具体地说，当它不是当前的前台应用，但数据仍通过网络发送给它时，你的代码必须采取特殊的步骤以接收通知。 控制通道触发器用于 Windows8，在此目的，它们仍受支持在 windows 10 中。 [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032) 提供了有关使用控制通道触发器的完整信息。 在 windows 10 中的新技术提供更好的功能降低开销对于某些方案，例如已启用推送的流套接字： 套接字代理和套接字活动触发器。
+[使用后台任务支持应用](https://msdn.microsoft.com/library/windows/apps/mt299103)包含了有关应用不在前台时使用后台任务进行工作的常规信息。 更具体地说，当它不是当前的前台应用，但数据仍通过网络发送给它时，你的代码必须采取特殊的步骤以接收通知。 控制通道触发器用于在 Windows 8 中，此目的，但它们仍支持在 Windows 10 中。 [  **here**](https://msdn.microsoft.com/library/windows/apps/hh701032) 提供了有关使用控制通道触发器的完整信息。 Windows 10 中新的技术提供更好功能进行较低的开销，在某些情况下，例如启用了推送的流套接字： 套接字 broker 和套接字活动触发器。
 
 如果你的应用使用了 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906)，则你的应用可以将开放套接字的所有权转移给系统提供的套接字代理，然后退出前台甚至终止。 在已传输的套接字上建立连接或流量送达该套接字后，你的应用或其指定的后台任务将被激活。 如果你的应用未运行，它将启动。 然后，套接字代理将使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) 通知你的应用收到新流量。 你的应用将从套接字代理回收套接字并处理该套接字上的流量。 这意味着，当你的应用未处理网络流量时，将消耗非常少的系统资源。
 
@@ -56,12 +56,12 @@ ms.locfileid: "9045220"
 安全套接字层 (SSL) 和最新的传输层安全 (TLS) 都是旨在为网络通信提供身份验证和加密功能的加密协议。 这些协议专门用于在发送和接收网络数据时防止发生窃听和篡改。 这些协议使用一种客户端-服务器模型进行协议交换。 这些协议还会使用数字证书和证书颁发机构来验证服务器是否是其声明的服务器。
 
 ### <a name="creating-secure-socket-connections"></a>创建安全套接字连接
-[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象可以配置为在客户端和服务器之间使用 SSL/TLS 进行通信。 对 SSL/TLS 的这一支持仅限于在 SSL/TLS 协商中将 **StreamSocket** 对象用作客户端。 当收到传入通信时，你无法将 SSL/TLS 与 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 所创建的 **StreamSocket** 一起使用，因为 **StreamSocket** 类没有实现作为服务器的 SSL/TLS 协商。
+[  **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象可以配置为在客户端和服务器之间使用 SSL/TLS 进行通信。 对 SSL/TLS 的这一支持仅限于在 SSL/TLS 协商中将 **StreamSocket** 对象用作客户端。 当收到传入通信时，你无法将 SSL/TLS 与 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 所创建的 **StreamSocket** 一起使用，因为 **StreamSocket** 类没有实现作为服务器的 SSL/TLS 协商。
 
 有以下两种方法可以借助 SSL/TLS 确保 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 连接的安全：
 
--   [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) - 建立到网络服务的初始连接并立即协商对所有通信使用 SSL/TLS。
--   [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) - 先不加密连接到网络服务。 应用可以发送或接收数据。 然后升级连接，对此后所有通信使用 SSL/TLS。
+-   [**ConnectAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701504) -进行到网络服务的初始连接并立即协商的所有通信使用 SSL/TLS。
+-   [**UpgradeToSslAsync** ](https://msdn.microsoft.com/library/windows/apps/br226922) -最初连接到未加密的网络服务。 应用可以发送或接收数据。 然后升级连接，对此后所有通信使用 SSL/TLS。
 
 SocketProtectionLevel 指定应用建立或升级连接所需的套接字保护级别。 但是，对于已建立的连接，其最终保护级别取决于连接的两个终结点之间的协商进程。 如果另一个终结点需要更低的保护级别，则最终的保护级别可能要比你指定的级别更低。 
 
@@ -71,10 +71,10 @@ SocketProtectionLevel 指定应用建立或升级连接所需的套接字保护�
 > 你的代码不应隐式依赖于使用特定的保护级别或默认使用给定安全级别的假设。 安全状况会不断变化，为了避免使用带有已知缺陷的协议，协议和默认保护级别将随着时间的推移而发生变化。 默认值可能会因单个计算机配置或已安装的软件和已应用的修补程序而异。 如果应用依赖于使用特定的安全级别，则必须明确指定该级别，然后进行检查以确保在已建立的连接上实际使用了该安全级别。
 
 ### <a name="use-connectasync"></a>使用 ConnectAsync
-[**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 可用于建立与网络服务的初始连接，并随后立即协商对所有通信使用 SSL/TLS。 有两种 **ConnectAsync** 方法支持传递 *protectionLevel* 参数：
+[**ConnectAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701504)可用于建立初始连接使用网络服务，然后再协商立即进行所有通信使用 SSL/TLS。 有两种 **ConnectAsync** 方法支持传递 *protectionLevel* 参数：
 
--   [**ConnectAsync(EndpointPair, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/hh701511) - 在 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象上启动异步操作以连接到指定为 [**EndpointPair**](https://msdn.microsoft.com/library/windows/apps/hh700953) 对象和 [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) 的远程网络目标。
--   [**ConnectAsync(HostName, String, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/br226916) - 在 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象上启动异步操作以连接到由远程主机名、远程服务名和 [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) 所指定的远程目标。
+-   [**（EndpointPair，SocketProtectionLevel） ConnectAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701511) -上启动异步操作[ **StreamSocket** ](https://msdn.microsoft.com/library/windows/apps/br226882)对象以连接到远程网络目标指定作为[ **EndpointPair** ](https://msdn.microsoft.com/library/windows/apps/hh700953)对象和一个[ **SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880)。
+-   [**(主机名、 字符串、 SocketProtectionLevel) ConnectAsync** ](https://msdn.microsoft.com/library/windows/apps/br226916) -上启动异步操作[ **StreamSocket** ](https://msdn.microsoft.com/library/windows/apps/br226882)要连接到远程目标对象指定远程主机名、 远程服务名称和一个[ **SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880)。
 
 如果 *protectionLevel* 参数设置为 **Windows.Networking.Sockets.SocketProtectionLevel.Ssl**，当调用上述任一 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 方法时，必须建立 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 才能使用 SSL/TLS 进行加密。 此值需要加密而且绝不允许使用 NULL 密码。
 
@@ -191,7 +191,7 @@ using Windows::Networking::Sockets;
 ### <a name="use-upgradetosslasync"></a>使用 UpgradeToSslAsync
 当你的代码使用 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 时，它将首先在不加密的情况下建立与网络服务的连接。 应用可以发送或接收某些数据，然后升级连接，以对此后所有通信使用 SSL/TLS。
 
-[**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 方法有两个参数。 *protectionLevel* 参数表示所需的保护级别。 *validationHostName* 参数是在升级到 SSL 时用于进行验证的远程网络目标的主机名。 通常情况下，*validationHostName* 将是应用最初建立连接时所使用的相同主机名。 如果 *protectionLevel* 参数设置为 **Windows.System.Socket.SocketProtectionLevel.Ssl**，当调用 **UpgradeToSslAsync** 时，[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 必须通过套接字在此后的通信上使用 SSL/TLS 进行加密。 此值需要加密而且绝不允许使用 NULL 密码。
+[  **UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 方法有两个参数。 *protectionLevel* 参数表示所需的保护级别。 *validationHostName* 参数是在升级到 SSL 时用于进行验证的远程网络目标的主机名。 通常情况下，*validationHostName* 将是应用最初建立连接时所使用的相同主机名。 如果 *protectionLevel* 参数设置为 **Windows.System.Socket.SocketProtectionLevel.Ssl**，当调用 **UpgradeToSslAsync** 时，[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 必须通过套接字在此后的通信上使用 SSL/TLS 进行加密。 此值需要加密而且绝不允许使用 NULL 密码。
 
 一般来说，使用 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 方法的顺序都是：
 
@@ -460,11 +460,11 @@ using Windows::Storage::Streams;
 
 如果客户端发出的初始请求不包含此值，或提供了与服务器的预期不相符的值，则预期值会在发生 WebSocket 握手错误时 从服务器发送到客户端。
 
-## <a name="authentication"></a>身份验证
+## <a name="authentication"></a>Authentication
 如何在通过网络进行连接时提供身份验证凭据。
 
 ### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>通过 StreamSocket 类提供客户端证书
-[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 类支持使用 SSL/TLS 应用来验证应用正在与其交互的服务器。 在某些情况下，应用还需要使用 TLS 客户端证书对服务器进行自身验证。 在 windows 10 中，你可以在[**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893)设置的对象 （这必须在启动 TLS 握手之前） 上提供客户端证书。 如果服务器请求客户端证书，Windows 将通过提供的证书做出响应。
+[  **Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 类支持使用 SSL/TLS 应用来验证应用正在与其交互的服务器。 在某些情况下，应用还需要使用 TLS 客户端证书对服务器进行自身验证。 在 Windows 10 中，可以提供有关客户端证书[ **StreamSocket.Control** ](https://msdn.microsoft.com/library/windows/apps/br226893) （这必须设置开始在 TLS 握手之前） 的对象。 如果服务器请求客户端证书，Windows 将通过提供的证书做出响应。
 
 下面是演示如何实现此目的的代码段：
 
@@ -483,7 +483,7 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 |  | [**MessageWebSocketControl.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br226847) |
 |  | [**StreamWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226928) |
 |  | [**StreamWebSocketControl.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br226927) |
-| **Background Transfer** | [**BackgroundDownloader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701076) |
+| **后台传输** | [**BackgroundDownloader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701076) |
 |  | [**BackgroundDownloader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701068) |
 |  | [**BackgroundUploader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701184) |
 |  | [**BackgroundUploader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701178) |

@@ -1,23 +1,23 @@
 ---
 title: 创建自定义样式
 description: 本文介绍有关在 XAML 中设置 UI 元素样式的基础知识
-keywords: XAML、UWP、入门
+keywords: XAML, UWP, 入门
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a1eacc42720e7bce4290476676b0864fbd8a3694
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926897"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592952"
 ---
 # <a name="tutorial-create-custom-styles"></a>教程：创建自定义样式
 
 本教程向你介绍如何自定义 XAML 应用的 UI。 警告：本教程可能包括或不包括独角兽图形。 （包括！）  
 
-## <a name="prerequisites"></a>先决条件
-* [Visual Studio 2017 和 Windows 10 SDK（10.0.15063.468 或更高版本）](https://developer.microsoft.com/windows/downloads)
+## <a name="prerequisites"></a>必备条件
+* [Visual Studio 2017 和 Windows 10 SDK (10.0.15063.468 或更高版本)](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="part-0-get-the-code"></a>第 0 部分：获取代码
 本实验室的起点位于 [xaml-basics-starting-points/style/ 文件夹](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style)内的 PhotoLab 示例存储库中。 克隆/下载存储库后，你可以使用 Visual Studio 2017 打开 PhotoLab.sln 来编辑项目。
@@ -30,7 +30,7 @@ PhotoLab 应用有两个主要页面：
 **DetailPage.xaml：** 选择单张照片后显示此照片。 利用浮出编辑菜单，可以修改、重命名和保存照片。
 ![DetailPage](../basics/images/xaml-basics/detailpage.png)
 
-## <a name="part-1-create-a-fancy-slider-control"></a>第 1 部分：创建奇特的滑块控件  
+## <a name="part-1-create-a-fancy-slider-control"></a>第 1 部分：创建精美的滑块控件  
 
 通用 Windows 平台 (UWP) 提供了多种用于自定义应用外观的方法。 从字体和版式设置到颜色和渐变再到模糊效果，你有很多选择。 
 
@@ -38,7 +38,7 @@ PhotoLab 应用有两个主要页面：
 
 <figure>
     <img src="../basics/images/xaml-basics/slider-start.png" />
-    <figure>*采用默认样式的小滑块。*</figure>
+    <figure>*带默认样式的谦卑滑块。*</figure>
 </figure>
 
 这些滑块很棒，它们能够执行滑块应该执行的所有操作，但不是很奇特。 让我们来修复一下。 
@@ -60,9 +60,9 @@ PhotoLab 应用有两个主要页面：
 
     [Windows.XAML.Ui.Shapes 命名空间](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes)可提供七种形状以供选择。 有椭圆、矩形和一个叫“路径”的东西，这个东西可以制作任何类型的形状 - 是的，甚至是独角兽！ 
     
-    <!-- TODO reduce size --> ![独角兽](../basics/images/xaml-basics/unicorn.png)
+    <!-- TODO reduce size --> ![Unicorn](../basics/images/xaml-basics/unicorn.png)
     
-    > **阅读相关信息：**[绘制形状](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)文章会告知你需要知道的有关 XAML 形状的所有内容。 
+    > **阅读有关它：**[绘制的形状](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)文章告诉您需要了解有关 XAML 形状的所有内容。 
     
     我们想要创建一个三角形样子的小工具 - 有点像你在立体声音量控件上看到的形状。
     
@@ -164,7 +164,7 @@ PhotoLab 应用有两个主要页面：
 
     ![两个奇特的滑块](../basics/images/xaml-basics/style-2sliders-done.png)
 
-7. **锦上添花**
+7. **更好的成果**
 
     为色调滑块添加一个从绿色渐变为红色的背景形状。 
 
@@ -337,11 +337,10 @@ XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量
 
 6. 编译并运行应用。 看起来应该...相同。 但是，你应该会从编写可维护的高效代码中获得美妙的满足感和成就感。
 
-<!-- TODO add new start/end points -->
-恭喜，你已完成了第 2 部分！
+<!-- TODO add new start/end points --> 恭喜，你已完成第 2 部分 ！
 
 
-## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>第 3 部分：使用控制模板制作奇特的滑块
+## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>第 3 部分：使用控件模板进行特别滑块
 
 还记得第 1 部分中我们如何在滑块后面添加形状使其看起来很酷吗？
 
@@ -859,5 +858,4 @@ XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量
     
     如你所见，我们的更新改进了多边形的定位；现在，多边形的底部与滑动条的底部对齐。
     
-<!-- TODO correct folder -->
-恭喜，你已完成了本教程！ 如果你遇到困难或者想要查看最终解决方案，则可以在 [UWP 应用示例存储库](https://github.com/Microsoft/Windows-universal-samples)中查找完整的示例。
+<!-- TODO correct folder --> 恭喜，已完成本教程 ！ 如果你遇到困难或者想要查看最终解决方案，则可以在 [UWP 应用示例存储库](https://github.com/Microsoft/Windows-universal-samples)中查找完整的示例。

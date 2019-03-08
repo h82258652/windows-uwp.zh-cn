@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 791a566d278b92aeb34ab36d38719b44e9cc6c8f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936582"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628152"
 ---
 # <a name="activityrequest-json"></a>ActivityRequest (JSON)
-有关一个或多个用户的完整状态信息请求。 
+有关一个或多个用户的丰富的状态显示信息请求。 
 <a id="ID4EN"></a>
 
  
@@ -23,15 +23,15 @@ ms.locfileid: "8936582"
  
 ActivityRequest 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| richPresence| [RichPresenceRequest](json-richpresencerequest.md)| 应使用完整状态字符串的友好名称。| 
-| 媒体| MediaRequest| 对于用户是观看或收听媒体信息。| 
+| richPresence| [RichPresenceRequest](json-richpresencerequest.md)| 应使用丰富的状态显示字符串的友好名称。| 
+| 媒体| MediaRequest| 用户是观看或收听的媒体信息。| 
   
 <a id="ID4EVB"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -56,6 +56,6 @@ ActivityRequest 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
    

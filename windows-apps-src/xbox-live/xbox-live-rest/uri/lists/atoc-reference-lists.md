@@ -8,17 +8,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a6f1e743542e70ee96ad93ee1cf2a7f2c3ed7158
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920278"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599322"
 ---
 # <a name="lists-uris"></a>列表 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的*引脚*。
+本部分提供有关通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务中针对*Pin*。
  
-仅游戏和 Xbox 360、 Windows Phone 设备上、 SmartGlass，或在 Xbox.com 上运行的应用程序可以使用此服务。
+仅游戏和 Xbox 360 上、 Windows Phone 设备上、 SmartGlass，或在 Xbox.com 上运行的应用程序可以使用此服务。
  
 这些 Uri 的域是 eplists.xboxlive.com。
  
@@ -29,19 +29,19 @@ ms.locfileid: "8920278"
 
 [/users/xuid(xuid)/lists/PINS/{listname}](uri-usersxuidlistspinslistname.md)
 
-&nbsp;&nbsp;访问列表中的项目。
+&nbsp;&nbsp;访问列表中的项。
 
 [/users/xuid(xuid)/lists/PINS/{listname}/ContainsItems](uri-usersxuidlistspinslistnamecontainsitems.md)
 
-&nbsp;&nbsp;确定是否项目 （由 itemId 指定） 的一组包含在列表中而不检索将整个列表。
+&nbsp;&nbsp;确定一组项目 （itemId 由指定） 包含在列表中而无需检索整个列表。
 
 [/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}](uri-usersxuidlistspinslistnameindex.md)
 
-&nbsp;&nbsp;将移动列表中的一项。
+&nbsp;&nbsp;将移动列表中的项。
 
 [/users/xuid(xuid)/lists/PINS/{listname}/RemoveItems](uri-usersxuidlistspinslistnameremoveitems.md)
 
-&nbsp;&nbsp;从列表中删除项目。
+&nbsp;&nbsp;从列表中移除项。
  
 <a id="ID4E5B"></a>
 
@@ -53,6 +53,6 @@ ms.locfileid: "8920278"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
+[通用资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
 
    

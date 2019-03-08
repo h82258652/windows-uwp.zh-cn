@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 27b7695ba163bf0ca832a96df030868e646e0abc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925432"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626332"
 ---
 # <a name="usersowneridpeoplexuids"></a>/users/{ownerId}/people/xuids
-访问用户的 XUID 调用方的用户集合。 这些 Uri 的域是`social.xboxlive.com`。
+访问调用方的用户集合由 XUID 的人员。 这些 Uri 的域是`social.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -24,9 +24,9 @@ ms.locfileid: "8925432"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| ownerId| 字符串| 正在访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。| 
+| ownerId| 字符串| 其资源的访问的用户的标识符。 必须与匹配身份验证的用户。 可能的值为"me"、 xuid({xuid}) 或 gt({gamertag})。| 
   
 <a id="ID4EOB"></a>
 
@@ -35,7 +35,7 @@ ms.locfileid: "8925432"
 
 [POST](uri-usersowneridpeoplexuidspost.md)
 
-&nbsp;&nbsp;获取用户的 XUID 从调用方的用户集合。
+&nbsp;&nbsp;获取由 XUID 人的用户给调用方的集合。
  
 <a id="ID4EYB"></a>
 
@@ -47,6 +47,6 @@ ms.locfileid: "8925432"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
+[通用资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
 
    

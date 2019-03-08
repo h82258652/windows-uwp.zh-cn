@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c49da63ecd091a886a68f508af09e33fb9c58ac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938548"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654122"
 ---
 # <a name="richpresencerequest-json"></a>RichPresenceRequest (JSON)
-完整状态的信息应使用哪些信息请求。 
+丰富的状态显示信息应使用其中的相关信息的请求。 
 <a id="ID4EN"></a>
 
  
@@ -23,16 +23,16 @@ ms.locfileid: "8938548"
  
 RichPresenceRequest 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| id| 字符串| 要使用的完整状态字符串<b>friendlyName</b> 。| 
-| scid| 字符串| 告诉我们定义的完整状态字符串的位置的 Scid。| 
-| 参数| 字符串的数组| 用来完成的完整状态字符串<b>friendlyName</b>字符串的数组。 应指定仅枚举友好名称，不统计数据。保留为空这将删除以前的任何值。| 
+| id| 字符串| <b>FriendlyName</b>的要使用的丰富的状态显示字符串。| 
+| scid| 字符串| 告诉我们其中定义丰富的状态显示字符串的 Scid。| 
+| params| 字符串数组| 数组<b>friendlyName</b>字符串用来完成的丰富的状态显示字符串。 应该指定仅枚举友好名称，不统计信息。将此留空，则将删除以前的任何值。| 
   
 <a id="ID4EDC"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -54,6 +54,6 @@ RichPresenceRequest 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
    

@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, direct3d, 深度缓冲区
 ms.localizationpriority: medium
 ms.openlocfilehash: f5ce1ec522a194111e175e41f82c4275cda4fbf5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946740"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613692"
 ---
 # <a name="create-depth-buffer-device-resources"></a>创建深度缓冲区设备资源
 
 
 
 
-了解如何创建支持阴影卷的深度测试所需的 Direct3D 设备资源。 [操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷](implementing-depth-buffers-for-shadow-mapping.md)的第 1 部分。
+了解如何创建支持阴影卷的深度测试所需的 Direct3D 设备资源。 第 1 部分[演练：实现在 Direct3D 11 中使用深度缓冲区的卷影卷](implementing-depth-buffers-for-shadow-mapping.md)。
 
 ## <a name="resources-youll-need"></a>所需资源
 
@@ -38,7 +38,7 @@ ms.locfileid: "8946740"
 ## <a name="check-feature-support"></a>检查功能支持
 
 
-创建深度映射之前，在 Direct3D 设备上调用 [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) 方法，请求 **D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT** 并提供一个 [**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569) 结构。
+然后再创建深度映射，调用[ **CheckFeatureSupport** ](https://msdn.microsoft.com/library/windows/desktop/ff476497)方法在 Direct3D 设备上请求**D3D11\_功能\_D3D9\_卷影\_支持**，并提供[ **D3D11\_功能\_数据\_D3D9\_卷影\_支持**](https://msdn.microsoft.com/library/windows/desktop/jj247569)结构。
 
 ```cpp
 D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT isD3D9ShadowSupported;
@@ -55,14 +55,14 @@ if (isD3D9ShadowSupported.SupportsDepthAsTextureWithLessEqualComparisonFilter)
 
 ```
 
-如果不支持此功能，请勿尝试加载与调用示例比较函数的着色器模型 4 级别 9\_x 兼容的着色器。 在大多数情况下，缺乏对该功能的支持意味着 GPU 是一款旧设备，其驱动器未更新至支持 WDDM 1.2。 如果设备支持至少功能级别 10\_0，则可加载与着色器模型 4\_0 兼容的示例比较函数作为替代。
+如果不支持此功能，则不尝试加载着色器编译着色器模型 4 级别 9\_x 调用示例比较函数。 在大多数情况下，缺乏对该功能的支持意味着 GPU 是一款旧设备，其驱动器未更新至支持 WDDM 1.2。 如果设备支持最低功能级别 10\_0，则您可以加载示例比较着色器编译着色器模型 4\_0 改为。
 
 ## <a name="create-depth-buffer"></a>创建深度缓冲区
 
 
 首先，尝试使用精度较高的深度格式创建深度映射。 首先设置匹配的着色器资源视图属性。 如果资源创建失败，例如由于设备内存不足或者存在硬件不支持的格式，请尝试精度较低的格式并更改要匹配的属性。
 
-如果你仅需要精度较低的深度格式，例如当在中等分辨率 Direct3D 功能级别 9\_1 设备上呈现时，该步骤是可选的。
+此步骤是可选的如果您只需要一种低精度深度格式，例如中等分辨率 Direct3D 功能级别 9 上呈现时\_1 的设备。
 
 ```cpp
 D3D11_TEXTURE2D_DESC shadowMapDesc;
@@ -82,7 +82,7 @@ HRESULT hr = pD3DDevice->CreateTexture2D(
     );
 ```
 
-然后创建资源视图。 在深度模具视图上将 mip 片设置为零，在着色器资源视图上将 mip 级别设置为 1。 两者都有一个纹理维度 TEXTURE2D，并且两者都需要使用匹配的 [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059)。
+然后创建资源视图。 在深度模具视图上将 mip 片设置为零，在着色器资源视图上将 mip 级别设置为 1。 都有一个纹理尺寸为 TEXTURE2D，并且两者都需要使用匹配[ **DXGI\_格式**](https://msdn.microsoft.com/library/windows/desktop/bb173059)。
 
 ```cpp
 D3D11_DEPTH_STENCIL_VIEW_DESC depthStencilViewDesc;
@@ -113,11 +113,11 @@ hr = pD3DDevice->CreateShaderResourceView(
 ## <a name="create-comparison-state"></a>创建比较状态
 
 
-现在创建比较采样器状态对象。 功能级别 9\_1 仅支持 D3D11\_COMPARISON\_LESS\_EQUAL。 [在硬件范围内支持阴影映射](target-a-range-of-hardware.md)中详细介绍了筛选选项，或者只是选取点筛选以便快速获得阴影映射。
+现在创建比较采样器状态对象。 功能级别 9\_1 仅支持 D3D11\_比较\_较少\_相等。 [在硬件范围内支持阴影映射](target-a-range-of-hardware.md)中详细介绍了筛选选项，或者只是选取点筛选以便快速获得阴影映射。
 
-请注意，你可以指定 D3D11\_TEXTURE\_ADDRESS\_BORDER 地址模式，并且它将在功能级别 9\_1 设备上有效。 这适用于像素着色器，该着色器在进行深度测试之前不测试像素是否位于光线的视锥之内。 通过为每个边框指定 0 或 1，你可以控制位于光线的视锥之外的像素是否可以通过深度测试，从而可以控制它们是被照亮还是处于阴影之中。
+请注意，可以指定 D3D11\_纹理\_地址\_边框寻址模式，它将在 9 的功能级别上处理\_1 的设备。 这适用于像素着色器，该着色器在进行深度测试之前不测试像素是否位于光线的视锥之内。 通过为每个边框指定 0 或 1，你可以控制位于光线的视锥之外的像素是否可以通过深度测试，从而可以控制它们是被照亮还是处于阴影之中。
 
-在功能级别 9\_1 上，必须设置为以下所需值：**MinLOD** 设置为零，**MaxLOD** 设置为 **D3D11\_FLOAT32\_MAX**，而 **MaxAnisotropy** 设置为零。
+有关功能级别 9\_1，以下所需的值必须设置：**MinLOD**设置为零， **MaxLOD**设置为**D3D11\_FLOAT32\_最大值**，并且**MaxAnisotropy**设置为零。
 
 ```cpp
 D3D11_SAMPLER_DESC comparisonSamplerDesc;
@@ -152,7 +152,7 @@ DX::ThrowIfFailed(
 ## <a name="create-render-states"></a>创建呈现器状态
 
 
-现在，创建你可以用来启用正面剔除的呈现器状态。 请注意，功能级别 9\_1 设备要求将 **DepthClipEnable** 设置为 **true**。
+现在，创建你可以用来启用正面剔除的呈现器状态。 请注意该功能级别 9\_1 的设备需要**DepthClipEnable**设置为**true**。
 
 ```cpp
 D3D11_RASTERIZER_DESC drawingRenderStateDesc;

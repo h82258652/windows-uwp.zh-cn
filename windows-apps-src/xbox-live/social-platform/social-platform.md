@@ -4,46 +4,46 @@ description: 提供了解 Xbox Live 社交平台服务的链接。
 ms.assetid: 27b85218-60f3-4eb0-9f7e-fe90e027db5c
 ms.date: 09/18/2017
 ms.topic: article
-keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
+keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bc835d5980aacc414b173d2ee3896ae14392790
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940070"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627432"
 ---
 # <a name="xbox-live-social-platform---for-games-and-gamers"></a>Xbox Live 社交平台 - 针对游戏和玩家
 
 对于采用你的游戏并继续参与的玩家，与他人玩游戏和比赛对于他们来说至关重要。 Xbox Live 提供了最好的游戏社交网络，拥有超过 5000 万活跃玩家，而且人数仍在增长。 我们创建了一套工具，将玩家聚集在一起，让玩家注意到你新创建的精彩游戏。 在你的游戏中集成 Xbox Live 社交平台非常容易，而且投资回报巨大，不论你是构建单人休闲游戏、伴侣应用，还是大型多人游戏。
 
 ## <a name="concepts-in-this-article"></a>本文中的概念
-- [个人资料](#profile)
-- [玩家分数和成就](#gamerscore-and-achievements)
-- [人脉系统 - 你的 Xbox Live 社交网络](#the-people-system---your-social-network-on-xbox-live)
+- [Profile](#profile)
+- [Gamerscore 和成就](#gamerscore-and-achievements)
+- [人们系统-您社交网络在 Xbox Live](#the-people-system---your-social-network-on-xbox-live)
 - [俱乐部](#clubs)
-- [剪辑和屏幕截图](#clips-and-screenshots)
+- [剪辑和屏幕快照](#clips-and-screenshots)
 - [活动源](#the-activity-feed)
-- [新潮](#trending)
-- [完整状态](#rich-presence)
+- [趋势分析](#trending)
+- [丰富的状态](#rich-presence)
 - [游戏中心](#game-hubs)
-- [使用 Xbox Live API 社交 API](#use-the-xbox-live-social-apis)
+- [使用 Xbox Live 社交 Api](#use-the-xbox-live-social-apis)
 
 ## <a name="bringing-gamers-together"></a>将玩家汇聚起来
 Xbox Live 致力于建立活跃的玩家社区。 因此我们提供了一组工具，帮助玩家找到其他玩家来分享经验，让游戏成为一种社交活动。 这样，在玩家玩你的游戏时，他们就一定会分享给他们的朋友。 
 
-### <a name="profile"></a>个人资料
+### <a name="profile"></a>配置文件
 Xbox Live 上的每个玩家都有个人资料。 个人资料包含以下信息：
 
--   **玩家代号**：玩家的唯一昵称。 Xbox Live 上的每个用户都有玩家代号。
+-   **玩家代号**:玩家的唯一别名。 Xbox Live 上的每个用户都有玩家代号。
 
--   **真实姓名**：玩家的名字和姓氏。 如果用户不希望通过隐私设置共享真实姓名，则此项为空。
+-   **实际名称**:玩家的第一个和最后一个名称。 如果用户不希望通过隐私设置共享真实姓名，则此项为空。
 
--   **玩家图片**：玩家选择来代表自己的图片或图标。
+-   **Gamerpic**:图片或玩家已选来表示它们的图标。
 
--   **状态**：玩家的当前状态（联机、脱机、玩游戏等）。
+-   **是否存在**:当前状态的玩家 （联机、 脱机，玩游戏，等等。）
 
--   **玩家分数**：表示玩家玩过的所有 Xbox Live 游戏累积的总成就分数的单一值。
+-   **Gamerscore**:表示的总成就分数的单个值在所有已播放的 Xbox Live 的游戏累积了用户。
 
 ### <a name="gamerscore-and-achievements"></a>玩家分数和成就
 每个玩家可以通过解锁游戏中的[成就](../achievements-2017/achievements.md)获得玩家分数。
@@ -65,7 +65,7 @@ Xbox Live 上的每个玩家都有个人资料。 个人资料包含以下信息
 
 当玩家玩游戏时，Xbox Live 社交图片将仅显示同样玩过你的游戏的玩家好友。
 
-[详细了解人脉系统。](people-system/xbox-live-people-system.md) 
+[了解有关用户系统的详细信息](people-system/xbox-live-people-system.md) 
 
 ### <a name="clubs"></a>俱乐部
 玩家可根据共同的兴趣构建各种规模的社交组。 这些组称为俱乐部。
@@ -93,13 +93,13 @@ Xbox 社交系统重要的部分就是活动分享。 这能让你 Xbox Live 上
 ### <a name="the-activity-feed"></a>活动源
 玩家玩你的游戏时，会解锁、剪辑、截图成就，同时与好友共享的活动源中还会包含其他活动，这样他们的好友就能看到你游戏中的精彩之处。
 
-### <a name="trending"></a>新潮
+### <a name="trending"></a>热门
 在 Xbox Live 中发布的最受欢迎的内容显示在 Xbox Live 的“热门”部分。 如果玩家在你的游戏中心发布了一个有趣的问题或共享了你的游戏的出色剪辑，你可以期待这些内容在 Xbox Live 上传播开来。 这是另一个提高你的游戏知名度的好方法。
 
 ### <a name="rich-presence"></a>完整状态
 状态，即在线状态，这不仅仅是用于检查玩家是否在线， 还会显示玩家目前正在使用或参与什么应用或游戏。 此外，通过“完整状态”字符串，你还能了解玩家在游戏中的动向，无论他们是在浏览菜单、排队等待游戏，还是在进行游戏。 
 
-[详细了解完整状态](rich-presence-strings/rich-presence-strings-overview.md)
+[了解有关丰富的状态的详细信息](rich-presence-strings/rich-presence-strings-overview.md)
 
 > [!NOTE]
 > 完整状态对于在 Xbox Live 创意者计划下创建的游戏不可用。

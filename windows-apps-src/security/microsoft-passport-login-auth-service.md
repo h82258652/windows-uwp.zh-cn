@@ -4,14 +4,14 @@ description: 这是有关如何在 Windows 10 UWP（通用 Windows 平台）应�
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全
+keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: de4d8fc797efe2a0dde7340f42208a97bccf0b10
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927983"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645102"
 ---
 # <a name="create-a-windows-hello-login-service"></a>创建 Windows Hello 登录服务
 
@@ -19,7 +19,7 @@ ms.locfileid: "8927983"
 
 为了生成此项目，你需要具有 C# 和 XAML 方面的一些经验。 你还需要在 Windows 10 计算机上使用 Visual Studio 2015（社区版或更高版本）。
 
-## <a name="exercise-1-server-side-logic"></a>练习 1：服务器端逻辑
+## <a name="exercise-1-server-side-logic"></a>练习 1:服务器端逻辑
 
 
 在本练习中，你将从第一个实验中生成的 Windows Hello 应用程序开始操作，并创建一个本地 mock 服务器和数据库。 本动手实验设计用来教你如何将 Windows Hello 集成到现有系统中。 通过使用 mock 服务器和 mock 数据库，将消除大量不相关的设置。 在你自己的应用程序中，你需要将 mock 对象替换为真实的服务和数据库。
@@ -535,7 +535,7 @@ ms.locfileid: "8927983"
     }
     ```
 
-## <a name="exercise-2-client-side-logic"></a>练习 2：客户端逻辑
+## <a name="exercise-2-client-side-logic"></a>练习 2:客户端逻辑
 
 在本练习中，你将更改来自第一个实验的客户端视图和帮助程序类，以便使用 AuthService 类。 在现实世界中，AuthService 即为身份验证服务器，并且你需要使用 Web API 发送数据并从服务器接收数据。 为方便起见，本动手实验中的客户端和服务器都是本地的。 目标是了解如何使用 Windows Hello API。
 
@@ -804,7 +804,7 @@ ms.locfileid: "8927983"
     }
     ```
 
--   因为你在删除帐户时要使用 AuthService，因此可以删除对 Button_Forget_User_Click 方法中的 AccountHelper 的引用。 现在，该方法应如下所示。
+-   如你将使用 AuthService 时的按钮中删除的帐户对 AccountHelper 引用\_忘记\_用户\_单击可以删除方法。 现在，该方法应如下所示。
 
     ```cs
     private void Button_Forget_User_Click(object sender, RoutedEventArgs e)
@@ -1060,7 +1060,7 @@ ms.locfileid: "8927983"
     }
     ```
 
--   你可能已注意到在你刚添加了最后一行的 GetKeyAttestationAsync 方法中已有注释。最后一行将是你创建的一个新方法，它会将所有 Windows Hello 信息发送到 AuthService。 在真实世界中，你需要将此信息发送到带有 Web API 的真实服务器。
+-   你可能在刚才添加的 GetKeyAttestationAsync 方法中注意到了最后一行有注释。此最后一行将是你创建的新方法，可将所有 Windows Hello 信息发送到 AuthService。 在真实世界中，你需要将此信息发送到带有 Web API 的真实服务器。
 
     ```cs
     using System.Runtime.InteropServices.WindowsRuntime;

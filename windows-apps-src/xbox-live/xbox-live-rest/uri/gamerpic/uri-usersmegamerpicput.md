@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7aedc7cbd8366c9cb8d3a60e2cb1f5e843b24a8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926613"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661652"
 ---
 # <a name="put-usersmegamerpic"></a>PUT (/users/me/gamerpic)
-用于上传 1080 x 1080 玩家图片。 
+将上传 1080 x 1080 gamerpic。 
   * [请求正文](#ID4EQ)
   * [HTTP 状态代码](#ID4EZ)
   * [响应正文](#ID4EXC)
@@ -25,19 +25,19 @@ ms.locfileid: "8926613"
  
 ## <a name="request-body"></a>请求正文
  
-请求正文是玩家头像 （1080 x 1080 PNG 文件）。
+请求正文是 gamerpic （1080 x 1080 PNG 文件）。
   
 <a id="ID4EZ"></a>
 
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+服务将返回其中一个状态代码在本部分中使用此方法在此资源上发出的请求的响应中。 有关与 Xbox Live 服务一起使用的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 描述| 
 | --- | --- | --- | 
-| 200| “确定”| 成功获取。| 
-| 201| 创建。| 上传已成功。| 
+| 200| 确定| 成功获取。| 
+| 201| 创建。| 上传成功。| 
 | 403| 已禁止| 权限被吊销。| 
 | 500| 错误| 出现错误。| 
   
@@ -46,7 +46,7 @@ ms.locfileid: "8926613"
  
 ## <a name="response-body"></a>响应正文
  
-该响应正文中不发送任何对象。
+响应正文中不发送任何对象。
   
 <a id="ID4ECD"></a>
 

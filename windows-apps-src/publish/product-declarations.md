@@ -1,5 +1,5 @@
 ---
-Description: Product declarations help make sure your app is displayed appropriately in the Microsoft Store and offered to the right set of customers.
+Description: 产品声明有助于确保适当地显示在 Microsoft Store 中您的应用程序并将其提供给一组合适的客户。
 title: 产品声明
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ms.date: 10/31/2018
@@ -7,21 +7,21 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e17fbd81c84ca4ce72d36dbabf9991fe8c6d75d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935971"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611782"
 ---
 # <a name="product-declarations"></a>产品声明
 
-在[提交过程](app-submissions.md)的[属性](enter-app-properties.md)页的**产品声明**部分可帮助确保你的应用以相应地显示并交付给正确的客户，并帮助他们了解他们可以使用你的应用。
+**产品声明**一部分[属性](enter-app-properties.md)页[提交过程](app-submissions.md)有助于确保您的应用程序是相应地进行显示，并且会提供给一组正确客户，并可帮助他们了解如何使用您的应用程序。
 
-以下部分介绍的声明和你需要确定每个声明是否适用于你的应用时要考虑的一些。 请注意，这些声明的两个检查默认情况下 （如下面所述）。具体取决于你的产品类别，你还可能会看到其他声明。 请务必查看所有声明并确保它们准确反映你的提交。
+以下各节介绍了声明和需要确定每个声明是否适用于您的应用程序时考虑的一些。 请注意两个这些声明检查了默认情况下 （如下面所述）。具体取决于您的产品的类别，也可能会看到其他声明。 请务必查看的所有声明，并确保它们能准确反映你的提交。
 
-## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>此应用使用户可以进行购买，但不使用的 Microsoft 应用商店商务系统。
+## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>此应用，用户可以进行购买，但不使用 Microsoft Store 商务系统。
 
-几乎每个提交中，你应取消选中此框，由于应用提供给要购买的机会是，或可消耗或在你的应用中使用的项目必须使用的 Microsoft 应用商店应用内购买 API 来创建和提交加载项。 每[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的创建和提交之前于 2015 年 6 月 29 日，应用无法继续无需使用 Microsoft 商务引擎提供应用内购买功能，但前提是该购买功能符合[Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions)。 如果这适用于你的应用，你必须选中此框。 否则，请不要选中。
+几乎每次提交时，您应保持未选中此框，因为这些工具提供了途径购买的应用是，或可以使用或在您的应用程序中使用的项必须使用 Microsoft Store 应用内购买 API 创建和提交外接程序。 每个[应用程序开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，已创建并在 2015 年 6 月 29 日之前提交的应用程序无法继续而无需购买功能只要使用 Microsoft 的商务引擎，提供应用内购买功能符合[Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions)。 如果这适用于你的应用，你必须选中此框。 否则，请不要选中。
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>已对此应用进行辅助功能指南符合度测试。
 
@@ -40,13 +40,13 @@ ms.locfileid: "8935971"
 有关详细信息，请参阅[辅助功能](../design/accessibility/accessibility.md)、[辅助功能测试](../design/accessibility/accessibility-testing.md)和[应用商店中的辅助功能](../design/accessibility/accessibility-in-the-store.md)。
 
 > [!IMPORTANT]
-> 除非已针对此目的特别设计和测试过应用，否则不要将其列为辅助应用。 如果将你的应用声明为辅助应用，但它实际上并不支持辅助功能，你可能会收到来自社区的负面反馈。
+> 除非专门设计，并对其进行测试实现此目的，不列表为可以访问你的应用。 如果将你的应用声明为辅助应用，但它实际上并不支持辅助功能，你可能会收到来自社区的负面反馈。
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>客户可以将此应用安装到备用驱动器或可移动存储。
 
-默认情况下，以使客户能够将应用安装到外部或可移动存储媒体 SD 卡，如或非系统卷驱动器等外部驱动器选中此框。
+若要允许客户将应用安装到外部或可移动存储媒体中的，如 SD 卡，或者为非系统卷驱动器等外部驱动器默认情况下，选中此框。
 
-如果你想要阻止你的应用安装到备用驱动器或可移动存储，并仅允许安装到其设备上的内部硬盘驱动器，请取消选中此框。 （注意，如果没有限制，以便*应用只能*安装选项安装到可移动存储媒体。）
+如果你想要防止您的应用程序安装到备用驱动器或可移动存储，且仅允许安装到其设备上的内部硬盘驱动器，请取消选中此框。 (请注意，没有任何选项，以便应用可以限制安装*仅*安装到可移动存储媒体。)
 
 
 ## <a name="windows-can-include-this-apps-data-in-automatic-backups-to-onedrive"></a>Windows 可以将此应用的数据包含在 OneDrive 的自动备份中。
@@ -56,9 +56,9 @@ ms.locfileid: "8935971"
 如果要防止你的应用数据包含在自动备份中，请取消选中此框。
 
 
-## <a name="this-app-sends-kinect-data-to-external-services"></a>此应用将 Kinect 数据发送到外部服务。 
+## <a name="this-app-sends-kinect-data-to-external-services"></a>此应用向外部服务发送 Kinect 数据。 
 
-如果你的应用使用 Kinect 数据并将其发送到任何外部服务，你必须选中此框。
+如果你的应用使用 Kinect 数据并将它发送到任何的外部服务，则必须选中该复选框。
 
 
 

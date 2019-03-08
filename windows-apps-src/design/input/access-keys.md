@@ -1,5 +1,5 @@
 ---
-Description: Learn how to improve both the usability and the accessibility of your UWP app by providing an intuitive way for users to quickly navigate and interact with an app's visible UI through a keyboard instead of a pointer device (such as touch or mouse).
+Description: 了解如何通过键盘而不是指针设备（如触摸或鼠标）为用户提供直观方式来快速导航并与应用的可视 UI 进行交互，以此提高 UWP 应用的实用功能和辅助功能。
 title: 访问键设计指南
 label: Access keys design guidelines
 keywords: 键盘, 访问键, 键提示, 辅助功能, 导航, 焦点, 文本, 输入, 用户交互
@@ -12,11 +12,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: bd71e4715b26f9e06326690d3642b4d19e23d292
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945799"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617262"
 ---
 # <a name="access-keys"></a>访问键
 
@@ -44,7 +44,7 @@ Microsoft Office 应用可为访问键提供广泛的支持。 下图所示为 W
 
 ![Microsoft Word 访问键的键提示锁屏提醒](images/accesskeys/keytip-badges-word.png)
 
-_Microsoft Word 访问键的键提示锁屏提醒_
+_在 Microsoft Word 中的访问密钥的快捷键提示徽章_
 
 若要为控件添加访问键，请使用 **AccessKey 属性**。 此属性值用于指定访问键序列、快捷键（如果是单个字母数字）和键提示。
 
@@ -72,11 +72,11 @@ _Microsoft Word 访问键的键提示锁屏提醒_
 
 下图所示为 Word 中的两个作用域。 第一个显示可让用户选择选项卡和其他顶级命令的主访问键，第二个显示“主页”选项卡的辅助访问键。
 
-![Microsoft Word 中的主访问键](images/accesskeys/primary-access-keys-word.png)
-_Microsoft Word 中的主访问键_
+![在 Microsoft Word 中的主访问密钥](images/accesskeys/primary-access-keys-word.png)
+_Microsoft Word 中的主访问密钥_
 
-![Microsoft Word 中的辅助访问键](images/accesskeys/secondary-access-keys-word.png)
-_Microsoft Word 中的辅助访问键_
+![在 Microsoft Word 中的辅助访问密钥](images/accesskeys/secondary-access-keys-word.png)
+_Microsoft Word 中的辅助访问密钥_
 
 可以为不同域中的元素复制访问键。 在前面的示例中，“2”既是主域中“撤销”的访问键，也是辅助域中“斜体”的访问键。
 
@@ -110,11 +110,11 @@ _Microsoft Word 中的辅助访问键_
 
 ![CommandBar 的主访问键](images/accesskeys/primary-access-keys-commandbar.png)
 
-_CommandBar 主作用域和受支持的访问键_
+_CommandBar 主作用域和受支持的访问密钥_
 
 ![CommandBar 的辅助访问键](images/accesskeys/secondary-access-keys-commandbar.png)
 
-_CommandBar 辅助范围和受支持的访问键_
+_CommandBar 辅助作用域和受支持的访问密钥_
 
 ### <a name="windows-10-creators-update-and-older"></a>Windows 10 创意者更新和早期版本
 
@@ -239,7 +239,7 @@ _英语和西班牙语资源字符串文件夹_
 
 ![指定已在 resources.resw 文件中指定的 AccessKey 属性](images/accesskeys/resource-resw-file.png)
 
-_指定已在 resources.resw 文件中指定的 AccessKey 属性_
+_指定 resources.resw 文件中指定的 AccessKey 属性_
 
 有关详细信息，请参阅[翻译 UI 资源](https://msdn.microsoft.com/library/windows/apps/xaml/Hh965329(v=win.10).aspx)
 
@@ -251,21 +251,21 @@ _指定已在 resources.resw 文件中指定的 AccessKey 属性_
 
 ![自动键提示放置示例](images/accesskeys/auto-keytip-position.png)
 
-_自动键提示放置示例_
+_示例中的键提示的自动放置_
 
 但是，如果你需要更好地控制键提示放置，我们的建议如下：
 
-1.  **明显关联原则**：用户可以轻松地将控件与键提示关联在一起。
+1.  **很明显关联原则**:用户可以轻松地将控件关联的键提示中。
 
     a.  键提示应**靠近**具有访问键的元素（所有者）。  
     b.  键提示应**避免覆盖具有访问键的已启用元素**。   
     c.  如果无法将键提示置于其所有者附近，则应覆盖其所有者。 
 
-2.  **可发现性**：用户可以通过键提示快速发现控件。
+2.  **可发现性**:用户可以快速发现带键提示的控件。
 
     a.  键提示不得**覆盖**其他键提示。  
 
-3.  **轻松扫描**：用户可以轻松地浏览键提示。
+3.  **易于扫描：** 用户可轻松地略过键提示。
 
     a.  键提示相互之间以及与 UI 元素之间应**对齐**。
     b.  应尽可能多地将键提示**分组**。 
@@ -274,11 +274,11 @@ _自动键提示放置示例_
 
 使用 **KeyTipPlacementMode** 属性以每个元素或每个组为基础自定义键提示的放置。
 
-放置模式包括：顶部、底部、右侧、左侧、隐藏、居中和自动。
+放置模式如下：顶部、 底部、 右侧，左、 隐藏、 中心和自动。
 
 ![键提示放置模式](images/accesskeys/keytip-postion-modes.png)
 
-_键提示放置模式_
+_键提示的位置模式_
 
 控件的中心线用于计算键提示的垂直和水平对齐。
 
@@ -320,7 +320,7 @@ _设置键提示的垂直和水平偏移量_
 
 ![键提示放置模式](images/accesskeys/keytips-screen-edge.png)
 
-_屏幕边缘导致键提示自动重新定位自身_
+_屏幕边缘会导致自动自己进行重新定位的键提示_
 
 ## <a name="key-tip-style"></a>键提示样式
 
@@ -330,7 +330,7 @@ _屏幕边缘导致键提示自动重新定位自身_
 
 ![键提示放置模式](images/accesskeys/keytip-customization.png)
 
-_键提示自定义选项_
+_键提示的自定义选项_
 
 此示例展示了如何更改应用程序资源：
 
@@ -358,9 +358,9 @@ XAML 框架公开了自动化属性，支持 UI 自动化客户端发现与用�
 ## <a name="related-articles"></a>相关文章
 
 * [键盘交互](keyboard-interactions.md)
-* [键盘加速键](keyboard-accelerators.md)
+* [键盘快捷键](keyboard-accelerators.md)
 
 **示例**
-* [XAML 控件库 (又称为 XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+* [XAML 控件库 (也称为 XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
 
 

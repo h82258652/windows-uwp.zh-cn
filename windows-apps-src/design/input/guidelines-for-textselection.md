@@ -1,5 +1,5 @@
 ---
-Description: This topic describes the new Windows UI for selecting and manipulating text, images, and controls and provides user experience guidelines that should be considered when using these new selection and manipulation mechanisms in your UWP app.
+Description: 本主题描述用于选择和操作文本、 图像和控件的新 Windows UI，并提供在 UWP 应用中使用这些新的选择和操作机制时应考虑的用户体验指南。
 title: 选择文本和图像
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
@@ -9,18 +9,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9679e6e658e7fa1eb50b41331e7e59ec2115fc14
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939002"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612502"
 ---
 # <a name="selecting-text-and-images"></a>选择文本和图像
 
 
 本文介绍了选择和操作文本、图像和控件，并提供了将这些机制用于应用中时应考虑的用户体验指南。
 
-> **重要 API**：[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)、[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+> **重要的 Api**:[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)， [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
  
 
 
@@ -47,22 +47,22 @@ ms.locfileid: "8939002"
 
 **注意事项和建议**
 
-使用通过提供完整平台用户交互体验，包括选择和操作行为的 Windowsto 生成应用中的语言框架公开的内置控件。 你会发现对于大多数 UWP 应用来说，内置控件的交互功能就已足够。
+使用通过 Windows 中的语言框架公开的内置控件构建提供完整的平台的用户的交互体验，包括所选内容和操作行为的应用程序。 你会发现对于大多数 UWP 应用来说，内置控件的交互功能就已足够。
 
 使用标准 UWP 文本控件时，本主题中所述的选择行为和视觉对象不能自定义。
 
 **文本选择**
 
-如果你的应用需要一个支持文本选择的自定义 UI，我们建议你遵循此处所述的 Windowsselection 行为。
+如果您的应用程序需要支持文本选择的自定义 UI，我们建议你遵循此处所述的 Windows 选择行为。
 
-**可编辑的内容和不可编辑的内容**
+**可编辑的和不可编辑的内容**
 
 
-借助触摸，选择交互主要是通过诸如用于设置插入光标或选择词汇的点击以及用于修改选择的滑动之类的手势来执行。 与其他 Windowstouch 交互，计时的交互仅限于点按操作并按住手势来显示信息 UI。 有关详细信息，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
+借助触摸，选择交互主要是通过诸如用于设置插入光标或选择词汇的点击以及用于修改选择的滑动之类的手势来执行。 与其他 Windows 触摸式交互，如定时的交互仅限于按下并按住手势来显示信息性 UI。 有关详细信息，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
 
-Windowsrecognizes 两个可能状态为选择交互，可编辑和不可编辑，并相应调整选择 UI、 反馈以及功能。
+Windows 将识别两个可能状态的所选内容交互，可编辑的和不可编辑，并相应地调整选择 UI、 反馈和功能。
 
-**可编辑的内容**
+**可编辑内容**
 
 在词汇的左半部分中点击会将光标放在紧挨词汇的左侧，在词汇的右半部分点击会将光标放在紧挨词汇的右侧。
 
@@ -78,11 +78,11 @@ Windowsrecognizes 两个可能状态为选择交互，可编辑和不可编辑�
 
 ![在所选内容内或在控制手柄上点击（或长按）可调用上下文菜单。](images/textselection-show-context.png)
 
-**注意**如果拼写错误的单词这些交互会稍。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
+**请注意**  对于拼写错误的单词的稍有不同，这些交互。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
 
  
 
-**不可编辑的内容**
+**非可编辑内容**
 
 以下图像演示如何通过在词汇内点击来选择词汇（初始选择中不包含空格）。
 
@@ -98,34 +98,34 @@ Windowsrecognizes 两个可能状态为选择交互，可编辑和不可编辑�
 
 ![具有进度控制手柄的媒体播放器](images/gripper-mediaplayer.png)
 
-*具有可调整进度栏的媒体播放器。*
+*媒体播放器可调整的进度栏。*
 
 ![具有修剪控制手柄的图像](images/gripper-imagemanip.png)
 
-*具有修剪控制手柄的图像编辑器。*
+*与裁剪控制手柄的图像编辑器。*
 
 ## <a name="related-articles"></a>相关文章
 
 
 
-**对于开发人员**
+**面向开发人员**
 * [自定义用户交互](https://msdn.microsoft.com/library/windows/apps/mt185599)
 
 **示例**
-* [基本输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **存档示例**
-* [输入：XAML 用户输入事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [输入：XAML 用户输入的事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
 * [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：触摸点击测试示例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 滚动、平移以及缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [输入：触控命中测试示例](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
 * [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
 * [输入：Windows 8 手势示例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [输入：操作和手势 (C++) 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 触控输入示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [输入：操作和手势 （c + +） 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX 触摸输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

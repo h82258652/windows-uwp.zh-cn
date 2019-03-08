@@ -4,21 +4,21 @@ description: 本文介绍了如何将通用 Windows 平台 (UWP) 应用连接到
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全
+keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 473b7ef9f4efacbbe78e1fdb5563695f8211bca8
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050900"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606742"
 ---
 # <a name="web-authentication-broker"></a>Web 身份验证代理
 
 
 
 
-本文介绍了如何将通用 Windows 平台 (UWP) 应用连接到使用身份验证协议（如 OpenID 或 OAuth）的联机标识提供商（如 Facebook、Twitter、Flickr、Instagram 等）。 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 方法将请求发送给联机标识提供者，并取回描述应用有权访问的提供者资源的访问令牌。
+本文介绍了如何将通用 Windows 平台 (UWP) 应用连接到使用身份验证协议（如 OpenID 或 OAuth）的联机标识提供商（如 Facebook、Twitter、Flickr、Instagram 等）。 [  **AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 方法将请求发送给联机标识提供者，并取回描述应用有权访问的提供者资源的访问令牌。
 
 >[!NOTE]
 >有关完整的有效代码示例，请克隆 [GitHub 上的 WebAuthenticationBroker 存储库](https://go.microsoft.com/fwlink/p/?LinkId=620622)。
@@ -87,14 +87,14 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->除 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 之外，[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 命名空间还包括 [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) 方法。 请勿调用此方法。 它仅面向 Windows Phone 8.1 的应用设计，并从 windows 10 开始已弃用。
+>除 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 之外，[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 命名空间还包括 [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) 方法。 请勿调用此方法。 它专为仅面向 Windows Phone 8.1 应用，并从 Windows 10 开始已弃用。
 
 ## <a name="connecting-with-single-sign-on-sso"></a>使用单一登录 (SSO) 连接。
 
 
 默认情况下，Web 身份验证代理不允许保留 cookie。 正因为如此，所以即使应用用户指示他们希望保留登录状态（例如，通过选择提供商的登录对话框中的复选框），他们也必须在每次希望访问该提供商的资源时登录。 若要使用 SSO 登录，则联机标识提供者必须为 Web 身份验证代理启用 SSO，而你的应用必须调用未获取 *callbackUri* 参数的 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) 的重载。 借此，可通过 Web 身份验证代理存储永久 Cookie，同一应用将来进行身份验证调用时将无需要求用户重复登录（用户的有效“登录”将可持续至访问令牌过期）。
 
-若要支持 SSO，联机提供商必须允许你采用 `ms-app://<appSID>` 形式注册重定向 URI，其中 `<appSID>` 为应用的 SID。 可从应用开发人员页面中找到应用的 SID，或通过调用 [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069) 方法达到此目的。
+若要支持 SSO，联机提供商必须允许你采用 `ms-app://<appSID>` 形式注册重定向 URI，其中 `<appSID>` 为应用的 SID。 可从应用开发人员页面中为应用找到应用的 SID，或通过调用 [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069) 方法（也可以达到此目的）。
 
 ```cs
 string result;
@@ -136,30 +136,30 @@ catch (Exception ex)
 
 ### <a name="operational-logs"></a>操作日志
 
-操作日志通常用来确定哪些内容不工作。 有一个专门的事件日志通道 Microsoft-Windows-WebAuth\\Operational，该通道允许网站开发人员了解 Web 身份验证代理正在如何处理其网页。 为了启用操作日志，请启动 eventvwr.exe 并在“Application and Services\\Microsoft\\Windows\\WebAuth“下启用 Operational 日志。 此外，Web 身份验证代理还在用户代理字符串后面附加一个用来在 Web 服务器上标识其本身的唯一字符串。 该字符串为“MSAuthHost/1.0”。 请注意，版本号可能会在将来更改，因此，不应当在代码中依赖该版本号。 如下所示是带有全部调试步骤的完整用户代理字符串示例。
+操作日志通常用来确定哪些内容不工作。 没有专用的事件日志通道 Microsoft Windows WebAuth\\使网站开发人员可以了解他们的 web 页处理 Web 身份验证代理的方式的操作。 若要启用它，启动 eventvwr.exe 和启用 Operational 日志下的应用程序和服务\\Microsoft\\Windows\\WebAuth。 此外，Web 身份验证代理还在用户代理字符串后面附加一个用来在 Web 服务器上标识其本身的唯一字符串。 该字符串为“MSAuthHost/1.0”。 请注意，版本号可能会在将来更改，因此，不应当在代码中依赖该版本号。 如下所示是带有全部调试步骤的完整用户代理字符串示例。
 
 `User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Win64; x64; Trident/6.0; MSAuthHost/1.0)`
 
 1.  启用操作日志。
 2.  运行 Contoso 社交应用程序。 ![显示 WebAuth 操作日志的事件查看器](images/wab-event-viewer-1.png)
 3.  所生成的日志条目可用来更详细地了解 Web 身份验证代理的行为。 在本例中，这些行为包括：
-    -   导航开始：记录 AuthHost 何时启动，包含有关起始和终止 URL 的信息。
+    -   导航开始：当 AuthHost 启动，并且包含有关启动和终止 Url 的信息的日志。
     -   ![阐释“导航开始”的详细信息](images/wab-event-viewer-2.png)
-    -   导航完成：记录网页已完成加载。
-    -   Meta 标记：记录何时遇到了 meta 标记（包括详细信息）。
-    -   导航终止：导航由用户终止。
-    -   导航错误：AuthHost 在某个 URL 处遇到一个导航错误（包括 HttpStatusCode）。
-    -   导航结束：遇到了终止 URL。
+    -   导航完成：记录完成的加载 web 页。
+    -   Meta 标记：当遇到 meta 标记时包括的详细信息的日志。
+    -   导航终止：被用户终止的导航。
+    -   导航错误：AuthHost 遇到包括 HttpStatusCode URL 上的导航错误。
+    -   导航结束：遇到终止 URL。
 
 ### <a name="fiddler"></a>Fiddler
 
 Fiddler Web 调试程序可与应用一起使用。
 
-1.  由于 AuthHost 在自己的应用容器中运行，如果要为其指定的私有网络功能必须先设置注册表项： Windows 注册表编辑器版本 5.00
+1.  因为 AuthHost 运行其自己的应用程序容器中，若要为其提供专用网络功能您必须设置注册表项：Windows Registry Editor 版本 5.00
 
-    **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
+    **HKEY\_本地\_MACHINE**\\**软件**\\**Microsoft**\\**Windows NT** \\ **CurrentVersion**\\**图像文件执行选项**\\**authhost.exe** \\ **EnablePrivateNetwork** = 00000001
 
-    如果你没有此注册表项，你可以在具有管理员权限的命令提示符中创建它。
+    如果没有此注册表项，您可以在具有管理员权限的命令提示符中创建它。
 
     ```cmd 
     REG ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\authhost.exe" /v EnablePrivateNetwork /t REG_DWORD /d 1 /f

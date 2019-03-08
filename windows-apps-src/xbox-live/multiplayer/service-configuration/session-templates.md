@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 会话模板
 ms.localizationpriority: medium
 ms.openlocfilehash: 0bbe4f6a3afe2d39fb18b4d4bad13e2aa91d246e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929169"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599432"
 ---
 # <a name="multiplayer-session-templates"></a>多人游戏会话模板
 
@@ -34,7 +34,7 @@ ms.locfileid: "8929169"
 
 如果你使用 XSAPI，并监视调试程序中生成的请求，则可能会注意到，这些请求使用模板合约版本 105。 在运行时，MPSD 会将这些请求有效地“升级”到版本 107。
 
-> **注意：** 允许在请求中使用用于会话模板的不同合约版本。
+> **注意：** 它是允许从什么是模板中使用的会话的请求中使用不同协定版本。
 
 如有必要，你可以将会话模板从版本 104/105 更改为版本 107。 有关说明，请参阅[调整适用于 2015 Multiplayer 的作品时遇见的常见问题](../multiplayer-appendix/common-issues-when-adapting-multiplayer.md)中的迁移说明。
 
@@ -65,7 +65,7 @@ ms.locfileid: "8929169"
       }
     }
 ```
-> **重要提示：** 通过模板设置的常量不能通过写入到 MPSD 更改。 若要更改这些值，你必须创建并提交包含所需更改的新模板。
+> **重要说明：** 通过模板设置的常量无法写入通过更改为 MPSD。 若要更改这些值，你必须创建并提交包含所需更改的新模板。
 
 
 ## <a name="example-session-templates"></a>示例会话模板

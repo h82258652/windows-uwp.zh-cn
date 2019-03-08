@@ -8,17 +8,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b52d0db46fe53d46dc831769c73c948d18d9c2c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922035"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641492"
 ---
 # <a name="people-uris"></a>人脉 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live*人脉*系统的服务。
+本部分提供有关通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务中针对*人*系统。
  
-仅运行的 Xbox 360 上、 在 Windows Phone 设备上，或在 Xbox.com 上的游戏可以使用此服务。
+仅在 Xbox 360 上、 在 Windows Phone 设备上，或在 Xbox.com 上运行的游戏可以使用此服务。
  
 这些 Uri 的域是 social.xboxlive.com。
  
@@ -33,11 +33,11 @@ ms.locfileid: "8922035"
 
 [/users/{ownerId}/people/{targetid}](uri-usersowneridpeopletargetid.md)
 
-&nbsp;&nbsp;调用方的用户集合中访问通过目标 ID 的人员。
+&nbsp;&nbsp;从调用方的用户集合访问目标 ID 的人员。
 
 [/users/{ownerId}/people/xuids](uri-usersowneridpeoplexuids.md)
 
-&nbsp;&nbsp;访问用户的 XUID 调用方的用户集合。
+&nbsp;&nbsp;访问调用方的用户集合由 XUID 的人员。
 
 [/users/{ownerId}/summary](uri-usersowneridsummary.md)
 
@@ -53,6 +53,6 @@ ms.locfileid: "8922035"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
+[通用资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
 
    

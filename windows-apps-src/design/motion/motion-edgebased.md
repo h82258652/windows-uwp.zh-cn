@@ -1,19 +1,19 @@
 ---
-Description: Edge-based animations show or hide UI that originates from the edge of the screen.
+Description: 基于边缘的动画显示或隐藏源自屏幕边缘的 UI。
 title: UWP 应用中基于边缘的 UI 动画
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10，uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e07ac565fe2e223b2fb33573ad083edfdfbc888a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934842"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610202"
 ---
 # <a name="edge-based-ui-animations"></a>基于边缘的 UI 动画
 
@@ -23,7 +23,7 @@ ms.locfileid: "8934842"
 
 基于边缘的动画显示或隐藏源自屏幕边缘的 UI。 显示和隐藏动画可以由用户或应用启动。 此 UI 可以覆盖应用，也可以作为主屏表面的一部分。 如果此 UI 是应用图面的一部分，那么应用的其余部分可能需要相应调整大小。
 
-> **重要 API**：[**EdgeUIThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/hh702324)
+> **重要的 Api**:[**EdgeUIThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
@@ -44,14 +44,14 @@ ms.locfileid: "8934842"
 ## <a name="related-articles"></a>相关文章
 
 
-**对于开发人员**
+**面向开发人员**
 * [动画概述](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [创建基于边缘的 UI 动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
-* [快速入门：使用库动画创建 UI 动画](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [对基于边缘的 UI 进行动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
+* [快速入门：对 UI 使用库动画进行动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**EdgeUIThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 * [**PaneThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/hh969160)
-* [创建淡化动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [创建重新定位动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
+* [进行淡化动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
+* [进行重新定位动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
 
  
 

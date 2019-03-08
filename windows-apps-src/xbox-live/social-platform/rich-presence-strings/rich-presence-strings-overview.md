@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 完整状态
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae0d0189954ed8fa9a0bc7651d6a90b9789c388
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939831"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604112"
 ---
 # <a name="rich-presence"></a>完整状态
 
@@ -26,13 +26,13 @@ ms.locfileid: "8939831"
 **区域设置字符串对**  
 每个可能的“完整状态”字符串都必须有与其关联的区域设置，以指定该字符串可以/应该在其中使用的区域。 每个枚举还将有一组区域设置字符串对。
 
-**字符串集**  
+**String-set**  
 字符串集由一组区域设置字符串对组成。 此集为所有可能的区域设置定义可能的“完整状态”值，或为所有可能的区域设置定义可能的枚举值。
 
 **友好名称**  
 友好名称有两种类型：
 
-**“完整状态”字符串**  
+**丰富的状态字符串**  
 字符串集的友好名称是以用来引用字符串集的字符串形式显示的唯一标识符。
 
 **枚举**  
@@ -41,20 +41,20 @@ ms.locfileid: "8939831"
 
 ## <a name="in-this-section"></a>本部分内容
 
-[“完整状态”配置](rich-presence-strings-configuration.md)  
+[丰富的状态配置](rich-presence-strings-configuration.md)  
 如何配置游戏中使用的“完整状态”。
 
-[“完整状态”更新字符串](rich-presence-strings-updating-strings.md)  
+[正在更新字符串丰富的状态](rich-presence-strings-updating-strings.md)  
 如何从游戏中更新“完整状态”字符串。
 
-[“完整状态”最佳实践](rich-presence-strings-best-practices.md)  
+[丰富的状态的最佳做法](rich-presence-strings-best-practices.md)  
 有关在游戏中使用“完整状态”的最佳实践。
 
-[“完整状态”策略和限制](rich-presence-strings-policies-and-limitations.md)  
+[丰富的状态策略和限制](rich-presence-strings-policies-and-limitations.md)  
 有关在游戏中使用“完整状态”的策略。
 
-[“完整状态”附录](rich-presence-strings-appendix.md)  
+[丰富的状态附录](rich-presence-strings-appendix.md)  
 数据平台与“完整状态”有关的其他示例和详细信息。
 
-[对 Xbox Live“完整状态”进行编程](programming-rich-presence.md)  
+[编程 Xbox Live 丰富的状态](programming-rich-presence.md)  
 演示如何通过 Xbox Live 使用“完整状态”。

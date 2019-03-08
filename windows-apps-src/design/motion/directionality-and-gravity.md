@@ -1,5 +1,5 @@
 ---
-Description: Learn how Fluent motion uses directionality and gravity.
+Description: 了解如何 Fluent motion 使用方向性和重力。
 title: 方向性和引力 - UWP 应用中的动画
 label: Directionality and gravity
 template: detail.hbs
@@ -12,11 +12,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4bb6f0ba60e89720a6daa37604cbe93696fb2bb7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922648"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603072"
 ---
 # <a name="directionality-and-gravity"></a>方向性和引力
 
@@ -47,7 +47,7 @@ ms.locfileid: "8922648"
 
 下面的示例应用了上述原则 - 在前进和后退导航过程中，所选项目停留在屏幕上。
 
-![UI 连续运动示例](images/continuous3.gif)
+![UI 连续动作示例](images/continuous3.gif)
 
 当导航导致屏幕上的项目被替换时，显示退出场景去往何方、新场景来自何处至关重要。
 
@@ -112,5 +112,5 @@ ms.locfileid: "8922648"
 
 ## <a name="related-articles"></a>相关文章
 
-- [运动概述](index.md)
+- [Motion 概述](index.md)
 - [计时和缓动](timing-and-easing.md)

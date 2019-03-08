@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏 uwp, windows 10, xbox one, 多人游戏 2015, 状态代码, 会话
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fbddd0070eb24d6fc050c59fa2a0197f98ee08c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941485"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646302"
 ---
 # <a name="multiplayer-session-status-codes"></a>多人游戏会话状态代码
 
@@ -24,9 +24,9 @@ ms.locfileid: "8941485"
 
 | 状态代码 | 字符串              | 内容类型     | 正文    | 描述 |
 |----|
-| 200         | 正常                  | 应用程序/json | 会话 | 成功读取 (GET) 或更新 (PUT)。                                                                                                                                                                                                                                                                                                             |
-| 201         | 已创建             | 应用程序/json | 会话 | 成功创建。                                                                                                                                                                                                                                                                                                                                 |
-| 202         | 已接受            | 文本/无格式       | 无    | 已接受请求，但尚未完成。                                                                                                                                                                                                                                                                                             |
+| 200         | 确定                  | 应用程序/json | 会话 | 成功读取 (GET) 或更新 (PUT)。                                                                                                                                                                                                                                                                                                             |
+| 201         | 创建时间             | 应用程序/json | 会话 | 成功创建。                                                                                                                                                                                                                                                                                                                                 |
+| 202         | 接受            | 文本/无格式       | 无    | 已接受请求，但尚未完成。                                                                                                                                                                                                                                                                                             |
 | 204         | 无内容          |                  |         | 在会话的 GET 中，会话不存在。 在会话元素的 GET 中，会话存在但元素不存在。 在会话的 PUT 中，会话由于 PUT 操作被删除。 在会话元素的 PUT 或 DELETE 中，当操作开始时会话存在，但会话或元素已不再存在。 |
 | 304         | 未修改        |                  |         | 在标头为 If-None-Match 的 GET 中，会话未更改。                                                                                                                                                                                                                                                                                        |
 | 400         | 错误请求         | 文本/无格式       | 消息 | 请求被假设为在第一次检查时无效。 其缺少必填字段或 JSON 文件格式不正确。 正文包括其他详细信息。                                                                                                                                                                                        |

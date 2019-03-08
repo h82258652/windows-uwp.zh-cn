@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f9f9a69c0e30459929d1e31084ea88b3f7ebbd0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925361"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612882"
 ---
 # <a name="tier-2"></a>第 2 层
 
@@ -30,7 +30,7 @@ ms.locfileid: "8925361"
 
 除上述内容外，还有一些特定支持问题。
 
-## <a name="span-idnon-mappedtilesspanspan-idnon-mappedtilesspanspan-idnon-mappedtilesspannon-mapped-tiles"></a><span id="Non-mapped_tiles"></span><span id="non-mapped_tiles"></span><span id="NON-MAPPED_TILES"></span>未映射磁贴
+## <a name="span-idnon-mappedtilesspanspan-idnon-mappedtilesspanspan-idnon-mappedtilesspannon-mapped-tiles"></a><span id="Non-mapped_tiles"></span><span id="non-mapped_tiles"></span><span id="NON-MAPPED_TILES"></span>非映射磁贴
 
 
 非映射磁贴的读数在格式的所有未缺失组件中返回 0，缺失组件返回默认值。
@@ -44,12 +44,12 @@ ms.locfileid: "8925361"
 
 **NULL** 纹素访问将引起 [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 针对纹理读取返回 false 的状态反馈的操作。 无论纹理访问结果如何屏蔽着色器中的写入，以及纹理格式包含多少组件（二者结合可能导致纹理看似不需要访问），都会产生上述结果。
 
-## <a name="span-idalignmentconstraintsspanspan-idalignmentconstraintsspanspan-idalignmentconstraintsspanalignment-constraints"></a><span id="Alignment_constraints"></span><span id="alignment_constraints"></span><span id="ALIGNMENT_CONSTRAINTS"></span>对齐方式约束
+## <a name="span-idalignmentconstraintsspanspan-idalignmentconstraintsspanspan-idalignmentconstraintsspanalignment-constraints"></a><span id="Alignment_constraints"></span><span id="alignment_constraints"></span><span id="ALIGNMENT_CONSTRAINTS"></span>对齐约束
 
 
-标准磁贴形状的对齐约束：保证在所有维度至少填充一个标准磁贴的 Mipmap 使用标准平铺，其余视为整体填入 N 磁贴（N 已报告给应用程序）的一个**单位**。 应用程序可以将 N 磁贴映射到磁贴池中的任意非连续位置，但必须映射所有打包磁贴或不映射任何磁贴。 mip 打包是每个数组切片的一组唯一的打包磁贴。
+标准磁贴形状的对齐约束：填充所有维度中的至少一个标准磁贴的 Mipmap 保证使用标准使用平铺，其余部分被视为作为打包**单元**到 N 磁贴 (N 报告给应用程序)。 应用程序可以将 N 磁贴映射到磁贴池中的任意非连续位置，但必须映射所有打包磁贴或不映射任何磁贴。 mip 打包是每个数组切片的一组唯一的打包磁贴。
 
-## <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>最小值/最大值减少筛选
+## <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>最小/最大减少筛选
 
 
 支持最小/最大减少值筛选。 请参阅[流式资源纹理采样功能](streaming-resources-texture-sampling-features.md)。
@@ -64,7 +64,7 @@ ms.locfileid: "8925361"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[流式资源功能层](streaming-resources-features-tiers.md)
+[流式处理资源的功能层](streaming-resources-features-tiers.md)
 
  
 

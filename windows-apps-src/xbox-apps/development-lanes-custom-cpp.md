@@ -7,13 +7,13 @@ keywords: windows 10, uwp
 ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 ms.localizationpriority: medium
 ms.openlocfilehash: 23dfb8843ed8e70fc6f979bd778a517d0c30327a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943918"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613872"
 ---
-# <a name="bring-custom-c-games-to-uwp-on-xbox"></a>将自定义 c + + Xbox 上的游戏 UWP
+# <a name="bring-custom-c-games-to-uwp-on-xbox"></a>将自定义 C++ 游戏移植到 Xbox 上的 UWP
 
 如果你要编写一个自定义 C++ 引擎，Xbox One 完全支持 C++。 
 
@@ -28,6 +28,6 @@ ms.locfileid: "8943918"
 
 
 ## <a name="see-also"></a>另请参阅
-- [将现有游戏移植到 Xbox](development-lanes-landing.md)
-- [Xbox One 上的 UWP](index.md)
+- [将现有的游戏引入 Xbox](development-lanes-landing.md)
+- [在 Xbox One 上 UWP](index.md)
 

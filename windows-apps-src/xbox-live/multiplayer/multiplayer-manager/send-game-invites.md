@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 多人游戏管理器, 流程图, 游戏邀请
 ms.localizationpriority: medium
 ms.openlocfilehash: 85aa45558d1443638ba7dd50dbea8923125ef664
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926758"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645992"
 ---
 # <a name="send-game-invites"></a>发送游戏邀请
 
@@ -22,9 +22,9 @@ ms.locfileid: "8926758"
 有两种发送邀请的方法：
 
 1. [Xbox 平台邀请 TCUI](#xbox-platform-invite-tcui)
-2. [游戏实现的自定义 UI](#title-implemented-custom-ui)
+2. [标题实现自定义 UI](#title-implemented-custom-ui)
 
-你可以在此处查看过程流程图：[流程图 - 向其他玩家发送邀请](mpm-flowcharts/mpm-send-invites.md)。
+您所见的过程流程图：[流程图-发送邀请到其他播放机](mpm-flowcharts/mpm-send-invites.md)。
 
 ### <a name="1-xbox-platform-invite-tcui-a-namexbox-platform-invite-tcui"></a>1) Xbox 平台邀请 TCUI <a name="xbox-platform-invite-tcui">
 
@@ -44,9 +44,9 @@ if (result.err())
 }
 ```
 
-**多人游戏管理器执行的功能**
+**由多人管理器中执行的函数**
 
-* 引入 Xbox 库存游戏可调用 UI (TCUI)
+* 引入 Xbox 库存作品可调用 UI (TCUI)
 * 直接向选择的玩家发送邀请
 
 ### <a name="2-title-implemented-custom-uia-nametitle-implemented-custom-ui"></a>2) 游戏实现的自定义 UI<a name="title-implemented-custom-ui">
@@ -70,6 +70,6 @@ if (result.err())
 }
 ```
 
-**多人游戏管理器执行的功能**
+**由多人管理器中执行的函数**
 
 * 直接向选择的玩家发送邀请

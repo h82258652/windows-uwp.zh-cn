@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 71026762933267e1cad9a1cd9b6581eed1dadbb8
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044564"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618022"
 ---
 # <a name="support-your-app-with-background-tasks"></a>使用后台任务支持应用
 
@@ -20,35 +20,35 @@ ms.locfileid: "9044564"
 
 ## <a name="playing-media-in-the-background"></a>在后台播放媒体
 
-从 Windows10 版本 1607 开始，在后台播放音频变得更简单。 有关详细信息，请参阅[在后台播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)。
+从 Windows 10 版本 1607 开始，在后台播放音频变得更简单。 有关详细信息，请参阅[在后台播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)。
 
 ## <a name="in-process-and-out-of-process-background-tasks"></a>进程内后台任务和进程外后台任务
 
-有两种方式实现后台任务：
+有两种实现后台任务的方法：
 
-* 在进程： 应用及其后台进程运行的同一进程中
-* 进程外： 应用及其后台进程运行在单独进程中。
+* 进程内：应用与其后台进程在同一进程内运行
+* 进程外：应用与后台进程在不同进程中运行。
 
-进程内后台支持在 Windows10 版本 1607 中引入，目的是简化编写后台任务。 但仍可以编写进程外后台任务。 有关在何时编写进程内和进程外后台任务的建议，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
+进程内后台支持在 Windows 10 版本 1607 中引入，目的是简化编写后台任务。 但仍可以编写进程外后台任务。 有关在何时编写进程内和进程外后台任务的建议，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
-由于出现错误时，后台进程不能使应用崩溃，进程外后台任务是更具复原能力。 但复原的代价来管理应用和后台任务之间的跨进程通信的更为复杂的价格。
+进程外后台任务更容易复原，因为在出现错误时，后台进程不会使应用崩溃。 但复原的代价是应用与后台任务之间的跨进程通信管理更为复杂。
 
-进程外后台任务实现为实现[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)接口操作系统在独立进程 (backgroundtaskhost.exe) 中运行的轻型类。 通过使用[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)类注册后台任务。 注册后台任务时，类名称将用于指定入口点。
+进程外后台任务实现为轻型类，该类实现操作系统在独立进程 (backgroundtaskhost.exe) 中运行的 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 接口。 使用 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 类注册后台任务。 注册后台任务时，类名称将用于指定入口点。
 
-在 Windows10 版本 1607 中，可以在无需创建后台任务的情况下启用后台活动。 你可以改为运行直接在前台应用程序的进程内后台代码。
+在 Windows 10 版本 1607 中，可以在无需创建后台任务的情况下启用后台活动。 可以直接在前台应用程序的进程中运行后台代码。
 
 若要快速开始使用进程内后台任务，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
 
 若要快速开始使用进程外后台任务，请参阅[创建和注册进程外后台任务](create-and-register-a-background-task.md)。
 
 > [!TIP]
-> 从 windows 10 开始，不再需要将应用放在锁屏上为其注册后台任务的先决条件。
+> 从 Windows 10 开始，不再需要将应用放在锁定屏幕上为注册后台任务的必备组件。
 
 ## <a name="background-tasks-for-system-events"></a>系统事件的后台任务
 
 应用可以通过使用 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 类注册后台任务来响应系统生成的事件。 应用可以使用以下任意系统事件触发器（在 [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) 中定义）
 
-| 触发器名称                     | 说明                                                                                                    |
+| 触发器名称                     | 描述                                                                                                    |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------|
 | **InternetAvailable**            | Internet 变为可用。                                                                                |
 | **NetworkStateChange**           | 网络更改，如开销或连接性发生更改。                                              |
@@ -62,7 +62,7 @@ ms.locfileid: "9044564"
 
 你可以控制后台任务何时运行，通过添加条件，甚至可以在任务触发后进行控制。 在触发后，后台任务将不再运行，直至所有条件均符合为止。 可以使用以下条件（由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 枚举表示）。
 
-| 条件名称           | 说明                       |
+| 条件名称           | 描述                       |
 |--------------------------|-----------------------------------|
 | **InternetAvailable**    | Internet 必须可用。   |
 | **InternetNotAvailable** | Internet 必须不可用。 |
@@ -71,11 +71,10 @@ ms.locfileid: "9044564"
 | **UserNotPresent**       | 用户必须离开。            |
 | **UserPresent**          | 用户必须存在。         |
 
-将 **InternetAvailable** 条件添加到你的后台任务 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)，以将后台任务触发时间延迟到网络堆栈运行后。 这种情况节省电源，因为可用网络之前，不会执行后台任务。 此条件不提供实时激活。
+将 **InternetAvailable** 条件添加到你的后台任务 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)，以将后台任务触发时间延迟到网络堆栈运行后。 此条件可以省电，因为必须有可用网络才会执行后台任务。 此条件不提供实时激活。
 
-如果你的后台任务需要网络连接，设置[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)以确保后台任务运行时网络，保持。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果你的后台任务不会设置**IsNetworkRequested**，然后你的后台任务将不能访问网络当处于连接待机模式时 （例如，手机屏幕处于关闭状态时。）
- 
-有关后台任务条件的详细信息，请参阅[设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)。
+如果后台任务需要网络连接，请设置 [IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)，以确保在后台任务运行时网络保持连接。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果后台任务不会设置**IsNetworkRequested**，则后台任务将不能访问网络时在连接待机模式 （例如，当手机的屏幕处于关闭状态时。）  
+有关后台任务条件的详细信息，请参阅[设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)。
 
 ## <a name="application-manifest-requirements"></a>应用程序清单要求
 
@@ -85,7 +84,7 @@ ms.locfileid: "9044564"
 
 以下实时触发器可用于在后台运行轻型自定义代码：
 
-| 实时触发器  | 说明 |
+| 实时触发器  | 描述 |
 |--------------------|-------------|
 | **控制通道** | 后台任务通过使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 可以使连接保持活动状态，在控制通道上接收消息。 如果你的应用正在侦听套接字，可以使用套接字代理而不是 **ControlChannelTrigger**。 有关使用套接字代理的详细信息，请参阅 [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009)。 **ControlChannelTrigger** 在 Windows Phone 上不受支持。 |
 | **计时器** | 后台任务运行的频率可以为每 15 分钟一次，并且可以通过使用 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 将它们设置在特定时间运行。 有关详细信息，请参阅[通过计时器运行后台任务](run-a-background-task-on-a-timer-.md)。 |
@@ -97,13 +96,13 @@ ms.locfileid: "9044564"
 
 若要确保通用 Windows 应用在你发布更新后继续正常运行，请在启动已经过更新的应用时调用 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然后调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
-**限制触发器实例数：** 应用可注册的某些触发器的实例数存在限制。 对于应用的每个实例，应用只能注册一次 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger)、[MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) 和 [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396)。 如果应用超出此限制，注册会引发异常。
+**触发器实例数的限制：** 有多少个实例的某些触发器应用可以注册限制。 对于应用的每个实例，应用只能注册一次 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger)、[MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) 和 [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396)。 如果应用超出此限制，注册会引发异常。
 
 ## <a name="system-event-triggers"></a>系统事件触发器
 
-[**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) 枚举表示以下系统事件触发器：
+[  **SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) 枚举表示以下系统事件触发器：
 
-| 触发器名称            | 说明                                                       |
+| 触发器名称            | 描述                                                       |
 |-------------------------|-------------------------------------------------------------------|
 | **UserPresent**         | 后台任务在用户出现后触发。   |
 | **UserAway**            | 后台任务在用户离开后触发。    |
@@ -113,7 +112,7 @@ ms.locfileid: "9044564"
    
 以下系统事件触发器将指示用户何时将应用移到或移出锁屏界面。
 
-| 触发器名称                     | 说明                                  |
+| 触发器名称                     | 描述                                  |
 |----------------------------------|----------------------------------------------|
 | **LockScreenApplicationAdded**   | 向锁屏中添加应用磁贴。     |
 | **LockScreenApplicationRemoved** | 从锁屏中删除应用磁贴。 |
@@ -139,7 +138,7 @@ ms.locfileid: "9044564"
 
 除非你豁免你的应用，以便它可以在节电模式打开时仍可以运行后台任务和接收推送通知，否则当节电模式功能启用时，如果设备未连接到外部电源且电量低于指定剩余电量，它将阻止后台任务运行。 这不会阻止你注册后台任务。
 
-但是，企业应用，并将不会在 Microsoft Store 中发布的应用，请参阅[在后台无限期运行](run-in-the-background-indefinetly.md)若要了解如何使用功能在后台无限期运行后台任务或扩展的执行会话。
+但是，对于企业应用程序，将不会在 Microsoft Store 中发布的应用，请参阅[无限期地运行在后台](run-in-the-background-indefinetly.md)若要了解如何使用功能在后台中运行后台任务或扩展的执行会话无限期。
 
 ## <a name="background-task-resource-guarantees-for-real-time-communication"></a>后台任务资源保证实时通信
 
@@ -158,43 +157,43 @@ ms.locfileid: "9044564"
 > [!IMPORTANT]
 > **DeviceUseTrigger** 和 **DeviceServicingTrigger** 不能用于进程内后台任务。
 
-某些关键设备操作（如长时间运行的固件更新）无法通过 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 执行。 此类操作仅可以在电脑上通过使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 的特权应用执行。 *特权应用*是指由设备制造商授权执行这些操作的应用。 设备元数据用于指定已指派哪个应用（如果有）作为设备的特权应用。 有关详细信息，请参阅[设备同步和更新的 Microsoft 应用商店设备应用](https://go.microsoft.com/fwlink/p/?LinkId=306619)
+某些关键设备操作（如长时间运行的固件更新）无法通过 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 执行。 此类操作仅可以在电脑上通过使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 的特权应用执行。 *特权应用*是指由设备制造商授权执行这些操作的应用。 设备元数据用于指定已指派哪个应用（如果有）作为设备的特权应用。 有关详细信息，请参阅[设备同步和 Microsoft Store 的设备应用程序的更新](https://go.microsoft.com/fwlink/p/?LinkId=306619)
 
 ## <a name="managing-background-tasks"></a>管理后台任务
 
 后台任务可以使用事件和本地存储向你的应用报告进度、完成和取消。 你的应用还可以捕捉由后台任务引发的异常，并在应用更新过程中管理后台任务注册。 有关详细信息，请参阅：
 
-[处理取消的后台任务](handle-a-cancelled-background-task.md)  
-[监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
+[处理已取消的后台任务](handle-a-cancelled-background-task.md)  
+[监视器后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 
-在应用启动期间检查你的后台任务注册。 确保在 BackgroundTaskBuilder.AllTasks 中存在你的应用未分组的后台任务。 重新注册的那些不存在。 注销不再需要的任何任务。 这将确保所有后台任务注册在每次启动应用时都是最新。
+在应用启动期间检查你的后台任务注册。 确保你的应用的未分组后台任务显示在 BackgroundTaskBuilder.AllTasks 中。 重新注册未显示的后台任务。 注销任何不再需要的任务。 这可确保每次应用启动时所有后台任务注册都是最新的。
 
 ## <a name="related-topics"></a>相关主题
 
-**在 windows 10 中使用多任务的概念指南**
+**Windows 10 中的多任务的概念性指南**
 
-* [启动、恢复和多任务](index.md)
+* [启动、 恢复和多任务](index.md)
 
 **相关的后台任务指南**
 
-* [后台任务指南](guidelines-for-background-tasks.md)
-* [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)
-* [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)
-* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
-* [将进程外后台任务转换为进程内后台任务](convert-out-of-process-background-task.md)
+* [后台任务的指导原则](guidelines-for-background-tasks.md)
+* [访问传感器和设备通过后台任务](access-sensors-and-devices-from-a-background-task.md)
+* [创建和注册过程中后台任务](create-and-register-an-inproc-background-task.md)
+* [创建并注册进程外后台任务](create-and-register-a-background-task.md)
+* [将进程外后台任务转换为进程内的后台任务](convert-out-of-process-background-task.md)
 * [调试后台任务](debug-a-background-task.md)
-* [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
-* [分组后台任务注册](group-background-tasks.md)
-* [处理取消的后台任务](handle-a-cancelled-background-task.md)
-* [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
-* [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
-* [在后台播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [声明应用程序清单中的后台任务](declare-background-tasks-in-the-application-manifest.md)
+* [组后台任务注册](group-background-tasks.md)
+* [处理已取消的后台任务](handle-a-cancelled-background-task.md)
+* [如何在触发挂起、 继续和后台 UWP 应用中的事件 （在调试）](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
+* [监视器后台任务进度和完成](monitor-background-task-progress-and-completion.md)
+* [在背景中播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [注册后台任务](register-a-background-task.md)
-* [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
+* [响应通过后台任务的系统事件](respond-to-system-events-with-background-tasks.md)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
-* [在 UWP 应用更新时运行后台任务](run-a-background-task-during-updatetask.md)
-* [在后台无限期运行](run-in-the-background-indefinetly.md)
-* [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
-* [从你的应用触发后台任务](trigger-background-task-from-app.md)
-* [通过后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
+* [更新你的 UWP 应用时运行后台任务](run-a-background-task-during-updatetask.md)
+* [无限期地在后台运行](run-in-the-background-indefinetly.md)
+* [设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)
+* [触发后台任务从您的应用程序](trigger-background-task-from-app.md)
+* [更新动态磁贴通过后台任务](update-a-live-tile-from-a-background-task.md)
 * [使用维护触发器](use-a-maintenance-trigger.md)

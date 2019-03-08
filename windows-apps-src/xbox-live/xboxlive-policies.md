@@ -7,15 +7,15 @@ layout: LandingPage
 keywords: windows 10, uwp, 游戏, xbox, xbox live, 策略
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f4ccabd72f16a402eecce53328393425c416d36
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115367"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626322"
 ---
 # <a name="xbox-live-policies"></a>Xbox Live 策略
 
-**文档版本： 2.0**
+**文档版本：2.0**
 
 感谢你考虑向 Windows 10 或 Xbox One 游戏添加 Xbox Live。 Xbox Live 是 Windows 10 和 Xbox One 游戏系统的重要组成部分，我们非常期待看到你对游戏体验的创新。
 

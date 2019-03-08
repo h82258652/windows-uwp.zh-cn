@@ -8,22 +8,22 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 012b0bae7c0abdacba352a3e8f60bcfd0aa1dd54
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935208"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646322"
 ---
 # <a name="lighting"></a>照明
 
 
 光照用于照亮场景中的对象。 每个对象顶点的颜色基于当前纹理贴图、顶点颜色和光源。
 
-**注意**此部分仅为固定函数管道。 可编程着色器显式执行所有照明。
+**请注意**  本部分仅适用于固定函数管道。 可编程着色器显式执行所有照明。
 
  
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>
@@ -47,11 +47,11 @@ ms.locfileid: "8935208"
 <td align="left"><p>光类型属性定义所用光源的类型。 Direct3D 中有三种类型的光 - 点光、聚光和定向光。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="light-properties.md">光属性</a></p></td>
+<td align="left"><p><a href="light-properties.md">光源属性</a></p></td>
 <td align="left"><p>光属性描述光源的类型（点光、定向光、聚光）、衰减、颜色、方向、位置和范围。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="mathematics-of-lighting.md">照明的数学运算</a></p></td>
+<td align="left"><p><a href="mathematics-of-lighting.md">照明的数学</a></p></td>
 <td align="left"><p>Direct3D 光模型涵盖环境、漫射、高光和放射照明。 它足够灵活，可解决广泛的照明情况。 场景中光的总量称作<em>全局照明</em>。</p></td>
 </tr>
 </tbody>

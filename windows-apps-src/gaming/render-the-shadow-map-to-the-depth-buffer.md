@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 呈现, 阴影映射, 深度缓冲区, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 27cd535dc51a330937c345acf352677a42c652eb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925566"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621332"
 ---
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a>将阴影映射呈现到深度缓冲区
 
 
 
 
-从光线的角度呈现，以创建一个表示阴影卷的二维深度映射。 深度映射会掩盖将在阴影中呈现的空间。 [操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷](implementing-depth-buffers-for-shadow-mapping.md)的第 2 部分。
+从光线的角度呈现，以创建一个表示阴影卷的二维深度映射。 深度映射会掩盖将在阴影中呈现的空间。 第 2 的部分[演练：实现在 Direct3D 11 中使用深度缓冲区的卷影卷](implementing-depth-buffers-for-shadow-mapping.md)。
 
 ## <a name="clear-the-depth-buffer"></a>清除深度缓冲区
 
@@ -125,7 +125,7 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**优化视锥：** 确保你的实现计算一个严密的视锥，以便在深度缓冲区之外获得最大精度。 有关阴影技术的更多提示，请参阅[改进阴影深度映射的常用技术](https://msdn.microsoft.com/library/windows/desktop/ee416324)。
+**优化视图截锥：** 请确保您的实现计算紧密视图截锥，以便最大精度摆脱深度缓冲区。 有关阴影技术的更多提示，请参阅[改进阴影深度映射的常用技术](https://msdn.microsoft.com/library/windows/desktop/ee416324)。
 
 ## <a name="vertex-shader-for-shadow-pass"></a>阴影通道的顶点着色器
 

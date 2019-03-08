@@ -7,25 +7,25 @@ ms.topic: article
 keywords: windows 10, uwp, ads, 广告, AdControl, 疑难解答, XAML, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d92795ac7de2ab09fd0b3b86e05aa33669c54dd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941384"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615912"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML 和 C# 疑难解答指南
 
 本主题包含 XAML 应用中有关 Microsoft Advertising 库的常见开发问题的解决方案。
 
 * [XAML](#xaml)
-  * [AdControl 不显示](#xaml-notappearing)
-  * [黑盒闪烁和消失](#xaml-blackboxblinksdisappears)
-  * [广告不刷新](#xaml-adsnotrefreshing)
+  * [AdControl 中未显示](#xaml-notappearing)
+  * [黑色框会使闪烁并消失](#xaml-blackboxblinksdisappears)
+  * [不刷新广告](#xaml-adsnotrefreshing)
 
 * [C#](#csharp)
-  * [AdControl 不显示](#csharp-adcontrolnotappearing)
-  * [黑盒闪烁和消失](#csharp-blackboxblinksdisappears)
-  * [广告不刷新](#csharp-adsnotrefreshing)
+  * [AdControl 中未显示](#csharp-adcontrolnotappearing)
+  * [黑色框会使闪烁并消失](#csharp-blackboxblinksdisappears)
+  * [不刷新广告](#csharp-adsnotrefreshing)
 
 <span id="xaml"/>
 
@@ -35,9 +35,9 @@ ms.locfileid: "8941384"
 
 ### <a name="adcontrol-not-appearing"></a>AdControl 不显示
 
-1.  确保在 Package.appxmanifest 中选择“Internet（客户端）”**** 功能。
+1.  确保在 Package.appxmanifest 中选择“Internet（客户端）”功能。
 
-2.  检查应用程序 ID 和广告单元 ID。 这些 Id 必须匹配的应用程序 ID 和你在合作伙伴中心中获得的广告单元 ID。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
+2.  检查应用程序 ID 和广告单元 ID。 这些 Id 必须匹配的应用程序 ID 和广告单元 ID 在合作伙伴中心中获取。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -56,7 +56,7 @@ ms.locfileid: "8941384"
 
 4.  检查元素位置。 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 必须在可视区域内。
 
-5.  检查 **Visibility** 属性。 可选 **Visibility** 属性禁止设置为折叠或隐藏。 此属性可在内联（如下所示）或在外部样式表中设置。
+5.  检查 **Visibility** 属性。 可选 **Visibility** 属性禁止设置为折叠或隐藏。 此属性可内联设置（如下所示）或在外部样式表中设置。
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -166,14 +166,14 @@ ms.locfileid: "8941384"
 
 ### <a name="adcontrol-not-appearing"></a>AdControl 不显示
 
-1.  确保在 Package.appxmanifest 中选择“Internet (客户端)”**** 功能。
+1.  确保在 Package.appxmanifest 中选择“Internet（客户端）”功能。
 
 2.  确保 **AdControl** 已实例化。 如果 **AdControl** 未实例化，它将不可用。
 
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
-3.  检查应用程序 ID 和广告单元 ID。 这些 Id 必须匹配的应用程序 ID 和你在合作伙伴中心中获得的广告单元 ID。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
+3.  检查应用程序 ID 和广告单元 ID。 这些 Id 必须匹配的应用程序 ID 和广告单元 ID 在合作伙伴中心中获取。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` cs
@@ -238,7 +238,7 @@ ms.locfileid: "8941384"
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
 
-    导致黑盒的最常见错误是“无广告可用”。 此错误意味着请求返回不了任何广告。
+    导致黑盒的最常见错误是“无可用广告”。 此错误意味着请求返回不了任何广告。
 
 3.  **AdControl** 行为正常。 有时如果广告不刷新，相同的广告会连续出现多次。
 

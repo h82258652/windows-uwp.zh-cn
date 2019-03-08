@@ -1,25 +1,25 @@
 ---
-Description: Set restrictions on how your app can be discovered and acquired, including whether people can find your app in the Store or see its Store listing at all.
+Description: 如何发现和购买的包括人员是否可以在存储中找到您的应用程序或请参阅根本列出其存储在应用上设置限制。
 title: 选择可见性选项
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 可见性, 私人受众, 可用的, 可检测到的
 ms.localizationpriority: medium
 ms.openlocfilehash: a002037e85f179e4a2dbe3dfdaf4bc3579e110e4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921120"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601732"
 ---
 # <a name="choose-visibility-options"></a>选择可见性选项
 
 
 [定价和可用性页面](set-app-pricing-and-availability.md)中的**可见性**部分允许你对发现和获取应用的方式设置限制。 因此你可以选择指定用户是否可以在 Microsoft Store 中找到你的应用或查看该应用的 Microsoft Store 一览。
 
-“可见性”部分中有两个独立部分：**受众**和**可发现性**。 
+有两个单独部分中的可见性部分：**受众**并**可发现性**。 
 
-## <a name="audience"></a>受众
+## <a name="audience"></a>读者
 
 “受众”部分让你可以指定是否希望将你的提交的可见性限制为定义的特定受众。
 
@@ -58,7 +58,7 @@ ms.locfileid: "8921120"
 - 无论你的组织许可设置如何，都不能通过适用于企业的 Microsoft Store 和/或适用于教育的 Microsoft Store 提供你的应用，甚至对于私人受众中的用户也是如此。
 - 虽然 Microsoft Store 确保只有使用 Microsoft 帐户登录并已添加到你的私人受众中的用户可以看到并使用你的应用，但我们无法阻止这些用户向私人受众以外的用户共享信息或屏幕截图。 保密性至关重要，请确保你的私人受众仅包括你相信不会与他人共享你的应用详细信息的用户。
 - 请确保测试人员了解如何向你提供反馈。 你可能不希望他们在反馈中心留下反馈，因为其他客户都可以看到该反馈。 请考虑包括一个链接，以便他们发送电子邮件或以其他方式提供反馈。
-- 你的私人受众中的人员撰写的任何评论均可供你查看。 但是，这些评价不会在你的应用的 Microsoft Store 一览中发布，即使将你的提交移至**公共受众**后也是如此。 你可以读取由你的私人受众撰写的[评论报告](reviews-report.md)，查看评论，但无法下载此数据，也可以使用[Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md)以编程方式访问这些评论。
+- 你的私人受众中的人员撰写的任何评论均可供你查看。 但是，这些评价不会在你的应用的 Microsoft Store 一览中发布，即使将你的提交移至**公共受众**后也是如此。 可以读取由你专用的受众编写通过查看评论[评审报表](reviews-report.md)，但不能下载此数据，也可以使用[Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md)以编程方式访问这些评论。
 - 当你将应用从**私人受众**移至**公共受众**时，Store 一览中显示的**发布日期**将是它首次发布至公共受众的日期。
 
 ## <a name="discoverability"></a>可发现性
@@ -71,7 +71,7 @@ ms.locfileid: "8921120"
 
 ### <a name="make-this-product-available-and-discoverable-in-the-store"></a>在 Microsoft Store 中提供此产品，并使其可被发现
 
-这是默认选项。 如果你希望你的客户通过应用的直接链接和/或其他方法，包括搜索、 浏览和包含在特选列表中找到在应用商店中列出的应用选择此选项保持。 
+这是默认选项。 将保留如果你希望应用以供客户查找通过应用的直接链接和/或其他方法，组织有序的列表中包括搜索、 浏览和包含在存储中列出，则选择此选项。 
 
 ### <a name="make-this-product-available-but-not-discoverable-in-the-store"></a>在 Microsoft Store 中提供此产品，但使其不可被发现
 
@@ -86,11 +86,11 @@ ms.locfileid: "8921120"
 >[!IMPORTANT]
 > 以下每个选项限制了客户获取你的应用时需使用的操作系统版本。 请仔细阅读说明，以确保知悉所支持的操作系统版本。 
 
-- **仅直接链接：任何具有指向产品一览的直接链接的客户均可下载，使用 Windows 8.x 操作系统的客户除外。** 所有通过直接链接访问你的应用一览的客户均可将其下载到运行 Windows 10 或 Windows Phone 8.1 及更早版本的设备上（但不包括运行 Windows 8.x 的设备）。
-- **停止购置：任何具有直接链接的客户均可看到产品的应用商店一览，但仅当曾经拥有过该产品或拥有一个促销代码，同时使用的是 Windows 10 设备时，这些客户才能够下载该产品。** 即使客户具有直接链接，仍无法下载该应用，除非其拥有[促销代码](generate-promotional-codes.md)并且使用的是 Windows 10 设备。 如果客户有一个促销代码，他们可以使用该代码免费获取应用（仅限 Windows 10），即使不再向任何其他客户提供代码时也是如此。 使用促销代码是所有用户获取你的应用的唯一方法。
+- **直接链接：任何具有直接链接到该产品的列表的客户可以上进行下载，除 Windows 8.x。** 所有通过直接链接访问你的应用一览的客户均可将其下载到运行 Windows 10 或 Windows Phone 8.1 及更早版本的设备上（但不包括运行 Windows 8.x 的设备）。
+- **停止获取：任何具有直接链接的客户可以看到该产品的应用商店列出，但如果他们拥有该产品之前，或有促销代码和使用的是 Windows 10 设备，它们可以仅下载它。** 即使客户具有直接链接，仍无法下载该应用，除非其拥有[促销代码](generate-promotional-codes.md)并且使用的是 Windows 10 设备。 如果客户有一个促销代码，他们可以使用该代码免费获取应用（仅限 Windows 10），即使不再向任何其他客户提供代码时也是如此。 使用促销代码是所有用户获取你的应用的唯一方法。
 
 > [!TIP]
-> 如果你想要停止向任何新客户提供应用，则可以从概述页面选择**禁止提供应用**。 在你对禁止提供的应用进行确认后，数小时内它不会再出现在 Microsoft Store 中，并且新客户将无法获取它（除非他们拥有[促销代码](generate-promotional-codes.md)并使用 Windows 10 设备）。 此操作将会覆盖提交中的**可见性**选择。 若要将应用再次提供给新客户（根据**可见性**选择），你可以随时在概述页面单击**提供应用**。 有关详细信息，请参阅[从 Microsoft Store 中删除应用](guidance-for-app-package-management.md#removing-an-app-from-the-store)。
+> 如果你想要停止向任何新客户提供应用，则可以从概述页面选择**禁止提供应用**。 在你对禁止提供的应用进行确认后，数小时内它不会再出现在 Microsoft Store 中，并且新客户将无法获取它（除非他们拥有[促销代码](generate-promotional-codes.md)并使用 Windows 10 设备）。 此操作将会覆盖提交中的**可见性**选择。 若要将应用再次提供给新客户（根据**可见性**选择），你可以随时在概述页面单击**提供应用**。 有关详细信息，请参阅[从应用商店中删除应用](guidance-for-app-package-management.md#removing-an-app-from-the-store)。
 
 
 

@@ -6,21 +6,21 @@ ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a79edb39cc4bfa5794d79d68f4fb8d5b0e976105
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050630"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645312"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>2017 年 12 月 Windows 开发人员文档中的新增功能
 
 Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 以下功能概述、开发人员指南和示例在发布 Fall Creators Update 之后提供，包含了面向 Windows 开发人员的新增和更新的信息。
 
-只需在 Windows10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
-### <a name="windows-mixed-reality-enthusiasts-guide"></a>Windows Mixed Reality：发烧友指南
+### <a name="windows-mixed-reality-enthusiasts-guide"></a>Windows 混合的现实：他酷爱钻研技术的指南
 
 [发烧友指南](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/)面向探索混合现实领域的技术发烧友，回答了大家对 Windows Mixed Reality 的主要问题。 
 
@@ -44,9 +44,9 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="microsoft-collaborate"></a>Microsoft Collaborate
 
-Microsoft Collaborate 门户提供广泛的工具和服务，旨在通过分享工程系统工作项（bug、功能请求等）以及分配内容（版本、文档、规范）来简化 Microsoft 生态系统中的工程协作。 [了解详细信息](https://docs.microsoft.com/en-us/collaborate)。
+Microsoft Collaborate 门户提供广泛的工具和服务，旨在通过分享工程系统工作项（bug、功能请求等）以及分配内容（版本、文档、规范）来简化 Microsoft 生态系统中的工程协作。 [了解详情](https://docs.microsoft.com/en-us/collaborate)。
 
-![在合作伙伴中心中的 Microsoft Collaborate](images/microsoft_collaborate_screenshot.PNG)
+![在合作伙伴中心 Microsoft 开展协作](images/microsoft_collaborate_screenshot.PNG)
 
 ### <a name="package-desktop-applications-with-uwp-projects"></a>打包桌面应用程序以及 UWP 项目
 
@@ -58,13 +58,13 @@ Visual Studio 2017 第 15.5 版已更新 **Windows 应用程序包项目**模板
 
 ### <a name="subscription-add-ons-are-now-available-to-developers-in-the-windows-dev-center-insider-program"></a>参加 Windows 开发人员中心会员计划的开发人员现在可以使用订阅加载项
 
-所有参加开发人员中心会员计划的开发人员现在都可以使用订阅加载项，以便在自动定期计费周期内销售自主应用中的数字产品（比如应用功能或数字内容）。 如需了解更多的详细信息，可参阅[启用应用加载项订阅](../monetize/enable-subscription-add-ons-for-your-app.md)。
+所有开发人员加入开发人员中心预览体验计划现在可以都使用订阅外接程序来销售其应用应用程序 （如应用程序功能或数字内容） 的数字产品与自动定期的计费周期。 有关详细信息，请参阅[启用应用加载项订阅](../monetize/enable-subscription-add-ons-for-your-app.md)。
 
 ## <a name="developer-guidance"></a>开发人员指南
 
 ### <a name="color"></a>颜色
 
-为了尽可能地提高用户体验，我们添加了一些有关如何在应用中使用颜色的新指南。 这包括 API 使用情况，以及有关 UI 设计和辅助功能的一般指南。 我们还更新了可供用户在 Xbox 上使用的主题色列表。 [在此查看更新的颜色使用指南。](../design/style/color.md)
+为了尽可能地提高用户体验，我们添加了一些有关如何在应用中使用颜色的新指南。 这包括 API 使用情况，以及有关 UI 设计和辅助功能的一般指南。 我们还更新了可供用户在 Xbox 上使用的主题色列表。 [请查看更新后的颜色文章。](../design/style/color.md)
 
 ![通用 Windows 调色板](../design/basics/images/colors.png)
 
@@ -97,4 +97,4 @@ Visual Studio 2017 第 15.5 版已更新 **Windows 应用程序包项目**模板
 
 ### <a name="package-a-net-app-in-visual-studio"></a>在 Visual Studio 中创建 .NET 应用程序包
 
-现在能够比以往更加轻松地将桌面应用添加到通用 Windows 平台。 [观看视频](https://www.youtube.com/watch?v=fJkbYPyd08w)了解如何打包要分发的 .NET 应用，然后[查看此页面](../porting/desktop-to-uwp-packaging-dot-net.md)了解更多详细信息。
+将桌面应用发布到通用 Windows 平台变得前所未有的简单。 [观看视频](https://www.youtube.com/watch?v=fJkbYPyd08w)了解如何打包要分发的 .NET 应用，然后[查看此页面](../porting/desktop-to-uwp-packaging-dot-net.md)了解更多详细信息。

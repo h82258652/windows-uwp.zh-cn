@@ -4,20 +4,20 @@ description: Xbox Live SDK 的新增功能 - 2016 年 6 月
 ms.assetid: 306e7fa8-14f0-437f-a991-6693f5c0d6a8
 ms.date: 04/04/2017
 ms.topic: article
-keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
+keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d984d054d9e5fd7f9d34b42c1a224d53632e719
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932975"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595282"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---june-2016"></a>Xbox Live SDK 的新增功能 - 2016 年 6 月
 
 请参阅[新增功能 - 2016 年 4 月](1604-whats-new.md)文章了解 2016 年 4 月版本中增加了哪些功能。
 
-> **注意：** 如果你使用 Xbox 开发人员工具包 (XDK)，那么*新增功能 - 2016 年 4 月*一文中包括了自 3 月 XDK 发布以来增加的其他新功能。
+> **注意：** 如果您使用的 Xbox 开发人员工具包 (XDK)，则*What's New-2016 年 4 月*文章涵盖了年 3 月 XDK 发行以来已添加的其他新功能。
 
 ## <a name="os-and-tool-support"></a>操作系统和工具支持
 Xbox Live SDK 支持 Windows 10 RTM [版本 10.0.10240] 和 Visual Studio 2015 RTM [版本 14.0.23107.0]。
@@ -38,7 +38,7 @@ Xbox Live SDK 现在包含能检测是否在单个游戏实例中按用户创建
 
 你可以通过调用 `disable_asserts_for_maximum_number_of_websockets_activated()` 禁用此声明。
 
-> **注意：** 如果你在游戏中使用这些功能，社交管理器和多人游戏管理器使用单个组合 Websocket。
+> **注意：** 社会管理器和多人管理器使用单个组合的 websocket，如果你的标题中使用这些功能。
 
 ## <a name="tools"></a>工具
 * Fiddler 的 Xbox Live 复原插件现在包含在 Xbox Live SDK 中。  

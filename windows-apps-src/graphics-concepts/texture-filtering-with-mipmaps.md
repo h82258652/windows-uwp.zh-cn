@@ -1,20 +1,20 @@
 ---
-title: 使用 mipmap 进行纹理筛选
+title: 使用 mipmap 的纹理筛选
 description: mipmap 是一种纹理序列，每个纹理都以逐步降低的分辨率表示同一图像。 mipmap 中各图像或各级的高度和宽度都比上一级小二次方。
 ms.assetid: 28E863A2-C776-40E4-8551-9851DF7EC93E
 keywords:
-- 使用 mipmap 进行纹理筛选
+- 使用 mipmap 的纹理筛选
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 474f97f32439c389be8283bb10e0c0ed716b3f69
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923331"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662042"
 ---
-# <a name="texture-filtering-with-mipmaps"></a>使用 mipmap 进行纹理筛选
+# <a name="texture-filtering-with-mipmaps"></a>使用 mipmap 的纹理筛选
 
 
 *mipmap* 是一种纹理序列，每个纹理都以逐步降低的分辨率表示同一图像。 mipmap 中各图像或各级的高度和宽度都比上一级小二次方。 Mipmap 不需要为正方形。
@@ -43,11 +43,11 @@ Direct3D 可评估 mipmap 集中的哪个纹理的分辨率与所需的输出最
 
 要使用 mipmap，应用程序必须构建一组 mipmap。 应用程序通过将 mipmap 集选作当前纹理集中的第一个纹理的方式应用 mipmap。 参见[纹理混合](texture-blending.md)。
 
-接下来，应用程序必须设置 Direct3D 用于纹理采样的筛选方法。 最快速的 mipmap 筛选方法是让 Direct3D 选择最近的纹素。 在选择时，可以使用 D3DTEXF\_POINT 枚举值。 如果应用程序使用 D3DTEXF\_LINEAR 枚举值，则 Direct3D 的筛选效果更佳。 选择最接近的 mipmap，然后计算当前像素映射到的纹理周围的纹素的加权平均值。
+接下来，应用程序必须设置 Direct3D 用于纹理采样的筛选方法。 最快速的 mipmap 筛选方法是让 Direct3D 选择最近的纹素。 使用 D3DTEXF\_点枚举值，以选择此选项。 Direct3D 可以生成更好地筛选结果。 如果你的应用程序使用 D3DTEXF\_线性枚举值。 选择最接近的 mipmap，然后计算当前像素映射到的纹理周围的纹素的加权平均值。
 
 Mipmap 纹理应用于 3D 场景中，可缩短呈现场景所需的时间。 Mipmap 纹理还可以增强场景的真实性， 但通常需要占用大量的内存。
 
-**注意**的 mipmap 链中每个表面具有尺寸的一半的一个表面链中。 如果顶层 mipmap 的尺寸为 256x128，则第二层 mipmap 的尺寸为 128x64，第三层 mipmap 的尺寸为 64x32，依此类推，最低层 mipmap 的尺寸为 1x1。 链中任何 mipmap 的宽度或高度不得小于 1，因此你可以请求的 mipmap 层级在数量上存在限制。 以 4x2 顶层 mipmap 表面为例，允许的最大值为 3 层。 也就是，顶层 mipmap 的尺寸为 4x2，第二层 mipmap 的尺寸为 2x1，第三层 mipmap 的尺寸为 1x1。 如果值大于 3，会使第二层 mipmap 的高度变为小数值，因此这是不允许的。
+**请注意**   mipmap 链中的每个面具有维度的半数的链中的上一个面。 如果顶层 mipmap 的尺寸为 256x128，则第二层 mipmap 的尺寸为 128x64，第三层 mipmap 的尺寸为 64x32，依此类推，最低层 mipmap 的尺寸为 1x1。 链中任何 mipmap 的宽度或高度不得小于 1，因此你可以请求的 mipmap 层级在数量上存在限制。 以 4x2 顶层 mipmap 表面为例，允许的最大值为 3 层。 也就是，顶层 mipmap 的尺寸为 4x2，第二层 mipmap 的尺寸为 2x1，第三层 mipmap 的尺寸为 1x1。 如果值大于 3，会使第二层 mipmap 的高度变为小数值，因此这是不允许的。
 
  
 

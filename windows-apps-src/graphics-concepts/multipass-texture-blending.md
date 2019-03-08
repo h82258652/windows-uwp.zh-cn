@@ -1,25 +1,25 @@
 ---
-title: 多通道纹理混合
+title: 实现多通道纹理混合
 description: 通过在多通道呈现的过程中将不同纹理应用到基元，Direct3D 应用可以实现多个特殊效果。
 ms.assetid: FB4D6E3F-4EF5-4D20-BF7E-1008E790E30C
 keywords:
-- 多通道纹理混合
+- 实现多通道纹理混合
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d6b1e8958874ede50a18f2d2446c8f156361210e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932053"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589892"
 ---
-# <a name="multipass-texture-blending"></a>多通道纹理混合
+# <a name="multipass-texture-blending"></a>实现多通道纹理混合
 
 
-通过在多通道呈现的过程中将不同纹理应用到基元，Direct3D 应用程序可以实现多个特殊效果。 我们通用将此称为*多通道纹理混合*。 多通道纹理混合通常用于：通过应用几种不同纹理的多种颜色来模拟复杂照明及着色模型的效果。 比如*光照映射*。 请参阅[使用纹理的光映射](light-mapping-with-textures.md)。
+通过在多通道呈现的过程中将不同纹理应用到基元，Direct3D 应用可以实现多个特殊效果。 我们通用将此称为*多通道纹理混合*。 多通道纹理混合通常用于：通过应用几种不同纹理的多种颜色来模拟复杂照明及着色模型的效果。 比如*光照映射*。 请参阅[使用纹理的光映射](light-mapping-with-textures.md)。
 
-**注意**某些设备都能向在单程基元应用多个纹理。 参见[纹理混合](texture-blending.md)。
+**请注意**  某些设备都能将多个纹理应用于单个传递中的基元。 参见[纹理混合](texture-blending.md)。
 
  
 
@@ -37,7 +37,7 @@ ms.locfileid: "8932053"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[纹理混合](texture-blending.md)
+[纹理值混合处理](texture-blending.md)
 
  
 

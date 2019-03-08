@@ -1,5 +1,5 @@
 ---
-Description: Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service.
+Description: 定期通知（也称为轮询通知）通过从云服务下载内容，以固定间隔更新磁贴和锁屏提醒。
 title: 定期通知概述
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a3bf2ce69105787b7ca9e83c7f7fe5db8ae1038
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050510"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624852"
 ---
 # <a name="periodic-notification-overview"></a>定期通知概述
  
@@ -25,7 +25,7 @@ ms.locfileid: "9050510"
 
 定期通知让你的应用只需极少的云服务和客户端投资即可提供动态磁贴更新。 定期通知是向广泛受众分配相同内容的出色传递方法。
 
-**注意**你可以了解[推送和定期通知示例](https://go.microsoft.com/fwlink/p/?linkid=231476)下载的 windows 8.1 和 windows 10 应用中重复使用其源代码。
+**请注意**  您可以了解详细信息，请下载[推送和定期通知示例](https://go.microsoft.com/fwlink/p/?linkid=231476)为 Windows 8.1 和 Windows 10 应用程序中重用它的源代码。
 
  
 
@@ -48,9 +48,9 @@ ms.locfileid: "9050510"
 
 可调用以下方法之一开始轮询：
 
--   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_)（磁贴）
--   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_)（锁屏提醒）
--   [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_)（磁贴）
+-   [**StartPeriodicUpdate** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) （磁贴）
+-   [**StartPeriodicUpdate** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) （徽章）
+-   [**StartPeriodicUpdateBatch** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) （磁贴）
 
 调用一个方法时，URI 将立即进行轮询，且磁贴或锁屏提醒将根据所接收的内容进行更新。 初次轮询后，Windows 继续按照所要求的间隔提供更新。 轮询不断进行，直到（使用 [**TileUpdater.StopPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater.StopPeriodicUpdate)）将其显式阻止、卸载应用或删除磁贴（适用于辅助磁贴的情况）。 否则，即使应用从此再不启动，Windows 也将继续轮询磁贴或锁屏提醒更新。
 
@@ -103,7 +103,7 @@ ms.locfileid: "9050510"
 ## <a name="related-topics"></a>相关主题
 
 
-* [定期通知指南](https://msdn.microsoft.com/library/windows/apps/hh761461)
-* [如何为锁屏提醒设置定期通知](https://msdn.microsoft.com/library/windows/apps/hh761476)
-* [如何为磁贴设置定期通知](https://msdn.microsoft.com/library/windows/apps/hh761476)
+* [定期通知的准则](https://msdn.microsoft.com/library/windows/apps/hh761461)
+* [如何设置徽章的定期通知](https://msdn.microsoft.com/library/windows/apps/hh761476)
+* [如何设置用于磁贴的定期通知](https://msdn.microsoft.com/library/windows/apps/hh761476)
  

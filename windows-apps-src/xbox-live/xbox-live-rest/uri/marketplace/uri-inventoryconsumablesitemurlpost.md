@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 877986ce9d48269295a68dbfd644f14785916b88
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938183"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640852"
 ---
 # <a name="post-itemid"></a>POST ({itemID})
-指示，已使用所有或易耗型库存项目的部分和递减所请求的量由该消耗品的数量。
+指示是否已使用全部或部分可使用清单项并减少可使用的所需的数量。
 这些 Uri 的域是`inventory.xboxlive.com`。
 
   * [备注](#ID4EX)
@@ -28,15 +28,15 @@ ms.locfileid: "8938183"
 
 ## <a name="remarks"></a>备注
 
-   * 如果调用方要求占用的数量超过该项目的剩余电源，调用将被拒绝。
-   * 调用方要求占用的数量必须大于 0 正整数。 消耗值为 0 或更低的调用将被拒绝。
-   * 如果调用方提供一个空的事务 ID，将拒绝该请求。
-   * 如果可用，以便它将能够确定哪些游戏报告消耗，将会记录的主题作品声明。
-   * 使用相同的 transactionId 的其他文章将被忽略某个时间段。
+   * 如果调用方需要使用的数量超出了剩余的项提供，该调用将被拒绝。
+   * 调用方需要使用的数量必须大于 0 的正整数。 使用值为 0 或更低的调用将被拒绝。
+   * 如果调用方提供了一个空的事务 ID，将拒绝该请求。
+   * 如果可用，以便将有可能以确定哪些标题报告使用情况将记录标题声明。
+   * 将忽略某个时间段内的使用相同的 transactionId 的其他文章。
 
 
 > [!NOTE]
-> 此 API <b>x xbl 协定版本标头</b>是"4"。
+> <b>X xbl 约定版本标头</b>此 API 为"4"。
 
 
 <a id="ID4EQB"></a>
@@ -44,9 +44,9 @@ ms.locfileid: "8938183"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- | --- |
-| itemID| 字符串| 唯一的每个用户单数库存项目的 ID|
+| itemID| 字符串| 唯一的单数形式的清单项的每个用户 ID|
 
 <a id="ID4E2B"></a>
 
@@ -68,14 +68,14 @@ ms.locfileid: "8938183"
 ```
 
 
-删除数量字段允许调用方指示他们想要删除该消耗品的剩余数量的易耗品的数量。 交易 ID 字段提供了一种方法重试限制两次计数相同的使用情况的风险时使用易耗型内容的操作与调用方。
+删除 quantity 字段允许调用方以指示可使用者想要删除与可使用的剩余数量的数量。 事务 ID 字段提供了一种方法来重试限制两次计数相同的使用情况的风险时使用可使用内容的操作的调用方。
 
 <a id="ID4ENC"></a>
 
 
 ## <a name="response-body"></a>响应正文
 
-POST，假设传递身份验证并分配适当授权上下文的响应是具有相同的 transactionId 收据 acknolodgement 传递给中 POST 请求、 在易耗型项的 URL 和项目的新的服务数量值。
+对开机自检，假定它将传递身份验证，并分配适当的授权上下文的响应是使用相同的 transactionId 的回执 acknolodgement 传递给在 POST 请求，可使用项的 URL 和项的新服务数量值。
 
 <a id="ID4EVC"></a>
 
@@ -111,12 +111,12 @@ POST，假设传递身份验证并分配适当授权上下文的响应是具有�
 
 ##### <a name="further-information"></a>详细信息
 
-[EDS 通用标头](../../additional/edscommonheaders.md)
+[EDS 常见标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询优化器](../../additional/edsqueryrefiners.md)
+ [EDS 查询精简将](../../additional/edsqueryrefiners.md)
 
- [市场 URI](atoc-reference-marketplace.md)
+ [Marketplace Uri](atoc-reference-marketplace.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)

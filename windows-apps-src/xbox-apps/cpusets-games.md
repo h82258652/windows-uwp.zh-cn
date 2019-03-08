@@ -5,11 +5,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
 ms.openlocfilehash: 49662d476d6d022ca05d53e9358fc547fda92a32
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945008"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625662"
 ---
 # <a name="cpusets-for-game-development"></a>适用于游戏开发的 CPUSets
 
@@ -47,13 +47,13 @@ GetSystemCpuSetInformation(cpuSets, size, &size, curProc, 0);
 
 从 **GetSystemCpuSetInformation** 中返回的此数据结构的每个实例中的信息包含有关可以在其上调度的线程唯一处理单元的信息。 根据给定的可能目标设备范围，**SYSTEM_CPU_SET_INFORMATION** 数据结构中的许多信息可能不适用于游戏开发。 表 1 提供适用于游戏开发的数据成员的说明。
 
- **表 1. 适用于游戏开发的数据成员。**
+ **表 1。对游戏开发非常有用的数据成员。**
 
-| 成员名称  | 数据类型 | 说明 |
+| 成员名称  | 数据类型 | 描述 |
 | ------------- | ------------- | ------------- |
-| Type  | CPU_SET_INFORMATION_TYPE  | 结构中信息的类型。 如果此成员的值不是 **CpuSetInformation**，应忽略它。  |
-| Id  | 无符号长整型  | 指定 CPU 设置的 ID。 这是应与 CPU 设置函数（如 **SetThreadSelectedCpuSets**）结合使用的 ID。  |
-| Group  | 无符号短整型  | 指定 CPU 设置的“处理器组”。 处理器组允许电脑具有超过 64 个逻辑核心，并允许在系统运行期间热交换 CPU。 不是服务器但具有多个组的电脑并不常见。 除非你要编写的应用程序打算在大型服务器或服务器场上运行，否则最好使用单个组中的 CPU 设置，因为大多数消费者电脑只具有一个处理器组。 此结构中的其他所有值都与 Group 有关。  |
+| 在任务栏的搜索框中键入  | CPU_SET_INFORMATION_TYPE  | 结构中信息的类型。 如果此成员的值不是 **CpuSetInformation**，应忽略它。  |
+| ID  | 无符号长整型  | 指定 CPU 设置的 ID。 这是应与 CPU 设置函数（如 **SetThreadSelectedCpuSets**）结合使用的 ID。  |
+| 组  | 无符号短整型  | 指定 CPU 设置的“处理器组”。 处理器组允许电脑具有超过 64 个逻辑核心，并允许在系统运行期间热交换 CPU。 不是服务器但具有多个组的电脑并不常见。 除非你要编写的应用程序打算在大型服务器或服务器场上运行，否则最好使用单个组中的 CPU 设置，因为大多数消费者电脑只具有一个处理器组。 此结构中的其他所有值都与 Group 有关。  |
 | LogicalProcessorIndex  | 无符号字符型  | CPU 设置的 Group 相关索引  |
 | CoreIndex  | 无符号字符型  | CPU 设置所在的物理 CPU 核心的 Group 相关索引  |
 | LastLevelCacheIndex  | 无符号字符型  | 与此 CPU 设置关联的最后一级缓存的 Group 相关索引。 此缓存的速度最慢，除非系统利用 NUMA 节点，通常为 L2 或 L3 缓存。  |
@@ -64,15 +64,15 @@ GetSystemCpuSetInformation(cpuSets, size, &size, curProc, 0);
 
 以下是一些从各种类型硬件上运行的 UWP 应用程序中收集的信息类型的示例。
 
-**表 2. 从 Microsoft Lumia 950 上运行的 UWP 应用中返回的信息。 这是一个具有多个最后一级缓存的系统示例。 Lumia 950 配备 Qualcomm 808 Snapdragon 处理器，该处理器包含双核 ARM Cortex A57 和四核 ARM Cortex A53 CPU。**
+**表 2。从 Microsoft Lumia 950 上运行的 UWP 应用中返回的信息。这是一个具有多个最后一级缓存的系统示例。Lumia 950 功能包含双核 ARM Cortex A57 和四核 ARM Cortex A53 Cpu Qualcomm 808 Snapdragon 过程。**
 
   ![表 2](images/cpusets-table2.png)
 
-**表 3. 从典型的电脑上运行的 UWP 应用中返回的信息。 这是一个使用超线程的系统示例；每个物理核心具有两个可在其上调度线程的逻辑核心。 在此情况下，该系统包含了一个 Intel Xenon CPU E5-2620。**
+**表 3。从典型的电脑上运行的 UWP 应用中返回的信息。这是一个使用超线程的系统示例；每个物理核心具有两个可在其上调度线程的逻辑核心。在这种情况下，系统配备 Intel Xenon CPU E5 2620。**
 
   ![表 3](images/cpusets-table3.png)
 
-**表 4. 从四核 Microsoft Surface Pro 4 上运行的 UWP 应用中返回的信息。 此系统已有一个 Intel Core i5-6300 CPU。**
+**表 4。从四核 Microsoft Surface Pro 4 上运行的 UWP 应用中返回的信息。此系统具有 Intel Core i5 6300 CPU。**
 
   ![表 4](images/cpusets-table4.png)
 
@@ -182,7 +182,7 @@ for (size_t i = 0; i < count; ++i)
 
 图 1 中所示的缓存布局是你可以从系统中看到的布局的类型示例。 此图是在 Microsoft Lumia 950 中找到的缓存示意图。 CPU 256 和 CPU 260 之间发生的线程间通信将导致大量开销，因为需要系统保持它们的 L2 缓存一致性。
 
-**图 1. Microsoft Lumia 950 设备上找到的缓存体系结构。**
+**图 1。Microsoft Lumia 950 设备上发现的缓存体系结构。**
 
 ![Lumia 950 缓存](images/cpusets-lumia950cache.png)
 
@@ -191,7 +191,7 @@ for (size_t i = 0; i < count; ++i)
 适用于 UWP 开发的 CPUSets API 提供了与你的多线程选项有关的大量信息和控制。 相比于以前的适用于 Windows 开发的多线程 API，增加的复杂性具有一些学习曲线，但提升的灵活性最终允许在一些消费者电脑和其他硬件目标之间实现较好的性能。
 
 ## <a name="additional-resources"></a>其他资源
-- [CPU 设置 (MSDN)](https://msdn.microsoft.com/library/windows/desktop/mt186420(v=vs.85).aspx)
-- [ATG 提供的 CPUSets 示例](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
-- [Xbox One 上的 UWP](index.md)
+- [CPU 集 (MSDN)](https://msdn.microsoft.com/library/windows/desktop/mt186420(v=vs.85).aspx)
+- [提供的 ATG CPUSets 示例](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
+- [在 Xbox One 上 UWP](index.md)
 

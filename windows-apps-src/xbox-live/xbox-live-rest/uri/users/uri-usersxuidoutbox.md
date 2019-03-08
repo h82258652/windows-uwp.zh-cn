@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 88f3f3753aeac99db0a8a53e0a2ddde21d034ac5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926857"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607542"
 ---
 # <a name="usersxuidxuidoutbox"></a>/users/xuid({xuid})/outbox
-提供仅发送给用户的访问权限的邮件发件箱为 Xbox LIVE 服务。 这些 Uri 的域是`msg.xboxlive.com`。
+提供了仅限发送的用户访问的邮件发件箱的 Xbox LIVE 服务。 这些 Uri 的域是`msg.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -24,9 +24,9 @@ ms.locfileid: "8926857"
  
 ## <a name="uri-parameters"></a>URI 参数 
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 发出请求的玩家。 | 
+| xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 正在发出请求的播放器。 | 
   
 <a id="ID4EXB"></a>
 
@@ -35,7 +35,7 @@ ms.locfileid: "8926857"
 
 [POST (/users/xuid({xuid})/outbox)](uri-usersxuidoutboxpost.md)
 
-&nbsp;&nbsp;指定的消息发送到收件人的列表。 
+&nbsp;&nbsp;将指定的消息发送到收件人列表。 
  
 <a id="ID4EFC"></a>
 
@@ -47,6 +47,6 @@ ms.locfileid: "8926857"
  
 ##### <a name="parent"></a>Parent 的子磁盘）  
 
-[用户 URI](atoc-reference-users.md)
+[用户 Uri](atoc-reference-users.md)
 
    

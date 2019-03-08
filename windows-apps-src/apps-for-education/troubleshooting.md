@@ -1,17 +1,17 @@
 ---
-Description: Troubleshoot Microsoft Take a Test events and errors with the event viewer.
+Description: 使用事件查看器对 Microsoft 参加测验事件和错误进行疑难解答。
 title: 使用事件查看器对 Microsoft 参加测验进行疑难解答。
 ms.assetid: 9218e542-f520-4616-98fc-b113d5a08e0f
 ms.date: 10/06/2017
 ms.topic: article
-keywords: windows 10，uwp，教育版
+keywords: windows 10，uwp、 教育版
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f4bdcf45c7dd37dd540a666d99b5fa2fd2d49f8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947057"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598472"
 ---
 # <a name="troubleshoot-microsoft-take-a-test-with-the-event-viewer"></a>使用事件查看器对 Microsoft 参加测验进行疑难解答
 
@@ -20,7 +20,7 @@ ms.locfileid: "8947057"
 若要在事件查看器中启用查看事件：
 1. 打开 `Event Viewer`
 2. 导航到 `Applications and Services Logs > Microsoft > Windows > Management-SecureAssessment`
-3. 右键单击 `Operational`，然后选择 `Enable Log`
+3. 右键单击`Operational`和选择 `Enable Log`
 
 若要保存事件日志：
 1. 右键单击 `Operational`

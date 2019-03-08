@@ -1,6 +1,6 @@
 ---
 title: 凝视交互
-Description: Learn how to design and optimize your UWP apps to provide the best experience possible for users who rely on gaze input from eye and head trackers.
+Description: 了解如何设计和优化你的 UWP 应用的依赖于从眼睛和 head 跟踪器注视输入的用户提供最佳体验。
 label: Gaze interactions
 template: detail.hbs
 keywords: 凝视, 目视跟踪, 头部跟踪, 凝视点, 输入, 用户交互, 辅助功能, 可用性
@@ -12,11 +12,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 77e39b9c7440fab491b3d7ef85baa757d299fff8
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058538"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604392"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>UWP 应用中的凝视交互和目视跟踪
 
@@ -27,7 +27,7 @@ ms.locfileid: "9058538"
 > [!NOTE]
 > 对于 [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/) 中的凝视，请参阅[凝视](https://docs.microsoft.com/windows/mixed-reality/gaze)。
 
-**重要 API**：[Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)、[GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview)、[GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview)、[GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
+**重要的 Api**:[Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)， [GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview)， [GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview)， [GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
 ## <a name="overview"></a>概述
 
@@ -36,7 +36,7 @@ ms.locfileid: "9058538"
 此外，凝视输入还为游戏（包括目标获取和跟踪）和传统的生产力应用程序、展台及其他交互式场景提供同样具有吸引力的机会，如传统输入设备（键盘、鼠标和触控）不可用或可能对释放用户双手以执行其他任务（如提购物袋）非常有用/有帮助的情况。
 
 > [!NOTE]
-> **Windows 10 Fall Creators Update** 以及[目视控制](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control)中引入了对目视跟踪硬件的支持，这是一项内置功能，让你可以使用眼睛控制屏幕指针，使用屏幕键盘键入，并使用文本到语音转换与其他人交流。 一组用于生成可与目视跟踪硬件交互的应用程序的 UWP Api ([Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) 是适用于**Windows 10 2018 年 4 月更新 (版本 1803，内部版本 17134)** 和更高版本。
+> **Windows 10 Fall Creators Update** 以及[目视控制](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control)中引入了对目视跟踪硬件的支持，这是一项内置功能，让你可以使用眼睛控制屏幕指针，使用屏幕键盘键入，并使用文本到语音转换与其他人交流。 一组 UWP Api ([Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) 用于构建可密切关注与之交互的应用程序跟踪硬件是适用于**Windows 10 2018 年 4 月更新 (版本 1803，生成版本 17134)** 和更高版本。
 
 ## <a name="privacy"></a>隐私
 
@@ -70,9 +70,9 @@ ms.locfileid: "9058538"
 
 ![带计时器的凝视跟踪示例](images/gaze/gaze-input-timed2.gif)
 
-*带计时器的凝视跟踪示例*
+*展示使用计时器示例的跟踪*
 
-**从[凝视输入示例（基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)下载此示例**
+**下载此示例从[注视输入的示例 (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)**
 
 1. 首先，我们设置 UI (MainPage.xaml)。
 
@@ -499,9 +499,9 @@ ms.locfileid: "9058538"
     ```
 6. 最后，下面是用于管理此应用的凝视焦点计时器的方法。
 
-    `DoesElementContainPoint` 检查凝视指针是否在进度栏上方。 如果在，它将启动凝视计时器并增加每次凝视计时器滴答的进度栏。
+    `DoesElementContainPoint` 检查的视线移动指针是否通过进度栏。 如果在，它将启动凝视计时器并增加每次凝视计时器滴答的进度栏。
 
-    `SetGazeTargetLocation` 设置进度栏的初始位置，如果进度栏结束（具体取决于凝视焦点计时器），将进度栏移动到随机位置。
+    `SetGazeTargetLocation` 设置进度栏的初始位置，并且如果进度栏完成 （具体取决于的视线移动焦点计时器），将进度条移动到随机位置。
 
     ```csharp
     /// <summary>
@@ -600,8 +600,8 @@ ms.locfileid: "9058538"
 
 ### <a name="resources"></a>资源
 
-- [Windows 社区工具包凝视资源库](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/gaze/gazeinteractionlibrary)
+- [Windows 社区工具包注视库](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/gaze/gazeinteractionlibrary)
 
 ### <a name="topic-samples"></a>主题示例
 
-- [凝视示例（基本）(C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)
+- [看一下示例 (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)

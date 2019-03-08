@@ -7,21 +7,21 @@ ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1593ab8b547a464492a35aa7d49d38f667a8210b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927401"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626482"
 ---
 # <a name="send-email"></a>发送电子邮件
 
 显示如何启动撰写电子邮件对话框以允许用户发送电子邮件。 你可以在显示该对话框之前，使用数据预填充电子邮件的字段。 该消息将在用户点击发送按钮后发出。
 
-**本文内容**
+**在这篇文章**
 
 -   [启动撰写电子邮件对话框](#launch-the-compose-email-dialog)
--   [摘要和后续步骤](#summary-and-next-steps)
--   [相关主题](#related-topics)
+-   [总结和后续步骤](#summary-and-next-steps)
+-   [相关的主题](#related-topics)
 
 ## <a name="launch-the-compose-email-dialog"></a>启动撰写电子邮件对话框
 
@@ -47,7 +47,7 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 ```
 
 >[!NOTE]
-> 通过使用[EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment)类添加到电子邮件附件将显示仅在邮件应用。 如果用户已配置为其默认邮件程序的任何其他邮件程序，撰写窗口将显示而无需附件。 这是一个已知的问题。
+> 通过使用添加到一封电子邮件的附件[EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment)类只会显示在邮件应用程序。 如果用户具有配置为其默认邮件程序的任何其他邮件程序，compose 窗口将显示不带附件。 这是一个已知问题。
 
 ## <a name="summary-and-next-steps"></a>摘要和后续步骤
 
@@ -56,7 +56,7 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 ## <a name="related-topics"></a>相关主题
 
 * [选择联系人](selecting-contacts.md)
-* [如何在调用文件选取器后继续使用你的 Windows Phone 应用](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
+* [如何在调用文件选取器后继续在 Windows Phone 应用](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
  
 
  

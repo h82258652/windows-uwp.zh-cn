@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c762dd8abbbc80948d232610e4123b6e4893936d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922238"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598402"
 ---
 # <a name="using-xbox-live-apis-built-into-the-xdk"></a>使用 XDK 内置的 Xbox Live API
 
@@ -23,5 +23,4 @@ ms.locfileid: "8922238"
 - 如果想使用 C++ XSAPI API，则选择“Xbox Services API Cpp”
 1. 单击“确定”
 
-注意：如果你的版本系统不支持属性文件，则必须手动添加预处理器定义和库，如
-`%XboxOneExtensionSDKLatest%\ExtensionSDKs\Xbox.Services.API.Cpp\8.0\DesignTime\CommonConfiguration\Neutral\Xbox.Services.API.Cpp.props`
+注意：如果您的生成系统不支持属性文件，必须手动添加的预处理器定义和库中所示 `%XboxOneExtensionSDKLatest%\ExtensionSDKs\Xbox.Services.API.Cpp\8.0\DesignTime\CommonConfiguration\Neutral\Xbox.Services.API.Cpp.props`

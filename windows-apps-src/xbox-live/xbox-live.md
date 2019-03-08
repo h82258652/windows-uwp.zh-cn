@@ -6,17 +6,17 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, xbox, xbox live
 ms.localizationpriority: medium
 ms.openlocfilehash: 1789bb7a758a62bdae8cc4c890541b595e347baa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930352"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606752"
 ---
 # <a name="xbox-live"></a>Xbox Live
 
 Xbox Live 是首要游戏网络，连接着世界各地的数百万玩家。 你可以将 Xbox Live 添加到 Windows 10 或 Xbox One 游戏中，以充分利用 Xbox Live 的功能和服务。
 
-使用 Xbox Live 创意者计划与合作伙伴中心帐户的任何人都可以生成一个可以在 Windows 10 电脑和 Xbox One 主机运行的通用 Windows 平台 (UWP) 的支持 Xbox Live 游戏。
+使用 Xbox Live Creators 计划的合作伙伴中心帐户的任何人都可以构建可在 Windows 10 电脑和 Xbox One 控制台运行的 Xbox Live 已启用通用 Windows 平台 (UWP) 游戏。
 
 对于想要充分利用完整的 Xbox Live 体验（包括多人游戏、成就、本机 Xbox 主机开发）的游戏开发人员，我们还提供了其他开发人员计划，这些计划将在[开发人员计划概述](developer-program-overview.md)中进行详细介绍。
 
@@ -28,8 +28,8 @@ Xbox Live 是首要游戏网络，连接着世界各地的数百万玩家。 你
 |:--------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
 | [什么是 Xbox Live](what-is-xbox-live.md) | 介绍 Xbox Live 提供的一系列游戏服务。 |
 | [开发人员计划概述](developer-program-overview.md) | 探讨支持 Xbox Live 开发的各种开发人员计划。 |
-| [Xbox Live 创意者计划入门](get-started-with-creators/get-started-with-xbox-live-creators.md) | 如何通过 Xbox Live 创意者计划开始使用 Xbox Live。 |
-| [以 ID@Xbox 或托管开发人员的身份开始使用 Xbox Live](get-started-with-partner/get-started-with-xbox-live-partner.md) | 如何通过 ID@Xbox 计划以开发人员的身份开始使用 Xbox Live。 |
+| [开始使用 Xbox Live Creators 计划](get-started-with-creators/get-started-with-xbox-live-creators.md) | 如何通过 Xbox Live 创意者计划开始使用 Xbox Live。 |
+| [开始使用 Xbox Live 作为ID@Xbox或托管开发人员](get-started-with-partner/get-started-with-xbox-live-partner.md) | 如何通过 ID@Xbox 计划以开发人员的身份开始使用 Xbox Live。 |
 
 ### <a name="using-xbox-live"></a>使用 Xbox Live
 
@@ -39,7 +39,7 @@ Xbox Live 是首要游戏网络，连接着世界各地的数百万玩家。 你
 |:--------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
 | [使用 Xbox Live](using-xbox-live/using-xbox-live.md) | 在设置了你的作品并集成了 Xbox Live SDK 后，你就可以实现登录，并了解有关 Xbox Live 编程的详细信息了。
 | [调用 Xbox Live 的最佳实践](using-xbox-live/best-practices/best-practices-for-calling-xbox-live.md) | 熟悉有关 Xbox Live 调用模式和最佳实践的基本知识，以确保你的作品运行良好，并且不受速率限制。
-| [Xbox Live 服务 API 疑难解答](using-xbox-live/troubleshooting/troubleshooting-the-xbox-live-services-api.md) | 你可能遇到的常见问题，以及有关如何解决这些问题的建议。
+| [Xbox Live 服务 API 进行故障排除](using-xbox-live/troubleshooting/troubleshooting-the-xbox-live-services-api.md) | 你可能遇到的常见问题，以及有关如何解决这些问题的建议。
 
 ### <a name="xbox-live-social-platform"></a>Xbox Live 社交平台
 
@@ -47,7 +47,7 @@ Xbox Live 社交功能可以有机增加你的受众，在 5,500 多万名活跃
 
 | 主题                                                                                                                                             | 描述                                                                                                   |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
-| [Xbox Live 社交平台](social-platform/social-platform.md) | 如果你可以使用户登录，则可以开始使用 Xbox Live 的社交功能，例如利用用户的社交图片、Rich Presence 和其他内容。 |
+| [Xbox Live 社交平台](social-platform/social-platform.md) | 如果你可以登录用户，则可以开始使用 Xbox Live 的社交功能，例如利用用户的社交图片、完整状态和其他内容。 |
 
 ### <a name="xbox-live-data-platform"></a>Xbox Live 数据平台
 
@@ -55,10 +55,10 @@ Xbox Live 数据平台促使进一步使用玩家统计数据、成就和排行�
 
 | 主题                                                                                                                                             | 描述                                                                                                   |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
-| [Xbox Live 数据平台](data-platform/data-platform.md) | 数据平台的简要概述，以及有关如何最有效地将统计数据、排行榜和成就合并到你的作品中的指导。
-| [玩家统计数据](leaderboards-and-stats-2017/player-stats.md) | 统计数据是排行榜的基础。  在此处了解如何定义和使用这些统计数据。
+| [Xbox 实时数据平台](data-platform/data-platform.md) | 数据平台的简要概述，以及有关如何最有效地将统计数据、排行榜和成就合并到你的作品中的指导。
+| [播放机统计信息](leaderboards-and-stats-2017/player-stats.md) | 统计数据是排行榜的基础。  在此处了解如何定义和使用这些统计数据。
 | [排行榜](leaderboards-and-stats-2017/leaderboards.md) | 通过智能地合并排行榜，展现出用户的竞争优势。
-| [成就](achievements-2017/achievements.md) | 成就是 Xbox Live 中最知名的功能之一，也是推动玩家投身于游戏的重要因素。 了解如何在你的作品中使用成就。
+| [获得的成就](achievements-2017/achievements.md) | 成就是 Xbox Live 中最知名的功能之一，也是推动玩家投身于游戏的重要因素。 了解如何在你的作品中使用成就。
 
 ### <a name="xbox-live-multiplayer-platform"></a>Xbox Live 多人游戏平台
 
@@ -66,10 +66,10 @@ Xbox Live 数据平台促使进一步使用玩家统计数据、成就和排行�
 
 | 主题                                                                                                                                             | 描述                                                                                                   |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
-| [Xbox Live 多人游戏平台](multiplayer/multiplayer-intro.md) | 如果你是 Xbox Live 多人游戏开发新手，或对多人游戏管理器和 Xbox 集成多人游戏 (XIM) 等新 API 不熟悉，请从此处开始入手。 |
-| [多人游戏方案](multiplayer/multiplayer-scenarios.md) | 有关如何将多人游戏合并到你的作品中的建议和指导。 |
-| [Xbox 集成多人游戏](multiplayer/xbox-integrated-multiplayer.md) | Xbox 集成多人游戏 (XIM) 是一个简单的自包含界面，用于将多人游戏、实时网络和聊天添加到你的作品中。 |
-| [多人游戏管理器](multiplayer/multiplayer-manager.md) | 多人游戏管理器提供了以常见的多人游戏方案为主的 API。 |
+| [Xbox Live 多玩家平台](multiplayer/multiplayer-intro.md) | 如果你是 Xbox Live 多人游戏开发新手，或对多人游戏管理器和 Xbox 集成多人游戏 (XIM) 等新 API 不熟悉，请从此处开始入手。 |
+| [多玩家方案](multiplayer/multiplayer-scenarios.md) | 有关如何将多人游戏合并到你的作品中的建议和指导。 |
+| [Xbox 集成之多人游戏](multiplayer/xbox-integrated-multiplayer.md) | Xbox 集成多人游戏 (XIM) 是一个简单的自包含界面，用于将多人游戏、实时网络和聊天添加到你的作品中。 |
+| [多人管理器](multiplayer/multiplayer-manager.md) | 多人游戏管理器提供了以常见的多人游戏方案为主的 API。 |
 
 ### <a name="xbox-live-storage-platform"></a>Xbox Live 存储平台
 
@@ -78,5 +78,5 @@ Xbox Live 存储平台提供了作品存储和连接存储。  这些是两种�
 | 主题                                                                                                                                             | 描述                                                                                                   |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
 | [Xbox Live 存储平台](storage-platform/storage-platform.md) | 使用 Xbox Live 存储服务，可以在云中存储游戏服务、即时重放、用户首选项和其他数据。 |
-| [连接存储](storage-platform/connected-storage/connected-storage-technical-overview.md) | 有关连接存储的概述和编程指导。 |
-| [作品存储](storage-platform/xbox-live-title-storage/xbox-live-title-storage.md) | 有关作品存储的概述和编程指导。 |
+| [连接的存储](storage-platform/connected-storage/connected-storage-technical-overview.md) | 有关连接存储的概述和编程指导。 |
+| [标题存储](storage-platform/xbox-live-title-storage/xbox-live-title-storage.md) | 有关作品存储的概述和编程指导。 |

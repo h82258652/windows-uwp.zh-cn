@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 标题存储
 ms.localizationpriority: medium
 ms.openlocfilehash: dabcd0634bb20bc6b82ae302c77338b5bb726a63
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947670"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595062"
 ---
 # <a name="storing-a-json-blob-in-xbox-live-title-storage"></a>在 Xbox Live 标题存储中存储 JSON blob
 
@@ -37,6 +37,6 @@ ms.locfileid: "8947670"
             "expression":"smile"
         }
 
-#### <a name="reference"></a>引用
+#### <a name="reference"></a>参考
 
 **/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)**

@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 63c678f4b2dde1a5e35c0131b5154493c9703951
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942661"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623372"
 ---
 # <a name="geometry-shader-gs-stage"></a>几何着色器 (GS) 阶段
 
 
 几何着色器 (GS) 阶段处理整个基元：三角形、线和点，以及它们的相邻顶点。 它对于点精灵扩展、动态粒子系统和阴影卷生成等算法非常有用。 它支持几何放大和解扩。
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途和用法
+## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途，并使用
 
 
 几何着色器阶段处理整个基元：三角形（最多 3 个相邻顶点的 3 个顶点）、线（最多 2 个相邻顶点的 2 个顶点）和点（1 个顶点）。
@@ -45,7 +45,7 @@ ms.locfileid: "8942661"
 
 几何着色器阶段运行应用程序指定的着色器代码，其中整个基元作为输入，并能够在输出上生成顶点。 与在单个顶点上操作的顶点着色器不同，几何着色器的输入是完整基元的顶点（三角形为三个顶点，线为两个顶点或点为单个顶点）。 几何着色器还可以引入边缘相邻基元的顶点数据作为输入（三角形增加三个顶点，线增加两个顶点）。
 
-几何着色器阶段还可以使用由[输入装配器 (IA) 阶段](input-assembler-stage--ia-.md)自动生成的 **SV\_PrimitiveID** 系统生成值。 这使得获取或计算每基元数据成为可能（如果需要）。
+可以使用几何着色器阶段**SV\_PrimitiveID**系统生成的值，是由自动生成[输入组装器 (IA) 阶段](input-assembler-stage--ia-.md)。 这使得获取或计算每基元数据成为可能（如果需要）。
 
 当几何着色器处于活动状态时，每个在管道中传递的或之前在管道中生成的基元都将调用一次几何着色器。 将几何着色器的每次调用都视为输入调用基元的数据，无论它是单点、单线还是单个三角形。 在管道中较早的三角形带将导致对带中每个单独三角形的几何着色器的调用（就像带被展开为三角形列表一样）。 单独基元中每个顶点的所有输入数据都可用（即，三角形的 3 个顶点），加上相邻的顶点数据（如果适用和可用）。
 
@@ -59,7 +59,7 @@ ms.locfileid: "8942661"
 
  
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 几何着色器 (GS) 阶段能够输出形成单个选定拓扑的多个顶点。 可用的几何着色器输出拓扑有 **tristrip**、**linestrip** 和 **pointlist**。 在几何着色器的任何调用中，发出的基元的数目可以自由地变化，但是必须静态地声明可发出的顶点的最大数目。 从几何着色器调用发出的带长度可以是任意的，并且可以通过 [RestartStrip](https://msdn.microsoft.com/library/windows/desktop/bb509660) HLSL 函数创建新带。
@@ -70,9 +70,9 @@ ms.locfileid: "8942661"
 
 几何着色器通过将顶点附加到输出流对象来一次输出一个顶点。 流的拓扑由固定声明确定，选择 **TriangleStream**、**LineStream** 和 **PointStream** 作为 GS 阶段的输出。
 
-有三种类型的流对象可用：**TriangleStream**、**LineStream** 和 **PointStream**，它们都是模板对象。 输出的拓扑由它们各自的对象类型确定，而附加到流的顶点的格式由模板类型确定。
+有三种类型的流对象：**TriangleStream**， **LineStream**并**PointStream**，这是所有模板化的对象。 输出的拓扑由它们各自的对象类型确定，而附加到流的顶点的格式由模板类型确定。
 
-当几何着色器输出被识别为系统解释值（例如，**SV\_RenderTargetArrayIndex** 或 **SV\_Position**）时，除了能够将数据本身传递到下一个着色器阶段以用于输入以外，硬件还会查看此数据并执行某些取决于值的行为。 当几何着色器的这种数据输出在每基元基础上对硬件有意义时（例如 **SV\_RenderTargetArrayIndex** 或 **SV\_ViewportArrayIndex**），而不是在每顶点基础上（例如 **SV\_ClipDistance\[n\]** 或 **SV\_Position**），则每基元数据取自针对基元发出的前导顶点。
+当几何着色器输出被标识为系统解释值 (例如， **SV\_RenderTargetArrayIndex**或**SV\_位置**)，硬件将查看此数据和执行一些行为取决于除了能够传递数据本身的下一个着色器阶段输入的值。 当此类从几何着色器输出的数据的含义的硬件基于每个基元 (如**SV\_RenderTargetArrayIndex**或**SV\_ViewportArrayIndex**)，而不是针对每个顶点 (如**SV\_ClipDistance\[n\]** 或**SV\_位置**)，每个基元数据摘自前导顶点发出基元。
 
 如果几何着色器结束并且基元不完整，则几何着色器可以生成部分完成的基元。 不完整的基元被静默丢弃。 这类似于 IA 处理部分完成的基元的方式。
 

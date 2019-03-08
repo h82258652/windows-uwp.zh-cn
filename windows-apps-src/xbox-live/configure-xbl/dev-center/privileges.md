@@ -1,16 +1,16 @@
 ---
-title: 在合作伙伴中心中的特权配置
+title: 在合作伙伴中心的权限配置
 description: 了解如何在合作伙伴中心中配置权限
 ms.date: 04/09/2018
 ms.topic: article
 ms.localizationpriority: medium
-keywords: Xbox Live，Xbox，游戏，uwp，windows 10，Xbox one，特权，合作伙伴中心
+keywords: Xbox Live、 Xbox、 游戏、 uwp、 windows 10 中，一个 Xbox、 特权，合作伙伴中心
 ms.openlocfilehash: 2036be2a6184909799236b013c52ff4614a158aa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947281"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612472"
 ---
 # <a name="configure-privileges-in-partner-center"></a>在合作伙伴中心中配置权限
 

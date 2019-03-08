@@ -4,14 +4,14 @@ description: Xbox Live SDK 的新增功能 - 2017 年 3 月
 ms.assetid: 03180585-6f87-4929-acfc-750bd78988a0
 ms.date: 04/04/2017
 ms.topic: article
-keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
+keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: be8127e01d8eaae96a1d71f71967a653c00b0280
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918110"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595342"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---march-2017"></a>Xbox Live SDK 的新增功能 - 2017 年 3 月
 
@@ -21,7 +21,7 @@ ms.locfileid: "8918110"
 
 ### <a name="data-platform-2017"></a>数据平台 2017
 
-我们引入了简化的统计 API。  传统上来讲您必须以发送与 XDP 或合作伙伴中心上定义的统计规则对应的事件，并且这会更新云中的统计信息值。  我们将此模型称为 Stats 2013。
+我们引入了简化的统计 API。  传统上，你必须将发送到 stat XDP 或合作伙伴中心上定义的规则对应的事件，这些更新会在云中的统计信息值。  我们将此模型称为 Stats 2013。
 
 使用 Stats 2017，你的标题现在可以控制统计信息值。  你只需调用包含最新统计信息值的 API，它们即可被直接发送到服务，无需发送事件。  这使用新的 `StatsManager` API，你可以在[玩家统计信息](../leaderboards-and-stats-2017/player-stats.md)中了解更多信息
 
@@ -42,6 +42,6 @@ Xbox Live 创意者计划是一项开发人员计划，为更广大的开发人�
 | 文章 | 描述 |
 |---------|-------------|
 |[Xbox Live 服务配置](../xbox-live-service-configuration.md) | 更新了为 Xbox Live 游戏进行服务配置的相关信息
-| [配置 Unity 中的 Xbox Live](../get-started-with-creators/configure-xbox-live-in-unity.md) | 针对 Xbox Live 创意者计划开发人员的 Unity 设置的新信息 |
+| [配置 Xbox Live 在 Unity 中](../get-started-with-creators/configure-xbox-live-in-unity.md) | 针对 Xbox Live 创意者计划开发人员的 Unity 设置的新信息 |
 | [Xbox Live 沙盒](../xbox-live-sandboxes.md) | Xbox Live 沙盒和内容隔离的简化指南 |
-| [Xbox Live 测试帐户](../xbox-live-test-accounts.md) | 了解如何测试帐户工作，以及如何在合作伙伴中心创建帐户 |
+| [Xbox Live 的测试帐户](../xbox-live-test-accounts.md) | 了解如何测试帐户工作原理，以及如何创建在合作伙伴中心 |

@@ -1,6 +1,6 @@
 ---
 title: 三角形带
-description: 三角形带是一系列互连的三角形。 由于这些三角形是连接的，因此应用程序不需要为每个三角形重复指定所有三个顶点。
+description: 三角形带是一系列连接的三角形。 由于这些三角形是连接的，因此应用程序不需要为每个三角形重复指定所有三个顶点。
 ms.assetid: BACC74C5-14E5-4ECC-9139-C2FD1808DB82
 keywords:
 - 三角形带
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a420ed5ed8f498eb9c900cbacb1b766c4a01214
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945899"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599282"
 ---
 # <a name="triangle-strips"></a>三角形带
 
 
-三角形带是一系列互连的三角形。 由于这些三角形是连接的，因此应用程序不需要为每个三角形重复指定所有三个顶点。 例如，只需 7 个顶点即可定义以下三角形带。
+三角形带是一系列连接的三角形。 由于这些三角形是连接的，因此应用程序不需要为每个三角形重复指定所有三个顶点。 例如，只需 7 个顶点即可定义以下三角形带。
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
 

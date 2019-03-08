@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 定向优惠 API, 获取定向优惠
 ms.localizationpriority: medium
 ms.openlocfilehash: 71cd6ce3b9736b812f8ccdf4d21d35357928c63c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943712"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622762"
 ---
 # <a name="get-targeted-offers"></a>获取定向优惠
 
 使用此方法来获取为当前用户提供的定向优惠，具体取决于用户是否属于该定向优惠所针对的客户细分的一部分。 有关更多信息，请参阅[使用应用商店服务管理定向优惠](manage-targeted-offers-using-windows-store-services.md)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，你需要先为当前已登录应用的用户[获取 Microsoft 帐户令牌](manage-targeted-offers-using-windows-store-services.md#obtain-a-microsoft-account-token)。 对于此方法，你必须将此令牌传递至 ```Authorization``` 请求标头中。 此令牌供 Microsoft Store 用于为当前用户提供定向优惠。
 
@@ -33,9 +33,9 @@ ms.locfileid: "8943712"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 描述  |
+| 标头        | 在任务栏的搜索框中键入   | 描述  |
 |---------------|--------|--------------|
-| 授权 | 字符串 | 必填。 当前已登录应用的用户的 Microsoft 帐户令牌采用的令牌格式为 **Bearer** &lt;*token*&gt;。 |
+| 授权 | 字符串 | 必需。 在窗体应用程序的当前登录的用户的 Microsoft 帐户令牌**持有者** &lt;*令牌*&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
@@ -53,10 +53,10 @@ Authorization: Bearer <Microsoft Account token>
 
 此方法将会返回一个 JSON 格式的响应正文，其中包含一个对象数组及以下字段。 数组中的每个对象代表为指定用户（特定客户细分的一部分）提供的定向优惠。
 
-| 字段      | 类型   | 描述         |
+| 字段      | 在任务栏的搜索框中键入   | 描述         |
 |------------|--------|------------------|
-| offers      | array  | 与针对当前用户提供的定向优惠关联的加载项产品 ID 数组。 在你的应用在合作伙伴中心的**定向优惠**页中指定这些产品 Id。            |
-| trackingId  | string | 一个 GUID，可在你自己的代码或服务中选择用来跟踪定向优惠。 |
+| offers      | 数组  | 与针对当前用户提供的定向优惠关联的加载项产品 ID 数组。 中指定这些产品 Id**针对产品/服务**在合作伙伴中心应用程序页。            |
+| trackingId  | 字符串 | 一个 GUID，可在你自己的代码或服务中选择用来跟踪定向优惠。 |
 
 
 ### <a name="example"></a>示例
@@ -77,7 +77,7 @@ Authorization: Bearer <Microsoft Account token>
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 Microsoft Store 服务管理定向优惠](manage-targeted-offers-using-windows-store-services.md)
+* [管理使用存储服务的目标产品/服务](manage-targeted-offers-using-windows-store-services.md)
 
  
 

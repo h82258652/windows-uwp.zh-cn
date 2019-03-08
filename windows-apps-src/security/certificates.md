@@ -4,14 +4,14 @@ description: 本文将讨论在通用 Windows 平台 (UWP) 应用中的证书使
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全
+keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ee96628fd90ec9eea998abf312c5da11bff3826
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937412"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624352"
 ---
 # <a name="intro-to-certificates"></a>证书简介
 
@@ -22,7 +22,7 @@ ms.locfileid: "8937412"
 
 ### <a name="shared-certificate-stores"></a>共享的证书存储
 
-UWP 应用使用 Windows8 中引入的新 isolationist 应用程序模型。 在此模型中，应用将在低级操作系统结构（称为应用容器）中运行，除非明确允许，否则禁止应用访问除本身以外的资源或文件。 以下各节将介绍这对公钥基础结构 (PKI) 的含义。
+UWP 应用使用的 Windows 8 中引入新的来自应用程序模型。 在此模型中，应用将在低级操作系统结构（称为应用容器）中运行，除非明确允许，否则禁止应用访问除本身以外的资源或文件。 以下各节将介绍这对公钥基础结构 (PKI) 的含义。
 
 ### <a name="certificate-storage-per-app-container"></a>证书按应用容器存储
 
@@ -71,7 +71,7 @@ X.509 公钥证书标准已经随着时间的过去经过了修订。 每一个�
 
 X.509 版本 2 证书包含版本 1 中定义的基本字段并添加了以下字段。
 
-| 字段 | 说明 |
+| 字段 | 描述 |
 |-------|-------------|
 | 颁发者唯一标识符 | 包含一个唯一值，在一段时间内由不同的实体重用时可用于唯一标记证书颁发机构的 X.500 名称。 |
 | 使用者唯一标识符 | 包含一个唯一值，在一段时间内由不同的实体重用时可用于唯一标记证书使用者的 X.500 名称。 |
@@ -80,7 +80,7 @@ X.509 版本 2 证书包含版本 1 中定义的基本字段并添加了以下�
 
 X.509 版本 3 证书包含版本 1 和版本 2 中定义的字段并添加了证书扩展。
 
-| 字段  | 说明 |
+| 字段  | 描述 |
 |--------|-------------|
 | 授权密钥标识符 | 标识证书颁发机构 (CA) 公钥，与用于签署证书的 CA 私钥对应。 |
 | 基本约束 | 指定实体是否可用作 CA，如果可以，则指定在证书链中该 CA 下可以存在的从属 CA 的数量。 |

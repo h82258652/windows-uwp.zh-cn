@@ -6,14 +6,14 @@ ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 14cb42e0bd0f1bac307a9dfc1ac188d8b11d8cb8
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115794"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610322"
 ---
 # <a name="symbologies"></a>标志
-本主题为 Windows 10 附带的软件条形码解码器支持的每个标志提供示例条形码，包括：UPC/EAN、Code 39、Code 128、Interleaved 2 of 5、Databar Omnidirectional、Databar Stacked、QR 码和 GS1DWCode。
+本主题提供了每个支持的 Windows 10，包括随附软件条形码解码器符号示例条形码：UPC/EAN、 代码 39、 代码 128，二五，堆积数据条全向、 数据条，QR 码和 GS1DWCode。
 
 ## <a name="1d-symbologies"></a>1D 标志
 

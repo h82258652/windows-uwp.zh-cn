@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ab10acab42ab3f03121a7c5a462cb651b0f3f31b
-ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "9014702"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595562"
 ---
 # <a name="launch-the-people-app"></a>启动“人脉”应用
 
-本主题介绍 **ms-people:** URI 方案。 你的应用可以使用此 URI 方案来针对特定操作启动“人脉”应用。
+本主题介绍**ms 人：** URI 方案。 你的应用可以使用此 URI 方案来针对特定操作启动“人脉”应用。
 
-## <a name="ms-people-uri-scheme-reference"></a>ms-people: URI 方案引用
+## <a name="ms-people-uri-scheme-reference"></a>ms-people:URI 方案引用
 
 <table>
 <colgroup>
@@ -40,7 +40,7 @@ ms.locfileid: "9014702"
 <td align="left">ms-people:settings</td>
 </tr>
 <tr class="odd">
-<td align="left">允许其他应用通过搜索的结果页提供会启动“人脉”应用的搜索字符串。
+<td align="left">允许其他应用通过搜索的结果页提供将启动“人脉”应用的搜索字符串。
 <div class="alert">
 <p>参数区分大小写。</p>
 <p>如果未正确输入语法或缺少搜索字符串值，默认行为是返回未经过任何筛选的联系人的完整列表。</p>
@@ -58,7 +58,7 @@ ms.locfileid: "9014702"
 </div>
 <div> 
 </div></td>
-<td align="left">ms-用户： viewcontact?ContactId =&lt;contactid&gt;&amp;AggregatedId =&lt;aggid&gt;&amp;PhoneNumber = &lt;phonenum&gt;&amp;电子邮件 =&lt;电子邮件&gt;&amp;ContactName =&lt;名称&gt;&amp;联系人 =&lt;contactobj&gt;</td>
+<td align="left">ms-people:viewcontact?ContactId=&lt;contactid&gt;&amp;AggregatedId=&lt;aggid&gt;&amp;PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;&amp;Contact=&lt;contactobj&gt;</td>
 </tr>
 <tr class="odd">
 <td align="left">启动到“人脉”应用内的保存联系人页面，以使用提供的电话号码或电子邮件地址保存给定的联系人。
@@ -95,7 +95,7 @@ ms.locfileid: "9014702"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 <th align="left">示例</th>
 </tr>
 </thead>
@@ -121,7 +121,7 @@ ms.locfileid: "9014702"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 <th align="left">示例</th>
 </tr>
 </thead>
@@ -151,7 +151,7 @@ ms.locfileid: "9014702"
 <td align="left"><p>ms-people:viewcontact?ContactName=John%20%Smith</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><b>联系人</b></td>
+<td align="left"><b>Contact</b></td>
 <td align="left"><p>可选。</p>
 <p>Contact 对象。</p></td>
 <td align="left"><p>ms-people:viewcontact?Contact={Serialized Contact}</p></td>
@@ -170,7 +170,7 @@ ms.locfileid: "9014702"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 <th align="left">示例</th>
 </tr>
 </thead>
@@ -207,13 +207,13 @@ ms.locfileid: "9014702"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><b>Company</b></td>
+<td align="left"><b>公司</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的公司名称。</p></td>
 
@@ -285,13 +285,13 @@ ms.locfileid: "9014702"
 </tr>
 
 <tr class="odd">
-<td align="left"><b>Nickname</b></td>
+<td align="left"><b>昵称</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的昵称。</p></td>
 </tr>
 
 <tr class="even">
-<td align="left"><b>Notes</b></td>
+<td align="left"><b>注意</b></td>
 <td align="left"><p>可选。</p>
 <p>关于联系人的备注。</p></td>
 </tr>
@@ -321,7 +321,7 @@ ms.locfileid: "9014702"
 </tr>
 
 <tr class="odd">
-<td align="left"><b>Website</b></td>
+<td align="left"><b>网站</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的网站。</p></td>
 </tr>

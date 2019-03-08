@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 87eb6562c6ee66ca1d409d3748e688861d5f3920
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936471"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605042"
 ---
 # <a name="stream-output-so-stage"></a>流输出 (SO) 阶段
 
 
 流输出 (SO) 阶段可将顶点数据从之前的有效阶段输出（或流式传输）至内存中的一个或多个缓冲区。 流出到内存的数据可以作为输入数据再次循环回到管道，或者从 CPU 读回。
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途和用法
+## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途，并使用
 
 
 ![流输出阶段在管道中的位置图](images/d3d10-pipeline-stages-so.png)
@@ -38,12 +38,12 @@ ms.locfileid: "8936471"
 
 来自之前着色器阶段的顶点数据。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
-流输出 (SO) 阶段连续地将来自前一活动阶段的顶点数据（例如几何着色器 (GS) 阶段）输出（或流入）到内存中的一个或多个缓冲区。 如果几何着色器 (GS) 阶段是处于非活动状态，流输出 (SO) 阶段连续输出到内存 （或者如果 DS 也无效，则从顶点着色器 (VS) 阶段） 中的缓冲区来自域着色器 (DS) 阶段的顶点数据。
+流输出 (SO) 阶段连续地将来自前一活动阶段的顶点数据（例如几何着色器 (GS) 阶段）输出（或流入）到内存中的一个或多个缓冲区。 如果几何着色器 (GS) 阶段处于非活动状态，则 Stream 输出 (SO) 阶段持续输出缓冲区在内存中 （或如果 DS 还处于非活动状态，来自顶点着色器 (VS) 阶段） 到来自域着色器 (DS) 阶段的顶点数据。
 
-当三角形或直线带绑定到输入装配器 (IA) 阶段时，每个带转换为列表流出之前。顶点始终写出成完整基元 (例如，3 个顶点的三角形一次）;不完整的基元不会流出。带邻近度的基元类型会数据流出之前放弃相邻数据。
+三角形或直线带与输入汇编程序 (IA) 阶段绑定时，那么所有带会在流出之前转化为列表。顶点始终展开写成完整基元（例如，三角形一次为 3 个顶点）；不完整的基元不会流出。相邻的基元类型会在数据流出之前放弃相邻数据。
 
 流输出阶段支持最多同时 4 个缓冲区。
 

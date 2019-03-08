@@ -8,22 +8,22 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e7b6990917437c22dd4d9282492e2a0eab37893b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922882"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628142"
 ---
 # <a name="handleshandleidsession"></a>/handles/{handleId}/session
-支持 PUT 并获得对会话的操作，使用句柄取消引用。 
+支持 PUT 和 GET 操作适用于会话中，使用句柄取消引用。 
 
 > [!NOTE] 
-> 此 URI 使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在使用模板合约 104/105 或更高版本。  
+> 此 URI 由 2015年之多人游戏，并且仅适用于该多玩家版本和更高版本。 它旨在用于模板协定 104/105 或更高版本。  
 
  
 
 > [!NOTE] 
-> 此 URI 目前仅从外部访问 Xbox One 主机和使用服务标识符的服务器。  
+> 此 URI 目前仅通过 Xbox One 控制台和服务器使用的服务标识符从外部访问。  
 
  
 <a id="ID4ES"></a>
@@ -36,7 +36,7 @@ sessiondirectory.xboxlive.com
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | --- | --- | 
 | handleId| GUID| 会话句柄的唯一 ID。| 
   
@@ -45,13 +45,13 @@ sessiondirectory.xboxlive.com
  
 ## <a name="valid-methods"></a>有效的方法
 
-[GET (/handles/{handleId}/session)](uri-handleshandleidsessionget.md)
+[获取 (/handles/ {handleId} / 会话)](uri-handleshandleidsessionget.md)
 
-&nbsp;&nbsp;会话对象获取指定的句柄标识符。 
+&nbsp;&nbsp;获取会话对象的指定句柄标识符。 
 
-[PUT (/handles/{handle-id}/session)](uri-handleshandleidsessionput.md)
+[放置 (/handles/ {句柄 id} / 会话)](uri-handleshandleidsessionput.md)
 
-&nbsp;&nbsp;创建或更新会话由取消引用句柄。
+&nbsp;&nbsp;创建或更新会话的取消引用句柄。
  
 <a id="ID4E6B"></a>
 
@@ -63,6 +63,6 @@ sessiondirectory.xboxlive.com
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[会话目录 URI](atoc-reference-sessiondirectory.md)
+[会话目录 Uri](atoc-reference-sessiondirectory.md)
 
    

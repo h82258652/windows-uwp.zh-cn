@@ -8,13 +8,13 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d62a1d3158e13187f89277a1ba009bd56fc2b39a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921400"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659422"
 ---
-# <a name="span-iddirect3dconceptssrvbehaviorwithnon-mappedtilesspansrv-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.srv_behavior_with_non-mapped_tiles"></span>使用非映射磁贴的 SRV 行为
+# <a name="span-iddirect3dconceptssrvbehaviorwithnon-mappedtilesspansrv-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.srv_behavior_with_non-mapped_tiles"></span>SRV 行为与非映射磁贴
 
 
 涉及非映射磁贴的着色器资源视图 (SRV) 读取的行为取决于硬件支持的程度。 有关详细要求，请参阅[流式资源功能层](streaming-resources-features-tiers.md)的读取行为。 本部分总结了[第 2 层](tier-2.md)所要求的理想行为。
@@ -26,7 +26,7 @@ ms.locfileid: "8921400"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[对流式资源的管道访问](pipeline-access-to-streaming-resources.md)
+[管道到流式处理资源的访问权限](pipeline-access-to-streaming-resources.md)
 
  
 

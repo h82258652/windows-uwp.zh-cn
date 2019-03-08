@@ -8,23 +8,23 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: cf13b8d28de1c6f9ba3e17bc5c3d8914d68aacc8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933237"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655502"
 ---
 # <a name="systemstringsvalidate"></a>/system/strings/validate
-访问用于验证字符串的数组。 这些 Uri 的域是`client-strings.xboxlive.com`。
+访问以进行验证的字符串数组。 这些 Uri 的域是`client-strings.xboxlive.com`。
   
 <a id="ID4EV"></a>
 
  
 ## <a name="valid-methods"></a>有效的方法
 
-[POST (/system/strings/validate)](uri-systemstringsvalidatepost.md)
+[POST （/系统/字符串/验证）](uri-systemstringsvalidatepost.md)
 
-&nbsp;&nbsp;接受用于验证字符串的数组，并返回数组大小相同的结果。
+&nbsp;&nbsp;接受一个用于验证字符串数组并返回数组的大小相等的结果。
  
 <a id="ID4E6"></a>
 
@@ -36,6 +36,6 @@ ms.locfileid: "8933237"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[系统字符串验证 URI](atoc-reference-systemstringsvalidate.md)
+[系统字符串验证 Uri](atoc-reference-systemstringsvalidate.md)
 
    

@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 21a583e7556f98b827a63de3948f43d76f25c907
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928924"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592892"
 ---
 # <a name="titleassociation-json"></a>TitleAssociation (JSON)
-与成就关联的标题。 
+一个与实现相关联的标题。 
 <a id="ID4EN"></a>
 
  
@@ -23,16 +23,16 @@ ms.locfileid: "8928924"
  
 TitleAssociation 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| name| 字符串| 本地化的内容的名称。| 
-| id| 字符串| TitleId （32 位无符号整数、 小数中返回）。| 
-| version| 字符串| （如果适用） 相关联的游戏的特定版本。| 
+| name| 字符串| 内容本地化的名称。| 
+| id| 字符串| 职务 Id （32 位无符号整数，以十进制返回）。| 
+| version| 字符串| 关联的标题 （如果适用） 的特定版本。| 
   
 <a id="ID4E4B"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -55,6 +55,6 @@ TitleAssociation 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
    

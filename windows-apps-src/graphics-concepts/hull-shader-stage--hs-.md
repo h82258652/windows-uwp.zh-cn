@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9137f7ef46da1b861976dbac680327febf315dac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946270"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601052"
 ---
 # <a name="hull-shader-hs-stage"></a>外壳着色器 (HS) 阶段
 
 
 外壳着色器 (HS) 阶段是分割阶段之一，其有效地将模型的单个表面分解为许多三角形。 外壳着色器 (HS) 阶段产生对应于每个输入修补程序（四边形、三角形或线条）的几何图形修补程序（和修补程序常量）。 每个修补程序调用一次外壳着色器，它将定义低阶表面的输入控制点转换为构成修补程序的控制点。 它还执行一些按每个修补程序进行的计算，以便为[细化器 (TS) 阶段](tessellator-stage--ts-.md)和[域着色器 (DS) 阶段](domain-shader-stage--ds-.md)提供数据。
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途和用法
+## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途，并使用
 
 
 ![外壳着色器阶段图示](images/d3d11-hull-shader.png)
@@ -41,7 +41,7 @@ ms.locfileid: "8946270"
 -   外壳着色器声明[细化器 (TS) 阶段](tessellator-stage--ts-.md)所需的状态。 这包括控制点的数量、修补程序面的类型和在分割时使用的分区类型等信息。 此信息作为声明显示，通常位于着色器代码的前面。
 -   细化因素决定细分每个修补程序的量。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 在 1 到 32 个输出控制点之间，它们共同构成修补程序。
@@ -68,7 +68,7 @@ MyOutPoint main(uint Id : SV_ControlPointID,
 }
 ```
 
-请参阅[操作步骤：创建外壳着色器](https://msdn.microsoft.com/library/windows/desktop/ff476338)。
+请参阅[如何：创建外壳着色器](https://msdn.microsoft.com/library/windows/desktop/ff476338)。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 

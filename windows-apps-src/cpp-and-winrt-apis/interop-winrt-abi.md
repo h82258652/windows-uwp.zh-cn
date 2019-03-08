@@ -6,15 +6,15 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, ABI
 ms.localizationpriority: medium
 ms.openlocfilehash: a33a52cd8c18b312dc9e020a4c4ba518c33b0dd9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932893"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639942"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>实现 C++/WinRT 与 ABI 之间的互操作
 
-本主题介绍如何在 SDK 应用程序二进制接口 (ABI) 之间转换和[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)对象。 你可以借助这些技术，为使用 Windows 运行时的这两种编程方式的代码实现互操作，也可以在将代码从 ABI 逐步迁移到 C++/WinRT 时使用这些技术。
+本主题演示如何将 SDK 应用程序二进制接口 (ABI) 之间的转换并[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)对象。 你可以借助这些技术，为使用 Windows 运行时的这两种编程方式的代码实现互操作，也可以在将代码从 ABI 逐步迁移到 C++/WinRT 时使用这些技术。
 
 ## <a name="what-is-the-windows-runtime-abi-and-what-are-abi-types"></a>什么是 Windows 运行时 ABI？什么是 ABI 类型？
 Windows 运行时类（运行时类）实际上是一种抽象。 这种抽象定义了一个二进制接口（应用程序二进制接口，或 ABI），它允许各种编程语言与一个对象进行交互。 不管使用何种编程语言，客户端代码与 Windows 运行时对象的交互发生在最低级别，在此客户端语言构造被转换为对象的 ABI 调用。
@@ -246,11 +246,11 @@ int main()
 ## <a name="important-apis"></a>重要的 API
 * [AddRef 函数](https://msdn.microsoft.com/library/windows/desktop/ms691379)
 * [QueryInterface 函数](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [winrt:: attach_abi 函数](/uwp/cpp-ref-for-winrt/attach-abi)
+* [winrt::attach_abi function](/uwp/cpp-ref-for-winrt/attach-abi)
 * [winrt::com_ptr 结构模板](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt:: copy_from_abi 函数](/uwp/cpp-ref-for-winrt/copy-from-abi)
-* [winrt:: copy_to_abi 函数](/uwp/cpp-ref-for-winrt/copy-to-abi)
-* [winrt:: detach_abi 函数](/uwp/cpp-ref-for-winrt/detach-abi)
-* [winrt::get_abi 函数](/uwp/cpp-ref-for-winrt/get-abi)
-* [winrt::Windows::Foundation::IUnknown::as member 函数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
-* [winrt::Windows::Foundation::IUnknown::try_as member 函数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
+* [winrt::copy_from_abi function](/uwp/cpp-ref-for-winrt/copy-from-abi)
+* [winrt::copy_to_abi function](/uwp/cpp-ref-for-winrt/copy-to-abi)
+* [winrt::detach_abi function](/uwp/cpp-ref-for-winrt/detach-abi)
+* [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
+* [winrt::Windows::Foundation::IUnknown:: 为成员函数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [winrt::Windows::Foundation::IUnknown::try_as 成员函数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)

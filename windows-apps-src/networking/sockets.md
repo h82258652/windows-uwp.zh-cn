@@ -4,14 +4,14 @@ title: 套接字
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ms.date: 06/03/2018
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cdad8f3405420e0548974c734ad23bfd44f2c6b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046753"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648822"
 ---
 # <a name="sockets"></a>套接字
 套接字是实现许多网络协议所基于的低级数据传输技术。 UWP 为客户端-服务器或对等应用程序提供 TCP 和 UDP 套接字类，无论连接长期存在还是不需要建立连接。
@@ -1202,7 +1202,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 }
 ```
 
-下面的示例适用于 C# 及任何其他 UWP 语言。 它依赖于 [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) 和 [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) 的批量发送行为。 技术这从 windows 10 中，可保证在输出流上的所有操作都完成后才返回该输出流调用[**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) 。
+下面的示例适用于 C# 及任何其他 UWP 语言。 它依赖于 [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) 和 [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) 的批量发送行为。 方法调用[ **FlushAsync** ](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync)这截至 Windows 10 中，可保证输出流的所有操作都完成后，仅返回该输出流上。
 
 ```csharp
 // An implementation of batched sends suitable for any UWP language.
@@ -1276,14 +1276,14 @@ private:
 
 -   在异步写入尚未完成之前，你将无法修改当前写入的 **IBuffer** 实例的内容。
 -   **FlushAsync** 模式仅适用于 **StreamSocket.OutputStream** 和 **DatagramSocket.OutputStream**。
--   **FlushAsync**模式适仅用于在 windows 10 以及。
+-   **FlushAsync**模式仅适用于 Windows 10 及之后。
 -   在其他情况下，用 [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) 来代替 **FlushAsync** 模式。
 
 ## <a name="port-sharing-for-datagramsocket"></a>DatagramSocket 的端口共享
 你可以配置 [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) 与绑定到相同地址/端口的其他 Win32 或 UWP 多播套接字共存。 要执行该操作，请在绑定或连接套接字前将 [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) 设置为 `true`。 你可以通过 **DatagramSocket** 对象的 [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control) 属性从该对象本身访问 **DatagramSocketControl** 的实例。
 
 ## <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>通过 StreamSocket 类提供客户端证书
-[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) 支持使用 SSL/TLS 验证客户端应用正在与其交互的服务器。 在某些情况下，客户端应用需要使用 SSL/TLS 客户端证书对服务器进行自身验证。 在绑定或连接套接字前，可以使用 [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate) 属性提供客户端证书（必须在开始 SSL/TLS 握手前设置）。 你可以通过 **StreamSocket** 对象的 [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control) 属性从该对象本身访问 **StreamSocketControl** 的实例。 如果服务器请求客户端证书，Windows 将通过你提供的客户端证书做出响应。
+[**StreamSocket** ](/uwp/api/Windows.Networking.Sockets.StreamSocket)支持使用 SSL/TLS 客户端应用正在和通信服务器进行身份验证。 在某些情况下，客户端应用需要使用 SSL/TLS 客户端证书对服务器进行自身验证。 在绑定或连接套接字前，可以使用 [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate) 属性提供客户端证书（必须在开始 SSL/TLS 握手前设置）。 你可以通过 **StreamSocket** 对象的 [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control) 属性从该对象本身访问 **StreamSocketControl** 的实例。 如果服务器请求客户端证书，Windows 将通过你提供的客户端证书做出响应。
 
 使用接受 [**SocketProtectionLevel**](/uwp/api/windows.networking.sockets.socketprotectionlevel) 的重载 [**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync)，如下面的精简代码示例所示。
 
@@ -1379,9 +1379,9 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 
 ## <a name="related-topics"></a>相关主题
 * [应用到应用的通信](/windows/uwp/app-to-app/index)
-* [通过 C++/WinRT 的并发和异步操作](/windows/uwp/cpp-and-winrt-apis/concurrency)
+* [并发和异步操作使用 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
 * [如何设置网络功能](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)
-* [Windows 套接字 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673)
+* [Windows 套接字 (Winsock) 2](https://msdn.microsoft.com/library/windows/desktop/ms740673)
 
 ## <a name="samples"></a>示例
 * [StreamSocket 示例](https://go.microsoft.com/fwlink/p/?LinkId=620609)

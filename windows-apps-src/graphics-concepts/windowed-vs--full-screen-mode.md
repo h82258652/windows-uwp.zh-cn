@@ -8,13 +8,13 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d84bbebfaf19b756e6abc6c592187b6b0ee92200
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945038"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618462"
 ---
-# <a name="span-iddirect3dconceptswindowedvsfull-screenmodespanwindowed-vs-full-screen-mode"></a><span id="direct3dconcepts.windowed_vs__full-screen_mode"></span>窗口与全屏模式
+# <a name="span-iddirect3dconceptswindowedvsfull-screenmodespanwindowed-vs-full-screen-mode"></a><span id="direct3dconcepts.windowed_vs__full-screen_mode"></span>有窗口与全屏幕模式
 
 
 Direct3D 应用程序可以在窗口模式或全屏模式中运行。 在*窗口模式*中，此应用程序与所有运行的应用共享可用的桌面屏幕空间。 在*全屏模式*中，应用程序运行于的窗口将覆盖整个桌面，并隐藏所有运行的应用（包括你的开发环境）。 通常，游戏默认为全屏模式，以便通过隐藏所有运行的应用程序来使用户完全沉浸在游戏中。

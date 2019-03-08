@@ -4,14 +4,14 @@ title: 接收数据
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e17b9ddd5833899a83e24d24c74f9c620a28f5c8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943523"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617632"
 ---
 # <a name="receive-data"></a>接收数据
 
@@ -24,8 +24,8 @@ ms.locfileid: "8943523"
 在用户调用“共享”时，系统将显示可能的目标应用列表。 为了显示在列表中，你的应用需要声明它支持“共享”合约。 这让系统知道你的应用可用于接收内容。
 
 1.  打开清单文件。 该文件的名称应类似 **package.appxmanifest**。
-2.  打开“声明”**** 选项卡。
-3.  从“可用声明”**** 列表中，选择“共享目标”****，然后选择“添加”****。
+2.  打开“声明”选项卡。
+3.  从“可用声明”列表中，选择“共享目标”，然后选择“添加”。
 
 ## <a name="choose-file-types-and-formats"></a>选择文件类型和格式
 
@@ -35,14 +35,14 @@ ms.locfileid: "8943523"
 
 若要设置文件类型：
 
-1.  打开清单文件。 该文件的名称应类似于 **package.appxmanifest**。
-2.  在“声明”**** 页的“支持的文件类型”**** 部分，选择“新增”****。
+1.  打开清单文件。 该文件的名称应类似 **package.appxmanifest**。
+2.  在“声明”页的“支持的文件类型”部分，选择“新增”。
 3.  键入要支持的文件扩展名，例如“.docx”。 你需要包括句点。 如果希望支持所有文件类型，请选中**SupportsAnyFileType** 复选框。
 
 若要设置数据格式：
 
 1.  打开清单文件。
-2.  打开“声明”**** 页的“数据格式”**** 部分，然后选择“新增”****。
+2.  打开“声明”页的“数据格式”部分，然后选择“新增”。
 3.  键入支持的数据格式的名称，例如“Text”。
 
 ## <a name="handle-share-activation"></a>处理共享激活
@@ -99,13 +99,13 @@ shareOperation.ReportError("Could not reach the server! Try again later.");
 shareOperation.ReportCompleted();
 ```
 
-在使用这些方法时，通常按照所述的顺序来进行调用，不要多次调用它们。 但是，某些时候目标应用可能会在调用 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) 之前调用 [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved)。 例如，应用可能在激活处理程序中执行任务时检索数据，但在用户选择“共享”**** 按钮之前不调用 **ReportStarted**。
+在使用这些方法时，通常按照所述的顺序来进行调用，不要多次调用它们。 但是，某些时候目标应用可能会在调用 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) 之前调用 [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved)。 例如，应用可能在激活处理程序中执行任务时检索数据，但在用户选择“共享”按钮之前不调用 **ReportStarted**。
 
 ## <a name="return-a-quicklink-if-sharing-was-successful"></a>如果共享成功，则返回 QuickLink
 
 当用户选择你的应用来接收内容时，我们建议你创建一个 [**QuickLink**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink)。 **QuickLink** 类似于快捷方式，可让用户更轻松地使用你的应用共享信息。 例如，你可以创建一个 **QuickLink**，用来打开预配置了好友电子邮件地址的新邮件。
 
-**QuickLink** 必须有标题、图标以及 ID。用户点击“共享”超级按钮时显示标题（如“向妈妈发送电子邮件”）和图标。 你的应用使用 ID 来访问任何自定义信息，如电子邮件地址或登录凭据。 当你的应用创建 **QuickLink** 时，该应用会通过调用 [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted)，将 **QuickLink** 返回到系统。
+**QuickLink** 必须包含标题、图标和 ID。当用户点击“共享”超级按钮时，会显示标题（类似“Email Mom”）和图标。 你的应用使用 ID 来访问任何自定义信息，如电子邮件地址或登录凭据。 当你的应用创建 **QuickLink** 时，该应用会通过调用 [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted)，将 **QuickLink** 返回到系统。
 
 **QuickLink** 实际上并不存储数据。 而是包含一个标识符，如果选中该标识符，则会将该标识符发送至你的应用。 你的应用负责存储 **QuickLink** 的 ID 及相应的用户数据。 当用户点击 **QuickLink** 时，你可以通过 [**QuickLinkId**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.QuickLinkId) 属性获取其 ID。
 
@@ -133,7 +133,7 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 
 ## <a name="see-also"></a>另请参阅 
 
-* [App-to-app communication](index.md)
+* [应用到应用的通信](index.md)
 * [共享数据](share-data.md)
 * [OnShareTargetActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onsharetargetactivated.aspx)
 * [ReportStarted](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)

@@ -1,5 +1,5 @@
 ---
-Description: Learn how to create multi-step interactions in your notifications.
+Description: 了解如何在通知中创建多个步骤的交互。
 title: 具有挂起更新激活的 Toast
 label: Toast with pending update activation
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, toast, 挂起的更新, 多步骤交互性, 多步骤交互
 ms.localizationpriority: medium
 ms.openlocfilehash: b1574ee2913bd2889af204aae1089dc170df95b8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940732"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648552"
 ---
 # <a name="toast-with-pending-update-activation"></a>具有挂起更新激活的 Toast
 
@@ -21,15 +21,15 @@ ms.locfileid: "8940732"
 ![有待更新的 Toast](images/toast-pendingupdate.gif)
 
 > [!IMPORTANT]
-> **需要桌面秋季创意者更新和 2.0.0 的通知库**：必须运行桌面版本 16299 或更高版本才能查看挂起的更新工作。 必须使用版本 2.0.0 或更高版本的 [UWP 社区工具包通知 NuGet 库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)来分配按钮上的 **PendingUpdate**。 **PendingUpdate** 仅支持桌面设备，在其他设备上会被忽略。
+> **需要桌面 Fall Creators Update 和通知库 2.0.0**:您必须运行桌面生成 16299 或更高版本，若要查看挂起的更新工作。 必须使用版本 2.0.0 或更高版本的 [UWP 社区工具包通知 NuGet 库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)来分配按钮上的 **PendingUpdate**。 **PendingUpdate** 仅支持桌面设备，在其他设备上会被忽略。
 
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>必备条件
 
 本文假定读者具备后列应用知识：
 
-- [构造 Toast 内容文档](adaptive-interactive-toasts.md)
-- [发送 Toast 并处理后台激活](send-local-toast.md)
+- [构造 toast 通知内容](adaptive-interactive-toasts.md)
+- [发送 toast 通知和处理应用程序激活背景](send-local-toast.md)
 
 
 ## <a name="overview"></a>概述
@@ -117,6 +117,6 @@ ToastNotificationManager.CreateToastNotifier().Show(notif);
 ## <a name="related-topics"></a>相关主题
 
 - [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/quickstart-toast-pending-update)
-- [发送本地 toast 和处理激活](send-local-toast.md)
-- [toast 内容文档](adaptive-interactive-toasts.md)
-- [Toast 进度栏](toast-progress-bar.md)
+- [发送本地 toast 和句柄激活](send-local-toast.md)
+- [Toast 通知内容文档](adaptive-interactive-toasts.md)
+- [Toast 通知进度栏](toast-progress-bar.md)

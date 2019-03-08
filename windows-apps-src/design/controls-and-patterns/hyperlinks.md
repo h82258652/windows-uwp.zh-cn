@@ -1,5 +1,5 @@
 ---
-Description: Hyperlinks navigate the user to another part of the app, to another app, or launch a specific uniform resource identifier (URI) using a separate browser app.
+Description: 超链接会将用户导航到应用的另一部分、导航到另一个应用，或使用单独的浏览器应用启动特定的统一资源标识符 (URI)。
 title: 超链接
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
@@ -13,11 +13,11 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 9aa5053d83518c61335807874cd0d31943a60695
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058598"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606472"
 ---
 # <a name="hyperlinks"></a>超链接
 
@@ -25,7 +25,7 @@ ms.locfileid: "9058598"
 
 超链接会将用户导航到应用的另一部分、导航到另一个应用，或使用单独的浏览器应用启动特定的统一资源标识符 (URI)。 可使用两种方法向 XAML 应用添加超链接：**Hyperlink** 文本元素和 **HyperlinkButton** 控件。
 
-> **重要 API**：[Hyperlink 文本元素](https://msdn.microsoft.com/library/windows/apps/dn279356)，[HyperlinkButton 控件](https://msdn.microsoft.com/library/windows/apps/br242739)
+> **重要的 Api**:[超链接文本元素](https://msdn.microsoft.com/library/windows/apps/dn279356)， [HyperlinkButton 控件](https://msdn.microsoft.com/library/windows/apps/br242739)
 
 ![“超链接”按钮](images/controls/hyperlink-button.png)
 
@@ -49,7 +49,7 @@ ms.locfileid: "9058598"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/HyperlinkButton">打开此应用，了解 HyperlinkButton 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -109,7 +109,7 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 对于这两种类型的超链接，你可以采用相同的方式处理导航；可设置 **NavigateUri** 属性，或处理 **Click** 事件。
 
-**导航到 URI**
+**导航到的 URI**
 
 若要使用超链接导航到 URI，请设置 NavigateUri 属性。 当用户单击或点击超链接时，指定的 URI 将在默认浏览器中打开。 默认浏览器将在独立于应用的进程中运行。
 
@@ -123,7 +123,7 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 如果你不希望超链接在默认的 Web 浏览器中加载内容（并且不希望浏览器显示），则不要为 NavigateUri 设置值。 改为处理 Click 事件，并编写执行所需操作的代码。
 
 
-**处理 Click 事件**
+**处理单击事件**
 
 对于除在浏览器中启动 URI 以外的操作（例如应用内导航），请使用 Click 事件。 例如，如果你希望加载新应用页面而不是打开浏览器，请在 Click 事件内调用 [Frame.Navigate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.frame.navigate.aspx) 方法来导航到新应用页面。 如果你希望外部的绝对 URI 在 [WebView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) 控件（同样存在于应用中）内加载，请调用 [WebView.Navigate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.navigate.aspx) 作为 Click 处理程序逻辑的一部分。
 
@@ -152,11 +152,11 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 本部分仅适用于超链接文本元素，不适用于 HyperlinkButton 控件。
 
-**输入事件**
+**输入的事件**
 
 由于超链接不是 [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx)，因此它没有 UI 元素输入事件集，如 Tapped、PointerPressed 等。 不过，超链接具有其自己的 Click 事件以及系统加载任何指定为 NavigateUri 的 URI 的隐式行为。 系统会处理所有应调用超链接操作并引发 Click 事件作为回应的输入操作。
 
-**内容**
+**Content**
 
 超链接对可能存在于其 [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) 集合中的内容具有限制。 具体来说，超链接仅允许 [Run](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx) 和非另一个超链接的其他 [Span](/uwp/api/windows.ui.xaml.documents.span) 类型。 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) 不可在超链接的内联集合中。 尝试添加受限制的内容会引发无效参数异常或 XAML 分析异常。
 
@@ -180,8 +180,8 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 ## <a name="related-articles"></a>相关文章
 
 - [文本控件](text-controls.md)
-- [工具提示指南](tooltips.md)
+- [工具提示的准则](tooltips.md)
 
-**对于开发人员 (XAML)**
+**面向开发人员 (XAML)**
 - [Windows.UI.Xaml.Documents.Hyperlink 类](https://msdn.microsoft.com/library/windows/apps/dn279356)
 - [Windows.UI.Xaml.Controls.HyperlinkButton 类](https://msdn.microsoft.com/library/windows/apps/br242739)

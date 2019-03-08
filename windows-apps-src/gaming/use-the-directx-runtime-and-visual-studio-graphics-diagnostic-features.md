@@ -7,21 +7,21 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 图形, 诊断, 工具, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e3c48e69dd1ad991a2a04017d4e262e45430504
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047914"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608532"
 ---
 # <a name="graphics-diagnostics-tools"></a>图形诊断工具
 
 
 
-对于 windows 10，图形诊断工具现已在 Windows 中可用作为可选功能。 若要使用在运行时和 Visual Studio 中提供的图形诊断功能来开发 DirectX 应用或游戏，请安装可选“图形工具”功能：
+Windows 10 中，图形诊断工具现在可提供的 Windows 中作为一项可选功能。 若要使用在运行时和 Visual Studio 中提供的图形诊断功能来开发 DirectX 应用或游戏，请安装可选“图形工具”功能：
 
 1.  转到**设置**，选择**应用**，然后单击**管理可选功能**。
-2.  单击“添加功能”****   
-3.  在“可选功能”**** 列表中，选择“图形工具”****，然后单击“安装”****。
+2.  单击“添加功能”   
+3.  在“可选功能”列表中，选择“图形工具”，然后单击“安装”。
 
 图形诊断功能包括在 DirectX 运行时中创建 Direct3D 调试设备（通过 Direct3D SDK 层）的功能以及“图形调试”、“框架分析”和“GPU 使用情况”。
 
@@ -32,7 +32,7 @@ ms.locfileid: "9047914"
 ## <a name="related-topics"></a>相关主题
 
 
-[Visual Studio 中的图形诊断概述](https://go.microsoft.com/fwlink/p/?LinkID=526382)
+[在 Visual Studio 中的图形诊断概述](https://go.microsoft.com/fwlink/p/?LinkID=526382)
 
  
 

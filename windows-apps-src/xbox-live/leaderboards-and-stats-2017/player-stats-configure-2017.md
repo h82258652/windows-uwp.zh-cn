@@ -1,19 +1,19 @@
 ---
 title: 配置 Stats and Leaderboards 2017
-description: 了解如何在合作伙伴中心中使用 Data Platform 2017 配置 Xbox Live 特别推荐的统计数据和排行榜。
+description: 了解如何在合作伙伴中心使用数据平台 2017年配置 Xbox Live 特色统计信息和排行榜。
 ms.assetid: e0f307d2-ea02-48ea-bcdf-828272a894d4
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ea2baf4bc27e6d1cfd5beb9ef0386acda72a39d2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943404"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598852"
 ---
-# <a name="configuring-featured-stats-or-leaderboards-in-partner-center-with-data-platform-2017"></a>在合作伙伴中心中使用 Data Platform 2017 配置特别推荐的统计数据或排行榜
+# <a name="configuring-featured-stats-or-leaderboards-in-partner-center-with-data-platform-2017"></a>在与数据平台 2017年合作伙伴中心中配置功能完备的统计信息或排行榜
 
 有了 Data Platform 2017，你只需在下面两种情况下配置统计数据即可：
 
@@ -41,9 +41,9 @@ ms.locfileid: "8943404"
 `Format`是统计数据的数据格式。
 
 `Display Logic` 让你可在 `Player progression`、`Personal best` 和 `Counter` 之间进行选择：
-- 玩家进度：表示各个玩家在游戏中的等级或级数。  用户将会看到最后一个值集。  例如，本局中的位置。
-- 个人最佳成绩：表示玩家发布过的当前最佳分数。 用户将会看到最大或最小值集，这取决于排序顺序。  例如，单圈最快时间。
-- 计数器：可添加到其他玩家的统计数据中以计算总计数。  
+- 播放机进度：表示单个运动员的水平或游戏中的进度。  用户将会看到最后一个值集。  例如，本局中的位置。
+- 个人最：表示具有公布的播放器的当前最佳分数。 用户将会看到最大或最小值集，这取决于排序顺序。  例如，单圈最快时间。
+- 计数器:可以添加到其他播放机的计算出的累积数。  
 
 `Sort` 字段可用于更改排行榜的排序顺序。
 

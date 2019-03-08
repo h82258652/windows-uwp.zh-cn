@@ -1,5 +1,5 @@
 ---
-Description: Use the ParallaxView control to add depth and movement to your app.
+Description: 使用 ParallaxView 控件向你的应用添加深度和移动效果。
 title: 如何使用 ParallaxView 控件向你的应用添加深度和移动效果。
 ms.assetid: ''
 label: Parallax View
@@ -13,17 +13,17 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 719a150c6750116a368d59fff9600fcf65bf8f61
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115804"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590682"
 ---
 # <a name="parallax"></a>视差
 
 视差是一种视觉效果，即靠近观察者的物体比背景中的物体移动得更快。 视差可产生一种深度、透视和移动感。 在 UWP 应用中，你可以使用 ParallaxView 控件来创建视差效果。  
 
-> **重要的 API**：[ParallaxView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview)、[VerticalShift 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift)、[HorizontalShift 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
+> **重要的 Api**:[ParallaxView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview)， [VerticalShift 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift)， [HorizontalShift 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
 
 ## <a name="examples"></a>示例
 
@@ -34,7 +34,7 @@ ms.locfileid: "9115804"
 <td>
     <p>如果你已安装了 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，单击此处<a href="xamlcontrolsgallery:/item/ParallaxView">打开此应用，了解 ParallaxView 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -43,13 +43,13 @@ ms.locfileid: "9115804"
 
 ## <a name="parallax-and-the-fluent-design-system"></a>视差和 Fluent 设计系统
 
- Fluent 设计系统可帮助你创建包含光线、深度、动画、材料和比例的现代、粗体 UI。 视差是 Fluent 设计系统的一个组成部分，它将动画、深度和比例添加到你的应用。 要了解详细信息，请参阅 [UWP 的 Fluent 设计概述](../fluent-design-system/index.md)。
+ Fluent 设计系统可帮助你创建包含光线、深度、动画、材料和比例的现代、粗体 UI。 视差是 Fluent 设计系统的一个组成部分，它将动画、深度和比例添加到你的应用。 要了解详细信息，请参阅 [UWP 的 Fluent Design 概述](../fluent-design-system/index.md)。
 
 ## <a name="how-it-works-in-a-user-interface"></a>它在用户界面中的工作原理
 
-在 UI 中，你可以在 UI 滚动或平移时，通过以不同的速率移动不同的对象来创建视差效果。 <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> 要进行演示，请让我们查看两层内容，分别是列表和背景图像。  该列表位于该背景图像的顶部，这已经给人以列表可能靠观察者更近的错觉。  现在，为了实现视差效果，我们希望靠我们最近的对象比远处的对象移动得“更快”。  当用户滚动界面时，列表比背景图像移动得更快，从而产生深度错觉。
+在 UI 中，你可以在 UI 滚动或平移时，通过以不同的速率移动不同的对象来创建视差效果。 <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> 为了演示，让我们看一下两个层的内容、 列表和背景图像。  该列表位于该背景图像的顶部，这已经给人以列表可能靠观察者更近的错觉。  现在，为了实现视差效果，我们希望靠我们最近的对象比远处的对象移动得“更快”。  当用户滚动界面时，列表比背景图像移动得更快，从而产生深度错觉。
 
- ![附带列表和背景图像的一个视差示例](images/_Parallax_v2.gif)
+ ![一个列表和背景图像的视差示例](images/_Parallax_v2.gif)
 
  
 ## <a name="using-the-parallaxview-control-to-create-a-parallax-effect"></a>使用 ParallaxView 控件创建视差效果
@@ -106,8 +106,8 @@ ParallaxView 自动调整图像的大小，以便它适合视差操作，让你�
 
 VerticalShift 和 HorizontalShift 属性让你可以控制视差效果的程度。
 
-* VerticalShift 属性指定在整个视差操作期间，我们想要背景垂直移动多远。 值 0 表示背景根本不移动。
-* HorizontalShift 属性指定在整个视差操作期间，我们想要背景水平移动多远。 值 0 表示背景根本不移动。
+* VerticalShift 属性指定在整个视差操作期间，我们想要背景垂直移动多远。 值为 0 表示背景上根本不会移动。
+* HorizontalShift 属性指定在整个视差操作期间，我们想要背景水平移动多远。 值为 0 表示背景上根本不会移动。
 
 更大的值可创建更显著的效果。 
 
@@ -126,5 +126,5 @@ VerticalShift 和 HorizontalShift 属性让你可以控制视差效果的程度�
 ## <a name="related-articles"></a>相关文章
 
 - [ParallaxView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
-- [UWP 的 Fluent 设计](../fluent-design-system/index.md)
-- [系统内的科学：Fluent 设计和深色](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
+- [适用于 UWP 的 Fluent 设计](../fluent-design-system/index.md)
+- [在系统中的科学：Fluent 设计和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)

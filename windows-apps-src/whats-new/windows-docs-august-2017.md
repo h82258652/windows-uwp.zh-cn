@@ -6,17 +6,17 @@ ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: edf81f0474855c868ea1fb50afa683523aedcd07
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050780"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57614862"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>2017 年 8 月 Windows 开发人员文档中的新增功能
 
 Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 最近提供了以下功能概述、开发人员指南和视频，包含面向 Windows 开发人员的新的和更新的信息。
 
-只需在 Windows10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/your-first-app.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/your-first-app.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -45,23 +45,23 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="data-schemas-for-store-products"></a>应用商店产品的数据架构
 
-我们添加了[应用商店产品的数据架构](../monetize/data-schemas-for-store-products.md) 文章。 此文章提供了对 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中的多个对象可用的与应用商店相关的数据的架构，包括 [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 和 [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense)。
+我们添加了[应用商店产品的数据架构](../monetize/data-schemas-for-store-products.md)文章。 此文章提供了对 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中的多个对象可用的与应用商店相关的数据的架构，包括 [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 和 [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense)。
 
 ### <a name="desktop-bridge"></a>桌面桥
 
 我们添加了两个指南帮助你添加让 Windows 10 用户感到喜悦的现代化体验。
 
-请参阅[增强用于 Windows 10 的桌面应用程序](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance) 查找和引用正确的文件，然后编写能够增强 Windows 10 用户 UWP 体验的代码。  
+请参阅[增强用于 Windows 10 的桌面应用程序](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance)查找和引用正确的文件，然后编写能够增强 Windows 10 用户 UWP 体验的代码。  
 
 请参阅[使用新式 UWP 组件扩展桌面应用程序](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend) 以合并必须在 UWP 应用容器中运行的现代 XAML UI 和其他 UWP 体验。
 
 ### <a name="getting-started-with-point-of-service"></a>服务点入门
 
-我们添加了帮助你[服务点设备入门](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-get-started) 的新指南。 它涵盖的主题包括设备枚举、检查设备功能、声明设备和设备共享等。 
+我们添加了帮助你[了解服务点设备](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-get-started)的新指南。 它涵盖的主题包括设备枚举、检查设备功能、声明设备和设备共享等。 
 
 ### <a name="xbox-live"></a>Xbox Live
 
-我们添加了面向 Xbox Live 开发人员的适用于 UWP 和 Xbox 开发人员工具包 (XDK) 游戏的文档。
+我们添加了面向 Xbox Live 开发人员、适用于 UWP 和 Xbox 开发人员工具包 (XDK) 游戏的文档。
 
 请参阅 [Xbox Live 开发人员指南](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/) 以了解如何使用 Xbox Live API 将你的游戏连接到 Xbox Live 社交游戏网络。
 

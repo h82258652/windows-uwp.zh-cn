@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e49a9dcaa2638065946f01797cbea084a1432a6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930698"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602302"
 ---
 # <a name="devices"></a>设备
 
@@ -38,7 +38,7 @@ Direct3D 支持以下两种主要类型的 Direct3D 设备：
 
 由于与 Direct3D 9 一起提供的软件和参考设备的行为与 hal 设备的相同，编写的用于 hal 设备的应用程序代码将不经修改直接用于软件或参考设备。 提供的软件或参考设备的行为与 hal 设备的相同，但设备功能各不相同，并且特定的软件设备可以实现更小的功能集。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>
@@ -58,7 +58,7 @@ Direct3D 支持以下两种主要类型的 Direct3D 设备：
 <td align="left"><p>Direct3D 设备类型包括硬件抽象层 (hal) 设备和参考光栅器。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="windowed-vs--full-screen-mode.md">窗口与全屏模式</a></p></td>
+<td align="left"><p><a href="windowed-vs--full-screen-mode.md">有窗口与全屏幕模式</a></p></td>
 <td align="left"><p>Direct3D 应用程序可以在窗口模式或全屏模式中运行。 在<em>窗口模式</em>中，此应用程序与所有运行的应用共享可用的桌面屏幕空间。 在<em>全屏模式</em>中，应用程序运行于的窗口将覆盖整个桌面，并隐藏所有运行的应用（包括你的开发环境）。</p></td>
 </tr>
 <tr class="odd">

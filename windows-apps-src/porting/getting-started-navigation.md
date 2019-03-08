@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 682a743e45626939242af963fba47ca82a13a90e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048504"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636592"
 ---
 # <a name="getting-started-navigation"></a>入门：导航
 
@@ -20,9 +20,9 @@ ms.locfileid: "9048504"
 
 iOS 提供 **UINavigationController** 类以帮助应用内导航：可按下和弹出视图，以创建定义应用的**UIViewControllers**层次结构。
 
-相比之下，包含多个视图的 windows 10 应用需要更多网站方法进行导航。 想象一下，用户在单击控件以其自己的方式浏览应用时，在页面间来回跳跃。 有关详细信息，请参阅[导航设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958438)。
+与此相反，Windows 10 应用，其中包含多个视图将多个 web 站点方法带到导航。 想象一下，用户在单击控件以其自己的方式浏览应用时，在页面间来回跳跃。 有关详细信息，请参阅[导航设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958438)。
 
-管理 windows 10 应用中的此导航的方法之一是使用[**帧**](https://msdn.microsoft.com/library/windows/apps/br242682)类。 以下演练将向你展示如何尝试执行此操作。
+管理 Windows 10 应用中的此导航的方法之一是使用[**帧**](https://msdn.microsoft.com/library/windows/apps/br242682)类。 以下演练将向你展示如何尝试执行此操作。
 
 继续使用之前启动的解决方案，打开 **MainPage.xaml** 文件，然后在 **“设计”** 视图中添加按钮。 将该按钮的 **Content** 属性从“Button”更改为“Go To Page”。 然后为按钮的 **Click** 事件创建一个处理程序，如下图所示。 如果忘记了如何执行此操作，可回顾之前部分中的操作实例（提示：双击 **“设计”** 视图中的按钮）。
 
@@ -34,7 +34,7 @@ iOS 提供 **UINavigationController** 类以帮助应用内导航：可按下和
 
 接下来，向 BlankPage.xaml 文件中添加一个按钮。 我们可以使用 AppBarButton 控件并为它添加一个返回箭头图像：在 **“XAML”** 视图中，在 `<Grid> </Grid>` 元素之间添加 ` <AppBarButton Icon="Back"/>`。
 
-现在，我们可以为按钮添加一个事件处理程序：双击 **“设计”** 视图中的控件，Microsoft Visual Studio 会将文本“AppBarButton\_Click”添加到 **“Click”** 框中（如下图所示），然后在 BlankPage.xaml.cs 文件中添加和显示相应的事件处理程序。
+现在，让我们向按钮添加事件处理程序： 双击中的控件**设计**视图和 Microsoft Visual Studio 中添加文本"AppBarButton\_单击"向**单击**框，如下所示下图，然后添加并显示 BlankPage.xaml.cs 文件中的相应事件处理程序。
 
 ![在 Visual Studio 中添加一个后退按钮及其 Click 事件](images/ios-to-uwp/vs-add-back-button.png)
 
@@ -64,7 +64,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
 现在运行该程序。 点击“Go To Page”按钮以转到另一页，然后点击后退箭头按钮返回到上一页。
 
-页面导航由 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 类管理。 作为 iOS 中的**UINavigationController**类使用**pushViewController**和**popViewController**方法，适用于 UWP 应用**框架**类提供的[**导航**](https://msdn.microsoft.com/library/windows/apps/br242694)和[**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568)方法。 **Frame** 类还有一个名为 [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693) 的方法，该方法可以执行可能需要的操作。
+页面导航由 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 类管理。 作为**UINavigationController**中 iOS 所使用的类**pushViewController**并**popViewController**方法，**帧**类UWP 应用提供了[ **Navigate** ](https://msdn.microsoft.com/library/windows/apps/br242694)并[ **GoBack** ](https://msdn.microsoft.com/library/windows/apps/dn996568)方法。 **Frame** 类还有一个名为 [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693) 的方法，该方法可以执行可能需要的操作。
 
 此演练在每次导航到 BlankPage 时都会创建它的一个新实例。 （上一实例将被释放或自动*释放*）。 如果不希望每次都创建一个新实例，可将以下代码添加到 BlankPage.xaml.cs 文件中 BlankPage 类的构造函数。 这将启用 [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) 行为。
 
@@ -81,7 +81,7 @@ public BlankPage()
 
 有关导航的详细信息，请参阅[导航](https://msdn.microsoft.com/library/windows/apps/mt187344)和 [XAML 个性化动画示例](https://go.microsoft.com/fwlink/p/?LinkID=242401)。
 
-**注意**使用 JavaScript 和 HTML UWP 应用的导航信息，请参阅[快速入门： 使用单页导航](https://msdn.microsoft.com/library/windows/apps/hh452768)。
+**请注意**  有关使用 JavaScript 和 HTML 的 UWP 应用的导航的信息，请参阅[快速入门：使用单页导航](https://msdn.microsoft.com/library/windows/apps/hh452768)。
  
 ### <a name="next-step"></a>下一步
 

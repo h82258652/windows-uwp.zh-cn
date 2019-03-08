@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: bbde90d848d3bc8fb18a5ecf370c85121adc02f6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934662"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620492"
 ---
 # <a name="domain-shader-ds-stage"></a>域着色器 (DS) 阶段
 
 
 域着色器 (DS) 阶段计算输出修补程序中细分点的顶点位置；它计算与每个域样本对应的顶点位置。 对每个细化器阶段输出点运行一次域着色器，并且该着色器具有对外壳着色器输出修补程序、输出修补程序常量以及细化器阶段输出 UV 坐标的只读权限。
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途和用法
+## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途，并使用
 
 
 域着色器 (DS) 阶段基于[外壳着色器 (HS) 阶段](hull-shader-stage--hs-.md)和[细化器 (TS) 阶段](tessellator-stage--ts-.md)中的输入，输出修补程序中细分点的顶点位置。
@@ -35,7 +35,7 @@ ms.locfileid: "8934662"
     -   细化因素。 例如，细化因素可以包括固定函数细化器使用的值以及原始值（例如在被整数细化舍入前），这有助于加快几何过渡。
 -   对[细化器 (TS) 阶段](tessellator-stage--ts-.md)的每个输出坐标调用一次域着色器。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 -   域着色器 (DS) 阶段输出输出修补程序中细分点的顶点位置。

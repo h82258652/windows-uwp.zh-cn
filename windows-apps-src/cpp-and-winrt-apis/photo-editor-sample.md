@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 示例, 应用程序, 照片, 编辑器
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c6f668ef3d92f968e75659b0ba1937abadb079c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943138"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606702"
 ---
 # <a name="photo-editor-cwinrt-sample-application"></a>照片编辑器 C++/WinRT 示例应用程序
 你可以从[照片编辑器 C++/WinRT 示例应用程序](https://github.com/Microsoft/Windows-appsample-photo-editor) GitHub 存储库克隆或下载此示例应用程序。
 
-照片编辑器应用程序是一个通用 Windows 平台 (UWP) 示例应用程序，其通过 [C++/WinRT](intro-to-using-cpp-with-winrt.md) 语言投影展示开发。 此示例应用程序允许你从**图片**库检索照片，然后使用分类的照片效果编辑选择的图像。 在示例的源代码中，你将看到大量的常见做法 &mdash; 如[数据绑定](binding-property.md)和[异步操作](concurrency.md) &mdash; 使用 C++/WinRT 投影执行。 下面是示例演示的一些特定功能。
+照片编辑器应用程序是一个通用 Windows 平台 (UWP) 示例应用程序，其通过 [C++/WinRT](intro-to-using-cpp-with-winrt.md) 语言投影展示开发。 此示例应用程序允许你从**图片**库检索照片，然后使用分类的照片效果编辑选择的图像。 在示例的源代码中，你将看到大量的常见做法 &mdash; 如[数据绑定](binding-property.md)和[异步操作](concurrency.md)&mdash; 使用 C++/WinRT 投影执行。 下面是示例演示的一些特定功能。
     
 - 通过 Windows 运行时 (WinRT) API 使用标准 C++17 语法和库。
 - 使用协同程序，包括使用 co_await、co_return、[**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) 和 [**IAsyncOperation&lt;TResult&gt;**](/uwp/api/windows.foundation.iasyncoperation_tresult_)。

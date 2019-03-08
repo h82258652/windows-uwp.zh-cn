@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f0a53d0f725c134bbb7adecaa956000a53235b0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928146"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57600902"
 ---
 # <a name="hardware-drm"></a>硬件 DRM
 
@@ -25,7 +25,7 @@ ms.locfileid: "8928146"
 
 ## <a name="windows-tee-implementation"></a>Windows TEE 实现
 
-本主题提供简要概述了 windows 10 如何实现受信任的执行环境 (TEE)。
+本主题提供 Windows 10 如何实现的可信的执行环境 (TEE) 的简要概述。
 
 Windows TEE 实现的详细信息不在本文档范围内。 但是，简要讨论标准移植工具包 TEE 端口和 Windows 端口之间的区别将非常有益。 Windows 可实现 OEM 代理层，并将序列化 PRITEE 函数调用传输到 Windows Media Foundation 子系统中的用户模式驱动程序。 这将最终传送至 Windows TrEE（受信任的执行环境）驱动程序或 OEM 图形驱动程序。 有关这些方法的详细信息已超出了本文档范围。 下图显示了 Windows 端口的常规组件交互。 如果想要开发 Windows PlayReady TEE 实现，可以联系 <WMLA@Microsoft.com>。
 
@@ -35,8 +35,8 @@ Windows TEE 实现的详细信息不在本文档范围内。 但是，简要讨�
 
 本主题提供在开发旨在使用硬件 DRM 的应用时应考虑的事项的简短列表。 如 [PlayReady DRM](playready-client-sdk.md#output-protection) 中所述，使用适用于 Windows 10 的 PlayReady HWDRM 时，所有输出保护均可从 Windows TEE 实现中强制执行，从而对输出保护行为产生一些影响：
 
--   **对未压缩的数字视频 270 的输出保护级别 (OPL) 的支持：** 适用于 Windows 10 的 PlayReady HWDRM 不支持向下分辨率，并将强制使用 HDCP。 我们建议 HWDRM 的高清内容具有大于 270 的 OPL（尽管这并不是必需的）。 另外，Microsoft 建议你在许可证中设置 HDCP 类型限制（Windows 10 上的 HDCP 版本 2.2）。
--   **不同于软件 DRM (SWDRM)，输出保护在基于最低功能的监视器的所有监视器上强制执行。** 例如，如果用户连接了两台监视器，其中一台显示器支持 HDCP，而另一台不支持，则即使仅在支持 HDCP 的监视器上呈现内容，但如果许可证需要 HDCP，播放也将失败。 在软件 DRM 中，只要仅在支持 HDCP 的监视器上呈现该内容，内容便会播放。
+-   **对未压缩数字视频 270 的输出保护级别 (OPL) 的支持：** 适用于 Windows 10 的 PlayReady HWDRM 不支持向下解析，并将强制执行 HDCP 卡入到位。 我们建议 HWDRM 的高清内容具有大于 270 的 OPL（尽管这并不是必需的）。 另外，Microsoft 建议你在许可证中设置 HDCP 类型限制（Windows 10 上的 HDCP 版本 2.2）。
+-   **与软件 DRM (SWDRM)，不同的输出保护会强制实施基于最低的监视器上的所有监视器。** 例如，如果用户连接了两台监视器，其中一台显示器支持 HDCP，而另一台不支持，则即使仅在支持 HDCP 的监视器上呈现内容，但如果许可证需要 HDCP，播放也将失败。 在软件 DRM 中，只要仅在支持 HDCP 的监视器上呈现该内容，内容便会播放。
 -   **HWDRM 不保证客户端一定可以使用 HWDRM 以及一定安全，除非内容密钥和许可证满足以下条件**：
     -   用于视频内容密钥的许可证必须至少具有 3000 的安全级别属性。
     -   音频必须加密为不同于视频的内容密钥，并且用于音频的许可证必须至少具有 2000 安全级别属性。 此外，音频可能保持清晰。
@@ -79,10 +79,10 @@ localSettings.values["SoftwareOverride"] = 1;
 mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectionLayer"] = true;
 ```
 
-如果你是硬件 DRM 还是软件 DRM 是查看 C:\\Users\\ 的最佳方式&lt;用户名&gt;\\AppData\\Local\\Packages\\&lt;应用程序名称&gt;\\LocalCache\\PlayReady\\\*
+指示是否位于 DRM 的硬件或软件 DRM 是 c： 查看的最好办法\\用户\\&lt;用户名&gt;\\AppData\\本地\\包\\&lt;应用程序名称&gt;\\LocalCache\\PlayReady\\\*
 
 -   如果存在 mspr.hds 文件，则使用的是软件 DRM。
--   如果你具有另一个 \*.hds 文件，则使用的是硬件 DRM。
+-   如果有另一个\*.hds 文件处于硬件 DRM。
 -   也可以删除整个 PlayReady 文件夹，然后重新进行测试。
 
 ## <a name="detect-the-type-of-hardware-drm"></a>检测硬件 DRM 的类型
@@ -95,7 +95,7 @@ mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectio
 bool isFeatureSupported = PlayReadyStatics.CheckSupportedHardware(PlayReadyHardwareDRMFeatures.HEVC);
 ```
 
-[**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) 枚举包含可查询的硬件 DRM 功能值有效列表。 若要确定硬件 DRM 是否受支持，请使用查询中的 **HardwareDRM** 成员。 若要确定硬件是否支持高效率视频编码 (HEVC)/H.265 编解码器，请使用查询中的 **HEVC** 成员。
+[  **PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) 枚举包含可查询的硬件 DRM 功能值有效列表。 若要确定硬件 DRM 是否受支持，请使用查询中的 **HardwareDRM** 成员。 若要确定硬件是否支持高效率视频编码 (HEVC)/H.265 编解码器，请使用查询中的 **HEVC** 成员。
 
 还可以使用 [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) 属性获取客户端证书的安全级别，以确定硬件 DRM 是否受支持。 除非返回的证书安全级别大于或等于3000，否则将不个性化或预配客户端（在这种情况下此属性返回值为 0），或者硬件 DRM 将处于未使用状态（在这种情况下该属性将返回小于 3000 的值）。
 

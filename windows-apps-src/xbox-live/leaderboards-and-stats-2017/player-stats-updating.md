@@ -7,20 +7,20 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 玩家统计数据, stats 2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d5b37c008e6aa719b641321c5e5a1c3360b20786
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937130"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631822"
 ---
 # <a name="updating-stats-2017"></a>更新 Stats 2017
 
 通过为 Xbox Live 服务发送最新值，你可以使用下面将要讨论的 `StatsManager` API 更新统计数据。
 
-由你的作品来跟踪玩家统计数据，你可以调用 `StatsManager` 适当地更新这些统计数据。  `StatsManager` 将缓冲所做的任何更改，并将这些更改定期刷新到该服务。  你的作品还可以手动刷新。
+由你的作品来跟踪玩家统计数据，你可以调用 `StatsManager` 适当地更新这些统计数据。  `StatsManager` 将缓冲的任何更改，并定期刷新这些服务。  你的作品还可以手动刷新。
 
 > [!NOTE]
-> 不要太频繁刷新统计数据。  否则，你的作品将受到速率限制。  最佳做法是最多每 5 分钟刷新一次。
+> 不要过于频繁刷新统计信息。  否则，你的作品将受到速率限制。  最佳做法是最多每 5 分钟刷新一次。
 
 ### <a name="multiple-devices"></a>多台设备
 
@@ -83,8 +83,8 @@ statEvent = statManager.DoWork();
 
 你可以使用 `stats_manager::set_stat` 系列函数写入统计数据。  对于每种数据类型，此函数有三种变体：
 
-* `set_stat_number` 浮点。
-* `set_stat_integer` 整数。
+* `set_stat_number` 对于浮点型值。
+* `set_stat_integer` 范围内的整数。
 * `set_stat_string` 字符串。
 
 在调用这些函数时，统计数据更新将在设备上本地缓存。  这些更新将定期刷新到 Xbox Live。
@@ -109,17 +109,17 @@ statManager.DoWork();
 
 | 统计数据名称 | 格式 |
 |-----------|--------|
-| 每局的最佳击杀数 | 整数 |
-| 总击杀数 | 整数 |
-| 总死亡数 | 整数 |
-| 总击杀/死亡比 | 数字 |
+| 每局的最佳击杀数 | 整型 |
+| 总击杀数 | 整型 |
+| 总死亡数 | 整型 |
+| 总击杀/死亡比 | 编号 |
 
 在玩家进行比赛时，你要在本地增加*每局的击杀数*、*总击杀数*和*总死亡数*。
 
 在比赛结束时，你要执行以下操作：
 1. 将他们在本局中获得的击杀数与之前的最佳成绩做以比较。  如果数字更大，则更新 `StatsManager`。
 2. 使用新值更新他们的“总击杀数”和“总死亡数”，并更新 `StatsManager`。
-3. 计算击杀/死亡比并更新 `StatsManager`
+3. 计算会有/死亡人数和更新 `StatsManager`
 
 请注意，对于 1 和 2 这两种情况，你需要了解其以前的统计数据值。  有关检索这些值的最佳实践，请参阅上面部分。
 
@@ -131,7 +131,7 @@ statManager.DoWork();
 
 例如，如果你拥有上例中的`Lifetime Kills`的排行榜，你需要确保，与此统计数据对应的统计数据更新已刷新到服务器，然后再显示排行榜。  这样一来，排行榜便可反映玩家的最新进度。
 
-### <a name="cleanup"></a>清除
+### <a name="cleanup"></a>Cleanup
 在作品关闭后，从统计数据管理器中删除用户。 此时会将最新的统计数据值刷新到该服务。
 
 ```cpp

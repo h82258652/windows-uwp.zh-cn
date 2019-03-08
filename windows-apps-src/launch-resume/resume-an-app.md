@@ -1,6 +1,6 @@
 ---
 title: 处理应用恢复
-description: 了解如何在系统恢复你的应用时刷新显示的内容。
+description: 了解当系统恢复你的应用时如何刷新显示的内容。
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
 ms.date: 07/06/2018
 ms.topic: article
@@ -12,21 +12,21 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: f424a274d3e96b58f32875620f3165ccfac82ba6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939355"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612462"
 ---
 # <a name="handle-app-resume"></a>处理应用恢复
 
-**重要的 API**
+**重要的 Api**
 
-- [**恢复**](https://msdn.microsoft.com/library/windows/apps/br242339)
+- [**正在恢复**](https://msdn.microsoft.com/library/windows/apps/br242339)
 
 了解当系统恢复你的应用时刷新 UI 的情况。 本主题中的示例可向事件处理程序注册 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件。
 
-## <a name="register-the-resuming-event-handler"></a>注册 resuming 事件处理程序
+## <a name="register-the-resuming-event-handler"></a>注册恢复事件处理程序
 
 注册以处理 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件，该事件指示用户从你的应用切换到桌面或其他应用，而后又切换回你的应用。
 
@@ -116,16 +116,16 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 ```
 
 > [!NOTE]
-> 因为[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)事件未从 UI 线程中引发，调度程序必须使用你的处理程序中调度对你的 UI 的任何调用。
+> 因为[**正在恢复**](https://msdn.microsoft.com/library/windows/apps/br242339)从 UI 线程不会引发事件，必须在您的处理程序中使用调度程序调度到 UI 的任何调用。
 
 ## <a name="remarks"></a>备注
 
-当你的应用连接到 Visual Studio 调试器时，它将不会暂停。 但是，你可以从调试器中暂停它，然后向其发送一个 **Resume** 事件，以便调试你的代码。 确保“调试位置”**** 工具栏可见并单击“暂停”**** 图标旁边的下拉列表。 然后选择“恢复”****。
+当你的应用连接到 Visual Studio 调试器时，它将不会暂停。 但是，你可以从调试器中暂停它，然后向其发送一个 **Resume** 事件，以便调试你的代码。 确保“调试位置”工具栏可见并单击“暂停”图标旁边的下拉列表。 然后选择“恢复”。
 
-对于 Windows Phone 应用商店应用，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件始终后跟 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)，即使你的应用当前已暂停且用户从主要磁贴或应用列表中重新启动它也是如此。 如果当前窗口上已有内容集，应用可跳过初始化。 你可以检查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 属性以确定该应用是从主要磁贴启动还是从辅助磁贴启动，并可根据该信息，确定是应显示新的应用体验还是应恢复应用体验。
+对于 Windows Phone 应用商店应用，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件始终后跟 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)，即使你的应用当前已暂停且用户从主要磁贴或应用列表中重新启动它也是如此。 如果当前窗口上已有内容集，则应用可跳过初始化。 你可以检查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 属性以确定该应用是从主要磁贴启动还是从辅助磁贴启动，并可根据该信息，确定是应显示新的应用体验还是应恢复应用体验。
 
 ## <a name="related-topics"></a>相关主题
 
 * [应用生命周期](app-lifecycle.md)
-* [处理应用激活](activate-an-app.md)
-* [处理应用暂停](suspend-an-app.md)
+* [处理应用程序激活](activate-an-app.md)
+* [句柄应用挂起](suspend-an-app.md)

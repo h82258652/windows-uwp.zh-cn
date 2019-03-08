@@ -8,17 +8,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 188bcebb8d6bff879f30dcc83d7039fbcbfae0b2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918494"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658102"
 ---
 # <a name="multiplayeractivitydetails-json"></a>MultiplayerActivityDetails (JSON)
-表示**Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**的 JSON 对象。 
+一个 JSON 对象，表示**Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**。 
 
 > [!NOTE] 
-> 此对象由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在使用模板合约 104/105 或更高版本。  
+> 此对象由 2015年之多人游戏实现，并仅适用于该多玩家版本和更高版本。 它旨在用于模板协定 104/105 或更高版本。  
 
  
 <a id="ID4ES"></a>
@@ -27,22 +27,22 @@ ms.locfileid: "8918494"
  
 MultiplayerActivityDetails JSON 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | --- | 
-| SessionReference| MultiplayerSessionReference| 表示会话的标识信息的<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference</b>对象。| 
-| HandleId| 64 位无符号的整数| 对应于活动句柄 ID。| 
-| TitleId| 32 位无符号的整数| 应启动才能加入活动主题作品 ID。| 
-| 可见性| MultiplayerSessionVisibility| 指示会话的可见性状态的<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionVisibility</b>值。| 
-| JoinRestriction| MultiplayerSessionJoinRestriction| 指示会话加入限制的<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionJoinRestriction</b>值。 可见性字段设置为"打开"适用于此限制。| 
-| 已关闭| 布尔值| 如果会话已临时关闭为加入，以及 false 否则，则为 true。| 
-| OwnerXboxUserId| 64 位无符号的整数| 拥有活动的成员的 Xbox 用户 ID。| 
-| MaxMembersCount| 32 位无符号的整数| 总插槽的数量。| 
-| MembersCount| 32 位无符号的整数| 占用的空位的数量。| 
+| SessionReference| MultiplayerSessionReference| 一个<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference</b>对象，表示会话的标识信息。| 
+| HandleId| 64 位无符号的整数| 向活动相对应的句柄 ID。| 
+| TitleId| 32 位无符号的整数| 应启动才能加入活动标题 ID。| 
+| 可见性| MultiplayerSessionVisibility| 一个<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionVisibility</b>值，该值指示该会话的可见性状态。| 
+| JoinRestriction| MultiplayerSessionJoinRestriction| 一个<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionJoinRestriction</b>值，该值指示该会话的联接限制。 如果可见性字段设置为"打开"，应用此限制。| 
+| 关闭| 布尔值| 如果在会话临时关闭加入，和 false 否则，则为 true。| 
+| OwnerXboxUserId| 64 位无符号的整数| Xbox 拥有该活动的成员的用户 ID。| 
+| MaxMembersCount| 32 位无符号的整数| 总的槽数。| 
+| MembersCount| 32 位无符号的整数| 占用的槽数。| 
   
 <a id="ID4E3D"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -104,6 +104,6 @@ MultiplayerActivityDetails JSON 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
    

@@ -1,29 +1,29 @@
 ---
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
 title: 合成视觉对象
-description: 合成视觉对象组成了合成 API 的所有其他功能均可使用和基于的可视化树结构。 该 API 允许开发人员定义并创建一个或多个可视化对象，其中每个对象表示可视化树中的单个节点。
+description: 合成视觉效果组成了可使用和生成合成 API 的所有其他功能的可视化树结构。 该 API 允许开发人员定义并创建一个或多个可视化对象，其中每个对象表示可视化树中的单个节点。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b1c0b78ca45d98428f38518b337b5889f595c49
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943375"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602432"
 ---
 # <a name="composition-visual"></a>合成视觉对象
 
-合成视觉对象组成了合成 API 的所有其他功能均可使用和基于的可视化树结构。 该 API 允许开发人员定义并创建一个或多个可视化对象，其中每个对象表示可视化树中的单个节点。
+合成视觉效果组成了可使用和生成合成 API 的所有其他功能的可视化树结构。 该 API 允许开发人员定义并创建一个或多个可视化对象，其中每个对象表示可视化树中的单个节点。
 
 ## <a name="visuals"></a>视觉对象
 
 可视树结构的组成部分包括以下三种视觉类型，以及影响视觉对象内容的多个子类的基本画笔类：
 
-- [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基对象，大部分属性均位于此处且继承自其他视觉对象。
-- [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 派生自 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)，并添加了创建子视觉对象的功能。
-- [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 派生自 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) 并添加了关联画笔的功能，以便视觉对象可以呈现像素，包括图像、效果或纯色。
+- [**Visual** ](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基对象的属性的大多数都是此处，并由其他视觉对象继承。
+- [**ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 派生[ **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)，并添加创建子级的能力。
+- [**SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 派生[ **ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810)并将功能添加到关联画笔，以便视觉对象可以呈现像素包括图像、 效果或实体颜色。
 
 可以使用 [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) 及其子类（包括 [**CompositionColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)、[**CompositionSurfaceBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 和 [**CompositionEffectBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)）将内容和效果应用于 SpriteVisual。 若要了解有关画笔的详细信息，请参阅 [**CompositionBrush 概述**](https://docs.microsoft.com/windows/uwp/composition/composition-brushes)。
 
@@ -52,18 +52,18 @@ _compositor = new Compositor();
 
 ## <a name="creating-a-spritevisual-and-colorbrush"></a>创建 SpriteVisual 和 ColorBrush
 
-使用 [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 可随时根据需要轻松创建对象，如 [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) 和 [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399)：
+使用 [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 可随时根据需要轻松创建对象， 如 [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) 和 [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399)：
 
 ```cs
 var visual = _compositor.CreateSpriteVisual();
 visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
 ```
 
-虽然该代码段只有几行代码，但它演示了一个强大的概念：即 [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) 对象，此类对象是效果系统的核心。 在创建颜色、图形和效果方面，**SpriteVisual** 具有出色的灵活性和互动性。 **SpriteVisual** 是单一视觉对象类型，该对象可以使用画笔填充 2D 矩形；在本示例中为纯色。
+虽然这是只有几行代码，它演示了一个强大的概念：[**SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433)对象是影响系统的核心。 在创建颜色、图形和效果方面，**SpriteVisual** 具有出色的灵活性和互动性。 **SpriteVisual** 是单一视觉对象类型，该对象可以使用画笔填充 2D 矩形；在本示例中为纯色。
 
 ## <a name="clipping-a-visual"></a>剪裁可视对象
 
-[**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 还可以用于创建 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 的剪裁。 下面的例子来自于使用 [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) 剪裁可视对象每一侧的示例：
+[  **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 还可以用于创建 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 的剪裁。 下面的例子来自于使用 [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) 剪裁可视对象每一侧的示例：
 
 ```cs
 var clip = _compositor.CreateInsetClip();
@@ -76,9 +76,9 @@ _currentVisual.Clip = clip;
 
 与 API 中的其他对象一样，[**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) 也可以将动画应用到其属性。
 
-## <a name="span-idrotatingaclipspanspan-idrotatingaclipspanspan-idrotatingaclipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>旋转剪裁
+## <a name="span-idrotatingaclipspanspan-idrotatingaclipspanspan-idrotatingaclipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>旋转剪贴画
 
-[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 可以通过旋转进行转换。 请注意，[**RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) 同时支持弧度和度数。 其默认采用弧度为单位，不过也可以轻松指定以度数为单位，如以下代码段中所示：
+[  **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 可以通过旋转进行转换。 请注意，[**RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) 同时支持弧度和度数。 其默认采用弧度为单位，不过也可以轻松指定以度数为单位，如以下代码段中所示：
 
 ```cs
 child.RotationAngleInDegrees = 45.0f;

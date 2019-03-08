@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 激活
 ms.localizationpriority: medium
 ms.openlocfilehash: 51c2435c8edeac2431198b7b5f3d9b1a307b5b78
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920189"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648842"
 ---
 # <a name="how-to-activate-an-app-directx-and-c"></a>如何激活应用（DirectX 和 C++）
 
@@ -55,7 +55,7 @@ void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^
 ## <a name="start-processing-event-message-for-the-main-app-window"></a>为主屏窗口启动处理事件消息
 
 
-对于应用的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，你的回调作为由 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 处理的事件消息发生。 如果你未从你的应用的主回路调用 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)（在你的查看提供程序的 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中实现），将不会调用此回调。
+对于应用的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，你的回调作为由 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 处理的事件消息发生。 如果你没有从你的应用的主回路调用 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)（在你的查看提供程序的 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中实现），那么将不会调用此回调。
 
 ``` syntax
 // This method is called after the window becomes active.
@@ -85,8 +85,8 @@ void App::Run()
 ## <a name="related-topics"></a>相关主题
 
 
-* [如何暂停应用（DirectX 和 C++）](how-to-suspend-an-app-directx-and-cpp.md)
-* [如何恢复应用（DirectX 和 C++）](how-to-resume-an-app-directx-and-cpp.md)
+* [如何暂停应用 （DirectX 和 c + +）](how-to-suspend-an-app-directx-and-cpp.md)
+* [如何恢复应用程序 （DirectX 和 c + +）](how-to-resume-an-app-directx-and-cpp.md)
 
  
 

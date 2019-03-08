@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c40c7d3bd080bd927fc52cb7f740e1dc4a6358c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947999"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620802"
 ---
 # <a name="texture-blending"></a>纹理混合
 
@@ -21,7 +21,7 @@ Direct3D 可以在单程内最多将八个纹理融合到基元。 使用多个�
 
 若要使用纹理混合，应用程序首先应检查用户的硬件是否支持纹理混合。
 
-## <a name="span-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespantexture-stages-and-the-texture-blending-cascade"></a><span id="Texture-Stages-and-the-Texture-Blending-Cascade"></span><span id="texture-stages-and-the-texture-blending-cascade"></span><span id="TEXTURE-STAGES-AND-THE-TEXTURE-BLENDING-CASCADE"></span>纹理层以及纹理混合层叠
+## <a name="span-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespantexture-stages-and-the-texture-blending-cascade"></a><span id="Texture-Stages-and-the-Texture-Blending-Cascade"></span><span id="texture-stages-and-the-texture-blending-cascade"></span><span id="TEXTURE-STAGES-AND-THE-TEXTURE-BLENDING-CASCADE"></span>纹理阶段和级联值混合处理的纹理
 
 
 Direct3D 支持通过使用纹理层实现单程内的多个纹理混合。 纹理层取两个参数并对其执行混合操作，然后传递结果以进行进一步处理或光栅化。 你可以查看下图所示的纹理层。
@@ -30,7 +30,7 @@ Direct3D 支持通过使用纹理层实现单程内的多个纹理混合。 纹�
 
 如上图所示，纹理层使用指定的运算符将两个参数混合。 常见操作包括简单的调制，或者添加参数的颜色或 α 值，但此外还有二十多个操作也受支持。 纹理层参数可以是一个相关的纹理、重复的颜色或 α 值（在高洛德着色过程中重复）、任意的颜色或 α 值，也可以是从之前纹理层获得的结果。
 
-**注意** Direct3D 将颜色混合与 α 混合区分开来。 应用程序针对颜色和 α 单独设置混合操作以及相关参数，所以这些设置的结果是相互独立的。
+**请注意**   Direct3D 区分颜色混合从 alpha 值混合处理。 应用程序针对颜色和 α 单独设置混合操作以及相关参数，所以这些设置的结果是相互独立的。
 
  
 
@@ -44,7 +44,7 @@ Direct3D 支持通过使用纹理层实现单程内的多个纹理混合。 纹�
 
 如果应用程序在不同情况下使用不同数量的层（比如针对某些对象使用四层，针对其他对象只使用两层），则你无需明确禁用所有之前使用的层。 一种方法是禁用第一个不使用层的颜色操作，这样颜色操作就不会应用到具有更高索引的所有层。 另一种方法是通过将第一个纹理层（纹理层 0）的颜色操作设置为禁用状态，统一禁用纹理映射。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>
@@ -60,12 +60,12 @@ Direct3D 支持通过使用纹理层实现单程内的多个纹理混合。 纹�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="blending-stages.md">混合层</a></p></td>
-<td align="left"><p>混合层是定义如何混合纹理的一组纹理操作及相关参数。</p></td>
+<td align="left"><p><a href="blending-stages.md">混合阶段</a></p></td>
+<td align="left"><p>混合阶段是一组纹理操作及其定义纹理混合方式的参数。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="multipass-texture-blending.md">多通道纹理混合</a></p></td>
-<td align="left"><p>通过在多通道呈现的过程中将不同纹理应用到基元，Direct3D 应用程序可以实现多个特殊效果。 我们通用将此称为<em>多通道纹理混合</em>。 多通道纹理混合通常用于：通过应用几种不同纹理的多种颜色来模拟复杂照明及着色模型的效果。 比如<em>光照映射</em>。</p></td>
+<td align="left"><p><a href="multipass-texture-blending.md">多通道纹理值混合处理</a></p></td>
+<td align="left"><p>通过在多通道呈现的过程中将不同纹理应用到基元，Direct3D 应用可以实现多个特殊效果。 我们通用将此称为<em>多通道纹理混合</em>。 多通道纹理混合通常用于：通过应用几种不同纹理的多种颜色来模拟复杂照明及着色模型的效果。 比如<em>光照映射</em>。</p></td>
 </tr>
 </tbody>
 </table>

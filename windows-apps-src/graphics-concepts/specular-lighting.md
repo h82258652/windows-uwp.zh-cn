@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f28f1f46cfd34ee1aab614c57dc99019dbd6111
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930912"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597972"
 ---
 # <a name="specular-lighting"></a>高光照明
 
@@ -23,29 +23,29 @@ ms.locfileid: "8930912"
 
 默认的照明状态不会计算反射高光。
 
-## <a name="span-idspecularlightingequationspanspan-idspecularlightingequationspanspan-idspecularlightingequationspanspecular-lighting-equation"></a><span id="Specular_Lighting_Equation"></span><span id="specular_lighting_equation"></span><span id="SPECULAR_LIGHTING_EQUATION"></span>高光照明公式
+## <a name="span-idspecularlightingequationspanspan-idspecularlightingequationspanspan-idspecularlightingequationspanspecular-lighting-equation"></a><span id="Specular_Lighting_Equation"></span><span id="specular_lighting_equation"></span><span id="SPECULAR_LIGHTING_EQUATION"></span>反射照明等式
 
 
 高光照明可用以下公式说明。
 
 |                                                                             |
 |-----------------------------------------------------------------------------|
-| 高光照明 = Cₛ \* sum\[Lₛ \* (N · H)<sup>P</sup> \* Atten \* Spot\] |
+| 反射照明 = Cₛ\*总和\[Lₛ \* （N 推荐配置H)<sup>P</sup> \*输入\*位置\] |
 
  
 
 变量及其类型和范围如下所列：
 
-| 参数    | 默认值 | 类型                                                             | 说明                                                                                            |
+| 参数    | 默认值 | 在任务栏的搜索框中键入                                                             | 描述                                                                                            |
 |--------------|---------------|------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
 | Cₛ           | (0,0,0,0)     | 红色、绿色、蓝色和 alpha 透明度（浮点值） | 反射颜色。                                                                                        |
-| sum          | 不适用           | 不适用                                                              | 每束光线的反射组件的总和。                                                          |
+| 总和          | 不适用           | 不适用                                                              | 每束光线的反射组件的总和。                                                          |
 | N            | 不适用           | 3D 矢量（x、y 和 z 浮点值）                    | 顶点法线。                                                                                         |
 | H            | 不适用           | 3D 矢量（x、y 和 z 浮点值）                    | 中间矢量。 请参阅有关中间矢量的部分。                                                |
 | <sup>P</sup> | 0.0           | 浮点                                                   | 镜面反射能量。 范围为 0 至正无穷                                                     |
 | Lₛ           | (0,0,0,0)     | 红色、绿色、蓝色和 alpha 透明度（浮点值） | 光线反射颜色。                                                                                  |
 | Atten        | 不适用           | 浮点                                                   | 灯光衰减值。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。 |
-| Spot         | 不适用           | 浮点                                                   | 聚光因素。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。        |
+| Spot         | 不适用           | 浮点                                                   | 聚焦因素。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。        |
 
  
 
@@ -55,13 +55,13 @@ Cₛ 的值为：
 -   顶点颜色 2，前提为镜面材料来源是反射顶点颜色，且在顶点声明中提供第二个顶点的颜色。
 -   材料反射颜色
 
-**注意**如果任一镜面材料来源选项和未提供顶点颜色，则使用材料反射颜色。
+**请注意**  如果使用任一反射材料源选项，并且未提供的顶点的颜色，则使用材料反射颜色。
 
  
 
 单独处理和内插所有灯光后，将反射组件的范围限制为 0 至 255。
 
-## <a name="span-idthehalfwayvectorspanspan-idthehalfwayvectorspanspan-idthehalfwayvectorspanthe-halfway-vector"></a><span id="The_Halfway_Vector"></span><span id="the_halfway_vector"></span><span id="THE_HALFWAY_VECTOR"></span>中间向量
+## <a name="span-idthehalfwayvectorspanspan-idthehalfwayvectorspanspan-idthehalfwayvectorspanthe-halfway-vector"></a><span id="The_Halfway_Vector"></span><span id="the_halfway_vector"></span><span id="THE_HALFWAY_VECTOR"></span>中间的矢量
 
 
 中间向量 (H) 存在于以下两个向量中间：从物体顶点到光源的向量，及从物体顶点到相机位置的向量。 Direct3D 提供两种计算中间向量的方式。 如果启用相机相关的反射高光（而不是正交反射高光），则系统通过相机位置和顶点位置，及灯光的方向矢量计算中间矢量。 下面的公式对此进行了说明。
@@ -72,7 +72,7 @@ Cₛ 的值为：
 
  
 
-| 参数       | 默认值 | 类型                                          | 说明                                                  |
+| 参数       | 默认值 | 在任务栏的搜索框中键入                                          | 描述                                                  |
 |-----------------|---------------|-----------------------------------------------|--------------------------------------------------------------|
 | Cₚ              | 不适用           | 3D 矢量（x、y 和 z 浮点值） | 相机位置。                                             |
 | Vₚ              | 不适用           | 3D 矢量（x、y 和 z 浮点值） | 顶点位置。                                             |
@@ -114,7 +114,7 @@ Cₛ 的值为：
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[照明的数学运算](mathematics-of-lighting.md)
+[照明的数学](mathematics-of-lighting.md)
 
  
 

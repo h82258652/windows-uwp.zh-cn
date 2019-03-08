@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d2ea6ce4060957ade5dd1007389be51176440f04
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936322"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593572"
 ---
 # <a name="vertex-and-index-buffers"></a>顶点和索引缓冲区
 
@@ -23,7 +23,7 @@ ms.locfileid: "8936322"
 
 顶点缓冲区的灵活性使其成为重复使用已转换几何图形的理想暂存点。 你可以创建单顶点缓冲区，对其中的顶点进行转换、照明和剪裁，以及将场景中的模型呈现所需的次数而不对其进行再转换，甚至在内插的呈现状态更改时也是如此。 当呈现使用多个纹理的模型时，这很有用：几何图形只转换一次，然后它的各个部分可以呈现所需的次数，并与所需的纹理更改交错。 在处理顶点后进行的呈现状态更改在下次处理顶点时生效。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>

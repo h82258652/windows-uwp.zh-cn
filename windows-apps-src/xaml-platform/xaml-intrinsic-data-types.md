@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 26f4153b59c618a4559549ba7fa9ca0f99c4ab64
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933845"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613262"
 ---
 # <a name="xaml-intrinsic-data-types"></a>XAML 固有数据类型
 
@@ -31,18 +31,18 @@ XAML 固有数据类型在使用上的最大共同点体现于资源在 XAML 资
 
 这些 XAML 语言原语一般是在 XAML 中定义使用 **x:** 前缀的对象元素的唯一情形。 所有其他 XAML 语言特性通常以属性或标记扩展的形式使用。
 
-**注意**按照惯例，语言 XAML 原语和所有其他 XAML 语言元素显示的"x:"前缀。 这是在真实标记中使用 XAML 语言元素的典型方式。 XAML 文档和 XAML 规范中都采用了这一惯例。
+**请注意**  按照约定，XAML 和所有其他 XAML 语言元素的语言基元显示与"x:"前缀。 这是在真实标记中使用 XAML 语言元素的典型方式。 XAML 文档和 XAML 规范中都采用了这一惯例。
 
 ## <a name="other-xaml-primitives"></a>其他 XAML 原语
 
 XAML 2009 规范还介绍了其他 XAML 语言级原语，例如 **x:Uri** 和 **x:Single**。 除本节表格中所列项目外，适用于 Windows 运行时的 XAML 当前不支持其他 XAML 词汇表或 XAML 2009 规格所定义的 XAML 语言原语。
 
-**注意**的日期和时间 （使用[**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)或[**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)、 [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)或[**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx)的属性） 不能不可使用 XAML 原语设置。 总体而言，这些属性根本不可以采用 XAML 设置，因为 Windows 运行时 XAML 分析程序中没有用于日期和时间的从字符串转换的默认行为。 若要获取任何日期和时间属性的初始化值，必须使用在页面或元素加载时运行的代码隐藏文件。
+**请注意**  日期和时间 (使用的属性[ **DateTime** ](https://msdn.microsoft.com/library/windows/apps/br206576)或者[ **DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)， [**时间跨度**](https://msdn.microsoft.com/library/windows/apps/br225996)或[ **System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx)) 不是使用 XAML 基元设置。 总体而言，这些属性根本不可以采用 XAML 设置，因为 Windows 运行时 XAML 分析程序中没有用于日期和时间的从字符串转换的默认行为。 若要获取任何日期和时间属性的初始化值，必须使用在页面或元素加载时运行的代码隐藏文件。
 
 ## <a name="related-topics"></a>相关主题
 
-* [XAML 概述](xaml-overview.md)
+* [XAML概述](xaml-overview.md)
 * [XAML 语法指南](xaml-syntax-guide.md)
-* [情节提要动画](https://msdn.microsoft.com/library/windows/apps/mt187354)
+* [可形成演示图板动画](https://msdn.microsoft.com/library/windows/apps/mt187354)
  
 

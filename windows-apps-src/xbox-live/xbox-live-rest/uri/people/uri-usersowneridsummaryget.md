@@ -8,18 +8,18 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b228adab7b035ec8f4e65fc8b7458228a677987
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941245"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613992"
 ---
 # <a name="get-usersowneridsummary"></a>GET (/users/{ownerId}/summary)
 从调用方的角度来看，获取有关所有者的摘要数据。
 
   * [URI 参数](#ID4EQ)
-  * [授权](#ID4E2)
-  * [需的请求标头](#ID4EBC)
+  * [Authorization](#ID4E2)
+  * [所需的请求标头](#ID4EBC)
   * [可选的请求标头](#ID4EHD)
   * [请求正文](#ID4EXE)
   * [HTTP 状态代码](#ID4ECF)
@@ -31,67 +31,67 @@ ms.locfileid: "8941245"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- |
-| ownerId| 字符串| 正在访问其资源的用户的标识符。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。 示例值： <code>me</code>， <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>|
+| ownerId| 字符串| 其资源的访问的用户的标识符。 可能的值为"me"、 xuid({xuid}) 或 gt({gamertag})。 示例值： <code>me</code>， <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>|
 
 <a id="ID4E2"></a>
 
 
 ## <a name="authorization"></a>授权
 
-| <b>名称</b>| <b>类型</b>| <b>描述</b>|
+| <b>名称</b>| <b>Type</b>| <b>描述</b>|
 | --- | --- | --- | --- | --- | --- |
-| xuid| 64 位无符号的整数| 必需。 调用方的用户标识符。 示例值： 2533274790395904|
+| xuid| 64 位无符号的整数| 必需。 调用方的用户标识符。 示例值：2533274790395904|
 
 <a id="ID4EBC"></a>
 
 
-## <a name="required-request-headers"></a>需的请求标头
+## <a name="required-request-headers"></a>所需的请求标头
 
-| 标头| 类型| 描述|
+| 标头| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 授权| 字符串| 授权的数据。 这通常是加密的 XSTS 令牌。 示例值： <b>XBL3.0 x = [哈希]; [令牌]</b>。|
+| 授权| 字符串| 授权的数据。 这通常是加密的 XSTS 令牌。 示例值：<b>XBL3.0 x=[hash];[token]</b>.|
 
 <a id="ID4EHD"></a>
 
 
 ## <a name="optional-request-headers"></a>可选的请求标头
 
-| 标头| 类型| 描述|
+| 标头| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| x xbl 协定版本| 字符串| 名称/的内部版本号此请求应定向到该服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1|
-| 接受| 字符串| 内容类型的可接受。 所有回复将都对<code>application/json</code>。|
+| x-xbl-contract-version| 字符串| 生成此请求应定向到服务的名称/编号。 验证标头中的身份验证令牌等的声明的有效性后仅为将请求路由到该服务。示例值：1|
+| 接受| 字符串| 内容类型可接受。 将所有响应<code>application/json</code>。|
 
 <a id="ID4EXE"></a>
 
 
 ## <a name="request-body"></a>请求正文
 
-此请求的正文中不发送任何对象。
+此请求的正文中不发送的任何对象。
 
 <a id="ID4ECF"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+服务将返回其中一个状态代码在本部分中使用此方法在此资源上发出的请求的响应中。 有关与 Xbox Live 服务一起使用的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 200| “确定”| 已成功检索会话。|
-| 400| 错误请求| 用户 Id 的格式不正确。|
-| 403| 已禁止| 无法分析 XUID 声明与授权标头中。|
+| 200| 确定| 已成功检索该会话。|
+| 400| 无效的请求| 用户 Id 的格式不正确。|
+| 403| 已禁止| 无法从授权标头分析 XUID 声明。|
 
 <a id="ID4EZG"></a>
 
 
 ## <a name="required-response-headers"></a>所需的响应标头
 
-| 标头| 类型| 描述|
+| 标头| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Content-Length| 字符串| 正在发送响应中的字节数。 示例值： 232。|
-| Content-Type| 字符串| 响应正文的 MIME 类型。 这必须是<b>application/json</b>。|
+| 内容长度| 字符串| 在响应中发送的字节数。 示例值：232.|
+| 内容类型| 字符串| 响应正文的 MIME 类型。 这必须是<b>应用程序 /json</b>。|
 
 <a id="ID4EGAAC"></a>
 

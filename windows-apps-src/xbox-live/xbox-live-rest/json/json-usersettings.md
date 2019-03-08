@@ -8,32 +8,32 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 5451c59ab608105677a657ade41154bd2b622f5e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941008"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655042"
 ---
 # <a name="usersettings-json"></a>UserSettings (JSON)
-返回当前身份验证的用户的设置。 
+返回当前经过身份验证的用户的设置。 
 <a id="ID4EN"></a>
 
  
 ## <a name="usersettings"></a>UserSettings
  
-UserSettings 对象具有以下规范。
+用户设置对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
 | id| 32 位无符号的整数| 设置的标识符。| 
 | 源| 32 位无符号的整数| 表示设置的源。 | 
 | titleId| 32 位无符号的整数| 标题与设置关联的标识符。 | 
-| 值| 8 位无符号整数的数组| 表示设置的值。 客户端检索设置必须了解表示格式能够读取数据。 | 
+| value| 8 位无符号整数数组| 表示设置的值。 正在检索设置的客户端必须了解要将无法读取数据的表示形式格式。 | 
   
 <a id="ID4EJC"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -57,6 +57,6 @@ UserSettings 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
    

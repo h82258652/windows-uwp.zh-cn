@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 37deaabe2586391b0f0c93359133f10830558539
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981491"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608852"
 ---
 # <a name="game-flow-management"></a>游戏流管理
 
@@ -131,9 +131,9 @@ void GameMain::InitializeGameState()
 
 在该游戏示例中，游戏可以处于以下 3 个主要状态 (__UpdateEngineState__)：
 
-1. __Waiting for resources__：游戏循环正在执行，在资源（具体为图形资源）可用之前无法转换。 用于加载资源的异步任务完成后，它将状态更新为 __ResourcesLoaded__。 当关卡正在从磁盘、游戏服务器或云后端加载新资源时，通常会在关卡之间发生此状态。 在该游戏示例中，将模拟此行为，因为该示例此时不需要任何附加的每关卡资源。
-2. __Waiting for press__：游戏循环正在执行，正在等待特定的用户输入。 此输入是玩家加载游戏、开始某个级别或继续某个级别的操作。 此示例代码引用这些子状态作为 __PressResultState__ 枚举值。
-3. 处于 __Dynamics__ 状态：在用户玩游戏过程中游戏循环正在运行。 在用户游戏过程中，游戏检查其可以转换的 3 个条件： 
+1. __等待资源__:游戏循环正在执行，在资源（特别是图形资源）可用之前无法转换。 用于加载资源的异步任务完成后，它将状态更新为 __ResourcesLoaded__。 当关卡正在从磁盘、游戏服务器或云后端加载新资源时，通常会在关卡之间发生此状态。 在该游戏示例中，将模拟此行为，因为该示例此时不需要任何附加的每关卡资源。
+2. __等待按__:游戏循环正在执行，正在等待特定的用户输入。 此输入是玩家加载游戏、开始某个级别或继续某个级别的操作。 此示例代码引用这些子状态作为 __PressResultState__ 枚举值。
+3. 在中__Dynamics__:在用户玩游戏过程中游戏循环正在运行。 在用户游戏过程中，游戏检查其可以转换的 3 个条件： 
     * __TimeExpired__：某个级别的设定时间到期
     * __LevelComplete__：玩家完成某个级别 
     * __GameComplete__：玩家完成所有级别
@@ -289,7 +289,7 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 <td align="left">OnDpiChanged</td>
 <td align="left">处理 <a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DpiChanged"><strong>Graphics::Display::DisplayInformation::DpiChanged</strong></a>。 显示器的 DPI 已更改，且游戏相应地调整其资源。
 <div class="alert">
-<strong>注意</strong><a href="https://msdn.microsoft.com/library/windows/desktop/hh404559"><strong>CoreWindow</strong></a>坐标位于<a href="https://msdn.microsoft.com/library/windows/desktop/dd370987">direct2d</a>的 Dip （与设备独立像素）。 因此，要正确显示任何 2D 资产或基元，必须通知 Direct2D 关于 DPI 的更改。
+<strong>请注意</strong> <a href="https://msdn.microsoft.com/library/windows/desktop/hh404559"><strong>CoreWindow</strong> </a>坐标以 Dip （设备独立像素为单位） 为<a href="https://msdn.microsoft.com/library/windows/desktop/dd370987">Direct2D</a>。 因此，要正确显示任何 2D 资源或基元，必须通知 Direct2D 关于 DPI 的更改。
 </div>
 <div>
 </div></td>
@@ -334,9 +334,9 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 在本主题中，我们介绍了如何使用游戏状态管理整个游戏流以及游戏由多个不同的状态机构成。 我们还了解到了如何更新 UI 和管理关键应用事件处理程序。 现在，我们准备深入研究呈现循环、游戏及其构成。
  
 你可以按任何顺序浏览构成此游戏的其他组件：
-* [定义主游戏对象](tutorial--defining-the-main-game-loop.md)
-* [呈现框架 I：呈现简介](tutorial--assembling-the-rendering-pipeline.md)
-* [呈现框架 II：游戏呈现](tutorial-game-rendering.md)
+* [定义主要的游戏对象](tutorial--defining-the-main-game-loop.md)
+* [呈现框架实现：对呈现简介](tutorial--assembling-the-rendering-pipeline.md)
+* [呈现框架 II:游戏渲染](tutorial-game-rendering.md)
 * [添加用户界面](tutorial--adding-a-user-interface.md)
 * [添加控件](tutorial--adding-controls.md)
 * [添加声音](tutorial--adding-sound.md)

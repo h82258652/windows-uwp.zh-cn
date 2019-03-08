@@ -8,17 +8,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eaad3791830086d6b086ac0026523d28d596d1a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933792"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593842"
 ---
 # <a name="system-strings-validatation-uris"></a>系统字符串验证 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的*系统字符串验证*。
+本部分提供有关通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务中针对*系统字符串验证*。
  
-才能进行上载到永久性字符串数据，它应验证以确保它不违反行为准则或使用条款。 此 REST 资源采用一个字符串数组，并返回结果代码为每个，用于指示是可接受，并且包含有问题的词的字符串。
+上传到持久的字符串数据之前, 应验证它以确保它不会违反行为准则或使用条款。 此 REST 资源采用一个字符串数组，并为每个，该值指示是可接受，以及一个包含有问题的字词的字符串返回结果代码。
  
 这些 Uri 的域是客户端 strings.xboxlive.com。
  
@@ -29,7 +29,7 @@ ms.locfileid: "8933792"
 
 [/system/strings/validate](uri-systemstringsvalidate.md)
 
-&nbsp;&nbsp;访问用于验证字符串的数组。
+&nbsp;&nbsp;访问以进行验证的字符串数组。
  
 <a id="ID4EWB"></a>
 
@@ -41,6 +41,6 @@ ms.locfileid: "8933792"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
+[通用资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
 
    

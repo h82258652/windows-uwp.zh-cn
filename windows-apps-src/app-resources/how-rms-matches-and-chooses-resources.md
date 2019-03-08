@@ -1,5 +1,5 @@
 ---
-Description: When a resource is requested, there may be several candidates that match the current resource context to some degree. The Resource Management System will analyze all of the candidates and determine the best candidate to return. This topic describes that process in detail and gives examples.
+Description: 请求资源时，可能有多个候选项在一定程度上匹配当前的资源上下文。 资源管理系统将分析所有这些候选项，并确定要返回的最佳候选项。 本主题详细介绍该过程，并提供了示例。
 title: 资源管理系统如何匹配和选择资源
 template: detail.hbs
 ms.date: 10/23/2017
@@ -7,20 +7,20 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: de34411d9c7d226857214472e691dd6b41f10a18
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943457"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593882"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>资源管理系统如何匹配和选择资源
-请求资源时，可能有多个候选项在一定程度上匹配当前的资源上下文。 资源管理系统将分析所有候选资源，然后确定要返回的最佳候选资源。 为此，需考虑所有限定符，以便对所有候选资源评级。
+请求资源时，可能有多个候选项在一定程度上匹配当前的资源上下文。 资源管理系统将分析所有这些候选项，并确定要返回的最佳候选项。 为此，需考虑所有限定符，以便对所有候选资源评级。
 
 在此评级过程中，会为不同限定符提供不同优先级：语言对整体评级的影响最大，其次是对比度，然后是比例等。 对于每个限定符，均需将候选限定符与上下文限定符值比较，以便确定匹配的程度。 如何进行比较取决于限定符。
 
 有关如何完成语言标记匹配的详细信息，请参阅[资源管理系统如何匹配语言标记](how-rms-matches-lang-tags.md)。
 
-对于某些限定符，例如缩放比例和对比度，始终有一些最低的匹配度。 例如，为"缩放比例-100"的上下文匹配"缩放比例-400"某种程度较小，但不以及候选限定为"缩放比例-200"或 （适用于完全匹配）"比例-400"限定的候选项。
+对于某些限定符，例如缩放比例和对比度，始终有一些最低的匹配度。 例如，尽管不限定为"缩放 100"一些小的程度上，匹配的"缩放 400"上下文的候选项，以及对于"小数位数 200"或 （对于完美匹配项）"规模-400"合格的候选项。
 
 但是，对于其他限定符（例如语言或住宅区域），可能有非匹配比较（以及匹配度）。 例如，语言限定为“en-US”的候选项与“en-GB”的上下文部分匹配，但限定为“fr”的候选项完全不匹配。 同样，主区域限定为“155”（西欧）的候选项在一定程度上匹配主区域设置为“FR”的用户的上下文，但限定为“US”的候选项完全不匹配。
 
@@ -135,4 +135,4 @@ de/images/contrast-standard/logo.jpg
 * [NamedResource.ResolveAll](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live)
 
 ## <a name="related-topics"></a>相关主题
-* [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)
+* [编译手动与 MakePri.exe 的资源](compile-resources-manually-with-makepri.md)

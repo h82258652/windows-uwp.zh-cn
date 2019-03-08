@@ -7,13 +7,13 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 407ceeb4964e616bdbcacb14620ed1a488a0072b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924767"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618212"
 ---
-# <a name="xkey-attribute"></a>x:Key 属性
+# <a name="xkey-attribute"></a>x:Key 特性
 
 
 唯一标识作为资源被创建和引用的元素，这些资源存在于一个 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中。
@@ -36,9 +36,9 @@ ms.locfileid: "8924767"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 术语 | 说明 |
+| 术语 | 描述 |
 |------|-------------|
-| object | 任何可共享的对象。 请参阅 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)。 |
+| 对象 | 任何可共享的对象。 请参阅 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)。 |
 | stringKeyValue | 一个用作键的真实字符串，它必须遵守 _XamlName_&gt; 语法。 请参阅下面的“XamlName 语法”。 | 
 
 ##  <a name="xamlname-grammar"></a>XamlName 语法
@@ -54,13 +54,13 @@ DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
 
--   字符被限制在较低的 ASCII 范围，具体而言，就是大写和小写罗马字母、数字和下划线 (\_) 字符。
+-   字符被限制为较低的 ASCII 范围，并且特别是对 Roman 字母大写和小写字母、 数字和下划线 (\_) 字符。
 -   不支持 Unicode 字符范围。
 -   名称不能以数字开头。
 
 ## <a name="remarks"></a>备注
 
-[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的子元素一般包含一个 **x:Key** 属性，该属性在该词典中指定一个唯一的键值。 键唯一性在加载时由 XAML 处理器执行。 非唯一的 **x:Key** 值将导致 XAML 分析异常。 如果 [{StaticResource} 标记扩展](staticresource-markup-extension.md)发出请求，任何未解析的键也会导致 XAML 分析异常。
+[  **ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的子元素一般包含一个 **x:Key** 属性，该属性在该词典中指定一个唯一的键值。 键唯一性在加载时由 XAML 处理器执行。 非唯一的 **x:Key** 值将导致 XAML 分析异常。 如果 [{StaticResource} 标记扩展](staticresource-markup-extension.md)发出请求，任何未解析的键也会导致 XAML 分析异常。
 
 **x:Key** 和 [x:Name](x-name-attribute.md) 不是同一概念。 **x:Key** 仅用于资源词典中。 x:Name 适用于 XAML 的所有区域。 一个使用键值的 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 调用不会检索键资源。 在资源字典中定义的对象可能有一个 **x:Key**、一个 **x:Name** 或两者皆有。 不要求键和名称互相匹配。
 

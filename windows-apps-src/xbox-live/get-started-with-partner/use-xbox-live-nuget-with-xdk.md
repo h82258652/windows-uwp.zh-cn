@@ -7,33 +7,33 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, NuGet
 ms.localizationpriority: medium
 ms.openlocfilehash: c955ca42c09075e5125683588c335cfa47443f00
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920856"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655032"
 ---
 # <a name="use-the-xbox-live-api-nuget-package-to-develop-xdk-titles"></a>使用 Xbox Live API NuGet 程序包开发 XDK 主题作品
 
-### <a name="1--ensure-you-have-the-latest-nuget-package-manager-installed"></a>1.  确保你安装了最新的 NuGet 程序包管理器
+### <a name="1--ensure-you-have-the-latest-nuget-package-manager-installed"></a>1.确保已安装最新 NuGet 包管理器
 1.  查看当前版本：
     - 在菜单栏上，依次选择“工具”->“扩展和更新”。
-    - 在“已安装”选项卡下，查找 `NuGet Package Manager`
+    - 在已安装选项卡下，查找 `NuGet Package Manager`
 ![](../images/nuget/nuget_uwp_install_1.png)
 2.  更新当前版本：
     - 在菜单栏上，依次选择“工具”->“扩展和更新”。
-    - 在“更新”->“Visual Studio 库”选项卡下，选择 `Update`
+    - 在更新下-> Visual Studio 库选项卡中选择 `Update`
 ![](../images/nuget/nuget_uwp_install_2.png)
 
-### <a name="2--add-reference-to-the-project"></a>2.  添加对项目的引用
+### <a name="2--add-reference-to-the-project"></a>2.添加对项目的引用
 1.  添加对项目的引用
     1.  右键单击项目解决方案，然后选择“管理 NuGet 程序包”
 <br/>
 ![](../images/nuget/nuget_xbox_install_4.png)
 1.  搜索 `Xbox Live` 并选择相应的程序包，然后单击 `Install`。
   - Xbox 服务 API 同时支持 UWP 和 XDK 以及 C++ 和 WinRT。  
-  - 在 `Microsoft.Xbox.Live.SDK.*.UWP` 和 `Microsoft.Xbox.Live.SDK.*.XboxOneXDK` 之间选择。  `XboxOneXDK`  适用于 ID@Xbox 和使用 Xbox One XDK 的托管开发人员。  `UWP`  适用于可在电脑、Xbox One 或 Windows Phone 上运行的 UWP 游戏。  你可以阅读更多有关 Xbox One 上运行 UWP[https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/getting-started](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/getting-started)
-  - 在 `Microsoft.Xbox.Live.SDK.Cpp.*` 和 `Microsoft.Xbox.Live.SDK.WinRT.*` 之间选择。 `Cpp`  适用于使用 Xbox Live API 的 C++ 游戏引擎。  `WinRT`  适用于使用 Xbox Live API 通过 C++、C# 或 Javascript 语言编写的游戏引擎。  在将 WinRT 与 C++ 引擎结合使用时，将使用有乘幂号 (^) 的 C++/CX。  `Cpp`  是建议用于 C++ 游戏引擎的 API。    
+  - 在 `Microsoft.Xbox.Live.SDK.*.UWP` 和 `Microsoft.Xbox.Live.SDK.*.XboxOneXDK` 之间选择。  `XboxOneXDK` 用于ID@Xbox和托管开发人员使用的 Xbox One XDK。  `UWP` 这可以在电脑、 Xbox One 或 Windows Phone 上运行的 UWP 游戏。  你可以阅读更多有关 Xbox One 上在运行 UWP [https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/getting-started](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/getting-started)
+  - 在 `Microsoft.Xbox.Live.SDK.Cpp.*` 和 `Microsoft.Xbox.Live.SDK.WinRT.*` 之间选择。 `Cpp` 适用于 c + + 的游戏引擎使用 Xbox Live Api。  `WinRT` 有关使用 c + + 编写的游戏引擎是C#，或使用 Xbox Live Api 的 Javascript。  在将 WinRT 与 C++ 引擎结合使用时，将使用有乘幂号 (^) 的 C++/CX。  `Cpp` 建议使用的 API 用于 c + + 的游戏引擎。    
 ![](../images/nuget/nuget_xbox_install_5.png)
 ![](../images/nuget/nuget_uwp_install_7.png)
 1. 接受 License TOS 后，等到成功添加程序包。  你应该在“程序包管理器”输出窗口中看到此日志：
@@ -42,6 +42,6 @@ ms.locfileid: "8920856"
 ========== Finished ==========
 ```
 
-### <a name="3--optionally-include-header"></a>3.  （可选）包括标头
+### <a name="3--optionally-include-header"></a>3.选择性地包含标头
 * 对于基于 `Microsoft.Xbox.Live.SDK.Cpp.*` 的项目，`#include <xsapi\services.h>` 位于项目的源中。
 * 对于基于 `Microsoft.Xbox.Live.SDK.WinRT.*` 的项目，无需包括任何标头。   

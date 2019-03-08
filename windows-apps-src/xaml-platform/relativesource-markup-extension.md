@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 26cde97f82e6962d530721f1e0230138e5917016
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920526"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617922"
 ---
 # <a name="relativesource-markup-extension"></a>{RelativeSource} 标记扩展
 
@@ -43,7 +43,7 @@ ms.locfileid: "8920526"
 
 ## <a name="remarks"></a>备注
 
-[**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 可以将 [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 设置为 **Binding** 对象元素的属性或者 [{Binding} 标记扩展](binding-markup-extension.md)内部的组件。 这就是显示两种不同 XAML 语法的原因。
+[  **Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 可以将 [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 设置为 **Binding** 对象元素的属性或者 [{Binding} 标记扩展](binding-markup-extension.md)内部的组件。 这就是显示两种不同 XAML 语法的原因。
 
 **RelativeSource** 类似于 [{Binding} 标记扩展](binding-markup-extension.md)。  它是一个能够返回自身实例的标记扩展，支持一种基于字符串的结构，该结构在本质上会将一个参数传递给构造函数。 在本例中，传递的参数是 [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209915) 值。
 
@@ -58,15 +58,15 @@ ms.locfileid: "8920526"
 />
 ```
 
-`RelativeSource={RelativeSource Self}` 的另一个用途是作为将对象的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 设置为其自身的一种方式。  例如，你可能在某些 SDK 示例中看到过此技术，其中使用了已为其自身的数据绑定提供可用的视图模型的自定义属性扩展 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 类，诸如此类： `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
+`RelativeSource={RelativeSource Self}` 的另一个用途是作为将对象的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 设置为其自身的一种方式。  例如，可能会看到此技术中的某些 SDK 示例其中[**页面**](https://msdn.microsoft.com/library/windows/apps/br227503)使用已为其自己的数据绑定提供已准备就绪视图模型的自定义属性扩展类例如： `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
-**注意** **RelativeSource**的 XAML 用法仅显示的用法针对： 作为绑定表达式的一部分[**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831)在 XAML 中设置一个值。 在理论上，如果将一个属性的值设置为 [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)，也可能还有其他用法。
+**请注意**  的 XAML 用法**RelativeSource**显示仅所针对的使用情况： 设置为值[ **Binding.RelativeSource** ](https://msdn.microsoft.com/library/windows/apps/br209831)中用作绑定表达式的一部分的 XAML。 在理论上，如果将一个属性的值设置为 [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)，也可能还有其他用法。
 
 ## <a name="related-topics"></a>相关主题
 
-* [XAML 概述](xaml-overview.md)
-* [深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [XAML概述](xaml-overview.md)
+* [深度中的数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [{Binding} 标记扩展](binding-markup-extension.md)
-* [**绑定**](https://msdn.microsoft.com/library/windows/apps/br209820)
+* [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)
 

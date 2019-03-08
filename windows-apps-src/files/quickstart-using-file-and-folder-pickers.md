@@ -1,32 +1,32 @@
 ---
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: 使用选取器打开文件和文件夹
-description: 通过让用户与选取器交互来访问文件和文件夹。 你可以使用 FileOpenPicker 和 FileSavePicker 类获取对文件的访问权限，并使用 FolderPicker 获取对文件夹的访问权限。
+description: 通过让用户选取器交互来访问文件和文件夹。 你可以使用 FileOpenPicker 和 FileSavePicker 类获取对文件的访问权限，并使用 FolderPicker 获取对文件夹的访问权限。
 ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 09ddb212cd84b9754c35adccdf6e60ad96a4f94f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050800"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662762"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>使用选取器打开文件和文件夹
 
-**重要的 API**
+**重要的 Api**
 
 -   [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847)
 -   [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)
 -   [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
 
-通过让用户与选取器交互来访问文件和文件夹。 你可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 类访问文件，并使用 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) 访问文件夹。
+通过让用户选取器交互来访问文件和文件夹。 你可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 类访问文件，并使用 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) 访问文件夹。
 
 > [!NOTE]
 > 有关完整示例，请参阅[文件选取器示例](https://go.microsoft.com/fwlink/p/?linkid=619994)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
@@ -103,9 +103,9 @@ else
     ```
     在文件选取器对象上设置与你的用户和应用相关的属性。
 
-    此示例在某个方便的位置创建一种丰富的图片视觉显示，用户可以通过设置以下三个属性从该位置选取：[**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855)、[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 和 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850)。
+    此示例创建直观丰富的图片显示在方便的位置的用户均可选择从通过设置三个属性：[**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855)， [ **SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854)，以及[ **FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850)。
 
-    -   将 [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) 设置为 [**PickerViewMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) **Thumbnail** 枚举值可通过使用图片缩略图创建丰富的视觉显示，以显示文件选取器中的文件。 此操作用于选取可视文件（如图片或视频）。 否则，请使用 [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list)。 假定的电子邮件应用可在显示文件选取器之前设置适用于功能的 **ViewMode**，该应用具有**附加图片或视频**和**附加文档**功能。
+    -   设置[ **ViewMode** ](https://msdn.microsoft.com/library/windows/apps/br207855)到[ **PickerViewMode** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) **缩略图**枚举值创建了内容丰富、通过使用图片缩略图来表示文件选取器中的文件的可视显示。 此操作用于选取可视文件（如图片或视频）。 否则，请使用 [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list)。 假定的电子邮件应用可在显示文件选取器之前设置适用于功能的 **ViewMode**，该应用具有**附加图片或视频**和**附加文档**功能。
 
     -   使用 [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207854) 将 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207890) 设置为图片可让用户在他们有可能找到图片的某个位置开始。 将 **SuggestedStartLocation** 设置为适用于要选取的文件类型（例如音乐、图片、视频或文档）的位置。 用户可以从开始位置导航到其他位置。
 
@@ -113,7 +113,7 @@ else
 
 2.  **显示 FileOpenPicker**
 
-    - **选取单个文件**
+    - **若要选择单个文件**
 
         ```cs
         Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
@@ -128,7 +128,7 @@ else
         }
         ```
 
-    - **选取多个文件**  
+    - **若要选择多个文件**  
 
         ```cs
         var files = await picker.PickMultipleFilesAsync();

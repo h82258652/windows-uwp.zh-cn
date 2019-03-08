@@ -1,21 +1,21 @@
 ---
 title: 赛车方向盘和力回馈
-description: 使用 Windows.Gaming.Input 赛车方向盘 API 进行检测、确定功能、读取力回馈命令并将其发送给赛车方向盘。
+description: 使用 Windows.Gaming.Input 赛车方向盘 API 检测、确定功能，读取力回馈命令并发送给赛车方向盘。
 ms.assetid: 6287D87F-6F2E-4B67-9E82-3D6E51CBAFF9
 ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 赛车方向盘, 力反馈
 ms.localizationpriority: medium
 ms.openlocfilehash: ab7c5bc15b149d5f469b7fc5e6b6285986569b22
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981551"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608832"
 ---
 # <a name="racing-wheel-and-force-feedback"></a>赛车方向盘和力回馈
 
-此页介绍适用于 Xbox One 赛车方向盘使用[Windows.Gaming.Input.RacingWheel]编程的基础知识[racingwheel]和通用 Windows 平台 (UWP) 的相关 Api。
+此页介绍了有关使用 Xbox One 赛车轮编程的基础知识[Windows.Gaming.Input.RacingWheel] [ racingwheel]和相关的通用 Windows 平台 (UWP) 的 Api。
 
 在本页中，你将了解如下内容：
 
@@ -33,7 +33,7 @@ Xbox One 赛车方向盘有多种价位，一般而言，价格越高，输入�
 
 ### <a name="device-capabilities"></a>设备功能
 
-不同的 Xbox One 赛车方向盘提供不同的可选设备功能集和各种级别的支持对这些功能;这种级别的单个种类的输入设备之间的变体是唯一的[Windows.Gaming.Input](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input) API 支持的设备当中。 并且，你将会遇到的大多设备都将至少支持某些可选功能或者其他功能变体。 因此，单独确定每个连接的赛车方向盘的功能并支持适合游戏的各种功能非常重要。
+不同的 Xbox One 赛车轮提供不同的可选设备功能集和不同级别的支持对这些功能;此级别的一种输入设备之间的差异是唯一支持的设备[Windows.Gaming.Input](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input) API。 并且，你将会遇到的大多设备都将至少支持某些可选功能或者其他功能变体。 因此，单独确定每个连接的赛车方向盘的功能并支持适合游戏的各种功能非常重要。
 
 有关详细信息，请参阅[确定赛车方向盘功能](#determining-racing-wheel-capabilities)。
 
@@ -60,24 +60,24 @@ Xbox One 赛车方向盘有多种价位，一般而言，价格越高，输入�
 |               视图 | “视图”按钮        |
 |               菜单 | “菜单”按钮        |
 |             接受 | A 按钮           |
-|             取消 | B 按钮           |
+|             Cancel | B 按钮           |
 
 此外，某些赛车方向盘可能还会将导航命令的某些[可选组](ui-navigation-controller.md#optional-set)映射为他们支持的其他输入，但是命令映射会因设备不同而有所差异。 也考虑支持这些命令，但是确保这些命令并非导航你游戏界面的必需命令。
 
 | 导航命令 | 赛车方向盘输入    |
 | ------------------:| --------------------- |
-|            Page Up | _视情况而定_              |
-|          Page Down | _视情况而定_              |
-|          Page Left | _视情况而定_              |
-|         Page Right | _视情况而定_              |
-|          Scroll Up | _视情况而定_              |
-|        Scroll Down | _视情况而定_              |
-|        Scroll Left | _视情况而定_              |
-|       Scroll Right | _视情况而定_              |
+|            Page Up | _varies_              |
+|          Page Down | _varies_              |
+|          Page Left | _varies_              |
+|         Page Right | _varies_              |
+|          Scroll Up | _varies_              |
+|        Scroll Down | _varies_              |
+|        Scroll Left | _varies_              |
+|       Scroll Right | _varies_              |
 |          Context 1 | X 按钮（_通常情况_） |
 |          Context 2 | Y 按钮（_通常情况_） |
-|          Context 3 | _视情况而定_              |
-|          Context 4 | _视情况而定_              |
+|          Context 3 | _varies_              |
+|          Context 4 | _varies_              |
 
 ## <a name="detect-and-track-racing-wheels"></a>检测和跟踪赛车方向盘
 
@@ -218,7 +218,7 @@ if (RacingWheelButtons::None == (reading.Buttons & RacingWheelButtons::NextGear)
 }
 ```
 
-有时你可能需要确定：何时将按钮从按下转换为释放或从释放转换为按下，是按下还是释放多个按钮，或者是否按特定方式安排一组按钮（按下一些按钮，释放一些按钮）。 有关如何检测这些状态的详细信息，请参阅[检测按钮转换](input-practices-for-games.md#detecting-button-transitions) 和[检测复杂按钮安排](input-practices-for-games.md#detecting-complex-button-arrangements)。
+有时你可能需要确定：何时将按钮从按下转换为释放或从释放转换为按下，是按下还是释放多个按钮，或者是否按特定方式安排一组按钮（按下一些按钮，释放一些按钮）。 有关如何检测这些状态的详细信息，请参阅 [检测按钮转换](input-practices-for-games.md#detecting-button-transitions) 和 [检测复杂按钮安排](input-practices-for-games.md#detecting-complex-button-arrangements)。
 
 ### <a name="reading-the-wheel"></a>读取方向盘
 
@@ -260,7 +260,7 @@ if(racingwheel->HasClutch)
 
 ### <a name="reading-the-pattern-shifter"></a>读取档位
 
-档位是可选控件，会提供一个介于 -1 和 [MaxPatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.maxpatternshiftergear) 之间的数字读数，用带符号的整数值表示。 值 -1 或 0 分别对应于_倒档_ 和_空挡_，递增的正值对应于越来越高的前进挡（最高 **MaxPatternShifterGear** 档，含该档）。 读取档位值是从[RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading)结构[PatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading.patternshiftergear)属性。
+档位是可选控件，会提供一个介于 -1 和 [MaxPatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.maxpatternshiftergear) 之间的数字读数，用带符号的整数值表示。 值 -1 或 0 分别对应于_倒档_ 和_空挡_，递增的正值对应于越来越高的前进挡（最高 **MaxPatternShifterGear** 档，含该档）。 从读取模式换纸器的值[PatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading.patternshiftergear)的属性[RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading)结构。
 
 ```cpp
 if (racingwheel->HasPatternShifter)
@@ -278,7 +278,7 @@ if (racingwheel->HasPatternShifter)
 
 ## <a name="force-feedback-overview"></a>力回馈概述
 
-很多赛车方向盘有力回馈功能，可提供更具沉浸感且更富有挑战性的驾驶体验。 支持力回馈的赛车方向盘通常配备有一个电机，它可以将用力沿单个轴（方向盘旋转轴）应用于方向盘。 在 Windows 10 和 Xbox One UWP 应用中受[Windows.Gaming.Input.ForceFeedback](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback)命名空间支持力回馈。
+很多赛车方向盘有力回馈功能，可提供更具沉浸感且更富有挑战性的驾驶体验。 支持力回馈的赛车方向盘通常配备有一个电机，它可以将用力沿单个轴（方向盘旋转轴）应用于方向盘。 在通过 Windows 10 和 Xbox 一个 UWP 应用中支持强制反馈[Windows.Gaming.Input.ForceFeedback](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback)命名空间。
 
 > [!NOTE]
 > 力回馈 API 能够支持多个力轴，但是当前没有 Xbox One 赛车方向盘支持除方向盘旋转反馈轴以外的任何反馈轴。
@@ -315,7 +315,7 @@ if (racingwheel->WheelMotor != nullptr)
 
 ### <a name="loading-force-feedback-effects"></a>加载力回馈效果
 
-力回馈效果被加载到回馈设备中，此设备在遇到游戏命令时自主“执行”。 提供了一些基本效果;可以通过实现[IForceFeedbackEffect](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback.iforcefeedbackeffect)接口的类创建自定义效果。
+力回馈效果被加载到回馈设备中，此设备在遇到游戏命令时自主“执行”。 提供的基本效果数目;可以通过实现的类创建自定义效果[IForceFeedbackEffect](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback.iforcefeedbackeffect)接口。
 
 | 效果类         | 效果描述                                                                     |
 | -------------------- | -------------------------------------------------------------------------------------- |
@@ -373,7 +373,7 @@ else
 
 * [Windows.Gaming.Input.UINavigationController](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.uinavigationcontroller)
 * [Windows.Gaming.Input.IGameController](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.igamecontroller)
-* [游戏输入实践](input-practices-for-games.md)
+* [输入的游戏方案](input-practices-for-games.md)
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
 [Windows.Gaming.Input.UINavigationController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.aspx

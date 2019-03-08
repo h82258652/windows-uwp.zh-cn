@@ -1,21 +1,21 @@
 ---
 title: 创建 DirectX 通用 Windows 平台 (UWP) 游戏
-description: 在本套教程中，你将了解如何使用 DirectX 和 C++ 创建基本的通用 Windows 平台 (UWP) 游戏。
+description: 在此教程集中，你将了解如何使用 DirectX 和 C++ 创建基本的通用 Windows 平台 (UWP) 游戏。
 ms.assetid: 9edc5868-38cf-58cc-1fb3-8fb85a7ab2c9
 keywords: DirectX 游戏示例, 游戏示例, 通用 Windows 平台 (UWP), Direct3D 11 游戏
 ms.date: 12/01/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: dc602e2dd29231c1e6554d7ef55e9666a373fa31
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934602"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642862"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>使用 DirectX 创建简单的通用 Windows 平台 (UWP) 游戏
 
-在本套教程中，你将了解如何使用 DirectX 和 C++ 创建基本的通用 Windows 平台 (UWP) 游戏。 我们将介绍游戏的所有主要部分，包括加载资源（如艺术和网格）、创建主游戏循环、实现简单的呈现管道以及添加声音和控件的过程。
+在此教程集中，你将了解如何使用 DirectX 和 C++ 创建基本的通用 Windows 平台 (UWP) 游戏。 我们将介绍游戏的所有主要部分，包括加载艺术和网格之类的资源，创建主游戏循环，实现简单的呈现管道以及添加声音和控件的过程。
 
 我们将向你介绍 UWP 游戏开发技巧和注意事项。 我们不提供完整的端到端游戏。 而重点介绍关键的 UWP DirectX 游戏开发概念， 并围绕这些概念阐述特定于 Windows 运行时的注意事项。
 
@@ -51,14 +51,14 @@ ms.locfileid: "8934602"
 
 ![正在操作的游戏示例](images/simple-dx-game-overview.png)
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 |-------|-------------|
-|[设置游戏项目](tutorial--setting-up-the-games-infrastructure.md) | 装配游戏的第一步是在 Microsoft Visual Studio 中设置项目，以便最大限度减少需要执行的代码基础结构工作量。 通过使用正确的模板和专门为游戏开发配置项目，可以节省大量的时间和减少不必要的麻烦。 我们将指导你完成设置和配置简单游戏项目的步骤。 |
-| [定义游戏的 UWP 应用框架](tutorial--building-the-games-uwp-app-framework.md) | 构建允许 UWP DirectX 游戏对象与 Windows 交互的框架。 这包括 Windows 运行时属性（如暂停/恢复事件处理、窗口焦点和贴靠）。  |
-| [游戏流管理](tutorial-game-flow-management.md) | 定义支持玩家和系统交互的高级状态机。 了解 UI 如何与整个游戏的状态机交互以及如何为 UWP 游戏创建事件处理程序。 |
-| [定义主游戏对象](tutorial--defining-the-main-game-loop.md) | 定义如何通过创建规则进行游戏。 |
-| [呈现框架 I：呈现简介](tutorial--assembling-the-rendering-pipeline.md) | 装配显示图形的呈现框架。 本主题分为两部分。 呈现简介介绍了如何呈现要在屏幕上显示的场景对象。 |
-| [呈现框架 II：游戏呈现](tutorial-game-rendering.md) | 在呈现主题的第二部分，了解如何在呈现之前准备所需的数据。 |
+|[设置游戏项目](tutorial--setting-up-the-games-infrastructure.md) | 装配游戏的第一步是在 Microsoft Visual Studio 中设置项目，以便让基础架构正常工作所需的代码量减至最小。 通过使用正确的模板和专门为游戏开发配置项目，可以节省大量的时间和减少不必要的麻烦。 我们将指导你完成设置和配置简单游戏项目的步骤。 |
+| [定义游戏的 UWP 应用程序框架](tutorial--building-the-games-uwp-app-framework.md) | 构建允许 UWP DirectX 游戏对象与 Windows 交互的框架。 这包括 Windows 运行时属性（如暂停/恢复事件处理、窗口焦点和贴靠）。  |
+| [游戏流程管理](tutorial-game-flow-management.md) | 定义支持玩家和系统交互的高级状态机。 了解 UI 如何与整个游戏的状态机交互以及如何为 UWP 游戏创建事件处理程序。 |
+| [定义主要的游戏对象](tutorial--defining-the-main-game-loop.md) | 定义如何通过创建规则进行游戏。 |
+| [呈现框架实现：对呈现简介](tutorial--assembling-the-rendering-pipeline.md) | 装配显示图形的呈现框架。 本主题分为两部分。 呈现简介介绍了如何呈现要在屏幕上显示的场景对象。 |
+| [呈现框架 II:游戏渲染](tutorial-game-rendering.md) | 在呈现主题的第二部分，了解如何在呈现之前准备所需的数据。 |
 | [添加用户界面](tutorial--adding-a-user-interface.md) | 添加简单的菜单选项和提醒显示组件，以向玩家提供反馈。 |
 | [添加控件](tutorial--adding-controls.md) | 向游戏添加移动观看控件 &mdash; 基本触控、鼠标和游戏控制器控件。 |
 | [添加声音](tutorial--adding-sound.md) | 了解如何使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API 为游戏创建声音。 |

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 多人游戏管理器
 ms.localizationpriority: medium
 ms.openlocfilehash: 7838de6845bc6c49acf649c0e859cd0d7020490f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940688"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628022"
 ---
 # <a name="multiplayer-manager-api-overview"></a>多人游戏管理器 API 概述
 
@@ -20,22 +20,22 @@ ms.locfileid: "8940688"
 ## <a name="namespace"></a>命名空间
 多人游戏管理器类包含在下列命名空间中：
 
-| 语言 | 命名空间 |
+| language | 命名空间 |
 | --- | --- |
 | C++/CX | Microsoft::Xbox::Services::Multiplayer::Manager |
 | C++ | xbox::services::multiplayer::manager |
 
 以下列表描述了你应该了解的主要类：
 
-* [多人游戏管理器类](#multiplayer-manager-class)
-* [多人游戏事件类](#multiplayer-event-class)
-* [多人游戏成员类](#multiplayer-member-class)
-* [多人游戏大厅会话类](#multiplayer-lobby-session-class)
+* [多人管理器类](#multiplayer-manager-class)
+* [多人事件类](#multiplayer-event-class)
+* [多人成员类](#multiplayer-member-class)
+* [多人大厅会话类](#multiplayer-lobby-session-class)
 * [多人游戏会话类](#multiplayer-game-session-class)
 
 ## <a name="multiplayer-manager-class-a-namemultiplayer-manager-class"></a>多人游戏管理器类 <a name="multiplayer-manager-class">
 
-| 语言 | 类 |
+| language | 类 |
 | --- | --- |
 | C++/CX | MultiplayerManager |
 | C++ | multiplayer_manager |
@@ -47,7 +47,7 @@ ms.locfileid: "8940688"
 
 下表介绍了一些（但不是全部）适用于此类的较常用的方法和属性。 有关类成员的完整描述列表，请参阅参考。
 
-| C++/CX | C++ | 描述 |
+| C++/CX | C++ | description |
 | --- | --- | --- |
 | **方法** | | |
 | Initialize() | initialize() | 初始化多人游戏管理器。 你必须在使用多人游戏管理器之前调用此方法。 |
@@ -63,7 +63,7 @@ ms.locfileid: "8940688"
 
 ## <a name="multiplayer-event-class-a-namemultiplayer-event-class"></a>多人游戏事件类 <a name="multiplayer-event-class">
 
-| 语言 | 类 |
+| language | 类 |
 | --- | --- |
 | C++/CX | MultiplayerEvent |
 | C++ | multiplayer_event |
@@ -78,7 +78,7 @@ ms.locfileid: "8940688"
 
 ## <a name="multiplayer-member-class-a-namemultiplayer-member-class"></a>多人游戏成员类 <a name="multiplayer-member-class">
 
-| 语言 | 类 |
+| language | 类 |
 | --- | --- |
 | C++/CX | MultiplayerMember |
 | C++ | multiplayer_member |
@@ -87,7 +87,7 @@ ms.locfileid: "8940688"
 
 ## <a name="multiplayer-lobby-session-class-a-namemultiplayer-lobby-session-class"></a>多人游戏大厅会话类 <a name="multiplayer-lobby-session-class">
 
-| 语言 | 类 |
+| language | 类 |
 | --- | --- |
 | C++/CX | MultiplayerLobbySession |
 | C++ | multiplayer_lobby_session |
@@ -96,7 +96,7 @@ ms.locfileid: "8940688"
 
 下表介绍了一些（但不是全部）适用于此类的较常用的方法和属性。 有关类成员的完整描述列表，请参阅参考。
 
-| C++/CX | C++ | 描述 |
+| C++/CX | C++ | description |
 | --- | --- | --- |
 | **方法** | | |
 | AddLocalUser() | add_local_user() | 将本地用户（已在本地设备上登录的玩家）添加到大厅会话。 如果这是添加到大厅会话的第一个成员，则它将创建新大厅会话。 |
@@ -118,7 +118,7 @@ ms.locfileid: "8940688"
 
 ## <a name="multiplayer-game-session-class-a-namemultiplayer-game-session-class"></a>多人游戏会话类 <a name="multiplayer-game-session-class">
 
-| 语言 | 类 |
+| language | 类 |
 | --- | --- |
 | C++/CX | MultiplayerGameSession |
 | C++ | multiplayer_game_session |
@@ -129,7 +129,7 @@ ms.locfileid: "8940688"
 
 下表介绍了一些（但不是全部）适用于此类的较常用的方法和属性。 有关类成员的完整描述列表，请参阅参考。
 
-| C++/CX | C++ | 描述 |
+| C++/CX | C++ | description |
 | --- | --- | --- |
 | **方法** | | |
 | SetProperties() / SetSynchronizedProperties() | set_properties() / set_synchronized_properties() | 设置游戏会话的自定义属性。 此属性存储在 JSON 字符串中。 如果属性在设备之间共享，并在同一时间由多个设备更新，请使用此方法的同步版本。 |

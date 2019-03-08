@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e508feb8a530f29b40d5a3839df573cb2ce89896
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932168"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634392"
 ---
 # <a name="drag-and-drop"></a>拖放
 
 拖放是在应用程序内部或在 Windows 桌面上的应用程序之间传输数据的一种直观方式。 拖放操作可以让用户使用标准手势（用手指按住并平移或用鼠标或触笔按住并平移）在应用程序之间或在应用程序内部传输数据。
 
-> **重要 API**：[CanDrag 属性](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag)、[AllowDrop 属性](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 
+> **重要的 Api**:[CanDrag 属性](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag)， [AllowDrop 属性](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 
 
 拖动源（即触发拖动手势的应用程序或区域）通过填充数据包对象提供要传输的数据，而该数据包对象可以包含标准数据格式，包括文本、RTF、HTML、位图、存储项目或自定义数据格式。 源还指示其支持的操作种类：复制、移动或链接。 释放指针后，即会进行放置。 拖放目标（即指针下面的应用程序或区域）将会处理数据包并返回所执行操作的类型。
 
@@ -45,19 +45,19 @@ ms.locfileid: "8932168"
 
 [!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]
 
-你不必执行其他任何操作即可允许拖动，除非你想要自定义 UI（将在本文后面介绍）。 执行放置操作还需要几个步骤。
+你不必执行其他任何操作即可允许拖动，除非你想要自定义 UI（将在本文后面介绍）。 执行释放操作还需要几个步骤。
 
 ## <a name="construct-a-data-package"></a>构造数据包 
 
 在大多数情况下，系统会为你构造数据包。 系统自动处理：
-* 图像
+* 映像
 * 文本 
 
 对于其他内容，你需要处理 **DragStarted** 和 **DragCompleted** 事件并使用它们来构造你自己的 [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage)。
 
 ## <a name="enable-dropping"></a>启用放置
 
-以下标记显示了如何在 XAML 中使用 [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 将应用的特定区域设置为放置操作的有效区域。 如果用户尝试释放到别处，则系统将不会允许他们如此操作。 如果你希望用户能够将项目放置到应用上的任何位置，请将整个背景设置为拖放目标。
+以下标记显示了如何使用 [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 将应用的特定区域设置为释放操作的有效区域。 如果用户尝试释放到别处，则系统将不会允许他们如此操作。 如果你希望用户能够将项目释放到应用上的任何位置，请将整个背景设置为释放目标。
 
 [!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
 
@@ -72,7 +72,7 @@ ms.locfileid: "8932168"
 
 当用户在有效的释放区域中释放项目时，将发生 [**Drop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.Drop) 事件。 使用 [**DataView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.DataView) 属性处理它们。
 
-为简单起见，在下面的示例中，我们假设用户已放置一张照片并直接进行访问。 实际上，用户可以同时放置格式不同的多个项目。 你的应用应通过以下方式处理这种可能情况：检查已放置文件的类型和数量并相应地进行处理。 如果用户正在尝试执行你的应用不支持的操作，你还应考虑通知用户。
+为简单起见，在下面的示例中，我们假设用户已放置一张照片并直接进行访问。 实际上，用户可以同时释放格式不同的多个项目。 你的应用应通过以下方式处理这种可能情况：检查已放置文件的类型和数量并相应地进行处理。 如果用户正在尝试执行你的应用不支持的操作，你还应考虑通知用户。
 
 [!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_Drop)]
 
@@ -98,7 +98,7 @@ ms.locfileid: "8932168"
 
 ## <a name="implementing-custom-drag-and-drop"></a>实现自定义拖放
 
-[UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 类会为你完成实现拖放操作的大部分工作。 但是，如果需要，你可以使用[Windows.ApplicationModel.DataTransfer.DragDrop.Core 命名空间](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core)中的 Api 实现你自己的版本。
+[UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 类会为你完成实现拖放操作的大部分工作。 如果你想，您可以使用中的 Api 实现自己的版本，但[Windows.ApplicationModel.DataTransfer.DragDrop.Core 命名空间](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core)。
 
 | 功能 | WinRT API |
 | --- | --- |
@@ -111,7 +111,7 @@ ms.locfileid: "8932168"
 
 ## <a name="see-also"></a>另请参阅
 
-* [App-to-app communication](index.md)
+* [应用到应用的通信](index.md)
 * [AllowDrop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.allowdrop.aspx)
 * [CanDrag](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.candrag.aspx)
 * [DragOver](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.dragover.aspx)

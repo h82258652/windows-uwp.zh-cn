@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b58eb4b6e3f3f02bb1f72fcba9da3710f08a72da
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045991"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649002"
 ---
 # <a name="high-contrast-themes"></a>高对比度主题  
 
@@ -20,9 +20,9 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 
 ![在浅色主题和高对比度黑色主题下显示的计算器。](images/high-contrast-calculators.png)
 
-*在浅色主题和高对比度黑色主题下显示的计算器。*
+*浅色主题和高对比度黑色主题中所示的计算器。*
 
-你可以使用“设置”&gt;“轻松使用”&gt;“高对比度”** 切换到高度比度主题。
+你可以使用“设置”&gt;“轻松使用”&gt;“高对比度”切换到高度比度主题。
 
 > [!NOTE]
 > 不要将高对比度主题与浅色和深色主题混为一谈，浅色和深色主题的调色板更大，但是不被视为拥有高对比度。 有关更多浅色和深色主题，请参阅有关[颜色](../style/color.md)的文章。
@@ -82,16 +82,16 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 
 ## <a name="high-contrast-colors"></a>高对比度颜色
 
-在*设置 > 轻松访问 > 高对比度*页面上，默认有 4 个高对比度主题。 
+在“设置”&gt;“轻松使用”&gt;“高对比度”页面上，默认有 4 个高对比度主题。 
 
 
 ![高对比度设置](images/high-contrast-settings.png)  
 
-*在用户选择某一选项后，该页面将显示预览。*  
+*在用户选择一个选项后，该页面将显示预览。*  
 
 ![高对比度资源](images/high-contrast-resources.png)  
 
-*可以单击预览上的每个颜色样本来更改其值。 每个颜色样本还直接映射到 XAML 颜色资源。*  
+*若要更改其值，可以单击预览上的每个颜色样本。每个样本还直接映射到 XAML 颜色资源。*  
 
 每一个 **SystemColor*Color** 资源都是一个变量，可在用户切换高对比度主题时自动更新颜色。 以下是在何处以及何时使用每个资源的指南。
 
@@ -108,13 +108,13 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 
 通常有助于查看现有应用、“开始”菜单或常用控件，了解其他人如何解决类似于自己面临的高对比度设计问题。
 
-**应做事项**
+**执行操作**
 
 * 如有可能，请考虑背景/前景配对。
 * 当应用正在运行时，在 4 个高对比度主题中都进行测试。 用户切换主题时，应无需重新启动你的应用。
 * 保持一致。
 
-**禁止事项**
+**不要**
 
 * 硬编码 **HighContrast** 主题中的颜色；使用 **SystemColor*Color** 资源。
 * 选择具有美学效果的颜色资源。 请记住，它们会随主题变化而变化！
@@ -154,7 +154,7 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 <Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
 ```
 
-请注意两次使用 **\{ThemeResource\}** 的方式，一次用于引用 **SystemColorWindowColor**，第二次用于引用 **BrandedPageBackgroundBrush**。 两次都需要应用在运行时搭配正确主题。 此时适合测试应用功能。 当你切换到高对比度主题时，网格的背景将自动更新。 当在不同高对比度主题之间切换时，它的背景也随之更新。
+请注意如何**\{ThemeResource\}** 两次，使用一次为引用**SystemColorWindowColor**并再次对引用**BrandedPageBackgroundBrush**. 两次都需要应用在运行时搭配正确主题。 此时适合测试应用功能。 当你切换到高对比度主题时，网格的背景将自动更新。 当在不同高对比度主题之间切换时，它的背景也随之更新。
 
 ## <a name="when-to-use-borders"></a>何时使用边框
 
@@ -162,7 +162,7 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 
 ![从页面其余部分分离的导航窗格](images/high-contrast-actions-content.png)  
 
-*在高对比度模式下，导航窗格和页面共享同一背景色。 必须仅使用高对比度边框将它们分开。*
+*在导航窗格和页上都共享相同的背景色在高对比度。高对比度限边框来将它们划分至关重要。*
 
 
 ## <a name="list-items"></a>列表项
@@ -171,7 +171,7 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 
 ![浅色主题和高对比度黑色主题中的简单列表](images/high-contrast-list1.png)
 
-*浅色主题（左）和高对比度黑色主题（右）中的简单列表。 已选中第二项；注意它的文本颜色在高对比度模式下的反转方式。*
+*浅色主题 （左） 和高对比度黑色主题 （右侧） 中的简单列表。第二项处于选中状态，请注意如何在高对比度反转其文本颜色。*
 
 
 ### <a name="list-items-with-colored-text"></a>带有彩色文本的列表项
@@ -180,7 +180,7 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 
 ![浅色主题和高对比度黑色主题中的复杂列表](images/high-contrast-list2.png)
 
-*浅色主题（左）和高对比度黑色主题（右）中的复杂列表。 在高对比度模式下，所选项目的第二行未能反转。*  
+*浅色主题 （左） 和高对比度黑色主题 （右侧） 中的复杂列表。在高对比度的选定项的第二行无法反转。*  
 
 你可以通过 **ThemeDictionaries** 集合中的某个 Style，有条件的设置 Foreground，以便解决此问题。 因为 **Foreground** 并非由 **HighContrast** 中的 **SecondaryBodyTextBlockStyle** 设置，所以它的颜色将正确反转。
 
@@ -235,7 +235,7 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 
 ## <a name="related-topics"></a>相关主题  
 * [辅助功能](accessibility.md)
-* [UI 对比度和设置示例](https://go.microsoft.com/fwlink/p/?linkid=231539)
-* [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [用户界面的对比度和设置示例](https://go.microsoft.com/fwlink/p/?linkid=231539)
+* [XAML 可访问性示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [XAML 高对比度示例](https://go.microsoft.com/fwlink/p/?linkid=254993)
 * [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237)

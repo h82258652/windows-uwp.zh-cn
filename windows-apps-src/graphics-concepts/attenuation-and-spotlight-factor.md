@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8126ac8fa738a2b8a9680d215179fe23f77c5d44
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937841"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659292"
 ---
 # <a name="attenuation-and-spotlight-factor"></a>衰减和聚焦因素
 
@@ -28,12 +28,12 @@ Atten = 1/( att0<sub>i</sub> + att1<sub>i</sub> \* d + att2<sub>i</sub> \* d²)
 
 其中：
 
-| 参数        | 默认值 | 类型           | 描述                                     | 范围          |
+| 参数        | 默认值 | 在任务栏的搜索框中键入           | 描述                                     | 范围          |
 |------------------|---------------|----------------|-------------------------------------------------|----------------|
 | att0<sub>i</sub> | 0.0           | 浮点 | 恒定衰减系数                     | 0 至正无穷 |
 | att1<sub>i</sub> | 0.0           | 浮点 | 线性衰减因素                       | 0 至正无穷 |
 | att2<sub>i</sub> | 0.0           | 浮点 | 二次衰减因素                    | 0 至正无穷 |
-| d.                | 不适用           | 浮点 | 顶点位置至光线位置的距离 | 不适用            |
+| d                | 不适用           | 浮点 | 顶点位置至光线位置的距离 | 不适用            |
 
  
 
@@ -42,11 +42,11 @@ Atten = 1/( att0<sub>i</sub> + att1<sub>i</sub> \* d + att2<sub>i</sub> \* d²)
 
 光线与顶点位置之间的距离始终为正。
 
-d = |L<sub>dir</sub> |
+d = | L<sub>dir</sub> |
 
 其中：
 
-| 参数       | 默认值 | 类型                                             | 描述                                                 |
+| 参数       | 默认值 | 在任务栏的搜索框中键入                                             | 描述                                                 |
 |-----------------|---------------|--------------------------------------------------|-------------------------------------------------------------|
 | L<sub>dir</sub> | 不适用           | 含 x、y 和 z 浮点值的 3D 矢量 | 从顶点位置到光线位置的方向矢量 |
 
@@ -58,18 +58,18 @@ d = |L<sub>dir</sub> |
 
 光线的最大范围处的衰减不是 0.0。 若要阻止光线范围内的光线突然出现，应用程序可以扩大光线范围。 或者，应用程序可以设置衰减常量，以便光线范围内的衰减因素接近 0.0。 将衰减值乘以光线颜色的红色、绿色和蓝色分量，以缩放作为光线到达顶点的距离因素的光线强度。
 
-## <a name="span-idspotlight-factorspanspan-idspotlight-factorspanspan-idspotlight-factorspanspotlight-factor"></a><span id="Spotlight-Factor"></span><span id="spotlight-factor"></span><span id="SPOTLIGHT-FACTOR"></span>聚焦因素
+## <a name="span-idspotlight-factorspanspan-idspotlight-factorspanspan-idspotlight-factorspanspotlight-factor"></a><span id="Spotlight-Factor"></span><span id="spotlight-factor"></span><span id="SPOTLIGHT-FACTOR"></span>聚焦身份
 
 
 以下公式指定了聚焦因素。
 
 ![聚焦因素的公式](images/dx8light9.png)
 
-| 参数         | 默认值 | 类型           | 描述                              | 范围                    |
+| 参数         | 默认值 | 在任务栏的搜索框中键入           | 描述                              | 范围                    |
 |-------------------|---------------|----------------|------------------------------------------|--------------------------|
 | rho<sub>i</sub>   | 不适用           | 浮点 | 聚焦 i 的余弦（角度）            | 不适用                      |
-| phi<sub>i</sub>   | 0.0           | 浮点 | 聚焦 i 的 Penumbra 角度（以弧度为单位） | \[theta<sub>i</sub>, pi) |
-| theta<sub>i</sub> | 0.0           | 浮点 | 聚焦 i 的 Umbra 角度（以弧度为单位）    | \[0, pi)                 |
+| phi<sub>i</sub>   | 0.0           | 浮点 | 聚焦 i 的 Penumbra 角度（以弧度为单位） | \[theta<sub>我</sub>，pi) |
+| theta<sub>i</sub> | 0.0           | 浮点 | 聚焦 i 的 Umbra 角度（以弧度为单位）    | \[0，pi)                 |
 | 衰减           | 0.0           | 浮点 | 衰减因素                           | （负无穷，正无穷）   |
 
  
@@ -80,7 +80,7 @@ rho = norm(L<sub>dcs</sub>)<sup>.</sup>norm(L<sub>dir</sub>)
 
 且：
 
-| 参数       | 默认值 | 类型                                             | 描述                                                 |
+| 参数       | 默认值 | 在任务栏的搜索框中键入                                             | 描述                                                 |
 |-----------------|---------------|--------------------------------------------------|-------------------------------------------------------------|
 | L<sub>dcs</sub> | 不适用           | 含 x、y 和 z 浮点值的 3D 矢量 | 相机空间中光线方向的负数         |
 | L<sub>dir</sub> | 不适用           | 含 x、y 和 z 浮点值的 3D 矢量 | 从顶点位置到光线位置的方向矢量 |
@@ -92,7 +92,7 @@ rho = norm(L<sub>dcs</sub>)<sup>.</sup>norm(L<sub>dir</sub>)
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[照明的数学运算](mathematics-of-lighting.md)
+[照明的数学](mathematics-of-lighting.md)
 
  
 

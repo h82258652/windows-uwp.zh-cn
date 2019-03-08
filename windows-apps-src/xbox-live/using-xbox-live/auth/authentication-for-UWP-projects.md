@@ -9,23 +9,23 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 身份验证, 登录
 ms.localizationpriority: medium
 ms.openlocfilehash: 5473b7ede7731d7d07b7e5bfd72857fdb64f1c89
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115476"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628382"
 ---
 # <a name="authentication-for-uwp-projects"></a>UWP 项目的身份验证
 
 为了在游戏中充分利用 Xbox Live 功能，用户需要创建一个 Xbox Live 个人资料，以在 Xbox Live 社区标识自己的身份。  Xbox Live 服务将会跟踪使用该 Xbox Live 个人资料的游戏相关活动，例如用户的玩家代号和玩家图片、用户的游戏好友、用户所玩的游戏、用户已解锁的成就、用户在特定游戏的排行榜中的排名等。
 
-如果想要在特定设备上访问特定游戏的 Xbox Live 服务，则用户需要先进行身份验证。  游戏可以通过调用 Xbox Live Api 来启动身份验证过程。  在某些情况下，用户将会看到一个用于提供其他信息的界面，如输入要使用的 Microsoft 帐户的用户名和密码、提供游戏的授权同意、解决帐户问题、接受新的使用条款等。
+如果想要在特定设备上访问特定游戏的 Xbox Live 服务，则用户需要先进行身份验证。  游戏可以调用 Xbox Live Api 来启动身份验证过程。  在某些情况下，用户将会看到一个用于提供其他信息的界面，如输入要使用的 Microsoft 帐户的用户名和密码、提供游戏的授权同意、解决帐户问题、接受新的使用条款等。
 
-身份验证后，用户将与该设备相关联，直到他们明确注销 Xbox Live 从 Xbox 应用。  只有一个玩家允许 （适用于所有 Xbox Live 游戏）; 一次中进行身份验证的非控制台设备上 若要进行身份验证的非控制台设备上对新玩家，经过身份验证的现有玩家必须先注销。
+身份验证后，用户是与该设备相关联，直到显式注销带 Xbox Live 从 Xbox 应用程序。  只有一个播放器允许身份验证要求非控制台设备 （适用于所有 Xbox Live 游戏）; 一次 对于非控制台设备上进行身份验证新播放器，现有的已经过身份验证播放机必须注销第一个。
 
 ## <a name="steps-to-sign-in"></a>登录步骤
 
-在高级别上，可以通过以下步骤使用 Xbox Live API：
+在高级别，你可以通过以下步骤使用 Xbox Live API：
 
 1. 创建一个代表用户的 XboxLiveUser 对象
 2. 在启动时静默登录 Xbox Live
@@ -86,12 +86,12 @@ Microsoft.Xbox.Services.System.SignInResult XboxLiveUser.SignInSilentlyAsync(Win
 
 * **coreDispatcher**
 
-  线程调度程序用于在线程之间进行通信。 尽管静默登录 API 不会显示任何 UI，XSAPI 仍需要 UI 线程调度程序用于获取与 appx 区域设置的信息。 你可以通过调用 UI 线程中的 Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher 来获取静态 UI 线程调度程序。 或者，如果你确定该 UI 将在 UI 线程上调用，则可以传递 nullptr（例如在 JS UWA 上）。
+  线程调度程序用于在线程之间进行通信。 尽管无提示登录 API 不会显示任何 UI，XSAPI 仍需要 UI 线程调度程序用于获取有关 appx 的区域设置信息。 你可以通过调用 UI 线程中的 Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher 来获取静态 UI 线程调度程序。 或者，如果你确定该 UI 将在 UI 线程上调用，则可以传递 nullptr（例如在 JS UWA 上）。
 
 
 静默登录尝试存在 3 种可能结果
 
-* **成功**
+* **Success**
 
   如果设备处于联机状态，这意味着用户经过身份验证可成功登录 Xbox Live，并且我们可以获得有效的令牌。
 
@@ -141,7 +141,7 @@ Microsoft.Xbox.Services.System.SignInResult  XboxLiveUser.SignInAsync(Windows.UI
 
 通过 UX 的登录尝试存在 3 种可能结果：
 
-* **成功**
+* **Success**
 
   如果设备处于联机状态，这意味着用户经过身份验证可成功登录 Xbox Live，并且我们可以获得有效的令牌。
 
@@ -153,7 +153,7 @@ Microsoft.Xbox.Services.System.SignInResult  XboxLiveUser.SignInAsync(Windows.UI
 
 * **其他错误**
 
-  运行时因其他原因无法登录。  通常情况下，这些问题不可由游戏或用户操作。 使用 c++ API 时，需要通过检查 xbox_live_result<>.err() 来检查错误；在 WinRT 上，需要捕获 Platform::Exception^。
+  运行时因其他原因无法登录。  通常情况下，这些问题不可由游戏或用户操作。 使用 c++ API 时，你需要通过检查 xbox_live_result<>.err() 来检查错误；在 WinRT 上，你需要捕获 Platform::Exception^。
 
 ## <a name="sign-in-code-examples"></a>登录代码示例
 
@@ -355,13 +355,13 @@ public void OnSignOut(object sender, SignOutCompletedEventArgs e)
 
 ## <a name="determining-if-the-device-is-offline"></a>确定设备是否处于脱机状态
 
-登录 Api 仍将成功时脱机如果用户已登录一次，并将返回最后登录的帐户。  
+登录 Api 仍可成功时脱机如果用户登录一次，并且将返回最后一个登录帐户。  
 
-如果没有用户已签名之前，脱机登录不会实现。
+如果没有用户已登录之前，脱机登录无法达到。
 
-如果可以脱机玩游戏 （配套模式等），均允许用户玩游戏和通过 WriteInGameEvent API 和连接存储 API 记录游戏进度，这两种正常工作设备处于脱机状态时。
+如果标题可播放脱机 （营销活动模式，等等） 标题就使用户能够播放和通过 WriteInGameEvent API 和连接存储 API 的游戏进度记录，这两个文件正常工作时在设备处于脱机状态。
 
-如果无法脱机玩游戏 （多人游戏或基于服务器的游戏等），则游戏应调用 GetNetworkConnectivityLevel API 来了解设备是否处于脱机状态，并通知用户相关状态及可能的解决方案 (例如，你需要连接到 Internet 才能继续...)。
+如果不能脱机播放主题标题 （多玩家游戏或基于服务器的游戏等） 应调用 GetNetworkConnectivityLevel API，以了解设备处于脱机状态，并向用户通知的状态和可能的解决方案 (例如，需要连接到 Internet 以继续...)。
 
 ## <a name="online-status-code-samples"></a>联机状态代码示例
 

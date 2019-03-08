@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e1f7e787f2ee80a3168d38a9afd9a249dc0e6de0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941447"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603062"
 ---
 # <a name="pixel-shader-ps-stage"></a>像素着色器 (PS) 阶段
 
@@ -36,14 +36,14 @@ ms.locfileid: "8941447"
 
 顶点属性在像素着色器中心位置被内插（或评估）。 在[参数](https://msdn.microsoft.com/library/windows/desktop/bb509606)或[输入结构](https://msdn.microsoft.com/library/windows/desktop/bb509668)中，像素着色器属性内插模式将逐个元素地在输入寄存器声明中声明。 可以线性内插属性，也可以利用质心采样内插属性。 请参阅[光栅化规则](rasterization-rules.md)中的“多重采样抗锯齿时的质心采样”。 质心计算仅在多重采样期间相关，以包含像素由基元覆盖但像素中心可能并非如此的情况；质心计算尽可能靠近（非覆盖）像素中心进行。
 
-输入也可以用[系统值语义](https://msdn.microsoft.com/library/windows/desktop/bb509647)声明，该语意将标记由其他管道阶段使用的参数。 例如，像素位置应使用 SV\_Position 语义标记。 [输入装配器 (IA) 阶段](input-assembler-stage--ia-.md)可为像素着色器生成一个标量（使用 SV\_PrimitiveID）；[光栅器 (RS) 阶段](rasterizer-stage--rs-.md)也可为像素着色器生成一个标量（使用 SV\_IsFrontFace）。
+输入也可以用[系统值语义](https://msdn.microsoft.com/library/windows/desktop/bb509647)声明，该语意将标记由其他管道阶段使用的参数。 例如，像素位置应标记为与 SV\_位置语义。 [输入组装器 (IA) 阶段](input-assembler-stage--ia-.md)可能导致像素着色器产生一个标量 (使用 SV\_PrimitiveID);[光栅器 (RS) 阶段](rasterizer-stage--rs-.md)还可以为像素着色器 （使用 SV生成一个标量\_IsFrontFace)。
 
 ## <a name="span-idoutputsspanspan-idoutputsspanspan-idoutputsspanoutputs"></a><span id="Outputs"></span><span id="outputs"></span><span id="OUTPUTS"></span>输出
 
 
 像素着色器可输出多达 8 个 32 位 4 分量颜色，如果像素被弃用，则不会生成颜色。 像素着色器输出寄存器分量必须先声明才能使用；允许每个寄存器使用一个独特的输出写入掩码。
 
-使用深度写入启用状态（在[输出合并 (OM) 阶段](output-merger-stage--om-.md)）可控制深度数据被写入深度缓冲区（还是使用弃用指令来弃用该像素的数据）。 像素着色器还可输出用于深度测试（使用 SV\_Depth 语义）的可选 32 位 1 分量浮点深度值。 深度值是 oDepth 寄存器中的输出，它将替换用于深度测试的内插深度值（假定已启用深度测试）。 你无法在使用固定函数深度与使用着色器 oDepth 之间动态更改。
+使用深度写入启用状态（在[输出合并 (OM) 阶段](output-merger-stage--om-.md)）可控制深度数据被写入深度缓冲区（还是使用弃用指令来弃用该像素的数据）。 像素着色器也可以输出的深度测试的可选的 32 位、 1 组件、 浮点、 深度值 (使用 SV\_语义深度)。 深度值是 oDepth 寄存器中的输出，它将替换用于深度测试的内插深度值（假定已启用深度测试）。 你无法在使用固定函数深度与使用着色器 oDepth 之间动态更改。
 
 像素着色器无法输出模具值。
 

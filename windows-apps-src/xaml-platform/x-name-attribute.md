@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ef1a6047a7c462961f40ae8913881125e2331bb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946878"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618262"
 ---
 # <a name="xname-attribute"></a>x:Name 属性
 
@@ -26,7 +26,7 @@ ms.locfileid: "8946878"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 术语 | 说明 |
+| 术语 | 描述 |
 |------|-------------|
 | XAMLNameValue | 一个符合 XamlName 语法限制的字符串。 |
 
@@ -43,9 +43,9 @@ DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
 
--   字符被限制在较低的 ASCII 范围，具体而言，就是大写和小写罗马字母、数字和下划线 (\_) 字符。
+-   字符被限制为较低的 ASCII 范围，并且特别是对 Roman 字母大写和小写字母、 数字和下划线 (\_) 字符。
 -   不支持 Unicode 字符范围。
--   名称不能以数字开头。 某些工具实现会在用户以数字作为起始字符时在字符串前附加一个下划线 (\_)，工具也可以根据包含数字的其他值自动生成 **x:Name** 值。
+-   名称不能以数字开头。 某些工具实现前面添加下划线 (\_) 为一个字符串，如果用户提供一个数字作为初始字符或工具自动生成**X:name**值基于其他包含的数字的值。
 
 ## <a name="remarks"></a>备注
 
@@ -57,7 +57,7 @@ CombiningCharacter::= none
 
 无法在 XAML 属性元素语法中或在代码中使用 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 设置 **x:Name**。 只能在元素上使用 XAML 属性语法来设置 **x:Name**。
 
-**注意**是专为 C + + /CX 应用**X:name**引用的支持字段不会创建为 XAML 文件或页面的根元素。 如果你需要从 C++ 代码隐藏来引用根对象，请使用其他 API 或树形遍历。 例如，你可以为已知的命名子元素调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)，然后调用 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
+**请注意**  专门针对 C + + /cli CX 应用的支持字段**x： 名称**XAML 文件或页的根元素不创建引用。 如果你需要从 C++ 代码隐藏来引用根对象，请使用其他 API 或树形遍历。 例如，你可以为已知的命名子元素调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)，然后调用 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
 
 ### <a name="xname-and-other-name-properties"></a>x:Name 和其他 Name 属性
 
@@ -65,9 +65,9 @@ UWP XAML 中使用的一些类型还具有一个名为 **Name** 的属性。 例
 
 如果 **Name** 可用作一个元素上的可设置属性，**Name** 和 **x:Name** 可在 XAML 中交替使用，但如果在相同元素上指定了这两个属性，会发生错误。 有时，会存在一个只读的 **Name** 属性（如 [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031)）。 如果出现这种情况，请在 XAML 中始终使用 **x:Name** 对该元素进行命名，而且对于一些少见的代码方案使用只读的 **Name**。
 
-**注意**[**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)通常不应作为一种方式更改最初由**X:name**，设置值，但有一些例外一般规则的方案。 在典型的场景中，XAML 名称范围的创建和定义是一个 XAML 处理器操作。 在运行时修改 **FrameworkElement.Name** 可能会导致不一致的 XAML 名称范围/专用字段命名对齐，这种不一致在代码隐藏文件中很难跟踪。
+**注意**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 通常不应当用于更改最初由 **x:Name** 设置的值，但这个一般规则有一些例外的场景。 在典型的场景中，XAML 名称范围的创建和定义是一个 XAML 处理器操作。 在运行时修改 **FrameworkElement.Name** 可能会导致不一致的 XAML 名称范围/专用字段命名对齐，这种不一致在代码隐藏文件中很难跟踪。
 
 ### <a name="xname-and-xkey"></a>x:Name 和 x:Key
 
-**x:Name** 可以作为一个属性应用到 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 内的元素，以充当 [x:Key 属性](x-key-attribute.md)的替代属性。 （通常，要求 **ResourceDictionary** 中的所有元素都必须具有一个 x:Key 或 x:Name 属性。）这常见于[情节提要动画](https://msdn.microsoft.com/library/windows/apps/mt187354)。 有关详细信息，请参阅 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)部分。
+**x:Name** 可以作为一个属性应用到 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 内的元素，以充当 [x:Key 属性](x-key-attribute.md)的替代属性。 (这是规则的中的所有元素**ResourceDictionary**必须有一个 x： 键或 x: Name 属性。)这是常见[可形成演示图板动画](https://msdn.microsoft.com/library/windows/apps/mt187354)。 有关详细信息，请参阅 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)部分。
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, SQL Server, 数据库
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fe215a593293ff91afb7f71a830512ac365093f
-ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "8976924"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621152"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>在 UWP 应用中使用 SQL Server 数据库
 通过使用 [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 命名空间中的类，你的应用可以直接连接到 SQL Server 数据库然后存储和检索数据。
@@ -29,7 +29,7 @@ ms.locfileid: "8976924"
 
 在清单设计器中打开你的 UWP 项目的 **Package.appxmanifest** 文件。
 
-在**功能**选项卡中，选择**企业身份验证**复选框，如果你使用的 Windows 身份验证进行身份验证 SQL Server。
+在中**功能**选项卡上，选择**企业身份验证**复选框，如果使用 Windows 身份验证进行身份验证您的 SQL Server。
 
 ![企业身份验证功能](images/enterprise-authentication.png)
 
@@ -39,15 +39,15 @@ ms.locfileid: "8976924"
 
 在本节中，我们将执行以下操作：
 
-:one: 添加连接字符串。
+： 一个：添加连接字符串。
 
-:two: 创建用于保存产品数据的类。
+： 两个：创建用于容纳产品数据的类。
 
-:three: 从 SQL Server 数据库检索产品。
+： 三个：从 SQL Server 数据库中检索的产品。
 
-:four: 添加基本用户界面。
+： 四个：添加基本用户界面。
 
-:five: 使用产品填充 UI。
+： 五个：填充产品 UI。
 
 >[!NOTE]
 > 本节介绍了一种组织你的数据访问代码的方法。 这不仅仅是为了提供如何使用 [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 在 SQL Server 数据库中存储和检索数据的示例。 你可以采用对你的应用程序设计最有意义的任何方式组织你的代码。
@@ -236,14 +236,14 @@ public MainPage()
 
 ## <a name="next-steps"></a>后续步骤
 
-**使用轻量级数据库在用户设备上存储数据**
+**使用轻型数据库来存储用户设备上的数据**
 
 参阅[在 UWP 应用中使用 SQLite 数据库](sqlite-databases.md)。
 
-**在跨不同平台的不同应用之间共享代码**
+**不同的应用程序跨不同平台之间共享代码**
 
 参阅[在桌面应用和 UWP 应用之间共享代码](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate)。
 
-**使用 Azure SQL 后端添加大纲/细节页面**
+**添加 Azure SQL 后端使用的主详细信息页**
 
 参阅[客户订单数据库示例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)。

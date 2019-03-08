@@ -1,5 +1,5 @@
 ---
-Description: Describes the structure of the 3D Manufacturing Format file type and how it can be created and manipulated with the Windows.Graphics.Printing3D API.
+Description: 介绍 3D 制造格式文件类型的结构以及如何使用 Windows.Graphics.Printing3D API 创建和操作该文件类型。
 MS-HAID: dev\_devices\_sensors.generate\_3mf
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -10,15 +10,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a3615dac98c5bc8469c8c8ebc47ef718c0131844
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048434"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653392"
 ---
 # <a name="generate-a-3mf-package"></a>生成 3MF 程序包
 
-**重要的 API**
+**重要的 Api**
 
 -   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)
 
@@ -28,7 +28,7 @@ ms.locfileid: "9048434"
 
 3D 制造格式是有关出于制造目的（3D 打印）使用 XML 描述 3D 模型的外观和结构的一组约定。 它定义一组部件（有些必选，有些可选）及其关系，目的是向 3D 制造设备提供所有必要的信息。 符合 3D 制造格式的数据集可以另存为带有 .3mf 扩展名的文件。
 
-在 windows 10 中， **Windows.Graphics.Printing3D**命名空间中的[**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx)类类似于单个.3mf 文件，并且其他类映射到文件中的特定 XML 元素。 本指南介绍如何以编程方式创建和设置 3MF 文档的每个主要部分、如何利用 3MF Materials Extension 以及最后如何将 **Printing3D3MFPackage** 对象转换并另存为 .3mf 文件。 有关 3MF 的标准或 3MF Materials Extension 的详细信息，请参阅 [3MF 规范](https://3mf.io/what-is-3mf/3mf-specification/)。
+在 Windows 10 中， [ **Printing3D3MFPackage** ](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx)类**Windows.Graphics.Printing3D**命名空间相当于一个单一.3mf 文件和其他类映射到文件中的特定 XML 元素。 本指南介绍如何以编程方式创建和设置 3MF 文档的每个主要部分、如何利用 3MF Materials Extension 以及最后如何将 **Printing3D3MFPackage** 对象转换并另存为 .3mf 文件。 有关 3MF 的标准或 3MF Materials Extension 的详细信息，请参阅 [3MF 规范](https://3mf.io/what-is-3mf/3mf-specification/)。
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
@@ -41,7 +41,7 @@ ms.locfileid: "9048434"
 
 <!-- >**Note** We do not yet associate the **Printing3D3MFPackage** with its corresponding **Printing3DModel** object. Only after fleshing out the **Printing3DModel** with all of the information we wish to specify will we make that association (see [link]). -->
 
-## <a name="metadata"></a>Metadata
+## <a name="metadata"></a>元数据
 
 3MF 文档的模型部分可以将元数据以存储在 **Metadata** 属性中的字符串的键/值对的形式保存。 存在大量预定义的元数据名称，但其他对可以添加为扩展名的一部分（在 [3MF 规范](https://3mf.io/what-is-3mf/3mf-specification/)中有更详细的介绍）。 由程序包的接收器（一种 3D 制造设备）来确定是否以及如何处理元数据，但最好是在 3MF 程序包中包含尽可能多的基本信息：
 
@@ -83,7 +83,7 @@ ms.locfileid: "9048434"
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
 > [!NOTE]
-> 3D 制造设备将确定哪些可用物理材料映射到存储在 3MF 中的哪些虚拟材料元素。 材料映射并不一定是 1:1：如果 3D 打印机只使用一种材料，无论向哪些对象或面分配了不同的材料，它都将以该材料打印整个模型。
+> 3D 生产设备将确定向其虚拟材料元素存储在 3MF 哪些可用的物理材质映射。 材料映射并不一定是 1:1：如果 3D 打印机只使用一种材料，无论向哪些对象或面分配了不同的材料，它都将以该材料打印整个模型。
 
 ### <a name="color-materials"></a>颜色材料
 
@@ -118,7 +118,7 @@ ms.locfileid: "9048434"
 
 ## <a name="components-and-build"></a>组件和版本
 
-组件结构允许用户在可打印的 3D 模型中放置多个网格对象。 [**Printing3DComponent**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) 对象包含单个网格和对其他组件的引用列表。 这实际上是 [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx) 对象的列表。 每个 **Printing3DComponentWithMatrix** 对象都包含一个 **Printing3DComponent**，重要的是，还包含一个适用于所谓的 **Printing3DComponent** 的网格和包含组件的转换矩阵。
+组件结构允许用户在可打印的 3D 模型中放置多个网格对象。 [  **Printing3DComponent**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) 对象包含单个网格和对其他组件的引用列表。 这实际上是 [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx) 对象的列表。 每个 **Printing3DComponentWithMatrix** 对象都包含一个 **Printing3DComponent**，重要的是，还包含一个适用于所谓的 **Printing3DComponent** 的网格和包含组件的转换矩阵。
 
 例如，汽车的模型可能由承载车身网格的“车身”**Printing3DComponent** 组成。 然后，“车身”组件可能包含对四个不同的 **Printing3DComponentWithMatrix** 对象的引用，这些对象全都引用带有“车轮”网格的相同 **Printing3DComponent** 并包含四个不同的转换矩阵（将车轮映射到车身上的四个不同位置）。 在此方案中，“车身”网格和“车轮”网格各自只需存储一次，即使最终产品总共会展示五个网格。
 
@@ -139,7 +139,7 @@ ms.locfileid: "9048434"
 
 ## <a name="related-topics"></a>相关主题
 
-[从应用进行 3D 打印](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
+[从您的应用程序的 3D 打印](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
 [3D 打印 UWP 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 

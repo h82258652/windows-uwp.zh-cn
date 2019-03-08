@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e90e460cf5f5bda7d90447440d76cf6898a83747
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931840"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660202"
 ---
 # <a name="lighting-overview"></a>照明概述
 
@@ -27,7 +27,7 @@ ms.locfileid: "8931840"
 
 光对于渲染场景来说不是必需的，但在没有光的情况下已渲染的场景中的细节是不可见的。 如果对无照明的场景进行渲染，充其量只会显露出场景中物体的轮廓。 这对大多数情况来说不够详细。
 
-## <a name="span-iddirectlightvsambientlightspanspan-iddirectlightvsambientlightspandirect-light-vs-ambient-light"></a><span id="direct_light_vs._ambient_light"></span><span id="DIRECT_LIGHT_VS._AMBIENT_LIGHT"></span>直射光与环境光
+## <a name="span-iddirectlightvsambientlightspanspan-iddirectlightvsambientlightspandirect-light-vs-ambient-light"></a><span id="direct_light_vs._ambient_light"></span><span id="DIRECT_LIGHT_VS._AMBIENT_LIGHT"></span>与环境光线直射光
 
 
 虽然直射光和环境光都能照亮场景中的对象，但它们彼此独立，具有非常不同的效果，并且要求你以完全不同的方式使用它们。
@@ -40,7 +40,7 @@ ms.locfileid: "8931840"
 
 红色、绿色和蓝色分量组合起来形成环境光的最终颜色。 Alpha 分量控制颜色的透明度。 当使用硬件加速或 RGB 仿真时，Alpha 分量会被忽略。
 
-## <a name="span-iddirect3dlightmodelvsnaturespanspan-iddirect3dlightmodelvsnaturespandirect3d-light-model-vs-nature"></a><span id="direct3d_light_model_vs._nature"></span><span id="DIRECT3D_LIGHT_MODEL_VS._NATURE"></span>Direct3D 光模型与现实世界
+## <a name="span-iddirect3dlightmodelvsnaturespanspan-iddirect3dlightmodelvsnaturespandirect3d-light-model-vs-nature"></a><span id="direct3d_light_model_vs._nature"></span><span id="DIRECT3D_LIGHT_MODEL_VS._NATURE"></span>本质上与 Direct3D 浅模型
 
 
 在自然环境中，当光从光源发出后，会被成百上千个对象反射，然后才到达人眼。 每次反射时，都有一些光被表面吸收，一些朝随机方向散射，剩余的光到达另一个表面或进入人眼。 这一过程不断进行，直到光被完全削减，或者被用户感知。
@@ -57,7 +57,7 @@ Direct3D 光模型将光归纳为两种类型：环境光和直射光。 它们�
 
 此外，多边形的材质具有影响多边形如何反射其接收的光的属性。 你设置描述材质如何反射环境光的单一反射率特性，并设置各个特性以确定材质的镜面反射率和漫射率。
 
-## <a name="span-idcolorvaluesforlightsandmaterialsspanspan-idcolorvaluesforlightsandmaterialsspanspan-idcolorvaluesforlightsandmaterialsspancolor-values-for-lights-and-materials"></a><span id="Color_Values_for_Lights_and_Materials"></span><span id="color_values_for_lights_and_materials"></span><span id="COLOR_VALUES_FOR_LIGHTS_AND_MATERIALS"></span>光和材质的颜色值
+## <a name="span-idcolorvaluesforlightsandmaterialsspanspan-idcolorvaluesforlightsandmaterialsspanspan-idcolorvaluesforlightsandmaterialsspancolor-values-for-lights-and-materials"></a><span id="Color_Values_for_Lights_and_Materials"></span><span id="color_values_for_lights_and_materials"></span><span id="COLOR_VALUES_FOR_LIGHTS_AND_MATERIALS"></span>灯和材料的颜色值
 
 
 Direct3D 用四个分量（红、绿、蓝和 Alpha）描述颜色，这四个分量组合起来形成最终的颜色。 每个分量的范围是从 0.0 到 1.0。 虽然光和材质使用相同的结构来描述颜色，但光和材质在使用值的方式上略有不同。
@@ -73,7 +73,7 @@ Direct3D 用四个分量（红、绿、蓝和 Alpha）描述颜色，这四个�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[光和材质](lights-and-materials.md)
+[灯和材料](lights-and-materials.md)
 
  
 

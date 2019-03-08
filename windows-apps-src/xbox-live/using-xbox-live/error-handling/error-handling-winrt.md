@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 错误, 处理
 ms.localizationpriority: medium
 ms.openlocfilehash: e72dfa0b6f98284c240cf6af2dde02439d694b48
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933218"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598632"
 ---
 # <a name="winrt-api-error-handling"></a>WinRT API 错误处理
 
@@ -75,7 +75,7 @@ msvcr110.dll!Concurrency::details::ThreadProxy::ThreadProxyMain(void * lpParamet
 ntdll.dll!RtlUserThreadStart(long (void *) * StartAddress, void * Argument) Line 822    C++
 ```
 
-这些调用堆栈非常混乱。  这也并发运行，那也并发运行…  噢，Microsoft::Xbox::Services::Social::XboxUserProfile 位于调用堆栈中，因此它必定是原因所在。  实际上，这是为无效 Xbox 用户 ID 调用 GetUserProfileAsync 生成的调用堆栈。生成此调用堆栈的示例代码如下所示：
+这些调用堆栈非常混乱。  这也并发运行，那也并发运行…  噢，Microsoft::Xbox::Services::Social::XboxUserProfile 位于调用堆栈中，因此它必定是原因所在。  实际上，这是为无效 Xbox 用户 Id 调用 GetUserProfileAsync 生成的调用堆栈。生成此调用堆栈的示例代码如下所示：
 
 ```cpp
     auto pAsyncOp = requester->ProfileService->GetUserProfileAsync("abc123"); //passing invalid Xbox User Id;
@@ -96,7 +96,7 @@ PPL 创建任务，然后接着创建其他任务。  在以上示例中，creat
 
 涉及到延续任务时，请注意，实际上有两种不同类型的延续任务。  第一种是基于任务的延续任务，它采用与输入参数一样的前一项任务。  此任务始终运行，即便先行任务发生异常。  若要获得先行任务的结果，你必须调用参数上的 .get()。  第二种是基于值的延续任务，它直接接收前一项任务的输出 – 当先行任务发生异常时，基于值的延续任务完全不会运行，除此以外，它是真正的语法糖。
 
-建议：为了防止崩溃，请在延续任务链结束时使用基于任务的延续任务，并包围 try/catch 块中的所有 concurrency::task::get() or concurrency::task::wait() 调用，以处理可恢复的错误。
+建议：若要防止崩溃，请延续链和外侧代码中的所有并发:: task::get() 或并发:: task::wait() 调用 try/catch 块处理可从恢复的错误的末尾使用基于任务的延续。
 
 我们来看几个示例：
 
@@ -219,7 +219,7 @@ PPL 创建任务，然后接着创建其他任务。  在以上示例中，creat
 
 **GetNextAsync() and exceptions** 使用分页 API？  AchievementResult、LeaderboardResult、InventoryItemResult 和 TitleStorageBlobMetadataResult 对象均包含 GetNextAsync() 方法，用于请求下一页结果。  还有一种特殊情况，那就是无其他数据可用，在此情况下，调用 GetNextAsync() 将会触发异常。  在同步执行 GetNextAsync() 时将会发生此异常。  在此情况下，GetNextAsync 方法将会发出 INET_E_DATA_NOT_AVAILABLE (0x800C0007)。
 
-建议：请确保包围 try/catch 块中的 GetNextAsync() 方法调用并妥善处理 INET_E_DATA_NOT_AVAILABLE 情况。
+建议：请确保包装的 GetNextAsync() 方法的 try/catch 块中调用，并适当地处理 INET_E_DATA_NOT_AVAILABLE 用例。
 
 ```cpp
     try

@@ -1,21 +1,21 @@
 ---
-Description: When you finish creating your app's submission and click Submit to the Store, the submission enters the certification step.
+Description: 当您完成创建应用程序的提交并单击提交到应用商店时，提交输入认证步骤。
 title: 应用认证过程
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10，uwp，发布，预处理，认证，版本，挂起，提交，发布，状态，时间
+keywords: windows 10，uwp，发布，预处理，认证，释放，挂起、 提交、 发布状态，时间
 ms.localizationpriority: medium
 ms.openlocfilehash: 733d5ff882d7ed7c574f6fe6fedd28b79c3913d9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941831"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597072"
 ---
 # <a name="the-app-certification-process"></a>应用认证过程
 
-当你完成应用提交的创建并单击**提交到 Microsoft Store** 时，提交将进入认证步骤。 此过程通常在几小时内完成，但在某些情况下可能需要最多三个工作日。 你的提交通过认证后，可能需要 24 小时客户都可以看到该应用一览用于新的提交，或对程序包已更新提交所做的更改。 如果你更新仅更改应用商店一览详细信息，将在一小时内完成发布流程。  发布你的提交，并在仪表板中的应用的状态将为**在应用商店**时，你将收到通知。
+当你完成应用提交的创建并单击**提交到 Microsoft Store** 时，提交将进入认证步骤。 此过程通常在几小时内完成，但在某些情况下可能需要最多三个工作日。 你的提交通过了认证后，它可能需要最多 24 小时的客户，若要查看新提交，或更改更新提交到包的应用程序的列表。 如果你更新仅更改了应用商店列表详细信息，将在不到一小时内完成发布过程。  发布你的提交，并在仪表板中的应用程序的状态将会通知您**在存储区**。
 
 ## <a name="preprocessing"></a>预处理
 
@@ -25,33 +25,33 @@ ms.locfileid: "8941831"
 
 在此阶段中，将执行多个测试：
 
--   **安全性测试：** 第一项测试检查应用包中是否存在病毒和恶意软件。 如果应用未能通过这项测试，你将需要运行最新防病毒软件检查开发系统，然后在安全的系统上重新生成你的应用包。
--   **技术合规性测试：** 由 Windows 应用认证工具包测试技术合规性。 （你应该始终确保先[使用 Windows 应用认证工具包测试应用](../debug-test-perf/windows-app-certification-kit.md)，然后再将其提交至应用商店。）
--   **内容合规性：** 测试所需的时间会有所不同，具体取决于应用的复杂程度、包含的视觉内容量以及近期提交的应用数量。 请务必在[认证说明](notes-for-certification.md)页中提供测试者需注意的全部信息。
+-   **安全测试：** 此第一个测试将检查病毒和恶意软件应用程序的包。 如果应用未能通过这项测试，您将需要运行最新防病毒软件检查开发系统，然后在安全的系统上重新生成您的应用包。
+-   **技术符合性测试：** 通过 Windows 应用认证工具包测试技术符合性。 （你应该始终确保先[使用 Windows 应用认证工具包测试应用](../debug-test-perf/windows-app-certification-kit.md)，然后再将其提交至应用商店。）
+-   **内容合规性：** 花费的时间量大小取决于您的应用程序是多么复杂，它有多大可视内容和最近已提交多少个应用。 请务必在[认证说明](notes-for-certification.md)页中提供测试者需注意的全部信息。
 
 认证流程完成后，你将会收到一份认证报告，告知你的应用是否已通过认证。 如果应用未通过认证，该报告将指出未能通过哪项测试，或者未能满足哪项[策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)。 修复问题后，你可以为应用创建新提交以再次开始认证过程。
 
-## <a name="release"></a>发行
+## <a name="release"></a>发布版本
 
-当你的应用通过认证时，它已准备好移动到**发布**过程。
+在您的应用程序通过认证，它已准备好移动到**发布**过程。
 
-- 如果你已指示应尽快 （默认选项） 发布你的提交，将立即开始发布过程。
-- 如果这是第一次已发布应用，并且你指定**发布日期**[计划](configure-precise-release-scheduling.md#release)部分中，应用将推出根据你的**发布日期**选择。
-- 如果你已使用[发布暂停选项](manage-submission-options.md#publishing-hold-options)指定应不会发布在特定日期之前，我们将等到该日期开始发布过程中，除非你选择**更改发布日期**。
-- 如果你已使用[发布暂停选项](manage-submission-options.md#publishing-hold-options)指定你想要手动发布提交，我们将不会开始发布过程，直到你选择**立即发布**（或选择**更改发布日期**并选取特定日期）。
+- 如果你指出应尽快 （默认选项） 发布你的提交，将立即开始发布过程。
+- 如果这是首次发布应用程序中，并指定**发布日期**中[计划](configure-precise-release-scheduling.md#release)部分中，应用将变为可用根据你**发布日期**的选择。
+- 如果使用过[发布保存选项](manage-submission-options.md#publishing-hold-options)若要指定，它才会释放特定日期之前，我们等着您若要开始发布过程中，此日期前必须选择**更改发布日期**。
+- 如果使用过[发布保存选项](manage-submission-options.md#publishing-hold-options)若要指定你想要手动发布中的提交，我们不会开始发布过程直到选中**立即发布**(或选择**更改发布日期**并选择特定日期)。
 
 
-## <a name="publishing"></a>正在发布
+## <a name="publishing"></a>Publishing
 
 你的应用包已经过数字签名，目的是防止它们在发布后遭到篡改。 一旦开始执行此阶段，你将再也无法取消提交或更改其发布日期。
 
-对于新的应用和更新包括对应用包的更改，将在 24 小时内完成发布流程。 对于仅更改选项，例如应用商店一览详细信息，但不会更改应用的程序包更新，发布过程将需要少于一小时。
+对于新的应用程序和更新包括对应用程序的包的更改，将在 24 小时内完成发布过程。 对于仅更改选项，如应用商店列表详细信息，但不更改应用的包的更新，发布过程将需要一个小时内。
 
-当你的应用处于发布阶段时，你的应用提交的状态列中的**显示详细信息**链接可使你知道你的新的程序包和一览详细信息的应用商店时为每个受支持的操作系统版本上的客户提供。 尚未完成的步骤将显示**挂起**。 你的应用将继续处于发布阶段，直到此过程完成，意味着新的程序包和/或一览详细信息可供所有应用的潜在客户。
+在发布阶段，您的应用程序时**显示详细信息**应用的提交，可以知道当新的包和应用商店列表详细信息可供客户在每个受支持操作系统上的状态列中的链接版本。 尚未完成的步骤将显示**挂起**。 您的应用程序将保留在发布阶段直到完成该过程，也就是说，新的包和/或列表详细信息可供所有应用程序的潜在客户。
 
-## <a name="in-the-store"></a>已在 Microsoft Store 
+## <a name="in-the-store"></a>已在应用商店 
 
-在成功完成上述步骤后，提交的状态将从**正在发布**更改为**已在 Microsoft Store**。 你的提交将在 Microsoft Store 中提供给客户以供其下载（除非你选择了另外的[可发现性](choose-visibility-options.md#discoverability)选项）。 
+在成功完成上述步骤后，提交的状态将从“正在发布”更改为“已在应用商店”。 你的提交将在 Microsoft Store 中提供给客户以供其下载（除非你选择了另外的[可发现性](choose-visibility-options.md#discoverability)选项）。 
 
 > [!NOTE]
 > 我们还会在应用发布后对应用进行抽查，以便可以找出潜在问题并确保你的应用符合所有 [Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)。 如果我们发现任何问题，将通知你该问题及其解决方法（如果适用）或是否已从应用商店中删除。

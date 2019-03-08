@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 输入延迟
 ms.localizationpriority: medium
 ms.openlocfilehash: 537dd6e9d3f300666a0692b66f422ce00dd68460
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934094"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601742"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>优化通用 Windows 平台 (UWP) DirectX 游戏的输入延迟
 
 
 
-输入延迟会大大影响游戏体验，将其优化可使游戏感觉更完美。 此外，适当的输入事件优化可延长电池使用时间。 了解如何选择正确的 CoreDispatcher 输入事件处理选项，以确保你的游戏尽可能流畅地处理输入。
+输入延迟可能会大大影响游戏体验，将其优化可使游戏更美观。 此外，适当的输入事件优化可延长电池寿命。 了解如何选择正确的 CoreDispatcher 输入事件处理选项，以确保你的游戏尽可能流畅地处理输入。
 
 ## <a name="input-latency"></a>输入延迟
 
@@ -60,7 +60,7 @@ ms.locfileid: "8934094"
 
 我们将通过在一个简单的七巧板游戏上进行迭代，来展示上述各种方案的游戏循环的实现。 针对每种实现讨论的决策点、收益和权衡可作为指南，从而帮助你优化应用以实现较短的输入延迟和较高的电源效率。
 
-## <a name="scenario-1-render-on-demand"></a>方案 1：按需渲染
+## <a name="scenario-1-render-on-demand"></a>方案 1：按需呈现
 
 
 七巧板游戏的首次迭代仅在用户移动一片七巧板时更新屏幕。 用户可以将一片七巧板拖到某个位置，或者通过选中它并触摸正确的目标位置来贴靠该七巧板。 在第二种情况中，该七巧板将跳到目标位置，此处没有任何动画或效果。
@@ -91,7 +91,7 @@ void App::Run()
 }
 ```
 
-## <a name="scenario-2-render-on-demand-with-transient-animations"></a>方案 2：按需渲染，并带有过渡动画
+## <a name="scenario-2-render-on-demand-with-transient-animations"></a>方案 2：暂时性的动画中使用按需呈现
 
 
 在第二次迭代中，游戏经过修改，当用户选中一块七巧板并触摸它的正确目标位置时，将出现它越过屏幕到达目标位置的动画。
@@ -139,7 +139,7 @@ void App::Run()
 
 为了支持 **ProcessOneAndAllPending** 和 **ProcessAllIfPresent** 之间的过渡，应用必须跟踪状态以了解是否正在创建动画。 在七巧板应用中，通过添加可在游戏循环期间在 GameState 类上调用的新方法来实现此目的。 游戏循环的动画分支通过调用 GameState 的新 Update 方法来促使动画状态更新。
 
-## <a name="scenario-3-render-60-frames-per-second"></a>方案 3：以 60 帧每秒的速度渲染
+## <a name="scenario-3-render-60-frames-per-second"></a>方案 3：呈现每秒 60 帧
 
 
 在第三次迭代中，该应用显示一个计时器，它将向用户显示他们已在七巧板游戏上使用的时间。 因为它显示运行时间的单位精确到毫秒，所以它必须以 60 帧每秒的速度渲染才能保持不断更新显示内容。
@@ -177,7 +177,7 @@ void App::Run()
 
 然而，这种开发的便利需要付出代价。 以 60 帧每秒的速度呈现需要比按需呈现使用更多的电源。 在游戏更改每帧显示的内容时，最好是使用 **ProcessAllIfPresent**。 它还会使输入延迟增加多达 16.7 毫秒，因为应用现在会在屏幕的同步间隔（而不是在 **ProcessEvents** 时）阻止游戏循环。 因为每帧仅处理一次队列 (60 Hz)，所以一些输入事件可能会失败。
 
-## <a name="scenario-4-render-60-frames-per-second-and-achieve-the-lowest-possible-input-latency"></a>方案 4：以 60 帧每秒的速度渲染，并实现尽可能短的输入延迟
+## <a name="scenario-4-render-60-frames-per-second-and-achieve-the-lowest-possible-input-latency"></a>方案 4:呈现每秒 60 帧和实现可能输入的最低延迟
 
 
 一些游戏可以忽略或补偿增加的输入延迟（如方案 3 中所见）。 然而，如果较短的输入延迟对于游戏体验和玩家感受反馈十分重要，以 60 帧每秒的速度渲染的游戏需要在单独线程上处理输入。
@@ -233,7 +233,7 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-Microsoft Visual Studio2015 中的**DirectX 11 和 XAML 应用 (通用 Windows)** 模板将游戏循环拆分为多个线程以类似的方式。 它使用 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 对象启动专用于处理输入的线程，还创建独立于 XAML UI 线程的呈现线程。 有关这些模板的更多详细信息，请阅读[从模板创建通用 Windows 平台和 DirectX 游戏项目](user-interface.md)。
+**DirectX 11 和 XAML 应用 (通用 Windows)** Microsoft Visual Studio 2015 中的模板将游戏循环拆分为多个线程中类似的方式。 它使用 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 对象启动专用于处理输入的线程，还创建独立于 XAML UI 线程的呈现线程。 有关这些模板的更多详细信息，请阅读[从模板创建通用 Windows 平台和 DirectX 游戏项目](user-interface.md)。
 
 ## <a name="additional-ways-to-reduce-input-latency"></a>缩短输入延迟的其他方法
 
@@ -246,13 +246,13 @@ DirectX 游戏通过更新用户在屏幕上看到的内容来响应用户输入
 
 ![图 1 DirectX 中的输入延迟 ](images/input-latency1.png)
 
-在 Windows8.1，DXGI 引入了用于交换链，它使应用即可轻松地缩短该延迟无需实现启发以保持 Present 队列为空的**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**标志。 使用该标志创建的交换链将作为可等待的交换链进行引用。 图 2 显示了使用可等待的交换链时输入事件的大致生命周期和响应情况：
+在 Windows 8.1 引入 DXGI **DXGI\_交换\_链\_标志\_帧\_延迟\_WAITABLE\_对象**交换的标志链，允许应用程序轻松地将这种延迟减少而无需实现试探法以保持存在队列为空。 使用该标志创建的交换链将作为可等待的交换链进行引用。 图 2 显示了使用可等待的交换链时输入事件的大致生命周期和响应情况：
 
 图 2
 
 ![图 2 DirectX 中的输入延迟可等待](images/input-latency2.png)
 
-我们可从以上图表中看出，如果这些游戏可以在 16.7 毫秒的预算时间（由屏幕的刷新频率定义）内渲染和呈现每帧画面，就有可能缩短整整 2 帧的输入延迟。 七巧板示例使用可等待的交换链并控制 Present 队列限制，方法是调用：` m_deviceResources->SetMaximumFrameLatency(1);`
+我们可从以上图表中看出，如果这些游戏可以在 16.7 毫秒的预算时间（由屏幕的刷新频率定义）内渲染和呈现每帧画面，就有可能缩短整整 2 帧的输入延迟。 会玩拼图游戏示例使用可等待交换链，并通过调用控件存在的队列限制：` m_deviceResources->SetMaximumFrameLatency(1);`
 
  
 

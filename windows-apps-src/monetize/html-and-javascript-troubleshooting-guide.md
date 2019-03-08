@@ -7,25 +7,25 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, advertising, AdControl, 疑难解答, HTML, javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 01e2781b64629e24cba9b4ac02629a79ee4d998b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919627"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633232"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>HTML 和 JavaScript 疑难解答指南
 
 本主题包含 JavaScript/HTML 应用中有关 Microsoft Advertising 库的常见开发问题的解决方案。
 
 * [HTML](#html)
-  * [AdControl 不显示](#html-notappearing)
-  * [黑盒闪烁和消失](#html-blackboxblinksdisappears)
-  * [广告不刷新](#html-adsnotrefreshing)
+  * [AdControl 中未显示](#html-notappearing)
+  * [黑色框会使闪烁并消失](#html-blackboxblinksdisappears)
+  * [不刷新广告](#html-adsnotrefreshing)
 
 * [JavaScript](#js)
-  * [AdControl 不显示](#js-adcontrolnotappearing)
-  * [黑盒闪烁和消失](#js-blackboxblinksdisappears)
-  * [广告不刷新](#js-adsnotrefreshing)
+  * [AdControl 中未显示](#js-adcontrolnotappearing)
+  * [黑色框会使闪烁并消失](#js-blackboxblinksdisappears)
+  * [不刷新广告](#js-adsnotrefreshing)
 
 ## <a name="html"></a>HTML
 
@@ -33,7 +33,7 @@ ms.locfileid: "8919627"
 
 ### <a name="adcontrol-not-appearing"></a>AdControl 不显示
 
-1.  确保在 Package.appxmanifest 中已选择“Internet(客户端)”**** 功能。
+1.  确保在 Package.appxmanifest 中选择“Internet（客户端）”功能。
 
 2.  确保存在 JavaScript 参考。 如果 &lt;head&gt; 部分没有 ad.js 参考（位于 default.js 参考之后），**AdControl** 将无法显示，并且在生成期间还会发生错误。
 
@@ -46,7 +46,7 @@ ms.locfileid: "8919627"
     </head>
     ```
 
-3.  检查应用程序 ID 和广告单元 ID。 这些 Id 必须匹配的应用程序 ID 和你在合作伙伴中心中获得的广告单元 ID。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
+3.  检查应用程序 ID 和广告单元 ID。 这些 Id 必须匹配的应用程序 ID 和广告单元 ID 在合作伙伴中心中获取。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -120,7 +120,7 @@ ms.locfileid: "8919627"
     </div>
     ```
 
-10. 查看 **AdControl** 的父元素。 如果 **AdControl** 驻留在父元素中，则父元素必须处于活动状态并且可见。
+10. 检查 **AdControl** 的父元素。 如果 **AdControl** 驻留在父元素中，则父元素必须处于活动状态并且可见。
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -142,7 +142,7 @@ ms.locfileid: "8919627"
 
 ### <a name="black-box-blinks-and-disappears"></a>黑盒闪烁和消失
 
-1.  仔细检查前面的 [AdControl 不显示](#html-notappearing)部分中的所有步骤。
+1.  仔细检查之前[未显示的 AdControl](#html-notappearing) 部分中的所有步骤。
 
 2.  处理 **onErrorOccurred** 事件，并使用传递到事件处理程序的消息确定是否发生了错误以及引发了何种错误。 更多详细信息可在 [JavaScript 中的错误处理演练](error-handling-in-javascript-walkthrough.md)中找到。
 
@@ -161,7 +161,7 @@ ms.locfileid: "8919627"
     </div>
     ```
 
-    导致黑盒的最常见错误是“无广告可用”。 此错误意味着请求返回不了任何广告。
+    导致黑盒的最常见错误是“无可用广告”。 此错误意味着请求返回不了任何广告。
 
 3.  **AdControl** 行为正常。 默认情况下，**AdControl** 在它无法显示广告时会折叠。 如果其他元素均是相同父元素的子元素，它们可能会移动以填充折叠 **AdControl** 的间距，并在下一次提出请求时展开。
 
@@ -223,7 +223,7 @@ ms.locfileid: "8919627"
 
 ### <a name="adcontrol-not-appearing"></a>AdControl 不显示
 
-1.  确保在 Package.appxmanifest 中选择“Internet (客户端)”**** 功能。
+1.  确保在 Package.appxmanifest 中选择“Internet（客户端）”功能。
 
 2.  确保 **AdControl** 已实例化。 如果 **AdControl** 未实例化。 它将不可用。
 
@@ -271,7 +271,7 @@ ms.locfileid: "8919627"
     });  
     ```
 
-4.  检查应用程序 ID 和广告单元 ID。 这些 Id 必须匹配的应用程序 ID 和你在合作伙伴中心中获得的广告单元 ID。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
+4.  检查应用程序 ID 和广告单元 ID。 这些 Id 必须匹配的应用程序 ID 和广告单元 ID 在合作伙伴中心中获取。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript
@@ -330,7 +330,7 @@ ms.locfileid: "8919627"
     );
     ```
 
-    导致黑盒的最常见错误是“无广告可用”。 此错误意味着请求返回不了任何广告。
+    导致黑盒的最常见错误是“无可用广告”。 此错误意味着请求返回不了任何广告。
 
 3.  **AdControl** 行为正常。 有时如果广告不刷新，相同的广告会连续出现多次。
 

@@ -1,5 +1,5 @@
 ---
-Description: Provides a list by function of some of the controls that you can use in your apps.
+Description: 提供了按功能列出的可在应用中使用的某些控件列表。
 title: 按功能列出控件
 ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
 label: Controls by function
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a0a267385668a276fc776c5f5d495b27ae72a2b3
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037299"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611512"
 ---
 # <a name="controls-by-function"></a>按功能列出控件
 
@@ -26,9 +26,9 @@ ms.locfileid: "9037299"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果你安装了该<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/NavigationView">打开该应用，了解 NavigationView 的实际</a>到 </p>
+    <p>如果有<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序安装，请单击此处<a href="xamlcontrolsgallery:/item/NavigationView">打开应用，请参阅 NavigationView 中操作</a> </p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -50,9 +50,9 @@ ms.locfileid: "9037299"
 
 ![应用栏按钮图标](images/controls/app-bar-buttons.png) 
 
-参考：[AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx)、[SymbolIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.symbolicon.aspx)、[BitmapIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.bitmapicon.aspx)、[FontIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.fonticon.aspx)、[PathIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pathicon.aspx) 
+参考：[AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx)， [SymbolIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.symbolicon.aspx)， [BitmapIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.bitmapicon.aspx)， [FontIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.fonticon.aspx)， [PathIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pathicon.aspx) 
 
-设计和操作方法：[应用栏和命令栏控件指南](app-bars.md) 
+设计和操作方法：[应用程序栏和命令栏控件指南](app-bars.md) 
 
 示例代码：[XAML 命令示例](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
@@ -84,7 +84,7 @@ ms.locfileid: "9037299"
 ```
 参考：[CommandBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx) 
 
-设计和操作方法：[应用栏和命令栏控件指南](app-bars.md)
+设计和操作方法：[应用程序栏和命令栏控件指南](app-bars.md)
 
 示例代码：[XAML 命令示例](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
@@ -100,11 +100,11 @@ ms.locfileid: "9037299"
         Click="Button_Click" />
 ```
 
-参考：[Button](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.button.aspx) 
+参考：[按钮](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.button.aspx) 
 
-设计和操作方法：[按钮控件指南](buttons.md) 
+设计和操作方法：[按钮控制指南](buttons.md) 
 
-### <a name="hyperlink"></a>超链接
+### <a name="hyperlink"></a>Hyperlink
 请参阅“超链接”按钮。
 
 ### <a name="hyperlink-button"></a>“超链接”按钮
@@ -119,7 +119,7 @@ ms.locfileid: "9037299"
 
 参考：[HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
 
-设计和操作方法：[超链接控件指南](hyperlinks.md)
+设计和操作方法：[超链接控制指南](hyperlinks.md)
 
 ### <a name="repeat-button"></a>重复按钮
 从按下到释放为止重复引发 **Click** 事件的按钮。 
@@ -133,7 +133,7 @@ ms.locfileid: "9037299"
 
 参考：[RepeatButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.repeatbutton.aspx) 
 
-设计和操作方法：[按钮控件指南](buttons.md) 
+设计和操作方法：[按钮控制指南](buttons.md) 
 
 ## <a name="collectiondata-controls"></a>集合/数据控件
 
@@ -150,7 +150,7 @@ ms.locfileid: "9037299"
 
 参考：[FlipView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx) 
 
-设计和操作方法：[翻转视图控件指南](flipview.md) 
+设计和操作方法：[翻转视图控制指南](flipview.md) 
 
 ### <a name="grid-view"></a>网格视图
 显示可在行和列中垂直滚动的项目集合的控件。
@@ -206,7 +206,7 @@ ms.locfileid: "9037299"
 
 参考：[CalendarDatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx) 
 
-设计和操作方法：[日历、日期和时间控件](date-and-time.md)
+设计和操作方法：[日历、 日期和时间控件](date-and-time.md)
  
 ### <a name="calendar-view"></a>日历视图
 允许用户选择单个或多个日期的可配置日历屏幕。
@@ -217,7 +217,7 @@ ms.locfileid: "9037299"
 
 参考：[CalendarView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx) 
 
-设计和操作方法：[日历、日期和时间控件](date-and-time.md) 
+设计和操作方法：[日历、 日期和时间控件](date-and-time.md) 
 
 ### <a name="date-picker"></a>日期选取器
 使用户可以选择日期的控件。
@@ -230,7 +230,7 @@ ms.locfileid: "9037299"
 
 参考：[DatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx) 
 
-设计和操作方法：[日历、日期和时间控件](date-and-time.md)
+设计和操作方法：[日历、 日期和时间控件](date-and-time.md)
  
 ### <a name="time-picker"></a>时间选取器
 使用户可以设置时间值的控件。
@@ -243,7 +243,7 @@ ms.locfileid: "9037299"
 
 参考：[TimePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx) 
 
-设计和操作方法：[日历、日期和时间控件](date-and-time.md)
+设计和操作方法：[日历、 日期和时间控件](date-and-time.md)
 
 ## <a name="flyouts"></a>浮出控件
 
@@ -284,7 +284,7 @@ ms.locfileid: "9037299"
 </MenuFlyout>
 ```
 
-参考：[MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx)、[MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)、[MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)、[ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
+参考：[MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx)， [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)， [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)， [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
 
 设计和操作方法：[菜单和上下文菜单](menus.md) 
 
@@ -307,11 +307,11 @@ ms.locfileid: "9037299"
         ToolTipService.ToolTip="Click to perform action" />
 ```
 
-参考：[ToolTip](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltip.aspx)、[ToolTipService](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltipservice.aspx) 
+参考：[工具提示](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltip.aspx)， [ToolTipService](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltipservice.aspx) 
 
-设计和操作指南：工具提示指南 
+设计和操作方法：工具提示指南 
 
-## <a name="images"></a>图像
+## <a name="images"></a>映像
 
 ### <a name="image"></a>图像
 显示图像的控件。
@@ -320,9 +320,9 @@ ms.locfileid: "9037299"
 <Image Source="Assets/Logo.png" />
 ```
 
-参考：[Image](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx) 
+参考：[映像](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx) 
 
-设计和操作指南：[图像和 ImageBrush](images-imagebrushes.md) 
+设计和操作方法：[图像和 ImageBrush](images-imagebrushes.md) 
 
 示例代码：[XAML 图像示例](https://go.microsoft.com/fwlink/p/?linkid=226867)
 
@@ -349,11 +349,11 @@ ms.locfileid: "9037299"
 <Rectangle/>
 ```
 
-参考：[Shapes](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx) 
+参考：[形状](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx) 
 
-操作方法：[绘制形状](../../graphics/drawing-shapes.md) 
+如何执行此操作：[绘制形状](../../graphics/drawing-shapes.md) 
 
-示例代码：[基于 XAML 矢量的绘图示例](https://go.microsoft.com/fwlink/p/?linkid=226866)
+示例代码：[XAML 的基于矢量的绘图示例](https://go.microsoft.com/fwlink/p/?linkid=226866)
 
 ## <a name="layout-controls"></a>布局控件
 
@@ -413,7 +413,7 @@ ms.locfileid: "9037299"
 </Grid>
 ```
 
-参考：[Grid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)
+参考：[网格](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)
  
 ### <a name="panning-scroll-viewer"></a>平移滚动查看器
 请参阅滚动查看器。
@@ -453,7 +453,7 @@ ms.locfileid: "9037299"
 
 设计和操作方法：[滚动和平移控件指南](scroll-controls.md) 
 
-示例代码：[XAML 滚动、平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=238577)
+示例代码：[XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=238577)
 
 ### <a name="stack-panel"></a>堆栈面板
 可以将子元素按水平或垂直方向排列到单行中的布局面板。
@@ -515,7 +515,7 @@ ms.locfileid: "9037299"
 
 ## <a name="media-controls"></a>媒体控件
 
-### <a name="audio"></a>音频
+### <a name="audio"></a>Audio
 请参阅媒体元素。
 
 ### <a name="media-element"></a>媒体元素
@@ -527,7 +527,7 @@ ms.locfileid: "9037299"
 
 参考：[MediaElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx) 
 
-设计和操作方法：[媒体元素控件指南](media-playback.md)
+设计和操作方法：[媒体元素控制指南](media-playback.md)
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 可为 MediaElement 提供播放控件的控件。
@@ -540,7 +540,7 @@ ms.locfileid: "9037299"
 
 参考：[MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) 
 
-设计和操作方法：[媒体元素控件指南](media-playback.md) 
+设计和操作方法：[媒体元素控制指南](media-playback.md) 
 
 示例代码：[媒体传输控件示例](https://go.microsoft.com/fwlink/p/?LinkId=620023)
 
@@ -551,11 +551,11 @@ ms.locfileid: "9037299"
 
 ### <a name="navigationview"></a>NavigationView
 
-适应性容器和实现的左侧的导航窗格中，顶部导航和表模式的灵活的导航模型。
+一个自适应的容器和灵活的导航模型，用于实现的左侧的导航窗格中，顶部导航栏和选项卡模式。
 
-参考： [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
+参考：[NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
-设计和操作方法： [NavigationView 控件指南](navigationview.md)
+设计和操作方法：[NavigationView 控制指南](navigationview.md)
 
 ### <a name="splitview"></a>SplitView
 
@@ -576,7 +576,7 @@ ms.locfileid: "9037299"
 
 参考：[SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 
 
-设计和操作方法：[拆分视图控件指南](split-view.md)
+设计和操作方法：[拆分视图控制指南](split-view.md)
 
 ### <a name="web-view"></a>Web 视图
 
@@ -610,9 +610,9 @@ ms.locfileid: "9037299"
 
 参考：[SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
 
-设计和操作方法：[语义式缩放控件指南](semantic-zoom.md)
+设计和操作方法：[语义式缩放控制指南](semantic-zoom.md)
 
-示例代码：[XAML GridView 组和 SemanticZoom 示例](https://go.microsoft.com/fwlink/p/?linkid=226564)
+示例代码：[XAML GridView 分组和 SemanticZoom 示例](https://go.microsoft.com/fwlink/p/?linkid=226564)
 
 ## <a name="progress-controls"></a>进度控件
 
@@ -661,7 +661,7 @@ ms.locfileid: "9037299"
 
 参考：[AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
 
-设计和操作方法：[文本控件](text-controls.md)、[自动建议框控件指南](auto-suggest-box.md)
+设计和操作方法：[文本控件](text-controls.md)，[自动建议框控制指南](auto-suggest-box.md)
 
 示例代码：[AutoSuggestBox 迁移示例](https://go.microsoft.com/fwlink/p/?LinkId=619996)
 
@@ -680,9 +680,9 @@ ms.locfileid: "9037299"
 
 参考：[PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx) 
 
-设计和操作方法：[文本控件](text-controls.md)、[密码框控件指南](password-box.md) 
+设计和操作方法：[文本控件](text-controls.md)，[密码框控制指南](password-box.md) 
 
-示例代码：[XAML 文本显示示例](https://go.microsoft.com/fwlink/p/?linkid=238579)、[XAML 文本编辑示例](https://go.microsoft.com/fwlink/p/?linkid=251417)
+示例代码：[XAML 文本显示示例](https://go.microsoft.com/fwlink/p/?linkid=238579)， [XAML 文本编辑示例](https://go.microsoft.com/fwlink/p/?linkid=251417)
 
 ### <a name="rich-edit-box"></a>富编辑框
 使用户可以编辑带有格式化文本、超链接和图像等内容的富文本文档的控件。
@@ -693,7 +693,7 @@ ms.locfileid: "9037299"
 
 参考：[RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) 
 
-设计和操作方法：[文本控件](text-controls.md)、[可编辑对话框控件指南](rich-edit-box.md)
+设计和操作方法：[文本控件](text-controls.md)，[格式文本编辑框控制指南](rich-edit-box.md)
 
 示例代码：[XAML 文本示例](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
@@ -715,9 +715,9 @@ ms.locfileid: "9037299"
 <TextBlock x:Name="textBlock1" Text="I am a TextBlock"/>
 ```
 
-参考：[TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、[RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx) 
+参考：[TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)， [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx) 
 
-设计和操作方法：[文本控件](text-controls.md)、[文本块控件指南](text-block.md)、[RTF 块控件指南](rich-text-block.md)
+设计和操作方法：[文本控件](text-controls.md)，[文本块控制指南](text-block.md)，[富文本块控制指南](rich-text-block.md)
 
 示例代码：[XAML 文本示例](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
@@ -733,7 +733,7 @@ ms.locfileid: "9037299"
 
 参考：[TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 
 
-设计和操作方法：[文本控件](text-controls.md)、[文本框控件指南](text-box.md) 
+设计和操作方法：[文本控件](text-controls.md)， [Text box 控件指南](text-box.md) 
 
 示例代码：[XAML 文本示例](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
@@ -751,7 +751,7 @@ ms.locfileid: "9037299"
 
 参考：[CheckBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx) 
 
-设计和操作方法：[复选框控件指南](checkbox.md) 
+设计和操作方法：[复选框控制指南](checkbox.md) 
 
 ### <a name="combo-box"></a>组合框
 用户可以从中进行选择的项目下拉列表。
@@ -816,7 +816,7 @@ ms.locfileid: "9037299"
 <Slider x:Name="slider1" Width="100" ValueChanged="Slider_ValueChanged" />
 ```
 
-参考：[Slider](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) 
+参考：[滑块](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) 
 
 设计和操作方法：[滑块控件指南](slider.md) 
 
@@ -830,7 +830,7 @@ ms.locfileid: "9037299"
 
 参考：[ToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx)
 
-设计和操作方法：[切换控件指南](toggles.md) 
+设计和操作方法：[切换控制指南](toggles.md) 
 
 ### <a name="toggle-switch"></a>切换开关
 可以在 2 种状态之间进行切换的一种开关。
@@ -845,4 +845,4 @@ ms.locfileid: "9037299"
 
 参考：[ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.toggleswitch.aspx) 
 
-设计和操作方法：[切换控件指南](toggles.md) 
+设计和操作方法：[切换控制指南](toggles.md) 

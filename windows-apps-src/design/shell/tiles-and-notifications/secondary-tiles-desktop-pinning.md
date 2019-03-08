@@ -1,5 +1,5 @@
 ---
-Description: Windows desktop applications can pin secondary tiles thanks to the Desktop Bridge!
+Description: 借助于桌面桥，Windows 桌面应用程序可以固定辅助磁贴！
 title: 从桌面应用程序固定辅助磁贴
 label: Pin secondary tiles from desktop application
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, 桌面桥, 辅助磁贴, 固定, 快速入门, 代码示例, 示例, secondarytile, 桌面应用程序, win32, winforms, wpf
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e713f37cd5e5fbf4b2771e76fb7e132b5976629
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924392"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609622"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>从桌面应用程序固定辅助磁贴
 
@@ -22,12 +22,12 @@ ms.locfileid: "8924392"
 ![辅助磁贴的屏幕截图](images/secondarytiles.png)
 
 > [!IMPORTANT]
-> **需要 Fall Creators Update**：必须面向 SDK 16299 并运行版本 16299 或更高版本，才能从桌面桥应用固定辅助磁贴。
+> **需要 Fall Creators Update**:您必须为目标 SDK 版本 16299 和运行生成 16299 或更高版本将辅助磁贴固定从桌面桥应用程序。
 
 从 WPF 或 WinForms 应用程序中添加辅助磁贴非常类似于纯净版 UWP 应用的情况。 唯一的区别是，你必须指定主窗口句柄 (HWND)。 这是因为在固定磁贴时，Windows 会显示一个模式对话框，并请求用户确认他们是否想要固定磁贴。 如果桌面应用程序没有为 SecondaryTile 对象配置所有者窗口，则 Windows 不知道在哪里绘制对话框，因此操作将失败。
 
 
-## <a name="package-your-app-with-desktop-bridge"></a>用桌面桥打包你的应用
+## <a name="package-your-app-with-desktop-bridge"></a>用桌面桥打包应用
 
 如果你未使用桌面桥打包你的应用，则在使用任何 UWP API 之前，[你必须先执行此操作](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)。
 
@@ -90,14 +90,14 @@ bool isPinned = await tile.RequestCreateAsync();
 ## <a name="send-tile-notifications"></a>发送磁贴通知
 
 > [!IMPORTANT]
-> **需要 2018 年 4 月版本 17134.81 或更高版本**：必须运行版本 17134.81 或更高版本，才能从桌面桥应用向辅助磁贴发送磁贴或锁屏提醒通知。 在 17134.81 服务更新之前，从桌面桥应用向辅助磁贴发送磁贴或锁屏提醒通知时会出现 0x80070490 *未找到元素* 异常。
+> **2018 年 4 月 17134.81 或更高版本需要**:您必须运行生成 17134.81 或更高版本将从桌面桥应用磁贴或徽章通知发送到辅助磁贴。 在 17134.81 服务更新之前，从桌面桥应用向辅助磁贴发送磁贴或锁屏提醒通知时会出现 0x80070490 *未找到元素* 异常。
 
 发送磁贴或锁屏提醒通知的方法与 UWP 应用相同。 要开始使用，请参阅[发送本地磁贴通知](sending-a-local-tile-notification.md)。
 
 
 ## <a name="resources"></a>资源
 
-* [完整代码示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
+* [完整的代码示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
 * [辅助磁贴概述](secondary-tiles.md)
 * [固定辅助磁贴 (UWP)](secondary-tiles-pinning.md)
 * [桌面桥](https://developer.microsoft.com/windows/bridges/desktop)

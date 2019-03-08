@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 应用内购买, IAP, 收据, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 9449a2dd265128a83f7840872ce4995df05a4e78
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047249"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605722"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>使用收据验证产品购买
 
@@ -112,7 +112,7 @@ ms.locfileid: "9047249"
 
 **Receipt** 具有以下必属性。
 
-|  属性  |  说明   |
+|  属性  |  描述   |
 |-------------|-------------------|
 |  **版本**  |    收据的版本号。            |
 |  **CertificateId**  |     用于对收据进行签名的证书指纹。          |
@@ -127,7 +127,7 @@ ms.locfileid: "9047249"
 
 **AppReceipt** 具有以下属性。
 
-|  属性  |  说明   |
+|  属性  |  描述   |
 |-------------|-------------------|
 |  **Id**  |    标识购买。           |
 |  **AppId**  |     操作系统用于该应用的程序包系列名称值。           |
@@ -142,7 +142,7 @@ ms.locfileid: "9047249"
 
 **ProductReceipt** 具有以下属性。
 
-|  属性  |  说明   |
+|  属性  |  描述   |
 |-------------|-------------------|
 |  **Id**  |    标识购买。           |
 |  **AppId**  |     标识应用，用户通过该应用进行购买。           |

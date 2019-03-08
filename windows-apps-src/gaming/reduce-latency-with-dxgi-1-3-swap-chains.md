@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 延迟, dxgi, 交换链, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: acb5c58eebafa53fe140442550356f7eb7534efe
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047166"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594912"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>利用 DXGI 1.3 交换链减少延迟
 
@@ -24,18 +24,18 @@ ms.locfileid: "9047166"
 
 使用翻转模型交换链，当你的游戏调用 [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) 时，会将后台缓冲区“翻转”进行排队。 当呈现循环调用 Present() 时，系统会阻止线程，直到显示完前一帧为止，从而为在新帧显示之前将其排入队列腾出了空间。 这会导致游戏绘制帧的时间，以及系统允许游戏显示该帧的时间之间的延迟增加。 在很多情况下，系统将会达到一个稳定的平衡状态，在这种状态下，游戏始终会在呈现帧和呈现下一帧之间等待一个完整的额外帧。 最好等到系统准备好接受新帧，然后再根据当前数据呈现该帧并立即将其排队。
 
-使用 [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076) 标记创建一个可等待的交换链。 以这种方式创建的交换链可以在系统准备好接收新帧时通知你的呈现循环。 这样就允许你的游戏根据当前数据进行呈现，然后立即将结果放入显示队列中。
+创建具有一个可等待交换链[ **DXGI\_交换\_链\_标志\_帧\_延迟\_WAITABLE\_对象**](https://msdn.microsoft.com/library/windows/desktop/bb173076)标志。 以这种方式创建的交换链可以在系统准备好接收新帧时通知你的呈现循环。 这样就允许你的游戏根据当前数据进行呈现，然后立即将结果放入显示队列中。
 
-## <a name="step-1-create-a-waitable-swap-chain"></a>步骤 1：创建一个可等待的交换链
+## <a name="step-1-create-a-waitable-swap-chain"></a>第 1 步：创建一个可等待交换链
 
 
-在调用 [**CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) 时指定 [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076) 标记。
+指定[ **DXGI\_交换\_链\_标志\_帧\_延迟\_WAITABLE\_对象**](https://msdn.microsoft.com/library/windows/desktop/bb173076)在调用时的标志[ **CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559)。
 
 ```cpp
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **注意**与某些标志，此标记不能添加或删除使用[**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577)。 如果此标记的设置方式与创建交换链时不同，DXGI 会返回一个错误代码。
+> **请注意**  与一些标志，此标志不能添加或删除使用[ **ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577)。 如果此标记的设置方式与创建交换链时不同，DXGI 会返回一个错误代码。
 
  
 
@@ -68,7 +68,7 @@ HRESULT hr = m_swapChain->ResizeBuffers(
 //    );
 ```
 
-## <a name="step-3-get-the-waitable-object-from-the-swap-chain"></a>步骤 3：从交换链获取可等待对象
+## <a name="step-3-get-the-waitable-object-from-the-swap-chain"></a>步骤 3:从交换链中获取可等待对象
 
 
 调用 [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309) 以检索等待句柄。 等待句柄是一个指向可等待对象的指针。 存储此句柄以供你的呈现循环使用。
@@ -80,7 +80,7 @@ HRESULT hr = m_swapChain->ResizeBuffers(
 m_frameLatencyWaitableObject = swapChain2->GetFrameLatencyWaitableObject();
 ```
 
-## <a name="step-4-wait-before-rendering-each-frame"></a>步骤 4：等待呈现每个帧
+## <a name="step-4-wait-before-rendering-each-frame"></a>步骤 4：呈现的每个帧之前等待
 
 
 你的呈现循环应等待交换链通过可等待对象发送信号来开始呈现每个帧。 这包括使用交换链呈现的第一个帧。 使用 [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036)（提供了在步骤 2 中检索的等待句柄）来发信号通知开始每个帧。
@@ -151,7 +151,7 @@ void DX::DeviceResources::WaitOnSwapChain()
 * [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309)
 * [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036)
 * [**Windows.System.Threading**](https://msdn.microsoft.com/library/windows/apps/br229642)
-* [使用 C++ 进行异步编程](https://msdn.microsoft.com/library/windows/apps/mt187334)
+* [C + + 中的异步编程](https://msdn.microsoft.com/library/windows/apps/mt187334)
 * [进程和线程](https://msdn.microsoft.com/library/windows/desktop/ms684841)
 * [同步](https://msdn.microsoft.com/library/windows/desktop/ms686353)
 * [使用事件对象 (Windows)](https://msdn.microsoft.com/library/windows/desktop/ms686915)

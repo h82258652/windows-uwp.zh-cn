@@ -7,33 +7,33 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c2280fd7234fc41ee02dc17909bda8d7af0e1b9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049092"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602072"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>绑定分层数据和创建大纲/细节视图
 
 
 
-> **注意**另请参阅[大纲/细节示例](https://go.microsoft.com/fwlink/p/?linkid=619991)。
+> **请注意**  另请参阅[母版/详细信息示例](https://go.microsoft.com/fwlink/p/?linkid=619991)。
 
 你可以通过将项目控件绑定到 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 实例（它们绑定在同一个链中），从而生成分层数据的多级主视图/详细信息视图（也称为列表详细信息视图）。 在本主题中，我们将尽可能使用 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)，并根据需要使用更为灵活（但性能较低）的 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
-通用 Windows 平台 (UWP) 应用的一个常见结构就是当用户在主列表中进行选择时导航到不同的详细信息页面。 当你想提供某个层次结构中每个级别上每个项目的丰富视觉表示时，该功能非常有用。 另一种选择是在一个页面上显示多级数据。 当你要显示几个简单的列表，方便用户快速下拉到感兴趣的项目时，该功能非常有用。 本主题介绍如何实现此交互。 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 实例将跟踪各分层级别的当前选择。
+通用 Windows 平台 (UWP) 应用的一个常见结构就是当用户在主列表中进行选择时导航到不同的详细信息页面。 当你想提供某个层次结构中每个级别上每个项目的丰富视觉表示时，该功能非常有用。 另一种选择是在一个页面上显示多级数据。 当你要显示几个简单的列表，方便用户快速下拉到感兴趣的项目时，该功能非常有用。 本主题介绍如何实现此交互。 [  **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 实例将跟踪各分层级别的当前选择。
 
 我们将创建一个有关运动团队的层次结构视图，它分为联盟、分支和团队的列表，并包含团队详细信息视图。 当你从任一列表中选择一个项目时，会自动更新后续视图。
 
 ![体育运动层次结构的主视图/详细信息视图](images/xaml-masterdetails.png)
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
-此主题假设你知晓如何创建基本的 UWP 应用。 有关创建你的第一个 UWP 应用的说明，请参阅[使用 C# 或 Visual Basic 创建你的第一个 UWP 应用](https://msdn.microsoft.com/library/windows/apps/Hh974581)。
+此主题假设你知道如何创建基本的 UWP 应用。 有关创建你的第一个 UWP 应用的说明，请参阅[使用 C# 或 Visual Basic 创建你的第一个 UWP 应用](https://msdn.microsoft.com/library/windows/apps/Hh974581)。
 
 ## <a name="create-the-project"></a>创建项目
 
-创建一个新的“空白应用程序(Windows 通用)”**** 项目。 将其命名为“MasterDetailsBinding”。
+创建一个新的“空白应用程序(Windows 通用)”项目。 将其命名为“MasterDetailsBinding”。
 
 ## <a name="create-the-data-model"></a>创建数据模型
 

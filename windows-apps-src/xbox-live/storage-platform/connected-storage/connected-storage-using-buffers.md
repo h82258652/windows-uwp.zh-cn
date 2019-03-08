@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
 ms.localizationpriority: medium
 ms.openlocfilehash: 3df95e4807e8d3457143e67eebfb62011bf365cc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945442"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595022"
 ---
 # <a name="working-with-connected-storage-buffers"></a>使用连接存储缓冲区
 
@@ -19,7 +19,7 @@ ms.locfileid: "8945442"
 
 ### <a name="to-get-a-pointer-to-a-buffer-instances-data"></a>要获取指向缓冲区实例数据的指针
 
-1.  使用 **reinterpret\_cast** 将缓冲区实例强制转换为 **IUnknown**。
+1.  使用**重新解释\_强制转换**若要强制转换为的缓冲区实例**IUnknown**。
 
 ```cpp
         IUnknown* unknown = reinterpret_cast<IUnknown*>(buffer);

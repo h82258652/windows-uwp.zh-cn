@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, 开发人员计划, 创意者
 ms.localizationpriority: medium
 ms.openlocfilehash: 05abd3f28328f4418f5a8a772049b3869b488ffc
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115505"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603882"
 ---
 # <a name="developer-program-overview"></a>开发人员计划概述
 
@@ -26,7 +26,7 @@ Xbox Live 创意者计划仅支持创建适用于[通用 Windows 平台](https:/
 Xbox One 为玩家提供策展式 Microsoft Store 体验，玩家可以用 Xbox 在 Microsoft Store 全新创意者集锦版块中购买通过 Xbox Live 创意者计划发布的游戏。 这样，便在确保人人都能基于开放式平台开发并交付游戏与主机玩家逐步了解并期待获得特选 Microsoft Store 体验之间达成平衡。 在 Windows 10 上，你的作品将与其他所有 Xbox Live 游戏一起发布在 Microsoft Store 中。
 
 ### <a name="publishing-and-certification"></a>发布和认证
-你必须在要发布游戏的 Xbox Live 创意者计划的[合作伙伴中心开发人员计划](https://developer.microsoft.com/store/register)中注册。 你的游戏必须符合下面两组要求：
+你必须参加[合作伙伴中心开发人员计划](https://developer.microsoft.com/store/register)Xbox Live Creators 计划的一部分中发布游戏。 你的游戏必须符合下面两组要求：
 
 1. 集成 Xbox Live 登录并显示用户身份（玩家代号、玩家头像等）。 所有其他 Xbox Live 服务都是可选的。
 2. 遵循标准的 [Microsoft Store 策略](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx)。
@@ -41,9 +41,9 @@ Xbox Live 创意者计划作品是可以通过一些热门游戏引擎构建的 
 
 Xbox Live 创意者计划作品也可以使用游戏引擎 [Construct（2 和 3）](https://www.scirra.com/construct2)和 [GameMaker Studio 2](https://www.yoyogames.com/gamemaker) 构建。 这两个游戏引擎都增加了 Xbox Live 支持，但是，该支持由游戏引擎创建者而非 Microsoft 提供。 有关将 Xbox Live 添加到你的 Construct 或 GameMaker Studio 2 项目中的详细信息和支持，需要分别参阅每个游戏引擎文档。
 
-[了解如何将 Xbox Live 集成到 Construct 项目。](https://www.scirra.com/tutorials/9540/using-xbox-live-in-uwp-apps)
+[了解如何将 Xbox Live 集成到您构造的项目。](https://www.scirra.com/tutorials/9540/using-xbox-live-in-uwp-apps)
 
-[了解如何将 Xbox Live 集成到 GameMaker Studio 2 项目。](https://www.yoyogames.com/gamemaker/xblc)
+[了解如何将 Xbox Live 集成到您 GameMaker Studio 2 的项目。](https://www.yoyogames.com/gamemaker/xblc)
 
 对于不支持 Xbox Live 功能或插件的其他游戏开发引擎，如 [MonoGame](https://www.monogame.net/) 或 [Xenko](https://xenko.com/)，仍然可以使用 Xbox Live API 将 Xbox Live 添加到你的作品中。 要从你的项目使用 Xbox Live API，可以通过 NuGet 程序包添加对二进制文件的引用或者添加 API 源。 添加 NuGet 程序包可加快编译速度，而添加源可简化调试。
 
@@ -83,22 +83,22 @@ ID@Xbox 计划中的开发人员还可以获得 Microsoft 提供的开发人员�
 <td rowspan="2" class="dev-program-feature-name">标识</td>
 <td>登录/注册</td>
 <td>允许玩家在你的作品中登录到 Xbox Live，或根据需要创建新的 Xbox Live 帐户</td>
-<td class="xbl-features-required">必填</td>
-<td class="xbl-features-required">必填</td>
+<td class="xbl-features-required">必需</td>
+<td class="xbl-features-required">必需</td>
 </tr>
 
 <tr>
 <td>用户标识</td>
 <td>通过显示玩家代号和玩家头像等利用 Xbox Live 标识</td>
-<td class="xbl-features-required">必填</td>
-<td class="xbl-features-required">必填</td>
+<td class="xbl-features-required">必需</td>
+<td class="xbl-features-required">必需</td>
 </tr>
 
 <tr class="dev-program-feature-start">
 <td rowspan="13" class="dev-program-feature-name">社交</td>
 
 <td>基本状态</td>
-<td>显示基本状态字符串，说明作品中的用户活动。  例如：“Steve 正在玩‘我的世界’”</td>
+<td>显示基本状态字符串，说明作品中的用户活动。  例如："Steve 播放 Minecraft"</td>
 <td class="xbl-features-automatic">自动</td>
 <td class="xbl-features-automatic">自动</td>
 </tr>
@@ -155,14 +155,14 @@ ID@Xbox 计划中的开发人员还可以获得 Microsoft 提供的开发人员�
 <tr>
 <td>完整状态</td>
 <td>显示与你的作品中的玩家有关的更多详细信息。  Basic Presence 可显示“用户正在玩赛车游戏”，而 Rich Presence 用于指定更详细的字符串，例如“用户正驾驶超级跑车穿越雨林”</td>
-<td class="xbl-features-required">必填</td>
+<td class="xbl-features-required">必需</td>
 <td class="xbl-features-notavailable">不支持</td>
 </tr>
 
 <tr>
 <td>好友</td>
 <td>检索登录用户的好友列表，以支持你的作品中的社交游戏玩法方案。</td>
-<td class="xbl-features-required">必填</td>
+<td class="xbl-features-required">必需</td>
 <td class="xbl-features-limited">可选/受限（仅显示玩你的作品的好友）</td>
 </tr>
 
@@ -190,7 +190,7 @@ ID@Xbox 计划中的开发人员还可以获得 Microsoft 提供的开发人员�
 <tr class="dev-program-feature-start">
 <td rowspan="4" class="dev-program-feature-name">数据平台</td>
 
-<td>玩家统计数据</td>
+<td>玩家数据统计</td>
 <td>上传有关玩家的统计数据，这些统计数据可在排行榜中使用。</td>
 <td class="xbl-features-optional">可选</td>
 <td class="xbl-features-optional">可选（仅限 Data Platform 2017）</td>
@@ -199,7 +199,7 @@ ID@Xbox 计划中的开发人员还可以获得 Microsoft 提供的开发人员�
 <tr>
 <td>特别推荐的统计数据</td>
 <td>将某些统计数据指定为将在游戏中心显示的“特别推荐的统计数据”。</td>
-<td class="xbl-features-required">必填</td>
+<td class="xbl-features-required">必需</td>
 <td class="xbl-features-optional">可选（仅限 Data Platform 2017）</td>
 </tr>
 
@@ -213,12 +213,12 @@ ID@Xbox 计划中的开发人员还可以获得 Microsoft 提供的开发人员�
 <tr>
 <td>成就与玩家分数</td>
 <td>将某些统计数据指定为将在游戏中心显示的“特别推荐的统计数据”。</td>
-<td class="xbl-features-required">必填</td>
+<td class="xbl-features-required">必需</td>
 <td class="xbl-features-notavailable">不支持</td>
 </tr>
 
 <tr class="dev-program-feature-start">
-<td rowspan="1" class="dev-program-feature-name">媒体</td>
+<td rowspan="1" class="dev-program-feature-name">Media</td>
 
 <td>上下文搜索</td>
 <td>使用关键字为 GameDVR 剪辑添加注释，以使玩家更容易找到与他们要关注的内容对应的剪辑。</td>
@@ -232,12 +232,12 @@ ID@Xbox 计划中的开发人员还可以获得 Microsoft 提供的开发人员�
 
 <td>连接存储</td>
 <td>在 Xbox One 主机和电脑之间漫游游戏保存内容</td>
-<td class="xbl-features-required">必填</td>
+<td class="xbl-features-required">必需</td>
 <td class="xbl-features-optional">可选</td>
 </tr>
 
 <tr>
-<td>作品存储</td>
+<td>标题存储</td>
 <td>用于存储大量每用户或每作品数据的云存储。</td>
 <td class="xbl-features-optional">可选</td>
 <td class="xbl-features-optional">可选</td>
@@ -248,7 +248,7 @@ ID@Xbox 计划中的开发人员还可以获得 Microsoft 提供的开发人员�
 
 <td>多人游戏会话目录 (MPSD)</td>
 <td>存储与多人游戏会话有关的信息，例如玩家列表和状态等</td>
-<td class="xbl-features-optional">必填</td>
+<td class="xbl-features-optional">必需</td>
 <td class="xbl-features-notavailable">不支持</td>
 </tr>
 
@@ -274,7 +274,7 @@ ID@Xbox 计划中的开发人员还可以获得 Microsoft 提供的开发人员�
 </tr>
 
 <tr>
-<td>Xbox Live Compute</td>
+<td>Xbox Live 计算</td>
 <td>部署可与你的作品进行通信的可执行文件和资产，以解除客户端的计算工作。</td>
 <td class="xbl-features-optional">可选</td>
 <td class="xbl-features-notavailable">不支持</td>

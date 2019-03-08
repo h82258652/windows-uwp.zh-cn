@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, egl, dxgi, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 19c857ae5274be70d19a14d5bbf47adb595b5676
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049694"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606362"
 ---
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a>将 EGL 代码与 DXGI 和 Direct3D 进行比较
 
 
 
 
-**重要的 API**
+**重要的 Api**
 
 -   [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
 -   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)
@@ -28,7 +28,7 @@ DirectX Graphics Interface (DXGI) 以及若干个 Direct3D API 所起的作用�
 
 和 EGL 一样，DXGI 和 Direct3D 提供配置图形资源、获取你的着色器要绘制到的呈现上下文以及在窗口中显示结果的方法。 但是，DXGI 和 Direct3D 具有更多选项，因此从 EGL 移植时需要花费更多精力才能获得正确设置。
 
-> **注意**本指南基于 EGL 1.4 中，找到 Khronos Group 开放规范： [khronos 原生平台图形界面 （EGL 版本 1.4-2011 年 4 月 6 日） \[PDF\]](https://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)。 本指南中未涉及语法中特定于其他平台和开发语言的差别。
+> **请注意**  本指南基于 Khronos 组开放规范的 EGL 1.4，此处找到：[Khronos 本机平台图形界面 （EGL 版本 1.4-2011 年 4 月 6 日） \[PDF\]](https://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)。 本指南中未涉及语法中特定于其他平台和开发语言的差别。
 
  
 
@@ -47,7 +47,7 @@ DirectX Graphics Interface (DXGI) 以及若干个 Direct3D API 所起的作用�
 -   呈现到特定呈现目标（如纹理）。
 -   使用图形资源更新具有呈现结果的窗口显示图面。
 
-若要查看配置图形管道的基本 Direct3D 过程，请查阅 Microsoft Visual Studio2015 中的 DirectX 11 应用 (通用 Windows) 模板。 其中的基本呈现类为在其上设置 Direct3D 11 图形基础结构、配置基本资源以及支持通用 Windows 平台 (UWP) 应用功能（如屏幕旋转）提供了一个良好的基线。
+若要查看配置的图形管道的基本 Direct3D 过程，请查看 Microsoft Visual Studio 2015 中的 DirectX 11 应用 (通用 Windows) 模板。 其中的基本呈现类为在其上设置 Direct3D 11 图形基础结构、配置基本资源以及支持通用 Windows 平台 (UWP) 应用功能（如屏幕旋转）提供了一个良好的基线。
 
 与 Direct3D 11 相比，EGL 提供的 API 相对较少，如果不熟悉特定于该平台的命名和行话，则导航 EGL 可能会有很大难度。 下面这个简单概述可帮助你应对这种挑战。
 
@@ -72,7 +72,7 @@ DirectX Graphics Interface (DXGI) 以及若干个 Direct3D API 所起的作用�
 6.  当管道已执行且已将框架绘制到后台缓冲区时，使用 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 将其显示到屏幕。
 
 要更详细地检查此过程，请查看 [DirectX 图形入门](https://msdn.microsoft.com/library/windows/desktop/hh309467)。 本文的其余部分介绍许多基本图形管道设置和管理的常见步骤。
-> **注意** Windows 桌面应用具有不同的 Api 来获取 Direct3D 交换链，如[**d3d11device:: createdeviceandswapchain**](https://msdn.microsoft.com/library/windows/desktop/ff476083)，并且不使用[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)对象。
+> **请注意**   Windows 桌面应用程序具有不同的 Api 获取 Direct3D 交换链，例如[ **D3D11Device::CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083)，而不要使用[ **CoreWindow** ](https://msdn.microsoft.com/library/windows/apps/br208225)对象。
 
  
 
@@ -117,7 +117,7 @@ if (surface == EGL_NO_SURFACE)
 }
 ```
 
-在 Direct3D 中，UWP 应用的主窗口由 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 对象表示，作为你为 Direct3D 构造的“视图提供程序”初始化过程的一部分，可以通过调用 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) 来获得该对象。 （如果你使用的是 Direct3D-XAML 互操作，请使用 XAML 框架的视图提供程序。）[如何设置应用以显示视图](https://msdn.microsoft.com/library/windows/apps/hh465077)中介绍了创建 Direct3D 视图提供程序的过程。
+在 Direct3D 中，UWP 应用的主窗口由 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 对象表示，作为你为 Direct3D 构造的“视图提供程序”初始化过程的一部分，可以通过调用 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) 来获得该对象。 （如果使用 Direct3D XAML 互操作，使用 XAML 框架视图提供程序。）创建 Direct3D 视图提供程序的过程中介绍了[如何将应用设置来显示的视图](https://msdn.microsoft.com/library/windows/apps/hh465077)。
 
 获取用于 Direct3D 的 CoreWindow。
 
@@ -125,7 +125,7 @@ if (surface == EGL_NO_SURFACE)
 CoreWindow::GetForCurrentThread();
 ```
 
-获取 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 参考之后，必须激活窗口，该窗口执行主对象的 **Run** 方法并开始进行窗口事件处理。 然后，创建一个 [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) 和一个 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)，并使用它们获取基础 [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/ff471331) 和 [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523)，以便你可以获取一个 [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) 对象来根据你的 [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 配置创建一个交换链资源。
+获取 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 参考之后，必须激活窗口，该窗口执行主对象的 **Run** 方法并开始进行窗口事件处理。 然后，创建[**对 ID3D11Device1** ](https://msdn.microsoft.com/library/windows/desktop/hh404575)和一个[ **ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)，并使用它们来获取基础[**IDXGIDevice1** ](https://msdn.microsoft.com/library/windows/desktop/ff471331)并[ **IDXGIAdapter** ](https://msdn.microsoft.com/library/windows/desktop/bb174523)使您能够[ **IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556)对象来创建交换链资源基于你[ **DXGI\_交换\_链\_DESC1** ](https://msdn.microsoft.com/library/windows/desktop/hh404528)配置。
 
 在用于 Direct3D 的 CoreWindow 上配置并设置 DXGI 交换链。
 
@@ -178,7 +178,7 @@ void SimpleDirect3DApp::SetWindow(CoreWindow^ window)
 
 准备帧后调用 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 方法以便显示该帧。
 
-请注意，在 Direct3D 11 中，没有等同于 EGLSurface 的抽象。 （存在 [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343)，但其用法不同。）最接近的概念近似是 [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) 对象，我们使用该对象分配纹理 ([**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)) 作为我们的着色器管道将要绘制到其中的后台缓冲区。
+请注意，在 Direct3D 11 中，没有等同于 EGLSurface 的抽象。 (没有[ **IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343)，但以不同的方式使用它。)概念接近的是[ **ID3D11RenderTargetView** ](https://msdn.microsoft.com/library/windows/desktop/ff476582)对象，我们使用要分配纹理对象 ([**ID3D11Texture2D** ](https://msdn.microsoft.com/library/windows/desktop/ff476635)) 作为我们着色器的管道将绘制到后台缓冲区。
 
 在 Direct3D 11 中，为交换链设置后台缓冲区
 
@@ -306,7 +306,7 @@ eglChooseConfig(eglDsplay, pBufConfigAttrs, &pBufConfig, 1, &totalpBufAttrs);
 EGLSurface pBuffer = eglCreatePbufferSurface(eglDisplay, pBufConfig, EGL_TEXTURE_RGBA); 
 ```
 
-在 Direct3D 11 中，创建一个 [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) 资源并使该资源成为呈现目标。 使用 [**D3D11\_RENDER\_TARGET\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476201) 配置呈现目标。 当使用此呈现目标调用 [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) 方法（或在设备上下文上执行类似的 Draw* 操作）时，结果将绘制到纹理中。
+在 Direct3D 11 中，创建一个 [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) 资源并使该资源成为呈现目标。 配置呈现器目标使用[ **D3D11\_呈现\_目标\_视图\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476201)。 当您调用[ **ID3D11DeviceContext::Draw** ](https://msdn.microsoft.com/library/windows/desktop/ff476407)方法 (或类似的绘图\*操作上的设备上下文) 使用此呈现器目标，将结果绘制成纹理。
 
 使用 Direct3D 11 绘制到纹理中
 
@@ -337,7 +337,7 @@ m_d3dContext->OMSetRenderTargets(
 
 使用 EGLContext 配置你的缓冲区并更新数据之后，应运行绑定到它的着色器并使用 glDrawElements 将结果绘制到后台缓冲区。 通过调用 eglSwapBuffers 显示后台缓冲区。
 
-打开 GL ES 2.0：绘制到屏幕。
+打开 GL ES 2.0:绘制到屏幕。
 
 ``` syntax
 glDrawElements(GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);
@@ -345,9 +345,9 @@ glDrawElements(GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);
 eglSwapBuffers(drawContext->eglDisplay, drawContext->eglSurface);
 ```
 
-在 Direct3D 11 中，配置缓冲区并使用 [**IDXGISwapChain::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 绑定着色器。 然后，调用一个 [**ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407)\* 方法来运行着色器并将结果绘制到配置为交换链的后台缓冲区的呈现目标。 然后，你只需通过调用 **IDXGISwapChain::Present1** 将后台缓冲区呈现给屏幕。
+在 Direct3D 11 中，配置缓冲区并使用 [**IDXGISwapChain::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 绑定着色器。 然后调用之一[ **ID3D11DeviceContext1::Draw** ](https://msdn.microsoft.com/library/windows/desktop/ff476407) \*方法来运行着色器，并绘制到呈现器目标配置为交换链后台缓冲区的结果。 然后，你只需通过调用 **IDXGISwapChain::Present1** 将后台缓冲区呈现给屏幕。
 
-Direct3D 11：绘制到屏幕。
+Direct3D 11:绘制到屏幕。
 
 ``` syntax
 
@@ -392,14 +392,14 @@ EGLBoolean eglTerminate(eglDisplay);
 | eglDestroySurface                | N/A。 当平台关闭 UWP 应用的 CoreWindow 时，会清除图形资源。                                                                                                                                                                                                                                                                                                                                                                                                 |
 | eglGetCurrentDisplay             | 调用 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) 来获取对当前主应用窗口的引用。                                                                                                                                                                                                                                                                                                                                                         |
 | eglGetCurrentSurface             | 这是当前的 [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)。 通常，它的作用域设置为你的呈现器对象。                                                                                                                                                                                                                                                                                                                                                         |
-| eglGetError                      | 以 DirectX 接口上大多数方法返回的 HRESULT 形式获取错误。 如果该方法未返回 HRESULT，请调用 [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360)。 若要将系统错误转换为 anHRESULTvalue，请使用[**HRESULT\_FROM\_WIN32**](https://msdn.microsoft.com/library/windows/desktop/ms680746)宏。                                                                                                                                                                                                  |
+| eglGetError                      | 以 DirectX 接口上大多数方法返回的 HRESULT 形式获取错误。 如果该方法未返回 HRESULT，请调用 [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360)。 若要将转换的 HRESULT 值的系统错误，请使用 [**HRESULT\_FROM\_WIN32**](https://msdn.microsoft.com/library/windows/desktop/ms680746) 宏。                                                                                                                                                                                                  |
 | eglInitialize                    | 调用 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) 来获取对当前主应用窗口的引用。                                                                                                                                                                                                                                                                                                                                                         |
 | eglMakeCurrent                   | 使用 [**ID3D11DeviceContext1::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) 设置用于在当前上下文上绘制的呈现目标。                                                                                                                                                                                                                                                                                                                                  |
 | eglQueryContext                  | N/A。 但是，你可能会从 [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) 实例以及某些配置数据中获取呈现目标。 （有关可用方法的列表，请参阅该链接。）                                                                                                                                                                                                                                                                                           |
 | eglQuerySurface                  | N/A。 但是，你可能会通过 [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) 实例上的方法来获取有关视区和当前图形硬件的数据。 （有关可用方法的列表，请参阅该链接。）                                                                                                                                                                                                                                                                               |
 | eglReleaseTexImage               | N/A。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | eglReleaseThread                 | 有关常规的 GPU 多线程，请阅读[多线程](https://msdn.microsoft.com/library/windows/desktop/ff476891)。                                                                                                                                                                                                                                                                                                                                                                              |
-| eglSurfaceAttrib                 | 使用 [**D3D11\_RENDER\_TARGET\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476201) 配置 Direct3D 呈现目标视图。                                                                                                                                                                                                                                                                                                                                                               |
+| eglSurfaceAttrib                 | 使用[ **D3D11\_呈现\_目标\_视图\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476201)配置 Direct3D 呈现目标视图                                                                                                                                                                                                                                                                                                                                                               |
 | eglSwapBuffers                   | 使用[**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 。                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | eglSwapInterval                  | 请参阅 [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)。                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | eglTerminate                     | 用于显示图形管道输出的 CoreWindow 由操作系统进行管理。                                                                                                                                                                                                                                                                                                                                                                                          |

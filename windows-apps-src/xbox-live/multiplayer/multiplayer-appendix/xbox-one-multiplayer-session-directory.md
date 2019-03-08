@@ -7,15 +7,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 52b363492d1cd17ae54ae5d23d04371c5adf73ed
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935568"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606812"
 ---
 # <a name="xbox-one-multiplayer-session-directory"></a>Xbox One 多人游戏会话目录
 
-本主题使用新的 Xbox One 多人游戏会话目录 (MPSD) 服务提供多人游戏会话创建的概述。 本文主要面向将自己的会话模板直接提交到 Xbox 开发门户 (XDP) 的 Xbox One 游戏开发人员。 MPSD 服务可以与合作伙伴中心，配置，但不专注于在本文中。 它旨在让开发人员熟悉与 MPSD 配置、使用情况以及多人游戏会话疑难解答关联的术语和概念。
+本主题使用新的 Xbox One 多人游戏会话目录 (MPSD) 服务提供多人游戏会话创建的概述。 本文主要面向将自己的会话模板直接提交到 Xbox 开发门户 (XDP) 的 Xbox One 游戏开发人员。 MPSD 服务可配置为使用合作伙伴中心，但不是侧重于在本文中。 它旨在让开发人员熟悉与 MPSD 配置、使用情况以及多人游戏会话疑难解答关联的术语和概念。
 
 ## <a name="revision-summary"></a>修订摘要
 
@@ -44,9 +44,9 @@ ms.locfileid: "8935568"
 | 术语                 | 定义                                                                                                                                                                                                                                                                                  |
 |----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 多人游戏会话  | 驻留在 Xbox Live 云端并在 Xbox One 上运行游戏时表示连接（或将连接）在一起的一组用户的安全文档。 多人游戏的所有方面（如匹配、参与方、加入进程等）都利用多人游戏会话。 |
-| 游戏会话         | 这是显示在 MPSD，其中用户一起玩游戏中的实际游戏会话。 所有的多人游戏场景最终会结束于游戏会话。                                                                                                                               |
+| 游戏会话         | 这是实际的游戏会话，在 MPSD，在其中用户正在同时播放中公开。 所有的多人游戏场景最终会结束于游戏会话。                                                                                                                               |
 | 匹配票证会话 | 这是一个在匹配期间用于跟踪匹配票证提交的会话。                                                                                                                                                                                                                 |
-| 非活动玩家      | 在会话内已被设置为“非活动”状态的玩家。 在游戏受限、暂停或处于非活动状态（如标题所定义）时，游戏将用户设置为“非活动”状态。                                                                                     |
+| 非活动玩家      | 已设置为在会话内处于“非活动”状态的玩家。 在游戏受限、暂停或处于非活动状态（如标题所定义）时，游戏将用户设置为“非活动”状态。                                                                                     |
 
 ## <a name="the-multiplayer-session-directory"></a>多人游戏会话目录
 
@@ -54,10 +54,10 @@ MPSD 促进并帮助游戏协调在线玩家之间的会话信息。 可以创�
 
 | 功能或任务                     | Xbox 360                                                                                                        | Xbox One                                                                                                   |
 |--------------------------------------|-----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| **获取游戏会话信息**     | **XSessionGetDetails**、**XSessionSearchByID** 或跟踪你自己。                                              | 请求来自服务的会话信息。                                                          |
+| **获取游戏会话的信息**     | **XSessionGetDetails**、**XSessionSearchByID** 或跟踪你自己。                                              | 请求来自服务的会话信息。                                                          |
 | **迁移主机**                     | 在需要时，游戏调用 **XSessionMigrateHost**。                                                           | 无需创建新会话，只需为 SessionID 分配一个新主机。                                  |
-| **管理多个玩家会话**  | 一次处理多个会话较为棘手。 例如，**XNetReplaceKey** 与 **XNetUnregisterKey**。 | 基于服务的会话让管理一个会话变得更简洁，让处理多个会话变得更容易。    |
-| **处理注销和断开连接** | 必须分别使用 **XCloseHandle** 或 **XSessionDelete**，以不同方式处理断开连接和注销。 | 集中化服务简化了注销和断开连接处理，并在游戏配置中设置超时。 |
+| **管理多个播放机会话**  | 一次处理多个会话较为棘手。 例如，**XNetReplaceKey** 与 **XNetUnregisterKey**。 | 基于服务的会话让管理一个会话变得更简洁，让处理多个会话变得更容易。    |
+| **处理登录超时值和断开连接** | 必须分别使用 **XCloseHandle** 或 **XSessionDelete**，以不同方式处理断开连接和注销。 | 集中化服务简化了注销和断开连接处理，并在游戏配置中设置超时。 |
 
 ### <a name="session-patterns"></a>会话模式
 
@@ -240,7 +240,7 @@ GET /serviceconfigs/{scid}/sessiontemplates/{session-template-name}/sessions
 
 默认情况下，此操作最多返回 100 个非专用会话。 可使用这些查询字符串参数修改查询：
 
-| 查询字符串             | 作用                                                                                                         | 描述                                                                                         |
+| 查询字符串             | 效果                                                                                                         | 描述                                                                                         |
 |--------------------------|----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
 | keyword=foo              | 仅包括具有关键字“foo”的会话。                                                             |                                                                                                     |
 | XUID=123                 | 仅包括用户“123”所在的会话。                                                               | 默认情况下，用户必须在要包括的会话中处于活动状态。                                  |
@@ -438,7 +438,7 @@ If "followed", only local users (as defined above) and users who are followed by
 
 ![](../../images/whitepapers/mpsd_image2.png)
 
-**图 3. 成员初始化流程。**
+**图 3。成员初始化流。**
 
 三个成员初始化阶段的每个阶段都可能超时：
 
@@ -490,7 +490,7 @@ If "followed", only local users (as defined above) and users who are followed by
 ```
 "initializationFailure": "latency",
 ```
-根据优先顺序，可以将该属性的值设置为 *timeout、latency、bandwidthdown、bandwidthup、network、group* 或 *episode*。 网络值意味着阻止度量 QoS 指标测量的网络配置和/或条件（如冲突的网络地址转换 \[NAT\]）。 加入末尾的唯一可能值是 *group*。 （一旦加入超时，将删除保留。）
+根据优先顺序，可以将该属性的值设置为 *timeout、latency、bandwidthdown、bandwidthup、network、group* 或 *episode*。 网络值表示的网络配置和/或条件 (如冲突的网络地址转换\[NAT\]) 阻止 QoS 指标测量。 加入末尾的唯一可能值是 *group*。 （一旦加入超时，将删除保留。）
 
 如果设置了 **memberInitialization**，并添加了其中 "initialize":true 的成员，此操作会设置为成员将参加的初始化剧集。 值 1 用于在创建新会话时向其中添加的成员，并在初始化剧集结束时将其删除。
 ```
@@ -717,7 +717,7 @@ If "followed", only local users (as defined above) and users who are followed by
 
 在模板已完成成员初始化后，MPSD 将跟踪和报告游戏创建的 QoS 结果。 将由会话文档中的 *initializing* 对象表示此操作的进度，如上面的[成员初始化](#_Member_initialization_in)部分所述。 *initializing* 对象具有 *stage* 属性，此属性表示初始化的当前阶段。 此阶段经历了从*加入*到*度量*再到*评估*的过程。
 
--   一旦初始化剧集 \#1 失败，则阶段会被设置为 *failed* 且无法初始化会话。 否则，一旦初始化剧集完成，“initializing”对象将被删除。 如果 **externalEvaluation** 被设置为 **false**，将跳过评估阶段。 如果 **metrics** 和 **measurementServerAddresses** 都未设置，将跳过度量阶段。
+-   如果初始化剧集\#1 失败，则阶段设置为*失败*，无法初始化会话。 否则，一旦初始化剧集完成，“initializing”对象将被删除。 如果 **externalEvaluation** 被设置为 **false**，将跳过评估阶段。 如果 **metrics** 和 **measurementServerAddresses** 都未设置，将跳过度量阶段。
 
 ```json
 "initializing": {
@@ -728,7 +728,7 @@ If "followed", only local users (as defined above) and users who are followed by
 
 ```
 
--   主机候选是按照优先顺序列表的设备令牌。 如果设置了 **peerToHostRequirements**，但未设置 **/properties/system/host**，则在初始化剧集 \#1 的*度量*阶段之后对其进行设置。 在设置 **/properties/system/host** 对象后清除它们。
+-   主机候选是按照优先顺序列表的设备令牌。 这些设置后*测量*初始化剧集阶段\#1，如果**peerToHostRequirements**设置和 **/properties/system/host**未设置。 在设置 **/properties/system/host** 对象后清除它们。
 
 ```json
 "hostCandidates": [ "ab90a362", "99582e67" ],
@@ -779,7 +779,7 @@ If "followed", only local users (as defined above) and users who are followed by
 ```
 
 -   如果成员尚未成功通过此阶段，则在从加入或度量阶段过渡到其他阶段时，对成员对象设置 *initializationFailure* 属性。 根据优先顺序，可以将其设置为 *timeout*、*latency*、*bandwidthdown*、*bandwidthup*、*network*、*group* 或 *episode*。
-    *网络*值意味着阻止度量 QoS 指标测量的网络配置和/或条件（如冲突网络地址转换 \[NAT\]）。 加入末尾的唯一可能值是 *group*。 （一旦加入超时，将删除保留。）加入或度量期间，“评估”阶段失败后，对未失败的初始化剧集的所有成员设置此 *episode* 值。
+    *网络*值表示的网络配置和/或条件 (如冲突的网络地址转换\[Nat\]) 阻止 QoS 指标测量。 加入末尾的唯一可能值是 *group*。 （一旦加入超时，将删除保留。）*剧集*上设置了值后失败的"评估"阶段的初始化剧集联接或测量期间没有失败的所有成员。
 
 ```json
 "initializationFailure": "latency",
@@ -945,23 +945,23 @@ PUT https://sessiondirectory-stress.xboxlive.com/serviceconfigs/8cvda84-2606-4ba
 
     -   如果你正在使用证书身份验证并收到此错误，请联系你的 DAM。
 
--   *无法访问请求的会话。 只有会话成员才可以读取专用会话。*
+-   *无法访问请求的会话。专用会话只能读取该会话的成员。*
 
     -   你正在尝试访问具有“专用”可见性的会话。 只有会话内的成员才可以读取会话文档。
 
--   *请求正文无法包含现有成员引用，除非身份验证主体包括服务器。*
+-   *请求正文不能包含现有成员的引用，除非身份验证主体包含一个服务器。*
 
-    -   你无法代表用户加入其他用户进行会话。 你只能邀请。 将索引设置为“reserve\_&lt;number&gt;”来邀请玩家。
+    -   你无法代表用户加入其他用户进行会话。 你只能邀请。 将索引设置为"保留\_&lt;数&gt;"邀请播放器。
 
 ### <a name="i-am-getting-a-412-precondition-failed-error"></a>我收到了 412 前置条件失败错误。
 
 如果会话已经存在，此操作将返回 412 前置条件失败：
 
-> PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/sessions/foo HTTP/1.1 Content-Type: application/json If-None-Match: \*
+> PUT 的 serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/快速/会话/foo HTTP/1.1 内容类型： 应用程序 /json None-If-match: \*
 
 如果会话 etag 与 If-Match 标头不匹配，此操作将返回 412 前置条件失败：
 
-> PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/sessions/foo HTTP/1.1 Content-Type: application/json If--Match: 9555A7DE-8B91-40E4-8CFB-0629312C9C7D
+> PUT 的 serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/快速/会话/foo HTTP/1.1 内容类型： 应用程序 /json 如果-匹配：9555A7DE-8B91-40E4-8CFB-0629312C9C7D
 
 ### <a name="i-am-getting-errors-such-as-405-409-503-and-400when-calling-mpsd"></a>调用 MPSD 时，我收到了 405、409、503 和 400 等错误。
 

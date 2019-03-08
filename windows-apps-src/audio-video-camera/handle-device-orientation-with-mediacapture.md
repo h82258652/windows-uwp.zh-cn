@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 866a3b02d67409d03fccf427663de65cc94919b2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919756"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618092"
 ---
 # <a name="handle-device-orientation-with-mediacapture"></a>使用 MediaCapture 处理设备方向
 当你的应用捕获要在应用之外查看的照片或视频时，如保存到用户设备上的某个文件中或在线共享，请务必使用正确的方向元数据对该图像进行编码，以便当其他应用或设备显示该图像时，方向正确。 确定要包含在媒体文件中的正确方向数据可能是项非常复杂的任务，因为有几个变量需要考虑，如设备底盘的方向、屏幕的方向以及相机在底盘上的位置（是前置相机还是后置相机）。 
@@ -87,9 +87,9 @@ ms.locfileid: "8919756"
 [!code-cs[CapturePhotoWithOrientation](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCapturePhotoWithOrientation)]
 
 ## <a name="capture-a-video-with-orientation-data"></a>使用方向数据捕获视频
-[**使用 MediaCapture 捕获基本的照片、视频和音频**](basic-photo-video-and-audio-capture-with-mediacapture.md)文章中介绍了基本视频捕获。 使用前面将方向数据添加到预览流部分中介绍的相同技术，在编码捕获的视频时添加方向数据。
+[  **使用 MediaCapture 捕获基本的照片、视频和音频**](basic-photo-video-and-audio-capture-with-mediacapture.md)文章中介绍了基本视频捕获。 使用前面将方向数据添加到预览流部分中介绍的相同技术，在编码捕获的视频时添加方向数据。
 
-在以下示例中，创建一个文件，以便将捕获的视频写入其中。 使用静态方法 [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp4) 创建 MP4 编码配置文件。 通过调用 **GetCameraCaptureOrientation** 从 **CameraRotationHelper** 类获取正确的视频方向。由于旋转属性要求方向以逆时针度数表示，因此调用 **ConvertSimpleOrientationToClockwiseDegrees** 帮助程序方法来转换方向值。 然后，为视频流旋转创建表示媒体基础转换 (MFT) 属性的 GUID。 在 C++ 中，你可以使用常量 [**MF_MT_VIDEO_ROTATION**](https://msdn.microsoft.com/library/windows/desktop/hh162880.aspx)，但在 C# 中，必须手动指定 GUID 值。 向流属性对象添加属性值，指定 GUID 作为项，指定旋转作为值。 最后调用 [**StartRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.StartRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile,Windows.Storage.IStorageFile)) 开始录制使用方向数据编码的视频。
+在以下示例中，创建一个文件，以便将捕获的视频写入其中。 使用静态方法 [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp4) 创建 MP4 编码配置文件。 通过调用 **GetCameraCaptureOrientation** 从 **CameraRotationHelper** 类获取正确的视频方向。由于旋转属性要求方向以逆时针度数表示，因此调用 **ConvertSimpleOrientationToClockwiseDegrees** 帮助程序方法来转换方向值。 然后，为视频流旋转创建表示媒体基础转换 (MFT) 属性的 GUID。 在 C++ 中，你可以使用常量 [**MF_MT_VIDEO_ROTATION**](https://msdn.microsoft.com/library/windows/desktop/hh162880.aspx)，但在 C# 中，必须手动指定 GUID 值。 向流属性对象添加属性值，指定 GUID 作为项，指定旋转作为值。 最后调用 [**StartRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.StartRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile,Windows.Storage.IStorageFile)) 以开始录制使用方向数据编码的视频。
 
 [!code-cs[StartRecordingWithOrientationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartRecordingWithOrientationAsync)]
 
@@ -110,8 +110,8 @@ ms.locfileid: "8919756"
 
 ## <a name="related-topics"></a>相关主题
 
-* [相机](camera.md)
-* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [摄像头](camera.md)
+* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

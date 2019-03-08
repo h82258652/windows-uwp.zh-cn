@@ -7,13 +7,13 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 端口, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: c7569c6b2f041f5535e0eabe934a91da86b60b9a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944706"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634222"
 ---
-# <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>演练：将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)
+# <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>操作实例：简单 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)
 
 
 
@@ -40,7 +40,7 @@ ms.locfileid: "8944706"
 <td align="left"><p>介绍如何将简单的呈现框架从 Direct3D 9 转换到 Direct3D 11，包括如何移植几何图形缓冲区、如何编译和加载 HLSL 着色器程序以及如何在 Direct3D 11 中实现呈现链。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">移植游戏循环</a></p></td>
+<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">端口游戏循环</a></p></td>
 <td align="left"><p>介绍如何实现 UWP 游戏的窗口，以及如何显示游戏循环，包括如何构建 <a href="https://msdn.microsoft.com/library/windows/apps/hh700478"><strong>IFrameworkView</strong></a> 来控制全屏 <a href="https://msdn.microsoft.com/library/windows/apps/br208225"><strong>CoreWindow</strong></a>。</p></td>
 </tr>
 </tbody>
@@ -65,10 +65,10 @@ ms.locfileid: "8944706"
 
 请注意，此演练使用 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 进行简化，并不涉及 XAML 互操作。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 
-应该[为 UWP DirectX 游戏开发准备开发人员环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 你还不需要模板，但你将需要 Microsoft Visual Studio2015 来加载此演练中的代码示例。
+应该[为 UWP DirectX 游戏开发准备开发人员环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 您不需要模板，但你将需要 Microsoft Visual Studio 2015 将在本演练中的代码示例。
 
 访问[移植概念和注意事项](porting-considerations.md)，以便更好地了解此演练中显示的 DirectX 11 和 UWP 编程概念。
 
@@ -76,11 +76,11 @@ ms.locfileid: "8944706"
 
 **Direct3D**
 
-* [在 Direct3D 9 中编写 HLSL 着色器](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [在 Direct3D 中编写 HLSL 着色器 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
 * [DirectX 游戏项目模板](user-interface.md)
 
-**Microsoft Store**
+**Microsoft 官方商城**
 
 * [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
-* [**对象运算符的句柄 (^)**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)
+* [**对象句柄运算符 (^)**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)
 

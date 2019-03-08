@@ -11,17 +11,17 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c5736e917d77415eeb6df53b3fd92f7ab584884
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036899"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644922"
 ---
 # <a name="rating-control"></a>评分控件
 
 评分控件使用户能够查看和设置反映内容和服务满意度的评分。 用户可以使用触摸、笔、鼠标、游戏板或键盘操作评分控件。 下列指南介绍了如何使用分级控件的功能提供灵活性和自定义功能。
 
-> **重要 API**：[RatingControl 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+> **重要的 Api**:[RatingControl 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
 ![评分控件示例](images/rating_rs2_doc_ratings_intro.png)
 
@@ -34,7 +34,7 @@ ms.locfileid: "9036899"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/RatingControl">打开此应用，了解 RatingControl 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>

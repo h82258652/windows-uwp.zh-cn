@@ -1,5 +1,5 @@
 ---
-Description: The Microsoft Store offers Mobile Operator Billing as a payment method for mobile operators who support this capability.
+Description: Microsoft Store 提供移动运算符计费与付款方法移动运营商提供此功能。
 title: 移动运营商结算
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.date: 12/19/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 移动运营商, 移动结算, 移动运营商结算
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f23e40abfb269e2b52e9dc5b66c2486da071c9b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045676"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57591832"
 ---
 # <a name="mobile-operator-billing"></a>移动运营商结算
 
@@ -19,7 +19,7 @@ ms.locfileid: "9045676"
 Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的手机和 Xbox One 主机提供移动运营商结算作为付款方式。 如果客户的移动运营商支持此功能，客户可以将移动运营商结算添加为付款方式，并通过此方式使用其移动帐户进行 Microsoft Store 购买。
 
 > [!TIP]
->  如果客户的移动运营商提供移动运营商结算，但客户在其设备上找不到此选项，请参阅相关[步骤](https://go.microsoft.com/fwlink/p/?LinkId=523993)。
+>  如果客户的移动运营商提供了移动运算符计费，但客户找不到此选项在其设备上的，查看这些[步骤](https://go.microsoft.com/fwlink/p/?LinkId=523993)。
 
 我们定期与移动运营商合作以扩展此付款方式的可用性。 如果希望建议在下表中没有看到的移动运营商，请联系该移动运营商并请求他们添加此付款方式。
 
@@ -41,8 +41,8 @@ Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的�
 | 马来西亚        | Digi                             |
 | 荷兰     | KPN / Telfort                    |
 | 挪威          | Telenor / Talkmore、 Telia / OneCall   |
-| 波兰          | Orange、 玩游戏                     |
-| 新加坡       | M1 Limited StarHub              |
+| 波兰          | 橙色 Play                     |
+| 新加坡       | M1 Limited、 StarHub              |
 | 斯洛伐克        | Slovak Telekom                   |
 | 西班牙           | Orange                           |
 | 瑞典          | Telenor、3                       |

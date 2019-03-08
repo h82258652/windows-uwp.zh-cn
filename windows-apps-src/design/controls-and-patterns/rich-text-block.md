@@ -1,30 +1,30 @@
 ---
-Description: Use a RichTextBlock with RichTextBlockOverflow elements to create advanced text layouts.
+Description: 将 RichTextBlock 与 RichTextBlockOverflow 元素结合使用以创建高级文本布局。
 title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ab83e74dc59b407c15e1a8213540c8954fcd16e
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037039"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610892"
 ---
-# <a name="rich-text-block"></a>富文本块
+# <a name="rich-text-block"></a>RTF 块
 
  
 
 RTF 块提供了多种适用于高级文本布局的功能，你可以在需要支持段落、内联 UI 元素或复杂文本布局时使用。
 
-> **重要 API**：[RichTextBlock 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)、[RichTextBlockOverflow 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx)、[Paragraph 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx)、[Typography 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)
+> **重要的 Api**:[按类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)， [RichTextBlockOverflow 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx)，[段落类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx)，[版式类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -32,7 +32,7 @@ RTF 块提供了多种适用于高级文本布局的功能，你可以在需要�
 
 使用 **TextBlock** 显示应用中大部分只读文本。 你可以使用它来显示单行或多行文本、内联超链接以及粗体、斜体或带下划线格式的文本。 TextBlock 提供较简单的内容模型，因此通常也更易于使用，并且它比 RichTextBlock 提供文本呈现性能更好。 它优先用于大部分应用 UI 文本。 虽然你可以在文本中放入换行符，但 TextBlock 旨在显示一个段落且不支持文本缩进。
 
-有关选择正确文本控件的详细信息，请参阅[文本控件](text-controls.md)文章。
+有关选择正确的文本控件的详细信息，请参阅[文本控件](text-controls.md)文章。
 
 ## <a name="examples"></a>示例
 
@@ -43,7 +43,7 @@ RTF 块提供了多种适用于高级文本布局的功能，你可以在需要�
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/RichTextBlock">打开此应用，了解 RichTextBlock 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -59,7 +59,7 @@ RichTextBlock 支持：
 - 内联 UI 元素。 使用 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) 显示文本的内联 UI 元素，如图像。
 - 溢出容器。 使用 [RichTextBlockOverflow](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) 元素创建多列文本布局。
 
-### <a name="paragraphs"></a>Paragraphs
+### <a name="paragraphs"></a>段落
 
 使用 [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) 元素定义要在 RichTextBlock 控件中显示的文本块。 每个 RichTextBlock 应至少包括一个 Paragraph。 
 
@@ -132,7 +132,7 @@ RichTextBlock 支持：
 </Paragraph>
 ```
 
-### <a name="typography"></a>Typography
+### <a name="typography"></a>版式
 
 [Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx) 类的附加属性提供针对 Microsoft OpenType 版式属性集的访问权限。 你可以在 RichTextBlock 或个别内联文本元素上设置这些附加属性，如下所示。
 
@@ -157,15 +157,15 @@ RichTextBlock 支持：
 
 [文本控件](text-controls.md)
 
-**对于设计人员**
-- [拼写检查指南](text-controls.md)
+**面向设计人员**
+- [拼写检查的准则](text-controls.md)
 - [添加搜索](https://msdn.microsoft.com/library/windows/apps/hh465231)
-- [文本输入指南](text-controls.md)
+- [文本输入的准则](text-controls.md)
 
 **面向开发人员 (XAML)**
 - [TextBox 类](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [Windows.UI.Xaml.Controls PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
-**对于开发人员（其他）**
-- [字符串长度属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+**面向开发人员 （其他）**
+- [String.Length 属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

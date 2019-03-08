@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 962002d635c3e6edbf1f9581a4cbc57fbd5b1d96
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931676"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646292"
 ---
 # <a name="coordinate-systems-and-geometry"></a>坐标系统和几何结构
 
 
 进行 Direct3D 应用程序编程需要熟练掌握 3D 几何原理。 本部分介绍创建 3D 场景所需的最重要的几何概念。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>
@@ -43,7 +43,7 @@ ms.locfileid: "8931676"
 <td align="left"><p>3D <em>基元</em>是单个 3D 实体中的顶点的集合。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="face-and-vertex-normal-vectors.md">面和顶点的法向矢量</a></p></td>
+<td align="left"><p><a href="face-and-vertex-normal-vectors.md">人脸和顶点的法向量</a></p></td>
 <td align="left"><p>网格的每个面都有垂直单位法向矢量。 矢量方向取决于顶点的定义顺序和坐标系统是左手坐标还是右手坐标。</p></td>
 </tr>
 <tr class="even">
@@ -51,11 +51,11 @@ ms.locfileid: "8931676"
 <td align="left"><p>在整个 Direct3D 和 Windows 编程中，将根据边界矩形引用屏幕上的对象。 边界矩形的边始终与屏幕的边平行，始终可通过两个点（左上角和右下角）来描述矩形。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="triangle-interpolation.md">三角形插值</a></p></td>
+<td align="left"><p><a href="triangle-interpolation.md">三角形内插</a></p></td>
 <td align="left"><p>在渲染期间，管道会在每个三角形中插入顶点数据。 顶点数据可以是各种各样的数据并可以包括（但不限于）：漫射颜色、反射颜色、漫射 alpha（三角形不透明度）、反射 alpha 和雾化系数。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="vectors--vertices--and-quaternions.md">矢量、顶点和四元数</a></p></td>
+<td align="left"><p><a href="vectors--vertices--and-quaternions.md">向量、 顶点、 和的四元数</a></p></td>
 <td align="left"><p>顶点会在整个 Direct3D 中描述位置和方向。 基元中的每个顶点都由矢量进行描述，矢量会提供其位置、颜色、纹理坐标和提供其方向的法向矢量。</p></td>
 </tr>
 <tr class="odd">
@@ -63,7 +63,7 @@ ms.locfileid: "8931676"
 <td align="left"><p>将几何图形推过固定函数几何图形管道的 Direct3D 部分是转换引擎。 它会找到世界中的模型和查看器、投影显示在屏幕上的顶点，并将顶点剪切到视区上。 转换引擎还会执行照明计算来确定每个顶点的漫射和反射组件。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="viewports-and-clipping.md">视区和剪切</a></p></td>
+<td align="left"><p><a href="viewports-and-clipping.md">视区和剪辑</a></p></td>
 <td align="left"><p><em>视区</em>是将 3D 场景投影到其中的二维 (2D) 矩形。 在 Direct3D 中，矩形在系统作为渲染目标使用的 Direct3D 表面内作为坐标存在。 投影转换将顶点转换为用于视区的坐标系统。 视区还用于指定渲染目标表面（场景将渲染到其中）的深度值范围（通常为 0.0 至 1.0）。</p></td>
 </tr>
 </tbody>

@@ -8,15 +8,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d15066da96078dcbae290f9edddb772d1963ee25
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935546"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621662"
 ---
 # <a name="eds-tables"></a>EDS 表
 
-  * [媒体项映射到媒体组](#ID4EQ)
+  * [媒体项映射到介质组](#ID4EQ)
   * [有效的客户端类型列表](#ID4EFD)
   * [有效的设备类型列表](#ID4EPE)
   * [输入的法列表](#ID4ERF)
@@ -24,15 +24,15 @@ ms.locfileid: "8935546"
 <a id="ID4EQ"></a>
 
 
-## <a name="media-group-to-media-item-map"></a>媒体项映射到媒体组
+## <a name="media-group-to-media-item-map"></a>媒体项映射到介质组
 
 | 媒体组| 媒体项类型| 
 | --- | --- |
-| GameType| Xbox360Game、 XboxGameTrial、 Xbox360GameContent、 Xbox360GameDemo、 XboxTheme、 XboxOriginalGame、 XboxGamerTile、 XboxArcadeGame、 XboxGameConsumable、 XboxGameVideo、 XboxGameTrailer、 XboxBundle、 XboxXnaCommunityGame、 XboxMarketplace、 AvatarItem，MobileGame XboxMobilePDLC、 XboxMobileConsumable、 WebGame、 MetroGame、 MetroGameContent、 MetroGameConsumable、 DGame、 DGameDemo、 DConsumable、 DDurable|
-| AppType| XboxApp DApp|
+| GameType| Xbox360Game、 XboxGameTrial、 Xbox360GameContent、 Xbox360GameDemo、 XboxTheme、 XboxOriginalGame、 XboxGamerTile、 XboxArcadeGame、 XboxGameConsumable、 XboxGameVideo、 XboxGameTrailer、 XboxBundle、 XboxXnaCommunityGame、 XboxMarketplace、 AvatarItem，MobileGame、 XboxMobilePDLC、 XboxMobileConsumable、 WebGame、 MetroGame、 MetroGameContent、 MetroGameConsumable、 DGame、 DGameDemo、 DConsumable、 DDurable|
+| AppType| XboxApp, DApp|
 | MovieType| 电影|
-| TVType| TVShow （一次性电视节目），TVEpisode，TVSeries TVSeason|
-| MusicType| 唱片集，跟踪，MusicVideo|
+| TVType| TVShow （一次性的电视节目） TVEpisode，TVSeries TVSeason|
+| MusicType| 唱片集曲目，MusicVideo|
 | MusicArtistType| MusicArtist|
 | WebVideoType| WebVideo WebVideoCollection|
 | EnhancedContentType| GameLayer、 GameActivity、 AppActivity、 VideoLayer、 VideoActivity、 DActivity、 DNativeApp|
@@ -46,7 +46,7 @@ ms.locfileid: "8935546"
    * 应用
    * C13
    * CommercialService
-   * 配套
+   * 助理
    * 控制台
    * 编辑
    * 1stPartyApp
@@ -85,7 +85,7 @@ ms.locfileid: "8935546"
 
 ## <a name="input-method-list"></a>输入的法列表
 
-   * 控制者
+   * 控制器
    * ControllerAutoSuggest
    * 手势
    * GestureAutoSuggest
@@ -112,4 +112,4 @@ ms.locfileid: "8935546"
 
 ##### <a name="further-information"></a>详细信息
 
-[市场 URI](../uri/marketplace/atoc-reference-marketplace.md)
+[Marketplace Uri](../uri/marketplace/atoc-reference-marketplace.md)

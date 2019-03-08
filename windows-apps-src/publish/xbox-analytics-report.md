@@ -1,25 +1,25 @@
 ---
-Description: The Xbox analytics report in Partner Center shows you statistics about how your customers are engaging with the Xbox features in your product.
+Description: 合作伙伴中心中的 Xbox 分析报表显示你的客户在您的产品中的参与与 Xbox 功能有关的统计信息。
 title: Xbox 分析报告
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, xbox 分析, xbox 实时分析, xbox 统计数据
 ms.localizationpriority: medium
 ms.openlocfilehash: ae9bacd88f957954c5cd1d3f6ccd6d3c04a568a2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922388"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607442"
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析报告
 
-在[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**Xbox 分析**报告显示有关你的客户在你的游戏的 Xbox 功能的统计信息。 它还提供服务运行状况信息，以帮助你解决客户端错误。
+**Xbox 分析**中的报表[合作伙伴中心](https://partner.microsoft.com/dashboard)演示如何在客户正在如何使用您的游戏中的 Xbox 功能有关的统计信息。 它还提供服务运行状况信息，以帮助你解决客户端错误。
 
 > [!IMPORTANT]
-> 只有当你要发布 Xbox 游戏或要发布一款使用 Xbox Live 服务的游戏时，才能查看此报告。 若要执行此操作，你必须先通过[概念审批过程](../gaming/concept-approval.md)，其中包括通过[Microsoft 合作伙伴](../xbox-live/developer-program-overview.md#microsoft-partners)发布的游戏和游戏通过提交[ID@Xbox计划](../xbox-live/developer-program-overview.md#id)。 通过[Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏都不在此报告当前可见。
+> 只有当你要发布 Xbox 游戏或要发布一款使用 Xbox Live 服务的游戏时，才能查看此报告。 若要执行此操作，您必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括通过发布的游戏[Microsoft 合作伙伴](../xbox-live/developer-program-overview.md#microsoft-partners)和游戏通过提交[ID@Xbox程序](../xbox-live/developer-program-overview.md#id). 通过发布游戏[Xbox Live Creators 计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)不是此报表中当前可见。
 
-通过扩展**分析**并选择**Xbox 分析**，你可以为你的游戏中查看从左侧的导航菜单中的**Xbox 分析**报告。  你可以在合作伙伴中心中，或[下载报告](download-analytic-reports.md)以供脱机查看中查看此数据。
+您可以查看**Xbox 分析**展开您的游戏的左侧的导航菜单中的报表**分析**，然后选择**Xbox 分析**。  可以在合作伙伴中心，查看此数据或[将报告下载](download-analytic-reports.md)要脱机查看。
 
 
 ## <a name="overview-tab"></a>“概述”选项卡
@@ -89,9 +89,9 @@ ms.locfileid: "8922388"
 在此选项卡顶部附近，可以选择希望显示数据的时间段。 默认选择为 **30D**（30 天），但你可以选择显示 **7D**（7 天）或指定自定义日期范围（不超过 30 天）内的数据。 对于自定义日期范围，请注意，所有图表都会将图表范围删减为你所输入日期范围内提供的数据的第一天和最后一天。
 
 还可以展开**筛选器**，以按照程序包版本、设备类型和/或沙盒筛选该页面上的所有数据。
-- **程序包版本**：默认筛选器为**所有版本**，但你可以将服务运行状况数据局限于特定的程序包版本。
-- **设备类型**：默认设置为**所有设备**，但你可以将服务运行状况数据局限于特定的设备类型。
-- **沙盒**：默认设置为**零售**，但你可以将服务运行状况数据局限于特定的沙盒。
+- **包版本**:默认筛选器是**所有版本**，但可以限制到特定包版本的服务运行状况数据。
+- **设备类型**:默认设置是**的所有设备**，但可以限制到特定设备类型的服务运行状况数据。
+- **沙盒**:默认设置是**零售**，但可以限制到特定的沙盒的服务运行状况数据。
 
 下面列出的所有图表中的信息将反映所选的日期范围和任何筛选器。 某些部分还允许应用其他筛选器。
 

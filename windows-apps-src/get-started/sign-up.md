@@ -2,22 +2,22 @@
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
 title: 创建一个开发者帐户
 description: 立即注册开发者帐户，以便你可以将应用提交到 Microsoft Store 并参与其他 Microsoft 计划。
-ms.date: 4/04/2018
+ms.date: 04/04/2018
 ms.topic: article
 keywords: windows 10, uwp, 注册, 开发者帐户
 ms.localizationpriority: medium
-ms.openlocfilehash: 434e803106ef48652ddc9808ed7d47e712facfa0
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 75dc0bfdc1ae70ebb59743a54cc2b4ae0522f683
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050064"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596042"
 ---
 # <a name="create-a-developer-account"></a>创建一个开发者帐户
 
 立即注册开发者帐户，以便你可以将应用提交到 Microsoft Store 并参与其他 Microsoft 计划。
 
-[立即注册！](https://go.microsoft.com/fwlink/p/?LinkId=615100)
+[立即注册 ！](https://go.microsoft.com/fwlink/p/?LinkId=615100)
 
 ## <a name="opening-your-developer-account"></a>打开你的开发者帐户
 

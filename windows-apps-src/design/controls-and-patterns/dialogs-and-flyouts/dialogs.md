@@ -1,5 +1,5 @@
 ---
-Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
+Description: 对话框和浮出控件显示当用户请求这些元素或发生需要通知或批准的操作时出现的瞬态 UI 元素。
 title: 对话框控件
 label: Dialogs
 template: detail.hbs
@@ -13,26 +13,26 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: bee954cba446ac7dc7eb41622d9275b3b73af6ee
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116096"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621832"
 ---
 # <a name="dialog-controls"></a>对话框控件
 
-对话框控件是提供上下文应用信息的模式 UI 覆盖。 它们除非明确取消阻止与应用窗口的交互。 它们通常会请求用户进行某种类型的操作。
+对话框控件是提供上下文的应用程序信息的模式 UI 层重叠。 它们被显式关闭之前阻止与应用程序窗口的交互。 它们通常会请求用户进行某种类型的操作。
 
 ![对话框示例](../images/dialogs/dialog_RS2_delete_file.png)
 
 
-> **重要 Api**: [ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+> **重要的 Api**:[ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 使用对话框通知用户重要信息或在可以完成某个操作之前请求确认或其他信息。
 
-有关何时使用何时使用浮出控件 （类似控件），请参阅[对话框和浮出控件](index.md)与对话框的建议。 
+有关何时使用对话框与何时使用浮出控件 （类似控件） 的建议，请参阅[对话框和浮出控件](index.md)。 
 
 ## <a name="examples"></a>示例
 
@@ -43,7 +43,7 @@ ms.locfileid: "9116096"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> 或 <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> 的实际应用。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -70,7 +70,7 @@ ms.locfileid: "9116096"
 -   不要为与页面上的特定位置具有上下文关系的错误（例如，密码字段等位置的验证错误）使用对话框，请使用应用的画布本身显示内联错误。
 - 使用 [ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)生成对话框体验。 不要使用已弃用的 MessageDialog API。
 
-## <a name="how-to-create-a-dialog"></a>如何创建对话框
+## <a name="how-to-create-a-dialog"></a>如何创建一个对话框
 若要创建对话框，你使用 [ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)。 你可以使用代码或标记创建对话框。 尽管使用 XAML 定义 UI 元素通常更容易，但对于简单对话框，实际上只使用代码更容易。 此示例创建一个对话框来通知用户没有 WiFi 连接，然后使用 [ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync) 方法显示它。
 
 ```csharp
@@ -118,8 +118,8 @@ private async void DisplayDeleteFileDialog()
 }
 ```
 
-## <a name="provide-a-safe-action"></a>提供一个安全操作
-由于对话框会阻止用户交互，而且按钮是用户消除对话框的主要机制，因此请确保你的对话框至少包含一个“安全”且无破坏性的按钮，如“关闭”或“明白!”。 **所有对话应都至少应包含一个安全操作按钮来关闭对话框。** 这可以确保用户能自信地关闭对话框，而未执行操作。<br>![一个按钮对话框](../images/dialogs/dialog_RS2_one_button.png)
+## <a name="provide-a-safe-action"></a>提供安全的操作
+由于对话框会阻止用户交互，而且按钮是用户消除对话框的主要机制，因此请确保你的对话框至少包含一个“安全”且无破坏性的按钮，如“关闭”或“明白!”。 **所有对话都应都包含至少一个安全的操作按钮关闭对话框。** 这可以确保用户能自信地关闭对话框，而未执行操作。<br>![未一个按钮的对话框](../images/dialogs/dialog_RS2_one_button.png)
 
 ```csharp
 private async void DisplayNoWifiDialog()
@@ -248,7 +248,7 @@ private async void DisplaySubscribeDialog()
     </li>
 </ul>
 
-> 某些平台将确认按钮放置在右侧，而不是左侧。 那么，为什么我们建议将它放在左侧呢？  假设大多数用户惯用右手并且他们用右手拿着手机，则他们按位于左侧的确认按钮实际上更为舒适，因为该按钮更有可能处于用户的拇指弧范围内。位于屏幕右侧的按钮需要用户将拇指向内收缩到不太舒适的位置。
+> 某些平台将确认按钮放置在右侧，而不是左侧。 那么，为什么我们建议将它放在左侧呢？  如果你假设大多数用户惯用右手并且他们用右手拿着手机，按位于左侧的确认按钮实际上更为舒适，因为该按钮更有可能处于用户的拇指弧范围内。位于屏幕右侧的按钮需要用户将拇指向内收缩到不太舒适的位置。
 
 
 
@@ -261,5 +261,5 @@ private async void DisplaySubscribeDialog()
 ## <a name="related-articles"></a>相关文章
 - [工具提示](../tooltips.md)
 - [菜单和上下文菜单](../menus.md)
-- [Flyout 类](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+- [浮出控件类](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 - [ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)

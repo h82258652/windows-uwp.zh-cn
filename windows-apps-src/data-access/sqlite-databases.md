@@ -6,24 +6,24 @@ ms.topic: article
 keywords: Windows 10, uwp, SQLite, 数据库
 ms.localizationpriority: medium
 ms.openlocfilehash: 552de1ccb8f8e69a4ad716e54557ae0b5cd3a3f4
-ms.sourcegitcommit: 9af94470480ef67438f6fd189edab47395fb77e6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "9075140"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635662"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>在 UWP 应用中使用 SQLite 数据库
 你可以使用 SQLite 在用户设备上的轻量级数据库中存储和检索数据。 本指南演示如何执行该操作。
 
 ## <a name="some-benefits-of-using-sqlite-for-local-storage"></a>使用 SQLite 进行本地存储一些好处
 
-:heavy_check_mark: SQLite 具有轻量和独立的特点。 它是没有其他任何依赖项的代码库。 无需进行任何配置。
+:heavy_check_mark:SQLite 是轻型且自包含。 它是没有其他任何依赖项的代码库。 无需进行任何配置。
 
-:heavy_check_mark: 没有数据库服务器。 客户端和服务器在同一进程中运行。
+:heavy_check_mark:没有数据库的服务器。 客户端和服务器在同一进程中运行。
 
-:heavy_check_mark: SQLite 位于公共域中，因此你可以自由地使用它并将它与应用一起分配。
+:heavy_check_mark:SQLite 是公共域中，因此可以自由地使用并将它与您的应用程序一起分发。
 
-:heavy_check_mark: SQLite 可跨平台和体系结构工作。
+:heavy_check_mark:SQLite 是跨平台和体系结构。
 
 可在[此处](https://sqlite.org/about.html)了解有关 SQLite 的详细信息。
 
@@ -55,23 +55,23 @@ Entity Framework (EF) 是一个对象关系映射程序，可用于使用特定�
 
 ### <a name="the-minimum-version-of-your-project-does-not-target-the-fall-creators-update"></a>你的项目的最低版本没有将秋季创意者更新作为目标
 
-如果你使用的是 Visual Studio 2015，请单击“帮助”****->“关于 Microsoft Visual Studio”****。 然后，在已安装程序的列表中，确保你具有 NuGet 程序包管理器版本 **3.5** 或更高版本。 如果你的版本号较低，请[在此处](https://www.nuget.org/downloads)安装更高版本的 NuGet。 在该页面上，你将发现所有版本的 Nuget 都在 **Visual Studio 2015** 标题下方列出。
+如果你使用的是 Visual Studio 2015，请单击“帮助”->“关于 Microsoft Visual Studio”。 然后，在已安装程序的列表中，确保你具有 NuGet 程序包管理器版本 **3.5** 或更高版本。 如果你的版本号较低，请[在此处](https://www.nuget.org/downloads)安装更高版本的 NuGet。 在该页面上，你将发现所有版本的 Nuget 都在 **Visual Studio 2015** 标题下方列出。
 
 接下来，将类库添加到你的解决方案。 你不必使用类库来包含你的数据访问代码，但我们会使用一个我们的示例。 我们将库命名为 **DataAccessLibrary**，并将库中的类命名为 **DataAccess**。
 
 ![类库](images/class-library.png)
 
-右键单击该解决方法，然后单击“管理解决方案的 NuGet 程序包”****。
+右键单击该解决方法，然后单击“管理解决方案的 NuGet 程序包”。
 
 ![管理 NuGet 程序包](images/manage-nuget.png)
 
-如果你使用的是 Visual Studio 2015，请选择“已安装”**** 选项卡，并确保 **Microsoft.NETCore.UniversalWindowsPlatform** 程序包的版本号为 **5.2.2** 或更高。
+如果你使用的是 Visual Studio 2015，请选择“已安装”选项卡，并确保 **Microsoft.NETCore.UniversalWindowsPlatform** 程序包的版本号为 **5.2.2** 或更高。
 
 ![.NETCore 的版本](images/package-version.png)
 
 如果不是，请将程序包更新到更新的版本。
 
-选择“浏览”**** 选项卡，然后搜索“Microsoft.Data.SQLite”**** 程序包。 安装该程序包的版本 **1.1.1**（或更低）。
+选择“浏览”选项卡，然后搜索“Microsoft.Data.SQLite”程序包。 安装该程序包的版本 **1.1.1**（或更低）。
 
 ![SQLite 程序包](images/sqlite-package.png)
 
@@ -83,19 +83,19 @@ Entity Framework (EF) 是一个对象关系映射程序，可用于使用特定�
 
 首先，你可以使用 .NET Standard 2.0 库而不是常规的类库。 这意味着你可以将数据访问代码与任何其他基于 .NET 的应用（如 WPF、Windows 窗体、Android、iOS 或 ASP.NET 应用）共享。
 
-其次，你的应用没有打包 SQLite 库。 相反，你的应用可以使用随 Windows 一起安装的 SQLite 版本。 这将带来几个方面的好处。
+其次，您的应用程序不必 SQLite 的库打包。 相反，你的应用可以使用随 Windows 一起安装的 SQLite 版本。 这将带来几个方面的好处。
 
-:heavy_check_mark: 减小了应用程序的大小，因为你不必下载 SQLite 二进制文件然后将其打包为应用程序的一部分。
+:heavy_check_mark:因为无需下载二进制，SQLite，然后将其作为你的应用程序的一部分进行打包，减少了您的应用程序的大小。
 
-:heavy_check_mark: 如果 SQLite 发布了针对 SQLite 中的 bug 和安全漏洞的重要修复程序，你就不必向用户推送你的应用的新版本。 Windows 版本的 SQLite 由 Microsoft 与 SQLite.org 协作维护。
+:heavy_check_mark:使您不必将您的应用程序的新版本推送到用户在的 SQLite 将关键修补程序发布到 bug 和 SQLite 中的安全漏洞。 Windows 版本的 SQLite 由 Microsoft 与 SQLite.org 协作维护。
 
-:heavy_check_mark: 应用加载时间可能更短，因为 SDK 版本的 SQLite 很有可能已被加载到内存中。
+:heavy_check_mark:应用加载时有可能更快，因为很可能，SQLite 的 SDK 版本将已加载到内存。
 
 让我们开始向你的解决方案添加 .NET Standard 2.0 类库。 你不必使用类库来包含你的数据访问代码，但我们会使用一个我们的示例。 我们将库命名为 **DataAccessLibrary**，并将库中的类命名为 **DataAccess**。
 
 ![类库](images/dot-net-standard.png)
 
-右键单击该解决方法，然后单击“管理解决方案的 NuGet 程序包”****。
+右键单击该解决方法，然后单击“管理解决方案的 NuGet 程序包”。
 
 ![管理 NuGet 程序包](images/manage-nuget-2.png)
 
@@ -105,17 +105,17 @@ Entity Framework (EF) 是一个对象关系映射程序，可用于使用特定�
 
 #### <a name="to-use-the-version-of-sqlite-that-is-installed-with-windows"></a>使用随 Windows 一起安装的 SQLite 版本
 
-选择“浏览”**** 选项卡，搜索“Microsoft.Data.SQLite.core”**** 程序包，然后安装它。
+选择“浏览”选项卡，搜索“Microsoft.Data.SQLite.core”程序包，然后安装它。
 
 ![SQLite Core 程序包](images/sqlite-core-package.png)
 
-搜索“SQLitePCLRaw.bundle_winsqlite3”**** 程序包，然后仅将它安装到应用程序中的 UWP 项目。
+搜索“SQLitePCLRaw.bundle_winsqlite3”程序包，然后仅将它安装到应用程序中的 UWP 项目。
 
 ![SQLite PCL Raw 程序包](images/sqlite-raw-package.png)
 
 #### <a name="to-include-sqlite-with-your-app"></a>将 SQLite 包含在你的应用中
 
-你不必执行此操作。 但如果你出于某种原因要将特定版本的 SQLite 包含在你的应用中，请选择“浏览”**** 选项卡，然后搜索“Microsoft.Data.SQLite”**** 程序包。 安装该程序包的版本 **2.0**（或更低）。
+你不必执行此操作。 但如果你出于某种原因要将特定版本的 SQLite 包含在你的应用中，请选择“浏览”选项卡，然后搜索“Microsoft.Data.SQLite”程序包。 安装该程序包的版本 **2.0**（或更低）。
 
 ![SQLite 程序包](images/sqlite-package-v2.png)
 
@@ -125,15 +125,15 @@ Entity Framework (EF) 是一个对象关系映射程序，可用于使用特定�
 
 我们将执行以下操作：
 
-:one: 准备数据访问类。
+： 一个：准备将数据访问类。
 
-:two: 初始化 SQLite 数据库。
+： 两个：初始化 SQLite 数据库。
 
-:three: 将数据插入到 SQLite 数据库。
+： 三个：SQLite 数据库中插入数据。
 
-:four: 从 SQLite 数据库检索数据。
+： 四个：SQLite 数据库中检索数据。
 
-:five: 添加基本用户界面。
+： 五个：添加基本用户界面。
 
 ### <a name="prepare-the-data-access-class"></a>准备数据访问类
 
@@ -317,14 +317,14 @@ private void AddData(object sender, RoutedEventArgs e)
 
 ## <a name="next-steps"></a>后续步骤
 
-**将你的应用直接连接到 SQL Server 数据库**
+**您的应用程序直接连接到 SQL Server 数据库**
 
 请参阅[在 UWP 应用中使用 SQL Server 数据库](sql-server-databases.md)。
 
-**在跨不同平台的不同应用之间共享代码**
+**不同的应用程序跨不同平台之间共享代码**
 
 参阅[在桌面应用和 UWP 应用之间共享代码](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate)。
 
-**使用 Azure SQL 后端添加大纲/细节页面**
+**添加 Azure SQL 后端使用的主详细信息页**
 
 参阅[客户订单数据库示例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)。

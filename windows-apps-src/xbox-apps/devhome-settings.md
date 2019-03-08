@@ -1,33 +1,33 @@
 ---
 ms.assetid: ec3945e7-cfb1-b91a-7ae6-e767a7227f8a
-title: 设置页面 （开发人员主页）
-description: 提供信息适用于 Xbox One 开发人员主页应用的设置页。
+title: “设置”页面（开发人员主页）
+description: 提供与 Xbox One 开发人员主页应用的“设置”页面相关的信息。
 ms.date: 08/09/2017
 ms.topic: article
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-settings.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a0a94a7a8e22ee63cb126bb50ad1c74837c4f55
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942153"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654202"
 ---
-# <a name="settings-page-dev-home"></a>设置页面 （开发人员主页）
+# <a name="settings-page-dev-home"></a>“设置”页面（开发人员主页）
    
   
-开发人员主页的**设置**页提供对各种设置用于开发主机访问。   
- ![设置页面的开发人员主页](images/devhome_settings.png)   
+可以通过“开发人员主页”的**设置**页面访问开发控制台的不同设置。   
+ ![适用于开发人员主页的设置页](images/devhome_settings.png)   
   
 **设置**页面包含以下窗格：   
  
    *  [控制台设置](#ID4EEB)  
-   *  [操作系统恢复更新设置](#ID4EOB)  
+   *  [OS 恢复更新设置](#ID4EOB)  
    *  [Visual Studio](#ID4EYB)  
    *  [调试设置](#ID4ECC)  
-   *  [无人参与的脚本配置](#ID4EMC)  
-   *  [默认主页体验](#ID4E3C)  
+   *  [配置无人参与的脚本](#ID4EMC)  
+   *  [默认的主页体验](#ID4E3C)  
 
  
 <a id="ID4EEB"></a>
@@ -37,7 +37,7 @@ ms.locfileid: "8942153"
 ## <a name="console-settings"></a>控制台设置  
    
   
-**控制台设置**窗格中提供"一览"视图的控制台设置和信息。 你可以使用这些工具查看和编辑控制台的主机名、 沙盒和安全访问键设置。   
+**控制台设置**窗格提供控制台设置和信息的“简要”视图。 你可以使用这些工具来查看和编辑控制台的主机名、沙盒和安全访问密钥设置。   
   
 <a id="ID4EOB"></a>
 
@@ -46,7 +46,7 @@ ms.locfileid: "8942153"
 ## <a name="os-recovery-update-settings"></a>操作系统恢复更新设置  
    
   
-**操作系统恢复更新设置**窗格配置控制台的自动更新设置。 请注意，更改这些设置可能需要 24 小时才能生效。   
+可通过**操作系统恢复更新设置**窗格配置控制台的自动更新设置。 请注意，对这些设置的更改需要 24 小时才能生效。   
   
 <a id="ID4EYB"></a>
 
@@ -55,7 +55,7 @@ ms.locfileid: "8942153"
 ## <a name="visual-studio"></a>Visual Studio  
    
   
-在**Visual Studio**窗格用于将控制台与 Visual Studio 配对。 你还可以删除所有配对的 Visual Studio 实例。   
+**Visual Studio** 窗格用于将控制台与 Visual Studio 配对。 你还可以删除所有已配对的 Visual Studio 实例。   
   
 <a id="ID4ECC"></a>
 
@@ -73,7 +73,7 @@ ms.locfileid: "8942153"
 ## <a name="unattended-script-configuration"></a>无人参与的脚本配置  
    
   
-**无人参与脚本配置**窗格管理 Xbox One 主机的安装脚本。   
+可通过**无人参与的脚本配置**窗格管理 Xbox One 控制台的设置脚本。   
   
 <a id="ID4E3C"></a>
 
@@ -82,13 +82,13 @@ ms.locfileid: "8942153"
 ## <a name="default-home-experience"></a>默认主页体验  
    
   
-**默认主页体验**窗格确定主机启动时是否显示零售主页屏幕或[主机 （开发人员主页） 上的开发人员主页](dev-home.md)屏幕。   
+可通过**默认主页体验**窗格确定在控制台启动时显示的是零售主页屏幕还是[控制台上的开发人员主页（“开发人员主页”）](dev-home.md)屏幕。   
   
 <a id="ID4EJD"></a>
 
    
 
 ## <a name="see-also"></a>另请参阅  
- [在控制台 （开发人员主页） 上的开发人员主页](dev-home.md)
+ [控制台 （适用于开发人员主页） 上的开发人员主页](dev-home.md)
 
   

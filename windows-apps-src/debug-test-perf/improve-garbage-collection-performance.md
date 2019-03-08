@@ -1,24 +1,24 @@
 ---
 ms.assetid: F912161D-3767-4F35-88C0-E1ECDED692A2
 title: 改进垃圾回收性能
-description: 使用 C# 和 Visual Basic 编写的通用 Windows 平台 (UWP) 应用从 .NET 垃圾回收器获取自动内存管理。 本部分汇总了 UWP 应用中的 .NET 垃圾回收器的行为和性能最佳做法。
+description: 使用 C# 和 Visual Basic 编写的通用 Windows 平台 (UWP) 应用从 .NET 垃圾回收器获取自动内存管理。 本部分汇总了 UWP 应用中的 .NET 垃圾回收器的行为和性能最佳实践。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f22b893d0c55cb9220e0894527836a0bb5e750b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049854"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625972"
 ---
-# <a name="improve-garbage-collection-performance"></a>提高垃圾回收性能
+# <a name="improve-garbage-collection-performance"></a>改进垃圾回收性能
 
 
 使用 C# 和 Visual Basic 编写的通用 Windows 平台 (UWP) 应用从 .NET 垃圾回收器获取自动内存管理。 本部分汇总了 UWP 应用中的 .NET 垃圾回收器的行为和性能最佳实践。 有关 .NET 垃圾回收器的工作原理以及调试和分析垃圾回收器性能的工具的详细信息，请参阅[垃圾回收](https://msdn.microsoft.com/library/windows/apps/xaml/0xy59wtx.aspx)。
 
-**注意**需要干涉垃圾回收器的默认行为是与你的应用的一般内存问题的显著特征。 有关详细信息，请参阅[在 Visual Studio 2015 中调试时使用的内存使用工具](https://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx)。 本主题仅适用于 C# 和 Visual Basic。
+**请注意**  无需人工干预的垃圾回收器的默认行为是强烈表明您的应用程序的常规内存问题。 有关详细信息，请参阅[在 Visual Studio 2015 中调试时使用的内存使用工具](https://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx)。 本主题仅适用于 C# 和 Visual Basic。
 
  
 
@@ -42,7 +42,7 @@ ms.locfileid: "9049854"
 
 可以通过调用 [**GC.Collect(n)**](https://msdn.microsoft.com/library/windows/apps/xaml/y46kxc5e.aspx) 来引发某一代的垃圾回收，其中 n 是要回收的代（0、1 或 2）。
 
-**注意**我们建议不要在应用中都强制垃圾回收因为垃圾回收器使用许多启发式技术来确定执行回收的最佳时间且强制进行回收在许多情况下不必要的 cpu 消耗。 但是，如果你知道自己的应用中有大量不再使用的对象，并且你希望将此内存返回给系统，此时则适合强制进行垃圾回收。 例如，在游戏中，在某个加载序列结束时你可以引发回收，以在游戏开始之前释放内存。
+**请注意**  我们建议不要在您的应用程序中都强制垃圾回收因为垃圾回收器使用许多试探法来确定执行回收的最佳时间并强制集合是在许多情况下不必要地使用cpu 使用率。 但是，如果你知道自己的应用中有大量不再使用的对象，并且你希望将此内存返回给系统，此时则适合强制进行垃圾回收。 例如，在游戏中，在某个加载序列结束时你可以引发回收，以在游戏开始之前释放内存。
  
 为了避免意外引发过多垃圾回收，可以将 [**GCCollectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/bb495757.aspx) 设置为 **Optimized**。 这会指导垃圾回收器仅在确定回收将足够富有成效，可证明其合理性时才启动回收。
 

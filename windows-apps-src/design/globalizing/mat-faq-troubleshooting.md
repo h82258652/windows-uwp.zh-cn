@@ -1,5 +1,5 @@
 ---
-Description: This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT) 4.0.
+Description: 本主题提供有关多语言应用工具包 (MAT) 4.0 的常见问题解答。
 title: 多语言应用工具包常见问题解答
 template: detail.hbs
 ms.date: 11/13/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e27256fbf19ed31a7b087e94dea9e5514db516f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050590"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648262"
 ---
 # <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>多语言应用工具包 4.0 常见问题和疑难解答
 
@@ -23,7 +23,7 @@ ms.locfileid: "9050590"
 
 ## <a name="do-i-need-resw-files-in-multiple-languages"></a>我是否需要多种语言的 .resw 文件？
 
-不需要。 此工具包的关键优势之一是无需多种语言的 .resw 文件。 工具包通过使用 .xlf 文件管理并同步你的应用的资源。 这将消除保持跨多个 .resw 文件同步内容的难题。
+否。 此工具包的关键优势之一是无需多种语言的 .resw 文件。 工具包通过使用 .xlf 文件管理并同步你的应用的资源。 这将消除保持跨多个 .resw 文件同步内容的难题。
 
 包含匹配的 .resw 和 .xlf 文件的项目将导致忽略 .xlf 文件中的译文。 如果发生此情况，则在构建时将显示一条警告，告诉你在最终应用中未包含 .xlf 译文。 当 .resw 文件和 .xlf 文件具有包含相同语言代码的目标语言时，这两种文件相匹配。 一个匹配的配对示例为 `Strings\de-DE\Resources.resw` 和 `<project-name>.de-DE.xlf` 文件（包含 `target-language="de-DE"`）。
 
@@ -142,7 +142,7 @@ msbuild /t:rebuild <project-name>
 
 ## <a name="what-if-my-translator-doesnt-have-windows-10-andor-visual-studio-andor-the-multilingual-app-toolkit-installed"></a>如果我的 Translator 未安装 Windows 10 和/或 Visual Studio 和/或多语言应用工具包会怎样？
 
-当选择导出字符串资源对话框中的**输出：邮件收件人**时，电子邮件包含下载和安装多语言应用工具包 (MAT) 4.0 的链接。 即使没有 Windows 10 或 Visual Studio，你的 Translator 仍可安装 MAT 4.0 独立多语言编辑器工具。
+当选择**输出：邮件收件人**导出字符串资源对话框中，在电子邮件包括用于下载和安装多语言应用工具包 (MAT) 4.0 的链接。 即使没有 Windows 10 或 Visual Studio，你的 Translator 仍可安装 MAT 4.0 独立多语言编辑器工具。
 
 有关详细信息，请参阅[使用多语言应用工具包 4.0](use-mat.md)。
 

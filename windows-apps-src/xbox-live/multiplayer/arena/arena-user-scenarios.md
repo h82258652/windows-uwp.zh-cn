@@ -6,11 +6,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛, ux
 ms.localizationpriority: medium
 ms.openlocfilehash: 03e1cec88b7e6528759501fdc8ab5af0a1753c81
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929063"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607892"
 ---
 # <a name="participant-user-scenarios"></a>参与者用户方案
 
@@ -30,7 +30,7 @@ Xbox Arena、Xbox 社交功能和 Arena API 的功能不仅仅是为了满足锦
 
 * 现在，排行榜、统计数据和玩家个人资料包含过去和现在的锦标赛结果，这有助于提升参与者的竞技状态。
 
-## <a name="motivation-type-immersion"></a>动机类型：沉浸其中
+## <a name="motivation-type-immersion"></a>动机类型：深入探讨
 
 * 沉浸在游戏或游戏的故事中。
 
@@ -54,7 +54,7 @@ Fernando 花了数小时构建《我的世界》和探索构建活动的无限�
 
 Katie 无法在“Mass Effect Andromeda”中足够探索开放世界元素。 她升级了多个人物，所以她并不满足于在多人比赛中与其他玩家使用同一个人物。 锦标赛是对她所升级的人物的技能和能力的考验。 她面临着其他有竞争力的对手 - 对手们也通过自己独创的技能和能力组合升级了人物。 每次参加锦标赛时，Katie 都能发现提高技能的新方法。
 
-## <a name="motivation-type-stimulation"></a>动机类型：模拟
+## <a name="motivation-type-stimulation"></a>动机类型：刺激
 
 * 体验我通过玩游戏感受到的所有感情（正面和/或负面）。
 
@@ -64,7 +64,7 @@ Katie 无法在“Mass Effect Andromeda”中足够探索开放世界元素。 �
 
 在工作日，Will 是人力资源经理；而到了周末，他便是《战争机器》的粉丝。 处理完了一周的冗杂人事问题，他亟待通过《战争机器》锦标赛缓解纷杂的思绪。 锦标赛带给 Will 心理上的挑战，帮助他在组织有序的竞争带来的情绪起伏变化中焕发活力。 他不断取得进步：战绩逐渐赶超对方团队 - 在进程中成为一号种子 - 主宰比赛、证明自己的技能并赢得一个决赛席位。
 
-## <a name="motivation-type-social-affiliation"></a>动机类型：社会关系
+## <a name="motivation-type-social-affiliation"></a>动机类型：社交隶属关系
 
 * 为了维护关系，花时间与朋友、家人和/或他人相处。
 
@@ -76,7 +76,7 @@ Katie 无法在“Mass Effect Andromeda”中足够探索开放世界元素。 �
 
 Sierra 喜欢玩《我的世界》并结识喜爱这款游戏的人。 锦标赛将这两者完美结合。 与团队竞争加强了她与其他玩家的联系，她在与多个玩家一起玩时从未经历过这些。 在令人幸福的竞争与协作中，新的关系得以建立，社区得以凝聚，这带给她无尽的满足。
 
-## <a name="motivation-type-competition"></a>动机类型：竞争
+## <a name="motivation-type-competition"></a>动机类型：竞赛
 
 * 与他人竞争（无论胜负与否）。
 

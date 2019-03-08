@@ -3,14 +3,14 @@ title: “我的人脉”共享
 description: 介绍如何为“我的人脉”共享添加支持
 ms.date: 06/28/2017
 ms.topic: article
-keywords: windows 10，uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 91d88dc78fd02ae3f16e1d980aa207d1dd458417
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945393"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597822"
 ---
 # <a name="my-people-sharing"></a>“我的人脉”共享
 
@@ -27,8 +27,8 @@ ms.locfileid: "8945393"
 
 你必须执行以下三个步骤，才能将应用程序启用为“我的人脉”共享目标：
 
-1. [声明对应用程序清单中的 shareTarget 激活合约提供支持。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [为用户可与之共用应用的联系人添加注释。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [声明对应用程序清单中的 shareTarget 激活协定的支持。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [批注的用户可以使用您的应用程序共享的联系人。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3. 支持同时运行应用程序的多个实例。  用户必须能够与完整版本的应用程序进行交互，并且同时也可以使用应用程序与其他人共享。 他们可以同时在多个共享窗口中使用该应用程序。 为了对此提供支持，应用程序需要能够同时运行多个视图。 若要了解如何执行此操作，请参阅文章[“显示应用的多个视图”](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views)。
 
 当你完成此操作后，应用程序将在“我的人脉”共享窗口中显示为共享目标，可以通过以下两种方式启动共享目标：
@@ -103,7 +103,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找包系列名称，打开**Package.appxmanifest**使用默认编辑器，并在"打包"选项卡中查找。在这里，"应用"是与共享目标视图相对应的可激活类。
+“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找包系列名称，请使用默认编辑器打开 **Package.appxmanifest**，并在“打包”选项卡中查找。在此，“应用”是与“共享目标”视图相对应的可激活类。
 
 ## <a name="running-as-a-my-people-share-target"></a>作为“我的人脉”共享目标运行
 
@@ -132,6 +132,6 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 ```
 
 ## <a name="see-also"></a>另请参阅
-+ [添加“我的人脉”支持](my-people-support.md)
++ [添加我的人支持](my-people-support.md)
 + [ShareTarget 类](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
-+ [联系人卡片集成示例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
++ [联系人卡集成示例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)

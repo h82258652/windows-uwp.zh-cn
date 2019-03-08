@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c89a1901d15d00c7c102157c8f44d6ab96272ef0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919769"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617902"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a>与系统媒体传输控件集成
 
@@ -58,7 +58,7 @@ ms.locfileid: "8919769"
 
 [!code-cs[IsEnabledChanged](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetIsEnabledChanged)]
 
-在某些情况下，可能希望完全替代 SMTC 命令的行为。 以下示例演示的方案为，应用使用 *Next* 和 *Previous* 命令在 Internet 广播电台之间切换，而不是在当前播放列表中的曲目之间跳过。 和上一个示例中一样，在接收命令时注册一个处理程序，在此情况下它是 [**PreviousReceived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.PreviousReceived) 事件。
+在某些情况下，你可能希望完全替代 SMTC 命令的行为。 以下示例演示的方案为，应用使用 *Next* 和 *Previous* 命令在 Internet 广播电台之间切换，而不是在当前播放列表中的曲目之间跳过。 和上一个示例中一样，在接收命令时注册一个处理程序，在此情况下它是 [**PreviousReceived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.PreviousReceived) 事件。
 
 [!code-cs[AddPreviousHandler](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetAddPreviousHandler)]
 
@@ -66,7 +66,7 @@ ms.locfileid: "8919769"
 
 接下来，检查 [**Handled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs.Handled) 属性，以确保该事件未由另其他处理程序处理。 否则，**Handled** 属性设置为 true。 这使 SMTC 以及任何其他已订阅的处理程序知道它们不应采取任何措施来执行此命令，因为它已经过处理。 然后，代码为媒体播放器设置新源，并启动播放器。
 
-最后，在 deferral 对象上调用 [**Complete**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Deferral.Complete) 以通知系统已完成命令处理。
+最后，在 deferral 对象上调用 [**Complete**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Deferral.Complete) 以通知系统你已完成命令处理。
 
 [!code-cs[PreviousReceived](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetPreviousReceived)]
                 
@@ -77,8 +77,8 @@ ms.locfileid: "8919769"
 
 ## <a name="related-topics"></a>相关主题
 * [媒体播放](media-playback.md)
-* [使用 MediaPlayer 播放音频和视频](play-audio-and-video-with-mediaplayer.md)
-* [手动控制系统媒体传输控件](system-media-transport-controls.md)
+* [播放音频和视频使用 MediaPlayer](play-audio-and-video-with-mediaplayer.md)
+* [手动控制的系统媒体传输控件](system-media-transport-controls.md)
 * [Github 上的系统媒体传输控件示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
  
 

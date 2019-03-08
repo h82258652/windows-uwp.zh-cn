@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use a progress bar within your toast notification.
+Description: 了解如何使用一个进度栏内 toast 通知。
 title: Toast 进度栏和数据绑定
 label: Toast progress bar and data binding
 template: detail.hbs
@@ -8,22 +8,22 @@ ms.topic: article
 keywords: windows 10, uwp, toast, 进度栏, toast 进度栏, 通知, toast 数据绑定
 ms.localizationpriority: medium
 ms.openlocfilehash: f955f2a71fed6444c65f9550e1f4fa3baeabe092
-ms.sourcegitcommit: 88265a8c9f6a77a0508a0c9d89b6ab0a6238a1da
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "8969054"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624822"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>Toast 进度栏和数据绑定
 
 使用 Toast 通知内的进度栏可向用户传送长时运行的操作的状态，如下载、视频呈现、练习目标等。
 
 > [!IMPORTANT]
-> **需要创意者更新和 1.4.0 的通知库**：目标必须为 SDK 15063 并且运行版本 15063 或更高版本以使用 Toast 上的进度栏。 必须使用版本 1.4.0 或更高版本的 [UWP 社区工具包通知 NuGet 库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)来构造 Toast 内容中的进度栏。
+> **需要创意者更新和通知库 1.4.0**:必须为目标 SDK 版本 15063 和运行生成 15063 或更高版本上显示 toast 使用进度条。 必须使用版本 1.4.0 或更高版本的 [UWP 社区工具包通知 NuGet 库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)来构造 Toast 内容中的进度栏。
 
-Toast 内的进度栏可为"indeterminate"（没有特定值，动态的点指示有操作正在发生） 或"确定"（填充了特定百分比栏的是，如 60%）。
+进度栏内 toast 可以是"不确定"（没有特定值，动画的点表示正在进行的操作） 或"确定"（特定百分比条的填充，如 60%）。
 
-> **重要 API**：[NotificationData 类](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata)，[ToastNotifier.Update 方法](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update)，[ToastNotification 类](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
+> **重要的 Api**:[NotificationData 类](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata)， [ToastNotifier.Update 方法](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update)， [ToastNotification 类](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 
 > [!NOTE]
 > 仅桌面设备支持 Toast 通知中的进度栏。 其他设备会从通知中删除进度栏。
@@ -32,12 +32,12 @@ Toast 内的进度栏可为"indeterminate"（没有特定值，动态的点指�
 
 <img alt="Toast with progress bar properties labeled" src="images/toast-progressbar-annotated.png" width="626"/>
 
-| 属性 | 类型 | 必需 | 描述 |
+| 属性 | 在任务栏的搜索框中键入 | 必需 | 描述 |
 |---|---|---|---|
 | **Title** | 字符串或 [BindableString](toast-schema.md#bindablestring) | false | 获取或设置可选标题字符串。 支持数据绑定。 |
-| **Value** | Double 或 [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) 或 [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | false | 获取或设置进度栏的值。 支持数据绑定。 默认为 0。 可以为 0.0 和 1.0 之间的双精度浮点数、`AdaptiveProgressBarValue.Indeterminate` 或 `new BindableProgressBarValue("myProgressValue")`。 |
+| **值** | Double 或 [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) 或 [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | false | 获取或设置进度栏的值。 支持数据绑定。 默认为 0。 可以为 0.0 和 1.0 之间的双精度浮点数、`AdaptiveProgressBarValue.Indeterminate` 或 `new BindableProgressBarValue("myProgressValue")`。 |
 | **ValueStringOverride** | 字符串或 [BindableString](toast-schema.md#bindablestring) | false | 获取或设置要显示的可选字符串，而不是默认百分比字符串。 如果未提供，会显示诸如“70%”的内容。 |
-| **Status** | 字符串或 [BindableString](toast-schema.md#bindablestring) | true | 获取或设置状态字符串（必需），它显示在左侧进度栏下方。 此字符串应反映操作的状态，如“正在下载...”或“正在安装...” |
+| **状态** | 字符串或 [BindableString](toast-schema.md#bindablestring) | true | 获取或设置状态字符串（必需），它显示在左侧进度栏下方。 此字符串应反映操作的状态，如“正在下载...”或“正在安装...” |
 
 
 下面介绍如何生成上面看到的通知...
@@ -204,10 +204,10 @@ Toast 通知中的以下元素支持数据绑定
 
 | | 替换 | 更新 |
 | -- | -- | --
-| **在操作中心中的位置** | 将通知移动到操作中心的顶部。 | 将通知就地保留在操作中心内。 |
+| **操作中心中的位置** | 将通知移动到操作中心的顶部。 | 将通知就地保留在操作中心内。 |
 | **修改内容** | 可彻底更改 Toast 的全部内容/布局 | 仅可更改支持数据绑定的属性（进度栏和顶级文本） |
-| **作为弹出窗口重新出现** | 如果保持 **SuppressPopup** 的设置为 `false`（或设置为 true 以自动将其发送到操作中心），则可以作为 Toast 弹出窗口重新出现 | 不会作为弹出窗口重新出现；在操作中心内自动更新 Toast 的数据 |
-| **用户已消除** | 无论用户是否消除上一个通知，将始终发送用于替换的 Toast | 如果用户已消除 Toast，将无法更新 Toast |
+| **以弹出方式重新出现** | 如果保持 **SuppressPopup** 的设置为 `false`（或设置为 true 以自动将其发送到操作中心），则可以作为 Toast 弹出窗口重新出现 | 不会作为弹出窗口重新出现；在操作中心内自动更新 Toast 的数据 |
+| **用户取消** | 无论用户是否消除上一个通知，将始终发送用于替换的 Toast | 如果用户已消除 Toast，将无法更新 Toast |
 
 一般情况下，**更新可用于…**
 
@@ -223,4 +223,4 @@ Toast 通知中的以下元素支持数据绑定
 ## <a name="related-topics"></a>相关主题
 
 - [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/quickstart-toast-progress-bar)
-- [Toast 内容文档](adaptive-interactive-toasts.md)
+- [Toast 通知内容文档](adaptive-interactive-toasts.md)

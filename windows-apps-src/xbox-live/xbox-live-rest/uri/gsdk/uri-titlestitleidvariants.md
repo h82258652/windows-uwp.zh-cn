@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a0a0df14b442babec363dfebc96a0c33935563e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933769"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658542"
 ---
 # <a name="titlestitleidvariants"></a>/titles/{titleId}/variants
-URI 由客户端以获取可用的变体的标题。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+若要获取可用的变体的标题的客户端调用的 URI。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [URI 参数](#ID4EU)
   * [主机名](#ID4EIB)
@@ -28,7 +28,7 @@ URI 由客户端以获取可用的变体的标题。 这些 Uri 的域是`gamese
  
 | 参数| 描述| 
 | --- | --- | 
-| titleid| 游戏应在其中操作该请求 ID。| 
+| titleid| 请求应作用于的标题的 ID。| 
   
 <a id="ID4EIB"></a>
 
@@ -44,5 +44,5 @@ gameserverds.xboxlive.com
   
 [POST](uri-titlestitleidvariants-post.md)
  
-&nbsp;&nbsp;URI 由客户端检索列表的游戏的变体，为指定的游戏 id。
+&nbsp;&nbsp;检索一组 id。 指定的标题的游戏不同版本的客户端调用的 URI
    

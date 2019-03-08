@@ -1,5 +1,5 @@
 ---
-title: Xbox Live 标题存储
+title: Xbox Live 作品存储
 description: 了解如何使用 Xbox Live 标题存储来存储云中标题的游戏信息。
 ms.assetid: a4182bc8-d232-4e77-93ae-97fe17ac71b1
 ms.date: 04/04/2017
@@ -7,13 +7,13 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 472a2131c113cdde5d7383e169e4fbe638e4e555
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940448"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623922"
 ---
-# <a name="xbox-live-title-storage"></a>Xbox Live 标题存储
+# <a name="xbox-live-title-storage"></a>Xbox Live 作品存储
 
 Xbox Live 标题存储服务提供了一种在云中存储标题游戏信息的方法。 所有平台上运行的游戏均可使用此服务。
 
@@ -28,10 +28,10 @@ Xbox Live 标题存储的一些高级功能包括（但不限于）：
 
 下列部分将对 Xbox Live 标题存储的主要功能进行详细说明：
 
--   [存储类型](#ID4ETB)
--   [数据类型](#ID4ECF)
--   [标题存储 URI](#ID4EBEAC)
--   [调节限制](#ID4ETEAC)
+-   [类型的存储](#ID4ETB)
+-   [类型的数据](#ID4ECF)
+-   [标题存储 Uri](#ID4EBEAC)
+-   [节流限制](#ID4ETEAC)
 
 <a name="ID4ETB"></a>
 
@@ -41,7 +41,7 @@ Xbox Live 标题存储的一些高级功能包括（但不限于）：
 |--------------------|--------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------|
 | 受信任平台   | 每个用户 256 MB | 每个用户 64 MB    | 已保存游戏或游戏状态（播放/暂停/继续）等基于每个用户的数据。 更安全，但具有平台限制。 | 任何平台均可读取，但只有 Xbox One、Xbox 360 或 Windows Phone 可以写入。  | 可公开配置或仅所有者可配置。       |
 | 通用平台 | 每个用户 64 MB | 每个用户 64 MB    | 已保存游戏或游戏状态（播放/暂停/继续）等基于每个用户的数据。 | 任何平台均可写入，但只有 Xbox One、Xbox 360 或 Windows Phone 以外的平台才可读取。 | 可公开配置或仅所有者可配置。       |
-| 全局             | 256 MB | 256 MB            | 每个人均可读取的数据，如名单、地图、挑战，或艺术资源。 | 仅可通过合作伙伴中心的 Xbox 开发人员门户写入，任何平台均可读取。                                | 所有用户均可读取。
+| 全局             | 256 MB | 256 MB            | 每个人均可读取的数据，如名单、地图、挑战，或艺术资源。 | 只能通过 Xbox 开发人员门户或合作伙伴中心可写，任何平台可能会读取。                                | 所有用户均可读取。
 
 ### <a name="deprecated-storage-types"></a>弃用的存储类型
 
@@ -140,7 +140,7 @@ Xbox Live 标题存储的一些高级功能包括（但不限于）：
 
 #### <a name="configuration-information"></a>配置信息
 
-可**配置** **{type}** 以指示此数据为配置 blob。 配置 blob 是存储在全局标题存储中的数据结构。 blob 格式类似于 JSON 对象。
+可**配置****{type}** 以指示此数据为配置 blob。 配置 blob 是存储在全局标题存储中的数据结构。 blob 格式类似于 JSON 对象。
 
 配置 blob 可包含虚拟节点，此节点从可能性列表返回设置。 虚拟节点对为特定情况（如用于游戏或区域设置）提供设置非常有用。 虚拟节点包含若干可能的设置和值以及用于从值中选择的条件。 在以下示例中，**defaultCardDesign** 设置可具有虚拟节点中的一个值。
 
@@ -159,7 +159,7 @@ Xbox Live 标题存储的一些高级功能包括（但不限于）：
       },
     }
 
-当游戏读取本文件时，系统将从 **\_sourceNodes** 数组中选择一个值。 在这种情况下，基于游戏的游戏 ID 选择此项目。 玩 **12456799** 游戏的用户会看到：
+后一种游戏读取此文件，系统将选择中的值之一 **\_sourceNodes**数组。 在这种情况下，基于游戏的游戏 ID 选择此项目。 玩 **12456799** 游戏的用户会看到：
 
     {
       "defaultCardDesign":"RobotUnicornCard.png,binary",
@@ -202,7 +202,7 @@ Xbox Live 标题存储的一些高级功能包括（但不限于）：
       Authorization: XBL3.0 x=<userHash>;<STSTokenString>
       Connection: Keep-Alive
 
-**\_selectBy** 值表示要执行的选择类型，**\_selector** 值表示要在该选择中使用的数据。 可能的值为：
+**\_选择**值指示哪种类型的选择，以执行操作并**\_选择器**值指示要在所选内容中使用的数据。 可能的值为：
 
 <table>
 <thead>
@@ -217,7 +217,7 @@ Xbox Live 标题存储的一些高级功能包括（但不限于）：
 <td ><p><strong>_selector</strong> 匹配提供的声明中的游戏 ID。</p></td>
 </tr>
 <tr>
-<td >区域设置</td>
+<td >locale</td>
 <td ><p><strong>_selector</strong> 匹配“接受语言”标题中的区域设置字符串。</p></td>
 </tr>
 <tr>
@@ -259,19 +259,19 @@ Xbox Live 标题存储的一些高级功能包括（但不限于）：
 
 ## <a name="in-this-section"></a>本部分内容
 
-[在 Xbox Live 标题存储中读取配置 Blob](reading-configuration-blobs.md)  
+[读取 Xbox Live 标题存储中的配置 Blob](reading-configuration-blobs.md)  
 演示从 Xbox Live 标题存储中读取配置 blob。
 
-[在 Xbox Live 标题存储中存储二进制文件 blob](storing-binary-blobs.md)  
+[在 Xbox Live 标题存储中存储二进制 Blob](storing-binary-blobs.md)  
 演示在 Xbox Live 标题存储中存储二进制文件 blob。
 
-[在 Xbox Live 标题存储中读取二进制文件 blob](reading-binary-blobs.md)  
+[读取 Xbox Live 标题存储中的二进制 Blob](reading-binary-blobs.md)  
 演示从 Xbox Live 标题存储中读取二进制 blob。
 
-[在 Xbox Live 标题存储中存储 JSON Blob](storing-jsonblobs.md)  
+[在 Xbox Live 标题存储中存储的 JSON Blob](storing-jsonblobs.md)  
 演示在 Xbox Live 标题存储中存储 JSON blob。
 
-[在 Xbox Live 标题存储中读取 JSON Blob](reading-jsonblobs.md)  
+[读取 Xbox Live 标题存储中的 JSON Blob](reading-jsonblobs.md)  
 演示从 Xbox Live 标题存储中读取 JSON blob。
 
 <a name="ID4E4FAC"></a>

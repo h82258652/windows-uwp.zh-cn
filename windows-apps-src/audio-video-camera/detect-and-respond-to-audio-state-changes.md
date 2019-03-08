@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 69eeb82fd9a1e043e99b7fe0d635ca750779eda5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943244"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631672"
 ---
 # <a name="detect-and-respond-to-audio-state-changes"></a>检测和响应音频的状态变化
 从 Windows 10 版本 1803 开始，应用可检测到系统何时降低或静音应用使用的音频流的音频级别。 可以接收捕获和呈现流、特定音频设备和音频类别或应用用于媒体播放的 [**MediaPlayer**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer) 对象的通知。 例如，当警报响起时，系统可能降低（或者“闪避”）音频播放级别。 如果应用没有在应用清单中声明 *backgroundMediaPlayback* 功能，系统将在应用进入后台时将其静音。 
@@ -22,13 +22,13 @@ ms.locfileid: "8943244"
 
 [!code-cs[SoundLevelDeviceIdCategory](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSoundLevelDeviceIdCategory)]
 
-在**SoundLevelChanged**事件处理程序中，检查**AudioStateMonitor**发件人传递到处理程序以确定流的新音频级别的[**SoundLevel**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevel)属性。 在此示例中，声音级别为静音时应用停止捕获音频，音频级别返回到完整音量时恢复捕获。
+在中**SoundLevelChanged**事件处理程序，检查[ **SoundLevel** ](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevel)属性的**AudioStateMonitor**发件人传递到若要确定流的新音频级别的处理程序。 在此示例中，声音级别为静音时应用停止捕获音频，音频级别返回到完整音量时恢复捕获。
 
 [!code-cs[GameChatSoundLevelChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetGameChatSoundLevelChanged)]
 
 有关使用 **MediaCapture** 捕获音频的详细信息，请参阅[使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)。
 
-[**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 类的每个实例都具有与它相关联的 **AudioStateMonitor**，可用于检测系统何时更改当前播放的内容的音量级别。 根据正在播放内容的类型，可以决定以不同的方式处理音频状态更改。 例如，可以决定在音频降低时暂停播客的播放，但如果内容是音乐，则继续播放。 
+[  **MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 类的每个实例都具有与它相关联的 **AudioStateMonitor**，可用于检测系统何时更改当前播放的内容的音量级别。 根据正在播放内容的类型，可以决定以不同的方式处理音频状态更改。 例如，可以决定在音频降低时暂停播客的播放，但如果内容是音乐，则继续播放。 
 
 [!code-cs[AudioStateVars](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetAudioStateVars)]
 

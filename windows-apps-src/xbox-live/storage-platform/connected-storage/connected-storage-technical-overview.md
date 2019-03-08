@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
 ms.localizationpriority: medium
 ms.openlocfilehash: 6eddd11a370b8dcadc5108fe00539c2c6d1d9d1a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934226"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624052"
 ---
 # <a name="connected-storage"></a>连接存储
 
@@ -29,7 +29,7 @@ Xbox One 和 Xbox 360 上的存储和保存模型有很大的不同；Xbox One �
 -   连接存储复原模型的目的是为了让应用始终拥有存储在单独容器中的数据的本身一致视图，即使在中断网络连接或断电的情况下也是如此。
 
 > [!NOTE]
-> 正如此处使用的那样，术语*应用* 指在主机上运行的任意应用程序，包括游戏。
+> 正如此处使用的那样，术语*应用*指的是在控制台上运行的任意应用程序，包括游戏。
 
 ## <a name="overview"></a>概述
 
@@ -91,7 +91,7 @@ Xbox One 提供多个存储选项，每个选项都有各自的优势和限制�
 有关连接存储 API 的更多信息，请参阅 Xbox Live SDK 的 xblesdk.chm（其中记录了 Xbox Live Extension SDK API）中的相应部分。
 
 
-<a name="xbox-live-title-storage"></a>Xbox Live 标题存储
+<a name="xbox-live-title-storage"></a>Xbox Live 作品存储
 -----------------------
 标题存储服务使用以下功能为数据存储提供跨平台 REST API：
 
@@ -116,7 +116,7 @@ Xbox One 提供多个存储选项，每个选项都有各自的优势和限制�
 -----------------------
 在控制台上，应用有权访问具有以下特征的本地临时存储：
 
--   2 GB 的专用硬盘存储，可通过路径 T:\\ 访问。
+-   2 GB 的可访问的路径 t： 专用的硬盘空间，存储\\。
 -   应用未运行时，此存储的内容可能会退出。
 
 有关本地存储的更多信息，请参阅 XDK 文档中的“本地存储”。
@@ -160,12 +160,11 @@ Xbox One 提供多个存储选项，每个选项都有各自的优势和限制�
 
 *连接存储容器*（或简称*容器*）是基本的存储单位。 每个连接存储空间都可以包含大量容器，如下图中所示。
 
-**图 1.连接存储空间（每个游戏/计算机或每个游戏/用户）**
+**图 1。  连接的存储空间 （每个标题/计算机或每个标题/用户）**
 
-![](../../images/connected_storage/connected_storage_space_containers.png)
-数据会作为一个或多个称为 *blob* 的缓冲区存储在容器中。 下图说明了磁盘上容器的内部系统表示形式。 每个容器中都有一个容器文件，此文件包含对容器中的每个 blob 的数据文件的引用。
+![](../../images/connected_storage/connected_storage_space_containers.png) 数据存储在容器作为一个或更多的缓冲区调用*blob*。 下图说明了磁盘上容器的内部系统表示形式。 每个容器中都有容器文件，此文件包含对容器中的每个 blob 的数据文件的引用。
 
-**图 2.容器图示**
+**图 2。  容器的关系图**
 
 ![](../../images/connected_storage/container_storage_blobs.png)
 
@@ -182,19 +181,18 @@ Xbox One 提供多个存储选项，每个选项都有各自的优势和限制�
 
 共享分区中的内存上有 16 MB 的上限可用于接收 **SubmitUpdatesAsync** 数据。 如果由于专用的 16 MB 缓冲区中没有足够的可用内存，导致系统无法立即为对 **SubmitUpdatesAsync** 的调用提供服务，则调用将排队等待服务。 系统会持续将数据从 16 MB 缓冲区传输到硬盘，而排队的更新会按照当 16 MB 缓冲中的空间可用时要求的顺序获得服务。
 
-**图 3.SubmitUpdatesAsync 行为**
+**图 3。  SubmitUpdatesAsync 行为**
 
-![](../../images/connected_storage/submitupdatesasync_behavior.png)
-上传到云的方式与之相似：各个 blob 都会上传到服务中，并由引用所有其他上传的 blob 的容器文件的最终更新执行更新操作。 上传到云的过程中，合并到单一的最终更新可确保在 **SubmitUpdatesAsync** 中引用的所有数据完整地提交，或保持容器不变。 这样一来，即使系统在上传操作期间脱机或断电，用户还可以转到其他 Xbox One 主机，从云中下载数据，并通过所有容器的一致视图继续玩游戏。
+![](../../images/connected_storage/submitupdatesasync_behavior.png) 上传到云时，会发生类似的方式：单个 blob 上载到服务，并更新操作将由最终更新提交到容器引用的文件，所有其他已上传的 blob。 上传到云的过程中，合并到单一的最终更新可确保在 **SubmitUpdatesAsync** 中引用的所有数据完整地提交，或保持容器不变。 这样一来，即使系统在上传操作期间脱机或断电，用户还可以转到其他 Xbox One 主机，从云中下载数据，并通过所有容器的一致视图继续玩游戏。
 
 > [!IMPORTANT]
-> 跨容器的数据依赖关系是不安全的。  单个 *SubmitUpdatesAsync* 调用的结果可以保证完全应用，或完全不应用。
+> 容器中的数据依赖项是不安全的。  单个 *SubmitUpdatesAsync* 调用的结果可以保证完全应用，或完全不应用。
 
 **SubmitUpdatesAsync** 调用不得假定将来的 **SubmitUpdatesAsync** 调用会成功完成，以便将容器保持为有效状态。 换言之，应用无法依赖多个 **SubmitUpdatesAsync** 调用来将所有需要的数据保存到容器中。 每个 **SubmitUpdatesAsync** 调用必须将指定容器的内容保持为有效状态，以便应用稍后读取。
 
 要说明此问题，请考虑以下场景：容器跟踪由名为 Bob 的人物持有的黄金和食物数量。 游戏可以存储两个 blob，分别名为*食物*和*黄金*。 开始时，Bob 的库存中有 100 块黄金，没有食物。
 
-**图 4.示例场景：开始时，Bob 有 100 块黄金。**
+**图 4。  示例方案：Bob 开头 100 金级。**
 
 ![](../../images/connected_storage/submitupdatesasync_example_scenario1.png)
 
@@ -202,13 +200,13 @@ Xbox One 提供多个存储选项，每个选项都有各自的优势和限制�
 
 系统会将更新的 blob 和有关容器更新的信息捕获到更新缓冲区中。 然后，系统会将新的 blob 值复制到硬盘中。
 
-**图 5.系统会捕获更新的信息，并将值复制到硬盘中。**
+**图 5。  系统捕获更新的信息，并将值复制到硬盘驱动器。**
 
 ![](../../images/connected_storage/submitupdatesasync_example_scenario2.png)
 
 最后，系统会更新 HDD 上的容器文件，以引用新的 blob。 最终，系统会在垃圾回收操作中删除未引用的 blob。
 
-**图 6.系统会更新 HDD 上的容器文件，并删除未引用的 blob。**
+**图 6。  系统更新 HDD 上的容器文件，并删除未引用的 blob。**
 
 ![](../../images/connected_storage/submitupdatesasync_example_scenario3.png)
 
@@ -217,30 +215,29 @@ Xbox One 提供多个存储选项，每个选项都有各自的优势和限制�
 
 ### <a name="updating-multiple-blobs--the-wrong-way"></a>更新多个 blob — 错误方法
 
-考虑 Bob 想买一些食物的场景。 为简单起见，我们假设 1 个单位的黄金可以购买 1 个单位的食物，而 Bob 想买 25 个单位的食物。 应用可以发出一个 **SubmitUpdatesAsync** 调用来添加 25 个单位的食物，然后再发出另一个调用，来从 Bob\_Inventory 容器中减去 25 个单位的黄金。 但是，即使调用了两个 **SubmitUpdatesAsync** 调用的已完成处理程序，仍有可能会因断电等事件而产生错误结果，这可能会阻止数据写入硬盘，或导致与云的同步不完整。 下图说明了由系统采取的步骤，以及在任一步骤中断电时会发生的结果。
+考虑 Bob 想买一些食物的场景。 为简单起见，我们假设 1 个单位的黄金可以购买 1 个单位的食物，而 Bob 想买 25 个单位的食物。 应用程序可能发出了一个**SubmitUpdatesAsync**添加的食物的 25 个单位，然后将另一个要减去的黄金从 Bob 的 25 个单位调用\_清单容器。 但是，即使调用了两个 **SubmitUpdatesAsync** 调用的已完成处理程序，仍有可能会因断电等事件而产生错误结果，这可能会阻止数据写入硬盘，或导致与云的同步不完整。 下图说明了由系统采取的步骤，以及在任一步骤中断电时会发生的结果。
 
 假定两个 **SubmitUpdatesAsync** 调用中的数据都已经位于系统的更新缓冲区中，并且已经调用了两个调用的游戏的完成处理程序。
 
 首先，系统将新的食物 blob 值的数据写入磁盘。
 
-**图 7.系统将食物 blob 值写入磁盘。**
+**图 7。  系统将食物 blob 值写入到磁盘。**
 
-![](../../images/connected_storage/update_method_wrong_way_1.png)
-然后，系统会更新容器，以引用新写入的值。 如下图所示，如果在此步骤之后，下个步骤之前断电，Bob 将会以一笔划算的交易结束，他会获得 25 份食物，而无需从库存中减去相应的黄金。
+![](../../images/connected_storage/update_method_wrong_way_1.png) 接下来，系统会更新以引用新写入的值的容器。 如下图所示，如果在此步骤之后，下个步骤之前断电，Bob 将会以一笔划算的交易结束，他会获得 25 份食物，而无需从库存中减去相应的黄金。
 
-**图 8.系统会更新容器，以引用新写入的值。**
+**图 8。  系统更新容器以引用新写入的值。**
 
 ![](../../images/connected_storage/update_method_wrong_way_2.png)
 
-接下来，系统将新的黄金 blob 值的数据写入磁盘。 由 Bob\_Inventory 容器引用的黄金的值仍未更新，且 Bob 比应得的情况多出了 25 块黄金—但是我们离所需的结果又近了一步。
+接下来，系统将新的黄金 blob 值的数据写入磁盘。 金级 Bob 所引用的值\_仍清单容器内未更新，和 Bob 具有 25 详细黄金比他应 — 但我们更近一步所需的结果。
 
-**图 9.系统将新的黄金 blob 值的数据写入磁盘。**
+**图 9。  系统将金牌 blob 的新值的数据写入到磁盘。**
 
 ![](../../images/connected_storage/update_method_wrong_way_3.png)
 
 最后，系统会更新容器文件，以引用新写入的黄金 blob — 这是预期的结果。
 
-**图 10.系统会更新容器文件，以引用新写入的黄金 blob。**
+**图 10。  系统会更新以引用新写入的金牌 blob 的容器文件。**
 
 ![](../../images/connected_storage/update_method_wrong_way_4.png)
 
@@ -250,20 +247,17 @@ Xbox One 提供多个存储选项，每个选项都有各自的优势和限制�
 
 首先，系统将新的食物 blob 值的数据写入磁盘。
 
-**图 11.系统写入新的食物 blob 值的数据。**
+**图 11。  系统将写入食物 blob 的新值的数据。**
 
-![](../../images/connected_storage/update_method_right_way_1.png)
-然后，系统将新的黄金 blob 值的数据写入磁盘。
+![](../../images/connected_storage/update_method_right_way_1.png) 然后系统将金牌 blob 的新值的数据写入到磁盘。
 
-**图 12.系统写入新的黄金 blob 值的数据。**
+**图 12。  系统将写入金牌 blob 的新值的数据。**
 
-![](../../images/connected_storage/update_method_right_way_2.png)
-最后，系统会更新容器文件，以同时引用两个新的 blob。
+![](../../images/connected_storage/update_method_right_way_2.png) 最后，系统会更新以引用这两个新的 blob 的容器文件。
 
-**图 13.系统会更新容器文件，以同时引用两个新的 blob。**
+**图 13。  系统会更新以引用这两个新的 blob 的容器文件。**
 
-![](../../images/connected_storage/update_method_right_way_3.png)
-虽然此示例非常简单，但它说明了通过发出拥有所有需要的更新的 **SubmitUpdatesAsync** 调用，在必须以原子方式应用的容器中进行所有数据更改的重要性。 在使用黄金购买食物的情况中执行此操作后，应用会避免可能出现的争用情况，这种情况会错误地仅更新一个值，并使人物留有过多黄金。
+![](../../images/connected_storage/update_method_right_way_3.png) 虽然此示例非常简单，它说明了在一个容器，它必须通过发出一个以原子方式应用中进行所有修改的数据的重要性**SubmitUpdatesAsync**调用使用所有所需的更新。 在使用黄金购买食物的情况中执行此操作后，应用会避免可能出现的争用情况，这种情况会错误地仅更新一个值，并使人物留有过多黄金。
 
 ### <a name="performance-characteristics-and-considerations"></a>性能特征和注意事项
 
@@ -271,10 +265,9 @@ Xbox One 提供多个存储选项，每个选项都有各自的优势和限制�
 
 图 13 显示了，当系统中没有其他硬盘活动时，在使用两个 512k blob 更新和一个 1024k blob 更新的情况下，每 2 秒 **SubmitUpdatesAsync** 的操作处理时间示例。 系统可以保持稳定状态运行，处理每个更新的时间在 14–18 毫秒以内。
 
-**图 14.在使用两个 512k blob 更新和一个 1024k blob 更新（且没有其他硬盘活动）的情况下，每 2 秒 SubmitUpdatesAsync 的操作处理时间。**
+**图 14。  使用两个 512 k blob 更新每隔 2 秒，另一个 SubmitUpdatesAsync 操作的处理时间 1024 k blob 更新和任何其他硬盘活动。**
 
-![](../../images/connected_storage/submitupdatesasync_proc_time_mixed_size_fixed_interval.png)
-图 14 显示了在不同的时间间隔下，三个 1024k blob 的处理时间。
+![](../../images/connected_storage/submitupdatesasync_proc_time_mixed_size_fixed_interval.png) 图 14 显示了三个的处理时间 1024 k blob 按不同的时间间隔。
 
 在 3 秒的间隔下，系统可以保持 87 毫秒的稳定状态处理这些更新。 将频率增加为每 2 秒一次，系统仍然可以在 87 毫秒的稳定状态内处理更新。
 
@@ -282,10 +275,9 @@ Xbox One 提供多个存储选项，每个选项都有各自的优势和限制�
 
 当把间隔更新为每 0.5 秒一个更新时，效果会显著增加。 在达到处理每个更新花费的时间超过 1 秒的稳定状态之前，系统只能以此间隔处理 7 个更新，然后又会变为 87 毫秒/更新，变化很大。
 
-**图 15.在不同的时间间隔下，对三个 1024k blob 的处理时间。**
+**图 15。  处理时间的三个 1024 k blob 按不同的时间间隔。**
 
-![](../../images/connected_storage/submitupdatesasync_proc_time_fixed_size_various_intervals.png)
-以下仅是说明示例。 应用通常不应该如此频繁地保存数据，但它通常也不会在没有磁盘 I/O 的环境中运行。
+![](../../images/connected_storage/submitupdatesasync_proc_time_fixed_size_various_intervals.png) 这些是仅为说明示例。 应用通常不应该如此频繁地保存数据，但它通常也不会在没有磁盘 I/O 的环境中运行。
 
 请务必基于这些示例了解系统的特征，以在不同的操作条件下衡量此应用，从而确保在应用的暂停处理程序期间，可以在 1 秒钟以内完成保存操作。
 
@@ -305,10 +297,9 @@ Xbox One 提供多个存储选项，每个选项都有各自的优势和限制�
 
 下图概述了当应用请求连接存储空间时，系统遵循的高级序列。 如果整个序列花费的时间超过数秒，则会显示系统绘制的同步 UI。
 
-**图 16.当应用请求连接存储空间时，系统遵循的序列。**
+**图 16。  当应用程序请求连接的存储空间后跟系统的序列。**
 
-![](../../images/connected_storage/app_requests_connected_storage_space.png)
-为 **GetForUserAsync** 请求提供服务时，系统会通过以下阶段：
+![](../../images/connected_storage/app_requests_connected_storage_space.png) 系统将其上的服务时经历以下阶段**GetForUserAsync**请求：
 
 -   连接检查
 -   锁定获取
@@ -343,7 +334,7 @@ Xbox One 提供多个存储选项，每个选项都有各自的优势和限制�
 
  **没有本地数据** 如果云有数据，但本地控制台没有，则会本地下载云中的数据。 例如，当用户第一次在朋友家玩游戏时可能会发生这种情况。
 
- **相同容器，在本地和云中修改** 如果用户已经通过在其他控制台上运行在云中修改了容器，并在脱机使用当前控制台时修改了同一个容器，则无法自动合并数据。 系统将要求用户选择要保留的数据。 如果发生冲突，用户可以选择替换策略：始终保留本地数据或云数据，或者，用户可以选择**取消**并延迟选择。 如果用户选择将云或本地数据作为替换策略，则会相应地解决名称相同但内容不同的容器。
+ **相同容器，在本地和云中修改** 如果用户已经通过在其他控制台上运行在云中修改了容器，并在脱机使用当前控制台时修改了同一个容器，则无法自动合并数据。 系统将要求用户选择要保留的数据。 发生冲突，用户可以选择替换策略：始终放置在本地数据或云数据，或用户可以选择**取消**遵从做出的选择。 如果用户选择将云或本地数据作为替换策略，则会相应地解决名称相同但内容不同的容器。
 
 如果用户选择**取消**，游戏将拥有对处于未解决状态的保存系统的访问权限，就像用户在脱机运行。 在这种情况下，如果控制台处于联机状态，当应用下次请求访问连接存储空间时，冲突解决 UI 会再次出现。
 
@@ -353,7 +344,7 @@ Xbox One 提供多个存储选项，每个选项都有各自的优势和限制�
 
 执行此步骤期间的部分可能的错误：
 
-**本地存储不足**  
+**没有足够的本地存储**  
 如果对于所需容器来说本地硬盘空间不足，则系统会向用户显示 UI，要求他们通过删除本地保存的数据释放磁盘空间。 为帮助他们避免永久删除未在云中备份的重要数据，UI 会清楚地指示仅仅是本地缓存的数据和特定于当前控制台的唯一数据。
 
 向用户显示 UI 时：
@@ -369,7 +360,7 @@ Xbox One 提供多个存储选项，每个选项都有各自的优势和限制�
 
 ## <a name="development-tools"></a>开发工具
 
-有两种工具能帮助你开发应用对连接存储的使用：XbStorage 和 Fiddler。
+两个工具将帮助你开发应用的使用的连接的存储：XbStorage 和 Fiddler。
 
 ### <a name="managing-connected-storage-with-xbstorage"></a>使用 XbStorage 管理连接存储
 

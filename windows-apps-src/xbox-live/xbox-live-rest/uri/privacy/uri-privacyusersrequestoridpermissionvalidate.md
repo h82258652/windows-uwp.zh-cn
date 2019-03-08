@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a062fd417bae37fd66c944e0e534ef7a50de5fa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923777"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599362"
 ---
 # <a name="usersrequestoridpermissionvalidate"></a>/users/{requestorId}/permission/validate
  
@@ -23,9 +23,9 @@ ms.locfileid: "8923777"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| requestorId| 字符串| 必需。 执行该操作的用户的标识符。 可能的值为<code>xuid({xuid})</code>和<code>me</code>。 这必须是已登录的用户。 示例值： <code>xuid(0987654321)</code>。| 
+| requestorId| 字符串| 必需。 在执行操作的用户的标识符。 可能的值为<code>xuid({xuid})</code>和<code>me</code>。 这必须是已登录的用户。 示例值： <code>xuid(0987654321)</code>。| 
   
 <a id="ID4ETB"></a>
 
@@ -34,11 +34,11 @@ ms.locfileid: "8923777"
 
 [GET (/users/{requestorId}/permission/validate)](uri-privacyusersrequestoridpermissionvalidateget.md)
 
-&nbsp;&nbsp;获取有关是否允许用户执行与目标用户指定的操作或否答案。
+&nbsp;&nbsp;获取有关是否允许用户执行与目标用户指定的操作是或否答案。
 
 [POST (/users/{requestorId}/permission/validate)](uri-privacyusersrequestoridpermissionvalidatepost.md)
 
-&nbsp;&nbsp;获取有关是否允许用户执行一组的目标用户的指定的操作或否答案的一组。
+&nbsp;&nbsp;获取有关是否允许用户执行指定的操作的目标用户集使用的是或否答案的一组。
  
 <a id="ID4EAC"></a>
 
@@ -47,7 +47,7 @@ ms.locfileid: "8923777"
  
 <a id="ID4ECC"></a>
 
-   [隐私 URI](atoc-reference-privacyv2.md)
+   [隐私 Uri](atoc-reference-privacyv2.md)
 
  [PermissionId 枚举](../../enums/privacy-enum-permissionid.md)
 

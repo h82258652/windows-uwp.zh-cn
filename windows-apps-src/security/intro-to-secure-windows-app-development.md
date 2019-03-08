@@ -1,24 +1,24 @@
 ---
 title: 安全 Windows 应用开发简介
-description: 本入门文章可以帮助应用架构师和开发人员更好地了解可加速创建安全通用 Windows 平台 (UWP) 应用的各种 windows 10 平台功能。
+description: 本文介绍可帮助应用程序架构师和开发人员更好地了解加速创建安全的通用 Windows 平台 (UWP) 应用程序的各种 Windows 10 平台功能。
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全
+keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c3c57653899ce7d849eec72ad36f14f7806652c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049864"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606512"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>安全 Windows 应用开发简介
 
 
 
 
-本入门文章可以帮助应用架构师和开发人员更好地了解可加速创建安全通用 Windows 平台 (UWP) 应用的各种 windows 10 平台功能。 它详细介绍了如何在以下各个阶段使用可用的 Windows 安全功能：身份验证、未送达数据和静态数据。 可以通过查看包括在每章中的其他资源来查找有关每个主题的更详细信息。
+本文介绍可帮助应用程序架构师和开发人员更好地了解加速创建安全的通用 Windows 平台 (UWP) 应用程序的各种 Windows 10 平台功能。 它详细介绍了如何在以下各个阶段使用可用的 Windows 安全功能：身份验证、未送达数据和静态数据。 可以通过查看包括在每章中的其他资源来查找有关每个主题的更详细信息。
 
 ## <a name="1-introduction"></a>1 简介
 
@@ -75,7 +75,7 @@ ms.locfileid: "9049864"
 ## <a name="211-web-authentication-broker"></a>2.1.1 Web 身份验证代理
 
 
-如前所述，IT 部门所面临的密码身份验证的挑战之一是管理用户名/密码基础、重置机制等的开销增加。越来越受欢迎的选择是依靠通过 OAuth（身份验证的开放标准）提供身份验证的第三方标识提供商。
+前面所述，使用密码身份验证的挑战之一是添加了 IT 部门管理的用户名/密码、 重置机制等基本的开销。越来越受欢迎的选项是依赖于第三方标识提供程序通过 OAuth 进行身份验证的开放标准该产品/服务进行身份验证。
 
 通过使用 OAuth，IT 部门可以有效地将维护带有用户名和密码的数据库、重置密码功能等复杂事务“外包”给第三方标识提供商（例如 Facebook、Twitter 或 Microsoft）。
 
@@ -192,9 +192,9 @@ Windows Hello 为设备识别个人用户提供了可靠的方法；这解决了
 
 Web 服务通信的安全要求比直接连接方案中的安全要求要高，因为数据不再仅是安全网络的一部分，并且恶意攻击者伺机截获数据的可能性也更高。 因为各类设备都会访问服务，例如与 WCF 相比，它们可能会生成为 RESTful 服务，这意味着服务的身份验证和授权还会引入新挑战。 我们将谈论安全的远程系统通信的两个要求。
 
-第一个要求是消息保密性：在客户端和 Web 服务器之间传递的信息（例如用户的身份和其他个人信息）在传输时不得被第三方读取。 满足此要求的方式通常是加密发送消息所使用的连接和加密消息本身。 在私钥/公钥加密中，公钥可供所有人使用，并用于加密要发送到特定接收方的消息。 私钥仅由接收方保留，并且用于解密消息。
+消息的保密性，首要要求是：客户端和 web 服务 （例如，用户和其他个人信息的标识） 之间传递的信息不能由第三方在传输过程中可读。 满足此要求的方式通常是加密发送消息所使用的连接和加密消息本身。 在私钥/公钥加密中，公钥可供所有人使用，并用于加密要发送到特定接收方的消息。 私钥仅由接收方保留，并且用于解密消息。
 
-第二个要求是消息完整性：客户端和 Web 服务必须能够验证他们接收的消息是其他方试图发送的消息，并且该消息未在传输过程中发生更改。 通过使用数字签名对消息进行签名并使用证书身份验证，可完成此操作。
+第二个要求是消息的完整性：客户端和 web 服务必须能够验证他们接收的消息是旨在由其他参与方发送的并且该消息被改变在传输过程中。 通过使用数字签名对消息进行签名并使用证书身份验证，可完成此操作。
 
 ## <a name="32-ssl-connections"></a>3.2 SSL 连接
 
@@ -286,7 +286,7 @@ Azure API 管理还可以减少对某个服务的 API 调用数（称为限制�
 
 传统上来讲，Windows 从未对应用下过定义。 它通常是指可执行文件 (.exe)，但从来不包括安装、状态存储、执行长度、版本控制、操作系统集成和应用到应用通信。 通用 Windows 平台模型定义涵盖安装、运行时环境、资源管理、更新、数据模型和卸载的应用模型。
 
-Windows 10 应用中的容器，这意味着，它们的权限有限 （可以请求以及由用户授予额外权限），默认情况下运行。 例如，如果某个应用想要在系统上访问文件，必须使用 [**Windows.Storage.Pickers**](https://msdn.microsoft.com/library/windows/apps/br207928) 命名空间的文件选取器才可以让用户选取某个文件（不支持任何对文件的直接访问权限）。 另一个示例是，如果某个应用想要访问用户的位置数据，它需要启用要声明的位置设备功能，从而在下载时提示用户此应用会请求访问用户的位置。 除此之外，应用首次想要访问用户位置时，会向用户显示请求访问数据的权限的额外许可提示。
+Windows 10 应用中的容器，这意味着，它们具有有限的特权 （可以请求和授予用户其他权限） 的默认情况下运行。 例如，如果某个应用想要在系统上访问文件，必须使用 [**Windows.Storage.Pickers**](https://msdn.microsoft.com/library/windows/apps/br207928) 命名空间的文件选取器才可以让用户选取某个文件（不支持任何对文件的直接访问权限）。 另一个示例是，如果某个应用想要访问用户的位置数据，它需要启用要声明的位置设备功能，从而在下载时提示用户此应用会请求访问用户的位置。 除此之外，应用首次想要访问用户位置时，会向用户显示请求访问数据的权限的额外许可提示。
 
 请注意，此应用模型充当应用的“监狱”，这意味着无法访问它们，但它不是无法从外部访问的“城堡”（具有管理员权限的应用程序当然仍可以访问里面的内容）。 Windows 10 中的 Device Guard 因为支持组织/IT 指定允许执行哪些 (Win32) 应用，所以可以进一步帮助限制此访问权限。
 
@@ -294,7 +294,7 @@ Windows 10 应用中的容器，这意味着，它们的权限有限 （可以�
 
 当设备上的内存资源不足时，Windows 将通过终止应用来释放内存空间。 此生命周期模型强制应用在每当它们暂停时保留数据，因为暂停和终止之间没有额外时间。
 
-有关详细信息，请参阅[通用：了解 Windows 10 应用程序的生命周期](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx)。
+有关详细信息，请参阅[是世界：了解 Windows 10 应用程序的生命周期](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx)。
 
 ## <a name="42-stored-credential-protection"></a>4.2 存储凭据保护
 
@@ -397,7 +397,7 @@ Windows 应用可以实现 MAC 消息验证，方法是调用 [**MacAlgorithmPro
 
 哈希函数是一种加密算法，用于获取任意长度的数据块并返回固定大小的位字符串（称为哈希值）。 整个系列的哈希函数都可以执行此操作。
 
-在上述消息传输方案中可以使用哈希值代替 MAC。 发送方发送哈希值和消息，接收方从发送方的哈希值和消息派生其自己的哈希值并比较这两个哈希值。 在 Windows 10 上运行的应用可以调用 [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) 类来枚举可用的哈希算法并运行其中一个算法。 [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 类表示哈希值。 [**CryptographicHash.GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法可用于重复对不同的数据进行哈希操作，而无需在每次使用时重新创建对象。 **CryptographicHash** 类的 Append 方法将新数据添加到缓冲区以进行哈希操作。 以下 C# 代码示例中显示了这一完整过程。
+在上述消息传输方案中可以使用哈希值代替 MAC。 发送方发送哈希值和消息，接收方从发送方的哈希值和消息派生其自己的哈希值并比较这两个哈希值。 在 Windows 10 上运行的应用可以调用 [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) 类来枚举可用的哈希算法并运行其中一个算法。 [  **CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 类表示哈希值。 [  **CryptographicHash.GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法可用于重复对不同的数据进行哈希操作，而无需在每次使用时重新创建对象。 **CryptographicHash** 类的 Append 方法将新数据添加到缓冲区以进行哈希操作。 以下 C# 代码示例中显示了这一完整过程。
 
 ```cs
 public void SampleReusableHash()
@@ -461,7 +461,7 @@ Windows 10 中的通用 Windows 平台提供许多种利用操作系统功能创
 
 ### <a name="61-how-to-articles"></a>6.1 操作方法文章
 
--   [身份验证和用户身份](authentication-and-user-identity.md)
+-   [身份验证和用户标识](authentication-and-user-identity.md)
 -   [Windows Hello](microsoft-passport.md)
 -   [凭据保险箱](credential-locker.md)
 -   [Web 身份验证代理](web-authentication-broker.md)
@@ -472,15 +472,15 @@ Windows 10 中的通用 Windows 平台提供许多种利用操作系统功能创
 -   [证书](certificates.md)
 -   [加密密钥](cryptographic-keys.md)
 -   [数据保护](data-protection.md)
--   [MAC、哈希以及签名](macs-hashes-and-signatures.md)
--   [有关加密的出口限制](export-restrictions-on-cryptography.md)
--   [常见的加密任务](common-cryptography-tasks.md)
+-   [Mac、 哈希和签名](macs-hashes-and-signatures.md)
+-   [导出加密限制](export-restrictions-on-cryptography.md)
+-   [加密的常见任务](common-cryptography-tasks.md)
 
 ### <a name="62-code-samples"></a>6.2 代码示例
 
 -   [凭据保险箱](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/PasswordVault)
 -   [凭据选取器](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CredentialPicker)
--   [使用 Azure 登录锁定设备](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/DeviceLockdownAzureLogin)
+-   [使用 Azure 登录名的设备锁定](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/DeviceLockdownAzureLogin)
 -   [企业数据保护](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/EnterpriseDataProtection)
 -   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/KeyCredentialManager)
 -   [智能卡](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SmartCard)

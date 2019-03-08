@@ -6,22 +6,22 @@ ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
 ms.openlocfilehash: 118b3f6e306e60d1d8d569f0d58f2d77ea30d9a8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932686"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635062"
 ---
 # <a name="enhance-existing-scrollviewer-experiences"></a>增强现有 ScrollViewer 体验
 
 本文介绍了如何使用 XAML ScrollViewer 和 ExpressionAnimation 来创建动态的输入驱动运动体验。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 我们在此假设你熟悉这些文章中所述的概念：
 
-- [输入驱动的动画](input-driven-animations.md)
-- [基于关系的动画](relation-animations.md)
+- [输入驱动动画](input-driven-animations.md)
+- [关系基于动画](relation-animations.md)
 
 ## <a name="why-build-on-top-of-scrollviewer"></a>为什么要在 ScrollViewer 之上生成？
 
@@ -54,7 +54,7 @@ ScrollManipulationPropertySet 包含一个名为 Translation 的 Vector3 属性�
     - `ElementCompositionPreview.GetScrollManipulationPropertySet(ScrollViewer scroller)`
 1. 创建引用 PropertySet 的 Translation 属性的 ExpressionAnimation。
     - 不要忘了设置 Reference 参数！
-1. 将 CompositionObject 的属性作为 ExpressionAnimation 的目标。
+1. 将 CompositionObject 的属性作为 ExpressionAnimation 的操作目标。
 
 > [!NOTE]
 > 建议将 GetScrollManipulationPropertySet 方法返回的 PropertySet 分配给类变量。 这将确保该属性集不会作为垃圾回收，因此对于引用了它的 ExpressionAnimation 不会产生任何影响。 ExpressionAnimation 不维护对等式中使用的任何对象的强引用。

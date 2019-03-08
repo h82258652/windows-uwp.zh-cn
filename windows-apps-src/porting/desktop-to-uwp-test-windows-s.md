@@ -1,5 +1,5 @@
 ---
-Description: Test your app for Windows 10 in S mode.
+Description: 在 S 模式下，适用于 Windows 10 中测试您的应用程序。
 Search.Product: eADQiWindows 10XVcnh
 title: 测试适用于 Windows 10 S 的 Windows 应用
 ms.date: 05/11/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10 S, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cf442da9344f37525bf3c17e4a62a319b9c04044
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048454"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655942"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>在 S 模式下测试适用于 Windows 10 的 Windows 应用
 
@@ -46,7 +46,7 @@ Device Guard 代码完整性策略强制执行应用在 Windows 10 S 上运行�
 ### <a name="audit-mode-policy"></a>审核模式策略
 在此模式下，即使你的应用执行 Windows 10 S 上不支持的任务，应用也会运行。Windows 将任何可能已被阻止的可执行文件记录到代码完整性事件日志中。
 
-你可以打开**事件查看器**，然后浏览到此位置：应用程序和服务日志 -> Microsoft -> Windows -> CodeIntegrity-> 运营，从而找到这些日志。
+可以通过打开找到这些日志**事件查看器**，然后浏览到此位置：应用程序和服务日志-> Microsoft-> Windows-> CodeIntegrity-> 操作。
 
 ![代码完整性事件日志](images/desktop-to-uwp/code-integrity-logs.png)
 
@@ -55,7 +55,7 @@ Device Guard 代码完整性策略强制执行应用在 Windows 10 S 上运行�
 #### <a name="optional-find-specific-failure-points-in-the-call-stack"></a>（可选）查找调用堆栈中的特定故障点
 若要在调用堆栈中找到阻止问题发生的特定点，请添加此注册表项，然后[设置内核模式调试环境](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-#span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging)。
 
-|注册表项|名称|类型|值|
+|键|名称|在任务栏的搜索框中键入|值|
 |--|---|--|--|
 |HKEY_LOCAL_MACHINE\SYSTEM\CurentControlSet\Control\CI| DebugFlags |REG_DWORD | 1 |
 
@@ -76,7 +76,7 @@ Device Guard 代码完整性策略强制执行应用在 Windows 10 S 上运行�
 
 如果想要将这些策略应用于本地计算机，最好从审核模式策略开始。 使用此策略，你可以查看代码完整性事件日志，以确保在强制执行的策略中不会阻止任何关键操作。
 
-准备好应用策略时，找到所选策略的 .P7B 文件，将其重命名为 **SIPolicy.P7B**，然后将该文件保存到系统上的此位置：**C:\Windows\System32\CodeIntegrity\\**。
+如果你已准备好应用策略，查找。所选的策略的 P7B 文件重命名到**SIPolicy.P7B**，然后将该文件保存到您的系统上的此位置：**C:\Windows\System32\CodeIntegrity\\**。
 
 然后，重启系统。
 
@@ -93,10 +93,10 @@ Device Guard 代码完整性策略强制执行应用在 Windows 10 S 上运行�
 
 请参阅 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。
 
-**查看我们的应用咨询团队发布的详细博客文章**
+**查看我们的应用程序请查阅团队已发布的详细的博客文章**
 
 请参阅[使用桌面桥移植和测试 Windows 10 上的经典桌面应用程序](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/)。
 
-**了解让测试以 S 模式运行的 Windows 变得更轻松的工具**
+**了解使其更易于测试在 S 模式下的 Windows 的工具**
 
 请参阅[对 APPX 进行解压缩、修改、重新打包、签名](https://blogs.msdn.microsoft.com/appconsult/2017/08/07/unpack-modify-repack-sign-appx/)。

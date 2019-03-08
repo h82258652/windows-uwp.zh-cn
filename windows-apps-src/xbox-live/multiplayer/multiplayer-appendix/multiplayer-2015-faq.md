@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏
 ms.localizationpriority: medium
 ms.openlocfilehash: 171d80f4fc925d95d80043f40bb387b045a4fe23
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923090"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625522"
 ---
 # <a name="multiplayer-2015-faq-and-troubleshooting"></a>Multiplayer 2015 常见问题和疑难解答
 
@@ -87,14 +87,14 @@ Web 套接字连接允许 MPSD 快速检测客户端的断开连接情况，并�
 
 -   请求正文无法包含现有成员引用，除非身份验证主体包括服务器。
 
-    你无法代表用户加入其他用户进行会话。 你只能邀请。 将索引设置为 "reserve\_&lt;number&gt;" 来邀请玩家。
+    你无法代表用户加入其他用户进行会话。 你只能邀请。 将索引设置为"保留\_&lt;数&gt;"邀请播放器。
 
 
 ### <a name="i-am-getting-an-http404-code-when-calling-mpsd"></a>调用 MPSD 时我收到了 HTTP/404 代码。
 
 收集 Fiddler 跟踪以获取详细信息，然后执行下列操作：
 
-1.  查看作为适用于常见 404 消息的 HttpResponse 正文的一部分返回的消息：
+1.  查看作为常见 404 消息的 HttpResponse 正文的一部分返回的消息：
     -   请求的服务配置无效，或不是为会话配置的。 确保使用中的 SCID 是正确的。
     -   未找到请求的会话。 在检索会话前，确保会话已创建且会话模板是正确的。 你可以使用 PUT 调用创建会话。
 
@@ -149,7 +149,7 @@ Web 套接字连接允许 MPSD 快速检测客户端的断开连接情况，并�
 
 响应错误示例：
 
-400 - \[ResponseBody\]：此会话是为需要至少 2 个成员才能开始的托管初始化配置的。
+400- \[ResponseBody\]:此会话配置为使用托管初始化需要位于至少 2 个成员来启动。
 
 会话无法创建，因为请求中没有包括足够的将“初始化”字段设置为 true 的会话成员保留。 你的代码可以使用 **MultiplayerSession.AddMemberReservation** 方法或 **MultiplayerSession.Join** 方法的 *initializeRequested* 参数为成员设置此字段。
 
@@ -165,7 +165,7 @@ Web 套接字连接允许 MPSD 快速检测客户端的断开连接情况，并�
 
 ### <a name="when-should-i-poll-mpsd"></a>我应在何时轮询 MPSD？
 
-你的作品必须避免轮询 MPSD。 如果作品必须发现对 MPSD 会话的更改，它应该订阅会话更改事件。 有关详细信息，请参阅[操作方法：订阅 MPSD 会话更改通知](multiplayer-how-tos.md)。
+你的作品必须避免轮询 MPSD。 如果作品必须发现对 MPSD 会话的更改，它应该订阅会话更改事件。 有关详细信息，请参阅[如何：MPSD 会话更改通知订阅](multiplayer-how-tos.md)。
 
 
 ### <a name="what-happens-if-a-player-who-was-reserved-or-invited-to-the-session-does-not-join-it"></a>如果为会话保留或被邀请加入会话的玩家未加入会怎样？
@@ -192,7 +192,7 @@ Web 套接字连接允许 MPSD 快速检测客户端的断开连接情况，并�
 
 ### <a name="if-a-game-session-is-open-can-a-user-who-has-just-joined-a-game-simply-join-the-session-and-start-playing-without-having-to-wait-for-the-reservation"></a>如果游戏会话是开放的，刚加入游戏的用户可以只是加入会话就开始玩游戏，而无需等待保留么？
 
-是的。 如果你的作品使用多个会话来跟踪游戏会话内玩家的子组，这尤其有用。 加入用户可以加入表示他/她的组的会话，然后需要加入更大的游戏会话。
+是。 如果你的作品使用多个会话来跟踪游戏会话内玩家的子组，这尤其有用。 加入用户可以加入表示他/她的组的会话，然后需要加入更大的游戏会话。
 
 
 ### <a name="when-large-game-sessions-are-playing-in-my-title-why-arent-all-session-members-seeing-the-game-invite-toast"></a>当大型游戏会话在我的游戏中进行时，为何不是所有成员都能看到游戏邀请 toast？

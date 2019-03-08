@@ -1,19 +1,19 @@
 ---
-Description: List animations let you insert or remove single or multiple items from a collection, such as a photo album or a list of search results.
+Description: 列表动画可使你向集合（如相册或搜索结果列表）中插入或从中删除单个或多个项。
 title: 添加和删除 UWP 应用中的动画
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10，uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c7ca332b73aba067c2ae003d458e8d0d97c7a7e3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942883"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642832"
 ---
 # <a name="add-and-delete-animations"></a>添加和删除动画
 
@@ -21,7 +21,7 @@ ms.locfileid: "8942883"
 
 列表动画可使你向集合（如相册或搜索结果列表）中插入或从中删除单个或多个项。
 
-> **重要 API**：[**AddDeleteThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/br243048)
+> **重要的 Api**:[**AddDeleteThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
@@ -39,8 +39,8 @@ ms.locfileid: "8942883"
 ## <a name="related-articles"></a>相关文章
 
 * [动画概述](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [创建添加和删除列表的动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
-* [快速入门：使用库动画创建 UI 动画](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [对列表添加和删除操作进行动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
+* [快速入门：对 UI 使用库动画进行动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**AddDeleteThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
  

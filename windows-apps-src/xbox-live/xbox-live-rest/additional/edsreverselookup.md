@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d535dec8a95eba4d486bfc6946e187e2da66ae49
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943322"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598432"
 ---
 # <a name="eds-reverse-lookup-for-video"></a>EDS 反向查找视频
  
@@ -23,24 +23,24 @@ ms.locfileid: "8943322"
  
 ## <a name="reverse-lookup-steps"></a>反向查找步骤
  
-娱乐发现服务 (EDS) 反向查找支持的所有视频的媒体类型 （**MediaItemType.Movie**、 **MediaItemType.TVSeries**、 **MediaItemType.TVEpisode**、 **MediaItemType.TVSeason**，以及**MediaItemType.TVShow**)，以及**MediaItemType.Unknown**。
+娱乐发现服务 (EDS) 反向查找支持的所有视频媒体类型 (**MediaItemType.Movie**， **MediaItemType.TVSeries**， **MediaItemType.TVEpisode**， **MediaItemType.TVSeason**，和**MediaItemType.TVShow**)，以及**MediaItemType.Unknown**。
  
-反向查找需要传递 4 个参数： 
+反向查找需要 4 个参数传递： 
    * `idType=ScopedMediaId`
-   * `ids=` 提供程序媒体 ID
+   * `ids=` 提供程序的媒体 ID
    * `ScopeIdType=Title`
-   * `ScopeId=` 提供商主题作品 ID
+   * `ScopeId=` 提供程序标题 ID
  
  
-通常反向查找需要两个步骤： 
-   * 如果不可用，则检索提供程序 （例如，从的详细信息调用中） 的媒体 id。 
+通常反向查找需要 2 个步骤： 
+   * 如果不可用，则检索提供程序 （例如，从详细信息调用） 的媒体 id。 
 
 ```cpp
 GET /media/en-us/details?ids=4eeaf5b4-9af2-56e4-a738-68b48e954494&desiredMediaItemTypes=Movie&desired=Providers
 ```
 
  
-   * 发出反向查找使用以前的响应中的**ProviderMediaId**字段的调用： 
+   * 发出的调用使用反向查找**ProviderMediaId**字段前一响应中： 
 
 ```cpp
 GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedMediaId&desiredMediaItemTypes=Movie&fields=all&ScopeIdType=Title&ScopeId=0x5848085B
@@ -49,7 +49,7 @@ GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedM
  
   
  
-如果不具有从 EDS 检索到的**ProviderMediaId**字段的字段必须为 URL 编码，以便正确传递给 EDS。
+如果**ProviderMediaId**不从 EDS 检索字段，则此字段必须是 URL 编码，以便正确传递给 EDS。
   
 <a id="ID4EOC"></a>
 
@@ -69,6 +69,6 @@ GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedM
  
 ##### <a name="further-information"></a>详细信息 
 
-[市场 URI](../uri/marketplace/atoc-reference-marketplace.md)
+[Marketplace Uri](../uri/marketplace/atoc-reference-marketplace.md)
 
    

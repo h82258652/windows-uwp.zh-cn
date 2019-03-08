@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 多人游戏管理器, 流程图, smartmatch
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c0ba897f23eb690c3044b00cdb4ce3bea975e71
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933341"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655952"
 ---
 # <a name="find-a-multiplayer-game-by-using-smartmatch"></a>通过使用 SmartMatch 查找多人游戏
 
@@ -23,15 +23,15 @@ ms.locfileid: "8933341"
 
 使用多人游戏管理器向用户的好友发送邀请，并使该好友加入正在进行的游戏时，涉及四个步骤：
 
-1. [初始化多人游戏管理器](#initialize-multiplayer-manager)
+1. [初始化多人管理器](#initialize-multiplayer-manager)
 2. [通过添加本地用户创建大厅会话](#create-lobby)
-3. [向好友发送邀请](#send-invites)
+3. [向朋友发送邀请](#send-invites)
 4. [接受邀请](#accept-invites)
-5. [查找匹配](#find-match)
+5. [找到匹配项](#find-match)
 
 在执行邀请的设备上完成步骤 1、2、3 和 5。  通常，会在通过协议激活启动应用后，在被邀请者的计算机上初始化步骤 4。
 
-你可以在此处查看过程流程图：[流程图 - 通过使用 SmartMatch 匹配进行多人游戏](mpm-flowcharts/mpm-play-with-smartmatch-matchmaking.md)。
+您所见的过程流程图：[流程图-播放使用 SmartMatch 匹配多玩家游戏](mpm-flowcharts/mpm-play-with-smartmatch-matchmaking.md)。
 
 ### <a name="1-initialize-multiplayer-manager-a-nameinitialize-multiplayer-manager"></a>1) 初始化多人游戏管理器 <a name="initialize-multiplayer-manager">
 
@@ -64,7 +64,7 @@ mpInstance->initialize(lobbySessionTemplateName);
 
 你必须为本地登录的所有用户重复此过程。
 
-**示例：（单个本地用户）**
+**示例: （单个本地用户）**
 
 ```cpp
 auto mpInstance = multiplayer_manager::get_singleton_instance();
@@ -84,7 +84,7 @@ mpInstance->lobby_session()->set_local_member_connection_address(
 mpInstance->lobby_session()->set_local_member_properties(xboxLivecontext->user(), ..., ...)
 ```
 
-**示例：（多个本地用户）**
+**示例: （多个本地用户）**
 
 ```cpp
 auto mpInstance = multiplayer_manager::get_singleton_instance();
@@ -115,7 +115,7 @@ for (User^ user : User::Users)
 在下一个 `do_work()` 调用上对这些更改进行批处理。  
 每当将用户添加到大厅会话时，多人游戏管理器都会引发 `user_added` 事件。 建议你检查事件的错误代码，以查看是否已成功添加用户。 如果发生故障，会提供错误消息详细说明故障的原因。
 
-**多人游戏管理器执行的功能**
+**由多人管理器中执行的函数**
 
 * 使用 Xbox Live 多人游戏服务注册实时活动和多人游戏订阅
 * 创建大厅会话
@@ -146,9 +146,9 @@ if (result.err())
 }
 ```
 
-**多人游戏管理器执行的功能**
+**由多人管理器中执行的函数**
 
-* 引入 Xbox 库存游戏可调用 UI (TCUI)
+* 引入 Xbox 库存作品可调用 UI (TCUI)
 * 直接向选择的玩家发送邀请
 
 ### <a name="4-accept-invites-optional-a-nameaccept-invites"></a>4) 接受邀请（可选）<a name="accept-invites">
@@ -182,7 +182,7 @@ mpInstance->lobby_session()->set_local_member_connection_address(
 
 通过 `join_lobby_completed` 事件处理错误/成功
 
-**多人游戏管理器执行的功能**
+**由多人管理器中执行的函数**
 
 * 注册 RTA 和多人游戏订阅
 * 加入大厅会话
@@ -216,7 +216,7 @@ if (result.err())
 }
 ```
 
-**多人游戏管理器执行的功能**
+**由多人管理器中执行的函数**
 
 * 创建匹配票证
 * 处理所有 QoS 阶段

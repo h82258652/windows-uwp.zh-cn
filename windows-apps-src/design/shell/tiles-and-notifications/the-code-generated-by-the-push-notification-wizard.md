@@ -1,5 +1,5 @@
 ---
-Description: By using a wizard in Visual Studio, you can generate push notifications from a mobile service that was created with Azure Mobile Services.
+Description: 通过在 Visual Studio 中使用向导，你可以从使用 Azure 移动服务创建的移动服务生成推送通知。
 title: 由推送通知向导生成的代码
 ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
 template: detail.hbs
@@ -8,16 +8,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ac5ca785eab39612bb3a9c6ccd58779c6241059
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049914"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596862"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>由推送通知向导生成的代码
  
 
-通过在 Visual Studio 中使用向导，你可以从使用 Azure 移动服务创建的某种移动服务生成推送通知。 Visual Studio 向导生成代码，以帮助你开始操作。 本主题说明向导如何修改你的项目、生成的代码有何作用、如何使用此代码，以及为了发挥推送通知的最大作用，你接下来可以如何操作。 请参阅 [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)。
+通过在 Visual Studio 中使用向导，你可以从使用 Azure 移动服务创建的移动服务生成推送通知。 Visual Studio 向导生成代码，以帮助你开始操作。 本主题说明向导如何修改你的项目、生成的代码有何作用、如何使用此代码，以及为了发挥推送通知的最大作用，你接下来可以如何操作。 请参阅 [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)。
 
 ## <a name="how-the-wizard-modifies-your-project"></a>向导如何修改你的项目
 
@@ -42,7 +42,7 @@ var <mobile-service-name>Client = new Microsoft.WindowsAzure.MobileServices.Mobi
 ## <a name="registration-for-push-notifications"></a>推送通知注册
 
 
-在 push.register.\* 中，UploadChannel 方法注册设备以接收推送通知。 应用商店将跟踪应用的已安装实例，并提供推送通知通道。 请参阅 [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager)。
+在 push.register。\*，UploadChannel 方法注册设备以接收推送通知。 应用商店将跟踪应用的已安装实例，并提供推送通知通道。 请参阅 [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager)。
 
 对于 JavaScript 后端和 .NET 后端，客户端代码是类似的。 默认情况下，当你为 JavaScript 后端服务添加推送通知时，对 notifyAllUsers 自定义 API 的示例调用将插入到 UploadChannel 方法中。
 
@@ -207,7 +207,7 @@ function sendNotifications(request) {
 
 sendNotifications 函数发送 toast 通知形式的单一通知。 你还可以使用其他类型的推送通知。
 
-**提示**有关如何获取有关编辑脚本时的帮助的信息，请参阅[为服务器端 JavaScript 启用 IntelliSense](https://go.microsoft.com/fwlink/p/?LinkId=309275)。
+**提示**  了解如何获取帮助编辑脚本时，请参阅[启用适用于服务器端 JavaScript 的 IntelliSense](https://go.microsoft.com/fwlink/p/?LinkId=309275)。
 
  
 
@@ -233,7 +233,7 @@ Toast 通知易于使用，你可以在为你生成的通道表的 Insert.js 代
 
 你还可以通过在移动服务中运行计划的任务来发送推送通知。 请参阅[在移动服务中计划定期作业](https://go.microsoft.com/fwlink/p/?linkid=301694)。
 
-**警告**已运行推送通知向导一次，不运行该向导为其他移动服务添加注册代码的第二个时机。 针对每个项目多次运行该向导会生成导致对 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法的重叠调用的代码，从而导致运行时异常。 如果你要为多个移动服务注册推送通知，请运行该向导一次，然后重新编写该注册代码以确保对 **CreatePushNotificationChannelForApplicationAsync** 的调用不会同时运行。 例如，你可以通过将 push.register.\* 中的向导生成的代码（包括对 **CreatePushNotificationChannelForApplicationAsync** 的调用）移到 OnLaunched 事件之外来实现此目的，但此操作的细节取决于应用的体系结构。
+**警告**  推送通知向导运行一次后, 不运行该向导第二次添加另一个移动服务的注册代码。 针对每个项目多次运行该向导会生成导致对 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法的重叠调用的代码，从而导致运行时异常。 如果你要为多个移动服务注册推送通知，请运行该向导一次，然后重新编写该注册代码以确保对 **CreatePushNotificationChannelForApplicationAsync** 的调用不会同时运行。 例如，可以完成此操作通过在 push.register 移动由向导生成的代码。\* (包括调用**CreatePushNotificationChannelForApplicationAsync**) 之外 OnLaunched 事件，但此具体将取决于您的应用程序的体系结构。
 
  
 
@@ -243,8 +243,8 @@ Toast 通知易于使用，你可以在为你生成的通道表的 Insert.js 代
 * [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)
 * [原始通知概述](raw-notification-overview.md)
 * [连接到 Windows Azure 移动服务 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263160)
-* [连接到 Windows Azure 移动服务 (C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263175)
-* [快速入门：为移动服务添加推送通知 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263163)
+* [连接到 Windows Azure 移动服务 (C#/C+ + / VB)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263175)
+* [快速入门：为移动服务 (JavaScript) 添加推送通知](https://msdn.microsoft.com/library/windows/apps/dn263163)
  
 
  

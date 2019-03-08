@@ -4,14 +4,14 @@ description: 了解使用 Xbox Live 人脉系统显示人脉的代码流。
 ms.assetid: c97b699f-ebc2-4f65-8043-e99cca8cbe0c
 ms.date: 04/04/2017
 ms.topic: article
-keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
+keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 512de51f2a0e30a9b41a5e49f3dc3ababe30fc4d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940510"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658302"
 ---
 # <a name="display-people-from-the-people-system"></a>显示来自人脉系统的联系人
 
@@ -33,7 +33,7 @@ Xbox Live 上的服务仅返回该服务所有的数据，并且仅返回对用�
 
 | 标题包含  | 目标  | 要呈现的字段  | 调用流程
 |-------------------------------------------------|----------------------------------------------------|--------------------|--------------------------------------|
-| 游戏中其他用户的随机 XUID 列表 | 为每位其他用户呈现最低限度的信息 | GameDisplayName \[个人资料\] | 使用 XUID 列表调用个人资料。 |
+| 游戏中其他用户的随机 XUID 列表 | 为每位其他用户呈现最低限度的信息 | GameDisplayName  \[Profile\] | 使用 XUID 列表调用个人资料。 |
 
 
 ## <a name="list-of-the-current-users-people-who-are-online"></a>当前用户处于联机状态的联系人列表
@@ -44,7 +44,7 @@ Xbox Live 上的服务仅返回该服务所有的数据，并且仅返回对用�
 ## <a name="goal"></a>目标
 呈现当前用户的联系人列表中联机用户的完整列表
 
-## <a name="field-to-render-owning-service"></a>要呈现的字段\[拥有的服务\]
+## <a name="field-to-render-owning-service"></a>要呈现字段\[拥有服务\]
 * 最喜爱的指示器[人脉]
 * 显示图片[个人资料]
 * GameDisplayName [个人资料]

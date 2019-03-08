@@ -4,14 +4,14 @@ description: 本主题介绍了通用 Windows 平台 (UWP) 应用如何使用智
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全
+keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 47a4ceef2603d7b0178431c93fb6c271b24c506a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920536"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599222"
 ---
 # <a name="smart-cards"></a>智能卡
 
@@ -23,7 +23,7 @@ ms.locfileid: "8920536"
 ## <a name="configure-the-app-manifest"></a>配置应用清单
 
 
-必须先在项目 Package.appxmanifest 文件中设置“共享的用户证书”**** 功能，应用才可以使用智能卡或虚拟智能卡对用户进行身份验证。
+必须先在项目 Package.appxmanifest 文件中设置“共享的用户证书”功能，应用才可以使用智能卡或虚拟智能卡对用户进行身份验证。
 
 ## <a name="access-connected-card-readers-and-smart-cards"></a>访问连接的卡读取器和智能卡
 
@@ -81,7 +81,7 @@ SmartCardProvisioning provisioning = await
           pinPolicy);
 ```
 
-[**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) 返回关联的 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 对象之后，将设置虚拟智能卡并且为使用做好准备。
+[  **RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) 返回关联的 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 对象之后，将设置虚拟智能卡并且为使用做好准备。
 
 ## <a name="handle-authentication-challenges"></a>处理身份验证质询
 
@@ -119,7 +119,7 @@ static class ChallengeResponseAlgorithm
 
 2.  接着，将由服务或管理工具提供的卡的质询值和管理员密钥传递到我们在之前示例中定义的 **ChallengeResponseAlgorithm** 中。
 
-3.  如果身份验证成功，[**VerifyResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn297627) 将返回 **true**。
+3.  [**VerifyResponseAsync** ](https://msdn.microsoft.com/library/windows/apps/dn297627)将返回**true**如果身份验证成功。
 
 ```cs
 bool verifyResult = false;
@@ -157,7 +157,7 @@ bool result = await provisioning.RequestPinChangeAsync();
 请求 PIN 重置的步骤：
 
 1.  调用 [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) 以启动操作。 此调用包括一个表示智能卡和 PIN 重置请求的 [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) 方法。
-2.  [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) 提供我们的 **ChallengeResponseAlgorithm**（包装在 [**SmartCardPinResetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn297693) 调用中）用于比较卡的质询值和由服务或管理工具提供的管理员密钥的信息，以便对请求进行身份验证。
+2.  [**SmartCardPinResetHandler** ](https://msdn.microsoft.com/library/windows/apps/dn297701)提供的信息，我们**ChallengeResponseAlgorithm**，包装在[ **SmartCardPinResetDeferral** ](https://msdn.microsoft.com/library/windows/apps/dn297693)调用，用于比较的卡质询值和服务或管理工具进行身份验证请求提供的管理密钥。
 
 3.  如果质询成功，[**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) 调用将完成；如果成功重置 PIN，将返回 **true**。
 

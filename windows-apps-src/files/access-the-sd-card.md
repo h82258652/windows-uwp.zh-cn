@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, sd 卡, 存储
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ef97ed489f2dc35aece83821633a583dfba77e2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931610"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625512"
 ---
 # <a name="access-the-sd-card"></a>访问 SD 卡
 
@@ -23,7 +23,7 @@ ms.locfileid: "8931610"
 
 你可以通过使用以下方法在可选 SD 卡上存储和访问文件。
 - 文件选取器。
-- [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API。
+- [  **Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API。
 
 ## <a name="what-you-can-and-cant-access-on-the-sd-card"></a>SD 卡上的可访问内容和不可访问内容
 
@@ -62,7 +62,7 @@ ms.locfileid: "8931610"
 
 ### <a name="getting-a-reference-to-the-sd-card"></a>为 SD 卡获取引用。
 
-[**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 文件夹是适用于一组可移动设备（当前已连接到该设备）的逻辑根 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。 如果存在 SD 卡，**KnownFolders.RemovableDevices** 文件夹下的第一个（且唯一一个）**StorageFolder** 代表 SD 卡。
+[  **KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 文件夹是适用于一组可移动设备（当前已连接到该设备）的逻辑根 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。 如果存在 SD 卡，**KnownFolders.RemovableDevices** 文件夹下的第一个（且唯一一个）**StorageFolder** 代表 SD 卡。
 
 使用如下所示的代码确定 SD 卡是否存在，并为其获取 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 引用。
 
@@ -98,7 +98,7 @@ SD 卡可以包含系统无法识别为已知文件夹且无法通过使用 [**K
 
 当你使用派生自 [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 的路径访问 SD 卡上的文件系统时，下列方法的行为方式如下。
 
--   [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) 方法将返回你要通过注册来处理的文件扩展名和与你指定的任何媒体库功能相关联的文件扩展名的联合。
+-   [  **GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) 方法将返回你要通过注册来处理的文件扩展名和与你指定的任何媒体库功能相关联的文件扩展名的联合。
 -   如果你尚未注册即处理正尝试访问的文件的文件扩展名，[**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) 方法会失败。
 
 ## <a name="identifying-the-individual-sd-card"></a>标识单个 SD 卡

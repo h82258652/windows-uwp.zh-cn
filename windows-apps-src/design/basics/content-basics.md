@@ -1,5 +1,5 @@
 ---
-Description: An overview of common page patterns and UI elements for displaying content in your UWP app.
+Description: 页的常见模式和 UWP 应用程序中显示内容的 UI 元素的概述。
 title: 通用 Windows 平台 (UWP) 应用的内容设计基础知识
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b2d85d97fa704b4fb79e93cf95fdd1bfcc41f8ca
-ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "9004603"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594582"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>UWP 应用的内容设计基础知识
 
@@ -80,7 +80,7 @@ ms.locfileid: "9004603"
 <tr class="odd">
 <td align="left">音频和视频<br/><br/>
     <img src="images/content-basics/media-transport.png" alt="media transport control" /></td>
-<td align="left"><a href="../controls-and-patterns/media-playback.md">媒体播放和传输控件</a></td>
+<td align="left"><a href="../controls-and-patterns/media-playback.md">媒体的播放和传输控件</a></td>
 <td align="left">播放音频和视频。</td>
 </tr>
 <tr class="even">

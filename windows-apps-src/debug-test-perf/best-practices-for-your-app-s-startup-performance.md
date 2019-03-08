@@ -1,24 +1,24 @@
 ---
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
 title: 应用启动性能的最佳实践
-description: 通过改进你处理启动和激活的方式，创建启动时间最短的通用 Windows 平台 (UWP) 应用。
+description: 通过用户改进处理启动和激活的方式，创建启动时间得到优化的通用 Windows 平台 (UWP) 应用。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e50d3613e5f7058e99f2e71ba023fb4191e5c734
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051100"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644532"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>应用启动性能的最佳实践
 
 
-通过改进你处理启动和激活的方式，创建启动时间最短的通用 Windows 平台 (UWP) 应用。
+通过用户改进处理启动和激活的方式，创建启动时间得到优化的通用 Windows 平台 (UWP) 应用。
 
-## <a name="best-practices-for-your-apps-startup-performance"></a>应用的启动性能的最佳做法
+## <a name="best-practices-for-your-apps-startup-performance"></a>应用启动性能的最佳实践
 
 用户认为你的应用是快还是慢，在某种程度上取决于启动应用所需的时间。 就本主题而言，应用的启动时间从用户启动应用起算，并在用户以某些有意义的方式与应用交互时截止。 本部分提供了关于如何在应用启动时获取更好的性能的建议。
 
@@ -32,19 +32,19 @@ ms.locfileid: "9051100"
 
 以下过程描述了如何运行 Ngen.exe 来编译你的应用。
 
-**运行 Ngen.exe**
+**若要运行 Ngen.exe**
 
 1.  至少运行你的应用一次，以确保 Ngen.exe 能检测到它。
-2.  通过执行以下操作之一，打开“任务计划程序” ****：
+2.  通过执行以下操作之一，打开“任务计划程序” ：
     -   从开始屏幕中搜索“任务计划程序”。
     -   运行“taskschd.msc”。
-3.  在 ****“任务计划程序”的左侧窗格，展开 **** "任务计划程序库"。
-4.  展开 **** "Microsoft."
-5.  展开 **** "Windows."
-6.  选择 **** ".NET Framework"。
-7.  从任务列表中选择 **** ".NET Framework NGEN 4.x"。
+3.  在 “任务计划程序”的左侧窗格，展开  "任务计划程序库"。
+4.  展开  "Microsoft."
+5.  展开  "Windows."
+6.  选择  ".NET Framework"。
+7.  从任务列表中选择  ".NET Framework NGEN 4.x"。
 
-    如果你使用的是 64 位计算机，还有一个 **.NET Framework NGEN v4.x 64**。 如果你要构建 64 位应用，选择**** ".NET Framework NGEN v4.x 64"。
+    如果你使用的是 64 位计算机，还有一个 **.NET Framework NGEN v4.x 64**。 如果你要构建 64 位应用，选择 ".NET Framework NGEN v4.x 64"。
 
 8.  在 **“操作”** 菜单上，单击 **“运行”**。
 
@@ -58,7 +58,7 @@ Ngen.exe 编译计算机上所有已被使用和不拥有本机映像的应用�
 
 ### <a name="do-long-running-work-independently"></a>独立执行长时间的运行工作
 
-即使应用的部分功能未齐全，该应用也可交互。 例如，如果你的应用显示需要些时间检索的数据，你可通过异步检索数据来确保独立于应用的启动代码的代码执行。 获得数据后，用数据来填充应用的用户界面。
+即使应用的部分功能不全，应用也可交互。 例如，如果你的应用显示需要些时间检索的数据，你可通过异步检索数据来确保独立于应用的启动代码的代码执行。 数据可用时，用数据填充应用的用户界面。
 
 多数用于检索数据的通用 Windows 平台 (UWP) API 都是异步的，因此无论如何你都可以异步检索数据。 有关异步 API 的详细信息，请参阅[使用 C# 或 Visual Basic 调用异步 API](https://msdn.microsoft.com/library/windows/apps/Mt187337)。 如果处理不使用异步 API 的工作，可以使用 Task 类来处理长时间运行的工作，以便不会阻止用户与应用交互。 这将使你的应用能够在加载数据时对用户作出响应。
 

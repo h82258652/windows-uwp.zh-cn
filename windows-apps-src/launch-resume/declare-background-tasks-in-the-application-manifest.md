@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b30cd39a4440a1ade1ea0dda5a35d3f7c15f963
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114513"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615672"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在应用程序清单中声明后台任务
 
 
 
 
-**重要的 API**
+**重要的 Api**
 
 -   [**BackgroundTasks 架构**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
@@ -90,7 +90,7 @@ ms.locfileid: "9114513"
 
 2.  更改 Task Type 属性列表以指示该后台任务所使用的任务注册类型。 如果后台任务注册了多个触发器类型，需要为每个触发器类型添加附加的 Task 元素和 Type 属性。
 
-    **注意**确保列出的每个触发器类型你正在使用，或后台任务将不会注册未声明的触发器类型 （[**注册**](https://msdn.microsoft.com/library/windows/apps/br224772)方法将失败并引发异常）。
+    **请注意**  请确保以列出每个触发器类型使用的，或后台任务将不向未声明的触发器类型注册 ( [**注册**](https://msdn.microsoft.com/library/windows/apps/br224772)方法将失败并引发异常）。
 
     此代码段示例指示使用系统事件触发器和推送通知：
 
@@ -175,7 +175,7 @@ ms.locfileid: "9114513"
 
 ### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a>使用 ResourceGroup 属性指定运行后台任务的位置。
 
-下面的示例 XML 声明了在独立于同一应用的其他后台任务实例的 BackgroundTaskHost.exe 进程中运行。 注意 `ResourceGroup` 属性，该属性可标识将同时运行哪些后台任务。
+下面的示例 XML 声明了在独立于同一应用的其他后台任务实例的 BackgroundTaskHost.exe 进程中运行。 注意 `ResourceGroup` 属性，可标识将同时运行哪些后台任务。
 
 ```xml
 <Extensions>
@@ -209,7 +209,7 @@ ms.locfileid: "9114513"
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>每次用 SupportsMultipleInstances 属性触发新触发器时，在新进程中运行
 
-此示例声明在新进程中运行的后台任务，每次触发新触发器时，该进程会获取自己的资源限制（内存和 CPU）。 请注意使用可启用此行为的 `SupportsMultipleInstances`。 要使用此属性，你必须面向 SDK 版本"10.0.15063"（Windows 10 创意者更新） 或更高版本。
+此示例声明在新进程中运行的后台任务，每次触发新触发器时，该进程会获取自己的资源限制（内存和 CPU）。 请注意使用可启用此行为的 `SupportsMultipleInstances`。 若要使用此属性必须为目标 SDK 版本"10.0.15063"（Windows 10 创意者更新） 或更高版本。
 
 ```xml
 <Package
@@ -236,4 +236,4 @@ ms.locfileid: "9114513"
 
 * [调试后台任务](debug-a-background-task.md)
 * [注册后台任务](register-a-background-task.md)
-* [后台任务指南](guidelines-for-background-tasks.md)
+* [后台任务的指导原则](guidelines-for-background-tasks.md)

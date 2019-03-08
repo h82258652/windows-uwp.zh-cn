@@ -7,15 +7,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
 ms.localizationpriority: medium
 ms.openlocfilehash: 31c1893f09e6d56682b4e718ee8b905ce72c7ad8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919556"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631712"
 ---
 # <a name="connected-storage-loading-on-demand"></a>按需加载连接存储
 
-`GetSyncOnDemandForUserAsync` 允许“按需”从连接存储空间加载基于云的数据，而不是一次性全部加载。 如果出现文件保存特别大的情况，这可以提高 `GetForUserAsync` 的性能。
+`GetSyncOnDemandForUserAsync` 可以从"按需"连接的存储空间支持云的数据加载而不是一次性全部。 如果出现文件保存特别大的情况，这可以提高 `GetForUserAsync` 的性能。
 
 ## <a name="to-load-data-from-a-connected-storage-space-on-demand"></a>要按需从连接存储空间加载数据
 
@@ -62,13 +62,13 @@ if(gameSaveTask.Status == GameSaveErrorStatus.Ok)
 ```
 
 
-### <a name="2--perform-a-container-query-using-getcontainerinfo2async"></a>2：使用 `GetContainerInfo2Async` 执行容器查询
+### <a name="2--perform-a-container-query-using-getcontainerinfo2async"></a>2：容器查询使用执行 `GetContainerInfo2Async`
 
 这将返回 `ContainerInfo2` 的集合，此集合包含 3 个新的元数据字段：
 
-    -   `DisplayName`：使用 `SubmitUpdatesAsync`（它会将显示名称字符串作为参数）的重载编写的任意显示名称。 我们建议你始终使用此字段存储用户友好名称。
-    -   `LastModifiedTime`：此容器的上次修改时间。 注意，如果本地和远程时间戳发生冲突，请使用远程时间戳。
-    -   `NeedsSync`：布尔值，指示此容器中是否有需要从云中下载的数据。
+    -   `DisplayName`：已使用的重载编写任何显示名称`SubmitUpdatesAsync`采用显示名称字符串用作参数。 我们建议你始终使用此字段存储用户友好名称。
+    -   `LastModifiedTime`：上次修改此容器。 注意，如果本地和远程时间戳发生冲突，请使用远程时间戳。
+    -   `NeedsSync`：一个布尔值，该值指示如果此容器具有数据需要从云中下载。
 
     你可以使用此附加元数据向用户展示有关其游戏保存的核心信息（包括名称、上次使用时间和选择一个游戏保存是否需要下载），而无需实际从云中执行完整下载。
 
@@ -130,12 +130,12 @@ if(containerInfoResult.Status == GameSaveErrorStatus.Ok)
 
 在按需同步的上下文中调用这些 API 时，这些操作全都可能生成以下新的错误代码：
 
--   `ConnectedStorageErrorStatus::ContainerSyncFailed`（UWP C# API 中的 `GameSaveErrorStatus.ContainerSyncFailed`）：此错误指示操作失败，且容器无法与云同步。 最有可能的原因是，用户的网络条件导致同步失败。 在网络修复后，用户可能需要重试，或者选择使用无需同步的容器。UI 应允许以下选项之一。 无需重试对话框，因为用户已经看到系统 UI 重试对话框。
+-   `ConnectedStorageErrorStatus::ContainerSyncFailed`(`GameSaveErrorStatus.ContainerSyncFailed` UWP 中C#API):此错误指示该操作失败，无法与云同步容器。 最有可能的原因是，用户的网络条件导致同步失败。 在网络修复后，用户可能想要重试，或者可能会选择使用无需同步的容器。你的 UI 应允许以下选项之一。 无需重试对话框，因为用户已经看到系统 UI 重试对话框。
 
--   `ConnectedStorageErrorStatus::ContainerNotInSync`（UWP C# API 中的 `GameSaveErrorStatus.ContainerNotInSync`）：此错误指示游戏不正确地尝试写入未同步的容器。 不允许对 NeedsSync 标记设置为 true 的容器调用 `ConnectedStorageContainer::SubmitUpdatesAsync`（在 UWP C# API 中为 `GameSaveContainer.SubmitUpdatesAsync`）。 你必须先读取容器，在能在写入之前触发同步。 如果未从容器中读取便写入容器，则游戏中很可能有 Bug，会丢失用户进度。
+-   `ConnectedStorageErrorStatus::ContainerNotInSync`(`GameSaveErrorStatus.ContainerNotInSync` UWP 中C#API):此错误表明在标题上错误地尝试写入到的未同步的容器。 不允许对 NeedsSync 标记设置为 true 的容器调用 `ConnectedStorageContainer::SubmitUpdatesAsync`（在 UWP C# API 中为 `GameSaveContainer.SubmitUpdatesAsync`）。 你必须先读取容器，在能在写入之前触发同步。 如果未从容器中读取便写入容器，则游戏中很可能有 Bug，会丢失用户进度。
 
 此行为与用户脱机运行时的行为不同。 脱机时没有容器是否同步的指示，所以由用户决定是否稍后解决任何冲突。 但是，在这种情况下，系统知道用户需要进行同步，因此，系统不允许用户通过使用过期容器进入错误状态（不过用户仍可以在需要时重新启动游戏并脱机运行）。
 
-### <a name="4--use-the-rest-of-the-connected-storage-api-as-normal"></a>4：像平常一样使用连接存储 API 的其余部分。
+### <a name="4--use-the-rest-of-the-connected-storage-api-as-normal"></a>4:像平时一样使用已连接的存储 API 的 rest
 
 按需同步时，连接存储行为保持不变。

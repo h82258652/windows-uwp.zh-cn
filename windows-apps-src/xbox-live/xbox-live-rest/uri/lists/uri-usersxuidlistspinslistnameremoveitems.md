@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b5776d0cda53847e134495611e695cb6436cb433
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946733"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617512"
 ---
 # <a name="usersxuidxuidlistspinslistnameremoveitems"></a>/users/xuid(xuid)/lists/PINS/{listname}/RemoveItems
-从列表中删除项目。 这些 Uri 的域是`eplists.xboxlive.com`。
+从列表中移除项。 这些 Uri 的域是`eplists.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -24,10 +24,10 @@ ms.locfileid: "8946733"
  
 ## <a name="uri-parameters"></a>URI 参数 
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
 | XUID| 字符串| 用户的 XUID。| 
-| listname| 字符串| 列表来操作的名称。| 
+| listname| 字符串| 要操作的列表的名称。| 
   
 <a id="ID4E5B"></a>
 
@@ -36,11 +36,11 @@ ms.locfileid: "8946733"
 
 [DELETE](uri-usersxuidlistspinslistnameremoveitemsdelete.md)
 
-&nbsp;&nbsp;按索引从列表中删除项目。
+&nbsp;&nbsp;按索引，从列表中移除项。
 
 [POST](uri-usersxuidlistspinslistnameremoveitemspost.md)
 
-&nbsp;&nbsp;按 itemId，请从列表中删除项目。
+&nbsp;&nbsp;从列表中移除项的 itemId。
  
 <a id="ID4ELC"></a>
 
@@ -52,6 +52,6 @@ ms.locfileid: "8946733"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
+[通用资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
 
    

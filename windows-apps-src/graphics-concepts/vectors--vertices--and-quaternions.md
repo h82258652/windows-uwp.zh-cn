@@ -1,6 +1,6 @@
 ---
 title: 矢量、顶点和四元数
-description: 顶点会在整个 Direct3D 中描述位置和方向。 基元中的每个顶点都由矢量进行描述，矢量会提供其位置、颜色、纹理坐标以及指定其方向的法向矢量。
+description: 顶点会在整个 Direct3D 中描述位置和方向。 基元中的每个顶点都由矢量进行描述，矢量会提供其位置、颜色、纹理坐标和提供其方向的法向矢量。
 ms.assetid: 94EC3D59-43FC-4509-A233-916E9FA8381E
 keywords:
 - 矢量、顶点和四元数
@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8942e53b7372e2e8b3cf4ed05f89b4187bdfc4be
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926406"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599862"
 ---
 # <a name="vectors-vertices-and-quaternions"></a>矢量、顶点和四元数
 
 
-顶点会在整个 Direct3D 中描述位置和方向。 基元中的每个顶点都由矢量进行描述，矢量会提供其位置、颜色、纹理坐标以及指定其方向的法向矢量。
+顶点会在整个 Direct3D 中描述位置和方向。 基元中的每个顶点都由矢量进行描述，矢量会提供其位置、颜色、纹理坐标和提供其方向的法向矢量。
 
-四元数用于将第四个元素添加到定义三分量矢量的 \[x, y, z\] 值。 四元数是通常用于 3D 旋转的矩阵方法的替代方法。 四元数表示 3D 空间中的轴和绕该轴的旋转。 例如，四元数可能表示 (1,1,2) 轴和弧度为 1 的旋转。 四元数包含了重要信息，但它们真正的作用来自你可以对其执行的两项运算：合成和内插。
+四元数添加到第四个元素\[x、 y、 z\]定义三分量矢量的值。 四元数是通常用于 3D 旋转的矩阵方法的替代方法。 四元数表示 3D 空间中的轴和绕该轴的旋转。 例如，四元数可能表示 (1,1,2) 轴和弧度为 1 的旋转。 四元数包含了重要信息，但它们真正的作用来自你可以对其执行的两项运算：合成和内插。
 
 对四元数执行合成与合并它们相似。 两个四元数的合成的符号表示形式与下图相似。
 
@@ -34,7 +34,7 @@ ms.locfileid: "8926406"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[坐标系和几何图形](coordinate-systems-and-geometry.md)
+[坐标系和坐标 geometry](coordinate-systems-and-geometry.md)
 
  
 

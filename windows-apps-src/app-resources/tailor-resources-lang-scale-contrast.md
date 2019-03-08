@@ -1,5 +1,5 @@
 ---
-Description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
+Description: 本主题说明限定符的常规概念、如何使用它们以及每个限定符名称的用途。
 title: 定制语言、比例、高对比度和其他限定符的资源
 template: detail.hbs
 ms.date: 10/10/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ac80888019044beabc44335290bc6ad59cf377c
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117657"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608132"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>定制语言、比例、高对比度和其他限定符的资源
 
@@ -29,7 +29,7 @@ ms.locfileid: "9117657"
 | :--------------- | :--------------- | :--------------- |
 | 高对比度设置 | contrast | standard、high、black、white |
 
-你可以将限定符名称和限定符值结合起来形成限定符。 `<qualifier name>-<qualifier value>` 是限定符的格式。 `contrast-standard` 是限定符的示例。
+你可以将限定符名称和限定符值结合起来形成限定符。 `<qualifier name>-<qualifier value>` 是一个限定符的格式。 `contrast-standard` 是一个限定符的示例。
 
 因此，对于高对比度，限定符集是 `contrast-standard`、`contrast-high`、`contrast-black` 和 `contrast-white`。 限定符名称和限定符值不区分大小写。 例如，`contrast-standard`和`Contrast-Standard` 是相同的限定符。
 
@@ -102,7 +102,7 @@ ms.locfileid: "9117657"
 \Assets\Images\contrast-high_scale-400\<logo.png, and other image files>
 ```
 
-在文件夹名称中，你可以合并用下划线分隔的多个限定符。 `<qualifier1>[_<qualifier2>...]` 为其格式。
+在文件夹名称中，你可以合并用下划线分隔的多个限定符。 `<qualifier1>[_<qualifier2>...]` 是的格式。
 
 你可以用相同格式在文件名中合并多个限定符。
 
@@ -118,19 +118,19 @@ ms.locfileid: "9117657"
 
 你的目标系统或应用必须提供匹配 `alternateform` 限定符所依据的值。 请不要将 `msft-` 前缀用于自己的自定义 `alternateform` 限定符值。
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>配置
 
 需要 `configuration` 限定符名称的可能性较低。 它可用于指定仅适用于给定的创作时环境的资源，例如仅用于测试的资源。
 
 `configuration` 限定符用于加载与 `MS_CONFIGURATION_ATTRIBUTE_VALUE` 环境变量的值最佳匹配的资源。 因此，你可以将变量设置为已分配给相关资源的字符串值，例如 `designer` 或 `test`。
 
-## <a name="contrast"></a>Contrast
+## <a name="contrast"></a>与此示例
 
 `contrast` 限定符用于提供与高对比度设置最佳匹配的资源。
 
-## <a name="custom"></a>Custom
+## <a name="custom"></a>自定义
 
-你的应用可以为 `custom` 限定符设置值，以后系统会加载与该值最佳匹配的资源。 例如，你可能希望根据你的应用许可证来加载资源。 当你的应用启动时，它会检查其许可证，并将其用作 `custom` 限定符的值，所采用的方法是调用[SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue)，如代码示例中所示。
+你的应用可以为 `custom` 限定符设置值，以后系统会加载与该值最佳匹配的资源。 例如，你可能希望根据你的应用许可证来加载资源。 当你的应用启动时，它会检查其许可证，并将其用作 `custom` 限定符的值，所采用的方法是调用 [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue)，如代码示例中所示。
 
 ```csharp
 public void SetLicenseLevel(BrandID brand)
@@ -150,7 +150,7 @@ public void SetLicenseLevel(BrandID brand)
 }
 ```
 
-在此情况下，你将为你的资源提供包括 `custom-premium`、`custom-standard` 和 `custom-trial` 限定符的名称。
+在此方案中，你将为你的资源提供包括 `custom-premium`、`custom-standard` 和 `custom-trial` 限定符的名称。
 
 ## <a name="devicefamily"></a>DeviceFamily
 
@@ -193,7 +193,7 @@ public void SetLicenseLevel(BrandID brand)
 
 `homeregion` 限定符对应于用户的国家或地区设置。 它表示用户的主位置。 值包括任何有效的 [BCP-47 区域标记](https://go.microsoft.com/fwlink/p/?linkid=227302)。 即，任何 **ISO 3166 1 alpha-2** 双字母区域代码，以及所构成区域的一组 **ISO 3166-1 数字**三位数地理代码（请参阅[联合国统计部门 M49 区域代码构成](https://go.microsoft.com/fwlink/p/?linkid=247929)）。 “选定的经济组织和其他组织”的代码无效。
 
-## <a name="language"></a>Language
+## <a name="language"></a>语言
 
 `language` 限定符对应于显示语言设置。 值包括任何有效的 [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)。 有关语言的列表，请参阅 [IANA 语言子标记注册表](https://go.microsoft.com/fwlink/p/?linkid=227303)。
 
@@ -269,11 +269,11 @@ Windows 会根据其 DPI（每英寸点数）和设备的观看距离自动为�
 
 * [有效像素和缩放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [资源管理系统](resource-management-system.md)
-* [如何为本地化做好准备](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
-* [检测正运行应用的平台](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
+* [用于本地化的准备工作](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
+* [检测到平台上运行你的应用](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
 * [设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
 * [本地化 UI 字符串](localize-strings-ui-manifest.md)
 * [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [联合国统计部门 M49 区域代码构成](https://go.microsoft.com/fwlink/p/?linkid=247929)
+* [联合国统计信息除法 M49 组成的区域代码](https://go.microsoft.com/fwlink/p/?linkid=247929)
 * [IANA 语言子标记注册表](https://go.microsoft.com/fwlink/p/?linkid=227303)
 * [调整布局和字体并支持 RTL](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)

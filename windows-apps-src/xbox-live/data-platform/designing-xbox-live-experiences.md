@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 统计信息, 成就, 排行榜, 设计
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f080593727ec6d7ddd529b2ce976708174250ba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924624"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57600782"
 ---
 # <a name="designing-xbox-live-experiences"></a>设计 Xbox Live 体验
 
@@ -26,7 +26,7 @@ ms.locfileid: "8924624"
 3. 根据需要配置“特别推荐的统计信息”、“成就”或“排行榜”
 
 
-## <a name="1-design-your-xbox-live-experiences"></a>1. 设计 Xbox Live 体验
+## <a name="1-design-your-xbox-live-experiences"></a>1.设计您的 Xbox Live 体验
 我们希望 _Race 2015_ 充分利用 Xbox Live，以保持用户在游戏内部和外部的参与度。 要提出的第一个问题是：
 
 1. 我们希望游戏中心的“成就”选项卡体验是什么样的？ （特别推荐的统计信息和社交排行榜）
@@ -75,6 +75,6 @@ ms.locfileid: "8924624"
 * 收集的汽车最多
 
 ## <a name="next-steps"></a>后续步骤
-既然你已经了解了如何有效地设计“统计信息”、“排行榜”和“成就”，现在你便可以开始在你的作品中实现这些体验了。  接下来的几个部分将介绍在合作伙伴中心中的配置开始的端到端流程。
+既然你已经了解了如何有效地设计“统计信息”、“排行榜”和“成就”，现在你便可以开始在你的作品中实现这些体验了。  下面几节将介绍配置合作伙伴中心中开始的端到端过程。
 
 请参阅[玩家统计信息](../leaderboards-and-stats-2017/player-stats.md)

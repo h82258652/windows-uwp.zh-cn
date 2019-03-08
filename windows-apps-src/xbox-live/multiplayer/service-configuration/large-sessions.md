@@ -6,11 +6,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 大型会话, 最近的玩家
 ms.localizationpriority: medium
 ms.openlocfilehash: dcd7b27bc0aea8b8406e7eccb420140cf32c1ed5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930193"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618542"
 ---
 # <a name="large-sessions"></a>大型会话
 
@@ -73,9 +73,9 @@ Xbox Live 的一项功能是，如果 Xbox Live 玩家与新人玩多人游戏�
 
 你可以采用两种方法，指示会话中的玩家是一起玩游戏的（用于更新信誉和最近的玩家状态）。
 
-#### <a name="1-persistent-groups"></a>1. 永久组
+#### <a name="1-persistent-groups"></a>1.持久的组
 
-如果一组玩家一直在一起（可能包括有来有往的玩家），则可以命名该组（例如，guid – 采用与常规会话相同的命名规则）。每个成员在加入和离开该组时，应在其自己的“groups”属性中添加或删除该组名，这是一组字符串：
+如果一组玩家一直在一起（可能包括有来有往的玩家），则可以命名该组（例如，guid – 采用与常规会话相同的命名规则）。  每个成员在加入和离开该组时，应在其自己的“groups”属性中添加或删除该组名，这是一组字符串：
 
 ```json
 {
@@ -91,7 +91,7 @@ Xbox Live 的一项功能是，如果 Xbox Live 玩家与新人玩多人游戏�
 }
 ```
 
-#### <a name="2-brief-encounters"></a>2. 短暂遇到
+#### <a name="2-brief-encounters"></a>2.简要遇到
 
 如果两人短暂遇到过一次，则游戏可以改用“encounters”数组。 为每次遇到提供名称，在遇到后，两个（或所有）参与者都要将该名称写入其自己的“encounters”属性：
 
@@ -111,4 +111,4 @@ Xbox Live 的一项功能是，如果 Xbox Live 玩家与新人玩多人游戏�
 
 你可以对“groups”和“encounters”使用相同的名称。例如，如果一个玩家与某个组“进行交易”，则该组中的成员不需要执行任何操作（假定他们之前将该组名添加到其“groups”中），并且所遇到的人会将该组名上传到其“encounters”列表中。 这样，各用户便可像最近的玩家一样查看该组的所有成员，反之亦然。
 
-成为该组成员 30 秒钟时的遇到计数。 由于遇到被视为一次性活动，因此，系统总会立即处理“encounters”数组，然后从会话中将其清除。该数字将不会出现在响应中。（“groups”数组始终存在，直到被更改或删除，或者成员离开会话。）
+成为该组成员 30 秒钟时的遇到计数。 由于遇到被视为一次性活动，因此，系统总会立即处理“encounters”数组，然后从会话中将其清除。  该数字将不会出现在响应中。  （“groups”数组始终存在，直到被更改或删除，或者成员离开会话。）

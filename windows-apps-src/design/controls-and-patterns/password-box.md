@@ -1,5 +1,5 @@
 ---
-Description: A password box is a text input box that conceals the characters typed into it for the purpose of privacy.
+Description: 密码框是指出于隐私目的隐藏所键入的字符的文本输入框。
 title: 密码框指南
 ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
@@ -13,11 +13,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 43639ac22c07501da89e29419a226a8a3ce8af48
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036909"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613062"
 ---
 # <a name="password-box"></a>密码框
 
@@ -25,7 +25,7 @@ ms.locfileid: "9036909"
 
 密码框是指出于隐私目的隐藏所键入的字符的文本输入框。 密码框的外观类似文本框，区别在于它在已输入文本的位置呈现占位符。 可配置占位符。
 
-> **重要 API**：[PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)，[Password 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx)，[PasswordChar 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx)，[PasswordRevealMode 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)，[PasswordChanged 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)
+> **重要的 Api**:[PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)， [Password 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx)， [PasswordChar 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx)， [PasswordRevealMode 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)， [PasswordChanged 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)
 
 默认情况下，密码框向用户提供了查看其密码的方法，即按下显示按钮。 你可以禁用显示按钮，或提供显示密码的替代机制，如复选框。
 
@@ -33,7 +33,7 @@ ms.locfileid: "9036909"
 
 使用 **PasswordBox** 控件收集密码或其他隐私数据，如身份证号。
 
-有关选择正确文本控件的详细信息，请参阅[文本控件](text-controls.md)文章。
+有关选择正确的文本控件的详细信息，请参阅[文本控件](text-controls.md)文章。
 
 ## <a name="examples"></a>示例
 
@@ -44,7 +44,7 @@ ms.locfileid: "9036909"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/PasswordBox">打开此应用，了解 PasswordBox 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -198,9 +198,9 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 
 [文本控件](text-controls.md)
 
-- [拼写检查指南](text-controls.md)
+- [拼写检查的准则](text-controls.md)
 - [添加搜索](https://msdn.microsoft.com/library/windows/apps/hh465231)
-- [文本输入指南](text-controls.md)
+- [文本输入的准则](text-controls.md)
 - [TextBox 类](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [Windows.UI.Xaml.Controls PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length 属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

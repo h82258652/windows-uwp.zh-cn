@@ -8,23 +8,23 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: adac175675230e107b3066d1d8f955e660bdbd00
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925493"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645632"
 ---
 # <a name="inventoryitemid"></a>/inventory/{itemID}
-访问完整的一组特定的库存项目的详细信息。 这些 Uri 的域是`inventory.xboxlive.com`。
+访问完整集的特定清单项的详细信息。 这些 Uri 的域是`inventory.xboxlive.com`。
  
 <a id="ID4ET"></a>
 
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| itemID| 字符串| 唯一的每个用户单数库存项目的 ID| 
+| itemID| 字符串| 唯一的单数形式的清单项的每个用户 ID| 
   
 <a id="ID4EPB"></a>
 
@@ -33,7 +33,7 @@ ms.locfileid: "8925493"
 
 [GET (/inventory/{itemID})](uri-inventoryitemurlget.md)
 
-&nbsp;&nbsp;为特定的库存项目提供完整的详细信息集。
+&nbsp;&nbsp;提供特定清单项的详细信息的完整集。
  
 <a id="ID4EZB"></a>
 
@@ -45,7 +45,7 @@ ms.locfileid: "8925493"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[市场 URI](atoc-reference-marketplace.md)
+[Marketplace Uri](atoc-reference-marketplace.md)
 
   
 <a id="ID4EFC"></a>
@@ -53,11 +53,11 @@ ms.locfileid: "8925493"
  
 ##### <a name="further-information"></a>详细信息 
 
-[EDS 通用标头](../../additional/edscommonheaders.md)
+[EDS 常见标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询优化器](../../additional/edsqueryrefiners.md)
+ [EDS 查询精简将](../../additional/edsqueryrefiners.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)
 

@@ -1,5 +1,5 @@
 ---
-Description: With the package resource indexing (PRI) APIs, you can develop a custom build system for your UWP app's resources. The build system will be able to create, version, and dump PRI files to whatever level of complexity your UWP app needs.
+Description: 包资源编制索引 (PRI) Api，你可以开发 UWP 应用的资源的自定义生成系统。 生成系统可以创建、版本和转储 PRI 文件，以适应 UWP 应用所需的任何级别的复杂性。
 title: 包资源索引 (PRI) API 和自定义生成系统
 template: detail.hbs
 ms.date: 05/07/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 617812415d3dcd00ec24d5f55971ae311265b61d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931748"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598512"
 ---
 # <a name="package-resource-indexing-pri-apis-and-custom-build-systems"></a>包资源索引 (PRI) API 和自定义生成系统
 通过[包资源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690)，你可以为 UWP 应用的资源开发自定义生成系统。 生成系统可以创建、改编和转储（作为 XML）包资源索引 (PRI) 文件，以适应 UWP 应用所需的任何级别的复杂性。 如果具有当前使用 MakePri.exe 命令行工具的自定义生成系统（请参阅[使用 MakePri.exe 手动编译资源](makepri-exe-command-options.md)），为了提供更佳的性能和控制，我们建议更改为调用 PRI API，而不是调用 MakePri.exe。
@@ -28,12 +28,12 @@ PRI 文件的大小限制为 64 千字节。
 ## <a name="scenario-walkthroughs"></a>方案演练
 |主题|描述|
 |-|-|
-|[方案 1：从字符串资源和资产文件生成 PRI 文件](pri-apis-scenario-1.md)|在此方案中，我们将让新应用来代表我们的自定义生成系统。 我们将创建一个资源索引器，并向其添加字符串和其他类型的资源。 然后我们将生成和转储 PRI 文件。|
+|[方案 1:从字符串资源和资产文件生成 PRI 文件](pri-apis-scenario-1.md)|在此方案中，我们将让新应用来代表我们的自定义生成系统。 我们将创建一个资源索引器，并向其添加字符串和其他类型的资源。 然后我们将生成和转储 PRI 文件。|
 
 ## <a name="important-apis"></a>重要的 API
-* [包资源索引 (PRI) 参考](https://msdn.microsoft.com/library/windows/desktop/mt845690)
+* [索引 (PRI) 引用的包资源](https://msdn.microsoft.com/library/windows/desktop/mt845690)
 
 ## <a name="related-topics"></a>相关主题
-* [使用 MakePri.exe 手动编译资源](makepri-exe-command-options.md)
-* [消耗未托管的 DLL 功能](/dotnet/framework/interop/consuming-unmanaged-dll-functions?branch=live)
+* [编译手动与 MakePri.exe 的资源](makepri-exe-command-options.md)
+* [使用非托管的 DLL 函数](/dotnet/framework/interop/consuming-unmanaged-dll-functions?branch=live)
 * [资源管理系统](resource-management-system.md)

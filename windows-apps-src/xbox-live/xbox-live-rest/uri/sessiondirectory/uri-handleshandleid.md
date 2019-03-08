@@ -8,17 +8,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a312d3744e96755a899d73307a47c01e3dc79fd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945100"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632632"
 ---
 # <a name="handleshandleid"></a>/handles/{handleId}
-支持会话句柄由标识符指定删除和 GET 的操作。 
+支持 DELETE 和 GET 操作的标识符指定的会话句柄。 
 
 > [!NOTE] 
-> 此 URI 使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在使用模板合约 104/105 或更高版本。  
+> 此 URI 由 2015年之多人游戏，并且仅适用于该多玩家版本和更高版本。 它旨在用于模板协定 104/105 或更高版本。  
 
  
 <a id="ID4EQ"></a>
@@ -31,7 +31,7 @@ sessiondirectory.xboxlive.com
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | --- | 
 | handleId| GUID| 会话句柄的唯一 ID。| 
   
@@ -42,9 +42,9 @@ sessiondirectory.xboxlive.com
 
 [DELETE (/handles/{handleId})](uri-handleshandleiddelete.md)
 
-&nbsp;&nbsp;删除由句柄 ID 指定的句柄
+&nbsp;&nbsp;删除句柄指定的句柄 id。
 
-[GET (/handles/{handle-id})](uri-handleshandleidget.md)
+[获取 (/handles/ {句柄 id})](uri-handleshandleidget.md)
 
 &nbsp;&nbsp;检索句柄指定的句柄 id。
  
@@ -58,6 +58,6 @@ sessiondirectory.xboxlive.com
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[会话目录 URI](atoc-reference-sessiondirectory.md)
+[会话目录 Uri](atoc-reference-sessiondirectory.md)
 
    

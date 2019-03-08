@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ddb1dc0e42f88cf65464841388b9addfb4b5748
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935921"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616682"
 ---
 # <a name="device-types"></a>设备类型
 
@@ -26,19 +26,19 @@ Direct3D 设备类型包括硬件抽象层 (hal) 设备和参考光栅器。
 
 应用程序不能直接访问图形适配器。 它们调用 Direct3D 功能和方法。 Direct3D 通过 hal 访问硬件。 如果运行应用程序的计算机支持 hal，它将使用 hal 设备获得最佳性能。
 
-## <a name="span-idreferencedevicespanspan-idreferencedevicespanspan-idreferencedevicespanreference-device"></a><span id="Reference_Device"></span><span id="reference_device"></span><span id="REFERENCE_DEVICE"></span>参考设备
+## <a name="span-idreferencedevicespanspan-idreferencedevicespanspan-idreferencedevicespanreference-device"></a><span id="Reference_Device"></span><span id="reference_device"></span><span id="REFERENCE_DEVICE"></span>引用设备
 
 
 Direct3D 支持被称为参考设备或参考光栅器的其他设备类型。 与软件设备不同，参考光栅器支持每个 Direct3D 功能。 此设备旨在用于调试，因此仅在已安装了 DirectX SDK 的计算机上可用。 由于这些功能的实现在于精度而非速度，并且是在软件中实现，因此结果不是非常快。 参考光栅器确实会使用特殊的 CPU 说明（如果可以），但它不用于零售应用程序。 仅将参考光栅器仅用于功能测试或演示目的。
 
-## <a name="span-idhalvsrefspanspan-idhalvsrefspanspan-idhalvsrefspanhal-vs-ref-devices"></a><span id="HAL_vs_REF"></span><span id="hal_vs_ref"></span><span id="HAL_VS_REF"></span>HAL 与 REF 设备
+## <a name="span-idhalvsrefspanspan-idhalvsrefspanspan-idhalvsrefspanhal-vs-ref-devices"></a><span id="HAL_vs_REF"></span><span id="hal_vs_ref"></span><span id="HAL_VS_REF"></span>HAL vs。REF 设备
 
 
 HAL（硬件抽象层）设备和 REF（参考光栅器）设备是 Direct3D 设备的两个主要类型；第一个基于硬件支持并且速度很快，但可能不支持所有功能；而第二个不使用硬件加速，因此速度很慢，但保证正确地支持一整套 Direct3D 功能。 一般情况下，你只需要使用 HAL 设备，但如果要使用图形卡不支持的某些高级功能，那么你可能需要回退到参考设备。
 
 HAL 设备产生异常结果时，也就是说，当你确定代码正确但并未得到预期结果时，你可能也想要使用 REF 设备。 REF 设备保证能够正常运行，因此你可能希望在 REF 设备上测试应用程序并查看异常行为是否还在继续。 如果其无法正常运行，这意味着要么 (a) 应用程序认为图形卡支持其不支持的内容，要么 (b) 它是一个驱动程序错误。 如果应用程序仍无法在 REF 设备上运行，则是应用程序错误。
 
-## <a name="span-idhardwarevssoftwarespanspan-idhardwarevssoftwarespanspan-idhardwarevssoftwarespanhardware-vs-software-vertex-processing"></a><span id="Hardware_vs_Software"></span><span id="hardware_vs_software"></span><span id="HARDWARE_VS_SOFTWARE"></span>硬件与软件顶点处理
+## <a name="span-idhardwarevssoftwarespanspan-idhardwarevssoftwarespanspan-idhardwarevssoftwarespanhardware-vs-software-vertex-processing"></a><span id="Hardware_vs_Software"></span><span id="hardware_vs_software"></span><span id="HARDWARE_VS_SOFTWARE"></span>硬件 vs。软件顶点处理
 
 
 硬件与软件顶点处理仅适用于 HAL 设备。 当推送顶点穿过管道时，需要（轮流通过世界、视图和投影矩阵）转换和（通过 D3D 的内置灯）照亮它们，此处理阶段被称为 T & L（转换和照明）。 硬件顶点处理意味着此操作是在硬件中完成的（如果硬件支持），而软件顶点处理是在软件中完成的。 常规的做法是先尝试创建硬件 T&L 设备，如果失败的话，再尝试创建混合设备；如果再次失败，最后尝试创建软件。 （如果软件失败，则放弃和退出（会弹出错误消息）。）

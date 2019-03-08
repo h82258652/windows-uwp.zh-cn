@@ -6,15 +6,15 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务配置, xboxservices.config
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ff538d691627bf4bb12b3ef6f8b1360e59ac701
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925448"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606682"
 ---
 # <a name="xboxservicesconfig-file-description"></a>XboxServices.config 文件描述
 
-在开发启用 Xbox Live 的 UWP 游戏时，项目中必须包括 XboxServices.config 文件。  该文件启用 Xbox Live SDK 以将你的游戏与你的合作伙伴中心应用和 Xbox Live 服务配置相关联。 此文件包含一个 JSON 对象，详细介绍服务配置 ID、作品 ID 等信息。
+在开发启用 Xbox Live 的 UWP 游戏时，项目中必须包括 XboxServices.config 文件。  此文件，使 Xbox Live SDK，可将您的游戏与合作伙伴中心应用和你的 Xbox Live 服务配置相关联。 此文件包含一个 JSON 对象，详细介绍服务配置 ID、作品 ID 等信息。
 
 如果你要使用 Unity，利用 Xbox Live 插件来设计 Xbox Live 创意者计划游戏，Xbox Live 关联向导会自动创建该文件。
 
@@ -27,8 +27,8 @@ ms.locfileid: "8925448"
 
 字段 | 描述
 --- | ---
-PrimaryServiceConfigId  |  Xbox Live 服务配置 ID (SCID)。 在[合作伙伴中心](https://partner.microsoft.com/dashboard)，你可以为你的应用**服务**部分下找到**Xbox Live**页面 （对于创意者计划） 或**Xbox Live 设置**页面 （适用于所有 Xbox Live 游戏），此值。
-TitleId  |  应用的十进制作品 ID。 在[合作伙伴中心](https://partner.microsoft.com/dashboard)，你可以为你的应用**服务**部分下找到**Xbox Live**页面 （对于创意者计划） 或**Xbox Live 设置**页面 （适用于所有 Xbox Live 游戏），此值。
+PrimaryServiceConfigId  |  Xbox Live 服务配置 ID (SCID)。 在[合作伙伴中心](https://partner.microsoft.com/dashboard)，可以在上找到此值**Xbox Live**页 （对于 Creators 计划） 或**Xbox Live 安装**页 （对于完整 Xbox Live 游戏） 下,**Services**部分，了解您的应用程序。
+TitleId  |  应用的十进制作品 ID。 在[合作伙伴中心](https://partner.microsoft.com/dashboard)，可以在上找到此值**Xbox Live**页 （对于 Creators 计划） 或**Xbox Live 安装**页 （对于完整 Xbox Live 游戏） 下,**Services**部分，了解您的应用程序。
 XboxLiveCreatorsTitle  |  如果为“true”，则指示应用是 Xbox Live 创意者计划应用。 否则为“false”。
 范围  |  **（可选）** 定义应用所用功能的范围。 有关详细描述，请见下文。
 

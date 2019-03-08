@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, 指南, 最佳做法
 ms.localizationpriority: medium
 ms.openlocfilehash: 78f044890e49f4631abf710764bc2f9746a1306f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930748"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639142"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>广告的 UI 和用户体验指南
 
@@ -71,7 +71,7 @@ ms.locfileid: "8930748"
 
 * 以任何方式绕过横幅广告的内置最小刷新计时器，包括（但不限于）交换 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 对象，或不进行用户交互就强制刷新页面。
 
-* 在开发和测试期间使用实时广告单元 （即，从合作伙伴中心获得的广告单元） 或在仿真器。
+* 在开发和测试期间使用实时广告单元 （即从合作伙伴中心获取的广告单元） 或在模拟器中。
 
 * 通过在应用程序上下文中运行的 Microsoft Advertising 库之外的方式编写或分发调用广告服务的代码。
 
@@ -133,7 +133,7 @@ ms.locfileid: "8930748"
 
 * 请勿在调用 [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 之前提取一个超过 5 分钟的间隙视频广告。 良好的库存会最大限度地将预取的广告转换为可计费的广告展示。
 
-* 请勿对广告投放出现故障（如没有可用的广告）的用户进行处罚。 例如，如果你显示“观看广告获取 *xxx*”的 UI 选项，那么在用户看完以后，你应提供 *xxx*。 有两个选项可以考虑：
+* 请勿对广告投放出现故障（如没有可用的广告）的用户进行处罚。 例如，如果你显示“观看广告获取 *xxx*”的 UI 选项，那么在用户看完以后，你应当提供 *xxx*。 有两个选项可以考虑：
 
     * 不包括该选项，除非已引发 [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) 事件。
 
@@ -155,7 +155,7 @@ ms.locfileid: "8930748"
 
 * 只是为了具有瀑布序列广告的备份广告而请求间隙广告。 如果请求间隙广告后收到 [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) 事件，则应用中所示的下一个间隙广告必须是已准备好通过 [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 方法显示的广告。
 
-* 在开发和测试期间使用实时广告单元 （即，从合作伙伴中心获得的广告单元） 或在仿真器。
+* 在开发和测试期间使用实时广告单元 （即从合作伙伴中心获取的广告单元） 或在模拟器中。
 
 * 通过在应用程序上下文中运行的 Microsoft Advertising 库之外的方式编写或分发调用广告服务的代码。
 
@@ -189,7 +189,7 @@ ms.locfileid: "8930748"
 
 本机广告应与你的应用的其余部分清晰分隔，并且周围有防止意外点击的空间。 使用边框、不同背景或其他 UI 将广告内容与应用的其余部分隔开。 请记住，从长远来看，意外点击广告不会给你的广告收益或最终用户体验带来任何好处。
 
-### <a name="description"></a>说明
+### <a name="description"></a>描述
 
 如果选择显示广告说明（由 **NativeAdV2** 对象的 **Description** 属性提供），请提供足以显示至少 75 个字符的空间。 我们建议你使用动画显示广告描述的完整内容。
 

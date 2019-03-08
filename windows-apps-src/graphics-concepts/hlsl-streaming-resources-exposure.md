@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 00d6c16ecaa64abf7d83154fdb864671dbff3eae
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936279"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643482"
 ---
 # <a name="hlsl-streaming-resources-exposure"></a>HLSL 流式资源暴露
 
@@ -21,7 +21,7 @@ ms.locfileid: "8936279"
 
 仅能在支持流式资源的设备上使用 Shader 模型 5 的 HLSL 语法。 下表中用于流式资源的每个相关 HLSL 方法接受一个（反馈）或两个（以此顺序的固定和反馈）其他的可选参数。 例如，**Sample** 方法是：
 
-**Sample(sampler, location \[, offset \[, clamp \[, feedback\] \] \])**
+**示例 (采样器、 位置\[，偏移量\[，clamp \[，反馈\] \] \])**
 
 **Sample** 方法的一个示例是 [**Texture2D.Sample(S,float,int,float,uint)**](https://msdn.microsoft.com/library/windows/desktop/dn393787)。
 
@@ -35,7 +35,7 @@ feedback 参数是 **uint** 变量，可将其提供给内存访问查询内部 
 
 **bool CheckAccessFullyMapped(in uint FeedbackVar);**
 
-[**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 会解释 *FeedbackVar* 的值，如果正在访问的所有数据已映射到资源中，则返回 true；否则，**CheckAccessFullyMapped** 返回 false。
+[**CheckAccessFullyMapped** ](https://msdn.microsoft.com/library/windows/desktop/dn292083)解释的值*FeedbackVar* ，如果正在访问的所有数据都已在资源映射; 否则为返回 true **CheckAccessFullyMapped**返回 false。
 
 如果存在 clamp 或 feedback 参数，则编译器将发出基本指令的变体。 例如，流式资源的示例会生成 `sample_cl_s` 指令。
 
@@ -103,7 +103,7 @@ clamp 值 0.0f 表示不执行 clamp；因此，驱动程序编译器可以进�
 <p>[RW]Buffer</p>
 <p>[RW]ByteAddressBuffer</p>
 <p>[RW]StructuredBuffer</p></td>
-<td align="left">Load</td>
+<td align="left">加载</td>
 </tr>
 </tbody>
 </table>
@@ -113,7 +113,7 @@ clamp 值 0.0f 表示不执行 clamp；因此，驱动程序编译器可以进�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[对流式资源的管道访问](pipeline-access-to-streaming-resources.md)
+[管道到流式处理资源的访问权限](pipeline-access-to-streaming-resources.md)
 
  
 

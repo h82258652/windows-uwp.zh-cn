@@ -8,96 +8,96 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: cd86a6147c047a2925cdb931d9735712a4032adb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947629"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623402"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a>统一资源标识符 (URI) 参考
 
-本部分提供有关统一资源标识符 (Uri) 和超文本传输协议 (HTTP) 方法使用 Xbox Live 服务的详细信息。
+本部分提供了有关的统一资源标识符 (Uri) 和超文本传输协议 (HTTP) 方法用于 Xbox Live 服务的详细信息。
 
 <a id="ID4EAB"></a>
 
 
 ## <a name="in-this-section"></a>本部分内容
 
-[成就 URI](achievements/atoc-reference-achievementsv2.md)
+[获得的成就 Uri](achievements/atoc-reference-achievementsv2.md)
 
-&nbsp;&nbsp;Uri 和成就关联的 HTTP 方法。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法的成就。
 
-[游戏服务器统一资源标识符 (URI) 参考](gsdk/atoc-gsdk-uri-reference.md)
+[游戏服务器统一资源标识符 (URI) 引用](gsdk/atoc-gsdk-uri-reference.md)
 
-&nbsp;&nbsp;客户端用于创建游戏的游戏服务器开发工具包服务器实例的 Uri。
+&nbsp;&nbsp;客户端用来创建游戏服务器开发工具包标题的服务器实例的 Uri。
 
-[游戏 DVR URI](dvr/atoc-reference-dvr.md)
+[游戏 DVR Uri](dvr/atoc-reference-dvr.md)
 
-&nbsp;&nbsp;Uri 和游戏 dvr 关联的 HTTP 方法。
+&nbsp;&nbsp;Uri 和游戏 DVR 关联的 HTTP 方法。
 
-[玩家头像 URI](gamerpic/atoc-reference-gamerpic.md)
+[Gamerpic Uri](gamerpic/atoc-reference-gamerpic.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法为标题生成图片。
+&nbsp;&nbsp;Uri 和关联的标题生成 gamerpics 的 HTTP 方法。
 
-[排行榜 URI](leaderboard/atoc-reference-leaderboard.md)
+[排行榜 Uri](leaderboard/atoc-reference-leaderboard.md)
 
-&nbsp;&nbsp;Uri 和关联的排行榜的 HTTP 方法。
+&nbsp;&nbsp;Uri 和排行榜为关联的 HTTP 方法。
 
-[列表 URI](lists/atoc-reference-lists.md)
+[列出了 Uri](lists/atoc-reference-lists.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法的引脚。
+&nbsp;&nbsp;Uri 和 pin 关联的 HTTP 方法。
 
-[市场 URI](marketplace/atoc-reference-marketplace.md)
+[Marketplace Uri](marketplace/atoc-reference-marketplace.md)
 
-&nbsp;&nbsp;Uri 和 Xbox 市场服务相关联的 HTTP 方法。
+&nbsp;&nbsp;Uri 和对 Xbox marketplace 服务关联的 HTTP 方法。
 
-[匹配 URI](matchtickets/atoc-reference-matchtickets.md)
+[匹配 Uri](matchtickets/atoc-reference-matchtickets.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP/REST 方法进行匹配。
+&nbsp;&nbsp;Uri 和匹配的关联的 HTTP/REST 方法。
 
-[人脉 URI](people/atoc-reference-people.md)
+[人们 Uri](people/atoc-reference-people.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法人脉系统。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法的人员系统。
 
-[状态 URI](presence/atoc-reference-presence.md)
+[存在 Uri](presence/atoc-reference-presence.md)
 
-&nbsp;&nbsp;Uri 和存在关联的 HTTP 方法。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法存在。
 
-[隐私 URI](privacy/atoc-reference-privacyv2.md)
+[隐私 Uri](privacy/atoc-reference-privacyv2.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法的隐私。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法适用于隐私性。
 
-[配置文件 URI](profileV2/atoc-reference-profiles.md)
+[配置文件的 Uri](profileV2/atoc-reference-profiles.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法的配置文件。
+&nbsp;&nbsp;Uri 和关联的配置文件的 HTTP 方法。
 
-[信誉 URI](reputation/atoc-reference-reputation.md)
+[信誉 Uri](reputation/atoc-reference-reputation.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法信誉服务。
+&nbsp;&nbsp;Uri 和信誉服务关联的 HTTP 方法。
 
-[会话目录 URI](sessiondirectory/atoc-reference-sessiondirectory.md)
+[会话目录 Uri](sessiondirectory/atoc-reference-sessiondirectory.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法为多人游戏会话目录 (MPSD)。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法之多人游戏会话目录 (MPSD)。
 
-[游戏成就历史记录 URI](titlehistory/atoc-reference-titlehistoryv2.md)
+[成就标题历史记录 Uri](titlehistory/atoc-reference-titlehistoryv2.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法为*游戏历史记录*。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法*标题历史记录*。
 
-[标题存储 URI](storage/atoc-reference-storagev2.md)
+[标题存储 Uri](storage/atoc-reference-storagev2.md)
 
-&nbsp;&nbsp;Uri 和关联的标题存储的 HTTP 方法。
+&nbsp;&nbsp;Uri 和标题存储关联的 HTTP 方法。
 
-[系统字符串验证 URI](stringserver/atoc-reference-systemstringsvalidate.md)
+[系统字符串验证 Uri](stringserver/atoc-reference-systemstringsvalidate.md)
 
 &nbsp;&nbsp;若要验证在接受字符串的系统资源。
 
-[用户 URI](users/atoc-reference-users.md)
+[用户 Uri](users/atoc-reference-users.md)
 
-&nbsp;&nbsp;Uri 和关联的用户的 HTTP 方法。
+&nbsp;&nbsp;Uri 和用户关联的 HTTP 方法。
 
-[用户统计信息 URI](userstats/atoc-reference-userstats.md)
+[用户统计信息的 Uri](userstats/atoc-reference-userstats.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法的用户统计信息。
+&nbsp;&nbsp;Uri 和关联的用户统计信息的 HTTP 方法。
 
 <a id="ID4E5C"></a>
 

@@ -7,26 +7,26 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 广告市场活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 1190ec43c5b98eabd897a3bed3788aaf6eb0cb7d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928259"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594572"
 ---
 # <a name="get-ad-campaign-performance-data"></a>获取广告市场活动性能数据
 
 
 在 Microsoft Store 分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器内你的应用程序的促销广告市场活动性能数据的聚合摘要。 此方法返回采用 JSON 格式的数据。
 
-此方法将返回由[广告市场活动报告](../publish/app-install-ads-reports.md)合作伙伴中心中提供的相同数据。 有关广告市场活动的详细信息，请参阅[为应用创建广告市场活动](../publish/create-an-ad-campaign-for-your-app.md)。
+此方法返回由提供的相同数据[Ad 市场活动报表](../publish/app-install-ads-reports.md)在合作伙伴中心。 有关广告市场活动的详细信息，请参阅[为你的应用创建广告市场活动](../publish/create-an-ad-campaign-for-your-app.md)。
 
 若要创建、更新或检索广告市场活动的详细信息，你可以使用 [Microsoft Store 推广 API](run-ad-campaigns-using-windows-store-services.md) 中的[管理广告市场活动](manage-ad-campaigns.md)方法。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，首先需要执行以下操作：
 
-* 如果尚未开始操作，请先完成 Microsoft Store 分析 API 的所有[先决条件](access-analytics-data-using-windows-store-services.md#prerequisites)。
+* 完成 Microsoft Store 分析 API 的所有[先决条件](access-analytics-data-using-windows-store-services.md#prerequisites)（如果尚未这样做）。
 * [获取 Azure AD 访问令牌](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
 ## <a name="request"></a>请求
@@ -41,25 +41,25 @@ ms.locfileid: "8928259"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 描述                |
+| 标头        | 在任务栏的搜索框中键入   | 描述                |
 |---------------|--------|---------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
 若要检索特定应用的广告市场活动性能数据，请使用 *applicationId* 参数。 若要检索与你的开发者帐户关联的所有应用的广告性能数据，请忽略 *applicationId* 参数。
 
-| 参数     | 类型   | 说明     | 必需 |
+| 参数     | 在任务栏的搜索框中键入   | 描述     | 必需 |
 |---------------|--------|-----------------|----------|
 | applicationId   | 字符串    | 要检索广告市场活动性能数据的应用的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 |    否      |
-|  startDate  |  日期型   |  要检索的广告市场活动性能数据日期范围中的开始日期，格式为 YYYY/MM/DD。 默认值为当前日期减去 30 天。   |   否    |
-| endDate   |  日期型   |  要检索的广告市场活动性能数据日期范围中的结束日期，格式为 YYYY/MM/DD。 默认值为当前日期减去 1 天。   |   否    |
+|  startDate  |  日期   |  要检索的广告市场活动性能数据日期范围中的开始日期，格式为 YYYY/MM/DD。 默认值为当前日期减去 30 天。   |   否    |
+| endDate   |  日期   |  要检索的广告市场活动性能数据日期范围中的结束日期，格式为 YYYY/MM/DD。 默认值为当前日期减去 1 天。   |   否    |
 | top   |  int   |  要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。   |   否    |
 | skip   | int    |  要在查询中跳过的行数。 使用此参数可以浏览较大的数据集。 例如，top=10000 和 skip=0，将检索前 10000 行数据；top=10000 和 skip=10000，将检索之后的 10000 行数据，依此类推。   |   否    |
 | filter   |  字符串   |  在响应中筛选行的一条或多条语句。 唯一受支持的筛选器为 **campaignId**。 每条语句可以使用 **eq** 或 **ne** 运算符，语句还可以使用 **and** 或 **or** 进行组合。  下面是一个 *filter* 参数的示例：```filter=campaignId eq '100023'```。   |   否    |
 |  aggregationLevel  |  字符串   | 指定用于检索聚合数据的时间范围。 可以是以下字符串之一：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果未指定，默认值为 <strong>day</strong>。    |   否    |
-| orderby   |  字符串   |  <p>对广告市场活动性能数据的结果数据值进行排序的语句。 语法为 <em>orderby=field [order],field [order],...</em>，其中 <em>field</em> 参数可以是以下字符串之一：</p><ul><li><strong>date</strong></li><li><strong>campaignId</strong></li></ul><p><em>order</em> 参数是可选的，可以是 <strong>asc</strong> 或 <strong>desc</strong>，用于指定每个字段的升序或降序排列。 默认值为 <strong>asc</strong>。</p><p>下面是一个 <em>orderby</em> 字符串的示例：<em>orderby=date,campaignId</em></p>   |   否    |
+| orderby   |  字符串   |  <p>对广告市场活动性能数据的结果数据值进行排序的语句。 语法是 <em>orderby=field [order],field [order],...</em>。<em>field</em> 参数可以是以下字符串之一。</p><ul><li><strong>date</strong></li><li><strong>campaignId</strong></li></ul><p><em>order</em> 参数是可选的，可以是 <strong>asc</strong> 或 <strong>desc</strong>，用于指定每个字段的升序或降序排列。 默认值为 <strong>asc</strong>。</p><p>下面是一个 <em>orderby</em> 字符串的示例：<em>orderby=date,campaignId</em></p>   |   否    |
 |  groupby  |  字符串   |  <p>仅将数据聚合应用于指定字段的语句。 可以指定的字段如下所示：</p><ul><li><strong>campaignId</strong></li><li><strong>applicationId</strong></li><li><strong>date</strong></li><li><strong>currencyCode</strong></li></ul><p><em>groupby</em> 参数可以与 <em>aggregationLevel</em> 参数结合使用。 例如：<em>&amp;groupby=applicationId&amp;aggregationLevel=week</em></p>   |   否    |
 
 
@@ -80,7 +80,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型   | 描述  |
+| 值      | 在任务栏的搜索框中键入   | 描述  |
 |------------|--------|---------------|
 | 值      | 数组  | 包含广告市场活动性能聚合数据的对象数组。 有关每个对象中的数据的详细信息，请参阅下面的[市场活动性能对象](#campaign-performance-object)部分。          |
 | @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 5，但查询的数据超过 5 项时，就会返回此值。 |
@@ -94,9 +94,9 @@ Authorization: Bearer <your access token>
 
 *Value* 数组中的元素包含以下值。
 
-| 值               | 类型   | 说明            |
+| 值               | 在任务栏的搜索框中键入   | 描述            |
 |---------------------|--------|------------------------|
-| date                | 字符串 | 广告市场活动性能数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
+| 日期                | 字符串 | 广告市场活动性能数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
 | applicationId       | 字符串 | 要检索广告市场活动性能数据的应用的应用商店 ID。                     |
 | campaignId     | 字符串 | 广告市场活动的 ID。           |
 | lineId     | 字符串 |    生成此性能数据的广告市场活动[传递行](manage-delivery-lines-for-ad-campaigns.md)的 ID。        |
@@ -109,7 +109,7 @@ Authorization: Bearer <your access token>
 | activeUsers            | 长整型 | 点击市场活动中的广告并返回到应用的用户数。      |
 
 
-### <a name="response-example"></a>回复示例
+### <a name="response-example"></a>响应示例
 
 以下示例举例说明此请求的 JSON 响应正文。
 
@@ -150,6 +150,6 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>相关主题
 
-* [为您的应用创建广告市场活动](https://msdn.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app)
-* [使用 Microsoft Store 服务开展广告市场活动](run-ad-campaigns-using-windows-store-services.md)
-* [使用 Microsoft Store 服务访问分析数据](access-analytics-data-using-windows-store-services.md)
+* [创建您的应用程序的广告活动](https://msdn.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app)
+* [运行使用 Microsoft Store 服务的广告市场活动](run-ad-campaigns-using-windows-store-services.md)
+* [使用 Microsoft Store 服务的访问分析数据](access-analytics-data-using-windows-store-services.md)

@@ -1,22 +1,22 @@
 ---
 ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
 title: ListView 和 GridView UI 优化
-description: 通过 UI 虚拟化、元素减少和项目的逐步更新来提高 ListView 和 GridView 性能及缩短启动时间。
+description: 通过 UI 虚拟化、元素减少和项目的进度更新来改进 ListView 和 GridView 性能和启动时间。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f8ddbdd1e8079e4b5bf945455bfa2efe7094203
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919789"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630872"
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>ListView 和 GridView UI 优化
 
 
-**注意**有关更多详细信息，请参阅 //build/ 会话[可以显著提高性能与大量数据 GridView 和 ListView 中的用户交互时](https://channel9.msdn.com/events/build/2013/3-158)。
+**请注意**  更多详细信息，请参阅 //build/ 会话[显著提高性能时用户与大型金额中数据的 GridView 和 ListView 交互](https://channel9.msdn.com/events/build/2013/3-158)。
 
 通过 UI 虚拟化、元素减少和项目的进度更新来改进 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 性能和启动时间。 有关数据虚拟化技术，请参阅 [ListView 和 GridView 数据虚拟化](listview-and-gridview-data-optimization.md)。
 
@@ -30,9 +30,9 @@ ms.locfileid: "8919789"
 
 ## <a name="ui-virtualization"></a>UI 虚拟化
 
-UI 虚拟化是你可以实现的最重要改进。 这意味着表示项目的 UI 元素根据需求而创建。 对于绑定到 1000 个项目的集合的项目控件，同时为所有项目创建 UI 会造成资源浪费，因为它们不可能全部同时显示。 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)（及其他标准 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 派生的控件）可为你执行 UI 虚拟化。 当项目即将滚动到视图中时（只距离几页），框架将为这些项目生成 UI 并将其缓存。 如果这些项目不太可能再次显示，框架将回收内存。
+UI 虚拟化是你可以实现的最重要改进。 这意味着按需创建表示项目的 UI 元素。 对于绑定到 1000 个项目的集合的项目控件，同时为所有项目创建 UI 会造成资源浪费，因为它们不可能全部同时显示。 [**ListView** ](https://msdn.microsoft.com/library/windows/apps/BR242878)并[ **GridView** ](https://msdn.microsoft.com/library/windows/apps/BR242705) (和其他标准[ **ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803)-派生控件)为您执行 UI 虚拟化。 当项目即将滚动到视图中时（只距离几页），框架将为这些项目生成 UI 并缓存它们。 当这些项目不太可能再次显示时，框架将回收内存。
 
-如果提供自定义项目面板模板（请参阅 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx)），务必使用虚拟化面板，例如 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) 或 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795)。 如果使用 [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227651)、[**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227717) 或 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)，则不会实现虚拟化。 此外，只有当使用 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) 或 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795) 时才会引发以下 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 事件：[**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer)、[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 和 [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging)。
+如果提供自定义项目面板模板（请参阅 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx)），务必使用虚拟化面板，例如 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) 或 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795)。 如果使用 [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227651)、[**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227717) 或 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)，则不会实现虚拟化。 此外，以下[ **ListView** ](https://msdn.microsoft.com/library/windows/apps/BR242878)仅在使用时引发事件[ **ItemsWrapGrid** ](https://msdn.microsoft.com/library/windows/apps/Dn298849)或[ **ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795):[**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer)， [ **ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer)，以及[ **ContainerContentChanging** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging).
 
 视口的概念对于 UI 虚拟化至关重要，因为该框架必须创建可能显示的元素。 通常，[**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 的视口是逻辑控件的范围。 例如 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 的视口是 **ListView** 元素的宽度和高度。 某些面板允许子元素使用无限的空间（例如 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) 和 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)），并自动调整行或列的大小。 将虚拟化的 **ItemsControl** 放置在类似的面板中后，它有足够的空间用于显示它的所有项目，此时虚拟化便失去意义。 还原虚拟化的方法是对 **ItemsControl** 设置宽度和高度。
 
@@ -44,7 +44,7 @@ UI 虚拟化是你可以实现的最重要改进。 这意味着表示项目的 
 
 有关减少元素的示例，请参阅[优化 XAML 标记](optimize-xaml-loading.md)。
 
-[**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx) 和 [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridviewitem.aspx) 的默认控件模板包含一个 [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/Dn298500) 元素。 此表示器是已优化的单个元素，用于显示焦点、选择和其他视觉状态的复杂视觉效果。 如果你已拥有自定义项目控件模板 ([**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle))，或者如果你将来要编辑项目控件模板的副本，建议你使用 **ListViewItemPresenter**，因为在大多数情况下，该元素可以最好地平衡性能与自定义。 你可以自定义该表示器，方法是为其设置属性。 例如，以下提供的标记可删除在选定项目时默认出现的复选标记，并将选定项目的背景色更改为橙色。
+[  **ListViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx) 和 [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridviewitem.aspx) 的默认控件模板包含一个 [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/Dn298500) 元素。 此表示器是已优化的单个元素，用于显示焦点、选择和其他视觉状态的复杂视觉效果。 如果你已拥有自定义项目控件模板 ([**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle))，或者如果你将来要编辑项目控件模板的副本，建议你使用 **ListViewItemPresenter**，因为在大多数情况下，该元素可以最好地平衡性能与自定义。 你可以自定义该表示器，方法是为其设置属性。 例如，以下提供的标记可删除在选定项目时默认出现的复选标记，并将选定项目的背景色更改为橙色。
 
 ```xml
 ...
@@ -81,7 +81,7 @@ UI 虚拟化是你可以实现的最重要改进。 这意味着表示项目的 
 
 默认情况下启用临时占位符视觉功能，它受 [**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 属性控制。 在快速平移/滚动期间，此功能为用户提供还有更多项目需要完全显示的视觉提示，同时还可保持平滑度。 如果你使用以下技术之一，当你不希望使系统呈现占位符时，可以将 **ShowsScrollingPlaceholders** 设置为 false。
 
-**使用 x:Phase 的渐进数据模板更新**
+**渐进式数据模板更新使用 x： 阶段**
 
 下面介绍了如何将 [x:Phase 属性](https://msdn.microsoft.com/library/windows/apps/Mt204790)与 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 绑定结合使用来实现渐进数据模板更新。
 
@@ -145,9 +145,9 @@ UI 虚拟化是你可以实现的最重要改进。 这意味着表示项目的 
 
 3.  如果立即运行应用并在网格视图中快速平移/滚动，你会注意到当每个新项目出现在屏幕上时，首先呈现为深灰色矩形（由于 [**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 属性默认设置为 **true**），然后依次显示标题、副标题和描述。
 
-**使用 ContainerContentChanging 的渐进数据模板更新**
+**使用 ContainerContentChanging 渐进式数据模板更新**
 
-[**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件的常规策略是使用 **Opacity** 隐藏无需立即可见的元素。 当元素已回收时，它们将保留原来的值，因此我们希望在从新的数据项目更新这些值之前隐藏这些元素。 我们对事件参数使用 **Phase** 属性以确定要更新和显示的元素。 如果需要其他阶段，则注册一个回调。
+[  **ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件的常规策略是使用 **Opacity** 隐藏无需立即可见的元素。 当元素已回收时，它们将保留原来的值，因此我们希望在从新的数据项目更新这些值之前隐藏这些元素。 我们对事件参数使用 **Phase** 属性以确定要更新和显示的元素。 如果需要其他阶段，则注册一个回调。
 
 1.  我们将使用 **x:Phase** 所使用的同一绑定源。
 
@@ -250,7 +250,7 @@ UI 虚拟化是你可以实现的最重要改进。 这意味着表示项目的 
 
 **ChoosingItemContainer 事件**
 
-[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 是一个事件，可允许你每当在启动或循环期间需要新项目时向 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)/[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 提供项目 (**ListViewItem**/**GridViewItem**)。 你可以根据容器将显示的数据项目类型创建容器（如以下示例所示）。 **ChoosingItemContainer** 是针对不同项目使用不同数据模板的性能更高的方法。 容器缓存是可以使用 **ChoosingItemContainer** 实现的某些内容。 例如，如果你有五个不同的模板，其中一个模板发生的频率比其他模板高一个数量级，则 ChoosingItemContainer 允许你不仅可以以所需的比率创建项目，还可以保留相应数量的缓存且可用于循环的元素。 [**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer) 为组标头提供相同的功能。
+[**ChoosingItemContainer** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer)是一个事件，使您可以提供一个项 (**ListViewItem**/**GridViewItem**) 到[ **ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)/[**GridView** ](https://msdn.microsoft.com/library/windows/apps/BR242705)期间启动或回收时所需的新项。 你可以根据容器将显示的数据项目类型创建容器（如以下示例所示）。 **ChoosingItemContainer** 是针对不同项目使用不同数据模板的性能更高的方法。 容器缓存是可以使用 **ChoosingItemContainer** 实现的某些内容。 例如，如果你有五个不同的模板，其中一个模板发生的频率比其他模板高一个数量级，则 ChoosingItemContainer 允许你不仅可以以所需的比率创建项目，还可以保留相应数量的缓存且可用于循环的元素。 [**ChoosingGroupHeaderContainer** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer)提供相同的功能组标头。
 
 ```csharp
 // Example shows how to use ChoosingItemContainer to return the correct
@@ -312,7 +312,7 @@ private void ListView_ChoosingItemContainer
 }
 ```
 
-**项目模板选择器**
+**项模板选择器**
 
 项目模板选择器 ([**DataTemplateSelector**](https://msdn.microsoft.com/library/windows/apps/BR209469)) 允许应用根据要显示的数据项目类型在运行时返回不同的项目模板。 这使开发更高效，但也使 UI 虚拟化更困难，因为不是每一个项目模板都可重复用于每个数据项目。
 

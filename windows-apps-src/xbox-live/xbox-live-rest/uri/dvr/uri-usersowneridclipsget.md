@@ -8,15 +8,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c52daf4a07914c34f1aadc84a7238771669d65f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933092"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623202"
 ---
 # <a name="get-usersowneridclips"></a>GET (/users/{ownerId}/clips)
-检索用户的剪辑的列表。
-这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+检索用户的剪辑列表。
+这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，取决于 URI 相关的函数。
 
   * [备注](#ID4EX)
   * [URI 参数](#ID4EEB)
@@ -32,65 +32,65 @@ ms.locfileid: "8933092"
 
 ## <a name="remarks"></a>备注
 
-此 API 使的列表用户自己的剪辑以及其他用户的剪辑存储在服务中的不同方法。 多个入口点从不同的级别返回数据，并允许筛选通过查询参数。 如果声明中的 XUID 匹配 URI 中指定的所有者，然后后检查，内容隔离，将返回用户的剪辑。 如果对 URI 中的所有者与 XUID 声明不匹配，然后指定的用户的剪辑是根据返回隐私检查和内容隔离检查针对请求的 XUID。
+此 API 允许不同的方法来用户自己的剪辑以及其他用户的存储服务中的多个剪辑的列表。 多个入口点返回中不同级别的数据，并允许通过查询参数进行筛选。 如果在声明中的 XUID 与匹配的 URI 中指定的所有者，则用户自己的剪辑返回后内容隔离检查。 如果在 URI 中的所有者与声明 XUID 不匹配，则指定的用户的剪辑返回基于上隐私检查和针对请求 XUID 内容隔离检查。
 
-查询每位用户每个服务配置 id (scid) 进行了优化。 指定进一步筛选器或默认值以外的排序顺序如下所示可能在某些情况下需要更长的时间以返回。 这是更明显的较大的每个用户的视频集。
+每个用户的每个服务配置 id (scid) 优化查询。 进一步筛选器并或指定非默认的排序顺序为以下指定的内容可能在某些情况下需要更长时间才能返回。 这是对于较大的每个用户视频集更为明显。
 
-用于获取多个用户的列表，在相同的 API 调用中没有任何批处理 API。 从 SLS 设计师建议 （当前） 的模式是反过来查询的每个用户。
+没有任何批处理 API 用于获取相同的 API 调用中的多个用户的列表。 从 SLS 架构师建议 （当前） 的模式是反过来查询为每个用户。
 
 <a id="ID4EEB"></a>
 
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- |
-| ownerId| 字符串| 用户的用户身份的正在访问其资源。 支持的格式:"me"或"xuid(123456789)"。 最大长度： 16。|
+| ownerId| 字符串| 其资源的访问的用户的用户标识。 支持的格式:"me"或"xuid(123456789)"。 最大长度：16.|
 
 <a id="ID4EPB"></a>
 
 
 ## <a name="query-string-parameters"></a>查询字符串参数
 
-| 参数| 类型| 描述|
+| 参数| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- | --- | --- | --- |
-| skipItems| 32 位有符号整数| 可选。 返回的项目集合 （即，跳过 N 项目） 中的 N + 1 处开始。|
-| ContinuationToken| 字符串| 可选。 返回在给定的延续令牌启动的项目。 如果同时提供 continuationToken 参数优先于 skipItems。 换言之，如果存在 continuationToken 参数在 skipItems 参数将被忽略。 最大大小： 36。|
-| maxItems| 32 位有符号整数| 可选。 要从集合 （可以使用 skipItems 和 continuationToken 返回一系列项相结合） 中返回的项目的最大数量。 如果 maxItems 不存在，并且可能会返回 maxItems 少于 （即使尚未返回结果的最后一页），该服务可能会提供一个默认值。|
-| 顺序| Unicode 字符| 可选。 指定在 (D) escending 是否返回列表 （第一次最高值） 或 (A) scending （首次最低值） 顺序。 默认： d。|
-| type| GameClipTypes| 可选。 组逗号分隔的剪辑返回的类型。 默认： 所有。|
-| eventId| 字符串| 可选。 以逗号分隔套 eventIDs 以按筛选结果。 默认： Null。|
-| 限定符| 字符串| 可选。 指定要用于获取剪辑的顺序限定符。 <ul><li>创建-指定剪辑中的日期顺序返回到系统</li><li>评分-[顶级]-指定由他们的评分值返回剪辑</li><li>视图-[最查看]-指定剪辑返回的视图数</li></ul><br/> 最大大小： 12。 默认:"创建"。| 
+| skipItems| 32 位有符号的整数| 可选。 返回集合 （即，跳过 N 项） 中的 N + 1 开始的项。|
+| ContinuationToken| 字符串| 可选。 返回从给定的继续标记处开始的项。 如果二者均提供继续标记参数优先于 skipItems。 换而言之，如果继续标记参数存在，则忽略 skipItems 参数。 最大大小：36.|
+| maxItems| 32 位有符号的整数| 可选。 要从集合 （可以组合使用 skipItems 和 continuationToken 要返回的项的范围） 中返回的项的最大数目。 如果 maxItems 不存在，并且可能会返回 maxItems 少于 （即使尚未返回结果的最后一页），该服务可能会提供默认值。|
+| 顺序| Unicode 字符| 可选。 指定是否在 (D) escending 中返回列表 （第一次最高值） 或 (A) 升序 （第一次最小值） 顺序。 Default：D.|
+| type| GameClipTypes| 可选。 以逗号分隔的剪辑，以返回的类型集。 Default：所有。|
+| eventId| 字符串| 可选。 以逗号分隔的 eventIDs 按筛选结果集。 Default：为 null。|
+| 限定符| 字符串| 可选。 指定要用于获取剪辑的顺序限定符。 <ul><li>创建-指定剪辑的日期顺序以返回到系统</li><li>评级的 [最受欢迎的]-指定通过其评级值返回的剪辑</li><li>视图-[查看次数最多]-指定剪辑返回的视图数目</li></ul><br/> 最大大小：12. 默认值:"创建"。| 
 
 <a id="ID4EPE"></a>
 
 
 ## <a name="request-body"></a>请求正文
 
-没有此请求所需的成员。
+没有为此请求所需的成员。
 
 <a id="ID4E1E"></a>
 
 
 ## <a name="required-response-headers"></a>所需的响应标头
 
-| 标头| 类型| 描述|
+| 标头| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。|
-| Content-Type| 字符串| 响应正文的 MIME 类型。 示例： <b>application/json</b>。|
-| 缓存控制| 字符串| 若要指定缓存行为的礼貌请求。|
-| 接受| 字符串| 内容类型的可接受的值。 示例： <b>application/json</b>。|
-| 重试后| 字符串| 指示客户端在不可用的服务器的情况下稍后重试。|
-| 有所不同| 字符串| 指示下游代理如何缓存响应。|
+| X-RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/编号。 验证标头中的身份验证令牌等的声明的有效性后仅为将请求路由到该服务。示例：1，vnext。|
+| 内容类型| 字符串| 响应正文的 MIME 类型。 示例：<b>应用程序 /json</b>。|
+| Cache-Control| 字符串| 请求正常，以指定缓存行为。|
+| 接受| 字符串| 内容类型的可接受的值。 示例：<b>应用程序 /json</b>。|
+| 重试间隔| 字符串| 指示客户端在不可用的服务器的情况下请稍后再试。|
+| 改变| 字符串| 指示下游代理如何缓存响应。|
 
 <a id="ID4ENH"></a>
 
 
 ## <a name="optional-response-headers"></a>可选的响应标头
 
-| 标头| 类型| 描述|
+| 标头| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Etag| 字符串| 用于缓存优化。 示例:"686897696a7c876b7e"。|
+| Etag| 字符串| 用于缓存优化。 示例："686897696a7c876b7e"。|
 
 <a id="ID4EOAAC"></a>
 
@@ -178,9 +178,9 @@ ms.locfileid: "8933092"
 
 ## <a name="related-uris"></a>相关的 Uri
 
-以下 URI 等同于在此文档中，但具有一个额外路径参数来指定 SCID 的主要通道。 将返回仅该用户的剪辑的 SCID。 请求的用户必须能够接触到请求的 SCID，否则 HTTP 403 将返回错误。
+下面的 URI 是等同于本文档中，但具有额外的 path 参数指定 SCID 主要的代码。 将返回有关该 SCID 仅该用户的剪辑。 发出请求的用户必须有权访问请求 SCID，否则 HTTP 403 将返回错误。
 
-   * **/users/ {ownerId} /scids/ {scid} / 剪辑**
+   * **/users/{ownerId}/scids/{scid}/clips**
 
 <a id="ID4ENBAC"></a>
 

@@ -4,20 +4,20 @@ title: 生成设备选择器
 description: 生成设备选择器将使你可以在枚举设备时限制要搜索的设备。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 01a4bfc2ec4c1d442058dbb6009065541f93cc7f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921750"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57652492"
 ---
 # <a name="build-a-device-selector"></a>生成设备选择器
 
 
 
-**重要的 API**
+**重要的 Api**
 
 - [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
@@ -34,9 +34,9 @@ ms.locfileid: "8921750"
 
 在使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 时，你经常将设备选择器与你感兴趣的设备类型相结合。 设备类型的可用列表由 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 枚举定义。 此组因素可帮助你限制可用于你感兴趣的类型的设备。 如果未指定 **DeviceInformationKind** 或你要使用的方法不提供 **DeviceInformationKind** 参数，则默认类型为 **DeviceInterface**。
 
-[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 使用规范 AQS 语法，但并非所有运营商都受支持。 有关构造筛选器字符串时可用的属性列表，请参阅[设备信息属性](device-information-properties.md)。
+[  **Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 使用规范 AQS 语法，但并非所有运营商都受支持。 有关构造筛选器字符串时可用的属性列表，请参阅[设备信息属性](device-information-properties.md)。
 
-**警告**定义的自定义属性`{GUID} PID`构造 AQS 筛选器字符串时，不能使用格式。 这是因为属性类型派生自已知的属性名称。
+**谨慎**  使用定义的自定义属性`{GUID} PID`构造您 AQS 的筛选器字符串时，不能使用格式。 这是因为属性类型派生自已知的属性名称。
 
  
 
@@ -50,19 +50,19 @@ ms.locfileid: "8921750"
 | **COP\_GREATERTHAN**           | UInt16、UInt32                                                              |
 | **COP\_LESSTHANOREQUAL**       | UInt16、UInt32                                                              |
 | **COP\_GREATERTHANOREQUAL**    | UInt16、UInt32                                                              |
-| **COP\_VALUE\_CONTAINS**       | 字符串、字符串数组、布尔值数组、GUID 数组、UInt16 数组、UInt32 数组 |
-| **COP\_VALUE\_CONTAINS**    | 字符串、字符串数组、布尔值数组、GUID 数组、UInt16 数组、UInt32 数组 |
+| **COP\_值\_CONTAINS**       | 字符串、字符串数组、布尔值数组、GUID 数组、UInt16 数组、UInt32 数组 |
+| **COP\_值\_NOTCONTAINS**    | 字符串、字符串数组、布尔值数组、GUID 数组、UInt16 数组、UInt32 数组 |
 | **COP\_VALUE\_STARTSWITH**     | 字符串                                                                      |
-| **COP\_VALUE\_ENDSWITH**       | 字符串                                                                      |
+| **COP\_值\_ENDSWITH**       | 字符串                                                                      |
 | **COP\_DOSWILDCARDS**          | 不支持                                                               |
 | **COP\_WORD\_EQUAL**           | 不支持                                                               |
 | **COP\_WORD\_STARTSWITH**      | 不支持                                                               |
-| **COP\_APPLICATION\_SPECIFIC** | 不支持                                                               |
+| **COP\_应用程序\_特定** | 不支持                                                               |
 
 
-> **提示**你可以指定**NULL** **COP\_EQUAL**或**COP\_NOTEQUAL**。 这将转换为一个没有值或值不存在的属性。 在 AQS 中，可以使用空括号 \[\] 指定 **NULL**。
+> **提示**  可以指定**NULL**有关**COP\_相等**或**COP\_NOTEQUAL**。 这将转换为一个没有值或值不存在的属性。 AQS，在您指定**NULL**通过使用空括号\[ \]。
 
-> **重要提示**在使用**COP\_VALUE\_CONTAINS**和**COP\_VALUE\_NOTCONTAINS**运算符时，它们的行为不同的方式与字符串和字符串数组。 如果是字符串，系统将执行不区分大小写的搜索，以查看设备是否将指定字符串作为子字符串包含起来。 如果是字符串数组，则不会搜索子字符串。 对于字符串数组，将搜索该数组，查看它是否包含整个指定字符串。 无法通过搜索字符串数组查看数组中的元素是否包含一个子字符串。
+> **重要**  使用时**COP\_值\_CONTAINS**并**COP\_值\_NOTCONTAINS**运算符使用字符串和字符串数组工作方式会有所不同。 如果是字符串，系统将执行不区分大小写的搜索，以查看设备是否将指定字符串作为子字符串包含起来。 如果是字符串数组，则不会搜索子字符串。 对于字符串数组，将搜索该数组，查看它是否包含整个指定字符串。 无法通过搜索字符串数组查看数组中的元素是否包含一个子字符串。
 
 如果你无法创建可相应地设置结果范围的单个 AQS 筛选器字符串，则可以在接收结果后进行筛选。 但是，如果你选择执行此操作，我们建议你在将结果提供给 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 时，尽量从初始 AQS 筛选器字符串限制结果。 这将有助于提高你的应用程序的性能。
 
@@ -70,38 +70,38 @@ ms.locfileid: "8921750"
 
 以下示例演示如何使用 AQS 语法来限制要枚举的设备。 所有这些筛选器字符串都与 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对才能创建完整的筛选器。 如果未指定任何类型，请记住默认类型为 **DeviceInterface**。
 
-当此筛选器与 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有包含音频捕获接口类并且当前已启用的对象。 **=** 转换为 **COP\_EQUALS**。
+当此筛选器与 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有包含音频捕获接口类并且当前已启用的对象。 **=** 将转换为**COP\_等于**。
 
 ``` syntax
 System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
-当此筛选器与 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有具有至少一个 GenCdRom 硬件 ID 的对象。 **~~** 转换为 **COP\_VALUE\_CONTAINS**。
+当此筛选器与 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有具有至少一个 GenCdRom 硬件 ID 的对象。 **~~** 将转换为**COP\_值\_CONTAINS**。
 
 ``` syntax
 System.Devices.HardwareIds:~~"GenCdRom"
 ```
 
-当此筛选器与 **DeviceContainer** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有模型名称中包含子字符串 Microsoft 的对象。 **~~** 转换为 **COP\_VALUE\_CONTAINS**。
+当此筛选器与 **DeviceContainer** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有模型名称中包含子字符串 Microsoft 的对象。 **~~** 将转换为**COP\_值\_CONTAINS**。
 
 ``` syntax
 System.Devices.ModelName:~~"Microsoft"
 ```
 
-当此筛选器与 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有名称以子字符串 Microsoft 开头的对象。 **~&lt;** 转换为 **COP\_STARTSWITH**。
+当此筛选器与 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有名称以子字符串 Microsoft 开头的对象。 **~&lt;** 将转换为**COP\_STARTSWITH**。
 
 ``` syntax
 System.ItemNameDisplay:~<"Microsoft"
 ```
 
-当此筛选器与 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有具有 **System.Devices.IpAddress** 属性集的对象。 **&lt;&gt;\[\]** 转换为结合了 **NULL** 值的 **COP\_NOTEQUALS**。
+当此筛选器与 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有具有 **System.Devices.IpAddress** 属性集的对象。 **&lt;&gt;\[\]** 将转换为**COP\_NOTEQUALS**结合**NULL**值。
 
 ``` syntax
 System.Devices.IpAddress:<>[]
 ```
 
-当此筛选器与 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有不具有 **System.Devices.IpAddress** 属性集的对象。 **=\[\]** 转换为结合了 **NULL** 值的 **COP\_EQUALS**。
+当此筛选器与 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有不具有 **System.Devices.IpAddress** 属性集的对象。 **=\[\]** 将转换为**COP\_等于**结合**NULL**值。
 
 ``` syntax
 System.Devices.IpAddress:=[]

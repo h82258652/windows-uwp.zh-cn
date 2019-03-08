@@ -8,19 +8,19 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b06305fde989d0c30570beda5d4b0aabe7bf0518
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918580"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606722"
 ---
 # <a name="get-usersme"></a>GET (/users/me)
-获取当前用户的[PresenceRecord](../../json/json-presencerecord.md) ，而无需知道用户的 XUID。
+获取当前用户的[PresenceRecord](../../json/json-presencerecord.md)而无需知道用户的 XUID。
 这些 Uri 的域是`userpresence.xboxlive.com`。
 
   * [查询字符串参数](#ID4EZ)
-  * [授权](#ID4EIC)
-  * [需的请求标头](#ID4ELD)
+  * [Authorization](#ID4EIC)
+  * [所需的请求标头](#ID4ELD)
   * [可选的请求标头](#ID4EPF)
   * [请求正文](#ID4EPG)
   * [响应正文](#ID4E1G)
@@ -30,47 +30,47 @@ ms.locfileid: "8918580"
 
 ## <a name="query-string-parameters"></a>查询字符串参数
 
-| 参数| 类型| 描述|
+| 参数| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- |
-| level| 字符串| 可选。 <ul><li><b>用户</b>： 返回仅用户节点。</li><li><b>设备</b>： 返回用户节点和设备节点。</li><li><b>标题</b>： 默认值。 返回除外活动的整个树。</li><li><b>所有</b>： 返回整个树中，包括活动级别状态。</li></ul> | 
+| level| 字符串| 可选。 <ul><li><b>用户</b>:仅返回用户节点。</li><li><b>设备</b>:返回用户节点和设备节点。</li><li><b>标题</b>:默认值。 返回除活动的整个树。</li><li><b>所有</b>:返回整个树，包括活动级别存在。</li></ul> | 
 
 <a id="ID4EIC"></a>
 
 
 ## <a name="authorization"></a>授权
 
-| 类型| 必需| 描述| 如果缺少的响应|
+| 在任务栏的搜索框中键入| 必需| 描述| 如果缺少的响应|
 | --- | --- | --- | --- | --- | --- | --- |
-| XUID| 是| 调用方的 Xbox 用户 ID (XUID)| 403 已禁止|
+| XUID| 是| 调用方的 Xbox 用户 ID (XUID)| 403 禁止访问|
 
 <a id="ID4ELD"></a>
 
 
-## <a name="required-request-headers"></a>需的请求标头
+## <a name="required-request-headers"></a>所需的请求标头
 
-| 标头| 类型| 描述|
+| 标头| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。|
-| x xbl 协定版本| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 3，vnext。|
-| 接受| 字符串| 内容类型的可接受。 只有一个受状态是 application/json，但它必须在标头中指定。|
-| 接受的语言| 字符串| 在响应中的字符串的可接受区域设置。 示例值： EN-US。|
-| Host| 字符串| 服务器的域名。 示例值： presencebeta.xboxlive.com。|
+| 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值："XBL3.0 x =&lt;userhash >;&lt;令牌 >"。|
+| x-xbl-contract-version| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/编号。 请求将只路由到的服务验证标头身份验证令牌中声明的有效性后，依次类推。 示例值：3，vnext。|
+| 接受| 字符串| 内容类型可接受。 只有一个支持的状态显示为 application/json，但必须在标头中指定它。|
+| Accept-Language| 字符串| 在响应中的字符串的可接受区域设置。 示例值： EN-US。|
+| 主机| 字符串| 服务器的域名。 示例值： presencebeta.xboxlive.com。|
 
 <a id="ID4EPF"></a>
 
 
 ## <a name="optional-request-headers"></a>可选的请求标头
 
-| 标头| 类型| 描述|
+| 标头| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion|  | 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。|
+| X-RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/编号。 请求将只路由到的服务验证标头身份验证令牌中声明的有效性后，依次类推。 默认值：1.|
 
 <a id="ID4EPG"></a>
 
 
 ## <a name="request-body"></a>请求正文
 
-此请求的正文中不发送任何对象。
+此请求的正文中不发送的任何对象。
 
 <a id="ID4E1G"></a>
 
@@ -82,7 +82,7 @@ ms.locfileid: "8918580"
 
 ### <a name="sample-response"></a>示例响应
 
-此方法返回[presencerecord，他的](../../json/json-presencerecord.md)。
+此方法返回[PresenceRecord](../../json/json-presencerecord.md)。
 
 
 ```cpp

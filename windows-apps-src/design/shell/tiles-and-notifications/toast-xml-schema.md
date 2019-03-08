@@ -1,5 +1,5 @@
 ---
-Description: The following article describes all of the properties and elements within the toast content XML payload.
+Description: 下文将介绍在 toast 内容 XML 负载内的所有属性和元素。
 title: Toast 内容 XML 架构
 ms.assetid: AF49EFAC-447E-44C3-93C3-CCBEDCF07D22
 label: Toast content XML schema
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b9535cd8c2dd82b0c209919080df9a88bb80ccc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934386"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612772"
 ---
 # <a name="toast-content-xml-schema"></a>Toast 内容 XML 架构
 
@@ -43,7 +43,7 @@ ms.locfileid: "8934386"
 </toast>
 ```
 
-**&lt;toast&gt; 中的属性**
+**中的属性&lt;toast&gt;**
 
 launch?
 
@@ -75,7 +75,7 @@ scenario?
 -   你不需要此属性，除非你的方案是弹出警报、提醒或来电。
 -   不要将此属性仅用于使通知持续显示在屏幕上。
 
-**&lt;visual&gt; 中的属性**
+**中的属性&lt;visual&gt;**
 
 lang?
 
@@ -89,11 +89,11 @@ addImageQuery?
 
 -   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
 
-**&lt;binding&gt; 中的属性**
+**中的属性&lt;绑定&gt;**
 
 template?
 
--   \[Important\] template? = "ToastGeneric"
+-   \[重要\]模板？ = "ToastGeneric"
 -   如果你要使用任意新的自适应和交互式通知功能，请确保开始使用“ToastGeneric”模板而不是传统模板。
 -   使用带有新操作的传统模板现在可能有效，但这不是预定用例，我们无法保证它会继续工作。
 
@@ -109,13 +109,13 @@ addImageQuery?
 
 -   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
 
-**&lt;text&gt; 中的属性**
+**中的属性&lt;文本&gt;**
 
 lang?
 
 -   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
 
-**&lt;image&gt; 中的属性**
+**中的属性&lt;图像&gt;**
 
 src
 
@@ -144,7 +144,7 @@ hint-crop?
 -   “none”是默认值，表示没有裁剪。
 -   “circle”将图像裁剪为圆形。 将此属性用于联系人的头像、用户图像等。
 
-**&lt;audio&gt; 中的属性**
+**中的属性&lt;音频&gt;**
 
 src?
 
@@ -177,7 +177,7 @@ silent?
 </toast>
 ```
 
-**&lt;input&gt; 中的属性**
+**中的属性&lt;输入&gt;**
 
 id
 
@@ -210,7 +210,7 @@ defaultInput?
 -   如果输入类型是“text”，将其视为字符串输入。
 -   如果输入类型是“selection”，这应是此输入的元素内的可用选择之一的 id。
 
-**&lt;selection&gt; 中的属性**
+**中的属性&lt;选定内容&gt;**
 
 id
 
@@ -220,7 +220,7 @@ content
 
 -   此属性是必需的。 它为此选择元素提供要显示的字符串。
 
-**&lt;action&gt; 中的属性**
+**中的属性&lt;操作&gt;**
 
 content
 

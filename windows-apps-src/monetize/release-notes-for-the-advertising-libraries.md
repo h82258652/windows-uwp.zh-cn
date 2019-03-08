@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, ads, 广告, 发行说明
 ms.localizationpriority: medium
 ms.openlocfilehash: d7a250880d148dd4ca3ced522312904f2786715e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050860"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601222"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Advertising 库的发行说明
 
 
 
 
-本部分提供当前版本的 Microsoft Advertising 库的发行说明。 这些库支持 windows 10、 windows 8.1、 Windows Phone 8.1 以及 WindowsPhone8 XAML 和 JavaScript/HTML 应用。
+本部分提供当前版本的 Microsoft Advertising 库的发行说明。 这些库支持 Windows 10、 Windows 8.1、 Windows Phone 8.1 和 Windows Phone 8 的 XAML 和 JavaScript/HTML 应用程序。
 
 ## <a name="installation"></a>安装
 
@@ -43,7 +43,7 @@ Microsoft Advertising 库（其中包括 **AdControl** 和 **InterstitialAd** �
 
 ## <a name="latitude-and-longitude-properties-no-longer-available"></a>不再可用的纬度和经度属性
 
-**AdControl** 类不会再有适用于 UWP 应用的“纬度”**** 和“经度”**** 属性。 内置于广告控件的代码将以应用的名义检测这些值，并将它们发送到广告服务器。
+**AdControl** 类不会再有适用于 UWP 应用的“纬度”和“经度”属性。 内置于广告控件的代码将以应用的名义检测这些值，并将它们发送到广告服务器。
 
 
  

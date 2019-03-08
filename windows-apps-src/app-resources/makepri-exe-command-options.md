@@ -1,5 +1,5 @@
 ---
-Description: MakePri.exe has the set of commands createconfig, dump, new, resourcepack, and versioned. This topic details their use.
+Description: MakePri.exe 具有命令集 createconfig、dump、new、resourcepack 和 versioned。 本主题详细介绍它们的用途。
 title: MakePri.exe 命令行选项
 template: detail.hbs
 ms.date: 04/10/2018
@@ -7,22 +7,22 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: bc08376dafec8aad9d65ef5acd8d19943d242eed
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943411"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603392"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe 命令行选项
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) 具有命令集 `createconfig`、`dump`、`new`、`resourcepack` 和 `versioned`。 本主题对命令行选项的使用进行详细介绍。
 
 > [!NOTE]
-> 检查安装 Windows 软件开发工具包时**适用于 UWP 管理应用的 Windows SDK**选项时，MakePri.exe 会安装。 它安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及中名为其他体系结构的文件夹）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 选中时安装 MakePri.exe**适用于 UWP 的托管应用的 Windows SDK**选项的同时，安装 Windows 软件开发工具包。 安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及其他体系结构对于命名的文件夹）。 例如， `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
-## <a name="getting-help-from-the-command-line"></a>从命令行中获取帮助
+## <a name="getting-help-from-the-command-line"></a>从命令行获取帮助
 
-你可以运行`MakePri.exe help`或`MakePri.exe /?`以查看你可以使用 MakePri.exe 命令。 你还可以发出`MakePri.exe <command> /?`若要查看有关某个命令，并在极少数情况下的细节，即使`MakePri.exe <command> <option>`以查看有关选项的详细信息。
+你可以运行`MakePri.exe help`或`MakePri.exe /?`若要查看可用于 MakePri.exe 命令。 此外可以颁发`MakePri.exe <command> /?`若要查看有关某个命令，并在极少数情况下的详细信息，甚至`MakePri.exe <command> <option>`若要查看有关某个选项的详细信息。
 
 ## <a name="makepri-commands"></a>MakePri 命令
 
@@ -115,7 +115,7 @@ Help:
 `dump` 命令输入一个转储文件，该文件包含指定 PRI 文件中的所有资源的列表。 运行 `MakePri.exe dump /?` 以查看关于此命令的详细帮助。
 
 > [!NOTE]
-> 无模式资源包是在 PRI 配置文件中使用 *omitSchemaFromResourcePacks* 开关创建的资源包。 若要转储无模式资源包，请使用开关 `/es <main_package_PRI_file>`。 如果不指定主文件，则会看到错误消息“*程序包中的 resources.pri 已损坏，因此加密失败（错误 PRI222：0xdef0000f - 发生未知错误）*”。
+> 无模式资源包是在 PRI 配置文件中使用 *omitSchemaFromResourcePacks* 开关创建的资源包。 若要转储无模式资源包，请使用开关 `/es <main_package_PRI_file>`。 如果未指定主文件，则会看到错误消息"*resources.pri 包中的已损坏以便加密失败 (错误 PRI222:0xdef0000f-出现未知的错误）*"。
 
 ```console
 C:\>makepri dump /?
@@ -416,17 +416,17 @@ MakePri 可以将资源包特定的信息包括在索引器元数据文件中。
 
 **FILEPATH** 是指定输入的 PRI 文件或 PRI 架构文件位置的标记。
 
-## <a name="47indexoptionsio-option"></a>& #47;IndexOptions(io) 选项
+## <a name="47indexoptionsio-option"></a>&#47;IndexOptions(io) option
 
-你使用索引选项选项 (/ io) 与`new`， `resourcepack`，并`versioned`指定的选项，可提供详细的控制资源索引器的行为。 默认情况下，索引选项处于禁用状态。
+使用索引选项选项 (/ io) 与`new`， `resourcepack`，和`versioned`指定提供细致的控制资源索引器的行为的选项。 默认情况下禁用索引选项。
 
 ```console
 /IndexOptions(io) <OPTIONS>
 ```
 
-**选项**是由以下选项中的逗号分隔列表。
+**选项**是以逗号分隔的列表包含以下选项。
 
-- + /-HiddenFiles(hf)。 索引 （+） 或忽略 （-） 隐藏的文件和文件夹。
+- + /-HiddenFiles(hf)。 索引 （+） 或忽略 （-） 隐藏文件和文件夹。
 - + /-LinkedFiles(lf)。 索引 （+） 或忽略 （-） 链接的文件和文件夹。
 
 ## <a name="47mappingfilemf-option"></a>&#47;MappingFile(mf) 选项
@@ -458,7 +458,7 @@ MakePri 可以将资源包特定的信息包括在索引器元数据文件中。
 
 ## <a name="output-summary"></a>输出摘要
 
-如果创建资源包，来自 MakePRI.exe 的输出摘要采用更加详细的窗体。 以下提供了一个示例。
+如果创建资源包，来自 MakePRI.exe 的输出摘要采用更加详细的窗体。 下面提供了一个示例。
 
 ```console
 Index Pass Completed: ResourcePackTests\TestApp_ResourcePack
@@ -501,7 +501,7 @@ Overwrite these file(s)? [Y]es (any other key to cancel):
 
 | 错误条件 | 错误消息 |
 | --------------- | ------------- |
-| 输出文件名与配置中的其中一个资源包名称相同。 | 无效的配置：资源包名称 <resource pack name> 不能与输出文件 <outputfilename.pri> 相同。 |
+| 输出文件名与配置中的其中一个资源包名称相同。 | 无效的配置：资源包名称<resource pack name>不能为输出文件 < outputfilename.pri > 相同。 |
 
 ## <a name="reversemaprm-option"></a>/ReverseMap(rm) 选项
 

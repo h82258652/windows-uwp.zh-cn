@@ -12,36 +12,36 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e263876f414e5683ffc8a5645a12e5031b3d6fb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946049"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660182"
 ---
 # <a name="texture-addressing-modes"></a>纹理寻址模式
 
 
 Direct3D 应用程序可以将纹理坐标分配至任何基元的任何顶点。 通常，你分配至某个顶点的 u 纹理以及 v 纹理坐标的范围介于 0.0-1.0（包含这两个值）。 但如果在此范围之外分配纹理坐标，则可以创造某些特殊的纹理效果。 .
 
-通过设置纹理寻址模式，你可以控制 Direct3D 如何使用在 \[0.0, 1.0\] 范围以外的纹理坐标。 例如，你可以通过应用程序设置纹理寻址模式，以使得纹理跨基元平铺。
+控制 Direct3D 纹理坐标为外部的用途\[0.0，1.0\]通过设置纹理寻址模式的范围。 例如，你可以通过应用程序设置纹理寻址模式，以使得纹理跨基元平铺。
 
 借助 Direct3D，应用程序可以执行纹理环绕。 参阅[纹理环绕](texture-wrapping.md)。
 
-有效地启用纹理环绕可使超出 \[0.0, 1.0\] 范围的纹理坐标无效，且在此情况下，光栅化此类疏忽的纹理坐标的行为并未定义。 当纹理环绕处于启用状态时，不能使用纹理寻址模式。 请注意，当纹理环绕处于启用状态时，你的应用程序不会指定低于 0.0 或高于 1.0 的纹理坐标。
+启用纹理包装有效地使外部的纹理坐标\[0.0，1.0\]范围无效和行为的光栅化此类拖欠纹理坐标是不确定这种情况下。 当纹理环绕处于启用状态时，不能使用纹理寻址模式。 请注意，当纹理环绕处于启用状态时，你的应用程序不会指定低于 0.0 或高于 1.0 的纹理坐标。
 
-## <a name="span-idsummaryofthetextureaddressingmodesspanspan-idsummaryofthetextureaddressingmodesspanspan-idsummaryofthetextureaddressingmodesspansummary-of-the-texture-addressing-modes"></a><span id="Summary_of_the_texture_addressing_modes"></span><span id="summary_of_the_texture_addressing_modes"></span><span id="SUMMARY_OF_THE_TEXTURE_ADDRESSING_MODES"></span>纹理寻址模式概要
+## <a name="span-idsummaryofthetextureaddressingmodesspanspan-idsummaryofthetextureaddressingmodesspanspan-idsummaryofthetextureaddressingmodesspansummary-of-the-texture-addressing-modes"></a><span id="Summary_of_the_texture_addressing_modes"></span><span id="summary_of_the_texture_addressing_modes"></span><span id="SUMMARY_OF_THE_TEXTURE_ADDRESSING_MODES"></span>寻址模式的纹理的摘要
 
 
-| 纹理寻址模式 | 说明                                                                                                                           |
+| 纹理寻址模式 | 描述                                                                                                                           |
 |-------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
 | 环绕                    | 在每个整数点重复纹理。                                                                                        |
-| 镜像                  | 以每个整数为界映射纹理。                                                                                        |
-| Clamp                   | 将你的纹理坐标固定到 \[0.0, 1.0\] 范围；在 Clamp 模式下应用纹理一次，边缘像素颜色会变模糊。 |
+| Mirror                  | 以每个整数为界映射纹理。                                                                                        |
+| Clamp                   | 你的纹理坐标到 clamps \[0.0，1.0\]范围;Clamp 模式将纹理应用一次，然后被抹去边缘像素的颜色。 |
 | 边框颜色            | 对于超出 0.0-1.0（包括这两者）范围的任何纹理坐标，使用任意的*边框颜色*。                         |
 
  
 
-## <a name="span-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanwrap-texture-address-mode"></a><span id="Wrap_texture_address_mode"></span><span id="wrap_texture_address_mode"></span><span id="WRAP_TEXTURE_ADDRESS_MODE"></span>Wrap 纹理寻址模式
+## <a name="span-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanwrap-texture-address-mode"></a><span id="Wrap_texture_address_mode"></span><span id="wrap_texture_address_mode"></span><span id="WRAP_TEXTURE_ADDRESS_MODE"></span>包装纹理寻址模式
 
 
 在 Wrap 纹理寻址模式下，Direct3D 可以在每个整数点重复纹理。
@@ -63,10 +63,10 @@ Direct3D 应用程序可以将纹理坐标分配至任何基元的任何顶点�
 
 将此与前面的 **Wrap 纹理寻址模式**比较。
 
-## <a name="span-idclamptextureaddressmodespanspan-idclamptextureaddressmodespanspan-idclamptextureaddressmodespanclamp-texture-address-mode"></a><span id="Clamp_texture_address_mode"></span><span id="clamp_texture_address_mode"></span><span id="CLAMP_TEXTURE_ADDRESS_MODE"></span>Clamp 纹理寻址模式
+## <a name="span-idclamptextureaddressmodespanspan-idclamptextureaddressmodespanspan-idclamptextureaddressmodespanclamp-texture-address-mode"></a><span id="Clamp_texture_address_mode"></span><span id="clamp_texture_address_mode"></span><span id="CLAMP_TEXTURE_ADDRESS_MODE"></span>将纹理寻址模式
 
 
-在 Clamp 纹理寻址模式下，Direct3D 可以将纹理坐标固定到 \[0.0, 1.0\] 范围；在 Clamp 模式下应用纹理一次，边缘像素颜色会变模糊。
+将纹理地址模式将导致要固定其范围为你的纹理坐标的 Direct3D \[0.0，1.0\]范围;Clamp 模式将纹理应用一次，然后被抹去边缘像素的颜色。
 
 例如，假设应用程序创建了一个平方基元，并将 (0.0,0.0)、(0.0,3.0)、(3.0,3.0) 以及 (3.0,0.0) 纹理坐标分配至该基元的顶点。 将纹理寻址模式设置为"Clamp"会使纹理应用一次。 列顶部和行结尾的像素颜色将分别延伸到基元的顶部和右侧。
 

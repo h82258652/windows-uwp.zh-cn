@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c0a97d0c87f9204371daeaa825d6636ef6b8409c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919798"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658322"
 ---
 # <a name="titlestitleidsessionhosts"></a>/titles/{titleId}/sessionhosts
-请求 Xbox Live 计算 sessionhost，对于给定的作品 id 分配。这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+请求 Xbox Live 计算 sessionhost，并将其分配特定的商品 id。这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [URI 参数](#ID4EU)
   * [主机名](#ID4EIB)
@@ -28,7 +28,7 @@ ms.locfileid: "8919798"
  
 | 参数| 描述| 
 | --- | --- | 
-| titleId| 游戏应在其中操作该请求 ID。| 
+| titleId| 请求应作用于的标题的 ID。| 
   
 <a id="ID4EIB"></a>
 
@@ -44,5 +44,5 @@ gameserverms.xboxlive.com
   
 [POST](uri-titlestitleidsessionhosts-post.md)
  
-&nbsp;&nbsp;创建新群集请求。
+&nbsp;&nbsp;创建新群集的请求。
    

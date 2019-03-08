@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3437119979073a5cec27948fc90f954e06c2fc93
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944928"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596082"
 ---
 # <a name="state-objects"></a>状态对象
 
@@ -34,12 +34,12 @@ ms.locfileid: "8944928"
 
 此组状态可对[输出合并器 (OM) 阶段](output-merger-stage--om-.md)的深度模具部分进行初始化。 具体而言，此对象可初始化深度和模具测试。
 
-## <a name="span-idblendspanspan-idblendspanspan-idblendspanblend-state"></a><span id="Blend"></span><span id="blend"></span><span id="BLEND"></span>混合状态
+## <a name="span-idblendspanspan-idblendspanspan-idblendspanblend-state"></a><span id="Blend"></span><span id="blend"></span><span id="BLEND"></span>Blend 状态
 
 
 此组状态可对[输出合并器 (OM) 阶段](output-merger-stage--om-.md)的混合部分进行初始化。
 
-## <a name="span-idsamplerspanspan-idsamplerspanspan-idsamplerspansampler-state"></a><span id="Sampler"></span><span id="sampler"></span><span id="SAMPLER"></span>取样器状态
+## <a name="span-idsamplerspanspan-idsamplerspanspan-idsamplerspansampler-state"></a><span id="Sampler"></span><span id="sampler"></span><span id="SAMPLER"></span>采样器状态
 
 
 此组状态可初始化取样器对象。 着色器阶段使用取样器对象筛选内存中的纹理。
@@ -62,7 +62,7 @@ ms.locfileid: "8944928"
 
 [图形管道](graphics-pipeline.md)
 
-[视图](views.md)
+[Views](views.md)
 
  
 

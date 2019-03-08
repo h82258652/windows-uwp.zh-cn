@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c8917b09f04206a5466797f48414defeb35baf5e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929555"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57647602"
 ---
 # <a name="xdefaultbindmode-attribute"></a>x:DefaultBindMode 属性
 
@@ -18,7 +18,7 @@ ms.locfileid: "8929555"
 
 **x:DefaultBindMode** 自 Windows 10 版本 1607（周年更新）SDK 版本 14393 起开始可用。
 
-## <a name="xaml-attribute-usage"></a>XAML 属性用法
+## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
 
 ``` syntax
 <object x:DefaultBindMode="OneTime \| OneWay \| TwoWay" .../>
@@ -30,4 +30,4 @@ ms.locfileid: "8929555"
 
 ## <a name="related-topics"></a>相关主题
 
-* [x:Bind 标记扩展](x-bind-markup-extension.md)
+* [x： 绑定标记扩展](x-bind-markup-extension.md)

@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a76e4b12e0ffadb112913775b500ac0d39d413d5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929587"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597762"
 ---
 # <a name="updatemetadatarequest-json"></a>UpdateMetadataRequest (JSON)
-应更新剪辑元数据。 
+应为一个剪辑更新元数据。 
 <a id="ID4EN"></a>
 
  
@@ -23,18 +23,18 @@ ms.locfileid: "8929587"
  
 UpdateMetadataRequest 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| userCaption| 字符串| 更改游戏剪辑的用户输入非本地化字符串。| 
-| 可见性| [GameClipVisibility 枚举](../enums/gvr-enum-gameclipvisibility.md)| 更改游戏剪辑的可见性，因为它在系统中发布。| 
-| titleData| 字符串| 特定于游戏的属性包中。 最大大小： 10 KB。| 
+| userCaption| 字符串| 更改的用户输入的游戏剪辑非本地化字符串。| 
+| visibility| [GameClipVisibility 枚举](../enums/gvr-enum-gameclipvisibility.md)| 更改游戏剪辑的可见性，因为它已在系统中。| 
+| titleData| 字符串| 特定于标题的属性包中。 最大大小：10 KB。| 
   
 <a id="ID4EBC"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
-更改用户剪辑名称和可见性：
+更改用户名剪辑和可见性：
  
 
 ```json
@@ -46,7 +46,7 @@ UpdateMetadataRequest 对象具有以下规范。
 ```
 
  
-更改只是游戏属性 （这只是一个示例，由于此字段的架构是由调用方负责）：
+更改只需标题属性 （因为此字段的架构是由调用方，这是只是一个示例）：
  
 
 ```json
@@ -67,7 +67,7 @@ UpdateMetadataRequest 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E3C"></a>

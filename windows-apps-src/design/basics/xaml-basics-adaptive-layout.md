@@ -6,11 +6,11 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b444a11ab032034976d2f1b269bd10a89bf339e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928981"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593072"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教程：创建自适应布局
 
@@ -26,36 +26,36 @@ ms.locfileid: "8928981"
 
 ![DetailPage](../basics/images/xaml-basics/detailpage.png)
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
-* Visual Studio 2017：[下载 Visual Studio 2017 社区版（免费）](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
-* Windows 10SDK（10.0.15063.468 或更高版本）：[下载最新的 Windows SDK（免费）](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* Windows 移动版仿真器：[下载 Windows 10 移动版仿真器（免费）](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
+* Visual Studio 2017:[下载 Visual Studio 2017 Community （免费）](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Windows 10 SDK (10.0.15063.468 或更高版本):[下载最新的 Windows SDK （免费）](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* Windows 移动仿真程序：[下载 Windows 10 移动模拟器 （免费）](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
 
 ## <a name="part-0-get-the-starter-code-from-github"></a>第 0 部分：从 github 获取起始代码
 
 在本教程中，你将从一个简化版的 PhotoLab 示例开始。 
 
-1. 转到[https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab)。 这将让你访问 GitHub 页上的示例。 
+1. 转到[ https://github.com/Microsoft/Windows-appsample-photo-lab ](https://github.com/Microsoft/Windows-appsample-photo-lab)。 这将让你访问 GitHub 页上的示例。 
 2. 接下来，你将需要克隆或下载示例。 单击**克隆或下载**按钮。 一个子菜单将出现。
     <figure>
         <img src="../basics/images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">
         <figcaption>GitHub 页面上的 PhotoLab 示例的“克隆或下载”<b></b>菜单。</figcaption>
     </figure>
 
-    **如果你不熟悉 GitHub:**
+    **如果您不熟悉 GitHub:**
     
     a. 单击**下载 ZIP** 并在本地保存文件。 这将下载一个包含你需要的所有项目文件的 .zip 文件。
     b. 将该文件解压缩。 使用文件资源管理器导航到你刚才下载的 .zip 文件，右键单击它，然后选择**全部解压缩…**。c. 导航到示例的本地副本，然后访问 `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout` 目录。    
 
-    **如果你熟悉 GitHub：**
+    **如果您熟悉 GitHub:**
 
     a. 在本地克隆 repo 的主分支。
     b. 导航到 `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout` 目录。
 
 3. 通过单击 `Photolab.sln` 打开项目。
 
-## <a name="part-1-run-the-mobile-emulator"></a>第 1 部分：运行移动版仿真器
+## <a name="part-1-run-the-mobile-emulator"></a>第 1 部分：运行移动仿真程序
 
 在 Visual Studio 工具栏中，确保将解决方案平台设置为 x86 或 x64 而不是 ARM，然后将目标设备从本地计算机更改为你已安装的移动版仿真器之一（例如，5 英寸的 1GB Mobile Emulator 10.0.15063 WVGA）。 请尝试在你通过按 **F5** 选择的移动版仿真器中运行“照片库”应用。
 
@@ -63,7 +63,7 @@ ms.locfileid: "8928981"
 
 ![移动布局：之后](../basics/images/xaml-basics/adaptive-layout-mobile-before.png)
 
-## <a name="part-2-build-a-tailored-mobile-layout"></a>第 2 部分：生成定制的移动布局
+## <a name="part-2-build-a-tailored-mobile-layout"></a>第 2 部分：构建定制的移动布局
 为了使此应用在较小的设备上看起来很美观，我们将在 XAML 页面中创建一组单独的样式，并且仅在检测到移动设备时才使用这组样式。
 
 ### <a name="create-a-new-datatemplate"></a>创建新的 DataTemplate
@@ -211,7 +211,7 @@ ms.locfileid: "8928981"
 
 ![移动布局：之后](../basics/images/xaml-basics/adaptive-layout-mobile-after.png)
 
-## <a name="part-3-adapt-to-multiple-window-sizes-on-a-single-device"></a>第 3 部分：在单个设备上适应多个窗口大小
+## <a name="part-3-adapt-to-multiple-window-sizes-on-a-single-device"></a>第 3 部分：适应单个设备上的多个窗口大小
 创建新定制布局可解决移动设备响应式设计的难题，但是台式机和平板电脑的情况怎样？ 该应用在全屏中可能看起来很美观，但如果用户收缩窗口，则最终可能会出现难看的界面。 通过使用 **VisualStateManager** 在单个设备上适应多个窗口大小，我们可以确保最终用户体验始终感觉良好。
 
 ![小窗口：之前](../basics/images/xaml-basics/adaptive-layout-small-before.png)
@@ -321,8 +321,8 @@ ms.locfileid: "8928981"
 
 如果遇到问题，可以在[使用 XAML 定义页面布局](../layout/layouts-with-xaml.md)的以下部分中找到更多指南。
 
-+ [视觉状态和状态触发器](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#visual-states-and-state-triggers)
-+ [定制布局](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#tailored-layouts)
++ [可视状态和状态触发器](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#visual-states-and-state-triggers)
++ [定制的布局](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#tailored-layouts)
 
 或者，如果你想要了解有关如何构建初始照片编辑应用的详细信息，请查看这些有关 XAML [用户界面](../basics/xaml-basics-ui.md)和[数据绑定](../../data-binding/xaml-basics-data-binding.md)的教程。
 

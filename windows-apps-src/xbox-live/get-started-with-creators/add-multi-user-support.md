@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, unity, 多用户
 ms.localizationpriority: medium
 ms.openlocfilehash: 483a0e966be756de483bf7e2ab8458647397687b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933430"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613732"
 ---
 # <a name="add-multi-user-support-to-your-unity-game"></a>向 Unity 游戏添加多用户支持
 > [!IMPORTANT]
@@ -24,7 +24,7 @@ ms.locfileid: "8933430"
 > [!IMPORTANT]
 > 仅在 Xbox 主机上支持多用户场景。 此功能在电脑上不起作用。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 你需要遵循[入门](configure-xbox-live-in-unity.md)教程才能启用和配置 Xbox Live。
 
 ## <a name="adding-and-signing-in-multiple-xbox-live-users"></a>添加和登录多个 Xbox Live 用户
@@ -46,7 +46,7 @@ ms.locfileid: "8933430"
 对于此教程，我们将对向其分配玩家 1 的 **UserProfile** 使用 `joystick 1 button 0`，对玩家 2 和第二个 **UserProfile** 游戏对象使用 `joystick 2 button 0`。 这会分配 `A` 按钮以使两个控制器与 **UserProfile** 进行交互。
 
 > [!Note]
-> 有关 Xbox Live Unity 插件中的 Xbox 控制器支持的详细信息，请查看：[向 Xbox Live Prefab 添加控制器支持](add-controller-support-to-xbox-live-prefabs.md)
+> 有关在 Xbox Live Unity 插件 Xbox 控制器支持的更多详细信息，请参阅：[将控制器支持添加到 Xbox Live 预设](add-controller-support-to-xbox-live-prefabs.md)
 
 5. 在编辑器中运行场景并在每个按钮上点击“运行”，确保正确配置了所有内容。
 
@@ -62,6 +62,6 @@ ms.locfileid: "8933430"
 
 4. 要在 Xbox 上测试，请遵循[在 Xbox 开发环境上设置你的 UWP](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/development-environment-setup) 教程中的文档。
 
-## <a name="using-the-other-xbox-live-prefabs-with-multiple-users"></a>通过多用户使用其他 Xbox Live Prefab
+## <a name="using-the-other-xbox-live-prefabs-with-multiple-users"></a>通过多用户使用其他 Xbox Live Prefabs
 
 在插件的**示例**文件夹中有 **MultiUserExample** 场景，可演示不同的 prefab 如何使用 **XboxLiveUser** 实例显示每个用户的特定信息。

@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ca3b5e230270b46b7cb2709d4bfa06c4c51d0224
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947189"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598152"
 ---
 # <a name="vertex-shader-vs-stage"></a>顶点着色器 (VS) 阶段
 
 
 顶点着色器 (VS) 阶段处理顶点，通常执行诸如转换、换肤以及照明之类的操作。 顶点着色器获取一个输入顶点并生成一个输出顶点。
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途和用法
+## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途，并使用
 
 
 顶点着色器 (VS) 阶段用于单独的每顶点处理，例如：
@@ -35,18 +35,18 @@ ms.locfileid: "8947189"
 
 每个顶点着色器输入顶点可以由 16 个 32 位矢量（每个矢量最多有 4 个分量）组成。 每个输出顶点可以由多达 16 个 32 位 4 分量矢量组成。 所有顶点着色器都必须至少有一个输入和一个输出，该输入和输出可能仅仅是一个标量值。
 
-顶点着色器阶段可能使用来自输入装配器的两个系统生成值：VertexID 和 InstanceID（请参阅“系统值和语义”）。 由于 VertexID 和 InstanceID 在顶点级别都有意义，由硬件生成的 ID 只能馈送到了解这些 ID 的第一个阶段中，这些 ID 值只能馈送到顶点着色器阶段中。
+顶点着色器阶段可以使用两个系统生成的值从输入装配器：VertexID 和实例 Id （请参阅系统值和语义）。 由于 VertexID 和 InstanceID 在顶点级别都有意义，由硬件生成的 ID 只能馈送到了解这些 ID 的第一个阶段中，这些 ID 值只能馈送到顶点着色器阶段中。
 
 顶点着色器始终在所有顶点上运行，包括带邻近度的输入基元拓扑中的相邻顶点。 已执行顶点着色器的次数可通过 VSInvocations 管道统计信息从 CPU 中查询。
 
-顶点着色器可执行不需要屏幕空间派生对象的加载和纹理采样操作（使用 HLSL 内部函数：[Sample (DirectX HLSL Texture Object)](https://msdn.microsoft.com/library/windows/desktop/bb509695)、[SampleCmpLevelZero (DirectX HLSL Texture Object)](https://msdn.microsoft.com/library/windows/desktop/bb509697) 和 [SampleGrad (DirectX HLSL Texture Object)](https://msdn.microsoft.com/library/windows/desktop/bb509698)）。
+顶点着色器可以执行负载和纹理采样操作不需要的屏幕空间派生类 (使用 HLSL 内部函数：[示例 （DirectX HLSL 纹理对象）](https://msdn.microsoft.com/library/windows/desktop/bb509695)， [SampleCmpLevelZero （DirectX HLSL 纹理对象）](https://msdn.microsoft.com/library/windows/desktop/bb509697)，和[SampleGrad （DirectX HLSL 纹理对象）](https://msdn.microsoft.com/library/windows/desktop/bb509698))。
 
 ## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>输入
 
 
 具有 VertexID 和 InstanceID 系统生成值的单个顶点。 每个顶点着色器输入顶点可以由 16 个 32 位矢量（每个矢量最多有 4 个分量）组成。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 单个顶点。 每个输出顶点可以由多达 16 个 32 位 4 分量矢量组成。

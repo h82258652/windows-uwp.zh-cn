@@ -3,19 +3,19 @@ title: 响应式设计的屏幕大小和断点
 description: 我们建议针对一些关键宽度类别（称为“断点”）进行设计，而不是为 Windows 10 生态系统中的很多设备优化 UI。
 ms.date: 08/30/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: fce2c9230add569c4494b01546f1b3ced81d488b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048134"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612922"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>屏幕大小和断点
 
-UWP 应用可以在运行 Windows 10 的任何设备上运行，包括手机、平板电脑、台式机、电视等。 大量设备目标和屏幕大小的 windows 10 生态系统中，而不是为每台设备优化 UI，我们建议针对几个关键宽度类别 （也称为"断点"）： 
+UWP 应用可以在运行 Windows 10 的任何设备上运行，包括手机、平板电脑、台式机、电视等。 使用大量的设备目标和 Windows 10 生态系统，而不是优化您为每个设备的 UI 屏幕尺寸，我们建议对 （也称为"断点"） 的几个关键宽度类别设计： 
 - 小（640px 以下）
 - 中等（641px 到 1007px）
 - 大（1008px 和以上）
@@ -47,7 +47,7 @@ UWP 应用可以在运行 Windows 10 的任何设备上运行，包括手机、�
 <td style="vertical-align:top;">320x569、360x640、480x854</td>
 </tr>
 <tr class="odd">
-<td style="vertical-align:top;">中</td>
+<td style="vertical-align:top;">中等</td>
 <td style="vertical-align:top;">641px 到 1007px</td>
 <td style="vertical-align:top;">7&quot; 到 12&quot;</td>
 <td style="vertical-align:top;">平板电脑</td>
@@ -100,6 +100,6 @@ UWP 应用会自动缩放 UI，以保证应用在所有 Windows 10 设备上都�
 - 使[导航窗格](../controls-and-patterns/navigationview.md)处于停靠模式，以使其始终显示。
 
 >[!TIP] 
-> 使用[**适用于手机的 Continuum**](https://go.microsoft.com/fwlink/p/?LinkID=699431)，用户可以连接到监视器、 鼠标和键盘来使手机像笔记本电脑一样工作的兼容 windows 10 移动版设备。 针对特定断点进行设计时请记住这一新功能 - 移动手机将不会始终保持在尺寸级别。
+> 与[**适用于手机的 Continuum**](https://go.microsoft.com/fwlink/p/?LinkID=699431)，用户可以连接到监视器、 鼠标和键盘进行自己的工作方式的便携式计算机类似的手机的兼容 Windows 10 移动版设备。 针对特定断点进行设计时请记住这一新功能 - 移动手机将不会始终保持在尺寸级别。
 
 

@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c6cd2f28833cdc86fb3fd01bb85890dcb0654901
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940995"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607522"
 ---
 # <a name="usersxuidxuidresetreputation"></a>/users/xuid({xuid})/resetreputation
-使访问指定的用户的信誉评分，强制执行团队。 这些 Uri 的域和端口号是`reputation.xboxlive.com:10433`。
+利用强制执行团队可以访问指定的用户的信誉分数。 这些 Uri 的域和端口号是`reputation.xboxlive.com:10433`。
  
   * [URI 参数](#ID4EV)
  
@@ -24,9 +24,9 @@ ms.locfileid: "8940995"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| xuid| 字符串| Xbox 用户 ID (XUID) 指定的用户。| 
+| xuid| 字符串| Xbox 用户 ID (XUID) 指定用户。| 
   
 <a id="ID4EVB"></a>
 
@@ -35,7 +35,7 @@ ms.locfileid: "8940995"
 
 [POST (/users/xuid({xuid})/resetreputation)](uri-usersxuidresetreputationpost.md)
 
-&nbsp;&nbsp;使执行团队后 （例如） 帐户劫持将指定的用户的信誉评分设置为某些任意值。
+&nbsp;&nbsp;启用强制执行团队后 （例如） 帐户劫持为一些任意的值设置指定的用户的信誉分数。
  
 <a id="ID4E6B"></a>
 
@@ -47,6 +47,6 @@ ms.locfileid: "8940995"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[信誉 URI](atoc-reference-reputation.md)
+[信誉 Uri](atoc-reference-reputation.md)
 
    

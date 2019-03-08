@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 479be2401e0c54801645ad1c0d91b11b7ffb6869
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937133"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649012"
 ---
 # <a name="configure-your-xbox-development-console"></a>配置 Xbox 开发主机
 
@@ -30,7 +30,7 @@ ms.locfileid: "8937133"
 
 查看当前沙盒。 在命令提示符中键入 xbconfig sandboxid。
 
-如果不是需要的内容，请更改沙盒 ID。在命令提示符中键入“xbconfig sandboxid=<your sandbox id>”。
+如果不是你需要的内容，请更改沙盒 ID。在命令提示符中键入 xbconfig sandboxid=<your sandbox id>。
 
 在命令提示符中使用 Reboot (xbreboot.exe) 重新启动主机。
 
@@ -38,4 +38,4 @@ ms.locfileid: "8937133"
 
 ## <a name="sign-in-with-a-development-account"></a>使用开发帐户登录
 
-你可以创建用于登录[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)或[合作伙伴中心](https://partner.microsoft.com/dashboard)上的开发帐户
+你可以创建开发帐户用于登录[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)或[合作伙伴中心](https://partner.microsoft.com/dashboard)

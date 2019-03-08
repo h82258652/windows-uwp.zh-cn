@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ef6875bfecfe7ee90fb1794164240116fd39ed91
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929788"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649492"
 ---
 # <a name="getclipresponse-json"></a>GetClipResponse (JSON)
-包装游戏剪辑。 
+包装的游戏的剪辑。 
 <a id="ID4EN"></a>
 
  
@@ -23,14 +23,14 @@ ms.locfileid: "8929788"
  
 GetClipResponse 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
 | gameClip| [GameClip](json-gameclip.md)| 满足查询单个游戏剪辑。| 
   
 <a id="ID4ELB"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -92,6 +92,6 @@ GetClipResponse 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
    

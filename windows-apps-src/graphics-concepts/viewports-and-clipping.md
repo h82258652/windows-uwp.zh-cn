@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d2a8953d202cc22729f99a096b5fb62cf1131d9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936236"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603282"
 ---
 # <a name="viewports-and-clipping"></a>视区和剪切
 
 
-*视区*是将 3D 场景投影到其中的二维 (2D) 矩形。 在 Direct3D 中，矩形在系统作为渲染目标使用的 Direct3D 表面内作为坐标存在。 投影转换将顶点转换为用于视区的坐标系统。 视区还用于指定将在其中呈现场景的呈现目标图面的深度值范围（通常为 0.0 至 1.0）。
+*视区*是将 3D 场景投影到其中的二维 (2D) 矩形。 在 Direct3D 中，矩形在系统作为渲染目标使用的 Direct3D 表面内作为坐标存在。 投影转换将顶点转换为用于视区的坐标系统。 视区还用于指定渲染目标表面（场景将渲染到其中）的深度值范围（通常为 0.0 至 1.0）。
 
-## <a name="span-idtheviewingfrustumspanspan-idtheviewingfrustumspanspan-idtheviewingfrustumspanthe-viewing-frustum"></a><span id="The_Viewing_Frustum"></span><span id="the_viewing_frustum"></span><span id="THE_VIEWING_FRUSTUM"></span>视锥
+## <a name="span-idtheviewingfrustumspanspan-idtheviewingfrustumspanspan-idtheviewingfrustumspanthe-viewing-frustum"></a><span id="The_Viewing_Frustum"></span><span id="the_viewing_frustum"></span><span id="THE_VIEWING_FRUSTUM"></span>锥
 
 
 视锥是场景中相对于视区的相机放置的 3D 体。 体的形状影响模型从相机空间投影到屏幕上的方式。 最常见投影类型是透视投影，它负责让靠近相机的对象显得比远处的对象大。 对于透视视见，可以用金字塔直观地显示视锥，其中相机位于下图中显示的尖部。 此金字塔与前后剪裁平面相交。 金字塔中的前后剪裁平面之间的体就是视锥。 对象仅在位于此体中时才可见。
@@ -45,7 +45,7 @@ ms.locfileid: "8936236"
 
 Direct3D 假定视区剪裁体范围在 X 方向为 -1.0 - 1.0，在 Y 方向为 1.0 - -1.0。这些是应用程序在过去最常使用的设置。 你可以在剪裁之前使用[投影转换](projection-transform.md)调整视区纵横比。
 
-**注意** MinZ 和 MaxZ 表示将场景呈现到深度范围不用于剪裁。 大多数应用程序将这些值设置为 0.0 和 1.0 而言，以便让系统呈现到深度缓冲区中的整个深度值范围。 在某些情况下，你可以通过使用其他深度范围来实现特殊效果。 例如，要在游戏中呈现抬头显示，你可以将这两个值都设置为 0.0 以强制系统在前台呈现场景中的对象，或者也可以将它们都设置为 1.0 以呈现应始终位于后台的对象。
+**请注意**   MinZ 和 MaxZ 指示将在其中呈现场景深度范围并不用于剪辑。 大多数应用程序将这些值设置为 0.0 和 1.0 而言，以便让系统呈现到深度缓冲区中的整个深度值范围。 在某些情况下，你可以通过使用其他深度范围来实现特殊效果。 例如，要在游戏中呈现抬头显示，你可以将这两个值都设置为 0.0 以强制系统在前台呈现场景中的对象，或者也可以将它们都设置为 1.0 以呈现应始终位于后台的对象。
 
  
 
@@ -55,18 +55,18 @@ Direct3D 使用视区位置和尺寸来缩放顶点，以便将呈现的场景�
 
 ![应用于每个顶点的矩阵的方程](images/vpscale.png)
 
-此矩阵根据视区尺寸和所需的深度范围缩放顶点，并将它们转换到平移目标图面上的合适位置。 此矩阵还将翻转 y 坐标以在左上角反射屏幕原点，同时让 y 向下增大。 应用此矩阵后，顶点仍然是同类的（即，它们仍作为 \[x,y,z,w\] 顶点存在），并且它们在发送到光栅器之前必须平移到非同类坐标。
+此矩阵根据视区尺寸和所需的深度范围缩放顶点，并将它们转换到平移目标图面上的合适位置。 此矩阵还将翻转 y 坐标以在左上角反射屏幕原点，同时让 y 向下增大。 应用此矩阵，顶点仍同类-也就是说，它们仍作为存在后\[x、 y、 z、 w\]顶点-和它们都必须在发送到光栅器之前中转换为非齐次坐标。
 
-**注意**应用程序通常将 MinZ 和 MaxZ 为 0.0 和 1.0，分别以使系统呈现到整个深度范围。 但是，你可以使用其他值实现某些效果。 例如，你可以将这两个值都设置为 0.0 以强制所有对象位于前台，或将这两个值设置为 1.0 以将所有对象呈现到后台。
+**请注意**  应用程序通常将 MinZ 和 MaxZ 为介于 0.0 和 1.0 分别用于会导致系统要呈现到整个的深度范围。 但是，你可以使用其他值实现某些效果。 例如，你可以将这两个值都设置为 0.0 以强制所有对象位于前台，或将这两个值设置为 1.0 以将所有对象呈现到后台。
 
  
 
-## <a name="span-idclearingaviewportspanspan-idclearingaviewportspanspan-idclearingaviewportspanclearing-a-viewport"></a><span id="Clearing_a_Viewport"></span><span id="clearing_a_viewport"></span><span id="CLEARING_A_VIEWPORT"></span>清除视区
+## <a name="span-idclearingaviewportspanspan-idclearingaviewportspanspan-idclearingaviewportspanclearing-a-viewport"></a><span id="Clearing_a_Viewport"></span><span id="clearing_a_viewport"></span><span id="CLEARING_A_VIEWPORT"></span>清除某一视区
 
 
 清除视区将重置呈现目标图面上的视区矩形的内容。 它还可以清除深度和模具缓冲区图面中的矩形。
 
-## <a name="span-idsetuptheviewportforclippingspanspan-idsetuptheviewportforclippingspanspan-idsetuptheviewportforclippingspanset-up-the-viewport-for-clipping"></a><span id="Set_Up_the_Viewport_for_Clipping"></span><span id="set_up_the_viewport_for_clipping"></span><span id="SET_UP_THE_VIEWPORT_FOR_CLIPPING"></span>设置要剪裁的视区
+## <a name="span-idsetuptheviewportforclippingspanspan-idsetuptheviewportforclippingspanspan-idsetuptheviewportforclippingspanset-up-the-viewport-for-clipping"></a><span id="Set_Up_the_Viewport_for_Clipping"></span><span id="set_up_the_viewport_for_clipping"></span><span id="SET_UP_THE_VIEWPORT_FOR_CLIPPING"></span>为剪辑设置视区
 
 
 投影矩阵的结果将确定投影空间中的剪裁体，如下所示：
@@ -82,7 +82,7 @@ Direct3D 使用视区位置和尺寸来缩放顶点，以便将呈现的场景�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[坐标系和几何图形](coordinate-systems-and-geometry.md)
+[坐标系和坐标 geometry](coordinate-systems-and-geometry.md)
 
  
 

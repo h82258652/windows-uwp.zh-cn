@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: aa66b81d1e363488a6969ab31d7091b695f09ae4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933095"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603302"
 ---
 # <a name="titlestitleidsessionssessionidallocationstatus"></a>/titles/{titleId}/sessions/{sessionId}/allocationStatus
-对于给定的作品 id 和会话 id，获取票证请求的状态。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+对于特定的商品 id 和会话 id，获取票证请求的状态。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [URI 参数](#ID4EU)
   * [主机名](#ID4EPB)
@@ -28,8 +28,8 @@ ms.locfileid: "8933095"
  
 | 参数| 描述| 
 | --- | --- | 
-| titleId| 游戏应在其中操作该请求 ID。| 
-| sessionId| 若要查找会话的 ID。| 
+| titleId| 请求应作用于的标题的 ID。| 
+| sessionId| 若要查找的会话 ID。| 
   
 <a id="ID4EPB"></a>
 
@@ -45,5 +45,5 @@ gameserverms.xboxlive.com
   
 [GET](uri-titlestitleidsessionssessionidallocationstatus-get.md)
  
-&nbsp;&nbsp;返回由其 sessionId sessionhost 分配状态。
+&nbsp;&nbsp;返回由其 sessionId sessionhost 的分配状态。
    

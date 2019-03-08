@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 加载, 栅格化, 网格, 位图, 2D, 3D
 ms.localizationpriority: medium
 ms.openlocfilehash: afd08d62182bd0980f43ce1c4578c1181f8a6d2f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925148"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613742"
 ---
 # <a name="fundamentals-of-directx-programming"></a>DirectX 编程基础知识
 
@@ -50,7 +50,7 @@ DirectX 游戏的基本 3D 图形主题通过介绍 Direct3D 概念和 API 的�
 <td align="left"><p>创建基本的 3D DirectX 图形。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="load-a-game-asset.md">在 DirectX 游戏中加载资源</a></p></td>
+<td align="left"><p><a href="load-a-game-asset.md">加载您的 DirectX 游戏中的资源</a></p></td>
 <td align="left"><p>在 DirectX 游戏中加载网格。</p></td>
 </tr>
 </tbody>

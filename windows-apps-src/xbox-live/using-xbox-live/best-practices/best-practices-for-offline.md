@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 脱机
 ms.localizationpriority: medium
 ms.openlocfilehash: 5680b045873ebf6eed1422cb915f3f53df748790
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936490"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618722"
 ---
 # <a name="best-practices-for-offline"></a>脱机最佳实践
 
@@ -97,7 +97,7 @@ Xbox One 展示之一为云能力。 某些游戏可能完全依赖于始终连�
 
 游戏不需要支持脱机玩游戏。 如果你的游戏只因服务连接中断而无法继续，则通知用户，结束游戏会话，然后返回主菜单或发起交互状态。
 
-## <a name="best-practices"></a>最佳实践
+## <a name="best-practices"></a>最佳做法
 
 以下是处理脱机情形的最佳实践：
 
@@ -117,6 +117,6 @@ Xbox One 展示之一为云能力。 某些游戏可能完全依赖于始终连�
 
 -   不要依赖 Xbox 帮助服务来获取与脱机状态相关的错误消息和帮助。 Xbox 帮助服务需要连接至 Xbox Live。
 
-## <a name="conclusion"></a>总结
+## <a name="conclusion"></a>结论
 
 Xbox One 专为始终连接世界设计。 但是，在实现这一愿景的道路上，主机允许玩家在脱机情形下也能玩游戏。 在遇到连接故障时，游戏必须可靠。 对于具有脱机玩游戏体验的游戏，允许玩家最大限度地畅享这些体验。 对于在网络连接中断时始终处于联机状态的游戏，将用户从容地返回脱机状态。

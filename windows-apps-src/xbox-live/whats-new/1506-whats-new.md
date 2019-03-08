@@ -4,14 +4,14 @@ description: Xbox Live SDK 的新增功能 - 2015 年 6 月
 ms.assetid: 354bcd47-2564-4dd5-89e3-242bca462b35
 ms.date: 04/04/2017
 ms.topic: article
-keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
+keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a42d0fb0a3cb457a60a0542bfc5966893d00f18b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944166"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627872"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---june-2015"></a>Xbox Live SDK 的新增功能 - 2015 年 6 月
 
@@ -52,7 +52,7 @@ Xbox Live SDK 现在支持使用 Microsoft 帐户 (MSA) 来识别 Windows 10 电
 |------|
 | 本部分仅适用于 UWP 游戏。  XDK 开发人员应参阅[游戏事件](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/event-driven-data-platform/game-events)一文了解 XDK 特定信息  |
 
-新 EventsService (WinRT) 和 events_service (C++) 类可让你编写可以更新用户统计信息、成就、排行榜等游戏内事件。这些新类仅适用于 UWP 应用。
+新 EventsService (WinRT) 和 events_service （c + +） 的类可以编写游戏内事件，可以更新用户统计信息、 成就、 排行榜，等等。这些新类是仅适用于 UWP 应用。
 
 ## <a name="breaking-change-to-event-handlers"></a>事件处理程序的重大更改 ##
 C++ SDK 中的所有事件处理程序已从单个 `void set_*_handler()` 方法更改为一对 `function_context add_*_handler()` 和 `void remove_*_handler(function_context context)` 方法。

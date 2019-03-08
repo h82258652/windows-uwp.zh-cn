@@ -7,13 +7,13 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ef98f3f4a9d20e836d5f9bddbc111a232f864bf5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927503"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602612"
 ---
-# <a name="net-framework-mappings-of-windows-runtime-types"></a>Windows 运行时类型的 .NET framework 映射
+# <a name="net-framework-mappings-of-windows-runtime-types"></a>Windows 运行时类型的 .NET Framework 映射
 
 
 
@@ -24,7 +24,7 @@ ms.locfileid: "8927503"
 
 在 UWP 和 .NET Framework 中，大多数具有相同的命名空间名称和类型名称的类型都是结构（或者与结构关联的类型，例如枚举）。 在 UWP 中，结构没有字段以外的成员，并且需要 .NET Framework 隐藏的帮助程序类型。 这些 .NET Framework 版本的结构具有可提供隐藏帮助程序类型的功能的属性和方法。
 
-表 1：使用不同的名称和/或命名空间映射到 .NET Framework 类型的 UWP 类型。
+表 1:UWP 类型映射到使用不同的名称和/或命名空间的.NET Framework 类型。
 
 | UWP 类型/命名空间                                            | .NET Framework 类型/命名空间                                          | .NET framework 程序集                           |
 |---------------------------------------------------------------|------------------------------------------------------------------------|---------------------------------------------------|
@@ -57,14 +57,14 @@ ms.locfileid: "8927503"
 
  
 
-表 2：使用相同的名称和命名空间映射到 .NET Framework 类型的 UWP 类型。
+表 2:UWP 类型映射到具有相同名称和命名空间的.NET Framework 类型。
 
-| 命名空间                           | 类型               | .NET framework 程序集                   |
+| 命名空间                           | 在任务栏的搜索框中键入               | .NET framework 程序集                   |
 |-------------------------------------|--------------------|-------------------------------------------|
-| Windows.UI                          | Color              | System.Runtime.WindowsRuntime.dll         |
-| Windows.Foundation                  | Point              | System.Runtime.WindowsRuntime.dll         |
+| Windows.UI                          | 颜色              | System.Runtime.WindowsRuntime.dll         |
+| Windows.Foundation                  | 点              | System.Runtime.WindowsRuntime.dll         |
 | Windows.Foundation                  | Rect               | System.Runtime.WindowsRuntime.dll         |
-| Windows.Foundation                  | Size               | System.Runtime.WindowsRuntime.dll         |
+| Windows.Foundation                  | 尺寸               | System.Runtime.WindowsRuntime.dll         |
 | Windows.UI.Xaml.Input               | ICommand           | System.ObjectModel.dll                    |
 | Windows.UI.Xaml                     | CornerRadius       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml                     | Duration           | System.Runtime.WindowsRuntime.UI.Xaml.dll |
@@ -83,4 +83,4 @@ ms.locfileid: "8927503"
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [在 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)

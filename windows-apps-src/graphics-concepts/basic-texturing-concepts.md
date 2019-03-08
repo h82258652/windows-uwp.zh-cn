@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2124c9e620694f62414c865e6d3247cd25ce70d0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934124"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651102"
 ---
 # <a name="basic-texturing-concepts"></a>基本纹理概念
 
 
-早期的计算机生成的 3D 图像，尽管在当时通常很先进，往往有一个闪亮的塑料外观。 这类图像缺少磨损、裂缝、指纹和污迹等标记类型，所以 3D 对象不具有真实的视觉复杂性。 为了增强计算机生成的 3D 图像的真实性，纹理变得非常流行。
+早期的计算机生成的 3D 图像，尽管在当时通常很先进，却往往带有闪亮的塑料状外观。 这类图像缺少磨损、裂缝、指纹和污迹等标记类型，所以 3D 对象不具有真实的视觉复杂性。 为了增强计算机生成的 3D 图像的真实性，纹理变得非常流行。
 
 在日常使用中，单词纹理指的是对象的平滑度或粗糙度。 但是，在电脑图形中，纹理是为对象提供纹理外观的像素颜色的位图。
 

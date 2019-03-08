@@ -1,5 +1,5 @@
 ---
-Description: If your app does not provide good keyboard access, users who are blind or have mobility issues can have difficulty using your app or may not be able to use it at all.
+Description: 如果应用未提供良好的键盘访问，则盲人用户或行动不便的用户在使用该应用时会存在困难，或者可能根本无法使用该应用。
 ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: 键盘辅助功能
 label: Keyboard accessibility
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ad64c2a0d4d7569ec2c0c0a44f9236fc4b2819f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045516"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602062"
 ---
 # <a name="keyboard-accessibility"></a>键盘辅助功能  
 
@@ -58,9 +58,9 @@ XAML
 
 无论你是调整 [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 值还是使用默认顺序，下列规则都适用：
 
-* [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 等于 0 的 UI 元素基于 XAML 或子集合中的声明顺序添加到 Tab 键顺序。
-* [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 大于 0 的 UI 元素基于 **tabIndex** 值添加到 Tab 键顺序。
-* [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 小于 0 的 UI 元素添加到 Tab 键顺序并显示在任何零值前面。 这可能与 HTML 处理其 **tabindex** 属性的操作不同（且负值 **tabindex** 在顺序 HTML 规范中不受支持）。
+* [  **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 等于 0 的 UI 元素基于 XAML 或子集合中的声明顺序添加到 Tab 键顺序。
+* [  **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 大于 0 的 UI 元素基于 **tabIndex** 值添加到 Tab 键顺序。
+* [  **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 小于 0 的 UI 元素添加到 Tab 键顺序并显示在任何零值前面。 这可能与 HTML 处理其 **tabindex** 属性的操作不同（且负值 **tabindex** 在顺序 HTML 规范中不受支持）。
 
 <span id="keyboard_navigation_within_a_UI_element"/>
 <span id="keyboard_navigation_within_a_ui_element"/>
@@ -175,7 +175,7 @@ XAML
 ## <a name="an-example-of-a-visual-state-for-a-focus-indicator"></a>焦点指示符的视觉状态示例  
 我们之前曾提到，任何允许用户为其设置焦点的自定义控件都应当具有一个视觉焦点指示器。 通常，该焦点指示器可以简单到直接围绕控件的普通边界矩形周围绘制一个矩形形状。 视觉焦点的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 是该控件在控件模板中的其余组合的对等元素，但它最初是用 **Collapsed** 的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) 值设置的，因为该控件尚未获取焦点。 然后，当控件获取焦点时，会调用一个专门为对于 **Visible** 可见的焦点设置 **Visibility** 的视觉状态。 在焦点移到其他位置之后，会调用另一个视觉状态，**Visibility** 会变成 **Collapsed**。
 
-所有默认 XAML 控件在获得焦点时（如果它们可以获得焦点），都将显示相应的视觉焦点指示器。 还可能存在不同的外观，具体取决于用户所选的主题（尤其是用户使用高对比度模式。）如果你在 UI 中使用的是 XAML 控件且未更换控件模板，则无需执行任何额外操作，即可在正确运行和显示的控件上获取视觉焦点指示器。 但是如果你想要重新创建控件模板，或者如果你对 XAML 控件如何提供其视觉焦点指示器感兴趣，则本部分的剩余部分将介绍如何在 XAML 中和控件逻辑中完成此操作。
+所有默认 XAML 控件在获得焦点时（如果它们可以获得焦点），都将显示相应的视觉焦点指示器。 此外，还有可能不同的外观，具体取决于用户的选定的主题 （尤其是当用户正在使用高对比度模式。）如果你的 UI 和不会替代控件模板中使用的 XAML 控件，您不必执行任何额外操作来获取有关的行为，并正确显示控件的可视焦点指示器。 但是如果你想要重新创建控件模板，或者如果你对 XAML 控件如何提供其视觉焦点指示器感兴趣，则本部分的剩余部分将介绍如何在 XAML 中和控件逻辑中完成此操作。
 
 下面是来自 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 的默认 XAML 模板的示例 XAML。
 
@@ -239,7 +239,7 @@ XAML
 <span id="KEYBOARD_ACCESSIBILITY_AND_WINDOWS_PHONE"/>
 
 ## <a name="keyboard-accessibility-and-windows-phone"></a>键盘辅助功能和 Windows Phone
-Windows Phone 设备通常不具有专用的硬件键盘。 但是，软输入面板 (SIP) 可以支持若干键盘辅助功能方案。 屏幕阅读器可以读出“文本”**** SIP 的文本输入，包括读出删除的内容。 用户可以发现其手指所在的位置，因为屏幕阅读器可以检测到用户正在浏览各键，并且它可以大声读出浏览到的键名称。 同样，可以将某些面向键盘的辅助功能概念映射到完全不使用键盘的相关辅助技术行为。 例如，即使 SIP 不包括 Tab 键，讲述人也支持等效于按下 Tab 键的触摸手势，因此在 UI 中各个控件具有有用的 Tab 键顺序仍然是一项重要的辅助功能原则。 用于导航复杂控件中的各个部件的箭头键也可通过讲述人触摸手势受到支持。 在焦点到达不用于文本输入的控件后，讲述人支持可调用该控件的操作的手势。
+Windows Phone 设备通常不具有专用的硬件键盘。 但是，软输入面板 (SIP) 可以支持若干键盘辅助功能方案。 屏幕阅读器可以读出“文本”SIP 的文本输入，包括读出删除的内容。 用户可以发现其手指所在的位置，因为屏幕阅读器可以检测到用户正在浏览各键，并且它可以大声读出浏览到的键名称。 同样，可以将某些面向键盘的辅助功能概念映射到完全不使用键盘的相关辅助技术行为。 例如，即使 SIP 不包括 Tab 键，讲述人也支持等效于按下 Tab 键的触摸手势，因此在 UI 中各个控件具有有用的 Tab 键顺序仍然是一项重要的辅助功能原则。 用于导航复杂控件中的各个部件的箭头键也可通过讲述人触摸手势受到支持。 在焦点到达不用于文本输入的控件后，讲述人支持可调用该控件的操作的手势。
 
 键盘快捷方式通常不与 Windows Phone 应用相关，因为 SIP 不包含 Ctrl 或 Alt 键。
 
@@ -249,5 +249,5 @@ Windows Phone 设备通常不具有专用的硬件键盘。 但是，软输入�
 * [辅助功能](accessibility.md)
 * [键盘交互](https://msdn.microsoft.com/library/windows/apps/Mt185607)
 * [触摸键盘示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML 可访问性示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
 

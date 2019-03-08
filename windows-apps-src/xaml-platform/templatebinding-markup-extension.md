@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ade10b4d5e2653eb214d93c2c9166e6a3e3defc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940106"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661802"
 ---
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} 标记扩展
 
@@ -31,7 +31,7 @@ ms.locfileid: "8940106"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 术语 | 说明 |
+| 术语 | 描述 |
 |------|-------------|
 | propertyName | 在 setter 语法中设置的属性的名称。 这必须是一个依赖属性。 |
 | sourceProperty | 存在于模板化的类型上的其他依赖属性的名称。 |
@@ -40,9 +40,9 @@ ms.locfileid: "8940106"
 
 如果你是自定义控件的作者或者要替换现有控件的控件模板，使用 **TemplateBinding** 是如何定义控件模板的基础部分。 有关详细信息，请参阅[快速入门：控件模板](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)。
 
-*propertyName* 和 *targetProperty* 常常使用相同的属性名称。 在此情况下，一个控件可以在自身定义一个属性，并将该属性转发到其组件部分之一的直观命名的现有属性。 例如，一个在其结构中合并了 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 的控件（用于显示控件自己的 **Text** 属性）可能包含此 XAML 作为控件模板的一部分： `<TextBlock Text="{TemplateBinding Text}" .... />`
+*propertyName* 和 *targetProperty* 常常使用相同的属性名称。 在此情况下，一个控件可以在自身定义一个属性，并将该属性转发到其组件部分之一的直观命名的现有属性。 例如，一个控件，其中包含[ **TextBlock** ](https://msdn.microsoft.com/library/windows/apps/br209652)在其组合的情况下，这用于显示控件自身的**文本**属性，可能包括一部分此 XAML在控件模板中： `<TextBlock Text="{TemplateBinding Text}" .... />`
 
-用作源属性值和目标属性值的类型必须匹配。 使用 **TemplateBinding** 时，无法引入转换器。 解析 XAML 时，无法匹配值将导致错误。 如果你需要一个可将详细语法用于模板绑定的转换器，例如： `{Binding RelativeSource={RelativeSource TemplatedParent}, Converter="..." ...}`
+用作源属性值和目标属性值的类型必须匹配。 使用 **TemplateBinding** 时，无法引入转换器。 解析 XAML 时，无法匹配值将导致错误。 如果你需要一个转换器可将详细的语法用于模板绑定，如： `{Binding RelativeSource={RelativeSource TemplatedParent}, Converter="..." ...}`
 
 尝试在 XAML 中的 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 定义外使用 **TemplateBinding** 将导致分析器错误。
 
@@ -52,20 +52,20 @@ ms.locfileid: "8940106"
 
 **TemplateBinding** 是标记扩展。 当需要将属性值转义为除文字值或处理程序名称之外的值时，以及当需求更具全局性而不是仅仅将类型转换器放在某些类型或属性上时，通常需要实现标记扩展。 XAML 中的所有标记扩展在其属性语法中都使用“{”和“}”字符，通过此约定，XAML 处理器可以知道标记扩展必须处理属性。
 
-**注意**中的 Windows 运行时 XAML 处理器实现中，没有**TemplateBinding**没有支持类表示。 **TemplateBinding** 专用于 XAML 标记中。 无法通过一种简单的方式来重现代码中的行为。
+**请注意**  在 Windows 运行时 XAML 处理器实现中，为没有后备类表示形式**TemplateBinding**。 **TemplateBinding** 专用于 XAML 标记中。 无法通过一种简单的方式来重现代码中的行为。
 
-### <a name="xbind-in-controltemplate"></a>X:bind ControlTemplate 中
+### <a name="xbind-in-controltemplate"></a>在 ControlTemplate 中 x： 绑定
 
 > [!NOTE]
-> 在 ControlTemplate 中使用 X:bind 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 在 ControlTemplate 中使用 x： 绑定需要 Windows 10，版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
-从 Windows 10 版本 1809，你可以使用**X:bind**标记扩展在[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)中使用**TemplateBinding**任意位置。 
+从 Windows 10，版本 1809，您可以使用**X:bind**标记扩展使用的任何地方**TemplateBinding**中[ **ControlTemplate** ](https://msdn.microsoft.com/library/windows/apps/br209391). 
 
-[TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)属性必需 （不是可选的） 上[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)使用**X:bind**时。
+[TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)属性必需 （不可选） 在[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)时使用**x： 绑定**。
 
-使用**X:bind**支持，你可以使用这两个[函数绑定](../data-binding/function-bindings.md)作为[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)中也为双向绑定。
+与**X:bind**支持，你可以同时使用[函数绑定](../data-binding/function-bindings.md)中的双向绑定以及[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)。
 
-在此示例中，该**TextBlock.Text**属性的值为**Button.Content.ToString**。 在 ControlTemplate TargetType 充当数据源，并完成与到父 TemplateBinding 相同的结果。
+在此示例中， **TextBlock.Text**属性的值为**Button.Content.ToString**。 在 ControlTemplate TargetType 充当数据源，并完成与 TemplateBinding 到父级相同的结果。
 
 ```xaml
 <ControlTemplate TargetType="Button">
@@ -78,9 +78,9 @@ ms.locfileid: "8940106"
 ## <a name="related-topics"></a>相关主题
 
 * [快速入门：控件模板](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
-* [深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [深度中的数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)
-* [XAML 概述](xaml-overview.md)
+* [XAML概述](xaml-overview.md)
 * [依赖属性概述](dependency-properties-overview.md)
  
 

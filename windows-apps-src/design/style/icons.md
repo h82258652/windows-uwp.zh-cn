@@ -1,5 +1,5 @@
 ---
-Description: Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.
+Description: 良好的图标会与版式和设计语言的其余部分相协调。 它们不会混合隐喻，并且会尽快且尽量简单地仅交流所需内容。
 title: 图标
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
@@ -12,11 +12,11 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: fb97f69ccdffcec86dfdaf5fa6c5f817644ebd61
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947570"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612442"
 ---
 # <a name="icons-for-uwp-apps"></a>适用于 UWP 应用的图标
 
@@ -81,7 +81,7 @@ ms.locfileid: "8947570"
 
 ## <a name="using-the-right-type-of-icon"></a>使用正确的图标类型
 
-可通过多种方式创建图标。 你可以使用诸如 Segoe MDL2 Assets 这样的符号字体。 你可以创建自己的基于矢量的图像。 你甚至可以使用位图图像，不过我们不建议这样做。 下面是可以将图标添加到应用的不同方法的摘要。 
+可通过多种方式创建图标。 你可以使用诸如 Segoe MDL2 Assets 这样的符号字体。 您可以创建您自己的基于矢量的图像。 你甚至可以使用位图图像，不过我们不建议这样做。 下面是可以将图标添加到应用的不同方法的摘要。 
 
 ### <a name="use-a-predefined-icon"></a>使用预定义的图标。
 :::row:::
@@ -136,7 +136,7 @@ ms.locfileid: "8947570"
 
 ## <a name="make-the-icon-do-something"></a>让图标发挥作用
 
-图标之后下, 一步是以使其执行某些操作通过将它与命令或导航操作相关联。 若要执行此操作的最佳方法是将图标添加到某个按钮或命令栏。 
+有一个图标下, 一步是以使其执行某些操作通过将它与命令或导航操作相关联。 若要执行此操作的最佳方法是将图标添加到按钮或命令栏。 
 
 ![命令栏图像](images/icons/app-bar-desktop.svg)
 
@@ -221,4 +221,4 @@ ms.locfileid: "8947570"
 
 ## <a name="related-articles"></a>相关文章
 
-* [磁贴和图标资源指南](../shell/tiles-and-notifications/app-assets.md)
+* [磁贴和图标资产的指导原则](../shell/tiles-and-notifications/app-assets.md)

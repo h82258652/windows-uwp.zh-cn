@@ -1,5 +1,5 @@
 ---
-Description: Some kinds of apps (multilingual dictionaries, translation tools, etc.) need to override the default behavior of an app bundle, and build resources into the app package instead of having them in separate resource packages. This topic explains how to do that.
+Description: 某些类型的应用（多语言字典、翻译工具等）需要覆盖应用程序包的默认行为，并将资源构建到应用包，而不是单独的资源程序包。 本主题介绍如何实现该操作。
 title: 将资源构建到你的应用包而非资源包
 template: detail.hbs
 ms.date: 11/14/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bf2d34bc3dae20750f66c9116499a17444b798c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938490"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627282"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>将资源构建到你的应用包而非资源包
 
@@ -63,7 +63,7 @@ ms.locfileid: "8938490"
 
 ### <a name="using-a-different-file-name-than-priconfigpackagingxml"></a>使用不同的文件名而不是 `priconfig.packaging.xml`
 
-如果将文件命名为 `priconfig.packaging.xml`，Visual Studio 将识别并自动使用它。 如果为其提供不同的名称，需要让 Visual Studio 知道。 将此 XML 添加到项目文件中第一个 `<PropertyGroup>` 元素的开始和结束标记之间。
+如果将文件命名为 `priconfig.packaging.xml`，则 Visual Studio 将自动识别并使用它。 如果为其提供不同的名称，需要让 Visual Studio 知道。 将此 XML 添加到项目文件中第一个 `<PropertyGroup>` 元素的开始和结束标记之间。
 
 ```xml
 <AppxPriConfigXmlPackagingSnippetPath>FILE-PATH-AND-NAME</AppxPriConfigXmlPackagingSnippetPath>
@@ -97,6 +97,6 @@ ms.locfileid: "8938490"
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 Visual Studio 打包 UWP 应用](../packaging/packaging-uwp-apps.md)
-* [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)
-* [指定应用使用的默认资源](specify-default-resources-installed.md)
+* [包使用 Visual Studio 的 UWP 应用](../packaging/packaging-uwp-apps.md)
+* [编译手动与 MakePri.exe 的资源](compile-resources-manually-with-makepri.md)
+* [指定你的应用使用的默认资源](specify-default-resources-installed.md)

@@ -1,26 +1,26 @@
 ---
-title: 线列表
+title: 行列表
 description: 线列表是隔离的直线段的列表。 线列表用于向 3D 场景添加雨夹雪或暴雨之类的任务。 应用程序通过填充一组顶点来创建线列表。
 ms.assetid: 42BF32A1-3535-42A3-82C5-3945CB309F2C
 keywords:
-- 线列表
+- 行列表
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 43013dc820c0f0f67df2e9502d3c57c77e03f250
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926168"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599242"
 ---
-# <a name="line-lists"></a>线列表
+# <a name="line-lists"></a>行列表
 
 
 线列表是隔离的直线段的列表。 线列表用于向 3D 场景添加雨夹雪或暴雨之类的任务。 应用程序通过填充一组顶点来创建线列表。 请注意，线列表中的顶点数必须是大于或等于 2 的偶数。
 
 -   [示例](#example)
--   [相关主题](#related-topics)
+-   [相关的主题](#related-topics)
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
 

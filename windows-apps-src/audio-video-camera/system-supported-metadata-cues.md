@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 元数据, 提示, 语言, 章节
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b3753e92524e300252930f48433f91e175353c9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9046104"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635852"
 ---
 # <a name="system-supported-timed-metadata-cues"></a>系统支持的计时元数据提示
 本文介绍如何利用可以在媒体文件或流中嵌入的多种格式的计时元数据。 UWP 应用可以注册在播放过程中每当遇到这些元数据提示时由媒体管道引发的事件。 通过使用 [**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue) 类，应用可以实现自己的自定义元数据提示，但是本文重点介绍由媒体管道自动检测的几种元数据标准，包括：
@@ -100,7 +100,7 @@ ms.locfileid: "9046104"
 
 [!code-cs[RegisterMetadataHandlerForChapterCues](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetRegisterMetadataHandlerForChapterCues)]
 
-在 **CueEntered** 事件的处理程序中，可以检查传入处理程序中的 [**TimedMetadataTrack**](https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatatrack) 对象的 [**TimedMetadataKind**](https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatatrack.TimedMetadataKind) 属性，以查看元数据是否用于章节提示。如果对多种类型的元数据使用相同的数据提示事件处理程序，则这是必要的操作。 如果关联元数据轨属于类型 **TimedMetadataKind.Chapter**，则将 [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) 的 **Cue** 属性中包含的数据提示强制转换为 [**ChapterCue**](https://docs.microsoft.com/uwp/api/windows.media.core.chaptercue)。 **ChapterCue** 的 [**Title**](https://docs.microsoft.com/uwp/api/windows.media.core.chaptercue.Title) 属性包含播放中刚刚到达的章节的标题。
+在 **CueEntered** 事件的处理程序中，可以检查传入处理程序中的 [**TimedMetadataTrack**](https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatatrack) 对象的 [**TimedMetadataKind**](https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatatrack.TimedMetadataKind) 属性，以查看元数据是否用于章节提示。如果对多种类型的元数据使用相同的数据提示事件程序，则这是必需的。 如果关联元数据轨属于类型 **TimedMetadataKind.Chapter**，则将 [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) 的 **Cue** 属性中包含的数据提示强制转换为 [**ChapterCue**](https://docs.microsoft.com/uwp/api/windows.media.core.chaptercue)。 **ChapterCue** 的 [**Title**](https://docs.microsoft.com/uwp/api/windows.media.core.chaptercue.Title) 属性包含播放中刚刚到达的章节的标题。
 
 [!code-cs[ChapterCueEntered](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetChapterCueEntered)]
 
@@ -182,7 +182,7 @@ ms.locfileid: "9046104"
 ## <a name="related-topics"></a>相关主题
 
 * [媒体播放](media-playback.md)
-* [媒体项、播放列表和曲目](media-playback-with-mediasource.md)
+* [媒体项，播放列表，其中跟踪](media-playback-with-mediasource.md)
 
 
  

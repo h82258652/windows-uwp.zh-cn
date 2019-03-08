@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 信誉, 社交平台
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e7763294458f19509d5b797a6fa10e03678abee
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932286"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641812"
 ---
 # <a name="reputation"></a>信誉
 
@@ -129,7 +129,7 @@ Xbox 要求 (XR) 068 按信誉筛选比赛，要求将信誉较低的玩家与�
     }
 ```
 
-合作伙伴可以对除零售沙盒以外的所有沙盒进行此调用。 此请求用于设置用户的基本信誉评分，玩家的正面反馈权重将全部归零。此调用后用户的实际信誉包含这些基本评分以及玩家的大使奖金和关注者奖金。 此机制创建低评分用户和设置为 1 的 **Reputation.OverallReputation** 来测试匹配筛选 XR。 作品可以从用户统计信息服务获取用户的用户信誉评分，如本主题的“Xbox 的信誉要求”部分所述。
+合作伙伴可以对除零售沙盒以外的所有沙盒进行此调用。 此请求用于设置用户的基本信誉评分，玩家的正面反馈权重将全部归零。此调用后用户的实际信誉将由这些基本评分，以及玩家的大使奖金和关注者奖金组成。 此机制创建低评分用户和设置为 1 的 **Reputation.OverallReputation** 来测试匹配筛选 XR。 作品可以从用户统计信息服务获取用户的用户信誉评分，如本主题的“Xbox 的信誉要求”部分所述。
 
 
 ## <a name="resetting-a-users-reputation-to-the-defaults"></a>将用户信誉重置为默认值
@@ -146,7 +146,7 @@ Xbox 要求 (XR) 068 按信誉筛选比赛，要求将信誉较低的玩家与�
 
 ## <a name="sending-feedback-from-titles"></a>从作品中发送反馈
 
-游戏可以发送有关匹配中玩家的公平比赛反馈。 上述操作可以直接从作品或作品服务中分批实现。 作品可以使用 **ReputationService.SubmitReputationFeedbackAsync 方法**或以下直接 REST 方法：
+游戏可以发送有关匹配中玩家的公平比赛反馈。 上述操作可以直接从作品或作品服务中分批实现。 游戏可以使用 **ReputationService.SubmitReputationFeedbackAsync 方法**或以下直接 REST 方法：
 
 |                      |                                                             |
 |----------------------|-------------------------------------------------------------|

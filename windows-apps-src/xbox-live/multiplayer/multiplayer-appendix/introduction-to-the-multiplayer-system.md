@@ -7,17 +7,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏 2015
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a739aaa650a7086dfe58b1b8ca170e15b3b2ef0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933648"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629412"
 ---
 # <a name="introduction-to-the-multiplayer-system"></a>多人游戏系统简介
 
 | 注意                                                                                                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 本文面向高级 API 的使用。  作为起点，请看一下[多人游戏管理器 API](../multiplayer-manager.md)，其大大简化了开发。  如果你在多人游戏管理器中发现了不受支持的场景，请告知 DAM。 |
+| 本文针对高级 API 的使用。  作为起点，请看一下[多人游戏管理器 API](../multiplayer-manager.md)，其大大简化了开发。  如果你在多人游戏管理器中发现了不受支持的场景，请告知 DAM。 |
 
 本文档包含以下部分
 * 关于多人游戏系统
@@ -142,7 +142,7 @@ Xbox One 的 2015 多人游戏不将“游戏派对”作为系统级构造显�
 ## <a name="multiplayer-terminology"></a>多人游戏术语
 
 
-| 术语                                 | 说明|
+| 术语                                 | 描述|
 | --- | --- |
 | 活动玩家                        | 已设置为在会话内处于“活动”状态的玩家。 当玩家参与游戏时，游戏将玩家设置为此状态。 有关详细信息，请参阅[会话用户状态](mpsd-session-details.md)。                                                                                                                                                                                                                                                                                          |
 | 仲裁程序                              | 为游戏管理多人游戏会话目录 (MPSD) 状态的以查找更多玩家的游戏会话中的单个主机，例如，在向匹配播发游戏会话的会话中。 仲裁程序由作品设置。 仲裁程序并不总是游戏的主机。 请参阅[会话仲裁程序](mpsd-session-details.md)。                                                                                                                                                                            |
@@ -153,7 +153,7 @@ Xbox One 的 2015 多人游戏不将“游戏派对”作为系统级构造显�
 | 游戏会话主机                    | 为在基于主机的对等网络体系结构上生成的游戏运行游戏模拟的主机。 此主机通常会与仲裁程序相同，但没有必要一定相同。                                                                                                                                                                                                                                                                                                                            |
 | 句柄（或会话句柄）           | 具有其他状态以及与之关联的行为的 MPSD 会话的引用。 请参阅[MPSD 会话句柄](multiplayer-session-directory.md)。                                                                                                                                                                                                                                                                                                                                                                    |
 | 非活动玩家                      | 已设置为在会话内处于“非活动”状态的玩家。 在游戏被挂起或非活动时（由游戏定义），游戏将玩家设置为此状态。 在某些情况下，MPSD 也可能将玩家设置为非活动，但这主要由游戏负责。 有关详细信息，请参阅[会话用户状态](mpsd-session-details.md)。                                                                                                                           |
-| Hopper                               | Hopper 是一组逻辑驱动的匹配票证。 作品可以有多个 Hopper，但仅同一个 Hopper 内的票证可以匹配。 例如，游戏可以创建一个玩家技能是最重要的匹配项目的 Hopper。 它可以使用另一个 Hopper，在该 Hopper 中，只有玩家购买了相同的可下载内容才会匹配。 有关 Hopper 在何种情况下适合 SmartMatch 工作流的详细信息，请参阅 [SmartMatch 运行时操作](smartmatch-matchmaking.md) |
+| Hopper                               | Hopper 是一组逻辑驱动的匹配票证。 作品可以有多个 Hopper，但仅同一个 Hopper 内的票证可以匹配。 例如，游戏可以创建一个玩家技能是最重要的匹配项目的 Hopper。 它可以使用另一个漏斗，在该漏斗中，只有玩家购买了相同的可下载内容才会匹配。 有关 Hopper 在何种情况下适合 SmartMatch 工作流的详细信息，请参阅 [SmartMatch 运行时操作](smartmatch-matchmaking.md) |
 | 进行中加入                     | 在游戏开始后加入另一个玩家游戏的概念。 玩家可以通过好友的玩家卡片加入好友的游戏。 游戏随后可以在适当时将这些玩家移入该游戏会话。                                                                                                                                                                                                                                                                                                      |
 | 大厅会话                        | 正在等待加入游戏会话的受邀请玩家的帮助程序会话。 请参阅 [MPSD 会话详细信息](mpsd-session-details.md)。                                                                                                                                                                                                                                                                                                                                                                                       |
 | 匹配目标会话                 | SmartMatch 匹配期间设置的以表示匹配的匹配会话。 请参阅 [SmartMatch 匹配](smartmatch-matchmaking.md)。                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -167,7 +167,7 @@ Xbox One 的 2015 多人游戏不将“游戏派对”作为系统级构造显�
 
 ## <a name="whats-new-in-2015-multiplayer"></a>2015 多人游戏的新增功能
 
-| 注意                                                                                                                                                                                                                                               |
+| 警告                                                                                                                                                                                                                                               |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 在使用 2015 多人游戏时，请务必注意，不应再使用 2014 多人游戏中与派对相关的类。 将 2015 多人游戏功能与派对相关的类混合将导致不一致的行为，因此永远都不应该尝试。 |
 
@@ -205,10 +205,10 @@ MPSD 现在支持作品维护与它之间的 Web 套接字连接。 这些连接
 
 | 函数 | Xbox 360 | Xbox One |
 |---|---|---|
-| **获取游戏会话信息** | XSessionGetDetails、XSessionSearchByID 或作品执行跟踪。 | 作品从 MPSD 请求会话信息。 |
+| **获取游戏会话的信息** | XSessionGetDetails、XSessionSearchByID 或作品执行跟踪。 | 作品从 MPSD 请求会话信息。 |
 |**迁移主机** | 在需要时，作品调用 XSessionMigrateHost。 | 根据迁移的原因，作品可以为会话分配新主机，或者可以创建新的 MPSD 会话。 |
-| **多个玩家会话** | 一次处理多个会话比较复杂，例如，XNetReplaceKey 与 XNetUnregisterKey。 | 基于服务的会话让管理一个会话更加简洁，并简化了多个会话的处理。 |
-| **注销和断开连接** | 作品必须使用 XCloseHandle 或 XSessionDelete 以不同方式处理断开连接和注销。 | MPSD 简化了注销和断开连接的处理，以及游戏配置中的超时设置。 |
+| **播放机的多个会话** | 一次处理多个会话比较复杂，例如，XNetReplaceKey 与 XNetUnregisterKey。 | 基于服务的会话让管理一个会话更加简洁，并简化了多个会话的处理。 |
+| **Signouts 和断开连接** | 作品必须使用 XCloseHandle 或 XSessionDelete 以不同方式处理断开连接和注销。 | MPSD 简化了注销和断开连接的处理，以及游戏配置中的超时设置。 |
 | **匹配** | 基于客户端的匹配查询 | 允许在作品内获得更好的匹配质量和更轻松的背景匹配的基于服务的匹配。 |
 
 
@@ -233,12 +233,12 @@ Xbox Live 计算服务是 Xbox One 的一项新功能。 它支持开发人员�
 
 ## <a name="see-also"></a>另请参阅
 
-[多人游戏会话目录 (MPSD)](multiplayer-session-directory.md)
+[多玩家会话目录 (MPSD)](multiplayer-session-directory.md)
 
 [SmartMatch 匹配](smartmatch-matchmaking.md)
 
-[实时活动 (RTA) 服务](../../real-time-activity-service/real-time-activity-service.md)
+[实时活动 (RTA) 的服务](../../real-time-activity-service/real-time-activity-service.md)
 
 [信誉](../../social-platform/people-system/reputation.md)
 
-[在多人游戏中使用 Xbox Live 计算（需要托管合作伙伴的访问权限）](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/xbox-live-compute/using-xbox-live-compute-in-multiplayer)
+[在多人 （需要托管的合作伙伴访问权限） 中使用 Xbox Live 计算](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/xbox-live-compute/using-xbox-live-compute-in-multiplayer)

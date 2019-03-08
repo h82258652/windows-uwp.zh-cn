@@ -6,24 +6,24 @@ label: Split view
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e0c709261b08231fa82af615d5398fd66648d4e
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036869"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646462"
 ---
 # <a name="split-view-control"></a>拆分视图控件
 
 拆分视图控件具有一个可展开/可折叠的窗格和一个内容区域。
 
-> **重要 API**：[SplitView 类](https://msdn.microsoft.com/library/windows/apps/dn864360)
+> **重要的 Api**:[SplitView 类](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 下面是使用 SplitView 显示其中心的 Microsoft Edge 应用的示例。
 
@@ -36,7 +36,7 @@ ms.locfileid: "9036869"
 
     在打开之前隐藏窗格。 在打开时，窗格覆盖内容区域。
 
--   **内联**
+-   **Inline**
 
     窗格始终可见，并且不会覆盖内容区域。 窗格和内容区域划分可用的屏幕空间。
 
@@ -63,7 +63,7 @@ ms.locfileid: "9036869"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/SplitView">打开此应用，了解 SplitView 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>

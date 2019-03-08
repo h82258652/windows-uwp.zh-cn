@@ -1,23 +1,23 @@
 ---
-title: 三角形内插
-description: 在呈现期间，管道会在每个三角形中内插顶点数据。
+title: 三角形插值
+description: 在渲染期间，管道会在每个三角形中插入顶点数据。
 ms.assetid: 1A76DD78-CED7-42BE-BA81-B9050CD3AF9B
 keywords:
-- 三角形内插
+- 三角形插值
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e8017cd75ed3dfd4129d6c15d668648792cc8d0a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919263"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592902"
 ---
-# <a name="triangle-interpolation"></a>三角形内插
+# <a name="triangle-interpolation"></a>三角形插值
 
 
-在渲染期间，管道会在每个三角形中插入顶点数据。 顶点数据可以是各种各样的数据，并且可以包括（但不限于）：漫射颜色、反射颜色、漫射 alpha（三角形不透明度）、反射 alpha 和雾系数。 对于可编程的顶点管道，雾系数取自雾注册。 对于固定函数顶点管道，雾系数取自反射 alpha。
+在渲染期间，管道会在每个三角形中插入顶点数据。 顶点数据可以是各种各样的数据并可以包括（但不限于）：漫射颜色、反射颜色、漫射 alpha（三角形不透明度）、反射 alpha 和雾化系数。 对于可编程的顶点管道，雾系数取自雾注册。 对于固定函数顶点管道，雾系数取自反射 alpha。
 
 对于某些顶点数据，内插取决于当前阴影模式，如下所示：
 
@@ -35,7 +35,7 @@ ms.locfileid: "8919263"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[坐标系和几何图形](coordinate-systems-and-geometry.md)
+[坐标系和坐标 geometry](coordinate-systems-and-geometry.md)
 
  
 

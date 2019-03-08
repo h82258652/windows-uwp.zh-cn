@@ -6,11 +6,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛, ux
 ms.localizationpriority: medium
 ms.openlocfilehash: edc81ff7c692c4789855d341917c54acf4d24594
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919965"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598352"
 ---
 # <a name="match-engagement"></a>比赛参与
 
@@ -24,13 +24,13 @@ ms.locfileid: "8919965"
 > [!NOTE]  
 > 比赛是四个阶段中唯一不受 Arena UI 支持的阶段。 至少，你的游戏必须在每场比赛结束时将参与者重定向到 Arena UI（当“比赛”阶段完成时），以便参与者查看结果。
 
-###### <a name="diagram-the-four-stages-of-participant-progression-after-check-in"></a>图示：参与者在报到后进阶的四个阶段。
+###### <a name="diagram-the-four-stages-of-participant-progression-after-check-in"></a>关系图：参与者的发展演变，在签入之后四个阶段。
 
 ![比赛参与流程图](../../images/arena/arena-ux-match-flow.png)
 
 ![比赛参与流程条](../../images/arena/arena-ux-match-flow-bar.png)
 
-## <a name="1-ready-waiting-for-match"></a>1. 就绪（“等待比赛”）
+## <a name="1-ready-waiting-for-match"></a>1.就绪 （"正在等待匹配"）
 
 ![“等待比赛”图示](../../images/arena/arena-ux-flow-ready.png)
 
@@ -54,19 +54,19 @@ ms.locfileid: "8919965"
 
 在“就绪”阶段，参与者可在以下三个位置了解自己的状态：
 
-* Arena UI：锦标赛详细信息页面
-* 游戏内：锦标赛列表、推广、比赛大厅
+* 竞技场 UI:竞赛详细信息页
+* 在游戏中：联赛列表中，提升，匹配大厅
 
 > [!TIP]  
-> **UX 建议**  
-> 表示玩家正在等待活动中的下一场比赛。 示例：“比赛挂起”或“收到轮空”通知。  
+> **用户体验的建议**  
+> 表示玩家正在等待活动中的下一场比赛。 示例："匹配挂起"或者"已收到 bye"通知。  
 >
 > 如果此阶段受支持，请提供返回锦标赛详细信息页面的方法。  
 >
-> 提供活动背景：锦标赛名称、状态、风格、描述、开始时间/结束时间等等。
+> 提供事件的上下文：联赛名称、 状态、 样式、 描述、 开始时间和结束时间，等等。
 
 
-###### <a name="ui-example-in-game-multiplayer-lobby"></a>UI 示例：游戏内的多人游戏大厅
+###### <a name="ui-example-in-game-multiplayer-lobby"></a>UI 示例：多玩家大厅中的游戏
 
 ![锦标赛大厅屏幕截图](../../images/arena/arena-ux-tournament-lobby.png)
 
@@ -81,7 +81,7 @@ ms.locfileid: "8919965"
 如果游戏支持此阶段，则在比赛准备就绪后进展至比赛阶段。
 
  
-## <a name="2-playing"></a>2. 比赛
+## <a name="2-playing"></a>2.播放
 
 ![进行比赛图示](../../images/arena/arena-ux-flow-play.png)
 
@@ -100,7 +100,7 @@ ms.locfileid: "8919965"
 * Arena 锦标赛详细信息页面 – 参与者可选择 **Play** 启动游戏并进入比赛
  
 > [!TIP]  
-> **UX 建议：** 确认进入比赛。  
+> **用户体验建议：** 确认匹配项。  
 > 显示 UI，以通知和/或确认参与者将直接进入比赛大厅。
 
 ###### <a name="ui-example-match-entry-confirmation-dialog-box"></a>UI 示例：比赛入口确认对话框
@@ -110,7 +110,7 @@ ms.locfileid: "8919965"
 在参与者从游戏外的位置选择进入锦标赛后，显示此 UI。 在启动游戏之后、进入比赛大厅之前执行此操作。
 
 > [!TIP]  
-> **UX 建议：** 提供一个用于取消的选项。
+> **用户体验建议：** 提供的选项来取消。
 
 参与者可能决定要完成其他任务来准备锦标赛。 有必要支持参与者随意改变主意。 你的游戏可以提供附加选项：
 
@@ -134,7 +134,7 @@ ms.locfileid: "8919965"
 
 锦标赛比赛大厅应包含详细信息，用以指明这是锦标赛，与标准的多玩家比赛不同。 此类详细信息的示例包括计时、团队依赖关系、连续轮和阶段。 当比赛结束时，要么前进到步骤 3（等待结果），要么使玩家返回到 Arena UI。
 
-###### <a name="ui-example-match-lobby-details"></a>UI 示例：比赛大厅详细信息
+###### <a name="ui-example-match-lobby-details"></a>UI 示例：匹配大厅详细信息
 
 ![比赛大厅详细信息屏幕](../../images/arena/arena-ux-match-lobby-details.png)
 
@@ -174,7 +174,7 @@ Arena UI 可在用户做好比赛准备时（例如，在接受 Arena 发送的�
 
 在作废时间（即开始时间加上作废超时，请参阅“比赛图示”）之前，会话中必须至少有一个玩家处于活动状态。 如果在作废时间之前没有人以活动状态加入会话，比赛将取消，并通过 Arena 仲裁为两个团队都判输。
  
-## <a name="3-results"></a>3. 结果
+## <a name="3-results"></a>3.结果
 
 ![比赛结果图示](../../images/arena/arena-ux-flow-results.png)
 
@@ -202,7 +202,7 @@ Arena UI 可在用户做好比赛准备时（例如，在接受 Arena 发送的�
 只要第一个客户端向 Xbox Live 报告结果，便会自动开始仲裁。 只要所有客户端都报告结果，仲裁便结束。 有些情况下，参与者的比赛时间可能比会话模板中指定的仲裁时间长。 这会引发比赛在参与者准备就绪之前被强制结束的风险。
 
 > [!TIP]  
-> **UX 建议：** 提供固定的比赛会话时间框架。
+> **用户体验建议：** 提供在固定的匹配会话的时间段。
 >
 > 比赛会话中的预定义时间限制将减少因仲裁超时而出现问题的风险。
 
@@ -218,7 +218,7 @@ Arena UI 可在用户做好比赛准备时（例如，在接受 Arena 发送的�
 如果你的游戏不显示锦标赛结果或游戏内的阶段进展，建议参与者通过某种方式返回到可提供此信息的 UI。 这可能是 Arena UI 或第三方锦标赛组织者应用。 理想情况下，此服务在比赛结束后出现，或在玩家请求放弃正在进行的比赛时作为响应出现。 可从结束游戏报告屏幕中完成此操作。
 
 > [!TIP]  
-> **UX 建议**  
+> **用户体验建议**  
 > 将一个控制器按钮专门用作供玩家返回到 Xbox 操作面板中的 Arena 中心的快捷方式。  
 >
 > ![Arena 中心控制器按钮](../../images/arena/arena-ux-arena-hub-button.png)
@@ -228,7 +228,7 @@ Arena UI 可在用户做好比赛准备时（例如，在接受 Arena 发送的�
 当参与者完成比赛时，你的游戏清晰指明后续步骤是非常重要的。 这包括查看锦标赛轮或阶段结果的方法（如果游戏内未提供）。
 
 > [!TIP]  
-> **UX 建议：** 使用弹出覆盖。
+> **用户体验建议：** 使用弹出窗口覆盖。
 >
 > 正在生成锦标赛结果并且结束游戏经历已完成时，会显示此 UI。
 
@@ -246,15 +246,15 @@ Arena UI 可在用户做好比赛准备时（例如，在接受 Arena 发送的�
 
 调用 Arena UI 后，你的游戏应继续运行，可能在同一个屏幕中，等待其他协议激活事件。 然后，如果玩家有其他要进行的比赛，游戏将准备前往。 当玩家从一个比赛转到另一个比赛时，在 游戏与 Arena UI 之间切换可以加快用户体验。
 
-###### <a name="ui-example-tournament-arbitrated-resultswinning-team"></a>UI 示例：锦标赛仲裁结果 - 获胜团队
+###### <a name="ui-example-tournament-arbitrated-resultswinning-team"></a>UI 示例：联赛仲裁结果-胜利之队
 
 ![你已获胜屏幕](../../images/arena/arena-ux-won-game-redirect.png)
 
-###### <a name="ui-example-end-of-tournament-resultsmatch-ended"></a>UI 示例：锦标赛结束结果 - 比赛已结束 
+###### <a name="ui-example-end-of-tournament-resultsmatch-ended"></a>UI 示例：最终的联赛结果-匹配结束 
 
 ![你输掉比赛屏幕](../../images/arena/arena-ux-lost-game-redirect.png)
 
-## <a name="4-end"></a>4. 结束
+## <a name="4-end"></a>4.结束
 
 ![比赛结束图示](../../images/arena/arena-ux-flow-end.png)
 
@@ -276,7 +276,7 @@ Arena UI 显示结果并为最终获胜者庆祝：
 * 在锦标赛浏览功能中的 **My Tournaments** 下列出。
 
 
-###### <a name="ui-example-end-of-tournament-resultstournament-ended"></a>UI 示例：锦标赛结束结果 - 锦标赛已结束
+###### <a name="ui-example-end-of-tournament-resultstournament-ended"></a>UI 示例：最终的联赛结果-竞赛结束
 
 ![锦标赛结束屏幕](../../images/arena/arena-ux-tournament-completed.png)
 

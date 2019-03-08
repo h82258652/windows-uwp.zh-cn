@@ -3,14 +3,14 @@ title: Xbox Live 的新增功能
 description: Xbox Live SDK 的新增功能
 ms.date: 10/23/2018
 ms.topic: article
-keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
+keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 33e5b6afbf0d60679bfce1789be2d965fd881f1c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918270"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57614112"
 ---
 # <a name="whats-new-for-xbox-live"></a>Xbox Live 的新增功能
 你也可以查看 [Xbox Live API GitHub 提交历史记录](https://github.com/Microsoft/xbox-live-api/commits/master)，了解 Xbox Live API 的所有最新的代码更改。
@@ -24,15 +24,15 @@ ms.locfileid: "8918270"
 * [2017 年 5 月](#may-2017)
 * [2017 年 4 月](#april-2017)
 * [2017 年 3 月](#march-2017)
-* [已存档](#archived)
+* [存档](#archived)
 
 ## <a name="june-2018"></a>2018 年 6 月
 
 ### <a name="xbox-live-features"></a>Xbox Live 功能
 
-#### <a name="c-api-layer-for-xsapi"></a>Xsapi C API 图层
+#### <a name="c-api-layer-for-xsapi"></a>XSAPI 的 C API 层
 
-C Api 现已推出的 Xbox Live 的一些功能。 使用新的 API 层为受支持的功能，包括自定义内存管理、 手动线程管理对于异步任务，以及新的 HTTP 库提供了很多优势。
+C Api 现可用于 Xbox Live 的某些功能。 新的 API 层提供了有关支持的功能，包括自定义内存管理、 手动线程管理的异步任务，以及新的 HTTP 库的很多好处。
 
 有关详细信息，请参阅[Xbox Live C Api](../xsapi-flat-c.md)。
 
@@ -87,7 +87,7 @@ API 可用于直接从你的游戏内创建和管理游戏内俱乐部。 这些
 
 #### <a name="multiplayer"></a>多人游戏
 
-* 查询搜索句柄现在在响应中包含的自定义会话属性。
+* 现在查询搜索句柄在响应中包含自定义会话属性。
 
 #### <a name="bug-fixes"></a>Bug 修复
 
@@ -119,7 +119,7 @@ API 可用于直接从你的游戏内创建和管理游戏内俱乐部。 这些
 
 #### <a name="data-platform-2017"></a>数据平台 2017
 
-我们引入了简化的统计 API。  传统上来讲您必须以发送与 XDP 或合作伙伴中心上定义的统计规则对应的事件，并且这会更新云中的统计信息值。  我们将此模型称为 Stats 2013。
+我们引入了简化的统计 API。  传统上，你必须将发送到 stat XDP 或合作伙伴中心上定义的规则对应的事件，这些更新会在云中的统计信息值。  我们将此模型称为 Stats 2013。
 
 使用 Stats 2017，你的标题现在可以控制统计信息值。  你只需调用包含最新统计信息值的 API，它们即可被直接发送到服务，无需发送事件。  这使用新的 `StatsManager` API，你可以在[玩家统计信息](../leaderboards-and-stats-2017/player-stats.md)中了解更多信息
 
@@ -140,9 +140,9 @@ Xbox Live 创意者计划是一项开发人员计划，为更广大的开发人�
 | 文章 | 描述 |
 |---------|-------------|
 |[Xbox Live 服务配置](../xbox-live-service-configuration.md) | 更新了为 Xbox Live 游戏进行服务配置的相关信息
-| [配置 Unity 中的 Xbox Live](../get-started-with-creators/configure-xbox-live-in-unity.md) | 针对 Xbox Live 创意者计划开发人员的 Unity 设置的新信息 |
+| [配置 Xbox Live 在 Unity 中](../get-started-with-creators/configure-xbox-live-in-unity.md) | 针对 Xbox Live 创意者计划开发人员的 Unity 设置的新信息 |
 | [Xbox Live 沙盒](../xbox-live-sandboxes.md) | Xbox Live 沙盒和内容隔离的简化指南 |
-| [Xbox Live 测试帐户](../xbox-live-test-accounts.md) | 了解如何测试帐户工作，以及如何在合作伙伴中心创建帐户 |
+| [Xbox Live 的测试帐户](../xbox-live-test-accounts.md) | 了解如何测试帐户工作原理，以及如何创建在合作伙伴中心 |
 
 ## <a name="archived"></a>已存档
 

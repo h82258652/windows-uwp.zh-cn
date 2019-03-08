@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fde0cbf5335b4f5c3da2f21f692fc2c23455776
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937160"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630372"
 ---
 # <a name="natural-motion-animations"></a>自然运动动画
 
@@ -22,9 +22,9 @@ ms.locfileid: "8937160"
 
 运动可帮助建立这种联系的一种方式是提供让用户从外观上感到熟悉的体验。 用户对于其在运动中感觉到的体验有一种无意识的预期，他们希望这种体验基于其实际的生活经验。 我们看到物体在地板上如何滑动、如何从桌面上跌落、如何相互碰撞，以及如何在弹簧的作用下振荡。 基于真实世界物理特性来利用这种预期的运动，在我们的眼中会显得更加自然。 运动变得更加自然，与用户的交互也更多，但更重要的是，整个体验都变得更加让人难忘和愉快。
 
-![无动画效果的缩放运动](images/animation/scale-no-animation.gif)
-![带贝塞尔曲线的缩放运动](images/animation/scale-cubic-bezier.gif)
-![带弹簧动画的缩放运动](images/animation/scale-spring.gif)
+![扩展不包含动画的动作](images/animation/scale-no-animation.gif)
+![缩放与三次方贝塞尔运动](images/animation/scale-cubic-bezier.gif)
+![缩放使用 spring 动画的动作](images/animation/scale-spring.gif)
 
 最终结果是应用获得了更高的用户参与度和用户保留率。
 

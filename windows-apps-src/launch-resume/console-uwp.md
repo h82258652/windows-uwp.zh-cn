@@ -6,31 +6,31 @@ ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 111ef4d5e8830485a5de3b44d69826df256d1c4d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944302"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592102"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>创建通用 Windows 平台控制台应用
 
-本主题介绍了如何创建[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)或 C + + /CX 通用 Windows 平台 (UWP) 控制台应用。
+本主题介绍如何创建[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)或 C + + /cli CX 通用 Windows 平台 (UWP) 控制台应用程序。
 
-从 Windows 10，版本 1803，你可以编写 C + + WinRT 或 C + + /CX UWP 控制台应用在控制台窗口中，如 DOS 或 PowerShell 控制台窗口中运行。 控制台应用控制台窗口用于输入和输出，并可以使用[通用的 C 运行时](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)功能，如**printf**和**getchar**。 UWP 控制台应用可以发布到 Microsoft Store。 它们在应用列表中有对应条目，并有可以固定到“开始”菜单的主要磁贴。 可以从开始菜单启动 UWP 控制台应用，但你通常将从命令行启动它们。
+从 Windows 10，版本 1803，您可以编写 C + + WinRT 或 C + + /cli CX UWP 的控制台应用程序在控制台窗口，如 DOS 或 PowerShell 控制台窗口中运行。 控制台应用程序的输入和输出，使用控制台窗口中，可以使用[通用 C 运行时](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)之类的函数**printf**并**getchar**。 UWP 控制台应用可以发布到 Microsoft Store。 它们在应用列表中有对应条目，并有可以固定到“开始”菜单的主要磁贴。 可以从开始菜单中，启动 UWP 控制台应用，但你通常将从命令行启动它们。
 
-若要查看操作中，下面是有关创建 UWP 控制台应用的视频。
+若要查看在操作中，下面是有关创建 UWP 控制台应用程序的视频。
 
 > [!VIDEO https://www.youtube.com/embed/bwvfrguY20s]
 
 ## <a name="use-a-uwp-console-app-template"></a>使用 UWP 控制台应用模板 
 
-若要创建 UWP 控制台应用，请首先安装 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal)中提供的**控制台应用（通用）项目模板**。 就可在**新建项目**下的已安装的模板 > **已安装** > **其他语言** > **Visual c + +** > **Windows 通用**作为**控制台应用 C + WinRT (通用 Windows)** 和**控制台应用 C + + /CX (通用 Windows)**。
+若要创建 UWP 控制台应用，请首先安装 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal)中提供的**控制台应用（通用）项目模板**。 已安装的模板然后下有**新的项目** > **已安装** > **其他语言** >  **Visual c + +** > **Windows 通用**作为**控制台应用 C + + WinRT (通用 Windows)** 和**控制台应用 C + + /cli CX (通用 Windows)**.
 
 ## <a name="add-your-code-to-main"></a>将代码添加到 main()
 
 模板添加了 **Program.cpp**，其中包含 `main()` 函数。 这是 UWP 控制台应用中执行开始的位置。 使用 `__argc` 和 `__argv` 形式参数访问命令行实际参数。 控制从 `main()` 返回时，UWP 控制台应用会退出。
 
-通过添加下面的示例的**Program.cpp** **控制台应用 C + WinRT**模板：
+下面的示例对**Program.cpp**通过添加**控制台应用 c + + WinRT**模板：
 
 ```cppwinrt
 #include "pch.h"
@@ -99,9 +99,9 @@ UWP 控制台应用可以从其运行的目录及其下方目录访问文件系�
 
 ## <a name="additional-considerations-for-uwp-console-apps"></a>UWP 控制台应用的其他注意事项
 
-- 仅 C + + /winrt 与 C + + /CX UWP 应用可能是控制台应用。
+- 仅 C + + WinRT 和 C + + /cli CX UWP 应用可能是控制台应用。
 - UWP 控制台应用必须针对桌面或 IoT 项目类型。
-- UWP 控制台应用可能无法创建一个窗口。 他们无法使用 messagebox （） 或 Location()，或者可能出于任何原因，创建一个窗口的任何其他 API，如用户同意提示。
+- UWP 控制台应用程序可能会创建一个窗口。 它们不能使用 MessageBox()，location （） 或出于任何原因，可能会创建一个窗口的任何其他 API，如用户同意提示。
 - UWP 控制台应用可能不使用后台任务，也不会作为后台任务运行。
 - 除[命令行激活](https://blogs.windows.com/buildingapps/2017/07/05/command-line-activation-universal-windows-apps/#5YJUzjBoXCL4MhAe.97)外，UWP 控制台应用不支持激活合约，包括文件关联、协议关联等。
 - 尽管 UWP 控制台应用支持多实例，但它们不支持[多实例重定向](multi-instance-uwp.md)

@@ -1,5 +1,5 @@
 ---
-Description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
+Description: 本文介绍了如何使用自适应磁贴模板将本地磁贴通知发送到主要磁贴和辅助磁贴。
 title: 发送本地磁贴通知
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 template: detail.hbs
@@ -8,16 +8,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5752a7bf18d785121258ea3fe75afe8383be2aff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946312"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636102"
 ---
 # <a name="send-a-local-tile-notification"></a>发送本地磁贴通知
  
 
-在 windows 10 中的主要应用磁贴定义在应用清单中，而辅助磁贴是以编程方式创建和由你的应用代码定义。 本文介绍了如何使用自适应磁贴模板将本地磁贴通知发送到主要磁贴和辅助磁贴。 （本地通知是从应用代码发送的通知，而不是从 Web 服务器推送或拉取的通知。）
+Windows 10 中的主应用磁贴被定义在应用程序清单中，而辅助磁贴以编程方式创建和定义的应用程序代码。 本文介绍了如何使用自适应磁贴模板将本地磁贴通知发送到主要磁贴和辅助磁贴。 （本地通知是从应用代码发送的通知，而不是从 Web 服务器推送或拉取的通知。）
 
 ![默认磁贴和带有通知的磁贴](images/sending-local-tile-01.png)
 
@@ -46,9 +46,9 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ## <a name="create-the-notification-content"></a>创建通知内容
 
 
-在 windows 10，使用自适应磁贴模板，这允许你创建适合你的通知的自定义视觉布局定义磁贴负载。 （若要了解自适应磁贴的功能，请参阅[创建自适应磁贴](create-adaptive-tiles.md)。）
+在 Windows 10 中，使用自适应磁贴模板，可用于创建通知的自定义可视布局定义磁贴有效负载。 （若要了解自适应磁贴的功能，请参阅[创建自适应磁贴](create-adaptive-tiles.md)。）
 
-此代码示例会为中型磁贴和宽磁贴创建自适应磁贴内容。
+此代码示例会为中等和加宽磁贴创建自适应磁贴内容。
 
 ```csharp
 // In a real app, these would be initialized with actual data
@@ -150,7 +150,7 @@ tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);
 
 尽管本地发送磁贴通知比较简单，但将通知发送到主要磁贴或辅助磁贴略有不同。
 
-**主要磁贴**
+**主磁贴**
 
 若要将通知发送到主要磁贴，请使用 [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager) 为主要磁贴创建磁贴更新程序，并通过调用“更新”发送通知。 无论是否可见，你的应用的主要磁贴始终存在，因此你可以向其发送通知，即使它没有固定。 如果用户稍后固定你的主要磁贴，你发送的通知也将随后显示。
 
@@ -206,11 +206,11 @@ TileUpdateManager.CreateTileUpdaterForApplication().Clear();
 
 在执行了第一次磁贴更新之后，你可以通过启用[通知队列](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)来扩展磁贴的功能。
 
-**其他通知传送方法**
+**其他通知传递方法**
 
 本文将向你介绍如何将磁贴更新作为一个通知发送。 若要了解其他通知传送方法（包括计划通知、定期通知和推送通知），请参阅[传送通知](choosing-a-notification-delivery-method.md)。
 
-**XmlEncode 传送方法**
+**XmlEncode 传递方法**
 
 如果你使用的不是[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，则此通知传送方法为备用方法。
 
@@ -292,7 +292,7 @@ var notification = new TileNotification(doc);
 * [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
 * [**Windows.UI.Notifications 命名空间**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
 * [如何使用通知队列 (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
-* [传送通知](choosing-a-notification-delivery-method.md)
+* [将通知传递](choosing-a-notification-delivery-method.md)
  
 
  

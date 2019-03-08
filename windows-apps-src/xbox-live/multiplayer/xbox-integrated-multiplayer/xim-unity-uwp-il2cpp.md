@@ -6,11 +6,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, Unity, Xbox 集成多人游戏
 ms.localizationpriority: medium
 ms.openlocfilehash: a600fd253efae1daca34241b105a69514561e01d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921060"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646442"
 ---
 # <a name="use-xim-unity-with-il2cpp"></a>使用 XIM（带有 IL2CPP 的 Unity）
 
@@ -25,29 +25,29 @@ Windows 运行时对 Unity 中 IL2CPP 的支持
 
 ## <a name="using-the-xim-unity-asset-package"></a>使用 XIM Unity 资产包
 
-### <a name="1-install-unity"></a>1. 安装 Unity
+### <a name="1-install-unity"></a>1.安装 Unity
 
 安装 Unity 5.6 或更高版本，并确保你在安装过程中选择了 **Windows Store Il2CPP 脚本后端**
 
-### <a name="2-install-visual-studio-tools-for-unity-version-31-and-above-for-intellisense-support-when-using-winmds"></a>2. 安装 Visual Studio Tools for Unity 3.1 或更高版本，以在使用 WinMD 时获得 IntelliSense 支持
+### <a name="2-install-visual-studio-tools-for-unity-version-31-and-above-for-intellisense-support-when-using-winmds"></a>2.安装 Visual Studio Tools for Unity 版本 3.1 和上面的 IntelliSense 支持使用 Winmd 时
 
-对于 Visual Studio 2015，可以在 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity) 找到该组件。 对于 Visual Studio 2017，可以在 Visual Studio 2017 安装程序内部添加该组件。
+对于 Visual Studio 2015，可以在 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity) 找到该组件。 对于 Visual Studio 2017，该组件可以添加到 Visual Studio 2017 安装程序中。
 
-### <a name="3-open-a-new-or-existing-unity-project"></a>3. 打开新的或现有的 Unity 项目
+### <a name="3-open-a-new-or-existing-unity-project"></a>3.打开新的或现有的 Unity 项目
 
-### <a name="4-switch-the-platform-to-universal-windows-platform-in-the-unity-build-settings-menu"></a>4. 在“Unity 生成设置”菜单中将平台切换到通用 Windows 平台
+### <a name="4-switch-the-platform-to-universal-windows-platform-in-the-unity-build-settings-menu"></a>4.在 Unity 生成设置菜单上切换到通用 Windows 平台的平台
 
 ![Unity 生成设置菜单中选中了通用 Windows 平台生成设置](../../images/xboxintegratedmultiplayer/xim-unity-build.png)
 
-### <a name="5-enable-il2cpp-scripting-backend-in-the-unity-player-settings-and-set-api-compatibility-to-net-46"></a>5. 在 Unity 播放器设置中启用 IL2CPP 脚本后端，并将 API 兼容性设置为 .NET 4.6
+### <a name="5-enable-il2cpp-scripting-backend-in-the-unity-player-settings-and-set-api-compatibility-to-net-46"></a>5.启用 IL2CPP 在 Unity 播放器设置中，脚本后的端和 API 兼容性设置为.NET 4.6
 
 ![在 Unity 播放器设置菜单中的配置部分，“API 兼容性”设置为 ".NET 4.6"](../../images/unity/unity-il2cpp-1.png)
 
-### <a name="6-import-the-latest-version-of-the-xbox-integrated-multiplayer-winrt-unity-asset-package"></a>6. 导入最新版本的 Xbox 集成多人游戏 WinRT Unity 资产包
+### <a name="6-import-the-latest-version-of-the-xbox-integrated-multiplayer-winrt-unity-asset-package"></a>6.导入 Xbox 集成多人 WinRT Unity 资产包的最新版本
 
 资产包位置在 https://github.com/Microsoft/xbox-integrated-multiplayer-unity-plugin/releases
 
-### <a name="7-you-can-now-use-xim-in-your-scripts"></a>7. 现在可以在脚本中使用 XIM
+### <a name="7-you-can-now-use-xim-in-your-scripts"></a>7.现在可以在脚本中使用 XIM
 
 有关如何通过 C# 使用 XIM 的更多指南，请参阅[使用 XIM (C#)](using-xim-cs.md)。
 
@@ -101,15 +101,15 @@ public class XimScript
 
 有关 `ENABLE_WINMD_SUPPORT` #define 指令的详细信息，请参阅 [Windows 运行时支持](https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html)上的 Unity 文档。
 
-### <a name="8-required-capability-content"></a>8. 所需功能内容
+### <a name="8-required-capability-content"></a>8.所需的功能的内容
 
 使用 XIM 的应用程序本身需要同时通过 Internet 和本地网络连接并接受来自网络资源的连接。 此外，还需要获得对麦克风设备的访问权限，以支持语音聊天。 因此，应用应在播放器设置的发布设置中声明 "InternetClientServer"、"PrivateNetworkClientServer" 功能以及 "Microphone" 设备功能。
 
 ![Unity 功能菜单中选中了 "InternetClientServer"、"PrivateNetworkClientServer" 和 "Microphone" 功能](../../images/xboxintegratedmultiplayer/xim-unity-capability.png)
 
-### <a name="9-build-the-project-in-unity"></a>9. 在 Unity 中生成项目。
+### <a name="9-build-the-project-in-unity"></a>9.生成 Unity 中的项目。
 
-1. 转到“文件”|“生成设置”，单击**通用 Windows 平台**，并确保你单击了**切换平台**
+1. 转到文件\|生成设置，请单击**通用 Windows 平台**，并确保您单击**交换机平台**
 
 2. 单击“添加打开的场景”将当前场景添加到版本中
 
@@ -133,6 +133,6 @@ public class XimScript
 
 这将启动类似正常的 UWP 应用的应用，并允许进行 Xbox Live 调用，因为它们需要 UWP 应用容器才能正常工作。
 
-### <a name="10-rebuild-if-you-make-changes-to-anything-in-unity"></a>10. 如果对 Unity 中的任何内容进行更改，请重新生成
+### <a name="10-rebuild-if-you-make-changes-to-anything-in-unity"></a>10.如果对在 Unity 中进行的更改重新生成
 
 如果你在 Unity 中更改任何内容，则必须重新生成 UWP 项目

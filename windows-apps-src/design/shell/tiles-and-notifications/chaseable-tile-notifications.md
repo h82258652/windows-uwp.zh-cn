@@ -1,5 +1,5 @@
 ---
-Description: Use chaseable tile notifications to find out what your app displayed on its Live Tile when the user clicked it.
+Description: 使用可追踪的磁贴通知找出当用户单击应用时，应用在其动态磁贴上显示什么内容。
 title: 可追踪的磁贴通知
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tile notifications
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 可追踪的磁贴, 动态磁贴, 可追踪的磁贴通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a43ad803ca4cfe4a7403117c268344d1192d74
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937997"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592642"
 ---
 # <a name="chaseable-tile-notifications"></a>可追踪的磁贴通知
 
@@ -21,10 +21,10 @@ ms.locfileid: "8937997"
 例如，新应用可以使用此功能来决定用户启动应用时其动态磁贴显示哪一篇新闻报道，这样可以确保文章突出显示，以便用户找到它。 
 
 > [!IMPORTANT]
-> **需要周年更新**：若要通过 C#、C++ 或基于 VB 的 UWP 应用使用可追踪的磁贴通知，必须面向 SDK 14393 且必须运行版本 14393 或更高版本。 对于基于 JavaScript 的 UWP 应用，必须面向 SDK 17134 且必须运行版本 17134 或更高版本。 
+> **需要周年更新**:若要使用与 chaseable 磁贴通知C#，c + + 或基于 VB 的 UWP 应用，必须为目标 SDK 14393 和 14393 或更高版本运行生成。 对于基于 JavaScript 的 UWP 应用，必须面向 SDK 17134 且必须运行版本 17134 或更高版本。 
 
 
-> **重要 API**：[LaunchActivatedEventArgs.TileActivatedInfo 属性](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)、[TileActivatedInfo 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+> **重要的 Api**:[LaunchActivatedEventArgs.TileActivatedInfo 属性](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)， [TileActivatedInfo 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 
 ## <a name="how-it-works"></a>工作原理
@@ -40,7 +40,7 @@ ms.locfileid: "8937997"
 
 ## <a name="what-to-do-with-a-chaseable-tile-notifications"></a>对可追踪磁贴通知的操作
 
-请注意，最重要的是，在大多数情况下，当用户单击磁贴时，**不应直接导航到磁贴上的特定通知**。 动态磁贴用作的是应用程序的入口点。 当用户单击动态磁贴时可能有两种情况：(1) 他们希望正常启动应用或 (2) 他们希望看到有关动态磁贴上特定通知的详细信息。 由于无法让用户明确表示他们所需的是哪种行为，所以理想的体验是**正常启动应用，并确保用户可以轻松找到其看到的通知**。
+请注意，最重要的是，在大多数情况下，当用户单击磁贴时，**不应直接导航到磁贴上的特定通知**。 动态磁贴用作的是应用程序的入口点。 当用户单击实时磁贴时，可以是两种方案：（1） 他们想要启动您的应用程序通常情况下，或者 （2） 他们想要了解有关动态磁贴上的特定通知详细信息。 由于无法让用户明确表示他们所需的是哪种行为，所以理想的体验是**正常启动应用，并确保用户可以轻松找到其看到的通知**。
 
 例如，单击“MSN 资讯”应用的动态磁贴可正常启动应用：它会显示主页或用户之前阅读的文章。 但是，在主页上，该应用可确保动态磁贴上显示的新闻可以轻松找到。 这样即可支持以下两种情况：仅想要启动/继续使用该应用的情况，以及想要查看具体新闻的情况。
 
@@ -111,7 +111,7 @@ LaunchActivatedEventArgs 对象有一个属性支持可追踪通知，那就是 
 
 [TileActivatedInfo 对象](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)包含一个名为 [RecentlyShownNotifications](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications) 的属性，其中包含在前 15 分钟内在磁贴上显示的通知的列表。 该列表中的第一项表示磁贴的当前通知，后面的项表示用户在当前通知之前看过的通知。 如果已清除磁贴，则该列表为空。
 
-每个 ShownTileNotificationhas Argumentsproperty。 Argumentsproperty 将初始化 argumentsstring 从磁贴通知负载，或者，如果负载不包括 argumentsstring。
+每个 ShownTileNotification 有一个参数属性。 如果负载不包括参数字符串，将使用从磁贴通知有效负载，则为 null 的参数字符串初始化参数属性。
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs args)
@@ -178,5 +178,5 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ## <a name="related-articles"></a>相关文章
 
-- [LaunchActivatedEventArgs.TileActivatedInfo 属性](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
+- [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
 - [TileActivatedInfo 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)

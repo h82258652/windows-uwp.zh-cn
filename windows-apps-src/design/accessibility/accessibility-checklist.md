@@ -1,5 +1,5 @@
 ---
-Description: Provides a checklist to help you ensure that your Universal Windows Platform (UWP) app is accessible.
+Description: 提供了一个可帮助你确保你的通用 Windows 平台 (UWP) 应用是辅助应用的清单。
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: 辅助功能清单
 label: Accessibility checklist
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c9ff9760b3ae9b852fe1ae1b86d1cc48e49c5dd4
-ms.sourcegitcommit: 393180e82e1f6b95b034e99c25053d400e987551
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "8990480"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602442"
 ---
 # <a name="accessibility-checklist"></a>辅助功能清单
 
@@ -39,16 +39,16 @@ ms.locfileid: "8990480"
 
     有关详细信息，请参阅[键盘交互](https://msdn.microsoft.com/library/windows/apps/Mt185607)。
 
-3. 确保文本是可读的大小
+3. 请确保文本是可读大小
 
-    * Windows 包含各种辅助功能工具和设置，用户可以充分利用和调整到自己需求和偏好阅读文本。 其中包括：
-        * 放大 UI 的选定的区域放大镜工具。 你应确保在应用中的文本布局不会将很难使用放大镜进行读取。
-        * 中的全局缩放和分辨率设置**设置-> 系统-> 显示-> 缩放和布局**。 究竟有哪些大小设置选项可用可能有所不同因为这取决于显示设备的功能。
-        * 在文本大小设置**设置-> 轻松使用-> 显示**。 调整**使更大的文本**设置指定仅文本的大小以支持跨所有应用程序和屏幕 （所有 UWP 文本控件都支持文本缩放体验而无需任何自定义或模板化） 控件。
+    * Windows 包括各种可访问性工具和设置，用户可以充分利用并调整其自己的需求和用于读取文本的首选项。 这些地方包括：
+        * 放大镜工具，它将放大选定的区域的用户界面。 您应确保应用程序中的文本的布局不会使其难以使用放大镜以进行读取。
+        * 中的全局规模和解决方法设置**设置-> 系统-> 显示-> 扩展和布局**。 完全有哪些大小调整选项可能有所不同，因为这取决于显示设备的功能。
+        * 中的文本大小设置**设置-> 轻松访问-> 显示**。 调整**使文本更大**设置支持跨所有应用程序和屏幕 （所有 UWP 文本控件都支持缩放体验，而无任何自定义或模板化的文本） 的控件中指定的文本大小。
         > [!NOTE]
-        > **使一切变大**设置允许用户仅其主屏幕上一般情况下指定文本和应用的首选的大小。
+        > **保持所有对象的更大**设置可使用户在一般情况下在其主屏幕上指定的文本和应用程序的首选的大小。
 
-4. 以直观方式验证你的 UI 以确保文本对比度足够大、元素以高对比度主题正确呈现以及使用了正确的颜色。
+4. 以直观的方式验证你的 UI 以确保文本对比度足够大，元素以高对比度主题正确呈现以及使用了正确颜色。
 
     * 使用颜色分析器工具验证视觉文本对比度至少为 4.5:1。
     * 切换到高对比度主题并验证应用的 UI 可读且可用。
@@ -68,12 +68,12 @@ ms.locfileid: "8990480"
 
     如果已实现基线辅助功能支持，则在 Microsoft Store 中将应用声明为辅助应用有助于获得更多客户并获取一些额外好评。
 
-    有关详细信息，请参阅 [Microsoft Store 中的辅助功能](accessibility-in-the-store.md)。
+    有关详细信息，请参阅[应用商店中的辅助功能](accessibility-in-the-store.md)。
 
 ## <a name="related-topics"></a>相关主题  
 
 * [辅助文本要求](accessible-text-requirements.md)
 * [文本缩放](../input/text-scaling.md)
 * [辅助功能](accessibility.md)
-* [辅助功能设计](https://msdn.microsoft.com/library/windows/apps/Hh700407)
+* [可访问性的设计](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [要避免的做法](practices-to-avoid.md)

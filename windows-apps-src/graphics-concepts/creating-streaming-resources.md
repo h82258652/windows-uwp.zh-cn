@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ec96f6245969d32357563c44107f539fb9043aac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924441"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618242"
 ---
 # <a name="creating-streaming-resources"></a>创建流式资源
 
@@ -27,7 +27,7 @@ ms.locfileid: "8924441"
 
 不要将此概念与映射 Direct3D 资源以实现 CPU 访问混淆，虽然两者使用同一个名称，但是完全独立的。 在知道一个图面的所有磁贴无需一次映射完的情况下，你将能够定义并根据需要更改每个磁贴的映射，从而有效利用可用内存量。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>
@@ -43,11 +43,11 @@ ms.locfileid: "8924441"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="mappings-are-into-a-tile-pool.md">映射到磁贴池</a></p></td>
+<td align="left"><p><a href="mappings-are-into-a-tile-pool.md">到磁贴池中的映射</a></p></td>
 <td align="left"><p>作为流式资源创建资源时，构成资源的磁贴来自于磁贴池中各位置处的指针。 磁贴池是内存池（由一个或多个分配在后台提供支持 - 对应用程序不可见）。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="streaming-resource-creation-parameters.md">流式资源创建参数</a></p></td>
+<td align="left"><p><a href="streaming-resource-creation-parameters.md">流式处理资源的创建参数</a></p></td>
 <td align="left"><p>您可以创建为流式资源的 Direct3D 资源类型存在某些限制。</p></td>
 </tr>
 <tr class="odd">
@@ -55,19 +55,19 @@ ms.locfileid: "8924441"
 <td align="left"><p>创建缓冲区时，使用此部分中的参数定义磁贴池。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="streaming-resource-cross-process-and-device-sharing.md">跨进程和设备共享的流式资源</a></p></td>
+<td align="left"><p><a href="streaming-resource-cross-process-and-device-sharing.md">流式处理资源的跨进程和设备共享</a></p></td>
 <td align="left"><p>磁贴池可与传统资源等其他进程共享。 涉及无法跨设备和进程共享磁贴池的流式资源。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="operations-available-on-streaming-resources.md">可用于流式资源的操作</a></p></td>
+<td align="left"><p><a href="operations-available-on-streaming-resources.md">可对流式处理资源的操作</a></p></td>
 <td align="left"><p>此部分列出了可对流式资源执行的操作。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="operations-available-on-tile-pools.md">可用于磁贴池的操作</a></p></td>
+<td align="left"><p><a href="operations-available-on-tile-pools.md">可对磁贴池的操作</a></p></td>
 <td align="left"><p>可对磁贴池执行的操作包括调整磁贴池的大小、提供资源（为整个磁贴池临时向系统给予内存）以及回收资源。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="how-a-streaming-resource-s-area-is-tiled.md">流式资源区域的平铺方式</a></p></td>
+<td align="left"><p><a href="how-a-streaming-resource-s-area-is-tiled.md">如何平铺流式处理资源的区域</a></p></td>
 <td align="left"><p>创建流式资源时，尺寸、格式元素大小以及 mipmap 和/或数组切片的数量（如适用）决定了支持整个图面区域所需的磁贴数量。</p></td>
 </tr>
 </tbody>
@@ -78,7 +78,7 @@ ms.locfileid: "8924441"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[流式资源](streaming-resources.md)
+[流式处理资源](streaming-resources.md)
 
  
 

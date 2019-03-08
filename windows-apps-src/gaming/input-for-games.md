@@ -1,17 +1,17 @@
 ---
 title: 游戏输入
-description: 本节演示了如何使用游戏板和通用 Windows 平台 (UWP) 游戏的其他输入设备。
+description: 本部分演示了如何使用游戏板和通用 Windows 平台 (UWP) 游戏的其他输入设备。
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 输入
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f1daac8bc94d49c501307728c1e966ba89435f9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941255"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631662"
 ---
 # <a name="input-for-games"></a>游戏输入
 
@@ -43,15 +43,15 @@ ms.locfileid: "8941255"
 
 ### <a name="flight-sticks"></a>飞行杆
 
-飞行杆是游戏输入的设备，重现飞机或宇宙飞船驾驶舱中的飞行杆的感觉。 它们是用于快速精确地控制飞行的完美输入设备。
+飞行杆是游戏输入设备，可重现飞机或宇宙飞船驾驶舱中的飞行杆感觉。 它们是用于快速精确地控制飞行的完美输入设备。
 
-有关如何使用你的 UWP 游戏中的飞行杆的详细信息，请参阅[飞行杆](flight-stick.md)。
+有关如何在 UWP 游戏中使用飞行杆的详细信息，请参阅[飞行杆](flight-stick.md)。
 
 ### <a name="raw-game-controllers"></a>原始游戏控制器
 
 原始游戏控制器是游戏控制器的通用表示形式，具有许多不同种类的常见游戏控制器上的输入。 这些输入作为未命名按钮、开关和轴的简单数组进行公开。 使用原始游戏控制器，可以使客户能够创建自定义输入映射（无论使用何种类型的控制器）。
 
-有关如何在你的 UWP 游戏中使用原始游戏控制器的详细信息，请参阅[原始游戏控制器](raw-game-controller.md)。
+有关如何在 UWP 游戏中使用原始游戏控制器的详细信息，请参阅[原始游戏控制器](raw-game-controller.md)。
 
 ### <a name="ui-navigation-controllers"></a>UI 导航控制器
 
@@ -73,6 +73,6 @@ UI 导航控制器是为提供 UI 导航命令的常用词汇而存在的逻辑�
 
 ## <a name="see-also"></a>另请参阅
 
-* [游戏输入实践](input-practices-for-games.md)
+* [输入的游戏方案](input-practices-for-games.md)
 * [Windows.Gaming.Input 命名空间](https://docs.microsoft.com/uwp/api/windows.gaming.input)
 * [Windows.Gaming.Input.Custom 命名空间](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)

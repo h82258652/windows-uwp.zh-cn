@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f0b42a10c2cdd61aef84e08d6bd4f6408a978c3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922077"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617312"
 ---
 # <a name="lost-devices"></a>丢失的设备
 
@@ -24,10 +24,10 @@ Direct3D 设备可以处于运行状态或丢失状态。 *运行*状态是设�
 从 [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) 派生的所有方法都可以保证在设备丢失后正常工作。 设备丢失后，每个函数一般有以下三个选项：
 
 -   失败并返回“设备丢失”错误 - 这意味着应用程序需要认识到设备已丢失，以便应用程序知道某些事件没有按预期出现。
--   没有任何提示就失败、返回 S\_OK 或任何其他返回代码 - 如果函数没有任何提示就失败，应用程序通常无法区分“成功”和“没有任何提示就失败”。
+-   以静默方式失败，并且返回 S\_确定或任何其他返回代码-如果一个函数以静默方式失败，应用程序通常不能区分结果的"成功"和"无提示失败"。
 -   返回一个返回代码。
 
-## <a name="span-idrespondingtoalostdevicespanspan-idrespondingtoalostdevicespanspan-idrespondingtoalostdevicespanresponding-to-a-lost-device"></a><span id="Responding_to_a_Lost_Device"></span><span id="responding_to_a_lost_device"></span><span id="RESPONDING_TO_A_LOST_DEVICE"></span>响应丢失的设备
+## <a name="span-idrespondingtoalostdevicespanspan-idrespondingtoalostdevicespanspan-idrespondingtoalostdevicespanresponding-to-a-lost-device"></a><span id="Responding_to_a_Lost_Device"></span><span id="responding_to_a_lost_device"></span><span id="RESPONDING_TO_A_LOST_DEVICE"></span>丢失的设备响应
 
 
 丢失的设备必须在重置后重新创建资源（包括视频存储器资源）。 如果设备丢失，应用程序会查询设备以了解其能否恢复到运行状态。 如果不能，应用程序将等待，直到设备可以恢复。
@@ -50,7 +50,7 @@ Direct3D 设备可以处于运行状态或丢失状态。 *运行*状态是设�
 
 我们建议你开发通过单一代码路径响应设备丢失的应用程序。 此代码路径可能类似于（或等同于）在启动时初始化设备的代码路径。
 
-## <a name="span-idretrieveddataspanspan-idretrieveddataspanspan-idretrieveddataspanretrieved-data"></a><span id="Retrieved_Data"></span><span id="retrieved_data"></span><span id="RETRIEVED_DATA"></span>检索的数据
+## <a name="span-idretrieveddataspanspan-idretrieveddataspanspan-idretrieveddataspanretrieved-data"></a><span id="Retrieved_Data"></span><span id="retrieved_data"></span><span id="RETRIEVED_DATA"></span>检索到的数据
 
 
 Direct3D 允许应用程序依据硬件的单程渲染来验证纹理和渲染状态。

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包, Azure web 服务器
 ms.localizationpriority: medium
 ms.openlocfilehash: 074a8e9941d4314bb35c28b0ee296e9d86fa23a5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929684"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608792"
 ---
 # <a name="install-a-uwp-app-from-an-azure-web-app"></a>从 Azure Web 应用安装 UWP 应用
 
@@ -18,14 +18,14 @@ ms.locfileid: "8929684"
 
 本主题概述了配置 Azure Web 服务器以托管 UWP 应用包的步骤，并介绍如何使用应用安装程序来安装应用包。
 
-## <a name="setup"></a>设置
+## <a name="setup"></a>安装
 
 要成功学习此教程，你将需要以下内容：
  
 1. Microsoft Azure 订阅 
 2. UWP 应用包 - 要分发的应用包
 
-可选：GitHub 上的[初学者项目](https://github.com/AppInstaller/MySampleWebApp)。 如果没有应用包或网页可以使用，但仍想学习如何使用此功能，这个初学者项目很有用。
+可选：[初学者项目](https://github.com/AppInstaller/MySampleWebApp)GitHub 上。 如果没有应用包或网页可以使用，但仍想学习如何使用此功能，这个初学者项目很有用。
 
 ### <a name="step-1---get-an-azure-subscription"></a>步骤 1 - 获得 Azure 订阅
 若要获得 Azure 订阅，请访问 [Azure 帐户页面](https://azure.microsoft.com/free/)。 可以使用免费会员资格获得此教程。

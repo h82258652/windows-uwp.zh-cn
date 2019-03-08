@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 ms.localizationpriority: medium
 ms.openlocfilehash: 0805dbeedcf66bc3596f3d284f51e8f177608396
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946172"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617602"
 ---
 # <a name="upload-a-folder-to-the-development-directory"></a>将文件夹上载到开发目录
 
@@ -25,7 +25,7 @@ POST | /api/app/packagemanager/upload
 <br />
 **URI 参数**
 
-你可以在请求 URI 上指定以下附加参数：
+可以在请求 URI 上指定以下附加参数：
 
 URI 参数      | 描述
 :------     | :-----
@@ -46,13 +46,13 @@ destinationFolder（必需） | 要上载的文件夹的目标文件夹名称。
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 说明
+HTTP 状态代码      | 描述
 :------     | :-----
 200 | 成功
 4XX | 错误代码
 5XX | 错误代码
 <br />
-**可用设备系列**
+**可用的设备系列**
 
 * Windows Xbox
 

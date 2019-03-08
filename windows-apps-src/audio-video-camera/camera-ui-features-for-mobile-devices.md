@@ -6,14 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bf27de9c9b1bce2b35918b2a9d1357d2f3ba20b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0c0da215cad867a498527b475422c4026cc65ce3
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942863"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640692"
 ---
-#<a name="camera-ui-features-for-mobile-devices"></a>移动设备的相机 UI 功能
+# <a name="camera-ui-features-for-mobile-devices"></a>移动设备的相机 UI 功能
 
 本文展示如何利用仅在移动设备上提供的特殊相机 UI 功能。 
 
@@ -21,13 +21,13 @@ ms.locfileid: "8942863"
 
 若要使用这些功能，必须将对用于通用应用平台的 Microsoft 移动扩展 SDK 的引用添加到你的项目中。
 
-**添加对硬件相机按钮支持的移动扩展 SDK 的引用**
+**若要添加对硬件照相机按钮支持移动扩展 SDK 的引用**
 
-1.  在“解决方案资源管理器”**** 中，右键单击“引用”****，然后选择“添加引用”****。
+1.  在“解决方案资源管理器”中，右键单击“引用”，然后选择“添加引用”。
 
-2.  展开“Windows 通用”**** 节点，然后选择“扩展”****。
+2.  展开“Windows 通用”节点，然后选择“扩展”。
 
-3.  选中“适用于通用应用平台的 Microsoft 移动扩展 SDK”**** 复选框。
+3.  选中“适用于通用应用平台的 Microsoft 移动扩展 SDK”复选框。
 
 ## <a name="hide-the-status-bar"></a>隐藏状态栏
 
@@ -57,8 +57,8 @@ ms.locfileid: "8942863"
 
 ## <a name="related-topics"></a>相关主题
 
-* [相机](camera.md)
-* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [摄像头](camera.md)
+* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 
 
 

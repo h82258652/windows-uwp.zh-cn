@@ -7,13 +7,13 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx 11, 设备丢失
 ms.localizationpriority: medium
 ms.openlocfilehash: c11bbf7657644fbf616590f50d75d93f62ed993e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947163"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646602"
 ---
-# <a name="span-iddevgaminghandlingdevice-lostscenariosspanhandle-device-removed-scenarios-in-direct3d-11"></a><span id="dev_gaming.handling_device-lost_scenarios"></span>在 Direct3D 11 中处理设备删除方案
+# <a name="span-iddevgaminghandlingdevice-lostscenariosspanhandle-device-removed-scenarios-in-direct3d-11"></a><span id="dev_gaming.handling_device-lost_scenarios"></span>处理在 Direct3D 11 中的设备已删除方案
 
 
 
@@ -26,13 +26,13 @@ ms.locfileid: "8947163"
 -   图形设备停止响应并进行重置。
 -   已采用物理方式附加或删除图形适配器。
 
-出现此情况时，DXGI 将返回一个错误代码，该代码指示必须重新初始化 Direct3D 设备且必须重新创建设备资源。 此操作实例演示了 Direct3D 11 应用和游戏如何检测和响应以下情况：重置、删除或更改图形适配器。 从 Microsoft Visual Studio2015 与提供的 DirectX 11 应用 (通用 Windows) 模板提供的代码示例。
+出现此情况时，DXGI 将返回一个错误代码，该代码指示必须重新初始化 Direct3D 设备且必须重新创建设备资源。 此操作实例演示了 Direct3D 11 应用和游戏如何检测和响应以下情况：重置、删除或更改图形适配器。 DirectX 11 应用 (通用 Windows) 模板提供与 Microsoft Visual Studio 2015 中提供了代码示例。
 
 ## <a name="instructions"></a>说明
 
-### <a name="spanspanstep-1"></a><span></span>步骤 1：
+### <a name="spanspanstep-1"></a><span></span>步骤 1:
 
-包含用于呈现循环中设备删除错误的检查。 通过调用 [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576)（或 [**Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 等）呈现帧。 然后，检查它是返回 [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) 还是 **DXGI\_ERROR\_DEVICE\_RESET**。
+包含用于呈现循环中设备删除错误的检查。 通过调用 [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576)（或 [**Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 等）呈现帧。 然后，检查它是否返回[ **DXGI\_错误\_设备\_已删除**](https://msdn.microsoft.com/library/windows/desktop/bb509553)或**DXGI\_错误\_设备\_重置**。
 
 首先，模板存储由 DXGI 交换链返回的 HRESULT：
 
@@ -57,7 +57,7 @@ else
 
 ### <a name="step-2"></a>步骤 2：
 
-还包含用于在响应窗口大小更改时出现的设备删除错误的检查。 这是检查 [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) 或 **DXGI\_ERROR\_DEVICE\_RESET** 的好时机，原因如下：
+还包含用于在响应窗口大小更改时出现的设备删除错误的检查。 这是要检查的一个好[ **DXGI\_错误\_设备\_已删除**](https://msdn.microsoft.com/library/windows/desktop/bb509553)或**DXGI\_错误\_设备\_重置**有几个原因：
 
 -   调整交换链大小需要调用基础 DXGI 适配器，该适配器可以返回设备删除错误。
 -   该应用可能已移动到附加到不同图形设备的监视器中。
@@ -90,9 +90,9 @@ else
 }
 ```
 
-### <a name="step-3"></a>步骤 3：
+### <a name="step-3"></a>步骤 3:
 
-当你的设备收到 [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) 错误时，它必须重新初始化 Direct3D 设备，并重新创建任何依赖设备的资源。 释放对使用早期 Direct3D 设备创建的图形设备资源的任何引用；这些资源现在无效，在创建新交换链之前，必须释放对交换链的所有引用。
+您的应用程序接收任何时候[ **DXGI\_错误\_设备\_已删除**](https://msdn.microsoft.com/library/windows/desktop/bb509553)错误，它必须重新初始化的 Direct3D 设备并重新创建任何设备相关资源。 释放对使用早期 Direct3D 设备创建的图形设备资源的任何引用；这些资源现在无效，在创建新交换链之前，必须释放对交换链的所有引用。
 
 HandleDeviceLost 方法释放交换链并通知应用组件释放设备资源：
 
@@ -140,14 +140,14 @@ if (m_deviceNotify != nullptr)
 
 如果重复出现带有 DXGI 设备删除错误的问题，这可能指示你的图像代码在绘制例程期间创建的条件无效。 它还可能指示硬件失败或图形驱动程序中的错误。 若要调查设备删除错误的原因，请调用 [**ID3D11Device::GetDeviceRemovedReason**](https://msdn.microsoft.com/library/windows/desktop/ff476526)，然后再释放 Direct3D 设备。 此方法返回六个可能的 DXGI 错误代码之一，指示设备删除错误的原因：
 
--   **DXGI\_ERROR\_DEVICE\_HUNG**：图形驱动程序已停止响应，因为应用发送的图形命令组合无效。 如果你反复收到此错误，这可能指示你的应用导致设备挂起，并且需要进行调试。
--   **DXGI\_ERROR\_DEVICE\_REMOVED**：已采用物理方式删除、关闭图形设备，或者驱动程序已升级。 这种情况偶尔发生，实属正常情况；你的应用和游戏应重新创建设备资源，如本主题中所述。
--   **DXGI\_ERROR\_DEVICE\_RESET**：图形设备失败，因为命令格式不正确。 如果你反复收到此错误，这可能意味着你的代码发送的绘制命令无效。
--   **DXGI\_ERROR\_DRIVER\_INTERNAL\_ERROR**：图形驱动程序出错，并已重置该设备。
--   **DXGI\_ERROR\_INVALID\_CALL**：应用程序提供的参数数据无效。 如果你收到过一次此错误，这意味着你的代码导致了设备删除状况，必须进行调试。
--   **S\_OK**：如果已启用、禁用或重置图形设备，而没有使当前图形设备失效，将返回此代码。 例如，如果应用使用的是 [Windows 高级光栅化平台 (WARP)](https://msdn.microsoft.com/library/windows/desktop/gg615082) 且硬件适配器变为可用，则可能返回此错误代码。
+-   **DXGI\_错误\_设备\_挂起**:由于无效的应用发送的图形命令组合而导致响应停止图形驱动程序。 如果你反复收到此错误，这可能指示你的应用导致设备挂起，并且需要进行调试。
+-   **DXGI\_错误\_设备\_已删除**:图形设备已被以物理方式删除，已关闭，或升级驱动程序已发生。 这种情况偶尔发生，实属正常情况；你的应用和游戏应重新创建设备资源，如本主题中所述。
+-   **DXGI\_错误\_设备\_重置**:图形设备失败，因为格式不正确的命令。 如果你反复收到此错误，这可能意味着你的代码发送的绘制命令无效。
+-   **DXGI\_ERROR\_DRIVER\_INTERNAL\_ERROR**:图形驱动程序遇到错误，将设备重置。
+-   **DXGI\_错误\_无效\_调用**:应用程序提供了无效的参数数据。 如果你收到过一次此错误，这意味着你的代码导致了设备删除状况，必须进行调试。
+-   **S\_确定**:当图形设备已启用、 禁用或重置不会导致当前图形设备无效时返回。 例如，如果应用使用的是 [Windows 高级光栅化平台 (WARP)](https://msdn.microsoft.com/library/windows/desktop/gg615082) 且硬件适配器变为可用，则可能返回此错误代码。
 
-以下代码将检索 [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) 错误代码并将其打印到调试控制台。 将此代码插入 HandleDeviceLost 方法的开头：
+下面的代码将检索[ **DXGI\_错误\_设备\_已删除**](https://msdn.microsoft.com/library/windows/desktop/bb509553)错误代码并将其输出到调试控制台。 将此代码插入 HandleDeviceLost 方法的开头：
 
 ```cpp
     HRESULT reason = m_d3dDevice->GetDeviceRemovedReason();
@@ -160,10 +160,10 @@ if (m_deviceNotify != nullptr)
 #endif
 ```
 
-有关更多详细信息，请参阅 [**GetDeviceRemovedReason**](https://msdn.microsoft.com/library/windows/desktop/ff476526) 和 [**DXGI\_ERROR**](https://msdn.microsoft.com/library/windows/desktop/bb509553)。
+有关更多详细信息，请参阅[ **GetDeviceRemovedReason** ](https://msdn.microsoft.com/library/windows/desktop/ff476526)并[ **DXGI\_错误**](https://msdn.microsoft.com/library/windows/desktop/bb509553)。
 
 ### <a name="testing-device-removed-handling"></a>测试设备删除处理
 
-对于与 Visual Studio 图形诊断相关的 Direct3D 事件捕获和播放，Visual Studio 开发人员命令提示符支持命令行工具“dxcap”。 当你的应用正在运行时，你可以使用命令行选项“-forcetdr”，以便强制执行 GPU 超时检测和恢复事件，进而触发 DXGI\_ERROR\_DEVICE\_REMOVED 并允许你测试错误处理代码。
+对于与 Visual Studio 图形诊断相关的 Direct3D 事件捕获和播放，Visual Studio 开发人员命令提示符支持命令行工具“dxcap”。 可以使用命令行选项"-forcetdr"您的应用程序运行时这将强制 GPU 超时检测和恢复事件，从而触发 DXGI\_错误\_设备\_已删除并使你可以测试您的错误处理代码。
 
-> **注意** DXCap 及其支持 DLL 将安装到 system32/syswow64 中作为适用于 Windows 10 的图形工具的一部分，从而将不会再通过 Windows SDK 进行分配。 不过，它们将通过图形工具按需功能（它是可选的操作系统组件）进行提供，并且必须先进行安装，然后才能启用并使用 Windows 10 上的图形工具。 如何安装为 Windows 10 图形工具的详细信息可以在此处找到： <https://msdn.microsoft.com/library/mt125501.aspx#InstallGraphicsTools>
+> **注意** DXCap 及其支持 DLL 将安装到 system32/syswow64 中作为适用于 Windows 10 的图形工具的一部分，从而将不会再通过 Windows SDK 进行分配。 不过，它们将通过图形工具按需功能（它是可选的操作系统组件）进行提供，并且必须先进行安装，然后才能启用并使用 Windows 10 上的图形工具。 可以在此处找到有关如何安装图形工具适用于 Windows 10 的详细信息： <https://msdn.microsoft.com/library/mt125501.aspx#InstallGraphicsTools>

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7eabcb188aa1687d36d4b4e6f432783aa68969de
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934044"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613242"
 ---
 # <a name="customresource-markup-extension"></a>{CustomResource} 标记扩展
 
@@ -26,7 +26,7 @@ ms.locfileid: "8934044"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 术语 | 说明 |
+| 术语 | 描述 |
 |------|-------------|
 | 键 | 所请求资源的键。 键的初始分配方式特定于当前注册使用的 [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) 类的实现。 |
 
@@ -44,7 +44,7 @@ ms.locfileid: "8934044"
 2.  设置 [**CustomXamlResourceLoader.Current**](https://msdn.microsoft.com/library/windows/apps/br243328) 以在初始化逻辑中引用你的类。 必须在加载包括 `{CustomResource}` 扩展在内的任何页面级 XAML 之前执行此操作。 设置 **CustomXamlResourceLoader.Current** 的一个位置是，App.xaml 代码隐藏模板中为你生成的 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 子类构造函数。
 3.  现在你可以在你的应用加载为页面的 XAML 中，或从 XAML 资源词典内使用 `{CustomResource}` 扩展。
 
-**CustomResource** 是标记扩展。 当需要将属性值转义为除文字值或处理程序名称之外的值时，以及当需求更具全局性而不是仅仅将类型转换器放在某些类型或属性上时，通常需要实现标记扩展。 XAML 中的所有标记扩展在其属性语法中都使用“\{”和“\}”字符，通过此约定，XAML 处理器可以知道标记扩展必须处理属性。
+**CustomResource** 是标记扩展。 当需要将属性值转义为除文字值或处理程序名称之外的值时，以及当需求更具全局性而不是仅仅将类型转换器放在某些类型或属性上时，通常需要实现标记扩展。 在 XAML 使用的所有标记扩展"\{"和"\}"约定所依据的 XAML 处理器识别标记扩展必须处理该属性其特性语法中的字符。
 
 ## <a name="related-topics"></a>相关主题
 

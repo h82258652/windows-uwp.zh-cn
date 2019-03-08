@@ -1,48 +1,48 @@
 ---
-description: Windows 高级广告发布者计划的合作伙伴广告网络可以目标与高级，ad 启用应用特选集合组成的高效广告。 此计划中的应用是最佳根据使用情况、 参与度和体验的类中。
+description: Windows 高级广告发布者计划由一系列合作伙伴广告网络可使用的、精选广告应用和优质、高收益广告组成。 就使用情况、参与度和体验而言，此计划中的应用是同类中最好的。
 title: Windows 高级广告发布者计划
 ms.date: 09/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 广告
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d747d35148965480cb34714cde7859203a7424d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050750"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634372"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Windows 高级广告发布者计划
 
-作为帮助 Windows 开发人员通过他们的应用通过广告盈利我们不断努力的一部分，我们提供[Windows 高级广告发布者计划](https://www.windowspremiumapps.com)。 这是支持广告的应用和游戏的最佳根据使用情况、 参与度和体验的类中的特选的集合。 这些应用和游戏的可见性认证并被具有高度参与的可识别用户全局分布式的受众。
+为了继续尽力帮助 Windows 开发人员通过广告实现应用盈利，我们提供 [Windows 高级广告发布者计划](https://www.windowspremiumapps.com)。 它是一系列精选广告应用和游戏，就使用情况、参与度和体验而言，它们是同类中最好的。 这些应用和游戏经过可见性认证，在全球范围内分布有具有高参与度的可识别用户。
 
-从我们的合作伙伴广告网络的广告商可以单独标识这些应用程序和高级版、 高收益为提供广告以独占方式最高返回这些应用对于其市场活动的投资回报。 对于开发人员而言，这意味着此计划的一部分的应用可以获得更多的广告收益。
+合作伙伴广告网络中的广告商可以单独识别这些应用并向这些应用独享投放优质、高收益的广告，以实现其市场活动的最高投资收益率。 对于开发人员来说，这意味着此计划中的应用可以赚取更多的广告收入。
 
-## <a name="how-does-microsoft-add-apps-to-this-program"></a>如何 Microsoft 将应用添加到此计划？ 
+## <a name="how-does-microsoft-add-apps-to-this-program"></a>Microsoft 如何为此计划添加应用？ 
 
-我们不断地查看针对[合格条件](#what-are-the-criteria-for-apps-in-the-program)在应用商店中的应用。 通过检查流畅、 定义良好的用户体验并确保良好放置广告以避免意外点击的严格的手动审查过程放置满足合格条件的应用。 清除自动和手动审查过程的应用将添加到计划中。
+我们会根据[资格条件](#what-are-the-criteria-for-apps-in-the-program)不断审核 Microsoft Store 中的应用。 符合资格条件的应用将会通过严格的人工审核流程，以检查是否可以提供流畅、良好的用户体验，确保正确投放广告，避免出现意外的点击率。 通过自动和人工筛选流程的应用随后将被添加到此计划中。
 
-这是当前的仅邀请程序中，并且只是会议合格条件不会自动表示有享受应用以成为高级计划的一部分。如果你想要了解有关改善你的应用体验以有资格进行计划的详细信息，请访问我们在aiacare@microsoft.com。
+该计划目前是“仅邀请”计划，只有符合资格条件并不会自动授权应用成为高级计划的一部分。 如果你想要了解与提高应用体验以符合此计划资格相关的更多信息，请通过 aiacare@microsoft.com 联系我们。
 
-## <a name="what-are-the-criteria-for-apps-in-the-program"></a>适用于应用程序中的标准是什么？
+## <a name="what-are-the-criteria-for-apps-in-the-program"></a>此计划中的应用条件是什么？
 
-此计划中的应用必须满足以下条件：
+此计划的应用必须满足以下条件：
 
-* 最小化保证每日广告请求卷。 
-* 针对广告印象的高可见性比率。 
-* 高质量单击跨所有广告格式完善最小单击--率。 
-* 请按照互动广告局 (IAB) 标准广告大小和位置的方法。 任何隐藏的广告。
-* 干净放置的横幅广告 （例如，广告不是相邻的）。
-* 跨多个应用不使用广告单元。
-* 显示了[明确定义的用户流](https://blogs.windows.com/buildingapps/2017/08/31/best-practices-using-video-ads-windows-apps/)到其中的视频和/或间隙横幅广告的点。 视频广告不会预缓存。 
-* 控制 ad 刷新行为以便始终播放从中介服务器返回的广告。
-* 具有良好应用商店存在清除应用提要、 高保真的屏幕截图和上传到应用商店的图标。 强烈建议视频预告片。
-* 没有欺诈活动。
+* 保证的最小每日广告请求量。 
+* 高可见性比率，以提高曝光量。 
+* 高质量点击量，以在所有广告格式中达到最低点击率。 
+* 采用互动广告局 (IAB) 标准的广告大小和投放方法。 无隐藏广告。
+* 清楚投放横幅广告（例如，广告之间互不相邻）。
+* 不会跨多个应用使用广告单元。
+* 在显示视频和/或间隙广告时[清除定义的用户流](https://blogs.windows.com/buildingapps/2017/08/31/best-practices-using-video-ads-windows-apps/)。 视频广告不会预先缓存。 
+* 控制广告刷新行为，从而允许始终播放中介服务器返回的广告。
+* 向 Microsoft Store 上传出色的 Microsoft Store 展现及清楚的应用描述、高保真屏幕截图和图标。 强烈建议使用视频预告片。
+* 无任何欺诈性活动。
 
-## <a name="can-apps-get-removed-from-the-program"></a>应用获取从程序删除？
+## <a name="can-apps-get-removed-from-the-program"></a>此计划中的应用是否可能被删除？
 
-应用中的应用程序会监视频繁地以确保他们继续符合合格条件。 若要保持最小的每日广告请求卷，请确保你的应用使用情况不随着时间的推移显著放。 若要执行此操作的绝佳方法是[运行常规推广市场活动](https://developer.microsoft.com/en-us/store/promote-your-apps)。
+此计划中的应用受到经常性监控，以确保它们始终符合资格条件。 为了保持最低每日广告请求量，请确保你的应用使用率不会随着时间的推移严重下降。 一种好的做法是[定期举办促销活动](https://developer.microsoft.com/en-us/store/promote-your-apps)。
 
-## <a name="can-i-provide-additional-marketing-material-to-showcase-my-app-in-the-program"></a>可以提供其他市场营销材料展示我的应用程序中？ 
+## <a name="can-i-provide-additional-marketing-material-to-showcase-my-app-in-the-program"></a>能够提供其他营销材料来在计划中展示我的应用？ 
 
-在应用商店提交的一部分上载任何内容自动用于展示高级应用。 此外，如果你想要使用多个应用或游戏的屏幕截图、 游戏预告片和丰富的说明，请访问我们在aiacare@microsoft.com。
+作为 Microsoft Store 提交的一部分上传的任何内容均会自动用于展示高级应用。 此外，如果你想要使用更多应用或游戏截图、游戏预告片和丰富的描述，请通过 aiacare@microsoft.com 联系我们。

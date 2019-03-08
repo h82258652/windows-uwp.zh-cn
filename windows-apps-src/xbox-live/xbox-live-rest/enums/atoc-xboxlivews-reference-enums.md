@@ -8,15 +8,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d0deb009ec40eaeda09687e5ed9dbb69066ca317
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938342"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627382"
 ---
 # <a name="enumerations-used-in-javascript-object-notation-json-objects"></a>JavaScript 对象表示法 (JSON) 对象中使用的枚举
  
-Xbox Live 服务定义中，请求和响应，该服务使用的 JSON 对象。 许多服务使用的 JavaScript 对象表示法 (JSON) 对象有关联的指定允许出现在 JavaScript 对象表示法 (JSON) 对象中的字段的值的枚举。 本部分列出了 JavaScript 对象表示法 (JSON) 对象中使用的枚举。 
+Xbox Live 服务定义，请求和响应从服务中使用的 JSON 对象。 服务使用的许多 JavaScript 对象表示法 (JSON) 对象具有关联的指定字段的 JavaScript 对象表示法 (JSON) 对象中显示的允许值的枚举。 本部分列出了在 JavaScript 对象表示法 (JSON) 对象中使用的枚举。 
  
 <a id="ID4EJB"></a>
 
@@ -35,7 +35,7 @@ Xbox Live 服务定义中，请求和响应，该服务使用的 JSON 对象。 
 
 &nbsp;&nbsp;详细介绍 GameClipTypes 枚举。 
 
-[GameClipUriType 枚举](gvr-enum-gameclipuritype.md)
+[GameClipUriType Enumeration](gvr-enum-gameclipuritype.md)
 
 &nbsp;&nbsp;详细介绍 GameClipUriType 枚举。 
 

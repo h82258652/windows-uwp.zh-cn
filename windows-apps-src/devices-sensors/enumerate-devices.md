@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 538f7e953d430ce36ae8aa679865aa634ec49553
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047652"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601712"
 ---
 # <a name="enumerate-devices"></a>枚举设备
 
@@ -39,14 +39,14 @@ async void enumerateSnapshot(){
 
 假如运行该应用的单个设备和系统支持该项技术，则这些 API 可通过以下任何协议和总线来枚举设备。 这不是详尽列表，并且特定设备可能支持其他协议。
 
--   以物理方式连接的总线。 这包括 PCI 和 USB。 例如，你可以在“设备管理器”**** 中看到的任何内容。
+-   以物理方式连接的总线。 这包括 PCI 和 USB。 例如，你可以在“设备管理器”中看到的任何内容。
 -   [UPnP](https://msdn.microsoft.com/library/windows/desktop/Aa382303)
 -   数字生活网络联盟 (DLNA)
--   [**发现和启动 (DIAL)**](https://msdn.microsoft.com/library/windows/apps/Dn946818)
--   [**DNS 服务发现 (DNS-SD)**](https://msdn.microsoft.com/library/windows/apps/Dn895183)
--   [基于设备的 Web 服务 (WSD)](https://msdn.microsoft.com/library/windows/desktop/Aa826001)
+-   [**发现和启动 （拨号）**](https://msdn.microsoft.com/library/windows/apps/Dn946818)
+-   [**DNS 服务发现 (DNS SD)**](https://msdn.microsoft.com/library/windows/apps/Dn895183)
+-   [设备 (WSD) 上的 web 服务](https://msdn.microsoft.com/library/windows/desktop/Aa826001)
 -   [蓝牙](https://msdn.microsoft.com/library/windows/desktop/Aa362932)
--   [**WLAN Direct**](https://msdn.microsoft.com/library/windows/apps/Dn297687)
+-   [**Wi-Fi Direct**](https://msdn.microsoft.com/library/windows/apps/Dn297687)
 -   WiGig
 -   [**服务点**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
 
@@ -65,7 +65,7 @@ async void enumerateSnapshot(){
 | 属性                         | 备注                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **DeviceInformation.Id**         | 这是设备的唯一标识符，作为字符串变量提供。 在大多数情况下，这是你将从一种方法传递到另一种方法的模糊值，用于指示你感兴趣的特定设备。 你还可以在关闭应用并重新打开它后使用此属性和 **DeviceInformation.Kind** 属性。 这将确保你可以恢复并重新使用同一 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象。 |
-| **DeviceInformation.Kind**       | 这指示了使用 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象表示的设备对象类型。 这并不是设备类别或设备类型。 单个设备可使用若干个不同的 **DeviceInformation** 对象（不同种类）来表示。 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) 中列出了此属性可能具有的值以及这些值相互关联的方式。                           |
+| **DeviceInformation.Kind**       | 这指示了使用 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象表示的设备对象类型。 这并不是设备类别或设备类型。 单个设备可使用若干个不同的 **DeviceInformation** 对象（不同种类）来表示。 [  **DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) 中列出了此属性可能具有的值以及这些值相互关联的方式。                           |
 | **DeviceInformation.Properties** | 此属性包包含了为 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象而请求的信息。 可以轻松地将最常见的属性引用为 **DeviceInformation** 对象的属性，如 [**DeviceInformation.Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name)。 有关详细信息，请参阅[设备信息属性](device-information-properties.md)。                                                                |
 
  
@@ -73,7 +73,7 @@ async void enumerateSnapshot(){
 ## <a name="devicepicker-ui"></a>DevicePicker UI
 
 
-[**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 是 Windows 所提供的控件，用于创建使用户能够从列表中选择设备的较小 UI。 你可以使用多种方法自定义 **DevicePicker** 窗口。
+[  **DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 是 Windows 所提供的控件，用于创建使用户能够从列表中选择设备的较小 UI。 你可以使用多种方法自定义 **DevicePicker** 窗口。
 
 -   你可以通过将 [**SupportedDeviceSelectors**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors.aspx) 或 [**SupportedDeviceClasses**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses.aspx) 或两者一起添加到 [**DevicePicker.Filter**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.filter) 来控制在 UI 中显示的设备。 在大多数情况下，你仅需要添加一个选择器或类，但如果确实需要多个，也可以添加多个。 如果你确实添加了多个选择器或类，则将 OR 逻辑函数连接它们。
 -   你可以指定要为设备检索的属性。 你可以通过将属性添加到 [**DevicePicker.RequestedProperties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.requestedproperties) 来完成。
@@ -82,7 +82,7 @@ async void enumerateSnapshot(){
 
 当 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 处于显示状态时，如果添加、删除或更新设备，则 UI 内容将自动更新。
 
-**注意**不能指定使用[**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) 。 如果想要拥有特定的 **DeviceInformationKind** 设备，你将需要生成一个 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 并提供你自己的 UI。
+**请注意**  不能指定[ **DeviceInformationKind** ](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx)使用[ **DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841)。 如果想要拥有特定的 **DeviceInformationKind** 设备，你将需要生成一个 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 并提供你自己的 UI。
 
  
 
@@ -123,7 +123,7 @@ async void enumerateSnapshot(){
 
 将设备作为后台任务监视与上述的创建 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 非常类似。 实际上，你仍需要先创建一个常规的 **DeviceWatcher** 对象（如前一部分中所述）。 创建后，你就可以调用 [**GetBackgroundTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) 而不是 [**DeviceWatcher.Start**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.start)。 如果你调用 **GetBackgroundTrigger**，则必须指定哪些是你感兴趣的通知：添加、删除或更新。 如果不请求添加，你也无法请求更新或删除。 一旦你注册了触发器，**DeviceWatcher** 将立刻开始在后台运行。 从此刻开始，只要收到匹配条件的应用程序新通知，就会触发后台任务并向你提供自其上次触发应用程序以来最新的更改。
 
-**重要提示** [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838)触发你的应用程序的第一次将当观察程序达到**EnumerationCompleted**状态。 这意味着它将包含所有的初始结果。 不管将来何时触发你的应用程序，它将仅包含自上次触发就已出现的添加、更新和删除通知。 这与前台的 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 对象略有不同，因为初始结果并不是一个个地依次而来，而是在达到 **EnumerationCompleted** 后以捆绑的形式传送。
+**重要**  第一次[ **DeviceWatcherTrigger** ](https://msdn.microsoft.com/library/windows/apps/Dn913838)触发器应用程序时，将观察程序达到**EnumerationCompleted**状态。 这意味着它将包含所有的初始结果。 不管将来何时触发你的应用程序，它将仅包含自上次触发就已出现的添加、更新和删除通知。 这与前台的 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 对象略有不同，因为初始结果并不是一个个地依次而来，而是在达到 **EnumerationCompleted** 后以捆绑的形式传送。
 
  
 
@@ -133,7 +133,7 @@ async void enumerateSnapshot(){
 |-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | 后台中相同的行为               | 无                                                                                                                                    |
 | 后台中可能只有被动扫描 | 等待出现被动扫描的同时，可能需要更长的时间来发现设备。                                                           |
-| 不支持后台扫描            | [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) 将不会检测到任何设备，也不会报告任何更新。 |
+| 不支持后台扫描            | [  **DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) 将不会检测到任何设备，也不会报告任何更新。 |
 
  
 
@@ -153,7 +153,7 @@ async void enumerateSnapshot(){
 ## <a name="save-a-device-for-later-use"></a>保存设备供以后使用
 
 
-任何 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象都可由两条信息的组合来唯一地标识：[**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) 和 [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx)。 如果保留了这两条信息，可以在 **DeviceInformation** 对象丢失之后，通过向 [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx) 提供此信息以重新创建它。 如果执行此操作，则可以保存与你的应用集成的设备的用户首选项。
+任何[ **DeviceInformation** ](https://msdn.microsoft.com/library/windows/apps/BR225393)两条信息的组合唯一地标识对象：[**DeviceInformation.Id** ](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id)并[ **DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx)。 如果保留了这两条信息，可以在 **DeviceInformation** 对象丢失之后，通过向 [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx) 提供此信息以重新创建它。 如果执行此操作，则可以保存与你的应用集成的设备的用户首选项。
 
 
  

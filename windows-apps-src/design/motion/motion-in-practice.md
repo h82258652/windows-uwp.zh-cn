@@ -1,5 +1,5 @@
 ---
-Description: Learn how Fluent motion fundamentals come together in your app.
+Description: 了解如何 Fluent 动作基础知识结合应用程序中。
 title: 运动练习 - UWP 应用中的动画
 label: Motion in practice
 template: detail.hbs
@@ -12,11 +12,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 6eafbfd965d2783c0f72e75c91a04e5ac1cb119f
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058558"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599402"
 ---
 # <a name="bringing-it-together"></a>综合运用
 
@@ -42,7 +42,7 @@ ms.locfileid: "9058558"
     :::column-end:::
 :::row-end:::
 
-**切换示例**
+**转换示例**
 
 ![功能性动画](images/pageRefresh.gif)
 
@@ -80,25 +80,25 @@ ms.locfileid: "9058558"
 
 ## <a name="implicit-animations"></a>隐式动画
 
-> 隐式动画需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本。
+> 隐式动画需要 Windows 10，版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本。
 
 
-隐式动画是通过自动内插期间参数更改的旧的和新值之间实现 Fluent 运动的简单方法。
+隐式动画是一种来实现 Fluent 动作自动属性在参数更改新旧值之间插入值的简单方法。
 
-你还可以隐式动画更改以下属性：
+您可以隐式动态显示以下属性的更改：
 
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
-  - **Opacity**
+  - **不透明度**
   - **旋转**
-  - **比例**
-  - **Translation**
+  - **缩放**
+  - **翻译**
 
-- [边框](/uwp/api/windows.ui.xaml.controls.border)、 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)或[面板](/uwp/api/windows.ui.xaml.controls.panel)
-  - **Background**
+- [边框](/uwp/api/windows.ui.xaml.controls.border)， [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)，或[面板](/uwp/api/windows.ui.xaml.controls.panel)
+  - **背景**
 
-可以更改隐式动画的每个属性都有相应的_转换_属性。 属性进行动画处理，你将过渡类型分配到相应的_转换_属性。 此表显示_转换_属性以及用于每个转换类型。
+可以具有隐式进行动画处理的更改每个属性都有一个相应_过渡_属性。 若要对属性进行动画处理，应将过渡类型分配给相应_过渡_属性。 下表显示了_过渡_属性和要用于每个的过渡类型。
 
-| 动画化的属性 | 转换属性 | 隐式转换类型 |
+| 动画处理的属性 | 转换属性 | 隐式转换类型 |
 | -- | -- | -- |
 | [UIElement.Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
 | [UIElement.Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | [RotationTransition](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
@@ -108,7 +108,7 @@ ms.locfileid: "9058558"
 | [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 | [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-此示例显示了如何使用的 Opacity 属性和过渡使按钮启用控件时淡入和淡出时处于禁用状态。
+此示例演示如何使用 Opacity 属性和转换进行时启用该控件淡入和淡出，它处于禁用状态时的按钮。
 
 ```xaml
 <Button x:Name="SubmitButton"
@@ -129,6 +129,6 @@ public double OpaqueIfEnabled(bool IsEnabled)
 
 ## <a name="related-articles"></a>相关文章
 
-- [运动概述](index.md)
+- [Motion 概述](index.md)
 - [计时和缓动](timing-and-easing.md)
-- [方向性和引力](directionality-and-gravity.md)
+- [方向性和重力](directionality-and-gravity.md)

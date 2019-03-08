@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 购买 API, 订阅
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e4cf27331a218c0c0ef06ee1a80c141b889504a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943732"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607832"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a>更改用户订阅的计费状态
 
@@ -20,7 +20,7 @@ ms.locfileid: "8943732"
 > [!NOTE]
 > 此方法仅供已由 Microsoft 预配能够为通用 Windows 平台 (UWP) 应用创建订阅加载项的开发人员帐户使用。 对于大多数开发人员帐户来说，订阅加载项目前尚不可用。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，你需要：
 
@@ -39,29 +39,29 @@ ms.locfileid: "8943732"
 | POST   | ```https://purchase.mp.microsoft.com/v8.0/b2b/recurrences/{recurrenceId}/change``` |
 
 
-### <a name="request-header"></a>请求标头
+### <a name="request-header"></a>请求头
 
-| 标头         | 类型   | 描述   |
+| 标头         | 在任务栏的搜索框中键入   | 描述   |
 |----------------|--------|-------------|
-| 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。                           |
-| Host           | 字符串 | 必须设置为值 **purchase.mp.microsoft.com**。                                            |
+| 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。                           |
+| 主机           | 字符串 | 必须设置为值 **purchase.mp.microsoft.com**。                                            |
 | 内容长度 | 数字 | 请求正文的长度。                                                                       |
-| Content-Type   | 字符串 | 指定请求和响应类型。 当前，唯一受支持的值为 **application/json**。 |
+| 内容类型   | 字符串 | 指定请求和响应类型。 当前，唯一受支持的值为 **application/json**。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
-| 名称         | 类型  | 说明   |  必填  |
+| 名称         | 在任务栏的搜索框中键入  | 描述   |  必需  |
 |----------------|--------|-------------|-----------|
-| recurrenceId | 字符串 | 想要更改的订阅 ID。 若要获取此 ID，调用[获取用户订阅](get-subscriptions-for-a-user.md)方法、 标识代表想要更改的订阅加载项的响应正文条目并使用该条目**id**字段的值。     | 是      |
+| recurrenceId | 字符串 | 想要更改的订阅 ID。 若要获取此 ID，请调用[获取用户的订阅](get-subscriptions-for-a-user.md)方法中，标识表示你想要更改，请订阅外接程序的响应正文条目，并使用的值**id**字段的项。     | 是      |
 
 
 ### <a name="request-body"></a>请求正文
 
-| 字段      | 类型   | 说明   | 必填 |
+| 字段      | 在任务栏的搜索框中键入   | 描述   | 必需 |
 |----------------|--------|---------------|----------|
 | b2bKey         | 字符串 | 代表想要更改其订阅的用户身份的 [Microsoft Store ID 密钥](view-and-grant-products-from-a-service.md#step-4)。     | 是      |
-| changeType     | 字符串 |  用于标识想要进行的更改类型的以下字符串之一：<ul><li>**Cancel**：取消订阅。</li><li>**Extend**：延长订阅。 如果指定此值，则你必须还包括 *extensionTimeInDays* 参数。</li><li>**Refund**：将订阅款项退还给客户。</li><li>**ToggleAutoRenew**：禁用订阅的自动续订。 如果当前已禁用订阅的自动续订，则此值不起作用。</li></ul>   | 是      |
+| changeType     | 字符串 |  用于标识想要进行的更改类型的以下字符串之一：<ul><li>**取消**：取消的订阅。</li><li>**扩展**:扩展了订阅。 如果指定此值，则你必须还包括 *extensionTimeInDays* 参数。</li><li>**退款**:向客户退款订阅。</li><li>**ToggleAutoRenew**:禁用自动续订的订阅。 如果当前已禁用订阅的自动续订，则此值不起作用。</li></ul>   | 是      |
 | extensionTimeInDays  | 字符串  | 如果 *changeType* 参数的值为 **Extend**，则此参数用于指定订阅的延长天数。 |  是，如果 *changeType* 的值为 **Extend**；否则，为否。  ||
 
 
@@ -111,14 +111,14 @@ Host: https://purchase.mp.microsoft.com
 
 响应正文包含以下数据。
 
-| 值        | 类型   | 描述                                                                 |
+| 值        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------|
-| autoRenew | 布尔值 |  表示是否已将订阅配置为在当前订阅期结束时自动续订。   |
+| autoRenew | 布尔 |  表示是否已将订阅配置为在当前订阅期结束时自动续订。   |
 | 受益人 | 字符串 |  与此订阅关联的权利受益人的 ID。   |
 | expirationTime | 字符串 | 订阅截止日期和时间（ISO 8601 格式）。 仅当订阅处于特定状态时，此字段才可用。 截止时间通常表示当前状态截止的时间。 例如，对于活动的订阅，截止日期表示下一次自动续订发生的时间。    |
-| expirationTimeWithGrace | 字符串 | 过期日期和时间，订阅将包括在宽限期，采用 ISO 8601 格式。 此值指示当该用户将失去对订阅的访问后已失败，订阅自动续订。    |
+| expirationTimeWithGrace | 字符串 | 日期和时间的订阅将过期宽限期内，包括采用 ISO 8601 格式。 此值指示时，用户将失去访问权限的订阅后订阅无法自动续订。    |
 | id | 字符串 |  订阅 ID。 使用此方法表示在你调用[更改用户订阅的计费状态](change-the-billing-state-of-a-subscription-for-a-user.md)方法时想要修改的订阅。    |
-| isTrial | 布尔值 |  表示订阅是否为试用版。     |
+| isTrial | 布尔 |  表示订阅是否为试用版。     |
 | lastModified | 字符串 |  上次修改订阅的日期和时间（ISO 8601 格式）。      |
 | market | 字符串 | 用户在其中获取订阅的国家/地区代码（两个字母 ISO 3166-1 alpha-2 格式）。      |
 | productId | 字符串 | 表示 Microsoft Store 目录中的订阅加载项的[产品](in-app-purchases-and-trials.md#products-skus-and-availabilities)的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 产品的示例应用商店 ID 为 9NBLGGH42CFD。     |
@@ -131,8 +131,8 @@ Host: https://purchase.mp.microsoft.com
 ## <a name="related-topics"></a>相关主题
 
 
-* [管理来自服务的产品授权](view-and-grant-products-from-a-service.md)
-* [获取用户订阅](get-subscriptions-for-a-user.md)
-* [查询产品](query-for-products.md)
-* [将可消费产品报告为已完成](report-consumable-products-as-fulfilled.md)
-* [续订 Microsoft Store ID 密钥](renew-a-windows-store-id-key.md)
+* [从服务管理产品的权利](view-and-grant-products-from-a-service.md)
+* [获取用户的订阅](get-subscriptions-for-a-user.md)
+* [产品的查询](query-for-products.md)
+* [为满足报告易耗型产品](report-consumable-products-as-fulfilled.md)
+* [续订 Microsoft Store ID 键](renew-a-windows-store-id-key.md)

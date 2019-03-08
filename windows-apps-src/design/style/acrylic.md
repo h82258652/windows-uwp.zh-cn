@@ -1,5 +1,5 @@
 ---
-description: 一种画笔，用于创建半透明纹理。
+description: 一种创建半透明纹理的画笔。
 title: 亚克力材料
 template: detail.hbs
 ms.date: 08/09/2017
@@ -11,19 +11,19 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 0600e66c672a28683befdb7b0090f5455a28c948
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116319"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624192"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
 ![主图](images/header-acrylic.svg)
 
-亚克力是一种[画笔](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush)，用于创建半透明纹理。 你可以将亚克力应用到应用图面中，并帮助构建视觉层次结构。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+染料是一种[画笔](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush)创建半透明纹理。 你可以将亚克力应用到应用图面中，并帮助构建视觉层次结构。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
 
-> **重要的 API**：[AcrylicBrush 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush)、[背景属性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background)
+> **重要的 Api**:[AcrylicBrush 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush)，[后台属性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background)
 
 :::row:::
     :::column:::
@@ -38,7 +38,7 @@ ms.locfileid: "9116319"
 
 ## <a name="acrylic-and-the-fluent-design-system"></a>亚克力和 Fluent 设计系统
 
- Fluent 设计系统可帮助你创建包含光线、深度、动画、材料和比例的现代、粗体 UI。 亚克力是一种 Fluent 设计系统组件，用于在你的应用中添加物理纹理（材料）和深度。 要了解详细信息，请参阅 [UWP 的 Fluent 设计概述](../fluent-design-system/index.md)。
+ Fluent 设计系统可帮助你创建包含光线、深度、动画、材料和比例的现代、粗体 UI。 亚克力是一种 Fluent 设计系统组件，用于在你的应用中添加物理纹理（材料）和深度。 要了解详细信息，请参阅 [UWP 的 Fluent Design 概述](../fluent-design-system/index.md)。
 
  ## <a name="video-summary"></a>视频摘要
 
@@ -68,50 +68,50 @@ ms.locfileid: "9116319"
 
  ![应用内亚克力](images/AppAcrylic_DarkTheme.png)
 
- 图层谨慎使用多个亚克力图面： 多层背景亚克力可以创建分散注意力的光学错觉。
+ 层时要注意的多个丙烯画还： 背景染料的多个层可以创建让人分散注意力光学戏法。
 
 ## <a name="when-to-use-acrylic"></a>何时使用亚克力
 
-* 用于支持 UI，例如可能会重叠内容时滚动或与之交互的图面上使用应用内亚克力。
-* 对于瞬态 UI 元素，如上下文菜单、 浮出控件和光 dimsissable UI 使用背景亚克力。<br />在瞬态方案中使用亚克力有助于 visual 维持与触发瞬态 UI 的内容。
+* 使用应用程序内染料以支持 UI，例如可能会重叠时可以滚动，又与之交互的内容的图面上。
+* 使用背景染料的瞬时 UI 元素，如上下文菜单中，浮出控件和 light dimsissable UI。<br />在临时方案中使用染料有助于保持与触发瞬时 UI 的内容的可视化关系。
 
-如果你导航图面上使用应用内亚克力，请考虑扩展亚克力窗格以提高你的应用上的流下方的内容。 使用 NavigationView 将执行此操作为你自动。 但是，若要避免创建而导致产生条纹效果，不尝试将多个亚克力边缘到边缘-这可以创建两个模糊表面之间不需要接合处。 亚克力这种工具可让设计，visual 协调，但不正确，使用时可能会导致视觉干扰。
+如果将应用程序内染料导航图面上，可以考虑扩展来提高您的应用程序上的流丙烯画窗格下方的内容。 使用 NavigationView 将自动执行此操作为您。 但是，若要避免创建条带化效果，不尝试将多个小的丙烯画边到边-这可以创建两个经过模糊处理的图面之间不需要的接缝。 染料是一个工具，可向设计，使 visual 协调工作，但如果使用不正确，可能会导致视觉干扰。
 
-请考虑以下使用模式，确定如何最佳亚克力融入你的应用：
+请考虑以下的使用模式，来决定如何最好地将染料合并到您的应用程序：
 
-### <a name="horizontal-navigation-or-commanding"></a>水平导航或命令
+### <a name="horizontal-navigation-or-commanding"></a>水平导航栏或命令
 
-如果你的应用不能使用 NavigationView，而你计划自行添加亚克力，我们建议使用相对透明的亚克力 60%色调不透明度。
+如果您的应用程序能够利用 NavigationView 并不打算添加染料，我们建议使用相对半透明染料 60%色彩透明度。
  - 窗格以覆盖形式在其他应用内容上打开时，应设置为 [60% 应用内亚克力](#acrylic-theme-resources)
 
-![使用应用内水平命令的地图应用](images/Maps_In_App_Acrylic_1.png)
+![使用应用程序内水平命令的地图应用](images/Maps_In_App_Acrylic_1.png)
 
-此外，在顶部无内容扩展或下亚克力的滚动将为你的应用设置为一个更沉浸式且无缝体验。
+此外，你的内容扩展或下染料的滚动顶部会为但您的应用程序更令人着迷、 无缝体验。
 
 ### <a name="vertical-panes"></a>垂直窗格
 
-对于垂直窗格或图面，可帮助你的应用关闭内容部分，我们建议你使用而不是亚克力的不透明背景。 如果内容顶部打开垂直窗格，如在 NavigationView 的**精简**或**最小**模式下，我们建议你使用应用内亚克力来帮助维护该页面的上下文，当用户在打开该窗格。
+对于垂直窗格或帮助您的应用程序关闭内容部分的图面，我们建议你使用而不是染料的不透明背景。 如果垂直窗格内容之上打开，例如在 NavigationView 的**Compact**或**最小**模式下，我们建议使用应用程序内染料来帮助维护页面的上下文，当用户打开此窗格。
 
-### <a name="transient-surfaces"></a>瞬态图面
+### <a name="transient-surfaces"></a>暂时性的图面
 
-如应用带有菜单浮出控件，非模式弹出窗口或轻型消除窗格，建议使用背景亚克力。
+使用菜单浮出控件，非模式弹出窗口中，为应用或轻量解除窗格中，我们建议使用背景染料。
 
-![使用信息性的浮出控件的邮件应用模式](images/Mail_TransientContextMenu.png)
+![使用信息性的浮出控件的邮件应用程序模式](images/Mail_TransientContextMenu.png)
 
-默认情况下，许多控件将使用亚克力。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)、 [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)、[组合框](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)和类似控件与光 dimiss 弹出窗口将所有使用瞬态亚克力在调用时。
+默认情况下，许多我们控件将使用染料。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)， [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)，[组合框](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)和 light dimiss 弹出类似控件都将使用暂时性染料时调用它们。
 
 > [!Note]
-> 呈现亚克力图面是 GPU 密集型，从而导致设备的功耗增加并缩短电池使用时间。 亚克力效果会自动禁用设备进入节电模式，并且用户可以禁用亚克力效果的所有应用，如果他们选择。
+> 呈现丙烯画的图面是 GPU 密集型的这会增加设备的功率消耗并缩短电池使用寿命。 Acrylic 效果被自动禁用设备进入节电模式和用户可以禁用的所有应用的丙烯画效果时，如果用户选择。
 
 ## <a name="usability-and-adaptability"></a>可用性和适应性
 亚克力外观可自动适应各种设备和上下文。
 
-在高对比度模式中，用户仍将看到自己选择的熟悉的背景颜色，而非亚克力。 此外，背景亚克力和应用内亚克力均显示为纯色：
- - 当用户关闭设置 > 中的透明度个性化 > 颜色
+在高对比度模式中，用户仍将看到自己选择的熟悉的背景颜色，而非亚克力。 此外，背景染料和应用程序内染料显示纯色为：
+ - 当用户关闭中设置的透明度 > 个性化设置 > 颜色
  - 当激活节电模式
  - 应用在低端硬件上运行时
 
-此外，只有背景亚克力会替换其透明度和纹理使用纯色：
+此外，仅背景染料会将其半透明度和纹理纯色为：
  - 桌面上的应用窗口停用时
  - UWP 应用在手机、Xbox、HoloLens 或平板电脑模式下运行时
 
@@ -137,7 +137,7 @@ ms.locfileid: "9116319"
         <td> ChromeMedium <br/> ChromeLow <br/><br/> BaseHigh <br/><br/> BaseLow <br/><br/> AltHigh <br/><br/> AltLow </td>
     </tr>
     </tr>
-        <td> <b>建议用法：</b>下面列出了适用于各种使用情况的常规亚克力资源。 如果你的应用使用 AltMedium 颜色的次级文本且文本大小小于 18 像素，将 80% 亚克力资源放在文本后即可<a href="../accessibility/accessible-text-requirements.md">满足对比率要求</a>。 </td>
+        <td> <b>建议的用法：</b>这些是通用的丙烯画资源的各种用法良好。 如果你的应用使用 AltMedium 颜色的次级文本且文本大小小于 18 像素，将 80% 亚克力资源放在文本后即可<a href="../accessibility/accessible-text-requirements.md">满足对比率要求</a>。 </td>
     </tr>
     <tr>
         <td> SystemControlAcrylicWindowMediumHighBrush、SystemControlAcrylicElementMediumHighBrush <br/> SystemControlBaseHighAcrylicWindowMediumHighBrush、SystemControlBaseHighAcrylicElementMediumHighBrush </td>
@@ -145,7 +145,7 @@ ms.locfileid: "9116319"
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> <b>建议用法：</b>如果你的应用使用 AltMedium 颜色的辅助文本且文本大小的 18 像素或更大，你可以放置文本后面的这些更半透明 70%亚克力资源。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
+        <td> <b>建议的用法：</b>如果您的应用程序使用辅助文本 AltMedium 颜色的文本大小或更大的 18px，放置这些更半透明 70%丙烯画资源文本的背景。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush、SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush、SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush、SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush、SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush、SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush、SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
@@ -153,7 +153,7 @@ ms.locfileid: "9116319"
         <td> ChromeHigh <br/><br/> ChromeMedium <br/><br/> ChromeMediumLow <br/><br/> BaseHigh <br/><br/> BaseLow <br/><br/> AltMediumLow </td>
     </tr>
     <tr>
-        <td> <b>建议用法：</b>仅在亚克力上放置 AltHigh 颜色的主要文本时，你的应用可以使用这些 60% 资源。 我们建议你使用 60% 亚克力绘制应用的<a href="../controls-and-patterns/navigationview.md">垂直导航窗格</a>，即汉堡菜单。 </td>
+        <td> <b>建议的用法：</b>通过染料放置仅主要文本 AltHigh 颜色的您的应用程序可以利用这些 60%的资源。 我们建议你使用 60% 亚克力绘制应用的<a href="../controls-and-patterns/navigationview.md">垂直导航窗格</a>，即汉堡菜单。 </td>
     </tr>
 </table>
 
@@ -162,7 +162,7 @@ ms.locfileid: "9116319"
     <tr>
         <th align="center">资源键</th>
         <th align="center">色调不透明度</th>
-        <th align="center"><a href="color.md">色调和回退颜色</a> </th>
+        <th align="center"><a href="color.md">浅色和回退颜色</a> </th>
     </tr>
     <tr>
         <td> SystemControlAccentAcrylicWindowAccentMediumHighBrush, SystemControlAccentAcrylicElementAccentMediumHighBrush  </td>
@@ -191,21 +191,21 @@ ms.locfileid: "9116319"
 ## <a name="custom-acrylic-brush"></a>自定义亚克力画笔
 你可以选择在应用的亚力克中添加颜色色调，以展示个性化设计或实现与页面其他元素之间的视觉平衡。 若要显示颜色而非灰度，你需要使用以下属性定义属于你自己的亚克力画笔。
  - **TintColor**：颜色/色调覆盖层。 考虑指定 RGB 颜色值和 alpha 通道不透明度。
- - **TintOpacity**：色调层不透明度。 我们建议将 80%不透明度作为起点，尽管不同的颜色看起来可能在其他 translucencies 更具吸引力。
- - **TintLuminosityOpacity**： 控制允许通过从背景亚克力图面的饱和度的量。
+ - **TintOpacity**：色调层不透明度。 虽然不同的颜色可能看起来在其他 translucencies 更具说服力，我们会作为起点，建议 80%的不透明度。
+ - **TintLuminosityOpacity**： 控制的允许通过在后台从丙烯画的外围应用的饱和的量。
  - **BackgroundSource**：指定使用背景亚克力还是应用内亚克力的标记。
- - **FallbackColor**： 使用节电模式中替换亚克力的纯色。 对于背景亚克力，当应用并非位于活动状态桌面窗口中或者应用正在手机和 Xbox 上运行时，回退颜色也会替换亚克力。
+ - **FallbackColor**： 替换在 Battery Saver 染料的纯色。 对于背景亚克力，当应用并非位于活动状态桌面窗口中或者应用正在手机和 Xbox 上运行时，回退颜色也会替换亚克力。
 
 ![浅色主题亚克力样本](images/CustomAcrylic_Swatches_LightTheme.png)
 
 ![深色主题亚克力样本](images/CustomAcrylic_Swatches_DarkTheme.png)
 
-![亮度 opactity 相较于色调不透明度](images/LuminosityVersusTint.png)
+![亮度 opactity 相比色彩不透明度](images/LuminosityVersusTint.png)
 
 若要添加亚克力画笔，请定义用于深色、浅色和高对比度主题的三个资源。 请注意，在高对比度主题中，我们建议使用 x:Key 与深色/浅色 AcrylicBrush 相同的 SolidColorBrush。
 
 > [!Note] 
-> 如果未指定 TintLuminosityOpacity 值，系统将自动调整具体取决于你的 TintColor 和 TintOpacity 其值。
+> 如果未指定 TintLuminosityOpacity 值，系统将自动调整根据 TintColor 和 TintOpacity 其值。
 
 ```xaml
 <ResourceDictionary.ThemeDictionaries>
@@ -319,16 +319,16 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
 * 请将亚克力用作非主要应用图面（例如导航窗格）的背景材料。
 * 请将亚克力扩展到至少一个应用边缘，通过与应用周围环境巧妙融合营造无缝体验。
-* 不要在你的应用的较大的背景图面上放置桌面 arylic-这将中断主要用于瞬态表面的亚克力的心理模型。
+* 不要将桌面 arylic 放在您的应用程序的较大的背景图面上-这会破坏染料主要用于临时图面心理模型。
 * 不要直接并列放置应用内亚克力和背景亚克力，以避免接缝处产生不协调的视觉效果。
 * 不要并列放置具有相同色调和不透明度的多个亚克力窗格，因为这会导致出现不协调的明显接缝。
 * 不要将主题色文本放在亚克力图面上。
 
 ## <a name="how-we-designed-acrylic"></a>如何设计亚克力
 
-我们微调亚克力的关键组件以凸显其独特外观和属性。 我们从透明度、 模糊和噪点设置为平滑图面增添视觉深度和维度开始。 我们添加了排除混合模式层，以确保放置在亚克力背景上的 UI 的对比度和可读性。 最后，我们添加了各种颜色色调，以供用户进行个性化设置。 这些图层协同作用，形成了全新的实用材料。
+我们微调亚克力的关键组件以凸显其独特外观和属性。 我们开始使用半透明度、 模糊和干扰向平面图面添加视觉深度和维度。 我们添加了排除混合模式层，以确保放置在亚克力背景上的 UI 的对比度和可读性。 最后，我们添加了各种颜色色调，以供用户进行个性化设置。 这些图层协同作用，形成了全新的实用材料。
 
-![亚克力设置](images/AcrylicRecipe_Diagram.jpg)
+![Acrylic 方案](images/AcrylicRecipe_Diagram.jpg)
 <br/>亚克力设置：背景、模糊、排除混合、颜色/色调覆盖、噪点
 
 
@@ -338,4 +338,4 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 ## <a name="related-articles"></a>相关文章
 
-[**突出显示**](reveal.md)
+[**显示突出显示**](reveal.md)

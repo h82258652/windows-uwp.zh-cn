@@ -8,33 +8,33 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a8ba79784ed73ae62e7fe8d65c626c3ebc6003a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932049"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618382"
 ---
 # <a name="gamerpic-uris"></a>玩家头像 URI
  
-本部分提供有关的玩家图片通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的*图片*。
+本部分提供有关 Gamerpic 通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务中针对*gamerpics*。
  
 这些 Uri 的域是`gamerpics.xboxlive.com`。
  
-玩家图片服务旨在通过授予的能力，以允许用户生成的其游戏的字符的玩家图片的标题为用户提供更多个性化选项，（在此方案中的游戏字符指的是游戏内 protagonist; 它可以是一个人汽车、 宇宙飞船或用户控件在游戏中的任何其他实体)。
+经过精心设计 Gamerpic 服务为用户提供更多个性化设置选项，通过授予能够允许用户生成的游戏字符 gamerpic 的标题 （在此方案中的游戏字符是指在游戏 protagonist; 它可能是一个人一辆汽车、 一个活动的太空船或用户控件的标题中的任何其他实体)。
  
-生成的游戏玩家图片的基本流程如下所示：
+生成标题 gamerpic 的基本流程如下所示：
  
-   * 标题为用户提供与能够创建其游戏内字符的图像。 
-     * 如果没有，游戏可以然后消息它们没有相应的权限的用户。
-     * 如果用户具有权限，用户可以继续创建其字符玩家图片。
+   * 标题为用户提供创建游戏中字符的映像的功能。 
+     * 如果没有，标题然后消息，它们没有相应权限的用户。
+     * 如果用户有权限，用户可以继续创建其字符 gamerpic。
   
-   * 用户创建图像和标题向玩家图片服务发送 1080 x 1080.png 文件。
-   * 该服务将存储该图像并设置为用户的新玩家图片的图像。
-   * 为用户的玩家图片调用任何体验将获取更新的图像。
+   * 用户创建图像和标题将 1080 x 1080.png 文件发送到 gamerpic 服务。
+   * 该服务中存储图像，并为用户的新 gamerpic 设置的图像。
+   * 调用用户的 gamerpic 任何体验将获得更新的映像。
   
-设置游戏玩家图片的功能仅强制执行特权 (211) 由控制。 如果强制执行吊销权限，将阻止用户保存的游戏的玩家图片，并且该服务将返回 403。 游戏应调用 CheckPrivilege 以验证允许用户要共享的内容 （专用 211）。
+设置标题 gamerpic 的能力由仅限强制的特权 (211) 控制。 如果强制撤消权限，用户将无法从保存标题 gamerpic，并且服务将返回 403。 标题应调用 CheckPrivilege 来验证允许用户共享内容 (priv 211)。
  
-目前，才能使用此服务，你的游戏必须列入白名单。 若要请求审批，发送电子邮件至`slsgamerpics@microsoft.com`。
+目前，若要使用此服务，你的标题必须是已列入允许列表。 若要请求审批，电子邮件`slsgamerpics@microsoft.com`。
  
 <a id="ID4EGC"></a>
 
@@ -43,7 +43,7 @@ ms.locfileid: "8932049"
 
 [/users/me/gamerpic](uri-usersmegamerpic.md)
 
-&nbsp;&nbsp;访问 1080 x 1080 玩家图片。
+&nbsp;&nbsp;访问 1080 x 1080 gamerpic。
  
 <a id="ID4EMC"></a>
 
@@ -55,6 +55,6 @@ ms.locfileid: "8932049"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
+[通用资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
 
    

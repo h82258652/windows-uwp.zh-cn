@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 完整状态, 策略
 ms.localizationpriority: medium
 ms.openlocfilehash: f85974c0ccb38f3c33fb214ddaf24b98dd8dcdd0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919649"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643592"
 ---
 # <a name="rich-presence-policies-and-limitations"></a>“完整状态”策略和限制
 
@@ -24,7 +24,7 @@ ms.locfileid: "8919649"
 -   你有一个总计包含 44 个字符的行（包括参数值）。 这与 Xbox 360“完整状态”的限制类似。 我们将对客户端进行探索，看看是否可以增加该字符串的长度。 如果字符串可以更长，我们将发布结果。
     -   需要 Unicode 字符，且这些字符必须能够与 UTF-8 编码结合使用来支持显示。
 -   你的友好名称必须遵循以下规则：
-    -   允许的字符有 'A' 到 'Z'、'a' 到 'z'、下划线 ('\_')、'0' 到 '9'。
+    -   允许的字符数为 A 到 Z，a 到 z，下划线 (\_)，"0"到"9"。
 
         没有字符限制。
 

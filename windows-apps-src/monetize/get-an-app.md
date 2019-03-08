@@ -1,23 +1,23 @@
 ---
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
-description: 在 Microsoft Store 提交 API 中使用此方法可检索注册到你的合作伙伴中心帐户的特定应用相关的信息。
+description: 在 Microsoft Store 提交 API 中使用此方法来检索有关特定应用的已注册到你的合作伙伴中心帐户信息。
 title: 获取应用
 ms.date: 02/28/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用
 ms.localizationpriority: medium
 ms.openlocfilehash: ccb5473f85cba08c170af2334b0894a11e27a15a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941620"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590512"
 ---
 # <a name="get-an-app"></a>获取应用
 
-在 Microsoft Store 提交 API 中使用此方法可检索注册到你的合作伙伴中心帐户的特定应用相关的信息。
+在 Microsoft Store 提交 API 中使用此方法来检索有关特定应用的已注册到你的合作伙伴中心帐户信息。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -35,14 +35,14 @@ ms.locfileid: "8941620"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 描述                                                                 |
+| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
-| 名称        | 类型   | 描述                                                                 |
+| 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字符串 | 必需。 要检索的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 
@@ -91,12 +91,12 @@ Authorization: Bearer <your access token>
 | 错误代码 |  描述   |
 |--------|------------------|
 | 404  | 找不到指定的应用。 |
-| 409  | 应用使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。  |
+| 409  | 该应用使用的合作伙伴中心功能[目前不支持通过 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。  |
 
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
+* [创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)
 * [获取所有应用](get-all-apps.md)
-* [获取应用的软件包外部测试版](get-flights-for-an-app.md)
-* [获取应用的加载项](get-add-ons-for-an-app.md)
+* [获取包航班的应用](get-flights-for-an-app.md)
+* [获取外接程序的应用](get-add-ons-for-an-app.md)

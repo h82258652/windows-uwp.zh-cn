@@ -8,19 +8,19 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: dab43079dbba3729ff39f3a2116c377c3b73142a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947641"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604062"
 ---
 # <a name="post-usersxuidxuiddeleteuserdata"></a>POST (/users/xuid({xuid})/deleteuserdata)
-完全重置为测试用户信誉数据。 仅供测试。
+完全重置的测试用户的信誉数据。 仅用于测试。
 
   * [备注](#ID4EQ)
   * [URI 参数](#ID4E5)
-  * [授权](#ID4EJB)
-  * [需的请求标头](#ID4E3B)
+  * [Authorization](#ID4EJB)
+  * [所需的请求标头](#ID4E3B)
   * [HTTP 状态代码](#ID4EHC)
   * [响应正文](#ID4EJF)
 
@@ -29,7 +29,7 @@ ms.locfileid: "8947641"
 
 ## <a name="remarks"></a>备注
 
-调用此 API 将删除所有反馈项目和信誉数据从用户。 合作伙伴可以通过调用此 API 针对任何除零售沙盒。 执行团队可能会调用此 API 使用任何沙盒 id。
+调用此 API 将所有反馈项和信誉数据从用户都删除。 合作伙伴可能会调用此 API 针对除零售任何沙盒。 强制执行团队可能会调用此 API 与任何沙盒 id。
 
 这些 Uri 的域是`reputation.xboxlive.com`。 端口 10443 上始终调用此 URI。
 
@@ -38,7 +38,7 @@ ms.locfileid: "8947641"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- |
 | xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 正在删除其数据的用户。|
 
@@ -47,39 +47,39 @@ ms.locfileid: "8947641"
 
 ## <a name="authorization"></a>授权
 
-Retail 沙盒中，从执行团队**PartnerClaim** 。
+零售沙盒**PartnerClaim**强制执行团队。
 
-对于所有其他沙盒， **PartnerClaim**和**SandboxIdClaim**。
+为所有其他沙箱**PartnerClaim**并**SandboxIdClaim**。
 
 <a id="ID4E3B"></a>
 
 
-## <a name="required-request-headers"></a>需的请求标头
+## <a name="required-request-headers"></a>所需的请求标头
 
-**Content-type: application/json**和**X Xbl 协定版本**（当前版本是 101）。
+**内容类型： application/json**并**X Xbl 协定版本**（当前版本为 101）。
 
 <a id="ID4EHC"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+服务将返回其中一个状态代码在本部分中使用此方法在此资源上发出的请求的响应中。 有关与 Xbox Live 服务一起使用的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 描述|
 | --- | --- | --- | --- | --- | --- |
-| 200| “确定”| 已成功检索会话。|
-| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常无效参数。|
-| 401| 未授权| 请求要求用户身份验证。|
-| 404| 找不到| 找不到指定的资源。|
-| 500| 内部服务器错误| 服务器时遇到意外的情况，执行此请求将阻止它。|
-| 503| 服务不可用| 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。|
+| 200| 确定| 已成功检索该会话。|
+| 400| 无效的请求| 服务无法理解请求格式不正确。 通常是一个无效的参数。|
+| 401| 未经授权| 请求需要用户身份验证。|
+| 404| 未找到| 找不到指定的资源。|
+| 500| 内部服务器错误| 服务器遇到意外的情况，致使无法履行请求。|
+| 503| 服务不可用| 请求已达到限制，以秒为单位 （例如 5 秒更高版本） 的客户端-重试值后重试请求。|
 
 <a id="ID4EJF"></a>
 
 
 ## <a name="response-body"></a>响应正文
 
-None 上成功;否则为[ServiceError (JSON)](../../json/json-serviceerror.md)文档。
+无; 如果成功否则为[服务错误 (JSON)](../../json/json-serviceerror.md)文档。
 
 <a id="ID4EWF"></a>
 

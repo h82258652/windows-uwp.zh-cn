@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 社交, people system, 好友
 ms.localizationpriority: medium
 ms.openlocfilehash: 39fd9283e169efa04f9c61d1c5e1d206617ab0c8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924608"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660262"
 ---
 # <a name="xbox-live-people-system"></a>Xbox Live People System
 
@@ -38,6 +38,6 @@ People System 的核心功能是，它既提供匿名关系，也提供非匿名
 
 请参阅 [xbox.com](https://account.xbox.com/Settings) 上的隐私设置完整列表。
 
-## <a name="favorite-people"></a>喜欢的人
+## <a name="favorite-people"></a>常用联系人
 
-Xbox Live People System 为最终用户提供了一个针对其自己的人物列表的简单类别系统。 用户可以将列表中的任何人标记为最喜爱的人物，这些人会在各个功能中首先显示并拥有更高的优先级。 每当显示人物列表时，作品中将首先显示最喜爱的人物。 用户可以拥有的最喜爱的人物的数量没有限制。 用户可以在其列表上将任何人切换为最喜爱的人物，无论那个人是真实姓名还是玩家代号关系，不会有任何隐私隐患。 “喜欢的人”是用户人物列表的子集，不同于单独的人物列表。
+Xbox Live People System 为最终用户提供了一个针对其自己的人物列表的简单类别系统。 用户可以将列表中的任何人标记为最喜爱的人物，这些人会在各个功能中首先显示并拥有更高的优先级。 每当显示人物列表时，作品中将首先显示最喜爱的人物。 可以拥有的常用用户的数量没有限制。 用户可以在其列表上将任何人切换为最喜爱的人物，无论那个人是真实姓名还是玩家代号关系，不会有任何隐私隐患。 “喜欢的人”是用户人物列表的子集，不同于单独的人物列表。

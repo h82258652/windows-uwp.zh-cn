@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: dda124e5be9a4d21a1ee5b9d6130290207e31921
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919332"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593822"
 ---
 # <a name="progression-json"></a>Progression (JSON)
-在用户解锁成就的进度。 
+用户的解锁成就的进度。 
 <a id="ID4EN"></a>
 
  
@@ -23,15 +23,15 @@ ms.locfileid: "8919332"
  
 进度对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| 要求| 要求的数组| 若要获得成就的要求，沿用户远距离解锁它。| 
-| timeUnlocked| DateTime| 成就是第一家解锁时间。| 
+| 要求| 要求的数组| 若要获得成就的要求，以及用户将是朝向对其解除锁定。| 
+| timeUnlocked| DateTime| 成就首先处于未锁定的时间。| 
   
 <a id="ID4ETB"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -58,6 +58,6 @@ ms.locfileid: "8919332"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
    

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 07f5c6ef180cb4abe90a705e73be8d99ecbd2ca7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947080"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603182"
 ---
 # <a name="bitmapencoder-options-reference"></a>BitmapEncoder 选项参考
 
@@ -22,21 +22,21 @@ ms.locfileid: "8947080"
 |-------------------------|--------------|----------------------------------------------------------------------------------------------------|---------------|
 | ImageQuality            | 单个       | 有效值从 0 到 1.0。 较高的值表示较高的质量                                 | JPEG、JPEG-XR |
 | CompressionQuality      | 单个       | 有效值从 0 到 1.0。 较高的值表示较高的效率和较低的压缩模式 | TIFF          |
-| 无损                | 布尔      | 如果它设置为 true，将忽略 ImageQuality 选项                                        | JPEG-XR       |
-| InterlaceOption         | 布尔      | 是否隔行扫描图像                                                                    | PNG           |
+| 无损                | 布尔值      | 如果它设置为 true，将忽略 ImageQuality 选项                                        | JPEG-XR       |
+| InterlaceOption         | 布尔值      | 是否隔行扫描图像                                                                    | PNG           |
 | FilterOption            | uint8        | 使用 [**PngFilterMode**](https://msdn.microsoft.com/library/windows/apps/br226389) 枚举                                | PNG           |
 | TiffCompressionMethod   | uint8        | 使用 [**TiffCompressionMode**](https://msdn.microsoft.com/library/windows/apps/br226399) 枚举                    | TIFF          |
 | 亮度               | uint32Array  | 包含亮度量化常数的 64 个元素的数组                               | JPEG          |
 | 色度             | uint32Array  | 包含色度量化常数的 64 个元素的数组                             | JPEG          |
 | JpegYCrCbSubsampling    | uint8        | 使用 [**JpegSubsamplingMode**](https://msdn.microsoft.com/library/windows/apps/br226386) 枚举                    | JPEG          |
-| SuppressApp0            | 布尔      | 是否取消 App0 元数据块的创建                                        | JPEG          |
-| EnableV5Header32bppBGRA | 布尔      | 是否编码到支持 alpha 的版本 5 BMP                                         | BMP           |
+| SuppressApp0            | 布尔值      | 是否取消 App0 元数据块的创建                                        | JPEG          |
+| EnableV5Header32bppBGRA | 布尔值      | 是否编码到支持 alpha 的版本 5 BMP                                         | BMP           |
 
  
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建、编辑和保存位图图像](imaging.md)
+* [创建、 编辑和保存位图图像](imaging.md)
 * [支持的编解码器](supported-codecs.md)
 
  

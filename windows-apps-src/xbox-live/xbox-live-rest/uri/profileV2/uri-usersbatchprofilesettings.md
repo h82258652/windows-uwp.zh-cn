@@ -8,23 +8,23 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c04c825dde06ab6f75a61d308d758115f898177
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919752"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593812"
 ---
 # <a name="usersbatchprofilesettings"></a>/users/batch/profile/settings
-访问用户或用户的配置文件。 这些 Uri 的域是`profile.xboxlive.com`。
+访问一个用户或用户的配置文件。 这些 Uri 的域是`profile.xboxlive.com`。
   
 <a id="ID4EV"></a>
 
  
 ## <a name="valid-methods"></a>有效的方法
 
-[POST (/users/batch/profile/settings)](uri-usersbatchprofilesettingspost.md)
+[POST （/用户/batch/配置文件/设置）](uri-usersbatchprofilesettingspost.md)
 
-&nbsp;&nbsp;获取用户或用户配置文件。
+&nbsp;&nbsp;获取一个用户或用户的配置文件。
  
 <a id="ID4E6"></a>
 
@@ -36,8 +36,8 @@ ms.locfileid: "8919752"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[配置文件 URI](atoc-reference-profiles.md)
+[配置文件的 Uri](atoc-reference-profiles.md)
 
- [Profile (JSON)](../../json/json-profile.md)
+ [配置文件 (JSON)](../../json/json-profile.md)
 
    

@@ -3,15 +3,15 @@ title: 启动远程设备上的应用
 description: 了解如何使用“Rome”项目在远程设备上启动应用。
 ms.date: 02/12/2018
 ms.topic: article
-keywords: windows 10，uwp，连接设备，远程系统、 rome，项目 rome
+keywords: windows 10，uwp，已连接设备、 远程系统、 罗马、 项目罗马
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
 ms.openlocfilehash: 26a67816195105572d9f690599b9a880ece90c98
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930778"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658412"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>启动远程设备上的应用
 
@@ -35,7 +35,7 @@ ms.locfileid: "8930778"
 
 ### <a name="enable-cross-device-sharing"></a>启用跨设备共享
 
-此外，客户端设备必须设置为允许跨设备共享。 此设置可以在**设置**：**系统** > **共享体验** > **跨设备共享**中进行访问，默认情况下处于启用状态。 
+此外，客户端设备必须设置为允许跨设备共享。 此设置，在中访问**设置**:**系统** > **共享体验** > **跨设备共享**，默认情况下启用。 
 
 ![共享体验设置页面](images/shared-experiences-settings.png)
 
@@ -58,7 +58,7 @@ ms.locfileid: "8930778"
 
 [!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetMembers)]
 
-尝试启动远程应用前，在应用启动代码中添加对 `BuildDeviceList()` 的调用。
+在尝试启动远程应用前，在你的应用启动代码中添加对 `BuildDeviceList()` 的调用。
 
 ## <a name="launch-an-app-on-a-remote-device"></a>启动远程设备上的应用
 
@@ -75,6 +75,6 @@ ms.locfileid: "8930778"
 ## <a name="related-topics"></a>相关主题
 
 [远程系统 API 参考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
-[连接的应用和设备（项目“Rome”）概述](connected-apps-and-devices.md)  
+[已连接的应用和设备 （项目罗马） 概述](connected-apps-and-devices.md)  
 [发现远程设备](discover-remote-devices.md)  
-[远程系统示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)演示了如何发现远程系统、在远程系统上启动应用，以及使用应用服务在运行在两个系统上的应用之间发送消息。
+[远程系统示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)演示了如何发现远程系统、在远程系统上启动应用，以及使用应用服务在两个系统上运行的应用之间发送消息。

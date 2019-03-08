@@ -1,49 +1,49 @@
 ---
-Description: In order to receive money from app sales in the Microsoft Store, you need to set up your payout account and fill out the necessary tax forms.
-title: 设置付款帐户和税单
+Description: 若要从 Microsoft Store 中的应用销售量收到资金，需要将设置付款帐户，需要税务窗体中填写。
+title: 设置你的付款帐户和税单
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.date: 12/14/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dff4e3b37be14729abdc3262d484745a0245776
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048044"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641002"
 ---
-# <a name="set-up-your-payout-account-and-tax-forms"></a>设置付款帐户和税单
+# <a name="set-up-your-payout-account-and-tax-forms"></a>设置你的付款帐户和税单
 
 
-若要从 Microsoft 应用商店中的应用销售中获得收益，你需要设置付款帐户并填写必要的税单在[合作伙伴中心](https://partner.microsoft.com/dashboard)。
+为了接收来自 Microsoft Store 中的应用销售量资金，您需要将设置付款帐户中的必要税务窗体中填写[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 
-如果你仅计划列出免费应用（未计划提供应用内购买或使用 Microsoft Advertising），则无需设置付款帐户或填写任何税单。 如果你以后改变主意并决定要售卖应用 （或加载项），你可以设置你的付款帐户并此时填写税单。 在付款帐户和纳税配置文件设置完成前，将无法提交任何付费应用或加载项。
+如果你仅计划列出免费应用（未计划提供应用内购买或使用 Microsoft Advertising），则无需设置付款帐户或填写任何税单。 如果您改变主意并决定要销售应用程序 （或外接程序），可以将设置付款帐户，并在该时间填写税务窗体。 在付款帐户和纳税配置文件设置完成前，将无法提交任何付费应用或加载项。
 
 > [!NOTE]
 > 在[某些市场](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)中，开发人员只可以提交免费应用。 如果在其中一个市场中注册帐户，则无法设置付款帐户。
 
-[设置开发人员帐户](opening-a-developer-account.md)后，有的两点你需要执行操作之前你可以销售应用 （或加载项） 在 Microsoft Store 中：
+后[开发人员帐户注册](opening-a-developer-account.md)，在 Microsoft Store 中有的两点需要前可以销售应用程序 （或外接程序） 的准备工作：
 
--   [设置付款帐户](#payout-account)
--   [填写税单](#tax-forms)
+-   [将设置付款帐户](#payout-account)
+-   [填写税务窗体](#tax-forms)
 
 > [!NOTE]
-> 有关获得应用销售所得款项的方式和时间，请参阅[获得收入](getting-paid-apps.md)。
+> 对于有关如何以及何时将可获赠为了赚钱您的应用程序的详细信息，请请参阅[获取付费](getting-paid-apps.md)。
  
 
 ## <a name="payout-account"></a>付款帐户
 
-付款帐户是我们用于为你存入销售收益的银行帐户。 此银行帐户的所在地必须与你注册开发者帐户的国家/地区相同。
+付款帐户是我们用于为你存入销售收益的银行帐户。 此银行帐户的所在地必须与你注册开发人员帐户的国家/地区相同。
 
 > [!NOTE]
 > 在某些市场中，PayPal 可用于付款帐户。 请参阅[帐户类型、位置和费用](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)以查明某个特定市场是否支持 PayPal，并阅读下面的 [PayPal 信息](#paypal-info)获取更多详细信息。
 
  
-**设置付款帐户**
+**若要将设置付款帐户**
 
-1.  在[合作伙伴中心](https://partner.microsoft.com/dashboard)，在右上角，选择**设置**齿轮图标，然后选择**开发人员设置**。
-2.  在设置页面的左侧的导航菜单中，选择**付款帐户**。
+1.  在中[合作伙伴中心](https://partner.microsoft.com/dashboard)，选择**设置**齿轮状图标在右上角，然后选择**开发人员设置**。
+2.  在左侧的导航菜单的设置页中，选择**付款帐户**。
 
    > [!NOTE]
    > 由于这是敏感信息，系统可能提示你再次登录。
@@ -70,10 +70,10 @@ ms.locfileid: "9048044"
 
 关于使用 PayPal 作为付款方式的常见问题：
 
--   **我需要有怎样的 PayPal 设置才能接收付款？** 必须确保你的 PayPal 帐户不会阻止 eCheck 付款。 此设置在 PayPal 的“付款接收首选项”页面中管理。 有关详细信息，请参阅 [PayPal 的帐户设置页面](https://go.microsoft.com/fwlink/p/?linkid=513139)。
--   **我所在的国家/地区是否受支持？** 请参阅[帐户类型、位置和费用](account-types-locations-and-fees.md)以了解哪些地方支持 PayPal 的付款方式。
--   **我的 PayPal 帐户是否需要在同一国家/地区为我的合作伙伴中心帐户中注册？** 不需要。 设置 PayPal 帐户时，可以接受默认配置。 您不应该有任何其他国家/地区和货币的问题，除非您阻止了某些货币的付款。 此设置在 PayPal 的“付款接收首选项”页面中管理。
--   **我是否必须手动接受 PayPal 付款？** 否。 PayPal 帐户默认设置为需要用户手动接受付款，这意味着如果你不在 30 天内接受付款，将返回付款。 你可以更改此设置，方法是在 PayPal 的“更多设置”页面中关闭“询问我”。
+-   **若要接收付款具有需要哪些 PayPal 设置？** 必须确保你的 PayPal 帐户不会阻止 eCheck 付款。 此设置在 PayPal 的“付款接收首选项”页面中管理。 有关详细信息，请参阅 [PayPal 的帐户设置页面](https://go.microsoft.com/fwlink/p/?linkid=513139)。
+-   **我的国家/地区/区域是否支持？** 请参阅[帐户类型、位置和费用](account-types-locations-and-fees.md)以了解哪些地方支持 PayPal 的付款方式。
+-   **我的 PayPal 帐户是否需要在同一国家/地区为我的合作伙伴中心帐户中进行注册？** 否。 设置 PayPal 帐户时，可以接受默认配置。 您不应该有任何其他国家/地区和货币的问题，除非您阻止了某些货币的付款。 此设置在 PayPal 的“付款接收首选项”页面中管理。
+-   **我是否需要手动接受 PayPal 付款？** 否。 PayPal 帐户默认设置为需要用户手动接受付款，这意味着如果你不在 30 天内接受付款，将返回付款。 你可以更改此设置，方法是在 PayPal 的“更多设置”页面中关闭“询问我”。
 
 
 ### <a name="specific-requirements-for-certain-countriesregions"></a>某些国家/地区的特定要求
@@ -97,9 +97,9 @@ ms.locfileid: "9048044"
 
 为了确保付款成功，请谨记以下事项：
 
--   输入你在合作伙伴中心中的付款帐户的**帐户持有者名称**必须与你的银行帐户相关联完全相同的名称。 例如，如果银行帐户名称包含中间名，则向“帐户持有者名称”**** 添加中间名。
+-   **帐户持有者姓名**输入在合作伙伴中心付款帐户必须是完全相同的名称与你的银行帐户相关联。 例如，如果银行帐户名称包含中间名，则向“帐户持有者名称”添加中间名。
 -   付款会直接从 Microsoft 转移到您的银行帐户，货币单位为卢比 (RUB)。
--   在合作伙伴中心中输入拉丁字符的银行信息转换为西里尔字符。
+-   在合作伙伴中心中拉丁语字符输入银行信息将翻译成西里尔语字符。
 -   付款必须支付到银行帐户而不是银行卡。
 
 #### <a name="ukraine"></a>乌克兰
@@ -112,39 +112,39 @@ ms.locfileid: "9048044"
 
 当尝试首次付款时，Microsoft 将提供所有三个文档。 对于任何后续付款，你将仅收到 AC 文档。 请保留 ADA 和 AA 文档，以防你从银行接收将来付款时需要它们。
 
-为了确保付款成功，请记住以下事项：
+为了确保付款成功，请谨记以下事项：
 
--   输入你在合作伙伴中心中的付款帐户的**帐户持有者名称**必须与你的银行帐户相关联完全相同的名称。 例如，如果银行帐户名称包含中间名，则向“帐户持有者名称”**** 添加中间名。
+-   **帐户持有者姓名**输入在合作伙伴中心付款帐户必须是完全相同的名称与你的银行帐户相关联。 例如，如果银行帐户名称包含中间名，则向“帐户持有者名称”添加中间名。
 -   付款会直接从 Microsoft 转移到你的银行帐户，货币单位为美元。
--   在合作伙伴中心中输入拉丁字符的银行信息转换为西里尔字符。
+-   在合作伙伴中心中拉丁语字符输入银行信息将翻译成西里尔语字符。
 
 
 ## <a name="tax-forms"></a>税单
 
-在具有[开发者帐户注册](opening-a-developer-account.md)并设置[付款帐户](#payout-account)后，你可以通过完成以下步骤的 Microsoft 应用商店创建你的*税务配置文件*：
+后[为开发人员帐户注册](opening-a-developer-account.md)并设置你[付款帐户](#payout-account)，可以创建你*税务配置文件*为通过完成以下 Microsoft Store步骤：
 
 -   指定你的居住地和公民身份所属的国家/地区。
 -   填写相应的税单。
 
-你可以填写和提交以电子方式在合作伙伴中心; 税单在大多数情况下，你不需要打印和邮寄任何税单。
+您可以完成并提交税务窗体以电子方式在合作伙伴中心;在大多数情况下，不需要打印和邮件的任何窗体。
 
 > [!IMPORTANT]
-> 不同的国家和地区有不同的纳税要求。 你必须支付的税款的精确金额取决于你在哪些国家和地区销售你的应用。 请参阅[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，以了解 Microsoft 为哪些国家和地区代缴销售和使用税。 在其他国家或地区中，根据你的注册地点，你可能需要直接向当地的税务机构为你的应用缴纳销售和使用税 另外，你所获得的应用销售收益可能需要缴纳所得税。 我们强烈建议你联系你所在国家或地区最好地帮助你确定你的 Microsoft 应用商店开发人员活动的正确纳税信息的相关机构。
+> 不同的国家和地区有不同的纳税要求。 你必须支付的税款的精确金额取决于你在哪些国家和地区销售你的应用。 请参阅[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，以了解 Microsoft 为哪些国家和地区代缴销售和使用税。 在其他国家或地区中，根据你的注册地点，你可能需要直接向当地的税务机构为你的应用缴纳销售和使用税 另外，你所获得的应用销售收益可能需要缴纳所得税。 我们强烈建议您与相关的颁发机构联系您所在国家或区域可以最有效地帮助您确定您的 Microsoft Store 开发人员活动的右侧税务信息。
 
  
-**完成税务配置文件**
+**若要完成计税配置文件**
 
-1.  在[合作伙伴中心](https://partner.microsoft.com/dashboard)，选择右上角中的**帐户设置**图标，然后选择**开发人员设置**。
-2.  在左侧的导航菜单中，选择**税务配置文件**。
+1.  在中[合作伙伴中心](https://partner.microsoft.com/dashboard)，选择**帐户设置**图标在右上角，然后选择**开发人员设置**。
+2.  在左侧的导航菜单中，选择**税务资料**。
 
    > [!NOTE]
    > 由于这是敏感信息，系统可能提示你再次登录。
 
-3.  查看你当前的纳税配置文件状态，然后单击“编辑”**** 以完成所需税单。
-4.  回答有关美国公民身份和居住地的问题，然后单击“下一步”****。
+3.  查看你当前的纳税配置文件状态，然后单击“编辑”以完成所需税单。
+4.  回答有关美国公民身份和居住地的问题，然后单击“下一步”。
 5.  如果显示了你的姓名和地址信息，请进行确认以申报税款。
 
-接下来，将会看到必须填写的电子版本的税单。 无论你所在国家/地区居住或公民，你必须填写美国税单销售任何应用或加载项通过 Microsoft 应用商店。 符合某些美国居住地要求的开发人员必须填写 IRS W-9 表格。 美国境外的其他开发人员必须填写 IRS W-8 表格。 可以在完成纳税配置文件时在线填写这些表单。
+接下来，将会看到必须填写的电子版本的税单。 无论居住或公民身份的国家/地区，必须填写美国纳税窗体任何应用程序或外的接程序通过 Microsoft Store 中销售。 符合某些美国居住地要求的开发人员必须填写 IRS W-9 表格。 美国境外的其他开发人员必须填写 IRS W-8 表格。 可以在完成纳税配置文件时在线填写这些表单。
 
 不需要提供美国个人纳税识别号码（或 ITIN）即可从 Microsoft 接收付款或申请免税待遇。
 
@@ -154,7 +154,7 @@ ms.locfileid: "9048044"
 
 ### <a name="tax-treaty-benefits"></a>免税待遇
 
-如果你在美国境外，你也许能够利用免税待遇。 这些优惠会随国家和并可能会允许你减少的 Microsoft 应用商店预缴的。 你可以通过填写 W-8BEN 表格的第 II 部分来申请免税待遇。 我们建议你咨询所在国家或地区的相关人员，以确定是否可以享受这些优惠。
+如果你在美国境外，你也许能够利用免税待遇。 这些权益不同国家/地区到国家/地区，并且可能允许您以减少的 Microsoft Store 预扣税款。 你可以通过填写 W-8BEN 表格的第 II 部分来申请免税待遇。 我们建议你咨询所在国家或地区的相关人员，以确定是否可以享受这些优惠。
 
  
 

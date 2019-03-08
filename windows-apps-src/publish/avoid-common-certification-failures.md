@@ -1,5 +1,5 @@
 ---
-Description: Review this list to help avoid issues that frequently prevent apps from getting certified, or that might be identified during a spot check after the app is published.
+Description: 查看此列表以帮助避免频繁地阻止应用通过认证的问题，或者在发布应用后，可能在点检查过程中标识的问题。
 title: 避免常见的认证失败
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
 ms.date: 10/31/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 62c99c159ff68201919fa15baded999e3b6a2477
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932004"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625792"
 ---
 # <a name="avoid-common-certification-failures"></a>避免常见的认证失败
 
@@ -19,7 +19,7 @@ ms.locfileid: "8932004"
 查看此列表以帮助避免频繁地阻止应用通过认证的问题，或者在发布应用后，可能在点检查过程中标识的问题。
 
 > [!NOTE]
-> 请务必检查以确保你的应用满足其中所列出的要求的所有的[Microsoft 应用商店策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
+> 请确保查看[Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)以确保您的应用程序满足所有列出的要求。
 
 -   仅在应用完成时提交你的应用。 欢迎使用你的应用提要来介绍即将推出的功能，但是请确保你的应用不包含未完成的部分、指向正在构建的网页的链接，或者其他任何会让客户觉得你的应用不完整的内容。
 
@@ -31,9 +31,9 @@ ms.locfileid: "8932004"
 
 -   提供使用你的应用时所需的[任何必要信息](notes-for-certification.md)，例如，如果应用要求用户登录某项服务，则需要提供测试帐户的用户名和密码；还可能需要说明访问隐藏的功能或锁定的功能所需的任何步骤。
 
--   如果你的应用需要一个;，包括[隐私策略 URL](enter-app-properties.md#privacy-policy-url)例如，如果你的应用访问任何种类的个人信息以任何方式或在其他法律要求。 若要帮助确定你的应用是否需要隐私策略，请查看[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和[Microsoft 应用商店策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
+-   包括[隐私策略 URL](enter-app-properties.md#privacy-policy-url)如果您的应用程序需要一个; 例如，如果您的应用程序访问任何类型的个人信息以任何方式或者另外法律要求。 若要帮助确定您的应用程序是否需要隐私策略，请查看[应用程序开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)并[Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
 
--   请确保你的应用的说明清晰地展示应用的用途。 有关帮助，请参阅[编写出色的应用说明](write-a-great-app-description.md)中提供的相关指南。
+-   请确保您的应用的说明清晰地展示您的应用的用途。 有关帮助，请参阅[编写出色的应用说明](write-a-great-app-description.md)中提供的相关指南。
 
 -   针对[年龄分级](age-ratings.md)部分中的所有问题提供完整并且准确无误的答案。
 

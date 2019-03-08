@@ -12,15 +12,15 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 6ff7b37eee4f2b9228a635a117e164d7d9859629
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116063"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610992"
 ---
 # <a name="create-write-and-read-a-file"></a>创建、写入和读取文件
 
-**重要的 API**
+**重要的 Api**
 
 -   [**StorageFolder 类**](/uwp/api/windows.storage.storagefolder)
 -   [**StorageFile 类**](/uwp/api/windows.storage.storagefile)
@@ -31,13 +31,13 @@ ms.locfileid: "9116063"
 > [!NOTE]
 > 有关完整示例，请参阅[文件访问示例](https://go.microsoft.com/fwlink/p/?linkid=619995)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
-    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何编写异步应用 C + + /winrt 中，请参阅[并发和异步操作通过 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。 若要了解如何编写异步应用 C + + CX，请参阅[进行异步编程 C + + CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
+    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何编写异步应用程序在 C + + / WinRT，请参阅[并发和异步操作使用 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。 若要了解如何编写异步应用程序在 C + + /CX 中，请参阅[异步编程中 C + + /cli CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
--   **了解如何获取你希望读取和/或写入的文件**
+-   **了解如何获取你想要从读取、 写入，文件或两者**
 
     可以在[使用选取器打开文件和文件夹](quickstart-using-file-and-folder-pickers.md)中了解如何使用文件选取器获取文件。
 
@@ -114,9 +114,9 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 ```
 
-**将文本写入文件**
+**将文本写入到文件**
 
-通过调用[**FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync)方法向文件写入文本。
+通过调用向你的文件写入文本[ **FileIO.WriteTextAsync** ](/uwp/api/windows.storage.fileio.writetextasync)方法。
 
 ```csharp
 await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow");
@@ -148,9 +148,9 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
 ```
 
-**使用缓冲区将字节写入文件（2 步）**
+**使用缓冲区 （2 个步骤） 将字节写入文件**
 
-1.  首先，调用[**CryptographicBuffer.ConvertStringToBinary**](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary)获取缓冲区的字节 （基于一个字符串） 想要写入文件。
+1.  首先，调用[ **CryptographicBuffer.ConvertStringToBinary** ](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary)若要获取的缓冲区的字节数 （基于字符串） 要写入到你的文件。
 
     ```csharp
     var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
@@ -191,7 +191,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
         Windows.Security.Cryptography.BinaryStringEncoding.Utf8)
     ```
 
-2.  然后将字节写入从你的缓冲区你的文件通过调用[**FileIO.WriteBufferAsync**](/uwp/api/windows.storage.fileio.writebufferasync)方法。
+2.  然后写入的字节数从缓冲区到你的文件通过调用[ **FileIO.WriteBufferAsync** ](/uwp/api/windows.storage.fileio.writebufferasync)方法。
 
     ```csharp
     await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer);
@@ -217,7 +217,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer)
     ```
 
-**使用流将文本写入文件（4 步）**
+**使用流 （4 个步骤） 将文本写入文件**
 
 1.  首先，调用 [**StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync) 方法打开文件。 打开操作完成后，它将返回文件的内容流。
 
@@ -254,7 +254,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
     ```
 
-2.  接下来，通过调用[**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)方法获取输出流`stream`。 如果你使用 C#，然后将这在**使用**语句以管理输出流的生存期中。 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后你可以控制其生存期括在块中，或将其设置为`nullptr`当你完成使用它。
+2.  接下来，通过调用获取输出流[ **IRandomAccessStream.GetOutputStreamAt** ](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)方法从`stream`。 如果您使用的C#，然后将括在这**使用**语句的输出流的生存期管理。 如果您使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后你可以通过在块中，将其括起来，或将其设置为控制其生存期`nullptr`完成后使用它。
 
     ```csharp
     using (var outputStream = stream.GetOutputStreamAt(0))
@@ -280,7 +280,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     End Using
     ```
 
-3.  现在添加此代码 （如果你使用 C# 中，现有的**using**语句中），以通过创建新的[**DataWriter**](/uwp/api/windows.storage.streams.datawriter)对象并调用[**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring)方法写入输出流。
+3.  现在，添加此代码 (如果您使用的C#，在现有**使用**语句) 写入到输出流的创建一个新[ **DataWriter** ](/uwp/api/windows.storage.streams.datawriter)对象并调用[ **DataWriter.WriteString** ](/uwp/api/windows.storage.streams.datawriter.writestring)方法。
 
     ```csharp
     using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
@@ -306,7 +306,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
     ```
 
-4.  最后，添加此代码 （如果你使用 C# 中，**使用**内部语句中），以将文本保存到你的文件与[**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync)和关闭[**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync)与流。
+4.  最后，添加以下代码 (如果您使用的C#，在内部**使用**语句) 若要将文本保存到你的文件与[ **DataWriter.StoreAsync** ](/uwp/api/windows.storage.streams.datawriter.storeasync)并关闭流与[ **IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync)。
 
     ```csharp
     await dataWriter.StoreAsync();
@@ -329,9 +329,9 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Await outputStream.FlushAsync()
     ```
 
-**向文件写入的最佳做法**
+**写入文件的最佳实践**
 
-有关其他详细信息和最佳做法指南，请参阅[写入文件的最佳做法](best-practices-for-writing-to-files.md)。
+有关其他详细信息和最佳实践指南，请参阅[写入到文件的最佳做法](best-practices-for-writing-to-files.md)。
     
 ## <a name="reading-from-a-file"></a>从文件读取
 
@@ -365,7 +365,7 @@ Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 
 **从文件读取文本**
 
-通过调用[**FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)方法从文件读取文本。
+通过调用从文件读取文本[ **FileIO.ReadTextAsync** ](/uwp/api/windows.storage.fileio.readtextasync)方法。
 
 ```csharp
 string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
@@ -392,9 +392,9 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 ```
 
-**通过使用缓冲区从文件读取文本（2 步）**
+**从文件读取文本，通过使用缓冲区 （2 个步骤）**
 
-1.  首先，调用[**FileIO.ReadBufferAsync**](/uwp/api/windows.storage.fileio.readbufferasync)方法。
+1.  首先，调用[ **FileIO.ReadBufferAsync** ](/uwp/api/windows.storage.fileio.readbufferasync)方法。
 
     ```csharp
     var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
@@ -448,7 +448,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim text As String = dataReader.ReadString(buffer.Length)
     ```
 
-**使用流从文件读取文本（4 步）**
+**从文件读取文本，使用一个流 （4 个步骤）**
 
 1.  通过调用 [**StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync) 方法，为你的文件打开流。 操作完成后，它将返回文件的内容流。
 
@@ -498,7 +498,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim size = stream.Size
     ```
 
-3.  通过调用[**IRandomAccessStream.GetInputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getinputstreamat)方法获取输入的流。 将其放到 **using** 语句中以管理流的生存期。 调用 **GetInputStreamAt** 时指定 0，以将位置设置在流的开头。
+3.  获取输入的流，通过调用[ **IRandomAccessStream.GetInputStreamAt** ](/uwp/api/windows.storage.streams.irandomaccessstream.getinputstreamat)方法。 将其放到 **using** 语句中以管理流的生存期。 调用 **GetInputStreamAt** 时指定 0，以将位置设置在流的开头。
 
     ```csharp
     using (var inputStream = stream.GetInputStreamAt(0))
@@ -556,4 +556,4 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 
 ## <a name="see-also"></a>另请参阅
 
-- [用于向文件写入的最佳做法](best-practices-for-writing-to-files.md)
+- [写入到文件的最佳实践](best-practices-for-writing-to-files.md)

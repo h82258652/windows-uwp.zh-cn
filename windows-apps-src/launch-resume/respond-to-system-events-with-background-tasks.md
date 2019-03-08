@@ -11,15 +11,15 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: de8d585d7178a277d1df248858f69a5a5705fb1d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044531"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634852"
 ---
 # <a name="respond-to-system-events-with-background-tasks"></a>使用后台任务响应系统事件
 
-**重要的 API**
+**重要的 Api**
 
 - [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
 - [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
@@ -79,12 +79,12 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 ```
 
 > [!NOTE]
-> 通用 Windows 平台应用必须在注册任何后台触发器类型之前调用[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) 。
+> 通用 Windows 平台应用程序必须调用[ **RequestAccessAsync** ](https://msdn.microsoft.com/library/windows/apps/hh700485)之前注册的任何后台触发器类型。
 
 若要确保通用 Windows 应用在你发布更新后继续正常运行，必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然后调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
 > [!NOTE]
-> 后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
+> 后台任务注册参数在注册时验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
  
 ## <a name="remarks"></a>备注
 
@@ -96,16 +96,16 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
-* [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)
-* [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
-* [处理取消的后台任务](handle-a-cancelled-background-task.md)
-* [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
+* [创建并注册进程外后台任务](create-and-register-a-background-task.md)
+* [创建和注册过程中后台任务](create-and-register-an-inproc-background-task.md)
+* [声明应用程序清单中的后台任务](declare-background-tasks-in-the-application-manifest.md)
+* [处理已取消的后台任务](handle-a-cancelled-background-task.md)
+* [监视器后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 * [注册后台任务](register-a-background-task.md)
-* [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
-* [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
+* [设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)
+* [更新动态磁贴通过后台任务](update-a-live-tile-from-a-background-task.md)
 * [使用维护触发器](use-a-maintenance-trigger.md)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
-* [后台任务指南](guidelines-for-background-tasks.md)
+* [后台任务的指导原则](guidelines-for-background-tasks.md)
 * [调试后台任务](debug-a-background-task.md)
-* [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在触发挂起、 继续和后台 UWP 应用中的事件 （在调试）](https://go.microsoft.com/fwlink/p/?linkid=254345)

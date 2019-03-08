@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 完整状态
 ms.localizationpriority: medium
 ms.openlocfilehash: ac4549301c60eafb935dab0ac9c5b5028452edfb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926682"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610392"
 ---
 # <a name="rich-presence-updating-strings"></a>“完整状态”更新字符串
 
@@ -25,19 +25,19 @@ URI 如下所示：
 
 ## <a name="titlerequest-object"></a>TitleRequest 对象
 
-属性 | 类型 | 必填 | 描述
+属性 | 在任务栏的搜索框中键入 | 必填 | 描述
 ---|---|---|---
 活动|ActivityRequest|N|描述标题内信息的记录（完整状态和媒体信息，如果有）
 
 ## <a name="activityrequest-object"></a>ActivityRequest 对象
 
-属性 | 类型 | 必填 | 描述
+属性 | 在任务栏的搜索框中键入 | 必填 | 描述
 ---|---|---|---
 richPresence|RichPresenceRequest|N|应使用的“完整状态”字符串 friendlyName。
 
 ## <a name="richpresencerequest-object"></a>RichPresenceRequest 对象
 
-属性 | 类型 | 必填 | 描述
+属性 | 在任务栏的搜索框中键入 | 必填 | 描述
 ---|---|---|---
 ID|字符串|Y|应使用的“完整状态”字符串 friendlyName
 Scid|字符串|Y|告诉我们定义“完整状态”字符串的位置的 Scid。

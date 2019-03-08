@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 486eb4adc1151bac1bf6a04a8f54b67530b426a3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933290"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607342"
 ---
 # <a name="swap-chains"></a>交换链
 
@@ -23,20 +23,20 @@ ms.locfileid: "8933290"
 
 如果你的应用程序在监视器刷新过程中更新前台缓冲区，显示的图像将被截成两半，上半部分包含旧图像，下半部分包含新图像。 此问题被称为*撕裂*。
 
-## <a name="span-idavoidingtearingspanspan-idavoidingtearingspanspan-idavoidingtearingspanavoiding-tearing"></a><span id="Avoiding_tearing"></span><span id="avoiding_tearing"></span><span id="AVOIDING_TEARING"></span>避免撕裂
+## <a name="span-idavoidingtearingspanspan-idavoidingtearingspanspan-idavoidingtearingspanavoiding-tearing"></a><span id="Avoiding_tearing"></span><span id="avoiding_tearing"></span><span id="AVOIDING_TEARING"></span>避免撕裂现象
 
 
 Direct3D 提供两种避免撕裂的选项：
 
 -   一种选项只允许监视器在垂直回扫（或垂直同步）操作时更新。 监视器刷新图像的方式通常是水平移动光针，从监视器左上角开始，Z 字形移动到右下角。 光针达到底部后，监视器将重新校准，将其移回左上角，重新开始刷新过程。
 
-    此重新校准过程称为垂直同步。垂直在同步期间，监视器不会绘制任何内容，因此在监视器再次开始绘制之前，不会看到对前台缓冲区的任何更新。 垂直同步相对较慢，但是，还不足以在等待时渲染复杂场景。 若要避免撕裂，同时能够渲染复杂场景，则需要进行后台缓冲。
+    此重新校准过程称为垂直同步。在垂直同步期间，监视器不会绘制任何内容，因此在监视器再次开始绘制之前，不会看到对前台缓冲区所做的任何更新。 垂直同步相对较慢，但是，还不足以在等待时渲染复杂场景。 若要避免撕裂，同时能够渲染复杂场景，则需要进行后台缓冲。
 
 -   一种选项使用后台缓冲技术。 后台缓冲是向屏幕外图面（称为后台缓冲区）绘制场景的过程。 前台缓冲区之外的任何图面均称为屏幕外图面，因为此类图面永远不会通过监视器直接显示。
 
     通过使用后台缓冲区，应用程序可以在系统空闲时（即没有正在等待处理的 Windows 消息时）自由渲染场景，而无需考虑监视器刷新频率。 后台缓冲带来了另一个问题：如何以及何时将后台缓冲区移至前台缓冲区。
 
-## <a name="span-idsurfaceflippingspanspan-idsurfaceflippingspanspan-idsurfaceflippingspansurface-flipping"></a><span id="Surface_flipping"></span><span id="surface_flipping"></span><span id="SURFACE_FLIPPING"></span>图面翻转
+## <a name="span-idsurfaceflippingspanspan-idsurfaceflippingspanspan-idsurfaceflippingspansurface-flipping"></a><span id="Surface_flipping"></span><span id="surface_flipping"></span><span id="SURFACE_FLIPPING"></span>图面上翻转
 
 
 后台缓冲区移至前台缓冲区的过程称为图面翻转。 由于图形卡只使用指向代表前台缓冲区的图面的指针，所以只需更改指针就可以将后台缓冲区移至前台缓冲区。 当应用程序要求 Direct3D 将后台缓冲区显示到前台缓冲区时，Direct3D 只需“翻转”两种图面指针。 结果是后台缓冲区变成新的前台缓冲区，而旧的前台缓冲区则变成了新的后台缓冲区。

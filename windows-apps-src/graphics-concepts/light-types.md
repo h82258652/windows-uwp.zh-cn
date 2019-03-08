@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1815f0956fbc175fec5ca892dbeeec92b2f939ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926795"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594692"
 ---
 # <a name="light-types"></a>光类型
 
@@ -33,7 +33,7 @@ ms.locfileid: "8926795"
 
 定向光只有颜色和方向，没有位置。 它们发射平行光。 这意味着由定向光产生的所有光线在相同方向上穿过场景。 你可以将定向光想象成位于近乎无限远处的光源，如太阳。 定向光不受衰减或范围的影响，因此，你指定的方向和颜色是 Direct3D 计算顶点颜色时考虑的唯一因素。 由于照明因素较少，它们是可以使用的计算密集程度最低的光。
 
-## <a name="span-idspotlightspanspan-idspotlightspanspan-idspotlightspanspotlight"></a><span id="SpotLight"></span><span id="spotlight"></span><span id="SPOTLIGHT"></span>聚光
+## <a name="span-idspotlightspanspan-idspotlightspanspan-idspotlightspanspotlight"></a><span id="SpotLight"></span><span id="spotlight"></span><span id="SPOTLIGHT"></span>SpotLight
 
 
 聚光具有颜色、位置和发光方向。 从聚光发射的光由明亮的内锥和较大的外锥组成，光强度在两者之间减弱，如下图所示。
@@ -79,7 +79,7 @@ Theta 是聚光内锥的弧度角，Phi 值是聚光外锥的角度。 Falloff �
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[光和材质](lights-and-materials.md)
+[灯和材料](lights-and-materials.md)
 
  
 

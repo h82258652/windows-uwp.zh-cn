@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, 游戏, 广播
 ms.localizationpriority: medium
 ms.openlocfilehash: c906551fd626dec726498ded9a7995007230504f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930488"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607582"
 ---
 # <a name="manage-game-broadcasting"></a>管理游戏广播
 本文向你演示如何管理 UWP 应用的游戏广播。 用户必须使用内置在 Windows 中的系统 UI 启动广播，但从 Windows 10 版本 1709 开始，应用可以启动系统广播 UI，而且当广播开始和停止时可以收到通知。
@@ -22,7 +22,7 @@ ms.locfileid: "8930488"
 1. 在 Visual Studio 的**解决方案资源管理器**中，展开你的 UWP 项目并右键单击**引用**，然后选择**添加引用...**。 
 2. 展开**通用 Windows** 节点并选择**扩展**。
 3. 在扩展列表中，选中与你的项目的目标版本匹配的**适用于 UWP 的 Windows 桌面扩展**条目旁边的复选框。 对于应用广播功能，版本必须为 1709 或更高版本。
-4. 单击**确定**。
+4. 单击“确定” 。
 
 ## <a name="launch-the-system-ui-to-allow-the-user-to-initiate-broadcasting"></a>启动系统 UI 以允许用户启动广播
 有几种原因导致你的应用当前可能无法广播，包括当前设备不满足广播所需的硬件要求，或另一个应用当前正在广播。 在启动系统 UI 前，你可以检查你的应用当前是否能够广播。 先检查广播 API 在当前设备上是否可用。 在操作系统版本早于 Windows 10 版本 1709 的设备上，这些 API 不可用。 也可以不检查具体的操作系统版本，改用 **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** 方法查询 *Windows.Media.AppBroadcasting.AppBroadcastingContract* 版本 1.0。 如果此协定存在，则广播 API 在该设备上可用。

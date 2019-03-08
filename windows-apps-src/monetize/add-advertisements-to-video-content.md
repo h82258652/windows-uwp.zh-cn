@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 广告, 视频, scheduler, javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 69fef2bc5deb21be8685badb0cf18f38769170cb
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045070"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603842"
 ---
 # <a name="show-ads-in-video-content"></a>在视频内容中显示广告
 
@@ -24,13 +24,13 @@ ms.locfileid: "9045070"
 
 视频内容的广告根据程序短于十分钟（简短形式）还是长于十分钟（较长形式）而有所不同。 虽然后者在服务上设置时更为复杂，但实际上在用户编写客户端代码方式方面没有任何不同。 如果 **AdScheduler** 接收具有单个广告（而不是清单）的 VAST 负载，它将被视为针对单个前导广告调用的清单（在 00:00 时中断一次）。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 * 使用 Visual Studio 2015 安装 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp) 或更高版本。
 
 * 你的项目必须使用 [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview) 控件，提供将计划广告的视频内容。 可在 GitHub 上的 Microsoft 中提供的 [TVHelpers](https://github.com/Microsoft/TVHelpers) 库集合中获取此控件。
 
-  以下示例演示如何使用 HTML 标记声明 [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview)。 通常，此标记属于 index.html 文件（或另一个适用于你项目的 html 文件）中的 `<body>` 部分。
+  以下示例演示了如何使用 HTML 标记声明 [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview)。 通常，此标记属于 index.html 文件（或另一个适用于你项目的 html 文件）中的 `<body>` 部分。
 
   ``` html
   <div id="MediaPlayerDiv" data-win-control="TVJS.MediaPlayer">
@@ -39,7 +39,7 @@ ms.locfileid: "9045070"
   </div>
   ```
 
-  以下示例演示如何使用 JavaScript 代码建立 [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview)。
+  以下示例演示了如何使用 JavaScript 代码建立 [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview)。
 
   [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet1)]
 
@@ -49,15 +49,15 @@ ms.locfileid: "9045070"
 
 2. 如果你的项目面向**任何 CPU**，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 如果你的项目面向**任何 CPU**，你将无法在以下步骤中成功添加对 Microsoft Advertising 库的引用。 有关详细信息，请参阅[项目中由面向任何 CPU 引起的引用错误](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
-3. 将对**适用于 JavaScript 的 Microsoft 广告 SDK** 库的引用添加到你的项目。
+3. 将对**适用于 JavaScript 的 Microsoft Advertising SDK** 库的引用添加到你的项目。
 
-    1. 在**解决方案资源管理器**窗口中，右键单击**引用**，然后选择**添加引用...**
-    2. 在**引用管理器**中，展开**通用 Windows**、单击**扩展**，然后选中**适用于 JavaScript 的 Microsoft 广告 SDK**（版本 10.0）旁边的复选框。
-    3. 在**引用管理器**中，单击“确定”。
+    1. 在“解决方案资源管理器”窗口中，右键单击“引用”，然后选择“添加引用...”
+    2. 在“引用管理器”中，展开“通用 Windows”、单击“扩展”，然后选中“适用于 JavaScript 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
+    3. 在“引用管理器”中，单击“确定”。
 
 4.  将 AdScheduler.js 文件添加到你的项目：
 
-    1. 在 Visual Studio 中，依次单击**项目**和**管理 NuGet 包**。
+    1. 在 Visual Studio 中，依次单击“项目”和“管理 NuGet 包”。
     2. 在搜索框中，键入 **Microsoft.StoreServices.VideoAdScheduler** 并安装 Microsoft.StoreServices.VideoAdScheduler 程序包。 AdScheduler.js 文件将添加到你的项目中的 ../js 子目录。
 
 5.  打开 index.html 文件（或其他适用于你项目的 html 文件）。 在 `<head>` 部分中，在项目的 JavaScript 引用 default.css 和 main.js 之后，添加对 ad.js 和 adscheduler.js 的引用。
@@ -89,7 +89,7 @@ ms.locfileid: "9045070"
     > [!NOTE]
     > 在 **MediaPlayer** 中开始播放主要视频内容之前，应该等待 **requestSchedule** 或 **requestScheduleByUrl** 返回。 在 **requestSchedule** 返回之前开始播放媒体（就前导广告而言），前导广告的播放将中断主要视频内容。 即使函数失败，也必须调用 **play**，因为 **AdScheduler** 将告诉 **MediaPlayer** 跳过广告，直接转到内容。 你可能具有不同的业务要求，例如插入内置广告（如果无法成功远程获取广告）。
 
-8.  在播放期间，你可以处理让你的应用跟踪进度和/或在初始广告匹配进程后可能发生的错误的其他事件。 The following code shows some of these events, including **onPodStart**, **onPodEnd**, **onPodCountdown**, **onAdProgress**, **onAllComplete**, and **onErrorOccurred**.
+8.  在播放期间，你可以处理让你的应用跟踪进度和/或在初始广告匹配进程后可能发生的错误的其他事件。 以下代码显示了部分事件，包括 **onPodStart**、**onPodEnd**、**onPodCountdown**、**onAdProgress**、**onAllComplete** 和 **onErrorOccurred**。
 
     [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet5)]
 
@@ -142,7 +142,7 @@ ms.locfileid: "9045070"
 
 ### <a name="requesttimeout"></a>requestTimeout
 
-此属性获取或设置广告请求响应超时前等待的毫秒数。其值为 0 时将通知系统永不超时。 默认值为 30000 毫秒（30 秒）。
+此属性获取或设置要为广告请求响应超时前等待的毫秒数。值为 0 时，将通知系统永不超时。 默认值为 30000 毫秒（30 秒）。
 
 ### <a name="schedule"></a>schedule
 
@@ -152,9 +152,9 @@ ms.locfileid: "9045070"
 
 当广告播放到四分之一检查点时引发此事件。 事件处理程序的第二个参数 (*eventInfo*) 是一个具有以下成员的 JSON 对象：
 
-* **progress**：广告播放状态（AdScheduler.js 中定义的 **MediaProgress** 枚举值之一）。
-* **clip**：正在播放的视频剪辑。 此对象不适用于你的代码。
-* **adPackage**：一个对象，表示当前播放广告在广告负载中的对应部分。 此对象不适用于你的代码。
+* **进度**:Ad 播放状态 (之一**MediaProgress** AdScheduler.js 中定义的枚举值)。
+* **剪辑**:正在播放的视频剪辑。 此对象不适用于你的代码。
+* **adPackage**:表示正在播放的 ad ad 负载相对应的一部分的对象。 此对象不适用于你的代码。
 
 ### <a name="onallcomplete"></a>onAllComplete  
 
@@ -168,8 +168,8 @@ ms.locfileid: "9045070"
 
 当广告正在播放时触发此事件并指示当前广告荚剩余时间。 事件处理程序的第二个参数 (*eventData*) 是一个具有以下成员的 JSON 对象：
 
-* **remainingAdTime**：当前广告的剩余秒数。
-* **remainingPodTime**：当前广告荚的剩余秒数。
+* **remainingAdTime**:当前 ad 的剩余的秒数。
+* **remainingPodTime**:针对当前 pod 的剩余的秒数。
 
 > [!NOTE]
 > 一个广告荚是一组按顺序播放的广告，如在商业广告时段播放的一组广告。 有关更多详细信息，请参阅 IAB 数字视频广告服务模板 (VAST) 规范。
@@ -178,12 +178,12 @@ ms.locfileid: "9045070"
 
 广告荚结束时引发此事件。 事件处理程序的第二个参数 (*eventData*) 是一个具有以下成员的 JSON 对象：
 
-* **startTime**：广告荚的开始时间（以秒计）。
-* **pod**：代表广告荚的对象。 此对象不适用于你的代码。
+* **startTime**:Pod 的开始时间，以秒为单位。
+* **pod**:一个对象，表示在 pod。 此对象不适用于你的代码。
 
 ### <a name="onpodstart"></a>onPodStart
 
 广告荚开始时引发此事件。 事件处理程序的第二个参数 (*eventData*) 是一个具有以下成员的 JSON 对象：
 
-* **startTime**：广告荚的开始时间（以秒计）。
-* **pod**：代表广告荚的对象。 此对象不适用于你的代码。
+* **startTime**:Pod 的开始时间，以秒为单位。
+* **pod**:一个对象，表示在 pod。 此对象不适用于你的代码。

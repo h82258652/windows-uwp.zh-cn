@@ -1,23 +1,23 @@
 ---
-Description: Lets the user set a value in a given range.
+Description: 让用户在给定的范围内设置值。
 title: 滑块
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f01aec2a0dc6010eab53122d69e64c57fe4f5c3d
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037079"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589922"
 ---
 # <a name="sliders"></a>滑块
 
@@ -25,7 +25,7 @@ ms.locfileid: "9037079"
 
 滑块是一种可让用户通过沿轨迹移动 thumb 控件从一个值范围中进行选择的控件。
 
-> **重要 API**：[Slider 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)、[Value 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)、[ValueChanged 事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
+> **重要的 Api**:[Slider 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)，[的 Value 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)， [ValueChanged 事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
 
 ![滑块控件](images/controls/slider.png)
 
@@ -40,11 +40,11 @@ ms.locfileid: "9037079"
 
 下面是决定是否使用滑块时要考虑的一些其他因素：
 
--   **该设置是否是相对数量？** 如果不是，使用[单选按钮](radio-button.md)或[列表框](lists.md)。
--   **该设置是否为确切的已知数值？** 如果是，请使用数值[文本框](text-box.md)。
--   **用户是否会从设置更改效果的即时反馈中获益？** 如果是，请使用滑块。 例如，用户可以通过立即查看色调、饱和度或亮度值更改的效果，从而更加轻松地选择颜色。
--   **该设置是否包含四个或更多值？** 如果不是，请使用[单选按钮](radio-button.md)。
--   **用户是否可以更改该值？** 滑块用于用户交互。 如果用户无法更改该值，请改为使用只读文本。
+-   **该设置是否起来相对数量？** 如果不是，使用[单选按钮](radio-button.md)或[列表框](lists.md)。
+-   **是的设置完全匹配、 已知数值？** 如果是，请使用数值[文本框](text-box.md)。
+-   **用户将受益于设置的更改的影响的即时反馈？** 如果是，请使用滑块。 例如，用户可以通过立即查看色调、饱和度或亮度值更改的效果，从而更加轻松地选择颜色。
+-   **该设置是否具有四个或多个值的范围？** 如果不是，请使用[单选按钮](radio-button.md)。
+-   **用户可以更改值？** 滑块用于用户交互。 如果用户无法更改该值，请改为使用只读文本。
 
 如果你在滑块和数值文本框之间进行选择，请在以下情况下使用数值文本框：
 
@@ -64,7 +64,7 @@ ms.locfileid: "9037079"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/Slider">打开此应用，了解 Slider 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -117,7 +117,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 -   调整控件大小，以便用户可以轻松设置所需的值。 对于具有离散值的设置，请确保用户可以使用鼠标轻松选择任何值。 确保滑块的终点始终位于视图边界内。
 -   在用户选择时或选择后，提供即时反馈（如果实际）。 例如，Windows 音量控件会蜂鸣以指示选定的音频音量。
--   使用标签显示值范围。 例外：如果滑块垂直放置，并且顶部标签为“最大”、“高”、“更多”或同等标签，则可以忽略其他标签，因为它的意思已明确。
+-   使用标签显示值范围。 例外：如果滑块的垂直方向和顶部标签是最大值，较高，更多，或等效的则可以省略其他标签因为含义是清除。
 -   在禁用滑块时禁用所有关联标签或反馈视觉对象。
 -   当设置你的滑块的流向和/或方向时，请考虑文本方向。 在某些语言中，书写文字从左向右排列，在另一些语言中却从右向左排列。
 -   不使用滑块作为进度指示器。
@@ -169,7 +169,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
     -   标记滑块范围的两端，除非垂直方向使得不必要这样做。
     -   如果可能，为每个标签仅使用一个词。
     -   不要使用结束标点符号。
-    -   确保这些标签具有描述性且相对应。 示例：最大/最小，更多/更少，高/低、温和/高声。
+    -   确保这些标签具有描述性且相对应。 示例：大/最小、 更多/更少，低/高、 音量软/高。
 -   **值标签**
 
     值标签显示滑块的当前值。

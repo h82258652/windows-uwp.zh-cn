@@ -1,5 +1,5 @@
 ---
-Description: Your app can load image resource files containing images tailored for display scale factor, theme, high contrast, and other runtime contexts.
+Description: 应用可以加载含有为显示比例系数、主题、高对比度和其他运行时上下文定制的图像的图像资源文件。
 title: 加载为比例、主题、高对比度和其他定制的图像和资产
 template: detail.hbs
 ms.date: 10/10/2017
@@ -7,14 +7,14 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f4749b8560624ed58f43b33fe3373d909919347
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929493"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592022"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>加载为比例、主题、高对比度和其他定制的图像和资产
-你的应用可以加载为[显示比例系数](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)、主题、高对比度和其他运行时上下文定制的图像资源文件（或其他资产文件）。 这些图像可以从强制性代码或 XAML 标记引用，如作为 **Image** 的 **Source** 属性。 它们还可以显示在应用包清单源文件（`Package.appxmanifest` 文件）中 &mdash; 例如，作为 Visual Studio 清单设计器的“视觉资源”选项卡上应用图标的值 &mdash; 或显示在磁贴和 toast 上。 通过在图像的文件名中使用限定符，并选择性地在 [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) 的帮助下动态加载它们，你可以加载与用户的显示比例、主题、高对比度、语言和其他上下文的运行时设置最匹配的最合适图像文件。
+你的应用可以加载为[显示比例系数](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)、主题、高对比度和其他运行时上下文定制的图像资源文件（或其他资产文件）。 这些图像可以从强制性代码或 XAML 标记引用，如作为 **Image** 的 **Source** 属性。 它们还可以显示在应用包清单源文件（`Package.appxmanifest` 文件）中 &mdash; 例如，作为 Visual Studio 清单设计器的“视觉资源”选项卡上应用图标的值 &mdash; 或显示在磁贴和 toast 上。 通过在图像的文件名称中使用限定符，并选择性地在 [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) 的帮助下动态加载它们，你可以加载与用户的显示比例、主题、高对比度、语言和其他上下文的运行时设置最匹配的最合适图像文件。
 
 图像资源包含在图像资源文件中。 你也可以将图像视为资产，将包含该图像的文件视为资产文件；而且你可以在你的项目的 \Assets 文件夹中找到这些类型的资源文件。 有关如何在图像资源文件的名称中使用限定符的背景，请参阅[定制语言、比例和其他限定符的资源](tailor-resources-lang-scale-contrast.md)。
 
@@ -83,7 +83,7 @@ this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 
 注意在这些示例 URI 中，方案（“`ms-appx`”或“`ms-appx-web`”）后依次跟随“`://`”和绝对路径。 在绝对路径中，前导“`/`”导致从包的根解释路径。
 
-**注意** `ms-resource`（适用于[字符串资源](localize-strings-ui-manifest.md)）和 `ms-appx(-web)`（适用于图像和其他资产）URI 方案执行自动限定符匹配，以查找最适合当前上下文的资源。 `ms-appdata` URI 方案（用于加载应用数据）不执行任何此类自动匹配，但你可以响应 [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) 的内容，并使用它们在 URI 中的完整物理文件名从应用数据明确加载合适的资产。 有关应用数据的信息，请参阅[存储和检索设置以及其他应用数据](../design/app-settings/store-and-retrieve-app-data.md)。 Web URI 方案（如 `http`、`https`和 `ftp`）也无法执行自动匹配。 有关如何处理这种情况的信息，请参阅[在云中托管和加载图像](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud)。
+**注意**`ms-resource`（适用于[字符串资源](localize-strings-ui-manifest.md)）和 `ms-appx(-web)`（适用于图像和其他资产）URI 方案执行自动限定符匹配，以查找最适合当前上下文的资源。 `ms-appdata` URI 方案（用于加载应用数据）不执行任何此类自动匹配，但你可以响应 [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) 的内容，并使用它们在 URI 中的完整物理文件名从应用数据明确加载合适的资产。 有关应用数据的信息，请参阅[存储和检索设置以及其他应用数据](../design/app-settings/store-and-retrieve-app-data.md)。 Web URI 方案（如 `http`、`https`和 `ftp`）也无法执行自动匹配。 有关如何处理这种情况的信息，请参阅[在云中托管和加载图像](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud)。
 
 如果你的图像文件保留它们在项目结构中所在的位置，绝对路径是一个不错的选择。 如果你希望能够移动图像文件，但又注意让它们与其引用 XAML 标记文件的相对位置保持不变，则你可能不想要使用绝对路径，而是改为使用相对于其所在的标记文件的路径。 如果这样做，你不必使用 URI 方案。 在这种情况下，你仍会获得自动限定符匹配的好处，但这只是因为你使用的是 XAML 标记中的相对路径。
 
@@ -195,10 +195,10 @@ private void RefreshUIImages()
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
 ## <a name="related-topics"></a>相关主题
-* [定制语言、比例和其他限定符的资源](tailor-resources-lang-scale-contrast.md)
-* [本地化 UI 和应用包清单中的字符串](localize-strings-ui-manifest.md)
-* [存储和检索设置以及其他应用数据](../design/app-settings/store-and-retrieve-app-data.md)
-* [磁贴和 toast 的语言、比例和高对比度支持](tile-toast-language-scale-contrast.md)
-* [可本地化清单项目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
-* [镜像图像](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md#mirroring-images)
+* [定制您的语言、 缩放性和其他限定符的资源](tailor-resources-lang-scale-contrast.md)
+* [本地化用户界面和应用包清单中的字符串](localize-strings-ui-manifest.md)
+* [存储和检索设置和其他应用程序数据](../design/app-settings/store-and-retrieve-app-data.md)
+* [磁贴和 toast 支持的语言、 缩放性和高对比度](tile-toast-language-scale-contrast.md)
+* [可本地化的清单项目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
+* [镜像映像](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md#mirroring-images)
 * [全球化和本地化](../design/globalizing/globalizing-portal.md)

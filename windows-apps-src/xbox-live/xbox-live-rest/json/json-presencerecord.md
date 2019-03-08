@@ -8,32 +8,32 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d531352c4336e00c93a91e7c945602ab69695f2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918413"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622582"
 ---
 # <a name="presencerecord-json"></a>PresenceRecord (JSON)
-联机状态相关的单个用户的数据。
+有关单个用户的联机状态的数据。
 <a id="ID4EN"></a>
 
 
-## <a name="presencerecord"></a>Presencerecord，他
+## <a name="presencerecord"></a>PresenceRecord
 
-Presencerecord，他的对象具有以下规范。
+PresenceRecord 对象具有以下规范。
 
-| 成员| 类型| 描述|
+| 成员| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- |
-| xuid| 字符串| Xbox 用户 ID (XUID) 目标用户。 为此用户提供的状态数据。|
-| 设备| [DeviceRecord](json-devicerecord.md)的数组| 记录列表中用户的设备。|
-| 状态| 字符串| Xbox LIVE 上的用户的活动。 可能值： <ul><li>联机： 用户有至少一台设备的记录。</li><li>离开： 用户已登录 Xbox LIVE 但不是活动任何作品中。</li><li>脱机： 用户不是任何设备上存在的。</li></ul> | 
-| lastSeen| [LastSeenRecord](json-lastseenrecord.md)| 当用户在没有有效 DeviceRecords，最后看到的信息才可用。 如果已从缓存中，删除对象及其数据可能不会返回，因为没有任何永久性存储。|
+| xuid| 字符串| Xbox 用户 ID (XUID) 的目标用户。 为此用户提供的状态显示数据。|
+| 设备| 数组[DeviceRecord](json-devicerecord.md)| 用户的设备记录的列表。|
+| 状态| 字符串| Xbox LIVE 上的用户的活动。 可能值： <ul><li>联机：用户必须至少一个设备记录。</li><li>消失：用户是登录到 Xbox LIVE 但未在任何标题中处于活动状态。</li><li>脱机：用户已不存在任何设备上。</li></ul> | 
+| lastSeen| [LastSeenRecord](json-lastseenrecord.md)| 在用户有无有效 DeviceRecords 时，上次看到的信息才可用。 如果该对象已从缓存中，删除其数据可能不会返回，因为不存在持久性存储。|
 
 <a id="ID4E2C"></a>
 
 
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
 
 
 ```json
@@ -97,7 +97,7 @@ Presencerecord，他的对象具有以下规范。
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
 
 <a id="ID4EQD"></a>
@@ -105,9 +105,9 @@ Presencerecord，他的对象具有以下规范。
 
 ##### <a name="reference"></a>参考
 
-[POST (/users/batch)](../uri/presence/uri-usersbatchpost.md)
+[POST （/用户/批处理）](../uri/presence/uri-usersbatchpost.md)
 
- [GET (/users/me)](../uri/presence/uri-usersmeget.md)
+ [获取 (/ 用户/我)](../uri/presence/uri-usersmeget.md)
 
  [DELETE (/users/xuid({xuid})/devices/current/titles/current)](../uri/presence/uri-usersxuiddevicescurrenttitlescurrentdelete.md)
 

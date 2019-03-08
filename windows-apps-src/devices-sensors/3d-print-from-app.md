@@ -1,21 +1,21 @@
 ---
 title: 从应用进行 3D 打印
-description: 了解如何向通用 Windows 应用添加 3D 打印功能。 本主题介绍在确保 3D 模型可打印并且格式正确之后，如何启动 3D 打印对话框。
+description: 了解如何向通用 Windows 应用添加 3D 打印功能。 本主题介绍了如何在确保 3D 模型可打印并且格式正确后启动 3D 打印对话框。
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，3dprinting，3d 打印
 ms.localizationpriority: medium
 ms.openlocfilehash: 4013341a3e4e44d6ac2df66d58d4114313573d2a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048264"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57652242"
 ---
 # <a name="3d-printing-from-your-app"></a>从应用进行 3D 打印
 
-**重要的 API**
+**重要的 Api**
 
 -   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/dn998169)
 
@@ -89,11 +89,11 @@ ms.locfileid: "9048264"
 ## <a name="execute-printing-task-create-a-taskrequested-handler"></a>执行打印任务：创建一个 TaskRequested 处理程序
 
 
-稍后，在向用户显示 3D 打印对话框并且用户选择开始打印时，应用将需要向 3D 打印管道传递所需的参数。 3D 打印 API 将引发 **[TaskRequested](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D.Print3DManager.TaskRequested)** 事件。 必须编写一种方法来适当地处理此事件。 如往常一样，处理程序方法必须与其事件的类型相同：**TaskRequested** 事件具有参数 [**Print3DManager**](https://msdn.microsoft.com/library/windows/apps/dn998029)（对其发送方对象的引用）和一个 [**Print3DTaskRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn998051) 对象，该对象包含大部分相关信息。
+稍后，在向用户显示 3D 打印对话框并且用户选择开始打印时，应用将需要向 3D 打印管道传递所需的参数。 3D 打印 API 将引发 **[TaskRequested](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D.Print3DManager.TaskRequested)** 事件。 必须编写一种方法来适当地处理此事件。 与往常一样，处理程序方法必须是类型的其事件相同的：**TaskRequested**事件有参数[ **Print3DManager** ](https://msdn.microsoft.com/library/windows/apps/dn998029) （向其发送方对象的引用） 和一个[ **Print3DTaskRequestedEventArgs** ](https://msdn.microsoft.com/library/windows/apps/dn998051) ，该对象持有的大多数相关信息。
 
 [!code-cs[MyTaskTitle](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetMyTaskTitle)]
 
-此方法的核心用途是使用 *args* 参数沿管道发送 **Printing3D3MFPackage**。 **Print3DTaskRequestedEventArgs** 类型有一个属性：[**Request**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequestedeventargs.request.aspx)。 它属于 [**Print3DTaskRequest**](https://msdn.microsoft.com/library/windows/apps/dn998050) 类型，表示一个打印作业请求。 它的方法 [**CreateTask**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequest.createtask.aspx) 使程序能够为打印作业提交正确的信息，并且它将返回一个对 **Print3DTask** 对象（已沿 3D 打印管道发送）的引用。
+此方法的核心用途是使用 *args* 参数沿管道发送 **Printing3D3MFPackage**。 **Print3DTaskRequestedEventArgs**类型具有一个属性：[**请求**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequestedeventargs.request.aspx)。 它属于 [**Print3DTaskRequest**](https://msdn.microsoft.com/library/windows/apps/dn998050) 类型，表示一个打印作业请求。 它的方法 [**CreateTask**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequest.createtask.aspx) 使程序能够为打印作业提交正确的信息，并且它将返回一个对 **Print3DTask** 对象（已沿 3D 打印管道发送）的引用。
 
 **CreateTask** 具有以下输入参数：一个用于打印作业名称的string、一个用于要使用的打印机 ID 的 string 和一个 [**Print3DTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtasksourcerequestedhandler.aspx) 委托。 引发 **3DTaskSourceRequested** 事件时会自动调用该委托（该操作由 API 本身完成）。 需要着重注意的是，该委托会在打印作业启动时调用，它负责提供正确的 3D 打印程序包。
 

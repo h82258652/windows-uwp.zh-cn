@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cb210621b74fef5128456d06a7cdf047752f45f5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947560"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612742"
 ---
 # <a name="midi"></a>MIDI
 
 
 
-本文向你演示了如何枚举 MIDI（乐器数字接口）设备以及从通用 Windows 应用发送和接收 MIDI 消息。 Windows 10 支持通过 USB （类符合要求和最专有驱动程序），通过蓝牙 LE MIDI MIDI (Windows 10 周年纪念版及更高版本)，并通过免费提供的第三方产品、 MIDI 以太网和路由 MIDI。
+本文向你演示了如何枚举 MIDI（乐器数字接口）设备以及从通用 Windows 应用发送和接收 MIDI 消息。 Windows 10 支持通过 USB （类符合要求和最专用驱动程序），通过蓝牙 LE MIDI MIDI (Windows 10 周年纪念版及更高版本)，并通过免费提供的第三方产品、 通过以太网的 MIDI 和路由 MIDI。
 
 ## <a name="enumerate-midi-devices"></a>枚举 MIDI 设备
 
@@ -29,7 +29,7 @@ ms.locfileid: "8947560"
 
 [!code-xml[MidiListBoxes](./code/MIDIWin10/cs/MainPage.xaml#SnippetMidiListBoxes)]
 
-[**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 方法的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 类用于枚举许多不同类型的由 Windows 识别的设备。 若要指明你仅希望使用该方法查找 MIDI 输入设备，请使用 [**MidiInPort.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894779) 返回的选择器字符串。 **FindAllAsync** 将返回包含通过系统注册的每个 MIDI 输入设备的 **DeviceInformation** 的 [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395)。 如果返回的集合不包含任何项，则没有可用的 MIDI 输入设备。 如果集合中包含项，循环浏览 **DeviceInformation** 对象，并将每台设备的名称添加到 MIDI 输入设备 **ListBox**。
+[  **FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 方法的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 类用于枚举许多不同类型的由 Windows 识别的设备。 若要指明你仅希望使用该方法查找 MIDI 输入设备，请使用 [**MidiInPort.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894779) 返回的选择器字符串。 **FindAllAsync** 将返回包含通过系统注册的每个 MIDI 输入设备的 **DeviceInformation** 的 [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395)。 如果返回的集合不包含任何项，则没有可用的 MIDI 输入设备。 如果集合中包含项，循环浏览 **DeviceInformation** 对象，并将每台设备的名称添加到 MIDI 输入设备 **ListBox**。
 
 [!code-cs[EnumerateMidiInputDevices](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetEnumerateMidiInputDevices)]
 
@@ -41,7 +41,7 @@ ms.locfileid: "8947560"
 
 ## <a name="create-a-device-watcher-helper-class"></a>创建设备观察程序帮助程序类
 
-[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) 命名空间提供了 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446)，它可在设备已在系统中添加或删除时，或者设备的信息已更新时通知你的应用。 因为支持 MIDI 的应用通常会关注输入和输出设备，所以此示例将创建可实现 **DeviceWatcher** 模式的帮助程序类，以便可针对 MIDI 输入和 MIDI 输出设备使用相同的代码，从而避免重复。
+[  **Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) 命名空间提供了 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446)，它可在设备已在系统中添加或删除时，或者设备的信息已更新时通知你的应用。 因为支持 MIDI 的应用通常会关注输入和输出设备，所以此示例将创建可实现 **DeviceWatcher** 模式的帮助程序类，以便可针对 MIDI 输入和 MIDI 输出设备使用相同的代码，从而避免重复。
 
 将新类添加到你的项目以作为设备观察程序。 在此示例中，该类名为 **MyMidiDeviceWatcher**。 此部分中的剩余代码将用于实现帮助程序类。
 
@@ -68,10 +68,10 @@ ms.locfileid: "8947560"
 
 **DeviceWatcher** 具有以下事件：
 
--   [**Added**](https://msdn.microsoft.com/library/windows/apps/br225450) - 在新设备添加到系统中时引发。
--   [**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453) - 在从系统中删除设备时引发。
--   [**Updated**](https://msdn.microsoft.com/library/windows/apps/br225458) - 在更新与现有设备关联的信息时引发。
--   [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451) - 在观察程序完成其所请求的设备类型枚举时引发。
+-   [**添加**](https://msdn.microsoft.com/library/windows/apps/br225450) -新设备添加到系统时引发。
+-   [**删除**](https://msdn.microsoft.com/library/windows/apps/br225453) -从系统中删除设备时引发。
+-   [**更新**](https://msdn.microsoft.com/library/windows/apps/br225458) -更新与现有设备关联的信息时引发。
+-   [**EnumerationCompleted** ](https://msdn.microsoft.com/library/windows/apps/br225451)的观察程序完成其请求的设备类型的枚举时引发。
 
 在以上每个事件的事件处理程序中，将调用帮助程序方法 **UpdateDevices**，以通过当前设备列表更新 **ListBox**。 因为未在 UI 线程上调用 **UpdateDevices** 更新 UI 元素和这些事件处理程序，因此每个调用都必须打包在对 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的调用中，这将导致指定代码在 UI 线程上运行。
 
@@ -131,14 +131,14 @@ ms.locfileid: "8947560"
 
 当你使用上面所述的技术枚举输出 MIDI 设备时，你的应用会发现一个名为“Microsoft GS 波形表合成器”的 MIDI 设备。 这是一款你可以从应用中使用的内置通用 MIDI 合成器。 但是，如果没有将该内置合成器的 SDK 扩展包含在你的项目中，将无法为此设备创建 MIDI 输出端口。
 
-**将通用 MIDI 合成器 SDK 扩展包含在应用项目中**
+**若要在应用程序项目中包含的常规 MIDI 合成器 SDK 扩展**
 
 1.  在 **“解决方案资源管理器”** 中，在你的项目下，右键单击 **“引用”**，然后选择 **“添加引用...”**
 2.  展开 **“通用 Windows”** 节点。
 3.  选择 **“扩展”**。
-4.  从扩展列表中，选择“适用于通用 Windows 应用的 Microsoft 通用 MIDI DLS”****。
+4.  从扩展列表中，选择“适用于通用 Windows 应用的 Microsoft 通用 MIDI DLS”。
     > [!NOTE] 
-    > 如果存在多个版本的扩展，请务必选择与应用所面向的目标匹配的版本。 你可以在项目“属性”的“应用程序”**** 选项卡上查看应用所面向的 SDK 版本。
+    > 如果存在多个版本的扩展，请务必选择与应用所面向的目标匹配的版本。 你可以在项目“属性”的“应用程序”选项卡上查看应用所面向的 SDK 版本。
 
  
 

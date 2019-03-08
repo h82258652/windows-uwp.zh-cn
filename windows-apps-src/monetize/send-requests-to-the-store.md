@@ -1,5 +1,5 @@
 ---
-Description: You can use the SendRequestAsync method to send requests to the Microsoft Store for operations that do not yet have an API available in the Windows SDK.
+Description: SendRequestAsync 方法可用于将请求发送到 Microsoft Store 的操作，还没有在 Windows SDK 中提供的 API。
 title: 向 Microsoft Store 发送请求
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 03/22/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
 ms.openlocfilehash: d492bc7dde990404552689516731850974c31a7c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942093"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589792"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>向 Microsoft Store 发送请求
 
@@ -77,7 +77,7 @@ public async Task<bool> AddUserToFlightGroup()
 |  *requestKind*                   |  指定 7 以返回设备的最高排名外部测试版组，或者指定 8 以返回当前用户和设备的最高排名外部测试版组。 我们建议为 *requestKind* 参数使用值 8，因为此值将在成员中返回当前用户和设备的最高排名外部测试版组。  |
 |  *parametersAsJson*                   |  传递 JSON 格式的字符串，它包含以下示例显示的数据。  |
 
-以下示例显示了要传递至 *parametersAsJson* 的 JSON 数据格式。 必须为*类型*字段分配字符串 *GetRemoteVariables*。 将*projectId*字段分配给已定义的合作伙伴中心中的远程变量的项目 ID。
+以下示例显示了要传递至 *parametersAsJson* 的 JSON 数据格式。 必须为*类型*字段分配字符串 *GetRemoteVariables*。 将分配*projectId*字段到在其中定义在合作伙伴中心中的远程变量的项目的 ID。
 
 ```json
 { 
@@ -92,7 +92,7 @@ public async Task<bool> AddUserToFlightGroup()
 |----------------------|---------------|
 |  *匿名*                   |  布尔值，其中 **true** 指示用户或设备身份不存在于请求中，**false** 指示用户或设备身份已存在于请求中。  |
 |  *名称*                   |  包含设备或用户所在的最高排名外部测试版组名称的字符串。  |
-|  *设置*                   |  键/值对的字典，包含开发人员为外部测试版组配置的远程变量的名称和值。  |
+|  *settings*                   |  键/值对的字典，包含开发人员为外部测试版组配置的远程变量的名称和值。  |
 
 以下示例展示了此请求的返回值。
 
@@ -111,7 +111,7 @@ public async Task<bool> AddUserToFlightGroup()
 ### <a name="add-the-current-device-or-user-to-a-flight-group"></a>将当前设备或用户添加到外部测试版组
 
 > [!IMPORTANT]
-> 对于大多数开发人员帐户来说，此请求当前尚不可用。 除非你的开发人员帐户已由 Microsoft 专门设置，否则此请求将会失败。
+> 对于大多数开发人员帐户来说，此请求当前尚不可用。 除非你的开发人员帐户已由 Microsoft 专门预配，否则此请求将会失败。
 
 若要发送此请求，请将以下信息传递至 **SendRequestAsync** 方法的 *requestKind* 和 *parametersAsJson* 参数。
 
@@ -134,7 +134,7 @@ public async Task<bool> AddUserToFlightGroup()
 ### <a name="remove-the-current-device-or-user-from-a-flight-group"></a>从外部测试版组中删除当前设备或用户
 
 > [!IMPORTANT]
-> 对于大多数开发人员帐户来说，此请求当前尚不可用。 除非你的开发人员帐户已由 Microsoft 专门设置，否则此请求将会失败。
+> 对于大多数开发人员帐户来说，此请求当前尚不可用。 除非你的开发人员帐户已由 Microsoft 专门预配，否则此请求将会失败。
 
 若要发送此请求，请将以下信息传递至 **SendRequestAsync** 方法的 *requestKind* 和 *parametersAsJson* 参数。
 
@@ -156,5 +156,5 @@ public async Task<bool> AddUserToFlightGroup()
 
 ## <a name="related-topics"></a>相关主题
 
-* [在应用中显示评分和评价对话框](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
+* [显示一个级别并查看应用程序中的对话框](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
 * [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)

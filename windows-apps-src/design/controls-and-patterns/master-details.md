@@ -1,5 +1,5 @@
 ---
-Description: The master/detail pattern displays a master list and the details for the currently selected item. This pattern is frequently used for email and contact lists/address books.
+Description: 大纲/细节模式可显示主列表和当前选定项的详细信息。 此模式通常用于电子邮件和联系人列表/通讯簿。
 title: 大纲/细节
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b9d8d8a381c0fce186b39853f57d35c1dce4b8f8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940636"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601252"
 ---
 # <a name="masterdetails-pattern"></a>大纲/细节模式
 
@@ -21,7 +21,7 @@ ms.locfileid: "8940636"
 
 大纲/细节模式具有一个大纲窗格（通常带有[列表视图](lists.md)）和一个用于内容的细节窗格。 当选择大纲列表中的项时，将更新细节窗格。 此模式通常用于电子邮件和通讯簿。
 
-> **重要 API**：[ListView 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)，[SplitView 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+> **重要的 Api**:[ListView 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)， [SplitView 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![大纲细节模式的示例](images/HIGSecOne_MasterDetail.png)
 
@@ -93,9 +93,9 @@ ms.locfileid: "8940636"
 ## <a name="get-the-sample-code"></a>获取示例代码
 
 以下示例使用自适应布局实现大纲/细节模式并演示到静态数据、数据库和在线资源的数据绑定。 
-- [大纲/细节示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
-- [大纲/细节与选择示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [Windows Template Studio 大纲/细节示例](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
+- [母版/详细信息示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
+- [母版/详细信息以及选择示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Windows 模板 Studio 母版/详细信息示例](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
 - [客户订单数据库示例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [RSS 阅读器示例](https://github.com/Microsoft/Windows-appsample-rssreader)
 
@@ -103,6 +103,6 @@ ms.locfileid: "8940636"
 
 - [列表](lists.md)
 - [搜索](search.md)
-- [应用和命令栏](app-bars.md)
+- [应用程序和命令栏](app-bars.md)
 - [ListView 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [SplitView 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)

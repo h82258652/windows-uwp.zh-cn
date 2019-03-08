@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 移植, 顶点缓冲区, 数据, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c961a8852fb1e03e4e86209f62bda821b980f8c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938480"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592812"
 ---
 # <a name="port-the-vertex-buffers-and-data"></a>移植顶点缓冲区和数据
 
 
 
 
-**重要的 API**
+**重要的 Api**
 
 -   [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)
 -   [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456)
@@ -28,7 +28,7 @@ ms.locfileid: "8938480"
 
 此时，让我们检查一下所使用的立方体网格的硬编码模型。 这两个表示都将顶点组织为三角形列表（而不是条带或其他更有效的三角形布局）。 这两个表示中的所有顶点还都具有关联的索引和颜色值。 本主题中的大部分 Direct3D 代码都参考了 Direct3D 项目中定义的变量和对象。
 
-下面是由 OpenGL ES 2.0 进行处理的立方体。 在此示例实现中，每个顶点都是 7 位浮点值：3 个位置坐标，之后是 4 个 RGBA 颜色值。
+下面是由 OpenGL ES 2.0 进行处理的立方体。 在示例实现中，每个顶点都是 7 的浮点值：跟 4 个 RGBA 颜色值的 3 个位置坐标。
 
 ```cpp
 #define CUBE_INDICES 36
@@ -112,11 +112,11 @@ unsigned short cubeIndices[] =
 
 ## <a name="instructions"></a>说明
 
-### <a name="step-1-create-an-input-layout"></a>步骤 1：创建输入布局
+### <a name="step-1-create-an-input-layout"></a>第 1 步：创建输入的布局
 
 在 OpenGL ES 2.0 中，你的顶点数据以属性的形式提供，属性将提供给着色器对象并由着色器对象进行读取。 通常你会将包含在着色器的 GLSL 中使用的属性名称的字符串提供给着色器程序对象，并得到一个你可以提供给着色器的内存位置。 在此示例中，顶点缓冲区对象包含一个自定义的矢量结构列表，该列表是按照如下方式进行定义并设置格式的：
 
-OpenGL ES 2.0：配置包含每个顶点信息的属性。
+OpenGL ES 2.0:配置包含每个顶点的信息的属性。
 
 ``` syntax
 typedef struct 
@@ -126,13 +126,13 @@ typedef struct
 } Vertex;
 ```
 
-在 OpenGL ES 2.0 中，输入布局是隐式的；你获取一个常规用途的 GL\_ELEMENT\_ARRAY\_BUFFER 并提供步幅和偏移，以便顶点着色器可以在上传数据之后解释该数据。 使用 **glVertexAttribPointer** 呈现哪些属性映射到每个顶点数据块的哪个部分之前，通知着色器。
+在 OpenGL ES 2.0 中，输入的布局都是隐式;采用常规用途的 GL\_元素\_数组\_缓冲区和提供跨距和偏移量，以便将其上传后，顶点着色器可以解释数据。 使用 **glVertexAttribPointer** 呈现哪些属性映射到每个顶点数据块的哪个部分之前，通知着色器。
 
 在 Direct3D 中，必须提供输入布局以描述在创建缓冲区时（而不是绘制几何图形之前）顶点缓冲区中顶点数据的结构。 为此，使用一个与内存中各个顶点的数据布局相对应的输入布局。 精确地指定此内容非常重要！
 
-你在此处以 [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 结构数组的形式创建一个输入描述。
+在此部分，创建的输入的数组的形式描述[ **D3D11\_输入\_元素\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180)结构。
 
-Direct3D：定义输入布局描述。
+Direct3D:定义输入的布局说明。
 
 ``` syntax
 struct VertexPositionColor
@@ -153,11 +153,11 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 
 该输入描述将顶点定义为两个 3 位坐标矢量对：一个三维矢量用于存储模型坐标中顶点的位置，另一个三维矢量用于存储与顶点关联的 RGB 颜色值。 在本例中，使用 3x32 位浮点格式，我们采用代码将其中的元素表示为 `XMFLOAT3(X.Xf, X.Xf, X.Xf)`。 处理将用于着色器的数据时，都应该使用来自 [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415574) 库的类型，因为它可以确保使该数据进行正确的打包和对齐。 （例如，对于矢量数据，使用 [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) 或 [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608)；对于矩阵，使用 [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621)）。
 
-有关所有可能的格式类型的列表，请参阅 [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059)。
+有关所有可能的格式类型的列表，请参阅[ **DXGI\_格式**](https://msdn.microsoft.com/library/windows/desktop/bb173059)。
 
-定义了每个顶点输入布局后，可以创建布局对象。 在以下代码中，我们将其写入 **m\_inputLayout**，它是一个类型为 **ComPtr** 的变量（指向类型为 [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575) 的对象）。 **fileData** 包含上一步[移植着色器](port-the-shader-config.md)中已编译好的顶点着色器对象。
+定义了每个顶点输入布局后，可以创建布局对象。 在以下代码中，您将其写入**m\_inputLayout**，类型的变量**ComPtr** (它指向类型的对象[ **ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575)). **fileData** 包含上一步[移植着色器](port-the-shader-config.md)中已编译好的顶点着色器对象。
 
-Direct3D：创建顶点缓冲区使用的输入布局。
+Direct3D:创建顶点缓冲区所使用的输入的布局。
 
 ``` syntax
 Microsoft::WRL::ComPtr<ID3D11InputLayout>      m_inputLayout;
@@ -175,11 +175,11 @@ m_d3dDevice->CreateInputLayout(
 
 我们已经定义了输入布局。 现在，我们将创建一个使用该布局的缓冲区并将其与立方体网格数据一起加载。
 
-### <a name="step-2-create-and-load-the-vertex-buffers"></a>步骤 2：创建和加载顶点缓冲区
+### <a name="step-2-create-and-load-the-vertex-buffers"></a>步骤 2：创建并加载顶点缓冲区
 
-在 OpenGL ES 2.0 中，创建一对缓冲区，一个用于位置数据，一个用于颜色数据。 （也可以创建一个包含两者和单个缓冲区的结构。）绑定每个缓冲区并向其中写入位置和颜色数据。 然后，在呈现函数期间，再次绑定缓冲区并为着色器提供缓冲区中数据的格式，以便它可以正确解释该数据。
+在 OpenGL ES 2.0 中，创建一对缓冲区，一个用于位置数据，一个用于颜色数据。 (您还可以创建包含同时的结构和一个缓冲区。)你将每个缓冲区绑定并向其中写入位置和颜色数据。 然后，在呈现函数期间，再次绑定缓冲区并为着色器提供缓冲区中数据的格式，以便它可以正确解释该数据。
 
-OpenGL ES 2.0：绑定顶点缓冲区
+OpenGL ES 2.0:将绑定顶点缓冲区
 
 ``` syntax
 // upload the data for the vertex position buffer
@@ -188,13 +188,13 @@ glBindBuffer(GL_ARRAY_BUFFER, renderer->vertexBuffer);
 glBufferData(GL_ARRAY_BUFFER, sizeof(VERTEX) * CUBE_VERTICES, renderer->vertices, GL_STATIC_DRAW);   
 ```
 
-在 Direct3D 中，着色器可以访问的缓冲区表示为 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 结构。 若要将该缓冲区的位置绑定到着色器对象，你需要使用 [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) 为每个缓冲区创建一个 CD3D11_BUFFER_DESC 结构，然后通过调用特定于缓冲区类型的 set 方法（如 [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456)）设置 Direct3D 设备上下文的缓冲区。
+在 Direct3D 中，可访问着色器的缓冲区均作为[ **D3D11\_SUBRESOURCE\_数据**](https://msdn.microsoft.com/library/windows/desktop/ff476220)结构。 若要将此缓冲区的位置绑定到着色器对象，您需要创建 CD3D11\_缓冲区\_DESC 结构对于具有每个缓冲区[ **ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)，然后将设置通过调用 set 方法特定于该缓冲区类型，如 Direct3D 设备上下文的缓冲区[ **ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456)。
 
 设置缓冲区时，必须从缓冲区的开头设置步幅（单个顶点的数据元素大小）以及偏移（顶点数据数组实际开始的位置）。
 
-注意，我们将 **vertexIndices** 数组的指针分配给 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 结构的 **pSysMem** 字段。 如果该操作不正确，你的网格将遭到破坏或为空！
+请注意，我们将分配到指针**vertexIndices**到数组**pSysMem**字段[ **D3D11\_SUBRESOURCE\_数据**](https://msdn.microsoft.com/library/windows/desktop/ff476220)结构。 如果该操作不正确，你的网格将遭到破坏或为空！
 
-Direct3D：创建和设置顶点缓冲区
+Direct3D:创建并设置顶点缓冲区
 
 ``` syntax
 D3D11_SUBRESOURCE_DATA vertexBufferData = {0};
@@ -220,13 +220,13 @@ m_d3dContext->IASetVertexBuffers(
   &offset);
 ```
 
-### <a name="step-3-create-and-load-the-index-buffer"></a>步骤 3：创建和加载索引缓冲区
+### <a name="step-3-create-and-load-the-index-buffer"></a>步骤 3:创建并加载索引缓冲区
 
 索引缓冲区是允许顶点着色器查找各个顶点的有效方法。 尽管不需要，但我们还是在该示例呈现器中使用它们。 同 OpenGL ES 2.0 中的顶点缓冲区一样，创建一个索引缓冲区并作为常规用途缓冲区绑定，将你之前创建的顶点索引复制到该缓冲区中。
 
 当你准备好绘图时，你需要再次绑定顶点缓冲区和索引缓冲区，并且调用 **glDrawElements**。
 
-OpenGL ES 2.0：向绘图调用发送索引顺序。
+OpenGL ES 2.0:将索引顺序发送到的绘图调用。
 
 ``` syntax
 GLuint indexBuffer;
@@ -248,9 +248,9 @@ glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->indexBuffer);
 glDrawElements (GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);
 ```
 
-对于 Direct3D，虽然有点说教，但这个过程有点类似。 提供索引缓冲区作为配置 Direct3D 时创建的 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 的 Direct3D 子资源。 通过使用为索引数组配置的子资源调用 [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588) 来完成该操作，如下所示。 （再次注意，将 **cubeIndices** 数组的指针分配给 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 结构的 **pSysMem** 字段。）
+对于 Direct3D，虽然有点说教，但这个过程有点类似。 提供索引缓冲区作为配置 Direct3D 时创建的 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 的 Direct3D 子资源。 通过使用为索引数组配置的子资源调用 [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588) 来完成该操作，如下所示。 (同样，请注意，将分配到指针**cubeIndices**到数组**pSysMem**字段[ **D3D11\_SUBRESOURCE\_数据**](https://msdn.microsoft.com/library/windows/desktop/ff476220)结构。)
 
-Direct3D：创建索引缓冲区。
+Direct3D:创建索引缓冲区。
 
 ``` syntax
 m_indexCount = ARRAYSIZE(cubeIndices);
@@ -276,7 +276,7 @@ m_d3dContext->IASetIndexBuffer(
 
 之后，你将通过调用 [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409)（对于无索引顶点，则通过调用 [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407)）绘制三角形，如下所示。 （有关详细信息，请向前跳至[绘制到屏幕](draw-to-the-screen.md)。）
 
-Direct3D：绘制索引的顶点。
+Direct3D:绘制索引的顶点。
 
 ``` syntax
 m_d3dContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -293,11 +293,11 @@ m_d3dContext->DrawIndexed(
 ## <a name="previous-step"></a>上一步
 
 
-[移植着色器对象](port-the-shader-config.md)
+[端口的着色器对象](port-the-shader-config.md)
 
 ## <a name="next-step"></a>下一步
 
-[移植 GLSL](port-the-glsl.md)
+[GLSL 端口](port-the-glsl.md)
 
 ## <a name="remarks"></a>备注
 
@@ -306,10 +306,10 @@ m_d3dContext->DrawIndexed(
 ## <a name="related-topics"></a>相关主题
 
 
-* [如何：将简单的 OpenGL ES 2.0 呈现器移植到 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
-* [移植着色器对象](port-the-shader-config.md)
-* [移植顶点缓冲区和数据](port-the-vertex-buffers-and-data-config.md)
-* [移植 GLSL](port-the-glsl.md)
+* [如何： 移植到 Direct3D 11 的简单 OpenGL ES 2.0 呈现器](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+* [端口的着色器对象](port-the-shader-config.md)
+* [顶点缓冲区和数据端口](port-the-vertex-buffers-and-data-config.md)
+* [GLSL 端口](port-the-glsl.md)
 
  
 

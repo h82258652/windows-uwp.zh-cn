@@ -6,11 +6,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛, ux
 ms.localizationpriority: medium
 ms.openlocfilehash: b08da01323d05c961005d562b70667dbbdf85437
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926193"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643762"
 ---
 # <a name="xbox-arena"></a>Xbox Arena
 
@@ -60,7 +60,7 @@ Xbox Arena 是通过 Xbox Live 跨 Xbox One 和 Windows 10 创建和运行在线
 当用户在锦标赛阶段中进阶时，移入和移出游戏会使用户感到复杂。 当针对用户玩的每个游戏该过程有所不同时，甚至很少有机会记住具体位置和预期操作。
 
 > [!TIP]
-> **UX 建议**  
+> **用户体验建议**  
 >
 > 通过使游戏和 Xbox Arena UI 可以清晰地区分，简化两者之间的功能性角色。 例如，与管理相关的所有任务都在 Arena 中完成，与玩游戏相关的所有任务都在游戏内完成。
 
@@ -70,23 +70,23 @@ Xbox Arena 角色（设置锦标赛）   | 游戏的角色（游戏）
 
 ## <a name="engineering-guidance"></a>工程指南
 
-文章 | 描述
+文章 | description
 --- | ---
-[Arena 游戏集成](arena-title-integration.md) | 了解如何在游戏中集成对 Xbox Arena 的支持。
+[竞技场标题集成](arena-title-integration.md) | 了解如何在游戏中集成对 Xbox Arena 的支持。
 
 ## <a name="operations-guidance"></a>操作指南
 
-文章 | 描述
+文章 | description
 --- | ---
-[Xbox Arena 操作门户](operations-portal.md) | 介绍了可用于创建和管理游戏与 Xbox Arena 集成的官方锦标赛的操作门户。
+[Xbox 竞技场操作门户](operations-portal.md) | 介绍可用于创建和管理与 Xbox 竞技场集成在一起的标题的正式比赛操作门户。
 
 ## <a name="user-experience-guidance"></a>用户体验指南
 
-文章 | 描述
+文章 | description
 --- | ---
-[发现 Xbox 锦标赛](discovering-xbox-tournaments.md) | 提供用于打造发现现有锦标赛的卓越用户体验的技巧和建议。
-[加入锦标赛](arena-ux-join-tournament.md)  |  提供了用于打造注册和加入锦标赛的卓越用户体验的技巧和建议。
-[比赛参与](arena-ux-match-engagement.md) | 描述玩家在锦标赛经历中不断进阶的用户体验阶段。
-[Arena API UI 元数据](arena-apis-metadata.md)  | 描述 Arena API 返回的元数据，可以使用这些数据显示有关锦标赛当前状态的游戏内信息。
-[Arena 通知](arena-notifications.md)  | 描述 Xbox Arena 向锦标赛参与者发送通知的条件。
-[Arena 用户方案](arena-user-scenarios.md)  | 根据玩家的最常见动机描述面向玩家的 Arena 方案。
+[发现 Xbox 比赛](discovering-xbox-tournaments.md) | 提供用于打造发现现有锦标赛的卓越用户体验的技巧和建议。
+[加入联赛](arena-ux-join-tournament.md)  |  提供了用于打造注册和加入锦标赛的卓越用户体验的技巧和建议。
+[与匹配参与](arena-ux-match-engagement.md) | 描述玩家在锦标赛经历中不断进阶的用户体验阶段。
+[竞技场 API UI 元数据](arena-apis-metadata.md)  | 描述 Arena API 返回的元数据，可以使用这些数据显示有关锦标赛当前状态的游戏内信息。
+[竞技场通知](arena-notifications.md)  | 描述 Xbox Arena 向锦标赛参与者发送通知的条件。
+[竞技场用户方案](arena-user-scenarios.md)  | 根据玩家的最常见动机描述面向玩家的 Arena 方案。

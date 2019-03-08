@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 81bd9f699e899f895d55b2b2132681824ed40b7b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921855"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650622"
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a>保留的文件和 URI 方案名称
 
 
-当另一个应用启动特定的 URI 方案时，你可以使用 URI 关联自动启动你的应用。 但是你无法使用某些 URI 关联，因为它们是保留的关联。 如果你的应用注册为保留的关联，该注册将被忽略。 本主题将列出不可用于应用的保留文件和 URI 方案名称。
+当另一个应用启动特定的 URI 方案时，你可以使用 URI 关联自动启动你的应用。 但是你无法使用某些 URI 关联，因为它们是保留的关联。 如果你的应用注册为保留的关联，该注册将被忽略。 本主题列出了不可用于应用的保留文件和 URI 方案名称。
 
 ## <a name="reserved-file-types"></a>保留文件类型
 
@@ -108,7 +108,7 @@ ms.locfileid: "8921855"
 <tr><td>explorer.closesession</td><td>ms-settings:batterysaver-usagedetails</td><td>ms-settings:windowsupdate</td><td>wmp11.assocprotocol.mms</td></tr>
 <tr><td>explorer.erasedisc</td><td>ms-settings:bluetooth</td><td>ms-settings:workplace</td><td>wsffile</td></tr>
 <tr><td>explorer.zipselection</td><td>ms-settings:connecteddevices</td><td>ms-windows-store</td><td>wsfile</td></tr>
-<tr><td>file</td><td>ms-settings:cortanasearch</td><td>ms-word</td><td>wshfile</td></tr>
+<tr><td>文件</td><td>ms-settings:cortanasearch</td><td>ms-word</td><td>wshfile</td></tr>
 <tr><td>fonfile</td><td>ms-settings:datasense</td><td>ocxfile</td><td>xbls</td></tr>
 <tr><td>hlpfile</td><td>ms-settings:dateandtime</td><td>office</td><td>zune</td></tr>
 <tr><td>htafile</td><td>ms-settings:display</td><td>onenote</td><td></td></tr>

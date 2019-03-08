@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, directx, 图形
 ms.localizationpriority: medium
 ms.openlocfilehash: fc93111d48f71a6ca8acad8191a2afb535fad2f0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931494"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660932"
 ---
 # <a name="draw-to-the-screen"></a>绘制到屏幕
 
 
 
 
-**重要的 API**
+**重要的 Api**
 
 -   [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)
 -   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)
@@ -28,20 +28,20 @@ ms.locfileid: "8931494"
 
 在 OpenGL ES 2.0 中，你的绘制上下文被定义为 EGLContext 类型，该类型包含窗口和图面参数以及绘制到呈现目标所需的资源，将使用呈现目标来编写显示到窗口的最终图像。 你将使用此上下文来配置图形资源，以便在显示器上正确显示着色器管道的结果。 其中一个主要资源是“后台缓冲区”（或“帧缓冲区对象”），它包含可显示到显示器的最终复合呈现目标。
 
-对于 Direct3D，配置图形资源以便绘制到显示器的过程说教性较强，并且需要相当多的 API。 （但是 Microsoft Visual Studio Direct3D 模板可以大大简化这个过程！）若要获取上下文（称为 Direct3D 设备上下文），必须首先获取 [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) 对象，然后使用该对象来创建和配置 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 对象。 结合使用这两个对象来配置绘制到显示器所需的特定资源。
+对于 Direct3D，配置图形资源以便绘制到显示器的过程说教性较强，并且需要相当多的 API。 （Microsoft Visual Studio Direct3D 模板可以显著地简化此过程中，但 ！）若要获取的上下文 （称为 Direct3D 设备上下文），你首先必须获取[**对 ID3D11Device1** ](https://msdn.microsoft.com/library/windows/desktop/hh404575)对象，并使用它来创建和配置[ **ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598)对象。 结合使用这两个对象来配置绘制到显示器所需的特定资源。
 
 简而言之，DXGI API 包含的 API 主要用于管理与图形适配器直接相关的资源，而 Direct3D 包含的 API 可用作 GPU 与在 CPU 上运行的主要程序之间的接口。
 
 为了在该示例中进行比较，我们在下面给出了每个 API 的相关类型：
 
--   [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)：提供图形设备及其资源的视觉表示。
--   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)：提供用于配置缓冲区以及发出呈现命令的接口。
--   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)：交换链类似于 OpenGL ES 2.0 中的后台缓冲区。 它是图形适配器上的内存区域，其中包含用于显示的最终呈现的图像。 它称为“交换链”，因为它包含多个可以写入以及“已进行交换”可向屏幕提供最新呈现的缓冲区。
--   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)：它包含 Direct3D 设备上下文在其中进行绘制且由交换链提供的 2D 位图缓冲区。 和 OpenGL ES 2.0 一样，你可以拥有多个呈现目标，其中一些目标未绑定到交换链，但用于多通道着色技术。
+-   [**对 ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)： 提供图形设备和其资源的虚拟表示形式。
+-   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)： 提供的接口进行配置的缓冲区，并颁发呈现命令。
+-   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)： 交换链后台缓冲区 OpenGL ES 2.0 中相当。 它是图形适配器上的内存区域，其中包含用于显示的最终呈现的图像。 它称为“交换链”，因为它包含多个可以写入以及“已进行交换”可向屏幕提供最新呈现的缓冲区。
+-   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)： 此项包含 2D 位图缓冲区 Direct3D 设备上下文绘制，并提供通过交换链。 和 OpenGL ES 2.0 一样，你可以拥有多个呈现目标，其中一些目标未绑定到交换链，但用于多通道着色技术。
 
 在该模板中，呈现器对象包含以下字段：
 
-Direct3D 11：设备和设备上下文声明
+Direct3D 11:设备和设备上下文声明
 
 ``` syntax
 Platform::Agile<Windows::UI::Core::CoreWindow>       m_window;
@@ -71,11 +71,11 @@ Direct3D 设备和设备上下文以及呈现目标的初始化和配置可以�
 
 ## <a name="instructions"></a>说明
 
-### <a name="step-1-rendering-the-scene-and-displaying-it"></a>步骤 1：呈现场景并进行显示
+### <a name="step-1-rendering-the-scene-and-displaying-it"></a>第 1 步：呈现场景和显示
 
 更新立方体数据（在本例中，将其围绕 y 轴稍稍旋转）后，Render 方法将视口设置为绘制上下文 (EGLSurface) 的尺寸。 该上下文包含将使用配置的显示器 (EGLDisplay) 显示到窗口图面 (EGLSurface) 的颜色缓冲区。 此时，该示例更新顶点数据属性、重新绑定索引缓冲区、绘制立方体，并在着色管道绘制的颜色缓冲区中交换到显示器图面。
 
-OpenGL ES 2.0：呈现用于显示的帧
+OpenGL ES 2.0:呈现用于显示帧
 
 ``` syntax
 void Render(GraphicsContext *drawContext)
@@ -133,7 +133,7 @@ void Render(GraphicsContext *drawContext)
 -   通过着色器发送索引的顶点，并通过 [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) 将颜色结果输出到呈现目标缓冲区。
 -   通过 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 显示呈现目标缓冲区。
 
-Direct3D 11：呈现用于显示的帧
+Direct3D 11:呈现用于显示帧
 
 ``` syntax
 void RenderObject::Render()
@@ -201,7 +201,7 @@ void RenderObject::Render()
 ## <a name="previous-step"></a>上一步
 
 
-[移植 GLSL](port-the-glsl.md)
+[GLSL 端口](port-the-glsl.md)
 
 ## <a name="remarks"></a>备注
 
@@ -210,10 +210,10 @@ void RenderObject::Render()
 ## <a name="related-topics"></a>相关主题
 
 
-* [如何：将简单的 OpenGL ES 2.0 呈现器移植到 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
-* [移植着色器对象](port-the-shader-config.md)
-* [移植 GLSL](port-the-glsl.md)
-* [绘制到屏幕](draw-to-the-screen.md)
+* [如何： 移植到 Direct3D 11 的简单 OpenGL ES 2.0 呈现器](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+* [端口的着色器对象](port-the-shader-config.md)
+* [GLSL 端口](port-the-glsl.md)
+* [在屏幕上绘制](draw-to-the-screen.md)
 
  
 

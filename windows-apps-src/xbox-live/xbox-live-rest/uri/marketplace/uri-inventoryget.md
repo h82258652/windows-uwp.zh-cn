@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 31c787108fad84f06b02ded3958f9d2f99727cbe
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922687"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632202"
 ---
 # <a name="get-usersmeinventory"></a>GET (/users/me/inventory)
-提供的一套当前与返回到调用方提供的用户相关联的清单。
+提供一组的当前与返回给调用方提供的用户相关联的清单。
 这些 Uri 的域是`inventory.xboxlive.com`。
 
   * [备注](#ID4EV)
@@ -28,37 +28,37 @@ ms.locfileid: "8922687"
 
 ## <a name="remarks"></a>备注
 
-没有策略检查，强制执行，否则筛选会出现作为此调用的一部分。 调用方可以选择将查询参数传递以缩小所返回的结果的范围。
+无策略检查，强制执行，或筛选将发生此调用的一部分。 调用方具有的传递查询参数，以便缩小返回的结果的范围的选项。
 
-调用方可以翻阅结果和延续令牌，通过以前响应所述： **/users/me/inventory?continuationToken = continuationTokenString**。
+调用方可以通过使用继续标记的结果页，如前一响应通过提供： **/users/me/inventory？ continuationToken = continuationTokenString**。
 
-调用方可能会使调用与特定项 URL 的 API 的详细信息，以便查看信息的特定项目。
+调用方可能会使用特定项的 URL 的 API 的详细信息调用若要查看特定项目的信息。
 
 <a id="ID4EHB"></a>
 
 
 ## <a name="query-string-parameters"></a>查询字符串参数
 
-| 参数| 类型| 描述|
+| 参数| 在任务栏的搜索框中键入| 描述|
 | --- | --- | --- |
-| 可用性| 字符串| 要返回的项数当前可用。 默认值为"可用"，然后返回项目的当前日期之间的开始日期和结束日期范围。 其他值包括"全部"，返回所有项和"不可用"当前日期为其返回项都位于之外的开始日期和结束日期范围和它因此当前不可用。 |
-| 容器| 字符串| 可选。 如果你将值设置为游戏的产品 ID，从清单的结果仅包括与该游戏相关的项。 从你的服务器来筛选到特定游戏的产品的结果调用库存时，这是特别有用。|
-| expandSatisfyingEntitlements| 字符串| 一个标志，指示是否该响应包括用户已在结果中返回的所有令人满意的权利。 默认值为"false"。 此参数使用值为"true"，通过满足 Xbox 360 购买迁移到 Xbox One，订阅权益，如捆绑的权利项，向用户授予的任何产品时等会添加到结果。 如果此值为"false"然后如捆绑包的 ProductID 父项仅返回结果，并且不包含单个项。 **注意：** 如果对 URI 中不包含项类型参数仅支持使用此参数值为"true"，否则你将收到了 HTTP 400 错误。 |  
-  | productIds | 字符串 |  你想要从用户的库存，特别是检索 ProductIds 集合分隔，。  如果用户在其清单结果中没有提供的产品 Id，该项目不会显示在结果中的 API 调用。 如果为 true 传入以及 expandSatisfyingEntitlements 参数集捆绑包的 productID，（无论在查询字符串中指定其 productIds） 中调用结果返回捆绑包中包含的所有项目。   |
-  | 状态 | 字符串 | 要返回的项的状态。 默认值为"全部"，这将返回所有项目。 其他值"已启用"，这指示启用该唯一 itemsthat 应返回，"暂停"，指示，只有在暂停的项目应返回，则会"过期"，指示应返回仅已过期的项目，"已取消"，指示应返回取消的项目，并指示应返回已更新的项目"Renewed"。  |
+| 可用性| 字符串| 要返回的项数当前可用。 默认值为"可用"为其当前的日期是开始日期和结束之间的返回项的日期范围。 其他值包括"全部"，它将返回所有项和"不可用"的当前日期为其返回的项都范围之外的开始日期和结束日期范围并因此当前不可用。 |
+| 容器| 字符串| 可选。 如果将值设置为一个游戏的产品 ID，然后从清单结果只包括与该游戏相关的项。 从你的服务器来筛选到特定游戏的产品的结果调用清单时，这是特别有用。|
+| expandSatisfyingEntitlements| 字符串| 一个标志，指示是否响应包含用户在结果中返回的所有令人满意的权利。 默认值为"false"。 如果值为"true"，通过满足如捆绑在一起的权利项 Xbox 360 购买迁移到 Xbox One，订阅权益，向用户授予任何产品使用此参数等添加到结果。 当此值为"false"，则仅父项，如捆绑的 ProductID 返回结果而不是单个包含的项目中。 **注意：** 如果在 URI 中不包含 itemType 参数仅支持使用此参数，值为"true"，否则将收到 HTTP 400 错误。 |  
+  | productIds | 字符串 |  一系列你想要专门从用户的清单中检索的 Productid 分隔 '，'。  如果用户在其清单结果中没有提供产品 id，该项将不出现在结果中从 API 调用。 如果为 true 传入 expandSatisfyingEntitlements 参数集以及一个捆绑包的 productID，（无论在查询字符串中指定其 Productid） 调用结果中返回数据包中包含的所有项。   |
+  | 状态 | 字符串 | 要返回的项的状态。 默认值为"全部"，这将返回所有项。 其他值处于"已启用"，指示启用该唯一 itemsthat 应返回，"挂起"，指示已挂起的项应返回的"已过期"指示应返回其已过期的项，"已取消"，指示应返回已取消的项，并且指示应返回已续订的项"Renewed"。  |
 
-除了这些资源支持标准分页机制。
+除此之外，该资源支持标准的分页机制。
 
 <a id="ID4EDE"></a>
 
 
 ## <a name="sample-request"></a>示例请求
 
-此 URI 方法的完全限定域名 `https://inventory.xboxlive.com/users/me/inventory.
+为此 URI 方法的完全限定域名 `https://inventory.xboxlive.com/users/me/inventory.
          `
 
 > [!NOTE] 
-> 哪些用户被视为取决于令牌提供，其中可能包括多个用户。 如果你希望单个用户的清单，你还必须为特定用户想要以独占方式，请考虑提供用户哈希。
+> 哪些用户被视为取决于令牌提供，其中可能包括多个用户。 如果你想单个用户的清单，您还必须为想要以独占方式考虑的特定用户提供用户哈希。
 
 .
 
@@ -67,7 +67,7 @@ ms.locfileid: "8922687"
 
 ## <a name="response-body"></a>响应正文
 
-如果在调用成功，该服务返回库存项目的数组。 请参阅[inventoryItem (JSON)](../../json/json-inventoryitem.md)。
+如果调用成功，该服务返回的清单项的数组。 请参阅[inventoryItem (JSON)](../../json/json-inventoryitem.md)。
 
 <a id="ID4E4E"></a>
 
@@ -114,12 +114,12 @@ ms.locfileid: "8922687"
 
 ##### <a name="further-information"></a>详细信息
 
-[EDS 通用标头](../../additional/edscommonheaders.md)
+[EDS 常见标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询优化器](../../additional/edsqueryrefiners.md)
+ [EDS 查询精简将](../../additional/edsqueryrefiners.md)
 
- [市场 URI](atoc-reference-marketplace.md)
+ [Marketplace Uri](atoc-reference-marketplace.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)

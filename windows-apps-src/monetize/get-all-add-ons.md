@@ -1,23 +1,23 @@
 ---
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
-description: 在 Microsoft Store 提交 API 中使用此方法可检索注册到你的合作伙伴中心帐户的所有应用的所有加载项数据。
+description: 在 Microsoft Store 提交 API 中使用此方法检索到合作伙伴中心帐户注册的所有应用的所有外接程序数据。
 title: 获取所有加载项
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 50733bc0617d56b7e6b8596b661aff8056961f18
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937041"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599902"
 ---
 # <a name="get-all-add-ons"></a>获取所有加载项
 
-在 Microsoft Store 提交 API 中使用此方法可检索注册到你的合作伙伴中心帐户的所有应用的所有加载项的数据。
+在 Microsoft Store 提交 API 中使用此方法检索到合作伙伴中心帐户注册的所有应用的所有外接程序的数据。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -35,16 +35,16 @@ ms.locfileid: "8937041"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 描述                                                                 |
+| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
 此方法的所有请求参数均为选填。 如果不填写参数即调用此方法，则响应将包含注册到帐户的所有应用的所有加载项数据。
 
-|  参数  |  类型  |  说明  |  必填  |
+|  参数  |  在任务栏的搜索框中键入  |  描述  |  必需  |
 |------|------|------|------|
 |  top  |  int  |  要在请求中返回的项数（即，要返回的加载项数）。 如果帐户具有的加载项超过在查询中指定的值，响应正文将包括可追加到方法 URI 的相对 URI 路径，用于请求下一页数据。  |  否  |
 |  skip  |  int  |  返回剩余项之前，在查询中绕过的项数。 使用此参数分页浏览数据集。 例如，top=10 和 skip=0 可检索项目 1 到 10，top=10 和 skip=10 可检索项目 11 到 20，依此类推。  |  否  |
@@ -56,14 +56,14 @@ ms.locfileid: "8937041"
 
 ### <a name="request-examples"></a>请求示例
 
-以下示例演示如何检索注册到帐户的所有应用的所有加载项数据。
+以下示例演示了如何检索注册到帐户的所有应用的所有加载项数据。
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-以下示例演示如何仅检索前 10 个加载项。
+以下示例演示了如何仅检索前 10 个加载项。
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?top=10 HTTP/1.1
@@ -131,10 +131,10 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型   | 描述                                                                                                                                                                                                                                                                         |
+| 值      | 在任务栏的搜索框中键入   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含可附加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 请求 URI 的相对路径，用于请求下一页数据。 例如，如果初始请求正文的 *top* 参数设置为 10，但有 100 个加载项注册到你的帐户，响应正文将包含 ```inappproducts?skip=10&top=10``` 的 @nextLink 值，指示你可以调用 ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?skip=10&top=10``` 请求接下来的 10 个加载项。 |
-| 值            | 数组  |  包含提供有关每个加载项信息的对象的数组。 有关详细信息，请参阅[加载项资源](manage-add-ons.md#add-on-object)。   |
+| value            | 数组  |  包含提供有关每个加载项信息的对象的数组。 有关详细信息，请参阅[加载项资源](manage-add-ons.md#add-on-object)。   |
 | totalCount   | int  | 响应正文的 *value* 数组中的应用对象数。     |
 
 
@@ -145,13 +145,13 @@ Authorization: Bearer <your access token>
 | 错误代码 |  描述   |
 |--------|------------------|
 | 404  | 找不到任何加载项。 |
-| 409  | 应用或加载项使用的是[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。  |
+| 409  | 应用程序或外接程序使用合作伙伴中心功能[目前不支持通过 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。  |
 
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-* [管理加载项提交](manage-add-on-submissions.md)
-* [获取加载项](get-an-add-on.md)
-* [创建加载项](create-an-add-on.md)
-* [删除加载项](delete-an-add-on.md)
+* [创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)
+* [管理外接程序提交](manage-add-on-submissions.md)
+* [获取外接程序](get-an-add-on.md)
+* [创建外接程序](create-an-add-on.md)
+* [删除外接程序](delete-an-add-on.md)

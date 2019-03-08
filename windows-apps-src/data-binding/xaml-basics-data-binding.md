@@ -1,26 +1,26 @@
 ---
 title: 创建数据绑定
 description: 本文介绍 XAML 中数据绑定的基础知识
-keywords: XAML、UWP、入门
+keywords: XAML, UWP, 入门
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 21a053934d7391d12f7cd987026524b9ff4c279d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923114"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639982"
 ---
 # <a name="create-data-bindings"></a>创建数据绑定
 
 假设你已设计并实现了一个外形美观的 UI，并在其中填充了占位符图像、“假文”样板文本以及尚未执行任何操作的控件。 接下来，你需要将其连接到实际数据，并将其从设计原型转换为动态应用。 
 
-在本教程中，你将学习如何用数据绑定替换样板并在 UI 和数据之间创建其他直接链接。 你还将学习如何为显示设置数据格式或转换数据、使 UI 和数据保持同步。完成本教程后，你将能够改善 XAML 和 C＃ 代码的简单性和组织结构，从而更易于维护和扩展。
+在本教程中，你将学习如何用数据绑定替换样板并在 UI 和数据之间创建其他直接链接。 您还将了解如何设置格式或转换你的数据显示，并使你的用户界面和数据保持同步。完成本教程后，你将能够提高的简单性和 XAML 的组织和C#，从而使代码更易于维护和扩展。
 
 你将从简化版本的 PhotoLab 示例开始。 此简易版本包括完整的数据层以及基本 XAML 页面布局，并省去了许多功能以使代码更易于在上下文中浏览。 本教程并不构建完整的应用，因此，请务必查看最终版本以了解诸如自定义动画和手机支持等功能。 你可以在 [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab) 存储库的根文件夹中查找最终版本。 
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 * [Visual Studio 2017 和最新版本的 Windows 10 SDK](https://developer.microsoft.com/windows/downloads)。
 
@@ -41,7 +41,7 @@ PhotoLab 应用有两个主要页面：
 
 一次性绑定适用于不变的只读数据，这意味着它们具有高性能并且易于创建，可让你在 **GridView** 和 **ListView** 控件中显示大数据集。 
 
-**用一次性绑定替换占位符**
+**将占位符替换为一次性绑定**
 
 1. 打开 xaml-basics-starting-points\data-binding 绑定文件夹并启动 PhotoLab.sln 文件。 
 
@@ -122,7 +122,7 @@ PhotoLab 应用有两个主要页面：
 > [!Note]
 > 如果你想进一步尝试，请尝试向数据模板添加新的 TextBlock，并使用 x:Bind IntelliSense 技巧来查找要显示的属性。 
 
-## <a name="part-2-use-binding-to-connect-the-gallery-ui-to-the-images"></a>第 2 部分：使用绑定将库 UI 连接至图像
+## <a name="part-2-use-binding-to-connect-the-gallery-ui-to-the-images"></a>第 2 部分：使用绑定连接到映像库 UI
 
 在此，你将在页面 XAML 中创建一次性绑定以将库视图连接到图像集合，并替换在代码隐藏部分中执行此操作的现有过程代码。 你还将创建一个**删除**按钮以查看从集合中删除图像时库视图如何变化。 同时，你将学习如何将事件绑定到事件处理程序，以超载传统事件处理程序提供的灵活性。 
 
@@ -132,7 +132,7 @@ PhotoLab 应用有两个主要页面：
 
 在 PhotoLab 示例中，类似于这样的绑定的一个用途是将主要 **GridView** 控件直接连接到图像集合，而不是在代码隐藏部分中进行此操作。 在后面，你将看到其他示例。 
 
-**将主要 GridView 控件绑定到图像集合**
+**将主要的 GridView 控件绑定到图像集合**
 
 1. 在 MainPage.xaml.cs 中，查找 **OnNavigatedTo** 方法，并删除用于设置 **ItemsSource** 的代码。
 
@@ -160,7 +160,7 @@ PhotoLab 应用有两个主要页面：
               ItemsSource="{x:Bind Images}" 
     ```
 
-    **Images** 属性的类型为 **ObservableCollection\<ImageFileInfo\>**，因此 **GridView** 中显示的个别项的类型为 **ImageFileInfo**。 这与第 1 部分中所描述的 **x:DataType** 值匹配。 
+    **映像**属性属于类型**ObservableCollection\<ImageFileInfo\>**，因此中显示的各个项**GridView**是类型的**ImageFileInfo**。 这与第 1 部分中所描述的 **x:DataType** 值匹配。 
 
 到目前为止，我们所看到的所有绑定都是一次性只读绑定，这是普通 **x:Bind** 表达式的默认行为。 数据仅在初始化时才加载，这样可以实现高性能绑定 - 特别适合支持大数据集的多个复杂视图。 
 
@@ -171,11 +171,11 @@ private ObservableCollection<ImageFileInfo> Images { get; }
     = new ObservableCollection<ImageFileInfo>();
 ```
 
-**Images** 属性值永远不会更改，但是由于属性的类型为 **ObservableCollection\<T\>**，所以集合的*内容*可能会发生更改，并且绑定将自动注意更改并更新 UI。 
+**映像**永远不会更改属性值，因为该属性的类型，但**ObservableCollection\<T\>**，则*内容*的可以更改集合，并且绑定将自动，请注意，所做的更改并更新 UI。 
 
-为了对此进行测试，我们将暂时添加一个删除当前所选图像的按钮。 此按钮不在最终版本中，因为选择图像会将你带入到详细信息页面中。 然而，**ObservableCollection\<T\>** 的行为在最终的 PhotoLab 示例中仍然很重要，因为 XAML 在页面构造函数中（通过 **InitializeComponent** 方法调用）进行了初始化，但后来在 **OnNavigatedTo** 方法中填充了 **Images** 集合。 
+为了对此进行测试，我们将暂时添加一个删除当前所选图像的按钮。 此按钮不在最终版本中，因为选择图像会将你带入到详细信息页面中。 但是的行为**ObservableCollection\<T\>** 是在最终 PhotoLab 示例仍然很重要，因为在该页的构造函数中初始化 XAML (通过**InitializeComponent**方法调用)，但**映像**更高版本中填充集合**OnNavigatedTo**方法。 
 
-**添加删除按钮**
+**添加一个删除按钮**
 
 1. 在 MainPage.xaml 中，查找名为 **MainCommandBar** 的 **CommandBar**，并在缩放按钮之前添加新按钮。 （缩放控件还不能用。 你将在本教程的下一个部分中安装好这些控件。）
 
@@ -198,7 +198,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 
     此方法从 **Images** 集合中只删除所选的图像。 
 
-现在，运行该应用并使用该按钮删除一些图像。 如你所见，UI 会自动更新，这是因为使用了数据绑定和 **ObservableCollection\<T\>** 类型。 
+现在，运行该应用并使用该按钮删除一些图像。 正如您所看到的 UI 将自动更新，由于数据绑定和**ObservableCollection\<T\>** 类型。 
 
 > [!Note]
 > 作为一项挑战，请尝试添加在列表中将所选图像向上移动或向下移动的两个按钮，然后使用 x:Bind 将按钮的 Click 事件绑定到两个类似于 DeleteSelectedImage 的新方法。
@@ -207,7 +207,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 
 在此部分中，你将创建从数据模板中的控件到模板外的缩放滑块的单向绑定。 你还将了解到，你可以将数据绑定与许多控件属性配合使用，而不仅仅是与 **TextBlock.Text** 和 **Image.Source** 等最明显的属性配合使用。 
 
-**将图像数据模板绑定到缩放滑块**
+**将映像数据模板绑定到缩放滑块**
 
 * 查找名为 **ImageGridView_DefaultItemTemplate** 的 **DataTemplate**，并在模板顶部替换 **Grid** 控件的 **Height** 和 **Width** 值。
 
@@ -249,13 +249,13 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 > [!NOTE]
 > 作为一项挑战，请尝试将其他 UI 属性绑定到缩放滑块的 **Value** 属性，或者绑定到添加到缩放滑块后面的其他滑块。 例如，你可以将 **TitleTextBlock** 的 **FontSize** 属性绑定到默认值为 **24** 的新滑块。 请务必设置合理的最小值和最大值。
 
-## <a name="part-4-improve-the-zoom-experience"></a>第 4 部分：改善缩放体验 
+## <a name="part-4-improve-the-zoom-experience"></a>第 4 部分：提高缩放体验 
 
 在此部分中，你将自定义的 **ItemSize** 属性添加到代码隐藏部分中，并创建从图像模板到新属性的单向绑定。 **ItemSize** 值将根据缩放滑块以及**适应屏幕**切换键和窗口大小等其他因素进行更新，从而实现更优化的体验。 
 
 与内置控件属性不同，即使使用单向和双向绑定，你的自定义属性也不会自动更新 UI。 它们非常适用于**一次性**绑定，但是，如果你希望属性更改实际反映在 UI 中，则需要做一些工作。 
 
-**创建 ItemSize 属性，使其更新 UI**
+**创建的 ItemSize 属性，以便更新 UI**
 
 1. 在 MainPage.xaml.cs 中，更改 **MainPage** 类的签名，使其实现 **INotifyPropertyChanged** 接口。
 
@@ -323,7 +323,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 
 现在，UI 可以响应 **ItemSize** 更改，你需要实际进行一些更改。 如前所述，**ItemSize** 值是利用各 UI 控件的当前状态计算的，但是每当这些控件改变状态时，必须执行此计算。 为此，你将使用事件绑定，以便某些 UI 更改将调用一个更新 **ItemSize** 的帮助程序方法。 
 
-**更新 ItemSize 属性值**
+**更新的 ItemSize 属性值**
 
 1. 将 **DetermineItemSize** 方法添加到 MainPage.xaml.cs 中。
 
@@ -428,7 +428,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 1. 在 MainPage.xaml 中，查找名为 **ImageGridView** 的 **GridView**，并添加 **ItemClick** 值。 
 
     > [!TIP] 
-    > 如果你键入下面的更改，而不是复制/粘贴，则会看到一个 IntelliSense 弹出窗口，其中显示“<新事件处理程序>”。 如果你按下 Tab 键，它将用默认方法处理程序名称填充此值，并自动去掉下一步中所显示的方法。 以后，你可以按 F12 在代码隐藏部分中导航到此方法。 
+    > 如果您键入中而不是复制/粘贴以下更改，则会看到 IntelliSense 弹出窗口，指出"\<新的事件处理程序\>"。 如果你按下 Tab 键，它将用默认方法处理程序名称填充此值，并自动去掉下一步中所显示的方法。 以后，你可以按 F12 在代码隐藏部分中导航到此方法。 
 
     **之前：**
     ```xaml
@@ -463,7 +463,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 
 我们已使用第 1 部分中介绍的普通 **x:Bind** 表达式绑定了所有控件。 回忆一下就能知道，这意味着它们都是一次绑定，这就解释了为什么没有注册对值所做的更改。 若要解决此问题，我们只需将其转变为双向绑定。 
 
-**使编辑控件具有交互性**
+**使编辑控件交互**
 
 1. 在 DetailPage.xaml 中，查找名为 **TitleTextBlock** 的 **TextBlock** 以及它后面的 **RadRating** 控件，并更新其 **x:Bind** 表达式以包括 **Mode=TwoWay**。
 
@@ -502,7 +502,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 
 运行该应用并试用编辑控件。 如你所见，当你进行更改时，会立即影响图像值，当你导航回主页面时，这些更改会持续存在。 
 
-## <a name="part-6-format-values-through-function-binding"></a>第 6 部分：通过函数绑定来设置值的格式
+## <a name="part-6-format-values-through-function-binding"></a>第 6 部分：通过函数绑定的值设置格式
 
 最后一个问题仍然存在。 当你移动效果滑块时，它们旁边的标签仍不会改变。 
 
@@ -510,7 +510,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 
 本教程中的最后一部分是添加绑定以为显示设置滑块值的格式。
 
-**绑定效果滑块标签并为显示设置值的格式**
+**绑定效果滑块标签并设置用于显示值的格式**
 
 1. 在 **Exposure** 滑块后面查找 **TextBlock**，并将 **Text** 值替换为此处所显示的绑定表达式。
 
@@ -557,11 +557,11 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 > 尝试将函数绑定与最后一个播放点中的 **TextBlock** 配合使用，并将其绑定到新方法，当你为该方法传递 **ItemSize** 值时，该方法会返回“000 x 000”格式的字符串。
 
 
-## <a name="conclusion"></a>结束语
+## <a name="conclusion"></a>结论
 
 本教程让你亲身感受了数据绑定，并向你介绍了一些可用的功能。 在我们结束之前，请注意一点：并非所有内容都可以绑定，有时你尝试连接到的值与你尝试绑定的属性不兼容。 虽然绑定的灵活性很大，但并非适用于各种情况。
 
-例如，当控件没有要绑定到的合适属性时，无法通过绑定来解决问题，这与详细信息页面缩放功能的情况一样。 此缩放滑块需要与显示图像的 **ScrollViewer** 交互，但 **ScrollViewer** 只能通过其 **ChangeView** 方法进行更新。 在这种情况下，我们使用常规事件处理程序使 **ScrollViewer** 和缩放滑块保持同步；有关详细信息，请参阅 **DetailPage** **ZoomSlider_ValueChanged** 和 **MainImageScroll_ViewChanged** 方法。
+例如，当控件没有要绑定到的合适属性时，无法通过绑定来解决问题，这与详细信息页面缩放功能的情况一样。 此缩放滑块需要与显示图像的 **ScrollViewer** 交互，但 **ScrollViewer** 只能通过其 **ChangeView** 方法进行更新。 在这种情况下，我们使用常规事件处理程序来保持**ScrollViewer**和缩放滑块中的同步; 请参阅**DetailPage** **ZoomSlider_ValueChanged**和**MainImageScroll_ViewChanged**方法有关的详细信息。
 
 尽管如此，绑定仍然是一种功能强大且灵活的方法，可用于简化代码并将 UI 逻辑与数据逻辑分开。 这样，你可以更加轻松地在此分界的任何一边进行调整，同时可减小在另一边引入错误的风险。 
 
@@ -595,5 +595,5 @@ public string ImageTitle
     
 你应该具有本教程中需要的所有信息，但是如果你需要更多指导，则只需单击一下，即可获得数据绑定文档。 从这里开始：
 
-+ [{x:Bind} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
-+ [深入了解数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
++ [{x： 绑定} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
++ [深度中的数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)

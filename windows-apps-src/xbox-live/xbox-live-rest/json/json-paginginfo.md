@@ -8,28 +8,28 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e773d73499e79fe23f736a536027932ca1a07b4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943592"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651212"
 ---
 # <a name="paginginfo-json"></a>PagingInfo (JSON)
-包含分页信息数据页中返回的结果。 
+包含分页信息的数据的页面中返回的结果。 
 <a id="ID4EN"></a>
 
  
 ## <a name="paginginfo"></a>PagingInfo
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| ContinuationToken| 字符串| 用于访问结果的下一步页面不透明延续令牌。 最大 32 个字符。调用方可以提供<b>continuationToken</b>查询参数中的此值，以检索下一组的集合中的项。 如果此属性为<b>null</b>，则没有任何其他项目集合中。 此属性是必需的并且即使与<b>skipItems</b>调时集合提供。| 
-| totalItems| 32 位有符号整数| 集合中项的总数。 这不会提供服务是否处于无法提供实时概况集合的大小。| 
+| ContinuationToken| 字符串| 用于访问下一页结果的不透明继续标记。 最多 32 个字符。调用方可以提供此值在<b>continuationToken</b>查询以检索下一组集合中的项的参数。 如果此属性为<b>null</b>，然后在集合中没有其他项。 此属性是必需的即使使用换集合时提供<b>skipItems</b>。| 
+| totalItems| 32 位有符号的整数| 集合中项的总数。 如果该服务不能提供到集合的大小的实时视图不提供该参数。| 
   
 <a id="ID4E4B"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 语法示例
+## <a name="sample-json-syntax"></a>示例 JSON 语法
  
 
 ```json
@@ -51,6 +51,6 @@ ms.locfileid: "8943592"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
    

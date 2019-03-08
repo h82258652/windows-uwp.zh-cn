@@ -6,17 +6,17 @@ ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1875fecbdfa6b97cdc30413c8afa6cc58d3251ef
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045476"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595032"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>2017 年 7 月 Windows 开发人员文档中的新增功能
 
 Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 最近提供了以下功能概述、开发人员指南和代码示例，包含面向 Windows 开发人员的新的和更新的信息。
 
-只需在 Windows10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/your-first-app.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/your-first-app.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -26,7 +26,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 [亚克力材料](../design/style/acrylic.md) 是一种可以创造透明纹理的画笔。 
 
-![浅色主题中的亚克力](../design/style/images/Acrylic_DarkTheme_Base.png)
+![亚克力在浅色主题中的应用](../design/style/images/Acrylic_DarkTheme_Base.png)
 
 [视差效果](../design/motion/parallax.md)可将三维深度和透视添加到应用。
 
@@ -34,7 +34,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 [展示](../design/style/reveal.md) 突出应用的重要元素。 
 
-![展示视觉](../design/style/images/Nav_Reveal_Animation.gif)
+![显示视觉](../design/style/images/Nav_Reveal_Animation.gif)
 
 ### <a name="ui-controls"></a>UI 控件
 
@@ -46,7 +46,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 使用[导航视图控件](../design/controls-and-patterns/navigationview.md)可轻松向应用添加顶级导航。
 
-![导航视图部分](../design/controls-and-patterns/images/navview_sections.png)
+![NavigationView 部分](../design/controls-and-patterns/images/navview_sections.png)
 
 [个人图片控件](../design/controls-and-patterns/person-picture.md)显示某个人的头像。
 
@@ -58,7 +58,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="design-toolkits"></a>设计工具包
 
-[适用于 UWP 应用的设计工具包和资源](../design/downloads/index.md)已通过添加草图和 Adobe XD 工具包进行扩展。 之前存在的工具包也已进行更新和改进，为你的 UWP 应用提供更强大的控件和布局模板。
+[适用于 UWP 应用的设计工具包和资源](../design/downloads/index.md)已通过添加草图和 Adobe XD 工具包进行扩展。 之前存在的工具包也已更新和改进，为你的 UWP 应用提供更强大的控件和布局模板。
 
 ### <a name="dashboard-monetization-and-store-services"></a>仪表板、盈利和应用商店服务
 
@@ -68,17 +68,17 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 * [Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md) 现提供一种可用来[下载应用中的错误的 CAB 文件](../monetize/download-the-cab-file-for-an-error-in-your-app.md)的方法。
 
-* 使用[定向优惠](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md) 可以通过极富吸引力的个性化内容锁定特定目标客户群体，以提升参与度、忠诚度和增加盈利。 
+* 使用[定向优惠](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)可以通过极富吸引力的个性化内容锁定特定目标客户群体，以提升参与度、忠诚度和增加盈利。 
 
 * 你的应用的应用商店一览现在可以包括[视频预告片](../publish/app-screenshots-and-images.md#trailers)。
 
-* 新的定价和可用性选项可用于[计划价格更改](../publish/set-and-schedule-app-pricing.md) 和[设置精确的发布日期](..//publish/configure-precise-release-scheduling.md)。
+* 新的定价和可用性选项可用于[计划价格更改](../publish/set-and-schedule-app-pricing.md)和[设置精确的发布日期](..//publish/configure-precise-release-scheduling.md)。
 
 * 你可以[导入和导出应用商店一览](../publish/import-and-export-store-listings.md) 以更快地进行更新，尤其是在你有多种语言版本的一览时。
 
 ### <a name="my-people"></a>我的人脉
 
-即将推出的“我的人脉”功能对使用 SDK 预览版的 [Windows 预览体验成员](https://insider.windows.com/)可用，用户可以将来自应用程序的人脉直接固定到任务栏。 [了解如何将“我的人脉”支持添加到应用程序。](../contacts-and-calendar/my-people-support.md)
+即将推出的“我的人脉”功能对使用 SDK 预览版的 [Windows 预览体验成员](https://insider.windows.com/)可用，用户可以将来自应用程序的人脉直接固定到任务栏。 [了解如何将我的人支持添加到你的应用程序。](../contacts-and-calendar/my-people-support.md)
 
 ![“我的人脉”联系面板](images/my-people.png)
 

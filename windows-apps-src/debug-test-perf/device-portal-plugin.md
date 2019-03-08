@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: d9e11445d77434320c8842608bf8183a078c0660
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919323"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644462"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>为 Device Portal 编写自定义插件
 
@@ -108,7 +108,7 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-有两个事件，必须由应用来完成请求处理循环：**已关闭**，对于每当 Device Portal 服务关闭，并且[**RequestReceived**](https://docs.microsoft.com/en-us/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs)，这会显示传入 HTTP 请求并提供主要Device Portal 提供程序的功能。 
+有两个事件，必须由应用程序以完成请求处理循环：**关闭**，对于每当设备门户服务关闭，并[ **RequestReceived**](https://docs.microsoft.com/en-us/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs)，传入 HTTP 请求，并提供设备门户的主要功能的图面提供程序。 
 
 ## <a name="handle-the-requestreceived-event"></a>处理 RequestReceived 事件
 对于在插件的指定处理程序路由上进行的每个 HTTP 请求，会引发一次 **RequestReceived** 事件。 Device Portal 提供程序的请求处理循环与 NodeJS Express 的类似：请求和响应对象会随事件一起提供，处理程序会通过填充响应对象进行响应。 在 Device Portal 提供程序中，，**RequestReceived** 事件及其处理程序使用 [**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httprequestmessage) 和 [**HttpResponseMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httpresponsemessage) 对象。   
@@ -188,7 +188,7 @@ Device Portal 提供程序提供的静态内容会在与核心 Device Portal 服
 2.  在“调试”选项卡下的“启动操作”部分中，选择“不启动，但在启动时调试代码”。  
 ![将插件置于调试模式](images/device-portal/plugin-debug-mode.png)
 3.  在 RequestReceived 处理程序函数中设置断点。
-![requestreceived 处理程序中的断点](images/device-portal/plugin-requestreceived-breakpoint.png)
+![断点在 requestreceived 处理程序](images/device-portal/plugin-requestreceived-breakpoint.png)
 > [!NOTE] 
 > 请确保该版本体系结构完全匹配目标的体系结构。 如果你使用的是 64 位电脑，则必须使用 AMD64 版本进行部署。 
 4.  按 F5 部署应用

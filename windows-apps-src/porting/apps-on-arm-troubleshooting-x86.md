@@ -6,15 +6,15 @@ ms.topic: article
 keywords: windows 10 s, 始终连接, ARM 上的 x86 模拟, 疑难解答
 ms.localizationpriority: medium
 ms.openlocfilehash: 396bb0bf2c5ba5236e0e46e7b474867ffacb8c75
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938608"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589852"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>x86 桌面应用疑难解答
 >[!IMPORTANT]
-> ARM64 SDK 现已作为 Visual Studio 15.8 Preview 1 的组成部分提供。 我们建议你将应用重新编译到 ARM64 以便应用以纯本机速度运行。 有关更多信息，请参阅博客文章[针对 ARM 开发的 Visual Studio 早期预览版 Windows 10 支持](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/)。
+> ARM64 SDK 现已作为 Visual Studio 15.8 Preview 1 的组成部分提供。 我们建议你将应用重新编译到 ARM64 以便应用以纯本机速度运行。 有关更多信息，请参阅 [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/) 博客文章。
 
 如果 x86 桌面应用无法像在 x86 计算机上那样正常工作，请参阅以下指南以帮助你排除故障。
 
@@ -36,10 +36,10 @@ ms.locfileid: "8938608"
 
 应用可以将注册表项放在本机注册表视图下，或者根据 WOW 的存在执行功能。 原来的 **IsWow64Process** 只指示应用是否运行在 x64 计算机上。 现在，应用应该使用 [IsWow64Process2](https://msdn.microsoft.com/en-us/library/windows/desktop/mt804318(v=vs.85).aspx) 确定自己是否运行在带有 WOW 支持的系统上。 
 
-## <a name="drivers"></a>驱动程序 
+## <a name="drivers"></a>Drivers 
 所有内核模式驱动程序、[用户模式驱动程序框架 (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf) 驱动程序和打印驱动程序都必须进行编译，以匹配操作系统的体系结构。 如果 x86 应用具有驱动程序，则必须为 ARM64 重新编译该驱动程序。 x86 应用也许能够在模拟环境中良好运行，但必须为 ARM64 重新编译其驱动程序，并且依赖该驱动程序的任何应用体验都将无法使用。 有关为 ARM64 编译驱动程序的详细信息，请参阅[使用 WDK 构建 ARM64 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers)。
 
-## <a name="shell-extensions"></a>Shell 扩展 
+## <a name="shell-extensions"></a>外壳扩展 
 尝试连接 Windows 组件或将 DLL 加载到 Windows 进程中的应用需要重新编译这些 DLL，以匹配系统的体系结构，即 ARM64。 输入法编辑器 (IME)、辅助技术、shell 扩展应用（例如，在资源管理器中显示云存储图标或右键单击上下文菜单）通常会使用这种方法。 若要了解如何将应用或 DLL 重新编译到 ARM64，请参阅博客文章[针对 ARM 开发的 Visual Studio 早期预览版 Windows 10 支持](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/)。 
 
 ## <a name="debugging"></a>调试

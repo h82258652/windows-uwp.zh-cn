@@ -1,76 +1,76 @@
 ---
 title: 添加用户界面
-description: 了解如何添加到 DirectX UWP 游戏的 2D 用户界面覆盖层。
+description: 了解如何将二维用户界面覆盖添加到 DirectX UWP 游戏。
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
 ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 用户界面, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 09005eb12997126a9cad68c388beb0473b19fda3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930568"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609052"
 ---
 # <a name="add-a-user-interface"></a>添加用户界面
 
 
-现在，我们的游戏有现成其 3D 视觉对象，就可以专注于添加一些 2D 元素，以便游戏可以向玩家提供有关游戏状态的反馈。 这可以通过添加简单的菜单选项和抬头显示组件顶部三维图形管道输出。
+现在，我们的游戏已经及其 3D 视觉对象之后，就可以重点是添加一些 2D 元素，以便游戏玩家提供游戏状态有关的反馈。 这可以通过添加简单的菜单选项来实现，并在 3d 图形之上的危险警告显示组件管道输出。
 
 >[!Note]
 >如果你尚未下载适用于此示例的最新游戏代码，请转到 [Direct3D 游戏示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此示例是大型 UWP 功能示例集合的一部分。 有关如何下载示例的说明，请参阅[从 GitHub 获取 UWP 示例](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
 
 ## <a name="objective"></a>目标
 
-使用 Direct2D，将大量的用户界面图形和行为添加到我们 UWP DirectX 游戏包括：
-- 提醒显示，包括[移动观看控制器](tutorial--adding-controls.md)边界矩形
+使用 Direct2D，将大量图形用户界面和行为添加到我们 UWP DirectX 游戏包括：
+- 平视显示，其中包括[移动外观控制器](tutorial--adding-controls.md)边界矩形
 - 游戏状态菜单
 
 
 ## <a name="the-user-interface-overlay"></a>用户界面覆盖层
 
 
-尽管有多种方法可在 DirectX 游戏中显示文本和用户界面元素，我们将对焦上使用[Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx)。 我们将还使用[DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038)文本元素。
+虽然有许多方式在 DirectX 游戏中显示文本和用户界面元素，我们将重点介绍在使用[Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx)。 我们还将使用[DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038)文本元素。
 
 
-Direct2D 是一组的 2D 图形 Api，用于绘制基于像素的基元和效果。 当开始使用 Direct2D，最好是为简单起见。 复杂的布局和界面行为需要时间和规划。 如果你的游戏需要复杂的用户界面，例如模拟和战略游戏中，请考虑改为使用 XAML。
+Direct2D 是一组的 2D 绘图 Api 用来绘制像素基于基元和效果。 与 Direct2D 开始时最好为简单起见。 复杂的布局和界面行为需要时间和规划。 如果您的游戏需要使用复杂的用户界面，如模拟和战略游戏中考虑改为使用 XAML。
 
 > [!NOTE]
 > 有关开发 UWP DirectX 游戏中的使用 XAML 用户界面的信息，请参阅[扩展游戏示例](tutorial-resources.md)。
 
-Direct2D 不被专为用户界面或布局如 HTML 和 XAML。 它不会提供用户界面组件，如列表、 框或按钮。 它还不提供布局组件，如 div、 表或网格。
+Direct2D 不被专为用户界面或如 HTML 和 XAML 的布局。 它没有提供用户界面组件，如列表、 框或按钮。 它还没有提供布局的组件，如 div、 表格或网格。
 
 
-对于此游戏示例中，我们有两个主要 UI 组件。
-1. 抬头显示分数和游戏内控件。
-2. 覆盖层用于显示游戏状态文本和选项，例如暂停信息和级别开始选项。
+对于此游戏的示例中，我们有两个主要 UI 组件。
+1. 评分和游戏中控件的危险警告显示。
+2. 覆盖用于显示游戏的状态文本和选项，例如暂停信息和级别启动选项。
 
 ### <a name="using-direct2d-for-a-heads-up-display"></a>对抬头显示使用 Direct2D
 
-下图显示了该示例游戏内提醒显示。 它是简单整齐，让玩家专注于在三维世界中导航、 射击目标。 良好的界面或提醒显示必须永远不会增加的复杂性玩家处理和响应游戏中事件的能力。
+下图显示了此示例中的游戏危险警告显示。 它是简单整洁，从而让播放器能够专注于导航 3D 世界和射击目标。 很好的接口或危险警告显示必须永远不会增加复杂性播放机来处理和游戏中的事件做出反应的能力。
 
 ![游戏覆盖层的屏幕截图](images/simple-dx-game-ui-overlay.png)
 
-覆盖层包含的以下基本基元。
-- [**DirectWrite**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038)文本向玩家的右上角中 
-    - 成功命中数
-    - 提示玩家的数量
-    - 在此级别中的剩余时间
-    - 当前关卡数 
-- 两个相交线段用于形成十字
-- 底部角的[移动观看控制器](tutorial--adding-controls.md)边界处的两个矩形。 
+在覆盖区上包含以下基本基元。
+- [**DirectWrite** ](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038)通知的播放机在右上角中的文本 
+    - 成功的命中数
+    - 已在播放机的快照的数量
+    - 在级别中的剩余时间
+    - 当前级别数 
+- 两个相交用于构成十字线的直线线段
+- 在底部角落的两个矩形[移动外观控制器](tutorial--adding-controls.md)边界。 
 
 
-[**GameHud**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.h)类的[**GameHud::Render**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L234-L358)方法绘制覆盖层的游戏内提醒显示状态。 在此方法中，更新的 Direct2D 覆盖层，代表我们的 UI 以反映中发生，时间剩余，和级别号数的更改。
+在覆盖区上的游戏中平视显示状态中绘制[ **GameHud::Render** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L234-L358)方法[ **GameHud** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.h)类。 在此方法中，表示我们的 UI 在 Direct2D 覆盖区上将更新以反映命中，时间剩余，和级别号数中的更改。
 
-如果已初始化游戏，我们添加`TotalHits()`， `TotalShots()`，并`TimeRemaining()`到[**swprintf_s**](https://docs.microsoft.com/cpp/c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l)缓冲区并指定打印的格式。 然后，我们可以绘制它使用[**DrawText**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd742848)方法。 我们执行相同操作的当前级别指示器，绘制空编号，以显示 ➀，如未完成的级别和类似 ➊ 填充的数字来显示特定级别已完成。
+如果已初始化游戏，我们将添加`TotalHits()`， `TotalShots()`，并`TimeRemaining()`到[ **swprintf_s** ](https://docs.microsoft.com/cpp/c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l)缓冲并指定打印格式。 我们然后可以使用它绘制[ **DrawText** ](https://msdn.microsoft.com/en-us/library/windows/desktop/dd742848)方法。 我们执行相同操作的当前级别指示符，绘制空编号，以显示等 ➀，未完成的级别和已填充的数字，如 ➊ 以显示特定级别已完成。
 
 
-以下代码段遍历**GameHud::Render**方法的过程 
-- 创建位图 using [* * ID2D1RenderTarget::DrawBitmap * *](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371880)
-- 划分为使用[**D2D1::RectF**矩形的 UI 区域](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368184)
-- 使用**DrawText**使文本元素
+下面的代码段将指导完成**GameHud::Render**方法的过程 
+- 创建位图使用[* * ID2D1RenderTarget::DrawBitmap * *](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371880)
+- 划分的 UI 区域，为使用矩形[ **D2D1::RectF**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368184)
+- 使用**DrawText**以使文本元素
 
 ```cpp
 void GameHud::Render(_In_ Simple3DGame^ game)
@@ -171,7 +171,7 @@ void GameHud::Render(_In_ Simple3DGame^ game)
 }
 ```
 
-中断方法向进一步，这条[**GameHud::Render**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L320-L358)方法绘制我们移动和射击矩形与[**ID2D1RenderTarget::DrawRectangle**](https://msdn.microsoft.com/library/windows/desktop/dd371902)，并使用[**ID2D1RenderTarget::DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895)的两个调用的十字线。
+向下进一步，此段的方法的重大[ **GameHud::Render** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L320-L358)方法绘制我们移动并触发与矩形[ **ID2D1RenderTarget::DrawRectangle**](https://msdn.microsoft.com/library/windows/desktop/dd371902)，并使用两个调用的十字准线[ **ID2D1RenderTarget::DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895)。
 
 ```cpp
         // Check if game is playing
@@ -214,79 +214,79 @@ void GameHud::Render(_In_ Simple3DGame^ game)
         }
 ```
 
-**GameHud::Render**方法中我们将存储在游戏窗口中的逻辑大小`windowBounds`变量。 这将使用[`GetLogicalSize`](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.h#L41) **DeviceResources**类的方法。 
+在中**GameHud::Render**方法我们存储中的游戏窗口的逻辑大小`windowBounds`变量。 这将使用[ `GetLogicalSize` ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.h#L41)方法**DeviceResources**类。 
 ```cpp
 auto windowBounds = m_deviceResources->GetLogicalSize();
 ```
 
- 获取游戏窗口的大小是必需的 UI 编程。 名为 Dip （与设备独立像素），其中 DIP 定义为一英寸的 1/96 的度量给定的窗口大小。 Direct2D 将绘图单位缩放到实际像素绘图发生时，通过使用 Windows 每英寸点数 (DPI) 设置执行此操作。 同样，当你使用[**DirectWrite**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038)绘制文本，你指定 Dip 而不是大小的字体。 DIP 表示为浮点数字。
+ 获取游戏窗口的大小是必需的 UI 编程。 称为 Dip （设备独立像素为单位），其中某个 DIP 定义为 1/96 英寸提供窗口的大小。 Direct2D 缩放到实际的像素的绘图单位绘图时，执行此操作通过使用 Windows 每英寸点数 (DPI) 设置。 同样，使用文本绘制[ **DirectWrite**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038)，你指定 Dip，而不是点的字体的大小。 DIP 表示为浮点数字。
 
  
 
 ### <a name="displaying-game-state-info"></a>显示游戏状态信息
 
-除提醒显示，该游戏示例有表示六个游戏状态的覆盖层。 所有状态都功能较大的黑色矩形基元，附带供玩家阅读的文本。 因为它们不活动在这些状态，未绘制移动观看控制器矩形和十字线。
+除了平视显示，游戏示例有六种游戏状态表示一个覆盖区。 所有状态的都功能与文本要读取的播放器的大黑色的矩形基元。 因为它们不是活动在这些状态，不绘制移动外观控制器矩形和十字准线。
 
-创建覆盖层使用[**GameInfoOverlay**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.h)类，从而使我们可以切换出去显示文本的内容，以与游戏的状态保持一致。
+使用创建覆盖层[ **GameInfoOverlay** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.h)类，使我们能够切出显示的文本对齐的游戏的状态。
 
 ![状态和覆盖层的操作](images/simple-dx-game-ui-finaloverlay.png)
 
-覆盖层划分为两个部分：**状态**和**操作**。 **状态**secton 进一步细分为**标题**和**正文**矩形。 **操作**部分仅有一个矩形。 每个矩形具有不同的用途。
+在覆盖区上将分解为两个部分：**状态**并**操作**。 **状态**secton 进一步细分成**标题**并**正文**矩形。 **操作**部分仅包含一个矩形。 每个矩形具有不同的用途。
 
--   `titleRectangle` 包含的标题文本。
+-   `titleRectangle` 包含标题文本。
 -   `bodyRectangle` 包含正文文本。
--   `actionRectangle` 包含通知玩家采取具体操作的文本。
+-   `actionRectangle` 包含通知播放机来执行特定操作的文本。
 
-游戏具有可设置的六个状态。 传达使用覆盖层的**状态**部分游戏的状态。 使用多种方法使用以下状态相应更新**状态**矩形。
+该游戏有六个可以设置的状态。 使用传达游戏的状态**状态**在覆盖区上的部分。 **状态**矩形会更新使用多种方法具有以下状态相对应。
 
 - 正在加载
-- 初始的开始菜单高分数统计数据
+- 初始启动/高分数的统计信息
 - 级别开始
-- 游戏暂停
+- 暂停游戏
 - 游戏结束
-- 游戏中胜出
+- 结束-赢得的游戏
 
 
-使用[**GameInfoOverlay::SetAction**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L522-L564)方法，以使设置为以下任一操作文本，覆盖层的**操作**部分进行更新。
+**操作**使用更新在覆盖区上的部分[ **GameInfoOverlay::SetAction** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L522-L564)方法，允许操作文本设置为以下值之一。
 - "点击以再次播放..."
 - "级别加载，请稍候..."
 - "点击以继续..."
 - 无
 
 > [!NOTE]
-> 将讨论这两种方法[表示游戏状态](#representing-game-state)部分中进一步。
+> 将讨论这两种方法中进一步[表示游戏状态](#representing-game-state)部分。
 
-具体取决于怎么游戏、**状态**和**操作**部分中进行调整文本字段。
-让我们看一下如何初始化和绘制这些六个状态的覆盖层。
+这怎么回事在游戏中，根据**状态**并**操作**调整部分文本字段。
+让我们看看我们如何初始化和绘制这些六种状态的覆盖。
 
 ### <a name="initializing-and-drawing-the-overlay"></a>初始化和绘制覆盖层
 
-**六个状态**具有一些共同特征，使资源和方法所需非常相似。
-    - 它们都作为其背景在屏幕的中心使用黑色矩形。
-    - 显示的文本是**标题**或**正文**文本。
-    - 文本使用 Segoe UI 字体和背景矩形顶部绘制。 
+六个**状态**状态具有一些共同点，使资源和方法所需非常相似。
+    - 它们都在屏幕的中心作为其背景使用黑色的矩形。
+    - 显示的文本可以是**标题**或**正文**文本。
+    - 使用 Segoe UI 字体和后矩形上绘制的文本。 
 
 
-该游戏示例有四种方法创建覆盖层时派上用场。
+游戏示例有创建覆盖层时派上用场的四个方法。
  
 
 #### <a name="gameinfooverlaygameinfooverlay"></a>GameInfoOverlay::GameInfoOverlay
-[**GameInfoOverlay::GameInfoOverlay**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L30-L78)构造函数初始化覆盖层，维护我们将使用上显示信息向玩家的位图图面。 构造函数从传递给它，用来创建覆盖对象本身，可以绘制到[**ID2D1DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/hh404479) [**ID2D1Device**](https://msdn.microsoft.com/library/windows/desktop/hh404478)对象获得一个工厂。 [IDWriteFactory::CreateTextFormat](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368203) 
+[ **GameInfoOverlay::GameInfoOverlay** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L30-L78)构造函数初始化在覆盖区上，我们将使用上显示的信息向播放机在位图面维护。 构造函数获取从工厂[ **ID2D1Device** ](https://msdn.microsoft.com/library/windows/desktop/hh404478)对象传递给它，它用于创建[ **ID2D1DeviceContext** ](https://msdn.microsoft.com/library/windows/desktop/hh404479)可以绘制覆盖对象本身。 [IDWriteFactory::CreateTextFormat](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368203) 
 
 
-#### <a name="gameinfooverlaycreatedevicedependentresources"></a>Gameinfooverlay:: Createdevicedependentresources
-[**Gameinfooverlay:: Createdevicedependentresources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104)是我们方法，用于创建将用于绘制我们的文本的画笔。 若要执行此操作，我们获取一个[**ID2D1DeviceContext2**](https://msdn.microsoft.com/en-us/library/windows/desktop/dn890789)对象，它可以创建并绘制的几何图形，以及功能，例如墨迹和渐变网格呈现。 然后，我们创建一系列的彩色使用[**ID2D1SolidColorBrush**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd372207)绘制 folling UI 元素的画笔。
-- 矩形背景的黑色画笔
+#### <a name="gameinfooverlaycreatedevicedependentresources"></a>GameInfoOverlay::CreateDeviceDependentResources
+[**GameInfoOverlay::CreateDeviceDependentResources** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104)是我们的方法，用于创建画笔用于绘制文本。 若要执行此操作，我们获得[ **ID2D1DeviceContext2** ](https://msdn.microsoft.com/en-us/library/windows/desktop/dn890789)对象可以创建和绘制的几何形状，以及功能，例如墨迹和渐变网格呈现该对象。 然后，创建一系列使用彩色画笔[ **ID2D1SolidColorBrush** ](https://msdn.microsoft.com/en-us/library/windows/desktop/dd372207)绘制 folling UI 元素。
+- 若要获得矩形背景黑色画笔
 - 白色画笔状态文本
-- 橙色画笔来操作文本
+- 橙色画笔操作文本
 
 #### <a name="deviceresourcessetdpi"></a>DeviceResources::SetDpi
-[**DeviceResources::SetDpi**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L514-L527)方法设置每英寸点数的窗口。 获取调用此方法，当 DPI 更改，并且需要重新调整其时会在调整游戏的窗口大小。 更新后 DPI，此方法还会调用[**deviceresources:: Createwindowsizedependentresources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L214-L487)以确保每次调整窗口大小时都重新创建必要资源。
+[ **DeviceResources::SetDpi** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L514-L527)方法可设置每英寸点数的窗口。 调用此方法时所使用的 DPI 发生更改，需要重新调整游戏窗口调整大小时，会发生该情况。 在更新后的 DPI，此方法还会调用[**DeviceResources::CreateWindowSizeDependentResources** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L214-L487)进行确保必要的资源，会重新创建每次调整窗口大小。
 
 
 #### <a name="gameinfooverlaycreatewindowssizedependentresources"></a>GameInfoOverlay::CreateWindowsSizeDependentResources
-[**GameInfoOverlay::CreateWindowsSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L108-L225)方法是我们的所有绘制都发生。 下面是该方法的步骤概述。
-- 三个矩形创建到关闭**标题**、**正文**和**操作**文本的 UI 文本的部分。
+[ **GameInfoOverlay::CreateWindowsSizeDependentResources** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L108-L225)方法是我们的所有绘图都发生的地方。 以下是该方法的步骤的概述。
+- 关闭的 UI 文本的部分创建三个矩形**标题**，**正文**，并**操作**文本。
     ```cpp 
     m_titleRectangle = D2D1::RectF(
         GameInfoOverlayConstant::SideMargin,
@@ -308,40 +308,40 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
         );
     ```
 
-- 位图创建名为`m_levelBitmap`，考虑当前 DPI 使用**CreateBitmap**。
-- `m_levelBitmap` 因为我们 2D 呈现器目标使用[**ID2D1DeviceContext::SetTarget**](https://msdn.microsoft.com/en-us/library/windows/desktop/hh404533)设置。
-- 位图清除所做的每个像素的黑色使用[**ID2D1RenderTarget::Clear**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371772)。
-- [**ID2D1RenderTarget::BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371768)称为以启动绘图。 
-- **DrawText**调用来绘制文本存储在`m_titleString`， `m_bodyString`，并`m_actionString`中使用相应**ID2D1SolidColorBrush**相应矩形。
-- [**ID2D1RenderTarget::EndDraw**](ID2D1RenderTarget::EndDraw)调用以停止上的所有绘图操作`m_levelBitmap`。
-- 创建另一个位图使用**CreateBitmap**名为`m_tooSmallBitmap`将用作回退，显示仅显示配置是否为游戏太小。
-- 重复上绘制的过程`m_levelBitmap`的`m_tooSmallBitmap`，这一次仅绘制字符串`Paused`正文中。
+- 位图创建的名为`m_levelBitmap`，考虑到帐户使用的当前 DPI **CreateBitmap**。
+- `m_levelBitmap` 设置为我们 2D 呈现器目标使用[ **ID2D1DeviceContext::SetTarget**](https://msdn.microsoft.com/en-us/library/windows/desktop/hh404533)。
+- 位图清除与进行黑色使用的每个像素[ **ID2D1RenderTarget::Clear**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371772)。
+- [**ID2D1RenderTarget::BeginDraw** ](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371768)调用以启动绘图。 
+- **DrawText**调用以绘制中存储的文本`m_titleString`， `m_bodyString`，和`m_actionString`中使用相应的 approperiate 矩形**ID2D1SolidColorBrush**。
+- [**ID2D1RenderTarget::EndDraw** ](ID2D1RenderTarget::EndDraw)调用来停止上的所有绘制操作`m_levelBitmap`。
+- 使用创建另一个位图**CreateBitmap**名为`m_tooSmallBitmap`要用作回退，只显示显示配置是否对游戏来说太小。
+- 用于上绘制重复过程`m_levelBitmap`有关`m_tooSmallBitmap`，这次仅绘制字符串`Paused`在正文中。
 
 
 
 
-现在，我们只是六个方法来填充我们六个覆盖层状态的文本 ！
+现在我们只需将六种方法来填充我们六个覆盖状态的文本 ！
 
-### <a name="representing-game-state"></a>表示游戏状态
+### <a name="representing-game-state"></a>表示游戏的状态
 
 
-每个游戏中的六个覆盖层状态**GameInfoOverlay**对象中有一个相应的方法。 这些方法绘制覆盖层的变体，以向玩家传达游戏本身的显式信息。 这种通信表示与**标题**和**正文**字符串。 该示例已经配置了资源和布局为它初始化时此信息与[**gameinfooverlay:: Createdevicedependentresources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104)方法，因为它只需提供特定于状态的字符串的覆盖层。
+每个游戏中的六个覆盖状态都有相应的方法**GameInfoOverlay**对象。 这些方法绘制覆盖层的变体，以向玩家传达游戏本身的显式信息。 此通信可表示与**标题**并**正文**字符串。 因为示例已配置的资源和为该信息的布局初始化时且[ **GameInfoOverlay::CreateDeviceDependentResources** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104)方法，它只需提供覆盖特定于状态的字符串。
 
-通过调用以下方法之一设置覆盖层的**状态**部分。
+**状态**部分覆盖的设置通过调用以下方法之一。
 
 游戏状态 | 状态设置方法 | 状态字段
 :----- | :------- | :---------
-正在加载 | [GameInfoOverlay::SetGameLoading](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L254-L306) |**Title**</br>加载资源 </br>**正文**</br> 以增量方式打印"。"暗示加载活动。
-初始的开始菜单高分数统计数据 | [Gameinfooverlay:: Setgamestats](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L310-L354) |**Title**</br>较高分数</br> **正文**</br> 级别完成 # </br>总分数 #</br>总尽在掌握 #
-级别开始 | [GameInfoOverlay::SetLevelStart](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L413-L471) |**Title**</br>级别 #</br>**正文**</br>级别目标说明。
-游戏暂停 | [GameInfoOverlay::SetPause](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L475-L502) |**Title**</br>游戏暂停</br>**正文**</br>无
-游戏结束 | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**Title**</br>游戏结束</br> **正文**</br> 级别完成 # </br>总分数 #</br>总尽在掌握 #</br>级别完成 #</br>高分数 #
-游戏中胜出 | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**Title**</br>你赢了！</br> **正文**</br> 级别完成 # </br>总分数 #</br>总尽在掌握 #</br>级别完成 #</br>高分数 #
+正在加载 | [GameInfoOverlay::SetGameLoading](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L254-L306) |**Title**</br>加载资源 </br>**Body**</br> 以增量方式将打印"。"暗示加载活动。
+初始启动/高分数的统计信息 | [GameInfoOverlay::SetGameStats](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L310-L354) |**Title**</br>高评分</br> **Body**</br> 级别已完成 # </br>总点 #</br>总快照 #
+级别开始 | [GameInfoOverlay::SetLevelStart](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L413-L471) |**Title**</br>级别 #</br>**Body**</br>级别目标的描述。
+暂停游戏 | [GameInfoOverlay::SetPause](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L475-L502) |**Title**</br>暂停游戏</br>**Body**</br>无
+游戏结束 | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**Title**</br>游戏结束</br> **Body**</br> 级别已完成 # </br>总点 #</br>总快照 #</br>级别已完成 #</br>高评分 #
+结束-赢得的游戏 | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**Title**</br>你赢了！</br> **Body**</br> 级别已完成 # </br>总点 #</br>总快照 #</br>级别已完成 #</br>高评分 #
 
 
 
 
-使用[**GameInfoOverlay::CreateWindowSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L117-L134)方法，该示例声明的覆盖层的特定区域对应的三个矩形区域。
+与[ **GameInfoOverlay::CreateWindowSizeDependentResources** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L117-L134)方法，该示例声明三个对应于在覆盖区上的特定区域的矩形区域。
 
 
 
@@ -401,12 +401,12 @@ void GameInfoOverlay::SetGameStats(int maxLevel, int hitCount, int shotCount)
 }
 ```
 
-此方法使用**GameInfoOverlay**对象初始化的 Direct2D 设备上下文，填充使用黑色背景画笔的标题和正文矩形。 它使用白色文本画笔将“High Score”字符串文本绘制到标题矩形，并将包含更新游戏状态信息的文本绘制到正文矩形。
+使用 Direct2D 设备上下文的**GameInfoOverlay**初始化的对象，此方法填充标题和正文矩形与改为使用背景画笔。 它使用白色文本画笔将“High Score”字符串文本绘制到标题矩形，并将包含更新游戏状态信息的文本绘制到正文矩形。
 
 
-操作矩形通过从**GameMain**对象，可提供**GameInfoOverlay::SetAction**需确定到正确的消息的游戏状态信息的方法对[**GameInfoOverlay::SetAction**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L522-L564)的后续调用更新玩家，如"点击以继续"。
+通过后续调用更新操作矩形[ **GameInfoOverlay::SetAction** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L522-L564)上的方法从**GameMain**对象，它提供所需的游戏状态信息通过**GameInfoOverlay::SetAction**来确定正确的消息到播放机中，如"点击以继续"。
 
-任何给定状态的覆盖层时选择[**GameMain::SetGameInfoOverlay**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/GameMain.cpp#L606-L661)方法如下：
+中所选择的任何给定状态的覆盖[ **GameMain::SetGameInfoOverlay** ](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/GameMain.cpp#L606-L661)方法如下：
 
 ```cpp
 void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
@@ -467,7 +467,7 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 }
 ```
 
-游戏现在具有一种方法，以向玩家根据游戏状态传达文本信息和我们已切换显示的内容向其整个游戏的一种方法。
+游戏现在具有一种方法进行通信的文本信息到播放机根据游戏状态，并且我们有一种方法切换显示的内容与其在游戏。
 
 ### <a name="next-steps"></a>后续步骤
 

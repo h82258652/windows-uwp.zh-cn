@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: efdf4214-9738-4df6-bf1f-ed7141696ef6
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bf4d62f390a5d324952ef2852a76803f4619fdc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934270"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593802"
 ---
 # <a name="register-an-app-in-a-loose-folder"></a>注册 Loose 文件夹中的应用  
 
@@ -25,7 +25,7 @@ POST | /api/app/packagemanager/register
 <br />
 **URI 参数**
 
-你可以在请求 URI 上指定以下附加参数：
+可以在请求 URI 上指定以下附加参数：
 
 URI 参数      | 描述
 :------     | :-----
@@ -46,19 +46,19 @@ URI 参数      | 描述
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 说明
+HTTP 状态代码      | 描述
 :------     | :-----
 200 | 已接受和正在处理的部署请求
 4XX | 错误代码
 5XX | 错误代码
 <br />
-**可用设备系列**
+**可用的设备系列**
 
 * Windows Xbox
 
 **注意**
 
-至少有三种不同的方式可以将主机上的 Loose 应用放在目标文件夹中。 最简单的方式是通过 SMB 将这些文件复制到 \\&lt;IP_Address&gt;\DevelopmentFiles\LooseApps。 这需要使用 UWA 工具包的用户名和密码，用户名和密码可以通过 [/ext/smb/developerfolder](wdp-smb-api.md) 获取。 
+至少有三种不同的方式可以将主机上的 Loose 应用放在目标文件夹中。 最简单的方法是直接复制到 SMB 通过文件\\< IP_Address > \DevelopmentFiles\LooseApps。 这需要使用 UWA 工具包的用户名和密码，用户名和密码可以通过 [/ext/smb/developerfolder](wdp-smb-api.md) 获取。 
 
 第二种方法是通过对 /api/filesystem/apps/file 执行 POST，将各文件复制到正确的位置，其中 knownfolderid 为 DevelopmentFiles、packagefullname 为空，并正确地提供了文件名和路径（路径应该以 LooseApps 开头）。
 

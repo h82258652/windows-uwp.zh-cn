@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 11f68d9dd912c92ff7de8b861f576e8f0c4b4dde
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925801"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658702"
 ---
 # <a name="handle-app-prelaunch"></a>处理应用预启动
 
@@ -19,9 +19,9 @@ ms.locfileid: "8925801"
 
 ## <a name="introduction"></a>简介
 
-当可用的系统资源允许，桌面设备系列设备上的 UWP 应用的启动性能是通过提升主动启动用户的最常使用的应用在后台。 预启动的应用在启动后不久就会处于暂停状态。 然后，在用户调用该应用时，它通过从暂停状态切换到运行状态而得到恢复，这比冷启动应用的速度要快得多。 用户的体验只是启动应用的速度非常快。
+当可用系统资源允许时，通过主动启动用户的使用频率最高的应用在后台提高桌面设备系列设备上的 UWP 应用的启动性能。 预启动的应用在启动后不久就会处于暂停状态。 然后，在用户调用该应用时，它通过从暂停状态切换到运行状态而得到恢复，这比冷启动应用的速度要快得多。 用户的体验只是启动应用的速度非常快。
 
-在 Windows 10 之前，应用不会自动利用预启动。 在 windows 10，版本 1511 中，所有通用 Windows 平台 (UWP) 应用均已等待预启动。 在 Windows 10 版本 1607 中，你必须通过调用 [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx) 选择加入预启动行为。 放置此调用的绝佳位置是进行 `if (e.PrelaunchActivated == false)` 检查的位置附近的 `OnLaunched()` 内。
+在 Windows 10 之前，应用不会自动利用预启动。 在 Windows 10 版本 1511，所有通用 Windows 平台 (UWP) 应用为正在 prelaunched 是候选项。 在 Windows 10 版本 1607 中，你必须通过调用 [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx) 选择加入预启动行为。 放置此调用的绝佳位置是进行 `if (e.PrelaunchActivated == false)` 检查的位置附近的 `OnLaunched()` 内。
 
 是否预启动应用取决于系统资源。 如果系统遇到资源压力，则不会预启动应用。
 
@@ -35,7 +35,7 @@ XAML 项目（C#、VB、C++）和 WinJS 的默认模板适合在 Visual Studio 2
 
 ## <a name="detect-and-handle-prelaunch"></a>检测和处理预启动
 
-在激活期间，应用会收到 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 标志。 使用此标志运行应仅运行时在用户显式启动该应用，如下所示为[**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)下面的修改的代码。
+在激活期间，应用会收到 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 标志。 使用此标志来运行应仅运行时在用户显式启动应用程序中，如以下修改中所示的代码[ **Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)。
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -110,9 +110,9 @@ private void TryEnablePrelaunch()
 }
 ```
 
-注意`TryEnablePrelaunch()`函数，更高版本。 在调用的原因到`CoreApplication.EnablePrelaunch()`分解外传入此函数是因为 （只是在时间编译） JIT 调用一个方法时，将尝试编译整个方法。 如果不支持的 Windows 10 版本上运行你的应用`CoreApplication.EnablePrelaunch()`，然后 JIT 将失败。 通过将计入时应用确定该平台支持仅调用一个方法调用`CoreApplication.EnablePrelaunch()`，我们避免此问题。
+请注意`TryEnablePrelaunch()`正常工作，更高版本。 原因调用到`CoreApplication.EnablePrelaunch()`分解扩展到此函数是因为 JIT （实时编译） 时调用的方法，将尝试编译整个方法。 如果不支持的 Windows 10 版本上运行你的应用`CoreApplication.EnablePrelaunch()`，则 JIT 将失败。 通过分离到应用程序确定该平台支持时才调用的方法调用`CoreApplication.EnablePrelaunch()`，我们避免该问题。
 
-没有还在上面的示例代码，你可以取消注释如果你的应用需要选择退出预启动时在 Windows 10 版本 1511年上运行。 在版本 1511年中，所有 UWP 应用已自动都选择到预启动，这可能不适合你的应用。
+没有还在上面的示例代码，您可以取消注释掉你的应用需要退出的预启动 Windows 10，版本 1511年上运行时。 在版本 1511年中，所有 UWP 应用已自动都选择为预启动，这可能不会适合您的应用程序。
 
 ## <a name="use-the-visibilitychanged-event"></a>使用 VisibilityChanged 事件
 
@@ -203,7 +203,7 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
     -   一个性能含义的示例是，你可能会等到用户切换到应用时才检索当前天气信息（而非在应用预启动时加载该信息），并且需要在应用可见时重新加载该信息，以确保该信息是最新的。
 -   如果你的应用在启动时清除动态磁贴，请将此操作延迟到执行可见性更改事件时。
 -   应用的遥测应可以区分正常磁贴激活和预启动激活，以便更轻松地缩小发生问题的方案。
--   如果你拥有 Microsoft Visual Studio2015 Update 1 和 windows 10，版本 1511 中，你可以模拟应用预 Visual Studio2015 你的应用通过选择**调试** &gt; **其他调试目标** &gt; **调试 Windows 通用应用预启动**。
+-   如果你有 Microsoft Visual Studio 2015 Update 1 和 Windows 10，版本 1511，可以模拟预启动的应用在应用 Visual Studio 2015 中通过选择**调试** &gt; **其他调试目标**&gt; **调试 Windows 通用应用程序预启动**。
 
 ## <a name="related-topics"></a>相关主题
 

@@ -8,44 +8,44 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7299fcb4d375a3fc35ad67306b70f5fa4afde963
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941675"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607512"
 ---
 # <a name="profile-json"></a>Profile (JSON)
-用户的个人配置文件设置。 
+用户个人配置文件设置。 
 <a id="ID4EN"></a>
 
  
-## <a name="profile"></a>个人资料
+## <a name="profile"></a>配置文件
  
-配置文件对象具有以下规范。
+该配置文件对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| AppDisplayName| 字符串| 在应用中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示用户的标识字符串，用于在应用中显示。| 
-| GameDisplayName| 字符串| 在游戏中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示用户的标识字符串，用于在游戏中显示。| 
+| AppDisplayName| 字符串| 在应用中显示的名称。 这可能是用户的"实际名称"或其玩家代号，具体取决于隐私。 此设置表示应该用于显示在应用中的用户的标识字符串。| 
+| GameDisplayName| 字符串| 在游戏中显示的名称。 这可能是用户的"实际名称"或其玩家代号，具体取决于隐私。 此设置表示应该用于显示在游戏中的用户的标识字符串。| 
 | Gamertag| 字符串| 用户的玩家代号。| 
-| AppDisplayPicRaw| 字符串| 原始应用显示 pic URL （见下方）。| 
-| GameDisplayPicRaw| 字符串| 原始游戏显示 pic URL （见下方）。| 
-| AccountTier| 字符串| 用户有何种帐户？ 金牌，银牌或 FamilyGold？| 
-| TenureLevel| 32 位无符号的整数| 用户已使用 Xbox Live 多少年？| 
-| 玩家分数| 32 位无符号的整数| 玩家分数的用户。| 
+| AppDisplayPicRaw| 字符串| 原始应用程序显示 pic URL （见下文）。| 
+| GameDisplayPicRaw| 字符串| 原始游戏显示 pic URL （见下文）。| 
+| AccountTier| 字符串| 用户具有的帐户类型？ 金牌、 银牌或 FamilyGold？| 
+| TenureLevel| 32 位无符号的整数| 用户已在 Xbox Live 数年？| 
+| 玩家分数| 32 位无符号的整数| 用户的 Gamerscore。| 
   
 
 
 > [!NOTE] 
-> 图片可以是用户的真实图片或其 xbox One 玩家头像，具体取决于隐私。 这些设置表示应该用于客户端上显示的用户的图片 url。 此图像可能为空 （指示用户尚未设置任何图片）。 
+> 图片可以是用户的真实的图片或其 XboxOne gamerpic，具体取决于隐私。 这些设置表示应该用于在客户端上显示的用户的图片 url。 此映像可能为空 （指示用户尚未设置任何图片）。 
 
 
  
-原始 URL 是一个可调整大小的 URL。 它可以用于指定以下值之一调整大小和格式使用通过附加`&format={format}&w={width}&h={height}`为该 URI:
+原始 URL 是可调整大小的 URL。 它可用于指定下列任一调整大小和格式使用通过追加`&format={format}&w={width}&h={height}`到 URI:
  
 格式： png
  
-大小： 64 x 64、 208 x 208、 424 x 424
+大小：64 x 64、 208 x 208、 424 x 424
  
 <a id="ID4E2D"></a>
 
@@ -57,6 +57,6 @@ ms.locfileid: "8941675"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
 
    

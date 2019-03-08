@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, ui, 导航
 ms.localizationpriority: medium
 ms.openlocfilehash: ec5ba9d893a622e256030601cca204abab35045f
-ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9059708"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599922"
 ---
 # <a name="ui-navigation-controller"></a>UI 导航控制器
 
@@ -47,7 +47,7 @@ UI 导航控制器是_逻辑_输入设备，用于提供一套可由各种_物�
 |    视图 | 显示游戏玩法信息 _（记分牌、游戏统计信息、目标、世界地图或区域地图）_
 |    菜单 | 主菜单/暂停 _（设置、状态、装备、背包、暂停）_
 |  接受 | 肯定响应 _（接受、前进、确认、开始、是）_
-|  取消 | 否定响应 _（拒绝、倒退、谢绝、停止、否）_
+|  Cancel | 否定响应 _（拒绝、倒退、谢绝、停止、否）_
 
 
 ### <a name="optional-set"></a>可选组
@@ -89,24 +89,24 @@ Windows.Gaming.Input 命名空间支持的所有输入设备都是 UI 导航设�
 |               视图 | “视图”按钮                         | “视图”按钮        | “视图”按钮        |
 |               菜单 | “菜单”按钮                         | “菜单”按钮        | “菜单”按钮        |
 |             接受 | A 按钮                            | 操作 1 按钮    | A 按钮           |
-|             取消 | B 按钮                            | 操作 2 按钮    | B 按钮           |
+|             Cancel | B 按钮                            | 操作 2 按钮    | B 按钮           |
 
 下表总结了导航命令的_可选组_是如何映射到各种输入设备的。
 
 | 导航命令 | 游戏板输入          | 街机摇杆输入 | 赛车方向盘输入    |
 | ------------------:| ---------------------- | ------------------ | --------------------- |
-|             PageUp | 左扳机键           | _不支持_    | _视情况而定_              |
-|           PageDown | 右扳机键          | _不支持_    | _视情况而定_              |
-|           PageLeft | 左缓冲键            | _不支持_    | _视情况而定_              |
-|          PageRight | 右缓冲键           | _不支持_    | _视情况而定_              |
-|           ScrollUp | 右操纵杆向上    | _不支持_    | _视情况而定_              |
-|         ScrollDown | 右操纵杆向下  | _不支持_    | _视情况而定_              |
-|         ScrollLeft | 右操纵杆向左  | _不支持_    | _视情况而定_              |
-|        ScrollRight | 右操纵杆向右 | _不支持_    | _视情况而定_              |
+|             PageUp | 左扳机键           | _不支持_    | _varies_              |
+|           PageDown | 右扳机键          | _不支持_    | _varies_              |
+|           PageLeft | 左缓冲键            | _不支持_    | _varies_              |
+|          PageRight | 右缓冲键           | _不支持_    | _varies_              |
+|           ScrollUp | 右操纵杆向上    | _不支持_    | _varies_              |
+|         ScrollDown | 右操纵杆向下  | _不支持_    | _varies_              |
+|         ScrollLeft | 右操纵杆向左  | _不支持_    | _varies_              |
+|        ScrollRight | 右操纵杆向右 | _不支持_    | _varies_              |
 |           Context1 | X 按钮               | _不支持_    | X 按钮（_常用_） |
 |           Context2 | Y 按钮               | _不支持_    | Y 按钮（_常用_） |
-|           Context3 | 左操纵杆按键  | _不支持_    | _视情况而定_              |
-|           Context4 | 右操纵杆按键 | _不支持_    | _视情况而定_              |
+|           Context3 | 左操纵杆按键  | _不支持_    | _varies_              |
+|           Context4 | 右操纵杆按键 | _不支持_    | _varies_              |
 
 
 ## <a name="detect-and-track-ui-navigation-controllers"></a>检测并追踪 UI 导航控制器
@@ -160,7 +160,7 @@ UINavigationController::UINavigationControllerRemoved += ref new EventHandler<UI
 
 ## <a name="reading-the-ui-navigation-controller"></a>读取 UI 导航控制器
 
-确定感兴趣的 UI 导航设备之后，便可以从中收集输入了。 不过，与你可能已习惯的某些其他输入类型不同，导航设备不会通过触发事件来传达状态的更改。 相反，你需要通过对它们进行“轮询”__ 来定期读取其当前状态。
+确定感兴趣的 UI 导航设备之后，便可以从中收集输入了。 不过，与你可能已习惯的某些其他输入类型不同，导航设备不会通过触发事件来传达状态的更改。 相反，你需要通过对它们进行“轮询”来定期读取其当前状态。
 
 ### <a name="polling-the-ui-navigation-controller"></a>轮询 UI 导航控制器
 
@@ -211,7 +211,7 @@ if (OptionalUINavigationButtons::Context1 == (reading.OptionalButtons & Optional
 
 ## <a name="run-the-ui-navigation-controller-sample"></a>运行 UI 导航控制器示例
 
-[InputInterfacingUWP 示例_ (github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/InputInterfacingUWP) 演示了不同的输入设备如何作为 UI 导航控制器。
+[InputInterfacingUWP 示例 _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/InputInterfacingUWP) 演示了不同的输入设备如何作为 UI 导航控制器。
 
 ## <a name="see-also"></a>另请参阅
 [Windows.Gaming.Input.Gamepad][]

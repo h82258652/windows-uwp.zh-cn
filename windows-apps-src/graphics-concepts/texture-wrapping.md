@@ -8,20 +8,20 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6618b7573be7cd39f703299b9418d1575297120e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928398"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622622"
 ---
 # <a name="texture-wrapping"></a>纹理环绕
 
 
-纹理环绕通过使用为每个顶点指定的纹理坐标，改变 Direct3D 光栅化纹理多边形的基本方式。 实行多边形光栅化时，系统会插入每个多边形顶点的纹理坐标之间，以确定应用于多边形的每个像素的纹素。 通常情况下，系统将纹理作为 2D 平面，并通过选择从纹理中 A 点到 B 点的最近路线插入新的纹素。如果 A 点表示 u、v 位置 (0.8, 0.1)，B 点位于 (0.1, 0.1)，则插入行如下图所示。
+纹理环绕通过使用为每个顶点指定的纹理坐标，改变 Direct3D 光栅化纹理多边形的基本方式。 实行多边形光栅化时，系统会内插入每个多边形顶点的纹理坐标之间，以确定应用于每个多边形像素的纹素。 通常情况下，系统将纹理作为 2D 平面，并通过选择从纹理中 A 点到 B 点的最近路线插入新的纹素。如果 A 点表示 u、v 位置 (0.8, 0.1)，B 点位于 (0.1, 0.1)，则插入行如下图所示。
 
 ![图示为两点之间的插入行](images/interp1.png)
 
-注意，本例中 A 点与 B 点之间的最短距离，大致通过纹理的中间位置。 启用 u 纹理或 v 纹理坐标环绕可改变 Direct3D 感知纹理坐标（u 方向及 v 方向）之间最近路线的方式。 根据定义，纹理环绕可使光栅器获取纹理坐标集（假定 0.0 和 1.0 的位置重合）之间的最近路线。 最后的位元是最棘手的部分：你可以想象往某个方向启用纹理环绕，以便系统处理纹理，就好像该纹理环绕在圆柱体周围。 如下图所示。
+注意，本例中 A 点与 B 点之间的最短距离，大致通过纹理的中间位置。 启用 u 纹理或 v 纹理坐标环绕可改变 Direct3D 感知纹理坐标（u 方向及 v 方向）之间最近路线的方式。 根据定义，纹理环绕可使光栅器获取纹理坐标集（假定 0.0 和 1.0 的位置重合）之间的最近路线。 最后一个位是最为棘手的部分：您可以假设启用包装在一个方向的纹理会导致系统将纹理视为它环绕柱状体。 如下图所示。
 
 ![图示为纹理以及环绕圆柱体的两个点](images/interp2.png)
 
@@ -41,9 +41,9 @@ ms.locfileid: "8928398"
 
 如果未启用纹理环绕，则光栅器不会在所需的方向插入以便于生成可信的反射图像。 相反，支柱前部区域包含横向压缩的位于 u 坐标值 0.175 和 0.875 之间的纹素，并且通过纹理的中间位置。 无法产生环绕效果。
 
-不要将纹理环绕与名称类似的纹理寻址模式混淆。 纹理环绕先于纹理寻址发生。 确保纹理环绕数据不含任何超出 \[0.0, 1.0\] 范围的纹理坐标，以免产生不确定的结果。 有关纹理寻址的更多信息，请参见[纹理寻址模式](texture-addressing-modes.md)。
+不要将纹理环绕与名称类似的纹理寻址模式混淆。 纹理环绕先于纹理寻址发生。 确保纹理包装数据不包含任何纹理坐标的范围之外\[0.0，1.0\]因为这将生成未定义的结果。 有关纹理寻址的更多信息，请参见[纹理寻址模式](texture-addressing-modes.md)。
 
-## <a name="span-iddisplacementmapwrappingspanspan-iddisplacementmapwrappingspanspan-iddisplacementmapwrappingspandisplacement-map-wrapping"></a><span id="Displacement_Map_Wrapping"></span><span id="displacement_map_wrapping"></span><span id="DISPLACEMENT_MAP_WRAPPING"></span>置换贴图环绕
+## <a name="span-iddisplacementmapwrappingspanspan-iddisplacementmapwrappingspanspan-iddisplacementmapwrappingspandisplacement-map-wrapping"></a><span id="Displacement_Map_Wrapping"></span><span id="displacement_map_wrapping"></span><span id="DISPLACEMENT_MAP_WRAPPING"></span>包装的位移映射
 
 
 置换贴图中可插入平面填充引擎。 由于无法指定平面填充引擎的环绕模式，因此无法使用置换贴图实施纹理环绕。 应用程序可以使用顶点集，以便强行内插以在任意方向环绕。 应用程序亦可将要进行的插入指定为简单的线性插入。

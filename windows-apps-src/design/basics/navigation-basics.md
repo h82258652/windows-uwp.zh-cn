@@ -1,5 +1,5 @@
 ---
-Description: Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
+Description: 通用 Windows 平台 (UWP) 应用中的导航基于一个导航结构、导航元素和系统级功能的灵活模型。
 title: UWP 应用的导航基础知识
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: bba6d42e6ce494c0655c6b6c60db91c1e2e006e8
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116239"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636092"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP 应用的导航设计基础知识
 
@@ -49,19 +49,19 @@ ms.locfileid: "9116239"
 
 让我们开始了解良好导航设计的基本原则：
 
-- **一致：** 达到用户期望。
-- **简单：** 按需行事，不要过度。
-- **清晰：** 提供清楚的路径和选项。
+- **一致性：** 满足用户的期望。
+- **简单：** 不需要多做。
+- **清晰性：** 提供清晰的路径和选项。
 
-### <a name="consistency"></a>一致
+### <a name="consistency"></a>一致性
 
-导航应该与用户期望一致。 使用[标准控件](#use-the-right-controls)，用户所熟悉并且以下标准约定图标、 位置和样式设置用户将觉得导航可预测且直观。
+导航应该与用户期望一致。 使用[标准控件](#use-the-right-controls)用户是图标，位置，熟悉和以下标准约定和样式设置将使导航易于预测和直观的用户。
 
 ![页面组件图像](images/nav/page-components.svg)
 
 > 用户希望在标准位置找到某些 UI 元素。
 
-### <a name="simplicity"></a>简单
+### <a name="simplicity"></a>简易性
 
 减少导航项将为用户简化决策。 提供对重要目的地的轻松访问和隐藏不太重要的项目将帮助用户更快地获得所需的内容。
 
@@ -96,7 +96,7 @@ ms.locfileid: "9116239"
 
 1. 考虑用户的想法。 找出他们可能用来访问你的应用的典型路径；对于每个页面，思考为何用户在那里以及他们可能想去哪里。
 
-2. 避免深入导航层次结构。 如果导航级别超过三个，你将面临让用户置身于深度分层、难以脱身的风险。
+2. 避免使用深层导航层次结构。 如果导航级别超过三个，你将面临让用户置身于深度分层、难以脱身的风险。
 
 3. 避免“弹跳”。 “弹跳”会在以下情况下发生：存在相关内容，但导航到该内容需要用户先转到上一级，然后再返回。
 
@@ -117,7 +117,7 @@ ms.locfileid: "9116239"
 
         - 可以按任意顺序查看页面。
         - 页面之间明显不同，并且不具有明显的父/子关系。
-        - 组中存在少于 8 页面。 <br>
+        - 在组中有少于 8 个页。 <br>
         （当存在多个页面时，用户可能难以区分页面或难以弄清它们当前在组中的位置。 如果你认为这对你的应用不构成问题，请继续将页面作为对等方平行排列。 否则，请考虑使用层次结构将页面分为两个或更多的组。）
 
     :::column-end:::
@@ -185,13 +185,13 @@ ms.locfileid: "9116239"
         Use top navigation when:
 
         - 你想要显示在屏幕上的所有导航选项。
-        - 你希望为你的应用的内容的更多空间。
-        - 图标不能清楚地描述你导航类别。
+        - 所需应用程序的内容的更多的空间。
+        - 图标无法清楚地描述您导航的类别。
         
-        使用表时：
+        使用选项卡时：
 
         - 你想要保留导航历史记录和页面状态。
-        - 你预期用户经常标签之间进行切换。
+        - 你希望用户用户经常选项卡之间切换。
 
 :::row-end:::
 
@@ -205,7 +205,7 @@ ms.locfileid: "9116239"
         Displays a vertical list of links to top-level pages. Use when:
         
         - 这些页面存在于顶层。
-        - 有很多导航项 （多于 5 个）
+        - 有许多导航项 (多个 5)
         - 你预期用户不会在页面之间频繁切换。
         
 :::row-end:::
@@ -235,6 +235,6 @@ ms.locfileid: "9116239"
         Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
 :::row-end:::
 
-## <a name="next-add-navigation-code-to-your-app"></a>下一步：向应用添加导航代码
+## <a name="next-add-navigation-code-to-your-app"></a>下一步：将导航代码添加到您的应用程序
 
 下一篇文章是[实现基本导航](navigate-between-two-pages.md)，将介绍在应用中使用 Frame 控件支持两个页面之间的基本导航所需的代码。

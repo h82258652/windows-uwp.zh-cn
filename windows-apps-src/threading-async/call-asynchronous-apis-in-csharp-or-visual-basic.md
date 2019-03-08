@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, C#, Visual Basic, 异步
 ms.localizationpriority: medium
 ms.openlocfilehash: 899af2ffd26419d4c8906d703d6708d202f8c150
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940943"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632612"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>使用 C# 或 Visual Basic 调用异步 API
 
@@ -38,7 +38,7 @@ UWP 中的大多数异步 API 都没有对应的同步 API，因此需要确保�
 
 有关该示例，有几个重要事项。 首先，对异步方法 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) 的调用，行 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` 使用 **await** 运算符。 你可以将 **await** 运算符视为告知编译器你正在调用某个异步方法，该方法会导致编译器执行某些额外的工作，以便你无需进行这些工作。 接下来，事件处理程序的声明包含关键字 **async**。 必须将该关键字包含在其中使用 **await** 运算符的任何方法的方法声明中。
 
-在本主题中，我们将不对编译器使用 **await** 运算符所执行的操作进行详细介绍，而是检查你的应用所执行的操作以便该操作是异步操作并且能够响应。 考虑使用同步代码时发生的情况。 例如，假设有一个名为 `SyndicationClient.RetrieveFeed` 的异步方法。 （这类方法不存在，但想象它存在。）如果你的应用包含行 `SyndicationFeed feed = client.RetrieveFeed(feedUri)`（而不是 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`），应用将停止执行，直到 `RetrieveFeed` 的返回值可用。 当你的应用等待方法完成时，它无法响应任何其他事件，如另一个 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件。 即，你的应用将被阻止，直到 `RetrieveFeed` 返回为止。
+在本主题中，我们将不对编译器使用 **await** 运算符所执行的操作进行详细介绍，而是检查你的应用所执行的操作以便该操作是异步操作并且能够响应。 考虑使用同步代码时发生的情况。 例如，假设有一个名为 `SyndicationClient.RetrieveFeed` 的异步方法。 （没有此类方法，但想象真的有）。如果您的应用程序包含在行`SyndicationFeed feed = client.RetrieveFeed(feedUri)`，而不是`SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`，应用执行的返回值才会停止`RetrieveFeed`可用。 当你的应用等待方法完成时，它无法响应任何其他事件，如另一个 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件。 即，你的应用将被阻止，直到 `RetrieveFeed` 返回为止。
 
 但如果你调用 `client.RetrieveFeedAsync`，则方法将启动检索并立即返回。 当你将 **await** 与 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) 结合使用时，应用将临时退出事件处理程序。 然后，它便可以在 **RetrieveFeedAsync** 异步执行时处理其他事件。 这样便可以保持应用对用户进行响应。 当 **RetrieveFeedAsync** 完成并且 [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) 可用时，应用一定会在 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` 之后重新进入它停止的事件处理程序，并完成方法的剩余部分。
 
@@ -66,11 +66,11 @@ UWP 中的大多数异步 API 都没有对应的同步 API，因此需要确保�
 | [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) | [**IAsyncOperation&lt;StorageFile&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)                                                                                | [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)          |
 | [**XmlDocument.SaveToFileAsync**](https://msdn.microsoft.com/library/windows/apps/BR206284)                 | [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx)                                                                                                           | **void**                                          |
 | [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx)                                                                   | **void**                                          |
-| [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [**DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120)，实现 **IAsyncOperation&lt;UInt32&gt;** 的自定义结果类。 | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
+| [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [**DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120)，自定义生成类，该类实现**IAsyncOperation&lt;UInt32&gt;** | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
 
  
 
-[**适用于 UWP 应用的 .NET**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) 中定义的异步方法的返回类型为 [**Task**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.aspx) 或 [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/dd321424.aspx)。 返回 **Task** 的方法与 UWP 中返回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx) 的异步方法类似。 在任何情况下，异步方法的结果均为 **void**。 返回类型 **Task&lt;TResult&gt;** 类似于 [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)，因为在运行任务时，异步方法的结果与 `TResult` 类型参数的类型相同。 有关使用**适用于 UWP 应用的 .NET** 和任务的详细信息，请参阅[用于 Windows 运行时应用的 .NET 概述](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)。
+[  **适用于 UWP 应用的 .NET**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) 中定义的异步方法的返回类型为 [**Task**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.aspx) 或 [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/dd321424.aspx)。 返回 **Task** 的方法与 UWP 中返回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx) 的异步方法类似。 在任何情况下，异步方法的结果均为 **void**。 返回类型 **Task&lt;TResult&gt;** 类似于 [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)，因为在运行任务时，异步方法的结果与 `TResult` 类型参数的类型相同。 有关使用**适用于 UWP 应用的 .NET** 和任务的详细信息，请参阅[用于 Windows 运行时应用的 .NET 概述](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)。
 
 ## <a name="handling-errors"></a>处理错误
 
@@ -79,7 +79,7 @@ UWP 中的大多数异步 API 都没有对应的同步 API，因此需要确保�
 
 当异步方法调用其他异步方法时，所有引发异常的异步方法都将被传播到外部方法。 这意味着你可以将一个 **try/catch** 块放在最外层的方法中，以便为嵌套异步方法捕获错误。 这同样与你为同步方法捕获异常的方式类似。 但不能在 **catch** 块中使用 **await**。
 
-**提示**从 Microsoft Visual Studio2005 中的 C# 开始，你可以使用**await** **catch**块中。
+**提示**  开始C#在 Microsoft Visual Studio 2005，您可以使用**await**中**捕获**块。
 
 ## <a name="summary-and-next-steps"></a>摘要和后续步骤
 

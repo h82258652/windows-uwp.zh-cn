@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, unity, 控制器支持
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d32ec62b8beec10256ed9a695866c2fd9bdd03e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044204"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622872"
 ---
 # <a name="add-controller-support-to-xbox-live-prefabs"></a>向 Xbox Live Prefabs 添加控制器支持
 
@@ -26,25 +26,25 @@ ms.locfileid: "9044204"
 
 ## <a name="all-prefab-controller-input-fields"></a>所有 Prefab 控制器输入字段
 ### <a name="userprofile-prefab"></a>UserProfile prefab
-- **输入控制器按钮：** 添加并登录 Xbox Live 用户。
+- **输入的控制器按钮：** 添加并登录 Xbox Live 的用户。
 
 ### <a name="social-prefab"></a>社交 prefab
-- **切换筛选器控制器按钮：** 切换筛选器来显示“全部”好友或“联机”好友。
+- **切换筛选器控制器按钮：** 切换筛选器以显示所有朋友或联机朋友。
 
 ### <a name="leaderboard-prefab"></a>排行榜 prefab
-- **首页控制器按钮：** 使玩家转到排行榜条目的第一页。
-- **末页控制器按钮：** 使玩家转到排行榜条目的最后一页。
-- **下一页控制器按钮：** 使玩家转到排行榜条目的下一页。
-- **上一页控制器按钮：** 使玩家转到排行榜条目的上一页。
+- **第一个控制器按钮：** 将播放机将 leaderboard 条目的第一页。
+- **最后一个控制器按钮：** 将播放机将 leaderboard 条目的最后一页。
+- **下一步控制器按钮：** 将播放机将 leaderboard 条目的下一页面。
+- **上一个控制器按钮：** 将播放机将 leaderboard 条目的前一页。
 - **刷新控制器按钮：** 刷新排行榜视图。
 
 
 ### <a name="game-save-ui-prefab"></a>游戏保存 UI prefab
-- **生成新控制器按钮：** 生成一个新的整数保存数据。
-- **保存数据控制器按钮：** 将当前数据保存到连接存储中。
-- **加载数据控制器按钮：** 加载当前保存在连接存储中的数据。
-- **获取信息控制器按钮：** 在连接存储中检索有关保存的容器的信息。
-- **删除容器控制器按钮：** 从连接存储中删除保存的容器
+- **生成控制器新建按钮：** 生成数据保存一个新的整数。
+- **保存数据控制器按钮：** 将当前数据保存到已连接存储。
+- **加载数据控制器按钮：** 将当前的连接的存储中保存的数据加载。
+- **获取信息控制器按钮：** 检索有关连接存储中的已保存容器的信息。
+- **删除容器控制器按钮：** 从连接的存储中删除已保存的容器
 
 ## <a name="xbox-controller-button-mappings"></a>Xbox 控制器按钮映射
 

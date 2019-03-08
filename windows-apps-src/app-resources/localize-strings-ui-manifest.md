@@ -1,5 +1,5 @@
 ---
-Description: If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports.
+Description: 如果你希望应用支持其他显示语言，并且你的代码或 XAML 标记或应用包清单中有字符串文本，则将这些字符串移到资源文件 (.resw) 中。 然后，你可以针对应用支持的每种语言制作该资源文件的翻译副本。
 title: 对 UI 和应用包清单中的字符串实施本地化
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Localize strings in your UI and app package manifest
@@ -9,13 +9,13 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 321f8efc1475bc153102f3f8157cd2d094b37077
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049049"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630132"
 ---
-# <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>本地化 UI 和应用包清单中的字符串
+# <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>对 UI 和应用包清单中的字符串实施本地化
 有关对应用进行本地化的价值主张的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)。
 
 如果你希望应用支持其他显示语言，并且你的代码或 XAML 标记或应用包清单中有字符串文本，则将这些字符串移到资源文件 (.resw) 中。 然后，你可以针对应用支持的每种语言制作该资源文件的翻译副本。
@@ -28,12 +28,12 @@ ms.locfileid: "9049049"
 1. 设置应用的默认语言。
     1. 在 Visual Studio 中打开你的解决方案后，打开 `Package.appxmanifest`。
     2. 在应用程序选项卡上，确认已设置相应的默认语言（如“en”或“en-US”）。 其余步骤将假设你已经将默认语言设置为“en-US”。
-    <br>**注意**在最小值，你需要提供针对此默认语言本地化的字符串资源。 如果没有找到与用户的首选语言或显示语言设置更好的匹配，将加载这些资源。
+    <br>**请注意** 至少，您需要提供此默认语言进行本地化的字符串资源。 如果没有找到与用户的首选语言或显示语言设置更好的匹配，将加载这些资源。
 2. 创建默认语言的资源文件 (.resw)。
     1. 在你的项目节点下，创建一个新文件夹，并将其命名为“字符串”。
     2. 在 `Strings` 下，创建一个新的子文件夹，并将其命名为“en-US”。
     3. 在 `en-US` 下，创建一个新的资源文件 (.resw)，并确认其名称为“Resources.resw”。
-    <br>**注意**如果你有想要移植的.NET 资源文件 (.resx)，请参阅[移植 XAML 和 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)。
+    <br>**请注意** 如果你想要移植的.NET 资源文件 (.resx)，请参阅[移植 XAML 和 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)。
 3.  打开 `Resources.resw` 并添加这些字符串资源。
 
     `Strings/en-US/Resources.resw`
@@ -53,13 +53,13 @@ ms.locfileid: "9049049"
 <TextBlock x:Uid="Greeting"/>
 ```
 
-在运行时加载 `\Strings\en-US\Resources.resw`（因为现在这是项目中唯一的资源文件）。 **TextBlock** 上的 **x:Uid** 指令会引发查找，在 `Resources.resw` 中查找包含字符串资源标识符“Greeting”的属性标识符。 找到“Greeting.Text”和“Greeting.Width”属性标识符，并将它们的值应用到 **TextBlock**，覆盖在标记中本地设置的任何值。 如果你添加了“Greeting.Foreground”值，也会应用该值。 但只有属性标识符用来设置 XAML 标记元素上的属性，因此在此 TextBlock 上将 **x:Uid** 设置为“Farewell”不会产生影响。 `Resources.resw` *确实*包含字符串资源标识符“Farewell”，但它不包含属性标识符。
+在运行时加载 `\Strings\en-US\Resources.resw`（因为现在这是项目中唯一的资源文件）。 **TextBlock** 上的 **x:Uid** 指令会引发查找，在 `Resources.resw` 中查找包含字符串资源标识符“Greeting”的属性标识符。 找到“Greeting.Text”和“Greeting.Width”属性标识符，并将它们的值应用到 **TextBlock**，覆盖在标记中本地设置的任何值。 如果你添加了“Greeting.Foreground”值，也会应用该值。 但只有属性标识符用来设置 XAML 标记元素上的属性，因此在此 TextBlock 上将 **x:Uid** 设置为“Farewell”不会产生影响。 `Resources.resw` *does*包含字符串资源标识符"再见"，但它包含为其任何属性标识符。
 
 将字符串资源标识符分配给 XAML 元素时，确保该标识符的*所有*属性标识符适合 XAML 元素。 例如，如果你在 **TextBlock** 上设置了 `x:Uid="Greeting"`，“Greeting.Text”将解析，因此 **TextBlock** 类型具有文本属性。 但如果你在**按钮**上设置了 `x:Uid="Greeting"`，“Greeting.Text”将引发运行时错误，因为**按钮**类型不具有文本属性。 适用于此案例的一个解决方案是创作名称为“ButtonGreeting.Content”的属性标识符，并在**按钮**上设置 `x:Uid="ButtonGreeting"`。
 
 你可能不会想要从资源文件设置**宽度**，而是想要允许控件根据内容动态调整大小。
 
-**注意**为[附加属性](../xaml-platform/attached-properties-overview.md)，你需要在.resw 文件的名称列中的特殊语法。 例如，要设置“Greeting”标识符的 [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) 附加属性的值，下面是需要在“名称”列中输入的内容。
+**请注意** 有关[附加属性](../xaml-platform/attached-properties-overview.md)，所需的.resw 文件的名称列中的特殊语法。 例如，要设置“Greeting”标识符的 [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) 附加属性的值，下面是需要在“名称”列中输入的内容。
 
 ```xml
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
@@ -88,13 +88,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 可以使用来自类库（通用 Windows）或 [Windows 运行时库（通用 Windows）](../winrt-components/index.md)项目内的相同代码。 在运行时，加载托管库的应用的资源。 我们建议库从托管库的应用加载资源，因为应用的本地化程度可能更高。 如果库确实需要提供资源，该库应向其托管应用提供将这些资源替换为输入的选项。
 
-如果分段的资源名称 (它包含"。"字符)，然后替换点使用正斜杠 （"/"） 中的资源名称的字符。 属性标识符，例如，包含点;因此，你需要执行此 substition 操作以便加载其中一种从代码。
+如果资源名称分段 (它包含"。"字符)，然后替换点使用正斜杠 （"/"） 中的资源名称的字符。 属性标识符，例如，包含点;因此您需要执行的操作此 substition 加载代码中的其中一个。
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
 ```
 
-如果有疑问，你可以使用[MakePri.exe](makepri-exe-command-options.md)转储你的应用的 PRI 文件。 每个资源的`uri`转储文件中显示。
+如果有任何疑问，可以使用[MakePri.exe](makepri-exe-command-options.md)转储应用程序的 PRI 文件。 每个资源的`uri`转储文件中所示。
 
 ```xml
 <ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
@@ -116,7 +116,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 ## <a name="localize-the-string-resources"></a>本地化字符串资源
 1. 复制你的资源文件 (.resw) 用于另一种语言。
     1. 在“字符串”下，创建一个新的子文件夹并将其命名为“de-DE”，表示德语（德国）。
-   <br>**注意**的文件夹名称，你可以使用任何[BCP 47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)。 请参阅[定制语言、比例和其他限定符的资源](tailor-resources-lang-scale-contrast.md)获取有关语言限定符和常用语言标记列表的详细信息。
+   <br>**请注意** 的文件夹的名称，可以使用任何[BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)。 请参阅[定制语言、比例和其他限定符的资源](tailor-resources-lang-scale-contrast.md)获取有关语言限定符和常用语言标记列表的详细信息。
    2. 在 `Strings/de-DE` 文件夹中复制 `Strings/en-US/Resources.resw`。
 2. 翻译字符串。
     1. 打开 `Strings/de-DE/Resources.resw` 并翻译“值”列中的值。 你无需翻译评论。
@@ -132,7 +132,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 ![添加资源，法语](images/addresource-fr-fr.png)
 
 ## <a name="test-your-app"></a>测试应用
-测试应用的默认显示语言。 之后，可以在**设置** > **时间和语言** > **区域和语言** > **语言**中更改显示语言并重新测试应用。 在你的 UI 和 shell 中查看字符串（例如，你的标题栏，即你的显示语言，以及磁贴上的短名称）。
+为默认显示语言测试应用。 之后，可以在**设置** > **时间和语言** > **区域和语言** > **语言**中更改显示语言并重新测试应用。 在你的 UI 和 shell 中查看字符串（例如，你的标题栏，即你的显示语言，以及磁贴上的短名称）。
 
 **注意**如果可以找到匹配显示语言设置的文件夹名称，则加载该文件夹中的资源文件。 否则将发生回退，以应用的默认语言的资源结束。
 
@@ -147,7 +147,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 <TextBlock x:Uid="/ErrorMessages/PasswordTooWeak"/>
 ```
 
-你只需要在字符串资源标识符前面为资源文件添加*除* `Resources.resw` 以外的 `/<resources-file-name>/`。 这是因为“Resources.resw”是默认文件名称，因此如果你省略文件名称，将假定使用该名称（正如我们在本主题前面的示例中所示）。
+只需添加`/<resources-file-name>/`之前的资源文件的字符串资源标识符*而不* `Resources.resw`。 这是因为“Resources.resw”是默认文件名称，因此如果你省略文件名称，将假定使用该名称（正如我们在本主题前面的示例中所示）。
 
 下面的代码示例假定 `ErrorMessages.resw` 包含名称为“MismatchedPasswords”且其值对错误进行描述的资源。
 
@@ -171,13 +171,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 如果要将“AppDisplayName”资源从 `Resources.resw` 移动到 `ManifestResources.resw`，在应用包清单中，需将 `ms-resource:AppDisplayName` 更改为 `ms-resource:/ManifestResources/AppDisplayName`。
 
-如果分段资源文件名 (它包含"。"字符)，然后在名称中退出点时引用它。 **不要**替换正斜杠 （"/"） 字符，像资源名称的点。
+如果分段资源文件名称 (它包含"。"字符)，然后在名称保留点时引用它。 **不**替换三点正斜杠 （"/"） 开头的字符，针对资源名称。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
 ```
 
-如果有疑问，你可以使用[MakePri.exe](makepri-exe-command-options.md)转储你的应用的 PRI 文件。 每个资源的`uri`转储文件中显示。
+如果有任何疑问，可以使用[MakePri.exe](makepri-exe-command-options.md)转储应用程序的 PRI 文件。 每个资源的`uri`转储文件中所示。
 
 ```xml
 <ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...
@@ -257,27 +257,27 @@ private void RefreshUIText()
 ## <a name="loading-strings-from-a-class-library-or-a-windows-runtime-library"></a>从类库或 Windows 运行时库加载字符串
 引用的类库（通用 Windows）或 [Windows 运行时库（通用 Windows）](../winrt-components/index.md)的字符串资源通常被添加到在生成过程中要将其包括在其中的包的子文件夹中。 此类字符串的资源标识符通常采用 *LibraryName/ResourcesFileName/ResourceIdentifier* 的形式。
 
-库可以为自己的资源获取 ResourceLoader。 例如，以下代码演示如何库或引用它的应用可以为获取 ResourceLoader 库的字符串资源。
+库可以为自己的资源获取 ResourceLoader。 例如，以下代码演示了一个库或引用它的应用如何获取有关库的字符串资源 ResourceLoader。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ContosoControl/Resources");
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-Windows 运行时库 (通用 Windows)，如果分段默认命名空间 (它包含"。"字符)，然后在资源映射名称中使用点。
+为 Windows 运行时库 (通用 Windows)，如果分段的默认命名空间 (它包含"。"字符)，然后在资源映射名称中使用点。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-你无需执行该操作的类库 (通用 Windows)。 如果有疑问，你可以使用[MakePri.exe](makepri-exe-command-options.md)转储组件或库的 PRI 文件。 每个资源的`uri`转储文件中显示。
+不需要执行该操作，类库 (通用 Windows)。 如果有任何疑问，可以使用[MakePri.exe](makepri-exe-command-options.md)转储组件或库的 PRI 文件。 每个资源的`uri`转储文件中所示。
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>从其他包加载字符串
-应用包的资源进行管理和访问通过包的拥有可从当前[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)访问的顶级[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) 。 在每个包中，各种组件可以具有其 ownResourceMapsubtrees，你可以通过[**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)访问。
+资源的管理和访问通过包的应用包拥有顶级 [**ResourceMap** ](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live)可以从当前访问 [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). 在每个包，各种组件可具有其自己 ResourceMap 子树，还可以通过访问[ **ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)。
 
 框架包可以使用绝对资源标识符 URI 访问自己的资源。 另请参阅 [URI 方案](uri-schemes.md)。
 
@@ -287,10 +287,10 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
 ## <a name="related-topics"></a>相关主题
-* [移植 XAML 和 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
-* [x:Uid 指令](../xaml-platform/x-uid-directive.md)
-* [附加属性](../xaml-platform/attached-properties-overview.md)
-* [可本地化清单项目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
+* [移植的 XAML 和 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
+* [x:Uid directive](../xaml-platform/x-uid-directive.md)
+* [附加的属性](../xaml-platform/attached-properties-overview.md)
+* [可本地化的清单项目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
 * [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [定制语言、比例和其他限定符的资源](tailor-resources-lang-scale-contrast.md)
+* [定制您的语言、 缩放性和其他限定符的资源](tailor-resources-lang-scale-contrast.md)
 * [如何加载字符串资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)

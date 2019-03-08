@@ -1,16 +1,16 @@
 ---
 title: 相机条形码扫描仪配置
 description: 相机条形码扫描仪启用或禁用
-ms.date: 05/1/2018
+ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b802dfa44f36768dc2446ee1d15bf9ca6d4f9f3
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 3db54caa5be88559aa44f9a99273e9d8d5d6a00d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051040"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610302"
 ---
 # <a name="enable-or-disable-the-software-decoder-that-ships-with-windows"></a>启用或禁用 Windows 附带的软件解码器
 在 Windows 10 版本 1803 中，软件解码器默认安装和启用。  如果你不想使用相机条形码扫描仪，或者如果你已获取了使用 Windows.Devices.PointOfService.BarcodeScanner API 的第三方解码器且不希望两个同时使用，则可以禁用 Windows 附带的软件解码器。
@@ -20,7 +20,7 @@ Windows 附带的软件解码器可以通过系统注册表启用或禁用：在
 
 | 值名称  | 值类型 | 值 | 状态 |
 | ----------- | --------- | -------|--------|
-| Enable      | DWORD     | 1（默认值）<br/>0 |  启用 Windows 附带的软件解码器 <br/> 禁用 Windows 附带的软件解码器 |
+| 启用      | DWORD     | 1（默认值）<br/>0 |  启用 Windows 附带的软件解码器 <br/> 禁用 Windows 附带的软件解码器 |
 
 
 下面是你可以用来**禁用** Windows 附带的软件解码器的示例注册表文件：

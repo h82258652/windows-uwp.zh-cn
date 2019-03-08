@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
 ms.openlocfilehash: 402d535bf6ff9ced24bc642c17d13b2d48d79681
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920886"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598642"
 ---
 # <a name="developer-settings-api-reference"></a>开发人员设置 API 参考   
 你可以使用此 API 访问有助于开发的 Xbox One 设置。
@@ -48,19 +48,19 @@ GET | /ext/settings
 * Category -（字符串）设置的类别。
 * Type - ("Text" | "Number" | "Bool" | "Select") 此字段指示设备的类型：文本输入、布尔值（“true”或“false”），具有最小值和最大值的数字或者在特定的值列表中进行选择。
 
-如果该设置是一个数字：
-* Min-(Number) 此字段指示设置的最小数值。
-* Max-(Number) 此字段指示设置的最大数值。
+如果设置为一个数字：
+* 最小值-（数字） 此字段指示的设置的最小的数字值。
+* 最大的 （数字） 此字段指示的设置的最大的数字值。
 
-如果已选择设置：
-* OptionsVariable-("Yes"|"否"） 此字段指示设置选项是否可变，无需重启可以更改有效选项。
+如果设置为选择：
+* OptionsVariable-("是"|"否"） 此字段指示设置选项是否是可变的如果有效的选项可以更改而重新启动。
 * 选项 - JSON 数组，将有效的选择选项包含为字符串。
 
 **状态代码**
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 说明
+HTTP 状态代码      | 描述
 :------     | :-----
 200 | 请求已成功
 4XX | 错误代码
@@ -75,7 +75,7 @@ HTTP 状态代码      | 说明
 
 方法      | 请求 URI
 :------     | :-----
-GET | /ext/settings/\&lt;setting name\&gt;
+GET | /ext/settings/\<设置名称\>
 <br />
 **URI 参数**
 
@@ -99,19 +99,19 @@ GET | /ext/settings/\&lt;setting name\&gt;
 * Category -（字符串）设置的类别。
 * Type - ("Text" | "Number" | "Bool" | "Select") 此字段指示设备的类型：文本输入、布尔值（“true”或“false”），具有最小值和最大值的数字或者在特定的值列表中进行选择。
 
-如果该设置是一个数字：
-* Min-(Number) 此字段指示设置的最小数值。
-* Max-(Number) 此字段指示设置的最大数值。
+如果设置为一个数字：
+* 最小值-（数字） 此字段指示的设置的最小的数字值。
+* 最大的 （数字） 此字段指示的设置的最大的数字值。
 
-如果已选择设置：
-* OptionsVariable-("Yes"|"否"） 此字段指示设置选项是否可变，无需重启可以更改有效选项。
+如果设置为选择：
+* OptionsVariable-("是"|"否"） 此字段指示设置选项是否是可变的如果有效的选项可以更改而重新启动。
 * 选项 - JSON 数组，将有效的选择选项包含为字符串。
 
 **状态代码**
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 说明
+HTTP 状态代码      | 描述
 :------     | :-----
 200 | 请求已成功
 4XX | 错误代码
@@ -126,7 +126,7 @@ HTTP 状态代码      | 说明
 
 方法      | 请求 URI
 :------     | :-----
-PUT | /ext/settings/\&lt;setting name\&gt;
+PUT | /ext/settings/\<设置名称\>
 <br />
 **URI 参数**
 
@@ -148,13 +148,13 @@ Value -（字符串）设置的新值。
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 说明
+HTTP 状态代码      | 描述
 :------     | :-----
 200 | 请求已成功
 4XX | 错误代码
 5XX | 错误代码
 
 <br />
-**可用设备系列**
+**可用的设备系列**
 
 * Windows Xbox

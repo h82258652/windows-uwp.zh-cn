@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
 ms.openlocfilehash: f60f3fc8678208f694a9ffabde06fa60de759a45
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937808"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603332"
 ---
 # <a name="fiddler-settings-api-reference"></a>Fiddler 设置 API 参考   
 可以使用此 REST API 在开发工具包上启用和禁用 Fiddler 网络跟踪。
@@ -20,7 +20,7 @@ ms.locfileid: "8937808"
 
 **请求**
 
-你可以检查以查看是否已使用以下请求在设备上启用 Fiddler 跟踪。
+你可以检查以确定是否已使用以下请求在设备上启用了 Fiddler 跟踪。
 
 方法      | 请求 URI
 :------     | :-----
@@ -40,13 +40,13 @@ GET | /ext/fiddler
 
 **响应**   
 
-- JSON bool 属性 IsProxyEnabled 哪些说明符代理是否已启用。
+- JSON 布尔属性 IsProxyEnabled，用于指定是否已启用代理。
 
 **状态代码**
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 说明
+HTTP 状态代码      | 描述
 :------     | :-----
 200 | 成功
 4XX | 错误代码
@@ -66,14 +66,14 @@ POST | /ext/fiddler
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数      | 说明     | 
+| URI 参数      | 描述     | 
 | ------------------ |-----------------|
 | proxyAddress       | 运行 Fiddler 的设备的 IP 地址或主机名 |
 | proxyPort          | Fiddler 用于监视流量的端口。 默认为 8888 |
 | updateCert（可选）| 指示是否提供根 Fiddler 证书的布尔值。 如果 Fiddler 从未在此开发工具包上配置或曾针对其他主机进行配置，则此值必须为 true。  |
 <br>
 
-**请求头**
+**请求标头**
 
 - 无
 
@@ -89,7 +89,7 @@ POST | /ext/fiddler
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 说明
+HTTP 状态代码      | 描述
 :------     | :-----
 204 | 已接受启用 Fiddler 的请求。 将在设备下次重启时启用 Fiddler。
 4XX | 错误代码
@@ -125,17 +125,17 @@ DELETE | /ext/fiddler
 
 此 API 具有以下预期状态代码。
 
-HTTP 状态代码      | 说明
+HTTP 状态代码      | 描述
 :------     | :-----
 204 | 禁用 Fiddler 跟踪的请求已成功。 将在设备下次重启时禁用跟踪。
 4XX | 错误代码
 5XX | 错误代码
 
 <br />
-**可用设备系列**
+**可用的设备系列**
 
 * Windows Xbox
 
 ## <a name="see-also"></a>另请参阅
-- [为 Xbox 上的 UWP 配置 Fiddler](uwp-fiddler.md)
+- [在 Xbox 上配置适用于 UWP 的 Fiddler](uwp-fiddler.md)
 

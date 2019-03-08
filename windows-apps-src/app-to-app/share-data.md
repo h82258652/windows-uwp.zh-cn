@@ -4,14 +4,14 @@ title: 共享数据
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c1c9b75599efe4566bc1783f68ff9752510d1d99
-ms.sourcegitcommit: 9448348d7bc6590849db3a41e988dff9470ec111
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "9031373"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640562"
 ---
 # <a name="share-data"></a>共享数据
 
@@ -24,7 +24,7 @@ ms.locfileid: "9031373"
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
 
-发生 [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) 事件时，应用会收到 [**DataRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest) 对象。 该对象包含 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage)，可用来提供用户要共享的内容。 你必须提供标题和要共享的数据。 描述是可选的，但建议提供。
+当发生 [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) 事件时，你的应用会收到 [**DataRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest) 对象。 该对象包含 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage)，可用来提供用户要共享的内容。 你必须提供标题和要共享的数据。 描述是可选的，但建议提供。
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
@@ -40,7 +40,7 @@ ms.locfileid: "9031373"
 -   文件
 -   自定义开发人员定义的数据
 
-[**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) 对象可以包含其中一种或多种格式（可任意组合）。 下面的示例演示如何共享文本。
+[  **DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) 对象可以包含其中一种或多种格式（可任意组合）。 下面的示例演示了如何共享文本。
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
@@ -48,7 +48,7 @@ ms.locfileid: "9031373"
 
 当你打包数据进行共享时，可以给出各种可提供与共享内容相关的其他信息的属性。 这些属性帮助目标应用改善用户体验。 例如，当用户通过多个应用共享内容时，可提供说明帮助。 共享图像或指向网页的链接时，添加一个缩略图可为用户提供直观的参考。 有关详细信息，请参阅 [**DataPackagePropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackagePropertySet)。
 
-除了 Title，所有属性都是可选的。 Title 属性是强制性的，必须进行设置。
+除了 Title，所有属性都是可选的。 Title 属性具有强制性，必须进行设置。
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
 
@@ -95,7 +95,7 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 
 ## <a name="see-also"></a>另请参阅 
 
-* [App-to-app communication](index.md)
+* [应用到应用的通信](index.md)
 * [接收数据](receive-data.md)
 * [DataPackage](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.aspx)
 * [DataPackagePropertySet](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackagepropertyset.aspx)

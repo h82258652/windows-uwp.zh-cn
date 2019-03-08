@@ -8,15 +8,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e0296eff0937ea5075630db0e049c86e2ea2c8ce
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924110"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622672"
 ---
 # <a name="title-storage-uris"></a>标题存储 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live*标题*存储服务。
+本部分提供有关通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务中针对*标题存储*。
  
 所有平台上运行的游戏均可使用此服务。
  
@@ -33,15 +33,15 @@ ms.locfileid: "8924110"
 
 [/global/scids/{scid}/data/{path}](uri-globalscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出指定路径处的文件信息。 
 
 [/global/scids/{scid}/data/{pathAndFileName},{type}](uri-globalscidssciddatapathandfilenametype.md)
 
-&nbsp;&nbsp;下载文件。
+&nbsp;&nbsp;将文件下载。
 
 [/json/users/batch/scids/{scid}/data/{pathAndFileName},json](uri-jsonusersbatchscidssciddatapathandfilenametype.md)
 
-&nbsp;&nbsp;将多个文件下载从多个用户具有相同的文件名。
+&nbsp;&nbsp;下载多个文件从多个用户具有相同的文件名。
 
 [/json/users/xuid({xuid})/scids/{scid}](uri-jsonusersxuidscidsscid.md)
 
@@ -49,11 +49,11 @@ ms.locfileid: "8924110"
 
 [/json/users/xuid({xuid})/scids/{scid}/data/{path}](uri-jsonusersxuidscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出指定路径处的文件信息。 
 
 [/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json](uri-jsonusersxuidscidssciddatapathandfilenametype.md)
 
-&nbsp;&nbsp;下载、 上传，或删除的文件。
+&nbsp;&nbsp;下载、 上载，或删除的文件。
 
 [/sessions/{sessionId}/scids/{scid}](uri-sessionssessionidscidsscid.md)
 
@@ -61,15 +61,15 @@ ms.locfileid: "8924110"
 
 [/sessions/{sessionId}/scids/{scid}/data/{path}](uri-sessionssessionidscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出指定路径处的文件信息。 
 
 [/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type}](uri-sessionssessionidscidssciddatapathandfilenametype.md)
 
-&nbsp;&nbsp;下载文件。
+&nbsp;&nbsp;将文件下载。
 
 [/trustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}](uri-trustedplatformusersbatchscidssciddatapathandfilenametype.md)
 
-&nbsp;&nbsp;将多个文件下载从多个用户具有相同的文件名。
+&nbsp;&nbsp;下载多个文件从多个用户具有相同的文件名。
 
 [/trustedplatform/users/xuid({xuid})/scids/{scid}](uri-trustedplatformusersxuidscidsscid.md)
 
@@ -77,15 +77,15 @@ ms.locfileid: "8924110"
 
 [/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}](uri-trustedplatformusersxuidscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出指定路径处的文件信息。 
 
 [/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}](uri-trustedplatformusersxuidscidssciddatapathandfilenametype.md)
 
-&nbsp;&nbsp;下载、 上传，或删除的文件。
+&nbsp;&nbsp;下载、 上载，或删除的文件。
 
 [/untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}](uri-untrustedplatformusersbatchscidssciddatapathandfilenametype.md)
 
-&nbsp;&nbsp;将多个文件下载从多个用户具有相同的文件名。
+&nbsp;&nbsp;下载多个文件从多个用户具有相同的文件名。
 
 [/untrustedplatform/users/xuid({xuid})/scids/{scid}](uri-untrustedplatformusersxuidscidsscid.md)
 
@@ -93,11 +93,11 @@ ms.locfileid: "8924110"
 
 [/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}](uri-untrustedplatformusersxuidscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出指定路径处的文件信息。 
 
 [/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}](uri-untrustedplatformusersxuidscidssciddatapathandfilenametype.md)
 
-&nbsp;&nbsp;下载、 上传，或删除的文件。
+&nbsp;&nbsp;下载、 上载，或删除的文件。
  
 <a id="ID4E5C"></a>
 
@@ -109,6 +109,6 @@ ms.locfileid: "8924110"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
+[通用资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
 
    

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ce41a495297870f512f0694e4f2b63eedebbc37
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114593"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616962"
 ---
 # <a name="process-bitmaps-with-opencv"></a>通过 OpenCV 处理位图
 
@@ -29,15 +29,15 @@ ms.locfileid: "9114593"
 
 ## <a name="create-a-helper-windows-runtime-component-for-opencv-interop"></a>为 OpenCV 互操作创建一个帮助程序 Windows 运行时组件
 
-### <a name="1-add-a-new-native-code-windows-runtime-component-project-to-your-solution"></a>1. 向你的解决方案中添加新的本机代码 Windows 运行时组件项目
+### <a name="1-add-a-new-native-code-windows-runtime-component-project-to-your-solution"></a>1.向解决方案添加新的本机代码 Windows 运行时组件项目
 
 1. 在“解决方案资源管理器”中右键单击你的解决方案并选择**添加->新建项目**即可在 Visual Studio 中为解决方案添加新项目。 
 2. 在 **Visual C++** 类别下，选择 **Windows 运行时组件（通用 Windows）**。 在本示例中，将项目命名为“OpenCVBridge”并单击**确定**。 
 3. 在**新建 Windows 通用项目**对话框中，为你的应用选择目标和最低操作系统版本，然后单击**确定**。
 4. 在“解决方案资源管理器”中右键单击自动生成的文件 Class1.cpp 并选择**删除**，弹出确认对话框后，选择**删除**。 然后删除 Class1.h 头文件。
-5. 右键单击 OpenCVBridge 项目图标并选择**添加->类...**。在**添加类**对话框的**类名称**字段中输入“OpenCVHelper”并单击**确定**。 代码将在后续步骤中添加到已创建的类文件中。
+5. 右键单击 OpenCVBridge 项目图标并选择**添加-> 类...**.在中**添加类**对话框中，输入"OpenCVHelper"在**类名**字段，然后单击**确定**。 代码将在后续步骤中添加到已创建的类文件中。
 
-### <a name="2-add-the-opencv-nuget-packages-to-your-component-project"></a>2. 将 OpenCV NuGet 包添加到你的组件项目
+### <a name="2-add-the-opencv-nuget-packages-to-your-component-project"></a>2.OpenCV NuGet 包添加到组件项目
 
 1. 在解决方案资源管理器中右键单击 OpenCVBridge 项目图标，然后选择**管理 NuGet 包...**
 2. 当 NuGet 包管理器对话框打开后，选择**浏览**选项卡并在搜索框中键入“OpenCV.Win”。
@@ -47,7 +47,7 @@ ms.locfileid: "9114593"
 > [!NOTE]
 > OpenCV.Win.Core 和 OpenCV.Win.ImgProc 不会定期更新，但仍建议安装这两个包，用于创建 OpenCVHelper，如本页所述。
 
-### <a name="3-implement-the-opencvhelper-class"></a>3. 实现 OpenCVHelper 类
+### <a name="3-implement-the-opencvhelper-class"></a>3.实现 OpenCVHelper 类
 
 将以下代码粘帖到 OpenCVHelper.h 头文件中。 此代码包含已安装的 *Core* 和 *ImgProc* 包的 OpenCV 头文件，并声明三种将在后续步骤中展示的方法。
 
@@ -63,7 +63,7 @@ ms.locfileid: "9114593"
 
 接下来，将方法 **GetPointerToPixelData** 添加到 OpenCVHelper.cpp。 此方法采用 **[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)**，并且通过一系列转换可获得像素数据的 COM 接口表示，通过它我们可以以 **char** 阵列的形式获取基础数据缓冲区的指针。 
 
-首先通过调用 **[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)** 获得包含像素数据的 **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)**，请求读取/写入缓冲区，使 OpenCV 库能够修改此像素数据。  将通过调用 **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** 来获取 **[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)** 对象。 接着，**IMemoryBufferByteAccess** 界面将投影为 **IInspectable**（所有 Windows 运行时类的基本界面），并且将通过调用 **[QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521(v=vs.85).aspx)** 来获取 **[IMemoryBufferByteAccess](https://msdn.microsoft.com/library/mt297505(v=vs.85).aspx)** COM 界面，它使我们能够以 **char** 阵列的形式获取像素数据缓冲区。 最后，填充 **char** 阵列，方法是调用 **[IMemoryBufferByteAccess::GetBuffer](https://msdn.microsoft.com/library/mt297506(v=vs.85).aspx)**。 如果此方法中的任何转换步骤失败，方法会返回 **false**，表明无法继续进行后续处理。
+首先通过调用 **[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)** 获得包含像素数据的 **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)**，请求读取/写入缓冲区，使 OpenCV 库能够修改此像素数据。  **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** 调用，以获取**[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)** 对象。 接着，**IMemoryBufferByteAccess** 界面将投影为 **IInspectable**（所有 Windows 运行时类的基本界面），并且将通过调用 **[QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521(v=vs.85).aspx)** 来获取 **[IMemoryBufferByteAccess](https://msdn.microsoft.com/library/mt297505(v=vs.85).aspx)** COM 界面，它使我们能够以 **char** 阵列的形式获取像素数据缓冲区。 最后，填充 **char** 阵列，方法是调用 **[IMemoryBufferByteAccess::GetBuffer](https://msdn.microsoft.com/library/mt297506(v=vs.85).aspx)**。 如果此方法中的任何转换步骤失败，方法会返回 **false**，表明无法继续进行后续处理。
 
 [!code-cpp[OpenCVHelperGetPointerToPixelData](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperGetPointerToPixelData)]
 
@@ -82,7 +82,7 @@ ms.locfileid: "9114593"
 
 
 ## <a name="a-simple-softwarebitmap-opencv-example-using-the-helper-component"></a>有关使用帮助程序组件的简单 SoftwareBitmap OpenCV 示例
-现在已创建了 OpenCVBridge 组件，我们就可以创建一个使用 OpenCV **模糊**方法修改 **SoftwareBitmap** 的简单 C# 应用。 若要从 UWP 应用访问 Windows 运行时组件，你必须先为组件添加引用。 在“解决方案资源管理器”中，右键单击 UWP 应用项目下的**引用**节点并选择**添加引用...**。在“引用管理器”中，选择**项目->解决方案**。 选中 OpenCVBridge 项目旁边的框并单击**确定**。
+现在已创建了 OpenCVBridge 组件，我们就可以创建一个使用 OpenCV **模糊**方法修改 **SoftwareBitmap** 的简单 C# 应用。 若要从 UWP 应用访问 Windows 运行时组件，你必须先为组件添加引用。 在解决方案资源管理器中右键单击**引用**节点下 UWP 应用项目，选择**添加引用...**.在引用管理器对话框中，选择**项目-> 解决方案**。 选中 OpenCVBridge 项目旁边的框并单击**确定**。
 
 以下示例代码使用户能够选择一个图像文件，然后使用**[BitmapDecoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)** 创建图像的 **SoftwareBitmap** 表示。 有关使用 **SoftwareBitmap** 的详细信息，请参阅[创建、编辑和保存位图图像](https://docs.microsoft.com/windows/uwp/audio-video-camera/imaging)。
 

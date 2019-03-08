@@ -8,15 +8,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bb37b1567349ef0684d1001da3f65b0a2b2694c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925413"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636492"
 ---
 # <a name="achievement-title-history-uris"></a>游戏成就历史记录 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务与成就相关*的游戏历史记录*。 在所有平台上运行的游戏均可阅读此历史信息。
+本部分提供了有关通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，Xbox Live 服务的成就相关*标题历史记录*。 在所有平台上运行的游戏可以读取此历史信息。
  
 这些 Uri 的域是 achievements.xboxlive.com。
  
@@ -27,7 +27,7 @@ ms.locfileid: "8925413"
 
 [/users/xuid({xuid})/history/titles](uri-titlehistoryusersxuidhistorytitlesv2.md)
 
-&nbsp;&nbsp;提供访问用户的成就相关的游戏历史记录。
+&nbsp;&nbsp;提供对用户的成就相关标题历史记录的访问。
  
 <a id="ID4EMB"></a>
 
@@ -39,6 +39,6 @@ ms.locfileid: "8925413"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
+[通用资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
 
    

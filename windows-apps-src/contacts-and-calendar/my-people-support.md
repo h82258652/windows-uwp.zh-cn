@@ -3,14 +3,14 @@ title: 为应用程序添加“我的人脉”支持
 description: 介绍如何为应用程序添加“我的人脉”支持，以及如何固定和取消固定联系人
 ms.date: 06/28/2017
 ms.topic: article
-keywords: windows 10，uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 08acb2972469a84e6a37d7293ed00cae8df94dfb
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044441"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611532"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>为应用程序添加“我的人脉”支持
 
@@ -27,15 +27,15 @@ ms.locfileid: "9044441"
 
 你需要执行以下三项操作以使应用程序能够使用“我的人脉”功能：
 
-1. [声明对应用程序清单中的 shareTarget 激活合约提供支持。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [为用户可与之共用应用的联系人添加注释。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [声明对应用程序清单中的 shareTarget 激活协定的支持。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [批注的用户可以使用您的应用程序共享的联系人。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3.  支持同时运行应用程序的多个实例。 用户必须能够与完整版本的应用程序进行交互，并且可以同时在联系人面板中使用该应用程序。  他们甚至可以同时在多个联系人面板中使用该应用程序。  为了对此提供支持，应用程序需要能够同时运行多个视图。 若要了解如何执行此操作，请参阅文章[“显示应用的多个视图”](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views)。
 
 完成此操作后，应用程序将显示在已注释联系人的联系人面板中。
 
 ## <a name="declaring-support-for-the-contract"></a>声明对合约提供支持
 
-若要声明对“我的人脉”合约提供支持，请在 Visual Studio 中打开应用程序。 从**解决方案资源管理器**中，右键单击 **Package.appxmanifest** 并选择**打开方式**。 从菜单中，选择 **XML (文本)编辑器**，然后单击**确定**。 对清单进行以下更改：
+若要声明对“我的人脉”合约提供支持，请在 Visual Studio 中打开应用程序。 从**解决方案资源管理器**中，右键单击 **package.appxmanifest** 并选择**打开方式**。 从菜单中，选择 **XML (文本)编辑器**，然后单击**确定**。 对清单进行以下更改：
 
 **之前**
 
@@ -101,7 +101,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找你的包系列名称，请使用默认编辑器打开 **Package.appxmanifest**，然后查找“Packaging”选项卡。在这里，“App”是指与应用程序启动视图对应的可激活类。
+“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找包系列名称，请使用默认编辑器打开 **Package.appxmanifest**，并在“打包”选项卡中查找。在此，“应用”是与应用程序启动视图相对应的可激活类。
 
 ## <a name="allow-contacts-to-invite-new-potential-users"></a>允许联系人邀请新的潜在用户
 
@@ -139,7 +139,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 
 通过进行此更改，你的应用程序将在用户已固定的所有联系人的联系人面板中显示为可用选项。  使用联系人面板合约激活应用程序后，你应该查看联系人是否是应用程序所识别的联系人。  如果不是，则应该显示应用的新用户体验。
 
-![“我的人脉”联系人面板](images/my-people.png)
+![“我的人脉”联系面板](images/my-people.png)
 
 ## <a name="support-for-email-apps"></a>对电子邮件应用的支持
 
@@ -249,10 +249,10 @@ async Task PinMultipleContacts(Contact[] contacts)
 **注意：** 
 
 ## <a name="see-also"></a>另请参阅
-+ [“我的人脉”共享](my-people-sharing.md)
-+ [“我的人脉”通知](my-people-notifications.md)
-+ [有关向应用程序添加“我的人脉”支持的 Channel 9 视频](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [我的人脉集成示例](https://aka.ms/mypeoplebuild2017)
-+ [联系人卡片示例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
++ [我共享的人员](my-people-sharing.md)
++ [我的用户通知](my-people-notifications.md)
++ [第 9 频道视频添加到应用程序支持我的人](https://channel9.msdn.com/Events/Build/2017/P4056)
++ [我的人员的集成示例](https://aka.ms/mypeoplebuild2017)
++ [请联系卡示例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [PinnedContactManager 类文档](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
-+ [将你的应用与联系人卡片上的操作关联起来](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
++ [将应用连接到联系人卡片上的操作](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

@@ -7,27 +7,27 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, 纹理, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: a857f62839841a2e20c4f6b6cf753e9d85dcb32c
-ms.sourcegitcommit: 7ba0637453bc2de1ca6922be97625cbcf9c32df5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "9099607"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601652"
 ---
 # <a name="apply-textures-to-primitives"></a>向基元应用纹理
 
 下面，我们将使用之前在[对基元使用深度和效果](using-depth-and-effects-on-primitives.md)中创建的立方体，加载原始纹理数据并将该数据应用到 3D 基元。 我们还将介绍一个简单的点乘积照明模型，其中，立方体的图面将基于其相对于照明源的距离和角度而变浅或变深。
 
-**目标：** 向基元应用纹理。
+**目标：** 若要将纹理应用于基元。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
-若要获取充分利用本主题，你需要熟悉 c + +。 此外需要具有图形编程概念基本体验。 并且，理想情况下，你将需要与已经按照[快速入门： 设置 DirectX 资源并显示图像](setting-up-directx-resources.md)，[创建着色器和绘制基元](creating-shaders-and-drawing-primitives.md)，并[使用深度和效果对基元](using-depth-and-effects-on-primitives.md)。
+若要充分利用本主题，您需要熟悉 c + +。 此外需要图形编程概念具有基本的体验。 并且，理想情况下，你将需要与已按[快速入门： 设置了 DirectX 资源，并显示图像](setting-up-directx-resources.md)，[创建着色器和绘图基元](creating-shaders-and-drawing-primitives.md)，和[使用深度和影响基元](using-depth-and-effects-on-primitives.md)。
 
-**完成所需时间：** 20 分钟。
+**若要完成的时间：** 20 分钟。
 
 <a name="instructions"></a>说明
 ------------
-### <a name="1-defining-variables-for-a-textured-cube"></a>1. 为纹理化的立方体定义变量
+### <a name="1-defining-variables-for-a-textured-cube"></a>1.为纹理多维数据集定义变量
 
 首先，我们需要为纹理化的立方体定义 **BasicVertex** 和 **ConstantBuffer** 结构。 这些结构用于指定立方体的顶点位置、方向和纹理以及查看立方体的方式。 或者，按照上一教程[对基元使用深度和效果](using-depth-and-effects-on-primitives.md)的类似方法来声明变量。
 
@@ -60,19 +60,19 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### <a name="2-creating-vertex-and-pixel-shaders-with-surface-and-texture-elements"></a>2. 使用图面和纹理元素创建顶点着色器和像素着色器
+### <a name="2-creating-vertex-and-pixel-shaders-with-surface-and-texture-elements"></a>2.创建顶点和像素着色器图面和纹理元素
 
 下面，我们将创建比上一教程[对基元使用深度和效果](using-depth-and-effects-on-primitives.md)中介绍的更为复杂的顶点着色器和像素着色器。 此应用的顶点着色器会将每个顶点位置转换为投影空间，并将顶点纹理坐标传递到像素着色器中。
 
-应用的描述顶点着色器代码布局的 [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 结构数组有三个布局元素：一个元素定义顶点位置，另一个元素定义图面法线向量（图面在正常情况下面朝的方向），第三个元素定义纹理坐标。
+应用程序的数组[ **D3D11\_输入\_元素\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180)描述顶点着色器代码的布局的结构具有三个布局元素： 一个元素定义顶点位置，另一个元素定义的图面上的法向量 （在图面通常面临的方向），而第三个元素定义的纹理坐标。
 
 我们将创建用于定义环行纹理化立方体的顶点、索引和常量缓冲区。
 
-**定义环行纹理化立方体**
+**若要定义轨道纹理多维数据集**
 
 1.  首先，我们定义立方体。 每个顶点被分配一个位置、一个图面法线向量和纹理坐标。 为每个角使用多个顶点，从而允许为每个面定义不同的法线向量和纹理坐标。
-2.  接着，使用立方体定义来描述顶点缓冲区和索引缓冲区（[**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) 和 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)）。 为每个缓冲区调用一次 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)。
-3.  接着，创建一个常量缓冲区 ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) 以将模型、视图和投影矩阵传递到顶点着色器。 稍后，我们可以使用该常量缓冲区来旋转立方体并向其应用一个透视投影。 调用 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) 来创建常量缓冲区。
+2.  接下来，我们将介绍顶点和索引缓冲区 ([**D3D11\_缓冲区\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092)并[ **D3D11\_SUBRESOURCE\_数据**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) 使用多维数据集定义。 为每个缓冲区调用一次 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)。
+3.  接下来，我们创建常量缓冲区 ([**D3D11\_缓冲区\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) 用于向顶点着色器传递模型、 视图和投影矩阵。 稍后，我们可以使用该常量缓冲区来旋转立方体并向其应用一个透视投影。 调用 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) 来创建常量缓冲区。
 4.  最后，指定与相机位置 X = 0、Y = 1、Z = 2 对应的视图转换。
 
 ```cppcx
@@ -261,19 +261,19 @@ auto createCubeTask = (createPSTask && createVSTask).then([this]()
 });
 ```
 
-### <a name="3-creating-textures-and-samplers"></a>3. 创建纹理和取样器
+### <a name="3-creating-textures-and-samplers"></a>3.创建的纹理和取样器
 
 下面，将纹理数据应用到立方体（而不是像上一教程[对基元使用深度和效果](using-depth-and-effects-on-primitives.md)中那样着色）。
 
 使用原始纹理数据来创建纹理。
 
-**创建纹理和取样器**
+**若要创建的纹理和取样器**
 
 1.  首先，从磁盘上的 texturedata.bin 文件中读取原始纹理数据。
-2.  接着，构建一个引用该原始纹理数据的 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 结构。
-3.  然后，填充 [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) 结构来描述纹理。 随后在对 [**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) 的调用中传递 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 和 **D3D11\_TEXTURE2D\_DESC** 结构以创建纹理。
-4.  接着，创建纹理的着色器资源视图，以便着色器可以使用该纹理。 若要创建着色器资源视图，需填充 [**D3D11\_SHADER\_RESOURCE\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476211) 来描述着色器资源视图并将着色器资源视图描述和纹理传递到 [**ID3D11Device::CreateShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476519)。 通常，视图描述需与纹理描述相匹配。
-5.  接着，为纹理创建取样器状态。 该取样器状态使用相关纹理数据来定义如何确定特定纹理坐标的颜色。 填充 [**D3D11\_SAMPLER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476207) 结构来描述取样器状态。 然后，在对 [**ID3D11Device::CreateSamplerState**](https://msdn.microsoft.com/library/windows/desktop/ff476518) 的调用中传递 **D3D11\_SAMPLER\_DESC** 结构以创建取样器状态。
+2.  接下来，我们构造[ **D3D11\_SUBRESOURCE\_数据**](https://msdn.microsoft.com/library/windows/desktop/ff476220)引用该原始纹理数据结构。
+3.  然后，我们填充[ **D3D11\_TEXTURE2D\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476253)结构来描述纹理。 然后将传递[ **D3D11\_SUBRESOURCE\_数据**](https://msdn.microsoft.com/library/windows/desktop/ff476220)并**D3D11\_TEXTURE2D\_DESC**中结构调用到[ **ID3D11Device::CreateTexture2D** ](https://msdn.microsoft.com/library/windows/desktop/ff476521)用于创建纹理。
+4.  接着，创建纹理的着色器资源视图，以便着色器可以使用该纹理。 若要创建着色器资源视图，我们填充[ **D3D11\_着色器\_资源\_视图\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476211)来描述的着色器资源视图和传递的着色器资源视图说明和到纹理[ **ID3D11Device::CreateShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476519)。 通常，视图描述需与纹理描述相匹配。
+5.  接着，为纹理创建取样器状态。 该取样器状态使用相关纹理数据来定义如何确定特定纹理坐标的颜色。 我们填充[ **D3D11\_采样器\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476207)结构来描述的采样器状态。 然后将传递**D3D11\_采样器\_DESC**对的调用中的结构[ **ID3D11Device::CreateSamplerState** ](https://msdn.microsoft.com/library/windows/desktop/ff476518)若要创建采样器状态。
 6.  最后，声明 *degree* 变量，该变量将用于通过每帧旋转立方体来实现立方体的动画效果。
 
 ```cppcx
@@ -384,17 +384,17 @@ auto constructSubresourceTask = loadTDTask.then([this](const std::vector<byte>& 
 float degree = 0.0f;
 ```
 
-### <a name="4-rotating-and-drawing-the-textured-cube-and-presenting-the-rendered-image"></a>4. 旋转和绘制纹理化立方体并显示呈现的图像
+### <a name="4-rotating-and-drawing-the-textured-cube-and-presenting-the-rendered-image"></a>4.旋转和绘制纹理多维数据集和显示呈现的图像
 
 如前面的教程所述，我们进入了一个持续呈现和显示场景的无限循环。 调用 **rotationY** 内嵌函数 (BasicMath.h)，使用旋转量设置使立方体模型矩阵绕 Y 轴旋转的值。 然后，调用 [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) 来更新常量缓冲区并旋转立方体模型。 接着，调用 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) 以指定呈现目标和深度模具视图。 调用 [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) 以将呈现目标清空为纯蓝色，并调用 [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) 清空深度缓冲区。
 
 在该无限循环中，我们还需要在蓝色图面上绘制纹理化立方体。
 
-**绘制纹理化立方体**
+**若要绘制纹理多维数据集**
 
 1.  首先，调用 [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) 来描述如何将顶点缓冲区数据流传输到输入程序集阶段。
 2.  接着，调用 [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) 和 [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) 将顶点缓冲区和索引缓冲区绑定到输入程序集阶段。
-3.  接着，调用 [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455)，使用 [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) 值指定由输入程序集阶段将顶点数据解释为三角形带。
+3.  接下来，我们调用[ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://msdn.microsoft.com/library/windows/desktop/ff476455)与[ **D3D11\_基元\_拓扑\_TRIANGLESTRIP** ](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP)要解释的顶点数据作为三角形带输入装配器阶段指定的值。
 4.  接着，调用 [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) 以使用顶点着色器代码初始化顶点着色器阶段，并调用 [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) 以使用像素着色器代码初始化像素着色器阶段。
 5.  接着，调用 [**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491) 设置由顶点着色器管道阶段使用的常量缓冲区。
 6.  接着，调用 [**PSSetShaderResources**](https://msdn.microsoft.com/library/windows/desktop/ff476473) 将纹理的着色器资源视图绑定到像素着色器管道阶段。
@@ -507,4 +507,4 @@ DX::ThrowIfFailed(
 
 ## <a name="summary"></a>摘要
 
-在本主题中，我们已加载原始纹理数据，并将该数据应用到 3D 基元。
+在本主题中，我们将加载原始纹理数据，并应用于一个三维基元的该数据。

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 匹配, smartmatch
 ms.localizationpriority: medium
 ms.openlocfilehash: 89f33768efcd649987866fd0798c222aa97f7ff8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941491"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592092"
 ---
 # <a name="using-smartmatch-matchmaking"></a>使用 SmartMatch 匹配
 
@@ -23,7 +23,7 @@ ms.locfileid: "8941491"
 
 在开始匹配之前，匹配的“侦察兵”设置匹配票证会话以表示想要一起进入匹配的一组玩家。 该组中的所有用户使用 **MultiplayerSession.Join 方法（字符串、布尔值、布尔值）** 加入会话。
 
-创建票证会话并使用玩家填充后，游戏将使用 **MatchmakingService.CreateMatchTicketAsync Method** 将会话提交到匹配服务。 此方法创建表示票证会话的匹配票证，并将票证会话中的 /servers/matchmaking/properties/system/status 字段更新为“正在搜索”。 有关更多信息，请参阅[如何：创建匹配票证](multiplayer-how-tos.md)。
+创建票证会话并使用玩家填充后，游戏将使用 **MatchmakingService.CreateMatchTicketAsync Method** 将会话提交到匹配服务。 此方法创建表示票证会话的匹配票证，并将票证会话中的 /servers/matchmaking/properties/system/status 字段更新为“正在搜索”。 有关详细信息，请参阅[如何：创建匹配票证](multiplayer-how-tos.md)。
 
 匹配票证创建方法的响应是 **CreateMatchTicketResponse 类**对象。 响应包含匹配票证 ID，一个可用于通过删除票证取消匹配的 GUID。 响应还包含可用于设定用户期望的漏斗的平均等待时间。
 
@@ -42,7 +42,7 @@ ms.locfileid: "8941491"
 
 游戏指定匹配票证会话内的各成员的每个成员属性。 通过使用“matchAttrs”的属性名称并调用 **MultiplayerSession.SetCurrentUserMemberCustomPropertyJson 方法**来对它们进行设置。 此调用将 /members/{index}/properties/custom/matchAttrs 字段中的属性置于票证会话中的每个玩家上。
 
-匹配过程将"平展"每个成员每个为单个票证级别属性，基于为漏斗的 Xbox Live 配置中的属性指定的平展方法。 这可以在[XDP](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)上配置。
+匹配进程"平展"每个成员每个到单个票证级别属性基于 hopper 的 Xbox Live 配置中该属性指定的平展方法。 这可以在配置[XDP](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 
 
 ## <a name="making-the-match"></a>进行匹配
@@ -66,7 +66,7 @@ ms.locfileid: "8941491"
 
 ## <a name="reusing-the-game-session-as-a-match-ticket-session"></a>将游戏会话重新用作匹配票证会话
 
-| 重要提示                                                                                                                                                                                                                       |
+| 重要                                                                                                                                                                                                                       |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 请务必意识到将 *preserveSession* 设置为“始终”的两个会话将无法互相匹配，因为无法将它们合并。 游戏使用的匹配流程应该考虑到这种情况。 |
 
@@ -115,6 +115,6 @@ ms.locfileid: "8941491"
 
 [SmartMatch 匹配](smartmatch-matchmaking.md)
 
-**Microsoft.Xbox.Services.Matchmaking 命名空间**
+**Microsoft.Xbox.Services.Matchmaking Namespace**
 
-**Microsoft.Xbox.Services.Multiplayer 命名空间**
+**Microsoft.Xbox.Services.Multiplayer Namespace**

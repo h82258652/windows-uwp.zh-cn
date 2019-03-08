@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 99159b5d126c671b07d37e20f1bcd61452c7d670
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919844"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594712"
 ---
 # <a name="multiplayer-manager"></a>多人游戏管理器
 
@@ -33,16 +33,16 @@ Xbox Live 为将多人游戏功能到添加你的作品、允许你的作品连�
 
 ## <a name="overview"></a>概述
 多人游戏管理器面向几个关键概念：
-* `lobby_session` ：用于管理设备本地用户和你希望一起玩的受邀好友的持续性对话。 小组可能会玩多个游戏回合、地图、级别等，大厅会话会跟踪好友的核心组（包括设备的本地玩家）。 通常，会在主机可能正在浏览菜单，与组成员聊天以确定他们想要运行的游戏模式时形成此组。
+* `lobby_session` :用于管理设备本地用户和你希望一起玩的受邀好友的持续性对话。 小组可能会玩多个游戏回合、地图、级别等，大厅会话会跟踪好友的核心组（包括设备的本地玩家）。 通常，会在主机可能正在浏览菜单，与组成员聊天以确定他们想要运行的游戏模式时形成此组。
 
-* `game_session` ：跟踪正在运行特定游戏实例的玩家。 例如，竞赛、地图或级别。 你可以通过将成员包含在大厅会话中的 `join_game_from_lobby` 创建新游戏会话。  当成员接受邀请时，他们会被添加到大厅和游戏会话中（如果还有空位）。 启用匹配后，可能会将其他玩家添加到游戏会话中，但不会将他们添加到大厅会话中。 这意味着，游戏结束后，大厅会话中的玩家仍然在一起，但匹配多出的玩家不在一起。
+* `game_session` :正在播放游戏的特定实例的跟踪播放机。 例如，竞赛、地图或级别。 你可以通过将成员包含在大厅会话中的 `join_game_from_lobby` 创建新游戏会话。  当成员接受邀请时，他们会被添加到大厅和游戏会话中（如果还有空位）。 启用匹配后，可能会将其他玩家添加到游戏会话中，但不会将他们添加到大厅会话中。 这意味着，游戏结束后，大厅会话中的玩家仍然在一起，但匹配多出的玩家不在一起。
 
-* `multiplayer_member` ：表示在本地或远程设备上登录的个人用户。
+* `multiplayer_member` :表示单个用户在本地或远程设备上登录。
 
-* `do_work` ：确保在游戏和 Xbox Live 多人游戏服务之间保持正确的游戏状态更新。 若要确保最佳性能，必须频繁调用 do_work()，例如，每帧一次。 它为你提供了需要游戏处理的 `multiplayer_event` 回调事件列表。
+* `do_work` :确保正确的游戏状态更新维护之间的标题和 Xbox Live 之多人游戏服务。 若要确保最佳性能，必须频繁调用 do_work()，例如，每帧一次。 它为你提供了需要游戏处理的 `multiplayer_event` 回调事件列表。
 
 ## <a name="state-machine"></a>状态机
-需要 `do_work()` 来确保保持最新状态。  为了让多人游戏管理器起作用，开发人员必须定期调用 `do_work()` 方法。 执行此操作的最可靠的方法是至少每帧调用一次。 `do_work()` 当它不工作时会快速返回，因此没必要担心调用过于频繁。
+需要 `do_work()` 来确保保持最新状态。  为了让多人游戏管理器起作用，开发人员必须定期调用 `do_work()` 方法。 执行此操作的最可靠的方法是至少每帧调用一次。 `do_work()` 有没有要执行的任务，因此没有理由有关过于频繁调用的问题时，返回快速。
 
 不应认为多人游戏管理器 API 返回的所有对象都是线程安全的。 但是，如果你从多个线程中调用它，它会为你提供控制权以执行线程同步。 库拥有内部多线程保护，但是，如果你需要一个线程访问任意值（例如，当另一个线程可能在调用 `do_work()` 时浏览 members() 列表），则仍需要执行自身锁定。
 
@@ -81,10 +81,10 @@ for (auto& event : eventQueue)
 
 在此部分中，我们将介绍一些常见方案和你会在各方案中调用的 API。  还会提供一些有关多人游戏管理器在后台运行的内容的信息。
 
-* [与好友一起玩](multiplayer-manager/play-multiplayer-with-friends.md)
-* [查找匹配](multiplayer-manager/play-multiplayer-with-matchmaking.md)
-* [发送游戏邀请](multiplayer-manager/send-game-invites.md)
-* [处理协议激活](multiplayer-manager/handle-protocol-activation.md)
+* [播放与朋友](multiplayer-manager/play-multiplayer-with-friends.md)
+* [找到匹配项](multiplayer-manager/play-multiplayer-with-matchmaking.md)
+* [发送游戏的邀请](multiplayer-manager/send-game-invites.md)
+* [句柄协议激活](multiplayer-manager/handle-protocol-activation.md)
 
 可在[多人游戏管理器 API 概述](multiplayer-manager/multiplayer-manager-api-overview.md)中查找 API 的高级概述。
 
@@ -102,4 +102,4 @@ for (auto& event : eventQueue)
 
 可在 Microsoft::Xbox::Services::Multiplayer::Manager 命名空间中的 C++ 或 WinRT 指南中查找 API 文档。  你还可以参阅 `multiplayer_manager.h` 标题。
 
-如果你有任何疑问、 反馈或遇到任何使用多人游戏管理器的问题，请联系你的 DAM，或在的论坛上发布支持线程[https://forums.xboxlive.com](https://forums.xboxlive.com)。
+如果有任何问题的反馈，或使用多人管理器有问题，请联系你采取或在论坛上发布支持主题[ https://forums.xboxlive.com ](https://forums.xboxlive.com)。

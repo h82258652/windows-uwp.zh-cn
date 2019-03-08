@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d4364bf9973b69587ae042a809d026b553ee2ea
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932142"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662312"
 ---
 # <a name="copying-and-accessing-resource-data"></a>复制和访问资源数据
 
@@ -42,7 +42,7 @@ Direct3D 执行 Create 调用时，在内存中创建资源。 它们可以在�
 
 想要将数据从采用默认用法的资源复制到采用暂存用法的资源（以允许 CPU 读取数据 - 即，GPU 回读问题）的应用程序必须小心执行此操作。 请参阅下面的[访问资源数据](#accessing)。
 
-## <a name="span-idaccessingspanspan-idaccessingspanspan-idaccessingspanaccessing-resource-data"></a><span id="Accessing"></span><span id="accessing"></span><span id="ACCESSING"></span>访问资源数据
+## <a name="span-idaccessingspanspan-idaccessingspanspan-idaccessingspanaccessing-resource-data"></a><span id="Accessing"></span><span id="accessing"></span><span id="ACCESSING"></span>访问资源的数据
 
 
 访问资源要求映射资源；映射本质上意味着应用程序正在尝试向 CPU 授予对内存的访问权限。 映射资源（以便 CPU 可以访问基础内存）的过程可能会导致某些性能瓶颈，因此，对于如何和何时执行此任务必须格外小心。

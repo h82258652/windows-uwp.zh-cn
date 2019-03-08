@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 38a65a3532fe401f31fbf0da656aff1a141fa71a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940656"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636302"
 ---
 # <a name="mathematics-of-lighting"></a>照明的数学运算
 
@@ -41,7 +41,7 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
 
 通过使用世界矩阵的逆将光源的位置和方向以及相机位置转换到模型空间，可在模型空间中进行所有照明计算。 因此，如果世界矩阵或视图矩阵引入了非一致性的缩放，则所得到的照明可能不准确。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>
@@ -57,7 +57,7 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="ambient-lighting.md">环境光</a></p></td>
+<td align="left"><p><a href="ambient-lighting.md">环境照明</a></p></td>
 <td align="left"><p>环境光为场景提供恒定照明。 它会无差别地点亮所有对象顶点，因为它不取决于任意其他照明因素，例如，顶点法线、光线方向、光线位置、范围或衰减。 环境光在所有方向都是恒定的，并且会无差别地为某个对象的所有像素上色。 这是一种快速计算，但会让对象看上去扁平且不逼真。</p></td>
 </tr>
 <tr class="even">
@@ -65,7 +65,7 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
 <td align="left"><p><em>漫射照明</em>取决于光的方向和物体表面的法线。 光方向和表面法向矢量的改变会导致漫射照明在物体表面上发生变化。 计算漫射照明需要更长的时间，因为它随每个对象顶点而变化，但使用它的好处在于它能够为对象着色并赋予它们三维 (3D) 深度。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="specular-lighting.md">高光照明</a></p></td>
+<td align="left"><p><a href="specular-lighting.md">反射照明</a></p></td>
 <td align="left"><p><em>高光照明</em>可标识光照射至物体表面且反射至相机时产生的明亮反射高光。 高光照明比漫射光更强，且可更快照射至物体表面。 虽然计算高光照明的时间长于漫射照明，但高光照明具有可将重要细节添加至物体表面的优势。</p></td>
 </tr>
 <tr class="even">
@@ -73,12 +73,12 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
 <td align="left"><p><em>放射照明</em>是由物体发出的光；例如，辉光。 放射会使渲染对象看起来是自发光的。 放射会影响对象的颜色，使暗材质显得更亮并在一定程度上呈现出放射光的颜色。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="camera-space-transformations.md">相机空间转换</a></p></td>
+<td align="left"><p><a href="camera-space-transformations.md">照相机空间转换</a></p></td>
 <td align="left"><p>通过使用通用视图矩阵转换对象顶点来计算相机空间中的顶点。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="attenuation-and-spotlight-factor.md">衰减和聚焦因素</a></p></td>
-<td align="left"><p>全局照明公式的漫射和反射光组件包含介绍光线衰减和聚焦锥形的术语。</p></td>
+<td align="left"><p><a href="attenuation-and-spotlight-factor.md">衰减和聚焦身份</a></p></td>
+<td align="left"><p>全局照明公式的漫射和反射光分量涉及介绍光线衰减和聚焦锥形的术语。</p></td>
 </tr>
 </tbody>
 </table>
@@ -88,7 +88,7 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[光和材质](lights-and-materials.md)
+[灯和材料](lights-and-materials.md)
 
  
 

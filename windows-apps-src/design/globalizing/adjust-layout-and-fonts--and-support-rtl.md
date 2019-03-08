@@ -1,5 +1,5 @@
 ---
-Description: Design your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction.
+Description: 设计应用，使其支持多种语言布局和字体，包括 RTL（从右到左）排列方向。
 title: 调整布局和字体并支持 RTL
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 可本地化性, 本地化, rtl, ltr
 ms.localizationpriority: medium
 ms.openlocfilehash: e428dd068337ecd79992e8e27cd193bed112d9c2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930458"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645302"
 ---
 # <a name="adjust-layout-and-fonts-and-support-rtl"></a>调整布局和字体并支持 RTL
 设计应用，使其支持多种语言布局和字体，包括 RTL（从右到左）排列方向。 排列方向是脚本的写入方向和显示方向，页面上的 UI 元素是目视浏览的。
@@ -53,7 +53,7 @@ ms.locfileid: "8930458"
 在页面的根布局面板（或框架）或页面本身上设置 **FlowDirection**。 这将导致包含在其中的所有控件继承该属性。
 
 > [!IMPORTANT]
-> 但是，**FlowDirection** *不会* 根据用户在 Windows 设置中选择的显示语言自动设置；也不会作为用户切换显示语言的响应动态更改。 例如，如果用户将 Windows 设置从英语切换为阿拉伯语，**FlowDirection** 属性将*不会* 自动由从左到右更改为从右到左。 作为应用开发人员，你必须为你当前显示的语言设置相应的 **FlowDirection**。
+> 但是，**FlowDirection***不会* 根据用户在 Windows 设置中选择的显示语言自动设置；也不会作为用户切换显示语言的响应动态更改。 例如，如果用户将 Windows 设置从英语切换为阿拉伯语，**FlowDirection** 属性将*不会* 自动由从左到右更改为从右到左。 作为应用开发人员，你必须为你当前显示的语言设置相应的 **FlowDirection**。
 
 编程方法是使用首选用户显示语言的 `LayoutDirection` 属性设置 [**FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) 属性（请参阅下面的代码示例）。 包含在 Windows 中的大多数控件都已使用 **FlowDirection**。 如果要实现自定义控件，则应使用 **FlowDirection** 为 RTL 和 LTR 语言进行相应的布局更改。
 
@@ -119,11 +119,11 @@ else
 
 这不是适用于所有语言的一行代码，而是取决于翻译人员针对每种翻译语言正确地“翻译”此属性；因此应注意，使用此技术可能出现更多的人为错误。
 
-## <a name="important-apis"></a>重要 API
+## <a name="important-apis"></a>重要的 API
 * [FrameworkElement.FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection)
 * [LanguageFont](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)
 
 ## <a name="related-topics"></a>相关主题
-* [对 UI 和应用包清单中的字符串实施本地化](../../app-resources/localize-strings-ui-manifest.md)
-* [定制语言、比例和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)
-* [了解用户配置文件语言和应用清单语言](manage-language-and-region.md)
+* [本地化用户界面和应用包清单中的字符串](../../app-resources/localize-strings-ui-manifest.md)
+* [定制您的语言、 缩放性和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [了解用户配置文件的语言和应用程序清单语言](manage-language-and-region.md)

@@ -6,11 +6,11 @@ ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cda22488f613c508b2c753c6b530b2b34b10909d
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114473"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589982"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>为应用启用订阅加载项
 
@@ -33,24 +33,24 @@ UWP 应用的订阅加载项支持以下功能：
 
 若要在你的应用中支持购买订阅加载项，请执行以下步骤。
 
-1. 为你的订阅在合作伙伴中心中[创建加载项提交](../publish/add-on-submissions.md)并发布此提交。 在你执行加载项提交流程时，请密切注意以下属性：
+1. [创建外接程序提交](../publish/add-on-submissions.md)用于合作伙伴中心中的订阅和发布中的提交。 在你执行加载项提交流程时，请密切注意以下属性：
 
-    * [产品类型](../publish/set-your-add-on-product-id.md#product-type)：确保选择**订阅**。
+    * [产品类型](../publish/set-your-add-on-product-id.md#product-type):请确保选择**订阅**。
 
-    * [订阅期](../publish/enter-add-on-properties.md#subscription-period)：为你的订阅选择定期帐单期间。 在发布加载项之后，你将不能更改订阅期。
+    * [订阅期内](../publish/enter-add-on-properties.md#subscription-period):选择你的订阅重复计费周期。 在发布加载项之后，你将不能更改订阅期。
 
         每个订阅加载项都支持单个订阅期和试用期。 你必须在应用中为你想要提供的每种订阅创建不同的订阅加载项。 例如，如果你想要提供按月订阅无试用、按月订阅送一个月试用、按年订阅无试用以及按年订阅送一个月试用，则需要创建四个订阅加载项。
 
-    * [试用期间](../publish/enter-add-on-properties.md#free-trial)：考虑为你的订阅选择 1 周或 1 个月的试用期，让用户可以在购买之前先试用。 在发布订阅加载项之后，你将不能更改或删除试用期。
+    * [试用期](../publish/enter-add-on-properties.md#free-trial):请考虑选择 1 周或 1 个月的试用期期间，为你的订阅，以便用户可以在购买前试用订阅内容。 在发布订阅加载项之后，你将不能更改或删除试用期。
 
         要免费试用你的订阅，用户必须通过标准的应用内购买流程（包括有效的付款方式）购买你的订阅。 在试用期内不收取任何费用。 在试用期结束时，订阅自动将转换为完全订阅，并将按用户的支付方式收取第一期的付费订阅费用。 如果用户在试用期内选择取消订阅，则订阅在试用期结束之前仍然会保持有效。 一些试用期并非对所有订阅期都可用。
 
         > [!NOTE]
         > 每位客户一次只能获取一个订阅加载项的免费试用版。 客户获得某项订阅的免费试用版后，Microsoft Store 将阻止该客户再次获取相同的免费试用订阅。
 
-    * [可见性](../publish/set-add-on-pricing-and-availability.md#visibility)：如果要创建测试加载项并且仅用它来测试订阅的应用内购买体验，建议你选择一个**在 Microsoft Store 中隐藏**选项。 否则，你可以选择最适合你的情形的可见性选项。
+    * [可见性](../publish/set-add-on-pricing-and-availability.md#visibility):如果要创建一个测试加载项，将仅用于测试你的订阅的应用内购买体验，我们建议您选择一种**存储区中隐藏**选项。 否则，你可以选择最适合你的情形的可见性选项。
 
-    * [定价](../publish/set-add-on-pricing-and-availability.md?#pricing)：在此部分中选择你的订阅的价格。 在发布加载项之后，你将不能提高订阅价格。 不过，可以在以后降价。
+    * [定价](../publish/set-add-on-pricing-and-availability.md?#pricing):在本部分中选择你的订阅的价格。 在发布加载项之后，你将不能提高订阅价格。 不过，可以在以后降价。
         > [!IMPORTANT]
         > 默认情况下，当你创建任何加载项时，价格最初都设置为**免费**。 因为你在完成加载项提交之后不能提高订阅加载项的价格，请确保在此处选择你的订阅的价格。
 
@@ -68,15 +68,15 @@ UWP 应用的订阅加载项支持以下功能：
 
 这些示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
-* 你有合作伙伴中心中的[创建应用提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)并在应用商店中发布此应用。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅[测试指南](in-app-purchases-and-trials.md#testing)。
-* 必须在合作伙伴中心中[创建订阅加载项的应用](../publish/add-on-submissions.md)。
+* 你有[创建应用程序提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)在合作伙伴中心和此应用程序发布的存储区中。 在测试应用期间，你可以选择将应用配置为在 Microsoft Store 中隐藏。 有关详细信息，请参阅[测试指南](in-app-purchases-and-trials.md#testing)。
+* 你有[创建的应用程序的订阅外接程序](../publish/add-on-submissions.md)在合作伙伴中心。
 
 这些示例中的代码假设：
 * 此代码文件包含对 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空间的 **using** 语句。
 * 该应用是单用户应用，仅在启动该应用的用户上下文中运行。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md#api_intro)。
 
 > [!NOTE]
-> 如果你有使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的桌面应用程序，可能需要添加未在这些示例中显示的额外代码来配置 [**StoreContext**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext) 对象。 有关更多信息，请参阅[在使用桌面桥的桌面应用程序中使用 StoreContext 类](in-app-purchases-and-trials.md#desktop)。
+> 如果你有使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的桌面应用程序，可能需要添加未在这些示例中显示的额外代码来配置 [**StoreContext**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext) 对象。 有关详细信息，请参阅[在使用桌面桥的桌面应用程序中使用 StoreContext 类](in-app-purchases-and-trials.md#desktop)。
 
 ### <a name="purchase-a-subscription-add-on"></a>购买订阅加载项
 
@@ -119,17 +119,17 @@ UWP 应用的订阅加载项支持以下功能：
 
 对于订阅帐单，我们不提供宽限期。 如果在当前计费周期结束时我们都无法对客户的信用卡收费，订阅将取消，在当前计费周期结束后，客户将不再能够访问订阅。
 
-## <a name="unsupported-scenarios"></a>不受支持的情形
+## <a name="unsupported-scenarios"></a>不支持的方案
 
 目前订阅加载项不支持以下情形。
 
 * 目前不支持直接通过应用商店向客户销售订阅。 订阅只能通过数字产品的应用内购买提供。
-* 客户不能使用他们的 Microsoft 帐户的 [https://account.microsoft.com/services](https://account.microsoft.com/services) 页面切换到不同订阅期。 若要切换到不同订阅期，客户必须取消其当前订阅，然后购买了订阅期从你的应用。
+* 客户不能使用他们的 Microsoft 帐户的 [https://account.microsoft.com/services](https://account.microsoft.com/services) 页面切换到不同订阅期。 若要切换到其他订阅期间，客户必须取消其当前的订阅，并随后购买其他订阅周期从您的应用程序的订阅。
 * 订阅加载项目前不支持分级订阅（例如，将客户从基本订阅切换到包含更多功能的高级订阅）。
 * 目前订阅加载项不支持[销售](../publish/put-apps-and-add-ons-on-sale.md)和[促销代码](../publish/generate-promotional-codes.md)。
 
 
 ## <a name="related-topics"></a>相关主题
 
-* [应用内购买和试用](in-app-purchases-and-trials.md)
-* [获取应用和加载项的产品信息](get-product-info-for-apps-and-add-ons.md)
+* [应用内购买和试用版](in-app-purchases-and-trials.md)
+* [获取产品信息的应用程序和外接程序](get-product-info-for-apps-and-add-ons.md)

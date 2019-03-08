@@ -1,6 +1,6 @@
 ---
 title: 着色器资源视图 (SRV) 和无序的访问视图 (UAV)
-description: 着色器资源视图通常以方便着色器访问纹理的方式围绕纹理。 无序的访问视图提供类似的功能，但支持以任何顺序读取和写入纹理（或其他资源）。
+description: 着色器资源视图通常以方便着色器访问纹理的方式围绕纹理。 无序的访问视图提供类似的功能，但支持以任何顺序读取和写入到纹理（或其他资源）。
 ms.assetid: 4505BCD2-0EDA-40F2-887C-EC081FE32E8F
 keywords:
 - 着色器资源视图 (SRV)
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: bd6cca08c0845e2da5420fc1f040cc285c87953d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947130"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636042"
 ---
 # <a name="shader-resource-view-srv-and-unordered-access-view-uav"></a>着色器资源视图 (SRV) 和无序的访问视图 (UAV)
 
 
-着色器资源视图通常以方便着色器访问纹理的方式围绕纹理。 无序的访问视图提供类似的功能，但支持以任何顺序读取和写入纹理（或其他资源）。
+着色器资源视图通常以方便着色器访问纹理的方式围绕纹理。 无序的访问视图提供类似的功能，但支持以任何顺序读取和写入到纹理（或其他资源）。
 
 环绕单个纹理可能是着色器资源视图最简单的形式。 更为复杂的示例包括子资源集合（细化纹理的个别阵列、平面或颜色）、3D 纹理、1D 纹理颜色渐变等。
 
@@ -26,7 +26,7 @@ ms.locfileid: "8947130"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[视图](views.md)
+[Views](views.md)
 
  
 

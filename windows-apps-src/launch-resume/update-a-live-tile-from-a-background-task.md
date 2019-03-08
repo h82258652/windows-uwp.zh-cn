@@ -1,6 +1,6 @@
 ---
 title: 使用后台任务更新动态磁贴
-description: 使用后台任务将应用的动态磁贴更新为最新内容。
+description: 使用后台任务，以最新内容更新应用的动态磁贴。
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 ms.date: 01/11/2018
@@ -8,22 +8,22 @@ ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: e3c087bac5e166a22098482e5ffe213e3bdce9d6
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114453"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650532"
 ---
-# <a name="update-a-live-tile-from-a-background-task"></a>通过后台任务更新动态磁贴
+# <a name="update-a-live-tile-from-a-background-task"></a>使用后台任务更新动态磁贴
 
-**重要的 API**
+**重要的 Api**
 
 -   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 
 使用后台任务，以最新内容更新应用的动态磁贴。
 
-下面的视频演示如何将动态磁贴添加到应用。
+下面的视频旨在演示如何将动态磁贴添加到你的应用。
 
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Updating-a-live-tile-from-a-background-task/player" width="720" height="405" allowFullScreen="true" frameBorder="0"></iframe>
 
@@ -33,7 +33,7 @@ ms.locfileid: "9114453"
 
 1.  在“解决方案资源管理器”中，右键单击该解决方案、单击**添加**，然后单击**新建项目**。
 2.  在**添加新项目**对话框的**已安装 &gt; 其他语言 &gt; Visual C# &gt; Windows Universal** 部分中，选择 **Windows 运行时组件**模板。
-3.  将项目命名为 BackgroundTasks，然后单击或点击“确定”****。 Microsoft Visual Studio 即会将这个新项目添加到该解决方案。
+3.  将项目命名为 BackgroundTasks，然后单击或点击“确定”。 Microsoft Visual Studio 即会将这个新项目添加到该解决方案。
 4.  在主项目中，向 BackgroundTasks 项目添加一个引用。
 
 ## <a name="implement-the-background-task"></a>实施后台任务
@@ -145,23 +145,23 @@ namespace BackgroundTasks
 若要设置包清单，请打开它并添加一个新的后台任务声明。 将该任务的入口点设置为类名称，包括其命名空间。
 
 1.  在解决方案资源管理器中，打开“Package.appxmanifest”。
-2.  单击或点击“声明”**** 选项卡。
-3.  在“可用声明”**** 下，选择BackgroundTasks****，然后单击“添加”****。 Visual Studio 即会将BackgroundTasks**** 添加到“支持的声明”**** 下。
-4.  在“支持的任务类型”**** 下，确保已选中“计时器”****。
-5.  在“应用设置”**** 下，将入口点设置为BackgroundTasks.BlogFeedBackgroundTask****。
-6.  单击或点击“应用程序 UI”**** 选项卡。
-7.  将“锁屏界面通知”**** 设置为“锁屏提醒和磁贴文本”****。
-8.  在“锁屏提醒徽标”**** 字段中，将路径设置为 24x24 像素图标。
-    **重要提示**此图标必须使用单色透明像素。
-9.  在“小徽标”**** 字段中，将路径设置为 30x30 像素图标。
-10. 在“宽徽标”**** 字段中，将路径设置为 310x150 像素图标。
+2.  单击或点击“声明”选项卡。
+3.  在“可用声明”下，选择BackgroundTasks，然后单击“添加”。 Visual Studio 即会将BackgroundTasks添加到“支持的声明”下。
+4.  在“支持的任务类型”下，确保已选中“计时器”。
+5.  在“应用设置”下，将入口点设置为BackgroundTasks.BlogFeedBackgroundTask。
+6.  单击或点击“应用程序 UI”选项卡。
+7.  将“锁屏界面通知”设置为“锁屏提醒和磁贴文本”。
+8.  在“锁屏提醒徽标”字段中，将路径设置为 24x24 像素图标。
+    **重要**  此图标必须使用单色和透明像素。
+9.  在“小徽标”字段中，将路径设置为 30x30 像素图标。
+10. 在“宽徽标”字段中，将路径设置为 310x150 像素图标。
 
 ## <a name="register-the-background-task"></a>注册后台任务
 
 
 创建 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 以注册你的任务。
 
-> **注意**从 windows 8.1 开始，后台任务注册参数验证在注册时。 如果有任何注册参数无效，则会返回一个错误。 你的应用必须能够处理后台任务注册失败的情况，例如，使用条件语句检查注册错误，然后使用其他参数值重试失败的注册。
+> **请注意**  从 Windows 8.1，后台任务注册参数进行验证时注册。 如果有任何注册参数无效，则会返回一个错误。 你的应用必须能够处理后台任务注册失败的情况，例如，使用条件语句检查注册错误，然后使用其他参数值重试失败的注册。
  
 
 在应用的主页中，添加 **RegisterBackgroundTask** 方法并在 **OnNavigatedTo** 事件处理程序中进行调用。
@@ -241,16 +241,16 @@ namespace ContosoApp
 ## <a name="debug-the-background-task"></a>调试后台任务
 
 
-若要调试后台任务，请在该任务的 Run 方法中设置一个断点。 在“调试位置”**** 工具栏中，选择你的后台任务。 这将导致系统立即调用 Run 方法。
+若要调试后台任务，请在该任务的 Run 方法中设置一个断点。 在“调试位置”工具栏中，选择你的后台任务。 这将导致系统立即调用 Run 方法。
 
 1.  在该任务的 Run 方法中设置一个断点。
-2.  按 F5 或点击“调试”&gt;“开始调试”**** 以部署和运行该应用。
+2.  按 F5 或点击“调试”&gt;“开始调试”以部署和运行该应用。
 3.  应用启动后，切换回 Visual Studio。
-4.  确保显示“调试位置”**** 工具栏。 该工具栏位于“查看”&gt;“工具栏”**** 菜单上。
-5.  在“调试位置”**** 工具栏上，单击“暂停”**** 下拉菜单，然后选择BlogFeedBackgroundTask****。
+4.  确保显示“调试位置”工具栏。 该工具栏位于“查看”&gt;“工具栏”菜单上。
+5.  在“调试位置”工具栏上，单击“暂停”下拉菜单，然后选择BlogFeedBackgroundTask。
 6.  Visual Studio 会在断点位置暂停执行。
-7.  按 F5 或点击“调试”&gt;“继续”**** 以继续运行该应用。
-8.  按 Shift+F5 或点击“调试”&gt;“停止调试”**** 以停止调试。
+7.  按 F5 或点击“调试”&gt;“继续”以继续运行该应用。
+8.  按 Shift+F5 或点击“调试”&gt;“停止调试”以停止调试。
 9.  返回到“开始”屏幕上的该应用磁贴。 几秒钟后，你的应用磁贴上将会显示磁贴通知。
 
 ## <a name="related-topics"></a>相关主题
@@ -259,8 +259,8 @@ namespace ContosoApp
 * [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 * [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622)
 * [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616)
-* [使用后台任务支持应用](support-your-app-with-background-tasks.md)
-* [磁贴和锁屏提醒指南和清单](https://msdn.microsoft.com/library/windows/apps/hh465403)
+* [支持使用后台任务对应用程序](support-your-app-with-background-tasks.md)
+* [指南和磁贴和徽章的核对清单](https://msdn.microsoft.com/library/windows/apps/hh465403)
 
  
 
