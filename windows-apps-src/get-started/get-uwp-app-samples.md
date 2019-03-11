@@ -7,11 +7,11 @@ keywords: windows 10, uwp, 示例代码, 代码示例
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cdf38a4bd77c4f6affb813c9e1de68463c43100
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049714"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598532"
 ---
 # <a name="get-uwp-app-samples"></a>获取 UWP 应用示例
 
@@ -34,7 +34,7 @@ zip 文件始终具有最新示例。 无需 GitHub 帐户即可下载它。 当
 
 下载 zip 文件之后，在 Visual Studio 中打开示例：
 
-1.  在解压缩存档之前，右键单击它、依次选择**属性** > **取消阻止** > **应用**。 然后，将该存档解压缩到你的计算机上的本地文件夹。
+1.  在解压缩存档之前，右键单击它、依次选择“属性” > “取消阻止” > “应用”。 然后，将该存档解压缩到你的计算机上的本地文件夹。
 
     ![解压缩的存档](images/SamplesUnzip1.png)
 2.  在示例文件夹中，你将看到大量文件夹，每个文件夹都包含 UWP 功能示例。
@@ -45,7 +45,7 @@ zip 文件始终具有最新示例。 无需 GitHub 帐户即可下载它。 当
 
     ![语言文件夹](images/SamplesUnzip3.png)
 
-4.  选择要使用的语言（如用于 C\# 的 CS），你将看到可在 Visual Studio 中打开的 Visual Studio 解决方案文件。
+4.  选择你想要使用等 CS 中供 C 语言\#，你将看到一个 Visual Studio 解决方案文件，可以在 Visual Studio 中打开。
 
     ![VS 解决方案](images/SamplesUnzip4.png)
 

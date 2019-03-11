@@ -8,14 +8,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 050d80be873d81e1db6a31742ceb6cfaf6602aaa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934488"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660062"
 ---
 # <a name="usersmescidsscidclips"></a>/users/me/scids/{scid}/clips
-访问初始上传请求。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+访问一个初始上传请求。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，取决于 URI 相关的函数。
  
   * [URI 参数](#ID4EX)
  
@@ -24,9 +24,9 @@ ms.locfileid: "8934488"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 在任务栏的搜索框中键入| 描述| 
 | --- | --- | --- | 
-| scid| 字符串| 正在访问的资源的服务配置 ID。 必须匹配的身份验证的用户的 SCID。| 
+| scid| 字符串| 正在访问的资源的服务的配置 ID。 必须与匹配身份验证的用户的 SCID。| 
   
 <a id="ID4ETB"></a>
 
@@ -35,7 +35,7 @@ ms.locfileid: "8934488"
 
 [POST (/users/me/scids/{scid}/clips)](uri-usersmescidclipspost.md)
 
-&nbsp;&nbsp;发出初始上载请求。
+&nbsp;&nbsp;发出初始上传请求。
  
 <a id="ID4E4B"></a>
 
@@ -47,6 +47,6 @@ ms.locfileid: "8934488"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[游戏 DVR URI](atoc-reference-dvr.md)
+[游戏 DVR Uri](atoc-reference-dvr.md)
 
    

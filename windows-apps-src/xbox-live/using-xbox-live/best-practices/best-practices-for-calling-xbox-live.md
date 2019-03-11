@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 最佳实践
 ms.localizationpriority: medium
 ms.openlocfilehash: 55e05ef7de2e2981f9f5af86623a8d8413ce2c99
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946841"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613702"
 ---
 # <a name="best-practices-for-calling-xbox-live"></a>调用 Xbox Live 的最佳实践
 
@@ -35,7 +35,7 @@ ms.locfileid: "8946841"
 <br>
 * matchmaking\_service::create\_match\_ticket()
 <br>
-* multiplayer\_service::write\_session()
+* 多玩家\_service::write\_session()
 <br>
 * multiplayer\_service::write\_session\_by\_handle()
 <br>
@@ -58,22 +58,22 @@ ms.locfileid: "8946841"
 对于幂等调用，应该会自动重试这些条件：
 
 * 所有网络错误
-* 401：未授权
-* 408：请求超时
-* 429：请求过多
-* 500：内部错误
-* 502：网关错误
-* 503：服务不可用
-* 504：网关超时
+* 401：未经授权
+* 408：RequestTimeout
+* 429:请求过多
+* 500：InternalError
+* 502:BadGateway
+* 503：ServiceUnavailable
+* 504:GatewayTimeout
 
 
-在 UWP 上，401：对未授权将会特殊处理。 这表示 Xbox Live 身份验证令牌已过期，因此 Xbox 服务 API 将调用操作系统以刷新令牌并作为单次重试执行。
+在 UWP，401:未经授权的是视为的特殊。 这表示 Xbox Live 身份验证令牌已过期，因此 Xbox 服务 API 将调用操作系统以刷新令牌并作为单次重试执行。
 
 执行重试时，在达到“重试后”标头时间之前，最好不好调用此服务。 XSAPI 现在实施此最佳实践。 如果 HTTP 状态代码发生故障且任何 API 返回“重试后”标头，则在重试后时间之前对此相同 API 的其他调用将会立即返回原始错误，且不会使用此服务。
 
-重试调用时，最佳实践是通过随机抖动执行指数后退，以便将负载扩展到该服务。 XSAPI 以 2 秒默认延迟开始，默认延迟使用 xbox\_live\_context\_settings::set\_http\_retry\_delay() 来控制。 这意味着，默认情况下，每次重试以 2、4、8 秒（以此类推）的指数后退，并且将根据响应时间抖动当前与下一次后退值之间的延迟，以便将负载进一步扩展到尝试重试的设备集中。
+重试调用时，最佳实践是通过随机抖动执行指数后退，以便将负载扩展到该服务。 XSAPI 开头 2 秒的默认延迟控制使用 xbox\_live\_上下文\_settings::set\_http\_重试\_delay （)。 这意味着，默认情况下，每次重试以 2、4、8 秒（以此类推）的指数后退，并且将根据响应时间抖动当前与下一次后退值之间的延迟，以便将负载进一步扩展到尝试重试的设备集中。
 
-游戏应控制重试调用所花的时间。 使用 XSAPI 时，开发人员通过使用函数 xbox\_live\_context\_settings::set\_http\_timeout\_window() 直接对此进行控制。 默认情况下，此值设为 20 秒。 将此值设置为 0 秒将有效关闭重试逻辑。 XSAPI 现在还可以根据 http\_timeout\_window() 中所剩的时间来动态调整内部 HTTP 超时。 内部 HTTP 超时控制操作系统在中止之前进行 HTTP 网络操作所花的时间。 除非 http\_timeout\_window() 中所剩的时间至少为 5 秒，否则不会重试调用，这样就提供有足够合理的时间来完成调用。 此规则不适用于第一次调用，因此将 http\_timeout\_window() 设为 0 可接受，并且将发生单次调用。 此逻辑的作用是当 API 调用返回时 http\_timeout\_window() 更具确定性。 如果返回“重试后”标头，则在达到“重试后”时间之前不会进行任何重试。 如果“重试后”时间在 http\_timeout\_window() 之后，则调用将在 http\_timeout\_window() 结束时返回。
+游戏应控制重试调用所花的时间。 使用 XSAPI，开发人员直接控制这可以通过使用进行函数 xbox\_live\_上下文\_settings::set\_http\_超时\_window()。 默认情况下，此值设为 20 秒。 将此值设置为 0 秒将有效关闭重试逻辑。 XSAPI 现在还能动态调整基于多少时间左侧仍保留在 http 上的内部 HTTP 超时\_超时\_window()。 内部 HTTP 超时控制操作系统在中止之前进行 HTTP 网络操作所花的时间。 除非至少为 5 秒留在 http 仍然存在，调用将不会重新\_超时\_window() 提供足够合理的时间才能完成的调用。 此规则不适用于第一次调用，因此，设置 http\_超时\_window() 为 0 是可以接受的并会在单个调用。 此逻辑的效果 http\_超时\_window() API 调用将返回时得更具确定性。 如果返回“重试后”标头，则在达到“重试后”时间之前不会进行任何重试。 如果在"重试间隔"时间后 http\_超时\_window()，然后调用返回的 http 末尾\_超时\_window()。
 
 
 ## <a name="error-handling"></a>错误处理
@@ -92,12 +92,12 @@ ms.locfileid: "8946841"
 
 正确的错误处理程序对于确保游戏在这些条件下正确运行非常重要。
 
-XSAPI 具有两类错误处理模式。 通过 C++/CX、C\# 或 Javascript 使用 WinRT API 时运用一类模式，使用新 C++ API 时运用另一类模式。 有关错误处理最佳实践的完整详细信息，请参阅 Xbox Live 文档页“错误处理”，有关介绍此内容的视频，请参阅 [*Xfest 2015 视频*](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2015.aspx) 中名为 *XSAPI：C++，无异常！* 的访谈。
+XSAPI 具有两类错误处理模式。 一种模式时使用 WinRT Api 从 C + + /cli CX，C\#，或 Javascript 中，并使用新的 c + + Api 时的另一种模式。 完整详细信息的错误处理的最佳实践，请参阅"错误处理"的 Xbox Live 文档页面和此视频，请参阅中讨论[ *Xfest 2015 视频*](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2015.aspx)调用*XSAPI:C + +，存在例外情况 ！*
 
 
 ## <a name="best-calling-patterns"></a>最佳调用模式
 
-### <a name="usebatching-requests"></a>Usebatching 请求
+### <a name="usebatching-requests"></a>使用批处理请求
 
 某些端点支持将一组请求批处理或聚合为单次调用。 例如，借助 Xbox Live 个人资料服务，你可以请求单个用户的个人资料或一组用户的个人资料。 因此，如果你需要一组用户的个人资料，那么，一次调用每个用户个人资料的一个端点或 API 的效率就非常低。 每次调用都会增加大量身份验证开销。 相反，将你需要其相关信息的所有用户一次传递至 API，使得端点可以同时处理所有用户个人资料并返回单个响应。
 
@@ -105,11 +105,11 @@ XSAPI 具有两类错误处理模式。 通过 C++/CX、C\# 或 Javascript 使�
 
 另一个最佳实践是使用实时活动 (RTA) 服务而不是定期轮询。 此服务将会公开一个 Websocket，后者会在服务上的目标资源更改时向客户端发送通知。 RTA 服务将提供与在线状态更改、统计更改、多人游戏会话文档更改和社会关系更改相关的通知。 若要了解客户端感兴趣的信息，客户端必须先通过 Websocket 订阅项目。 这可避免通过轮询服务检测更改，因为系统会告知你项目更改的准确时间。
 
-XSAPI 将 RTA 服务作为客户端可使用的一组订阅 API 公开。 这些 API 每个均具有对应的 \*\_changed\_handler API，它们使用项目更改时将会调用的回调函数。
+XSAPI 将 RTA 服务作为客户端可使用的一组订阅 API 公开。 每个 Api 都具有对应\*\_更改\_处理这项更改时将调用的回调函数中需要的 Api 程序。
 
-* presence\_service::subscribe\_to\_device\_presence\_change
+* 是否存在\_service::subscribe\_到\_设备\_存在\_更改
 <br>
-* presence\_service::subscribe\_to\_title\_presence\_change
+* 是否存在\_service::subscribe\_到\_标题\_存在\_更改
 <br>
 * user\_statistics\_service::subscribe\_to\_statistic\_change
 <br>
@@ -149,14 +149,14 @@ Xbox Live 服务具有适当的节流机制，用于防止单个设备对服务�
 }
 ```
 
-如果你使用 XSAPI，则 API 将返回 http\_status\_429\_too\_many\_requests 错误并设置错误消息以说明与 API 节流方法相关的详细信息。
+如果使用 XSAPI，Api 将返回一个 http\_状态\_429\_太\_许多\_请求错误，并设置要进行详细介绍如何在 API 被限制的错误消息。
 
 ### <a name="debug-asserts"></a>调试断言
 
 使用 XSAPI 时，如果调用在处于开发人员沙盒中时被节流且使用的是调试版本的游戏，则它将断言立即让开发人员知悉已发生节流。 这是为了避免因不正确的编写代码而意外丢失 429 节流错误。 如果你想要在不修复问题代码的情况下禁用这些断言以继续工作，则你可以调用此 API：
 
 
-> xboxLiveContext-&gt;settings()-&gt;disable\_asserts\_for\_xbox\_live\_throttling\_in\_dev\_sandboxes( xbox\_live\_context\_throttle\_setting::this\_code\_needs\_to\_be\_changed\_to\_avoid\_throttling )；
+> xboxLiveContext-&gt;settings （）-&gt;禁用\_断言\_有关\_xbox\_live\_限制\_中\_开发\_沙盒 (xbox\_live\_上下文\_限制\_setting::this\_代码\_需要\_到\_是\_更改\_到\_避免\_限制);
 
 但是，请注意，此 API 不会阻止游戏被节流。 你的游戏仍将被节流。 这只会在使用调试版本时在开发人员沙盒中禁用断言。 
 
@@ -164,7 +164,7 @@ Xbox Live 服务具有适当的节流机制，用于防止单个设备对服务�
 
 另一个选择是记录 Xbox Live 调用的轨迹，然后使用 [Xbox Live 跟踪分器其工具](https://docs.microsoft.com/windows/uwp/xbox-live/tools/analyze-service-calls)分析该轨迹。
 
-若要记录轨迹，你可以使用 Fiddler 记录 .SAZ 文件，或使用 XSAPI 内置轨迹日志记录。 有关如何在 XSAPI 中打开跟踪的更多信息，请参阅 Xbox Live 文档页“分析 Xbox Live 服务调用”。 获得轨迹之后，Xbox Live 跟踪分析器工具将在检测到节流的调用时发出警告。
+若要记录轨迹，你可以使用 Fiddler 记录 .SAZ 文件，或使用 XSAPI 内置轨迹日志记录。 有关如何在 XSAPI 中打开跟踪的更多信息，请参阅 Xbox Live 文档页“分析 Xbox Live 服务调用”。 获得跟踪之后，Xbox Live 跟踪分析器工具将在检测到节流调用时发出警告。
 
 ## <a name="is-xbox-live-up"></a>Xbox Live 是否已启动？
 

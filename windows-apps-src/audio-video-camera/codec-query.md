@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 编解码器, 编码器, 解码器, 查询
 ms.localizationpriority: medium
 ms.openlocfilehash: 4241aad5a01617d6a002c6f5d6da0a4bb1455616
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921571"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593862"
 ---
 # <a name="query-for-codecs-installed-on-a-device"></a>查询设备上安装的编解码器
 可通过 **[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)** 类查询当前设备上安装的编解码器。 文章[支持的编解码器](supported-codecs.md)中给出了 Windows 10 附带的用于不同设备系列的编解码器列表，但是由于用户和应用可以在设备上安装其他编解码器，因此你可能要在运行时查询编解码器支持，以确定当前设备上可用的编解码器。
@@ -26,7 +26,7 @@ CodecQuery API 是 **[Windows.Media.Core](https://docs.microsoft.com/uwp/api/win
 
 [!code-cs[NewCodecQuery](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetNewCodecQuery)]
 
-**[FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery.findallasync)** 方法返回与提供的参数匹配的所有已安装编解码器。 这些参数包括用于指定查询音频和/或视频编解码器的 **[CodecKind](https://docs.microsoft.com/uwp/api/windows.media.core.codeckind)** 值、用于指定查询编码器或解码器的 **[CodecCategory](https://docs.microsoft.com/uwp/api/windows.media.core.codeccategory)** 值以及表示所查询的媒体编码子类型（如 H.264 视频或 MP3 音频）的字符串。
+ **[FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery.findallasync)** 方法返回与提供的参数匹配的所有已安装编解码器。 这些参数包括用于指定查询音频和/或视频编解码器的 **[CodecKind](https://docs.microsoft.com/uwp/api/windows.media.core.codeckind)** 值、用于指定查询编码器或解码器的 **[CodecCategory](https://docs.microsoft.com/uwp/api/windows.media.core.codeccategory)** 值以及表示所查询的媒体编码子类型（如 H.264 视频或 MP3 音频）的字符串。
 
 为子类型值指定空字符串或 null 以返回适用于所有子类型的编解码器。 以下示例列出了设备上安装的所有视频编码器。
 
@@ -45,8 +45,8 @@ CodecQuery API 是 **[Windows.Media.Core](https://docs.microsoft.com/uwp/api/win
 ## <a name="related-topics"></a>相关主题
 
 * [媒体播放](media-playback.md)
-* [使用 MediaCapture 进行照片、视频和音频的基本捕获](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [转换媒体文件代码](transcode-media-files.md)
+* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [媒体文件转码](transcode-media-files.md)
 * [支持的编解码器](supported-codecs.md)
  
 

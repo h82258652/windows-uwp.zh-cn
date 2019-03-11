@@ -7,15 +7,15 @@ ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bc28a4b1cb8afd70ef68a2e297b51ad0a5a0fc5
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046580"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661912"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>教程：在 UWP 应用中支持墨迹
 
-![Surface 触控笔](images/ink/ink-hero-small.png)  
+![图面上的笔](images/ink/ink-hero-small.png)  
 *Surface 触控笔*（可通过 [Microsoft 官方商城](https://aka.ms/purchasesurfacepen)购买）。
 
 此教程分步介绍如何创建一个支持使用 Windows Ink 书写和绘制的基本通用 Windows 平台 (UWP) 应用。 我们使用可以从 GitHub 下载的示例应用中的代码段（参阅[示例代码](#sample-code)），来展示各个步骤所讨论的各种功能和关联的 Windows Ink API（参阅 [Windows Ink 平台的组件](#components-of-the-windows-ink-platform)）。
@@ -37,15 +37,15 @@ ms.locfileid: "9046580"
 
 * 一台运行当前版本 Windows 10 的计算机（或虚拟机）
 * [Visual Studio 2017 和 RS2 SDK](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* 具体取决于你的配置，你可能需要安装[Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet 程序包并在系统设置中启用**开发人员模式**(设置-> 更新 & 安全-适用于开发人员 >->使用开发人员功能）。
+* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* 具体取决于您的配置，您可能需要安装[Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet 包并启用**开发人员模式**中 （设置-> 更新您的系统设置& 安全-> 的开发人员-> 使用开发人员的功能)。
 * 如果你还不熟悉使用 Visual Studio 进行通用 Windows 平台 (UWP) 应用开发，请在开始此教程前浏览一下这些主题：  
     * [准备工作](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
-    * [创建“Hello, world”应用 \(XAML\)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+    * [创建"Hello，world"应用 (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 * **[可选]** 数字笔和显示屏支持使用该数字笔输入的计算机。
 
 > [!NOTE] 
-> 虽然 Windows Ink 可以支持使用鼠标和触摸进行绘制（我们将在此教程的步骤 3 中介绍如何执行操作），以提供最佳的 Windows Ink 体验，但是我们仍建议使用数字笔和显示屏支持使用该数字笔输入的计算机。。
+> 虽然 Windows Ink 可以支持使用鼠标和触摸进行绘制（我们将在此教程的步骤 3 中介绍如何执行操作），以提供最佳的 Windows Ink 体验，但是我们仍建议使用数字笔和显示屏支持使用该数字笔输入的计算机。
 
 ## <a name="sample-code"></a>示例代码
 在本指南中，我们全部使用示例墨迹应用来演示所讨论的概念和功能。
@@ -64,14 +64,14 @@ ms.locfileid: "9046580"
 
 这些对象提供 UWP 应用的大部分墨迹书写体验。
 
-| 组件 | 描述 |
+| Component | 描述 |
 | --- | --- |
-| [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | 一个 XAMLUI 平台控件，默认情况下，接收和显示来自笔的所有输入作为笔划墨迹或擦除笔划进行处理。 |
+| [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | XAML UI 平台控件的默认情况下，接收，并显示为墨笔划或擦除笔画的笔中的所有输入。 |
 | [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) | 代码隐藏对象，与 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件（通过 [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) 属性公开）一起进行实例化。 此对象提供 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 公开的所有默认墨迹书写功能以及适用于其他自定义和个性化的完整 API 集。 |
-| [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | XAMLUI 平台控件，包含可自定义和可扩展按钮可激活关联的[**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)中与墨迹相关功能的集合。 |
+| [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | 包含可自定义且可扩展的激活中关联墨迹相关功能的按钮集合的 XAML UI 平台控件[ **InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)。 |
 | [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer)<br/>我们不在这里介绍此功能，有关详细信息，请参阅[复杂墨迹示例](https://go.microsoft.com/fwlink/p/?LinkID=620314)。 | 支持将笔划墨迹呈现到通用 Windows 应用的指定 Direct2D 设备上下文，而非默认的 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件。 |
 
-## <a name="step-1-run-the-sample"></a>步骤 1：运行示例
+## <a name="step-1-run-the-sample"></a>第 1 步：运行示例
 
 下载 RadialController 示例应用后，确认它在运行：
 1. 在 Visual Studio 中打开示例项目。
@@ -88,7 +88,7 @@ ms.locfileid: "9046580"
 
 好了，现在我们有了基本的 UWP 应用，在此教程接下来的所有部分我们都会用到它。 在以下步骤中，我们添加墨迹功能。
 
-## <a name="step-2-use-inkcanvas-to-support-basic-inking"></a>步骤 2：使用 InkCanvas 支持基本墨迹书写
+## <a name="step-2-use-inkcanvas-to-support-basic-inking"></a>步骤 2：使用 InkCanvas 来支持基本的墨迹书写
 
 也许你可能已注意到，该应用在它的初始窗体中，不允许你使用触控笔进行任何绘制（尽管你可以使用触控笔作为标准指针设备与应用进行交互）。 
 
@@ -101,7 +101,7 @@ ms.locfileid: "9046580"
 
 ### <a name="in-the-sample"></a>在示例中：
 1. 打开 MainPage.xaml.cs 文件。
-2. 找到标有此步骤标题的代码 ("// Step 2: Use InkCanvas to support basic inking")。
+2. 找到与此步骤的标题标记的代码 ("/ / 第 2 步：使用 InkCanvas 来支持基本的墨迹书写"）。
 3. 取消以下各行的注释。 （后续步骤使用的功能需要这些引用）。  
 
 ``` csharp
@@ -112,7 +112,7 @@ ms.locfileid: "9046580"
 ```
 
 4. 打开 MainPage.xaml 文件。
-5. 找到标有此步骤标题的代码 ("\<!-- Step 2: Basic inking with InkCanvas -->")。
+5. 找到与此步骤的标题标记的代码 ("\<！-步骤 2:使用 InkCanvas 基本墨迹书写-->")。
 6. 取消以下行的注释。  
 
 ``` xaml
@@ -125,7 +125,7 @@ ms.locfileid: "9046580"
 
 ![基本墨迹书写](images/ink/ink-app-step1-name-small.png)
 
-## <a name="step-3-support-inking-with-touch-and-mouse"></a>步骤 3：使用触摸和鼠标支持墨迹书写
+## <a name="step-3-support-inking-with-touch-and-mouse"></a>步骤 3:支持使用触摸和鼠标墨迹书写
 
 你将注意到，默认情况下，墨迹仅支持使用触控笔输入。 如果你尝试使用手指、鼠标或触摸板书写或绘画，你会失望。
 
@@ -140,7 +140,7 @@ ms.locfileid: "9046580"
 
 ### <a name="in-the-sample"></a>在示例中：
 1. 打开 MainPage.xaml.cs 文件。
-2. 找到标有此步骤标题的代码 ("// Step 3: Support inking with touch and mouse")。
+2. 找到与此步骤的标题标记的代码 ("/ / 第 3 步：支持使用触摸和鼠标墨迹书写"）。
 3. 取消以下各行的注释。  
 
 ``` csharp
@@ -157,7 +157,7 @@ ms.locfileid: "9046580"
 
 ## <a name="step-4-add-an-ink-toolbar"></a>步骤 4：添加墨迹工具栏
 
-[**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) 是一个 UWP 平台控件，提供激活墨迹相关功能的按钮的可自定义、可扩展集合。 
+[  **InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) 是一个 UWP 平台控件，提供激活墨迹相关功能的按钮的可自定义、可扩展集合。 
 
 默认情况下，[**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) 包含一组基本按钮，让用户可以快速选择触控笔、铅笔、荧光笔或橡皮擦，这些工具均可以与模具（标尺或量角器）一起使用。 触控笔、铅笔和荧光笔按钮各自还提供浮出控件，用于选择墨迹颜色和笔划大小。
 
@@ -165,7 +165,7 @@ ms.locfileid: "9046580"
 
 ### <a name="in-the-sample"></a>在示例中
 1. 打开 MainPage.xaml 文件。
-2. 找到标有此步骤标题的代码 ("\<!-- Step 4: Add an ink toolbar -->")。
+2. 找到与此步骤的标题标记的代码 ("\<！-步骤 4:添加墨迹工具栏-->")。
 3. 取消以下各行的注释。  
 
 ``` xaml
@@ -183,7 +183,7 @@ ms.locfileid: "9046580"
 
 ![来自 Ink 工作区草图板的 InkToolbar](images/ink/ink-inktoolbar-default-small.png)
 
-### <a name="challenge-add-a-custom-button"></a>挑战：添加一个自定义按钮
+### <a name="challenge-add-a-custom-button"></a>挑战：添加自定义按钮
 <table class="wdg-noborder">
 <tr>
 <td>
@@ -213,13 +213,13 @@ ms.locfileid: "9046580"
 > 书写识别可以通过**笔和 Windows Ink** 设置改进：
 > 1. 打开“开始”菜单，然后选择**设置**。
 > 2. 从”设置“屏幕中选择**设备** > **笔和 Windows Ink**。
-> ![来自 Ink 工作区草图板的 InkToolbar](images/ink/ink-settings-small.png)
+> ![从墨迹工作区中的画板 InkToolbar](images/ink/ink-settings-small.png)
 > 3. 选择**了解我的书写**打开**手写个性化**对话框。
-> ![来自 Ink 工作区草图板的 InkToolbar](images/ink/ink-settings-handwritingpersonalization-small.png)
+> ![从墨迹工作区中的画板 InkToolbar](images/ink/ink-settings-handwritingpersonalization-small.png)
 
 ### <a name="in-the-sample"></a>在示例中：
 1. 打开 MainPage.xaml 文件。
-2. 找到标有此步骤标题的代码 ("\<!-- Step 5: Support handwriting recognition -->")。
+2. 找到与此步骤的标题标记的代码 ("\<！-步骤 5:支持手写识别-->")。
 3. 取消以下各行的注释。  
 
 ``` xaml
@@ -236,7 +236,7 @@ ms.locfileid: "9046580"
 ```
 
 4. 打开 MainPage.xaml.cs 文件。
-5. 找到标有此步骤标题的代码 (" Step 5: Support handwriting recognition")。
+5. 找到与此步骤的标题标记的代码 ("步骤 5:支持手写识别"）。
 6. 取消以下各行的注释。  
 
 - 以下是此步骤所需的全局变量。
@@ -281,7 +281,7 @@ ms.locfileid: "9046580"
 7. 再次运行应用，随便写点什么，然后单击**识别文本**按钮
 8. 识别结果显示在按钮旁边
 
-### <a name="challenge-1-international-recognition"></a>挑战 1：国际识别
+### <a name="challenge-1-international-recognition"></a>挑战 1:国际识别
 <table class="wdg-noborder">
 <tr>
 <td>
@@ -301,7 +301,7 @@ Windows Ink 支持对 Windows 支持的很多语言进行文本识别。 每个�
 </tr>
 </table>
 
-### <a name="challenge-2-dynamic-recognition"></a>挑战 2：动态识别
+### <a name="challenge-2-dynamic-recognition"></a>挑战 2:动态识别
 <table class="wdg-noborder">
 <tr>
 <td>
@@ -328,14 +328,14 @@ Windows Ink 支持对 Windows 支持的很多语言进行文本识别。 每个�
 - 圆形
 - 菱形
 - 绘图
-- 椭圆形
+- Ellipse
 - 等边三角形
 - 六边形
 - 等腰三角形
 - 平行四边形
 - 五角形
 - 四边形
-- 矩形
+- Rectangle
 - 直角三角形
 - 正方形
 - 梯形
@@ -347,7 +347,7 @@ Windows Ink 支持对 Windows 支持的很多语言进行文本识别。 每个�
 
 ### <a name="in-the-sample"></a>在示例中：
 1. 打开 MainPage.xaml 文件
-2. 找到标有此步骤标题的代码 ("\<!-- Step 6: Recognize shapes -->")
+2. 找到与此步骤的标题标记的代码 ("\<！-步骤 6:识别形状-->")
 3. 取消此行的注释。  
 
 ``` xaml
@@ -361,7 +361,7 @@ Windows Ink 支持对 Windows 支持的很多语言进行文本识别。 每个�
 ```
 
 4. 打开 MainPage.xaml.cs 文件
-5. 找到标有此步骤标题的代码 ("// Step 6: Recognize shapes")
+5. 找到与此步骤的标题标记的代码 ("/ / 第 6 步：识别形状"）
 6. 取消这些行的注释：  
 
 ``` csharp
@@ -392,7 +392,7 @@ Windows Ink 支持对 Windows 支持的很多语言进行文本识别。 每个�
 ![原始墨迹流程图](images/ink/ink-app-step6-shapereco2-small.png)
 
 
-## <a name="step-7-save-and-load-ink"></a>步骤 7：保存和加载墨迹
+## <a name="step-7-save-and-load-ink"></a>步骤 7：保存并加载手写内容
 
 现在，你已完成了涂鸦，而且很喜欢所看到的效果，但你想过你以后可能会喜欢对一些地方进行调整吗？ 你可以将笔划墨迹保存到一个墨迹序列化格式 (ISF) 文件，每当灵感闪现，你便可以加载这些文件进行编辑。 
 
@@ -402,7 +402,7 @@ ISF 文件是一种基本的 GIF 图像，包含描述笔划墨迹属性和行�
 
 ### <a name="in-the-sample"></a>在示例中：
 1. 打开 MainPage.xaml 文件。
-2. 找到标有此步骤标题的代码 ("\<!-- Step 7: Saving and loading ink -->")。
+2. 找到与此步骤的标题标记的代码 ("\<！-步骤 7:保存和加载手写内容-->")。
 3. 取消以下各行的注释。 
 
 ``` xaml
@@ -419,7 +419,7 @@ ISF 文件是一种基本的 GIF 图像，包含描述笔划墨迹属性和行�
 ```
 
 4. 打开 MainPage.xaml.cs 文件。
-5. 找到标有此步骤标题的代码 ("// Step 7: Save and load ink")。
+5. 找到与此步骤的标题标记的代码 ("/ / 步骤 7:保存并加载手写内容"）。
 6. 取消以下各行的注释。  
 
 ``` csharp
@@ -439,7 +439,7 @@ ISF 文件是一种基本的 GIF 图像，包含描述笔划墨迹属性和行�
 9. 擦除墨迹或重启应用。
 10. 选择**加载**按钮，打开刚刚保存的墨迹文件。
 
-### <a name="challenge-use-the-clipboard-to-copy-and-paste-ink-strokes"></a>挑战：使用剪贴板复制并粘贴笔划墨迹 
+### <a name="challenge-use-the-clipboard-to-copy-and-paste-ink-strokes"></a>挑战：使用剪贴板复制和粘贴墨迹笔画 
 <table class="wdg-noborder">
 <tr>
 <td>
@@ -458,25 +458,25 @@ Windows Ink 还支持从剪贴板复制和粘贴笔划墨迹。
 </tr>
 </table>
 
-## <a name="summary"></a>小结
+## <a name="summary"></a>摘要
 
-恭喜，你已完成了**输入：在 UWP 应用中支持墨迹**教程！ 我们向你展示了在 UWP 应用中支持墨迹所需的基本代码，以及如何提供 Windows Ink 平台支持的一些更加丰富的用户体验。
+祝贺你，你已完成**输入：在 UWP 应用中支持墨迹**教程 ！ 我们向你展示了在 UWP 应用中支持墨迹所需的基本代码，以及如何提供 Windows Ink 平台支持的一些更加丰富的用户体验。
 
 ## <a name="related-articles"></a>相关文章
 
-* [UWP 应用中的笔交互和 Windows Ink](pen-and-stylus-interactions.md)
+* [触控笔交互和 UWP 应用中的 Windows 墨迹](pen-and-stylus-interactions.md)
 
 ### <a name="samples"></a>示例
 
-* [墨迹分析示例（基本）(C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
+* [墨迹分析示例 (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
 * [墨迹手写识别示例 (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
-* [保存并从墨迹序列化格式 (ISF) 文件加载笔划墨迹](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
-* [保存并从剪贴板加载笔划墨迹](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
-* [墨迹工具栏位置和方向示例（基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
-* [墨迹工具栏位置和方向示例（动态）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
+* [保存并从墨迹序列化格式 (ISF) 文件加载的墨迹笔画](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
+* [保存和加载从剪贴板中的墨迹笔画](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
+* [墨迹工具栏位置和方向示例 （基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
+* [墨迹工具栏位置和方向示例 （动态）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
 * [简单墨迹示例 (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [复杂墨迹示例 (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [复杂墨迹示例 （c + +）](https://go.microsoft.com/fwlink/p/?LinkID=620314)
 * [墨迹示例 (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [入门教程：在 UWP 应用中支持墨迹](https://aka.ms/appsample-ink)
-* [Coloring Book 示例](https://aka.ms/cpubsample-coloringbook)
+* [着色通讯簿示例](https://aka.ms/cpubsample-coloringbook)
 * [系列说明示例](https://aka.ms/cpubsample-familynotessample)

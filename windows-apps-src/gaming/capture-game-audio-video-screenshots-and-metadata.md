@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, 游戏, 捕获, 音频, 视频, 元数据
 ms.localizationpriority: medium
 ms.openlocfilehash: c4d4d764395d7f383e9cefcb9d8b1121db098780
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921829"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601932"
 ---
 # <a name="capture-game-audio-video-screenshots-and-metadata"></a>捕获游戏音频、视频、屏幕截图和元数据
 本文介绍如何捕获游戏视频、音频和屏幕截图，以及如何提交元数据。系统将该元数据嵌入到捕获和广播的媒体中，使你的应用和其他人可以创建被同步到游戏事件的动态体验。 
@@ -20,7 +20,7 @@ ms.locfileid: "8921829"
 
 捕获媒体的另外一个方法是使用 **[Windows.Media.AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording)** 命名空间的 API。 如果在设备上启用了捕获，你的应用可以开始捕获游戏，在经过一段时间后，你可以停止捕获，此时媒体被写入文件。 如果用户已启用历史捕获，你也可以通过指定过去的开始时间以及要录制的持续时间来录制已经发生的游戏。 这两种方法都可以生成一个可供你的应用访问的视频文件，并且根据你选择保存文件的位置，也可供用户访问。 本文的中间部分向你演示这些方案的实现。
 
-**[Windows.Media.Capture](https://docs.microsoft.com/uwp/api/windows.media.capture)** 命名空间用于创建元数据的 API，这些元数据描述被捕获或广播的游戏。 它可以包括文本或数字值，并且具有一个标识各数据项的文本标签。 元数据可以表示发生在某一时刻的“事件”，如当用户在赛车游戏中完成一圈时，或者可以表示持续一段时间的“状态”，如用户当前所处的游戏地图。 元数据被写入到缓存中，由系统为你的应用进行分配和管理。 元数据被嵌入到广播流和捕获的视频文件中，包括内置系统捕获或自定义应用捕获方法。 本文的最后部分向你演示如何写入游戏元数据。
+ **[Windows.Media.Capture](https://docs.microsoft.com/uwp/api/windows.media.capture)** 命名空间用于创建元数据的 API，这些元数据描述被捕获或广播的游戏。 它可以包括文本或数字值，并且具有一个标识各数据项的文本标签。 元数据可以表示发生在某一时刻的“事件”，如当用户在赛车游戏中完成一圈时，或者可以表示持续一段时间的“状态”，如用户当前所处的游戏地图。 元数据被写入到缓存中，由系统为你的应用进行分配和管理。 元数据被嵌入到广播流和捕获的视频文件中，包括内置系统捕获或自定义应用捕获方法。 本文的最后部分向你演示如何写入游戏元数据。
 
 > [!NOTE] 
 > 游戏元数据可以嵌入到媒体文件中，而且这些媒体文件有可能不受用户控制而通过网络进行共享，因此你不能在元数据中包括个人身份信息或其他潜在的敏感数据。
@@ -49,15 +49,15 @@ ms.locfileid: "8921829"
 1. 在 Visual Studio 的**解决方案资源管理器**中，展开你的 UWP 项目并右键单击**引用**，然后选择**添加引用...**。 
 2. 展开**通用 Windows** 节点并选择**扩展**。
 3. 在扩展列表中，选中与你的项目的目标版本匹配的**适用于 UWP 的 Windows 桌面扩展**条目旁边的复选框。 对于应用广播功能，版本必须为 1709 或更高版本。
-4. 单击**确定**。
+4. 单击“确定” 。
 
 ## <a name="get-an-instance-of-apprecordingmanager"></a>获取 AppRecordingManager 的一个实例
-**[AppRecordingManager](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager)** 类是用于管理应用录制的中央 API。 通过调用工厂方法 **[GetDefault](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetDefault)** 来获取此类的一个实例。 使用 **Windows.Media.AppRecording** 命名空间中的任何 API 之前，应检查该 API 在当前设备上是否存在。 在操作系统版本早于 Windows 10 版本 1709 的设备上，这些 API 不可用。 也可以不检查具体的操作系统版本，改用 **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** 方法查询 *Windows.Media.AppBroadcasting.AppRecordingContract* 版本 1.0。 如果此协定存在，则录制 API 在该设备上可用。 本文中的示例代码检查 API 一次，然后在执行后续操作前检查 **AppRecordingManager** 是否为空。
+ **[AppRecordingManager](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager)** 类是用于管理应用录制的中央 API。 通过调用工厂方法 **[GetDefault](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetDefault)** 来获取此类的一个实例。 使用 **Windows.Media.AppRecording** 命名空间中的任何 API 之前，应检查该 API 在当前设备上是否存在。 在操作系统版本早于 Windows 10 版本 1709 的设备上，这些 API 不可用。 也可以不检查具体的操作系统版本，改用 **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** 方法查询 *Windows.Media.AppBroadcasting.AppRecordingContract* 版本 1.0。 如果此协定存在，则录制 API 在该设备上可用。 本文中的示例代码检查 API 一次，然后在执行后续操作前检查 **AppRecordingManager** 是否为空。
 
 [!code-cpp[GetAppRecordingManager](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetGetAppRecordingManager)]
 
 ## <a name="determine-if-your-app-can-currently-record"></a>确定你的应用当前是否可以录制
-有几种原因导致你的应用当前可能无法捕获音频或视频，包括当前设备不满足录制所需的硬件要求，或另一个应用当前正在广播。 在开始录制前，你可以检查你的应用当前是否能够录制。 调用 **AppRecordingManager** 对象的 **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** 方法，然后检查返回的 **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** 对象的 **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** 属性。 如果**CanRecord**返回**false**，这意味着你的应用当前无法录制，你可以检查的**[详细信息](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** 属性以确定的原因。 根据具体原因，你可能要向用户显示状态或显示启用应用录制的说明。
+有几种原因导致你的应用当前可能无法捕获音频或视频，包括当前设备不满足录制所需的硬件要求，或另一个应用当前正在广播。 在开始录制前，你可以检查你的应用当前是否能够录制。 调用 **AppRecordingManager** 对象的 **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** 方法，然后检查返回的 **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** 对象的 **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** 属性。 如果**CanRecord**返回**false**，这意味着您的应用程序不能当前记录，你可以检查**[详细信息](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** 属性来确定原因。 根据具体原因，你可能要向用户显示状态或显示启用应用录制的说明。
 
 
 
@@ -97,7 +97,7 @@ ms.locfileid: "8921829"
 [!code-cpp[CallRecordTimeSpanToFile](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetCallRecordTimeSpanToFile)]
 
 ## <a name="save-screenshot-images-to-files"></a>将屏幕截图图像保存到文件
-你的应用可以启动屏幕截图捕获，将应用窗口的当前内容保存到一个图像文件或使用不同的图像编码保存到多个图像文件。 若要指定你希望使用的图像编码，可以创建一个字符串列表，其中每个字符串表示一个图像类型。 **[ImageEncodingSubtypes](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingsubtypes)** 的属性为每个受支持的图像类型提供正确的字符串，如 **MediaEncodingSubtypes.Png** 或 **MediaEncodingSubtypes.JpegXr**。
+你的应用可以启动屏幕截图捕获，将应用窗口的当前内容保存到一个图像文件或使用不同的图像编码保存到多个图像文件。 若要指定你希望使用的图像编码，可以创建一个字符串列表，其中每个字符串表示一个图像类型。  **[ImageEncodingSubtypes](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingsubtypes)** 的属性为每个受支持的图像类型提供正确的字符串，如 **MediaEncodingSubtypes.Png** 或 **MediaEncodingSubtypes.JpegXr**。
 
 通过调用 **AppRecordingManager** 对象的 **[SaveScreenshotToFilesAsync](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.savescreenshottofilesasync)** 方法启动屏幕捕获。 此方法的第一个参数是 **StorageFolder**，即图像文件的保存位置。 第二个参数是文件名前缀，系统会将保存的每个图像类型的扩展名（如“.png”）附加到该前缀后面。
 
@@ -143,7 +143,7 @@ ms.locfileid: "8921829"
 [!code-cpp[RaceComplete](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRaceComplete)]
 
 ### <a name="manage-metadata-cache-storage-limit"></a>管理元数据缓存存储限制
-你使用 **AppCaptureMetadataWriter** 写入的元数据由系统进行缓存，直到该元数据被写入到关联的媒体流。 系统定义每个应用的元数据缓存的大小限制。 一旦达到缓存大小限制，系统将开始清除缓存的元数据。 系统将删除前删除**[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 其优先级的元数据与**[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 优先级值写入的元数据。
+你使用 **AppCaptureMetadataWriter** 写入的元数据由系统进行缓存，直到该元数据被写入到关联的媒体流。 系统定义每个应用的元数据缓存的大小限制。 一旦达到缓存大小限制，系统将开始清除缓存的元数据。 系统将会删除元数据与写入**[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 删除元数据与之前的优先级值**[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 优先级。
 
 在任何时候，你都可以通过调用 **[RemainingStorageBytesAvailable](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.RemainingStorageBytesAvailable)** 的方式检查在你的应用的元数据缓存中可用的字节数。 你可以选择设置你自己的应用定义的阈值，之后可以选择减少你写入到缓存的元数据量。 下面的示例演示了此模式的简单实现。
 
@@ -152,7 +152,7 @@ ms.locfileid: "8921829"
 [!code-cpp[ComboExecuted](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetComboExecuted)]
 
 ### <a name="receive-notifications-when-the-system-purges-metadata"></a>当系统清除元数据时收到通知
-你可以注册以在系统开始清除的注册**[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** 事件处理程序中的为你的应用的元数据时收到通知。
+您可以注册时系统开始您的应用程序的元数据清除由注册的处理程序接收通知**[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** 事件。
 
 [!code-cpp[RegisterMetadataPurged](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRegisterMetadataPurged)]
 

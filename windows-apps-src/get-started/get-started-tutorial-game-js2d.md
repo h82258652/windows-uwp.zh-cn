@@ -1,17 +1,17 @@
 ---
 title: 用 JavaScript 创建 UWP 游戏
-description: 简单的 UWP 游戏的 Microsoft 应用商店、 用 JavaScript 和 CreateJS 编写
+description: 游戏的 Microsoft Store，JavaScript 和 CreateJS 编写的简单 UWP
 ms.date: 02/09/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d10dbf52f0ed01d46f9e5cba83cd14d48bfc88d
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114553"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639172"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>用 JavaScript 创建 UWP 游戏
 
@@ -24,13 +24,13 @@ ms.locfileid: "9114553"
 ## <a name="introduction"></a>简介
 
 
-应用发布到 Microsoft 应用商店意味着你可以将其共享 （或其出售 ！） 与数百万人，许多不同设备上。  
+应用发布到 Microsoft Store 意味着你可以将其共享 （或销售 ！） 以百万计的人，许多不同设备上。  
 
-若要将应用发布到 Microsoft Store，必须将其编写为 UWP （通用 Windows 平台） 应用。 不过，UWP 非常灵活，并且支持多种语言和框架。 为了证明这一点，以下示例为用 JavaScript 编写并且使用了多个 CreateJS 库的简单游戏，它展示了如何绘制子画面、创建游戏循环、支持键盘和鼠标以及适用于不同的屏幕尺寸。
+要将您的应用程序发布到 Microsoft Store 必须被编写为 UWP （通用 Windows 平台） 应用。 不过，UWP 非常灵活，并且支持多种语言和框架。 为了证明这一点，以下示例为用 JavaScript 编写并且使用了多个 CreateJS 库的简单游戏，它展示了如何绘制子画面、创建游戏循环、支持键盘和鼠标以及适用于不同的屏幕尺寸。
 
 此项目由使用 Visual Studio 的 JavaScript 创建。 除了一些细微差别外，还可将其托管在网站上，或者可对其进行调整以适应其他平台。 
 
-**注意：** 这不是完整 （或好 ！） 游戏;它旨在展示使用 JavaScript 和第三方库将应用发布到 Microsoft 应用商店的准备工作。
+**注意：** 这是不完整 （或很好 ！） 的游戏;它旨在演示如何使用 JavaScript 和第三方库来准备好将发布到 Microsoft Store 将应用程序。
 
 
 ## <a name="requirements"></a>要求
@@ -43,7 +43,7 @@ ms.locfileid: "9114553"
 此项目使用 CreateJS JavaScript 框架。 CreateJS 是一组使用 MIT 许可证发布的免费工具，设计用于轻松创建基于子画面的游戏。 此项目已包含 CreateJS 库（在解决方案资源管理器视图中查找 *js/easeljs-0.8.2.min.js* 和 *js/preloadjs-0.6.2.min.js*）。 有关 CreateJS 的更多信息，请查看 [CreateJS 主页](https://www.createjs.com)。
 
 
-## <a name="getting-started"></a>入门
+## <a name="getting-started"></a>即刻体验
 
 此应用的完整源代码存储于 [GitHub](https://github.com/Microsoft/Windows-appsample-get-started-js2d)中。
 
@@ -57,21 +57,21 @@ ms.locfileid: "9114553"
 
 * Images/ - 包含 UWP 应用所需的各种图标、游戏的 SpriteSheet 和某些其他位图的文件夹。
 * js/ - 包含 JavaScript 文件的文件夹。 main.js 文件为我们的游戏，其他文件为 EaselJS 和 PreloadJS。
-* index.html - 包含用于托管游戏图形的画布对象的网页。.
+* index.html - 包含用于托管游戏图形的画布对象的网页.
 
 现在，你可以运行此游戏！
 
-按 **F5** 即可开始运行此应用。 你应看到一个打开的窗口，我们熟悉的恐龙站立于旖旎风光 （如果稀疏） 中。 现在，我们将测试该应用、解释某些重要部分并在进行的过程中探索其他功能。
+按 **F5** 即可开始运行此应用。 应会看到打开一个窗口，并在田园 （对于稀疏） 环境中我们熟悉的恐龙优势地位。 现在，我们将测试该应用、解释某些重要部分并在进行的过程中探索其他功能。
 
 ![只是一个普通的恐龙，一只忍者神猫坐在其背部](images/JS2D_3.png)
 
-**注释：** 出现了错误？ 请确保已安装 Visual Studio 及 Web 支持。 可以通过新建项目来检查是否支持 JavaScript，你需要重新安装 Visual Studio 并选中 *Microsoft Web 开发人员工具*复选框。
+**注意：** 出现了错误？ 请确保已安装 Visual Studio 及 Web 支持。 可以通过新建项目来检查是否支持 JavaScript，你需要重新安装 Visual Studio 并选中 *Microsoft Web 开发人员工具*复选框。
 
 ## <a name="walkthough"></a>操作实例
 
-如果通过 F5 开始游戏，则可能会想知道发生了什么。 答案是"并不多"，因为大量的代码是当前被注释掉。到目前为止，你将看到所有是只有恐龙以及按空格键所请求。 
+如果通过 F5 开始游戏，则可能会想知道发生了什么。 答案是“并不多”，因为许多代码当前已被注释掉。到目前为止，你所能看到的只有恐龙以及按空格键无效的请求。 
 
-### <a name="1-setting-the-stage"></a>1. 设置舞台
+### <a name="1-setting-the-stage"></a>1.阶段设置
 
 如果打开并测试 **index.html**，则你将会看到它几乎是空的。 此文件为包含我们应用的默认网页，并且它只负责两项重要工作。 第一，它包括适用于 **EaselJS** 和 **PreloadJS** CreateJS 库的 JavaScript 源代码以及 **main.js**（我们自己的源代码文件）。
 第二，它可定义&lt;画布&gt;标签，我们所有的图形均会显示在画布中。 &lt;画布&gt;是标准的 HTML5 文档组件。 我们将其命名为游戏画布，从而使 **main.js** 中的代码可以引用它。 顺便说一下，如果你要从头开始编写自己的 JavaScript 游戏，则你还需要将 **EaselJS** 和 **PreloadJS** 文件复制到你的解决方案，然后再创建画布对象。
@@ -86,9 +86,9 @@ EaselJS 可以为我们提供一个被称为*舞台*的新对象。 该舞台链
 
 现在就是打开 **main.js** 的好时机。
 
-### <a name="2-loading-the-bitmaps"></a>2. 加载位图
+### <a name="2-loading-the-bitmaps"></a>2.正在加载位图
 
-EaselJS 可以为我们提供几种不同类型的图形对象。 我们可以创建简单的形状（如用于天空的蓝色矩形）或位图（例如我们将要添加的云彩）、文本对象和子画面。 子画面使用 (SpriteSheet) [https://createjs.com/docs/easeljs/classes/SpriteSheet.html]: 一个包含多个图像的单个位图。 例如，我们使用此 SpriteSheet 来存储恐龙动画的不同帧：
+EaselJS 可以为我们提供几种不同类型的图形对象。 我们可以创建简单的形状（如用于天空的蓝色矩形）或位图（例如我们将要添加的云彩）、文本对象和子画面。 Sprite 使用 (SpriteSheet) [https://createjs.com/docs/easeljs/classes/SpriteSheet.html]: 单个位图包含多个映像。 例如，我们使用此 SpriteSheet 来存储恐龙动画的不同帧：
 
 ![行走的恐龙的子画面表](images/JS2D_4.png)
 
@@ -124,7 +124,7 @@ EaselJS 可以为我们提供几种不同类型的图形对象。 我们可以�
 
 查看 **main.js**，直到你找到 **init()** 函数。 游戏开始时将会调用此函数，并且我们将通过此函数来设置所有图形对象。
 
-找到以下代码，然后将注释 (\\) 从引用此云彩图像的行中删除。
+查找以下代码，并删除注释 (\\) 从行引用云映像。
 
 ```
  manifest = [
@@ -160,14 +160,13 @@ EaselJS 可以为我们提供几种不同类型的图形对象。 我们可以�
 
 再次运行此应用（按 F5），你将会看到显示出来的云彩。
 
-### <a name="3-moving-the-clouds"></a>3. 移动云彩
+### <a name="3-moving-the-clouds"></a>3.移动云
 
 现在，我们将让云彩移动。 实际上，移动云彩以及任何对象的秘密在于设置 [ticker](https://www.createjs.com/docs/easeljs/classes/Ticker.html) 函数，该函数将在一秒内被反复调用多次。 每调用一次该函数，就会在略有不同的位置重新绘制图像。
 
 <p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">请参阅 Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - 为云彩添加动画效果</a>，Microsoft Edge 文档 (<a href="https://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>)（位于 <a href="https://codepen.io">CodePen</a>）。</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
- 
-执行该操作的代码已位于 **main.js** 文件中，由 CreateJS 库 EaselJS 提供。 显示如下：
+  若要执行此操作的代码已在**main.js** CreateJS 库，EaselJS 由提供的文件。 它如下所示：
 
 ```
     // Set up the game loop and keyboard handler.
@@ -203,7 +202,7 @@ function animate_clouds()
 
 如果现在运行此应用，则你将会看到云彩已开始飘动。 我们终于完成了云彩移动！
 
-### <a name="4-adding-keyboard-and-mouse-input"></a>4. 添加键盘和鼠标输入
+### <a name="4-adding-keyboard-and-mouse-input"></a>4.添加键盘和鼠标输入
 
 一款无法与之互动的游戏不能被称为真正的游戏。 因此，我们需要使玩家能够使用键盘或鼠标进行操作。 返回 **loadingComplete()** 函数，你将会看到以下内容。 删除注释。
 
@@ -240,7 +239,7 @@ function animate_clouds()
 
 至此，我们主要的游戏技巧介绍完毕。
 
-### <a name="5-resizing-support"></a>5. 调整大小支持
+### <a name="5-resizing-support"></a>5.调整大小的支持
 
 我们马上就快讲完了！ 但在结束之前，我们还需要解决一个恼人的问题。 游戏正在进行时，尝试调整窗口大小。 你将会看到游戏会快速变得非常混乱，因为各对象不再位于其预期的位置。 我们可通过以下方法解决此问题：创建一个处理程序，用于在玩家调整窗口大小或将设备从横向旋转为纵向时生成窗口大小调整事件。
 
@@ -255,9 +254,9 @@ function animate_clouds()
 
 如果再次运行此应用，则现在你应该可以调整窗口大小并获得更好的效果。
 
-## <a name="publishing-to-the-microsoft-store"></a>发布到 Microsoft 应用商店
+## <a name="publishing-to-the-microsoft-store"></a>发布到 Microsoft Store
 
-现在你拥有一个 UWP 应用，就可以将其发布到 Microsoft Store （假设已先了改进 ！） 
+现在你拥有的 UWP 应用，则可以将其发布到 Microsoft Store （假设做出的改进首先 ！） 
 
 此流程包含几个步骤。
 
@@ -265,7 +264,7 @@ function animate_clouds()
 2. 你必须使用应用提交[清单](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。
 3. 必须将此应用提交以进行[认证](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)。
 
-有关详细信息，请参阅[发布你的 UWP 应用](https://developer.microsoft.com/en-us/store/publish-apps)。
+有关更多详细信息，请参阅[UWP 应用程序发布](https://developer.microsoft.com/en-us/store/publish-apps)。
 
 ## <a name="suggestions-for-other-features"></a>其他功能建议。
 
@@ -277,7 +276,7 @@ function animate_clouds()
 
 ## <a name="other-links"></a>其他链接
 
-* [使用 JavaScript 制作一款简单的 Windows 游戏](https://www.sitepoint.com/creating-a-simple-windows-8-game-with-javascript-game-basics-createjseaseljs/)
-* [选取一款 HTML/JS 游戏引擎](https://html5gameengine.com/)
-* [在基于 JS 的游戏中使用 CreateJS](https://blogs.msdn.microsoft.com/cbowen/2012/09/19/using-createjs-in-your-javascript-based-windows-8-game/)
-* [LinkedIn Learning 上的游戏开发课程](https://www.linkedin.com/learning/topics/game-development)
+* [请使用 JavaScript 的一个简单 Windows 游戏](https://www.sitepoint.com/creating-a-simple-windows-8-game-with-javascript-game-basics-createjseaseljs/)
+* [选择 HTML/JS 游戏引擎](https://html5gameengine.com/)
+* [在你 JS 中使用 CreateJS 基于游戏](https://blogs.msdn.microsoft.com/cbowen/2012/09/19/using-createjs-in-your-javascript-based-windows-8-game/)
+* [LinkedIn Learning 的游戏开发课程](https://www.linkedin.com/learning/topics/game-development)

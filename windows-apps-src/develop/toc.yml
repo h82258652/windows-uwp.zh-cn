@@ -148,7 +148,7 @@ items:
     href: ../audio-video-camera/screen-capture.md
 - name: 通信
   items:
-  - name: 应用间通信
+  - name: 应用到应用的通信
     href: ../app-to-app/index.md
     items:
     - name: 共享数据
@@ -172,7 +172,7 @@ items:
       href: ../networking/websockets.md
     - name: HttpClient
       href: ../networking/httpclient.md
-    - name: RSS/Atom 订阅源
+    - name: RSS/Atom 源
       href: ../networking/web-feeds.md
     - name: 后台传输
       href: ../networking/background-transfers.md
@@ -189,15 +189,15 @@ items:
       href: ../app-resources/how-rms-matches-lang-tags.md
     - name: 定制语言、比例、对比度等的资源
       href: ../app-resources/tailor-resources-lang-scale-contrast.md
-    - name: 本地化 UI 和应用包清单中的字符串
+    - name: 对 UI 和应用包清单中的字符串进行本地化
       href: ../app-resources/localize-strings-ui-manifest.md
-    - name: 加载为比例、主题、对比度等定制的图像和资产
+    - name: 加载在比例、主题、对比度等方面进行了定制的图像和资产
       href: ../app-resources/images-tailored-for-scale-theme-contrast.md
     - name: URI 方案
       href: ../app-resources/uri-schemes.md
-    - name: 指定你的应用使用的默认资源
+    - name: 指定应用使用的默认资源
       href: ../app-resources/specify-default-resources-installed.md
-    - name: 将资源生成到你的应用包而非资源包
+    - name: 将资源构建到应用包而非资源包中
       href: ../app-resources/build-resources-into-app-package.md
     - name: PRI API 和自定义生成系统
       href: ../app-resources/pri-apis-custom-build-systems.md
@@ -210,9 +210,9 @@ items:
       href: ../app-resources/makepri-exe-command-options.md
     - name: MakePri.exe 配置文件
       href: ../app-resources/makepri-exe-configuration.md
-    - name: MakePri.exe 特定格式索引器
+    - name: MakePri.exe 格式特定索引器
       href: ../app-resources/makepri-exe-format-specific-indexers.md
-    - name: 迁移传统资源
+    - name: 迁移旧资源
       href: ../app-resources/using-mrt-for-converted-desktop-apps-and-games.md
   - name: 数据访问
     href: ../data-access/index.md
@@ -245,9 +245,9 @@ items:
       href: ../files/quickstart-listing-files-and-folders.md
     - name: 创建、写入和读取文件
       href: ../files/quickstart-reading-and-writing-files.md
-    - name: 用于向文件写入的最佳做法
+    - name: 向文件进行写入的最佳做法
       href: ../files/best-practices-for-writing-to-files.md
-    - name: 获得文件属性
+    - name: 获取文件属性
       href: ../files/quickstart-getting-file-properties.md
     - name: 使用选取器打开文件和文件夹
       href: ../files/quickstart-using-file-and-folder-pickers.md
@@ -263,13 +263,13 @@ items:
       href: ../files/thumbnails.md
     - name: 跟踪最近使用的文件和文件夹
       href: ../files/how-to-track-recently-used-files-and-folders.md
-    - name: 后台跟踪文件系统更改
+    - name: 在后台跟踪文件系统更改
       href: ../files/change-tracking-filesystem.md
     - name: 访问 SD 卡
       href: ../files/access-the-sd-card.md
     - name: 文件访问权限
       href: ../files/file-access-permissions.md
-    - name: 快速访问 UWP 中的文件属性
+    - name: 在 UWP 中快速访问文件属性
       href: ../files/fast-file-properties.md
   - name: 机器学习
     href: https://docs.microsoft.com/windows/ai/
@@ -284,7 +284,7 @@ items:
       href: ../debug-test-perf/deploying-and-debugging-uwp-apps.md
     - name: 适用于 PLM 的测试和调试工具
       href: ../debug-test-perf/testing-debugging-plm.md
-    - name: 使用适用于 Windows10 的 Microsoft 模拟器进行测试
+    - name: 使用适用于 Windows 10 的 Microsoft 模拟器进行测试
       href: ../debug-test-perf/test-with-the-emulator.md
     - name: 使用 Visual Studio 测试 Surface Hub 应用
       href: ../debug-test-perf/test-surface-hub-apps-using-visual-studio.md
@@ -301,13 +301,13 @@ items:
         href: ../debug-test-perf/device-portal-mobile.md
       - name: 适用于 Xbox 的 Device Portal
         href: ../debug-test-perf/device-portal-xbox.md
-      - name: 适用于 Hololens 的 Device Portal
+      - name: 适用于 Hololens 的设备门户
         href: ../debug-test-perf/device-portal-hololens.md
       - name: Device Portal 核心 API
         href: ../debug-test-perf/device-portal-api-core.md
-      - name: 为 Device Portal 编写自定义插件
+      - name: 为设备门户编写自定义插件
         href: ../debug-test-perf/device-portal-plugin.md
-      - name: 使用自定义的 SSL 证书预配 Device Portal
+      - name: 使用自定义的 SSL 证书预配设备门户
         href: ../debug-test-perf/device-portal-ssl.md
     - name: Windows 应用认证工具包
       href: ../debug-test-perf/windows-app-certification-kit.md
@@ -328,9 +328,9 @@ items:
         href: ../debug-test-perf/optimize-gridview-and-listview.md
       - name: ListView 和 GridView 数据虚拟化
         href: ../debug-test-perf/listview-and-gridview-data-optimization.md
-      - name: 提高垃圾回收性能
+      - name: 改进垃圾回收性能
         href: ../debug-test-perf/improve-garbage-collection-performance.md
-      - name: 保持 UI 线程处于响应状态
+      - name: 保持 UI 线程有响应
         href: ../debug-test-perf/keep-the-ui-thread-responsive.md
       - name: 优化 XAML 标记
         href: ../debug-test-perf/optimize-xaml-loading.md
@@ -338,7 +338,7 @@ items:
         href: ../debug-test-perf/optimize-your-xaml-layout.md
       - name: MVVM 和语言性能提示
         href: ../debug-test-perf/mvvm-performance-tips.md
-      - name: 应用的启动性能的最佳实践
+      - name: 应用启动性能的最佳实践
         href: ../debug-test-perf/best-practices-for-your-app-s-startup-performance.md
       - name: 优化动画、媒体和图像
         href: ../debug-test-perf/optimize-animations-and-media.md
@@ -369,7 +369,7 @@ items:
         href: ../monetize/get-license-info-for-apps-and-add-ons.md
       - name: 支持应用内购买应用和加载项
         href: ../monetize/enable-in-app-purchases-of-apps-and-add-ons.md
-      - name: 启用易耗型加载项购买
+      - name: 支持购买可消耗加载项
         href: ../monetize/enable-consumable-add-on-purchases.md
       - name: 为应用启用订阅加载项
         href: ../monetize/enable-subscription-add-ons-for-your-app.md
@@ -410,14 +410,14 @@ items:
             href: ../monetize/adcontrol-in-xaml-and--net.md
           - name: HTML 5 和 JavaScript 中的 AdControl
             href: ../monetize/adcontrol-in-html-5-and-javascript.md
-          - name: 受支持的横幅广告大小
+          - name: 支持的横幅广告大小
             href: ../monetize/supported-ad-sizes-for-banner-ads.md
         - name: 间隙广告
           href: ../monetize/interstitial-ads.md
           items:
-          - name: C# 间隙广告示例代码
+          - name: C# 中的间隙广告示例代码
             href: ../monetize/interstitial-ad-sample-code-in-c.md
-          - name: JavaScript 间隙广告示例代码
+          - name: JavaScript 中的间隙广告示例代码
             href: ../monetize/interstitial-ad-sample-code-in-javascript.md
         - name: 本机广告
           href: ../monetize/native-ads.md
@@ -427,7 +427,7 @@ items:
         href: ../monetize/set-up-ad-units-in-your-app.md
       - name: Microsoft 广告中介服务
         href: ../monetize/ad-mediation-service.md
-      - name: 最佳实践
+      - name: 最佳做法
         href: ../monetize/best-practices-for-ads-in-apps.md
         items:
         - name: UI 和用户体验指南
@@ -460,7 +460,7 @@ items:
         items:
         - name: 在合作伙伴中心中创建实验项目
           href: ../monetize/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md
-        - name: 为实验编写应用代码
+        - name: 针对实验为你的应用编码
           href: ../monetize/code-your-experiment-in-your-app.md
         - name: 在合作伙伴中心中定义实验
           href: ../monetize/define-your-experiment-in-the-dev-center-dashboard.md
@@ -519,9 +519,9 @@ items:
               href: ../monetize/get-the-stack-trace-for-an-error-in-your-app.md
             - name: 下载应用中错误的 CAB 文件
               href: ../monetize/download-the-cab-file-for-an-error-in-your-app.md
-          - name: 获取广告效果数据
+          - name: 获取广告性能数据
             href: ../monetize/get-ad-performance-data.md
-          - name: 获取广告活动效果数据
+          - name: 获取广告市场活动性能数据
             href: ../monetize/get-ad-campaign-performance-data.md
         - name: 桌面应用
           items:
@@ -579,7 +579,7 @@ items:
           href: ../monetize/get-response-info-for-app-reviews.md
         - name: 提交评价回复
           href: ../monetize/submit-responses-to-app-reviews.md
-      - name: 投放广告活动
+      - name: 举办广告活动
         href: ../monetize/run-ad-campaigns-using-windows-store-services.md
         items:
         - name: 管理广告活动
@@ -710,7 +710,7 @@ items:
         items:
         - name: 查询产品
           href: ../monetize/query-for-products.md
-        - name: 将可消费产品报告为已完成
+        - name: 将可消费产品报告为已完成。
           href: ../monetize/report-consumable-products-as-fulfilled.md
         - name: 授予免费产品
           href: ../monetize/grant-free-products.md
@@ -748,7 +748,7 @@ items:
         href: ../packaging/flat-bundles.md
       - name: 资产包简介
         href: ../packaging/asset-packages.md
-      - name: 使用包布局创建包
+      - name: 使用打包布局创建包
         href: ../packaging/packaging-layout.md
     - name: 应用包体系结构
       href: ../packaging/device-architecture.md
@@ -792,13 +792,13 @@ items:
   - name: C++/WinRT
     href: ../cpp-and-winrt-apis/index.md
     items:
-    - name: 介绍
+    - name: 简介
       href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
-    - name: 入门
+    - name: 立即开始行动
       href: ../cpp-and-winrt-apis/get-started.md
-    - name: 最近更新
+    - name: 新增功能
       href: ../cpp-and-winrt-apis/news.md
-    - name: 常见问题
+    - name: 常见问题解答
       href: ../cpp-and-winrt-apis/faq.md
     - name: 疑难解答
       href: ../cpp-and-winrt-apis/troubleshooting.md
@@ -820,7 +820,7 @@ items:
       href: ../cpp-and-winrt-apis/handle-events.md
     - name: 创作事件
       href: ../cpp-and-winrt-apis/author-events.md
-    - name: 集锦
+    - name: 集合
       href: ../cpp-and-winrt-apis/collections.md
     - name: 并发和异步操作
       href: ../cpp-and-winrt-apis/concurrency.md
@@ -890,9 +890,9 @@ items:
         href: ../security/data-protection.md
       - name: MAC、哈希以及签名
         href: ../security/macs-hashes-and-signatures.md
-      - name: 有关加密的出口限制
+      - name: 有关加密的导出限制
         href: ../security/export-restrictions-on-cryptography.md
-      - name: 加密的常见任务
+      - name: 常见的加密任务
         href: ../security/common-cryptography-tasks.md
         items:
         - name: 创建随机数
@@ -961,9 +961,9 @@ items:
     items:
     - name: 使用 C++/CX 创建 Windows 运行时组件
       href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
-    - name: 演练：用 C++/CX 创建一个基本的 Windows 运行时组件，然后从 JavaScript 或 C# 中调用该组件
+    - name: 操作实例：使用 C++/CX 创建一个基本 Windows 运行时组件并通过 JavaScript 或 C# 调用此组件
       href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
-    - name: 在 C# 和 Visual Basic 中创建 Windows 运行时组件
+    - name: 使用 C# 和 Visual Basic 创建 Windows 运行时组件
       href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
       items:
       - name: Windows 运行时组件中的自定义事件和事件访问器
@@ -974,9 +974,9 @@ items:
         href: ../winrt-components/diagnosing-windows-runtime-component-error-conditions.md
       - name: 分配托管的 Windows 运行时组件
         href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
-      - name: Windows 运行时类型的.NET framework 映射
+      - name: Windows 运行时类型的 .NET Framework 映射
         href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
-    - name: 演练：创建简单的 Windows 运行时组件并通过 JavaScript 调用它
+    - name: 操作实例：创建简单的 Windows 运行时组件并通过 JavaScript 调用它
       href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
     - name: 在 Windows 运行时组件中引发事件
       href: ../winrt-components/raising-events-in-windows-runtime-components.md
@@ -1011,7 +1011,7 @@ items:
         href: ../xaml-platform/x-deferloadstrategy-attribute.md
       - name: x:FieldModifier 属性
         href: ../xaml-platform/x-fieldmodifier-attribute.md
-      - name: x:Key 属性
+      - name: x:Key 特性
         href: ../xaml-platform/x-key-attribute.md
       - name: x:Load 属性
         href: ../xaml-platform/x-load-attribute.md
@@ -1126,7 +1126,7 @@ items:
   - name: 服务点
     href: ../devices-sensors/point-of-service.md
     items:
-    - name: 基础知识
+    - name: 入门
       href: ../devices-sensors/pos-basics.md
       items:
       - name: 功能声明
@@ -1139,7 +1139,7 @@ items:
         href: ../devices-sensors/pos-basics-claim.md
       - name: 与他人共享外设
         href: ../devices-sensors/pos-basics-sharing.md
-      - name: 开始使用
+      - name: 即刻体验
         href: ../devices-sensors/pos-get-started.md
     - name: 硬件支持
       href: ../devices-sensors/pos-device-support.md
@@ -1159,7 +1159,7 @@ items:
         items:
         - name: 系统要求
           href: ../devices-sensors/pos-camerabarcode-system-requirements.md
-        - name: 入门
+        - name: 即刻体验
           href: ../devices-sensors/pos-camerabarcode-get-started.md
         - name: 托管相机预览
           href: ../devices-sensors/pos-camerabarcode-hosting-preview.md
@@ -1201,7 +1201,7 @@ items:
     items:
     - name: RFCOMM
       href: ../devices-sensors/send-or-receive-files-with-rfcomm.md
-    - name: 低能耗蓝牙
+    - name: 低耗电蓝牙
       href: ../devices-sensors/bluetooth-low-energy-overview.md
       items:
       - name: GATT 客户端
@@ -1241,7 +1241,7 @@ items:
   items:
   - name: 概述
     href: ../porting/index.md
-  - name: 从 Windows Phone Silverlight 转到 UWP
+  - name: 从 Windows Phone Silverlight 移动到 UWP
     href: ../porting/wpsl-to-uwp-root.md
     items:
     - name: 命名空间和类映射
@@ -1284,22 +1284,22 @@ items:
     items:
     - name: 准备打包
       href: ../porting/desktop-to-uwp-prepare.md
-    - name: 使用 Desktop App Converter 打包
+    - name: 使用 Desktop App Converter 进行打包
       href: ../porting/desktop-to-uwp-run-desktop-app-converter.md
-    - name: 使用 Visual Studio 打包
+    - name: 使用 Visual Studio 进行打包
       href: ../porting/desktop-to-uwp-packaging-dot-net.md
     - name: 手动打包
       href: ../porting/desktop-to-uwp-manual-conversion.md
-    - name: 使用 Windows 10 集成
+    - name: 与 Windows 10 集成
       href: ../porting/desktop-to-uwp-extensions.md
-    - name: 面向 Windows 10 的增强
+    - name: 针对 Windows 10 进行增强
       href: ../porting/desktop-to-uwp-enhance.md
       items:
       - name: 可用 UWP API
         href: ../porting/desktop-to-uwp-supported-api.md
       - name: 使用本机映像优化应用二进制文件
         href: ../porting/desktop-to-uwp-r2r.md
-    - name: 用 UWP 扩展
+    - name: 使用 UWP 进行扩展
       href: ../porting/desktop-to-uwp-extend.md
     - name: 运行、调试和测试
       href: ../porting/desktop-to-uwp-debug.md
@@ -1308,37 +1308,37 @@ items:
         href: ../porting/desktop-to-uwp-test-windows-s.md
     - name: 应用运行时修复
       href: ../porting/package-support-framework.md
-    - name: 分发
+    - name: 分配
       href: ../porting/desktop-to-uwp-distribute.md
     - name: 幕后
       href: ../porting/desktop-to-uwp-behind-the-scenes.md
     - name: 已知问题
       href: ../porting/desktop-to-uwp-known-issues.md
-  - name: 在桌面应用和 UWP 应用之间共享代码
+  - name: 在桌面应用和 UWP 之间共享代码
     href: ../porting/desktop-to-uwp-migrate.md
-  - name: 面向 Android 和 iOS 开发人员的 Windows 应用概念映射
+  - name: 适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
     href: ../porting/android-ios-uwp-map.md
   - name: 从 iOS 移动到 UWP
     href: ../porting/ios-to-uwp-root.md
     items:
     - name: 选择一种方法进行 iOS 和 UWP 应用开发
       href: ../porting/selecting-an-approach-to-ios-and-uwp-app-development.md
-    - name: iOS 开发人员 UWP 入门
+    - name: 适用于 iOS 开发人员的 UWP 入门
       href: ../porting/getting-started-with-uwp-for-ios-developers.md
       items:
       - name: 入门：创建项目
         href: ../porting/getting-started-creating-a-project.md
-      - name: 入门：选择一种编程语言
+      - name: 入门：选择编程语言
         href: ../porting/getting-started-choosing-a-programming-language.md
       - name: 入门：熟悉 Visual Studio 环境
         href: ../porting/getting-started-getting-around-in-visual-studio.md
-      - name: 入门：常见控件
+      - name: 入门：常用控件
         href: ../porting/getting-started-common-controls.md
       - name: 入门：导航
         href: ../porting/getting-started-navigation.md
       - name: 入门：动画
         href: ../porting/getting-started-animation.md
-      - name: 入门：下一步是什么？
+      - name: 入门：接下来怎么做？
         href: ../porting/getting-started-what-next.md
     - name: 在 Mac 上设置 Windows 10
       href: ../porting/setting-up-your-mac-with-windows-10.md
@@ -1356,7 +1356,7 @@ items:
   - name: 基于 ARM 的 Windows 10
     href: ../porting/apps-on-arm.md
     items:
-    - name: x86 模拟如何在 ARM 上运行
+    - name: x86 仿真在 ARM 上的工作原理
       href: ../porting/apps-on-arm-x86-emulation.md
     - name: x86 桌面应用疑难解答
       href: ../porting/apps-on-arm-troubleshooting-x86.md
@@ -1401,7 +1401,7 @@ items:
         href: ../launch-resume/launch-ringtone-picker.md
       - name: 启动 Windows 设置应用
         href: ../launch-resume/launch-settings-app.md
-      - name: 打开 Microsoft Store 应用
+      - name: 启动 Microsoft Store 应用
         href: ../launch-resume/launch-store-app.md
       - name: 启动 Windows 地图应用
         href: ../launch-resume/launch-maps-app.md
@@ -1429,7 +1429,7 @@ items:
         href: ../launch-resume/how-to-create-and-consume-an-app-service.md
       - name: 将应用服务转换为与其主机应用在同一个进程中运行
         href: ../launch-resume/convert-app-service-in-process.md
-      - name: 用服务、扩展和包扩展应用
+      - name: 使用服务、扩展和包扩展你的应用
         href: ../launch-resume/extend-your-app-with-services-extensions-packages.md
       - name: 创建和托管应用扩展
         href: ../launch-resume/how-to-create-an-extension.md
@@ -1470,11 +1470,11 @@ items:
         href: ../launch-resume/set-conditions-for-running-a-background-task.md
       - name: 从你的应用触发后台任务
         href: ../launch-resume/trigger-background-task-from-app.md
-      - name: 通过后台任务更新动态磁贴
+      - name: 使用后台任务更新动态磁贴
         href: ../launch-resume/update-a-live-tile-from-a-background-task.md
       - name: 使用维护触发器
         href: ../launch-resume/use-a-maintenance-trigger.md
-    - name: 连接的应用和设备（项目“Rome”）
+    - name: 连接的应用和设备（项目 Rome）
       href: ../launch-resume/connected-apps-and-devices.md
       items:
       - name: 发现远程设备
@@ -1496,7 +1496,7 @@ items:
         href: ../launch-resume/add-a-splash-screen.md
       - name: 延长显示初始屏幕的时间
         href: ../launch-resume/create-a-customized-splash-screen.md
-  - name: 线程处理和异步编程
+  - name: 线程和异步编程
     href: ../threading-async/index.md
     items:
     - name: 异步编程（UWP 应用）
@@ -1516,8 +1516,8 @@ items:
     - name: 在多线程环境中使用 Windows 运行时对象
       href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md
 ms.openlocfilehash: e9c39734eb066058d549ed8c36ad73b2c2c6a5e1
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
-ms.translationtype: MT
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115934"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582441"

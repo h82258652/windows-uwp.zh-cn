@@ -6,17 +6,17 @@ ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e00aa383bcce17b7cd6b67514647c2f6137cc32
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947661"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601942"
 ---
 # <a name="spring-animations"></a>弹簧动画
 
 介绍了如何使用弹簧 NaturalMotionAnimation。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 我们在此假设你熟悉这些文章中所述的概念：
 
@@ -26,8 +26,8 @@ ms.locfileid: "8947661"
 
 弹簧是一种常见的运动体验，我们都曾经在生活中经历过；从螺旋弹簧玩具到包含弹簧块的物理教室体验。 弹簧的运动不稳定，这通常会为观察它的人带来有趣而令人愉快的情绪反应。 因此，对于那些渴求创建更为生动的运动体验的人来说，弹簧的运动在应用程序 UI 中得到了很好的运用：“弹出”给最终用户，而不是传统的贝塞尔曲线。 在这些情况下，弹簧运动不仅能产生更为生动的运动体验，还能帮助吸引人们注意新的或目前正在显示动画效果的内容。 根据应用程序的品牌或运动语言，弹簧的振荡更加显然而显眼，但在其他情况下，它的运动不明显。
 
-![包含弹簧动画效果的运动](images/animation/offset-spring.gif)
-![包含贝塞尔曲线动画效果的运动](images/animation/offset-cubic-bezier.gif)
+![使用 spring 动画的动作](images/animation/offset-spring.gif)
+![三次方贝塞尔动画的动作](images/animation/offset-cubic-bezier.gif)
 
 ## <a name="using-springs-in-your-ui"></a>在 UI 中使用弹簧
 
@@ -68,7 +68,7 @@ ms.locfileid: "8947661"
 
 | 属性 | 普通弹簧 | 带阻尼弹簧 | 较小阻尼弹簧 |
 | -------- | ------------- | --------------- | -------------------- |
-| Offset | Damping Ratio = 0.8 <br/> Period = 50 ms | Damping Ratio = 0.85 <br/> Period = 50 ms | Damping Ratio = 0.65 <br/> Period = 60 ms |
+| 偏移量 | Damping Ratio = 0.8 <br/> Period = 50 ms | Damping Ratio = 0.85 <br/> Period = 50 ms | Damping Ratio = 0.65 <br/> Period = 60 ms |
 | Scale/Size | Damping Ratio = 0.7 <br/> Period = 50 ms | Damping Ratio = 0.8 <br/> Period = 50 ms | Damping Ratio = 0.6 <br/> Period = 60 ms |
 
 定义好这些属性之后，可以将弹簧 NaturalMotionAnimation 传入 CompositionObject 的 StartAnimation 或 InteractionTracker InertiaModifier 的 Motion 属性。
@@ -152,9 +152,9 @@ StartAnimation("Translation.X", exp);
 1. 基于 Compositor 创建 SpringAnimation。
 1. 如果需要非默认值，请定义 SpringAnimation 的属性：
     - DampingRatio
-    - Period
+    - 期间
     - Final Value
-    - Initial Value
+    - 初始值
     - Initial Velocity
 1. 分配给目标。
     - 如果要对 CompositionObject 属性进行动画处理，请将 SpringAnimation 作为参数传入 StartAnimation。
