@@ -1,20 +1,14 @@
 ---
 title: 开发教育应用。
-description: 本部分介绍可供你针对 Windows10 平台编写教育应用的通用 Window 应用资源。
+description: "本部分介绍可供你针对 Windows\_10 平台编写教育应用的通用 Window 应用资源。"
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp，教育版
+keywords: 'windows 10, uwp, 教育版'
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
-ms.openlocfilehash: 7696cd785b4a8720f6eefb7bc897d13ffb0c7115
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943983"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>开发通用 Windows 应用教育版
-![参加测验应用屏幕截图](images/take-a-test-screen-small.png)
+![捕获测试应用的屏幕截图](images/take-a-test-screen-small.png)
 
 以下资源将有助于你编写通用 Windows 应用教育版。
 
@@ -34,11 +28,11 @@ ms.locfileid: "8943983"
 Windows Ink 平台通过使教育应用适应学生惯于使用的输入模式，使这些应用引人注目。 有关在应用中实现 Windows Ink 的综合指南，请参阅[笔交互和 Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) 及其下方的主题。 以下示例应用提供此 API 的工作示例。
 - [墨迹示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Ink)介绍如何在使用 JavaScript 的通用 Windows 应用中使用墨迹功能（如捕获、操作和解释笔划墨迹）。
 - [简单的墨迹示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)介绍如何在使用 C# 的通用 Windows 应用中使用墨迹功能（如从用户输入中捕获墨迹和对笔划墨迹执行手写识别）。
-- [复杂的墨迹示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)介绍如何使用高级 InkPresenter 功能使墨迹与其他对象交错、选择墨迹、复制/粘贴和处理事件。 它以使用 C++ 的通用 Windows 平台为基础生成，并且可以在桌面版和移动版 Windows10 SKU 上运行。
+- [复杂的墨迹示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)介绍如何使用高级 InkPresenter 功能使墨迹与其他对象交错、选择墨迹、复制/粘贴和处理事件。 它以使用 C++ 的通用 Windows 平台为基础生成，并且可以在桌面版和移动版 Windows 10 SKU 上运行。
 
 
 ### <a name="microsoft-store"></a>Microsoft Store
 教育应用通常在特定情况下发布给特定组织。 若要获取相关信息，请参阅[将业务线应用分配到企业](https://msdn.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises)。
 
 ## <a name="related-topics"></a>相关主题
-- Windows IT 中心上的 [Windows10 教育版](https://technet.microsoft.com/edu/windows/index)
+- Windows IT 中心上的 [Windows 10 教育版](https://technet.microsoft.com/edu/windows/index)

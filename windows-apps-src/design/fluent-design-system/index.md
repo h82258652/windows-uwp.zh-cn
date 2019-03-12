@@ -1,48 +1,48 @@
 ---
-description: 了解 Fluent Design 以及如何将它合并到应用。
-title: 适用于 Windows 的 fluent Design 系统
-keywords: 'uwp 应用布局, 通用 windows 平台, 应用设计, 界面, Fluent Design 系统'
+description: 了解 Fluent Design 以及如何将它包括到应用中。
+title: 适用于 Windows 的 Fluent Design System
+keywords: 'uwp 应用布局, 通用 windows 平台, 应用设计, 界面, Fluent Design System'
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-# <a name="the-fluent-design-system-for-windows-app-creators"></a>Fluent 设计系统的 Windows 应用创意者
+# <a name="the-fluent-design-system-for-windows-app-creators"></a>适用于 Windows 应用创建者的 Fluent Design System
 
-![Fluent 设计标头](images/fluentdesign-app-header.jpg)
+![Fluent Design 标题](images/fluentdesign-app-header.jpg)
 
 ## <a name="introduction"></a>简介
 
-Fluent Design 系统是用于创建自适应、 共鸣和美观用户界面的系统。
+Fluent Design System 是用于创建自适应、引人共鸣且美观的用户界面的系统。
 
 ## <a name="principles"></a>原则
 
 **自适应：Fluent 体验在每台设备上都显得自然**
 
-Fluent 体验可根据环境进行调整。 Fluent 体验感觉舒适平板电脑、 台式机、 和 Xbox 上-它甚至可以很好运行混合现实头戴显示设备上。 此外，当你添加更多硬件时（例如用于电脑的一台额外显示器），Fluent 体验将利用它。
+Fluent 体验可根据环境进行调整。 Fluent 体验在平板电脑、台式机和 Xbox 上显得很舒适 - 它甚至在混合现实头戴显示设备中表现得很好。 此外，当你添加更多硬件时（例如用于电脑的一台额外显示器），Fluent 体验将利用它。
 
-**共鸣：Fluent 体验直观且强大**
+**引人共鸣：Fluent 体验直观且强大**
 
-Fluent 体验可根据行为和意图进行调整 &mdash; 它们能了解和预测需求。 它们将人和思想结合起来，不管他们是站在地球的两头还是站在一起。
+Fluent 体验可根据行为和意图进行调整&mdash;它们能了解和预测需求。 它们将人和思想结合起来，不管他们是站在地球的两头还是站在一起。
 
 **美观：Fluent 体验吸引力十足且令人沉醉**
 
-通过融入物理世界的元素，Fluent 体验挖掘到了根本的东西。 它运用光线、阴影、运动、深度和纹理，以一种直观和本能的方式整理信息。
+通过融入物理世界的元素，Fluent 体验挖掘到了根本的东西。 它运用光线、阴影、动作、深度和纹理，以一种直观和本能的方式整理信息。
 
 
-## <a name="applying-fluent-design-to-your-app-with-uwp"></a>将 Fluent Design 应用于与 UWP 应用
+## <a name="applying-fluent-design-to-your-app-with-uwp"></a>通过 UWP 将 Fluent Design 应用于你的应用
 
-![Fluent 设计徽标](images/fluentdesign_header.png)
+![Fluent Design 徽标](images/fluentdesign_header.png)
 
-我们的设计指南中介绍了适用于应用的 Fluent 设计原则。 哪种类型的应用？ 尽管我们的指南中的许多可以应用于任何平台，我们创建了 UWP （通用 Windows 平台） 以支持 Fluent 设计。
+我们的设计指南解释了如何将 Fluent Design 原则应用于应用。 应用是什么类型的？ 虽然我们的许多指南可以应用于任何平台，但我们创建了 UWP（通用 Windows 平台）来支持 Fluent Design。
 
-Fluent Design 功能内置于 UWP 中。 其中的一些功能（如有效像素和通用输入系统）是自动的。 你无需编写额外的代码，可以直接使用这些功能。 其他功能（如亚克力）是可选的；你需要通写用于包含它们代码，从而将它们添加到应用。
+Fluent Design 功能内置于 UWP 中。 其中的一些功能（例如，有效像素和通用输入系统）是自动的。 你无需编写额外的代码，可以直接使用这些功能。 其他功能（例如亚克力）是可选的；你需要编写代码来包括它们，从而将它们添加到应用。
 
-> 我们正在将 UWP 控件引入桌面，以帮助您通过 Fluent Design 功能增强现有 WPF 或 Windows 应用程序的外观、使用体验和功能。 若要了解详细信息，请参阅[WPF 和 Windows 窗体应用程序中的主机 UWP 控件](/windows/uwp/xaml-platform/xaml-host-controls)。
+> 我们正在将 UWP 控件引入桌面，以帮助您通过 Fluent Design 功能增强现有 WPF 或 Windows 应用程序的外观、使用体验和功能。 若要了解详细信息，请参阅[在 WPF 和 Windows 窗体应用程序中托管 UWP 控件](/windows/uwp/xaml-platform/xaml-host-controls)。
 
 <!-- To apply Fluent Design to your app, follow our guidelines and use UWP (Universal Windows Platform) you can use UWP UI features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices. -->
 
-除了设计指南，我们 Fluent Design 文章还向你介绍如何编写代码，使你的设计发生。 UWP 使用 XAML，基于标记的语言，使其更易于创建用户界面。 下面是一个示例：
+除了设计指南之外，我们的 Fluent Design 文章还展示了如何编写代码来实现你的设计。 UWP 使用 XAML，这是一种基于标记的语言，可用于更加轻松地创建用户界面。 下面是一个示例：
 
 ```xaml
 <Grid BorderBrush="Blue" BorderThickness="4">
@@ -53,7 +53,7 @@ Fluent Design 功能内置于 UWP 中。 其中的一些功能（如有效像素
 ![](images/xaml-example.png)
 
 
-> 如果你不熟悉 UWP 开发，请查看我们[开始使用 UWP 页面](https://developer.microsoft.com/windows/apps/getstarted)。
+> 如果你是初次接触 UWP 开发，请查看我们的 [UWP 页面入门](https://developer.microsoft.com/windows/apps/getstarted)。
 
 ## <a name="find-a-natural-fit"></a>寻找天然良配
 
@@ -109,9 +109,9 @@ Fluent Design 功能内置于 UWP 中。 其中的一些功能（如有效像素
         [Learn about inputs and interactions](/windows/uwp/design/input/input-primer)
 :::row-end:::
 
-## <a name="make-it-intuitive"></a>使直观
+## <a name="make-it-intuitive"></a>使其直观
 
-当它的行为，用户期望到它的方法，该体验就显得直观。 通过使用已建立的控件和模式并利用对可访问性和全球化的平台支持，你可以打造一种帮助用户提高效率的毫不费力的体验。
+当某个体验的行为方式符合用户的期望时，该体验就显得很直观。 通过使用已建立的控件和模式并利用对可访问性和全球化的平台支持，你可以打造一种帮助用户提高效率的毫不费力的体验。
 
 体现共鸣就是在正确的时间做正确的事情。
 
@@ -210,11 +210,11 @@ Fluent Design 重视华丽的效果。 它融入了真正增强用户体验的�
         [Parallax](../motion/parallax.md) creates the illusion of depth by making items in the foreground appear to move more quickly than items in the background.
 :::row-end:::
 
-## <a name="incorporate-motion"></a>融入运动
+## <a name="incorporate-motion"></a>包括动作
 
-想一想电影中的运动设计。 运动的无缝过渡让你能够专注于故事，为你带来真实体验。 我们可以将这些感觉融入设计，引导人们在观影过程中能够轻松从一个任务跳转到另一个任务。
+想一想电影中的动作设计。 动作的无缝过渡让你能够专注于故事，为你带来真实体验。 我们可以将这些感觉融入设计，引导人们在观影过程中能够轻松从一个任务跳转到另一个任务。
 
-将运动添加到 UWP 应用：
+将动作添加到 UWP 应用：
 
 :::row:::
     :::column:::

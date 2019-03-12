@@ -4,14 +4,8 @@ description: 本部分介绍了如何在通用 Windows 平台 (UWP) 应用之间
 title: 应用到应用的通信
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: 'windows 10, uwp'
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dfd86d53805573d002984aaf33ba5f1bf17241c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921510"
 ---
 # <a name="app-to-app-communication"></a>应用到应用的通信
 
@@ -28,7 +22,7 @@ ms.locfileid: "8921510"
 
 ## <a name="in-this-section"></a>本部分内容
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 |-------|-------------|
 | [共享数据](share-data.md) | 本文将说明如何在 UWP 应用中支持“共享”合约。 “共享”合约是一种在应用之间快速共享文本、链接、照片和视频等数据的简便方法。 例如，用户可能希望使用社交网络应用与其好友共享网页，或者将链接保存在笔记应用中以供日后参考。 |
 | [接收数据](receive-data.md) | 本文介绍如何接收使用“共享”合约从另一个应用共享的 UWP 应用中的内容。 此“共享”合约允许在用户调用“共享”时，将你的应用表示为一个选项。 |

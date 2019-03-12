@@ -4,14 +4,8 @@ description: 开始使用通用 Windows 平台 (UWP) 和 Windows 10 应用开发
 title: 通用 Windows 平台 (UWP) 入门
 ms.date: 03/23/2018
 ms.topic: article
-keywords: 入门, Windows 10, uwp, xaml, c#
+keywords: '入门, Windows 10, uwp, xaml, c#'
 ms.localizationpriority: medium
-ms.openlocfilehash: a2a1452de6fe602c8fd21e510de070f49d806eec
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934722"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Windows 10 应用入门 
  
@@ -117,7 +111,7 @@ ms.locfileid: "8934722"
                     <br>
                     <p><a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">使用 UWP 应用示例</a></p>
                     <p><a href="//github.com/Microsoft/Windows-appsample-customers-orders-database">客户订单数据库</a></p>
-                    <p><a href="//github.com/Microsoft/Windows-appsample-remote-system-sessions">问答游戏 (Project Rome)</a></p>
+                    <p><a href="//github.com/Microsoft/Windows-appsample-remote-system-sessions">问答游戏（项目 Rome）</a></p>
                     <p><a href="//developer.microsoft.com/windows/samples">Windows 代码示例门户</a></p>
                 </div>
             </div>
@@ -134,11 +128,11 @@ ms.locfileid: "8934722"
                     </div>
                 </div>
                 <div class="cardText">
-                    <h3>最近更新</h3>
+                    <h3>新增功能</h3>
                     <p>扩展你的视野，探索 Windows 10 添加的最新功能。</p>
                     <br>
                     <p><a href="//developer.microsoft.com/windows/windows-10-for-developers">最新版本的 Windows 10 中有哪些超酷功能</a></p>
-                    <p><a href="//docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest">面向开发人员的 Windows 10 中的新增功能</a></p>
+                    <p><a href="//docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest">Windows 10 中面向开发人员的新增功能</a></p>
                 </div>
             </div>
         </div>
@@ -216,7 +210,7 @@ ms.locfileid: "8934722"
                         <h3>开发人员工具</h3>
                         <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows 社区工具包</a></p>
                         <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">虚拟机</a></p>
-                        <p><a href="//docs.microsoft.com/windows/wsl/about">Ubuntu on Windows 上的 Bash</a></p>
+                        <p><a href="//docs.microsoft.com/windows/wsl/about">装有 Ubuntu 的 Windows 上的 Bash</a></p>
                         </div>
                     </div>
                 </div>
@@ -229,7 +223,7 @@ ms.locfileid: "8934722"
                     <div class="cardText">
                         <h3>刚接触开发？</h3>
                         <p><a href="//mva.microsoft.com/training-topics/c-app-development">Microsoft Virtual Academy</a></p>
-                        <p><a href="//www.linkedin.com/learning/learning-universal-windows-app-development/welcome">LinkedIn Learning</a></p>
+                        <p><a href="//www.linkedin.com/learning/learning-universal-windows-app-development/welcome">领英学习</a></p>
                         </div>
                     </div>
                 </div>

@@ -1,26 +1,20 @@
 ---
 description: 获取有关向 UWP 应用添加控件 &amp; 模式的设计指南和编码说明。 为你找到了超过 45 种功能强大的控件，这些控件可与你的应用结合使用。
 title: UWP 控件和模式 - Windows 应用开发
-keywords: UWP 控件, 用户界面, 应用控件
+keywords: 'UWP 控件, 用户界面, 应用控件'
 label: Controls & patterns
 template: detail.hbs
 ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 417f9b72c5708a85fa570476de2829bf6217c165
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044278"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>UWP 应用的控件和模式
  
 
 在 UWP 应用开发中，<i>控件</i>是一种显示内容或支持交互的 UI 元素。 控件是用户界面的构建基块。 <i>模式</i>是合并多个控件来创造新内容的一种方式。
 
-我们提供了超过 45 种控件供你使用，范围从简单按钮到网格视图之类的功能强大的数据控件。  这些控件是 Fluent 设计系统的一部分，并且可以帮助你创建一个加粗、可缩放的 UI，此 UI 在所有设备和屏幕大小上都具有出色的外观。 
+我们提供了超过 45 种控件供你使用，范围从简单按钮到网格视图之类的功能强大的数据控件。  这些控件是 Fluent Design System 的一部分，并且可以帮助你创建一个加粗、可缩放的 UI，此 UI 在所有设备和屏幕大小上都具有出色的外观。 
 
 本部分中的文章提供了有关向 UWP 应用添加控件和模式的设计指南和编码说明。 
 
@@ -30,17 +24,17 @@ ms.locfileid: "9044278"
 
 :::row:::
     :::column:::
-      <p><b><a href="controls-and-events-intro.md">添加控件和处理事件</a></b> <br/>
-向应用添加控件有 3 个关键步骤：将控件添加到应用 UI、在控件上设置属性，然后将代码添加到控件的事件处理程序，以使其执行某个操作。</p>
+      <p><b><a href="controls-and-events-intro.md">添加控件并处理事件</a></b> <br/>
+向应用中添加控件有 3 个关键步骤：将控件添加到应用 UI、在控件上设置属性，然后将代码添加到控件的事件处理程序，以使其执行某个操作。</p>
     :::column-end:::
     :::column:::
-      <p><b><a href="xaml-styles.md">设置控件的样式</a></b> <br/>
+      <p><b><a href="xaml-styles.md">设置控件样式</a></b> <br/>
 可以使用 XAML 框架通过多种方式自定义应用的外观。 通过样式可以设置控件属性，并重复使用这些设置，以便保持多个控件具有一致的外观。</p>
     :::column-end:::
 :::row-end:::
 
 ## <a name="get-the-windows-ui-library"></a>获取 Windows UI 库
-某些控件的 Windows UI 库中才可用。 若要获取它，请参阅[Windows UI 库概述和安装说明](/uwp/toolkits/winui/)。
+某些控件仅在 Windows UI 库中提供。 若要获取它，请参阅 [Windows UI 库概述和安装说明](/uwp/toolkits/winui/)。
 
 ## <a name="alphabetical-index"></a>按字母顺序排序的索引 
 
@@ -54,7 +48,7 @@ ms.locfileid: "9044278"
 
 <li style="list-style-type: none;"><a href="buttons.md">按钮</a></li>
 
-<li style="list-style-type: none;"><a href="checkbox.md">复选框 </a></li>
+<li style="list-style-type: none;"><a href="checkbox.md">复选框</a></li>
 
 <li style="list-style-type: none;"><a href="color-picker.md">颜色选取器</a></li>
 
@@ -66,7 +60,7 @@ ms.locfileid: "9044278"
 
 <li style="list-style-type: none;"><a href="flipview.md">翻转视图</a></li>
 
-<li style="list-style-type: none;"><a href="forms.md">表单</a></li>
+<li style="list-style-type: none;"><a href="forms.md">窗体</a></li>
 
 <li style="list-style-type: none;"><a href="hyperlinks.md">超链接</a></li>
 
@@ -86,7 +80,7 @@ ms.locfileid: "9044278"
 
 <li style="list-style-type: none;"><a href="navigationview.md">导航视图</a></li>
 
-<li style="list-style-type: none;"><a href="person-picture.md">个人图片</a></li>
+<li style="list-style-type: none;"><a href="person-picture.md">头像图片</a></li>
 
 <li style="list-style-type: none;"><a href="pivot.md">透视表</a></li>
 
@@ -122,7 +116,7 @@ ms.locfileid: "9044278"
 
 ## <a name="xaml-controls-gallery"></a>XAML 控件库
 
-从 Microsoft Store 获取 _XAML 控件库_ 应用，了解这些控件和 Fluent Design 系统的实际应用。 该应用是该网站的交互式助手。 安装它后，你可以使用各控件页上的链接启动该应用并查看控件的实际应用。
+从 Microsoft Store 获取 _XAML 控件库_ 应用，了解这些控件和 Fluent Design System 的实际应用。 该应用是该网站的交互式助手。 安装它后，你可以使用各控件页上的链接启动该应用并查看控件的实际应用。
 
 <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a>
 

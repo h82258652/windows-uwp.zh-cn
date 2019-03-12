@@ -2,7 +2,7 @@
 description: 了解如何开发 UWP 应用。
 title: 开发 UWP 应用
 layout: LandingPage
-keywords: UWP 应用 开发 线程处理 异步 平台概述 门户 开发 开发人员
+keywords: UWP 应用开发 线程处理 异步平台概述 门户 开发 开发人员
 ms.date: 03/29/2018
 ms.topic: article
 ms.localizationpriority: medium
@@ -122,7 +122,7 @@ ms.localizationpriority: medium
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>通信</h3>
-                        <p><a style="display:block" href="/windows/uwp/app-to-app/">应用间通信</a></p>
+                        <p><a style="display:block" href="/windows/uwp/app-to-app/">应用到应用的通信</a></p>
                         <p><a style="display:block" href="/windows/uwp/networking/">网络和 Web 服务</a></p>
                     </div>
                 </div>
@@ -169,7 +169,7 @@ ms.localizationpriority: medium
                         <p style="display:block"><a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a></p>
                         <p style="display:block"><a href="/windows/uwp/launch-resume/">启动、恢复和后台任务</a></p>
                         <p style="display:block"><a href="/windows/uwp/security/">安全性</a></p>
-                        <p style="display:block"><a href="/windows/uwp/threading-async/">线程处理和异步编程</a></p>
+                        <p style="display:block"><a href="/windows/uwp/threading-async/">线程和异步编程</a></p>
                         <p style="display:block"><a href="/windows/uwp/composition/visual-layer">可视化层</a></p>
                         <p style="display:block"><a href="/windows/uwp/updates-and-versions/application-development-for-windows-as-a-service">Windows 即服务</a></p>
                         <p style="display:block"><a href="/windows/uwp/winrt-components/">Windows 运行时组件</a></p>                 
@@ -219,12 +219,12 @@ ms.localizationpriority: medium
                     <div style="display:block" class="cardText">
                         <h3>移植</h3>
                         <p style="display:block"><a href="/windows/uwp/porting/">概述</a></p>
-                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">WindowsPhone silverlight 移植到 UWP</a></p>
-                        <p style="display:block"><a href="/windows/uwp/porting/w8x-to-uwp-root">Windows 运行时 8.x 到 UWP</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">从 Windows Phone Silverlight 到 UWP</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/w8x-to-uwp-root">从 Windows 运行时 8.x 到 UWP</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-root">桌面桥</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-migrate">在桌面应用和 UWP 之间共享代码</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/android-ios-uwp-map">针对 Android 和 iOS 开发人员的概念映射</a></p>
-                        <p style="display:block"><a href="/windows/uwp/porting/ios-to-uwp-root">从 iOS 移动到 UWP</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/ios-to-uwp-root">从 iOS 移到 UWP</a></p>
                         <p style="display:block"><a href="/microsoft-edge/progressive-web-apps">将 Web 应用转换为 PWA</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/apps-on-arm">基于 ARM 的 Windows 10</a></p>
                     </div>

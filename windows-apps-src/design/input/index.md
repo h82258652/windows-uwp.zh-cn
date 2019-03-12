@@ -1,7 +1,7 @@
 ---
 description: 针对笔、Surface Dial 和其他类型的输入优化应用。
 title: 输入和交互
-keywords: 应用输入, 自定义 UWP 应用程序
+keywords: '应用输入, 自定义 UWP 应用程序'
 label: Input and interactions
 layout: LandingPage
 template: detail.hbs
@@ -9,12 +9,6 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f66d808cafcc6fba89cebde352d191335068925
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918975"
 ---
 # <a name="input-and-interactions"></a>输入和交互
 
@@ -59,7 +53,7 @@ UWP 应用可自动处理各种各样的输入并在各种设备上运行，例�
                         </div>
                     </div> -->
                     <div class="cardText">
-                        <h3><a href="gaze-interactions.md">新增功能！ 凝视输入</a></h3>
+                        <h3><a href="gaze-interactions.md">新增功能！凝视输入</a></h3>
                         <p>根据用户眼睛和头部的位置及移动，跟踪用户的注视位置。</p>
                     </div>
                 </div>
@@ -84,10 +78,10 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
                         <p style="display: block;"><a  href="/windows/uwp/design/input/identify-input-devices">标识输入设备</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/handle-pointer-input">指针</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/pen-and-stylus-interactions">笔和 Windows Ink</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/touch-interactions">触控</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/touch-interactions">触摸</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/mouse-interactions">鼠标</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/keyboard-interactions">键盘</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/gamepad-and-remote-interactions">手柄和遥控器</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/gamepad-and-remote-interactions">游戏板和远程控制</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/touchpad-interactions">触摸板</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/multiple-input-design-guidelines">多个输入</a></p>
@@ -108,7 +102,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
                         <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-panning">平移</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-rotation">旋转</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-textselection">选择文本和图像</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-targeting">定位</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-targeting">目标</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-visualfeedback">视觉反馈</a></p>
                     </div>
                 </div>

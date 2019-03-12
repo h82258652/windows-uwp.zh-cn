@@ -10,19 +10,19 @@ ms.localizationpriority: medium
 
 ![主图](images/header-design-basics.svg)
 
-通用 Windows 平台 (UWP) 设计指南可帮助你设计和构建美观、优化的应用。 它不是一份说明性规则的清单 - 它是一个动态文档，旨在适应我们不断演变的 Fluent Design 系统以及应用构建社区的需求。 
+通用 Windows 平台 (UWP) 设计指南可帮助你设计和构建美观、优化的应用。 它不是一份说明性规则的清单 - 它是一个动态文档，旨在适应我们不断演变的 Fluent Design System 以及应用构建社区的需求。 
 
 ## <a name="overview"></a>概述
 
 [**UWP 应用设计简介**](design-and-ui-intro.md)
 
-介绍结合了最佳实践的 UWP 功能，用于创建在所有类型的支持 Windows 的设备上都表现出色的应用。
+介绍结合了最佳做法的 UWP 功能，用于创建在所有类型的支持 Windows 的设备上都表现出色的应用。
 
-[**Fluent Design 系统**](../fluent-design-system/index.md)
+[ **Fluent Design System**](../fluent-design-system/index.md)
 
-Fluent Design 系统展示了我们创建自适应、共鸣和美观用户界面的目标和原则。
+Fluent Design System 展示了我们创建自适应、共鸣和美观用户界面的目标和原则。
 
-## <a name="basics"></a>入门
+## <a name="basics"></a>基础知识
 
 [**导航基础知识**](navigation-basics.md)
 
@@ -41,14 +41,14 @@ UWP 应用中的导航基于导航结构、导航元素和系统级功能的灵�
 了解如何在 XAML 和 C# 中创建基本的照片编辑应用程序。
 <!-- <img src="images/landing-page/photolab-50.png" style="{height: 339px}" alt=" " /> -->
 
-[**1. 创建基本 UI**](xaml-basics-ui.md)
+[**1.创建基本 UI**](xaml-basics-ui.md)
 
 使用 XAML 创建基本用户界面。
 
-[**2. 创建自适应布局**](xaml-basics-adaptive-layout.md)
+[**2.创建自适应布局**](xaml-basics-adaptive-layout.md)
 
 为照片编辑应用程序提供自适应布局。
 
-[**3. 创建自定义样式**](xaml-basics-style.md)
+[**3.创建自定义样式**](xaml-basics-style.md)
 
 通过创建自定义样式为我们的 UWP 控件提供你自己的外观。

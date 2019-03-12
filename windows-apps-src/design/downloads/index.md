@@ -1,23 +1,17 @@
 ---
 description: 获取适用于 UWP 应用用户界面布局和控件设计的最新下载和工具。
-keywords: UWP 应用布局, UI, 用户界面设计, 下载, UWP 工具
+keywords: 'UWP 应用布局, UI, 用户界面设计, 下载, UWP 工具'
 title: 适用于 UWP 应用的设计工具包和示例
 ms.date: 10/11/2018
 ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cbe17d8e7093a15c66e482acd935974bc57074ec
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050870"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>适用于 UWP 应用的设计工具包和示例
  
 
-设计和 UI 相关下载 Fluent 的设计 UWP 应用。 有关 Visual Studio 之类的其他工具，请参阅<a href="https://developer.microsoft.com/downloads">我们的主下载页</a>。 
+适用于 Fluent Design/UWP 应用的设计和 UI 相关下载。 有关 Visual Studio 之类的其他工具，请参阅<a href="https://developer.microsoft.com/downloads">我们的主下载页</a>。 
 
 
 ## <a name="design-toolkits"></a>设计工具包
@@ -98,35 +92,35 @@ ms.locfileid: "9050870"
         <a href="https://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
     :::column span="2":::
-      **适用于 Adobe Photoshop 的磁贴和图标生成器**这组适用于 Adobe Photoshop 操作生成了 68 推荐磁贴和图标资源从只需 7 个文件。 <br/><a href="https://go.microsoft.com/fwlink/p/?LinkId=760394">下载磁贴和图标生成器</a></p>
+      **Adobe Photoshop 的磁贴和图标生成器** 这组 Adobe Photoshop 操作仅从 7 个文件中就生成了 68 个推荐的磁贴和图标资源。 <br/><a href="https://go.microsoft.com/fwlink/p/?LinkId=760394">下载磁贴和图标生成器</a></p>
     :::column-end:::
 :::row-end:::
 
     
 ## <a name="samples"></a>示例
 
-![Fluent XAML 主题编辑器图像](images/XamlThemeEditor_screenshot.png)
-**Fluent XAML 主题编辑器**<br>
-Fluent 的 XAML 主题编辑器是一个工具，有助于演示 Fluent 设计系统的灵活性，以及通过生成 XAML 标记为我们在通用 Windows 平台应用中使用的 ResourceDictionary 框架支持应用开发进程（uwp 一样）。
-<a href="https://github.com/Microsoft/fluent-xaml-theme-editor/archive/master.zip">下载工具示例</a> <br><a href="https://github.com/Microsoft/fluent-xaml-theme-editor">请查看 GitHub 上的工具</a>
+![Fluent XAML Theme Editor 图像](images/XamlThemeEditor_screenshot.png)
+**Fluent XAML Theme Editor**<br>
+Fluent XAML Theme Editor 是一个工具，可以帮助演示 Fluent Design System 的灵活性，并通过以下方式为应用开发流程提供支持：它为通用 Windows 平台应用程序 (UWP) 中使用的 ResourceDictionary 框架生成 XAML 标记。
+<a href="https://github.com/Microsoft/fluent-xaml-theme-editor/archive/master.zip">下载工具示例</a> <br><a href="https://github.com/Microsoft/fluent-xaml-theme-editor">在 GitHub 上查看此工具</a>
 
 ![VanArsdel 图像](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-生成 Van Arsdel 有限公司的端到端 UWP 示例应用展示 Microsoft Fluent 设计系统的一批。 在<a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI 库</a>以及强大的 ux 框架和合成的基础功能，它会使广泛使用改进的密度和新的控件。 该示例显示了如何构建用于管理和购买 （在此情况下，灯） 的 IoT 设备更丰富、 工作效率体验。<br>
-<a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">下载 VanArsdel 示例</a> <br><a href="https://github.com/microsoft/vanarsdel">请查看 GitHub 上的 VanArsdel 示例</a>
+Van Arsdel, Ltd. 端对端 UWP 示例应用是为了展示 Microsoft Fluent Design System 的下一波技术而构建的。 它广泛利用了 <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI 库</a>中的改良方法和新控件，以及 UX 框架和组合的强大基础功能。 此示例展示了如何构建丰富高效的体验，用于管理和购买 IoT 设备（在本例中为照明灯）。<br>
+<a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">下载 VanArsdel 示例</a> <br><a href="https://github.com/microsoft/vanarsdel">在 GitHub 上查看 VanArsdel 示例</a>
 
-![生成强制转换映像](images/buildcast.png)
+![build cast 图像](images/buildcast.png)
 **BuildCast**<br>
-BuildCast 是一个端到端示例，用于展示 Fluent Design 系统和 UWP。 它允许浏览、下载和播放特定视频播客，包括第 9 频道中的最热门内容和一些 Windows 技术爱好者内容的示例。 它还具有墨迹注释、书签和远程播放的功能。 此示例最初是在 2017 Build 大会的<a href="https://channel9.msdn.com/Events/Build/2017/B8034">借助 Fluent 设计构建精彩应用</a>演讲期间展示的。 <br>
+BuildCast 是一个端对端示例，它是为了展示 Fluent Design System 和 UWP 而构建的。 它允许浏览、下载和播放特定视频播客，包括第 9 频道中的最热门内容和一些 Windows 技术爱好者内容的示例。 它还具有墨迹注释、书签和远程播放的功能。 此示例最初是在 2017 Build 大会的<a href="https://channel9.msdn.com/Events/Build/2017/B8034">借助 Fluent 设计构建精彩应用</a>演讲期间展示的。 <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">下载 BuildCast 示例</a> <br><a href="https://github.com/Microsoft/BuildCast">在 GitHub 上查看 BuildCast 示例</a>
 
-![午餐计划程序](images/lunchscheduler.png)
+![Lunch Scheduler](images/lunchscheduler.png)
 **Lunch Scheduler**<br>
-安排与朋友和同事午餐的 UWP 示例。 你创建午餐，邀请好友前往感兴趣的餐厅，然后应用帮助管理有关各方的午餐。 此应用将 Fluent Design 系统的元素并入 UWP 应用中，包括亚克力、展示和连贯动画。 <br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler/archive/master.zip">下载 Lunch Scheduler 示例</a><br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler">在 GitHub 上查看 Lunch Scheduler 示例</a></p>  
+一个用于安排与朋友和同事午餐的 UWP 示例。 创建午餐安排，邀请好友前往相关餐厅，然后应用会帮助实现各相关方的午餐管理。 此应用将 Fluent Design 系统的元素并入 UWP 应用中，包括亚克力、展示和连贯动画。 <br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler/archive/master.zip">下载 Lunch Scheduler 示例</a><br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler">在 GitHub 上查看 Lunch Scheduler 示例</a></p>  
 
 ![Xaml 控件库](images/xaml-controls-gallery.png)
 **XAML 控件库**<br>
-此示例提供所有 XAML 控件的交互式演示。 它展示从基本到自适应的各种布局，并显示你可以复制到自己项目中的标记。 注意：下载文件和 GitHub 存储库当前将此示例应用称为“UI Basics (XAML)”。 <br/><a href="https://github.com/Microsoft/Windows-universal-samples/archive/master.zip">下载 XAML 控件库示例</a><br/><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">在 GitHub 上查看 XAML 控件库示例</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">从 Store 下载 XAML 控件库应用</a></p>
+此示例提供了所有 XAML 控件的交互式演示。 它展示了从基本到自适应的各种布局，并显示了你可以复制到自己项目中的标记。 注意：下载文件和 GitHub 存储库当前将此示例应用称为“UI Basics (XAML)”。 <br/><a href="https://github.com/Microsoft/Windows-universal-samples/archive/master.zip">下载 XAML 控件库示例</a><br/><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">在 GitHub 上查看 XAML 控件库示例</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">从 Microsoft Store 下载 XAML 控件库应用</a></p>
 
 ## <a name="want-more-code"></a>想要更多代码？
 

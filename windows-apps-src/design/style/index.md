@@ -1,24 +1,18 @@
 ---
 description: 了解如何依据 UWP 样式指南使用颜色、版式和图标定义你的 UWP 应用的个性。
-keywords: uwp 样式指南, 设计指导, 版式, 动作, 声音, 动画, 应用开发
+keywords: 'uwp 样式指南, 设计指导, 版式, 动作, 声音, 动画, 应用开发'
 title: 适用于 UWP 应用的样式
 ms.date: 08/10/2017
 ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1d313e35b7d1ab3ebe72bd3a073323fe8782098a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946616"
 ---
 # <a name="style-for-uwp-apps"></a>适用于 UWP 应用的样式
 
 ![主图](images/header-style.svg)
 
-借助样式，可使应用脱颖而出。此部分的样式指南有助于通过颜色、版式以及亚克力材料和突出显示等新功能创建 Fluent Design。
+出色的样式可以使你的应用脱颖而出。此部分的样式指南有助于通过颜色、版式以及亚克力材料和突出显示等新功能创建 Fluent Design。
 
 :::row:::
     :::column:::
@@ -29,7 +23,7 @@ ms.locfileid: "8946616"
     :::column:::
         ![hero image](images/header-typography.svg)
         ### [Typography](typography.md)
-       作为语言的视觉表现形式，版式的主要任务是清晰。 它的样式应永远不妨碍该目标。 以下指南重点介绍了如何使用版式帮助用户轻松了解内容。 
+       作为语言的视觉表现形式，版式的主要任务是清晰。 它的样式应永远不妨碍该目标。 以下指南重点介绍了如何使用版式帮助用户轻松地了解内容。 
     :::column-end:::
 :::row-end:::
 

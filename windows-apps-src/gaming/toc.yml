@@ -1,12 +1,12 @@
 items:
-- name: 入门
+- name: 即刻体验
   href: ../gaming/getting-started.md
-- name: Windows 10 游戏开发指南
+- name: Windows 10 游戏开发指南
   href: ../gaming/e2e.md
 - name: 游戏编程
   href: ../gaming/index.md
   items:
-  - name: 规划
+  - name: 计划
     href: ../gaming/planning.md
     items:
     - name: 游戏技术
@@ -63,7 +63,7 @@ items:
 - name: DirectX 编程
   href: ../gaming/directx-programming.md
   items:
-  - name: 入门
+  - name: 立即开始行动
     href: ../gaming/directx-getting-started.md
     items:
     - name: 应用对象
@@ -82,7 +82,7 @@ items:
       items:
       - name: 激活应用
         href: ../gaming/how-to-activate-an-app-directx-and-cpp.md
-      - name: 暂停应用
+      - name: 挂起应用
         href: ../gaming/how-to-suspend-an-app-directx-and-cpp.md
       - name: 恢复应用
         href: ../gaming/how-to-resume-an-app-directx-and-cpp.md
@@ -128,7 +128,7 @@ items:
   - name: Direct3D 图形概念
     href: ../graphics-concepts/index.md
     items:
-    - name: 坐标系和几何图形
+    - name: 坐标系统和几何结构
       href: ../graphics-concepts/coordinate-systems-and-geometry.md
       items:
       - name: 坐标系统
@@ -481,10 +481,10 @@ items:
       href: ../gaming/reduce-latency-with-dxgi-1-3-swap-chains.md
     - name: 交换链缩放和覆盖
       href: ../gaming/multisampling--scaling--and-overlay-swap-chains.md
-  - name: 将 DirectX 9 移植到 UWP
+  - name: 从 DirectX 9 移植到 UWP
     href: ../gaming/porting-your-directx-9-game-to-windows-store.md
     items:
-    - name: 将 DirectX 9 移植到 DirectX 11.1
+    - name: 从 DirectX 9 移植到 DirectX 11.1
       href: ../gaming/porting-considerations.md
       items:
       - name: 规划移植
@@ -493,7 +493,7 @@ items:
         href: ../gaming/understand-direct3d-11-1-concepts.md
       - name: 映射功能
         href: ../gaming/feature-mapping.md
-    - name: 简单操作实例
+    - name: 简单演练
       href: ../gaming/walkthrough--simple-port-from-direct3d-9-to-11-1.md
       items:
       - name: 初始化 Direct3D 11
@@ -513,7 +513,7 @@ items:
         href: ../gaming/render-the-scene-with-depth-testing.md
       - name: 支持各种硬件
         href: ../gaming/target-a-range-of-hardware.md
-    - name: 常见问题解答
+    - name: 常见问题
       href: ../gaming/directx-porting-faq.md
   - name: 将 OpenGL 移植到 Direct3D
     href: ../gaming/port-from-opengl-es-2-0-to-directx-11-1.md
@@ -540,7 +540,7 @@ items:
         href: ../gaming/port-the-glsl.md
       - name: 绘制到屏幕
         href: ../gaming/draw-to-the-screen.md
-    - name: OpenGL 到 Direct3D 引用
+    - name: OpenGL 到 Direct3D 参考
       href: ../gaming/opengl-es-2-0-to-directx-11-1-reference.md
       items:
       - name: GLSL 到 HLSL
@@ -548,9 +548,9 @@ items:
 - name: Xbox One 上的 UWP
   href: ../xbox-apps/index.md
   items:
-  - name: 入门
+  - name: 即刻体验
     href: ../xbox-apps/getting-started.md
-  - name: 最近更新
+  - name: 新增功能
     href: ../xbox-apps/whats-new.md
   - name: Xbox One 开发人员模式激活
     href: ../xbox-apps/devkit-activation.md
@@ -562,7 +562,7 @@ items:
     href: ../xbox-apps/samples.md
   - name: 已知问题
     href: ../xbox-apps/known-issues.md
-  - name: 常见问题解答
+  - name: 常见问题
     href: ../xbox-apps/frequently-asked-questions.md
   - name: 工具
     href: ../xbox-apps/introduction-to-xbox-tools.md
@@ -580,7 +580,7 @@ items:
         href: ../xbox-apps/devhome-capture.md
       - name: 网络页面
         href: ../xbox-apps/devhome-networking.md
-      - name: 平均页面
+      - name: 性能页面
         href: ../xbox-apps/devhome-performance.md
     - name: Xbox 开发人员模式助手
       href: ../xbox-apps/xbox-dev-mode-companion.md
@@ -644,8 +644,8 @@ items:
 - name: Xbox Live
   href: ../xbox-live/TOC.md
 ms.openlocfilehash: 0d44f8286586f3019864097357051e43fa88fbae
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962579"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582426"

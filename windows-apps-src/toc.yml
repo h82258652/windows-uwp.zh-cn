@@ -1,7 +1,7 @@
 items:
-- name: 最近更新
+- name: 新增功能
   href: whats-new/toc.yml
-- name: 入门
+- name: 立即开始行动
   href: get-started/toc.yml
 - name: 设计和 UI
   href: design/toc.yml
@@ -14,8 +14,8 @@ items:
 - name: API 参考
   href: /uwp/
 ms.openlocfilehash: 694733290f7b44ed6b7c88eaf6bcb9a5e0e71309
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962459"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582143"

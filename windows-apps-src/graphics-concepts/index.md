@@ -1,25 +1,19 @@
 ---
-title: Direct3D 图形词汇表
-description: 定义由 Microsoft Direct3D 图形术语。
+title: Direct3D 图形术语表
+description: 阐述了 Microsoft Direct3D 使用的图形术语的定义。
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
 keywords:
-- Direct3D 图形词汇表
+  - Direct3D 图形术语表
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cb6a2466ea201c9b5047f7eb159477a0d584429
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926432"
 ---
-# <a name="direct3d-graphics-glossary"></a>Direct3D 图形词汇表
+# <a name="direct3d-graphics-glossary"></a>Direct3D 图形术语表
 
 
-定义 Microsoft Direct3D 图形术语。 此词汇表定义，在高级别、 一般 3D 计算机图形条款的开发中使用 Direct3D 游戏和应用。
+阐述了 Microsoft Direct3D 图形术语的定义。 此术语表概述了 Direct3D 游戏和应用开发中使用的一般 3D 计算机图形术语的定义。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分中的内容
 
 
 <table>
@@ -35,8 +29,8 @@ ms.locfileid: "8926432"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="coordinate-systems-and-geometry.md">坐标系和几何图形</a></p></td>
-<td align="left"><p>进行 Direct3D 应用程序编程需要熟练掌握 3D 几何原理。 本节介绍创建 3D 场景所需的最重要的几何概念。</p></td>
+<td align="left"><p><a href="coordinate-systems-and-geometry.md">坐标系统和几何结构</a></p></td>
+<td align="left"><p>进行 Direct3D 应用程序编程需要熟练掌握 3D 几何原理。 本部分介绍了创建 3D 场景所需的最重要的几何概念。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="vertex-and-index-buffers.md">顶点和索引缓冲区</a></p></td>
@@ -52,7 +46,7 @@ ms.locfileid: "8926432"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="depth-and-stencil-buffers.md">深度和模板缓冲区</a></p></td>
-<td align="left"><p><em>深度缓冲区</em>存储深度信息，以控制渲染（而不是从视图中隐藏）哪些多边形区域。 <em>模板缓冲区</em>用于遮罩图像中的像素，以产生特殊效果，包括合成；贴纸；溶解、淡化和滑动；轮廓描绘和剪影，以及双面模板。</p></td>
+<td align="left"><p><em>深度缓冲区</em>存储深度信息，以控制渲染（而不是从视图中隐藏）哪些多边形区域。 <em>模板缓冲区</em>用于遮罩图像中的像素，以产生特殊效果，包括合成，贴花，溶解、淡入淡出和轻扫，轮廓与剪影，以及双面模板。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="textures.md">纹理</a></p></td>
@@ -60,15 +54,15 @@ ms.locfileid: "8926432"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="graphics-pipeline.md">图形管道</a></p></td>
-<td align="left"><p>Direct3D 图形管道旨在为实时游戏应用程序生成图形。 数据通过各个可配置或可编程的阶段从输入流到输出。</p></td>
+<td align="left"><p>Direct3D 图形管道设计用于为实时游戏应用程序生成图形。 数据通过各个可配置或可编程的阶段从输入流到输出。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="views.md">视图</a></p></td>
-<td align="left"><p>术语&quot;视图&quot;用于表示&quot;采用所需格式的数据&quot;。 例如，常量缓冲区视图 (CBV) 是正确格式化的常量缓冲区数据。 本节介绍最常见和最有用的视图。</p></td>
+<td align="left"><p>术语&quot;视图&quot;用于表示&quot;采用所需格式的数据&quot;。 例如，常量缓冲区视图 (CBV) 是格式正确的常量缓冲区数据。 本部分介绍了最常见和最有用的视图。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="compute-pipeline.md">计算管道</a></p></td>
-<td align="left"><p>Direct3D 计算管道旨在处理大部分可与图形管道并行完成的计算。</p></td>
+<td align="left"><p>Direct3D 计算管道设计用于处理大部分可与图形管道并行完成的计算。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="resources.md">资源</a></p></td>

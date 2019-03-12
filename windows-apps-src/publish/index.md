@@ -1,22 +1,16 @@
 ---
 layout: LandingPage
-Description: See how to publish your Windows apps to the Microsoft Store.
+Description: 了解如何将 Windows 应用发布到 Microsoft Store。
 title: 发布 Windows 应用
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp, 发布, 销售, 分发, Microsoft Store, 仪表板
+keywords: 'windows 10, uwp, 发布, publish, 销售, sell, distribute, 分发, store, 仪表板'
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b9d78014b2416cae7d387261ec1732b1f8932ad
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980305"
 ---
 # <a name="publish-windows-apps-and-games"></a>发布 Windows 应用和游戏  
  
-你可以使用[合作伙伴中心](https://partner.microsoft.com/dashboard)将你的应用和游戏发布到 Microsoft Store。 <a href="//developer.microsoft.com/store/register">立即注册！</a>
+可以使用[合作伙伴中心](https://partner.microsoft.com/dashboard)将你的应用和游戏发布到 Microsoft Store。 <a href="//developer.microsoft.com/store/register">立即注册！</a>
 <br>
 <ul id="cardtypes-K" class="cardsK panelContent">
     <li>
@@ -55,7 +49,7 @@ ms.locfileid: "8980305"
                     <p>通过按市场的定价和计划、可见性选择和销售定价等自定义应用的可用性。</p>
                     <ul>
                         <li><a href="define-pricing-and-market-selection.md">选择你的市场</a></li>
-                        <li><a href="set-and-schedule-app-pricing.md">设置和计划定价 </a></li>
+                        <li><a href="set-and-schedule-app-pricing.md">设置和计划定价</a></li>
                         <li><a href="configure-precise-release-scheduling.md">配置精确的发布日期</a></li>
                         <li><a href="set-app-pricing-and-availability.md">查看所有可用性选项</a></li>
                     </ul>
@@ -79,7 +73,7 @@ ms.locfileid: "8980305"
                         <ul>
                             <li><a href="create-app-store-listings.md">Store 一览概述</a></li>
                             <li><a href="app-screenshots-and-images.md">屏幕截图、图像和预告片</a></li>
-                              <li><a href="import-and-export-store-listings.md">批量管理一览 </a></li>
+                              <li><a href="import-and-export-store-listings.md">批量管理一览</a></li>
                         </ul>
                     </div>
                 </div>
@@ -119,9 +113,9 @@ ms.locfileid: "8980305"
                 </div>
                 <div class="cardText">
                     <h3>推广你的应用</h3>   
-                    <p><a href="create-an-ad-campaign-for-your-app.md">创建广告活动</a></p>
-                    <p><a href="generate-promotional-codes.md">生成促销充值码</a></p>
-                    <p><a href="put-apps-and-add-ons-on-sale.md">销售报价</a></p>
+                    <p><a href="create-an-ad-campaign-for-your-app.md">创建广告市场活动</a></p>
+                    <p><a href="generate-promotional-codes.md">生成促销代码</a></p>
+                    <p><a href="put-apps-and-add-ons-on-sale.md">提供销售定价</a></p>
                 </div>
             </div>
         </div>
@@ -198,7 +192,7 @@ ms.locfileid: "8980305"
                 </div>
                 <div class="cardText">
                     <h3>测试策略</h3>
-                    <p><a href="beta-testing-and-targeted-distribution.md">Beta 测试和定向分发</a></p>
+                    <p><a href="beta-testing-and-targeted-distribution.md">Beta 测试和目标分发</a></p>
                     <p><a href="choose-visibility-options.md#audience">私人受众</a></p>
                     <p><a href="package-flights.md">软件包外部测试版</a></p>
                      <p><a href="gradual-package-rollout.md">逐步推出</a></p>

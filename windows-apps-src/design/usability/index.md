@@ -1,6 +1,6 @@
 ---
 description: 了解如何使你的应用针对全世界用户都具有包容性和辅助性。
-keywords: uwp 应用辅助功能, 全球化, 设计包容应用, 辅助功能应用要求
+keywords: 'uwp 应用辅助功能, 全球化, 设计包容应用, 辅助功能应用要求'
 title: UWP 应用中的可用性 - Windows 应用开发
 layout: LandingPage
 template: detail.hbs
@@ -8,12 +8,6 @@ ms.date: 10/18/2017
 ms.topic: landing-page
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
-ms.openlocfilehash: f218df3b4118508049023218b64e6c7321fbbda9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937931"
 ---
 # <a name="usability-for-uwp-apps"></a>UWP 应用中的可用性
 
@@ -26,7 +20,7 @@ ms.locfileid: "8937931"
 
 ## <a name="accessiblity"></a>辅助功能
 
-辅助功能是指应用可供那些对使用常规用户界面存在限制（阻碍或阻止他们使用）的用户使用。 对于某些情况，辅助功能要求是由法律强制实施的。 但是，无论法律是否有规定，最好都解决辅助功能问题，以尽可能扩大应用的受众范围。
+辅助功能是指应用可供那些对使用常规用户界面存在限制（阻碍或阻止他们使用）的用户使用。 对于某些情况，辅助功能要求由法律强制实施。 但是，无论法律是否有规定，最好都解决辅助功能问题，以尽可能扩大应用的受众范围。
 
 <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
@@ -45,7 +39,7 @@ ms.locfileid: "8937931"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/designing-inclusive-software.md">设计非独占软件</a></b><br/>了解如何改进适用于 Windows 10 的通用 Windows 平台 (UWP) 应用的非独占设计。  以辅助功能为中心来设计和生成非独占软件。</p>
+<p><b><a href="../accessibility/designing-inclusive-software.md">设计非独占软件</a></b><br/>了解如何改进适用于 Windows 10 的通用 Windows 平台 (UWP) 应用的非独占设计。  以辅助功能思维设计和生成非独占软件。</p>
                     </div>
                 </div>
             </div>
@@ -78,7 +72,7 @@ ms.locfileid: "8937931"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-in-the-store.md">应用商店中的辅助功能</a></b><br/>介绍有关在 Microsoft Store 中将 UWP 应用声明为辅助应用的要求。</p>
+<p><b><a href="../accessibility/accessibility-in-the-store.md">Microsoft Store 中的辅助功能</a></b><br/>介绍了有关在 Microsoft Store 中将 UWP 应用声明为辅助应用的要求。</p>
                     </div>
                 </div>
             </div>
@@ -100,7 +94,7 @@ ms.locfileid: "8937931"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/basic-accessibility-information.md">公开基本的辅助功能信息</a></b><br/>基本的辅助功能信息通常按照名称、角色和值进行分类。 本主题介绍可帮助应用公开辅助技术所需的基本信息的代码。</p>
+<p><b><a href="../accessibility/basic-accessibility-information.md">公开基本的辅助功能信息</a></b><br/>基本的辅助功能信息通常按照名称、角色和值进行分类。 本主题介绍了可帮助应用公开辅助技术所需的基本信息的代码。</p>
                     </div>
                 </div>
             </div>

@@ -59,7 +59,7 @@ items:
       href: ../publish/supported-languages.md
     - name: 应用包管理指南
       href: ../publish/guidance-for-app-package-management.md
-  - name: 创建 Store 一览
+  - name: 创建应用应用商店一览
     href: ../publish/create-app-store-listings.md
     items:
     - name: 编写出色的应用提要
@@ -68,7 +68,7 @@ items:
       href: ../publish/app-screenshots-and-images.md
     - name: 导入和导出应用商店一览
       href: ../publish/import-and-export-store-listings.md
-    - name: 创建特定于平台的 Store 一览
+    - name: 创建特定于平台的应用商店一览
       href: ../publish/create-platform-specific-store-listings.md
   - name: 管理提交选项
     href: ../publish/manage-submission-options.md
@@ -86,7 +86,7 @@ items:
     href: ../publish/package-flights.md
   - name: 逐步部署程序包
     href: ../publish/gradual-package-rollout.md
-  - name: Beta 测试和目标分配
+  - name: Beta 测试和目标分发
     href: ../publish/beta-testing-and-targeted-distribution.md
   - name: 将 LOB 应用分配到企业
     href: ../publish/distribute-lob-apps-to-enterprises.md
@@ -99,7 +99,7 @@ items:
     href: ../publish/enter-add-on-properties.md
   - name: 设置加载项定价和可用性
     href: ../publish/set-add-on-pricing-and-availability.md
-  - name: 创建加载项 Store 一览
+  - name: 创建加载项应用商店一览
     href: ../publish/create-add-on-store-listings.md
 - name: 应用内广告
   href: ../publish/in-app-ads.md
@@ -115,7 +115,7 @@ items:
 - name: 推广和宣传
   href: ../publish/attract-customers-and-promote-your-apps.md
   items:
-  - name: 生成促销充值码
+  - name: 生成促销代码
     href: ../publish/generate-promotional-codes.md
   - name: 为你的应用创建广告市场活动
     href: ../publish/create-an-ad-campaign-for-your-app.md
@@ -124,7 +124,7 @@ items:
       href: ../publish/managing-your-ad-campaign.md
     - name: 关于自家广告
       href: ../publish/about-house-ads.md
-    - name: 关于社区广告
+    - name: 有关社区广告
       href: ../publish/about-community-ads.md
     - name: 有关广告市场活动的常见问题
       href: ../publish/common-questions.md
@@ -144,17 +144,17 @@ items:
   - name: 创建客户组
     href: ../publish/create-customer-groups.md
     items:
-    - name: 创建客户类别
+    - name: 创建客户细分
       href: ../publish/create-customer-segments.md
     - name: 创建已知用户组
       href: ../publish/create-known-user-groups.md
-  - name: 回复客户评价
+  - name: 回复客户评论
     href: ../publish/respond-to-customer-reviews.md
   - name: 回复客户反馈
     href: ../publish/respond-to-customer-feedback.md
   - name: 向应用客户发送通知
     href: ../publish/send-push-notifications-to-your-apps-customers.md
-  - name: 使用定向的优惠
+  - name: 使用定向优惠
     href: ../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md
 - name: 分析应用性能
   href: ../publish/analytics.md
@@ -177,9 +177,9 @@ items:
     href: ../publish/xbox-analytics-report.md
   - name: 洞察报告
     href: ../publish/insights-report.md
-  - name: 广告效果报告
+  - name: 广告性能报告
     href: ../publish/advertising-performance-report.md
-  - name: 广告活动报告
+  - name: 广告市场活动报告
     href: ../publish/ad-campaign-report.md
   - name: 下载分析报告
     href: ../publish/download-analytic-reports.md
@@ -192,7 +192,7 @@ items:
     href: ../publish/payment-thresholds-methods-and-timeframes.md
   - name: 付款摘要
     href: ../publish/payout-summary.md
-  - name: 税收详细信息
+  - name: 税务详细信息
     href: ../publish/tax-details-for-paid-apps.md
   - name: 了解 IRS 税单
     href: ../publish/understand-irs-tax-forms.md
@@ -213,8 +213,8 @@ items:
   - name: 开发人员行为准则
     href: https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct
 ms.openlocfilehash: d44affff4838b8799bfd2e82e4f57058d60e657b
-ms.sourcegitcommit: b9ee49402db7a8999cade1c5cf7f7b6ac4d783db
-ms.translationtype: MT
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042467"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582078"

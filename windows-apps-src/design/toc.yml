@@ -67,9 +67,9 @@ items:
     href: controls-and-patterns/index.md
   - name: 控件和事件简介
     href: controls-and-patterns/controls-and-events-intro.md
-  - name: 命令的简介
+  - name: 命令处理简介
     href: controls-and-patterns/commanding.md
-  - name: 按功能排序的控件索引
+  - name: 按功能的控件索引
     href: controls-and-patterns/controls-by-function.md
   - name: 基本输入
     items:
@@ -89,7 +89,7 @@ items:
       href: controls-and-patterns/slider.md
     - name: 切换
       href: controls-and-patterns/toggles.md
-  - name: 集锦
+  - name: 集合
     items:
     - name: 概述
       href: controls-and-patterns/lists.md
@@ -112,7 +112,7 @@ items:
       href: controls-and-patterns/nested-ui.md
     - name: 集合命令处理
       href: controls-and-patterns/collection-commanding.md
-    - name: 轻扫
+    - name: Swipe
       href: controls-and-patterns/swipe.md
     - name: 树视图
       href: controls-and-patterns/tree-view.md
@@ -124,7 +124,7 @@ items:
       href: controls-and-patterns/dialogs-and-flyouts/dialogs.md
     - name: 浮出控件
       href: controls-and-patterns/dialogs-and-flyouts/flyouts.md
-  - name: 表单
+  - name: 窗体
     href: controls-and-patterns/forms.md
   - name: 媒体、图形和形状
     items:
@@ -154,13 +154,13 @@ items:
       href: controls-and-patterns/master-details.md
     - name: 导航视图
       href: controls-and-patterns/navigationview.md
-    - name: 透视表
+    - name: Pivot
       href: controls-and-patterns/pivot.md
   - name: 人脉
     items:
     - name: 联系人卡片
       href: controls-and-patterns/contact-card.md
-    - name: 个人图片
+    - name: 头像图片
       href: controls-and-patterns/person-picture.md
   - name: 选取器
     items:
@@ -198,7 +198,7 @@ items:
       href: controls-and-patterns/auto-suggest-box.md
     - name: 文本块
       href: controls-and-patterns/text-block.md
-    - name: 富文本块
+    - name: RTF 块
       href: controls-and-patterns/rich-text-block.md
     - name: 文本框
       href: controls-and-patterns/text-box.md
@@ -249,7 +249,7 @@ items:
       href: controls-and-patterns/resourcedictionary-and-xaml-resource-references.md
     - name: XAML 主题资源
       href: controls-and-patterns/xaml-theme-resources.md
-- name: 运动
+- name: 移动
   items:
   - name: 概述
     href: motion/index.md
@@ -261,7 +261,7 @@ items:
     href: motion/motion-in-practice.md
   - name: 页面过渡
     href: motion/page-transitions.md
-  - name: 连贯动画
+  - name: 连贯的动画
     href: motion/connected-animation.md
   - name: 视差
     href: motion/parallax.md
@@ -274,7 +274,7 @@ items:
       href: motion/storyboarded-animations.md
     - name: 关键帧以及缓动函数动画
       href: motion/key-frame-and-easing-function-animations.md
-- name: Shell
+- name: 壳体
   items:
   - name: 磁贴
     href: shell/tiles-and-notifications/creating-tiles.md
@@ -284,7 +284,7 @@ items:
       items:
       - name: 指南
         href: shell/tiles-and-notifications/secondary-tiles-guidance.md
-      - name: 固定到“开始”
+      - name: 固定到“开始”屏幕
         href: shell/tiles-and-notifications/secondary-tiles-pinning.md
       - name: 固定到任务栏
         href: shell/tiles-and-notifications/secondary-tiles-pin-to-taskbar.md
@@ -330,13 +330,13 @@ items:
             href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
       - name: 自定义音频
         href: shell/tiles-and-notifications/custom-audio-on-toasts.md
-      - name: 进度栏
+      - name: 进度条
         href: shell/tiles-and-notifications/toast-progress-bar.md
       - name: 挂起更新
         href: shell/tiles-and-notifications/toast-pending-update.md
       - name: 自定义时间戳
         href: shell/tiles-and-notifications/custom-timestamps-on-toasts.md
-      - name: 集锦
+      - name: 集合
         href: shell/tiles-and-notifications/toast-collections.md
       - name: 标题
         href: shell/tiles-and-notifications/toast-headers.md
@@ -406,11 +406,11 @@ items:
       href: input/focus-navigation-programmatic.md
     - name: 键盘事件
       href: input/keyboard-events.md
-    - name: 响应触摸键盘的状态
+    - name: 响应触摸键盘的存在
       href: input/respond-to-the-presence-of-the-touch-keyboard.md
     - name: 使用输入范围更改触摸键盘
       href: input/use-input-scope-to-change-the-touch-keyboard.md
-  - name: 手柄和遥控器
+  - name: 游戏板和遥控器
     href: input/gamepad-and-remote-interactions.md
   - name: 触摸板
     href: input/touchpad-interactions.md
@@ -541,7 +541,7 @@ items:
       href: globalizing/adjust-layout-and-fonts--and-support-rtl.md
     - name: NumeralSystem 值
       href: globalizing/glob-numeralsystem-values.md
-    - name: 对应用进行可本地化处理
+    - name: 使应用可本地化
       href: globalizing/prepare-your-app-for-localization.md
     - name: 国际字体
       href: globalizing/loc-international-fonts.md
@@ -565,8 +565,8 @@ items:
 - name: 设计工具包
   href: downloads/index.md
 ms.openlocfilehash: b6430ee5f121d672282513fa524a50e7788f404c
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
-ms.translationtype: MT
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117446"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582419"

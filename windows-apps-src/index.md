@@ -1,20 +1,14 @@
 ---
 author: mijacobs
 layout: LandingPage
-description: 借助通用 Windows 平台 (UWP)，可以生成适用于任何 Windows 设备（电脑、手机、Xbox One、HoloLens 以及其他设备）的应用，然后将这些应用发布到应用商店。
+description: 借助通用 Windows 平台 (UWP)，可以生成适用于任何 Windows 设备（电脑、手机、Xbox One、HoloLens 以及其他设备）的应用，然后将这些应用发布到 Store。
 title: UWP 文档 - UWP 应用开发人员 | Microsoft Docs
 ms.topic: landing-page
 ms.author: mijacobs
 ms.date: 08/4/2017
-keywords: windows uwp, 通用 Windows 平台, Windows 运行时 API, windows api, windows api 参考, winrt api, uwp api, uwp api 参考, 开发 uwp, 设计 uwp, 发布 uwp
+keywords: 'windows uwp, 通用 Windows 平台, Windows 运行时 API, windows api, windows api 参考, winrt api, uwp api, uwp api 参考, 开发 uwp, 设计 uwp, 发布 uwp'
 ms.localizationpriority: medium
 ms.technology: uwp-conceptual-docs
-ms.openlocfilehash: ce1923fa071344a848b4b0c4fab1ed6da6da48f7
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047146"
 ---
 # <a name="universal-windows-platform-documentation"></a>通用 Windows 平台文档
 借助通用 Windows 平台 (UWP)，可以生成适用于任何 Windows 设备（电脑、手机、Xbox One、HoloLens 以及其他设备）的应用，然后将这些应用发布到 Microsoft Store。
@@ -30,7 +24,7 @@ ms.locfileid: "9047146"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>最近更新</h3>
+                        <h3>新增功能</h3>
                         <p>
                             <a href="whats-new/windows-10-version-latest.md">新的 API 和功能</a>
                         </p>
@@ -55,12 +49,12 @@ ms.locfileid: "9047146"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>入门</h3>
+                        <h3>立即开始行动</h3>
                         <p>
                             <a href="get-started/universal-application-platform-guide.md">UWP 应用是什么？</a>
                         </p>
                         <p>
-                            <a href="get-started/sign-up.md">注册开发者帐户</a>
+                            <a href="get-started/sign-up.md">注册开发人员帐户</a>
                         </p>
                         <p>
                             <a href="get-started/get-set-up.md">准备工作</a>
@@ -88,7 +82,7 @@ ms.locfileid: "9047146"
                             <a href="design/basics/design-and-ui-intro.md">设计基础知识</a>
                         </p>
                          <p>
-                            <a href="design/fluent-design-system/index.md">Fluent Design 系统</a>
+                            <a href="design/fluent-design-system/index.md">Fluent Design System</a>
                         </p>
                         <p>
                             <a href="design/controls-and-patterns/index.md">控件和模式</a>
@@ -187,7 +181,7 @@ ms.locfileid: "9047146"
                             <a href="publish/the-app-certification-process.md">应用认证过程</a>
                         </p>
                         <p>
-                            <a href="publish/upload-app-packages.md">上载应用包</a>
+                            <a href="publish/upload-app-packages.md">上传应用包</a>
                         </p>
                         <p>
                             <a href="publish/create-your-app-by-reserving-a-name.md">保留名称</a>
@@ -240,7 +234,7 @@ ms.locfileid: "9047146"
                     <div class="cardText">
                         <h3>相关链接</h3>
                         <p>
-                            <a href="//docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps">Win32 和适用于 UWP 应用的 COM API</a>
+                            <a href="//docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps">适用于 UWP 应用的 Win32 和 COM API</a>
                         </p>
                         <p>
                             <a href="//msdn.microsoft.com/library/windows/apps/mt185501.aspx">适用于 UWP 应用的 .NET</a>
@@ -271,10 +265,10 @@ ms.locfileid: "9047146"
                     <div class="cardText">
                         <h3>社区和支持</h3>
                         <p>
-                            <a href="https://twitter.com/WindowsDocs">@WindowsDocs在 Twitter 上</a>
+                            <a href="https://twitter.com/WindowsDocs">Twitter 上的 @WindowsDocs</a>
                         </p>
                         <p>
-                            <a href="https://aka.ms/OneDevMinute">OneDevMinute YouTube 上</a>
+                            <a href="https://aka.ms/OneDevMinute">YouTube 上的 OneDevMinute</a>
                         </p>
                         <p>
                             <a href="https://developer.microsoft.com/windows/support">Windows 开发人员支持</a>

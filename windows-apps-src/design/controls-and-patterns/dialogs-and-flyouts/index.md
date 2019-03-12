@@ -1,22 +1,16 @@
 ---
-Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
+Description: 对话框和浮出控件显示当用户请求这些元素或发生需要通知或批准的操作时出现的瞬态 UI 元素。
 title: 对话框和浮出控件
 template: detail.hbs
 ms.date: 07/06/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: 'windows 10, uwp'
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d542c9809eb939553a851508886e34265f269263
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036859"
 ---
 # <a name="dialogs-and-flyouts"></a>对话框和浮出控件
 
@@ -24,7 +18,7 @@ ms.locfileid: "9036859"
 
 对话框和浮出控件是当发生需要通知、批准或来自用户的其他信息的操作时出现的瞬态 UI 元素。
 
-> **重要 API**：[ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)、[Flyout 类](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+> **重要的 API**：[ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)、[Flyout 类](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 
 :::row:::
@@ -69,7 +63,7 @@ ms.locfileid: "9036859"
 
 </li>
 <li>应用于整个应用上下文的错误消息，如连接错误。</li>
-<li>问题，在应用需要询问用户阻止问题时（例如当应用不能代表用户进行选择时）。 阻止问题不能忽略或延迟，并且应该向用户提供明确定义的选项。</li>
+<li>问题，在应用需要询问用户阻止问题时（例如当应用不能代表用户进行选择时）。 阻止问题不能忽略或延迟，并应该向用户提供明确定义的选项。</li>
 </ul>
 </p>
     :::column-end:::
@@ -84,7 +78,7 @@ ms.locfileid: "9036859"
 :::row-end:::
 
 
-## <a name="ways-to-avoid-using-dialogs-and-flyouts"></a>若要避免使用对话框和浮出控件的方式
+## <a name="ways-to-avoid-using-dialogs-and-flyouts"></a>如何避免使用对话框和浮出控件
 
 请考虑要共享的信息的重要性：它的重要性是否足以要干扰用户？ 此外，请考虑需要显示该信息的频率；如果你要每几分钟显示一个对话框或通知，你可能希望改为在主 UI 中为此信息分配空间。 例如，在聊天客户端中，你可能显示当前在线的好友列表，并在好友登录时突出显示他们，而不是每次有好友登录时都显示浮出控件。
 
@@ -105,7 +99,7 @@ ms.locfileid: "9036859"
 <tr>
 <td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> 或 <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> 的实际应用。</p>
+    <p>如果已安装了 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> 或 <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> 的实际应用。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
