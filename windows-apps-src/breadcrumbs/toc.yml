@@ -1,5 +1,5 @@
 items:
-- name: 文档
+- name: Docs
   tocHref: /
   topicHref: /
   items:
@@ -11,10 +11,10 @@ items:
       tocHref: /windows/uwp/
       topicHref: /windows/uwp/index
       items:
-      - name: 最近更新
+      - name: 新增功能
         tocHref: /windows/uwp/whats-new/
         topicHref: /windows/uwp/whats-new/windows-10-version-latest
-      - name: 入门
+      - name: 立即开始行动
         tocHref: /windows/uwp/get-started/
         topicHref: /windows/uwp/get-started/
       - name: 设计和 UI
@@ -33,10 +33,10 @@ items:
         - name: 样式
           tocHref: /windows/uwp/design/style/
           topicHref: /windows/uwp/design/style/index
-        - name: 动态效果
+        - name: 移动
           tocHref: /windows/uwp/design/motion/
           topicHref: /windows/uwp/design/motion/index
-        - name: 控件
+        - name: 控制
           tocHref: /windows/uwp/design/controls-and-patterns/
           topicHref: /windows/uwp/design/controls-and-patterns/index
         - name: 输入和交互
@@ -71,7 +71,7 @@ items:
         - name: 应用资源
           tocHref: /windows/uwp/app-resources/
           topicHref: /windows/uwp/app-resources/index
-        - name: 应用间通信
+        - name: 应用到应用的通信
           tocHref: /windows/uwp/app-to-app/
           topicHref: /windows/uwp/app-to-app/index
         - name: 音频、视频和相机
@@ -101,7 +101,7 @@ items:
         - name: 文件、文件夹和库
           tocHref: /windows/uwp/files/
           topicHref: /windows/uwp/files/index
-        - name: 图形
+        - name: 显卡
           tocHref: /windows/uwp/graphics/
           topicHref: /windows/uwp/graphics/index
         - name: 托管的 Web 应用
@@ -131,7 +131,7 @@ items:
         - name: 安全性
           tocHref: /windows/uwp/security/
           topicHref: /windows/uwp/security/index
-        - name: 线程处理和异步编程
+        - name: 线程和异步编程
           tocHref: /windows/uwp/threading-async/
           topicHref: /windows/uwp/threading-async/index
         - name: 可视化层
@@ -159,7 +159,7 @@ items:
         tocHref: /windows/uwp/gaming/
         topicHref: /windows/uwp/gaming/e2e
         items:
-        - name: 适用于 Xbox One 的 UWP
+        - name: Xbox One 上的 UWP
           tocHref: /windows/uwp/xbox-apps/
           topicHref: /windows/uwp/xbox-apps/index
         - name: 游戏编程
@@ -178,8 +178,8 @@ items:
         tocHref: /windows/uwp/publish/
         topicHref: /windows/uwp/publish/index
 ms.openlocfilehash: 1d79038daa4f2a50dd287da879fa8153ca3fb118
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962499"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582115"
