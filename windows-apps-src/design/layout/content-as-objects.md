@@ -4,11 +4,11 @@ title: 作为对象的内容
 template: detail.hbs
 ms.localizationpriority: medium
 ms.openlocfilehash: ed2ac8530d69929cc0e0e921cfb1cc5368058cd2
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981441"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593112"
 ---
 # <a name="content-as-objects"></a>作为对象的内容
 
@@ -16,7 +16,7 @@ ms.locfileid: "8981441"
 
 您可以操作元素的深度或 z 顺序来创建可帮助应用更易于使用的视觉层次结构。  
 
-> 注意：本文是关于 Windows 10 RS2 的一项新功能的前期草稿。 特征名称、术语和功能并非最终版本。 
+> 注意：本文是一项新功能的 Windows 10 RS2 的早期草稿。 特征名称、术语和功能并非最终版本。 
 
 ## <a name="why-visual-hierarchy-is-important"></a>为什么说视觉层次结构如此重要
 
@@ -43,7 +43,7 @@ ms.locfileid: "8981441"
 
 使用 Windows 10 RS2，我们逐个添加了另一个维度: 深度。 
 
-<a href="images/content-as-objects/depth-in-layout2.png">布局深度</a>
+<a href="images/content-as-objects/depth-in-layout2.png">在布局中的深度</a>
 
 
 ## <a name="use-depth-to-establish-a-hierarchy"></a>使用深度建立层次结构 
@@ -59,14 +59,14 @@ ms.locfileid: "8981441"
     </p>
   </div>
   <div class="side-by-side-content-right">
-    <a href="images/content-as-objects/elements-forward-backward.png">布局深度</a> 
+    <a href="images/content-as-objects/elements-forward-backward.png">在布局中的深度</a> 
     
   </div>
 </div>
 </div>
 
 ## <a name="how-does-it-work"></a>如何运作？
-> TODO：简要说明如何控制元素的 z 顺序。 对你来说，是否对 z 顺序显式进行硬编码，或是否有语义排序系统？ 如果将项目从一个层移动到另一个层？ 该系统将自动执行什么操作以及设计人员/开发人员需要担心什么？ 
+> TODO:如何控制元素的 z 顺序的简短说明。 对你来说，是否对 z 顺序显式进行硬编码，或是否有语义排序系统？ 如果将项目从一个层移动到另一个层？ 该系统将自动执行什么操作以及设计人员/开发人员需要担心什么？ 
 
 ## <a name="the-four-layers-of-a-typical-app-layers"></a>一个典型应用层的四个层
 
@@ -76,12 +76,12 @@ ms.locfileid: "8981441"
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<b>超出背景层</b>此层位于应用后面。  当元素迁移到此层时，我们建议使这些元素变为非交互。 此层上的元素具有最慢的视差且将剪裁到应用窗口。 TODO：此层是否缩放？ 
+<b>超出背景</b>此层位于后面应用。  当元素迁移到此层时，我们建议使这些元素变为非交互。 此层上的元素具有最慢的视差且将剪裁到应用窗口。 TODO:此层作用范围？ 
 
-<p>示例背景元素包括内容后面的图像，TODO：示例；TODO：示例。</p>
+<p>示例后台元素包括后面的内容，TODO 图像：示例中，TODO:示例。</p>
   </div>
   <div class="side-by-side-content-right">
-    <a href="images/content-as-objects/elements-forward-backward.png">应用的超出背景层</a>
+    <a href="images/content-as-objects/elements-forward-backward.png">超越后台应用程序层</a>
     
   </div>
 </div>
@@ -92,12 +92,12 @@ ms.locfileid: "8981441"
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<b>被动层</b>这是应用的基层 UI 元素居住默认情况下。  元素在此层上实时移动（无视差），剪裁到应用窗口，并且以 100% 的比例呈现。 
+<b>被动层</b>这是默认情况下，UI 元素所在的应用程序中，基本层。  元素在此层上实时移动（无视差），剪裁到应用窗口，并且以 100% 的比例呈现。 
 
-<p>示例元素：应用背景、文本、辅助 UI，如应用导航 UI。</p>
+<p>示例元素：应用背景，文本，如应用程序导航用户界面的辅助用户界面。</p>
   </div>
   <div class="side-by-side-content-right">
-    <a href="images/content-as-objects/elements-forward-backward.png">应用的被动层</a>
+    <a href="images/content-as-objects/elements-forward-backward.png">应用在被动层</a>
     
   </div>
 </div>
@@ -108,12 +108,12 @@ ms.locfileid: "8981441"
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<b>操作调用层</b>这一层是适用于被动层元素上方优先排序的交互式项目。 此层上的元素具有中等视差且将剪裁到应用窗口。 TODO：此层上的元素是否缩放或具有投影？
+<b>对操作的调用</b>这一层是交互式上面被动层元素确定优先级的项。 此层上的元素具有中等视差且将剪裁到应用窗口。 TODO:是否在此层规模较大的元素或具有投影？
 
-<p>示例元素：列表、网格、主命令（TODO：如...）。</p> 
+<p>示例元素： 列表、 网格、 主命令 (TODO:Such as。...)。</p> 
   </div>
   <div class="side-by-side-content-right">
-    <a href="images/content-as-objects/elements-forward-backward.png">应用的操作调用层</a>
+    <a href="images/content-as-objects/elements-forward-backward.png">应用程序在调用操作层</a>
     
   </div>
 </div>
@@ -123,12 +123,12 @@ ms.locfileid: "8981441"
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<b>主图层</b>此层时适合在屏幕上的最高优先级元素。  此层上的元素可以打破应用窗口的边界，可以缩放，而且会自动获取投影。
+<b>Hero 层</b>时，这一层是最高的优先级元素在屏幕上。  此层上的元素可以打破应用窗口的边界，可以缩放，而且会自动获取投影。
 
 <p>示例元素：照片元素、当前所选的项目。</p>  
   </div>
   <div class="side-by-side-content-right">
-    <a href="images/content-as-objects/elements-forward-backward.png">应用的主图层</a>
+    <a href="images/content-as-objects/elements-forward-backward.png">应用在特大层</a>
     
   </div>
 </div>
@@ -141,10 +141,10 @@ Depth is meaningful; it establishes visual and interactive hierarchy for users t
 -->
 
 ## <a name="example-tbd"></a>示例：TBD
-> TODO：显示如何调整通用 UI 模式以使用 z 排序。 我们应显示说明和代码。 
+> TODO:演示如何改编使用 z 顺序的通用 UI 模式。 我们应显示说明和代码。 
 
 ## <a name="download-the-code-samples"></a>下载代码示例
->TODO：链接到演示此功能的示例。 
+>TODO:链接到演示此功能的示例。 
 
 
 ## <a name="related-articles"></a>相关文章
