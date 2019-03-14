@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e04170fb8952ecd5802b6190816d44012f56d8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926996"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661432"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>音乐、图片和视频库中的文件和文件夹
 
@@ -19,7 +19,7 @@ ms.locfileid: "8926996"
 
 库是虚拟的文件夹集合，其中包括一个默认的已知文件夹，以及用户通过使用你的应用或任一内置应用添加到库的任何其他文件夹。 例如，图片库默认包含“图片”已知文件夹。 用户可以通过使用你的应用或内置的“照片”应用，将文件夹添加到图片库或从中删除它们。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
@@ -28,7 +28,7 @@ ms.locfileid: "8926996"
 
 -   **对位置的访问权限**
 
-    在 Visual Studio 中，在“清单设计器”中打开应用清单文件。 在**功能**页上，选择你的应用管理的库。
+    在 Visual Studio 中，在“清单设计器”中打开应用清单文件。 在 **“功能”** 页上，选择你的应用管理的库。
 
     -   **音乐库**
     -   **图片库**
@@ -158,9 +158,7 @@ private async void getSongs()
 
 默认情况下，用户可以选择将文件存储在可选的 SD 卡上。 但是，应用可以停止允许将文件存储在 SD 卡上。 因此，媒体库可以在设备的内部存储和 SD 卡上进行拆分。
 
-你无需写入其他代码即可处理这种情况。 [
-              **Windows.Storage**
-            ](https://msdn.microsoft.com/library/windows/apps/br227346) 命名空间中用于查询已知文件夹的方法以透明方式合并这两个位置中的查询结果。 你也无需在应用清单文件中指定 **removableStorage** 功能来获取这些合并的结果。
+你无需写入其他代码即可处理这种情况。 [  **Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) 命名空间中用于查询已知文件夹的方法以透明方式合并这两个位置中的查询结果。 你也无需在应用清单文件中指定 **removableStorage** 功能来获取这些合并的结果。
 
 请考虑下图中显示的设备的存储状态：
 
@@ -175,7 +173,7 @@ private async void getSongs()
 
 “本机照片”和“已保存图片”文件夹不支持深入查询。
 
-**在捕获照片的应用中打开该照片**
+**捕获它在应用中打开一张照片**
 
 如果你希望让用户以后在捕获照片的应用中再次打开该照片，则可以通过使用类似于以下示例的代码，与照片的元数据一起保存 **CreatorAppId**。 在此示例中，**testPhoto** 是 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)。
 

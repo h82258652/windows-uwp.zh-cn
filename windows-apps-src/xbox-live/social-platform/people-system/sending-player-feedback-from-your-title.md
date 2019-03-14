@@ -150,7 +150,7 @@ POST https://reputation.xboxlive.com/users/batchtitlefeedback
 答：否，信誉服务确定反馈的粗细。 我们始终会调整权重以改进系统。
 
 ### <a name="q-can-i-undo-feedback-ive-sent-on-a-user"></a>问:可以撤消发送用户的反馈？
-答：否，反馈是最后一个。 如果你认为你的游戏存在 bug，正在发送错误反馈，请告诉我们，我们会将该游戏放入黑名单，直到你修复了 bug。
+答：否，反馈是最后一个。 如果你认为你的游戏存在 bug，正在发送错误反馈，请告诉我们，我们会将该游戏放入阻止列表，直到你修复了 bug。
 
 ### <a name="q-can-i-see-the-feedback-sent-for-my-title-from-users"></a>问:可以看到我的用户的标题为发送的反馈？
 答：该信息不可用的当前自助服务。 你可以询问客户经理，我们确实有每个游戏的数据，可以向你提供。 我们很快会让你直接看到这些信息，另外还会显示在使用你的游戏时信誉较低的一组用户。
