@@ -1,5 +1,5 @@
 ---
-Description: Incorporate speech into your apps using Cortana voice commands, speech recognition, and speech synthesis.
+Description: 使用 Cortana 语音命令、语音识别和语音合成，将语音整合到你的应用中。
 title: 语音交互
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 09787d5a83415b65b8946860edb5b7cad09a5846
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050810"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637072"
 ---
 # <a name="speech-interactions"></a>语音交互
 
@@ -60,7 +60,7 @@ Windows 应用程序中的 **Cortana** 使用自定义语音命令（说出或�
 
 如果网络连接不可用，则禁用所有连续识别 UI 并终止识别会话。 连续识别需要网络连接。
 
-## <a name="commanding"></a>命令
+## <a name="commanding"></a>命令处理
 
 语音输入可以启动操作、调用命令和完成任务。
 
@@ -81,20 +81,20 @@ Windows 应用程序中的 **Cortana** 使用自定义语音命令（说出或�
 -   预定义语法（听写或 Web 搜索）
 
     -   “侦听”屏幕。
-    -   **思考**屏幕。
+    -   “思考”屏幕。
     -   “听到你说”屏幕或错误屏幕。
 -   字词或短语列表，或者 SRGS 语法文件
 
-    -   **侦听**屏幕。
-    -   **你说的是**屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
-    -   **听到你说**屏幕或错误屏幕。
+    -   “侦听”屏幕。
+    -   “你说的是”屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
+    -   “听到你说”屏幕或错误屏幕。
 
-在**侦听**屏幕上，你可以：
+在 **“侦听”** 屏幕上，你可以：
 
 -   自定义标题文本。
 -   提供用户可以说出的示例文本。
--   指定是否显示**听到你说**屏幕。
--   在**听到你说**屏幕上向用户读出已识别的字符串。
+-   指定是否显示“听到你说”屏幕。
+-   在“听到你说”屏幕上向用户读出已识别的字符串。
 
 以下示例显示了使用 SRGS 定义的约束的语音识别器的内置识别流程。 在本例中，语音识别是成功的。
 
@@ -210,7 +210,7 @@ TTS 从纯文本或 SSML 生成语音输出。
 | [指定语音识别器语言](specify-the-speech-recognizer-language.md) | 了解如何选择要用于语音识别的安装语言。 |
 | [定义自定义识别约束](define-custom-recognition-constraints.md) | 了解如何为语音识别定义和使用自定义约束。 |
 | [启用连续听写](enable-continuous-dictation.md) |了解如何捕获和识别较长的连续听写语音输入。 |
-| [管理音频输入问题](manage-issues-with-audio-input.md) | 了解如何管理由音频输入质量所导致的语音识别准确度的问题。 |
+| [使用音频输入管理问题](manage-issues-with-audio-input.md) | 了解如何管理由音频输入质量所导致的语音识别准确度的问题。 |
 | [设置语音识别超时](set-speech-recognition-timeouts.md) | 设置语音识别器忽略静音或无法识别的声音（干扰）并继续侦听语音输入的时长。 |
 
 ## <a name="related-articles"></a>相关文章

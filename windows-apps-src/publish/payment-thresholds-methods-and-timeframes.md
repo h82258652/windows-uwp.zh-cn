@@ -952,7 +952,7 @@ ms.locfileid: "57610662"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>台湾</td>
+    <td>中国台湾</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>25 USD</td>
@@ -2014,7 +2014,7 @@ ms.locfileid: "57610662"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>台湾</td>
+    <td>中国台湾</td>
     <td>50 USD</td>
     <td>电汇</td>
     <td>50 USD</td>
@@ -3062,7 +3062,7 @@ ms.locfileid: "57610662"
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>台湾</td>
+    <td>中国台湾</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>25 USD</td>
@@ -4053,7 +4053,7 @@ ms.locfileid: "57610662"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>台湾</td>
+    <td>中国台湾</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>25 USD</td>

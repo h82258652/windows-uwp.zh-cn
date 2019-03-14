@@ -226,7 +226,7 @@ Windows 程序中[合作伙伴中心](https://partner.microsoft.com/dashboard)�
 |  斯威士兰 | 19 USD | 99 USD | 未付款 | 否 | 
 |  瑞典 | 123 SEK | 700 SEK | SEK 支付到银行 | 是 | 
 |  瑞士 | 17 CHF | 90 CHF | CHF 支付到银行 | 是 | 
-|  台湾 | 568 TWD | 2,840 TWD | USD 支付到银行 | 是 | 
+|  中国台湾 | 568 TWD | 2,840 TWD | USD 支付到银行 | 是 | 
 |  塔吉克斯坦 | 19 USD | 99 USD | USD 支付到银行 | 否 | 
 |  坦桑尼亚 | 19 USD | 99 USD | TZS 支付到银行 | 否 | 
 |  泰国 | 601 THB | 3,000 THB | THB 支付到银行 | 是 | 

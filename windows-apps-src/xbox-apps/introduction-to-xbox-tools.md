@@ -46,7 +46,7 @@ Xbox Device Portal 是一种基于浏览器的设备管理工具，便于你添�
 
 6. 选择**关闭**，并在**主页**选项卡上，记下**远程访问**工具上列出的 URL。
 
-7. 在浏览器中输入 URL。 你将收到有关所提供证书的警告（类似于以下屏幕截图），因为 Xbox One 主机签名的安全证书不被视为已知的受信任发布者。 在 Edge 中，单击**详细信息**，然后**转到网页**以访问 Xbox Device Portal。
+7. 在浏览器中输入 URL。 你将收到有关所提供证书的警告（类似于以下屏幕截图），因为 Xbox One 主机签名的安全证书不被视为已知的受信任发布者。 在 Microsoft Edge 中，单击**详细信息**，然后**转到网页**以访问 Xbox Device Portal。
 
     ![安全证书警告](images/introduction-to-xbox-one-tools-3.png)
 

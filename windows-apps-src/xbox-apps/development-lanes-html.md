@@ -14,7 +14,7 @@ ms.lasthandoff: 03/06/2019
 ms.locfileid: "57660322"
 ---
 # <a name="bringing-html-games-to-uwp-on-xbox"></a>将 HTML 游戏移植到 Xbox 上的 UWP
-Xbox One 是适用于 HTML 5 游戏的一个优秀平台。 HTML 5 游戏在 [Edge](https://developer.microsoft.com/microsoft-edge/) 浏览器引擎上运行。 Edge 速度较快，并且完全支持 HTML 5 和 CSS 3 功能（如 WebGL 和画布）。
+Xbox One 是适用于 HTML 5 游戏的一个优秀平台。 HTML 5 游戏在 [Microsoft Edge](https://developer.microsoft.com/microsoft-edge/) 浏览器引擎上运行。 Microsoft Edge 速度较快，并且完全支持 HTML 5 和 CSS 3 功能（如 WebGL 和画布）。
 
 [Construct 2](https://www.scirra.com/blog/176/announcing-xbox-one-export-beta) 等热门游戏引擎支持 Xbox One。 我们并未对每一个 HTML 框架和引擎都进行测试，但从我们目前所了解到的情况来看，它们中的大多数都适用于 Xbox One。
 

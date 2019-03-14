@@ -14,7 +14,7 @@ ms.lasthandoff: 03/06/2019
 ms.locfileid: "57656622"
 ---
 # <a name="how-to-disable-mouse-mode"></a>如何禁用鼠标模式
-默认情况下，所有应用程序的鼠标模式都处于打开状态，这意味着未选择退出的所有应用程序将收到鼠标指针（类似于该主机的 Edge 浏览器中的情形）。 我们强烈建议你关闭此模式，并针对方向控制器导航进行优化。   
+默认情况下，所有应用程序的鼠标模式都处于打开状态，这意味着未选择退出的所有应用程序将收到鼠标指针（类似于该主机的 Microsoft Edge 浏览器中的情形）。 我们强烈建议你关闭此模式，并针对方向控制器导航进行优化。   
    
 ## <a name="html"></a>HTML   
 若要在 JavaScript 通用 Windows 平台 (UWP) 应用中打开方向控制器导航，请使用 [TVHelpers 方向导航](https://github.com/Microsoft/TVHelpers/wiki/Using-DirectionalNavigation) JavaScript 库。 将方向导航 JavaScript 文件包含在你的应用包中，并在需要方向控制器导航的所有 HTML 页面中添加对它的引用。

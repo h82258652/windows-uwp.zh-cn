@@ -3,15 +3,15 @@ title: Web 帐户管理器
 description: 本文介绍如何通过 Windows 10 Web 帐户管理器 API，使用 AccountsSettingsPane 将通用 Windows 平台 (UWP) 应用连接到外部标识提供者，如 Microsoft 或 Facebook。
 ms.date: 12/06/2017
 ms.topic: article
-keywords: windows 10，uwp 安全
+keywords: windows 10，uwp 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
 ms.openlocfilehash: a0a16ac9a2d810f7f4cbe2be403713b5cec4997b
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116043"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641022"
 ---
 # <a name="web-account-manager"></a>Web 帐户管理器
 
@@ -76,7 +76,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 窗格为空的原因是系统只提供了一个 UI shell，这取决于开发人员是否使用标识提供者以编程方式填充窗格。 
 
 > [!TIP]
-> 或者，你可以使用**[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** 而不是**[显示](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**，这将返回**[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**，查询操作的状态。 
+> （可选） 可以使用**[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** 而不是**[显示](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**，这将返回 **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**，若要查询操作的状态。 
 
 ## <a name="register-for-accountcommandsrequested"></a>注册 AccountCommandsRequested
 
@@ -174,11 +174,11 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 在此示例中，我们向_作用域_参数传递字符串“wl.basic”。 作用域表示你正在从提供给特定用户的服务请求的信息类型。 某些作用域仅提供对用户基本信息的访问权限，例如姓名和电子邮件地址，而其他作用域可能允许访问敏感信息，如用户的照片或电子邮件收件箱。 通常，应用应该至少使用实现其功能所必需的最小许可作用域。 有关需要哪些作用域才能获得用以与它们的服务结合使用的令牌，服务提供商将提供相关文档。 
 
-* 有关 Office 365 和 Outlook.com 的作用域，请参阅 [使用 v2.0 身份验证终结点对 Office 365 和 Outlook.com API 进行身份验证](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2)。 
+* 有关 Office 365 和 Outlook.com 的范围，请参阅 [使用 v2.0 身份验证终结点对 Office 365 和 Outlook.com API 进行身份验证](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2)。 
 * 有关 OneDrive 的作用域，请参阅 [OneDrive 身份验证和登录](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
 
 > [!TIP]
-> （可选） 如果你的应用使用的登录提示 （若要填充的默认电子邮件地址的用户字段） 或其他与登录体验相关的特殊属性，则列出**[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性中。 这将导致系统缓存的 web 帐户，这样可以防止在缓存中的帐户不匹配时忽略。
+> （可选） 如果您的应用程序使用的登录提示 （若要填充默认电子邮件地址的用户字段） 或其他与登录体验相关的特殊属性，将其列在**[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性。 这将导致系统以缓存 web 帐户，这样可防止缓存中的帐户不匹配时忽略此属性。
 
 如果在开发企业应用，可能需要连接到 Azure Active Directory (AAD) 实例，并使用 Microsoft Graph API，而非常规的 MSA 服务。 在此方案中，使用以下代码： 
 
@@ -196,7 +196,7 @@ private async void GetAadTokenAsync(WebAccountProviderCommand command)
 
 ## <a name="use-the-token"></a>使用令牌
 
-RequestTokenAsync 方法会返回一个 WebTokenRequestResult 对象，它包含你请求的结果。 如果请求成功，它将包含一个令牌。  
+RequestTokenAsync 方法会返回一个 WebTokenRequestResult 对象，它包含你请求的结果。 如果你的请求成功，它将包含一个令牌。  
 
 ```csharp
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
@@ -214,7 +214,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 > [!NOTE]
 > 如果在请求令牌时收到错误，请确保已将应用与 Microsoft Store 关联，如步骤一中所述。 如果你跳过此步骤，你的应用将无法获取令牌。 
 
-获得令牌后，可以使用它来调用提供商的 API。 在以下代码中，我们将调用[用户信息 Microsoft Live API](https://msdn.microsoft.com/library/hh826533.aspx)，以获取有关用户的基本信息并将其显示在我们的 UI 中。 但请注意，在大多数情况下，建议获取令牌后立即存储，然后以单独的方法使用该令牌。
+获得令牌后，可以使用它来调用提供程序的 API。 在以下代码中，我们将调用[用户信息 Microsoft Live API](https://msdn.microsoft.com/library/hh826533.aspx)，以获取有关用户的基本信息并将其显示在我们的 UI 中。 但请注意，在大多数情况下，建议获取令牌后立即存储，然后以单独的方法使用该令牌。
 
 ```csharp
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
@@ -338,7 +338,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="remove-a-stored-account"></a>删除已存储帐户
 
-如果保留 web 帐户，你可能希望用户能够解除他们的帐户与你的应用之间的关联。 这样一来，他们可以有效地"注销"的应用： 他们的帐户信息将不再自动启动时加载。 若要执行此操作，首先从存储中删除任何保存的帐户和提供商信息。 然后，调用 **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** 清除缓存，并使应用可能拥有的任何现有令牌失效。 
+如果保留 web 帐户，你可能希望用户能够解除他们的帐户与你的应用之间的关联。 这样一来，它们可以有效地"注销"应用程序： 其帐户信息将不再自动加载在启动时。 若要执行此操作，首先从存储中删除任何保存的帐户和提供商信息。 然后，调用 **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** 清除缓存，并使应用可能拥有的任何现有令牌失效。 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)
@@ -432,4 +432,4 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 [Web 帐户管理示例](https://go.microsoft.com/fwlink/p/?LinkId=620621)
 
-[Lunch Scheduler 应用](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
+[午餐计划程序应用程序](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)

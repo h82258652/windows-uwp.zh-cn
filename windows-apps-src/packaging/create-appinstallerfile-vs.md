@@ -6,15 +6,15 @@ ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aa7622fe408fcbc1f8da4c0fe0c6b8d54dd2cd6
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115771"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648482"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>使用 Visual Studio 创建应用安装程序文件
 
-始于 Windows 10，版本 1803年和 Visual Studio 2017 更新 15.7 开始旁, 加载的应用可以配置为接收自动更新使用`.appinstaller`文件。 Visual Studio 支持启用这些更新。
+从 Windows 10，版本 1803年和 Visual Studio 2017 中，更新 15.7 开始旁加载应用程序可以将配置为接收自动更新使用`.appinstaller`文件。 Visual Studio 支持启用这些更新。
 
 ## <a name="app-installer-file-location"></a>应用安装程序文件位置
 `.appinstaller` 文件可以托管在一个共享位置，如 HTTP 终结点或 UNC 共享文件夹，并包含用于查找要安装的应用包的路径。 用户从共享位置安装应用并启用对新更新的定期检查。 
@@ -25,12 +25,12 @@ ms.locfileid: "9115771"
 你可以在创建项目时配置 `TargetPlatformMinVersion` 属性，也可以稍后从项目属性中进行更改。 
 
 >[!IMPORTANT]
-> 应用安装程序文件只是生成时`TargetPlatformMinVersion`是 Windows 10 版本 1803年或更高版本。
+> 应用安装程序文件仅是生成时`TargetPlatformMinVersion`为 Windows 10，版本 1803 版或更高版本。
 
 
 ### <a name="create-packages"></a>创建程序包
 
-若要分发通过旁加载应用，必须创建应用包 (.appx/.msix) 或应用程序包 (.appxbundle/.msixbundle)，并将其发布在共享位置。
+若要分发通过旁加载应用，必须创建应用包 (.appx/.msix) 或应用程序捆绑包 (.appxbundle/.msixbundle)，并将其发布在共享位置。
 
 要执行该操作，请使用 Visual Studio 中的**创建应用序包**向导，并执行以下步骤。
 
@@ -42,15 +42,15 @@ ms.locfileid: "9115771"
 
 2. 选择 **I want to create packages for sideloading.** 和**启用自动更新**  
 
-![显示的“创建应用包”对话框窗口](images/select-sideloading.png)  
+![显示的“创建程序包”对话框窗口](images/select-sideloading.png)  
 
 只有在项目的 `TargetPlatformMinVersion` 设置为正确的 Windows 10 版本时，才启用**启用自动更新**。
 
-3. 在**选择和配置包**对话框中可以选择支持的体系结构配置。 如果选择捆绑包，将生成一个安装程序；如果不想要捆绑包，而是希望为每个体系结构生成一个程序包，它还会为每个体系结构生成一个安装程序文件。  如果不确定该选择哪种体系结构，或者想了解有关各种设备使用哪种体系结构的详细信息，请参阅[应用包体系结构](device-architecture.md)。
+3. 在**选择和配置包**对话框中可以选择支持的体系结构配置。 如果选择捆绑包，将生成一个安装程序；如果不想要捆绑包，而是希望为每个体系结构生成一个程序包，它还会为每个体系结构生成一个安装程序文件。  如果你不确定该选择哪种体系结构，或者想了解有关各种设备使用哪种体系结构的详细信息，请参阅[应用包体系结构](device-architecture.md)。
 
 4. 配置任何其他详细信息，例如版本编号或包输出位置。
 
-![显示的创建应用包窗口及包配置](images/packaging-screen5.jpg)  
+![使用显示的程序包配置创建应用包窗口](images/packaging-screen5.jpg)  
 
 5. 如果在步骤 2 中选中了**启用自动更新**，此时会显示**配置更新设置**对话框。 在该页面中，可以指定**安装 URL** 和更新检查频率。
 

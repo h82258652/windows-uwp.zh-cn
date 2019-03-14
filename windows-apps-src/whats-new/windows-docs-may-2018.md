@@ -57,7 +57,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 现在可以使用 Visual Studio 2017 时，更新 15.7 创建应用安装程序文件。 [了解如何使用 Visual Studio 创建的应用安装程序文件](../packaging/create-appinstallerfile-vs.md)和启用自动更新为你的应用。 如果遇到问题的过程中，请参阅[排除安装问题与应用安装程序文件](../packaging/troubleshoot-appinstaller-issues.md)查看常见问题和解决方案。
 
-### <a name="edge-webview-control-for-windows-forms-and-wpf-applications"></a>边缘 Windows 窗体和 WPF 应用程序的 WebView 控件
+### <a name="edge-webview-control-for-windows-forms-and-wpf-applications"></a>Edge web 视图控件可用于 Windows 窗体和 WPF 应用程序
 
 通过使用 WebView 控件，以前只可用于 UWP 应用程序在桌面应用程序中显示 web 内容。 此控件使用 Microsoft Edge 呈现引擎将嵌入呈现格式丰富 HTML 的视图中的远程 web 服务器、 动态生成的代码或内容文件的内容。 查找中的最新版本的 WebView 控件[Windows 社区工具包。](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)
 

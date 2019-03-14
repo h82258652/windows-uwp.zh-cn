@@ -47,7 +47,7 @@ Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的�
 | 西班牙           | Orange                           |
 | 瑞典          | Telenor、3                       |
 | 瑞士     | Swisscom, 日出                |
-| 台湾          | FarEasTone                       |
+| 中国台湾          | FarEasTone                       |
 | 土耳其          | Turkcell                         |
 | 阿拉伯联合酋长国 | Etisalat                    |
 | 美国   | Sprint、Verizon                  |

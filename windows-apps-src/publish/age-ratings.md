@@ -38,7 +38,7 @@ ms.locfileid: "57643442"
 > 韩国法律要求在韩国上市的游戏应通过韩国[游戏分级委员会](https://go.microsoft.com/fwlink/p/?LinkId=228256)进行分级。 如果你提交的是一款游戏并且想要向韩国提供，则必须填写此条增补款并上传分级证书。 注意，如果你的应用不是游戏或不打算向韩国提供，可以将此部分留空。
 
 > [!NOTE]
-> 如果你提交的游戏将在台湾提供，则需要依法通过[此表单](https://go.microsoft.com/fwlink/?linkid=867281)使用所提供的 CSRR 分级进行登录。 
+> 如果你提交的游戏将在中国台湾提供，则需要依法通过[此表单](https://go.microsoft.com/fwlink/?linkid=867281)使用所提供的 CSRR 分级进行登录。 
 
 <span id="appeal" />
 
