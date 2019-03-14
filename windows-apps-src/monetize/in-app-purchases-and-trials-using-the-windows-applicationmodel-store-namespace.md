@@ -1,17 +1,17 @@
 ---
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
-description: 了解如何启用 UWP 应用中的应用内购买和试用（定向 Windows10 版本 1607 之前的版本）。
+description: 了解如何启用 UWP 应用中的应用内购买和试用（定向 Windows 10 版本 1607 之前的版本）。
 title: 使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用
 ms.date: 08/25/2017
 ms.topic: article
 keywords: uwp, 应用内购买, IAP, 加载项, 试用, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 96260b0fb2aa0818dd6df52f88bd0c63d56c35b7
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046976"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628532"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用
 
@@ -20,25 +20,25 @@ ms.locfileid: "9046976"
 本部分中的文章提供有关针对多个常见方案使用 **Windows.ApplicationModel.Store** 命名空间中的成员的深入指南和代码示例。 有关与 UWP 中的应用内购买相关的基本概念概述，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。 有关演示如何使用 **Windows.ApplicationModel.Store** 命名空间实现试用和应用内购买的完整示例，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)。
 
 > [!IMPORTANT]
-> **Windows.ApplicationModel.Store** 命名空间不再更新新功能。 如果你的项目针对的是 Visual Studio 中的 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本（即，针对 Windows 10 版本 1607 或更高版本），我们建议你使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间。 有关详细信息，请参阅[应用内购买和试用](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)。 **Windows.ApplicationModel.Store**命名空间不支持在使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 桌面应用程序或应用或游戏，在合作伙伴中心中使用的开发沙盒 （例如，这是这种情况的任何游戏的与 Xbox Live 集成）。 这些产品必须使用 **Windows.Services.Store** 命名空间才能实现应用内购买和试用。
+> **Windows.ApplicationModel.Store** 命名空间不再更新新功能。 如果你的项目针对的是 Visual Studio 中的 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本（即，针对 Windows 10 版本 1607 或更高版本），我们建议你使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间。 有关详细信息，请参阅[应用内购买和试用](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)。 **Windows.ApplicationModel.Store**使用的 Windows 桌面应用程序中不支持命名空间[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)或在应用或游戏时，在合作伙伴中心 （适用于开发沙盒中示例中，这是任何游戏与 Xbox Live 集成，这种情况）。 这些产品必须使用 **Windows.Services.Store** 命名空间才能实现应用内购买和试用。
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>开始使用 CurrentApp 和 CurrentAppSimulator 类
 
 **Windows.ApplicationModel.Store** 命名空间的主要入口点是 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) 类。 此类提供的静态属性和方法可用于获取当前应用及其可用加载项的信息、获取当前应用或其加载项的许可证信息、为当前用户购买应用或加载项以及执行其他任务。
 
-[CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) 类从 Microsoft Store 获取其数据，因此必须拥有一个开发人员帐户，而且必须在 Microsoft Store 中发布应用，才能在你的应用中成功使用此类。 在将应用提交到 Microsoft Store 之前，可以使用此类的模拟版本（名为 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx)）测试代码。 测试应用后，并将其提交到 Microsoft Store 之前，必须将 **CurrentAppSimulator** 的实例替换为 **CurrentApp**。 如果应用使用 **CurrentAppSimulator**，则无法通过认证。
+[CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) 类从 Microsoft Store 获取其数据，因此必须拥有一个开发人员帐户，而且必须在 Microsoft Store 中发布应用，才能在你的应用中成功使用此类。 在将应用提交到应用商店之前，可以使用此类的模拟版本（称为 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx)）测试代码。 测试应用后，并将其提交到 Microsoft Store 之前，必须将 **CurrentAppSimulator** 的实例替换为 **CurrentApp**。 如果应用使用 **CurrentAppSimulator**，则无法通过认证。
 
 当使用 **CurrentAppSimulator** 时，应用许可和应用内产品的初始状态在本地文件中进行介绍，该文件位于名为 WindowsStoreProxy.xml 的开发计算机上。 有关此文件的详细信息，请参阅[将 WindowsStoreProxy.xml 文件与 CurrentAppSimulator 一起使用](#proxy)。
 
 有关可使用 **CurrentApp** 和 **CurrentAppSimulator** 执行的常见任务的详细信息，请参阅以下文章。
 
-| 主题       | 说明                 |
+| 主题       | 描述                 |
 |----------------------------|-----------------------------|
-| [排除或限制试用版中的功能](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | 如果允许客户在试用期内免费使用你的应用，则可以通过排除或限制试用期内的某些功能，吸引客户升级到完整版应用。 |
+| [排除或限制的试用版中的功能](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | 如果允许客户在试用期内免费使用你的应用，则可以通过排除或限制试用期内的某些功能，吸引客户升级到完整版应用。 |
 | [启用应用内产品购买](enable-in-app-product-purchases.md)      |  无论你的应用是否免费，你都可以直接从应用中销售内容、其他应用或新的应用功能（例如解锁游戏的下一关）。 我们在此处显示了如何在应用中启用这些产品。  |
 | [启用可消费应用内产品购买](enable-consumable-in-app-product-purchases.md)      | 通过应用商店商业平台提供可消费应用内产品（这些项目可以进行购买、使用和再次购买），以便为客户提供强大可靠的购买体验。 这对游戏内货币（金子、金币等）等来说尤为有用，可以购买此类货币，然后将其用于购买特定道具。 |
-| [管理应用内产品的大目录](manage-a-large-catalog-of-in-app-products.md)      |   如果你的应用提供较大的应用内产品目录，可以选择按照本主题中描述的过程帮助管理你的目录。    |
-| [使用收据验证产品购买](use-receipts-to-verify-product-purchases.md)      |   每个促成成功产品购买的 Microsoft Store 交易都可以选择返回交易收据，该收据可向客户提供有关所列产品和货币成本的信息。 有权访问此信息可支持以下方案：你的应用需要验证用户是否购买了你的应用，或者是否已从 Microsoft Store 进行了应用内产品购买。 |
+| [管理大型的应用内产品目录](manage-a-large-catalog-of-in-app-products.md)      |   如果你的应用提供较大的应用内产品目录，可以选择按照本主题中描述的过程帮助管理你的目录。    |
+| [使用收据验证产品采购](use-receipts-to-verify-product-purchases.md)      |   每个促成成功产品购买的 Microsoft Store 交易都可以选择返回交易收据，该收据可向客户提供有关所列产品和货币成本的信息。 有权访问此信息可支持以下方案：你的应用需要验证用户是否购买了你的应用，或者是否已从 Microsoft Store 进行了应用内产品购买。 |
 
 <span id="proxy" />
 
@@ -46,7 +46,7 @@ ms.locfileid: "9046976"
 
 当使用 **CurrentAppSimulator** 时，应用许可和应用内产品的初始状态在本地文件中进行介绍，该文件位于名为 WindowsStoreProxy.xml 的开发计算机上。 改变应用状态的 **CurrentAppSimulator** 方法（例如，通过购买许可证或处理应用内购买）仅更新内存中 **CurrentAppSimulator** 对象的状态。 WindowsStoreProxy.xml 的内容不会更改。 当应用再次启动时，许可证状态将还原到 WindowsStoreProxy.xml 中所述的内容。
 
-WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\Local\Packages\\&lt;应用包文件夹&gt;\LocalState\Microsoft\Windows Store\ApiData。 你可以编辑此文件以定义想要模拟 **CurrentAppSimulator** 属性的场景。
+默认情况下，在以下位置创建一个 WindowsStoreProxy.xml 文件： %UserProfile%\AppData\Local\Packages\\&lt;应用包文件夹&gt;\LocalState\Microsoft\Windows Store\ApiData。 你可以编辑此文件以定义想要模拟 **CurrentAppSimulator** 属性的场景。
 
 尽管可以修改此文件中的值，但我们建议创建自己的 WindowsStoreProxy.xml 文件（在 Visual Studio 项目的数据文件夹中）以供 **CurrentAppSimulator** 改用。 模拟交易时，调用 [ReloadSimulatorAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync) 以加载文件。 如果不调用 **ReloadSimulatorAsync** 加载你自己的 WindowsStoreProxy.xml 文件， **CurrentAppSimulator** 将创建/加载（但不是会覆盖）默认 WindowsStoreProxy.xml 文件。
 
@@ -149,13 +149,13 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 本部分列出的 XSD 文件定义 WindowsStoreProxy.xml 文件的结构。 若要在使用 WindowsStoreProxy.xml 文件时将此架构应用到 Visual Studio 中的 XML 编辑器，请执行以下操作：
 
 1. 在 Visual Studio 中打开 WindowsStoreProxy.xml 文件。
-2. 在**XML**菜单上，单击**创建架构**。 这将基于 XML 文件的内容创建一个临时 WindowsStoreProxy.xsd 文件。
+2. 在“XML”菜单上，单击“创建架构”。 这将基于 XML 文件的内容创建一个临时 WindowsStoreProxy.xsd 文件。
 3. 将该 .xsd 文件的内容替换为以下架构。
 4. 将文件保存到可以将其应用到多个应用项目的位置。
 5. 在 Visual Studio 中切换到 WindowsStoreProxy.xml 文件。
-6. 在**XML**菜单上，单击**架构**，然后在列表中找到 WindowsStoreProxy.xsd 文件所在的行。 如果该文件的位置不是你需要的（例如，如果仍然显示临时文件），则单击**添加**。 导航到正确的文件，然后单击**确定**。 你现在应该可以在列表中看到该文件。 确保在该架构的**使用**列中出现复选标记。
+6. 在“XML”菜单上，单击“架构”，然后在列表中找到 WindowsStoreProxy.xsd 文件所在的行。 如果该文件的位置不是你需要的（例如，如果仍然显示临时文件），则单击“添加”。 导航到正确的文件，然后单击“确定”。 你现在应该可以在列表中看到该文件。 确保在该架构的“使用”列中出现复选标记。
 
-一旦完成这些操作，对 WindowsStoreProxy.xml 进行的编辑将遵循该架构。 有关详细信息，请参阅[如何：选择要使用的 XML 架构](https://go.microsoft.com/fwlink/p/?LinkId=403014)。
+一旦完成这些操作，对 WindowsStoreProxy.xml 进行的编辑将遵循该架构。 有关详细信息，请参阅[如何：选择使用的 XML 架构](https://go.microsoft.com/fwlink/p/?LinkId=403014)。
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -388,7 +388,7 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 |  **AppId**  |    是   |  1   |   识别应用商店中应用的 GUID。 这可以是用于测试的任何 GUID。        |
 |  **LinkUri**  |    是  |  1   |    应用商店中列表页面的 URI。 这可以是用于测试的任何有效 URI。         |
 |  **CurrentMarket**  |    是  |  1   |    客户所在的国家/地区。         |
-|  **AgeRating**  |    是  |  1   |     一个整数，表示应用的最低年龄分级。 这是相同的值时，指定在合作伙伴中心提交应用。 由应用商店使用的值是：3、7、12 和 16。 有关这些分级的详细信息，请参阅[年龄分级](../publish/age-ratings.md)。        |
+|  **AgeRating**  |    是  |  1   |     一个整数，表示应用的最低年龄分级。 这是您将会在合作伙伴中心时指定应用程序提交的相同值。 应用商店使用的值包括：3、 7、 12 和 16。 有关这些分级的详细信息，请参阅[年龄分级](../publish/age-ratings.md)。        |
 |  [MarketData](#marketdata-child-of-app)  |    是  |  1 或更多      |    包含有关给定国家/地区的应用的信息。 对于在其中列出了应用的每个国家/地区，必须包含 **MarketData** 元素。       |    |
 
 <span id="marketdata-child-of-app"/>
@@ -401,15 +401,15 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 
 |  元素  |  必需  |  数量  | 描述   |
 |-------------|------------|--------|--------|
-|  **Name**  |    是   |  1   |   在此国家/地区中应用的名称。        |
-|  **Description**  |    是  |  1   |      在此国家/地区中应用的描述。       |
-|  **Price**  |    是  |  1   |     在此国家/地区中应用的价格 。        |
+|  **名称**  |    是   |  1   |   在此国家/地区中应用的名称。        |
+|  **描述**  |    是  |  1   |      在此国家/地区中应用的描述。       |
+|  **价格**  |    是  |  1   |     在此国家/地区中应用的价格 。        |
 |  **CurrencySymbol**  |    是  |  1   |     在此国家/地区使用的货币符号。        |
 |  **CurrencyCode**  |    否  |  0 或 1      |      在此国家/地区使用的货币代码。         |  |
 
 **MarketData** 具有以下属性。
 
-|  属性  |  必需  |  说明   |
+|  属性  |  必需  |  描述   |
 |-------------|------------|----------------|
 |  **xml:lang**  |    是        |     指定市场数据信息适用的国家/地区。          |  |
 
@@ -437,18 +437,18 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 
 |  元素  |  必需  |  数量  | 描述   |
 |-------------|------------|--------|--------|
-|  **Name**  |    是   |  1   |   在此国家/地区中加载项的名称。        |
-|  **Price**  |    是  |  1   |     在此国家/地区中加载项的价格。        |
+|  **名称**  |    是   |  1   |   在此国家/地区中加载项的名称。        |
+|  **价格**  |    是  |  1   |     在此国家/地区中加载项的价格。        |
 |  **CurrencySymbol**  |    是  |  1   |     在此国家/地区使用的货币符号。        |
 |  **CurrencyCode**  |    否  |  0 或 1      |      在此国家/地区使用的货币代码。         |  
-|  **Description**  |    否  |   0 或 1   |      在此国家/地区中加载项的描述。       |
+|  **描述**  |    否  |   0 或 1   |      在此国家/地区中加载项的描述。       |
 |  **Tag**  |    否  |   0 或 1   |      加载项的[自定义开发人员数据](../publish/enter-add-on-properties.md#custom-developer-data)（也称为标记）。       |
 |  **关键字**  |    否  |   0 或 1   |      包含最多 10 个 **Keyword** 元素，这些元素包含加载项的[关键字](../publish/enter-add-on-properties.md#keywords)。       |
 |  **ImageUri**  |    否  |   0 或 1   |      加载项列表中[图像的 URI](../publish/create-add-on-store-listings.md#icon)。           |  |
 
 **MarketData** 具有以下属性。
 
-|  属性  |  必需  |  说明   |
+|  属性  |  必需  |  描述   |
 |-------------|------------|----------------|
 |  **xml:lang**  |    是        |     指定市场数据信息适用的国家/地区。          |  |
 
@@ -469,7 +469,7 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 
 |  要模拟的条件  |  IsActive  |  IsTrial  | ExpirationDate   |
 |-------------|------------|--------|--------|
-|  完全授权  |    true   |  false  |    不存在。 它实际上可能会出现并指定将来的日期，但我们建议你从 XML 文件省略该元素。 如果它存在并指定过去的日期，那么 **IsActive** 将被忽略并为 false。          |
+|  完全授权  |    true   |  false  |    不存在。 它实际上可能会出现并指定将来的日期，但我们建议您从 XML 文件省略该元素。 如果它存在并指定过去的日期，那么 **IsActive** 将被忽略并为 false。          |
 |  在试用期内  |    true  |  true   |      &lt;将来的日期时间&gt; 此元素必须存在，因为 **IsTrial** 为 true。 你可以访问显示当前协调世界时 (UTC) 的网站，了解要设置的日期时间距离现在多久，以便获取想要的剩余试用期。         |
 |  试用过期  |    false  |  true   |      &lt;过去的日期时间&gt; 此元素必须存在，因为 **IsTrial** 为 true。 你可以访问显示当前协调世界时 (UTC) 的网站，了解“过去”的 UTC 时间。         |
 |  无效  |    false  | false       |     &lt;任何值或省略&gt;          |  |
@@ -503,10 +503,10 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 
 **Product** 具有以下属性。
 
-|  属性  |  必需  |  说明   |
+|  属性  |  必需  |  描述   |
 |-------------|------------|----------------|
 |  **ProductId**  |    是        |   包含应用用来标识加载项的字符串。            |
-|  **OfferID**  |     否       |   包含应用用来标识加载项所属的类别的字符串。 这为大型项目目录提供了支持，如[管理应用内产品的大型目录](manage-a-large-catalog-of-in-app-products.md)所述。           |
+|  **OfferId**  |     否       |   包含应用用来标识加载项所属的类别的字符串。 这为大型项目目录提供了支持，如[管理应用内产品的大型目录](manage-a-large-catalog-of-in-app-products.md)所述。           |
 
 <span id="simulation"/>
 
@@ -516,7 +516,7 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 
 **Simulation** 具有以下属性。
 
-|  属性  |  必需  |  说明   |
+|  属性  |  必需  |  描述   |
 |-------------|------------|----------------|
 |  **SimulationMode**  |    否        |      值可以是 **Interactive** 或 **Automatic**。 当此属性设置为 **Automatic** 时，这些方法将自动返回指定的 HRESULT 错误代码。 这可运行自动测试用例时使用。       |
 
@@ -552,4 +552,4 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 |  **ProductId**  |    是        |   包含应用用来标识易耗型加载项的字符串。            |
 |  **TransactionId**  |     是       |   包含在实施过程中应用用于跟踪易耗品购买交易的 GUID（作为字符串）。 请参阅[启用易耗型应用内产品购买](enable-consumable-in-app-product-purchases.md)。            |
 |  **状态**  |      是      |  包含应用用于指示易耗品的实施状态的字符串。 值可以是 **Active**、**PurchaseReverted**、**PurchasePending** 或 **ServerError**。             |
-|  **OfferID**  |     否       |    包含应用用来标识易耗品所属的类别的字符串。 这为大型项目目录提供了支持，如[管理应用内产品的大型目录](manage-a-large-catalog-of-in-app-products.md)所述。           |
+|  **OfferId**  |     否       |    包含应用用来标识易耗品所属的类别的字符串。 这为大型项目目录提供了支持，如[管理应用内产品的大型目录](manage-a-large-catalog-of-in-app-products.md)所述。           |

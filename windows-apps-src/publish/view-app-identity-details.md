@@ -1,5 +1,5 @@
 ---
-Description: View details related to the unique identity assigned to your app by the Microsoft Store, and get a link to your app's Store listing.
+Description: 查看与通过 Microsoft Store 中，分配给您的应用程序的唯一标识相关的详细信息，并获取指向应用商店的应用程序的列表。
 title: 查看应用标识的详细信息
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.date: 10/02/2018
@@ -7,29 +7,29 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e108d603a623e3b9e41d7ced3c0fafc80f006b8
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050004"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610812"
 ---
 # <a name="view-app-identity-details"></a>查看应用标识的详细信息
 
 
-你可以查看与分配给你的应用的**应用标识**页面上的 Microsoft Store 的唯一标识符相关的详细信息。 此外可以获取指向你的应用的应用商店的此页面上列出。
+可以查看与分配给您的应用程序通过 Microsoft Store 上的唯一标识相关的详细信息及其**应用程序标识**页。 此外可以获取指向你的应用商店的此页上的列表。
 
-若要找到此信息，请导航到其中一个应用，然后展开左侧导航菜单中的**应用管理**。 选中**应用标识**查看这些详细信息。
+若要找到此信息，请导航到其中一个应用，然后展开左侧导航菜单中的“应用管理”。 选中**应用标识**查看这些详细信息。
 
 
 ## <a name="values-to-include-in-your-app-package-manifest"></a>要包含在应用程序包清单中的值
 
-以下值必须包含在程序包清单中。 如果[使用 Microsoft Visual Studio 生成程序包](../packaging/packaging-uwp-apps.md)，并使用与你的开发者帐户关联的相同 Microsoft 帐户登录，则会自动包含这些详细信息。 如果手动生成程序包，则需要将以下各项添加到程序包中：
+必须在包清单中包含以下值。 如果[使用 Microsoft Visual Studio 生成程序包](../packaging/packaging-uwp-apps.md)，并使用与你的开发者帐户关联的相同 Microsoft 帐户登录，则会自动包含这些详细信息。 如果手动生成程序包，则需要将以下各项添加到程序包中：
 
--   **程序包/标识/名称**
--   **程序包/标识/发布者**
--   **程序包/属性/发行商显示名称**
+-   **包/Identity/名称**
+-   **发布服务器标识/包 /**
+-   **Package/Properties/PublisherDisplayName**
 
-有关详细信息，请参阅[程序包清单架构参考](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的[**标识**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
+有关详细信息，请参阅[程序包清单架构参考](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
 
 同时，这些元素声明应用的标识、建立了所有程序包所属于的“程序包系列”。 单个程序包将具有其他详细信息，如体系结构和版本。
 
@@ -38,8 +38,8 @@ ms.locfileid: "9050004"
 
 以下值是指应用的程序包系列的其他值，但不包含在清单内。
 
--   **程序包系列名称 (PFN)**：此值与某些 Windows API 结合使用。
--   **程序包 SID**：需要该值才能向应用发送 WNS 通知。 有关详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)。
+-   **包系列名称 (PFN)**:此值用于某些 Windows Api。
+-   **包 SID**:你将需要此值将 WNS 通知发送到您的应用程序。 有关详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)。
 
 
 ## <a name="link-to-your-apps-listing"></a>链接到应用一览

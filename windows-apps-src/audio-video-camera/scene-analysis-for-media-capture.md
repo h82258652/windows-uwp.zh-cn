@@ -4,14 +4,14 @@ description: 本文介绍了如何使用 SceneAnalysisEffect 和 FaceDetectionEf
 title: 分析相机帧的效果
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3359c3e7d7841e68dd00dc318eb1de9f1418df06
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047339"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635822"
 ---
 # <a name="effects-for-analyzing-camera-frames"></a>分析相机帧的效果
 
@@ -21,7 +21,7 @@ ms.locfileid: "9047339"
 
 ## <a name="scene-analysis-effect"></a>场景分析效果
 
-[**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) 将分析媒体捕获预览流中的视频帧，并建议处理选项以改进捕获结果。 当前，效果支持检测是否通过使用高动态范围 (HDR) 处理改进捕获。
+[  **SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) 将分析媒体捕获预览流中的视频帧，并建议处理选项以改进捕获结果。 当前，效果支持检测是否通过使用高动态范围 (HDR) 处理改进捕获。
 
 如果该效果建议使用 HDR，可以采用以下方式执行此操作：
 
@@ -69,7 +69,7 @@ ms.locfileid: "9047339"
 
 ## <a name="face-detection-effect"></a>人脸检测效果
 
-[**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) 可在媒体捕获预览流内标识人脸的位置。 该效果允许你在预览流中检测到人脸时接收通知，并为预览帧内每个检测到的人脸提供边界框。 在受支持的设备上，人脸检测效果还提供增强的曝光，并聚焦于场景中最重要的人脸。
+[  **FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) 可在媒体捕获预览流内标识人脸的位置。 该效果允许你在预览流中检测到人脸时接收通知，并为预览帧内每个检测到的人脸提供边界框。 在受支持的设备上，人脸检测效果还提供增强的曝光，并聚焦于场景中最重要的人脸。
 
 ### <a name="face-detection-namespaces"></a>人脸检测命名空间
 
@@ -97,7 +97,7 @@ ms.locfileid: "9047339"
 
 [!code-cs[RegisterFaceDetectionHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterFaceDetectionHandler)]
 
-在该事件的处理程序中，你可以通过访问 [**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774) 的 [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) 属性，获取帧中所有检测到的人脸列表。 [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) 属性是 [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) 结构，用于描述包含检测到的人脸的矩形，其单位相对于预览流尺寸。 若要查看将预览流坐标转换到屏幕坐标的示例代码，请参阅[人脸检测 UWP 示例](https://go.microsoft.com/fwlink/?LinkId=619486)。
+在该事件的处理程序中，你可以通过访问 [**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774) 的 [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) 属性，获取帧中所有检测到的人脸列表。 [  **FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) 属性是 [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) 结构，用于描述包含检测到的人脸的矩形，其单位相对于预览流尺寸。 若要查看将预览流坐标转换到屏幕坐标的示例代码，请参阅[人脸检测 UWP 示例](https://go.microsoft.com/fwlink/?LinkId=619486)。
 
 [!code-cs[FaceDetected](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetected)]
 
@@ -115,8 +115,8 @@ ms.locfileid: "9047339"
 
 ## <a name="related-topics"></a>相关主题
 
-* [相机](camera.md)
-* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [摄像头](camera.md)
+* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

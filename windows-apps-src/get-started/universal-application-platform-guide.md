@@ -1,25 +1,25 @@
 ---
 title: 什么是通用 Windows 平台 (UWP) 应用？
-description: 了解通用 Windows 平台 (UWP) 应用，此类应用可跨多种使用 Windows10 的设备运行。
+description: 了解通用 Windows 平台 (UWP) 应用，此类应用可跨多种使用 Windows 10 的设备运行。
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 通用
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a43cdd5c16e4ab7ec254c263df75c182ce3faba
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117627"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618172"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>什么是通用 Windows 平台 (UWP) 应用？
 
-![通用 Windows 平台应用在各种设备上运行，支持自适应式用户界面、 自然用户输入、 一个应用商店、 合作伙伴中心和云服务](images/universalapps-overview.png)
+![通用 Windows 平台应用的各种设备上运行，支持自适应用户界面、 自然用户输入、 一个存储、 合作伙伴中心和云服务](images/universalapps-overview.png)
 
 UWP 应用是：
 
-- 安全：UWP 应用声明其访问哪些设备资源和数据 用户必须对该访问授权。
+- 安全：UWP 应用程序声明哪些设备资源和他们访问的数据。 用户必须对该访问授权。
 - 能够在运行 Windows 10 的所有设备上使用常见的 API。
 - 可以使用设备的特定功能并让 UI 适应不同的设备屏幕尺寸、分辨率和 DPI。
 - 通过运行 Windows 10 的所有设备（或只是你指定的设备）上的 Microsoft Store 提供。 Microsoft Store 提供了多种利你的应用赚钱的方式。
@@ -35,9 +35,9 @@ UWP 应用在其清单中声明所需的设备能力，如访问麦克风、位�
 
 ## <a name="a-common-api-surface-across-all-devices"></a>跨所有设备的通用 API 设计面
 
-Windows 10 引入了通用 Windows 平台 (UWP)，可运行 windows 10 中的每个设备上提供的通用应用平台。 UWP 核心 API 在所有 Windows 设备上是相同的。 如果你的应用仅使用核心 Api，它将在无论你面向台式机、 Xbox、 混合现实头戴显示设备，并因此任何 windows 10 设备上运行。
+Windows 10 引入了通用 Windows 平台 (UWP)，它提供一个通用应用平台上运行 Windows 10 的每个设备。 UWP 核心 API 在所有 Windows 设备上是相同的。 如果您的应用程序仅使用核心 Api，它将面向的台式计算机、 Xbox、 混合现实耳机，无论任何 Windows 10 设备上运行，依此类推。
 
-使用 C++ /WinRT 或 C++ /CX 编写的 UWP 应用可以访问属于 UWP 的 Win32 API。 所有 windows 10 设备都实现这些 Win32 Api。
+使用 C++ /WinRT 或 C++ /CX 编写的 UWP 应用可以访问属于 UWP 的 Win32 API。 这些 Win32 Api 被实现的所有 Windows 10 设备。
 
 ## <a name="extension-sdks-expose-the-unique-capabilities-of-specific-device-types"></a>扩展 SDK 公开特定设备类型的特殊能力
 
@@ -66,7 +66,7 @@ Windows 通过以下功能帮助你的 UI 面向多个设备：
 
 ## <a name="theres-one-store-for-all-devices"></a>存在一个适用于所有设备的应用商店
 
-统一的 app store 让你的应用在 windows 10 设备，如 PC、 平板电脑、 Xbox、 HoloLens、 Surface Hub 和物联网 (IoT) 设备上可用。 你可以向 Microsoft Store 提交应用，并使其对所有类型的设备或仅对所选设备类型可用。 你将在一个位置上提交和管理适用于 Windows 设备的所有应用。 想要使用 UWP 功能实现 C++ 桌面应用的现代化并将其在 Microsoft store 内出售？ 这同样可以实现。
+统一的应用商店使您的应用程序等 PC、 平板电脑、 Xbox、 HoloLens、 Surface Hub 和物联网 (IoT) 设备的 Windows 10 设备上可用。 你可以向 Microsoft Store 提交应用，并使其对所有类型的设备或仅对所选设备类型可用。 你将在一个位置上提交和管理适用于 Windows 设备的所有应用。 想要使用 UWP 功能实现 C++ 桌面应用的现代化并将其在 Microsoft store 内出售？ 这同样可以实现。
 
 UWP 应用与 [Application Insights](https://azure.microsoft.com/services/application-insights/) 集成以获得详细的遥测和分析 - 用于了解用户、改进应用的重要工具。
 
@@ -94,7 +94,7 @@ UWP 应用与 [Application Insights](https://azure.microsoft.com/services/applic
 - 用户活动允许用户在应用中上次中断的位置继续，甚至可以跨设备实现。
 - “操作中心”管理来自应用的通知。
 - 后台执行和触发器使你的应用仅在用户需要时才会运行。
-- 你的应用可以使用语音和蓝牙 LE 设备来帮助用户与周围的世界进行交互。
+- 你的应用可以使用语音和蓝牙 LE 设备 来帮助用户与周围的世界进行交互。
 - 集成 Cortana 以将语音命令功能添加到你的应用。
 
 ##  <a name="use-a-language-you-already-know"></a>使用一种你已知道的语言
@@ -130,13 +130,13 @@ Microsoft 的设计系统名为 Fluent。 Fluent Design 系统是一套结合了
 - 了解如何[将 Cortana 添加到应用](https://mva.microsoft.com/training-courses/integrating-cortana-in-your-apps-8487?l=20D3s5Xz_5904984382)以使你的应用能够响应语音命令。
 - 将[推送通知](https://msdn.microsoft.com/library/windows/apps/mt187203)和[应用内购买](https://msdn.microsoft.com/library/windows/apps/mt219684)包含在你的规划中。 这些功能应该能够跨设备运行。
 
-### <a name="submit-your-app-to-the-store"></a>提交到应用商店应用
+### <a name="submit-your-app-to-the-store"></a>向应用商店提交应用
 
-[合作伙伴中心](https://partner.microsoft.com/dashboard)允许你管理和提交所有面向 Windows 设备在一个位置中的应用。 请参阅[发布 Windows 应用和游戏](../publish/index.md)若要了解如何提交应用以在 Microsoft Store 中发布。
+[合作伙伴中心](https://partner.microsoft.com/dashboard)允许你管理并提交所有应用程序以通过在一个位置的 Windows 设备。 请参阅[发布 Windows 应用和游戏](../publish/index.md)若要了解如何提交应用程序以通过 Microsoft Store 中发布。
 
-新功能简化了流程，同时给予你更多的控制。 你还会找到与[付款详细信息](https://msdn.microsoft.com/library/windows/apps/dn986925)组合的详细[分析报告](https://msdn.microsoft.com/library/windows/apps/mt148522)、[推广你的应用并与客户互动](https://msdn.microsoft.com/library/windows/apps/mt148526)的方式，等等。
+新功能简化了流程，同时给予您更多的控制。 你还会找到与[付款详细信息](https://msdn.microsoft.com/library/windows/apps/dn986925)组合的详细[分析报告](https://msdn.microsoft.com/library/windows/apps/mt148522)、[推广你的应用并与客户互动](https://msdn.microsoft.com/library/windows/apps/mt148526)的方式，等等。
 
-有关更多入门材料，请参阅[生成适用于 Windows10 设备的 Windows 应用简介](https://msdn.microsoft.com/magazine/dn973012.aspx)
+有关更多入门材料，请参阅[生成适用于 Windows 10 设备的 Windows 应用简介](https://msdn.microsoft.com/magazine/dn973012.aspx)
 
 ### <a name="more-advanced-topics"></a>更多高级主题
 
@@ -145,14 +145,14 @@ Microsoft 的设计系统名为 Fluent。 Fluent Design 系统是一套结合了
 - 有关适用于 UWP 应用的 Win32 API 的完整列表，请参阅 [UWP 应用的 API 集](https://msdn.microsoft.com/library/windows/desktop/mt186421)和 [UWP 应用的 Dll](https://msdn.microsoft.com/library/windows/desktop/mt186422)。
 - 请参阅 [.NET 中的通用 Windows 应用](https://blogs.msdn.microsoft.com/dotnet/2015/07/30/universal-windows-apps-in-net)查看编写 .NET UWP 应用的概述。
 - 有关你可以在 UWP 应用中使用的 .NET 类型的列表，请参阅[适用于 UWP 应用的 .NET](https://msdn.microsoft.com/library/mt185501.aspx)
-- [使用.NET 本机编译应用](https://docs.microsoft.com/dotnet/framework/net-native/)
+- [使用.NET Native 编译应用](https://docs.microsoft.com/dotnet/framework/net-native/)
 - 了解如何将适合 Windows 10 用户的现代体验添加到现有的桌面应用，并通过[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)在 Microsoft Store 中分发。
 
-## <a name="how-the-universal-windows-platform-relates-to-windows-runtime-apis"></a>通用 Windows 平台与 Windows 运行时 Api 的方式
-如果你正在构建的通用 Windows 平台 (UWP) 应用，你可以获取了大量的实际效果和退出"通用 Windows 平台 (UWP)"和"Windows 运行时 (WinRT)"的条款视为更多或更少同义词方便。 但它** 可能看起来将在背后的技术，并确定只区别是这些观点之间。 如果你不希望了解它，然后本节最后一个适合你。
+## <a name="how-the-universal-windows-platform-relates-to-windows-runtime-apis"></a>通用 Windows 平台如何与 Windows 运行时 Api 相关联
+如果您正在构建的通用 Windows 平台 (UWP) 应用，你可以获取大量里程和方便性带术语"通用 Windows 平台 (UWP)"和"Windows 运行时 (WinRT)"视为同义词，增加或减少。 但它*是*可能要查看的技术，在后台，并确定只是什么之处在于这些观点之间。 如果您希望了解它，最后一部分是为您。
 
-Windows 运行时和 WinRT Api，Windows Api 的进化。 最初，Windows 已编程通过平面，C 样式 Win32 Api。 这些已添加到 COM Api ([DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274)正在突出的示例)。 Windows 窗体、 WPF、.NET 和托管的语言汇聚到自己地编写 Windows 应用和自己风格的 API 技术。 Windows 运行时，深层下, 一个阶段的 com。 在实际应用程序二进制接口 (ABI) 层，在 COM 中其根目录变得可见。 但 Windows 运行时可可从不同的编程语言的调用。 和可调用这些语言的每个非常自然的方式。 为此，访问 Windows 运行时是可通过对象称为语言投影。 没有 Windows 运行时语言投影到 C#、 Visual Basic 到、 到标准 c + +、 到 JavaScript 中，依次类推。 此外，一次打包相应地 （请参阅[桌面桥](/windows/uwp/porting/desktop-to-uwp-root)），你可以从生成的应用程序模型之一的应用调用 WinRT Api: Win32、.NET、 WinForms 和 WPF。
+Windows 运行时和 WinRT Api 是一种演变，Windows Api。 最初，Windows 通过平直的、 C 样式 Win32 Api 编写。 已添加到那些 COM Api ([DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274)是一个重要例子)。 Windows 窗体、 WPF、.NET 和托管的语言引入其自己的方式编写 Windows 应用和 API 技术自己风格。 Windows 运行时，事实上下, 一阶段的 com。 在实际的应用程序二进制接口 (ABI) 层，其根在 COM 中的变得可见。 但 Windows 运行时的设计目标是通过一系列强大的不同的编程语言可调用。 并可调用到每个这些语言很自然的方式。 为此，对 Windows 运行时访问，可通过所谓的语言投射。 没有 Windows 运行时语言投影到C#、 到 Visual Basic、 到标准 c + +、 到 JavaScript 中，依次类推。 此外，一次打包适当地 (请参阅[桌面桥](/windows/uwp/porting/desktop-to-uwp-root))，可从一个很好范围的应用程序模型中生成应用程序中调用 WinRT Api:Win32、.NET、 WinForms 和 WPF。
 
-并且，当然，你可以从你的 UWP 应用中调用 WinRT Api。 UWP 是基于 Windows 运行时应用程序模型。 从技术上讲，UWP 应用程序模型基于[CoreApplication](/uwp/api/windows.applicationmodel.core.coreapplication)，尽管该细节可能从您，具体取决于你选择的编程语言中隐藏。 本主题已所述，价值主张的角度来看，从 UWP 适用于编写一个可以您选择，发布到 Microsoft Store 和任一的设备外形规格上运行的单个二进制文件。 你的 UWP 应用的设备范围取决于 UWP Api 子集限制你的应用调用，或者，也有条件地调用。
+并且，当然，从 UWP 应用调用 WinRT Api。 UWP 是构建在 Windows 运行时之上的应用程序模型。 从技术上讲，基于 UWP 应用程序模型[CoreApplication](/uwp/api/windows.applicationmodel.core.coreapplication)，尽管此详细信息可能会隐藏的具体取决于所选的编程语言。 如本主题已所述，从价值主张的角度来看，UWP 有助于编写单一的二进制文件，可以选择，将发布到 Microsoft Store 且很好的设备外观造型范围的任意一个上运行。 对 UWP 应用的设备覆盖范围取决于 UWP Api 的子集，限制应用于调用，或有条件地调用。
 
-希望，本部分已成功地描述基础 Windows 运行时 Api 的机制和通用 Windows 平台业务值的技术之间的区别。
+希望本部分已成功在描述基础 Windows 运行时 Api 的机制和通用 Windows 平台的商业价值的技术之间的差异。

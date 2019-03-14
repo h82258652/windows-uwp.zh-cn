@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ffe6119e9cac162486d23472f5d5876924b7ef9e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928418"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589812"
 ---
 # <a name="xaml-namescopes"></a>XAML 名称范围
 
@@ -30,15 +30,15 @@ XAML 名称范围中的名称使用户代码能够引用最初在 XAML 中声明
 
 从技术上讲，所发生的事情是，在 XAML 和它为代码隐藏定义的分部类一起编译时，XAML 本身也会经历标记编译器过程。 每个在标记中定义了 **Name** 或 [x:Name 属性](x-name-attribute.md)的对象元素都会生成一个内部字段，该字段的名称与 XAML 名称相匹配。 此字段最初没有内容。 然后，该类生成一个 **InitializeComponent** 方法，只有在加载了所有 XAML 之后才会调用该方法。 在 **InitializeComponent** 逻辑内，然后会向每个内部字段填充每个等效名称字符串的 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 返回值。 要自行查看此基础结构，可以在编译后查看 Windows 运行时应用项目的 /obj 子文件夹中为每个 XAML 页面创建的“.g”（生成的）文件。 如果反射你最终的程序集或检查它们的接口语言内容，也可以看到字段和 **InitializeComponent** 方法是这些结果程序集的成员。
 
-**注意**特别是对于 VisualC + + 组件扩展 (C + + CX) 的应用， **X:name**引用的支持字段不会创建一个 XAML 文件的根元素。 如果你需要从 C++/CX 代码隐藏来引用根对象，请使用其他 API 或树形遍历。 例如，你可以为已知的命名子元素调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)，然后调用 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
+**注意**  专为 Visual c + + 组件扩展 (C + + /cli CX) 应用、 的支持字段**x： 名称**XAML 文件的根元素不创建引用。 如果你需要从 C++/CX 代码隐藏来引用根对象，请使用其他 API 或树形遍历。 例如，你可以为已知的命名子元素调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)，然后调用 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
 
 ## <a name="creating-objects-at-run-time-with-xamlreaderload"></a>在运行时使用 XamlReader.Load 创建对象
 
-XAML 也可用作 [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 方法的字符串输入，该方法的行为类似于最初的 XAML 源代码分析操作。 **XamlReader.Load** 在运行时创建一个断开连接的新对象树。 然后可将断开连接的树附加到主要对象树上的某个点。 必须显式连接你创建的对象树，无论是通过将它添加到一个内容属性集合（例如 **Children**），还是设置其他某个接受对象值的属性（例如为 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill) 属性值加载一个新的 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101)）。
+XAML 也可用作 [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 方法的字符串输入，该方法的行为类似于最初的 XAML 源代码分析操作。 **XamlReader.Load** 在运行时创建一个断开连接的新对象树。 然后可将断开连接的树附加到主要对象树上的某个点。 必须显式连接你创建的对象树，无论是通过将它添加到一个内容属性集合（例如 **Children**），还是设置其他某个接受对象值的属性（例如为 [**Fill**](https://msdn.microsoft.com/library/windows/apps/br210101) 属性值加载一个新的 [**ImageBrush**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill)）。
 
 ### <a name="xaml-namescope-implications-of-xamlreaderload"></a>XamlReader.Load 对 XAML 名称范围的意义
 
-[**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 创建的新对象树所定义的初步 XAML 名称范围会在所提供的 XAML 中计算任何已定义的名称，以确定其是否唯一。 如果所提供的 XAML 中的名称此时在内部不是唯一的，**XamlReader.Load** 会抛出一个异常。 如果或当断开连接的对象树连接到主要应用程序对象树时，它不会尝试将它的 XAML 名称范围与主要应用程序 XAML 名称范围合并。 连接树后，你的应用有一个统一的对象树，但该树中具有离散 XAML 名称范围。 这种分歧发生在对象之间的连接点上，你在这些连接点将一个属性设置为从一个 **XamlReader.Load** 调用返回的值。
+[  **XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 创建的新对象树所定义的初步 XAML 名称范围会在所提供的 XAML 中计算任何已定义的名称，以确定其是否唯一。 如果所提供的 XAML 中的名称此时在内部不是唯一的，**XamlReader.Load** 会抛出一个异常。 如果或当断开连接的对象树连接到主要应用程序对象树时，它不会尝试将它的 XAML 名称范围与主要应用程序 XAML 名称范围合并。 连接树后，你的应用有一个统一的对象树，但该树中具有离散 XAML 名称范围。 这种分歧发生在对象之间的连接点上，你在这些连接点将一个属性设置为从一个 **XamlReader.Load** 调用返回的值。
 
 拥有离散且断开连接的 XAML 名称范围的复杂性在于，调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 方法以及直接管理的对象引用不再针对统一的 XAML 名称范围执行。 对其调用 **FindName** 的特定对象将指定范围，该范围就是调用对象所在的 XAML 名称范围。 在直接管理的对象引用情况中，该范围由代码所在的类指定。 通常，用于一个应用内容“页面”的运行时交互的代码隐藏位于支持根“页面”的分部类中，因此 XAML 名称范围是根 XAML 名称范围。
 
@@ -51,7 +51,7 @@ XAML 也可用作 [**XamlReader.Load**](https://msdn.microsoft.com/library/windo
 -   使用 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) 和/或已知存在于你的对象树结构中的集合属性（例如 [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 返回的集合）在离散的步骤中遍历整个树。
 -   如果从一个离散 XAML 名称范围调用并且希望使用根 XAML 名称范围，始终可轻松获得当前显示的主要窗口的引用。 只需使用一行包含调用 `Window.Current.Content` 的代码，即可获得当前应用程序窗口的可视根（根 XAML 元素，也称为内容源）。 然后可转换为 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 并从此范围调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)。
 -   如果从根 XAML 名称范围调用并且希望一个离散 XAML 名称范围中的对象，最好在你的代码中提前计划，保留对 [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 返回并随后添加到主要对象树的对象的引用。 此对象现在是一个可在离散 XAML 名称范围中调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 的有效对象。 你可以保持此对象用作全局变量，或者使用方法参数传递它。
--   你可以通过检查可视树来完全避免名称和 XAML 名称范围考虑因素。 [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/br243038) API 支持单独基于位置和索引，遍历可视树以查找父对象和子集合。
+-   你可以通过检查可视树来完全避免名称和 XAML 名称范围考虑因素。 [  **VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/br243038) API 支持单独基于位置和索引，遍历可视树以查找父对象和子集合。
 
 ## <a name="xaml-namescopes-in-templates"></a>模板中的 XAML 名称范围
 
@@ -80,8 +80,8 @@ XAML 中的模板提供了以一种直观方式重用和重新应用内容的能
 
 ## <a name="related-topics"></a>相关主题
 
-* [XAML 概述](xaml-overview.md)
-* [x:Name 属性](x-name-attribute.md)
+* [XAML概述](xaml-overview.md)
+* [X:name 特性](x-name-attribute.md)
 * [快速入门：控件模板](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 * [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048)
 * [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)

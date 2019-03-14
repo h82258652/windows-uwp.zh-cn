@@ -11,22 +11,22 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: e765faeabc754581efc769804e2daf4bfe7f9671
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e440812861cf853810f9fee597c807b439dda426
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941328"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599042"
 ---
 # <a name="handle-app-suspend"></a>处理应用暂停
 
-**重要的 API**
+**重要的 Api**
 
-- [**暂停中**](https://msdn.microsoft.com/library/windows/apps/br242341)
+- [**挂起**](https://msdn.microsoft.com/library/windows/apps/br242341)
 
-了解当系统挂起你的应用时如何保存重要的应用程序数据。 以下示例向事件处理程序注册 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件并将字符串保存到文件中。
+了解当系统暂停你的应用时如何保存重要的应用程序数据。 以下示例向事件处理程序注册 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件并将字符串保存到文件中。
 
-## <a name="register-the-suspending-event-handler"></a>注册 suspending 事件处理程序
+## <a name="register-the-suspending-event-handler"></a>注册暂停事件处理程序
 
 注册以处理 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件，该事件指示在系统暂停你的应用之前，应用应该保存其应用程序数据。
 
@@ -133,26 +133,26 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 
 每当用户切换到其他应用、桌面或“开始”屏幕时，系统都会暂停你的应用。 每当用户切回到你的应用时，系统就会恢复你的应用。 当系统恢复你的应用时，你的变量和数据结构的内容与系统将你的应用暂停之前的内容相同。 系统会将你的应用完全恢复到你离开时的状态，使用户感觉你的应用好像一直在后台运行一样。
 
-当你的应用被暂停后，系统会尝试将你的应用及其数据保留在内存中。 但是，如果系统没有资源将你的应用保存在内存里，则将终止你的应用。 当用户切换回已终止的暂停应用时，该应用会发送 [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件，且应该在其 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法中还原其应用程序数据。
+当你的应用暂停时，系统会尝试将你的应用及其数据保留在内存中。 但是，如果系统没有资源将你的应用保存在内存里，则将终止你的应用。 当用户切换回已终止的暂停应用时，该应用会发送 [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件，且应该在其 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法中还原其应用程序数据。
 
-当终止应用时系统不会通知应用，因此当暂停应用时，你的应用必须保存其应用程序数据并释放独占资源和文件句柄，并且当在终止后又激活应用时还原这些内容。
+当终止应用时系统不会通知应用，因此当暂停应用时，你的应用必须保存其应用程序数据并释放独占资源和文件句柄，并且在终止后又激活应用时还原这些内容。
 
-如果在处理程序中执行异步调用，控件将立即从该异步调用中返回。 这意味着，执行之后会从事件处理程序中返回，并且应用会转变为下一个状态，即使异步调用尚未完成。 使用传递给事件处理程序的 [**EnteredBackgroundEventArgs**](http://aka.ms/Ag2yh4) 对象上的 [**GetDeferral**](http://aka.ms/Kt66iv) 方法以延迟暂停，直到调用返回的 [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) 对象上的 [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) 方法。
+如果在处理程序中执行异步调用，控件将立即从该异步调用中返回。 这意味着，执行之后会从事件处理程序中返回，并且应用会转变为下一个状态，即使异步调用尚未完成。 使用传递给事件处理程序的 [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4) 对象上的 [**GetDeferral**](https://aka.ms/Kt66iv) 方法以延迟暂停，直到调用返回的 [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) 对象上的 [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) 方法。
 
-延迟并不会增加应用终止之前需要运行的代码量。 它仅延迟终止，直到调用延迟的 *Complete* 方法，或者达到延迟期限 - *以先发生者为准*。 若要扩展正在挂起状态使用[**ExtendedExecutionSession**时间](run-minimized-with-extended-execution.md)
+延迟并不会增加应用终止之前需要运行的代码量。 它仅延迟终止，直到调用延迟的 *Complete* 方法，或者达到延迟期限 - *以先发生者为准*。 要延长处于“暂停中”状态的事件，请使用 [**ExtendedExecutionSession**](run-minimized-with-extended-execution.md)
 
 > [!NOTE]
-> 为了提高 Windows8.1 中的系统响应，应用提供低优先级访问资源暂停时。 为了支持新的优先级，延长了暂停操作超时，以便应用具有与普通优先级相当的 5 秒（在 Windows 上）或者 1 到 10 秒超时（在 Windows Phone 上）。 你无法扩展或改变此超时窗口。
+> 若要提高系统在 Windows 8.1 中的响应能力，应用程序被授予低优先级服务访问权限资源后它们将被挂起。 为了支持新的优先级，延长了暂停操作超时，以便应用具有与普通优先级相当的 5 秒（在 Windows 上）或者 1 到 10 秒超时（在 Windows Phone 上）。 你无法扩展或改变此超时窗口。
 
-**有关使用 Visual Studio 进行调试的注释：** Visual Studio 阻止 Windows 暂停连接到调试程序的应用。 这是为了允许用户在应用正在运行时查看 Visual Studio 调试 UI。 调试应用时，可以使用 Visual Studio 将一个暂停事件发送给该应用。 请确保 **“调试位置”** 工具栏正在显示，然后单击 **“暂停”** 图标。
+**有关使用 Visual Studio 进行调试的说明：** Visual Studio 会阻止 Windows 挂起的应用程序附加到调试器。 这是为了允许用户在应用正在运行时查看 Visual Studio 调试 UI。 调试应用时，可以使用 Visual Studio 将一个暂停事件发送给该应用。 请确保 **“调试位置”** 工具栏正在显示，然后单击 **“暂停”** 图标。
 
 ## <a name="related-topics"></a>相关主题
 
 * [应用生命周期](app-lifecycle.md)
-* [处理应用激活](activate-an-app.md)
-* [处理应用恢复](resume-an-app.md)
-* [启动、暂停和恢复的用户体验指南](https://msdn.microsoft.com/library/windows/apps/dn611862)
-* [扩展执行](run-minimized-with-extended-execution.md)
+* [处理应用程序激活](activate-an-app.md)
+* [句柄应用恢复](resume-an-app.md)
+* [有关启动时，用户体验指南挂起，并继续](https://msdn.microsoft.com/library/windows/apps/dn611862)
+* [扩展的执行](run-minimized-with-extended-execution.md)
 
  
 

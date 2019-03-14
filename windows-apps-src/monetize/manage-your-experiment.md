@@ -1,5 +1,5 @@
 ---
-Description: After you define your experiment in Partner Center and code your experiment in your app, you are ready to active your experiment and use Partner Center to review the results of your experiment.
+Description: 在合作伙伴中心中定义实验，您的应用程序中的代码的实验后，你就试验准备好处于活动状态，并使用合作伙伴中心以查看试验的结果。
 title: 在合作伙伴中心中管理实验
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
 ms.date: 02/08/2017
@@ -7,24 +7,24 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e5c0d0ca1b1d771df2b224cc41ec5a37e267bc9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946560"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594922"
 ---
 # <a name="manage-your-experiment-in-partner-center"></a>在合作伙伴中心中管理实验
 
-你[定义你在合作伙伴中心中的实验](define-your-experiment-in-the-dev-center-dashboard.md)，并[为实验编写应用代码](code-your-experiment-in-your-app.md)之后, 你已准备好激活实验，并使用合作伙伴中心查看实验结果。 在获取所需的全部数据后，可以结束你的实验，然后选择是继续使用你的所有应用的控件变体中的变量值还是切换到使用其他变体之一中的变量值。
+后[在合作伙伴中心定义试验](define-your-experiment-in-the-dev-center-dashboard.md)并[编码都会针对试验应用](code-your-experiment-in-your-app.md)，已准备好激活你的试验和使用合作伙伴中心以查看试验的结果。 在获取所需的全部数据后，可以结束你的实验，然后选择是继续使用你的所有应用的控件变体中的变量值还是切换到使用其他变体之一中的变量值。
 
 > [!NOTE]
-> 当激活某个实验时，合作伙伴中心会立即开始从进行检测以数据为你的实验记录的任何应用中收集数据。 但是，可能需要几个小时实验数据，以显示在合作伙伴中心。
+> 激活实验后，合作伙伴中心立即开始收集数据从任何应用程序进行性能分析记录数据的实验。 但是，可能需要几个小时的试验数据出现在合作伙伴中心。
 
 有关演示如何创建并运行实验的端到端过程的演练，请参阅[通过 A/B 测试来创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
 ## <a name="activate-your-experiment"></a>激活实验
 
-当你在合作伙伴中心中的实验的参数满意并且已更新你的应用代码时，你可以随时激活实验，以便你可以开始从你的应用中收集实验数据。 激活实验后，你的应用可以检索变体值，并向合作伙伴中心报告视图和转换事件。
+当你感到满意的在合作伙伴中心试验参数和已更新应用程序代码时，你现可激活你的试验，以便开始从您的应用程序中收集实验数据。 当实验处于活动状态时，您的应用程序可以检索变体值和到合作伙伴中心报告视图和转换事件。
 
 1. 登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 2. 在 **“你的应用”** 下，通过要激活的实验选择该应用。
@@ -38,29 +38,29 @@ ms.locfileid: "8946560"
 
 ## <a name="review-the-results-of-your-experiment"></a>查看实验结果
 
-1. 在合作伙伴中心中，返回到你的应用的**实验**页面。
+1. 在合作伙伴中心，返回到**试验**应用页。
 2. 在**活动实验**部分中，单击活动实验的名称以转到实验页面。
 3. 有关活动实验或已完成的实验，此页中的前两个部分提供了实验的结果：
   * **“结果摘要”** 部分列出了实验目标和每个变体的转换率百分比。
   * **“结果详细信息”** 部分为实验中的所有目标的每个变体提供了更多详细信息，包括视图、转换、独特用户、转换率、增量百分比、置信度和重要性。 *置信度*是用来计算错误边距的估计的可靠性统计度量。 *重要性*是基于示例大小的统计度量，用来确定结果不是偶然得出，而是由于特定原因。
 
 > [!NOTE]
-> 合作伙伴中心仅报告第一个转换事件的每个用户在 24 小时时间段内。 如果用户在 24 小时时段内在应用中触发多个转换事件，仅报告第一个转换事件。 这是为了帮助防止具有很多转换事件的单个用户扭曲一组用户示例得出的实验结果。
+> 合作伙伴中心报告在 24 小时时间段内仅第一个转换事件的每个用户。 如果用户在 24 小时时段内在应用中触发多个转换事件，仅报告第一个转换事件。 这是为了帮助防止触发很多转换事件的单个用户扭曲一组示例用户得出的实验结果。
 
 
 ## <a name="complete-your-experiment"></a>完成实验
 
-1. 在合作伙伴中心中，返回到实验页面。 有关说明，请参阅上一节。
+1. 在合作伙伴中心，返回到实验页。 有关说明，请参阅上一节。
 2. 在**结果摘要**部分中，执行以下操作之一：
   * 如果想要结束实验并继续使用应用的控件变体中的变量值，请单击**继续**。
   * 如果想要结束实验但切换到使用应用的不同变体中的变量值，请在要对其进行切换的变体下单击**切换**。
-3. 单击**确定**确认你想要结束该实验。
+3. 单击 **“确定”** 以确认你想要结束该实验。
 
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建项目并在合作伙伴中心中定义远程变量](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* [为实验编写应用代码](code-your-experiment-in-your-app.md)
-* [在合作伙伴中心中定义实验](define-your-experiment-in-the-dev-center-dashboard.md)
-* [通过 A/B 测试创建和运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)
-* [通过 A/B 测试运行应用实验](run-app-experiments-with-a-b-testing.md)
+* [创建项目并在合作伙伴中心定义远程变量](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [代码应用程序进行试验](code-your-experiment-in-your-app.md)
+* [在合作伙伴中心定义试验](define-your-experiment-in-the-dev-center-dashboard.md)
+* [创建并运行你的第一个试验使用 A / B 测试](create-and-run-your-first-experiment-with-a-b-testing.md)
+* [使用一个运行应用试验 / B 测试](run-app-experiments-with-a-b-testing.md)

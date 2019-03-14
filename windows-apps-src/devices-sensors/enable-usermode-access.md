@@ -7,11 +7,11 @@ keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
 ms.openlocfilehash: 442b3b9328212a5115384b5175b519b76286dd28
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936395"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620302"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>启用 GPIO、I2C 和 SPI 的用户模式访问
 
@@ -26,7 +26,7 @@ Windows 上低级别总线的用户模式访问通过现有 `GpioClx` 和 `SpbCx
 
 ## <a name="asl-by-example"></a>ASL 示例
 
-演示 Raspberry Pi 2 上的 RhProxy 设备节点声明。 首先，在 \\_SB 作用域中创建 ACPI 设备声明。
+演示 Raspberry Pi 2 上的 RhProxy 设备节点声明。 首先，创建中的 ACPI 设备声明\\_SB 作用域。
 
 ```cpp
 Device(RHPX)
@@ -38,7 +38,7 @@ Device(RHPX)
 ```
 
 * _HID – 硬件 ID。将它设置为特定于供应商的硬件 ID。
-* _CID – 兼容 ID。必须是“MSFT8000”。
+* _CID – 兼容 ID。必须为“MSFT8000”。
 * _UID – 唯一 ID。设置为 1。
 
 接下来，声明应向用户模式公开的每个 GPIO 和 SPB 资源。 资源声明的顺序非常重要，因为使用资源索引将属性与资源关联起来。 如果存在多条公开的 I2C 或 SPI 总线，声明的第一条总线被视为该类型的“默认”总线，并且会是 [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) 和 [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx) 的 `GetDefaultAsync()` 方法返回的实例。
@@ -159,7 +159,7 @@ Package(2) { "bus-SPI-SPI1", Package() { 2 }},
 * 必须已通过 [MITT SPI 测试](https://msdn.microsoft.com/library/windows/hardware/dn919873.aspx)
 * 必须支持 4Mhz 时钟速度
 * 必须支持 8 位数据长度
-* 必须支持所有 SPI 模式：0、1、2、3
+* 必须支持所有 SPI 模式：0, 1, 2, 3
 
 ### <a name="i2c"></a>I2C
 
@@ -329,7 +329,7 @@ Package(2) { "bus-UART-UART2", Package() { 2 }},
 
 ## <a name="runtime-pin-muxing"></a>运行时引脚复用
 
-引脚复用可以将同一物理引脚用于不同功能。 多个不同的芯片上外设（例如 I2C 控制器、SPI 控制器和 GPIO 控制器）可以路由到 SOC 上的同一物理引脚。 复用块控制哪项功能在任何给定时间在引脚上处于活动状态。 通常，固件负责在启动时建立功能分配，此分配通过启动会话保持静态。 运行时引脚复用允许在运行时重新配置引脚功能分配。 支持用户在运行时选择引脚的功能可加速开发（方法是支持用户快速重新配置开发板的引脚），同时使硬件可以支持范围更广的应用程序（相较于静态配置而言）。
+引脚复用可以将同一物理引脚用于不同功能。 多个不同的芯片上外围设备（例如 I2C 控制器、SPI 控制器和 GPIO 控制器）可以路由到 SOC 上的同一物理引脚。 复用块控制哪项功能在任何给定时间在引脚上处于活动状态。 通常，固件负责在启动时建立功能分配，此分配通过启动会话保持静态。 运行时引脚复用允许在运行时重新配置引脚功能分配。 支持用户在运行时选择引脚的功能可加速开发（方法是支持用户快速重新配置开发板的引脚），同时使硬件可以支持范围更广的应用程序（相较于静态配置而言）。
 
 无需编写任何其他代码，用户就可以使用对 GPIO、I2C、SPI 和 UART 的复用支持。 当用户使用 [OpenPin\(\)](https://msdn.microsoft.com/library/dn960157.aspx) 或 [FromIdAsync\(\)](https://msdn.microsoft.com/windows.devices.i2c.i2cdevice.fromidasync) 打开 GPIO 或总线时，基础物理引脚会自动复用为请求的功能。 如果其他功能已在使用该引脚，OpenPin\(\) 或 FromIdAsync\(\) 调用将失败。 当用户通过释放 [GpioPin](https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.gpiopin.aspx)、[I2cDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2cdevice.aspx)、[SpiDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spidevice.aspx) 或 [SerialDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.serialcommunication.serialdevice.aspx) 对象关闭设备时，会释放引脚，从而允许它们稍后供其他功能打开。
 
@@ -343,11 +343,11 @@ Windows 在 [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh4395
 
 通过多个组件的协作实现引脚复用。
 
-* 引脚复用服务器 – 这些是控制引脚复用控制块的驱动程序。 引脚复用服务器通过请求保留复用资源（通过 *IRP_MJ_CREATE* 请求）和请求切换引脚的功能（通过 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 请求），从客户端接收引脚复用请求。 引脚复用服务器通常是 GPIO 驱动程序，因为复用块有时是 GPIO 块的一部分。 即使复用块是单独的外设，GPIO 驱动程序也是用于放置复用功能的逻辑位置。
+* 引脚复用服务器 – 这些是控制引脚复用控制块的驱动程序。 引脚复用服务器通过请求保留复用资源（通过 *IRP_MJ_CREATE* 请求）和请求切换引脚的功能（通过 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 请求），从客户端接收引脚复用请求。 引脚复用服务器通常是 GPIO 驱动程序，因为复用块有时是 GPIO 块的一部分。 即使复用块是单独的外围设备，GPIO 驱动程序也是用于放置复用功能的逻辑位置。
 * 引脚复用客户端 – 这些是使用引脚复用的驱动程序。 引脚复用客户端从 ACPI 固件接收引脚复用资源。 引脚复用资源是一种连接资源，受资源中心管理。 引脚复用客户端通过打开资源的句柄来保留引脚复用资源。 若要使硬件更改生效，客户端必须通过发送 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 请求来提交配置。 客户端通过关闭句柄释放引脚复用资源，其中点复用配置会还原为其默认状态。
 * ACPI 固件 – 指定具有 `MsftFunctionConfig()` 资源的复用配置。 MsftFunctionConfig 资源表示的管脚中具有客户端所需的复用配置。 MsftFunctionConfig 资源包含功能编号、拉配置和管脚编号列表。 MsftFunctionConfig 资源提供给管脚复用客户端作为硬件资源，驱动程序在其 PrepareHardware 回调中接收这些资源（类似于 GPIO 和 SPB 连接资源）。 客户端接收可用于打开资源句柄的资源中心 ID。
 
-> 必须将 `/MsftInternal` 命令行开关传递到 `asl.exe`，才能编译包含 `MsftFunctionConfig()` 描述符的 ASL 文件，因为 ACPI 工作委员会当前正在审查这些描述符。 例如： `asl.exe /MsftInternal dsdt.asl`
+> 必须将 `/MsftInternal` 命令行开关传递到 `asl.exe`，才能编译包含 `MsftFunctionConfig()` 描述符的 ASL 文件，因为 ACPI 工作委员会当前正在审查这些描述符。 例如：`asl.exe /MsftInternal dsdt.asl`
 
 引脚复用中涉及的操作顺序如下所示。
 
@@ -553,7 +553,7 @@ FunctionNumber 的含义由服务器定义，据了解，MsftFunctionConfig 描�
 
 ### <a name="authoring-guidelines-for-acpi-tables"></a>ACPI 表的编写指南
 
-本部分介绍如何将复用资源提供给客户端驱动程序。 请注意，你需要 Microsoft ASL 编译器版本 14327 或更高版本来编译包含 `MsftFunctionConfig()` 资源的表。 `MsftFunctionConfig()` 资源提供给引脚复用客户端作为硬件资源。 `MsftFunctionConfig()` 应将资源提供给需要更改引脚复用的驱动程序，这些驱动程序通常是 SPB 和串行控制器驱动程序；但不应将资源提供给 SPB 和串行外设驱动程序，因为该控制器驱动程序将处理复用配置。
+本部分介绍如何将复用资源提供给客户端驱动程序。 请注意，你需要 Microsoft ASL 编译器版本 14327 或更高版本来编译包含 `MsftFunctionConfig()` 资源的表。 `MsftFunctionConfig()` 资源提供给 pin muxing 客户端，作为硬件资源。 `MsftFunctionConfig()` 资源应提供给需要 pin muxing 更改，这通常是存储的驱动程序和串行控制器驱动程序，但是，不应提供对存储和串行外围设备驱动程序，因为控制器驱动程序句柄 muxing 配置。
 `MsftFunctionConfig()` ACPI 宏按如下方式定义：
 
 ```cpp
@@ -605,11 +605,11 @@ Device(I2C1)
 }
 ```
 
-除了控制器驱动程序通常所需的内存和中断资源，还要指定 `MsftFunctionConfig()` 资源。 此资源允许 I2C 控制器驱动程序将引脚 2 和 3（由 \\_SB.GPIO0 处的设备节点进行管理）置于已启用上拉电阻器的功能 4 中。
+除了控制器驱动程序通常所需的内存和中断资源，还要指定 `MsftFunctionConfig()` 资源。 此资源启用 I2C 控制器驱动程序将第 2 和 3-在设备节点管理的针\\_SB。GPIO0 – 已启用的上拉电阻 4 功能中。
 
 ## <a name="supporting-muxing-support-in-gpioclx-client-drivers"></a>在 GpioClx 客户端驱动器中支持复用支持
 
-`GpioClx` 具有对引脚复用的内置支持。 GpioClx 微型端口驱动程序（也称为“GpioClx 客户端驱动程序”），驱动 GPIO 控制器硬件。 从 Windows 10 内部版本 14327 开始，GpioClx 微型端口驱动程序可以通过实现两个新的 DDI 添加对引脚复用的支持：
+`GpioClx` 已对 pin muxing 的内置支持。 GpioClx 微型端口驱动程序（也称为“GpioClx 客户端驱动程序”），驱动 GPIO 控制器硬件。 从 Windows 10 内部版本 14327 开始，GpioClx 微型端口驱动程序可以通过实现两个新的 DDI 添加对引脚复用的支持：
 
 * CLIENT_ConnectFunctionConfigPins – 由 `GpioClx` 调用以命令微型端口驱动程序应用指定的复用配置。
 * CLIENT_DisconnectFunctionConfigPins – 由 `GpioClx` 调用以命令微型端口驱动程序恢复复用配置。
@@ -633,11 +633,11 @@ Device(I2C1)
 
 在设备初始化期间，`SpbCx` 和 `SerCx` 框架会解析作为硬件资源提供给设备的所有 `MsftFunctionConfig()` 资源。 然后 SpbCx/SerCx 按需获取和释放引脚复用资源。
 
-`SpbCx` 仅在调用客户端驱动程序的 [EvtSpbTargetConnect\(\)](https://msdn.microsoft.com/library/windows/hardware/hh450818.aspx) 回调之前，在其 *IRP_MJ_CREATE* 处理程序中应用引脚复用配置。 如果无法应用复用配置，将不会调用控制器驱动程序的 `EvtSpbTargetConnect()` 回调。 因此，SPB 控制器驱动程序可能会假设在调用 `EvtSpbTargetConnect()` 时，引脚会复用为 SPB 功能。
+`SpbCx` 应用 pin muxing 配置中的其*IRP_MJ_CREATE*处理程序，只需调用客户端驱动程序之前[EvtSpbTargetConnect()](https://msdn.microsoft.com/library/windows/hardware/hh450818.aspx)回调。 如果无法应用复用配置，将不会调用控制器驱动程序的 `EvtSpbTargetConnect()` 回调。 因此，SPB 控制器驱动程序可能会假设在调用 `EvtSpbTargetConnect()` 时，引脚会复用为 SPB 功能。
 
-`SpbCx` 仅在调用控制器驱动程序的 [EvtSpbTargetDisconnect\(\)](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx) 回调之后，在其 *IRP_MJ_CLOSE* 处理程序中恢复引脚复用配置。 结果是，每当外设驱动程序打开 SPB 控制器驱动程序的句柄时，引脚就会复用为 SPB 功能；当外设驱动程序关闭其句柄时，会复用回引脚。
+`SpbCx` 将恢复 pin muxing 配置中的其*IRP_MJ_CLOSE*处理程序中的，紧靠调用控制器驱动程序[EvtSpbTargetDisconnect()](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx)回调。 结果是，每当外设驱动程序打开 SPB 控制器驱动程序的句柄时，引脚就会复用为 SPB 功能；当外设驱动程序关闭其句柄时，会复用回引脚。
 
-`SerCx` 类似行为。 `SerCx` 仅在调用控制器驱动程序的 [EvtSerCx2FileOpen\(\)](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx) 回调之前，在其 *IRP_MJ_CREATE* 处理程序中获取所有 `MsftFunctionConfig()` 资源；仅在调用控制器驱动程序的 [EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx) 回调之后，在其 IRP_MJ_CLOSE 处理程序中释放所有资源。
+`SerCx` 行为类似。 `SerCx` 获取所有`MsftFunctionConfig()`中的资源及其*IRP_MJ_CREATE*处理程序之前调用控制器驱动程序[EvtSerCx2FileOpen()](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx)回调，并释放其 IRP_MJ_CLOSE 中的所有资源处理程序中的，紧靠调用控制器驱动程序[EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx)回调。
 
 适用于 `SerCx` 和 `SpbCx` 控制器驱动程序的动态引脚复用的含义就是：它们必须能够容忍在某些时候从 SPB/UART 功能复用回引脚。 控制器驱动程序需要假设：在调用 `EvtSpbTargetConnect()` 或 `EvtSerCx2FileOpen()` 之前，不会复用引脚。 在以下回调期间，引脚不必复用为 SPB/UART 功能。 以下列表虽然不完整，但呈现了控制器驱动程序所实现的最常用 PNP 例程。
 
@@ -652,7 +652,7 @@ Device(I2C1)
 
 1. 验证是否每个 `SpbCx`、`GpioClx` 和 `SerCx` 控制器都正确加载和运行
 1. 验证系统中是否存在 `rhproxy`。 有些 Windows 版本没有此功能。
-1. 编译并加载使用的 rhproxy 节点 `ACPITABL.dat`
+1. 编译并加载 rhproxy 节点使用 `ACPITABL.dat`
 1. 验证 `rhproxy` 设备节点是否存在
 1. 验证 `rhproxy` 是否加载和启动
 1. 验证是否向用户模式开放了预期设备
@@ -701,7 +701,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 }
 ```
 
-2. 在以下位置下载 [WDK](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk) 并找到 `asl.exe` `C:\Program Files (x86)\Windows Kits\10\Tools\x64\ACPIVerify`
+2. 下载[WDK](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)并找到`asl.exe`在 `C:\Program Files (x86)\Windows Kits\10\Tools\x64\ACPIVerify`
 3. 运行以下命令以生成 ACPITABL.dat：
 
 ```ps
@@ -744,7 +744,7 @@ devcon status *msft8000
 
 现在 rhproxy 已经运行，它应该已经创建了可由用户模式访问的设备接口。 我们将使用几种命令行工具来枚举设备，并查看它们是否显示。
 
-克隆[https://github.com/ms-iot/samples](https://github.com/ms-iot/samples)存储库并生成`GpioTestTool`， `I2cTestTool`， `SpiTestTool`，并且`Mincomm`示例。 将工具复制到正在测试的设备，并使用以下命令枚举设备。
+克隆[ https://github.com/ms-iot/samples ](https://github.com/ms-iot/samples)存储库和生成`GpioTestTool`， `I2cTestTool`， `SpiTestTool`，和`Mincomm`示例。 将工具复制到正在测试的设备，并使用以下命令枚举设备。
 
 ```ps
 I2cTestTool.exe -list
@@ -800,7 +800,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 
 使用下面的示例验证从 UWP 工作的设备。
 
-| 示例 | 链接 |
+| 示例 | Link |
 |------|------|
 | IoT-GPIO | https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-GPIO |
 | IoT-I2C | https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-I2C |
@@ -814,12 +814,12 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 * [GPIO WinRT 功能和压力测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/f1fc0922-1186-48bd-bfcd-c7385a2f6f96)
 * [I2C WinRT 写入测试（需要 EEPROM）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2ab0df1b-3369-4aaf-a4d5-d157cb7bf578)
 * [I2C WinRT 读取测试（需要 EEPROM）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/ca91c2d2-4615-4a1b-928e-587ab2b69b04)
-* [I2C WinRT 不存在的从属地址测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2746ad72-fe5c-4412-8231-f7ed53d95e71)
-* [I2C WinRT 高级功能测试（需要嵌入 LPC1768）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/a60f5a94-12b2-4905-8416-e9774f539f1d)
-* [SPI WinRT 时钟频率验证测试（需要嵌入 LPC1768）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/50cf9ccc-bbd3-4514-979f-b0499cb18ed8)
-* [SPI WinRT IO 传输测试（需要嵌入 LPC1768）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/00c892e8-c226-4c71-9c2a-68349fed7113)
+* [I2C WinRT 不存在从属地址测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2746ad72-fe5c-4412-8231-f7ed53d95e71)
+* [I2C WinRT 高级功能测试（需要 mbed LPC1768）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/a60f5a94-12b2-4905-8416-e9774f539f1d)
+* [SPI WinRT 时钟频率验证测试（需要 mbed LPC1768）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/50cf9ccc-bbd3-4514-979f-b0499cb18ed8)
+* [SPI WinRT IO 传输测试（需要 mbed LPC1768）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/00c892e8-c226-4c71-9c2a-68349fed7113)
 * [SPI WinRT 步幅验证测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/20c6b079-62f7-4067-953f-e252bd271938)
-* [SPI WinRT 传输间隔检测测试（需要嵌入 LPC1768）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6da79d04-940b-4c49-8f00-333bf0cfbb19)
+* [SPI WinRT 传输间隔检测测试（需要 mbed LPC1768）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6da79d04-940b-4c49-8f00-333bf0cfbb19)
 
 当在 HLK 管理器中选择 rhproxy 设备节点时，将自动选择适用的测试。
 
@@ -835,7 +835,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 
 ## <a name="resources"></a>资源
 
-| 目标 | 链接 |
+| 目标 | Link |
 |-------------|------|
 | ACPI 5.0 规范 | http://acpi.info/spec.htm |
 | Asl.exe（Microsoft ASL 编译器） | https://msdn.microsoft.com/library/windows/hardware/dn551195.aspx |
@@ -858,7 +858,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 
 ### <a name="appendix-a---raspberry-pi-asl-listing"></a>附录 A - Raspberry Pi ASL 一览
 
-标头引出线：https://developer.microsoft.com/windows/iot/samples/PinMappingsRPi2
+标头引出线： https://developer.microsoft.com/windows/iot/samples/PinMappingsRPi2
 
 ```cpp
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -1020,7 +1020,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ### <a name="appendix-b---minnowboardmax-asl-listing"></a>附录 B - MinnowBoardMax ASL 一览
 
-标头引出线：https://developer.microsoft.com/windows/iot/samples/PinMappingsMBM
+标头引出线： https://developer.microsoft.com/windows/iot/samples/PinMappingsMBM
 
 ```cpp
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)

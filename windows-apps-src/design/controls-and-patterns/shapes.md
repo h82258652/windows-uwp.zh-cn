@@ -7,32 +7,32 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a576add7a080874fb0f042748bef7472e04ac817
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920111"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610672"
 ---
-# <a name="draw-shapes"></a>绘制形状
+# <a name="draw-shapes"></a>绘制图形
 
-了解如何绘制形状，如椭圆、矩形、多边形以及路径。 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 类是在 XAML UI 中可视化基于相当复杂矢量的绘图语言的方法；例如，可以绘制贝塞尔曲线。
+了解如何绘制形状，如椭圆、矩形、多边形以及路径。 [  **Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 类是在 XAML UI 中可视化基于相当复杂矢量的绘图语言的方法；例如，可以绘制贝塞尔曲线。
 
-> **重要 API**：[路径类](/uwp/api/Windows.UI.Xaml.Shapes.Path)、[Windows.UI.Xaml.Shapes 命名空间](/uwp/api/Windows.UI.Xaml.Shapes)、[Windows.UI.Xaml.Media 命名空间](/uwp/api/Windows.UI.Xaml.Media)
+> **重要的 Api**:[Path 类](/uwp/api/Windows.UI.Xaml.Shapes.Path)， [Windows.UI.Xaml.Shapes 命名空间](/uwp/api/Windows.UI.Xaml.Shapes)， [Windows.UI.Xaml.Media 命名空间](/uwp/api/Windows.UI.Xaml.Media)
 
 
-可以使用下面的两组类定义 XAML UI 中的空间区域：[**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) 类和 [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) 类。 这些类之间的主要区别在于，**Shape** 具有一个与其关联的画笔并可以呈现到屏幕，而 **Geometry** 只定义一个空间区域并且不进行呈现，除非它用于帮助将信息提供给另一 UI 属性。 你可以将 **Shape** 视为 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911)，其边界通过 **Geometry** 定义。 本主题主要讨论 **Shape** 类。
+两个集的类定义 XAML 用户界面中的空间区域：[**形状**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)类和[ **Geometry** ](/uwp/api/Windows.UI.Xaml.Media.Geometry)类。 这些类之间的主要区别在于，**Shape** 具有一个与其关联的画笔并可以呈现到屏幕，而 **Geometry** 只定义一个空间区域并且不进行呈现，除非它用于帮助将信息提供给另一 UI 属性。 你可以将 **Shape** 视为 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911)，其边界通过 **Geometry** 定义。 本主题主要讨论 **Shape** 类。
 
-[**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) 类包括 [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line)、[**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse)、[**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)、[**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon)、[**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 和 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)。 **Path** 非常有趣，因为它可以定义任意几何图形，同时还会在此处介绍 [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) 类，因为这是定义部分 **Path** 的一个方法。
+[  **Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) 类包括 [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line)、[**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse)、[**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)、[**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon)、[**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 和 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)。 **Path** 非常有趣，因为它可以定义任意几何图形，同时还会在此处介绍 [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) 类，因为这是定义部分 **Path** 的一个方法。
 
 ## <a name="fill-and-stroke-for-shapes"></a>形状的 Fill 和 Stroke
 
 为了将 [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) 呈现到应用画布上，必须在它与 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 之间建立关联。 将 **Shape** 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 属性设置为所需的 **Brush**。 有关画笔的详细信息，请参阅[使用笔画](../style/brushes.md)。
 
-[**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) 还可以有一个 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke)（在形状的外围绘制的线条）。 **Stroke** 还需要一个用于定义其外观的 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush)，而且其 [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) 应当具有非零值。 **StrokeThickness** 是一个属性，用来定义形状边缘的外围粗细。 如果你没有为 **Stroke** 指定 **Brush** 值，或者如果你将 **StrokeThickness** 设置为 0，则将不绘制形状周围的边界。
+[  **Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) 还可以有一个 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke)（在形状的外围绘制的线条）。 **Stroke** 还需要一个用于定义其外观的 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush)，而且其 [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) 应当具有非零值。 **StrokeThickness** 是一个属性，用来定义形状边缘的外围粗细。 如果你没有为 **Stroke** 指定 **Brush** 值，或者如果你将 **StrokeThickness** 设置为 0，则将不绘制形状周围的边界。
 
 ## <a name="ellipse"></a>Ellipse
 
-[**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 是具有弯曲外围的形状。 若要创建基本的 **Ellipse**，请为 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 指定 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、[**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 和 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush)。
+[  **Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 是具有弯曲外围的形状。 若要创建基本的 **Ellipse**，请为 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 指定 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、[**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 和 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush)。
 
 下一个示例将创建一个 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse)，其 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 为 200，[**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 为 200，而且使用 [**SteelBlue**](https://msdn.microsoft.com/library/windows/apps/Hh748056) 颜色的 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 作为其 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)。
 
@@ -63,9 +63,9 @@ layoutRoot.Children.Add(ellipse1);
 
 6 个 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 元素为一个组，它们属于 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/BR227538) 控件的控件模板，并且 2 个同心 **Ellipse** 元素属于 [**RadioButton**](https://msdn.microsoft.com/library/windows/apps/BR227544)。
 
-## <a name="span-idrectanglespanspan-idrectanglespanspan-idrectanglespanrectangle"></a><span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>Rectangle
+## <a name="span-idrectanglespanspan-idrectanglespanspan-idrectanglespanrectangle"></a><span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>矩形
 
-[**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 形状有四个边而且相对的两个边相等。 若要创建基本的 **Rectangle**，请指定 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、[**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 和 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)。
+[  **Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 形状有四个边而且相对的两个边相等。 若要创建基本的 **Rectangle**，请指定 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、[**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 和 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)。
 
 你可以为 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 创建圆角。 若要创建圆角，请指定 [**RadiusX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusx.aspx) 和 [**RadiusY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusy) 属性的值。 这些属性指定椭圆的 X 轴和 Y 轴，以定义角的曲线。 **RadiusX** 的最大允许值为 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 的一半，**RadiusY** 的最大允许值为 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 的一半。
 
@@ -102,15 +102,15 @@ layoutRoot.Children.Add(rectangle1);
 
 ![呈现的矩形。](images/shapes-rectangle.jpg)
 
-**提示**有某些方案对于 UI 定义，而不是使用一个[**矩形**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)，[**边框**](https://msdn.microsoft.com/library/windows/apps/BR209250)可能更合理。 如果你打算在其他内容周围创建一个矩形形状，最好使用 **Border**，因为它可能会有子内容而且将自动在子内容周围调整大小，而不是像 **Rectangle** 那样使用固定的高度和宽度尺寸。 **Border** 在你设置了 [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius) 属性的情况下还提供了创建圆角的选项。
+**提示**  位置而不是使用有的 UI 定义的一些方案[**矩形**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)即[**边框**](https://msdn.microsoft.com/library/windows/apps/BR209250)可能会更合适。 如果你打算在其他内容周围创建一个矩形形状，最好使用 **Border**，因为它可能会有子内容而且将自动在子内容周围调整大小，而不是像 **Rectangle** 那样使用固定的高度和宽度尺寸。 **Border** 在你设置了 [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius) 属性的情况下还提供了创建圆角的选项。
 
 另一方面，[**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 可能是控件组合的较好选择。 **Rectangle** 形状可以在很多控件模板中看到，因为它用作可获得焦点的控件的“FocusVisual”部分。 当控件处于“已设置焦点”视觉状态时，此矩形可见，在其他状态时，它处于隐藏状态。
 
 ## <a name="polygon"></a>Polygon
 
-[**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) 是通过任意数量的点来定义边的形状。 边通过用直线将点一个一个连接起来（最后一个点与第一个点相连）而创建。 [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polygon.points.aspx) 属性定义组成边的点集。 在 XAML 中，使用逗号分隔的列表定义点。 在代码隐藏文件中，使用 [**PointCollection**](https://msdn.microsoft.com/library/windows/apps/BR210220) 定义各个点，并将每个点作为一个 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值添加到集合中。
+[  **Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) 是通过任意数量的点来定义边的形状。 边通过用直线将点一个一个连接起来（最后一个点与第一个点相连）而创建。 [  **Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polygon.points.aspx) 属性定义组成边的点集。 在 XAML 中，使用逗号分隔的列表定义点。 在代码隐藏文件中，使用 [**PointCollection**](https://msdn.microsoft.com/library/windows/apps/BR210220) 定义各个点，并将每个点作为一个 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值添加到集合中。
 
-你不必为了将起点和终点指定为相同的 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值而明确声明点。 [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) 的呈现逻辑假设你要定义闭合形状而且会自动将终点与起点连起来。
+你不必为了将起点和终点指定为相同的 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值而明确声明点。 [  **Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) 的呈现逻辑假设你要定义闭合形状而且会自动将终点与起点连起来。
 
 下一个示例创建 [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon)，其 4 个顶点分别设置为 `(10,200)`、`(60,140)`、`(130,140)` 和 `(180,200)`。 它使用 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 的 [**LightBlue**](https://msdn.microsoft.com/library/windows/apps/Hh747960) 值作为其 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)，而且其 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) 没有值，以便它没有外围轮廓。
 
@@ -141,11 +141,11 @@ layoutRoot.Children.Add(polygon1);
 
 ![呈现的多边形。](images/shapes-polygon.jpg)
 
-**提示**[**点**](https://msdn.microsoft.com/library/windows/apps/BR225870)值通常用作 XAML 中的类型除了声明形状顶点的其他方案。 例如，**Point** 属于触摸事件的事件数据，因此你可以精确了解触摸操作发生在坐标空间的哪个位置。 有关 **Point** 以及如何将其用于 XAML 或代码的详细信息，请参阅 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 的 API 参考主题。
+**提示**  A [**点**](https://msdn.microsoft.com/library/windows/apps/BR225870)值通常用于为 XAML 中的类型声明的形状顶点以外的方案。 例如，**Point** 属于触摸事件的事件数据，因此你可以精确了解触摸操作发生在坐标空间的哪个位置。 有关 **Point** 以及如何将其用于 XAML 或代码的详细信息，请参阅 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 的 API 参考主题。
 
 ## <a name="line"></a>Line
 
-[**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) 只是一条在坐标空间中的两个点之间绘制的直线。 **Line** 忽略为 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 提供的任何值，因为它没有内部空间。 对于 **Line**，请确保为 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) 和 [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) 属性指定值，否则 **Line** 将不呈现。
+[  **Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) 只是一条在坐标空间中的两个点之间绘制的直线。 **Line** 忽略为 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 提供的任何值，因为它没有内部空间。 对于 **Line**，请确保为 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) 和 [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) 属性指定值，否则 **Line** 将不呈现。
 
 不要使用 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值指定 [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) 形状，而应针对 [**X1**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.x1.aspx)、[**Y1**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.y1.aspx)、[**X2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.x2.aspx) 和 [**Y2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.y2.aspx) 使用离散的 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值。 这会使得横线或竖线的标记最少。 例如，`<Line Stroke="Red" X2="400"/>` 定义一条长为 400 个像素的横线。 另一对 X,Y 属性在默认情况下为 0，因此，从点的角度看，此 XAML 将绘制一条从 `(0,0)` 到 `(400,0)` 的直线。 如果你希望它从 (0,0) 之外的任意点开始，则可以使用 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) 移动整个 **Line**。
 
@@ -165,11 +165,11 @@ line1.X2 = 400;
 layoutRoot.Children.Add(line1);
 ```
 
-## <a name="span-idpolylinespanspan-idpolylinespanspan-idpolylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span>Polyline
+## <a name="span-idpolylinespanspan-idpolylinespanspan-idpolylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyline
 
-[**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 与 [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) 类似，该形状的边也是通过一组点来进行定义，只不过 **Polyline** 的最后一个点不与第一个点相连。
+[  **Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 与 [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) 类似，该形状的边也是通过一组点来进行定义，只不过 **Polyline** 的最后一个点不与第一个点相连。
 
-**注意**你可以明确设置相同的起点和[**点**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx)中的终结点设置为[**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline)，但是，在这种情况下你可能具有[**多边形**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon)改为。
+**请注意**  无法显式具有完全相同的起始点并在终结点[**点**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx)设置为[**折线**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline)，但在这种情况下您可能也可以使用[**多边形**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon)相反。
 
 如果你指定 [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)，则 **Fill** 会绘制形状的内部空间，即使为 **Polyline** 设置的 [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 的起点和终点不相交也是如此。 如果你没有指定 **Fill**，则 **Polyline** 与指定了多个单独的、其连续直线的起点和终点相交的 [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) 元素时所呈现的内容相似。
 
@@ -206,9 +206,9 @@ layoutRoot.Children.Add(polyline1);
 
 ![呈现的折线。](images/shapes-polyline.jpg)
 
-## <a name="path"></a>Path
+## <a name="path"></a>路径
 
-[**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 是最通用的 [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)，因为使用它可以定义任意几何图形。 但是这种通用性非常复杂。 让我们来看看如何在 XAML 中创建一个基本的 **Path**。
+[  **Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 是最通用的 [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)，因为使用它可以定义任意几何图形。 但是这种通用性非常复杂。 让我们来看看如何在 XAML 中创建一个基本的 **Path**。
 
 定义其路径具有 [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 属性的几何图形。 可使用两种技术设置 **Data**：
 
@@ -233,7 +233,7 @@ layoutRoot.Children.Add(polyline1);
 
 ![显示的路径。](images/shapes-path.jpg)
 
-下一示例将介绍我们讨论过的其他技术的用法：具有 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) 的 [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.geometrygroup)。 本例对某些可用作 **PathGeometry** 的一部分的参与几何类型进行练习：[**PathFigure**](https://msdn.microsoft.com/library/windows/apps/BR210143) 和在 [**PathFigure.Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164) 中作为片段的各种元素。
+下一示例将介绍我们讨论过的其他技术的用法：具有 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) 的 [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.geometrygroup)。 此示例中运用某种可作为的一部分的参与 geometry 类型**PathGeometry**:[**PathFigure** ](https://msdn.microsoft.com/library/windows/apps/BR210143)并可以是中的某个段的各种元素[ **PathFigure.Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164)。
 
 ```xaml
 <Path Stroke="Black" StrokeThickness="1" Fill="#CCCCFF">
@@ -314,8 +314,8 @@ path1.Data = geometryGroup1;
 layoutRoot.Children.Add(path1);
 ```
 
-此处是呈现的 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)。
+此处是显示的 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)。
 
-![呈现的路径。](images/shapes-path-2.png)
+![显示的路径。](images/shapes-path-2.png)
 
 使用 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) 可能比填充 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 字符串更具可读性。 另一方面，[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 使用兼容于可缩放的向量图形 (SVG) 图像路径定义的语法，因此它可用于从 SVG 移植图形，或者用作工具（例如 Blend）的输出。

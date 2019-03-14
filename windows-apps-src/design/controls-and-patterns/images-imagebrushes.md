@@ -1,5 +1,5 @@
 ---
-Description: Learn how to integrate images into your app, including how to use the APIs of the two main XAML classes, Image and ImageBrush.
+Description: 了解如何将图像集成到应用中，包括如何使用以下两个主要 XAML 类的 API：Image 和 ImageBrush。
 title: 图像和图像画笔
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
@@ -9,17 +9,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5451e0dd94510873f87b981a817fb55ba2c4f985
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049774"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622012"
 ---
 # <a name="images-and-image-brushes"></a>图像和图像画笔
 
 要显示图像，可使用 **Image** 对象或 **ImageBrush** 对象。 Image 对象呈现图像，而 ImageBrush 对象使用图像绘制其他对象。 
 
-> **重要 API**：[Image 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)，[Source 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx)，[ImageBrush 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)，[ImageSource 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)
+> **重要的 Api**:[图像类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)， [Source 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx)， [ImageBrush 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)， [ImageSource 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)
 
 ## <a name="are-these-the-right-elements"></a>这些是正确的元素吗？
 使用 **Image** 元素在应用中显示独立的图像。
@@ -35,7 +35,7 @@ ms.locfileid: "9049774"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/Image">打开此应用，了解 Image 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -56,11 +56,11 @@ ms.locfileid: "9049774"
 
 ![图像元素示例](images/Image_Licorice.jpg)
 
-在该示例中，[Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) 属性用于指定要显示的图像的位置。 你可以通过指定绝对 URL 设置源 (例如，http://contoso.com/myPicture.jpg)或指定相对于你的应用打包结构的 URL。 例如，我们将“licorice.jpg”图像文件放在项目的根目录文件夹中，并将包含图像文件的项目设置声明为内容。
+在该示例中，[Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) 属性用于指定要显示的图像的位置。 可以将源设置通过指定绝对 URL (例如， http://contoso.com/myPicture.jpg)或通过指定 URL，即是相对于您的应用打包结构。 例如，我们将“licorice.jpg”图像文件放在项目的根目录文件夹中，并将包含图像文件的项目设置声明为内容。
 
 ### <a name="imagebrush"></a>ImageBrush
 
-借助 [ImageBrush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx) 对象，你可使用图像来绘制获取 [Brush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) 对象的区域。 例如，你可将 ImageBrush 用于 [Ellipse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) 的 [Fill](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.ellipse.aspx) 属性或 [Canvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) 的 [Background](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) 属性的值。
+借助 [ImageBrush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx) 对象，你可使用图像来绘制获取 [Brush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) 对象的区域。 例如，你可将 ImageBrush 用于 [Ellipse](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.ellipse.aspx) 的 [Fill](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) 属性或 [Canvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) 的 [Background](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) 属性的值。
 
 接来下的示例显示如何使用 ImageBrush 绘制 Ellipse。
 
@@ -80,10 +80,10 @@ ms.locfileid: "9049774"
 
 如果你没有设置 **Image** 的 [Width](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) 或 [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) 值，将以 **Source** 指定的图像的尺寸显示。 设置 **Width** 和 **Height** 可创建显示图像所在的封闭矩形区域。 你可通过使用 [Stretch](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.stretch.aspx) 属性指定图像填充此封闭区域的方式。 Stretch 属性接受 [Stretch](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.stretch.aspx) 枚举定义的以下值：
 
--   **None**：该图像未拉伸以适合输出尺寸。 注意此 Stretch 设置：如果源图像大于封闭区域，你的图像将被剪切，但通常不符合预期的，因为你对视口没有任何控制权，就像你处理精修的 [Clip](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) 一样。
--   **Uniform**：缩放图像以适应输出尺寸。 但是会保留内容的纵横比。 这是默认值。
--   **UniformToFill**：缩放图像以完全填满输出区域，但保留其原始的纵横比。
--   **Fill**：缩放图像以适应输出尺寸。 因为内容的高度和宽度是独立缩放的，所以可能不能保留图像的原始纵横比。 即，图像可能为了完全填满输出区域而失真。
+-   **无**：图像不会拉伸以填充输出尺寸。 注意此 Stretch 设置：如果源图像大于封闭区域，你的图像将被剪切，但通常不符合预期的，因为你对视口没有任何控制权，就像你处理精修的 [Clip](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) 一样。
+-   **统一**:图像将调整为适合输出尺寸。 但是会保留内容的纵横比。 这是默认值。
+-   **UniformToFill**:缩放图像，以便完全填充输出区域，但保留其原始长宽比。
+-   **填充**:图像将调整为适合输出尺寸。 因为内容的高度和宽度是独立缩放的，所以可能不能保留图像的原始纵横比。 即，图像可能为了完全填满输出区域而失真。
 
 ![拉伸设置示例。](images/Image_Stretch.jpg)
 
@@ -147,7 +147,7 @@ ms.locfileid: "9049774"
 
 ### <a name="image-sources-and-scaling"></a>图像源和缩放
 
-你应该以多个推荐大小创建图像源，以确保你的应用在 Windows 进行缩放时具有良好的外观。 指定 **Image** 的 **Source** 时，你可以使用将为当前缩放自动引用正确资源的命名约定。 有关命名约定规范和详细信息，请参阅[快速入门：使用文件或图像资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965325)。
+你应该以多个推荐大小创建图像源，以确保你的应用在 Windows 进行缩放时具有良好的外观。 指定 **Image** 的 **Source** 时，你可以使用将为当前缩放自动引用正确资源的命名约定。 有关详细信息的命名约定和详细信息，请参阅[快速入门：使用文件或图像资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965325)。
 
 有关如何设计缩放的详细信息，请参阅[布局和缩放的 UX 指南](https://msdn.microsoft.com/library/windows/apps/dn611863)。
 
@@ -167,5 +167,5 @@ ms.locfileid: "9049774"
 ## <a name="related-articles"></a>相关文章
 
 -   [音频、视频和相机](https://msdn.microsoft.com/windows/uwp/audio-video-camera/index)
--   [Image 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
+-   [图像类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
 -   [ImageBrush 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)

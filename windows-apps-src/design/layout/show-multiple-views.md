@@ -1,16 +1,16 @@
 ---
-Description: View multiple parts of your app in separate windows.
+Description: 在单独的窗口中查看您的应用程序的多个部分。
 title: 显示应用的多个视图
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ed69dc912e916f7964c125550621c22dfcd9555
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049059"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607622"
 ---
 # <a name="show-multiple-views-for-an-app"></a>显示应用的多个视图
 
@@ -18,7 +18,7 @@ ms.locfileid: "9049059"
 
 通过让用户在单独窗口中查看应用的独立部分，可帮助他们提高效率。 如果你为应用创建多个窗口，每个窗口都独立运作。 任务栏会分别显示每个窗口。 用户可以独立地移动、调整大小、显示和隐藏应用窗口，并且可以在应用窗口间切换，就像它们是单独的应用一样。 每个窗口都在它自己的线程中运行。
 
-> **重要的 API**：[**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094)、[**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
+> **重要的 Api**:[**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094)， [ **CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
 
 ## <a name="when-should-an-app-use-multiple-views"></a>应用应在何时使用多个视图？
 有多种情况可从多个视图中获益。 以下是几个示例：
@@ -65,7 +65,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**显示新视图**
+**若要显示的新视图**
 
 1.  调用 [**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297291) 来为视图内容创建新窗口和线程。
 
@@ -106,7 +106,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 4.  通过调用 [**ApplicationViewSwitcher.TryShowAsStandaloneAsync**](https://msdn.microsoft.com/library/windows/apps/dn281101) 显示新视图。
 
-    在创建新视图之后，你可以通过调用 [**ApplicationViewSwitcher.TryShowAsStandaloneAsync**](https://msdn.microsoft.com/library/windows/apps/dn281101) 方法，将其显示在新窗口中。 此方法的 *viewId* 参数是唯一标识你的应用中每个视图的整数。 通过使用 **ApplicationView.Id** 属性或 [**ApplicationView.GetApplicationViewIdForWindow**](https://msdn.microsoft.com/library/windows/apps/dn281120) 方法检索视图 [**Id**](https://msdn.microsoft.com/library/windows/apps/dn281109)。
+    在创建新视图之后，你可以通过调用 [**ApplicationViewSwitcher.TryShowAsStandaloneAsync**](https://msdn.microsoft.com/library/windows/apps/dn281101) 方法，将其显示在新窗口中。 此方法的 *viewId* 参数是唯一标识你的应用中每个视图的整数。 通过使用 **ApplicationView.Id** 属性或 [**ApplicationView.GetApplicationViewIdForWindow**](https://msdn.microsoft.com/library/windows/apps/dn281109) 方法检索视图 [**Id**](https://msdn.microsoft.com/library/windows/apps/dn281120)。
 
     ```csharp
     bool viewShown = await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newViewId);
@@ -117,7 +117,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 应用启动时创建的第一个视图称为*主视图*。 此视图存储于 [**CoreApplication.MainView**](https://msdn.microsoft.com/library/windows/apps/hh700465) 属性中，而且其 [**IsMain**](https://msdn.microsoft.com/library/windows/apps/hh700452) 属性为 True。 不要创建此视图；应用会创建它。 主视图的线程可充当应用的管理器，而且所有应用激活事件都会在此线程上传送。
 
-如果打开了辅助视图，主视图的窗口可以隐藏（例如，通过单击窗口标题栏中的关闭 (x) 按钮），但它的线程仍保持活动状态。 在主视图的 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209049) 上调用 [**Close**](https://msdn.microsoft.com/library/windows/apps/br209041) 会导致 **InvalidOperationException** 发生。 （使用 [**Application.Exit**](https://msdn.microsoft.com/library/windows/apps/br242327) 关闭你的应用。）如果主视图的线程终止，则应用关闭。
+如果打开了辅助视图，主视图的窗口可以隐藏（例如，通过单击窗口标题栏中的关闭 (x) 按钮），但它的线程仍保持活动状态。 在主视图的 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 上调用 [**Close**](https://msdn.microsoft.com/library/windows/apps/br209049) 会导致 **InvalidOperationException** 发生。 (使用[ **Application.Exit** ](https://msdn.microsoft.com/library/windows/apps/br242327)关闭您的应用程序。)如果主视图的线程将被终止，在应用关闭。
 
 ## <a name="secondary-views"></a>辅助视图
 

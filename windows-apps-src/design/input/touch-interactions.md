@@ -1,6 +1,6 @@
 ---
-Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touch but are functionally consistent across input devices.
-title: 触控交互
+Description: 创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸进行优化，但在不同的输入设备上功能一致。
+title: 触摸交互
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
@@ -9,23 +9,23 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b889fede67c7e32ff48c0e48a516f389afda820a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048638"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649232"
 ---
 # <a name="touch-interactions"></a>触摸交互
 
 
 以“触摸将是用户的主要输入方法”为初衷设计应用。 如果你使用 UWP 控件，不要求额外编程，即可支持触摸板、鼠标和笔/触笔，因为 UWP 应用免费提供此类支持。
 
-但是请记住，针对触摸优化的 UI 并非总是优于传统 UI。 两者都具有特定于技术和应用的优缺点。 在转换到主要使用触摸的 UI 时，了解触摸（包括触摸板）、笔/触笔、鼠标和键盘输入之间的核心差别很重要。
+但是请记住，为触摸优化的 UI 并非总是优于传统 UI。 两者都具有特定于技术和应用的优缺点。 在转换到主要使用触摸的 UI 时，重要的是了解触摸（包括触摸板）、笔/触笔、鼠标和键盘输入之间的核心差别。
 
-> **重要 API**：[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)、[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
+> **重要的 Api**:[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)， [ **Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)， [ **Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
 
 
-许多设备具有多点触控屏幕，它们支持使用一根或多根手指（或触摸接触）作为输入。 触摸接触以及其移动会被解释为触摸手势和操作，以支持各种用户交互。
+许多设备具有多点触摸屏幕，它们支持使用一根或多根手指（或触摸接触）作为输入。 触摸接触以及其移动会被解释为触摸手势和操作，以支持各种用户交互。
 
 通用 Windows 平台 (UWP) 包括多种处理触摸输入的不同机制，从而你可以创建用户能够放心浏览的沉浸式体验。 下面我们将介绍在 UWP 应用中使用触摸输入的基本知识。
 
@@ -74,18 +74,18 @@ ms.locfileid: "9048638"
 
 
 
-**注意**间接输入已经过多 25 年的优化的好处。 设计诸如悬停触发的工具提示之类的功能，是为了解决触摸板、鼠标、笔/触笔以及键盘输入特有的 UI 浏览。 此类 UI 功能已针对触摸输入提供的丰富体验进行了重新设计，不会对这些其他设备的用户体验产生负面影响。
+**请注意**  间接输入已超过 25 年的优化的权益。 设计诸如悬停触发的工具提示之类的功能，是为了解决触摸板、鼠标、笔/触笔以及键盘输入特有的 UI 浏览。 此类 UI 功能已针对触摸输入提供的丰富体验进行了重新设计，不会对这些其他设备的用户体验产生负面影响。
 
  
 
 ## <a name="use-touch-feedback"></a>用户触摸反馈
 
-与你的应用交互期间适当的视觉反馈可帮助用户识别、 了解以及适应应用和 Windowsplatform 如何解释其交互的。 视觉反馈可以指示成功交互、延迟系统状态、加强控制感觉、减少错误、帮助用户了解系统和输入设备并鼓励交互。
+适当的可视反馈，在与您的应用程序之间的交互过程可帮助用户识别、 学习和适应应用程序和 Windows 平台如何解释及其交互。 视觉反馈可以指示成功交互、延迟系统状态、加强控制感觉、减少错误、帮助用户了解系统和输入设备并鼓励交互。
 
-当用户依赖触摸屏输入来进行要求基于位置的准确活动时，视觉反馈非常重要。 无论何时何地检测到触摸输入都显示反馈，以帮助用户了解应用及其控件定义的任何自定义定向规则。
+当用户依赖触摸屏输入来进行要求基于位置的准确活动时，视觉反馈非常重要。 无论何时何地检测到触摸输入都显示反馈，以帮助用户了解应用及其控件定义的任何自定义目标启发。
 
 
-## <a name="targeting"></a>定向
+## <a name="targeting"></a>定位
 
 通过以下方式优化目标：
 
@@ -151,7 +151,7 @@ ms.locfileid: "9048638"
 -   交互应该支持复合操作。 例如，在拖动手指进行平移时收缩即可缩放。
 -   不应按时间来区分交互。 相同的交互应该具有相同的结果，而与执行该操作所花费的时间无关。 基于时间的激活功能为用户引入了强制延迟，因此影响了直接操作的沉浸式属性和系统响应的感知。
 
-    **注意**例外情况是，使用特定的定时的交互来帮助了解和探究 （如示例，请按住）。
+    **请注意**  的例外是在其中使用超时的特定交互来帮助学习和探索 （有关示例，请按住）。
 
      
 
@@ -163,7 +163,7 @@ ms.locfileid: "9048638"
 
 通过应用视图的平移/滚动和缩放设置来调整用户交互体验。 应用视图指示用户访问和操作你的应用及其内容的方式。 视图还提供一些行为，如惯性、内容边界回弹和吸附点。
 
-[**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 控件的平移和滚动设置指示用户在视图内容太多而无法放在视口中时，如何在单个视图内进行导航。 例如，单个视图可以是杂志或书的某一页、计算机的文件夹结构、文档库，也可以是某个相册。
+[  **ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 控件的平移和滚动设置指示用户在视图内容太多而无法放在视口中时，如何在单个视图内进行导航。 例如，单个视图可以是杂志或书的某一页、计算机的文件夹结构、文档库，也可以是某个相册。
 
 缩放设置适用于光学缩放（受 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 控件支持）和 [**Semantic Zoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控件。 语义式缩放是一种触摸优化技术，它在一个视图内呈现和导航大量的相关数据或内容集。 它使用两个不同的分类模式（或缩放级别）进行工作。 这类似于在单个视图中平移和滚动。 平移和滚动可以与语义式缩放一起使用。
 
@@ -186,18 +186,18 @@ ms.locfileid: "9048638"
 
     指针是具有统一事件机制的通用输入类型。 它将显示活动输入源（触摸屏、触摸板、鼠标或笔）的基本信息，例如屏幕位置。
 
--   [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) 等操作手势事件表明一个持续的交互。 它们在用户触摸元素时开始引发，一直持续到用户抬起手指或者操作被取消时。
+-   [  **ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) 等操作手势事件表明一个持续的交互。 它们在用户触摸元素时开始引发，一直持续到用户抬起手指或者操作取消时。
 
     操作事件包括多点触控交互（例如，缩放、平移或旋转）和使用惯性和速度数据的交互（例如拖动）。 操作事件提供的信息并不标识所执行的交互的形式，而是包括诸如位置、转换增量和速度等数据。 你可以使用此触摸数据来确定应执行的交互类型。
 
 下面是一组基本的受 UWP 支持的触摸手势。
 
-| 名称           | 类型                 | 说明                                                                            |
+| 名称           | 在任务栏的搜索框中键入                 | 描述                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
 | 点击            | 静态手势       | 用一个手指触摸屏幕，然后抬起手指。                                            |
 | 长按 | 静态手势       | 用一个手指触摸屏幕并保持不动。                                      |
 | 滑动          | 操作手势 | 用一个或多个手指触摸屏幕并向着同一方向移动。                   |
-| 轻扫          | 操作手势 | 用一个或多个手指触摸屏幕并向着同一方向移动较短距离。  |
+| Swipe          | 操作手势 | 用一个或多个手指触摸屏幕并向着同一方向移动较短距离。  |
 | 转动           | 操作手势 | 用两个或多个手指触摸屏幕并沿着顺时针或逆时针的弧线移动。 |
 | 收缩          | 操作手势 | 用两个或多个手指触摸屏幕，然后将手指并拢在一起。                         |
 | 拉伸        | 操作手势 | 用两个或多个手指触摸屏幕，然后将手指分开。                           |
@@ -222,7 +222,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 
 下面提供指针事件列表及其相关的事件参数。
 
-| 事件或类                                                       | 说明                                                   |
+| 事件或类                                                       | 描述                                                   |
 |----------------------------------------------------------------------|---------------------------------------------------------------|
 | [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)             | 在单根手指触摸屏幕时发生。               |
 | [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)           | 在该同一触摸接触抬起时发生。                |
@@ -286,7 +286,7 @@ Public Sub New()
 End Sub
 ```
 
-最后，[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件处理程序增加 [**Rectangle**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 的 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 和 [**Width**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)，同时 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 和 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) 事件处理程序将 **Height** 和 **Width** 设置回其初始值。
+最后，[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件处理程序增加 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 和 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)，同时 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 和 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) 事件处理程序将 **Height** 和 **Width** 设置回其初始值。
 
 ```cpp
 // Handler for pointer exited event.
@@ -416,7 +416,7 @@ End Sub
 
 下面提供操作事件列表及其相关的事件参数。
 
-| 事件或类                                                                                               | 说明                                                                                                                               |
+| 事件或类                                                                                               | 描述                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | [**ManipulationStarting 事件**](https://msdn.microsoft.com/library/windows/apps/br208951)                                   | 在首次创建操作处理器时发生。                                                                                  |
 | [**ManipulationStarted 事件**](https://msdn.microsoft.com/library/windows/apps/br208950)                                     | 在输入设备在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 上开始操作时发生。                                            |
@@ -436,7 +436,7 @@ End Sub
 
 接下来，引发一个或多个 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件。 例如，先触摸屏幕，然后在屏幕上拖动手指。 最后，在完成交互时引发 [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) 事件。
 
-**注意**如果你没有触摸屏监视器，则可以使用鼠标和鼠标滚轮界面在模拟器中测试你的操作事件代码。
+**请注意**  如果没有触摸屏监视器，可以使用鼠标和鼠标滚轮接口在模拟器中测试操作事件代码。
 
  
 
@@ -581,7 +581,7 @@ End Sub
 -   使用吸附点和带方向性的“围栏”优化精确度。
 -   对于紧凑的 UI 项目，提供工具提示和句柄以帮助提高触摸精确度。
 -   尽量不要使用计时的交互（适当使用的示例：长按）。
--   尽量不要使用用于区别操作的手指个数。
+-   尽量不要使用用于区别操作的手指数量。
 
 
 ## <a name="related-articles"></a>相关文章
@@ -591,17 +591,17 @@ End Sub
 
 **示例**
 
-* [基本输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **存档示例**
 
 * [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：XAML 用户输入事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML 滚动、平移以及缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [输入：使用 GestureRecognizer 的笔势和操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [输入：XAML 用户输入的事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [输入：笔势和 GestureRecognizer 操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
  

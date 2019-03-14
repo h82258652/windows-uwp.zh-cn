@@ -7,11 +7,11 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a64a52005221c418ea82e8fffa9ecf94b6d1bef3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929080"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661722"
 ---
 # <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>支持应用内购买应用和加载项
 
@@ -21,17 +21,17 @@ ms.locfileid: "8929080"
 * 如果你知道应用或加载项的[应用商店 ID](in-app-purchases-and-trials.md#store_ids)，可以使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类的 [RequestPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestpurchaseasync) 方法。
 * 如果你已有表示应用或加载项的 [**StoreProduct**、**StoreSku** 或 **StoreAvailability** 对象](in-app-purchases-and-trials.md#products-skus)，可以使用这些对象的 **RequestPurchaseAsync** 方法。 有关可用于在你的代码中检索**StoreProduct** 的不同方法的示例，请参阅[获取应用和加载项的产品信息](get-product-info-for-apps-and-add-ons.md)。
 
-每个方法都为用户提供标准购买 UI，随后在交易完成后异步完成这些方法。 该方法返回一个指示该交易是否已成功的对象。
+对于用户，每个方法都表示标准购置 UI，随后在交易完成后以异步方式完成这些方法。 该方法返回一个指示该交易是否已成功的对象。
 
 > [!NOTE]
-> **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 如果你的应用面向 Windows 10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[此文](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
+> **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 如果你的应用面向 Windows 10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[此文章](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 本示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
-* 你有合作伙伴中心中的[创建应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)并在应用商店中发布此应用。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅我们的[测试指南](in-app-purchases-and-trials.md#testing)。
-* 如果你想要启用应用内购买的加载项的应用，则必须[创建合作伙伴中心中的加载项](../publish/add-on-submissions.md)。
+* 你有[创建应用程序提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)在合作伙伴中心和此应用程序发布的存储区中。 在测试应用期间，你可以选择将应用配置为在 Microsoft Store 中隐藏。 有关详细信息，请参阅我们的[测试指南](in-app-purchases-and-trials.md#testing)。
+* 如果你想要启用应用程序外接程序的应用内购买，则必须还[在合作伙伴中心中创建外接程序](../publish/add-on-submissions.md)。
 
 此示例中的代码假设：
 * 代码在含有 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx)（名为 ```workingProgressRing```）和 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)（名为 ```textBlock```）的 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 上下文中运行。 这些对象分别用于指示是否正在进行异步操作和显示输出消息。
@@ -43,7 +43,7 @@ ms.locfileid: "8929080"
 
 ## <a name="code-example"></a>代码示例
 
-此示例演示如何使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类的 [RequestPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestpurchaseasync) 方法，购置具有已知[应用商店 ID](in-app-purchases-and-trials.md#store-ids) 的应用或加载项。 有关完整的示例应用程序，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
+此示例演示了如何使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类的 [RequestPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestpurchaseasync) 方法，购置具有已知[应用商店 ID](in-app-purchases-and-trials.md#store-ids) 的应用或加载项。 有关完整的示例应用程序，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[EnablePurchases](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs#PurchaseAddOn)]
@@ -57,9 +57,9 @@ ms.locfileid: "8929080"
 
 ## <a name="related-topics"></a>相关主题
 
-* [应用内购买和试用](in-app-purchases-and-trials.md)
-* [获取应用和加载项的产品信息](get-product-info-for-apps-and-add-ons.md)
-* [获取应用和加载项的许可证信息](get-license-info-for-apps-and-add-ons.md)
-* [支持购买易耗型加载项](enable-consumable-add-on-purchases.md)
-* [实现应用的试用版](implement-a-trial-version-of-your-app.md)
+* [应用内购买和试用版](in-app-purchases-and-trials.md)
+* [获取产品信息的应用程序和外接程序](get-product-info-for-apps-and-add-ons.md)
+* [获取应用程序和外接程序的许可证信息](get-license-info-for-apps-and-add-ons.md)
+* [启用可使用外接程序购买](enable-consumable-add-on-purchases.md)
+* [实现您的应用程序的试用版](implement-a-trial-version-of-your-app.md)
 * [应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)

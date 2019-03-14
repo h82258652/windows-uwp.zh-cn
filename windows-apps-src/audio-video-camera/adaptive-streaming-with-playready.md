@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 36cd006b4608d82999281ebd407fd32e168ae38b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933257"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650462"
 ---
 # <a name="adaptive-streaming-with-playready"></a>使用 PlayReady 的自适应流式处理
 
@@ -26,7 +26,7 @@ HLS（Apple 的 HTTP 实时流）不受 PlayReady 支持。
 
 本文仅介绍特定于 PlayReady 的自适应流式处理方面的内容。 有关一般实现自适应流式处理的信息，请参阅[自适应流式处理](adaptive-streaming.md)。
 
-本文使用的代码来自 GitHub 上 Microsoft 的 **Windows-universal-samples** 存储库中的[自适应流式处理示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 方案 4 介绍自适应流式处理与 PlayReady 的结合使用。 你可以下载 ZIP 文件形式的存储库，方法是导航到存储库的根级别并选择“下载 ZIP”**** 按钮。
+本文使用的代码来自 GitHub 上 Microsoft 的 **Windows-universal-samples** 存储库中的[自适应流式处理示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 方案 4 介绍自适应流式处理与 PlayReady 的结合使用。 你可以下载 ZIP 文件形式的存储库，方法是导航到存储库的根级别并选择“下载 ZIP”按钮。
 
 你将需要以下 **using** 语句：
 

@@ -1,5 +1,5 @@
 ---
-Description: This tutorial walks through how to create a basic application user interface. It explains and demonstrates the use of Grid and StackPanel, two of the most common XAML elements.
+Description: 本教程介绍如何创建基本应用程序用户界面。 文章将说明并演示网格和 StackPanel 的使用，这是两个最常见的 XAML 元素。
 title: 使用 Grid 和 StackPanel 创建简单的天气应用。
 template: detail.hbs
 ms.date: 05/19/2017
@@ -8,30 +8,30 @@ keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b221220d417df5b70927984ac65eff93fae54a4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931246"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646532"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>教程：使用 Grid 和 StackPanel 创建简单的天气应用
 
-借助 XAML，使用 **Grid** 和 **StackPanel** 元素为简单的天气应用创建布局。 使用这些工具，你可以使出色的应用在运行 Windows 10 的任何设备上出色运行。 本教程需要 10-20 分钟。
+使用 XAML  并使用**网格**和 **StackPanel** 元素创建简单的天气应用的布局。 使用这些工具，你可以使出色的应用在运行 Windows 10 的任何设备上出色运行。 本教程需要 10-20 分钟。
 
-> **重要 API**：[Grid 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid)、[StackPanel 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
+> **重要的 Api**:[Grid 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid)， [StackPanel 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>必备条件
-- Windows 10 和 Microsoft Visual Studio 2015 或更高版本。 （最新的 Visual Studio 推荐当前开发和安全更新）[单击此处以了解如何获取设置与 Visual Studio](../../get-started/get-set-up.md)。
+- Windows 10 和 Microsoft Visual Studio 2015 或更高版本。 （最新的 Visual Studio 建议用于当前的开发和安全更新）[若要了解如何使用 Visual Studio 进行设置，请单击此处](../../get-started/get-set-up.md)。
 - 了解如何通过使用 XAML 和 C# 创建一个基本的“Hello World”应用。 如果还没有，[请单击此处以了解如何创建一个“Hello World”应用](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
-## <a name="step-1-create-a-blank-app"></a>步骤 1：创建空白应用
+## <a name="step-1-create-a-blank-app"></a>第 1 步：创建空白应用程序
 1. 在 Visual Studio 菜单中，选择**文件** > **新建项目**。
-2. 在**新建项目**对话框的左侧窗格中，依次选择 **Visual C#** > **Windows** > **通用**，或者依次选择 **Visual C++** > **Windows**  > **通用**。
+2. 在**新建项目**对话框的左侧窗格中，依次选择 **Visual C#** > **Windows** > **通用**，或者依次选择 **Visual C++** > **Windows** > **通用**。
 3. 在中心窗格中，选择**空白应用**。
 4. 在**名称**框中，输入 **WeatherPanel** 并选择**确定**。
 5. 若要运行程序，请从菜单中依次选择**调试** > **开始调试**，或选择 F5。
 
-## <a name="step-2-define-a-grid"></a>步骤 2：定义网格
+## <a name="step-2-define-a-grid"></a>步骤 2：定义一个网格
 在 XAML 中，**网格**由一系列行和列组成。 通过指定**网格**内某个元素的行和列，你可以在用户界面内放置和间隔其他元素。 使用 **RowDefinition** 和 **ColumnDefinition** 元素定义行和列。
 
 若要开始创建布局，通过使用**解决方案资源管理器**打开 **MainPage.xaml**，并将自动生成的**网格**元素替换为此代码。
@@ -49,13 +49,13 @@ ms.locfileid: "8931246"
 </Grid>
 ```
 
-新**网格**将创建一个两行和两列的集合，它可定义应用界面的布局。 第一列的**宽度**为“3\*”，第二列为“5\*”，除以比率为 3:5 的两列之间的水平空间。 与此方式相同，两行的**高度**分别为“2\*”和“\*”，因此相对于第二行，**网格**为第一行分配二倍空间（“\*”等同于“1\*”）。 即使在调整窗口大小或更改设备时，都会保留这些比率。
+新**网格**将创建一个两行和两列的集合，它可定义应用界面的布局。 第一列具有**宽度**的"3\*"，而第二个"5\*"，除以比率为 3:5 中的两个列之间的水平空间。 在相同的方式，有两个行**高度**的"2\*"和"\*"分别，因此**网格**第一行与第二个分配两倍空间 ("\*"相同"1\*")。 即使在调整窗口大小或更改设备时，都会保留这些比率。
 
 若要了解有关调整行和列大小的其他方法，请参阅[使用 XAML 定义布局](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties)。
 
 如果现在运行该应用程序，只会看到一个空白页面，因为任何**网格**区域都没有内容。 若要显示**网格**，让我们添加一些颜色。
 
-## <a name="step-3-color-the-grid"></a>步骤 3：为网格着色
+## <a name="step-3-color-the-grid"></a>步骤 3:网格颜色
 为了为**网格**着色，我们添加了三个**边框**元素，每个都带有不同的背景色。  通过使用 **Grid.Row** 和 **Grid.Column** 属性，也将每个元素分配到父**网格**中的行和列。 这些属性的值默认为 0 时，因此无需将其分配给第一个**边框**。 定义行和列后，将以下代码添加到**网格**元素。
 
 ```xml
@@ -70,7 +70,7 @@ ms.locfileid: "8931246"
 
 ![为网格着色](images/grid-weather-1.png)
 
-## <a name="step-4-organize-content-by-using-stackpanel-elements"></a>步骤 4：通过使用 StackPanel 元素组织内容
+## <a name="step-4-organize-content-by-using-stackpanel-elements"></a>步骤 4：通过使用 StackPanel 元素组织的内容
 **StackPanel** 是我们将用于创建天气应用的第二个 UI 元素。 **StackPanel** 是许多基本应用布局的基础部分，允许垂直或水平堆叠元素。
 
 在以下代码中，我们创建了两个 **StackPanel** 元素并使用三个 **Textblock** 填充每个元素。 将这些 **StackPanel** 元素添加到第 3 步中**边框**元素下面的**网格**中。 这会导致 **TextBlock** 元素呈现在我们之前创建的彩色**网格**顶部。
@@ -95,7 +95,7 @@ ms.locfileid: "8931246"
 
 ![添加 StackPanels](images/grid-weather-2.png)
 
-## <a name="step-5-add-an-image-icon"></a>步骤 5：添加图像图标
+## <a name="step-5-add-an-image-icon"></a>步骤 5：添加的图像图标
 
 最后，让我们使用表示今天天气（局部多云）的图像填写**网格**中空的部分。
 
@@ -103,7 +103,7 @@ ms.locfileid: "8931246"
 
 ![局部多云](images/partially-cloudy.PNG)
 
-在**解决方案资源管理器**中，右键单击**资源**文件夹，然后选择**添加** -> **现有项...**，在弹出的浏览器中查找 partially-cloudy.png，选择它，然后单击**添加**。
+在中**解决方案资源管理器**，右键单击**资产**文件夹，然后选择**添加** -> **现有项...** 在弹出的浏览器中找到部分 cloudy.png，选择它，然后单击**添加**。
 
 接下来，在 **MainPage.xaml** 中，添加第 4 步中 StackPanels 下的以下**映像**元素。
 

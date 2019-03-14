@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e9960e66c6bcdd7105e201d48e2317de4a39a19a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947509"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636622"
 ---
 # <a name="effects-for-video-capture"></a>视频捕获的效果
 
@@ -27,13 +27,13 @@ ms.locfileid: "8947509"
 > [!NOTE]
 > 在某些设备上，预览流和捕获流相同，这意味着如果你在调用 **AddVideoEffectAsync** 时指定 **MediaStreamType.VideoPreview** 或 **MediaStreamType.VideoRecord**，将同时向预览流和录制流应用效果。 可通过检查 **MediaCapture** 对象的 [**MediaCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.MediaCaptureSettings) 的 [**VideoDeviceCharacteristic**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSettings.VideoDeviceCharacteristic) 属性，确定预览流和录制流在当前设备上是否相同。 如果此属性的值为 **VideoDeviceCharacteristic.AllStreamsIdentical** 或 **VideoDeviceCharacteristic.PreviewRecordStreamsIdentical**，这些流是相同的，并且应用到其中一个的任何效果也会影响另一个。
 
-以下示例将效果添加到相机预览流和录制流。 此示例说明用于查看录制流和预览流是否相同的相关检查。
+以下示例将效果添加到相机预览流和录制流。 此示例说明了用于查看录制流和预览流是否相同的相关检查。
 
 [!code-cs[BasicAddEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetBasicAddEffect)]
 
 请注意，**AddVideoEffectAsync** 返回可实现 [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.IMediaExtension) 的对象，它表示添加的视频效果。 某些效果允许你通过将 [**PropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet) 传递到 [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 方法更改效果设置。
 
-从 Windows10 版本 1607 开始，你还可以使用 **AddVideoEffectAsync** 返回的对象，通过将效果传入到 [**RemoveEffectAsync**](https://msdn.microsoft.com/library/windows/apps/mt667957) 从视频管道中删除该效果。 **RemoveEffectAsync** 自动确定效果对象参数是否已添加到预览流或录制流，因此无需在进行调用时指定流类型。
+从 Windows 10 版本 1607 开始，你还可以使用 **AddVideoEffectAsync** 返回的对象，通过将效果传入到 [**RemoveEffectAsync**](https://msdn.microsoft.com/library/windows/apps/mt667957) 从视频管道中删除该效果。 **RemoveEffectAsync** 自动确定效果对象参数是否已添加到预览流或录制流，因此无需在进行调用时指定流类型。
 
 [!code-cs[RemoveOneEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetRemoveOneEffect)]
 
@@ -53,7 +53,7 @@ ms.locfileid: "8947509"
 
 [!code-cs[VideoStabilizationEffectUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetVideoStabilizationEffectUsing)]
 
-声明成员变量以存储 [**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760) 对象。 作为效果实现的一部分，你将修改用于编码已捕获视频的编码属性。 声明两个变量以存储初始输入和输出编码属性的备份副本，以便以后当禁用该效果时你可以还原它们。 最后，声明类型 [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) 的成员变量，因为将从代码内的多个位置访问此对象。
+声明成员变量以存储 [**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760) 对象。 作为效果实现的一部分，你将修改用于编码已捕获视频的编码属性。 声明两个变量以存储初始输入和输出编码属性的备份副本，以便以后当禁用该效果时你可以还原它们。 最后，声明类型 [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) 的成员变量，因为将从你的代码内的多个位置访问此对象。
 
 [!code-cs[DeclareVideoStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
 
@@ -87,13 +87,13 @@ ms.locfileid: "8947509"
 
 ### <a name="handle-the-video-stabilization-effect-being-disabled"></a>处理禁用的视频防抖动效果
 
-如果像素吞吐量对于要处理的该效果太高，或如果检测到该效果运行缓慢，则系统可以自动禁用该视频防抖动效果。 如果发生这种情况，将引发 EnabledChanged 事件。 *sender* 参数中的 **VideoStabilizationEffect** 实例指示该效果的新状态：已启用或已禁用。 [**VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) 具有表明已启用或已禁用该效果原因的 [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981) 值。 请注意，如果你以编程方式启用或禁用该效果，在原因是 **Programmatic** 的情况下，也会引发此事件。
+如果像素吞吐量对于要处理的该效果太高，或如果检测到该效果运行缓慢，则系统可以自动禁用该视频防抖动效果。 如果发生这种情况，将引发 EnabledChanged 事件。 *sender* 参数中的 **VideoStabilizationEffect** 实例指示该效果的新状态：已启用或已禁用。 [  **VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) 具有表明已启用或已禁用该效果原因的 [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981) 值。 请注意，如果你以编程方式启用或禁用该效果，在原因是 **Programmatic** 的情况下，也会引发此事件。
 
 通常使用此事件来调节应用的 UI 以指示视频防抖动的当前状态。
 
 [!code-cs[VideoStabilizationEnabledChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetVideoStabilizationEnabledChanged)]
 
-### <a name="clean-up-the-video-stabilization-effect"></a>清除视频防抖动效果
+### <a name="clean-up-the-video-stabilization-effect"></a>清理视频防抖动效果
 
 若要清理视频防抖动效果，请调用 [**RemoveEffectAsync**](https://msdn.microsoft.com/library/windows/apps/mt667957) 以从视频管道中删除该效果。 如果包含初始编码属性的成员变量都不为 Null，可使用它们还原编码属性。 最后，删除 **EnabledChanged** 事件处理程序并将该效果设置为 Null。
 
@@ -101,8 +101,8 @@ ms.locfileid: "8947509"
 
 ## <a name="related-topics"></a>相关主题
 
-* [相机](camera.md)
-* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [摄像头](camera.md)
+* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

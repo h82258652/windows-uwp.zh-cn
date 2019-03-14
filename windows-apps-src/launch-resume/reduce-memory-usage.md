@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 28c21b3d3b3e53def2181e96a58b53998ee0f04a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046600"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660722"
 ---
 # <a name="free-memory-when-your-app-moves-to-the-background"></a>在将应用移动到后台时释放内存
 
@@ -40,15 +40,15 @@ Windows 10 版本 1607 引入了两个新的应用程序生命周期事件：[**
 
 [!code-cs[RegisterEvents](./code/ReduceMemory/cs/App.xaml.cs#SnippetRegisterEvents)]
 
-当引发 [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 事件时，请设置跟踪变量以指示当前正在后台运行。 当你编写代码来减少内存使用量时，这将非常有用。
+当引发 [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 事件时，请设置跟踪变量以表明你当前在后台运行。 当你编写代码来减少内存使用量时，这将非常有用。
 
 [!code-cs[EnteredBackground](./code/ReduceMemory/cs/App.xaml.cs#SnippetEnteredBackground)]
 
 当应用过渡到后台时，系统会降低该应用的内存限制，以确保当前的前台应用具有足够的资源来提供响应迅速的用户体验
 
-[**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) 事件处理程序使应用可以知道其分配的内存已减少，同时在传递给该处理程序的事件参数中提供新限制。 将 [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsage) 属性（提供应用的当前使用量）与事件参数的 [**NewLimit**](https://msdn.microsoft.com/library/windows/apps/Windows.System.AppMemoryUsageLimitChangingEventArgs.NewLimit) 属性（指定新限制）比较。 如果内存使用量超过该限制，则需要减少内存使用量。
+[  **AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) 事件处理程序使应用可以知道其分配的内存已减少，同时在传递给该处理程序的事件参数中提供新限制。 将 [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsage) 属性（提供应用的当前使用量）与事件参数的 [**NewLimit**](https://msdn.microsoft.com/library/windows/apps/Windows.System.AppMemoryUsageLimitChangingEventArgs.NewLimit) 属性（指定新限制）比较。 如果内存使用量超过该限制，则需要减少内存使用量。
 
-在此示例中，是在帮助程序方法 **ReduceMemoryUsage** 中编写此代码，此方法将在后文中进行定义。
+在此示例中，使用帮助程序方法 **ReduceMemoryUsage**（将在本文后面部分定义）执行此操作。
 
 [!code-cs[MemoryUsageLimitChanging](./code/ReduceMemory/cs/App.xaml.cs#SnippetMemoryUsageLimitChanging)]
 
@@ -61,7 +61,7 @@ Windows 10 版本 1607 引入了两个新的应用程序生命周期事件：[**
 
 [!code-cs[MemoryUsageIncreased](./code/ReduceMemory/cs/App.xaml.cs#SnippetMemoryUsageIncreased)]
 
-**ReduceMemoryUsage** 是一个帮助程序方法，当应用超过在后台运行的使用量限制时，可实现该方法来释放内存。 释放内存的方法视应用的具体情况而定，但用于释放内存的一个建议方法是释放 UI 以及与应用视图关联的其他资源。 为此，请确保正在后台状态下运行，然后将应用窗口的 [**Content**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content) 属性设置为 `null`、注销 UI 事件处理程序，并删除可能具有的对页面的任何其他引用。 如果未能注销 UI 事件处理程序和清除可能具有的对页面的任何其他引用，将阻止释放页面资源。 然后，调用 **GC.Collect** 立即回收释放的内存。 通常，不用强制执行垃圾回收，因为系统会自行处理此操作。 在此特定情况下，我们会减少用于此应用程序的内存量，因为它会进入后台，进而降低系统为回收内存而决定终止应用的可能性。
+**ReduceMemoryUsage** 是一个帮助程序方法，当应用超过在后台运行的使用量限制时，可实现该方法来释放内存。 释放内存的方法视应用的具体情况而定，但用于释放内存的一个建议方法是释放 UI 以及与应用视图关联的其他资源。 为此，请确保正在后台状态下运行，然后将应用窗口的 [**Content**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content) 属性设置为 `null`、注销 UI 事件处理程序，并删除可能具有的对页面的任何其他引用。 如果未能注销 UI 事件处理程序和清除可能具有的对页面的任何其他引用，将阻止释放页面资源。 然后，调用 **GC.Collect** 以便立即回收释放的内存。 通常，不用强制执行垃圾回收，因为系统会自行处理此操作。 在此特定情况下，我们会减少用于此应用程序的内存量，因为它会进入后台，进而降低系统为回收内存而决定终止应用的可能性。
 
 [!code-cs[UnloadViewContent](./code/ReduceMemory/cs/App.xaml.cs#SnippetUnloadViewContent)]
 
@@ -72,11 +72,11 @@ Windows 10 版本 1607 引入了两个新的应用程序生命周期事件：[**
 
 [!code-cs[MainPageUnloaded](./code/ReduceMemory/cs/App.xaml.cs#SnippetMainPageUnloaded)]
 
-在 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) 事件处理程序中，设置跟踪变量 (`isInBackgroundMode`) 以指示应用已不在后台运行。 接下来，查看当前窗口的 [**Content**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content) 是否为 `null`，如果已释放应用视图来清除内存（在后台运行时），它将为 null。 如果窗口内容为 `null`，请重新生成应用视图。 在此示例中，使用帮助程序方法 **CreateRootFrame** 创建窗口内容。
+在 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) 事件处理程序中，设置跟踪变量 (`isInBackgroundMode`) 以指示应用不再在后台运行。 接下来，查看当前窗口的 [**Content**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content) 是否为 `null`，如果已释放应用视图来清除内存（在后台运行时），它将为 null。 如果窗口内容为 `null`，请重新生成应用视图。 在此示例中，使用帮助程序方法 **CreateRootFrame** 创建窗口内容。
 
 [!code-cs[LeavingBackground](./code/ReduceMemory/cs/App.xaml.cs#SnippetLeavingBackground)]
 
-**CreateRootFrame** 帮助程序方法用于重新创建应用的视图内容。 此方法中的代码几乎默认项目模板中提供的 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 处理程序代码完全相同。 一个区别是：**Launching** 处理程序确定 [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) 的 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs.PreviousExecutionState) 属性中的先前执行状态，而 **CreateRootFrame** 方法只是获取作为参数传入的先前执行状态。 若要最大程度地减少重复代码，可以重构默认的 **Launching** 事件处理程序代码以调用 **CreateRootFrame**。
+**CreateRootFrame** 帮助程序方法将重新创建应用的视图内容。 此方法中的代码几乎默认项目模板中提供的 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 处理程序代码完全相同。 一个区别是：**Launching** 处理程序确定 [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) 的 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs.PreviousExecutionState) 属性中的先前执行状态，而 **CreateRootFrame** 方法只是获取作为参数传入的先前执行状态。 若要最大程度地减少重复代码，可以重构默认的 **Launching** 事件处理程序代码以调用 **CreateRootFrame**。
 
 [!code-cs[CreateRootFrame](./code/ReduceMemory/cs/App.xaml.cs#SnippetCreateRootFrame)]
 
@@ -88,10 +88,10 @@ Windows 10 版本 1607 引入了两个新的应用程序生命周期事件：[**
 
 当应用从前台移动到后台时，它将先获取 **EnteredBackground** 事件，然后获取 **AppMemoryUsageLimitChanging** 事件。
 
-- **使用** **EnteredBackground** 事件，以释放所知道的应用（在后台运行时）不需要的 UI 资源。 例如，可以释放某首歌曲的封面画面图像。
-- **使用** **AppMemoryUsageLimitChanging** 事件，以确保应用使用比新后台限制更少的内存。 如果不是，请确保释放资源。 如果不这样做，根据设备特定的策略，应用可能会暂停或终止。
+- **使用****EnteredBackground** 事件，以释放所知道的应用（在后台运行时）不需要的 UI 资源。 例如，可以释放某首歌曲的封面画面图像。
+- **使用****AppMemoryUsageLimitChanging** 事件，以确保应用使用比新后台限制更少的内存。 如果不是，请确保释放资源。 如果不这样做，根据设备特定的策略，应用可能会暂停或终止。
 - 当 **AppMemoryUsageLimitChanging** 事件引发时，如果应用超出新的内存限制，**请**手动调用垃圾回收器。
-- **使用** **AppMemoryUsageIncreased** 事件，以在应用在后台运行时继续监视应用的内存使用量（如果预计会出现变化）。 如果 **AppMemoryUsageLevel** 为 **High** 或 **OverLimit**，请确保释放资源。
+- **使用****AppMemoryUsageIncreased** 事件，以在应用在后台运行时继续监视应用的内存使用量（如果预计会出现变化）。 如果 **AppMemoryUsageLevel** 为 **High** 或 **OverLimit**，请确保释放资源。
 - 作为一种性能优化，请**考虑**在 **AppMemoryUsageLimitChanging** 事件处理程序中释放 UI 资源，而不是在 **EnteredBackground** 处理程序中释放。 使用 **EnteredBackground/LeavingBackground** 事件处理程序中设定的布尔值，来跟踪应用是在后台还是在前台运行。 然后在 **AppMemoryUsageLimitChanging** 事件处理程序中，如果 **AppMemoryUsage** 超出限制并且应用在后台运行（基于布尔值），则可以释放 UI 资源。
 - **不要**在 **EnteredBackground** 事件中执行长时间运行的操作，因为可能会导致用户感觉应用程序之间的过渡较慢。
 
@@ -99,7 +99,7 @@ Windows 10 版本 1607 引入了两个新的应用程序生命周期事件：[**
 
 当应用从后台移动到前台时，应用将先获取 **AppMemoryUsageLimitChanging** 事件，然后获取 **LeavingBackground** 事件。
 
-- **使用** **LeavingBackground** 事件，重新创建应用在进入后台时丢弃的 UI 资源。
+- **使用****LeavingBackground** 事件，重新创建应用在进入后台时丢弃的 UI 资源。
 
 ## <a name="related-topics"></a>相关主题
 

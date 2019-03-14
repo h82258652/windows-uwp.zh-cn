@@ -4,19 +4,19 @@ title: 从应用扫描
 description: 在此处了解如何通过使用平板扫描仪、送纸器或自动配置的扫描源从你的应用扫描内容。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 74c01c21ae65f9e93638e2ce1df604591043a729
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924193"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601212"
 ---
 # <a name="scan-from-your-app"></a>从应用扫描
 
 
-**重要的 API**
+**重要的 Api**
 
 -   [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250)
 -   [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393)
@@ -24,7 +24,7 @@ ms.locfileid: "8924193"
 
 在此处了解如何通过使用平板扫描仪、送纸器或自动配置的扫描源从你的应用扫描内容。
 
-**重要提示** [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) Api 是桌面[设备系列](https://msdn.microsoft.com/library/windows/apps/Dn894631)的一部分。 应用可以使用这些 Api 仅在 windows 10 桌面版上。
+**重要**   [ **Windows.Devices.Scanners** ](https://msdn.microsoft.com/library/windows/apps/Dn264250) Api 属于桌面[设备系列](https://msdn.microsoft.com/library/windows/apps/Dn894631)。 应用可以使用这些 Api 仅在桌面版本的 Windows 10 上。
 
 若要从你的应用进行扫描，你必须首先声明一个新的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象并获取 [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) 类型，以此来列出可用的扫描仪。 仅列出并向应用提供带有 WIA 驱动程序的本地安装的扫描仪。
 
@@ -84,7 +84,7 @@ Windows 不会自动检测扫描仪。 你必须执行此步骤以使应用与�
     }
 ```
 
-## <a name="scan"></a>扫描
+## <a name="scan"></a>Scan
 
 1.  **获取 ImageScanner 对象**
 
@@ -94,22 +94,22 @@ Windows 不会自动检测扫描仪。 你必须执行此步骤以使应用与�
     ImageScanner myScanner = await ImageScanner.FromIdAsync(deviceId);
  ```
 
-2.  **仅扫描**
+2.  **只需扫描**
 
 要以默认设置进行扫描，你的应用将依靠 [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) 命名空间选择一个扫描仪并从该来源进行扫描。 未更改扫描设置。 可能的扫描仪为自动配置、平板或送纸器。 此类型的扫描最有可能产生成功的扫描操作，即使它从错误的来源进行扫描，如从平板扫描仪而不是从送纸器。
 
-**注意**如果用户送纸器中扫描的文档，扫描仪将从平板改为扫描。 如果用户尝试从空的送纸器进行扫描，扫描作业将不会产生任何扫描后的文件。
+**请注意**  如果用户将放在送纸器中进行扫描的文档，从平板改为将扫描，扫描程序。 如果用户尝试从空的送纸器进行扫描，扫描作业将不会产生任何扫描后的文件。
  
 ```csharp
     var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default,
         folder).AsTask(cancellationToken.Token, progress);
 ```
 
-3.  **从自动配置、平板或送纸器来源进行扫描**
+3.  **从自动配置的扫描、 平板、 或送纸器源**
 
 应用可以使用设备的[自动配置的扫描](https://msdn.microsoft.com/library/windows/hardware/Ff539393)来以最佳的扫描设置进行扫描。 使用此选项，设备本身可以根据要扫描的内容确定最佳扫描设置，例如颜色模式和扫描分辨率。 设备在运行时为每个新的扫描作业选择扫描设置。
 
-**注意**并非所有扫描仪都支持此功能，因此应用必须检查扫描仪是否支持使用此设置前此功能。
+**请注意**  并非所有扫描仪都支持此功能，因此应用程序必须检查扫描程序是否支持使用此设置之前此功能。
 
 在本示例中，应用首先检查扫描仪是否可以进行自动配置，然后进行扫描。 要指定平板扫描仪或送纸器扫描仪，只需使用 **Flatbed** 或 **Feeder** 替换 **AutoConfigured**。
 

@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 控件, 输入
 ms.localizationpriority: medium
 ms.openlocfilehash: 369aa076184f79aa1e43c3aac11706982a6be268
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045636"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595412"
 ---
 # <a name="add-controls"></a>添加控件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 更新适用于 Windows 10 上的 UWP 应用。 Windows 8.x 文章，请参阅[存档](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-优秀的通用 Windows 平台 (UWP) 游戏支持多种界面。 潜在玩家可能将 windows 10 上没有物理按钮，连接，了 Xbox 控制器的电脑的平板电脑或具有高性能鼠标和游戏键盘的最新桌面游戏安装。 在我们的游戏中，控制在 [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) 类中实现。 此类将全部三个输入类型（鼠标和键盘、触控和游戏板）聚合到一个控制器内。 最终结果是一个第一人称射击游戏，其使用通过多台设备使用的流派标准移动观看控件。
+优秀的通用 Windows 平台 (UWP) 游戏支持多种界面。 潜在的播放机可能与没有物理按钮、 附加、 Xbox 控制器的 PC 或使用高性能鼠标和游戏键盘最新桌面游戏远程测试机组平板电脑上安装有 Windows 10。 在我们的游戏中，控制在 [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) 类中实现。 此类将全部三个输入类型（鼠标和键盘、触控和游戏板）聚合到一个控制器内。 最终结果是一个第一人称射击游戏，其使用通过多台设备使用的流派标准移动观看控件。
 
 > [!NOTE]
 > 有关控件的详细信息，请参阅[游戏的移动观看控件](tutorial--adding-move-look-controls-to-your-directx-game.md)和[游戏的触摸控件](tutorial--adding-touch-controls-to-your-directx-game.md)。
@@ -41,7 +41,7 @@ ms.locfileid: "9045636"
 
 在初始化该游戏示例中的 **MoveLookController** 类时，将注册四个特定于指针的事件和一个特定于鼠标的事件：
 
-事件 | 说明
+事件 | 描述
 :------ | :-------
 [**CoreWindow::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) | 点按（并按住）左右鼠标按钮，或触摸触摸屏表面。
 [**CoreWindow::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) |移动鼠标，或在触摸表面执行拖动操作。
@@ -77,12 +77,12 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 }
 ```
 
-[**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L92) 的完整代码可以在 GitHub 上看到。
+[  **InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L92) 的完整代码可以在 GitHub 上看到。
 
 
 若要确定游戏应在何时侦听某个输入，**MoveLookController** 类有三个特定于控制器的状态（与控制器类型无关）：
 
-省/市/自治区 | 说明
+状态 | 描述
 :----- | :-------
 **无** | 这是控制器的初始化状态。 忽略所有输入，因为游戏不期待任何控制器输入。
 **WaitForInput** | 控制器等待玩家通过使用鼠标左键、触摸事件或游戏板上的菜单按钮确认来自游戏的消息。
@@ -95,7 +95,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 游戏在暂停后进入 **WaitForInput** 状态。 当玩家将指针移出游戏主窗口或者按下暂停按钮（P 键或游戏板**开始**按钮）时将发生此情况。 **MoveLookController** 注册点按操作，并在它调用 [**IsPauseRequested**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L107-L127) 方法时通知游戏循环。 此时，如果 **IsPauseRequested** 返回 **true**，游戏循环将对 **MoveLookController** 调用 **WaitForPress** 以将控制器转入 **WaitForInput** 状态。 
 
 
-进入 **WaitForInput** 状态后，游戏将停止处理几乎所有游戏输入事件，直到它返回到 **Active** 状态。 例外情况是暂停按钮，按此按钮会使游戏回退到活动状态。 除了暂停按钮之外使游戏回退到**活动**状态玩家需要选择一个菜单项。 
+进入 **WaitForInput** 状态后，游戏将停止处理几乎所有游戏输入事件，直到它返回到 **Active** 状态。 例外情况是暂停按钮，按此按钮会使游戏回退到活动状态。 暂停按钮以返回到使游戏顺序以外**Active**状态播放机所需选择菜单项。 
 
 
 
@@ -113,7 +113,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 
 在将指针事件映射到特定的游戏操作之后，可以更新 **MoveLookController** 对象与主游戏循环共享的数据。
 
-在调用游戏示例中的 [**Update**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1005-L1096) 方法时，该方法将处理输入并更新速度和观看方向变量（**m\_velocity** 和 **m\_lookdirection**），然后游戏循环通过调用公用 [**Velocity**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L906-L909) 和 [**LookDirection**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L913-L923) 方法检索这些变量。
+调用时， [**更新**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1005-L1096)游戏示例中的方法处理输入和更新速度并查看方向变量 (**m\_速度**和**m\_lookdirection 更改**)，它通过调用公共然后检索游戏循环[**速度**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L906-L909)和[ **Lookdirection 更改**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L913-L923)方法。
 
 > [!NOTE]
 > 有关 [**Update**](#the-update-method) 方法的更多详细信息，可以在此页的后面部分看到。
@@ -212,7 +212,7 @@ void MoveLookController::OnMouseMoved(
 ![移动观看触控布局](images/simple-dx-game-controls-touchzones.png)
 
 以下命令汇总了我们的触摸控件行为。
-用户输入 | Action
+用户输入 | 操作
 :------- | :--------
 移动矩形 | 触控输入转换为虚拟游戏杆，这时，垂直运动将转换为向前/向后位置移动，水平运动将转换为向左/向右位置移动。
 射击矩形 | 射击视区。
@@ -237,10 +237,10 @@ void MoveLookController::OnMouseMoved(
 屏幕左下区的移动控制器矩形用作方向板。 在此空间内左右滑动拇指可左右移动玩家，而上下滑动可前后移动相机。
 完成此设置后，点击屏幕右下区的射击控制器可射击视区。
 
-[**SetMoveRect**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L843-L853) 和 [**SetFireRect**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L857-L867) 方法创建输入矩形，使用两个 2D 矢量在屏幕上指定每个矩形的左上角和右下角位置。 
+[  **SetMoveRect**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L843-L853) 和 [**SetFireRect**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L857-L867) 方法创建输入矩形，使用两个 2D 矢量在屏幕上指定每个矩形的左上角和右下角位置。 
 
 
-参数然后分配给 **m\_fireUpperLeft** 和 **m\_fireLowerRight**，它们将帮助我们确定用户是否在矩形内触摸。 
+然后将参数分配给**m\_fireUpperLeft**并**m\_fireLowerRight**以帮助我们确定是否用户稍微讨论中的矩形。 
 ```cpp
 m_fireUpperLeft  = upperLeft;
 m_fireLowerRight = lowerRight;
@@ -266,9 +266,9 @@ window->PointerReleased +=
 
 我们将首先确定，用户在使用 [**OnPointerPressed**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L179-L313) 方法第一次按移动或射击矩形内部时将发生什么。
 在这里，我们检查他们触摸控件的位置以及指针是否已在该控制器中。 如果这是触摸特定控件的第一个手指，我们执行以下操作。
-- 在 **m\_moveFirstDown** 或 **m\_fireFirstDown** 中将触摸位置存储为 2D 矢量。
-- 将指针 ID 分配到 **m\_movePointerID** 或 **m\_firePointerID**。
-- 将正确的 **InUse** 标志（**m\_moveInUse** 或 **m\_fireInUse**）设置为 `true`，因为我们现在已有该控件的活动指针。
+- 存储位置在 touchdown **m\_moveFirstDown**或**m\_fireFirstDown**为二维向量。
+- 分配的指针的 ID **m\_movePointerID**或**m\_firePointerID**。
+- 设置了正确**InUse**标志 (**m\_moveInUse**或**m\_fireInUse**) 到`true`因为我们现在为此，有活动的指针控件。
 
 
 ```cpp
@@ -357,7 +357,7 @@ window->PointerReleased +=
 
 如果移动控件已释放，我们执行以下操作。
 - 在所有方向将玩家的速度设置为 `0` 以阻止他们在游戏中移动。
-- 将 **m\_moveInUse** 切换到 `false`，因为用户不会再触摸移动控制器。
+- 交换机**m\_moveInUse**到`false`由于用户无法再触摸移动控制器。
 - 将移动指针 ID 设置为 `0`，因为移动控制器中不再有指针。
 
 ```cpp
@@ -399,13 +399,13 @@ window->PointerReleased +=
 
 
 
-在这里，**MoveLookController** 将触发该事件的指针的指针 ID 分配到对应于观看区域的特定变量。 对于触摸发生在观看区域中， **m\_lookPointerID**变量设置为触发该事件的指针 ID。 还将设置布尔值变量 **m\_lookInUse** 以指示尚未释放控件。
+在这里，**MoveLookController** 将触发该事件的指针的指针 ID 分配到对应于观看区域的特定变量。 在触摸屏输入在查看区域中发生的情况下**m\_lookPointerID**变量设置为触发事件的指针 ID。 一个布尔变量**m\_lookInUse**，还设置，以指示该控件不具有尚未被释放。
 
 现在，我们讨论游戏示例如何处理 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) 触摸屏事件。
 
 
 在 **MoveLookController::OnPointerMoved** 方法内，我们查看哪类指针 ID 被分配到该事件。 如果是 **m_lookPointerID**，我们将计算指针位置的变化。
-然后，我们使用此增量计算应更改多少旋转。 最后，我们可以更新游戏中使用的 **m\_pitch** 和 **m\_yaw** 以更改玩家旋转了。 
+然后，我们使用此增量计算应更改多少旋转。 最后我们，我们可以更新某时刻**m\_间距**并**m\_偏航角**若要在游戏中用于更改播放机旋转。 
 
 ```cpp
     else if (pointerID == m_lookPointerID)     // This is the look pointer.
@@ -575,7 +575,7 @@ window->KeyUp +=
 
 
 
-在 [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) 方法中，我们添加了两个新事件来确定游戏板是否已[添加](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105)或[删除](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114)。 这些事件更新 **m_gamepadsChanged** 属性。 这用于**UpdatePollingDevices**方法中检查已更改已知游戏板的列表。 
+在 [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) 方法中，我们添加了两个新事件来确定游戏板是否已[添加](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105)或[删除](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114)。 这些事件更新 **m_gamepadsChanged** 属性。 使用此**UpdatePollingDevices**方法来检查是否已更改了已知的游戏板的列表。 
 
 ```cpp
     // Detect gamepad connection and disconnection events.
@@ -587,7 +587,7 @@ window->KeyUp +=
 ```
 
 > [!NOTE]
-> 应用未处于焦点时，UWP 应用无法从 Xbox One 控制器接收输入。
+> 应用程序未处于焦点时，UWP 应用不能从 Xbox 一个控制器接收输入。
 
 ### <a name="the-updatepollingdevices-method"></a>UpdatePollingDevices 方法
 
@@ -727,7 +727,7 @@ x 轴和 y 轴的操纵杆输入都在 -1 和 1 之间。 以下常量指定操�
 
 在我们的 **Update** 方法中，我们随后执行了以下输入检查。
 - 如果玩家使用移动控制器矩形，我们随后将确定指针位置的变化，并使用此信息计算用户是否将指针移出了控制器的死区。 如果移出，**m_moveCommand** 矢量属性随后将更新为虚拟游戏杆值。
-- 如果按下了任何移动键盘输入，值 `1.0f` 或 `-1.0f` 将添加到 **m_moveCommand** 矢量的相应组件中 &mdash; `1.0f` 代表向前，`-1.0f` 代表向后。
+- 如果任何移动键盘输入被按下，值为`1.0f`或`-1.0f`中的对应分量添加**m_moveCommand**向量&mdash;`1.0f`转发，以及`-1.0f`用于向后。
 
 
 考虑了所有移动输入后，我们通过一些计算来运行 **m_moveCommand** 矢量以生成新矢量，用于表示与游戏世界有关的玩家方向。

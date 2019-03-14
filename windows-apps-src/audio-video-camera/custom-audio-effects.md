@@ -1,5 +1,5 @@
 ---
-Description: This article describes how to create a Windows Runtime component that implements the IBasicAudioEffect interface to allow you to create custom effects for audio streams.
+Description: 本文介绍如何创建可实现 IBasicAudioEffect 接口的 Windows 运行时组件，以允许你为音频流创建自定义效果。
 title: 自定义音频效果
 ms.date: 02/08/2017
 ms.topic: article
@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
 ms.openlocfilehash: e04b3a764c170fa3e3e0ce1372e72b73795b5b12
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049324"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617952"
 ---
 # <a name="custom-audio-effects"></a>自定义音频效果
 
@@ -22,20 +22,20 @@ ms.locfileid: "9049324"
 
 自定义音频效果在实现 [**IBasicAudioEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect) 接口的类中定义。 此类不能直接包含在应用的项目中。 必须改用 Windows 运行时组件托管音频效果类。
 
-**为音频效果添加 Windows 运行时组件**
+**添加音频效果的 Windows 运行时组件**
 
 1.  在 Microsoft Visual Studio 中，打开解决方案后，转到**文件**菜单并依次选择**添加-&gt;新建项目**。
 2.  选择 **Windows 运行时组件(通用 Windows)** 项目类型。
 3.  对于此示例，将项目命名为 *AudioEffectComponent*。 此名称稍后将在代码中引用。
-4.  单击**确定**。
+4.  单击“确定” 。
 5.  项目模板将创建一个名为 Class1.cs 的类。 在**解决方案资源管理器**中，右键单击 Class1.cs 的图标并选择**重命名**。
-6.  将文件重命名为 *ExampleAudioEffect.cs*。 Visual Studio 将显示一条提示，询问你是否想要更新对新名称的所有引用。 单击**是**。
-7.  打开 **ExampleAudioEffect.cs** 并更新类定义以实现 [**IBasicAudioEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect) 接口。
+6.  将文件重命名为 *ExampleAudioEffect.cs*。 Visual Studio 将显示一条提示，询问你是否想要更新对新名称的所有引用。 单击 **“是”**。
+7.  打开 **ExampleAudioEffect.cs**，并更新类定义以实现 [**IBasicAudioEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect) 接口。
 
 
 [!code-cs[ImplementIBasicAudioEffect](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetImplementIBasicAudioEffect)]
 
-你需要在效果类文件中包含以下命名空间，以便访问本文中示例所使用的所有类型。
+你需要在效果类文件中包含以下命名空间，以便访问本文中的示例所使用的所有类型。
 
 [!code-cs[EffectUsing](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetEffectUsing)]
 
@@ -51,7 +51,7 @@ ms.locfileid: "9049324"
 
 ### <a name="setencodingproperties-method"></a>SetEncodingProperties 方法
 
-系统会对你的效果调用 [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884)，以便让你知道要应用该效果的音频流的编码属性。 为了实现回声效果，此示例使用缓冲区存储 1 秒的音频数据。 使用此方法，有机会根据编码音频的采样率，将缓冲区大小初始化为一秒音频中的采样数。 延迟效果还使用整数计数器跟踪在延迟缓冲区中的当前位置。 因为在将效果添加到音频管道时会调用 **SetEncodingProperties**，因此此时是将该值初始化为 0 的好时机。 你可能还需要捕获传递到此方法中的 **AudioEncodingProperties** 对象，以在效果中的其他位置使用。
+系统会对你的效果调用 [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884)，以便让你知道要应用该效果的音频流的编码属性。 为了实现回声效果，此示例使用缓冲区存储 1 秒的音频数据。 使用此方法，有机会根据编码音频的采样率，将缓冲区大小初始化为一秒音频中的采样数。 延迟效果还使用整数计数器跟踪在延迟缓冲区中的当前位置。 因为在将效果添加到音频管道时会调用 **SetEncodingProperties**，因此此时是将该值初始化为 0 的好时机。 你还可能想要捕获传递到此方法中的 **AudioEncodingProperties** 对象，以在你的效果中的其他位置使用。
 
 [!code-cs[DeclareEchoBuffer](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetDeclareEchoBuffer)]
 [!code-cs[SetEncodingProperties](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetSetEncodingProperties)]
@@ -59,10 +59,7 @@ ms.locfileid: "9049324"
 
 ### <a name="setproperties-method"></a>SetProperties 方法
 
-
-            [
-              **SetProperties**
-            ](https://msdn.microsoft.com/library/windows/apps/br240986) 方法允许正在使用你的效果的应用调整效果参数。 属性将作为属性名称和值的 [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) 映射传递。
+[  **SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 方法允许正在使用你的效果的应用调整效果参数。 属性将作为属性名称和值的 [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) 映射传递。
 
 [!code-cs[SetProperties](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetSetProperties)]
 
@@ -72,14 +69,14 @@ ms.locfileid: "9049324"
 
 ### <a name="processframe-method"></a>ProcessFrame 方法
 
-[**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) 方法是你的效果修改流音频数据的位置。 针对每一帧调用一次该方法，并将 [**ProcessAudioFrameContext**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.ProcessAudioFrameContext) 对象传递给它。 此对象包含一个输入 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.AudioFrame) 对象（包含要处理的传入帧）和一个你要向其写入音频数据（将传递到剩余的音频管道）的输出 **AudioFrame** 对象。 音频帧是表示一小段音频数据的音频采样的缓冲区。
+[  **ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) 方法是你的效果修改流音频数据的位置。 针对每一帧调用一次该方法，并将 [**ProcessAudioFrameContext**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.ProcessAudioFrameContext) 对象传递给它。 此对象包含一个输入 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.AudioFrame) 对象（包含要处理的传入帧）和一个你要向其写入音频数据（将传递到剩余的音频管道）的输出 **AudioFrame** 对象。 音频帧是表示一小段音频数据的音频采样的缓冲区。
 
 访问 **AudioFrame** 的数据缓冲区需要 COM 互操作，所以你应该在效果类文件中包括 **System.Runtime.InteropServices** 命名空间，然后针对你的效果将以下代码添加到该命名空间内，以便导入用于访问音频缓冲区的接口。
 
 [!code-cs[ComImport](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetComImport)]
 
 > [!NOTE]
-> 因为这种方法访问本机非托管的图像缓冲区，所以需要将项目配置为允许不安全的代码。
+> 由于此技术访问本机非托管的图像缓冲区，所以你需要将项目配置为允许不安全代码。
 > 1.  在“解决方案资源管理器”中，右键单击 AudioEffectComponent 项目，并选择**属性**。
 > 2.  选择**生成**选项卡。
 > 3.  选中**允许不安全代码**复选框。
@@ -96,7 +93,7 @@ ms.locfileid: "9049324"
 
 ### <a name="close-method"></a>Close 方法
 
-应关闭效果时，系统将在你的类上调用 [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764782) [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764782) 方法。 你应当使用此方法处理你创建的任何资源。 该方法的参数是 [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason)，该参数使你知道效果是否正常关闭、是否发生错误或者效果是否不支持所需的编码格式。
+系统将调用[**关闭**](https://msdn.microsoft.com/library/windows/apps/dn764782) [**关闭**](https://msdn.microsoft.com/library/windows/apps/dn764782)效果应关闭时在类上的方法。 你应当使用此方法处理你创建的任何资源。 该方法的参数是 [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason)，该参数使你知道效果是否正常关闭、是否发生错误或者效果是否不支持所需的编码格式。
 
 [!code-cs[Close](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetClose)]
 
@@ -124,15 +121,15 @@ TimeIndependent [**TimeIndependent**](https://msdn.microsoft.com/library/windows
 
 若要从应用中使用你的音频效果，必须向应用添加对效果项目的引用。
 
-1.  在“解决方案资源管理器”中，在你的应用项目下，右键单击**引用**，然后选择**添加引用**。
+1.  在“解决方案资源管理器”中，在你的项目下，右键单击**引用**，然后选择**添加引用**。
 2.  展开**项目**选项卡、选择**解决方案**，然后选中效果项目名称对应的复选框。 对于此示例，名称为 *AudioEffectComponent*。
-3.  单击**确定**
+3.  单击“确定”
 
-如果音频效果类声明为不同的命名空间，请确保将该命名空间包含在代码文件中。
+如果你的音频效果类声明为不同的命名空间，请确保将该命名空间包含在代码文件中。
 
 [!code-cs[UsingAudioEffectComponent](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetUsingAudioEffectComponent)]
 
-### <a name="add-your-custom-effect-to-an-audiograph-node"></a>将自定义效果添加到 AudioGraph 节点
+### <a name="add-your-custom-effect-to-an-audiograph-node"></a>将你的自定义效果添加到 AudioGraph 节点
 有关使用音频图的常规信息，请参阅[音频图](audio-graphs.md)。 以下代码片段显示了如何将本文中所示的回声效果示例添加到音频图节点。 首先，创建 [**PropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet)，设置由效果定义的 **Mix** 属性值。 接下来，调用 [**AudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.AudioEffectDefinition) 构造函数，从而传入自定义效果类型的完整类名称和属性集。 最后，将效果定义添加到现有 [**FileInputNode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.CreateAudioFileInputNodeResult.FileInputNode) 的 [**EffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioFileInputNode.EffectDefinitions) 属性，以使发出的音频由自定义效果处理。 
 
 [!code-cs[AddCustomEffect](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddCustomEffect)]
@@ -148,8 +145,8 @@ TimeIndependent [**TimeIndependent**](https://msdn.microsoft.com/library/windows
 
 
 ## <a name="related-topics"></a>相关主题
-* [简单相机预览访问](simple-camera-preview-access.md)
-* [媒体合成和编辑](media-compositions-and-editing.md)
+* [简单的相机预览访问权限](simple-camera-preview-access.md)
+* [媒体组合和编辑](media-compositions-and-editing.md)
 * [Win2D 文档](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [媒体播放](media-playback.md)
 

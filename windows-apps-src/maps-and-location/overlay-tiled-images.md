@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 图像, 覆盖
 ms.localizationpriority: medium
 ms.openlocfilehash: c0c2f07a364980b67a34a519eb5dd8b4da1a18f0
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046430"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57663082"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>覆盖地图上的平铺图像
 
-使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据）；或者使用磁贴源替换所有默认地图。
+使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据），或者使用磁贴源替换所有默认地图。
 
 **提示** 若要了解有关在应用中使用地图的详细信息，请在 Github 上下载[通用 Windows 平台 (UWP) 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)。
 
@@ -25,7 +25,7 @@ ms.locfileid: "9046430"
 
 地图服务（例如 Nokia 地图和必应地图）将地图剪切成多个方形磁贴，以供快速检索和显示。 这些磁贴的大小为 256 像素 X 256 像素，并以多个级别的详细信息的形式进行预呈现。 许多第三方服务还提供剪切成磁贴的基于地图的数据。 使用磁贴源可检索第三方磁贴，还可以创建你自己的自定义磁贴，并且可覆盖显示在 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 中的地图上的这些磁贴。
 
-**重要提示**当你使用磁贴源时，你无需编写代码即可请求或放置个别磁贴。 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 会按需请求磁贴。 每个请求均会为单个磁贴指定 X 和 Y 坐标以及缩放级别。 仅需指定要使用的 URI 或文件名的格式，即可检索采用 **UriFormatString** 属性的磁贴。 换言之，在基本 URI 或文件名中插入可替换的参数，以指示每个磁贴的 X 和 Y 坐标及缩放级别的传递位置。
+**重要**  使用磁贴源时，无需编写代码，若要请求或定位的各个磁贴。 [  **MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 会按需请求磁贴。 每个请求均会为单个磁贴指定 X 和 Y 坐标以及缩放级别。 仅需指定要使用的 URI 或文件名的格式，即可检索采用 **UriFormatString** 属性的磁贴。 换言之，在基本 URI 或文件名中插入可替换的参数，以指示每个磁贴的 X 和 Y 坐标及缩放级别的传递位置。
 
 下面是 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 属性的示例，并显示了 X 和 Y 坐标及缩放级别的可替换参数。
 
@@ -93,7 +93,7 @@ http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 
 3.  然后，按照之前在[平铺图像概述](#tileintro)中介绍的剩余步骤操作。
 
-以下示例将覆盖北美地区地图上来自虚拟 Web 服务的磁贴。 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值在 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的构造函数中指定。 在此示例中，磁贴仅显示在由可选的 [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) 属性指定的地理边界内。
+以下示例将覆盖北美地区地图上来自虚拟 Web 服务的磁贴。 [  **UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值在 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的构造函数中指定。 在此示例中，磁贴仅显示在由可选的 [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) 属性指定的地理边界内。
 
 ```csharp
 private void AddHttpMapTileSource()
@@ -182,7 +182,7 @@ void MainPage::AddHttpMapTileSource()
 
 可以使用以下协议和位置从本地存储加载磁贴：
 
-| URI | 详细信息 |
+| Uri | 详细信息 |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | ms-appx:/// | 指向应用的安装文件夹所在的根目录。 |
 |  | 这是 [Package.InstalledLocation](https://msdn.microsoft.com/library/windows/apps/br224681) 属性所引用的位置。 |
@@ -193,7 +193,7 @@ void MainPage::AddHttpMapTileSource()
 
  
 
-以下示例通过使用 `ms-appx:///` 协议来加载以文件形式存储在应用的安装文件夹中的磁贴。 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 的值在 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 的构造函数中指定。 在此示例中，磁贴仅当地图的缩放级别在可选的 [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) 属性所指定的范围时才显示。
+以下示例通过使用 `ms-appx:///` 协议来加载以文件形式存储在应用的安装文件夹中的磁贴。 [  **UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 的值在 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 的构造函数中指定。 在此示例中，磁贴仅当地图的缩放级别在可选的 [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) 属性所指定的范围时才显示。
 
 ```csharp
         void AddLocalMapTileSource()
@@ -271,7 +271,7 @@ using System.Threading.Tasks;
 1.  在 [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) 事件的自定义处理程序中，将所需的自定义参数与 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) 及 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) 属性进行合并，以创建或检索自定义磁贴。
 2.  在 [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128)（它包含在 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) 属性中）的 [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) 属性中返回自定义磁贴。 **PixelData** 属性属于类型 [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664)。
 
-以下示例显示了如何通过为 **BitmapRequested** 事件创建自定义处理程序来提供自定义磁贴。 此示例创建相同的红色磁贴，这些磁贴局部是透明的。 该示例忽略了 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) 和 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) 属性。 尽管这不是真实的示例，但该示例演示如何在内存中快速创建自定义磁贴。 该示例还显示了如何在必须异步执行某些操作的情况下，实现延迟模式来创建自定义磁贴。
+以下示例显示了如何通过为 **BitmapRequested** 事件创建自定义处理程序来提供自定义磁贴。 此示例创建相同的红色磁贴，这些磁贴局部是透明的。 该示例忽略了 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) 和 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) 属性。 尽管这不是真实的示例，但该示例演示了如何在内存中快速创建自定义磁贴。 该示例还显示了如何在必须异步执行某些操作的情况下，实现延迟模式来创建自定义磁贴。
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -421,7 +421,7 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessStream::get()
 ## <a name="related-topics"></a>相关主题
 
 * [必应地图开发人员中心](https://www.bingmapsportal.com/)
-* [UWP 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [地图设计指南](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [版本 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 路况应用示例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 映射示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [映射的设计准则](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 视频：利用跨手机、 平板电脑和 Windows 应用程序中的 PC 的地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP 流量应用示例](https://go.microsoft.com/fwlink/p/?LinkId=619982)

@@ -1,26 +1,26 @@
 ---
-title: Windows10 UWP 应用生命周期
-description: 本主题介绍 Windows10 通用 Windows 平台 (UWP) 应用的生命周期，从其激活时直到其关闭。
+title: Windows 10 UWP 应用生命周期
+description: 本主题介绍 Windows 10 通用 Windows 平台 (UWP) 应用的生命周期，从其激活时直到其关闭。
 keywords: 已暂停的应用生命周期恢复启动激活
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ms.date: 01/23/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f70d768ad6589e210826f94f73249ed1ea272e1
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045606"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602642"
 ---
-# <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows10 通用 Windows 平台 (UWP) 应用生命周期
+# <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows 10 通用 Windows 平台 (UWP) 应用生命周期
 
 
 本主题介绍通用 Windows 平台 (UWP) 应用的生命周期，从其激活时直到其关闭。
 
 ## <a name="a-little-history"></a>简短历史
 
-在 Windows8 之前，应用的生命周期非常简单。 Win32 和 .NET 应用始终处于运行状态或未运行状态。 当用户最小化应用或离开应用时，它们将继续运行。 随着便携设备和电源管理变得日益重要，这种情况不再可行。
+在 Windows 8 之前，应用的生命周期非常简单。 Win32 和 .NET 应用始终处于运行状态或未运行状态。 当用户最小化应用或离开应用时，它们将继续运行。 随着便携设备和电源管理变得日益重要，这种情况不再可行。
 
 Windows 8 随 UWP 应用引入了新应用程序模型。 在高级别上，添加了新的已暂停状态。 当用户最小化 UWP 应用或切换到其他应用后，该应用会立刻处于暂停状态。 这意味着应用的线程已停止，并且应用保留在内存中（除非操作系统需要回收资源）。 当用户切换回该应用时，该应用可快速还原到正在运行状态。
 
@@ -30,11 +30,11 @@ Windows 8 随 UWP 应用引入了新应用程序模型。 在高级别上，添�
 
 已暂停状态对作为开发人员的你提出了新要求，因为操作系统可能会选择终止已暂停的应用，以便释放资源。 已终止的应用仍会显示在任务栏中。 当用户单击该应用时，该应用必须恢复它终止之前所处的状态，因为用户不会意识到系统已关闭该应用。 用户会认为在他们执行其他操作时该应用一直在后台等待，并且希望该应用处于他们离开它之前所处的同一状态。 在本主题中，我们将演示如何实现该目的。
 
-Windows10 版本 1607 又引入了两个应用模型状态：**在前台运行**和**在后台运行**。 我们还会在接下来的部分中演示这些新状态。
+Windows 10，版本 1607，引入了两个更多的应用程序模型状态：**在前台中运行**并**后台运行**。 我们还会在接下来的部分中演示这些新状态。
 
 ## <a name="app-execution-state"></a>应用执行状态
 
-此图显示了从 Windows 10 版本 1607 开始的可能应用模型状态。 演练 UWP 应用的典型生命周期。
+此图显示了从 Windows 10 版本 1607 开始的可能应用模型状态。 演练 UWP 应用的典型生命周期。
 
 ![显示应用执行状态之间转换的状态图](images/updated-lifecycle.png)
 
@@ -51,12 +51,12 @@ Windows10 版本 1607 又引入了两个应用模型状态：**在前台运行**
 | ApplicationExecutionState | 说明 | 采取的操作 |
 |-------|-------------|----------------|
 | **NotRunning** | 应用可能处于此状态，因为该应用自上一次用户重新启动或登录后一直未启动。 应用在以下情况下也会处于此状态：如果应用运行后出现了故障，或者因为用户之前就将它关闭。| 初始化应用，如同第一次在当前用户会话中运行它。 |
-|**Suspended** | 用户已最小化或离开应用，并且在数秒内未返回该应用。 | 当应用暂停时，其状态保留在内存中。 只需重新获取任何文件句柄或应用暂停时释放的其他资源。 |
-| **Terminated** | 应用之前处于暂停状态，但之后某些时候因系统需要回收内存而被终止。 | 恢复用户离开应用时应用所处的状态。|
+|**挂起** | 用户已最小化或离开应用，并且在数秒内未返回该应用。 | 当应用暂停时，其状态保留在内存中。 只需重新获取任何文件句柄或应用暂停时释放的其他资源。 |
+| **终止** | 应用之前处于暂停状态，但之后某些时候因系统需要回收内存而被终止。 | 恢复用户离开应用时应用所处的状态。|
 |**ClosedByUser** | 用户使用平板电脑模式下的关闭手势或 Alt+F4 关闭了应用。 当用户关闭应用时，它将首先暂停，然后终止。 | 从本质上说，由于应用经历了导致处于 Terminated 状态的相同步骤，因此处理此状态的步骤与 Terminated 状态相同。|
-|**Running** | 当用户尝试再次启动应用时，该应用已经打开。 | 无。 请注意，不会启动应用的另一个实例。 只需激活已在运行的实例。 |
+|**正在运行** | 当用户尝试再次启动应用时，该应用已经打开。 | 无。 请注意，不会启动应用的另一个实例。 只需激活已在运行的实例。 |
 
-**注意***当前用户会话*基于 Windows 登录。 只要当前用户未注销、关机或者重新启动 Windows，当前用户会话便可以保留在诸如锁屏界面身份验证、切换用户等的多个事件中。 
+**注意**  *当前用户会话*基于 Windows 登录。 只要当前用户未注销、关机或者重新启动 Windows，当前用户会话便可以保留在诸如锁屏界面身份验证、切换用户等的多个事件中。 
 
 需要注意的一种重要情形是：如果设备具有足够资源，操作系统会预启动针对该行为选择的常用应用，以优化响应性。 在后台启动要预启动的应用，然后快速暂停，以便当用户切换到这些应用时，可以恢复它们，这比启动应用的速度要快得多。
 
@@ -72,10 +72,8 @@ Windows10 版本 1607 又引入了两个应用模型状态：**在前台运行**
 
 除了由用户启动之外，应用还可以由系统激活。 应用可以由合约（如“共享”合约）激活。 或者应用可能会激活以处理自定义 URI 协议或文件（附带注册应用以处理的扩展名）。 有关可激活应用的方法的列表，请参阅 [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693)。
 
-[
-              **Windows.UI.Xaml.Application**
-            ](https://msdn.microsoft.com/library/windows/apps/br242324) 类定义可替代以处理各种应用激活方法的方法。
-[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 可以处理所有可能的激活类型。 但是，更常见的做法是使用特定方法来处理最常见的激活类型，而对于不太常见的激活类型，则使用 **OnActivated** 作为回滚方法。 有其他方法可用于特定激活：
+[  **Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 类定义可替代以处理各种应用激活方法的方法。
+[**OnActivated** ](https://msdn.microsoft.com/library/windows/apps/br242330)可以处理所有可能的激活类型。 但是，更常见的做法是使用特定方法来处理最常见的激活类型，而对于不太常见的激活类型，则使用 **OnActivated** 作为回滚方法。 有其他方法可用于特定激活：
 
 [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797)  
 [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)  
@@ -85,11 +83,11 @@ Windows10 版本 1607 又引入了两个应用模型状态：**在前台运行**
 
 这些方法的事件数据包含我们之前所见的相同 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 属性，这会告诉你应用在激活之前处于哪种状态。 解释状态以及应该对它采取的操作，方法与上面[应用启动](#app-launch)部分中所述的方法相同。
 
-**注意**如果你使用计算机的管理员帐户登录，你将无法激活 UWP 应用。
+**请注意** 如果您在使用计算机的管理员帐户登录，则无法激活 UWP 应用。
 
 ## <a name="running-in-the-background"></a>在后台运行 ##
 
-从 Windows10 版本 1607 开始，应用可以在应用本身所在的同一进程内运行后台任务。 有关详细信息，请参阅[单个进程的后台活动模型](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)。 在本文中，我们不会介绍进程内后台处理，但会介绍这如何影响应用生命周期：已添加与应用何时处于后台有关的两个新的事件。 事件如下：[**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 和 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)。
+从 Windows 10 版本 1607 开始，应用可以在应用本身所在的同一进程内运行后台任务。 有关详细信息，请参阅[单个进程的后台活动模型](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)。 在本文中，我们不会介绍进程内后台处理，但会介绍这如何影响应用生命周期：已添加与应用何时处于后台有关的两个新的事件。 它们是：[**EnteredBackground** ](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground)并[ **LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)。
 
 这些事件还反映用户是否可以看到你的应用的 UI。
 
@@ -141,7 +139,7 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 当用户最小化某个应用时，Windows 会等待数秒，以查看用户是否会切换回该应用。 如果用户在此时间范围内未切换回，并且任何扩展执行、后台任务或活动赞助执行都未处于活动状态，则 Windows 将暂停该应用。 只要应用中不存在任何处于活动状态的扩展执行会话等，该应用也将在出现锁屏界面时暂停。
 
-当暂停应用时，它将调用 [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件。 Visual Studio 的 UWP 项目模板为在 **App.xaml.cs** 中称为 **OnSuspending** 的此事件提供处理程序。 在 Windows10 版本 1607 之前，要在此处添加用于保存状态的代码。 现在建议在进入后台状态时保存状态，如上所述。
+当暂停应用时，它将调用 [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件。 Visual Studio 的 UWP 项目模板为在 **App.xaml.cs** 中称为 **OnSuspending** 的此事件提供处理程序。 在 Windows 10 版本 1607 之前，要在此处添加用于保存状态的代码。 现在建议在进入后台状态时保存状态，如上所述。
 
 你应释放独占资源和文件句柄，以便其他应用可以在你的应用暂停时访问它们。 独占资源的示例包括相机、I/O 设备、外部设备以及网络资源。 显式释放独占资源和文件句柄有助于确保其他应用可以在你的应用暂停时访问它们。 当恢复应用时，它应该重新获取其独占资源和文件句柄。
 
@@ -159,7 +157,7 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 当应用确定它在终止后被激活时，它应该加载它保存的应用程序数据，以使应用处于与其终止之前相同的状态。 当用户切换回已终止的暂停应用时，该应用应该在其 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法中还原其应用程序数据。 当终止应用时系统不会通知应用，因此在暂停应用之前，你的应用必须保存其应用程序数据并释放独占资源和文件句柄，并且当在终止后又激活应用时还原这些内容。
 
-**有关使用 Visual Studio 进行调试的注释：** Visual Studio 阻止 Windows 暂停连接到调试程序的应用。 这是为了允许用户在应用正在运行时查看 Visual Studio 调试 UI。 调试应用时，可以使用 Visual Studio 将一个暂停事件发送给该应用。 请确保**调试位置**工具栏显示出来，然后单击**暂停**图标。
+**有关使用 Visual Studio 进行调试的说明：** Visual Studio 会阻止 Windows 挂起的应用程序附加到调试器。 这是为了允许用户在应用正在运行时查看 Visual Studio 调试 UI。 调试应用时，可以使用 Visual Studio 将一个暂停事件发送给该应用。 请确保 **“调试位置”** 工具栏正在显示，然后单击 **“暂停”** 图标。
 
 ## <a name="app-resume"></a>应用恢复
 
@@ -175,7 +173,7 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 当应用暂停时，它不会收到它注册用于接收的任何网络事件。 这些网络事件没有排队，它们只是丢失了。 因此，你的应用应该在恢复时测试网络状态。
 
-**注意**如果恢复处理程序中的代码与 UI 通信，因为[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)事件未从 UI 线程中引发，必须使用调度程序。 请参阅[从后台线程更新 UI 线程](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md)以获取有关如何执行此操作的代码示例。
+**请注意**  因为[**正在恢复**](https://msdn.microsoft.com/library/windows/apps/br242339)从 UI 线程不会引发事件，必须使用调度程序，如果恢复处理程序中的代码与你的 UI 进行通信。 请参阅[从后台线程更新 UI 线程](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md)以获取有关如何执行此操作的代码示例。
 
 有关一般准则，请参阅[应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)。
 
@@ -183,9 +181,9 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 通常，用户不需要关闭应用，他们可以让 Windows 管理它们。 但是，用户可以选择以下方法来关闭应用：使用关闭手势、按 Alt+F4，或在 Windows Phone 上使用任务切换程序。
 
-没有事件指示用户关闭了应用。 当用户关闭应用时，应用首先处于暂停状态，以使你有机会保存其状态。 在 windows 8.1 及更高版本，应用已被用户关闭后，应用会从屏幕和切换列表，但不是会显式终止。
+没有事件指示用户关闭了应用。 当用户关闭应用时，应用首先处于暂停状态，以使你有机会保存其状态。 Windows 8.1 及更高版本，已由用户关闭应用后，应用程序从屏幕上删除和切换列表，但未显式终止。
 
-**通过用户关闭行为：** 如果你的应用需要执行不同于被 Windows 关闭时用户关闭时，你可以使用激活事件处理程序确定应用由用户还是被 Windows 终止。 请参阅 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举的参考中 **ClosedByUser** 和 **Terminated** 状态的说明。
+**由用户关闭行为：**  如果您的应用程序需要执行一些不同的用户不通过 Windows 关闭时关闭时，可以使用激活事件处理程序以确定是否通过用户或已终止该应用程序Windows。 请参阅 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举的参考中 **ClosedByUser** 和 **Terminated** 状态的说明。
 
 我们建议，应用不要以编程方式自行关闭，除非绝对必要。 例如，如果应用检测到内存泄漏，它可以关闭自身来确保用户个人数据的安全性。
 
@@ -207,22 +205,22 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 ## <a name="key-application-lifecycle-apis"></a>关键应用程序生命周期 API
 
--   [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 命名空间
--   [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766) 命名空间
--   [**Windows.ApplicationModel.Core**](https://msdn.microsoft.com/library/windows/apps/br205865) 命名空间
--   [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 类 (XAML)
--   [**Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 类 (XAML)
+-   [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) namespace
+-   [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766) namespace
+-   [**Windows.ApplicationModel.Core**](https://msdn.microsoft.com/library/windows/apps/br205865) namespace
+-   [**Windows.UI.Xaml.Application** ](https://msdn.microsoft.com/library/windows/apps/br242324)类 (XAML)
+-   [**Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) class (XAML)
 
 ## <a name="related-topics"></a>相关主题
 
 * [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694)
-* [应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [处理应用预启动](handle-app-prelaunch.md)
-* [处理应用激活](activate-an-app.md)
-* [处理应用暂停](suspend-an-app.md)
-* [处理应用恢复](resume-an-app.md)
-* [单个进程的后台活动模型](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
-* [在后台播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [应用程序的指导原则挂起和继续](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [处理应用程序预启动](handle-app-prelaunch.md)
+* [处理应用程序激活](activate-an-app.md)
+* [句柄应用挂起](suspend-an-app.md)
+* [句柄应用恢复](resume-an-app.md)
+* [后台活动的单个进程模型](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
+* [在背景中播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 
  
 

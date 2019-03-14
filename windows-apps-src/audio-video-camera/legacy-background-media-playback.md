@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ea8d387becaef171175fd5e91bfc3a1402e79faa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927641"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616612"
 ---
 # <a name="legacy-background-media-playback"></a>传统后台媒体播放
 
@@ -19,7 +19,7 @@ ms.locfileid: "8927641"
 本文介绍了传统双进程模型，用于向 UWP 应用添加后台音频支持。 从 Windows 10 版本 1607 开始，后台音频的单进程模型更易于实现。 有关后台音频的当前建议的详细信息，请参阅[在后台播放媒体](background-audio.md)。 本文旨在为已使用传统双进程模型进行开发的应用提供支持。
 
 > [!NOTE]
-> 从 Windows 版本 1703 中，开始**BackgroundMediaPlayer**已弃用，并且可能不可用在将来版本的 Windows。
+> 从 Windows，版本 1703，开始**BackgroundMediaPlayer**已弃用，并且可能不可用的 Windows 未来版本中。
 
 ## <a name="background-audio-architecture"></a>后台音频体系结构
 
@@ -30,7 +30,7 @@ ms.locfileid: "8927641"
 ![Windows 10 后台音频体系结构](images/backround-audio-architecture-win10.png)
 ## <a name="mediaplayer"></a>MediaPlayer
 
-[**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 命名空间包含用于在后台播放音频的 API。 每个应用都存在一个用于进行播放的 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) 实例。 你的后台音频应用将调用 **MediaPlayer** 类上的方法并设置相关属性，以设置当前曲目、开始播放、暂停、快进、快退等等。 始终可通过 [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) 属性访问媒体播放器对象实例。
+[  **Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 命名空间包含用于在后台播放音频的 API。 每个应用都存在一个用于进行播放的 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) 实例。 你的后台音频应用将调用 **MediaPlayer** 类上的方法并设置相关属性，以设置当前曲目、开始播放、暂停、快进、快退等等。 始终可通过 [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) 属性访问媒体播放器对象实例。
 
 ## <a name="mediaplayer-proxy-and-stub"></a>MediaPlayer 代理和存根
 
@@ -56,7 +56,7 @@ ms.locfileid: "8927641"
 
 有时，你将希望在后台音频应用的两个进程之间进行通信。 例如，你可能希望后台任务在开始播放新歌曲时通知前台任务，然后将新歌曲标题发送到要在屏幕上显示的前台任务。
 
-简单的通信机制可同时在前台和后台进程中引发事件。 [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) 和 [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) 方法分别调用相应进程中的事件。 消息可通过订阅 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) 和 [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) 事件来接收。
+简单的通信机制可同时在前台和后台进程中引发事件。 [  **SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) 和 [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) 方法分别调用相应进程中的事件。 消息可通过订阅 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) 和 [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) 事件来接收。
 
 可将数据作为参数传递给发送消息方法，这些方法随后会传入消息接收的事件处理程序中。 使用 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 类传递数据。 此类是一个字典，包含了作为键的字符串和作为值的其他值类型。 你可以传递整数、字符串和布尔值等简单的值类型。
 
@@ -114,11 +114,11 @@ ms.locfileid: "8927641"
 
 下表列出了对哪些设备类型强制执行哪些策略。
 
-| 子策略             | 桌面  | 移动   | 其他    |
+| 子策略             | 桌面设备  | 移动版   | 其他    |
 |------------------------|----------|----------|----------|
-| **独有性**        | 已禁用 | 已启用  | 已启用  |
-| **不活动超时** | 已禁用 | 已启用  | 已禁用 |
-| **共享生命周期**    | 已启用  | 已禁用 | 已禁用 |
+| **独占性**        | Disabled | 已启用  | 已启用  |
+| **非活动超时** | Disabled | 已启用  | Disabled |
+| **共享的生存期**    | 已启用  | Disabled | Disabled |
 
 
  

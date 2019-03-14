@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 696a3f0f065c209bec28f774224da6e4c8d93275
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9046320"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635542"
 ---
 # <a name="key-frame-animations-and-easing-function-animations"></a>关键帧动画以及缓动函数动画
 
@@ -19,7 +19,7 @@ ms.locfileid: "9046320"
 
 线性关键帧动画、具有 **KeySpline** 值的关键帧动画或缓动函数对于大致相同的情况是三种不同的技术：创建从某个起始状态到结束状态使用非线性动画行为的更为复杂的情节提要动画。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 确保你已经阅读[情节提要动画](storyboarded-animations.md)主题。 本主题在[情节提要动画](storyboarded-animations.md)中解释过的动画概念的基础上生成，并且不会重新复习这些概念。 例如，[情节提要动画](storyboarded-animations.md)介绍了如何定位动画、作为资源的情节提要、[**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 属性值（例如 [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration)、[**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior)）等。
 
@@ -35,14 +35,14 @@ ms.locfileid: "9046320"
 
 除了 [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration)，你还可以在关键帧动画上设置所有基于 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 的属性，例如，你可以设置具有 **From**/**To**/**By** 的动画，因为关键帧动画类也派生自 **Timeline**。 它们是：
 
--   [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.autoreverse)：在到达最后一个关键帧后，从结束位置开始反向重复帧。 这使得动画的显示持续时间加倍。
--   [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.begintime)：延迟动画的起始部分。 帧内 **KeyTime** 值的时间线在 **BeginTime** 到达前不开始计数，因此不存在截断帧的风险
--   [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior)：控制当到达最后一帧时发生的操作。 **FillBehavior** 不会对任何中间关键帧产生任何影响。
--   [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty)：
+-   [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.autoreverse): 帧到达最后一个关键帧时，会按相反的顺序重复从末尾。 这使得动画的显示持续时间加倍。
+-   [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.begintime)： 动画开始。 帧内 **KeyTime** 值的时间线在 **BeginTime** 到达前不开始计数，因此不存在截断帧的风险
+-   [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior)： 控制在到达最后一个关键帧时，会发生什么情况。 **FillBehavior** 不会对任何中间关键帧产生任何影响。
+-   [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty):
     -   如果设置为 **Forever**，则关键帧及其时间线将一直重复。
     -   如果设置为一个迭代计数，则时间线将重复该计数多次。
     -   如果设置为 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)，则时间线在到达该时间前一直重复。 如果该数不是时间线的隐式持续时间的整数倍数，则这可能会截断关键帧序列中的部分动画。
--   [**SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.speedratioproperty)（不常使用）
+-   [**SpeedRatio** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.speedratioproperty) （不常使用）
 
 ### <a name="linear-key-frames"></a>线性关键帧
 
@@ -154,23 +154,23 @@ ms.locfileid: "9046320"
 
 下面是缓动函数的列表：
 
--   [**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049)：动画开始在指定路径上运动前稍微收缩动画的运行。
--   [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057)：创建回弹效果。
--   [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063)：使用圆函数创建加速或减速的动画。
--   [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126)：使用函数 f(t) = t3 创建加速或减速的动画。
--   [**ElasticEase**](https://msdn.microsoft.com/library/windows/apps/BR210282)：创建一个动画，模拟弹簧的来回振荡运动，直到它达到停止状态。
--   [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294)：使用指数公式创建加速或减速的动画。
--   [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399)：使用公式 f(t) = tp 创建加速或减速的动画，其中 p 等于 [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) 属性。
--   [**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403)：使用函数 f(t) = t2 创建加速或减速的动画。
--   [**QuarticEase**](https://msdn.microsoft.com/library/windows/apps/BR210405)：使用函数 f(t) = t4 创建加速或减速的动画。
--   [**QuinticEase**](https://msdn.microsoft.com/library/windows/apps/BR210407)：使用函数 f(t) = t5 创建加速或减速的动画。
--   [**SineEase**](https://msdn.microsoft.com/library/windows/apps/BR210439)：使用正弦公式创建加速或减速的动画。
+-   [**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049):略微收回动画的动作，然后再开始进行动画处理指示的路径中。
+-   [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057):创建弹跳效果。
+-   [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063):创建动画加速或减速使用循环函数。
+-   [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126):创建的动画加速或减速使用公式 f(t) = t3。
+-   [**ElasticEase**](https://msdn.microsoft.com/library/windows/apps/BR210282):创建类似于弹簧来回直到静止的动画。
+-   [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294):创建动画加速或减速使用指数公式。
+-   [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399):创建的动画加速或减速使用公式 f(t) = 其中 p 等于的 tp [**电源**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power)属性。
+-   [**带**](https://msdn.microsoft.com/library/windows/apps/BR210403):创建的动画加速或减速使用公式 f(t) = t2。
+-   [**QuarticEase**](https://msdn.microsoft.com/library/windows/apps/BR210405):创建的动画加速或减速使用公式 f(t) = t4。
+-   [**QuinticEase**](https://msdn.microsoft.com/library/windows/apps/BR210407):创建一个动画加速或减速使用公式 f(t) = t5。
+-   [**SineEase**](https://msdn.microsoft.com/library/windows/apps/BR210439):创建动画加速或减速使用正弦公式。
 
 某些缓动函数具有其自己的属性。 例如，[**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) 具有两个属性（[**Bounces**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounces.aspx) 和 [**Bounciness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounciness.aspx)），用于修改该特定 **BounceEase** 的时间函数行为。 其他缓动函数（例如 [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126)）不具有除所有缓动函数共享的 [**EasingMode**](https://msdn.microsoft.com/library/windows/apps/BR210275) 属性之外的任何属性，并且始终产生相同的时间函数行为。
 
 根据你在具有多个属性的缓动函数上设置的属性，这些缓动函数中的某些函数会部分重叠。 例如，[**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403) 与其 [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) 等于 2 的 [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399) 完全相同。 并且，基本上 [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063) 就是具有默认值的 [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294)。
 
-[**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049) 缓动函数是唯一的，因为它可以更改正常范围之外的值（在由 **From**/**To** 设置时）或关键帧的值。 它通过更改相反方向的值启动动画，按照预期从正常的 **From**/**To** 行为开始，再次返回至 **From** 或起始值，然后按正常行为运行动画。
+[  **BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049) 缓动函数是唯一的，因为它可以更改正常范围之外的值（在由 **From**/**To** 设置时）或关键帧的值。 它通过更改相反方向的值启动动画，按照预期从正常的 **From**/**To** 行为开始，再次返回至 **From** 或起始值，然后按正常行为运行动画。
 
 在前面的示例中，我们展示了如何为关键帧动画声明缓动函数。 下一示例会将缓动函数应用到 **From**/**To**/**By** 动画。
 
@@ -194,9 +194,9 @@ ms.locfileid: "9046320"
 
 当缓动函数应用到 **From**/**To**/**By** 动画时，它会更改时间函数的特性，该特性确定值如何随着动画的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration) 内插到 **From** 与 **To** 值之间。 如果没有缓动函数，则该内插将为线性内插。
 
-## <a name="span-iddiscreteobjectvalueanimationsspanspan-iddiscreteobjectvalueanimationsspanspan-iddiscreteobjectvalueanimationsspandiscrete-object-value-animations"></a><span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>离散式对象值动画
+## <a name="span-iddiscreteobjectvalueanimationsspanspan-iddiscreteobjectvalueanimationsspanspan-iddiscreteobjectvalueanimationsspandiscrete-object-value-animations"></a><span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>离散对象值动画
 
-有一种类型的动画值得特别提出，因为它是可以将动画化的值应用于其类型不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 或 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 的属性的唯一方法。 它就是关键帧动画 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)。 使用 [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) 值的动画非常不同，因为不可能在帧之间内插值。 当帧的 [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR210342) 到达时，动画化的值将立即设置为关键帧的 **Value** 中指定的值。 由于没有任何内插，因此只有一种关键帧用于 **ObjectAnimationUsingKeyFrames** 关键帧集合：[**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132)。
+有一种类型的动画值得特别提出，因为它是可以将动画化的值应用于其类型不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 或 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 的属性的唯一方法。 它就是关键帧动画 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)。 使用 [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) 值的动画非常不同，因为不可能在帧之间内插值。 当帧的 [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR210342) 到达时，动画化的值将立即设置为关键帧的 **Value** 中指定的值。 由于没有内插，没有在中使用的一个关键帧**ObjectAnimationUsingKeyFrames**关键帧集合：[**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132)。
 
 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) 的 [**Value**](https://msdn.microsoft.com/library/windows/apps/BR210344) 通常使用属性元素语法设置，因为你尝试设置的对象值通常不可表示为字符串以采用属性语法填充 **Value**。 如果你使用引用，例如 [StaticResource](https://msdn.microsoft.com/library/windows/apps/Mt185588)，则仍可以使用属性语法。
 
@@ -269,7 +269,7 @@ ms.locfileid: "9046320"
 
  ## <a name="related-topics"></a>相关主题
 
-* [Property-path 语法](https://msdn.microsoft.com/library/windows/apps/Mt185586)
-* [依赖关系属性概述](https://msdn.microsoft.com/library/windows/apps/Mt185583)
+* [属性路径语法](https://msdn.microsoft.com/library/windows/apps/Mt185586)
+* [依赖属性概述](https://msdn.microsoft.com/library/windows/apps/Mt185583)
 * [**情节提要**](https://msdn.microsoft.com/library/windows/apps/BR210490)
 * [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.targetpropertyproperty)

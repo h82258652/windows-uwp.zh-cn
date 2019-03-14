@@ -1,5 +1,5 @@
 ---
-Description: Use ListView and GridView controls to display and manipulate sets of data, such as a gallery of images or a set of email messages.
+Description: 使用 ListView 和 GridView 控件来显示和处理的数据，例如映像的库或一组电子邮件消息集。
 title: 列表视图和网格视图
 label: List view and grid view
 template: detail.hbs
@@ -13,17 +13,17 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4efbdaef0fbcbe076133be1c491f7ed173c01257
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
-ms.translationtype: MT
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037099"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653572"
 ---
 # <a name="list-view-and-grid-view"></a>列表视图和网格视图
 
-大多数应用程序都会操作和显示数据集，例如图像库或一组电子邮件。 XAML UI 框架提供了轻松显示和操控应用数据的 ListView 和 GridView 控件。  
+大多数应用都会操纵和显示数据集，例如图像库或一组电子邮件。 XAML UI 框架提供了轻松显示和操控应用数据的 ListView 和 GridView 控件。  
 
-> **重要 API**：[ListView 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)，[GridView 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)，[ItemsSource 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)，[Items 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx)
+> **重要的 Api**:[ListView 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)， [GridView 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)， [ItemsSource 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)，[项属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx)
 
 ListView 和 GridView 都从 ListViewBase 类派生，因此它们的功能相同，但数据显示方法不同。 在本文中，当谈论 ListView 时，信息都适用于 ListView 和 GridView 控件，除非另行指定。 我们可能会引用 ListView 或 ListViewItem 等类，但“List”前缀可使用相应网格等效项（GridView 或 GridViewItem）的“Grid”代替。 
 
@@ -48,7 +48,7 @@ GridView 显示可在行和列中垂直滚动的项目集合。 数据水平堆�
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/ListView">ListView</a> 或 <a href="xamlcontrolsgallery:/item/GridView">GridView</a> 的实际应用。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -59,7 +59,7 @@ GridView 显示可在行和列中垂直滚动的项目集合。 数据水平堆�
 
 列表视图是一个 [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx)，因此可以包含任何类型的项目集合。 在能够在屏幕上显示任何内容前，它必须在自己的 [Items](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合中有项目。 若要填充视图，可以将项目直接添加到 [Items](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合，或者将 [ItemsSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 属性设置为数据源。 
 
-**重要提示**&nbsp;&nbsp;可以使用 Items 或 ItemsSource 填充列表，但无法同时使用这两者。 如果你设置 ItemsSource 属性并使用 XAML 添加项目，将忽略添加的项目。 如果你设置 ItemsSource 属性并使用代码向 Items 集合中添加项目，将引发异常。
+**重要提示**&nbsp;&nbsp;可以使用 Items 或 ItemsSource 填充列表，但无法同时使用这两者。 如果你设置 ItemsSource 属性并使用 XAML 添加项目，将忽略添加的项目。 如果 ItemsSource 属性已设置且使用代码向项集合中添加项，则会引发异常。
 
 > **注意**&nbsp;&nbsp;为方便起见，本文中的许多示例直接填充了 **Items** 集合。 但是，列表中的项目来自于动态源的情况更常见，例如书籍列表来自于在线数据库。 出于此目的，你使用 **ItemsSource** 属性。 
 
@@ -463,7 +463,7 @@ private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
 
 ### <a name="select-a-range-of-items-programmatically"></a>以编程方式选择项目的范围
 
-有时你需要以编程方式来操控列表视图的项目选择。 例如，你可能拥有**全选**按钮来让用户选择列表中的所有项目。 在这种情况下，从 SelectedItems 集合逐个添加或删除项目通常效率不高。 每个项目更改都会导致发生 SelectionChanged 事件，并且当你直接处理项目而非索引值时，该项目会取消虚拟化。
+有时你需要以编程方式来操控列表视图的项目选择。 例如，你可能拥有“全选”按钮来让用户选择列表中的所有项目。 在这种情况下，从 SelectedItems 集合逐个添加或删除项目通常效率不高。 每个项目更改都会导致发生 SelectionChanged 事件，并且当你直接处理项目而非索引值时，该项目会取消虚拟化。
 
 [SelectAll](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectall.aspx)、[SelectRange](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectrange.aspx) 和 [DeselectRange](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.deselectrange.aspx) 方法提供比使用 SelectedItems 属性更高效的修改选择的方法。 这些方法使用项目索引范围进行选择或取消选择。 虚拟化的项目将保持虚拟化状态，因为仅使用了索引。 指定范围中的所有项目均已选定（或已取消选定），无论初始选择状态是什么。 SelectionChanged 事件在每次调用这些方法时仅发生一次。
 
@@ -473,7 +473,7 @@ private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
 
 如果 ItemsSource 实现了 [IItemsRangeInfo](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.iitemsrangeinfo.aspx)，并且你使用这些方法修改选择，则 **AddedItems** 和 **RemovedItems** 属性将不会在 SelectionChangedEventArgs 中进行设置。 设置这些属性需要对项目对象执行取消虚拟化操作。 改为使用 **SelectedRanges** 属性获取项目。
 
-通过调用 SelectAll 方法，可以选择集合中的所有项目。 但是没有相应的方法来取消选择所有项目。 你可以通过以下方法取消选择所有项目：调用 DeselectRange，并传递 [FirstIndex](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.aspx) 值为 0 并且 [Length](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.firstindex.aspx) 值等于集合中项目数的 [ItemIndexRange](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.length.aspx)。 
+通过调用 SelectAll 方法，可以选择集合中的所有项目。 但是没有相应的方法来取消选择所有项目。 你可以通过以下方法取消选择所有项目：调用 DeselectRange，并传递 [FirstIndex](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.firstindex.aspx) 值为 0 并且 [Length](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.length.aspx) 值等于集合中项目数的 [ItemIndexRange](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.aspx)。 
 
 **XAML**
 ```xaml
@@ -526,5 +526,5 @@ ListView 和 GridView 控件支持在其自身内部以及它们自身与其他 
 ## <a name="related-articles"></a>相关文章
 
 - [列表](lists.md)
-- [项目容器和模板](item-containers-templates.md)
-- [拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [项容器和模板](item-containers-templates.md)
+- [拖放功能](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)

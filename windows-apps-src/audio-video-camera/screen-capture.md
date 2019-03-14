@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 屏幕捕获
 ms.localizationpriority: medium
 ms.openlocfilehash: dfed365e097b6f0d3816477513202b2693127ade
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049974"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592962"
 ---
 # <a name="screen-capture"></a>屏幕捕获
 
@@ -20,13 +20,13 @@ ms.locfileid: "9049974"
 通过屏幕捕获，开发人员调用安全系统 UI 以便最终用户选取要捕获的屏幕或应用程序窗口，然后系统会在当前正在捕获的项目四周绘制黄色通知边框。 如果同时存在多个捕获会话，系统会在每个正在捕获的项目四周绘制黄色边框。
 
 > [!NOTE]
-> 屏幕捕获 Api 仅支持桌面和 Windows Mixed Reality 沉浸式头戴显示设备。
+> 屏幕捕获 Api 仅支持桌面和 Windows Mixed Reality 沉浸式耳机。
 
 ## <a name="add-the-screen-capture-capability"></a>添加屏幕捕获功能
 
-**Windows.Graphics.Capture**命名空间中的 Api 需要在你的应用程序清单中声明一个常规功能：
+Api 中找到**Windows.Graphics.Capture**命名空间需要在应用程序的清单中声明的常规功能：
     
-1. 在**解决方案资源管理器**中打开**Package.appxmanifest** 。
+1. 打开**Package.appxmanifest**中**解决方案资源管理器**。
 2. 选择**功能**选项卡。
 3. 检查**图形捕获**。
 
@@ -68,7 +68,7 @@ public async Task StartCaptureAsync()
 }
 ```
 
-由于这是 UI 代码，则需要在 UI 线程上调用。 如果你要调用此方法从代码隐藏页面的应用程序 （例如**MainPage.xaml.cs**) 这是为你自动完成，但如果不是，你可以强制它与下面的代码在 UI 线程上运行：
+由于这是 UI 代码，它需要在 UI 线程上调用。 如果您要调用此方法从代码隐藏在应用程序页 (如**MainPage.xaml.cs**) 这是为您自动，但如果不是，您可以强制它使用以下代码在 UI 线程上运行：
 
 ```cs
 CoreWindow window = CoreApplication.MainView.CoreWindow;
@@ -81,7 +81,7 @@ await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
 
 ## <a name="create-a-capture-frame-pool-and-capture-session"></a>创建捕获帧池和捕获会话
 
-通过使用 **GraphicsCaptureItem**，可使用 D3D 设备、按支持的像素格式 (**DXGI\_FORMAT\_B8G8R8A8\_UNORM**)、所需帧的数量（可以是任何整数）和帧大小，创建 [Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool)。 **GraphicsCaptureItem** 类的 **ContentSize** 属性可以用作帧的大小：
+使用**GraphicsCaptureItem**，将创建[Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) D3D 设备，受支持的像素格式 (**DXGI\_格式\_B8G8R8A8\_UNORM**)、 数所需的帧 （它可以是任何整数），以及帧大小。 **GraphicsCaptureItem** 类的 **ContentSize** 属性可以用作帧的大小：
 
 ```cs
 private GraphicsCaptureItem _item;
@@ -163,10 +163,10 @@ _framePool.FrameArrived += (s, a) =>
 
 ## <a name="putting-it-all-together"></a>整合到一起
 
-下面的代码段是如何在 UWP 应用程序中实现屏幕捕获的端到端示例。 在此示例中，我们已经有一个按钮的前端，单击时，调用**Button_ClickAsync**方法。
+下面的代码段是如何在 UWP 应用程序中实现屏幕捕获的端到端示例。 在此示例中，我们有一个按钮在前端，单击时，调用**Button_ClickAsync**方法。
 
 > [!NOTE]
-> 此代码段使用[Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)，2D 图形呈现的库。 请参阅有关如何将其设置为你的项目信息其文档。
+> 使用此代码片段[Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)，2D 图形呈现的库。 请参阅其文档，了解有关如何设置它，以便你的项目的信息。
 
 ```cs
 using Microsoft.Graphics.Canvas;
@@ -386,8 +386,8 @@ namespace WindowsGraphicsCapture
 
 ## <a name="record-a-video"></a>录制视频
 
-如果你想要你的应用程序的视频录制，你可以执行操作以便更轻松地[Windows.Media.AppRecording 命名空间](https://docs.microsoft.com/uwp/api/windows.media.apprecording)。 这是桌面扩展 SDK 的一部分，因此它仅适用于在桌面上，并且需要添加对它从你的项目的引用。 有关详细信息，请参阅[设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)。
+如果你想要录制你的应用程序的视频，您可以因此更轻松地使用做到[Windows.Media.AppRecording 命名空间](https://docs.microsoft.com/uwp/api/windows.media.apprecording)。 这是桌面扩展 SDK 的一部分，因此它仅适用于桌面，需要添加对它从你的项目的引用。 请参阅[设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)有关详细信息。
 
 ## <a name="see-also"></a>另请参阅
 
-* [Windows.Graphics.Capture 命名空间](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Windows.Graphics.Capture Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture)

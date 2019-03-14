@@ -1,16 +1,16 @@
 ---
-Description: Learn how to create known user groups to use for package flighting and more.
+Description: 了解如何创建用于软件包外部测试版等的已知用户组。
 title: 创建已知用户组
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 目标组, 客户, 外部测试版组, 用户组, 已知用户
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fcb111121511553bba22cef55f94125d47e9f21
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938262"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605282"
 ---
 # <a name="create-known-user-groups"></a>创建已知用户组
 
@@ -20,12 +20,12 @@ ms.locfileid: "8938262"
 
 ## <a name="to-create-a-known-user-group"></a>创建已知用户组
 
-1. 在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，展开左侧的导航菜单中**参与**，然后选择**客户组**。 
+1. 在中[合作伙伴中心](https://partner.microsoft.com/dashboard)，展开**参与**在左侧的导航菜单，然后选择**客户组**。 
 2. 在**我的客户组**部分中选择**创建新组**。
 3. 在下一页上，在**组名称**框中，输入组名称。
 4. 确保选择**已知用户组**单选按钮。
 5. 输入要添加到组中的用户的电子邮件地址。 必须包括至少一个电子邮件地址，最多 10,000 个。 你可以直接将电子邮件地址输入该字段中（使用空格、逗号、分号或换行符分隔），或者单击**导入 .csv** 链接以从 .csv 文件中的电子邮件地址列表创建外部测试版组。
-6. 选择**保存**。
+6. 选择“保存”。
 
 该组现在可供使用。
 
@@ -36,13 +36,13 @@ ms.locfileid: "8938262"
 
 ## <a name="to-edit-a-known-user-group"></a>编辑已知用户组
 
-你不能删除从合作伙伴中心的已知的用户组 （或更改其名称） 后创建，但你可以随时编辑其成员身份。
+不能从合作伙伴中心中删除已知的用户组 （或将其名称更改） 后已创建，但可以随时编辑成员的成员身份。
 
 若要查看和编辑已知用户组，展开左侧导航菜单中的**参与**菜单，然后选择**客户组**。 在**我的客户组**下，选择要编辑的组名称。 通过在创建新的外部测试版时选择**查看并管理现有组**，或者从软件包外部测试版的概述页选择组名称，还可以从软件包外部测试版创建页面中编辑已知用户组。 
 
 选择要编辑的组后，可以在字段中直接添加或删除电子邮件地址。
 
-对于较大的更改，请选择**导出 .csv**，以将组成员身份信息保存为 .csv 文件。 在此文件中进行更改，然后单击**导入 .csv**，以使用新版本更新组成员身份。
+对于较大的更改，请选择**导出 .csv**，以将组成员身份信息保存为 .csv 文件。 在此文件中进行更改，然后单击“Import .csv”，使用新版本更新组成员资格。
 
 请注意，实现组成员身份更改可能需要 30 分钟。 无需通过发布新提交的方式来让新组成员利用软件包外部测试版或私人受众访问你的提交；更改实施后他们自然可进行访问。 
 

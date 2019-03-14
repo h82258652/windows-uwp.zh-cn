@@ -7,17 +7,17 @@ keywords: windows 10, uwp
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
 ms.openlocfilehash: 01bc72051e9efa69adbbab574b932da829c83e72
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046530"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626632"
 ---
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 开发人员计划上的 UWP 已知问题
 
 本主题介绍 Xbox One 开发人员计划上的 UWP 已知问题。 有关此计划的详细信息，请参阅 [Xbox 上的 UWP](index.md)。 
 
-\[如果你通过某个 API 参考主题中的链接转到此处，并且要查找通用设备系列 API 信息，请参阅 [Xbox 上尚不支持的 UWP 功能](https://go.microsoft.com/fwlink/?LinkID=760755)。\]
+\[如果您此处来自 API 参考主题中的链接，并且希望通用设备系列的 API 信息，请参阅[目前还不支持在 Xbox 的 UWP 功能](https://go.microsoft.com/fwlink/?LinkID=760755)。\]
 
 下表重点介绍可能遇到的某些已知问题，但该列表并没有包括所有问题。 
 
@@ -117,4 +117,4 @@ namespace TestDNLA {
 
 ## <a name="see-also"></a>另请参阅
 - [常见问题](frequently-asked-questions.md)
-- [Xbox One 上的 UWP](index.md)
+- [在 Xbox One 上 UWP](index.md)

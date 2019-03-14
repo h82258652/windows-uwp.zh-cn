@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c08612e48eec7989f3b56fba41a17e1c149b2058
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925702"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603462"
 ---
 # <a name="import-media-from-a-device"></a>从设备导入媒体
 
@@ -83,7 +83,7 @@ ms.locfileid: "8925702"
 
 **FindItemsAsync** 返回 [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)。 扩展方法 [**AsTask**](https://msdn.microsoft.com/library/hh779750.aspx) 用于创建可等待、可使用取消令牌取消以及使用所提供的 **Progress** 对象报告进度的任务。
 
-接下来，初始化数据绑定帮助程序类 **GeneratorIncrementalLoadingClass**。 当从等待状态返回时，**FindItemsAsync** 会返回 [**PhotoImportFindItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult) 对象。 此对象包含关于查找操作的状态信息，包括操作是否成功以及所找到的不同类型的媒体项的计数。 [**FoundItems**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.FoundItems) 属性包含表示所找到的媒体项的 [**PhotoImportItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem) 对象的列表。 **GeneratorIncrementalLoadingClass** 构造函数将要以增量方式加载的项的总计数以及生成要按需加载的新项的函数作为参数。 在此情况下，所提供的 lambda 表达式创建 **ImportableItemWrapper** 的新实例，该实例包装 **PhotoImportItem** 并包含每个项的缩略图。 初始化增量加载类后，将其设置为 UI 中的 **ListView** 控件的 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsControl.ItemsSource) 属性。 现在，所找到的媒体项将以增量方式加载，并在列表中显示。
+接下来，初始化数据绑定帮助程序类 **GeneratorIncrementalLoadingClass**。 当从等待状态返回时，**FindItemsAsync** 会返回 [**PhotoImportFindItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult) 对象。 此对象包含关于查找操作的状态信息，包括操作是否成功以及所找到的不同类型的媒体项的计数。 [  **FoundItems**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.FoundItems) 属性包含表示所找到的媒体项的 [**PhotoImportItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem) 对象的列表。 **GeneratorIncrementalLoadingClass** 构造函数将要以增量方式加载的项的总计数以及生成要按需加载的新项的函数作为参数。 在此情况下，所提供的 lambda 表达式创建 **ImportableItemWrapper** 的新实例，该实例包装 **PhotoImportItem** 并包含每个项的缩略图。 初始化增量加载类后，将其设置为 UI 中的 **ListView** 控件的 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsControl.ItemsSource) 属性。 现在，所找到的媒体项将以增量方式加载，并在列表中显示。
 
 接下来，输出查找操作的状态信息。 典型应用会在 UI 中向用户显示此信息，但本示例仅将该信息输出到调试控制台。 最后，由于操作已完成，将取消令牌设置为 null。
 

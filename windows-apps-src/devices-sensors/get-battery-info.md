@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 81f4232d038b89f2c49cf584346d632911fb70e2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928206"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650342"
 ---
 # <a name="get-battery-information"></a>获取电池信息
 
@@ -28,7 +28,7 @@ ms.locfileid: "8928206"
 
 某些设备拥有多个电池，而对于每个电池在此类设备的总能量容量中所发挥的功能，并非总是显而易见。 这时就要用到 [**AggregateBattery**](https://msdn.microsoft.com/library/windows/apps/Dn895011) 类了。 *聚合电池*表示所有连接到设备的电池控制器并可提供一个整体 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 对象。
 
-**注意**[**电池**](https://msdn.microsoft.com/library/windows/apps/Dn895004)类实际上对应于电池控制器。 控制器有时连接至物理电池，而有时又连接至设备机箱，具体视设备而定。 因此，即使没有电池也可以创建电池对象。 其他时候，电池对象可能为 **null**。
+**请注意**  A [**电池**](https://msdn.microsoft.com/library/windows/apps/Dn895004)类实际上对应于电池控制器。 控制器有时连接至物理电池，而有时又连接至设备机箱，具体视设备而定。 因此，即使没有电池也可以创建电池对象。 其他时候，电池对象可能为 **null**。
 
 一旦有了聚合电池对象，你便可以调用 [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) 来获取对应的 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)。
 
@@ -77,7 +77,7 @@ async private void RequestIndividualBatteryReports()
 
 ## <a name="access-report-details"></a>访问报告详细信息
 
-[**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 对象提供了大量电池信息。 有关详细信息，请参阅其属性的 API 参考：**Status**（[**BatteryStatus**](https://msdn.microsoft.com/library/windows/apps/Dn818458) 枚举）、[**ChargeRateInMilliwatts**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.chargerateinmilliwatts.aspx)、[**DesignCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.designcapacityinmilliwatthours.aspx)、[**FullChargeCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours.aspx) 和 [**RemainingCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours)。 此示例显示了一些基本电池应用所使用的电池报告属性，这将在本主题后面介绍。
+[  **BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 对象提供了大量电池信息。 有关详细信息，请参阅其属性的 API 参考：**状态**( [ **BatteryStatus** ](https://msdn.microsoft.com/library/windows/apps/Dn818458)枚举)， [ **ChargeRateInMilliwatts**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.chargerateinmilliwatts.aspx)， [ **DesignCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.designcapacityinmilliwatthours.aspx)， [ **FullChargeCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours.aspx)，并[ **RemainingCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours)。 此示例显示了一些基本电池应用所使用的电池报告属性，这将在本主题后面介绍。
 
 ```csharp
 ...
@@ -132,7 +132,7 @@ async private void AggregateBattery_ReportUpdated(Battery sender, object args)
 
 ## <a name="example-basic-battery-app"></a>示例：基本电池应用
 
-通过在 Microsoft Visual Studio 中生成下列基本电池应用来测试这些 API。 在 Visual Studio 开始页上，单击“新建项目”****，然后在“Visual C#”&gt;“Windows”&gt;“通用”**** 模板下，使用“空白应用”**** 模板创建一个新应用。
+通过在 Microsoft Visual Studio 中生成下列基本电池应用来测试这些 API。 在 Visual Studio 开始页上，单击“新建项目”，然后在“Visual C#”&gt;“Windows”&gt;“通用”模板下，使用“空白应用”模板创建一个新应用。
 
 接下来，打开文件 **MainPage.xaml**，并将下列 XML 复制到此文件中（替换其原始内容）。
 
@@ -334,9 +334,9 @@ namespace App1
 
 如果你的应用未命名为 **App1**，将需要用你命名项目的名称为以上示例中的命名空间重命名。 例如，如果你创建了一个名为**BasicBatteryApp**的项目，请将命名空间 `App1` 替换为命名空间 `BasicBatteryApp`。
 
-最后，若要运行此基本电池应用：在“调试”**** 菜单上，单击“开始调试”**** 以测试该解决方案。
+最后，若要运行此基本电池应用：在“调试”菜单上，单击“开始调试”以测试该解决方案。
 
-**提示**若要从[**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)对象接收数值，调试你的应用在**本地计算机**或外部**设备**（如 Windows Phone) 上。 在设备仿真器上调试时，**BatteryReport** 对象会将 **null** 返回到容量和比率属性。
+**提示**  接收从数值[ **BatteryReport** ](https://msdn.microsoft.com/library/windows/apps/Dn895005)对象，在调试应用**本地计算机**或外部**设备**（如 Windows Phone)。 在设备仿真器上调试时，**BatteryReport** 对象会将 **null** 返回到容量和比率属性。
 
  
 

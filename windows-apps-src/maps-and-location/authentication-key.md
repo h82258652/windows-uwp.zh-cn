@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 地图身份验证密钥, 地图控件
 ms.localizationpriority: medium
 ms.openlocfilehash: 620566036dc5aa9357d10e60ec92067ba0faf130
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046157"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649552"
 ---
 # <a name="request-a-maps-authentication-key"></a>请求地图身份验证密钥
 
@@ -33,22 +33,22 @@ ms.locfileid: "9046157"
 
 1.  在浏览器中，导航到必应地图开发人员中心 ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/))。
 
-2.  如果系统提示你登录，请输入你的 Microsoft 帐户，然后单击**登录**。
+2.  如果系统提示你登录，请输入你的 Microsoft 帐户，然后单击“登录”。
 
-3.  选择要与必应地图帐户关联的帐户。 如果你想要使用自己的 Microsoft 帐户，请单击 **“是”**。 否则，请单击**使用其他帐户登录**。
+3.  选择要与必应地图帐户关联的帐户。 如果你想要使用自己的 Microsoft 帐户，请单击 **“是”**。 否则，请单击“使用其他帐户登录”。
 
-4.  如果你还没有必应地图帐户，请创建一个新的必应地图帐户。 输入 **“帐户名称”**、**“联系人姓名”**、**“公司名称”**、**“电子邮件地址”** 和 **“电话号码”**。 在接受使用条款后，单击**创建**。
+4.  如果你还没有必应地图帐户，请创建一个新的必应地图帐户。 输入 **“帐户名称”**、**“联系人姓名”**、**“公司名称”**、**“电子邮件地址”** 和 **“电话号码”**。 在接受使用条款后，单击“创建”。
 
 5.  在**我的帐户**菜单上，单击**我的密钥**。
 
 6.  如果之前创建了密钥，请单击链接以创建新密钥。 否则继续前进到“创建密钥”窗体。
 
-7.  完成**创建密钥**窗体，然后单击**创建**。
+7.  完成“创建密钥”表格，然后单击“创建”。
 
     -   **应用程序名称：** 你的应用程序的名称。
-    -   **应用程序 URL（可选）：** 你的应用程序的 URL。
-    -   **密钥类型：** 选择 **“基本”** 或 **“企业”**。
-    -   **应用程序类型：** 选择 **“通用 Windows 应用”** 以便在你的通用 Windows 应用中使用。
+    -   **应用程序 URL （可选）：** 你的应用程序的 URL。
+    -   **密钥类型：** 选择**基本**或**企业**。
+    -   **应用程序类型：** 选择**通用 Windows 应用程序**通用 Windows 应用中使用。
 
     这是一个表格呈现内容的示例。
 
@@ -90,7 +90,7 @@ ms.locfileid: "9046157"
 ## <a name="related-topics"></a>相关主题
 
 * [必应地图开发人员中心](https://www.bingmapsportal.com/)
-* [UWP 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [地图设计指南](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [版本 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 路况应用示例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 映射示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [映射的设计准则](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 视频：利用跨手机、 平板电脑和 Windows 应用程序中的 PC 的地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP 流量应用示例](https://go.microsoft.com/fwlink/p/?LinkId=619982)

@@ -4,19 +4,19 @@ description: 本文描述了如何在通用 Windows 平台 (UWP) 应用的 XAML 
 title: 显示相机预览
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 24b2885597599607ca405e858a9f713f5a6af4c7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938529"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644872"
 ---
 # <a name="display-the-camera-preview"></a>显示相机预览
 
 
-本文介绍了如何在通用 Windows 平台 (UWP) 应用的 XAML 页面内快速显示相机预览流。 创建可使用相机捕获照片和视频的应用需要你执行如下任务：处理设备和相机方向或者设置捕获文件的编码选项。 有关某些应用方案，可能只需显示来自相机的预览流，而无需担心其他注意事项。 本文将向你显示如何使用最少的代码执行相关操作。 请注意，在你使用它按照下列步骤完成操作时，应当始终正确关闭预览流。
+本文描述了如何在通用 Windows 平台 (UWP) 应用的 XAML 页面内快速显示相机预览流。 创建可使用相机捕获照片和视频的应用需要你执行如下任务：处理设备和相机方向或者设置捕获文件的编码选项。 有关某些应用方案，可能只需显示来自相机的预览流，而无需担心其他注意事项。 本文将向你显示如何使用最少的代码执行相关操作。 请注意，在你使用它按照下列步骤完成操作时，应当始终正确关闭预览流。
 
 有关编写可捕获照片或视频的相机应用的信息，请参阅[使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)。
 
@@ -24,10 +24,10 @@ ms.locfileid: "8938529"
 
 为了让你的应用可以访问设备的相机，必须声明你的应用要使用 *webcam* 和 *microphone* 设备功能。 
 
-**将功能添加到应用清单**
+**将功能添加到应用程序清单**
 
-1.  在 Microsoft Visual Studio 的**解决方案资源管理器**中，通过双击 **package.appxmanifest** 项，打开应用程序清单的设计器。
-2.  选择**功能**选项卡。
+1.  在 Microsoft Visual Studio 的“解决方案资源管理器”中，通过双击“package.appxmanifest”项，打开应用程序清单的设计器。
+2.  选择“功能”选项卡。
 3.  选中**摄像头**框和**麦克风**框。
 
 ## <a name="add-a-captureelement-to-your-page"></a>将 CaptureElement 添加到你的页面
@@ -40,10 +40,7 @@ ms.locfileid: "8938529"
 
 ## <a name="use-mediacapture-to-start-the-preview-stream"></a>使用 MediaCapture 启动预览流
 
-
-            [
-              **MediaCapture**
-            ](https://msdn.microsoft.com/library/windows/apps/br241124) 对象为你的设备相机的应用界面。 此类是 Windows.Media.Capture 命名空间的成员。 除了默认项目模板包含的这些 API，本文的示例还使用来自 [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 和 [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) 命名空间的 API。
+[  **MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 对象为你的设备相机的应用界面。 此类是 Windows.Media.Capture 命名空间的成员。 除了默认项目模板包含的这些 API，本文的示例还使用来自 [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 和 [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) 命名空间的 API。
 
 添加 using 指令以将以下命名空间包含在你的页面的 .cs 文件中。
 
@@ -61,8 +58,7 @@ ms.locfileid: "8938529"
 
 创建 **MediaCapture** 类的一个新实例并调用 [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) 以初始化捕获设备。 例如，此方法在没有相机的设备上可能会失败，所以你应当从 **try** 块内调用它。 如果用户已在该设备的隐私设置中禁用相机访问，则在尝试初始化相机时会引发 **UnauthorizedAccessException**。 如果你忘记将合适的功能添加到你的应用清单，在开发期间也会看到此异常。
 
-
-            **重要提示** 对于某些设备系列，在授予应用访问设备相机的权限前，会向用户显示用户同意提示。 出于此原因，必须从主 UI 线程仅调用 [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598)。 尝试从其他线程初始化相机可能会导致初始化失败。
+**重要提示** 对于某些设备系列，在授予应用访问设备相机的权限前，会向用户显示用户同意提示。 出于此原因，必须从主 UI 线程仅调用 [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598)。 尝试从其他线程初始化相机可能会导致初始化失败。
 
 通过设置 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) 属性来将 **MediaCapture** 连接到 **CaptureElement**。 通过调用 [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) 启动预览。 如果其他应用拥有捕获设备的独占控制权，则此方法会引发 **FileLoadException**。 有关侦听独占控制权更改的信息，请参阅下一部分。
 
@@ -102,6 +98,6 @@ ms.locfileid: "8938529"
 
 ## <a name="related-topics"></a>相关主题
 
-* [相机](camera.md)
-* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [摄像头](camera.md)
+* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [获取预览帧](get-a-preview-frame.md)

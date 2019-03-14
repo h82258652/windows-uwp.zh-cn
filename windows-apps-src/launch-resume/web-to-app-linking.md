@@ -1,29 +1,29 @@
 ---
-title: 启用使用应用 URI 处理程序的网站应用
-description: 通过网站功能支持应用推动用户与你的应用的互动。
+title: 使用应用 URI 处理程序启用“网站的应用”功能
+description: 通过支持“网站的应用”功能推动用户使用应用。
 keywords: 深层链接 Windows
 ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
 ms.openlocfilehash: 66284538c97aee1a11c27beaa483dcfe109b6615
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930498"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641072"
 ---
-# <a name="enable-apps-for-websites-using-app-uri-handlers"></a>启用使用应用 URI 处理程序的网站应用
+# <a name="enable-apps-for-websites-using-app-uri-handlers"></a>使用应用 URI 处理程序启用“网站的应用”功能
 
-网站应用关联你的应用与网站，以便当用户打开指向你的网站的链接，而不是打开浏览器时启动你的应用。 如果未安装你的应用，你的网站打开浏览器中像往常一样。 用户可以信任此体验，因为只有经验证的内容所有者可以注册链接。 用户将能够通过转到设置检查所有他们已注册的 web 到应用链接 > 应用 > 网站应用。
+“网站”应用用于将你的应用与网站关联，从而使得在某人打开网站链接时，启动你的应用而不是打开浏览器。 如果未安装你的应用，则会像往常一样在浏览器中打开你的网站。 用户可以信任此体验，因为只有经验证的内容所有者可以注册链接。 用户将能够转到“设置”>“应用”>“网站的应用”检查其所有 Web 到应用链接。
 
-若要启用 web 到应用链接，你将需要：
+若要启用 Web 到应用链接，你将需要：
 - 在清单文件中标识你的应用将处理的 URI
-- 定义你的应用与你的网站之间的关联的 JSON 文件。 与应用程序包系列名称在应用所在的相同主机根清单中声明。
+- 用于定义你的应用与网站之间的关联的 JSON 文件。 带有应用程序包系列名称，位于应用部件清单声明所在的相同主机根上。
 - 处理应用中的激活。
 
 > [!Note]
-> 从 Windows 10 创意者更新开始，受支持的 Microsoft Edge 中单击的链接将启动相应的应用。 受支持的链接 （如 Internet Explorer 等），其他浏览器中单击将使你在浏览体验。
+> 从 Windows 10 创意者更新开始，支持的 Microsoft Edge 中单击的链接将启动相应的应用程序。 如果在其他浏览器（如 Internet Explorer 等）中点击受支持的链接，你将仍能够维持当前的浏览体验。
 
 ## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a>注册以处理应用部件清单中的 http 和 https 链接
 
@@ -71,12 +71,12 @@ Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器
 
 上述 JSON 文件示例演示了通配符的用法。 通配符允许你使用较少的代码行支持多种链接。 Web 到应用链接在 JSON 文件中支持两种类型的通配符：
 
-| **通配符** | **说明**               |
+| **Wildcard** | **描述**               |
 |--------------|-------------------------------|
 | **\***       | 表示任何子字符串      |
 | **?**        | 表示单个字符 |
 
-例如，对于指定`"excludePaths" : [ "/news/*", "/blog/*" ]`在上面的示例中，你的应用将支持启动你的网站地址 (例如 msn.com)，**除非**下的所有路径`/news/`和`/blog/`。 将支持 **msn.com/weather.html**，但不支持 ****msn.com/news/topnews.html****。
+例如，给定上述示例中的 `"excludePaths" : [ "/news/*", "/blog/*" ]`，你的应用将支持以你的网站地址（例如 msn.com）开头的所有路径，**除了**`/news/` 和 `/blog/` 下的路径。 将支持 **msn.com/weather.html**，但不支持 ****msn.com/news/topnews.html****。
 
 ### <a name="multiple-apps"></a>多个应用
 
@@ -96,7 +96,7 @@ Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器
 
 若要为用户提供最佳体验，请使用排除路径以确保仅联机内容已从 JSON 文件中的受支持路径中排除。
 
-先检查排除路径，如果存在匹配项，则将使用浏览器（而不是指定应用）打开相应的页面。 在上述示例中，“/news/\*”包括该路径下的任何页面，而“/news\*”（没有正斜杠结尾“news”）包括“news\*”下的任何路径，如“newslocal/”、“newsinternational/”等。
+先检查排除路径，如果存在匹配项，则将使用浏览器（而不是指定应用）打开相应的页面。 在上述示例中，/news/\*包括任何页时该路径下的 / 新闻\*（没有正斜杠路线新闻） 包括在任何路径新闻\*如 newslocal /，newsinternational /，依次类推。
 
 ## <a name="handle-links-on-activation-to-link-to-content"></a>处理用于链接到内容的“激活”上的链接
 
@@ -150,7 +150,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 **重要提示** 请确保将最终的 `if (rootFrame.Content == null)` 路径替换为 `rootFrame.Navigate(deepLinkPageType, e);`，如上述示例所示。
 
-## <a name="test-it-out-local-validation-tool"></a>测试它：本地验证工具
+## <a name="test-it-out-local-validation-tool"></a>它进行测试：本地验证工具
 
 你可以测试应用和网站的配置，方法是运行在以下位置提供的应用主机注册验证程序工具：
 
@@ -160,22 +160,22 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 **AppHostRegistrationVerifier.exe** *主机名 packagefamilyname 文件路径*
 
--   主机名：你的网站（例如 microsoft.com）
--   程序包系列名称 (PFN)：你的应用的 PFN
--   文件路径：用于本地验证的 JSON 文件（例如 C:\\SomeFolder\\windows-app-web-link）
+-   主机名：你的网站 (例如 microsoft.com)
+-   包系列名称 (PFN):你的应用的 PFN
+-   文件路径：本地验证的 JSON 文件 (例如 c:\\SomeFolder\\windows 应用的 web 链接)
 
-如果该工具未返回任何内容，验证将在该文件上载时上工作。 如果存在错误代码，它不起作用。
+如果工具未范围任何内容，则上传时对该文件进行验证即可。 如果返回错误代码，则不起作用。
 
-你可以启用以下注册表项以强制路径匹配适用于旁加载应用作为本地验证的一部分：
+你可以启用以下注册表项，以便将旁加载应用的路径匹配强制作为本地验证的一部分。
 
 `HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\
 AppModel\SystemAppData\YourApp\AppUriHandlers`
 
-键名：`ForceValidation`值： `1`
+键名：`ForceValidation` 值： `1`
 
-## <a name="test-it-web-validation"></a>测试它：Web 验证
+## <a name="test-it-web-validation"></a>对其进行测试：Web 验证
 
-关闭应用程序以验证当你单击某个链接时应用是否激活。 然后，在网站中复制受支持路径之一的地址。 例如，如果你的网站地址为“msn.com”，并且支持路径之一为“path1”，你将使用 `http://msn.com/path1`
+关闭应用程序以验证当你单击某个链接时应用是否激活。 然后，在网站中复制受支持路径之一的地址。 例如，如果你的网站地址为"msn.com"，而且支持路径之一是"path1"，则将使用 `http://msn.com/path1`
 
 验证你的应用是否已关闭。 按 **Windows 键 + R** 打开 **“运行”** 对话框，并在窗口中粘贴该链接。 应启动你的应用，而不是 Web 浏览器。
 
@@ -195,7 +195,7 @@ AppModel\SystemAppData\YourApp\AppUriHandlers`
 
 ## <a name="see-also"></a>另请参阅
 
-[Web 到应用的示例项目](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
+[Web 到应用示例项目](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
 [windows.protocol 注册](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
 [处理 URI 激活](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-[关联启动示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)演示了如何使用 launchuriasync （) API。
+[关联启动示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)诠释了如何使用 LaunchUriAsync() API。

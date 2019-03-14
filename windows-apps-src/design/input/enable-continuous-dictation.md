@@ -1,5 +1,5 @@
 ---
-Description: Learn how to capture and recognize long-form, continuous dictation speech input.
+Description: 了解如何捕获和识别较长的连续听写语音输入。
 title: 启用连续听写
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
@@ -9,30 +9,30 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0865b229faad646901ab76f46982e738b2830035
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046640"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606252"
 ---
 # <a name="continuous-dictation"></a>连续听写
 
 了解如何捕获和识别较长的连续听写语音输入。
 
-> **重要 API**：[**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)、[**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)
+> **重要的 Api**:[**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)， [ **ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)
 
-在[语音识别](speech-recognition.md)中，你已了解如何使用 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653244) 对象的 [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 或 [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653226) 方法捕获和识别相对较短的语音输入。例如，撰写短信 (SMS) 或进行提问时。
+在[语音识别](speech-recognition.md)中，你已了解如何使用 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 对象的 [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) 或 [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 方法捕获和识别相对较短的语音输入。例如，撰写短信 (SMS) 或进行提问时。
 
 对于较长的连续语音识别会话（例如听写或电子邮件），则使用 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn913913) 的 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn653226) 属性以获取 [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) 对象。
 
 > [!NOTE]
-> 听写语言支持取决于你的应用正在运行其中的[设备](https://docs.microsoft.com/windows/uwp/design/devices/)。 电脑和笔记本电脑，仅 EN-US 被识别，而 Xbox 和手机可以识别支持语音识别的所有语言。 有关详细信息，请参阅[指定语音识别器语言](specify-the-speech-recognizer-language.md)。
+> 口述语言支持取决于[设备](https://docs.microsoft.com/windows/uwp/design/devices/)您的应用程序在何处运行。 对于 Pc 和便携式计算机，识别仅 EN-US，虽然 Xbox 和手机可以识别支持语音识别的所有语言。 有关详细信息，请参阅[指定语音识别器语言](specify-the-speech-recognizer-language.md)。
 
 ## <a name="set-up"></a>设置
 
 若要管理连续听写会话，你的应用需要几个对象：
 
-- [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 对象的示例。
+- [  **SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 对象的示例。
 - 对要在听写期间更新 UI 的 UI 调度程序的引用。
 - 用于跟踪用户累积说出的字词的方式。
 
@@ -68,12 +68,12 @@ private StringBuilder dictatedTextBuilder;
 - 提取 UI 线程的调度程序（如果在连续识别事件处理程序中更新你的应用的 UI）。
 - 初始化语音识别器。
 - 编译内置的听写语法。
-    **注意**语音识别需要至少一个约束，才能定义可识别的词汇。 如果未指定任何约束，将使用预定义的听写语法。 请参阅[语音识别](speech-recognition.md)。
+    **请注意**  语音识别需要至少一个约束来定义可识别的词汇。 如果未指定任何约束，将使用预定义的听写语法。 请参阅[语音识别](speech-recognition.md)。
 - 为识别事件设置事件侦听器。
 
 在此示例中，我们将在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 页面事件中初始化语音识别。
 
-1. 因为由语音识别器引发的事件在后台线程上发生，所以请创建一个对调度程序的引用以更新 UI 线程。 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 始终在 UI 线程上调用。
+1. 因为由语音识别器引发的事件在后台线程上发生，所以请创建一个对调度程序的引用以更新 UI 线程。 [**OnNavigatedTo** ](https://msdn.microsoft.com/library/windows/apps/br227508)总是在 UI 线程上调用。
 ```csharp
 this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
 ```
@@ -105,15 +105,15 @@ SpeechRecognitionCompilationResult result =
 
 两个事件尤其关键：
 
-- [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)，在识别器已生成一些结果时发生。
-- [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899)，在连续识别会话已结束时发生。
+- [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)，当识别器生成了一些结果。
+- [**已完成**](https://msdn.microsoft.com/library/windows/apps/dn913899)，连续识别会话已结束时会发生此情况。
 
 当用户说话时引发 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件。 识别器持续侦听用户，并定期引发一个传递语音输入块的事件。 你必须使用事件参数的 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) 属性检查语音输入，并在事件处理程序中采取相应操作，例如将文本追加到 StringBuilder 对象。
 
-作为 [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) 的实例，[**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) 属性可用于确定是否希望接受语音输入。 [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) 为此提供了两个属性：
+作为 [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) 的实例，[**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) 属性可用于确定是否希望接受语音输入。 [  **SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) 为此提供了两个属性：
 
-- [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) 指示识别是否成功。 识别失败的原因有多种。
-- [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) 指示识别器正确理解字词的相对置信度。
+- [**状态**](https://msdn.microsoft.com/library/windows/apps/dn631440)指示识别是否成功。 识别失败的原因有多种。
+- [**置信度**](https://msdn.microsoft.com/library/windows/apps/dn631434)指示识别器识别正确的单词的相对置信度。
 
 下面是支持连续识别的基本步骤：  
 
@@ -125,7 +125,7 @@ speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
 
 2.  然后检查 [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) 属性。 如果 Confidence 的值是 [**Medium**](https://msdn.microsoft.com/library/windows/apps/dn631409) 或更好，我们便将文本追加到 StringBuilder。 我们还在收集输入时更新 UI。
 
-    **注意** [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)事件在不能直接更新 UI 在后台线程上引发。 如果一个处理程序需要更新 UI（如同 \[语音和 TTS 示例\] 那样），则必须通过调度程序的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法调度对 UI 线程的更新。
+    **请注意**   [ **ResultGenerated** ](https://msdn.microsoft.com/library/windows/apps/dn913900)无法直接更新 UI 的后台线程上引发事件。 如果需要更新 UI 处理程序 (作为\[语音和 TTS 示例\]does)，您必须将其调度到 UI 线程通过更新[ **RunAsync** ](https://msdn.microsoft.com/library/windows/apps/hh750317)调度程序的方法。
 ```csharp
 private async void ContinuousRecognitionSession_ResultGenerated(
       SpeechContinuousRecognitionSession sender,
@@ -165,7 +165,7 @@ speechRecognizer.ContinuousRecognitionSession.Completed +=
 
 4.  事件处理程序检查“Status”属性，以确定识别是否成功。 它还可处理用户已停止说话的情况。 通常，将 [**TimeoutExceeded**](https://msdn.microsoft.com/library/windows/apps/dn631433) 视为成功的识别，因为这意味着用户已结束说话。 你应该在代码中对这种情况进行处理以提供良好体验。
 
-    **注意** [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)事件在不能直接更新 UI 在后台线程上引发。 如果一个处理程序需要更新 UI（如同 \[语音和 TTS 示例\] 那样），则必须通过调度程序的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法调度对 UI 线程的更新。
+    **请注意**   [ **ResultGenerated** ](https://msdn.microsoft.com/library/windows/apps/dn913900)无法直接更新 UI 的后台线程上引发事件。 如果需要更新 UI 处理程序 (作为\[语音和 TTS 示例\]does)，您必须将其调度到 UI 线程通过更新[ **RunAsync** ](https://msdn.microsoft.com/library/windows/apps/hh750317)调度程序的方法。
 ```csharp
 private async void ContinuousRecognitionSession_Completed(
       SpeechContinuousRecognitionSession sender,
@@ -207,7 +207,7 @@ private async void ContinuousRecognitionSession_Completed(
 
 这可能会导致不理想的用户体验，因为他们仍在继续说话，但在识别器不足以具有能够引发 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件的置信度之前，不会提供任何结果。
 
-处理 [**HypothesisGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913914) 事件以改进这种明显的响应缺乏问题。 只要识别器为要处理的字词生成一组新的潜在匹配，就会引发此事件。 事件参数提供包含当前匹配的 [**Hypothesis**](https://msdn.microsoft.com/library/windows/apps/dn913911) 属性。 在用户继续说话时向其展示这些匹配，向他们保证处理仍在进行。 当置信度较高并已确定识别结果时，使用 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913895) 事件中提供的最终 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913900) 替换临时的 **Hypothesis** 结果。
+处理 [**HypothesisGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913914) 事件以改进这种明显的响应缺乏问题。 只要识别器为要处理的字词生成一组新的潜在匹配，就会引发此事件。 事件参数提供包含当前匹配的 [**Hypothesis**](https://msdn.microsoft.com/library/windows/apps/dn913911) 属性。 在用户继续说话时向其展示这些匹配，向他们保证处理仍在进行。 当置信度较高并已确定识别结果时，使用 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件中提供的最终 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) 替换临时的 **Hypothesis** 结果。
 
 此处，我们将假设文本和一个省略号（“…”）追加到输出 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 的当前值。 从生成新的假设直到从 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件获取最终结果后，文本框内容才会更新。
 
@@ -244,8 +244,8 @@ if (speechRecognizer.State == SpeechRecognizerState.Idle)
 
 可以采用两种方法停止识别：
 
--   [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908)允许任何挂起的识别事件完成（直到所有识别操作完成之前，都将继续引发 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)）
--   [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898)立即终止识别会话并放弃任何挂起的结果。
+-   [**StopAsync** ](https://msdn.microsoft.com/library/windows/apps/dn913908)允许任何挂起的识别事件完成 ([**ResultGenerated** ](https://msdn.microsoft.com/library/windows/apps/dn913900)继续直到所有挂起的识别操作都已完成引发)。
+-   [**CancelAsync** ](https://msdn.microsoft.com/library/windows/apps/dn913898)终止立即识别会话并放弃所有挂起结果。
 
 在检查语音识别器的状态之后，我们通过调用语音识别器的 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913898) 属性的 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913913) 方法停止会话。
 
@@ -257,7 +257,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 ```
 
 > [!NOTE]
-> [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件可在调用 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 后发生。  
+> [  **ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件可在调用 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 后发生。  
 > 由于多线程处理，当调用 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913900) 时，[**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913898) 事件可能仍保留在堆栈上。 如果如此，则仍引发 **ResultGenerated** 事件。  
 > 如果在取消识别会话时设置任何私有字段，请始终在 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 处理程序中确认它们的值。 例如，如果在取消会话时将字段设置为 null，请勿假定字段在处理程序中进行初始化。
 

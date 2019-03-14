@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 208a61b565c0522d3e9ce88f3938f57dfa1fbddd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945192"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644842"
 ---
 # <a name="variable-photo-sequence"></a>可变照片序列
 
@@ -30,7 +30,7 @@ ms.locfileid: "8945192"
 
 [!code-cs[VPSUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVPSUsing)]
 
-声明成员变量以存储 [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) 对象，该对象用于启动照片序列捕获。 声明 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 对象的数组以在序列中存储每个捕获的图像。 此外，声明数组以针对每个帧存储 [**CapturedFrameControlValues**](https://msdn.microsoft.com/library/windows/apps/dn608020) 对象。 可通过图像处理算法使用它，以确定哪些设置已用于捕获每个帧。 最后，声明一个将用于跟踪当前正在捕获序列中的映像的索引。
+声明成员变量以存储 [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) 对象，该对象用于启动照片序列捕获。 声明 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 对象的数组以在序列中存储每个捕获的图像。 此外，声明数组以针对每个帧存储 [**CapturedFrameControlValues**](https://msdn.microsoft.com/library/windows/apps/dn608020) 对象。 可通过图像处理算法使用它，以确定哪些设置已用于捕获每个帧。 最后，声明一个将用于跟踪序列中当前正在捕获的图像的索引。
 
 [!code-cs[VPSMemberVariables](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVPSMemberVariables)]
 
@@ -40,9 +40,9 @@ ms.locfileid: "8945192"
 
 [!code-cs[IsVPSSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsVPSSupported)]
 
-从可变照片序列控制器获取 [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652548) 对象。 此对象具有可针对照片序列的每帧配置的每个设置的属性。 其中包括：
+从可变照片序列控制器获取 [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652548) 对象。 此对象具有可针对照片序列的每帧配置的每个设置的属性。 这些地方包括：
 
--   [**Exposure**](https://msdn.microsoft.com/library/windows/apps/dn652552)
+-   [**风险**](https://msdn.microsoft.com/library/windows/apps/dn652552)
 -   [**ExposureCompensation**](https://msdn.microsoft.com/library/windows/apps/dn652560)
 -   [**Flash**](https://msdn.microsoft.com/library/windows/apps/dn652566)
 -   [**Focus**](https://msdn.microsoft.com/library/windows/apps/dn652570)
@@ -93,8 +93,8 @@ ms.locfileid: "8945192"
 
 ## <a name="related-topics"></a>相关主题
 
-* [相机](camera.md)
-* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [摄像头](camera.md)
+* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

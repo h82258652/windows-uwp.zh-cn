@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c09a9093389fc0a917243773eae6803220ed610
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115751"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634682"
 ---
 # <a name="pointofservice-device-capability"></a>PointOfService 设备功能
 你可以通过声明应用程序包清单中的功能请求访问 PointOfService API] 你可以使用 Microsoft Visual Studio 中的清单设计器声明大多数功能，也可以手动添加。  
@@ -21,8 +21,8 @@ ms.locfileid: "9115751"
 ## <a name="declare-capability-using-manifest-designer"></a>使用清单设计器声明功能
 
 1. 在**解决方案资源管理器**中，展开你的 UWP 应用程序的项目节点。
-2. 双击 **Package.appxmanifest** 文件。  
-*如果清单文件已经在 XML 代码视图中打开，Visual Studio 会提示你关闭该文件。*
+2. 双击“Package.appxmanifest”文件。  
+*如果已在 XML 代码视图中打开清单文件，Visual Studio 会提示你关闭该文件。*
 3. 单击**功能**选项卡
 4. 单击功能列表中**服务点**旁边的复选框以启用服务点设备功能
 

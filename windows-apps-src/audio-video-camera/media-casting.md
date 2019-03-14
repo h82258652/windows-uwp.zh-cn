@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e4b794e560c213e5c3796b11dd1a5fd77a98506
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930538"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57619942"
 ---
 # <a name="media-casting"></a>媒体转换
 
 
 
-本文介绍了如何将媒体从通用 Windows 应用转换到远程设备。
+本文向你演示了如何将媒体从通用 Windows 应用转换到远程设备。
 
 ## <a name="built-in-media-casting-with-mediaplayerelement"></a>通过 MediaPlayerElement 的内置媒体转换
 

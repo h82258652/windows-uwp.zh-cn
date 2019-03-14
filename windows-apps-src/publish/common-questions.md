@@ -1,5 +1,5 @@
 ---
-Description: Common questions about ad campaigns
+Description: 有关广告市场活动的常见问题
 title: 有关广告市场活动的常见问题
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 ms.date: 10/31/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6875f5b06bbd253b7fe80fbc53936fe0dcf1a6b9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924840"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597062"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>有关广告市场活动的常见问题
 
@@ -37,11 +37,11 @@ ms.locfileid: "8924840"
 
 ### <a name="where-will-my-ad-appear"></a>我的广告将出现在哪个位置？
 
-您的广告将出现在共享您的应用年龄分级和操作系统版本的应用中。 在 Microsoft Store 中发布你的应用时，你可以设置这些属性。 对于“通用”市场活动，你的广告也会在 MSN.com、Outlook.com、Skype 和其他 Microsoft 高级属性中显示。
+您的广告将出现在共享您的应用年龄分级和操作系统版本的应用中。 在 Microsoft Store 中发布应用时设置这些属性。 对于“通用”市场活动，你的广告也会在 MSN.com、Outlook.com、Skype 和其他 Microsoft 高级属性中显示。
 
 广告市场活动当前在以下国家和地区中受支持：
 
-Algeria, Argentina, Australia, Austria, Bahamas, Bahrain, Barbados, Belgium, Belize, Bolivia, Brazil, Canada, Chile, China, Colombia, Denmark, Dominican Republic, Ecuador, Egypt, El Salvador, Finland, France, Germany, Guatemala, Haiti, Honduras, Hong Kong SAR, India, Indonesia, Iraq, Ireland, Italy, Jamaica, Jordan, Kuwait, Lebanon, Malaysia, Mexico, Morocco, New Zealand, Netherlands, Nicaragua, Norway, Oman, Panama, Paraguay, Peru, Philippines, Puerto Rico, Qatar, Saudi Arabia, Singapore, Spain, South Africa, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Tunisia, United Arab Emirates, United Kingdom, United States, Uruguay, Venezuela, Vietnam.
+阿尔及利亚、阿根廷、澳大利亚、奥地利、巴哈马、巴林、巴巴多斯、比利时、伯利兹、玻利维亚、巴西、加拿大、智利、中国、哥伦比亚、丹麦、多米尼加共和国、厄瓜多尔、埃及、萨尔瓦多、芬兰、法国、德国、危地马拉、海地、洪都拉斯、香港特別行政区、印度、印度尼西亚、伊拉克、爱尔兰、意大利、牙买加、约旦、科威特、黎巴嫩、马来西亚、墨西哥、摩洛哥、新西兰、荷兰、尼加拉瓜、挪威、阿曼、巴拿马、巴拉圭、秘鲁、菲律宾、波多黎各、卡塔尔、沙特阿拉伯、新加坡、西班牙、南非、瑞典、瑞士、台湾、泰国、特立尼达和多巴哥、突尼斯、阿拉伯联合酋长国、英国、美国、乌拉圭、委内瑞拉、越南。
 
 ### <a name="what-languages-are-supported-for-ad-campaigns"></a>广告市场活动支持哪些语言？
 
@@ -59,5 +59,5 @@ Algeria, Argentina, Australia, Austria, Bahamas, Bahrain, Barbados, Belgium, Bel
 
 ### <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>如何删除信用卡或编辑信用卡详细信息？
 
-转到<http://commerce.microsoft.com>，使用你的 Microsoft 帐户凭据登录并进行必要的更改。
+转到<http://commerce.microsoft.com>、 使用 Microsoft 帐户凭据，登录以及进行必要的更改。
 

@@ -4,14 +4,14 @@ title: 情节提要动画
 description: 情节提要动画不仅仅是视觉动画。
 ms.date: 07/13/2018
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 212ef252e7d123ebf457a6584f77addb04fdfb2c
-ms.sourcegitcommit: a5f5bd724e65ce4a62d28dfd9080afb127886d6e
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9059988"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627072"
 ---
 # <a name="storyboarded-animations"></a>情节提要动画
 
@@ -93,9 +93,9 @@ ms.locfileid: "9059988"
 
 下面是动画目标方案的列表，你可能从中使用间接属性目标，以及与你将使用的语法类似的某些属性路径字符串：
 
-- 当应用到 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 时，创建 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/BR243029) 值的动画： `(UIElement.RenderTransform).(TranslateTransform.X)`
-- 当应用到 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill) 时，在 [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 的 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 中创建 [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 的动画： `(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
-- 当应用到 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 时，创建 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/BR243029) 值的动画（它是 [**TransformGroup**](https://msdn.microsoft.com/library/windows/apps/BR243022) 中四种转换之一）：`(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)`
+- 对进行动画处理[ **X** ](https://msdn.microsoft.com/library/windows/apps/BR243029)的值[ **TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)，如应用于[ **RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980): `(UIElement.RenderTransform).(TranslateTransform.X)`
+- 对进行动画处理[**颜色**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)内[ **GradientStop** ](https://msdn.microsoft.com/library/windows/apps/BR210078)的[ **LinearGradientBrush** ](https://msdn.microsoft.com/library/windows/apps/BR210108)，如应用于[**填充**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill): `(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
+- 对进行动画处理[ **X** ](https://msdn.microsoft.com/library/windows/apps/BR243029)的值[ **TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)，即 1 4 中的转换[ **TransformGroup**](https://msdn.microsoft.com/library/windows/apps/BR243022)，如应用于[ **RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980):`(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)`
 
 你将发现某些示例使用方括号来包含数字。 这是一种索引器。 它指示它前面的属性名称具有用作值的一个集合，并且你需要该集合中的一项（按照从零开始的索引标识）。
 
@@ -107,9 +107,9 @@ ms.locfileid: "9059988"
 
 Windows 运行时动画系统具有情节提要动画可以应用于的三种特定类型：
 
--   [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)，可使用任意 [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) 为其创建动画
--   [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870)，可使用任意 [**PointAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210346) 为其创建动画
--   [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723)，可使用任意 [**ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066) 为其创建动画
+-   [**双精度**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)，可与任何进行动画处理[ **DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136)
+-   [**点**](https://msdn.microsoft.com/library/windows/apps/BR225870)，可与任何进行动画处理[ **PointAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210346)
+-   [**颜色**](https://msdn.microsoft.com/library/windows/apps/Hh673723)，可与任何进行动画处理[ **ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066)
 
 对于对象引用值，还存在通用化 [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) 动画类型，我们将在后面部分对此进行讨论。
 
@@ -127,7 +127,7 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
 让我们重新复习下以前的 XAML 示例，再次看看 **From** 和 **To** 值，以及 **Duration**。 本例创建 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 属性的动画，并且 **Opacity** 的属性类型为 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)。 因此，此处要使用的动画为 [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136)。
 
-`From="1.0" To="0.0"` 指定动画何时运行，[**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 属性在值 1 处开始并且创建动画直至 0 处。 换句话说，根据这些 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值对 **Opacity** 属性产生作用，此动画将对象从不透明开始，然后逐渐变成透明形式。
+`From="1.0" To="0.0"` 指定动画运行时， [**不透明度**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)属性开始的值为 1、 0 到进行动画处理。 换句话说，根据这些 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值对 **Opacity** 属性产生作用，此动画将对象从不透明开始，然后逐渐变成透明形式。
 
 ```xaml
 ...
@@ -140,7 +140,7 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 ...
 ```
 
-`Duration="0:0:1"` 指定动画持续的时间，即矩形淡化的速度。 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 属性采用以下形式指定：*hours*:*minutes*:*seconds*。 此示例中持续时间为一秒。
+`Duration="0:0:1"` 指定动画的持续时间，即，该矩形淡的速度有多快。 [  **Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 属性采用以下形式指定：*hours*:*minutes*:*seconds*。 此示例中持续时间为一秒。
 
 有关 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 值和 XAML 语法的详细信息，请参阅 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)。
 
@@ -149,41 +149,41 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
 ### <a name="fromtoby-are-nullable"></a>From/To/By 可以为空
 
-我们之前提到过，你可以忽略 **From**、**To** 或 **By**，并因此使用当前非动画化的值作为缺失值的替代值。 动画的 **From**、**To** 或 **By** 属性的类型不能猜测。 例如，[**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) 属性的类型不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)。 而是 **Double** 的 [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)。 并且其默认值为 **null**，而不是 0。 该 **null** 值是动画系统区别你没有特别为 **From**、**To** 或 **By** 属性设置值的方式。 VisualC + + 组件扩展 (C + + CX) 不具有**Nullable**类型，因此它改为使用[**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864) 。
+我们之前提到过，你可以忽略 **From**、**To** 或 **By**，并因此使用当前非动画化的值作为缺失值的替代值。 动画的 **From**、**To** 或 **By** 属性的类型不能猜测。 例如，[**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) 属性的类型不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)。 而是 **Double** 的 [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)。 并且其默认值为 **null**，而不是 0。 该 **null** 值是动画系统区别你没有特别为 **From**、**To** 或 **By** 属性设置值的方式。 Visual c + + 组件扩展 (C + + /cli CX) 不具有**Nullable**类型，因此它使用[ **IReference** ](https://msdn.microsoft.com/library/windows/apps/BR225864)相反。
 
 ### <a name="other-properties-of-an-animation"></a>动画的其他属性
 
 本节中接下来介绍的属性全部是可选的，因为它们具有适合于大部分动画的默认值。
 
-### **<a name="autoreverse"></a>AutoReverse**
+### <a name="autoreverse"></a>**AutoReverse**
 
 如果你没有在动画中指定 [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/BR243202) 或 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211)，则该动画将运行一次，并且运行持续时间为 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 中指定的值。
 
-[**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/BR243202) 属性指定在时间线达到其 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的结尾处后是否反向播放。 如果将其设置为 **true**，则动画在达到其声明的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的结尾处后反向播放，从其结束值 (**To**) 起更改值直至返回其起始值 (**From**)。 这意味着，动画有效运行时间是其 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的两倍。
+[  **AutoReverse**](https://msdn.microsoft.com/library/windows/apps/BR243202) 属性指定在时间线达到其 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的结尾处后是否反向播放。 如果将其设置为 **true**，则动画在达到其声明的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的结尾处后反向播放，从其结束值 (**To**) 起更改值直至返回其起始值 (**From**)。 这意味着，动画有效运行时间是其 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的两倍。
 
-### **<a name="repeatbehavior"></a>RepeatBehavior**
+### <a name="repeatbehavior"></a>**RepeatBehavior**
 
-[**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) 属性指定时间线播放的次数，或是时间线应在其范围内重复的较长持续时间。 默认情况下，时间线具有“1x”的迭代计数，这表示它播放其 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的一次倍数，并且不再重复。
+[  **RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) 属性指定时间线播放的次数，或是时间线应在其范围内重复的较长持续时间。 默认情况下，时间线具有“1x”的迭代计数，这表示它播放其 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的一次倍数，并且不再重复。
 
-你可能会使动画运行多个迭代。 例如，值“3x”将使动画运行三次。 或者，可以为 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) 指定不同的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)。 该 **Duration** 应长于动画本身的 **Duration** 方才有效。 例如，对于具有“0:0:2”的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的动画，如果你指定“0:0:10”的 **RepeatBehavior**，则该动画重复五次。 如果这些数不能被整除，动画将在到达 **RepeatBehavior** 时间时被截断，此时动画可能正在播放中。 最后，你可以指定特殊值“永远”，这将使动画无限期运行直至被故意停止。
+你可能会使动画运行多个迭代。 例如，值“3x”将使动画运行三次。 或者，可以为 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) 指定不同的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)。 该 **Duration** 应长于动画本身的 **Duration** 方才有效。 例如，对于具有“0:0:2”的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的动画，如果你指定“0:0:10”的 **RepeatBehavior**，则该动画重复五次。 如果这些数不能平均划分，则动画将在到达 **RepeatBehavior** 时间的那个时刻被截断，而动画可能刚播放过半。 最后，你可以指定特殊值“永远”，这将使动画无限期运行直至被故意停止。
 
 有关 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411) 值和 XAML 语法的详细信息，请参阅 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411)。
 
-### **<a name="fillbehaviorstop"></a>FillBehavior="Stop"**
+### <a name="fillbehaviorstop"></a>**FillBehavior="Stop"**
 
 默认情况下，当动画结束时，即使在超过其持续时间后，动画将属性值保留为最终 **To** 或 **By** 修改的值。 但是，如果你将 [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) 属性的值设置为 [**FillBehavior.Stop**](https://msdn.microsoft.com/library/windows/apps/BR210306)，则动画化值的值将还原为应用动画前的任意值，或者更精确些还原为按照依赖属性系统（有关此区别的详细信息，请参阅[依赖属性概述](https://msdn.microsoft.com/library/windows/apps/Mt185583)）确定的当前有效值。
 
-### **<a name="begintime"></a>BeginTime**
+### <a name="begintime"></a>**BeginTime**
 
 默认情况下，动画的 [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/BR243204) 为“0:0:0”，因此动画在其包含的 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 运行后立刻开始运行。 如果 **Storyboard** 包含多个动画并且你希望错开其他动画与初始动画的起始时间，或者希望有意创建短时延迟，则可以更改此值。
 
-### **<a name="speedratio"></a>SpeedRatio**
+### <a name="speedratio"></a>**SpeedRatio**
 
 如果在一个 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 中有多个动画，则可以更改一个或多个动画相对于 **Storyboard** 的时间比。 这是父 **Storyboard**，最终控制 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 时间在动画运行期间的消逝方式。 此属性不常用。 有关详细信息，请参阅 [**SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/BR243213)。
 
 ## <a name="defining-more-than-one-animation-in-a-storyboard"></a>在 **Storyboard** 中定义多个动画
 
-[**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 的内容可以是多个动画定义。 如果将相关的动画应用到同一目标对象的两个属性，则可以具有多个动画。 例如，你可以同时更改用作 UI 元素的 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 的 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) 的 [**TranslateX**](https://msdn.microsoft.com/library/windows/apps/BR228122) 和 [**TranslateY**](https://msdn.microsoft.com/library/windows/apps/BR228124) 属性；这将使元素沿对角线转换。 你需要两个不同的动画才能完成该操作，但你可能希望两个动画属于同一 **Storyboard**，因为你始终希望这两个动画同时运行。
+[  **Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 的内容可以是多个动画定义。 如果将相关的动画应用到同一目标对象的两个属性，则可以具有多个动画。 例如，你可以同时更改用作 UI 元素的 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 的 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) 的 [**TranslateX**](https://msdn.microsoft.com/library/windows/apps/BR228122) 和 [**TranslateY**](https://msdn.microsoft.com/library/windows/apps/BR228124) 属性；这将使元素沿对角线转换。 你需要两个不同的动画才能完成该操作，但你可能希望两个动画属于同一 **Storyboard**，因为你始终希望这两个动画同时运行。
 
 动画无需是同一类型，或确定同一对象目标。 他们可以有不同的持续时间，并且无需共享任何属性值。
 
@@ -197,7 +197,7 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
 ## <a name="defining-a-storyboard-as-a-resource"></a>将情节提要定义为资源
 
-[**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 是放入动画对象的容器。 通常会在页面级别的 [**Resources**](https://msdn.microsoft.com/library/windows/apps/BR208740) 或 [**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/BR242338) 中将 **Storyboard** 定义为要创建动画的对象可用的资源。
+[  **Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 是放入动画对象的容器。 通常会在页面级别的 [**Resources**](https://msdn.microsoft.com/library/windows/apps/BR208740) 或 [**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/BR242338) 中将 **Storyboard** 定义为要创建动画的对象可用的资源。
 
 下一示例介绍如何将上一示例 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 包含在页面级别的 [**Resources**](https://msdn.microsoft.com/library/windows/apps/BR208740) 定义中，其中 **Storyboard** 为根 [**Page**](https://msdn.microsoft.com/library/windows/apps/BR227503) 的键控资源。 请注意 [x:Name 属性](https://msdn.microsoft.com/library/windows/apps/Mt204788)。 此属性是你定义 **Storyboard** 的变量名称的方式，以便以后 XAML 中的其他元素以及代码可以参考 **Storyboard**。
 
@@ -227,7 +227,7 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
 ### <a name="storyboards-for-visual-states"></a>视觉状态的情节提要
 
-在为控件的可视外观声明视觉状态动画时，你还可将动画放在 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 单元中。 在此情况下，你定义的 **Storyboard** 元素位于 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 容器中，此容器嵌套在 [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849)（作为键控资源的 **Style**）中更深层的位置。 在此情况下，不需要对 **Storyboard** 使用键或名称，因为它是一种 **VisualState**，其中包含 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) 可以调用的目标名称。 控件的样式通常分为单独的 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) 文件，而不是放在特定页面或应用的 **Resources** 集合中。 有关详细信息，请参阅[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。
+此外，在为控件的视觉外观声明视觉状态动画时，还可以将动画放在 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 单元中。 在此情况下，你定义的 **Storyboard** 元素位于 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 容器中，此容器嵌套在 [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849)（作为键控资源的 **Style**）中更深层的位置。 在此情况下，不需要对 **Storyboard** 使用键或名称，因为它是一种 **VisualState**，其中包含 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) 可以调用的目标名称。 控件的样式通常分为单独的 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) 文件，而不是放在特定页面或应用的 **Resources** 集合中。 有关详细信息，请参阅[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。
 
 ## <a name="dependent-and-independent-animations"></a>从属动画和独立动画
 
@@ -239,10 +239,10 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
 -   动画的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 为 0 秒（请参阅“警告”）
 -   动画以 [**UIElement.Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为目标
--   动画以下列 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 属性的子属性值为目标：[**Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx)、[**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980)、[**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection.aspx)、[**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
+-   动画目标的这些子属性值[ **UIElement** ](https://msdn.microsoft.com/library/windows/apps/BR208911)属性：[**Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx)， [ **RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980)， [**投影**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection.aspx)， [ **剪辑**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
 -   动画以 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) 或 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772) 为目标
 -   动画确定 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 值为目标并使用 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)，为其 [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 创建动画
--   动画以 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) 为目标
+-   动画为 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)
 
 > [!WARNING]
 > 要让动画被视为独立动画，必须显式设置 `Duration="0"`。 例如，如果从此 XAML 中删除 `Duration="0"`，动画将被视为从属动画，即使框架的 [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR243169) 是“0:0:0”。
@@ -265,7 +265,7 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 作为一名应用开发人员，你还可以选择应用应用级设置，该设置始终禁用从属动画，甚至禁用其中 **EnableDependentAnimation** 为 **true** 的那些动画。 请参阅 [**Timeline.AllowDependentAnimations**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.allowdependentanimations)。
 
 > [!TIP]
-> 如果你使用动画窗格在 Blend for Visual Studio 2017，你尝试将从属动画应用到视觉状态属性时，将在设计器中显示警告。 错误列表的生成输出中，将不显示警告。 如果你手动编辑 XAML，设计器不会显示一条警告。 在运行时在调试时，输出窗格的调试输出将显示一条警告的动画不独立，将跳过。
+> 如果您使用动画窗格在 Blend for Visual Studio 2017 中，每当您试图将依赖的动画应用于可视状态属性，将在设计器中显示警告。 在生成输出或错误列表中，不会显示警告。 如果要手动编辑 XAML，设计器不会显示一条警告。 在运行时调试时，输出窗格的调试输出将显示一条警告，动画不是独立且将跳过。
 
 
 ## <a name="starting-and-controlling-an-animation"></a>启动动画和控制动画
@@ -306,7 +306,7 @@ myStoryboard->Begin();
 myStoryBoard.Begin()
 ```
 
-如果你希望在动画应用完值之后运行其他逻辑，你可以处理 [**Completed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.completed.aspx) 事件。 同样，要对属性系统/动画交互进行故障排除，[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/BR242358) 方法可能十分有用。
+如果你希望在动画应用完值之后运行其他逻辑，你可以处理 [**Completed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.completed.aspx) 事件。 同样，对于疑难解答属性系统/动画交互，[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/BR242358) 方法可能十分有用。
 
 > [!TIP]
 > 在你为应用方案编写代码（其中会从应用代码启动动画）时，你可能希望再次查看动画或转换是否已存在于 UI 方案的动画库中。 库动画使得所有 Windows 运行时应用间的 UI 体验更加一致，并且更易于使用。
@@ -331,10 +331,10 @@ myStoryBoard.Begin()
 
 ## <a name="related-topics"></a>相关主题
 
-* [Property-path 语法](https://msdn.microsoft.com/library/windows/apps/Mt185586)
+* [属性路径语法](https://msdn.microsoft.com/library/windows/apps/Mt185586)
 * [依赖属性概述](https://msdn.microsoft.com/library/windows/apps/Mt185583)
-* [关键帧以及缓动函数动画](key-frame-and-easing-function-animations.md)
-* [视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)
+* [关键帧和缓动函数动画](key-frame-and-easing-function-animations.md)
+* [可视状态的已形成演示图板动画效果](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)
 * [控件模板](https://msdn.microsoft.com/library/windows/apps/Mt210948)
 * [**情节提要**](https://msdn.microsoft.com/library/windows/apps/BR210490)
 * [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/Hh759824)

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c78e16a50bdca09f474d5016fdc86b6d27702d5b
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058767"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598582"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>使用 MediaFrameReader 处理音频帧
 
@@ -26,11 +26,11 @@ ms.locfileid: "9058767"
 ## <a name="setting-up-your-project"></a>设置项目
 获取音频帧的过程在很大程度上与获取其他类型的媒体帧相同。 对于使用 **MediaCapture** 的任何应用，在尝试访问任何相机设备前都必须声明应用使用 *webcam* 功能。 如果应用从音频设备捕获音频，还应声明 *microphone* 设备功能。 
 
-**将功能添加到应用清单**
+**将功能添加到应用程序清单**
 
-1.  在 Microsoft Visual Studio 的**解决方案资源管理器**中，通过双击 **package.appxmanifest** 项，打开应用程序清单的设计器。
+1.  在 Microsoft Visual Studio 的“解决方案资源管理器”中，通过双击“package.appxmanifest”项，打开应用程序清单的设计器。
 2.  选择**功能**选项卡。
-3.  选中**摄像头**框和**麦克风**框。
+3.  选中**摄像头**框和**麦克风**框。选中“摄像头”框和“麦克风”框。
 4.  若要访问图片库和视频库，请选中**图片库**框和**视频库**框。
 
 
@@ -76,11 +76,11 @@ ms.locfileid: "9058767"
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 MediaFrameReader 处理媒体帧](process-media-frames-with-mediaframereader.md)
-* [相机](camera.md)
-* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [处理媒体帧与 MediaFrameReader](process-media-frames-with-mediaframereader.md)
+* [摄像头](camera.md)
+* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [相机帧示例](https://go.microsoft.com/fwlink/?LinkId=823230)
-* [音频图](audio-graphs.md)
+* [音频图形](audio-graphs.md)
  
 
 

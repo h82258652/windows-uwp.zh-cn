@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, xaml 互操作
 ms.localizationpriority: medium
 ms.openlocfilehash: 34fb65ec53f6addccf8723b451d333d602c17908
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046207"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604702"
 ---
 # <a name="directx-and-xaml-interop"></a>DirectX 和 XAML 互操作
 
@@ -21,13 +21,13 @@ ms.locfileid: "9046207"
 
 如果你的应用主要侧重于 2D 呈现，你可能需要使用 [Win2D](https://github.com/microsoft/win2d) Windows 运行时库。 此库由 Microsoft 维护，并且基于核心 Direct2D 技术生成。 它大大简化了实现 2D 图形的使用模式，并包括对本文档中所述的某些技术的有用抽象。 有关更多详细信息，请参阅项目页面。 本文档介绍有关选择*不*使用 Win2D 的应用开发人员的指南。
 
-> **注意**DirectX Api 没有定义为 Windows 运行时类型，所以通常使用 VisualC + + 组件扩展 (C + + CX) 来开发可与 DirectX 互操作的 XAML UWP 组件。 此外，如果将 DirectX 调用包装在一个独立的 Windows 运行时元数据文件中，可以创建一个使用 DirectX 的 C# 和 XAML UWP 应用。
+> **请注意**  DirectX Api 未定义为 Windows 运行时类型，因此您通常使用 Visual c + + 组件扩展 (C + + /cli CX) 来开发与 DirectX 互操作的 XAML UWP 组件。 此外，如果将 DirectX 调用包装在一个独立的 Windows 运行时元数据文件中，可以创建一个使用 DirectX 的 C# 和 XAML UWP 应用。
 
  
 
 ## <a name="xaml-and-directx"></a>XAML 和 DirectX
 
-DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 Microsoft Direct3D。 尽管 XAML 提供了对基本 2D 基元和效果的支持，但许多应用（例如建模和游戏应用）需要更复杂的图形支持。 对于这些应用，可以使用 Direct2D 和 Direct3D 呈现部分或全部图形，而使用 XAML 呈现所有其他内容。
+DirectX 为二维和三维图形提供了两个功能强大的库：Direct2D 和 Microsoft Direct3D。 尽管 XAML 提供了对基本 2D 基元和效果的支持，但许多应用（例如建模和游戏应用）需要更复杂的图形支持。 对于这些应用，可以使用 Direct2D 和 Direct3D 呈现部分或全部图形，而使用 XAML 呈现所有其他内容。
 
 如果要实现自定义 XAML 和 DirectX 互操作，需要知道以下两个概念：
 
@@ -359,7 +359,7 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
     3.  调用 **ISurfaceImageSourceNativeWithD2D::EndDraw**。 结果是位图。
 
 > [!NOTE]
-> 当关联的 [Window](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) 隐藏时，应用必须避免绘制到 **SurfaceImageSource**，否则，**ISurfaceImageSourceNativeWithD2D** API 将会失败。 为实现此目的，请将 [Window.VisibilityChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window.VisibilityChanged) 事件注册为事件侦听器，以跟踪可见性变化。
+> 当关联的 [Window](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) 隐藏时，应用必须避免绘制到 **SurfaceImageSource**，否则，**ISurfaceImageSourceNativeWithD2D** API 将会失败。 为实现此目的，请为 [Window.VisibilityChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window.VisibilityChanged) 事件注册为事件侦听器，以跟踪可见性变化。
 
 ## <a name="swapchainpanel-and-gaming"></a>SwapChainPanel 和游戏
 
@@ -369,9 +369,9 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
 若要确保良好的性能，[SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834) 类型有一些限制：
 
 -   每个应用的 [SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834) 实例不超过 4 个。
--   你应该将 DirectX 交换链的高度和宽度（在 [DXGI\_SWAP\_CHAIN\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中）设置为交换链元素的当前尺寸。 如果不这么做，将缩放显示内容（使用 **DXGI\_SCALING\_STRETCH**）以适合它。
--   必须将 DirectX 交换链的缩放模式（在 [DXGI\_SWAP\_CHAIN\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中）设置为 **DXGI\_SCALING\_STRETCH**。
--   不能将 DirectX 交换链的 alpha 模式（在 [DXGI\_SWAP\_CHAIN\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中）设置为 **DXGI\_ALPHA\_MODE\_PREMULTIPLIED**。
+-   DirectX 交换链的高度和宽度应设置 (在[DXGI\_交换\_链\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528)) 的交换链元素的当前维度。 如果不这样做，将缩放显示内容 (使用**DXGI\_缩放\_STRETCH**) 以适应。
+-   您必须将 DirectX 交换链的缩放模式设置 (在[DXGI\_交换\_链\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528)) 到**DXGI\_缩放\_STRETCH**。
+-   不能设置 DirectX 交换链的 alpha 模式 (在[DXGI\_交换\_链\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528)) 到**DXGI\_ALPHA\_模式\_自左乘**。
 -   必须调用 [IDXGIFactory2::CreateSwapChainForComposition](https://msdn.microsoft.com/library/windows/desktop/hh404558) 来创建 DirectX 交换链。
 
 你基于应用的需求来更新 [SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834)，而不是 XAML 框架的更新。 如果需要将 **SwapChainPanel** 的更新与 XAML 框架的更新同步，可以注册 [Windows::UI::Xaml::Media::CompositionTarget::Rendering](https://msdn.microsoft.com/library/windows/apps/br228127) 事件。 否则，如果尝试通过与更新 **SwapChainPanel** 的线程不同的线程更新 XAML 元素，则必须考虑任何跨线程问题。
@@ -465,7 +465,7 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
 * [VirtualSurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702050)
 * [SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834)
 * [ISwapChainPanelNative](https://msdn.microsoft.com/library/windows/desktop/dn302143)
-* [Direct3D 11 编程指南](https://msdn.microsoft.com/library/windows/desktop/ff476345)
+* [编程指南为 Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345)
 
  
 

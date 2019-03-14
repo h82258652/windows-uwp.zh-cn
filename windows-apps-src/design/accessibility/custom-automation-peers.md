@@ -1,5 +1,5 @@
 ---
-Description: Describes the concept of automation peers for Microsoft UI Automation, and how you can provide automation support for your own custom UI class.
+Description: 介绍 Microsoft UI 自动化的自动化对等概念以及如何为自己的自定义 UI 类提供自动化支持。
 ms.assetid: AA8DA53B-FE6E-40AC-9F0A-CB09637C87B4
 title: 自定义的自动化对等
 label: Custom automation peers
@@ -9,13 +9,13 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 13bf5d60b547f71d0cd83e5790236534d05d2544
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050530"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640132"
 ---
-# <a name="custom-automation-peers"></a>自定义自动化对等  
+# <a name="custom-automation-peers"></a>自定义的自动化对等  
 
 介绍 Microsoft UI 自动化的自动化对等概念以及如何为自己的自定义 UI 类提供自动化支持。
 
@@ -69,14 +69,14 @@ UWP 基于先前的托管代码 UI 框架（如 Windows 窗体、Windows Present
 
 *控件类型*是广泛定义该对等表示的控件功能的一种方式。 此概念与控件模式的概念不同，因为当某种模式通知 UI 自动化，它可以得到哪些信息或通过特定接口执行哪些操作时，控件类型比该模式高一个级别。 每个控件类型都有 UI 自动化的这些方面的指南：
 
-* UI 自动化控件模式：一个控件类型可能支持多个模式，每个模式表示信息或交互的不同类别。 每个控件类型都具有一组该控件必须支持的控件模式（此组模式可选）和一组该控件不得支持的控件模式。
-* UI 自动化属性值：每个控件类型都具有一组该控件必须支持的属性。 这些属性是常规属性（如 [UI 自动化属性概述](https://msdn.microsoft.com/library/windows/desktop/Ee671594)中所述），而不是特定于模式的属性。
-* UI 自动化事件：每个控件类型都具有一组该控件必须支持的事件。 同样地，这些事件是常规事件，而不是特定于模式的事件，如 [UI 自动化事件概述](https://msdn.microsoft.com/library/windows/desktop/Ee671221)中所述。
-* UI 自动化树结构：每个控件类型都将定义该控件必须显示在 UI 自动化树结构中的方式。
+* UI 自动化控件模式：控件类型可能支持多个模式，其中每个表示不同的分类信息或交互。 每个控件类型都具有一组该控件必须支持的控件模式（此组模式可选）和一组该控件不得支持的控件模式。
+* UI 自动化属性值：每个控件类型都有一组控件必须支持的属性。 这些属性是常规属性（如 [UI 自动化属性概述](https://msdn.microsoft.com/library/windows/desktop/Ee671594)中所述），而不是特定于模式的属性。
+* UI 自动化事件：每个控件类型都有一组控件必须支持的事件。 同样地，这些事件是常规事件，而不是特定于模式的事件，如 [UI 自动化事件概述](https://msdn.microsoft.com/library/windows/desktop/Ee671221)中所述。
+* UI 自动化树的结构：每个控件类型定义的 UI 自动化树结构中显示的控件必须如何。
 
 无论是否为框架实现了自动化对等，UI 自动化客户端功能都不绑定到 UWP，实际上，现有的 UI 自动化客户端（如辅助技术）将使用其他编程模型（如 COM）。 在 COM 中，客户端可以针对用来实现属性、事件或树检查的所请求模式或常规 UI 自动化框架的 COM 控件模式接口执行 **QueryInterface**。 对于这些模式，UI 自动化框架会将该接口代码封送到针对应用的 UI 自动化提供程序以及相关对等运行的 UWP 代码中。
 
-当你为托管代码框架（例如使用 C\# 或 Microsoft Visual Basic 的 UWP 应用）实现控件模式时，你可以使用 .NET Framework 接口来表示这些模式，而不是使用 COM 接口表示。 例如，由 Microsoft .NET 实现的 **Invoke** 模式的 UI 自动化模式界面是 [**IInvokeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242582)。
+当您实现控件模式用于 UWP 应用使用 C 之类的托管代码框架\#或 Microsoft Visual Basic 中，您可以使用.NET Framework 接口来表示这些模式而不是使用 COM 接口表示形式。 例如，由 Microsoft .NET 实现的 **Invoke** 模式的 UI 自动化模式界面是 [**IInvokeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242582)。
 
 有关控件模式、提供程序接口及其用途的列表，请参阅[控件模式和接口](control-patterns-and-interfaces.md)。 有关控件类型的列表，请参阅 [UI 自动化控件类型概述](https://msdn.microsoft.com/library/windows/desktop/Ee671197)。
 
@@ -85,7 +85,7 @@ UWP 基于先前的托管代码 UI 框架（如 Windows 窗体、Windows Present
 <span id="GUIDANCE_FOR_HOW_TO_IMPLEMENT_CONTROL_PATTERNS"/>
 
 ### <a name="guidance-for-how-to-implement-control-patterns"></a>如何实现控件模式指南  
-控件模式及其用途包含在 UI 自动化框架的较大定义中，不只适用于 UWP 应用的辅助功能支持。 实现控件模式时，应确保采用与 MSDN 上记录的指南匹配并位于 UI 自动化规范中的方式来实现它。 如果你正在查找指南，通常可以使用 MSDN 主题，无需参考该规范。 此处记录了有关每个模式的指南：[实现 UI 自动化控制模式](https://msdn.microsoft.com/library/windows/desktop/Ee671292)。 你会注意到此区域下方的每个主题都具有“实现指南和约定”部分以及“所需成员”部分。 本指南通常参考[适用于提供程序的控件模式接口](https://msdn.microsoft.com/library/windows/desktop/Ee671201)参考中的相关控件模式接口的特定 API。 这些接口是本机/COM 接口（其 API 使用 COM 样式的语法）。 你也可以在 [**Windows.UI.Xaml.Automation.Provider**](https://msdn.microsoft.com/library/windows/apps/BR209225) 命名空间中看到此处显示的所有内容。
+控件模式及其用途包含在 UI 自动化框架的较大定义中，不只适用于 UWP 应用的辅助功能支持。 实现控件模式时，应确保采用与 MSDN 上记录的指南匹配并位于 UI 自动化规范中的方式来实现它。 如果你正在查找指南，通常可以使用 MSDN 主题，无需参考该规范。 此处记录了每种模式的指南：[实现 UI 自动化控件模式](https://msdn.microsoft.com/library/windows/desktop/Ee671292)。 你会注意到此区域下方的每个主题都具有“实现指南和约定”部分以及“所需成员”部分。 本指南通常参考[适用于提供程序的控件模式接口](https://msdn.microsoft.com/library/windows/desktop/Ee671201)参考中的相关控件模式接口的特定 API。 这些接口是本机/COM 接口（其 API 使用 COM 样式的语法）。 你也可以在 [**Windows.UI.Xaml.Automation.Provider**](https://msdn.microsoft.com/library/windows/apps/BR209225) 命名空间中看到此处显示的所有内容。
 
 如果你使用的是默认自动化对等并针对其行为进行扩展，则这些对等已遵照 UI 自动化指南进行编写。 如果它们支持控件模式，则你可以依赖符合[实现 UI 自动化控件模式](https://msdn.microsoft.com/library/windows/desktop/Ee671292)中的指南的这一模式支持。 如果控件对等报告它代表的控件类型由 UI 自动化定义，则该控件遵循的是在[支持 UI 自动化控件类型](https://msdn.microsoft.com/library/windows/desktop/Ee671633)上记录的指南。
 
@@ -116,7 +116,7 @@ UWP 基于先前的托管代码 UI 框架（如 Windows 窗体、Windows Present
 
 如果要编写自定义控件类而且打算还提供一个新的自动化对等，则应当替代自定义控件的 [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer) 方法，以便它返回对等的新实例。 你的对等类必须从 [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 直接或间接派生。
 
-例如，下面的代码声明自定义控件 `NumericUpDown` 应当使用对等 `NumericUpDownPeer` 来实现 UI 自动化用途。
+例如，下面的代码声明自定义控件 `NumericUpDown` 应当使用对等 `NumericUpDownPeer` 来实现 UI 自动化用途：
 
 ```csharp
 using Windows.UI.Xaml.Automation.Peers;
@@ -182,7 +182,7 @@ protected:
 ```
 
 > [!NOTE]
-> [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer) 实现应指示初始化自定义自动化对等的新实例、以所有者身份传递调用控件并返回该实例，而不是执行任何其他操作。 请勿尝试此方法中的其他逻辑。 特别是，可能会导致损坏同一调用中 [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 的任何逻辑可能会产生意外的运行时行为。
+> [  **OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer) 实现应指示初始化自定义自动化对等的新实例、以所有者身份传递调用控件并返回该实例，而不是执行任何其他操作。 请勿尝试此方法中的其他逻辑。 特别是，可能会导致损坏同一调用中 [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 的任何逻辑可能会产生意外的运行时行为。
 
 在典型的 [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer) 实现中，*owner* 指定为 **this** 或 **Me**，因为此方法替代与控件类定义的其余部分具有相同的作用域。
 
@@ -341,7 +341,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="FORWARDING_PATTERNS_FROM_sub-elementS"/>
 
 ### <a name="forwarding-patterns-from-sub-elements"></a>从子元素转发模式  
-[**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) 方法实现还可以将某个子元素或部分指定为其主机的模式提供程序。 此示例模拟说明 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 如何将滚动模式处理转移到其内部 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) 控件的对等。 若要为模式处理指定子元素，此代码将获取子元素对象、使用 [**FrameworkElementAutomationPeer.CreatePeerForElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.createpeerforelement) 方法为该子元素创建一个对等，然后返回新对等。
+[  **GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) 方法实现还可以将某个子元素或部分指定为其主机的模式提供程序。 此示例模拟说明 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 如何将滚动模式处理转移到其内部 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) 控件的对等。 若要为模式处理指定子元素，此代码将获取子元素对象、使用 [**FrameworkElementAutomationPeer.CreatePeerForElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.createpeerforelement) 方法为该子元素创建一个对等，然后返回新对等。
 
 
 ```csharp
@@ -387,28 +387,28 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 
 某些控件可能支持标签方案，其中文本标签部分为非文本部分提供信息，或者控件旨在与 UI 中的另一个控件保持一种已知的标签关系。 如果可以提供一种基于类的有用行为，你可以替代 [**GetLabeledByCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getlabeledbycore) 以提供此行为。
 
-[**GetBoundingRectangleCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getboundingrectanglecore) 和 [**GetClickablePointCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getclickablepointcore) 主要用于自动化测试方案。 如果你希望支持控件的自动化测试，则可能希望替代这些方法。 范围类型控件可能需要这样做，在这样的控件中，你不能仅建议单个点，因为用户在坐标空间中的单击位置会对范围产生一个不同的影响。 例如，默认的 [**ScrollBar**](https://msdn.microsoft.com/library/windows/apps/BR209745) 自动化对等会替代 **GetClickablePointCore**，以返回“非数字”[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值。
+[**GetBoundingRectangleCore** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getboundingrectanglecore)并[ **GetClickablePointCore** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getclickablepointcore)主要用于自动化测试方案。 如果你希望支持控件的自动化测试，则可能希望替代这些方法。 范围类型控件可能需要这样做，在这样的控件中，你不能仅建议单个点，因为用户在坐标空间中的单击位置会对范围产生一个不同的影响。 例如，默认的 [**ScrollBar**](https://msdn.microsoft.com/library/windows/apps/BR209745) 自动化对等会替代 **GetClickablePointCore**，以返回“非数字”[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值。
 
-[**GetLiveSettingCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getlivesettingcore) 影响控件的 UI 自动化的 **LiveSetting** 默认值。 如果你希望你的控件返回 [**AutomationLiveSetting.Off**](https://msdn.microsoft.com/library/windows/apps/JJ191519) 以外的值，则可能希望替代此值。 有关 **LiveSetting** 所表示的含义的详细信息，请参阅 [**AutomationProperties.LiveSetting**](https://msdn.microsoft.com/library/windows/apps/JJ191516)。
+[**GetLiveSettingCore** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getlivesettingcore)影响的控件默认**LiveSetting** UI 自动化的值。 如果你希望你的控件返回 [**AutomationLiveSetting.Off**](https://msdn.microsoft.com/library/windows/apps/JJ191519) 以外的值，则可能希望替代此值。 有关 **LiveSetting** 所表示的含义的详细信息，请参阅 [**AutomationProperties.LiveSetting**](https://msdn.microsoft.com/library/windows/apps/JJ191516)。
 
-如果你的控件具有一个可设置的而且可以映射到 [**AutomationOrientation**](https://msdn.microsoft.com/library/windows/apps/BR209184) 的方向属性，则可以替代 [**GetOrientationCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getorientationcore)。 [**ScrollBarAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242522) 和 [**SliderAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242546) 类执行此类操作。
+如果你的控件具有一个可设置的而且可以映射到 [**AutomationOrientation**](https://msdn.microsoft.com/library/windows/apps/BR209184) 的方向属性，则可以替代 [**GetOrientationCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getorientationcore)。 [  **ScrollBarAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242522) 和 [**SliderAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242546) 类执行此类操作。
 
 <span id="Base_implementation_in_FrameworkElementAutomationPeer"/>
 <span id="base_implementation_in_frameworkelementautomationpeer"/>
 <span id="BASE_IMPLEMENTATION_IN_FRAMEWORKELEMENTAUTOMATIONPEER"/>
 
 ### <a name="base-implementation-in-frameworkelementautomationpeer"></a>FrameworkElementAutomationPeer 中的基本实现  
-[**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) 的基本实现提供一些 UI 自动化信息，可从在框架级别定义的各种布局和行为属性中解释这些信息。
+[  **FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) 的基本实现提供一些 UI 自动化信息，可从在框架级别定义的各种布局和行为属性中解释这些信息。
 
-* [**GetBoundingRectangleCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getboundingrectanglecore)：根据已知的布局特征返回 [**Rect**](https://msdn.microsoft.com/library/windows/apps/BR225994) 结构。 如果 [**IsOffscreen**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.isoffscreen) 为 **true**，则返回 0 值 **Rect**。
-* [**GetClickablePointCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getclickablepointcore)：根据已知的布局特征返回 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 结构，但前提是 **BoundingRectangle** 非零。
-* [**GetNameCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getnamecore)：此处可以汇总更广泛的行为；请参阅 [**GetNameCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getnamecore)。 基本上，它会尝试对 [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) 的任何已知内容或具有内容的相关类进行字符串转换。 另外，如果 [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) 有一个值，则会将该项的 **Name** 值用作 **Name**。
-* [**HasKeyboardFocusCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.haskeyboardfocuscore)：根据所有者的 [**FocusState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.focusstate) 和 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled) 属性求值。 不是控件的元素始终返回 **false**。
-* [**IsEnabledCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.isenabledcore)：根据所有者的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled) 属性求值（如果是一个 [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390)）。 不是控件的元素始终返回 **true**。 这并不意味着已在传统的交互意义上启用所有者；它表示已启用对等，即使所有者不具有 **IsEnabled** 属性。
-* [**IsKeyboardFocusableCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.iskeyboardfocusablecore)：在所有者是 [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) 时返回 **true**，否则返回 **false**。
-* [**IsOffscreenCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.isoffscreencore)：所有者元素或其任何父项上 [**Collapsed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visibility) 的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility) 针对 [**IsOffscreen**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.isoffscreen) 等于 **true** 值。 例外：即使 [**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) 对象所有者的父项不可见，该对象也可见。
-* [**SetFocusCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.setfocuscore)：调用 [**Focus**](https://msdn.microsoft.com/library/windows/apps/hh702161)。
-* [**GetParent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getparent)：从所有者调用 [**FrameworkElement.Parent**](https://msdn.microsoft.com/library/windows/apps/BR208739)，并查找相应的对等。 这并不是对“Core”方法的替代配对，因此你无法更改此行为。
+* [**GetBoundingRectangleCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getboundingrectanglecore):返回[ **Rect** ](https://msdn.microsoft.com/library/windows/apps/BR225994)结构基于已知的布局特征。 如果 [**IsOffscreen**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.isoffscreen) 为 **true**，则返回 0 值 **Rect**。
+* [**GetClickablePointCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getclickablepointcore):返回[**点**](https://msdn.microsoft.com/library/windows/apps/BR225870)结构基于已知的布局特征，因为没有非零**BoundingRectangle**。
+* [**GetNameCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getnamecore):更广泛的行为不是可以汇总如下;请参阅[ **GetNameCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getnamecore)。 基本上，它会尝试对 [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) 的任何已知内容或具有内容的相关类进行字符串转换。 另外，如果 [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) 有一个值，则会将该项的 **Name** 值用作 **Name**。
+* [**HasKeyboardFocusCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.haskeyboardfocuscore):评估基于所有者[ **FocusState** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.focusstate)并[ **IsEnabled** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled)属性。 不是控件的元素始终返回 **false**。
+* [**IsEnabledCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.isenabledcore):评估基于所有者[ **IsEnabled** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled)属性，它是否[**控制**](https://msdn.microsoft.com/library/windows/apps/BR209390)。 不是控件的元素始终返回 **true**。 这并不意味着已在传统的交互意义上启用所有者；它表示已启用对等，即使所有者不具有 **IsEnabled** 属性。
+* [**IsKeyboardFocusableCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.iskeyboardfocusablecore):返回 **，则返回 true**如果所有者是[**控制**](https://msdn.microsoft.com/library/windows/apps/BR209390); 否则它是**false**。
+* [**IsOffscreenCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.isoffscreencore):一个[**可见性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility)的[ **Collapsed** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visibility)对所有者元素或其任何父级等同于**true**值为[ **IsOffscreen**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.isoffscreen)。 例外：即使 [**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) 对象所有者的父项不可见，该对象也可见。
+* [**SetFocusCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.setfocuscore):调用[**焦点**](https://msdn.microsoft.com/library/windows/apps/hh702161)。
+* [**GetParent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getparent):调用[ **FrameworkElement.Parent** ](https://msdn.microsoft.com/library/windows/apps/BR208739)从所有者，并查找相应的对等方。 这并不是对“Core”方法的替代配对，因此你无法更改此行为。
 
 > [!NOTE]
 > 默认 UWP 对等通过使用实现 UWP 所需的内部本机代码来实现某个行为，而不必使用实际的 UWP 代码。 你不能通过常见语言运行时 (CLR) 反射或其他技术查看实现的代码或逻辑。 你也无法查看不同引用页来了解基本对等行为的子类特定替代。 例如，[**TextBoxAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242550) 的 [**GetNameCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getnamecore) 可能有其他行为，这些行为没有在 **AutomationPeer.GetNameCore** 引用页中进行描述，并且没有 **TextBoxAutomationPeer.GetNameCore** 的引用页。 甚至没有 **TextBoxAutomationPeer.GetNameCore** 引用页。 因此，请阅读最接近的对等类的参考主题，并在“备注”部分查找实现说明。
@@ -418,7 +418,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="PEERS_AND_AUTOMATIONPROPERTIES"/>
 
 ## <a name="peers-and-automationproperties"></a>对等和 AutomationProperties  
-自动化对等应当为控件的辅助功能相关信息提供合适的默认值。 请注意，使用控件的任何应用代码都可以通过在控件实例上包括 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) 附加属性值来替代该行为的一部分。 调用方既可以针对默认控件也可以针对自定义控件执行此操作。 例如，下面的 XAML 创建一个按钮，该按钮具有两个自定义的 UI 自动化属性： `<Button AutomationProperties.Name="Special"      AutomationProperties.HelpText="This is a special button."/>`
+自动化对等应当为控件的辅助功能相关信息提供合适的默认值。 请注意，使用控件的任何应用代码都可以通过在控件实例上包括 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) 附加属性值来替代该行为的一部分。 调用方既可以针对默认控件也可以针对自定义控件执行此操作。 例如，以下 XAML 创建按钮具有两个自定义的 UI 自动化属性： `<Button AutomationProperties.Name="Special"      AutomationProperties.HelpText="This is a special button."/>`
 
 有关 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) 附加属性的详细信息，请参阅[基本辅助功能信息](basic-accessibility-information.md)。
 
@@ -429,7 +429,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="IMPLEMENTING_PATTERNS"/>
 
 ## <a name="implementing-patterns"></a>实现模式  
-让我们看一下如何通过实现展开折叠的控件模式接口，为用来实现展开折叠行为的控件编写对等。 每当用值 [**PatternInterface.ExpandCollapse**](https://msdn.microsoft.com/library/windows/apps/BR242496) 调用 [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpattern) 时，该对等应当能够通过返回其自身来针对展开折叠行为启用辅助功能。 然后，该对等应当继承此模式的提供程序接口 ([**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider))，并为该提供程序接口的每个成员提供实现。 在这种情况下，该接口有三个需要替代的成员：[**Expand**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.expand)、[**Collapse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.collapse) 和 [**ExpandCollapseState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.expandcollapsestate)。
+让我们看一下如何通过实现展开折叠的控件模式接口，为用来实现展开折叠行为的控件编写对等。 每当用值 [**PatternInterface.ExpandCollapse**](https://msdn.microsoft.com/library/windows/apps/BR242496) 调用 [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpattern) 时，该对等应当能够通过返回其自身来针对展开折叠行为启用辅助功能。 然后，该对等应当继承此模式的提供程序接口 ([**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider))，并为该提供程序接口的每个成员提供实现。 在这种情况下，此接口具有三个成员重写：[**展开**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.expand)， [**折叠**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.collapse)， [ **ExpandCollapseState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.expandcollapsestate)。
 
 在该类本身的 API 设计中提前为辅助功能进行规划非常有用。 只要存在一个行为可能会由于与在 UI 中工作的用户进行典型交互或者通过自动化提供程序模式进行请求，就需要提供一个能够由 UI 响应或由自动化模式调用的方法。 例如，如果你的控件有按钮部分而且该部分绑定了可展开或折叠该控件的事件处理程序，并且你的控件中还包含这些操作的键盘等效功能，请让这些事件处理程序调用你从该对等中 [**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/desktop/Ee671242) 的 [**Expand**](https://msdn.microsoft.com/library/windows/apps/BR242570) 或 [**Collapse**](https://msdn.microsoft.com/library/windows/apps/BR242569) 实现的主体中调用的相同方法。 为了确保控件的视觉状态进行更新以按照统一的方式显示逻辑状态，而不考虑行为的调用方式，使用常见的逻辑方法也可能非常有用。
 
@@ -456,7 +456,7 @@ public class IndexCardAutomationPeer : FrameworkElementAutomationPeer, IExpandCo
 
 UI 自动化事件属于以下类别。
 
-| 事件 | 说明 |
+| 事件 | 描述 |
 |-------|-------------|
 | 属性更改 | 当 UI 自动化元素或控件模式上的属性发生更改时触发。 例如，如果客户端需要监视应用的复选框控件，它可以注册侦听 [**ToggleState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itoggleprovider.togglestate) 属性上的属性更改事件。 当选中或取消选中复选框控件时，提供程序将触发该事件，然后客户端可以根据需要进行操作。 |
 | 元素操作 | 当 UI 中的更改是由于用户或编程活动引起时触发；例如，当通过 **Invoke** 模式单击或调用按钮时。 |
@@ -500,7 +500,7 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 <span id="PEER_NAVIGATION"/>
 
 ## <a name="peer-navigation"></a>对等导航  
-在找到自动化对等之后，UI 自动化客户端可以通过调用该对等对象的 [**GetChildren**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getchildren) 和 [**GetParent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getparent) 方法来在应用的对等结构中进行导航。 可通过在对等中实现 [**GetChildrenCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getchildrencore) 方法来支持在控件中的各个 UI 元素之间进行导航。 UI 自动化系统调用此方法以生成一个由控件中包含的子元素（如列表框中的列表项）组成的树。 [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) 中的默认 **GetChildrenCore** 方法会遍历元素的视觉树以生成自动化对等树。 自定义控件可以替代此方法以便向自动化客户端暴露子元素的不同表示形式，并返回可传达信息或允许用户交互的元素的自动化对等。
+在找到自动化对等之后，UI 自动化客户端可以通过调用该对等对象的 [**GetChildren**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getchildren) 和 [**GetParent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getparent) 方法来在应用的对等结构中进行导航。 可通过在对等中实现 [**GetChildrenCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getchildrencore) 方法来支持在控件中的各个 UI 元素之间进行导航。 UI 自动化系统调用此方法以生成一个由控件中包含的子元素（如列表框中的列表项）组成的树。 [  **FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) 中的默认 **GetChildrenCore** 方法会遍历元素的视觉树以生成自动化对等树。 自定义控件可以替代此方法以便向自动化客户端暴露子元素的不同表示形式，并返回可传达信息或允许用户交互的元素的自动化对等。
 
 <span id="Native_automation_support_for_text_patterns"/>
 <span id="native_automation_support_for_text_patterns"/>
@@ -529,16 +529,16 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 
 对于传递到对等中的参数，可使用它来验证输入，例如，如果传递了 **null**，会引发 [**ArgumentNullException**](https://msdn.microsoft.com/library/windows/apps/system.argumentnullexception)，并且对于你的实现，该参数不是有效值。 但是，如果你的对等执行了后续操作，请记住对等与托管控件的交互将向其传入某些异步字符。 对等执行的任何操作不一定会阻止控件中的 UI 线程（而且它可能不应该执行此操作）。 因此，当创建了对等或首次调用了自动化对等方法时，会出现以下情况：对象可用或具有某些属性，但同时控件状态也会发生更改。 在这些情况下，提供程序会引发两种专门的异常：
 
-* 如果你无法访问对等所有者或相关对等元素，则会引发 [**ElementNotAvailableException**](https://msdn.microsoft.com/library/system.windows.automation.elementnotavailableexception)，具体取决于你的 API 传递的原始信息。 例如，你的对等可能会尝试运行其方法，但是所有者自此从 UI 中删除，已关闭的模式对话框就是这样的例子。 对于非 .NET 客户端，该对等将映射到 [**UIA\_E\_ELEMENTNOTAVAILABLE**](https://msdn.microsoft.com/library/windows/desktop/Ee671218)。
-* 如果仍然具有所有者，但该所有者处于诸如 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled)`=`**false** 的模式下，则会引发 [**ElementNotEnabledException**](https://msdn.microsoft.com/library/system.windows.automation.elementnotenabledexception)，该模式会阻止对等正在尝试完成的某些特定编程更改。 对于非 .NET 客户端，该对等将映射到 [**UIA\_E\_ELEMENTNOTENABLED**](https://msdn.microsoft.com/library/windows/desktop/Ee671218)。
+* 如果你无法访问对等所有者或相关对等元素，则会引发 [**ElementNotAvailableException**](https://msdn.microsoft.com/library/system.windows.automation.elementnotavailableexception)，具体取决于你的 API 传递的原始信息。 例如，你的对等可能会尝试运行其方法，但是所有者自此从 UI 中删除，已关闭的模式对话框就是这样的例子。 对于非.NET 客户端，此映射到[ **UIA\_E\_ELEMENTNOTAVAILABLE**](https://msdn.microsoft.com/library/windows/desktop/Ee671218)。
+* 如果仍然具有所有者，但该所有者处于诸如 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled)`=`**false** 的模式下，则会引发 [**ElementNotEnabledException**](https://msdn.microsoft.com/library/system.windows.automation.elementnotenabledexception)，该模式会阻止对等正在尝试完成的某些特定编程更改。 对于非.NET 客户端，此映射到[ **UIA\_E\_ELEMENTNOTENABLED**](https://msdn.microsoft.com/library/windows/desktop/Ee671218)。
 
-除此之外，对等还应该是它们从其对等支持中引发的相对保守的相关异常。 大多数客户端无法处理对等中的异常，也无法将其转换为当与客户端交互时其用户可以选择的可操作选项。 因此，与在每次对等尝试执行的某些操作不起作用时即引发异常相比，有时 no-op 以及捕获异常（不会在对等实现中重新引发异常）是一个较好的策略。 同时还需考虑到，大多数 UI 自动化客户端均不会采用托管代码编写。 大多数客户端将采用 COM 编写，并仅用于在调用最终会访问对等的 UI 自动化客户端方法时，在 **HRESULT** 中检查 **S\_OK**。
+除此之外，对等还应该是它们从其对等支持中引发的相对保守的相关异常。 大多数客户端无法处理对等中的异常，也无法将其转换为当与客户端交互时其用户可以选择的可操作选项。 因此，与在每次对等尝试执行的某些操作不起作用时即引发异常相比，有时 no-op 以及捕获异常（不会在对等实现中重新引发异常）是一个较好的策略。 同时还需考虑到，大多数 UI 自动化客户端均不会采用托管代码编写。 大多数用 COM，只需检查**S\_确定**中**HRESULT**当它们调用，该怎么办访问对等方的 UI 自动化客户端方法。
 
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>相关主题  
 * [辅助功能](accessibility.md)
-* [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML 可访问性示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472)
 * [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185)
 * [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer)

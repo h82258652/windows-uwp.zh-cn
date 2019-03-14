@@ -1,16 +1,16 @@
 ---
-Description: XAML gives you a flexible layout system to create a responsive UI.
+Description: XAML 为你提供了灵活的布局系统以创建响应式 UI。
 title: 采用 XAML 的响应式布局
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 691ce1cc0c49154142a52f329af6f2a1df4ae027
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049394"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57591522"
 ---
 # <a name="responsive-layouts-with-xaml"></a>采用 XAML 的响应式布局
 
@@ -22,7 +22,7 @@ XAML 布局系统为你提供了自动大小调整、布局面板、视觉状态
 
 XAML 布局系统支持静态布局和动态布局。 在静态布局中，你会对控件给定明确的像素大小和位置。 当用户更改其设备的分辨率或方向时，UI 保持不变。 静态布局可对不同的外形规格和显示尺寸进行剪裁。 另一方面，动态布局可缩小、放大和重新排列，从而响应设备上的可用视觉空间。 
 
-实际上，你可以结合使用静态元素和动态元素来创建 UI。 你仍可以在一些地方使用静态元素和值，但应确保整体 UI 响应可不同的分辨率、屏幕大小和视图。
+实际上，你可以结合使用静态元素和动态元素来创建你的 UI。 你仍可以在一些地方使用静态元素和值，但应确保整体 UI 响应可不同的分辨率、屏幕大小和视图。
 
 在此处，我们将讨论如何使用 XAML 属性和布局面板创建动态布局。
 
@@ -33,14 +33,14 @@ XAML 布局系统支持静态布局和动态布局。 在静态布局中，你�
 
 **高度和宽度**
 
-[**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) 属性用于指定元素的大小。 可以使用固定的值（以有效像素为单位测量），或者可以使用自动或成比例大小调整。 
+[**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) 属性用于指定元素的大小。 可以使用固定的值（以有效像素为单位测量），或者可以使用自动或成比例调整大小。 
 
-自动大小调整用于调整 UI 元素的大小以适应其内容或父容器。 还可以将自动大小调整用于网格的行和列。 若要使用自动大小调整，请将 UI 元素的高度和/或宽度设置为 **Auto**。
+自动大小调整用于调整 UI 元素的大小以适应其内容或父容器。 还可以将自动调整大小用于网格的行和列。 若要使用自动调整大小，请将 UI 元素的高度和/或宽度设置为**自动**。
 
 > [!NOTE]
 > 元素是否根据其内容或容器大小调整取决于父容器处理其子级的大小调整的方式。 有关详细信息，请参阅本文后面部分的[布局面板](#layout-panels)。
 
-成比例大小调整（也称为*比例缩放*）以按加权比例来分配网格的行和列的可用空间。 在 XAML 中，比例缩放值用 \* 表示（或使用 *n*\* 表示加权比例缩放）。 例如，若要在两列布局中指定一列比另一列宽五倍，则在 [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.width.aspx) 元素中对 [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.aspx) 属性分别使用“5\*”和“\*”。
+成比例大小调整（也称为*比例缩放*）以按加权比例来分配网格的行和列的可用空间。 在 XAML 中，星号值表示作为\*(或*n* \*加权星形调整大小)。 例如，若要指定比第二列中的两列布局 5 次更广的那一个列，请使用"5\*"和"\*"用于[**宽度**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.width.aspx)中的属性[**ColumnDefinition** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.aspx)元素。
 
 此示例在具有 4 列的 [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) 中，结合使用了固定、自动、成比例调整大小。
 
@@ -71,13 +71,13 @@ Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分
 
 若要在运行时获取元素的大小，请使用只读 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.actualheight.aspx) 和 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.actualwidth.aspx) 属性而不是 Height 和 Width。
 
-**大小约束**
+**大小限制**
 
 在 UI 中使用自动调整大小时，仍可能需要对元素的大小施加约束。 可以设置 [**MinWidth**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.minwidth.aspx)/[**MaxWidth**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxwidth.aspx) 和 [**MinHeight**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.minheight.aspx)/[**MaxHeight**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxheight.aspx) 属性，以便指定用于约束元素大小，但同时允许动态调整大小的值。
 
 在 Grid 中，MinWidth/MaxWidth 还可以与列定义一起使用，而 MinHeight/MaxHeight 可以与行定义一起使用。
 
-**对齐**
+**对齐方式**
 
 使用 [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) 和 [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx) 属性来指定应如何将元素放置在其父容器中。
 - **HorizontalAlignment** 的值是 **Left**、**Center**、**Right** 和 **Stretch**。
@@ -90,12 +90,12 @@ Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分
 
 **可见性**
 
-可以通过将元素的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.visibility.aspx) 属性设置为 [**Visibility** 枚举值](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visibility.aspx)之一来显示或隐藏该元素：**Visible** 或 **Collapsed**。 当元素为 Collapsed 时，它不会占用任何 UI 布局空间。
+可以显示或隐藏某个元素，通过设置其[**可见性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.visibility.aspx)属性设置为之一[**可见性**枚举](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visibility.aspx)值：**可见**或**折叠**。 当元素为 Collapsed 时，它不会占用任何 UI 布局空间。
 
 可以在代码中或视觉状态中更改元素的 Visibility 属性。 更改元素的 Visibility 后，其所有子元素也会相应更改。 可以通过折叠一个面板的同时显示另一个面板来替换 UI 部分。
 
 > [!Tip]
-> 当你有在 UI 中的某些元素是**Collapsed**默认情况下时，会创建这些对象仍然在启动时，即使它们不可见。 可以延迟加载这些元素，直至通过将 **x:DeferLoadStrategy 属性**设置为“Lazy”以使它们显示。 这可以改善启动性能。 有关详细信息，请参阅 [x:DeferLoadStrategy 属性](../../xaml-platform/x-deferloadstrategy-attribute.md)。
+> 在 UI 中的元素后**Collapsed**默认情况下创建的对象仍在启动时，即使不可见。 可以延迟加载这些元素，直至通过将 **x:DeferLoadStrategy 属性**设置为“Lazy”以使它们显示。 这可以改善启动性能。 有关详细信息，请参阅 [x:DeferLoadStrategy 属性](../../xaml-platform/x-deferloadstrategy-attribute.md)。
 
 ### <a name="style-resources"></a>样式资源
 
@@ -109,10 +109,10 @@ Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分
 
 下面对 XAML 框架中提供的面板控件的主要功能做一个比较。
 
-面板控件 | 说明
+面板控件 | 描述
 --------------|------------
 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) | **Canvas** 不支持动态 UI；控制设置子元素位置和大小的所有方面。 通常将其用于特殊情况（例如创建图形），或用于定义较大自适应 UI 的小静态区域。 可以使用代码或视觉状态来在运行时重新放置元素。<li>元素使用 Canvas.Top 和 Canvas.Left 附加属性进行绝对定位。</li><li>可以使用 Canvas.ZIndex 附加属性明确指定分层。</li><li>HorizontalAlignment/VerticalAlignment 的 Stretch 值将忽略。 如果未显式设置元素的大小，它会调整大小以容纳其内容。</li><li>如果子内容超出面板，则视觉上不会被截断。 </li><li>子内容不受面板边界限制。</li>
-[**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) | **Grid** 支持对子元素进行动态调整大小。 可以使用代码或视觉状态来重新定位和重新排列元素。<li>元素使用 Grid.Row 和 Grid.Column 附加属性在行和列中进行排列。</li><li>通过使用 Grid.RowSpan 和 Grid.ColumnSpan 附加属性，元素可跨越多行和多列。</li><li>将遵循 HorizontalAlignment/VerticalAlignment 的 Stretch 值。 如果未明确设置元素的大小，则该元素会拉伸以填满网格单元格中的可用空间。</li><li>如果子内容超出面板，则视觉上会被截断。</li><li>由于内容大小受面板边界限制，因此可滚动的内容会显示滚动条（如果需要）。</li>
+[**网格**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) | **Grid** 支持对子元素进行动态调整大小。 可以使用代码或视觉状态来重新定位和重新排列元素。<li>元素使用 Grid.Row 和 Grid.Column 附加属性在行和列中进行排列。</li><li>通过使用 Grid.RowSpan 和 Grid.ColumnSpan 附加属性，元素可跨越多行和多列。</li><li>将遵循 HorizontalAlignment/VerticalAlignment 的 Stretch 值。 如果未明确设置元素的大小，则该元素会拉伸以填满网格单元格中的可用空间。</li><li>如果子内容超出面板，则视觉上会被截断。</li><li>由于内容大小受面板边界限制，因此可滚动的内容会显示滚动条（如果需要）。</li>
 [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) | <li>根据面板边缘或中心以及元素相互之间的间距排列元素。</li><li>使用控制面板对齐、同级对齐和同级位置的各种附加属性来定位元素。 </li><li>将忽略 HorizontalAlignment/VerticalAlignment 的 Stretch 值，除非对齐的 RelativePanel 附加属性导致拉伸（例如，元素与面板的左右两边对齐）。 如果未显式设置元素的大小，它不会拉伸，而是会调整大小以容纳其内容。</li><li>如果子内容超出面板，则视觉上会被截断。</li><li>由于内容大小受面板边界限制，因此可滚动的内容会显示滚动条（如果需要）。</li>
 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) |<li>元素在单行中以垂直或水平方向进行堆叠。</li><li>在与 Orientation 属性相反的方向上，将遵循 HorizontalAlignment/VerticalAlignment 的 Stretch 值。 如果未显式设置元素的大小，则该元素会拉伸以填满可用宽度（或如果 Orientation 为 Horizontal，则为高度）。 在 Orientation 属性指定的方向上，元素会调整大小以容纳其内容。</li><li>如果子内容超出面板，则视觉上会被截断。</li><li>由于在 Orientation 属性指定的方向上内容大小不受面板边界限制，因此可滚动内容拉伸超过面板边界，但不显示滚动条。 必须显式限制子内容的高度（或宽度）以使其滚动条显示。</li>
 [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) |<li>元素以行或列排列，当达到 MaximumRowsOrColumns 值时会自动换行至新行或新列。</li><li>由 Orientation 属性指定是按行还是列排列元素。</li><li>通过使用 VariableSizedWrapGrid.RowSpan 和 VariableSizedWrapGrid.ColumnSpan 附加属性，内容可跨越多行和多列。</li><li>HorizontalAlignment/VerticalAlignment 的 Stretch 值将忽略。 根据 ItemHeight 和 ItemWidth 属性的指定设置元素大小。 如果未设置这些属性，第一个单元格中的项目会调整大小以容纳其内容，并且所有其他单元格将继承此大小。</li><li>如果子内容超出面板，则视觉上会被截断。</li><li>由于内容大小受面板边界限制，因此可滚动的内容会显示滚动条（如果需要）。</li>
@@ -126,13 +126,13 @@ Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分
 
 当你的应用窗口增大或缩小超出一定限度时，你可能希望更改布局属性来重新定位、调整大小、重排、显示或者替换 UI 部分。 可以为你的 UI 定义不同的视觉状态，以便在窗口宽度或窗口高度超过指定的阈值时应用这些视觉状态。 
 
-[**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) 提供了一个简单方法来设置要应用状态的阈值（也称为“断点”）。 当属性处于特定状态下时，[**VisualState**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstate.aspx) 定义的属性值会应用到元素。 当满足特定条件时，可在应用相应 VisualState 的 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) 中对视觉状态分组。
+[  **AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) 提供了一个简单方法来设置要应用状态的阈值（也称为“断点”）。 当属性处于特定状态下时，[**VisualState**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstate.aspx) 定义的属性值会应用到元素。 当满足特定条件时，可在应用相应 VisualState 的 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) 中对视觉状态分组。
 
 ### <a name="set-visual-states-in-code"></a>使用代码设置视觉状态
 
 若要通过代码应用视觉状态，请调用 [**VisualStateManager.GoToState**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.gotostate.aspx) 方法。 例如，若要在应用窗口处于特定大小时应用某个状态，请处理 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.window.sizechanged.aspx) 事件并调用 **GoToState** 以应用相应状态。
 
-在此处，[**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstategroup.aspx) 包含 2 个 VisualState 定义。 第一个 `DefaultState` 为空。 当应用时，将应用 XAML 页面中定义的值。 第二个 `WideState` 将 [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.displaymode.aspx) 的 [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 属性更改为 **Inline** 并打开该窗格。 如果窗口宽度大于 640 个有效像素，将在 SizeChanged 事件处理程序中应用此状态。
+在此处，[**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstategroup.aspx) 包含 2 个 VisualState 定义。 第一个 `DefaultState` 为空。 当应用时，将应用 XAML 页面中定义的值。 第二个 `WideState` 将 [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 的 [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.displaymode.aspx) 属性更改为 **Inline** 并打开该窗格。 如果窗口宽度大于 640 个有效像素，将在 SizeChanged 事件处理程序中应用此状态。
 
 > [!NOTE]
 > Windows 不会提供可使应用检测到运行该应用的特定设备的方法。 但它可以指示运行了该应用的设备系列（移动设备、桌面设备等）、有效分辨率，以及应用的可用屏幕空间大小（应用窗口大小）。 我们建议为[屏幕大小和断点](screen-sizes-and-breakpoints-for-responsive-design.md)定义视觉状态。
@@ -232,7 +232,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 ```
 
 > [!Important]
-> 在前面的示例中，**网格**元素设置 VisualStateManager.VisualStateGroups 附加属性。 使用 StateTrigger 时，请务必将 VisualStateGroups 附加到根元素的第一个子元素，以便触发器自动生效。 （在此处，**Grid** 是根 **Page** 元素的第一个子元素。）
+> 在上一示例中，VisualStateManager.VisualStateGroups 附加属性上设置**网格**元素。 使用 StateTrigger 时，请务必将 VisualStateGroups 附加到根元素的第一个子元素，以便触发器自动生效。 （在此处，**Grid** 是根 **Page** 元素的第一个子元素。）
 
 ### <a name="attached-property-syntax"></a>附加属性语法
 
@@ -334,7 +334,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 
 使用 XAML 视图来创建共享相同代码隐藏的不同 UI 定义。 你可以为每个设备系列提供唯一的 UI 定义。 按照以下步骤向你的应用添加 XAML 视图。
 
-**向应用添加 XAML 视图**
+**若要向应用添加的 XAML 视图**
 1. 依次选择“项目”&gt;“添加新项目”。 将打开“添加新项目”对话框。
     > **提示**&nbsp;&nbsp;确保在“解决方案资源管理器”中选中文件夹或项目，而不是解决方案。
 2. 在左侧窗格中的 Visual C# 或 Visual Basic 下，选取 XAML 模板类型。
@@ -346,7 +346,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 
 可以向文件名添加限定符，或将文件添加到具有限定符名称的文件夹。
 
-**使用文件名**
+**使用文件的名称**
 
 若要将限定符名称与文件结合使用，请使用此格式：*[pageName]*.DeviceFamily-*[qualifierString]*.xaml。
 
@@ -356,7 +356,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 
 **使用文件夹名称**
 
-若要在 Visual Studio 项目中使用文件夹组织视图，可以将限定符名称与该文件夹结合使用。 为此，如下所示命名你的文件夹：DeviceFamily-*[qualifierString]*。 在此情况下，每个 XAML 视图文件具有相同的名称。 不要在文件名中包含限定符。
+若要在 Visual Studio 项目中使用文件夹组织视图，可以将限定符名称与该文件夹结合使用。 若要执行此操作，命名为您这样的文件夹：DeviceFamily-*[qualifierString]*。 在此情况下，每个 XAML 视图文件具有相同的名称。 不要在文件名中包含限定符。
 
 下面的示例再次使用名为 MainPage.xaml 的文件。 若要为平板设备创建视图，请创建一个名为“DeviceFamily-Tablet”的文件夹，并在其中放入名为 MainPage.xaml 的 XAML 视图。 若要为电脑设备创建视图，请创建一个名为“DeviceFamily-Desktop”的文件夹，并在其中放入名为 MainPage.xaml 的另一个 XAML 视图。 下面是该解决方案在 Visual Studio 中的外观。
 
@@ -368,7 +368,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 
 若要提供唯一的视图和功能，你可以创建单独 Page 文件（XAML 和代码），然后在需要页面时导航到相应的页面。
 
-**向应用添加 XAML 页面**
+**若要向应用添加的 XAML 页面**
 1. 依次选择“项目”&gt;“添加新项目”。 将打开“添加新项目”对话框。
     > **提示**&nbsp;&nbsp;确保在“解决方案资源管理器”中选中项目，而不是解决方案。
 2. 在左侧窗格中的 Visual C# 或 Visual Basic 下，选取 XAML 模板类型。
@@ -392,7 +392,7 @@ else
 还可以使用不同的条件来确定要导航到的页面。 有关更多示例，请参阅[定制多个视图示例](https://go.microsoft.com/fwlink/p/?LinkId=620636)，它使用 [**GetIntegratedDisplaySize**](https://msdn.microsoft.com/library/windows/apps/xaml/dn904185.aspx) 函数来检查集成屏幕的物理大小。
 
 ## <a name="related-topics"></a>相关主题
-- [教程：创建自适应布局](../basics/xaml-basics-adaptive-layout.md)
-- [响应性技术示例 (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlResponsiveTechniques)
+- [教程：创建自适应的布局](../basics/xaml-basics-adaptive-layout.md)
+- [响应技术示例 (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlResponsiveTechniques)
 - [状态触发器示例 (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers)
-- [定制多视图示例 (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlTailoredMultipleViews)
+- [定制的多个视图示例 (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlTailoredMultipleViews)

@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 4208fd56b16d5130f218492428eb459364b8ada9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923844"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590892"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -23,7 +23,7 @@ ms.locfileid: "8923844"
 选择你希望 VSTS 在其执行生成过程时使用的生成代理类型。
 托管生成代理与大多数常见工具和 SDK 一起部署，并且适用于大多数方案，请参阅[托管生成服务器上的软件](https://www.visualstudio.com/docs/build/admin/agents/hosted-pool#software)文章。 但是，如果你需要对生成步骤的更多控制权，可创建自定义生成代理。 可使用下表帮助你进行该决策。
 
-| **方案** | **自定义代理** | **托管生成代理** |
+| **方案** | **自定义代理** | **托管的生成代理** |
 |-------------|----------------|----------------------|
 | 基本 UWP 版本（包括 .NET 本机）| :white_check_mark: | :white_check_mark: |
 | 生成软件包用于旁加载| :white_check_mark: | :white_check_mark: |
@@ -49,7 +49,7 @@ ms.locfileid: "8923844"
 
 我们将从 VSTS 中提供的默认 UWP 生成定义开始，然后介绍如何配置该定义，以便你可以完成更高级的生成任务。
 
-**将项目证书添加到源代码存储库**
+**你的项目将证书添加到源代码存储库**
 
 VSTS 适用于基于 TFS 和 GIT 的代码存储库。
 如果使用 Git 存储库，请将项目的证书文件添加到存储库，以便生成代理可以对应用包签名。 如果不执行此操作，则 Git 存储库将忽略证书文件。
@@ -69,8 +69,8 @@ VSTS 适用于基于 TFS 和 GIT 的代码存储库。
 
 此生成定义包含以下生成任务：
 
-- NuGet 还原 **\*.sln
-- 生成解决方案 **\*.sln
+- NuGet 还原 * *\*.sln
+- 生成解决方案 * *\*.sln
 - 发布符号
 - 发布项目：drop
 
@@ -82,10 +82,10 @@ VSTS 适用于基于 TFS 和 GIT 的代码存储库。
 
 #### <a name="configure-the-build-solution-build-task"></a>配置生成解决方案生成任务
 
-此任务将在对二进制文件的工作文件夹，并且生成输出应用包文件的任何解决方案编译。
+此任务将编译到二进制文件在工作文件夹中，并产生输出应用包文件的任何解决方案。
 此任务使用 MSbuild 参数。  你必须指定这些参数的值。 使用下表作为指南。
 
-|**MSBuild 参数**|**值**|**说明**|
+|**MSBuild 参数**|**值**|**描述**|
 |--------------------|---------|---------------|
 |AppxPackageDir|$(Build.ArtifactStagingDirectory)\AppxPackages|定义要存储生成的项目的文件夹。|
 |AppxBundlePlatforms|$(Build.BuildPlatform)|允许你定义要包含在程序包中的平台。|
@@ -114,7 +114,7 @@ VSTS 使用我们之前定义的 `$(Build.ArtifactStagingDirectory)\AppxPackages
 
 ![项目](images/building-screen6.png)
 
-由于我们已将 `UapAppxPackageBuildMode` 属性设置为 `StoreUpload`，项目文件夹将包含建议提交到应用商店的程序包 (.appxupload)。 请注意，你还可以提交常规应用包 (.appx/.msix) 或应用程序包 (.appxbundle/.msixbundle) 到应用商店。 在本文中，我们将使用 .appxupload 文件。
+由于我们已将 `UapAppxPackageBuildMode` 属性设置为 `StoreUpload`，项目文件夹将包含建议提交到应用商店的程序包 (.appxupload)。 请注意，您还可以提交常规应用包 (.appx/.msix) 或应用程序捆绑 (.appxbundle/.msixbundle) 到存储区。 在本文中，我们将使用 .appxupload 文件。
 
 >[!NOTE]
 > 默认情况下，VSTS 代理保留最新生成的应用包。 如果你希望仅存储当前生成的项目，请将该生成配置为清除二进制文件目录。 若要执行此操作，请添加一个名为 `Build.Clean` 的变量，然后将其设置为值 `all`。 若要了解详细信息，请参阅[指定存储库](https://www.visualstudio.com/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way)。
@@ -123,13 +123,13 @@ VSTS 使用我们之前定义的 `$(Build.ArtifactStagingDirectory)\AppxPackages
 
 接下来，你将使用生成定义创建自动生成。 下表介绍可创建的每种类型的自动生成。
 
-|**生成类型**|**项目**|**建议的频率**|**说明**|
+|**生成类型**|**项目**|**建议的频率**|**描述**|
 |-----------------|------------|-------------------------|---------------|
 |连续集成|生成日志、测试结果|每个提交|此类型的生成很快，并且一天运行多次。|
-|用于旁加载的连续部署生成|部署包|每天 |此类型的生成包含单元测试，但需要较长时间。 它允许手动测试，并且你可以将其与其他工具（如 HockeyApp）集成。|
-|将程序包提交到应用商店的连续部署生成|发布程序包|按需|此类型的生成创建可发布到应用商店的程序包。|
+|用于旁加载的连续部署生成|部署包|每天一次 |此类型的生成包含单元测试，但需要较长时间。 它允许手动测试，并且你可以将其与其他工具（如 HockeyApp）集成。|
+|将程序包提交到应用商店的连续部署生成|发布软件包|按需|此类型的生成创建可发布到应用商店的程序包。|
 
-我们来看看如何配置每种生成。
+让我们来查看如何配置其中每一个。
 
 ## <a name="set-up-a-continuous-integration-ci-build"></a>设置连续集成 (CI) 生成
 
@@ -138,7 +138,7 @@ VSTS 使用我们之前定义的 `$(Build.ArtifactStagingDirectory)\AppxPackages
 如果要将 UWP 单元测试作为 CI 生成的一部分运行，你将需要使用自定义生成代理，而不是托管生成代理。
 
 >[!NOTE]
-> 如果将多个应用捆绑在同一个解决方案中，你可能收到错误。 有关解决该错误的帮助，请参阅以下主题：[解决将多个应用捆绑在同一个解决方案中时出现的错误。](#bundle-errors)
+> 如果将多个应用捆绑在同一个解决方案中，你可能收到错误。 请参阅帮助解决该错误的以下主题：[当您将多个应用程序捆绑在同一解决方案中时，显示的地址错误。](#bundle-errors)
 
 ### <a name="configure-a-ci-build-definition"></a>配置 CI 生成定义
 
@@ -146,8 +146,7 @@ VSTS 使用我们之前定义的 `$(Build.ArtifactStagingDirectory)\AppxPackages
 
 ![CI 触发器](images/building-screen7.png)
 
-由于 CI 生成不会部署到用户，因此保留不同的版本控制编号以避免与其他 CD 生成混淆是一个好主意。 例如：
-`$(BuildDefinitionName)_0.0.$(DayOfYear)$(Rev:.r)`
+由于 CI 生成不会部署到用户，因此保留不同的版本控制编号以避免与其他 CD 生成混淆是一个好主意。 例如：`$(BuildDefinitionName)_0.0.$(DayOfYear)$(Rev:.r)`
 
 #### <a name="configure-a-custom-build-agent-for-unit-testing"></a>为单元测试配置自定义生成代理
 
@@ -171,15 +170,14 @@ UWP 单元测试在给定 appxrecipe 文件的上下文中执行，因此无法�
 $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp.UnitTest\x86\MyUWPApp.UnitTest_$(AppxVersion)_x86.appxrecipe
 ```
 
-若要运行测试，必须将控制台参数添加到 vstest.console.exe。 提供该参数的方法：**执行选项 => 其他控制台选项**。 请添加以下参数：
+若要运行测试，必须将控制台参数添加到 vstest.console.exe。 可以通过提供此参数：**执行选项 = > 其他控制台选项**。 请添加以下参数：
 
 ```ps
 /framework:FrameworkUap10
 ```
 
 >[!NOTE]
-> 使用以下命令从命令行本地执行单元测试：
-`"%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe"`
+> 使用以下命令从命令行中本地执行单元测试： `"%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe"`
 
 #### <a name="access-test-results"></a>访问测试结果
 
@@ -198,7 +196,7 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp.UnitTest\x86\MyUWPApp.Un
 3. 在生成步骤中，将 /p:AppxBundle=Never 添加到 MSBuild Arguments 属性，然后设置 Platform 属性。 ![配置平台](images/building-screen11.png)
 4. 在单元测试项目中，禁用 .NET 本机。
 
-为此，请打开项目文件，在项目属性中将 `UseDotNetNativeToolchain` 属性设置为 `false`。
+若要执行此操作，请打开项目文件，然后在项目属性中将 `UseDotNetNativeToolchain` 属性设置为 `false`。
 
 使用 .NET 本机工具链是工作流的重要部分，还是应用来测试版本生成。
 
@@ -215,7 +213,7 @@ MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "A
 出现此错误是因为，在解决方案级别上，哪个应用应出现在程序包中不明确。
 若要解决此问题，请打开每个项目文件，并在第一个 `<PropertyGroup>` 元素的末尾添加以下属性：
 
-|**项目**|**属性**|
+|**Project**|**属性**|
 |-------|----------|
 |应用|`<AppxBundle>Always</AppxBundle>`|
 |UnitTests|`<AppxBundle>Never</AppxBundle>`|
@@ -224,7 +222,7 @@ MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "A
 
 ## <a name="set-up-a-continuous-deployment-build-for-sideloading"></a>设置连续部署生成用于旁加载
 
-当此类型的生成完成时，用户可以从生成结果页的项目部分下载应用包文件。
+这种类型的生成完成后，用户可以从生成结果页的项目部分下载应用捆绑包文件。
 如果要通过创建更完整的分配来对应用进行 beta 测试，可使用 HockeyApp 服务。 此服务提供用于 beta 测试、用户分析和崩溃诊断的高级功能。
 
 ### <a name="applying-version-numbers-to-your-builds"></a>将版本号应用到生成
@@ -257,21 +255,20 @@ CI_MyUWPApp_1.1.2501.0
 
 ![更新版本](images/building-screen13.png)
 
+`$(AppxVersion)` 变量包含版本号。 可在其他生成步骤中使用该编号。
 
-            `$(AppxVersion)` 变量包含版本号。 可在其他生成步骤中使用该编号。
-
-#### <a name="optional-integrate-with-hockeyapp"></a>可选：与 HockeyApp 集成
+#### <a name="optional-integrate-with-hockeyapp"></a>可选：将 HockeyApp 与集成
 
 首先，安装 [HockeyApp](https://marketplace.visualstudio.com/items?itemName=ms.hockeyapp) Visual Studio 扩展。 你需要以 VSTS 管理员身份安装此扩展。
 
 ![hockey app](images/building-screen14.png)
 
-接下来，使用本指南配置 HockeyApp 连接：[如何将 HockeyApp 与 Visual Studio Team Services (VSTS) 或 Team Foundation Server (TFS) 一起使用。](https://support.hockeyapp.net/kb/third-party-bug-trackers-services-and-webhooks/how-to-use-hockeyapp-with-visual-studio-team-services-vsts-or-team-foundation-server-tfs)
+接下来，通过使用本指南中配置的 HockeyApp 连接：[如何使用 Visual Studio Team Services (VSTS) 或 Team Foundation Server (TFS) 使用 HockeyApp。](https://support.hockeyapp.net/kb/third-party-bug-trackers-services-and-webhooks/how-to-use-hockeyapp-with-visual-studio-team-services-vsts-or-team-foundation-server-tfs)
 可使用 Microsoft 帐户、社交媒体帐户或仅仅一个电子邮件地址设置 HockeyApp 帐户。 免费计划附带两个应用、一个所有者，并且没有数据限制。
 
-然后，你可以手动或通过上传现有应用包文件创建 HockeyApp 应用。 若要了解详细信息，请参阅[如何创建新应用](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)。
+然后，可以创建 HockeyApp 应用手动或通过上传现有的应用包文件。 若要了解详细信息，请参阅[如何创建新应用](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)。
 
-若要使用现有的应用包文件，添加一个生成步骤，并设置该生成步骤的 Binary File Path 参数。
+若要使用现有的应用包文件，添加生成步骤，并设置生成步骤的二进制文件路径参数。
 
 ![配置 hockey app](images/building-screen15.png)
 
@@ -281,17 +278,17 @@ CI_MyUWPApp_1.1.2501.0
 $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUWPApp_$(AppxVersion)_x86_x64_ARM.appxbundle
 ```
 
-尽管 HockeyApp 任务允许你指定符号文件的路径，它是与捆绑包将符号是最佳做法。
+虽然 HockeyApp 任务，您可以指定符号文件的路径，但它是包含与绑定符号的最佳做法。
 
 ## <a name="set-up-a-continuous-deployment-build-that-submits-a-package-to-the-store"></a>设置将程序包提交到 Microsoft Store 的连续部署生成
 
 要生成应用商店提交程序包，请在 Visual Studio 中使用应用商店关联向导将应用与应用商店关联起来。
 
-![关联到 Microsoft Store](images/building-screen16.png)
+![关联到应用商店](images/building-screen16.png)
 
 Microsoft Store 关联向导生成名为 Package.StoreAssociation.xml 的文件，该文件包含 Microsoft Store 关联信息。 如果你将源代码存储在公用存储库（如 GitHub）中，则此文件将包含该帐户的所有应用保留名称。 可在公开前排除或删除此文件。
 
-如果你没有访问用于发布该应用的合作伙伴中心帐户，你可以按照本文档中的说明：[为第三方生成应用？如何打包它们的应用商店应用](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97)。
+如果您无权访问用于发布应用程序的合作伙伴中心帐户，可以按照本文档中的说明进行操作：[第三方的参与方生成的应用程序？如何将其应用商店应用程序打包](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97)。
 
 然后你需要验证生成步骤是否包含以下参数：
 
@@ -299,15 +296,15 @@ Microsoft Store 关联向导生成名为 Package.StoreAssociation.xml 的文件�
 /p:UapAppxPackageBuildMode=StoreUpload
 ```
 
-这将生成可提交到应用商店上传文件。
+这将生成可以提交到商店的上传文件。
 
 #### <a name="configure-automatic-store-submission"></a>配置自动 Microsoft Store 提交
 
 对 Microsoft Store 使用 Visual Studio Team Services 扩展以便与 Microsoft Store API 集成，并将应用包发送到 Microsoft Store。
 
-你需要连接你的合作伙伴中心帐户与 Azure Active Directory (AD)，然后 AD 进行身份验证请求中创建一个应用。 可按照扩展页中的指南完成该操作。
+需要连接你的合作伙伴中心帐户与 Azure Active Directory (AD)，然后请求进行身份验证在 AD 中创建应用。 可按照扩展页中的指南完成该操作。
 
-后您已配置了扩展，你可以添加生成任务，并使用你的应用 ID 和上传文件的位置配置它。
+配置该扩展后，可以添加生成任务，并将其配置与你的应用 ID 和上传文件的位置。
 
 ![配置合作伙伴中心](images/building-screen17.png)
 
@@ -320,7 +317,7 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 你必须手动激活此生成。 可使用它更新现有应用，但无法将其用于首次提交到 Microsoft Store。 有关详细信息，请参阅[使用 Microsoft Store 服务创建和管理应用商店提交](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)。
 
-## <a name="best-practices"></a>最佳做法
+## <a name="best-practices"></a>最佳方案
 
 <span id="sideloading-best-practices"/>
 
@@ -328,18 +325,18 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 如果要分发应用而不将其发布到应用商店，则可将应用直接旁加载到设备，前提是这些设备信任用于对应用包签名的证书。
 
-使用 `Add-AppDevPackage.ps1` PowerShell 脚本安装应用。 此脚本将证书添加到在本地计算机的受信任的根证书部分，并将然后安装或更新的应用包文件。
+使用 `Add-AppDevPackage.ps1` PowerShell 脚本安装应用。 此脚本会将证书添加到本地计算机的受信任的根证书部分并将然后安装或更新应用包文件。
 
-#### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>使用 Windows10 周年更新旁加载应用
+#### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>使用 Windows 10 周年更新旁加载应用
 
-在 Windows 10 周年更新中，你可以双击应用包文件，并通过在对话框中选择安装按钮来安装你的应用。
+在 Windows 10 周年更新中，可以双击应用包文件，并通过在对话框中选择安装按钮安装您的应用程序。
 
 ![在 rs1 中旁加载](images/building-screen18.png)
 
 >[!NOTE]
 > 此方法不安装证书或关联的依赖项。
 
-如果你想要分发你从 VSTS 或 HockeyApp 之类的网站的 Windows 应用程序包，你将需要将该站点添加到你的浏览器中的受信任的站点的列表。 否则，Windows 将该文件标记为锁定。
+如果你想要分发 Windows 应用包从 VSTS 或 HockeyApp 等网站，您需要将该站点添加到你的浏览器中的受信任站点列表。 否则，Windows 将该文件标记为锁定。
 
 <span id="certificates-best-practices"/>
 
@@ -361,13 +358,13 @@ MakeCert /n publisherName /r /h 0 /eku "1.3.6.1.5.5.7.3.3,1.3.6.1.4.1.311.10.3.1
 
 向每个计算机角色提供以下证书：
 
-|**计算机**|**用途**|**证书**|**证书存储**|
+|**计算机**|**使用情况**|**Certificate**|**证书存储区**|
 |-----------|---------|---------------|---------------------|
 |开发人员/生成计算机|对生成签名|MyCert.PFX|当前用户/个人|
 |开发人员/生成计算机|运行|MyCert.cer|本地计算机/受信任人|
 |用户|运行|MyCert.cer|本地计算机/受信任人|
 
->注意：你还可以使用已经受用户信任的企业证书。
+>注意：此外可以使用企业证书已受信任的用户。
 
 #### <a name="sign-your-uwp-app"></a>为 UWP 应用签名
 
@@ -389,7 +386,7 @@ Visual Studio 和 MSBuild 为管理用于为应用签名的证书提供不同的
 
 ## <a name="related-topics"></a>相关主题
 
-- [为 Windows 生成 .NET 应用](https://www.visualstudio.com/docs/build/get-started/dot-net)
+- [为 Windows 构建.NET 应用程序](https://www.visualstudio.com/docs/build/get-started/dot-net)
 - [打包 UWP 应用](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
-- [在 Windows10 中旁加载 LOB 应用](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
-- [为程序包签名创建证书](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)
+- [在 Windows 10 中的旁加载 LOB 应用](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
+- [创建进行包签名证书](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)

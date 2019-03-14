@@ -1,5 +1,5 @@
 ---
-Description: Design your app so that it looks good and functions well on your television.
+Description: 设计你的应用，以使其在电视上外观良好且运行正常。
 title: 针对 Xbox 和电视进行设计
 ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
 label: Designing for Xbox and TV
@@ -14,21 +14,21 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 431b8912e43647bc2678aaab7efc9ec68b866d10
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117577"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616652"
 ---
 # <a name="designing-for-xbox-and-tv"></a>针对 Xbox 和电视进行设计
 
 设计你的通用 Windows 平台 (UWP) 应用，以便它在 Xbox One 和电视屏幕上外观良好且运行正常。
 
-在*10 英尺*体验中的 UWP 应用程序中的交互体验的指南，请参阅[游戏板和遥控器交互](../input/gamepad-and-remote-interactions.md)。
+请参阅[游戏手柄和远程控制交互](../input/gamepad-and-remote-interactions.md)交互有关的指南中的体验中的 UWP 应用程序*10 英尺*体验。
 
 ## <a name="overview"></a>概述
 
-通用 Windows 平台可使你在多台 Windows10 设备上创建令人愉快的体验。
+通用 Windows 平台可使你在多台 Windows 10 设备上创建令人愉快的体验。
 UWP 框架提供的大部分功能使应用能够在这些设备上使用相同的用户界面 (UI)，而无需附加工作。
 但是，定制和优化你的应用以使其在 Xbox One 和电视屏幕上良好工作需要考虑特殊的注意事项。
 
@@ -40,7 +40,7 @@ UWP 框架提供的大部分功能使应用能够在这些设备上使用相同�
 若要使你的应用非常适合 10 英尺体验，并不需要执行本文中的所有步骤，但了解这些步骤并为应用进行相应的决策可使 10 英尺体验更符合应用的特定需求。
 在将应用实际应用到 10 英尺环境中时，请考虑以下设计原则。
 
-### <a name="simple"></a>简单
+### <a name="simple"></a>Simple
 
 针对 10 英尺环境进行设计提出了一组独特的挑战。 分辨率和观看距离可能使人难以处理太多信息。
 尝试使设计保持干净，尽可能减少到最简单的组件。 电视上所显示的信息量应与你在移动电话上（而不是桌面上）看到的内容相当。
@@ -54,7 +54,7 @@ UWP 框架提供的大部分功能使应用能够在这些设备上使用相同�
 
 ![Xbox One 电影应用](images/designing-for-tv/xbox-movies-app.png)
 
-_**Microsoft 电影和电视中提供了屏幕截图中所示的所有电影。**_  
+_**Microsoft 电影和电视上提供了所有电影的屏幕截图中所示。**_  
 
 ### <a name="captivating"></a>引人入胜
 
@@ -66,24 +66,24 @@ _**Microsoft 电影和电视中提供了屏幕截图中所示的所有电影。*
 
 现在你已了解了适用于 10 英尺体验的良好 UWP 应用设计的原则，请阅读以下关于优化应用和实现出色用户体验的特定方法的概述。
 
-| 功能        | 说明           |
+| 功能        | 描述           |
 | -------------------------------------------------------------- |--------------------------------|
 | [UI 元素大小调整](#ui-element-sizing)  | 通用 Windows 平台使用[缩放和有效像素](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)来根据观看距离缩放 UI。 了解大小调整并在 UI 上应用它有助于针对 10 英尺环境优化你的应用。  |
 |  [电视安全区域](#tv-safe-area) | 默认情况下，UWP 将自动避免在电视不安全区域（接近屏幕边缘的区域）显示任何 UI。 但是，这将导致“箱中”效果，即 UI 看起来以宽屏显示。 为了使你的应用在电视上提供真正的沉浸式体验，你将要对其进行修改，以使其延伸到电视上的屏幕边缘（如果电视支持此功能）。 |
 | [颜色](#colors)  |  UWP 支持颜色主题，并且遵循系统主题的应用在 Xbox One 上将默认为**深色**。 如果你的应用具有特定的颜色主题，你应考虑到某些颜色不适用于电视，应避免使用它们。 |
 | [声音](../style/sound.md)    | 声音在 10 英尺体验中起到关键作用，它有助于使用户沉浸和向用户提供反馈。 当应用在 Xbox One 上运行时，UWP 提供为常用控件自动启用声音的功能。 了解有关内置于 UWP 的声音支持的详细信息，并了解如何充分利用它。    |
-| [UI 控件指南](#guidelines-for-ui-controls)  |  有多个 UI 控件可跨多台设备运行良好，但在电视上使用时有些特定的注意事项。 请阅读在针对 3 米体验进行设计时使用这些控件的一些最佳做法。 |
+| [UI 控件的指导原则](#guidelines-for-ui-controls)  |  有多个 UI 控件可跨多台设备运行良好，但在电视上使用时有些特定的注意事项。 请阅读在针对 10 英尺体验进行设计时使用这些控件的一些最佳做法。 |
 | [Xbox 的自定义视觉状态触发器](#custom-visual-state-trigger-for-xbox) | 若要针对 3 米体验定制 UWP 应用，我们建议你使用自定义*视觉状态触发器*，以在应用检测到它已在 Xbox 主机上启动时更改布局。 |
 
-除了上述设计和布局注意事项，有一些[游戏板和遥控器交互](../input/gamepad-and-remote-interactions.md)时生成你的应用，应考虑的优化。
+除了前面的设计和布局注意事项，有大量[游戏板和远程控制交互](../input/gamepad-and-remote-interactions.md)生成您的应用程序时应考虑的优化。
 
-| 功能        | 说明           |
+| 功能        | 描述           |
 | -------------------------------------------------------------- |--------------------------------|
-| [XY 焦点导航和交互](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | **XY 焦点导航**使用户可以在应用的 UI 中四处导航。 但是，这会限制用户只能向上、向下、向左和向右导航。 本部分概述了处理此情况的建议和其他注意事项。 |
-| [鼠标模式](../input/gamepad-and-remote-interactions.md#mouse-mode)|XY 焦点导航不可行，或甚至可能，对于某些类型的应用程序，如地图或绘制和绘制应用。 在这些情况下，**鼠标模式**可使用户与游戏板或遥控器，就像在电脑上的鼠标自由导航。|
-| [焦点视觉对象](../input/gamepad-and-remote-interactions.md#focus-visual)  | 焦点视觉对象是突出显示当前具有焦点的 UI 元素的边框。 这有助于用户快速确定他们是通过导航或与交互的 UI。  |
-| [焦点占用](../input/gamepad-and-remote-interactions.md#focus-engagement) | 焦点占用需要用户游戏板或遥控器上按**A/选择**按钮，当 UI 元素具有焦点时才能与之进行交互。 |
-| [硬件按钮](../input/gamepad-and-remote-interactions.md#hardware-buttons) | 游戏板和遥控器提供截然不同的按钮和配置。 |
+| [XY 焦点导航和交互](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | **XY 焦点导航**使用户能够浏览应用程序的 UI。 但是，这会限制用户只能向上、向下、向左和向右导航。 本部分概述了处理此情况的建议和其他注意事项。 |
+| [鼠标模式](../input/gamepad-and-remote-interactions.md#mouse-mode)|XY 焦点导航并不可行，或甚至可能，对于某些类型的映射或绘图和绘画应用等应用程序。 在这些情况下，**鼠标模式**可让用户自由导航与游戏板或远程控制，就像鼠标在 PC 上的。|
+| [焦点视觉对象](../input/gamepad-and-remote-interactions.md#focus-visual)  | 焦点视觉对象是突出显示了当前聚焦的 UI 元素的边框。 这有助于用户快速确定它们是在导航或与之交互的 UI。  |
+| [焦点 engagement](../input/gamepad-and-remote-interactions.md#focus-engagement) | 焦点 engagement 要求用户按**A/选择**游戏板或远程控制时的 UI 元素与之交互以便具有焦点的按钮。 |
+| [硬件按钮](../input/gamepad-and-remote-interactions.md#hardware-buttons) | 游戏板和远程控制提供非常不同的按钮和配置。 |
 
 > [!NOTE]
 > 本主题中的大多数代码段都是以 XAML /C# 编写的；但其原则和概念适用于所有 UWP 应用。 如果你在开发适用于 Xbox 的 HTML/JavaScript UWP 应用，请查看 GitHub 上的出色 [TVHelpers](https://github.com/Microsoft/TVHelpers/wiki) 库。
@@ -130,8 +130,8 @@ Xbox One 以 1080p（1920 x 1080 像素）呈现你的应用。 因此，当显�
 
 若要使你的 UI 在一段距离外可见，请使用以下经验法则：
 
-* 主要文本和阅读内容：最低 15 epx
-* 非关键文本和补充文本：最低 12 epx
+* 主要文本和读取内容：15 epx 最小值
+* 非关键的文本和补充内容：12 epx 最小值
 
 当在 UI 中使用较大的文本时，请选取一个没有过分限制屏幕空间的大小，以免占用其他内容可能填充的空间。
 
@@ -147,7 +147,7 @@ bool result =
     Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);
 ```
 
-`result` 将通知你是否已成功选择退出。
+`result` 将通知你是否您已成功选择退出。
 
 有关详细信息，包括 HTML/JavaScript 示例代码，请参阅[如何关闭缩放](../../xbox-apps/disable-scaling.md)。
 
@@ -241,7 +241,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) 是另一个通常定位在应用的一个或多个边缘附近的窗格示例，因此在电视上，它的背景应延伸到屏幕边缘。 它通常还包含一个**更多**按钮，由右侧的“...”表示，该按钮应保留在电视安全区域中。 以下是实现所需交互和视觉效果的一些不同策略。
 
-**选项 1**：将 `CommandBar` 背景色更改为透明或与页面背景相同的颜色：
+**选项 1**:更改`CommandBar`背景色为透明或与页面背景颜色相同：
 
 ```xml
 <CommandBar x:Name="topbar"
@@ -252,7 +252,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 执行此操作将使 `CommandBar` 看起来像与页面其余部分位于同一个背景顶部，因此背景将无缝流动到屏幕边缘。
 
-**选项 2**：添加一个背景矩形，该矩形的填充与 `CommandBar` 背景颜色相同，然后将该矩形置于 `CommandBar` 的下方并填充页面的其余部分：
+**选项 2**:添加背景和矩形的填充是相同的颜色作为`CommandBar`后台，并使其位于如下`CommandBar`和跨页的其余部分：
 
 ```xml
 <Rectangle VerticalAlignment="Top"
@@ -333,7 +333,7 @@ UWP 具有将焦点视觉对象保留在 [VisibleBounds](https://docs.microsoft.
 > [!NOTE]
 > 此代码片段专门用于 `ListView`；对于 `GridView` 样式，请将 [ControlTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) 和 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 的 [TargetType](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 属性设置为 `GridView`。
 
-有关如何进行更多的细化控制项放入视图，如果你的应用程序面向版本 1803年或更高版本，你可以使用[UIElement.BringIntoViewRequested 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)。 你可以将其放在[ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)的**ListView**/**GridView**可以捕捉到它之前内部**ScrollViewer**的作用，如下面的代码段中所示：
+有关如何项放入视图，如果应用程序面向 1803年版或更高版本，可以使用更细粒度控制[UIElement.BringIntoViewRequested 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)。 可以将其置于[ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)有关**ListView**/**GridView**捕获它之前的内部**ScrollViewer**执行，如以下代码片段中所示：
 
 ```xaml
 <GridView x:Name="gridView">
@@ -405,7 +405,7 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的**主�
 
 只要应用使用画笔资源（如 **SystemControlForegroundAccentBrush**）或颜色资源 (**SystemAccentColor**)，或者直接通过 [UIColorType.Accent*](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType) API 调用主题色，这些颜色就将替换为适用于 Xbox One 的主题色。 还通过与电脑和手机上相同的方式从系统中提取高对比度画笔颜色。
 
-要了解有关主题色的一般详细信息，请参阅[主题色](../style/color.md#accent-color)。
+若要了解有关主题色的一般详细信息，请参阅[主题色](../style/color.md#accent-color)。
 
 ### <a name="color-variance-among-tvs"></a>电视之间的颜色变化
 
@@ -440,7 +440,7 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的**主�
 
 导航窗格（也称为*汉堡菜单*）是 UWP 应用中常用的导航控件。 通常，该窗格内含多个从列表样式菜单中选择的选项，用于将用户转到其他页面。 此窗格通常一开始以折叠方式显示以节省空间，用户可以通过单击某个按钮来打开它。
 
-用户很容易通过鼠标和触摸操作访问导航窗格，但游戏板/遥控器将使这些窗格不易访问，因为用户必须导航到某个按钮才能打开窗格。 因此，好的做法是让**视图**按钮打开导航窗格，以及允许用户通过一直向左导航页面来打开该窗格。 可以在[编程焦点导航](../input/focus-navigation-programmatic.md#split-view-code-sample)文档中找到有关如何实现此设计模式的代码示例。 这样可以使用户轻松访问窗格内容。 有关导航窗格在不同的屏幕大小中的行为以及游戏板/遥控器导航的最佳做法的详细信息，请参阅[导航窗格](../controls-and-patterns/navigationview.md)。
+用户很容易通过鼠标和触摸操作访问导航窗格，但游戏板/遥控器将使这些窗格不易访问，因为用户必须导航到某个按钮才能打开窗格。 因此，好的做法是让“视图”按钮打开导航窗格，因此，好的做法是让**视图**按钮打开导航窗格，以及允许用户通过一直向左导航页面来打开该窗格。以及允许用户通过一直向左导航页面来打开该窗格。 可以在[编程焦点导航](../input/focus-navigation-programmatic.md#split-view-code-sample)文档中找到有关如何实现此设计模式的代码示例。 这样可以使用户轻松访问窗格内容。 有关导航窗格在不同的屏幕大小中的行为以及游戏板/遥控器导航的最佳做法的详细信息，请参阅[导航窗格](../controls-and-patterns/navigationview.md)。
 
 ### <a name="commandbar-labels"></a>CommandBar 标签
 
@@ -462,7 +462,7 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的**主�
 
 嵌套 UI 公开包含在容器 UI 元素内的可操作项，其中嵌套项和容器项可彼此独立捕获焦点。
 
-嵌套 UI 较适合某些输入类型，但对于依赖 XY 导航的游戏板和遥控器不一定适用。 请务必遵循本主题中的指南操作，确保你的 UI 已针对 10 英尺环境进行了优化，并且用户可以轻松地访问所有可交互元素。 一个常见解决方案是将嵌套的 UI 元素置于`ContextFlyout`。
+嵌套 UI 较适合某些输入类型，但对于依赖 XY 导航的游戏板和遥控器不一定适用。 请务必遵循本主题中的指南操作，确保你的 UI 已针对 10 英尺环境进行了优化，并且用户可以轻松地访问所有可交互元素。 一个常见的解决方案是将嵌套的 UI 元素中放置`ContextFlyout`。
 
 有关嵌套 UI 的详细信息，请参阅[列表项中的嵌套 UI](../controls-and-patterns/nested-ui.md)。
 
@@ -482,7 +482,7 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的**主�
 
 请访问[媒体播放](../controls-and-patterns/media-playback.md)，了解有关将媒体添加到应用的详细信息。
 
-> ![注意] `MediaPlayerElement` 仅在 Windows10 版本 1607 及更高版本中可用。 如果要针对早期版本的 Windows10 开发应用，你将需要改用 [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 上述建议也适用于 `MediaElement`，并且可通过相同方式访问 `TransportControls` 属性。
+> ![注意] `MediaPlayerElement` 仅在 Windows 10 版本 1607 及更高版本中可用。 如果要针对早期版本的 Windows 10 开发应用，你将需要改用 [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 上述建议也适用于 `MediaElement`，并且可通过相同方式访问 `TransportControls` 属性。
 
 ### <a name="search-experience"></a>搜索体验
 
@@ -560,12 +560,12 @@ bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily 
 
 然后，你可以遵循此检查对代码块中的 UI 进行相应调整。 
 
-## <a name="summary"></a>小结
+## <a name="summary"></a>摘要
 
 针对 10 英尺体验进行设计需要考虑特殊的注意事项，这些注意事项有别于针对任何其他平台进行设计。 当然直接将 UWP 应用移植到 Xbox One 也能使其工作，但它不一定已针对 10 英尺体验进行优化，并且可能导致用户沮丧。 按照本文中的指南进行操作可确保你的应用在电视上达到最佳状态。
 
 ## <a name="related-articles"></a>相关文章
 
-- [通用 Windows 平台 (UWP) 应用的设备基础版](index.md)
-- [游戏板和遥控器交互](../input/gamepad-and-remote-interactions.md)
-- [UWP 应用中的声音](../style/sound.md)
+- [通用 Windows 平台 (UWP) 应用的设备入门](index.md)
+- [游戏手柄和遥控器之间的交互](../input/gamepad-and-remote-interactions.md)
+- [在 UWP 应用中的声音](../style/sound.md)

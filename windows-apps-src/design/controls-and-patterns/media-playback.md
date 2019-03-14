@@ -1,5 +1,5 @@
 ---
-Description: The media player is used to view and listen to video, audio, and images.
+Description: 媒体播放器用于观看和收听视频、音频和图像。
 title: 媒体播放器
 ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: afda713e4a3d0ae30a4ee1ad9e9308d835062108
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037359"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640022"
 ---
 # <a name="media-player"></a>媒体播放器
 
@@ -24,7 +24,7 @@ ms.locfileid: "9037359"
 
 ![具有传输控件的媒体播放器元素](images/controls/mtc_double_video_inprod.png)
 
-> **重要 API**：[MediaPlayerElement 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)，[MediaTransportControls 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols)
+> **重要的 Api**:[MediaPlayerElement 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)， [MediaTransportControls 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols)
 
 
 > [!NOTE]
@@ -43,7 +43,7 @@ ms.locfileid: "9037359"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/MediaPlayerElement">MediaPlayerElement</a> 或 <a href="xamlcontrolsgallery:/item/MediaPlayer">MediaPlayer</a> 的实际应用。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -91,17 +91,17 @@ Windows 10 入门应用中的媒体播放器。
 
 [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 自动与系统媒体传输控件集成。 系统媒体传输控件是在按下硬件媒体键时弹出的控件，例如键盘上的媒体按钮。 有关详细信息，请参阅 [SystemMediaTransportControls](https://msdn.microsoft.com/library/windows/apps/dn278677)。
 
-> **注意**&nbsp;&nbsp; [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926) 不会与系统媒体传输控件自动集成，因此你必须自行连接它们。 有关详细信息，请参阅[系统媒体传输控件](https://msdn.microsoft.com/library/windows/apps/mt228338)。
+> **请注意**&nbsp; &nbsp; [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926)未自动集成的系统媒体传输控制，因此你必须自己对它们进行连接。 有关详细信息，请参阅[系统媒体传输控件](https://msdn.microsoft.com/library/windows/apps/mt228338)。
 
 
 ### <a name="set-the-media-source"></a>设置媒体源
 若要播放网络上的文件或嵌入在应用中的文件，请将 [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 属性设置为带有该文件路径的 [MediaSource](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx)。
 
-**提示**若要打开 internet 中的文件，你需要声明你的应用的清单 (Package.appxmanifest) 中的**Internet （客户端）** 功能。 有关声明功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/mt270968)。
+**提示**  若要从 internet 打开文件，您需要声明**Internet （客户端）** 应用程序的清单 (Package.appxmanifest) 中的功能。 有关声明功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
  
 
-此代码尝试将使用 XAML 定义的 [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 的 [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 属性设置为输入到 [TextBox](https://msdn.microsoft.com/library/windows/apps/br209683) 中的文件路径。
+此代码尝试将使用 XAML 定义的 [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 的 [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 属性设置为输入到 [TextBox](https://msdn.microsoft.com/library/windows/apps/br209683) 中的文件路径。
 
 ```xaml
 <TextBox x:Name="txtFilePath" Width="400"
@@ -169,11 +169,11 @@ private void LoadEmbeddedAppFile()
 ### <a name="open-local-media-files"></a>打开本地媒体文件
 若要打开本地系统上或 OneDrive 中的文件，你可以使用 [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847) 获取文件并使用 [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 设置媒体源，或者可以以编程方式访问用户媒体文件夹。
 
-如果你的应用需要在不进行用户交互的情况下访问**音乐**或**视频**文件夹（例如，如果要枚举用户集锦中的所有音乐或视频文件并将它们显示在你的应用中），则你需要声明**音乐库**和**视频库**功能。 有关详细信息，请参阅[音乐、图片和视频库中的文件和文件夹](https://msdn.microsoft.com/library/windows/apps/mt188703)。
+如果你的应用需要在不进行用户交互的情况下访问“音乐”或“视频”文件夹（例如，如果要枚举用户集锦中的所有音乐或视频文件并将它们显示在你的应用中），则你需要声明“音乐库”和“视频库”功能。 有关详细信息，请参阅[音乐、图片和视频库中的文件和文件夹](https://msdn.microsoft.com/library/windows/apps/mt188703)。
 
 [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847) 不需要特殊功能即可访问本地文件系统上的文件（例如用户的**音乐**或**视频**文件夹），因为用户对所访问的文件具有完全控制权。 从安全性和隐私性角度来看，最好尽量减少你的应用使用的功能数。
 
-**使用 FileOpenPicker 打开本地媒体**
+**若要打开本地媒体使用 FileOpenPicker**
 
 1.  调用 [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847) 以使用户选取媒体文件。
 
@@ -181,7 +181,7 @@ private void LoadEmbeddedAppFile()
 
 2.  使用 [SetSource](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) 将所选媒体文件设置为 [MediaPlayerElement.Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx)。
 
-    若要使用从 [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br227171) 返回的 [StorageFile](https://msdn.microsoft.com/library/windows/apps/br207847)，你需要在 [MediaSource](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.createfromstoragefile.aspx) 上调用 [CreateFromStorageFile](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) 方法，并将其设置为[MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 的 [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)。 然后对 [MediaPlayerElement.MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 调用 [Play](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.play.aspx) 以启动媒体。
+    若要使用从 [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847) 返回的 [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171)，你需要在 [MediaSource](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) 上调用 [CreateFromStorageFile](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.createfromstoragefile.aspx) 方法，并将其设置为[MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 的 [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx)。 然后对 [MediaPlayerElement.MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 调用 [Play](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.play.aspx) 以启动媒体。
 
 
 此示例演示如何使用 [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847) 选择文件并将该文件设置为 [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 的 [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx)。
@@ -246,7 +246,7 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 
 > **注意**&nbsp;&nbsp;如果 [MediaPlayerElement.IsFullWindow](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow.aspx) 设置为 true 并且正在播放媒体，将自动阻止屏幕停用。
 
-**使屏幕保持活动状态**
+**若要使屏幕保持活动状态**
 
 1.  创建一个全局 [DisplayRequest](https://msdn.microsoft.com/library/windows/apps/br241816) 变量。 将它初始化为 null。
 ```csharp
@@ -302,7 +302,7 @@ private DisplayRequest appDisplayRequest = null;
 [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 提供大量属性、方法和事件用于通过 [MediaPlayerElement.MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 属性控制音频和视频播放。 有关属性、方法和事件的完整列表，请参阅 [MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) 参考页。
 
 ### <a name="advanced-media-playback-scenarios"></a>高级媒体播放方案
-对于较复杂的媒体播放方案（如播放一个播放列表、在音频语言之间切换或创建自定义元数据轨），请将 [MediaPlayerElement.Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 设置为 [MediaPlaybackItem](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) 或 [MediaPlaybackList](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx)。 有关如何启用各种高级的媒体功能，请参阅的详细信息的[媒体播放](https://msdn.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource)页面。
+对于较复杂的媒体播放方案（如播放一个播放列表、在音频语言之间切换或创建自定义元数据轨），请将 [MediaPlayerElement.Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 设置为 [MediaPlaybackItem](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) 或 [MediaPlaybackList](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx)。 请参阅[媒体播放](https://msdn.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource)有关如何启用各种高级的媒体功能的详细信息页。
 
 ### <a name="enable-full-window-video-rendering"></a>启用全屏视频呈现
 
@@ -395,5 +395,5 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 ## <a name="related-articles"></a>相关文章
 
-- [UWP 应用的命令设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958433)
-- [UWP 应用的内容设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958434)
+- [适用于 UWP 应用的命令设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958433)
+- [适用于 UWP 应用的内容设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958434)

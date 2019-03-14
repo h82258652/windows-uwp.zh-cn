@@ -1,5 +1,5 @@
 ---
-Description: Basic accessibility info is often categorized into name, role, and value. This topic describes code to help your app expose the basic information that assistive technologies need.
+Description: 基本的辅助功能信息通常按照名称、角色和值进行分类。 本主题介绍了可帮助应用公开辅助技术所需的基本信息的代码。
 ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: 公开基本的辅助功能信息
 label: Expose basic accessibility information
@@ -9,17 +9,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8320b2b4abb5e49bbf589b360cc9cc2e0e033f79
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050327"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625942"
 ---
 # <a name="expose-basic-accessibility-information"></a>公开基本的辅助功能信息  
 
 
 
-基本的辅助功能信息通常按照名称、角色和值进行分类。 本主题介绍可帮助应用公开辅助技术所需的基本信息的代码。
+基本的辅助功能信息通常按照名称、角色和值进行分类。 本主题介绍了可帮助应用公开辅助技术所需的基本信息的代码。
 
 <span id="accessible_name"/>
 <span id="ACCESSIBLE_NAME"/>
@@ -29,10 +29,10 @@ ms.locfileid: "9050327"
 
 下表描述了如何为 XAML UI 中各种类型的元素定义或获取辅助名称。
 
-| 元素类型 | 说明 |
+| 元素类型 | 描述 |
 |--------------|-------------|
 | 静态文本 | 对于 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 和 [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) 元素，辅助名称是从可见（内部）文本自动确定的。 该元素中所有文本都用作其名称。 请参阅[根据内部文本命名](#name_from_inner_text)。 |
-| 图像 | XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 元素没有对 **img** 和类似元素的 HTML **alt** 属性的直接模拟。 使用 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 提供名称，或者使用描述技术。 请参阅[图像的辅助名称](#images)。 |
+| 映像 | XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 元素没有对 **img** 和类似元素的 HTML **alt** 属性的直接模拟。 使用 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 提供名称，或者使用描述技术。 请参阅[图像的辅助名称](#images)。 |
 | 窗体元素 | 窗体元素的辅助名称应当与针对该元素显示的标签同名。 请参阅[标签和 LabeledBy](#labels)。 |
 | 按钮和链接 | 默认情况下，按钮或链接的辅助名称基于可见文本，并使用相同的规则，如[根据内部文本命名](#name_from_inner_text)所述。 如果按钮中仅包含一个图像，请使用 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 提供与按钮的预期操作等效的仅文本操作。 |
 
@@ -64,7 +64,7 @@ UI 自动化框架包含树视图概念，在这里 UI 自动化客户端可以�
 ## <a name="name-from-inner-text"></a>根据内部文本命名  
 为了更便于将可见 UI 中已经存在的字符串用于辅助名称值，许多控件和其他 UI 元素都支持以下功能：基于元素中的内部文本或者内容属性的字符串值自动确定默认辅助名称。
 
-* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)、[**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)、[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 和 **RichTextBlock** 各自将 **Text** 属性的值提升为默认的辅助名称。
+* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)， [ **RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)， [**文本框**](https://msdn.microsoft.com/library/windows/apps/BR209683)和**RichTextBlock**每个升级的值**文本**属性作为默认可访问名称。
 * 任何 [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) 子类都使用迭代“ToString”技术在其 [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) 值中查找字符串，并将这些字符串提升为默认的辅助名称。
 
 > [!NOTE]
@@ -157,5 +157,5 @@ Windows 通过一个名为*数据绑定*的功能，支持许多可用来显示�
 ## <a name="related-topics"></a>相关主题  
 * [辅助功能](accessibility.md)
 * [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770)
-* [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML 可访问性示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [辅助功能测试](accessibility-testing.md)

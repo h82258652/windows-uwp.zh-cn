@@ -1,26 +1,26 @@
 ---
 ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: 帐户类型、位置和费用
-description: 我们在许多国家和地区提供了个人开发者帐户和公司开发者帐户。
+description: 我们在许多国家和地区都提供个人开发者帐户和公司开发者帐户。
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 开发者帐户, 个人, 公司, 业务, windows 10, uwp, developer account, individual, company, business
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fda6fc33ab82283047e4bdf4b78d21f78a577c9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045706"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601632"
 ---
 # <a name="account-types-locations-and-fees"></a>帐户类型、位置和费用
 
-Windows 在[合作伙伴中心](https://partner.microsoft.com/dashboard)产品/服务计划个人和公司帐户在许多[国家和地区](#developer-account-and-app-submission-markets)。 你将应用发布到应用商店和参与其他 Microsoft 计划访问权限的帐户提供的任何一种类型。
+Windows 程序中[合作伙伴中心](https://partner.microsoft.com/dashboard)提供了这两个个人和公司帐户中许多[国家和地区](#developer-account-and-app-submission-markets)。 任一类型的帐户可以访问要将应用发布到应用商店并参与其他 Microsoft 程序。
 
 > [!NOTE]
-> 当打开开发者帐户，请确保你想要使用的开发者帐户的 Microsoft 帐户登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。 稍后你将可以选择[向帐户添加其他用户](manage-account-users.md)。
+> 打开时开发人员帐户，请确保登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)你想要使用开发人员帐户的 Microsoft 帐户。 稍后你将可以选择[向帐户添加其他用户](manage-account-users.md)。
 
-在[开始注册过程](https://go.microsoft.com/fwlink/p/?LinkId=615100) 时，你需要选择是创建个人帐户还是公司帐户。 这两种类型的帐户均允许你提交应用、游戏、加载项和服务。
+在[开始注册过程](https://go.microsoft.com/fwlink/p/?LinkId=615100)时，你需要选择是创建个人帐户还是公司帐户。 这两种类型的帐户均允许你提交应用、游戏、加载项和服务。
 
 公司帐户用于组织和企业。 对于公司帐户，我们还需要进一步进行[验证](#account-verification)，以确保已向你授权为公司设置该帐户。 个人帐户通常适用于自行开发的单个开发人员，但你可以选择将其他帐户用户添加到任一帐户类型。
 
@@ -33,11 +33,11 @@ Windows 在[合作伙伴中心](https://partner.microsoft.com/dashboard)产品/�
 |--------------------|-----------------|
 | <ul><li>大约花费 19 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li><li>较短的帐户验证过程</li></ul> | <ul><li>大约花费 99 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li><li>需要更高的帐户验证</li><li>需要你的公司的真实性在其所在国家或地区得到确认</li><li>能够提交具有受限功能的应用（如 [Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)中所述）</li></ul> |
 
-公司帐户花费稍多，这主要是因为我们要采取一些额外步骤来确保你有权代表公司建立该帐户。 每个[应用商店策略](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)，应用使用某些功能，如访问财务帐户信息或需要通过身份验证才能访问主要功能 （不使用安全的专用第三方身份验证提供程序）仅发布的公司帐户。
+公司帐户花费稍多，这主要是因为我们要采取一些额外步骤来确保你有权代表公司建立该帐户。 每个[商店策略](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)、 使用某些功能，如那些访问财务应用程序的帐户信息或需要身份验证 （不使用安全的专用第三方访问的主要功能身份验证提供程序），仅可以由公司帐户发布。
 
 ## <a name="account-verification"></a>帐户验证
 
-完成注册过程后，帐户将进行验证过程。 对于个人帐户，我们将进行检查，确保其他公司没有在使用该发布者显示名称。 对于公司帐户，我们的验证合作伙伴 Dun & Bradstreet 将确认你是否有权为你所代表的公司创建帐户。 此过程可能历时几天到几周不等，并经常会致电贵公司（因此请确保你在填写注册表单时所填写的所有联系信息是最新的）。 直到进行验证，但前台，你可以[保留应用名称](create-your-app-by-reserving-a-name.md)才能提交从公司帐户的应用继续生成和测试应用，并且适用于准备你的提交。
+完成注册过程后，帐户将进行验证过程。 对于个人帐户，我们将进行检查，确保其他公司没有在使用该发布者显示名称。 对于公司帐户，我们的验证合作伙伴 Dun & Bradstreet 将确认你是否有权为你所代表的公司创建帐户。 此过程可能历时几天到几周不等，并经常会致电贵公司（因此请确保你在填写注册表单时所填写的所有联系信息是最新的）。 之前进行验证，但你可以在等待时不能提交应用中的公司帐户[应用程序名称保留](create-your-app-by-reserving-a-name.md)继续构建和测试应用程序，以及在准备您提交的工作。
 
 可在**帐户设置**页上查看验证状态。 
 
@@ -70,7 +70,7 @@ Windows 在[合作伙伴中心](https://partner.microsoft.com/dashboard)产品/�
 |  亚美尼亚 | 19 USD | 99 USD | USD 支付到银行 | 否 | 
 |  澳大利亚 | 21 AUD | 110 AUD | AUD 支付到银行 | 是 | 
 |  奥地利 | 14 EUR | 75 EUR | EUR 支付到银行 | 是 | 
-|  埃塞拜疆 | 19 USD | 99 USD | AZN 支付到银行 | 否 | 
+|  阿塞拜疆 | 19 USD | 99 USD | AZN 支付到银行 | 否 | 
 |  巴哈马 | 19 USD | 99 USD | 未付款 | 否 | 
 |  巴林 | 7 BHD | 38 BHD | BHD 支付到银行 | 否 | 
 |  孟加拉国 | 1468 BDT | 7600 BDT | BDT 支付到银行 | 否 | 
@@ -98,8 +98,8 @@ Windows 在[合作伙伴中心](https://partner.microsoft.com/dashboard)产品/�
 |  中国 | 116 CNY | 600 CNY | USD 支付到银行 | 是* | 
 |  哥伦比亚 | 36543 COP | 180,000 COP | USD 支付到银行 | 否 | 
 |  科摩罗 | 19 USD | 99 USD | USD 支付到银行 | 否 | 
-|  刚果（布） | 19 USD | 99 USD | XAF 支付到银行 | 否 | 
-|  刚果（金） | 19 USD | 99 USD | USD 支付到银行 | 否 | 
+|  刚果 | 19 USD | 99 USD | XAF 支付到银行 | 否 | 
+|  刚果（民主共和国） | 19 USD | 99 USD | USD 支付到银行 | 否 | 
 |  哥斯达黎加 | 9578 CRC | 49725 CRC | CRC 支付到银行 | 否 | 
 |  科特迪瓦 | 19 USD | 99 USD | XOF 支付到银行 | 否 | 
 |  克罗地亚 | 107 HRK | 500 HRK | HRK 支付到银行 | 否 | 
@@ -107,13 +107,13 @@ Windows 在[合作伙伴中心](https://partner.microsoft.com/dashboard)产品/�
 |  捷克共和国 | 365 CZK | 1720 CZK | CZK 支付到银行 | 是 | 
 |  丹麦 | 106 DKK | 530 DKK | DKK 支付到银行 | 是 | 
 |  吉布提 | 19 USD | 99 USD | 未付款 | 否 | 
-|  多米尼克 | 19 USD | 99 USD | XCD 支付到银行 | 否 | 
+|  多米尼加 | 19 USD | 99 USD | XCD 支付到银行 | 否 | 
 |  多米尼加共和国 | 19 USD | 99 USD | DOP 支付到银行 | 否 | 
 |  厄瓜多尔 | 19 USD | 99 USD | USD 支付到银行 | 否 | 
 |  埃及 | 133 EGP | 600 EGP | EGP 支付到银行 | 否 | 
 |  萨尔瓦多 | 19 USD | 99 USD | USD 支付到银行 | 否 | 
 |  赤道几内亚 | 19 USD | 99 USD | 未付款 | 否 | 
-|  厄立特里亚国 | 19 USD | 99 USD | USD 支付到银行 | 否 | 
+|  厄立特里亚 | 19 USD | 99 USD | USD 支付到银行 | 否 | 
 |  爱沙尼亚 | 14 EUR | 75 EUR | EUR 支付到银行 | 是 | 
 |  埃塞俄比亚 | 19 USD | 99 USD | ETB 支付到银行 | 否 | 
 |  法罗群岛 | 19 USD | 99 USD | 未付款 | 否 | 
@@ -151,7 +151,7 @@ Windows 在[合作伙伴中心](https://partner.microsoft.com/dashboard)产品/�
 |  基里巴斯 | 19 USD | 99 USD | 未付款 | 否 | 
 |  韩国 | 21216 KRW | 108,000 KRW | USD 支付到银行 | 否 | 
 |  科威特 | 5 KWD | 28 KWD | KWD 支付到银行 | 否 | 
-|  吉尔吉斯斯坦 | 19 USD | 99 USD | 未付款 | 否 | 
+|  吉尔吉斯坦 | 19 USD | 99 USD | 未付款 | 否 | 
 |  老挝 | 19 USD | 99 USD | USD 支付到银行 | 否 | 
 |  拉脱维亚 | 14 EUR | 75 EUR | EUR 支付到银行 | 否 | 
 |  黎巴嫩 | 28690 LBP | 149686 LBP | LBP 支付到银行 | 否 | 
@@ -162,7 +162,7 @@ Windows 在[合作伙伴中心](https://partner.microsoft.com/dashboard)产品/�
 |  立陶宛 | 14 EUR | 75 EUR | EUR 支付到银行 | 否 | 
 |  卢森堡 | 14 EUR | 75 EUR | EUR 支付到银行 | 是 | 
 |  澳门特别行政区 | 19 USD | 99 USD | 未付款 | 否 | 
-|  马其顿（前南斯拉夫共和国） | 19 USD | 99 USD | USD 支付到银行 | 否 | 
+|  马其顿语(马其顿共和国) | 19 USD | 99 USD | USD 支付到银行 | 否 | 
 |  马达加斯加 | 19 USD | 99 USD | USD 支付到银行 | 否 | 
 |  马拉维 | 19 USD | 99 USD | MWK 支付到银行 | 否 | 
 |  马来西亚 | 62 MYR | 300 MYR | USD 支付到银行 | 否 | 
@@ -170,7 +170,7 @@ Windows 在[合作伙伴中心](https://partner.microsoft.com/dashboard)产品/�
 |  马里 | 19 USD | 99 USD | XOF 支付到银行 | 否 | 
 |  马耳他 | 14 EUR | 75 EUR | EUR 支付到银行 | 是 | 
 |  马绍尔群岛 | 19 USD | 99 USD | 未付款 | 否 | 
-|  毛利塔尼亚 | 5681 MRO | 30046 MRO | 未付款 | 否 | 
+|  毛里塔尼亚 | 5681 MRO | 30046 MRO | 未付款 | 否 | 
 |  毛里求斯 | 19 USD | 99 USD | MUR 支付到银行 | 否 | 
 |  墨西哥 | 247 MXN | 1140 MXN | MXN 支付到银行 | 是 | 
 |  密克罗尼西亚 | 19 USD | 99 USD | 未付款 | 否 | 
@@ -252,5 +252,5 @@ Windows 在[合作伙伴中心](https://partner.microsoft.com/dashboard)产品/�
 |  赞比亚 | 19 USD | 99 USD | ZMK 支付到银行 | 否 | 
 |  津巴布韦 | 19 USD | 99 USD | USD 支付到银行 | 否 |
 
-\* 可以在此市场中使用 PayPal 作为付款帐户的付款方式，但不能使用此付款方式支付开发者帐户注册费。
+\* PayPal 可以用作付款方式的这个市场中的付款帐户，但不能用于支付开发人员帐户的注册费。
 
