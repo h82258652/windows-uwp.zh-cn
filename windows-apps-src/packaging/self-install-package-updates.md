@@ -1,21 +1,21 @@
 ---
 ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
 title: 从 Microsoft Store 下载并安装程序包更新
-description: 了解如何将标记为必需合作伙伴中心中的程序包和下载并安装程序包更新在应用中编写代码。
+description: 了解如何将标记为必需在合作伙伴中心中的包，并下载并安装程序包更新在应用中编写代码。
 ms.date: 04/04/2018
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e73452cdcb02798d4ebd225b48272ab77c40fef9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934562"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604442"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>从 Microsoft Store 下载并安装程序包更新
 
-从 Windows10 版本 1607 开始，你可以使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间中 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 类的方法，以编程方式从 Microsoft Store 检查当前应用的程序包更新，下载并安装更新的程序包。 你还可以查询的程序包，你在合作伙伴中心中已标记为必需，并在安装必需更新前禁用应用中的功能。
+从 Windows 10 版本 1607 开始，你可以使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间中 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 类的方法，以编程方式从 Microsoft Store 检查当前应用的程序包更新，下载并安装更新的程序包。 您还可以查询包在合作伙伴中心已标记为必需，强制更新安装之前，应用程序中禁用功能。
 
 Windows 10 版本 1803 中引入的其他 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 方法让你能够无提示（不向用户显示通知 UI）下载和安装程序包更新，卸载[可选包](optional-packages.md)和获取有关你的应用的下载和安装队列中的程序包相关信息。
 
@@ -193,14 +193,14 @@ private async Task InstallUpdate(IReadOnlyList<StorePackageUpdate> storePackageU
 
 ## <a name="mandatory-package-updates"></a>必需程序包更新
 
-当为面向 Windows 10 版本 1607年或更高版本的应用在合作伙伴中心上创建程序包提交时你可以[将标记为必需程序包](../publish/upload-app-packages.md#mandatory-update)日期和时间变为必需的。 当设置此属性，并且你的应用发现有程序包更新可用时，你的应用可以确定该更新包是否为必需，并在安装更新前更改其行为（例如你的应用可以禁用功能）。
+为面向 Windows 10，版本 1607年或更高版本的应用在合作伙伴中心上创建包提交时你可以[将标记为必需包](../publish/upload-app-packages.md#mandatory-update)以及日期和时间在其在强制实施。 当设置此属性，并且你的应用发现有程序包更新可用时，你的应用可以确定该更新包是否为必需，并在安装更新前更改其行为（例如你的应用可以禁用功能）。
 
 > [!NOTE]
 > Microsoft 不强制程序包更新处于必需状态，并且操作系统不提供向用户指示必须安装必需应用更新的 UI。 开发人员旨在使用必需设置通过其自己的代码强制执行必需的应用更新。  
 
 若要将软件包提交标记为必需：
 
-1. 登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)并导航到你的应用的概述页面。
+1. 登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)并导航到您的应用程序的概述页。
 2. 单击包含要成为必需的程序包更新的提交名称。
 3. 导航到提交的**程序包**页面。 在此页面底部附近，选择**使此更新为必需**，然后选择该程序包更新变为必需的日期和时间。 此选项适用于提交中的所有 UWP 程序包。
 
@@ -463,4 +463,4 @@ private void StoreItem_StatusChanged(StoreQueueItem sender, object args)
 
 ## <a name="related-topics"></a>相关主题
 
-* [可选包和相关集创作](optional-packages.md)
+* [可选包和相关的一组创作](optional-packages.md)

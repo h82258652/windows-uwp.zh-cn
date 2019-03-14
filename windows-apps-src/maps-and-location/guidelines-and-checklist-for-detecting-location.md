@@ -1,5 +1,5 @@
 ---
-Description: This topic describes performance guidelines for apps that require access to a user's location.
+Description: 本主题描述需要访问用户位置信息的应用的性能指南。
 title: 位置感知应用指南
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 ms.date: 02/08/2017
@@ -7,20 +7,20 @@ ms.topic: article
 keywords: windows 10, uwp, 位置, 地图, 地理位置
 ms.localizationpriority: medium
 ms.openlocfilehash: 723b1b12a6bbfb572c9aaacf66c97541bf70f72d
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114523"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624472"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>位置感知应用指南
 
 
 
 
-**重要的 API**
+**重要的 Api**
 
--   [**地理位置**](https://msdn.microsoft.com/library/windows/apps/br225603)
+-   [**Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603)
 -   [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)
 
 本主题描述需要访问用户位置信息的应用的性能指南。
@@ -30,11 +30,11 @@ ms.locfileid: "9114523"
 
 -   仅在应用需要位置数据时开始使用位置对象。
 
-    在访问用户的位置之前调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)。 此时，你的应用必须在前台，并且 **RequestAccessAsync** 必须从 UI 线程中进行调用。 除非用户向你的应用授予访问其位置的权限，否则你的应用将无法访问位置数据。
+    在访问用户的位置之前调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)。 此时，你的应用必须位于前台，并且 **RequestAccessAsync** 必须从 UI 线程中进行调用。 除非用户向你的应用授予访问其位置的权限，否则你的应用将无法访问位置数据。
 
 -   如果位置信息对于你的应用来说并非必要，则在用户尝试完成需要该信息的任务之前不要访问它。 例如，如果社交网络应用有一个“使用位置信息登记”按钮，在用户单击该按钮之前，该应用不应该访问位置信息。 如果你的应用主要功能要求立即访问位置信息，你可以这样做。
 
--   [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象必须首先在前台应用的主 UI 线程上使用，以便向用户触发同意提示。 首次使用 **Geolocator** 可能会首次调用 [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536)，或首次向处理程序注册 [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件。
+-   [  **Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象必须首先在前台应用的主 UI 线程上使用，以便向用户触发同意提示。 首次使用 **Geolocator** 可能会首次调用 [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536)，或首次向处理程序注册 [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件。
 
 -   告诉用户使用位置数据的方式。
 -   提供 UI，使用户可以手动刷新他们的位置信息。
@@ -45,13 +45,13 @@ ms.locfileid: "9114523"
 
 -   当用户禁用对位置数据的访问时，清除缓存的位置信息并释放 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)。
 
-    如果用户通过“设置”关闭对位置信息的访问，则释放 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象。 对于任何位置 API 调用，该应用都将收到 **ACCESS\_DENIED** 结果。 如果你的应用保存或缓存了位置数据，则在用户吊销对位置信息的访问时需清除缓存的所有数据。 提供另一种在位置数据无法通过定位服务提供时手动输入位置信息的方法。
+    如果用户通过“设置”关闭对位置信息的访问，则释放 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象。 应用随后会收到**访问\_DENIED**的任何位置 API 调用的结果。 如果你的应用保存或缓存了位置数据，则在用户吊销对位置信息的访问时需清除缓存的所有数据。 提供另一种在位置数据无法通过定位服务提供时手动输入位置信息的方法。
 
--   提供用于重新启用定位服务的 UI。 例如，提供重新实例化[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)对象，并尝试再次获取位置信息的刷新按钮。
+-   提供用于重新启用定位服务的 UI。 例如，提供重新实例化的刷新按钮[**定位**](https://msdn.microsoft.com/library/windows/apps/br225534)对象，并尝试再次获取位置信息。
 
     使应用提供用于重新启用定位服务的 UI：
 
-    -   如果用户在禁用位置访问之后重新启用位置访问，则不会通知应用。 [**status**](https://msdn.microsoft.com/library/windows/apps/br225601) 属性不会更改，并且没有 [**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件。 你的应用应该创建新的 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象并调用 [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536)，以尝试获取更新后的位置数据或重新订阅 [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件。 如果之后状态指示已重新启用位置，请清除之前应用显示的所有用于通知用户定位服务已被禁用的 UI，并对新状态执行相应的响应。
+    -   如果用户在禁用位置访问之后重新启用位置访问，则不会通知应用。 [  **status**](https://msdn.microsoft.com/library/windows/apps/br225601) 属性不会更改，并且没有 [**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件。 你的应用应该创建新的 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象并调用 [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536)，以尝试获取更新后的位置数据或重新订阅 [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件。 如果之后状态指示已重新启用位置，请清除之前应用显示的所有用于通知用户定位服务已被禁用的 UI，并对新状态执行相应的响应。
     -   当用户明确地尝试使用需要位置信息的功能时，或者在其他任何适当情况下，你的应用也应该在激活后重新尝试获取位置数据。
 
 **性能**
@@ -75,7 +75,7 @@ ms.locfileid: "9114523"
 
         提供位置数据的设备可跟踪不同应用所请求的报告间隔，并以请求的最小间隔提供数据报告。 这样，对准确性要求最高的应用就会接收到其所需的数据。 因此，如果其他应用请求的更新频率更高，则定位程序可能以高于你的应用所请求的频率生成更新。
 
-        **注意**不保证位置源会针对给定的报告间隔兑现请求。 并非所有定位程序设备都跟踪报告间隔，但你仍然应该为那些进行跟踪的设备提供报告间隔。
+        **请注意**  它并不保证定位源将为给定的报表时间间隔内接受此请求。 并非所有定位程序设备都跟踪报告间隔，但你仍然应该为那些进行跟踪的设备提供报告间隔。
 
     -   为了帮助节省电耗，请设置 [**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) 属性，以向位置平台指示你的应用是否需要高精度的数据。 如果应用都不需要高精度的数据，则系统可以不打开 GPS 提供程序以节省电耗。
 
@@ -87,7 +87,7 @@ ms.locfileid: "9114523"
         例如：
 
         -   如果应用要获取位置用于广告调整、天气、新闻，5000 米的精度一般足够。
-        -   如果你的应用显示附近的邻居中的交易，300 米的精度，最好通常提供结果。
+        -   如果您的应用程序显示附近的邻域中的交易，精确到 300 计量是通常很有必要提供结果。
         -   如果用户查找附件餐厅的推荐，我们可能要获取一个街区内的位置，因此 100 米的精度足够了。
         -   如果用户试图共享他的位置，应用应该请求大约 10 米的精度。
     -   如果应用有特定的精度要求，请使用 [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) 属性。 例如，导航应用应该使用 **Geocoordinate.accuracy** 属性来确定可用的位置数据是否符合应用的要求。
@@ -101,7 +101,7 @@ ms.locfileid: "9114523"
     -   原始传感器包括加速计、陀螺仪和磁力计。
     -   融合传感器包括方向、测斜仪和指南针。 融合传感器从原始传感器的组合中获取数据。
 
-    Windows 运行时  API 可以访问除磁力计之外的所有传感器。 融合传感器比原始传感器更准确和稳定，但能耗也较多。 应针对相应目的使用正确的传感器。 有关详细信息，请参阅[传感器](https://msdn.microsoft.com/library/windows/apps/mt187358)。
+    Windows 运行时 Api 可以访问所有这些传感器磁力仪除外。 融合传感器比原始传感器更准确和稳定，但能耗也较多。 应针对相应目的使用正确的传感器。 有关详细信息，请参阅[传感器](https://msdn.microsoft.com/library/windows/apps/mt187358)。
 
 **连接待机**
 - 当电脑处于连接待机状态时，始终可以实例化 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象。 但是，**Geolocator** 对象将找不到任何可聚合的传感器，因此对 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 的调用将在 7 秒后超时，[**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件侦听器将永远不会被调用，而 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件侦听器将在 **NoData** 状态下被调用一次。
@@ -111,11 +111,11 @@ ms.locfileid: "9114523"
 
 ### <a name="detecting-changes-in-location-settings"></a>检测定位设置中的更改
 
-用户可以使用“设置”**** 应用中的“位置隐私设置”**** 来关闭位置功能。
+用户可以使用“设置”应用中的“位置隐私设置”来关闭位置功能。
 
 -   若要检测用户何时禁用或重新启用定位服务：
     -   处理 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件。 如果用户关闭定位服务，则 **StatusChanged** 事件参数的 [**Status**](https://msdn.microsoft.com/library/windows/apps/br225601) 属性将拥有值 **Disabled**。
-    -   检查从 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 返回的错误代码。 如果用户禁用了定位服务，则调用 **GetGeopositionAsync** 将失败，且返回 **ACCESS\_DENIED** 错误，并且 [**LocationStatus**](https://msdn.microsoft.com/library/windows/apps/br225538) 属性的值为 **Disabled**。
+    -   检查从 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 返回的错误代码。 如果用户已禁用位置服务，则调用**GetGeopositionAsync**因**访问\_DENIED**错误并[ **LocationStatus**](https://msdn.microsoft.com/library/windows/apps/br225538)属性具有值**禁用**。
 -   如果位置数据对于你的应用至关重要（例如，地图应用），请务必执行以下操作：
     -   如果用户位置发生更改，则处理 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件以获取更新。
     -   按照上述步骤处理 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件，以检测定位设置中的更改。
@@ -155,17 +155,17 @@ ms.locfileid: "9114523"
 
 用户的地理位置属于个人身份信息 (PII)。 下列网站提供保护用户隐私的指南。
 
--   [Microsoft 隐私]( https://go.microsoft.com/fwlink/p/?LinkId=259692)
+-   [Microsoft Privacy]( https://go.microsoft.com/fwlink/p/?LinkId=259692)
 
 <!--For more info, see [Guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md).-->
 
 ## <a name="related-topics"></a>相关主题
 
-* [设置地理围栏](https://msdn.microsoft.com/library/windows/apps/mt219702)
-* [获取当前位置](https://msdn.microsoft.com/library/windows/apps/mt219698)
-* [使用 2D、3D 和街景视图方式显示地图](https://msdn.microsoft.com/library/windows/apps/mt219695)
+* [设置地域隔离区](https://msdn.microsoft.com/library/windows/apps/mt219702)
+* [获取当前的位置](https://msdn.microsoft.com/library/windows/apps/mt219698)
+* [显示映射使用二维、 三维和 Streetside 视图](https://msdn.microsoft.com/library/windows/apps/mt219695)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [UWP 位置示例（地理位置）](https://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP 位置示例 （地理位置）](https://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  
