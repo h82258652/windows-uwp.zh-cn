@@ -1,12 +1,18 @@
 ---
 description: 了解如何依据 UWP 样式指南使用颜色、版式和图标定义你的 UWP 应用的个性。
-keywords: 'uwp 样式指南, 设计指导, 版式, 动作, 声音, 动画, 应用开发'
+keywords: uwp 样式指南, 设计指导, 版式, 动作, 声音, 动画, 应用开发
 title: 适用于 UWP 应用的样式
 ms.date: 08/10/2017
 ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
+ms.openlocfilehash: 1d313e35b7d1ab3ebe72bd3a073323fe8782098a
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582456"
 ---
 # <a name="style-for-uwp-apps"></a>适用于 UWP 应用的样式
 

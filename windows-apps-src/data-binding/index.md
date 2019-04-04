@@ -4,8 +4,14 @@ title: 数据绑定
 description: 数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'windows 10, uwp'
+keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: eb9283e336cb13d733098c139edc36d1216b2727
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582371"
 ---
 # <a name="data-binding"></a>数据绑定
 

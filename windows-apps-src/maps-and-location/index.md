@@ -4,8 +4,14 @@ description: 本部分介绍如何在应用中显示地图、使用地图服务�
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'windows 10, uwp, 地图, 位置, 地图服务'
+keywords: windows 10, uwp, 地图, 位置, 地图服务
 ms.localizationpriority: medium
+ms.openlocfilehash: 3482370719a658f303964204661f1fb5d69ae5b4
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582141"
 ---
 # <a name="maps-and-location-overview"></a>地图和位置概述
 

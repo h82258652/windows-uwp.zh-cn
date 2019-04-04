@@ -6,6 +6,12 @@ title: Windows 文档
 description: 找到开发人员、硬件以及 IT 专业人员的相关文档，以帮助你构建和维护你的 Windows 解决方案。
 ms.technology: hub
 localizationpriority: medium
+ms.openlocfilehash: 1926f38d4b7772488e086395d4e28545b1f85a81
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582382"
 ---
 <div id="main" class="v2">
   <div class="container">

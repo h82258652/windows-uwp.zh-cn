@@ -1,11 +1,17 @@
 ---
 title: 开发教育应用。
-description: "本部分介绍可供你针对 Windows\_10 平台编写教育应用的通用 Window 应用资源。"
+description: 本部分介绍可供你针对 Windows 10 平台编写教育应用的通用 Window 应用资源。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'windows 10, uwp, 教育版'
+keywords: windows 10, uwp, 教育版
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
+ms.openlocfilehash: 7696cd785b4a8720f6eefb7bc897d13ffb0c7115
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582355"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>开发通用 Windows 应用教育版
 ![捕获测试应用的屏幕截图](images/take-a-test-screen-small.png)

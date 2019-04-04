@@ -4,8 +4,14 @@ description: 此路线图提供了适用于 Windows 10 和通用 Windows 平台 
 title: 企业
 ms.date: 08/30/2018
 ms.topic: article
-keywords: 'windows 10, uwp'
+keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: fae4d5b57ac5cfb5c47fca1a2f3476cd16a56534
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582132"
 ---
 # <a name="enterprise"></a>企业
 

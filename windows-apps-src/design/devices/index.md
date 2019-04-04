@@ -4,10 +4,16 @@ title: 通用 Windows 平台 (UWP) 应用的设备基础版
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
-keywords: '设备, 输入, 交互'
+keywords: 设备, 输入, 交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
+ms.openlocfilehash: 127c01321c0341e7125e8c6da955c789c4c65f2f
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582406"
 ---
 #  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>通用 Windows 平台 (UWP) 应用的设备基础版
 

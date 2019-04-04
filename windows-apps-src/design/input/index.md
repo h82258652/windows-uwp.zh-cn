@@ -1,7 +1,7 @@
 ---
 description: 针对笔、Surface Dial 和其他类型的输入优化应用。
 title: 输入和交互
-keywords: '应用输入, 自定义 UWP 应用程序'
+keywords: 应用输入, 自定义 UWP 应用程序
 label: Input and interactions
 layout: LandingPage
 template: detail.hbs
@@ -9,6 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
+ms.openlocfilehash: 4f66d808cafcc6fba89cebde352d191335068925
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582108"
 ---
 # <a name="input-and-interactions"></a>输入和交互
 

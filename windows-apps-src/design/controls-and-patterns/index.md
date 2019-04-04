@@ -1,13 +1,19 @@
 ---
 description: 获取有关向 UWP 应用添加控件 &amp; 模式的设计指南和编码说明。 为你找到了超过 45 种功能强大的控件，这些控件可与你的应用结合使用。
 title: UWP 控件和模式 - Windows 应用开发
-keywords: 'UWP 控件, 用户界面, 应用控件'
+keywords: UWP 控件, 用户界面, 应用控件
 label: Controls & patterns
 template: detail.hbs
 ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
+ms.openlocfilehash: 417f9b72c5708a85fa570476de2829bf6217c165
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582125"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>UWP 应用的控件和模式
  

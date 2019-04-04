@@ -4,8 +4,14 @@ title: 数据访问
 description: 本部分讨论在专用数据库中存储设备上的数据，并在通用 Windows 平台 (UWP) 应用中使用对象关系映射。
 ms.date: 11/13/2017
 ms.topic: article
-keywords: 'windows 10, uwp, 数据, 数据库, 关系, 表, sqlite'
+keywords: windows 10, uwp, 数据, 数据库, 关系, 表, sqlite
 ms.localizationpriority: medium
+ms.openlocfilehash: eb5adbdd3ae12d039d934e8d0cbe468ae5c1187c
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582302"
 ---
 # <a name="data-access"></a>数据访问
 

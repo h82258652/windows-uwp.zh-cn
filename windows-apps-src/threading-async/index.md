@@ -4,8 +4,14 @@ title: 线程和异步编程
 description: 线程和异步编程可让你的应用在并行线程中以异步方式完成工作。
 ms.date: 05/14/2018
 ms.topic: article
-keywords: 'windows 10, uwp, 异步, threads, 线程'
+keywords: windows 10, uwp, 异步, threads, 线程
 ms.localizationpriority: medium
+ms.openlocfilehash: 22c151b90be30b39da7decd9a0ce3109e29b7fb7
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582130"
 ---
 # <a name="threading-and-async-programming"></a>线程和异步编程
 线程和异步编程可让你的应用在并行线程中以异步方式完成工作。

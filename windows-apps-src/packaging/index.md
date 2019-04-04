@@ -4,8 +4,14 @@ title: 打包应用
 description: 本部分包含或链接到有关打包通用 Windows 平台 (UWP) 应用的文章。
 ms.date: 09/30/2018
 ms.topic: article
-keywords: 'windows 10, uwp, 打包'
+keywords: windows 10, uwp, 打包
 ms.localizationpriority: medium
+ms.openlocfilehash: 04736c9ac4de5adf162d32191ff30f7a981d6a6f
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582424"
 ---
 # <a name="packaging-apps"></a>打包应用
 

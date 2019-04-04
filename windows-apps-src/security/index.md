@@ -4,8 +4,14 @@ description: 本部分包含有关为 Windows 10 生成安全的通用 Windows �
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'windows 10, uwp, 安全性'
+keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
+ms.openlocfilehash: 88e45740f457086a925674b37baacc8fc7b4e9b6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582423"
 ---
 # <a name="security"></a>安全性
 
