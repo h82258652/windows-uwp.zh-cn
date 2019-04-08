@@ -94,7 +94,7 @@ void MyProject::MainPage::Grid_KeyUp(
 
 所有键盘事件对事件数据均使用 [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072)，而且 **KeyRoutedEventArgs** 包含以下属性：
 
--   [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074)
+-   [**密钥**](https://msdn.microsoft.com/library/windows/apps/hh943074)
 -   [**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075)
 -   [**处理**](https://msdn.microsoft.com/library/windows/apps/hh943073)
 -   [**OriginalSource** ](https://msdn.microsoft.com/library/windows/apps/br208810) (继承自[ **RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809))

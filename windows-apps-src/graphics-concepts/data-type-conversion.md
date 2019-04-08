@@ -235,7 +235,7 @@ ms.locfileid: "57590572"
 <td align="left">浮点数</td>
 <td align="left"><p>假设转换为浮动的特定固定点表示形式不包含超过总共 24 位的信息，则小数部分的信息不超过 23 位。 假设给定的固定点数 fxp 为 i.f 形式（i 为整数位，f 为小数位）。 转换为浮点的操作与以下伪代码类似。</p>
 <p>浮点结果 = (float)(fxp &gt;&gt; f) + // 提取整数</p>
-((float)(fxp &amp; (2<sup>f</sup> - 1)) / (2<sup>f</sup>)); // extract fraction</td>
+((float) (fxp &amp; (2<sup>f</sup> - 1)) / (2<sup>f</sup>)); / / 提取分数</td>
 </tr>
 </tbody>
 </table>
@@ -245,7 +245,7 @@ ms.locfileid: "57590572"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[Appendices](appendix.md)
+[附录](appendix.md)
 
  
 

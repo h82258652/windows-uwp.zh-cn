@@ -8,7 +8,7 @@ keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: af8e45e13eb89185e346c3c8e8cd5303da399471
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57658732"
@@ -91,15 +91,15 @@ ms.locfileid: "57658732"
 ## <a name="related-topics"></a>相关主题
 
 * [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
-* [创建并注册进程外后台任务](create-and-register-a-background-task.md)
-* [声明应用程序清单中的后台任务](declare-background-tasks-in-the-application-manifest.md)
+* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
+* [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [在背景中播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
-* [处理已取消的后台任务](handle-a-cancelled-background-task.md)
-* [监视器后台任务进度和完成](monitor-background-task-progress-and-completion.md)
+* [处理取消的后台任务](handle-a-cancelled-background-task.md)
+* [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 * [注册后台任务](register-a-background-task.md)
-* [响应通过后台任务的系统事件](respond-to-system-events-with-background-tasks.md)
-* [设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)
-* [更新动态磁贴通过后台任务](update-a-live-tile-from-a-background-task.md)
+* [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
+* [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
+* [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
 * [使用维护触发器](use-a-maintenance-trigger.md)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
 * [调试后台任务](debug-a-background-task.md)

@@ -20,7 +20,7 @@ ms.locfileid: "57593832"
 
 了解如何选择要用于语音识别的安装语言。
 
-> **重要的 Api**:[**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)， [ **SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)， [**语言**](https://msdn.microsoft.com/library/windows/apps/br206804)
+> **重要的 API**：[**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)， [ **SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)， [**语言**](https://msdn.microsoft.com/library/windows/apps/br206804)
 
 
 此处，我们枚举了已安装在系统上的语言、标识了默认语言，并选择了不同的语言以供识别。

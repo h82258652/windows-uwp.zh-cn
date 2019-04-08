@@ -135,4 +135,4 @@ de/images/contrast-standard/logo.jpg
 * [NamedResource.ResolveAll](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live)
 
 ## <a name="related-topics"></a>相关主题
-* [编译手动与 MakePri.exe 的资源](compile-resources-manually-with-makepri.md)
+* [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)

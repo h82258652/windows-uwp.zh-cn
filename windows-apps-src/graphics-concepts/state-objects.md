@@ -62,7 +62,7 @@ ms.locfileid: "57596082"
 
 [图形管道](graphics-pipeline.md)
 
-[Views](views.md)
+[视图](views.md)
 
  
 

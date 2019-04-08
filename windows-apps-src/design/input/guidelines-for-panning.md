@@ -20,7 +20,7 @@ ms.locfileid: "57625112"
 
 平移或滚动允许用户在单个视图中导航，以显示在视口内不适合的视图内容。 示例视图包括计算机的文件夹结构、文档库或相册。
 
-> **重要的 Api**:[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **重要的 API**：[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项

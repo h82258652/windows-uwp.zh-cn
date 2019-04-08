@@ -49,7 +49,7 @@ ms.locfileid: "57662842"
 | applicationId | 字符串 | [Store ID](in-app-purchases-and-trials.md#store-ids)想检索 insights 数据的应用。 如果不指定此参数，响应正文将包含已注册到你的帐户的所有应用的 insights 数据。  |  否  |
 | startDate | 日期 | 开始 insights 数据的日期范围内要检索的日期。 默认值为当前日期之前 30 天。 |  否  |
 | endDate | 日期 | 最终的 insights 数据的日期范围内要检索的日期。 默认值为当前日期。 |  否  |
-| filter | 字符串  | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 *filter* 参数中的字符串值必须使用单引号括起来。 例如，*筛选器 = 数据类型 eq 获取*。 <p/><p/>可以指定以下筛选器字段：<p/><ul><li><strong>acquisition</strong></li><li><strong>health</strong></li><li><strong>usage</strong></li></ul> | 否   |
+| filter | 字符串  | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 *filter* 参数中的字符串值必须使用单引号括起来。 例如，*筛选器 = 数据类型 eq 获取*。 <p/><p/>可以指定以下筛选器字段：<p/><ul><li><strong>获取</strong></li><li><strong>运行状况</strong></li><li><strong>使用情况</strong></li></ul> | 否   |
 
 ### <a name="request-example"></a>请求示例
 
@@ -78,7 +78,7 @@ Authorization: Bearer <your access token>
 |---------------------|--------|-------------------------------------------|
 | applicationId       | 字符串 | 要为其检索 insights 数据的应用 Store ID。     |
 | insightDate                | 字符串 | 我们发现特定度量值中的更改的日期。 此日期表示在其中我们检测到大量增加的一周结束，或减小相比前的一周的指标。 |
-| dataType     | 字符串 | 指定此信息介绍的常规分析区域的以下字符串之一：<p/><ul><li><strong>acquisition</strong></li><li><strong>health</strong></li><li><strong>usage</strong></li></ul>   |
+| 数据类型     | 字符串 | 指定此信息介绍的常规分析区域的以下字符串之一：<p/><ul><li><strong>获取</strong></li><li><strong>运行状况</strong></li><li><strong>使用情况</strong></li></ul>   |
 | insightDetail          | 数组 | 一个或多个[InsightDetail 值](#insightdetail-values)表示以当前深入了解详细信息。    |
 
 
@@ -86,7 +86,7 @@ Authorization: Bearer <your access token>
 
 | 值               | 在任务栏的搜索框中键入   | 描述                           |
 |---------------------|--------|-------------------------------------------|
-| FactName           | 字符串 | 以下值，该值指示当前的见解或当前维度所述，度量值的一个基于**数据类型**值。<ul><li>有关**运行状况**，此值始终为**点击次数**。</li><li>有关**采集**，此值始终为**AcquisitionQuantity**。</li><li>有关**使用情况**，此值可以是下列字符串之一：<ul><li><strong>DailyActiveUsers</strong></li><li><strong>EngagementDurationMinutes</strong></li><li><strong>DailyActiveDevices</strong></li><li><strong>DailyNewUsers</strong></li><li><strong>DailySessionCount</strong></li></ul></ul>  |
+| FactName           | 字符串 | 以下值，该值指示当前的见解或当前维度所述，度量值的一个基于**数据类型**值。<ul><li>有关**运行状况**，此值始终为**点击次数**。</li><li>有关**采集**，此值始终为**AcquisitionQuantity**。</li><li>有关**使用情况**，此值可以是下列字符串之一：<ul><li><strong>dailyActiveUsers</strong></li><li><strong>engagementDurationMinutes</strong></li><li><strong>dailyActiveDevices</strong></li><li><strong>dailyNewUsers</strong></li><li><strong>dailySessionCount</strong></li></ul></ul>  |
 | SubDimensions         | 数组 |  描述单个指标以深入了解的一个或多个对象。   |
 | PercentChange            | 字符串 |  在您的整个客户群之间更改度量值所占百分比。  |
 | DimensionName           | 字符串 |  当前维度中所述的指标的名称。 示例包括**EventType**，**市场**， **DeviceType**， **PackageVersion**， **AcquisitionType**， **AgeGroup**并**性别**。   |

@@ -22,7 +22,7 @@ ms.locfileid: "57604092"
 > [!IMPORTANT]
 > **需要 Fall Creators Update**:必须为目标 SDK 版本 16299 和运行生成 16299 或更高版本使用任务栏 Api。
 
-> **重要的 Api**:[TaskbarManager 类](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
+> **重要的 API**：[TaskbarManager 类](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
 
 
 ## <a name="when-should-you-ask-the-user-to-pin-your-app-to-the-taskbar"></a>应该何时请求用户将你的应用固定到任务栏？ 

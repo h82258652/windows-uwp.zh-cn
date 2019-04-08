@@ -40,7 +40,7 @@ ms.locfileid: "57595382"
 | sharedAccessToken | 字符串 | 否 | 标识要在代码段和草图应用中打开的文件标记。 从中检索[SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile)。 如果省略此参数，则将没有打开的文件的情况下启动应用。 |
 | secondarySharedAccessToken | 字符串 | 否 | 有关代码段的元数据与标识的 JSON 文件的字符串。 元数据可能包括**clipPoints**字段的 x，y 坐标、 数组和/或一个[userActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity)。 |
 | 源 | 字符串 | 否 | 要指示启动 URI 的源的自由格式字符串。 |
-| isTemporary | 布尔 | 否 | 如果设置为 True，屏幕草图将尝试打开它后删除该文件。 |
+| IsTemporary | 布尔 | 否 | 如果设置为 True，屏幕草图将尝试打开它后删除该文件。 |
 
 下面的示例调用[LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_)方法从用户的应用将映像发送到代码段和草图。
 

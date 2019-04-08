@@ -85,5 +85,5 @@ ms.locfileid: "57651772"
 如果你之前未将 Xbox One 主机返回到零售模式，请立即如[切换到零售模式](#switch-to-retail-mode)中所述执行此操作。
 
 ## <a name="see-also"></a>另请参阅
-- [Xbox 一个开发人员模式下激活](devkit-activation.md)
+- [Xbox One 开发人员模式激活](devkit-activation.md)
 - [在 Xbox One 上 UWP](index.md)

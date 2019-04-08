@@ -249,10 +249,10 @@ async Task PinMultipleContacts(Contact[] contacts)
 **注意：** 
 
 ## <a name="see-also"></a>另请参阅
-+ [我共享的人员](my-people-sharing.md)
++ [“我的人脉”共享](my-people-sharing.md)
 + [我的用户通知](my-people-notifications.md)
 + [第 9 频道视频添加到应用程序支持我的人](https://channel9.msdn.com/Events/Build/2017/P4056)
 + [我的人员的集成示例](https://aka.ms/mypeoplebuild2017)
 + [请联系卡示例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [PinnedContactManager 类文档](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
-+ [将应用连接到联系人卡片上的操作](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
++ [将你的应用与联系人卡片上的操作关联起来](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

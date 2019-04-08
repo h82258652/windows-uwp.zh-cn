@@ -44,7 +44,7 @@ ms.locfileid: "57652492"
 
 | 运算符                       | 支持的类型                                                             |
 |--------------------------------|-----------------------------------------------------------------------------|
-| **COP\_EQUAL**                 | 字符串、布尔值、GUID、UInt16、UInt32                                       |
+| **COP\_相等**                 | 字符串、布尔值、GUID、UInt16、UInt32                                       |
 | **COP\_NOTEQUAL**              | 字符串、布尔值、GUID、UInt16、UInt32                                       |
 | **COP\_LESSTHAN**              | UInt16、UInt32                                                              |
 | **COP\_GREATERTHAN**           | UInt16、UInt32                                                              |
@@ -52,10 +52,10 @@ ms.locfileid: "57652492"
 | **COP\_GREATERTHANOREQUAL**    | UInt16、UInt32                                                              |
 | **COP\_值\_CONTAINS**       | 字符串、字符串数组、布尔值数组、GUID 数组、UInt16 数组、UInt32 数组 |
 | **COP\_值\_NOTCONTAINS**    | 字符串、字符串数组、布尔值数组、GUID 数组、UInt16 数组、UInt32 数组 |
-| **COP\_VALUE\_STARTSWITH**     | 字符串                                                                      |
+| **COP\_值\_STARTSWITH**     | 字符串                                                                      |
 | **COP\_值\_ENDSWITH**       | 字符串                                                                      |
 | **COP\_DOSWILDCARDS**          | 不支持                                                               |
-| **COP\_WORD\_EQUAL**           | 不支持                                                               |
+| **COP\_WORD\_相等**           | 不支持                                                               |
 | **COP\_WORD\_STARTSWITH**      | 不支持                                                               |
 | **COP\_应用程序\_特定** | 不支持                                                               |
 

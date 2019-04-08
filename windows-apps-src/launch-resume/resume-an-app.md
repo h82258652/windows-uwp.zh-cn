@@ -127,5 +127,5 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 ## <a name="related-topics"></a>相关主题
 
 * [应用生命周期](app-lifecycle.md)
-* [处理应用程序激活](activate-an-app.md)
-* [句柄应用挂起](suspend-an-app.md)
+* [处理应用激活](activate-an-app.md)
+* [处理应用挂起](suspend-an-app.md)

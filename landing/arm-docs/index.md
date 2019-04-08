@@ -147,7 +147,7 @@ Windows 10 在由 ARM 处理器提供动力的电脑上运行。 本页还提供
                     </div>
                 </a>
                 <div class="cardText">
-                    <h3>使用 WDK 构建 ARM64 驱动程序</h3>
+                    <h3>使用 WDK 生成 ARM64 驱动程序</h3>
                     <p class="x-hidden-focus">针对 ARM64 重新编译驱动程序。</p>
                 </div>
             </div>

@@ -51,15 +51,15 @@ experienceType=”shoulderTap”
 
 + **src**
     + 资源的 URI。 这可以是 HTTP/HTTPS Web URI、msappx URI 或本地文件的路径。
-+ **spritesheet-src**
++ **spritesheet src**
     + 资源的 URI。 这可以是 HTTP/HTTPS Web URI、msappx URI 或本地文件的路径。 只有 Spritesheet 动画才需要此参数。
-+ **spritesheet-height**
++ **spritesheet 高度**
     + 帧高度（以像素为单位）。 只有 Spritesheet 动画才需要此参数。
-+ **spritesheet-fps**
++ **spritesheet fps**
     + 每秒帧数 (FPS)。 只有 Spritesheet 动画才需要此参数。 仅支持值 1-120。
-+ **spritesheet-startingFrame**
++ **spritesheet startingFrame**
     + 开始播放动画的帧编号。 此参数仅用于 Spritesheet 动画，如果未提供，则默认为 0。
-+ **alt**
++ **Alt**
     + 用于屏幕阅读器旁白的文本字符串。
 
 > [!NOTE]

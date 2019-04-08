@@ -41,7 +41,7 @@ IA 阶段会将基元 ID 添加到每个基元以供[几何着色器 (GS) 阶段
 
 不支持为相邻的基元自动生成基元 ID。 对于带邻近度的基元类型（如带邻近度的三角形），基元 ID 仅为内部基元（非相邻基元）保留，就像不带邻近度的三角形带中的基元集一样。
 
-## <a name="span-idinstanceidspanspan-idinstanceidspanspan-idinstanceidspaninstanceid"></a><span id="InstanceID"></span><span id="instanceid"></span><span id="INSTANCEID"></span>InstanceID
+## <a name="span-idinstanceidspanspan-idinstanceidspanspan-idinstanceidspaninstanceid"></a><span id="InstanceID"></span><span id="instanceid"></span><span id="INSTANCEID"></span>实例 Id
 
 
 实例 ID 由每个着色器阶段用于标识当前正在处理的几何图形的实例。 它是默认值为 0 的 32 位无符号整数。
@@ -62,7 +62,7 @@ IA 阶段会将基元 ID 添加到每个基元以供[几何着色器 (GS) 阶段
 | 顶点数据    | C,U | D,U | E,U | F,U | G,U | H,U | I,U | J,U | K,U | L,U |
 |----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
-| **InstanceID** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+| **实例 Id** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
 
  
 
@@ -71,7 +71,7 @@ IA 阶段会将基元 ID 添加到每个基元以供[几何着色器 (GS) 阶段
 |                 |     |     |     |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
-| **InstanceID**  | 0   | 0   | 0   |
+| **实例 Id**  | 0   | 0   | 0   |
 
  
 
@@ -80,7 +80,7 @@ IA 阶段会将基元 ID 添加到每个基元以供[几何着色器 (GS) 阶段
 | 顶点数据    | C,V | D,V | E,V | F,V | G,V | H,V | I,V | J,V | K,V | L,V |
 |----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
-| **InstanceID** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
+| **实例 Id** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
 
  
 
@@ -89,7 +89,7 @@ IA 阶段会将基元 ID 添加到每个基元以供[几何着色器 (GS) 阶段
 |                 |     |     |     |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
-| **InstanceID**  | 1   | 1   | 1   |
+| **实例 Id**  | 1   | 1   | 1   |
 
  
 

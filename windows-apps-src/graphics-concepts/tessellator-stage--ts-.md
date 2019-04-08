@@ -63,7 +63,7 @@ Direct3D 图形管道在软件中实施分割，能够将 CPU 的工作负担转
 
     | 分区类型 | 范围                       |
     |----------------------|-----------------------------|
-    | Fractional\_odd      | \[1...63\]                  |
+    | 小数\_奇数      | \[1...63\]                  |
     | 小数\_甚至     | TessFactor 范围：\[2..64\] |
     | 整型              | TessFactor 范围：\[1..64\] |
     | 幂 2                 | TessFactor 范围：\[1..64\] |
@@ -83,7 +83,7 @@ Direct3D 图形管道在软件中实施分割，能够将 CPU 的工作负担转
 
 在每个使用从外壳着色器阶段传入的细化因素（指定域被细分的细微程度）和分区的类型（指定用于分割修补程序的算法）的修补程序上执行一次细化器。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
 
 
 细化器将 uv（和可选 w）坐标和表面拓扑输出到域着色器阶段。

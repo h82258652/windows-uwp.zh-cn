@@ -8,7 +8,7 @@ ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
 ms.openlocfilehash: f60780186256e7f78a9596c979c79bfc704ae4c2
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57660162"
@@ -25,9 +25,9 @@ ms.locfileid: "57660162"
 
 1. 如果先前尚未这样做，请在开发计算机上[安装 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。 
 2. 在 Visual Studio 中打开你的项目。
-3. 在“解决方案资源管理器”中，右键单击你的项目的“引用”节点，然后单击“添加引用”。
+3. 在“解决方案资源管理器”中，右键单击你的项目的**引用**节点，然后单击**添加引用**。
 4. 在“引用管理器”中，展开“通用 Windows”并单击“扩展”。
-5. 在 SDK 列表中，单击“Microsoft 协议框架”旁边的复选框，然后单击“确定”。
+5. 在 SDK 列表中，单击 **Microsoft 协议框架**旁边的复选框，然后单击**确定**。
 
 ## <a name="register-for-push-notifications"></a>注册推送通知
 
@@ -99,7 +99,7 @@ ms.locfileid: "57660162"
 
 ## <a name="related-topics"></a>相关主题
 
-* [推送通知发送到应用程序的客户](../publish/send-push-notifications-to-your-apps-customers.md)
+* [向应用客户发送推送通知](../publish/send-push-notifications-to-your-apps-customers.md)
 * [Windows 推送通知服务 (WNS) 概述](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)
 * [如何请求、 创建和保存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh868221(v=win.10))
 * [Microsoft Store Services SDK](https://docs.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)

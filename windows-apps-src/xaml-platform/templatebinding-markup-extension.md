@@ -78,7 +78,7 @@ ms.locfileid: "57661802"
 ## <a name="related-topics"></a>相关主题
 
 * [快速入门：控件模板](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
-* [深度中的数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)
 * [XAML概述](xaml-overview.md)
 * [依赖属性概述](dependency-properties-overview.md)

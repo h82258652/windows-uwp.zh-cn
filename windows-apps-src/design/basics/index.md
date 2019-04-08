@@ -28,7 +28,7 @@ ms.locfileid: "57582119"
 
 Fluent Design System 展示了我们创建自适应、共鸣和美观用户界面的目标和原则。
 
-## <a name="basics"></a>基础知识
+## <a name="basics"></a>入门
 
 [**导航基础知识**](navigation-basics.md)
 

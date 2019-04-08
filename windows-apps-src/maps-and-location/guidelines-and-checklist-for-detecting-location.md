@@ -20,8 +20,8 @@ ms.locfileid: "57624472"
 
 **重要的 Api**
 
--   [**Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603)
--   [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)
+-   [**地理位置**](https://msdn.microsoft.com/library/windows/apps/br225603)
+-   [**定位**](https://msdn.microsoft.com/library/windows/apps/br225534)
 
 本主题描述需要访问用户位置信息的应用的性能指南。
 
@@ -155,14 +155,14 @@ ms.locfileid: "57624472"
 
 用户的地理位置属于个人身份信息 (PII)。 下列网站提供保护用户隐私的指南。
 
--   [Microsoft Privacy]( https://go.microsoft.com/fwlink/p/?LinkId=259692)
+-   [Microsoft 隐私]( https://go.microsoft.com/fwlink/p/?LinkId=259692)
 
 <!--For more info, see [Guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md).-->
 
 ## <a name="related-topics"></a>相关主题
 
-* [设置地域隔离区](https://msdn.microsoft.com/library/windows/apps/mt219702)
-* [获取当前的位置](https://msdn.microsoft.com/library/windows/apps/mt219698)
+* [设置地理围栏](https://msdn.microsoft.com/library/windows/apps/mt219702)
+* [获取当前位置](https://msdn.microsoft.com/library/windows/apps/mt219698)
 * [显示映射使用二维、 三维和 Streetside 视图](https://msdn.microsoft.com/library/windows/apps/mt219695)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
 * [UWP 位置示例 （地理位置）](https://go.microsoft.com/fwlink/p/?linkid=533278)

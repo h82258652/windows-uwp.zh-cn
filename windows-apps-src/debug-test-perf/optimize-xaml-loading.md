@@ -135,7 +135,7 @@ ListView 及其子元素不加载到内存。
 </Grid>
 ```
 
-**Efficient**
+**高效**
 
 ```xaml
 <Grid Background="Black"/>
@@ -223,7 +223,7 @@ ListView 及其子元素不加载到内存。
 </Page>
 ```
 
-**SecondPage.xaml.**
+**SecondPage.xaml。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->

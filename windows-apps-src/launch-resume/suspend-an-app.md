@@ -149,8 +149,8 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 ## <a name="related-topics"></a>相关主题
 
 * [应用生命周期](app-lifecycle.md)
-* [处理应用程序激活](activate-an-app.md)
-* [句柄应用恢复](resume-an-app.md)
+* [处理应用激活](activate-an-app.md)
+* [处理应用恢复](resume-an-app.md)
 * [有关启动时，用户体验指南挂起，并继续](https://msdn.microsoft.com/library/windows/apps/dn611862)
 * [扩展的执行](run-minimized-with-extended-execution.md)
 

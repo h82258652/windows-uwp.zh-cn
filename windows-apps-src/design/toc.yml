@@ -61,7 +61,7 @@ items:
       href: layout/transforms.md
     - name: 3D 透视效果
       href: layout/3-d-perspective-effects.md
-- name: 控件
+- name: 控制
   items:
   - name: 概述
     href: controls-and-patterns/index.md
@@ -338,7 +338,7 @@ items:
         href: shell/tiles-and-notifications/custom-timestamps-on-toasts.md
       - name: 集合
         href: shell/tiles-and-notifications/toast-collections.md
-      - name: 标题
+      - name: 标头
         href: shell/tiles-and-notifications/toast-headers.md
       - name: 通知侦听器
         href: shell/tiles-and-notifications/notification-listener.md

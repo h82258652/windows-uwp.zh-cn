@@ -77,7 +77,7 @@ Windows 10，版本 1607，引入了两个更多的应用程序模型状态：**
 
 [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797)  
 [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)  
-[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)  [**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)  
+[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)  
 [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336)  
 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806)
 
@@ -205,20 +205,20 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 ## <a name="key-application-lifecycle-apis"></a>关键应用程序生命周期 API
 
--   [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) namespace
--   [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766) namespace
--   [**Windows.ApplicationModel.Core**](https://msdn.microsoft.com/library/windows/apps/br205865) namespace
+-   [**Windows.ApplicationModel** ](https://msdn.microsoft.com/library/windows/apps/br224691)命名空间
+-   [**Windows.ApplicationModel.Activation** ](https://msdn.microsoft.com/library/windows/apps/br224766)命名空间
+-   [**Windows.ApplicationModel.Core** ](https://msdn.microsoft.com/library/windows/apps/br205865)命名空间
 -   [**Windows.UI.Xaml.Application** ](https://msdn.microsoft.com/library/windows/apps/br242324)类 (XAML)
--   [**Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) class (XAML)
+-   [**Windows.UI.Xaml.Window** ](https://msdn.microsoft.com/library/windows/apps/br209041)类 (XAML)
 
 ## <a name="related-topics"></a>相关主题
 
 * [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694)
 * [应用程序的指导原则挂起和继续](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [处理应用程序预启动](handle-app-prelaunch.md)
-* [处理应用程序激活](activate-an-app.md)
-* [句柄应用挂起](suspend-an-app.md)
-* [句柄应用恢复](resume-an-app.md)
+* [处理应用预启动](handle-app-prelaunch.md)
+* [处理应用激活](activate-an-app.md)
+* [处理应用挂起](suspend-an-app.md)
+* [处理应用恢复](resume-an-app.md)
 * [后台活动的单个进程模型](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
 * [在背景中播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 

@@ -35,9 +35,9 @@ WPF 和 Windows 窗体应用程序可以使用一系列中的已包装 UWP 控�
 
 | 控件 | 支持的最低 OS | 描述 |
 |-----------------|-------------------------------|-------------|
-| [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10 版本 1803 | 使用 Microsoft Edge 呈现引擎来显示 web 内容。 |
+| [Web 视图](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10 版本 1803 | 使用 Microsoft Edge 呈现引擎来显示 web 内容。 |
 | [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | 提供的版本**WebView**与多个 OS 版本兼容。 此控件使用 Microsoft Edge 呈现引擎，以显示在 Windows 10 版本 1803年和更高版本，web 内容和 Internet Explorer 呈现引擎，以显示 web 内容在早期版本的 Windows 10 中，Windows 8.x 和 Windows 7。 |
-| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10，版本 1809年 （内部 17763） | 提供在 Windows 窗体或 WPF 桌面应用程序中的基于 Windows 手写内容的用户交互图面上和相关的工具栏。 |
+| [在 InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10，版本 1809年 （内部 17763） | 提供在 Windows 窗体或 WPF 桌面应用程序中的基于 Windows 手写内容的用户交互图面上和相关的工具栏。 |
 | [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10，版本 1809年 （内部 17763） | 将嵌入的流式处理和呈现在 Windows 窗体或 WPF 桌面应用程序中的视频等媒体内容的视图。 |
 | [MapControl](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10，版本 1809年 （内部 17763） | 可以在 Windows 窗体或 WPF 桌面应用程序中显示的符号或图像逼真的映射。 |
 
@@ -81,24 +81,24 @@ WPF 和 Windows 窗体应用程序可以使用一系列中的已包装 UWP 控�
 
 ### <a name="whats-not-yet-supported"></a>尚不支持的功能
 
-:no_entry_sign:在应用程序可以无缝和承载控件的可访问性工具。
+: no_entry_sign:在应用程序可以无缝和承载控件的可访问性工具。
 
-:no_entry_sign:在您将添加到不包含 Windows 应用包的应用程序的控件中的本地化的内容。
+: no_entry_sign:在您将添加到不包含 Windows 应用包的应用程序的控件中的本地化的内容。
 
-:no_entry_sign:在 XAML 中进行的应用程序不包含 Windows 应用包中的资产引用。
+: no_entry_sign:在 XAML 中进行的应用程序不包含 Windows 应用包中的资产引用。
 
-:no_entry_sign:正确响应 DPI 和规模中的更改的控件。
+: no_entry_sign:正确响应 DPI 和规模中的更改的控件。
 
-:no_entry_sign:添加**WebView**到自定义用户控件，（线程上，关闭线程或进程超出） 的控件。
+: no_entry_sign:添加**WebView**到自定义用户控件，（线程上，关闭线程或进程超出） 的控件。
 
-:no_entry_sign:[显示突出显示](https://docs.microsoft.com/windows/uwp/design/style/reveal)Fluent 效果。
+: no_entry_sign:[显示突出显示](https://docs.microsoft.com/windows/uwp/design/style/reveal)Fluent 效果。
 
-:no_entry_sign:内联墨迹书写， @Places，和@People输入控件。
+: no_entry_sign:内联墨迹书写， @Places，和@People输入控件。
 
-:no_entry_sign:分配的快捷键。
+: no_entry_sign:分配的快捷键。
 
-:no_entry_sign:基于 c + + 的第三方控件。
+: no_entry_sign:基于 c + + 的第三方控件。
 
-:no_entry_sign:承载自定义用户控件。
+: no_entry_sign:承载自定义用户控件。
 
 随着我们继续改进在桌面引入 Fluent 的体验，此列表中的项目可能发生更改。  

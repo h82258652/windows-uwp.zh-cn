@@ -10,7 +10,7 @@ keywords: windows 10, uwp, 可追踪的磁贴, 动态磁贴, 可追踪的磁贴�
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a43ad803ca4cfe4a7403117c268344d1192d74
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57592642"
@@ -24,7 +24,7 @@ ms.locfileid: "57592642"
 > **需要周年更新**:若要使用与 chaseable 磁贴通知C#，c + + 或基于 VB 的 UWP 应用，必须为目标 SDK 14393 和 14393 或更高版本运行生成。 对于基于 JavaScript 的 UWP 应用，必须面向 SDK 17134 且必须运行版本 17134 或更高版本。 
 
 
-> **重要的 Api**:[LaunchActivatedEventArgs.TileActivatedInfo 属性](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)， [TileActivatedInfo 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+> **重要的 API**：[LaunchActivatedEventArgs.TileActivatedInfo 属性](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)， [TileActivatedInfo 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 
 ## <a name="how-it-works"></a>工作原理
@@ -178,5 +178,5 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ## <a name="related-articles"></a>相关文章
 
-- [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
+- [LaunchActivatedEventArgs.TileActivatedInfo 属性](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
 - [TileActivatedInfo 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)

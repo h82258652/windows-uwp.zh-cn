@@ -70,6 +70,6 @@ ms.locfileid: "57613212"
 在许多情况下，调用异步函数几乎与调用传统函数一样简单。 区别在于使用 [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) 或 [**done**](https://msdn.microsoft.com/library/windows/apps/Hh701079) 方法来指定结果或错误的处理程序以及启动操作。
 
 ## <a name="related-topics"></a>相关主题
-* [调用中的异步 ApiC#或 Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)
+* [使用 C# 或 Visual Basic 调用异步 API](call-asynchronous-apis-in-csharp-or-visual-basic.md)
 * [异步编程使用 Async 和 Await （C# 和 Visual Basic）](https://msdn.microsoft.com/library/hh191443(vs.110).aspx)
 * [棋功能方案示例： 异步代码](https://msdn.microsoft.com/library/windows/apps/xaml/jj712233.aspx#async)

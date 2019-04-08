@@ -21,7 +21,7 @@ ms.locfileid: "57594962"
 
 本文介绍 Windows 缩放和调整大小元素，并提供在你的应用中使用这些交互机制时的用户体验指南。
 
-> **重要的 Api**:[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [**输入 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **重要的 API**：[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [**输入 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 使用视觉缩放，用户可以放大内容区域中内容的视图（在内容区域自身上执行），而使用调整大小，用户则可以更改一个或多个对象的相对大小，而不更改内容区域的视图（在内容区域中的对象上执行）。
 

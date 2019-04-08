@@ -8,7 +8,7 @@ keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f4749b8560624ed58f43b33fe3373d909919347
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57592022"
@@ -196,7 +196,7 @@ private void RefreshUIImages()
 
 ## <a name="related-topics"></a>相关主题
 * [定制您的语言、 缩放性和其他限定符的资源](tailor-resources-lang-scale-contrast.md)
-* [本地化用户界面和应用包清单中的字符串](localize-strings-ui-manifest.md)
+* [对 UI 和应用包清单中的字符串进行本地化](localize-strings-ui-manifest.md)
 * [存储和检索设置和其他应用程序数据](../design/app-settings/store-and-retrieve-app-data.md)
 * [磁贴和 toast 支持的语言、 缩放性和高对比度](tile-toast-language-scale-contrast.md)
 * [可本地化的清单项目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)

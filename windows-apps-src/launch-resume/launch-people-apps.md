@@ -58,7 +58,7 @@ ms.locfileid: "57595562"
 </div>
 <div> 
 </div></td>
-<td align="left">ms-people:viewcontact?ContactId=&lt;contactid&gt;&amp;AggregatedId=&lt;aggid&gt;&amp;PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;&amp;Contact=&lt;contactobj&gt;</td>
+<td align="left">ms-人： viewcontact？ContactId =&lt;contactid&gt;&amp;AggregatedId =&lt;aggid&gt;&amp;PhoneNumber = &lt;phonenum&gt;&amp;电子邮件 =&lt;电子邮件&gt; &amp;ContactName =&lt;名称&gt;&amp;联系人 =&lt;contactobj&gt;</td>
 </tr>
 <tr class="odd">
 <td align="left">启动到“人脉”应用内的保存联系人页面，以使用提供的电话号码或电子邮件地址保存给定的联系人。
@@ -133,7 +133,7 @@ ms.locfileid: "57595562"
 <td align="left"><p>ms-people:viewcontact?ContactId={ContactId}</p></td>
 </tr>
 <tr class="even">
-<td align="left"><b>PhoneNumber</b></td>
+<td align="left"><b>电话号码</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的电话号码。</p></td>
 <td align="left"><p>ms-people:viewcontact?PhoneNumber=%2014257069326</p></td>
@@ -145,13 +145,13 @@ ms.locfileid: "57595562"
 <td align="left"><p>ms-people:viewcontact?Email=johnsmith@contsco.com</p></td>
 </tr>
 <tr class="even">
-<td align="left"><b>ContactName</b></td>
+<td align="left"><b>联系人姓名</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的姓名。</p></td>
 <td align="left"><p>ms-people:viewcontact?ContactName=John%20%Smith</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><b>Contact</b></td>
+<td align="left"><b>请联系</b></td>
 <td align="left"><p>可选。</p>
 <p>Contact 对象。</p></td>
 <td align="left"><p>ms-people:viewcontact?Contact={Serialized Contact}</p></td>
@@ -176,7 +176,7 @@ ms.locfileid: "57595562"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><b>PhoneNumber</b></td>
+<td align="left"><b>电话号码</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的电话号码。</p></td>
 <td align="left"><p>ms-people:savetocontact?PhoneNumber=%2014257069326</p></td>
@@ -188,7 +188,7 @@ ms.locfileid: "57595562"
 <td align="left"><p>ms-people:savetocontact?Email=johnsmith@contsco.com</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><b>ContactName</b></td>
+<td align="left"><b>联系人姓名</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的姓名。</p></td>
 <td align="left"><p>ms-people:savetocontact?Email=johnsmith@contsco.com&amp;ContactName= John%20%Smith</p></td>
@@ -255,7 +255,7 @@ ms.locfileid: "57595562"
 
 </tr>
 <tr class="even">
-<td align="left"><b>HomePhone</b></td>
+<td align="left"><b>住宅电话</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的家庭电话。</p></td>
 </tr>
@@ -267,7 +267,7 @@ ms.locfileid: "57595562"
 </tr>
 
 <tr class="even">
-<td align="left"><b>LastName</b></td>
+<td align="left"><b>姓氏</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的姓氏。</p></td>
 </tr>
@@ -309,7 +309,7 @@ ms.locfileid: "57595562"
 </tr>
 
 <tr class="odd">
-<td align="left"><b>Suffix</b></td>
+<td align="left"><b>后缀</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的后缀。</p></td>
 </tr>
@@ -357,13 +357,13 @@ ms.locfileid: "57595562"
 </tr>
 
 <tr class="odd">
-<td align="left"><b>WorkEmail</b></td>
+<td align="left"><b>工作电子邮件</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的工作电子邮件。</p></td>
 </tr>
 
 <tr class="even">
-<td align="left"><b>WorkPhone</b></td>
+<td align="left"><b>办公电话</b></td>
 <td align="left"><p>可选。</p>
 <p>联系人的工作电话号码。</p></td>
 </tr>

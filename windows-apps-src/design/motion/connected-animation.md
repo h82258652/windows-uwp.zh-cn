@@ -22,7 +22,7 @@ ms.locfileid: "57618192"
 
 在已连接动画中，元素似乎"继续"期间在用户界面内容中，在屏幕上从源视图中的位置飞到其目标的新视图中更改两个视图之间。 这强调在视图之间的常见内容，并为转换的一部分创建美观和动态效果。
 
-> **重要的 Api**:[ConnectedAnimation 类](/uwp/api/windows.ui.xaml.media.animation.connectedanimation)， [ConnectedAnimationService 类](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
+> **重要的 API**：[ConnectedAnimation 类](/uwp/api/windows.ui.xaml.media.animation.connectedanimation)， [ConnectedAnimationService 类](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
 ## <a name="see-it-in-action"></a>查看实际操作
 

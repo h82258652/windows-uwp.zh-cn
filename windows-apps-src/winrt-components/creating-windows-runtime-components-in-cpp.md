@@ -1,6 +1,6 @@
 ---
 title: 使用 C++ 创建 Windows 运行时组件
-description: 本主题演示如何使用 C + + /cli CX 创建 Windows 运行时组件，这是一个组件，可从使用生成的通用 Windows 应用调用C#，Visual Basic、 c + + 或 Javascript。
+description: 本主题展示了如何使用 C++/CX 创建 Windows 运行时组件，这是一个可以从使用 C#、Visual Basic、C++ 或 Javascript 构建的通用 Windows 应用调用的组件。
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 ms.date: 05/14/2018
 ms.topic: article
@@ -17,7 +17,7 @@ ms.locfileid: "57600862"
 > [!NOTE]
 > 本主题旨在帮助你维护 C++/CX 应用程序。 不过，我们建议你使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 编写新应用程序。 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。 若要了解如何创建 Windows 运行时组件使用 C + + / WinRT，请参阅[创作事件在 C + + WinRT](../cpp-and-winrt-apis/author-events.md)。
 
-本主题演示如何使用 C + + /cli CX 创建 Windows 运行时组件，这是一个组件，可从使用生成的通用 Windows 应用调用C#，Visual Basic、 c + + 或 Javascript。
+本主题展示了如何使用 C++/CX 创建 Windows 运行时组件，这是一个可以从使用 C#、Visual Basic、C++ 或 Javascript 构建的通用 Windows 应用调用的组件。
 
 有几个原因，用于构建 Windows 运行时组件。
 - 在复杂或计算密集型操作中获取 C++ 的性能优势。

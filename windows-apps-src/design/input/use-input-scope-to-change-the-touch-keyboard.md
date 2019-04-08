@@ -22,7 +22,7 @@ ms.locfileid: "57591762"
 
 ### <a name="important-apis"></a>重要的 API
 - [InputScope](https://msdn.microsoft.com/library/windows/apps/hh702632)
-- [InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/hh702028)
+- [inputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/hh702028)
 
 
 当你的应用在具有触摸屏的设备上运行时，触摸键盘可用于文本输入。 当用户点击可编辑的输入字段（如 **[TextBox](https://msdn.microsoft.com/library/windows/apps/br209683)** 或 **[RichEditBox](https://msdn.microsoft.com/library/windows/apps/br227548)**）时，系统会调用触摸键盘。 通过将文本控件的*输入范围*设置为与你期望用户输入的数据类型匹配，可以让用户在应用中更快捷地输入数据。 输入范围会针对控件所预期的文本输入类型向系统提供提示，以便系统可以为该输入类型提供专用的触摸键盘布局。

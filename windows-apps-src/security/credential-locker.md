@@ -4,7 +4,7 @@ description: 本文介绍了通用 Windows 平台 (UWP) 应用可如何使用凭
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: b7ac2a625b3769377ed6c8dddce3ca25177dee5f
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

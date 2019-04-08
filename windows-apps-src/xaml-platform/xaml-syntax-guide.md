@@ -125,15 +125,15 @@ XAML 中的集合语法给人一种设置只读属性的感觉，但其实不是
 
 在下面的语法中，*property* 是你想要设置的属性的名称，*propertyValueAsObjectElement* 是应当满足属性的值类型要求的单个对象元素。
 
-`<`*object*`>`
+`<`*对象*`>`
 
-`<`*object*`.`*property*`>`
+`<`*对象*`.`*属性*`>`
 
 *propertyValueAsObjectElement*
 
-`</`*object*`.`*property*`>`
+`</`*对象*`.`*属性*`>`
 
-`</`*object*`>`
+`</`*对象*`>`
 
 下面的示例使用属性元素语法来设置一个具有 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 对象元素 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill)。 (内**SolidColorBrush**， [**颜色**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)设置为属性。)此 XAML 的已分析的结果与前面设置的 XAML 示例等同**填充**使用特性语法。
 
@@ -173,7 +173,7 @@ XAML 中的集合语法给人一种设置只读属性的感觉，但其实不是
 <TextBlock>Hello!</TextBlock>
 ```
 
-如果某个类存在一个 XAML 内容属性，则这会在该类的参考主题的“属性”部分指示出来。 查找 [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) 的值。 此属性使用一个名为“Name”的命名字段。 “Name”的值是该类的作为 XAML 内容属性的属性的名称。 例如，在[**边框**](https://msdn.microsoft.com/library/windows/apps/br209250)参考页上，就会显示如下：ContentProperty("Name=Child").
+如果某个类存在一个 XAML 内容属性，则这会在该类的参考主题的“属性”部分指示出来。 查找 [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) 的值。 此属性使用一个名为“Name”的命名字段。 “Name”的值是该类的作为 XAML 内容属性的属性的名称。 例如，在[**边框**](https://msdn.microsoft.com/library/windows/apps/br209250)参考页上，就会显示如下：ContentProperty("Name=Child")。
 
 有一个重要的 XAML 语法规则需要引起我们的注意，那就是不能将 XAML 内容属性和你在该元素上设置的其他属性元素混用。 XAML 内容属性必须在所有其他属性元素之前或之后完全设置。 例如，下面的 XAML 无效：
 

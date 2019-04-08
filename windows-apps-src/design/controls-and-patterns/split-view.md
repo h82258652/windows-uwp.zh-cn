@@ -23,7 +23,7 @@ ms.locfileid: "57646462"
 
 拆分视图控件具有一个可展开/可折叠的窗格和一个内容区域。
 
-> **重要的 Api**:[SplitView 类](https://msdn.microsoft.com/library/windows/apps/dn864360)
+> **重要的 API**：[SplitView 类](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 下面是使用 SplitView 显示其中心的 Microsoft Edge 应用的示例。
 
@@ -32,11 +32,11 @@ ms.locfileid: "57646462"
 
  拆分视图的内容区域始终可见。 窗格可以展开和折叠或停留在打开状态，而且可以从应用窗口的左侧或右侧显示其自身。 窗格中有四种模式：
 
--   **Overlay**
+-   **覆盖层**
 
     在打开之前隐藏窗格。 在打开时，窗格覆盖内容区域。
 
--   **Inline**
+-   **内联**
 
     窗格始终可见，并且不会覆盖内容区域。 窗格和内容区域划分可用的屏幕空间。
 
@@ -63,7 +63,7 @@ ms.locfileid: "57646462"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/SplitView">打开此应用，了解 SplitView 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>

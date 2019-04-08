@@ -123,7 +123,7 @@ ms.locfileid: "57658122"
 
 ### <span id="draganddrop"></span><span id="DRAGANDDROP"></span>
 
-**Drag**
+**拖动**
 
 使用拖动操作将一个或多个对象从一个位置移动到另一个位置。
 

@@ -66,18 +66,18 @@ Xbox One 赛车方向盘有多种价位，一般而言，价格越高，输入�
 
 | 导航命令 | 赛车方向盘输入    |
 | ------------------:| --------------------- |
-|            Page Up | _varies_              |
-|          Page Down | _varies_              |
-|          Page Left | _varies_              |
-|         Page Right | _varies_              |
-|          Scroll Up | _varies_              |
-|        Scroll Down | _varies_              |
-|        Scroll Left | _varies_              |
-|       Scroll Right | _varies_              |
+|            Page Up | _各不相同_              |
+|          Page Down | _各不相同_              |
+|          Page Left | _各不相同_              |
+|         Page Right | _各不相同_              |
+|          Scroll Up | _各不相同_              |
+|        Scroll Down | _各不相同_              |
+|        Scroll Left | _各不相同_              |
+|       Scroll Right | _各不相同_              |
 |          Context 1 | X 按钮（_通常情况_） |
 |          Context 2 | Y 按钮（_通常情况_） |
-|          Context 3 | _varies_              |
-|          Context 4 | _varies_              |
+|          Context 3 | _各不相同_              |
+|          Context 4 | _各不相同_              |
 
 ## <a name="detect-and-track-racing-wheels"></a>检测和跟踪赛车方向盘
 

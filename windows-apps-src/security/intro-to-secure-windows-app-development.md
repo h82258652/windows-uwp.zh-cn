@@ -4,7 +4,7 @@ description: 本文介绍可帮助应用程序架构师和开发人员更好地�
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c3c57653899ce7d849eec72ad36f14f7806652c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
@@ -472,9 +472,9 @@ Windows 10 中的通用 Windows 平台提供许多种利用操作系统功能创
 -   [证书](certificates.md)
 -   [加密密钥](cryptographic-keys.md)
 -   [数据保护](data-protection.md)
--   [Mac、 哈希和签名](macs-hashes-and-signatures.md)
--   [导出加密限制](export-restrictions-on-cryptography.md)
--   [加密的常见任务](common-cryptography-tasks.md)
+-   [MAC、哈希以及签名](macs-hashes-and-signatures.md)
+-   [有关加密的导出限制](export-restrictions-on-cryptography.md)
+-   [常见的加密任务](common-cryptography-tasks.md)
 
 ### <a name="62-code-samples"></a>6.2 代码示例
 

@@ -95,18 +95,18 @@ Windows.Gaming.Input 命名空间支持的所有输入设备都是 UI 导航设�
 
 | 导航命令 | 游戏板输入          | 街机摇杆输入 | 赛车方向盘输入    |
 | ------------------:| ---------------------- | ------------------ | --------------------- |
-|             PageUp | 左扳机键           | _不支持_    | _varies_              |
-|           PageDown | 右扳机键          | _不支持_    | _varies_              |
-|           PageLeft | 左缓冲键            | _不支持_    | _varies_              |
-|          PageRight | 右缓冲键           | _不支持_    | _varies_              |
-|           ScrollUp | 右操纵杆向上    | _不支持_    | _varies_              |
-|         ScrollDown | 右操纵杆向下  | _不支持_    | _varies_              |
-|         ScrollLeft | 右操纵杆向左  | _不支持_    | _varies_              |
-|        ScrollRight | 右操纵杆向右 | _不支持_    | _varies_              |
+|             PageUp | 左扳机键           | _不支持_    | _各不相同_              |
+|           PageDown | 右扳机键          | _不支持_    | _各不相同_              |
+|           PageLeft | 左缓冲键            | _不支持_    | _各不相同_              |
+|          PageRight | 右缓冲键           | _不支持_    | _各不相同_              |
+|           ScrollUp | 右操纵杆向上    | _不支持_    | _各不相同_              |
+|         ScrollDown | 右操纵杆向下  | _不支持_    | _各不相同_              |
+|         ScrollLeft | 右操纵杆向左  | _不支持_    | _各不相同_              |
+|        ScrollRight | 右操纵杆向右 | _不支持_    | _各不相同_              |
 |           Context1 | X 按钮               | _不支持_    | X 按钮（_常用_） |
 |           Context2 | Y 按钮               | _不支持_    | Y 按钮（_常用_） |
-|           Context3 | 左操纵杆按键  | _不支持_    | _varies_              |
-|           Context4 | 右操纵杆按键 | _不支持_    | _varies_              |
+|           Context3 | 左操纵杆按键  | _不支持_    | _各不相同_              |
+|           Context4 | 右操纵杆按键 | _不支持_    | _各不相同_              |
 
 
 ## <a name="detect-and-track-ui-navigation-controllers"></a>检测并追踪 UI 导航控制器

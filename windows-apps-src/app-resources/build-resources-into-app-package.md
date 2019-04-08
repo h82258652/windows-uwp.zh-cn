@@ -97,6 +97,6 @@ ms.locfileid: "57627282"
 
 ## <a name="related-topics"></a>相关主题
 
-* [包使用 Visual Studio 的 UWP 应用](../packaging/packaging-uwp-apps.md)
-* [编译手动与 MakePri.exe 的资源](compile-resources-manually-with-makepri.md)
-* [指定你的应用使用的默认资源](specify-default-resources-installed.md)
+* [使用 Visual Studio 打包 UWP 应用](../packaging/packaging-uwp-apps.md)
+* [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)
+* [指定应用使用的默认资源](specify-default-resources-installed.md)

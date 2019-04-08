@@ -294,7 +294,7 @@ map<string, list<string>> RPNameToQSIMap; // To store ResourcePackage name to Qu
 
 ## <a name="related-topics"></a>相关主题
 
-* [编译手动与 MakePri.exe 的资源](compile-resources-manually-with-makepri.md)
+* [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)
 * [MakePri.exe 命令行选项&mdash;createconfig 命令](makepri-exe-command-options.md#createconfig-command)
-* [定制您的语言、 缩放、 高对比度和其他限定符的资源](tailor-resources-lang-scale-contrast.md)
+* [定制语言、比例、高对比度和其他限定符的资源](tailor-resources-lang-scale-contrast.md)
 * [资源管理系统&mdash;ResourceContext](resource-management-system.md#resourcecontext)

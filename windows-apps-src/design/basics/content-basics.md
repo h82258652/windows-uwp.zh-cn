@@ -11,7 +11,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b2d85d97fa704b4fb79e93cf95fdd1bfcc41f8ca
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57594582"
@@ -112,7 +112,7 @@ ms.locfileid: "57594582"
 </tr>
 <tr class="even">
 <td align="left">WebView</td>
-<td align="left"><a href="../controls-and-patterns/web-view.md">WebView</a></td>
+<td align="left"><a href="../controls-and-patterns/web-view.md">Web 视图</a></td>
 <td align="left">呈现 HTML 内容。</td>
 </tr>
 </tbody>

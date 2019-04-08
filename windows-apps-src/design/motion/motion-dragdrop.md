@@ -22,7 +22,7 @@ ms.locfileid: "57605452"
 
 当用户移动对象时，使用拖放动画，例如在列表中移动项目，或将项目放在其他列表顶部。
 
-> **重要的 Api**:[**DragItemThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br243174)
+> **重要的 API**：[**DragItemThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br243174)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项

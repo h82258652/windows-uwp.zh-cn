@@ -59,7 +59,7 @@ ms.locfileid: "57596802"
 | ModifiedAfter     | 日期/时间     | 如果已指定，该服务仅返回已在此日期后修改的产品。        | 否       |
 | ParentProductID   | 字符串       | 如果已指定，该服务仅返回对应于指定应用的加载项。      | 否       |
 | ProductSkuID     | list&lt;ProductSkuId&gt; | 如果已指定，该服务仅返回适用于所提供的产品/SKU 对的产品。 有关详细信息，请参阅下表。      | 否       |
-| ProductType      | list&lt;string&gt;       | 指定要在查询结果中返回的产品类型。 受支持的产品类型为 **Application**、**Durable** 和 **UnmanagedConsumable**。     | 是       |
+| ProductType      | 列表&lt;字符串&gt;       | 指定要在查询结果中返回的产品类型。 受支持的产品类型为 **Application**、**Durable** 和 **UnmanagedConsumable**。     | 是       |
 | ValidityType      | 字符串       | 当设置为 **All** 时，将返回用户的所有产品，包括已过期的项目。 当设置为 **Valid** 时，仅返回在此时有效的产品（即，它们的状态为活动，开始日期 &lt; 现在，结束日期 &gt; 现在）。 | 否       |
 
 

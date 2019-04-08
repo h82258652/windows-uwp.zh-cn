@@ -46,7 +46,7 @@ ms.locfileid: "57598152"
 
 具有 VertexID 和 InstanceID 系统生成值的单个顶点。 每个顶点着色器输入顶点可以由 16 个 32 位矢量（每个矢量最多有 4 个分量）组成。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
 
 
 单个顶点。 每个输出顶点可以由多达 16 个 32 位 4 分量矢量组成。

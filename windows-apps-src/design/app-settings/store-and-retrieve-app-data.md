@@ -33,7 +33,7 @@ ms.locfileid: "57602672"
     下面是可以用于应用设置的数据类型：
 
     -   **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
-    -   **Boolean**
+    -   **一个布尔值**
     -   **Char16**、**String**
     -   [**日期时间**](https://msdn.microsoft.com/library/windows/apps/br206576)， [ **TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
     -   **GUID**、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)、[**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)、[**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)

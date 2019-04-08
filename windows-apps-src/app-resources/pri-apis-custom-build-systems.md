@@ -34,6 +34,6 @@ PRI 文件的大小限制为 64 千字节。
 * [索引 (PRI) 引用的包资源](https://msdn.microsoft.com/library/windows/desktop/mt845690)
 
 ## <a name="related-topics"></a>相关主题
-* [编译手动与 MakePri.exe 的资源](makepri-exe-command-options.md)
+* [使用 MakePri.exe 手动编译资源](makepri-exe-command-options.md)
 * [使用非托管的 DLL 函数](/dotnet/framework/interop/consuming-unmanaged-dll-functions?branch=live)
 * [资源管理系统](resource-management-system.md)

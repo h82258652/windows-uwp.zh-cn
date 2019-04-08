@@ -416,7 +416,7 @@ MakePri 可以将资源包特定的信息包括在索引器元数据文件中。
 
 **FILEPATH** 是指定输入的 PRI 文件或 PRI 架构文件位置的标记。
 
-## <a name="47indexoptionsio-option"></a>&#47;IndexOptions(io) option
+## <a name="47indexoptionsio-option"></a>&#47;IndexOptions(io) 选项
 
 使用索引选项选项 (/ io) 与`new`， `resourcepack`，和`versioned`指定提供细致的控制资源索引器的行为的选项。 默认情况下禁用索引选项。
 

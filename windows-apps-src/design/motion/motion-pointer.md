@@ -20,7 +20,7 @@ ms.locfileid: "57663792"
 使用指针动画向用户提供用户点击某个项目时的视觉反馈。 当第一次点击某个项目时，指针向下动画会略微缩小和倾斜所按的项目，并且会进行播放。 当用户释放指针时，会播放指针向上动画，这会将该项目还原到其原始位置。
 
 
-> **重要的 Api**:[**PointerUpThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/hh969168)， [ **PointerDownThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/hh969164)
+> **重要的 API**：[**PointerUpThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/hh969168)， [ **PointerDownThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/hh969164)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项

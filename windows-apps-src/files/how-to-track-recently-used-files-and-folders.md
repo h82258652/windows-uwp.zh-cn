@@ -37,7 +37,7 @@ ms.locfileid: "57601622"
 
     请参阅[文件访问权限](file-access-permissions.md)。
 
--   [使用选取器中打开文件和文件夹](quickstart-using-file-and-folder-pickers.md)
+-   [使用选取器打开文件和文件夹](quickstart-using-file-and-folder-pickers.md)
 
     选取的文件通常是用户再三返回查看的文件。
 

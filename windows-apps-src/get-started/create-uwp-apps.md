@@ -50,7 +50,7 @@ ms.locfileid: "57658232"
 **视频**
 
 * [Microsoft 虚拟学院](https://mva.microsoft.com/training-topics/c-app-development#!level=Beginner&lang=1033)
-* [LinkedIn 学习](https://www.linkedin.com/learning/learning-universal-windows-app-development/welcome)
+* [领英学习](https://www.linkedin.com/learning/learning-universal-windows-app-development/welcome)
 
 ## <a name="using-the-docs"></a>使用文档
 

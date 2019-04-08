@@ -33,7 +33,7 @@ ms.locfileid: "57594692"
 
 定向光只有颜色和方向，没有位置。 它们发射平行光。 这意味着由定向光产生的所有光线在相同方向上穿过场景。 你可以将定向光想象成位于近乎无限远处的光源，如太阳。 定向光不受衰减或范围的影响，因此，你指定的方向和颜色是 Direct3D 计算顶点颜色时考虑的唯一因素。 由于照明因素较少，它们是可以使用的计算密集程度最低的光。
 
-## <a name="span-idspotlightspanspan-idspotlightspanspan-idspotlightspanspotlight"></a><span id="SpotLight"></span><span id="spotlight"></span><span id="SPOTLIGHT"></span>SpotLight
+## <a name="span-idspotlightspanspan-idspotlightspanspan-idspotlightspanspotlight"></a><span id="SpotLight"></span><span id="spotlight"></span><span id="SPOTLIGHT"></span>聚焦
 
 
 聚光具有颜色、位置和发光方向。 从聚光发射的光由明亮的内锥和较大的外锥组成，光强度在两者之间减弱，如下图所示。

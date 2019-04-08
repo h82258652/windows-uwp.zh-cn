@@ -8,7 +8,7 @@ keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
 ms.openlocfilehash: 38fc73eb602c1307fdd345d02c621791feb89dc2
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57652322"
@@ -182,11 +182,11 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
     </tr>
     <tr>
         <td>Direct3D 12 图形示例</td>
-        <td><a href="https://github.com/Microsoft/DirectX-Graphics-Samples">DirectX-Graphics-Samples</a></td>
+        <td><a href="https://github.com/Microsoft/DirectX-Graphics-Samples">DirectX 图形示例</a></td>
     </tr>
     <tr>
         <td>Direct3D 11 图形示例</td>
-        <td><a href="https://github.com/walbourn/directx-sdk-samples">directx-sdk-samples</a></td>
+        <td><a href="https://github.com/walbourn/directx-sdk-samples">directx sdk 示例</a></td>
     </tr>
     <tr>
         <td>Direct3D 11 第一人称游戏示例</td>
@@ -206,11 +206,11 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
     </tr>
     <tr>
         <td>Xbox 高级技术组公共示例</td>
-        <td><a href="https://github.com/Microsoft/Xbox-ATG-Samples">Xbox-ATG-Samples</a></td>
+        <td><a href="https://github.com/Microsoft/Xbox-ATG-Samples">Xbox ATG 示例</a></td>
     </tr>
     <tr>
         <td>Xbox Live 示例</td>
-        <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox-live-samples</a></td>
+        <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox live 示例</a></td>
     </tr>
     <tr>
         <td>Xbox One 游戏示例 (XGD)</td>
@@ -851,7 +851,7 @@ BabylonJS 是一个完整的 JavaScript 框架，供使用 HTML5、WebGL、WebVR
     </colgroup>
     <tr>
         <td>BabylonJS</td>
-        <td><a href="https://www.babylonjs.com/">BabylonJS</a></td>
+        <td><a href="https://www.babylonjs.com/">上的 BabylonJS</a></td>
     </tr>
     <tr>
         <td>使用 HTML5 和 BabylonJS 的 WebGL 3D（视频系列）</td>
@@ -874,7 +874,7 @@ BabylonJS 是一个完整的 JavaScript 框架，供使用 HTML5、WebGL、WebVR
     </colgroup>
     <tr>
         <td>将 Windows 8 应用移植到通用 Windows 平台应用</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt238322">从 Windows 运行时移动到 UWP 8.x</a></td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt238322">从 Windows 运行时 8.x 移动到 UWP</a></td>
     </tr>
     <tr>
         <td>将 Windows 8 应用移植到通用 Windows 平台应用（视频）</td>
@@ -910,7 +910,7 @@ BabylonJS 是一个完整的 JavaScript 框架，供使用 HTML5、WebGL、WebVR
     </tr>
     <tr>
         <td>使用 ANGLE 将 OpenGL ES 移植到 Direct3D 11</td>
-        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=618387">ANGLE</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=618387">角度</a></td>
     </tr>
     <tr>
         <td>UWP 中的经典 Windows API 等效内容</td>
@@ -1098,7 +1098,7 @@ Windows 10 引入通用 Windows 平台 (UWP)，该平台在 Windows 10 设备�
     </colgroup>
     <tr>
         <td>颜色指南</td>
-        <td><a href="https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip">最佳做法：Color</a></td>
+        <td><a href="https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip">最佳做法：颜色</a></td>
     </tr>
 </table>
  
@@ -1130,7 +1130,7 @@ UI 地图是一个游戏导航布局，在其中菜单以流程图的形式呈�
     </colgroup>
     <tr>
         <td>UI 地图指南</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">最佳做法：UI Map</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">最佳做法：UI 映射</a></td>
     </tr>
 </table>
 
@@ -1375,7 +1375,7 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
     </tr>
     <tr>
         <td>外接程序的详细信息和提交</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">外接程序提交</a></td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">加载项提交</a></td>
     </tr>
     <tr>
         <td>监视外接程序 sales 和人口统计信息为您的游戏</td>
@@ -1563,7 +1563,7 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
     </tr>
     <tr>
         <td>创建 DLC 游戏内容等可选包</td>
-        <td><a href="../packaging/optional-packages.md">可选包和相关的一组创作</a></td>
+        <td><a href="../packaging/optional-packages.md">可选包和相关集创作</a></td>
     </tr>
     <tr>
         <td>打包 UWP 游戏</td>

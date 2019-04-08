@@ -175,7 +175,7 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 * [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378)
 * [**控件**](https://msdn.microsoft.com/library/windows/apps/BR209390)和派生类
 * [**FontIcon**](https://msdn.microsoft.com/library/windows/apps/Dn279514)
-* [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)
+* [**按**](https://msdn.microsoft.com/library/windows/apps/BR227565)
 * [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)
 * [**TextElement** ](https://msdn.microsoft.com/library/windows/apps/BR209967)和派生类
 

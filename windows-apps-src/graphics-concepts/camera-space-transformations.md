@@ -37,7 +37,7 @@ Lₚ = Lₚ \* vMatrix
 
 将光源方向乘以视图矩阵，标准化，然后对结果求反，从而计算相机空间中定向光的光线方向。
 
-L<sub>dir</sub> = -norm(L<sub>dir</sub> \* wvMatrix)
+L<sub>dir</sub> =-范数 (L<sub>dir</sub> \* wvMatrix)
 
 对于点光和聚光灯，按如下所述计算光线方向：
 

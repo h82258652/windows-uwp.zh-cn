@@ -122,7 +122,7 @@ Authorization: Bearer <your access token>
 |  width   |  整数   |  创意的宽度。     |  否    |     |    是   |       
 |  landingUrl   |  字符串   |  如果使用市场活动跟踪服务（如 Kochava、AppsFlyer 或 Tune）测量应用的安装分析，则在调用 POST 方法时，请在此字段指定跟踪 URL（如已指定，则此值必须为有效 URL）。 如果未使用市场活动跟踪服务，则在调用 POST 方法时，请忽略此值（在此情况下，将会成功创建此 URL）。   |  否    |     |   是    |       
 |  format   |  字符串   |   广告的格式。 当前，唯一受支持的值为 **Banner**。    |   否    |  横幅   |  否     |       
-|  imageAttributes   | [ImageAttributes](#image-attributes)    |   提供创意的属性。     |   否    |      |   是    |       
+|  imageAttributes   | [imageAttributes](#image-attributes)    |   提供创意的属性。     |   否    |      |   是    |       
 |  storeProductId   |  字符串   |   与广告活动关联的应用的[应用商店 ID](in-app-purchases-and-trials.md#store-ids)。 产品应用商店 ID 示例：9nblggh42cfd。    |   否    |    |  否     |   |  
 
 

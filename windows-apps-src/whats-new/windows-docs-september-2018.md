@@ -30,7 +30,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ![Windows 机器学习图](images/winml-graphic.png)
 
-### <a name="windows-ui-library"></a>Windows 用户界面库
+### <a name="windows-ui-library"></a>Windows UI 库
 
 [Windows 用户界面库](https://aka.ms/winui-docs)是一组控件和其他用户界面元素为 UWP 应用提供的 NuGet 包。 这些包也是与早期版本的 Windows 10 兼容的因此即使用户不具有最新的操作系统版本，适用于您的应用程序。
 

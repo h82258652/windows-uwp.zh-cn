@@ -22,7 +22,7 @@ ms.locfileid: "57613512"
 
 通过在 XAML 框架中创建控件模板，你可以自定义控件的可视结构和可视行为。 控件有多个属性，如 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 以及 [**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404)，可以设置这些属性以指定控件外观的多个方面。 但是可以通过设置这些属性所做的更改有限。 你可以通过使用 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 类创建模板来指定其他自定义。 我们在此处介绍如何创建 **ControlTemplate** 以自定义 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 控件的外观。
 
-> **重要的 Api**:[**ControlTemplate 类**](https://msdn.microsoft.com/library/windows/apps/br209391)， [ **Control.Template 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)
+> **重要的 API**：[**ControlTemplate 类**](https://msdn.microsoft.com/library/windows/apps/br209391)， [ **Control.Template 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)
 
 ## <a name="custom-control-template-example"></a>自定义控件模板示例
 
@@ -100,7 +100,7 @@ ms.locfileid: "57613512"
 | **IsChecked** 值 | **CheckBox** 状态 | **CheckBox** 外观 |
 | **true**            | `Checked`          | 包含“X”。        |
 | **false**           | `Unchecked`        | 空白。                  |
-| **null**            | `Indeterminate`    | 包含一个圆形。      |
+| **为 null**            | `Indeterminate`    | 包含一个圆形。      |
 
 
 使用 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 对象可指定控件在某种状态下的外观。 **VisualState** 包含可更改 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br208817) 中元素外观的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br243053) 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br209391)。 当控件进入 [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031) 属性指定的状态时，将应用 **Setter** 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 中的属性更改。 当控件退出该状态时，这些更改将会删除。 你可以将 **VisualState** 对象添加到 [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) 对象。 还可以将 **VisualStateGroup** 对象添加到 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 附加属性，这些对象在 **ControlTemplate** 的根 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 上设置。

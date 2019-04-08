@@ -43,7 +43,7 @@ Marble Maze 为用户提供了多种方式来与游戏板交互。 如果你有�
 
 
 -   Windows 10 创意者更新
--   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
+-   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
 -   C++ 编程知识
 -   熟悉 DirectX 和 DirectX 术语
 -   COM 的基础知识

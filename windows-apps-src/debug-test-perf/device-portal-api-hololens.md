@@ -283,7 +283,7 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
 
 可能的值如下表中所示。
 
-| 值 | 描述 |
+| ReplTest1 | 描述 |
 | --- | --- |
 | 1 | 正常 |
 | 2 | 暧 |

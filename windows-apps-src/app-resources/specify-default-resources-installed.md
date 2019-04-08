@@ -102,6 +102,6 @@ ms.locfileid: "57593982"
 
 ## <a name="related-topics"></a>相关主题
 
-* [定制您的语言、 缩放、 高对比度和其他限定符的资源](tailor-resources-lang-scale-contrast.md)
+* [定制语言、比例、高对比度和其他限定符的资源](tailor-resources-lang-scale-contrast.md)
 * [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [编译手动与 MakePri.exe 的资源](compile-resources-manually-with-makepri.md)
+* [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)

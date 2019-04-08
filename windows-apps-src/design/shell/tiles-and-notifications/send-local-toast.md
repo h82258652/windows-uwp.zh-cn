@@ -39,7 +39,7 @@ Toast 通知是用户当前未在应用内部时应用可构造并发送给用�
 * 处理前台激活
 * 处理后台激活
 
-> **重要的 Api**:[ToastNotification 类](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)， [ToastNotificationActivatedEventArgs 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+> **重要的 API**：[ToastNotification 类](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)， [ToastNotificationActivatedEventArgs 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
 ## <a name="prerequisites"></a>必备条件

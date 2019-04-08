@@ -32,5 +32,5 @@ Xbox One 在通用 Windows 平台上运行，这意味着如同其他 Microsoft 
 若要开始操作，请下载你选择的引擎，然后查找适用于 Windows 10 应用的说明。 此外，请务必阅读[入门指南](getting-started.md)，以了解有关将你的主机转变为开发工具包的信息以及如何通过 Visual Studio 进行部署。
 
 ## <a name="see-also"></a>另请参阅
-- [将现有的游戏引入 Xbox](development-lanes-landing.md)
+- [将现有游戏移植到 Xbox](development-lanes-landing.md)
 - [在 Xbox One 上 UWP](index.md)

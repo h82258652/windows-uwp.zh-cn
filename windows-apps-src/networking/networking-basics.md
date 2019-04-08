@@ -32,7 +32,7 @@ ms.locfileid: "57651652"
 | 功能 | 描述 |
 |------------|-------------|
 | **enterpriseAuthentication** | 允许应用连接至要求提供域凭据的网络资源。 如要启用此功能，域管理员必须为所有应用均启用此功能。 示例将是从专用 Intranet 上的 Sharepoint 服务器中检索数据的应用。 <br/> 通过此功能可以使用你的凭据来访问要求提供凭据的网络中的网络资源。 具有此功能的应用可在网络上模拟其用户。 <br/> 无需此功能，应用即可通过身份验证的代理访问 Internet。 |
-| **proximity** | 与邻近计算机的设备进行近距离感应通信所必需的功能。 近距离感应可用于向附近设备上的应用程序发送邀请或与其进行连接。 <br/> 此功能让应用可以访问邻近设备网络，并在用户同意发送或接受邀请的情况下与这些设备进行连接。 |
+| **邻近** | 与邻近计算机的设备进行近距离感应通信所必需的功能。 近距离感应可用于向附近设备上的应用程序发送邀请或与其进行连接。 <br/> 此功能让应用可以访问邻近设备网络，并在用户同意发送或接受邀请的情况下与这些设备进行连接。 |
 | **sharedUserCertificates** | 此功能让应用可以访问软件和硬件证书，如智能卡证书。 在运行过程中调用此功能时，用户必须采取插入卡或选择证书等操作。 <br/> 使用此功能时，应用会将你的软件和硬件证书或智能卡用于识别。 你的雇主、银行或政府服务机构可以使用此功能来进行识别。 |
 
 ## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>当你的应用不在前台时通信
@@ -478,7 +478,7 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ### <a name="providing-authentication-credentials-to-a-web-service"></a>向 Web 服务提供身份验证凭据
 使应用可与安全 Web 服务交互的每个网络 API 均提供其自有方法来初始化客户端，或者使用服务器和代理身份验证凭据来设置请求头。 每个方法均使用 [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) 对象进行设置，该对象指示用户名、密码和将这些凭据用于的资源。 下表提供这些 API 的映射：
 
-| **WebSockets** | [**MessageWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226848) |
+| **WebSocket** | [**MessageWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226848) |
 |-------------------------|----------------------------------------------------------------------------------------------------------|
 |  | [**MessageWebSocketControl.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br226847) |
 |  | [**StreamWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226928) |
@@ -487,7 +487,7 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 |  | [**BackgroundDownloader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701068) |
 |  | [**BackgroundUploader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701184) |
 |  | [**BackgroundUploader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701178) |
-| **Syndication** | [**SyndicationClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702355) |
+| **联合** | [**SyndicationClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702355) |
 |  | [**SyndicationClient.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461) |
 |  | [**SyndicationClient.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459) |
 | **AtomPub** | [**AtomPubClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702262) |

@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: f585d278d9420865c895d4e20fa1730196d9f0cd
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57593022"
@@ -32,9 +32,9 @@ XAML 框架提供了一个标准按钮控件，以及多个专用的按钮控件
 ------- | -----------
 [按钮](/uwp/api/windows.ui.xaml.controls.button) | 启动立即采取措施。 可以使用与单击事件或命令绑定。
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | 引发一个 Click 事件按下时，持续一个按钮。
-[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | 一个按钮具有类似的超链接，用于导航样式。 有关详细信息，请参阅[超链接](hyperlinks.md)。
+[超链接按钮](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | 一个按钮具有类似的超链接，用于导航样式。 有关详细信息，请参阅[超链接](hyperlinks.md)。
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | 一个具有 v 形图标以打开附加的浮出控件的按钮。
-[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | 一个具有两个方面的按钮。 一侧会启动操作，和另一方将打开一个菜单。
+[拆分按钮](/uwp/api/windows.ui.xaml.controls.splitbutton) | 一个具有两个方面的按钮。 一侧会启动操作，和另一方将打开一个菜单。
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | 一个具有两个方面的切换按钮。 / 关闭切换一侧和另一方将打开一个菜单。
 
 | **获取 Windows 用户界面库** |
@@ -67,7 +67,7 @@ XAML 框架提供了一个标准按钮控件，以及多个专用的按钮控件
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/Button">打开此应用，了解 Button 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>

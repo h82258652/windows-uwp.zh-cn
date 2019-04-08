@@ -21,7 +21,7 @@ ms.locfileid: "57601252"
 
 大纲/细节模式具有一个大纲窗格（通常带有[列表视图](lists.md)）和一个用于内容的细节窗格。 当选择大纲列表中的项时，将更新细节窗格。 此模式通常用于电子邮件和通讯簿。
 
-> **重要的 Api**:[ListView 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)， [SplitView 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+> **重要的 API**：[ListView 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)， [SplitView 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![大纲细节模式的示例](images/HIGSecOne_MasterDetail.png)
 

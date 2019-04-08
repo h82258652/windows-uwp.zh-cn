@@ -103,11 +103,11 @@ Microsoft Store 可以使您的游戏可供下载在 200 多个国家和地区�
 3. 在“应用概述”页面上，单击“开始提交”。
 4. 配置此新提交。 在提交页面上：
     * 单击__定价和可用性__。 在中__可见性__部分中，选择__隐藏此应用，并防止获取...__ 以确保您的开发团队可以访问的游戏。 有关更多详细信息，请转到[分发和可见性](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)。
-    * 单击__属性__。 在“类别和子类别”部分中，选择“游戏”和适合你的游戏的子类别。
+    * 单击__属性__。 在__类别和子类别__部分中，选择__游戏__和适合你的游戏的子类别。
     * 单击__年龄分级__。 准确填写调查表。
-    * 单击“程序包”。 上传在上一步中创建的游戏程序包。
+    * 单击__程序包__。 上传在上一步中创建的游戏程序包。
 5. 按照仪表板中的任何其他提交提示，你可以成功发布此对公众保持隐藏的游戏。
-6. 单击“提交到应用商店”。
+6. 单击__提交到应用商店__。
 
 有关详细信息，请转到[应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。
 
@@ -119,7 +119,7 @@ Microsoft Store 可以使您的游戏可供下载在 200 多个国家和地区�
 
 1. 转到__项目__ > __应用商店__ > __将应用与应用商店相关联...__
 2. 登录到合作伙伴中心开发人员帐户，然后选择要将使用此解决方案相关联的应用程序名称。
-3. 双击“Package.appxmanifest.xml 文件”并转到“打包”选项卡，检查游戏是否已正确关联。
+3. 双击 __Package.appxmanifest.xml 文件__并转到__打包__选项卡，检查游戏是否已正确关联。
 
 如果已将解决方案关联到处于活动状态并在应用商店中列出的已发布游戏，你的解决方案将具有活动许可证，这进一步完成了为你的游戏创建加载项过程。 有关详细信息，请参阅[打包应用](https://msdn.microsoft.com/windows/uwp/packaging/index)。
 
@@ -128,8 +128,8 @@ Microsoft Store 可以使您的游戏可供下载在 200 多个国家和地区�
 创建加载项时，确保将它们与正确的游戏提交相关联。 有关如何配置与加载项相关联的所有各种信息的详细信息，请参阅[加载项提交](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。
 
 1. 转到[合作伙伴中心](https://partner.microsoft.com/dashboard)并登录。
-2. 在“仪表板概述”或“所有应用”页面上，单击要为其创建加载项的应用。
-3. 在“应用概述”页面上的“加载项”部分中，选择“创建新加载项”。
+2. 在__仪表板概述__或__所有应用__页面上，单击要为其创建加载项的应用。
+3. 在__应用概述__页面上的__加载项__部分中，选择__创建新加载项__。
 4. 选择该加载项的产品类型：__开发人员托管的易耗型__、__应用商店托管的易耗型__或__耐用型__。
 5. 输入唯一的产品 ID，该 ID 在将此加载项集成到你的游戏代码时用作字符串变量。 客户不会看到此 ID。 有关详细信息，请参阅[设置你的应用产品类型和产品 ID](https://msdn.microsoft.com/windows/uwp/publish/set-your-add-on-product-id)。
 
@@ -206,7 +206,7 @@ Smaato 可以将横幅广告合并到 UWP 应用和游戏中。 下载 [SDK](htt
 AdDuplex 可用于在你的游戏中实现横幅或间隙广告。
 
 若要了解有关将 AdDuplex 直接集成到 Windows 10 XAML 项目中的详细信息，请转到 AdDuplex 网站：
-* 横幅广告：[Windows 10 SDK for XAML](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage)
+* 横幅广告：[Windows 10 SDK 的 XAML](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage)
 * 插播式广告：[Windows 10 XAML AdDuplex 插播式广告安装和使用情况](https://adduplex.zendesk.com/hc/en-us/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage)
 
 有关将 AdDuplex SDK 集成到使用 Unity 创建的 Windows 10 UWP 游戏的信息，请参阅[适用于 Unity 应用的 Windows 10 SDK 安装和使用](https://adduplex.zendesk.com/hc/en-us/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage)。

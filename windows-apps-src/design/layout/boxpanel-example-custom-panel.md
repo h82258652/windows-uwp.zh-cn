@@ -25,7 +25,7 @@ ms.locfileid: "57620122"
 
 学习为自定义 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 类编写代码、实现 [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) 和 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 方法，以及使用 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 属性。 
 
-> **重要的 Api**:[**面板**](https://msdn.microsoft.com/library/windows/apps/br227511)， [ **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)，[**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 
+> **重要的 API**：[**面板**](https://msdn.microsoft.com/library/windows/apps/br227511)， [ **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)，[**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 
 
 示例代码显示了一个自定义面板实现，但我们不会花费许多时间来解释影响为不同的布局方案自定义面板方式的布局概念。 如果你需要关于这些布局概念以及它们可能如何应用到特定布局方案的详细信息，请参阅 [XAML 自定义面板概述](custom-panels-overview.md)。
 
@@ -225,7 +225,7 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 * [**FrameworkElement.ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
 * [**FrameworkElement.MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
-* [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)
+* [**面板**](https://msdn.microsoft.com/library/windows/apps/br227511)
 
 **概念**
 

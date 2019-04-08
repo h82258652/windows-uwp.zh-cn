@@ -53,7 +53,7 @@ ms.locfileid: "57599112"
 | top | int | 要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。 |  否  |
 | skip | int | 要在查询中跳过的行数。 使用此参数可以浏览较大的数据集。 例如，top=10000 和 skip=0，将检索前 10000 行数据；top=10000 和 skip=10000，将检索之后的 10000 行数据，依此类推。 |  否  |
 | filter |字符串  | 在响应中筛选行的一条或多条语句。 有关详细信息，请参阅下面的[筛选器字段](#filter-fields)部分。 | 否   |
-| orderby | 字符串 | 对结果数据值进行排序的语句。 语法是 <em>orderby=field [order],field [order],...</em>。<em>field</em> 参数可以是以下字符串之一。<ul><li><strong>date</strong></li><li><strong>osVersion</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>isRevised</strong></li><li><strong>packageVersion</strong></li><li><strong>deviceModel</strong></li><li><strong>productFamily</strong></li><li><strong>deviceScreenResolution</strong></li><li><strong>isTouchEnabled</strong></li><li><strong>reviewerName</strong></li><li><strong>reviewTitle</strong></li><li><strong>reviewText</strong></li><li><strong>helpfulCount</strong></li><li><strong>notHelpfulCount</strong></li><li><strong>responseDate</strong></li><li><strong>responseText</strong></li><li><strong>deviceRAM</strong></li><li><strong>deviceStorageCapacity</strong></li><li><strong>rating</strong></li></ul><p><em>order</em> 参数是可选的，可以是 <strong>asc</strong> 或 <strong>desc</strong>，用于指定每个字段的升序或降序排列。 默认值为 <strong>asc</strong>。</p><p>下面是一个 <em>orderby</em> 字符串的示例：<em>orderby=date,market</em></p> |  否  |
+| orderby | 字符串 | 对结果数据值进行排序的语句。 语法是 <em>orderby=field [order],field [order],...</em>。<em>field</em> 参数可以是以下字符串之一。<ul><li><strong>date</strong></li><li><strong>osVersion</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>isRevised</strong></li><li><strong>packageVersion</strong></li><li><strong>Devicemodel 传递</strong></li><li><strong>productFamily</strong></li><li><strong>deviceScreenResolution</strong></li><li><strong>isTouchEnabled</strong></li><li><strong>reviewerName</strong></li><li><strong>reviewTitle</strong></li><li><strong>reviewText</strong></li><li><strong>helpfulCount</strong></li><li><strong>notHelpfulCount</strong></li><li><strong>responseDate</strong></li><li><strong>ResponseText</strong></li><li><strong>deviceRAM</strong></li><li><strong>deviceStorageCapacity</strong></li><li><strong>分级</strong></li></ul><p><em>order</em> 参数是可选的，可以是 <strong>asc</strong> 或 <strong>desc</strong>，用于指定每个字段的升序或降序排列。 默认值为 <strong>asc</strong>。</p><p>下面是一个 <em>orderby</em> 字符串的示例：<em>orderby=date,market</em></p> |  否  |
 
 
 ### <a name="filter-fields"></a>筛选器字段
@@ -72,7 +72,7 @@ ms.locfileid: "57599112"
 | isRevised  | eq, ne  | 指定 <strong>true</strong> 可筛选已修改的评价，否则指定 <strong>false</strong>。  |
 | packageVersion  | eq, ne  | 已评价的应用程序包版本。  |
 | deviceModel  | eq, ne  | 应用已评价的设备的类型。  |
-| productFamily  | eq, ne  | 以下字符串之一：<ul><li><strong>PC</strong></li><li><strong>平板电脑</strong></li><li><strong>Phone</strong></li><li><strong>可穿戴设备</strong></li><li><strong>Server</strong></li><li><strong>协作</strong></li><li><strong>其他</strong></li></ul>  |
+| productFamily  | eq, ne  | 以下字符串之一：<ul><li><strong>PC</strong></li><li><strong>平板电脑</strong></li><li><strong>Phone</strong></li><li><strong>可穿戴设备</strong></li><li><strong>服务器</strong></li><li><strong>协作</strong></li><li><strong>其他</strong></li></ul>  |
 | deviceRAM  | eq, ne, gt, lt, ge, le  | 物理 RAM（以 MB 为单位）。  |
 | deviceScreenResolution  | eq, ne  | 设备屏幕分辨率采用&quot;<em>宽度</em> x <em>高度</em>&quot;格式。   |
 | deviceStorageCapacity  | eq, ne, gt, lt, ge, le   | 主存储器磁盘容量（以 GB 为单位）。  |

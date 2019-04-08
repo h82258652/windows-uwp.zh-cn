@@ -159,7 +159,7 @@ Package(2) { "bus-SPI-SPI1", Package() { 2 }},
 * 必须已通过 [MITT SPI 测试](https://msdn.microsoft.com/library/windows/hardware/dn919873.aspx)
 * 必须支持 4Mhz 时钟速度
 * 必须支持 8 位数据长度
-* 必须支持所有 SPI 模式：0, 1, 2, 3
+* 必须支持所有 SPI 模式：0、 1、 2、 3
 
 ### <a name="i2c"></a>I2C
 

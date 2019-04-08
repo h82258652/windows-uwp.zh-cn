@@ -57,7 +57,7 @@ TreeView API 支持以下功能：
 <td>
     <p>如果有<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序安装，请单击此处<a href="xamlcontrolsgallery:/item/TreeView">打开应用，请参阅操作中的树视图</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -171,17 +171,17 @@ End Sub
 
 可以使用以下 API 管理树视图的数据层次结构。
 
-| **[TreeView](/uwp/api/windows.ui.xaml.controls.treeview)** | |
+| **[树视图](/uwp/api/windows.ui.xaml.controls.treeview)** | |
 | - | - |
 | [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) | 一个树视图可以有一个或多个根节点。 向 RootNodes 集合添加一个 TreeViewNode 对象会创建一个根节点。 根节点的 **Parent** 始终为 **null**。 根节点的 **Depth** 为 0。 |
 
 | **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
 | - | - |
-| [Children](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) | 向父节点的 Children 集合添加 TreeViewNode 对象可创建节点层次结构。 节点是其 **Children** 集合中的所有节点的 **Parent**。 |
+| [子级](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) | 向父节点的 Children 集合添加 TreeViewNode 对象可创建节点层次结构。 节点是其 **Children** 集合中的所有节点的 **Parent**。 |
 | [HasChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.haschildren) | 如果节点有已实现的子级，则为 **true**。 **false** 表示空的文件夹或项目。 |
 | [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) | 填充展开的节点时可以使用此属性。 请参阅本文稍后部分的_填充正在展开的节点_。 |
 | [深度](/uwp/api/windows.ui.xaml.controls.treeviewnode.depth) | 指示子节点距根节点的距离。 |
-| [Parent](/uwp/api/windows.ui.xaml.controls.treeviewnode.parent) | 获取拥有此节点所属的 **Children** 集合的 TreeViewNode。 |
+| [父](/uwp/api/windows.ui.xaml.controls.treeviewnode.parent) | 获取拥有此节点所属的 **Children** 集合的 TreeViewNode。 |
 
 树视图使用 **HasChildren** 和 **HasUnrealizedChildren** 属性确定是否显示展开/折叠图标。 如果任一属性为 **true**，则显示图标；否则不显示。
 

@@ -17,7 +17,7 @@ ms.locfileid: "57634862"
 
 使用 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 对象绘制 XAML 形状、文本和各控件部分的内部或轮廓，以便所绘制的对象在 UI 中可见。 让我们了解一下可用的画笔以及如何使用画笔。
 
-> **重要的 Api**:[画笔类](/uwp/api/Windows.UI.Xaml.Media.Brush)
+> **重要的 API**：[画笔类](/uwp/api/Windows.UI.Xaml.Media.Brush)
 
 ## <a name="introduction-to-brushes"></a>画笔简介
 

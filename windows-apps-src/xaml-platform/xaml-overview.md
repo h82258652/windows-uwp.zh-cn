@@ -68,10 +68,10 @@ XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。
 
 | 术语 | 描述 |
 |------|-------------|
-| [x:Key](x-key-attribute.md) | 为 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的每个资源设置一个唯一的用户定义密钥。 该密钥的令牌字符串是 **StaticResource** 标记扩展的参数，你可以在以后使用此密钥在应用 XAML 的其他位置检索其他 XAML 用法中的 XAML 资源。 |
-| [x:Class](x-class-attribute.md) | 为 XAML 页面提供代码隐藏的类指定代码命名空间和代码类名称。 这可为构建你的应用时通过构建操作创建或加入的类命名。 这些构建操作支持 XAML 标记编译器，并在编译应用时，将你的标记和代码隐藏文件组合到一起。 必须具有此类才能支持对 XAML 页面实现代码隐藏。 [**Window.Content** ](https://msdn.microsoft.com/library/windows/apps/br209051)默认 Windows 运行时激活模型中。 |
-| [x:Name](x-name-attribute.md) | 在处理 XAML 中定义的对象元素后，为运行时代码中存在的实例指定一个运行时对象名。 你可以将在 XAML 中设置 **x:Name** 看作是在代码中声明命名变量。 稍后你会了解，这是将 XAML 加载为 Windows 运行时应用的一个组件时发生的实际情况。 <br/><div class="alert">**注意**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 是框架中的一个类似属性，并非所有元素都支持它。 因此，当 **FrameworkElement.Name** 在该元素类型上不受支持时，你可以将 **x:Name** 用于元素标识。 |
-| [x:Uid](x-uid-directive.md) | 标识某些元素，应将本地化后的资源用于该元素的一些属性值。 有关如何使用的详细信息**X:uid**，请参阅[快速入门：将 UI 资源翻译](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。 |
+| [x： 键](x-key-attribute.md) | 为 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的每个资源设置一个唯一的用户定义密钥。 该密钥的令牌字符串是 **StaticResource** 标记扩展的参数，你可以在以后使用此密钥在应用 XAML 的其他位置检索其他 XAML 用法中的 XAML 资源。 |
+| [x： 类](x-class-attribute.md) | 为 XAML 页面提供代码隐藏的类指定代码命名空间和代码类名称。 这可为构建你的应用时通过构建操作创建或加入的类命名。 这些构建操作支持 XAML 标记编译器，并在编译应用时，将你的标记和代码隐藏文件组合到一起。 必须具有此类才能支持对 XAML 页面实现代码隐藏。 [**Window.Content** ](https://msdn.microsoft.com/library/windows/apps/br209051)默认 Windows 运行时激活模型中。 |
+| [x： 名称](x-name-attribute.md) | 在处理 XAML 中定义的对象元素后，为运行时代码中存在的实例指定一个运行时对象名。 你可以将在 XAML 中设置 **x:Name** 看作是在代码中声明命名变量。 稍后你会了解，这是将 XAML 加载为 Windows 运行时应用的一个组件时发生的实际情况。 <br/><div class="alert">**注意**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 是框架中的一个类似属性，并非所有元素都支持它。 因此，当 **FrameworkElement.Name** 在该元素类型上不受支持时，你可以将 **x:Name** 用于元素标识。 |
+| [x: Uid](x-uid-directive.md) | 标识某些元素，应将本地化后的资源用于该元素的一些属性值。 有关如何使用的详细信息**X:uid**，请参阅[快速入门：将 UI 资源翻译](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。 |
 | [XAML 内部数据类型](xaml-intrinsic-data-types.md) | 当属性或资源需要值时，这些类型可以为简单值类型指定值。 这些固有类型与通常定义为每个编程语言固有定义的一部分的简单值类型相对应。 例如，你可能需要一个表示 **true** 布尔值的对象，以便在 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) 情节提要视觉状态中使用。 对于在 XAML 中的值，将使用**x： 布尔值**作为对象元素，此类的内部类型： <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
 
 在 XAML 语言 XAML 命名空间中还存在其他编程结构，但没有这么常用。

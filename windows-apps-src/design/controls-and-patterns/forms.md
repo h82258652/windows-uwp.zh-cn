@@ -110,7 +110,7 @@ ms.locfileid: "57658152"
 ### <a name="text-input"></a>文本输入
 控件 | 将 | 示例
  - | - | -
-[TextBox](text-box.md) | 捕获一个或多个行文本 | 名称、 自由格式的响应或反馈
+[文本框](text-box.md) | 捕获一个或多个行文本 | 名称、 自由格式的响应或反馈
 [PasswordBox](password-box.md) | 隐藏字符收集专用数据 | 密码、 社会安全号码 (SSN) 的 Pin，信用卡信息 
 [AutoSuggestBox](auto-suggest-box.md) | 在键入时显示用户从一组对应的数据的建议列表 | 数据库搜索中，向发送邮件： 行前面的查询
 [RichEditBox](rich-edit-box.md) | 编辑文本文件与带格式的文本、 超链接和图像 | 上传文件，预览并在应用中编辑
@@ -118,8 +118,8 @@ ms.locfileid: "57658152"
 ### <a name="selection"></a>选择
 控件 | 将 | 示例
 - | - | - 
-| [CheckBox](checkbox.md) | 选择或取消选择一个或多个操作项目 | 同意条款和条件，将添加可选项，请选择所有适用
-[RadioButton](radio-button.md) | 从两个或多个选项中选择一个选项 | 选择类型，传送方法，等等。
+| [复选框](checkbox.md) | 选择或取消选择一个或多个操作项目 | 同意条款和条件，将添加可选项，请选择所有适用
+[单选按钮](radio-button.md) | 从两个或多个选项中选择一个选项 | 选择类型，传送方法，等等。
 [ToggleSwitch](toggles.md) | 选择两个互相排斥的选项之一 | 打开/关闭
 
 > **注意**：如果有五个或多个选择项，使用列表控件。
@@ -127,7 +127,7 @@ ms.locfileid: "57658152"
 ### <a name="lists"></a>列表
 控件 | 将 | 示例
 - | - | -
-[ComboBox](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | 启动 compact 的状态和展开以显示选择项的列表 | 从项，例如州或国家/地区的长列表中选择
+[组合框](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | 启动 compact 的状态和展开以显示选择项的列表 | 从项，例如州或国家/地区的长列表中选择
 [ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | 对项进行分类和分配组标头、 拖动和删除项、 评判内容，和对项重新排序 | Rank 选项
 [GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | 排列和浏览基于映像的集合 | 选取的照片，颜色、 显示主题
 
@@ -141,7 +141,7 @@ ms.locfileid: "57658152"
 
 控件 | 将 
 - | - 
-[CalendarView](calendar-view.md) | 选择单个日期或中始终可见的日历的日期范围 
+[日历视图](calendar-view.md) | 选择单个日期或中始终可见的日历的日期范围 
 [CalendarDatePicker](calendar-date-picker.md) | 选择上下文在日历中的单一日期 
 [DatePicker](date-picker.md) | 选择一个当上下文信息并不重要的本地化的日期
 [TimePicker](time-picker.md) | 选择一个时间值
@@ -238,4 +238,4 @@ UWP 控件的完整列表，请参阅[函数按控件的索引](controls-by-func
 
 ## <a name="related-topics"></a>相关主题
 - [输入的控件](controls-and-events-intro.md)
-- [Typography](../style/typography.md)
+- [版式](../style/typography.md)

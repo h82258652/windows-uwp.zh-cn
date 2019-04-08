@@ -18,7 +18,7 @@ ms.locfileid: "57613302"
 
 <b>重要的 Api</b>
 
--   [**Windows.UI.Core namespace**](https://msdn.microsoft.com/library/windows/apps/BR208383)
+-   [**Windows.UI.Core 命名空间**](https://msdn.microsoft.com/library/windows/apps/BR208383)
 -   [**Windows.System.Threading 命名空间**](https://msdn.microsoft.com/library/windows/apps/BR229642)
 
 了解如何创建在经过计时器时间后运行的工作项。
@@ -227,8 +227,8 @@ ms.locfileid: "57613302"
 
 ## <a name="related-topics"></a>相关主题
 
-* [提交到线程池工作项](submit-a-work-item-to-the-thread-pool.md)
-* [使用线程池的最佳实践](best-practices-for-using-the-thread-pool.md)
+* [向线程池提交工作项](submit-a-work-item-to-the-thread-pool.md)
+* [使用线程池的最佳做法](best-practices-for-using-the-thread-pool.md)
 * [使用计时器提交工作项](use-a-timer-to-submit-a-work-item.md)
  
 

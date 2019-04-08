@@ -69,7 +69,7 @@ ms.locfileid: "57599202"
 
 2.  使用清单设计器检查是否在包清单中正确声明了后台任务：
 
-    -   在 C# 和 C++ 中，入口点属性必须与后台任务的命名空间相匹配而且后面必须跟着类名。 例如：RuntimeComponent1.MyBackgroundTask.
+    -   在 C# 和 C++ 中，入口点属性必须与后台任务的命名空间相匹配而且后面必须跟着类名。 例如：RuntimeComponent1.MyBackgroundTask。
     -   还必须指定与后台任务一起使用的所有触发器类型。
     -   除非你使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 或 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)，否则不得指定可执行文件。
 
@@ -105,11 +105,11 @@ ms.locfileid: "57599202"
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建并注册进程外后台任务](create-and-register-a-background-task.md)
-* [创建和注册过程中后台任务](create-and-register-an-inproc-background-task.md)
+* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
+* [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)
 * [注册后台任务](register-a-background-task.md)
-* [声明应用程序清单中的后台任务](declare-background-tasks-in-the-application-manifest.md)
-* [后台任务的指导原则](guidelines-for-background-tasks.md)
+* [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
+* [后台任务指南](guidelines-for-background-tasks.md)
 * [如何在触发挂起、 继续和后台事件在 UWP 应用中](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
 * [分析 UWP 应用使用 Visual Studio 代码分析的代码质量](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
 

@@ -29,7 +29,7 @@ ms.locfileid: "57620772"
 -   [创建第一个 UWP 应用使用 JavaScript](../get-started/create-a-hello-world-app-js-uwp.md)
 
 **请注意**  对于使用 3D 图形的应用，OpenGL 和 OpenGL ES 标准不是以本机方式提供适用于 UWP 应用。 如果你不愿意将 OpenGL ES 代码重新写入到 Microsoft DirectX，你可能会有兴趣了解 **“角度”**。 角度是一个持续项目，旨在将 OpenGL API 调用转换为 DirectX API 调用，以将 OpenGL 转换为 DirectX。 若要了解详细信息，请参阅以下内容：
--   [Angle](https://code.google.com/p/angleproject/)
+-   [角度](https://code.google.com/p/angleproject/)
 -   [创建第一个 UWP 应用使用 DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
 -   [使用 DirectX 的 UWP 应用示例](https://go.microsoft.com/fwlink/p/?LinkId=263603)
 -   [DirectX SDK 位于何处？](https://msdn.microsoft.com/library/windows/desktop/ee663275)

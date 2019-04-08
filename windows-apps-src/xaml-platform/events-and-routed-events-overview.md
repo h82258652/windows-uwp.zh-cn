@@ -202,10 +202,10 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 - [**ContextRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextrequested)
 - [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)
 - [**DragEnter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragenter)
-- [**DragLeave**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
+- [**时，会**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
 - [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
 - [**DragStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragstarting)
-- [**Drop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
+- [**删除**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
 - [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
 - [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
 - [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
@@ -232,7 +232,7 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 - [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup.md)
 - [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
 - [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
-- [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
+- [**点击**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
 路由事件是一种可能从一个子对象（*路由*）传递到对象树中它的每个后续父对象的事件。 UI 的 XAML 结构大体类似于此树，该树的根是 XAML 中的根元素。 真正的对象树可能与 XAML 元素嵌套稍有区别，因为对象树不包含 XAML 语言功能，例如属性元素标记。 你可以将路由事件视为从任何 XAML 对象元素中引发事件的子元素向包含它的父对象元素*浮升*。 该事件及其事件数据可以沿事件路由在多个对象上进行处理。 如果元素都不具有处理程序，则可能继续进行路由，直到达到根元素为止。
 

@@ -169,7 +169,7 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
 有关 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411) 值和 XAML 语法的详细信息，请参阅 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411)。
 
-### <a name="fillbehaviorstop"></a>**FillBehavior="Stop"**
+### <a name="fillbehaviorstop"></a>**FillBehavior ="Stop"**
 
 默认情况下，当动画结束时，即使在超过其持续时间后，动画将属性值保留为最终 **To** 或 **By** 修改的值。 但是，如果你将 [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) 属性的值设置为 [**FillBehavior.Stop**](https://msdn.microsoft.com/library/windows/apps/BR210306)，则动画化值的值将还原为应用动画前的任意值，或者更精确些还原为按照依赖属性系统（有关此区别的详细信息，请参阅[依赖属性概述](https://msdn.microsoft.com/library/windows/apps/Mt185583)）确定的当前有效值。
 

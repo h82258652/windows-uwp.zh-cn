@@ -66,5 +66,5 @@ var str = resourceMap.GetValue("String1", resourceContext).ValueAsString;
 * [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
 
 ## <a name="related-topics"></a>相关主题
-* [本地化用户界面和应用包清单中的字符串](localize-strings-ui-manifest.md)
-* [加载图像和定制实现扩展、 主题、 高对比度和其他资产](images-tailored-for-scale-theme-contrast.md)
+* [对 UI 和应用包清单中的字符串进行本地化](localize-strings-ui-manifest.md)
+* [加载在比例、主题、高对比度和其他方面进行了定制的图像和资产](images-tailored-for-scale-theme-contrast.md)

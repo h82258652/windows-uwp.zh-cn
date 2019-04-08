@@ -23,7 +23,7 @@ ms.locfileid: "57618622"
 
 当关闭组合框时，它显示当前所选内容，或者如果没有选定的项为空。 用户在扩展组合框，将显示可选择项的列表。
 
-> **重要的 Api**:[ComboBox 类](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)， [IsEditable 属性](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)， [Text 属性](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)， [TextSubmitted 事件](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+> **重要的 API**：[ComboBox 类](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)， [IsEditable 属性](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)， [Text 属性](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)， [TextSubmitted 事件](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 组合框使用标头压缩状态。
 
@@ -45,7 +45,7 @@ ms.locfileid: "57618622"
 <td>
     <p>如果有<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序安装，请单击此处<a href="xamlcontrolsgallery:/item/ComboBox">打开应用，请参阅操作组合框</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -173,13 +173,13 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 - SelectedItem = null
 - SelectedValue = null
-- SelectedIndex = -1
+- SelectedIndex =-1
 
 在 SDK 17763 及更高版本，SelectedItem 属性的值 (因此 SelectedValue 和 SelectedIndex) 不需要出现在组合框的项集合。 使用上述示例中，设置`colorComboBox.SelectedItem = "Pink"`导致：
 
 - SelectedItem = Pink
 - SelectedValue = Pink
-- SelectedIndex = -1
+- SelectedIndex =-1
 
 ### <a name="text-search"></a>文本搜索
 

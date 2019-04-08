@@ -23,7 +23,7 @@ ms.locfileid: "57624822"
 
 进度栏内 toast 可以是"不确定"（没有特定值，动画的点表示正在进行的操作） 或"确定"（特定百分比条的填充，如 60%）。
 
-> **重要的 Api**:[NotificationData 类](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata)， [ToastNotifier.Update 方法](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update)， [ToastNotification 类](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
+> **重要的 API**：[NotificationData 类](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata)， [ToastNotifier.Update 方法](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update)， [ToastNotification 类](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 
 > [!NOTE]
 > 仅桌面设备支持 Toast 通知中的进度栏。 其他设备会从通知中删除进度栏。

@@ -25,7 +25,7 @@ ms.locfileid: "57589922"
 
 滑块是一种可让用户通过沿轨迹移动 thumb 控件从一个值范围中进行选择的控件。
 
-> **重要的 Api**:[Slider 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)，[的 Value 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)， [ValueChanged 事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
+> **重要的 API**：[Slider 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)，[的 Value 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)， [ValueChanged 事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
 
 ![滑块控件](images/controls/slider.png)
 
@@ -64,7 +64,7 @@ ms.locfileid: "57589922"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/Slider">打开此应用，了解 Slider 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>

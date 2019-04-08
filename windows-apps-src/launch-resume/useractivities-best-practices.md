@@ -102,6 +102,6 @@ ms.locfileid: "57589902"
 * [用户活动 (项目罗马 docs)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [自适应卡](https://docs.microsoft.com/adaptive-cards/)
 * [自适应卡可视化工具示例](https://adaptivecards.io/)
-* [句柄 URI 激活](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+* [处理 URI 激活](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [使用 Microsoft Graph、 活动源，和自适应卡任何平台上的客户参与](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)

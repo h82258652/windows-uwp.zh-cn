@@ -320,7 +320,7 @@ UWP 控件默认情况下之后箭头键导航。 有关自定义布局和控制
       <p><img src="images/keyboard/dialog.png" alt="Dialog buttons"/></p>
       <p><sup>对话框按钮</sup></p>
       <p><img src="images/keyboard/radiobutton.png" alt="Radio buttons"/></p>
-      <p><sup>RadioButtons</sup></p>     
+      <p><sup>单选按钮</sup></p>     
     </td>
     <td>
       <p><img src="images/keyboard/appbar.png" alt="AppBar buttons"/></p>
@@ -400,7 +400,7 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 
 以下所示为键盘、游戏板和遥控器之间的部分键映射。
 
-| **键盘**  | **Gamepad**                         | **远程控制**  |
+| **键盘**  | **游戏手柄**                         | **远程控制**  |
 |---------------|-------------------------------------|---------------------|
 | 空格         | A 按钮                            | 选择按钮       |
 | Enter         | A 按钮                            | 选择按钮       |

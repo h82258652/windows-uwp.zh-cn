@@ -1,7 +1,7 @@
 ---
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Windows 应用认证工具包
-description: 为了让您的应用程序要发布的 Microsoft Store，或逐渐成为 Windows 认证上将最有可能，验证和本地测试，然后提交以进行认证。 本主题显示了如何安装并运行 Windows 应用认证工具包。
+description: 若要为你的应用创造在 Microsoft Store 中发布的最佳机会或令其通过 Windows 认证，请在提交应用进行认证之前先在本地进行验证和测试。 本主题显示了如何安装并运行 Windows 应用认证工具包。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，应用程序认证

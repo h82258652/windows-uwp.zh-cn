@@ -22,7 +22,7 @@ ms.locfileid: "57596192"
 > [!IMPORTANT]
 > **需要创意者更新**:必须为目标 SDK 版本 15063 和运行生成 15063 或更高版本才能使用 Api 的主磁贴。
 
-> **重要的 Api**:[**StartScreenManager 类**](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager)， [ContainsAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)， [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
+> **重要的 API**：[**StartScreenManager 类**](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager)， [ContainsAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)， [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
 
 
 ## <a name="when-to-use-primary-tile-apis"></a>何时使用主要磁贴 API

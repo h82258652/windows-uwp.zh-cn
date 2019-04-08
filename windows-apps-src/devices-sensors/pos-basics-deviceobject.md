@@ -47,4 +47,4 @@ Windows 8 随 UWP 应用引入了新应用程序模型。 在高级别上，添�
 > 请参阅以下主题了解有关 Windows 10 通用 Windows 平台 (UWP) 应用程序生命周期的详细信息：
 > - [Windows 10 通用 Windows 平台 (UWP) 应用程序生命周期](../launch-resume/app-lifecycle.md)
 > - [处理应用程序暂挂](../launch-resume/suspend-an-app.md)
-> - [句柄应用恢复](../launch-resume/resume-an-app.md)
+> - [处理应用恢复](../launch-resume/resume-an-app.md)

@@ -121,7 +121,7 @@ Xbox 开发环境上的通用 Windows 平台 (UWP) 由通过本地网络连接�
 恭喜，你已在 Xbox 上成功创建和部署了你的第一个 UWP 应用！
 
 ## <a name="see-also"></a>另请参阅
-- [Xbox 一个开发人员模式下激活](devkit-activation.md)  
+- [Xbox One 开发人员模式激活](devkit-activation.md)  
 - [下载和适用于 Windows 10 的工具](https://dev.windows.com/downloads)  
 - [Windows 预览体验计划](https://go.microsoft.com/fwlink/?LinkId=780552)  
 - [Xbox One 工具简介](introduction-to-xbox-tools.md) 

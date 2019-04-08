@@ -37,10 +37,10 @@ ARM 上的 Windows 10 运行所有 x86，ARM32 和 ARM64 [UWP 应用](../get-sta
 ## <a name="in-this-section"></a>本部分内容
 |主题 | 描述 |
 |-----|-----|
-|[如何模拟适用于 ARM 的 x86](apps-on-arm-x86-emulation.md)|详细介绍如何在 ARM 上模拟 x86 应用。|
-|[故障排除 x86 ARM 上的应用程序](apps-on-arm-troubleshooting-x86.md)|在 ARM 上运行 x86 应用的常见问题以及如何解决这些问题。 |
+|[x86 仿真在 ARM 上的工作原理](apps-on-arm-x86-emulation.md)|详细介绍如何在 ARM 上模拟 x86 应用。|
+|[ARM 上的 x86 应用疑难解答](apps-on-arm-troubleshooting-x86.md)|在 ARM 上运行 x86 应用的常见问题以及如何解决这些问题。 |
 |[在 ARM 上的 ARM 应用进行故障排除](apps-on-arm-troubleshooting-arm32.md)|使用 ARM，以及如何解决这些问题上运行时 ARM32 和 ARM64 的应用的常见问题。 |
-|[在 ARM 上的程序兼容性疑难解答](apps-on-arm-program-compat-troubleshooter.md)|介绍当你的应用无法在 ARM 上正常工作时如何调整兼容性设置。 |
+|[ARM 上的程序兼容性疑难解答](apps-on-arm-program-compat-troubleshooter.md)|介绍当你的应用无法在 ARM 上正常工作时如何调整兼容性设置。 |
 
 ## <a name="related-topics"></a>相关主题
 |主题 | 描述 |

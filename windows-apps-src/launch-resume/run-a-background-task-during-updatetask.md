@@ -95,4 +95,4 @@ namespace BackgroundTasks
 
 ## <a name="see-also"></a>另请参阅
 
-[创建并注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+[创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)

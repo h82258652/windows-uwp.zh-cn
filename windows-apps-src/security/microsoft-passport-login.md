@@ -4,7 +4,7 @@ description: 这是有关如何创建 Windows 10 UWP（通用 Windows 平台）�
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 8319d4a0975e209edea7cb70b22910e8124f16c1
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

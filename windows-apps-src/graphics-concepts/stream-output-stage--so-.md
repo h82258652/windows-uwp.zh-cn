@@ -38,7 +38,7 @@ ms.locfileid: "57605042"
 
 来自之前着色器阶段的顶点数据。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
 
 
 流输出 (SO) 阶段连续地将来自前一活动阶段的顶点数据（例如几何着色器 (GS) 阶段）输出（或流入）到内存中的一个或多个缓冲区。 如果几何着色器 (GS) 阶段处于非活动状态，则 Stream 输出 (SO) 阶段持续输出缓冲区在内存中 （或如果 DS 还处于非活动状态，来自顶点着色器 (VS) 阶段） 到来自域着色器 (DS) 阶段的顶点数据。

@@ -33,7 +33,7 @@ Windows 10 版本 1607 中引入了[远程系统 API](https://msdn.microsoft.com
 |-------|-------------|
 | [启动远程设备上的应用](launch-a-remote-app.md) | 了解如何启动远程设备上的应用。 本主题介绍最简单的用例和初步设置。  |
 | [发现远程设备](discover-remote-devices.md)  | 了解如何发现可以连接的设备。 |
-| [与远程应用程序服务进行通信](communicate-with-a-remote-app-service.md) | 了解如何与远程设备上的应用交互。 |
-| [通过远程会话进行连接的设备](remote-sessions.md) | 通过在远程会话中加入多个设备来创建跨多个设备的共享体验。 |
-| [即使在设备上继续用户活动](useractivities.md)| 帮助用户恢复他们在做什么在应用中，即使跨多个设备。|
+| [与远程应用服务进行通信](communicate-with-a-remote-app-service.md) | 了解如何与远程设备上的应用交互。 |
+| [通过远程会话连接设备](remote-sessions.md) | 通过在远程会话中加入多个设备来创建跨多个设备的共享体验。 |
+| [即便跨设备，也继续用户活动](useractivities.md)| 帮助用户恢复他们在做什么在应用中，即使跨多个设备。|
 | [用户活动最佳实践](useractivities-best-practices.md)| 了解有关创建和更新用户活动的建议的做法。|

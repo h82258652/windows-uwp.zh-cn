@@ -67,7 +67,7 @@ ms.locfileid: "57641062"
 
 在使用 Microsoft 广告 SDK 时，你无法在项目中面向**任何 CPU**。 如果你的项目面向**任何 CPU** 平台，可能在添加类似于此引用的引用后会看到警告。
 
-![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
+![referenceerror\-解决方案资源管理器](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
 若要删除此警告，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 使用“配置管理器”以设置适用于调试和版本配置的平台目标。
 

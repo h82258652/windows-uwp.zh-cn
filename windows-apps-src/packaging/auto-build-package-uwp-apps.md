@@ -213,7 +213,7 @@ MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "A
 出现此错误是因为，在解决方案级别上，哪个应用应出现在程序包中不明确。
 若要解决此问题，请打开每个项目文件，并在第一个 `<PropertyGroup>` 元素的末尾添加以下属性：
 
-|**Project**|**属性**|
+|**项目**|**属性**|
 |-------|----------|
 |应用|`<AppxBundle>Always</AppxBundle>`|
 |UnitTests|`<AppxBundle>Never</AppxBundle>`|

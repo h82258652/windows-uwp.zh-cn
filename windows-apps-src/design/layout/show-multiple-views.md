@@ -18,7 +18,7 @@ ms.locfileid: "57607622"
 
 通过让用户在单独窗口中查看应用的独立部分，可帮助他们提高效率。 如果你为应用创建多个窗口，每个窗口都独立运作。 任务栏会分别显示每个窗口。 用户可以独立地移动、调整大小、显示和隐藏应用窗口，并且可以在应用窗口间切换，就像它们是单独的应用一样。 每个窗口都在它自己的线程中运行。
 
-> **重要的 Api**:[**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094)， [ **CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
+> **重要的 API**：[**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094)， [ **CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
 
 ## <a name="when-should-an-app-use-multiple-views"></a>应用应在何时使用多个视图？
 有多种情况可从多个视图中获益。 以下是几个示例：

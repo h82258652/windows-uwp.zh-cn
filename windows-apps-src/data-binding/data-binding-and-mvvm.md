@@ -53,7 +53,7 @@ ms.locfileid: "57616732"
 
 ### <a name="topics"></a>主题
 
-[深度中的数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)  
+[深入了解数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)  
 [{x： 绑定} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)  
 
 ### <a name="samples"></a>示例

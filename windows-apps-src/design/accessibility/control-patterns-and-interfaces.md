@@ -30,26 +30,26 @@ ms.locfileid: "57597232"
 | 控件模式 | 类提供程序接口 | 描述 |
 |-----------------|--------------------------|-------------|
 | **批注** | [**IAnnotationProvider**](https://msdn.microsoft.com/library/windows/apps/Hh738493) | 用于公开文档注释的属性。 |
-| **Dock** | [**IDockProvider**](https://msdn.microsoft.com/library/windows/apps/BR242565) | 用于可停靠在停靠容器中的控件。 例如，工具栏或工具调色板。 |
-| **Drag** | [**IDragProvider**](https://msdn.microsoft.com/library/windows/apps/Hh750322) | 用于支持可拖动控件或包含可拖动项目的控件。 |
+| **停靠** | [**IDockProvider**](https://msdn.microsoft.com/library/windows/apps/BR242565) | 用于可停靠在停靠容器中的控件。 例如，工具栏或工具调色板。 |
+| **拖动** | [**IDragProvider**](https://msdn.microsoft.com/library/windows/apps/Hh750322) | 用于支持可拖动控件或包含可拖动项目的控件。 |
 | **DropTarget** | [**IDropTargetProvider**](https://msdn.microsoft.com/library/windows/apps/Hh750327) | 用于支持可作为拖放操作目标的控件。 |
 | **ExpandCollapse** | [**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/apps/BR242568) | 用于支持通过直观展开来显示更多内容并通过折叠来隐藏内容的控件。 |
 | **网格** | [**IGridProvider**](https://msdn.microsoft.com/library/windows/apps/BR242578) | 用于支持网格功能（例如调整指定单元格的大小或移动到指定单元格）的控件。 请注意，网格本身并不实现此模式，因为它虽然提供布局，却不是控件。 |
 | **GridItem** | [**IGridItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242572) | 用于在网格中具有单元格的控件。 |
-| **Invoke** | [**IInvokeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242582) | 用于可调用的控件，例如 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)。 |
+| **调用** | [**IInvokeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242582) | 用于可调用的控件，例如 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)。 |
 | **ItemContainer** | [**IItemContainerProvider**](https://msdn.microsoft.com/library/windows/apps/BR242583) | 支持应用程序查找容器（例如虚拟化列表）中的元素。 |
-| **MultipleView** | [**IMultipleViewProvider**](https://msdn.microsoft.com/library/windows/apps/BR242585) | 用于可在同一组信息、数据或子项的多个表示形式之间进行切换的控件。 |
+| **MultipleView** | [**Imultipleviewprovider 需要**](https://msdn.microsoft.com/library/windows/apps/BR242585) | 用于可在同一组信息、数据或子项的多个表示形式之间进行切换的控件。 |
 | **ObjectModel** | [**IObjectModelProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251815) | 用于公开指向文档基础对象模型的指针。 |
 | **RangeValue** | [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) | 用于具有一系列可应用于控件的值的控件。 例如，包含年份的微调框控件的数据范围可能介于 1900 至当前年份之间，而另一个呈现月份的微调框控件的数据范围介于 1 至 12 之间。 |
 | **滚动** | [**IScrollProvider**](https://msdn.microsoft.com/library/windows/apps/BR242601) | 用于可滚动的控件。 例如，具有滚动条的控件，当信息太多而无法在控件可视区域中全部显示出来时会出现滚动条。 |
 | **ScrollItem** | [**IScrollItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242599) | 用于在可滚动的列表中包含多个独立项的控件。 例如，在滚动列表（如组合框控件）中包含多个独立项的列表控件。 |
 | **所选内容** | [**ISelectionProvider**](https://msdn.microsoft.com/library/windows/apps/BR242616) | 用于选择容器控件。 例如，[**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) 和 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/BR209348)。 |
 | **SelectionItem** | [**ISelectionItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242610) | 用于选择容器控件（如列表框和组合框）中的各个项。 |
-| **Spreadsheet** | [**ISpreadsheetProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251821) | 用于公开电子表格或其他基于网格的文档的内容。 |
+| **电子表格** | [**ISpreadsheetProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251821) | 用于公开电子表格或其他基于网格的文档的内容。 |
 | **SpreadsheetItem** | [**ISpreadsheetItemProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251817) | 用于公开电子表格或其他基于网格的文档的单元格属性。 |
 | **样式** | [**IStylesProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251823) | 用于描述具有特定样式、填充颜色、填充图案或形状的 UI 元素。 |
 | **SynchronizedInput** | [**ISynchronizedInputProvider**](https://msdn.microsoft.com/library/windows/apps/Dn279198) | 启用 UI 自动化客户端应用，将鼠标或键盘输入定向到特定的 UI 元素。 |
-| **Table** | [**ITableProvider**](https://msdn.microsoft.com/library/windows/apps/BR242623) | 用于具有网格以及标题信息的控件。 例如，表格日历控件。 |
+| **表** | [**ITableProvider**](https://msdn.microsoft.com/library/windows/apps/BR242623) | 用于具有网格以及标题信息的控件。 例如，表格日历控件。 |
 | **TableItem** | [**ITableItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242620) | 用于表中的项。 |
 | **文本** | [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) | 用于公开文本信息的编辑控件和文档。 另请参阅 [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) 和 [**ITextProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider2)。 |
 | **TextChild** | [**ITextChildProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextchildprovider) | 用于访问距元素最近的支持 **Text** 控件模式的上级元素。 |
@@ -59,7 +59,7 @@ ms.locfileid: "57597232"
 | **转换** | [**ITransformProvider**](https://msdn.microsoft.com/library/windows/apps/BR242656) | 用于可调整大小、移动和旋转的控件。 Transform 控件模式通常用于设计器、窗体、图形编辑器和绘图应用程序。 |
 | **值** | [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) | 允许客户端在不支持一系列值的控件上获取或设置某个值。 |
 | **VirtualizedItem** | [**IVirtualizedItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242668) | 公开容器中已虚拟化并需要作为 UI 自动化元素可完全进行访问的项目。 |
-| **Window** | [**IWindowProvider**](https://msdn.microsoft.com/library/windows/apps/BR242670) | 公开信息特定于 windows、 Microsoft Windows 操作系统的基本概念。 用作窗口的控件示例包括子窗口和对话框。 |
+| **窗口** | [**IWindowProvider**](https://msdn.microsoft.com/library/windows/apps/BR242670) | 公开信息特定于 windows、 Microsoft Windows 操作系统的基本概念。 用作窗口的控件示例包括子窗口和对话框。 |
 
 > [!NOTE]
 > 现有的 XAML 控件中可能并不会包含所有这些模式的实现。 其中部分模式具有接口，目的仅在于通过模式的常规 UI 自动化框架定义来支持奇偶校验，以及支持需要使用纯粹自定义实现来支持该模式的自动化对等方案。
