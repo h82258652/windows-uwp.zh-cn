@@ -7,7 +7,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cda22488f613c508b2c753c6b530b2b34b10909d
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57589982"
@@ -131,5 +131,5 @@ UWP 应用的订阅加载项支持以下功能：
 
 ## <a name="related-topics"></a>相关主题
 
-* [应用内购买和试用版](in-app-purchases-and-trials.md)
+* [应用内购买和试用](in-app-purchases-and-trials.md)
 * [获取产品信息的应用程序和外接程序](get-product-info-for-apps-and-add-ons.md)

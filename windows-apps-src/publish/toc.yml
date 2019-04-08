@@ -144,7 +144,7 @@ items:
   - name: 创建客户组
     href: ../publish/create-customer-groups.md
     items:
-    - name: 创建客户细分
+    - name: 创建客户类别
       href: ../publish/create-customer-segments.md
     - name: 创建已知用户组
       href: ../publish/create-known-user-groups.md

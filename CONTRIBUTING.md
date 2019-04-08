@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 2089f9fcd54989234b52f95eb3ee9535f9b3ede3
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603112"
+---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>向 UWP 概念性文档投稿
 
 感谢你对通用 Windows 平台 (UWP) 文档的关注！ 感谢你向我们的文档提供反馈以及编辑和添加内容。

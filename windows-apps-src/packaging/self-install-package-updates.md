@@ -463,4 +463,4 @@ private void StoreItem_StatusChanged(StoreQueueItem sender, object args)
 
 ## <a name="related-topics"></a>相关主题
 
-* [可选包和相关的一组创作](optional-packages.md)
+* [可选包和相关集创作](optional-packages.md)
