@@ -7,7 +7,7 @@ keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 简介
 ms.localizationpriority: medium
 ms.openlocfilehash: 883463f291864016ebc32f2d510936452c931366
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57649692"
@@ -124,12 +124,12 @@ VSIX 扩展的最新版本，它不能用于项目能够`<CppWinRTEnabled>true</
 
 ## <a name="important-apis"></a>重要的 API
 * [winrt::hstring 结构](/uwp/cpp-ref-for-winrt/hstring)
-* [winrt namespace](/uwp/cpp-ref-for-winrt/winrt)
+* [winrt 命名空间](/uwp/cpp-ref-for-winrt/winrt)
 
 ## <a name="related-topics"></a>相关主题
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [C + + WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix)
-* [开始使用 C + + WinRT](get-started.md)
-* [标准 c + + 数据类型和 C + + WinRT](std-cpp-data-types.md)
+* [C++/WinRT 入门](get-started.md)
+* [标准 C++ 数据类型和 C++/WinRT](std-cpp-data-types.md)
 * [字符串处理中 C + + WinRT](strings.md)
 * [Windows 的 UWP Api](https://docs.microsoft.com/uwp/api/)

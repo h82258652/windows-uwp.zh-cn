@@ -372,8 +372,8 @@ ms.locfileid: "57628532"
 
 |  元素  |  必需  |  数量  |  描述   |
 |-------------|------------|--------|--------|
-|  [App](#app-child-of-listinginformation)  |    是   |  1   |    提供有关应用的数据。         |
-|  [Product](#product-child-of-listinginformation)  |    否  |  0 或更多   |      描述了该应用的加载项。     |     |
+|  [应用程序](#app-child-of-listinginformation)  |    是   |  1   |    提供有关应用的数据。         |
+|  [产品](#product-child-of-listinginformation)  |    否  |  0 或更多   |      描述了该应用的加载项。     |     |
 
 <span id="app-child-of-listinginformation"/>
 
@@ -405,13 +405,13 @@ ms.locfileid: "57628532"
 |  **描述**  |    是  |  1   |      在此国家/地区中应用的描述。       |
 |  **价格**  |    是  |  1   |     在此国家/地区中应用的价格 。        |
 |  **CurrencySymbol**  |    是  |  1   |     在此国家/地区使用的货币符号。        |
-|  **CurrencyCode**  |    否  |  0 或 1      |      在此国家/地区使用的货币代码。         |  |
+|  **currencyCode**  |    否  |  0 或 1      |      在此国家/地区使用的货币代码。         |  |
 
 **MarketData** 具有以下属性。
 
 |  属性  |  必需  |  描述   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    是        |     指定市场数据信息适用的国家/地区。          |  |
+|  **Xml: lang**  |    是        |     指定市场数据信息适用的国家/地区。          |  |
 
 <span id="product-child-of-listinginformation"/>
 
@@ -423,7 +423,7 @@ ms.locfileid: "57628532"
 
 |  属性  |  必需  |  描述   |
 |-------------|------------|----------------|
-|  **ProductId**  |    是        |    包含应用用来标识加载项的字符串。           |
+|  **产品 id**  |    是        |    包含应用用来标识加载项的字符串。           |
 |  **LicenseDuration**  |    否        |    指示已购买商品后，许可证有效的天数。 由产品购买创建的新许可证的过期日期是购买日期加许可证持续时间。 此属性仅在 **ProductType** 属性是 **Durable** 时使用；对于易耗型加载项，将忽略此属性。           |
 |  **ProductType**  |    否        |    包含标识应用内产品的持久性的一个值。 受支持的值有 **Durable**（默认值）和 **Consumable**。 对于持久类型，其他信息由 [LicenseInformation](#licenseinformation) 下的 [Product](#product-child-of-licenseinformation) 元素描述；对于易耗类型，其他信息由 [ConsumableInformation](#consumableinformation) 下的 [Product](#product-child-of-consumableinformation) 元素描述。           |  |
 
@@ -440,17 +440,17 @@ ms.locfileid: "57628532"
 |  **名称**  |    是   |  1   |   在此国家/地区中加载项的名称。        |
 |  **价格**  |    是  |  1   |     在此国家/地区中加载项的价格。        |
 |  **CurrencySymbol**  |    是  |  1   |     在此国家/地区使用的货币符号。        |
-|  **CurrencyCode**  |    否  |  0 或 1      |      在此国家/地区使用的货币代码。         |  
+|  **currencyCode**  |    否  |  0 或 1      |      在此国家/地区使用的货币代码。         |  
 |  **描述**  |    否  |   0 或 1   |      在此国家/地区中加载项的描述。       |
-|  **Tag**  |    否  |   0 或 1   |      加载项的[自定义开发人员数据](../publish/enter-add-on-properties.md#custom-developer-data)（也称为标记）。       |
+|  **标记**  |    否  |   0 或 1   |      加载项的[自定义开发人员数据](../publish/enter-add-on-properties.md#custom-developer-data)（也称为标记）。       |
 |  **关键字**  |    否  |   0 或 1   |      包含最多 10 个 **Keyword** 元素，这些元素包含加载项的[关键字](../publish/enter-add-on-properties.md#keywords)。       |
-|  **ImageUri**  |    否  |   0 或 1   |      加载项列表中[图像的 URI](../publish/create-add-on-store-listings.md#icon)。           |  |
+|  **imageUri**  |    否  |   0 或 1   |      加载项列表中[图像的 URI](../publish/create-add-on-store-listings.md#icon)。           |  |
 
 **MarketData** 具有以下属性。
 
 |  属性  |  必需  |  描述   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    是        |     指定市场数据信息适用的国家/地区。          |  |
+|  **Xml: lang**  |    是        |     指定市场数据信息适用的国家/地区。          |  |
 
 <span id="licenseinformation"/>
 
@@ -462,8 +462,8 @@ ms.locfileid: "57628532"
 
 |  元素  |  必需  |  数量  | 描述   |
 |-------------|------------|--------|--------|
-|  [App](#app-child-of-licenseinformation)  |    是   |  1   |    描述应用的许可证。         |
-|  [Product](#product-child-of-licenseinformation)  |    否  |  0 或更多   |      描述了应用中持久型加载项的许可证状态。         |   |
+|  [应用程序](#app-child-of-licenseinformation)  |    是   |  1   |    描述应用的许可证。         |
+|  [产品](#product-child-of-licenseinformation)  |    否  |  0 或更多   |      描述了应用中持久型加载项的许可证状态。         |   |
 
 下表显示了如何通过组合 **App** 和 **Product** 元素下的值来模拟某些常见情形。
 
@@ -485,7 +485,7 @@ ms.locfileid: "57628532"
 |  元素  |  必需  |  数量  | 描述   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    是   |  1   |    描述了此应用的当前许可证状态。 值 **true** 指示许可证有效。**false** 指示许可证无效。 通常此值为 **true**，无论该应用是否具有试用模式。  将此值设置为 **false** 来测试你的应用在具有无效许可证时的行为。           |
-|  **IsTrial**  |    是  |  1   |      描述此应用的当前试用状态。 值 **true** 指示应用在试用期内使用；**false** 指示应用不在试用期内，或者因为已购买应用，或者因为试用期已过。         |
+|  **isTrial**  |    是  |  1   |      描述此应用的当前试用状态。 值 **true** 指示应用在试用期内使用；**false** 指示应用不在试用期内，或者因为已购买应用，或者因为试用期已过。         |
 |  **ExpirationDate**  |    否  |  0 或 1       |     此应用的过期日期，以协调世界时 (UTC) 表示。 该日期必须表示为：yyyy-mm-ddThh:mm:ss.ssZ。 例如，2015 年 1 月 19 日 05:00 将被指定为 2015-01-19T05:00:00.00Z。 当 **IsTrial** 是 **true** 时，此元素是必需的。 否则，不是必需的。          |  |
 
 <span id="product-child-of-licenseinformation"/>
@@ -505,7 +505,7 @@ ms.locfileid: "57628532"
 
 |  属性  |  必需  |  描述   |
 |-------------|------------|----------------|
-|  **ProductId**  |    是        |   包含应用用来标识加载项的字符串。            |
+|  **产品 id**  |    是        |   包含应用用来标识加载项的字符串。            |
 |  **OfferId**  |     否       |   包含应用用来标识加载项所属的类别的字符串。 这为大型项目目录提供了支持，如[管理应用内产品的大型目录](manage-a-large-catalog-of-in-app-products.md)所述。           |
 
 <span id="simulation"/>
@@ -530,7 +530,7 @@ ms.locfileid: "57628532"
 
 |  属性  |  必需  |  描述   |
 |-------------|------------|----------------|
-|  **MethodName**  |    是        |   将此属性分配给为[架构](#schema)中的 **StoreMethodName** 类型显示的枚举值之一。 每个枚举值表示 **CurrentAppSimulator** 方法，你希望在测试期间为其模拟应用中的错误代码返回值。 例如，值 **RequestAppPurchaseAsync_GetResult** 指示你想要模拟 [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync) 方法的错误代码返回值。            |
+|  **方法名称**  |    是        |   将此属性分配给为[架构](#schema)中的 **StoreMethodName** 类型显示的枚举值之一。 每个枚举值表示 **CurrentAppSimulator** 方法，你希望在测试期间为其模拟应用中的错误代码返回值。 例如，值 **RequestAppPurchaseAsync_GetResult** 指示你想要模拟 [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync) 方法的错误代码返回值。            |
 |  **HResult**  |     是       |   将此属性分配给为[架构](#schema)中的 **ResponseCodes** 类型显示的枚举值之一。 每个枚举值表示你希望为方法返回的错误代码，该方法已分配给 **DefaultResponse** 元素的 **MethodName** 属性。           |
 
 <span id="consumableinformation"/>
@@ -549,7 +549,7 @@ ms.locfileid: "57628532"
 
 |  属性  |  必需  |  描述   |
 |-------------|------------|----------------|
-|  **ProductId**  |    是        |   包含应用用来标识易耗型加载项的字符串。            |
-|  **TransactionId**  |     是       |   包含在实施过程中应用用于跟踪易耗品购买交易的 GUID（作为字符串）。 请参阅[启用易耗型应用内产品购买](enable-consumable-in-app-product-purchases.md)。            |
+|  **产品 id**  |    是        |   包含应用用来标识易耗型加载项的字符串。            |
+|  **transactionId**  |     是       |   包含在实施过程中应用用于跟踪易耗品购买交易的 GUID（作为字符串）。 请参阅[启用易耗型应用内产品购买](enable-consumable-in-app-product-purchases.md)。            |
 |  **状态**  |      是      |  包含应用用于指示易耗品的实施状态的字符串。 值可以是 **Active**、**PurchaseReverted**、**PurchasePending** 或 **ServerError**。             |
 |  **OfferId**  |     否       |    包含应用用来标识易耗品所属的类别的字符串。 这为大型项目目录提供了支持，如[管理应用内产品的大型目录](manage-a-large-catalog-of-in-app-products.md)所述。           |

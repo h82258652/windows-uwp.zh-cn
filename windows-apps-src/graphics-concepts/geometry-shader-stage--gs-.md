@@ -59,7 +59,7 @@ ms.locfileid: "57623372"
 
  
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
 
 
 几何着色器 (GS) 阶段能够输出形成单个选定拓扑的多个顶点。 可用的几何着色器输出拓扑有 **tristrip**、**linestrip** 和 **pointlist**。 在几何着色器的任何调用中，发出的基元的数目可以自由地变化，但是必须静态地声明可发出的顶点的最大数目。 从几何着色器调用发出的带长度可以是任意的，并且可以通过 [RestartStrip](https://msdn.microsoft.com/library/windows/desktop/bb509660) HLSL 函数创建新带。

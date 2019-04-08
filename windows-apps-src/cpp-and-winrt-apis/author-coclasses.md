@@ -1,5 +1,5 @@
 ---
-description: C + + WinRT 就像它可帮助你创作 Windows 运行时类可帮助你创作经典的 COM 组件。
+description: C++/WinRT 可以帮助你创作经典 COM 组件，就像它可以帮助你创作 Windows 运行时类一样。
 title: 通过 C++/WinRT 创作 COM 组件
 ms.date: 09/06/2018
 ms.topic: article
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: e6b77f8be6c75070336ad48f0c6471fc0a824a4c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57616562"
@@ -530,6 +530,6 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 * [winrt::implements 结构模板](/uwp/cpp-ref-for-winrt/implements)
 
 ## <a name="related-topics"></a>相关主题
-* [创作 Api 使用 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
-* [使用 COM 组件使用 C + + WinRT](consume-com.md)
+* [使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [通过 C++/WinRT 使用 COM 组件](consume-com.md)
 * [发送本地 toast 通知](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)

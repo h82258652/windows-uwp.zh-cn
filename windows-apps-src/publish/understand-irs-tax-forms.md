@@ -35,15 +35,15 @@ ms.locfileid: "57639282"
 <table>
 <tr><th>业务组</th><th>法律实体</th><th>地址</th></tr>
 <tr><td>Windows、 Office、 Azure</td><td>Microsoft Corporation</td><td>One Microsoft Way<br>Redmond WA 98052 USA</td></tr>
-<tr><td>广告</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
+<tr><td>广告</td><td>Microsoft Online inc.</td><td>6100 Neil 道路<br>89511 Reno，NV USA</td></tr>
 <table> 
 
 **非美国公民：**
 <table>
 <tr><th>业务组</th><th>法律实体</th><th>地址</th></tr>
-<tr><td>Windows、 Office、 Azure</td><td>Microsoft Ireland Operations Limited （付款方式，则进行 Microsoft corporation Microsoft Ireland 通过作为 Microsoft Corporation 的限定中介）</td><td>One Microsoft Place<br>南部&nbsp;县&nbsp;业务&nbsp;Park<br>Leopardstown, Dublin 18 Ireland</td></tr>
-<tr><td>播发 *</td><td>Microsoft Ireland Operations Limited （付款方式，则进行由 Microsoft Ireland 通过 Microsoft Online Inc.作为 Microsoft Online Inc.的付款代理）</td><td>One Microsoft Place<br>南部&nbsp;县&nbsp;业务&nbsp;Park<br>Leopardstown, Dublin 18 Ireland</td></tr>
-<tr><td>广告</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
+<tr><td>Windows、 Office、 Azure</td><td>Microsoft Ireland Operations Limited （付款方式，则进行 Microsoft corporation Microsoft Ireland 通过作为 Microsoft Corporation 的限定中介）</td><td>一个 Microsoft 位置<br>南部&nbsp;县&nbsp;业务&nbsp;Park<br>Leopardstown，Dublin 18 爱尔兰</td></tr>
+<tr><td>播发 *</td><td>Microsoft Ireland Operations Limited （付款方式，则进行由 Microsoft Ireland 通过 Microsoft Online Inc.作为 Microsoft Online Inc.的付款代理）</td><td>一个 Microsoft 位置<br>南部&nbsp;县&nbsp;业务&nbsp;Park<br>Leopardstown，Dublin 18 爱尔兰</td></tr>
+<tr><td>广告</td><td>Microsoft Online inc.</td><td>6100 Neil 道路<br>89511 Reno，NV USA</td></tr>
 <tr><td colspan="3">* 将通过 Microsoft Ireland Operations Limited 支付很好地处理以下国家/地区获得广告收入：奥地利、 比利时、 保加利亚、 克罗地亚、 塞浦路斯、 捷克共和国、 丹麦、 爱沙尼亚、 芬兰、 法国、 德国、 希腊、 匈牙利、 爱尔兰、 马恩岛，意大利、 拉脱维亚、 列支敦士登、 立陶宛、 卢森堡、 马耳他、 摩纳哥、 荷兰、 挪威、 波兰、 葡萄牙，罗马尼亚、 斯洛伐克、 斯洛文尼亚、 南非、 西班牙、 瑞典、 瑞士、 英国</td></tr>
 </table>
 

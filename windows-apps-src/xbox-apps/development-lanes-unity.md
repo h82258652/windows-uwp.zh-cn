@@ -59,5 +59,5 @@ Unity 现在已创建一个新的 Visual Studio 解决方案，我们将用它�
 在一些常见的情况下，必须将此新生成的 UWP 目录的各个部分添加到版本控制。 例如，当你要将新的依赖项添加到 UWP 项目（例如 Xbox Live SDK）时。  我们在[对你的 UWP 项目进行版本控制](development-lanes-unity-versioning.md)中详细了解此示例。
 
 ## <a name="see-also"></a>另请参阅
-- [将现有的游戏引入 Xbox](development-lanes-landing.md)
+- [将现有游戏移植到 Xbox](development-lanes-landing.md)
 - [在 Xbox One 上 UWP](index.md)

@@ -62,7 +62,7 @@ ms.locfileid: "57646192"
 | campaignId | 与购置关联的[自定义应用推广活动](../publish/create-a-custom-app-promotion-campaign.md)的 ID 字符串。 |
 | market | 包含购置行为所在地市场的 ISO 3166 国家/地区代码的字符串。 |
 | deviceType | 用于指定发生购置的设备类型的以下字符串之一：<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
-| ageGroup | 用于指定完成购置的用户的年龄段的以下字符串之一：<ul><li><strong>0 – 17</strong></li><li><strong>18 – 24</strong></li><li><strong>25 – 34</strong></li><li><strong>35 – 49</strong></li><li><strong>50 或更</strong></li><li><strong>Unknown</strong></li></ul> |
+| ageGroup | 用于指定完成购置的用户的年龄段的以下字符串之一：<ul><li><strong>0 – 17</strong></li><li><strong>18 到 24</strong></li><li><strong>25 – 34</strong></li><li><strong>35 – 49</strong></li><li><strong>50 或更</strong></li><li><strong>Unknown</strong></li></ul> |
 | gender | 用于指定完成购置的用户的性别的以下字符串之一：<ul><li><strong>M</strong></li><li><strong>F</strong></li><li><strong>Unknown</strong></li></ul> |
 
 
@@ -95,7 +95,7 @@ Authorization: Bearer <your access token>
 
 | 值               | 在任务栏的搜索框中键入   | 描述                           |
 |---------------------|--------|-------------------------------------------|
-| MetricType                | 字符串 | 指定此对象中包括的[漏斗数据类型的](../publish/acquisitions-report.md#acquisition-funnel)以下字符串之一：<ul><li><strong>PageView</strong></li><li><strong>获取</strong></li><li><strong>安装</strong></li><li><strong>使用情况</strong></li></ul> |
+| MetricType                | 字符串 | 指定此对象中包括的[漏斗数据类型的](../publish/acquisitions-report.md#acquisition-funnel)以下字符串之一：<ul><li><strong>页面视图</strong></li><li><strong>获取</strong></li><li><strong>安装</strong></li><li><strong>使用情况</strong></li></ul> |
 | UserCount       | 字符串 | 执行 *MetricType* 值的漏斗步骤的用户的数量。             |
 
 

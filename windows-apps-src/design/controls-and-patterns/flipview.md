@@ -24,7 +24,7 @@ ms.locfileid: "57662422"
 
 使用翻转视图浏览集合中的图像或其他项目（例如相册中的照片或产品详细信息页中的项目），一次显示一个项目。 对于触摸设备，轻扫某个项将在整个集合中进行浏览。 对于鼠标，导航按钮显示在鼠标悬停位置上。 对于键盘，使用箭头键移动浏览该集合。
 
-> **重要的 Api**:[FlipView 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)， [ItemsSource 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)， [ItemTemplate 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
+> **重要的 API**：[FlipView 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)， [ItemsSource 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)， [ItemTemplate 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
@@ -40,7 +40,7 @@ ms.locfileid: "57662422"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/FlipView">打开此应用，了解 FlipView 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>

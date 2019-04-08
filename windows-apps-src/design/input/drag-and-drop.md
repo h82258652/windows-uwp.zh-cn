@@ -17,7 +17,7 @@ ms.locfileid: "57634392"
 
 拖放是在应用程序内部或在 Windows 桌面上的应用程序之间传输数据的一种直观方式。 拖放操作可以让用户使用标准手势（用手指按住并平移或用鼠标或触笔按住并平移）在应用程序之间或在应用程序内部传输数据。
 
-> **重要的 Api**:[CanDrag 属性](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag)， [AllowDrop 属性](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 
+> **重要的 API**：[CanDrag 属性](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag)， [AllowDrop 属性](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 
 
 拖动源（即触发拖动手势的应用程序或区域）通过填充数据包对象提供要传输的数据，而该数据包对象可以包含标准数据格式，包括文本、RTF、HTML、位图、存储项目或自定义数据格式。 源还指示其支持的操作种类：复制、移动或链接。 释放指针后，即会进行放置。 拖放目标（即指针下面的应用程序或区域）将会处理数据包并返回所执行操作的类型。
 
@@ -118,5 +118,5 @@ ms.locfileid: "57634392"
 * [AcceptedOperation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.acceptedoperation.aspx)
 * [DataView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.dataview.aspx)
 * [DragUIOverride](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.draguioverride.aspx)
-* [Drop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx)
+* [删除](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx)
 * [IsDragSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isdragsource.aspx)

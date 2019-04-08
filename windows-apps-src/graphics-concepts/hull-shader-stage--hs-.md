@@ -9,7 +9,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9137f7ef46da1b861976dbac680327febf315dac
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57601052"
@@ -41,7 +41,7 @@ ms.locfileid: "57601052"
 -   外壳着色器声明[细化器 (TS) 阶段](tessellator-stage--ts-.md)所需的状态。 这包括控制点的数量、修补程序面的类型和在分割时使用的分区类型等信息。 此信息作为声明显示，通常位于着色器代码的前面。
 -   细化因素决定细分每个修补程序的量。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
 
 
 在 1 到 32 个输出控制点之间，它们共同构成修补程序。

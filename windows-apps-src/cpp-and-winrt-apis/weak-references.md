@@ -1,5 +1,5 @@
 ---
-description: Windows 运行时是引用计数系统;在此类系统是您必须了解的有关重要性，并区分，强和弱引用。
+description: Windows 运行时是引用在其中占有重要地位的一个系统；在这样的系统中，了解强引用与弱引用的意义和区别非常重要。
 title: C++/WinRT 中的弱引用
 ms.date: 10/03/2018
 ms.topic: article
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 507b3cee71819df1d0163380a494e6a15936109f
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57630812"
@@ -396,5 +396,5 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, no_weak_ref>
 ## <a name="important-apis"></a>重要的 API
 * [implements::get_weak 函数](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
 * [winrt::make_weak 函数模板](/uwp/cpp-ref-for-winrt/make-weak)
-* [winrt::no_weak_ref marker struct](/uwp/cpp-ref-for-winrt/no-weak-ref)
+* [winrt::no_weak_ref 标记结构](/uwp/cpp-ref-for-winrt/no-weak-ref)
 * [winrt::weak_ref 结构模板](/uwp/cpp-ref-for-winrt/weak-ref)

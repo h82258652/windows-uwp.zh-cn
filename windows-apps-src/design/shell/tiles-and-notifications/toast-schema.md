@@ -58,7 +58,7 @@ ToastContent 是描述通知内容的顶级对象，包括视觉、操作和音�
 |---|---|
 | **默认值** | 正常 toast 行为。 |
 | **提醒** | 提醒通知。 这类通知将以预先展开的状态显示在用户屏幕上并一直显示，直至消失。 |
-| **Alarm** | 警报通知。 这类通知将以预先展开的状态显示在用户屏幕上并一直显示，直至消失。 音频在默认情况下将循环播放，并将使用警报音频。 |
+| **警报** | 警报通知。 这类通知将以预先展开的状态显示在用户屏幕上并一直显示，直至消失。 音频在默认情况下将循环播放，并将使用警报音频。 |
 | **IncomingCall** | 来电通知。 这将以特殊通话格式以预先展开的形式显示在用户屏幕上并一直显示，直至消失。 音频在默认情况下将循环播放，并将使用铃声音频。 |
 
 
@@ -68,8 +68,8 @@ Toast 的可视部分包含绑定，其中包含文本、图像和自适应内�
 | 属性 | 在任务栏的搜索框中键入 | 必需 | 描述 |
 |---|---|---|---|
 | **BindingGeneric** | [ToastBindingGeneric](#toastbindinggeneric) | true | 可在所有设备上呈现的通用 toast 绑定。 此绑定是必需的，不能为 null。 |
-| **BaseUri** | Uri | false | 与图像源属性中的相对 URL 结合的默认基本 URL。 |
-| **AddImageQuery** | bool? | false | 设置为“true”将使 Windows 能够将查询字符串附加到在 toast 通知中提供的图像 URL。 如果你的服务器托管图像并且可以处理查询字符串，则可通过基于查询字符串搜索图像变量，或通过忽略查询字符串并且不带查询字符串按指定方式返回图像，来使用此特性。 此查询字符串指定缩放倍数、对比度设置和语言；例如，通知中提供的“www.website.com/images/hello.png”值将变为“www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us” |
+| **baseUri** | Uri | false | 与图像源属性中的相对 URL 结合的默认基本 URL。 |
+| **addImageQuery** | bool? | false | 设置为“true”将使 Windows 能够将查询字符串附加到在 toast 通知中提供的图像 URL。 如果你的服务器托管图像并且可以处理查询字符串，则可通过基于查询字符串搜索图像变量，或通过忽略查询字符串并且不带查询字符串按指定方式返回图像，来使用此特性。 此查询字符串指定缩放倍数、对比度设置和语言；例如，通知中提供的“www.website.com/images/hello.png”值将变为“www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us” |
 | **语言**| 字符串 | false | 使用本地化资源时视觉负载的目标区域设置，用 BCP-47 语言标签指定，如“en-US”或“fr-FR”。 此区域设置将用绑定或文本中指定的任何区域设置覆盖。 如果未提供，则将使用系统区域设置。 |
 
 
@@ -78,12 +78,12 @@ Toast 的可视部分包含绑定，其中包含文本、图像和自适应内�
 
 | 属性 | 在任务栏的搜索框中键入 | 必需 | 描述 |
 |---|---|---|---|
-| **Children** | IList<[IToastBindingGenericChild](#itoastbindinggenericchild)> | false | Toast 正文的内容，可能包括文本、图像和组（这是在周年更新中增加的功能）。 文本元素必须位于其他任何元素之前，并且仅支持 3 个文本元素。 如果文本元素位于任何其他元素之后，则它将会被拉到顶部，或被删除。 最后，对于根子级文本元素，某些文本属性（如 HintStyle）不受支持，只能在 AdaptiveSubgroup 内部使用。 如果你在没有周年更新的设备上使用 AdaptiveGroup，则将直接删除组内容。 |
+| **子级** | IList<[IToastBindingGenericChild](#itoastbindinggenericchild)> | false | Toast 正文的内容，可能包括文本、图像和组（这是在周年更新中增加的功能）。 文本元素必须位于其他任何元素之前，并且仅支持 3 个文本元素。 如果文本元素位于任何其他元素之后，则它将会被拉到顶部，或被删除。 最后，对于根子级文本元素，某些文本属性（如 HintStyle）不受支持，只能在 AdaptiveSubgroup 内部使用。 如果你在没有周年更新的设备上使用 AdaptiveGroup，则将直接删除组内容。 |
 | **AppLogoOverride** | [ToastGenericAppLogo](#toastgenericapplogo) | false | 用于覆盖应用徽标的可选徽标。 |
 | **HeroImage** | [ToastGenericHeroImage](#toastgenericheroimage) | false | 在 toast 上和在操作中心内显示的可选主题 Hero 图像 |
 | **归属** | [ToastGenericAttributionText](#toastgenericattributiontext) | false | 将显示在 toast 通知底部的可选特性文本。 |
-| **BaseUri** | Uri | false | 与图像源属性中的相对 URL 结合的默认基本 URL。 |
-| **AddImageQuery** | bool? | false | 设置为“true”将使 Windows 能够将查询字符串附加到在 toast 通知中提供的图像 URL。 如果你的服务器托管图像并且可以处理查询字符串，则可通过基于查询字符串搜索图像变量，或通过忽略查询字符串并且不带查询字符串按指定方式返回图像，来使用此特性。 此查询字符串指定缩放倍数、对比度设置和语言；例如，通知中提供的“www.website.com/images/hello.png”值将变为“www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us” |
+| **baseUri** | Uri | false | 与图像源属性中的相对 URL 结合的默认基本 URL。 |
+| **addImageQuery** | bool? | false | 设置为“true”将使 Windows 能够将查询字符串附加到在 toast 通知中提供的图像 URL。 如果你的服务器托管图像并且可以处理查询字符串，则可通过基于查询字符串搜索图像变量，或通过忽略查询字符串并且不带查询字符串按指定方式返回图像，来使用此特性。 此查询字符串指定缩放倍数、对比度设置和语言；例如，通知中提供的“www.website.com/images/hello.png”值将变为“www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us” |
 | **语言**| 字符串 | false | 使用本地化资源时视觉负载的目标区域设置，用 BCP-47 语言标签指定，如“en-US”或“fr-FR”。 此区域设置将用绑定或文本中指定的任何区域设置覆盖。 如果未提供，则将使用系统区域设置。 |
 
 
@@ -117,7 +117,7 @@ Toast 子元素的标记界面，包括文本、图像、组等。
 
 | 属性 | 在任务栏的搜索框中键入 | 必需 | 描述 |
 |---|---|---|---|
-| **BindingName** | 字符串 | true | 获取或设置映射到绑定数据值的名称。 |
+| **bindingName** | 字符串 | true | 获取或设置映射到绑定数据值的名称。 |
 
 
 ### <a name="adaptivetextstyle"></a>AdaptiveTextStyle
@@ -128,16 +128,16 @@ Toast 子元素的标记界面，包括文本、图像、组等。
 | **默认值** | 默认值。 样式由呈现器确定。 |
 | **标题** | 小于段落字体大小。 |
 | **CaptionSubtle** | 与 Caption 相同，但具有精细不透明度。 |
-| **Body** | 段落字体大小。 |
+| **正文** | 段落字体大小。 |
 | **BodySubtle** | 与 Body 相同，但具有精细不透明度。 |
 | **基本** | 段落字体大小、粗体。 本质上是正文的粗体版本。 |
 | **BaseSubtle** | 与 Base 相同，但具有精细不透明度。 |
-| **Subtitle** | H4 字体大小。 |
+| **副标题** | H4 字体大小。 |
 | **SubtitleSubtle** | 与 Subtitle 相同，但具有精细的不透明度。 |
 | **Title** | H3 字体大小。 |
 | **TitleSubtle** | 与 Title 相同，但具有精细不透明度。 |
 | **TitleNumeral** | 与 Title 相同，但去掉了上/下边距。 |
-| **Subheader** | H2 字体大小。 |
+| **小标题** | H2 字体大小。 |
 | **SubheaderSubtle** | 与 Subheader 相同，但具有精细不透明度。 |
 | **SubheaderNumeral** | 与 Subheader 相同，但去掉了上/下边距。 |
 | **标头** | H1 字体大小。 |
@@ -152,9 +152,9 @@ Toast 子元素的标记界面，包括文本、图像、组等。
 |---|---|
 | **默认值** | 默认值。 对齐方式由呈现器自动确定。 |
 | **自动** | 对齐方式由当前的语言和文化确定。 |
-| **Left** | 在水平方向将文本向左对齐。 |
-| **Center** | 在水平方向将文本中心对齐。 |
-| **Right** | 在水平方向将文本向右对齐。 |
+| **左侧** | 在水平方向将文本向左对齐。 |
+| **中心** | 在水平方向将文本中心对齐。 |
+| **右侧** | 在水平方向将文本向右对齐。 |
 
 
 ## <a name="adaptiveimage"></a>AdaptiveImage
@@ -167,7 +167,7 @@ Toast 子元素的标记界面，包括文本、图像、组等。
 | **HintRemoveMargin** | bool? | false | 默认情况下，组/子组内的图像周围有 8 像素的边距。 你可以将此属性设置为 true 去掉此边距。 |
 | **HintAlign** | [AdaptiveImageAlign](#adaptiveimagealign) | false | 水平方向上图像的对齐方式。 仅适用于组/子组内的图像。 |
 | **AlternateText** | 字符串 | false | 描述图像的替换文本，用于辅助功能。 |
-| **AddImageQuery** | bool? | false | 设置为“true”将使 Windows 能够将查询字符串附加到在 toast 通知中提供的图像 URL。 如果你的服务器托管图像并且可以处理查询字符串，则可通过基于查询字符串搜索图像变量，或通过忽略查询字符串并且不带查询字符串按指定方式返回图像，来使用此特性。 此查询字符串指定缩放倍数、对比度设置和语言；例如，通知中提供的“www.website.com/images/hello.png”值将变为“www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us” |
+| **addImageQuery** | bool? | false | 设置为“true”将使 Windows 能够将查询字符串附加到在 toast 通知中提供的图像 URL。 如果你的服务器托管图像并且可以处理查询字符串，则可通过基于查询字符串搜索图像变量，或通过忽略查询字符串并且不带查询字符串按指定方式返回图像，来使用此特性。 此查询字符串指定缩放倍数、对比度设置和语言；例如，通知中提供的“www.website.com/images/hello.png”值将变为“www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us” |
 
 
 ### <a name="adaptiveimagecrop"></a>AdaptiveImageCrop
@@ -177,7 +177,7 @@ Toast 子元素的标记界面，包括文本、图像、组等。
 |---|---|
 | **默认值** | 默认值。 由呈现器确定的裁剪行为。 |
 | **无** | 不裁剪图像。 |
-| **Circle** | 将图像裁剪为圆形。 |
+| **圆形** | 将图像裁剪为圆形。 |
 
 
 ### <a name="adaptiveimagealign"></a>AdaptiveImageAlign
@@ -187,9 +187,9 @@ Toast 子元素的标记界面，包括文本、图像、组等。
 |---|---|
 | **默认值** | 默认值。 由渲染器确定的对齐行为。 |
 | **Stretch** | 图像拉伸以填充可用宽度（根据图像的位置，可能还要填充可用高度）。 |
-| **Left** | 向左对齐图像，并用其原始分辨率显示图像。 |
-| **Center** | 在水平方向上中心对齐图像，并用其原始分辨率显示图像。 |
-| **Right** | 向右对齐图像，并用其原始分辨率显示图像。 |
+| **左侧** | 向左对齐图像，并用其原始分辨率显示图像。 |
+| **中心** | 在水平方向上中心对齐图像，并用其原始分辨率显示图像。 |
+| **右侧** | 向右对齐图像，并用其原始分辨率显示图像。 |
 
 
 ## <a name="adaptivegroup"></a>AdaptiveGroup
@@ -197,7 +197,7 @@ Toast 子元素的标记界面，包括文本、图像、组等。
 
 | 属性 | 在任务栏的搜索框中键入 | 必需 |描述 |
 |---|---|---|---|
-| **Children** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | false | 子组显示为垂直列。 你必须使用子组来提供 AdaptiveGroup 内的任何内容。 |
+| **子级** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | false | 子组显示为垂直列。 你必须使用子组来提供 AdaptiveGroup 内的任何内容。 |
 
 
 ## <a name="adaptivesubgroup"></a>AdaptiveSubgroup
@@ -205,7 +205,7 @@ Toast 子元素的标记界面，包括文本、图像、组等。
 
 | 属性 | 在任务栏的搜索框中键入 | 必需 |描述 |
 |---|---|---|---|
-| **Children** | IList<[IAdaptiveSubgroupChild](#iadaptivesubgroupchild)> | false | [AdaptiveText](#adaptivetext) 和 [AdaptiveImage](#adaptiveimage) 是子组的有效子级。 |
+| **子级** | IList<[IAdaptiveSubgroupChild](#iadaptivesubgroupchild)> | false | [AdaptiveText](#adaptivetext) 和 [AdaptiveImage](#adaptiveimage) 是子组的有效子级。 |
 | **HintWeight** | int? | false | 通过指定粗细控制此子组列相对于其他子组的宽度。 |
 | **HintTextStacking** | [AdaptiveSubgroupTextStacking](#adaptivesubgrouptextstacking) | false | 控制此子组内容在垂直方向上的对齐方式。 |
 
@@ -225,8 +225,8 @@ TextStacking 指定内容在垂直方向上的对齐方式。
 | 值 | 含义 |
 |---|---|
 | **默认值** | 默认值。 渲染器将自动选择默认的垂直对齐方式。 |
-| **Top** | 垂直方向上向顶部对齐。 |
-| **Center** | 垂直方向上向中心对齐。 |
+| **返回页首** | 垂直方向上向顶部对齐。 |
+| **中心** | 垂直方向上向中心对齐。 |
 | **底部** | 垂直方向上向底部对齐。 |
 
 
@@ -255,7 +255,7 @@ TextStacking 指定内容在垂直方向上的对齐方式。
 
 | 属性 | 在任务栏的搜索框中键入 | 必需 | 描述 |
 |---|---|---|---|
-| **BindingName** | 字符串 | true | 获取或设置映射到绑定数据值的名称。 |
+| **bindingName** | 字符串 | true | 获取或设置映射到绑定数据值的名称。 |
 
 
 ## <a name="toastgenericapplogo"></a>ToastGenericAppLogo
@@ -266,7 +266,7 @@ TextStacking 指定内容在垂直方向上的对齐方式。
 | **源** | 字符串 | true | 图像的 URL。 支持 ms-appx、ms-appdata 和 http。 Http 图像大小必须为 200 KB 或更小。 |
 | **HintCrop** | [ToastGenericAppLogoCrop](#toastgenericapplogocrop) | false | 指定你希望如何裁剪图像。 |
 | **AlternateText** | 字符串 | false | 描述图像的替换文本，用于辅助功能。 |
-| **AddImageQuery** | bool? | false | 设置为“true”将使 Windows 能够将查询字符串附加到在 toast 通知中提供的图像 URL。 如果你的服务器托管图像并且可以处理查询字符串，则可通过基于查询字符串搜索图像变量，或通过忽略查询字符串并且不带查询字符串按指定方式返回图像，来使用此特性。 此查询字符串指定缩放倍数、对比度设置和语言；例如，通知中提供的“www.website.com/images/hello.png”值将变为“www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us” |
+| **addImageQuery** | bool? | false | 设置为“true”将使 Windows 能够将查询字符串附加到在 toast 通知中提供的图像 URL。 如果你的服务器托管图像并且可以处理查询字符串，则可通过基于查询字符串搜索图像变量，或通过忽略查询字符串并且不带查询字符串按指定方式返回图像，来使用此特性。 此查询字符串指定缩放倍数、对比度设置和语言；例如，通知中提供的“www.website.com/images/hello.png”值将变为“www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us” |
 
 
 ### <a name="toastgenericapplogocrop"></a>ToastGenericAppLogoCrop
@@ -276,7 +276,7 @@ TextStacking 指定内容在垂直方向上的对齐方式。
 |---|---|
 | **默认值** | 裁剪使用渲染器的默认行为。 |
 | **无** | 图像不裁剪，显示为方形。 |
-| **Circle** | 将图像裁剪为圆形。 |
+| **圆形** | 将图像裁剪为圆形。 |
 
 
 ## <a name="toastgenericheroimage"></a>ToastGenericHeroImage
@@ -286,7 +286,7 @@ TextStacking 指定内容在垂直方向上的对齐方式。
 |---|---|---|---|
 | **源** | 字符串 | true | 图像的 URL。 支持 ms-appx、ms-appdata 和 http。 Http 图像大小必须为 200 KB 或更小。 |
 | **AlternateText** | 字符串 | false | 描述图像的替换文本，用于辅助功能。 |
-| **AddImageQuery** | bool? | false | 设置为“true”将使 Windows 能够将查询字符串附加到在 toast 通知中提供的图像 URL。 如果你的服务器托管图像并且可以处理查询字符串，则可通过基于查询字符串搜索图像变量，或通过忽略查询字符串并且不带查询字符串按指定方式返回图像，来使用此特性。 此查询字符串指定缩放倍数、对比度设置和语言；例如，通知中提供的“www.website.com/images/hello.png”值将变为“www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us” |
+| **addImageQuery** | bool? | false | 设置为“true”将使 Windows 能够将查询字符串附加到在 toast 通知中提供的图像 URL。 如果你的服务器托管图像并且可以处理查询字符串，则可通过基于查询字符串搜索图像变量，或通过忽略查询字符串并且不带查询字符串按指定方式返回图像，来使用此特性。 此查询字符串指定缩放倍数、对比度设置和语言；例如，通知中提供的“www.website.com/images/hello.png”值将变为“www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us” |
 
 
 ## <a name="toastgenericattributiontext"></a>ToastGenericAttributionText
@@ -335,7 +335,7 @@ toast 输入的标记界面。
 
 | 属性 | 在任务栏的搜索框中键入 | 必需 | 描述 |
 |---|---|---|---|
-| **Id** | 字符串 | true | Id 是必需的，并用于将用户输入的文本映射到你的应用以后使用的 id/值的键值对。 |
+| **id** | 字符串 | true | Id 是必需的，并用于将用户输入的文本映射到你的应用以后使用的 id/值的键值对。 |
 | **Title** | 字符串 | false | 显示在文本框上方的标题文本。 |
 | **PlaceholderContent** | 字符串 | false | 用户尚未输入任何文本时显示在文本框中的占位符文本。 |
 | **DefaultInput** | 字符串 | false | 要放置在文本框中的初始文本。 对于空白文本框将此保留为 null。 |
@@ -348,8 +348,8 @@ toast 输入的标记界面。
 
 | 属性 | 在任务栏的搜索框中键入 | 必需 | 描述 |
 |---|---|---|---|
-| **Id** | 字符串 | true | 此 Id 是必需的。 如果用户选择此项，则此 Id 将传递回应用的代码，表示他们所做的选择。 |
-| **Content** | 字符串 | true | Content 是必需的，是显示在选择项上的字符串。 |
+| **id** | 字符串 | true | 此 Id 是必需的。 如果用户选择此项，则此 Id 将传递回应用的代码，表示他们所做的选择。 |
+| **内容** | 字符串 | true | Content 是必需的，是显示在选择项上的字符串。 |
 
 
 ### <a name="toastselectionboxitem"></a>ToastSelectionBoxItem
@@ -357,7 +357,7 @@ toast 输入的标记界面。
 
 | 属性 | 在任务栏的搜索框中键入 | 必需 | 描述 |
 |---|---|---|---|
-| **Id** | 字符串 | true | Id 是必需的，并用于将用户输入的文本映射到你的应用以后使用的 id/值的键值对。 |
+| **id** | 字符串 | true | Id 是必需的，并用于将用户输入的文本映射到你的应用以后使用的 id/值的键值对。 |
 | **Title** | 字符串 | false | 显示在选择框上方的标题文本。 |
 | **DefaultSelectionBoxItemId** | 字符串 | false | 它控制默认情况下选择哪一项，并引用 [ToastSelectionBoxItem](#toastselectionboxitem) 的 Id 属性。 如果不提供此属性值，则默认选项将为空（用户看不到任何内容）。 |
 | **项** | IList<[ToastSelectionBoxItem](#toastselectionboxitem)> | false | 用户可从此 SelectionBox 中进行选择的选择项。 仅可添加 5 个项。 |
@@ -380,7 +380,7 @@ toast 按钮的标记界面。
 
 | 属性 | 在任务栏的搜索框中键入 | 必需 | 描述 |
 |---|---|---|---|
-| **Content** | 字符串 | true | 必需。 要显示在按钮上的文本。 |
+| **内容** | 字符串 | true | 必需。 要显示在按钮上的文本。 |
 | **自变量** | 字符串 | true | 必需。 如果用户单击此按钮，应用将在稍后接收到的应用定义的参数字符串。 |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | 控制当用户单击此按钮时，此按钮将使用何种类型的激活。 默认为前台激活。 |
 | **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | 创意者更新： 中的新增功能获取或设置与 toast 按钮的激活有关的其他选项。 |
@@ -449,7 +449,7 @@ toast 按钮的标记界面。
 
 | 属性 | 在任务栏的搜索框中键入 | 必需 | 描述 |
 |---|---|---|---|
-| **Content** | 字符串 | true | 必需。 要显示的文本。 |
+| **内容** | 字符串 | true | 必需。 要显示的文本。 |
 | **自变量** | 字符串 | true | 必需。 用户单击菜单项后，应用一旦激活便可以在稍后检索的应用定义的参数字符串。 |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | 控制当用户单击此按钮时，此菜单项将使用何种类型的激活。 默认为前台激活。 |
 | **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | 创意者更新： 中的新增功能与 toast 上下文菜单项的激活相关的其他选项。 |
@@ -460,8 +460,8 @@ toast 按钮的标记界面。
 
 | 属性 | 在任务栏的搜索框中键入 | 必需 | 描述 |
 |---|---|---|---|
-| **Src** | uri | false | 播放来代替默认声音的媒体文件。 仅支持 ms-appx 和 ms-appdata。 |
-| **Loop** | 布尔值 | false | 如果声音需在 Toast 显示时不断重复，则设置为 true；如果仅播放一次，则设置为 false（默认设置）。 |
+| **src** | uri | false | 播放来代替默认声音的媒体文件。 仅支持 ms-appx 和 ms-appdata。 |
+| **循环** | 布尔值 | false | 如果声音需在 Toast 显示时不断重复，则设置为 true；如果仅播放一次，则设置为 false（默认设置）。 |
 | **无提示** | 布尔值 | false | 设置为 true 将声音静音；设置为 false 允许播放 toast 声音（默认设置）。 |
 
 
@@ -470,7 +470,7 @@ toast 按钮的标记界面。
 
 | 属性 | 在任务栏的搜索框中键入 | 必需 | 描述 |
 |---|---|---|---|
-| **Id** | 字符串 | true | 开发人员创建的标识符，用以唯一标识此标头。 如果两个通知具有相同的标头 id，它们将显示在操作中心中的同一标头下。 |
+| **id** | 字符串 | true | 开发人员创建的标识符，用以唯一标识此标头。 如果两个通知具有相同的标头 id，它们将显示在操作中心中的同一标头下。 |
 | **Title** | 字符串 | true | 标头的标题。 |
 | **自变量**| 字符串 | true | 获取或设置当用户单击此标头时返回给应用的、开发人员定义的参数字符串。 不能为 null。 |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | 获取或设置当用户单击时此标头将使用的激活类型。 默认为前台激活。 请注意，仅支持 Foreground 和 Protocol。 |

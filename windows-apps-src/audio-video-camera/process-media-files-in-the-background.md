@@ -23,7 +23,7 @@ ms.locfileid: "57611902"
 
 有关此示例中利用的不同通用 Windows 应用功能的更多详细信息，请参阅：
 
--   [媒体文件转码](transcode-media-files.md)
+-   [对媒体文件进行转码](transcode-media-files.md)
 -   [启动继续和后台任务](https://msdn.microsoft.com/library/windows/apps/mt227652)
 -   [磁贴锁屏提醒和通知](https://msdn.microsoft.com/library/windows/apps/mt185606)
 

@@ -63,32 +63,32 @@ ms.locfileid: "57608412"
 |------------------------------|---------------------------|------|------|------|------|----------------|
 | version                      | [版本](#version)       |  ✔   |  ✔   |  ✔   |  ✔   | 要使用的样式表版本。 |
 | 设置                     | [设置](#settings)     |  ✔   |  ✔   |  ✔   |  ✔   | 应用于整个样式表的设置。 |
-| mapElement                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 所有地图条目的父条目。 |
-| > baseMapElement             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 所有非用户条目的父条目。 |
-| >> area                      | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 使用描述土地的区域。  这些应不会与物理建筑物的结构项之下的混淆。 |
-| >>> airport                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含机场的区域。 |
-| >>> areaOfInterest           | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 业务或兴趣点高度集中的区域。 |
-| >>> cemetery                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含 cemeteries 的区域。 |
-| >>> continent                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 大洲区域标签。 |
-| >>> education                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含学校和其他教育机构的区域。 |
-| >>> indigenousPeoplesReserve | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含原住民 peoples 预留的区域。 |
-| >>> industrial               | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 用于工业目的的区域。 |
-| >>> island                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 岛区域标签。 |
-| >>> medical                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 用于医疗目的的区域 (例如： 医院校园)。 |
-| >>> military                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含军事基或具有军事用途的区域。 |
-| >>> nautical                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 用于航海相关目的的区域。 |
-| >>> neighborhood             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 邻域区域标签。 |
-| >>> runway                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 用作飞机就要的区域。 |
-| >>> sand                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 沙地区域（如海滩）。 |
-| >>> shoppingCenter           | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 为商场或其他购物中心分配的土地区域。 |
-| >>> stadium                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含体育场的区域。 |
-| >>> underground              | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 地下区域（例如：地铁站）。 |
-| >>> vegetation               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 森林、草地区域等。 |
-| >>>> forest                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 森林陆地区域。 |
-| >>>> golfCourse              | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含高尔夫课程的区域。 |
-| >>>> park                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含公园的区域。 |
-| >>>> playingField            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 提取的球场，如棒球场或网球场。 |
-| >>>> reserve                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含特性的区域保留。 |
+| mapElement                   | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 所有地图条目的父条目。 |
+| > baseMapElement             | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 所有非用户条目的父条目。 |
+| >> area                      | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 使用描述土地的区域。  这些应不会与物理建筑物的结构项之下的混淆。 |
+| >>> airport                  | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含机场的区域。 |
+| >>> areaOfInterest           | [mapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 业务或兴趣点高度集中的区域。 |
+| >>> cemetery                 | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含 cemeteries 的区域。 |
+| >>> continent                | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 大洲区域标签。 |
+| >>> education                | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含学校和其他教育机构的区域。 |
+| >>> indigenousPeoplesReserve | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含原住民 peoples 预留的区域。 |
+| >>> industrial               | [mapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 用于工业目的的区域。 |
+| >>> island                   | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 岛区域标签。 |
+| >>> medical                  | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 用于医疗目的的区域 (例如： 医院校园)。 |
+| >>> military                 | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含军事基或具有军事用途的区域。 |
+| >>> nautical                 | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 用于航海相关目的的区域。 |
+| >>> neighborhood             | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 邻域区域标签。 |
+| >>> runway                   | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 用作飞机就要的区域。 |
+| >>> sand                     | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 沙地区域（如海滩）。 |
+| >>> shoppingCenter           | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 为商场或其他购物中心分配的土地区域。 |
+| >>> stadium                  | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含体育场的区域。 |
+| >>> underground              | [mapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 地下区域（例如：地铁站）。 |
+| >>> vegetation               | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 森林、草地区域等。 |
+| >>>> forest                  | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 森林陆地区域。 |
+| >>>> golfCourse              | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含高尔夫课程的区域。 |
+| >>>> park                    | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含公园的区域。 |
+| >>>> playingField            | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 提取的球场，如棒球场或网球场。 |
+| >>>> reserve                 | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含特性的区域保留。 |
 | >> point                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 绘制有某种类型的图标的所有点功能。 |
 | >>> address                  | [PointStyle](#pointstyle) |      |      |  ✔   |  ✔   | 解决数字标签。 |
 | >>> naturalPoint             | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 表示自然功能的图标。 |
@@ -117,36 +117,36 @@ ms.locfileid: "57608412"
 | >>> countryRegion            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 国家/地区区域边框和标签。 |
 | >>> adminDistrict            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Admin1、 状态、 省/自治区等边框和标签。 |
 | >>> district                 | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 管理员 2、 县、 等，边框和标签。 |
-| >> structure                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建筑物和其他类似于建筑物的结构。 |
-| >>> building                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建筑物。 |
-| >>>> educationBuilding       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建筑物教育版使用。 |
-| >>>> medicalBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建筑物用于医疗目的，例如在医院。 |
-| >>>> transitBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 用于传输如机场的建筑物。 |
-| >> transportation            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 属于运输网络一部分的线条（例如：公路、火车和轮渡）。 |
-| >>> road                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示所有公路的线条。 |
-| >>>> controlledAccessHighway | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示较大的控制访问高速公路的行。 |
-| >>>>> highSpeedRamp          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示通常连接到高速斜坡的线条控制访问高速公路。 |
-| >>>> highway                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示高速公路的行。 |
-| >>>> majorRoad               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示主要的道路的线条。 |
-| >>>> arterialRoad            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示动脉道路的线条。 |
-| >>>> street                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示街道的线。 |
-| >>>>> ramp                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示通常连接到高速公路斜坡的行。 |
-| >>>>> unpavedStreet          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示未铺设的街道的线。 |
-| >>>> tollRoad                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示产生费用，若要使用的道路的线条。 |
-| >>> railway                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 铁路线。 |
-| >>> trail                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 穿过公园的步行道或登山步道。 |
-| >>> 走道                  | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 提升的走道。 |
-| >>> waterRoute               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 轮渡路线。 |
-| >> water                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 看起来像水的任何对象。 这包括海洋和溪流。 |
-| >>> river                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 河流、溪流或其他水路。  轻注意，这可能是线条或多边形，并且可能会连接到非河流水体。 |
-| > routeMapElement            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 所有路由的相关的条目。 |
-| >> routeLine                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 将行路由相关条目。 |
-| >>> drivingRoute             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 代表驾驶路线的线条。 |
-| >>> scenicRoute              | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 代表 scenic 驾驶路线的线条。 |
-| >>> walkingRoute             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示路由的每个步骤的行。 |
-| > userMapElement             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 所有的用户条目。 |
-| >> userBillboard             | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 默认 [MapBillboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 实例的样式。 |
-| >> userLine                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 默认 [MapPolyline](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mappolyline) 实例的样式。 |
+| >> structure                 | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建筑物和其他类似于建筑物的结构。 |
+| >>> building                 | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建筑物。 |
+| >>>> educationBuilding       | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建筑物教育版使用。 |
+| >>>> medicalBuilding         | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建筑物用于医疗目的，例如在医院。 |
+| >>>> transitBuilding         | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 用于传输如机场的建筑物。 |
+| >> transportation            | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 属于运输网络一部分的线条（例如：公路、火车和轮渡）。 |
+| >>> road                     | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示所有公路的线条。 |
+| >>>> controlledAccessHighway | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示较大的控制访问高速公路的行。 |
+| >>>>> highSpeedRamp          | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示通常连接到高速斜坡的线条控制访问高速公路。 |
+| >>>> highway                 | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示高速公路的行。 |
+| >>>> majorRoad               | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示主要的道路的线条。 |
+| >>>> arterialRoad            | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示动脉道路的线条。 |
+| >>>> street                  | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示街道的线。 |
+| >>>>> ramp                   | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示通常连接到高速公路斜坡的行。 |
+| >>>>> unpavedStreet          | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示未铺设的街道的线。 |
+| >>>> tollRoad                | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示产生费用，若要使用的道路的线条。 |
+| >>> railway                  | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 铁路线。 |
+| >>> trail                    | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 穿过公园的步行道或登山步道。 |
+| >>> 走道                  | [mapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 提升的走道。 |
+| >>> waterRoute               | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 轮渡路线。 |
+| >> water                     | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 看起来像水的任何对象。 这包括海洋和溪流。 |
+| >>> river                    | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 河流、溪流或其他水路。  轻注意，这可能是线条或多边形，并且可能会连接到非河流水体。 |
+| > routeMapElement            | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 所有路由的相关的条目。 |
+| >> routeLine                 | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 将行路由相关条目。 |
+| >>> drivingRoute             | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 代表驾驶路线的线条。 |
+| >>> scenicRoute              | [mapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 代表 scenic 驾驶路线的线条。 |
+| >>> walkingRoute             | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示路由的每个步骤的行。 |
+| > userMapElement             | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 所有的用户条目。 |
+| >> userBillboard             | [mapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 默认 [MapBillboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 实例的样式。 |
+| >> userLine                  | [mapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 默认 [MapPolyline](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mappolyline) 实例的样式。 |
 | >> userModel3D               | [MapElement3D](#mapelement3d) |      |  ✔   |  ✔   |  ✔   | 默认 [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) 实例的样式。  这主要用于设置 renderAsSurface。 |
 | >> userPoint                 | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 默认 [MapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon) 实例的样式。 |
 
@@ -228,7 +228,7 @@ ms.locfileid: "57608412"
 
 | 属性                     | 在任务栏的搜索框中键入    | 1703 | 1709 | 1803 | 1809 | 描述 |
 |------------------------------|---------|------|------|------|------|-------------|
-| shape-Background             | 浮点   |      |      |      |  ✔   | 要用作背景的图标--替换为不存在任何形状的形状。 |
+| 形状背景             | 浮点   |      |      |      |  ✔   | 要用作背景的图标--替换为不存在任何形状的形状。 |
 | stemAnchorRadiusScale        | 浮点   |      |      |  ✔   |  ✔   | 图标主干的定位点应缩放的量。  例如，使用 *1* 表示默认值，使用 *2* 表示两倍大。 |
 | stemColor                    | 颜色   |  ✔   |  ✔   |  ✔   |  ✔   | 出自 3D 模式中的图标底部的主干的颜色。 |
 | stemHeightScale              | 浮点   |      |      |  ✔   |  ✔   | 图标主干的长度应缩放的量。  例如，使用 *1* 表示默认值，使用 *2* 表示两倍长。 |

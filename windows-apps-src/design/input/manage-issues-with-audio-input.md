@@ -20,7 +20,7 @@ ms.locfileid: "57644902"
 
 了解如何管理由音频输入质量所导致的语音识别准确度的问题。
 
-> **重要的 Api**:[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)， [ **RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)， [ **SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
+> **重要的 API**：[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)， [ **RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)， [ **SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
 
 
 ## <a name="assess-audio-input-quality"></a>评估音频输入质量

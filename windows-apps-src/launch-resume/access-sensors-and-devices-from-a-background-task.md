@@ -18,7 +18,7 @@ ms.locfileid: "57636792"
 
 
 
-[**DeviceUseTrigger** ](https://msdn.microsoft.com/library/windows/apps/dn297337)可让你的通用 Windows 应用程序访问传感器和外围设备在后台，即便前台应用程序挂起。 例如，根据应用运行所在的位置，它可以使用后台任务将数据与设备或监视器传感器同步。 为了帮助延长电池使用时间并确保相应的用户同意，使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 需遵循本主题中所述的策略。
+[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 例如，根据应用运行所在的位置，它可以使用后台任务将数据与设备或监视器传感器同步。 为了帮助延长电池使用时间并确保相应的用户同意，使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 需遵循本主题中所述的策略。
 
 若要访问后台中的传感器或外围设备，请创建一个使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务。 有关显示如何在电脑上实现此目的的示例，请参阅[自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )。 有关在手机上实现此目的的示例，请参阅[后台传感器示例](https://go.microsoft.com/fwlink/p/?LinkId=393307)。
 

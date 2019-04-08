@@ -9,7 +9,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: bbde90d848d3bc8fb18a5ecf370c85121adc02f6
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57620492"
@@ -35,7 +35,7 @@ ms.locfileid: "57620492"
     -   细化因素。 例如，细化因素可以包括固定函数细化器使用的值以及原始值（例如在被整数细化舍入前），这有助于加快几何过渡。
 -   对[细化器 (TS) 阶段](tessellator-stage--ts-.md)的每个输出坐标调用一次域着色器。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
 
 
 -   域着色器 (DS) 阶段输出输出修补程序中细分点的顶点位置。

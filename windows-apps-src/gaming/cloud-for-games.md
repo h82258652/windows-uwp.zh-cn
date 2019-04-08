@@ -163,10 +163,10 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
 | 在云中托管你的域     | 有效地响应 DNS 查询            | [Azure DNS](https://azure.microsoft.com/services/dns/) | 托管你的域以实现高性能和高可用性  |
 | 登录，身份验证      | 对玩家登录信息和玩家身份进行验证  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | 通过多重身份验证单一登录到任何云和本地 Web 应用            | 
-| 使用基础结构即服务 (IaaS) 的游戏      | 游戏托管在云中虚拟机上       | [Azure VMs](https://azure.microsoft.com/services/virtual-machines/) | 从 1 扩展到数千个虚拟机实例以用作游戏服务器（内置虚拟网络连接和负载平衡）；本地系统的混合一致性           |
+| 使用基础结构即服务 (IaaS) 的游戏      | 游戏托管在云中虚拟机上       | [Azure Vm](https://azure.microsoft.com/services/virtual-machines/) | 从 1 扩展到数千个虚拟机实例以用作游戏服务器（内置虚拟网络连接和负载平衡）；本地系统的混合一致性           |
 | 使用平台即服务模型 (PaaS) 的 Web 或手机游戏            | 游戏托管在托管平台上                | [Azure App Service](https://azure.microsoft.com/services/app-service/) | 适用于网站或手机游戏的 PaaS（这意味着 Azure VM 与中间件/开发工具/BI/DB 管理相互配合）   |
 | 可用性高的可缩放型 n 层云游戏，并且可以更好地控制操作系统 (PaaS)        | 游戏托管在托管平台上                | [Azure 云服务](https://azure.microsoft.com/services/app-service/) | 旨在支持可缩放、可靠且运行成本低廉的应用程序的 PaaS   |
-| 用于提高性能和可用性的跨区域负载平衡 | 传送传入的游戏请求。 可以充当第一级负载平衡。       | [Azure Traffic Manager](https://azure.microsoft.com/en-us/services/traffic-manager/) | 提供了多种自动故障转移选项，并且能够均衡地或通过加权值分配你的流量。 可以无缝地合并本地系统和云系统。 |
+| 用于提高性能和可用性的跨区域负载平衡 | 传送传入的游戏请求。 可以充当第一级负载平衡。       | [Azure 流量管理器](https://azure.microsoft.com/en-us/services/traffic-manager/) | 提供了多种自动故障转移选项，并且能够均衡地或通过加权值分配你的流量。 可以无缝地合并本地系统和云系统。 |
 | 游戏数据的云存储       | 最新游戏数据存储在云中，并发送到客户端设备 | [Azure Blob 存储](https://azure.microsoft.com/services/storage/blobs/)| 可以存储的文件类型不受限制；对象存储适用于大量非结构化数据（如图像、音频、视频等）。  |
 | 临时数据存储表| 游戏事务（游戏状态的变化）临时存储在表中 | [Azure 表存储](https://azure.microsoft.com/services/storage/tables/)| 可以根据游戏需求以灵活模式存储游戏数据 |
 | 队列游戏事务/请求| 以队列形式处理游戏事务 | [Azure 队列存储](https://azure.microsoft.com/services/storage/queues/)| 队列会吸收意外的突发流量，并可以防止服务器因游戏中突然产生的大量请求而不堪重负。   |
@@ -174,7 +174,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
 | 可扩展分配的低延迟游戏数据库| 借助模式灵活性快速读、写以及查询游戏和玩家数据 | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)| 低延迟 NoSQL 文档数据库即服务   |
 | 借助 Azure 服务使用自己的数据中心 | 从你自己的数据中心检索游戏，并发送到客户端设备 | [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) | 使你的组织可以通过自己的数据中心提供 Azure 服务，以助你一臂之力  |
 | 大数据块传输| 可以通过 Azure CDN 从最近的内容分发网络 (CDN) pop 位置向用户发送游戏图像、音频和视频等大型文件。    | [Azure 内容分发网络](https://azure.microsoft.com/services/cdn/) | Azure CDN 基于现代网络拓扑的大型集中式节点构建，用于处理突发的大数据流量和严重负载以显著提升速度和可用性，从而明显改善用户体验  |
-| 低延迟               | 执行缓存以生成内含更多控制和保证隔离数据的快速运行且可扩展的游戏；还可用于改善游戏的配对功能。 | [Azure Redis Cache](https://azure.microsoft.com/services/cache/) | 高吞吐量、一贯的低延迟数据访问，可增强快速运行且可扩展的 Azure 应用程序  |
+| 低延迟               | 执行缓存以生成内含更多控制和保证隔离数据的快速运行且可扩展的游戏；还可用于改善游戏的配对功能。 | [Azure Redis 缓存](https://azure.microsoft.com/services/cache/) | 高吞吐量、一贯的低延迟数据访问，可增强快速运行且可扩展的 Azure 应用程序  |
 | 高可扩展性，低延迟 | 以低延迟的读写处理游戏用户变幻莫测的数量 | [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) | 能够应对最复杂、低延迟、数据密集型情形并且进行可靠扩展，从而实现一次处理较多用户。 Service Fabric 使你无需创建无状态应用所需的单独存储或缓存，即可生成游戏。 |
 | 能够每秒从设备中收集数百万个事件                         | 每秒从设备中记录数百万个事件 | [Azure 事件中心](https://azure.microsoft.com/services/event-hubs/) | 从游戏、网站、应用和设备的云级别遥测引入  |
 | 游戏数据的实时处理  | 执行玩家数据的实时分析以提升游戏可玩性| [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) | 云中的实时流处理  |

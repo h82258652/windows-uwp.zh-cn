@@ -24,7 +24,7 @@ ms.locfileid: "57637162"
 
 时间选取器提供了一种标准化途径，可使用户使用触摸、鼠标或键盘输入选取时间值。 
 
-> **重要的 Api**:[TimePicker 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)，[时间属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)
+> **重要的 API**：[TimePicker 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)，[时间属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
@@ -41,7 +41,7 @@ ms.locfileid: "57637162"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/TimePicker">打开此应用，了解 TimePicker 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>

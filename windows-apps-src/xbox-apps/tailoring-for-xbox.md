@@ -58,10 +58,10 @@ UWP 应用将自动缩放，以确保 UI 元素（如控件和字体）在所有
 
 有关在 Xbox 上生成出色应用的信息，请参阅[第 9 频道](https://channel9.msdn.com/)上的以下讨论：
 
-- [Xbox 构建出色的通用 Windows 平台 (UWP) 应用程序](https://channel9.msdn.com/Events/Build/2016/B883)
-- [您的应用程序进行修改以满足 Xbox One 和电视节目](https://channel9.msdn.com/Events/Build/2016/T651-R1)
-- [UWP 开发 1:构建自适应 UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
-- [Web 应用更高版本浏览器：跨平台满足跨设备](https://channel9.msdn.com/Events/Build/2016/B888)
+- [生成适用于 Xbox 的出色通用 Windows 平台 (UWP) 应用](https://channel9.msdn.com/Events/Build/2016/B883)
+- [针对 Xbox One 和 TV 调整你的应用](https://channel9.msdn.com/Events/Build/2016/T651-R1)
+- [UWP 开发 1：构建自适应 UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
+- [超越浏览器的 Web 应用：跨平台遇上跨设备](https://channel9.msdn.com/Events/Build/2016/B888)
 
 ## <a name="app-dev-on-xbox"></a>在 Xbox 上的应用程序开发
 
@@ -74,4 +74,4 @@ UWP 应用将自动缩放，以确保 UI 元素（如控件和字体）在所有
 
 - [在 Xbox One 上 UWP](index.md)
 - [针对 Xbox 和电视进行设计](../design/devices/designing-for-tv.md)
-- [适用于 Xbox One 渐进式 Web 应用](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/xbox-considerations)
+- [适用于 Xbox One 的渐进式 Web 应用](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/xbox-considerations)

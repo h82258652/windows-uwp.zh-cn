@@ -30,7 +30,7 @@ ms.locfileid: "57624622"
 
  - [Express 生成器](https://expressjs.com/en/starter/generator.html)-后安装节点，通过运行安装 Express `npm install express-generator -g`
 
- - [Visual Studio Code](https://code.visualstudio.com/)
+ - [Visual Studio 代码](https://code.visualstudio.com/)
 
 如果你想要完成在 Microsoft Azure 上托管 API 服务和记忆游戏应用的最终步骤，你将需要[创建免费的 Azure 帐户](https://azure.microsoft.com/en-us/free/)（如果尚未这样做）。
 

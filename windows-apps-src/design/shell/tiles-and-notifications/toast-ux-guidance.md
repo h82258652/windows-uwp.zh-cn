@@ -17,7 +17,7 @@ ms.locfileid: "57615762"
 # <a name="toast-notification-ux-guidance"></a>Toast 通知用户体验指南
 通知是现代生活; 的必要部分它们可帮助用户提高工作效率和参与与应用程序和网站，及使用的任何更新了解最新。 但是，通知可以快速打开从适用于 overbearing 和侵入性，如果它们不设计以用户为中心的方式。 通知是一个右键单击从正在关闭，并且不太可能已关闭后，它们将再次打开。  因此请确保您的通知是用户的屏幕空间和时间，不会冒犯他人，因此可以保持此 engagement 通道打开。
 
-> **重要的 Api**:[Windows 社区工具包通知 nuget 包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **重要的 API**：[Windows 社区工具包通知 nuget 包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 我们已经分析了我们的 Windows 遥测，以及其他第一个和第三方案例研究，拿围绕就很好的通知情景的四个规则。  我们确信这些规则都普遍适用，无论使用什么平台，并将帮助您对用户产生积极的影响的通知。
 

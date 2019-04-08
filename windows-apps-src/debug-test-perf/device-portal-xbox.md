@@ -8,7 +8,7 @@ keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 42077756beff4269cc91624502fb9958c580bbc0
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57635712"
@@ -19,7 +19,7 @@ ms.locfileid: "57635712"
 
 以下步骤显示如何启用 Xbox 设备门户，从而为你提供对你的开发 Xbox 的远程访问。
 
-1. 打开开发人员主页。 默认情况下，该主页应在你启动开发 Xbox 时打开，但你也可以从主屏幕打开它。
+1. 打开“开发人员主页”。 默认情况下，该主页应在你启动开发 Xbox 时打开，但你也可以从主屏幕打开它。
 
     ![Device Portal DevHome](images/device-portal-xbox-1.png)
 

@@ -65,8 +65,8 @@ ms.locfileid: "57617922"
 ## <a name="related-topics"></a>相关主题
 
 * [XAML概述](xaml-overview.md)
-* [深度中的数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [{Binding} 标记扩展](binding-markup-extension.md)
-* [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)
+* [**绑定**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)
 

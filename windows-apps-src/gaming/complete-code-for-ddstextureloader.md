@@ -22,7 +22,7 @@ ms.locfileid: "57662442"
 
 本主题包含以下部分：
 
--   [Technologies](#technologies)
+-   [技术](#technologies)
 -   [要求](#requirements)
 -   [查看代码 （c + +）](#view-the-code-c)
 

@@ -36,8 +36,8 @@ ms.locfileid: "57628032"
 |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
 |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
 |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-|Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
-|Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
+|Windows.Foundation.UniversalApiContract.winmd|C:\Program 文件 (x86) \Windows Kits\10\References\<*sdk 版本*> \Windows.Foundation.UniversalApiContract\<*版本*>|
+|Windows.Foundation.FoundationContract.winmd|C:\Program 文件 (x86) \Windows Kits\10\References\<*sdk 版本*> \Windows.Foundation.FoundationContract\<*版本*>|
 
 在**属性**窗口中，将每个 **.winmd** 文件的*复制本地*字段设为 **False**。
 

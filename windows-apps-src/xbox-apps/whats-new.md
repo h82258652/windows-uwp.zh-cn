@@ -42,12 +42,12 @@ Windows Device Portal (WDP) 现在包含面向控制台设置的其他支持。
 通过在“应用”和“游戏”之间切换 UWP 标题类型，你可以测试游戏方案而无需将其发布到应用商店。 在开发人员主页的**游戏和应用**窗格中选择此应用，按下控制器上的“查看”按钮，选择**应用详细信息**，然后将类型更改为“应用”或“游戏”。
 
 ## <a name="see-also"></a>另请参阅
-- [已知的问题](known-issues.md)
+- [已知问题](known-issues.md)
 - [在 Xbox One 上 UWP](index.md)
  - 现在，你可以捕获主机的屏幕截图。 有关获取屏幕截图的详细信息，请参阅 [/ext/screenshot](wdp-media-capture-api.md) 参考主题。
  - 该工具可以部署 Loose 文件版本的应用。 有关 Loose 文件版本的详细信息，请参阅 [/api/app/packagemanager/register](wdp-loose-folder-register-api.md) 参考主题。
  - 可以从开发电脑上的“文件资源管理器”访问主机上的开发人员文件。 有关通过“文件资源管理器”访问文件的详细信息，请参阅 [/ext/smb/developerfolder](wdp-smb-api.md) 参考主题。
 
 ## <a name="see-also"></a>另请参阅
-- [已知的问题](known-issues.md)
+- [已知问题](known-issues.md)
 - [在 Xbox One 上 UWP](index.md)

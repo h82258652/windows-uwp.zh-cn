@@ -86,7 +86,7 @@ PSF 包含可以使用，稍后再试，例如文件重定向链接地址信息�
 
 ### <a name="create-the-package-layout-folder"></a>创建包布局文件夹
 
-如果你已具有.msix （或.appx） 文件，您可以到将用作临时区域为您的包的布局文件夹解压缩其内容。 您可以使用基于你的 sdk 的安装路径的 MakeAppx 工具在命令提示符下执行此操作，这是你将在其中查找 Windows 10 电脑上存在 makeappx.exe 工具： x86:C:\Program Files (x86)\Windows Kits\10\bin\x86\makeappx.exe x64:C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe
+如果你已具有.msix （或.appx） 文件，您可以到将用作临时区域为您的包的布局文件夹解压缩其内容。 您可以使用基于你的 sdk 的安装路径的 MakeAppx 工具在命令提示符下执行此操作，这是你将在其中查找 Windows 10 电脑上存在 makeappx.exe 工具： x86:C:\Program 文件 (x86) \Windows Kits\10\bin\x86\makeappx.exe x64:C:\Program 文件 (x86) \Windows Kits\10\bin\x64\makeappx.exe
 
 ```ps
 makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -190,10 +190,10 @@ nuget install Microsoft.PackageSupportFramework
 |-------|-----------|-------|
 | applications | id |  使用的值`Id`属性的`Application`包清单中的元素。 |
 | applications | 可执行文件 | 你想要启动的可执行文件包相对路径。 在大多数情况下，您可以从包清单文件获取此值之前对其进行修改。 它是值的`Executable`属性的`Application`元素。 |
-| applications | workingDirectory | （可选）使用作为启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统使用`System32`目录视为应用程序的工作目录。 |
+| applications | WorkingDirectory | （可选）使用作为启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统使用`System32`目录视为应用程序的工作目录。 |
 | 进程 | 可执行文件 | 在大多数情况下，这将是名称的`executable`上面配置了路径和文件扩展名已移除。 |
-| fixups | dll | 修正，.msix/.appx 要加载的包相对路径。 |
-| fixups | 配置 | （可选）控制链接地址信息 dl 的行为方式。 此值的确切格式而异的链接地址信息通过修正基础为每个链接地址信息可以解释此"blob"，因为它需要。 |
+| 修正 | dll | 修正，.msix/.appx 要加载的包相对路径。 |
+| 修正 | 配置 | （可选）控制链接地址信息 dl 的行为方式。 此值的确切格式而异的链接地址信息通过修正基础为每个链接地址信息可以解释此"blob"，因为它需要。 |
 
 `applications`， `processes`，和`fixups`密钥是数组。 这意味着您可以使用的 config.json 文件来指定多个应用程序、 进程和 DLL 的链接地址信息。
 
@@ -403,10 +403,10 @@ Windows 应用程序打包项目的详细信息，请参阅[通过使用 Visual 
 |-------|-----------|-------|
 | applications | id |  使用的值`Id`属性的`Application`包清单中的元素。 |
 | applications | 可执行文件 | 你想要启动的可执行文件包相对路径。 在大多数情况下，您可以从包清单文件获取此值之前对其进行修改。 它是值的`Executable`属性的`Application`元素。 |
-| applications | workingDirectory | （可选）使用作为启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统使用`System32`目录视为应用程序的工作目录。 |
+| applications | WorkingDirectory | （可选）使用作为启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统使用`System32`目录视为应用程序的工作目录。 |
 | 进程 | 可执行文件 | 在大多数情况下，这将是名称的`executable`上面配置了路径和文件扩展名已移除。 |
-| fixups | dll | 链接地址信息 DLL 加载的包相对路径。 |
-| fixups | 配置 | （可选）控制链接地址信息 DLL 的行为方式。 此值的确切格式而异的链接地址信息通过修正基础为每个链接地址信息可以解释此"blob"，因为它需要。 |
+| 修正 | dll | 链接地址信息 DLL 加载的包相对路径。 |
+| 修正 | 配置 | （可选）控制链接地址信息 DLL 的行为方式。 此值的确切格式而异的链接地址信息通过修正基础为每个链接地址信息可以解释此"blob"，因为它需要。 |
 
 完成后，你``config.json``文件将如下所示。
 

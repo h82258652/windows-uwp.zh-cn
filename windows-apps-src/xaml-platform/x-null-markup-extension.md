@@ -34,7 +34,7 @@ ms.locfileid: "57619622"
 
 ## <a name="related-topics"></a>相关主题
 
-* [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)
+* [**可以为 null<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)
 * [**IReference<T>**](https://msdn.microsoft.com/library/windows/apps/br225864)
  
 

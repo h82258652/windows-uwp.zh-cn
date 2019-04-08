@@ -21,7 +21,7 @@ ms.locfileid: "57623612"
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**LightSensor**](https://msdn.microsoft.com/library/windows/apps/BR225790)
 
-**Sample**
+**示例**
 
 -   有关更完整的实现，请参阅[光传感器示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LightSensor)。
 

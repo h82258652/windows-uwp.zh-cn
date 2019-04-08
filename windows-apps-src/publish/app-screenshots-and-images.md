@@ -8,7 +8,7 @@ keywords: Windows 10, uwp, 预告片, 视频, 屏幕截图, 图像, 图标, Micr
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae5b68d73a3776adf6250dbb96de827a106a6c5
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610182"
@@ -207,7 +207,7 @@ ms.locfileid: "57610182"
 <ul>
 <li>编解码器：AAC-LC</li>
 <li>通道：立体声或声音外侧代码</li>
-<li>采样速率：48 KHz</li>
+<li>采样速率：48khz</li>
 <li>音频比特率：立体声 384 KB/s，环绕声为 512 KB/秒</li>
 </ul>
 </td>

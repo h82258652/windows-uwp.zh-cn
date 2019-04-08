@@ -181,7 +181,7 @@ Visual Studio 生成图像文件，并将它们添加到项目。 如果你想�
 
 缩放的图标资产遵循此文件命名约定：
 
-*filename*-scale-*scale factor*.png
+*文件名*-缩放-*比例系数*.png
 
 例如，
 
@@ -208,11 +208,11 @@ Visual Studio 将生成由你的项目，所需的所有应用图标资产，但
 
 | 资源大小 | 文件名示例                  |
 |------------|------------------------------------|
-| 16x16\*    | Square44x44Logo.targetsize-16.png  |
-| 24x24\*    | Square44x44Logo.targetsize-24.png  |
-| 32x32\*    | Square44x44Logo.targetsize-32.png  |
-| 48x48\*    | Square44x44Logo.targetsize-48.png  |
-| 256x256\*  | Square44x44Logo.targetsize-256.png |
+| 16 x 16\*    | Square44x44Logo.targetsize-16.png  |
+| 24 x 24\*    | Square44x44Logo.targetsize-24.png  |
+| 32 x 32\*    | Square44x44Logo.targetsize-32.png  |
+| 48 x 48\*    | Square44x44Logo.targetsize-48.png  |
+| 256 x 256\*  | Square44x44Logo.targetsize-256.png |
 | 20x20      | Square44x44Logo.targetsize-20.png  |
 | 30x30      | Square44x44Logo.targetsize-30.png  |
 | 36x36      | Square44x44Logo.targetsize-36.png  |

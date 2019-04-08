@@ -33,8 +33,8 @@ URI 方案允许你通过单击超链接来打开应用。 正如可以使用 **
 |[bing maps:、 ms-到驱动器:，和 ms-到审核： ](#maps-app-uri-schemes) | “地图”应用 |
 |[http:](#http-uri-scheme) | 默认 Web 浏览器 |
 |[mailto:](#email-uri-scheme) | 默认电子邮件应用 |
-|[ms-call:](#call-app-uri-scheme) |  调用应用 |
-|[ms-chat:](#messaging-app-uri-scheme) | “消息”应用 |
+|[ms-调用：](#call-app-uri-scheme) |  调用应用 |
+|[ms-聊天：](#messaging-app-uri-scheme) | “消息”应用 |
 |[ms-人：](#people-app-uri-scheme) | “人脉”应用 |
 |[ms-照片：](#photos-app-uri-scheme) | “照片”应用 |
 |[ms-设置：](#settings-app-uri-scheme) | “设置”应用 |
@@ -244,4 +244,4 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 | URI 方案 | 结果 |
 |------------|---------|
-| msnweather://forecast?la=\[latitude\]&lo=\[longitude\] | 将启动基于位置的地理坐标预测页中的天气应用程序。<br>`latitude` 是指位置的纬度。<br> `longitude` 是指位置的经度。<br> |
+| msnweather://forecast?la=\[纬度\]& lo =\[经度\] | 将启动基于位置的地理坐标预测页中的天气应用程序。<br>`latitude` 是指位置的纬度。<br> `longitude` 是指位置的经度。<br> |

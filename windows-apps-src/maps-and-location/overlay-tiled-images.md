@@ -421,7 +421,7 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessStream::get()
 ## <a name="related-topics"></a>相关主题
 
 * [必应地图开发人员中心](https://www.bingmapsportal.com/)
-* [UWP 映射示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [映射的设计准则](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 视频：利用跨手机、 平板电脑和 Windows 应用程序中的 PC 的地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 流量应用示例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [地图设计指南](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP 路况应用示例](https://go.microsoft.com/fwlink/p/?LinkId=619982)

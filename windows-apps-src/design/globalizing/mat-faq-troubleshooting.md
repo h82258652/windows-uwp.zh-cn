@@ -178,5 +178,5 @@ msbuild /t:rebuild <project-name>
 ## <a name="related-topics"></a>相关主题
 
 * [使用多语言应用工具包 4.0](use-mat.md)
-* [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)
+* [Microsoft 在线翻译](https://go.microsoft.com/fwlink/p/?LinkId=258220)
 * [MakePri.exe 命令行选项](../../app-resources/makepri-exe-command-options.md)

@@ -10,7 +10,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f81634fdb0f9382b1f660394764e5555189783e4
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57622352"
@@ -94,10 +94,10 @@ ms.locfileid: "57622352"
 - [**ContextRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextrequested)
 - [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)
 - [**DragEnter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragenter)
-- [**DragLeave**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
+- [**时，会**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
 - [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
 - [**DragStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragstarting)
-- [**Drop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
+- [**删除**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
 - [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
 - [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
 - [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
@@ -124,7 +124,7 @@ ms.locfileid: "57622352"
 - [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup.md)
 - [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
 - [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
-- [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
+- [**点击**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
 但是，您可以充分利用特定功能 （例如鼠标滚轮事件） 的每个设备的使用中的指针、 手势，以及处理事件[Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)。
 
@@ -159,7 +159,7 @@ ms.locfileid: "57622352"
 
 - [处理指针输入](handle-pointer-input.md)
 - [标识输入设备](identify-input-devices.md)
-- [事件和路由的事件概述](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
+- [事件和路由事件概述](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
 
 ### <a name="samples"></a>示例
 

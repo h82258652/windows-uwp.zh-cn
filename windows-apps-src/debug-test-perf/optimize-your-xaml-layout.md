@@ -18,7 +18,7 @@ ms.locfileid: "57608562"
 
 **重要的 Api**
 
--   [**Panel**](https://msdn.microsoft.com/library/windows/apps/BR227511)
+-   [**面板**](https://msdn.microsoft.com/library/windows/apps/BR227511)
 
 布局是为 UI 定义可视结构的过程。 描述 XAML 中的布局的主要机制是通过面板，面板是可使你在其中定位和安排 UI 元素的容器对象。 布局可能是 XAML 应用中最耗费资源的部分，无论在 CPU 使用率还是内存开销方面。 以下是可为提高 XAML 应用的布局性能而采取的步骤。
 

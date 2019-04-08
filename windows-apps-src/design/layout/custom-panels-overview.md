@@ -26,7 +26,7 @@ ms.locfileid: "57620342"
 *面板*是在 Extensible Application Markup Language (XAML) 布局系统运行且呈现应用 UI 时为所包含的子元素提供布局行为的对象。 
 
 
-> **重要的 Api**:[**面板**](https://msdn.microsoft.com/library/windows/apps/br227511)， [ **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)， [ **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
+> **重要的 API**：[**面板**](https://msdn.microsoft.com/library/windows/apps/br227511)， [ **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)， [ **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
 
 你可以通过从 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 类派生自定义类来为 XAML 布局定义自定义面板。 通过替代 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 和 [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)、提供度量和排列子元素的逻辑来为面板提供行为。
 
@@ -86,7 +86,7 @@ ms.locfileid: "57620342"
 -   [**DesiredSize** ](https://msdn.microsoft.com/library/windows/apps/br208921) (实际[ **UIElement** ](https://msdn.microsoft.com/library/windows/apps/br208911)属性)
 -   [**ActualHeight** ](https://msdn.microsoft.com/library/windows/apps/br208707)并[ **ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709)
 -   [**高度**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height)并[**宽度**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)
--   [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
+-   [**边距**](https://msdn.microsoft.com/library/windows/apps/br208724)
 -   [**LayoutUpdated** ](https://msdn.microsoft.com/library/windows/apps/br208722)事件
 -   [**HorizontalAlignment** ](https://msdn.microsoft.com/library/windows/apps/br208720)并[ **VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
 -   [**ArrangeOverride** ](https://msdn.microsoft.com/library/windows/apps/br208711)并[ **MeasureOverride** ](https://msdn.microsoft.com/library/windows/apps/br208730)方法
@@ -195,7 +195,7 @@ protected override Size ArrangeOverride(Size finalSize)
 **参考**
 * [**FrameworkElement.ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
 * [**FrameworkElement.MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
-* [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)
+* [**面板**](https://msdn.microsoft.com/library/windows/apps/br227511)
 
 **概念**
 * [对齐、 边距和填充](alignment-margin-padding.md)

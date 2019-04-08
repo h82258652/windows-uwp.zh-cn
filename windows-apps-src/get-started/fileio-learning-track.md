@@ -127,15 +127,15 @@ UWP 应用必须通过在其清单中添加相应的功能来声明访问特定�
 |-------|----------------|
 | [Windows.Storage Namespace](https://docs.microsoft.com/uwp/api/windows.storage) | API 参考文档。 |
 | [文件、文件夹和库](https://docs.microsoft.com/windows/uwp/files/) | 概念文档。 |
-| [创建、 写入和读取文件](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files) | 涵盖创建、读取和写入文本、二进制数据和流。 |
+| [创建、写入和读取文件](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files) | 涵盖创建、读取和写入文本、二进制数据和流。 |
 | [获取已启动存储应用数据保存在本地](https://blogs.windows.com/buildingapps/2016/05/10/getting-started-storing-app-data-locally/#pCbJKGjcShh5DTV5.97) | 除了涵盖保存本地数据的最佳实践外，还涵盖了 LocalSettings 和 LocalCache 文件夹的用途。 |
 | [开始使用漫游应用数据](https://blogs.windows.com/buildingapps/2016/05/03/getting-started-with-roaming-app-data/#RgjgLt5OkU9DbVV8.97) | 有关如何使用漫游应用数据的两部分系列文章。 |
 | [漫游应用程序数据的准则](https://msdn.microsoft.com/library/windows/apps/hh465094) | 请在设计应用时按照这些数据漫游指南操作。 |
 | [存储和检索设置和其他应用程序数据](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | 提供各种应用数据存储（如本地、漫游和临时文件夹）的概述。 请参阅[漫游数据](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#roaming-data)部分，了解有关写入在设备之间漫游的数据的指南和其他信息。 |
 | [文件访问权限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) | 有关你的应用可以访问哪些文件系统位置的信息。 |
-| [使用选取器中打开文件和文件夹](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) | 展示如何通过让用户通过选取器 UI 决定来访问文件和文件夹。 |
+| [使用选取器打开文件和文件夹](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) | 展示如何通过让用户通过选取器 UI 决定来访问文件和文件夹。 |
 | [Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/windows.storage.streams) | 用于读取和写入流的类型。 |
-| [文件和文件夹中的音乐、 图片和视频库](https://docs.microsoft.com/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries) | 涵盖如何从库中删除文件夹、获取库中的文件夹列表，并发现存储的照片、音乐和视频。 |
+| [音乐、图片和视频库中的文件和文件夹](https://docs.microsoft.com/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries) | 涵盖如何从库中删除文件夹、获取库中的文件夹列表，并发现存储的照片、音乐和视频。 |
 
 ## <a name="useful-code-samples"></a>有用的代码示例
 

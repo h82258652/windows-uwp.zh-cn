@@ -4,7 +4,7 @@ description: 此示例代码显示了如何在通用 Windows 平台 (UWP) 应用
 ms.assetid: CB086E51-544A-470D-B7C8-C055271CD615
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 828f3a081aa3dcd095f036fb47385fc261335a7a
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

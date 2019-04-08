@@ -41,7 +41,7 @@ ms.locfileid: "57643282"
 | 字段名称                    | 注释                                       | 有关详细信息                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **市场**                   | Default：所有可能的市场  | [定义定价和市场选择](define-pricing-and-market-selection.md)         |
-| **Audience**                | Default：公共受众 | [Audience](choose-visibility-options.md#audience) |
+| **受众**                | Default：公共受众 | [受众](choose-visibility-options.md#audience) |
 | **可发现性**                | Default：在存储中将此应用程序可用和可发现性 | [可发现性](choose-visibility-options.md#discoverability) |
 | **计划**                  | Default：尽可能快地发布        | [配置精确发布计划](configure-precise-release-scheduling.md) |
 | **基本价格**                | 必需                                    | [设置和应用的定价计划](set-and-schedule-app-pricing.md)              |
@@ -97,9 +97,9 @@ ms.locfileid: "57643282"
 | **应用商店徽标**               | 建议；对于某些操作系统版本为必需 | [应用商店徽标](app-screenshots-and-images.md#store-logos)             |
 | **尾部**                  | 可选                                    | [尾部](app-screenshots-and-images.md#trailers)                | 
 | **Windows 10 和 Xbox 映像 （16:9 超级英雄画面）**     | 推荐        | [Windows 10 和 Xbox 映像 （16:9 超级英雄画面）
-](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+] (app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
 | **Xbox 映像**     | 如果将发布到 Xbox 所需的正确显示        | [Xbox 映像
-](app-screenshots-and-images.md#xbox-images) |
+] (应用程序的屏幕截图和 images.md #xbox 映像) |
 | **补充字段**  | 可选                                    | [补充字段](create-app-store-listings.md#supplemental-fields) 
 | **搜索词**              | 可选                                    | [搜索词](create-app-store-listings.md#search-terms)         |
 | **版权和商标信息** | 可选                                 | [版权和商标信息](create-app-store-listings.md#copyright-and-trademark-info) |

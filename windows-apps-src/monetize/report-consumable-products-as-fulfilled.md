@@ -69,7 +69,7 @@ UserIdentity 对象包含以下参数。
 |----------------------|--------|-------------------|----------|
 | IdentityType         | 字符串 | 指定字符串值 **b2b**。    | 是      |
 | identityValue        | 字符串 | 表示你要为其将可消费产品报告为已完成的用户身份的 [Microsoft Store ID 密钥](view-and-grant-products-from-a-service.md#step-4)。      | 是      |
-| localTicketReference | 字符串 | 已返回响应的请求标识符。 我们建议使用相同的值*userId*[声明](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key)中 Microsoft Store ID 键。   | 是      |
+| localTicketReference | 字符串 | 已返回响应的请求标识符。 我们建议使用相同的值*userId*[声明](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key)中 Microsoft Store ID 键。 | 是      |
 
 
 ### <a name="request-examples"></a>请求示例

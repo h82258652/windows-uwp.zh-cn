@@ -8,7 +8,7 @@ keywords: windows 10, uwp, 反馈中心, 启动
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f5d5c12deed9fffc3d2515529aa5bba5fbffc47
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57631832"
@@ -29,7 +29,7 @@ ms.locfileid: "57631832"
 1. [安装 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。
 2. 在 Visual Studio 中打开你的项目。
 3. 在“解决方案资源管理器”中，右键单击你的项目的**引用**节点，然后单击**添加引用**。
-4. 在**引用管理器**中，展开**通用 Windows** 并单击**扩展**。
+4. 在“引用管理器”中，展开“通用 Windows”并单击“扩展”。
 5. 在 SDK 列表中，单击 **Microsoft 协议框架**旁边的复选框，然后单击**确定**。
 6. 在项目中，添加要向用户显示的用于启动“反馈中心”的控件，如按钮。 我们建议你按如下方式配置该控件：
   * 将控件中显示的内容的字体设置为 **Segoe MDL2 Assets**。

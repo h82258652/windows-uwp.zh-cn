@@ -27,7 +27,7 @@ ms.locfileid: "57644872"
 **将功能添加到应用程序清单**
 
 1.  在 Microsoft Visual Studio 的“解决方案资源管理器”中，通过双击“package.appxmanifest”项，打开应用程序清单的设计器。
-2.  选择“功能”选项卡。
+2.  选择**功能**选项卡。
 3.  选中**摄像头**框和**麦克风**框。
 
 ## <a name="add-a-captureelement-to-your-page"></a>将 CaptureElement 添加到你的页面

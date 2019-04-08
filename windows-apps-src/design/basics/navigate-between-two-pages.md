@@ -24,7 +24,7 @@ ms.locfileid: "57616202"
 
 了解如何使用框架和页面在你的应用中启用基本对等导航。 
 
-> **重要的 Api**:[**Windows.UI.Xaml.Controls.Frame** ](https://msdn.microsoft.com/library/windows/apps/br242682)类， [ **Windows.UI.Xaml.Controls.Page** ](https://msdn.microsoft.com/library/windows/apps/br227503)类[ **Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300)命名空间
+> **重要的 API**：[**Windows.UI.Xaml.Controls.Frame** ](https://msdn.microsoft.com/library/windows/apps/br242682)类， [ **Windows.UI.Xaml.Controls.Page** ](https://msdn.microsoft.com/library/windows/apps/br227503)类[ **Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300)命名空间
 
 ![对等导航](images/peertopeer.png)
 

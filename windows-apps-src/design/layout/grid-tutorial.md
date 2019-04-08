@@ -18,7 +18,7 @@ ms.locfileid: "57646532"
 
 使用 XAML  并使用**网格**和 **StackPanel** 元素创建简单的天气应用的布局。 使用这些工具，你可以使出色的应用在运行 Windows 10 的任何设备上出色运行。 本教程需要 10-20 分钟。
 
-> **重要的 Api**:[Grid 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid)， [StackPanel 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
+> **重要的 API**：[Grid 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid)， [StackPanel 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>必备条件
 - Windows 10 和 Microsoft Visual Studio 2015 或更高版本。 （最新的 Visual Studio 建议用于当前的开发和安全更新）[若要了解如何使用 Visual Studio 进行设置，请单击此处](../../get-started/get-set-up.md)。

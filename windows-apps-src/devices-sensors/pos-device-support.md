@@ -28,18 +28,18 @@ ms.locfileid: "57663092"
 | 代码          | Reader™ 950                    | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
 | 代码          | Reader™ 1021                   | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
 | 代码          | Reader™ 1421                   | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| 代码          | Reader™ 5000                   | 2D         | USB          | 演示文稿 | HID 的 POS 扫描程序           |
-| Honeywell     | 生成 7580 g                  | 2D         | USB          | 演示文稿 | HID 的 POS 扫描程序           |
+| 代码          | Reader™ 5000                   | 2D         | USB          | 呈现 | HID 的 POS 扫描程序           |
+| Honeywell     | 生成 7580 g                  | 2D         | USB          | 呈现 | HID 的 POS 扫描程序           |
 | Honeywell     | Granit 198Xi                   | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
 | Honeywell     | Granit 191Xi                   | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
 | Honeywell     | N5680                          | 2D         | 内部     | Component    | HID 的 POS 扫描程序           |
 | Honeywell     | N3680                          | 2D         | 内部     | Component    | HID 的 POS 扫描程序           |
-| Honeywell     | 轨迹 7190 g                    | 2D         | USB          | 演示文稿 | HID 的 POS 扫描程序           |
+| Honeywell     | 轨迹 7190 g                    | 2D         | USB          | 呈现 | HID 的 POS 扫描程序           |
 | Honeywell     | Stratos 2700                   | 2D         | USB          | 在计数器中   | HID 的 POS 扫描程序           |
 | Honeywell     | 姊妹 1200 g                  | 1D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
 | Honeywell     | 姊妹 1202 g                  | 1D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
 | Honeywell     | 姊妹 1202 bf                | 1D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| Honeywell     | 姊妹 145Xg                  | 1D / 2D¹   | USB          | 手持设备     | HID 的 POS 扫描程序           |
+| Honeywell     | 姊妹 145Xg                  | 一维 2 D ¹   | USB          | 手持设备     | HID 的 POS 扫描程序           |
 | Honeywell     | 姊妹 1602 g                  | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
 | Honeywell     | Xenon 1900 g                    | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
 | Honeywell     | Xenon 1902 g                    | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
@@ -50,7 +50,7 @@ ms.locfileid: "57663092"
 | Intermec      | SG20                           | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
 | Socket Mobile | CHS 7Ci                        | 1D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
 | Socket Mobile | CHS 7Di                        | 1D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
-| Socket Mobile | CHS 7Mi                        | 1D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
+| Socket Mobile | CHS 7 Mi                        | 1D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
 | Socket Mobile | CHS 7Pi                        | 1D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
 | Socket Mobile | CHS 8Ci                        | 1D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
 | Socket Mobile | DuraScan D700                  | 1D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
@@ -88,8 +88,8 @@ ms.locfileid: "57663092"
 | Honeywell      | CT50   | Windows Mobile   |
 | Honeywell      | D75e | Windows Mobile   |
 | Janam          | XT2      | Windows Mobile   |
-| 松下      | FZ-E1 | Windows Mobile   |
-| 松下      | FZ-F1 |Windows Mobile   |
+| 松下      | FZ 版 E1 | Windows Mobile   |
+| 松下      | FZ F1 |Windows Mobile   |
 | PointMobile    | PM80 | Windows Mobile   |
 | 斑马          | TC700j | Windows Mobile   |
 | HP             | 精英 X3 Jacket | Windows Mobile   |

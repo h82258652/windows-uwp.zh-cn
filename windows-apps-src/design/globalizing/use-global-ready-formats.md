@@ -169,7 +169,7 @@ ms.locfileid: "57634132"
 
 * [日历、 日期和时间控件](../controls-and-patterns/date-and-time.md)
 * [了解用户配置文件的语言和应用程序清单语言](manage-language-and-region.md)
-* [定制您的语言、 缩放、 高对比度和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [定制语言、比例、高对比度和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)
 
 ## <a name="samples"></a>示例
 

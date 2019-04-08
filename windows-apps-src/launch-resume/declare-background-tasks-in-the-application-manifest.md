@@ -236,4 +236,4 @@ ms.locfileid: "57615672"
 
 * [调试后台任务](debug-a-background-task.md)
 * [注册后台任务](register-a-background-task.md)
-* [后台任务的指导原则](guidelines-for-background-tasks.md)
+* [后台任务指南](guidelines-for-background-tasks.md)

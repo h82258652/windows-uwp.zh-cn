@@ -10,7 +10,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e8425232512650d5c80bf6fee9745b261aee8d9
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57646052"
@@ -20,7 +20,7 @@ ms.locfileid: "57646052"
 
 Windows 中的触摸定位使用触摸数字化器检测到的每个手指的全部接触区域。 确定用户的预期（或最可能）目标时，数字化器报告的输入数据集越大、越复杂，精度越高。
 
-> **重要的 Api**:[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)， [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **重要的 API**：[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)， [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 本主题介绍使用接触几何图形来确定触摸目标并提供在 UWP 应用中确定目标的最佳实践。
 

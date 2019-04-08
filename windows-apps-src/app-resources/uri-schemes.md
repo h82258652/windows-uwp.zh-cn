@@ -8,7 +8,7 @@ keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57632052"
@@ -271,6 +271,6 @@ ms-resource:///Hello%23World/String1
 * [打包应用](../packaging/index.md)
 * [从 XAML 标记和代码中引用图像或其他资产](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [存储和检索设置和其他应用程序数据](../design/app-settings/store-and-retrieve-app-data.md)
-* [本地化用户界面和应用包清单中的字符串](localize-strings-ui-manifest.md)
+* [对 UI 和应用包清单中的字符串进行本地化](localize-strings-ui-manifest.md)
 * [资源管理系统](https://msdn.microsoft.com/library/windows/apps/jj552947)
 * [磁贴和 toast 通知支持的语言、 缩放性和高对比度](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

@@ -292,7 +292,7 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 * [Visual c + + 语言参考](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
 * [异步编程][AsyncProgramming]
 * [任务并行度（并发运行时）][taskParallelism]
-* [concurrency::task](/cpp/parallel/concrt/reference/task-class)
+* [concurrency:: task](/cpp/parallel/concrt/reference/task-class)
 
 <!-- LINKS -->
 [AsyncProgramming]: <https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps> "AsyncProgramming"

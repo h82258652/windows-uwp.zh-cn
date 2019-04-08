@@ -128,7 +128,7 @@ API 通过质量级别号报告对多重采样的硬件支持。 例如，质量
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[Appendices](appendix.md)
+[附录](appendix.md)
 
 [光栅器 (RS) 阶段](rasterizer-stage--rs-.md)
 

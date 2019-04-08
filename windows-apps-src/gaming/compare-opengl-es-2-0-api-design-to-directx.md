@@ -21,7 +21,7 @@ ms.locfileid: "57662752"
 **重要的 Api**
 
 -   [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080)
--   [Visual C++](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)
+-   [Visual c + +](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)
 
 如果你移植 iOS 或 Android 平台中的游戏，那么你可能需要在 OpenGL ES 2.0 方面进行大量投资。 如果你准备将你的图形管道代码库移动到 Direct3D 11 和 Windows 运行时，那么在开始之前你应该考虑以下事项。
 

@@ -20,7 +20,7 @@ ms.locfileid: "57638522"
 
 标识连接到通用 Windows 平台 (UWP) 设备的输入设备，并标识其功能和属性。
 
-> **重要的 Api**:[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)， [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)， [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+> **重要的 API**：[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)， [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)， [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
 ## <a name="retrieve-mouse-properties"></a>检索鼠标属性
 

@@ -25,7 +25,7 @@ ms.locfileid: "57621422"
 - 用于显示只读文本的控件是 [TextBlock](text-block.md) 和 [RichTextBlock](rich-text-block.md)。
 - 文本输入和编辑控件的：[文本框](text-box.md)， [RichEditBox](rich-edit-box.md)， [AutoSuggestBox](auto-suggest-box.md)，并且[PasswordBox](password-box.md)。
 
-> **重要的 Api**:[TextBlock 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)， [RichTextBlock 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)， [TextBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)， [RichEditBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)， [AutoSuggestBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)，[PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
+> **重要的 API**：[TextBlock 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)， [RichTextBlock 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)， [TextBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)， [RichEditBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)， [AutoSuggestBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)，[PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -79,7 +79,7 @@ RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/win
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/category/Text">打开此应用，了解文本控件的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -105,9 +105,9 @@ RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/win
 -   [AutoSuggestBox](auto-suggest-box.md)
 -   [PasswordBox](password-box.md)
 -   [RichEditBox](rich-edit-box.md)
--   [RichTextBlock](rich-text-block.md)
+-   [按](rich-text-block.md)
 -   [TextBlock](text-block.md)
--   [TextBox](text-box.md)
+-   [文本框](text-box.md)
 
 ## <a name="font-and-style-guidelines"></a>字体和样式指南
 有关字体指南，请参阅以下文章：

@@ -166,10 +166,10 @@ public class Customer : INotifyPropertyChanged
 | API | 描述 |
 |------|---------------|
 | [数据模板](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) | 描述数据对象的可视结构，以允许在 UI 中显示特定元素。 |
-| [x:Bind](../xaml-platform/x-bind-markup-extension.md) | 有关推荐的 x:Bind 标记扩展的文档。 |
+| [x： 绑定](../xaml-platform/x-bind-markup-extension.md) | 有关推荐的 x:Bind 标记扩展的文档。 |
 | [Binding](../xaml-platform/binding-markup-extension.md) | 有关以前的 Binding 标记扩展的文档。 |
 | [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) | 显示垂直堆栈中的数据项的 UI 控件。 |
-| [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | 在 UI 中显示可编辑文本数据的基本文本控件。 |
+| [文本框](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | 在 UI 中显示可编辑文本数据的基本文本控件。 |
 | [INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged(d=robot).aspx) | 让数据可供观察、将数据提供给数据绑定的接口。 |
 | [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) | 此类的 **ItemsSource** 属性允许 ListView 绑定到数据源。 |
 
@@ -177,7 +177,7 @@ public class Customer : INotifyPropertyChanged
 
 | 主题 | 描述 |
 |-------|----------------|
-| [深度中的数据绑定](../data-binding/data-binding-in-depth.md) | 数据绑定原则的基本概述 |
+| [深入了解数据绑定](../data-binding/data-binding-in-depth.md) | 数据绑定原则的基本概述 |
 | [数据绑定概述](../data-binding/data-binding-quickstart.md) | 有关数据绑定的详细概念信息。 |
 | [列表视图](../design/controls-and-patterns/listview-and-gridview.md) | 有关创建和配置 ListView 的信息（包括 **DataTemplate** 的实现） |
 

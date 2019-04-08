@@ -20,7 +20,7 @@ ms.locfileid: "57648812"
 
 当你的应用在桌面窗口中运行时，你可以自定义标题栏以匹配应用的个性。 利用标题栏自定义 API，你可以为标题栏元素指定颜色，或者将应用内容扩展到标题栏区域并完全控制该内容。
 
-> **重要的 Api**:[ApplicationView.TitleBar 属性](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)， [ApplicationViewTitleBar 类](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)， [CoreApplicationViewTitleBar 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
+> **重要的 API**：[ApplicationView.TitleBar 属性](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)， [ApplicationViewTitleBar 类](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)， [CoreApplicationViewTitleBar 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
 
 ## <a name="how-much-to-customize-the-title-bar"></a>标题栏的自定义程度
 
@@ -381,5 +381,5 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 
 ## <a name="related-articles"></a>相关文章
 
-- [Acrylic](../style/acrylic.md)
-- [Color](../style/color.md)
+- [染料](../style/acrylic.md)
+- [颜色](../style/color.md)

@@ -52,7 +52,7 @@ XAML 编译时，**{x:Bind}** 将转换为从数据源上的某一属性中获�
 | _bindingProperties_ |
 | _propName_=_值_\[， _propName_=_值_\]* | 使用一个名称/值对语法指定的一个或多个绑定属性。 |
 | _propName_ | 要在绑定对象上设置的属性的字符串名称。 例如，“Converter”。 |
-| _value_ | 要将属性设置为的值。 参数的语法取决于要设置的属性。 下面是 _propName_=_value_ 用法的示例，其中该值本身就是一个标记扩展：`Converter={StaticResource myConverterClass}`。 有关详细信息，请参阅下面的[可使用 {x:Bind} 设置的属性](#properties-that-you-can-set-with-xbind)部分。 |
+| _值_ | 要将属性设置为的值。 参数的语法取决于要设置的属性。 下面是 _propName_=_value_ 用法的示例，其中该值本身就是一个标记扩展：`Converter={StaticResource myConverterClass}`。 有关详细信息，请参阅下面的[可使用 {x:Bind} 设置的属性](#properties-that-you-can-set-with-xbind)部分。 |
 
 ## <a name="examples"></a>示例
 
@@ -136,13 +136,13 @@ _注意：C#的样式的强制转换语法比附加的属性语法更为灵活�
 | 属性 | 描述 |
 |----------|-------------|
 | **Path** | 请参阅上面的[属性路径](#property-path)部分。 |
-| **Converter** | 指定绑定引擎所调用的转换器对象。 转换器可以在 XAML 中设置，但仅限于你引用你在对资源字典中的该对象的 [{StaticResource} 标记扩展](staticresource-markup-extension.md)引用中分配的对象实例。 |
+| **转换器** | 指定绑定引擎所调用的转换器对象。 转换器可以在 XAML 中设置，但仅限于你引用你在对资源字典中的该对象的 [{StaticResource} 标记扩展](staticresource-markup-extension.md)引用中分配的对象实例。 |
 | **ConverterLanguage** | 指定转换器要使用的区域性。 (如果要设置**ConverterLanguage**你还应设置**转换器**。)作为基于标准的标识符设置的区域性。 有关详细信息，请参阅 [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880)。 |
-| **ConverterParameter** | 指定可在转换器逻辑中使用的转换器参数。 (如果要设置**ConverterParameter**你还应设置**转换器**。)多数转换器使用从传递的值将转换，获取所需的所有信息的简单逻辑，而无须**ConverterParameter**值。 **ConverterParameter** 参数适用于具有多个逻辑的中等高级转换器实现，这些逻辑可切断传入 **ConverterParameter** 的内容。 你可以编写一个转换器，使用除字符串之外的值，但这种情况并不常见，请参阅 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) 中的备注，以获取详细信息。 |
-| **FallbackValue** | 指定要在无法解析源或路径时显示的值。 |
+| **converterParameter** | 指定可在转换器逻辑中使用的转换器参数。 (如果要设置**ConverterParameter**你还应设置**转换器**。)多数转换器使用从传递的值将转换，获取所需的所有信息的简单逻辑，而无须**ConverterParameter**值。 **ConverterParameter** 参数适用于具有多个逻辑的中等高级转换器实现，这些逻辑可切断传入 **ConverterParameter** 的内容。 你可以编写一个转换器，使用除字符串之外的值，但这种情况并不常见，请参阅 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) 中的备注，以获取详细信息。 |
+| **传输** | 指定要在无法解析源或路径时显示的值。 |
 | **模式** | 指定绑定模式中，为以下字符串之一："一次性"、"单向"或"双向"。 默认值是“OneTime”。 请注意，该值不是 **{Binding}** 的默认值，大多数情况下为“OneWay”。 |
 | **TargetNullValue** | 指定要在源值解析但并非显式 **null** 时显示的值。 |
-| **BindBack** | 指定要用于双向绑定的相反方向的函数。 |
+| **绑** | 指定要用于双向绑定的相反方向的函数。 |
 | **UpdateSourceTrigger** | 指定何时将更改从控件推送回 TwoWay 绑定中的模式。 除 TextBox.Text 以外的所有属性的默认值是 PropertyChanged;TextBox.Text 是 LostFocus。|
 
 > [!NOTE]

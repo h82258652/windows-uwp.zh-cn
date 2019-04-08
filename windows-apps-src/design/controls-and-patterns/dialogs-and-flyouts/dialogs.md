@@ -26,7 +26,7 @@ ms.locfileid: "57621832"
 ![对话框示例](../images/dialogs/dialog_RS2_delete_file.png)
 
 
-> **重要的 Api**:[ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+> **重要的 API**：[ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -41,9 +41,9 @@ ms.locfileid: "57621832"
 <tr>
 <td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> 或 <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> 的实际应用。</p>
+    <p>如果已安装了 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> 或 <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> 的实际应用。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -70,7 +70,7 @@ ms.locfileid: "57621832"
 -   不要为与页面上的特定位置具有上下文关系的错误（例如，密码字段等位置的验证错误）使用对话框，请使用应用的画布本身显示内联错误。
 - 使用 [ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)生成对话框体验。 不要使用已弃用的 MessageDialog API。
 
-## <a name="how-to-create-a-dialog"></a>如何创建一个对话框
+## <a name="how-to-create-a-dialog"></a>如何创建对话框
 若要创建对话框，你使用 [ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)。 你可以使用代码或标记创建对话框。 尽管使用 XAML 定义 UI 元素通常更容易，但对于简单对话框，实际上只使用代码更容易。 此示例创建一个对话框来通知用户没有 WiFi 连接，然后使用 [ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync) 方法显示它。
 
 ```csharp

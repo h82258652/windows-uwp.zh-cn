@@ -8,7 +8,7 @@ keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
 ms.openlocfilehash: 74ad832d5516a4fa9bef849c5f691e2909c6c3d4
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610112"
@@ -162,7 +162,7 @@ ms.locfileid: "57610112"
 
 ## <a name="related-topics"></a>相关主题
 
-* [本地化用户界面和应用包清单中的字符串](../../app-resources/localize-strings-ui-manifest.md)
+* [对 UI 和应用包清单中的字符串进行本地化](../../app-resources/localize-strings-ui-manifest.md)
 * [全球化和本地化](globalizing-portal.md)
 * [全球化](guidelines-and-checklist-for-globalizing-your-app.md)
 * [使您的应用程序可本地化](prepare-your-app-for-localization.md)
@@ -176,4 +176,4 @@ ms.locfileid: "57610112"
 ## <a name="translation-services"></a>翻译服务
 
 * [Microsoft 语言门户](https://go.microsoft.com/fwlink/p/?LinkId=330295)
-* [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)
+* [Microsoft 在线翻译](https://go.microsoft.com/fwlink/p/?LinkId=258220)

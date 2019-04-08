@@ -27,7 +27,7 @@ ms.locfileid: "57610812"
 
 -   **包/Identity/名称**
 -   **发布服务器标识/包 /**
--   **Package/Properties/PublisherDisplayName**
+-   **包/属性/PublisherDisplayName**
 
 有关详细信息，请参阅[程序包清单架构参考](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
 

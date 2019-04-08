@@ -133,19 +133,19 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>uniform</strong></p>
+<td align="left"><p><strong>统一</strong></p>
 <p>将 uniform 变量从应用代码传递到顶点着色器和分段着色器或传递到两者。 必须在使用这些着色器绘制任何三角形之前，设置所有 uniform 的值，以便它们的值在绘制三角形网格的整个过程中保持不变。 这些值都是 uniform。 一些 uniform 是针对整个帧设置的，另一些 uniform 唯一对应于一个特定的顶点像素着色器对。</p>
 <p>uniform 变量是每个多边形的变量。</p></td>
 <td align="left"><p>使用常量缓冲区。</p>
 <p>请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/ff476896">如何：创建常量缓冲区</a>并<a href="https://msdn.microsoft.com/library/windows/desktop/bb509581">着色器常量</a>。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>varying</strong></p>
+<td align="left"><p><strong>不同的</strong></p>
 <p>在顶点着色器内初始化一个 varying 变量，并将其传递到片段着色器中具有相同名称的 varying 变量。 由于顶点着色器仅设置每个顶点上的 varying 变量的值，因此光栅器会插入这些值（采用透视校正的方式），以生成每个要传递到片段着色器中的片段值。 这些变量在各个三角形之间有所不同。</p></td>
 <td align="left">使用从顶点着色器返回的结构作为像素着色器的输入。 确保语义值相匹配。</td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>attribute</strong></p>
+<td align="left"><p><strong>属性</strong></p>
 <p>attribute 只是你从应用代码传递到顶点着色器的顶点描述的一部分。 与 uniform 不同，你为每个顶点设置每个 attribute 的值，但却允许每个顶点拥有不同的值。 attribute 变量是每个顶点的变量。</p></td>
 <td align="left"><p>在 Direct3D 应用代码中定义顶点缓冲区并将其与顶点着色器中定义的顶点输入相匹配。 也可以定义索引缓冲区。 请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/ff476899">如何：创建顶点缓冲区</a>和<a href="https://msdn.microsoft.com/library/windows/desktop/ff476897">如何：创建索引缓冲区</a>。</p>
 <p>在 Direct3D 应用代码中创建输入布局并将语义值与顶点输入中的值相匹配。 请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout">创建输入布局</a>。</p></td>
@@ -324,7 +324,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <p>例如-float4 颜色 [4]:SV_Target;</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>gl_FragData[n]</strong></p>
+<td align="left"><p><strong>gl_FragData [n]</strong></p>
 <p>该变量为 <strong>vec4</strong> 类型。</p>
 <p>颜色附件 n 的片段颜色</p></td>
 <td align="left"><p>SV_Target[n]</p>

@@ -17,7 +17,7 @@ ms.lasthandoff: 03/06/2019
 ms.locfileid: "57619962"
 ---
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>使用 C# 和 Visual Basic 创建 Windows 运行时组件
-从.NET Framework 4.5 开始，你可以使用托管的代码来创建你自己的 Windows 运行时类型并将其打包在 Windows 运行时组件。 可以在通用 Windows 平台 (UWP) 应用中编写的 c + +、 JavaScript、 Visual Basic 中，使用你的组件或C#。 本主题概述了用于创建的组件的规则，并讨论了 Windows 运行时的.NET Framework 支持的某些方面。 一般情况下，该支持设计为对 .NET Framework 程序员透明可见。 但是，在你创建要与 JavaScript 或 C++ 一起使用的组件时，需要意识到这些语言支持 Windows 运行时的方法差异。
+从.NET Framework 4.5 开始，你可以使用托管的代码来创建你自己的 Windows 运行时类型并将其打包在 Windows 运行时组件。 可以在通用 Windows 平台 (UWP) 应用中编写的 c + +、 JavaScript、 Visual Basic 中，使用你的组件或C#。 本主题概述了用于创建组件的规则，并讨论了有关 Windows 运行时的 .NET Framework 支持的一些方面。 一般情况下，该支持设计为对 .NET Framework 程序员透明可见。 但是，在你创建要与 JavaScript 或 C++ 一起使用的组件时，需要意识到这些语言支持 Windows 运行时的方法差异。
 
 如果要创建仅在用 Visual Basic 编写的 UWP 应用中使用的组件或C#，并且该组件不包含 UWP 控件，则考虑使用**类库**模板而不是**Windows运行时组件**Microsoft Visual Studio 中的项目模板。 简单类库所受限制较少。
 
@@ -84,9 +84,9 @@ ms.locfileid: "57619962"
 | IIterable&lt;T&gt;                               | IEnumerable&lt;T&gt;                              |
 | IVector&lt;T&gt;                                 | IList&lt;T&gt;                                    |
 | IVectorView&lt;T&gt;                             | IReadOnlyList&lt;T&gt;                            |
-| IMap&lt;K, V&gt;                                 | IDictionary&lt;TKey，TValue&gt;                   |
-| IMapView&lt;K, V&gt;                             | IReadOnlyDictionary&lt;TKey, TValue&gt;           |
-| IKeyValuePair&lt;K, V&gt;                        | KeyValuePair&lt;TKey, TValue&gt;                  |
+| IMap&lt;K，V&gt;                                 | IDictionary&lt;TKey，TValue&gt;                   |
+| IMapView&lt;K，V&gt;                             | IReadOnlyDictionary&lt;TKey，TValue&gt;           |
+| 2&gt;platform::collections::inputiterator&lt;ikeyvaluepair&lt;k&lt;K，V&gt;                        | KeyValuePair&lt;TKey，TValue&gt;                  |
 | IBindableIterable                                | IEnumerable                                       |
 | IBindableVector                                  | IList                                             |
 | Windows.UI.Xaml.Data.INotifyPropertyChanged      | System.ComponentModel.INotifyPropertyChanged      |

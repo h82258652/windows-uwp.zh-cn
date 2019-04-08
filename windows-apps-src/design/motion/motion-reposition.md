@@ -21,7 +21,7 @@ ms.locfileid: "57647722"
 
 使用重新定位动画将一个或多个元素移动到新位置。
 
-> **重要的 Api**:[**RepositionThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210421)， [ **RepositionThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/br210429)
+> **重要的 API**：[**RepositionThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210421)， [ **RepositionThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/br210429)
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
 

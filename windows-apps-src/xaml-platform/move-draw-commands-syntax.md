@@ -51,7 +51,7 @@ Windows 运行时，可以使用一个字符串，表示移动和绘制命令中
 -   除关闭命令之外的每个命令通常都后跟一个或多个数字。
 -   如果命令中具有多个数字，则使用逗号或空格进行分隔。
 
-**\[**_fillRule_**\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**
+**\[**_fillRule_ **\]** _moveCommand_ _drawCommand_ **\[** _drawCommand_ **\* \]** **\[** _closeCommand_**\]**
 
 许多绘制命令都使用你为其提供 _x,y_ 值的点。 只要看到\*_点_占位符可以假定您将提供两个十进制值_x，y_点值。
 
@@ -71,11 +71,11 @@ Windows 运行时，可以使用一个字符串，表示移动和绘制命令中
 
 | 语法 |
 |--------|
-| `M ` _startPoint_ <br/>- 或 -<br/>`m` _startPoint_|
+| `M ` _圆弧起点_ <br/>- 或 -<br/>`m` _圆弧起点_|
 
 | 术语 | 描述 |
 |------|-------------|
-| _startPoint_ | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>新图形的起点。|
+| _圆弧起点_ | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>新图形的起点。|
 
 大写 **M** 指示 *startPoint* 是绝对坐标；小写 **m** 指示 *startPoint* 是上一个点的偏移或 (0,0)（如果没有上一个点）。
 
@@ -95,7 +95,7 @@ Windows 运行时，可以使用一个字符串，表示移动和绘制命令中
 
 | 语法 |
 |--------|
-| `L` _endPoint_ <br/>- 或 -<br/>`l` _endPoint_ |
+| `L` _终结点_ <br/>- 或 -<br/>`l` _终结点_ |
 
 | 术语 | 描述 |
 |------|-------------|
@@ -107,11 +107,11 @@ Windows 运行时，可以使用一个字符串，表示移动和绘制命令中
 
 | 语法 |
 |--------|
-| `H ` _x_ <br/> - 或 - <br/>`h ` _x_ |
+| `H ` _X_ <br/> - 或 - <br/>`h ` _X_ |
 
 | 术语 | 描述 |
 |------|-------------|
-| x | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 直线端点的 x 坐标。 |
+| x | [**双精度**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 直线端点的 x 坐标。 |
 
 **竖线命令**
 
@@ -119,11 +119,11 @@ Windows 运行时，可以使用一个字符串，表示移动和绘制命令中
 
 | 语法 |
 |--------|
-| `V ` _y_ <br/> - 或 - <br/> `v ` _y_ |
+| `V ` _Y_ <br/> - 或 - <br/> `v ` _Y_ |
 
 | 术语 | 描述 |
 |------|-------------|
-| *y* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 直线端点的 y 坐标。 |
+| *Y* | [**双精度**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 直线端点的 y 坐标。 |
 
 **三次方贝塞尔曲线命令**
 
@@ -131,13 +131,13 @@ Windows 运行时，可以使用一个字符串，表示移动和绘制命令中
 
 | 语法 |
 |--------|
-| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - 或 - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
+| `C ` *controlPoint1* *controlPoint2* *终结点* <br/> - 或 - <br/> `c ` *controlPoint1* *controlPoint2* *终结点* |
 
 | 术语 | 描述 |
 |------|-------------|
 | *controlPoint1* | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的第一个控制点，可确定曲线的开始切线。 |
 | *controlPoint2* | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的第二个控制点，可确定曲线的结束切线。 |
-| *endPoint* | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 要绘制曲线的点。 | 
+| *终结点* | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 要绘制曲线的点。 | 
 
 **二次贝塞尔曲线命令**
 
@@ -149,8 +149,8 @@ Windows 运行时，可以使用一个字符串，表示移动和绘制命令中
 
 | 术语 | 描述 |
 |------|-------------|
-| *controlPoint* | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的控制点，可确定曲线的开始切线和结束切线。 |
-| *endPoint* | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 要绘制曲线的点。 |
+| *控制点* | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的控制点，可确定曲线的开始切线和结束切线。 |
+| *终结点* | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 要绘制曲线的点。 |
 
 **平滑三次方贝塞尔曲线命令**
 
@@ -158,12 +158,12 @@ Windows 运行时，可以使用一个字符串，表示移动和绘制命令中
 
 | 语法 |
 |--------|
-| `S` *controlPoint2* *endPoint* <br/> - 或 - <br/>`s` *controlPoint2 终结点* |
+| `S` *controlPoint2* *终结点* <br/> - 或 - <br/>`s` *controlPoint2 终结点* |
 
 | 术语 | 描述 |
 |------|-------------|
 | *controlPoint2* | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的控制点，可确定曲线的结束切线。 |
-| *endPoint* | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 要绘制曲线的点。 |
+| *终结点* | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 要绘制曲线的点。 |
 
 **平滑二次贝塞尔曲线命令**
 
@@ -171,12 +171,12 @@ Windows 运行时，可以使用一个字符串，表示移动和绘制命令中
 
 | 语法 |
 |--------|
-| `T` *controlPoint* *endPoint* <br/> - 或 - <br/> `t` *controlPoint* *endPoint* |
+| `T` *控制点**终结点* <br/> - 或 - <br/> `t` *控制点**终结点* |
 
 | 术语 | 描述 |
 |------|-------------|
-| *controlPoint* | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲线的控制点，可确定曲线的开始切线。 |
-| *endPoint* | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 要绘制曲线的点。 |
+| *控制点* | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲线的控制点，可确定曲线的开始切线。 |
+| *终结点* | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 要绘制曲线的点。 |
 
 **椭圆弧命令**
 
@@ -184,15 +184,15 @@ Windows 运行时，可以使用一个字符串，表示移动和绘制命令中
 
 | 语法 |
 |--------|
-| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - 或 - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
+| `A ` *大小* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *终结点* <br/> - 或 - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
 
 | 术语 | 描述 |
 |------|-------------|
-| *size* | [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>圆弧的 x 半径和 y 半径。 |
-| *rotationAngle* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 椭圆的旋转角度（以度为单位）。 |
+| *大小* | [**大小**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>圆弧的 x 半径和 y 半径。 |
+| *rotationAngle* | [**双精度**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 椭圆的旋转角度（以度为单位）。 |
 | *isLargeArcFlag* | 如果圆弧的角度应为 180 度或更大，则设置为 1；否则，设置为 0。 |
 | *sweepDirectionFlag* | 如果圆弧以正角方向绘制，则设置为 1；否则，设置为 0。 |
-| *endPoint* | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 要绘制圆弧的点。|
+| *终结点* | [**点**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 要绘制圆弧的点。|
  
 **关闭命令**
 
@@ -212,8 +212,8 @@ Windows 运行时，可以使用一个字符串，表示移动和绘制命令中
 
 | 术语 | 描述 |
 |------|-------------|
-| *x* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 点的 x 坐标。 |
-| *y* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 点的 y 坐标。 |
+| *x* | [**双精度**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 点的 x 坐标。 |
+| *Y* | [**双精度**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 点的 y 坐标。 |
 
 **其他说明**
 

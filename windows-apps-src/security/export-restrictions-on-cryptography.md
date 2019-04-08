@@ -4,7 +4,7 @@ description: 使用此信息可以确定应用使用加密的方式是否可能�
 ms.assetid: 204C7D1D-6F08-4AEE-A333-434D715E7617
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d445e5164d542a7e10f136a5fb238c575f35c2d
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

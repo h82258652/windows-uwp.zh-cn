@@ -25,7 +25,7 @@ ms.locfileid: "57625462"
 
 若要创建一个切换开关控件，可以使用 [ToggleSwitch 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)。
 
-> **重要的 Api**:[ToggleSwitch 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)， [IsOn 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison)， [Toggled 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
+> **重要的 API**：[ToggleSwitch 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)， [IsOn 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison)， [Toggled 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -46,7 +46,7 @@ ms.locfileid: "57625462"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/ToggleSwitch">ToggleSwitch</a> 或 <a href="xamlcontrolsgallery:/item/ToggleButton">ToggleButton</a> 的实际应用。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>

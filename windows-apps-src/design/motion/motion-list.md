@@ -21,7 +21,7 @@ ms.locfileid: "57642832"
 
 列表动画可使你向集合（如相册或搜索结果列表）中插入或从中删除单个或多个项。
 
-> **重要的 Api**:[**AddDeleteThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/br243048)
+> **重要的 API**：[**AddDeleteThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项

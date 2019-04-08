@@ -25,7 +25,7 @@ ms.locfileid: "57658592"
 
 许多应用包含用户可以操作的列表、网格和树形式的内容集合。 例如，用户可能能够删除、重命名、标记或刷新项。 本文演示如何通过为所有输入类型提供可能的最佳体验的方式，使用上下文命令来实现这些类型的操作。  
 
-> **重要的 Api**:[ICommand 接口](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)， [UIElement.ContextFlyout 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout)， [INotifyPropertyChanged 接口](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
+> **重要的 API**：[ICommand 接口](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)， [UIElement.ContextFlyout 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout)， [INotifyPropertyChanged 接口](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
 
 ![使用各种输入执行收藏命令](images/ContextualCommand_AddFavorites.png)
 
@@ -453,7 +453,7 @@ private void SwipeItem_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 ## <a name="related-topics"></a>相关主题
 * [ICommand 接口](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)
 * [菜单和上下文菜单](menus.md)
-* [Swipe](swipe.md)
+* [轻扫](swipe.md)
 * [下拉以刷新](pull-to-refresh.md)
 * [笔和触笔的交互](../input/pen-and-stylus-interactions.md)
 * [定制您的游戏手柄和 Xbox 应用](../devices/designing-for-tv.md)

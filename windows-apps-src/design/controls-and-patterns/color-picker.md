@@ -22,7 +22,7 @@ ms.locfileid: "57654472"
 
 颜色选取器用于浏览和选择颜色。 默认情况下，它使用户可以在色谱上浏览颜色，或在红-绿-蓝 (RGB)、色调饱和度值 (HSV) 或十六进制文本框中指定颜色。
 
-> **重要的 Api**:[颜色选取器类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)，[颜色属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color)， [ColorChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
+> **重要的 API**：[颜色选取器类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)，[颜色属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color)， [ColorChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
 
 ![默认颜色选取器](images/color-picker-default.png)
 
@@ -42,7 +42,7 @@ ms.locfileid: "57654472"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/ColorPicker">打开此应用，了解 ColorPicker 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>

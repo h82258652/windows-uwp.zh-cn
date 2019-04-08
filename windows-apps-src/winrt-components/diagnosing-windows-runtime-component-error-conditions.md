@@ -250,5 +250,5 @@ JavaScript 代码可以按照名称访问方法的输出参数，包括返回值
 
 ## <a name="related-topics"></a>相关主题
 
-* [在 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 * [Winmdexp.exe （Windows 运行时元数据导出工具）](https://msdn.microsoft.com/library/hh925576.aspx)

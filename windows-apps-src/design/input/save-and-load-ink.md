@@ -23,7 +23,7 @@ ms.locfileid: "57645842"
 > [!NOTE]
 > ISF 为墨迹的最紧凑持久表现形式。 该格式可以嵌入到二进制文档格式（例如 GIF 文件），也可以直接放置在剪贴板上。
 
-> **重要的 Api**:[**在 InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)， [ **Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
+> **重要的 API**：[**在 InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)， [ **Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 ## <a name="save-ink-strokes-to-a-file"></a>将笔划墨迹保存到文件
 

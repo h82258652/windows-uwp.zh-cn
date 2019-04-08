@@ -21,7 +21,7 @@ ms.locfileid: "57638702"
 
 [  **Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) 命名空间中的核心文本 API 支持通用 Windows 平台 (UWP) 应用通过 Windows 设备上受支持的任何文本服务接收文本输入。 该 API 类似于[文本服务框架](https://msdn.microsoft.com/library/windows/desktop/ms629032) API，因此应用不需要详细了解该文本服务。 这使应用接收的文本可以是任何语言以及来自任何输入类型，例如键盘、语音或笔。
 
-> **重要的 Api**:[**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238), [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
+> **重要的 API**：[**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238)， [ **CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
 
 ## <a name="why-use-core-text-apis"></a>为什么使用核心文本 API？
 
@@ -56,8 +56,8 @@ ms.locfileid: "57638702"
 
 | 字段                  | 数据类型                                                                 | 描述                                                                      |
 |------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| **StartCaretPosition** | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 范围的起始位置是紧接第一个字符前的 ACP。 |
-| **EndCaretPosition**   | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 范围的结束位置是紧接最后一个字符后的 ACP。     |
+| **StartCaretPosition** | **数字** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[c + +\] | 范围的起始位置是紧接第一个字符前的 ACP。 |
+| **EndCaretPosition**   | **数字** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[c + +\] | 范围的结束位置是紧接最后一个字符后的 ACP。     |
 
  
 
@@ -99,8 +99,8 @@ ms.locfileid: "57638702"
 ![示例文本流关系图](images/coretext/stream-3.png)当用户键入"d"， [ **TextUpdating** ](https://msdn.microsoft.com/library/windows/apps/dn958176)事件引发与以下[ **CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229)数据：
 
 -   [**范围**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10，10\]
--   [**Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
--   [**NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
+-   [**文本**](https://msdn.microsoft.com/library/windows/apps/dn958236) ="d"
+-   [**NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11、 11\]
 
 在你的编辑控件中，应用指定的更改并将 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 设置为 **Succeeded**。 下面是该控件在应用更改后的状态。
 
@@ -123,7 +123,7 @@ ms.locfileid: "57638702"
 
 -   *modifiedRange* = \[6，6\]
 -   *newLength* = 5
--   *newSelection* = \[11, 11\]
+-   *newSelection* = \[11、 11\]
 
 按顺序处理陆续生成的一个或多个 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件以更新文本服务所使用的文本。
 
@@ -139,9 +139,9 @@ ms.locfileid: "57638702"
 
 ![示例文本流关系图](images/coretext/stream-8.png)在此情况下，应调用[ **NotifyTextChanged** ](https://msdn.microsoft.com/library/windows/apps/dn958172)用这些自变量：
 
--   *modifiedRange* = \[1, 2\]
+-   *modifiedRange* = \[1、 2\]
 -   *newLength* = 2
--   *newSelection* = \[5, 5\]
+-   *newSelection* = \[5，5\]
 
 按顺序处理陆续生成的一个或多个 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件以更新文本服务所使用的文本。
 

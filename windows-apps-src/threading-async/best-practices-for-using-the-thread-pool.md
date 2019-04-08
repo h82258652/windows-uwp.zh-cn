@@ -47,11 +47,11 @@ ms.locfileid: "57628042"
 
 -   当使用的工作项处理程序使用 **async** 关键字时，请注意，在执行处理程序中的所有代码之前，线程池工作项可能会设置为完成状态。 在工作项已设置为完成状态后，可能会执行处理程序中 **await** 关键字之后的代码。
 
--   不要在未重新初始化的情况下尝试运行预分配的工作项多次。 [创建一个定期工作项](create-a-periodic-work-item.md)
+-   不要在未重新初始化的情况下尝试运行预分配的工作项多次。 [创建定期工作项](create-a-periodic-work-item.md)
 
 ## <a name="related-topics"></a>相关主题
 
 
-* [创建一个定期工作项](create-a-periodic-work-item.md)
-* [提交到线程池工作项](submit-a-work-item-to-the-thread-pool.md)
+* [创建定期工作项](create-a-periodic-work-item.md)
+* [向线程池提交工作项](submit-a-work-item-to-the-thread-pool.md)
 * [使用计时器提交工作项](use-a-timer-to-submit-a-work-item.md)

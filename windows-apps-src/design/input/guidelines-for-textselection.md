@@ -20,7 +20,7 @@ ms.locfileid: "57612502"
 
 本文介绍了选择和操作文本、图像和控件，并提供了将这些机制用于应用中时应考虑的用户体验指南。
 
-> **重要的 Api**:[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)， [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+> **重要的 API**：[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)， [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
  
 
 

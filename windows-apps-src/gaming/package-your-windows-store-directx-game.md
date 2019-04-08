@@ -218,7 +218,7 @@ DirectX 功能级别 10 或更高级别所支持的纹理格式应该添加到�
 
 * [定义应用资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)
 * [打包应用](https://msdn.microsoft.com/library/windows/apps/mt270969)
-* [App packager (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767)
+* [应用程序包生成工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767)
 
  
 

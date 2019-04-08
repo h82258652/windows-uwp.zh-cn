@@ -50,7 +50,7 @@ Direct3D 使用左手坐标系统。 尽管左手和右手坐标是最常用的�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[坐标系和坐标 geometry](coordinate-systems-and-geometry.md)
+[坐标系统和几何结构](coordinate-systems-and-geometry.md)
 
  
 

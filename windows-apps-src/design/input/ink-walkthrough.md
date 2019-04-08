@@ -8,7 +8,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bc28a4b1cb8afd70ef68a2e297b51ad0a5a0fc5
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57661912"
@@ -37,7 +37,7 @@ ms.locfileid: "57661912"
 
 * 一台运行当前版本 Windows 10 的计算机（或虚拟机）
 * [Visual Studio 2017 和 RS2 SDK](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * 具体取决于您的配置，您可能需要安装[Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet 包并启用**开发人员模式**中 （设置-> 更新您的系统设置& 安全-> 的开发人员-> 使用开发人员的功能)。
 * 如果你还不熟悉使用 Visual Studio 进行通用 Windows 平台 (UWP) 应用开发，请在开始此教程前浏览一下这些主题：  
     * [准备工作](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
@@ -66,7 +66,7 @@ ms.locfileid: "57661912"
 
 | Component | 描述 |
 | --- | --- |
-| [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | XAML UI 平台控件的默认情况下，接收，并显示为墨笔划或擦除笔画的笔中的所有输入。 |
+| [**在 InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | XAML UI 平台控件的默认情况下，接收，并显示为墨笔划或擦除笔画的笔中的所有输入。 |
 | [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) | 代码隐藏对象，与 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件（通过 [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) 属性公开）一起进行实例化。 此对象提供 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 公开的所有默认墨迹书写功能以及适用于其他自定义和个性化的完整 API 集。 |
 | [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | 包含可自定义且可扩展的激活中关联墨迹相关功能的按钮集合的 XAML UI 平台控件[ **InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)。 |
 | [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer)<br/>我们不在这里介绍此功能，有关详细信息，请参阅[复杂墨迹示例](https://go.microsoft.com/fwlink/p/?LinkID=620314)。 | 支持将笔划墨迹呈现到通用 Windows 应用的指定 Direct2D 设备上下文，而非默认的 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件。 |

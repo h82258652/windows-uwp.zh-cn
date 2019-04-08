@@ -78,7 +78,7 @@ ms.locfileid: "57618242"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[流式处理资源](streaming-resources.md)
+[流式资源](streaming-resources.md)
 
  
 

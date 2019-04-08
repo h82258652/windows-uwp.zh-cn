@@ -19,7 +19,7 @@ ms.locfileid: "57640782"
 
 当检测、解释和处理用户的交互时，可使用视觉反馈显示给用户。 视觉反馈可通过鼓励交互来帮助用户。 它将指示交互是否成功，以加强用户的控制感觉。 它还可以传送系统状态并减少错误。
 
-> **重要的 Api**:[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)， [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [ **Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
+> **重要的 API**：[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)， [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [ **Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
 
 ## <a name="recommendations"></a>建议
 

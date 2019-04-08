@@ -4,7 +4,7 @@ description: 本文将讨论在通用 Windows 平台 (UWP) 应用中的证书使
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ee96628fd90ec9eea998abf312c5da11bff3826
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

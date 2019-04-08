@@ -146,7 +146,7 @@ TimeIndependent [**TimeIndependent**](https://msdn.microsoft.com/library/windows
 
 ## <a name="related-topics"></a>相关主题
 * [简单的相机预览访问权限](simple-camera-preview-access.md)
-* [媒体组合和编辑](media-compositions-and-editing.md)
+* [媒体合成和编辑](media-compositions-and-editing.md)
 * [Win2D 文档](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [媒体播放](media-playback.md)
 

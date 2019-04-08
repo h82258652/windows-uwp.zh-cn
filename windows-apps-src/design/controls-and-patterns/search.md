@@ -24,7 +24,7 @@ ms.locfileid: "57631002"
 
 搜索是用户可以在你的应用中查找内容的最常用方法之一。 本文中的指南介绍搜索体验、搜索范围、实现的要素，以及在上下文中搜索的示例。
 
-> **重要的 Api**:[AutoSuggestBox 类](https://msdn.microsoft.com/library/windows/apps/dn633874)
+> **重要的 API**：[AutoSuggestBox 类](https://msdn.microsoft.com/library/windows/apps/dn633874)
 
 ## <a name="elements-of-the-search-experience"></a>搜索体验的要素
 

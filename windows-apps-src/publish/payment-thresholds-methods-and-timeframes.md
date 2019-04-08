@@ -43,7 +43,7 @@ ms.locfileid: "57610662"
 > 付款阈值将以美元列出。 在某些市场中，使用等值的当地货币。 
 
 - [Microsoft 官方商城](#microsoft-store)
-- [Microsoft Advertising](#microsoft-advertising)
+- [Microsoft 广告](#microsoft-advertising)
 - [Azure Marketplace](#azure-marketplace)
 - [Office 应用商店](#office-store)
 

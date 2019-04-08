@@ -29,7 +29,7 @@ ms.locfileid: "57618392"
 **若要将功能添加到应用程序清单**
 
 1.  在 Microsoft Visual Studio 的“解决方案资源管理器”中，通过双击“package.appxmanifest”项，打开应用程序清单的设计器。
-2.  选择“功能”选项卡。
+2.  选择**功能**选项卡。
 3.  选中“摄像头”框和“麦克风”框。
 4.  若要访问图片库和视频库，请选中“图片库”框和“视频库”框。
 
@@ -136,7 +136,7 @@ Windows 10 引入了 [**SoftwareBitmap**](https://msdn.microsoft.com/library/win
 
 ## <a name="related-topics"></a>相关主题
 
-* [Camera](camera.md) [!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
+* [照相机](camera.md) [!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
 
 可多次调用 **StartAsync** 和 **StopAsync** 以录制多个音频文件。 完成音频捕获后，调用 [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.FinishAsync) 以释放捕获会话并清理关联的资源。 完成此调用后，在调用 **StartAsync** 之前必须重新调用 **PrepareLowLagRecordToStorageFileAsync** 以重新初始化捕获会话。
 
@@ -163,6 +163,6 @@ Windows 10 引入了 [**SoftwareBitmap**](https://msdn.microsoft.com/library/win
 
 * [使用 Windows 内置照相机 UI 捕捉照片和视频](capture-photos-and-video-with-cameracaptureui.md)
 * [处理与 MediaCapture 设备方向](handle-device-orientation-with-mediacapture.md)
-* [创建、 编辑和保存位图图像](imaging.md)
+* [创建、编辑和保存位图图像](imaging.md)
 * [文件、文件夹和库](https://msdn.microsoft.com/windows/uwp/files/index)
 

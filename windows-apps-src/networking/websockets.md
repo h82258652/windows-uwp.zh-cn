@@ -834,8 +834,8 @@ protected:
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
 ## <a name="related-topics"></a>相关主题
-* [WebSocket Protocol](https://tools.ietf.org/html/rfc6455)
-* [Sockets](sockets.md)
+* [WebSocket 协议](https://tools.ietf.org/html/rfc6455)
+* [套接字](sockets.md)
 
 ## <a name="samples"></a>示例
-* [WebSocket sample](https://go.microsoft.com/fwlink/p/?LinkId=620623)
+* [WebSocket 示例](https://go.microsoft.com/fwlink/p/?LinkId=620623)

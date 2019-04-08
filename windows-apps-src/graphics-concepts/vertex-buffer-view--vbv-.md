@@ -35,7 +35,7 @@ CUSTOMVERTEX 的定义随后会在创建顶点缓冲区时传递到图形驱动�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[Views](views.md)
+[视图](views.md)
 
  
 

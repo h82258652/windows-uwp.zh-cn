@@ -271,7 +271,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 * [Windows.UI.Xaml.Application](https://msdn.microsoft.com/library/windows/apps/br242324)
 
 ## <a name="related-topics"></a>相关主题
-* [句柄应用挂起](suspend-an-app.md)
-* [句柄应用恢复](resume-an-app.md)
+* [处理应用挂起](suspend-an-app.md)
+* [处理应用恢复](resume-an-app.md)
 * [应用程序的指导原则挂起和继续](https://msdn.microsoft.com/library/windows/apps/hh465088)
 * [应用生命周期](app-lifecycle.md)

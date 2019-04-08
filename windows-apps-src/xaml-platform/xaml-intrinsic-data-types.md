@@ -24,10 +24,10 @@ XAML 固有数据类型在使用上的最大共同点体现于资源在 XAML 资
 
 | XAML 原语 | 描述 |
 |-------|-------------|
-| **x:Boolean**  | 对于 CLR 支持，对应于 [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx)。 XAML 分析 **x:Boolean** 的值时区分大小写。 请注意，“x:Bool”不是可接受的替代原语。 |
-| **x:String**   | 对于 CLR 支持来说，原语对应于 [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx)。 对字符串的编码默认采用包围 XML 编码。 |
-| **x:Double**   | 对于 CLR 支持，对应于 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)。 除了数字值，**x:Double** 的文本语法支持令牌“NaN”，这是将布局行为的“Auto”存储为资源值的方式。 对这些令牌的处理区分大小写。 你可以使用科学计数法，例如将 `1,000,000` 记为“1+E06”。 |
-| **x:Int32**    | 对于 CLR 支持，对应于 [**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx)。 **x:Int32** 被视为带有符号，你可以为负整数包含减号（“-”）。 在 XAML 中，文本语法中缺少符号表示有符号正值。 |
+| **x： 布尔值**  | 对于 CLR 支持，对应于 [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx)。 XAML 分析 **x:Boolean** 的值时区分大小写。 请注意，“x:Bool”不是可接受的替代原语。 |
+| **x： 字符串**   | 对于 CLR 支持来说，原语对应于 [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx)。 对字符串的编码默认采用包围 XML 编码。 |
+| **x： 双精度**   | 对于 CLR 支持，对应于 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)。 除了数字值，**x:Double** 的文本语法支持令牌“NaN”，这是将布局行为的“Auto”存储为资源值的方式。 对这些令牌的处理区分大小写。 你可以使用科学计数法，例如将 `1,000,000` 记为“1+E06”。 |
+| **x: Int32**    | 对于 CLR 支持，对应于 [**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx)。 **x:Int32** 被视为带有符号，你可以为负整数包含减号（“-”）。 在 XAML 中，文本语法中缺少符号表示有符号正值。 |
 
 这些 XAML 语言原语一般是在 XAML 中定义使用 **x:** 前缀的对象元素的唯一情形。 所有其他 XAML 语言特性通常以属性或标记扩展的形式使用。
 

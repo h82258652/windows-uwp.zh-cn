@@ -122,7 +122,7 @@ XAudio2 是 DirectX 的音频混合库，主要用于开发高性能的音频游
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415779">How to:Initialize XAudio2</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415779">How to:初始化 XAudio2</a></p></td>
 <td align="left"><p>了解如何通过创建 XAudio2 引擎的一个实例以及创建一个控制语音来为音频播放初始化 XAudio2。</p></td>
 </tr>
 <tr class="even">

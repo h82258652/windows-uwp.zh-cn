@@ -54,7 +54,7 @@ Microsoft Visual Studio 2017 可帮助设计、 编码、 测试和调试您的�
 
 在安装工具并启用用于开发的设备后，请查看我们有关如何开始创建 Windows 10 应用的指南。
 
--   [开始编码](create-uwp-apps.md)
+-   [开始编写代码](create-uwp-apps.md)
 
 ## <a name="windows-development-setup-scripts"></a>Windows 开发安装脚本
 

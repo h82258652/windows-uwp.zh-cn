@@ -10,7 +10,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 539acb242cfe6ee70d1311133a3f1a193860541a
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57631722"
@@ -21,7 +21,7 @@ ms.locfileid: "57631722"
 
 了解如何为语音识别定义和使用自定义约束。
 
-> **重要的 Api**:[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446), [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421), [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
+> **重要的 API**：[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)， [ **SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)， [ **SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
 
 
 语音识别至少需要一个约束，才能定义可识别的词汇。 如果未指定任何约束，将使用通用 Windows 应用的预定义听写语法。 请参阅[语音识别](speech-recognition.md)。

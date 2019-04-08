@@ -69,7 +69,7 @@ ms.locfileid: "57617652"
 
 ## <a name="test-your-application"></a>测试你的应用程序
 
-现在，测试你的应用程序如何处理新纪元。 检查日期的显示位置，例如时间戳和日期选取器。 请确保纪元无误，1，2019 年 5 （平成，平成） 之前和之后 （？？).
+现在，测试你的应用程序如何处理新纪元。 检查日期的显示位置，例如时间戳和日期选取器。 请确保纪元无误，1，2019 年 5 （平成，平成） 之前和之后 （？？）。
 
 ### <a name="gannen-"></a>*Gannen* (元年)
 
@@ -120,7 +120,7 @@ ms.locfileid: "57617652"
 
 ### <a name="win32"></a>Win32
 
-* [datetimeapi.h header](https://docs.microsoft.com/windows/desktop/api/datetimeapi/)
+* [datetimeapi.h 标头](https://docs.microsoft.com/windows/desktop/api/datetimeapi/)
     * [GetDateFormatA 函数](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformata)
     * [GetDateFormatEx 函数](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatex)
     * [GetDateFormatW 函数](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatw)

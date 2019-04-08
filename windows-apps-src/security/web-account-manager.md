@@ -3,7 +3,7 @@ title: Web 帐户管理器
 description: 本文介绍如何通过 Windows 10 Web 帐户管理器 API，使用 AccountsSettingsPane 将通用 Windows 平台 (UWP) 应用连接到外部标识提供者，如 Microsoft 或 Facebook。
 ms.date: 12/06/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10, uwp, 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
 ms.openlocfilehash: a0a16ac9a2d810f7f4cbe2be403713b5cec4997b

@@ -139,8 +139,8 @@ Authorization: Bearer <your access token>
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整数   |  投放渠道的 ID。     |   是    |      |  否      |    
 |  name   |  字符串   |   投放渠道的名称。    |    否   |      |  POST     |     
-|  configuredStatus   |  字符串   |  以下值之一，用于指定开发人员指定的投放渠道的状态： <ul><li>**Active**</li><li>**Inactive**</li></ul>     |  否     |      |   POST    |       
-|  effectiveStatus   |  字符串   |   以下值之一，用于根据系统验证情况指定投放渠道的有效状态： <ul><li>**Active**</li><li>**Inactive**</li><li>**处理**</li><li>**失败**</li></ul>    |    是   |      |  否      |      
+|  configuredStatus   |  字符串   |  以下值之一，用于指定开发人员指定的投放渠道的状态： <ul><li>**Active**</li><li>**非活动状态**</li></ul>     |  否     |      |   POST    |       
+|  effectiveStatus   |  字符串   |   以下值之一，用于根据系统验证情况指定投放渠道的有效状态： <ul><li>**Active**</li><li>**非活动状态**</li><li>**处理**</li><li>**失败**</li></ul>    |    是   |      |  否      |      
 |  effectiveStatusReasons   |  数组   |  以下值中的一个或多个，用于指定投放渠道处于此有效状态的原因： <ul><li>**AdCreativesInactive**</li><li>**ValidationFailed**</li></ul>      |  是     |     |    否    |           
 |  startDatetime   |  字符串   |  投放渠道的开始日期和时间（ISO 8601 格式）。 如果此值为过去的时间，则不能更改。     |    否   |      |    POST、PUT     |
 |  endDatetime   |  字符串   |  投放渠道的结束日期和时间（ISO 8601 格式）。 如果此值为过去的时间，则不能更改。     |   否    |      |  POST、PUT     |

@@ -77,7 +77,7 @@ Web 应用可以作为托管的 Web 应用轻松地打包到 UWP 框架中，并
 
 ## <a name="see-also"></a>另请参阅
 
-* [开始编码](create-uwp-apps.md)
+* [开始编写代码](create-uwp-apps.md)
 * [UWP 应用是什么？](universal-application-platform-guide.md)
 * [准备工作](get-set-up.md)
 * [注册 Windows 帐户](sign-up.md)

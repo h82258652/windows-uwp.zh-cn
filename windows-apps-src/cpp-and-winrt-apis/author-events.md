@@ -7,7 +7,7 @@ keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 创作, 事件
 ms.localizationpriority: medium
 ms.openlocfilehash: ace1c276b878d07f5750483740dfe90ed8cb6211
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57644482"
@@ -283,6 +283,6 @@ logCallback(L"Hello, World!");
 请注意，是否您正在设计的内部 API，这些准则不一定适用。 尽管内部 Api 通常会成为公共随着时间的推移。
 
 ## <a name="related-topics"></a>相关主题
-* [创作 Api 使用 C + + WinRT](author-apis.md)
-* [使用 Api 使用 C + + WinRT](consume-apis.md)
+* [使用 C++/WinRT 创作 API](author-apis.md)
+* [通过 C++/WinRT 使用 API](consume-apis.md)
 * [处理事件，通过使用委托中 C + + WinRT](handle-events.md)

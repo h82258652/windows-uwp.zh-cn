@@ -45,7 +45,7 @@ ms.locfileid: "57644842"
 -   [**风险**](https://msdn.microsoft.com/library/windows/apps/dn652552)
 -   [**ExposureCompensation**](https://msdn.microsoft.com/library/windows/apps/dn652560)
 -   [**Flash**](https://msdn.microsoft.com/library/windows/apps/dn652566)
--   [**Focus**](https://msdn.microsoft.com/library/windows/apps/dn652570)
+-   [**焦点**](https://msdn.microsoft.com/library/windows/apps/dn652570)
 -   [**IsoSpeed**](https://msdn.microsoft.com/library/windows/apps/dn652574)
 -   [**PhotoConfirmation**](https://msdn.microsoft.com/library/windows/apps/dn652578)
 
