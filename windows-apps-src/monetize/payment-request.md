@@ -6,7 +6,7 @@ ms.topic: article
 keywords: windows 10，uwp，付款请求
 ms.openlocfilehash: e5fb5cead7833b8cc213c6633cae6cee0da3466b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57607862"

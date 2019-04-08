@@ -19,7 +19,7 @@ ms.locfileid: "57606252"
 
 了解如何捕获和识别较长的连续听写语音输入。
 
-> **重要的 Api**:[**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)， [ **ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)
+> **重要的 API**：[**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)， [ **ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)
 
 在[语音识别](speech-recognition.md)中，你已了解如何使用 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 对象的 [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) 或 [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 方法捕获和识别相对较短的语音输入。例如，撰写短信 (SMS) 或进行提问时。
 

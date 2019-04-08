@@ -20,8 +20,8 @@ ms.locfileid: "57611292"
 
 有可能需要超过 50 毫秒才能完成的任何 Windows 运行时 API 将实现为异步函数（具有一个以“Async”结尾的名称）。 异步函数的实现将启动另一线程上的工作，并且立即返回表示异步操作的对象。 在异步操作完成后，返回的对象会包含从该工作中生成的任何值。 **Windows::Foundation** Windows 运行时命名空间包含四种类型的异步操作对象。
 
-- [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction),
-- [**IAsyncActionWithProgress&lt;TProgress&gt;**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_),
+- [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction)，
+- [**IAsyncActionWithProgress&lt;TProgress&gt;**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)，
 - [**IAsyncOperation&lt;TResult&gt;**](/uwp/api/windows.foundation.iasyncoperation_tresult_)，和
 - [**IAsyncOperationWithProgress&lt;TResult，TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)。
 
@@ -740,7 +740,7 @@ int main()
 ## <a name="important-apis"></a>重要的 API
 * [concurrency:: task 类](/cpp/parallel/concrt/reference/task-class)
 * [IAsyncAction 接口](/uwp/api/windows.foundation.iasyncaction)
-* [IAsyncActionWithProgress&lt;TProgress&gt; interface](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)
+* [IAsyncActionWithProgress&lt;TProgress&gt;接口](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)
 * [IAsyncOperation&lt;TResult&gt;接口](/uwp/api/windows.foundation.iasyncoperation_tresult_)
 * [IAsyncOperationWithProgress&lt;TResult，TProgress&gt;接口](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)
 * [SyndicationClient::RetrieveFeedAsync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
@@ -751,4 +751,4 @@ int main()
 
 ## <a name="related-topics"></a>相关主题
 * [处理事件，通过使用委托中 C + + WinRT](handle-events.md)
-* [标准 c + + 数据类型和 C + + WinRT](std-cpp-data-types.md)
+* [标准 C++ 数据类型和 C++/WinRT](std-cpp-data-types.md)

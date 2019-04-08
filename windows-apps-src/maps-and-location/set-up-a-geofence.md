@@ -483,4 +483,4 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 * [UWP 地理位置示例](https://go.microsoft.com/fwlink/p/?linkid=533278)
 * [地理围栏的设计准则](https://msdn.microsoft.com/library/windows/apps/dn631756)
-* [位置感知应用的设计准则](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [位置感知应用设计指南](https://msdn.microsoft.com/library/windows/apps/hh465148)

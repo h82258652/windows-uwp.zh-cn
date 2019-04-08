@@ -80,7 +80,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
             <div style="display:block" class="cardPadding">
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
-                        <h3>输入</h3>
+                        <h3>Input</h3>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/identify-input-devices">标识输入设备</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/handle-pointer-input">指针</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/pen-and-stylus-interactions">笔和 Windows Ink</a></p>

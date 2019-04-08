@@ -9,7 +9,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: aa94eb00058ba3297e7ca7cc4f93581d9281fd1c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57608012"
@@ -44,7 +44,7 @@ typedef struct tagRECT {
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[坐标系和坐标 geometry](coordinate-systems-and-geometry.md)
+[坐标系统和几何结构](coordinate-systems-and-geometry.md)
 
  
 

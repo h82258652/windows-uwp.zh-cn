@@ -19,7 +19,7 @@ ms.locfileid: "57596822"
 
 借助自适应和交互式 toast 通知，可使用文本、图像和按钮/输入创建灵活的通知。
 
-> **重要的 Api**:[UWP 社区工具包通知 nuget 包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **重要的 API**：[UWP 社区工具包通知 NuGet 程序包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
 > 若要查看 Windows 8.1 和 Windows Phone 8.1 中的旧模板，请参阅[旧 toast 模板目录](https://msdn.microsoft.com/library/windows/apps/hh761494)。

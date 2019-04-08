@@ -49,24 +49,24 @@ ms.locfileid: "57613082"
 | 4.3.4.1.  EXT-X-MEDIA |4|7|可选|支持|支持|支持|
 |&nbsp;&nbsp;&nbsp;  类型|4|7|属性|“AUDIO、VIDEO”|“AUDIO、VIDEO”|“AUDIO、VIDEO、SUBTITLES”|
 |&nbsp;&nbsp;&nbsp;  URI|4|7|属性|支持|支持|支持|
-|&nbsp;&nbsp;&nbsp;  GROUP-ID|4|7|属性|支持|支持|支持|
+|&nbsp;&nbsp;&nbsp;  组 ID|4|7|属性|支持|支持|支持|
 |&nbsp;&nbsp;&nbsp;  语言|4|7|属性|支持|支持|支持|
 |&nbsp;&nbsp;&nbsp;  ASSOC 语言|6|13|属性|不支持|不支持|不支持|
-|&nbsp;&nbsp;&nbsp;  NAME|4|7|属性|不支持|不支持|支持|
-|&nbsp;&nbsp;&nbsp;  DEFAULT|4|7|属性|不支持|不支持|不支持|
-|&nbsp;&nbsp;&nbsp;  AUTOSELECT|4|7|属性|不支持|不支持|不支持|
+|&nbsp;&nbsp;&nbsp;  名称|4|7|属性|不支持|不支持|支持|
+|&nbsp;&nbsp;&nbsp;  默认值|4|7|属性|不支持|不支持|不支持|
+|&nbsp;&nbsp;&nbsp;  自动选择|4|7|属性|不支持|不支持|不支持|
 |&nbsp;&nbsp;&nbsp;  强制|5|9|属性|不支持|不支持|不支持|
-|&nbsp;&nbsp;&nbsp;  INSTREAM-ID|6|12|属性|不支持|不支持|不支持|
+|&nbsp;&nbsp;&nbsp;  流 ID|6|12|属性|不支持|不支持|不支持|
 |&nbsp;&nbsp;&nbsp;  特征|5|9|属性|不支持|不支持|不支持|
 | 4.3.4.2.  EXT-X-STREAM-INF  |1|0|必填|支持|支持|支持|
-|&nbsp;&nbsp;&nbsp;  BANDWIDTH|1|0|属性|支持|支持|支持|
-|&nbsp;&nbsp;&nbsp;  PROGRAM-ID|1|0|属性|NA|NA|NA|
-|&nbsp;&nbsp;&nbsp;  AVERAGE-BANDWIDTH|7|14|属性|不支持|不支持|不支持|
+|&nbsp;&nbsp;&nbsp;  带宽|1|0|属性|支持|支持|支持|
+|&nbsp;&nbsp;&nbsp;  程序 ID|1|0|属性|NA|NA|NA|
+|&nbsp;&nbsp;&nbsp;  平均带宽|7|14|属性|不支持|不支持|不支持|
 |&nbsp;&nbsp;&nbsp;  编解码器|1|0|属性|支持|支持|支持|
 |&nbsp;&nbsp;&nbsp;  解决方法|2|3|属性|支持|支持|支持|
-|&nbsp;&nbsp;&nbsp;  FRAME-RATE|7|15|属性|NA|NA|NA|
-|&nbsp;&nbsp;&nbsp;  AUDIO|4|7|属性|支持|支持|支持|
-|&nbsp;&nbsp;&nbsp;  VIDEO|4|7|属性|支持|支持|支持|
+|&nbsp;&nbsp;&nbsp;  帧速率|7|15|属性|NA|NA|NA|
+|&nbsp;&nbsp;&nbsp;  音频|4|7|属性|支持|支持|支持|
+|&nbsp;&nbsp;&nbsp;  视频|4|7|属性|支持|支持|支持|
 |&nbsp;&nbsp;&nbsp;  对白字幕|5|9|属性|不支持|不支持|支持|
 |&nbsp;&nbsp;&nbsp;  关闭字幕|6|12|属性|不支持|不支持|不支持|
 | 4.3.4.3.  EXT-X-I-FRAME-STREAM-INF  |4|7|可选|不支持|不支持|不支持|
@@ -75,8 +75,8 @@ ms.locfileid: "57613082"
 |4.3.5.  媒体或主播放列表标记                  |             |                   |         |             |     |    |
 | 4.3.5.1.  EXT-X-INDEPENDENT-SEGMENTS |6|13|可选|不支持|支持|支持|
 | 4.3.5.2.  EXT-X-START  |6|12|可选|不支持|部分支持|部分支持|
-|&nbsp;&nbsp;&nbsp;  TIME-OFFSET|6|12|属性|不支持|支持|支持|
-|&nbsp;&nbsp;&nbsp;  PRECISE|6|12|属性|不支持|默认“不”支持|默认“不”支持|
+|&nbsp;&nbsp;&nbsp;  时间偏移量|6|12|属性|不支持|支持|支持|
+|&nbsp;&nbsp;&nbsp;  精确|6|12|属性|不支持|默认“不”支持|默认“不”支持|
 
 
 

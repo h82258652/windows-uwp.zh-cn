@@ -25,7 +25,7 @@ ms.locfileid: "57606472"
 
 超链接会将用户导航到应用的另一部分、导航到另一个应用，或使用单独的浏览器应用启动特定的统一资源标识符 (URI)。 可使用两种方法向 XAML 应用添加超链接：**Hyperlink** 文本元素和 **HyperlinkButton** 控件。
 
-> **重要的 Api**:[超链接文本元素](https://msdn.microsoft.com/library/windows/apps/dn279356)， [HyperlinkButton 控件](https://msdn.microsoft.com/library/windows/apps/br242739)
+> **重要的 API**：[超链接文本元素](https://msdn.microsoft.com/library/windows/apps/dn279356)， [HyperlinkButton 控件](https://msdn.microsoft.com/library/windows/apps/br242739)
 
 ![“超链接”按钮](images/controls/hyperlink-button.png)
 
@@ -49,7 +49,7 @@ ms.locfileid: "57606472"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/HyperlinkButton">打开此应用，了解 HyperlinkButton 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -138,7 +138,7 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 你可以设置 [UnderlineStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.hyperlink.underlinestyle.aspx) 属性来禁用下划线。 如果执行此操作，请考虑使用 [FontWeight](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontweight.aspx) 或 [FontStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontstyle.aspx) 来区分链接文本。
 
-**HyperlinkButton** 
+**超链接按钮** 
 
 默认情况下，当你将一个字符串设置为 [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) 属性的值时，HyperlinkButton 显示为带下划线的文本。
 
@@ -156,7 +156,7 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 由于超链接不是 [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx)，因此它没有 UI 元素输入事件集，如 Tapped、PointerPressed 等。 不过，超链接具有其自己的 Click 事件以及系统加载任何指定为 NavigateUri 的 URI 的隐式行为。 系统会处理所有应调用超链接操作并引发 Click 事件作为回应的输入操作。
 
-**Content**
+**内容**
 
 超链接对可能存在于其 [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) 集合中的内容具有限制。 具体来说，超链接仅允许 [Run](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx) 和非另一个超链接的其他 [Span](/uwp/api/windows.ui.xaml.documents.span) 类型。 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) 不可在超链接的内联集合中。 尝试添加受限制的内容会引发无效参数异常或 XAML 分析异常。
 

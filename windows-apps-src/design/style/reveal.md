@@ -23,7 +23,7 @@ ms.locfileid: "57628662"
 
 显示突出显示部分是，当用户将指针放在其附近突出显示交互元素，例如命令栏的光照效果。 
 
-> **重要的 Api**:[RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)， [RevealBackgroundBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)， [RevealBorderBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)， [RevealBrushHelper 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper)， [VisualState类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
+> **重要的 API**：[RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)， [RevealBackgroundBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)， [RevealBorderBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)， [RevealBrushHelper 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper)， [VisualState类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>工作原理
 显示为交互元素的突出显示调用关注者泄漏元素的容器，当指针位于附近，在此图中所示：
@@ -41,7 +41,7 @@ ms.locfileid: "57628662"
 <td>
     <p>如果你已安装了 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，单击此处<a href="xamlcontrolsgallery:/item/Reveal">打开此应用，了解“展示”的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -60,10 +60,10 @@ ms.locfileid: "57628662"
 
 - [**ListView**](../controls-and-patterns/lists.md)
 - [**GridView**](../controls-and-patterns/lists.md)
-- [**TreeView**](../controls-and-patterns/tree-view.md)
+- [**树视图**](../controls-and-patterns/tree-view.md)
 - [**NavigationView**](../controls-and-patterns/navigationview.md)
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
-- [**CommandBar**](../controls-and-patterns/app-bars.md)
+- [**命令栏**](../controls-and-patterns/app-bars.md)
 
 这些图显示多个不同的控件上显示突出显示：
 
@@ -287,7 +287,7 @@ ms.locfileid: "57628662"
 ## <a name="related-articles"></a>相关文章
 
 - [RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
-- [Acrylic](acrylic.md)
+- [染料](acrylic.md)
 - [组合效果](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
 - [适用于 UWP 的 Fluent 设计](../fluent-design-system/index.md)
 - [在系统中的科学：Fluent 设计和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)

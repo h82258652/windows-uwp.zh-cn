@@ -113,19 +113,19 @@ sealed partial class App : Application
 **详细的后台任务的指导性主题**
 
 * [将进程外后台任务转换为进程内的后台任务](convert-out-of-process-background-task.md)
-* [创建并注册进程外后台任务](create-and-register-a-background-task.md)
+* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
 * [在背景中播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
-* [响应通过后台任务的系统事件](respond-to-system-events-with-background-tasks.md)
+* [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
 * [注册后台任务](register-a-background-task.md)
-* [设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)
+* [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
 * [使用维护触发器](use-a-maintenance-trigger.md)
-* [处理已取消的后台任务](handle-a-cancelled-background-task.md)
-* [监视器后台任务进度和完成](monitor-background-task-progress-and-completion.md)
+* [处理取消的后台任务](handle-a-cancelled-background-task.md)
+* [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
 
 **后台任务指南**
 
-* [后台任务的指导原则](guidelines-for-background-tasks.md)
+* [后台任务指南](guidelines-for-background-tasks.md)
 * [调试后台任务](debug-a-background-task.md)
 * [如何在触发挂起、 继续和后台 UWP 应用中的事件 （在调试）](https://go.microsoft.com/fwlink/p/?linkid=254345)
 

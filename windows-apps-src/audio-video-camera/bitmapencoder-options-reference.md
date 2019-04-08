@@ -36,7 +36,7 @@ ms.locfileid: "57603182"
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建、 编辑和保存位图图像](imaging.md)
+* [创建、编辑和保存位图图像](imaging.md)
 * [支持的编解码器](supported-codecs.md)
 
  

@@ -53,7 +53,7 @@ ms.locfileid: "57618022"
 | **InternetAvailable**            | Internet 变为可用。                                                                                |
 | **NetworkStateChange**           | 网络更改，如开销或连接性发生更改。                                              |
 | **OnlineIdConnectedStateChange** | 与帐户更改关联的联机 ID。                                                                 |
-| **SmsReceived**                  | 安装的移动宽带设备收到一条新短信。                                         |
+| **除外**                  | 安装的移动宽带设备收到一条新短信。                                         |
 | **TimeZoneChange**               | 设备上的时区发生更改（例如，当系统为夏令时调整时钟时）。 |
 
 有关详细信息，请参阅[使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)。
@@ -163,8 +163,8 @@ ms.locfileid: "57618022"
 
 后台任务可以使用事件和本地存储向你的应用报告进度、完成和取消。 你的应用还可以捕捉由后台任务引发的异常，并在应用更新过程中管理后台任务注册。 有关详细信息，请参阅：
 
-[处理已取消的后台任务](handle-a-cancelled-background-task.md)  
-[监视器后台任务进度和完成](monitor-background-task-progress-and-completion.md)
+[处理取消的后台任务](handle-a-cancelled-background-task.md)  
+[监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 
 在应用启动期间检查你的后台任务注册。 确保你的应用的未分组后台任务显示在 BackgroundTaskBuilder.AllTasks 中。 重新注册未显示的后台任务。 注销任何不再需要的任务。 这可确保每次应用启动时所有后台任务注册都是最新的。
 
@@ -176,24 +176,24 @@ ms.locfileid: "57618022"
 
 **相关的后台任务指南**
 
-* [后台任务的指导原则](guidelines-for-background-tasks.md)
-* [访问传感器和设备通过后台任务](access-sensors-and-devices-from-a-background-task.md)
-* [创建和注册过程中后台任务](create-and-register-an-inproc-background-task.md)
-* [创建并注册进程外后台任务](create-and-register-a-background-task.md)
+* [后台任务指南](guidelines-for-background-tasks.md)
+* [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)
+* [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)
+* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
 * [将进程外后台任务转换为进程内的后台任务](convert-out-of-process-background-task.md)
 * [调试后台任务](debug-a-background-task.md)
-* [声明应用程序清单中的后台任务](declare-background-tasks-in-the-application-manifest.md)
-* [组后台任务注册](group-background-tasks.md)
-* [处理已取消的后台任务](handle-a-cancelled-background-task.md)
+* [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
+* [分组后台任务注册](group-background-tasks.md)
+* [处理取消的后台任务](handle-a-cancelled-background-task.md)
 * [如何在触发挂起、 继续和后台 UWP 应用中的事件 （在调试）](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
-* [监视器后台任务进度和完成](monitor-background-task-progress-and-completion.md)
+* [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 * [在背景中播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [注册后台任务](register-a-background-task.md)
-* [响应通过后台任务的系统事件](respond-to-system-events-with-background-tasks.md)
+* [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
 * [更新你的 UWP 应用时运行后台任务](run-a-background-task-during-updatetask.md)
-* [无限期地在后台运行](run-in-the-background-indefinetly.md)
-* [设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)
+* [在后台无限期运行](run-in-the-background-indefinetly.md)
+* [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
 * [触发后台任务从您的应用程序](trigger-background-task-from-app.md)
-* [更新动态磁贴通过后台任务](update-a-live-tile-from-a-background-task.md)
+* [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
 * [使用维护触发器](use-a-maintenance-trigger.md)

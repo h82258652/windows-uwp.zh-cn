@@ -20,7 +20,7 @@ ms.locfileid: "57610632"
 
 Web 视图控件将一个视图嵌入你的应用中，以便使用 Microsoft Edge 呈现引擎来呈现 Web 内容。 超链接也可以在 Web 视图控件中显示并正常工作。
 
-> **重要的 Api**:[WebView 类](https://msdn.microsoft.com/library/windows/apps/br227702)
+> **重要的 API**：[WebView 类](https://msdn.microsoft.com/library/windows/apps/br227702)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 

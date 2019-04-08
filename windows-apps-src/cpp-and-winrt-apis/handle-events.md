@@ -233,11 +233,11 @@ winrt::hstring f(ListView listview)
 如果处理的事件对象的成员函数，或从在 lambda 函数内部对象的成员函数，然后需要相对事件接收方 （处理事件的对象） 和事件源 （的对象的生存期纳入考虑引发事件）。 有关详细信息和代码示例，请参阅[强和弱引用在 C + + WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
 
 ## <a name="important-apis"></a>重要的 API
-* [winrt::auto_revoke_t marker struct](/uwp/cpp-ref-for-winrt/auto-revoke-t)
+* [winrt::auto_revoke_t 标记结构](/uwp/cpp-ref-for-winrt/auto-revoke-t)
 * [winrt::implements::get_weak 函数](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
 * [winrt::implements::get_strong 函数](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)
 
 ## <a name="related-topics"></a>相关主题
 * [创作事件在 C + + WinRT](author-events.md)
 * [并发和异步操作使用 C + + WinRT](concurrency.md)
-* [强和弱引用在 C + + WinRT](weak-references.md)
+* [C++/WinRT 中的弱引用](weak-references.md)

@@ -63,6 +63,6 @@ ms.locfileid: "57613222"
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建并注册进程外后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
+* [创建和注册进程外后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
 * [规划性能](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
 

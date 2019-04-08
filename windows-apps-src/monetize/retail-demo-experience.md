@@ -8,14 +8,14 @@ keywords: Windows 10, uwp, 零售演示应用
 ms.localizationpriority: medium
 ms.openlocfilehash: b66435dd7c94762874461b48e19e9a60224f287b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57596752"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>将零售演示 (RDX) 功能添加到您的应用程序
 
-Windows 应用程序中包括零售演示模式，因此试用电脑和设备上销售场地的客户可以立即投入。
+在你的 Windows 应用中包括零售演示模式，以便在销售场所试用电脑和设备的客户可以直接进入。
 
 零售商店客户时，他们希望能够试用的 Pc 和设备的演示。 他们通常会花费相当大块的时间都较为深刻地应用的整个[零售演示体验 (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)。
 

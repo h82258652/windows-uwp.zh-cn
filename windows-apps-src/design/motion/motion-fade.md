@@ -21,7 +21,7 @@ ms.locfileid: "57620412"
 
 使用淡化动画将项目引入或引出视图。 两个常见淡化动画是淡入和淡出。
 
-> **重要的 Api**:[**FadeInThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210298)， [ **FadeOutThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210302)
+> **重要的 API**：[**FadeInThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210298)， [ **FadeOutThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项

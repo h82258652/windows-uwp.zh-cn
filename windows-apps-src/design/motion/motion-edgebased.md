@@ -23,7 +23,7 @@ ms.locfileid: "57610202"
 
 基于边缘的动画显示或隐藏源自屏幕边缘的 UI。 显示和隐藏动画可以由用户或应用启动。 此 UI 可以覆盖应用，也可以作为主屏表面的一部分。 如果此 UI 是应用图面的一部分，那么应用的其余部分可能需要相应调整大小。
 
-> **重要的 Api**:[**EdgeUIThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/hh702324)
+> **重要的 API**：[**EdgeUIThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项

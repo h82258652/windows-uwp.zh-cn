@@ -1,5 +1,5 @@
 ---
-description: 本主题介绍了各种类别的 c + + 中存在的值。 你将肯定听说过的左值和右值，但也有其他类型。
+description: 本主题介绍了 C++ 中存在的各种值类别。 你肯定听说过左值和右值，但还有其他类型。
 title: 值的分类，并对其的引用
 ms.date: 08/11/2018
 ms.topic: article
@@ -153,7 +153,7 @@ void bar(A&& a) // a is a named rvalue reference; it's an lvalue.
 A&& get_by_rvalue_ref() { ... } // This unnamed rvalue reference is an xvalue.
 ```
 
-### <a name="im"></a>\!i\&\!m
+### <a name="im"></a>\!我\&\!m
 未标识并且不是可移动的值的类型为一个组合，我们还没有介绍。 但我们可以忽略它，因为该类别不是一个有用的想法在 c + + 语言中。
 
 ## <a name="reference-collapsing-rules"></a>引用折叠规则
@@ -189,4 +189,4 @@ template <typename _Ty> void bar(_Ty&& ty) { ... }
 - 转发引用的原因 (如`_Ty&&`) 存在是*不*进行优化，但以执行你传递给它们，透明且有效地将其转发上。 您可能会遇到的转发引用仅当编写 （或步仔细研究） 库代码&mdash;例如，在构造函数自变量将转发的工厂函数。
 
 ## <a name="sources"></a>源
-* \[Stroustrup，2013年\]B.Stroustrup:C + + 编程语言，第四版。 Addison-Wesley。 2013.
+* \[Stroustrup，2013年\]B.Stroustrup:C + + 编程语言，第四版。 Addison-Wesley。 2013。

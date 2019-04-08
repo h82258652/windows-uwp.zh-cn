@@ -15,7 +15,7 @@ doc-status: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: b988859422a80b31d94a133e36631b078ac7c14e
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610492"
@@ -105,7 +105,7 @@ HoloLens 和混合现实平台上均支持键盘和鼠标。 你可以通过蓝�
 * 系统自动向 2D 应用提供一个[应用栏](https://developer.microsoft.com/windows/mixed-reality/app_bar_and_bounding_box)以允许用户在虚拟环境中移动和缩放它们。 这些视图可以垂直调整大小，或者在保持同一纵横比的情况下调整大小。
 
 
-## <a name="2d-app-design-considerations-uiux"></a>2D 应用设计注意事项：UI/UX
+## <a name="2d-app-design-considerations-uiux"></a>2D 应用设计注意事项：UI/用户体验
 
 * 实现 [Fluent Design 系统](https://docs.microsoft.com/windows/uwp/design/fluent-design-system/)的 XAML 控件（如[导航视图](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview)）和效果（如[亚克力](https://docs.microsoft.com/windows/uwp/design/style/acrylic)）都尤其适用于 2D 混合现实应用。
 
