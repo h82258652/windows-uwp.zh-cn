@@ -127,8 +127,8 @@ function onVisibilityChanged() {
 ## <a name="related-topics"></a>相关主题
 
 
-* [设置地域隔离区](https://msdn.microsoft.com/library/windows/apps/mt219702)
-* [获取当前的位置](https://msdn.microsoft.com/library/windows/apps/mt219698)
+* [设置地理围栏](https://msdn.microsoft.com/library/windows/apps/mt219702)
+* [获取当前位置](https://msdn.microsoft.com/library/windows/apps/mt219698)
 * [UWP 位置示例 （地理位置）](https://go.microsoft.com/fwlink/p/?linkid=533278)
  
 

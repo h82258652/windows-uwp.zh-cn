@@ -28,8 +28,8 @@ ms.locfileid: "57634652"
 ## <a name="using-makeappxexe"></a>使用 MakeAppx.exe
 
 根据 SDK 的安装路径，以下是 **MakeAppx.exe** 在 Windows 10 电脑上的位置：
-- x86：C:\Program Files (x86)\Windows Kits\10\bin\\&lt;build number&gt;\x86\makeappx.exe
-- x64:C:\Program Files (x86)\Windows Kits\10\bin\\&lt;build number&gt;\x64\makeappx.exe
+- x86：C:\Program 文件 (x86) \Windows Kits\10\bin\\&lt;内部版本号&gt;\x86\makeappx.exe
+- x64:C:\Program 文件 (x86) \Windows Kits\10\bin\\&lt;内部版本号&gt;\x64\makeappx.exe
 
 没有此工具的 ARM 版本。
 

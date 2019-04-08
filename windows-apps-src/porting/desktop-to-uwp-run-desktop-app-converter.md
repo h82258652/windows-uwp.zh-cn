@@ -265,7 +265,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-Destination &lt;String&gt; |必需 |如果转换器的 appx 输出的所需目标尚未存在，DesktopAppConverter 可以创建此位置。|
 |-Installer &lt;String&gt; |必需 |适用于应用程序的安装程序的路径 - 必须能够在无人参与/静默的情况下运行。 否-安装程序转换，这是为应用程序文件的根目录的路径。 |
 |-InstallerArguments &lt;String&gt; |可选 |用于强制安装程序在无人参与/无提示的情况下运行的参数的逗号分隔列表或字符串。 如果安装程序是 msi，则此参数为可选参数。 若要从安装程序中获取日志，请在此处为安装程序提供日志记录参数，并使用路径 &lt;log_folder&gt;，该路径是转换器使用相应路径所替换的标记。 <br><br>**注意**：无人参与/无提示标志和日志参数将在安装程序技术之间变化。 <br><br>此参数的用法示例:-InstallerArguments"/silent /log &lt;log_folder&gt;\install.log"不会生成一个日志文件的另一个示例可能如下所示：```-InstallerArguments "/quiet", "/norestart"``` 同样，必须按原义定向到的令牌的路径的任何日志&lt;log_folder&gt;如果你想要捕获它并将其放在最后一个日志文件夹中的转换器。|
-|-InstallerValidExitCodes &lt;Int32&gt; |可选 |已成功运行的退出代码，以指示您的安装程序以逗号分隔列表 (例如：0, 1234, 5678).  默认情况下，对于非 msi，它为 0，对于 msi，它为 0, 1641, 3010。|
+|-InstallerValidExitCodes &lt;Int32&gt; |可选 |已成功运行的退出代码，以指示您的安装程序以逗号分隔列表 (例如：0、 1234、 5678)。  默认情况下，对于非 msi，它为 0，对于 msi，它为 0, 1641, 3010。|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |可选 |一个告知此脚本对输出调用 MakeAppx 的开关（当存在时）。 |
 |-MakeMSIX [&lt;SwitchParameter&gt;]  |可选 |开关指示，当存在时，此脚本以打包形式 MSIX 包的输出。 |
 |<a id="identity-params" /><strong>包标识参数</strong>||

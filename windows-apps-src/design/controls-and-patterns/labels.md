@@ -24,7 +24,7 @@ ms.locfileid: "57654142"
 
 标签是一个控件或一组相关控件的名称或标题。
 
-> **重要的 Api**:标头属性[TextBlock 类](https://msdn.microsoft.com/library/windows/apps/br209652)
+> **重要的 API**：标头属性[TextBlock 类](https://msdn.microsoft.com/library/windows/apps/br209652)
 
 在 XAML 中，许多控件都具有用于显示标签的内置 Header 属性。 对于没有 Header 属性的控件，或要为多组控件添加标签，你可以改用 [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)。
 

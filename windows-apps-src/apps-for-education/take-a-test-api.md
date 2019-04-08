@@ -4,7 +4,7 @@ title: 参加测验 JavaScript API。
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
 ms.date: 08/08/2018
 ms.topic: article
-keywords: windows 10，uwp、 教育版
+keywords: windows 10, uwp, 教育版
 ms.localizationpriority: medium
 ms.openlocfilehash: bee8a04e3b4d57caf7da3e21f2be3c789d83be90
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
@@ -32,17 +32,17 @@ ms.locfileid: "57627592"
 
 | 方法 | 描述   |
 |--------|---------------|
-|[lockDown](#lockDown) | 锁定用于测试的设备。 |
+|[锁定](#lockDown) | 锁定用于测试的设备。 |
 |[isEnvironmentSecure](#isEnvironmentSecure) | 确定锁定上下文是否仍然应用于设备。 |
-|[getDeviceInfo](#getDeviceInfo) | 获取有关运行测试应用程序的平台的详细信息。 |
+|[GetDeviceInfo](#getDeviceInfo) | 获取有关运行测试应用程序的平台的详细信息。 |
 |[examineProcessList](#examineProcessList)|获取正在运行的用户和系统进程的列表。|
-|[close](#close) | 关闭浏览器并解锁设备。 |
+|[关闭](#close) | 关闭浏览器并解锁设备。 |
 |[getPermissiveMode](#getPermissiveMode)|检查许可模式是处于打开状态还是关闭状态。|
 |[setPermissiveMode](#setPermissiveMode)|打开或关闭许可模式。|
-|[emptyClipBoard](#emptyClipBoard)|清除系统剪贴板。|
+|[清空剪贴板](#emptyClipBoard)|清除系统剪贴板。|
 |[getMACAddress](#getMACAddress)|获取设备的 MAC 地址列表。|
 |[getStartTime](#getStartTime) | 获取启动测试应用的时间。 |
-|[getCapability](#getCapability) | 查询功能是处于启用状态还是禁用状态。 |
+|[GetCapability](#getCapability) | 查询功能是处于启用状态还是禁用状态。 |
 |[setCapability](#setCapability)|启用或禁用指定功能。| 
 |[isRemoteSession](#isRemoteSession) | 检查当前会话是否是远程登录。 |
 |[isVMSession](#isVMSession) | 检查当前会话是否在虚拟机上运行。 |

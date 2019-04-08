@@ -1,5 +1,5 @@
 ---
-description: C + + WinRT 提供函数和基类，这些您节省大量时间和精力当你想要实现和/或传递集合类。
+description: C++/WinRT 提供了函数和基类，当你希望实现并/或传递集合时，它们可以为你节省大量的时间和精力。
 title: 使用 C++/WinRT 的集合
 ms.date: 10/03/2018
 ms.topic: article
@@ -330,10 +330,10 @@ private:
 * [ItemsControl.ItemsSource 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)
 * [IObservableVector 接口](/uwp/api/windows.foundation.collections.iobservablevector_t_)
 * [IVector 接口](/uwp/api/windows.foundation.collections.ivector_t_)
-* [winrt::map_base struct template](/uwp/cpp-ref-for-winrt/map-base)
-* [winrt::map_view_base struct template](/uwp/cpp-ref-for-winrt/map-view-base)
-* [winrt::observable_map_base struct template](/uwp/cpp-ref-for-winrt/observable-map-base)
-* [winrt::observable_vector_base struct template](/uwp/cpp-ref-for-winrt/observable-vector-base)
+* [winrt::map_base 结构模板](/uwp/cpp-ref-for-winrt/map-base)
+* [winrt::map_view_base 结构模板](/uwp/cpp-ref-for-winrt/map-view-base)
+* [winrt::observable_map_base 结构模板](/uwp/cpp-ref-for-winrt/observable-map-base)
+* [winrt::observable_vector_base 结构模板](/uwp/cpp-ref-for-winrt/observable-vector-base)
 * [winrt::single_threaded_observable_map 函数模板](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)
 * [winrt::single_threaded_map 函数模板](/uwp/cpp-ref-for-winrt/single-threaded-map)
 * [winrt::single_threaded_observable_vector 函数模板](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)
@@ -342,5 +342,5 @@ private:
 * [winrt::vector_view_base 结构模板](/uwp/cpp-ref-for-winrt/vector-view-base)
 
 ## <a name="related-topics"></a>相关主题
-* [值的分类，并对其的引用](cpp-value-categories.md)
-* [XAML 控件; 项将绑定到 C + + WinRT 集合](binding-collection.md)
+* [值类别，以及对它们的引用](cpp-value-categories.md)
+* [XAML 项目控件; 绑定到 C++/WinRT 集合](binding-collection.md)

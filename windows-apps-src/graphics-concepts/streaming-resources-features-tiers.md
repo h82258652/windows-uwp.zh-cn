@@ -62,7 +62,7 @@ Direct3D 版本提供查询功能，可验证支持流式资源的硬件和驱�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[流式处理资源](streaming-resources.md)
+[流式资源](streaming-resources.md)
 
  
 

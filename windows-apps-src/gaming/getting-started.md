@@ -8,7 +8,7 @@ keywords: windows 10、 uwp、 游戏，入门
 localizationpriority: medium
 ms.openlocfilehash: f818837a6f8703721520a8be8c0ed9b062cf797a
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57653552"

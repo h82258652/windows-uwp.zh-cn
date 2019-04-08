@@ -459,6 +459,6 @@ namespace MyAppService
 
 ## <a name="related-topics"></a>相关主题
 
-* [将转换为其主机应用程序在同一进程中运行的应用服务](convert-app-service-in-process.md)
+* [将应用服务转换为与其主机应用在同一个进程中运行](convert-app-service-in-process.md)
 * [支持使用后台任务对应用程序](support-your-app-with-background-tasks.md)
 * [应用服务的代码示例 (C#，c + + 和 VB)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)

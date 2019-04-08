@@ -43,7 +43,7 @@ ms.locfileid: "57630352"
 | [缩放](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 | 缩放以中心点为中心的元素 |
 | [旋转](/uwp/api/windows.ui.xaml.uielement.rotation) | 浮点 | 将元素周围的 RotationAxis 和中心点旋转 |
 | [RotationAxis](/uwp/api/windows.ui.xaml.uielement.rotationaxis) | Vector3 | 旋转轴 |
-| [CenterPoint](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | 缩放和旋转的中心点 |
+| [中心点](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | 缩放和旋转的中心点 |
 
 TransformMatrix 属性值是属性组合在一起缩放、 旋转和转换按以下顺序：TransformMatrix，缩放、 旋转、 转换。
 
@@ -74,7 +74,7 @@ button.Scale = new Vector3(2.0f,2.0f,1.0f);
 
 - [RenderTransform](/uwp/api/windows.ui.xaml.uielement.rendertransform)
 - [RenderTransformOrigin](/uwp/api/windows.ui.xaml.uielement.rendertransformorigin)
-- [Projection](/uwp/api/windows.ui.xaml.uielement.projection)
+- [投影](/uwp/api/windows.ui.xaml.uielement.projection)
 - [Transform3D](/uwp/api/windows.ui.xaml.uielement.transform3d)
 
 在您设置 （或进行动画处理） 的任何新属性，不能使用旧的属性。 相反，如果你设置 （或进行动画处理） 的任何旧的属性，则无法使用新的属性。

@@ -7,7 +7,7 @@ keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定
 ms.localizationpriority: medium
 ms.openlocfilehash: c3551ebcc59ebfe426b0be8d5bd20f7578517a25
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57649202"
@@ -121,9 +121,9 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 立即生成并运行该项目。 单击该按钮以执行 **Click** 事件处理程序。 我们看到了**追加**的实现引发了让 UI 知道该集合已发生更改的事件；而且 **ListBox** 重新查询了集合以更新其自己的**项目**值。 和以前一样，其中一本书籍的标题发生了更改；而且该标题更改反映在按钮上和列表框中。
 
 ## <a name="important-apis"></a>重要的 API
-* [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
+* [IObservableVector&lt;T&gt;:: VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
 * [winrt::make 函数模板](/uwp/cpp-ref-for-winrt/make)
 
 ## <a name="related-topics"></a>相关主题
-* [使用 Api 使用 C + + WinRT](consume-apis.md)
-* [创作 Api 使用 C + + WinRT](author-apis.md)
+* [通过 C++/WinRT 使用 API](consume-apis.md)
+* [使用 C++/WinRT 创作 API](author-apis.md)

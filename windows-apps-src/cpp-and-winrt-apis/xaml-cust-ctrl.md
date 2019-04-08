@@ -1,5 +1,5 @@
 ---
-description: 本主题将指导你逐步完成创建简单的自定义控件使用 C + + WinRT。 您可以在此处提供信息来创建你自己的功能丰富、 可自定义 UI 控件上进行构建。
+description: 本主题引导你完成使用 C++/WinRT 创建简单的自定义控件的步骤。 你可以基于此处的信息创建你自己的功能丰富且可自定义的 UI 控件。
 title: XAML 自定义（模板化）控件与 C++/WinRT
 ms.date: 10/03/2018
 ms.topic: article

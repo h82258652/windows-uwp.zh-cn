@@ -154,7 +154,7 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 
 1. 确保你的计算机连接到 Internet。
 2. 如果你位于加入域的计算机上，请与网络管理员联系。 默认情况下，WSUS 中阻止了开发人员模式程序包，如所有按需功能。
-2.1. 若要取消阻止当前和以前版本中的开发人员模式包，应在 WSUS 中允许以下知识库：4016509, 3180030, 3197985  
+2.1. 若要取消阻止当前和以前版本中的开发人员模式包，应在 WSUS 中允许以下知识库：4016509、 3180030、 3197985  
 3. 在“设置”&gt;“更新和安全”&gt;“Windows 更新”中检查 Windows 更新。
 4. 在“设置”&gt;“系统”&gt;“应用和功能”&gt;“管理可选功能”&gt;“添加功能”中验证 Windows 开发人员模式是否存在。 如果缺少，Windows 无法为计算机找到正确的程序包。
 
@@ -201,20 +201,20 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 1.  运行 **regedit**。
 2.  若要启用旁加载，请将此 DWORD 的值设置为 1：
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
+    -   **HKLM\\软件\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
 
     - 或 -
 
     若要启用开发人员模式，请将此 DWORD 的值设置为 1：
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
+    -   **HKLM\\软件\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
 
 **使用 PowerShell 启用你的设备**
 
 1.  使用管理员权限运行 PowerShell。
 2.  若要启用旁加载，请运行此命令：
 
-    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
+    -   **PS c:\\WINDOWS\\system32&gt; reg 添加"HKEY\_本地\_机\\软件\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock"/t REG\_DWORD /f /v"AllowAllTrustedApps"/d"1"**
 
     - 或 -
 

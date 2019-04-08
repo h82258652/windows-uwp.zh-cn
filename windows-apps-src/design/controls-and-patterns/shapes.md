@@ -17,7 +17,7 @@ ms.locfileid: "57610672"
 
 了解如何绘制形状，如椭圆、矩形、多边形以及路径。 [  **Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 类是在 XAML UI 中可视化基于相当复杂矢量的绘图语言的方法；例如，可以绘制贝塞尔曲线。
 
-> **重要的 Api**:[Path 类](/uwp/api/Windows.UI.Xaml.Shapes.Path)， [Windows.UI.Xaml.Shapes 命名空间](/uwp/api/Windows.UI.Xaml.Shapes)， [Windows.UI.Xaml.Media 命名空间](/uwp/api/Windows.UI.Xaml.Media)
+> **重要的 API**：[Path 类](/uwp/api/Windows.UI.Xaml.Shapes.Path)， [Windows.UI.Xaml.Shapes 命名空间](/uwp/api/Windows.UI.Xaml.Shapes)， [Windows.UI.Xaml.Media 命名空间](/uwp/api/Windows.UI.Xaml.Media)
 
 
 两个集的类定义 XAML 用户界面中的空间区域：[**形状**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)类和[ **Geometry** ](/uwp/api/Windows.UI.Xaml.Media.Geometry)类。 这些类之间的主要区别在于，**Shape** 具有一个与其关联的画笔并可以呈现到屏幕，而 **Geometry** 只定义一个空间区域并且不进行呈现，除非它用于帮助将信息提供给另一 UI 属性。 你可以将 **Shape** 视为 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911)，其边界通过 **Geometry** 定义。 本主题主要讨论 **Shape** 类。
@@ -165,7 +165,7 @@ line1.X2 = 400;
 layoutRoot.Children.Add(line1);
 ```
 
-## <a name="span-idpolylinespanspan-idpolylinespanspan-idpolylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyline
+## <a name="span-idpolylinespanspan-idpolylinespanspan-idpolylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> 折线
 
 [  **Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 与 [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) 类似，该形状的边也是通过一组点来进行定义，只不过 **Polyline** 的最后一个点不与第一个点相连。
 

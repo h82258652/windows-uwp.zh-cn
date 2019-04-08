@@ -80,7 +80,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 访问工作或学校帐户 | ms-settings:workplace |
 | 电子邮件和应用帐户  | ms-settings:emailandaccounts |
 | 家人和其他人 | ms-settings:otherusers |
-| 设置作为网亭 | ms-settings:assignedaccess |
+| 设置作为网亭 | ms-assignedaccess 设置： |
 | 登录选项 | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
 | 同步你的设置 | ms-settings:sync |
 | Windows Hello 设置 | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
@@ -106,7 +106,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 权限和历史记录 | ms-settings:cortana-permissions |
 | 更多详细信息 | ms-settings:cortana-moredetails |
 | “跨设备的 Cortana” | ms-settings:cortana-notifications |
-| 与 Cortana 交谈 | ms-settings:cortana-language<br/>ms-settings:cortana<br/>ms-settings:cortana-talktocortana |
+| 与 Cortana 交谈 | ms-settings:cortana-language<br/>ms-设置： cortana<br/>ms-设置： cortana-talktocortana |
 
 > [!NOTE] 
 > 在桌面上设置本节 PC 设置为其中 Cortana 当前不可用或已禁用 Cortana 区域将调用搜索。 在这种情况下不会列出特定于 Cortana 的页 (在我的设备，Cortana) 和与 Cortana 对话。 
@@ -135,8 +135,8 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 |-------------|-----|
 | Audio | ms-settings:easeofaccess-audio |
 | 隐藏式字幕 | ms-settings:easeofaccess-closedcaptioning |
-| 颜色筛选器 | ms-settings:easeofaccess-colorfilter |
-| 游标和指针的大小 | ms-settings:easeofaccess-cursorandpointersize |
+| 颜色筛选器 | ms-设置： easeofaccess-colorfilter |
+| 游标和指针的大小 | ms-设置： easeofaccess-cursorandpointersize |
 | 显示 | ms-settings:easeofaccess-display |
 | 目视控制 | ms-settings:easeofaccess-eyecontrol |
 | 字体 | ms-settings:fonts |
@@ -188,7 +188,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 移动热点 | ms-settings:network-mobilehotspot |
 | NFC | ms-settings:nfctransactions |
 | 代理 | ms-settings:network-proxy |
-| 状态 | ms-settings:network-status<br/>ms-settings:network |
+| 状态 | ms-settings:network-status<br/>ms-网络设置： |
 | VPN | ms-settings:network-vpn |
 | WLAN | ms-settings:network-wifi（仅当设备具有 WLAN 适配器时可用） |
 | WLAN 呼叫 | ms-settings:network-wificalling（仅在启用 WLAN 呼叫后可用） |
@@ -199,7 +199,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 |-------------|-----|
 | 后台 | ms-settings:personalization-background |
 | 选择哪些文件夹显示在“开始”菜单上 | ms-settings:personalization-start-places |
-| 颜色 | ms-settings:personalization-colors<br/>ms-settings:colors |
+| 颜色 | ms-settings:personalization-colors<br/>ms-颜色设置： |
 | 概览 | ms-设置： 个性化设置的快速 (**Windows 10，版本 1809年及更高版本中弃用**) |
 | 锁屏界面 | ms-settings:lockscreen |
 | 导航栏 | ms-设置： 个性化设置的导航栏 (**Windows 10，版本 1809年及更高版本中弃用**) |
@@ -212,7 +212,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |“设置”页面| URI |
 |-------------|-----|
-| 你的手机 | ms-settings:mobile-devices<br/>ms-settings:mobile-devices-addphone<br/>ms-设置： 移动的设备-addphone-直接 (此时将打开**Your Phone**应用) |
+| 你的手机 | ms-settings:mobile-devices<br/>ms-设置： 移动的设备-addphone<br/>ms-设置： 移动的设备-addphone-直接 (此时将打开**Your Phone**应用) |
 
 ## <a name="privacy"></a>隐私
 
@@ -267,7 +267,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 节电模式 | ms-settings:batterysaver（仅在具有电池的设备[如平板电脑]上可用） |
 | “节电模式”设置 | ms-settings:batterysaver-settings（仅在具有电池的设备[如平板电脑]上可用） |
 | 电池使用 | ms-settings:batterysaver-usagedetails（仅在具有电池的设备[如平板电脑]上可用） |
-| 剪贴板 | ms-settings:clipboard |
+| 剪贴板 | ms-剪贴板设置： |
 | 显示 | ms-settings:display |
 | 默认保存位置 | ms-settings:savelocations |
 | 显示 | ms-settings:screenrotation |
@@ -288,7 +288,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 远程桌面 | ms-settings:remotedesktop |
 | Phone | ms-设置： 电话 (**Windows 10，版本 1809年及更高版本中弃用**) |
 | 电源和睡眠 | ms-settings:powersleep |
-| 声音 | ms-settings:sound |
+| 声音 | ms-声音设置： |
 | 存储 | ms-settings:storagesense |
 | 存储感知 | ms-settings:storagepolicies |
 
@@ -298,7 +298,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 |-------------|-----|
 | 日期和时间 | ms-settings:dateandtime |
 | 日本输入法设置 | ms-settings:regionlanguage-jpnime（在安装了 Microsoft 日本输入法编辑器的情况下可用） |
-| 语言 | ms-settings:keyboard<br/>ms-settings:regionlanguage<br/>ms-settings:regionlanguage-bpmfime<br/>ms-settings:regionlanguage-cangjieime<br/>ms-settings:regionlanguage-chsime-pinyin-domainlexicon<br/>ms-settings:regionlanguage-chsime-pinyin-keyconfig<br/>ms-settings:regionlanguage-chsime-pinyin-udp<br/>ms-settings:regionlanguage-chsime-wubi-udp<br/>ms-settings:regionlanguage-quickime |
+| 语言 | ms-键盘设置：<br/>ms-settings:regionlanguage<br/>ms-设置： regionlanguage-bpmfime<br/>ms-设置： regionlanguage-cangjieime<br/>ms-设置： regionlanguage-chsime-拼音-domainlexicon<br/>ms-设置： regionlanguage-chsime-拼音-keyconfig<br/>ms-设置： regionlanguage-chsime-拼音-udp<br/>ms-设置： regionlanguage-chsime-五笔-udp<br/>ms-设置： regionlanguage-quickime |
 | 拼音输入法设置 | ms-settings:regionlanguage-chsime-pinyin（在安装了 Microsoft 拼音输入法编辑器的情况下可用） |
 | 语音 | ms-settings:speech |
 | 五笔输入法设置  | ms-settings:regionlanguage-chsime-wubi（在安装了 Microsoft 五笔输入法编辑器的情况下可用） |
@@ -315,7 +315,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 恢复 | ms-settings:recovery |
 | 排除故障 | ms-settings:troubleshoot |
 | “Windows 安全中心” | ms-settings:windowsdefender |
-| Windows 预览体验计划 | ms-settings:windowsinsider（仅当用户在 WIP 中注册时显示）<br/>ms-settings:windowsinsider-optin |
+| Windows 预览体验计划 | ms-settings:windowsinsider（仅当用户在 WIP 中注册时显示）<br/>ms-设置： windowsinsider-optin |
 | Windows 更新 | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | Windows 更新 - 高级选项 | ms-settings:windowsupdate-options |
 | Windows 更新 - 重启选项 | ms-settings:windowsupdate-restartoptions |

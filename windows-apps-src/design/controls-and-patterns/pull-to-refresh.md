@@ -23,7 +23,7 @@ ms.locfileid: "57659252"
 
 下拉以刷新使用户可以使用触控下拉数据列表以检索更多数据。 下拉以刷新广泛用于具有触摸屏的设备。 你可以使用这里显示的 API 在应用中实现下拉以刷新。
 
-> **重要的 Api**:[RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer)， [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
+> **重要的 API**：[RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer)， [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
 
 ![下拉以刷新 gif](images/Pull-To-Refresh.gif)
 

@@ -101,7 +101,7 @@ PE 文件的验证码签名的位置由可选头数据目录中的证书表项�
 
 ## <a name="common-errors-that-can-appear-when-you-sign-your-app"></a>对应用进行签名时可能会出现的常见错误
 
-### <a name="publisher-and-cert-mismatch-causes-signtool-error-error-signersign-failed--21470248850x8007000b"></a>发布服务器和证书不匹配会导致 Signtool 错误"错误：SignerSign() Failed" (-2147024885/0x8007000b)
+### <a name="publisher-and-cert-mismatch-causes-signtool-error-error-signersign-failed--21470248850x8007000b"></a>发布服务器和证书不匹配会导致 Signtool 错误"错误：SignerSign() 失败"(-2147024885/0x8007000b)
 
 Windows 应用包清单中的发布者条目必须与要用于签名的证书的使用者匹配。  可使用以下任一方法查看证书的使用者。
 

@@ -161,6 +161,6 @@ End Sub
 针对在 UI 线程上运行的对象，以及从除 UI 线程以外的其他线程调用时引发异常的对象，你可以使用 UI 线程的 [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029) 对象调度调用。
 
 ## <a name="see-also"></a>另请参阅
-[C#指南](/dotnet/csharp/)
+[C# 指南](/dotnet/csharp/)
 
 [Visual Basic 指南](/dotnet/visual-basic/)

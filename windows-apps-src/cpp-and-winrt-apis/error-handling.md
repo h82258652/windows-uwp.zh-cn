@@ -83,7 +83,7 @@ winrt::check_bool(::SetEvent(h.get()));
 - [**winrt::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)。 检查 HRESULT 代码是否表示错误，如果是，则调用 **winrt::throw_hresult**。
 - [**winrt::check_nt**](/uwp/cpp-ref-for-winrt/error-handling/check-nt)。 检查代码是否表示错误，如果是，则调用 **winrt::throw_hresult**。
 - [**winrt::check_pointer**](/uwp/cpp-ref-for-winrt/error-handling/check-pointer)。 检查指针是否为 null，如果是，则调用 **winrt::throw_last_error**。
-- [**winrt::check_win32**](/uwp/cpp-ref-for-winrt/error-handling/check-win32). 检查代码是否表示错误，如果是，则调用 **winrt::throw_hresult**。
+- [**winrt::check_win32**](/uwp/cpp-ref-for-winrt/error-handling/check-win32)。 检查代码是否表示错误，如果是，则调用 **winrt::throw_hresult**。
 
 你可以对常见的返回代码类型使用这些帮助程序函数，也可以响应任何错误条件并调用 [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) 或 [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)。 
 
@@ -129,11 +129,11 @@ WINRT_VERIFY_(TRUE, ::CloseHandle(value));
 * [winrt::check_nt 函数模板](/uwp/cpp-ref-for-winrt/error-handling/check-nt)
 * [winrt::check_pointer 函数模板](/uwp/cpp-ref-for-winrt/error-handling/check-pointer)
 * [winrt::check_win32 函数模板](/uwp/cpp-ref-for-winrt/error-handling/check-win32)
-* [winrt::handle struct](/uwp/cpp-ref-for-winrt/handle)
-* [winrt::hresult_error struct](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+* [winrt::handle 结构](/uwp/cpp-ref-for-winrt/handle)
+* [winrt::hresult_error 结构](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 * [winrt::throw_hresult 函数](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)
 * [winrt::throw_last_error 函数](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error)
-* [winrt::to_hresult function](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)
+* [winrt::to_hresult 函数](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)
 
 ## <a name="related-topics"></a>相关主题
 * [错误和异常处理 （现代 c + +）](/cpp/cpp/errors-and-exception-handling-modern-cpp)

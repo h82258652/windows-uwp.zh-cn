@@ -37,8 +37,8 @@ UWP 应用的一个重要方面就是流畅的交互。 这包括“粘住你的
 
     -   [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.rendertransform)
     -   [**Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d)
-    -   [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection)
-    -   [**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
+    -   [**投影**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection)
+    -   [**剪辑**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
 
 从属动画影响布局，因此没有来自 UI 线程的额外输入就无法进行计算。 从属动画包括对 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 和 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 等属性的修改。 默认情况下，从属动画不会运行，需要应用开发人员选择性加入。 启用后，如果 UI 线程保持解除阻止，那么从属动画会流畅地运行，但是如果框架或应用正在 UI 线程上执行许多其他工作，从属动画将开始抖动。
 

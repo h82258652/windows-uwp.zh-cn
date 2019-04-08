@@ -37,7 +37,7 @@ ms.locfileid: "57627582"
 
 固定函数光栅化 (RS) 阶段由流输出 (SO) 阶段和/或上一个管道阶段（例如，[几何着色器 (GS) 阶段](geometry-shader-stage--gs-.md)）提供源。 如果未使用 GS，则 RS 由[域着色器 (DS) 阶段](domain-shader-stage--ds-.md)提供源。 如果也未使用 DS，则 RS 由[顶点着色器 (VS) 阶段](vertex-shader-stage--vs-.md)提供源。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
 
 
 使用像素着色器 (PS) 阶段是可选操作；光栅化阶段可改为直接输出到[输出合并 (OM) 阶段](output-merger-stage--om-.md)。

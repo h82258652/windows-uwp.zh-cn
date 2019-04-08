@@ -4,7 +4,7 @@ description: 本文介绍了如何在 UWP 应用中使用 Windows.Security.Crypt
 ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c93527a2ee738a3e6b0f4e9b9d2a1343158441b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

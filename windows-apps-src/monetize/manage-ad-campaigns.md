@@ -149,8 +149,8 @@ Authorization: Bearer <your access token>
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整数   |  广告市场活动的 ID。     |   是    |      |  否     |       
 |  name   |  字符串   |   广告市场活动的名称。    |    否   |      |  是     |       
-|  configuredStatus   |  字符串   |  以下值之一，用于指定开发人员指定的广告活动的状态： <ul><li>**Active**</li><li>**Inactive**</li></ul>     |  否     |  活跃    |   是    |       
-|  effectiveStatus   |  字符串   |   以下值之一，用于根据系统验证情况指定广告活动的有效状态： <ul><li>**Active**</li><li>**Inactive**</li><li>**处理**</li></ul>    |    是   |      |   否      |       
+|  configuredStatus   |  字符串   |  以下值之一，用于指定开发人员指定的广告活动的状态： <ul><li>**Active**</li><li>**非活动状态**</li></ul>     |  否     |  活跃    |   是    |       
+|  effectiveStatus   |  字符串   |   以下值之一，用于根据系统验证情况指定广告活动的有效状态： <ul><li>**Active**</li><li>**非活动状态**</li><li>**处理**</li></ul>    |    是   |      |   否      |       
 |  effectiveStatusReasons   |  数组   |  以下值中的一个或多个，用于指定广告活动处于此有效状态的原因： <ul><li>**AdCreativesInactive**</li><li>**BillingFailed**</li><li>**AdLinesInactive**</li><li>**ValidationFailed**</li><li>**失败**</li></ul>      |  是     |     |    否     |       
 |  storeProductId   |  字符串   |  与广告活动关联的应用的[应用商店 ID](in-app-purchases-and-trials.md#store-ids)。 产品应用商店 ID 示例：9nblggh42cfd。     |   是    |      |  是     |       
 |  labels   |  数组   |   一个或多个字符串，代表活动的自定义标签。 这些标签用于搜索和标记活动。    |   否    |  null    |    否     |       

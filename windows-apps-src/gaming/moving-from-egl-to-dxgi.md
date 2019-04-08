@@ -20,7 +20,7 @@ ms.locfileid: "57606362"
 
 **重要的 Api**
 
--   [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
+-   [**对 ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
 -   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)
 -   [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)
 

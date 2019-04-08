@@ -19,7 +19,7 @@ ms.locfileid: "57630792"
 
 在 UWP 应用开发中，*控件*是一种显示内容或支持交互的 UI 元素。 通过使用如按钮、文本框和组合框等控件显示数据并获取用户输入，你可以为你的应用创建 UI。
 
-> **重要的 Api**:[Windows.UI.Xaml.Controls 命名空间](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+> **重要的 API**：[Windows.UI.Xaml.Controls 命名空间](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
 
 *模式*是修改控件或组合多个控件来创造新内容的一种诀窍。 例如，[母版/详细信息](master-details.md)模式是可以使用一种方法[SplitView](split-view.md)应用导航的控件。 同样，您可以自定义的模板[NavigationView](navigationview.md)控件实现选项卡模式。
 

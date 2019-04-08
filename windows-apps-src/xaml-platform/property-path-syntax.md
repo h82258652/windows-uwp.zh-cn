@@ -111,11 +111,11 @@ ms.locfileid: "57632362"
 
 ## <a name="related-topics"></a>相关主题
 
-* [深度中的数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [可形成演示图板动画](https://msdn.microsoft.com/library/windows/apps/mt187354)
 * [{Binding} 标记扩展](binding-markup-extension.md)
-* [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
-* [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)
+* [**propertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
+* [**绑定**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**绑定构造函数**](https://msdn.microsoft.com/library/windows/apps/br209825)
 * [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)
 

@@ -35,7 +35,7 @@ IA 阶段可以将顶点装配成多种不同的[基元类型](primitive-topolog
 
 IA 阶段从内存读取数据：来自用户填充缓冲区的基元数据（点、线和/或三角形）。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
 
 
 IA 阶段将数据装配成基元并附加系统生成的值，然后将其输出为被[顶点着色器 (VS) 阶段](vertex-shader-stage--vs-.md)及之后的其他管道阶段使用的基元。

@@ -36,7 +36,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 已对以下 Fluent 设计页面视觉对象更新和细微的更改：
 
 * [对齐方式，填充边距](../design/layout/alignment-margin-padding.md)
-* [Color](../design/style/color.md)
+* [颜色](../design/style/color.md)
 * [命令基础知识](../design/basics/commanding-basics.md)
 * [Windows 应用的 Fluent 设计](../design/fluent-design-system/index.md)
 * [应用程序设计简介](../design/basics/design-and-ui-intro.md)

@@ -25,7 +25,7 @@ ms.locfileid: "57648892"
 
 复选框用于选择或取消选择操作项目。 它可用于单个项目或用户可以选择的多个项目列表。 该控件具有三个选择状态：未选中、已选中和不确定。 在子选择集具有未选中和已选中两种状态时，使用不确定状态。
 
-> **重要的 Api**:[复选框类](https://msdn.microsoft.com/library/windows/apps/br209316)，[选中的事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)， [IsChecked 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
+> **重要的 API**：[复选框类](https://msdn.microsoft.com/library/windows/apps/br209316)，[选中的事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)， [IsChecked 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
 
 ![复选框状态示例](images/templates-checkbox-states-default.png)
 
@@ -58,7 +58,7 @@ ms.locfileid: "57648892"
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/CheckBox">打开此应用，了解 CheckBox 的实际应用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -189,7 +189,7 @@ CheckBox 控件继承自 [ToggleButton](https://msdn.microsoft.com/library/windo
 ------|----------|------
 已选中 | IsChecked | **true** 
 取消选中 | IsChecked | **false** 
-不确定 | IsChecked | **null** 
+不确定 | IsChecked | **为 null** 
 
 对于报告不确定状态的复选框，必须将 [IsThreeState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) 属性设置为 **true**。 
 

@@ -21,7 +21,7 @@ ms.locfileid: "57660502"
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**陀螺测试仪感应**](https://msdn.microsoft.com/library/windows/apps/BR225718)
 
-**Sample**
+**示例**
 
 -   有关更完整的实现，请参阅[陀螺测试仪示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/gyrometer)。
 

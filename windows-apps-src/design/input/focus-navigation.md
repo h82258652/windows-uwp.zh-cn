@@ -236,7 +236,7 @@ ms.locfileid: "57625822"
 
    *"Local"选项卡导航行为*
 
-- **Once**  
+- **一次**  
   容器和所有子元素接收一次焦点。 对于本示例，Tab 键顺序为 B1、B2、B7、B1（还演示了使用箭头键进行内部导航）。
 
    ![“一次”Tab 键导航行为](images/keyboard/tabnav-once.gif)

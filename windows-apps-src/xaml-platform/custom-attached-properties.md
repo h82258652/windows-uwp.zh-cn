@@ -48,7 +48,7 @@ ms.locfileid: "57638452"
 
 **Get**_PropertyName_ 访问器的签名必须如下所示。
 
-`public static` _valueType_ **Get**_PropertyName_ `(DependencyObject target)`
+`public static` _valueType_ **获取**_PropertyName_ `(DependencyObject target)`
 
 对于 Microsoft Visual Basic，应如下所示。
 
@@ -301,6 +301,6 @@ protected override Size ArrangeOverride(Size finalSize)
 ## <a name="related-topics"></a>相关主题
 
 * [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833)
-* [附加的属性概述](attached-properties-overview.md)
+* [附加属性概述](attached-properties-overview.md)
 * [自定义依赖属性](custom-dependency-properties.md)
 * [XAML概述](xaml-overview.md)

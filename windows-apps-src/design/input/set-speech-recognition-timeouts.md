@@ -20,7 +20,7 @@ ms.locfileid: "57627162"
 
 设置语音识别器忽略静音或无法识别的声音（干扰）并继续侦听语音输入的时长。
 
-> **重要的 Api**:[**超时**](https://msdn.microsoft.com/library/windows/apps/dn653253)， [ **SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
+> **重要的 API**：[**超时**](https://msdn.microsoft.com/library/windows/apps/dn653253)， [ **SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
 
 ## <a name="set-a-timeout"></a>设置超时
 

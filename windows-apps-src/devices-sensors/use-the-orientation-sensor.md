@@ -20,7 +20,7 @@ ms.locfileid: "57624092"
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)
--   [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)
+-   [**简单方向**](https://msdn.microsoft.com/library/windows/apps/BR206399)
 
 **示例**
 

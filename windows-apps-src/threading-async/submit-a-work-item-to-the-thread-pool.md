@@ -354,7 +354,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="related-topics"></a>相关主题
 
-* [提交到线程池工作项](submit-a-work-item-to-the-thread-pool.md)
-* [使用线程池的最佳实践](best-practices-for-using-the-thread-pool.md)
+* [向线程池提交工作项](submit-a-work-item-to-the-thread-pool.md)
+* [使用线程池的最佳做法](best-practices-for-using-the-thread-pool.md)
 * [使用计时器提交工作项](use-a-timer-to-submit-a-work-item.md)
  

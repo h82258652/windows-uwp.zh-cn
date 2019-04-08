@@ -28,7 +28,7 @@ ms.locfileid: "57611512"
 <td>
     <p>如果有<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序安装，请单击此处<a href="xamlcontrolsgallery:/item/NavigationView">打开应用，请参阅 NavigationView 中操作</a> </p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用程序 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -82,7 +82,7 @@ ms.locfileid: "57611512"
     <AppBarButton Icon="Play" Label="Play" Click="AppBarButton_Click"/>
 </CommandBar>
 ```
-参考：[CommandBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx) 
+参考：[命令栏](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx) 
 
 设计和操作方法：[应用程序栏和命令栏控件指南](app-bars.md)
 
@@ -117,7 +117,7 @@ ms.locfileid: "57611512"
                  NavigateUri="https://www.microsoft.com"/>
 ```
 
-参考：[HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
+参考：[超链接按钮](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
 
 设计和操作方法：[超链接控制指南](hyperlinks.md)
 
@@ -215,7 +215,7 @@ ms.locfileid: "57611512"
 <CalendarView/>
 ```
 
-参考：[CalendarView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx) 
+参考：[日历视图](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx) 
 
 设计和操作方法：[日历、 日期和时间控件](date-and-time.md) 
 
@@ -264,7 +264,7 @@ ms.locfileid: "57611512"
 </Flyout>
 ```
 
-参考：[Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
+参考：[浮出控件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
 
 设计和操作方法：[浮出控件](dialogs-and-flyouts/flyouts.md) 
 
@@ -335,7 +335,7 @@ ms.locfileid: "57611512"
 <InkCanvas/>
 ```
 
-参考：[InkCanvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.inkcanvas.aspx) 
+参考：[在 InkCanvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.inkcanvas.aspx) 
 
 ### <a name="shapes"></a>形状
 可以显示的各种保留模式图形对象，例如椭圆、矩形、直线、贝塞尔曲线等。
@@ -373,7 +373,7 @@ ms.locfileid: "57611512"
 </Border>
 ```
 
-参考：[Border](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.border.aspx)
+参考：[边框](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.border.aspx)
 
 ### <a name="canvas"></a>画布
 一个布局面板，支持相对于画布左上角的子元素的绝对位置。
@@ -389,7 +389,7 @@ ms.locfileid: "57611512"
 </Canvas>
 ```
 
-参考：[Canvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)
+参考：[画布](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)
  
 ### <a name="grid"></a>网格
 一个布局面板，支持以行和列方式排列子元素。
@@ -435,7 +435,7 @@ ms.locfileid: "57611512"
 ### <a name="scroll-bar"></a>滚动条
 请参阅“滚动查看器”。 （ScrollBar 是 ScrollViewer 的元素。 你通常不会将其用作独立控件。）
 
-参考：[ScrollBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)
+参考：[滚动条](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)
  
 ### <a name="scroll-viewer"></a>滚动查看器
 可让用户平移和缩放其内容的容器控件。
@@ -587,7 +587,7 @@ ms.locfileid: "57611512"
          Height="400" Width="800"/>
 ```
 
-参考：[WebView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 
+参考：[Web 视图](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 
 
 设计和操作方法：Web 视图指南 
 
@@ -635,7 +635,7 @@ ms.locfileid: "57611512"
 <ProgressBar x:Name="indeterminateProgressBar1" IsIndeterminate="True" Width="100"/>
 ```
 
-参考：[ProgressBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx) 
+参考：[进度栏](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx) 
 
 设计和操作方法：[进度控件指南](progress-controls.md) 
 
@@ -731,7 +731,7 @@ ms.locfileid: "57611512"
          TextChanged="TextBox_TextChanged"/>
 ```
 
-参考：[TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 
+参考：[文本框](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 
 
 设计和操作方法：[文本控件](text-controls.md)， [Text box 控件指南](text-box.md) 
 
@@ -749,7 +749,7 @@ ms.locfileid: "57611512"
           Checked="CheckBox_Checked"/>
 ```
 
-参考：[CheckBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx) 
+参考：[复选框](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx) 
 
 设计和操作方法：[复选框控制指南](checkbox.md) 
 
@@ -767,7 +767,7 @@ ms.locfileid: "57611512"
 </ComboBox>
 ```
 
-参考：[ComboBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.combobox.aspx) 
+参考：[组合框](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.combobox.aspx) 
 
 设计和操作方法：[列表](lists.md) 
 
@@ -785,7 +785,7 @@ ms.locfileid: "57611512"
 </ListBox>
 ```
 
-参考：[ListBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listbox.aspx) 
+参考：[列表框](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listbox.aspx) 
 
 设计和操作方法：[列表](lists.md) 
 
@@ -803,7 +803,7 @@ ms.locfileid: "57611512"
              Checked="RadioButton_Checked"/>
 ```
 
-参考：[RadioButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.radiobutton.aspx) 
+参考：[单选按钮](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.radiobutton.aspx) 
 
 设计和操作方法：[单选按钮控件指南](radio-button.md)
  
@@ -828,7 +828,7 @@ ms.locfileid: "57611512"
               Checked="ToggleButton_Checked"/>
 ```
 
-参考：[ToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx)
+参考：[切换按钮](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx)
 
 设计和操作方法：[切换控制指南](toggles.md) 
 

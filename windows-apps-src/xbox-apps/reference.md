@@ -23,19 +23,19 @@ ms.locfileid: "57656992"
 |[/api/app/packagemanager/upload](wdp-folder-upload.md)| 将整个文件夹上载到主机。 |
 |[/ext/app/sshpins](uwp-sshpins-api.md)| 远程清除所有受信任的 SSH 固定。 若要进行 Visual Studio UWP 开发，将需要重新进行固定配对。 |
 |[/ext/app/deployinfo](uwp-deployinfo-api.md)| 请求一个或多个已安装程序包的部署信息。 |
-|[/ext/fiddler](wdp-fiddler-api.md)| 启用和禁用 Fiddler 网络跟踪。 |
+|[ext/fiddler](wdp-fiddler-api.md)| 启用和禁用 Fiddler 网络跟踪。 |
 |[/ext/httpmonitor/sessions](wdp-httpMonitor-api.md)| 获取来自 Xbox 上侧重型应用的 HTTP 流量。 |
-|[/ext/networkcredential](uwp-networkcredentials-api.md)| 添加、删除或更新网络凭据。 |
-|[/ext/remoteinput](uwp-remoteinput-api.md)| 将键盘、鼠标或控制器输入远程发送到 Xbox。 |
+|[ext/networkcredential](uwp-networkcredentials-api.md)| 添加、删除或更新网络凭据。 |
+|[ext/remoteinput](uwp-remoteinput-api.md)| 将键盘、鼠标或控制器输入远程发送到 Xbox。 |
 |[/ext/remoteinput/controllers](uwp-remoteinput-controllers-api.md)| 获取连接的物理控制器的数量或关闭所有物理控制器。 |
-|[/ext/screenshot](wdp-media-capture-api.md)| 捕获主机当前显示的屏幕，格式为 PNG。 |
-|[/ext/settings](wdp-xboxsettings-api.md)| 访问 Xbox One 开发人员设置。 |
+|[ext/屏幕截图](wdp-media-capture-api.md)| 捕获主机当前显示的屏幕，格式为 PNG。 |
+|[ext/设置](wdp-xboxsettings-api.md)| 访问 Xbox One 开发人员设置。 |
 |[/ext/smb/developerfolder](wdp-smb-api.md)| 通过开发电脑上的“文件资源管理器”访问控制台上的开发人员文件夹。 |
-|[/ext/user](wdp-user-management.md)| 管理 Xbox One 主机上的用户。 |
+|[ext/用户](wdp-user-management.md)| 管理 Xbox One 主机上的用户。 |
 |[/ext/xbox/info](wdp-xboxinfo-api.md)| 提供有关 Xbox One 设备的信息。 |
 |[/ext/xboxlive/sandbox](wdp-sandbox-api.md)| 管理 Xbox Live 沙盒。 |
 
 ## <a name="see-also"></a>另请参阅
 
 - [在 Xbox One 上 UWP](index.md)
-- [Windows Device Portal](../debug-test-perf/device-portal.md)
+- [Windows 设备门户](../debug-test-perf/device-portal.md)

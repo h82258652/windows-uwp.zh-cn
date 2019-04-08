@@ -30,7 +30,7 @@ ms.locfileid: "57636362"
 
 已为每种列表模式提供了设计指南、功能和示例。
 
-> **重要的 Api**:[ListView 类](https://msdn.microsoft.com/library/windows/apps/br242878)， [GridView 类](https://msdn.microsoft.com/library/windows/apps/br242705)， [ComboBox 类](https://msdn.microsoft.com/library/windows/apps/br209348)
+> **重要的 API**：[ListView 类](https://msdn.microsoft.com/library/windows/apps/br242878)， [GridView 类](https://msdn.microsoft.com/library/windows/apps/br242705)， [ComboBox 类](https://msdn.microsoft.com/library/windows/apps/br209348)
 
 
 > <div id="main">
@@ -92,7 +92,7 @@ ms.locfileid: "57636362"
 <td align="left"><p>反转列表在底部添加新项目，例如在聊天应用中。 遵循本指南在应用中使用反转列表。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="pull-to-refresh.md">Pull-to-refresh</a></p></td>
+<td align="left"><p><a href="pull-to-refresh.md">下拉刷新</a></p></td>
 <td align="left"><p>下拉刷新模式允许用户使用触摸来下拉数据列表，以便检索更多数据。 使用本指南在列表视图中实现下拉刷新。</p></td>
 </tr>
 <tr class="even">
@@ -265,7 +265,7 @@ ms.locfileid: "57636362"
 - [大纲/细节](master-details.md)
 - [导航窗格](navigationview.md)
 - [语义式缩放](semantic-zoom.md)
-- [拖放功能](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 - [缩略图图像](../../files/thumbnails.md)
 
 **面向开发人员**

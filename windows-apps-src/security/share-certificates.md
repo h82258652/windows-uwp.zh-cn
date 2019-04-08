@@ -4,7 +4,7 @@ description: 要求用户名和密码组合以上的安全身份认证的通用 
 ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 1caa7361011b535a0dd63da53e0aba2eadff72be
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

@@ -17,7 +17,7 @@ ms.locfileid: "57630232"
 了解如何从库中收集文件及其属性的列表，然后在应用中使用这些属性。  
 
 必备条件 
-- **异步编程的通用 Windows 平台 (UWP) 应用** 您可以了解如何编写异步应用程序C#或 Visual Basic，请参阅[调用中的异步 ApiC#或 Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。     若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。 
+- **异步编程的通用 Windows 平台 (UWP) 应用** 您可以了解如何编写异步应用程序C#或 Visual Basic，请参阅[调用中的异步 ApiC#或 Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。 
 - **对库访问权限** 在这些示例中的代码需要**picturesLibrary**功能，但你的文件位置可能需要不同的功能或没有任何功能在所有。 若要了解详细信息，请参阅[文件访问权限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)。 
 - **简单文件枚举**  此示例使用[QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions)设置几个高级的枚举属性。 要详细了解如何只获取一个较小目录的简单文件列表，请参阅[枚举和查询文件和文件夹](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)。 
 

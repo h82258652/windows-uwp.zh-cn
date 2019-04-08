@@ -46,9 +46,9 @@ BC1、BC2 以及 BC3 格式相当于 Direct3D 9 DXTn 纹理压缩格式，并且
 
 | 纹理块压缩格式 | DXGI 格式                                                                           | 与 Direct3D 9 对应的格式                               | 每个 4x4 像素块的字节数 |
 |--------------------------|---------------------------------------------------------------------------------------|------------------------------------------------------------|---------------------------|
-| BC1                      | DXGI\_格式\_BC1\_UNORM、 DXGI\_格式\_BC1\_UNORM\_SRGB、 DXGI\_格式\_BC1\_TYPELESS | D3DFMT\_DXT1, FourCC="DXT1"                                | 8                         |
-| BC2                      | DXGI\_FORMAT\_BC2\_UNORM, DXGI\_FORMAT\_BC2\_UNORM\_SRGB, DXGI\_FORMAT\_BC2\_TYPELESS | D3DFMT\_DXT2\*, FourCC="DXT2", D3DFMT\_DXT3, FourCC="DXT3" | 16                        |
-| BC3                      | DXGI\_格式\_BC3\_UNORM、 DXGI\_格式\_BC3\_UNORM\_SRGB、 DXGI\_格式\_BC3\_TYPELESS | D3DFMT\_DXT4\*, FourCC="DXT4", D3DFMT\_DXT5, FourCC="DXT5" | 16                        |
+| BC1                      | DXGI\_格式\_BC1\_UNORM、 DXGI\_格式\_BC1\_UNORM\_SRGB、 DXGI\_格式\_BC1\_TYPELESS | D3DFMT\_DXT1、 FourCC ="DXT1"                                | 8                         |
+| BC2                      | DXGI\_格式\_BC2\_UNORM、 DXGI\_格式\_BC2\_UNORM\_SRGB、 DXGI\_格式\_BC2\_TYPELESS | D3DFMT\_DXT2\*，FourCC ="DXT2"，D3DFMT\_DXT3、 FourCC ="DXT3" | 16                        |
+| BC3                      | DXGI\_格式\_BC3\_UNORM、 DXGI\_格式\_BC3\_UNORM\_SRGB、 DXGI\_格式\_BC3\_TYPELESS | D3DFMT\_DXT4\*，FourCC ="DXT4"，D3DFMT\_DXT5、 FourCC ="DXT5" | 16                        |
 
  
 
@@ -59,8 +59,8 @@ BC1、BC2 以及 BC3 格式相当于 Direct3D 9 DXTn 纹理压缩格式，并且
 
 | 纹理块压缩格式 | DXGI 格式                                                                     | 与 Direct3D 9 对应的格式 | 每个 4x4 像素块的字节数 |
 |--------------------------|---------------------------------------------------------------------------------|------------------------------|---------------------------|
-| BC4                      | DXGI\_FORMAT\_BC4\_UNORM, DXGI\_FORMAT\_BC4\_SNORM, DXGI\_FORMAT\_BC4\_TYPELESS | FourCC="ATI1"                | 8                         |
-| BC5                      | DXGI\_FORMAT\_BC5\_UNORM, DXGI\_FORMAT\_BC5\_SNORM, DXGI\_FORMAT\_BC5\_TYPELESS | FourCC="ATI2"                | 16                        |
+| BC4                      | DXGI\_格式\_BC4\_UNORM、 DXGI\_格式\_BC4\_SNORM、 DXGI\_格式\_BC4\_TYPELESS | FourCC="ATI1"                | 8                         |
+| BC5                      | DXGI\_格式\_BC5\_UNORM、 DXGI\_格式\_BC5\_SNORM、 DXGI\_格式\_BC5\_TYPELESS | FourCC="ATI2"                | 16                        |
 
  
 
@@ -71,7 +71,7 @@ BC1、BC2 以及 BC3 格式相当于 Direct3D 9 DXTn 纹理压缩格式，并且
 
 | 纹理块压缩格式 | DXGI 格式                                                                      | 与 Direct3D 9 对应的格式 | 每个 4x4 像素块的字节数 |
 |--------------------------|----------------------------------------------------------------------------------|------------------------------|---------------------------|
-| BC6H                     | DXGI\_FORMAT\_BC6H\_UF16, DXGI\_FORMAT\_BC6H\_SF16, DXGI\_FORMAT\_BC6H\_TYPELESS | 不适用                          | 16                        |
+| BC6H                     | DXGI\_格式\_BC6H\_UF16、 DXGI\_格式\_BC6H\_SF16、 DXGI\_格式\_BC6H\_TYPELESS | 不适用                          | 16                        |
 
  
 
@@ -84,7 +84,7 @@ BC6H 格式可以针对每个 4x4 像素块选择不同的编码模式。 总共
 
 | 纹理块压缩格式 | DXGI 格式                                                                           | 与 Direct3D 9 对应的格式 | 每个 4x4 像素块的字节数 |
 |--------------------------|---------------------------------------------------------------------------------------|------------------------------|---------------------------|
-| BC7                      | DXGI\_FORMAT\_BC7\_UNORM, DXGI\_FORMAT\_BC7\_UNORM\_SRGB, DXGI\_FORMAT\_BC7\_TYPELESS | 不适用                          | 16                        |
+| BC7                      | DXGI\_格式\_BC7\_UNORM、 DXGI\_格式\_BC7\_UNORM\_SRGB、 DXGI\_格式\_BC7\_TYPELESS | 不适用                          | 16                        |
 
  
 
@@ -93,7 +93,7 @@ BC7 格式可以针对每个 4x4 像素块选择不同的编码模式。 总共�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[Appendices](appendix.md)
+[附录](appendix.md)
 
 [纹理](https://msdn.microsoft.com/library/windows/desktop/ff476902)
 

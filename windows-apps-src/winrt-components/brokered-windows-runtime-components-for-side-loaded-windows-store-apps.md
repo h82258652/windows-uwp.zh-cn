@@ -42,7 +42,7 @@ Windows 包含名为的新功能 *的 Windows 运行时组件中转旁加载应
 
 此功能中的桌面组件是作为此功能的一部分引入的新应用程序类型。 此桌面组件只能在 C 中写入\#和必须适用于 Windows 10 中面向.NET 4.6 或更高版本。 由于进程间通信格式包含 UWP 类型和类，因此该项目类型是面向 UWP 的 CLR 之间的混合类型，同时允许桌面组件调用 .NET 运行时类库的所有部分。 稍后将详细描述对 Visual Studio 项目的影响。 此混合配制允许在桌面组件上生成的应用程序间封送 UWP 类型，同时允许在桌面组件实现内部调用桌面 CLR 代码。
 
-**Contract**
+**协定**
 
 旁加载应用程序和桌面组件之间的合约根据 UWP 类型系统进行描述。 这涉及到声明一个或多个 C\#可以表示 UWP 的类。 请参阅 MSDN 主题[在 C 中创建 Windows 运行时组件\#和 Visual Basic](https://msdn.microsoft.com/library/br230301.aspx)为创建使用 C 的 Windows 运行时类的特定需求\#。
 
@@ -521,7 +521,7 @@ MyWinRTComponent.Proxies
 
 **C/c + + > 预处理器定义 > 添加**
 
-"WIN32;\_WINDOWS;REGISTER\_PROXY\_DLL"
+"WIN32;\_WINDOWS;注册\_代理\_DLL"
 
 **C/c + + > 预编译标头：选择"不使用预编译标头"**
 
@@ -529,7 +529,7 @@ MyWinRTComponent.Proxies
 
 **链接器 > 输入 > 附加依赖项：添加 rpcrt4.lib;runtimeobject.lib**
 
-**链接器 > Windows 元数据 > 生成 Windows 元数据：Select "No"**
+**链接器 > Windows 元数据 > 生成 Windows 元数据：选择"否"**
 
 **步骤 8:** 生成"MyWinRTProxy"项目。
 

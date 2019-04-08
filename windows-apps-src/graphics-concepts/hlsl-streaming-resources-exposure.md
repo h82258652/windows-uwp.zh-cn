@@ -33,7 +33,7 @@ feedback 参数是 **uint** 变量，可将其提供给内存访问查询内部 
 
 以下是 [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 的语法：
 
-**bool CheckAccessFullyMapped(in uint FeedbackVar);**
+**（在 uint FeedbackVar); bool CheckAccessFullyMapped**
 
 [**CheckAccessFullyMapped** ](https://msdn.microsoft.com/library/windows/desktop/dn292083)解释的值*FeedbackVar* ，如果正在访问的所有数据都已在资源映射; 否则为返回 true **CheckAccessFullyMapped**返回 false。
 

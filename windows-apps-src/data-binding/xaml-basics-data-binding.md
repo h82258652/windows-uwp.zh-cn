@@ -596,4 +596,4 @@ public string ImageTitle
 你应该具有本教程中需要的所有信息，但是如果你需要更多指导，则只需单击一下，即可获得数据绑定文档。 从这里开始：
 
 + [{x： 绑定} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
-+ [深度中的数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
++ [深入了解数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)

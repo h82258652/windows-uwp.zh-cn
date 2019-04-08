@@ -23,7 +23,7 @@ ms.locfileid: "57649612"
 > **需要周年更新**:必须为目标 SDK 14393 和运行生成 14393 或更高版本才能使用通知侦听器。
 
 
-> **重要的 Api**:[UserNotificationListener 类](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener)， [UserNotificationChangedTrigger 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
+> **重要的 API**：[UserNotificationListener 类](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener)， [UserNotificationChangedTrigger 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
 
 
 ## <a name="enable-the-listener-by-adding-the-user-notification-capability"></a>通过添加用户通知功能支持侦听器 

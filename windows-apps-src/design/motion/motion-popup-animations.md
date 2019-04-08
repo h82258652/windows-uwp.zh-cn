@@ -21,7 +21,7 @@ ms.locfileid: "57635172"
 
 使用弹出动画显示和隐藏浮出控件或自定义弹出 UI 元素的弹出 UI。 弹出元素是显示在应用内容上方的容器，并且将在用户点击或单击弹出元素外部时取消。
 
-> **重要的 Api**:[**PopInThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210383)， [ **PopupThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/hh969172)
+> **重要的 API**：[**PopInThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210383)， [ **PopupThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/hh969172)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项

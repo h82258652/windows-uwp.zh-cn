@@ -14,7 +14,7 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dcf0176e20e498f8c6744a542010b5197689b8a
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57639932"
@@ -25,7 +25,7 @@ ms.locfileid: "57639932"
 
 **ListView** 和 **GridView** 控件用于管理其项目的排列方式（水平、垂直、环绕等）以及用户与项目的交互方式，而不是各个项目在屏幕上的显示方式。 项目可视化效果由项目容器管理。 向列表视图添加项目时，它们会自动放置在容器中。 用于 ListView 的默认项目容器为 [ListViewItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listviewitem.aspx)；对于 GridView，其项目容器为 [GridViewItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridviewitem.aspx)。
 
-> **重要的 Api**:[ListView 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)， [GridView 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)， [ItemTemplate 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)， [ItemContainerStyle 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx)
+> **重要的 API**：[ListView 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)， [GridView 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)， [ItemTemplate 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)， [ItemContainerStyle 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx)
 
 
 > [!NOTE]
@@ -338,7 +338,7 @@ namespace ColorsListApp
 1. 打开“文档大纲”窗格（“视图”&gt;“其他窗口”&gt;“文档大纲”）。
 2. 选择要修改的列表或网格元素。 在此示例中，修改 `colorsGridView` 元素。
 3. 右键单击，然后依次选择“编辑其他模板”&gt;“编辑生成的项目容器 (ItemContainerStyle)”&gt;“编辑副本”。
-    ![Visual Studio editor](images/listview-itemcontainerstyle-vs.png)
+    ![Visual Studio 编辑器](images/listview-itemcontainerstyle-vs.png)
 4. 在“创建样式资源”对话框中，输入样式的名称。 在此示例中，使用 `colorsGridViewItemStyle`。
     ![Visual Studio Create Style Resource dialog(images/listview-style-resource-vs.png)
 
@@ -430,13 +430,13 @@ SelectionMode：&nbsp;&nbsp; | 单选/扩展 | 多选
 
 状态/画笔名称 | 内联样式 | 覆盖样式
 ------------|--------------|--------------
-<b>正常</b><ul><li><b>CheckBoxBrush="Red"</b></li></ul> | ![内联项目选择常规](images/listview-item-normal.png) | ![覆盖项目选择常规](images/gridview-item-normal.png)
-<b>PointerOver</b><ul><li><b>PointerOverForeground="DarkOrange"</b></li><li><b>PointerOverBackground="MistyRose"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![内联项目选择将指针悬停在上方](images/listview-item-pointerover.png) | ![覆盖项目选择将指针悬停在上方](images/gridview-item-pointerover.png)
-<b>按下</b><ul><li><b>PressedBackground="LightCyan"</b></li><li>PointerOverForeground="DarkOrange"</li><li>CheckBoxBrush="Red"</li></ul> | ![内联项目选择已按下](images/listview-item-pressed.png) | ![覆盖项目选择已按下](images/gridview-item-pressed.png)
-<b>选择</b><ul><li><b>SelectedForeground="Navy"</b></li><li><b>SelectedBackground="Khaki"</b></li><li><b>CheckBrush="Green"</b></li><li>CheckBoxBrush="Red"（仅限内联）</li></ul> | ![内联项目选择已选中](images/listview-item-selected.png) | ![覆盖项目选择已选中](images/gridview-item-selected.png)
-<b>PointerOverSelected</b><ul><li><b>SelectedPointerOverBackground="Lavender"</b></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki"（仅限覆盖）</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red"（仅限内联）</li></ul> | ![内联项目选择将指针悬停在上方且已选中](images/listview-item-pointeroverselected.png) | ![覆盖项目选择将指针悬停在上方且已选中](images/gridview-item-pointeroverselected.png)
-<b>PressedSelected</b><ul><li><b>SelectedPressedBackground="MediumTurquoise"</b></li></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki"（仅限覆盖）</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red"（仅限内联）</li></ul> | ![内联项目选择已按下且已选中](images/listview-item-pressedselected.png) | ![覆盖项目选择已按下且已选中](images/gridview-item-pressedselected.png)
-<b>已设定焦点</b><ul><li><b>FocusBorderBrush="Crimson"</b></li><li><b>FocusSecondaryBorderBrush="Gold"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![内联项目选择已对焦](images/listview-item-focused.png) | ![覆盖项目选择已对焦](images/gridview-item-focused.png)
+<b>正常</b><ul><li><b>CheckBoxBrush ="Red"</b></li></ul> | ![内联项目选择常规](images/listview-item-normal.png) | ![覆盖项目选择常规](images/gridview-item-normal.png)
+<b>PointerOver</b><ul><li><b>PointerOverForeground ="DarkOrange"</b></li><li><b>PointerOverBackground ="粉红玫瑰"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![内联项目选择将指针悬停在上方](images/listview-item-pointerover.png) | ![覆盖项目选择将指针悬停在上方](images/gridview-item-pointerover.png)
+<b>按下</b><ul><li><b>PressedBackground ="浅青色"</b></li><li>PointerOverForeground="DarkOrange"</li><li>CheckBoxBrush="Red"</li></ul> | ![内联项目选择已按下](images/listview-item-pressed.png) | ![覆盖项目选择已按下](images/gridview-item-pressed.png)
+<b>选择</b><ul><li><b>SelectedForeground ="海军"</b></li><li><b>SelectedBackground ="Khaki"</b></li><li><b>CheckBrush ="Green"</b></li><li>CheckBoxBrush="Red"（仅限内联）</li></ul> | ![内联项目选择已选中](images/listview-item-selected.png) | ![覆盖项目选择已选中](images/gridview-item-selected.png)
+<b>PointerOverSelected</b><ul><li><b>SelectedPointerOverBackground ="淡紫色"</b></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki"（仅限覆盖）</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red"（仅限内联）</li></ul> | ![内联项目选择将指针悬停在上方且已选中](images/listview-item-pointeroverselected.png) | ![覆盖项目选择将指针悬停在上方且已选中](images/gridview-item-pointeroverselected.png)
+<b>PressedSelected</b><ul><li><b>SelectedPressedBackground ="MediumTurquoise"</b></li></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki"（仅限覆盖）</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red"（仅限内联）</li></ul> | ![内联项目选择已按下且已选中](images/listview-item-pressedselected.png) | ![覆盖项目选择已按下且已选中](images/gridview-item-pressedselected.png)
+<b>已设定焦点</b><ul><li><b>FocusBorderBrush ="Crimson"</b></li><li><b>FocusSecondaryBorderBrush ="黄金"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![内联项目选择已对焦](images/listview-item-focused.png) | ![覆盖项目选择已对焦](images/gridview-item-focused.png)
 
 ListViewItemPresenter 具有数据占位符和拖动状态的其他画笔属性。 如果要在列表视图中使用增量加载或拖放，应考虑是否还需要修改这些附加画笔属性。 有关可以修改的属性完整列表，请参阅 ListViewItemPresenter 类。 
 

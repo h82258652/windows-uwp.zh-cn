@@ -43,7 +43,7 @@ ms.locfileid: "57618502"
 | *propertyPath* | 一个指定绑定的属性路径的字符串。 下面的[属性路径](#property-path)部分中提供了更多信息。 |
 | *bindingProperties* | *propName*=*值*\[， *propName*=*值*\]*<br/>使用一个名称/值对语法指定的一个或多个绑定属性。 |
 | *propName* | 要在 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 对象上设置的属性的字符串名称。 例如，“Converter”。 |
-| *value* | 要将属性设置为的值。 参数的语法取决于下面的[可使用 {Binding} 设置的 Binding 类的属性](#properties-of-the-binding-class-that-can-be-set-with-binding)部分的属性。 |
+| *值* | 要将属性设置为的值。 参数的语法取决于下面的[可使用 {Binding} 设置的 Binding 类的属性](#properties-of-the-binding-class-that-can-be-set-with-binding)部分的属性。 |
 
 ## <a name="property-path"></a>属性路径
 
@@ -68,15 +68,15 @@ ms.locfileid: "57618502"
 
 | 属性 | 描述 |
 |----------|-------------|
-| [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) | 请参阅上面的[属性路径](#property-path)部分。 |
-| [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) | 指定绑定引擎所调用的转换器对象。 可使用 [{StaticResource} 标记扩展](staticresource-markup-extension.md)在标记中设置转换器，以从资源字典引用该对象。 |
+| [**路径**](https://msdn.microsoft.com/library/windows/apps/br209830) | 请参阅上面的[属性路径](#property-path)部分。 |
+| [**转换器**](https://msdn.microsoft.com/library/windows/apps/br209826) | 指定绑定引擎所调用的转换器对象。 可使用 [{StaticResource} 标记扩展](staticresource-markup-extension.md)在标记中设置转换器，以从资源字典引用该对象。 |
 | [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) | 指定转换器要使用的区域性。 (如果要设置[**转换器**](https://msdn.microsoft.com/library/windows/apps/br209826)。)作为基于标准的标识符设置的区域性。 有关详细信息，请参阅 [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) |
-| [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) | 指定可在转换器逻辑中使用的转换器参数。 (如果要设置[**转换器**](https://msdn.microsoft.com/library/windows/apps/br209826)。)多数转换器使用从传递的值将转换，获取所需的所有信息的简单逻辑，而无须**ConverterParameter**值。 **ConverterParameter** 参数适用于具有条件逻辑的更复杂转换器实现，这些逻辑可切断传入 **ConverterParameter** 的内容。 你可以编写一个转换器，使用除字符串之外的值，但这种情况并不常见，请参阅 **ConverterParameter** 中的备注获取详细信息。 |
-| [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) | 通过引用同一个 XAML 构造中的另一个元素（具有 **Name** 属性或 [x:Name 属性](x-name-attribute.md)）来指定数据源。 这种方法通常用于共享相关值，或者使用一个 UI 元素的子属性为另一个元素提供特定值，例如在 XAML 控件模板中。 |
-| [**FallbackValue**](https://msdn.microsoft.com/library/windows/apps/dn279345) | 指定要在无法解析源或路径时显示的值。 |
-| [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209829) | 指定绑定模式中，为下列值之一："一次性"、"单向"或"双向"。 这些模式对应于 [**BindingMode**](https://msdn.microsoft.com/library/windows/apps/br209822) 枚举的常量名称。 默认值是“OneWay”。 请注意，该值不是 **{x:Bind}** 的默认值，而是“OneTime”。 | 
+| [**converterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) | 指定可在转换器逻辑中使用的转换器参数。 (如果要设置[**转换器**](https://msdn.microsoft.com/library/windows/apps/br209826)。)多数转换器使用从传递的值将转换，获取所需的所有信息的简单逻辑，而无须**ConverterParameter**值。 **ConverterParameter** 参数适用于具有条件逻辑的更复杂转换器实现，这些逻辑可切断传入 **ConverterParameter** 的内容。 你可以编写一个转换器，使用除字符串之外的值，但这种情况并不常见，请参阅 **ConverterParameter** 中的备注获取详细信息。 |
+| [**elementName**](https://msdn.microsoft.com/library/windows/apps/br209828) | 通过引用同一个 XAML 构造中的另一个元素（具有 **Name** 属性或 [x:Name 属性](x-name-attribute.md)）来指定数据源。 这种方法通常用于共享相关值，或者使用一个 UI 元素的子属性为另一个元素提供特定值，例如在 XAML 控件模板中。 |
+| [**传输**](https://msdn.microsoft.com/library/windows/apps/dn279345) | 指定要在无法解析源或路径时显示的值。 |
+| [**模式**](https://msdn.microsoft.com/library/windows/apps/br209829) | 指定绑定模式中，为下列值之一："一次性"、"单向"或"双向"。 这些模式对应于 [**BindingMode**](https://msdn.microsoft.com/library/windows/apps/br209822) 枚举的常量名称。 默认值是“OneWay”。 请注意，该值不是 **{x:Bind}** 的默认值，而是“OneTime”。 | 
 | [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) | 通过描述绑定源的位置相对于绑定目标的位置指定数据源。 这在 XAML 控件模板内的绑定中最常用。 设置 [{RelativeSource} 标记扩展](relativesource-markup-extension.md)。 |
-| [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) | 指定对象数据源。 在 **Binding** 标记扩展中，[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) 属性需要一个对象引用，例如 [{StaticResource} 标记扩展](staticresource-markup-extension.md)引用。 如果未指定此属性，则操作数据上下文指定来源。 更加常见的做法是不在单个绑定中指定 Source 值，而是依赖于共享的 **DataContext** 进行多个绑定。 有关详细信息，请参阅 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.datacontext.aspx) 或[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。 |
+| [**源**](https://msdn.microsoft.com/library/windows/apps/br209832) | 指定对象数据源。 在 **Binding** 标记扩展中，[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) 属性需要一个对象引用，例如 [{StaticResource} 标记扩展](staticresource-markup-extension.md)引用。 如果未指定此属性，则操作数据上下文指定来源。 更加常见的做法是不在单个绑定中指定 Source 值，而是依赖于共享的 **DataContext** 进行多个绑定。 有关详细信息，请参阅 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.datacontext.aspx) 或[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。 |
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | 指定要在源值解析但并非显式 **null** 时显示的值。 |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | 指定绑定源更新的定时。 如果没有指定，则默认值为 **Default**。 |
 

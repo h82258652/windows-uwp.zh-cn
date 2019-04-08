@@ -7,7 +7,7 @@ keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, �
 ms.localizationpriority: medium
 ms.openlocfilehash: 488516f94a53eb26b4a9e2f49927b8399c62bff5
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57645142"
@@ -258,13 +258,13 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 ## <a name="important-apis"></a>重要的 API
 * [QueryInterface 接口](https://msdn.microsoft.com/library/windows/desktop/ms682521)
 * [RoActivateInstance 函数](https://msdn.microsoft.com/library/br224646)
-* [Windows::Foundation::Uri class](/uwp/api/windows.foundation.uri)
+* [Windows::Foundation::Uri 类](/uwp/api/windows.foundation.uri)
 * [winrt::get_activation_factory 函数模板](/uwp/cpp-ref-for-winrt/get-activation-factory)
 * [winrt::make 函数模板](/uwp/cpp-ref-for-winrt/make)
-* [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [winrt::Windows::Foundation::IUnknown 结构](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>相关主题
 * [创作事件在 C + + WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
-* [互操作之间 C + + WinRT 和 ABI](interop-winrt-abi.md)
-* [介绍 C + + WinRT](intro-to-using-cpp-with-winrt.md)
-* [XAML 控件;将绑定到 C + + WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [实现 C++/WinRT 与 ABI 之间的互操作](interop-winrt-abi.md)
+* [C++/WinRT 简介](intro-to-using-cpp-with-winrt.md)
+* [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

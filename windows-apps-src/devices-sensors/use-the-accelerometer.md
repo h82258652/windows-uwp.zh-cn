@@ -19,9 +19,9 @@ ms.locfileid: "57623702"
 **重要的 Api**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)
+-   [**加速感应器**](https://msdn.microsoft.com/library/windows/apps/BR225687)
 
-**Sample**
+**示例**
 
 -   有关更完整的实现，请参阅[加速计示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer)。
 

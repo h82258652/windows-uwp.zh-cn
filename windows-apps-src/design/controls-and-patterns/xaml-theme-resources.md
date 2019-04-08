@@ -338,7 +338,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ### <a name="baserichtextblockstyle"></a>BaseRichTextBlockStyle
 
-**TargetType**:[RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565)
+**TargetType**:[按](https://msdn.microsoft.com/library/windows/apps/br227565)
 
 为所有其他 [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) 容器样式提供常用属性。
 

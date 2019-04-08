@@ -19,7 +19,7 @@ ms.locfileid: "57633742"
 
 使用 Windows Ink 内置的识别功能将笔划墨迹转换为文本和形状。
 
-> **重要的 Api**:[**在 InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)， [ **Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
+> **重要的 API**：[**在 InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)， [ **Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 
 ## <a name="free-form-recognition-with-ink-analysis"></a>带有墨迹分析的自由格式识别

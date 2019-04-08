@@ -22,7 +22,7 @@ ms.locfileid: "57649052"
 
 本文列出了由 Segoe MDL2 Assets 字体提供的图标。 
 
-> **重要的 Api**:[**符号枚举**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)， [ **FontIcon 类**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+> **重要的 API**：[**符号枚举**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)， [ **FontIcon 类**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## <a name="about-segoe-mdl2-assets"></a>关于 Segoe MDL2 Assets
 
@@ -270,7 +270,7 @@ ms.locfileid: "57649052"
  </tr>
 <tr><td><img src="images/segoe-mdl/E731.png" width="32" height="32" alt="EMI" /></td>
   <td>E731</td>
-  <td>EMI</td>
+  <td>电磁干扰</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E734.png" width="32" height="32" alt="FavoriteStar" /></td>
   <td>E734</td>

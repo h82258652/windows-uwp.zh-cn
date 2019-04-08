@@ -25,7 +25,7 @@ ms.locfileid: "57620552"
 * [__初始化__](#initialize-the-view-provider)
 * [__SetWindow__](#configure-the-window-and-display-behaviors)
 * [__负载__](#load-method-of-the-view-provider)
-* [__Run__](#run-method-of-the-view-provider)
+* [__运行__](#run-method-of-the-view-provider)
 * [__取消初始化__](#uninitialize-method-of-the-view-provider)
 
 __Initialize__ 方法在应用程序启动时调用。 __SetWindow__ 方法在 __Initialize__ 之后调用。 然后调用 __Load__ 方法。 __Run__ 方法在游戏运行时调用。 当游戏结束时，调用 __Uninitialize__ 方法。 有关详细信息，请参阅 [__IFrameworkView__ API 参考](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview)。 

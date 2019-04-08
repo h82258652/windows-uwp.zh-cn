@@ -36,9 +36,9 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 | 选项 | 方法 | 描述 |
 |--------|--------|-------------|
 | 默认启动 | [**LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | 使用默认处理程序启动指定的文件。 |
-| 打开方式启动 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 启动指定的文件，该文件让用户通过“打开方式”对话框选取处理程序。 |
-| 使用推荐的应用反馈启动 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 使用默认处理程序启动指定的文件。 如果系统上未安装处理程序，则向用户推荐应用商店中的应用。 |
-| 以所需的其余视图启动 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows-only) | 使用默认处理程序启动指定的文件。 指定首选项以便在启动后停留于屏幕上，然后请求特定窗口大小。 [**LauncherOptions.DesiredRemainingView** ](https://msdn.microsoft.com/library/windows/apps/dn298314)不支持在移动设备系列上。 |
+| 打开方式启动 | [**LaunchFileAsync （IStorageFile，LauncherOptions）**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 启动指定的文件，该文件让用户通过“打开方式”对话框选取处理程序。 |
+| 使用推荐的应用反馈启动 | [**LaunchFileAsync （IStorageFile，LauncherOptions）**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 使用默认处理程序启动指定的文件。 如果系统上未安装处理程序，则向用户推荐应用商店中的应用。 |
+| 以所需的其余视图启动 | [**（IStorageFile，LauncherOptions） LaunchFileAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701465) （仅限 Windows） | 使用默认处理程序启动指定的文件。 指定首选项以便在启动后停留于屏幕上，然后请求特定窗口大小。 [**LauncherOptions.DesiredRemainingView** ](https://msdn.microsoft.com/library/windows/apps/dn298314)不支持在移动设备系列上。 |
 
 ### <a name="default-launch"></a>默认启动
 
@@ -554,7 +554,7 @@ void MainPage::DefaultLaunch()
 
 ### <a name="tasks"></a>任务
 
-* [启动的 uri，默认的应用](launch-default-app.md)
+* [启动 URI 的默认应用](launch-default-app.md)
 * [处理文件激活](handle-file-activation.md)
 
 ### <a name="guidelines"></a>指南

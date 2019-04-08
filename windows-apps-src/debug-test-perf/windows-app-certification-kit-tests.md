@@ -45,7 +45,7 @@ Windows 应用认证工具包调用 [**IApplicationActivationManager::ActivateAp
 如果你的应用无法启动并且你的测试平台满足 [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) 的先决条件，那么你可以通过查看激活事件日志来解决此问题。 若要在事件日志中找到这些条目，请执行以下操作：
 
 1.  打开 eventvwr.exe 并导航到应用程序和服务日志\\Microsoft\\Windows\\Immersive Shell 文件夹。
-2.  筛选视图以显示事件 Id:5900-6000.
+2.  筛选视图以显示事件 Id:5900-6000。
 3.  查看日志条目，了解可能说明了应用为何未启动的信息。
 
 排除文件的问题，识别并修复问题。 重新构建和重新测试应用。 你还可以检查 Windows App 认证工具包日志文件夹中是否已生成转储文件，该文件可用于调试你的应用。

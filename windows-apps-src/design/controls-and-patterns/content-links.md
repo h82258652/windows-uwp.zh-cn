@@ -23,7 +23,7 @@ ms.locfileid: "57648532"
 
 当用户在 RichEditBox 中对某个条目使用与号 (@) 前缀时，它们会显示人员列表和/或与相应条目匹配的位置建议。 例如，当用户选取一个位置时，该位置的 ContentLink 就会插入文本中。 当用户从 RichEditBox 调用内容链接时，就会显示一个浮出控件，该控件具有地图和与位置有关的其他信息。
 
-> **重要的 Api**:[ContentLink 类](/uwp/api/windows.ui.xaml.documents.contentlink)， [ContentLinkInfo 类](/uwp/api/windows.ui.text.contentlinkinfo)， [RichEditTextRange 类](/uwp/api/windows.ui.text.richedittextrange)
+> **重要的 API**：[ContentLink 类](/uwp/api/windows.ui.xaml.documents.contentlink)， [ContentLinkInfo 类](/uwp/api/windows.ui.text.contentlinkinfo)， [RichEditTextRange 类](/uwp/api/windows.ui.text.richedittextrange)
 
 > [!NOTE]
 > 有关内容的链接 Api 分布在以下命名空间：Windows.UI.Xaml.Controls、 Windows.UI.Xaml.Documents 和 Windows.UI.Text。

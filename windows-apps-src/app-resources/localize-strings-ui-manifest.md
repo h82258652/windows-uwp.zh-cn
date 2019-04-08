@@ -288,7 +288,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 
 ## <a name="related-topics"></a>相关主题
 * [移植的 XAML 和 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
-* [x:Uid directive](../xaml-platform/x-uid-directive.md)
+* [X:uid 指令](../xaml-platform/x-uid-directive.md)
 * [附加的属性](../xaml-platform/attached-properties-overview.md)
 * [可本地化的清单项目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
 * [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)

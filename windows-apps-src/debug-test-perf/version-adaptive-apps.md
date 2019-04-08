@@ -55,7 +55,7 @@ ms.locfileid: "57631652"
 | 周年更新 | 1607 | 14393 |
 | Creators 更新 | 1703 | 15063 |
 | 秋季创意者更新 | 1709 | 16299 |
-| 2018 年 4 月更新 | 1803 | 17134 |
+| 2018 年 4 月更新 | 1803 | 版本 17134 |
 | 2018 年 10 月更新 | 1809 | 17763 |
 
 可以从 [Windows SDK 和仿真器存档](https://developer.microsoft.com/downloads/sdk-archive)下载任何发布的 SDK 版本。 可以从 [Windows 预览体验成员](https://insider.windows.com/Home/BuildWithWindows)站点的开发人员部分下载最新的 Windows Insider Preview SDK。

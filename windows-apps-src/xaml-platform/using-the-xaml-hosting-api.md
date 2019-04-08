@@ -35,7 +35,7 @@ ms.locfileid: "57618832"
 
 使用在代码中托管 API UWP XAML 的方式取决于您的应用程序类型，应用程序和其他因素的设计。 为了演示了如何使用此 API 的完整应用程序上下文中，此篇文章介绍了代码从下面的示例。
 
-### <a name="c-win32"></a>C++ Win32
+### <a name="c-win32"></a>C + + Win32
 
 有 GitHub 上的几个示例演示如何使用 c + + Win32 应用程序中托管 API UWP XAML:
 

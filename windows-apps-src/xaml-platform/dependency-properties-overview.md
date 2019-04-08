@@ -203,8 +203,8 @@ Windows 10 引入了 [**RegisterPropertyChangedCallback**](https://msdn.microsof
 ### <a name="conceptual-material"></a>概念材料
 
 - [自定义依赖属性](custom-dependency-properties.md)
-- [附加的属性概述](attached-properties-overview.md)
-- [深度中的数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
+- [附加属性概述](attached-properties-overview.md)
+- [深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
 - [可形成演示图板动画](https://msdn.microsoft.com/library/windows/apps/mt187354)
 - [创建 Windows 运行时组件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 - [XAML 用户和自定义控件示例](https://go.microsoft.com/fwlink/p/?linkid=238581)

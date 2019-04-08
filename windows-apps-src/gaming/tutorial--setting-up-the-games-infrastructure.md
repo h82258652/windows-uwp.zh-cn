@@ -8,7 +8,7 @@ keywords: windows 10, uwp, 游戏, 设置, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57608702"
@@ -38,7 +38,7 @@ Visual Studio 模板是一个设置和代码文件集合，专用于基于首选
 用于本教程的模板是标题为 **DirectX 11 应用(通用 Windows)** 的模板。 
 
 在 Visual Studio 中创建 DirectX 11 游戏项目的步骤：
-1.  选择**文件...**&gt; **新**&gt; **项目...** 
+1.  选择**文件...**&gt; **新**&gt; **项目...**
 2.  在左窗格中，选择**已安装** &gt; **模板** &gt; **Visual c + +** &gt; **Windows 通用**
 3.  在中心窗格中，选择 **DirectX 11 应用（通用 Windows）**
 4.  为你的游戏项目命名，并单击“确定”。

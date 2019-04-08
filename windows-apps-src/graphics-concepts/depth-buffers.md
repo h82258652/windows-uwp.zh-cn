@@ -50,7 +50,7 @@ ms.locfileid: "57637022"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[深度和模具缓冲区](depth-and-stencil-buffers.md)
+[深度和模板缓冲区](depth-and-stencil-buffers.md)
 
  
 

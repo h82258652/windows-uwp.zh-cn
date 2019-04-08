@@ -8,7 +8,7 @@ keywords: windows 10, uwp, 许可证, 应用, 加载项, 应用内购买, IAP, W
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d7c832907af17436d588f0fac6c5039d4affa82
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57641912"
@@ -48,7 +48,7 @@ ms.locfileid: "57641912"
 
 ## <a name="related-topics"></a>相关主题
 
-* [应用内购买和试用版](in-app-purchases-and-trials.md)
+* [应用内购买和试用](in-app-purchases-and-trials.md)
 * [获取产品信息的应用程序和外接程序](get-product-info-for-apps-and-add-ons.md)
 * [启用应用内购买的应用程序和外接程序](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [启用可使用外接程序购买](enable-consumable-add-on-purchases.md)

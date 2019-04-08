@@ -68,9 +68,9 @@ ms.locfileid: "57620362"
 
 | 字段名称                    | 注释                                       |
 |-------------------------------|---------------------------------------------|
-| [**Title**](create-add-on-store-listings.md#title)                    | 必填（限 100 个字符）           |
+| [**标题**](create-add-on-store-listings.md#title)                    | 必填（限 100 个字符）           |
 | [**说明**](create-add-on-store-listings.md#description)       | 选填（限 200 个字符）            |
-| [**Icon**](create-add-on-store-listings.md#icon)                    | 可选（.png、300x300 像素）            |
+| [**图标**](create-add-on-store-listings.md#icon)                    | 可选（.png、300x300 像素）            |
 
 
 当你完成输入此信息时，请单击“提交到应用商店”。 在大多数情况下，认证过程需要大约一个小时。 然后，你的加载项将发布到应用商店并且可供客户购买。

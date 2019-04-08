@@ -8,7 +8,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a64a52005221c418ea82e8fffa9ecf94b6d1bef3
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57661722"
@@ -57,7 +57,7 @@ ms.locfileid: "57661722"
 
 ## <a name="related-topics"></a>相关主题
 
-* [应用内购买和试用版](in-app-purchases-and-trials.md)
+* [应用内购买和试用](in-app-purchases-and-trials.md)
 * [获取产品信息的应用程序和外接程序](get-product-info-for-apps-and-add-ons.md)
 * [获取应用程序和外接程序的许可证信息](get-license-info-for-apps-and-add-ons.md)
 * [启用可使用外接程序购买](enable-consumable-add-on-purchases.md)

@@ -269,6 +269,6 @@ private async void RegisterBackgroundTask(object sender, RoutedEventArgs e) {
 你的应用现在应该能够注册访问处理后台任务，并且每当设备记录与访问相关的状态变化时，应该会激活此任务。 你将需要在后台任务类中填写逻辑，以确定如何处理此状态变化信息。
 
 ## <a name="related-topics"></a>相关主题
-* [创建并注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
-* [获取用户的位置](get-location.md)
+* [创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+* [获取用户位置](get-location.md)
 * [Windows.Devices.Geolocation 命名空间](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)
