@@ -7,12 +7,12 @@ keywords: 设备, 数字化器, 输入, 交互, 注入
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: de3f0b1377d4f4209dc012ff56adb2de9c68625f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 2699917beed9330dd2044704f19b3c25256c3ca8
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602322"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343236"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>通过输入式注入模拟用户输入
 
@@ -169,11 +169,11 @@ ms.locfileid: "57602322"
     
     在此代码段中，我们声明全局对象并声明鼠标输入区域内指针事件的侦听器 ([AddHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler))，其在按钮点击事件中可能被标记为已处理。
 
-    [InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector) 对象表示用于发送输入数据的虚拟输入设备。
+    [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) 对象表示用于发送输入数据的虚拟输入设备。
 
     在 `ContainerInput_PointerPressed` 处理程序中，我们调用触控注入函数。
 
-    在 `ContainerInput_PointerReleased` 处理程序中，我们调用 UninitializeTouchInjection 来关闭 [InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector) 对象。
+    在 `ContainerInput_PointerReleased` 处理程序中，我们调用 UninitializeTouchInjection 来关闭 [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) 对象。
 
     ```csharp
     public sealed partial class MainPage : Page
@@ -250,7 +250,7 @@ ms.locfileid: "57602322"
     ```
 3. 下面介绍触控输入注入函数。
 
-    首先，我们调用 [TryCreate](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate) 来实例化 [InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector) 对象。
+    首先，我们调用 [TryCreate](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate) 来实例化 [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) 对象。
 
     然后，我们通过 `Default` 的 [InjectedInputVisualizationMode](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputvisualizationmode) 调用 [InitializeTouchInjection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.initializetouchinjection)。
 
@@ -360,7 +360,7 @@ ms.locfileid: "57602322"
 
 4. 最后，我们处理输入式注入区域中的所有按钮[点击](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase)路由事件，并使用所点击按钮的名称更新 UI。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 ### <a name="topic-samples"></a>主题示例
 

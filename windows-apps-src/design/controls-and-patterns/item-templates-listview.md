@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 397c1d3a1502eaa352bf66b1bbf24e3fa39beff2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0a772c0ec6aad2c0d6a099b54eb4c6faa413cc7b
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593052"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913937"
 ---
 # <a name="item-templates-for-list-view"></a>列表视图项模板
 
@@ -19,13 +19,13 @@ ms.locfileid: "57593052"
 若要演示数据绑定，这些模板将绑定**ListViewItems**到示例录制类从[数据绑定概述](../../data-binding/data-binding-quickstart.md)。
 
 > [!NOTE] 
-目前，如果一个 **DataTemplate** 包含多个控件（例如多个 **TextBlock**），屏幕阅读器的默认可访问名称来自于项上的 .ToString()。 为方便起见，可以在 **DataTemplate** 的根元素上设置 [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties)。 有关辅助功能的详细信息，请参阅[辅助功能概述](../accessibility/accessibility-overview.md)。
+> 目前，如果一个 **DataTemplate** 包含多个控件（例如多个 **TextBlock**），屏幕阅读器的默认可访问名称来自于项上的 .ToString()。 为方便起见，可以在 **DataTemplate** 的根元素上设置 [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties)。 有关辅助功能的详细信息，请参阅[辅助功能概述](../accessibility/accessibility-overview.md)。
 
 ## <a name="single-line-list-item"></a>单行列表项
 使用此模板以显示带单行文本的图像的列表。
 
-![单个行的列表项示例](images/listitems/singlelineexample.png)
-![单个行列表项](images/listitems/singlelineicon.png)
+![单行列表项示例](images/listitems/singlelineexample.png)
+![单行列表项](images/listitems/singlelineicon.png)
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
     <ListView.ItemTemplate>
@@ -42,8 +42,8 @@ ms.locfileid: "57593052"
 ## <a name="double-line-list-item"></a>双行列表项 
 使用此模板以显示带两行文本的图像的列表。
 
-![图标的示例使用两根线条列表项](images/listitems/doublelineexample.png) 
-![双线与图标列表项](images/listitems/doublelineicon.png)
+![带图标的双行列表项示例](images/listitems/doublelineexample.png) 
+![带图标的双行列表项](images/listitems/doublelineicon.png)
 
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -68,7 +68,7 @@ ms.locfileid: "57593052"
 ## <a name="triple-line-list-item"></a>三行列表项
 使用此模板以显示带三行文本的项的列表。
 
-![三个行的列表项示例](images/listitems/triplelineexample.png)
+![三行列表项示例](images/listitems/triplelineexample.png)
 ![三行列表项](images/listitems/tripleline.png)
 
 ```xaml
@@ -131,6 +131,6 @@ ms.locfileid: "57593052"
 ## <a name="related-articles"></a>相关文章
 - [ListView 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.listview)
 - [数据绑定概述](../../data-binding/data-binding-quickstart.md)
-- [Accessibililty 概述](../accessibility/accessibility-overview.md)
+- [辅助功能概述](../accessibility/accessibility-overview.md)
 - [ListView 和 GridView 示例 (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [缩略图图像](../../files/thumbnails.md)

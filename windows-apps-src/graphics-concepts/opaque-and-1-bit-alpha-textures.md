@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4227a3ad77eadaa40e47420a5fdab6d65c875da5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 74768202554a3eb49c0df8ee5f17a4fe5f979be8
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594002"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291805"
 ---
 # <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>不透明和 1 位 alpha 的纹理
-
 
 纹理格式 BC1 适用于不透明或具有一种透明色的纹理。
 
@@ -29,7 +28,7 @@ ms.locfileid: "57594002"
 
 下面的代码示例演示了用于确定选择三色编码还是四色编码的算法：
 
-```
+```cpp
 if (color_0 > color_1) 
 {
     // Four-color block: derive the other two colors. 
@@ -61,9 +60,9 @@ else
 
 | 字地址 | 16 位字    |
 |--------------|----------------|
-| 0            | 颜色\_0       |
+| 0            | Color\_0       |
 | 1            | 颜色\_1       |
-| 2            | 位图 Word\_0 |
+| 2            | Bitmap Word\_0 |
 | 3            | 位图 Word\_1 |
 
  
@@ -84,7 +83,7 @@ else
 
 | 位          | 纹素           |
 |---------------|-----------------|
-| 1:0 (LSB)     | 纹素\[0\]\[0\] |
+| 1:0 (LSB)     | Texel\[0\]\[0\] |
 | 3:2           | 纹素\[0\]\[1\] |
 | 5:4           | 纹素\[0\]\[2\] |
 | 7:6           | 纹素\[0\]\[3\] |
@@ -117,7 +116,7 @@ else
 
 作为不透明编码的示例，假设红色和黑色处于极值。 红色表示颜色\_0 和黑色是颜色\_1。 有四种内插颜色形成在它们之间均匀分布的梯度。 要确定 4x4 位图的值，请使用以下方式计算：
 
-```
+```cpp
 00 ? color_0
 01 ? color_1
 10 ? 2/3 color_0 + 1/3 color_1
@@ -149,7 +148,7 @@ else
 
 颜色和透明度的位图编码使用以下计算方法确定。
 
-```
+```cpp
 00 ? color_0
 01 ? color_1
 10 ? 1/2 color_0 + 1/2 color_1

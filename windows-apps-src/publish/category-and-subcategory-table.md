@@ -2,16 +2,16 @@
 Description: 将你的应用列在正确的类别和子类别中，可帮助客户找到你的应用，并且更好地了解它。
 title: 类别和子类别表
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: Windows 10, uwp, 类别, 子类别, 流派
 ms.localizationpriority: medium
-ms.openlocfilehash: f8c28db9b0ca4437579e98ae156392c7b7b383ea
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4ff9cf72ce293c81065659472652715669eeeecd
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653642"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334785"
 ---
 # <a name="category-and-subcategory-table"></a>类别和子类别表
 
@@ -20,7 +20,7 @@ ms.locfileid: "57653642"
 
 你必须选择最能描述你的应用的类别。 可以选择一个子类别（如果可用）。 如果你不确定要使用哪一类别或子类别，或者无法找到看起来完全相符的类别或子类别，请选择你认为客户在尝试查找与你的应用类似的应用时，最有可能查看的类别或子类别。
 
-如果选择**游戏**类别，需要选择至少一个子类别 (称为*流派*游戏)。 可以为游戏适当地选择多个流派。 注意：为了向 Xbox 客户发布游戏，你必须启用[Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)或完成[概念批准](../gaming/concept-approval.md)过程）。 
+如果选择**游戏**类别，需要选择至少一个子类别 (称为*流派*游戏)。 可以为游戏适当地选择多个流派。 注意：为了向 Xbox 客户发布游戏，你必须启用[Xbox Live 创意者计划](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators)或完成[概念批准](../gaming/concept-approval.md)过程）。 
 
 > [!IMPORTANT] 
 > 如果以**游戏**类别发布应用，则你无法在新提交中选择不同类别；它必须继续以**游戏**类别分布（但你可以在新提交中更改流派选择）。 同样，更新先前以其他类别发布的应用时，你也无法选择**游戏**类别。

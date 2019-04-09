@@ -4,17 +4,17 @@ title: 通过付款请求 API 简化付款
 ms.date: 09/26/2017
 ms.topic: article
 keywords: windows 10，uwp，付款请求
-ms.openlocfilehash: e5fb5cead7833b8cc213c6633cae6cee0da3466b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 36078c65d6762c8ed477a3a1342f3b6a0acaaa6f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607862"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334585"
 ---
 # <a name="simplify-payments-with-the-payment-request-api"></a>通过付款请求 API 简化付款
 适用于 UWP 应用付款请求 API 为基础[W3C 付款请求 API 规范](https://w3c.github.io/browser-payment-api/)。这样可以简化签出过程在 UWP 应用中的功能。 使用付款选项和发货地址与 Microsoft 帐户已保存的情况下，用户可以快速通过签出。 您可以提高转换率并减少数据泄露的风险，因为标记化的付款信息。 从 Windows 10 创意者更新开始，用户可以使用其已保存的付款方式付款轻松地跨 UWP 应用中的体验。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 在开始使用付款请求 API 之前，有必须执行或注意的事项。
 
 ### <a name="getting-a-merchant-id"></a>获取商户 ID
@@ -30,37 +30,37 @@ ms.locfileid: "57607862"
 > [!Note]
 > 替换**商户 id 从卖方门户**文本到零售商 ID 您接收到从卖方中心。
 
-[!code-cs[SnippetEnumerate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetEnumerate)]
+[!code-csharp[SnippetEnumerate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetEnumerate)]
 
 ### <a name="2-pull-the-payment-details-together"></a>2.汇集付款详细信息。 
 
 将付款应用程序中向用户显示这些详细信息。 
 
-[!code-cs[SnippetDisplayItems](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDisplayItems)]
+[!code-csharp[SnippetDisplayItems](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDisplayItems)]
 
 ### <a name="3-include-the-sales-tax"></a>3.包含销售税。 
 
 > [!Important]
 > 该 API 不添加项，也不为您计算增值税。 请记住税率因管辖权。 为清楚起见，我们使用假设 9.5%税率。
 
-[!code-cs[SnippetTaxes](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetTaxes)]
+[!code-csharp[SnippetTaxes](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetTaxes)]
 
 ### <a name="4-optional--add-discounts-or-other-modifiers-to-the-total"></a>4.（可选） 添加与总折扣或其他修饰符。 
 
 下面是添加针对使用特定的 Contoso 信用卡号给显示项的折扣的示例。 (*Contoso*是虚构的名称。)
 
-[!code-cs[SnippetDiscountRate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDiscountRate)]
+[!code-csharp[SnippetDiscountRate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDiscountRate)]
 
 ### <a name="5-assemble-all-the-payment-details"></a>5.组合所有付款详细信息。
 
-[!code-cs[SnippetAggregate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetAggregate)]
-[!code-cs[SnippetPaymentOptions](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetPaymentOptions)]
+[!code-csharp[SnippetAggregate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetAggregate)]
+[!code-csharp[SnippetPaymentOptions](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetPaymentOptions)]
 
 ### <a name="6-submit-the-payment-request"></a>6.提交付款请求。 
 
 调用**SubmitPaymentRequestAsync**方法以提交你支付的请求。 此时会打开显示可用的付款方式付款应用。
 
-[!code-cs[SnippetSubmit](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetSubmit)]
+[!code-csharp[SnippetSubmit](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetSubmit)]
 
 提示用户使用其 Microsoft 帐户登录。
 
@@ -70,13 +70,13 @@ ms.locfileid: "57607862"
 
 您的应用程序等待用户点击**支付**，然后完成顺序。
 
-[!code-cs[SnippetComplete](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetComplete)]
+[!code-csharp[SnippetComplete](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetComplete)]
 
 完成付款后，用户会看到**订单已确认**屏幕。
 
 ![订单已确认](./images/44.png "订单已确认 ")
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 - [Windows.ApplicationModel.Payments 参考文档](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.payments)
 - [GitHub 上 UWP 购物应用示例](https://github.com/Microsoft/Windows-appsample-shopping)
 - [W3C 付款请求 API 规范](https://www.w3.org/TR/payment-request/)

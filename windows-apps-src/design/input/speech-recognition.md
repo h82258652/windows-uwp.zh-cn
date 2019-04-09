@@ -8,12 +8,12 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b7eec51044a70b0738e246d3aa516c37643cf68
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a4eadb82de2035b931d75ff2eefa6f8bd6652c94
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608072"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343266"
 ---
 # <a name="speech-recognition"></a>语音识别
 
@@ -275,9 +275,9 @@ catch (Exception exception)
 
 ### <a name="voice-command-constraints"></a>语音命令约束
 
-使用语音命令定义 (VCD) XML 文件定义用户可以在激活应用时说出以启动操作的命令。 有关详细信息，请参阅[在 Cortana 中使用语音命令启动前台应用](https://msdn.microsoft.com/cortana/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana)。
+使用语音命令定义 (VCD) XML 文件定义用户可以在激活应用时说出以启动操作的命令。 有关更多详细信息，请参阅[激活通过 Cortana 语音命令与前台应用程序](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)。
 
-请参阅[ **SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220)/
+See [**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220)/
 
 **请注意**  用约束类型的类型取决于你想要创建的识别体验的复杂性。 对于特定识别任务，任一类型都可能是最佳选择，你也可能在应用中发现所有类型的约束的用途。
 要开始使用约束，请参阅[定义自定义识别约束](define-custom-recognition-constraints.md)。

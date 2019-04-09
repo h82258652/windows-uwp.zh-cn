@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dba9095326c01029e14742c98c1c368b896dfb8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 463eb17d341ccad494058861b2e6d1cfd276005e
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660212"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334675"
 ---
 # <a name="create-and-run-your-first-experiment"></a>创建并运行你的第一个实验
 
@@ -24,7 +24,7 @@ ms.locfileid: "57660212"
 
 概览 A / B 测试通过合作伙伴中心，请参阅[使用一个运行应用试验 / B 测试](run-app-experiments-with-a-b-testing.md)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要遵循本演练中，您必须具有合作伙伴中心帐户和中所述，必须配置您的开发计算机[使用一个运行应用试验 / B 测试](run-app-experiments-with-a-b-testing.md)。
 
@@ -52,7 +52,7 @@ ms.locfileid: "57660212"
 6. 将 **“按钮”** 从 **“工具箱”** 拖动到该页。
 7. 在设计器上双击按钮以打开代码文件，并为 **Click** 事件添加事件处理程序。  
 8. 将代码文件的所有内容替换为以下代码。 将分配```projectId```变量[项目 ID](run-app-experiments-with-a-b-testing.md#terms)从上一节中的合作伙伴中心获取的值。
-    [!code-cs[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
+    [!code-csharp[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
 
 9. 保存代码文件并生成项目。
 

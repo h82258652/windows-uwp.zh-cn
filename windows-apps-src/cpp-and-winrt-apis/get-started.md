@@ -1,28 +1,28 @@
 ---
 description: 为了帮助你更快地开始使用 C++/WinRT，本主题将详细介绍一个简单的代码示例。
 title: C++/WinRT 入门
-ms.date: 10/19/2018
+ms.date: 04/03/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 获取, 获得, 开始
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d11a8718f61666d6285d8a1c91b48992044b22
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4928540d9b6e7e1c3df67f7c247aa3664618a65c
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602232"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921683"
 ---
 # <a name="get-started-with-cwinrt"></a>C++/WinRT 入门
 
-若要获取你掌握使用[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，本主题将指导完成基于新的简单代码示例**Windows 控制台应用程序 (C + + WinRT)** 项目。 本主题演示如何[添加 C + + WinRT 支持添加到 Windows 桌面应用程序项目](#modify-a-windows-desktop-application-project-to-add-cwinrt-support)。
+若要获取你掌握使用[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，本主题将指导完成一个简单的代码示例基于新**Windows 控制台应用程序 (C++/WinRT)** 项目。 本主题演示如何[添加C++/WinRT 支持添加到 Windows 桌面应用程序项目](#modify-a-windows-desktop-application-project-to-add-cwinrt-support)。
 
 > [!IMPORTANT]
-> 如果您使用的 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及针对 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)，然后一个新创建的 C + + WinRT 项目可能无法编译出现错误"*错误 C3861: from_abi:找不到标识符*"，并与来自其他错误同时*base.h*。 解决方法到任一目标是更高版本的 （更符合） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **符合模式：否**(此外，如果**触发-** 出现在项目属性**C/c + +** > **语言** > **命令行**下**其他选项**，然后将其删除)。
+> 如果您使用的 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及针对 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)，然后对新创建C++/WinRT 项目可能无法编译出现错误"*错误 C3861: from_abi:找不到标识符*"，并与来自其他错误同时*base.h*。 解决方法到任一目标是更高版本的 （更符合） 版本的 Windows SDK 或设置项目属性**C /C++** > **语言** >  **符合模式：否**(此外，如果**触发-** 出现在项目属性**C /C++** > **语言** >  **Command Line**下**其他选项**，然后将其删除)。
 
 ## <a name="a-cwinrt-quick-start"></a>C++/WinRT 快速入门
 
 > [!NOTE]
-> 了解安装和使用 C + + WinRT Visual Studio 扩展 (VSIX) （可提供项目模板支持） 请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 有关如何安装和使用信息C++WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包 （该一起提供项目模板，并生成支持），请参阅[适用于 Visual Studio 支持C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 创建一个新的 **Windows 控制台应用程序(C++/WinRT)** 项目。
 
@@ -32,7 +32,7 @@ ms.locfileid: "57602232"
 // pch.h
 ...
 #include <iostream>
-#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
 ...
 ```
@@ -63,7 +63,7 @@ int main()
 我们来逐步了解上述简短代码示例，并说明每一部分的内容。
 
 ```cppwinrt
-#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
 ```
 
@@ -116,11 +116,11 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 也不需要处理 HRESULT 返回代码。 C++/WinRT 会将错误 HRESULT 转换为异常（如 [**winrt::hresult-error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)）以实现自然、现代化的编程风格。 有关错误处理以及代码示例的详细信息，请参阅 [C++/WinRT 的错误处理](error-handling.md)。
 
-## <a name="modify-a-windows-desktop-application-project-to-add-cwinrt-support"></a>修改 Windows 桌面应用程序项目，以添加 C + + WinRT 支持
+## <a name="modify-a-windows-desktop-application-project-to-add-cwinrt-support"></a>修改 Windows 桌面应用程序项目，以添加C++/WinRT 支持
 
-本部分演示如何添加 C + + WinRT 支持添加到可能有一个 Windows 桌面应用程序项目。 如果没有现有的 Windows 桌面应用程序项目，然后你可以遵循这些步骤按第一个创建一个。 例如，打开 Visual Studio 并创建**Visual c + +** \> **Windows 桌面** \> **Windows 桌面应用程序**项目。
+本部分演示如何添加C++/WinRT 支持添加到可能有一个 Windows 桌面应用程序项目。 如果没有现有的 Windows 桌面应用程序项目，然后你可以遵循这些步骤按第一个创建一个。 例如，打开 Visual Studio 并创建**可视化C++**  \> **Windows 桌面** \> **Windows 桌面应用程序**项目。
 
-您可以选择安装[C + + WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix)。 有关详细信息，请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+您可以选择安装[ C++WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix)和 NuGet 包。 有关详细信息，请参阅[适用于 Visual Studio 支持C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ### <a name="set-project-properties"></a>设置项目属性
 
@@ -128,13 +128,13 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 确认您不受[我的新项目将不会为什么编译？](/windows/uwp/cpp-and-winrt-apis/faq)。
 
-由于 C + + WinRT 使用 C + + 17 标准，将项目属性中的功能**C/c + +** > **语言** > **c + + 语言标准**到*ISO C + + 17 标准 (/ /std: c + + 17)*。
+因为C++/WinRT 使用 C + + 17 标准，将项目属性中的功能**C /C++** > **语言** >   **C++语言标准**到*ISO C + + 17 标准 (/ /std: c + + 17)*。
 
 ### <a name="the-precompiled-header"></a>预编译标头
 
-重命名你`stdafx.h`并`stdafx.cpp`到`pch.h`和`pch.cpp`分别。 设置项目属性**C/c + +** > **预编译标头** > **预编译头文件**到*pch.h*。
+默认项目模板为你命名为创建预编译标头`framework.h`，或`stdafx.h`。 重命名为`pch.h`。 如果有`stdafx.cpp`文件，然后重命名为`pch.cpp`。 设置项目属性**C /C++** > **预编译标头** > **预编译头文件**到*pch.h*.
 
-查找和替换所有`#include "stdafx.h"`与`#include "pch.h"`。
+查找和替换所有`#include "framework.h"`(或`#include "stdafx.h"`) 与`#include "pch.h"`。
 
 在中`pch.h`，包括`winrt/base.h`。
 
@@ -146,9 +146,9 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 ### <a name="linking"></a>链接
 
-C + + WinRT 语言投影依赖于某些 Windows 运行时可用 （非成员） 函数和入口点，需要将链接到[WindowsApp.lib](/uwp/win32-and-com/win32-apis)涵盖性库。 本部分介绍三种方法满足链接器。
+C++/WinRT 语言投影依赖于某些 Windows 运行时可用 （非成员） 函数和入口点，需要将链接到[WindowsApp.lib](/uwp/win32-and-com/win32-apis)涵盖性库。 本部分介绍三种方法满足链接器。
 
-第一个选项是将添加到您的 Visual Studio 项目所有 C + + WinRT MSBuild 属性和目标。 若要执行此操作，安装[Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)到你的项目。 打开 Visual Studio 项目中，单击**项目** \> **管理 NuGet 包...**\> **浏览**，键入或粘贴**Microsoft.Windows.CppWinRT**在搜索框中，在搜索结果中选择的项，然后单击**安装**若要安装该项目的包。
+第一个选项是将添加到您的 Visual Studio 项目的所有C++WinRT MSBuild 属性和目标。 若要执行此操作，安装[Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)到你的项目。 打开 Visual Studio 项目中，单击**项目** \> **管理 NuGet 包...**\> **浏览**，键入或粘贴**Microsoft.Windows.CppWinRT**在搜索框中，在搜索结果中选择的项，然后单击**安装**若要安装该项目的包。
 
 此外可以使用项目链接设置为显式链接`WindowsApp.lib`。 或者，你可以执行此操作在源代码中 (在`pch.h`，例如) 如下所示。
 
@@ -156,7 +156,7 @@ C + + WinRT 语言投影依赖于某些 Windows 运行时可用 （非成员） 
 #pragma comment(lib, "windowsapp")
 ```
 
-现在可以编译和链接，并添加 C + + WinRT 代码到你的项目 (例如，在所示的代码[c + + WinRT 快速入门](#a-cwinrt-quick-start)部分中，更高版本)
+现在可以编译和链接，并添加C++到你的项目的 /WinRT 代码 (例如，如中所示类似的代码[A C++/WinRT 快速入门](#a-cwinrt-quick-start)部分中，更高版本)。
 
 ## <a name="important-apis"></a>重要的 API
 * [SyndicationClient::RetrieveFeedAsync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
@@ -170,4 +170,4 @@ C + + WinRT 语言投影依赖于某些 Windows 运行时可用 （非成员） 
 * [实现 C++/WinRT 与 C++/CX 之间的互操作](interop-winrt-cx.md)
 * [实现 C++/WinRT 与 ABI 之间的互操作](interop-winrt-abi.md)
 * [从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md)
-* [字符串处理中 C + + WinRT](strings.md)
+* [C++/WinRT 中的字符串处理](strings.md)

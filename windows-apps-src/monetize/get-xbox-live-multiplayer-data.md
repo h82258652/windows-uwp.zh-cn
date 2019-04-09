@@ -5,22 +5,22 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox Live 分析, 多玩家
 ms.localizationpriority: medium
-ms.openlocfilehash: 74f1a64bde32fe68a51527527a0b049d811d0853
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 58f470abdf7cbf0770bf01dd123a8fdfd2c2cbea
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662032"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162992"
 ---
 # <a name="get-xbox-live-multiplayer-data"></a>获取 Xbox Live 多人游戏数据
 
 
-在 Microsoft Store 分析 API 中使用此方法每天或每月获取你的[支持 Xbox Live 的游戏](../xbox-live/index.md)的多玩家数据。 此信息也位于[Xbox 的分析报告](../publish/xbox-analytics-report.md)在合作伙伴中心。
+在 Microsoft Store 分析 API 中使用此方法每天或每月获取你的[支持 Xbox Live 的游戏](https://docs.microsoft.com/gaming/xbox-live//index.md)的多玩家数据。 此信息也位于[Xbox 的分析报告](../publish/xbox-analytics-report.md)在合作伙伴中心。
 
 > [!IMPORTANT]
-> 该方法只支持 Xbox 游戏或使用 Xbox Live 服务的游戏。 这些游戏必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括 [Microsoft 合作伙伴](../xbox-live/developer-program-overview.md#microsoft-partners)发布的游戏以及通过 [ID@Xbox 计划](../xbox-live/developer-program-overview.md#id)提交的游戏。 该方法当前不支持通过 [Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏。
+> 该方法只支持 Xbox 游戏或使用 Xbox Live 服务的游戏。 这些游戏必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括 [Microsoft 合作伙伴](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners)发布的游戏以及通过 [ID@Xbox 计划](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id)提交的游戏。 该方法当前不支持通过 [Xbox Live 创意者计划](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -39,9 +39,9 @@ ms.locfileid: "57662032"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
@@ -49,14 +49,14 @@ ms.locfileid: "57662032"
 
 | 参数        | 在任务栏的搜索框中键入   |  描述      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 你要检索其 Xbox Live 多玩家数据的游戏的 [Store ID](in-app-purchases-and-trials.md#store-ids)。  |  是  |
-| metricType | 字符串 | 指定要检索的 Xbox Live 分析数据的类型的字符串。 对于此方法，指定 **multiplayerdaily** 获取每日多玩家数据，或指定 **multiplayermonthly** 获取每月多玩家数据。  |  是  |
+| applicationId | string | 你要检索其 Xbox Live 多玩家数据的游戏的 [Store ID](in-app-purchases-and-trials.md#store-ids)。  |  是  |
+| metricType | string | 指定要检索的 Xbox Live 分析数据的类型的字符串。 对于此方法，指定 **multiplayerdaily** 获取每日多玩家数据，或指定 **multiplayermonthly** 获取每月多玩家数据。  |  是  |
 | startDate | 日期 | 要检索的多玩家数据日期范围中的开始日期。 对于 **multiplayerdaily**，默认值是当前日期之前 3 个月。 对于 **multiplayermonthly**，默认值是当前日期之前 1 年。 |  否  |
 | endDate | 日期 | 要检索的多玩家数据日期范围中的结束日期。 默认值为当前日期。 |  否  |
 | top | int | 要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。 |  否  |
 | skip | int | 要在查询中跳过的行数。 使用此参数可以浏览较大的数据集。 例如，top=10000 和 skip=0，将检索前 10000 行数据；top=10000 和 skip=10000，将检索之后的 10000 行数据，依此类推。 |  否  |
-| filter | 字符串  | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 *filter* 参数中的字符串值必须使用单引号括起来。 你可以指定响应正文中的以下字段：<p/><ul><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>market</strong></li><li><strong>SubscriptionName</strong></li></ul> | 否   |
-| groupby | 字符串 | 仅将数据聚合应用于指定字段的语句。 你可以指定响应正文中的以下字段：<p/><ul><li><strong>date</strong></li><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>market</strong></li><li><strong>SubscriptionName</strong></li></ul><p/>如果你指定一个或多个 *groupby* 字段，则在响应正文中，你未指定的任何其他 *groupby* 字段都为值 **All**。 |  否  |
+| filter | string  | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 *filter* 参数中的字符串值必须使用单引号括起来。 你可以指定响应正文中的以下字段：<p/><ul><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>market</strong></li><li><strong>subscriptionName</strong></li></ul> | 否   |
+| groupby | string | 仅将数据聚合应用于指定字段的语句。 你可以指定响应正文中的以下字段：<p/><ul><li><strong>date</strong></li><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>market</strong></li><li><strong>subscriptionName</strong></li></ul><p/>如果你指定一个或多个 *groupby* 字段，则在响应正文中，你未指定的任何其他 *groupby* 字段都为值 **All**。 |  否  |
 
 
 ### <a name="request-example"></a>请求示例
@@ -71,10 +71,10 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>响应
 
-| 值      | 在任务栏的搜索框中键入   | 描述                  |
+| ReplTest1      | 在任务栏的搜索框中键入   | 描述                  |
 |------------|--------|-------------------------------------------------------|
-| 值      | 数组  | 包含多玩家数据的一个对象数组，其中的每个对象表示指定每日或每月时间周期的一组数据，这组数据按指定的 **filter** 和 **groupby** 值进行组织。 有关每个对象中的数据的详细信息，请参阅[每日多玩家分析](#daily-multiplayer-analytics)和[每月多玩家分析](#monthly-multiplayer-analytics)部分。     |
-| @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10000，但查询的数据超过 10000 行时，就会返回此值。 |
+| ReplTest1      | 数组  | 包含多玩家数据的一个对象数组，其中的每个对象表示指定每日或每月时间周期的一组数据，这组数据按指定的 **filter** 和 **groupby** 值进行组织。 有关每个对象中的数据的详细信息，请参阅[每日多玩家分析](#daily-multiplayer-analytics)和[每月多玩家分析](#monthly-multiplayer-analytics)部分。     |
+| @nextLink  | string | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10000，但查询的数据超过 10000 行时，就会返回此值。 |
 | TotalCount | int    | 查询的数据结果中的行总数。 |
 
 
@@ -82,15 +82,15 @@ Authorization: Bearer <your access token>
 
 当您请求每日多玩家分析数据（即当您为 **metricType** 参数指定 **multiplayerdaily**）时，*Value* 数组中的元素包含以下值。
 
-| 值               | 在任务栏的搜索框中键入   | 描述                           |
+| ReplTest1               | 在任务栏的搜索框中键入   | 描述                           |
 |---------------------|--------|-------------------------------------------|
-| 日期                | 字符串 | 多玩家数据的日期。 |
-| applicationId       | 字符串 | 你要检索多玩家数据的游戏的 Store ID。     |
-| applicationName       | 字符串 |  你要检索多玩家数据的游戏的名称。     |
-| market       | 字符串 | 多玩家数据的来源市场的两个字母 ISO 3166 国家/地区代码。       |
-| packageVersion     | 字符串 |  游戏的四个部分程序包版本。  |
-| deviceType          | 字符串 | 用于指定作为多玩家数据来源的设备类型的以下字符串之一：<p/><ul><li><strong>Console</strong></li><li><strong>PC</strong></li><li>**Unknown**</li></ul>  |
-| subscriptionName     | 字符串 |  用于多玩家数据订阅的名称。 可能的值包括 **Xbox Game Pass** 和 **""**（适用于任何订阅）。  |
+| 日期                | string | 多玩家数据的日期。 |
+| applicationId       | string | 你要检索多玩家数据的游戏的 Store ID。     |
+| applicationName       | string |  你要检索多玩家数据的游戏的名称。     |
+| market       | string | 多玩家数据的来源市场的两个字母 ISO 3166 国家/地区代码。       |
+| packageVersion     | string |  游戏的四个部分程序包版本。  |
+| deviceType          | string | 用于指定作为多玩家数据来源的设备类型的以下字符串之一：<p/><ul><li><strong>Console</strong></li><li><strong>PC</strong></li><li>**Unknown**</li></ul>  |
+| subscriptionName     | string |  用于多玩家数据订阅的名称。 可能的值包括 **Xbox Game Pass** 和 **""**（适用于任何订阅）。  |
 | dailySessionCount     | 数字 |  在指定日期的游戏多玩家会话数量。  |
 | engagementDurationMinutes     | 数字 |  客户在指定日期参与游戏的多玩家会话的总分钟数。  |
 | dailyActiveUsers     | 数字 |  在指定日期，游戏的活动的多玩家用户总数。  |
@@ -105,15 +105,15 @@ Authorization: Bearer <your access token>
 
 当您请求每月多人游戏分析数据（即当您为 **metricType** 参数指定 **multiplayermonthly**）时，*Value* 数组中的元素包含以下值。
 
-| 值               | 在任务栏的搜索框中键入   | 描述                           |
+| ReplTest1               | 在任务栏的搜索框中键入   | 描述                           |
 |---------------------|--------|-------------------------------------------|
-| 日期                | 字符串 | 多玩家数据的月份的第一个日期。 |
-| applicationId       | 字符串 | 你要检索多玩家数据的游戏的 Store ID。     |
-| applicationName       | 字符串 |  你要检索多玩家数据的游戏的名称。     |
-| market       | 字符串 | 多玩家数据的来源市场的两个字母 ISO 3166 国家/地区代码。       |
-| packageVersion     | 字符串 |  游戏的四个部分程序包版本。  |
-| deviceType          | 字符串 | 用于指定作为多玩家数据来源的设备类型的以下字符串之一：<p/><ul><li><strong>Console</strong></li><li><strong>PC</strong></li><li>**Unknown**</li></ul>  |
-| subscriptionName     | 字符串 |  用于多玩家数据订阅的名称。 可能的值包括 **Xbox Game Pass** 和 **""**（适用于任何订阅）。  |
+| 日期                | string | 多玩家数据的月份的第一个日期。 |
+| applicationId       | string | 你要检索多玩家数据的游戏的 Store ID。     |
+| applicationName       | string |  你要检索多玩家数据的游戏的名称。     |
+| market       | string | 多玩家数据的来源市场的两个字母 ISO 3166 国家/地区代码。       |
+| packageVersion     | string |  游戏的四个部分程序包版本。  |
+| deviceType          | string | 用于指定作为多玩家数据来源的设备类型的以下字符串之一：<p/><ul><li><strong>Console</strong></li><li><strong>PC</strong></li><li>**Unknown**</li></ul>  |
+| subscriptionName     | string |  用于多玩家数据订阅的名称。 可能的值包括 **Xbox Game Pass** 和 **""**（适用于任何订阅）。  |
 | monthlySessionCount     | 数字 |  在指定月份中游戏的多玩家会话的数量。   |
 | engagementDurationMinutes     | 数字 |  客户在指定月份参与游戏的多玩家会话的总分钟数。  |
 | monthlyActiveUsers     | 数字 | 在指定月份内活动的多玩家用户的总数。   |

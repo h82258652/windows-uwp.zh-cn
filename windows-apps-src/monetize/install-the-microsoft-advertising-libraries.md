@@ -6,12 +6,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, 广告, 安装, SDK, 广告库
 ms.localizationpriority: medium
-ms.openlocfilehash: 121accdfc8996c609c616838f645f19e2377c7c5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: baf70cc6df7b0683f3dc362436c63eb1e688e678
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658032"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334695"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>安装 Microsoft 广告 SDK
 
@@ -29,7 +29,7 @@ ms.locfileid: "57658032"
 1.  关闭 Visual Studio 的所有实例。
 
 2. 如果之前已安装 Microsoft Advertising SDK、通用广告客户端 SDK、广告中介扩展或 Microsoft 官方商城协定和盈利 SDK 的任何以前版本，请立即卸载这些 SDK 版本。 （可选）打开**命令提示符**窗口并运行这些命令以清除可能与 Visual Studio 一起安装（但可能未显示在计算机上的已安装程序列表中）的任何早期广告 SDK 版本：
-    ```
+    ```console
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
@@ -52,7 +52,7 @@ ms.locfileid: "57658032"
 1.  关闭 Visual Studio 的所有实例。
 
 2.  如果之前已安装 Microsoft Advertising SDK、通用广告客户端 SDK、广告中介扩展或 Microsoft 官方商城协定和盈利 SDK 的任何以前版本，请立即卸载这些 SDK 版本。 （可选）打开**命令提示符**窗口并运行这些命令以清除可能与 Visual Studio 一起安装（但可能未显示在计算机上的已安装程序列表中）的任何早期广告 SDK 版本：
-    ```
+    ```console
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
@@ -66,7 +66,7 @@ ms.locfileid: "57658032"
 
 5. 在搜索框中，键入 **Microsoft.Advertising.XAML**（对于 XAML 项目）或 **Microsoft.Advertising.JS**（对于 JavaScript/HTML 项目）并安装相应程序包。 程序包安装完成后，保存你的解决方案。
     > [!NOTE]
-    > 如果**输出**窗口报告指示指定路径过长的 *Install-Package* 错误，则可能需要配置 NuGet 以将软件包提取到路径短于默认位置的备用位置。 若要执行此操作，将 ```repositoryPath``` 值添加到计算机上的 nuget.config 文件，并将其分配到可从中提取 NuGet 包的短文件夹路径。 有关详细信息，请参阅 NuGet 文档中的[此文章](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，可尝试将 Visual Studio 项目移到路径较短的备用文件夹。
+    > 如果**输出**窗口报告指示指定路径过长的 *Install-Package* 错误，则可能需要配置 NuGet 以将软件包提取到路径短于默认位置的备用位置。 若要执行此操作，将 `repositoryPath` 值添加到计算机上的 nuget.config 文件，并将其分配到可从中提取 NuGet 包的短文件夹路径。 有关详细信息，请参阅 NuGet 文档中的[此文章](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，可尝试将 Visual Studio 项目移到路径较短的备用文件夹。
 
 6. 关闭解决方案，然后重新打开它。
 

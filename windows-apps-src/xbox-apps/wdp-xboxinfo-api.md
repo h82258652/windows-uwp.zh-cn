@@ -5,26 +5,26 @@ ms.date: 11/072017
 ms.topic: article
 keywords: windows 10、 uwp、 xbox、 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 85c2c139aa8064e1f0769064b95eeb531086b8c1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7aa8b11bc439266d36fbb27a7eaa7b07e924a17c
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617492"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244033"
 ---
 # <a name="xbox-info-api-reference"></a>Xbox 信息 API 参考   
 你可以使用此 API 访问 Xbox One 设备信息。
 
 ## <a name="get-xbox-one-device-information"></a>获取 Xbox One 设备信息
 
-**请求**
+## <a name="request"></a>请求
 
 你可以获取与 Xbox One 相关的设备信息。
 
 方法      | 请求 URI
 :------     | :-----
 GET | /ext/xbox/info
-<br />
+
 **URI 参数**
 
 - 无
@@ -37,7 +37,7 @@ GET | /ext/xbox/info
 
 - 无
 
-**响应**   
+## <a name="response"></a>响应
 具有以下字段的 JSON 对象：
 
 * OsVersion -（字符串）操作系统的版本。
@@ -59,7 +59,6 @@ HTTP 状态代码      | 描述
 4XX | 错误代码
 5XX | 错误代码
 
-<br />
-**可用的设备系列**
+**可用设备系列**
 
 * Windows Xbox

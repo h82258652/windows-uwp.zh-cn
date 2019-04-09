@@ -2,16 +2,16 @@
 title: 游戏控制器注册表数据
 description: 了解可以添加到电脑注册表中以使控制器能够在 UWP 游戏中使用的数据。
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.date: 06/25/2018
+ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 输入, 注册表, 自定义
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d30c19a7fd7641d76e810912d33a96dbbeb3132
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5578faeb5a35ae909e590741de759c2597b9c7ed
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633602"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244393"
 ---
 # <a name="registry-data-for-game-controllers"></a>游戏控制器注册表数据
 
@@ -33,7 +33,7 @@ ms.locfileid: "57633602"
         <th>名称</th>
         <th>在任务栏的搜索框中键入</th>
         <th>是否为必需？</th>
-        <th>信息</th>
+        <th>T:System.Diagnostics.Switch</th>
     </tr>
     <tr>
         <td>Disabled</td>
@@ -66,7 +66,7 @@ ms.locfileid: "57633602"
     <tr>
         <th>子项</th>
         <th>是否为必需？</th>
-        <th>信息</th>
+        <th>T:System.Diagnostics.Switch</th>
     </tr>
     <tr>
         <td>菜单</td>
@@ -179,7 +179,7 @@ ms.locfileid: "57633602"
     <tr>
         <th>子项</th>
         <th>是否为必需？</th>
-        <th>信息</th>
+        <th>T:System.Diagnostics.Switch</th>
     </tr>
     <tr>
         <td>PreviousGear</td>
@@ -338,7 +338,7 @@ ms.locfileid: "57633602"
     <tr>
         <th>子项</th>
         <th>是否为必需？</th>
-        <th>信息</th>
+        <th>T:System.Diagnostics.Switch</th>
     </tr>
     <tr>
         <td>Action1</td>
@@ -399,7 +399,7 @@ ms.locfileid: "57633602"
     <tr>
         <th>子项</th>
         <th>是否为必需？</th>
-        <th>信息</th>
+        <th>T:System.Diagnostics.Switch</th>
     </tr>
     <tr>
         <td>FirePrimary</td>
@@ -442,7 +442,7 @@ ms.locfileid: "57633602"
     <tr>
         <th>子项</th>
         <th>是否为必需？</th>
-        <th>信息</th>
+        <th>T:System.Diagnostics.Switch</th>
     </tr>
     <tr>
         <td>菜单</td>
@@ -555,14 +555,14 @@ ms.locfileid: "57633602"
 
 <table>
     <tr>
-        <th>来源</th>
+        <th>源</th>
         <th>值名称</th>
         <th>值类型</th>
         <th>是否为必需？</th>
         <th>值信息</th>
     </tr>
     <tr>
-        <td>按钮</td>
+        <td>Button</td>
         <td>ButtonIndex</td>
         <td>DWORD</td>
         <td>是</td>
@@ -597,7 +597,7 @@ ms.locfileid: "57633602"
         </td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Switch</td>
+        <td rowspan="3" style="vertical-align: middle;">开关</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>是</td>
@@ -610,7 +610,7 @@ ms.locfileid: "57633602"
         <td>
             <p>指示将导致映射的按钮报告自己正在被按下的开关位置。 位置值可以为以下字符串之一：</p>
             <ul>
-                <li>向上</li> 
+                <li>向上</li>
                 <li>UpRight</li>
                 <li>向右</li>
                 <li>DownRight</li>
@@ -635,14 +635,14 @@ ms.locfileid: "57633602"
 
 <table>
     <tr>
-        <th>来源</th>
+        <th>源</th>
         <th>值名称</th>
         <th>值类型</th>
         <th>是否为必需？</th>
         <th>值信息</th>
     </tr>
     <tr>
-        <td rowspan="2" style="vertical-align: middle;">按钮</td>
+        <td rowspan="2" style="vertical-align: middle;">Button</td>
         <td>MaxValueButtonIndex</td>
         <td>DWORD</td>
         <td>是</td>
@@ -713,7 +713,7 @@ ms.locfileid: "57633602"
         <td>指示在返回映射的轴值之前应该反转该值。</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Switch</td>
+        <td rowspan="3" style="vertical-align: middle;">开关</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>是</td>
@@ -806,13 +806,13 @@ ms.locfileid: "57633602"
 
 <table>
     <tr>
-        <th>来源</th>
+        <th>源</th>
         <th>值名称</th>
         <th>值类型</th>
         <th>值信息</th>
     </tr>
     <tr>
-        <td rowspan="10" style="vertical-align: middle;">按钮</td>
+        <td rowspan="10" style="vertical-align: middle;">Button</td>
         <td>ButtonCount</td>
         <td>DWORD</td>
         <td>2、4 或 8</td>
@@ -820,7 +820,7 @@ ms.locfileid: "57633602"
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>， <b>FourWay</b>，或<b>EightWay</b>
+        <td><b>TwoWay</b>、<b>FourWay</b> 或 <b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -898,7 +898,7 @@ ms.locfileid: "57633602"
         <td>DWORD</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Switch</td>
+        <td rowspan="3" style="vertical-align: middle;">开关</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td><b>RawGameController</b> 开关阵列中的索引。
@@ -1121,10 +1121,10 @@ RightBumper         // Index 9
 
 ### <a name="switch-labels"></a>开关标签
 
-**Switches** 项将开关位置映射到标签。 值遵循此命名约定：若要标出其索引在 **RawGameController** 开关阵列中为 *x* 的开关的位置，请将以下值添加到 **Switches** 子项下面： 
+**Switches** 项将开关位置映射到标签。 值遵循此命名约定：若要标出其索引在 **RawGameController** 开关阵列中为 *x* 的开关的位置，请将以下值添加到 **Switches** 子项下面：
 
-* SwitchxUp 
-* SwitchxUpRight 
+* SwitchxUp
+* SwitchxUpRight
 * SwitchxRight
 * SwitchxDownRight
 * SwitchxDown
@@ -1132,7 +1132,7 @@ RightBumper         // Index 9
 * SwitchxUpLeft
 * SwitchxLeft
 
-下表显示了一个 4 向开关的开关位置示例标签集，该开关显示在 **RawGameController** 中的索引 0 处： 
+下表显示了一个 4 向开关的开关位置示例标签集，该开关显示在 **RawGameController** 中的索引 0 处：
 
 <table>
     <tr>
@@ -1232,7 +1232,7 @@ RightBumper         // Index 9
 
 下面是通用 **RacingWheel** 的示例注册表文件，用于显示所有这些映射和值汇集在一起的方式：
 
-```
+```text
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GameInput\Devices\1234567800010004]
@@ -1345,8 +1345,8 @@ Windows Registry Editor Version 5.00
 "Invert" = dword:00000000
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-* [Windows.Gaming.Input Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.Custom Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [Windows.Gaming.Input 命名空间](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+* [Windows.Gaming.Input.Custom 命名空间](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
 * [INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)

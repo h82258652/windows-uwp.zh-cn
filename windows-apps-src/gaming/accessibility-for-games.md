@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, uwp, 辅助功能, 游戏
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e1d9d25fc63dd2fbb8d258fdaee692ccdfdc911
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 38060d0a6bead360ef8a682902a433670c79b495
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592932"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162775"
 ---
 #  <a name="making-games-accessible"></a>使游戏成为辅助游戏
 
@@ -196,7 +196,7 @@ ms.locfileid: "57592932"
 
 游戏设备未连接麦克风的用户仍可以与发言的其他人进行语音对话。 他们可以在聊天窗口中键入文本并将这些消息转换为语音。 它还让听力不是很好的用户能够阅读来自语音聊天用户的转录的文本消息。
 
-对于参与 ID@Xbox 和托管合作伙伴计划的开发人员，文本到语音转换和语音到文本转换功能作为 Xbox Live 服务的[游戏聊天 2 辅助功能](../xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility)的一部分提供。 有关详细信息，请参阅[游戏聊天 2 概述](../xbox-live/multiplayer/chat/game-chat-2-overview.md)。
+对于参与 ID@Xbox 和托管合作伙伴计划的开发人员，文本到语音转换和语音到文本转换功能作为 Xbox Live 服务的[游戏聊天 2 辅助功能](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/using-game-chat-2.md#accessibility)的一部分提供。 有关详细信息，请参阅[游戏聊天 2 概述](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/game-chat-2-overview.md)。
 
 ### <a name="sound-feedback"></a>声音反馈
 

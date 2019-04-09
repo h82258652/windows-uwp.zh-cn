@@ -6,12 +6,12 @@ ms.date: 02/08/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用内购买, IAP, 加载项, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b923764c6374e403d2652db715f65a80c48bacf
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8ec9c64e3cffb55a674fcc19d3152de29ef6d988
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623092"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334885"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>获取应用和加载项的产品信息
 
@@ -22,7 +22,7 @@ ms.locfileid: "57623092"
 > [!NOTE]
 > **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 如果你的应用面向 Windows 10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[此文章](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 
 这些示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
@@ -42,7 +42,7 @@ ms.locfileid: "57623092"
 若要获取当前应用的应用商店产品信息，请使用 [GetStoreProductForCurrentAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getstoreproductforcurrentappasync) 方法。 这是一种异步方法，可返回 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 对象，你可以使用该对象来获取诸如价格之类的信息。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAppInfoPage.xaml.cs#GetAppInfo)]
+[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAppInfoPage.xaml.cs#GetAppInfo)]
 
 ## <a name="get-info-for-add-ons-with-known-store-ids-that-are-associated-with-the-current-app"></a>通过与当前应用关联的已知 Store ID 获取加载项的信息
 
@@ -54,7 +54,7 @@ ms.locfileid: "57623092"
 此示例使用与当前应用关联的指定 Store ID 检索持久型加载项的信息。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetProductInfoPage.xaml.cs#GetProductInfo)]
+[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetProductInfoPage.xaml.cs#GetProductInfo)]
 
 ## <a name="get-info-for-add-ons-that-are-available-for-purchase-from-the-current-app"></a>获取可从当前应用购买的加载项的信息
 
@@ -66,7 +66,7 @@ ms.locfileid: "57623092"
 以下示例检索可从当前应用购买的所有持久型加载项、Microsoft Store 管理的易耗型加载项和开发人员管理的可消耗加载项的信息。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAddOnInfoPage.xaml.cs#GetAddOnInfo)]
+[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAddOnInfoPage.xaml.cs#GetAddOnInfo)]
 
 
 ## <a name="get-info-for-add-ons-for-the-current-app-that-the-user-has-purchased"></a>获取用户购买的当前应用的加载项的信息
@@ -79,7 +79,7 @@ ms.locfileid: "57623092"
 以下示例使用指定的 [Store ID](in-app-purchases-and-trials.md#store_ids) 检索持久型加载项的信息。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetUserCollectionPage.xaml.cs#GetUserCollection)]
+[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetUserCollectionPage.xaml.cs#GetUserCollection)]
 
 ## <a name="related-topics"></a>相关主题
 

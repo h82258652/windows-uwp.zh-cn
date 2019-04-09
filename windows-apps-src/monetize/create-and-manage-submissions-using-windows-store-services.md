@@ -6,15 +6,14 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API
 ms.localizationpriority: medium
-ms.openlocfilehash: 82e5ba10b8f0480f4d996840df26817e324111d8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c2f2638e93ecbe346cc5dccb503d94d926ddcdae
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613112"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335145"
 ---
 # <a name="create-and-manage-submissions"></a>创建和管理提交
-
 
 使用*Microsoft Store 提交 API*以编程方式查询和创建的应用程序、 外接程序和包提交航班您或您组织的合作伙伴中心帐户。 如果你的帐户管理多个应用或加载项，并且想要自动执行并优化这些资源的提交过程，此 API 非常有用。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
 
@@ -82,7 +81,7 @@ ms.locfileid: "57613112"
 
 若要获取访问令牌，请按照 [使用客户端凭据的服务到服务调用](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) 中的说明将 HTTP POST 发送到 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 终结点。 示例请求如下所示。
 
-```
+```json
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
@@ -108,7 +107,7 @@ grant_type=client_credentials
 > [!NOTE]
 > 获取访问令牌后，在令牌到期前，你有 60 分钟时间可以调用 Microsoft Store 提交 API 中的方法。
 
-| 方案       | 描述                                                                 |
+| 应用场景       | 描述                                                                 |
 |---------------|----------------------------------------------------------------------|
 | 应用 |  检索到合作伙伴中心帐户注册并创建的应用程序提交的所有应用数据。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[获取应用程序数据](get-app-data.md)</li><li>[管理应用程序提交](manage-app-submissions.md)</li></ul> |
 | 加载项 | 获取、创建或删除应用的加载项，然后获取、创建或删除这些加载项的提交。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[管理加载项](manage-add-ons.md)</li><li>[管理外接程序提交](manage-add-on-submissions.md)</li></ul> |

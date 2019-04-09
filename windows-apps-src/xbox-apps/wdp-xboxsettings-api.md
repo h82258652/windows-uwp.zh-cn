@@ -6,14 +6,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
-ms.openlocfilehash: 402d535bf6ff9ced24bc642c17d13b2d48d79681
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 54a15be26adf0da97105f15f3a44f26ee7bfc96d
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598642"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240035"
 ---
-# <a name="developer-settings-api-reference"></a>开发人员设置 API 参考   
+# <a name="developer-settings-api-reference"></a>开发人员设置 API 参考
+
 你可以使用此 API 访问有助于开发的 Xbox One 设置。
 
 ## <a name="get-all-developer-settings-at-once"></a>一次性获取所有开发人员设置
@@ -25,7 +26,7 @@ ms.locfileid: "57598642"
 方法      | 请求 URI
 :------     | :-----
 GET | /ext/settings
-<br />
+
 **URI 参数**
 
 - 无
@@ -49,10 +50,12 @@ GET | /ext/settings
 * Type - ("Text" | "Number" | "Bool" | "Select") 此字段指示设备的类型：文本输入、布尔值（“true”或“false”），具有最小值和最大值的数字或者在特定的值列表中进行选择。
 
 如果设置为一个数字：
+
 * 最小值-（数字） 此字段指示的设置的最小的数字值。
 * 最大的 （数字） 此字段指示的设置的最大的数字值。
 
 如果设置为选择：
+
 * OptionsVariable-("是"|"否"） 此字段指示设置选项是否是可变的如果有效的选项可以更改而重新启动。
 * 选项 - JSON 数组，将有效的选择选项包含为字符串。
 
@@ -67,6 +70,7 @@ HTTP 状态代码      | 描述
 5XX | 错误代码
 
 ## <a name="get-settings-one-at-a-time"></a>一次获取一个设置
+
 设置也可以逐个检索。
 
 **请求**
@@ -76,7 +80,7 @@ HTTP 状态代码      | 描述
 方法      | 请求 URI
 :------     | :-----
 GET | /ext/settings/\<设置名称\>
-<br />
+
 **URI 参数**
 
 - 无
@@ -100,10 +104,12 @@ GET | /ext/settings/\<设置名称\>
 * Type - ("Text" | "Number" | "Bool" | "Select") 此字段指示设备的类型：文本输入、布尔值（“true”或“false”），具有最小值和最大值的数字或者在特定的值列表中进行选择。
 
 如果设置为一个数字：
+
 * 最小值-（数字） 此字段指示的设置的最小的数字值。
 * 最大的 （数字） 此字段指示的设置的最大的数字值。
 
 如果设置为选择：
+
 * OptionsVariable-("是"|"否"） 此字段指示设置选项是否是可变的如果有效的选项可以更改而重新启动。
 * 选项 - JSON 数组，将有效的选择选项包含为字符串。
 
@@ -118,6 +124,7 @@ HTTP 状态代码      | 描述
 5XX | 错误代码
 
 ## <a name="set-the-value-of-a-setting"></a>设置某个设置的值
+
 你可以设置某个设置的值。
 
 **请求**
@@ -127,7 +134,7 @@ HTTP 状态代码      | 描述
 方法      | 请求 URI
 :------     | :-----
 PUT | /ext/settings/\<设置名称\>
-<br />
+
 **URI 参数**
 
 - 无
@@ -154,7 +161,6 @@ HTTP 状态代码      | 描述
 4XX | 错误代码
 5XX | 错误代码
 
-<br />
-**可用的设备系列**
+**可用设备系列**
 
 * Windows Xbox

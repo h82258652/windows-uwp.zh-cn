@@ -1,23 +1,23 @@
 ---
 Description: 合作伙伴中心中的 Xbox 分析报表显示你的客户在您的产品中的参与与 Xbox 功能有关的统计信息。
 title: Xbox 分析报告
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp, xbox 分析, xbox 实时分析, xbox 统计数据
 ms.localizationpriority: medium
-ms.openlocfilehash: ae9bacd88f957954c5cd1d3f6ccd6d3c04a568a2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: fe44c4bc8a4e2843d0158bfce730f322a67cbfa7
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607442"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334842"
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析报告
 
 **Xbox 分析**中的报表[合作伙伴中心](https://partner.microsoft.com/dashboard)演示如何在客户正在如何使用您的游戏中的 Xbox 功能有关的统计信息。 它还提供服务运行状况信息，以帮助你解决客户端错误。
 
 > [!IMPORTANT]
-> 只有当你要发布 Xbox 游戏或要发布一款使用 Xbox Live 服务的游戏时，才能查看此报告。 若要执行此操作，您必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括通过发布的游戏[Microsoft 合作伙伴](../xbox-live/developer-program-overview.md#microsoft-partners)和游戏通过提交[ID@Xbox程序](../xbox-live/developer-program-overview.md#id). 通过发布游戏[Xbox Live Creators 计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)不是此报表中当前可见。
+> 只有当你要发布 Xbox 游戏或要发布一款使用 Xbox Live 服务的游戏时，才能查看此报告。 若要执行此操作，您必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括通过发布的游戏[Microsoft 合作伙伴](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview#microsoft-partners)和游戏通过提交[ID@Xbox程序](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview#id). 通过发布游戏[Xbox Live Creators 计划](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)不是此报表中当前可见。
 
 您可以查看**Xbox 分析**展开您的游戏的左侧的导航菜单中的报表**分析**，然后选择**Xbox 分析**。  可以在合作伙伴中心，查看此数据或[将报告下载](download-analytic-reports.md)要脱机查看。
 

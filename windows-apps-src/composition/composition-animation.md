@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b94f14b32c5dd74e0aefb9b9a99f64bbd905a05d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 18208986d7d07e4d437e52dce844deecc03cf1f6
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616702"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240025"
 ---
 # <a name="composition-animations"></a>合成动画
 
@@ -37,7 +37,7 @@ Windows.UI.Composition API 允许你在统一的 API 层中创建、设置动画
 
 ## <a name="using-compositionanimations-to-create-motion"></a>使用 CompositionAnimations 创建运动
 
-若要在 UI 中生成运动，开发人员可以访问 XAML （链接到情节提要此处） 或可视化层中的动画。 在可视化层的动画提供了开发人员提供一系列的好处：
+若要在 UI 中生成运动，开发人员可以访问 XAML 或可视化层中的动画。 在可视化层的动画提供了开发人员提供一系列的好处：
 
 - 性能-而不是传统的 UI 线程绑定动画，在 Windows UI 平台上的动画在 60 FPS，实现平滑运动体验在独立线程上运行。
 - 模板化模型 – Windows UI 层中的动画是模板、 含义可以在多个对象上使用单个动画和调整属性或参数而无需担心不阻止以前的使用。

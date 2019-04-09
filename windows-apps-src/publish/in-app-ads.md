@@ -2,16 +2,16 @@
 Description: 如果您的应用程序显示广告使用 Microsoft Advertising SDK，使用合作伙伴中心的应用内广告页管理的广告使用。
 title: 应用内广告
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
-ms.date: 10/31/2018
+ms.date: 03/25/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cfdc4bd81a96d3bbdb2dd369cbdd0444ca22ea4c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4b8fc913818d5abe3317582cc18d5cb676a7a2fe
+ms.sourcegitcommit: 9f23bc9265c13f7ccedbc826261ceed2aff5ab83
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658022"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58417053"
 ---
 # <a name="in-app-ads"></a>应用内广告
 
@@ -117,7 +117,7 @@ ms.locfileid: "57658022"
 | Outbrain |  选择此选项以提供来自 [Outbrain](https://www.outbrain.com/) 的广告。 |  横幅、横幅间隙  |
 | Revcontent |  选择此选项以提供来自 [Revcontent](https://www.revcontent.com/) 的广告。 |  横幅、本机  |
 | Smaato |  选择此选项以提供来自 [Smaato](https://www.smaato.com/) 的广告。 |  横幅  |
-| smartclip |  选择此选项以提供来自 [smartclip](https://www.smartclip.com/) 的广告。 |  视频间隙  |
+| smartclip |  选择此选项以提供来自 [smartclip](http://www.smartclip.com/) 的广告。 |  视频间隙  |
 | SpotX |  选择此选项以提供来自 [SpotX](https://www.spotx.tv/) 的广告。 |  视频间隙  |
 | Taboola |  选择此选项以提供来自 [Taboola](https://www.taboola.com/) 的广告。 |  横幅  |
 | Undertone | 选择此选项可提供从广告[Undertone](https://www.undertone.com/)。 | 插播式横幅 |

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: efdf4214-9738-4df6-bf1f-ed7141696ef6
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bf4d62f390a5d324952ef2852a76803f4619fdc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6e1a6d2e0c408d37195f5a4764f71c2acc932ab5
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593802"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240005"
 ---
 # <a name="register-an-app-in-a-loose-folder"></a>注册 Loose 文件夹中的应用  
 
@@ -21,8 +21,8 @@ ms.locfileid: "57593802"
 
 方法      | 请求 URI
 :------     | :------
-POST | /api/app/packagemanager/register
-<br />
+发布 | /api/app/packagemanager/register
+
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
@@ -30,7 +30,6 @@ POST | /api/app/packagemanager/register
 URI 参数      | 描述
 :------     | :-----
 文件夹（必需） | 要注册的程序包的目标文件夹名称。 此文件夹必须位于主机的 d:\developmentfiles\LooseApps 之下。 如果此文件夹位于 LooseApps 下面的一个子文件夹中，那么该文件夹的名称应进行 base64 编码，因为它可能包含路径分隔符。
-<br />
 
 **请求标头**
 
@@ -51,12 +50,12 @@ HTTP 状态代码      | 描述
 200 | 已接受和正在处理的部署请求
 4XX | 错误代码
 5XX | 错误代码
-<br />
-**可用的设备系列**
+
+**可用设备系列**
 
 * Windows Xbox
 
-**注意**
+**说明**
 
 至少有三种不同的方式可以将主机上的 Loose 应用放在目标文件夹中。 最简单的方法是直接复制到 SMB 通过文件\\< IP_Address > \DevelopmentFiles\LooseApps。 这需要使用 UWA 工具包的用户名和密码，用户名和密码可以通过 [/ext/smb/developerfolder](wdp-smb-api.md) 获取。 
 

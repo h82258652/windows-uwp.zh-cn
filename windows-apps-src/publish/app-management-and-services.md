@@ -2,16 +2,16 @@
 Description: 管理和查看与每个合作伙伴中心，您的应用程序相关的详细信息和配置服务，如 A / B 测试和映射。
 title: 应用管理和服务
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d6261a7cce86c82b4865d7ca1d68c082cba9ccca
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ba28fb49accc213f570e470142e259c08122b704
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610002"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334575"
 ---
 # <a name="app-management-and-services"></a>应用管理和服务
 
@@ -19,7 +19,7 @@ ms.locfileid: "57610002"
 
 使用合作伙伴中心中的应用，你将看到的左侧的导航菜单中的部分**Services**并**应用程序管理**。 可以展开这些部分，访问如下所述的功能。
 
-## <a name="services"></a>服务
+## <a name="services"></a>Services
 
 **服务**部分让你可以管理多个不同的应用服务。
 
@@ -27,7 +27,7 @@ ms.locfileid: "57610002"
 
 如果您要发布一个游戏，则可以启用[Xbox Live Creators 计划](https://xbox.com/developers/creators-program)此页上。 这样可以启动配置和测试 Xbox Live 功能，并最终发布您的 Xbox Live Creators 计划游戏。
 
-有关详细信息，请参阅[开始使用 Xbox Live Creators 计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)并[创建一个新的 Xbox Live Creators 计划标题，并将发布到测试环境](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)。
+有关详细信息，请参阅[开始使用 Xbox Live Creators 计划](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)并[创建一个新的 Xbox Live Creators 计划标题，并将发布到测试环境](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title)。
 
 ## <a name="experimentation"></a>实验
 

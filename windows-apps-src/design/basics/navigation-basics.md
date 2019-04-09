@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bba6d42e6ce494c0655c6b6c60db91c1e2e006e8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3d516343798b7d8c221a5af12210a4897a3124a9
+ms.sourcegitcommit: 358abe22243da4592c30e18d6fc322778f091c8d
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636092"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58362947"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP 应用的导航设计基础知识
 
@@ -197,6 +197,21 @@ ms.locfileid: "57636092"
 
 :::row:::
     :::column:::
+         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+    :::column-end:::
+        :::column span="2":::
+    [**Pivot**](../controls-and-patterns/pivot.md)
+    
+    类似于[导航视图](../controls-and-patterns/navigationview.md)，但其他支持的触摸和略有不同的导航行为。
+    
+    使用数据透视表时:-希望你的应用程序允许触摸轻扫类别之间
+        - 要导航到轮播 infintely 选项
+        - 不需要全面控制两个分类之间的导航行为
+
+:::row-end:::
+
+:::row:::
+    :::column:::
         ![navview image](images/nav/thumbnail-navview.svg)
     :::column-end:::
     :::column span="2":::
@@ -207,9 +222,9 @@ ms.locfileid: "57636092"
         - 这些页面存在于顶层。
         - 有许多导航项 (多个 5)
         - 你预期用户不会在页面之间频繁切换。
-        
-:::row-end:::
 
+:::row-end:::
+        
 :::row:::
     :::column:::
         ![Master details image](images/nav/thumbnail-master-detail.svg)

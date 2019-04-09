@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 558d7e655a54b22f1fc74591a718a7180d90366f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ac958a93fcafbb33a9025196b49398e2e3269e55
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57663642"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291835"
 ---
 # <a name="ambient-lighting"></a>环境光
-
 
 环境光为场景提供恒定照明。 它会无差别地点亮所有对象顶点，因为它不取决于任意其他照明因素，例如，顶点法线、光线方向、光线位置、范围或衰减。 环境光在所有方向都是恒定的，并且会无差别地为某个对象的所有像素上色。 这是一种快速计算，但会让对象看上去扁平且不逼真。
 
@@ -33,7 +32,7 @@ ms.locfileid: "57663642"
 | Gₐ                | (0,0,0,0)     | D3DCOLORVALUE | 全局环境颜色                                                                                              |
 | Atten<sub>i</sub> | (0,0,0,0)     | D3DCOLORVALUE | 第 i 道光的光线衰减。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。 |
 | Spot<sub>i</sub>  | (0,0,0,0)     | D3DVECTOR     | 第 i 道光的聚焦因素。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。  |
-| 总和               | 不适用           | 不适用           | 环境光的总和                                                                                          |
+| 总和               | 不可用           | 不可用           | 环境光的总和                                                                                          |
 | L<sub>ai</sub>    | (0,0,0,0)     | D3DVECTOR     | 第 i 道光的光环境颜色                                                                              |
 
  
@@ -59,7 +58,7 @@ L<sub>ai</sub> 是场景中第 i 道光的环境颜色。 每个 Direct3D 灯都
 
 在此示例中，使用场景环境光和材料环境光为对象着色。
 
-```
+```cpp
 #define GRAY_COLOR  0x00bfbfbf
 
 Ambient.r = 0.75f;

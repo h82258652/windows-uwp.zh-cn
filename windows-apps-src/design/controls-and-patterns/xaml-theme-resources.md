@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e65ad1f4dcb5a83eb7336fc8e1eb794b107dcf01
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7cae075b0d71925eb35ac2362aef291994b29801
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634642"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244403"
 ---
 # <a name="xaml-theme-resources"></a>XAML 主题资源
 
@@ -155,12 +155,12 @@ XAML 框架提供了一个已命名的 [Color](/uwp/api/Windows.UI.Color) 资源
 |-------------------------------|--------------------------------|--------------------------|-----------------|
 | SystemColorButtonFaceColor    | **按钮文本**（背景）   | 后台               | \#FFF0F0F0      |
 | SystemColorButtonTextColor    | **按钮文本**（前景）   | Foreground               | \#FF000000      |
-| SystemColorGrayTextColor      | **已禁用的文本**              | Disabled                 | \#FF6D6D6D      |
+| SystemColorGrayTextColor      | **失效文本**              | Disabled                 | \#FF6D6D6D      |
 | SystemColorHighlightColor     | **选定文本**（背景） | Highlight                | \#FF3399FF      |
 | SystemColorHighlightTextColor | **选定文本**（前景） | HighlightAlt             | \#FFFFFFFF      |
-| SystemColorHotlightColor      | **超链接**                 | Hyperlink                | \#FF0066CC      |
-| SystemColorWindowColor        | **背景**                 | PageBackground           | \#FFFFFFFF      |
-| SystemColorWindowTextColor    | **文本**                       | PageText                 | \#FF000000      |
+| SystemColorHotlightColor      | **超链接**                 | 超链接                | \#FF0066CC      |
+| SystemColorWindowColor        | **后台**                 | PageBackground           | \#FFFFFFFF      |
+| SystemColorWindowTextColor    | **Text**                       | PageText                 | \#FF000000      |
 
 通过“轻松使用设置中心”，Windows 提供不同的高对比度主题，并且支持用户设置特定颜色以用于其高对比度设置，如此处所示。 因此，无法提供一个明确的高对比颜色值列表。
 
@@ -177,7 +177,7 @@ XAML 框架提供了一个已命名的 [Color](/uwp/api/Windows.UI.Color) 资源
 
 ### <a name="theme-dependent-brushes"></a>依赖于主题的画笔
 
-使用前面部分中所示的颜色资源来设置系统主题资源字典中的 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 资源的 [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 属性。 你可以使用画笔资源将颜色应用到 XAML 元素中。 画笔资源的键遵循以下命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如， `SystemControlBackroundAltHighBrush`。
+使用前面部分中所示的颜色资源来设置系统主题资源字典中的 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 资源的 [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 属性。 你可以使用画笔资源将颜色应用到 XAML 元素中。 画笔资源的键遵循以下命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如，`SystemControlBackroundAltHighBrush`。
 
 让我们看一下如何在运行时确定此画笔的颜色值。 在“浅色”和“深色”资源字典中，定义此画笔，如下所示：
 
@@ -240,7 +240,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 <Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
     <Setter Property="FontFamily" Value="Segoe UI"/>
     <Setter Property="FontWeight" Value="SemiBold"/>
-    <Setter Property="FontSize" Value="15"/>
+    <Setter Property="FontSize" Value="14"/>
     <Setter Property="TextTrimming" Value="None"/>
     <Setter Property="TextWrapping" Value="Wrap"/>
     <Setter Property="LineStackingStrategy" Value="MaxHeight"/>
@@ -318,7 +318,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 <Style x:Key="BodyTextBlockStyle" TargetType="TextBlock" 
        BasedOn="{StaticResource BaseTextBlockStyle}">
     <Setter Property="FontWeight" Value="Normal"/>
-    <Setter Property="FontSize" Value="15"/>
+    <Setter Property="FontSize" Value="14"/>
 </Style>
 ```
 
@@ -338,7 +338,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ### <a name="baserichtextblockstyle"></a>BaseRichTextBlockStyle
 
-**TargetType**:[按](https://msdn.microsoft.com/library/windows/apps/br227565)
+**TargetType**:[RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565)
 
 为所有其他 [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) 容器样式提供常用属性。
 
@@ -352,7 +352,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 <Style x:Key="BaseRichTextBlockStyle" TargetType="RichTextBlock">
     <Setter Property="FontFamily" Value="Segoe UI"/>
     <Setter Property="FontWeight" Value="SemiBold"/>
-    <Setter Property="FontSize" Value="15"/>
+    <Setter Property="FontSize" Value="14"/>
     <Setter Property="TextTrimming" Value="None"/>
     <Setter Property="TextWrapping" Value="Wrap"/>
     <Setter Property="LineStackingStrategy" Value="MaxHeight"/>

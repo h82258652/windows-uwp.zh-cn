@@ -6,23 +6,23 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 3f92c8fd-4096-4972-97da-01ae5db6423c
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a27d13f7ceedd14a84d5b4b4aa1233445037a1f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7dcd4c6c39a983ab11bfacd391bfa78942601258
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640762"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244053"
 ---
 # <a name="media-capture-api-reference"></a>媒体捕获 API 参考 #
 
-**请求**
+## <a name="request"></a>请求
 
 你可以利用以下请求格式捕获当前屏幕，格式为 PNG。
 
 | 方法        | 请求 URI     | 
 | ------------- |-----------------|
 | GET           | /ext/screenshot |
-<br>
+
 
 **URI 参数**
 
@@ -32,7 +32,6 @@ ms.locfileid: "57640762"
 | URI 参数      | 描述     | 
 | ------------------ |-----------------|
 | 下载（可选）| 用于指示是否应设置 HTTP 响应标头、指示主浏览器是否应将屏幕截图作为附件进行下载而不是在浏览器中对其进行渲染的布尔值。  |
-<br>
 
 **请求标头**
 
@@ -42,7 +41,7 @@ ms.locfileid: "57640762"
 
 * 无
 
-###<a name="response"></a>响应 # # #
+## <a name="response"></a>响应
 
 **状态代码**
 
@@ -54,7 +53,7 @@ ms.locfileid: "57640762"
 | 5XX                | 意外失败的错误代码 |
 <br>
 
-**可用的设备系列**
+**可用设备系列**
 
 * Windows Xbox
 
