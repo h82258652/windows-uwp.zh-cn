@@ -2,16 +2,16 @@
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: Device Portal 核心 API 参考
 description: 了解 Windows Device Portal 核心 REST API，可用于访问数据和以编程方式控制设备。
-ms.date: 03/22/2017
+ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f541a27a96b88b37d3f32b98246ba0ccbe2c8cf
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: 58ae7d83c0889131313d136c13048b83a861f601
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/08/2019
-ms.locfileid: "59067852"
+ms.locfileid: "59244133"
 ---
 # <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 参考
 
@@ -2803,7 +2803,8 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | SecondayDNS | (**必需**如果*PrimaryDNS*不为 null) 的静态辅助 DNS 设置。 |
 
 为清楚起见，若要设置为 DHCP 的接口，序列化只`AdapterName`在网络上：
-```
+
+```json
 {
     "AdapterName":"{82F86C1B-2BAE-41E3-B08D-786CA44FEED7}"
 }
