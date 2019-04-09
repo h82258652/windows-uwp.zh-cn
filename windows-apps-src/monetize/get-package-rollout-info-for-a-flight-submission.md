@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 软件包推出, 外部测试版提交
 ms.assetid: 397f1b99-2be7-4f65-bcf1-9433a3d496ad
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e60ecfccecda850a5c83e5840626e1b789a068d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1afc53a6f798fa5a85ddb3ec329d6c6b3fbee8ed
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57637422"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334455"
 ---
 # <a name="get-rollout-info-for-a-flight-submission"></a>获取外部测试版提交的推出信息
 
 
 使用 Microsoft Store 提交 API 中的此方法获取软件包外部测试版提交的[软件包推出](../publish/gradual-package-rollout.md)信息。 有关通过使用 Microsoft Store 提交 API 创建软件包外部测试版提交过程的详细信息，请参阅[管理软件包外部测试版提交](manage-flight-submissions.md)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -32,23 +32,23 @@ ms.locfileid: "57637422"
 
 | 方法 | 请求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout   ``` |
+| GET   | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout   ` |
 
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
 | 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字符串 | 必需。 应用（包含要获取软件包推出信息的软件包外部测试版提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| flightId | 字符串 | 必需。 软件包外部测试版（包含要获取软件包推出信息的提交）的 ID。 [创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中包含此 ID。 在合作伙伴中心创建航班，此 ID 是也可用在合作伙伴中心中的航班页的 URL。    |
-| submissionId | 字符串 | 必需。 要获取软件包推出信息的提交的 ID。 此 ID 包含在[创建软件包外部测试版提交](create-a-flight-submission.md)请求的响应数据中。 在合作伙伴中心创建的提交，此 ID 是也可用在合作伙伴中心中的提交页的 URL。   |
+| applicationId | string | 必需。 应用（包含要获取软件包推出信息的软件包外部测试版提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
+| flightId | string | 必需。 软件包外部测试版（包含要获取软件包推出信息的提交）的 ID。 [创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中包含此 ID。 在合作伙伴中心创建航班，此 ID 是也可用在合作伙伴中心中的航班页的 URL。    |
+| submissionId | string | 必需。 要获取软件包推出信息的提交的 ID。 此 ID 包含在[创建软件包外部测试版提交](create-a-flight-submission.md)请求的响应数据中。 在合作伙伴中心创建的提交，此 ID 是也可用在合作伙伴中心中的提交页的 URL。   |
 
 
 ### <a name="request-body"></a>请求正文
@@ -59,7 +59,7 @@ ms.locfileid: "57637422"
 
 以下示例演示了如何获取软件包外部测试版提交的软件包推出信息。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243649/packagerollout HTTP/1.1
 Authorization: Bearer <your access token>
 ```

@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4efbdaef0fbcbe076133be1c491f7ed173c01257
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 786c9bc4962d26c58950e06a82140e524b967db1
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653572"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240055"
 ---
 # <a name="list-view-and-grid-view"></a>列表视图和网格视图
 
@@ -182,7 +182,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
                 <Image Source="Assets/placeholder.png" Width="32" Height="32" 
                        HorizontalAlignment="Left"/>
                 <TextBlock Text="{x:Bind}" Foreground="Teal" 
-                           FontSize="15" Grid.Column="1"/>
+                           FontSize="14" Grid.Column="1"/>
             </Grid> 
         </DataTemplate>
     </ListView.ItemTemplate>
@@ -290,11 +290,11 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 若要启用此交互： | 使用这些设置： | 处理此事件： | 使用此属性以获取选定的项目：
 ----------------------------|---------------------|--------------------|--------------------------------------------
-无交互 | [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) = **None**、[IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) = **False** | 不适用 | 不适用 
+无交互 | [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) = **None**、[IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) = **False** | 不可用 | 不可用 
 单选 | SelectionMode = **Single**、IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx)、[SelectedIndex](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx)  
 多选 | SelectionMode = **Multiple**、IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
 扩展选择 | SelectionMode = **Extended**、IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
-单击 | SelectionMode = **None**、IsItemClickEnabled = **True** | [项目单击](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | 不适用 
+单击 | SelectionMode = **None**、IsItemClickEnabled = **True** | [ItemClick](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | 不可用 
 
 > **注意**&nbsp;&nbsp;从 Windows 10 开始，你可以启用 IsItemClickEnabled 以引发 ItemClick 事件，同时 SelectionMode 也设置为 Single、Multiple 或 Extended。 如果你执行此操作，将先后引发 ItemClick 事件和 SelectionChanged 事件。 在某些情况下（例如在 ItemClick 事件处理程序中导航到其他页面），不会引发 SelectionChanged 事件，并且不会选择该项目。
 
@@ -526,5 +526,5 @@ ListView 和 GridView 控件支持在其自身内部以及它们自身与其他 
 ## <a name="related-articles"></a>相关文章
 
 - [列表](lists.md)
-- [项容器和模板](item-containers-templates.md)
+- [项目容器和模板](item-containers-templates.md)
 - [拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)

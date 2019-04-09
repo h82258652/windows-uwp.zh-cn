@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用内购买, IAP, 收据, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 9449a2dd265128a83f7840872ce4995df05a4e78
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6cae88e57a61e6d4e982f1eac7e65582861ef5d2
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605722"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335005"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>使用收据验证产品购买
 
@@ -92,7 +92,7 @@ ms.locfileid: "57605722"
 以下是该验证过程的一个示例。 此代码在 .NET Framework 控制台应用程序中运行，该应用程序包含对 **System.Security** 程序集的引用。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
+[!code-csharp[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
 
 <span id="receipt-descriptions" />
 
@@ -112,7 +112,7 @@ ms.locfileid: "57605722"
 
 **Receipt** 具有以下必属性。
 
-|  属性  |  描述   |
+|  特性  |  描述   |
 |-------------|-------------------|
 |  **版本**  |    收据的版本号。            |
 |  **CertificateId**  |     用于对收据进行签名的证书指纹。          |
@@ -127,9 +127,9 @@ ms.locfileid: "57605722"
 
 **AppReceipt** 具有以下属性。
 
-|  属性  |  描述   |
+|  特性  |  描述   |
 |-------------|-------------------|
-|  **id**  |    标识购买。           |
+|  **Id**  |    标识购买。           |
 |  **AppId**  |     操作系统用于该应用的程序包系列名称值。           |
 |  **LicenseType**  |    **完整**，如果用户购买了完整版本的应用。 **试用**，如果用户下载了应用的试用版。           |  
 |  **PurchaseDate**  |    获得应用的日期。          |  |
@@ -142,11 +142,11 @@ ms.locfileid: "57605722"
 
 **ProductReceipt** 具有以下属性。
 
-|  属性  |  描述   |
+|  特性  |  描述   |
 |-------------|-------------------|
-|  **id**  |    标识购买。           |
+|  **Id**  |    标识购买。           |
 |  **AppId**  |     标识应用，用户通过该应用进行购买。           |
-|  **产品 id**  |     标识购买的产品。           |
+|  **ProductId**  |     标识购买的产品。           |
 |  **ProductType**  |    确定产品类型。 当前仅支持值 **Durable**。          |  
 |  **PurchaseDate**  |    购买发生的日期。          |  |
 

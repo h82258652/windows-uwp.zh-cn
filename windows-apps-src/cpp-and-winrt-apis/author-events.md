@@ -5,26 +5,26 @@ ms.date: 07/18/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 创作, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: ace1c276b878d07f5750483740dfe90ed8cb6211
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5c410d209972a0221928548901f79bd599c67eae
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644482"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921693"
 ---
 # <a name="author-events-in-cwinrt"></a>在 C++/WinRT 中创作事件
 
 本主题演示如何创作 Windows 运行时组件，该组件包含表示银行帐户的运行时类，当该帐户的余额进入借方时其会引发事件。 它还演示使用该银行帐户运行时类、调用函数以调整余额并处理产生的任何事件的核心应用。
 
 > [!NOTE]
-> 有关如何安装和使用信息[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio 扩展 (VSIX)，（可提供项目模板支持） 请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 有关如何安装和使用信息[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio 扩展 (VSIX) 和 NuGet 包 （该一起提供项目模板，并生成支持），请参阅[适用于 Visual Studio 支持C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 > [!IMPORTANT]
 > 有关支持你了解如何利用 C++/WinRT 来使用和创作运行时类的基本概述和术语，请参阅[通过 C++/WinRT 使用 API](consume-apis.md) 和[通过 C++/WinRT 创作 API](author-apis.md)。
 
 ## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>创建 Windows 运行时组件 (BankAccountWRC)
 
-首先在 Microsoft Visual Studio 中创建新项目。 创建**Visual c + +** > **Windows Universal** > **Windows 运行时组件 (C + + WinRT)** 项目，并将其命名*BankAccountWRC* （适用于"银行帐户 Windows 运行时组件"）。
+首先在 Microsoft Visual Studio 中创建新项目。 创建**可视化C++**   >  **Windows Universal** > **Windows 运行时组件 (C++/WinRT)** 项目，并将其命名*BankAccountWRC* （适用于"银行帐户 Windows 运行时组件"）。
 
 该新建项目包含一个名为 `Class.idl` 的文件。 该文件重命名`BankAccount.idl`(重命名`.idl`文件会自动重命名依赖项`.h`和`.cpp`文件、 过)。 内容替换为`BankAccount.idl`与下面的列表。
 
@@ -41,7 +41,7 @@ namespace BankAccountWRC
 }
 ```
 
-保存文件。 该项目不会生成完成时间，但现在构建是有意义的事情要做，因为它将生成的源代码文件，你将在其中实现**BankAccount**运行时类。 请继续并立即生成 (您有望看到在此阶段的生成错误只需使用`Class.h`和`Class.g.h`找不到)。 在生成过程中，`midl.exe`运行工具创建组件的 Windows 运行时元数据文件 (即`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`)。 然后，`cppwinrt.exe` 工具运行（具有 `-component` 选项）以生成源代码文件，从而为你在创作组件时提供支持。 这些文件包括存根 （stub） 若要开始实现**BankAccount**在 IDL 中声明的运行时类。 这些存根是 `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` 和 `BankAccount.cpp`。
+保存该文件。 该项目不会生成完成时间，但现在构建是有意义的事情要做，因为它将生成的源代码文件，你将在其中实现**BankAccount**运行时类。 请继续并立即生成 (您有望看到在此阶段的生成错误只需使用`Class.h`和`Class.g.h`找不到)。 在生成过程中，`midl.exe`运行工具创建组件的 Windows 运行时元数据文件 (即`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`)。 然后，`cppwinrt.exe` 工具运行（具有 `-component` 选项）以生成源代码文件，从而为你在创作组件时提供支持。 这些文件包括存根 （stub） 若要开始实现**BankAccount**在 IDL 中声明的运行时类。 这些存根是 `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` 和 `BankAccount.cpp`。
 
 右键单击项目节点，然后单击**在文件资源管理器中打开文件夹**。 这将在文件资源管理器中打开项目文件夹。 将存根 （stub） 文件，复制`BankAccount.h`并`BankAccount.cpp`从文件夹`\BankAccountWRC\BankAccountWRC\Generated Files\sources\`和到包含你的项目文件的文件夹，即`\BankAccountWRC\BankAccountWRC\`，目标中的文件替换。 现在，让我们打开 `BankAccount.h` 和 `BankAccount.cpp` 并实现运行时类。 在 `BankAccount.h` 中，将两个私有成员添加到 BankAccount 的实现（*不是*出厂实现）。
 
@@ -93,11 +93,11 @@ namespace winrt::BankAccountWRC::implementation
 
 你还可以从上述情况中发现，如果余额变为负，**AdjustBalance** 函数的实现将引发 **AccountIsInDebit** 事件。
 
-如果任何警告会阻止您从构建，然后解决这些问题，或者设置项目属性**C/c + +** > **常规** > **将警告视为错误**到**否 (/ WX-)**，并再次生成项目。
+如果任何警告会阻止您从构建，然后解决这些问题，或者设置项目属性**C /C++** > **常规** > **将警告视为错误**到**否 (/ WX-)**，并再次生成项目。
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>创建核心应用 (BankAccountCoreApp) 以测试 Windows 运行时组件
 
-现在创建新项目（在 `BankAccountWRC` 解决方案中，或在一个新解决方案中）。 创建**Visual c + +** > **Windows Universal** > **Core 应用 (C + + WinRT)** 项目，并将其命名*BankAccountCoreApp*.
+现在创建新项目（在 `BankAccountWRC` 解决方案中，或在一个新解决方案中）。 创建**可视化C++**   >  **Windows Universal** > **Core 应用 (C++/WinRT)** 项目，并将其命名*BankAccountCoreApp*。
 
 添加的引用，并浏览到`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`（或添加项目到项目的引用，如果两个项目都在同一解决方案中）。 单击**添加**，然后单击**确定**。 立即生成 BankAccountCoreApp。 请参阅错误不可靠事件中的有效负载文件`readme.txt`不存在，从 Windows 运行时组件项目中排除该文件，重新生成它，然后重新生成 BankAccountCoreApp。
 
@@ -244,7 +244,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 ## <a name="parameterized-delegates-simple-signals-and-callbacks-within-a-project"></a>参数化的委托、 简单信号和项目中的回调
 
-如果您的事件仅供内部使用，在 C + + WinRT 项目 （不能跨二进制文件），则仍使用[ **winrt::event** ](/uwp/cpp-ref-for-winrt/event)结构模板，但您将其参数化使用 C + + WinRT 的非 Windows Runtime [ **winrt::delegate&lt;...T&gt;**  ](/uwp/cpp-ref-for-winrt/delegate)结构模板，这是一个高效、 引用计数的委托。 它支持任意数量的参数，并且它们并不局限于 Windows 运行时类型。
+如果只能在内部在使用您的事件，则在C++/WinRT 项目 （不能跨二进制文件），则仍使用[ **winrt::event** ](/uwp/cpp-ref-for-winrt/event)结构模板，但您将其使用的参数化C++/WinRT 的非 Windows Runtime [ **winrt::delegate&lt;...T&gt;**  ](/uwp/cpp-ref-for-winrt/delegate)结构模板，这是一个高效、 引用计数的委托。 它支持任意数量的参数，并且它们并不局限于 Windows 运行时类型。
 
 下面的示例首先演示的委托签名不带任何参数 （实质上是简单信号），，然后另一个接受字符串。
 
@@ -272,7 +272,7 @@ logCallback = [](std::wstring const& message) { std::wcout << message.c_str() <<
 logCallback(L"Hello, World!");
 ```
 
-如果您要迁移从 C + + /cli CX 基本代码的事件和委托在内部使用在项目中，然后**winrt::delegate**将帮助你将复制该模式在 C + + WinRT。
+如果您要从迁移C++/CX 基本代码的事件和委托在内部使用在项目中，然后**winrt::delegate**将帮助你将复制在该模式C++/WinRT。
 
 ## <a name="design-guidelines"></a>设计指南
 
@@ -285,4 +285,4 @@ logCallback(L"Hello, World!");
 ## <a name="related-topics"></a>相关主题
 * [使用 C++/WinRT 创作 API](author-apis.md)
 * [通过 C++/WinRT 使用 API](consume-apis.md)
-* [处理事件，通过使用委托中 C + + WinRT](handle-events.md)
+* [在 C++/WinRT 中使用代理处理事件](handle-events.md)

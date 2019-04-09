@@ -6,12 +6,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, python
 ms.localizationpriority: medium
-ms.openlocfilehash: 157c11484de150d363157e5b6e5de00a35bafd5f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bc3959b4e26bd54542edc3f69666f6d97cddba26
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634402"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334825"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Python 示例：应用、加载项和外部测试版的提交
 
@@ -30,7 +30,7 @@ ms.locfileid: "57634402"
 
 以下示例演示如何[获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，你可以使用此令牌在 Microsoft Store 提交 API 中调用方法。 获取令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Microsoft Store 提交 API。 该令牌到期后，可以重新生成一个。
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L1-L20)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L1-L20)]
 
 <span id="create-add-on" />
 
@@ -38,7 +38,7 @@ ms.locfileid: "57634402"
 
 以下示例演示如何[创建](create-an-add-on.md)再[删除](delete-an-add-on.md)加载项。
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
 
 <span id="create-package-flight" />
 
@@ -46,7 +46,7 @@ ms.locfileid: "57634402"
 
 以下示例演示了如何[创建](create-a-flight.md) 和[删除](delete-a-flight.md) 软件包外部测试版。
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L58-L87)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L58-L87)]
 
 <span id="create-app-submission" />
 
@@ -61,7 +61,7 @@ ms.locfileid: "57634402"
 5. 接下来，它[更新](update-an-app-submission.md)，然后[提交](commit-an-app-submission.md)新提交到合作伙伴中心。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-app-submission.md)，直到其成功提交。
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L93-L166)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L93-L166)]
 
 <span id="create-add-on-submission" />
 
@@ -76,7 +76,7 @@ ms.locfileid: "57634402"
 5. 接下来，它[更新](update-an-add-on-submission.md)，然后[提交](commit-an-add-on-submission.md)新提交到合作伙伴中心。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-add-on-submission.md)，直到其成功提交。
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L172-L245)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L172-L245)]
 
 <span id="create-flight-submission" />
 
@@ -91,7 +91,7 @@ ms.locfileid: "57634402"
 5. 接下来，它[更新](update-a-flight-submission.md)，然后[提交](commit-a-flight-submission.md)新提交到合作伙伴中心。
 6. 最后，它会定期[检查新提交的状态](get-status-for-a-flight-submission.md)，直到其成功提交。
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L251-L325)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L251-L325)]
 
 ## <a name="related-topics"></a>相关主题
 

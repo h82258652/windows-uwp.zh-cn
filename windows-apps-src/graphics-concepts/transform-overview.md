@@ -6,15 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b6be8ee8aa67196581907087d99e0324d741a00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a01814729e38668e05201b4b7c8876dc150c488e
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640142"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291765"
 ---
 # <a name="transform-overview"></a>转换概述
-
 
 矩阵转换将处理 3D 图形的大量低级数学运算。
 
@@ -63,7 +62,7 @@ ms.locfileid: "57640142"
 
 在 C++ 中，Direct3D 使用矩阵结构将矩阵声明为二维数组。 以下示例说明如何初始化 [**D3DMATRIX**](https://msdn.microsoft.com/library/windows/desktop/bb172573) 结构以充当统一缩放矩阵（比例系数“s”）。
 
-```
+```cpp
 D3DMATRIX scale = {
     5.0f,            0.0f,            0.0f,            0.0f,
     0.0f,            5.0f,            0.0f,            0.0f,
@@ -81,7 +80,7 @@ D3DMATRIX scale = {
 
 你可在 C++ 中手动创建转换矩阵。 以下示例显示了创建用于转换顶点的矩阵的函数的源代码。
 
-```
+```cpp
 D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
     D3DXMATRIX ret;
 
@@ -100,7 +99,7 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 
 ![新点的缩放矩阵的等式](images/matscale.png)
 
-## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>旋转
+## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>Rotate
 
 
 此处描述的转换是针对左手坐标系的，因此可能不同于你在其他地方看到的转换矩阵。
@@ -121,7 +120,7 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 
 以下代码演示用于处理围绕 X 轴的旋转的函数。
 
-```
+```cpp
     // Inputs are a pointer to a matrix (pOut) and an angle in radians.
     float sin, cos;
     sincosf(angle, &sin, &cos);  // Determine sin and cos of angle

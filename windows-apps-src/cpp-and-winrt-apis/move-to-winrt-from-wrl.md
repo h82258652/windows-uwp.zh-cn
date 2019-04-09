@@ -5,17 +5,17 @@ ms.date: 05/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: e81f82fe823ee0fdf81741c89576adf268940d91
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1d11d0dcdf13982e0754a84de00f22c02090e822
+ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630742"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58618384"
 ---
 # <a name="move-to-cwinrt-from-wrl"></a>从 WRL 移动到 C++/WinRT
-本主题演示如何移植[Windows 运行时 c + + 模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)的对等代码[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
+本主题演示如何移植[Windows 运行时C++模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)的对等代码[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
 
-第一步中移植到 C + + / WinRT 是手动添加 C + + WinRT 支持添加到你的项目 (请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 为此，请安装[Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)到你的项目。 打开 Visual Studio 项目中，单击**项目** \> **管理 NuGet 包...**\> **浏览**，键入或粘贴**Microsoft.Windows.CppWinRT**在搜索框中，在搜索结果中选择的项，然后单击**安装**若要安装该项目的包。 所做的更改的一个作用是支持[C + + /cli CX](/cpp/cppcx/visual-c-language-reference-c-cx)处于关闭状态的项目中。 如果你在项目中使用 C++/CX，那么你可以让支持保持关闭状态，同时将 C++/CX 代码更新到 C++/WinRT（请参阅[从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md)）。 也可将支持返回 (在项目属性中， **C/c + +** \> **常规** \> **使用 Windows 运行时扩展** \>**是 (/ZW)**)，并移植 WRL 代码的第一个重点。 C + + /CX 和 C + + WinRT 代码可以共存于同一项目中，除 XAML 编译器支持和 Windows 运行时组件 (请参阅[将移动到 C + + WinRT 从 C + + /cli CX](move-to-winrt-from-cx.md))。
+移植到的第一步C++/WinRT 是手动添加C++/WinRT 支持添加到你的项目 (请参阅[适用于 Visual Studio 支持C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 为此，请安装[Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)到你的项目。 打开 Visual Studio 项目中，单击**项目** \> **管理 NuGet 包...**\> **浏览**，键入或粘贴**Microsoft.Windows.CppWinRT**在搜索框中，在搜索结果中选择的项，然后单击**安装**若要安装该项目的包。 所做的更改的一个作用是支持[ C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)处于关闭状态的项目中。 如果你在项目中使用 C++/CX，那么你可以让支持保持关闭状态，同时将 C++/CX 代码更新到 C++/WinRT（请参阅[从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md)）。 也可将支持返回 (在项目属性中， **C /C++**  \> **常规** \> **使用 Windows 运行时扩展** \>**是 (/ZW)**)，并移植 WRL 代码的第一个重点。 C++/CX 和C++/WinRT 代码可以共存于同一项目中，除 XAML 编译器支持和 Windows 运行时组件 (请参阅[将移动到C++从 /WinRT C++/CX](move-to-winrt-from-cx.md))。
 
 设置项目属性**常规** \> **目标平台版本**到 10.0.17134.0 (Windows 10，版本 1803年) 或更高版本。
 
@@ -28,7 +28,7 @@ ms.locfileid: "57630742"
 如果你包括了任何 C++/WinRT 投影 Windows API 标头（例如，`winrt/Windows.Foundation.h`），那么你无需像这样明确包括 `winrt/base.h`，因为它将自动为你包含在内。
 
 ## <a name="porting-wrl-com-smart-pointers-microsoftwrlcomptrcppwindowscomptr-class"></a>移植 WRL COM 智能指针 ([Microsoft::WRL::ComPtr](/cpp/windows/comptr-class))
-使用任何代码移植**Microsoft::WRL::ComPtr\<T\>** 若要使用[ **winrt::com_ptr\<T\>**](/uwp/cpp-ref-for-winrt/com-ptr)。 下面是之前和之后的代码示例。 在*之后*的版本中，[**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) 成员函数检索基础原始指针，以便可以进行设置。
+使用任何代码移植**Microsoft::WRL::ComPtr\<T\>** 若要使用[ **winrt::com_ptr\<T\>**](/uwp/cpp-ref-for-winrt/com-ptr)。 下面是之前和之后的代码示例。 在*之后*的版本中，[**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput-function) 成员函数检索基础原始指针，以便可以进行设置。
 
 ```cpp
 ComPtr<IDXGIAdapter1> previousDefaultAdapter;
@@ -41,7 +41,7 @@ winrt::check_hresult(m_dxgiFactory->EnumAdapters1(0, previousDefaultAdapter.put(
 ```
 
 > [!IMPORTANT]
-> 如果有[ **winrt::com_ptr** ](/uwp/cpp-ref-for-winrt/com-ptr)已装 （其内部的原始指针都已经有一个目标），并且想要重新固定，以指向不同的对象，则首先需要将分配`nullptr`向其&mdash;如下面的代码示例中所示。 如果不这样做，则已-就位**com_ptr**将绘制到你的关注的问题 (当您调用[ **com_ptr::put** ](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)或者[ **com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)) 通过声明其内部指针不为 null。
+> 如果有[ **winrt::com_ptr** ](/uwp/cpp-ref-for-winrt/com-ptr)已装 （其内部的原始指针都已经有一个目标），并且想要重新固定，以指向不同的对象，则首先需要将分配`nullptr`向其&mdash;如下面的代码示例中所示。 如果不这样做，则已-就位**com_ptr**将绘制到你的关注的问题 (当您调用[ **com_ptr::put** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput-function)或者[ **com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function)) 通过声明其内部指针不为 null。
 
 ```cppwinrt
 winrt::com_ptr<IDXGISwapChain1> m_pDXGISwapChain1;
@@ -59,7 +59,7 @@ winrt::check_hresult(
 );
 ```
 
-在下一个示例中（*之后*版本），[**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function) 成员函数检索作为要避免的指针的基础原始指针。
+在下一个示例中（*之后*版本），[**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function) 成员函数检索作为要避免的指针的基础原始指针。
 
 ```cpp
 ComPtr<ID3D12Debug> debugController;
@@ -77,7 +77,7 @@ if (SUCCEEDED(D3D12GetDebugInterface(__uuidof(debugController), debugController.
 }
 ```
 
-将 **ComPtr::Get** 替换为 [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#comptrget-function)。
+将 **ComPtr::Get** 替换为 [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-function)。
 
 ```cpp
 m_d3dDevice->CreateDepthStencilView(m_depthStencil.Get(), &dsvDesc, m_dsvHeap->GetCPUDescriptorHandleForHeapStart());
@@ -87,7 +87,7 @@ m_d3dDevice->CreateDepthStencilView(m_depthStencil.Get(), &dsvDesc, m_dsvHeap->G
 m_d3dDevice->CreateDepthStencilView(m_depthStencil.get(), &dsvDesc, m_dsvHeap->GetCPUDescriptorHandleForHeapStart());
 ```
 
-如果想要传递到需要一个指向指针的函数的基础的原始指针**IUnknown**，使用[ **winrt::get_unknown** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function)自由函数，此下一步中所示示例。
+如果想要传递到需要一个指向指针的函数的基础的原始指针**IUnknown**，使用[ **winrt::get_unknown** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#get_unknown-function)自由函数，此下一步中所示示例。
 
 ```cpp
 ComPtr<IDXGISwapChain1> swapChain;
@@ -211,7 +211,7 @@ HRESULT __stdcall DllCanUnloadNow(void)
 
 ## <a name="important-apis"></a>重要的 API
 * [winrt::com_ptr 结构模板](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::Windows::Foundation::IUnknown 结构](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>相关主题
 * [C++/WinRT 简介](intro-to-using-cpp-with-winrt.md)

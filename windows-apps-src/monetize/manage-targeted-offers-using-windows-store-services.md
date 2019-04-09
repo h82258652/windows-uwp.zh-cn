@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 定向优惠 API, 定向优惠
 ms.localizationpriority: medium
-ms.openlocfilehash: bcf270bd56d17936ef404adbc3663034b58e7a2c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3ea4adac82692e80d652523d05a7ba0b901db300
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615682"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334395"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>使用应用商店服务管理定向优惠
 
@@ -33,7 +33,7 @@ ms.locfileid: "57615682"
 
 若要获取 MSA 令牌，请使用 [WebAuthenticationCoreManager](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webauthenticationcoremanager) 类来获取使用范围为 ```devcenter_implicit.basic,wl.basic``` 的令牌。 以下示例展示了如何进行此操作。 此示例是[完整示例](#code-example)的一个片段，它需要完整示例中提供的 **using** 语句。
 
-[!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetMSAToken)]
+[!code-csharp[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetMSAToken)]
 
 有关获取 MSA 令牌的详细信息，请参阅 [Web 帐户管理器](../security/web-account-manager.md)。
 
@@ -47,7 +47,7 @@ ms.locfileid: "57615682"
 
 下面的示例演示如何为当前用户获取定向优惠。 此示例是[完整示例](#code-example)的一个片段。 它需要 Newtonsoft 的 [Json.NET](https://www.newtonsoft.com/json) 库和完整示例中提供的其他类和 **using** 语句。
 
-[!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffers)]
+[!code-csharp[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffers)]
 
 <span id="code-example" />
 
@@ -61,7 +61,7 @@ ms.locfileid: "57615682"
 
 此示例需要 Newtonsoft 的 [Json.NET](https://www.newtonsoft.com/json) 库。 此示例使用此库对 JSON 格式的数据进行序列化和反序列化。
 
-[!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffersSample)]
+[!code-csharp[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffersSample)]
 
 ## <a name="related-topics"></a>相关主题
 

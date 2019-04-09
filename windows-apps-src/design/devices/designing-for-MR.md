@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: b988859422a80b31d94a133e36631b078ac7c14e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: df81348dee781d1c329562d558ed8df30fd40bc5
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610492"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244113"
 ---
 # <a name="designing-for-mixed-reality"></a>针对混合现实而开发
 
@@ -105,7 +105,7 @@ HoloLens 和混合现实平台上均支持键盘和鼠标。 你可以通过蓝�
 * 系统自动向 2D 应用提供一个[应用栏](https://developer.microsoft.com/windows/mixed-reality/app_bar_and_bounding_box)以允许用户在虚拟环境中移动和缩放它们。 这些视图可以垂直调整大小，或者在保持同一纵横比的情况下调整大小。
 
 
-## <a name="2d-app-design-considerations-uiux"></a>2D 应用设计注意事项：UI/用户体验
+## <a name="2d-app-design-considerations-uiux"></a>2D 应用设计注意事项：UI/UX
 
 * 实现 [Fluent Design 系统](https://docs.microsoft.com/windows/uwp/design/fluent-design-system/)的 XAML 控件（如[导航视图](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview)）和效果（如[亚克力](https://docs.microsoft.com/windows/uwp/design/style/acrylic)）都尤其适用于 2D 混合现实应用。
 
@@ -151,7 +151,7 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
             {
                 // Running on desktop
                 textBlock.Text = "I'm running on the desktop.";
-                textBlock.FontSize = 16;
+                textBlock.FontSize = 14;
             }
 
 ```
@@ -163,8 +163,8 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 ## <a name="related-articles"></a>相关文章
 
 
-* [从 shell 中使用 Api 应用的当前限制](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
-* [构建 2D 应用程序](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
+* [从 shell 中使用 API 的应用的当前限制](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
+* [构建 2D 应用](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
 * [HoloLens:构建 UWP 2D 适用于 Microsoft HoloLens 应用](https://channel9.msdn.com/Events/Build/2016/B854)
 * [条件 XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)
 

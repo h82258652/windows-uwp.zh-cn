@@ -5,22 +5,22 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox Live 分析, 运行状况, 客户端错误
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b996d85776cb49d45cc5b699709b4eb107e7086
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8a311550541391d9aa5dc035bc73130274dc9e0e
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650902"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162903"
 ---
 # <a name="get-xbox-live-health-data"></a>获取 Xbox Live 运行状况数据
 
 
-在 Microsoft Store 分析 API 中使用此方法获取你的[支持 Xbox Live 的游戏](../xbox-live/index.md)的运行状况数据。 此信息也位于[Xbox 的分析报告](../publish/xbox-analytics-report.md)在合作伙伴中心。
+在 Microsoft Store 分析 API 中使用此方法获取你的[支持 Xbox Live 的游戏](https://docs.microsoft.com/gaming/xbox-live//index.md)的运行状况数据。 此信息也位于[Xbox 的分析报告](../publish/xbox-analytics-report.md)在合作伙伴中心。
 
 > [!IMPORTANT]
-> 该方法只支持 Xbox 游戏或使用 Xbox Live 服务的游戏。 这些游戏必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括 [Microsoft 合作伙伴](../xbox-live/developer-program-overview.md#microsoft-partners)发布的游戏以及通过 [ID@Xbox 计划](../xbox-live/developer-program-overview.md#id)提交的游戏。 该方法当前不支持通过 [Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏。
+> 该方法只支持 Xbox 游戏或使用 Xbox Live 服务的游戏。 这些游戏必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括 [Microsoft 合作伙伴](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners)发布的游戏以及通过 [ID@Xbox 计划](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id)提交的游戏。 该方法当前不支持通过 [Xbox Live 创意者计划](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -39,9 +39,9 @@ ms.locfileid: "57650902"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
@@ -49,14 +49,14 @@ ms.locfileid: "57650902"
 
 | 参数        | 在任务栏的搜索框中键入   |  描述      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 你要检索 Xbox Live 运行状况数据的游戏的 [Store ID](in-app-purchases-and-trials.md#store-ids)。  |  是  |
-| metricType | 字符串 | 指定要检索的 Xbox Live 分析数据的类型的字符串。 对于此方法，指定值 **callingpattern**。  |  是  |
+| applicationId | string | 你要检索 Xbox Live 运行状况数据的游戏的 [Store ID](in-app-purchases-and-trials.md#store-ids)。  |  是  |
+| metricType | string | 指定要检索的 Xbox Live 分析数据的类型的字符串。 对于此方法，指定值 **callingpattern**。  |  是  |
 | startDate | 日期 | 要检索的运行状况数据日期范围中的开始日期。 默认值为当前日期之前 30 天。 |  否  |
 | endDate | 日期 | 要检索的运行状况数据日期范围中的结束日期。 默认值为当前日期。 |  否  |
 | top | int | 要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。 |  否  |
 | skip | int | 要在查询中跳过的行数。 使用此参数可以浏览较大的数据集。 例如，top=10000 和 skip=0，将检索前 10000 行数据；top=10000 和 skip=10000，将检索之后的 10000 行数据，依此类推。 |  否  |
-| filter | 字符串  | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 *filter* 参数中的字符串值必须使用单引号括起来。 你可以指定响应正文中的以下字段：<p/><ul><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>sandboxId</strong></li></ul> | 否   |
-| groupby | 字符串 | 仅将数据聚合应用于指定字段的语句。 你可以指定响应正文中的以下字段：<p/><ul><li><strong>date</strong></li><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>sandboxId</strong></li></ul><p/>如果你指定一个或多个 *groupby* 字段，则在响应正文中，你未指定的任何其他 *groupby* 字段都为值 **All**。 |  否  |
+| filter | string  | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 *filter* 参数中的字符串值必须使用单引号括起来。 你可以指定响应正文中的以下字段：<p/><ul><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>sandboxId</strong></li></ul> | 否   |
+| groupby | string | 仅将数据聚合应用于指定字段的语句。 你可以指定响应正文中的以下字段：<p/><ul><li><strong>date</strong></li><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>sandboxId</strong></li></ul><p/>如果你指定一个或多个 *groupby* 字段，则在响应正文中，你未指定的任何其他 *groupby* 字段都为值 **All**。 |  否  |
 
 
 ### <a name="request-example"></a>请求示例
@@ -71,10 +71,10 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>响应
 
-| 值      | 在任务栏的搜索框中键入   | 描述                  |
+| ReplTest1      | 在任务栏的搜索框中键入   | 描述                  |
 |------------|--------|-------------------------------------------------------|
-| 值      | 数组  | 包含运行状况数据的对象数组。 有关每个对象中的数据的详细信息，请参阅下表。                                                                                                                      |
-| @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10000，但查询的数据超过 10000 行时，就会返回此值。 |
+| ReplTest1      | 数组  | 包含运行状况数据的对象数组。 有关每个对象中的数据的详细信息，请参阅下表。                                                                                                                      |
+| @nextLink  | string | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10000，但查询的数据超过 10000 行时，就会返回此值。 |
 | TotalCount | int    | 查询的数据结果中的行总数。   |
 
 
@@ -82,11 +82,11 @@ Authorization: Bearer <your access token>
 
 | 值               | 在任务栏的搜索框中键入   | 描述                           |
 |---------------------|--------|-------------------------------------------|
-| applicationId       | 字符串 | 要检索其运行状况数据的游戏的 Store ID。     |
-| 日期                | 字符串 | 运行状况数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
-| deviceType          | 字符串 | 用于指定在其上使用你的游戏的设备类型的以下字符串之一：<p/><ul><li><strong>XboxOne</strong></li><li><strong>WindowsOneCore</strong>（此值指示电脑）</li><li><strong>Unknown</strong></li></ul>  |
-| sandboxId     | 字符串 |   为游戏创建的沙盒的 ID。 这可以为值 RETAIL，或者是私有沙盒的 ID。   |
-| packageVersion     | 字符串 |  游戏的四个部分程序包版本。  |
+| applicationId       | string | 要检索其运行状况数据的游戏的 Store ID。     |
+| 日期                | string | 运行状况数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
+| deviceType          | string | 用于指定在其上使用你的游戏的设备类型的以下字符串之一：<p/><ul><li><strong>XboxOne</strong></li><li><strong>WindowsOneCore</strong>（此值指示电脑）</li><li><strong>Unknown</strong></li></ul>  |
+| sandboxId     | string |   为游戏创建的沙盒的 ID。 这可以为值 RETAIL，或者是私有沙盒的 ID。   |
+| packageVersion     | string |  游戏的四个部分程序包版本。  |
 | callingPattern     | 对象 |  [callingPattern](#callingpattern) 对象为指定日期范围内你的游戏所使用的每个 Xbox Live 服务返回的每个状态代码提供服务响应、设备和用户数据。     |
 
 
@@ -94,9 +94,9 @@ Authorization: Bearer <your access token>
 
 | 值      | 在任务栏的搜索框中键入   | 描述                  |
 |------------|--------|-------------------------------------------------------|
-| 服务      | 字符串  |   运行状况数据与之相关的 Xbox Live 服务的名称。       |
-| endpoint      | 字符串  |   运行状况数据与之相关的 Xbox Live 服务的端点。        |
-| httpStatusCode      | 字符串  |  这一组运行状况数据的 HTTP 状态代码。<p/><p/>**注意**&nbsp;&nbsp; 状态代码**429E** 指示服务呼叫成功的原因只是在呼叫过程中免除了[精细的速率限制](../xbox-live/using-xbox-live/best-practices/fine-grained-rate-limiting.md)。 如果对服务的需求很高，则可以强制实施精细的速率限制，在这种情况下呼叫服务可能会获得 [HTTP 429 状态代码](../xbox-live/using-xbox-live/best-practices/fine-grained-rate-limiting.md#http-429-response-object)。         |
+| 服务      | string  |   运行状况数据与之相关的 Xbox Live 服务的名称。       |
+| endpoint      | string  |   运行状况数据与之相关的 Xbox Live 服务的端点。        |
+| httpStatusCode      | string  |  这一组运行状况数据的 HTTP 状态代码。<p/><p/>**注意**&nbsp;&nbsp; 状态代码**429E** 指示服务呼叫成功的原因只是在呼叫过程中免除了[精细的速率限制](https://docs.microsoft.com/gaming/xbox-live//using-xbox-live/best-practices/fine-grained-rate-limiting.md)。 如果对服务的需求很高，则可以强制实施精细的速率限制，在这种情况下呼叫服务可能会获得 [HTTP 429 状态代码](https://docs.microsoft.com/gaming/xbox-live//using-xbox-live/best-practices/fine-grained-rate-limiting.md#http-429-response-object)。         |
 | serviceResponses      | 数字  | 返回指定状态代码的服务响应的数量。         |
 | uniqueDevices      | 数字  |  呼叫服务并接收状态代码的不同设备的数量。       |
 | uniqueUsers      | 数字  |   接收指定状态代码的不同用户的数量。       |

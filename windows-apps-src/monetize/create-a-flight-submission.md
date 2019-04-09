@@ -6,12 +6,12 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建外部测试版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e303027aaf3b10260090c500df573f1bf484e20
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5c7a60de3440106e446f6c3e896cd747741e4db2
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636862"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334685"
 ---
 # <a name="create-a-package-flight-submission"></a>创建软件包外部测试版提交
 
@@ -22,7 +22,7 @@ ms.locfileid: "57636862"
 > [!NOTE]
 > 此方法可为现有软件包外部测试版创建提交。 若要创建软件包外部测试版，请使用[创建软件包外部测试版](create-a-flight.md)方法。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -36,22 +36,22 @@ ms.locfileid: "57636862"
 
 | 方法 | 请求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions``` |
+| 发布    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions` |
 
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
 | 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字符串 | 必需。 要创建软件包外部测试版提交的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| flightId | 字符串 | 必需。 要添加提交的软件包外部测试版的 ID。 [创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中包含此 ID。  |
+| applicationId | string | 必需。 要创建软件包外部测试版提交的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
+| flightId | string | 必需。 要添加提交的软件包外部测试版的 ID。 [创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中包含此 ID。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -62,7 +62,7 @@ ms.locfileid: "57636862"
 
 以下示例演示了如何为具有应用商店 ID 9WZDNCRD91MD 的应用创建全新的软件包外部测试版提交。
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -118,7 +118,6 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 由于请求无效，无法创建软件包外部测试版提交。 |
 | 409  | 由于应用程序中的当前状态，无法创建包航班提交或应用程序使用的合作伙伴中心功能[目前不支持通过 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
-
 
 ## <a name="related-topics"></a>相关主题
 

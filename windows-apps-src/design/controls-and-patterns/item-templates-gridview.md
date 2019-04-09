@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 1e2c8b7d9fb7bdc61595296a137c4448cadf52d3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: f1cc576bbc7fe7fc326d86072e22b7a385cfeb8b
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57629262"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913947"
 ---
 # <a name="item-templates-for-grid-view"></a>网格视图项模板
 
@@ -19,7 +19,7 @@ ms.locfileid: "57629262"
 若要演示数据绑定，这些模板将绑定**GridViewItems**到示例录制类从[数据绑定概述](../../data-binding/data-binding-quickstart.md)。
 
 > [!NOTE] 
-目前，如果一个 **DataTemplate** 包含多个控件（例如多个 **TextBlock**），屏幕阅读器的默认可访问名称来自于项上的 .ToString()。 为方便起见，可以在 **DataTemplate** 的根元素上设置 [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties)。 有关辅助功能的详细信息，请参阅[辅助功能概述](../accessibility/accessibility-overview.md)。
+> 目前，如果一个 **DataTemplate** 包含多个控件（例如多个 **TextBlock**），屏幕阅读器的默认可访问名称来自于项上的 .ToString()。 为方便起见，可以在 **DataTemplate** 的根元素上设置 [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties)。 有关辅助功能的详细信息，请参阅[辅助功能概述](../accessibility/accessibility-overview.md)。
 
 ## <a name="icon-and-text"></a>图标和文本
 使用这些模板在一个网格中显示带图标和文本的应用的集合。
@@ -158,6 +158,6 @@ ms.locfileid: "57629262"
 ## <a name="related-articles"></a>相关文章
 - [GridView 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [数据绑定概述](../../data-binding/data-binding-quickstart.md)
-- [Accessibililty 概述](../accessibility/accessibility-overview.md)
+- [辅助功能概述](../accessibility/accessibility-overview.md)
 - [ListView 和 GridView 示例 (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [缩略图图像](../../files/thumbnails.md)

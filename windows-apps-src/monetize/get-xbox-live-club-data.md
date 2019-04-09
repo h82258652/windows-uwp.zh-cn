@@ -5,21 +5,21 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox Live 分析, 俱乐部
 ms.localizationpriority: medium
-ms.openlocfilehash: dbf9d06f96632237c10de0fe3b6c4723a2501254
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: aef7f17a2c6371a13a2eeb57b5f3dc4ee4889435
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633172"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162665"
 ---
 # <a name="get-xbox-live-club-data"></a>获取 Xbox Live 中心数据
 
-在 Microsoft Store 分析 API 中使用此方法获取你的[支持 Xbox Live 的游戏](../xbox-live/index.md)的俱乐部数据。 此信息也位于[Xbox 的分析报告](../publish/xbox-analytics-report.md)在合作伙伴中心。
+在 Microsoft Store 分析 API 中使用此方法获取你的[支持 Xbox Live 的游戏](https://docs.microsoft.com/gaming/xbox-live//index.md)的俱乐部数据。 此信息也位于[Xbox 的分析报告](../publish/xbox-analytics-report.md)在合作伙伴中心。
 
 > [!IMPORTANT]
-> 该方法只支持 Xbox 游戏或使用 Xbox Live 服务的游戏。 这些游戏必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括 [Microsoft 合作伙伴](../xbox-live/developer-program-overview.md#microsoft-partners)发布的游戏以及通过 [ID@Xbox 计划](../xbox-live/developer-program-overview.md#id)提交的游戏。 该方法当前不支持通过 [Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏。
+> 该方法只支持 Xbox 游戏或使用 Xbox Live 服务的游戏。 这些游戏必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括 [Microsoft 合作伙伴](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners)发布的游戏以及通过 [ID@Xbox 计划](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id)提交的游戏。 该方法当前不支持通过 [Xbox Live 创意者计划](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -38,9 +38,9 @@ ms.locfileid: "57633172"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
@@ -48,8 +48,8 @@ ms.locfileid: "57633172"
 
 | 参数        | 在任务栏的搜索框中键入   |  描述      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 你要检索 Xbox Live 俱乐部数据的游戏的 [Store ID](in-app-purchases-and-trials.md#store-ids)。  |  是  |
-| metricType | 字符串 | 指定要检索的 Xbox Live 分析数据的类型的字符串。 对于此方法，指定值 **communitymanagerclub**。  |  是  |
+| applicationId | string | 你要检索 Xbox Live 俱乐部数据的游戏的 [Store ID](in-app-purchases-and-trials.md#store-ids)。  |  是  |
+| metricType | string | 指定要检索的 Xbox Live 分析数据的类型的字符串。 对于此方法，指定值 **communitymanagerclub**。  |  是  |
 | startDate | 日期 | 要检索的俱乐部数据日期范围中的开始日期。 默认值为当前日期之前 30 天。 |  否  |
 | endDate | 日期 | 要检索的俱乐部数据日期范围中的结束日期。 默认值为当前日期。 |  否  |
 | top | int | 要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。 |  否  |
@@ -67,10 +67,10 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>响应
 
-| 值      | 在任务栏的搜索框中键入   | 描述                  |
+| ReplTest1      | 在任务栏的搜索框中键入   | 描述                  |
 |------------|--------|-------------------------------------------------------|
-| 值      | 数组  | 一个数组，其中一个 [ProductData](#productdata) 对象包含与你的游戏相关的俱乐部的数据，一个 [XboxwideData](#xboxwidedata) 对象包含所有 Xbox Live 客户的俱乐部数据。 包含此数据是为了对您的游戏数据进行比较。  |
-| @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10000，但查询的数据超过 10000 行时，就会返回此值。 |
+| ReplTest1      | 数组  | 一个数组，其中一个 [ProductData](#productdata) 对象包含与你的游戏相关的俱乐部的数据，一个 [XboxwideData](#xboxwidedata) 对象包含所有 Xbox Live 客户的俱乐部数据。 包含此数据是为了对您的游戏数据进行比较。  |
+| @nextLink  | string | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10000，但查询的数据超过 10000 行时，就会返回此值。 |
 | TotalCount | int    | 查询的数据结果中的行总数。 |
 
 
@@ -78,10 +78,10 @@ Authorization: Bearer <your access token>
 
 此资源包含你的游戏的俱乐部数据。
 
-| 值           | 在任务栏的搜索框中键入    | 描述        |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述        |
 |-----------------|---------|------|
-| 日期            |  字符串 |   俱乐部数据的日期。   |
-|  applicationId               |    字符串     |  你检索了其俱乐部数据的游戏的 [Store ID](in-app-purchases-and-trials.md#store-ids)。   |
+| 日期            |  string |   俱乐部数据的日期。   |
+|  applicationId               |    string     |  你检索了其俱乐部数据的游戏的 [Store ID](in-app-purchases-and-trials.md#store-ids)。   |
 |  clubsWithTitleActivity               |    int     |  使用社交方式参与你的游戏的俱乐部的数量。   |     
 |  clubsExclusiveToGame               |   int      |  使用社交方式仅参与你的游戏的俱乐部的数量。   |     
 |  clubFacts               |   数组      |   包含一个或多个有关使用社交方式参与你的游戏的俱乐部的 [ClubFacts](#clubfacts) 对象。   |
@@ -93,8 +93,8 @@ Authorization: Bearer <your access token>
 
 | 值           | 在任务栏的搜索框中键入    | 描述        |
 |-----------------|---------|------|
-| 日期            |  字符串 |   俱乐部数据的日期。   |
-|  applicationId  |    字符串     |   在 **XboxwideData** 对象中，此字符串的值始终是 **XBOXWIDE**。  |
+| 日期            |  string |   俱乐部数据的日期。   |
+|  applicationId  |    string     |   在 **XboxwideData** 对象中，此字符串的值始终是 **XBOXWIDE**。  |
 |  clubsWithTitleActivity               |   int     |  具有以社交方式与支持 Xbox Live 的游戏交互的客户的俱乐部平均数量。    |     
 |  clubsExclusiveToGame               |   int      |  具有以社交方式仅与支持 Xbox Live 的游戏交互的客户的俱乐部平均数量。   |     
 |  clubFacts               |   对象      |  包含一个 [ClubFacts](#clubfacts) 对象。 此对象在 **XboxwideData** 对象上下文中没有意义，并具有默认值。  |
@@ -104,9 +104,9 @@ Authorization: Bearer <your access token>
 
 在 **ProductData** 对象中，此对象包含具有与你的游戏相关活动的特定俱乐部的数据。 在 **XboxwideData** 对象中，此对象没有意义，并具有默认值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述        |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述        |
 |-----------------|---------|--------------------|
-|  name            |  字符串  |   在 **ProductData** 对象中，这是俱乐部名称。 在 **XboxwideData** 对象中，它的值始终是 **XBOXWIDE**。           |
+|  name            |  string  |   在 **ProductData** 对象中，这是俱乐部名称。 在 **XboxwideData** 对象中，它的值始终是 **XBOXWIDE**。           |
 |  memberCount               |    int     | 在 **ProductData** 对象中，这是俱乐部中成员的数量，不包括只访问俱乐部的非成员。 在 **XboxwideData** 对象中，这始终为 0。    |
 |  titleSocialActionsCount               |    int     |  在 **ProductData** 对象中，这是俱乐部中已执行与你的游戏有关的社交操作的数量。 在 **XboxwideData** 对象中，这始终为 0   |
 |  isExclusiveToGame               |    布尔     |  在 **ProductData** 对象中，这表示当前俱乐部是否以社交方式仅与你的游戏交互。 在 **XboxwideData** 对象中，这始终为 true。  |

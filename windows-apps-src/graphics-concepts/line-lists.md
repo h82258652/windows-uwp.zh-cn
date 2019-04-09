@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 43013dc820c0f0f67df2e9502d3c57c77e03f250
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ac66066a4140ace5905ff6bc52a7b1290341beea
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599242"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291578"
 ---
 # <a name="line-lists"></a>行列表
-
 
 线列表是隔离的直线段的列表。 线列表用于向 3D 场景添加雨夹雪或暴雨之类的任务。 应用程序通过填充一组顶点来创建线列表。 请注意，线列表中的顶点数必须是大于或等于 2 的偶数。
 
@@ -33,7 +32,7 @@ ms.locfileid: "57599242"
 
 下面的代码显示如何为此线列表创建顶点。
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
     float x,y,z;
@@ -52,7 +51,7 @@ CUSTOMVERTEX Vertices[] =
 
 下面的代码示例显示如何在 Direct3D 中渲染线列表。
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to an IDirect3DDevice interface.

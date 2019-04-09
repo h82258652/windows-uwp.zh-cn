@@ -6,15 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: fcc98252efb1157bc539b68656c96f7afec7104a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: cbb093576badf5cd84b132cfb139db9da7d31991
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661702"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334924"
 ---
 # <a name="create-an-add-on-submission"></a>创建加载项提交
-
 
 在 Microsoft Store 提交 API 中使用此方法以创建新的外接程序 （也称为应用产品或、 IAP） 提交到合作伙伴中心帐户注册的应用。 使用此方法成功创建新提交后，[更新提交](update-an-add-on-submission.md)以对提交数据进行任何必要更改，然后[确认提交](commit-an-add-on-submission.md)以供引入和发布。
 
@@ -23,7 +22,7 @@ ms.locfileid: "57661702"
 > [!NOTE]
 > 此方法可为现有加载项创建提交。 若要创建加载项，请使用[创建加载项](create-an-add-on.md)方法。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -37,22 +36,19 @@ ms.locfileid: "57661702"
 
 | 方法 | 请求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions``` |
-
+| 发布    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions` |
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
-
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 ### <a name="request-parameters"></a>请求参数
 
 | 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | 字符串 | 必需。 要创建提交的加载项的应用商店 ID。 Store ID 可在合作伙伴中心，并且它包含在对请求的响应数据[创建一个外接程序](create-an-add-on.md)或[获取外接程序的详细信息](get-all-add-ons.md)。  |
-
+| inAppProductId | string | 必需。 要创建提交的加载项的应用商店 ID。 Store ID 可在合作伙伴中心，并且它包含在对请求的响应数据[创建一个外接程序](create-an-add-on.md)或[获取外接程序的详细信息](get-all-add-ons.md)。  |
 
 ### <a name="request-body"></a>请求正文
 
@@ -62,7 +58,7 @@ ms.locfileid: "57661702"
 
 以下示例演示了如何为加载项创建新提交。
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -152,7 +148,6 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 由于请求无效，无法创建提交。 |
 | 409  | 由于应用程序中的当前状态，无法创建提交或应用程序使用的合作伙伴中心功能[目前不支持通过 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
-
 
 ## <a name="related-topics"></a>相关主题
 

@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 869f0ac2b255c0dee231828f6d9064a917668821
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d17a79c14e981ab0c2c0414074aff17c90a0b478
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646372"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291625"
 ---
 # <a name="line-strips"></a>线条带
-
 
 线条带是由互连的线段组成的基元。 你的应用程序可使用线条带创建不封闭的多边形。 封闭多边形是通过线段将最后一个顶点连接到第一个顶点的多边形。 如果你的应用程序基于线条带生成多边形，则不能保证顶点共面。
 
@@ -28,7 +27,7 @@ ms.locfileid: "57646372"
 
 下面的代码显示如何为此线条带创建顶点。
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
     float x,y,z;
@@ -47,7 +46,7 @@ CUSTOMVERTEX Vertices[] =
 
 下面的代码示例显示如何在 Direct3D 中渲染线条带。
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to an IDirect3DDevice interface.

@@ -1,51 +1,48 @@
 ---
 title: 相机条形码扫描仪配置
 description: 相机条形码扫描仪启用或禁用
-ms.date: 05/02/2018
+ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 3db54caa5be88559aa44f9a99273e9d8d5d6a00d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: da0379109dcf56de505f2a56317258e0ab597f94
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610302"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244363"
 ---
 # <a name="enable-or-disable-the-software-decoder-that-ships-with-windows"></a>启用或禁用 Windows 附带的软件解码器
+
 在 Windows 10 版本 1803 中，软件解码器默认安装和启用。  如果你不想使用相机条形码扫描仪，或者如果你已获取了使用 Windows.Devices.PointOfService.BarcodeScanner API 的第三方解码器且不希望两个同时使用，则可以禁用 Windows 附带的软件解码器。
 
 ## <a name="enable-or-disable-using-the-system-registry"></a>使用系统注册表启用或禁用
+
 Windows 附带的软件解码器可以通过系统注册表启用或禁用：在 *HKLM\Software\Microsoft\PointOfService\BarcodeScanner* 下添加注册表项 *InboxDecoder*，并对 *Enable* 值进行如下设置。
 
-| 值名称  | 值类型 | 值 | 状态 |
+| 值名称  | 值类型 | ReplTest1 | 状态 |
 | ----------- | --------- | -------|--------|
 | 启用      | DWORD     | 1（默认值）<br/>0 |  启用 Windows 附带的软件解码器 <br/> 禁用 Windows 附带的软件解码器 |
 
-
 下面是你可以用来**禁用** Windows 附带的软件解码器的示例注册表文件：
 
-```
+```text
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PointOfService\BarcodeScanner\InboxDecoder]
 "Enable"=dword:0000000
-
-
 ```  
-    
+
 使用此示例注册表文件来**启用** Windows 附带的软件解码器：
 
-```
+```text
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PointOfService\BarcodeScanner\InboxDecoder]
 "Enable"=dword:0000001
-
-
 ```  
 
-> [!Warning] 
+> [!Warning]
 > 如果注册表修改不正确，可能会发生严重问题。  为了增加保护，请在修改注册表前对其进行备份。  那么，如果发生问题，你也可以恢复注册表。  有关如何备份和恢复注册表的详细信息，请单击下面的文章编号以参阅 Microsoft 知识库中的文章： <br/><br/> [322756](https://support.microsoft.com/kb/322756) 如何备份和恢复 Windows 中的注册表。
 
 > [!NOTE]

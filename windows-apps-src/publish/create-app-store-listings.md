@@ -2,16 +2,16 @@
 Description: 应用程序提交过程的应用商店列表部分是其中提供的文本和映像的客户将会发现查看时在 Microsoft Store 中的展示您的应用程序。
 title: 创建应用应用商店一览
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
-ms.date: 10/31/2018
+ms.date: 03/13/2019
 ms.topic: article
 keywords: Windows 10, uwp, 一览, 描述, Microsoft Store 页面, 发行说明, 标题
 ms.localizationpriority: medium
-ms.openlocfilehash: a913c522450a8d28c03066c922df2e3e2972f92f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: cc0c257be2343244872945de17d8c90a23d736ae
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601852"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57977450"
 ---
 # <a name="create-app-store-listings"></a>创建应用应用商店一览
 
@@ -130,7 +130,7 @@ ms.locfileid: "57601852"
 
 对于游戏，简短说明还可能出现在 Xbox One 上游戏中心的“信息”部分。
 
-获得最佳结果，请参阅下 270 字符简短说明。 字段长度限制为 500 的字符，但在某些视图中，只有首先 270 字符在显示时 （可用于查看简短说明的其余部分的链接）。
+获得最佳结果，请参阅下 270 字符简短说明。 字段限制为 1000年的字符，但在某些视图中，只有首先 270 字符在显示时 （可用于查看简短说明的其余部分的链接）。
 
 
 ### <a name="additional-system-requirements"></a>其他系统要求

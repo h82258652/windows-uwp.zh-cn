@@ -2,16 +2,16 @@
 Description: 了解如何接收你的应用外, 接程序 （应用内产品） 的付款和广告收入。
 title: 获取付款
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
-ms.date: 10/31/2018
+ms.date: 03/05/2019
 ms.topic: article
 keywords: Windows 10, uwp, 付款, 应用销售, 应用收款, 付款, 应用商店费用, 付款暂停, 百分比
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d59519e23955b53b32d2178e37e75f195fd54eb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 293f24122129e56fbb1521a0d3dd7e2ff51e4923
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596492"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244103"
 ---
 # <a name="getting-paid"></a>获取付款
 下面是有关接收对应用程序、 外接程序和广告收入的付款一些重要信息。
@@ -23,7 +23,7 @@ ms.locfileid: "57596492"
 
 当你[注册开发者帐户](https://go.microsoft.com/fwlink/p/?LinkID=615100)时，你将接受[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。 此协议针对你在 Microsoft Store 中出售应用的相关事宜，包括 Microsoft 对每笔销售收取的应用商店费用，阐述了你与 Microsoft 之间的关系。
 
-在大多数情况下，应用商店费用是 30%。 费用已在[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中正式规定。 如果你有任何问题，请随时查看该文档。
+费用已在[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中正式规定。 如果你有任何问题，请随时查看该文档。
 
 Microsoft Store 费用适用于通过 Microsoft Store 收到的所有应用销售，包括加载项。
 

@@ -6,12 +6,12 @@ ms.date: 02/12/2017
 ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 42077756beff4269cc91624502fb9958c580bbc0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9cbf94420b8ed7a2e030ccb2799a8636f56bef2f
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635712"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162923"
 ---
 # <a name="device-portal-for-xbox"></a>适用于 Xbox 的 Device Portal
 
@@ -53,7 +53,7 @@ Xbox 设备门户提供了一组与 Windows 设备门户上可用的页面类似
 
 ### <a name="xbox-live-game-saves"></a>Xbox Live（游戏保存）
 
-Windows 设备门户和 Xbox 设备门户均有一个 **Xbox Live** 页面。 但是，Xbox 设备门户有一个独特的部分 **Xbox Live 游戏保存**，在此部分中，你可以保存已在 Xbox 上安装的游戏的数据。 输入与标题和游戏保存关联的**服务配置 ID (SCID)**（有关更多信息，请参阅 [Xbox Live 服务配置](../xbox-live/xbox-live-service-configuration.md#get-your-ids)）、**成员名(MSA)** 和**包系列名称(PFN)**，浏览**输入文件(.json 或 .xml)**，然后选择其中一个按钮（**重置**、**导入**、**导出**和**删除** ）来操作保存数据。
+Windows 设备门户和 Xbox 设备门户均有一个 **Xbox Live** 页面。 但是，Xbox 设备门户有一个独特的部分 **Xbox Live 游戏保存**，在此部分中，你可以保存已在 Xbox 上安装的游戏的数据。 输入与标题和游戏保存关联的**服务配置 ID (SCID)**（有关更多信息，请参阅 [Xbox Live 服务配置](https://docs.microsoft.com/gaming/xbox-live//xbox-live-service-configuration.md#get-your-ids)）、**成员名(MSA)** 和**包系列名称(PFN)**，浏览**输入文件(.json 或 .xml)**，然后选择其中一个按钮（**重置**、**导入**、**导出**和**删除** ）来操作保存数据。
 
 在**生成**部分中，你可以生成虚拟数据并保存到指定的输入文件中。 只需输入**容器(默认为 2 个)**、**Blob (默认为 3 个)** 和 **Blob 大小(默认为 1024)**，然后选择**生成**。
 
@@ -75,7 +75,7 @@ HTTP 监视器允许你当其在你的 Xbox One 上运行时查看你的应用�
 
 Xbox 设备门户中的**网络**页面与 Windows 设备门户中的**网络**页面几乎相同，唯一不同是 **Fiddler 跟踪**功能，这是 Xbox 设备门户的独特功能。 这允许你在电脑上运行 Fiddler 记录和检查你的 Xbox One 与 Internet 之间的 HTTP 和 HTTPS 流量。 有关更多信息，请参阅[在针对 UWP 进行开发时如何将 Fiddler 用于 Xbox One](../xbox-apps/uwp-fiddler.md)。
 
-![Network](images/device-portal-xbox-19.png)
+![网络](images/device-portal-xbox-19.png)
 
 ### <a name="media-capture"></a>媒体捕获
 
@@ -83,15 +83,15 @@ Xbox 设备门户中的**网络**页面与 Windows 设备门户中的**网络**�
 
 ![媒体捕获](images/device-portal-xbox-12.png)
 
-### <a name="settings"></a>“设置”
+### <a name="settings"></a>设置
 
 在**设置**页面上，你可以查看和编辑 Xbox One 的多个设置。 在顶部，你可以选择**导入**以从文件中导入设置，然后选择**导出**以将当前设置导出至 .txt 文件。 导入设置可实现更轻松批量编辑，尤其是在配置多个控制台时。 若要创建要导入的设置文件，将设置更改为你希望其形成的方式，然后导出设置。 然后，可以使用此文件为其他控制台快速轻松地导入设置。
 
 以下几个部分具有要查看和/或编辑的不同设置，如下所述。
 
-![“设置”](images/device-portal-xbox-20.png)
+![设置](images/device-portal-xbox-20.png)
 
-![“设置”](images/device-portal-xbox-21.png)
+![设置](images/device-portal-xbox-21.png)
 
 #### <a name="device-information"></a>设备信息
 
@@ -199,7 +199,7 @@ Kinect 传感器必须连接到控制台才能更改以下这些设置。
 
 ![游戏事件数据](images/device-portal-xbox-22.PNG)
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [Windows Device Portal 概述](device-portal.md)
 * [设备门户 core API 参考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

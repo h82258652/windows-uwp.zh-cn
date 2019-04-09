@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 50733bc0617d56b7e6b8596b661aff8056961f18
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 84b55ea8bc62955e3556fcff4e8d608738eb59ce
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599902"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334425"
 ---
 # <a name="get-all-add-ons"></a>获取所有加载项
 
 在 Microsoft Store 提交 API 中使用此方法检索到合作伙伴中心帐户注册的所有应用的所有外接程序的数据。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -30,14 +30,14 @@ ms.locfileid: "57599902"
 
 | 方法 | 请求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts` |
 
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
@@ -58,14 +58,14 @@ ms.locfileid: "57599902"
 
 以下示例演示了如何检索注册到帐户的所有应用的所有加载项数据。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
 以下示例演示了如何仅检索前 10 个加载项。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -133,8 +133,8 @@ Authorization: Bearer <your access token>
 
 | 值      | 在任务栏的搜索框中键入   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含可附加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 请求 URI 的相对路径，用于请求下一页数据。 例如，如果初始请求正文的 *top* 参数设置为 10，但有 100 个加载项注册到你的帐户，响应正文将包含 ```inappproducts?skip=10&top=10``` 的 @nextLink 值，指示你可以调用 ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?skip=10&top=10``` 请求接下来的 10 个加载项。 |
-| value            | 数组  |  包含提供有关每个加载项信息的对象的数组。 有关详细信息，请参阅[加载项资源](manage-add-ons.md#add-on-object)。   |
+| @nextLink  | string | 如果存在数据的其他页，此字符串中包含可附加到基本 `https://manage.devcenter.microsoft.com/v1.0/my/` 请求 URI 的相对路径，用于请求下一页数据。 例如，如果初始请求正文的 *top* 参数设置为 10，但有 100 个加载项注册到你的帐户，响应正文将包含 `inappproducts?skip=10&top=10` 的 @nextLink 值，指示你可以调用 `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?skip=10&top=10` 请求接下来的 10 个加载项。 |
+| 值            | 数组  |  包含提供有关每个加载项信息的对象的数组。 有关详细信息，请参阅[加载项资源](manage-add-ons.md#add-on-object)。   |
 | totalCount   | int  | 响应正文的 *value* 数组中的应用对象数。     |
 
 

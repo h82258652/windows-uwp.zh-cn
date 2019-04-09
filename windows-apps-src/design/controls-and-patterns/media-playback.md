@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: afda713e4a3d0ae30a4ee1ad9e9308d835062108
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a39faf77237596179486eb6c1a0a59a40049155c
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640022"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58914007"
 ---
 # <a name="media-player"></a>媒体播放器
 
@@ -173,7 +173,7 @@ private void LoadEmbeddedAppFile()
 
 [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847) 不需要特殊功能即可访问本地文件系统上的文件（例如用户的**音乐**或**视频**文件夹），因为用户对所访问的文件具有完全控制权。 从安全性和隐私性角度来看，最好尽量减少你的应用使用的功能数。
 
-**若要打开本地媒体使用 FileOpenPicker**
+**使用 FileOpenPicker 打开本地媒体**
 
 1.  调用 [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847) 以使用户选取媒体文件。
 
@@ -246,7 +246,7 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 
 > **注意**&nbsp;&nbsp;如果 [MediaPlayerElement.IsFullWindow](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow.aspx) 设置为 true 并且正在播放媒体，将自动阻止屏幕停用。
 
-**若要使屏幕保持活动状态**
+**使屏幕保持活动状态**
 
 1.  创建一个全局 [DisplayRequest](https://msdn.microsoft.com/library/windows/apps/br241816) 变量。 将它初始化为 null。
 ```csharp
@@ -259,8 +259,9 @@ private DisplayRequest appDisplayRequest = null;
 3.  当视频播放停止、暂停或由于播放错误而中断时，调用 [RequestRelease](https://msdn.microsoft.com/library/windows/apps/br241819) 来释放显示请求。 当你的应用不再包含任何活动的显示请求时，Windows 将在设备未使用时通过降低屏幕亮度（并最终关闭屏幕）来延长电池使用时间。
 
     每个 [MediaPlayerElement.MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 都有 [MediaPlaybackSession](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.aspx) 类型的 [PlaybackSession](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx)，用于控制媒体播放的各个方面，如 [PlaybackRate](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackrate.aspx)、[PlaybackState](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstate.aspx) 和 [Position](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx)。 此处，你对 [MediaPlayer.PlaybackSession](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) 使用 [PlaybackStateChanged](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstatechanged.aspx) 事件检测应释放显示请求的情况。 然后，使用 [NaturalVideoHeight](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.naturalvideoheight.aspx) 属性确定某个音频或视频文件是否正在播放，并且仅在视频正在播放时使屏幕保持活动状态。
+
     ```xaml
-<MediaPlayerElement x:Name="mpe" Source="Media/video1.mp4"/>
+    <MediaPlayerElement x:Name="mpe" Source="Media/video1.mp4"/>
     ```
 
     ```csharp
@@ -395,5 +396,5 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 ## <a name="related-articles"></a>相关文章
 
-- [适用于 UWP 应用的命令设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958433)
-- [适用于 UWP 应用的内容设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958434)
+- [UWP 应用的命令设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958433)
+- [UWP 应用的内容设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958434)

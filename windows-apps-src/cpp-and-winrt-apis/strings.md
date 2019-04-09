@@ -5,16 +5,16 @@ ms.date: 10/03/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 字符串
 ms.localizationpriority: medium
-ms.openlocfilehash: 9572d9ba8b96d245b783535e159acbae9043ea3e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b6f1e12b82ec3ee41cdacc86fcc5f41d664262be
+ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649632"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58618394"
 ---
 # <a name="string-handling-in-cwinrt"></a>C++/WinRT 中的字符串处理
 
-与[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，可以调用 Windows 运行时 Api 使用 c + + 标准库宽字符串类型，如**std:: wstring** (注意： 不能与窄字符串类型如**std:: string**). C++/WinRT 确实有名为 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的自定义字符串类型（在 C++/WinRT 基础库 `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h` 中定义）。 这是 Windows 运行时构造函数、函数和属性实际上采用并返回的字符串类型。 但在很多情况下（由于 **hstring** 的转换构造函数和转换运算符），你可以选择是否要注意客户端代码中的 **hstring**。 如果你要*创作* API，则很可能需要了解 **hstring**。
+与[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，可以调用 Windows 运行时 Api 使用C++标准库宽字符串类型，如**std:: wstring** (注意： 不能与窄字符串类型如**std::字符串**)。 C++/WinRT 确实有名为 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的自定义字符串类型（在 C++/WinRT 基础库 `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h` 中定义）。 这是 Windows 运行时构造函数、函数和属性实际上采用并返回的字符串类型。 但在很多情况下（由于 **hstring** 的转换构造函数和转换运算符），你可以选择是否要注意客户端代码中的 **hstring**。 如果你要*创作* API，则很可能需要了解 **hstring**。
 
 C++ 中有很多字符串类型。 除了 C++ 标准库中的 **std::basic_string** 之外，变体还存在于很多库中。 C++17 具有字符串转换实用程序和 **std::basic_string_view**，用来消除所有字符串类型之间的差别。  [**winrt::hstring** ](/uwp/cpp-ref-for-winrt/hstring)提供了与可转换**std::wstring_view**提供互操作性的**std::basic_string_view**适用。
 
@@ -26,7 +26,7 @@ public:
     Uri(winrt::hstring uri) const;
 ```
 
-但 **hstring** 具有可让你使用它而无需注意它的[转换构造函数](/uwp/api/windows.foundation.uri#hstringhstring-constructor)。 下面是一个代码示例，展示了如何从宽字符串参数、从宽字符串视图和从 **std::wstring** 创建 **Uri**。
+但 **hstring** 具有可让你使用它而无需注意它的[转换构造函数](/uwp/cpp-ref-for-winrt/hstring#hstringhstring-constructor)。 下面是一个代码示例，展示了如何从宽字符串参数、从宽字符串视图和从 **std::wstring** 创建 **Uri**。
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>
@@ -60,7 +60,7 @@ public:
     winrt::hstring Domain();
 ```
 
-但重复一下，由于 **hstring** 的 [**std::wstring_view** 的转换运算符](/uwp/api/hstring#hstringoperator-stdwstringview)，注意该细节是一个可选操作。
+但重复一下，由于 **hstring** 的 [**std::wstring_view** 的转换运算符](/uwp/cpp-ref-for-winrt/hstring#hstringoperator-stdwstring_view)，注意该细节是一个可选操作。
 
 ```cppwinrt
 // Access a property of type hstring, via a conversion operator to a standard type.
@@ -91,7 +91,7 @@ hstring tostringHstring{ contosoUri.ToString() }; // L"http://www.contoso.com/"
 tostringHstring = awUri.ToString(); // L"http://www.adventure-works.com/"
 ```
 
-你可以使用 [**hstring::c_str function**](/uwp/api/windows.foundation.uri#hstringcstr-function) 函数从 **hstring** 获取标准宽字符串（正如你可以从 **std::wstring** 获取一样）。
+你可以使用 [**hstring::c_str function**](/uwp/cpp-ref-for-winrt/hstring#hstringc_str-function) 函数从 **hstring** 获取标准宽字符串（正如你可以从 **std::wstring** 获取一样）。
 
 ```cppwinrt
 #include <iostream>
@@ -156,7 +156,7 @@ Windows 运行时根据 **wchar_t** 字符实现，但 Windows 运行时的应�
 
 这样，你便可以在很大程度上忽略 Windows 运行时字符串管理的细节，并使用你了解的资源高效地工作。 考虑到在 Windows 运行时中使用字符串的频率，这一点很重要。
 
-# <a name="formatting-strings"></a>格式化字符串
+## <a name="formatting-strings"></a>格式化字符串
 用于字符串格式化的一个选择是 **std::wstringstream**。 下面是格式化和显示简单调试跟踪消息的示例。
 
 ```cppwinrt

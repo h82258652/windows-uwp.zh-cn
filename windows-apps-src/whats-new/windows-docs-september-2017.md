@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 1709
 ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a296cc877279292f73b591a86ede9136b0d9758
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0ae5001e907d7d38cbf05fd6863b192337fe365f
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645192"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162883"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>2017 年 9 月 Windows 开发人员文档中的新增功能
 
@@ -24,7 +24,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="xbox-live-creators-program"></a>Xbox Live 创意者计划
 
-Xbox Live 创意者计划现已推出，你可以通过该计划轻松构建和发布可以在 Windows 10 电脑和 Xbox One 主机上运行的 UWP 游戏。 有关更多信息，请参阅 [Xbox Live 创意者计划入门](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)。
+Xbox Live 创意者计划现已推出，你可以通过该计划轻松构建和发布可以在 Windows 10 电脑和 Xbox One 主机上运行的 UWP 游戏。 有关更多信息，请参阅 [Xbox Live 创意者计划入门](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)。
 
 ## <a name="developer-guidance"></a>开发人员指南
 

@@ -5,12 +5,12 @@ keywords: 企业版教程，客户数据，创建读取、 更新删除，其余
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: med
-ms.openlocfilehash: 9c09e0fb73e42fd8a3d0c70bbb5396be32624387
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7bd3a180762c3ef06d7c24ae001fb2c7fb7fc55e
+ms.sourcegitcommit: 6df46d7d5b5522805eab11a9c0e07754f28673c6
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623242"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58808295"
 ---
 # <a name="tutorial-create-a-customer-database-application"></a>教程：创建客户数据库应用程序
 
@@ -24,7 +24,7 @@ ms.locfileid: "57623242"
 
 ![正在运行的应用的主页](images/customer-database-tutorial/customer-list.png)
 
-### <a name="prerequisites"></a>必备条件
+### <a name="prerequisites"></a>先决条件
 
 * [确保拥有最新版本的 Visual Studio 和 Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * [克隆或下载的客户数据库教程示例](https://aka.ms/customer-database-tutorial)
@@ -38,14 +38,14 @@ ms.locfileid: "57623242"
 
 如果它在打开后立即运行您的应用程序，你会看到空白屏幕顶部的几个按钮。 尽管不是对你可见的该应用已包括与几个测试客户预配本地 SQLite 数据库。 在这里，将首先实现 UI 控件来显示这些客户，，然后转到在对数据库执行的操作中添加。 在开始之前，下面是您将正常工作。
 
-### <a name="views"></a>视图
+### <a name="views"></a>Views
 
 **CustomerListPage.xaml**是应用程序的视图，它会在本教程中定义单个页面的 UI。 每当您需要添加或更改可视元素在 UI 中，您将执行此操作此文件中。 本教程将引导你完成添加这些元素：
 
 * 一个**RadDataGrid**用于显示和编辑你的客户。 
 * 一个**StackPanel**的初始值设置为新客户。
 
-### <a name="viewmodels"></a>Viewmodel
+### <a name="viewmodels"></a>ViewModels
 
 **ViewModels\CustomerListPageViewModel.cs**是应用程序的基本逻辑所在的位置。 在视图中执行每个用户操作将传递到处理此文件。 在本教程中，将添加一些新代码，实现以下方法：
 
@@ -247,7 +247,7 @@ ms.locfileid: "57623242"
         get => _newCustomer;
         set
         {
-            if {_newCustomer != value}
+            if (_newCustomer != value)
             {
                 _newCustomer = value;
                 OnPropertyChanged();
@@ -419,7 +419,7 @@ ms.locfileid: "57623242"
 
 ![删除新客户](images/customer-database-tutorial/delete-new-customer.png)
 
-## <a name="conclusion"></a>结论
+## <a name="conclusion"></a>结束语
 
 祝贺你！ 所有此操作完成后，您的应用程序现在有一系列完整的本地数据库操作。 可以创建、 读取、 更新和删除应用 UI 中的客户和这些更改保存到你的数据库，并且将在您的应用程序的不同启动中保持原样。
 
@@ -447,7 +447,7 @@ ms.locfileid: "57623242"
 * 将您的应用程序与 Microsoft Store 相关联。
 * 通过复制[服务项目](https://github.com/Microsoft/Windows-appsample-customers-orders-database/tree/master/ContosoService)到你的应用，并将其部署到 Azure。
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>身份验证
 
 你将需要创建一个按钮以启动身份验证序列和一个弹出窗口或单独的页来收集用户的信息。 一旦你创建的您将需要提供代码，请求用户的信息并使用它来获取访问令牌。 客户订单数据库示例包装来调用 Microsoft Graph **WebAccountManager**库，以获取令牌和处理的 AAD 帐户的身份验证。
 

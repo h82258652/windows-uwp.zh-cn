@@ -6,12 +6,12 @@ ms.date: 08/21/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
-ms.openlocfilehash: 24ec2013735597efae73aee31bb4aee1a8e1413e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b74cb2b23b5fbfc7487d18be0531ff26170cbe3f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594982"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334506"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>使用 Microsoft Store Services SDK 与客户互动
 
@@ -26,7 +26,7 @@ Microsoft Store Services SDK 提供了功能，可帮助你吸引的客户在通
 
 Microsoft Store Services SDK 当前支持以下适用于 UWP 应用的方案。 有关 API 的参考文档，请参阅 [Microsoft Store Services SDK API 参考](https://docs.microsoft.com/uwp/api/overview/engagement)。
 
-|  方案  |  描述   |
+|  应用场景  |  描述   |
 |------------|----------------|
 |  [使用一个在 UWP 应用中运行试验 / B 测试](run-app-experiments-with-a-b-testing.md)    |  在通用 Windows 平台 (UWP) 应用上运行 A/B 测试，测量这些功能对某些客户的有效性，之后再将它们发布给每位用户。 在合作伙伴中心定义试验后，使用[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)类要获得在应用中，试验使用此数据来修改测试时，该功能的行为变体，然后使用[LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)方法以将视图事件和转换事件发送到合作伙伴中心。 最后，使用合作伙伴中心以查看结果并管理在试验。  |
 |  [启动从 UWP 应用的反馈中心](launch-feedback-hub-from-your-app.md)    |  使用 UWP 应用中的 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 类将 Windows 10 客户定向到“反馈中心”，他们可以在其中提交问题、建议和赞成票。 然后，在合作伙伴中心内的[反馈报告](../publish/feedback-report.md)中管理此反馈。 |
@@ -35,7 +35,7 @@ Microsoft Store Services SDK 当前支持以下适用于 UWP 应用的方案。 
 
 <span id="prerequisites" />
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 Microsoft Store Services SDK 需要：
 
@@ -62,7 +62,7 @@ Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Servi
 1.  关闭 Visual Studio 的所有实例。
 
 2. 如果之前已安装 Microsoft 官方商城协定和盈利 SDK、通用广告客户端 SDK 或 Ad Mediator 扩展，请先卸载这些 SDK。 （可选）打开**命令提示符**窗口并运行这些命令以清除可能与 Visual Studio 一起安装（但可能未显示在计算机上的已安装程序列表中）的任何早期 SDK 版本：
-    ```
+    ```console
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
@@ -85,7 +85,7 @@ Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Servi
 1.  关闭 Visual Studio 的所有实例。
 
 2. 如果之前已安装 Microsoft 官方商城协定和盈利 SDK、通用广告客户端 SDK 或 Ad Mediator 扩展，请先卸载这些 SDK。 （可选）打开**命令提示符**窗口并运行这些命令以清除可能与 Visual Studio 一起安装（但可能未显示在计算机上的已安装程序列表中）的任何早期 SDK 版本：
-    ```
+    ```console
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
@@ -99,7 +99,7 @@ Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Servi
 
 5. 在搜索框中，键入 **Microsoft.Services.Store.Engagement** 并安装 Microsoft.Services.Store.Engagement 包。 程序包安装完成后，保存你的解决方案。
     > [!NOTE]
-    > 如果**输出**窗口报告指示指定路径过长的 *Install-Package* 错误，则可能需要配置 NuGet 以将软件包提取到路径短于默认位置的备用位置。 若要执行此操作，将 ```repositoryPath``` 值添加到计算机上的 nuget.config 文件，并将其分配到可从中提取 NuGet 包的短文件夹路径。 有关详细信息，请参阅 NuGet 文档中的[此文章](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，可尝试将 Visual Studio 项目移到路径较短的备用文件夹。 该问题也可能引起您的全局包路径过长。 在这种情况下，添加```globalPackagesFolder```到 nuget.config 文件的值。
+    > 如果**输出**窗口报告指示指定路径过长的 *Install-Package* 错误，则可能需要配置 NuGet 以将软件包提取到路径短于默认位置的备用位置。 若要执行此操作，将 `repositoryPath` 值添加到计算机上的 nuget.config 文件，并将其分配到可从中提取 NuGet 包的短文件夹路径。 有关详细信息，请参阅 NuGet 文档中的[此文章](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，可尝试将 Visual Studio 项目移到路径较短的备用文件夹。 该问题也可能引起您的全局包路径过长。 在这种情况下，添加`globalPackagesFolder`到 nuget.config 文件的值。
 
 6. 关闭包含你的项目的 Visual Studio 解决方案，然后重新打开解决方案。
 
@@ -121,7 +121,7 @@ Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Servi
 
 3. 在**引用管理器**中，展开**通用 Windows**、单击**扩展**，然后选中 **Microsoft 协议框架**旁边的复选框。 这使你能够使用 [Microsoft.Services.Store.Engagement](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement) 命名空间中的 API。
 
-3. 单击“确定” 。
+3. 单击 **“确定”**。
 
 > [!NOTE]
 > 如果你已通过 NuGet 安装了 SDK 库，则你的项目将包含 **Microsoft.Services.Store.Engagement** 引用。 **Microsoft.Services.Store.Engagement** 引用表示 NuGet 包（而不是其中的库），因此，你可以将其忽略。

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0943273dab239669be75b30070222d698246aa41
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 76196add0829dcfa0aa638a2d8ae6995fafce69e
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610022"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244383"
 ---
 # <a name="typography"></a>版式
 
@@ -72,7 +72,7 @@ UWP 应用中的字号可在所有设备上自动缩放。 该缩放算法确保
 
 UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻松阅读内容。 所有大小均以有效像素为单位，并针对所有设备上运行的 UWP 应用进行了优化。
 
-![字体渐变](images/type/type-ramp.svg)
+![字体渐变](images/type/type-ramp.png)
 
 ### <a name="using-the-type-ramp"></a>使用字体渐变
 
@@ -110,7 +110,7 @@ UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻�
     :::column-end:::
 :::row-end:::
 
-## <a name="alignment"></a>对齐
+## <a name="alignment"></a>对齐方式
 
 默认 [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) 是左对齐，在大多数情况下，左边对齐但右边不对齐可提供一致的内容编排效果和统一的布局。 有关 RTL 语言，请参阅[调整布局和字体以支持全球化](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)。
 
@@ -171,7 +171,7 @@ Segoe UI 适用于英语、欧洲语言、希腊语、希伯来语、亚美尼�
 <tr class="header">
 <th align="left">字体系列</th>
 <th align="left">样式</th>
-<th align="left">注释</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -244,7 +244,7 @@ Sans-serif 字体是用于标题和 UI 元素的不错选择。
 <tr class="header">
 <th align="left">字体系列</th>
 <th align="left">样式</th>
-<th align="left">注释</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -272,7 +272,7 @@ Sans-serif 字体是用于标题和 UI 元素的不错选择。
 <tr class="even">
 <td style="font-family: Selawik;">Selawik</td>
 <td align="left">常规、半细、细体、粗体、半粗</td>
-<td align="left">计量方面与 Segoe UI 兼容的开源字体，用于其它平台上不希望包含 Segoe UI 的应用。 <a href="https://github.com/Microsoft/Selawik">GitHub 上获取 Selawik。</a></td>
+<td align="left">计量方面与 Segoe UI 兼容的开源字体，用于其它平台上不希望包含 Segoe UI 的应用。 <a href="https://github.com/Microsoft/Selawik">在 GitHub 上获取 Selawik。</a></td>
 </tr>
 
 </tbody>
@@ -287,7 +287,7 @@ Serif 字体适合用于显示大量文本。
 <tr class="header">
 <th align="left">字体系列</th>
 <th align="left">样式</th>
-<th align="left">注释</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -323,7 +323,7 @@ Serif 字体适合用于显示大量文本。
 <tr class="header">
 <th align="left">字体系列</th>
 <th align="left">样式</th>
-<th align="left">注释</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

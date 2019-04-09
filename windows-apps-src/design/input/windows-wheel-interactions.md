@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: bcdb8ca6843d126bc245e48f0b50209890740819
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3456742c4dbb3ca2ab146217763e8f7475c79df2
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639612"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57822922"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial 交互
 
@@ -85,7 +85,7 @@ Surface Dial 与 Windows 紧密集成，并且支持菜单上的一组内置工�
 
 下面我们介绍的 UX 和开发人员指南可用于自定义 Surface Dial 菜单上公开的工具。
 
-### <a name="ux-guidance"></a>UX 指南
+### <a name="ux-guidance-for-custom-tools"></a>自定义工具的用户体验指南
 
 **确保工具对应于当前上下文**当你彻底了解了工具执行的具体操作和 Surface Dial 交互的工作原理后，可帮助用户快速上手，并使他们专注于自己的任务。
 
@@ -132,6 +132,8 @@ Surface Dial 菜单可容纳七个项。 如果有八个或更多项，用户需
 如前所述，Surface Dial 的默认菜单中预置了一组内置工具，这些工具涵盖广泛的基本系统功能（系统音量、系统亮度、滚动、缩放、撤消和媒体控制（系统检测到正在播放音频或视频时））。 不过，这些默认工具可能不会提供你的应用所需的功能。 
 
 在以下部分中，我们介绍了如何向 Surface Dial 菜单添加自定义工具，以及如何指定哪些内置工具要公开。
+
+下载此示例中的更可靠版本[RadialController 自定义](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)。
 
 **添加自定义工具**
 
@@ -298,7 +300,7 @@ Surface Dial 主要设计用于对涉及模拟值或控制的平滑、增量调�
 > [!NOTE]
 > 用户可以在“Windows 设置”&gt;“设备”&gt;“Wheel”页中禁用触觉反馈。
 
-#### <a name="ux-guidance"></a>UX 指南
+#### <a name="ux-guidance-for-custom-interactions"></a>自定义交互的用户体验指南
 
 **使用连续或高旋转写规则的工具应禁用 haptic 反馈**
 
@@ -391,12 +393,13 @@ private void MyController_ButtonClicked(RadialController sender,
 如之前所述，Surface Dial 可以与 Surface Studio 配合使用，以在特殊屏幕模式中显示 Surface Dial 菜单。 
 
 在此模式中时，可以将 Dial 交互体验与你的应用更进一步集成并自定义。 仅在将 Surface Dial 和 Surface Studio 搭配使用时才可能提供的独特体验的示例包括：
+
 - 基于 Surface Dial 的位置显示上下文工具（如调色板），这使查找和使用这些工具更容易
 - 基于放置 Surface Dial 的 UI 设置活动工具
 - 基于 Surface Dial 的位置放大屏幕区域
 - 基于屏幕位置的独特游戏交互
 
-#### <a name="ux-guidance"></a>UX 指南
+#### <a name="ux-guidance-for-on-screen-interactions"></a>用户体验指南屏幕上的交互
 
 **屏幕上检测到图面拨号时，应用应响应**
 
@@ -408,7 +411,7 @@ private void MyController_ButtonClicked(RadialController sender,
 
 **调整图面拨相关的 UI，基于用户交互**
 
-除了硬件阻挡，用户的手和臂在用户使用设备时可能会阻挡部分屏幕。 
+除了硬件阻挡，用户的手和臂在用户使用设备时可能会阻挡部分屏幕。
 
 已阻挡区域取决于正在使用设备的手。 由于设备设计为主要与非惯用手配合使用，因此与 Surface Dial 有关的 UI 应针对用户指定（“Windows 设置”&gt;“设备”&gt;“笔和 Windows Ink”&gt;“选择书写时使用哪只手”设置）的另一只手进行调整。
 
@@ -635,7 +638,7 @@ private void ActivateGridAtLocation(Point Location)
 ![示例应用程序激活使用面拨自定义工具的用户界面的图像](images/windows-wheel/surface-dial-snippet-customtool4.png)  
 *示例应用 UI 激活使用面拨自定义工具*
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本主题概述了有关以下方面的 Surface Dial 输入设备与 UX 和开发人员指南：与 Surface Studio 配合使用时，如何针对离屏情形以及屏幕情形自定义用户体验。
 
@@ -645,23 +648,35 @@ private void ActivateGridAtLocation(Point Location)
 
 ## <a name="related-articles"></a>相关文章
 
+[教程：在 UWP 应用中支持面拨 （和其他滚轮设备）](radialcontroller-walkthrough.md)
+
 ### <a name="api-reference"></a>API 参考
 
-- [**RadialController**类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)
-- [**RadialControllerButtonClickedEventArgs**类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
-- [**RadialControllerConfiguration**类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerConfiguration) 
-- [**RadialControllerControlAcquiredEventArgs**类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
+- [**RadialController** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)
+- [**RadialControllerButtonClickedEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
+- [**RadialControllerConfiguration** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerConfiguration) 
+- [**RadialControllerControlAcquiredEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
 - [**RadialControllerMenu**类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenu) 
 - [**RadialControllerMenuItem**类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuItem) 
-- [**RadialControllerRotationChangedEventArgs**类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
-- [**RadialControllerScreenContact**类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact) 
-- [**RadialControllerScreenContactContinuedEventArgs**类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
-- [**RadialControllerScreenContactStartedEventArgs**类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
+- [**RadialControllerRotationChangedEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
+- [**RadialControllerScreenContact** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact) 
+- [**RadialControllerScreenContactContinuedEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
+- [**RadialControllerScreenContactStartedEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
 - [**RadialControllerMenuKnownIcon**枚举](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuKnownIcon) 
-- [**RadialControllerSystemMenuItemKind**枚举](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
+- [**RadialControllerSystemMenuItemKind** enum](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
 
 ### <a name="samples"></a>示例
 
-[通用 Windows 平台的示例 (C#和 c + +)](https://go.microsoft.com/fwlink/?linkid=832713)
+#### <a name="topic-samples"></a>主题示例
+
+[RadialController 自定义项](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)
+
+#### <a name="other-samples"></a>其他示例
+
+[着色通讯簿示例](https://github.com/Microsoft/Windows-appsample-coloringbook)
+
+[入门教程：在 UWP 应用中支持面拨 （和其他滚轮设备）](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-RadialController)
+
+[通用 Windows 平台的示例 (C#和C++)](https://go.microsoft.com/fwlink/?linkid=832713)
 
 [Windows 经典桌面示例](https://aka.ms/radialcontrollerclassicsample)

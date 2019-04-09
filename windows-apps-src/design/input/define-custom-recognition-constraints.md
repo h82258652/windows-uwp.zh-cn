@@ -8,35 +8,30 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 539acb242cfe6ee70d1311133a3f1a193860541a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a83cbc547ede1977f0222298bf451611905fad50
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631722"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343256"
 ---
 # <a name="define-custom-recognition-constraints"></a>定义自定义识别约束
 
-
-
 了解如何为语音识别定义和使用自定义约束。
 
-> **重要的 API**：[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)， [ **SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)， [ **SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
-
+> **重要的 API**：[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446), [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421), [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
 
 语音识别至少需要一个约束，才能定义可识别的词汇。 如果未指定任何约束，将使用通用 Windows 应用的预定义听写语法。 请参阅[语音识别](speech-recognition.md)。
 
-
 ## <a name="add-constraints"></a>添加约束
-
 
 使用 [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) 属性向语音识别器添加约束。
 
-我们在此处介绍三种可在应用内使用的语音识别约束。 （有关语音命令约束，请参阅[在 Cortana 中使用语音命令启动前台应用](https://msdn.microsoft.com/cortana/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana)。）
+我们在此处介绍三种可在应用内使用的语音识别约束。 (有关 Cortana 语音命令约束，请参阅[启动包含在 Cortana 中的语音命令的前景色应用](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)。)
 
--   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)— 约束基于预定义的语法 （听写或 web 搜索）。
--   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)— 约束基于词或短语的列表。
--   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)-语音识别语法规范 (SRGS) 文件中定义的约束。
+- [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)— 约束基于预定义的语法 （听写或 web 搜索）。
+- [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)— 约束基于词或短语的列表。
+- [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)-语音识别语法规范 (SRGS) 文件中定义的约束。
 
 每个语音识别器都可具有一个约束集合。 只有以下约束组合有效：
 
@@ -88,13 +83,12 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 ## <a name="specify-a-programmatic-list-constraint-speechrecognitionlistconstraint"></a>指定编程列表约束 (SpeechRecognitionListConstraint)
 
-
 必须将列表约束添加到语音识别器的约束集合。
 
 请牢记以下几点：
 
--   你可以将多个列表约束添加到约束集合。
--   你可以使用为字符串值实现 **IIterable&lt;String&gt;** 的任何集合。
+- 你可以将多个列表约束添加到约束集合。
+- 你可以使用为字符串值实现 **IIterable&lt;String&gt;** 的任何集合。
 
 我们在此处以编程方式将一组字词指定为列表约束，并将其添加到语音识别器的约束集合中。
 
@@ -128,28 +122,27 @@ private async void YesOrNo_Click(object sender, RoutedEventArgs e)
 
 ## <a name="specify-an-srgs-grammar-constraint-speechrecognitiongrammarfileconstraint"></a>指定 SRGS 语法约束 (SpeechRecognitionGrammarFileConstraint)
 
-
 必须将 SRGS 语法文件添加到语音识别器的约束集合。
 
 SRGS 版本 1.0 是用于为语音识别创建 XML 格式语法的行业标准标记语言。 尽管 Universal Windows App 为创建语音识别提供了使用 SRGS 的替代项，但是你可能会发现，使用 SRGS 创建语法产生的结果最好，尤其是对较复杂的语音识别方案。
 
 SRGS 提供一组完整的功能，可帮助你为应用构建复杂的语音交互。 例如，你可以使用 SRGS 语法执行以下操作：
 
--   指定字词和短语必须说出的顺序以供识别。
--   从多个列表和短语组合字词以供识别。
--   链接到其他语法。
--   对替代字词或短语分配权重以增加或减少它将被用于匹配语音输入的可能性。
--   包括可选字词或短语。
--   使用帮助筛选掉未指定或非预期输入（例如不匹配语法的随机语音或背景噪音）的特殊规则。
--   使用语义定义语音识别对你的应用的意义。
--   在语法中以内联方式或通过指向词典的链接来指定发音。
+- 指定字词和短语必须说出的顺序以供识别。
+- 从多个列表和短语组合字词以供识别。
+- 链接到其他语法。
+- 对替代字词或短语分配权重以增加或减少它将被用于匹配语音输入的可能性。
+- 包括可选字词或短语。
+- 使用帮助筛选掉未指定或非预期输入（例如不匹配语法的随机语音或背景噪音）的特殊规则。
+- 使用语义定义语音识别对你的应用的意义。
+- 在语法中以内联方式或通过指向词典的链接来指定发音。
 
 有关 SRGS 元素和属性的详细信息，请参阅 [SRGS 语法 XML 参考](https://go.microsoft.com/fwlink/p/?LinkID=269886)。 若要开始创建 SRGS 语法，请参阅[如何创建基本的 XML 语法](https://go.microsoft.com/fwlink/p/?LinkID=269887)。
 
 请牢记以下几点：
 
--   你可以将多个语法文件约束添加到约束集合。
--   为符合 SRGS 规则的基于 XML 的语法文件使用 .grxml 文件扩展名。
+- 你可以将多个语法文件约束添加到约束集合。
+- 为符合 SRGS 规则的基于 XML 的语法文件使用 .grxml 文件扩展名。
 
 该示例使用在名为 srgs.grxml 的文件（稍后说明）中定义的 SRGS 语法。 在文件属性中，**数据包操作**设置为**内容**，**复制到输出目录**则设置为**始终复制**。
 
@@ -219,7 +212,6 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 ## <a name="manage-constraints"></a>管理约束
 
-
 在加载约束集合以供识别后，你的应用可以通过将约束的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) 属性设置为 **true** 或 **false** 来管理启用哪些约束以供识别操作。 默认设置为 **true**。
 
 通常，相比为每次识别操作加载、卸载和编译约束，加载一次约束并按需启用或禁用它们更有效率。 按照需要使用 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) 属性。
@@ -232,15 +224,8 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>相关文章
 
+- [语音交互](speech-interactions.md)
 
-* [语音交互](speech-interactions.md)
+### <a name="samples"></a>示例
 
-**示例**
-* [语音识别和语音合成示例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
-
- 
-
-
-
-
+- [语音识别和语音合成示例](https://go.microsoft.com/fwlink/p/?LinkID=619897)

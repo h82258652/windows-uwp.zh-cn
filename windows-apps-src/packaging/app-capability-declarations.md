@@ -6,12 +6,12 @@ ms.date: 11/26/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e73d020738e0bad5404f164417bbce35e5e60c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 58609ed1b3b2e178c735f3ebf042a98587ce6cb9
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591302"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57822942"
 ---
 # <a name="app-capability-declarations"></a>应用功能声明
 
@@ -58,14 +58,17 @@ ms.locfileid: "57591302"
 
 ## <a name="device-capabilities"></a>设备功能
 
-设备功能允许你的应用访问外围设备和内部设备。 可在你的应用包清单中使用 **DeviceCapability** 元素指定设备功能。 此元素可能需要其他子元素，并且某些设备功能需要手动添加到该程序包清单。 有关详细信息，请参阅[如何在程序包清单中指定设备功能](https://msdn.microsoft.com/library/windows/apps/Dn263092)和 [**DeviceCapability Schema reference**](https://msdn.microsoft.com/library/windows/apps/BR211430)。
+设备功能允许你的应用访问外围设备和内部设备。 可在你的应用包清单中使用 **DeviceCapability** 元素指定设备功能。 此元素可能需要其他子元素，并且某些设备功能需要手动添加到该程序包清单。 有关详细信息，请参阅[如何在程序包清单中指定设备功能](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest)和 [**DeviceCapability Schema reference**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability)。
+
+> [!NOTE]
+> 可以有多个**DeviceCapability**并**功能**下的元素**功能**元素，但是所有**DeviceCapability**元素必须出现后**功能**元素。
 
 | 功能应用场景 | 功能用法 |
 |---------------------|------------------|
 | **位置**\* | **location** 功能提供对定位功能的访问权限，定位功能通常从专用硬件（如电脑中的 GPS 传感器）检索获得或从可用的网络信息中获得。 应用必须处理用户从“设置”超级按钮禁用定位服务的情况。 |
-| **麦克风** | **microphone** 功能提供对麦克风音频源的访问权限，让应用可以录制来自所连接麦克风的音频。 应用必须处理用户从“设置”超级按钮禁用麦克风的情况。 |
+| **Microphone** | **microphone** 功能提供对麦克风音频源的访问权限，让应用可以录制来自所连接麦克风的音频。 应用必须处理用户从“设置”超级按钮禁用麦克风的情况。 |
 | **邻近** | **proximity** 功能支持临近的多台设备彼此通信。 此功能通常用在一般的多玩家游戏和交换信息的应用中。 设备会尝试使用可提供最佳连接的通信技术，包括蓝牙、Wi-Fi 和 Internet。 此功能仅用于在设备之间发起通信。 |
-| **网络摄像机** | **webcam** 功能提供对内置相机或外部摄像头的视频源的访问权限，这使应用可以捕获照片和视频。 在 Windows 上，应用必须处理用户从“设置”超级按钮禁用相机的情况。<br/>**webcam** 功能仅授予对视频流的访问权限。 若要也授予对音频流的访问权限，必须添加 **microphone** 功能。 |
+| **Webcam** | **webcam** 功能提供对内置相机或外部摄像头的视频源的访问权限，这使应用可以捕获照片和视频。 在 Windows 上，应用必须处理用户从“设置”超级按钮禁用相机的情况。<br/>**webcam** 功能仅授予对视频流的访问权限。 若要也授予对音频流的访问权限，必须添加 **microphone** 功能。 |
 | **USB** | **usb** 设备功能允许访问[为 USB 设备更新应用清单程序包](https://go.microsoft.com/fwlink/p/?LinkId=302259)中的 API。 |
 | **人机接口设备 (HID)** | **humaninterfacedevice** 设备功能允许访问[如何为 HID 指定设备功能](https://msdn.microsoft.com/library/windows/apps/Dn263091)中的 API。 |
 | **Point of Service (POS)** | **pointOfService** 设备功能允许访问 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) 命名空间中的 API。 该命名空间允许你的应用访问服务点 (POS) 条码扫描仪和磁条阅读器。 该命名空间提供一个独立于供应商的接口，可用于从 UWP 应用访问由各种制造商提供的 POS 设备。 |
@@ -134,7 +137,7 @@ ms.locfileid: "57591302"
 | **共享的用户证书** | **SharedUserCertificates**功能，应用程序来添加和访问软件和基于硬件的共享用户证书存储，例如存储在智能卡上的证书。 此功能通常用于需要智能卡来进行身份验证的财经或企业应用。<br /><br />当在应用的程序包清单中声明 **sharedUserCertificates** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="sharedUserCertificates"/></Capabilities>``` |
 |**文档**\* | **DocumentsLibrary**功能提供对用户的 Documents 文件夹中，筛选为包清单中声明的文件类型关联的编程访问。 例如，如果一个文字处理应用程序声明了.doc 文件类型关联，它可以在用户的 Documents 文件夹中打开.doc 文件。 <br /><br />通常情况下，应用应允许用户选择的位置及其文件，使用以下 Api 之一：<ul><li>[FileOpenPicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker)打开现有文件。</li><li>[FileSavePicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker)以保存新文件。</li><li>[FolderPicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.folderpicker)以选择要打开 / 保存从其他文件的文件夹。</li></ul>使用这些 Api 允许用户选择最适合他们，例如云同步的帐户 (例如，OneDrive) 的位置。 用户选择了文件或文件夹使用这些 Api 后，您的应用程序可以通过使用获取正在进行位置的访问权限[FutureAccessList](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) API。 此 API 允许应用访问的文件或文件夹在将来无需要求用户再次选择它们。<br /><br />在现有的工作流其中假设文件将位于文档文件夹 （例如，与现有桌面应用程序进行互操作），或者如果不希望用户能够选择位置，您可以声明的情况下**documentsLibrary**为应用程序的功能。 如果您使用**documentsLibrary**为应用程序的功能，建议您还允许用户可以手动选取位置。<br /><br />当在应用的程序包清单中声明 **documentsLibrary** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="documentsLibrary"/></Capabilities>``` |
 | **游戏 DVR 设置** | **appCaptureSettings** 受限功能允许应用控制游戏 DVR 的用户设置。<br /><br />若要使用 [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/BR226738) 命名空间中的某些 API，则需要此功能。 <br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。  |
-| **移动电话** | **cellularDeviceControl** 受限功能允许应用控制手机网络设备。<br /><br />**cellularDeviceIdentity** 功能允许应用访问手机网络标识数据。<br /><br />**cellularMessaging** 功能允许应用使用短信和 RCS。<br /><br />若要使用 [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/BR206567) 命名空间中的某些 API，这些功能是必需的。  |
+| **Cellular** | **cellularDeviceControl** 受限功能允许应用控制手机网络设备。<br /><br />**cellularDeviceIdentity** 功能允许应用访问手机网络标识数据。<br /><br />**cellularMessaging** 功能允许应用使用短信和 RCS。<br /><br />若要使用 [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/BR206567) 命名空间中的某些 API，这些功能是必需的。  |
 | **设备解锁** | **deviceUnlock** 受限功能允许应用解锁用于开发人员和企业旁加载方案的设备。<br /><br /> 我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
 | **双 SIM 磁贴** | **dualSimTiles** 受限功能允许应用在具有多张 SIM 卡的设备上创建额外的应用列表项。<br /><br />若要使用 [**Windows.UI.StartScreen**](https://msdn.microsoft.com/library/windows/apps/BR242235) 命名空间中的某些 API，则需要此功能。 |
 | **企业共享存储** | **enterpriseDeviceLockdown** 受限功能允许应用使用设备锁定 API 和访问企业共享存储文件夹。 <br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
@@ -145,7 +148,7 @@ ms.locfileid: "57591302"
 | **其他应用程序管理** | **packageManagement** 受限功能允许应用直接管理其他应用。<br /><br />**packageQuery** 设备功能允许应用收集有关其他应用的信息。<br /><br />若要访问 [**PackageManager**](https://msdn.microsoft.com/library/windows/apps/BR240960) 类中的某些方法和属性，这些功能是必需的。 |
 | **屏幕投影** | **screenDuplication** 受限功能允许应用将屏幕投影到另一台设备上。<br /><br />若要使用 DirectX 命名空间中的 API，此功能是必需的。 <br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
 | **用户主体名称** | **userPrincipalName** 受限功能允许应用修改和访问照片的缩略图缓存。<br /><br />若要调用 [**GetUserNameEx**](https://msdn.microsoft.com/library/windows/desktop/ms724435) 函数，则需要此功能。 <br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
-| **电子钱包** | **walletSystem** 受限功能允许应用具有对存储的电子钱包卡的完整访问权限。<br /><br />若要使用 [**Windows.ApplicationModel.Wallet.System**](https://msdn.microsoft.com/library/windows/apps/Mt171610) 命名空间中的 API，则需要此功能。 <br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
+| **Wallet** | **walletSystem** 受限功能允许应用具有对存储的电子钱包卡的完整访问权限。<br /><br />若要使用 [**Windows.ApplicationModel.Wallet.System**](https://msdn.microsoft.com/library/windows/apps/Mt171610) 命名空间中的 API，则需要此功能。 <br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
 | **位置历史记录** | **locationHistory** 受限功能允许应用访问设备的位置历史记录。<br /><br />若要使用 [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/BR225603) 命名空间中的 API，则需要此功能。
 | **应用关闭确认** | **confirmAppClose** 受限功能允许应用关闭本身及其自己的窗口，以及延迟应用的关闭。<br /><br />应用可以在 Windows 10 版本 1703（内部版本 10.0.15063）及更高版本中请求此功能。 在以前的 Windows 10 版本中，此功能是专用的，会导致应用安装失败，并显示错误消息“无法授权此应用程序访问请求的功能”。 |
 | **呼叫历史记录**\* | **phoneCallHistory** 受限功能允许应用读取呼叫历史记录和删除该历史记录中的条目。<br /><br />若要使用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 命名空间中的 API，则需要此功能。 <br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |

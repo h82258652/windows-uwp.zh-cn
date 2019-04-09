@@ -5,12 +5,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, 游戏选项, 预告片, 高级应用一览, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 277d455fe3387452a4afe91fd74e5c2099f76ce4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8ffb11c020eacd687ab72274b04f41406c3df2af
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594072"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334635"
 ---
 # <a name="c-sample-app-submission-with-game-options-and-trailers"></a>C\#示例： 使用游戏选项和尾部的应用程序提交
 
@@ -24,7 +24,7 @@ ms.locfileid: "57594072"
 
 你可以查看每个示例，了解有关它所演示的任务的详细信息，也可以将本文中的所有代码示例生成到控制台应用程序。 要生成示例，请在 Visual Studio 中创建名为 **DevCenterApiSample** 的 C# 控制台应用程序、将每个示例复制到项目中单独的代码文件，然后生成该项目。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 这些示例有以下要求：
 
@@ -41,7 +41,7 @@ ms.locfileid: "57594072"
 * 将 ```applicationId``` 变量指定为要为其创建提交的应用的[应用商店 ID](in-app-purchases-and-trials.md#store-ids)。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/CreateAndSubmitSubmissionExample.cs#CreateAndSubmitSubmissionExample)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/CreateAndSubmitSubmissionExample.cs#CreateAndSubmitSubmissionExample)]
 
 <span id="token" />
 
@@ -50,7 +50,7 @@ ms.locfileid: "57594072"
 ```DevCenterAccessTokenClient``` 类定义一个帮助程序方法，该方法使用你的 ```tenantId```、```clientId``` 和 ```clientSecret``` 值来创建要用于 Microsoft Store 提交 API 的 Azure AD 访问令牌。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/DevCenterAccessTokenClient.cs#DevCenterAccessTokenClient)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/DevCenterAccessTokenClient.cs#DevCenterAccessTokenClient)]
 
 <span id="utilities" />
 
@@ -59,7 +59,7 @@ ms.locfileid: "57594072"
 ```DevCenterClient``` 类定义帮助程序方法，这些方法在 Microsoft Store 提交 API 中调用多种方法并上传一个 ZIP 文件，其中包含应用提交的程序包、应用一览图像和预告片文件。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/DevCenterClient.cs#DevCenterClient)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/DevCenterClient.cs#DevCenterClient)]
 
 ## <a name="related-topics"></a>相关主题
 

@@ -6,15 +6,14 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a6d39a78ba73dcb598f209ea48c4b131e375ab6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7748ff7d5acf8a94c92e2b51953299131910d63e
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594802"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320570"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>使用 SignTool 对应用包进行签名
-
 
 **SignTool** 是命令行工具，用于对应用包或带有证书的捆绑包进行数字签名。 证书可以由用户创建（用于测试目的）或由公司颁发（用于分发）。 登录应用包可验证用户登录后应用数据未经更改，并且可确认登录用户或公司的身份。 **SignTool** 可对已加密或未加密的应用包和捆绑包进行签名。
 
@@ -23,7 +22,7 @@ ms.locfileid: "57594802"
 
 有关代码签名和证书的一般详细信息，请参阅[代码签名简介](https://msdn.microsoft.com/library/windows/desktop/aa380259.aspx#introduction_to_code_signing)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 - **打包应用程序**  
     若要了解手动创建应用包的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 
 
@@ -32,8 +31,8 @@ ms.locfileid: "57594802"
 
 - **SignTool.exe**  
     根据 SDK 的安装路径，以下是 **SignTool** 在 Windows 10 电脑上的位置：
-    - x86：C:\Program 文件 (x86) \Windows Kits\10\bin\x86\SignTool.exe
-    - x64:C:\Program 文件 (x86) \Windows Kits\10\bin\x64\SignTool.exe
+    - x86：C:\Program Files (x86)\Windows Kits\10\bin\x86\SignTool.exe
+    - x64:C:\Program Files (x86)\Windows Kits\10\bin\x64\SignTool.exe
 
 ## <a name="using-signtool"></a>使用 SignTool
 
@@ -43,7 +42,8 @@ ms.locfileid: "57594802"
 在使用 **SignTool** 对你的应用包或捆绑包进行签名时，**SignTool** 中所用的哈希算法必须与你用于打包应用的算法相同。 例如，如果你使用了采用默认设置的 **MakeAppx.exe** 创建应用包，则在使用 **SignTool** 时必须指定 SHA256，因为这是 **MakeAppx.exe** 所用的默认算法。
 
 要找出打包应用时用到了哪种哈希算法，则需要提取应用包的内容并检查 AppxBlockMap.xml 文件。 要了解如何解压缩/提取应用包，请参阅[从应用包或捆绑包中解压缩文件](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool#extract-files-from-a-package-or-bundle)。 哈希方法存在于 BlockMap 元素中，且具有以下格式：
-```
+
+```xml
 <BlockMap xmlns="http://schemas.microsoft.com/appx/2010/blockmap" 
 HashMethod="http://www.w3.org/2001/04/xmlenc#sha256">
 ```
@@ -65,34 +65,42 @@ HashMethod="http://www.w3.org/2001/04/xmlenc#sha256">
 在具备所有先决条件并且已确定使用哪种哈希算法打包应用后即可登录。 
 
 **SignTool** 程序包签名相关的常规命令行语法为：
-```
+
+```syntax
 SignTool sign [options] <filename(s)>
 ```
 
 用于对你的应用进行签名的证书必须为.pfx 文件或安装在证书存储中。
 
 若要对带有 .pfx 文件格式证书的应用包进行签名，请使用以下语法：
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.appx
 ```
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.msix
 ```
+
 请注意，借助 `/a` 选项可让 **SignTool** 自动选择最佳的证书。
 
 如果你的证书不是.pfx 文件，请使用以下语法：
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.appx
 ```
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.msix
 ```
 
 或者，你可以使用以下语法指定所需证书的 SHA1 哈希算法，而不是&lt;证书名称&gt;：
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.appx
 ```
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 ```
 
@@ -103,7 +111,7 @@ SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 ## <a name="common-errors-and-troubleshooting"></a>常见错误和疑难解答
 使用 **SignTool** 的最常见错误类型为内部错误，通常如下所示：
 
-```
+```syntax
 SignTool Error: An unexpected internal error has occurred.
 Error information: "Error: SignerSign() failed." (-2147024885 / 0x8007000B) 
 ```
@@ -111,7 +119,8 @@ Error information: "Error: SignerSign() failed." (-2147024885 / 0x8007000B)
 如果错误代码开头为 0x8008，如 0x80080206 (APPX_E_CORRUPT_CONTENT)，则表示已签名的应用包无效。 如果你收到此类错误，必须重新生成软件包，并再次运行 **SignTool**。
 
 **SignTool** 具有可用于显示证书错误和筛选的调试选项。 若要使用调试功能，则在 `sign`（签名）（后跟完整的 **SignTool** 命令）后直接放置 `/debug`（调试）选项。
-```
+
+```syntax
 SignTool sign /debug [options]
 ``` 
 

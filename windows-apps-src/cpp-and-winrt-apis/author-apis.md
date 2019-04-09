@@ -5,16 +5,16 @@ ms.date: 01/10/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: e4ca6946df327dbe6697a71d1050e6401ed531fe
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 05997549b5f1c0d13b12d47e0bb180d54617dcf2
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626662"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921713"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 创作 API
 
-本主题演示如何创作[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)通过使用 Api [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements)直接或间接基础结构。 在此上下文中，*创作*的同义词有*生成*或*实现*。 本主题介绍以下在 C++/WinRT 类型上实现 API 的情形（按此顺序）。
+本主题演示如何创作[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)通过使用 Api [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements)直接或间接基础结构。 在此上下文中，*创作*的同义词有*生成*或*实现*。 本主题介绍以下在 C++/WinRT 类型上实现 API 的情形（按此顺序）。
 
 - 你*不是*在创作一个 Windows 运行时类（运行时类）；你只是想要实现一个或多个 Windows 运行时接口以便在应用内进行本地使用。 在此案例中，你直接从 **winrt::implements** 派生并实现相关函数。
 - 你*正在*创作一个运行时类。 你可能正在创作一个要从某个应用中使用的组件。 或者，你可能正在创作一个要从 XAML 用户接口 (UI) 使用的类型，在此情况下，你在同一个编译单元内实现和使用一个运行时类。 在这些情况下，你使用工具为你生成派生自 **winrt::implements** 的类。
@@ -28,9 +28,9 @@ ms.locfileid: "57626662"
 最简单的方案是你要实现一个 Windows 运行时接口以进行本地使用。 你不需要运行时类；只需一个普通的 C++ 类。 例如，你可能会基于 [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication) 编写一个应用。
 
 > [!NOTE]
-> 了解安装和使用 C + + WinRT Visual Studio 扩展 (VSIX) （可提供项目模板支持） 请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 有关如何安装和使用信息C++WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包 （该一起提供项目模板，并生成支持），请参阅[适用于 Visual Studio 支持C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
-在 Visual Studio 中， **Visual c + +** > **Windows Universal** > **Core 应用 (C + + WinRT)** 项目模板演示了**CoreApplication**模式。 该模式首先将 [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) 的实现传递给 [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run)。
+在 Visual Studio 中， **Visual C++**   >  **Windows Universal** > **Core 应用 (C++/WinRT)** 项目模板说明**CoreApplication**模式。 该模式首先将 [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) 的实现传递给 [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run)。
 
 ```cppwinrt
 using namespace Windows::ApplicationModel::Core;
@@ -258,7 +258,7 @@ IStringable istringable = winrt::make<MyType>();
 > [!NOTE]
 > 但是，如果你从 XAML UI 引用类型，则在同一个项目中将会有一个实现类型和一个投影类型。 在这种情况下，**使**返回投影类型的实例。 有关此情况的代码示例，请参阅 [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。
 
-我们仅可以使用 `istringable`（在上面的代码示例中）来调用 **IStringable** 接口的成员。 但 C++/WinRT 接口（这是投影接口）派生自 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)。 因此，可以调用[ **IUnknown::as** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (或[ **IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)) 对其进行其他投影的类型或接口，您可以查询此外使用或返回。
+我们仅可以使用 `istringable`（在上面的代码示例中）来调用 **IStringable** 接口的成员。 但 C++/WinRT 接口（这是投影接口）派生自 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)。 因此，可以调用[ **IUnknown::as** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (或[ **IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) 对其进行其他投影的类型或接口，您可以查询此外使用或返回。
 
 ```cppwinrt
 istringable.ToString();
@@ -294,7 +294,7 @@ void ImplFromIClosable(IClosable const& from)
 }
 ```
 
-但只有原始接口对象保留有接口。 如果*你*想要保留它，则可以调用 [**com_ptr::copy_from**](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)。
+但只有原始接口对象保留有接口。 如果*你*想要保留它，则可以调用 [**com_ptr::copy_from**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcopy_from-function)。
 
 ```cppwinrt
 winrt::com_ptr<MyType> impl;
@@ -394,13 +394,13 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 
 ## <a name="important-apis"></a>重要的 API
 * [winrt::com_ptr 结构模板](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::com_ptr::copy_from 函数](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
+* [winrt::com_ptr::copy_from 函数](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcopy_from-function)
 * [winrt::from_abi 函数模板](/uwp/cpp-ref-for-winrt/from-abi)
 * [winrt::get_self 函数模板](/uwp/cpp-ref-for-winrt/get-self)
 * [winrt::implements 结构模板](/uwp/cpp-ref-for-winrt/implements)
 * [winrt::make 函数模板](/uwp/cpp-ref-for-winrt/make)
 * [winrt::make_self 函数模板](/uwp/cpp-ref-for-winrt/make-self)
-* [winrt::Windows::Foundation::IUnknown:: 为函数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [winrt::Windows::Foundation::IUnknown::as 函数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## <a name="related-topics"></a>相关主题
 * [通过 C++/WinRT 使用 API](consume-apis.md)

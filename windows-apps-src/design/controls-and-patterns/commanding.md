@@ -4,14 +4,13 @@ description: 如何使用 XamlUICommand 和 StandardUICommand 类 （以及 ICom
 author: Karl-Bridge-Microsoft
 ms.service: ''
 ms.topic: overview
-ms.date: 11/01/2018
-ms.author: kbridge
-ms.openlocfilehash: 32d5005f9965b14d5080344832eb185f0e711689
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.date: 03/11/2019
+ms.openlocfilehash: a85a101cd529bf487cbc97b93bb3905f28213c19
+ms.sourcegitcommit: 99271798fe53d9768fc52b21366de05268cadcb0
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646522"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58221413"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>命令中使用 StandardUICommand、 XamlUICommand 和 ICommand 的通用 Windows 平台 (UWP) 应用
 
@@ -58,11 +57,11 @@ ms.locfileid: "57646522"
 
 下表显示了一些典型集合命令以及提供这些命令的方法。
 
-| 命令          | 与输入无关 | 鼠标快捷方式 | 键盘快捷方式 | 触控快捷方式 |
+| Command          | 与输入无关 | 鼠标快捷方式 | 键盘快捷方式 | 触控快捷方式 |
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
 | 删除项      | 上下文菜单   | 悬停按钮      | DEL 键              | 轻扫以删除   |
 | 标记项        | 上下文菜单   | 悬停按钮      | Ctrl+Shift+G         | 轻扫以标记     |
-| 刷新数据     | 上下文菜单   | 不适用               | F5 键               | 下拉刷新   |
+| 刷新数据     | 上下文菜单   | 不可用               | F5 键               | 下拉刷新   |
 | 收藏项 | 上下文菜单   | 悬停按钮      | F、Ctrl+S            | 轻扫以收藏 |
 
 **始终提供上下文菜单**我们建议在传统的上下文菜单或 CommandBarFlyout，包括所有相关的上下文命令如同时支持的所有输入类型。 例如，如果仅在指针悬停事件公开命令，它不能使用仅限触摸设备上。
@@ -80,11 +79,11 @@ ms.locfileid: "57646522"
 - [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)可进一步简化通过让你可以选择一组预定义的属性与标准平台命令。
 
 > [!Important]
-> 在 UWP 应用程序中，命令都是为实现[Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) （c + +） 或[System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand) (C#) 接口，具体取决于你所选择的语言框架。
+> 在 UWP 应用程序中，命令都是为实现[Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) (C++) 或[System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand) (C#) 接口，具体取决于你所选的语言框架。
 
 ## <a name="command-experiences-using-the-standarduicommand-class"></a>命令遇到使用 StandardUICommand 类
 
-派生自[XamlUiCommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) (派生自[Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) c + + 或[System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand)为C#)， [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)类公开一组标准的平台与预定义属性，如图标、 键盘快捷键和描述的命令。
+派生自[XamlUiCommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) (派生自[Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand)为C++或[System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand)的C#)， [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)类公开一组标准的平台与预定义属性，如图标、 键盘快捷键和描述的命令。
 
 一个[StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)提供了快速且一致的方式来定义的常用命令，如`Save`或`Delete`。 您需要做的就是提供的执行和 canExecute 函数。
 
@@ -93,6 +92,10 @@ ms.locfileid: "57646522"
 ![StandardUICommand 示例](images/commanding/StandardUICommandSampleOptimized.gif)
 
 *StandardUICommandSample*
+
+| 下载此示例中的代码 |
+| -------------------- |
+| [UWP 命令示例 (StandardUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-standarduicommand.zip) |
 
 在此示例中，我们演示如何以增强基本[ListView](listview-and-gridview.md)通过删除项命令通过实现[StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)类，同时优化的各种输入类型的用户体验使用[菜单栏](menus.md)，[轻扫](swipe.md)控件、 悬停按钮、 并[上下文菜单](menus.md)。
 
@@ -225,7 +228,7 @@ ms.locfileid: "57646522"
 </Page>
 ```
 
-**代码隐藏**
+**Code-behind**
 
 1. 首先，我们定义`ListItemData`包含我们 ListView 中每个列表视图项的文本字符串和 ICommand 的类。
 
@@ -240,10 +243,20 @@ public class ListItemData
 2. 在 MainPage 类中，我们可以定义一系列`ListItemData`对象的[DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate)的[ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)。 我们然后填充它与初始的五个项集合 (与文本和相关联[StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)删除)。
 
 ```csharp
-ObservableCollection<ListItemData> collection = new ObservableCollection<ListItemData>();
+/// <summary>
+/// ListView item collection.
+/// </summary>
+ObservableCollection<ListItemData> collection = 
+    new ObservableCollection<ListItemData>();
 
+/// <summary>
+/// Handler for the layout Grid control load event.
+/// </summary>
+/// <param name="sender">Source of the control loaded event</param>
+/// <param name="e">Event args for the loaded event</param>
 private void ControlExample_Loaded(object sender, RoutedEventArgs e)
 {
+    // Create the standard Delete command.
     var deleteCommand = new StandardUICommand(StandardUICommandKind.Delete);
     deleteCommand.ExecuteRequested += DeleteCommand_ExecuteRequested;
 
@@ -251,13 +264,22 @@ private void ControlExample_Loaded(object sender, RoutedEventArgs e)
 
     for (var i = 0; i < 5; i++)
     {
-        collection.Add(new ListItemData { Text = "List item " + i.ToString(), Command = deleteCommand });
+        collection.Add(
+            new ListItemData {
+                Text = "List item " + i.ToString(),
+                Command = deleteCommand });
     }
 }
 
+/// <summary>
+/// Handler for the ListView control load event.
+/// </summary>
+/// <param name="sender">Source of the control loaded event</param>
+/// <param name="e">Event args for the loaded event</param>
 private void ListView_Loaded(object sender, RoutedEventArgs e)
 {
     var listView = (ListView)sender;
+    // Populate the ListView with the item collection.
     listView.ItemsSource = collection;
 }
 ```
@@ -265,8 +287,15 @@ private void ListView_Loaded(object sender, RoutedEventArgs e)
 3. 接下来，我们定义了我们在其中实施项 delete 命令的 ICommand ExecuteRequested 处理程序。
 
 ``` csharp
-private void DeleteCommand_ExecuteRequested(XamlUICommand sender, ExecuteRequestedEventArgs args)
+/// <summary>
+/// Handler for the Delete command.
+/// </summary>
+/// <param name="sender">Source of the command event</param>
+/// <param name="e">Event args for the command event</param>
+private void DeleteCommand_ExecuteRequested(
+    XamlUICommand sender, ExecuteRequestedEventArgs args)
 {
+    // If possible, remove specfied item from collection.
     if (args.Parameter != null)
     {
         foreach (var i in collection)
@@ -288,6 +317,11 @@ private void DeleteCommand_ExecuteRequested(XamlUICommand sender, ExecuteRequest
 4. 最后，我们定义了各种 ListView 事件，其中包括的处理程序[PointerEntered](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)， [PointerExited](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)，并[SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged)事件。 指针事件处理程序用于显示或隐藏的每一项删除按钮。
 
 ```csharp
+/// <summary>
+/// Handler for the ListView selection changed event.
+/// </summary>
+/// <param name="sender">Source of the selection changed event</param>
+/// <param name="e">Event args for the selection changed event</param>
 private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
 {
     if (ListViewRight.SelectedIndex != -1)
@@ -296,17 +330,37 @@ private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs 
     }
 }
 
-private void ListViewSwipeContainer_PointerEntered(object sender, PointerRoutedEventArgs e)
+/// <summary>
+/// Handler for the pointer entered event.
+/// Displays the delete item "hover" buttons.
+/// </summary>
+/// <param name="sender">Source of the pointer entered event</param>
+/// <param name="e">Event args for the pointer entered event</param>
+private void ListViewSwipeContainer_PointerEntered(
+    object sender, PointerRoutedEventArgs e)
 {
-    if (e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Mouse || e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Pen)
+    if (e.Pointer.PointerDeviceType == 
+        Windows.Devices.Input.PointerDeviceType.Mouse || 
+        e.Pointer.PointerDeviceType == 
+        Windows.Devices.Input.PointerDeviceType.Pen)
     {
-        VisualStateManager.GoToState(sender as Control, "HoverButtonsShown", true);
+        VisualStateManager.GoToState(
+            sender as Control, "HoverButtonsShown", true);
     }
 }
 
-private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEventArgs e)
+/// <summary>
+/// Handler for the pointer exited event.
+/// Hides the delete item "hover" buttons.
+/// </summary>
+/// <param name="sender">Source of the pointer exited event</param>
+/// <param name="e">Event args for the pointer exited event</param>
+
+private void ListViewSwipeContainer_PointerExited(
+    object sender, PointerRoutedEventArgs e)
 {
-    VisualStateManager.GoToState(sender as Control, "HoverButtonsHidden", true);
+    VisualStateManager.GoToState(
+        sender as Control, "HoverButtonsHidden", true);
 }
 ```
 
@@ -321,6 +375,10 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 ![XamlUICommand 示例](images/commanding/XamlUICommandSampleOptimized.gif)
 
 *XamlUICommandSample*
+
+| 下载此示例中的代码 |
+| -------------------- |
+| [UWP 命令示例 (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip) |
 
 此示例中共享的上一个删除功能[StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)示例中，但显示了如何[XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)类可以定义自定义删除命令自己字体图标时，标签，键盘快捷键和描述。 像[StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)示例中，我们增强基本[ListView](listview-and-gridview.md)通过删除项命令通过实现[XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)类，同时优化不同的输入类型使用的用户体验[菜单栏](menus.md)，[轻扫](swipe.md)控件、 悬停按钮、 并[上下文菜单](menus.md)。
 
@@ -465,7 +523,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 </Page>
 ```
 
-**代码隐藏**
+**Code-behind**
 
 1. 首先，我们定义`ListItemData`包含我们 ListView 中每个列表视图项的文本字符串和 ICommand 的类。
 
@@ -549,7 +607,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 
 标准 UWP 控件 （按钮、 列表、 选择、 日历、 预测性文本） 的许多常见命令体验奠定了基础。 控件类型的完整列表，请参阅[控件和适用于 UWP 应用的模式](index.md)。
 
-若要支持结构化的命令体验的最基本方法是定义 ICommand 接口的实现 ([Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) c + + 或[System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand)为C#)。  此 ICommand 实例然后可以绑定到控件，如按钮。
+若要支持结构化的命令体验的最基本方法是定义 ICommand 接口的实现 ([Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand)为C++或[System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand)为C#)。  此 ICommand 实例然后可以绑定到控件，如按钮。
 
 > [!NOTE]
 > 在某些情况下，可能只是效率要绑定到单击事件和属性的 IsEnabled 属性和方法。
@@ -559,8 +617,12 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 ![命令界面示例](images/commanding/icommand.gif)
 
 *ICommand 示例*
- 
-在此示例中，我们将演示如何使用一个按钮可以调用单个命令单击、 键盘快捷键，并旋转鼠标滚轮。
+
+| 下载此示例中的代码 |
+| -------------------- |
+| [UWP 命令示例 (ICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-icommand.zip) |
+
+在此基本示例中，我们将演示如何使用一个按钮可以调用单个命令单击、 键盘快捷键，并旋转鼠标滚轮。
 
 我们使用两个[Listview](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)、 一个填充了五个项和其他为空和两个按钮，一个用于将从 ListView 左侧项移动到右侧，ListView 和从右到左的另一个用于移动项。 每个按钮绑定到相应的命令 (ViewModel.MoveRightCommand 和 ViewModel.MoveLeftCommand，分别)，并启用和禁用自动根据其关联的 ListView 中的项数目。
 
@@ -606,7 +668,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Grid Grid.Column="1" Margin="0,0,5,0"
+        <Grid Grid.Column="1" Margin="0,0,0,0"
               HorizontalAlignment="Center" 
               VerticalAlignment="Center">
             <Grid.RowDefinitions>
@@ -617,10 +679,11 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
             <StackPanel Grid.Row="1">
                 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" 
                           FontSize="40" Glyph="&#xE893;" 
-                          Opacity="{x:Bind Path=ViewModel.listItemLeft.Count, Mode=OneWay, Converter={StaticResource opaque}}"/>
-                <Button Name="MoveItemRightButton" ToolTipService.ToolTip="Tooltip"
+                          Opacity="{x:Bind Path=ViewModel.ListItemLeft.Count, 
+                                        Mode=OneWay, Converter={StaticResource opaque}}"/>
+                <Button Name="MoveItemRightButton"
                         Margin="0,10,0,10" Width="120" HorizontalAlignment="Center"
-                        Command="{x:Bind Path=ViewModel.MoveRightCommand, Mode=OneWay}">
+                        Command="{x:Bind Path=ViewModel.MoveRightCommand}">
                     <Button.KeyboardAccelerators>
                         <KeyboardAccelerator 
                             Modifiers="Control" 
@@ -633,7 +696,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
                 </Button>
                 <Button Name="MoveItemLeftButton" 
                             Margin="0,10,0,10" Width="120" HorizontalAlignment="Center"
-                            Command="{x:Bind Path=ViewModel.MoveLeftCommand, Mode=OneWay}">
+                            Command="{x:Bind Path=ViewModel.MoveLeftCommand}">
                     <Button.KeyboardAccelerators>
                         <KeyboardAccelerator 
                             Modifiers="Control" 
@@ -646,7 +709,8 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
                 </Button>
                 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" 
                           FontSize="40" Glyph="&#xE892;"
-                          Opacity="{x:Bind Path=ViewModel.listItemRight.Count, Mode=OneWay, Converter={StaticResource opaque}}"/>
+                          Opacity="{x:Bind Path=ViewModel.ListItemRight.Count, 
+                                        Mode=OneWay, Converter={StaticResource opaque}}"/>
             </StackPanel>
         </Grid>
         <ListView Grid.Column="2" 
@@ -742,9 +806,7 @@ namespace UICommand1.View
 ```csharp
 using System;
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.ComponentModel;
-using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Data;
 
@@ -768,25 +830,21 @@ namespace UICommand1.ViewModel
     /// <summary>
     /// View Model that sets up a command to handle invoking the move item buttons.
     /// </summary>
-    public class UICommand1ViewModel : INotifyPropertyChanged
+    public class UICommand1ViewModel
     {
         /// <summary>
         /// The command to invoke when the Move item left button is pressed.
         /// </summary>
-        public RelayCommand moveLeftCommand;
-        public RelayCommand MoveLeftCommand { get => moveLeftCommand; private set { } }
+        public RelayCommand MoveLeftCommand { get; private set; }
 
         /// <summary>
         /// The command to invoke when the Move item right button is pressed.
         /// </summary>
-        public RelayCommand moveRightCommand;
-        public RelayCommand MoveRightCommand { get => moveRightCommand; private set { } }
+        public RelayCommand MoveRightCommand { get; private set; }
 
         // Item collections
-        public ObservableCollection<ListItemData> listItemLeft;
-        public ObservableCollection<ListItemData> ListItemLeft { get => listItemLeft; private set { } }
-        public ObservableCollection<ListItemData> listItemRight;
-        public ObservableCollection<ListItemData> ListItemRight { get => listItemRight; private set { } }
+        public ObservableCollection<ListItemData> ListItemLeft { get; } = new ObservableCollection<ListItemData>();
+        public ObservableCollection<ListItemData> ListItemRight { get; } = new ObservableCollection<ListItemData>();
 
         public ListItemData listItem;
 
@@ -795,11 +853,8 @@ namespace UICommand1.ViewModel
         /// </summary>
         public UICommand1ViewModel()
         {
-            moveLeftCommand = new RelayCommand(new Action(MoveLeft), CanExecuteMoveLeftCommand);
-            moveRightCommand = new RelayCommand(new Action(MoveRight), CanExecuteMoveRightCommand);
-
-            listItemLeft = new ObservableCollection<ListItemData>();
-            listItemRight = new ObservableCollection<ListItemData>();
+            MoveLeftCommand = new RelayCommand(new Action(MoveLeft), CanExecuteMoveLeftCommand);
+            MoveRightCommand = new RelayCommand(new Action(MoveRight), CanExecuteMoveRightCommand);
 
             LoadItems();
         }
@@ -812,9 +867,9 @@ namespace UICommand1.ViewModel
             for (var x = 0; x <= 4; x++)
             {
                 listItem = new ListItemData();
-                listItemLeft.Add(listItem);
-                listItem.ListItemText = "Item " + listItemLeft.Count.ToString();
+                listItem.ListItemText = "Item " + (ListItemLeft.Count + 1).ToString();
                 listItem.ListItemIcon = Symbol.Emoji;
+                ListItemLeft.Add(listItem);
             }
         }
 
@@ -824,7 +879,7 @@ namespace UICommand1.ViewModel
         /// <returns>True, if count is greater than 0.</returns>
         private bool CanExecuteMoveLeftCommand()
         {
-            return listItemRight.Count > 0;
+            return ListItemRight.Count > 0;
         }
 
         /// <summary>
@@ -833,7 +888,7 @@ namespace UICommand1.ViewModel
         /// <returns>True, if count is greater than 0.</returns>
         private bool CanExecuteMoveRightCommand()
         {
-            return listItemLeft.Count > 0;
+            return ListItemLeft.Count > 0;
         }
 
         /// <summary>
@@ -841,15 +896,15 @@ namespace UICommand1.ViewModel
         /// </summary>
         public void MoveRight()
         {
-            if (listItemLeft.Count > 0)
+            if (ListItemLeft.Count > 0)
             {
                 listItem = new ListItemData();
-                listItemRight.Add(listItem);
-                listItem.ListItemText = "Item " + listItemRight.Count.ToString();
+                ListItemRight.Add(listItem);
+                listItem.ListItemText = "Item " + ListItemRight.Count.ToString();
                 listItem.ListItemIcon = Symbol.Emoji;
-                listItemLeft.RemoveAt(listItemLeft.Count - 1);
-                moveRightCommand.RaiseCanExecuteChanged();
-                moveLeftCommand.RaiseCanExecuteChanged();
+                ListItemLeft.RemoveAt(ListItemLeft.Count - 1);
+                MoveRightCommand.RaiseCanExecuteChanged();
+                MoveLeftCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -858,15 +913,34 @@ namespace UICommand1.ViewModel
         /// </summary>
         public void MoveLeft()
         {
-            if (listItemRight.Count > 0)
+            if (ListItemRight.Count > 0)
             {
                 listItem = new ListItemData();
-                listItemLeft.Add(listItem);
-                listItem.ListItemText = "Item " + listItemRight.Count.ToString();
+                ListItemLeft.Add(listItem);
+                listItem.ListItemText = "Item " + ListItemLeft.Count.ToString();
                 listItem.ListItemIcon = Symbol.Emoji;
-                listItemRight.RemoveAt(listItemRight.Count - 1);
-                moveRightCommand.RaiseCanExecuteChanged();
-                moveLeftCommand.RaiseCanExecuteChanged();
+                ListItemRight.RemoveAt(ListItemRight.Count - 1);
+                MoveRightCommand.RaiseCanExecuteChanged();
+                MoveLeftCommand.RaiseCanExecuteChanged();
+            }
+        }
+
+        /// <summary>
+        /// Views subscribe to this event to get notified of property updates.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Notify subscribers of updates to the named property
+        /// </summary>
+        /// <param name="propertyName">The full, case-sensitive, name of a property.</param>
+        protected void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = this.PropertyChanged;
+            if (handler != null)
+            {
+                PropertyChangedEventArgs args = new PropertyChangedEventArgs(propertyName);
+                handler(this, args);
             }
         }
     }
@@ -879,7 +953,7 @@ namespace UICommand1.ViewModel
         /// <summary>
         /// Converts a collection count to an opacity value of 0.0 or 1.0.
         /// </summary>
-        /// <param name="value">The bool passed in</param>
+        /// <param name="value">The count passed in</param>
         /// <param name="targetType">Ignored.</param>
         /// <param name="parameter">Ignored</param>
         /// <param name="language">Ignored</param>
@@ -994,7 +1068,7 @@ namespace UICommand1
 }
 ```
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 通用 Windows 平台提供了强大而灵活的命令系统，可用于构建应用程序的共享和管理跨控件类型、 设备和输入的类型的命令。
 
@@ -1008,11 +1082,24 @@ namespace UICommand1
 
 ## <a name="next-steps"></a>后续步骤
 
-有关完整示例，演示[XamlUiCommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)并[StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)实现中，请参阅[XAML 控件库](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)示例。
+有关完整示例，演示[XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)并[StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)实现中，请参阅[XAML 控件库](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)示例。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [控件和适用于 UWP 应用的模式](index.md)
+
+### <a name="samples"></a>示例
+
+#### <a name="topic-samples"></a>主题示例
+
+- [UWP 命令示例 (StandardUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-standarduicommand.zip)
+- [UWP 命令示例 (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip)
+- [UWP 命令示例 (ICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-icommand.zip)
+
+#### <a name="other-samples"></a>其他示例
+
+- [通用 Windows 平台的示例 (C#和C++)](https://go.microsoft.com/fwlink/?linkid=832713)
+- [XAML 控件库](https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 <!---Some context for the following links goes here
 - [link to next logical step for the customer](global-quickstart-template.md)--->

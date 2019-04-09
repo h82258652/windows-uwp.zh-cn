@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版, 软件包外部测试版
 ms.localizationpriority: medium
-ms.openlocfilehash: c7e7ab4db7690cee86b76e39caa30b3c0fb25618
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6f55a218c0cb4f4964fe12eb8e2eeb5b504f6405
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57659872"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334775"
 ---
 # <a name="get-package-flights-for-an-app"></a>获取应用的软件包外部测试版
 
 在 Microsoft Store 提交 API 中使用此方法，若要列出到合作伙伴中心帐户注册的应用包航班。 有关软件包外部测试版的详细信息，请参阅[软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -30,21 +30,21 @@ ms.locfileid: "57659872"
 
 | 方法 | 请求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights` |
 
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
 |  名称  |  在任务栏的搜索框中键入  |  描述  |  必需  |
 |------|------|------|------|
-|  applicationId  |  字符串  |  要检索软件包外部测试版的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
+|  applicationId  |  string  |  要检索软件包外部测试版的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
 |  top  |  int  |  要在请求中返回的项数（即，要返回的软件包外部测试版数）。 如果你的帐户具有的软件包外部测试版超过在查询中指定的值，响应正文将包括可追加到方法 URI 的相对 URI 路径，用于请求下一页数据。  |  否  |
 |  skip  |  int  |  返回剩余项之前，在查询中绕过的项数。 使用此参数分页浏览数据集。 例如，top=10 和 skip=0 可检索项目 1 到 10，top=10 和 skip=10 可检索项目 11 到 20，依此类推。  |  否  |
 
@@ -57,14 +57,14 @@ ms.locfileid: "57659872"
 
 以下示例演示了如何为应用列出所有软件包外部测试版。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listflights HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
 以下示例演示了如何为应用列出第一个软件包外部测试版。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listflights?top=1 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -99,10 +99,10 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 在任务栏的搜索框中键入   | 描述       |
+| ReplTest1      | 在任务栏的搜索框中键入   | 描述       |
 |------------|--------|---------------------|
-| @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含可附加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 请求 URI 的相对路径，用于请求下一页数据。 例如，如果初始请求正文的 *top* 参数设置为 2，但应用中有 4 个软件包外部测试版，响应正文将包含 ```applications/{applicationid}/listflights/?skip=2&top=2``` 的 @nextLink 值，指示你可以调用 ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2``` 请求接下来的 2 个软件包外部测试版。 |
-| value      | 数组  | 为指定的应用提供软件包外部测试版相关信息的对象数组。 有关每个对象中的数据的详细信息，请参阅[外部测试版资源](get-app-data.md#flight-object)。               |
+| @nextLink  | string | 如果存在数据的其他页，此字符串中包含可附加到基本 `https://manage.devcenter.microsoft.com/v1.0/my/` 请求 URI 的相对路径，用于请求下一页数据。 例如，如果初始请求正文的 *top* 参数设置为 2，但应用中有 4 个软件包外部测试版，响应正文将包含 `applications/{applicationid}/listflights/?skip=2&top=2` 的 @nextLink 值，指示你可以调用 `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2` 请求接下来的 2 个软件包外部测试版。 |
+| 值      | 数组  | 为指定的应用提供软件包外部测试版相关信息的对象数组。 有关每个对象中的数据的详细信息，请参阅[外部测试版资源](get-app-data.md#flight-object)。               |
 | totalCount | int    | 查询的数据结果中的行总数（即，指定应用的软件包外部测试版的总数）。   |
 
 

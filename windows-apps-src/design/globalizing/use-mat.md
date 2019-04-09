@@ -6,12 +6,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 74ad832d5516a4fa9bef849c5f691e2909c6c3d4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c6dc07ff35cdd90deaddff06f89aa585aa63156a
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610112"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335025"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>使用多语言应用工具包 4.0
 
@@ -93,9 +93,7 @@ ms.locfileid: "57610112"
 
 在此“Hello, World!” 文本示例中，伪翻译展开并占据 30% 以上的屏幕空间，然后应用资源跟踪符。
 
-```
-"Hello World" -> "Ĥèĺļõ Ŵòŗłđ" -> "[!!_Ĥèĺļõ Ŵòŗłđ_!!]" -> "[hJ8s1][!!_Ĥèĺļõ Ŵòŗłđ_!!]"
-```
+`"Hello World" -> "Ĥèĺļõ Ŵòŗłđ" -> "[!!_Ĥèĺļõ Ŵòŗłđ_!!]" -> "[hJ8s1][!!_Ĥèĺļõ Ŵòŗłđ_!!]"`
 
 ### <a name="step-6-translate-your-app-into-selected-languages"></a>步骤 6： 将应用翻译为选定语言
 
@@ -176,4 +174,4 @@ ms.locfileid: "57610112"
 ## <a name="translation-services"></a>翻译服务
 
 * [Microsoft 语言门户](https://go.microsoft.com/fwlink/p/?LinkId=330295)
-* [Microsoft 在线翻译](https://go.microsoft.com/fwlink/p/?LinkId=258220)
+* [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)

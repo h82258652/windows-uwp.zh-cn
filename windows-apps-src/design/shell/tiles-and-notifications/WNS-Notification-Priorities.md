@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: windows 10，uwp，WinRT API WNS
 localizationpriority: medium
-ms.openlocfilehash: 2c297a04786c6fbf1eb0600e63a04a6d88585864
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 2719c3228c95075eb2a940d12b6c91049b67f524
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648702"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291783"
 ---
 # <a name="wns-notification-priorities"></a>WNS 通知优先级
 通过将通知的优先级并使用简单的标头设置为 WNS 发布消息，可以控制如何在电池敏感的情况下传递通知。
@@ -72,4 +72,3 @@ Windows 不知道的通知非常重要的任何用户或应用程序中，因此
 ## <a name="related-topics"></a>相关主题
 - [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)
 - [要求在后台运行的权限](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_)
-- 

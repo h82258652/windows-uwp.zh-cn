@@ -4,170 +4,97 @@ title: 定位
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e8425232512650d5c80bf6fee9745b261aee8d9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5c05b6686d31606a9510b1433339dc8829a52893
+ms.sourcegitcommit: 7a1d5198345d114c58287d8a047eadc4fe10f012
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646052"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59247175"
 ---
-# <a name="guidelines-for-targeting"></a>目标指南
+# <a name="guidelines-for-touch-targets"></a>触摸目标的准则
 
+在通用 Windows 平台 (UWP) 应用程序中的所有交互用户界面元素必须足够大，以便用户能够准确地访问和使用，无论何种设备类型或输入方法。
 
-Windows 中的触摸定位使用触摸数字化器检测到的每个手指的全部接触区域。 确定用户的预期（或最可能）目标时，数字化器报告的输入数据集越大、越复杂，精度越高。
+支持触摸输入 （和触控接触区域的相对不精确的性质） 需要目标大小和控制布局方面进一步优化，因为更大、 更复杂的报告的触控数字化器的输入数据集用于确定用户的预期 （或最可能的） 目标。
+
+所有 UWP 控件在设计时默认触摸目标大小和布局，您可以构建视觉平衡且具有吸引力的应用程序的舒适、 易于使用，和置信度。
+
+在本主题中，我们将介绍这些默认行为，以便您可以设计您的应用程序的使用平台控件和自定义控件 （如果您的应用程序需要） 的最大可用性。
 
 > **重要的 API**：[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)， [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
-本主题介绍使用接触几何图形来确定触摸目标并提供在 UWP 应用中确定目标的最佳实践。
+## <a name="fluent-standard-sizing"></a>Fluent 标准调整大小
 
-## <a name="measurements-and-scaling"></a>度量和缩放
+*Fluent 标准大小*旨在提供信息密度和用户舒适之间的平衡。 实际上，在屏幕上的所有项都对齐到 40 x 40 个有效像素 (epx) 目标 UI 元素与网格都对齐并进行相应调整，可以基于系统级别缩放。
 
+> [!NOTE]
+>有效像素和缩放的详细信息，请参阅[UWP 应用程序设计简介](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
+>
+> 系统级别缩放的详细信息，请参阅[对齐、 边距、 填充](../layout/alignment-margin-padding.md)。
 
-若要在不同的屏幕大小和像素密度之间保持一致性，所有目标大小都要以物理单位（毫米）表示。 使用以下等式将物理单位转换为像素：
+## <a name="fluent-compact-sizing"></a>Fluent Compact 大小调整
 
-像素 = 像素密度 × 度量
+应用程序可显示的信息密度并更高级别的*Fluent Compact 大小调整*。 Compact 大小调整将对齐到 32 x 32 epx 目标，它允许进行更紧密的网格并相应地基于系统级别缩放进行缩放的 UI 元素的 UI 元素。
 
-以下示例使用此公式计算每英寸 (PPI) 135 像素的屏幕上目标大小为 9 mm 且缩放倍数为 1x 的像素大小：
+### <a name="examples"></a>示例
 
-像素 = 135 PPI × 9 mm
+可以在页面或网格级别应用 compact 大小调整。
 
-像素 = 135 PPI × (0.03937 英寸/mm × 9 mm)
+### <a name="page-level"></a>页级别
 
-像素 = 135 PPI × 0.35433 英寸
+```xaml
+<Page.Resources>
+    <ResourceDictionary Source="ms-appx:///Microsoft.UI.Xaml/DensityStyles/Compact.xaml" />
+</Page.Resources>
+```
 
-像素 = 48 像素
+### <a name="grid-level"></a>网格级别
 
-必须根据系统定义的每个缩放停滞调整该结果。
+```xaml
+<Grid>
+    <Grid.Resources>
+        <ResourceDictionary Source="ms-appx:///Microsoft.UI.Xaml/DensityStyles/Compact.xaml" />
+    </Grid.Resources>
+</Grid>
+```
 
-## <a name="thresholds"></a>阈值
+## <a name="target-size"></a>目标大小
 
+一般情况下，将在触摸目标大小设置为 7.5 mm 方形范围 （135 PPI 显示在 x 缩放停滞 1.0 40 x 40 像素）。 通常情况下，UWP 控件符合 7.5 mm 触摸目标 （这可以因特定的控件和任何常见使用模式）。 请参阅[控制大小和密度](../style/spacing.md)以了解详细信息。
 
-距离和时间阈值可以用来确定交互的结果。
+可以根据你的特定方案的需要调整这些目标大小的建议。 下面是一些要考虑的事项：
 
-例如，当检测到向下触摸摸式，如果从向下触摸点拖动对象的距离小于 2.7 mm，并且向下触摸的抬起时间不超过 0.1 秒，则注册为点击。 移动手指超过 2.7 mm 的阈值会使对象被拖动、被选中或被移动（有关详细信息，请参阅[交叉滑动指南](guidelines-for-cross-slide.md)）。 根据你的应用，按下手指超过 0.1 秒可能会使系统进行自我显示交互（有关详细信息，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)）。
-
-## <a name="target-sizes"></a>目标大小
-
-
-通常，请将触摸目标大小设置为 9 mm 正方形或更大（1.0x 缩放倍数的 135 PPI 屏幕上为 48x48 像素）。 避免使用小于 7 mm 正方形的触摸目标。
-
-下图显示了目标大小通常如何由可视目标、实际目标大小，以及实际目标和其他可能目标之间的填充组合而成。
-
-![显示可视目标、实际目标以及填充的建议大小的图表。](images/targeting-size.png)
-
-下表列出了触摸目标的组件的最小大小和建议大小。
-
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">目标组件</th>
-<th align="left">最小大小</th>
-<th align="left">建议大小</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">填充</td>
-<td align="left">2 mm</td>
-<td align="left">不适用。</td>
-</tr>
-<tr class="even">
-<td align="left">可视目标大小</td>
-<td align="left">&lt;实际大小的 60%</td>
-<td align="left">实际大小的 90-100%
-<p>如果视觉目标是小于 4.2 mm（7 mm 的推荐最小目标大小的 60%）的正方形，大部分用户不会意识它可触摸。</p></td>
-</tr>
-<tr class="odd">
-<td align="left">实际目标大小</td>
-<td align="left">7 mm 正方形</td>
-<td align="left">大于或等于 9 mm 正方形 (48 x 48 px @ 1x)</td>
-</tr>
-<tr class="even">
-<td align="left">总目标大小</td>
-<td align="left">11 x 11 mm （大约 60 像素：三个 20 像素的网格单位 @ 1x）</td>
-<td align="left">13.5 x 13.5 mm （72 x 72 像素 @ 1x）
-<p>这表示实际目标与填充的组合大小应该大于其各自的最小值。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
-可以根据你的特定方案的需要调整这些目标大小的建议。 这些建议中需要考虑的一些注意事项包括：
-
--   收尾工作了频率：请考虑进行重复或经常按下大于最小大小的目标。
--   错误结果：如果错误涉及具有导致严重后果的目标应具有更高的填充和放置最荒谬不过的内容区域的边缘。 尤其是经常触摸的目标更是如此。
--   放置在内容区域中
--   组成要素和屏幕大小
--   手指姿势
--   触摸可视化
--   硬件和触摸数字化器
-
-## <a name="targeting-assistance"></a>目标协助
-
-
-Windows 提供目标协助以支持此处提供的最小大小或填充建议不适用的方案；例如，网页上的超链接、日历控件、下拉列表和组合框，或者文本选择。
-
-这些目标平台改进和用户界面行为与视觉反馈（消除歧义 UI）结合使用以致力于提高用户的准确性和信心。 有关详细信息，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
-
-如果可触摸元素必须小于建议的最小目标大小，则可以使用以下技术来让产生的目标问题减到最少。
-
-## <a name="tethering"></a>叠接
-
-
-叠接是一种可视提示（从接触点到对象边界矩形的连接器），用于指示用户他们已连接到并且正在与对象进行交互，甚至包括通过输入接触都不能与之联系的对象。 如果符合下列条件，可能会发生这种情况：
-
--   在对象的某个邻近阈值之内首先检测到接触点，而此对象被识别为最有可能的接触目标。
--   接触点移出某个对象，但接触仍然位于邻近阈值之内。
-
-此功能不会向使用 JavaScript 的 UWP 应用开发人员显示。
-
-## <a name="scrubbing"></a>推移
-
-
-推移表示触摸目标领域内的任意位置并滑动以选择所需目标，在到达所需目标上之前不抬起手指。 该手势也称为“离开激活”，即当手指抬离屏幕时激活最后一个触摸的对象。
-
-设计推移交互时使用以下指南：
-
--   将推移与消除歧义 UI 一起使用。 有关详细信息，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
--   推移触摸目标的建议最小大小为 20 像素（3.75 mm @ 1x 大小）。
--   在可平移表面（如网页）上执行操作时，推移具有优先权。
--   推移目标应该彼此靠近。
--   当用户拖动手指离开推移目标时，操作取消。
--   如果目标执行的操作没有破坏性（如在日历上的日期之间切换），则指定叠接到推移目标。
--   在单个方向（水平或垂直）中指定叠接。
+- 频率的收尾工作了-考虑进行重复或经常按下大于最小大小的目标。
+- 错误结果-如果触摸在错误导致严重后果的目标应具有更高的填充和放置最荒谬不过的内容区域的边缘。 尤其是经常触摸的目标更是如此。
+- 内容区域中的位置。
+- 窗体身份和屏幕大小。
+- 手指状况。
+- 触摸可视化效果。
 
 ## <a name="related-articles"></a>相关文章
 
+- [UWP 应用设计简介](../basics/design-and-ui-intro.md)
+- [控件的大小和密度](../style/spacing.md)
+- [对齐、边距和填充](../layout/alignment-margin-padding.md)
 
-**示例**
-* [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+### <a name="samples"></a>示例
 
-**存档示例**
-* [输入：XAML 用户输入的事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：触控命中测试示例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [输入：Windows 8 手势示例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [输入：操作和手势 （c + +） 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 触摸输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+- [基本输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+- [低延迟输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+- [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+- [焦点视觉示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
- 
+### <a name="archive-samples"></a>存档示例
 
-
-
-
+- [输入：XAML 用户输入的事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+- [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
+- [输入：触控命中测试示例](https://go.microsoft.com/fwlink/p/?linkid=231590)
+- [XAML 滚动、平移以及缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
+- [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
+- [输入：Windows 8 手势示例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+- [输入：操作和手势 (C++) 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+- [DirectX 触控输入示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)

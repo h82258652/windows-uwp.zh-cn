@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
 ms.localizationpriority: medium
-ms.openlocfilehash: d05528ecf4408a7e7483b909b75722037c6528b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8f04514962cf0684daa99ee75d4c4da73c785735
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645692"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244083"
 ---
 # <a name="xbox-live-sandbox-api-reference"></a>Xbox Live 沙盒 API 参考   
 你可以使用此 REST API 获取和设置 Xbox Live 沙盒。
@@ -25,7 +25,7 @@ ms.locfileid: "57645692"
 方法      | 请求 URI
 :------     | :-----
 GET | /ext/xboxlive/sandbox
-<br />
+
 **URI 参数**
 
 - 无
@@ -61,7 +61,7 @@ HTTP 状态代码      | 描述
 方法      | 请求 URI
 :------     | :-----
 PUT | /ext/xboxlive/sandbox
-<br />
+
 **URI 参数**
 
 - 无
@@ -87,8 +87,7 @@ HTTP 状态代码      | 描述
 4XX | 错误代码
 5XX | 错误代码
 
-<br />
-**可用的设备系列**
+**可用设备系列**
 
 * Windows Xbox
 

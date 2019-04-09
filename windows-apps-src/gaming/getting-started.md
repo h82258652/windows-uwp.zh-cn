@@ -6,12 +6,12 @@ ms.date: 01/25/2018
 ms.topic: article
 keywords: windows 10、 uwp、 游戏，入门
 localizationpriority: medium
-ms.openlocfilehash: f818837a6f8703721520a8be8c0ed9b062cf797a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 596d0b1eb371fec98825b23a214683421e388506
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653552"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162652"
 ---
 # <a name="getting-started"></a>即刻体验
 
@@ -54,7 +54,7 @@ ms.locfileid: "57653552"
 
 如果你想要开发 Xbox 游戏或在您的游戏中使用 Xbox Live 功能，加入任一[Xbox Live Creators 计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)或[ ID@Xbox ](https://www.xbox.com/Developers/id)程序。 
 
-若要了解有关可供每个程序的 Xbox Live 功能的详细信息，请参阅[功能表](../xbox-live/developer-program-overview.md#feature-table)。 有关详细信息，请参阅[开发人员计划](e2e.md#developer-programs)。
+若要了解有关可供每个程序的 Xbox Live 功能的详细信息，请参阅[功能表](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#feature-table)。 有关详细信息，请参阅[开发人员计划](e2e.md#developer-programs)。
 
 > [!Note]
 > Xbox Live Creators 计划可供所有开发人员。 **任何人都**可以发布一个 Xbox 游戏。 若要使 Xbox Live Creators 计划在标题部分，只需启用此选项从合作伙伴中心。 注册合作伙伴中心帐户的详细信息，请参阅[步骤 5](#step-5-sign-up-for-a-partner-center-account)下面。

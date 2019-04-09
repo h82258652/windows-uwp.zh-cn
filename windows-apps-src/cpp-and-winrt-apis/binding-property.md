@@ -5,15 +5,15 @@ ms.date: 08/21/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 属性
 ms.localizationpriority: medium
-ms.openlocfilehash: 4033327fa51b0801583a518a0dea055f59e57fc8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9bdbfef54b799f8dff23ad739007cec9fef98af8
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616622"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921723"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控件; 绑定到 C++/WinRT 属性
-可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 这一想法基于称为*观察者模式*的软件设计模式。 本主题演示如何实现可观察量属性中的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何将 XAML 控件绑定到它们。
+可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 这一想法基于称为*观察者模式*的软件设计模式。 本主题演示如何实现可观察量属性中的[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何将 XAML 控件绑定到它们。
 
 > [!IMPORTANT]
 > 有关支持你了解如何利用 C++/WinRT 来使用和创作运行时类的基本概述和术语，请参阅[通过 C++/WinRT 使用 API](consume-apis.md) 和[通过 C++/WinRT 创作 API](author-apis.md)。
@@ -24,10 +24,10 @@ ms.locfileid: "57616622"
 XAML 文本元素或控件可检索更新的值然后将自行更新以显示新值，从而绑定到这些事件并处理事件。
 
 > [!NOTE]
-> 了解安装和使用 C + + WinRT Visual Studio 扩展 (VSIX) （可提供项目模板支持） 请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 有关如何安装和使用信息C++WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包 （该一起提供项目模板，并生成支持），请参阅[适用于 Visual Studio 支持C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="create-a-blank-app-bookstore"></a>创建空白应用 (Bookstore)
-首先在 Microsoft Visual Studio 中创建新项目。 创建**Visual c + +** > **Windows Universal** > **空白应用 (C + + WinRT)** 项目，并将其命名*书店*.
+首先在 Microsoft Visual Studio 中创建新项目。 创建**可视化C++**   >  **Windows Universal** > **空白应用 (C++/WinRT)** 项目，并将其命名*书店*。
 
 我们将创作新类来表示具有可观测标题属性的书籍。 我们正在同一编译单元内创作和使用该类。 但我们希望能够从 XAML 绑定到此类，因此，它将成为一个运行时类。 而且我们将使用 C++/WinRT 来创作和使用它。
 
@@ -49,11 +49,11 @@ namespace Bookstore
 >
 > 在应用程序中声明任何运行时类的*does*从基类派生类被称为*可组合*类。 并且，围绕可组合类的约束。 应用程序传递[Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)测试用于通过 Visual Studio 和 Microsoft Store 验证提交 (并因此成功引入到 Microsoft Store 应用程序)、可组合类最终必须从 Windows 的基类派生。 这意味着非常根处的继承层次结构的类必须源自 windows.* 命名空间的类型。 如果需要运行时类派生自的基类&mdash;例如，若要实现**BindableBase**的所有视图模型，用于从派生类&mdash;则可以从派生[ **Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)。
 >
-> 视图模型是视图的抽象，因此它直接绑定到视图 （XAML 标记）。 数据模型是抽象的数据，并且它仅从您的视图模型，使用并不直接绑定到 XAML。 因此，您可以声明你的数据模型不是作为运行时类，而作为 c + + 结构或类。 它们无需在 MIDL 中, 声明，您可以随意使用任何您喜欢的继承层次结构。
+> 视图模型是视图的抽象，因此它直接绑定到视图 （XAML 标记）。 数据模型是抽象的数据，并且它仅从您的视图模型，使用并不直接绑定到 XAML。 因此，您可以声明你的数据模型，不作为运行时类，而是作为C++结构或类。 它们无需在 MIDL 中, 声明，您可以随意使用任何您喜欢的继承层次结构。
 
 保存文件并生成项目。 在生成过程中，`midl.exe` 工具会运行以创建描述该运行时类的 Windows 运行时元数据文件 (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`)。 然后，`cppwinrt.exe` 工具运行以生成源代码文件，从而为你在创作和使用运行时类时提供支持。 这些文件包含让你开始实现已在 IDL 中声明的 **BookSku**运行时类的存根。 这些存根是 `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` 和 `BookSku.cpp`。
 
-右键单击项目节点，然后单击**在文件资源管理器中打开文件夹**。 这将在文件资源管理器中打开项目文件夹。 将存根 （stub） 文件，复制`BookSku.h`并`BookSku.cpp`从`\Bookstore\Bookstore\Generated Files\sources\`文件夹和到项目文件夹中，即`\Bookstore\Bookstore\`。 在 **“解决方案资源管理器”** 中，请确保将 **“显示所有文件”** 切换为打开。 右键单击已复制的存根文件，然后单击**包括在项目中**。
+右键单击项目节点，然后单击**在文件资源管理器中打开文件夹**。 这将在文件资源管理器中打开项目文件夹。 将存根 （stub） 文件，复制`BookSku.h`并`BookSku.cpp`从`\Bookstore\Bookstore\Generated Files\sources\`文件夹和到项目文件夹中，即`\Bookstore\Bookstore\`。 在中**解决方案资源管理器**，选择项目节点，请确保**显示所有文件**上切换。 右键单击已复制的存根文件，然后单击**包括在项目中**。
 
 ## <a name="implement-booksku"></a>实现 **BookSku**
 现在，让我们打开 `\Bookstore\Bookstore\BookSku.h` 和 `BookSku.cpp` 并实现运行时类。 在 `BookSku.h` 中，添加一个采用 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的构造函数、一个用于存储标题字符串的私有成员以及另一个用于标题发生更改时我们将引发的事件的私有成员。 进行这些更改之后, 你`BookSku.h`将如下所示。
@@ -204,7 +204,7 @@ namespace Bookstore
 }
 ```
 
-保存文件。 项目将不会生成完成时间，但现在构建是有意义的事情要做，因为它会在其中的源代码文件重新生成**MainPage**运行时类实现 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和`MainPage.cpp`)。 请继续并立即生成。 您有望看到在此阶段生成错误的原因在于**MainViewModel： 不是成员 winrt::Bookstore::implementation::MainPage**。
+保存该文件。 项目将不会生成完成时间，但现在构建是有意义的事情要做，因为它会在其中的源代码文件重新生成**MainPage**运行时类实现 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和`MainPage.cpp`)。 请继续并立即生成。 您有望看到在此阶段生成错误的原因在于**MainViewModel： 不是成员 winrt::Bookstore::implementation::MainPage**。
 
 如果省略的 include `BookstoreViewModel.idl` (请参阅的列表中`MainPage.idl`上方)，然后您将看到错误**应为\<附近"MainViewModel"**。 请确保将所有类型都保留在同一个命名空间中另一个提示是： 在代码清单所示的命名空间。
 
@@ -273,8 +273,8 @@ namespace winrt::Bookstore::implementation
 
 立即生成并运行该项目。 单击该按钮以执行 **Click** 事件处理程序。 该处理程序调用书籍的标题转变器函数；该转变器引发了让 UI 知道**标题**属性已发生更改的事件；而且按钮重新查询了该属性的值以更新其自己的**内容**值。
 
-## <a name="using-the-binding-markup-extension-with-cwinrt"></a>使用 {Binding} 标记扩展和 C + + WinRT
-当前发行版本的 C + + / WinRT，以便可以使用 {Binding} 标记扩展，你将需要实现[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)并[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)接口。
+## <a name="using-the-binding-markup-extension-with-cwinrt"></a>使用 {Binding} 标记扩展与C++/WinRT
+当前发行版本的C++/WinRT，以便可以使用 {Binding} 标记扩展，你将需要实现[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)并[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)接口。
 
 ## <a name="important-apis"></a>重要的 API
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)

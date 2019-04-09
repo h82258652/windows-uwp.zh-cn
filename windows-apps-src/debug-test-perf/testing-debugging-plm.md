@@ -1,17 +1,17 @@
 ---
 description: 用于调试和测试应用如何与进程周期管理配合使用的工具和技术。
 title: 进程周期管理 (PLM) 的测试和调试工具
-ms.date: 02/08/2017
+ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b3e37d4de3a346e0f29909727a46d3b31f9d59d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 94cbad6e497ea2f5b36a07a6b039bfc293175c4c
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608492"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244343"
 ---
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>进程周期管理 (PLM) 的测试和调试工具
 
@@ -25,11 +25,11 @@ Visual Studio 2015 中的内置调试器可帮助你调查使用 UWP 独占功�
 
 ## <a name="the-plmdebug-tool"></a>PLMDebug 工具
 
-PLMDebug.exe 是一种命令行工具，可允许你控制应用程序包的 PLM 状态，该工具作为 Windows SDK 的一部分提供。 安装后，该工具默认位于 *C:\Program Files (x86)\Windows Kits\10\Debuggers\x64* 中。 
+PLMDebug.exe 是一种命令行工具，可允许你控制应用程序包的 PLM 状态，该工具作为 Windows SDK 的一部分提供。 安装后，该工具默认位于 *C:\Program Files (x86)\Windows Kits\10\Debuggers\x64* 中。
 
 PLMDebug 还可允许你为任何安装的应用包禁用 PLM，这对于某些调试器来说是必需的。 禁用 PLM 可防止运行时中转服务在你有机会进行调试前终止应用。 若要禁用 PLM，请使用 **/enableDebug** 开关，后跟 UWP 应用的*完整程序包名称*（短名称、程序包系列名称或程序包的 AUMID 将不起作用）：
 
-```
+```cmd
 plmdebug /enableDebug [PackageFullName]
 ```
 
@@ -41,7 +41,7 @@ plmdebug /enableDebug [PackageFullName]
 
 可通过编写标识游戏进程的脚本或工具来绕过此限制，然后 shell 将运行 VSJITDebugger.exe，从而传入 UWP 应用的 PID。 以下 C# 代码示例演示完成此操作的简单方法。
 
-```
+```cs
 using System.Diagnostics;
 
 namespace VSJITLauncher
@@ -76,13 +76,15 @@ namespace VSJITLauncher
 
 将此方法与 PLMDebug 结合使用的示例用法：
 
-```
+```cmd
 plmdebug /enableDebug 279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg "\"C:\VSJITLauncher.exe\" Game"
 ```
+
 其中 `Game` 是进程名称，`279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg` 是示例 UWP 应用包的完整程序包名称。
 
 请注意，对 **/enableDebug** 的每次调用之后必须使用 **/disableDebug** 开关耦合到另一个 PLMDebug 调用。 此外，调试器的路径必须是绝对路径（不支持相对路径）。
 
 ## <a name="related-topics"></a>相关主题
+
 - [部署和调试 UWP 应用](deploying-and-debugging-uwp-apps.md)
 - [调试、测试和性能](index.md)

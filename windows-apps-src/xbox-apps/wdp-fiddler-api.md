@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
-ms.openlocfilehash: f60f3fc8678208f694a9ffabde06fa60de759a45
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4cbdae1084f96901e90f8237d71bd59bf2d4c592
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603332"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240015"
 ---
 # <a name="fiddler-settings-api-reference"></a>Fiddler 设置 API 参考   
 可以使用此 REST API 在开发工具包上启用和禁用 Fiddler 网络跟踪。
@@ -25,7 +25,8 @@ ms.locfileid: "57603332"
 方法      | 请求 URI
 :------     | :-----
 GET | /ext/fiddler
-<br />
+
+
 **URI 参数**
 
 - 无
@@ -60,8 +61,8 @@ HTTP 状态代码      | 描述
 
 方法      | 请求 URI
 :------     | :-----
-POST | /ext/fiddler
-<br />
+发布 | /ext/fiddler
+
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
@@ -71,7 +72,7 @@ POST | /ext/fiddler
 | proxyAddress       | 运行 Fiddler 的设备的 IP 地址或主机名 |
 | proxyPort          | Fiddler 用于监视流量的端口。 默认为 8888 |
 | updateCert（可选）| 指示是否提供根 Fiddler 证书的布尔值。 如果 Fiddler 从未在此开发工具包上配置或曾针对其他主机进行配置，则此值必须为 true。  |
-<br>
+
 
 **请求标头**
 
@@ -104,7 +105,7 @@ HTTP 状态代码      | 描述
 方法      | 请求 URI
 :------     | :-----
 DELETE | /ext/fiddler
-<br />
+
 **URI 参数**
 
 - 无
@@ -131,11 +132,11 @@ HTTP 状态代码      | 描述
 4XX | 错误代码
 5XX | 错误代码
 
-<br />
-**可用的设备系列**
+
+**可用设备系列**
 
 * Windows Xbox
 
-## <a name="see-also"></a>另请参阅
-- [在 Xbox 上配置适用于 UWP 的 Fiddler](uwp-fiddler.md)
+## <a name="see-also"></a>请参阅
+- [为 Xbox 上的 UWP 配置 Fiddler](uwp-fiddler.md)
 

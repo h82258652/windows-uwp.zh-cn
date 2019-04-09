@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 285e4a70062c57c957530aa1e548c22c4cf7711e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bd59c1d32b4f09b58b7e78281e468fbb00a777d9
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57629462"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291875"
 ---
 # <a name="stencil-buffers"></a>模板缓冲区
-
 
 *模具缓冲区*用于遮罩图像中的像素，以产生特殊效果。 掩码控制是否绘制像素。 特殊效果包括合成、贴纸、溶解、淡化、滑动、轮廓描绘和剪影，以及双面模板。 一些较常见的效果如下所示。
 
@@ -25,7 +24,6 @@ ms.locfileid: "57629462"
 
 ## <a name="span-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanhow-the-stencil-buffer-works"></a><span id="How_the_Stencil_Buffer_Works"></span><span id="how_the_stencil_buffer_works"></span><span id="HOW_THE_STENCIL_BUFFER_WORKS"></span>模具缓冲区的工作原理
 
-
 Direct3D 针对模板缓冲区的内容逐个像素地执行测试。 对于目标图面中的每个像素，它使用模板缓冲区中相应的值（模具参考值、模具掩码值）对其执行测试。 如果测试通过，Direct3D 将执行操作。 测试执行步骤如下。
 
 1.  用模具掩码执行模具参考值的按位 AND 运算。
@@ -34,7 +32,7 @@ Direct3D 针对模板缓冲区的内容逐个像素地执行测试。 对于目�
 
 上述步骤如以下代码行所示：
 
-```
+```cpp
 (StencilRef & StencilMask) CompFunc (StencilBufferValue & StencilMask)
 ```
 

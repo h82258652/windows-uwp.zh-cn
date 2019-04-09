@@ -6,18 +6,18 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 状态
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bfec8232fe8e410e65997098954e35d3f5fdc1b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a3d5651dfaff451bdb192bd04b090452d527dd92
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590612"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334524"
 ---
 # <a name="get-the-status-of-an-add-on-submission"></a>获取加载项提交的状态
 
 在 Microsoft Store 提交 API 中使用此方法，可获取加载项（也称为应用内产品或 IAP）提交的状态。 有关通过使用 Microsoft Store 提交 API 创建加载项提交过程的详细信息，请参阅[管理加载项提交](manage-add-on-submissions.md)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -31,22 +31,22 @@ ms.locfileid: "57590612"
 
 | 方法 | 请求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET   | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId}/status``` |
+| GET   | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId}/status` |
 
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
 | 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | 字符串 | 必需。 加载项（包含要获取状态的提交）的应用商店 ID。 合作伙伴中心中提供了 Store ID。  |
-| submissionId | 字符串 | 必需。 要获取状态的提交的 ID。 此 ID 包含在[创建加载项提交](create-an-add-on-submission.md)请求的响应数据中。 在合作伙伴中心创建的提交，此 ID 是也可用在合作伙伴中心中的提交页的 URL。  |
+| inAppProductId | string | 必需。 加载项（包含要获取状态的提交）的应用商店 ID。 合作伙伴中心中提供了 Store ID。  |
+| submissionId | string | 必需。 要获取状态的提交的 ID。 此 ID 包含在[创建加载项提交](create-an-add-on-submission.md)请求的响应数据中。 在合作伙伴中心创建的提交，此 ID 是也可用在合作伙伴中心中的提交页的 URL。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -57,7 +57,7 @@ ms.locfileid: "57590612"
 
 以下示例演示了如何获取加载项提交的状态。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions/1152921504621243680/status HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -79,9 +79,9 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 在任务栏的搜索框中键入   | 描述                                                                                                                                                                                                                                                                         |
+| ReplTest1      | 在任务栏的搜索框中键入   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | 字符串  | 提交的状态。 这可以是以下值之一： <ul><li>无</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>认证</li><li>CertificationFailed</li><li>发布版本</li><li>ReleaseFailed</li></ul>   |
+| status           | string  | 提交的状态。 这可以是以下值之一： <ul><li>无</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>认证</li><li>CertificationFailed</li><li>发行版本</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | 对象  |  包含有关提交状态的附加详细信息，其中包括任何错误的相关信息。 有关详细信息，请参阅[状态详细信息资源](manage-add-on-submissions.md#status-details-object)。 |
 
 

@@ -5,12 +5,12 @@ keywords: 最近更新, 更新, 功能, 新增, Windows 10, 1709, 10 月, 最新
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e0749ba30dc4c4e8d2791aa2d6699581b48fb8e5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5179b4615d1b7ada40e064c21991fee3d9dbb60e
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626512"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162692"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>面向开发人员的 Windows 10 版本 16299 中的最近更新
 
@@ -43,7 +43,7 @@ UI 控件 | 使用这些新控件能够更快速轻松地构建美观的 UI。 <
 游戏模式 | 适用于通用 Windows 平台 (UWP) 的[游戏模式](https://msdn.microsoft.com/library/windows/desktop/mt808808) API 让你可以利用 Windows 10 中的游戏模式产生最优化的游戏体验。 这些 API 位于 **&lt;expandedresources.h&gt;** 标头中。
 游戏监视器 | [GameMonitor 类](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamemonitor)允许应用获取设备的游戏监视权限状态，并且可能会提示用户启用游戏监视。
 TruePlay | [TruePlay](https://aka.ms/trueplay) 为开发人员提供一组反电脑游戏作弊技术的新工具。 加入 TruePlay 的游戏将在受保护的程序中运行，减少了常见的攻击类型。 适用于通用 Windows 平台 (UWP) 的 TruePlay API 允许 Windows 10 电脑上的游戏以及游戏监视系统之间进行有限的交互。 这些 API 位于 **&lt;gamemonitor.h&gt;** 标头中。
-Xbox Live | 我们添加了面向 Xbox Live 开发人员、适用于 UWP 和 Xbox 开发人员工具包 (XDK) 游戏的文档。 </br>* 请参阅 [Xbox Live 开发人员指南](../xbox-live/index.md)以了解如何使用 Xbox Live API 将你的游戏连接到 Xbox Live 社交游戏网络。 </br>* 借助 [Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)，任何 UWP 游戏开发人员都可以在电脑和 Xbox One 上开发和发布支持 Xbox Live 的游戏。 </br>* 请参阅 [Xbox Live 开发人员计划概述](../xbox-live/developer-program-overview.md)，获取有关 Xbox Live 开发人员可用程序和功能的信息。
+Xbox Live | 我们添加了面向 Xbox Live 开发人员、适用于 UWP 和 Xbox 开发人员工具包 (XDK) 游戏的文档。 </br>* 请参阅 [Xbox Live 开发人员指南](https://docs.microsoft.com/gaming/xbox-live//index.md)以了解如何使用 Xbox Live API 将你的游戏连接到 Xbox Live 社交游戏网络。 </br>* 借助 [Xbox Live 创意者计划](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)，任何 UWP 游戏开发人员都可以在电脑和 Xbox One 上开发和发布支持 Xbox Live 的游戏。 </br>* 请参阅 [Xbox Live 开发人员计划概述](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md)，获取有关 Xbox Live 开发人员可用程序和功能的信息。
 
 ## <a name="develop-windows-apps"></a>开发 Windows 应用
 

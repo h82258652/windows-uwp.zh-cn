@@ -7,22 +7,21 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 38a65a3532fe401f31fbf0da656aff1a141fa71a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d21f60694c55edacc7a5723e7ed470c37af992ab
+ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636302"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58618424"
 ---
 # <a name="mathematics-of-lighting"></a>照明的数学运算
-
 
 Direct3D 光模型涵盖环境、漫射、高光和放射照明。 它足够灵活，可解决广泛的照明情况。 场景中光的总量称作*全局照明*。
 
 全局照明按如下方式计算：
 
-```
-Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive Light 
+```cpp
+global_illumination = ambient_lighting + diffuse_lighting + specular_lighting + emissive_lighting;
 ```
 
 [环境光](ambient-lighting.md)是恒定照明。 环境光在所有方向都是恒定的，并且会无差别地为某个对象的所有像素上色。 这是一种快速计算，但会让对象看上去扁平且不逼真。

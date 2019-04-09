@@ -6,23 +6,23 @@ ms.date: 10/23/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f4feff88507ae5f84bccf044aa9ab6711d6b8bb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c6674fc38d41e3a18709dcb81edc95d164f9f86c
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645762"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320590"
 ---
 # <a name="compile-resources-manually-with-makepriexe"></a>使用 MakePri.exe 手动编译资源
 
 MakePri.exe 是可用于创建和转储 PRI 文件的命令行工具。 它作为 MSBuild 的一部分集成到 Microsoft Visual Studio 中，但它可用来手动或使用自定义生成系统创建包。
 
 > [!NOTE]
-> 选中时安装 MakePri.exe**适用于 UWP 的托管应用的 Windows SDK**选项的同时，安装 Windows 软件开发工具包。 安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及其他体系结构对于命名的文件夹）。 例如， `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 选中时安装 MakePri.exe**适用于 UWP 的托管应用的 Windows SDK**选项的同时，安装 Windows 软件开发工具包。 安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及其他体系结构对于命名的文件夹）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
 PRI 文件的大小限制为 64 千字节。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 |主题|描述|
 |-|-|
 | [MakePri.exe 命令行选项](makepri-exe-command-options.md) | MakePri.exe 具有命令集 `createconfig`、`dump`、`new`、`resourcepack` 和 `versioned`。 本主题对命令行选项的使用进行详细介绍。 |
@@ -43,17 +43,13 @@ MakePri.exe 通常与 `new`、`versioned` 和 `resourcepack` 选项一起使用�
 
 ## <a name="makepriexe-warnings-and-error-messages"></a>MakePri.exe 警告和错误消息
 
-```
-Resources found for language(s) '<language(s)>' but no resources found for default language(s): '<language(s)>'. Change the default language or qualify resources with the default language.
-```
+### <a name="resources-found-for-languages-languages-but-no-resources-found-for-default-languages-languages-change-the-default-language-or-qualify-resources-with-the-default-language"></a>语言 < 语言 > 为找到资源，但未找到的资源的默认语言： < 语言 >。 更改默认语言或有资格使用的默认语言资源。
 
-当 MakePri.exe 或 MSBuild 发现似乎使用语言限定符进行标记的指定名称资源的文件或字符串资源，但没有找到默认语言的候选项时，会显示上述警告。 在文件和文件夹中使用限定符的过程在[定制语言、比例和其他限定符的资源](tailor-resources-lang-scale-contrast.md)中进行了描述。 一个文件或文件夹中可能包含某种语言名称，但没有发现为完全匹配的默认语言限定的资源。 例如，如果项目使用“en-US”作为默认语言且具有名称为“de/logo.png”的文件，但没有任何文件使用默认语言“en-US”进行标记，就会显示此警告。 为了消除此警告，文件或字符串资源应使用默认语言进行限定，或者应更改默认语言。 若要更改默认语言，在 Visual Studio 中打开你的解决方案，并打开 `Package.appxmanifest`。 在应用程序选项卡上，确认已设置相应的默认语言（如“en”或“en-US”）。
+MakePri.exe 或 MSBuild 发现文件或显示必须标有语言限定符的字符串资源的给定的已命名资源时，会显示此警告，但未找到候选人的默认语言。 在文件和文件夹中使用限定符的过程在[定制语言、比例和其他限定符的资源](tailor-resources-lang-scale-contrast.md)中进行了描述。 一个文件或文件夹中可能包含某种语言名称，但没有发现为完全匹配的默认语言限定的资源。 例如，如果项目使用“en-US”作为默认语言且具有名称为“de/logo.png”的文件，但没有任何文件使用默认语言“en-US”进行标记，就会显示此警告。 为了消除此警告，文件或字符串资源应使用默认语言进行限定，或者应更改默认语言。 若要更改默认语言，在 Visual Studio 中打开你的解决方案，并打开 `Package.appxmanifest`。 在应用程序选项卡上，确认已设置相应的默认语言（如“en”或“en-US”）。
 
-```
-No default or neutral resource given for '<resource identifier>'. The application may throw an exception for certain user configurations when retrieving the resources.
-```
+### <a name="no-default-or-neutral-resource-given-for-resource-identifier-the-application-may-throw-an-exception-for-certain-user-configurations-when-retrieving-the-resources"></a>无默认值或非特定区域性的资源提供的<resource identifier>。 应用程序可能会引发异常的某些用户配置检索资源时。
 
-当 MakePri.exe 或 MSBuild 发现似乎使用语言限定符进行标记的文件或资源具有不清晰的资源时，会显示上述警告。 具有限定符，但不保证在运行时会返回该资源限定符的特定候选资源。 如果无法找到作为默认设置或将始终与用户的上下文匹配的特定语言、周围地区或其他限定符的候选资源，将显示此警告。 在运行时，对于特定的用户配置，如用户的语言首选项或主位置（**设置** > **时间和语言** > **区域和语言**），用于检索资源的 API 可能会引发意外的异常。 为了消除此警报，应该提供默认资源，例如项目的默认语言或全局家乡区域 (homeregion-001)。
+MakePri.exe 或 MSBuild 发现文件或显示与所不清楚的资源的语言限定符标记的资源时，会显示此警告。 具有限定符，但不保证在运行时会返回该资源限定符的特定候选资源。 如果无法找到作为默认设置或将始终与用户的上下文匹配的特定语言、周围地区或其他限定符的候选资源，将显示此警告。 在运行时，对于特定的用户配置，如用户的语言首选项或主位置（**设置** > **时间和语言** > **区域和语言**），用于检索资源的 API 可能会引发意外的异常。 为了消除此警报，应该提供默认资源，例如项目的默认语言或全局家乡区域 (homeregion-001)。
 
 ## <a name="using-makepriexe-in-a-build-system"></a>在生成系统中使用 MakePri.exe
 

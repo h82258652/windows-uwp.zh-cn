@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 设置, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 789b235220e5d22b85f7b3038d5d468729439501
+ms.sourcegitcommit: 7a3d28472901edbe4ecdde7e1a01a505ee5bc028
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608702"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58658763"
 ---
 # <a name="set-up-the-game-project"></a>设置游戏项目
 
@@ -39,7 +39,7 @@ Visual Studio 模板是一个设置和代码文件集合，专用于基于首选
 
 在 Visual Studio 中创建 DirectX 11 游戏项目的步骤：
 1.  选择**文件...**&gt; **新**&gt; **项目...**
-2.  在左窗格中，选择**已安装** &gt; **模板** &gt; **Visual c + +** &gt; **Windows 通用**
+2.  在左窗格中，选择**已安装** &gt; **模板** &gt; **Visual C++**  &gt; **Windows世界**
 3.  在中心窗格中，选择 **DirectX 11 应用（通用 Windows）**
 4.  为你的游戏项目命名，并单击“确定”。
 
@@ -89,9 +89,9 @@ int main(Platform::Array<Platform::String^>^)
 }
 ```
 
-在此方法中，它从视图提供程序工厂（**Direct3DApplicationSource**，在 **App.h** 中定义）创建 Direct3D 视图提供程序的一个实例，并通过调用 ([**CoreApplication::Run**](https://msdn.microsoft.com/library/windows/apps/hh700469)) 将其传递到应用单一实例。 这意味着游戏的起始点位于 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法的实现的主体中，在此例中它是 **App::Run**。 
+此方法从该视图提供程序工厂创建的 Direct3D 视图提供程序实例 (**Direct3DApplicationSource**中定义`App.h`)，并将其传递到应用的单一实例通过调用[ **CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run)。 Framework 视图的方法 (即**应用程序**在此示例中的类) 的顺序调用**初始化**-**SetWindow** -**负载**-**OnActivated**-**运行**-**取消初始化**。 调用**CoreApplication::Run**启动了该 lifycycle。 您的游戏的主循环的实现的正文中驻留[ **IFrameworkView::Run**方法](/uwp/api/windows.applicationmodel.core.iframeworkview.run)，并在这种情况下，它具有**App::Run**。
 
-滚动以在 **App.cpp** 中查找 **App::Run** 方法。 代码如下：
+滚动以在 **App.cpp** 中查找 **App::Run** 方法。 下面是代码。
 
 ```cpp
 //This method is called after the window becomes active.

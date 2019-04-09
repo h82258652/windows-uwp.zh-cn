@@ -5,12 +5,12 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f8bed97e060015f92ff95c9f7d797bbcb83db431
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: e0fcb903bd272bd10d434a27d41e6e4558a624ea
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605832"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334895"
 ---
 # <a name="best-practices-for-writing-to-files"></a>向文件进行写入的最佳做法
 
@@ -21,7 +21,9 @@ ms.locfileid: "57605832"
 
 有时，在使用时遇到的常见的问题的一组开发人员**编写**方法的[ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)并[ **PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)类来执行文件系统 I/O 操作。 例如，常见的问题包括：
 
-• 文件部分写入 • 应用程序收到的异常时调用的方法之一。 • 操作留下。TMP 文件的文件名称类似于目标文件名称。
+* 部分写入文件。
+* 调用的方法之一时，应用将收到异常。
+* 操作留下。TMP 文件的文件名称类似于目标文件名称。
 
 **编写**方法的[ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)并[ **PathIO** ](https://docs.microsoft.com/uwp/api/windows.storage.pathio)类包括以下：
 
@@ -35,7 +37,7 @@ ms.locfileid: "57605832"
 > [!NOTE]
 > 这篇文章重点**FileIO**中示例和讨论的方法。 但是， **PathIO**方法遵循类似的模式和大部分这篇文章中的指南也适用于这些方法。 
 
-## <a name="conveience-vs-control"></a>与控件 Conveience
+## <a name="convenience-vs-control"></a>与控件的便利
 
 一个[ **StorageFile** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)对象不是像本机 Win32 编程模型的文件句柄。 相反， [ **StorageFile** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)是具有方法来操作其内容的文件的表示形式。
 
@@ -76,11 +78,11 @@ ms.locfileid: "57605832"
 |  错误名称 （值）  |  步骤  |  原因  |  解决方案  |
 |----------------------|---------|----------|-------------|
 |  ERROR_ACCESS_DENIED (0X80070005)  |  5  |  原始文件可能会标记为删除，可能是从以前的操作。  |  重试操作。</br>确保同步对文件的访问。  |
-|  并发生 ERROR_SHARING_VIOLATION (0X80070020)  |  5  |  原始文件正由另一个排他写入。   |  重试操作。</br>确保同步对文件的访问。  |
-|  ERROR_UNABLE_TO_REMOVE_REPLACED (0X80070497)  |  19 20  |  不会替换原始文件 (file.txt)，因为它正在使用中。 另一个进程或操作获得了对文件的访问，则可能被替换为之前。  |  重试操作。</br>确保同步对文件的访问。  |
-|  ERROR_DISK_FULL (0X80070070)  |  7、 14、 16、 20  |  事务处理的模型创建额外的文件，而这会消耗额外的存储。  |    |
-|  ERROR_OUTOFMEMORY (已用完 0X8007000E)  |  14 16  |  这可能是由于多个未完成 I/O 操作或大型文件的大小。  |  通过控制流的更精细方法可能会解决该错误。  |
-|  E_FAIL (0X80004005) |  Any  |  其他  |  重试操作。 如果仍然失败，这可能是平台错误，应用程序应终止，因为它处于不一致的状态。 |
+|  ERROR_SHARING_VIOLATION (0x80070020)  |  5  |  原始文件正由另一个排他写入。   |  重试操作。</br>确保同步对文件的访问。  |
+|  ERROR_UNABLE_TO_REMOVE_REPLACED (0x80070497)  |  19-20  |  不会替换原始文件 (file.txt)，因为它正在使用中。 另一个进程或操作获得了对文件的访问，则可能被替换为之前。  |  重试操作。</br>确保同步对文件的访问。  |
+|  ERROR_DISK_FULL (0x80070070)  |  7, 14, 16, 20  |  事务处理的模型创建额外的文件，而这会消耗额外的存储。  |    |
+|  ERROR_OUTOFMEMORY (已用完 0X8007000E)  |  14, 16  |  这可能是由于多个未完成 I/O 操作或大型文件的大小。  |  通过控制流的更精细方法可能会解决该错误。  |
+|  E_FAIL (0x80004005) |  Any  |  其他  |  重试操作。 如果仍然失败，这可能是平台错误，应用程序应终止，因为它处于不一致的状态。 |
 
 ## <a name="other-considerations-for-file-states-that-might-lead-to-errors"></a>可能会导致错误的文件状态的其他注意事项
 
@@ -192,6 +194,6 @@ else
 
 [使用.NET 博客进行并行编程](https://blogs.msdn.microsoft.com/pfxteam/)是一个不错的资源的并行编程有关的指南。 具体而言，[发表 AsyncReaderWriterLock](https://blogs.msdn.microsoft.com/pfxteam/2012/02/12/building-async-coordination-primitives-part-7-asyncreaderwriterlock/)描述如何维护独占访问的文件的写入，同时允许并发读取访问权限。 请注意，序列的 I/O 会影响性能。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [创建、写入和读取文件](quickstart-reading-and-writing-files.md)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建加载项, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8465dc7a42961a20fcd33ba8d43c71e2d73727ff
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b358eecd1799e76573cf6d254a80e7a7971bc123
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651032"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334165"
 ---
 # <a name="create-an-add-on"></a>创建加载项
 
@@ -20,7 +20,7 @@ ms.locfileid: "57651032"
 > [!NOTE]
 > 此方法无需任何提交即可创建加载项。 若要创建加载项提交，请参阅[管理加载项提交](manage-add-on-submissions.md)中的方法。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -33,14 +33,14 @@ ms.locfileid: "57651032"
 
 | 方法 | 请求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` |
+| 发布    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts` |
 
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-body"></a>请求正文
@@ -50,15 +50,15 @@ ms.locfileid: "57651032"
 |  参数  |  在任务栏的搜索框中键入  |  描述  |  必需  |
 |------|------|------|------|
 |  applicationIds  |  数组  |  包含应用（与此加载项相关联）的应用商店 ID 的数组。 只有一个项在此数组中受支持。   |  是  |
-|  productId  |  字符串  |  加载项的产品 ID。 这是一个标识符，可在代码中用于引用加载项。 有关详细信息，请参阅[设置你的产品类型和产品 ID](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id)。  |  是  |
-|  productType  |  字符串  |  加载项的产品类型。 支持以下值：**持久**并**可使用**。  |  是  |
+|  productId  |  string  |  加载项的产品 ID。 这是一个标识符，可在代码中用于引用加载项。 有关详细信息，请参阅[设置你的产品类型和产品 ID](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id)。  |  是  |
+|  productType  |  string  |  加载项的产品类型。 支持以下值：**持久**并**可使用**。  |  是  |
 
 
 ### <a name="request-example"></a>请求示例
 
 以下示例演示了如何为应用创建新易耗型加载项。
 
-```syntax
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts HTTP/1.1
 Authorization: Bearer eyJ0eXAiOiJKV1Q...
 Content-Type: application/json

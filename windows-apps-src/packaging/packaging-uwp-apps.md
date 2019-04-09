@@ -2,19 +2,19 @@
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: 打包 UWP 应用
 description: 要分发或销售你的通用 Windows 平台 (UWP) 应用，你需要为其创建一个应用包。
-ms.date: 01/02/2019
+ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: f2e89490a76c9174c1e938466bf1fbcc9cc13455
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d5ed75cb79488eb994135dcfef74483ec078a32e
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599132"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58173023"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual Studio 打包 UWP 应用
 
@@ -149,12 +149,12 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 ### <a name="sideload-your-app-package-on-windows-10-anniversary-update-or-later"></a>旁加载应用程序打包在 Windows 10 周年更新或更高版本
 
-Windows 10 周年更新引入了双击应用包文件安装应用包的简单方法。 为此，导航到你的应用包或应用程序捆绑包文件，并双击它。 应用安装程序启动并提供基本的应用信息及安装按钮、安装进度条和任何相关的错误消息。
+在 Windows 10 周年更新 （Windows 10，版本 1607年） 中引入，可以只需通过双击应用包文件安装应用包。 为此，导航到你的应用包或应用程序捆绑包文件，并双击它。 [应用安装程序](https://docs.microsoft.com/windows/msix/app-installer/app-installer-root)启动，并提供基本的应用信息，以及安装按钮，安装进度栏和任何相关的错误消息。
 
 ![安装名为 Contoso 的示例应用时的应用安装程序显示](images/appinstaller-screen.png)
 
 > [!NOTE]
-> 应用安装程序假定设备信任此应用。 如果你旁加载开发人员或企业应用，则需要向存储在设备上的“Trusted People or Trusted Publishers Certification Authorities”安装签名证书。 如果你不确定如何执行此操作，请参阅[安装测试证书](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates)。
+> 应用安装程序假定应用程序受信任设备。 如果你旁加载开发人员或企业应用，则需要向存储在设备上的“Trusted People or Trusted Publishers Certification Authorities”安装签名证书。 如果你不确定如何执行此操作，请参阅[安装测试证书](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates)。
 
 ### <a name="sideload-your-app-package-on-previous-versions-of-windows"></a>在以前版本的 Windows 应用包旁加载
 

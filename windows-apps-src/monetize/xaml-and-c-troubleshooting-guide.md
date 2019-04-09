@@ -6,12 +6,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, ads, 广告, AdControl, 疑难解答, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d92795ac7de2ab09fd0b3b86e05aa33669c54dd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 94af97e1e678c6ee92aaa731057c5f67185e25c5
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615912"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334655"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML 和 C# 疑难解答指南
 
@@ -171,7 +171,7 @@ ms.locfileid: "57615912"
 2.  确保 **AdControl** 已实例化。 如果 **AdControl** 未实例化，它将不可用。
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
 3.  检查应用程序 ID 和广告单元 ID。 这些 Id 必须匹配的应用程序 ID 和广告单元 ID 在合作伙伴中心中获取。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
@@ -236,7 +236,7 @@ ms.locfileid: "57615912"
     此 C# 代码检索错误消息，并将其显示在 **TextBlock** 中。
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
 
     导致黑盒的最常见错误是“无可用广告”。 此错误意味着请求返回不了任何广告。
 
@@ -253,7 +253,7 @@ ms.locfileid: "57615912"
     以下示例展示了如何调用 **Refresh** 方法。
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet3)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet3)]
 
 3.  **AdControl** 行为正常。 有时如果广告不刷新，相同的广告会连续出现多次。
 

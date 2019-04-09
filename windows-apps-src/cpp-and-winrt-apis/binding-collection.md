@@ -5,16 +5,16 @@ ms.date: 10/03/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 集合
 ms.localizationpriority: medium
-ms.openlocfilehash: c3551ebcc59ebfe426b0be8d5bd20f7578517a25
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c4bf1805b16d869e7a29c49e8fe53c01cf469132
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649202"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921663"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML 项目控件；绑定到 C++/WinRT 集合
 
-可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 这一想法基于称为*观察者模式*的软件设计模式。 本主题演示如何实现中的可观察集合[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何将绑定 XAML 项目，这些控件。
+可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 这一想法基于称为*观察者模式*的软件设计模式。 本主题演示如何实现中的可观察集合[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何将绑定 XAML 项目，这些控件。
 
 本演练围绕在 [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md)中创建的项目展开，而且它将添加到该主题中所述的概念。
 
@@ -25,7 +25,7 @@ ms.locfileid: "57649202"
 如果表示集合的运行时类选择每当在其中添加或删除元素时引发 [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) 事件，则该运行时类是可观测集合。 XAML 项目控件可检索更新的集合然后将自行更新以显示当前元素，从而绑定到这些事件并处理事件。
 
 > [!NOTE]
-> 了解安装和使用 C + + WinRT Visual Studio 扩展 (VSIX) （可提供项目模板支持） 请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 有关如何安装和使用信息C++WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包 （该一起提供项目模板，并生成支持），请参阅[适用于 Visual Studio 支持C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="add-a-bookskus-collection-to-bookstoreviewmodel"></a>将 **BookSkus** 集合添加到 **BookstoreViewModel**
 
@@ -121,7 +121,7 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 立即生成并运行该项目。 单击该按钮以执行 **Click** 事件处理程序。 我们看到了**追加**的实现引发了让 UI 知道该集合已发生更改的事件；而且 **ListBox** 重新查询了集合以更新其自己的**项目**值。 和以前一样，其中一本书籍的标题发生了更改；而且该标题更改反映在按钮上和列表框中。
 
 ## <a name="important-apis"></a>重要的 API
-* [IObservableVector&lt;T&gt;:: VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
+* [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
 * [winrt::make 函数模板](/uwp/cpp-ref-for-winrt/make)
 
 ## <a name="related-topics"></a>相关主题

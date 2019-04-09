@@ -1,16 +1,16 @@
 ---
 Description: 成功上传程序包后，将看到一个表格，指示将以排名顺序向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包。
 title: 设备系列可用性
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp, 程序包, 上传, 设备系列可用性
 ms.localizationpriority: medium
-ms.openlocfilehash: 217a6ab9f25ee533a754138db5cf83c2ac81e3e9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 516339b33ac4cf8e29e320f442791402b64c6a94
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605352"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334622"
 ---
 # <a name="device-family-availability"></a>设备系列可用性
 
@@ -34,7 +34,7 @@ ms.locfileid: "57605352"
 
 <span id="xbox" />
 
-**Windows 10 Xbox** 是唯一一个默认情况下未针对 Windows.Universal 程序包选中的 Windows 10 设备系列。 如果你的应用并非游戏（或者它是游戏并且你启用了 [Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)或者已通过[概念审批](../gaming/concept-approval.md)过程），而你的提交包含使用 Windows 10 SDK 版本 14393 或更高版本编译的非特定程序包和/或 x64 UWP 程序包，则可以选中 **Windows 10 Xbox** 复选框，来将该应用提供给 Xbox One 上的客户。
+**Windows 10 Xbox** 是唯一一个默认情况下未针对 Windows.Universal 程序包选中的 Windows 10 设备系列。 如果你的应用并非游戏（或者它是游戏并且你启用了 [Xbox Live 创意者计划](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)或者已通过[概念审批](../gaming/concept-approval.md)过程），而你的提交包含使用 Windows 10 SDK 版本 14393 或更高版本编译的非特定程序包和/或 x64 UWP 程序包，则可以选中 **Windows 10 Xbox** 复选框，来将该应用提供给 Xbox One 上的客户。
 
 > [!IMPORTANT]
 > 为了使应用能够在 Xbox 设备上启动，必须包含使用 Windows SDK 版本 14393 或更高版本编译的非特定程序包或 x64 程序包。 但是，如果选中了 **Windows 10 Xbox**，则适用于 Xbox 的最高版本程序包（即，面向 Xbox 或通用设备系列的非特定程序包或 x64 程序包）将始终提供给 Xbox 上的客户，即使它使用早期 SDK 版本进行编译也是如此。 因此，确保使用 Windows SDK 版本 14393 或更高版本对适用于 Xbox 的版本最高的程序包进行编译至关重要。 如果不是这样，将显示一条错误消息，指示系统 Xbox 客户将无法启动应用。 

@@ -6,18 +6,18 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版, 软件包外部测试版
 ms.localizationpriority: medium
-ms.openlocfilehash: c4ff6c929a7264b5dece0057701c8348fe5d39be
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: e4f96d503d52abe71cff6fcdd1295c862e551e09
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646032"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334385"
 ---
 # <a name="get-a-package-flight"></a>获取软件包外部测试版
 
 在 Microsoft Store 提交 API 中使用此方法来获取到合作伙伴中心帐户注册的应用包航班数据。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -30,22 +30,22 @@ ms.locfileid: "57646032"
 
 | 方法 | 请求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}` |
 
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
 | 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字符串 | 必需。 应用（包含要获取的软件包外部测试版）的应用商店 ID。 App Store ID 将显示在合作伙伴中心。  |
-| flightId | 字符串 | 必需。 要获取的软件包外部测试版的 ID。 [创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中包含此 ID。 在合作伙伴中心创建航班，此 ID 是也可用在合作伙伴中心中的航班页的 URL。  |
+| applicationId | string | 必需。 应用（包含要获取的软件包外部测试版）的应用商店 ID。 App Store ID 将显示在合作伙伴中心。  |
+| flightId | string | 必需。 要获取的软件包外部测试版的 ID。 [创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中包含此 ID。 在合作伙伴中心创建航班，此 ID 是也可用在合作伙伴中心中的航班页的 URL。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -56,7 +56,7 @@ ms.locfileid: "57646032"
 
 以下示例演示了如何检索有关应用商店 ID 值为 9WZDNCRD91MD 的应用的软件包外部测试版（ID 为 43e448df-97c9-4a43-a0bc-2a445e736bcd）的信息。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -86,14 +86,14 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 在任务栏的搜索框中键入   | 描述                                                                                                                                                                                                                                                                         |
+| ReplTest1      | 在任务栏的搜索框中键入   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightId            | 字符串  | 软件包外部测试版的 ID。 通过合作伙伴中心提供此值。  |
-| friendlyName           | 字符串  | 软件包外部测试版的名称，如开发人员所指定。   |  
+| flightId            | string  | 软件包外部测试版的 ID。 通过合作伙伴中心提供此值。  |
+| friendlyName           | string  | 软件包外部测试版的名称，如开发人员所指定。   |  
 | lastPublishedFlightSubmission       | 对象 | 提供有关软件包外部测试版的上次发布提交的信息的对象。 有关详细信息，请参阅下面的[提交对象](#submission_object)部分。  |
 | pendingFlightSubmission        | 对象  |  提供有关软件包外部测试版的当前挂起提交的信息的对象。 有关详细信息，请参阅下面的[提交对象](#submission_object)部分。  |   
 | groupIds           | 数组  | 包含与软件包外部测试版关联的外部测试版组 ID 的字符串数组。 有关外部测试版组的详细信息，请参阅[软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。   |
-| rankHigherThan           | 字符串  | 排名紧跟在当前软件包外部测试版之后的软件包外部测试版的友好名称。 有关排名的外部测试版组的详细信息，请参阅 [软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。  |
+| rankHigherThan           | string  | 排名紧跟在当前软件包外部测试版之后的软件包外部测试版的友好名称。 有关排名的外部测试版组的详细信息，请参阅 [软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。  |
 
 
 <span id="submission_object" />
@@ -104,8 +104,8 @@ Authorization: Bearer <your access token>
 
 | 值           | 在任务栏的搜索框中键入    | 描述                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id            | 字符串  | 提交的 ID。    |
-| resourceLocation   | 字符串  | 可追加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 请求 URI 的相对路径，用于检索提交的完整数据。               |
+| id            | string  | 提交的 ID。    |
+| resourceLocation   | string  | 可追加到基本 `https://manage.devcenter.microsoft.com/v1.0/my/` 请求 URI 的相对路径，用于检索提交的完整数据。               |
 
 
 ## <a name="error-codes"></a>错误代码

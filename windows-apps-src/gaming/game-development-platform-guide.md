@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 技术, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 53616e572be6051d096c095f9587c498b769a6af
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1c5c6bb9bc2dadc89811c18c0aa844b899e52cf1
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623302"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162702"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>适用于 UWP 应用的游戏技术
 
@@ -323,7 +323,7 @@ Windows 10 提供可用于游戏开发的大量 API 集合。 有用于游戏的
 
 [Xbox Live Creators 计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)允许任何开发人员将 Xbox Live 集成到他们的 UWP 游戏，并将发布到 Xbox One 和 Windows 10。 你可以使用最少的开发时间，将 Xbox Live 社交体验（如登录、状态、排行榜等）集成到游戏中。 Xbox Live 社交功能旨在有机增加你的受众，在 5,500 多万名活跃玩家中扩大你的知名度。
 
-如果想访问主 Xbox One 应用商店中特别推荐的更多 Xbox Live 功能、专门的营销和开发支持和机会，则你可以申请 [ID@Xbox](https://www.xbox.com/developers/id) 计划。 若要查看可用于 Xbox Live 创意者计划和 ID@Xbox 计划的功能，请参阅[功能表](../xbox-live/developer-program-overview.md#feature-table)。
+如果想访问主 Xbox One 应用商店中特别推荐的更多 Xbox Live 功能、专门的营销和开发支持和机会，则你可以申请 [ID@Xbox](https://www.xbox.com/developers/id) 计划。 若要查看可用于 Xbox Live 创意者计划和 ID@Xbox 计划的功能，请参阅[功能表](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#feature-table)。
 
 有关详细信息，请转到[将 Xbox Live 添加到游戏](e2e.md#adding-xbox-live-to-your-game)。
 

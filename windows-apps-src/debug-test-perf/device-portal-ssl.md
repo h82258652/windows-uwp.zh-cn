@@ -2,28 +2,31 @@
 ms.assetid: e04ebe3f-479c-4b48-99d8-3dd4bb9bfaf4
 title: 使用自定义的 SSL 证书预配 Device Portal
 description: TBD
-ms.date: 07/11/2017
+ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: faef15d523f56b6e45f77e0ccdbb2f5846f7a15a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cbe813a58124b1cd80f352ae11e9dcff59b21da4
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616692"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244333"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>使用自定义的 SSL 证书预配 Device Portal
-在 Windows 10 创意者更新中，Windows Device Portal 添加了一种供设备管理员安装用于 HTTPS 通信的自定义证书的方法。 
+
+在 Windows 10 创意者更新中，Windows Device Portal 添加了一种供设备管理员安装用于 HTTPS 通信的自定义证书的方法。
 
 虽然你可以在自己的电脑上执行此操作，但此功能主要适用于建立了现有证书基础结构的企业。  
 
-例如，某公司可能具有一个证书颁发机构 (CA)，并使用该机构对通过 HTTPS 提供的 Intranet 网站证书进行签名。 此功能建立在该基础结构之上。 
+例如，某公司可能具有一个证书颁发机构 (CA)，并使用该机构对通过 HTTPS 提供的 Intranet 网站证书进行签名。 此功能建立在该基础结构之上。
 
 ## <a name="overview"></a>概述
+
 默认情况下，Device Portal 会生成一个自签名的根 CA，然后使用它对正在侦听的每个终结点的 SSL 证书进行签名。 这包括 `localhost`、`127.0.0.1` 和 `::1` (IPv6 localhost)。
 
-另外，还包括设备的主机名（例如 `https://LivingRoomPC`）和分配给设备的每个链接-本地 IP 地址（每个网络适配器最多有两个 [IPv4、IPv6]）。 通过在 Device Portal 中查看网络工具，你可以查看设备的链接-本地 IP 地址。 对于 IPv4，这些地址将以 `10.` 或 `192.` 开头，对于 IPv6，将以 `fe80:` 开头。 
+另外，还包括设备的主机名（例如 `https://LivingRoomPC`）和分配给设备的每个链接-本地 IP 地址（每个网络适配器最多有两个 [IPv4、IPv6]）。
+通过在 Device Portal 中查看网络工具，你可以查看设备的链接-本地 IP 地址。 对于 IPv4，这些地址将以 `10.` 或 `192.` 开头，对于 IPv6，将以 `fe80:` 开头。
 
 在默认设置中，由于根 CA 不受信任，可能会在浏览器中显示证书警告。 具体来说，Device Portal 提供的 SSL 证书由浏览器或电脑不信任的根 CA 进行签名。 此问题可以通过创建受信任的新根 CA 来解决。
 
@@ -42,7 +45,7 @@ $rootCA = New-SelfSignedCertificate -certstorelocation cert:\currentuser\my -Sub
 $rootCAFile = Export-Certificate -Cert $rootCA -FilePath $FilePath
 ```
 
-创建 _WdpTestCA.cer_ 文件后，你可以使用它对 SSL 证书进行签名。 
+创建 _WdpTestCA.cer_ 文件后，你可以使用它对 SSL 证书进行签名。
 
 ## <a name="create-an-ssl-certificate-with-the-root-ca"></a>使用根 CA 创建 SSL 证书
 
@@ -66,18 +69,19 @@ $certFile = Export-PfxCertificate -cert $cert -FilePath $FilePath -Password (Con
 
 如果你有多台设备，则可以重复使用 localhost .pfx 文件，但是你仍需要单独为每台设备创建 IP 地址和主机名证书。
 
-生成 .pfx 文件捆绑包时，你需要将它们加载到 Windows Device Portal。 
+生成 .pfx 文件捆绑包时，你需要将它们加载到 Windows Device Portal。
 
 ## <a name="provision-device-portal-with-the-certifications"></a>使用证书预配 Device Portal
 
 对于你为设备创建的每个 .pfx 文件，都需要在提升的命令提示符下运行以下命令。
 
-```
-WebManagement.exe -SetCert <Path to .pfx file> <password for pfx> 
+```cmd
+WebManagement.exe -SetCert <Path to .pfx file> <password for pfx>
 ```
 
 有关用法示例，请参阅下文：
-```
+
+```cmd
 WebManagement.exe -SetCert localhost.pfx PickAPassword
 WebManagement.exe -SetCert --1.pfx PickAPassword
 WebManagement.exe -SetCert MyLivingRoomPC.pfx PickAPassword
@@ -85,7 +89,7 @@ WebManagement.exe -SetCert MyLivingRoomPC.pfx PickAPassword
 
 安装证书后，只需重启服务，更改即可生效：
 
-```
+```cmd
 sc stop webmanagement
 sc start webmanagement
 ```

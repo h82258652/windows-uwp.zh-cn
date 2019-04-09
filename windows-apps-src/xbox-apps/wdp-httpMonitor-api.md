@@ -4,12 +4,12 @@ description: 了解如何从 Xbox 上的侧重型应用访问 HTTP 流量。
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 8b8828b060e0401e7938517e497bae20e1234baf
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1e7c07c92c1671cd9051393586e1e8562fa756d0
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645672"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244093"
 ---
 # <a name="http-monitor-api-reference"></a>HTTP 监视器 API 参考   
 如果已通过在开发人员主页选中相应的框在 Xbox 主机上启用 HTTP 监视器，则可使用此 API 访问侧重型应用的实时 HTTP 流量。
@@ -23,7 +23,7 @@ ms.locfileid: "57645672"
 方法      | 请求 URI
 :------     | :-----
 GET | /ext/httpmonitor/sessions
-<br />
+
 **URI 参数**
 
 - 无
@@ -52,6 +52,7 @@ HTTP 状态代码      | 描述
 5XX | 错误代码
 
 ## <a name="get-http-traffic-from-the-focused-app"></a>获取来自侧重型应用的 HTTP 流量
+
 **请求**
 
 如果已从开发人员主页启用 HTTP 监视器，则以实时方式获取来自 Xbox 上的侧重型应用的 HTTP 流量，前提是它不是系统应用。
@@ -59,7 +60,7 @@ HTTP 状态代码      | 描述
 方法      | 请求 URI
 :------     | :-----
 Websocket | /ext/httpmonitor/sessions
-<br />
+
 **URI 参数**
 
 - 无
@@ -98,7 +99,7 @@ HTTP 状态代码      | 描述
 403 | HTTP 监视器已禁用，必须在开发人员主页中启用
 5XX | 错误代码
 
-<br />
-**可用的设备系列**
+
+**可用设备系列**
 
 * Windows Xbox

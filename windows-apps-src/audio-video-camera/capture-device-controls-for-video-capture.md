@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f144ef398fc55e79d2f0190c61214cdf1aa93b68
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f503910a46254f4e885dd2ded1d43b975d78f84e
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607652"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244309"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>用于视频捕获的手动相机控件
 
@@ -55,7 +55,7 @@ HDR 视频控件支持以下三种模式：开、关和自动。这意味着设�
 
 以下示例使用简单的 UI 来提供单选按钮，让用户切换降噪模式。
 
-[!code-cs[SnippetDenoiseXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetDenoiseXAML)]
+[!code-xml[SnippetDenoiseXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetDenoiseXAML)]
 
 以下方法检查了 [**VideoTemporalDenoisingControl.Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.supported) 属性以确定当前设备是否支持临时降噪。 如果支持，则检查确保设备支持**关**和**自动**或**开**模式，我们将在此情况下将单选按钮设置为可见。 接下来，如果设备支持这些模式，则**自动**和**开**按钮为可见状态。
 
@@ -86,9 +86,9 @@ HDR 视频控件支持以下三种模式：开、关和自动。这意味着设�
 
 ## <a name="related-topics"></a>相关主题
 
-* [摄像头](camera.md)
-* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [处理媒体帧与 MediaFrameReader](process-media-frames-with-mediaframereader.md)
+* [相机](camera.md)
+* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [使用 MediaFrameReader 处理媒体帧](process-media-frames-with-mediaframereader.md)
 *  [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
  
 

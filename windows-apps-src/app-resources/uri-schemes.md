@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5d66d717d77d2797e8a483871b8d3369befb5b6b
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632052"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320580"
 ---
 # <a name="uri-schemes"></a>URI 方案
 
@@ -98,9 +98,11 @@ ms-appx:///images/logo.png
 
 上述 URI 实际上可能使用以下物理文件名检索当前应用包中的文件。
 
-```
+<blockquote>
+<pre>
 \Images\fr-FR\logo.scale-100_contrast-white.png
-```
+</blockquote>
+</pre>
 
 当然，也可以通过直接引用全名的方式检索该相同的物理文件。
 

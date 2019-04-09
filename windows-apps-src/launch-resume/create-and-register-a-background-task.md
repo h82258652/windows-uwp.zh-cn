@@ -2,7 +2,7 @@
 title: 创建和注册进程外后台任务
 description: 创建一个进程外后台任务类并注册它，以便在应用不在前台运行时运行。
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
-ms.date: 07/02/2018
+ms.date: 2/27/2019
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
@@ -10,16 +10,16 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 9df6eef44d45db37e17610d6a5333f3a387b5cf6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1420b41ef48123e302b546c45669a75545927d89
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592162"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240045"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>创建和注册进程外后台任务
 
-**重要的 Api**
+**重要的 API**
 
 -   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
@@ -37,7 +37,7 @@ ms.locfileid: "57592162"
 以下示例向你展示如何编写用于实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 接口的新类。
 
 1.  为后台任务创建新项目并将其添加到你的解决方案。 若要执行此操作，右键单击解决方案中的节点**解决方案资源管理器**，然后选择**添加** \> **新建项目**。 然后选择**Windows 运行时组件**项目类型，该项目命名，并单击确定。
-2.  从通用 Windows 平台 (UWP) 应用项目中引用后台任务项目。 有关C#或 c + + 应用，在应用程序项目中，右键单击**引用**，然后选择**添加新引用**。 在“解决方案”下，选择“项目”，然后选择你的后台任务项目名称并单击“确定”。
+2.  从通用 Windows 平台 (UWP) 应用项目中引用后台任务项目。 有关C#或C++应用程序，在应用程序项目中，右键单击**引用**，然后选择**添加新引用**。 在“解决方案”下，选择“项目”，然后选择你的后台任务项目名称并单击“确定”。
 3.  到后台任务项目中，添加一个新类，实现[ **IBackgroundTask** ](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)接口。 [ **IBackgroundTask.Run** ](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法是将触发指定的事件时调用的所需的入口点，每个后台任务中需要此方法。
 
 > [!NOTE]
@@ -150,7 +150,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 BackgroundTaskDeferral _deferral; // Note: defined at class scope so that we can mark it complete inside the OnCancel() callback if we choose to support cancellation
 public async void Run(IBackgroundTaskInstance taskInstance)
 {
-    _deferral = taskInstance.GetDeferral()
+    _deferral = taskInstance.GetDeferral();
     //
     // TODO: Insert code to start one or more asynchronous methods using the
     //       await keyword, for example:
@@ -200,7 +200,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 ```
 
 > [!NOTE]
-> 在 C# 中，可以使用 **async/await** 关键字调用后台任务的异步方法。 在 C + + /CX 中，可以通过使用任务链来实现类似的结果。
+> 在 C# 中，可以使用 **async/await** 关键字调用后台任务的异步方法。 在C++/CX，可以通过使用任务链来实现类似的结果。
 
 有关异步模式的详细信息，请参阅[异步编程](https://msdn.microsoft.com/library/windows/apps/mt187335)。 有关如何使用延迟阻止后台任务提前停止的其他示例，请参阅[后台任务示例](https://go.microsoft.com/fwlink/p/?LinkId=618666)。
 
@@ -445,7 +445,7 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 
 ## <a name="related-topics"></a>相关主题
 
-**详细的后台任务的指导性主题**
+**详细的后台任务说明主题**
 
 * [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
 * [注册后台任务](register-a-background-task.md)
@@ -455,14 +455,14 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 * [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
 * [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
-* [将进程外后台任务转换为进程内的后台任务](convert-out-of-process-background-task.md)  
+* [将进程外后台任务转换为进程内后台任务](convert-out-of-process-background-task.md)  
 
 **后台任务指南**
 
 * [后台任务指南](guidelines-for-background-tasks.md)
 * [调试后台任务](debug-a-background-task.md)
-* [如何在触发挂起、 继续和后台 UWP 应用中的事件 （在调试）](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
-**后台任务 API 参考**
+**后台任务 API 引用**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)

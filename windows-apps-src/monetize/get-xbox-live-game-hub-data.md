@@ -5,22 +5,22 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox Live 分析, 游戏中心
 ms.localizationpriority: medium
-ms.openlocfilehash: 09c2a2c69e32d151c393c5a0652c1d9de7b4360e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 2f9e8440384dfac755a4791e71b42dafa80cb957
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57600002"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162852"
 ---
 # <a name="get-xbox-live-game-hub-data"></a>获取 Xbox Live 游戏中心数据
 
 
-在 Microsoft Store 分析 API 中使用此方法获取你的[支持 Xbox Live 的游戏](../xbox-live/index.md)的游戏中心数据。 此信息也位于[Xbox 的分析报告](../publish/xbox-analytics-report.md)在合作伙伴中心。
+在 Microsoft Store 分析 API 中使用此方法获取你的[支持 Xbox Live 的游戏](https://docs.microsoft.com/gaming/xbox-live//index.md)的游戏中心数据。 此信息也位于[Xbox 的分析报告](../publish/xbox-analytics-report.md)在合作伙伴中心。
 
 > [!IMPORTANT]
-> 该方法只支持 Xbox 游戏或使用 Xbox Live 服务的游戏。 这些游戏必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括 [Microsoft 合作伙伴](../xbox-live/developer-program-overview.md#microsoft-partners)发布的游戏以及通过 [ID@Xbox 计划](../xbox-live/developer-program-overview.md#id)提交的游戏。 该方法当前不支持通过 [Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏。
+> 该方法只支持 Xbox 游戏或使用 Xbox Live 服务的游戏。 这些游戏必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括 [Microsoft 合作伙伴](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners)发布的游戏以及通过 [ID@Xbox 计划](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id)提交的游戏。 该方法当前不支持通过 [Xbox Live 创意者计划](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -39,17 +39,17 @@ ms.locfileid: "57600002"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
 | 参数        | 在任务栏的搜索框中键入   |  描述      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 你要检索 Xbox Live 游戏中心数据的游戏的 [Store ID](in-app-purchases-and-trials.md#store-ids)。  |  是  |
-| metricType | 字符串 | 指定要检索的 Xbox Live 分析数据的类型的字符串。 对于此方法，指定值 **communitymanagergamehub**。  |  是  |
+| applicationId | string | 你要检索 Xbox Live 游戏中心数据的游戏的 [Store ID](in-app-purchases-and-trials.md#store-ids)。  |  是  |
+| metricType | string | 指定要检索的 Xbox Live 分析数据的类型的字符串。 对于此方法，指定值 **communitymanagergamehub**。  |  是  |
 | startDate | 日期 | 要检索的游戏中心数据日期范围中的开始日期。 默认值为当前日期之前 30 天。 |  否  |
 | endDate | 日期 | 要检索的游戏中心数据日期范围中的结束日期。 默认值为当前日期。 |  否  |
 | top | int | 要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。 |  否  |
@@ -70,8 +70,8 @@ Authorization: Bearer <your access token>
 
 | 值      | 在任务栏的搜索框中键入   | 描述                  |
 |------------|--------|-------------------------------------------------------|
-| 值      | 数组  | 一个对象数组，其中包含指定时间范围内每个日期的游戏中心数据。 有关每个对象中的数据的详细信息，请参阅下表。                                                                                                                      |
-| @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10000，但查询的数据超过 10000 行时，就会返回此值。 |
+| ReplTest1      | 数组  | 一个对象数组，其中包含指定时间范围内每个日期的游戏中心数据。 有关每个对象中的数据的详细信息，请参阅下表。                                                                                                                      |
+| @nextLink  | string | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10000，但查询的数据超过 10000 行时，就会返回此值。 |
 | TotalCount | int    | 查询的数据结果中的行总数。  |
 
 
@@ -79,8 +79,8 @@ Authorization: Bearer <your access token>
 
 | 值               | 在任务栏的搜索框中键入   | 描述                           |
 |---------------------|--------|-------------------------------------------|
-| 日期                | 字符串 | 此项目中游戏中心数据的日期。 |
-| applicationId       | 字符串 | 你要为其检索游戏中心数据的游戏的 Store ID。     |
+| 日期                | string | 此项目中游戏中心数据的日期。 |
+| applicationId       | string | 你要为其检索游戏中心数据的游戏的 Store ID。     |
 | gameHubLikeCount     | 数字 |   在指定日期添加到游戏中心页面上的赞的数量。   |
 | gameHubCommentCount          | 数字 |  在指定日期添加到你的应用的游戏中心页面上的评论的数量。  |
 | gameHubShareCount           | 数字 | 客户在指定日期共享你的应用的游戏中心页面的次数。   |

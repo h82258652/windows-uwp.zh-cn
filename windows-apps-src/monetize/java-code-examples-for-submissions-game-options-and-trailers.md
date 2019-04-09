@@ -5,12 +5,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, 游戏选项, 预告片, 高级应用一览, java
 ms.localizationpriority: medium
-ms.openlocfilehash: 974bbc4c864edb9450f9ba677c60349b5e1f8ece
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 93c629d509aaf3f92c3010e18077270339c7d332
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641052"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334295"
 ---
 # <a name="java-sample-app-submission-with-game-options-and-trailers"></a>Java 示例：使用游戏选项和预告片的应用提交
 
@@ -26,19 +26,19 @@ ms.locfileid: "57641052"
 
 ## <a name="create-an-app-submission"></a>创建应用提交
 
-```CreateAndSubmitSubmissionExample``` 类实现 ```main``` 程序，该程序调用其他示例方法，以使用 Microsoft Store 提交 API 来创建并确认包含游戏选项和预告片的应用提交。 要调整此代码以供自己使用，请执行以下操作：
+`CreateAndSubmitSubmissionExample` 类实现 `main` 程序，该程序调用其他示例方法，以使用 Microsoft Store 提交 API 来创建并确认包含游戏选项和预告片的应用提交。 要调整此代码以供自己使用，请执行以下操作：
 
-* 将 ```tenantId``` 变量指定为你应用的租户 ID，将 ```clientId``` 和 ```clientSecret``` 变量指定为你应用的客户端 ID 和密钥。 有关详细信息，请参阅[如何与合作伙伴中心帐户关联的 Azure AD 应用程序](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
-* 将 ```applicationId``` 变量指定为要为其创建提交的应用的[应用商店 ID](in-app-purchases-and-trials.md#store-ids)。
+* 将 `tenantId` 变量指定为你应用的租户 ID，将 `clientId` 和 `clientSecret` 变量指定为你应用的客户端 ID 和密钥。 有关详细信息，请参阅[如何与合作伙伴中心帐户关联的 Azure AD 应用程序](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
+* 将 `applicationId` 变量指定为要为其创建提交的应用的[应用商店 ID](in-app-purchases-and-trials.md#store-ids)。
 
 > [!div class="tabbedCodeSnippets"]
-[!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/CreateAndSubmitSubmissionExample.java#L1-L313)]
+[!code-java[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/CreateAndSubmitSubmissionExample.java#L1-L313)]
 
 <span id="token" />
 
 ## <a name="obtain-an-azure-ad-access-token"></a>获取 Azure AD 访问令牌
 
-```DevCenterAccessTokenClient``` 类定义一个帮助程序方法，该方法使用你的 ```tenantId```、```clientId``` 和 ```clientSecret``` 值来创建要用于 Microsoft Store 提交 API 的 Azure AD 访问令牌。
+`DevCenterAccessTokenClient` 类定义一个帮助程序方法，该方法使用你的 `tenantId`、`clientId` 和 `clientSecret` 值来创建要用于 Microsoft Store 提交 API 的 Azure AD 访问令牌。
 
 > [!div class="tabbedCodeSnippets"]
 [!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/DevCenterAccessTokenClient.java#L1-L69)]
@@ -47,10 +47,10 @@ ms.locfileid: "57641052"
 
 ## <a name="helper-methods-to-invoke-the-submission-api-and-upload-submission-files"></a>用于调用提交 API 和上传提交文件的帮助程序方法
 
-```DevCenterClient``` 类定义帮助程序方法，这些方法在 Microsoft Store 提交 API 中调用多种方法并上传一个 ZIP 文件，其中包含应用提交的程序包、应用一览图像和预告片文件。
+`DevCenterClient` 类定义帮助程序方法，这些方法在 Microsoft Store 提交 API 中调用多种方法并上传一个 ZIP 文件，其中包含应用提交的程序包、应用一览图像和预告片文件。
 
 > [!div class="tabbedCodeSnippets"]
-[!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/DevCenterClient.java#L1-L224)]
+[!code-java[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/DevCenterClient.java#L1-L224)]
 
 ## <a name="related-topics"></a>相关主题
 

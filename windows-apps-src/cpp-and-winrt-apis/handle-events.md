@@ -1,23 +1,23 @@
 ---
 description: 本主题介绍如何使用 C++/WinRT 注册和撤销事件处理委托。
 title: 在 C++/WinRT 中使用代理处理事件
-ms.date: 05/07/2018
+ms.date: 03/04/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 已投影, 投影, 处理, 事件, 委托
 ms.localizationpriority: medium
-ms.openlocfilehash: 193d821b44722e150f38da7430504f5d528770a4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c647168f44ffbfc4d753700a87825b5ca7b28544
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602422"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921673"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>在 C++/WinRT 中使用代理处理事件
 
-本主题演示如何注册和撤消使用事件处理委托[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。 你可以使用任何标准 C++ 函数类对象来处理事件。
+本主题演示如何注册和撤消使用事件处理委托[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。 你可以使用任何标准 C++ 函数类对象来处理事件。
 
 > [!NOTE]
-> 了解安装和使用 C + + WinRT Visual Studio 扩展 (VSIX) (其中提供了项目模板支持，以及 C + + WinRT MSBuild 属性和目标) 请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 有关如何安装和使用信息C++WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包 （该一起提供项目模板，并生成支持），请参阅[适用于 Visual Studio 支持C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="register-a-delegate-to-handle-an-event"></a>注册用于处理事件的委托
 
@@ -49,9 +49,9 @@ MainPage::MainPage()
 ```
 
 > [!IMPORTANT]
-> 注册委托，上面的代码示例将传递原始*这*指针 （指向当前对象）。 若要了解如何建立具有强名称或对当前对象的弱引用，请参阅**如果使用成员函数作为委托**部分中的子部分[安全地访问*这*指针与事件处理委托](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
+> 当注册委托，上面的代码示例会将传递原始*这*指针 （指向当前对象）。 若要了解如何建立具有强名称或对当前对象的弱引用，请参阅**如果使用成员函数作为委托**部分中的子部分[安全地访问*这*指针与事件处理委托](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
 
-还有其他方法可用来构建 **RoutedEventHandler**。 下面是摘自 [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) 的文档主题的语法块（从页面上的**语言**下拉菜单选择 *C++/WinRT*）。 请注意各种构造函数：一种采用 lambda；另一种是自由函数；还有一种（我们在上面使用的）采用对象和指向成员函数的指针。
+还有其他方法可用来构建 **RoutedEventHandler**。 下面是取自的文档主题的语法块[ **RoutedEventHandler** ](/uwp/api/windows.ui.xaml.routedeventhandler) (选择 *C++/WinRT*从**语言**下拉列表中的网页的右上角)。 请注意各种构造函数：一种采用 lambda；另一种是自由函数；还有一种（我们在上面使用的）采用对象和指向成员函数的指针。
 
 ```cppwinrt
 struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
@@ -67,7 +67,25 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
 
 了解函数调用运算符的语法也很有帮助。 它将告诉你委托的参数需要是怎样的。 如你所见，在本例中，函数调用运算符语法与我们 **MainPage::ClickHandler** 的参数匹配。
 
-如果你不想在事件处理程序中执行很多工作，则可以使用 lambda 函数而不是成员函数。 重复一下，从下面的代码示例来看可能不明显，但一个 **RoutedEventHandler** 委托正在从 lambda 函数构造，该委托同样需要与函数调用运算符的语法匹配。
+> [!NOTE]
+> 对于任何给定的事件，要找出其委托，并且该委托的参数的详细信息，进入第一个事件本身的文档主题。 让我们看[UIElement.KeyDown 事件](/uwp/api/windows.ui.xaml.uielement.keydown)作为示例。 请访问该主题，并选择 *C++/WinRT*从**语言**下拉列表。 在本主题开头的语法块，将看到此。
+> 
+> ```cppwinrt
+> // Register
+> event_token KeyDown(KeyEventHandler const& handler) const;
+> ```
+>
+> 该信息让我们知道**UIElement.KeyDown**事件 （我们在本主题） 的委托类型为**KeyEventHandler**，因为这是在向此事件类型注册委托时传递的类型。 因此，现在请单击上本主题的[KeyEventHandler 委托](/uwp/api/windows.ui.xaml.input.keyeventhandler)类型。 在这里，语法块包含在函数调用运算符。 而且，如上所述，，告知你需要进行的委托的参数。
+> 
+> ```cppwinrt
+> void operator()(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
+> ```
+>
+>  正如您所看到的需要将声明为采用委托**IInspectable**发件人和的实例作为[KeyRoutedEventArgs 类](/uwp/api/windows.ui.xaml.input.keyroutedeventargs)作为此参数。
+>
+> 若要另一个示例，让我们看看[Popup.Closed 事件](/uwp/api/windows.ui.xaml.controls.primitives.popup.closed)。 其委托类型是[EventHandler\<IInspectable\>](/uwp/api/windows.foundation.eventhandler)。 因此，您的代理将花**IInspectable**作为发送方，另一个**IInspectable** (因为这**事件处理程序**的类型参数) 作为此参数。
+
+如果你不想在事件处理程序中执行很多工作，则可以使用 lambda 函数而不是成员函数。 同样，它可能不太明显，代码示例中，但**RoutedEventHandler**委托构造从 lambda 函数，同样，需要对其上面讨论的函数调用运算符的语法匹配。
 
 ```cppwinrt
 MainPage::MainPage()
@@ -122,7 +140,7 @@ private:
 };
 ```
 
-可以将对该按钮的弱引用存储而不是强引用，如以上示例所示 (请参阅[强和弱引用在 C + + WinRT](weak-references.md))。
+可以将对该按钮的弱引用存储而不是强引用，如以上示例所示 (请参阅[中的强和弱引用C++/WinRT](weak-references.md))。
 
 或者，当你注册委托时，您可以指定**winrt::auto_revoke** (这是类型的值[ **winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) 请求 （的事件 revoker类型[ **winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker))。 事件 revoker 适用于您对事件源 （引发事件的对象） 的弱引用。 你可以通过调用 **event_revoker::revoke** 成员函数手动撤销；但事件撤销程序会在该函数超出范围时自动调用函数本身。 **撤销**函数检查事件源是否仍然存在，如果存在，将撤销你的代理。 在本示例中，无需存储事件源，并且不需要析构函数。
 
@@ -230,14 +248,14 @@ winrt::hstring f(ListView listview)
 
 ## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>安全地访问*这*与事件处理委托的指针
 
-如果处理的事件对象的成员函数，或从在 lambda 函数内部对象的成员函数，然后需要相对事件接收方 （处理事件的对象） 和事件源 （的对象的生存期纳入考虑引发事件）。 有关详细信息和代码示例，请参阅[强和弱引用在 C + + WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
+如果处理的事件对象的成员函数，或从在 lambda 函数内部对象的成员函数，然后需要相对事件接收方 （处理事件的对象） 和事件源 （的对象的生存期纳入考虑引发事件）。 有关详细信息和代码示例，请参阅[中的强和弱引用C++/WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
 
 ## <a name="important-apis"></a>重要的 API
 * [winrt::auto_revoke_t 标记结构](/uwp/cpp-ref-for-winrt/auto-revoke-t)
-* [winrt::implements::get_weak 函数](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
-* [winrt::implements::get_strong 函数](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)
+* [winrt::implements::get_weak 函数](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)
+* [winrt::implements::get_strong 函数](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
 ## <a name="related-topics"></a>相关主题
-* [创作事件在 C + + WinRT](author-events.md)
-* [并发和异步操作使用 C + + WinRT](concurrency.md)
-* [C++/WinRT 中的弱引用](weak-references.md)
+* [在 C++/WinRT 中创作事件](author-events.md)
+* [通过 C++/WinRT 的并发和异步操作](concurrency.md)
+* [在强和弱引用C++/WinRT](weak-references.md)

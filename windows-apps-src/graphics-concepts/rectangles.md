@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aa94eb00058ba3297e7ca7cc4f93581d9281fd1c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6ce91b47d2846f945a0e4a15f705491ab22e9dea
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608012"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291665"
 ---
 # <a name="rectangles"></a>矩形
-
 
 在整个 Direct3D 和 Windows 编程中，将根据边界矩形引用屏幕上的对象。 边界矩形的边始终与屏幕的边平行，始终可通过两个点（左上角和右下角）来描述矩形。
 
@@ -24,7 +23,7 @@ ms.locfileid: "57608012"
 
 大多数应用程序使用 [**RECT**](https://msdn.microsoft.com/library/windows/desktop/dd162897) 结构（或其 typedef'd 别名）来传输有关在位块传输到屏幕或执行点击测试时要使用的边界矩形的信息。 在 C++ 中，**RECT** 结构具有以下定义。
 
-```
+```cpp
 typedef struct tagRECT { 
     LONG    left;    // This is the upper-left corner x-coordinate.
     LONG    top;     // The upper-left corner y-coordinate.

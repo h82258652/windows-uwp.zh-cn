@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9137f7ef46da1b861976dbac680327febf315dac
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ec132ccb3099f7b5c9f4763a2b276bf6270da859
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601052"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291645"
 ---
 # <a name="hull-shader-hs-stage"></a>外壳着色器 (HS) 阶段
-
 
 外壳着色器 (HS) 阶段是分割阶段之一，其有效地将模型的单个表面分解为许多三角形。 外壳着色器 (HS) 阶段产生对应于每个输入修补程序（四边形、三角形或线条）的几何图形修补程序（和修补程序常量）。 每个修补程序调用一次外壳着色器，它将定义低阶表面的输入控制点转换为构成修补程序的控制点。 它还执行一些按每个修补程序进行的计算，以便为[细化器 (TS) 阶段](tessellator-stage--ts-.md)和[域着色器 (DS) 阶段](domain-shader-stage--ds-.md)提供数据。
 
@@ -41,7 +40,7 @@ ms.locfileid: "57601052"
 -   外壳着色器声明[细化器 (TS) 阶段](tessellator-stage--ts-.md)所需的状态。 这包括控制点的数量、修补程序面的类型和在分割时使用的分区类型等信息。 此信息作为声明显示，通常位于着色器代码的前面。
 -   细化因素决定细分每个修补程序的量。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 在 1 到 32 个输出控制点之间，它们共同构成修补程序。
@@ -52,7 +51,7 @@ ms.locfileid: "57601052"
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
 
 
-```
+```hlsl
 [patchsize(12)]
 [patchconstantfunc(MyPatchConstantFunc)]
 MyOutPoint main(uint Id : SV_ControlPointID,

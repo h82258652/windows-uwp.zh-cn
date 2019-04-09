@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d2a7d34f00d40429863f08ffe6a9c34222daa32
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 461d6d135838a5141e6606d4c77ce21972a45fe1
+ms.sourcegitcommit: aeebfe35330aa471d22121957d9b510f6ebacbcf
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649302"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58901645"
 ---
 # <a name="command-bar"></a>命令栏
 
@@ -121,8 +121,8 @@ Windows Phone 的 Outlook 日历中的命令栏。
 
 你可以根据需要以编程方式在 PrimaryCommands 和 SecondaryCommands 之间移动命令。
 
-- *如果没有将一致地显示在页面之间的命令，最好将该命令保存在一致的位置。*
-- *我们建议将接受，的放置和左侧的确定命令拒绝，不会，和取消。一致性为用户提供的置信度移动系统，帮助他们传输他们的应用导航的知识应用到应用程序。*
+- *如果某个命令会一直显示在各个页面上，则最好将该命令放置在一个一致的位置上。*
+- *我们建议将“接受”、“是”和“确定”命令放置在“拒绝”、“否”和“取消”的左侧。 一致性可以增加用户浏览系统的信心，并帮助他们在应用之间传递应用导航知识。*
 
 ### <a name="app-bar-buttons"></a>应用栏按钮
 
@@ -177,7 +177,8 @@ The AppBarButton [IsCompact](https://docs.microsoft.com/uwp/api/windows.ui.xaml.
 
 ## <a name="open-and-closed-states"></a>打开和关闭状态
 
-可以打开或关闭命令栏。 处于打开状态时，主要命令按钮将带文本标签显示，并且如果存在辅助命令，溢出菜单也将处于打开状态。
+可以打开或关闭命令栏。 打开时，它显示了与文本标签的主要命令按钮，它会打开溢出菜单上，（如果有辅助命令）。
+命令栏中打开向上 （如上所示的主要命令） 在溢出菜单或向下 （低于主命令）。 默认方向为向上，但如果没有足够的空间来打开向上溢出菜单，命令栏中打开它向下。 
 
 用户可以通过按"详细信息，参阅更多"这些状态之间切换\[• • • 以\]按钮。 你可以通过设置 [IsOpen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) 属性来以编程方式在它们之间切换。 
 
@@ -216,7 +217,7 @@ private void CommandBar_Closing(object sender, object e)
 
 如果用户在命令栏处于打开状态时与应用的其他部分交互，命令栏将自动关闭。 这称为*轻型消除*。 可以通过设置 [IsSticky](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx) 属性来控制轻型消除行为。 当`IsSticky="true"`，直到用户按"详细信息，参阅更多"，此栏保持打开\[• • • 以\]按钮或从溢出菜单上选择某个项。 
 
-我们建议避免使用粘滞命令栏，因为它们不符合用户对轻型消除的预期。
+我们建议避免粘滞命令栏，因为它们不符合的用户的期望[light 消除和键盘焦点行为](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#light-dismiss)。
 
 ### <a name="display-mode"></a>显示模式
 
@@ -281,5 +282,5 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>相关文章
 
-* [适用于 UWP 应用的命令设计基础知识](../basics/commanding-basics.md)
+* [UWP 应用的命令设计基础知识](../basics/commanding-basics.md)
 * [CommandBar 类](https://msdn.microsoft.com/library/windows/apps/dn279427)

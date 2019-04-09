@@ -2,16 +2,16 @@
 Description: 可以使用软件包外部测试版分配仅提供给有限测试组的程序包。
 title: 软件包外部测试版
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
-ms.date: 10/31/2018
+ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp, 外部测试
 ms.localizationpriority: medium
-ms.openlocfilehash: 568fbff28d6c57acb6214bf274becc9cbc7f8830
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 2070d1312df8f840c2368600197ca2bd7c506cdc
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610162"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244293"
 ---
 # <a name="package-flights"></a>软件包外部测试版
 
@@ -70,7 +70,7 @@ ms.locfileid: "57610162"
 
 ## <a name="configure-additional-package-flight-options"></a>配置其他软件包外部测试版选项
 
-默认情况下，完成认证过程后即会发布软件包外部测试版，并将其提供给外部测试版组。 如果希望更改[发布日期](set-app-pricing-and-availability.md#publish-date)，或希望加[认证说明](notes-for-certification.md)，可以在**外部测试版选项**部分中执行该操作。 单击**保存**以返回到软件包外部测试版概述页。 
+默认情况下，完成认证过程后即会发布软件包外部测试版，并将其提供给外部测试版组。 如果你想要更改[发布日期](set-app-pricing-and-availability.md#publish-date)，可以在执行**航班选项**部分。 单击**保存**以返回到软件包外部测试版概述页。 
 
 
 ## <a name="submit-your-package-flight-to-the-store"></a>将软件包外部测试版提交到应用商店

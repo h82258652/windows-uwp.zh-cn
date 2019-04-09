@@ -7,20 +7,18 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a420ed5ed8f498eb9c900cbacb1b766c4a01214
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 62ad93fa480f0515c4ed6df2d73a745454197ac6
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599282"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291635"
 ---
 # <a name="triangle-strips"></a>三角形带
-
 
 三角形带是一系列连接的三角形。 由于这些三角形是连接的，因此应用程序不需要为每个三角形重复指定所有三个顶点。 例如，只需 7 个顶点即可定义以下三角形带。
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
-
 
 ![具有 7 个顶点的三角形带的图示](images/tristrip.png)
 
@@ -34,7 +32,7 @@ ms.locfileid: "57599282"
 
 以下代码说明如何为此三角形带创建顶点。
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
 float x,y,z;
@@ -53,7 +51,7 @@ CUSTOMVERTEX Vertices[] =
 
 下面的代码示例说明如何在 Direct3D 中呈现此三角形带。
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to a device interface.

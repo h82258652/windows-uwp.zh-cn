@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK, 日志事件
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
-ms.openlocfilehash: d7b338fd3b34d530ad365b0377d6b6c6c65398b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 368e2fb7b3c6d78f68235b829e088d79b5673cf2
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604232"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334755"
 ---
 # <a name="log-custom-events-for-partner-center"></a>记录合作伙伴中心的自定义事件
 
@@ -22,7 +22,7 @@ ms.locfileid: "57604232"
 > [!NOTE]
 > 登录到合作伙伴中心的自定义事件无关[Windows 事件](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx)，并且不会出现在**事件查看器**。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 你可以查看中的自定义日志记录事件之前**使用情况报告**必须在合作伙伴中心应用程序，在应用商店中发布你的应用。
 
@@ -39,10 +39,10 @@ ms.locfileid: "57604232"
 5. 在 SDK 列表中，单击“Microsoft 协议框架”旁边的复选框，然后单击“确定”。
 
 6. 将以下语句添加到要记录自定义事件的每个代码文件的顶部。
-    [!code-cs[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#EngagementNamespace)]
+    [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#EngagementNamespace)]
 
 7. 在要记录自定义事件的每个代码部分中，获取 [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 对象，然后调用 [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 方法。 将自定义事件字符串传递到该方法。
-    [!code-cs[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
+    [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
 
     > [!NOTE]
     > 如果应用记录了很多名称很长的自定义事件，则[使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)的加载时间可能很长。 建议为自定义事件使用简短的名称。 

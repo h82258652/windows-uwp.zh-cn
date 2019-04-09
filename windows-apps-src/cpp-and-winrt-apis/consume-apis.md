@@ -5,16 +5,16 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 488516f94a53eb26b4a9e2f49927b8399c62bff5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 545ce8c5e18a9cc1016f4bf09e5d062b5b31b5a6
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645142"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921703"
 ---
 # <a name="consume-apis-with-cwinrt"></a>通过 C++/WinRT 使用 API
 
-本主题演示如何使用[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api 一部分的 Windows，无论他们所实现的第三方组件供应商，或自行实现。
+本主题演示如何使用[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api 一部分的 Windows，无论他们所实现的第三方组件供应商，或自行实现。
 
 ## <a name="if-the-api-is-in-a-windows-namespace"></a>如果 API 位于 Windows 命名空间中
 这是你使用 Windows 运行时 API 最常见的情况。 对于元数据中定义的 Windows 命名空间中的每个类型，C++/WinRT 都定义了 C++ 友好等效项（称为*投影类型*）。 投影类型具有与 Windows 类型相同的完全限定名称，但使用 C++ 语法放置于 C++ **winrt** 命名空间中。 例如，[**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) 作为 **winrt::Windows::Foundation::Uri** 投影到 C++/WinRT。
@@ -141,7 +141,7 @@ lookup.insert_or_assign(2, value);
 无论你是自行创作该组件，还是该组件来自供应商，本部分均适用。
 
 > [!NOTE]
-> 了解安装和使用 C + + WinRT Visual Studio 扩展 (VSIX) （可提供项目模板支持） 请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 有关如何安装和使用信息C++WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包 （该一起提供项目模板，并生成支持），请参阅[适用于 Visual Studio 支持C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 在应用程序项目中，引用 Windows 运行时组件的 Windows 运行时元数据 (`.winmd`) 文件，然后生成。 在生成过程中，`cppwinrt.exe` 工具生成标准 C++ 库，该库全面描述&mdash;或*投影*&mdash;该组件的 API 接口。 换言之，生成的库包含该组件的投影类型。
 
@@ -258,13 +258,13 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 ## <a name="important-apis"></a>重要的 API
 * [QueryInterface 接口](https://msdn.microsoft.com/library/windows/desktop/ms682521)
 * [RoActivateInstance 函数](https://msdn.microsoft.com/library/br224646)
-* [Windows::Foundation::Uri 类](/uwp/api/windows.foundation.uri)
+* [Windows::Foundation::Uri class](/uwp/api/windows.foundation.uri)
 * [winrt::get_activation_factory 函数模板](/uwp/cpp-ref-for-winrt/get-activation-factory)
 * [winrt::make 函数模板](/uwp/cpp-ref-for-winrt/make)
 * [winrt::Windows::Foundation::IUnknown 结构](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>相关主题
-* [创作事件在 C + + WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
+* [在 C++/WinRT 中创作事件](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
 * [实现 C++/WinRT 与 ABI 之间的互操作](interop-winrt-abi.md)
 * [C++/WinRT 简介](intro-to-using-cpp-with-winrt.md)
 * [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

@@ -5,16 +5,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
-ms.openlocfilehash: c934a88dd1825fb0111083d71eb25e477956d79c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 71c47767cf026b962f682fb30ca93758dbd5e227
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627362"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244073"
 ---
 #<a name="xbox-live-user-management"></a>Xbox Live 用户管理 #
 
-**请求**
+## <a name="request"></a>请求
 
 你可以获取主机中的用户列表，也可以更新该列表，如添加、删除、登录、注销或修改现有用户。
 
@@ -22,7 +22,7 @@ ms.locfileid: "57627362"
 | ------------- |-----------------|
 | GET           | /ext/user |
 | PUT           | /ext/user |
-<br>
+
 
 **URI 参数**
 
@@ -45,7 +45,7 @@ ms.locfileid: "57627362"
   * SponsoredUser（可选）：用于指定是否添加赞助用户的布尔值。
   * （可选） 删除： 布尔值，指定要从控制台中删除此用户
 
-###<a name="response"></a>响应 # # #
+## <a name="response"></a>响应
 
 **响应正文**
 
@@ -70,6 +70,3 @@ ms.locfileid: "57627362"
 | 204                | 调用 PUT 成功，并且主机中的用户已更新 |
 | 4XX                | 无效请求数据或格式的各种错误 |
 | 5XX                | 意外失败的错误代码 |
-<br>
-
-

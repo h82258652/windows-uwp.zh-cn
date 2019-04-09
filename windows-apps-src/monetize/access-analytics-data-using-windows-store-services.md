@@ -2,17 +2,17 @@
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: 使用 Microsoft Store 分析 API 以编程方式检索您或您的组织注册的应用的分析数据 ' s Windows 合作伙伴中心帐户。
 title: 使用应用商店服务访问分析数据
-ms.date: 06/04/2018
+ms.date: 03/06/2019
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 72e0941bb42a2a507af652758432ce51212c1042
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ab3e223c99a13e4520d5bc603454881803a3cb64
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592652"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334855"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用应用商店服务访问分析数据
 
@@ -54,7 +54,7 @@ ms.locfileid: "57592652"
 
 若要获取访问令牌，请按照 [使用客户端凭据的服务到服务调用](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) 中的说明将 HTTP POST 发送到 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 终结点。 示例请求如下所示。
 
-```
+```json
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
@@ -75,13 +75,19 @@ grant_type=client_credentials
 
 获取 Azure AD 访问令牌后，可以随时调用 Microsoft Store 分析 API。 必须将访问令牌传递到每个方法的 **Authorization** 标头。
 
-### <a name="methods-for-uwp-apps"></a>适用于 UWP 应用的方法
+### <a name="methods-for-uwp-apps-and-games"></a>用于 UWP 应用和游戏的方法
+以下方法是可用于应用和游戏收购和外接程序收购： 
+
+* [获取游戏和应用程序获取数据](acquisitions-data.md)
+* [获取游戏和应用程序的外接程序获取数据](add-on-acquisitions-data.md)
+
+### <a name="methods-for-uwp-apps"></a>适用于 UWP 应用的方法 
 
 以下的分析方法有的合作伙伴中心中的 UWP 应用。
 
-| 方案       | 方法      |
+| 应用场景       | 方法      |
 |---------------|--------------------|
-| 获取、 转换、 安装和使用情况 |  <ul><li>[获取应用收购](get-app-acquisitions.md)</li><li>[获取应用程序获取漏斗图数据](get-acquisition-funnel-data.md)</li><li>[按渠道获取应用转换](get-app-conversions-by-channel.md)</li><li>[获取外接程序收购](get-in-app-acquisitions.md)</li><li>[获取外接程序购买的订阅](get-subscription-acquisitions.md)</li><li>[按渠道获取外接程序转换](get-add-on-conversions-by-channel.md)</li><li>[获取应用安装](get-app-installs.md)</li><li>[获取应用的每日使用情况](get-app-usage-daily.md)</li><li>[获取应用的每月用量](get-app-usage-monthly.md)</li></ul> |
+| 获取、 转换、 安装和使用情况 |  <ul><li>[获取应用收购](get-app-acquisitions.md)（旧版）</li><li>[获取应用程序获取漏斗图数据](get-acquisition-funnel-data.md)（旧版）</li><li>[按渠道获取应用转换](get-app-conversions-by-channel.md)</li><li>[获取外接程序收购](get-in-app-acquisitions.md)</li><li>[获取外接程序购买的订阅](get-subscription-acquisitions.md)</li><li>[按渠道获取外接程序转换](get-add-on-conversions-by-channel.md)</li><li>[获取应用安装](get-app-installs.md)</li><li>[获取应用的每日使用情况](get-app-usage-daily.md)</li><li>[获取应用的每月用量](get-app-usage-monthly.md)</li></ul> |
 | 应用错误 | <ul><li>[获取错误报告数据](get-error-reporting-data.md)</li><li>[获取应用程序中错误的详细信息](get-details-for-an-error-in-your-app.md)</li><li>[获取您的应用程序中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[下载您的应用程序中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
 | 洞察 | <ul><li>[获取应用的 insights 数据](get-insights-data-for-your-app.md)</li></ul>  |
 | 评分和评价 | <ul><li>[获取应用评级](get-app-ratings.md)</li><li>[获取应用程序评论](get-app-reviews.md)</li></ul> |
@@ -91,7 +97,7 @@ grant_type=client_credentials
 
 属于 [Windows 桌面应用程序计划](https://msdn.microsoft.com/library/windows/desktop/mt826504)的开发人员帐户可以使用以下分析方法。
 
-| 方案       | 方法      |
+| 应用场景       | 方法      |
 |---------------|--------------------|
 | 安装次数 |  <ul><li>[获取桌面应用程序安装](get-desktop-app-installs.md)</li></ul> |
 | 块 |  <ul><li>[获取升级块的桌面应用程序](get-desktop-block-data.md)</li><li>[获取桌面应用程序的升级块详细信息](get-desktop-block-data-details.md)</li></ul> |
@@ -100,9 +106,9 @@ grant_type=client_credentials
 
 ### <a name="methods-for-xbox-live-services"></a>适用于 Xbox Live 服务的方法
 
-使用 [Xbox Live 服务](../xbox-live/developer-program-overview.md)的游戏开发人员帐户可以使用以下其他方法。
+使用 [Xbox Live 服务](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md)的游戏开发人员帐户可以使用以下其他方法。
 
-| 方案       | 方法      |
+| 应用场景       | 方法      |
 |---------------|--------------------|
 | 常规分析 |  <ul><li>[获取 Xbox Live 分析数据](get-xbox-live-analytics.md)</li><li>[获取 Xbox Live 成就数据](get-xbox-live-achievements-data.md)</li><li>[获取 Xbox Live 并发使用情况数据](get-xbox-live-concurrent-usage-data.md)</li></ul> |
 | 运行状况分析 |  <ul><li>[获取 Xbox Live 的运行状况数据](get-xbox-live-health-data.md)</li></ul> |
@@ -112,7 +118,7 @@ grant_type=client_credentials
 
 以下的其他方法为可供开发人员帐户与已引入通过 Xbox 开发人员门户 (XDP) 的 Xbox One 游戏和 XDP 分析仪表板中提供。
 
-| 方案       | 方法      |
+| 应用场景       | 方法      |
 |---------------|--------------------|
 | 购置 |  <ul><li>[获取一个 Xbox 游戏收购](get-xbox-one-game-acquisitions.md)</li><li>[获取外接程序收购 Xbox One](get-xbox-one-add-on-acquisitions.md)</li></ul> |
 | 错误 |  <ul><li>[获取错误报告数据为你的 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[获取游戏中你的 Xbox One 的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[获取游戏中你的 Xbox One 的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[下载您的 Xbox One 游戏中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
@@ -126,7 +132,7 @@ grant_type=client_credentials
 以下代码示例演示如何获取 Azure AD 访问令牌以及如何从 C# 控制台应用调用 Microsoft Store 分析 API。 若要使用此代码示例，请将 *tenantId*、*clientId*、*clientSecret* 和 *appID* 变量分配给你的方案的相应值。 此示例需要 Newtonsoft 中的 [Json.NET 程序包](https://www.newtonsoft.com/json)，以便反序列化 Microsoft Store 分析 API 返回的 JSON 数据。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[AnalyticsApi](./code/StoreServicesExamples_Analytics/cs/Program.cs#AnalyticsApiExample)]
+[!code-csharp[AnalyticsApi](./code/StoreServicesExamples_Analytics/cs/Program.cs#AnalyticsApiExample)]
 
 ## <a name="error-responses"></a>错误响应
 

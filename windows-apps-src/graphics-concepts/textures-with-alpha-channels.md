@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 88d150383d2be219e7f382e0e690771acbc9d2ee
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1a75c854d413f4681960c890691d99dd2529cc97
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651472"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291685"
 ---
 # <a name="textures-with-alpha-channels"></a>使用 alpha 通道的纹理
-
 
 有两种方法可用于对展现更复杂透明度的纹理贴图进行编码。 在每种情况下，描述透明度的块都在已描述的 64 位块之前。 透明度以 4 x 4 位图表示，其中每个像素具有 4 位（显式编码）或者具有更少位和线性插值（与用于颜色编码的值类似）。
 
@@ -25,8 +24,6 @@ ms.locfileid: "57651472"
 |--------------|-----------------------------------|
 | 3:0          | 透明数据块                |
 | 7:4          | 之前所述的 64 位块 |
-
- 
 
 ## <a name="span-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanexplicit-texture-encoding"></a><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>显式纹理编码
 
@@ -98,7 +95,7 @@ BC3 格式的透明度编码概念与针对颜色的线性编码的相似。 两
 
 以下代码示例描述了此算法。
 
-```
+```cpp
 // 8-alpha or 6-alpha block?    
 if (alpha_0 > alpha_1) {    
     // 8-alpha block:  derive the other six alphas.    

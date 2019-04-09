@@ -6,12 +6,12 @@ keywords: 墨迹, 墨迹书写, 教程
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bc28a4b1cb8afd70ef68a2e297b51ad0a5a0fc5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: be7005e64a431d65006315fbee551e5c6c3a2a6f
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661912"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343276"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>教程：在 UWP 应用中支持墨迹
 
@@ -27,17 +27,17 @@ ms.locfileid: "57661912"
 * 支持基本的形状识别
 * 保存和加载墨迹
 
-有关实现这些功能的更多详细信息，请参阅 [UWP 应用中的笔交互和 Windows Ink](https://docs.microsoft.com/windows/uwp/input/pen-and-stylus-interactions)。
+有关实现这些功能的更多详细信息，请参阅 [UWP 应用中的笔交互和 Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)。
 
 ## <a name="introduction"></a>简介
 
 使用 Windows Ink，你可以为客户提供能够想象的几乎任何一种笔纸体验的同等数字方式，从快速的手写便笺和注释到白板演示，从体系结构和工程绘图到个人作品。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 * 一台运行当前版本 Windows 10 的计算机（或虚拟机）
 * [Visual Studio 2017 和 RS2 SDK](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * 具体取决于您的配置，您可能需要安装[Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet 包并启用**开发人员模式**中 （设置-> 更新您的系统设置& 安全-> 的开发人员-> 使用开发人员的功能)。
 * 如果你还不熟悉使用 Visual Studio 进行通用 Windows 平台 (UWP) 应用开发，请在开始此教程前浏览一下这些主题：  
     * [准备工作](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
@@ -64,9 +64,9 @@ ms.locfileid: "57661912"
 
 这些对象提供 UWP 应用的大部分墨迹书写体验。
 
-| Component | 描述 |
+| 组件 | 描述 |
 | --- | --- |
-| [**在 InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | XAML UI 平台控件的默认情况下，接收，并显示为墨笔划或擦除笔画的笔中的所有输入。 |
+| [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | XAML UI 平台控件的默认情况下，接收，并显示为墨笔划或擦除笔画的笔中的所有输入。 |
 | [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) | 代码隐藏对象，与 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件（通过 [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) 属性公开）一起进行实例化。 此对象提供 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 公开的所有默认墨迹书写功能以及适用于其他自定义和个性化的完整 API 集。 |
 | [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | 包含可自定义且可扩展的激活中关联墨迹相关功能的按钮集合的 XAML UI 平台控件[ **InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)。 |
 | [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer)<br/>我们不在这里介绍此功能，有关详细信息，请参阅[复杂墨迹示例](https://go.microsoft.com/fwlink/p/?LinkID=620314)。 | 支持将笔划墨迹呈现到通用 Windows 应用的指定 Direct2D 设备上下文，而非默认的 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件。 |
@@ -325,7 +325,7 @@ Windows Ink 支持对 Windows 支持的很多语言进行文本识别。 每个�
 
 使用墨迹分析，你的应用还可以识别一些核心形状，包括：
 
-- 圆形
+- 圆圈
 - 菱形
 - 绘图
 - Ellipse
@@ -458,7 +458,7 @@ Windows Ink 还支持从剪贴板复制和粘贴笔划墨迹。
 </tr>
 </table>
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 祝贺你，你已完成**输入：在 UWP 应用中支持墨迹**教程 ！ 我们向你展示了在 UWP 应用中支持墨迹所需的基本代码，以及如何提供 Windows Ink 平台支持的一些更加丰富的用户体验。
 
@@ -475,7 +475,7 @@ Windows Ink 还支持从剪贴板复制和粘贴笔划墨迹。
 * [墨迹工具栏位置和方向示例 （基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
 * [墨迹工具栏位置和方向示例 （动态）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
 * [简单墨迹示例 (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [复杂墨迹示例 （c + +）](https://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [复杂墨迹示例 (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
 * [墨迹示例 (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [入门教程：在 UWP 应用中支持墨迹](https://aka.ms/appsample-ink)
 * [着色通讯簿示例](https://aka.ms/cpubsample-coloringbook)

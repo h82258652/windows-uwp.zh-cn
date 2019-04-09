@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aae797db890c6bee141c3b4a79a6a85a55a6b512
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 53fd2b132fda018030b7555a9cdac718ec1f1cc4
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653742"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291555"
 ---
 # <a name="triangle-lists"></a>三角形列表
-
 
 三角形列表是隔离的三角形的列表。 各个隔离的三角形可能相隔很近，也可能相隔不近。 三角形列表必须至少拥有 3 个顶点，并且顶点总数必须可以被 3 整除。
 
@@ -32,7 +31,7 @@ ms.locfileid: "57653742"
 
 以下代码说明如何为此三角形列表创建顶点。
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
     float x,y,z;
@@ -52,7 +51,7 @@ CUSTOMVERTEX Vertices[] =
 
 下面的代码示例说明如何在 Direct3D 中呈现此三角形列表。
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to a device interface.

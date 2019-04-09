@@ -6,17 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b177a7741cae0fe786d095c26a6be08ec598bcbb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 450b1721f24d53fa1503551c40feda793af4155c
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604472"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291915"
 ---
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>操作实例：创建简单的 Windows 运行时组件并通过 JavaScript 调用它
-
-
-
 
 本演练演示了如何将 .NET Framework 与 Visual Basic 或 C# 结合使用来创建自己的 Windows 运行时类型（打包在 Windows 运行时组件中），以及如何调用为使用 JavaScript 的 Windows 生成的通用 Windows 应用中的组件。
 
@@ -32,7 +29,6 @@ ms.locfileid: "57604472"
 -   Microsoft Visual Studio 2015 或 Microsoft Visual Studio Community 2015
 
 ## <a name="creating-a-simple-windows-runtime-class"></a>创建一个简单的 Windows 运行时类
-
 
 本部分将创建为使用 JavaScript 的 Windows 生成的通用 Windows 应用，并添加 Visual Basic 或 C# Windows 运行时组件项目。 它演示了如何定义托管的 Windows 运行时类型、创建 JavaScript 中类型的实例并调用静态和实例成员。 特意将示例应用的视觉显示设置为单调效果，从而重点关注组件。 可以随意设置使其更加美观。
 
@@ -71,7 +67,6 @@ ms.locfileid: "57604472"
 
 ## <a name="call-the-component-from-javascript"></a>通过 JavaScript 调用组件
 
-
 若要通过 JavaScript 使用 Windows 运行时类型，请在由 Visual Studio 模板提供的 default.js 文件（位于项目的 js 文件夹中）的匿名函数中添加以下代码。 它应位于 app.oncheckpoint 事件处理程序之后、对 app.start 的调用之前。
 
 ```javascript
@@ -100,7 +95,6 @@ function basics2() {
 类似地，.NET Framework 提供了支持以便在托管代码中自然地使用 Windows 运行时。 在本文中的后续部分以及文章对此进行讨论[中创建 Windows 运行时组件C#和 Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)并[.NET Framework 支持 UWP 应用和 Windows 运行时](https://msdn.microsoft.com/library/hh694558.aspx).
 
 ## <a name="create-a-simple-user-interface"></a>创建简单的用户界面
-
 
 在你的 JavaScript 项目中，打开默认 .html 文件然后更新正文，如以下代码所示。 此代码包含用于示例应用的完整控件集，并指定了单击事件的函数名称。
 
@@ -161,10 +155,9 @@ args.setPromise(WinJS.UI.processAll().then(function () {
 }));
 ```
 
-向 HTML 控件添加事件是比直接在 HTML 中添加单击事件处理程序更好的方式。 请参阅[创建“Hello World”应用 (JS)](https://msdn.microsoft.com/library/windows/apps/mt280216)。
+向 HTML 控件添加事件是比直接在 HTML 中添加单击事件处理程序更好的方式。 请参阅[创建一个"Hello，World"应用程序 (JS)](/windows/uwp/get-started/create-a-hello-world-app-js-uwp)。
 
 ## <a name="build-and-run-the-app"></a>生成并运行应用
-
 
 在生成之前，根据你的计算机将所有项目的目标平台按需更改为 ARM、x64 或 x86。
 
@@ -183,18 +176,13 @@ Visual Studio 首先编译类库，然后执行运行 [Winmdexp.exe（Windows �
 
 > **请注意**  默认情况下，可以仅在您的 JavaScript 代码中设置断点。 若要调试 Visual Basic 或 C# 代码，请参阅“使用 C# 和 Visual Basic 创建 Windows 运行时组件”。
 
- 
-
 若要停止调试并关闭应用，请从应用切换到 Visual Studio，然后选择 Shift+F5。
 
 ## <a name="using-the-windows-runtime-from-javascript-and-managed-code"></a>从 JavaScript 和托管代码使用 Windows 运行时
 
-
 可以从 JavaScript 或托管代码调用 Windows 运行时。 Windows 运行时对象可以在这两者之间来回传递，并且事件可以从任一端进行处理。 但是，在两种环境中使用 Windows 运行时类型的方式在一些细节方面略有不同，因为 JavaScript 和 .NET Framework 支持 Windows 运行时的方式不同。 下面的示例使用 [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.propertyset.aspx) 类演示了这些差异。 在本例中，你在托管代码中创建 PropertySet 集合的一个实例，并注册一个事件处理程序来跟踪集合中的更改。 然后添加获取集合的 JavaScript 代码、注册其自己的事件处理程序，然后使用集合。 最后，添加通过托管代码对集合进行更改的方法，并显示处理托管异常的 JavaScript。
 
 > **重要**  在此示例中，UI 线程上激发事件。 如果从后台线程触发事件（例如在异步调用中），你需要进行一些额外工作才能使 JavaScript 处理事件。 有关详细信息，请参阅[引发 Windows 运行时组件中的事件](raising-events-in-windows-runtime-components.md)。
-
- 
 
 在 SampleComponent 项目中，添加名为 PropertySetStats 的新 **public sealed** 类（Visual Basic 中为 **Public NotInheritable** 类）。 该类封装了 PropertySet 集合并处理其 MapChanged 事件。 事件处理程序将跟踪所发生的每种类型的更改数目，并且 DisplayStats 方法将生成格式为 HTML 的报告。 请注意附加的 **using** 语句（在 Visual Basic 中为 **Imports** 语句）；请谨慎地将其添加到现有 **using** 语句中，而不是覆盖它们。
 
@@ -378,7 +366,6 @@ runtimeButton2.addEventListener("click", runtime2, false);
 相比之下，当 JavaScript 调用带有重复键的 insert 方法时，项的值已发生更改。 这种行为的差异是由于 JavaScript 和 .NET Framework 支持 Windows 运行时的方式不同，如[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)中所述。
 
 ## <a name="returning-managed-types-from-your-component"></a>从组件返回托管类型
-
 
 如前所述，你可以在 JavaScript 代码与 C# 或 Visual Basic 代码之间来回传递本机 Windows 运行时类型。 大多数情况下，类型名称和成员名称在两种情况下均相同（除了成员名称在 JavaScript 中以小写字母开头以外）。 但是在前面的部分中，PropertySet 类似乎在托管代码中具有不同的成员。 （例如，在 JavaScript 中调用 insert 方法和.NET Framework 代码中调用 Add 方法。）此部分探讨这些差异如何影响传递给 JavaScript 的.NET Framework 类型。
 

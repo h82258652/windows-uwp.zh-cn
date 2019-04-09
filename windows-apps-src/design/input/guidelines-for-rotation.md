@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f631f3178b4af4fe1c1d2d8b27e8ae6ac25c6ad1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d58587c8a7e391c51dc3267dd6ebb069170604a4
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617202"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244273"
 ---
 # <a name="rotation"></a>旋转
 
@@ -29,7 +29,7 @@ ms.locfileid: "57617202"
 ## <a name="additional-usage-guidance"></a>其他使用指南
 
 
-**旋转的概述**
+**旋转概述**
 
 旋转是 UWP 应用使用的一种触摸优化技术，允许用户以环形方向（顺时针或逆时针）旋转对象。
 
@@ -48,20 +48,20 @@ ms.locfileid: "57617202"
 
 首张图片显示第一个（拇指）和第二个（食指）接触点：食指接触树，拇指接触树枝。
 
-![显示旋转手势的两个最初触摸点的图像。](images/ux-rotate-points1.png)
+![显示旋转手势的两个初始接触点的图像。](images/ux-rotate-points1.png)
 在这第二张图片中，旋转围绕第一个（拇指）接触点进行。 旋转之后，食指仍然接触树干，并且拇指仍然接触树枝（旋转点）。
 
-![显示与旋转点旋转的图片的图像限制为两个最初触摸点之一。](images/ux-rotate-points2.png)
+![显示已旋转图片的图像，其中旋转点被限制为两个初始接触点中的一个。](images/ux-rotate-points2.png)
 在这第三张图片中，应用程序已将旋转中心定义为图片的中心点（或由用户设置）。 旋转之后，由于图片并未围绕其中一个手指旋转，因此不能直接操作（除非用户已选择该设置）。
 
-![显示与旋转点旋转的图片的图像限制为中心的图片，而不是两个最初触摸点之一。](images/ux-rotate-points3.png)
+![显示已旋转图片的图像，其中旋转点被限制为图片的中心，而不是两个初始接触点中的任何一个。](images/ux-rotate-points3.png)
 在这最后一张图片中，应用程序已将旋转中心定义为图片左边缘的中点（或由用户设置）。 而且，除非用户已选择该设置，否则在这种情况下不能直接操作。
 
 ![显示已旋转图片的图像，其中旋转点被限制为图片最左侧的中心，而不是两个初始接触点中的任何一个。](images/ux-rotate-points4.png)
 
  
 
-Windows 8 支持三种类型的旋转： 免费版、 约束、 和组合。
+Windows 10 支持三种类型的旋转： 免费版、 约束、 和组合。
 
 <table>
 <colgroup>
@@ -103,20 +103,20 @@ Windows 8 支持三种类型的旋转： 免费版、 约束、 和组合。
 
 
 **示例**
-* [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [基本输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延迟输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [焦点视觉示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **存档示例**
 * [输入：XAML 用户输入的事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
 * [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
 * [输入：触控命中测试示例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [XAML 滚动、平移以及缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
 * [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
 * [输入：笔势和 GestureRecognizer 操作](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [输入：操作和手势 （c + +） 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 触摸输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [输入：操作和手势 (C++) 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX 触控输入示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

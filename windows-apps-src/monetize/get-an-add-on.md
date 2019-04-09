@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: cc02cd5ae94b51b274c0e3ce1245020222e101f1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 01438f4f684720a2f8285471c626d7040724c79f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645912"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334415"
 ---
 # <a name="get-an-add-on"></a>获取加载项
 
 在 Microsoft Store 提交 API 中使用此方法来检索有关外接程序 （也称为应用产品或、 IAP） 到合作伙伴中心帐户注册的应用的信息。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -30,21 +30,21 @@ ms.locfileid: "57645912"
 
 | 方法 | 请求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}` |
 
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
 | 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| id | 字符串 | 必需。 要检索的加载项的应用商店 ID。 合作伙伴中心中提供了 Store ID。  |
+| id | string | 必需。 要检索的加载项的应用商店 ID。 合作伙伴中心中提供了 Store ID。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -56,7 +56,7 @@ ms.locfileid: "57645912"
 
 以下示例演示了如何检索加载项相关信息。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP HTTP/1.1
 Authorization: Bearer <your access token>
 ```

@@ -2,16 +2,16 @@
 Description: 你可以选择要在应用的应用商店一览中包含的屏幕截图、徽标和其他插图资源（如预告片和促销图像）。
 title: 应用屏幕截图、图像和预告片
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
-ms.date: 10/31/2018
+ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, uwp, 预告片, 视频, 屏幕截图, 图像, 图标, Microsoft Store 一览, Microsoft Store 一览图像
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae5b68d73a3776adf6250dbb96de827a106a6c5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a27763d76d2be65c7e0d2c6ccaeb0cd13123bdae
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610182"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244303"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>应用屏幕截图、图像和预告片
 
@@ -128,7 +128,7 @@ ms.locfileid: "57610182"
 
 还必须遵循以下所列的要求。
 
-**若要将尾部添加到您的列表：**
+**将预告片添加到你的应用商店一览中：**
 1. 在指示框中上传预告片**视频文件**。 如果你想重新使用已上传的预告片（可能是不同语言的应用商店一览），也会显示一个下拉框。
 2. 上传预告片后，你需要上传与之相应的**缩略图**。 略缩图必须为 1920 x 1080 像素的 .png 文件，通常应为取自预告片的静态图像。
 3. 单击铅笔图标,为预告片添加**标题**（255 字符或更少）。
@@ -144,7 +144,7 @@ ms.locfileid: "57610182"
 
 提供你预告片时，请确保遵循这些要求：
 
-- 视频格式必须为 MOV 或 MP4。 
+- 视频格式必须为 MOV 或 MP4。 如果要上传观看 4k 的视频，则支持仅 MP4。
 - 视频持续时长不能超过 60 秒。
 - 预告片的文件大小不能超过 2 GB。 
 - 视频分辨率必须为 1920 x 1080 像素或 3840 x 2160 像素。
@@ -158,61 +158,19 @@ ms.locfileid: "57610182"
 
 #### <a name="mov"></a>MOV
 
-<table>
-<tr>
-<td>
+| 视频 | Audio | 
+| --- | --- | 
+| <ul><li>1080p ProRes (适当的位置为高质量)</li><li>原生帧率；首选 29.97 FPS</li></ul> | <ul><li>需要立体声</li><li>推荐的音频级别：-16 LKFS/LUFS</li></ul> |
 
-**视频：**
-
-<ul>
-<li>1080p ProRes (适当的位置为高质量)</li>
-<li>原生帧率；首选 29.97 FPS</li>
-</ul>
-</td>
-<td>
-
-**音频：**
-
-<ul>
-<li>需要立体声</li>
-<li>推荐的音频级别：-16 LKFS/LUFS</li>
-</ul> 
-</td>
-</tr>
-</table>
 
 #### <a name="mp4"></a>MP4
 
-<table>
-<tr>
-<td>
+| 视频 | Audio |
+| --- | --- |
+| <ul><li>编解码器：[H.264](https://docs.microsoft.com/en-us/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>逐行扫描（无隔行）</li><li>高级画质</li><li>2 个连续的 B 帧</li><li>关闭 GOP。 一半帧率的 GOP</li><li>CABAC</li><li>50 MB/s </li><li>颜色空间：4.2.0</li></ul> | <ul><li>编解码器：AAC-LC</li><li>通道：立体声或声音外侧代码</li><li>采样速率：48 KHz</li><li>音频比特率：立体声 384 KB/s，环绕声为 512 KB/秒</li></ul> |
 
-**视频：**
-
-<ul>
-<li>编解码器：H.264</li>
-<li>逐行扫描（无隔行）</li>
-<li>高级画质</li>
-<li>2 个连续的 B 帧</li>
-<li>关闭 GOP。 一半帧率的 GOP</li>
-<li>CABAC</li>
-<li>50 MB/s </li>
-<li>颜色空间：4.2.0</li>
-</ul>
-</td>
-<td>
-
-**音频：**
-
-<ul>
-<li>编解码器：AAC-LC</li>
-<li>通道：立体声或声音外侧代码</li>
-<li>采样速率：48khz</li>
-<li>音频比特率：立体声 384 KB/s，环绕声为 512 KB/秒</li>
-</ul>
-</td>
-</tr>
-</table>
+> [!WARNING]
+> 客户可能听不到与 AVC1 以外的编解码器编码的 MP4 文件的音频。
 
 对于 H.264 中间文件，建议使用以下设置：
 - 容器：MP4

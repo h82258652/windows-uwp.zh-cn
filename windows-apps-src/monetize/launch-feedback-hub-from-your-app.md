@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 反馈中心, 启动
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f5d5c12deed9fffc3d2515529aa5bba5fbffc47
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bfce2ed245a3bf4e9b1c8b1a70c8de905d7034a3
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631832"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334795"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>从应用启动“反馈中心”
 
@@ -48,13 +48,13 @@ ms.locfileid: "57631832"
 
     如果此属性返回 **true**，则使该控件可见。 以下代码演示如何为 [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) 执行此操作。
 
-    [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
+    [!code-csharp[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
       > [!NOTE]
       > 尽管反馈中心目前在 Xbox 设备上不受支持，但 **IsSupported** 属性当前在运行 Windows 10 的版本 10.0.14271 或更高版本的 Xbox 设备上返回 **true**。 这是一个已知问题，将在 Microsoft Store Services SDK 的将来版本中得到修复。  
 
 8. 在用户单击控件时运行的事件处理程序中，获取 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 对象并调用 [LaunchAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync) 方法来启动“反馈中心”应用。 此方法有两个重载：一个不带有参数，另一个接受包含要与反馈相关联的元数据的键值对字典。 以下示例演示如何在 [Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 的 [Click](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 事件处理程序中启动“反馈应用”。
 
-    [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#FeedbackButtonClick)]
+    [!code-csharp[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#FeedbackButtonClick)]
 
 ## <a name="design-recommendations-for-your-feedback-ui"></a>对反馈 UI 的设计建议
 
