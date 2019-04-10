@@ -1,4 +1,6 @@
 items:
+- name: 概述
+  href: index.md
 - name: 应用类型
   items:
   - name: 教育应用
@@ -482,15 +484,19 @@ items:
       - name: 访问分析数据
         href: ../monetize/access-analytics-data-using-windows-store-services.md
         items:
+        - name: 获取游戏和应用的购置数据
+          href: ../monetize/acquisitions-data.md
+        - name: 获取游戏和应用的附加设备购置数据
+          href: ../monetize/add-on-acquisitions-data.md
         - name: UWP 应用
           items:
           - name: 获取购置和安装数据
             items:
-            - name: 获取应用购置
+            - name: 获取应用购置（旧版）
               href: ../monetize/get-app-acquisitions.md
             - name: 获取应用安装
               href: ../monetize/get-app-installs.md
-            - name: 获取应用购置漏斗数据
+            - name: 获取应用购置漏斗数据（旧版）
               href: ../monetize/get-acquisition-funnel-data.md
             - name: 通过通道获取应用转换
               href: ../monetize/get-app-conversions-by-channel.md
@@ -762,23 +768,6 @@ items:
       items:
       - name: 包含可执行代码的可选包
         href: ../packaging/optional-packages-with-executable-code.md
-    - name: 使用应用安装程序安装 UWP 应用
-      href: ../packaging/appinstaller-root.md
-      items:
-      - name: 使用 Visual Studio 创建应用安装程序文件
-        href: ../packaging/create-appinstallerfile-vs.md
-      - name: 从网页中安装 UWP 应用
-        href: ../packaging/installing-UWP-apps-web.md
-      - name: 使用应用安装程序文件安装相关集
-        href: ../packaging/install-related-set.md
-      - name: 使用应用安装程序文件遇到的安装问题的疑难解答
-        href: ../packaging/troubleshoot-appinstaller-issues.md
-      - name: 从 Azure Web 应用安装 UWP 应用
-        href: ../packaging/web-install-azure.md
-      - name: 从 IIS 服务器安装 UWP 应用
-        href: ../packaging/web-install-iis.md
-      - name: 在 AWS 上为 Web 安装托管 UWP 应用包
-        href: ../packaging/web-install-aws.md
     - name: 使用 WinAppDeployCmd.exe 工具安装应用
       href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
     - name: 应用功能声明
@@ -949,11 +938,20 @@ items:
       href: ../composition/composition-native-interop.md
     - name: 定制你的 UI
       href: ../composition/composition-tailoring.md
-    - name: 使用 XAML
+    - name: 使用 UWP XAML
       href: ../composition/using-the-visual-layer-with-xaml.md
       items:
       - name: XAML 照明
         href: ../composition/xaml-lighting.md
+    - name: 实现桌面应用的现代化
+      href: ../composition/visual-layer-in-desktop-apps.md
+      items:
+      - name: 使用 WPF
+        href: ../composition/using-the-visual-layer-with-wpf.md
+      - name: 使用 Windows 窗体
+        href: ../composition/using-the-visual-layer-with-windows-forms.md
+      - name: 使用 Win32
+        href: ../composition/using-the-visual-layer-with-win32.md
   - name: Windows 即服务
     href: ../updates-and-versions/application-development-for-windows-as-a-service.md
   - name: Windows 运行时组件
@@ -1515,9 +1513,9 @@ items:
       href: ../threading-async/use-a-timer-to-submit-a-work-item.md
     - name: 在多线程环境中使用 Windows 运行时对象
       href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md
-ms.openlocfilehash: e9c39734eb066058d549ed8c36ad73b2c2c6a5e1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 36d2fba58373cd35321c7787856b782b1291b12d
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582441"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57822932"
