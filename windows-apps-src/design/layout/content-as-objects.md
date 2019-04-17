@@ -110,7 +110,7 @@ ms.locfileid: "57593112"
   <div class="side-by-side-content-left">
 <b>对操作的调用</b>这一层是交互式上面被动层元素确定优先级的项。 此层上的元素具有中等视差且将剪裁到应用窗口。 TODO:是否在此层规模较大的元素或具有投影？
 
-<p>示例元素： 列表、 网格、 主命令 (TODO:Such as。...)。</p> 
+<p>示例元素： 列表、 网格、 主命令 (TODO:Such as...)。</p> 
   </div>
   <div class="side-by-side-content-right">
     <a href="images/content-as-objects/elements-forward-backward.png">应用程序在调用操作层</a>
