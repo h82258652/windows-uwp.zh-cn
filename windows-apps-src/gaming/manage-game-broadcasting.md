@@ -8,7 +8,7 @@ keywords: windows 10, 游戏, 广播
 ms.localizationpriority: medium
 ms.openlocfilehash: c906551fd626dec726498ded9a7995007230504f
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57607582"
@@ -29,7 +29,7 @@ ms.locfileid: "57607582"
 
 接下来通过在一次只有一位用户登录的电脑上调用工厂方法 **[GetDefault](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.GetDefault)** 获取 **[AppBroadcastingUI](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui)** 类的实例。 在可以有多个用户登录的 XBox 上，改为调用 **[GetForUser](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.getforuser)**。 然后调用 **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.GetStatus)** 获取应用的广播状态。
 
-**AppBroadcastingStatus** 类的 **[CanStartBroadcast](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.CanStartBroadcast)** 属性向你指示应用当前是否可以开始广播。 如果不能，你可以检查**[详细信息](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.Details)** 属性以确定不可进行广播的原因。 根据具体原因，你可能要向用户显示状态或显示启用广播的说明。
+**AppBroadcastingStatus** 类的 **[CanStartBroadcast](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.CanStartBroadcast)** 属性向你指示应用当前是否可以开始广播。 如果不能，你可以检查 **[详细信息](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.Details)** 属性以确定不可进行广播的原因。 根据具体原因，你可能要向用户显示状态或显示启用广播的说明。
 
 [!code-cpp[CanStartBroadcast](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetCanStartBroadcast)]
 

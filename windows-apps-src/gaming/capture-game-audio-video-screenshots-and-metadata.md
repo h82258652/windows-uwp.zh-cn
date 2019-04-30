@@ -8,7 +8,7 @@ keywords: windows 10, 游戏, 捕获, 音频, 视频, 元数据
 ms.localizationpriority: medium
 ms.openlocfilehash: c4d4d764395d7f383e9cefcb9d8b1121db098780
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57601932"
@@ -97,7 +97,7 @@ ms.locfileid: "57601932"
 [!code-cpp[CallRecordTimeSpanToFile](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetCallRecordTimeSpanToFile)]
 
 ## <a name="save-screenshot-images-to-files"></a>将屏幕截图图像保存到文件
-你的应用可以启动屏幕截图捕获，将应用窗口的当前内容保存到一个图像文件或使用不同的图像编码保存到多个图像文件。 若要指定你希望使用的图像编码，可以创建一个字符串列表，其中每个字符串表示一个图像类型。  **[ImageEncodingSubtypes](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingsubtypes)** 的属性为每个受支持的图像类型提供正确的字符串，如 **MediaEncodingSubtypes.Png** 或 **MediaEncodingSubtypes.JpegXr**。
+你的应用可以启动屏幕截图捕获，将应用窗口的当前内容保存到一个图像文件或使用不同的图像编码保存到多个图像文件。 若要指定你希望使用的图像编码，可以创建一个字符串列表，其中每个字符串表示一个图像类型。 **[ImageEncodingSubtypes](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingsubtypes)** 的属性为每个受支持的图像类型提供正确的字符串，如 **MediaEncodingSubtypes.Png** 或 **MediaEncodingSubtypes.JpegXr**。
 
 通过调用 **AppRecordingManager** 对象的 **[SaveScreenshotToFilesAsync](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.savescreenshottofilesasync)** 方法启动屏幕捕获。 此方法的第一个参数是 **StorageFolder**，即图像文件的保存位置。 第二个参数是文件名前缀，系统会将保存的每个图像类型的扩展名（如“.png”）附加到该前缀后面。
 
