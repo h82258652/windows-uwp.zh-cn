@@ -2,16 +2,17 @@
 ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: 应用功能声明
 description: 功能必须在你的通用 Windows 平台 (UWP) 应用的程序包清单中声明，以便可用于访问某些 API 或资源（如图片、音乐）或者设备（如相机或麦克风）。
-ms.date: 11/26/2018
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 58609ed1b3b2e178c735f3ebf042a98587ce6cb9
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.custom: 19H1
+ms.openlocfilehash: 3c126b17e8ba9b66bc5e7c4fccd0142cd63ab7e9
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57822942"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63777908"
 ---
 # <a name="app-capability-declarations"></a>应用功能声明
 
@@ -155,7 +156,7 @@ ms.locfileid: "57822942"
 | **系统级别的约会访问** | **appointmentsSystem** 受限功能允许应用读取和修改用户日历上的所有约会。<br /><br />若要使用 [**Windows.ApplicationModel.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn263359) 命名空间中的 API，则需要此功能。 <br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
 | **系统级别聊天消息访问**\* | **chatSystem** 受限功能允许应用读取和写入所有短信和彩信。<br />若要使用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 命名空间中的 API，则需要此功能。 <br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
 | **系统级联系人访问** | **contactsSystem** 受限功能允许应用读取已指定为受限或敏感的联系人信息，以及修改现有的联系人信息。<br /><br />若要使用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 命名空间中的 API，则需要此功能。 <br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
-| **电子邮件访问*** | **email** 受限功能允许应用读取、整理和发送用户电子邮件。<br /><br />若要使用 [**Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285) 命名空间中的 API，则需要此功能。 <br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
+| **电子邮件访问** | **email** 受限功能允许应用读取、整理和发送用户电子邮件。<br /><br />若要使用 [**Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285) 命名空间中的 API，则需要此功能。 <br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
 | **系统级别的电子邮件访问**| **emailSystem** 受限功能允许应用读取、整理和发送受限或敏感的电子邮件。 <br /><br />若要使用 [**Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285) 命名空间中的 API，则需要此功能。 <br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
 | **系统级别调用历史记录访问** | **phoneCallHistorySystem** 受限功能允许应用通过更改现有条目和编写新条目来完全修改呼叫历史记录。<br /><br />若要使用 [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) 命名空间中的 API，则需要此功能。 <br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
 | **发送文本消息**\* | **smsSend** 受限功能允许应用发送短信和彩信。<br /><br />若要使用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 命名空间中的 API，则需要此功能。 |
@@ -213,7 +214,14 @@ ms.locfileid: "57822942"
 | **Windows Team 设备凭据** | **TeamEditionDeviceCredential**受限的功能允许应用访问 Api 的请求的设备运行 Windows 10 版本 1703年或更高版本的 Surface Hub 设备上的帐户凭据。<br/><br/>我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
 | **Windows 团队应用程序视图** | **TeamEditionView**受限的功能允许应用访问 Api，用于托管运行 Windows 10 版本 1703年或更高版本的 Surface Hub 设备上的应用程序视图。<br/><br/>我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
 | **照相机处理扩展插件** | **CameraProcessingExtension**受限的功能允许应用处理而无需直接照相机控件照相机中捕获的映像。<br /><br />此功能需要调用中的 Api [Windows.Devices.PointOfService.Provider](/uwp/api/windows.devices.pointofservice.provider)命名空间。<br /><br />任何人都可以请求访问要提交到应用商店的此功能。 |
-| **数据使用情况管理*** | **NetworkDataUsageManagement**受限的功能允许应用程序以收集网络数据使用情况信息。<br /><br />此功能需要调用[GetAttributedNetworkUsageAsync](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync)。<br /><br />任何人都可以请求访问要提交到应用商店的此功能。 |
+| **数据使用情况管理** | **NetworkDataUsageManagement**受限的功能允许应用程序以收集网络数据使用情况信息。<br /><br />此功能需要调用[GetAttributedNetworkUsageAsync](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync)。<br /><br />任何人都可以请求访问要提交到应用商店的此功能。 |
+| **管理电话线路连接** | **PhoneLineTransportManagement**功能允许应用程序管理系统设备负责电话线路连接。<br /><br />此功能需要使用中的 PhoneLineTransportDevice Api [Windows.ApplicationModel.Calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls)命名空间。 |
+| **Unvirtualized 的资源** | **UnvirtualizedResources**受限的功能使应用程序可以声明[RegistryWriteVirtualization](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-registrywritevirtualization)并[FileSystemWriteVirtualization](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-filesystemwritevirtualization)若要禁用注册表和文件系统虚拟化其包清单中的元素。 这些声明可防止系统虚拟化到 HKEY_CURRENT_USER 或用户的 AppData 文件夹中，任何写入操作分别。 这是在你的应用程序而需要其他应用程序以读取或写入相同的注册表或文件系统项作为你的应用程序的情况下很有用。<br /><br />此功能适用于某些类型的发布的 Microsoft 和我们的合作伙伴的桌面 PC 游戏。 它不是要用于其他方案，因为它可能会危害系统的功能完全卸载。 |
+| **可修改应用程序** | **ModifiableApp**受限的功能使应用程序可以声明[windows.mutablePackageDirectories](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-package-extension)其包清单中的扩展。 这使您可以提供你的应用程序而需要的文件夹的名称修改或添加要查找的文件。 操作系统将创建此文件夹，并使应用程序能够使用此文件夹，而不是 （或除了） 中的文件最初安装的应用程序的文件。<br /><br />此功能适用于某些类型的发布的 Microsoft 和我们的合作伙伴的桌面 PC 游戏。 它将不被授予对于其他情况，因为它可以允许未经签名的代码执行。 |
+| **包写入重定向兼容性修补程序** | **PackageWriteRedirectionCompatibilityShim**受限的功能配置你的应用程序在每个用户位置中创建所有新文件。 任何已存在的文件打开以进行写入操作前复制到每用户位置和该位置中的文件执行修改的操作。 此功能可用于创建或修改其安装文件夹中的文件的应用程序。<br /><br />此功能适用于某些类型的发布的 Microsoft 和我们的合作伙伴的桌面 PC 游戏。 但是，也可能适用于其他应用在某些情况下。 |
+| **自定义安装操作** | **CustomInstallActions**受限的功能使应用程序可以声明[windows.customInstall](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-package-extension)中其包清单，以便它可以指定一个或多个其他扩展安装程序执行与你的应用程序的文件 （.exe 或.msi）。 这允许您指定的任何标准的部署方案的自定义操作： 安装、 更新、 修复或卸载。 例如，这是有用的应用程序捆绑的第三方的可再发行组件。<br /><br />此功能适用于某些类型的发布的 Microsoft 和我们的合作伙伴的桌面 PC 游戏。 它不会授予的其他方案。 |
+| **打包的服务** | **PackagedServices**受限的功能允许应用程序创建的 Microsoft 合作伙伴和企业能够声明[windows.service](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-extension)扩展在其包清单，该 it可以安装一个或多个服务和应用程序。 这些服务可以配置为本地服务、 网络服务或本地系统帐户下运行。 本地服务和网络服务的服务仅需要**packagedServices**功能。 本地系统服务，两者都需要**packagedServices**并**localSystemServices**功能。<br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。  |
+| **本地系统服务** | **LocalSystemServices**受限的功能允许通过 Microsoft 合作伙伴和企业能够安装一个或多个本地系统服务，以及应用程序创建的应用程序 (即，你的应用程序可以声明StartAccount 服务为本地系统)。 此方案还需要**packagesServices**功能。 <br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 
 
 ## <a name="custom-capabilities"></a>自定义功能
 

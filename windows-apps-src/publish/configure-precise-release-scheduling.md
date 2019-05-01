@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 计划, 发布日期, 日期, 启动
 ms.localizationpriority: medium
-ms.openlocfilehash: a1477a426a9cdf240e694efb19bd7521fcd734cb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e247d59253d24fd309b26aebc450dcc7b5e9051d
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597202"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63787141"
 ---
 # <a name="configure-precise-release-scheduling"></a>配置精确的发布计划
 
@@ -37,7 +37,7 @@ ms.locfileid: "57597202"
 
 你将看到下面两个选项：**发行**并**停止获取**。 
 
-## <a name="release"></a>发布版本
+## <a name="release"></a>发行版本
 
 在**发布**下拉列表中，可以设置你希望你的应用在应用商店中推出的时间。 这表示通过搜索或浏览可以在应用商店中发现该应用，并且客户可以查看其应用商店一览以及获取该应用。
 
@@ -46,7 +46,7 @@ ms.locfileid: "57597202"
 
 你可以为产品的**发布**计划配置以下选项：
 - **越早越好**:只要它是认证和发布，将发布该产品。 这是默认选项。
-- **在**:该产品将在发布上的日期和时间选择。 另外还有两个选项：
+- **at**:该产品将在发布上的日期和时间选择。 另外还有两个选项：
    - **UTC**：所选择的时间将是协调世界时 (UTC) 时间，以便在同一个应用版本时间无处不在。
    - **本地**:所选择的时间将在关联了一个市场，每个时区中使用。 （请注意，对于跨多个时区的市场，将仅使用该市场中的某一个时区。 对于美国，将使用东部时区。）
 - **未计划**:应用程序存储区中将不可用。 如果选择此选项，你可以稍后通过创建新的提交并在其他选项中选择一个选项，在应用商店中推出应用。

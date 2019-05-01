@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 描述, 说明, Microsoft Store 一览, 营销
 ms.localizationpriority: medium
-ms.openlocfilehash: a6cea0103d484cc84f9c253a08f07ed3d69b67f3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 41e6207671c9709405c466767a7669ffb0d6f8e7
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610872"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63788182"
 ---
 # <a name="write-a-great-app-description"></a>编写出色的应用提要
 

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a8ce14094733ef5598c510198f4268744cb581e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: bf71e5f6dd77da025a50866d32caca2870d3525b
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621872"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63788427"
 ---
 # <a name="package-version-numbering"></a>程序包版本编号
 
@@ -36,7 +36,7 @@ ms.locfileid: "57621872"
 
 下面的示例说明了如何管理版本编号，以便通过多个提交将预期的程序包交付给客户。
 
-### <a name="example-moving-to-a-single-package-over-multiple-submissions"></a>示例：将移动到一个包通过多个提交
+### <a name="example-moving-to-a-single-package-over-multiple-submissions"></a>例如：将移动到一个包通过多个提交
 
 Windows 10，您可以编写一个基本代码，在任何位置运行。 这使得从全新的跨平台项目着手变得更加容易。 然而，出于多种原因，你可能不希望通过合并现有的基本代码立即创建单个项目。
 
@@ -45,9 +45,9 @@ Windows 10，您可以编写一个基本代码，在任何位置运行。 这使
 | 提交 | 目录                                                  | 客户体验                                                                                                                                                                             |
 |------------|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1          | 包版本：1.1.10.0 <br> 设备系列：Windows.Desktop，minVersion 10.0.10240.0 <br> <br> 包版本：1.1.0.0 <br> 设备系列：Windows.Mobile，minVersion 10.0.10240.0     | -   使用 Windows 10 桌面版 10.0.10240.0 以及更高版本的设备将获得 1.1.10.0 <br> -   使用 Windows 10 移动版 10.0.10240.0 以及更高版本的设备将获得 1.1.0.0 <br> -   其他设备系列将无法购买和安装应用 |
-| 2          | 包版本：1.1.10.0 <br> 设备系列：Windows.Desktop，minVersion 10.0.10240.0 <br> <br> 包版本：1.1.0.0 <br> 设备系列：Windows.Mobile，minVersion 10.0.10240.0 <br> <br> 包版本：1.0.0.0 <br> 设备系列：Windows.Universal，minVersion 10.0.10240.0    | -   使用 Windows 10 桌面版 10.0.10240.0 以及更高版本的设备将获得 1.1.10.0 <br> -   使用 Windows 10 移动版 10.0.10240.0 以及更高版本的设备将获得 1.1.0.0 <br> -   其他（既非桌面版也非移动版）设备系列将在引入时获得 1.0.0.0 <br> -   已安装应用的桌面和移动设备将不会看到任何更新（因为它们已具有最适用的版本，即 1.1.10.0 和 1.1.0.0，这两者均高于 1.0.0.0） |
-| 3          | 包版本：1.1.10.0 <br> 设备系列：Windows.Desktop，minVersion 10.0.10240.0 <br> <br> 包版本：1.1.5.0 <br> 设备系列：Windows.Universal，minVersion 10.0.10250.0 <br> <br> 包版本：1.0.0.0 <br> 设备系列：Windows.Universal，minVersion 10.0.10240.0    | -   使用 Windows 10 桌面版 10.0.10240.0 以及更高版本的设备将获得 1.1.10.0 <br> -   使用 Windows 10 移动版 10.0.10250.0 以及更高版本的设备将获得 1.1.5.0 <br> -   使用 Windows 10 移动版且内部版本号在 10.0.10240.0 与 10.010250.0（包含前者，但不包含后者）之间的设备将获得 1.1.0.0 
-| 4          | 包版本：2.0.0.0 <br> 设备系列：Windows.Universal，minVersion 10.0.10240.0   | -   使用 Windows 10 版本 v10.0.10240.0 及更高版本的所有设备系列上的全部客户将获得程序包 2.0.0.0 | 
+| 2          | 包版本：1.1.10.0 <br> 设备系列：Windows.Desktop，minVersion 10.0.10240.0 <br> <br> 包版本：1.1.0.0 <br> 设备系列：Windows.Mobile，minVersion 10.0.10240.0 <br> <br> 包版本：1.0.0.0 <br> 设备系列：Windows.Universal, minVersion 10.0.10240.0    | -   使用 Windows 10 桌面版 10.0.10240.0 以及更高版本的设备将获得 1.1.10.0 <br> -   使用 Windows 10 移动版 10.0.10240.0 以及更高版本的设备将获得 1.1.0.0 <br> -   其他（既非桌面版也非移动版）设备系列将在引入时获得 1.0.0.0 <br> -   已安装应用的桌面和移动设备将不会看到任何更新（因为它们已具有最适用的版本，即 1.1.10.0 和 1.1.0.0，这两者均高于 1.0.0.0） |
+| 3          | 包版本：1.1.10.0 <br> 设备系列：Windows.Desktop，minVersion 10.0.10240.0 <br> <br> 包版本：1.1.5.0 <br> 设备系列：Windows.Universal, minVersion 10.0.10250.0 <br> <br> 包版本：1.0.0.0 <br> 设备系列：Windows.Universal, minVersion 10.0.10240.0    | -   使用 Windows 10 桌面版 10.0.10240.0 以及更高版本的设备将获得 1.1.10.0 <br> -   使用 Windows 10 移动版 10.0.10250.0 以及更高版本的设备将获得 1.1.5.0 <br> -   使用 Windows 10 移动版且内部版本号在 10.0.10240.0 与 10.010250.0（包含前者，但不包含后者）之间的设备将获得 1.1.0.0 
+| 4          | 包版本：2.0.0.0 <br> 设备系列：Windows.Universal, minVersion 10.0.10240.0   | -   使用 Windows 10 版本 v10.0.10240.0 及更高版本的所有设备系列上的全部客户将获得程序包 2.0.0.0 | 
 
 > [!NOTE]
 >  在所有情况下，客户的设备将接收包具有符合条件的最大可能的版本编号。 例如，在上面的第三个提交中，所有桌面设备都将获得 v1.1.10.0（即使它们具有 OS 版本 10.0.10250.0 或更高版本也是如此），因此它们还能接受 v1.1.5.0。 由于 1.1.10.0 是其最适用的最高版本号，因此即为它们将获取的程序包。

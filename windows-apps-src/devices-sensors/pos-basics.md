@@ -5,12 +5,12 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b4ff9443c40cf44e171bf898b627de3e2819034
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f1e58dbf8bae22df0652ada6ff8aafff6d30e8aa
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656462"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63817394"
 ---
 # <a name="getting-started-with-point-of-service"></a>服务点入门
 
@@ -28,7 +28,7 @@ ms.locfileid: "57656462"
 | [PointOfService 端到端](pos-get-started.md)  | 这是如何与 PointOfService 外围设备利用上面的示例进行交互的端到端示例。 |
 |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 | 主题   | 描述 |
 |:--------|:------------|

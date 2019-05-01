@@ -2,16 +2,17 @@
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
 title: 设备配对
 description: 某些设备需要先进行配对，然后才能使用。 Windows.Devices.Enumeration 命名空间支持使用三种不同方式的配对设备。
-ms.date: 02/08/2017
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bb5c156dc29f8229db9e4cb215fe462b4be6af6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.custom: 19H1
+ms.openlocfilehash: 6f59a23f08abbd5edeb9d68be476fb29bd8aab2e
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653382"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63813618"
 ---
 # <a name="pair-devices"></a>设备配对
 
@@ -57,6 +58,8 @@ ms.locfileid: "57653382"
 为了支持自定义配对，将需要为 [**PairingRequested**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.pairingrequested.aspx) 事件创建一个处理程序。 此处理程序需要确保可处理可能会在自定义配对方案中使用的所有各种 [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808)。 要执行何种操作具体取决于作为事件参数的一部分提供的 **DevicePairingKinds**。
 
 请务必注意，自定义配对始终是系统级操作。 因此，如果你在桌面或 Windows Phone 上操作，将始终在配对即将发生时向用户显示系统对话框。 这是因为这两个平台所拥有的用户体验都要求征得用户同意。 由于该对话框是自动生成的，因此如果你在这两个平台上操作时为 **ConfirmOnly** 选择了 [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808)，将无需创建你自己的对话框。 对于其他 **DevicePairingKinds**，你将需要执行一些特殊处理，具体取决于特定 **DevicePairingKinds** 值。 有关如何针对不同的 **DevicePairingKinds** 值处理自定义配对的示例，请参阅相关示例。
+
+从 Windows 10，版本 1903年，一个新**DevicePairingKinds**支持，则**ProvidePasswordCredential**。 此值表示，应用必须请求用户名和密码从用户为了使用配对的设备进行身份验证。 若要处理这种情况下，调用[ **AcceptWithPasswordCredential** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepairingrequestedeventargs.acceptwithpasswordcredential?branch=release-19h1#Windows_Devices_Enumeration_DevicePairingRequestedEventArgs_AcceptWithPasswordCredential_Windows_Security_Credentials_PasswordCredential_)的事件参数的方法**PairingRequested**事件处理程序以接受配对。 传入[ **PasswordCredential** ](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordcredential)封装的用户名和密码作为参数的对象。 请注意，用户名和密码远程设备是不同于和通常不完全相同的本地登录的用户的凭据。
 
 ## <a name="unpairing"></a>取消配对
 

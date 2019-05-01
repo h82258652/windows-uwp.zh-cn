@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 用户角色, 用户权限, 自定义角色, 用户访问权限, 自定义权限, 标准角色
 ms.localizationpriority: medium
-ms.openlocfilehash: d1581757cb16cf2ed5d0082a6a0e4a4e09299361
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 450fc4d016debb72364cbefedb6b69a80cc6235b
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641032"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63790593"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>为帐户用户设置角色或自定义权限
 
@@ -103,15 +103,15 @@ ms.locfileid: "57641032"
     <tbody>
 <tr><td align="left">    <b>帐户设置</b>                    </td><td align="left">  可查看<b>帐户设置</b>部分中的所有页面，包括<a href="managing-your-profile.md">联系人信息</a>。       </td><td align="left">  可查看<b>帐户设置</b>部分中的所有页面。 可更改<a href="managing-your-profile.md">联系人信息</a>和其他页面，但无法更改付款帐户或税务配置文件（除非单独授予该权限）。            </td></tr>
 <tr><td align="left">    <b>帐户用户</b>                       </td><td align="left">  可在<b>用户</b>部分查看已添加到帐户的用户。          </td><td align="left">  可将用户添加到帐户，并在<b>用户</b>部分更改现有的用户。             </td></tr>
-<tr><td align="left">    <b>帐户级 ad 性能报告</b> </td><td align="left">  可查看帐户级的<a href="advertising-performance-report.md">广告性能报告</a>。      </td><td align="left">  不适用   </td></tr>
+<tr><td align="left">    <b>帐户级 ad 性能报告</b> </td><td align="left">  可查看帐户级的<a href="advertising-performance-report.md">广告性能报告</a>。      </td><td align="left">  不可用   </td></tr>
 <tr><td align="left">    <b>广告市场活动</b>                        </td><td align="left">  可查看在帐户中创建的<a href="create-an-ad-campaign-for-your-app.md">广告市场活动</a>。      </td><td align="left">  可在帐户中创建、管理和查看<a href="create-an-ad-campaign-for-your-app.md">广告市场活动</a>。          </td></tr>
 <tr><td align="left">    <b>Ad 中介</b>                        </td><td align="left">  可以查看所有产品的 ad 中介配置帐户中。    </td><td align="left">  可以查看和更改的帐户中的所有产品的 ad 中介配置。        </td></tr>
-<tr><td align="left">    <b>Ad 中介报告</b>                </td><td align="left">  可查看帐户中所有产品的<a href="ad-mediation-report.md">广告中介报告</a>。    </td><td align="left">  不适用    </td></tr>
-<tr><td align="left">    <b>Ad 性能报告</b>              </td><td align="left">  可查看帐户中所有产品的<a href="advertising-performance-report.md">广告性能报告</a>。       </td><td align="left">  不适用         </td></tr>
+<tr><td align="left">    <b>Ad 中介报告</b>                </td><td align="left">  可查看帐户中所有产品的<a href="ad-mediation-report.md">广告中介报告</a>。    </td><td align="left">  不可用    </td></tr>
+<tr><td align="left">    <b>Ad 性能报告</b>              </td><td align="left">  可查看帐户中所有产品的<a href="advertising-performance-report.md">广告性能报告</a>。       </td><td align="left">  不可用         </td></tr>
 <tr><td align="left">    <b>广告单元</b>                            </td><td align="left">  可查看为帐户创建的<a href="in-app-ads.md">广告单元</a>。    </td><td align="left">  可创建、管理和查看帐户<a href="in-app-ads.md">广告单元</a>。             </td></tr>
 <tr><td align="left">    <b>关联广告</b>                       </td><td align="left">  可查看帐户中所有产品的<a href="about-affiliate-ads.md">联盟广告</a>使用情况。    </td><td align="left">  可管理和查看帐户中所有产品的<a href="about-affiliate-ads.md">联盟广告</a>使用情况。                </td></tr>
-<tr><td align="left">    <b>附属机构性能报告</b>      </td><td align="left">  可查看帐户中所有产品的<a href="affiliates-performance-report.md">联盟性能报告</a>。   </td><td align="left">  不适用   </td></tr>
-<tr><td align="left">    <b>应用安装广告报告</b>             </td><td align="left">  可查看<a href="promote-your-app-report.md">广告活动报告</a>。           </td><td align="left">  不适用   </td></tr>
+<tr><td align="left">    <b>附属机构性能报告</b>      </td><td align="left">  可查看帐户中所有产品的<a href="affiliates-performance-report.md">联盟性能报告</a>。   </td><td align="left">  不可用   </td></tr>
+<tr><td align="left">    <b>应用安装广告报告</b>             </td><td align="left">  可查看<a href="promote-your-app-report.md">广告活动报告</a>。           </td><td align="left">  不可用   </td></tr>
 <tr><td align="left">    <b>社区广告</b>                       </td><td align="left">  可查看帐户中所有产品的免费<a href="about-community-ads.md">社区广告</a>使用情况。          </td><td align="left">  可创建、管理和查看帐户中所有产品的免费<a href="about-community-ads.md">社区广告</a>使用情况。               </td></tr>
 <tr><td align="left">    <b>联系信息</b>                        </td><td align="left">  可查看“帐户设置”部分中的<a href="managing-your-profile.md">联系人信息</a>。        </td><td align="left">  可编辑和查看“帐户设置”部分中的<a href="managing-your-profile.md">联系人信息</a>。            </td></tr>
 <tr><td align="left">    <b>COPPA 法规遵从性</b>                    </td><td align="left">  可查看帐户中所有产品的 <a href="in-app-ads.md#coppa-compliance">COPPA 合规性</a>选择（指示产品是否面向年龄在 13 岁以下的儿童）。                                            </td><td align="left">  可编辑和查看帐户中所有产品的 <a href="in-app-ads.md#coppa-compliance">COPPA 合规性</a> 选择（指示产品是否面向年龄在 13 岁以下的儿童）。         </td></tr>
@@ -125,7 +125,7 @@ ms.locfileid: "57641032"
 <tr><td align="left">    <b>依赖方</b>&nbsp;*                   </td><td align="left">  可查看依赖方，检索 XTokens。    </td><td align="left">  可管理和查看依赖方，检索 XTokens。     </td></tr>
 <tr><td align="left">    <b>光盘请求</b>&nbsp;*                   </td><td align="left">  可查看游戏光盘请求。    </td><td align="left">  可生成并查看游戏光盘请求。     </td></tr>
 <tr><td align="left">    <b>沙盒</b>&nbsp;*                         </td><td align="left">  可访问<b>沙盒</b>页，并查看帐户中的沙盒以及这些沙盒的任何适用配置。 无法查看每个沙盒的产品和提交，除非授予相应的产品级别权限。 </td><td align="left">  可访问<b>沙盒</b>页，并查看和管理帐户中的沙盒，包括创建和删除沙盒以及管理它们的配置。 无法查看每个沙盒的产品和提交，除非授予相应的产品级别权限。    </td></tr>
-<tr><td align="left">    <b>Microsoft Store 促销活动</b>&nbsp;*                            </td><td align="left">  不适用    </td><td align="left">  可以将选项配置为在 Microsoft Store 促销活动中自动加入产品。     </td></tr>
+<tr><td align="left">    <b>Microsoft Store 促销活动</b>&nbsp;*                            </td><td align="left">  不可用    </td><td align="left">  可以将选项配置为在 Microsoft Store 促销活动中自动加入产品。     </td></tr>
 <tr><td align="left">    <b>计税配置文件</b>                         </td><td align="left">  可查看<b>帐户设置</b>中的<a href="setting-up-your-payout-account-and-tax-forms.md#tax-forms">税务配置文件信息和表单</a>。     </td><td align="left">  可填写税单和更新<b>帐户设置</b>中的<a href="setting-up-your-payout-account-and-tax-forms.md#tax-forms">税务配置文件信息</a>。     </td></tr>
 <tr><td align="left">    <b>测试帐户</b>&nbsp;*                     </td><td align="left">  可查看测试 Xbox Live 配置的帐户。      </td><td align="left">  可创建、管理和查看测试 Xbox Live 配置的帐户。      </td></tr>
 <tr><td align="left">    <b>Xbox 设备</b>                        </td><td align="left">  可在<b>帐户设置</b>部分查看为帐户启用的 Xbox 开发主机。       </td><td align="left">  可在<b>帐户设置</b>部分查看为帐户添加、删除和启用的 Xbox 开发主机。     </td></tr>
@@ -166,11 +166,11 @@ ms.locfileid: "57641032"
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>收购</b>     </td><td>    可查看产品的<a href="acquisitions-report.md">购置</a>和<a href="add-on-acquisitions-report.md">加载项购置</a>报告。        </td><td>    不适用    </td><td>    N/A (父产品的设置包括**外接程序收购**报表)        </td><td>    不适用                         </td></tr>
-    <tr><td align="left">    <b>使用情况</b> </td><td>    可查看产品的<a href="usage-report.md">使用情况报告</a>。     </td><td>    不适用       </td><td>    不适用     </td><td>    不适用         </td></tr>
-    <tr><td align="left">    <b>运行状况</b> </td><td>    可查看产品的<a href="health-report.md">运行状况报告</a>。    </td><td>    不适用     </td><td>    不适用     </td><td>    不适用         </td></tr>
-    <tr><td align="left">    <b>客户反馈</b>    </td><td>    可查看产品的<a href="reviews-report.md">评论</a>和<a href="feedback-report.md">反馈</a>报告。       </td><td>    不适用（若要响应反馈或评论，必须授予<b>联系客户</b>权限）   </td><td>    不适用     </td><td>    不适用         </td></tr>
-    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    可以查看<a href="xbox-analytics-report.md">Xbox 的分析报告</a>的产品。    </td><td>    不适用   </td><td>    不适用       </td><td>    不适用          </td></tr>
+    <tr><td align="left">    <b>收购</b>     </td><td>    可查看产品的<a href="acquisitions-report.md">购置</a>和<a href="add-on-acquisitions-report.md">加载项购置</a>报告。        </td><td>    不可用    </td><td>    N/A (父产品的设置包括**外接程序收购**报表)        </td><td>    不可用                         </td></tr>
+    <tr><td align="left">    <b>使用情况</b> </td><td>    可查看产品的<a href="usage-report.md">使用情况报告</a>。     </td><td>    不可用       </td><td>    不可用     </td><td>    不可用         </td></tr>
+    <tr><td align="left">    <b>运行状况</b> </td><td>    可查看产品的<a href="health-report.md">运行状况报告</a>。    </td><td>    不可用     </td><td>    不可用     </td><td>    不可用         </td></tr>
+    <tr><td align="left">    <b>客户反馈</b>    </td><td>    可查看产品的<a href="reviews-report.md">评论</a>和<a href="feedback-report.md">反馈</a>报告。       </td><td>    不适用（若要响应反馈或评论，必须授予<b>联系客户</b>权限）   </td><td>    不可用     </td><td>    不可用         </td></tr>
+    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    可以查看<a href="xbox-analytics-report.md">Xbox 的分析报告</a>的产品。    </td><td>    不可用   </td><td>    不可用       </td><td>    不可用          </td></tr>
     </tbody>
     </table>
 
@@ -188,9 +188,9 @@ ms.locfileid: "57641032"
     </thead>
     <tbody>
     <tr><td align="left">    <b>促销代码</b>     </td><td>    可查看产品及其加载项的<a href="generate-promotional-codes.md">促销代码</a>订单和使用信息，并可查看使用情况信息。         </td><td>    可查看、管理和创建产品及其加载项的<a href="generate-promotional-codes.md">促销代码</a>，还可查看使用信息。          </td><td>    不适用（对于父产品的设置适用于所有加载项）     </td><td>    不适用（对于父产品的设置适用于所有加载项）     </td></tr>
-    <tr><td align="left">    <b>目标产品/服务</b>     </td><td>    可查看产品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">定向优惠</a>。         </td><td>    可查看、管理和创建产品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">定向优惠</a>。          </td><td>    不适用     </td><td>    不适用      </td></tr>
-    <tr><td align="left">    <b>联系客户</b>  </td><td>    可查看<a href="respond-to-customer-feedback.md">客户反馈响应</a>和<a href="respond-to-customer-reviews.md">客户评论响应</a>，前提是还授予了<b>客户反馈</b>权限。 还可查看为产品创建的<a href="send-push-notifications-to-your-apps-customers.md">目标通知</a>。    </td><td>    可以<a href="respond-to-customer-feedback.md">响应客户反馈</a>并<a href="respond-to-customer-reviews.md">响应的客户评论</a>，只要<b>客户反馈</b>以及授予权限。 还可为产品<a href="send-push-notifications-to-your-apps-customers.md">创建和发送目标通知</a>。                   </td><td>    不适用         </td><td>    不适用                          </td></tr>
-    <tr><td align="left">    <b>试验</b></td><td>    可查看产品的<a href="../monetize/run-app-experiments-with-a-b-testing.md">实验（A/B 测试）</a>和实验数据。   </td><td>    可为产品创建、管理和查看<a href="../monetize/run-app-experiments-with-a-b-testing.md">实验（A/B 测试）</a>，还可查看实验数据。     </td><td>    不适用  </td><td>    不适用                 </td></tr>
+    <tr><td align="left">    <b>目标产品/服务</b>     </td><td>    可查看产品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">定向优惠</a>。         </td><td>    可查看、管理和创建产品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">定向优惠</a>。          </td><td>    不可用     </td><td>    不可用      </td></tr>
+    <tr><td align="left">    <b>联系客户</b>  </td><td>    可查看<a href="respond-to-customer-feedback.md">客户反馈响应</a>和<a href="respond-to-customer-reviews.md">客户评论响应</a>，前提是还授予了<b>客户反馈</b>权限。 还可查看为产品创建的<a href="send-push-notifications-to-your-apps-customers.md">目标通知</a>。    </td><td>    可以<a href="respond-to-customer-feedback.md">响应客户反馈</a>并<a href="respond-to-customer-reviews.md">响应的客户评论</a>，只要<b>客户反馈</b>以及授予权限。 还可为产品<a href="send-push-notifications-to-your-apps-customers.md">创建和发送目标通知</a>。                   </td><td>    不可用         </td><td>    不可用                          </td></tr>
+    <tr><td align="left">    <b>试验</b></td><td>    可查看产品的<a href="../monetize/run-app-experiments-with-a-b-testing.md">实验（A/B 测试）</a>和实验数据。   </td><td>    可为产品创建、管理和查看<a href="../monetize/run-app-experiments-with-a-b-testing.md">实验（A/B 测试）</a>，还可查看实验数据。     </td><td>    不可用  </td><td>    不可用                 </td></tr>
     <tr><td align="left">    <b>Microsoft Store 促销活动</b>&nbsp;*</td><td>    可以查看产品的促销活动状态。   </td><td>    可以将产品添加到促销活动并配置折扣。      </td><td>    可以查看产品的促销活动状态。   </td><td>    可以将产品添加到促销活动并配置折扣。      </td></tr>
     </tbody>
     </table>
@@ -215,7 +215,7 @@ ms.locfileid: "57641032"
     <tr><td align="left">    <b>存储列表</b>  </td><td>    可查看产品提交的<a href="create-app-store-listings.md">应用商店一览页面</a>。  </td><td>    可查看和编辑产品提交的<a href="create-app-store-listings.md">应用商店一览页面</a>，并可添加不同语言的新应用商店一览。     </td><td>    可查看加载项提交的<a href="create-add-on-store-listings.md">应用商店一览页面</a>。            </td><td>    可查看和编辑加载项提交的<a href="create-add-on-store-listings.md">应用商店一览页面</a>，并可添加不同语言的应用商店一览。                 </td></tr>
     <tr><td align="left">    <b>提交到应用商店</b>     </td><td>    如果“无法访问”设置为“只读”，则将授予此权限。           </td><td>    可将产品提交到应用商店，并查看认证报告。 包含全新和更新的提交。 </td><td>如果“无法访问”设置为“只读”，则将授予此权限。     </td><td>    可将加载项提交到应用商店，并查看认证报告。 包含全新和更新的提交。</td></tr>
     <tr><td align="left">    <b>创建新的提交</b>       </td><td>    如果“无法访问”设置为“只读”，则将授予此权限。        </td><td>    可为产品创建新<a href="app-submissions.md">提交</a>。  </td><td>    如果“无法访问”设置为“只读”，则将授予此权限。   </td><td>    可为加载项创建新<a href="add-on-submissions.md">提交</a>。        </td></tr>
-    <tr><td align="left">    <b>新外接程序</b>    </td><td>    如果“无法访问”设置为“只读”，则将授予此权限。 </td><td>    可为产品<a href="set-your-add-on-product-id.md">创建新加载项</a>。 </td><td>    不适用    </td><td>    不适用        </td></tr>
+    <tr><td align="left">    <b>新外接程序</b>    </td><td>    如果“无法访问”设置为“只读”，则将授予此权限。 </td><td>    可为产品<a href="set-your-add-on-product-id.md">创建新加载项</a>。 </td><td>    不可用    </td><td>    不可用        </td></tr>
     <tr><td align="left">    <b>名称保留项</b>   </td><td>    可查看产品的<a href="manage-app-names.md">管理应用名称</a>页面。</td><td>    可查看和编辑产品的<a href="manage-app-names.md">管理应用名称</a>页面，包括预留其他名称和删除预留的名称。 </td><td>   可查看加载项的预留名称。    </td><td>   可查看和编辑加载项的预留名称。          </td></tr>
     </tbody>
     </table>
@@ -233,8 +233,8 @@ ms.locfileid: "57641032"
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>应用频道</b>&nbsp;*</td><td>    不适用  </td><td>    可通过 OneGuide 将促销视频频道发布到 Xbox 主机以供观看。  </td><td>  不适用 </td><td> 不适用 </td></tr>
-    <tr><td align="left">    <b>服务配置</b>&nbsp;*    </td><td>    可查看与成就、多人游戏、排行榜和产品的其他 Xbox Live 配置相关的设置。  </td><td>    可查看和编辑与成就、多人游戏、排行榜和产品的其他 Xbox Live 配置相关的设置。  </td><td>    不适用     </td><td>    不适用                      </td></tr>
+    <tr><td align="left">    <b>应用频道</b>&nbsp;*</td><td>    不可用  </td><td>    可通过 OneGuide 将促销视频频道发布到 Xbox 主机以供观看。  </td><td>  不可用 </td><td> 不可用 </td></tr>
+    <tr><td align="left">    <b>服务配置</b>&nbsp;*    </td><td>    可查看与成就、多人游戏、排行榜和产品的其他 Xbox Live 配置相关的设置。  </td><td>    可查看和编辑与成就、多人游戏、排行榜和产品的其他 Xbox Live 配置相关的设置。  </td><td>    不可用     </td><td>    不可用                      </td></tr>
 </tbody>
 </table>
 

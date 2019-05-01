@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10，uwp，发布，预处理，认证，释放，挂起、 提交、 发布状态，时间
 ms.localizationpriority: medium
-ms.openlocfilehash: 733d5ff882d7ed7c574f6fe6fedd28b79c3913d9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fe9df9ce95c6b17bcd3d702bf09ac57b9f205e0c
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597072"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63790583"
 ---
 # <a name="the-app-certification-process"></a>应用认证过程
 
@@ -31,7 +31,7 @@ ms.locfileid: "57597072"
 
 认证流程完成后，你将会收到一份认证报告，告知你的应用是否已通过认证。 如果应用未通过认证，该报告将指出未能通过哪项测试，或者未能满足哪项[策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)。 修复问题后，你可以为应用创建新提交以再次开始认证过程。
 
-## <a name="release"></a>发布版本
+## <a name="release"></a>发行版本
 
 在您的应用程序通过认证，它已准备好移动到**发布**过程。
 

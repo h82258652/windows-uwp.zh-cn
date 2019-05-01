@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 移动运营商, 移动结算, 移动运营商结算
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f23e40abfb269e2b52e9dc5b66c2486da071c9b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 760c7ea7929d287c241ddcba48bc6687e9bc2b51
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591832"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63827663"
 ---
 # <a name="mobile-operator-billing"></a>移动运营商结算
 
@@ -25,33 +25,33 @@ Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的�
 
 移动运营商结算目前受这些移动运营商支持。
 
-| 国家/地区  | 移动运营商                 |
-|-----------------|----------------------------------|
-| 澳大利亚       | Optus                            |
-| 奥地利         | Hutchison 3G Austria、A1 Telekom、T-Mobile / tele.ring  |
-| 比利时         | Base、Proximus                   |
-| 加拿大          | Telus                            |
-| 捷克共和国  | T-Mobile                         |
-| 丹麦         | 3、TDC / YouSee、Telenor、Telia  |
-| 芬兰         | DNA、Elisa                       |
-| 法国          | Orange                           |
-| 德国         | O2、Telekom Deutschland          |
-| 匈牙利         | Telenor                          |
-| 意大利           | Wind Tre                        |
-| 马来西亚        | Digi                             |
-| 荷兰     | KPN / Telfort                    |
-| 挪威          | Telenor / Talkmore、 Telia / OneCall   |
-| 波兰          | 橙色 Play                     |
-| 新加坡       | M1 Limited、 StarHub              |
-| 斯洛伐克        | Slovak Telekom                   |
-| 西班牙           | Orange                           |
-| 瑞典          | Telenor、3                       |
-| 瑞士     | Swisscom, 日出                |
-| 中国台湾          | FarEasTone                       |
-| 土耳其          | Turkcell                         |
-| 阿拉伯联合酋长国 | Etisalat                    |
-| 美国   | Sprint、Verizon                  |
-| 英国  | O2、3 UK、EE                     |
+| 国家/地区       | 移动运营商                                        |
+|----------------------|---------------------------------------------------------|
+| 澳大利亚            | Optus                                                   |
+| 奥地利              | Hutchison 3G Austria、A1 Telekom、T-Mobile / tele.ring  |
+| 比利时              | Base、Proximus                                          |
+| 加拿大               | Telus                                                   |
+| 捷克共和国       | T-Mobile                                                |
+| 丹麦              | 3、TDC / YouSee、Telenor、Telia                         |
+| 芬兰              | DNA、Elisa                                              |
+| 法国               | Orange                                                  |
+| 德国              | O2，Telekom Deutschland Vodafone                       |
+| 匈牙利              | Telenor                                                 |
+| 意大利                | Wind Tre                                               |
+| 马来西亚             | Digi                                                    |
+| 荷兰          | KPN / Telfort                                           |
+| 挪威               | Telenor / Talkmore、 Telia / OneCall                     |
+| 波兰               | 橙色 Play                                            |
+| 新加坡            | M1 Limited、 StarHub                                     |
+| 斯洛伐克             | Slovak Telekom                                          |
+| 西班牙                | Orange                                                  |
+| 瑞典               | Telenor、3                                              |
+| 瑞士          | Swisscom, 日出                                       |
+| 中国台湾               | FarEasTone                                              |
+| 土耳其               | Turkcell                                                |
+| 阿拉伯联合酋长国 | Etisalat                                                |
+| 美国        | Sprint、Verizon                                         |
+| 英国       | O2、3 UK、EE                                            |
 
  
 

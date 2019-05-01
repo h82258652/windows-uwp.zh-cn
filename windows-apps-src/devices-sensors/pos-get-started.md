@@ -5,12 +5,12 @@ ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 518529fecff9f25a83a03847b1623bf9f09a8145
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d059f0e33f7343fa0ac9919a243008ed486e31ff
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661152"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63772735"
 ---
 # <a name="getting-started-with-point-of-service"></a>服务点入门
 
@@ -207,7 +207,7 @@ if (claimedBarcodeScanner != null)
 > [!NOTE]
 > 已声明和未声明的服务点设备类会实现 [IClosable 接口](https://docs.microsoft.com/uwp/api/windows.foundation.iclosable)。 如果设备已通过网络或蓝牙连接到应用，在连接另一个应用前必须丢弃已声明和未声明的对象。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 + [条形码扫描程序示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
 + [现金抽屉示例]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
 + [行显示示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)

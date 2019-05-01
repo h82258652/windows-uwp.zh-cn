@@ -6,12 +6,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用提交
 ms.localizationpriority: medium
-ms.openlocfilehash: fa5b5a62348a36f7758468a86e19b744cdde8754
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 474abc2ec43b7f8eab408bd75cca33653d27d932
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335076"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63789681"
 ---
 # <a name="manage-app-submissions"></a>管理应用提交
 
@@ -345,12 +345,12 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 | targetPublishDate           | string  | 提交的发布日期采用 ISO 8601 格式（如果 *targetPublishMode* 设为“SpecificDate”）。  |  
 | listings           |   对象  |  键值对字典，其中每个键为国家/地区代码，而每个值为包含应用列表信息的[列表资源](#listing-object)。       |   
 | hardwarePreferences           |  数组  |   一组用于定义应用的[硬件首选项](https://msdn.microsoft.com/windows/uwp/publish/enter-app-properties#hardware_preferences)的字符串。 这可以是以下值之一： <ul><li>触控</li><li>键盘</li><li>鼠标</li><li>相机</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
-| automaticBackupEnabled           |  布尔值  |   指示 Windows 是否可以将应用的数据包含在 OneDrive 的自动备份中。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。   |   
-| canInstallOnRemovableMedia           |  布尔值  |   指示客户是否可以将应用安装到可移动存储。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
-| isGameDvrEnabled           |  布尔值 |   指示是否可以为应用启用游戏 DVR。    |   
+| automaticBackupEnabled           |  boolean  |   指示 Windows 是否可以将应用的数据包含在 OneDrive 的自动备份中。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。   |   
+| canInstallOnRemovableMedia           |  boolean  |   指示客户是否可以将应用安装到可移动存储。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
+| isGameDvrEnabled           |  boolean |   指示是否可以为应用启用游戏 DVR。    |   
 | gamingOptions           |  数组 |   一个包含[游戏选项资源](#gaming-options-object)的数组，用于为应用定义游戏相关设置。     |   
-| hasExternalInAppProducts           |     布尔值          |   指示应用是否允许用户在 Microsoft Store 商务系统之外进行购买。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
-| meetAccessibilityGuidelines           |    布尔值           |  指示应用是否经测试符合辅助功能准则。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。      |   
+| hasExternalInAppProducts           |     boolean          |   指示应用是否允许用户在 Microsoft Store 商务系统之外进行购买。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
+| meetAccessibilityGuidelines           |    boolean           |  指示应用是否经测试符合辅助功能准则。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。      |   
 | notesForCertification           |  string  |   包含应用的[认证说明](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification)。    |    
 | status           |   string  |  提交的状态。 这可以是以下值之一： <ul><li>无</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>认证</li><li>CertificationFailed</li><li>发行版本</li><li>ReleaseFailed</li></ul>      |    
 | statusDetails           |   对象  | 包含有关提交状态的附加详细信息的[状态详细信息资源](#status-details-object)，其中包括任何错误的相关信息。       |    
@@ -358,7 +358,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 | applicationPackages           |   数组  | 提供有关提交中每个包的详细信息的[应用程序包资源](#application-package-object)数组。 |    
 | packageDeliveryOptions    | 对象  | 包含提交的逐步软件包推出和强制更新设置的[软件包递送选项资源](#package-delivery-options-object)。  |
 | enterpriseLicensing           |  string  |  [企业授权值](#enterprise-licensing)的其中一个值，它指示应用的企业授权行为。  |    
-| allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  布尔值   |  指示是否允许 Microsoft [将应用提供给未来 Windows 10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
+| allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  指示是否允许 Microsoft [将应用提供给未来 Windows 10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
 | allowTargetFutureDeviceFamilies           | 对象   |  键值对字典，其中每个键为 [Windows 10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)，而每个值为布尔值，指示是否允许应用面向指定的设备系列。     |    
 | friendlyName           |   string  |  在提交内容，如合作伙伴中心中所示的友好名称。 当你创建提交时，系统会为你生成此值。       |  
 | trailers           |  数组 |   一个包含最多 15 个[预告片资源](#trailer-object)的数组，用于表示应用一览的视频预告片。<br/><br/>   |  
@@ -376,7 +376,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 |  marketSpecificPricings               |    对象     |  键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为[价格段](#price-tiers)。 这些项表示[应用在特定市场中的自定义价格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)。 此字典中的任何项替代 *priceId* 值针对特定市场所指定的基价。      |     
 |  sales               |   数组      |  **已弃用**。 包含应用销售信息的[销售资源](#sale-object)数组。   |     
 |  priceId               |   string      |  用于指定应用[基价](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price)的[价格段](#price-tiers)。   |     
-|  isAdvancedPricingModel               |   布尔值      |  如果为 **true**，你的开发人员帐户可以使用从 0.99 美元到 1999.99 美元的扩展价格段。 如果为 **false**，你的开发人员帐户可以使用从 0.99 美元到 999.99 美元的原始价格段。 有关其他价格段的详细信息，请参阅[价格段](#price-tiers)。<br/><br/>**注意**&nbsp;&nbsp;此字段为只读字段。   |
+|  isAdvancedPricingModel               |   boolean      |  如果为 **true**，你的开发人员帐户可以使用从 0.99 美元到 1999.99 美元的扩展价格段。 如果为 **false**，你的开发人员帐户可以使用从 0.99 美元到 999.99 美元的原始价格段。 有关其他价格段的详细信息，请参阅[价格段](#price-tiers)。<br/><br/>**注意**&nbsp;&nbsp;此字段为只读字段。   |
 
 
 <span id="sale-object" />
@@ -392,7 +392,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述    |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述    |
 |-----------------|---------|------|
 |  name               |    string     |   销售的名称。    |     
 |  basePriceId               |   string      |  要用于销售基价的[价格段](#price-tiers)。    |     
@@ -418,7 +418,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 此资源包含应用的基本列表信息。 此资源具有以下值。
 
-| ReplTest1           | 在任务栏的搜索框中键入    | 描述       |
+| 值           | 在任务栏的搜索框中键入    | 描述       |
 |-----------------|---------|------|
 |  copyrightAndTrademarkInfo                |   string      |  可选的[版权和/或商标信息](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info)。  |
 |  keywords                |  数组       |  [关键字](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords)数组，用于帮助应用出现在搜索结果中。    |
@@ -445,7 +445,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 此资源包含应用一览的图像和图标数据。 有关应用一览的图像和图标的详细信息，请参阅[应用屏幕截图和图像](../publish/app-screenshots-and-images.md)。 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述           |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述           |
 |-----------------|---------|------|
 |  fileName               |    string     |   ZIP 存档中已为提交上载的图像文件的名称。    |     
 |  fileStatus               |   string      |  图像文件的状态。 这可以是以下值之一： <ul><li>无</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
@@ -489,17 +489,17 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 | 值           | 在任务栏的搜索框中键入    | 描述        |
 |-----------------|---------|------|
 |  genres               |    数组     |  包含一个或多个下列字符串的数组，用于描述游戏类型： <ul><li>Games_ActionAndAdventure</li><li>Games_CardAndBoard</li><li>Games_Casino</li><li>Games_Educational</li><li>Games_FamilyAndKids</li><li>Games_Fighting</li><li>Games_Music</li><li>Games_Platformer</li><li>Games_PuzzleAndTrivia</li><li>Games_RacingAndFlying</li><li>Games_RolePlaying</li><li>Games_Shooter</li><li>Games_Simulation</li><li>Games_Sports</li><li>Games_Strategy</li><li>Games_Word</li></ul>    |
-|  isLocalMultiplayer               |    布尔值     |  指示游戏是否支持本地多人游戏。      |     
-|  isLocalCooperative               |   布尔值      |  指示游戏是否支持本地合作游戏。    |     
-|  isOnlineMultiplayer               |   布尔值      |  指示游戏是否支持在线多人游戏。    |     
-|  isOnlineCooperative               |   布尔值      |  指示游戏是否支持在线合作游戏。    |     
+|  isLocalMultiplayer               |    boolean     |  指示游戏是否支持本地多人游戏。      |     
+|  isLocalCooperative               |   boolean      |  指示游戏是否支持本地合作游戏。    |     
+|  isOnlineMultiplayer               |   boolean      |  指示游戏是否支持在线多人游戏。    |     
+|  isOnlineCooperative               |   boolean      |  指示游戏是否支持在线合作游戏。    |     
 |  localMultiplayerMinPlayers               |   int      |   指定游戏支持进行本地多人游戏的最小玩家人数。   |     
 |  localMultiplayerMaxPlayers               |   int      |   指定游戏支持进行本地多人游戏的最大玩家人数。  |     
 |  localCooperativeMinPlayers               |   int      |   指定游戏支持进行本地合作游戏的最小玩家人数。  |     
 |  localCooperativeMaxPlayers               |   int      |   指定游戏支持进行本地合作游戏的最大玩家人数。  |     
-|  isBroadcastingPrivilegeGranted               |   布尔值      |  指示游戏是否支持广播。   |     
-|  isCrossPlayEnabled               |   布尔值      |   指示游戏是否支持 Windows 10 电脑和 Xbox 玩家之间的多人游戏会话。  |     
-|  kinectDataForExternal               |   string      |  指定以下字符串值之一，表示游戏是否可以收集 Kinect 数据并将其发送到外部服务： <ul><li>NotSet</li><li>Unknown</li><li>已启用</li><li>Disabled</li></ul>   |
+|  isBroadcastingPrivilegeGranted               |   boolean      |  指示游戏是否支持广播。   |     
+|  isCrossPlayEnabled               |   boolean      |   指示游戏是否支持 Windows 10 电脑和 Xbox 玩家之间的多人游戏会话。  |     
+|  kinectDataForExternal               |   string      |  指定以下字符串值之一，表示游戏是否可以收集 Kinect 数据并将其发送到外部服务： <ul><li>NotSet</li><li>Unknown</li><li>Enabled</li><li>Disabled</li></ul>   |
 
 > [!NOTE]
 > Microsoft Store 提交 API 首次面向开发人员发布后，在 2017 年 5 月添加了 *GamingOptions* 资源。 如果你在此资源推出前通过提交 API 为应用创建了提交并且此提交仍在进行中，则在成功确认提交或删除提交前，此资源将为 null 且无法为应用提交。 如果 *gamingOptions* 资源不可用于应用提交，则 [get an app](get-an-app.md) 方法返回的[应用程序资源](get-app-data.md#application_object) 的 *hasAdvancedListingPermission* 字段为 false。
@@ -510,7 +510,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 此资源包含有关提交状态的附加详细信息。 此资源具有以下值。
 
-| ReplTest1           | 在任务栏的搜索框中键入    | 描述         |
+| 值           | 在任务栏的搜索框中键入    | 描述         |
 |-----------------|---------|------|
 |  errors               |    对象     |   包含提交的错误详细信息的[状态详细信息资源](#status-detail-object)数组。    |     
 |  warnings               |   对象      | 包含提交的警告详细信息的[状态详细信息资源](#status-detail-object)数组。      |
@@ -523,7 +523,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 此资源包含关于提交的任何相关错误或警告的附加详细信息。 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述        |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述        |
 |-----------------|---------|------|
 |  code               |    string     |   描述错误或警告类型的[提交状态代码](#submission-status-code)。   |     
 |  details               |     string    |  包含有关问题的更多详细信息的消息。     |
@@ -588,9 +588,9 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 此资源提供对提交的认证报告数据的访问权限。 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述             |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述             |
 |-----------------|---------|------|
-|     日期            |    string     |  日期和时间生成报表，采用 ISO 8601 格式。    |
+|     date            |    string     |  日期和时间生成报表，采用 ISO 8601 格式。    |
 |     reportUrl            |    string     |  用于访问报告的 URL。    |
 
 
@@ -617,11 +617,11 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述        |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述        |
 |-----------------|---------|------|
 | packageRollout   |   对象      |  包含提交的逐步软件包推出设置的[软件包推出资源](#package-rollout-object)。   |  
-| isMandatoryUpdate    | 布尔值    |  指示是否要将此提交中的软件包视为对自行安装的应用更新强制。 有关自行安装的应用更新的强制软件包的详细信息，请参阅[为应用下载并安装包更新](../packaging/self-install-package-updates.md)。    |  
-| mandatoryUpdateEffectiveDate    |  日期   |  此提交中的软件包变为强制的日期和时间，采用 ISO 8601 格式和 UTC 时区。   |        
+| isMandatoryUpdate    | boolean    |  指示是否要将此提交中的软件包视为对自行安装的应用更新强制。 有关自行安装的应用更新的强制软件包的详细信息，请参阅[为应用下载并安装包更新](../packaging/self-install-package-updates.md)。    |  
+| mandatoryUpdateEffectiveDate    |  date   |  此提交中的软件包变为强制的日期和时间，采用 ISO 8601 格式和 UTC 时区。   |        
 
 <span id="package-rollout-object" />
 
@@ -629,9 +629,9 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 此资源包含提交的逐步[软件包推出设置](#manage-gradual-package-rollout)。 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述        |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述        |
 |-----------------|---------|------|
-| isPackageRollout   |   布尔值      |  指示是否为提交启用逐步软件包推出。    |  
+| isPackageRollout   |   boolean      |  指示是否为提交启用逐步软件包推出。    |  
 | packageRolloutPercentage    | 浮点数    |  将在逐步推出中收到软件包的用户百分比。    |  
 | packageRolloutStatus    |  string   |  以下指示逐步软件包推出状态的字符串之一： <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
 | fallbackSubmissionId    |  string   |  将由不获取逐步推出软件包的客户接收的提交 ID。   |          
@@ -689,7 +689,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 此资源包含在[预告片资源](#trailer-object)中定义的预告片的其他区域设置特定资产。 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述        |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述        |
 |-----------------|---------|------|
 | title   |   string      |  预告片的本地化标题。 当用户以全屏模式播放预告片时，显示此标题。     |  
 | imageList    | 数组    |   包含[图像](#image-for-trailer-object)资源的数组，用于为预告片提供缩略图。 此数组只能包含一个[图像](#image-for-trailer-object)资源。  |   
@@ -701,7 +701,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 此资源描述了预告片的缩略图。 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述           |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述           |
 |-----------------|---------|------|
 |  fileName               |    string     |   你为提交上传的 ZIP 存档中的缩略图文件的名称。    |     
 |  id  |  string  | 缩略图的 ID。 通过合作伙伴中心提供此值。  |
@@ -719,7 +719,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 以下值表示应用提交的[定价资源](#pricing-object)中可用的价格段。
 
-| ReplTest1           | 描述        |
+| 值           | 描述        |
 |-----------------|------|
 |  Base               |   未设置价格段；使用应用的基价。      |     
 |  NotAvailable              |   应用在特定区域中不可用。    |     

@@ -4,17 +4,17 @@ title: 通过付款请求 API 简化付款
 ms.date: 09/26/2017
 ms.topic: article
 keywords: windows 10，uwp，付款请求
-ms.openlocfilehash: 36078c65d6762c8ed477a3a1342f3b6a0acaaa6f
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: a40b8265e3445319bd7baa530df0f9e9eaae0f31
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334585"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63804495"
 ---
 # <a name="simplify-payments-with-the-payment-request-api"></a>通过付款请求 API 简化付款
 适用于 UWP 应用付款请求 API 为基础[W3C 付款请求 API 规范](https://w3c.github.io/browser-payment-api/)。这样可以简化签出过程在 UWP 应用中的功能。 使用付款选项和发货地址与 Microsoft 帐户已保存的情况下，用户可以快速通过签出。 您可以提高转换率并减少数据泄露的风险，因为标记化的付款信息。 从 Windows 10 创意者更新开始，用户可以使用其已保存的付款方式付款轻松地跨 UWP 应用中的体验。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 在开始使用付款请求 API 之前，有必须执行或注意的事项。
 
 ### <a name="getting-a-merchant-id"></a>获取商户 ID

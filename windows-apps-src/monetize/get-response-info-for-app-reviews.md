@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 评价 API, 回复信息
 ms.localizationpriority: medium
-ms.openlocfilehash: 0497b5eec67f9204139cd10d4523b534d6c8779f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 095afd1eab9b7bd0acdac7c38d9e8e99dd59f38c
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595552"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63785758"
 ---
 # <a name="get-response-info-for-reviews"></a>获取评价的回复信息
 
 如果要以编程方式回复客户对你的应用的评价，可以在 Microsoft Store 评价 API 中使用此方法，以首先确定你是否有回复评价的权限。 你无法回复由选择不接收评价回复的客户提交的评价。 确认你可以回复评价后，你可以使用[提交对应用评价的回复](submit-responses-to-app-reviews.md)方法以编程方式回复评价。
 
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -38,17 +38,17 @@ ms.locfileid: "57595552"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
 | 参数        | 在任务栏的搜索框中键入   | 描述                                     |  必需  |
 |---------------|--------|--------------------------------------------------|--------------|
-| applicationId | 字符串 | 其中的应用包含要确定是否可以回复的评价的应用商店 ID。 Store ID 位于[应用程序标识页](../publish/view-app-identity-details.md)在合作伙伴中心。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。 |  是  |
-| reviewId | 字符串 | 要回复的评价 ID（这是一个 GUID）。 评价 ID 位于 Microsoft Store 分析 API 中的[获取应用评价](get-app-reviews.md)方法的回复数据中，以及[评价报告](../publish/reviews-report.md)的[脱机下载](../publish/download-analytic-reports.md)中。 <br/>如果忽略此参数，此方法的回复正文将指示你是否有回复指定应用的任何评价的权限。 |  否  |
+| applicationId | string | 其中的应用包含要确定是否可以回复的评价的应用商店 ID。 Store ID 位于[应用程序标识页](../publish/view-app-identity-details.md)在合作伙伴中心。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。 |  是  |
+| reviewId | string | 要回复的评价 ID（这是一个 GUID）。 评价 ID 位于 Microsoft Store 分析 API 中的[获取应用评价](get-app-reviews.md)方法的回复数据中，以及[评价报告](../publish/reviews-report.md)的[脱机下载](../publish/download-analytic-reports.md)中。 <br/>如果忽略此参数，此方法的回复正文将指示你是否有回复指定应用的任何评价的权限。 |  否  |
 
 
 ### <a name="request-example"></a>请求示例
@@ -68,7 +68,7 @@ Authorization: Bearer <your access token>
 | 值      | 在任务栏的搜索框中键入   | 描述    |  
 |------------|--------|-----------------------|
 | CanRespond      | 布尔  | 值为 **true** 表示你可以回复指定的评价，或者你有回复指定应用的任何评价的权限。 否则，此值将为 **false**。       |
-| DefaultSupportEmail  | 字符串 |  应用的[支持电子邮件地址](../publish/enter-app-properties.md#support-contact-info)，其在应用的应用商店一览中有所指定。 如果未指定支持电子邮件地址，则此字段为空。    |
+| DefaultSupportEmail  | string |  应用的[支持电子邮件地址](../publish/enter-app-properties.md#support-contact-info)，其在应用的应用商店一览中有所指定。 如果未指定支持电子邮件地址，则此字段为空。    |
 
  
 ### <a name="response-example"></a>响应示例

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a8b32abae4938081610db2cfc2ded25adadab95d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 43782a1a5d26ba84fe53f6c164a944fa357edfb1
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650952"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63787024"
 ---
 # <a name="create-add-on-store-listings"></a>创建加载项应用商店一览
 
@@ -33,7 +33,7 @@ ms.locfileid: "57650952"
 
 若要编辑 Store 一览，请在加载项提交概述页中单击语言名称。 下面介绍了你可以为每种语言输入的信息。
 
-## <a name="title"></a>Title
+## <a name="title"></a>标题
 
 你必须在此处提供标题，对于此加载项，它是你的客户将看到的名称。 你的标题最长可以为 100 个字符。
 

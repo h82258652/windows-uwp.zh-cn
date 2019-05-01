@@ -6,12 +6,12 @@ ms.date: 03/21/2019
 ms.topic: article
 keywords: Windows 10, uwp, 类别, 子类别, 流派
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ff9cf72ce293c81065659472652715669eeeecd
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 227119c265565e6f2f7965e53bb57f74a5c619f1
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334785"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63787171"
 ---
 # <a name="category-and-subcategory-table"></a>类别和子类别表
 
@@ -36,7 +36,7 @@ Microsoft Store 将应用整理为以下类别和子类别。
 <table>
     <thead>
     <tr class="header">
-    <th align="left">类别</th>
+    <th align="left">Category</th>
     <th align="left">子类别</th>
     </tr>
     </thead>

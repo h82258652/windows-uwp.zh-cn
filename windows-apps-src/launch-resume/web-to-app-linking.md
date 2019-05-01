@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 66284538c97aee1a11c27beaa483dcfe109b6615
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 176009cb3a2fb14eb5071d48d59a0b807d4c81d6
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641072"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63770369"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>使用应用 URI 处理程序启用“网站的应用”功能
 
@@ -46,7 +46,7 @@ ms.locfileid: "57641072"
 </Applications>
 ```
 
-上述声明将你的应用注册为处理来自指定主机的链接。 如果你的网站具有多个地址（例如：m.example.com、www.example.com 和 example.com），则针对每个地址在 `<uap3:AppUriHandler>` 内添加单独的 `<uap3:Host Name=... />` 条目。
+上述声明将你的应用注册为处理来自指定主机的链接。 如果你的网站具有多个地址 (例如： m.example.com、 www\.example.com 和 example.com) 然后添加一个单独`<uap3:Host Name=... />`内的条目`<uap3:AppUriHandler>`为每个地址。
 
 ## <a name="associate-your-app-and-website-with-a-json-file"></a>将你的应用和网站与 JSON 文件关联
 
@@ -71,7 +71,7 @@ Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器
 
 上述 JSON 文件示例演示了通配符的用法。 通配符允许你使用较少的代码行支持多种链接。 Web 到应用链接在 JSON 文件中支持两种类型的通配符：
 
-| **通配符** | **描述**               |
+| **Wildcard** | **说明**               |
 |--------------|-------------------------------|
 | **\***       | 表示任何子字符串      |
 | **?**        | 表示单个字符 |
@@ -186,14 +186,14 @@ AppModel\SystemAppData\YourApp\AppUriHandlers`
 ## <a name="appurihandlers-tips"></a>AppUriHandlers 提示：
 
 - 请确保仅指定你的应用可以处理的链接。
-- 列出你将支持的所有主机。  请注意，www.example.com 和 example.com 是不同的主机。
+- 列出你将支持的所有主机。  请注意该 www\.example.com 和 example.com 是不同的主机。
 - 用户可以在“设置”中选择他们更希望哪个应用处理网站。
 - 你的 JSON 文件必须上载到 https 服务器。
 - 如果你需要更改你希望支持的路径，可以重新发布你的 JSON 文件，而无需重新发布你的应用。 用户将在 1-8 天内看到更改。
 - 带有 AppUriHandlers 的所有旁加载应用都将在安装时验证主机的链接。 不需要上载 JSON 文件即可测试该功能。
 - 只要你的应用是使用 [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) 启动的 UWP 应用或使用 [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx) 启动的 Windows 桌面应用，此功能就可行。 如果 URL 对应于注册的应用 URI 处理程序，则将启动应用，而不是浏览器。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [Web 到应用示例项目](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
 [windows.protocol 注册](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)

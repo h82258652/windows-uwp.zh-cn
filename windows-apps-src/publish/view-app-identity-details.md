@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e108d603a623e3b9e41d7ced3c0fafc80f006b8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: acc39dfecaf4360f9f5b7db9f3c1fe34021f35c0
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610812"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63788231"
 ---
 # <a name="view-app-identity-details"></a>查看应用标识的详细信息
 
@@ -27,7 +27,7 @@ ms.locfileid: "57610812"
 
 -   **包/Identity/名称**
 -   **发布服务器标识/包 /**
--   **包/属性/PublisherDisplayName**
+-   **Package/Properties/PublisherDisplayName**
 
 有关详细信息，请参阅[程序包清单架构参考](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
 
