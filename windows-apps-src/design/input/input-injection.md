@@ -7,12 +7,12 @@ keywords: 设备, 数字化器, 输入, 交互, 注入
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2699917beed9330dd2044704f19b3c25256c3ca8
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: 2ff3150d4c1ed713451669b8918906141daa9659
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343236"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065236"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>通过输入式注入模拟用户输入
 
@@ -50,7 +50,8 @@ ms.locfileid: "58343236"
 1. 首先，我们设置 UI (MainPage.xaml)。
 
     我们有两个网格区域（一个用于鼠标输入，另一个用于注入式触控输入），每个区域均有四个按钮。
-       > [!NOTE] The Grid background must be assigned a value (`Transparent`, in this case), otherwise pointer events are not detected.
+      > [!NOTE] 
+      > 网格背景必须分配一个值 (`Transparent`，在这种情况下)，否则指针事件未检测到。
 
     在输入区域检测到任何鼠标点击时，对应的触控事件将插入到输入式注入区域。 来自注入输入的按钮点击在标题区域报告。
 
