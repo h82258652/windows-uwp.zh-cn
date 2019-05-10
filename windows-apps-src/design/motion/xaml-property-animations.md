@@ -8,12 +8,12 @@ pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 81da1e769ab171e47a4f4046e8ec7e7c84ecf2d1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 183a5433553ff6fdfcb09f6960f6a642f2c8bc08
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630352"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444151"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>使用组合动画的 XAML 元素具有动画效果
 
@@ -31,6 +31,22 @@ ms.locfileid: "57630352"
 > [!NOTE]
 > 若要使用这些属性 UIElement，UWP 项目目标版本必须是 1809年或更高版本。 有关配置项目版本的详细信息，请参阅[版本自适应应用](../../debug-test-perf/version-adaptive-apps.md)。
 
+## <a name="examples"></a>示例
+
+<table>
+<th align="left">XAML 控件库<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>如果有<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序安装，请单击此处<a href="xamlcontrolsgallery:/item/XamlCompInterop">打开应用，请参阅操作中的动画互操作</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
 ## <a name="new-rendering-properties-replace-old-rendering-properties"></a>新呈现属性替换旧呈现属性
 
 此表显示可用于修改 UIElement，还可使用进行动画处理的呈现的属性[CompositionAnimation](/uwp/api/windows.ui.composition.compositionanimation)。
@@ -43,7 +59,7 @@ ms.locfileid: "57630352"
 | [缩放](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 | 缩放以中心点为中心的元素 |
 | [旋转](/uwp/api/windows.ui.xaml.uielement.rotation) | 浮点 | 将元素周围的 RotationAxis 和中心点旋转 |
 | [RotationAxis](/uwp/api/windows.ui.xaml.uielement.rotationaxis) | Vector3 | 旋转轴 |
-| [中心点](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | 缩放和旋转的中心点 |
+| [CenterPoint](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | 缩放和旋转的中心点 |
 
 TransformMatrix 属性值是属性组合在一起缩放、 旋转和转换按以下顺序：TransformMatrix，缩放、 旋转、 转换。
 
@@ -51,7 +67,7 @@ TransformMatrix 属性值是属性组合在一起缩放、 旋转和转换按以
 
 这些属性作为组合的名称相似的属性具有相同的用途和行为[Visual](/uwp/api/windows.ui.composition.visual)类 （除了转换，这不是视觉对象）。
 
-### <a name="example-setting-the-scale-property"></a>示例：设置规模属性
+### <a name="example-setting-the-scale-property"></a>例如：设置规模属性
 
 此示例演示如何在按钮上设置的位数属性。
 
@@ -74,7 +90,7 @@ button.Scale = new Vector3(2.0f,2.0f,1.0f);
 
 - [RenderTransform](/uwp/api/windows.ui.xaml.uielement.rendertransform)
 - [RenderTransformOrigin](/uwp/api/windows.ui.xaml.uielement.rendertransformorigin)
-- [投影](/uwp/api/windows.ui.xaml.uielement.projection)
+- [Projection](/uwp/api/windows.ui.xaml.uielement.projection)
 - [Transform3D](/uwp/api/windows.ui.xaml.uielement.transform3d)
 
 在您设置 （或进行动画处理） 的任何新属性，不能使用旧的属性。 相反，如果你设置 （或进行动画处理） 的任何旧的属性，则无法使用新的属性。
@@ -95,7 +111,7 @@ button.Scale = new Vector3(2.0f,2.0f,1.0f);
 
 使用[StartAnimation](/uwp/api/windows.ui.xaml.uielement.startanimation)并[StopAnimation](/uwp/api/windows.ui.xaml.uielement.stopanimation) UIElement UIElement 属性进行动画处理的方法。
 
-### <a name="example-animating-the-scale-property-with-a-vector3keyframeanimation"></a>示例：对具有 Vector3KeyFrameAnimation 的缩放属性进行动画处理
+### <a name="example-animating-the-scale-property-with-a-vector3keyframeanimation"></a>例如：对具有 Vector3KeyFrameAnimation 的缩放属性进行动画处理
 
 此示例演示如何进行动画处理按钮的小数位数。
 
@@ -110,7 +126,7 @@ animation.Target = "Scale";
 button.StartAnimation(animation);
 ```
 
-### <a name="example-animating-the-scale-property-with-an-expressionanimation"></a>示例：对具有 ExpressionAnimation 的缩放属性进行动画处理
+### <a name="example-animating-the-scale-property-with-an-expressionanimation"></a>例如：对具有 ExpressionAnimation 的缩放属性进行动画处理
 
 页有两个按钮。 第二个按钮进行动画处理为两次 （通过缩放） 最大为第一个按钮。
 

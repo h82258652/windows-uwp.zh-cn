@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a205fb151d1c9e6614dc97ccde639e43720aa8a9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 901aa1fa5c37c18a815e5e70becdf15001ed74c4
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618192"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444239"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>适用于 UWP 应用的连贯动画
 
@@ -24,7 +24,22 @@ ms.locfileid: "57618192"
 
 > **重要的 API**：[ConnectedAnimation 类](/uwp/api/windows.ui.xaml.media.animation.connectedanimation)， [ConnectedAnimationService 类](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
-## <a name="see-it-in-action"></a>查看实际操作
+
+## <a name="examples"></a>示例
+
+<table>
+<th align="left">XAML 控件库<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>如果有<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序安装，请单击此处<a href="xamlcontrolsgallery:/item/ConnectedAnimation">打开应用并在操作中看到连接动画</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 在此简短视频中，应用使用连接的动画进行动画处理的项图像，随着它"继续"成为下一个页面的标头的一部分。 该效果有助于在转换过程维持用户上下文。
 
@@ -318,10 +333,6 @@ void OnNavigatedTo(NavigationEventArgs e)
 - 使用[DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration)重新导航。
 - 不等待网络请求或在准备和开始连接的动画之间其他长时间运行的异步操作。 你可能需要预加载必要信息以提前运行转换，或在将高分辨率图像加载到目标视图中时使用低分辨率占位符图像。
 - 使用[SuppressNavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo)以防止在转换动画**帧**如果你使用的**ConnectedAnimationService**，因为连接动画不应该同时使用的默认导航过渡。 请参阅 [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) 详细了解如何使用导航转换。
-
-## <a name="download-the-code-samples"></a>下载代码示例
-
-请参阅 [WindowsUIDevLabs](https://github.com/Microsoft/WindowsUIDevLabs) 示例库中的[连贯动画示例](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2014393/ConnectedAnimationSample)。
 
 ## <a name="related-articles"></a>相关文章
 

@@ -1,6 +1,6 @@
 ---
 Description: 了解支持通用 Windows 平台 (UWP) 应用的设备将帮助你提供每个外形规格的最佳用户体验。
-title: 通用 Windows 平台 (UWP) 应用的设备基础版
+title: UWP 设备的 UI 注意事项
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
@@ -8,20 +8,22 @@ keywords: 设备, 输入, 交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 127c01321c0341e7125e8c6da955c789c4c65f2f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6333345a79d92394539d337f1f2390118cff1153
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582406"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065356"
 ---
-#  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>通用 Windows 平台 (UWP) 应用的设备基础版
+#  <a name="ui-considerations-for-uwp-devices"></a>UWP 设备的 UI 注意事项
 
+![设备](../images/devices-2x.png)
 
+了解支持通用 Windows 平台 (UWP) 应用的设备将帮助你提供每个外形规格的最佳用户体验。
 
 ![支持 Windows 的设备](images/device-primer/device-primer-ramp.png)
 
-了解支持通用 Windows 平台 (UWP) 应用的设备将帮助你提供每个外形规格的最佳用户体验。 针对特定设备进行设计时，主要注意事项包括应用将如何显示在该设备上，在该设备上使用应用的位置、时间和方式，以及用户将如何与该设备交互。
+ 针对特定设备进行设计时，主要注意事项包括应用将如何显示在该设备上，在该设备上使用应用的位置、时间和方式，以及用户将如何与该设备交互。
 
 ## <a name="pcs-and-laptops"></a>电脑和笔记本电脑
 

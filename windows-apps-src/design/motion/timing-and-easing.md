@@ -11,16 +11,31 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5b9a0719e4967f9d527d2b2565818a0dea1be0a6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b736a10a7284e3cc9aa193e082dc654e908afe40
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645262"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444180"
 ---
 # <a name="timing-and-easing"></a>计时和缓动
 
-虽然运动以现实世界为基础，但我们同时也是一个数字媒体，提供你期待的速度和效果。 
+虽然运动以现实世界为基础，但我们同时也是一个数字媒体，提供你期待的速度和效果。
+
+## <a name="examples"></a>示例
+
+<table>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>如果有<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序安装，请单击此处<a href="xamlcontrolsgallery:/item/EasingFunction">打开应用并查看在操作中的缓动函数</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="how-fluent-motion-uses-time"></a>Fluent 运动如何使用时间
 
@@ -40,8 +55,8 @@ Fluent 的运动计时以 500 毫秒（或二分之一秒）作为基准，因�
 
 :::row:::
     :::column:::
-        Use for objects or pages that are exiting the scene or closing.
-        Allows for very quick directional feedback of exiting UI where timing does not impede upon framerate to achieve a smooth animation.
+用于对象或退出场景或关闭页面。
+允许计时不会妨碍帧速率实现流畅动画的退出 UI 呈现非常快速的方向反馈。
     :::column-end:::
     :::column:::
         ![150ms motion](images/150msAlt.gif)
@@ -52,8 +67,8 @@ Fluent 的运动计时以 500 毫秒（或二分之一秒）作为基准，因�
 
 :::row:::
     :::column:::
-        Use for objects or pages that are entering the scene or opening.
-        Allows a reasonable amount of time to celebrate content as it enters the scene.
+用于对象或输入在场景或打开的页面。
+允许内容进入场景时留有欢迎内容的合理时间量。
     :::column-end:::
     :::column:::
         ![300ms motion](images/300ms.gif)
@@ -64,7 +79,7 @@ Fluent 的运动计时以 500 毫秒（或二分之一秒）作为基准，因�
 
 :::row:::
     :::column:::
-        Use for objects which are translating across a single scene or multiple scenes. 
+用于在一个场景或多个场景之间转换的对象。 
     :::column-end:::
     :::column:::
         ![500ms motion](images/500ms.gif)
@@ -87,10 +102,10 @@ Fluent 的运动计时以 500 毫秒（或二分之一秒）作为基准，因�
 
 :::row:::
     :::column:::
-        Use for UI or objects that are exiting the scene.
+使用 UI 或在退出场景的对象。
 
-        Objects become powered and gain momentum until they reach escape velocity.
-        The resulting feel is that the object is trying its hardest to get out of the user's way and make room for new content to come in.
+对象成为提供支持，并获得动力，直到其达到转义速度。
+生成的感觉是对象尝试难度最大利用用户的方式，并为新内容进入留出空间。
     :::column-end:::
     :::column:::
         ![accelerate easing](images/accelEase.gif)
@@ -126,12 +141,12 @@ _exitAnimation.Duration = TimeSpan.FromMilliseconds(150);
 
 :::row:::
     :::column:::
-        Use for objects or UI entering the scene, either navigating or spawning.
+用于对象或 UI 输入场景中，导航或生成。
 
-        Once on-scene, the object is met with extreme friction, which slows the object to rest.
-        The resulting feel is that the object traveled from a long distance away and entered at an extreme velocity, or is quickly returning to a rest state.
+一旦场景，该对象是满足极端阻力，这会降低 rest 的对象。
+该对象从长时间距离之外的行程和极端的速度，在输入或是快速回到 rest 状态，生成的感觉。
 
-        Even if it's preceded by a moment of unresponsiveness, the velocity of the incoming object has the effect of feeling fast and responsive.
+即使它前面有片刻无响应，传入对象的速度起作用的感觉快速且高度可响应。
     :::column-end:::
     :::column:::
         ![decelerate easing](images/decelEase.gif)
@@ -167,10 +182,10 @@ _enterAnimation.Duration = TimeSpan.FromMilliseconds(300);
 
 :::row:::
     :::column:::
-        This is the baseline easing for any animated parameter change inside of the system.
-        Use standard easing for objects that change from state to state on-screen, such as a simple position change. Also, use it for objects morphing in-scene, like an object that grows.
+这是在系统内任何经过动画处理的参数更改缓动的基线。
+为屏幕上发生状态改变（如简单的位置改变）的对象使用标准缓动。 此外，为在场景内变形（如生长的对象）的对象使用此缓动。
 
-        The resulting feel is that objects changing state from A to B are overcoming, and taken over by, natural forces.
+生成的感觉是更改状态从 A 到 B 的对象用来解决，并会强制执行由，自然。
     :::column-end:::
     :::column:::
         ![standard easing](images/standardEase.gif)

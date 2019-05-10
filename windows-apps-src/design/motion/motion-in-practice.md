@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6eafbfd965d2783c0f72e75c91a04e5ac1cb119f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7272abca9862eaf5ed7ceb161e433849497369a2
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599402"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444212"
 ---
 # <a name="bringing-it-together"></a>综合运用
 
@@ -78,10 +78,24 @@ ms.locfileid: "57599402"
     :::column-end:::
 :::row-end:::
 
+## <a name="examples"></a>示例
+
+<table>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>如果有<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序安装，请单击此处<a href="xamlcontrolsgallery:/item/ImplicitTransition">打开应用并在操作中看到隐式转换</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
 ## <a name="implicit-animations"></a>隐式动画
 
 > 隐式动画需要 Windows 10，版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本。
-
 
 隐式动画是一种来实现 Fluent 动作自动属性在参数更改新旧值之间插入值的简单方法。
 

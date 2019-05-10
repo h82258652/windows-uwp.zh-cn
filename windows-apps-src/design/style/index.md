@@ -7,16 +7,16 @@ ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1d313e35b7d1ab3ebe72bd3a073323fe8782098a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7d5da19fc9fdab324db2c162a3cb6792fa91f120
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582456"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065376"
 ---
 # <a name="style-for-uwp-apps"></a>适用于 UWP 应用的样式
 
-![主图](images/header-style.svg)
+![样式图标](../images/style-2x.png)
 
 出色的样式可以使你的应用脱颖而出。此部分的样式指南有助于通过颜色、版式以及亚克力材料和突出显示等新功能创建 Fluent Design。
 

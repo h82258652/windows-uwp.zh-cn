@@ -8,15 +8,16 @@ ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 417f9b72c5708a85fa570476de2829bf6217c165
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6ffed5cdc063a35b4693aa4a9323e2143b69e4fc
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582125"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065355"
 ---
-# <a name="controls-and-patterns-for-uwp-apps"></a>UWP 应用的控件和模式
- 
+# <a name="controls-for-uwp-apps"></a>适用于 UWP 应用的控件 
+
+![控制](../images/controls-2x.png)
 
 在 UWP 应用开发中，<i>控件</i>是一种显示内容或支持交互的 UI 元素。 控件是用户界面的构建基块。 <i>模式</i>是合并多个控件来创造新内容的一种方式。
 

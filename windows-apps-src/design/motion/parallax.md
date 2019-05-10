@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 719a150c6750116a368d59fff9600fcf65bf8f61
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 953a92cdb8cc3168a2cbeae9a1f3610f771c6339
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590682"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444187"
 ---
 # <a name="parallax"></a>视差
 
@@ -30,7 +30,7 @@ ms.locfileid: "57590682"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
     <p>如果你已安装了 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，单击此处<a href="xamlcontrolsgallery:/item/ParallaxView">打开此应用，了解 ParallaxView 的实际应用</a>。</p>
     <ul>
@@ -47,7 +47,7 @@ ms.locfileid: "57590682"
 
 ## <a name="how-it-works-in-a-user-interface"></a>它在用户界面中的工作原理
 
-在 UI 中，你可以在 UI 滚动或平移时，通过以不同的速率移动不同的对象来创建视差效果。 <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> 为了演示，让我们看一下两个层的内容、 列表和背景图像。  该列表位于该背景图像的顶部，这已经给人以列表可能靠观察者更近的错觉。  现在，为了实现视差效果，我们希望靠我们最近的对象比远处的对象移动得“更快”。  当用户滚动界面时，列表比背景图像移动得更快，从而产生深度错觉。
+在 UI 中，你可以在 UI 滚动或平移时，通过以不同的速率移动不同的对象来创建视差效果。 <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> 要进行演示，请让我们查看两层内容，分别是列表和背景图像。  该列表位于该背景图像的顶部，这已经给人以列表可能靠观察者更近的错觉。  现在，为了实现视差效果，我们希望靠我们最近的对象比远处的对象移动得“更快”。  当用户滚动界面时，列表比背景图像移动得更快，从而产生深度错觉。
 
  ![一个列表和背景图像的视差示例](images/_Parallax_v2.gif)
 
@@ -118,10 +118,6 @@ VerticalShift 和 HorizontalShift 属性让你可以控制视差效果的程度�
 - 在有背景图像的列表中使用视差
 - 当 ListViewItems 包含图像时，考虑在 ListViewItems 中使用视差
 - 请勿到处使用它，过度使用可削弱它的影响力
-
-## <a name="get-the-sample-code"></a>获取示例代码
-
-- [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
 
 ## <a name="related-articles"></a>相关文章
 

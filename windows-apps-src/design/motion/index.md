@@ -12,16 +12,16 @@ design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2701844ccefdc5a535fa8fc20086c550cb7bc29e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 249251afeee95d80070e6df80980a2fbc5be7f06
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582366"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065246"
 ---
 # <a name="motion-for-uwp-apps"></a>适用于 UWP 应用的动作
 
-![主图](images/header-motion2.svg)
+![“移动”图标](../images/motion-2x.png)
 
 Fluent 动作在应用中有其用途。 它基于用户行为提供智能反馈、让 UI 感觉保持生动，并指导用户在你的应用中导航。 Fluent 动作在用户和其数字体验之间引起情感连接。 我们建立了用户已从物理世界中了解的自然运动的基础，并在这个基础上扩展我们的系统。
 

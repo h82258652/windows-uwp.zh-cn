@@ -5,16 +5,16 @@ keywords: uwp 应用布局, 通用 windows 平台, 应用设计, 界面
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6afaada45c3f332085135212be39e43bb1c3fe8f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 03e30aa091a04e16ee84f38832dc962d34659e1b
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582119"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065430"
 ---
 # <a name="design-basics-for-uwp-apps"></a>UWP 应用的设计基础知识
 
-![主图](images/header-design-basics.svg)
+![“设计基础知识”图标](../images/basics-2x.png)
 
 通用 Windows 平台 (UWP) 设计指南可帮助你设计和构建美观、优化的应用。 它不是一份说明性规则的清单 - 它是一个动态文档，旨在适应我们不断演变的 Fluent Design System 以及应用构建社区的需求。 
 
