@@ -12,18 +12,33 @@ design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 249251afeee95d80070e6df80980a2fbc5be7f06
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: 1096bdab340c3f0fef24b5815423f72b0f5c8219
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065246"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444167"
 ---
 # <a name="motion-for-uwp-apps"></a>适用于 UWP 应用的动作
 
 ![“移动”图标](../images/motion-2x.png)
 
 Fluent 动作在应用中有其用途。 它基于用户行为提供智能反馈、让 UI 感觉保持生动，并指导用户在你的应用中导航。 Fluent 动作在用户和其数字体验之间引起情感连接。 我们建立了用户已从物理世界中了解的自然运动的基础，并在这个基础上扩展我们的系统。
+
+## <a name="examples"></a>示例
+
+<table>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>如果已安装了 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，单击此处<a href="xamlcontrolsgallery:/category/Motion">打开此应用，查看“动作”的实际应用</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="fluent-motion-principles"></a>Fluent 动作原则
 
@@ -53,7 +68,7 @@ Fluent 动作在应用中有其用途。 它基于用户行为提供智能反馈
 智能动作以与用户操作 UI 相同的方式向用户提供反馈。 交互以用户为中心。 运动效果适合外形规格并围绕场景设计。 它应该让每个用户都感觉舒适。
 
 ![上下文动作的 UI 示例](images/Contextual.gif)
-> 动画应绑定到用户交互。 上下文菜单从用户激活它的点部署。 
+> 动画应绑定到用户交互。 上下文菜单从用户激活它的点部署。
 
 ## <a name="motion-articles"></a>动作文章
 
