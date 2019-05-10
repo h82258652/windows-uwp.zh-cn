@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp, sd 卡, 存储
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ef97ed489f2dc35aece83821633a583dfba77e2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625512"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63800225"
 ---
 # <a name="access-the-sd-card"></a>访问 SD 卡
 
 
 
-你可以在可选 MicroSD 卡上存储和访问不重要的数据，尤其是内部存储具有限制并且具有 SD 卡插槽的低成本移动设备。
+你可以在可选 MicroSD 卡上存储和访问不重要的数据，尤其是在具有 SD 卡插槽且内部存储有限的低成本移动设备上。
 
 大多数情况下，你必须在应用清单文件中指定 **removableStorage** 功能，然后你的应用才能在 SD 卡上存储和访问文件。 通常，你还需要注册才能处理你的应用存储和访问的文件类型。
 
