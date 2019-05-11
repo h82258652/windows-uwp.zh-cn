@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e4657c9dfb651c1e7f6bb4e2cafdc49d0a11237b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 291c2a922e2b2df7111da8bfc6aefb57b87e84bb
+ms.sourcegitcommit: 4bad5f9427e7db27b57bedc6d7df19077c62e8c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630562"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65535191"
 ---
 # <a name="my-people-notifications"></a>“我的人脉”通知
 
@@ -51,15 +51,15 @@ experienceType=”shoulderTap”
 
 + **src**
     + 资源的 URI。 这可以是 HTTP/HTTPS Web URI、msappx URI 或本地文件的路径。
-+ **spritesheet src**
++ **spritesheet-src**
     + 资源的 URI。 这可以是 HTTP/HTTPS Web URI、msappx URI 或本地文件的路径。 只有 Spritesheet 动画才需要此参数。
-+ **spritesheet 高度**
++ **spritesheet-height**
     + 帧高度（以像素为单位）。 只有 Spritesheet 动画才需要此参数。
-+ **spritesheet fps**
++ **spritesheet-fps**
     + 每秒帧数 (FPS)。 只有 Spritesheet 动画才需要此参数。 仅支持值 1-120。
-+ **spritesheet startingFrame**
++ **spritesheet-startingFrame**
     + 开始播放动画的帧编号。 此参数仅用于 Spritesheet 动画，如果未提供，则默认为 0。
-+ **Alt**
++ **alt**
     + 用于屏幕阅读器旁白的文本字符串。
 
 > [!NOTE]
@@ -68,7 +68,7 @@ experienceType=”shoulderTap”
 此外，顶级 Toast 节点必须包含 **hint-people** 参数以指定发送方联系人。 此参数可能具有以下任何值：
 
 + **电子邮件地址** 
-    + 例如 mailto:johndoe@mydomain.com
+    + 例如 ` mailto:johndoe@mydomain.com `
 + **电话号码** 
     + 例如 tel:888-888-8888
 + **远程 ID** 
@@ -150,7 +150,7 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 
 如果“我的人脉”通知回退到 Toast，则将忽略第二个特定于“我的人脉”的绑定，并且仅使用第一个绑定来显示 Toast。 这正是为何在第一个 Toast 绑定中提供回退负载很重要。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 + [我的人通知示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 + [添加我的人支持](my-people-support.md)
 + [自适应的 toast 通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
