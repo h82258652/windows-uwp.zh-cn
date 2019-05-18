@@ -1,16 +1,16 @@
 ---
 title: 版本自适应应用
 description: 了解如何在保持与以前版本的兼容性的同时利用新 API
-ms.date: 09/17/2018
+ms.date: 05/17/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 435bbdbfaaf1bec90fa1ee2d598b4a3fe78d3789
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 579f92cc51ed5f9eeea522d81cfdb030f85ef0da
+ms.sourcegitcommit: f282c906cddf0d57217484e61a5cbd2fe8469421
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631652"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65852276"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>自适应应用程序版本：使用新的 Api，同时保持与早期版本兼容性
 
@@ -48,15 +48,16 @@ ms.locfileid: "57631652"
 
 为便于参考，下表显示了每个 SDK 的内部版本号。
 
-| 友好名称 | 版本 | 操作系统/SDK 内部版本 |
+| 友好名称 | Version | 操作系统/SDK 内部版本 |
 | ---- | ---- | ---- |
 | RTM | 1507 | 10240 |
 | 11 月更新 | 1511 | 10586 |
 | 周年更新 | 1607 | 14393 |
 | Creators 更新 | 1703 | 15063 |
 | 秋季创意者更新 | 1709 | 16299 |
-| 2018 年 4 月更新 | 1803 | 版本 17134 |
+| 2018 年 4 月更新 | 1803 | 17134 |
 | 2018 年 10 月更新 | 1809 | 17763 |
+| 2019 年 5 更新 | 1903 | 18362 |
 
 可以从 [Windows SDK 和仿真器存档](https://developer.microsoft.com/downloads/sdk-archive)下载任何发布的 SDK 版本。 可以从 [Windows 预览体验成员](https://insider.windows.com/Home/BuildWithWindows)站点的开发人员部分下载最新的 Windows Insider Preview SDK。
 
