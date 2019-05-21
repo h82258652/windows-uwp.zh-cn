@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 通知侦听器, usernotificationlistener, 文档, 访问通知
 ms.localizationpriority: medium
-ms.openlocfilehash: de1032eb3d0d364a62beff0a1af8f84240c11d87
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d6c18740cbba0ea037440300edbe2d7ba4fd116e
+ms.sourcegitcommit: 1d04910a6bbfcaa985d2074caf8f898c35eab7ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649612"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933158"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知侦听器：访问所有通知
 
@@ -277,17 +277,17 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>已添加/已消除的通知的前台事件
 
 > [!IMPORTANT] 
-> 已知的问题：前景事件将导致 CPU 循环上最新版本的 Windows，并且以前不起作用之前。 不要使用前景色事件。 在即将发布到 Windows 更新中，我们将解决此问题。
+> 已知的问题：在生成之前生成 17763 / 2018 年 10 月更新 / 版本 1809年前景事件将会导致 CPU 循环和/或不起作用。 如果需要在这些早期版本的支持，请改为使用后台任务。
 
-而不是使用前景事件，使用前面所示的代码[单个进程模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)后台任务。 后台任务还允许您在应用处于已关闭或正在运行时接收更改事件的通知这两个。
+您还可以从内存中事件处理程序侦听通知...
 
 ```csharp
-// Subscribe to foreground event (DON'T USE THIS)
+// Subscribe to foreground event
 listener.NotificationChanged += Listener_NotificationChanged;
  
 private void Listener_NotificationChanged(UserNotificationListener sender, UserNotificationChangedEventArgs args)
 {
-    // NOTE: This event WILL CAUSE CPU LOOPS, DO NOT USE. Use the background task instead.
+    // Your code for handling the notification
 }
 ```
 

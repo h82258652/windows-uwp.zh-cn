@@ -1,5 +1,5 @@
 ---
-Description: 了解如何将本地 toast 通知发送和处理用户单击 toast Win32 c + + WRL 应用。
+Description: 了解如何 Win32 C++ WRL 应用可以发送本地 toast 通知和处理用户单击 toast。
 title: 从桌面 C++ WRL 应用发送本地 toast 通知
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 03/07/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, 桌面, toast 通知, 发送 toast, 发送本地 toast, 桌面桥, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: 82de349009350c970fce923a2aa503df0801c3b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: af6c4392d97bdbf06c3e185b8a1c0235225bfe5a
+ms.sourcegitcommit: 81021b7930905beb67383a08b09520cf95c68fd9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57609842"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65940311"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>从桌面 C++ WRL 应用发送本地 toast 通知
 
@@ -62,7 +62,7 @@ using namespace Microsoft::WRL;
 
 ## <a name="step-4-implement-the-activator"></a>步骤 4：实现激活器
 
-必须实现一个处理程序，用于 toast 激活，以便在用户单击 toast 时，应用可以执行某些操作。 这就要求将 toast 保留在操作中心内（因为 toast 可能会在应用关闭几天后被单击）。 可将此类置于项目中的任何位置。
+这样，当用户单击应用的 toast 通知，您的应用程序可以执行的内容，必须实现 toast 激活的处理程序。 这就要求将 toast 保留在操作中心内（因为 toast 可能会在应用关闭几天后被单击）。 可将此类置于项目中的任何位置。
 
 如下所示，实现 **INotificationActivationCallback** 接口（包括 UUID），并调用 **CoCreatableClass** ，用于将类标记为“可创建 COM”。 对于 UUID，可从众多联机 GUID 生成器中选择一个来创建唯一的 GUID。 操作中心通过此 GUID CLSID（类标识符）了解要对哪个类实施 COM 激活。
 
@@ -421,8 +421,8 @@ Windows 8 引入了 toast 通知，但使用的是[旧版 toast 模板](https://
 | 操作系统 | ToastGeneric | COM 激活器 | 旧版 toast 模板 |
 | -- | ------------ | ------------- | ---------------------- |
 | Windows 10 | 支持 | 支持 | 支持（但不会激活 COM 服务器） |
-| Windows 8.1/8 | 不适用 | 不适用 | 支持 |
-| Windows 7 及更低版本 | 不适用 | 不适用 | 不适用 |
+| Windows 8.1/8 | 不可用 | 不可用 | 支持 |
+| Windows 7 及更低版本 | 不可用 | 不可用 | 不可用 |
 
 若要检查是否是在 Windows 10 上运行，请包含 `<VersionHelpers.h>` 标头并检查 **IsWindows10OrGreater** 方法。 如果返回 true，则继续调用本文档中所述的所有方法！ 
 

@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3c126b17e8ba9b66bc5e7c4fccd0142cd63ab7e9
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: d004f3e735328fb23b7dab6c062d046b005563c2
+ms.sourcegitcommit: a4ea618279448a3099fee4c94dcfc560d00ffdd6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63777908"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65922409"
 ---
 # <a name="app-capability-declarations"></a>应用功能声明
 
@@ -196,7 +196,7 @@ ms.locfileid: "63777908"
 | **背景媒体录制** | **BackgroundMediaRecording**功能更改等的特定于媒体的 Api 的行为[ **MediaCapture** ](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture)并[ **AudioGraph** ](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audiograph.aspx)类以使媒体录制你的应用处于后台时。 |
 |**预览 Ink 工作区**| **previewInkWorkspace** 功能允许应用访问托管在 Ink 工作区内的 Preview Ink 命名空间。 通常情况下，OEM 会使用此功能来替换设备上的白板应用程序。<br /> <br />若要使用 [**Windows.ApplicationModel.Preview.InkWorkspace**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.preview.inkworkspace) 命名空间中的 API，则需要该功能。 |
 |**启动屏幕管理**| **startScreenManagement** 功能允许应用自动将磁贴固定到“开始”屏幕。 应用还可以从背景固定。 没有 **startScreenManagement** 功能并不会阻止任何 API；相反，使用 **startScreenManagement** 意味着 Shell 在某个应用使用“固定 API”时不会显示任何 UI。 |
-|**Cortana 权限**| **cortanaPermissions** 功能允许应用枚举用户已在设备上授予 Cortana 的权限。 此功能还允许应用授予和撤消设备上的 Cortana 权限。 请注意，使用 **cortanaPermissions** 需要设备在授予权限前显示法律文本。 因此，应用应负责让用户知悉修改权限的法律后果。<br /> <br /><br />此功能需要获得读取访问权限**HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Search\(*)** 注册表设置。<br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
+|**Cortana 权限**| **cortanaPermissions** 功能允许应用枚举用户已在设备上授予 Cortana 的权限。 此功能还允许应用授予和撤消设备上的 Cortana 权限。 请注意，使用 **cortanaPermissions** 需要设备在授予权限前显示法律文本。 因此，应用应负责让用户知悉修改权限的法律后果。<br /> <br /><br />此功能需要获得读取访问权限**HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Search**注册表设置。<br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
 |**所有应用程序模式**| **allAppMods** 功能允许应用访问所有应用的 AppMods 文件夹。 模型管理实用程序使用 **allAppMods** 在使用 Mod 的游戏或应用外管理 Mod。 |
 |**扩展的资源**| **expandedResources** 功能允许应用访问游戏模式资源。 在 Xbox 和充分满足条件的电脑上，游戏模式资源表示保留供应用专用的可用 CPU 核心的子集。 在 Xbox 上，该应用至少还有 4 GB 的内存分区供独占使用。<br /><br />需要该功能才能获得上文所定义的专用 CPU 和内存资源。 |
 |**受保护的应用**| **protectedApp** 功能使应用可由应用商店加载到受保护的进程中。 当应用引入应用商店时，应用商店会向可执行文件添加一个 blob。 应用商店还会使用 Microsoft 密钥对可执行文件进行页面签名。 进程加载程序会检查该 blob，而不是强制进行受保护进程的功能，因为 blob 需要 Microsoft 签名。<br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
@@ -221,7 +221,8 @@ ms.locfileid: "63777908"
 | **包写入重定向兼容性修补程序** | **PackageWriteRedirectionCompatibilityShim**受限的功能配置你的应用程序在每个用户位置中创建所有新文件。 任何已存在的文件打开以进行写入操作前复制到每用户位置和该位置中的文件执行修改的操作。 此功能可用于创建或修改其安装文件夹中的文件的应用程序。<br /><br />此功能适用于某些类型的发布的 Microsoft 和我们的合作伙伴的桌面 PC 游戏。 但是，也可能适用于其他应用在某些情况下。 |
 | **自定义安装操作** | **CustomInstallActions**受限的功能使应用程序可以声明[windows.customInstall](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-package-extension)中其包清单，以便它可以指定一个或多个其他扩展安装程序执行与你的应用程序的文件 （.exe 或.msi）。 这允许您指定的任何标准的部署方案的自定义操作： 安装、 更新、 修复或卸载。 例如，这是有用的应用程序捆绑的第三方的可再发行组件。<br /><br />此功能适用于某些类型的发布的 Microsoft 和我们的合作伙伴的桌面 PC 游戏。 它不会授予的其他方案。 |
 | **打包的服务** | **PackagedServices**受限的功能允许应用程序创建的 Microsoft 合作伙伴和企业能够声明[windows.service](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-extension)扩展在其包清单，该 it可以安装一个或多个服务和应用程序。 这些服务可以配置为本地服务、 网络服务或本地系统帐户下运行。 本地服务和网络服务的服务仅需要**packagedServices**功能。 本地系统服务，两者都需要**packagedServices**并**localSystemServices**功能。<br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。  |
-| **本地系统服务** | **LocalSystemServices**受限的功能允许通过 Microsoft 合作伙伴和企业能够安装一个或多个本地系统服务，以及应用程序创建的应用程序 (即，你的应用程序可以声明StartAccount 服务为本地系统)。 此方案还需要**packagesServices**功能。 <br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 
+| **本地系统服务** | **LocalSystemServices**受限的功能允许通过 Microsoft 合作伙伴和企业能够安装一个或多个本地系统服务，以及应用程序创建的应用程序 (即，你的应用程序可以声明StartAccount 服务为本地系统)。 此方案还需要**packagesServices**功能。 <br /><br />我们建议不要声明此功能的应用程序提交到 Microsoft Store 中。 在大多数情况下，不会批准此功能使用。 |
+| **背景空间感知** | **BackgroundSpatialPerception**受限的功能允许应用程序访问用户的头节点、 手、 运动控制器和其他跟踪的对象的移动应用在后台运行时。 |
 
 ## <a name="custom-capabilities"></a>自定义功能
 
