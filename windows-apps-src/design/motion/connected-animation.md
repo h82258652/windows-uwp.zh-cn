@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 901aa1fa5c37c18a815e5e70becdf15001ed74c4
-ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
+ms.openlocfilehash: 21e7c026d336507b1a82badba770ac3bb50e19f8
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65444239"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984121"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>适用于 UWP 应用的连贯动画
 
@@ -55,7 +55,7 @@ ms.locfileid: "65444239"
 
 ## <a name="connected-animation-and-the-fluent-design-system"></a>连贯动画和 Fluent 设计系统
 
- Fluent 设计系统可帮助你创建包含光线、深度、动画、材料和比例的现代、粗体 UI。 连贯动画是 Fluent 设计系统的一个组成部分，它将动画添加到你的应用。 要了解详细信息，请参阅 [UWP 的 Fluent Design 概述](../fluent-design-system/index.md)。
+ Fluent 设计系统可帮助你创建包含光线、深度、动画、材料和比例的现代、粗体 UI。 连贯动画是 Fluent 设计系统的一个组成部分，它将动画添加到你的应用。 要了解详细信息，请参阅 [UWP 的 Fluent Design 概述](/windows/apps/fluent-design-system)。
 
 ## <a name="why-connected-animation"></a>为何选择连贯动画？
 

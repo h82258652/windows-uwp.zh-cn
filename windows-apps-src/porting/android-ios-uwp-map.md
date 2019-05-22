@@ -1,18 +1,17 @@
 ---
 Description: 比较 iOS、Android 和 Windows 10 之间的平台功能。
-Search.Product: eADQiWindows 10XVcnh
 title: 适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d4739442414b02358f3afea8967b0fc404ff7f9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 737e169e2502076f370eaed91658eae59be84a0b
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641332"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984252"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
 
@@ -235,7 +234,7 @@ ms.locfileid: "57641332"
 <td align="left">你可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/br241319">DatagramSocket</a></strong> 类通过 UDP 数据报套接字进行通信，并使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/br226882">StreamSocket</a></strong> 类通过 TCP 或蓝牙 RFCOMM 进行通信。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280233.aspx">网络基础知识</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">选择哪一种网络技术？</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280234.aspx">套接字概述</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Websocket。</strong> <br><br>在客户端和服务器之间提供双向通信，从而启用实时数据传输。</td>
+<td align="left"><strong>WebSockets.</strong> <br><br>在客户端和服务器之间提供双向通信，从而启用实时数据传输。</td>
 <td align="left">Android 中无任何内置 WebSockets 库。</td>
 <td align="left">iOS 中无任何内置 WebSockets 库。</td>
 <td align="left">对于带有接收通知的较小消息，安全连接到支持 Websockets 的服务器可以通过 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.messagewebsocket.aspx">MessageWebSocket</a></strong> 类实现，对于可以分段读取的较大的二进制文件传输，则可以通过 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamwebsocket.aspx">StreamWebSocket</a></strong> 类实现。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280233.aspx">网络基础知识</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">选择哪一种网络技术？</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt186447.aspx">Websocket 概述</a></td>

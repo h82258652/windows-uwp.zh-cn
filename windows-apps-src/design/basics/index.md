@@ -5,12 +5,12 @@ keywords: uwp 应用布局, 通用 windows 平台, 应用设计, 界面
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 03e30aa091a04e16ee84f38832dc962d34659e1b
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: 78462d5d29ebcc31792aa46da7657c57fb960e13
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065430"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984114"
 ---
 # <a name="design-basics-for-uwp-apps"></a>UWP 应用的设计基础知识
 
@@ -24,7 +24,7 @@ ms.locfileid: "65065430"
 
 介绍结合了最佳做法的 UWP 功能，用于创建在所有类型的支持 Windows 的设备上都表现出色的应用。
 
-[ **Fluent Design System**](../fluent-design-system/index.md)
+[ **Fluent Design System**](/windows/apps/fluent-design-system)
 
 Fluent Design System 展示了我们创建自适应、共鸣和美观用户界面的目标和原则。
 

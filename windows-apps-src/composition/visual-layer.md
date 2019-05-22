@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 599c2625bffff40a30f26bfb40f7cce9c97acdd1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4607280fd031fa556bfc5d1c719f4b4e1aeb928e
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626402"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984103"
 ---
 # <a name="visual-layer"></a>可视化层
 
@@ -42,7 +42,7 @@ Windows UWP 应用已在通过 UI 框架之一使用可视化层。 还可以非
 
 有关详细信息，请参阅[合成视觉对象](composition-visual-tree.md)概述。
 
-### <a name="effects"></a>效果
+### <a name="effects"></a>Effects
 
 可视化层中的效果系统使你可以将一系列筛选器和透明效果应用于视觉对象或视觉对象树。 这是 UI 效果系统，不要与图像和媒体效果混淆。 效果与动画系统配合使用，从而使用户可以实现效果属性的流畅动态动画（独立于 UI 线程呈现）。 可视化层中的效果提供有创意的构建基块，它们可以进行组合和动画处理，以构造定制的交互体验。
 
@@ -50,7 +50,7 @@ Windows UWP 应用已在通过 UI 框架之一使用可视化层。 还可以非
 
 有关详细信息，请参阅[合成效果](composition-effects.md)概述。
 
-### <a name="animations"></a>动画
+### <a name="animations"></a>Animations
 
 可视化层中的动画系统使你可以移动视觉对象、对效果进行动画处理以及驱动转换、剪辑和其他属性。  它是与框架无关的系统，是在考虑到性能的情况下从头开始设计的。  它独立于 UI 线程运行，以确保流畅性和可扩展性。  虽然它使你可以使用熟悉的 KeyFrame 动画随时间推移驱动属性更改，不过也使你可以在不同属性（包括用户输入）之间设置数学关系，从而使你可以直接创造无缝的精心设计的体验。
 
@@ -61,6 +61,12 @@ Windows UWP 应用已在通过 UI 框架之一使用可视化层。 还可以非
 可以访问 XAML 框架创建的视觉对象，并使用 [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908) 中的 [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) 类支持可见 FrameworkElement。 请注意，框架创建的视觉对象对自定义具有一些限制。 这是因为框架在管理偏移、转换和生存期。 但是可以创建自己的视觉对象，并通过 ElementCompositionPreview 将它们附加到现有 XAML 元素（或通过将其添加到可视化树结构中某个位置的现有 ContainerVisual）。
 
 有关详细信息，请参阅[将可视化层与 XAML 结合使用](using-the-visual-layer-with-xaml.md)概述。
+
+### <a name="working-with-your-desktop-app"></a>使用桌面应用程序
+
+可以使用可视化层以增强的外观、 感受和功能在 WPF 中，Windows 窗体和C++Win32 桌面应用程序。 你可以迁移岛的内容，使用可视化层，并将你的 UI 的其余部分保留在其现有的框架。 这意味着您可以进行重大更新和增强功能到应用程序 UI 而无需对现有代码进行大量更改基。
+
+有关详细信息，请参阅[实现使用可视化层桌面应用程序的现代化](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps)。
 
 ## <a name="additional-resources"></a>其他资源
 

@@ -11,7 +11,7 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.openlocfilehash: 1350c6e0eae057386fb721a358f71acb19c4efc1
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57591762"
@@ -38,7 +38,7 @@ ms.locfileid: "57591762"
 可用于你的应用的输入范围是 **[InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/hh702028)** 枚举的成员。 你可以将 ****TextBox**** 或 **[RichEditBox](https://msdn.microsoft.com/library/windows/apps/br209683)** 的 [InputScope](https://msdn.microsoft.com/library/windows/apps/br227548) 属性设置为以下值之一。
 
 > [!IMPORTANT]
-> **[InputScope](https://msdn.microsoft.com/library/windows/apps/dn996570)** 属性上的**[PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)** 仅支持**密码**和**NumericPin**值。 将忽略任何其他值。
+> **[InputScope](https://msdn.microsoft.com/library/windows/apps/dn996570)** 属性上的 **[PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)** 仅支持 **密码**和 **NumericPin** 值。 将忽略任何其他值。
 
 在这里，你可以更改多个文本框的输入范围以匹配每个文本框的预期数据范围。
 
@@ -169,7 +169,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 ![可输入 URL 的 Windows 触摸键盘](images/input-scopes/url.png)
 
 - 包括 **“.com”** 键和![“转到”](images/input-scopes/kbdgokey.png)键。 按下并保持 **.com**键以显示其他选项 (**.org**， **.net**，和特定于区域的后缀)
-- 包括 **:**， **-**，并且**/** 密钥
+- 包括 **:**， **-**，并且 **/** 密钥
 - 拼写检查：默认情况下处于禁用状态，可以启用
 - 自动更正：默认情况下处于禁用状态，可以启用
 - 首字母自动大写：默认情况下处于禁用状态，可以启用
@@ -182,7 +182,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 ![可输入电子邮件地址的 Windows 触摸键盘](images/input-scopes/emailsmtpaddress.png)
 - 包括“@”和“.com”键。 按下并保持 **.com**键以显示其他选项 (**.org**， **.net**，和特定于区域的后缀)
-- 包括 **_** 并**-** 密钥
+- 包括 **_** 并 **-** 密钥
 - 拼写检查：默认情况下处于禁用状态，可以启用
 - 自动更正：默认情况下处于禁用状态，可以启用
 - 首字母自动大写：默认情况下处于禁用状态，可以启用
@@ -236,8 +236,8 @@ phoneNumberTextBox.InputScope = new InputScope()
 `<TextBox InputScope="Formula"/>`
 
 ![Windows 触摸键盘的公式](images/input-scopes/formula.png)
-- 包括**=** 密钥
-- 此外包括**%**， **$**，以及**+** 密钥
+- 包括 **=** 密钥
+- 此外包括 **%** ， **$**，以及 **+** 密钥
 - 拼写检查：默认情况下处于启用状态，可以禁用
 - 自动更正：默认情况下处于启用状态，可以禁用
 - 首字母自动大写：始终处于禁用状态

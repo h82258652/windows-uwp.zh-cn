@@ -1,31 +1,46 @@
 ---
 Description: 桌面应用程序和 UWP 应用之间共享代码
-Search.Product: eADQiWindows 10XVcnh
 title: 桌面应用程序和 UWP 应用之间共享代码
 ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 151584f15013c9d4ab7d9566e175b957a7a84149
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 16b75226d6b79b19978ddf7e37231b15ac7a4e3e
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644342"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984171"
 ---
-# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>桌面应用程序和 UWP 应用之间共享代码
+# <a name="move-from-a-desktop-application-to-uwp"></a>移到 UWP 的桌面应用程序
 
-你可以将代码迁移到 .NET Standard 库中，然后创建通用 Windows 平台 (UWP) 应用以覆盖所有 Windows 10 设备。 虽然没有工具可以将桌面应用程序转换为 UWP 应用，但是，你可以重复使用大量现有代码来降低构建代码的成本。 本指南演示如何执行该操作。
+如果必须使用.NET Framework （包括 WPF 和 Windows 窗体） 构建的现有桌面应用程序或C++Win32 Api，你有多个选项将移动到通用 Windows 平台 (UWP) 和 Windows 10。
 
-## <a name="share-code-in-a-net-standard-20-library"></a>在 .NET Standard 2.0 库中共享代码
+## <a name="package-your-desktop-application-in-an-msix-package"></a>MSIX 包中的将桌面应用程序打包
 
-将尽可能多的代码放入 .NET Standard 2.0 类库中。  只要你的代码使用标准中定义的 API，就可以在 UWP 应用中重复使用你的代码。 在 .NET Standard 库中共享代码比以前更容易，因为 .NET Standard 2.0 中包含的 API 相当多。
+可以打包桌面应用程序 MSIX 包中获取到更多的 Windows 10 功能的访问权限。 MSIX 是为所有 Windows 应用，包括 UWP、 WPF、 Windows 窗体和 Win32 应用提供了通用的打包体验的现代 Windows 应用包格式。 打包桌面 Windows 应用程序在 MSIX 包中的获取访问权限的可靠的安装和使用灵活功能系统、 支持 Microsoft Store、 企业管理和许多自定义模型更新体验，受管理的安全分发模型。 您可以打包应用程序是否有源代码，或如果您只需一个现有的安装程序文件 （如 MSI 或 APP-V 安装程序）。 打包你的应用程序后，可以将集成 UWP 功能，例如打包扩展和其他 UWP 组件。
 
-下面的精彩视频向你介绍相关的详细信息。
-&nbsp;
+有关详细信息，请参阅[打包桌面应用程序 （桌面桥）](/windows/msix/desktop/desktop-to-uwp-root)并[要求包标识的功能](/windows/apps/desktop/modernize/modernize-packaged-apps)。
+
+## <a name="use-uwp-apis"></a>使用 UWP Api
+
+可以直接在你的 WPF、 Windows 窗体中调用许多 UWP Api 或C++Win32 桌面应用程序集成的轻型 Windows 10 用户注册新式体验。 例如，可以调用 UWP Api 为桌面应用程序添加 toast 通知。
+
+有关详细信息，请参阅[桌面应用中使用 UWP Api](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)。
+
+## <a name="migrate-a-net-framework-app-to-a-uwp-app"></a>迁移.NET Framework 应用程序向 UWP 应用
+
+在.NET Framework 上运行应用程序，可以直接将其迁移到 UWP 应用，通过利用.NET Standard 2.0。 移动大量的代码如您可以到.NET Standard 2.0 类库，，然后创建 UWP 应用引用.NET Standard 2.0 库。 
+
+### <a name="share-code-in-a-net-standard-20-library"></a>在 .NET Standard 2.0 库中共享代码
+
+如果你的应用程序在.NET Framework 上运行，将太多代码，因为您可以到.NET Standard 2.0 类库。 只要你的代码使用标准中定义的 API，就可以在 UWP 应用中重复使用你的代码。 在 .NET Standard 库中共享代码比以前更容易，因为 .NET Standard 2.0 中包含的 API 相当多。
+
+下面是告诉您有关它的详细信息的视频。
+
 > [!VIDEO https://www.youtube-nocookie.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1]
 
-### <a name="add-net-standard-libraries"></a>添加 .NET Standard 库
+#### <a name="add-net-standard-libraries"></a>添加 .NET Standard 库
 
 首先，将一个或多个 .NET Standard 类库添加到你的解决方案中。  
 
@@ -45,7 +60,7 @@ ms.locfileid: "57644342"
 
 接下来，使用工具确定符合标准的代码量。 这样，在将代码移到库中之前，可以确定哪些部分可以重复使用、哪些部分需要最少量的修改，以及哪些部分将仍然特定于应用程序。
 
-### <a name="check-library-and-code-compatibility"></a>检查库和代码的兼容性
+#### <a name="check-library-and-code-compatibility"></a>检查库和代码的兼容性
 
 我们将从 Nuget 包以及从第三方获得的其他 dll 文件开始。
 
@@ -61,7 +76,7 @@ ms.locfileid: "57644342"
 
 某些代码将特定于平台，并且将需要保留在你的桌面应用程序项目中。
 
-### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>示例：迁移到.NET Standard 2.0 库的数据访问代码
+#### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>例如：迁移到.NET Standard 2.0 库的数据访问代码
 
 假设我们有一个非常基本的 Windows 窗体应用程序显示了我们 Northwind 示例数据库中的客户。
 
@@ -151,7 +166,7 @@ public partial class Customers : Form
 }
 ```
 
-## <a name="reach-all-windows-devices"></a>覆盖所有 Windows 设备
+### <a name="create-a-uwp-app"></a>创建 UWP 应用
 
 现在，你可以将 UWP 应用添加到你的解决方案中。
 
@@ -163,7 +178,7 @@ public partial class Customers : Form
 
 这些只是 UWP 带来的一小部分优势。 若要了解详细信息，请参阅[使用 Windows 打造出色的体验](https://developer.microsoft.com/windows/why-build-for-uwp)。
 
-### <a name="add-a-uwp-project"></a>添加 UWP 项目
+#### <a name="add-a-uwp-project"></a>添加 UWP 项目
 
 首先，向你的解决方案中添加一个 UWP 项目。
 
@@ -173,7 +188,7 @@ public partial class Customers : Form
 
 ![类库参考](images/desktop-to-uwp/class-library-reference2.png)
 
-### <a name="build-your-pages"></a>生成页面
+#### <a name="build-your-pages"></a>生成页面
 
 添加 XAML 页面并调用 .NET Standard 2.0 库中的代码。
 
@@ -201,10 +216,9 @@ public sealed partial class MainPage : Page
 }
 ```
 
-
 要开始使用 UWP，请参阅[什么是 UWP 应用](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。
 
-## <a name="reach-ios-and-android-devices"></a>覆盖 iOS 和 Android 设备
+### <a name="reach-ios-and-android-devices"></a>覆盖 iOS 和 Android 设备
 
 通过添加 Xamarin 项目，你可以覆盖 Android 和 iOS 设备。  
 
@@ -216,7 +230,7 @@ public sealed partial class MainPage : Page
 
 就像 UWP 一样，添加 Android 或 iOS 应用的成本较低，因为你可以重复使用 .NET Standard 2.0 类库中的业务逻辑。 你将必须在 XAML 中设计 UI 页面，并编写任何特定于设备或平台的代码。
 
-### <a name="add-a-xamarin-project"></a>添加 Xamarin 项目
+#### <a name="add-a-xamarin-project"></a>添加 Xamarin 项目
 
 首先，将 **Android**、**iOS** 或**跨平台**项目添加到你的解决方案中。
 
@@ -231,7 +245,7 @@ public sealed partial class MainPage : Page
 
 ![类库参考](images/desktop-to-uwp/class-library-reference3.png)
 
-### <a name="build-your-pages"></a>生成页面
+#### <a name="build-your-pages"></a>生成页面
 
 我们的示例显示了 Android 应用中的客户列表。
 
