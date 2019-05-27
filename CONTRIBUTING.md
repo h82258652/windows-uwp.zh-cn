@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 2089f9fcd54989234b52f95eb3ee9535f9b3ede3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f8e74688d0f7048276b12680237b85663d7e2b81
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603112"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66214738"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>向 UWP 概念性文档投稿
 
@@ -34,7 +34,7 @@ Markdown，轻量文本样式语法编写我们的文档。 如果您不熟悉 M
 
 ## <a name="internal-contributions"></a>内部发布内容
 
-如果你是 Microsoft 员工，你可以通过参与[专用内容存储库](https://cpubwin.visualstudio.com/_git/windows-uwp)。 您可以找到有关使用此存储库中的指南[Windows 创作指南](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master)。 必须通过专用存储库提供有关即将推出的功能的文档。
+如果你是 Microsoft 员工，你可以通过参与[专用内容存储库](https://github.com/microsoftdocs/windows-uwp-pr)。 您可以找到有关使用此存储库中的指南[Windows 创作指南](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master)。 必须通过专用存储库提供有关即将推出的功能的文档。
 
 ### <a name="editing-a-file"></a>编辑文件
 

@@ -6,12 +6,12 @@ ms.date: 03/25/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 355cff08c6ab98b0837b8cc95f2480aa1fb17bd4
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: bdcb8132052cd12444c192c93170fb2f8e94113a
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63784726"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215224"
 ---
 # <a name="in-app-ads"></a>应用内广告
 
@@ -40,7 +40,7 @@ ms.locfileid: "63784726"
     * 如果显示插播式视频广告或插播式横幅广告应用程序中，选择**插播式视频**或**横幅插播式**（请务必选择适当的选项的类型插播式 ad 想要显示)。
     * 如果应用程序中显示本机 ad 时，选择**本机**。
 
-5. 在**设备系列**下拉框中，选择将在其中使用广告单元的应用所适用的设备系列。 可用选项包括：**UWP (Windows 10)**， **PC/平板电脑 (Windows 8.1)**，或**Mobile (Windows Phone 8.x)**。
+5. 在**设备系列**下拉框中，选择将在其中使用广告单元的应用所适用的设备系列。 可用选项包括：**UWP (Windows 10)** ， **PC/平板电脑 (Windows 8.1)** ，或**Mobile (Windows Phone 8.x)** 。
 
 6. 根据需要配置以下其他设置：
 
@@ -120,6 +120,7 @@ ms.locfileid: "63784726"
 | smartclip |  选择此选项以提供来自 [smartclip](http://www.smartclip.com/) 的广告。 |  视频间隙  |
 | SpotX |  选择此选项以提供来自 [SpotX](https://www.spotx.tv/) 的广告。 |  视频间隙  |
 | Taboola |  选择此选项以提供来自 [Taboola](https://www.taboola.com/) 的广告。 |  横幅  |
+| Vungle | 选择此选项可提供从广告[Vungle](https://vungle.com/) | 视频间隙 |
 | Undertone | 选择此选项可提供从广告[Undertone](https://www.undertone.com/)。 | 插播式横幅 |
 
 

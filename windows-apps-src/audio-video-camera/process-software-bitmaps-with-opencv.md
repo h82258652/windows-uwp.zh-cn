@@ -8,7 +8,7 @@ keywords: windows 10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ce41a495297870f512f0694e4f2b63eedebbc37
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57616962"
@@ -84,7 +84,7 @@ ms.locfileid: "57616962"
 ## <a name="a-simple-softwarebitmap-opencv-example-using-the-helper-component"></a>有关使用帮助程序组件的简单 SoftwareBitmap OpenCV 示例
 现在已创建了 OpenCVBridge 组件，我们就可以创建一个使用 OpenCV **模糊**方法修改 **SoftwareBitmap** 的简单 C# 应用。 若要从 UWP 应用访问 Windows 运行时组件，你必须先为组件添加引用。 在解决方案资源管理器中右键单击**引用**节点下 UWP 应用项目，选择**添加引用...**.在引用管理器对话框中，选择**项目-> 解决方案**。 选中 OpenCVBridge 项目旁边的框并单击**确定**。
 
-以下示例代码使用户能够选择一个图像文件，然后使用**[BitmapDecoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)** 创建图像的 **SoftwareBitmap** 表示。 有关使用 **SoftwareBitmap** 的详细信息，请参阅[创建、编辑和保存位图图像](https://docs.microsoft.com/windows/uwp/audio-video-camera/imaging)。
+以下示例代码使用户能够选择一个图像文件，然后使用 **[BitmapDecoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)** 创建图像的 **SoftwareBitmap** 表示。 有关使用 **SoftwareBitmap** 的详细信息，请参阅[创建、编辑和保存位图图像](https://docs.microsoft.com/windows/uwp/audio-video-camera/imaging)。
 
 如本文前面所述，**OpenCVHelper** 类要求需要解码的所有提供 **SoftwareBitmap** 图像均使用带预乘 alpha 值的 BGRA8 像素格式，因此，如果图像不是采用此格式，则示例代码将调用 **[Convert](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.BitmapAlphaMode)** 来将图像转换为预期格式。
 

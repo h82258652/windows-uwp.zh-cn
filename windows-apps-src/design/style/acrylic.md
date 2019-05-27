@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0600e66c672a28683befdb7b0090f5455a28c948
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4731ab089189a8a03656281d1a9a6da6e4d24e89
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624192"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984263"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
@@ -38,7 +38,7 @@ ms.locfileid: "57624192"
 
 ## <a name="acrylic-and-the-fluent-design-system"></a>亚克力和 Fluent 设计系统
 
- Fluent 设计系统可帮助你创建包含光线、深度、动画、材料和比例的现代、粗体 UI。 亚克力是一种 Fluent 设计系统组件，用于在你的应用中添加物理纹理（材料）和深度。 要了解详细信息，请参阅 [UWP 的 Fluent Design 概述](../fluent-design-system/index.md)。
+ Fluent 设计系统可帮助你创建包含光线、深度、动画、材料和比例的现代、粗体 UI。 亚克力是一种 Fluent 设计系统组件，用于在你的应用中添加物理纹理（材料）和深度。 要了解详细信息，请参阅 [UWP 的 Fluent Design 概述](/windows/apps/fluent-design-system)。
 
  ## <a name="video-summary"></a>视频摘要
 
@@ -48,14 +48,14 @@ ms.locfileid: "57624192"
 
 :::row:::
     :::column span:::
-        ![Some image](images/XAML-controls-gallery-app-icon.png)
+![某些图像](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
     :::column span="2":::
-        **XAML Controls Gallery**<br>
-        If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/Acrylic">here</a> to open the app and see acrylic in action.
+**XAML 控件库**<br>
+如果已安装的 XAML 控件库应用程序，请单击<a href="xamlcontrolsgallery:/item/Acrylic">此处</a>打开应用，并查看染料中操作。
 
-        <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
-        <a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a>
+<a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a><br>
+<a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a>
     :::column-end:::
 :::row-end:::
 
@@ -73,7 +73,7 @@ ms.locfileid: "57624192"
 ## <a name="when-to-use-acrylic"></a>何时使用亚克力
 
 * 使用应用程序内染料以支持 UI，例如可能会重叠时可以滚动，又与之交互的内容的图面上。
-* 使用背景染料的瞬时 UI 元素，如上下文菜单中，浮出控件和 light dimsissable UI。<br />在临时方案中使用染料有助于保持与触发瞬时 UI 的内容的可视化关系。
+* 使用背景染料的暂时性的 UI 元素，如上下文菜单、 浮出控件和光线可拒绝的用户界面。<br />在临时方案中使用染料有助于保持与触发瞬时 UI 的内容的可视化关系。
 
 如果将应用程序内染料导航图面上，可以考虑扩展来提高您的应用程序上的流丙烯画窗格下方的内容。 使用 NavigationView 将自动执行此操作为您。 但是，若要避免创建条带化效果，不尝试将多个小的丙烯画边到边-这可以创建两个经过模糊处理的图面之间不需要的接缝。 染料是一个工具，可向设计，使 visual 协调工作，但如果使用不正确，可能会导致视觉干扰。
 
@@ -98,7 +98,7 @@ ms.locfileid: "57624192"
 
 ![使用信息性的浮出控件的邮件应用程序模式](images/Mail_TransientContextMenu.png)
 
-默认情况下，许多我们控件将使用染料。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)， [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)，[组合框](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)和 light dimiss 弹出类似控件都将使用暂时性染料时调用它们。
+默认情况下，许多我们控件将使用染料。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)， [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)，[组合框](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)和类似控件使用轻量解除弹出窗口时，将所有使用暂时性染料调用它们。
 
 > [!Note]
 > 呈现丙烯画的图面是 GPU 密集型的这会增加设备的功率消耗并缩短电池使用寿命。 Acrylic 效果被自动禁用设备进入节电模式和用户可以禁用的所有应用的丙烯画效果时，如果用户选择。
@@ -319,7 +319,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
 * 请将亚克力用作非主要应用图面（例如导航窗格）的背景材料。
 * 请将亚克力扩展到至少一个应用边缘，通过与应用周围环境巧妙融合营造无缝体验。
-* 不要将桌面 arylic 放在您的应用程序的较大的背景图面上-这会破坏染料主要用于临时图面心理模型。
+* 不要将桌面染料放在您的应用程序的较大的背景图面上-这会破坏染料主要用于临时图面心理模型。
 * 不要直接并列放置应用内亚克力和背景亚克力，以避免接缝处产生不协调的视觉效果。
 * 不要并列放置具有相同色调和不透明度的多个亚克力窗格，因为这会导致出现不协调的明显接缝。
 * 不要将主题色文本放在亚克力图面上。

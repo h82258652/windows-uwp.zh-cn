@@ -4,14 +4,16 @@ title: 使用桌面应用程序中托管 API UWP XAML
 ms.date: 04/16/2019
 ms.topic: article
 keywords: windows 10、 uwp、 windows 窗体、 wpf、 win32、 xaml 群岛
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 9b318b922541180108dfdd053ba28ce98ad9ebcb
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 545e1e1b220de9edf444ca06c3b21140227e8284
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985007"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215143"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用桌面应用程序中托管 API UWP XAML
 

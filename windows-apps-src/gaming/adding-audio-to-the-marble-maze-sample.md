@@ -8,7 +8,7 @@ keywords: Windows 10, uwp, 音频, 游戏, 示例
 ms.localizationpriority: medium
 ms.openlocfilehash: 40fa8b1c23d591453308c3ad066967ed65902917
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57616712"
@@ -387,7 +387,7 @@ enum SoundEvent
 };
 ```
 
-下表给出了其中每个值之间的关系、包含关联的声音数据的文件，以及每种声音有何含义的简短描述。 音频文件位于**\\媒体\\音频**文件夹。
+下表给出了其中每个值之间的关系、包含关联的声音数据的文件，以及每种声音有何含义的简短描述。 音频文件位于 **\\媒体\\音频** 文件夹。
 
 | SoundEvent 值  | 文件名      | 描述                                              |
 |-------------------|----------------|----------------------------------------------------------|

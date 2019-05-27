@@ -5,17 +5,19 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 274f69c71890423d9962efe67cca81646a1e8e68
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 2e1aa424fe038a50a5e29364c7f8246e324dc07c
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984477"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215001"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>分发打包桌面应用程序
 
-如果你决定[MSIX 包中的将桌面应用程序打包](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)，可以将发布到 Microsoft Store 或旁加载打包的应用程序放到一个或多个设备。
+如果你决定[MSIX 包中的将桌面应用程序打包](/windows/msix/desktop/desktop-to-uwp-root)，可以将发布到 Microsoft Store 或旁加载打包的应用程序放到一个或多个设备。
 
 > [!NOTE]
 > 你是否对打包的应用程序，您就可能会转换用户的计划？ 分发应用前，请参阅本指南的[将用户切换到打包的应用](#transition-users)部分，获得一些参考。
@@ -26,12 +28,12 @@ ms.locfileid: "65984477"
 
 发布到 Microsoft Store 应用程序，以覆盖最广泛的受众。 此外，组织的客户可以获取你的应用程序在内部分发给其组织通过[于企业的 Microsoft Store](https://www.microsoft.com/business-store)。
 
-如果你打算发布到 Microsoft Store，在提交过程中，系统将要求你额外回答几个问题。 这是因为程序包清单声明名为 **runFullTrust** 的受限功能，我们需要批准该功能对你的应用程序的使用。 你可以阅读更多有关此要求此处：[受限制的功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
+如果你打算发布到 Microsoft Store，在提交过程中，系统将要求你额外回答几个问题。 这是因为程序包清单声明名为 **runFullTrust** 的受限功能，我们需要批准该功能对你的应用程序的使用。 你可以阅读更多有关此要求此处：[受限制的功能](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
 
 您无需登录你的应用程序，然后将其提交到存储区。
 
 >[!IMPORTANT]
-> 如果你打算发布到 Microsoft Store 应用程序，请确保你的应用程序运行正常的设备上的运行 Windows 10 s。这是存储要求。 请参阅[测试适用于 Windows 10 S 的 Windows 应用](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s)。
+> 如果你打算发布到 Microsoft Store 应用程序，请确保你的应用程序运行正常的设备上的运行 Windows 10 s。这是存储要求。 请参阅[测试适用于 Windows 10 S 的 Windows 应用](/windows/msix/desktop/desktop-to-uwp-test-windows-s)。
 
 <a id="side-load" />
 
@@ -43,7 +45,7 @@ ms.locfileid: "65984477"
 
 若要分发到其他设备的应用程序而无需将其放置在存储中，你必须获取证书，请使用该证书，然后旁加载到这些设备上的应用程序登录你的应用程序。
 
-你可以[创建证书](/windows/uwp/packaging/create-certificate-package-signing.md)或从 [Verisign](https://www.verisign.com/) 等热门供应商处获取。
+你可以[创建证书](/windows/uwp/packaging/create-certificate-package-signing)或从 [Verisign](https://www.verisign.com/) 等热门供应商处获取。
 
 如果你打算分发到运行 Windows 10 S 的设备上的应用程序，你的应用程序必须由 Microsoft Store 签名，因此您必须在可以分发到这些设备上的应用程序之前经过应用商店提交过程。
 
@@ -52,9 +54,9 @@ ms.locfileid: "65984477"
 > [!IMPORTANT]
 > 确保证书上的发布者名称与应用的发布者名称匹配。
 
-若要使用的证书签名应用程序，请参阅[签名应用程序包使用 SignTool](/windows/uwp/packaging/sign-app-package-using-signtool.md)。
+若要使用的证书签名应用程序，请参阅[签名应用程序包使用 SignTool](/windows/uwp/packaging/sign-app-package-using-signtool)。
 
-旁加载应用程序转移到其他设备，请参阅[Windows 10 中的旁加载 LOB 应用](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)。
+旁加载应用程序转移到其他设备，请参阅[Windows 10 中的旁加载 LOB 应用](/windows/application-management/sideload-apps-in-windows-10)。
 
 **视频**
 

@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4ba3a45701d82ad0b43591469bf390190ec18db0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1a396377eb332052ae7f238a23865f2b7dc0aa16
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642222"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984184"
 ---
 # <a name="navigation-view"></a>导航视图
 
@@ -136,7 +136,7 @@ _顶部导航栏布局_
 ![左侧的导航视图布局](images/leftnav-anatomy.png)<br/>
 _左侧导航栏布局_
 
-### <a name="pane"></a>窗格
+### <a name="pane"></a>Pane
 
 PaneDisplayMode 属性可用于调整窗格内容的顶部或左侧的内容的位置。
 
@@ -226,7 +226,7 @@ NavigationView 窗格可能包含：
     :::column-end:::
 :::row-end:::
 
-### <a name="header"></a>标头
+### <a name="header"></a>Header
 
 可以通过设置添加页面标题[标头](/uwp/api/windows.ui.xaml.controls.navigationview.header)属性。
 
@@ -624,7 +624,7 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 }
 ```
 
-下面是[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/index)新版**NavView_ItemInvoked**处理程序从C#上面的代码示例。 方法在 C + + WinRT 处理程序涉及到您第一次存储 (中的标记[ **NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) 想要导航的页面的完整类型名称。 在处理程序中，取消装箱的值，将其转换[ **Windows::UI::Xaml::Interop::TypeName** ](/uwp/api/windows.ui.xaml.interop.typename)对象，并使用它来导航到目标页。 名为的映射变量无需`_pages`中看到C#的示例; 并且您将能够创建单元测试，证明你标记内的值的有效类型。 另请参阅[装箱和取消装箱的标量值到 IInspectable 使用 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/boxing)。
+下面是[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index)新版**NavView_ItemInvoked**处理程序从C#上面的代码示例。 中的方法C++/WinRT 处理程序涉及到您第一次存储 (中的标记[ **NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) 想要导航的页面的完整类型名称。 在处理程序中，取消装箱的值，将其转换[ **Windows::UI::Xaml::Interop::TypeName** ](/uwp/api/windows.ui.xaml.interop.typename)对象，并使用它来导航到目标页。 名为的映射变量无需`_pages`中看到C#的示例; 并且您将能够创建单元测试，证明你标记内的值的有效类型。 另请参阅[装箱和取消装箱的标量值到 IInspectable 与C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing)。
 
 ```cppwinrt
 void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* sender */, Windows::UI::Xaml::Controls::NavigationViewItemInvokedEventArgs const & args)
@@ -715,4 +715,4 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
 - [NavigationView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 - [大纲/细节](master-details.md)
 - [导航基础知识](../basics/navigation-basics.md)
-- [Fluent 设计 UWP 概述](../fluent-design-system/index.md)
+- [Fluent 设计 UWP 概述](/windows/apps/fluent-design-system)

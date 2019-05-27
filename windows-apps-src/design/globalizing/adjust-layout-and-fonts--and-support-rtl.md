@@ -10,7 +10,7 @@ keywords: windows 10, uwp, 可本地化性, 本地化, rtl, ltr
 ms.localizationpriority: medium
 ms.openlocfilehash: e428dd068337ecd79992e8e27cd193bed112d9c2
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57645302"
@@ -53,7 +53,7 @@ ms.locfileid: "57645302"
 在页面的根布局面板（或框架）或页面本身上设置 **FlowDirection**。 这将导致包含在其中的所有控件继承该属性。
 
 > [!IMPORTANT]
-> 但是，**FlowDirection***不会* 根据用户在 Windows 设置中选择的显示语言自动设置；也不会作为用户切换显示语言的响应动态更改。 例如，如果用户将 Windows 设置从英语切换为阿拉伯语，**FlowDirection** 属性将*不会* 自动由从左到右更改为从右到左。 作为应用开发人员，你必须为你当前显示的语言设置相应的 **FlowDirection**。
+> 但是，**FlowDirection** *不会* 根据用户在 Windows 设置中选择的显示语言自动设置；也不会作为用户切换显示语言的响应动态更改。 例如，如果用户将 Windows 设置从英语切换为阿拉伯语，**FlowDirection** 属性将*不会* 自动由从左到右更改为从右到左。 作为应用开发人员，你必须为你当前显示的语言设置相应的 **FlowDirection**。
 
 编程方法是使用首选用户显示语言的 `LayoutDirection` 属性设置 [**FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) 属性（请参阅下面的代码示例）。 包含在 Windows 中的大多数控件都已使用 **FlowDirection**。 如果要实现自定义控件，则应使用 **FlowDirection** 为 RTL 和 LTR 语言进行相应的布局更改。
 

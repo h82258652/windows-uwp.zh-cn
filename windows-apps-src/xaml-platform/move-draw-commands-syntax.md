@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 604ad25bb65486b3b388a9a03d7503b0c1ce9c03
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57632522"
@@ -51,9 +51,9 @@ Windows 运行时，可以使用一个字符串，表示移动和绘制命令中
 -   除关闭命令之外的每个命令通常都后跟一个或多个数字。
 -   如果命令中具有多个数字，则使用逗号或空格进行分隔。
 
-**\[**_fillRule_ **\]** _moveCommand_ _drawCommand_ **\[** _drawCommand_ **\* \]** **\[** _closeCommand_**\]**
+**\[**_fillRule_**\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**
 
-许多绘制命令都使用你为其提供 _x,y_ 值的点。 只要看到\*_点_占位符可以假定您将提供两个十进制值_x，y_点值。
+许多绘制命令都使用你为其提供 _x,y_ 值的点。 只要看到 \*_点_ 占位符可以假定您将提供两个十进制值 _x，y_ 点值。
 
 如果结果清晰，空白区域通常可以忽略。 事实上，如果你对所有数字集（点和大小）使用逗号作为分隔符，则可以忽略所有空白区域。 例如，下面的用法是合法的：`F1M0,58L2,56L6,60L13,51L15,53L6,64z`。 但是包括命令之间的空白区域以获取清晰度是更为典型的用法。
 
@@ -171,7 +171,7 @@ Windows 运行时，可以使用一个字符串，表示移动和绘制命令中
 
 | 语法 |
 |--------|
-| `T` *控制点**终结点* <br/> - 或 - <br/> `t` *控制点**终结点* |
+| `T` *控制点* *终结点* <br/> - 或 - <br/> `t` *控制点* *终结点* |
 
 | 术语 | 描述 |
 |------|-------------|

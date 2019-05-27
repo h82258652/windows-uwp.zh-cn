@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 41c11ee9c5decffff57a2d443e1385398ce40d89
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3411ee4c947d809009c2185389f5513a49afce98
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658462"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215036"
 ---
 # <a name="manage-creatives"></a>管理创意
 
@@ -22,7 +22,7 @@ ms.locfileid: "57658462"
 > [!NOTE]
 > 使用此 API 上载自己的创意时，允许的最大创意大小为 40 KB。 如果提交的创意文件大于此值，则此 API 将不会返回错误，但不会成功创建市场活动。 
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用这些方法，首先需要执行以下操作：
 
@@ -36,18 +36,18 @@ ms.locfileid: "57658462"
 
 | 方法类型 | 请求 URI     |  描述  |
 |--------|-----------------------------|---------------|
-| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/creative``` |  创建新创意。  |
+| 发布   | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/creative``` |  创建新创意。  |
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/creative/{creativeId}``` |  获取通过 *creativeId* 指定的创意。  |
 
 > [!NOTE]
 > 此 API 当前不支持 PUT 方法。
 
 
-### <a name="header"></a>标头
+### <a name="header"></a>Header
 
-| 标头        | 在任务栏的搜索框中键入   | 描述         |
+| Header        | 在任务栏的搜索框中键入   | 描述         |
 |---------------|--------|---------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 | 跟踪 ID   | GUID   | 可选。 跟踪调用流的 ID。                                  |
 
 
@@ -116,14 +116,14 @@ Authorization: Bearer <your access token>
 | 字段        | 在任务栏的搜索框中键入   |  描述      |  只读  | 默认  |  POST 必填字段 |  
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整数   |  创意的 ID。     |   是    |      |    否   |       
-|  name   |  字符串   |   创意的名称。    |    否   |      |  是     |       
-|  content   |  字符串   |  创意图像的内容（Base64 编码格式）。<br/><br/>**注意**&nbsp;&nbsp;允许的最大创意大小为 40 KB。 如果提交的创意文件大于此值，则此 API 将不会返回错误，但不会成功创建市场活动。      |  否     |      |   是    |       
+|  name   |  string   |   创意的名称。    |    否   |      |  是     |       
+|  content   |  string   |  创意图像的内容（Base64 编码格式）。<br/><br/>**注意**&nbsp;&nbsp;允许的最大创意大小为 40 KB。 如果提交的创意文件大于此值，则此 API 将不会返回错误，但不会成功创建市场活动。      |  否     |      |   是    |       
 |  height   |  整数   |   创意的高度。    |    否    |      |   是    |       
 |  width   |  整数   |  创意的宽度。     |  否    |     |    是   |       
-|  landingUrl   |  字符串   |  如果使用市场活动跟踪服务（如 Kochava、AppsFlyer 或 Tune）测量应用的安装分析，则在调用 POST 方法时，请在此字段指定跟踪 URL（如已指定，则此值必须为有效 URL）。 如果未使用市场活动跟踪服务，则在调用 POST 方法时，请忽略此值（在此情况下，将会成功创建此 URL）。   |  否    |     |   是    |       
-|  format   |  字符串   |   广告的格式。 当前，唯一受支持的值为 **Banner**。    |   否    |  横幅   |  否     |       
-|  imageAttributes   | [imageAttributes](#image-attributes)    |   提供创意的属性。     |   否    |      |   是    |       
-|  storeProductId   |  字符串   |   与广告活动关联的应用的[应用商店 ID](in-app-purchases-and-trials.md#store-ids)。 产品应用商店 ID 示例：9nblggh42cfd。    |   否    |    |  否     |   |  
+|  landingUrl   |  string   |  如果使用活动跟踪 AppsFlyer、 Kochava、 优化，Vungle 等服务用于衡量您的应用程序安装分析，分配你在此字段中的跟踪 URL 时调用 POST 方法 （如果指定，此值必须是有效的 URI）。 如果未使用市场活动跟踪服务，则在调用 POST 方法时，请忽略此值（在此情况下，将会成功创建此 URL）。   |  否    |     |   是    |
+|  format   |  string   |   广告的格式。 当前，唯一受支持的值为 **Banner**。    |   否    |  横幅   |  否     |       
+|  imageAttributes   | [ImageAttributes](#image-attributes)    |   提供创意的属性。     |   否    |      |   是    |       
+|  storeProductId   |  string   |   与广告活动关联的应用的[应用商店 ID](in-app-purchases-and-trials.md#store-ids)。 产品应用商店 ID 示例：9nblggh42cfd。    |   否    |    |  否     |   |  
 
 
 <span id="image-attributes"/>
@@ -132,7 +132,7 @@ Authorization: Bearer <your access token>
 
 | 字段        | 在任务栏的搜索框中键入   |  描述      |  只读  | 默认值  | POST 必填字段 |  
 |--------------|--------|---------------|------|-------------|------------|
-|  imageExtension   |   字符串  |   以下值之一：**PNG**或**JPG**。    |    否   |      |   是    |       |
+|  imageExtension   |   string  |   以下值之一：**PNG**或**JPG**。    |    否   |      |   是    |       |
 
 
 ## <a name="related-topics"></a>相关主题

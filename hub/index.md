@@ -1,17 +1,20 @@
 ---
 layout: HubPage
+uhfHeaderId: MSDocsHeader-DocsL1
 hide_bc: true
 ms.prod: windows
+ms.technology: hub
+ms.date: 04/09/2019
+ms.topic: hub-page
 title: Windows 文档
 description: 找到开发人员、硬件以及 IT 专业人员的相关文档，以帮助你构建和维护你的 Windows 解决方案。
-ms.technology: hub
 localizationpriority: medium
-ms.openlocfilehash: 1926f38d4b7772488e086395d4e28545b1f85a81
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1e669d07fdfd1f97ddef43a14078033249a2e1d5
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582382"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65983913"
 ---
 <div id="main" class="v2">
   <div class="container">
@@ -23,7 +26,7 @@ ms.locfileid: "57582382"
                           <div class="card">
                               <div class="cardImageOuter">
                                   <div class="cardImage">
-                                      <img data-hoverimage="/media/hubs/windows/win_try-windows.svg" src="/media/hubs/windows/win_try-windows.png" alt="" />
+                                      <img data-hoverimage="/media/hubs/windows/win_try-windows.svg?branch=master" src="/media/hubs/windows/win_try-windows.png?branch=master" alt="" />
                                   </div>
                               </div>
                               <div class="cardText">
@@ -41,7 +44,7 @@ ms.locfileid: "57582382"
                           <div class="card">
                               <div class="cardImageOuter">
                                   <div class="cardImage">
-                                      <img data-hoverimage="/media/hubs/windows/win_insider.svg" src="/media/hubs/windows/win_insider.png" alt="" />
+                                      <img data-hoverimage="/media/hubs/windows/win_insider.svg?branch=master" src="/media/hubs/windows/win_insider.png?branch=master" alt="" />
                                   </div>
                               </div>
                               <div class="cardText">
@@ -59,7 +62,7 @@ ms.locfileid: "57582382"
                           <div class="card">
                               <div class="cardImageOuter">
                                   <div class="cardImage">
-                                      <img data-hoverimage="/media/hubs/windows/win_academy.svg" src="/media/hubs/windows/win_academy.png" alt="" />
+                                      <img data-hoverimage="/media/hubs/windows/win_academy.svg?branch=master" src="/media/hubs/windows/win_academy.png?branch=master" alt="" />
                                   </div>
                               </div>
                               <div class="cardText">
@@ -81,24 +84,24 @@ ms.locfileid: "57582382"
                 <li>
                     <a href="#developer-all">全部</a>
                     <ul id="developer-all" class="cardsC">
-<li>
+                        <li>
                             <div class="container intro">
-                                <p>针对 Windows 10 进行生成</p>
+                                <p>针对 Windows 构建</p>
                             </div>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/windows/uwp/">
+                            <a href="/windows/apps/desktop">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/win_developer-uwp.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-desktop.svg?branch=master" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>UWP 应用</h3>
-                                                <p>构建适用于任何 Windows 设备（电脑、手机、Xbox One、HoloLens 以及其他设备）的应用，然后将这些应用发布到 Microsoft Store。 </p>
+                                                <h3>电脑桌面应用</h3>
+                                                <p>获取工具、了解哪个平台最适合自己的新应用（包括 UWP、WPF、Windows 窗体和 Win32），以及了解如何使用最新的 Windows 功能增强现有的应用。</p>
                                             </div>
                                         </div>
                                     </div>
@@ -106,18 +109,18 @@ ms.locfileid: "57582382"
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/windows/desktop">
+                            <a href="/windows/uwp/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/win_developer-desktop.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-uwp.svg?branch=master" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>桌面应用程序</h3>
-                                                <p>获取工具、查找最适合的技术，并且了解如何在所选平台上开发桌面应用程序。</p>
+                                                <h3>UWP 应用</h3>
+                                                <p>构建适用于任何 Windows 设备（电脑、手机、Xbox One、HoloLens 以及其他设备）的应用，然后将这些应用发布到 Microsoft Store。 </p>
                                             </div>
                                         </div>
                                     </div>
@@ -131,7 +134,7 @@ ms.locfileid: "57582382"
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/win_developer-games.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-games.svg?branch=master" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
@@ -150,7 +153,7 @@ ms.locfileid: "57582382"
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/win_developer-iot.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-iot.svg?branch=master" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
@@ -169,7 +172,7 @@ ms.locfileid: "57582382"
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/win_developer-mixed-reality.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-mixed-reality.svg?branch=master" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
@@ -182,18 +185,18 @@ ms.locfileid: "57582382"
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/microsoft-edge/">
+                            <a href="https://developer.microsoft.com/web/platforms-tech/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/win_developer-edge.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-edge.svg?branch=master" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
                                                 <h3>Web</h3>
-                                                <p>创建 Microsoft Edge 支持的体验和最新的 Web 标准。</p>
+                                                <p>使用 ASP.NET 为 Microsoft Edge 和现代 Web 应用创建渐进式 Web 应用和浏览器扩展等。</p>
                                             </div>
                                         </div>
                                     </div>
@@ -207,7 +210,7 @@ ms.locfileid: "57582382"
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/windows-ai.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/windows-ai.svg?branch=master" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">

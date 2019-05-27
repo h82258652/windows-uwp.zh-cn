@@ -1,16 +1,16 @@
 ---
 description: 本主题介绍如何直接或间接使用 **winrt::implements** 基结构来创作 C++/WinRT API。
 title: 使用 C++/WinRT 创作 API
-ms.date: 01/10/2019
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 05997549b5f1c0d13b12d47e0bb180d54617dcf2
-ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.openlocfilehash: 526c6fba76539a5d43231c29479621478b2dde59
+ms.sourcegitcommit: 6c7e1aa3bd396a1ad714e8b77c0800759dc2d8e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921713"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65821081"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 创作 API
 
@@ -116,7 +116,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 using namespace Windows::ApplicationModel::Core;
 int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
-    CoreApplication::Run(App{});
+    CoreApplication::Run(winrt::make<App>());
 }
 ```
 
@@ -155,8 +155,8 @@ namespace winrt::MyProject::implementation
     {
         MyRuntimeClass() = default;
 
-        hstring Name();
-        void Name(hstring const& value);
+        winrt::hstring Name();
+        void Name(winrt::hstring const& value);
     };
 }
 
@@ -399,8 +399,8 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 * [winrt::get_self 函数模板](/uwp/cpp-ref-for-winrt/get-self)
 * [winrt::implements 结构模板](/uwp/cpp-ref-for-winrt/implements)
 * [winrt::make 函数模板](/uwp/cpp-ref-for-winrt/make)
-* [winrt::make_self 函数模板](/uwp/cpp-ref-for-winrt/make-self)
-* [winrt::Windows::Foundation::IUnknown::as 函数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [winrt::make_self function template](/uwp/cpp-ref-for-winrt/make-self)
+* [winrt::Windows::Foundation::IUnknown:: 为函数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## <a name="related-topics"></a>相关主题
 * [通过 C++/WinRT 使用 API](consume-apis.md)

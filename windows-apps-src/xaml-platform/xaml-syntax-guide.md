@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e988582877a6aa4ca3cf88ba0a5d98aceb56939e
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57595052"
@@ -301,9 +301,9 @@ Windows 运行时 API 中的许多属性都使用枚举作为值。 如果成员
 XAML 用法部分还使用各种通用性占位符。 有些情况下，这些占位符可能并不需要在“XAML 值”中重新定义，因为你可以猜到或最终会了解到这些占位符代表的含义。 我们认为大部分读者不愿意在“XAML 值”中一再看到这些占位符，因而我们不定义这些占位符。 出于参考目的，下面列出了这些占位符中的部分占位符以及这些占位符的常规含义：
 
 -   *object*：从理论上讲是任意对象值，但实际上通常被限制为特定类型的对象（例如“字符串或对象”选择），并且应查看参考页面上的“备注”部分以获取更多信息。
--   *对象**属性*:*对象**属性*结合使用的情况下显示的语法是可用作类型的语法许多属性的特性值。 例如， **Xaml 特性用法**所示[**画笔**](/uwp/api/Windows.UI.Xaml.Media.Brush)包括： <*对象**属性*="*predefinedColorName*"/ >
+-   *对象* *属性*:*对象* *属性*结合使用的情况下显示的语法是可用作类型的语法许多属性的特性值。 例如， **Xaml 特性用法**所示[**画笔**](/uwp/api/Windows.UI.Xaml.Media.Brush)包括： <*对象**属性*="*predefinedColorName*"/ >
 -   *事件处理程序*:这显示为每个事件属性中所示的 XAML 语法的属性值。 此处所提供的内容为事件处理程序函数的函数名。 该函数必须在 XAML 页面的代码隐藏中定义。 在编程级别上，该函数必须与你处理的事件的委派签名匹配，或者你的应用代码未编译。 但这实际是出于编程方面的考虑，而不是 XAML 方面的考虑，因此我们不尝试在 XAML 语法中暗示有关委派类型的任何内容。 如果你希望了解你应实现事件的哪个委托，请在标记为“委托”的表行中参阅该事件参考主题的“事件信息”部分。
--   *enumMemberName*：显示在所有枚举的属性语法中。 存在使用枚举值的属性的类似占位符，但它通常为占位符附加该枚举的名称提示以作为前缀。 例如，为 [**FrameworkElement.FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) 显示的语法为 <*frameworkElement***FlowDirection**="* flowDirectionMemberName*"/>。 如果你位于某个属性参考页面上，请在“类型:”字样旁边的“属性值”部分单击枚举类型的链接。 对于使用该枚举的属性的属性值，你可以使用“成员”列表的“成员”列中列出的任意字符串。
+-   *enumMemberName*：显示在所有枚举的属性语法中。 存在使用枚举值的属性的类似占位符，但它通常为占位符附加该枚举的名称提示以作为前缀。 例如，为 [**FrameworkElement.FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) 显示的语法为 <*frameworkElement* **FlowDirection** ="* flowDirectionMemberName*"/>。 如果你位于某个属性参考页面上，请在“类型:”字样旁边的“属性值”部分单击枚举类型的链接。 对于使用该枚举的属性的属性值，你可以使用“成员”列表的“成员”列中列出的任意字符串。
 -   *双精度*， *int*，*字符串*， *bool*:这些是已知的 XAML 语言基元类型。 如果你使用 C# 或 Visual Basic 进行编程，则这些类型将映射到 Microsoft .NET 等价类型，例如 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx)、[**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) 和 [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx)，并且在使用 .NET 代码隐藏中的 XAML 定义的值时你可以使用这些 .NET 类型上的任意成员。 如果你使用 C++/CX 进行编程，则可以使用 C++ 基元类型，但也可以考虑使用 [**Platform**](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) 命名空间定义的类型的等价类型，例如 [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx)。 有时，对于特定属性存在其他值限制。 但你通常会在“属性值”部分或“备注”部分（而非 XAML 部分）看到这些限制，因为所有此类限制都既适用于代码用法也适用于 XAML 用法。
 
 ## <a name="tips-and-tricks-notes-on-style"></a>有关样式的提示、技巧和注释

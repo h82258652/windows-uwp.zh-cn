@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 176009cb3a2fb14eb5071d48d59a0b807d4c81d6
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 464aa35aa8362049042ad23a6816c4de21b25634
+ms.sourcegitcommit: 559d3387d5929431212d147d9e085895e162916a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63770369"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66184518"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>使用应用 URI 处理程序启用“网站的应用”功能
 
@@ -76,7 +76,7 @@ Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器
 | **\***       | 表示任何子字符串      |
 | **?**        | 表示单个字符 |
 
-例如，给定上述示例中的 `"excludePaths" : [ "/news/*", "/blog/*" ]`，你的应用将支持以你的网站地址（例如 msn.com）开头的所有路径，**除了**`/news/` 和 `/blog/` 下的路径。 将支持 **msn.com/weather.html**，但不支持 ****msn.com/news/topnews.html****。
+例如，给定上述示例中的 `"excludePaths" : [ "/news/*", "/blog/*" ]`，你的应用将支持以你的网站地址（例如 msn.com）开头的所有路径，**除了**`/news/` 和 `/blog/` 下的路径。 **msn.com/weather.html**将支持，但不是**msn.com/news/topnews.html**。
 
 ### <a name="multiple-apps"></a>多个应用
 

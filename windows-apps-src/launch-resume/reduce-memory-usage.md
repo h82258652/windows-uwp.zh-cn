@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 28c21b3d3b3e53def2181e96a58b53998ee0f04a
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57660722"
@@ -46,7 +46,7 @@ Windows 10 版本 1607 引入了两个新的应用程序生命周期事件：[**
 
 当应用过渡到后台时，系统会降低该应用的内存限制，以确保当前的前台应用具有足够的资源来提供响应迅速的用户体验
 
-[  **AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) 事件处理程序使应用可以知道其分配的内存已减少，同时在传递给该处理程序的事件参数中提供新限制。 将 [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsage) 属性（提供应用的当前使用量）与事件参数的 [**NewLimit**](https://msdn.microsoft.com/library/windows/apps/Windows.System.AppMemoryUsageLimitChangingEventArgs.NewLimit) 属性（指定新限制）比较。 如果内存使用量超过该限制，则需要减少内存使用量。
+[**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) 事件处理程序使应用可以知道其分配的内存已减少，同时在传递给该处理程序的事件参数中提供新限制。 将 [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsage) 属性（提供应用的当前使用量）与事件参数的 [**NewLimit**](https://msdn.microsoft.com/library/windows/apps/Windows.System.AppMemoryUsageLimitChangingEventArgs.NewLimit) 属性（指定新限制）比较。 如果内存使用量超过该限制，则需要减少内存使用量。
 
 在此示例中，使用帮助程序方法 **ReduceMemoryUsage**（将在本文后面部分定义）执行此操作。
 
@@ -88,10 +88,10 @@ Windows 10 版本 1607 引入了两个新的应用程序生命周期事件：[**
 
 当应用从前台移动到后台时，它将先获取 **EnteredBackground** 事件，然后获取 **AppMemoryUsageLimitChanging** 事件。
 
-- **使用****EnteredBackground** 事件，以释放所知道的应用（在后台运行时）不需要的 UI 资源。 例如，可以释放某首歌曲的封面画面图像。
-- **使用****AppMemoryUsageLimitChanging** 事件，以确保应用使用比新后台限制更少的内存。 如果不是，请确保释放资源。 如果不这样做，根据设备特定的策略，应用可能会暂停或终止。
+- **使用** **EnteredBackground** 事件，以释放所知道的应用（在后台运行时）不需要的 UI 资源。 例如，可以释放某首歌曲的封面画面图像。
+- **使用** **AppMemoryUsageLimitChanging** 事件，以确保应用使用比新后台限制更少的内存。 如果不是，请确保释放资源。 如果不这样做，根据设备特定的策略，应用可能会暂停或终止。
 - 当 **AppMemoryUsageLimitChanging** 事件引发时，如果应用超出新的内存限制，**请**手动调用垃圾回收器。
-- **使用****AppMemoryUsageIncreased** 事件，以在应用在后台运行时继续监视应用的内存使用量（如果预计会出现变化）。 如果 **AppMemoryUsageLevel** 为 **High** 或 **OverLimit**，请确保释放资源。
+- **使用** **AppMemoryUsageIncreased** 事件，以在应用在后台运行时继续监视应用的内存使用量（如果预计会出现变化）。 如果 **AppMemoryUsageLevel** 为 **High** 或 **OverLimit**，请确保释放资源。
 - 作为一种性能优化，请**考虑**在 **AppMemoryUsageLimitChanging** 事件处理程序中释放 UI 资源，而不是在 **EnteredBackground** 处理程序中释放。 使用 **EnteredBackground/LeavingBackground** 事件处理程序中设定的布尔值，来跟踪应用是在后台还是在前台运行。 然后在 **AppMemoryUsageLimitChanging** 事件处理程序中，如果 **AppMemoryUsage** 超出限制并且应用在后台运行（基于布尔值），则可以释放 UI 资源。
 - **不要**在 **EnteredBackground** 事件中执行长时间运行的操作，因为可能会导致用户感觉应用程序之间的过渡较慢。
 
@@ -99,7 +99,7 @@ Windows 10 版本 1607 引入了两个新的应用程序生命周期事件：[**
 
 当应用从后台移动到前台时，应用将先获取 **AppMemoryUsageLimitChanging** 事件，然后获取 **LeavingBackground** 事件。
 
-- **使用****LeavingBackground** 事件，重新创建应用在进入后台时丢弃的 UI 资源。
+- **使用** **LeavingBackground** 事件，重新创建应用在进入后台时丢弃的 UI 资源。
 
 ## <a name="related-topics"></a>相关主题
 

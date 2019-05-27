@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d07a90ce34e9b4613eed6782338cbd889d7935c9
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 53a69393d945be1640f733b47410f88631fc7714
+ms.sourcegitcommit: 13fe5d04bdb43c75d0fc4de18c2c3d4ae58ff982
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58081869"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66221049"
 ---
 # <a name="responsive-layouts-with-xaml"></a>采用 XAML 的响应式布局
 
@@ -27,7 +27,7 @@ XAML 布局系统支持静态布局和动态布局。 在静态布局中，你�
 在此处，我们将讨论如何使用 XAML 属性和布局面板创建动态布局。
 
 ### <a name="layout-properties"></a>布局属性
-布局属性控制元素的大小和位置。 要创建动态布局，请将自动或成比例大小调整用于元素，并允许布局面板根据需要定位其子元素。 
+布局属性控制元素的大小和位置。 若要创建流畅的布局，请使用自动或按比例调整大小的元素，并允许布局面板，以根据需要定位其子级。 
 
 下面介绍了一些常见布局属性以及如何使用它们来创建动态布局。
 
@@ -348,7 +348,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 
 **使用文件的名称**
 
-若要将限定符名称与文件结合使用，请使用此格式：*[pageName]*.DeviceFamily-*[qualifierString]*.xaml。
+若要将限定符名称与文件结合使用，请使用此格式： *[pageName]* .DeviceFamily- *[qualifierString]* .xaml。
 
 让我们来看看名为 MainPage.xaml 的文件的示例。 若要为平板设备创建视图，请将 XAML 视图命名为 MainPage.DeviceFamily-Tablet.xaml。 若要为电脑设备创建视图，请将视图命名为 MainPage.DeviceFamily-Desktop.xaml。 下面是该解决方案在 Microsoft Visual Studio 中的外观。
 
@@ -356,7 +356,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 
 **使用文件夹名称**
 
-若要在 Visual Studio 项目中使用文件夹组织视图，可以将限定符名称与该文件夹结合使用。 若要执行此操作，命名为您这样的文件夹：DeviceFamily-*[qualifierString]*。 在此情况下，每个 XAML 视图文件具有相同的名称。 不要在文件名中包含限定符。
+若要在 Visual Studio 项目中使用文件夹组织视图，可以将限定符名称与该文件夹结合使用。 若要执行此操作，命名为您这样的文件夹：DeviceFamily- *[qualifierString]* 。 在此情况下，每个 XAML 视图文件具有相同的名称。 不要在文件名中包含限定符。
 
 下面的示例再次使用名为 MainPage.xaml 的文件。 若要为平板设备创建视图，请创建一个名为“DeviceFamily-Tablet”的文件夹，并在其中放入名为 MainPage.xaml 的 XAML 视图。 若要为电脑设备创建视图，请创建一个名为“DeviceFamily-Desktop”的文件夹，并在其中放入名为 MainPage.xaml 的另一个 XAML 视图。 下面是该解决方案在 Visual Studio 中的外观。
 

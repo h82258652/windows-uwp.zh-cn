@@ -90,11 +90,11 @@ ms.locfileid: "65852276"
 
 在所有版本的 Windows 10 中，可以在代码中的条件中使用 ApiInformation 类，测试是否存在要调用的 API。 在自适应代码中，你可以使用类的不同方式（如 IsTypePresent、IsEventPresent、IsMethodPresent 和 IsPropertyPresent）在你需要的级别测试 API。
 
-有关详细信息和示例，请参阅**[版本自适应代码](version-adaptive-code.md)**。
+有关详细信息和示例，请参阅 **[版本自适应代码](version-adaptive-code.md)** 。
 
 如果你的应用最低版本是版本 15063（创意者更新）或更高版本，你可以使用*条件 XAML* 在标记中设置属性和实例化对象，而无需使用背后的代码。 条件 XAML 提供在标记中使用 ApiInformation.IsApiContractPresent 方法的一种途径。
 
-有关详细信息和示例，请参阅**[条件 XAML](conditional-xaml.md)**。
+有关详细信息和示例，请参阅 **[条件 XAML](conditional-xaml.md)** 。
 
 ## <a name="test-your-version-adaptive-app"></a>测试你的版本自适应应用
 

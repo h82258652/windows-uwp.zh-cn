@@ -1,22 +1,22 @@
 ---
 description: 可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 本主题介绍如何实现和使用可观测集合以及如何将 XAML 项目控件绑定到该集合。
 title: XAML 项目控件；绑定到 C++/WinRT 集合
-ms.date: 10/03/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 集合
 ms.localizationpriority: medium
-ms.openlocfilehash: c4bf1805b16d869e7a29c49e8fe53c01cf469132
-ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.openlocfilehash: 7669c6536f28d5f979567f5b433dbf614800bec3
+ms.sourcegitcommit: d23dab1533893b7fe0f01ca6eb273edfac4705e6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921663"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65627679"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML 项目控件；绑定到 C++/WinRT 集合
 
 可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 这一想法基于称为*观察者模式*的软件设计模式。 本主题演示如何实现中的可观察集合[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何将绑定 XAML 项目，这些控件。
 
-本演练围绕在 [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md)中创建的项目展开，而且它将添加到该主题中所述的概念。
+如果你想要按照本主题中，则我们建议您首先创建的项目中所述[XAML 控制; 绑定到C++/WinRT 属性](binding-property.md)。 本主题将更多的代码添加到该项目，并向该主题中介绍的概念。
 
 > [!IMPORTANT]
 > 有关支持你了解如何利用 C++/WinRT 来使用和创作运行时类的基本概述和术语，请参阅[通过 C++/WinRT 使用 API](consume-apis.md) 和[通过 C++/WinRT 创作 API](author-apis.md)。
@@ -30,9 +30,6 @@ ms.locfileid: "58921663"
 ## <a name="add-a-bookskus-collection-to-bookstoreviewmodel"></a>将 **BookSkus** 集合添加到 **BookstoreViewModel**
 
 在 [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md)中，我们已将类型 **BookSku** 的属性添加到主视图模型。 在此步骤中，我们将使用[ **winrt::single_threaded_observable_vector** ](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)工厂函数模板来帮助我们实现的可观察集合**BookSku**上同一个视图模型。
-
-> [!NOTE]
-> 如果尚未安装 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年) 或更高版本，然后请参阅[如果你有较旧版本的 Windows SDK](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk)有关可以使用而不是的可观察矢量模板的列表**winrt::single_threaded_observable_vector**。
 
 声明 `BookstoreViewModel.idl` 中的新属性。
 
@@ -50,7 +47,7 @@ runtimeclass BookstoreViewModel
 > [!IMPORTANT]
 > 在上面的 MIDL 3.0 列表中，请注意，类型**BookSkus**属性是[ **IObservableVector** ](/uwp/api/windows.foundation.collections.ivector_t_)的[ **IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). 本主题的下一个部分，我们将为绑定的项目源[**列表框**](/uwp/api/windows.ui.xaml.controls.listbox)到**BookSkus**。 列表框是项控件，并正确设置[ **ItemsControl.ItemsSource** ](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)属性，则需要将其设置为值类型**IObservableVector** (或**IVector**) 的**IInspectable**，或的互操作性类型，如[ **IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。
 
-保存并生成。 人 `Generated Files` 文件夹中的 `BookstoreViewModel.h` 和 `BookstoreViewModel.cpp` 复制访问器存根，然后实现它们。
+保存并生成。 复制从访问器存根`BookstoreViewModel.h`并`BookstoreViewModel.cpp`中`\Bookstore\Bookstore\Generated Files\sources`文件夹 (有关更多详细信息，请参阅上一个主题[XAML 控制; 绑定到C++/WinRT 属性](binding-property.md))。 实现此类的这些访问器存根 （stub）。
 
 ```cppwinrt
 // BookstoreViewModel.h

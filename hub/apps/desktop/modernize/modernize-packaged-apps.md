@@ -4,20 +4,22 @@ title: 实现打包桌面应用程序的现代化
 ms.date: 04/22/2019
 ms.topic: article
 keywords: windows 10, uwp
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6d71233bc7b96af9d9b261406d6b149f36f65f29
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 191a8b8a007a866f37780a7c52cd40047dc9817f
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985287"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215198"
 ---
-# <a name="features-that-require-package-identity"></a>需要包标识的功能。
+# <a name="features-that-require-package-identity"></a>需要包标识的功能
 
 如果你想要更新使用对桌面应用程序[现代 Windows 10 体验](index.md)，许多功能都仅在桌面应用程序打包在 MSIX 包中可用。
 
-MSIX 是为所有 Windows 应用程序、 WPF、 Windows 窗体和 Win32 应用提供了通用的打包体验的现代 Windows 应用包格式。 打包桌面 Windows 应用程序，可将动态磁贴和通知等现代 Windows 10 体验集成到您的应用程序。 它还获取访问权限的可靠的安装和更新体验、 具有灵活功能系统，支持 Microsoft Store、 企业管理和自定义分布的多个模型的受管理的安全模型。 有关详细信息，请参阅[桌面应用程序打包](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)MSIX 文档中。
+MSIX 是为所有 Windows 应用程序、 WPF、 Windows 窗体和 Win32 应用提供了通用的打包体验的现代 Windows 应用包格式。 打包桌面 Windows 应用程序，可将动态磁贴和通知等现代 Windows 10 体验集成到您的应用程序。 它还获取访问权限的可靠的安装和更新体验、 具有灵活功能系统，支持 Microsoft Store、 企业管理和自定义分布的多个模型的受管理的安全模型。 有关详细信息，请参阅 MSIX 文档中的[打包桌面应用程序](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)。
 
 如果您打包桌面应用程序，然后可以使用需要的包标识、 包扩展和 UWP 组件打包应用程序中的 UWP Api。 有关详细信息，请参阅以下文章。
 
@@ -33,7 +35,7 @@ MSIX 是为所有 Windows 应用程序、 WPF、 Windows 窗体和 Win32 应用�
 
 有关详细信息，请参阅[将对桌面应用程序集成包扩展](desktop-to-uwp-extensions.md)。
 
-## <a name="extend-with-uwp-components"></a>使用 UWP 组件扩展
+## <a name="extend-with-uwp-components"></a>使用 UWP 组件进行扩展
 
 一些 Windows 10 体验（例如：启用触摸功能的 UI 页面）必须在现代应用容器内运行。 一般情况下，应首先确定是否可以添加你的体验[增强](desktop-to-uwp-enhance.md)UWP Api 与您现有桌面应用程序。 如果您必须使用 UWP 组件，将获得的体验，你可以将 UWP 项目添加到你的解决方案和应用服务用于桌面应用程序和 UWP 组件之间进行通信。
 

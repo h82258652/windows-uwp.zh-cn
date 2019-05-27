@@ -5,12 +5,12 @@ keywords: 最近更新, 更新, 功能, 新增, Windows 10, 1709, 10 月, 最新
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5179b4615d1b7ada40e064c21991fee3d9dbb60e
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 2d2a4e657d9fe574131625b2ab2374700dc59cdf
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162692"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984142"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>面向开发人员的 Windows 10 版本 16299 中的最近更新
 
@@ -54,7 +54,7 @@ Xbox Live | 我们添加了面向 Xbox Live 开发人员、适用于 UWP 和 Xbo
 应用服务和扩展 | 我们添加了新指南，[创建和使用应用扩展](../launch-resume/how-to-create-an-extension.md)，帮助你编写并托管通用 Windows 平台 (UWP) 应用扩展，以便通过用户可从 Microsoft Store 中安装的程序包来扩展你的应用。 </br></br> 我们添加了新指南，[使用服务、扩展和程序包扩展你的应用](../launch-resume/extend-your-app-with-services-extensions-packages.md)，该指南对 Windows 10 中可用于实现应用扩展和组件化的不同技术进行了分类。
 后台任务 | 我们添加了三项可帮助你充分利用后台任务的指南：</br></br> * [无限期地运行在后台](../launch-resume/run-in-the-background-indefinetly.md)而无需任何背景或扩展的执行阻止的设备上使用所有可用资源。 这适用于企业 UWP 应用以及不会提交到 Microsoft Store 的 UWP 应用。 </br></br> * [触发后台任务，从应用内的](../launch-resume/trigger-background-task-from-app.md)激活从您的应用程序内的后台任务。 </br></br>* [更新你的 UWP 应用时运行后台任务](../launch-resume/run-a-background-task-during-updatetask.md)创建 UWP 应用更新时运行的后台任务。
 Cortana | 使用 [Cortana 技能工具包](https://docs.microsoft.com/cortana/skills/overview)添加和测试技能，以便扩展 Cortana 的自然功能并使之与你的应用和服务交互。
-桌面桥 | 我们添加了三个指南，帮助你将现代化体验带入 Windows 10 上的桌面应用程序： </br>* [增强适用于 Windows 10 桌面应用程序](../porting/desktop-to-uwp-enhance.md)指导来找到并引用正确的文件，然后编写代码更好的 Windows 10 用户的 UWP 体验。 </br></br>* [扩展桌面应用程序的与现代 UWP 组件](../porting/desktop-to-uwp-extend.md)合并现代的 XAML Ui 和其他必须在 UWP 应用容器中运行的 UWP 体验。 </br></br>* [应用程序迁移到通用 Windows 平台](../porting/desktop-to-uwp-migrate.md)WPF、 Windows 窗体、 UWP、 Android 和 iOS 应用程序之间共享代码。
+桌面桥 | 我们添加了三个指南，帮助你将现代化体验带入 Windows 10 上的桌面应用程序： </br>* [增强适用于 Windows 10 桌面应用程序](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)指导来找到并引用正确的文件，然后编写代码更好的 Windows 10 用户的 UWP 体验。 </br></br>* [扩展桌面应用程序的与现代 UWP 组件](/windows/apps/desktop/modernize/desktop-to-uwp-extend)合并现代的 XAML Ui 和其他必须在 UWP 应用容器中运行的 UWP 体验。 </br></br>* [应用程序迁移到通用 Windows 平台](/windows/apps/desktop/modernize/desktop-to-uwp-migrate)WPF、 Windows 窗体、 UWP、 Android 和 iOS 应用程序之间共享代码。
 桌面桥打包 | Visual Studio 引入了新的[打包项目](../porting/desktop-to-uwp-packaging-dot-net.md)，能够消除在打包完全受信任的桌面应用程序时必需的所有手动步骤。 只需添加打包项目，参考桌面项目，再按 F5 进行应用调试。 无需手动调整。 相比于使用以往版本的 Visual Studio 的体验，新的简洁体验是一个巨大的改进。
 诊断和线程处理 | 新的诊断 API 提供运行应用的相关信息： </br></br>* [AppMemoryReport](https://docs.microsoft.com/uwp/api/Windows.System.AppMemoryReport) 类提供应用预计总提交限制、私有提交使用等信息。 </br>* [AppDiagnosticInfo](https://docs.microsoft.com/uwp/api/windows.system.appdiagnosticinfo) 类现在可以监视应用或任务的执行状态，并且在执行状态改变时发出通知。 </br>* [MemoryManager](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) 类提供了若干新的方法，能够设置应用内存使用限制并报告预计的应用内存使用限制。 </br></br>你可以按优先顺序排列任务，并且使用 [DispatcherQueue](https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueue) 类在不同的线程上运行任务。 通过 [CreateDispatcherQueueController](https://msdn.microsoft.com/library/windows/desktop/mt826210.aspx) 函数，在 Win32 中也可以使用此项功能。
 EdgeHTML 16 | 支持 Microsoft Edge 以及基于 JS 的通用 Windows 平台的 Web 平台已更新到 EdgeHTML 16，并且现在加入对 F12 开发人员工具、CSS 网格布局支持以及其他重要功能的重大改进。 </br></br> * Microsoft Edge 中现在支持 [CSS 网格布局](https://docs.microsoft.com/microsoft-edge/dev-guide/css/grid-layout)。 网格布局是一种基于网格的二维布局系统，比使用浮点或脚本定位更能够实现良好的布局流度。</br></br> * 更新了 [Microsoft Edge F12 DevTools 文档](https://docs.microsoft.com/microsoft-edge/f12-devtools-guide)，提高了可靠性和性能。 添加了新功能，以优化你的开发体验。 </br></br>* 仅 Microsoft Edge 中的 [WebVR](https://docs.microsoft.com/microsoft-edge/webvr/) 添加了对[运动控制器](https://docs.microsoft.com/microsoft-edge/webvr/input#controller-buttons)以及各种 [Windows Mixed Reality 头戴显示设备](https://docs.microsoft.com/microsoft-edge/webvr/hardware)的支持。 WebVR 也已经过优化，每秒最多可支持 90 帧。 </br></br> 请参阅 [Microsoft Edge 开发人员指南](https://docs.microsoft.com/microsoft-edge/dev-guide)获取完整的更改以及受支持的最新 API 的列表。

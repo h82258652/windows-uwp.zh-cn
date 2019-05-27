@@ -1,17 +1,17 @@
 ---
 description: Windows 运行时是引用在其中占有重要地位的一个系统；在这样的系统中，了解强引用与弱引用的意义和区别非常重要。
 title: C++/WinRT 中的弱引用
-ms.date: 10/03/2018
+ms.date: 05/16/2019
 ms.topic: article
 keywords: windows 10、 uwp、 标准、 c + +、 cpp、 winrt、 投影、 强、 弱引用
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0e2e40daaf777e36094b698d058f21840b1804c8
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: c9fb112c6f83fa7bd9a3612916efd2527d821c29
+ms.sourcegitcommit: 6c7e1aa3bd396a1ad714e8b77c0800759dc2d8e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291825"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65821075"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>在强和弱引用C++/WinRT
 
@@ -19,12 +19,13 @@ Windows 运行时是引用计数系统;在此类系统是您必须了解的有�
 
 ## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>安全地访问*这*类成员协同程序中的指针
 
-以下代码清单显示是类的成员函数的协同程序的典型示例。
+以下代码清单显示是类的成员函数的协同程序的典型示例。 可以复制并粘贴此示例中为指定的文件中的新**Windows 控制台应用程序 (C++/WinRT)** 项目。
 
 ```cppwinrt
 // pch.h
 #pragma once
 #include <iostream>
+#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.h>
 
 // main.cpp : Defines the entry point for the console application.
@@ -101,11 +102,14 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-因为C++/WinRT 对象直接或间接派生自[ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements)模板， C++/WinRT 对象可以调用其[ **implements.get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)受保护成员函数来检索到的强引用其*这*指针。 请注意，无需实际使用`strong_this`变量; 只需调用**get_strong**递增你引用计数，并保留在隐式*这*指针有效。
+一个C++/WinRT 类直接或间接派生自[ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements)模板。 因此， C++/WinRT 对象可以调用其[ **implements.get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)受保护成员函数来检索到的强引用其*这*指针。 请注意，无需实际使用`strong_this`上面的代码示例中的变量; 只需调用**get_strong**增量C++/WinRT 对象的引用计数，并将其隐式*该*指针有效。
+
+> [!IMPORTANT]
+> 因为**get_strong**是成员函数的**winrt::implements**结构模板，您可以调用它只能从直接或间接派生的类**winrt::implements**，如C++/WinRT 类。 有关详细信息派生自**winrt::implements**，和示例，请参阅[作者 Api 与C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)。
 
 可以解决此问题，我们以前必须时我们一到步骤 4。 即使所有其他引用类的实例会消失，协同例程花费了保证其依赖项稳定的预防措施。
 
-如果强引用并不合适，则可以改为调用[ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)来检索到的弱引用*这*。 只需确认可以访问之前检索的强引用*这*。
+如果强引用并不合适，则可以改为调用[ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)来检索到的弱引用*这*。 只需确认可以访问之前检索的强引用*这*。 同样， **get_weak**是成员函数的**winrt::implements**结构模板。
 
 ```cppwinrt
 IAsyncOperation<winrt::hstring> RetrieveValueAsync()
@@ -244,6 +248,9 @@ event_source.Event([this](auto&& ...)
 ### <a name="the-solution"></a>该解决方案
 
 解决方案是捕获的强引用。 强引用*does*递增引用计数，和它*does*使当前对象保持活动状态。 您只需声明捕获变量 (称为`strong_this`在此示例中)，并将其初始化通过调用[ **implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)，检索到的强引用我们*这*指针。
+
+> [!IMPORTANT]
+> 因为**get_strong**是成员函数的**winrt::implements**结构模板，您可以调用它只能从直接或间接派生的类**winrt::implements**，如C++/WinRT 类。 有关详细信息派生自**winrt::implements**，和示例，请参阅[作者 Api 与C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)。
 
 ```cppwinrt
 event_source.Event([this, strong_this { get_strong()}](auto&& ...)

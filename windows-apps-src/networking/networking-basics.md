@@ -6,12 +6,12 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ffc2f31b52e7913905c7d64ab797b2939cfb313d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8ed003fbae285f003724e5f540612d86902ee2d4
+ms.sourcegitcommit: f282c906cddf0d57217484e61a5cbd2fe8469421
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651652"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65852258"
 ---
 # <a name="networking-basics"></a>网络基础知识
 针对任何支持网络的应用的必做事项。
@@ -31,9 +31,9 @@ ms.locfileid: "57651652"
 
 | 功能 | 描述 |
 |------------|-------------|
-| **enterpriseAuthentication** | 允许应用连接至要求提供域凭据的网络资源。 如要启用此功能，域管理员必须为所有应用均启用此功能。 示例将是从专用 Intranet 上的 Sharepoint 服务器中检索数据的应用。 <br/> 通过此功能可以使用你的凭据来访问要求提供凭据的网络中的网络资源。 具有此功能的应用可在网络上模拟其用户。 <br/> 无需此功能，应用即可通过身份验证的代理访问 Internet。 |
-| **邻近** | 与邻近计算机的设备进行近距离感应通信所必需的功能。 近距离感应可用于向附近设备上的应用程序发送邀请或与其进行连接。 <br/> 此功能让应用可以访问邻近设备网络，并在用户同意发送或接受邀请的情况下与这些设备进行连接。 |
-| **sharedUserCertificates** | 此功能让应用可以访问软件和硬件证书，如智能卡证书。 在运行过程中调用此功能时，用户必须采取插入卡或选择证书等操作。 <br/> 使用此功能时，应用会将你的软件和硬件证书或智能卡用于识别。 你的雇主、银行或政府服务机构可以使用此功能来进行识别。 |
+| **enterpriseAuthentication** | 允许应用连接至要求提供域凭据的网络资源。 例如，应用从专用 Intranet 上的 SharePoint 服务器检索数据。 通过此功能可以使用你的凭据来访问要求提供凭据的网络中的网络资源。 具有此功能的应用可在网络上模拟其用户。 不需要此功能，以便允许应用通过身份验证代理访问 Internet。<br/><br/>有关详细信息，请参阅的文档*企业*中的功能方案[受限的能力](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。 |
+| **proximity** | 与邻近计算机的设备进行近距离感应通信所必需的功能。 近距离感应可用于向附近设备上的应用程序发送邀请或与其进行连接。 <br/><br/> 此功能让应用可以访问邻近设备网络，并在用户同意发送或接受邀请的情况下与这些设备进行连接。 |
+| **sharedUserCertificates** | 此功能让应用可以访问软件和硬件证书，如智能卡证书。 在运行过程中调用此功能时，用户必须采取插入卡或选择证书等操作。 <br/><br/> 使用此功能时，应用会将你的软件和硬件证书或智能卡用于识别。 你的雇主、银行或政府服务机构可以使用此功能来进行识别。 |
 
 ## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>当你的应用不在前台时通信
 [使用后台任务支持应用](https://msdn.microsoft.com/library/windows/apps/mt299103)包含了有关应用不在前台时使用后台任务进行工作的常规信息。 更具体地说，当它不是当前的前台应用，但数据仍通过网络发送给它时，你的代码必须采取特殊的步骤以接收通知。 控制通道触发器用于在 Windows 8 中，此目的，但它们仍支持在 Windows 10 中。 [  **here**](https://msdn.microsoft.com/library/windows/apps/hh701032) 提供了有关使用控制通道触发器的完整信息。 Windows 10 中新的技术提供更好功能进行较低的开销，在某些情况下，例如启用了推送的流套接字： 套接字 broker 和套接字活动触发器。
@@ -460,7 +460,7 @@ using Windows::Storage::Streams;
 
 如果客户端发出的初始请求不包含此值，或提供了与服务器的预期不相符的值，则预期值会在发生 WebSocket 握手错误时 从服务器发送到客户端。
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>身份验证
 如何在通过网络进行连接时提供身份验证凭据。
 
 ### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>通过 StreamSocket 类提供客户端证书
@@ -487,7 +487,7 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 |  | [**BackgroundDownloader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701068) |
 |  | [**BackgroundUploader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701184) |
 |  | [**BackgroundUploader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701178) |
-| **联合** | [**SyndicationClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702355) |
+| **Syndication** | [**SyndicationClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702355) |
 |  | [**SyndicationClient.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461) |
 |  | [**SyndicationClient.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459) |
 | **AtomPub** | [**AtomPubClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702262) |

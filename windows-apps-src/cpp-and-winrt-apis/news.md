@@ -1,17 +1,17 @@
 ---
 description: C++/WinRT 的新增功能和更改。
 title: 新增功能C++/WinRT
-ms.date: 04/02/2019
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10、 uwp、 标准版、 c + +、 cpp、 winrt、 投影、 新闻、 什么的新
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8ee10450a7a346c1ae032240aaecc65e7f87822d
-ms.sourcegitcommit: 940645c705865ba9635ccae2da9d917420faf608
+ms.openlocfilehash: b84736e41e039d350a849c55fead008cbab5fdea
+ms.sourcegitcommit: bc64db47b6ff326f15cac15fc2cfd709fa7f877b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58812606"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65626215"
 ---
 # <a name="whats-new-in-cwinrt"></a>新增功能C++/WinRT
 
@@ -28,7 +28,7 @@ ms.locfileid: "58812606"
 
 - `cppwinrt.exe`工具现在包括在 Microsoft.Windows.CppWinRT NuGet 包，并且该工具将生成按需每个项目的平台投影标头。 因此，`cppwinrt.exe`工具不再依赖于 Windows SDK （尽管该工具仍附带有适用于兼容的原因的 SDK）。
 - `cppwinrt.exe` 现在会生成每个特定于平台/配置的中间文件夹下 ($IntDir) 以启用并行生成的投影标头。
-- C++/WinRT 生成支持 （属性/目标） 现在可以完整存档，以防你想要手动自定义你的项目文件。 请参阅[Microsoft.Windows.CppWinRT NuGet 包](https://github.com/Microsoft/xlang/tree/user/sjones/cppwinrt_nuget/src/package/nuget)。
+- C++/WinRT 生成支持 （属性/目标） 现在可以完整存档，以防你想要手动自定义你的项目文件。 请参阅[Microsoft.Windows.CppWinRT NuGet 包](https://github.com/Microsoft/xlang/blob/master/src/package/cppwinrt/nuget/readme.md)。
 - 进行了大量 bug 修复。
 
 ### <a name="changes-to-cwinrt-for-version-20"></a>将更改为C++版本 2.0 /WinRT
@@ -261,7 +261,7 @@ struct MainPage : PageT<MainPage>
 
 ## <a name="news-and-changes-in-windows-sdk-version-100177630-windows-10-version-1809"></a>新闻和更改，请在 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年)
 
-下表包含新闻，并将更改为[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)在最新公开发布版本的 Windows SDK，这是 10.0.17763.0 (Windows 10，版本 1809年)。 这些更改还可能会更高版本的 SDK Insider Preview 版本中存在。
+下表包含新闻和更改的C++在 Windows SDK 版本 10.0.17763.0 /WinRT (Windows 10，版本 1809年)。
 
 | 新的或已更改功能 | 详细信息 |
 | - | - |

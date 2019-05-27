@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1875fecbdfa6b97cdc30413c8afa6cc58d3251ef
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 03bc41ca76f6c6b20f06c98b0e71e2bc5a361992
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595032"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984203"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>2017 年 7 月 Windows 开发人员文档中的新增功能
 
@@ -112,7 +112,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="test-your-windows-app-for-windows-10-s"></a>测试适用于 Windows 10 S 的 Windows 应用
 
-测试你的 Windows 应用，以确保其在运行 Windows S 的设备上正常运行。使用[此新指南](../porting/desktop-to-uwp-test-windows-s.md) 了解测试方法。 
+测试你的 Windows 应用，以确保其在运行 Windows S 的设备上正常运行。使用[此新指南](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s) 了解测试方法。
 
 ## <a name="samples"></a>示例
 
@@ -130,7 +130,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ## <a name="videos"></a>视频
 
-### <a name="accessibility"></a>辅助功能
+### <a name="accessibility"></a>可访问性
 
 将辅助功能内置到应用中会让应用获得更广泛的受众。 [观看视频](https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility)，然后详细了解[开发应用的辅助功能](https://developer.microsoft.com/en-us/windows/accessible-apps)。
 

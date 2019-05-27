@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 32838e2c3369535928c9e9311f62654eba54e4e0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 25dc7118fcb7d9c6e997fae458ef7846777b1262
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611752"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65983920"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP 应用设计简介
 
@@ -20,7 +20,7 @@ ms.locfileid: "57611752"
 
 通用 Windows 平台 (UWP) 设计指南可帮助你设计和构建美观、优化的应用。
 
-它不是一份说明性规则的清单 - 它是一个动态文档，旨在适应我们不断演变的 [Fluent Design 系统](../fluent-design-system/index.md)以及应用构建社区的需求。
+它不是一份说明性规则的清单 - 它是一个动态文档，旨在适应我们不断演变的 [Fluent Design 系统](/windows/apps/fluent-design-system)以及应用构建社区的需求。
 
 此引言概述了各项 UWP 应用中包含的通用设计功能，并帮助你构建可在多台设备中完美扩展的用户界面 (UI)。
 
@@ -96,9 +96,9 @@ UWP 帮助通过自动调整 UI 元素，以便它们可以清晰且易于与所
 
 也可以在 Visual Studio 中使用 [Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master) 为应用设计布局。
 
-## <a name="controls"></a>控制
+## <a name="controls"></a>Controls
 
-UWP 的设计平台提供了一系列保证在所有支持 Windows 的设备上都能正常工作的常用控件，它们遵循 [Fluent Design 系统](../fluent-design-system/index.md)原则。 这些控件包括从简单控件（如按钮和文本元素）到复杂控件（可从一组数据和一个模板生成列表）的一切控件。
+UWP 的设计平台提供了一系列保证在所有支持 Windows 的设备上都能正常工作的常用控件，它们遵循 [Fluent Design 系统](/windows/apps/fluent-design-system)原则。 这些控件包括从简单控件（如按钮和文本元素）到复杂控件（可从一组数据和一个模板生成列表）的一切控件。
 
 ![UWP 控件](../style/images/color/windows-controls.svg)
 
@@ -172,10 +172,10 @@ UWP 的设计平台提供了一系列保证在所有支持 Windows 的设备上�
 
 ## <a name="next-fluent-design-system"></a>下一步：Fluent Design 系统
 
-如果要了解 Fluent Design（Microsoft 提供的设计系统）背后的原则，并查看可融入 UWP 应用中的更多功能，请继续参阅 [Fluent Design 系统](../fluent-design-system/index.md)。
+如果要了解 Fluent Design（Microsoft 提供的设计系统）背后的原则，并查看可融入 UWP 应用中的更多功能，请继续参阅 [Fluent Design 系统](/windows/apps/fluent-design-system)。
 
 ## <a name="related-articles"></a>相关文章
 
 - [UWP 应用是什么？](../../get-started/universal-application-platform-guide.md)
-- [Fluent 设计系统](../fluent-design-system/index.md)
+- [Fluent 设计系统](/windows/apps/fluent-design-system)
 - [XAML 平台概述](../../xaml-platform/index.md)

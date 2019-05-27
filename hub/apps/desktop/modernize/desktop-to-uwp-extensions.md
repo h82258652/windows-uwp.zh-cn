@@ -5,13 +5,15 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: a7815639c8dafa555be6d4f0eac0eb07b43dba98
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 063106362a36aa32d0874be15dd589b5fb573409
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984447"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66214947"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>与 Windows 10 和 UWP 集成打包桌面应用程序
 
@@ -244,7 +246,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |Category | 始终为 ``windows.fileTypeAssociation``。
 |名称 |应用的唯一 ID。 |
 |Verb |文件资源管理器上下文菜单中显示的名称。 此字符串可使用 ```ms-resource``` 进行本地化。|
-|ID |动词命令的唯一 ID。 如果你的应用程序是 UWP 应用，这将传递到你的应用作为其激活事件参数的一部分中，因此它可以适当地处理用户的选择。 如果应用程序是完全信任打包应用程序，它接收参数改为 （请参阅下一个项目符号）。 |
+|Id |动词命令的唯一 ID。 如果你的应用程序是 UWP 应用，这将传递到你的应用作为其激活事件参数的一部分中，因此它可以适当地处理用户的选择。 如果应用程序是完全信任打包应用程序，它接收参数改为 （请参阅下一个项目符号）。 |
 |Parameters |与动词命令关联的实参参数和值的列表。 如果应用程序是完全信任打包应用程序，这些参数传递给应用程序作为事件参数时的应用程序激活。 可以自定义基于不同的激活谓词应用程序的行为。 如果变量可包含文件路径，请用引号将参数值括起来。 这将避免路径包含空格的情况下出现的任何问题。 如果你的应用程序是 UWP 应用，你无法将参数传递。 应用转而接收参数（请参阅上一项）。|
 |扩展 |指定动词命令仅在用户右键单击文件之前按住 **Shift** 键显示上下文菜单时才显示。 如果未列出该特性，则该特性可选，并且默认为值 **False**（例如，始终显示动词命令）。 为每个动词命令逐个指定此行为（“打开”除外，它始终为 **False**）。|
 
@@ -408,7 +410,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 
 使用扩展标识这些文件夹。 这样，系统就能找到并加载你放在这些文件夹中的文件。 可以将该扩展看作是 _%PATH%_ 环境变量的替代品。
 
-如果你不使用该扩展，系统将按以下顺序进行搜索：进程的程序包依赖关系图、程序包根文件夹、系统目录 (_%SystemRoot%\system32_)。 若要了解详细信息，请参阅 [Windows 应用的搜索顺序](https://msdn.microsoft.com/library/windows/desktop/ms682586.aspx#_search_order_for_windows_store_apps)。
+如果你不使用该扩展，系统将按以下顺序进行搜索：进程的程序包依赖关系图、程序包根文件夹、系统目录 ( _%SystemRoot%\system32_)。 若要了解详细信息，请参阅 [Windows 应用的搜索顺序](https://msdn.microsoft.com/library/windows/desktop/ms682586.aspx#_search_order_for_windows_store_apps)。
 
 每个程序包只能包含一个这种类型的扩展。 也就是说，你可以将其中一个扩展添加到主程序包，然后向你的每个[可选包和相关的集](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)添加一个扩展。
 
@@ -822,7 +824,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |ThumbnailProviderHandler Clsid |实现 ThumbnailProviderHandler 的应用程序的类 ID。 系统使用该类 ID 请求云文件的缩略图图像。 |
 |ExtendedPropertyHandler Clsid |实现 ExtendedPropertyHandler 的应用程序的类 ID。  系统使用该类 ID 请求云文件的扩展属性。 |
 |Verb |你的云服务提供的文件在文件资源管理器上下文菜单中显示的名称。 |
-|ID |动词命令的唯一 ID。 |
+|Id |动词命令的唯一 ID。 |
 
 #### <a name="example"></a>示例
 

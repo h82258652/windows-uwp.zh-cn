@@ -57,7 +57,7 @@ ms.locfileid: "57601932"
 [!code-cpp[GetAppRecordingManager](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetGetAppRecordingManager)]
 
 ## <a name="determine-if-your-app-can-currently-record"></a>确定你的应用当前是否可以录制
-有几种原因导致你的应用当前可能无法捕获音频或视频，包括当前设备不满足录制所需的硬件要求，或另一个应用当前正在广播。 在开始录制前，你可以检查你的应用当前是否能够录制。 调用 **AppRecordingManager** 对象的 **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** 方法，然后检查返回的 **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** 对象的 **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** 属性。 如果**CanRecord**返回**false**，这意味着您的应用程序不能当前记录，你可以检查**[详细信息](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** 属性来确定原因。 根据具体原因，你可能要向用户显示状态或显示启用应用录制的说明。
+有几种原因导致你的应用当前可能无法捕获音频或视频，包括当前设备不满足录制所需的硬件要求，或另一个应用当前正在广播。 在开始录制前，你可以检查你的应用当前是否能够录制。 调用 **AppRecordingManager** 对象的 **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** 方法，然后检查返回的 **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** 对象的 **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** 属性。 如果 **CanRecord** 返回 **false**，这意味着您的应用程序不能当前记录，你可以检查 **[详细信息](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** 属性来确定原因。 根据具体原因，你可能要向用户显示状态或显示启用应用录制的说明。
 
 
 
@@ -71,7 +71,7 @@ ms.locfileid: "57601932"
 
 [!code-cpp[StartRecordToFile](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetStartRecordToFile)]
 
-录制操作完成后，检查返回的 **[AppRecordingResult](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult)** 对象的**[已成功](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.Succeeded)** 属性以确定录制操作是否成功。 如果成功，你可以检查 **[IsFileTruncated](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.IsFileTruncated)** 属性以确定系统是否因为存储原因而被强制截断捕获的文件。 你可以检查**[持续时间](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.Duration)** 属性，如果文件被截断，你会发现录制文件的实际持续时间可能短于录制操作的持续时间。
+录制操作完成后，检查返回的 **[AppRecordingResult](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult)** 对象的 **[已成功](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.Succeeded)** 属性以确定录制操作是否成功。 如果成功，你可以检查 **[IsFileTruncated](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.IsFileTruncated)** 属性以确定系统是否因为存储原因而被强制截断捕获的文件。 你可以检查**[持续时间](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.Duration)** 属性，如果文件被截断，你会发现录制文件的实际持续时间可能短于录制操作的持续时间。
 
 [!code-cpp[OnRecordingComplete](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetOnRecordingComplete)]
 
@@ -88,7 +88,7 @@ ms.locfileid: "57601932"
 
 若要捕获历史时间跨度，你必须指定录制的开始时间和持续时间。 开始时间作为 **[DateTime](https://docs.microsoft.com/uwp/api/windows.foundation.datetime)** 结构提供。 开始时间必须早于当前时间，且在历史录制缓冲区的长度内。 在此示例中，检查是否已启用历史录制时要检索缓冲区长度，如上一个代码示例中所示。 历史录制的持续时间作为 **[TimeSpan](https://docs.microsoft.com/uwp/api/windows.foundation.timespan)** 结构提供，它也应等于或小于历史缓冲区的持续时间。 一旦你确定了所需的开始时间和持续时间，则调用 **[RecordTimeSpanToFileAsync](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.recordtimespantofileasync)** 开始录制操作。
 
-同手动开始和停止录制一样，当历史录制完成后，你可以检查返回的 **[AppRecordingResult](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult)** 对象的**[已成功](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.Succeeded)** 属性以确定录制操作是否成功，还可以检查 **[IsFileTruncated](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.IsFileTruncated)** 和**[持续时间](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.Duration)** 属性，如果文件被截断，你会发现录制文件的实际持续时间可能短于请求的时间窗口的持续时间。
+同手动开始和停止录制一样，当历史录制完成后，你可以检查返回的 **[AppRecordingResult](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult)** 对象的 **[已成功](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.Succeeded)** 属性以确定录制操作是否成功，还可以检查 **[IsFileTruncated](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.IsFileTruncated)** 和 **[持续时间](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.Duration)** 属性，如果文件被截断，你会发现录制文件的实际持续时间可能短于请求的时间窗口的持续时间。
 
 [!code-cpp[RecordTimeSpanToFile](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRecordTimeSpanToFile)]
 
@@ -143,7 +143,7 @@ ms.locfileid: "57601932"
 [!code-cpp[RaceComplete](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRaceComplete)]
 
 ### <a name="manage-metadata-cache-storage-limit"></a>管理元数据缓存存储限制
-你使用 **AppCaptureMetadataWriter** 写入的元数据由系统进行缓存，直到该元数据被写入到关联的媒体流。 系统定义每个应用的元数据缓存的大小限制。 一旦达到缓存大小限制，系统将开始清除缓存的元数据。 系统将会删除元数据与写入**[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 删除元数据与之前的优先级值**[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 优先级。
+你使用 **AppCaptureMetadataWriter** 写入的元数据由系统进行缓存，直到该元数据被写入到关联的媒体流。 系统定义每个应用的元数据缓存的大小限制。 一旦达到缓存大小限制，系统将开始清除缓存的元数据。 系统将会删除元数据与写入 **[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)**  删除元数据与之前的优先级值 **[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)**  优先级。
 
 在任何时候，你都可以通过调用 **[RemainingStorageBytesAvailable](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.RemainingStorageBytesAvailable)** 的方式检查在你的应用的元数据缓存中可用的字节数。 你可以选择设置你自己的应用定义的阈值，之后可以选择减少你写入到缓存的元数据量。 下面的示例演示了此模式的简单实现。
 
@@ -152,7 +152,7 @@ ms.locfileid: "57601932"
 [!code-cpp[ComboExecuted](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetComboExecuted)]
 
 ### <a name="receive-notifications-when-the-system-purges-metadata"></a>当系统清除元数据时收到通知
-您可以注册时系统开始您的应用程序的元数据清除由注册的处理程序接收通知**[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** 事件。
+您可以注册时系统开始您的应用程序的元数据清除由注册的处理程序接收通知 **[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** 事件。
 
 [!code-cpp[RegisterMetadataPurged](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRegisterMetadataPurged)]
 

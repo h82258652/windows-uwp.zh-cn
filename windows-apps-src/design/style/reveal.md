@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: aeba4dbd734ea4b521033726968e90c232c154cb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0f6a4fef72206058874edf845d5fbbe0768c53ec
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628662"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984225"
 ---
 # <a name="reveal-highlight"></a>显示突出显示
 
@@ -60,10 +60,10 @@ ms.locfileid: "57628662"
 
 - [**ListView**](../controls-and-patterns/lists.md)
 - [**GridView**](../controls-and-patterns/lists.md)
-- [**树视图**](../controls-and-patterns/tree-view.md)
+- [**TreeView**](../controls-and-patterns/tree-view.md)
 - [**NavigationView**](../controls-and-patterns/navigationview.md)
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
-- [**命令栏**](../controls-and-patterns/app-bars.md)
+- [**CommandBar**](../controls-and-patterns/app-bars.md)
 
 这些图显示多个不同的控件上显示突出显示：
 
@@ -78,7 +78,7 @@ ms.locfileid: "57628662"
 
 | 控件名称   | 资源名称 |
 |----------|:-------------:|
-| 按钮 |  ButtonRevealStyle |
+| Button |  ButtonRevealStyle |
 | ToggleButton | ToggleButtonRevealStyle |
 | RepeatButton | RepeatButtonRevealStyle |
 | AppBarButton | AppBarButtonRevealStyle |
@@ -282,13 +282,13 @@ ms.locfileid: "57628662"
 
 ## <a name="reveal-and-the-fluent-design-system"></a>展示和 Fluent Design 系统
 
- Fluent 设计系统可帮助你创建包含光线、深度、动画、材料和比例的现代、粗体 UI。 展示是 Fluent 设计系统组件，它将光线添加到你的应用。 要了解详细信息，请参阅 [UWP 的 Fluent Design 概述](../fluent-design-system/index.md)。
+ Fluent 设计系统可帮助你创建包含光线、深度、动画、材料和比例的现代、粗体 UI。 展示是 Fluent 设计系统组件，它将光线添加到你的应用。 要了解详细信息，请参阅 [UWP 的 Fluent Design 概述](/windows/apps/fluent-design-system)。
 
 ## <a name="related-articles"></a>相关文章
 
 - [RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
-- [染料](acrylic.md)
+- [Acrylic](acrylic.md)
 - [组合效果](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
-- [适用于 UWP 的 Fluent 设计](../fluent-design-system/index.md)
+- [适用于 UWP 的 Fluent 设计](/windows/apps/fluent-design-system)
 - [在系统中的科学：Fluent 设计和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [在系统中的科学：Fluent 设计和轻型这类](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

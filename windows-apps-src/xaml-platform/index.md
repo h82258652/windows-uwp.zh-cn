@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b725a823f31309c2419bcdc5095a78994d1929c0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e22a10e74a834daf4d256313f0e353a6829911c0
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582362"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984243"
 ---
 # <a name="xaml-platform"></a>XAML 平台
 
@@ -26,4 +26,4 @@ ms.locfileid: "57582362"
 | [附加属性概述](attached-properties-overview.md) | 介绍 XAML 中的附加属性概念，并提供一些示例。 |
 | [自定义附加属性](custom-attached-properties.md) | 介绍如何将一个 XAML 附加属性实现为依赖属性，以及如何定义让附加属性可用于 XAML 所必需的访问器约定。 |
 | [事件和路由事件概述](events-and-routed-events-overview.md) | 我们将介绍在使用 C#、Visual Basic 或 C++/CX 作为编程语言并使用 XAML 进行 UI 定义时，针对 Windows 运行时应用的事件的编程概念。 你可以在 XAML 中的 UI 元素声明中为事件分配处理程序，或者在代码中添加处理程序。 Windows 运行时支持**路由事件**：借助此功能，某些输入事件和数据事件可由引发该事件的对象以外的对象来处理。 在定义控件模板或使用页面或版式容器时，路由事件十分有用。 |
-|[在 WPF 和 Windows 窗体应用程序中托管 UWP 控件](xaml-host-controls.md)| 介绍了如何使用 UWP XAML 控件增强 Windows 窗体或 WPF 桌面应用程序的 UI。|
+|[桌面应用中的 UWP 控件（XAML 岛）](/windows/apps/desktop/modernize/xaml-islands)| 介绍如何使用 UWP XAML 控件增强 Windows 窗体、WPF 或 Win32 桌面应用程序的 UI。|

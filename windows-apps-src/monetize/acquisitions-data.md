@@ -7,7 +7,7 @@ keywords: Windows 10, uwp, 广告网络, 应用元数据
 ms.localizationpriority: medium
 ms.openlocfilehash: beca5620f25713e8a07e5dbaf64e955d920702a7
 ms.sourcegitcommit: df8e4143e81a1c5fe1aa5f14407b8dd5f155a12e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/14/2019
 ms.locfileid: "57829837"
@@ -48,7 +48,7 @@ ms.locfileid: "57829837"
 | skip | 整数 | 要在查询中跳过的行数。 使用此参数可以浏览较大的数据集。 例如，*顶部 = 10000 和跳过 = 0*检索的数据，首先 10000 行*顶部 = 10000 和跳过 = 10000*检索数据和等等的下一步 10000 行。  | 否 |
 | filter | string | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 字符串值必须用筛选器参数中的单个引号引起来。 例如，*filter=market eq 'US' and gender eq 'm'*。  <br/> 你可以指定响应正文中的以下字段： <ul><li>**acquisitionType**</li><li>**age**</li><li>**storeClient**</li><li>**gender**</li><li>**market**</li><li>**osVersion**</li><li>**deviceType**</li><li>**sandboxId**</li></ul> | 否 |
 | aggregationLevel | string | 指定用于检索聚合数据的时间范围。 可以是以下字符串之一：**day**、**week** 或 **month**。 如果未指定，默认值为 **day**。  | 否 |
-| orderby | string | 对每个购置的结果数据值进行排序的语句。 语法是*orderby = 字段 [顺序] 字段 [顺序]...**field* 参数可以是以下字符串之一。 <ul><li>**date**</li><li>**acquisitionType**</li><li>**age**</li><li>**storeClient**</li><li>**gender**</li><li>**market**</li><li>**osVersion**</li><li>**deviceType**</li><li>**paymentInstrumentType**</li><li>**sandboxId**</li><li>**xboxTitleIdHex**</li></ul> *order* 参数是可选的，可以是 **asc** 或 **desc**，用于指定每个字段的升序或降序排列。 默认值为 **asc**。 下面是一个 *orderby* 字符串的示例：*orderby=date,market*  | 否 |
+| orderby | string | 对每个购置的结果数据值进行排序的语句。 语法是 *orderby = 字段 [顺序] 字段 [顺序]...* *field* 参数可以是以下字符串之一。 <ul><li>**date**</li><li>**acquisitionType**</li><li>**age**</li><li>**storeClient**</li><li>**gender**</li><li>**market**</li><li>**osVersion**</li><li>**deviceType**</li><li>**paymentInstrumentType**</li><li>**sandboxId**</li><li>**xboxTitleIdHex**</li></ul> *order* 参数是可选的，可以是 **asc** 或 **desc**，用于指定每个字段的升序或降序排列。 默认值为 **asc**。 下面是一个 *orderby* 字符串的示例：*orderby=date,market*  | 否 |
 | groupby | string | 仅将数据聚合应用于指定字段的语句。 可以指定的字段如下所示： <ul><li>**date**</li><li>**applicationName**</li><li>**acquisitionType**</li><li>**ageGroup**</li><li>**storeClient**</li><li>**gender**</li><li>**market**</li><li>**osVersion**</li><li>**deviceType**</li><li>**paymentInstrumentType**</li><li>**sandboxId**</li><li>**xboxTitleIdHex**</li></ul> 返回的数据行会包含 *groupby* 参数中指定的字段，以及以下字段： <ul><li>**date**</li><li>**applicationId**</li><li>**acquisitionQuantity**</li></ul> *Groupby*参数可以与 aggregationLevel 参数一起使用。 例如： *& groupby = ageGroup、 市场和 aggregationLevel = 周*  | 否 |
 
 ### <a name="request-example"></a>请求示例

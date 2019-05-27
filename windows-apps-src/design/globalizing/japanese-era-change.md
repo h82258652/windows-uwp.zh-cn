@@ -8,7 +8,7 @@ keywords: windows 10, uwp, 可本地化性, 本地化, 日本, 纪元
 ms.localizationpriority: high
 ms.openlocfilehash: 0d5de4c1713ab80afcdf2e028d39340aebcc018b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57617652"
@@ -73,7 +73,7 @@ ms.locfileid: "57617652"
 
 ### <a name="gannen-"></a>*Gannen* (元年)
 
-日本历的格式通常是**&lt;纪元名称&gt;&lt;纪元的年份&gt;**。 例如，2018 年是 **Heisei 30** (平成30年)。  但是，纪元的第一年很特殊；不是 **&lt;纪元名称&gt; 1**，而是 **&lt;纪元名称&gt; 元年** (*gannen*)。 因此，平成纪元的第一年将为平成元年 (*Heisei gannen*)。 请确保你的应用程序正确处理第一年的新时代中，并正确输出？？ 元年。
+日本历的格式通常是**&lt;纪元名称&gt; &lt;纪元的年份&gt;**。 例如，2018 年是 **Heisei 30** (平成30年)。  但是，纪元的第一年很特殊；不是 **&lt;纪元名称&gt; 1**，而是 **&lt;纪元名称&gt; 元年** (*gannen*)。 因此，平成纪元的第一年将为平成元年 (*Heisei gannen*)。 请确保你的应用程序正确处理第一年的新时代中，并正确输出？？ 元年。
 
 ## <a name="related-apis"></a>相关 API
 

@@ -1,0 +1,51 @@
+- name: 构建 Windows 应用
+  href: apps/index.md
+  items:
+    - name: 构建桌面应用
+      items:
+        - name: 概述
+          href: apps/desktop/index.md
+        - name: 选择应用平台
+          href: apps/desktop/choose-your-platform.md
+    - name: 实现桌面应用的现代化
+      items:
+        - name: 概述
+          href: apps/desktop/modernize/index.md
+        - name: 调用 UWP API
+          items:
+            - name: 概述
+              href: apps/desktop/modernize/desktop-to-uwp-enhance.md
+            - name: 可用 UWP API
+              href: apps/desktop/modernize/desktop-to-uwp-supported-api.md
+        - name: 托管 UWP XAML 控件（XAML 岛）
+          items:
+            - name: 概述
+              href: apps/desktop/modernize/xaml-islands.md
+            - name: 使用 UWP XAML 托管 API
+              href: apps/desktop/modernize/using-the-xaml-hosting-api.md
+        - name: 使用可视化层 (Windows.UI.Composition)
+          items:
+            - name: 概述
+              href: apps/desktop/modernize/visual-layer-in-desktop-apps.md
+            - name: WPF
+              href: apps/desktop/modernize/using-the-visual-layer-with-wpf.md
+            - name: Windows 窗体
+              href: apps/desktop/modernize/using-the-visual-layer-with-windows-forms.md
+            - name: Win32
+              href: apps/desktop/modernize/using-the-visual-layer-with-win32.md
+        - name: 需要包标识的功能
+          items:
+            - name: 概述
+              href: apps/desktop/modernize/modernize-packaged-apps.md
+            - name: 集成包扩展
+              href: apps/desktop/modernize/desktop-to-uwp-extensions.md
+            - name: 使用 UWP 组件进行扩展
+              href: apps/desktop/modernize/desktop-to-uwp-extend.md
+            - name: 分发打包的应用
+              href: apps/desktop/modernize/desktop-to-uwp-distribute.md
+    - name: Fluent Design 系统
+      href: apps/fluent-design-system.md
+    - name: 辅助功能
+      href: apps/accessibility.md
+    - name: 功能和技术
+      href: apps/features-and-technologies.md

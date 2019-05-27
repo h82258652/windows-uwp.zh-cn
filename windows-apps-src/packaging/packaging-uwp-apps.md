@@ -9,12 +9,12 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: d5ed75cb79488eb994135dcfef74483ec078a32e
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 8a7a34846cbadfa9e133976695239b98294a0dd2
+ms.sourcegitcommit: 559d3387d5929431212d147d9e085895e162916a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58173023"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66184572"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual Studio 打包 UWP 应用
 
@@ -99,9 +99,10 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 6.  确保在 **Select and Configure Packages** 对话框中选择全部三种体系结构配置（x86、x64 和 ARM），以确保你的应用能够部署到最广泛的设备上。 在**生成应用程序包**列表框中，选择**始终**。 应用捆绑包 （.appxbundle 或.msixbundle） 优先，通过单个应用包文件因为它包含的应用包配置为每种类型的处理器体系结构的集合。 当你选择生成应用捆绑包时，应用程序捆绑包将包含在最终应用程序包上载 （.appxupload 或.msixupload） 文件以及调试和崩溃分析信息中。 如果你不确定该选择哪种体系结构，或者想了解有关各种设备使用哪种体系结构的详细信息，请参阅[应用包体系结构](https://docs.microsoft.com/windows/uwp/packaging/device-architecture)。  
     ![使用包配置所示创建应用程序包窗口](images/packaging-screen5.jpg)
 7.  包含到完整 PDB 符号文件[分析应用程序性能](https://docs.microsoft.com/windows/uwp/publish/analytics)从合作伙伴中心后发布你的应用。 配置任何其他详细信息，例如版本编号或包输出位置。
-9.  单击**创建**生成应用包。 如果您选择某一**我想要创建要上传到 Microsoft Store 的包**中的选项的步骤 3，并且创建用于合作伙伴中心提交包时，该向导将创建包上载 （.appxupload 或.msixupload） 文件。 如果所选**我想要创建包以进行旁加载**在步骤 3 中，向导将创建一个应用程序包或应用捆绑包基于在步骤 6 中所选内容。
-10. 已成功打包您的应用程序，您将看到此对话框并可以检索指定的输出位置上的应用程序包上传文件。 此时，你可以[验证你在本地计算机或远程计算机上的应用程序包](#validate-your-app-package)。
+8.  单击**创建**生成应用包。 如果您选择某一**我想要创建要上传到 Microsoft Store 的包**中的选项的步骤 3，并且创建用于合作伙伴中心提交包时，该向导将创建包上载 （.appxupload 或.msixupload） 文件。 如果所选**我想要创建包以进行旁加载**在步骤 3 中，向导将创建一个应用程序包或应用捆绑包基于在步骤 6 中所选内容。
+9. 已成功打包您的应用程序，您将看到此对话框并可以检索指定的输出位置上的应用程序包上传文件。 此时，你可以[验证你在本地计算机或远程计算机上的应用程序包](#validate-your-app-package)并[自动提交到应用商店](#automate-store-submission)。
     ![包创建已完成窗口中，但显示的验证选项](images/packaging-screen6.jpg)
+
 
 ### <a name="to-create-your-app-package-upload-file-manually"></a>若要手动创建应用程序包上传文件
 
@@ -138,6 +139,23 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 5.  指定你的子网内部的设备规格，或提供你的子网外部的设备的域名服务器 (DNS) 名称或 IP 地址。
 6.  在**身份验证模式**列表中，如果你的设备没有要求你使用 Windows 凭据登录该设备，请选择**无**。
 7.  选择**选择**按钮，然后选择**启动 Windows 应用认证工具包**按钮。 如果远程工具正在该设备上运行，Visual Studio 将与其连接，然后执行验证测试。 请参阅 [Windows 应用认证工具包测试](https://msdn.microsoft.com/library/windows/apps/mt186450)。
+
+### <a name="automate-store-submission"></a>自动提交到应用商店
+
+从 Visual Studio 2019 开始，你可以生成的.appxupload 文件到 Microsoft Store 从 IDE 直接通过选择提交**自动将提交到 Microsoft Store Windows 应用程序认证包在验证之后**选项。 必须指定用于提交的凭据。 这些凭据包含三个部分： **Azure 租户 ID**，则**客户端 ID**并**客户端机密**。 请按照下列步骤以获取这些操作：
+
+1. 在合作伙伴中心，请转到您**开发人员设置**，单击**用户**，并将你组织的开发人员中心帐户与你组织的 Azure AD 目录相关联。 有关详细说明，请参阅[管理帐户用户](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
+2. 在中**用户**页上，单击**添加 Azure AD 应用程序**，添加代表该应用程序的 Azure AD 应用程序或服务将用于访问提交为您的开发人员中心帐户，并将其分配管理器角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在“添加 Azure AD 应用程序”页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在**添加 Azure AD 应用程序**页面上创建新的 Azure AD 应用程序。 有关详细信息，请参阅[添加用户、 组和 Azure AD 应用程序到合作伙伴中心帐户](/windows/uwp/publish/add-users-groups-and-azure-ad-applications)。
+3. 返回到**管理用户**页上，单击 Azure AD 应用程序，请转到应用程序设置，并复制名称**租户 ID**并**客户端 ID**值。
+4. 单击**添加新密钥**。 在以下屏幕上，复制密钥值，该值对应于客户端机密。 你将无法再访问此信息后离开此页上，因此请确保不会丢失。 有关详细信息，请参阅有关中管理密钥的信息[添加用户、 组和 Azure AD 应用程序到合作伙伴中心帐户](/windows/uwp/publish/add-users-groups-and-azure-ad-applications)。
+    ![验证并发布进度](images/packaging-screen8.jpg)
+    > [!Important] 
+    > 你的凭据可以保存到配置文件以供将来提交中使用
+5. 单击 **“确定”**。
+
+WACK 测试完成后，将开始提交。 你可以跟踪在提交进度**验证和发布**窗口。
+
+![验证并发布进度](images/packaging-screen9.jpg)
 
 ## <a name="sideload-your-app-package"></a>旁加载应用包
 

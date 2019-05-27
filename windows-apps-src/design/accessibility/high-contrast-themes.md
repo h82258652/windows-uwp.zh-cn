@@ -154,7 +154,7 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 <Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
 ```
 
-请注意如何**\{ThemeResource\}** 两次，使用一次为引用**SystemColorWindowColor**并再次对引用**BrandedPageBackgroundBrush**. 两次都需要应用在运行时搭配正确主题。 此时适合测试应用功能。 当你切换到高对比度主题时，网格的背景将自动更新。 当在不同高对比度主题之间切换时，它的背景也随之更新。
+请注意如何 **\{ThemeResource\}** 两次，使用一次为引用 **SystemColorWindowColor** 并再次对引用 **BrandedPageBackgroundBrush**. 两次都需要应用在运行时搭配正确主题。 此时适合测试应用功能。 当你切换到高对比度主题时，网格的背景将自动更新。 当在不同高对比度主题之间切换时，它的背景也随之更新。
 
 ## <a name="when-to-use-borders"></a>何时使用边框
 

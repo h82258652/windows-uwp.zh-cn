@@ -1,17 +1,20 @@
 ---
 Description: 当你想要创建新的桌面应用时，所做的第一个决定是要使用的 Win32 和 COM API 或.NET。
 ms.assetid: 82705644-F1F0-40F3-99B1-7A97BFB32831
-title: 选择你的应用程序平台
+title: 选择应用平台
 ms.topic: article
 ms.date: 03/18/2019
-ms.openlocfilehash: 960dda5e4cb7e8edc1edf7ce2e81da8306555f1c
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.author: mcleans
+author: mcleanbyron
+ms.localizationpriority: medium
+ms.openlocfilehash: 5ece6c5eea6cc05a966a7eae4cd16958dddee4d4
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984487"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215042"
 ---
-# <a name="choose-your-app-platform"></a>选择你的应用程序平台
+# <a name="choose-your-app-platform"></a>选择应用平台
 
 当你想要为 Windows Pc 创建一个新的桌面应用程序时，所做的第一个决定是要使用的应用程序平台。 Windows 提供了四个主应用程序平台，每个都有各自的优点：
 

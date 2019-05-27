@@ -4,13 +4,15 @@ title: 使用 Windows UI 和组件扩展桌面应用程序
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: ff87990341b3936b5f2e02b8ff8b119a23188e92
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 10ad54dd485d7dbf5e7f4cb119c7700c09056017
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984427"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215136"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>扩展使用现代 UWP 组件对桌面应用程序
 
@@ -45,7 +47,7 @@ ms.locfileid: "65984427"
 
 ### <a name="add-a-uwp-project"></a>添加 UWP 项目
 
-向你的解决方案中添加一个**空白应用（通用 Windows）**。
+向你的解决方案中添加一个**空白应用（通用 Windows）** 。
 
 这是你将构建新式 XAML UI 或使用只在 UWP 进程中运行的 API 的位置。
 

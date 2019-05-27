@@ -10,7 +10,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 596e9221fac686964b4faaa8a75f112dbb8ddf5a
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57619362"
@@ -700,7 +700,7 @@ String QueryPointer(PointerPoint ptrPt)
 
 ### <a name="visual-feedback"></a>视觉反馈
 
-我们基于 XAML **[椭圆形](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** 对象定义一个 **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)**，突出显示每个指针在画布上的位置，并使用**[故事板](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** 来动画显示与主指针对应的椭圆形。
+我们基于 XAML **[椭圆形](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** 对象定义一个 **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)** ，突出显示每个指针在画布上的位置，并使用 **[故事板](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** 来动画显示与主指针对应的椭圆形。
 
 **下面是 XAML:**
 

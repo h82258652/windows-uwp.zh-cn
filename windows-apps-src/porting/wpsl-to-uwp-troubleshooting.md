@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 372fd491e329a468c273dd039c917eba5dc3e123
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57643582"
@@ -32,7 +32,7 @@ XAML 分析异常可能难以诊断出来，特别是在此类异常中没有含
 
 本部分介绍要执行的操作如果在 Visual Studio 中打开的 Windows 10 项目，你将看到消息"需要 Visual Studio 更新。 一个或多个项目需要平台 SDK &lt;version&gt;（未安装该 SDK 版本，也未将其作为 Visual Studio 后续更新的一部分进行提供）。”
 
--   首先，确定 SDK 适用于 Windows 10 的已安装的版本号。 导航到**c:\\Program Files (x86)\\Windows 工具包\\10\\Include\\&lt;versionfoldername&gt;** 并记下*&lt;versionfoldername&gt;*，该选项位于四部分表示法，"Major.Minor.Build.Revision"。
+-   首先，确定 SDK 适用于 Windows 10 的已安装的版本号。 导航到**c:\\Program Files (x86)\\Windows 工具包\\10\\Include\\&lt;versionfoldername&gt;** 并记下 *&lt;versionfoldername&gt;* ，该选项位于四部分表示法，"Major.Minor.Build.Revision"。
 -   打开项目文件以进行编辑，并找到 `TargetPlatformVersion` 和 `TargetPlatformMinVersion` 元素。 将它们编辑为如下外观，使用你在磁盘上找到的四部分表示法版本号替换 *&lt;versionfoldername&gt;*。
 
 ```xml

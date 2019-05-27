@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, 市场活动, 推广
 ms.localizationpriority: medium
-ms.openlocfilehash: d442792cb2b4175294ea8da053784ef0a99d18e2
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 0d38d47c1b5e228e984faa4657cd12735e98bcf9
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63811836"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215235"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>为你的应用创建广告市场活动
 
@@ -20,7 +20,7 @@ ms.locfileid: "63811836"
 你可以仅为通过[应用认证过程](the-app-certification-process.md) 的最终发布阶段的应用创建广告市场活动。
 
 > [!NOTE]
-> 文档本部分介绍如何在合作伙伴中心中创建的广告活动。 或者，你可以使用 [Microsoft Store 促销 API](../monetize/run-ad-campaigns-using-windows-store-services.md) 以编程方式创建和管理市场活动。
+> 文档本部分介绍如何在合作伙伴中心中创建的广告活动。 若要创建和以编程方式管理广告市场活动的其他活动选项包括[Vungle](https://vungle.com/)并[API 的 Microsoft Store 促销](../monetize/run-ad-campaigns-using-windows-store-services.md)。
 
 ## <a name="instructions"></a>说明
 
@@ -36,7 +36,7 @@ ms.locfileid: "63811836"
 5.  在**市场活动名称**字段中查看为你的市场活动提供的名称，然后根据需要进行更改。
 6.  在“活动类型”下，选择其中一个选项：
     * **付费的 ad**:这些 ad 将在与你的应用的设备和类别匹配的任何应用中运行。 对于在 2017 年 1 月 9 日之后创建的新市场活动，这些广告也会在 MSN.com、Outlook.com、Skype 和其他 Microsoft 高级属性中显示。 面向应用和 Microsoft 高级属性的应用推广市场活动也被称为*通用*市场活动。
-    * **社区 ad （免费）**:这些 ad 将在由其他开发人员还创建社区广告市场活动发布的应用程序中运行。 必须先选择在 **通过应用内广告** **盈利** -> 页面中显示社区广告，然后才能选择此选项。 有关详细信息，请参阅[关于社区广告](about-community-ads.md)。
+    * **社区 ad （免费）** :这些 ad 将在由其他开发人员还创建社区广告市场活动发布的应用程序中运行。 必须先选择在 **通过应用内广告** **盈利** -> 页面中显示社区广告，然后才能选择此选项。 有关详细信息，请参阅[关于社区广告](about-community-ads.md)。
     * **（免费） 的内部 ad**:这些 ad 才会播发的应用的设备类型匹配的应用程序中运行。 自家广告不收取任何费用。 有关详细信息，请参阅[关于自家广告](about-house-ads.md)。
 
 7.  对于付费广告市场活动，请确认**市场活动持续时间**（将花费市场活动预算的时间段）。 默认选项是**每月**，这表示市场活动预算将在每个月定期使用，直到市场活动停止。 如果你有高级帐户，则可以选择性地选择**自定义**来指定将花费市场活动预算的自定义日期和时间范围。 有关高级帐户更多详细信息，请参阅[有关广告市场活动的常见问题](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign)。
@@ -90,7 +90,7 @@ ms.locfileid: "63811836"
 
 12.  如果你有[高级帐户](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign)，你可以使用 **“目标 URL”** 框，来控制当客户单击你的广告时会发生什么情况。
     * 如果不选中此框，当客户单击你的广告，将显示应用的应用商店一览。
-    * 如果使用 Kochava 或 Tune 测量应用的安装分析，请输入 Kochava 或 Tune 中的安装跟踪 URL。 当你保存市场活动时，将验证跟踪 URL 以确保它在 Microsoft Store 中解析为应用的一览页。 有关 Kochava 和 Tune 的安装跟踪的详细信息，请参阅 [Kochava](https://support.kochava.com/) 和 [Tune](https://help.tune.com/) 文档。
+    * 如果您在使用调整、 Kochava、 调整或 Vungle 用于衡量您的应用程序安装分析，输入你安装跟踪 URL。 当你保存市场活动时，将验证跟踪 URL 以确保它在 Microsoft Store 中解析为应用的一览页。 有关安装跟踪与这些服务的详细信息，请参阅[调整](https://docs.adjust.com/en/)， [Kochava](https://support.kochava.com/)，[优化](https://help.tune.com/)，以及[Vungle](https://support.vungle.com/)文档.
     * 如果你选择**增加应用参与**作为市场活动目标，可以指定[深层链接 URI](../launch-resume/handle-uri-activation.md) 将所选客户群中的客户重定向到应用中的特定页面。
     * 如果你指定不是应用描述页或应用内页面的任何目标，将自动暂停市场活动。
 

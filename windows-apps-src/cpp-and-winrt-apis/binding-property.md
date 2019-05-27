@@ -1,16 +1,16 @@
 ---
 description: 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 本主题介绍如何实现和使用可观测属性以及如何将 XAML 控件绑定到该属性。
 title: XAML 控件; 绑定到 C++/WinRT 属性
-ms.date: 08/21/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 属性
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bdbfef54b799f8dff23ad739007cec9fef98af8
-ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.openlocfilehash: 2fe5c03eebd2b68e98ae908ea4624471fbd2b3d2
+ms.sourcegitcommit: d23dab1533893b7fe0f01ca6eb273edfac4705e6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921723"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65627671"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控件; 绑定到 C++/WinRT 属性
 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 这一想法基于称为*观察者模式*的软件设计模式。 本主题演示如何实现可观察量属性中的[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何将 XAML 控件绑定到它们。
@@ -27,7 +27,7 @@ XAML 文本元素或控件可检索更新的值然后将自行更新以显示新
 > 有关如何安装和使用信息C++WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包 （该一起提供项目模板，并生成支持），请参阅[适用于 Visual Studio 支持C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="create-a-blank-app-bookstore"></a>创建空白应用 (Bookstore)
-首先在 Microsoft Visual Studio 中创建新项目。 创建**可视化C++**   >  **Windows Universal** > **空白应用 (C++/WinRT)** 项目，并将其命名*书店*。
+首先在 Microsoft Visual Studio 中创建新项目。 创建**空白应用 (C++/WinRT)** 项目，并将其命名*书店*。
 
 我们将创作新类来表示具有可观测标题属性的书籍。 我们正在同一编译单元内创作和使用该类。 但我们希望能够从 XAML 绑定到此类，因此，它将成为一个运行时类。 而且我们将使用 C++/WinRT 来创作和使用它。
 
@@ -61,7 +61,6 @@ namespace Bookstore
 ```cppwinrt
 // BookSku.h
 #pragma once
-
 #include "BookSku.g.h"
 
 namespace winrt::Bookstore::implementation
@@ -89,6 +88,7 @@ namespace winrt::Bookstore::implementation
 // BookSku.cpp
 #include "pch.h"
 #include "BookSku.h"
+#include "BookSku.g.cpp"
 
 namespace winrt::Bookstore::implementation
 {
@@ -142,18 +142,17 @@ namespace Bookstore
 }
 ```
 
-保存并生成。 将 `BookstoreViewModel.h` 和 `BookstoreViewModel.cpp` 从 `Generated Files` 文件夹复制到项目文件夹中，然后将其包含在项目中。 打开这些文件，并实现运行时类，如下所示。 请注意如何，请在`BookstoreViewModel.h`，包含`BookSku.h`，其声明的实现类型 (**winrt::Bookstore::implementation::BookSku**)。 我们要通过删除还原的默认构造函数和`= delete`。
+保存并生成。 将 `BookstoreViewModel.h` 和 `BookstoreViewModel.cpp` 从 `Generated Files\sources` 文件夹复制到项目文件夹中，然后将其包含在项目中。 打开这些文件，并实现运行时类，如下所示。 请注意如何，请在`BookstoreViewModel.h`，包含`BookSku.h`，其声明的实现类型**BookSku** (即**winrt::Bookstore::implementation::BookSku**)。 我们要删除和`= default`的默认构造函数。
 
 ```cppwinrt
 // BookstoreViewModel.h
 #pragma once
-
 #include "BookstoreViewModel.g.h"
 #include "BookSku.h"
 
 namespace winrt::Bookstore::implementation
 {
-    struct BookstoreViewModel final : BookstoreViewModelT<BookstoreViewModel>
+    struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
     {
         BookstoreViewModel();
 
@@ -169,6 +168,7 @@ namespace winrt::Bookstore::implementation
 // BookstoreViewModel.cpp
 #include "pch.h"
 #include "BookstoreViewModel.h"
+#include "BookstoreViewModel.g.cpp"
 
 namespace winrt::Bookstore::implementation
 {
@@ -208,9 +208,9 @@ namespace Bookstore
 
 如果省略的 include `BookstoreViewModel.idl` (请参阅的列表中`MainPage.idl`上方)，然后您将看到错误**应为\<附近"MainViewModel"**。 请确保将所有类型都保留在同一个命名空间中另一个提示是： 在代码清单所示的命名空间。
 
-若要解决我们希望看到的错误，您现在需要将复制取值函数的存根**MainViewModel**超出所生成的文件的属性 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`并`MainPage.cpp`) 和到`\Bookstore\Bookstore\MainPage.h`和`MainPage.cpp`。
+若要解决我们希望看到的错误，您现在需要将复制取值函数的存根**MainViewModel**超出所生成的文件的属性 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`并`MainPage.cpp`) 和到`\Bookstore\Bookstore\MainPage.h`和`MainPage.cpp`。 接下来介绍执行此操作的步骤。
 
-在中`\Bookstore\Bookstore\MainPage.h`，包括`BookstoreViewModel.h`，其声明的实现类型 (**winrt::Bookstore::implementation::BookstoreViewModel**)。 添加私有成员来存储视图的模型。 请注意，属性访问器函数（添加成员 m_mainViewModel）是根据 **Bookstore::BookstoreViewModel** 实现的，后者是投影类型。 实现类型是同一个项目 （编译单元） 中的应用程序，因此我们构造了通过采用构造函数重载 m_mainViewModel `nullptr_t`。 此外删除**MyProperty**属性。
+在中`\Bookstore\Bookstore\MainPage.h`，包括`BookstoreViewModel.h`，其声明的实现类型**BookstoreViewModel** (即**winrt::Bookstore::implementation::BookstoreViewModel**)。 添加私有成员来存储视图的模型。 请注意，属性访问器函数 （和成员 m_mainViewModel） 实现的投影类型方面**BookstoreViewModel** (即**Bookstore::BookstoreViewModel**)。 实现类型是同一个项目 （编译单元） 中的应用程序，因此我们构造了通过采用构造函数重载 m_mainViewModel `nullptr_t`。 此外删除**MyProperty**属性。
 
 ```cppwinrt
 // MainPage.h
@@ -240,6 +240,7 @@ namespace winrt::Bookstore::implementation
 // MainPage.cpp
 #include "pch.h"
 #include "MainPage.h"
+#include "MainPage.g.cpp"
 
 using namespace winrt;
 using namespace Windows::UI::Xaml;

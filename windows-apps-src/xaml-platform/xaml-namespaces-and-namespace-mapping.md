@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4332bd0b19d381937e477efc472634d6d81afd58
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b7e8be3a2c2f3d6d4ecf3ade708741fa323167fc
+ms.sourcegitcommit: 13fe5d04bdb43c75d0fc4de18c2c3d4ae58ff982
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651082"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66221032"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 命名空间和命名空间映射
 
@@ -49,6 +49,33 @@ XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。
 
 XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XAML 命名空间的 XAML 处理器实现进行访问。 项目模板、示例代码和语言特性文档遵循 XAML 语言 XAML 命名空间的“x:”映射约定。 XAML 语言命名空间定义多个常用的功能，甚至对于使用 C++、C# 或 Visual Basic 的基本 Windows 运行时应用，这些功能也是必要的。 例如，为了将任何代码隐藏通过分部类联接到 XAML 文件，必须将该类命名为相关 XAML 文件的根元素中的 [x:Class 属性](x-class-attribute.md)。 或者，任何在 XAML 页面中定义为 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)中一个键资源的元素必须在相关的对象元素上设置 [x:Key 特性](x-key-attribute.md)。
 
+## <a name="code-namespaces-that-map-to-the-default-xaml-namespace"></a>将映射到默认 XAML 命名空间的代码命名空间
+
+以下是当前映射到默认 XAML 命名空间的代码命名空间的列表。
+
+* Windows.UI
+* Windows.UI.Xaml
+* Windows.UI.Xaml.Automation
+* Windows.UI.Xaml.Automation.Peers
+* Windows.UI.Xaml.Automation.Provider
+* Windows.UI.Xaml.Automation.Text
+* Windows.UI.Xaml.Controls
+* Windows.UI.Xaml.Controls.Primitives
+* Windows.UI.Xaml.Data
+* Windows.UI.Xaml.Documents
+* Windows.UI.Xaml.Input
+* Windows.UI.Xaml.Interop
+* Windows.UI.Xaml.Markup
+* Windows.UI.Xaml.Media
+* Windows.UI.Xaml.Media.Animation
+* Windows.UI.Xaml.Media.Imaging
+* Windows.UI.Xaml.Media.Media3D
+* Windows.UI.Xaml.Navigation
+* Windows.UI.Xaml.Resources
+* Windows.UI.Xaml.Shapes
+* Windows.UI.Xaml.Threading
+* Windows.UI.Text
+
 <span id="other-XAML-namespaces"/>
 
 ## <a name="other-xaml-namespaces"></a>其他 XAML 命名空间
@@ -73,7 +100,7 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 
 ### <a name="local-and-common"></a>**local:** 和 **common:**
 
-“local:”是一个前缀，通常会在模板化 UWP 应用项目的 XAML 页面中为你映射它。 它映射为引用相同的命名空间，该命名空间旨在包含 [x:Class 特性](x-class-attribute.md)和所有 XAML 文件（包括 app.xaml）的代码。 只要你在此相同命名空间中定义你要在 XAML 中使用的任何自定义类，你就可以使用 **local:** 前缀在 XAML 中引用你的自定义类型。 来自模板化的 UWP 应用项目的相关前缀是 **common:**。 此前缀引用包含实用程序类（例如转换器和命令）的嵌套“Common”命名空间，你可以在**解决方案资源管理器**视图的“Common”文件夹中找到定义。
+“local:”是一个前缀，通常会在模板化 UWP 应用项目的 XAML 页面中为你映射它。 它映射为引用相同的命名空间，该命名空间旨在包含 [x:Class 特性](x-class-attribute.md)和所有 XAML 文件（包括 app.xaml）的代码。 只要你在此相同命名空间中定义你要在 XAML 中使用的任何自定义类，你就可以使用 **local:** 前缀在 XAML 中引用你的自定义类型。 来自模板化的 UWP 应用项目的相关前缀是 **common:** 。 此前缀引用包含实用程序类（例如转换器和命令）的嵌套“Common”命名空间，你可以在**解决方案资源管理器**视图的“Common”文件夹中找到定义。
 
 ### <a name="vsm"></a>**vsm:**
 
@@ -103,7 +130,7 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 
 如果从主要应用的应用程序定义或页面定义中引用自定义类型，这些类型无需进一步的依赖程序集配置即可使用，但你仍然必须映射包含这些类型的代码命名空间。 一种常见的约定是映射任何给定 XAML 页面的默认代码命名空间的前缀“local”。 此约定常常包含在 XAML 项目的初始项目模板中。
 
-## <a name="attached-properties"></a>附加属性
+## <a name="attached-properties"></a>附加的属性
 
 如果你引用附加属性，附加属性名称的所有者键入部分必须在默认 XAML 命名空间中，或者必须带有前缀。 很少会独立于属性元素向属性添加前缀，但这种情况有时是必需的，特别是对于自定义附加属性而言。 有关详细信息，请参阅[自定义附加属性](custom-attached-properties.md)。
 
@@ -112,7 +139,7 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 * [XAML概述](xaml-overview.md)
 * [XAML 语法指南](xaml-syntax-guide.md)
 * [创建 Windows 运行时组件中的C#和 Visual Basic](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [C#VB 和 c + + 项目模板以用于 Windows 运行时应用](https://msdn.microsoft.com/library/windows/apps/hh768232)
+* [C#VB，和C++用于 Windows 运行时应用的项目模板](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [迁移 Silverlight 或 WPF XAML/代码到 Windows 运行时应用程序](https://msdn.microsoft.com/library/windows/apps/br229571)
  
 
