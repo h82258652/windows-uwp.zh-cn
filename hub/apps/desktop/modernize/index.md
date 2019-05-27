@@ -3,12 +3,15 @@ Description: 添加新式 XAML 用户界面、创建 MSIX 包，以及将其他�
 title: 实现 Windows 桌面应用的现代化
 ms.topic: article
 ms.date: 04/17/2019
-ms.openlocfilehash: 0314523996989f6f5b5cfe320cfc4cc06445ac9d
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.author: mcleans
+author: mcleanbyron
+ms.localizationpriority: medium
+ms.openlocfilehash: 6153a0a094d03081388c15ec31696ef277ef7081
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984347"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215217"
 ---
 # <a name="modernize-your-desktop-apps"></a>实现桌面应用的现代化
 
