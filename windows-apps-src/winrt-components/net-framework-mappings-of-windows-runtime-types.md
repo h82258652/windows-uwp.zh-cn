@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ef98f3f4a9d20e836d5f9bddbc111a232f864bf5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dc9d71f6f02ec62fdf96161c397f7d2d7363b506
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602612"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372509"
 ---
 # <a name="net-framework-mappings-of-windows-runtime-types"></a>Windows 运行时类型的 .NET Framework 映射
 
 
 
-下表列出了 .NET Framework 在通用 Windows 平台 (UWP) 类型和 .NET Framework 类型之间产生的映射。 在使用托管代码编写的通用 Windows 应用中，IntelliSense 将显示 .NET Framework 类型而不是 UWP 类型。 例如，如果 Windows 运行时方法采用类型 IVector&lt;string&gt; 的参数，IntelliSense 将显示类型 IList&lt;string&gt; 的参数。 同样，在使用托管代码编写的 Windows 运行时组件中，你将使用成员签名中的 .NET Framework 类型。 当 [Windows 运行时元数据导出工具 (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) 生成 Windows 运行时组件时，.NET Framework 类型将变为相应的 UWP 类型。
+下表列出了 .NET Framework 在通用 Windows 平台 (UWP) 类型和 .NET Framework 类型之间产生的映射。 在使用托管代码编写的通用 Windows 应用中，IntelliSense 将显示 .NET Framework 类型而不是 UWP 类型。 例如，如果 Windows 运行时方法采用类型 IVector&lt;string&gt; 的参数，IntelliSense 将显示类型 IList&lt;string&gt; 的参数。 同样，在使用托管代码编写的 Windows 运行时组件中，你将使用成员签名中的 .NET Framework 类型。 当 [Windows 运行时元数据导出工具 (Winmdexp.exe)](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool) 生成 Windows 运行时组件时，.NET Framework 类型将变为相应的 UWP 类型。
 
 ## <a name="mapping-tables"></a>映射表
 
@@ -64,7 +64,7 @@ ms.locfileid: "57602612"
 | Windows.UI                          | 颜色              | System.Runtime.WindowsRuntime.dll         |
 | Windows.Foundation                  | 点              | System.Runtime.WindowsRuntime.dll         |
 | Windows.Foundation                  | Rect               | System.Runtime.WindowsRuntime.dll         |
-| Windows.Foundation                  | 尺寸               | System.Runtime.WindowsRuntime.dll         |
+| Windows.Foundation                  | 大小               | System.Runtime.WindowsRuntime.dll         |
 | Windows.UI.Xaml.Input               | ICommand           | System.ObjectModel.dll                    |
 | Windows.UI.Xaml                     | CornerRadius       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml                     | Duration           | System.Runtime.WindowsRuntime.UI.Xaml.dll |

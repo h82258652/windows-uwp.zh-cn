@@ -6,12 +6,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建应用提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 5563b8281a713b57f98c48ae04153b19062f2f12
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e899b203a21f8c29c9c95973871881cc618b5d55
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334935"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371222"
 ---
 # <a name="create-an-app-submission"></a>创建应用提交
 
@@ -19,13 +19,13 @@ ms.locfileid: "58334935"
 
 有关此方法如何适用通过使用 Microsoft Store 提交 API 创建应用提交过程的详细信息，请参阅[管理应用提交](manage-app-submissions.md)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 若要使用此方法，首先需要执行以下操作：
 
 * 如果尚未开始操作，请先完成 Microsoft Store 提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 确保应用至少有一个已完成[年龄分级](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)信息的提交。
+* 确保应用至少有一个已完成[年龄分级](https://docs.microsoft.com/windows/uwp/publish/age-ratings)信息的提交。
 
 ## <a name="request"></a>请求
 
@@ -45,7 +45,7 @@ ms.locfileid: "58334935"
 
 | 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | 必需。 要创建提交的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
+| applicationId | string | 必需。 要创建提交的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 
 ### <a name="request-body"></a>请求正文
 

@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API
 ms.localizationpriority: medium
-ms.openlocfilehash: c2f2638e93ecbe346cc5dccb503d94d926ddcdae
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e8e7653174eaf31f11341a5c8e21b69ec54a6189
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335145"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371280"
 ---
 # <a name="create-and-manage-submissions"></a>创建和管理提交
 
@@ -46,15 +46,15 @@ ms.locfileid: "58335145"
 
 * 使用 Microsoft Store 提交 API 对应用进行准备：
 
-  * 如果在合作伙伴中心尚不存在您的应用程序，则必须[保留在合作伙伴中心名称创建您的应用程序](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。 不能使用 Microsoft Store 提交 API 在合作伙伴中心; 创建应用必须在合作伙伴中心来创建它，工作，然后之后，您可以使用 API 来访问该应用程序和以编程方式创建它的提交。 不过，可以使用该 API 以编程方式创建加载项和软件包外部测试版，然后再为它们创建提交。
+  * 如果在合作伙伴中心尚不存在您的应用程序，则必须[保留在合作伙伴中心名称创建您的应用程序](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。 不能使用 Microsoft Store 提交 API 在合作伙伴中心; 创建应用必须在合作伙伴中心来创建它，工作，然后之后，您可以使用 API 来访问该应用程序和以编程方式创建它的提交。 不过，可以使用该 API 以编程方式创建加载项和软件包外部测试版，然后再为它们创建提交。
 
-  * 可以创建使用此 API 为给定应用提交之前，你必须首先[在合作伙伴中心中创建一个应用程序提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，其中包括回答[年龄分级](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)调查表。 完成此操作后，才可以使用该 API 为此应用以编程方式创建新的提交。 无需创建加载项提交或软件包外部测试版提交，即可将该 API 用于这些类型的提交。
+  * 可以创建使用此 API 为给定应用提交之前，你必须首先[在合作伙伴中心中创建一个应用程序提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)，其中包括回答[年龄分级](https://docs.microsoft.com/windows/uwp/publish/age-ratings)调查表。 完成此操作后，才可以使用该 API 为此应用以编程方式创建新的提交。 无需创建加载项提交或软件包外部测试版提交，即可将该 API 用于这些类型的提交。
 
-  * 如果你要创建或更新应用提交并需要包括应用包，请事先[准备应用包](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements)。
+  * 如果你要创建或更新应用提交并需要包括应用包，请事先[准备应用包](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)。
 
-  * 如果你要创建或更新应用提交并需要包括应用商店一览的屏幕截图或图像，请事先[准备应用屏幕截图和图像](https://msdn.microsoft.com/windows/uwp/publish/app-screenshots-and-images)。
+  * 如果你要创建或更新应用提交并需要包括应用商店一览的屏幕截图或图像，请事先[准备应用屏幕截图和图像](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images)。
 
-  * 如果你要创建或更新加载项提交并需要包括图标，请事先[准备图标](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon)。
+  * 如果你要创建或更新加载项提交并需要包括图标，请事先[准备图标](https://docs.microsoft.com/windows/uwp/publish/create-iap-descriptions)。
 
 <span id="associate-an-azure-ad-application-with-your-windows-partner-center-account" />
 
@@ -143,7 +143,7 @@ grant_type=client_credentials
 如果你对 Microsoft Store 提交 API 有疑问或需要使用此 API 管理你的提交的帮助，请使用以下资源：
 
 * 在我们的[论坛](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=wpsubmit)上提问。
-* 请访问我们[支持页面](https://developer.microsoft.com/windows/support)并请求一个合作伙伴中心的协助的支持选项。 如果系统提示你选择问题类型和类别，请分别选择“应用提交和认证”和“提交应用”。  
+* 请访问我们[支持页面](https://developer.microsoft.com/windows/support)并请求一个合作伙伴中心的协助的支持选项。 如果系统提示你选择问题类型和类别，请分别选择“应用提交和认证”和“提交应用”。    
 
 ## <a name="related-topics"></a>相关主题
 

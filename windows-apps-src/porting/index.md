@@ -6,21 +6,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d8805f03f8476bcae8404395c27d9d78952f782
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 937d165d9305a3f4909383e872f49fcf08a3115c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984231"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371593"
 ---
 # <a name="porting-apps-to-windows10"></a>将应用移植到 Windows 10
 
 
 本部分介绍了如何将现有应用移植到通用 Windows 平台 (UWP)，你可以在该平台中创建可供客户安装到所有类型的设备的单个 Windows 10 应用包。 你的应用将受益于精彩的新硬件、绝佳的营销机会、现代 API 集、自适应 UI 控件以及包括鼠标/键盘、触摸和语音在内的各种输入形式。
 
-Windows 运行时 (WinRT) 是可让你生成通用 Windows 平台 (UWP) 应用的技术。 有关 WinRT 和 UWP 应用的更多背景知识，请参考[什么是通用 Windows 平台 (UWP) 应用？](https://msdn.microsoft.com/library/windows/apps/dn726767)。
+Windows 运行时 (WinRT) 是可让你生成通用 Windows 平台 (UWP) 应用的技术。 有关 WinRT 和 UWP 应用的更多背景知识，请参考[什么是通用 Windows 平台 (UWP) 应用？](https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp)。
 
-此移植指南介绍当前应用的技术和通用 Windows 平台 (UWP) 之间的差异。 了解技术之间的差异后，将能够深入了解开发人员中心的其余部分，它是用于开发 UWP 应用的综合性资源。 实现此目的一个好方法是从[如何开发应用商店应用](https://msdn.microsoft.com/library/windows/apps/dn726537)开始。
+此移植指南介绍当前应用的技术和通用 Windows 平台 (UWP) 之间的差异。 了解技术之间的差异后，将能够深入了解开发人员中心的其余部分，它是用于开发 UWP 应用的综合性资源。 实现此目的一个好方法是从[如何开发应用商店应用](https://docs.microsoft.com/previous-versions/windows/apps/dn726537(v=win.10))开始。
 
 | 主题 | 描述 |
 |-------|-------------|
@@ -33,6 +33,6 @@ Windows 运行时 (WinRT) 是可让你生成通用 Windows 平台 (UWP) 应用�
 
 ## <a name="related-topics"></a>相关主题
 
-* [从 WPF 和 Silverlight 移动到 WinRT](https://msdn.microsoft.com/library/windows/apps/dn263237)
-* [从 Android 移动到 WinRT](https://msdn.microsoft.com/library/windows/apps/jj945421)
-* [从 Web 移动到 WinRT](https://msdn.microsoft.com/library/windows/apps/hh465151)
+* [从 WPF 和 Silverlight 移动到 WinRT](https://docs.microsoft.com/previous-versions/windows/apps/dn263237(v=win.10))
+* [从 Android 移动到 WinRT](https://docs.microsoft.com/previous-versions/windows/apps/jj945421(v=win.10))
+* [从 Web 移动到 WinRT](https://docs.microsoft.com/previous-versions/windows/apps/hh465151(v=win.10))

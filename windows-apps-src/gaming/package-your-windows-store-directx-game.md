@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 打包
 ms.localizationpriority: medium
-ms.openlocfilehash: 631ba2c278c72f406a0fdd8a6d6d8d8a14c9eb05
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 27ea422982ce991de20e67649bc0925a60547cd8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635402"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368314"
 ---
 #  <a name="package-your-universal-windows-platform-uwp-directx-game"></a>打包你的通用 Windows 平台 (UWP) DirectX 游戏
 
@@ -22,7 +22,7 @@ ms.locfileid: "57635402"
 -   应用包包括特定于平台的可执行文件和库。 通常，UWP 游戏最多可有 3 个应用包： 分别适用于 x86、x64 和 ARM CPU 体系结构。 特定于该硬件平台的所有代码和数据都必须包含在它的应用包内。 应用包还应该包含所有核心资源，以便可以在保真度和性能的基准级别运行游戏。
 -   资源包包含可选的或展开的独立于平台的数据，例如游戏资源（纹理、网格、声音和文本）。 一个 UWP 游戏可以具有一个或多个资源包，包括适用于以下对象的资源包：高清晰度资源或纹理、DirectX 功能级别高于 11+ 的资源，或者特定于语言的资源。
 
-有关应用程序包和应用包的详细信息，请阅读[定义应用资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)。
+有关应用程序包和应用包的详细信息，请阅读[定义应用资源](https://docs.microsoft.com/previous-versions/windows/apps/hh965321(v=win.10))。
 
 虽然你可以将所有内容都放置在应用包中，但这非常低效和多余。 为什么要为每个平台 （尤其对于可能不会使用该文件的 ARM 平台）复制三次相同大小的纹理文件？ 我们应该尝试最大程度地减少客户需要下载的内容， 并使他们可以更快速地开始玩游戏、节省其设备上的空间，并且避免可能产生的按流量计费的带宽成本。
 
@@ -83,7 +83,7 @@ ms.locfileid: "57635402"
 
      
 
--   在 [**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) 和 [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 中使用 API 来为你的应用指定和加载特定于区域设置的资源。 同样，使用不包含指定区域设置的资源引用，因为这些 API 将根据用户设置确定正确的区域设置，然后为用户检索正确的资源。
+-   在 [**Windows.ApplicationModel.Resources**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources) 和 [**Windows.ApplicationModel.Resources.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core) 中使用 API 来为你的应用指定和加载特定于区域设置的资源。 同样，使用不包含指定区域设置的资源引用，因为这些 API 将根据用户设置确定正确的区域设置，然后为用户检索正确的资源。
 -   在 Microsoft Visual Studio 2015 中，选择**项目-> 应用商店-> 创建应用程序包...** 和创建包。
 
 ## <a name="defining-scaling-factor-resource-packs"></a>定义比例系数资源包
@@ -100,7 +100,7 @@ Windows 10 提供了三个用户界面缩放因素：1.0 x，1.4 x 和 1.8 x。 
 
      
 
--   在 [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 中使用 API 来加载资源。 资源引用应该一般化（无后缀），且不带特定的比例变体。 系统将检索适用于屏幕和用户设置的适当的比例资源。
+-   在 [**Windows.ApplicationModel.Resources.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core) 中使用 API 来加载资源。 资源引用应该一般化（无后缀），且不带特定的比例变体。 系统将检索适用于屏幕和用户设置的适当的比例资源。
 -   在 Visual Studio 2015 中，选择**项目-> 应用商店-> 创建应用程序包...** 和创建包。
 
 ## <a name="defining-directx-feature-level-resource-packs"></a>定义 DirectX 功能级别资源包
@@ -110,7 +110,7 @@ DirectX 功能级别与用于之前和当前版本的 DirectX（特别是 Direct
 
 你的基线应用包应使用基线纹理压缩格式：BC1、 BC2 或 BC3。 任何 UWP 设备 （从低端的 ARM 平台到专用的多 GPU 工作站和媒体计算机）都可以使用这些格式。
 
-DirectX 功能级别 10 或更高级别所支持的纹理格式应该添加到资源包中，以节省本地磁盘空间和下载带宽。 这使你可以使用用于级别 11 的更高级的压缩方案，例如 BC6H 和 BC7。 (有关更多详细信息，请参阅[Direct3D 11 中的纹理块压缩](https://msdn.microsoft.com/library/windows/desktop/hh308955)。)这些格式的效率更高的现代 Gpu 支持的高分辨率的纹理资产，并使用其提高外观、 性能和高端平台上游戏的空间要求。
+DirectX 功能级别 10 或更高级别所支持的纹理格式应该添加到资源包中，以节省本地磁盘空间和下载带宽。 这使你可以使用用于级别 11 的更高级的压缩方案，例如 BC6H 和 BC7。 (有关更多详细信息，请参阅[Direct3D 11 中的纹理块压缩](https://docs.microsoft.com/windows/desktop/direct3d11/texture-block-compression-in-direct3d-11)。)这些格式的效率更高的现代 Gpu 支持的高分辨率的纹理资产，并使用其提高外观、 性能和高端平台上游戏的空间要求。
 
 | DirectX 功能级别 | 支持的纹理压缩 |
 |-----------------------|-------------------------------|
@@ -163,7 +163,7 @@ DirectX 功能级别 10 或更高级别所支持的纹理格式应该添加到�
     );
     ```
 
--   在 [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 中使用 API 来加载资源。 资源引用应该一般化（无后缀），且不带功能级别。 然而，与语言和规模不同，系统不会自动确定哪个功能级别最适合给定屏幕；你需要根据代码逻辑自行确定。 确定后，请使用 API 通知首选功能级别的操作系统。 然后，系统可以根据该首选项检索正确资源。 下面的代码示例显示了如何将当前平台的 DirectX 功能级别通知你的应用：
+-   在 [**Windows.ApplicationModel.Resources.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core) 中使用 API 来加载资源。 资源引用应该一般化（无后缀），且不带功能级别。 然而，与语言和规模不同，系统不会自动确定哪个功能级别最适合给定屏幕；你需要根据代码逻辑自行确定。 确定后，请使用 API 通知首选功能级别的操作系统。 然后，系统可以根据该首选项检索正确资源。 下面的代码示例显示了如何将当前平台的 DirectX 功能级别通知你的应用：
     
     ```cpp
     // Set the current UI thread's MRT ResourceContext's DXFeatureLevel with the right DXFL. 
@@ -191,7 +191,7 @@ DirectX 功能级别 10 或更高级别所支持的纹理格式应该添加到�
 
      
 
--   现在，使用 [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078) 查找匹配当前 DirectX 功能级别的文件。 **ResourceManager** 将返回 [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/br206089)，你可以使用 [**ResourceMap::GetValue**](https://msdn.microsoft.com/library/windows/apps/br206098)（或 [**ResourceMap::TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj655438)）和提供的 [**ResourceContext**](https://msdn.microsoft.com/library/windows/apps/br206064) 查询它。 这会返回最匹配 DirectX 功能级别的 [**ResourceCandidate**](https://msdn.microsoft.com/library/windows/apps/br206051)，该功能级别已通过调用 [**SetGlobalQualifierValue**](https://msdn.microsoft.com/library/windows/apps/mt622101) 指定。
+-   现在，使用 [**ResourceManager**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) 查找匹配当前 DirectX 功能级别的文件。 **ResourceManager** 将返回 [**ResourceMap**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap)，你可以使用 [**ResourceMap::GetValue**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemap.getvalue)（或 [**ResourceMap::TryGetValue**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemap.trygetvalue)）和提供的 [**ResourceContext**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext) 查询它。 这会返回最匹配 DirectX 功能级别的 [**ResourceCandidate**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceCandidate)，该功能级别已通过调用 [**SetGlobalQualifierValue**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue) 指定。
     
     ```cpp
     // An explicit ResourceContext is needed to match the DirectX feature level for the display on which the current view is presented.
@@ -216,9 +216,9 @@ DirectX 功能级别 10 或更高级别所支持的纹理格式应该添加到�
 ## <a name="related-topics"></a>相关主题
 
 
-* [定义应用资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)
-* [打包应用](https://msdn.microsoft.com/library/windows/apps/mt270969)
-* [应用程序包生成工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767)
+* [定义应用资源](https://docs.microsoft.com/previous-versions/windows/apps/hh965321(v=win.10))
+* [打包应用](https://docs.microsoft.com/windows/uwp/packaging/index)
+* [App packager (MakeAppx.exe)](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)
 
  
 

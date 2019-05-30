@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, uwp, 第一个应用, Hello World
 ms.localizationpriority: medium
-ms.openlocfilehash: 433536673efb9d2f17d822599051030b219ed02f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d9a7f0302dfdc9f9fa980f0fe93a3371328f9e5c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642152"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367436"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>创建“Hello, world”应用 \(XAML\)
 
@@ -19,7 +19,7 @@ ms.locfileid: "57642152"
 
 在此处，你将了解如何：
 
--   创建一个新**Visual Studio 2017**目标项目**Windows 10**并**UWP**。
+-   创建一个新**Visual Studio**目标项目**Windows 10**并**UWP**。
 -   编写 XAML 即可更改起始页上的 UI。
 -   在 Visual Studio 中，在本地桌面中运行该项目。
 -   使用 SpeechSynthesizer，可在你按下某个按钮时使应用说话。
@@ -29,7 +29,7 @@ ms.locfileid: "57642152"
 
 -   [什么是通用 Windows 应用？](universal-application-platform-guide.md)
 -   [下载 Visual Studio 2017（和 Windows 10）](https://developer.microsoft.com/windows/downloads)。 如果需要帮助，请了解如何[设置](get-set-up.md)。
--   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 如果要更改默认布局，你可以在“窗口”菜单中，通过使用“重置窗口布局”命令来重置它。
+-   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 如果要更改默认布局，你可以在“窗口”菜单中，通过使用“重置窗口布局”命令来重置它。  
 
 > [!NOTE]
 > 本教程使用 Visual Studio Community 2017。 如果使用的是不同版本的 Visual Studio，则其外观可能稍有不同。
@@ -42,7 +42,7 @@ ms.locfileid: "57642152"
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>第 1 步：在 Visual Studio 中创建一个新的项目。
 
-1.  启动 Visual Studio 2017。
+1.  启动 Visual Studio。
 
 2.  从**文件**菜单中，选择**新建 > 项目**以打开*新项目*对话框。
 
@@ -52,7 +52,7 @@ ms.locfileid: "57642152"
 
     ![如何重复安装流程](images/win10-cs-install.png)
 
-4.  选择“空白应用(通用 Windows)”模板，然后输入“HelloWorld”作为“名称”。 选择“确定”。
+4.  选择“空白应用(通用 Windows)”模板，然后输入“HelloWorld”作为“名称”。   选择“确定”  。
 
     ![“新建项目”窗口](images/win10-cs-01.png)
 
@@ -65,18 +65,18 @@ ms.locfileid: "57642152"
 
     ![“解决方案资源管理器”窗口](images/win10-cs-02.png)
 
-6.  新项目打开时，项目文件将显示在右侧的“解决方案资源管理器”窗格中。 若要查看你的文件，可能需要选择“解决方案资源管理器”选项卡，而不是“属性”选项卡。
+6.  新项目打开时，项目文件将显示在右侧的“解决方案资源管理器”窗格中。  若要查看你的文件，可能需要选择“解决方案资源管理器”选项卡，而不是“属性”选项卡。  
 
     ![“解决方案资源管理器”窗口](images/win10-cs-03.png)
 
-尽管“空白应用(通用 Windows)”为最基本的模板，但该模板仍包含很多文件。 这些文件是使用 C# 的所有 UWP 应用必不可少的文件。 在 Visual Studio 中创建的每一个项目都包含这些文件。
+尽管“空白应用(通用 Windows)”为最基本的模板，但该模板仍包含很多文件。  这些文件是使用 C# 的所有 UWP 应用必不可少的文件。 在 Visual Studio 中创建的每一个项目都包含这些文件。
 
 
 ### <a name="whats-in-the-files"></a>文件中包含哪些内容？
 
-若要查看和编辑项目中的文件，请双击“解决方案资源管理器”中的文件。 像展开文件夹一样展开 XAML 文件即可查看其关联的代码文件。 XAML 文件在拆分视图中打开，可同时显示设计界面和 XAML 编辑器。
+若要查看和编辑项目中的文件，请双击“解决方案资源管理器”中的文件。  像展开文件夹一样展开 XAML 文件即可查看其关联的代码文件。 XAML 文件在拆分视图中打开，可同时显示设计界面和 XAML 编辑器。
 > [!NOTE]
-> 什么是 XAML？ Extensible Application Markup Language (XAML) 是用于定义应用的用户界面的语言。 可以手动输入，也可以使用 Visual Studio 设计工具创建。 一个 .xaml 文件具有一个包含逻辑的 .xaml.cs 代码隐藏文件。 XAML 与代码隐藏一同组成完整的类。 有关详细信息，请参阅 [XAML 概述](https://msdn.microsoft.com/library/windows/apps/Mt185595)。
+> 什么是 XAML？ Extensible Application Markup Language (XAML) 是用于定义应用的用户界面的语言。 可以手动输入，也可以使用 Visual Studio 设计工具创建。 一个 .xaml 文件具有一个包含逻辑的 .xaml.cs 代码隐藏文件。 XAML 与代码隐藏一同组成完整的类。 有关详细信息，请参阅 [XAML 概述](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview)。
 
 *App.xaml 和 App.xaml.cs*
 
@@ -89,7 +89,7 @@ ms.locfileid: "57642152"
 
 -   在 MainPage.xaml 中，为应用定义 UI。 你可以直接使用 XAML 标记添加元素，也可以使用 Visual Studio 提供的设计工具。
 -   MainPage.xaml.cs 是 MainPage.xaml 的代码隐藏页面。 你可以在其中添加应用逻辑和事件处理程序。
--   这两个文件一起定义称为 `MainPage` 的新类，该类继承自 `HelloWorld` 命名空间中的 [**Page**](https://msdn.microsoft.com/library/windows/apps/BR227503)。
+-   这两个文件一起定义称为 `MainPage` 的新类，该类继承自 `HelloWorld` 命名空间中的 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)。
 
 *Package.appxmanifest*
 -   描述应用的清单文件：应用的名称、描述、磁贴、起始页等等。
@@ -114,11 +114,11 @@ ms.locfileid: "57642152"
 
     ![“解决方案资源管理器”窗口](images/win10-cs-04.png)
 
-2.  单击左侧垂直的 **“工具箱”**，打开 UI 控件列表。 （可以单击“工具箱”的标题栏中的固定图标使其始终可见。）
+2.  单击左侧垂直的 **“工具箱”** ，打开 UI 控件列表。 （可以单击“工具箱”的标题栏中的固定图标使其始终可见。）
 
     ![“解决方案资源管理器”窗口](images/win10-cs-05.png)
 
-3.  展开“常见 XAML 控件”，然后将 **Button** 拖动到设计画面的中间。
+3.  展开“常见 XAML 控件”，然后将 **Button** 拖动到设计画面的中间。 
 
     ![“解决方案资源管理器”窗口](images/win10-cs-06.png)
 
@@ -157,12 +157,12 @@ ms.locfileid: "57642152"
 
 **若要在本地计算机上启动调试**
 
-1.  在 **“标准”** 工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，确保已选中 **“本地计算机”**。 （它是默认选择。）
+1.  在 **“标准”** 工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，确保已选中 **“本地计算机”** 。 （它是默认选择。）
 2.  单击工具栏中的 **“开始调试”** 按钮（![“开始调试”按钮](images/startdebug-sm.png)）。
 
    –或者–
 
-   在“调试”菜单中，单击“开始调试”。
+   在“调试”菜单中，单击“开始调试”。  
 
    –或者–
 
@@ -174,7 +174,7 @@ ms.locfileid: "57642152"
 
 ![初始应用屏幕](images/win10-cs-08.png)
 
-按 Windows 键以打开 **“开始”** 菜单，然后显示所有应用。 请注意，本地部署应用会将其磁贴添加到 **“开始”** 菜单。 若要稍后再次运行该应用（不是在调试模式下），请在“开始”菜单中点击或单击其磁贴。
+按 Windows 键以打开 **“开始”** 菜单，然后显示所有应用。 请注意，本地部署应用会将其磁贴添加到 **“开始”** 菜单。 若要稍后再次运行该应用（不是在调试模式下），请在“开始”菜单中点击或单击其磁贴。 
 
 它还无法执行很多操作，但祝贺你已构建了第一个 UWP 应用！
 
@@ -198,7 +198,7 @@ ms.locfileid: "57642152"
 
 2.  双击设计画布中的按钮控件，让 Visual Studio 为该按钮创建事件处理程序。
 
-  当然，你可以手动创建所有代码。 也可以单击按钮选中它，然后访问右下方的“属性”窗格。 如果切换到“事件”（小闪电球），可以添加事件处理程序的名称。
+  当然，你可以手动创建所有代码。 也可以单击按钮选中它，然后访问右下方的“属性”窗格。  如果切换到“事件”（小闪电球），可以添加事件处理程序的名称。 
 
 3.  编辑 *MainPage.xaml.cs*（即代码隐藏页面）中的事件处理程序代码。 这是事情变得有趣的所在之处。 默认的事件处理程序如下所示：
 
@@ -226,18 +226,18 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ### <a name="what-did-we-just-do"></a>我们刚才做了什么？
 
-此代码使用一些 Windows API 创建一个语音合成对象，然后提供给该对象一些要说的文本。 （有关使用 SpeechSynthesis 的详细信息，请参阅 [SpeechSynthesis 命名空间](https://msdn.microsoft.com/library/windows/apps/windows.media.speechsynthesis.aspx)文档。）
+此代码使用一些 Windows API 创建一个语音合成对象，然后提供给该对象一些要说的文本。 （有关使用 SpeechSynthesis 的详细信息，请参阅 [SpeechSynthesis 命名空间](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis)文档。）
 
 运行该应用并单击按钮时，计算机（或手机）会逐字地说出“Hello, World!”。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 恭喜，已为 Windows 10 和 UWP 创建第一个应用 ！
 
 若要了解如何使用 XAML 来布置你的应用将使用的控件，请尝试[网格教程](../design/layout/grid-tutorial.md)，或直接跳至[下一步](learn-more.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [第一个应用](your-first-app.md)
 * [发布 UWP 应用](https://developer.microsoft.com/store/publish-apps)。

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d1907be029254d99be9e6158c93c179baea1fb0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c635d0efad627734e0305c687e015ad183764717
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641082"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371052"
 ---
 # <a name="introduction-to-rasterization-rules"></a>光栅化规则简介
 
@@ -57,7 +57,7 @@ Direct3D 使用的三角形光栅化规则的描述不一定适用于所有可�
 
 点的渲染方式与点子画面的渲染方式相同，它们都被渲染为与屏幕对齐的四边形，因此遵守与多边形渲染相同的规则。
 
-非抗锯齿线的渲染规则与 [GDI 线](https://msdn.microsoft.com/library/windows/desktop/dd145027)的渲染规则完全相同。
+非抗锯齿线的渲染规则与 [GDI 线](https://docs.microsoft.com/windows/desktop/gdi/lines)的渲染规则完全相同。
 
 ## <a name="span-idpointspriterulesspanspan-idpointspriterulesspanspan-idpointspriterulesspanpoint-sprite-rules"></a><span id="Point_Sprite_Rules"></span><span id="point_sprite_rules"></span><span id="POINT_SPRITE_RULES"></span>点子画面规则
 

@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, uwp, 零售演示应用
 ms.localizationpriority: medium
-ms.openlocfilehash: 39b1323f048c1b420a2cf0b239cd9f1a9fb63ff7
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 4c9f31da8e2509c41715a13fbc0bb0322782340a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334875"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366527"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>将零售演示 (RDX) 功能添加到您的应用程序
 
@@ -45,11 +45,11 @@ RDX 感知应用旨在展示你的应用到零售客户的最佳，因为它们�
 
 RDX 识别不符合这些关键的要求的应用程序尽可能快地将从所有零售演示设备删除。
 
-* **不要询问有关个人身份信息 (PII)**。 这包括登录信息、 Microsoft 帐户信息或联系人详细信息。
+* **不要询问有关个人身份信息 (PII)** 。 这包括登录信息、 Microsoft 帐户信息或联系人详细信息。
 
 * **无错误的体验**。 你的应用必须毫无错误地运行。 此外，不应向使用零售演示设备的客户显示任何错误弹出窗口或通知。 错误的应用上反映产生负面，本身、 自己的品牌、 设备的品牌、 设备的制造商的品牌和 Microsoft 的品牌。
 
-* **付费应用程序必须具有试用模式**。 您的应用程序，或者需要以一种免费或包括[试用模式](https://msdn.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app)。 客户不希望为零售商店中的体验付费。
+* **付费应用程序必须具有试用模式**。 您的应用程序，或者需要以一种免费或包括[试用模式](https://docs.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app)。 客户不希望为零售商店中的体验付费。
 
 ### <a name="high-priority-requirements"></a>优先级较高的要求
 
@@ -359,7 +359,7 @@ namespace MyCompany.MyApp
 
 ## <a name="related-links"></a>相关链接
 
-* [存储和检索应用程序数据](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [如何创建和使用应用服务](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
-* [本地化应用内容](https://msdn.microsoft.com/windows/uwp/globalizing/globalizing-portal)
+* [存储和检索应用程序数据](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
+* [如何创建和使用应用服务](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
+* [本地化应用内容](https://docs.microsoft.com/windows/uwp/globalizing/globalizing-portal)
 * [零售演示体验 (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)

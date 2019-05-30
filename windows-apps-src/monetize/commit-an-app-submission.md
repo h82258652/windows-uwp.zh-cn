@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 确认应用提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e44f5672c817f9e1ab00df341a2fd78b23f2944
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 36c645303a86bc28f12fa8e31b8a83653c167664
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334145"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371993"
 ---
 # <a name="commit-an-app-submission"></a>确认应用提交
 
@@ -47,7 +47,7 @@ ms.locfileid: "58334145"
 
 | 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | 必需。 应用（包含要确认的提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
+| applicationId | string | 必需。 应用（包含要确认的提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 | submissionId | string | 必需。 要确认的提交的 ID。 此 ID 包含在[创建应用提交](create-an-app-submission.md)请求的响应数据中。 在合作伙伴中心创建的提交，此 ID 是也可用在合作伙伴中心中的提交页的 URL。  |
 
 ### <a name="request-body"></a>请求正文

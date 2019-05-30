@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d0a75ae4306535d37c5c2d776fda2cbdc3a0634
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3985bfef66bfcbcaab90a4f915aeab33b7f7bd33
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641042"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372222"
 ---
 # <a name="move-from-windows-runtime-8x-to-uwp"></a>从 Windows 运行时 8.x 移动到 UWP
 
 
-如果您有一个通用的 8.1 应用程序 — 是否面向 Windows 8.1、 Windows Phone 8.1，或这两者，然后您会发现，您的源代码和技能将端口顺利到 Windows 10。 使用 Windows 10 中，可以创建一个通用 Windows 平台 (UWP) 应用，这是你的客户可以安装到每种设备上的单个应用包。 有关 Windows 10、 UWP 应用和自适应代码和自适应 UI，我们将在此迁移指南中介绍的概念的更多背景，请参阅[UWP 应用的指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+如果您有一个通用的 8.1 应用程序 — 是否面向 Windows 8.1、 Windows Phone 8.1，或这两者，然后您会发现，您的源代码和技能将端口顺利到 Windows 10。 使用 Windows 10 中，可以创建一个通用 Windows 平台 (UWP) 应用，这是你的客户可以安装到每种设备上的单个应用包。 有关 Windows 10、 UWP 应用和自适应代码和自适应 UI，我们将在此迁移指南中介绍的概念的更多背景，请参阅[UWP 应用的指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。
 
 同时迁移，您会发现，Windows 10 与先前的平台，以及 XAML 标记、 UI 框架和工具，共享 Api 的大部分，并且您会发现所有 reassuringly 熟悉。 和以前一样，你仍可以在 C++、C# 和 Visual Basic 之中选择要与 XAML UI 框架一起使用的编程语言。 规划要对当前的一个或多个应用具体执行哪些操作的前期步骤将取决于你所拥有的应用和项目的种类。 这将在以下部分中介绍。
 
@@ -54,24 +54,24 @@ ms.locfileid: "57641042"
 在将 Universal 8.1 App 移植到 UWP App 的模型时，几乎你的所有知识和经验都将进行转移，同时你所使用的大多数源代码和标记以及软件模式也将进行转移。
 
 -   **视图**。 视图（以及视图模型）组成了应用的 UI。 理想情况下，视图由绑定到视图模型的可观察属性的标记组成。 其他模式（常见且方便，但仅在短期内使用）适用于代码隐藏文件中的命令式代码，以直接操作 UI 元素。 在任何一种情况下，你的 UI 标记和设计（甚至是操纵 UI 元素的命令式代码）都可以简单地进行移植。
--   **视图模型和数据模型**。 即使未正式地体现分离出关注内容模式（例如 MVVM），应用中也必然会存在用于执行视图模型和数据模型的功能的代码。 视图模型代码将使用 UI 框架命名空间中的类型。 视图模型代码和数据模型代码还将使用非可视的操作系统和 .NET Framework API（包括用于数据访问的 API）。 这些 API [也适用于 UWP App](https://msdn.microsoft.com/library/windows/apps/br211369)，因此该代码中即使不是全部，也会有大部分可在无更改的情况下进行移植。
+-   **视图模型和数据模型**。 即使未正式地体现分离出关注内容模式（例如 MVVM），应用中也必然会存在用于执行视图模型和数据模型的功能的代码。 视图模型代码将使用 UI 框架命名空间中的类型。 视图模型代码和数据模型代码还将使用非可视的操作系统和 .NET Framework API（包括用于数据访问的 API）。 这些 API [也适用于 UWP App](https://docs.microsoft.com/previous-versions/windows/br211369(v=win.10))，因此该代码中即使不是全部，也会有大部分可在无更改的情况下进行移植。
 -   **云服务**。 应用的部分内容（或许其大部分内容）可能会以服务形式在云中运行。 在客户端设备上运行的应用的部分内容将连接到这些服务。 在移植分发的应用的客户端部分时，这是该应用中最有可能保持不变的部分。 如果你还没有云服务选项，则适用于 UWP App 的良好的云服务选项是 [Microsoft Azure 移动服务](https://azure.microsoft.com/services/mobile-services/)，它提供了强大的后端组件，你的应用可借助它们调用服务，范围从简单的动态磁贴更新通知到服务器场可提供的复杂可扩展性。
 
 在移植之前或移植过程中，应考虑是否可以通过合并应用来改进它，以便可以将具有类似目的的代码集中在图层中，而不是使它们随意地分散。 按照上述步骤将应用重构到图层中，以便你可以更加轻松地更正应用、测试它，随后读取并维护它。 通过遵循模型-视图-视图模型 ([MVVM](https://msdn.microsoft.com/magazine/dd419663.aspx)) 模式，你可以使功能更容易重复使用。 此模式可使应用的数据、业务和 UI 部分彼此分隔开。 即使是在 UI 中，该模式也可以将状态和行为与视觉效果分隔开并且可分开测试。 借助 MVVM，你可以编写一次数据和业务逻辑并在所有设备上使用它，而不考虑 UI。 你可能还可以跨设备重复使用许多视图模型和视图部分。
 
 | 主题 | 描述 |
 |-------|-------------|
-| [迁移项目](w8x-to-uwp-porting-to-a-uwp-project.md) | 在开始移植过程时，你有两个选择。 一是编辑现有项目文件的副本，包括应用包清单（对于该选项，请参阅[将应用迁移到通用 Windows 平台应用 (UWP)](https://msdn.microsoft.com/library/mt148501.aspx) 中有关更新项目文件的信息）。 另一个是在 Visual Studio 中创建一个新的 Windows 10 项目，并将你的文件复制到其中。 |
+| [迁移项目](w8x-to-uwp-porting-to-a-uwp-project.md) | 在开始移植过程时，你有两个选择。 一是编辑现有项目文件的副本，包括应用包清单（对于该选项，请参阅[将应用迁移到通用 Windows 平台应用 (UWP)](https://docs.microsoft.com/visualstudio/misc/migrate-apps-to-the-universal-windows-platform-uwp?view=vs-2015) 中有关更新项目文件的信息）。 另一个是在 Visual Studio 中创建一个新的 Windows 10 项目，并将你的文件复制到其中。 |
 | [疑难解答](w8x-to-uwp-troubleshooting.md) | 我们强烈建议阅读到此移植指南的末尾，但是我们也理解你希望尽快前进到项目生成和运行的阶段。 阅读到该末尾后，你可以注释或排除非必要的代码，然后稍后返回支付该债务，从而临时加快进度。 本主题中的疑难解答症状和补救办法的表格可能在此阶段对你有用，尽管它无法替代阅读接下来的一些主题。 在你执行到以后的主题时，你可以一直重新参考该表。 |
 | [移植的 XAML 和 UI](w8x-to-uwp-porting-xaml-and-ui.md) | 以声明性 XAML 标记的形式定义 UI 的做法非常好地将通用 8.1 应用转换为 UWP 应用。 你会发现，你的大多数标记是兼容的，尽管你可能需要针对正在使用的系统资源键或自定义模板作相应调整。 |
 | [移植 I/O、 设备和应用模型](w8x-to-uwp-input-and-sensors.md) | 与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。 它还可以涉及处理数据。 但是通常不将此代码视为 UI 层或数据层。 此代码包含与振动控制器、加速计、陀螺仪、麦克风和扬声器（与语音识别和合成交叉）、（地理）位置和输入形式（例如触摸、鼠标、键盘和笔）的集成。 |
-| [案例研究：Bookstore1](w8x-to-uwp-case-study-bookstore1.md) | 本主题提供了一个将非常简单的通用 8.1 应用移植到 Windows 10 UWP 应用的案例研究。 通用 8.1 应用是为 Windows 8.1 生成一个应用包，并为 Windows Phone 8.1 生成另一个应用包的应用。 在 Windows 10 中，你可以创建可供客户安装到种类广泛的设备上的单个应用包，而这正是我们要在此案例研究中实现的目标。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。 |
-| [案例研究：Bookstore2](w8x-to-uwp-case-study-bookstore2.md) | 此案例研究基于 [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/hh702601) 控件中提供的信息生成。 在视图模型中，类 Author 的每个实例都表示一组由该作者创作的书籍，而在 SemanticZoom 中，我们可以按作者查看分组书籍的列表，或者可以缩小到能够看到包含作者的跳转列表。 |
+| [案例研究：Bookstore1](w8x-to-uwp-case-study-bookstore1.md) | 本主题提供了一个将非常简单的通用 8.1 应用移植到 Windows 10 UWP 应用的案例研究。 通用 8.1 应用是为 Windows 8.1 生成一个应用包，并为 Windows Phone 8.1 生成另一个应用包的应用。 在 Windows 10 中，你可以创建可供客户安装到种类广泛的设备上的单个应用包，而这正是我们要在此案例研究中实现的目标。 请参阅 [UWP 应用指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。 |
+| [案例研究：Bookstore2](w8x-to-uwp-case-study-bookstore2.md) | 此案例研究基于 [SemanticZoom](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 控件中提供的信息生成。 在视图模型中，类 Author 的每个实例都表示一组由该作者创作的书籍，而在 SemanticZoom 中，我们可以按作者查看分组书籍的列表，或者可以缩小到能够看到包含作者的跳转列表。 |
 | [案例研究：QuizGame](w8x-to-uwp-case-study-quizgame.md) | 本主题介绍了一个将正在运行的对等测验游戏 WinRT 8.1 示例应用移植到 Windows 10 UWP 应用的案例研究。 |
 
 ## <a name="related-topics"></a>相关主题
 
 **文档**
-* [Windows 运行时引用](https://msdn.microsoft.com/library/windows/apps/br211377)
+* [Windows 运行时引用](https://docs.microsoft.com/uwp/api/)
 * [构建适用于所有 Windows 设备的通用 Windows 应用](https://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [设计应用程序的用户体验](https://msdn.microsoft.com/library/windows/apps/hh767284)
+* [设计应用程序的用户体验](https://docs.microsoft.com/previous-versions/windows/hh767284(v=win.10))

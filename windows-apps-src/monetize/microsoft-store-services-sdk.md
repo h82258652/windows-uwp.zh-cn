@@ -6,12 +6,12 @@ ms.date: 08/21/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
-ms.openlocfilehash: b74cb2b23b5fbfc7487d18be0531ff26170cbe3f
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 48a19b2fc32733e13cb9a7b730bad7741307c328
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334506"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372800"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>使用 Microsoft Store Services SDK 与客户互动
 
@@ -31,7 +31,7 @@ Microsoft Store Services SDK 当前支持以下适用于 UWP 应用的方案。 
 |  [使用一个在 UWP 应用中运行试验 / B 测试](run-app-experiments-with-a-b-testing.md)    |  在通用 Windows 平台 (UWP) 应用上运行 A/B 测试，测量这些功能对某些客户的有效性，之后再将它们发布给每位用户。 在合作伙伴中心定义试验后，使用[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)类要获得在应用中，试验使用此数据来修改测试时，该功能的行为变体，然后使用[LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)方法以将视图事件和转换事件发送到合作伙伴中心。 最后，使用合作伙伴中心以查看结果并管理在试验。  |
 |  [启动从 UWP 应用的反馈中心](launch-feedback-hub-from-your-app.md)    |  使用 UWP 应用中的 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 类将 Windows 10 客户定向到“反馈中心”，他们可以在其中提交问题、建议和赞成票。 然后，在合作伙伴中心内的[反馈报告](../publish/feedback-report.md)中管理此反馈。 |
 |  [将 UWP 应用以接收合作伙伴中心推送通知配置](configure-your-app-to-receive-dev-center-notifications.md)    |  使用[StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) UWP 应用来注册应用以接收有针对性的推送通知发送给客户使用合作伙伴中心中的类。  |
-|   [合作伙伴中心中的使用情况报告在 UWP 应用中记录自定义事件](log-custom-events-for-dev-center.md)   |  使用[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)记录与合作伙伴中心中的应用相关联的自定义事件在 UWP 应用中的类。 然后，查看在你自定义事件的总出现次数**自定义事件**一部分[使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)在合作伙伴中心。  |
+|   [合作伙伴中心中的使用情况报告在 UWP 应用中记录自定义事件](log-custom-events-for-dev-center.md)   |  使用[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)记录与合作伙伴中心中的应用相关联的自定义事件在 UWP 应用中的类。 然后，查看在你自定义事件的总出现次数**自定义事件**一部分[使用情况报告](https://docs.microsoft.com/windows/uwp/publish/usage-report)在合作伙伴中心。  |
 
 <span id="prerequisites" />
 
@@ -95,7 +95,7 @@ Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Servi
     > [!NOTE]
     > 如果项目已经包含来自 SDK 的较早 MSI 安装的库引用，请从项目中删除这些引用。 这些引用的旁边将出现警告图标，因为它们引用的库已在之前的步骤中删除。
 
-4. 在 Visual Studio 中，依次单击“项目”和“管理 NuGet 包”。
+4. 在 Visual Studio 中，依次单击“项目”  和“管理 NuGet 包”  。
 
 5. 在搜索框中，键入 **Microsoft.Services.Store.Engagement** 并安装 Microsoft.Services.Store.Engagement 包。 程序包安装完成后，保存你的解决方案。
     > [!NOTE]
@@ -121,7 +121,7 @@ Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Servi
 
 3. 在**引用管理器**中，展开**通用 Windows**、单击**扩展**，然后选中 **Microsoft 协议框架**旁边的复选框。 这使你能够使用 [Microsoft.Services.Store.Engagement](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement) 命名空间中的 API。
 
-3. 单击 **“确定”**。
+3. 单击 **“确定”** 。
 
 > [!NOTE]
 > 如果你已通过 NuGet 安装了 SDK 库，则你的项目将包含 **Microsoft.Services.Store.Engagement** 引用。 **Microsoft.Services.Store.Engagement** 引用表示 NuGet 包（而不是其中的库），因此，你可以将其忽略。

@@ -5,12 +5,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e273b1b3bb84929005cfbe4a205397fa298ea1c8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3c1a67936a403edc718ca5a38e7bcb8af02e042f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657122"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372085"
 ---
 # <a name="xbox-best-practices"></a>Xbox 最佳做法
 
@@ -30,7 +30,7 @@ Xbox 用户喜欢它们的控制器。 若要优化控制器输入[禁用鼠标�
 
 ### <a name="do-integrate-with-the-systemmediatransportcontrols-class"></a>*执行操作：* 与 SystemMediaTransportControls 类集成
 
-Xbox 用户想要使用 Xbox 媒体遥控器、Cortana（尤其是“播放”和“暂停”语音命令）和 Xbox SmartGlass 控制媒体应用。 若要免费获取这些功能，你的应用应使用 [SystemMediaTransportControls](https://msdn.microsoft.com/library/windows/apps/windows.media.systemmediatransportcontrols.aspx) 类，该类将自动包含在 Xbox 媒体控件中。 如果你的应用具有自定义媒体控件，请确保与 **SystemMediaTransportControls** 类集成，以向用户提供这些功能。 如果你要创建背景音乐应用，与 **SystemMediaTransportControls** 类集成，确保背景音乐控件在 Xbox 多任务选项卡中正常工作。
+Xbox 用户想要使用 Xbox 媒体遥控器、Cortana（尤其是“播放”和“暂停”语音命令）和 Xbox SmartGlass 控制媒体应用。 若要免费获取这些功能，你的应用应使用 [SystemMediaTransportControls](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols) 类，该类将自动包含在 Xbox 媒体控件中。 如果你的应用具有自定义媒体控件，请确保与 **SystemMediaTransportControls** 类集成，以向用户提供这些功能。 如果你要创建背景音乐应用，与 **SystemMediaTransportControls** 类集成，确保背景音乐控件在 Xbox 多任务选项卡中正常工作。
 
 <!-- ### *Do:* Use adaptive UI to account for snapped apps
 One of the unique features of Xbox One is that users can snap apps such as Cortana next to any other app, so your app should respond gracefully when it runs in *fill mode*. Implement [adaptive UI](../get-started/universal-application-platform-guide.md#design-adaptive-ui-with-adaptive-panels) and make sure to test your app during development by snapping an app next to it. -->
@@ -70,7 +70,7 @@ UWP 应用将自动缩放，以确保 UI 元素（如控件和字体）在所有
 * [观看录制的会话](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
 * [阅读博客文章](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [在 Xbox One 上 UWP](index.md)
 - [针对 Xbox 和电视进行设计](../design/devices/designing-for-tv.md)

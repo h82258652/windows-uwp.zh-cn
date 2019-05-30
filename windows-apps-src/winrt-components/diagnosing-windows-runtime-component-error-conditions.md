@@ -6,26 +6,26 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4733edba06b7042c436918e882556f86dfa00071
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 72a7a7d4bbe6987781c538a7276bf3942f10cf5b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646562"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372205"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>诊断 Windows 运行时组件错误条件
 
 
 
 
-本文提供有关对使用托管代码编写的 Windows 运行时组件的限制的其他信息。 它扩展了从 [Winmdexp.exe（Windows 运行时元数据导出工具）](https://msdn.microsoft.com/library/hh925576.aspx)的错误消息中提供的信息，并补充有关在[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)中提供的限制的信息。
+本文提供有关对使用托管代码编写的 Windows 运行时组件的限制的其他信息。 它扩展了从 [Winmdexp.exe（Windows 运行时元数据导出工具）](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool)的错误消息中提供的信息，并补充有关在[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)中提供的限制的信息。
 
 本文没有涵盖所有错误。 此处讨论的错误按照常规类别分组，并且每个类别包括关联的错误消息表。 请搜索消息文本（省略占位符的特定值）或搜索消息编号。 如果你在此处没有找到所需信息，请使用本文末尾的“反馈”按钮帮助我们改进这篇文档。 包括错误消息。 或者，你可以在 Microsoft Connect 网站上提交 Bug。
 
 ## <a name="error-message-for-implementing-async-interface-provides-incorrect-type"></a>实现异步接口的错误消息提供错误类型
 
 
-托管的 Windows 运行时组件无法实现表示异步操作的通用 Windows 平台 (UWP) 接口（[IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx)、[IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx) 或 [IAsyncOperationWithProgress&lt;TResult、TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)）。 相反，.NET Framework 提供用于在 Windows 运行时组件中生成异步操作的 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 类。 Winmdexp.exe 在你错误地尝试实现异步接口时显示的错误消息使用之前的名称 AsyncInfoFactory 引用此类。 .NET Framework 不再包括 AsyncInfoFactory 类。
+托管的 Windows 运行时组件无法实现表示异步操作的通用 Windows 平台 (UWP) 接口（[IAsyncAction](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-iasyncaction)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://docs.microsoft.com/previous-versions//br205784(v=vs.85))、[IAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_) 或 [IAsyncOperationWithProgress&lt;TResult、TProgress&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)）。 相反，.NET Framework 提供用于在 Windows 运行时组件中生成异步操作的 [AsyncInfo](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime?redirectedfrom=MSDN) 类。 Winmdexp.exe 在你错误地尝试实现异步接口时显示的错误消息使用之前的名称 AsyncInfoFactory 引用此类。 .NET Framework 不再包括 AsyncInfoFactory 类。
 
 | 错误编号 | 消息文本|       
 |--------------|-------------|
@@ -124,13 +124,13 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 
 组件的公共接口必须仅公开 UWP 类型。 但是，.NET Framework 为许多在 .NET Framework 和 UWP 中稍有不同的常用类型提供映射。 这使 .NET Framework 开发人员可以使用熟悉的类型，而无需了解新类型。 你可以在组件的公共接口中使用这些映射的 .NET Framework 类型。 请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)和 [Windows 运行时类型的.NET Framework 映射](net-framework-mappings-of-windows-runtime-types.md)中的“在 Windows 运行时组件中声明类型”和“将通用 Windows 平台类型传递到托管代码”。
 
-其中许多映射都是接口。 例如，[IList&lt;T&gt;](https://msdn.microsoft.com/library/5y536ey6.aspx) 映射到 UWP 接口 [IVector&lt;T&gt;](https://msdn.microsoft.com/library/windows/apps/br206631.aspx)。 如果将 List&lt;string&gt;（在 Visual Basic 中是 `List(Of String)`）而非 IList&lt;string&gt; 用作参数类型，Winmdexp.exe 会提供包括所有由 List&lt;T&gt; 实现的映射接口的备用项列表。 如果使用嵌套的泛型类型，例如 List&lt;Dictionary&lt;int, string&gt;&gt;（在 Visual Basic 中是 List(Of Dictionary(Of Integer, String))），Winmdexp.exe 会提供有关每个级别的嵌套的选项。 这些列表会非常长。
+其中许多映射都是接口。 例如，[IList&lt;T&gt;](https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1?redirectedfrom=MSDN) 映射到 UWP 接口 [IVector&lt;T&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IVector_T_)。 如果将 List&lt;string&gt;（在 Visual Basic 中是 `List(Of String)`）而非 IList&lt;string&gt; 用作参数类型，Winmdexp.exe 会提供包括所有由 List&lt;T&gt; 实现的映射接口的备用项列表。 如果使用嵌套的泛型类型，例如 List&lt;Dictionary&lt;int, string&gt;&gt;（在 Visual Basic 中是 List(Of Dictionary(Of Integer, String))），Winmdexp.exe 会提供有关每个级别的嵌套的选项。 这些列表会非常长。
 
 通常情况下，最好选择最接近类型的接口。 例如，对于 Dictionary&lt;int, string&gt;，最好选择最接近的 IDictionary&lt;int, string&gt;。
 
 > **重要**  JavaScript 使用托管的类型实现的接口列表中第一个出现的接口。 例如，如果你将 Dictionary&lt;int, string&gt; 返回到 JavaScript 代码，它会显示为 IDictionary&lt;int, string&gt;，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
 
-> **谨慎**  请避免使用非泛型[IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx)并[IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx)接口如果你的组件将由 JavaScript。 这些接口分别映射到 [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) 和 [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx)。 它们支持绑定 XAML 控件，并对 JavaScript 不可见。 JavaScript 提出运行时错误“函数‘X’签名无效且无法调用。”
+> **谨慎**  请避免使用非泛型[IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist?redirectedfrom=MSDN)并[IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable?redirectedfrom=MSDN)接口如果你的组件将由 JavaScript。 这些接口分别映射到 [IBindableVector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindablevector) 和 [IBindableIterator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindableiterator)。 它们支持绑定 XAML 控件，并对 JavaScript 不可见。 JavaScript 提出运行时错误“函数‘X’签名无效且无法调用。”
 
  
 
@@ -200,7 +200,7 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 ## <a name="array-parameters-must-specify-whether-array-contents-are-readable-or-writable"></a>数组参数必须指定数组内容是可读还是可写。
 
 
-在 UWP 中，参数必须是只读或只写。 参数无法标记 **ref**（在 Visual Basic 中是缺少 [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) 属性的 **ByRef**）。 这适用于数组内容，因此数组参数必须指示数组内容是只读还是只写。 **out** 参数（在 Visual Basic 中是带有 OutAttribute 属性的 **ByRef** 参数）具有清晰的方向，但必须标记通过值（在 Visual Basic 中是 ByVal）传递的数组参数。 请参阅[将数组传递到 Windows 运行时组件](passing-arrays-to-a-windows-runtime-component.md)。
+在 UWP 中，参数必须是只读或只写。 参数无法标记 **ref**（在 Visual Basic 中是缺少 [OutAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.outattribute?redirectedfrom=MSDN) 属性的 **ByRef**）。 这适用于数组内容，因此数组参数必须指示数组内容是只读还是只写。 **out** 参数（在 Visual Basic 中是带有 OutAttribute 属性的 **ByRef** 参数）具有清晰的方向，但必须标记通过值（在 Visual Basic 中是 ByVal）传递的数组参数。 请参阅[将数组传递到 Windows 运行时组件](passing-arrays-to-a-windows-runtime-component.md)。
 
 | 错误编号 | 消息文本         |
 |--------------|----------------------|
@@ -238,7 +238,7 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 
 > **请注意**  如果更改返回值的名称和新名称与另一个参数的名称冲突，则将出现错误 WME1091。
 
-JavaScript 代码可以按照名称访问方法的输出参数，包括返回值。 有关示例，请参阅 [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 属性。
+JavaScript 代码可以按照名称访问方法的输出参数，包括返回值。 有关示例，请参阅 [ReturnValueNameAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.returnvaluenameattribute?redirectedfrom=MSDN) 属性。
 
 | 错误编号 | 消息文本 |
 |--------------|--------------|
@@ -251,4 +251,4 @@ JavaScript 代码可以按照名称访问方法的输出参数，包括返回值
 ## <a name="related-topics"></a>相关主题
 
 * [使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [Winmdexp.exe （Windows 运行时元数据导出工具）](https://msdn.microsoft.com/library/hh925576.aspx)
+* [Winmdexp.exe （Windows 运行时元数据导出工具）](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool)

@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ac5ca785eab39612bb3a9c6ccd58779c6241059
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e30140a60906cb350940cc5ebd87347878845986
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596862"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365878"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>由推送通知向导生成的代码
  
@@ -216,20 +216,20 @@ sendNotifications 函数发送 toast 通知形式的单一通知。 你还可以
 
 Windows 还支持推送通知以外的通知。 有关通知的一般信息，请参阅[选择通知传递方法](choosing-a-notification-delivery-method.md)。
 
-Toast 通知易于使用，你可以在为你生成的通道表的 Insert.js 代码中查看示例。 如果你计划使用磁贴通知或锁屏提醒通知，那么你必须为磁贴或锁屏提醒创建 XML 模板，并且必须在模板中指定打包信息的编码。 请参阅[使用磁贴、锁屏提醒和 toast 通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)。
+Toast 通知易于使用，你可以在为你生成的通道表的 Insert.js 代码中查看示例。 如果你计划使用磁贴通知或锁屏提醒通知，那么你必须为磁贴或锁屏提醒创建 XML 模板，并且必须在模板中指定打包信息的编码。 请参阅[使用磁贴、锁屏提醒和 toast 通知](https://docs.microsoft.com/previous-versions/windows/apps/hh868259(v=win.10))。
 
 由于 Windows 响应推送通知，因此在应用未运行时，Windows 也可以处理大部分此类通知。 例如，即便本地邮件应用不处于运行状态，当收到新邮件时，推送通知也可以提醒客户。 Windows 对 toast 通知的处理方式是显示信息，例如显示短信的第一行内容。 Windows 对磁贴通知或锁屏提醒通知的处理方式是更新应用的动态磁贴，使其反映新邮件的数量。 通过这种方式，你可以提示应用的用户到应用中查看新信息。 应用在运行时可以接收原始通知，你可以使用原始通知向你的应用发送数据。 如果应用未运行，可以设置后台任务，用于监视推送通知。
 
-由于推送通知可能会耗尽用户的资源，并且在过度使用的情况下会打扰用户，因此在使用推送通知时，应该遵循通用 Windows 平台 (UWP) 应用的指南。 请参阅[推送通知指南和清单](https://msdn.microsoft.com/library/windows/apps/hh761462)。
+由于推送通知可能会耗尽用户的资源，并且在过度使用的情况下会打扰用户，因此在使用推送通知时，应该遵循通用 Windows 平台 (UWP) 应用的指南。 请参阅[推送通知指南和清单](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)。
 
-如果你使用推送通知更新动态磁贴，那么你还应该遵循[磁贴和锁屏提醒指南和清单](https://msdn.microsoft.com/library/windows/apps/hh465403)中的指南。
+如果你使用推送通知更新动态磁贴，那么你还应该遵循[磁贴和锁屏提醒指南和清单](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)中的指南。
 
 ## <a name="next-steps"></a>后续步骤
 
 
 ### <a name="using-the-windows-push-notification-services-wns"></a>使用 Windows 推送通知服务 (WNS)
 
-在以下情况下，你可以直接调用 Windows 推送通知服务 (WNS)：移动服务缺乏足够的灵活性、希望使用 C# 或 Visual Basic 编写服务器代码、或者你已经有云服务并且希望从云服务发送推送通知。 通过直接调用 WNS，你可以从自己的云服务发送推送通知，例如使用通过数据库或其他 Web 服务监视数据的辅助角色。 你的云服务必须通过 WNS 验证，才能向你的应用发送推送通知。 请参阅[如何执行 Windows 推送通知服务 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/hh465407) 或 [(C#/C++/VB) 的验证](https://msdn.microsoft.com/library/windows/apps/xaml/hh868206)。
+在以下情况下，你可以直接调用 Windows 推送通知服务 (WNS)：移动服务缺乏足够的灵活性、希望使用 C# 或 Visual Basic 编写服务器代码、或者你已经有云服务并且希望从云服务发送推送通知。 通过直接调用 WNS，你可以从自己的云服务发送推送通知，例如使用通过数据库或其他 Web 服务监视数据的辅助角色。 你的云服务必须通过 WNS 验证，才能向你的应用发送推送通知。 请参阅[如何执行 Windows 推送通知服务 (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10)) 或 [(C#/C++/VB) 的验证](https://docs.microsoft.com/previous-versions/windows/apps/hh868206(v=win.10))。
 
 你还可以通过在移动服务中运行计划的任务来发送推送通知。 请参阅[在移动服务中计划定期作业](https://go.microsoft.com/fwlink/p/?linkid=301694)。
 
@@ -242,9 +242,9 @@ Toast 通知易于使用，你可以在为你生成的通道表的 Insert.js 代
 
 * [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)
 * [原始通知概述](raw-notification-overview.md)
-* [连接到 Windows Azure 移动服务 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263160)
-* [连接到 Windows Azure 移动服务 (C#/C+ + / VB)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263175)
-* [快速入门：为移动服务 (JavaScript) 添加推送通知](https://msdn.microsoft.com/library/windows/apps/dn263163)
+* [连接到 Windows Azure 移动服务 (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263160(v=win.10))
+* [连接到 Windows Azure 移动服务 (C#/C+ + / VB)](https://docs.microsoft.com/previous-versions/windows/apps/dn263175(v=win.10))
+* [快速入门：为移动服务 (JavaScript) 添加推送通知](https://docs.microsoft.com/previous-versions/windows/apps/dn263163(v=win.10))
  
 
  

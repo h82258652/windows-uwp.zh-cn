@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cc1bafb90b20083d55a622873dea7be5efbf5b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 72e45f8ef0f5684b3a712056eb367975f8e6103a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633482"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370353"
 ---
 # <a name="bluetooth-developer-faq"></a>蓝牙开发人员常见问题
 
@@ -63,7 +63,7 @@ RFCOMM API 为开发人员提供了用于执行双向串行端口样式通信的
 
 蓝牙 RFCOMM（传统）设备无需执行此操作。 从 Windows 10 版本 1607 开始，只需查询附近设备即可连接。 更新后的 [RFCOMM 聊天示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat)展示了此项功能。 
 
-**（14393 及更低版本）** 低耗电蓝牙（GATT 客户端）不支持此功能，因此仍需要通过“设置”页面或使用 [Windows.Devices.Enumeration](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.aspx) API 进行配对才能访问这些设备。
+**（14393 及更低版本）** 低耗电蓝牙（GATT 客户端）不支持此功能，因此仍需要通过“设置”页面或使用 [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration) API 进行配对才能访问这些设备。
 
 **（15030 及更高版本）** 不再需要对蓝牙设备进行配对。 使用新的异步 API（如 GetGattServicesAsync 和 GetCharacteristicsAsync）查询远程设备的当前状态。 有关更多详细信息，请参阅[客户端文档](gatt-client.md)。 
 
@@ -82,5 +82,5 @@ RFCOMM API 为开发人员提供了用于执行双向串行端口样式通信的
 **蓝牙 LE**:是的所有功能处于 OneCore，应在具有正常运行的蓝牙 LE 堆栈的最新设备上可用。 
 > 需要注意的地方：外围角色涉及到硬件，并且某些 Windows Server 版本不支持蓝牙。 
 
-**蓝牙 b R/edr 规范 （经典）**:存在一些变体，但一般说来，它们具有非常相似的配置文件级支持。 请参阅有关 [RFCOMM](send-or-receive-files-with-rfcomm.md) 的文档，以及适用于[电脑](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles)和[手机](https://support.microsoft.com/en-us/help/10569/windows-10-mobile-supported-bluetooth-profiles)的这些受支持配置文件文档
+**蓝牙 b R/edr 规范 （经典）** :存在一些变体，但一般说来，它们具有非常相似的配置文件级支持。 请参阅有关 [RFCOMM](send-or-receive-files-with-rfcomm.md) 的文档，以及适用于[电脑](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles)和[手机](https://support.microsoft.com/en-us/help/10569/windows-10-mobile-supported-bluetooth-profiles)的这些受支持配置文件文档
 

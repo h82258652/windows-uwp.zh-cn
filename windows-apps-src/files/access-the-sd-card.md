@@ -6,12 +6,12 @@ ms.date: 03/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sd 卡, 存储
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ef97ed489f2dc35aece83821633a583dfba77e2
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
-ms.translationtype: HT
+ms.openlocfilehash: 4573e0959cf9d4af9b3cef8ffbbce14847a9e521
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63800225"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369497"
 ---
 # <a name="access-the-sd-card"></a>访问 SD 卡
 
@@ -23,7 +23,7 @@ ms.locfileid: "63800225"
 
 你可以通过使用以下方法在可选 SD 卡上存储和访问文件。
 - 文件选取器。
-- [  **Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API。
+- [  **Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) API。
 
 ## <a name="what-you-can-and-cant-access-on-the-sd-card"></a>SD 卡上的可访问内容和不可访问内容
 
@@ -36,7 +36,7 @@ ms.locfileid: "63800225"
 
 - 你的应用无法查看或访问系统文件夹及其包含的文件。
 - 你的应用无法查看使用“隐藏”属性标记的文件。 “隐藏”属性通常用于减少意外删除数据的风险。
-- 你的应用无法通过使用 [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152) 查看或访问文档库。 但是，你可以通过遍历文件系统在 SD 卡上访问文档库。
+- 你的应用无法通过使用 [**KnownFolders.DocumentsLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.documentslibrary) 查看或访问文档库。 但是，你可以通过遍历文件系统在 SD 卡上访问文档库。
 
 ## <a name="security-and-privacy-considerations"></a>安全和隐私注意事项
 
@@ -45,7 +45,7 @@ ms.locfileid: "63800225"
 - 当 SD 卡位于该设备中时，已注册可处理相同文件类型的其他应用可以访问你的文件。
 - 当从该设备删除并从电脑中打开 SD 卡时，你的文件将在“文件资源管理器”中可见，并可供其他应用访问。
 
-但是，当安装在 SD 卡上的应用将文件保存在其 [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) 中时，这些文件将会加密，且不可供其他应用访问。
+但是，当安装在 SD 卡上的应用将文件保存在其 [**LocalFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder) 中时，这些文件将会加密，且不可供其他应用访问。
 
 ## <a name="requirements-for-accessing-files-on-the-sd-card"></a>访问 SD 卡上的文件的要求
 
@@ -62,9 +62,9 @@ ms.locfileid: "63800225"
 
 ### <a name="getting-a-reference-to-the-sd-card"></a>为 SD 卡获取引用。
 
-[  **KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 文件夹是适用于一组可移动设备（当前已连接到该设备）的逻辑根 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。 如果存在 SD 卡，**KnownFolders.RemovableDevices** 文件夹下的第一个（且唯一一个）**StorageFolder** 代表 SD 卡。
+[  **KnownFolders.RemovableDevices**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.removabledevices) 文件夹是适用于一组可移动设备（当前已连接到该设备）的逻辑根 [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder)。 如果存在 SD 卡，**KnownFolders.RemovableDevices** 文件夹下的第一个（且唯一一个）**StorageFolder** 代表 SD 卡。
 
-使用如下所示的代码确定 SD 卡是否存在，并为其获取 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 引用。
+使用如下所示的代码确定 SD 卡是否存在，并为其获取 [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) 引用。
 
 ```csharp
 using Windows.Storage;
@@ -90,16 +90,16 @@ else
 
 ### <a name="querying-the-contents-of-the-sd-card"></a>查询 SD 卡的内容
 
-SD 卡可以包含系统无法识别为已知文件夹且无法通过使用 [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) 的位置查询的许多文件夹和文件。 若要查找文件，你的应用必须通过递归遍历文件系统来枚举该卡的内容。 使用 [**GetFilesAsync (CommonFileQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227274) 和 [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227281) 有效获取 SD 卡的内容。
+SD 卡可以包含系统无法识别为已知文件夹且无法通过使用 [**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders) 的位置查询的许多文件夹和文件。 若要查找文件，你的应用必须通过递归遍历文件系统来枚举该卡的内容。 使用 [**GetFilesAsync (CommonFileQuery.DefaultQuery)** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) 和 [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfoldersasync) 有效获取 SD 卡的内容。
 
 我们建议你使用后台线程遍历 SD 卡。 一个 SD 卡可以包含数 GB 的数据。
 
 你的应用还可以要求用户通过使用文件夹选取器选择特定文件夹。
 
-当你使用派生自 [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 的路径访问 SD 卡上的文件系统时，下列方法的行为方式如下。
+当你使用派生自 [**KnownFolders.RemovableDevices**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.removabledevices) 的路径访问 SD 卡上的文件系统时，下列方法的行为方式如下。
 
--   [  **GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) 方法将返回你要通过注册来处理的文件扩展名和与你指定的任何媒体库功能相关联的文件扩展名的联合。
--   如果你尚未注册即处理正尝试访问的文件的文件扩展名，[**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) 方法会失败。
+-   [  **GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) 方法将返回你要通过注册来处理的文件扩展名和与你指定的任何媒体库功能相关联的文件扩展名的联合。
+-   如果你尚未注册即处理正尝试访问的文件的文件扩展名，[**GetFileFromPathAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) 方法会失败。
 
 ## <a name="identifying-the-individual-sd-card"></a>标识单个 SD 卡
 

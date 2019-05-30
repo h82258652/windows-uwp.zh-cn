@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版, 软件包外部测试版
 ms.localizationpriority: medium
-ms.openlocfilehash: e4f96d503d52abe71cff6fcdd1295c862e551e09
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 3a02a299682610cd516067acefc795df9512a268
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334385"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371767"
 ---
 # <a name="get-a-package-flight"></a>获取软件包外部测试版
 
@@ -92,8 +92,8 @@ Authorization: Bearer <your access token>
 | friendlyName           | string  | 软件包外部测试版的名称，如开发人员所指定。   |  
 | lastPublishedFlightSubmission       | 对象 | 提供有关软件包外部测试版的上次发布提交的信息的对象。 有关详细信息，请参阅下面的[提交对象](#submission_object)部分。  |
 | pendingFlightSubmission        | 对象  |  提供有关软件包外部测试版的当前挂起提交的信息的对象。 有关详细信息，请参阅下面的[提交对象](#submission_object)部分。  |   
-| groupIds           | 数组  | 包含与软件包外部测试版关联的外部测试版组 ID 的字符串数组。 有关外部测试版组的详细信息，请参阅[软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。   |
-| rankHigherThan           | string  | 排名紧跟在当前软件包外部测试版之后的软件包外部测试版的友好名称。 有关排名的外部测试版组的详细信息，请参阅 [软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。  |
+| groupIds           | 数组  | 包含与软件包外部测试版关联的外部测试版组 ID 的字符串数组。 有关外部测试版组的详细信息，请参阅[软件包外部测试版](https://docs.microsoft.com/windows/uwp/publish/package-flights)。   |
+| rankHigherThan           | string  | 排名紧跟在当前软件包外部测试版之后的软件包外部测试版的友好名称。 有关排名的外部测试版组的详细信息，请参阅 [软件包外部测试版](https://docs.microsoft.com/windows/uwp/publish/package-flights)。  |
 
 
 <span id="submission_object" />
@@ -102,7 +102,7 @@ Authorization: Bearer <your access token>
 
 响应正文中的 *lastPublishedFlightSubmission* 和 *pendingFlightSubmission* 值包含提供有关软件包外部测试版提交的资源信息的对象。 这些对象具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述                                                                                                                                                                                                                          |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | id            | string  | 提交的 ID。    |
 | resourceLocation   | string  | 可追加到基本 `https://manage.devcenter.microsoft.com/v1.0/my/` 请求 URI 的相对路径，用于检索提交的完整数据。               |

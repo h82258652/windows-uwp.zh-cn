@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f627cf2a897de32aea0e35faf66f5ea70695efd5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 23d4a4e0159fc18ac524937326e69d6fbc3a627e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631072"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370713"
 ---
 # <a name="launch-an-app-for-results"></a>针对结果启动应用
 
@@ -20,10 +20,10 @@ ms.locfileid: "57631072"
 
 **重要的 Api**
 
--   [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686)
--   [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131)
+-   [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows)
+-   [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet)
 
-了解如何从其他应用启动某个应用，以及在这两者之间交换数据。 这就是*针对结果启动应用*。 此处示例演示了如何针对结果使用 [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) 启动应用。
+了解如何从其他应用启动某个应用，以及在这两者之间交换数据。 这就是*针对结果启动应用*。 此处示例演示了如何针对结果使用 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows) 启动应用。
 
 新应用的通信 Api 在 Windows 10 中使 Windows 应用 （和 Windows Web 应用） 以启动应用和 exchange 数据和文件。 这样你便可以从多个应用生成混合解决方案。 使用这些新 API，使得原本需要用户使用多个应用才能完成的复杂任务现在可以无缝地进行处理。 例如，你的应用可启动社交网络应用来选择联系人，或启动结算应用来完成支付流程。
 
@@ -36,9 +36,9 @@ ms.locfileid: "57631072"
 
 协议扩展中的 **ReturnResults** 属性接受以下值之一：
 
--   **optional** - 可通过使用 [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) 方法针对结果启动应用，如果不针对结果，则使用 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 启动应用。 当你使用 **optional** 时，启动应用必须确定它是否针对结果启动。 可以通过检查 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 事件参数进行确认。 如果参数的 [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) 属性返回 [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693)，或事件参数的类型是 [**ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742)，则应用通过 **LaunchUriForResultsAsync** 启动。
--   **always** - 可以仅针对结果启动应用；也就是说，它只能响应 [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686)。
--   **none** - 无法针对结果启动应用，它只能响应 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)。
+-   **optional** - 可通过使用 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows) 方法针对结果启动应用，如果不针对结果，则使用 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 启动应用。 当你使用 **optional** 时，启动应用必须确定它是否针对结果启动。 可以通过检查 [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated) 事件参数进行确认。 如果参数的 [**IActivatedEventArgs.Kind**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) 属性返回 [**ActivationKind.ProtocolForResults**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind)，或事件参数的类型是 [**ProtocolActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs)，则应用通过 **LaunchUriForResultsAsync** 启动。
+-   **always** - 可以仅针对结果启动应用；也就是说，它只能响应 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows)。
+-   **none** - 无法针对结果启动应用，它只能响应 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)。
 
 在此协议扩展示例中，应用只能针对结果进行启动。 这将简化 **OnActivated** 方法（将在下面进行讨论）内部的逻辑，因为我们只需要处理“针对结果启动”的情况，而无需处理可激活应用的其他方式。
 
@@ -88,7 +88,7 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-因为 Package.appxmanifest 文件中的协议扩展已将 **ReturnResults** 指定为 **always**，所以上述代码可以直接将 `args` 转换为 [**ProtocolForResultsActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn906905)，并确信对于此应用，只有 **ProtocolForResultsActivatedEventArgs** 将会发送到 **OnActivated**。 如果你的应用可以采用不同于针对结果进行启动的方式进行激活，则你可以通过检查 [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) 属性是否返回 [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693) 来确定该应用是否针对结果而启动。
+因为 Package.appxmanifest 文件中的协议扩展已将 **ReturnResults** 指定为 **always**，所以上述代码可以直接将 `args` 转换为 [**ProtocolForResultsActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolForResultsActivatedEventArgs)，并确信对于此应用，只有 **ProtocolForResultsActivatedEventArgs** 将会发送到 **OnActivated**。 如果你的应用可以采用不同于针对结果进行启动的方式进行激活，则你可以通过检查 [**IActivatedEventArgs.Kind**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) 属性是否返回 [**ActivationKind.ProtocolForResults**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) 来确定该应用是否针对结果而启动。
 
 ## <a name="step-3-add-a-protocolforresultsoperation-field-to-the-app-you-launch-for-results"></a>步骤 3:将 ProtocolForResultsOperation 字段添加到应用程序启动的结果
 
@@ -97,20 +97,20 @@ protected override void OnActivated(IActivatedEventArgs args)
 private Windows.System.ProtocolForResultsOperation _operation = null;
 ```
 
-当启动应用可以随时将结果返回给调用应用时，你将使用 [**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) 字段进行指示。 在此示例中，需要将该字段添加到 **LaunchedForResultsPage** 类，因为将通过该页面完成针对结果启动操作，并且将需要访问它。
+当启动应用可以随时将结果返回给调用应用时，你将使用 [**ProtocolForResultsOperation**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.protocolforresultsactivatedeventargs.protocolforresultsoperation) 字段进行指示。 在此示例中，需要将该字段添加到 **LaunchedForResultsPage** 类，因为将通过该页面完成针对结果启动操作，并且将需要访问它。
 
 ## <a name="step-4-override-onnavigatedto-in-the-app-you-launch-for-results"></a>步骤 4：在应用程序启动的结果中重写 onnavigatedto （）
 
 
-重写页面（该页面将在针对结果启动应用时显示）上的 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法。 如果此方法尚未存在，请为页面在 &lt;pagename&gt;.xaml.cs 中定义的类内创建它。 确保以下 **using** 语句包含在该文件顶部：
+重写页面（该页面将在针对结果启动应用时显示）上的 [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) 方法。 如果此方法尚未存在，请为页面在 &lt;pagename&gt;.xaml.cs 中定义的类内创建它。 确保以下 **using** 语句包含在该文件顶部：
 
 ```cs
 using Windows.ApplicationModel.Activation
 ```
 
-[  **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法中的 [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) 对象包含从调用应用传递的数据。 数据不得超过 100KB 且存储在 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 对象中。
+[  **OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) 方法中的 [**NavigationEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Navigation.NavigationEventArgs) 对象包含从调用应用传递的数据。 数据不得超过 100KB 且存储在 [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) 对象中。
 
-在此示例代码中，启动应用预期从调用应用发送的数据存储在名为 **TestData** 的项下的 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 中，因为这就是编码示例的调用应用旨在发送的内容。
+在此示例代码中，启动应用预期从调用应用发送的数据存储在名为 **TestData** 的项下的 [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) 中，因为这就是编码示例的调用应用旨在发送的内容。
 
 ```cs
 using Windows.ApplicationModel.Activation;
@@ -133,7 +133,7 @@ private Windows.System.ProtocolForResultsOperation _operation = null;
 ## <a name="step-5-write-code-to-return-data-to-the-calling-app"></a>步骤 5：编写代码以将数据返回到调用应用程序
 
 
-在启动应用中，请使用 [**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) 将数据返回给调用应用。 在此示例代码中，将创建一个 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131)，其中包含要返回给调用应用的值。 然后，使用 **ProtocolForResultsOperation** 字段将该值发送到调用应用。
+在启动应用中，请使用 [**ProtocolForResultsOperation**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.protocolforresultsactivatedeventargs.protocolforresultsoperation) 将数据返回给调用应用。 在此示例代码中，将创建一个 [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet)，其中包含要返回给调用应用的值。 然后，使用 **ProtocolForResultsOperation** 字段将该值发送到调用应用。
 
 ```cs
     ValueSet result = new ValueSet();
@@ -173,11 +173,11 @@ async Task<string> LaunchAppForResults()
 }
 ```
 
-在此示例中，包含项 **TestData** 的 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 将传递到启动应用。 启动应用将使用名为 **ReturnedData** 的项（其中包含已返回到调用方的结果）创建一个 **ValueSet**。
+在此示例中，包含项 **TestData** 的 [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) 将传递到启动应用。 启动应用将使用名为 **ReturnedData** 的项（其中包含已返回到调用方的结果）创建一个 **ValueSet**。
 
-你必须先生成并部署将针对结果启动的应用，然后才能运行你的调用应用。 否则，[**LaunchUriResult.Status**](https://msdn.microsoft.com/library/windows/apps/dn906892) 将报告 **LaunchUriStatus.AppUnavailable**。
+你必须先生成并部署将针对结果启动的应用，然后才能运行你的调用应用。 否则，[**LaunchUriResult.Status**](https://docs.microsoft.com/uwp/api/Windows.System.LaunchUriStatus) 将报告 **LaunchUriStatus.AppUnavailable**。
 
-当设置 [**TargetApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/dn893511) 时，将需要启动应用的系列名称。 获取该系列名称的一个方法是从启动应用内执行以下调用：
+当设置 [**TargetApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.targetapplicationpackagefamilyname) 时，将需要启动应用的系列名称。 获取该系列名称的一个方法是从启动应用内执行以下调用：
 
 ```cs
 string familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
@@ -186,7 +186,7 @@ string familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
 ## <a name="remarks"></a>备注
 
 
-本操作方法中的示例将通过“hello world”介绍针对结果启动应用。 需要注意的重要事项是，新的 [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) API 允许你异步启动应用并通过 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 类通信。 通过 **ValueSet** 传递的数据量被限制为 100KB。 如果需要传递更多数据，可以通过使用 [**SharedStorageAccessManager**](https://msdn.microsoft.com/library/windows/apps/dn889985) 类创建可在应用之间传递的文件标记来共享文件。 例如，存在一个名为 `inputData` 的 **ValueSet**，你可以将该标记存储到要与启动应用共享的文件中：
+本操作方法中的示例将通过“hello world”介绍针对结果启动应用。 需要注意的重要事项是，新的 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows) API 允许你异步启动应用并通过 [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) 类通信。 通过 **ValueSet** 传递的数据量被限制为 100KB。 如果需要传递更多数据，可以通过使用 [**SharedStorageAccessManager**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) 类创建可在应用之间传递的文件标记来共享文件。 例如，存在一个名为 `inputData` 的 **ValueSet**，你可以将该标记存储到要与启动应用共享的文件中：
 
 ```cs
 inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
@@ -197,9 +197,9 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 ## <a name="related-topics"></a>相关主题
 
 
-* [**LaunchUri**](https://msdn.microsoft.com/library/windows/apps/hh701476)
-* [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686)
-* [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131)
+* [**LaunchUri**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
+* [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows)
+* [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet)
 
  
 

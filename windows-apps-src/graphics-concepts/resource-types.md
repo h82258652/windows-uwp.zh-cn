@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4138fd7275f7e1f9addb7685ff0846e756701003
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9712b4498b03460568d20d4c8e27172ad5c14360
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661982"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362209"
 ---
 # <a name="resource-types"></a>资源类型
 
@@ -34,11 +34,11 @@ ms.locfileid: "57661982"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>类型化</p></td>
+<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>Typed</p></td>
 <td align="left"><p>在创建资源时完全指定类型。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Typeless"></span><span id="typeless"></span><span id="TYPELESS"></span>无类型</p></td>
+<td align="left"><p><span id="Typeless"></span><span id="typeless"></span><span id="TYPELESS"></span>Typeless</p></td>
 <td align="left"><p>在资源绑定到管道时完全指定类型。</p></td>
 </tr>
 </tbody>
@@ -110,12 +110,12 @@ Direct3D 具有一个提供着色器常量的缓冲区，此缓冲区称为“�
 
 使用常量缓冲区存储流-输出阶段的结果。
 
-有关在着色器中声明常量缓冲区的示例，请参阅[着色器常量 (DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)。
+有关在着色器中声明常量缓冲区的示例，请参阅[着色器常量 (DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)。
 
 ## <a name="span-idtextureresourcesspanspan-idtextureresourcesspanspan-idtextureresourcesspanspan-idtexture-resourcesspantexture-resources"></a><span id="Texture_Resources"></span><span id="texture_resources"></span><span id="TEXTURE_RESOURCES"></span><span id="texture-resources"></span>纹理资源
 
 
-纹理资源是用于存储纹素的数据的结构化集合。 与缓冲区不同，在着色器单元读取纹理时，纹理采样器可筛选纹理。 纹理的类型将影响筛选纹理的方式。 纹素表示可由管道读取的或可写入管道的纹理的最小单位。 每个纹素包含 1 到 4 的组件，排列 DXGI 格式之一 (请参阅[ **DXGI\_格式**](https://msdn.microsoft.com/library/windows/desktop/bb173059))。
+纹理资源是用于存储纹素的数据的结构化集合。 与缓冲区不同，在着色器单元读取纹理时，纹理采样器可筛选纹理。 纹理的类型将影响筛选纹理的方式。 纹素表示可由管道读取的或可写入管道的纹理的最小单位。 每个纹素包含 1 到 4 的组件，排列 DXGI 格式之一 (请参阅[ **DXGI\_格式**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format))。
 
 纹理作为结构化资源创建，以使其大小众所周知。 但是，只要在将纹理绑定到管道时使用视图完全指定类型，在创建资源时，每个纹理可以是类型化的，也可以是无类型的。
 

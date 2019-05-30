@@ -5,12 +5,12 @@ keywords: 新增功能, 新功能, 更新, 刷新, 功能, 新, Windows 10, 最�
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d880b2167e718b1ff66aa349c32329e6c19e5b5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9b7fe830e07c1daf95928ab747259cb57aaa7a9f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592982"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371343"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>面向开发人员的 Windows 10 版本 17134 中的最近更新
 
@@ -42,7 +42,7 @@ Fluent Design 更新 | 我们已经更新了许多 Fluent Design 页面，增加
 功能 | 描述
  :------ | :------
 游戏开发入门 | 对开发适用于 Windows 10 的游戏感兴趣？ 新的[游戏开发入门](../gaming/getting-started.md)页面为你提供了自行完成设置、注册并准备好提交应用和游戏所需完成事项的完整概述。
-图形适配器 | 已添加以下 DXGI API，它们是关于图形适配器的首选项和删除： </br> * [IDXGIFactory6](https://msdn.microsoft.com/library/windows/desktop/mt814823) 界面实现了根据给定的 GPU 首选项枚举图形适配器的单一方法。 </br> * [DXGIDeclareAdapterRemovalSupport](https://msdn.microsoft.com/library/windows/desktop/mt814821) 函数允许执行指示恢复任何正在删除的图形设备的进程。 </br> * [DXGI_GPU_PREFERENCE](https://msdn.microsoft.com/library/windows/desktop/mt814822) 枚举描述应用在其上运行的 GPU 的首选项。
+图形适配器 | 已添加以下 DXGI API，它们是关于图形适配器的首选项和删除： </br> * [IDXGIFactory6](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nn-dxgi1_6-idxgifactory6) 界面实现了根据给定的 GPU 首选项枚举图形适配器的单一方法。 </br> * [DXGIDeclareAdapterRemovalSupport](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nf-dxgi1_6-dxgideclareadapterremovalsupport) 函数允许执行指示恢复任何正在删除的图形设备的进程。 </br> * [DXGI_GPU_PREFERENCE](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/ne-dxgi1_6-dxgi_gpu_preference) 枚举描述应用在其上运行的 GPU 的首选项。
 
 ## <a name="develop-windows-apps"></a>开发 Windows 应用
 
@@ -114,7 +114,7 @@ Xbox Live 创意者计划支持开发人员快速将他们的 UWP 游戏发布�
 
 ### <a name="one-dev-question---why-was-docments-and-settings-renamed-users"></a>一个开发人员的问题 - 为什么文档和设置被重命名为用户？
 
-想知道为什么要重命名文档和设置目录？ [Raymond Chen 解释了该名称的来源，以及更改它的原因](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7)。 有关 Windows 和其历史的更多发展的详细信息，请查看[Raymond 的博客。](https://blogs.msdn.microsoft.com/oldnewthing/)
+想知道为什么要重命名文档和设置目录？ [Raymond Chen 解释了该名称的来源，以及更改它的原因](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7)。 有关 Windows 和其历史的更多发展的详细信息，请查看[Raymond 的博客。](https://devblogs.microsoft.com/oldnewthing/)
 
 
 ## <a name="samples"></a>示例

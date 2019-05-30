@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eb1238499355cf37b3f5113dbb10c456de55961
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dcda1677a8b5d289fd4c5e86db69212004f00824
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624762"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371104"
 ---
 # <a name="xclass-attribute"></a>x:Class 属性
 
@@ -36,7 +36,7 @@ ms.locfileid: "57624762"
 
 ## <a name="remarks"></a>备注
 
-**x:Class** 可声明为作为一个 XAML 文件/对象树的根并由生成操作编译的任何元素的属性，或者已编译应用程序的应用程序定义中 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 根的属性。 在根节点以外的任何元素上，以及在不会使用“页面”生成操作编译 XAML 文件的任何环境中声明 **x:Class**，会导致编译时错误。
+**x:Class** 可声明为作为一个 XAML 文件/对象树的根并由生成操作编译的任何元素的属性，或者已编译应用程序的应用程序定义中 [**Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application) 根的属性。 在根节点以外的任何元素上，以及在不会使用“页面”  生成操作编译 XAML 文件的任何环境中声明 **x:Class**，会导致编译时错误。
 
 用作 **x:Class** 的类不能是嵌套类。
 

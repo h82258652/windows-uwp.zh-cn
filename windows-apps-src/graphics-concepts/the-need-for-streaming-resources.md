@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e0354b0e727e84d562bf63779e74be72f87198f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f5b44e60e3490f39a91724bf038aa8066de11bf0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632172"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370893"
 ---
 # <a name="the-need-for-streaming-resources"></a>需要流式资源
 
@@ -33,7 +33,7 @@ ms.locfileid: "57632172"
 
 对于[缓冲区](introduction-to-buffers.md)，整个缓冲区都是子资源。
 
-对于[纹理](textures.md)（例如 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525)），每个 mip 层级都是子资源；对于纹理数组（例如  [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526)），特定数组片的每个 mip 层级都是子资源。 图形系统只能以该子资源粒度管理分配映射。 在流式资源的情况下，“映射”指使数据对 GPU 可见。
+对于[纹理](textures.md)（例如 [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d)），每个 mip 层级都是子资源；对于纹理数组（例如  [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray)），特定数组片的每个 mip 层级都是子资源。 图形系统只能以该子资源粒度管理分配映射。 在流式资源的情况下，“映射”指使数据对 GPU 可见。
 
 ## <a name="span-idwithouttilingcantaccessonlyasmallportionofmipmapchainspanspan-idwithouttilingcantaccessonlyasmallportionofmipmapchainspanspan-idwithouttilingcantaccessonlyasmallportionofmipmapchainspanwithout-tiling-cant-access-only-a-small-portion-of-mipmap-chain"></a><span id="Without_tiling__can_t_access_only_a_small_portion_of_mipmap_chain"></span><span id="without_tiling__can_t_access_only_a_small_portion_of_mipmap_chain"></span><span id="WITHOUT_TILING__CAN_T_ACCESS_ONLY_A_SMALL_PORTION_OF_MIPMAP_CHAIN"></span>无法访问而无需平铺，只有一小部分的 mipmap 链
 
@@ -47,7 +47,7 @@ ms.locfileid: "57632172"
 
 可通过软件编页，将表面分为若干足够小以便硬件处理的磁贴。
 
-Direct3D 支持特定一侧的像素最高为 16384 的 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) 表面。 16384x16384（宽 x 高）的图像，每个像素为 4 字节，可占用 1GB 的视频内存（且添加 mipmap 可能使内存占用加倍）。 事实上，在单个呈现操作中很少需要用满 1GB。
+Direct3D 支持特定一侧的像素最高为 16384 的 [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) 表面。 16384x16384（宽 x 高）的图像，每个像素为 4 字节，可占用 1GB 的视频内存（且添加 mipmap 可能使内存占用加倍）。 事实上，在单个呈现操作中很少需要用满 1GB。
 
 一些游戏开发人员的地形表面建模尺寸相当大，为 128K x 128K。 为了使其适用于现有的 GPU，游戏开发人员会将表面分为若干足够小以便硬件处理的磁贴。 应用程序必须查明可能需要哪些磁贴，并将其加载到 GPU（软件编页系统）上的纹理缓存区。
 

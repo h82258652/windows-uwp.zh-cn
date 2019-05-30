@@ -7,19 +7,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c55a12dfa7757a48874b6857c95af592e818c2b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 25ee9960e55100eaf743d73d7007e9bcf51342ee
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590762"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370725"
 ---
 # <a name="bc7-format"></a>BC7 格式
 
 
 BC7 格式是一种用于对 RGB 和 RGBA 数据进行高质量压缩的纹理压缩格式。
 
-有关 BC7 格式的块模式的信息，请参阅 [BC7 格式模式参考](https://msdn.microsoft.com/library/windows/desktop/hh308954)。
+有关 BC7 格式的块模式的信息，请参阅 [BC7 格式模式参考](https://docs.microsoft.com/windows/desktop/direct3d11/bc7-format-mode-reference)。
 
 ## <a name="span-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanabout-bc7dxgiformatbc7"></a><span id="About-BC7-DXGI-FORMAT-BC7"></span><span id="about-bc7-dxgi-format-bc7"></span><span id="ABOUT-BC7-DXGI-FORMAT-BC7"></span>有关 BC7/DXGI\_格式\_BC7
 
@@ -30,7 +30,7 @@ BC7 格式是一种用于对 RGB 和 RGBA 数据进行高质量压缩的纹理�
 -   **DXGI\_格式\_BC7\_UNORM**。
 -   **DXGI\_格式\_BC7\_UNORM\_SRGB**。
 
-BC7 格式可用于 [Texture2D](https://msdn.microsoft.com/library/windows/desktop/bb205277)（包括阵列）、Texture3D 或 TextureCube（包括阵列）纹理资源。 同样，此格式适用于与这些资源相关联的任何 MIP 贴图表面。
+BC7 格式可用于 [Texture2D](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures)（包括阵列）、Texture3D 或 TextureCube（包括阵列）纹理资源。 同样，此格式适用于与这些资源相关联的任何 MIP 贴图表面。
 
 BC7 使用 16 字节（128 位）的固定块大小和 4×4 纹素的固定磁贴大小。 与先前的 BC 格式一样，大于支持的磁贴大小 (4x4) 的纹理图像会通过使用多个块进行压缩。 此寻址标识也适用于三维图像和 MIP 贴图、立方体贴图和纹理阵列。 所有图像磁贴必须使用相同的格式。
 
@@ -57,9 +57,9 @@ BC7 块可以包含多个终结点对。 与某个终结点对对应的索引集
 
 | BC7 块包含的项目     | 多个模式位 | 多个旋转位 | 索引选择器位 | 多个分区位 | 多个压缩终结点 | P 位    | 多个压缩的索引 |
 |---------------------------|-----------|---------------|--------------------|----------------|----------------------|----------|--------------------|
-| 仅颜色分量     | 必需的  | 不适用           | 不适用                | 必需的       | 必需的             | 可选 | 必需的           |
-| 组合的颜色 + alpha    | 必需的  | 不适用           | 不适用                | 可选       | 必需的             | 可选 | 必需的           |
-| 单独的颜色和 alpha | 必需的  | 必需的      | 可选           | 不适用            | 必需的             | 不适用      | 必需的           |
+| 仅颜色分量     | 必需的  | 不可用           | 不可用                | 必需的       | 必需的             | 可选 | 必需的           |
+| 组合的颜色 + alpha    | 必需的  | 不可用           | 不可用                | 可选       | 必需的             | 可选 | 必需的           |
+| 单独的颜色和 alpha | 必需的  | 必需的      | 可选           | 不可用            | 必需的             | 不可用      | 必需的           |
 
  
 

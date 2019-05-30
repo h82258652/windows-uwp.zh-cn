@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, uwp, 辅助功能, 游戏
 ms.localizationpriority: medium
-ms.openlocfilehash: 38060d0a6bead360ef8a682902a433670c79b495
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: a3ef82db2d0ddb7883179279fd7e48c1acf38dd3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162775"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369177"
 ---
 #  <a name="making-games-accessible"></a>使游戏成为辅助游戏
 
@@ -35,7 +35,7 @@ ms.locfileid: "58162775"
 
 如果你制作了一款精彩的游戏，但这款游戏很复杂，只有少量的用户可以玩，你的销量便会受到限制。 同样，如果你制作的游戏无法供具有肢体、感官或认知障碍的人士玩，那么你就错过了潜在的销量。 例如，考虑到[美国就有 19% 的人口具有某种形式的残障](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html)，[有估计 14% 的成年人面临阅读困难](https://nces.ed.gov/naal/estimates/overview.aspx)，而且[估计有 10% 的男性具有某种形式的色觉障碍](https://www.aao.org/eye-health/diseases/color-blindness-risk)，这可能会对你的应用收益产生很大的影响。 
 
-有关更多商业理由，请参阅[使视频游戏成为辅助游戏](https://msdn.microsoft.com/library/windows/desktop/ee415219)。
+有关更多商业理由，请参阅[使视频游戏成为辅助游戏](https://docs.microsoft.com/windows/desktop/DxTechArts/accessibility-best-practices)。
 
 ### <a name="better-games"></a>更好的游戏
 
@@ -185,7 +185,7 @@ ms.locfileid: "58162775"
 
 *   选择简单易读的字体。
 *   选择足够大的字体大小，或者考虑使用可调整的字体大小选项来增加灵活性。 （理想的字体大小取决于屏幕大小、离屏幕的观看的距离等。）
-*   在背景和字体颜色之间创造高对比度。 为文本使用鲜明轮廓和阴影。 为字幕使用深色的背景覆盖层，并记住提供开关选项。 （有关详细信息，请参阅[关于对比度比率的信息](https://msdn.microsoft.com/windows/uwp/accessibility/accessible-text-requirements)。）
+*   在背景和字体颜色之间创造高对比度。 为文本使用鲜明轮廓和阴影。 为字幕使用深色的背景覆盖层，并记住提供开关选项。 （有关详细信息，请参阅[关于对比度比率的信息](https://docs.microsoft.com/windows/uwp/accessibility/accessible-text-requirements)。）
 * 在屏幕上显示短句，每行最多 38 个字符，每次最多 2-3 行。 （记得不要在事件发生前就显示文字，从而泄露游戏情节。）
 *   区分制造声音的物体或说话的人。 (示例："Daniel:大家好 ！"）
 *   提供打开和关闭隐藏式和字幕的选项。 (其他功能：允许您选择多少声音的信息，系统会根据重要性。）
@@ -271,5 +271,5 @@ ms.locfileid: "58162775"
 ## <a name="related-links"></a>相关链接
 * [非独占设计](https://www.microsoft.com/design/inclusive)
 * [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/windows/accessible-apps)
-* [开发可访问的 UWP 应用](https://msdn.microsoft.com/windows/uwp/accessibility/accessibility)
+* [开发可访问的 UWP 应用](https://docs.microsoft.com/windows/uwp/accessibility/accessibility)
 * [工程软件的可访问性电子书](https://www.microsoft.com/download/details.aspx?id=19262)

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ce91b47d2846f945a0e4a15f705491ab22e9dea
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: 9d6a3b1eb64c89f231d0334a3cbe8e58d11c58ae
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291665"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370952"
 ---
 # <a name="rectangles"></a>矩形
 
@@ -21,7 +21,7 @@ ms.locfileid: "58291665"
 ## <a name="span-idboundingrectanglesspanspan-idboundingrectanglesspanspan-idboundingrectanglesspanbounding-rectangles"></a><span id="Bounding_rectangles"></span><span id="bounding_rectangles"></span><span id="BOUNDING_RECTANGLES"></span>边框
 
 
-大多数应用程序使用 [**RECT**](https://msdn.microsoft.com/library/windows/desktop/dd162897) 结构（或其 typedef'd 别名）来传输有关在位块传输到屏幕或执行点击测试时要使用的边界矩形的信息。 在 C++ 中，**RECT** 结构具有以下定义。
+大多数应用程序使用 [**RECT**](https://docs.microsoft.com/previous-versions//dd162897(v=vs.85)) 结构（或其 typedef'd 别名）来传输有关在位块传输到屏幕或执行点击测试时要使用的边界矩形的信息。 在 C++ 中，**RECT** 结构具有以下定义。
 
 ```cpp
 typedef struct tagRECT { 

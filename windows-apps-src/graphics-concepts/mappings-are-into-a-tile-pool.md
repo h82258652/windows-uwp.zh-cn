@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a0474345e21161e76fbfeebe0086e5d433b2d219
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a68623b0a61672426c9b6eef85cb7d1ddc990a19
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607352"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370993"
 ---
 # <a name="mappings-are-into-a-tile-pool"></a>映射到磁贴池
 
@@ -31,13 +31,13 @@ ms.locfileid: "57607352"
 
 假设每个页表条目为 64 位。
 
-对于最坏的页表大小达到的单一表面，给定的资源限制在 Direct3D 11 中，假设流创建一个资源是具有 128 位每个元素格式 （例如，RGBA 浮点数），因此 64KB 磁贴包含仅 4096 像素为单位。 支持的最大[ **Texture2DArray** ](https://msdn.microsoft.com/library/windows/desktop/ff471526)大小为 16384\*16384\*2048 （不过，仅单一 mipmap） 将需要大约 1 GB 的页表中的存储，如果完全填充（不包括 mipmap) 使用 64 位表项。 添加 mipmap 会使完全映射（最坏情况）的页表存储增长约三分之一，达到约 1.3GB。
+对于最坏的页表大小达到的单一表面，给定的资源限制在 Direct3D 11 中，假设流创建一个资源是具有 128 位每个元素格式 （例如，RGBA 浮点数），因此 64KB 磁贴包含仅 4096 像素为单位。 支持的最大[ **Texture2DArray** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray)大小为 16384\*16384\*2048 （不过，仅单一 mipmap） 将需要大约 1 GB 的页表中的存储，如果完全填充（不包括 mipmap) 使用 64 位表项。 添加 mipmap 会使完全映射（最坏情况）的页表存储增长约三分之一，达到约 1.3GB。
 
 这种情况需要访问约 10.6 TB 的可寻址内存。 但可寻址内存的量可能存在限制，这将减少这些数量，可能缩减至约 TB 范围。
 
-要考虑的另一种情况是单个[ **Texture2D** ](https://msdn.microsoft.com/library/windows/desktop/ff471525)流式处理资源 16384\*使用 32 位每个元素格式，包括 mipmap 16384。 在完全填充的页表中，其需要约 170KB 的空间（64 位表条目）。
+要考虑的另一种情况是单个[ **Texture2D** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d)流式处理资源 16384\*使用 32 位每个元素格式，包括 mipmap 16384。 在完全填充的页表中，其需要约 170KB 的空间（64 位表条目）。
 
-最后，考虑一个使用 BC 格式的示例，假设有一个 128 位的 BC7，每个磁贴为 4x4 像素。 每个像素占一个字节。 一个[ **Texture2DArray** ](https://msdn.microsoft.com/library/windows/desktop/ff471526)的 16384\*16384\*2048年包括 mipmap 需要大约 85 MB，以完全填充此内存页表中的。 考虑到这允许一个流式资源覆盖 5500 亿个像素（在这种情况下为 512 GB 的内存），结果还不错。
+最后，考虑一个使用 BC 格式的示例，假设有一个 128 位的 BC7，每个磁贴为 4x4 像素。 每个像素占一个字节。 一个[ **Texture2DArray** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray)的 16384\*16384\*2048年包括 mipmap 需要大约 85 MB，以完全填充此内存页表中的。 考虑到这允许一个流式资源覆盖 5500 亿个像素（在这种情况下为 512 GB 的内存），结果还不错。
 
 实际上，受可用物理内存容量的限制，每次能够映射和引用的位置要少得多，远远达不到完全映射的程度。 但借助磁贴池，应用程序可以选择重复使用磁贴（举个简单的示例，对于图像中的大块黑色区域，可以重复使用“黑色”磁贴），从而有效地将磁贴池（也就是页表映射）当作内存压缩工具使用。
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 40df746d89757b481a47cefeaeda3f8a34091014
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e82a0ffc0ddcf2ac1973ba446ec50dfc61a7cd1a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636842"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361573"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -34,7 +34,7 @@ PlayReady DRM 允许开发人员在强制执行内容提供商定义的访问规
 
     基于硬件的内容保护支持可以在多个设备平台上安全播放高清 (HD) 和超高清 (UHD) 内容。 利用硬件安全保护密钥材料（包括私钥、内容密钥和任何其他用于派生或解锁上述密钥的密钥材料）以及解密的压缩和未压缩视频示例。 使用硬件 DRM 时，两项未知启用程序（播放到未知/通过 downres 播放到未知）均没有意义，因为 HWDRM 管道始终知道所使用的输出。 有关详细信息，请参阅[硬件 DRM](hardware-drm.md)。
 
--   PlayReady 不再是 appX 框架组件，而是内置操作系统组件。 命名空间已从 **Microsoft.Media.PlayReadyClient** 更改为 [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454)。
+-   PlayReady 不再是 appX 框架组件，而是内置操作系统组件。 命名空间已从 **Microsoft.Media.PlayReadyClient** 更改为 [**Windows.Media.Protection.PlayReady**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady)。
 -   定义的 PlayReady 错误代码的以下标头现在是 Windows 软件开发工具包 (SDK) 的一部分：Windows.Media.Protection.PlayReadyErrors.h 和 Windows.Media.Protection.PlayReadyResults.h。
 -   可主动获取非永久性许可证。
 
@@ -69,13 +69,13 @@ PlayReady DRM 允许开发人员在强制执行内容提供商定义的访问规
 
 以下新接口、类和枚举已添加到 PlayReady DRM：
 
--   [**IPlayReadyLicenseAcquisitionServiceRequest** ](https://msdn.microsoft.com/library/windows/apps/dn986077)接口
--   [**IPlayReadyLicenseSession** ](https://msdn.microsoft.com/library/windows/apps/dn986080)接口
--   [**IPlayReadySecureStopServiceRequest** ](https://msdn.microsoft.com/library/windows/apps/dn986090)接口
--   [**PlayReadyLicenseSession** ](https://msdn.microsoft.com/library/windows/apps/dn986309)类
--   [**PlayReadySecureStopIterable** ](https://msdn.microsoft.com/library/windows/apps/dn986371)类
--   [**PlayReadySecureStopIterator** ](https://msdn.microsoft.com/library/windows/apps/dn986375)类
--   [**PlayReadyHardwareDRMFeatures** ](https://msdn.microsoft.com/library/windows/apps/dn986265)枚举器
+-   [**IPlayReadyLicenseAcquisitionServiceRequest**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest) interface
+-   [**IPlayReadyLicenseSession**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.IPlayReadyLicenseSession) interface
+-   [**IPlayReadySecureStopServiceRequest**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest) interface
+-   [**PlayReadyLicenseSession** ](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyLicenseSession)类
+-   [**PlayReadySecureStopIterable**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadySecureStopIterable) class
+-   [**PlayReadySecureStopIterator**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadySecureStopIterator) class
+-   [**PlayReadyHardwareDRMFeatures**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures) enumerator
 
 已创建新示例，用于演示如何使用 PlayReady DRM 的新功能。 可以从 [https://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670) 下载示例。
 
@@ -287,7 +287,7 @@ PlayReady DRM 允许你在使用 HDCP 2.0 或更高版本后立即通过 Miracas
 
 <table>
     <tr>
-        <th>方案</th>
+        <th>应用场景</th>
         <th>GUID</th>
         <th>如果...</th>
         <th>则...</th>
@@ -319,7 +319,7 @@ PlayReady DRM 允许你在使用 HDCP 2.0 或更高版本后立即通过 Miracas
 
 <table>
     <tr>
-        <th>方案</th>
+        <th>应用场景</th>
         <th>GUID</th>
         <th>如果...</th>
         <th colspan="2">则...</th>
@@ -371,7 +371,7 @@ PlayReady DRM 允许你在使用 HDCP 2.0 或更高版本后立即通过 Miracas
 
 <table>
     <tr>
-        <th>方案</th>
+        <th>应用场景</th>
         <th>GUID</th>
         <th>如果...</th>
         <th colspan="2">则...</th>
@@ -393,7 +393,7 @@ PlayReady DRM 允许你在使用 HDCP 2.0 或更高版本后立即通过 Miracas
 </table>
 <br/>
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 在开始创建 PlayReady 保护的 UWP 应用之前，需要在系统上安装以下软件：
 
@@ -407,7 +407,7 @@ PlayReady DRM 允许你在使用 HDCP 2.0 或更高版本后立即通过 Miracas
 
 本部分包括有关如何将现有的 PlayReady Windows 8.x 应用商店应用迁移到 Windows 10 的信息。
 
-适用于 Windows 10 上的 PlayReady UWP 应用的命名空间已从**Microsoft.Media.PlayReadyClient**到[ **Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454)。 这意味着你将需要搜索旧命名空间并将其替换为代码中的新命名空间。 你仍将引用 winmd 文件。 它是 Windows 10 操作系统上 windows.media.winmd 的一部分。 它作为 TH 的 Windows SDK 的一部分位于 windows.winmd 中。 对于 UWP，可在 windows.foundation.univeralappcontract.winmd 中引用它。
+适用于 Windows 10 上的 PlayReady UWP 应用的命名空间已从**Microsoft.Media.PlayReadyClient**到[ **Windows.Media.Protection.PlayReady**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady)。 这意味着你将需要搜索旧命名空间并将其替换为代码中的新命名空间。 你仍将引用 winmd 文件。 它是 Windows 10 操作系统上 windows.media.winmd 的一部分。 它作为 TH 的 Windows SDK 的一部分位于 windows.winmd 中。 对于 UWP，可在 windows.foundation.univeralappcontract.winmd 中引用它。
 
 若要播放 PlayReady 保护的高清 (HD) 内容 (1080p) 和超高清 (UHD) 内容，将需要实现 PlayReady 硬件 DRM。 有关如何实现 PlayReady 硬件 DRM 的信息，请参阅[硬件 DRM](hardware-drm.md)。
 
@@ -518,15 +518,15 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
 
 获得授权后，你将需要向应用清单添加额外 `<DeviceCapability>`。 由于应用清单设计器中当前没有可用的设置，你必须手动添加它。 请按照以下步骤配置它：
 
-1. 在 Visual Studio 中打开该项目后，打开“解决方案资源管理器”，然后右键单击“Package.appxmanifest”。
-2. 选择“打开方式...”、选择“XML(文本)编辑器”，然后单击“确定”。
+1. 在 Visual Studio 中打开该项目后，打开“解决方案资源管理器”，然后右键单击“Package.appxmanifest”。  
+2. 选择“打开方式...”、选择“XML(文本)编辑器”，然后单击“确定”。   
 3. 在 `<Capabilities>` 标记之间，添加以下 `<DeviceCapability>`：
 
     ```xml
     <DeviceCapability Name="6a7e5907-885c-4bcb-b40a-073c067bd3d5" />
     ```
 
-4. 保存文件。
+4. 保存该文件。
 
 最后，在 Xbox One 上使用 PlayReady 时需要注意：开发工具包具有 SL150 限制（即它们不能播放 SL2000 或 SL3000 内容）。 零售设备能够播放安全级别较高的内容，但若要在开发工具包上测试你的应用，你需要使用 SL150 内容。 可以通过以下方式之一测试此内容：
 
@@ -536,7 +536,7 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
 使用对于你的公司和产品而言最合理的方法。
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 - [媒体播放](media-playback.md)
 
 

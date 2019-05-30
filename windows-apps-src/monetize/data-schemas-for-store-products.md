@@ -5,18 +5,18 @@ ms.date: 09/26/2017
 ms.topic: article
 keywords: windows 10, uwp, ExtendedJsonData, Microsoft Store 产品, 架构
 ms.localizationpriority: medium
-ms.openlocfilehash: 344052c18178a121fd9c8d133bdd1abe5a4ad886
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 77f63ce409a576b3c873d95df0d2e8d0f0933808
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334835"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372535"
 ---
 # <a name="data-schemas-for-store-products"></a>应用商店产品的数据架构
 
-当你向应用商店提交产品（如应用或加载项）时，应用商店将维护该产品及其许可的全套数据。 在你的应用代码中，可通过使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中的属性以编程方式访问部分数据。 例如，可以使用 [StoreProduct.Description](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Description) 和 [StoreProduct.Price](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Price) 属性检索当前应用或当前应用的加载项的描述和价格。
+当你向应用商店提交产品（如应用或加载项）时，应用商店将维护该产品及其许可的全套数据。 在你的应用代码中，可通过使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间中的属性以编程方式访问部分数据。 例如，可以使用 [StoreProduct.Description](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Description) 和 [StoreProduct.Price](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Price) 属性检索当前应用或当前应用的加载项的描述和价格。
 
-但是，应用商店中产品的许多数据都不是由 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中的预定义属性来公开。 要在你的代码中访问产品的完整数据，可以改用以下常规属性：
+但是，应用商店中产品的许多数据都不是由 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间中的预定义属性来公开。 要在你的代码中访问产品的完整数据，可以改用以下常规属性：
 
 * [StoreProduct.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.ExtendedJsonData)
 * [StoreSku.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.ExtendedJsonData)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: de4d8fc797efe2a0dde7340f42208a97bccf0b10
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 98251ecba05dd27cbe3112a94b6cfcd36440d380
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645102"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371233"
 ---
 # <a name="create-a-windows-hello-login-service"></a>创建 Windows Hello 登录服务
 
@@ -51,7 +51,7 @@ ms.locfileid: "57645102"
     }
     ```
 
-    你可能已经注意到，已注释 PassportDevices 列表。 这是一项你需要对当前实现中的现有用户模型进行的修改。 PassportDevices 列表将包含 deviceID（从 Windows Hello 中获取的公钥）以及 [**KeyCredentialAttestationResult**](https://msdn.microsoft.com/library/windows/apps/dn973034)。 对于本动手实验，你将需要实现 keyAttestationResult，因为它们仅由 Windows Hello 在具有 TPM（受信任的平台模块）芯片的设备上提供。 **KeyCredentialAttestationResult** 是多个属性的组合，并且将需要进行拆分，以便可以使用数据库保存和加载它们。
+    你可能已经注意到，已注释 PassportDevices 列表。 这是一项你需要对当前实现中的现有用户模型进行的修改。 PassportDevices 列表将包含 deviceID（从 Windows Hello 中获取的公钥）以及 [**KeyCredentialAttestationResult**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredentialAttestationResult)。 对于本动手实验，你将需要实现 keyAttestationResult，因为它们仅由 Windows Hello 在具有 TPM（受信任的平台模块）芯片的设备上提供。 **KeyCredentialAttestationResult** 是多个属性的组合，并且将需要进行拆分，以便可以使用数据库保存和加载它们。
 
 -   在名为“PassportDevice.cs”的 AuthService 文件夹中创建新类。 这是适用于上述 Windows Hello 设备的模型。 更改类定义以使其成为公共类，并添加以下属性。
 

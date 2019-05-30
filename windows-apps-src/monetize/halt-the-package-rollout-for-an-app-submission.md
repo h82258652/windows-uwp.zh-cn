@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 软件包推出, 应用提交, 终止
 ms.assetid: 4ce79fe3-deda-4d31-b938-d672c3869051
 ms.localizationpriority: medium
-ms.openlocfilehash: 5262089a2eab57ff84f399637fd98e58ec3e13ed
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 00588b91db2a2536ca7c0a1a5e6748c26b3eb2fc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334665"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372054"
 ---
 # <a name="halt-the-rollout-for-an-app-submission"></a>终止应用提交的推出
 
@@ -22,7 +22,7 @@ ms.locfileid: "58334665"
 > 如果终止应用提交的推出，然后[创建新的应用提交](create-an-app-submission.md)，则新提交将是已终止提交的克隆。
 
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -51,7 +51,7 @@ ms.locfileid: "58334665"
 
 | 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | 必需。 应用（包含要终止软件包推出的提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
+| applicationId | string | 必需。 应用（包含要终止软件包推出的提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 | submissionId | string | 必需。 要终止软件包推出的提交的 ID。 此 ID 包含在[创建应用提交](create-an-app-submission.md)请求的响应数据中。 在合作伙伴中心创建的提交，此 ID 是也可用在合作伙伴中心中的提交页的 URL。  |
 
 

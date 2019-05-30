@@ -7,21 +7,21 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c9c232bc60bbbb3cccc16618d82ec23452c58ee8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5b63fdeeffd4b95afab6556b6f0318732ff988b0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645952"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370905"
 ---
 # <a name="texture3d-subresource-tiling"></a>Texture3D 子资源平铺
 
 
-此表说明了 [**Texture3D**](https://msdn.microsoft.com/library/windows/desktop/ff471562) 子资源的平铺方式。 此表中的值未计入尾部 mip 打包。
+此表说明了 [**Texture3D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture3d) 子资源的平铺方式。 此表中的值未计入尾部 mip 打包。
 
-此表采用了 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) 平铺，将 x/y 尺寸分别除以 4，再加上 16 层的深度值。 第一平面的所有磁贴（二维平面的磁贴限定前 16 层的深度值）先于后面的平面出现。
+此表采用了 [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) 平铺，将 x/y 尺寸分别除以 4，再加上 16 层的深度值。 第一平面的所有磁贴（二维平面的磁贴限定前 16 层的深度值）先于后面的平面出现。
 
-**注意**  流式资源中的   [**Texture3D**](https://msdn.microsoft.com/library/windows/desktop/ff471562) 支持在流式资源的初步实现中并不显现，但所需的磁贴形状（以后的版本可能支持）会列在此处。
+**注意**  流式资源中的   [**Texture3D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture3d) 支持在流式资源的初步实现中并不显现，但所需的磁贴形状（以后的版本可能支持）会列在此处。
 
  
 

@@ -5,18 +5,18 @@ keywords: 控制台 UWP
 ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 111ef4d5e8830485a5de3b44d69826df256d1c4d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c2dba15d78301c84f4064bcd6548d44e3c17beb2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592102"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366357"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>创建通用 Windows 平台控制台应用
 
-本主题介绍如何创建[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)或 C + + /cli CX 通用 Windows 平台 (UWP) 控制台应用程序。
+本主题介绍如何创建[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)或C++/CX 通用 Windows 平台 (UWP) 控制台应用程序。
 
-从 Windows 10，版本 1803，您可以编写 C + + WinRT 或 C + + /cli CX UWP 的控制台应用程序在控制台窗口，如 DOS 或 PowerShell 控制台窗口中运行。 控制台应用程序的输入和输出，使用控制台窗口中，可以使用[通用 C 运行时](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)之类的函数**printf**并**getchar**。 UWP 控制台应用可以发布到 Microsoft Store。 它们在应用列表中有对应条目，并有可以固定到“开始”菜单的主要磁贴。 可以从开始菜单中，启动 UWP 控制台应用，但你通常将从命令行启动它们。
+从 Windows 10，版本 1803，您可以编写C++/WinRT 或C++/CX UWP 控制台在控制台窗口，如 DOS 或 PowerShell 控制台窗口中运行的应用程序。 控制台应用程序的输入和输出，使用控制台窗口中，可以使用[通用 C 运行时](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)之类的函数**printf**并**getchar**。 UWP 控制台应用可以发布到 Microsoft Store。 它们在应用列表中有对应条目，并有可以固定到“开始”菜单的主要磁贴。 可以从开始菜单中，启动 UWP 控制台应用，但你通常将从命令行启动它们。
 
 若要查看在操作中，下面是有关创建 UWP 控制台应用程序的视频。
 
@@ -24,13 +24,13 @@ ms.locfileid: "57592102"
 
 ## <a name="use-a-uwp-console-app-template"></a>使用 UWP 控制台应用模板 
 
-若要创建 UWP 控制台应用，请首先安装 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal)中提供的**控制台应用（通用）项目模板**。 已安装的模板然后下有**新的项目** > **已安装** > **其他语言** >  **Visual c + +** > **Windows 通用**作为**控制台应用 C + + WinRT (通用 Windows)** 和**控制台应用 C + + /cli CX (通用 Windows)**.
+若要创建 UWP 控制台应用，请首先安装 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal)中提供的**控制台应用（通用）项目模板**。 已安装的模板然后下有**新的项目** > **已安装** > **其他语言** >  **Visual C++**   >  **Windows 通用**作为**控制台应用程序C++/WinRT (通用 Windows)** 并**控制台应用程序C++/CX (通用 Windows)** 。
 
 ## <a name="add-your-code-to-main"></a>将代码添加到 main()
 
 模板添加了 **Program.cpp**，其中包含 `main()` 函数。 这是 UWP 控制台应用中执行开始的位置。 使用 `__argc` 和 `__argv` 形式参数访问命令行实际参数。 控制从 `main()` 返回时，UWP 控制台应用会退出。
 
-下面的示例对**Program.cpp**通过添加**控制台应用 c + + WinRT**模板：
+下面的示例对**Program.cpp**通过添加**控制台应用C++/WinRT**模板：
 
 ```cppwinrt
 #include "pch.h"
@@ -60,7 +60,7 @@ int __cdecl main()
 
 UWP 控制台应用可以从其运行的目录及其下方目录访问文件系统。 这是可能的，因为该模板向应用的 Package.appxmanifest 文件中添加了 [AppExecutionAlias](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias) 扩展。 此扩展还使用户可以从控制台窗口中键入别名，以启动该应用。 该应用不需要在系统路径中启动。
 
-你还可以如[文件访问权限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)中所述，通过添加受限功能 `broadFileSystemAccess`，向 UWP 控制台应用提供对文件系统的广泛访问权限。 此功能适用于 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 命名空间中的 API。
+你还可以如[文件访问权限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)中所述，通过添加受限功能 `broadFileSystemAccess`，向 UWP 控制台应用提供对文件系统的广泛访问权限。 此功能适用于 [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命名空间中的 API。
 
 可以一次运行多个 UWP 控制台应用的实例，因为该模板会向应用的 Package.appxmanifest 文件添加 [SupportsMultipleInstances](multi-instance-uwp.md) 功能。
 
@@ -99,7 +99,7 @@ UWP 控制台应用可以从其运行的目录及其下方目录访问文件系�
 
 ## <a name="additional-considerations-for-uwp-console-apps"></a>UWP 控制台应用的其他注意事项
 
-- 仅 C + + WinRT 和 C + + /cli CX UWP 应用可能是控制台应用。
+- 仅C++/WinRT 和C++/CX UWP 应用可能是控制台应用。
 - UWP 控制台应用必须针对桌面或 IoT 项目类型。
 - UWP 控制台应用程序可能会创建一个窗口。 它们不能使用 MessageBox()，location （） 或出于任何原因，可能会创建一个窗口的任何其他 API，如用户同意提示。
 - UWP 控制台应用可能不使用后台任务，也不会作为后台任务运行。

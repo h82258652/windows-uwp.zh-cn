@@ -6,21 +6,21 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4426cbc2e2d3c6e7d980b0733b6deb5178025abb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 407c76c41d4a8620e2168e8e03dd2a3e24d73b61
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624092"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369576"
 ---
 # <a name="use-the-orientation-sensor"></a>使用方向传感器
 
 
 **重要的 Api**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)
--   [**简单方向**](https://msdn.microsoft.com/library/windows/apps/BR206399)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor)
+-   [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation)
 
 **示例**
 
@@ -29,11 +29,11 @@ ms.locfileid: "57624092"
 
 了解如何使用方向传感器确定设备方向。
 
-有两种不同类型的 Api 中包含的方向传感器[ **Windows.Devices.Sensors** ](https://msdn.microsoft.com/library/windows/apps/BR206408)命名空间：[**OrientationSensor** ](https://msdn.microsoft.com/library/windows/apps/BR206371)并[**简单方向**](https://msdn.microsoft.com/library/windows/apps/BR206399)。 虽然这两个传感器都是方向传感器，但该术语具有不同的意义，并且这两者的用途具有显著区别。 但是，由于这两者都是方向传感器，因此均涵盖在本文中。
+有两种不同类型的 Api 中包含的方向传感器[ **Windows.Devices.Sensors** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)命名空间：[**OrientationSensor** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor)并[**简单方向**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation)。 虽然这两个传感器都是方向传感器，但该术语具有不同的意义，并且这两者的用途具有显著区别。 但是，由于这两者都是方向传感器，因此均涵盖在本文中。
 
-[  **OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) API 用于三维应用以获取四元数和旋转矩阵。 四元数可以非常轻松地理解为一个点的旋转\[x、 y、 z\]有关任意轴 （与旋转矩阵，表示围绕三个轴的旋转相反）。 四元数后的数学非常奇特，因为它涉及到复数的几何属性以及虚数的数学属性，但是使用它们却非常简单，而且 DirectX 等框架也支持它们。 复杂的三维应用可使用方向传感器调整用户的视角。 此传感器结合了来自加速计、陀螺测试仪以及指南针的输入。
+[  **OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) API 用于三维应用以获取四元数和旋转矩阵。 四元数可以非常轻松地理解为一个点的旋转\[x、 y、 z\]有关任意轴 （与旋转矩阵，表示围绕三个轴的旋转相反）。 四元数后的数学非常奇特，因为它涉及到复数的几何属性以及虚数的数学属性，但是使用它们却非常简单，而且 DirectX 等框架也支持它们。 复杂的三维应用可使用方向传感器调整用户的视角。 此传感器结合了来自加速计、陀螺测试仪以及指南针的输入。
 
-[  **SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) API 用于根据 portrait up、portrait down、landscape left 和 landscape right 等定义确定当前设备方向。 它还可以检测设备是正面朝上还是正面朝下。 而不是返回属性，如"画像向上"或"横向左"，此传感器返回的旋转值："不旋转"、"Rotated90DegreesCounterclockwise"，依次类推。 下表将常见的方向属性映射到相应的传感器读取方向。
+[  **SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation) API 用于根据 portrait up、portrait down、landscape left 和 landscape right 等定义确定当前设备方向。 它还可以检测设备是正面朝上还是正面朝下。 而不是返回属性，如"画像向上"或"横向左"，此传感器返回的旋转值："不旋转"、"Rotated90DegreesCounterclockwise"，依次类推。 下表将常见的方向属性映射到相应的传感器读取方向。
 
 | Orientation     | 相应的传感器读取方向      |
 |-----------------|-----------------------------------|
@@ -42,7 +42,7 @@ ms.locfileid: "57624092"
 | Portrait Down   | Rotated180DegreesCounterclockwise |
 | Landscape Right | Rotated270DegreesCounterclockwise |
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 您应了解与 Extensible Application Markup Language (XAML)，Microsoft Visual C#，和事件。
 
@@ -54,7 +54,7 @@ ms.locfileid: "57624092"
 
 ###  <a name="instructions"></a>说明
 
--   创建新项目，从“Visual C#”项目模板中选择“空白应用(通用 Windows)”。
+-   创建新项目，从“Visual C#”  项目模板中选择“空白应用(通用 Windows)”  。
 
 -   打开项目的 MainPage.xaml.cs 文件，使用下列内容替换现有代码。
 
@@ -177,11 +177,11 @@ ms.locfileid: "57624092"
 
 你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**OrientationSensorCS**的项目，则使用 `x:Class="OrientationSensorCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 还应当将 `xmlns:local="using:App1"` 替换为 `xmlns:local="using:OrientationSensorCS"`。
 
--   按 F5 或依次选择“调试” > “开始调试”来生成、部署并运行应用。
+-   按 F5 或依次选择“调试”   > “开始调试”  来生成、部署并运行应用。
 
 应用运行后，你可以通过移动设备或使用仿真器工具更改方向。
 
--   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试” > “停止调试”来停止应用。
+-   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”   > “停止调试”  来停止应用。
 
 ###  <a name="explanation"></a>说明
 
@@ -216,7 +216,7 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 
 ### <a name="instructions"></a>说明
 
--   创建新项目，从“Visual C#”项目模板中选择“空白应用(通用 Windows)”。
+-   创建新项目，从“Visual C#”  项目模板中选择“空白应用(通用 Windows)”  。
 
 -   打开项目的 MainPage.xaml.cs 文件，使用下列内容替换现有代码。
 
@@ -323,11 +323,11 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 
 你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**SimpleOrientationCS**的项目，则使用 `x:Class="SimpleOrientationCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 还应当将 `xmlns:local="using:App1"` 替换为 `xmlns:local="using:SimpleOrientationCS"`。
 
--   按 F5 或依次选择“调试” > “开始调试”来生成、部署并运行应用。
+-   按 F5 或依次选择“调试”   > “开始调试”  来生成、部署并运行应用。
 
 应用运行后，你可以通过移动设备或使用仿真器工具更改方向。
 
--   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试” > “停止调试”来停止应用。
+-   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”   > “停止调试”  来停止应用。
 
 ### <a name="explanation"></a>说明
 

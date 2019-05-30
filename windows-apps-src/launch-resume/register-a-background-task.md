@@ -6,21 +6,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: e586e85e15202e0186afe481ec18b32c2f480712
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 087f60ae3a16ad4cd38137d692fe079ce6c58bf4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660782"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371744"
 ---
 # <a name="register-a-background-task"></a>注册后台任务
 
 
 **重要的 Api**
 
--   [**BackgroundTaskRegistration 类**](https://msdn.microsoft.com/library/windows/apps/br224786)
--   [**BackgroundTaskBuilder 类**](https://msdn.microsoft.com/library/windows/apps/br224768)
--   [**SystemCondition 类**](https://msdn.microsoft.com/library/windows/apps/br224834)
+-   [**BackgroundTaskRegistration 类**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)
+-   [**BackgroundTaskBuilder 类**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**SystemCondition 类**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition)
 
 了解如何创建可以重新使用以安全注册大部分后台任务的函数。
 
@@ -30,13 +30,13 @@ ms.locfileid: "57660782"
 
 **注意**  
 
-通用 Windows 应用必须在注册任何后台触发器类型之前调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
+通用 Windows 应用必须在注册任何后台触发器类型之前调用 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)。
 
-若要确保通用 Windows 应用在你发布更新后继续正常运行，必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然后调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
+若要确保通用 Windows 应用在你发布更新后继续正常运行，必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess)，然后调用 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
 ## <a name="define-the-method-signature-and-return-type"></a>定义方法签名并返回类型
 
-此方法包含任务入口点、任务名称、预构建的后台任务触发器以及后台任务的 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)（可选）。 此方法返回 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) 对象。
+此方法包含任务入口点、任务名称、预构建的后台任务触发器以及后台任务的 [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition)（可选）。 此方法返回 [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) 对象。
 
 > [!Important]
 > `taskEntryPoint` -后台任务进程外运行的这必须将其构造为命名空间名称。，并包含背景类的类的名称。 该字符串区分大小写。  例如，如果有包含后台类代码的命名空间“MyBackgroundTasks”和类“BackgroundTask1”，`taskEntryPoint` 的字符串将为“MyBackgroundTasks.BackgroundTask1”。
@@ -72,11 +72,11 @@ ms.locfileid: "57660782"
 
 检查任务是否已注册。 请务必检查此项，因为如果任务已多次注册，则将在该任务触发时运行多次，这可占用过多的 CPU 并可能导致意外行为。
 
-你可以通过查询 [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) 属性并在结果上迭代来检查现有注册。 检查每个实例的名称 - 如果该名称与正注册的任务的名称匹配，则跳出循环并设置标志变量，以便你的代码可以在下一步中选择不同的路径。
+你可以通过查询 [**BackgroundTaskRegistration.AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) 属性并在结果上迭代来检查现有注册。 检查每个实例的名称 - 如果该名称与正注册的任务的名称匹配，则跳出循环并设置标志变量，以便你的代码可以在下一步中选择不同的路径。
 
 > **请注意**  使用专为你的应用的后台任务名称。 确保每个后台任务都具有唯一的名称。
 
-以下代码使用我们在上一步中创建的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 注册后台任务：
+以下代码使用我们在上一步中创建的 [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) 注册后台任务：
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -145,7 +145,7 @@ ms.locfileid: "57660782"
 
 检查在现有后台任务注册的列表中是否找到该任务。 如果有，则返回该任务的实例。
 
-否则，使用新 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象注册任务。 此代码应检查条件参数是否为空，如果不为空，则将条件添加到注册对象。 返回 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224786) 方法返回的 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224772)。
+否则，使用新 [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 对象注册任务。 此代码应检查条件参数是否为空，如果不为空，则将条件添加到注册对象。 返回 [**BackgroundTaskBuilder.Register**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) 方法返回的 [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)。
 
 > **请注意**  后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
 > **注意** 如果你要注册在应用所在的同一进程中运行的后台任务，请向 `taskEntryPoint` 参数发送 `String.Empty` 或 `null`。

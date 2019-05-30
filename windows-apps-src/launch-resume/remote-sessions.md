@@ -6,16 +6,16 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10，uwp，已连接设备、 远程系统、 罗马、 项目罗马
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dd23603df1f1c3fac151da2aea2f8435b3ee423
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4787b6c14408dc8ee35e26764caafc5b6e7fbdc9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633412"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371879"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>通过远程会话连接设备
 
-“远程会话”功能允许应用通过会话连接到其他设备，以进行显式应用消息传送或系统管理数据的中转交换，如用于在 Windows Holographic 设备之间进行全息共享的 **[SpatialEntityStore](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialentitystore)**。
+“远程会话”功能允许应用通过会话连接到其他设备，以进行显式应用消息传送或系统管理数据的中转交换，如用于在 Windows Holographic 设备之间进行全息共享的 **[SpatialEntityStore](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialentitystore)** 。
 
 远程会话可以由任何 Windows 设备进行创建，并且任何 Windows 设备（包括其他用户登录的设备）都可以请求加入远程会话（尽管会话可能具有“仅邀请”可见性）。 本指南为使用远程会话的所有主要方案提供了基本示例代码。 此代码可以合并到现有应用项目中，并且可以根据需要进行修改。 有关端到端实现，请参阅[问答游戏示例应用](https://github.com/microsoft/Windows-appsample-remote-system-sessions)。
 
@@ -322,4 +322,4 @@ public async void SendMessageToListAsync(RemoteSystemSessionMessageChannel messa
 
 ## <a name="related-topics"></a>相关主题
 * [连接的应用和设备 （项目罗马）](connected-apps-and-devices.md)
-* [远程系统 API 参考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)
+* [远程系统 API 参考](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)

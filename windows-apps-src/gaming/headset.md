@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 耳机
 ms.localizationpriority: medium
-ms.openlocfilehash: b3de68cc59c9928a52eba5caeb840e9e825eecf0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 73815fb3f1b732537e9f08932639a1eccd7ed1b0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627952"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368618"
 ---
 # <a name="headset"></a>耳机
 
@@ -65,7 +65,7 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 
 [Headset][] 类由两个表示 XAudio 终结点 ID 的字符串组成--一个用于音频捕获（从耳机麦克风录制），一个用于音频呈现（通过耳机播放）。
 
-此处不讨论使用 XAudio 的详细信息，有关详细信息，请参阅 [XAudio2 编程指南](https://msdn.microsoft.com/library/windows/desktop/ee415737.aspx)和 [XAudio2 API 参考](https://msdn.microsoft.com/library/windows/desktop/ee415899.aspx).
+此处不讨论使用 XAudio 的详细信息，有关详细信息，请参阅 [XAudio2 编程指南](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide)和 [XAudio2 API 参考](https://docs.microsoft.com/windows/desktop/xaudio2/programming-reference).
 
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
@@ -73,4 +73,4 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 [igamecontroller.headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headset.aspx
 [igamecontroller.headsetconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetconnected.aspx
 [igamecontroller.headsetdisconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetdisconnected.aspx
-[Headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx
+[headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx

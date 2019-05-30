@@ -6,12 +6,12 @@ ms.date: 02/21/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, .net, unity
 ms.localizationpriority: medium
-ms.openlocfilehash: 247761f47b578099bf8672d9e1b2469e6506682e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 878a598c8a0b71e4ee394f7f98c215e5462b44e7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641782"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368435"
 ---
 # <a name="missing-net-apis-in-unity-and-uwp"></a>Unity 和 UWP 中缺少的 .NET API
 
@@ -19,7 +19,7 @@ ms.locfileid: "57641782"
 
 此外，某些游戏引擎使用与适用于 UWP 的 .NET 不完全兼容的不同 .NET 风格，如 Unity 的 Mono。 因此当您正在编写您的游戏，所有内容可能正常在编辑器中，但适用于 UWP 生成时，可能会收到如下错误：**命名空间 System.Runtime.Serialization 中不存在类型或命名空间格式化程序 （是否缺少程序集引用？）**
 
-幸运的是，Unity 提供了其中一些缺少 Api 的扩展方法和中所述的替代类型为[通用 Windows 平台：缺少.NET 脚本编写后端上的.NET 类型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)。 但是，如果你需要的功能不在此处，则[适用于 Windows 8.x 应用的 .NET 概述](https://msdn.microsoft.com/library/windows/apps/br230302)中讨论了转换代码以使用适用于 UWP API 的 WinRT 或 .NET 的方法。 （它讨论的是 Windows 8，但也适用于 Windows 10 UWP 应用。）
+幸运的是，Unity 提供了其中一些缺少 Api 的扩展方法和中所述的替代类型为[通用 Windows 平台：缺少.NET 脚本编写后端上的.NET 类型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)。 但是，如果你需要的功能不在此处，则[适用于 Windows 8.x 应用的 .NET 概述](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))中讨论了转换代码以使用适用于 UWP API 的 WinRT 或 .NET 的方法。 （它讨论的是 Windows 8，但也适用于 Windows 10 UWP 应用。）
 
 ## <a name="net-standard"></a>.NET Standard
 
@@ -115,7 +115,7 @@ private void UsingThreads()
 
 ### <a name="security"></a>安全性
 
-在为 UWP 生成 Unity 游戏时，有些 **System.Security.*** 命名空间（如 [System.Security.Cryptography.X509Certificates](https://docs.microsoft.com/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0)）不可用。 在这些情况下，请使用 **Windows.Security.*** API，其具有许多相同的功能。
+在为 UWP 生成 Unity 游戏时，有些 **System.Security.** * 命名空间（如 [System.Security.Cryptography.X509Certificates](https://docs.microsoft.com/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0)）不可用。 在这些情况下，请使用 **Windows.Security.** * API，其具有许多相同的功能。
 
 下面的示例只是从具有指定名称的证书存储获取证书：
 
@@ -138,12 +138,12 @@ private async void GetCertificatesAsync(string certStoreName)
 
 ### <a name="networking"></a>网络
 
-有些 **System&period;Net.*** 命名空间（如 [System.Net.Mail](https://docs.microsoft.com/dotnet/api/system.net.mail?view=netstandard-2.0)）在为 UWP 生成 Unity 游戏时同样不可用。 对于这些 API 的大多数，请使用相应的 **Windows.Networking.*** 和**Windows.Web.*** WinRT API 来获取类似的功能。 有关详细信息，请参阅[网络和 Web 服务](https://docs.microsoft.com/windows/uwp/networking/)。
+有些 **System&period;Net.** * 命名空间（如 [System.Net.Mail](https://docs.microsoft.com/dotnet/api/system.net.mail?view=netstandard-2.0)）在为 UWP 生成 Unity 游戏时同样不可用。 对于这些 API 的大多数，请使用相应的 **Windows.Networking.** * 和**Windows.Web.** * WinRT API 来获取类似的功能。 有关详细信息，请参阅[网络和 Web 服务](https://docs.microsoft.com/windows/uwp/networking/)。
 
 对于 **System.Net.Mail**，请使用 [Windows.ApplicationModel.Email](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email) 命名空间。 有关详细信息，请参阅[发送电子邮件](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/sending-email)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [通用 Windows 平台：缺少.NET 脚本编写后端上的.NET 类型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
-* [适用于 UWP 应用概述的.NET](https://msdn.microsoft.com/library/windows/apps/br230302)
+* [适用于 UWP 应用概述的.NET](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
 * [Unity UWP 移植指南](https://unity3d.com/partners/microsoft/porting-guides)

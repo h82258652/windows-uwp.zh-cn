@@ -6,25 +6,25 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
-ms.openlocfilehash: a8d94f43edbdc3ec410ae7f878b38d41cddf5145
-ms.sourcegitcommit: f15cf141c299bde9cb19965d8be5198d7f85adf8
+ms.openlocfilehash: 1476410c96900eff7ba4b8d0ad34c9d7b5599434
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58358602"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372732"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>为程序包签名创建证书
 
 
-本文介绍了如何使用 PowerShell 工具为应用包签名创建和导出证书。 建议使用 Visual Studio [打包 UWP 应用](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)，但如果未使用 Visual Studio 开发应用，则仍可手动打包应用商店可用应用。
+本文介绍了如何使用 PowerShell 工具为应用包签名创建和导出证书。 建议使用 Visual Studio [打包 UWP 应用](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)，但如果未使用 Visual Studio 开发应用，则仍可手动打包应用商店可用应用。
 
 > [!IMPORTANT] 
-> 如果你使用 Visual Studio 开发应用，建议使用 Visual Studio 向导导入证书并对你的应用包签名。 有关详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
+> 如果你使用 Visual Studio 开发应用，建议使用 Visual Studio 向导导入证书并对你的应用包签名。 有关详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 - **打包或未打包应用**  
-包含 AppxManifest.xml 文件的应用。 在创建用于给最终应用包签名的证书时，你将需要参考清单文件。 有关如何手动打包应用的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。
+包含 AppxManifest.xml 文件的应用。 在创建用于给最终应用包签名的证书时，你将需要参考清单文件。 有关如何手动打包应用的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。
 
 - **公钥基础结构 (PKI) Cmdlet**  
 你需要 PKI cmdlet 创建和导出你的签名证书。 有关详细信息，请参阅[公钥基础结构 Cmdlet](https://docs.microsoft.com/powershell/module/pkiclient/)。
@@ -32,6 +32,9 @@ ms.locfileid: "58358602"
 ## <a name="create-a-self-signed-certificate"></a>创建自签名证书
 
 自签名的证书可用于之前已准备好将其发布到应用商店测试您的应用程序。 按照此部分以创建自签名的证书中所述的步骤。
+
+> [!NOTE]
+> 自签名的证书仅限用于测试。 若要将应用发布到应用商店或从其他会场准备就绪后，切换到可信源证书。 如果不这样做可能会导致不能为你的应用以获取安装的客户。
 
 ### <a name="determine-the-subject-of-your-packaged-app"></a>确定你的打包应用的主体  
 
@@ -63,9 +66,9 @@ New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso 
 
 - **TextExtension**:此参数包含以下扩展插件的设置：
 
-  - 扩展密钥用法 (EKU):此扩展表示认证的公钥可用于其他目的。 对于自签名证书，此参数应包含扩展名字符串 **"2.5.29.37={text}1.3.6.1.5.5.7.3.3"**，指示是否要在进行代码签名证书。
+  - 扩展密钥用法 (EKU):此扩展表示认证的公钥可用于其他目的。 对于自签名证书，此参数应包含扩展名字符串 **"2.5.29.37={text}1.3.6.1.5.5.7.3.3"** ，指示是否要在进行代码签名证书。
 
-  - 基本约束：此扩展插件指示证书为证书颁发机构 (CA)。 对于自签名证书，此参数应包含扩展名字符串 **"2.5.29.19={text}"**，指示是否最终实体 (不 CA) 证书。
+  - 基本约束：此扩展插件指示证书为证书颁发机构 (CA)。 对于自签名证书，此参数应包含扩展名字符串 **"2.5.29.19={text}"** ，指示是否最终实体 (不 CA) 证书。
 
 运行此命令后，证书将被添加到本地证书存储中，如“-CertStoreLocation”参数中指定。 命令的结果还将生成证书的指纹。  
 
@@ -97,8 +100,8 @@ Export-PfxCertificate -cert "Cert:\LocalMachine\My\<Certificate Thumbprint>" -Fi
 Export-PfxCertificate -cert Cert:\LocalMachine\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
 ```
 
-创建并导出你的证书后，准备好使用 **SignTool** 给你的应用包签名。 有关手动打包过程中的后续步骤，请参阅[使用 SignTool 给应用包签名](https://msdn.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool)。
+创建并导出你的证书后，准备好使用 **SignTool** 给你的应用包签名。 有关手动打包过程中的后续步骤，请参阅[使用 SignTool 给应用包签名](https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool)。
 
 ## <a name="security-considerations"></a>安全注意事项
 
-通过将证书添加到[本地计算机证书存储](https://msdn.microsoft.com/windows/hardware/drivers/install/local-machine-and-current-user-certificate-stores)，可以影响计算机上所有用户的证书信任。 建议当这些证书对于阻止其被用来破坏系统信任而言不再必要时删除这些证书。
+通过将证书添加到[本地计算机证书存储](https://docs.microsoft.com/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores)，可以影响计算机上所有用户的证书信任。 建议当这些证书对于阻止其被用来破坏系统信任而言不再必要时删除这些证书。

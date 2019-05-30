@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 473b7ef9f4efacbbe78e1fdb5563695f8211bca8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c8130c6a8e4d8441fdf8ff60c702bd1ae30bae6e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606742"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372267"
 ---
 # <a name="web-authentication-broker"></a>Web 身份验证代理
 
 
 
 
-本文介绍了如何将通用 Windows 平台 (UWP) 应用连接到使用身份验证协议（如 OpenID 或 OAuth）的联机标识提供商（如 Facebook、Twitter、Flickr、Instagram 等）。 [  **AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 方法将请求发送给联机标识提供者，并取回描述应用有权访问的提供者资源的访问令牌。
+本文介绍了如何将通用 Windows 平台 (UWP) 应用连接到使用身份验证协议（如 OpenID 或 OAuth）的联机标识提供商（如 Facebook、Twitter、Flickr、Instagram 等）。 [  **AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 方法将请求发送给联机标识提供者，并取回描述应用有权访问的提供者资源的访问令牌。
 
 >[!NOTE]
 >有关完整的有效代码示例，请克隆 [GitHub 上的 WebAuthenticationBroker 存储库](https://go.microsoft.com/fwlink/p/?LinkId=620622)。
@@ -35,7 +35,7 @@ ms.locfileid: "57606742"
 
 请求 URI 由以下内容组成：你将身份验证请求发送到联机提供商的地址，其中附有其他所需信息，例如应用 ID 或机密信息、用户在完成身份验证后发送的重定向 URI 以及预期响应类型。 你可以从你的提供商处找到需要的参数。
 
-请求 URI 作为 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 方法的 *requestUri* 参数进行发送。 必须是安全地址（即，必须以 `https://` 开头）
+请求 URI 作为 [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 方法的 *requestUri* 参数进行发送。 必须是安全地址（即，必须以 `https://` 开头）
 
 下例介绍如何建立请求 URI。
 
@@ -50,7 +50,7 @@ System.Uri endURI = new System.Uri(endURL);
 ## <a name="connect-to-the-online-provider"></a>连接到联机提供商
 
 
-调用 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 方法以连接到联机标识提供者并获取访问令牌。 该方法将上一步骤中构建的 URI 用作 *requestUri* 参数，并将你希望用户被重定向到的 URI 用作 *callbackUri* 参数。
+调用 [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 方法以连接到联机标识提供者并获取访问令牌。 该方法将上一步骤中构建的 URI 用作 *requestUri* 参数，并将你希望用户被重定向到的 URI 用作 *callbackUri* 参数。
 
 ```cs
 string result;
@@ -87,14 +87,14 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->除 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 之外，[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 命名空间还包括 [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) 方法。 请勿调用此方法。 它专为仅面向 Windows Phone 8.1 应用，并从 Windows 10 开始已弃用。
+>除 [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 之外，[**Windows.Security.Authentication.Web**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web) 命名空间还包括 [**AuthenticateAndContinue**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker#methods) 方法。 请勿调用此方法。 它专为仅面向 Windows Phone 8.1 应用，并从 Windows 10 开始已弃用。
 
 ## <a name="connecting-with-single-sign-on-sso"></a>使用单一登录 (SSO) 连接。
 
 
-默认情况下，Web 身份验证代理不允许保留 cookie。 正因为如此，所以即使应用用户指示他们希望保留登录状态（例如，通过选择提供商的登录对话框中的复选框），他们也必须在每次希望访问该提供商的资源时登录。 若要使用 SSO 登录，则联机标识提供者必须为 Web 身份验证代理启用 SSO，而你的应用必须调用未获取 *callbackUri* 参数的 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) 的重载。 借此，可通过 Web 身份验证代理存储永久 Cookie，同一应用将来进行身份验证调用时将无需要求用户重复登录（用户的有效“登录”将可持续至访问令牌过期）。
+默认情况下，Web 身份验证代理不允许保留 cookie。 正因为如此，所以即使应用用户指示他们希望保留登录状态（例如，通过选择提供商的登录对话框中的复选框），他们也必须在每次希望访问该提供商的资源时登录。 若要使用 SSO 登录，则联机标识提供者必须为 Web 身份验证代理启用 SSO，而你的应用必须调用未获取 *callbackUri* 参数的 [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 的重载。 借此，可通过 Web 身份验证代理存储永久 Cookie，同一应用将来进行身份验证调用时将无需要求用户重复登录（用户的有效“登录”将可持续至访问令牌过期）。
 
-若要支持 SSO，联机提供商必须允许你采用 `ms-app://<appSID>` 形式注册重定向 URI，其中 `<appSID>` 为应用的 SID。 可从应用开发人员页面中为应用找到应用的 SID，或通过调用 [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069) 方法（也可以达到此目的）。
+若要支持 SSO，联机提供商必须允许你采用 `ms-app://<appSID>` 形式注册重定向 URI，其中 `<appSID>` 为应用的 SID。 可从应用开发人员页面中为应用找到应用的 SID，或通过调用 [**GetCurrentApplicationCallbackUri**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.getcurrentapplicationcallbackuri) 方法（也可以达到此目的）。
 
 ```cs
 string result;

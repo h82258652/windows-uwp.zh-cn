@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: fe63c527-8f06-43a5-868f-de909f5664b3
 ms.localizationpriority: medium
-ms.openlocfilehash: aff65e5f1b4771cbb33bc8b8219224042b7bf7e2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 27810fb850a54b70e620f06ea033b7c362792bfc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660682"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372963"
 ---
 # <a name="whats-new-for-developers-in-the-latest-update-of-uwp-on-xbox-one"></a>Xbox One 上的 UWP 的最新更新中面向开发人员的新增功能
 
@@ -21,7 +21,7 @@ Xbox One 上的通用 Windows 平台 (UWP) 的最新更新包含以下新功能�
 Xbox 不再支持 x86 应用开发或将 x86 应用商店提交到应用商店。
 
 ## <a name="apps-can-now-support-navigating-back-to-the-previous-app"></a>应用现在可支持导航回上一个应用 
-Xbox One 上的 UWP 现在可支持导航回上一个应用。 若要实现此目的，请订阅  [**Windows.UI.Core.SystemNavigationManager.BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893595) 事件并将事件处理程序中的 **Handled** 属性设为 **false**。
+Xbox One 上的 UWP 现在可支持导航回上一个应用。 若要实现此目的，请订阅  [**Windows.UI.Core.SystemNavigationManager.BackRequested**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager) 事件并将事件处理程序中的 **Handled** 属性设为 **false**。
 
 > [!NOTE]
 > 出于兼容性原因，此功能仅可用于 Xbox One 上具有最新 UWP 版本的应用。 
@@ -41,13 +41,13 @@ Windows Device Portal (WDP) 现在包含面向控制台设置的其他支持。
 ## <a name="you-can-now-switch-the-type-of-your-uwp-title-between-app-and-game"></a>现在，你可以将 UWP 标题类型在“应用”和“游戏”之间切换。
 通过在“应用”和“游戏”之间切换 UWP 标题类型，你可以测试游戏方案而无需将其发布到应用商店。 在开发人员主页的**游戏和应用**窗格中选择此应用，按下控制器上的“查看”按钮，选择**应用详细信息**，然后将类型更改为“应用”或“游戏”。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 - [已知问题](known-issues.md)
 - [在 Xbox One 上 UWP](index.md)
  - 现在，你可以捕获主机的屏幕截图。 有关获取屏幕截图的详细信息，请参阅 [/ext/screenshot](wdp-media-capture-api.md) 参考主题。
  - 该工具可以部署 Loose 文件版本的应用。 有关 Loose 文件版本的详细信息，请参阅 [/api/app/packagemanager/register](wdp-loose-folder-register-api.md) 参考主题。
  - 可以从开发电脑上的“文件资源管理器”访问主机上的开发人员文件。 有关通过“文件资源管理器”访问文件的详细信息，请参阅 [/ext/smb/developerfolder](wdp-smb-api.md) 参考主题。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 - [已知问题](known-issues.md)
 - [在 Xbox One 上 UWP](index.md)

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
 ms.localizationpriority: medium
-ms.openlocfilehash: a382fd879ce656a81e1de4ae2d91180f622cd730
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 40cf41df4ccf15206e5855f989bc46c599baa473
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334736"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372069"
 ---
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>用于 Xbox One 上 UWP 应用和游戏的系统资源
 
@@ -23,7 +23,7 @@ Xbox One 上运行的 UWP 应用与系统和其他应用共享资源。 Xbox One
 
 后台运行的应用最多可使用 128 MB 内存。 背景模式仅适用于并发应用程序，如后台音乐播放器。  游戏会暂停，并在后台终止。
 
-超过限制将导致内存分配故障。 有关监视内存使用情况的详细信息，请参阅 [MemoryManager 类](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)参考。
+超过限制将导致内存分配故障。 有关监视内存使用情况的详细信息，请参阅 [MemoryManager 类](https://docs.microsoft.com/uwp/api/windows.system.memorymanager)参考。
     
     > [!NOTE]
     > When running your app or game from the Visual Studio debugger, these memory constraints do not apply. This limit is only applicable when not running in debugging mode.
@@ -55,5 +55,5 @@ Xbox One 上运行的 UWP 应用与系统和其他应用共享资源。 Xbox One
 ## <a name="see-also"></a>请参阅
 - [在 Xbox One 上 UWP](index.md)
 - [开始使用 Xbox Live Creators 计划](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/creators-program)
-- [DirectX 和 Xbox One 上 UWP](https://blogs.msdn.microsoft.com/chuckw/2017/12/15/directx-and-uwp-on-xbox-one/)
+- [DirectX 和 Xbox One 上 UWP](https://walbourn.github.io/)
 

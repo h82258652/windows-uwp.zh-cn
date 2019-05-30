@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ae1b0c272af5939deba73ff7a07797207d7caaa4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e3b6ab53e5e9f0b36e6bdeb047b48766cda7a2a5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651002"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372392"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>Windows Phone Silverlight 到 UWP 案例研究：Bookstore2
 
@@ -56,9 +56,9 @@ ms.locfileid: "57651002"
 -   将 `phone:PhoneApplicationPage` 更改为 `Page`（包括出现在属性元素语法中的相应项）。
 -   删除 `phone` 和 `shell` 命名空间前缀声明。
 -   在其余的命名空间前缀声明中将“clr-namespace”更改为“using”。
--   删除 `SupportedOrientations="Portrait"` 和 `Orientation="Portrait"`，然后在新项目的应用包清单中配置 **“纵向”**。
+-   删除 `SupportedOrientations="Portrait"` 和 `Orientation="Portrait"`，然后在新项目的应用包清单中配置 **“纵向”** 。
 -   删除 `shell:SystemTray.IsVisible="True"`。
--   跳转列表项目转换器的类型（在标记中以资源形式存在）已移动到 [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) 命名空间。 因此，请添加命名空间前缀声明 Windows\_UI\_Xaml\_控件\_基元并将其映射到**Windows.UI.Xaml.Controls.Primitives**。 在跳转列表项目转换器资源上，将该前缀从 `phone:` 更改为 `Windows_UI_Xaml_Controls_Primitives:`。
+-   跳转列表项目转换器的类型（在标记中以资源形式存在）已移动到 [**Windows.UI.Xaml.Controls.Primitives**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives) 命名空间。 因此，请添加命名空间前缀声明 Windows\_UI\_Xaml\_控件\_基元并将其映射到**Windows.UI.Xaml.Controls.Primitives**。 在跳转列表项目转换器资源上，将该前缀从 `phone:` 更改为 `Windows_UI_Xaml_Controls_Primitives:`。
 -   将对 `PhoneTextExtraLargeStyle` **TextBlock** 样式的所有引用替换为对 `SubtitleTextBlockStyle` 的引用、将 `PhoneTextSubtleStyle` 替换为 `SubtitleTextBlockStyle`、将 `PhoneTextNormalStyle` 替换为 `CaptionTextBlockStyle`，然后将 `PhoneTextTitle1Style` 替换为 `HeaderTextBlockStyle`，正如我们对 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 所执行的操作一样。
 -   `BookTemplate` 中存在一个例外。 第二个 **TextBlock** 的样式应引用 `CaptionTextBlockStyle`。
 -   从 `AuthorGroupHeaderTemplate` 内的 **TextBlock** 中 删除 FontFamily 属性，并将 **Border** 的 Background 设置为引用 `SystemControlBackgroundAccentBrush` 而非 `PhoneAccentBrush`。
@@ -67,7 +67,7 @@ ms.locfileid: "57651002"
 ## <a name="replacing-the-longlistselector"></a>替换 LongListSelector
 
 
-将 **LongListSelector** 替换为 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控件需要几个步骤，让我们开始吧。 **LongListSelector** 将直接绑定到分组的数据源，但 **SemanticZoom** 中包含 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 或 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 控件，它们将通过 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 适配器间接绑定到数据。 **CollectionViewSource** 必须以资源形式存在于标记中，因此，让我们先将其添加到 `<Page.Resources>` 内 MainPage.xaml 的标记中。
+将 **LongListSelector** 替换为 [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 控件需要几个步骤，让我们开始吧。 **LongListSelector** 将直接绑定到分组的数据源，但 **SemanticZoom** 中包含 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 或 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 控件，它们将通过 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 适配器间接绑定到数据。 **CollectionViewSource** 必须以资源形式存在于标记中，因此，让我们先将其添加到 `<Page.Resources>` 内 MainPage.xaml 的标记中。
 
 ```xml
     <CollectionViewSource
@@ -142,7 +142,7 @@ ms.locfileid: "57651002"
 
 在处理自适应视觉状态管理器这一部分之前，我们首先需要设计宽状态，这意味着需要向我们标记中添加一些新的视觉元素和模板。 以下步骤将介绍如何执行此操作。 依据视觉元素和模板的命名约定，我们将单词“宽”纳入到适用于宽状态的任意元素或模板中。 如果元素或模板不包含单词“宽”，你可以假定它属于窄状态（这是默认状态），且在页面的可视元素上其属性值已设为本地值。 在标记中，仅宽状态的属性值才能通过实际的视觉状态进行设置。
 
--   在标记中，创建 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控件的副本并对其设置 `x:Name="narrowSeZo"`。 在原始副本上，依次设置 `x:Name="wideSeZo"` 和 `Visibility="Collapsed"`，以便在默认情况下使宽状态不可见。
+-   在标记中，创建 [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 控件的副本并对其设置 `x:Name="narrowSeZo"`。 在原始副本上，依次设置 `x:Name="wideSeZo"` 和 `Visibility="Collapsed"`，以便在默认情况下使宽状态不可见。
 -   在 `wideSeZo` 中，针对放大视图和缩小视图将 **ListView** 更改为 **GridView**。
 -   创建 `AuthorGroupHeaderTemplate`、`ZoomedOutAuthorTemplate` 和 `BookTemplate` 这三个资源的副本，并将单词 `Wide` 附加到这些副本的相关键。 此外，还需更新 `wideSeZo`，以便它可引用这些新资源的相关键。
 -   将 `AuthorGroupHeaderTemplateWide` 中的内容替换为 `<TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding Name}"/>`。
@@ -220,7 +220,7 @@ ms.locfileid: "57651002"
 
 -   在 `AuthorGroupHeaderTemplate` 的 **TextBlock** 上设置 `Foreground="White"`，以便它在移动设备系列上运行时显示正确的外观。
 -   在 `AuthorGroupHeaderTemplate` 和 `ZoomedOutAuthorTemplate` 中，将 `FontWeight="SemiBold"` 添加到 **TextBlock**。
--   在 `narrowSeZo` 中，缩小视图中的组标题和作者是左对齐而不是拉伸的，那么让我们开始吧。 我们通过将 [**HorizontalContentAlignment**](https://msdn.microsoft.com/library/windows/apps/br209417) 设置为 `Stretch`，为放大视图创建 [**HeaderContainerStyle**](https://msdn.microsoft.com/library/windows/apps/dn251841)。 并且将为包含同一 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 的缩小视图创建 [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/br242817)。 其外观如下所示。
+-   在 `narrowSeZo` 中，缩小视图中的组标题和作者是左对齐而不是拉伸的，那么让我们开始吧。 我们通过将 [**HorizontalContentAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.horizontalcontentalignment) 设置为 `Stretch`，为放大视图创建 [**HeaderContainerStyle**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.groupstyle.headercontainerstyle)。 并且将为包含同一 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 的缩小视图创建 [**ItemContainerStyle**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)。 其外观如下所示。
 
 ```xml
    <Style x:Key="AuthorGroupHeaderContainerStyle" TargetType="ListViewHeaderItem">
@@ -268,7 +268,7 @@ ms.locfileid: "57651002"
 
 ## <a name="making-the-view-model-more-flexible"></a>使视图模型更灵活
 
-本部分包含多种设施的示例，这些设施是由于移动我们的应用以使用 UWP 而对我们开放的。 下面介绍一些可选步骤，你可以利用它们在通过 **CollectionViewSource** 访问视图模型时使之更灵活。 视图模型 (源文件是在 ViewModel\\BookstoreViewModel.cs) 我们从 Windows Phone Silverlight 应用程序 Bookstore2WPSL8 移植包含一个名为作者，派生类**列表&lt;T&gt;**，其中**T**是 BookSku。 这意味着，Author 类*是一*组 BookSku。
+本部分包含多种设施的示例，这些设施是由于移动我们的应用以使用 UWP 而对我们开放的。 下面介绍一些可选步骤，你可以利用它们在通过 **CollectionViewSource** 访问视图模型时使之更灵活。 视图模型 (源文件是在 ViewModel\\BookstoreViewModel.cs) 我们从 Windows Phone Silverlight 应用程序 Bookstore2WPSL8 移植包含一个名为作者，派生类**列表&lt;T&gt;** ，其中**T**是 BookSku。 这意味着，Author 类*是一*组 BookSku。
 
 当我们将 **CollectionViewSource.Source** 绑定到 Authors 时，我们要传达的唯一信息是 Authors 中的每个 Author 都是一个包含*某些内容*的组。 我们将其保留为 **CollectionViewSource**，以确定在此情况下 Author 确实是一组 BookSku。 该方法可用：但是不灵活。 如果我们希望 Author *既属于*一组 BookSku *又属于*一组作者的住址呢？ Author 不可能同时*属于*这两个组。 但 Author 可以*包含*任意数量的组。 而这就是解决方案：使用*包含组*模式而不是我们当前在使用的*属于组*模式。 以下是操作方法：
 
@@ -299,6 +299,6 @@ ms.locfileid: "57651002"
 
 现在，如果我们乐意，我们可以选择删除 `ItemsPath="BookSkus"`，而该应用仍将正常运行。
 
-## <a name="conclusion"></a>结论
+## <a name="conclusion"></a>结束语
 
 在此案例研究涉及了一个比上一个用户界面更为大胆的用户界面。 所有设备和 Windows Phone Silverlight 的概念 **LongListSelector**— 和的详细信息-未找到可供使用的 UWP 应用中的窗体**SemanticZoom**， **ListView**， **GridView**，和**CollectionViewSource**。 我们展示了如何在 UWP 应用中重复使用、或复制并编辑强制性代码和标记，以实现为适合最窄和最宽以及介于这两者之间的所有大小的 Windows 设备外形规格而定制的功能、UI 和交互。

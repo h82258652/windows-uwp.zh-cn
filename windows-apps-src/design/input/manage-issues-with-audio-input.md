@@ -8,29 +8,29 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d2c80fd30d158f0890ed70311cdf83dce2058e5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: aef21bc72c7458aecc3ea8f0a3cae275a22d9f08
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644902"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365607"
 ---
 # <a name="manage-issues-with-audio-input"></a>管理音频输入问题
 
 
 了解如何管理由音频输入质量所导致的语音识别准确度的问题。
 
-> **重要的 API**：[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)， [ **RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)， [ **SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
+> **重要的 API**：[**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer)， [ **RecognitionQualityDegrading**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading)， [ **SpeechRecognitionAudioProblem**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem)
 
 
 ## <a name="assess-audio-input-quality"></a>评估音频输入质量
 
 
-当语音识别处于活动状态时，使用语音识别器的 [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) 事件，确定一个或多个音频问题是否会干扰语音输入。 事件参数 ([**SpeechRecognitionQualityDegradingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn631430)) 可提供 [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) 属性，该属性描述了检测到的音频输入问题。
+当语音识别处于活动状态时，使用语音识别器的 [**RecognitionQualityDegrading**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading) 事件，确定一个或多个音频问题是否会干扰语音输入。 事件参数 ([**SpeechRecognitionQualityDegradingEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs)) 可提供 [**Problem**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionqualitydegradingeventargs.problem) 属性，该属性描述了检测到的音频输入问题。
 
 背景噪音太大、麦克风设为静音以及扬声器的音量或语速都可能会影响语音识别。
 
-在此情况下，我们可以配置一个语音识别器并开始侦听 [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) 事件。
+在此情况下，我们可以配置一个语音识别器并开始侦听 [**RecognitionQualityDegrading**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading) 事件。
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -65,9 +65,9 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 ## <a name="manage-the-speech-recognition-experience"></a>管理语音识别体验
 
 
-使用由 [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) 属性提供的说明可帮助用户改善识别的条件。
+使用由 [**Problem**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionqualitydegradingeventargs.problem) 属性提供的说明可帮助用户改善识别的条件。
 
-在此处，我们将为 [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) 事件创建一个处理程序，用于检查较低的音量级别。 然后，我们将使用 [**SpeechSynthesizer**](https://msdn.microsoft.com/library/windows/apps/dn298152) 对象建议用户尝试提高音量。
+在此处，我们将为 [**RecognitionQualityDegrading**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading) 事件创建一个处理程序，用于检查较低的音量级别。 然后，我们将使用 [**SpeechSynthesizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechSynthesis.SpeechSynthesizer) 对象建议用户尝试提高音量。
 
 ```CSharp
 private async void speechRecognizer_RecognitionQualityDegrading(

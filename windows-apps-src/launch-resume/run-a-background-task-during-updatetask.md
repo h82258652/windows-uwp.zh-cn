@@ -5,12 +5,12 @@ ms.date: 04/21/2017
 ms.topic: article
 keywords: windows 10、 uwp、 更新、 后台任务、 updatetask、 后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cd7d4494340d1c5e617361f2e3d750b35ebabb9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3683595926f20fdd9f9af5929db65396b0001bcc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603522"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371479"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>在 UWP 应用更新时运行后台任务
 
@@ -26,8 +26,8 @@ Update Task 与使用 [ServicingComplete](https://docs.microsoft.com/uwp/api/Win
 
 - 向你的解决方案添加一个 Windows 运行时组件项目。
 - 创建从你的应用到该组件的引用。
-- 在实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 的组件中创建一个公共的密封类。
-- 实现 [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法，该方法是 Update Task 运行时调用的必需的入口点。 如果你要从后台任务进行异步调用，[创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)介绍了如何通过 **Run** 方法使用延迟。
+- 在实现 [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 的组件中创建一个公共的密封类。
+- 实现 [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.) 方法，该方法是 Update Task 运行时调用的必需的入口点。 如果你要从后台任务进行异步调用，[创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)介绍了如何通过 **Run** 方法使用延迟。
 
 你无需注册此后台任务（**创建和注册进程外后台任务**主题的“注册要运行的后台任务”部分）即可使用 Update Task。 这是使用 Update Task 的主要原因，因为你无需在你的应用中添加任何代码来注册任务，应用也无需在更新前运行至少一次来注册后台任务。
 
@@ -93,6 +93,6 @@ namespace BackgroundTasks
 > [!NOTE]
 > Visual Studio 2015 用户：上面的步骤适用于 Visual Studio 2017。 如果你使用 Visual Studio 2015，则可以使用相同的技术触发和测试 UpdateTask，除非 Visual Studio 无法连接到它。 VS 2015 中的替代过程是设置 [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app)，它将 UpdateTask 设置为其入口点，并从前台应用直接触发执行。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)

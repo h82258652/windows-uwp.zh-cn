@@ -7,22 +7,22 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2175ce19824068a850ff70340b467f09e5c76540
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2e193ab7bce31c1f13cb40f04902922c6ff21056
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592742"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370915"
 ---
 # <a name="texture2d-and-texture2darray-subresource-tiling"></a>Texture2D 和 Texture2DArray 子资源平铺
 
 
-这些表说明了 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) 和 [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) 子资源的平铺方式。 这些表中的值未计入尾部 mip 打包。
+这些表说明了 [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) 和 [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray) 子资源的平铺方式。 这些表中的值未计入尾部 mip 打包。
 
 ## <a name="span-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spansubresources-with-multisample-counts-of-1"></a><span id="Subresources-with-multisample-counts-of-1"></span><span id="subresources-with-multisample-counts-of-1"></span><span id="SUBRESOURCES-WITH-MULTISAMPLE-COUNTS-OF-1"></span>多重采样计数 1 与子
 
 
-此表说明了多重采样计数为 1 的 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) 和 [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) 子资源的平铺方式。
+此表说明了多重采样计数为 1 的 [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) 和 [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray) 子资源的平铺方式。
 
 | 位数/像素（每像素选择 1 个示例） | 磁贴尺寸（像素，宽 x 高） |
 |-----------------------------|-------------------------------|
@@ -41,7 +41,7 @@ ms.locfileid: "57592742"
 ## <a name="span-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspansubresources-with-various-multisample-counts"></a><span id="Subresources-with-various-multisample-counts"></span><span id="subresources-with-various-multisample-counts"></span><span id="SUBRESOURCES-WITH-VARIOUS-MULTISAMPLE-COUNTS"></span>子与各种多重采样计数
 
 
-此表说明了多重采样数各不相同的 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) 和 [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) 子资源的平铺方式。
+此表说明了多重采样数各不相同的 [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) 和 [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray) 子资源的平铺方式。
 
 | 位数/像素（每像素选择 1 个示例） | 磁贴尺寸（像素，宽 x 高） |
 |-----------------------------|-------------------------------|

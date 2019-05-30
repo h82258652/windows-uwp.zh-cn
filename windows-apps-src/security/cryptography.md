@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 156c4cc62e1997f5d647c06c87e226fe519de168
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: abe151bd78a0340b91aa1600ad34282b94b6d216
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650362"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372596"
 ---
 # <a name="cryptography"></a>加密
 
@@ -93,7 +93,7 @@ ms.locfileid: "57650362"
 
 ### <a name="cryptography-support"></a>加密支持
 
-你可以执行以下加密任务。 有关详细信息，请参阅 [**Windows.Security.Cryptography.Core**](https://msdn.microsoft.com/library/windows/apps/br241547) 命名空间。
+你可以执行以下加密任务。 有关详细信息，请参阅 [**Windows.Security.Cryptography.Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core) 命名空间。
 
 -   创建对称密钥
 -   执行对称加密
@@ -104,18 +104,18 @@ ms.locfileid: "57650362"
 -   哈希内容
 -   数字签名内容
 
-SDK 同时也为基于密码的数据保护提供简化的界面。 可使用此界面执行以下任务。 有关详细信息，请参阅 [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) 命名空间。
+SDK 同时也为基于密码的数据保护提供简化的界面。 可使用此界面执行以下任务。 有关详细信息，请参阅 [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) 命名空间。
 
 -   静态数据的异步保护
 -   数据流的异步保护
 
 ### <a name="encoding-support"></a>编码支持
 
-应用可以编码加密数据以在网络上传输，也可以解码从网络资源收到的数据。 有关详细信息，请参阅 [**Windows.Security.Cryptography**](https://msdn.microsoft.com/library/windows/apps/br241404) 命名空间中可用的静态方法。
+应用可以编码加密数据以在网络上传输，也可以解码从网络资源收到的数据。 有关详细信息，请参阅 [**Windows.Security.Cryptography**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography) 命名空间中可用的静态方法。
 
 ### <a name="pki-support"></a>PKI 支持
 
-应用可以执行以下 PKI 任务。 有关详细信息，请参阅 [**Windows.Security.Cryptography.Certificates**](https://msdn.microsoft.com/library/windows/apps/br241476) 命名空间。
+应用可以执行以下 PKI 任务。 有关详细信息，请参阅 [**Windows.Security.Cryptography.Certificates**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates) 命名空间。
 
 -   创建证书
 -   创建自签名证书
@@ -143,7 +143,7 @@ SDK 同时也为基于密码的数据保护提供简化的界面。 可使用此
 |-------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [证书](certificates.md)                                               | 本文将讨论如何在 UWP 应用中使用证书。 在公钥加密中使用数字证书将公钥绑定到个人、计算机或组织。 绑定身份主要用于针对一个实体来验证另一个。 例如，证书通常用来为用户验证 Web 服务器和为 Web 服务器验证用户。 你可以创建证书请求并安装或导入已颁发的证书。 还可以按照证书层次结构注册证书。 |
 | [加密密钥](cryptographic-keys.md)                                   | 本文显示了如何使用标准密钥派生函数来派生密钥以及如何使用对称密钥和非对称密钥来加密内容。                                                                                                                                                                                                                                                                                                                                                                             |
-| [数据保护](data-protection.md)                                         | 本文介绍了如何在 UWP 应用中使用 [Windows.Security.Cryptography.DataProtection](https://msdn.microsoft.com/library/windows/apps/br241585) 命名空间中的 [DataProtectionProvider](https://msdn.microsoft.com/library/windows/apps/br241559) 类加密和解密数字数据。                                                                                                                                                                                                                  |
+| [数据保护](data-protection.md)                                         | 本文介绍了如何在 UWP 应用中使用 [Windows.Security.Cryptography.DataProtection](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) 命名空间中的 [DataProtectionProvider](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) 类加密和解密数字数据。                                                                                                                                                                                                                  |
 | [MAC、哈希以及签名](macs-hashes-and-signatures.md)               | 本文讨论如何在 UWP 应用中使用消息验证代码 (MAC)、哈希以及签名来检测消息篡改。                                                                                                                                                                                                                                                                                                                                                                                |
 | [有关加密的导出限制](export-restrictions-on-cryptography.md) | 使用此信息可以确定应用使用加密的方式是否可能会阻止它被列在 Microsoft Store 中。                                                                                                                                                                                                                                                                                                                                                                                            |
 | [常见的加密任务](common-cryptography-tasks.md)                     | 这些文章提供常见的 UWP 加密任务的示例代码，这些任务包括创建随机数、比较缓冲区、在字符串和二进制数据之间转换、复制到字节数组和从字节数组复制，以及编码和解码数据等。                                                                                                                                                                                                                                                                                    |

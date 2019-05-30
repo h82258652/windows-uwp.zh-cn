@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ee96628fd90ec9eea998abf312c5da11bff3826
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 28419df1a37ff640db7246b54e50da5bfce9fedb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624352"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372621"
 ---
 # <a name="intro-to-certificates"></a>证书简介
 
@@ -53,18 +53,18 @@ X.509 公钥证书标准已经随着时间的过去经过了修订。 每一个�
 
 ![x.509 证书版本 1、2 和 3](images/x509certificateversions.png)
 
-在使用 [**CertificateRequestProperties**](https://msdn.microsoft.com/library/windows/apps/br212079) 类创建证书请求时，可以直接指定某些字段和扩展。 大多数不能。 这些字段可由证书颁发机构填充，也可以保留为空。 有关这些字段的详细信息，请参阅以下部分：
+在使用 [**CertificateRequestProperties**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.CertificateRequestProperties) 类创建证书请求时，可以直接指定某些字段和扩展。 大多数不能。 这些字段可由证书颁发机构填充，也可以保留为空。 有关这些字段的详细信息，请参阅以下部分：
 
 ### <a name="version-1-fields"></a>版本 1 字段
 
 | 字段 | 描述 |
 |-------|-------------|
-| 版本 | 指定所编码证书的版本号。 当前，此字段的可能值为 0、1 或 2。 |
+| Version | 指定所编码证书的版本号。 当前，此字段的可能值为 0、1 或 2。 |
 | 序列号 | 包含证书颁发机构 (CA) 分配给证书的一个唯一正整数。 |
 | 签名算法 | 包含一个对象标识符 (OID)，指定 CA 用于对证书进行签名的算法。 例如，1.2.840.113549.1.1.5 指定 SHA-1 哈希算法与来自 RSA 实验室的 RSA 加密算法结合使用。 |
 | 颁发者 | 包含创建和签名证书的 CA 的 X.500 可分辨名称 (DN)。 |
 | 有效期 | 指定证书有效的时间间隔。 到 2049 年末之前的日期使用协调世界时（格林威治标准时间）格式 (yymmddhhmmssz)。 2050 年 1 月 1 日开始的日期使用普通时间格式 (yyyymmddhhmmssz)。 |
-| 主题 | 包含实体的 X.500 可分辨名称，该实体与证书中包含的公钥相关联。 |
+| Subject | 包含实体的 X.500 可分辨名称，该实体与证书中包含的公钥相关联。 |
 | 公钥 | 包含公钥和关联的算法信息。 |
 
 ### <a name="version-2-fields"></a>版本 2 字段

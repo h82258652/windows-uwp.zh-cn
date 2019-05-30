@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 77ee3191bc41fca672a055a708523578390860b4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b2fe6fe4c7fe22d71e2154be2db082bb43cc4ed1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623702"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369696"
 ---
 # <a name="use-the-accelerometer"></a>使用加速计
 
 
 **重要的 Api**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**加速感应器**](https://msdn.microsoft.com/library/windows/apps/BR225687)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**Accelerometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)
 
 **示例**
 
@@ -29,7 +29,7 @@ ms.locfileid: "57623702"
 
 一个简单的游戏应用依赖于单个传感器，即加速计，作为输入设备。 这些应用通常只使用单轴或双轴进行输入，但它们也会将抖动事件作为另一个输入源使用。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 
 您应了解与 Extensible Application Markup Language (XAML)，Microsoft Visual C#，和事件。
 
@@ -41,7 +41,7 @@ ms.locfileid: "57623702"
 
 ### <a name="instructions"></a>说明
 
--   创建新项目，从“Visual C#”项目模板中选择“空白应用(通用 Windows)”。
+-   创建新项目，从“Visual C#”  项目模板中选择“空白应用(通用 Windows)”  。
 
 -   打开项目的 MainPage.xaml.cs 文件，使用下列内容替换现有代码。
 

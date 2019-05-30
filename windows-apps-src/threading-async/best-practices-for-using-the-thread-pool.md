@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 线程, 线程池
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c004feabf561c5a94fadba858762bf683c9ff0e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a498f685e7a810d19e2f1eb63ae112dd02587b84
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628042"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370693"
 ---
 # <a name="best-practices-for-using-the-thread-pool"></a>使用线程池的最佳做法
 
@@ -26,9 +26,9 @@ ms.locfileid: "57628042"
 
 -   创建生存时间较短的独立工作项。 工作项异步运行，可以从队列中以任何顺序将它们提交到池中。
 
--   使用 [**Windows.UI.Core.CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) 调度对 UI 线程的更新。
+-   使用 [**Windows.UI.Core.CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 调度对 UI 线程的更新。
 
--   使用 [**ThreadPoolTimer.CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) 而不是 **Sleep** 函数。
+-   使用 [**ThreadPoolTimer.CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) 而不是 **Sleep** 函数。
 
 -   使用线程池，而不是创建自己的线程管理系统。 线程池运行在具有高级功能的操作系统级别，并且优化为根据进程和整个系统内的设备资源和活动来动态缩放。
 
@@ -43,7 +43,7 @@ ms.locfileid: "57628042"
 
 -   不要提交需要花费比 *period* 参数指定的时间量更长的时间才能完成的定期工作项。
 
--   不要尝试从后台任务调度的工作项发送 UI 更新（非 Toast 和通知）。 相反，使用后台任务进度和完成处理程序（例如 [**IBackgroundTaskInstance.Progress**](https://msdn.microsoft.com/library/windows/apps/BR224800)）。
+-   不要尝试从后台任务调度的工作项发送 UI 更新（非 Toast 和通知）。 相反，使用后台任务进度和完成处理程序（例如 [**IBackgroundTaskInstance.Progress**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress)）。
 
 -   当使用的工作项处理程序使用 **async** 关键字时，请注意，在执行处理程序中的所有代码之前，线程池工作项可能会设置为完成状态。 在工作项已设置为完成状态后，可能会执行处理程序中 **await** 关键字之后的代码。
 

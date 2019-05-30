@@ -6,19 +6,19 @@ keywords: uwp, 加载项, 应用内购买, IAP, Windows.ApplicationModel.Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9be40d78e00e583988ba8c6b318e7a8941d7f971
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 44cc0674e98c2fdf1bf8ecd2fbf6f859dfe25e62
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334975"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371848"
 ---
 # <a name="enable-in-app-product-purchases"></a>启用应用内产品购买
 
 无论你的应用是否免费，你都可以直接从应用中销售内容、其他应用或新的应用功能（例如解锁游戏的下一关）。 我们在此处显示了如何在应用中启用这些产品。
 
 > [!IMPORTANT]
-> 本文介绍如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间的成员来支持应用内产品购买。 此命名空间不再更新新功能，我们建议你使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间。 **Windows.Services.Store**命名空间支持的最新的外接程序类型，如应用商店管理可使用外接程序和订阅，并旨在成为未来的产品和功能支持的合作伙伴类型兼容。中心和存储。 **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 有关使用 **Windows.Services.Store** 命名空间启用应用内产品购买的更多信息，请参阅[此文章](enable-in-app-purchases-of-apps-and-add-ons.md)。
+> 本文介绍如何使用 [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) 命名空间的成员来支持应用内产品购买。 此命名空间不再更新新功能，我们建议你使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间。 **Windows.Services.Store**命名空间支持的最新的外接程序类型，如应用商店管理可使用外接程序和订阅，并旨在成为未来的产品和功能支持的合作伙伴类型兼容。中心和存储。 **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 有关使用 **Windows.Services.Store** 命名空间启用应用内产品购买的更多信息，请参阅[此文章](enable-in-app-purchases-of-apps-and-add-ons.md)。
 
 > [!NOTE]
 > 试用版应用不能提供应用内产品。 仅当使用试用版应用的客户购买了完整版应用后，他们才可以购买应用内产品。
@@ -26,12 +26,12 @@ ms.locfileid: "58334975"
 ## <a name="prerequisites"></a>先决条件
 
 -   可添加供客户购买的功能的 Windows 应用。
--   首次编码和测试新的应用内产品时，必须使用 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) 对象而不是 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) 对象。 这样，你可以使用对许可证服务器的模拟调用验证许可证逻辑，而不是调用实时服务器。 若要执行此操作，需要自定义文件中 %userprofile%命名 WindowsStoreProxy.xml\\AppData\\本地\\包\\&lt;包名称&gt;\\LocalState\\Microsoft\\Windows 应用商店\\ApiData。 Microsoft Visual Studio 仿真器会在你首次运行应用时创建此文件，你也可以在运行时加载一个自定义文件。 有关详细信息，请参阅[将 WindowsStoreProxy.xml 文件与 CurrentAppSimulator 一起使用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy)。
+-   首次编码和测试新的应用内产品时，必须使用 [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) 对象而不是 [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 对象。 这样，你可以使用对许可证服务器的模拟调用验证许可证逻辑，而不是调用实时服务器。 若要执行此操作，需要自定义文件中 %userprofile%命名 WindowsStoreProxy.xml\\AppData\\本地\\包\\&lt;包名称&gt;\\LocalState\\Microsoft\\Windows 应用商店\\ApiData。 Microsoft Visual Studio 仿真器会在你首次运行应用时创建此文件，你也可以在运行时加载一个自定义文件。 有关详细信息，请参阅[将 WindowsStoreProxy.xml 文件与 CurrentAppSimulator 一起使用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy)。
 -   本主题还参考了[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)中提供的代码示例。 若要获得为通用 Windows 平台 (UWP) 应用提供的不同货币化选项的实际体验，此示例是一个不错的选择。
 
 ## <a name="step-1-initialize-the-license-info-for-your-app"></a>第 1 步：初始化你的应用的许可证信息
 
-当应用在执行初始化时，请通过初始化 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) 或 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) 获取应用的 [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) 对象，从而启用应用内产品的购买。
+当应用在执行初始化时，请通过初始化 [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 或 [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) 获取应用的 [LicenseInformation](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.LicenseInformation) 对象，从而启用应用内产品的购买。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#InitializeLicenseTest)]
@@ -74,7 +74,7 @@ ms.locfileid: "58334975"
 
 ## <a name="step-3-change-the-test-code-to-the-final-calls"></a>步骤 3:将测试代码更改为最后一个调用
 
-这是一个简单的步骤：在应用的代码中将对 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) 的每个引用更改为 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765)。 你不再需要提供 WindowsStoreProxy.xml 文件，因此请将它从你的应用路径中删除（但是你可能希望保存它，以便在下一步中配置应用内付费内容时进行引用）。
+这是一个简单的步骤：在应用的代码中将对 [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) 的每个引用更改为 [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp)。 你不再需要提供 WindowsStoreProxy.xml 文件，因此请将它从你的应用路径中删除（但是你可能希望保存它，以便在下一步中配置应用内付费内容时进行引用）。
 
 ## <a name="step-4-configure-the-in-app-product-offer-in-the-store"></a>步骤 4：配置存储区中的应用内产品的产品/服务
 

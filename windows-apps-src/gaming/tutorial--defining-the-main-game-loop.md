@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 主对象
 ms.localizationpriority: medium
-ms.openlocfilehash: 96aefc8b053dd7490f47910ca5bb79989855e1a3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a3c47f3c22c41e7ca73c8a8b5d4e26dc27fab343
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651492"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367653"
 ---
 # <a name="define-the-main-game-object"></a>定义主游戏对象
 
@@ -54,7 +54,7 @@ __Simple3DGame__类对象：
 
 * 创建新的音频播放对象。
 * 创建游戏的图形基元的数组，包括级别基元、弹药和障碍的数组。
-* 创建用于保存游戏状态数据的位置，名为*游戏*，并放入由 [**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619) 指定的应用数据设置存储位置。
+* 创建用于保存游戏状态数据的位置，名为*游戏*，并放入由 [**ApplicationData::Current**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current) 指定的应用数据设置存储位置。
 * 创建游戏计时器和初始游戏内重叠位图。
 * 使用一组特定的视图和投影参数创建新的相机。
 * 输入设备（控制器）设置为与相机相同的俯仰和偏航，以使玩家在起始控制位置和相机位置之间具有 1 对 1 的对应性。
@@ -245,8 +245,8 @@ void GameRenderer::Render()
 
 -   **初始化**:设置全局变量的起始值并初始化游戏对象。 中包含的此[初始化并启动游戏](#initialize-and-start-the-game)部分。
 -   **LoadGame**:初始化新关卡并开始加载。
--   **LoadLevelAsync**:开始一个异步任务 (如果您不熟悉异步任务，请参阅[并行模式库](https://docs.microsoft.com/cpp/parallel/concrt/parallel-patterns-library-ppl)) 来初始化级别，然后调用一个异步任务上的呈现器加载设备的特定级别资源。 该方法在单独的线程中运行；因此，只可从该线程调用 [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) 方法（相对于 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 方法）。 任何设备上下文方法都在 **FinalizeLoadLevel** 方法中调用。
--   **FinalizeLoadLevel**:完成需要在主线程上进行的关卡加载所需的任何工作。 这包括对 Direct3D 11 设备上下文 ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) 方法的任何调用。
+-   **LoadLevelAsync**:开始一个异步任务 (如果您不熟悉异步任务，请参阅[并行模式库](https://docs.microsoft.com/cpp/parallel/concrt/parallel-patterns-library-ppl)) 来初始化级别，然后调用一个异步任务上的呈现器加载设备的特定级别资源。 该方法在单独的线程中运行；因此，只可从该线程调用 [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device) 方法（相对于 [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) 方法）。 任何设备上下文方法都在 **FinalizeLoadLevel** 方法中调用。
+-   **FinalizeLoadLevel**:完成需要在主线程上进行的关卡加载所需的任何工作。 这包括对 Direct3D 11 设备上下文 ([**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)) 方法的任何调用。
 -   **StartLevel**:开始执行游戏的新关卡。
 -   **PauseGame**:暂停游戏。
 -   **RunGame**:运行游戏循环的迭代。 如果游戏状态为 **Active**，则游戏循环的每次迭代都将从 **App::Update** 中调用它一次。

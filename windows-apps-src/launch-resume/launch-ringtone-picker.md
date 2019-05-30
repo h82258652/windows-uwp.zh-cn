@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0c17e4fb-7241-4da9-b457-d6d3a7aefccb
 ms.localizationpriority: medium
-ms.openlocfilehash: 293c755ecaf81ce80fab148a8aca92a7e3a8fa48
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 78ed118ba15f38f8914cf2046344d782cd0df71b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618582"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370796"
 ---
 # <a name="choose-and-save-tones-using-the-ms-tonepicker-uri-scheme"></a>使用 ms-tonepicker URI 方案选择并保存音调
 
@@ -23,7 +23,7 @@ ms.locfileid: "57618582"
 
 ## <a name="ms-tonepicker-uri-scheme-reference"></a>ms-tonepicker:URI 方案引用
 
-此 URI 方案不会通过 URI 方案字符串传递参数，而是通过 [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx) 传递参数。 所有字符串均区分大小写。
+此 URI 方案不会通过 URI 方案字符串传递参数，而是通过 [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) 传递参数。 所有字符串均区分大小写。
 
 以下部分指示应传递哪些参数，以便完成指定的任务。
 
@@ -45,17 +45,17 @@ if (status != LaunchQuerySupportStatus.Available)
 
 | 参数 | 在任务栏的搜索框中键入 | 必需 | 可能值 | 描述 |
 |-----------|------|----------|-------|-------------|
-| 操作 | 字符串 | 是 | “PickRingtone” | 打开音调选取器。 |
-| CurrentToneFilePath | 字符串 | 否 | 现有音调标记。 | 在音调选取器中显示为当前音调的音调。 如果未设置此值，默认情况下将选择列表上的第一个音调。<br>严格来讲，这不是文件路径。 你可以在从音调选取器中返回的 `ToneToken` 值中，为 `CurrenttoneFilePath` 获取一个适合的值。  |
-| TypeFilter | 字符串 | 否 | “Ringtones”、“Notifications”、“Alarms”、“None” | 选择要添加到选取器的音调。 如果未指定筛选器，将显示所有音调。 |
+| 操作 | string | 是 | “PickRingtone” | 打开音调选取器。 |
+| CurrentToneFilePath | string | 否 | 现有音调标记。 | 在音调选取器中显示为当前音调的音调。 如果未设置此值，默认情况下将选择列表上的第一个音调。<br>严格来讲，这不是文件路径。 你可以在从音调选取器中返回的 `ToneToken` 值中，为 `CurrenttoneFilePath` 获取一个适合的值。  |
+| TypeFilter | string | 否 | “Ringtones”、“Notifications”、“Alarms”、“None” | 选择要添加到选取器的音调。 如果未指定筛选器，将显示所有音调。 |
 
-在 [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) 中返回的值：
+在 [LaunchUriResults.Result](https://docs.microsoft.com/uwp/api/windows.system.launchuriresult.result) 中返回的值：
 
 | 返回值 | 在任务栏的搜索框中键入 | 可能值 | 描述 |
 |--------------|------|-------|-------------|
 | 结果 | Int32 | 0 - 成功。 <br>1 - 已取消。 <br>7 - 参数无效。 <br>8 - 没有匹配筛选条件的音调。 <br>255 - 未实现指定的操作。 | 选取器操作的结果。 |
-| ToneToken | 字符串 | 所选音调的标记。 <br>如果用户在选取器中选择“默认值”，该字符串为空。 | 此标记可用于 Toast 通知负载，或者可以指定为联系人的铃声或短信铃声。 如果 **Result** 为 0，仅在 ValueSet 中返回参数。 |
-| DisplayName | 字符串 | 指定的音调的友好名称。 | 可显示给用户并用于表示所选音调的字符串。 如果 **Result** 为 0，仅在 ValueSet 中返回参数。 |
+| ToneToken | string | 所选音调的标记。 <br>如果用户在选取器中选择“默认值”  ，该字符串为空。 | 此标记可用于 Toast 通知负载，或者可以指定为联系人的铃声或短信铃声。 如果 **Result** 为 0，仅在 ValueSet 中返回参数。 |
+| DisplayName | string | 指定的音调的友好名称。 | 可显示给用户并用于表示所选音调的字符串。 如果 **Result** 为 0，仅在 ValueSet 中返回参数。 |
 
 
 **示例：打开音选取器，以便用户可以选择音调**
@@ -92,11 +92,11 @@ if (result.Status == LaunchUriStatus.Success)
 
 | 参数 | 在任务栏的搜索框中键入 | 必需 | 可能值 | 描述 |
 |-----------|------|----------|-------|-------------|
-| 操作 | 字符串 | 是 | “SaveRingtone” | 打开选取器以保存铃声。 |
-| ToneFileSharingToken | 字符串 | 是 | 用于要保存的铃声文件的 [SharedStorageAccessManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.aspx) 文件共享标记 | 将特定的声音文件另存为铃声。 支持的文件内容类型为 mpeg 音频和 x-ms-wma 音频。 |
-| DisplayName | 字符串 | 否 | 指定的音调的友好名称。 | 设置要在保存指定铃声时使用的友好名称。 |
+| 操作 | string | 是 | “SaveRingtone” | 打开选取器以保存铃声。 |
+| ToneFileSharingToken | string | 是 | 用于要保存的铃声文件的 [SharedStorageAccessManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager) 文件共享标记 | 将特定的声音文件另存为铃声。 支持的文件内容类型为 mpeg 音频和 x-ms-wma 音频。 |
+| DisplayName | string | 否 | 指定的音调的友好名称。 | 设置要在保存指定铃声时使用的友好名称。 |
 
-在 [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) 中返回的值：
+在 [LaunchUriResults.Result](https://docs.microsoft.com/uwp/api/windows.system.launchuriresult.result) 中返回的值：
 
 | 返回值 | 在任务栏的搜索框中键入 | 可能值 | 描述 |
 |--------------|------|-------|-------------|
@@ -156,15 +156,15 @@ if (result.Status == LaunchUriStatus.Success)
 
 | 参数 | 在任务栏的搜索框中键入 | 必需 | 可能值 | 描述 |
 |-----------|------|----------|-------|-------------|
-| 操作 | 字符串 | 是 | “GetToneName” | 指示你想要获取音调的友好名称。 |
-| ToneToken | 字符串 | 是 | 音调标记 | 从中获取显示名称的音调标记。 |
+| 操作 | string | 是 | “GetToneName” | 指示你想要获取音调的友好名称。 |
+| ToneToken | string | 是 | 音调标记 | 从中获取显示名称的音调标记。 |
 
-在 [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) 中返回的值：
+在 [LaunchUriResults.Result](https://docs.microsoft.com/uwp/api/windows.system.launchuriresult.result) 中返回的值：
 
 | 返回值 | 在任务栏的搜索框中键入 | 可能值 | 描述 |
 |--------------|------|-------|-------------|
 | 结果 | Int32 | 0 - 选取器操作成功。<br>7 - 参数不正确（例如，未提供 ToneToken）。<br>9 - 从指定的标记读取名称时出错。<br>10 - 无法找到指定的音调标记。 | 选取器操作的结果。
-| DisplayName | 字符串 | 音调的友好名称。 | 返回所选音调的显示名称。 如果 **Result** 为 0，仅在 ValueSet 中返回此参数。 |
+| DisplayName | string | 音调的友好名称。 | 返回所选音调的显示名称。 如果 **Result** 为 0，仅在 ValueSet 中返回此参数。 |
 
 **示例：从 Contact.RingToneToken 检索音令牌，并显示其友好名称中的联系人卡片。**
 

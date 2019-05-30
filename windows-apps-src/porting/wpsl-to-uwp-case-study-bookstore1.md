@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b9f8de488ad0baea1de9aea5c911f2519385d25
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 02337d02472b7215f0fb9be47419caf52420e0f2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653862"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372409"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>Windows Phone Silverlight 到 UWP 案例研究：Bookstore1
 
 
-本主题介绍了案例研究的移植到 Windows 10 通用 Windows 平台 (UWP) 应用非常简单的 Windows Phone Silverlight 应用程序。 Windows 10 中，您可以创建单个应用包，你的客户可以将安装到各种设备，并且这就是我们要在此案例研究。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+本主题介绍了案例研究的移植到 Windows 10 通用 Windows 平台 (UWP) 应用非常简单的 Windows Phone Silverlight 应用程序。 Windows 10 中，您可以创建单个应用包，你的客户可以将安装到各种设备，并且这就是我们要在此案例研究。 请参阅 [UWP 应用指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。
 
 我们将移植的应用包含绑定到视图模型的 **ListBox**。 该视图模型具有显示标题、作者和书籍封面的书籍列表。 书籍封面已将**生成操作**设置为**内容**，并将**复制到输出目录**设置为**不要复制**。
 
@@ -87,7 +87,7 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
  
-若要设置这些样式，你可以将它们键入标记编辑器，或者可以使用 Visual Studio XAML 工具设置它们，无需键入任何内容。 为此，请右键单击**TextBlock**然后单击**编辑样式** &gt; **应用资源**。 若要执行此操作与**TextBlock**s 在项模板中，右键单击**ListBox**然后单击**编辑其他模板** &gt; **编辑生成项 (ItemTemplate)**。
+若要设置这些样式，你可以将它们键入标记编辑器，或者可以使用 Visual Studio XAML 工具设置它们，无需键入任何内容。 为此，请右键单击**TextBlock**然后单击**编辑样式** &gt; **应用资源**。 若要执行此操作与**TextBlock**s 在项模板中，右键单击**ListBox**然后单击**编辑其他模板** &gt; **编辑生成项 (ItemTemplate)** 。
 
 项目后有一个 80% 不透明的白色背景，因为 **ListBox** 控件的默认样式将其背景设置为 `ListBoxBackgroundThemeBrush` 系统资源。 在 **ListBox** 上设置 `Background="Transparent"` 以清除该背景。 若要使项模板中的 **TextBlock** 向左对齐，请采用上述的相同方式再次编辑它，并在两个 **TextBlock** 上都设置 `"9.6,0"` 的 **Margin**。
 
@@ -104,7 +104,7 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
-在 Bookstore1Universal 中，我们使用 ms-appx [URI 方案](https://msdn.microsoft.com/library/windows/apps/jj655406)。 因此，我们可以使其余的代码保持原样，可以使用 **System.Uri** 构造函数的不同重载将 ms-appx URI 方案放在基 URI 中，并在其中追加路径的其余部分。 如下所示：
+在 Bookstore1Universal 中，我们使用 ms-appx [URI 方案](https://docs.microsoft.com/previous-versions/windows/apps/jj655406(v=win.10))。 因此，我们可以使其余的代码保持原样，可以使用 **System.Uri** 构造函数的不同重载将 ms-appx URI 方案放在基 URI 中，并在其中追加路径的其余部分。 如下所示：
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".
@@ -131,7 +131,7 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 
 当应用在移动设备上运行时，列表框的背景在两种主题下都默认为浅色。 这可能是你喜欢的样式，如果是，则无需执行其他任何操作。 但控件的设计目的是你可以自定义它们的外观，同时使其行为不受影响。 因此，如果你希望列表框在深色主题下显示为深色（这是原始应用的外观），请按照“可选调整”下的[这些说明](w8x-to-uwp-case-study-bookstore1.md)操作。
 
-## <a name="conclusion"></a>结论
+## <a name="conclusion"></a>结束语
 
 此案例研究介绍了移植非常简单的应用（可以认为是一个过分简单的应用）的过程。 例如，列表控件可用于选择或者用于建立导航的上下文；应用导航到具有有关所点击的项的更多详细信息的页面。 根据用户的选择，此特定应用不执行任何操作，并且它没有导航。 即便如此，案例研究可用于打破僵局、介绍移植过程和演示可在真实的 UWP App 中使用的重要技术。
 

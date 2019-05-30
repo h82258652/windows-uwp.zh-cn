@@ -6,28 +6,28 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: 7748ff7d5acf8a94c92e2b51953299131910d63e
-ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.openlocfilehash: 71544129480cb55432c222a0481c2a49934cb658
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320570"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372346"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>使用 SignTool 对应用包进行签名
 
 **SignTool** 是命令行工具，用于对应用包或带有证书的捆绑包进行数字签名。 证书可以由用户创建（用于测试目的）或由公司颁发（用于分发）。 登录应用包可验证用户登录后应用数据未经更改，并且可确认登录用户或公司的身份。 **SignTool** 可对已加密或未加密的应用包和捆绑包进行签名。
 
 > [!IMPORTANT] 
-> 如果你使用 Visual Studio 开发你的应用，建议使用 Visual Studio 向导创建应用包并对其进行签名。 有关详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
+> 如果你使用 Visual Studio 开发你的应用，建议使用 Visual Studio 向导创建应用包并对其进行签名。 有关详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
-有关代码签名和证书的一般详细信息，请参阅[代码签名简介](https://msdn.microsoft.com/library/windows/desktop/aa380259.aspx#introduction_to_code_signing)。
+有关代码签名和证书的一般详细信息，请参阅[代码签名简介](https://docs.microsoft.com/windows/desktop/SecCrypto/cryptography-tools)。
 
 ## <a name="prerequisites"></a>先决条件
 - **打包应用程序**  
-    若要了解手动创建应用包的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 
+    若要了解手动创建应用包的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 
 
 - **有效的签名证书**  
-    有关创建或导入有效签名证书的详细信息，请参阅[创建或导入应用包签名证书](https://msdn.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)。
+    有关创建或导入有效签名证书的详细信息，请参阅[创建或导入应用包签名证书](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)。
 
 - **SignTool.exe**  
     根据 SDK 的安装路径，以下是 **SignTool** 在 Windows 10 电脑上的位置：
@@ -36,12 +36,12 @@ ms.locfileid: "58320570"
 
 ## <a name="using-signtool"></a>使用 SignTool
 
-**SignTool** 具有对文件进行签名，验证签名或时间戳，删除签名等功能。 为了实现对应用包进行签名的目的，我们将重点关注**签名**命令。 有关 **SignTool** 的完整信息，请参阅 [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx) 参考页面。 
+**SignTool** 具有对文件进行签名，验证签名或时间戳，删除签名等功能。 为了实现对应用包进行签名的目的，我们将重点关注**签名**命令。 有关 **SignTool** 的完整信息，请参阅 [SignTool](https://docs.microsoft.com/windows/desktop/SecCrypto/signtool) 参考页面。 
 
 ### <a name="determine-the-hash-algorithm"></a>确定哈希算法
 在使用 **SignTool** 对你的应用包或捆绑包进行签名时，**SignTool** 中所用的哈希算法必须与你用于打包应用的算法相同。 例如，如果你使用了采用默认设置的 **MakeAppx.exe** 创建应用包，则在使用 **SignTool** 时必须指定 SHA256，因为这是 **MakeAppx.exe** 所用的默认算法。
 
-要找出打包应用时用到了哪种哈希算法，则需要提取应用包的内容并检查 AppxBlockMap.xml 文件。 要了解如何解压缩/提取应用包，请参阅[从应用包或捆绑包中解压缩文件](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool#extract-files-from-a-package-or-bundle)。 哈希方法存在于 BlockMap 元素中，且具有以下格式：
+要找出打包应用时用到了哪种哈希算法，则需要提取应用包的内容并检查 AppxBlockMap.xml 文件。 要了解如何解压缩/提取应用包，请参阅[从应用包或捆绑包中解压缩文件](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 哈希方法存在于 BlockMap 元素中，且具有以下格式：
 
 ```xml
 <BlockMap xmlns="http://schemas.microsoft.com/appx/2010/blockmap" 
@@ -106,7 +106,7 @@ SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 
 请注意，某些证书不使用密码。 如果你的证书没有密码，可忽略示例命令中的“/p &lt;你的密码&gt;”。
 
-使用有效证书对应用包进行签名后即可将你的应用包上传至应用商店。 有关将应用上传和提交至应用商店的详细指南，请参阅[应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。
+使用有效证书对应用包进行签名后即可将你的应用包上传至应用商店。 有关将应用上传和提交至应用商店的详细指南，请参阅[应用提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
 
 ## <a name="common-errors-and-troubleshooting"></a>常见错误和疑难解答
 使用 **SignTool** 的最常见错误类型为内部错误，通常如下所示：
@@ -137,4 +137,4 @@ SignTool sign /debug [options]
 |--------------|--------------------------|----------------|
 | 150          | 错误 0x8007000B:应用程序清单的发布者名称 (CN = Contoso) 必须与匹配的签名证书的使用者名称 (CN = Contoso，C = US)。 | 应用清单发布者名称必须与签名证书的使用者名称完全匹配。               |
 | 151          | 错误 0x8007000B:签名哈希方法指定 (SHA512) 必须与在应用包块映射 (SHA256) 中使用的哈希方法匹配。     | /fd 参数中指定的 hashAlgorithm 不正确。 使用与应用包块映射（创建应用包所用）匹配的 hashAlgorithm 重新运行 **SignTool**  |
-| 152          | 错误 0x8007000B:针对其块映射必须验证应用包的内容。                                                           | 应用包已损坏，需要重建以生成新的块映射。 有关创建应用包的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 |
+| 152          | 错误 0x8007000B:针对其块映射必须验证应用包的内容。                                                           | 应用包已损坏，需要重建以生成新的块映射。 有关创建应用包的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 |

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, directx, 2d, 图形
 ms.localizationpriority: medium
-ms.openlocfilehash: 1154abc4305307d87f15fbe0c0e5461e3a15e27e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7e3a843c00d28d83157cf35a0bd9527be8c6b62f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632652"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367357"
 ---
 # <a name="2d-graphics-for-directx-games"></a>DirectX 游戏的 2D 图形
 
@@ -21,7 +21,7 @@ ms.locfileid: "57632652"
 
 2D 图形是 3D 图形的子集，用于处理 2D 基元或位图。 更一般地说，它们不像 3D 那样使用 z 坐标，因此游戏的执行通常限制在 x-y 平面。 它们有时使用 3D 图形技术创建其视觉组件，而且它们的开发一般比较简单。 如果你是游戏开发新手，则最好从 2D 游戏开始，而且 2D 图形开发也是在 DirectX 上操作的良好开端。
 
-你可以使用 Direct2D 或 Direct3D 或者一些组件在 DirectX 中开发 2D 游戏图形。 用于 2D 游戏开发的许多较有用的类（如 [**Sprite**](https://msdn.microsoft.com/library/windows/desktop/bb205601) 类）都在 Direct3D 中。 Direct2D 是一组 API，主要定位到需要绘制基元（如圆、线和平面多边形）支持的用户界面和应用。 除此之外，它还为创建游戏图形提供了一组功能强大和性能优异的类和方法，尤其是创建游戏覆盖层、界面和抬头显示 (HUD) 时 - 或用于创建从简单到相当详细的各种 2D 游戏。 但创建 2D 游戏最有效的方法是使用两个库中的元素，这是本主题中处理 2D 图形开发的方法。
+你可以使用 Direct2D 或 Direct3D 或者一些组件在 DirectX 中开发 2D 游戏图形。 用于 2D 游戏开发的许多较有用的类（如 [**Sprite**](https://docs.microsoft.com/windows/desktop/direct3d10/id3dx10sprite) 类）都在 Direct3D 中。 Direct2D 是一组 API，主要定位到需要绘制基元（如圆、线和平面多边形）支持的用户界面和应用。 除此之外，它还为创建游戏图形提供了一组功能强大和性能优异的类和方法，尤其是创建游戏覆盖层、界面和抬头显示 (HUD) 时 - 或用于创建从简单到相当详细的各种 2D 游戏。 但创建 2D 游戏最有效的方法是使用两个库中的元素，这是本主题中处理 2D 图形开发的方法。
 
 ## <a name="concepts-at-a-glance"></a>简要介绍相关的概念
 
@@ -56,6 +56,6 @@ ms.locfileid: "57632652"
 ## <a name="reference"></a>参考
 
 
--   [Direct2D 概述](https://msdn.microsoft.com/library/windows/desktop/dd370987)
--   [Direct2D 快速入门](https://msdn.microsoft.com/library/windows/desktop/dd535473)
--   [Direct2D 和 Direct3D 互操作性概述](https://msdn.microsoft.com/library/windows/desktop/dd370966)
+-   [Direct2D 概述](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-overview)
+-   [Direct2D 快速入门](https://docs.microsoft.com/windows/desktop/Direct2D/getting-started-with-direct2d)
+-   [Direct2D 和 Direct3D 互操作性概述](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-and-direct3d-interoperation-overview)

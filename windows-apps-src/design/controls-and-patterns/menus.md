@@ -3,8 +3,9 @@ Description: 菜单和上下文菜单会在用户发出请求时显示命令或�
 title: 菜单和上下文菜单
 label: Menus and context menus
 template: detail.hbs
-ms.date: 01/08/2019
+ms.date: 04/19/2019
 ms.topic: article
+ms.custom: RS5, 19H1
 keywords: windows 10, uwp
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
 pm-contact: yulikl
@@ -12,13 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.custom: RS5
-ms.openlocfilehash: d3ea8e2bff2455340a1183dbe5c1840fdb599d46
-ms.sourcegitcommit: 7a1d5198345d114c58287d8a047eadc4fe10f012
+ms.openlocfilehash: 10e91e8098f232d2875c802567674c9feacb2af9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59247185"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364621"
 ---
 # <a name="menus-and-context-menus"></a>菜单和上下文菜单
 
@@ -26,13 +26,13 @@ ms.locfileid: "59247185"
 
 ![典型上下文菜单示例](images/contextmenu_rs2_icons.png)
 
-| **获取 Windows UI 库** |
+| **获取 Windows 用户界面库** |
 | - |
 | 此控件是作为 Windows UI 库，包含新控件和适用于 UWP 应用的 UI 功能的 NuGet 包的一部分。 有关详细信息，包括安装说明，请参阅[Windows 用户界面库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 | **平台 Api** | **Windows UI 库 Api** |
 | - | - |
-| [MenuFlyout 类](/uwp/api/windows.ui.xaml.controls.menuflyout)，[菜单栏类](/uwp/api/windows.ui.xaml.controls.menubar)， [ContextFlyout 属性](/uwp/api/windows.ui.xaml.uielement.contextflyout)， [FlyoutBase.AttachedFlyout 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) | [菜单栏类](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| [MenuFlyout 类](/uwp/api/windows.ui.xaml.controls.menuflyout)，[菜单栏类](/uwp/api/windows.ui.xaml.controls.menubar)， [ContextFlyout 属性](/uwp/api/windows.ui.xaml.uielement.contextflyout)， [FlyoutBase.AttachedFlyout 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) | [菜单栏类](/uwp/api/microsoft.ui.xaml.controls.menubar) |
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -70,7 +70,7 @@ ms.locfileid: "59247185"
 
 ## <a name="menus-vs-context-menus"></a>菜单与上下文菜单
 
-菜单和上下文菜单的外观和它们可以包含类似。 事实上，可以使用相同的控件[MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030)，若要创建它们。 不同之处在于，如何让用户对其进行访问。
+菜单和上下文菜单的外观和它们可以包含类似。 事实上，可以使用相同的控件[MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)，若要创建它们。 不同之处在于，如何让用户对其进行访问。
 
 何时应使用菜单或上下文菜单？
 
@@ -90,13 +90,13 @@ ms.locfileid: "59247185"
 - 具有始终显示的单个入口点（例如，位于屏幕顶部的“文件”菜单）。
 - 通常附加到某个按钮或父菜单项。
 - 通过左键单击（或等效操作，例如用手指点击）进行调用。
-- 与通过其[浮出控件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx)或[FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx)属性，或在应用程序窗口的顶部菜单栏中进行分组。
+- 与通过其[浮出控件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout)或[FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout)属性，或在应用程序窗口的顶部菜单栏中进行分组。
 
 ### <a name="context-menus"></a>上下文菜单
 
 - 附加到单个元素并显示辅助命令。
 - 通过右键单击（或等效操作，例如用手指按住）进行调用。
-- 通过 [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 属性与元素相关联。
+- 通过 [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) 属性与元素相关联。
 
 ## <a name="icons"></a>图标
 
@@ -140,7 +140,7 @@ ms.locfileid: "59247185"
 - [RadioMenuFlyoutItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem)— 排斥的菜单项之间进行切换。
 - [MenuFlyoutSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutseparator) - 直观地区分菜单项。
 
-此示例将创建[MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) ，并使用[ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx)属性，该属性可用于大多数控件，以显示上下文菜单作为 MenuFlyout。
+此示例将创建[MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) ，并使用[ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout)属性，该属性可用于大多数控件，以显示上下文菜单作为 MenuFlyout。
 
 ````xaml
 <Rectangle
@@ -171,7 +171,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-下一个示例几乎完全相同，但该示例使用 [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) 属性将其显示为菜单，而不是使用 [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 属性来显示 [MenuFlyout 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout)作为上下文菜单。
+下一个示例几乎完全相同，但该示例使用 [FlyoutBase.ShowAttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) 属性将其显示为菜单，而不是使用 [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) 属性来显示 [MenuFlyout 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout)作为上下文菜单。
 
 ````xaml
 <Rectangle
@@ -210,7 +210,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ### <a name="light-dismiss"></a>光关闭
 
-光解除如菜单、 上下文菜单和其他浮出控件的控件，捕获内部瞬时 UI 直到关闭的键盘和游戏板焦点。 若要为此行为提供视觉提示，Xbox 上的轻型消除控件将绘制覆盖，以便使 UI 范围之外的可见性变暗。 可以使用 [LightDismissOverlayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) 属性来修改此行为。 默认情况下，瞬时 Ui 将在 Xbox 上绘制浅解除覆盖 (**自动**)，但不是其他设备系列。 您可以选择强制在覆盖区上，要始终**上**或始终**关闭**。
+光解除如菜单、 上下文菜单和其他浮出控件的控件，捕获内部瞬时 UI 直到关闭的键盘和游戏板焦点。 若要为此行为提供视觉提示，Xbox 上的轻型消除控件将绘制覆盖，以便使 UI 范围之外的可见性变暗。 可以使用 [LightDismissOverlayMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode) 属性来修改此行为。 默认情况下，瞬时 Ui 将在 Xbox 上绘制浅解除覆盖 (**自动**)，但不是其他设备系列。 您可以选择强制在覆盖区上，要始终**上**或始终**关闭**。
 
 ```xaml
 <MenuFlyout LightDismissOverlayMode="Off" />
@@ -269,7 +269,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 ## <a name="get-the-sample-code"></a>获取示例代码
 
 - [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
-- [XAML 关联菜单示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlContextMenu)
+- [XAML 上下文菜单示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlContextMenu)
 
 ## <a name="related-articles"></a>相关文章
 

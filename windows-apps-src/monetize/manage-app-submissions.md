@@ -6,12 +6,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 474abc2ec43b7f8eab408bd75cca33653d27d932
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 65e8599a73a196ebb72fe3cc45ea984f82057741
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63789681"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371501"
 ---
 # <a name="manage-app-submissions"></a>管理应用提交
 
@@ -85,7 +85,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 1. 如果尚未开始操作，请先完成 Microsoft Store 提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
     > [!NOTE]
-    > 确保应用至少已有一个已完成的提交并且已完成[年龄分级](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)信息。
+    > 确保应用至少已有一个已完成的提交并且已完成[年龄分级](https://docs.microsoft.com/windows/uwp/publish/age-ratings)信息。
 
 2. [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 在 Microsoft Store 提交 API 中，必须将此访问令牌传递给相关方法。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
@@ -100,7 +100,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
     > [!NOTE]
     > SAS URI 提供对 Azure 存储中的安全资源的访问权限（无需帐户密钥）。 有关 SAS URI 及其与 Azure Blob 存储一起使用的背景信息，请参阅[共享访问签名（第 1 部分）：了解 SAS 模型](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1)和[共享访问签名，第 2 部分：创建并将 SAS 用于 Blob 存储](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
-4. 如果要为提交添加新的程序包、应用一览图像或预告片文件，请[准备应用包](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements)并[准备应用屏幕截图、图像和预告片](https://msdn.microsoft.com/windows/uwp/publish/app-screenshots-and-images)。 将所有这些文件添加到 ZIP 存档。
+4. 如果要为提交添加新的程序包、应用一览图像或预告片文件，请[准备应用包](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)并[准备应用屏幕截图、图像和预告片](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images)。 将所有这些文件添加到 ZIP 存档。
 
 5. 使用新提交所需的任何更改来修改[应用提交](#app-submission-object)数据，并执行以下方法来[更新应用提交](update-an-app-submission.md)。
 
@@ -116,7 +116,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
     * [Azure Storage SDK for Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
     * [Azure Storage SDK for Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-    以下 C# 代码示例演示了如何在用于 .NET 的 Azure 存储客户端库中使用 [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) 类将 ZIP 存档上载到 Azure Blob 存储。 此示例假定 ZIP 存档已写入流对象。
+    以下 C# 代码示例演示了如何在用于 .NET 的 Azure 存储客户端库中使用 [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob?redirectedfrom=MSDN) 类将 ZIP 存档上载到 Azure Blob 存储。 此示例假定 ZIP 存档已写入流对象。
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -335,31 +335,31 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 此资源具有以下值。
 
-| 值      | 在任务栏的搜索框中键入   | 描述      |
+| ReplTest1      | 在任务栏的搜索框中键入   | 描述      |
 |------------|--------|-------------------|
 | id            | string  | 提交的 ID。 此 ID 包含在 [create an app submission](create-an-app-submission.md)、[get all apps](get-all-apps.md) 和 [get an app](get-an-app.md) 请求的响应数据中。 在合作伙伴中心创建的提交，此 ID 是也可用在合作伙伴中心中的提交页的 URL。  |
-| applicationCategory           | string  |   为应用指定[类别和/或子类别](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table)的字符串。 通过下划线“_”字符将类别和子类别组合为单个字符串，例如 **BooksAndReference_EReader**。      |  
+| applicationCategory           | string  |   为应用指定[类别和/或子类别](https://docs.microsoft.com/windows/uwp/publish/category-and-subcategory-table)的字符串。 通过下划线“_”字符将类别和子类别组合为单个字符串，例如 **BooksAndReference_EReader**。      |  
 | pricing           |  对象  | 包含应用的定价信息的[定价资源](#pricing-object)。        |   
 | visibility           |  string  |  应用的可见性。 这可以是以下值之一： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
 | targetPublishMode           | string  | 提交的发布模式。 这可以是以下值之一： <ul><li>立即</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | 提交的发布日期采用 ISO 8601 格式（如果 *targetPublishMode* 设为“SpecificDate”）。  |  
 | listings           |   对象  |  键值对字典，其中每个键为国家/地区代码，而每个值为包含应用列表信息的[列表资源](#listing-object)。       |   
-| hardwarePreferences           |  数组  |   一组用于定义应用的[硬件首选项](https://msdn.microsoft.com/windows/uwp/publish/enter-app-properties#hardware_preferences)的字符串。 这可以是以下值之一： <ul><li>触控</li><li>键盘</li><li>鼠标</li><li>相机</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
-| automaticBackupEnabled           |  boolean  |   指示 Windows 是否可以将应用的数据包含在 OneDrive 的自动备份中。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。   |   
-| canInstallOnRemovableMedia           |  boolean  |   指示客户是否可以将应用安装到可移动存储。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
+| hardwarePreferences           |  数组  |   一组用于定义应用的[硬件首选项](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)的字符串。 这可以是以下值之一： <ul><li>触控</li><li>键盘</li><li>鼠标</li><li>相机</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
+| automaticBackupEnabled           |  boolean  |   指示 Windows 是否可以将应用的数据包含在 OneDrive 的自动备份中。 有关详细信息，请参阅[应用声明](https://docs.microsoft.com/windows/uwp/publish/app-declarations)。   |   
+| canInstallOnRemovableMedia           |  boolean  |   指示客户是否可以将应用安装到可移动存储。 有关详细信息，请参阅[应用声明](https://docs.microsoft.com/windows/uwp/publish/app-declarations)。     |   
 | isGameDvrEnabled           |  boolean |   指示是否可以为应用启用游戏 DVR。    |   
 | gamingOptions           |  数组 |   一个包含[游戏选项资源](#gaming-options-object)的数组，用于为应用定义游戏相关设置。     |   
-| hasExternalInAppProducts           |     boolean          |   指示应用是否允许用户在 Microsoft Store 商务系统之外进行购买。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
-| meetAccessibilityGuidelines           |    boolean           |  指示应用是否经测试符合辅助功能准则。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。      |   
-| notesForCertification           |  string  |   包含应用的[认证说明](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification)。    |    
+| hasExternalInAppProducts           |     boolean          |   指示应用是否允许用户在 Microsoft Store 商务系统之外进行购买。 有关详细信息，请参阅[应用声明](https://docs.microsoft.com/windows/uwp/publish/app-declarations)。     |   
+| meetAccessibilityGuidelines           |    boolean           |  指示应用是否经测试符合辅助功能准则。 有关详细信息，请参阅[应用声明](https://docs.microsoft.com/windows/uwp/publish/app-declarations)。      |   
+| notesForCertification           |  string  |   包含应用的[认证说明](https://docs.microsoft.com/windows/uwp/publish/notes-for-certification)。    |    
 | status           |   string  |  提交的状态。 这可以是以下值之一： <ul><li>无</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>认证</li><li>CertificationFailed</li><li>发行版本</li><li>ReleaseFailed</li></ul>      |    
 | statusDetails           |   对象  | 包含有关提交状态的附加详细信息的[状态详细信息资源](#status-details-object)，其中包括任何错误的相关信息。       |    
 | fileUploadUrl           |   string  | 用于为提交上载任何程序包的共享访问签名 (SAS) URI。 如果要为提交添加新的程序包、应用一览图像或预告片文件，请将包含这些程序包和图像的 ZIP 存档上传到此 URI。 有关详细信息，请参阅[创建应用提交](#create-an-app-submission)。       |    
 | applicationPackages           |   数组  | 提供有关提交中每个包的详细信息的[应用程序包资源](#application-package-object)数组。 |    
 | packageDeliveryOptions    | 对象  | 包含提交的逐步软件包推出和强制更新设置的[软件包递送选项资源](#package-delivery-options-object)。  |
 | enterpriseLicensing           |  string  |  [企业授权值](#enterprise-licensing)的其中一个值，它指示应用的企业授权行为。  |    
-| allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  指示是否允许 Microsoft [将应用提供给未来 Windows 10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
-| allowTargetFutureDeviceFamilies           | 对象   |  键值对字典，其中每个键为 [Windows 10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)，而每个值为布尔值，指示是否允许应用面向指定的设备系列。     |    
+| allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  指示是否允许 Microsoft [将应用提供给未来 Windows 10 设备系列](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。    |    
+| allowTargetFutureDeviceFamilies           | 对象   |  键值对字典，其中每个键为 [Windows 10 设备系列](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)，而每个值为布尔值，指示是否允许应用面向指定的设备系列。     |    
 | friendlyName           |   string  |  在提交内容，如合作伙伴中心中所示的友好名称。 当你创建提交时，系统会为你生成此值。       |  
 | trailers           |  数组 |   一个包含最多 15 个[预告片资源](#trailer-object)的数组，用于表示应用一览的视频预告片。<br/><br/>   |  
 
@@ -370,12 +370,12 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 此资源包含应用的定价信息。 此资源具有以下值。
 
-| ReplTest1           | 在任务栏的搜索框中键入    | 描述        |
+| 值           | 在任务栏的搜索框中键入    | 描述        |
 |-----------------|---------|------|
 |  trialPeriod               |    string     |  一个指定应用试用期的字符串。 这可以是以下值之一： <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
-|  marketSpecificPricings               |    对象     |  键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为[价格段](#price-tiers)。 这些项表示[应用在特定市场中的自定义价格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)。 此字典中的任何项替代 *priceId* 值针对特定市场所指定的基价。      |     
+|  marketSpecificPricings               |    对象     |  键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为[价格段](#price-tiers)。 这些项表示[应用在特定市场中的自定义价格](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。 此字典中的任何项替代 *priceId* 值针对特定市场所指定的基价。      |     
 |  sales               |   数组      |  **已弃用**。 包含应用销售信息的[销售资源](#sale-object)数组。   |     
-|  priceId               |   string      |  用于指定应用[基价](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price)的[价格段](#price-tiers)。   |     
+|  priceId               |   string      |  用于指定应用[基价](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)的[价格段](#price-tiers)。   |     
 |  isAdvancedPricingModel               |   boolean      |  如果为 **true**，你的开发人员帐户可以使用从 0.99 美元到 1999.99 美元的扩展价格段。 如果为 **false**，你的开发人员帐户可以使用从 0.99 美元到 999.99 美元的原始价格段。 有关其他价格段的详细信息，请参阅[价格段](#price-tiers)。<br/><br/>**注意**&nbsp;&nbsp;此字段为只读字段。   |
 
 
@@ -392,13 +392,13 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 此资源具有以下值。
 
-| ReplTest1           | 在任务栏的搜索框中键入    | 描述    |
+| 值           | 在任务栏的搜索框中键入    | 描述    |
 |-----------------|---------|------|
 |  name               |    string     |   销售的名称。    |     
 |  basePriceId               |   string      |  要用于销售基价的[价格段](#price-tiers)。    |     
 |  startDate               |   string      |   采用 ISO 8601 格式的销售的开始日期。  |     
 |  endDate               |   string      |  采用 ISO 8601 格式的销售的结束日期。      |     
-|  marketSpecificPricings               |   对象      |   键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为[价格段](#price-tiers)。 这些项表示[应用在特定市场中的自定义价格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)。 此字典中的任何项替代 *basePriceId* 值针对特定市场所指定的基价。    |
+|  marketSpecificPricings               |   对象      |   键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为[价格段](#price-tiers)。 这些项表示[应用在特定市场中的自定义价格](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。 此字典中的任何项替代 *basePriceId* 值针对特定市场所指定的基价。    |
 
 
 <span id="listing-object" />
@@ -418,17 +418,17 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 此资源包含应用的基本列表信息。 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述       |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述       |
 |-----------------|---------|------|
-|  copyrightAndTrademarkInfo                |   string      |  可选的[版权和/或商标信息](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info)。  |
-|  keywords                |  数组       |  [关键字](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords)数组，用于帮助应用出现在搜索结果中。    |
-|  licenseTerms                |    string     | 可选的应用[许可条款](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms)。     |
+|  copyrightAndTrademarkInfo                |   string      |  可选的[版权和/或商标信息](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions)。  |
+|  keywords                |  数组       |  [关键字](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions)数组，用于帮助应用出现在搜索结果中。    |
+|  licenseTerms                |    string     | 可选的应用[许可条款](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions)。     |
 |  privacyPolicy                |   string      |   此值已作废。 若要设置或更改你的应用的隐私策略 URL，你必须执行此操作[属性](../publish/enter-app-properties.md#privacy-policy-url)合作伙伴中心中的页。 在调用提交 API 时可以忽略此值。 如果设置此值，它将被忽略。       |
 |  supportContact                |   string      |  此值已作废。 若要设置或更改的支持联系人 URL 或电子邮件地址为你的应用，你必须执行此操作[属性](../publish/enter-app-properties.md#support-contact-info)合作伙伴中心中的页。 在调用提交 API 时可以忽略此值。 如果设置此值，它将被忽略。        |
 |  websiteUrl                |   string      |  此值已作废。 若要设置或更改您的应用程序的网页的 URL，你必须执行此操作[属性](../publish/enter-app-properties.md#website)合作伙伴中心中的页。 在调用提交 API 时可以忽略此值。 如果设置此值，它将被忽略。      |    
-|  description               |    string     |   应用一览的[描述](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description)。   |     
-|  features               |    数组     |  一个最多 20 个字符串的数组，用于列出应用的[功能](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features)。     |
-|  releaseNotes               |  string       |  应用的[发行说明](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#release-notes)。    |
+|  description               |    string     |   应用一览的[描述](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions)。   |     
+|  features               |    数组     |  一个最多 20 个字符串的数组，用于列出应用的[功能](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions)。     |
+|  releaseNotes               |  string       |  应用的[发行说明](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions)。    |
 |  images               |   数组      |  应用一览的[图像和图标](#image-object)资源的数组。  |
 |  recommendedHardware               |   数组      |  一个最多 11 个字符串的数组，用于列出应用的[推荐硬件配置](../publish/create-app-store-listings.md#additional-information)。     |
 |  minimumHardware               |     string    |  一个最多 11 个字符串的数组，用于列出应用的[最低硬件配置](../publish/create-app-store-listings.md#additional-information)。    |  
@@ -486,7 +486,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述        |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述        |
 |-----------------|---------|------|
 |  genres               |    数组     |  包含一个或多个下列字符串的数组，用于描述游戏类型： <ul><li>Games_ActionAndAdventure</li><li>Games_CardAndBoard</li><li>Games_Casino</li><li>Games_Educational</li><li>Games_FamilyAndKids</li><li>Games_Fighting</li><li>Games_Music</li><li>Games_Platformer</li><li>Games_PuzzleAndTrivia</li><li>Games_RacingAndFlying</li><li>Games_RolePlaying</li><li>Games_Shooter</li><li>Games_Simulation</li><li>Games_Sports</li><li>Games_Strategy</li><li>Games_Word</li></ul>    |
 |  isLocalMultiplayer               |    boolean     |  指示游戏是否支持本地多人游戏。      |     
@@ -510,7 +510,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 此资源包含有关提交状态的附加详细信息。 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述         |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述         |
 |-----------------|---------|------|
 |  errors               |    对象     |   包含提交的错误详细信息的[状态详细信息资源](#status-detail-object)数组。    |     
 |  warnings               |   对象      | 包含提交的警告详细信息的[状态详细信息资源](#status-detail-object)数组。      |
@@ -572,10 +572,10 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 | fileName   |   string      |  程序包的名称。    |  
 | fileStatus    | string    |  程序包的状态。 这可以是以下值之一： <ul><li>无</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
 | id    |  string   |  唯一标识程序包的 ID。 通过合作伙伴中心提供此值。   |     
-| version    |  string   |  应用包的版本。 有关详细信息，请参阅[程序包版本编号](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering)。   |   
+| version    |  string   |  应用包的版本。 有关详细信息，请参阅[程序包版本编号](https://docs.microsoft.com/windows/uwp/publish/package-version-numbering)。   |   
 | architecture    |  string   |  程序包的体系结构（例如 ARM）。   |     
-| languages    | 数组    |  应用所支持的语言的语言代码数组。 有关详细信息，请参阅[支持的语言](https://msdn.microsoft.com/windows/uwp/publish/supported-languages)。    |     
-| capabilities    |  数组   |  程序包所需的功能数组。 有关功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。   |     
+| languages    | 数组    |  应用所支持的语言的语言代码数组。 有关详细信息，请参阅[支持的语言](https://docs.microsoft.com/windows/uwp/publish/supported-languages)。    |     
+| capabilities    |  数组   |  程序包所需的功能数组。 有关功能的详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。   |     
 | minimumDirectXVersion    |  string   |  应用包支持的最低 DirectX 版本。 这只能为面向 Windows 8.x 的应用设置。 对于面向其他操作系统版本的应用，调用 [update an app submission交](update-an-app-submission.md) 方法时，此值必须存在，但会忽略你指定的值。 这可以是以下值之一： <ul><li>无</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
 | minimumSystemRam    | string    |  应用包所需的最小 RAM。 这只能为面向 Windows 8.x 的应用设置。 对于面向其他操作系统版本的应用，调用 [update an app submission交](update-an-app-submission.md) 方法时，此值必须存在，但会忽略你指定的值。 这可以是以下值之一： <ul><li>无</li><li>Memory2GB</li></ul>   |       
 | targetDeviceFamilies    | 数组    |  一个字符串数组，它表示程序包所面向的设备系列。 此值仅用于面向 Windows 10 的程序包；对于面向早期版本的程序包，此值具有值 **None**。 Windows 10 程序包当前支持以下设备系列字符串，其中 *{0}* 是 Windows 10 版本字符串（例如 10.0.10240.0、10.0.10586.0 或 10.0.14393.0）： <ul><li>Windows.Universal 最低版本 *{0}*</li><li>Windows.Desktop 最低版本 *{0}*</li><li>Windows.Mobile 最低版本 *{0}*</li><li>Windows.Xbox 最低版本 *{0}*</li><li>Windows.Holographic 最低版本 *{0}*</li></ul>   |    
@@ -673,12 +673,12 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述        |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述        |
 |-----------------|---------|------|
 |  id               |    string     |   预告片的 ID。 通过合作伙伴中心提供此值。   |
 |  videoFileName               |    string     |    包含提交文件的 ZIP 存档中预告片视频文件的名称。    |     
 |  videoFileId               |   string      |  预告片视频文件的 ID。 通过合作伙伴中心提供此值。   |     
-|  trailerAssets               |   对象      |  键值对字典，其中每个键为语言代码，每个值为[预告片资产资源](#trailer-assets-object)（包含预告片的其他区域设置特定资产）。 有关支持的语言代码的详细信息，请参阅[支持的语言](https://msdn.microsoft.com/windows/uwp/publish/supported-languages)。    |     
+|  trailerAssets               |   对象      |  键值对字典，其中每个键为语言代码，每个值为[预告片资产资源](#trailer-assets-object)（包含预告片的其他区域设置特定资产）。 有关支持的语言代码的详细信息，请参阅[支持的语言](https://docs.microsoft.com/windows/uwp/publish/supported-languages)。    |     
 
 > [!NOTE]
 > Microsoft Store 提交 API 首次面向开发人员发布后，在 2017 年 5 月添加了 *trailers* 资源。 如果你在此资源推出前通过提交 API 为应用创建了提交并且此提交仍在进行中，则在成功确认提交或删除提交前，此资源将为 null 且无法为应用提交。 如果 *trailers* 资源不可用于应用提交，则 [get an app](get-an-app.md) 方法返回的[应用程序资源](get-app-data.md#application_object) 的 *hasAdvancedListingPermission* 字段为 false。
@@ -731,7 +731,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 ### <a name="enterprise-licensing-values"></a>企业授权值
 
-以下值表示应用的组织授权行为。 有关这些选项的详细信息，请参阅[组织许可选项](https://msdn.microsoft.com/windows/uwp/publish/organizational-licensing)。
+以下值表示应用的组织授权行为。 有关这些选项的详细信息，请参阅[组织许可选项](https://docs.microsoft.com/windows/uwp/publish/organizational-licensing)。
 
 > [!NOTE]
 > 尽管可以通过提交 API 配置组织授权选项进行应用提交，但你无法使用此 API 发布[通过适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store 批量购买](../publish/organizational-licensing.md)的提交。 若要发布到 Microsoft Store for Business 和教育的 Microsoft Store 提交，必须使用合作伙伴中心。
@@ -773,4 +773,4 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 * [创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)
 * [获取使用 Microsoft Store 提交 API 的应用程序数据](get-app-data.md)
-* [在合作伙伴中心提交应用程序](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)
+* [在合作伙伴中心提交应用程序](https://docs.microsoft.com/windows/uwp/publish/app-submissions)

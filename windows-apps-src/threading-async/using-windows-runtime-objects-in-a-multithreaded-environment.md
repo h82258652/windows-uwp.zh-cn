@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 keywords: windows 10, uwp, 计时器, 线程
 ms.localizationpriority: medium
-ms.openlocfilehash: f11207a774b1ffcebde95e316634592020e6ed49
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3afa1720ede9728e9cc25af434a431300faf26d6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631212"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371211"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>在多线程环境中使用 Windows 运行时对象
 本文讨论了 .NET Framework 从 C# 和 Visual Basic 代码到 Windows 运行时或 Windows 运行时组件提供的对象处理调用的方式。
@@ -20,7 +20,7 @@ ms.locfileid: "57631212"
 
 在可能的情况下，常见语言运行时 (CLR) 会将来自其他来源（如 Windows 运行时）的对象视为 .NET Framework 对象：
 
-- 如果对象实现 [IAgileObject](https://msdn.microsoft.com/library/Hh802476.aspx) 接口，或者具有 [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) 属性（带 [MarshalingType.Agile](https://go.microsoft.com/fwlink/p/?LinkId=256023)），则 CLR 会将其视为敏捷对象。
+- 如果对象实现 [IAgileObject](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) 接口，或者具有 [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) 属性（带 [MarshalingType.Agile](https://go.microsoft.com/fwlink/p/?LinkId=256023)），则 CLR 会将其视为敏捷对象。
 
 - 如果 CLR 可以从用于对目标对象进行线程处理的线程封送调用，则将以透明的方式执行该操作。
 
@@ -34,7 +34,7 @@ ms.locfileid: "57631212"
 > [!NOTE]
 >  敏捷并不意味着线程安全。 在 Windows 运行时和 .NET Framework 中，大多数类都不是线程安全类，这是因为线程安全拥有性能成本，而且永远无法通过多个线程访问大多数对象。 仅在必要时同步对单个对象的访问（或使用线程安全类）将更有效。
 
-创作 Windows 运行时组件时，你可以覆盖默认值。 请参阅 [ICustomQueryInterface](/dotnet/api/system.runtime.interopservices.icustomqueryinterface) 接口和 [IAgileObject](https://msdn.microsoft.com/library/Hh802476.aspx) 接口。
+创作 Windows 运行时组件时，你可以覆盖默认值。 请参阅 [ICustomQueryInterface](/dotnet/api/system.runtime.interopservices.icustomqueryinterface) 接口和 [IAgileObject](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) 接口。
 
 ## <a name="objects-from-the-windows-runtime"></a>来自 Windows 运行时的对象
 Windows 运行时中的大多数类都是敏捷类，CLR 会将它们视为敏捷类。 针对这些类的文档在类属性中间列出了“MarshalingBehaviorAttribute(Agile)”。 但是，其中一些敏捷类（如 XAML 控件）如果未在 UI 线程上被调用，便会引发异常。 例如，下列代码尝试使用背景线程设置被单击的按钮的属性。 按钮的[内容](https://go.microsoft.com/fwlink/p/?LinkId=256025)属性将引发异常。
@@ -160,7 +160,7 @@ End Sub
 
 针对在 UI 线程上运行的对象，以及从除 UI 线程以外的其他线程调用时引发异常的对象，你可以使用 UI 线程的 [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029) 对象调度调用。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 [C# 指南](/dotnet/csharp/)
 
 [Visual Basic 指南](/dotnet/visual-basic/)

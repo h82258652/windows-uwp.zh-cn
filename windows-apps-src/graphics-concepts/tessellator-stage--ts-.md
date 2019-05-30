@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7768d63405281d3155affc6c9f09c62568761718
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b8960d9723460fcbb8cec71da0998958cac8a6e8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607392"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370945"
 ---
 # <a name="tessellator-ts-stage"></a>Tessellator (TS) 阶段
 
@@ -52,7 +52,7 @@ Direct3D 运行时支持实现分割的三个阶段，通过分割可将低画�
 
 Direct3D 图形管道在软件中实施分割，能够将 CPU 的工作负担转移至 GPU。 如果应用程序实施大量的变形目标和/或更加复杂的蒙皮/变形模型，这将能够显著改善性能。
 
-细化器是由一种固定功能阶段，通过将[外壳着色器](hull-shader-stage--hs-.md)绑定至管道进行初始化。 (请参阅[How To:初始化细化器阶段](https://msdn.microsoft.com/library/windows/desktop/ff476341))。 细化器阶段旨在将域（四边形、三角形或线）分割为很多较小对象（三角形、点或线）。 细化器能够在标准化（零到一）协调系统中平铺规范域。 例如，四边形域细化为单位正方形。
+细化器是由一种固定功能阶段，通过将[外壳着色器](hull-shader-stage--hs-.md)绑定至管道进行初始化。 (请参阅[How To:初始化细化器阶段](https://docs.microsoft.com/windows/desktop/direct3d11/direct3d-11-advanced-stages-tessellator-initialize))。 细化器阶段旨在将域（四边形、三角形或线）分割为很多较小对象（三角形、点或线）。 细化器能够在标准化（零到一）协调系统中平铺规范域。 例如，四边形域细化为单位正方形。
 
 ### <a name="span-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanphases-in-the-tessellator-ts-stage"></a><span id="Phases_in_the_Tessellator__TS__stage"></span><span id="phases_in_the_tessellator__ts__stage"></span><span id="PHASES_IN_THE_TESSELLATOR__TS__STAGE"></span>细化器 (TS) 阶段中的阶段
 
@@ -63,7 +63,7 @@ Direct3D 图形管道在软件中实施分割，能够将 CPU 的工作负担转
 
     | 分区类型 | 范围                       |
     |----------------------|-----------------------------|
-    | 小数\_奇数      | \[1...63\]                  |
+    | Fractional\_odd      | \[1...63\]                  |
     | 小数\_甚至     | TessFactor 范围：\[2..64\] |
     | 整型              | TessFactor 范围：\[1..64\] |
     | 幂 2                 | TessFactor 范围：\[1..64\] |
@@ -83,7 +83,7 @@ Direct3D 图形管道在软件中实施分割，能够将 CPU 的工作负担转
 
 在每个使用从外壳着色器阶段传入的细化因素（指定域被细分的细微程度）和分区的类型（指定用于分割修补程序的算法）的修补程序上执行一次细化器。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 细化器将 uv（和可选 w）坐标和表面拓扑输出到域着色器阶段。

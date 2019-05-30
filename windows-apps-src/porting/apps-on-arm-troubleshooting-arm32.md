@@ -5,12 +5,12 @@ ms.date: 01/03/2019
 ms.topic: article
 keywords: windows 10 s, 始终连接, 基于 ARM 的 ARM32 应用, 基于 ARM 的 windows 10, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 3431b12fc6f6b6ba2d870400ec4f6684f8290a61
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: ddf28627838ebc8cb2df620c398f3803c026cb17
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63815279"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366837"
 ---
 # <a name="troubleshooting-arm-uwp-apps"></a>故障排除 ARM UWP 应用
 
@@ -33,7 +33,7 @@ ARM 应用可能会遇到问题，使用仅限移动的 Api 时 (例如， **Har
 
 可通过解决这些问题： 删除不可用的依赖项和重新生成应用程序使用的最新的 Microsoft Visual Studio 和 UWP SDK 版本;或作为最后的手段，从 Microsoft Store 中，删除 ARM 应用，以便 x86 版本的应用 （如果可用） 下载到用户的 Pc。
 
-有关可用于 UWP 应用的 .NET API 的详细信息，请参阅[适用于 UWP 应用的 .NET](https://msdn.microsoft.com/library/windows/apps/mt185501.aspx)
+有关可用于 UWP 应用的 .NET API 的详细信息，请参阅[适用于 UWP 应用的 .NET](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
 
 ### <a name="compiling-an-app-with-an-older-version-of-visual-studio-and-sdk"></a>使用较早版本的 Visual Studio 和 SDK 编译应用
 如果遇到问题，请务必使用最新版本的 Microsoft Visual Studio 和 Windows SDK 编译你的应用。 使用早期版本的 Visual Studio 和 SDK 编译的应用可能存在已在更高版本中修复的问题。

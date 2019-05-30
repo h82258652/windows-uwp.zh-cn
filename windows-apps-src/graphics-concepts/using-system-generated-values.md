@@ -7,17 +7,17 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6efe7aa27721f519ba93052abf2d0e8189f58941
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 87d4be69d9a7869f5331d30225e93a22ad9e959c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57622312"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371251"
 ---
 # <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>使用系统生成的值
 
 
-系统生成的值由[输入装配器 (IA) 阶段](input-assembler-stage--ia-.md)（基于用户提供的输入[语义](https://msdn.microsoft.com/library/windows/desktop/bb509647)）生成，用于在一定程度上提高着色器运算的效率。 通过附加数据，如实例 ID（对[顶点着色器 (VS) 阶段](vertex-shader-stage--vs-.md)可见）、顶点 ID（对 VS 可见）或基元 ID（对[几何着色器 (GS) 阶段](geometry-shader-stage--gs-.md)/[像素着色器 (PS) 阶段](pixel-shader-stage--ps-.md)可见），后续的着色器阶段可以查找这些系统值，从而对当前阶段的处理进行优化。
+系统生成的值由[输入装配器 (IA) 阶段](input-assembler-stage--ia-.md)（基于用户提供的输入[语义](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)）生成，用于在一定程度上提高着色器运算的效率。 通过附加数据，如实例 ID（对[顶点着色器 (VS) 阶段](vertex-shader-stage--vs-.md)可见）、顶点 ID（对 VS 可见）或基元 ID（对[几何着色器 (GS) 阶段](geometry-shader-stage--gs-.md)/[像素着色器 (PS) 阶段](pixel-shader-stage--ps-.md)可见），后续的着色器阶段可以查找这些系统值，从而对当前阶段的处理进行优化。
 
 例如，VS 阶段可能查找实例 ID 以便为着色器获取更多每顶点数据，或者执行其他操作；GS 和 PS 阶段可能使用基元 ID 以相同的方式获取每基元数据。
 
@@ -41,7 +41,7 @@ IA 阶段会将基元 ID 添加到每个基元以供[几何着色器 (GS) 阶段
 
 不支持为相邻的基元自动生成基元 ID。 对于带邻近度的基元类型（如带邻近度的三角形），基元 ID 仅为内部基元（非相邻基元）保留，就像不带邻近度的三角形带中的基元集一样。
 
-## <a name="span-idinstanceidspanspan-idinstanceidspanspan-idinstanceidspaninstanceid"></a><span id="InstanceID"></span><span id="instanceid"></span><span id="INSTANCEID"></span>实例 Id
+## <a name="span-idinstanceidspanspan-idinstanceidspanspan-idinstanceidspaninstanceid"></a><span id="InstanceID"></span><span id="instanceid"></span><span id="INSTANCEID"></span>InstanceID
 
 
 实例 ID 由每个着色器阶段用于标识当前正在处理的几何图形的实例。 它是默认值为 0 的 32 位无符号整数。
@@ -62,7 +62,7 @@ IA 阶段会将基元 ID 添加到每个基元以供[几何着色器 (GS) 阶段
 | 顶点数据    | C,U | D,U | E,U | F,U | G,U | H,U | I,U | J,U | K,U | L,U |
 |----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
-| **实例 Id** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+| **InstanceID** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
 
  
 
@@ -71,7 +71,7 @@ IA 阶段会将基元 ID 添加到每个基元以供[几何着色器 (GS) 阶段
 |                 |     |     |     |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
-| **实例 Id**  | 0   | 0   | 0   |
+| **InstanceID**  | 0   | 0   | 0   |
 
  
 
@@ -80,7 +80,7 @@ IA 阶段会将基元 ID 添加到每个基元以供[几何着色器 (GS) 阶段
 | 顶点数据    | C,V | D,V | E,V | F,V | G,V | H,V | I,V | J,V | K,V | L,V |
 |----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
-| **实例 Id** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
+| **InstanceID** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
 
  
 
@@ -89,7 +89,7 @@ IA 阶段会将基元 ID 添加到每个基元以供[几何着色器 (GS) 阶段
 |                 |     |     |     |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
-| **实例 Id**  | 1   | 1   | 1   |
+| **InstanceID**  | 1   | 1   | 1   |
 
  
 

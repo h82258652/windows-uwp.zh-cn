@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fcbaa0a3db826ef971878acd6a553dd7a836508
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b63c9191489ecae54b17cb75b8aa1af32f09fcb8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594962"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363602"
 ---
 # <a name="optical-zoom-and-resizing"></a>视觉缩放和调整大小
 
@@ -21,7 +21,7 @@ ms.locfileid: "57594962"
 
 本文介绍 Windows 缩放和调整大小元素，并提供在你的应用中使用这些交互机制时的用户体验指南。
 
-> **重要的 API**：[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [**输入 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **重要的 API**：[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)， [**输入 (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
 使用视觉缩放，用户可以放大内容区域中内容的视图（在内容区域自身上执行），而使用调整大小，用户则可以更改一个或多个对象的相对大小，而不更改内容区域的视图（在内容区域中的对象上执行）。
 
@@ -49,7 +49,7 @@ ms.locfileid: "57594962"
 -   如果定义了最大和最小大小限制或边界，则使用视觉反馈演示用户何时达到或超过这些边界。
 -   可以使用吸附点通过提供内容中要停止操作的逻辑点来影响缩放和重新调整行为，并确保内容的特定子集显示在视口中。 为常用的缩放级别或逻辑视图提供吸附点，以便于用户选择这些级别。 例如，照片应用可能会提供 100% 级别的吸附点，而对于地图应用，吸附点对于市、州/省以及国家/地区视图可能非常有用。
 
-    用户通过对齐点虽然不够精确，但仍能实现其目标。 如果你使用 XAML，请参阅 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 的吸附点属性。 对于 JavaScript 和 HTML，请使用 [**-ms-content-zoom-snap-points**](https://msdn.microsoft.com/library/hh771895)。
+    用户通过对齐点虽然不够精确，但仍能实现其目标。 如果你使用 XAML，请参阅 [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 的吸附点属性。 对于 JavaScript 和 HTML，请使用 [ **-ms-content-zoom-snap-points**](https://msdn.microsoft.com/library/hh771895)。
 
     吸附点有两种类型：
 
@@ -85,7 +85,7 @@ ms.locfileid: "57594962"
 * [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
 * [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
 * [输入：Windows 8 手势示例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [输入：操作和手势 （c + +） 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [输入：操作和手势 (C++) 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 触摸输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 

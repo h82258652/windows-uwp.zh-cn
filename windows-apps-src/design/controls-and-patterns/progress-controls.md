@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a162d992390e8fc7d05d52303ec292fcf8e920a9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a409c4b940ad0e194428981f536823d880e56302
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634422"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364493"
 ---
 # <a name="progress-controls"></a>进度控件
 
@@ -25,7 +25,7 @@ ms.locfileid: "57634422"
 
 进度控件将为用户提供关于正在处理运行时间较长的操作的反馈。 这意味着，在进度指示器可见，并且还可以根据所使用的指示器指示等待时长时，用户无法与该应用交互。
 
-> **重要的 API**：[ProgressBar 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)， [IsIndeterminate 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)， [ProgressRing 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)， [IsActive 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
+> **重要的 API**：[ProgressBar 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)， [IsIndeterminate 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate)， [ProgressRing 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)， [IsActive 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
 
 ## <a name="types-of-progress"></a>进度类型
 
@@ -65,7 +65,7 @@ ms.locfileid: "57634422"
 
 在尝试显示正在执行的操作时，通常不清楚要使用的控件和所处的状态（确定和不确定）。 有时，任务明显不需要进度控件，但有时即使使用了进度控件，仍需要使用一行文本才能向用户解释正在进行的操作。
 
-### <a name="progressbar"></a>进度栏
+### <a name="progressbar"></a>ProgressBar
 -   **控件是否具有定义的持续时间或可预测结束？**
 
     使用确定 ProgressBar，并且相应地更新百分比或值。
@@ -123,7 +123,7 @@ ms.locfileid: "57634422"
 
 第一个示例是确定 ProgressBar。 如果已知操作持续时间，则最好使用确定 ProgressBar 显示何时安装、下载、设置等。
 
-**进度栏-不确定**
+**ProgressBar - Indeterminate**
 
 ![ProgressBar 不确定示例](images/PB_IndeterminateExample.png)
 
@@ -187,9 +187,9 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 ## <a name="related-articles"></a>相关文章
 
-- [ProgressBar 类](https://msdn.microsoft.com/library/windows/apps/br227529)
-- [ProgressRing 类](https://msdn.microsoft.com/library/windows/apps/br227538)
+- [ProgressBar 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
+- [ProgressRing 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)
 
 **面向开发人员 (XAML)**
-- [添加进度控件](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
+- [添加进度控件](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10))
 - [如何为 Windows Phone 创建自定义不确定的进度栏](https://go.microsoft.com/fwlink/p/?LinkID=392426)

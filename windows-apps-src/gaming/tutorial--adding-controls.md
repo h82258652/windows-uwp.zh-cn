@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 控件, 输入
 ms.localizationpriority: medium
-ms.openlocfilehash: 369aa076184f79aa1e43c3aac11706982a6be268
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0ff7088ec4062973d0b9d1ff6d20d7992e4135c3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595412"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367956"
 ---
 # <a name="add-controls"></a>添加控件
 
@@ -41,13 +41,13 @@ ms.locfileid: "57595412"
 
 在初始化该游戏示例中的 **MoveLookController** 类时，将注册四个特定于指针的事件和一个特定于鼠标的事件：
 
-事件 | 描述
+Event | 描述
 :------ | :-------
-[**CoreWindow::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) | 点按（并按住）左右鼠标按钮，或触摸触摸屏表面。
-[**CoreWindow::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) |移动鼠标，或在触摸表面执行拖动操作。
-[**CoreWindow::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) |释放鼠标左按钮，或者移开与触摸表面接触的物体。
-[**CoreWindow::PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208275) |指针移出主窗口。
-[**Windows::Devices::Input::MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356) | 鼠标移动了一定距离。 注意，我们只关注鼠标移动增量值，不关注当前 X-Y 位置。
+[**CoreWindow::PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed) | 点按（并按住）左右鼠标按钮，或触摸触摸屏表面。
+[**CoreWindow::PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) |移动鼠标，或在触摸表面执行拖动操作。
+[**CoreWindow::PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) |释放鼠标左按钮，或者移开与触摸表面接触的物体。
+[**CoreWindow::PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerexited) |指针移出主窗口。
+[**Windows::Devices::Input::MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved) | 鼠标移动了一定距离。 注意，我们只关注鼠标移动增量值，不关注当前 X-Y 位置。
 
 
 这些事件处理程序被设置为当 **MoveLookController** 在应用程序窗口中初始化后即为用户输入启动侦听。
@@ -105,7 +105,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 
 
 所有指针输入都在 **Active** 状态中跟踪，不同的指针 ID 对应于不同的指针操作。
-当收到 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) 事件时，**MoveLookController** 将获取窗口创建的指针 ID 值。 指针 ID 表示特定的输入类型。 例如，在多点触控设备上，可能同时有若干不同的主动输入。 ID 用于跟踪玩家在使用哪个输入。 如果触摸屏的移动矩形中有一个事件，将指派一个指针 ID 跟踪移动矩形中的任何指针事件。 射击矩形中的其他指针事件则使用单独的指针 ID 进行单独跟踪。
+当收到 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed) 事件时，**MoveLookController** 将获取窗口创建的指针 ID 值。 指针 ID 表示特定的输入类型。 例如，在多点触控设备上，可能同时有若干不同的主动输入。 ID 用于跟踪玩家在使用哪个输入。 如果触摸屏的移动矩形中有一个事件，将指派一个指针 ID 跟踪移动矩形中的任何指针事件。 射击矩形中的其他指针事件则使用单独的指针 ID 进行单独跟踪。
 
 
 > [!NOTE]
@@ -160,7 +160,7 @@ bool MoveLookController::IsFiring()
 
 如果检测到鼠标移动，我们希望利用该移动确定相机的新的俯仰和偏航。 我们通过实现相对鼠标控件实现此目的，在该控件中我们处理鼠标所移动的相对距离（移动开始到停止之间的增量），与记录运动的绝对 x-y 像素坐标相反。
 
-为此，我们通过检查由 [**MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356) 事件返回的 [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://msdn.microsoft.com/library/windows/apps/hh758358) 参数对象上的 [**MouseDelta::X**](https://msdn.microsoft.com/library/windows/apps/hh758353) 和 **MouseDelta::Y** 字段获取 X（水平运动）和 Y（垂直运动）坐标的变化。
+为此，我们通过检查由 [**MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved) 事件返回的 [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://docs.microsoft.com/uwp/api/windows.devices.input.mouseeventargs.mousedelta) 参数对象上的 [**MouseDelta::X**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDelta) 和 **MouseDelta::Y** 字段获取 X（水平运动）和 Y（垂直运动）坐标的变化。
 
 ```cpp
 void MoveLookController::OnMouseMoved(
@@ -220,8 +220,8 @@ void MoveLookController::OnMouseMoved(
 
 **MoveLookController** 检查指针 ID 以确定发生事件的位置，并采取以下操作之一：
 
--   如果在移动或射击矩形中发生了 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) 事件，则更新控制器的指针位置。
--   如果在屏幕的其他位置（定义为观看控制区）发生了 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) 事件，则计算观看方向矢量的俯仰和偏航变化。
+-   如果在移动或射击矩形中发生了 [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) 事件，则更新控制器的指针位置。
+-   如果在屏幕的其他位置（定义为观看控制区）发生了 [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) 事件，则计算观看方向矢量的俯仰和偏航变化。
 
 
 在实现触摸控件之后，我们之前使用 Direct2D 绘制的矩形将指示玩家移动、射击和观看区域在哪里。
@@ -401,7 +401,7 @@ window->PointerReleased +=
 
 在这里，**MoveLookController** 将触发该事件的指针的指针 ID 分配到对应于观看区域的特定变量。 在触摸屏输入在查看区域中发生的情况下**m\_lookPointerID**变量设置为触发事件的指针 ID。 一个布尔变量**m\_lookInUse**，还设置，以指示该控件不具有尚未被释放。
 
-现在，我们讨论游戏示例如何处理 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) 触摸屏事件。
+现在，我们讨论游戏示例如何处理 [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) 触摸屏事件。
 
 
 在 **MoveLookController::OnPointerMoved** 方法内，我们查看哪类指针 ID 被分配到该事件。 如果是 **m_lookPointerID**，我们将计算指针位置的变化。
@@ -435,9 +435,9 @@ window->PointerReleased +=
 
 
 
-我们要讨论的最后一个部分是游戏示例如何处理 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) 触摸屏事件。
+我们要讨论的最后一个部分是游戏示例如何处理 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) 触摸屏事件。
 当用户完成了触摸手势并在屏幕上删除了手指后，[**MoveLookController::OnPointerReleased**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L441-L500) 将启动。
-如果触发 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) 事件的指针的指针 ID 是以前记录的移动指针的 ID，则 **MoveLookController** 将速度设置为 `0`，这是因为玩家已停止触摸观看区域。
+如果触发 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) 事件的指针的指针 ID 是以前记录的移动指针的 ID，则 **MoveLookController** 将速度设置为 `0`，这是因为玩家已停止触摸观看区域。
 
 ```cpp
     else if (pointerID == m_lookPointerID)
@@ -469,7 +469,7 @@ P | 暂停游戏
 鼠标左键 | 射击视区
 
 
-若要使用键盘，游戏示例在 [**MoveLookController::InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L84-L88) 方法内注册两个新事件 [**CoreWindow::KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208271) 和 [**CoreWindow::KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208270)。 这些事件处理键的按下和释放。
+若要使用键盘，游戏示例在 [**MoveLookController::InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L84-L88) 方法内注册两个新事件 [**CoreWindow::KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keyup) 和 [**CoreWindow::KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keydown)。 这些事件处理键的按下和释放。
 
 ```cpp
 window->KeyDown +=

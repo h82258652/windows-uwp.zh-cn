@@ -6,12 +6,12 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 40335c70-46cc-40fd-9fe0-3cc8e6200482
 ms.localizationpriority: medium
-ms.openlocfilehash: 1635ab0d7043057c09a3e9ac451ccdba1410b471
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fa390123389b20564a94d1e59f9248adcf673061
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634112"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372920"
 ---
 # <a name="new-apis-in-windows-10-build-14393"></a>Windows 10 版本 14393 中的新增 API
 
@@ -20,7 +20,7 @@ ms.locfileid: "57634112"
 
 **项**
 
-[Windows.ApplicationModel.SocialInfo.SocialFeedChildItem](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.socialinfo.socialfeedchilditem)
+[Windows.ApplicationModel.SocialInfo.SocialFeedChildItem](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialfeedchilditem)
 
 **属性**
 
@@ -30,7 +30,7 @@ Windows.ApplicationModel.SocialInfo.SocialFeedChildItem <br /> Windows.Applicati
 
 **项**
 
-[Windows.ApplicationModel.SocialInfo.SocialFeedContent](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.socialinfo.socialfeedcontent)
+[Windows.ApplicationModel.SocialInfo.SocialFeedContent](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialfeedcontent)
 
 **属性**
 
@@ -40,7 +40,7 @@ Windows.ApplicationModel.SocialInfo.SocialFeedContent <br /> Windows.Application
 
 **项**
 
-[Windows.ApplicationModel.SocialInfo.SocialFeedItem](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.socialinfo.socialfeeditem)
+[Windows.ApplicationModel.SocialInfo.SocialFeedItem](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialfeeditem)
 
 **属性**
 
@@ -50,7 +50,7 @@ Windows.ApplicationModel.SocialInfo.SocialFeedItem <br /> Windows.ApplicationMod
 
 **项**
 
-[Windows.ApplicationModel.SocialInfo.SocialFeedItemStyle](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.socialinfo.socialfeeditemstyle)
+[Windows.ApplicationModel.SocialInfo.SocialFeedItemStyle](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialfeeditemstyle)
 
 **属性**
 
@@ -60,7 +60,7 @@ Windows.ApplicationModel.SocialInfo.SocialFeedItemStyle <br /> Windows.Applicati
 
 **项**
 
-[Windows.ApplicationModel.SocialInfo.SocialFeedKind](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.socialinfo.socialfeedkind)
+[Windows.ApplicationModel.SocialInfo.SocialFeedKind](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialfeedkind)
 
 **属性**
 
@@ -70,7 +70,7 @@ Windows.ApplicationModel.SocialInfo.SocialFeedKind <br /> Windows.ApplicationMod
 
 **项**
 
-[Windows.ApplicationModel.SocialInfo.SocialFeedSharedItem](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.socialinfo.socialfeedshareditem)
+[Windows.ApplicationModel.SocialInfo.SocialFeedSharedItem](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialfeedshareditem)
 
 **属性**
 
@@ -80,7 +80,7 @@ Windows.ApplicationModel.SocialInfo.SocialFeedSharedItem <br /> Windows.Applicat
 
 **项**
 
-[Windows.ApplicationModel.SocialInfo.SocialFeedUpdateMode](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.socialinfo.socialfeedupdatemode)
+[Windows.ApplicationModel.SocialInfo.SocialFeedUpdateMode](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialfeedupdatemode)
 
 **属性**
 
@@ -90,7 +90,7 @@ Windows.ApplicationModel.SocialInfo.SocialFeedUpdateMode <br /> Windows.Applicat
 
 **项**
 
-[Windows.ApplicationModel.SocialInfo.SocialItemBadgeStyle](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.socialinfo.socialitembadgestyle)
+[Windows.ApplicationModel.SocialInfo.SocialItemBadgeStyle](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialitembadgestyle)
 
 **属性**
 
@@ -100,7 +100,7 @@ Windows.ApplicationModel.SocialInfo.SocialItemBadgeStyle <br /> Windows.Applicat
 
 **项**
 
-[Windows.ApplicationModel.SocialInfo.SocialItemThumbnail](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.socialinfo.socialitemthumbnail)
+[Windows.ApplicationModel.SocialInfo.SocialItemThumbnail](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialitemthumbnail)
 
 **属性**
 
@@ -110,7 +110,7 @@ Windows.ApplicationModel.SocialInfo.SocialItemThumbnail <br /> Windows.Applicati
 
 **项**
 
-[Windows.ApplicationModel.SocialInfo.SocialUserInfo](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.socialinfo.socialuserinfo)
+[Windows.ApplicationModel.SocialInfo.SocialUserInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialuserinfo)
 
 **属性**
 
@@ -120,7 +120,7 @@ Windows.ApplicationModel.SocialInfo.SocialUserInfo <br /> Windows.ApplicationMod
 
 **项**
 
-[Windows.ApplicationModel.SocialInfo.Provider.SocialDashboardItemUpdater](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.socialinfo.provider.socialdashboarditemupdater)
+[Windows.ApplicationModel.SocialInfo.Provider.SocialDashboardItemUpdater](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.provider.socialdashboarditemupdater)
 
 **属性**
 
@@ -130,7 +130,7 @@ Windows.ApplicationModel.SocialInfo.Provider.SocialDashboardItemUpdater <br /> W
 
 **项**
 
-[Windows.ApplicationModel.SocialInfo.Provider.SocialFeedUpdater](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.socialinfo.provider.socialfeedupdater)
+[Windows.ApplicationModel.SocialInfo.Provider.SocialFeedUpdater](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.provider.socialfeedupdater)
 
 **属性**
 
@@ -140,7 +140,7 @@ Windows.ApplicationModel.SocialInfo.Provider.SocialFeedUpdater <br /> Windows.Ap
 
 **项**
 
-[Windows.ApplicationModel.SocialInfo.Provider.SocialInfoProviderManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.socialinfo.provider.socialinfoprovidermanager)
+[Windows.ApplicationModel.SocialInfo.Provider.SocialInfoProviderManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.provider.socialinfoprovidermanager)
 
 **属性**
 
@@ -150,7 +150,7 @@ Windows.ApplicationModel.SocialInfo.Provider.SocialInfoProviderManager <br /> Wi
 
 **项**
 
-[Windows.ApplicationModel.StartupTask](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.startuptask)
+[Windows.ApplicationModel.StartupTask](https://docs.microsoft.com/uwp/api/windows.applicationmodel.startuptask)
 
 **属性**
 
@@ -160,7 +160,7 @@ Windows.ApplicationModel.StartupTask <br /> Windows.ApplicationModel.StartupTask
 
 **项**
 
-[Windows.ApplicationModel.StartupTaskState](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.startuptaskstate)
+[Windows.ApplicationModel.StartupTaskState](https://docs.microsoft.com/uwp/api/windows.applicationmodel.startuptaskstate)
 
 **属性**
 
@@ -170,7 +170,7 @@ Windows.ApplicationModel.StartupTaskState <br /> Windows.ApplicationModel.Startu
 
 **项**
 
-[Windows.ApplicationModel.EnteredBackgroundEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.enteredbackgroundeventargs)
+[Windows.ApplicationModel.EnteredBackgroundEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.enteredbackgroundeventargs)
 
 **属性**
 
@@ -180,7 +180,7 @@ Windows.ApplicationModel.EnteredBackgroundEventArgs <br /> Windows.ApplicationMo
 
 **项**
 
-[Windows.ApplicationModel.IEnteredBackgroundEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.ienteredbackgroundeventargs)
+[Windows.ApplicationModel.IEnteredBackgroundEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.ienteredbackgroundeventargs)
 
 **属性**
 
@@ -190,7 +190,7 @@ Windows.ApplicationModel.IEnteredBackgroundEventArgs <br /> Windows.ApplicationM
 
 **项**
 
-[Windows.ApplicationModel.ILeavingBackgroundEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.ileavingbackgroundeventargs)
+[Windows.ApplicationModel.ILeavingBackgroundEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.ileavingbackgroundeventargs)
 
 **属性**
 
@@ -200,7 +200,7 @@ Windows.ApplicationModel.ILeavingBackgroundEventArgs <br /> Windows.ApplicationM
 
 **项**
 
-[Windows.ApplicationModel.LeavingBackgroundEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.leavingbackgroundeventargs)
+[Windows.ApplicationModel.LeavingBackgroundEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.leavingbackgroundeventargs)
 
 **属性**
 
@@ -210,7 +210,7 @@ Windows.ApplicationModel.LeavingBackgroundEventArgs <br /> Windows.ApplicationMo
 
 **项**
 
-[Windows.ApplicationModel.PackageCatalog](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.packagecatalog)
+[Windows.ApplicationModel.PackageCatalog](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packagecatalog)
 
 **属性**
 
@@ -220,7 +220,7 @@ Windows.ApplicationModel.PackageCatalog <br /> Windows.ApplicationModel.PackageC
 
 **项**
 
-[Windows.ApplicationModel.ackageInstallingEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.packageinstallingeventargs)
+[Windows.ApplicationModel.ackageInstallingEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packageinstallingeventargs)
 
 **属性**
 
@@ -230,7 +230,7 @@ Windows.ApplicationModel.PackageInstallingEventArgs <br /> Windows.ApplicationMo
 
 **项**
 
-[Windows.ApplicationModel.PackageSignatureKind](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.packagesignaturekind)
+[Windows.ApplicationModel.PackageSignatureKind](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packagesignaturekind)
 
 **属性**
 
@@ -240,7 +240,7 @@ Windows.ApplicationModel.PackageSignatureKind <br /> Windows.ApplicationModel.Pa
 
 **项**
 
-[Windows.ApplicationModel.PackageStagingEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.packagestagingeventargs)
+[Windows.ApplicationModel.PackageStagingEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packagestagingeventargs)
 
 **属性**
 
@@ -250,7 +250,7 @@ Windows.ApplicationModel.PackageStagingEventArgs <br /> Windows.ApplicationModel
 
 **项**
 
-[Windows.ApplicationModel.PackageStatusChangedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.packagestatuschangedeventargs)
+[Windows.ApplicationModel.PackageStatusChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packagestatuschangedeventargs)
 
 **属性**
 
@@ -260,7 +260,7 @@ Windows.ApplicationModel.PackageStatusChangedEventArgs <br /> Windows.Applicatio
 
 **项**
 
-[Windows.ApplicationModel.PackageUninstallingEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.packageuninstallingeventargs)
+[Windows.ApplicationModel.PackageUninstallingEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packageuninstallingeventargs)
 
 **属性**
 
@@ -270,7 +270,7 @@ Windows.ApplicationModel.PackageUninstallingEventArgs <br /> Windows.Application
 
 **项**
 
-[Windows.ApplicationModel.PackageUpdatingEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.packageupdatingeventargs)
+[Windows.ApplicationModel.PackageUpdatingEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packageupdatingeventargs)
 
 **属性**
 
@@ -280,7 +280,7 @@ Windows.ApplicationModel.PackageUpdatingEventArgs <br /> Windows.ApplicationMode
 
 **项**
 
-[Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs)
+[Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.backgroundactivatedeventargs)
 
 **属性**
 
@@ -290,7 +290,7 @@ Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs <br /> Windows.
 
 **项**
 
-[Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.iactivatedeventargswithuser)
+[Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargswithuser)
 
 **属性**
 
@@ -300,7 +300,7 @@ Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser <br /> Windows.A
 
 **项**
 
-[Windows.ApplicationModel.Activation.IBackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.ibackgroundactivatedeventargs)
+[Windows.ApplicationModel.Activation.IBackgroundActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.ibackgroundactivatedeventargs)
 
 **属性**
 
@@ -310,7 +310,7 @@ Windows.ApplicationModel.Activation.IBackgroundActivatedEventArgs <br /> Windows
 
 **项**
 
-[Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs2](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.ilaunchactivatedeventargs2)
+[Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs2](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.ilaunchactivatedeventargs2)
 
 **属性**
 
@@ -320,7 +320,7 @@ Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs2 <br /> Windows.Ap
 
 **项**
 
-[Windows.ApplicationModel.Activation.IUserDataAccountProviderActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.iuserdataaccountprovideractivatedeventargs)
+[Windows.ApplicationModel.Activation.IUserDataAccountProviderActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iuserdataaccountprovideractivatedeventargs)
 
 **属性**
 
@@ -330,7 +330,7 @@ Windows.ApplicationModel.Activation.IUserDataAccountProviderActivatedEventArgs <
 
 **项**
 
-[Windows.ApplicationModel.Activation.TileActivatedInfo](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.tileactivatedinfo)
+[Windows.ApplicationModel.Activation.TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 **属性**
 
@@ -340,7 +340,7 @@ Windows.ApplicationModel.Activation.TileActivatedInfo <br /> Windows.Application
 
 **项**
 
-[Windows.ApplicationModel.Activation.UserDataAccountProviderActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.userdataaccountprovideractivatedeventargs)
+[Windows.ApplicationModel.Activation.UserDataAccountProviderActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.userdataaccountprovideractivatedeventargs)
 
 **属性**
 
@@ -350,7 +350,7 @@ Windows.ApplicationModel.Activation.UserDataAccountProviderActivatedEventArgs <b
 
 **项**
 
-[Windows.ApplicationModel.AppExtensions.AppExtension](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appextensions.appextension)
+[Windows.ApplicationModel.AppExtensions.AppExtension](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextension)
 
 **属性**
 
@@ -360,7 +360,7 @@ Windows.ApplicationModel.AppExtensions.AppExtension <br /> Windows.ApplicationMo
 
 **项**
 
-[Windows.ApplicationModel.AppExtensions.AppExtensionCatalog](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appextensions.appextensioncatalog)
+[Windows.ApplicationModel.AppExtensions.AppExtensionCatalog](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextensioncatalog)
 
 **属性**
 
@@ -370,7 +370,7 @@ Windows.ApplicationModel.AppExtensions.AppExtensionCatalog <br /> Windows.Applic
 
 **项**
 
-[Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appextensions.appextensionpackageinstalledeventargs)
+[Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextensionpackageinstalledeventargs)
 
 **属性**
 
@@ -380,7 +380,7 @@ Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs <br
 
 **项**
 
-[Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appextensions.appextensionpackagestatuschangedeventargs)
+[Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextensionpackagestatuschangedeventargs)
 
 **属性**
 
@@ -390,7 +390,7 @@ Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs
 
 **项**
 
-[Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appextensions.appextensionpackageuninstallingeventargs)
+[Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextensionpackageuninstallingeventargs)
 
 **属性**
 
@@ -400,7 +400,7 @@ Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs 
 
 **项**
 
-[Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appextensions.appextensionpackageupdatedeventargs)
+[Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextensionpackageupdatedeventargs)
 
 **属性**
 
@@ -410,7 +410,7 @@ Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs <br /
 
 **项**
 
-[Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appextensions.appextensionpackageupdatingeventargs)
+[Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextensionpackageupdatingeventargs)
 
 **属性**
 
@@ -420,7 +420,7 @@ Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs <br 
 
 **项**
 
-[Windows.ApplicationModel.Appointments.AppointmentManagerForUser](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanagerforuser)
+[Windows.ApplicationModel.Appointments.AppointmentManagerForUser](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanagerforuser)
 
 **属性**
 
@@ -430,7 +430,7 @@ Windows.ApplicationModel.Appointments.AppointmentManagerForUser <br /> Windows.A
 
 **项**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.dataprovider.appointmentcalendarcancelmeetingrequest)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarcancelmeetingrequest)
 
 **属性**
 
@@ -440,7 +440,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeet
 
 **项**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.dataprovider.appointmentcalendarcancelmeetingrequesteventargs)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarcancelmeetingrequesteventargs)
 
 **属性**
 
@@ -450,7 +450,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeet
 
 **项**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.dataprovider.appointmentcalendarcreateorupdateappointmentrequest)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarcreateorupdateappointmentrequest)
 
 **属性**
 
@@ -460,7 +460,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUp
 
 **项**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.dataprovider.appointmentcalendarcreateorupdateappointmentrequesteventargs)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarcreateorupdateappointmentrequesteventargs)
 
 **属性**
 
@@ -470,7 +470,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUp
 
 **项**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.dataprovider.appointmentcalendarforwardmeetingrequest)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarforwardmeetingrequest)
 
 **属性**
 
@@ -480,7 +480,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMee
 
 **项**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.dataprovider.appointmentcalendarforwardmeetingrequesteventargs)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarforwardmeetingrequesteventargs)
 
 **属性**
 
@@ -490,7 +490,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMee
 
 **项**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.dataprovider.appointmentcalendarproposenewtimeformeetingrequest)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarproposenewtimeformeetingrequest)
 
 **属性**
 
@@ -500,7 +500,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNew
 
 **项**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.dataprovider.appointmentcalendarproposenewtimeformeetingrequesteventargs)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarproposenewtimeformeetingrequesteventargs)
 
 **属性**
 
@@ -510,7 +510,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNew
 
 **项**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.dataprovider.appointmentcalendarsyncmanagersyncrequest)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarsyncmanagersyncrequest)
 
 **属性**
 
@@ -520,7 +520,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManage
 
 **项**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.dataprovider.appointmentcalendarsyncmanagersyncrequesteventargs)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarsyncmanagersyncrequesteventargs)
 
 **属性**
 
@@ -530,7 +530,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManage
 
 **项**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.dataprovider.appointmentcalendarupdatemeetingresponserequest)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarupdatemeetingresponserequest)
 
 **属性**
 
@@ -540,7 +540,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeet
 
 **项**
 
-[Windows.ApplicationModel.Appointments.DataProvider。</br>AppointmentCalendarUpdateMeetingResponseRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.dataprovider.appointmentcalendarupdatemeetingresponserequesteventargs)
+[Windows.ApplicationModel.Appointments.DataProvider.</br>AppointmentCalendarUpdateMeetingResponseRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarupdatemeetingresponserequesteventargs)
 
 **属性**
 
@@ -550,7 +550,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeet
 
 **项**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.dataprovider.appointmentdataproviderconnection)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentdataproviderconnection)
 
 **属性**
 
@@ -560,7 +560,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnec
 
 **项**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderTriggerDetails](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.dataprovider.appointmentdataprovidertriggerdetails)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderTriggerDetails](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentdataprovidertriggerdetails)
 
 **属性**
 
@@ -570,7 +570,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderTrigge
 
 **项**
 
-[Windows.ApplicationModel.Background.IBackgroundTaskInstance4](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtaskinstance4)
+[Windows.ApplicationModel.Background.IBackgroundTaskInstance4](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance4)
 
 **属性**
 
@@ -580,7 +580,7 @@ Windows.ApplicationModel.Background.IBackgroundTaskInstance4 <br /> Windows.Appl
 
 **项**
 
-[Windows.ApplicationModel.Background.SecondaryAuthenticationFactorAuthenticationTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.secondaryauthenticationfactorauthenticationtrigger)
+[Windows.ApplicationModel.Background.SecondaryAuthenticationFactorAuthenticationTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.secondaryauthenticationfactorauthenticationtrigger)
 
 **属性**
 
@@ -590,7 +590,7 @@ Windows.ApplicationModel.Background.SecondaryAuthenticationFactorAuthenticationT
 
 **项**
 
-[Windows.ApplicationModel.Background.UserNotificationChangedTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.usernotificationchangedtrigger)
+[Windows.ApplicationModel.Background.UserNotificationChangedTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.usernotificationchangedtrigger)
 
 **属性**
 
@@ -600,7 +600,7 @@ Windows.ApplicationModel.Background.UserNotificationChangedTrigger <br /> Window
 
 **项**
 
-[Windows.ApplicationModel.Calls.PhoneCallHistoryManagerForUser](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.phonecallhistorymanagerforuser)
+[Windows.ApplicationModel.Calls.PhoneCallHistoryManagerForUser](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonecallhistorymanagerforuser)
 
 **属性**
 
@@ -610,7 +610,7 @@ Windows.ApplicationModel.Calls.PhoneCallHistoryManagerForUser <br /> Windows.App
 
 **项**
 
-[Windows.ApplicationModel.Chat.ChatRestoreHistorySpan](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatrestorehistoryspan)
+[Windows.ApplicationModel.Chat.ChatRestoreHistorySpan](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat.chatrestorehistoryspan)
 
 **属性**
 
@@ -620,7 +620,7 @@ Windows.ApplicationModel.Chat.ChatRestoreHistorySpan <br /> Windows.ApplicationM
 
 **项**
 
-[Windows.ApplicationModel.Chat.ChatSyncConfiguration](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatsyncconfiguration)
+[Windows.ApplicationModel.Chat.ChatSyncConfiguration](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat.chatsyncconfiguration)
 
 **属性**
 
@@ -630,7 +630,7 @@ Windows.ApplicationModel.Chat.ChatSyncConfiguration <br /> Windows.ApplicationMo
 
 **项**
 
-[Windows.ApplicationModel.Chat.ChatSyncManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatsyncmanager)
+[Windows.ApplicationModel.Chat.ChatSyncManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat.chatsyncmanager)
 
 **属性**
 
@@ -640,7 +640,7 @@ Windows.ApplicationModel.Chat.ChatSyncManager <br /> Windows.ApplicationModel.Ch
 
 **项**
 
-[Windows.ApplicationModel.Contacts.ContactListSyncConstraints](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactlistsyncconstraints)
+[Windows.ApplicationModel.Contacts.ContactListSyncConstraints](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactlistsyncconstraints)
 
 **属性**
 
@@ -650,7 +650,7 @@ Windows.ApplicationModel.Contacts.ContactListSyncConstraints <br /> Windows.Appl
 
 **项**
 
-[Windows.ApplicationModel.Contacts.ContactManagerForUser](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactmanagerforuser)
+[Windows.ApplicationModel.Contacts.ContactManagerForUser](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactmanagerforuser)
 
 **属性**
 
@@ -660,7 +660,7 @@ Windows.ApplicationModel.Contacts.ContactManagerForUser <br /> Windows.Applicati
 
 **项**
 
-[Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.dataprovider.contactdataproviderconnection)
+[Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.dataprovider.contactdataproviderconnection)
 
 **属性**
 
@@ -670,7 +670,7 @@ Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection <br
 
 **项**
 
-[Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderTriggerDetails](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.dataprovider.contactdataprovidertriggerdetails)
+[Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderTriggerDetails](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.dataprovider.contactdataprovidertriggerdetails)
 
 **属性**
 
@@ -680,7 +680,7 @@ Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderTriggerDetails
 
 **项**
 
-[Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.dataprovider.contactlistserversearchreadbatchrequest)
+[Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.dataprovider.contactlistserversearchreadbatchrequest)
 
 **属性**
 
@@ -690,7 +690,7 @@ Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchR
 
 **项**
 
-[Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.dataprovider.contactlistserversearchreadbatchrequesteventargs)
+[Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.dataprovider.contactlistserversearchreadbatchrequesteventargs)
 
 **属性**
 
@@ -700,7 +700,7 @@ Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchR
 
 **项**
 
-[Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.dataprovider.contactlistsyncmanagersyncrequest)
+[Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.dataprovider.contactlistsyncmanagersyncrequest)
 
 **属性**
 
@@ -710,7 +710,7 @@ Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequest
 
 **项**
 
-[Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.dataprovider.contactlistsyncmanagersyncrequesteventargs)
+[Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.dataprovider.contactlistsyncmanagersyncrequesteventargs)
 
 **属性**
 
@@ -720,7 +720,7 @@ Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequest
 
 **项**
 
-[Windows.ApplicationModel.Email.EmailManagerForUser](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.emailmanagerforuser)
+[Windows.ApplicationModel.Email.EmailManagerForUser](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailmanagerforuser)
 
 **属性**
 
@@ -730,7 +730,7 @@ Windows.ApplicationModel.Email.EmailManagerForUser <br /> Windows.ApplicationMod
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emaildataproviderconnection)
+[Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emaildataproviderconnection)
 
 **属性**
 
@@ -740,7 +740,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection <br /> W
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailDataProviderTriggerDetails](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emaildataprovidertriggerdetails)
+[Windows.ApplicationModel.Email.DataProvider.EmailDataProviderTriggerDetails](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emaildataprovidertriggerdetails)
 
 **属性**
 
@@ -750,7 +750,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailDataProviderTriggerDetails <br 
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxcreatefolderrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxcreatefolderrequest)
 
 **属性**
 
@@ -760,7 +760,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequest <br 
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxcreatefolderrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxcreatefolderrequesteventargs)
 
 **属性**
 
@@ -770,7 +770,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequestEvent
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxdeletefolderrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdeletefolderrequest)
 
 **属性**
 
@@ -780,7 +780,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequest <br 
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxdeletefolderrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdeletefolderrequesteventargs)
 
 **属性**
 
@@ -790,7 +790,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequestEvent
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxdownloadattachmentrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdownloadattachmentrequest)
 
 **属性**
 
@@ -800,7 +800,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentReques
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxdownloadattachmentrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdownloadattachmentrequesteventargs)
 
 **属性**
 
@@ -810,7 +810,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentReques
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxdownloadmessagerequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdownloadmessagerequest)
 
 **属性**
 
@@ -820,7 +820,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequest <
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxdownloadmessagerequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdownloadmessagerequesteventargs)
 
 **属性**
 
@@ -830,7 +830,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequestEv
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxemptyfolderrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxemptyfolderrequest)
 
 **属性**
 
@@ -840,7 +840,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequest <br /
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxemptyfolderrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxemptyfolderrequesteventargs)
 
 **属性**
 
@@ -850,7 +850,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequestEventA
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxforwardmeetingrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxforwardmeetingrequest)
 
 **属性**
 
@@ -860,7 +860,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequest <b
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxforwardmeetingrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxforwardmeetingrequesteventargs)
 
 **属性**
 
@@ -870,7 +870,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequestEve
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxgetautoreplysettingsrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxgetautoreplysettingsrequest)
 
 **属性**
 
@@ -880,7 +880,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequ
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxgetautoreplysettingsrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxgetautoreplysettingsrequesteventargs)
 
 **属性**
 
@@ -890,7 +890,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequ
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxmovefolderrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxmovefolderrequest)
 
 **属性**
 
@@ -900,7 +900,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequest <br />
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxmovefolderrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxmovefolderrequesteventargs)
 
 **属性**
 
@@ -910,7 +910,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequestEventAr
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxproposenewtimeformeetingrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxproposenewtimeformeetingrequest)
 
 **属性**
 
@@ -920,7 +920,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeeting
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxproposenewtimeformeetingrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxproposenewtimeformeetingrequesteventargs)
 
 **属性**
 
@@ -930,7 +930,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeeting
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxresolverecipientsrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxresolverecipientsrequest)
 
 **属性**
 
@@ -940,7 +940,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequest
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxresolverecipientsrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxresolverecipientsrequesteventargs)
 
 **属性**
 
@@ -950,7 +950,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequest
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxserversearchreadbatchrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxserversearchreadbatchrequest)
 
 **属性**
 
@@ -960,7 +960,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchReq
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxserversearchreadbatchrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxserversearchreadbatchrequesteventargs)
 
 **属性**
 
@@ -970,7 +970,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchReq
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxsetautoreplysettingsrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxsetautoreplysettingsrequest)
 
 **属性**
 
@@ -980,7 +980,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequ
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxsetautoreplysettingsrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxsetautoreplysettingsrequesteventargs)
 
 **属性**
 
@@ -990,7 +990,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequ
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxsyncmanagersyncrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxsyncmanagersyncrequest)
 
 **属性**
 
@@ -1000,7 +1000,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequest <
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxsyncmanagersyncrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxsyncmanagersyncrequesteventargs)
 
 **属性**
 
@@ -1010,7 +1010,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequestEv
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxupdatemeetingresponserequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxupdatemeetingresponserequest)
 
 **属性**
 
@@ -1020,7 +1020,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseReq
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxupdatemeetingresponserequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxupdatemeetingresponserequesteventargs)
 
 **属性**
 
@@ -1030,7 +1030,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseReq
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxvalidatecertificatesrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxvalidatecertificatesrequest)
 
 **属性**
 
@@ -1040,7 +1040,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequ
 
 **项**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.email.dataprovider.emailmailboxvalidatecertificatesrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxvalidatecertificatesrequesteventargs)
 
 **属性**
 
@@ -1050,7 +1050,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequ
 
 **项**
 
-[Windows.ApplicationModel.Store.LicenseManagement.LicenseManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.licensemanagement.licensemanager)
+[Windows.ApplicationModel.Store.LicenseManagement.LicenseManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.licensemanagement.licensemanager)
 
 **属性**
 
@@ -1060,7 +1060,7 @@ Windows.ApplicationModel.Store.LicenseManagement.LicenseManager <br /> Windows.A
 
 **项**
 
-[Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.licensemanagement.licensesatisfactioninfo)
+[Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.licensemanagement.licensesatisfactioninfo)
 
 **属性**
 
@@ -1070,7 +1070,7 @@ Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo <br /> 
 
 **项**
 
-[Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.licensemanagement.licensesatisfactionresult)
+[Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.licensemanagement.licensesatisfactionresult)
 
 **属性**
 
@@ -1080,7 +1080,7 @@ Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult <br /
 
 **项**
 
-[Windows.ApplicationModel.Store.Preview.StoreLogOptions](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.preview.storelogoptions)
+[Windows.ApplicationModel.Store.Preview.StoreLogOptions](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.storelogoptions)
 
 **属性**
 
@@ -1090,7 +1090,7 @@ Windows.ApplicationModel.Store.Preview.StoreLogOptions <br /> Windows.Applicatio
 
 **项**
 
-[Windows.ApplicationModel.UserDataAccounts.UserDataAccountManagerForUser](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.userdataaccounts.userdataaccountmanagerforuser)
+[Windows.ApplicationModel.UserDataAccounts.UserDataAccountManagerForUser](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.userdataaccountmanagerforuser)
 
 **属性**
 
@@ -1100,7 +1100,7 @@ Windows.ApplicationModel.UserDataAccounts.UserDataAccountManagerForUser <br /> W
 
 **项**
 
-[Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.userdataaccounts.userdataaccountstorechangedeventargs)
+[Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.userdataaccountstorechangedeventargs)
 
 **属性**
 
@@ -1110,7 +1110,7 @@ Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs <
 
 **项**
 
-[Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.userdataaccounts.provider.iuserdataaccountprovideroperation)
+[Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.provider.iuserdataaccountprovideroperation)
 
 **属性**
 
@@ -1120,7 +1120,7 @@ Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOpera
 
 **项**
 
-[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountPartnerAccountInfo](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.userdataaccounts.provider.userdataaccountpartneraccountinfo)
+[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountPartnerAccountInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountpartneraccountinfo)
 
 **属性**
 
@@ -1130,7 +1130,7 @@ Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountPartnerAccount
 
 **项**
 
-[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderAddAccountOperation](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.userdataaccounts.provider.userdataaccountprovideraddaccountoperation)
+[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderAddAccountOperation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountprovideraddaccountoperation)
 
 **属性**
 
@@ -1140,7 +1140,7 @@ Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderAddAcc
 
 **项**
 
-[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderOperationKind](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.userdataaccounts.provider.userdataaccountprovideroperationkind)
+[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderOperationKind](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountprovideroperationkind)
 
 **属性**
 
@@ -1150,7 +1150,7 @@ Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderOperat
 
 **项**
 
-[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderPartnerAccountKind](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.userdataaccounts.provider.userdataaccountproviderpartneraccountkind)
+[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderPartnerAccountKind](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountproviderpartneraccountkind)
 
 **属性**
 
@@ -1160,7 +1160,7 @@ Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderPartne
 
 **项**
 
-[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderResolveErrorsOperation](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.userdataaccounts.provider.userdataaccountproviderresolveerrorsoperation)
+[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderResolveErrorsOperation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountproviderresolveerrorsoperation)
 
 **属性**
 
@@ -1170,7 +1170,7 @@ Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderResolv
 
 **项**
 
-[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderSettingsOperation](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.userdataaccounts.provider.userdataaccountprovidersettingsoperation)
+[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderSettingsOperation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountprovidersettingsoperation)
 
 **属性**
 
@@ -1180,7 +1180,7 @@ Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderSettin
 
 **项**
 
-[Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountAuthenticationType](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.userdataaccounts.systemaccess.deviceaccountauthenticationtype)
+[Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountAuthenticationType](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.systemaccess.deviceaccountauthenticationtype)
 
 **属性**
 
@@ -1190,7 +1190,7 @@ Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountAuthenticati
 
 **项**
 
-[Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountIconId](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.userdataaccounts.systemaccess.deviceaccounticonid)
+[Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountIconId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.systemaccess.deviceaccounticonid)
 
 **属性**
 
@@ -1200,7 +1200,7 @@ Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountIconId <br /
 
 **项**
 
-[Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountMailAgeFilter](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.userdataaccounts.systemaccess.deviceaccountmailagefilter)
+[Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountMailAgeFilter](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.systemaccess.deviceaccountmailagefilter)
 
 **属性**
 
@@ -1210,7 +1210,7 @@ Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountMailAgeFilte
 
 **项**
 
-[Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountSyncScheduleKind](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.userdataaccounts.systemaccess.deviceaccountsyncschedulekind)
+[Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountSyncScheduleKind](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.systemaccess.deviceaccountsyncschedulekind)
 
 **属性**
 
@@ -1220,7 +1220,7 @@ Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountSyncSchedule
 
 **项**
 
-[Windows.Data.Text.TextPhoneme](https://msdn.microsoft.com/library/windows/apps/windows.data.text.textphoneme)
+[Windows.Data.Text.TextPhoneme](https://docs.microsoft.com/uwp/api/windows.data.text.textphoneme)
 
 **属性**
 
@@ -1230,7 +1230,7 @@ Windows.Data.Text.TextPhoneme <br /> Windows.Data.Text.TextPhoneme.DisplayText <
 
 **项**
 
-[Windows.Devices.AllJoyn.AllJoynBusObject](https://msdn.microsoft.com/library/windows/apps/windows.devices.alljoyn.alljoynbusobject)
+[Windows.Devices.AllJoyn.AllJoynBusObject](https://docs.microsoft.com/uwp/api/windows.devices.alljoyn.alljoynbusobject)
 
 **属性**
 
@@ -1240,7 +1240,7 @@ Windows.Devices.AllJoyn.AllJoynBusObject <br /> Windows.Devices.AllJoyn.AllJoynB
 
 **项**
 
-[Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.devices.alljoyn.alljoynbusobjectstoppedeventargs)
+[Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.alljoyn.alljoynbusobjectstoppedeventargs)
 
 **属性**
 
@@ -1250,7 +1250,7 @@ Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs <br /> Windows.Devices.
 
 **项**
 
-[Windows.Devices.AllJoyn.AllJoynSession](https://msdn.microsoft.com/library/windows/apps/windows.devices.alljoyn.alljoynsession)
+[Windows.Devices.AllJoyn.AllJoynSession](https://docs.microsoft.com/uwp/api/windows.devices.alljoyn.alljoynsession)
 
 **属性**
 
@@ -1260,7 +1260,7 @@ Windows.Devices.AllJoyn.AllJoynSession <br /> Windows.Devices.AllJoyn.AllJoynSes
 
 **项**
 
-[Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.devices.alljoyn.alljoynsessionjoinedeventargs)
+[Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.alljoyn.alljoynsessionjoinedeventargs)
 
 **属性**
 
@@ -1270,7 +1270,7 @@ Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs <br /> Windows.Devices.All
 
 **项**
 
-[Windows.Devices.AllJoyn.IAllJoynProducer](https://msdn.microsoft.com/library/windows/apps/windows.devices.alljoyn.ialljoynproducer)
+[Windows.Devices.AllJoyn.IAllJoynProducer](https://docs.microsoft.com/uwp/api/windows.devices.alljoyn.ialljoynproducer)
 
 **属性**
 
@@ -1280,7 +1280,7 @@ Windows.Devices.AllJoyn.IAllJoynProducer <br /> Windows.Devices.AllJoyn.IAllJoyn
 
 **项**
 
-[Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservicesresult)
+[Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservicesresult)
 
 **属性**
 
@@ -1290,7 +1290,7 @@ Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult <br /> Windows.Devic
 
 **项**
 
-[Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.devices.printers.extensions.print3dworkflowprinterchangedeventargs)
+[Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.printers.extensions.print3dworkflowprinterchangedeventargs)
 
 **属性**
 
@@ -1300,7 +1300,7 @@ Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs <br /
 
 **项**
 
-[Windows.Devices.Sensors.AccelerometerReadingType](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometerreadingtype)
+[Windows.Devices.Sensors.AccelerometerReadingType](https://docs.microsoft.com/uwp/api/windows.devices.sensors.accelerometerreadingtype)
 
 **属性**
 
@@ -1310,7 +1310,7 @@ Windows.Devices.Sensors.AccelerometerReadingType <br /> Windows.Devices.Sensors.
 
 **项**
 
-[Windows.Devices.Sensors.SensorOptimizationGoal](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.sensoroptimizationgoal)
+[Windows.Devices.Sensors.SensorOptimizationGoal](https://docs.microsoft.com/uwp/api/windows.devices.sensors.sensoroptimizationgoal)
 
 **属性**
 
@@ -1320,7 +1320,7 @@ Windows.Devices.Sensors.SensorOptimizationGoal <br /> Windows.Devices.Sensors.Se
 
 **项**
 
-[Windows.Foundation.Metadata.CreateFromStringAttribute](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.createfromstringattribute)
+[Windows.Foundation.Metadata.CreateFromStringAttribute](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.createfromstringattribute)
 
 **属性**
 
@@ -1330,7 +1330,7 @@ Windows.Foundation.Metadata.CreateFromStringAttribute <br /> Windows.Foundation.
 
 **项**
 
-[Windows.Gaming.Input.ArcadeStick](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.arcadestick)
+[Windows.Gaming.Input.ArcadeStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick)
 
 **属性**
 
@@ -1340,7 +1340,7 @@ Windows.Gaming.Input.ArcadeStick <br /> Windows.Gaming.Input.ArcadeStick.ArcadeS
 
 **项**
 
-[Windows.Gaming.Input.ArcadeStickButtons](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.arcadestickbuttons)
+[Windows.Gaming.Input.ArcadeStickButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestickbuttons)
 
 **属性**
 
@@ -1350,7 +1350,7 @@ Windows.Gaming.Input.ArcadeStickButtons <br /> Windows.Gaming.Input.ArcadeStickB
 
 **项**
 
-[Windows.Gaming.Input.ArcadeStickReading](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.arcadestickreading)
+[Windows.Gaming.Input.ArcadeStickReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestickreading)
 
 **属性**
 
@@ -1360,7 +1360,7 @@ Windows.Gaming.Input.ArcadeStickReading <br /> Windows.Gaming.Input.ArcadeStickR
 
 **项**
 
-[Windows.Gaming.Input.GameControllerButtonLabel](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamecontrollerbuttonlabel)
+[Windows.Gaming.Input.GameControllerButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel)
 
 **属性**
 
@@ -1370,7 +1370,7 @@ Windows.Gaming.Input.GameControllerButtonLabel <br /> Windows.Gaming.Input.GameC
 
 **项**
 
-[Windows.Gaming.Input.OptionalUINavigationButtons](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.optionaluinavigationbuttons)
+[Windows.Gaming.Input.OptionalUINavigationButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.optionaluinavigationbuttons)
 
 **属性**
 
@@ -1380,7 +1380,7 @@ Windows.Gaming.Input.OptionalUINavigationButtons <br /> Windows.Gaming.Input.Opt
 
 **项**
 
-[Windows.Gaming.Input.RacingWheel](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel)
+[Windows.Gaming.Input.RacingWheel](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel)
 
 **属性**
 
@@ -1390,7 +1390,7 @@ Windows.Gaming.Input.RacingWheel <br /> Windows.Gaming.Input.RacingWheel.HasClut
 
 **项**
 
-[Windows.Gaming.Input.RacingWheelButtons](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheelbuttons)
+[Windows.Gaming.Input.RacingWheelButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelbuttons)
 
 **属性**
 
@@ -1400,7 +1400,7 @@ Windows.Gaming.Input.RacingWheelButtons <br /> Windows.Gaming.Input.RacingWheelB
 
 **项**
 
-[Windows.Gaming.Input.RacingWheelReading](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheelreading)
+[Windows.Gaming.Input.RacingWheelReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelreading)
 
 **属性**
 
@@ -1410,7 +1410,7 @@ Windows.Gaming.Input.RacingWheelReading <br /> Windows.Gaming.Input.RacingWheelR
 
 **项**
 
-[Windows.Gaming.Input.RequiredUINavigationButtons](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.requireduinavigationbuttons)
+[Windows.Gaming.Input.RequiredUINavigationButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.requireduinavigationbuttons)
 
 **属性**
 
@@ -1420,7 +1420,7 @@ Windows.Gaming.Input.RequiredUINavigationButtons <br /> Windows.Gaming.Input.Req
 
 **项**
 
-[Windows.Gaming.Input.UINavigationController](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller)
+[Windows.Gaming.Input.UINavigationController](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller)
 
 **属性**
 
@@ -1430,7 +1430,7 @@ Windows.Gaming.Input.UINavigationController <br /> Windows.Gaming.Input.UINaviga
 
 **项**
 
-[Windows.Gaming.Input.UINavigationReading](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationreading)
+[Windows.Gaming.Input.UINavigationReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationreading)
 
 **属性**
 
@@ -1440,7 +1440,7 @@ Windows.Gaming.Input.UINavigationReading <br /> Windows.Gaming.Input.UINavigatio
 
 **项**
 
-[Windows.Gaming.Input.Custom.GameControllerFactoryManager](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.custom.gamecontrollerfactorymanager)
+[Windows.Gaming.Input.Custom.GameControllerFactoryManager](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.gamecontrollerfactorymanager)
 
 **属性**
 
@@ -1450,7 +1450,7 @@ Windows.Gaming.Input.Custom.GameControllerFactoryManager <br /> Windows.Gaming.I
 
 **项**
 
-[Windows.Gaming.Input.Custom.GameControllerVersionInfo](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.custom.gamecontrollerversioninfo)
+[Windows.Gaming.Input.Custom.GameControllerVersionInfo](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.gamecontrollerversioninfo)
 
 **属性**
 
@@ -1460,7 +1460,7 @@ Windows.Gaming.Input.Custom.GameControllerVersionInfo <br /> Windows.Gaming.Inpu
 
 **项**
 
-[Windows.Gaming.Input.Custom.GipFirmwareUpdateProgress](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.custom.gipfirmwareupdateprogress)
+[Windows.Gaming.Input.Custom.GipFirmwareUpdateProgress](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.gipfirmwareupdateprogress)
 
 **属性**
 
@@ -1470,7 +1470,7 @@ Windows.Gaming.Input.Custom.GipFirmwareUpdateProgress <br /> Windows.Gaming.Inpu
 
 **项**
 
-[Windows.Gaming.Input.Custom.GipFirmwareUpdateResult](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.custom.gipfirmwareupdateresult)
+[Windows.Gaming.Input.Custom.GipFirmwareUpdateResult](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.gipfirmwareupdateresult)
 
 **属性**
 
@@ -1480,7 +1480,7 @@ Windows.Gaming.Input.Custom.GipFirmwareUpdateResult <br /> Windows.Gaming.Input.
 
 **项**
 
-[Windows.Gaming.Input.Custom.GipFirmwareUpdateStatus](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.custom.gipfirmwareupdatestatus)
+[Windows.Gaming.Input.Custom.GipFirmwareUpdateStatus](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.gipfirmwareupdatestatus)
 
 **属性**
 
@@ -1490,7 +1490,7 @@ Windows.Gaming.Input.Custom.GipFirmwareUpdateStatus <br /> Windows.Gaming.Input.
 
 **项**
 
-[Windows.Gaming.Input.Custom.GipGameControllerProvider](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.custom.gipgamecontrollerprovider)
+[Windows.Gaming.Input.Custom.GipGameControllerProvider](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.gipgamecontrollerprovider)
 
 **属性**
 
@@ -1500,7 +1500,7 @@ Windows.Gaming.Input.Custom.GipGameControllerProvider <br /> Windows.Gaming.Inpu
 
 **项**
 
-[Windows.Gaming.Input.Custom.GipMessageClass](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.custom.gipmessageclass)
+[Windows.Gaming.Input.Custom.GipMessageClass](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.gipmessageclass)
 
 **属性**
 
@@ -1510,7 +1510,7 @@ Windows.Gaming.Input.Custom.GipMessageClass <br /> Windows.Gaming.Input.Custom.G
 
 **项**
 
-[Windows.Gaming.Input.Custom.ICustomGameControllerFactory](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.custom.icustomgamecontrollerfactory)
+[Windows.Gaming.Input.Custom.ICustomGameControllerFactory](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.icustomgamecontrollerfactory)
 
 **属性**
 
@@ -1520,7 +1520,7 @@ Windows.Gaming.Input.Custom.ICustomGameControllerFactory <br /> Windows.Gaming.I
 
 **项**
 
-[Windows.Gaming.Input.Custom.IGameControllerInputSink](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.custom.igamecontrollerinputsink)
+[Windows.Gaming.Input.Custom.IGameControllerInputSink](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.igamecontrollerinputsink)
 
 **属性**
 
@@ -1530,7 +1530,7 @@ Windows.Gaming.Input.Custom.IGameControllerInputSink <br /> Windows.Gaming.Input
 
 **项**
 
-[Windows.Gaming.Input.Custom.IGameControllerProvider](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.custom.igamecontrollerprovider)
+[Windows.Gaming.Input.Custom.IGameControllerProvider](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.igamecontrollerprovider)
 
 **属性**
 
@@ -1540,7 +1540,7 @@ Windows.Gaming.Input.Custom.IGameControllerProvider <br /> Windows.Gaming.Input.
 
 **项**
 
-[Windows.Gaming.Input.Custom.IGipGameControllerInputSink](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.custom.igipgamecontrollerinputsink)
+[Windows.Gaming.Input.Custom.IGipGameControllerInputSink](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.igipgamecontrollerinputsink)
 
 **属性**
 
@@ -1550,7 +1550,7 @@ Windows.Gaming.Input.Custom.IGipGameControllerInputSink <br /> Windows.Gaming.In
 
 **项**
 
-[Windows.Gaming.Input.Custom.IXusbGameControllerInputSink](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.custom.ixusbgamecontrollerinputsink)
+[Windows.Gaming.Input.Custom.IXusbGameControllerInputSink](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.ixusbgamecontrollerinputsink)
 
 **属性**
 
@@ -1560,7 +1560,7 @@ Windows.Gaming.Input.Custom.IXusbGameControllerInputSink <br /> Windows.Gaming.I
 
 **项**
 
-[Windows.Gaming.Input.Custom.XusbDeviceSubtype](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.custom.xusbdevicesubtype)
+[Windows.Gaming.Input.Custom.XusbDeviceSubtype](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.xusbdevicesubtype)
 
 **属性**
 
@@ -1570,7 +1570,7 @@ Windows.Gaming.Input.Custom.XusbDeviceSubtype <br /> Windows.Gaming.Input.Custom
 
 **项**
 
-[Windows.Gaming.Input.Custom.XusbDeviceType](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.custom.xusbdevicetype)
+[Windows.Gaming.Input.Custom.XusbDeviceType](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.xusbdevicetype)
 
 **属性**
 
@@ -1580,7 +1580,7 @@ Windows.Gaming.Input.Custom.XusbDeviceType <br /> Windows.Gaming.Input.Custom.Xu
 
 **项**
 
-[Windows.Gaming.Input.Custom.XusbGameControllerProvider](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.custom.xusbgamecontrollerprovider)
+[Windows.Gaming.Input.Custom.XusbGameControllerProvider](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.xusbgamecontrollerprovider)
 
 **属性**
 
@@ -1590,7 +1590,7 @@ Windows.Gaming.Input.Custom.XusbGameControllerProvider <br /> Windows.Gaming.Inp
 
 **项**
 
-[Windows.Gaming.Input.ForceFeedback.ConditionForceEffect](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.forcefeedback.conditionforceeffect)
+[Windows.Gaming.Input.ForceFeedback.ConditionForceEffect](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.conditionforceeffect)
 
 **属性**
 
@@ -1600,7 +1600,7 @@ Windows.Gaming.Input.ForceFeedback.ConditionForceEffect <br /> Windows.Gaming.In
 
 **项**
 
-[Windows.Gaming.Input.ForceFeedback.ConditionForceEffectKind](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.forcefeedback.conditionforceeffectkind)
+[Windows.Gaming.Input.ForceFeedback.ConditionForceEffectKind](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.conditionforceeffectkind)
 
 **属性**
 
@@ -1610,7 +1610,7 @@ Windows.Gaming.Input.ForceFeedback.ConditionForceEffectKind <br /> Windows.Gamin
 
 **项**
 
-[Windows.Gaming.Input.ForceFeedback.ConstantForceEffect](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.forcefeedback.constantforceeffect)
+[Windows.Gaming.Input.ForceFeedback.ConstantForceEffect](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.constantforceeffect)
 
 **属性**
 
@@ -1620,7 +1620,7 @@ Windows.Gaming.Input.ForceFeedback.ConstantForceEffect <br /> Windows.Gaming.Inp
 
 **项**
 
-[Windows.Gaming.Input.ForceFeedback.ForceFeedbackEffectAxes](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.forcefeedback.forcefeedbackeffectaxes)
+[Windows.Gaming.Input.ForceFeedback.ForceFeedbackEffectAxes](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.forcefeedbackeffectaxes)
 
 **属性**
 
@@ -1630,7 +1630,7 @@ Windows.Gaming.Input.ForceFeedback.ForceFeedbackEffectAxes <br /> Windows.Gaming
 
 **项**
 
-[Windows.Gaming.Input.ForceFeedback.ForceFeedbackEffectState](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.forcefeedback.forcefeedbackeffectstate)
+[Windows.Gaming.Input.ForceFeedback.ForceFeedbackEffectState](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.forcefeedbackeffectstate)
 
 **属性**
 
@@ -1640,7 +1640,7 @@ Windows.Gaming.Input.ForceFeedback.ForceFeedbackEffectState <br /> Windows.Gamin
 
 **项**
 
-[Windows.Gaming.Input.ForceFeedback.ForceFeedbackLoadEffectResult](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.forcefeedback.forcefeedbackloadeffectresult)
+[Windows.Gaming.Input.ForceFeedback.ForceFeedbackLoadEffectResult](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.forcefeedbackloadeffectresult)
 
 **属性**
 
@@ -1650,7 +1650,7 @@ Windows.Gaming.Input.ForceFeedback.ForceFeedbackLoadEffectResult <br /> Windows.
 
 **项**
 
-[Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.forcefeedback.forcefeedbackmotor)
+[Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.forcefeedbackmotor)
 
 **属性**
 
@@ -1660,7 +1660,7 @@ Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor <br /> Windows.Gaming.Inpu
 
 **项**
 
-[Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.forcefeedback.iforcefeedbackeffect)
+[Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.iforcefeedbackeffect)
 
 **属性**
 
@@ -1670,7 +1670,7 @@ Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect <br /> Windows.Gaming.In
 
 **项**
 
-[Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.forcefeedback.periodicforceeffect)
+[Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.periodicforceeffect)
 
 **属性**
 
@@ -1680,7 +1680,7 @@ Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect <br /> Windows.Gaming.Inp
 
 **项**
 
-[Windows.Gaming.Input.ForceFeedback.PeriodicForceEffectKind](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.forcefeedback.periodicforceeffectkind)
+[Windows.Gaming.Input.ForceFeedback.PeriodicForceEffectKind](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.periodicforceeffectkind)
 
 **属性**
 
@@ -1690,7 +1690,7 @@ Windows.Gaming.Input.ForceFeedback.PeriodicForceEffectKind <br /> Windows.Gaming
 
 **项**
 
-[Windows.Gaming.Input<br />ForceFeedback.RampForceEffect](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.forcefeedback.rampforceeffect)
+[Windows.Gaming.Input<br />ForceFeedback.RampForceEffect](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.rampforceeffect)
 
 **属性**
 
@@ -1700,7 +1700,7 @@ Windows.Gaming.Input.ForceFeedback.RampForceEffect <br /> Windows.Gaming.Input.F
 
 **项**
 
-[Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormat](https://msdn.microsoft.com/library/windows/apps/windows.globalization.phonenumberformatting.phonenumberformat)
+[Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormat](https://docs.microsoft.com/uwp/api/windows.globalization.phonenumberformatting.phonenumberformat)
 
 **属性**
 
@@ -1710,7 +1710,7 @@ Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormat <br /> Windows.Glo
 
 **项**
 
-[Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormatter](https://msdn.microsoft.com/library/windows/apps/windows.globalization.phonenumberformatting.phonenumberformatter)
+[Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormatter](https://docs.microsoft.com/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter)
 
 **属性**
 
@@ -1720,7 +1720,7 @@ Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormatter <br /> Windows.
 
 **项**
 
-[Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo](https://msdn.microsoft.com/library/windows/apps/windows.globalization.phonenumberformatting.phonenumberinfo)
+[Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo](https://docs.microsoft.com/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo)
 
 **属性**
 
@@ -1730,7 +1730,7 @@ Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo <br /> Windows.Globa
 
 **项**
 
-[Windows.Globalization.PhoneNumberFormatting.PhoneNumberMatchResult](https://msdn.microsoft.com/library/windows/apps/windows.globalization.phonenumberformatting.phonenumbermatchresult)
+[Windows.Globalization.PhoneNumberFormatting.PhoneNumberMatchResult](https://docs.microsoft.com/uwp/api/windows.globalization.phonenumberformatting.phonenumbermatchresult)
 
 **属性**
 
@@ -1740,7 +1740,7 @@ Windows.Globalization.PhoneNumberFormatting.PhoneNumberMatchResult <br /> Window
 
 **项**
 
-[Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult](https://msdn.microsoft.com/library/windows/apps/windows.globalization.phonenumberformatting.phonenumberparseresult)
+[Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult](https://docs.microsoft.com/uwp/api/windows.globalization.phonenumberformatting.phonenumberparseresult)
 
 **属性**
 
@@ -1750,7 +1750,7 @@ Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult <br /> Window
 
 **项**
 
-[Windows.Globalization.PhoneNumberFormatting.PredictedPhoneNumberKind](https://msdn.microsoft.com/library/windows/apps/windows.globalization.phonenumberformatting.predictedphonenumberkind)
+[Windows.Globalization.PhoneNumberFormatting.PredictedPhoneNumberKind](https://docs.microsoft.com/uwp/api/windows.globalization.phonenumberformatting.predictedphonenumberkind)
 
 **属性**
 
@@ -1760,7 +1760,7 @@ Windows.Globalization.PhoneNumberFormatting.PredictedPhoneNumberKind <br /> Wind
 
 **项**
 
-[Windows.Graphics.Printing.PrintBordering](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printbordering)
+[Windows.Graphics.Printing.PrintBordering](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printbordering)
 
 **属性**
 
@@ -1770,7 +1770,7 @@ Windows.Graphics.Printing.PrintBordering <br /> Windows.Graphics.Printing.PrintB
 
 **项**
 
-[Windows.Graphics.Printing.PrintPageInfo](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printpageinfo)
+[Windows.Graphics.Printing.PrintPageInfo](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printpageinfo)
 
 **属性**
 
@@ -1780,7 +1780,7 @@ Windows.Graphics.Printing.PrintPageInfo <br /> Windows.Graphics.Printing.PrintPa
 
 **项**
 
-[Windows.Graphics.Printing.OptionDetails.PrintBorderingOptionDetails](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.optiondetails.printborderingoptiondetails)
+[Windows.Graphics.Printing.OptionDetails.PrintBorderingOptionDetails](https://docs.microsoft.com/uwp/api/windows.graphics.printing.optiondetails.printborderingoptiondetails)
 
 **属性**
 
@@ -1790,7 +1790,7 @@ Windows.Graphics.Printing.OptionDetails.PrintBorderingOptionDetails <br /> Windo
 
 **项**
 
-[Windows.Management.Workplace.MessagingSyncPolicy](https://msdn.microsoft.com/library/windows/apps/windows.management.workplace.messagingsyncpolicy)
+[Windows.Management.Workplace.MessagingSyncPolicy](https://docs.microsoft.com/uwp/api/windows.management.workplace.messagingsyncpolicy)
 
 **属性**
 
@@ -1800,7 +1800,7 @@ Windows.Management.Workplace.MessagingSyncPolicy <br /> Windows.Management.Workp
 
 **项**
 
-[Windows.Media.MediaTimelineController](https://msdn.microsoft.com/library/windows/apps/windows.media.mediatimelinecontroller)
+[Windows.Media.MediaTimelineController](https://docs.microsoft.com/uwp/api/windows.media.mediatimelinecontroller)
 
 **属性**
 
@@ -1810,7 +1810,7 @@ Windows.Media.MediaTimelineController <br /> Windows.Media.MediaTimelineControll
 
 **项**
 
-[Windows.Media.MediaTimelineControllerState](https://msdn.microsoft.com/library/windows/apps/windows.media.mediatimelinecontrollerstate)
+[Windows.Media.MediaTimelineControllerState](https://docs.microsoft.com/uwp/api/windows.media.mediatimelinecontrollerstate)
 
 **属性**
 
@@ -1820,7 +1820,7 @@ Windows.Media.MediaTimelineControllerState <br /> Windows.Media.MediaTimelineCon
 
 **项**
 
-[Windows.Media.Audio.AudioGraphBatchUpdater](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audiographbatchupdater)
+[Windows.Media.Audio.AudioGraphBatchUpdater](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographbatchupdater)
 
 **属性**
 
@@ -1830,7 +1830,7 @@ Windows.Media.Audio.AudioGraphBatchUpdater <br /> Windows.Media.Audio.AudioGraph
 
 **项**
 
-[Windows.Media.Audio.AudioNodeEmitter](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audionodeemitter)
+[Windows.Media.Audio.AudioNodeEmitter](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitter)
 
 **属性**
 
@@ -1840,7 +1840,7 @@ Windows.Media.Audio.AudioNodeEmitter <br /> Windows.Media.Audio.AudioNodeEmitter
 
 **项**
 
-[Windows.Media.Audio.AudioNodeEmitterConeProperties](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audionodeemitterconeproperties)
+[Windows.Media.Audio.AudioNodeEmitterConeProperties](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitterconeproperties)
 
 **属性**
 
@@ -1850,7 +1850,7 @@ Windows.Media.Audio.AudioNodeEmitterConeProperties <br /> Windows.Media.Audio.Au
 
 **项**
 
-[Windows.Media.Audio.AudioNodeEmitterDecayKind](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audionodeemitterdecaykind)
+[Windows.Media.Audio.AudioNodeEmitterDecayKind](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitterdecaykind)
 
 **属性**
 
@@ -1860,7 +1860,7 @@ Windows.Media.Audio.AudioNodeEmitterDecayKind <br /> Windows.Media.Audio.AudioNo
 
 **项**
 
-[Windows.Media.Audio.AudioNodeEmitterDecayModel](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audionodeemitterdecaymodel)
+[Windows.Media.Audio.AudioNodeEmitterDecayModel](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitterdecaymodel)
 
 **属性**
 
@@ -1870,7 +1870,7 @@ Windows.Media.Audio.AudioNodeEmitterDecayModel <br /> Windows.Media.Audio.AudioN
 
 **项**
 
-[Windows.Media.Audio.AudioNodeEmitterNaturalDecayModelProperties](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audionodeemitternaturaldecaymodelproperties)
+[Windows.Media.Audio.AudioNodeEmitterNaturalDecayModelProperties](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitternaturaldecaymodelproperties)
 
 **属性**
 
@@ -1880,7 +1880,7 @@ Windows.Media.Audio.AudioNodeEmitterNaturalDecayModelProperties <br /> Windows.M
 
 **项**
 
-[Windows.Media.Audio.AudioNodeEmitterSettings](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audionodeemittersettings)
+[Windows.Media.Audio.AudioNodeEmitterSettings](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemittersettings)
 
 **属性**
 
@@ -1890,7 +1890,7 @@ Windows.Media.Audio.AudioNodeEmitterSettings <br /> Windows.Media.Audio.AudioNod
 
 **项**
 
-[Windows.Media.Audio.AudioNodeEmitterShape](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audionodeemittershape)
+[Windows.Media.Audio.AudioNodeEmitterShape](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemittershape)
 
 **属性**
 
@@ -1900,7 +1900,7 @@ Windows.Media.Audio.AudioNodeEmitterShape <br /> Windows.Media.Audio.AudioNodeEm
 
 **项**
 
-[Windows.Media.Audio.AudioNodeEmitterShapeKind](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audionodeemittershapekind)
+[Windows.Media.Audio.AudioNodeEmitterShapeKind](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemittershapekind)
 
 **属性**
 
@@ -1910,7 +1910,7 @@ Windows.Media.Audio.AudioNodeEmitterShapeKind <br /> Windows.Media.Audio.AudioNo
 
 **项**
 
-[Windows.Media.Audio.AudioNodeListener](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audionodelistener)
+[Windows.Media.Audio.AudioNodeListener](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodelistener)
 
 **属性**
 
@@ -1920,7 +1920,7 @@ Windows.Media.Audio.AudioNodeListener <br /> Windows.Media.Audio.AudioNodeListen
 
 **项**
 
-[Windows.Media.Audio.IAudioInputNode2](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.iaudioinputnode2)
+[Windows.Media.Audio.IAudioInputNode2](https://docs.microsoft.com/uwp/api/windows.media.audio.iaudioinputnode2)
 
 **属性**
 
@@ -1930,7 +1930,7 @@ Windows.Media.Audio.IAudioInputNode2 <br /> Windows.Media.Audio.IAudioInputNode2
 
 **项**
 
-[Windows.Media.Audio.IAudioNodeWithListener](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.iaudionodewithlistener)
+[Windows.Media.Audio.IAudioNodeWithListener](https://docs.microsoft.com/uwp/api/windows.media.audio.iaudionodewithlistener)
 
 **属性**
 
@@ -1940,7 +1940,7 @@ Windows.Media.Audio.IAudioNodeWithListener <br /> Windows.Media.Audio.IAudioNode
 
 **项**
 
-[Windows.Media.Capture.MediaCaptureMemoryPreference](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.mediacapturememorypreference)
+[Windows.Media.Capture.MediaCaptureMemoryPreference](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturememorypreference)
 
 **属性**
 
@@ -1950,7 +1950,7 @@ Windows.Media.Capture.MediaCaptureMemoryPreference <br /> Windows.Media.Capture.
 
 **项**
 
-[Windows.Media.Capture.MediaCapturePauseResult](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.mediacapturepauseresult)
+[Windows.Media.Capture.MediaCapturePauseResult](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturepauseresult)
 
 **属性**
 
@@ -1960,7 +1960,7 @@ Windows.Media.Capture.MediaCapturePauseResult <br /> Windows.Media.Capture.Media
 
 **项**
 
-[Windows.Media.Capture.MediaCaptureSharingMode](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.mediacapturesharingmode)
+[Windows.Media.Capture.MediaCaptureSharingMode](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturesharingmode)
 
 **属性**
 
@@ -1970,7 +1970,7 @@ Windows.Media.Capture.MediaCaptureSharingMode <br /> Windows.Media.Capture.Media
 
 **项**
 
-[Windows.Media.Capture.MediaCaptureStopResult](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.mediacapturestopresult)
+[Windows.Media.Capture.MediaCaptureStopResult](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturestopresult)
 
 **属性**
 
@@ -1980,7 +1980,7 @@ Windows.Media.Capture.MediaCaptureStopResult <br /> Windows.Media.Capture.MediaC
 
 **项**
 
-[Windows.Media.Capture.Frames.BufferMediaFrame](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.buffermediaframe)
+[Windows.Media.Capture.Frames.BufferMediaFrame](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.buffermediaframe)
 
 **属性**
 
@@ -1990,7 +1990,7 @@ Windows.Media.Capture.Frames.BufferMediaFrame <br /> Windows.Media.Capture.Frame
 
 **项**
 
-[Windows.Media.Capture.Frames.DepthMediaFrame](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.depthmediaframe)
+[Windows.Media.Capture.Frames.DepthMediaFrame](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.depthmediaframe)
 
 **属性**
 
@@ -2000,7 +2000,7 @@ Windows.Media.Capture.Frames.DepthMediaFrame <br /> Windows.Media.Capture.Frames
 
 **项**
 
-[Windows.Media.Capture.Frames.DepthMediaFrameFormat](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.depthmediaframeformat)
+[Windows.Media.Capture.Frames.DepthMediaFrameFormat](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.depthmediaframeformat)
 
 **属性**
 
@@ -2010,7 +2010,7 @@ Windows.Media.Capture.Frames.DepthMediaFrameFormat <br /> Windows.Media.Capture.
 
 **项**
 
-[Windows.Media.Capture.Frames.InfraredMediaFrame](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.infraredmediaframe)
+[Windows.Media.Capture.Frames.InfraredMediaFrame](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.infraredmediaframe)
 
 **属性**
 
@@ -2020,7 +2020,7 @@ Windows.Media.Capture.Frames.InfraredMediaFrame <br /> Windows.Media.Capture.Fra
 
 **项**
 
-[Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.mediaframearrivedeventargs)
+[Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframearrivedeventargs)
 
 **属性**
 
@@ -2030,7 +2030,7 @@ Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs
 
 **项**
 
-[Windows.Media.Capture.Frames.MediaFrameFormat](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.mediaframeformat)
+[Windows.Media.Capture.Frames.MediaFrameFormat](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframeformat)
 
 **属性**
 
@@ -2040,7 +2040,7 @@ Windows.Media.Capture.Frames.MediaFrameFormat <br /> Windows.Media.Capture.Frame
 
 **项**
 
-[Windows.Media.Capture.Frames.MediaFrameReader](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.mediaframereader)
+[Windows.Media.Capture.Frames.MediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader)
 
 **属性**
 
@@ -2050,7 +2050,7 @@ Windows.Media.Capture.Frames.MediaFrameReader <br /> Windows.Media.Capture.Frame
 
 **项**
 
-[Windows.Media.Capture.Frames.MediaFrameReaderStartStatus](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.mediaframereaderstartstatus)
+[Windows.Media.Capture.Frames.MediaFrameReaderStartStatus](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus)
 
 **属性**
 
@@ -2060,7 +2060,7 @@ Windows.Media.Capture.Frames.MediaFrameReaderStartStatus <br /> Windows.Media.Ca
 
 **项**
 
-[Windows.Media.Capture.Frames.MediaFrameReference](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.mediaframereference)
+[Windows.Media.Capture.Frames.MediaFrameReference](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereference)
 
 **属性**
 
@@ -2070,7 +2070,7 @@ Windows.Media.Capture.Frames.MediaFrameReference <br /> Windows.Media.Capture.Fr
 
 **项**
 
-[Windows.Media.Capture.Frames.MediaFrameSource](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.mediaframesource)
+[Windows.Media.Capture.Frames.MediaFrameSource](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource)
 
 **属性**
 
@@ -2080,7 +2080,7 @@ Windows.Media.Capture.Frames.MediaFrameSource <br /> Windows.Media.Capture.Frame
 
 **项**
 
-[Windows.Media.Capture.Frames.MediaFrameSourceController](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.mediaframesourcecontroller)
+[Windows.Media.Capture.Frames.MediaFrameSourceController](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcecontroller)
 
 **属性**
 
@@ -2090,7 +2090,7 @@ Windows.Media.Capture.Frames.MediaFrameSourceController <br /> Windows.Media.Cap
 
 **项**
 
-[Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.mediaframesourcegetpropertyresult)
+[Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegetpropertyresult)
 
 **属性**
 
@@ -2100,7 +2100,7 @@ Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult <br /> Windows.Me
 
 **项**
 
-[Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyStatus](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.mediaframesourcegetpropertystatus)
+[Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyStatus](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegetpropertystatus)
 
 **属性**
 
@@ -2110,7 +2110,7 @@ Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyStatus <br /> Windows.Me
 
 **项**
 
-[Windows.Media.Capture.Frames.MediaFrameSourceGroup](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.mediaframesourcegroup)
+[Windows.Media.Capture.Frames.MediaFrameSourceGroup](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup)
 
 **属性**
 
@@ -2120,7 +2120,7 @@ Windows.Media.Capture.Frames.MediaFrameSourceGroup <br /> Windows.Media.Capture.
 
 **项**
 
-[Windows.Media.Capture.Frames.MediaFrameSourceInfo](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.mediaframesourceinfo)
+[Windows.Media.Capture.Frames.MediaFrameSourceInfo](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo)
 
 **属性**
 
@@ -2130,7 +2130,7 @@ Windows.Media.Capture.Frames.MediaFrameSourceInfo <br /> Windows.Media.Capture.F
 
 **项**
 
-[Windows.Media.Capture.Frames.MediaFrameSourceKind](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.mediaframesourcekind)
+[Windows.Media.Capture.Frames.MediaFrameSourceKind](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcekind)
 
 **属性**
 
@@ -2140,7 +2140,7 @@ Windows.Media.Capture.Frames.MediaFrameSourceKind <br /> Windows.Media.Capture.F
 
 **项**
 
-[Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.mediaframesourcesetpropertystatus)
+[Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcesetpropertystatus)
 
 **属性**
 
@@ -2150,7 +2150,7 @@ Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus <br /> Windows.Me
 
 **项**
 
-[Windows.Media.Capture.Frames.VideoMediaFrame](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.videomediaframe)
+[Windows.Media.Capture.Frames.VideoMediaFrame](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.videomediaframe)
 
 **属性**
 
@@ -2160,7 +2160,7 @@ Windows.Media.Capture.Frames.VideoMediaFrame <br /> Windows.Media.Capture.Frames
 
 **项**
 
-[Windows.Media.Capture.Frames.VideoMediaFrameFormat](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.frames.videomediaframeformat)
+[Windows.Media.Capture.Frames.VideoMediaFrameFormat](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.videomediaframeformat)
 
 **属性**
 
@@ -2170,7 +2170,7 @@ Windows.Media.Capture.Frames.VideoMediaFrameFormat <br /> Windows.Media.Capture.
 
 **项**
 
-[Windows.Media.Core.AudioDecoderDegradation](https://msdn.microsoft.com/library/windows/apps/windows.media.core.audiodecoderdegradation)
+[Windows.Media.Core.AudioDecoderDegradation](https://docs.microsoft.com/uwp/api/windows.media.core.audiodecoderdegradation)
 
 **属性**
 
@@ -2180,7 +2180,7 @@ Windows.Media.Core.AudioDecoderDegradation <br /> Windows.Media.Core.AudioDecode
 
 **项**
 
-[Windows.Media.Core.AudioDecoderDegradationReason](https://msdn.microsoft.com/library/windows/apps/windows.media.core.audiodecoderdegradationreason)
+[Windows.Media.Core.AudioDecoderDegradationReason](https://docs.microsoft.com/uwp/api/windows.media.core.audiodecoderdegradationreason)
 
 **属性**
 
@@ -2190,7 +2190,7 @@ Windows.Media.Core.AudioDecoderDegradationReason <br /> Windows.Media.Core.Audio
 
 **项**
 
-[Windows.Media.Core.AudioTrackOpenFailedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.core.audiotrackopenfailedeventargs)
+[Windows.Media.Core.AudioTrackOpenFailedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.core.audiotrackopenfailedeventargs)
 
 **属性**
 
@@ -2200,7 +2200,7 @@ Windows.Media.Core.AudioTrackOpenFailedEventArgs <br /> Windows.Media.Core.Audio
 
 **项**
 
-[Windows.Media.Core.AudioTrackSupportInfo](https://msdn.microsoft.com/library/windows/apps/windows.media.core.audiotracksupportinfo)
+[Windows.Media.Core.AudioTrackSupportInfo](https://docs.microsoft.com/uwp/api/windows.media.core.audiotracksupportinfo)
 
 **属性**
 
@@ -2210,7 +2210,7 @@ Windows.Media.Core.AudioTrackSupportInfo <br /> Windows.Media.Core.AudioTrackSup
 
 **项**
 
-[Windows.Media.Core.MediaDecoderStatus](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediadecoderstatus)
+[Windows.Media.Core.MediaDecoderStatus](https://docs.microsoft.com/uwp/api/windows.media.core.mediadecoderstatus)
 
 **属性**
 
@@ -2220,7 +2220,7 @@ Windows.Media.Core.MediaDecoderStatus <br /> Windows.Media.Core.MediaDecoderStat
 
 **项**
 
-[Windows.Media.Core.MediaSourceStatus](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasourcestatus)
+[Windows.Media.Core.MediaSourceStatus](https://docs.microsoft.com/uwp/api/windows.media.core.mediasourcestatus)
 
 **属性**
 
@@ -2230,7 +2230,7 @@ Windows.Media.Core.MediaSourceStatus <br /> Windows.Media.Core.MediaSourceStatus
 
 **项**
 
-[Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediastreamsourcesamplerenderedeventargs)
+[Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.core.mediastreamsourcesamplerenderedeventargs)
 
 **属性**
 
@@ -2240,7 +2240,7 @@ Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs <br /> Windows.Media
 
 **项**
 
-[Windows.Media.Core.VideoTrackOpenFailedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.core.videotrackopenfailedeventargs)
+[Windows.Media.Core.VideoTrackOpenFailedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.core.videotrackopenfailedeventargs)
 
 **属性**
 
@@ -2250,7 +2250,7 @@ Windows.Media.Core.VideoTrackOpenFailedEventArgs <br /> Windows.Media.Core.Video
 
 **项**
 
-[Windows.Media.Core.VideoTrackSupportInfo](https://msdn.microsoft.com/library/windows/apps/windows.media.core.videotracksupportinfo)
+[Windows.Media.Core.VideoTrackSupportInfo](https://docs.microsoft.com/uwp/api/windows.media.core.videotracksupportinfo)
 
 **属性**
 
@@ -2260,7 +2260,7 @@ Windows.Media.Core.VideoTrackSupportInfo <br /> Windows.Media.Core.VideoTrackSup
 
 **项**
 
-[Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper](https://msdn.microsoft.com/library/windows/apps/windows.media.devices.core.depthcorrelatedcoordinatemapper)
+[Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper](https://docs.microsoft.com/uwp/api/windows.media.devices.core.depthcorrelatedcoordinatemapper)
 
 **属性**
 
@@ -2270,7 +2270,7 @@ Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper <br /> Windows.Media.
 
 **项**
 
-[Windows.Media.Import.PhotoImportSubfolderDateFormat](https://msdn.microsoft.com/library/windows/apps/windows.media.import.photoimportsubfolderdateformat)
+[Windows.Media.Import.PhotoImportSubfolderDateFormat](https://docs.microsoft.com/uwp/api/windows.media.import.photoimportsubfolderdateformat)
 
 **属性**
 
@@ -2280,7 +2280,7 @@ Windows.Media.Import.PhotoImportSubfolderDateFormat <br /> Windows.Media.Import.
 
 **项**
 
-[Windows.Media.MediaProperties.StereoscopicVideoPackingMode](https://msdn.microsoft.com/library/windows/apps/windows.media.mediaproperties.stereoscopicvideopackingmode)
+[Windows.Media.MediaProperties.StereoscopicVideoPackingMode](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.stereoscopicvideopackingmode)
 
 **属性**
 
@@ -2290,7 +2290,7 @@ Windows.Media.MediaProperties.StereoscopicVideoPackingMode <br /> Windows.Media.
 
 **项**
 
-[Windows.Media.Playback.MediaBreak](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediabreak)
+[Windows.Media.Playback.MediaBreak](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreak)
 
 **属性**
 
@@ -2300,7 +2300,7 @@ Windows.Media.Playback.MediaBreak <br /> Windows.Media.Playback.MediaBreak.#ctor
 
 **项**
 
-[Windows.Media.Playback.MediaBreakEndedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediabreakendedeventargs)
+[Windows.Media.Playback.MediaBreakEndedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakendedeventargs)
 
 **属性**
 
@@ -2310,7 +2310,7 @@ Windows.Media.Playback.MediaBreakEndedEventArgs <br /> Windows.Media.Playback.Me
 
 **项**
 
-[Windows.Media.Playback.MediaBreakInsertionMethod](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediabreakinsertionmethod)
+[Windows.Media.Playback.MediaBreakInsertionMethod](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakinsertionmethod)
 
 **属性**
 
@@ -2320,7 +2320,7 @@ Windows.Media.Playback.MediaBreakInsertionMethod <br /> Windows.Media.Playback.M
 
 **项**
 
-[Windows.Media.Playback.MediaBreakManager](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediabreakmanager)
+[Windows.Media.Playback.MediaBreakManager](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakmanager)
 
 **属性**
 
@@ -2330,7 +2330,7 @@ Windows.Media.Playback.MediaBreakManager <br /> Windows.Media.Playback.MediaBrea
 
 **项**
 
-[Windows.Media.Playback.MediaBreakSchedule](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediabreakschedule)
+[Windows.Media.Playback.MediaBreakSchedule](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakschedule)
 
 **属性**
 
@@ -2340,7 +2340,7 @@ Windows.Media.Playback.MediaBreakSchedule <br /> Windows.Media.Playback.MediaBre
 
 **项**
 
-[Windows.Media.Playback.MediaBreakSeekedOverEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediabreakseekedovereventargs)
+[Windows.Media.Playback.MediaBreakSeekedOverEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakseekedovereventargs)
 
 **属性**
 
@@ -2350,7 +2350,7 @@ Windows.Media.Playback.MediaBreakSeekedOverEventArgs <br /> Windows.Media.Playba
 
 **项**
 
-[Windows.Media.Playback.MediaBreakSkippedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediabreakskippedeventargs)
+[Windows.Media.Playback.MediaBreakSkippedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakskippedeventargs)
 
 **属性**
 
@@ -2360,7 +2360,7 @@ Windows.Media.Playback.MediaBreakSkippedEventArgs <br /> Windows.Media.Playback.
 
 **项**
 
-[Windows.Media.Playback.MediaBreakStartedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediabreakstartedeventargs)
+[Windows.Media.Playback.MediaBreakStartedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakstartedeventargs)
 
 **属性**
 
@@ -2370,7 +2370,7 @@ Windows.Media.Playback.MediaBreakStartedEventArgs <br /> Windows.Media.Playback.
 
 **项**
 
-[Windows.Media.Playback.MediaCommandEnablingRule](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediacommandenablingrule)
+[Windows.Media.Playback.MediaCommandEnablingRule](https://docs.microsoft.com/uwp/api/windows.media.playback.mediacommandenablingrule)
 
 **属性**
 
@@ -2380,7 +2380,7 @@ Windows.Media.Playback.MediaCommandEnablingRule <br /> Windows.Media.Playback.Me
 
 **项**
 
-[Windows.Media.Playback.MediaItemDisplayProperties](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaitemdisplayproperties)
+[Windows.Media.Playback.MediaItemDisplayProperties](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaitemdisplayproperties)
 
 **属性**
 
@@ -2390,7 +2390,7 @@ Windows.Media.Playback.MediaItemDisplayProperties <br /> Windows.Media.Playback.
 
 **项**
 
-[Windows.Media.Playback.MediaPlaybackCommandManager](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackcommandmanager)
+[Windows.Media.Playback.MediaPlaybackCommandManager](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanager)
 
 **属性**
 
@@ -2400,7 +2400,7 @@ Windows.Media.Playback.MediaPlaybackCommandManager <br /> Windows.Media.Playback
 
 **项**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackcommandmanagerautorepeatmodereceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagerautorepeatmodereceivedeventargs)
 
 **属性**
 
@@ -2410,7 +2410,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArg
 
 **项**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackcommandmanagercommandbehavior)
+[Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior)
 
 **属性**
 
@@ -2420,7 +2420,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior <br /> Windows
 
 **项**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackcommandmanagerfastforwardreceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagerfastforwardreceivedeventargs)
 
 **属性**
 
@@ -2430,7 +2430,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs <
 
 **项**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackcommandmanagernextreceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagernextreceivedeventargs)
 
 **属性**
 
@@ -2440,7 +2440,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs <br /> W
 
 **项**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackcommandmanagerpausereceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagerpausereceivedeventargs)
 
 **属性**
 
@@ -2450,7 +2450,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs <br /> 
 
 **项**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackcommandmanagerplayreceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagerplayreceivedeventargs)
 
 **属性**
 
@@ -2460,7 +2460,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs <br /> W
 
 **项**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackcommandmanagerpositionreceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagerpositionreceivedeventargs)
 
 **属性**
 
@@ -2470,7 +2470,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs <br 
 
 **项**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackcommandmanagerpreviousreceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagerpreviousreceivedeventargs)
 
 **属性**
 
@@ -2480,7 +2480,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs <br 
 
 **项**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackcommandmanagerratereceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagerratereceivedeventargs)
 
 **属性**
 
@@ -2490,7 +2490,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs <br /> W
 
 **项**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackcommandmanagerrewindreceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagerrewindreceivedeventargs)
 
 **属性**
 
@@ -2500,7 +2500,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs <br />
 
 **项**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackcommandmanagershufflereceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagershufflereceivedeventargs)
 
 **属性**
 
@@ -2510,7 +2510,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs <br /
 
 **项**
 
-[Windows.Media.Playback.MediaPlaybackSession](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession)
+[Windows.Media.Playback.MediaPlaybackSession](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession)
 
 **属性**
 
@@ -2520,7 +2520,7 @@ Windows.Media.Playback.MediaPlaybackSession <br /> Windows.Media.Playback.MediaP
 
 **项**
 
-[Windows.Media.Playback.MediaPlaybackState](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackstate)
+[Windows.Media.Playback.MediaPlaybackState](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackstate)
 
 **属性**
 
@@ -2530,7 +2530,7 @@ Windows.Media.Playback.MediaPlaybackState <br /> Windows.Media.Playback.MediaPla
 
 **项**
 
-[Windows.Media.Playback.MediaPlayerSurface](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayersurface)
+[Windows.Media.Playback.MediaPlayerSurface](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayersurface)
 
 **属性**
 
@@ -2540,7 +2540,7 @@ Windows.Media.Playback.MediaPlayerSurface <br /> Windows.Media.Playback.MediaPla
 
 **项**
 
-[Windows.Media.Playback.StereoscopicVideoRenderMode](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.stereoscopicvideorendermode)
+[Windows.Media.Playback.StereoscopicVideoRenderMode](https://docs.microsoft.com/uwp/api/windows.media.playback.stereoscopicvideorendermode)
 
 **属性**
 
@@ -2550,7 +2550,7 @@ Windows.Media.Playback.StereoscopicVideoRenderMode <br /> Windows.Media.Playback
 
 **项**
 
-[Windows.Media.Protection.HdcpProtection](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.hdcpprotection)
+[Windows.Media.Protection.HdcpProtection](https://docs.microsoft.com/uwp/api/windows.media.protection.hdcpprotection)
 
 **属性**
 
@@ -2560,7 +2560,7 @@ Windows.Media.Protection.HdcpProtection <br /> Windows.Media.Protection.HdcpProt
 
 **项**
 
-[Windows.Media.Protection.HdcpSession](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.hdcpsession)
+[Windows.Media.Protection.HdcpSession](https://docs.microsoft.com/uwp/api/windows.media.protection.hdcpsession)
 
 **属性**
 
@@ -2570,7 +2570,7 @@ Windows.Media.Protection.HdcpSession <br /> Windows.Media.Protection.HdcpSession
 
 **项**
 
-[Windows.Media.Protection.HdcpSetProtectionResult](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.hdcpsetprotectionresult)
+[Windows.Media.Protection.HdcpSetProtectionResult](https://docs.microsoft.com/uwp/api/windows.media.protection.hdcpsetprotectionresult)
 
 **属性**
 
@@ -2580,7 +2580,7 @@ Windows.Media.Protection.HdcpSetProtectionResult <br /> Windows.Media.Protection
 
 **项**
 
-[Windows.Networking.PushNotifications.PushNotificationChannelManagerForUser](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser)
+[Windows.Networking.PushNotifications.PushNotificationChannelManagerForUser](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser)
 
 **属性**
 
@@ -2590,7 +2590,7 @@ Windows.Networking.PushNotifications.PushNotificationChannelManagerForUser <br /
 
 **项**
 
-[Windows.Networking.Sockets.IWebSocketControl2](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.iwebsocketcontrol2)
+[Windows.Networking.Sockets.IWebSocketControl2](https://docs.microsoft.com/uwp/api/windows.networking.sockets.iwebsocketcontrol2)
 
 **属性**
 
@@ -2600,7 +2600,7 @@ Windows.Networking.Sockets.IWebSocketControl2 <br /> Windows.Networking.Sockets.
 
 **项**
 
-[Windows.Networking.Sockets.IWebSocketInformation2](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.iwebsocketinformation2)
+[Windows.Networking.Sockets.IWebSocketInformation2](https://docs.microsoft.com/uwp/api/windows.networking.sockets.iwebsocketinformation2)
 
 **属性**
 
@@ -2610,7 +2610,7 @@ Windows.Networking.Sockets.IWebSocketInformation2 <br /> Windows.Networking.Sock
 
 **项**
 
-[Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.websocketservercustomvalidationrequestedeventargs)
+[Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.networking.sockets.websocketservercustomvalidationrequestedeventargs)
 
 **属性**
 
@@ -2620,7 +2620,7 @@ Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs <br
 
 **项**
 
-[Windows.Networking.Vpn.VpnManagementConnectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.networking.vpn.vpnmanagementconnectionstatus)
+[Windows.Networking.Vpn.VpnManagementConnectionStatus](https://docs.microsoft.com/uwp/api/windows.networking.vpn.vpnmanagementconnectionstatus)
 
 **属性**
 
@@ -2630,7 +2630,7 @@ Windows.Networking.Vpn.VpnManagementConnectionStatus <br /> Windows.Networking.V
 
 **项**
 
-[Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.enterprisekeycredentialregistrationinfo)
+[Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationInfo](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.enterprisekeycredentialregistrationinfo)
 
 **属性**
 
@@ -2640,7 +2640,7 @@ Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationInfo
 
 **项**
 
-[Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationManager](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.enterprisekeycredentialregistrationmanager)
+[Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationManager](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.enterprisekeycredentialregistrationmanager)
 
 **属性**
 
@@ -2650,7 +2650,7 @@ Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationMana
 
 **项**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationManager](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.core.microsoftaccountmultifactorauthenticationmanager)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationManager](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorauthenticationmanager)
 
 **属性**
 
@@ -2660,7 +2660,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthent
 
 **项**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationType](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.core.microsoftaccountmultifactorauthenticationtype)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationType](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorauthenticationtype)
 
 **属性**
 
@@ -2670,7 +2670,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthent
 
 **项**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorGetSessionsResult](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.core.microsoftaccountmultifactorgetsessionsresult)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorGetSessionsResult](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorgetsessionsresult)
 
 **属性**
 
@@ -2680,7 +2680,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorGetSess
 
 **项**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorOneTimeCodedInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.core.microsoftaccountmultifactoronetimecodedinfo)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorOneTimeCodedInfo](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactoronetimecodedinfo)
 
 **属性**
 
@@ -2690,7 +2690,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorOneTime
 
 **项**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.core.microsoftaccountmultifactorserviceresponse)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorserviceresponse)
 
 **属性**
 
@@ -2700,7 +2700,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorService
 
 **项**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionApprovalStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.core.microsoftaccountmultifactorsessionapprovalstatus)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionApprovalStatus](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorsessionapprovalstatus)
 
 **属性**
 
@@ -2710,7 +2710,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSession
 
 **项**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionAuthenticationStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.core.microsoftaccountmultifactorsessionauthenticationstatus)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionAuthenticationStatus](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorsessionauthenticationstatus)
 
 **属性**
 
@@ -2720,7 +2720,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSession
 
 **项**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.core.microsoftaccountmultifactorsessioninfo)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionInfo](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorsessioninfo)
 
 **属性**
 
@@ -2730,7 +2730,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSession
 
 **项**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.core.microsoftaccountmultifactorunregisteredaccountsandsessioninfo)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorunregisteredaccountsandsessioninfo)
 
 **属性**
 
@@ -2740,7 +2740,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorUnregis
 
 **项**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthentication](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthentication)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthentication](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthentication)
 
 **属性**
 
@@ -2750,7 +2750,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorA
 
 **项**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationMessage](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationmessage)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationMessage](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationmessage)
 
 **属性**
 
@@ -2760,7 +2760,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorA
 
 **项**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationResult](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationresult)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationResult](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationresult)
 
 **属性**
 
@@ -2770,7 +2770,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorA
 
 **项**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationScenario](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationscenario)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationScenario](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationscenario)
 
 **属性**
 
@@ -2780,7 +2780,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorA
 
 **项**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStage](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationstage)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStage](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationstage)
 
 **属性**
 
@@ -2790,7 +2790,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorA
 
 **项**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationstagechangedeventargs)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationstagechangedeventargs)
 
 **属性**
 
@@ -2800,7 +2800,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorA
 
 **项**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationstageinfo)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageInfo](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationstageinfo)
 
 **属性**
 
@@ -2810,7 +2810,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorA
 
 **项**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationstatus)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStatus](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationstatus)
 
 **属性**
 
@@ -2820,7 +2820,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorA
 
 **项**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDeviceCapabilities](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.provider.secondaryauthenticationfactordevicecapabilities)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDeviceCapabilities](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactordevicecapabilities)
 
 **属性**
 
@@ -2830,7 +2830,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorD
 
 **项**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDeviceFindScope](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.provider.secondaryauthenticationfactordevicefindscope)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDeviceFindScope](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactordevicefindscope)
 
 **属性**
 
@@ -2840,7 +2840,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorD
 
 **项**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorFinishAuthenticationStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.provider.secondaryauthenticationfactorfinishauthenticationstatus)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorFinishAuthenticationStatus](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorfinishauthenticationstatus)
 
 **属性**
 
@@ -2850,7 +2850,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorF
 
 **项**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.provider.secondaryauthenticationfactorinfo)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorInfo](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorinfo)
 
 **属性**
 
@@ -2860,7 +2860,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorI
 
 **项**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistration](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.provider.secondaryauthenticationfactorregistration)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistration](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorregistration)
 
 **属性**
 
@@ -2870,7 +2870,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorR
 
 **项**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistrationResult](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.provider.secondaryauthenticationfactorregistrationresult)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistrationResult](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorregistrationresult)
 
 **属性**
 
@@ -2880,7 +2880,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorR
 
 **项**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistrationStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.identity.provider.secondaryauthenticationfactorregistrationstatus)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistrationStatus](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorregistrationstatus)
 
 **属性**
 
@@ -2890,7 +2890,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorR
 
 **项**
 
-[Windows.Security.Authentication.Web.Core.WebAccountEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.web.core.webaccounteventargs)
+[Windows.Security.Authentication.Web.Core.WebAccountEventArgs](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webaccounteventargs)
 
 **属性**
 
@@ -2900,7 +2900,7 @@ Windows.Security.Authentication.Web.Core.WebAccountEventArgs <br /> Windows.Secu
 
 **项**
 
-[Windows.Security.Authentication.Web.Core.WebAccountMonitor](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.web.core.webaccountmonitor)
+[Windows.Security.Authentication.Web.Core.WebAccountMonitor](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webaccountmonitor)
 
 **属性**
 
@@ -2910,7 +2910,7 @@ Windows.Security.Authentication.Web.Core.WebAccountMonitor <br /> Windows.Securi
 
 **项**
 
-[Windows.Security.Cryptography.Certificates.StandardCertificateStoreNames](https://msdn.microsoft.com/library/windows/apps/windows.security.cryptography.certificates.standardcertificatestorenames)
+[Windows.Security.Cryptography.Certificates.StandardCertificateStoreNames](https://docs.microsoft.com/uwp/api/windows.security.cryptography.certificates.standardcertificatestorenames)
 
 **属性**
 
@@ -2920,7 +2920,7 @@ Windows.Security.Cryptography.Certificates.StandardCertificateStoreNames <br /> 
 
 **项**
 
-[Windows.Security.Cryptography.Certificates.UserCertificateStore](https://msdn.microsoft.com/library/windows/apps/windows.security.cryptography.certificates.usercertificatestore)
+[Windows.Security.Cryptography.Certificates.UserCertificateStore](https://docs.microsoft.com/uwp/api/windows.security.cryptography.certificates.usercertificatestore)
 
 **属性**
 
@@ -2930,7 +2930,7 @@ Windows.Security.Cryptography.Certificates.UserCertificateStore <br /> Windows.S
 
 **项**
 
-[Windows.Services.Maps.MapLocationDesiredAccuracy](https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationdesiredaccuracy)
+[Windows.Services.Maps.MapLocationDesiredAccuracy](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationdesiredaccuracy)
 
 **属性**
 
@@ -2940,7 +2940,7 @@ Windows.Services.Maps.MapLocationDesiredAccuracy <br /> Windows.Services.Maps.Ma
 
 **项**
 
-[Windows.Storage.StorageLibraryChange](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrarychange)
+[Windows.Storage.StorageLibraryChange](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychange)
 
 **属性**
 
@@ -2950,7 +2950,7 @@ Windows.Storage.StorageLibraryChange <br /> Windows.Storage.StorageLibraryChange
 
 **项**
 
-[Windows.Storage.StorageLibraryChangeReader](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrarychangereader)
+[Windows.Storage.StorageLibraryChangeReader](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader)
 
 **属性**
 
@@ -2960,7 +2960,7 @@ Windows.Storage.StorageLibraryChangeReader <br /> Windows.Storage.StorageLibrary
 
 **项**
 
-[Windows.Storage.StorageLibraryChangeTracker](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrarychangetracker)
+[Windows.Storage.StorageLibraryChangeTracker](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker)
 
 **属性**
 
@@ -2970,7 +2970,7 @@ Windows.Storage.StorageLibraryChangeTracker <br /> Windows.Storage.StorageLibrar
 
 **项**
 
-[Windows.Storage.StorageLibraryChangeType](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrarychangetype)
+[Windows.Storage.StorageLibraryChangeType](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetype)
 
 **属性**
 
@@ -2980,7 +2980,7 @@ Windows.Storage.StorageLibraryChangeType <br /> Windows.Storage.StorageLibraryCh
 
 **项**
 
-[Windows.System.LaunchFileStatus](https://msdn.microsoft.com/library/windows/apps/windows.system.launchfilestatus)
+[Windows.System.LaunchFileStatus](https://docs.microsoft.com/uwp/api/windows.system.launchfilestatus)
 
 **属性**
 
@@ -2990,7 +2990,7 @@ Windows.System.LaunchFileStatus <br /> Windows.System.LaunchFileStatus.AppUnavai
 
 **项**
 
-[Windows.System.RemoteLauncher](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelauncher)
+[Windows.System.RemoteLauncher](https://docs.microsoft.com/uwp/api/windows.system.remotelauncher)
 
 **属性**
 
@@ -3000,7 +3000,7 @@ Windows.System.RemoteLauncher <br /> Windows.System.RemoteLauncher.LaunchUriAsyn
 
 **项**
 
-[Windows.System.RemoteLauncherOptions](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelauncheroptions)
+[Windows.System.RemoteLauncherOptions](https://docs.microsoft.com/uwp/api/windows.system.remotelauncheroptions)
 
 **属性**
 
@@ -3010,7 +3010,7 @@ Windows.System.RemoteLauncherOptions <br /> Windows.System.RemoteLauncherOptions
 
 **项**
 
-[Windows.System.RemoteLaunchUriStatus](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelaunchuristatus)
+[Windows.System.RemoteLaunchUriStatus](https://docs.microsoft.com/uwp/api/windows.system.remotelaunchuristatus)
 
 **属性**
 
@@ -3020,7 +3020,7 @@ Windows.System.RemoteLaunchUriStatus <br /> Windows.System.RemoteLaunchUriStatus
 
 **项**
 
-[Windows.System.UserDeviceAssociation](https://msdn.microsoft.com/library/windows/apps/windows.system.userdeviceassociation)
+[Windows.System.UserDeviceAssociation](https://docs.microsoft.com/uwp/api/windows.system.userdeviceassociation)
 
 **属性**
 
@@ -3030,7 +3030,7 @@ Windows.System.UserDeviceAssociation <br /> Windows.System.UserDeviceAssociation
 
 **项**
 
-[Windows.System.UserDeviceAssociationChangedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.system.userdeviceassociationchangedeventargs)
+[Windows.System.UserDeviceAssociationChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.system.userdeviceassociationchangedeventargs)
 
 **属性**
 
@@ -3040,7 +3040,7 @@ Windows.System.UserDeviceAssociationChangedEventArgs <br /> Windows.System.UserD
 
 **项**
 
-[Windows.System.UserPicker](https://msdn.microsoft.com/library/windows/apps/windows.system.userpicker)
+[Windows.System.UserPicker](https://docs.microsoft.com/uwp/api/windows.system.userpicker)
 
 **属性**
 
@@ -3050,7 +3050,7 @@ Windows.System.UserPicker <br /> Windows.System.UserPicker.#ctor <br /> Windows.
 
 **项**
 
-[Windows.System.Profile.SystemIdentification](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.systemidentification)
+[Windows.System.Profile.SystemIdentification](https://docs.microsoft.com/uwp/api/windows.system.profile.systemidentification)
 
 **属性**
 
@@ -3060,7 +3060,7 @@ Windows.System.Profile.SystemIdentification <br /> Windows.System.Profile.System
 
 **项**
 
-[Windows.System.Profile.SystemIdentificationInfo](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.systemidentificationinfo)
+[Windows.System.Profile.SystemIdentificationInfo](https://docs.microsoft.com/uwp/api/windows.system.profile.systemidentificationinfo)
 
 **属性**
 
@@ -3070,7 +3070,7 @@ Windows.System.Profile.SystemIdentificationInfo <br /> Windows.System.Profile.Sy
 
 **项**
 
-[Windows.System.Profile.SystemIdentificationSource](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.systemidentificationsource)
+[Windows.System.Profile.SystemIdentificationSource](https://docs.microsoft.com/uwp/api/windows.system.profile.systemidentificationsource)
 
 **属性**
 
@@ -3080,7 +3080,7 @@ Windows.System.Profile.SystemIdentificationSource <br /> Windows.System.Profile.
 
 **项**
 
-[Windows.System.RemoteSystems.IRemoteSystemFilter](https://msdn.microsoft.com/library/windows/apps/windows.system.remotesystems.iremotesystemfilter)
+[Windows.System.RemoteSystems.IRemoteSystemFilter](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.iremotesystemfilter)
 
 **属性**
 
@@ -3090,7 +3090,7 @@ Windows.System.RemoteSystems.IRemoteSystemFilter
 
 **项**
 
-[Windows.System.RemoteSystems.RemoteSystem](https://msdn.microsoft.com/library/windows/apps/windows.system.remotesystems.remotesystem)
+[Windows.System.RemoteSystems.RemoteSystem](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem)
 
 **属性**
 
@@ -3100,7 +3100,7 @@ Windows.System.RemoteSystems.RemoteSystem <br /> Windows.System.RemoteSystems.Re
 
 **项**
 
-[Windows.System.RemoteSystems.RemoteSystemAccessStatus](https://msdn.microsoft.com/library/windows/apps/windows.system.remotesystems.remotesystemaccessstatus)
+[Windows.System.RemoteSystems.RemoteSystemAccessStatus](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemaccessstatus)
 
 **属性**
 
@@ -3110,7 +3110,7 @@ Windows.System.RemoteSystems.RemoteSystemAccessStatus <br /> Windows.System.Remo
 
 **项**
 
-[Windows.System.RemoteSystems.RemoteSystemAddedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.system.remotesystems.remotesystemaddedeventargs)
+[Windows.System.RemoteSystems.RemoteSystemAddedEventArgs](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemaddedeventargs)
 
 **属性**
 
@@ -3120,7 +3120,7 @@ Windows.System.RemoteSystems.RemoteSystemAddedEventArgs <br /> Windows.System.Re
 
 **项**
 
-[Windows.System.RemoteSystems.RemoteSystemConnectionRequest](https://msdn.microsoft.com/library/windows/apps/windows.system.remotesystems.remotesystemconnectionrequest)
+[Windows.System.RemoteSystems.RemoteSystemConnectionRequest](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemconnectionrequest)
 
 **属性**
 
@@ -3130,7 +3130,7 @@ Windows.System.RemoteSystems.RemoteSystemConnectionRequest <br /> Windows.System
 
 **项**
 
-[Windows.System.RemoteSystems.RemoteSystemDiscoveryType](https://msdn.microsoft.com/library/windows/apps/windows.system.remotesystems.remotesystemdiscoverytype)
+[Windows.System.RemoteSystems.RemoteSystemDiscoveryType](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype)
 
 **属性**
 
@@ -3140,7 +3140,7 @@ Windows.System.RemoteSystems.RemoteSystemDiscoveryType <br /> Windows.System.Rem
 
 **项**
 
-[Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter](https://msdn.microsoft.com/library/windows/apps/windows.system.remotesystems.remotesystemdiscoverytypefilter)
+[Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemdiscoverytypefilter)
 
 **属性**
 
@@ -3150,7 +3150,7 @@ Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter <br /> Windows.Syst
 
 **项**
 
-[Windows.System.RemoteSystems.RemoteSystemKindFilter](https://msdn.microsoft.com/library/windows/apps/windows.system.remotesystems.remotesystemkindfilter)
+[Windows.System.RemoteSystems.RemoteSystemKindFilter](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemkindfilter)
 
 **属性**
 
@@ -3160,7 +3160,7 @@ Windows.System.RemoteSystems.RemoteSystemKindFilter <br /> Windows.System.Remote
 
 **项**
 
-[Windows.System.RemoteSystems.RemoteSystemKinds](https://msdn.microsoft.com/library/windows/apps/windows.system.remotesystems.remotesystemkinds)
+[Windows.System.RemoteSystems.RemoteSystemKinds](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemkinds)
 
 **属性**
 
@@ -3170,7 +3170,7 @@ Windows.System.RemoteSystems.RemoteSystemKinds <br /> Windows.System.RemoteSyste
 
 **项**
 
-[Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.system.remotesystems.remotesystemremovedeventargs)
+[Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemremovedeventargs)
 
 **属性**
 
@@ -3180,7 +3180,7 @@ Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs <br /> Windows.System.
 
 **项**
 
-[Windows.System.RemoteSystems.RemoteSystemStatus](https://msdn.microsoft.com/library/windows/apps/windows.system.remotesystems.remotesystemstatus)
+[Windows.System.RemoteSystems.RemoteSystemStatus](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemstatus)
 
 **属性**
 
@@ -3190,7 +3190,7 @@ Windows.System.RemoteSystems.RemoteSystemStatus <br /> Windows.System.RemoteSyst
 
 **项**
 
-[Windows.System.RemoteSystems.RemoteSystemStatusType](https://msdn.microsoft.com/library/windows/apps/windows.system.remotesystems.remotesystemstatustype)
+[Windows.System.RemoteSystems.RemoteSystemStatusType](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemstatustype)
 
 **属性**
 
@@ -3200,7 +3200,7 @@ Windows.System.RemoteSystems.RemoteSystemStatusType <br /> Windows.System.Remote
 
 **项**
 
-[Windows.System.RemoteSystems.RemoteSystemStatusTypeFilter](https://msdn.microsoft.com/library/windows/apps/windows.system.remotesystems.remotesystemstatustypefilter)
+[Windows.System.RemoteSystems.RemoteSystemStatusTypeFilter](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemstatustypefilter)
 
 **属性**
 
@@ -3210,7 +3210,7 @@ Windows.System.RemoteSystems.RemoteSystemStatusTypeFilter <br /> Windows.System.
 
 **项**
 
-[Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.system.remotesystems.remotesystemupdatedeventargs)
+[Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemupdatedeventargs)
 
 **属性**
 
@@ -3220,7 +3220,7 @@ Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs <br /> Windows.System.
 
 **项**
 
-[Windows.System.RemoteSystems.RemoteSystemWatcher](https://msdn.microsoft.com/library/windows/apps/windows.system.remotesystems.remotesystemwatcher)
+[Windows.System.RemoteSystems.RemoteSystemWatcher](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemwatcher)
 
 **属性**
 
@@ -3230,7 +3230,7 @@ Windows.System.RemoteSystems.RemoteSystemWatcher <br /> Windows.System.RemoteSys
 
 **项**
 
-[Windows.System.UserProfile.AdvertisingManagerForUser](https://msdn.microsoft.com/library/windows/apps/windows.system.userprofile.advertisingmanagerforuser)
+[Windows.System.UserProfile.AdvertisingManagerForUser](https://docs.microsoft.com/uwp/api/windows.system.userprofile.advertisingmanagerforuser)
 
 **属性**
 
@@ -3240,7 +3240,7 @@ Windows.System.UserProfile.AdvertisingManagerForUser <br /> Windows.System.UserP
 
 **项**
 
-[Windows.UI.Composition.AmbientLight](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.ambientlight)
+[Windows.UI.Composition.AmbientLight](https://docs.microsoft.com/uwp/api/windows.ui.composition.ambientlight)
 
 **属性**
 
@@ -3250,7 +3250,7 @@ Windows.UI.Composition.AmbientLight <br /> Windows.UI.Composition.AmbientLight.C
 
 **项**
 
-[Windows.UI.Composition.AnimationDirection](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.animationdirection)
+[Windows.UI.Composition.AnimationDirection](https://docs.microsoft.com/uwp/api/windows.ui.composition.animationdirection)
 
 **属性**
 
@@ -3260,7 +3260,7 @@ Windows.UI.Composition.AnimationDirection <br /> Windows.UI.Composition.Animatio
 
 **项**
 
-[Windows.UI.Composition.CompositionAnimationGroup](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionanimationgroup)
+[Windows.UI.Composition.CompositionAnimationGroup](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionanimationgroup)
 
 **属性**
 
@@ -3270,7 +3270,7 @@ Windows.UI.Composition.CompositionAnimationGroup <br /> Windows.UI.Composition.C
 
 **项**
 
-[Windows.UI.Composition.CompositionBackdropBrush](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionbackdropbrush)
+[Windows.UI.Composition.CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionbackdropbrush)
 
 **属性**
 
@@ -3280,7 +3280,7 @@ Windows.UI.Composition.CompositionBackdropBrush
 
 **项**
 
-[Windows.UI.Composition.CompositionLight](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionlight)
+[Windows.UI.Composition.CompositionLight](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlight)
 
 **属性**
 
@@ -3290,7 +3290,7 @@ Windows.UI.Composition.CompositionLight <br /> Windows.UI.Composition.Compositio
 
 **项**
 
-[Windows.UI.Composition.CompositionMaskBrush](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionmaskbrush)
+[Windows.UI.Composition.CompositionMaskBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionmaskbrush)
 
 **属性**
 
@@ -3300,7 +3300,7 @@ Windows.UI.Composition.CompositionMaskBrush <br /> Windows.UI.Composition.Compos
 
 **项**
 
-[Windows.UI.Composition.CompositionNineGridBrush](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionninegridbrush)
+[Windows.UI.Composition.CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionninegridbrush)
 
 **属性**
 
@@ -3310,7 +3310,7 @@ Windows.UI.Composition.CompositionNineGridBrush <br /> Windows.UI.Composition.Co
 
 **项**
 
-[Windows.UI.Composition.CompositionShadow](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionshadow)
+[Windows.UI.Composition.CompositionShadow](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionshadow)
 
 **属性**
 
@@ -3320,7 +3320,7 @@ Windows.UI.Composition.CompositionShadow
 
 **项**
 
-[Windows.UI.Composition.DistantLight](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.distantlight)
+[Windows.UI.Composition.DistantLight](https://docs.microsoft.com/uwp/api/windows.ui.composition.distantlight)
 
 **属性**
 
@@ -3330,7 +3330,7 @@ Windows.UI.Composition.DistantLight <br /> Windows.UI.Composition.DistantLight.C
 
 **项**
 
-[Windows.UI.Composition.DropShadow](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.dropshadow)
+[Windows.UI.Composition.DropShadow](https://docs.microsoft.com/uwp/api/windows.ui.composition.dropshadow)
 
 **属性**
 
@@ -3340,7 +3340,7 @@ Windows.UI.Composition.DropShadow <br /> Windows.UI.Composition.DropShadow.BlurR
 
 **项**
 
-[Windows.UI.Composition.ICompositionAnimationBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.icompositionanimationbase)
+[Windows.UI.Composition.ICompositionAnimationBase](https://docs.microsoft.com/uwp/api/windows.ui.composition.icompositionanimationbase)
 
 **属性**
 
@@ -3350,7 +3350,7 @@ Windows.UI.Composition.ICompositionAnimationBase
 
 **项**
 
-[Windows.UI.Composition.ImplicitAnimationCollection](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.implicitanimationcollection)
+[Windows.UI.Composition.ImplicitAnimationCollection](https://docs.microsoft.com/uwp/api/windows.ui.composition.implicitanimationcollection)
 
 **属性**
 
@@ -3360,7 +3360,7 @@ Windows.UI.Composition.ImplicitAnimationCollection <br /> Windows.UI.Composition
 
 **项**
 
-[Windows.UI.Composition.LayerVisual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.layervisual)
+[Windows.UI.Composition.LayerVisual](https://docs.microsoft.com/uwp/api/windows.ui.composition.layervisual)
 
 **属性**
 
@@ -3370,7 +3370,7 @@ Windows.UI.Composition.LayerVisual <br /> Windows.UI.Composition.LayerVisual.Eff
 
 **项**
 
-[Windows.UI.Composition.PointLight](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.pointlight)
+[Windows.UI.Composition.PointLight](https://docs.microsoft.com/uwp/api/windows.ui.composition.pointlight)
 
 **属性**
 
@@ -3380,7 +3380,7 @@ Windows.UI.Composition.PointLight <br /> Windows.UI.Composition.PointLight.Color
 
 **项**
 
-[Windows.UI.Composition.SpotLight](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.spotlight)
+[Windows.UI.Composition.SpotLight](https://docs.microsoft.com/uwp/api/windows.ui.composition.spotlight)
 
 **属性**
 
@@ -3390,7 +3390,7 @@ Windows.UI.Composition.SpotLight <br /> Windows.UI.Composition.SpotLight.Constan
 
 **项**
 
-[Windows.UI.Composition.StepEasingFunction](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.stepeasingfunction)
+[Windows.UI.Composition.StepEasingFunction](https://docs.microsoft.com/uwp/api/windows.ui.composition.stepeasingfunction)
 
 **属性**
 
@@ -3400,7 +3400,7 @@ Windows.UI.Composition.StepEasingFunction <br /> Windows.UI.Composition.StepEasi
 
 **项**
 
-[Windows.UI.Composition.VisualUnorderedCollection](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualunorderedcollection)
+[Windows.UI.Composition.VisualUnorderedCollection](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualunorderedcollection)
 
 **属性**
 
@@ -3410,7 +3410,7 @@ Windows.UI.Composition.VisualUnorderedCollection <br /> Windows.UI.Composition.V
 
 **项**
 
-[Windows.UI.Composition.Effects.SceneLightingEffect](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.effects.scenelightingeffect)
+[Windows.UI.Composition.Effects.SceneLightingEffect](https://docs.microsoft.com/uwp/api/windows.ui.composition.effects.scenelightingeffect)
 
 **属性**
 
@@ -3420,7 +3420,7 @@ Windows.UI.Composition.Effects.SceneLightingEffect <br /> Windows.UI.Composition
 
 **项**
 
-[Windows.UI.Composition.Interactions.CompositionInteractionSourceCollection](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.compositioninteractionsourcecollection)
+[Windows.UI.Composition.Interactions.CompositionInteractionSourceCollection](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.compositioninteractionsourcecollection)
 
 **属性**
 
@@ -3430,7 +3430,7 @@ Windows.UI.Composition.Interactions.CompositionInteractionSourceCollection <br /
 
 **项**
 
-[Windows.UI.Composition.Interactions.ICompositionInteractionSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.icompositioninteractionsource)
+[Windows.UI.Composition.Interactions.ICompositionInteractionSource](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.icompositioninteractionsource)
 
 **属性**
 
@@ -3440,7 +3440,7 @@ Windows.UI.Composition.Interactions.ICompositionInteractionSource
 
 **项**
 
-[Windows.UI.Composition.Interactions.IInteractionTrackerOwner](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.iinteractiontrackerowner)
+[Windows.UI.Composition.Interactions.IInteractionTrackerOwner](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.iinteractiontrackerowner)
 
 **属性**
 
@@ -3450,7 +3450,7 @@ Windows.UI.Composition.Interactions.IInteractionTrackerOwner <br /> Windows.UI.C
 
 **项**
 
-[Windows.UI.Composition.Interactions.InteractionChainingMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.interactionchainingmode)
+[Windows.UI.Composition.Interactions.InteractionChainingMode](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactionchainingmode)
 
 **属性**
 
@@ -3460,7 +3460,7 @@ Windows.UI.Composition.Interactions.InteractionChainingMode <br /> Windows.UI.Co
 
 **项**
 
-[Windows.UI.Composition.Interactions.InteractionSourceMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.interactionsourcemode)
+[Windows.UI.Composition.Interactions.InteractionSourceMode](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactionsourcemode)
 
 **属性**
 
@@ -3470,7 +3470,7 @@ Windows.UI.Composition.Interactions.InteractionSourceMode <br /> Windows.UI.Comp
 
 **项**
 
-[Windows.UI.Composition.Interactions.InteractionTracker](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.interactiontracker)
+[Windows.UI.Composition.Interactions.InteractionTracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker)
 
 **属性**
 
@@ -3480,7 +3480,7 @@ Windows.UI.Composition.Interactions.InteractionTracker <br /> Windows.UI.Composi
 
 **项**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerCustomAnimationStateEnteredArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.interactiontrackercustomanimationstateenteredargs)
+[Windows.UI.Composition.Interactions.InteractionTrackerCustomAnimationStateEnteredArgs](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackercustomanimationstateenteredargs)
 
 **属性**
 
@@ -3490,7 +3490,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerCustomAnimationStateEntere
 
 **项**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerIdleStateEnteredArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.interactiontrackeridlestateenteredargs)
+[Windows.UI.Composition.Interactions.InteractionTrackerIdleStateEnteredArgs](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackeridlestateenteredargs)
 
 **属性**
 
@@ -3500,7 +3500,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerIdleStateEnteredArgs <br /
 
 **项**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.interactiontrackerinertiamodifier)
+[Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackerinertiamodifier)
 
 **属性**
 
@@ -3510,7 +3510,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier
 
 **项**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerInertiaMotion](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.interactiontrackerinertiamotion)
+[Windows.UI.Composition.Interactions.InteractionTrackerInertiaMotion](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackerinertiamotion)
 
 **属性**
 
@@ -3520,7 +3520,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerInertiaMotion <br /> Windo
 
 **项**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerInertiaRestingValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.interactiontrackerinertiarestingvalue)
+[Windows.UI.Composition.Interactions.InteractionTrackerInertiaRestingValue](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackerinertiarestingvalue)
 
 **属性**
 
@@ -3530,7 +3530,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerInertiaRestingValue <br />
 
 **项**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerInertiaStateEnteredArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.interactiontrackerinertiastateenteredargs)
+[Windows.UI.Composition.Interactions.InteractionTrackerInertiaStateEnteredArgs](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackerinertiastateenteredargs)
 
 **属性**
 
@@ -3540,7 +3540,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerInertiaStateEnteredArgs <b
 
 **项**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerInteractingStateEnteredArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.interactiontrackerinteractingstateenteredargs)
+[Windows.UI.Composition.Interactions.InteractionTrackerInteractingStateEnteredArgs](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackerinteractingstateenteredargs)
 
 **属性**
 
@@ -3550,7 +3550,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerInteractingStateEnteredArg
 
 **项**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerRequestIgnoredArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.interactiontrackerrequestignoredargs)
+[Windows.UI.Composition.Interactions.InteractionTrackerRequestIgnoredArgs](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackerrequestignoredargs)
 
 **属性**
 
@@ -3560,7 +3560,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerRequestIgnoredArgs <br /> 
 
 **项**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerValuesChangedArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.interactiontrackervalueschangedargs)
+[Windows.UI.Composition.Interactions.InteractionTrackerValuesChangedArgs](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackervalueschangedargs)
 
 **属性**
 
@@ -3570,7 +3570,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerValuesChangedArgs <br /> W
 
 **项**
 
-[Windows.UI.Composition.Interactions.VisualInteractionSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.visualinteractionsource)
+[Windows.UI.Composition.Interactions.VisualInteractionSource](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.visualinteractionsource)
 
 **属性**
 
@@ -3580,7 +3580,7 @@ Windows.UI.Composition.Interactions.VisualInteractionSource <br /> Windows.UI.Co
 
 **项**
 
-[Windows.UI.Composition.Interactions.VisualInteractionSourceRedirectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.visualinteractionsourceredirectionmode)
+[Windows.UI.Composition.Interactions.VisualInteractionSourceRedirectionMode](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.visualinteractionsourceredirectionmode)
 
 **属性**
 
@@ -3590,7 +3590,7 @@ Windows.UI.Composition.Interactions.VisualInteractionSourceRedirectionMode <br /
 
 **项**
 
-[Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.closestinteractiveboundsrequestedeventargs)
+[Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.core.closestinteractiveboundsrequestedeventargs)
 
 **属性**
 
@@ -3600,7 +3600,7 @@ Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs <br /> Windows.UI.Cor
 
 **项**
 
-[Windows.UI.Input.RadialController](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.radialcontroller)
+[Windows.UI.Input.RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller)
 
 **属性**
 
@@ -3610,7 +3610,7 @@ Windows.UI.Input.RadialController <br /> Windows.UI.Input.RadialController.Menu 
 
 **项**
 
-[Windows.UI.Input.RadialControllerButtonClickedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.radialcontrollerbuttonclickedeventargs)
+[Windows.UI.Input.RadialControllerButtonClickedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs)
 
 **属性**
 
@@ -3620,7 +3620,7 @@ Windows.UI.Input.RadialControllerButtonClickedEventArgs <br /> Windows.UI.Input.
 
 **项**
 
-[Windows.UI.Input.RadialControllerConfiguration](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.radialcontrollerconfiguration)
+[Windows.UI.Input.RadialControllerConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration)
 
 **属性**
 
@@ -3630,7 +3630,7 @@ Windows.UI.Input.RadialControllerConfiguration <br /> Windows.UI.Input.RadialCon
 
 **项**
 
-[Windows.UI.Input.RadialControllerControlAcquiredEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.radialcontrollercontrolacquiredeventargs)
+[Windows.UI.Input.RadialControllerControlAcquiredEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollercontrolacquiredeventargs)
 
 **属性**
 
@@ -3640,7 +3640,7 @@ Windows.UI.Input.RadialControllerControlAcquiredEventArgs <br /> Windows.UI.Inpu
 
 **项**
 
-[Windows.UI.Input.RadialControllerMenu](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.radialcontrollermenu)
+[Windows.UI.Input.RadialControllerMenu](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenu)
 
 **属性**
 
@@ -3650,7 +3650,7 @@ Windows.UI.Input.RadialControllerMenu <br /> Windows.UI.Input.RadialControllerMe
 
 **项**
 
-[Windows.UI.Input.RadialControllerMenuItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.radialcontrollermenuitem)
+[Windows.UI.Input.RadialControllerMenuItem](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem)
 
 **属性**
 
@@ -3660,7 +3660,7 @@ Windows.UI.Input.RadialControllerMenuItem <br /> Windows.UI.Input.RadialControll
 
 **项**
 
-[Windows.UI.Input.RadialControllerMenuKnownIcon](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.radialcontrollermenuknownicon)
+[Windows.UI.Input.RadialControllerMenuKnownIcon](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuknownicon)
 
 **属性**
 
@@ -3670,7 +3670,7 @@ Windows.UI.Input.RadialControllerMenuKnownIcon <br /> Windows.UI.Input.RadialCon
 
 **项**
 
-[Windows.UI.Input.RadialControllerRotationChangedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.radialcontrollerrotationchangedeventargs)
+[Windows.UI.Input.RadialControllerRotationChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerrotationchangedeventargs)
 
 **属性**
 
@@ -3680,7 +3680,7 @@ Windows.UI.Input.RadialControllerRotationChangedEventArgs <br /> Windows.UI.Inpu
 
 **项**
 
-[Windows.UI.Input.RadialControllerScreenContact](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.radialcontrollerscreencontact)
+[Windows.UI.Input.RadialControllerScreenContact](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerscreencontact)
 
 **属性**
 
@@ -3690,7 +3690,7 @@ Windows.UI.Input.RadialControllerScreenContact <br /> Windows.UI.Input.RadialCon
 
 **项**
 
-[Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.radialcontrollerscreencontactcontinuedeventargs)
+[Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerscreencontactcontinuedeventargs)
 
 **属性**
 
@@ -3700,7 +3700,7 @@ Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs <br /> Windows.
 
 **项**
 
-[Windows.UI.Input.RadialControllerScreenContactStartedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.radialcontrollerscreencontactstartedeventargs)
+[Windows.UI.Input.RadialControllerScreenContactStartedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerscreencontactstartedeventargs)
 
 **属性**
 
@@ -3710,7 +3710,7 @@ Windows.UI.Input.RadialControllerScreenContactStartedEventArgs <br /> Windows.UI
 
 **项**
 
-[Windows.UI.Input.RadialControllerSystemMenuItemKind](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.radialcontrollersystemmenuitemkind)
+[Windows.UI.Input.RadialControllerSystemMenuItemKind](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollersystemmenuitemkind)
 
 **属性**
 
@@ -3720,7 +3720,7 @@ Windows.UI.Input.RadialControllerSystemMenuItemKind <br /> Windows.UI.Input.Radi
 
 **项**
 
-[Windows.UI.Input.Inking.IInkPresenterRulerFactory](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.iinkpresenterrulerfactory)
+[Windows.UI.Input.Inking.IInkPresenterRulerFactory](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.iinkpresenterrulerfactory)
 
 **属性**
 
@@ -3730,7 +3730,7 @@ Windows.UI.Input.Inking.IInkPresenterRulerFactory <br /> Windows.UI.Input.Inking
 
 **项**
 
-[Windows.UI.Input.Inking.IInkPresenterStencil](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.iinkpresenterstencil)
+[Windows.UI.Input.Inking.IInkPresenterStencil](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.iinkpresenterstencil)
 
 **属性**
 
@@ -3740,7 +3740,7 @@ Windows.UI.Input.Inking.IInkPresenterStencil <br /> Windows.UI.Input.Inking.IInk
 
 **项**
 
-[Windows.UI.Input.Inking.InkDrawingAttributesKind](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkdrawingattributeskind)
+[Windows.UI.Input.Inking.InkDrawingAttributesKind](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkdrawingattributeskind)
 
 **属性**
 
@@ -3750,7 +3750,7 @@ Windows.UI.Input.Inking.InkDrawingAttributesKind <br /> Windows.UI.Input.Inking.
 
 **项**
 
-[Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkdrawingattributespencilproperties)
+[Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkdrawingattributespencilproperties)
 
 **属性**
 
@@ -3760,7 +3760,7 @@ Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties <br /> Windows.UI.I
 
 **项**
 
-[Windows.UI.Input.Inking.InkPresenterRuler](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenterruler)
+[Windows.UI.Input.Inking.InkPresenterRuler](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenterruler)
 
 **属性**
 
@@ -3770,7 +3770,7 @@ Windows.UI.Input.Inking.InkPresenterRuler <br /> Windows.UI.Input.Inking.InkPres
 
 **项**
 
-[Windows.UI.Input.Inking.InkPresenterStencilKind](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenterstencilkind)
+[Windows.UI.Input.Inking.InkPresenterStencilKind](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenterstencilkind)
 
 **属性**
 
@@ -3780,7 +3780,7 @@ Windows.UI.Input.Inking.InkPresenterStencilKind <br /> Windows.UI.Input.Inking.I
 
 **项**
 
-[Windows.UI.Input.Inking.Core.CoreWetStrokeDisposition](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.core.corewetstrokedisposition)
+[Windows.UI.Input.Inking.Core.CoreWetStrokeDisposition](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.core.corewetstrokedisposition)
 
 **属性**
 
@@ -3790,7 +3790,7 @@ Windows.UI.Input.Inking.Core.CoreWetStrokeDisposition <br /> Windows.UI.Input.In
 
 **项**
 
-[Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.core.corewetstrokeupdateeventargs)
+[Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.core.corewetstrokeupdateeventargs)
 
 **属性**
 
@@ -3800,7 +3800,7 @@ Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs <br /> Windows.UI.Inpu
 
 **项**
 
-[Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.core.corewetstrokeupdatesource)
+[Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.core.corewetstrokeupdatesource)
 
 **属性**
 
@@ -3810,7 +3810,7 @@ Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource <br /> Windows.UI.Input.I
 
 **项**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputButtonChangeKind](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.preview.injection.injectedinputbuttonchangekind)
+[Windows.UI.Input.Preview.Injection.InjectedInputButtonChangeKind](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputbuttonchangekind)
 
 **属性**
 
@@ -3820,7 +3820,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputButtonChangeKind <br /> Windows.
 
 **项**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputKeyboardInfo](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.preview.injection.injectedinputkeyboardinfo)
+[Windows.UI.Input.Preview.Injection.InjectedInputKeyboardInfo](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputkeyboardinfo)
 
 **属性**
 
@@ -3830,7 +3830,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputKeyboardInfo <br /> Windows.UI.I
 
 **项**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputKeyOptions](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.preview.injection.injectedinputkeyoptions)
+[Windows.UI.Input.Preview.Injection.InjectedInputKeyOptions](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputkeyoptions)
 
 **属性**
 
@@ -3840,7 +3840,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputKeyOptions <br /> Windows.UI.Inp
 
 **项**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputMouseInfo](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.preview.injection.injectedinputmouseinfo)
+[Windows.UI.Input.Preview.Injection.InjectedInputMouseInfo](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputmouseinfo)
 
 **属性**
 
@@ -3850,7 +3850,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputMouseInfo <br /> Windows.UI.Inpu
 
 **项**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputMouseOptions](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.preview.injection.injectedinputmouseoptions)
+[Windows.UI.Input.Preview.Injection.InjectedInputMouseOptions](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputmouseoptions)
 
 **属性**
 
@@ -3860,7 +3860,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputMouseOptions <br /> Windows.UI.I
 
 **项**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputPenButtons](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.preview.injection.injectedinputpenbuttons)
+[Windows.UI.Input.Preview.Injection.InjectedInputPenButtons](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputpenbuttons)
 
 **属性**
 
@@ -3870,7 +3870,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputPenButtons <br /> Windows.UI.Inp
 
 **项**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputPenInfo](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.preview.injection.injectedinputpeninfo)
+[Windows.UI.Input.Preview.Injection.InjectedInputPenInfo](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputpeninfo)
 
 **属性**
 
@@ -3880,7 +3880,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputPenInfo <br /> Windows.UI.Input.
 
 **项**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputPenParameters](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.preview.injection.injectedinputpenparameters)
+[Windows.UI.Input.Preview.Injection.InjectedInputPenParameters](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputpenparameters)
 
 **属性**
 
@@ -3890,7 +3890,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputPenParameters <br /> Windows.UI.
 
 **项**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputPoint](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.preview.injection.injectedinputpoint)
+[Windows.UI.Input.Preview.Injection.InjectedInputPoint](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputpoint)
 
 **属性**
 
@@ -3900,7 +3900,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputPoint <br /> Windows.UI.Input.Pr
 
 **项**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.preview.injection.injectedinputpointerinfo)
+[Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputpointerinfo)
 
 **属性**
 
@@ -3910,7 +3910,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo <br /> Windows.UI.In
 
 **项**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputPointerOptions](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.preview.injection.injectedinputpointeroptions)
+[Windows.UI.Input.Preview.Injection.InjectedInputPointerOptions](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputpointeroptions)
 
 **属性**
 
@@ -3920,7 +3920,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputPointerOptions <br /> Windows.UI
 
 **项**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputRectangle](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.preview.injection.injectedinputrectangle)
+[Windows.UI.Input.Preview.Injection.InjectedInputRectangle](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputrectangle)
 
 **属性**
 
@@ -3930,7 +3930,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputRectangle <br /> Windows.UI.Inpu
 
 **项**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputShortcut](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.preview.injection.injectedinputshortcut)
+[Windows.UI.Input.Preview.Injection.InjectedInputShortcut](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputshortcut)
 
 **属性**
 
@@ -3940,7 +3940,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputShortcut <br /> Windows.UI.Input
 
 **项**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputTouchInfo](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.preview.injection.injectedinputtouchinfo)
+[Windows.UI.Input.Preview.Injection.InjectedInputTouchInfo](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputtouchinfo)
 
 **属性**
 
@@ -3950,7 +3950,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputTouchInfo <br /> Windows.UI.Inpu
 
 **项**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputTouchParameters](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.preview.injection.injectedinputtouchparameters)
+[Windows.UI.Input.Preview.Injection.InjectedInputTouchParameters](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputtouchparameters)
 
 **属性**
 
@@ -3960,7 +3960,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputTouchParameters <br /> Windows.U
 
 **项**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputVisualizationMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.preview.injection.injectedinputvisualizationmode)
+[Windows.UI.Input.Preview.Injection.InjectedInputVisualizationMode](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputvisualizationmode)
 
 **属性**
 
@@ -3970,7 +3970,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputVisualizationMode <br /> Windows
 
 **项**
 
-[Windows.UI.Input.Preview.Injection.InputInjector](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.preview.injection.inputinjector)
+[Windows.UI.Input.Preview.Injection.InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector)
 
 **属性**
 
@@ -3980,7 +3980,7 @@ Windows.UI.Input.Preview.Injection.InputInjector <br /> Windows.UI.Input.Preview
 
 **项**
 
-[Windows.UI.Notifications.AdaptiveNotificationContentKind](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.adaptivenotificationcontentkind)
+[Windows.UI.Notifications.AdaptiveNotificationContentKind](https://docs.microsoft.com/uwp/api/windows.ui.notifications.adaptivenotificationcontentkind)
 
 **属性**
 
@@ -3990,7 +3990,7 @@ Windows.UI.Notifications.AdaptiveNotificationContentKind <br /> Windows.UI.Notif
 
 **项**
 
-[Windows.UI.Notifications.AdaptiveNotificationText](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.adaptivenotificationtext)
+[Windows.UI.Notifications.AdaptiveNotificationText](https://docs.microsoft.com/uwp/api/windows.ui.notifications.adaptivenotificationtext)
 
 **属性**
 
@@ -4000,7 +4000,7 @@ Windows.UI.Notifications.AdaptiveNotificationText <br /> Windows.UI.Notification
 
 **项**
 
-[Windows.UI.Notifications.BadgeUpdateManagerForUser](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.badgeupdatemanagerforuser)
+[Windows.UI.Notifications.BadgeUpdateManagerForUser](https://docs.microsoft.com/uwp/api/windows.ui.notifications.badgeupdatemanagerforuser)
 
 **属性**
 
@@ -4010,7 +4010,7 @@ Windows.UI.Notifications.BadgeUpdateManagerForUser <br /> Windows.UI.Notificatio
 
 **项**
 
-[Windows.UI.Notifications.IAdaptiveNotificationContent](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.iadaptivenotificationcontent)
+[Windows.UI.Notifications.IAdaptiveNotificationContent](https://docs.microsoft.com/uwp/api/windows.ui.notifications.iadaptivenotificationcontent)
 
 **属性**
 
@@ -4020,7 +4020,7 @@ Windows.UI.Notifications.IAdaptiveNotificationContent <br /> Windows.UI.Notifica
 
 **项**
 
-[Windows.UI.Notifications.KnownAdaptiveNotificationHints](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.knownadaptivenotificationhints)
+[Windows.UI.Notifications.KnownAdaptiveNotificationHints](https://docs.microsoft.com/uwp/api/windows.ui.notifications.knownadaptivenotificationhints)
 
 **属性**
 
@@ -4030,7 +4030,7 @@ Windows.UI.Notifications.KnownAdaptiveNotificationHints <br /> Windows.UI.Notifi
 
 **项**
 
-[Windows.UI.Notifications.KnownAdaptiveNotificationTextStyles](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.knownadaptivenotificationtextstyles)
+[Windows.UI.Notifications.KnownAdaptiveNotificationTextStyles](https://docs.microsoft.com/uwp/api/windows.ui.notifications.knownadaptivenotificationtextstyles)
 
 **属性**
 
@@ -4040,7 +4040,7 @@ Windows.UI.Notifications.KnownAdaptiveNotificationTextStyles <br /> Windows.UI.N
 
 **项**
 
-[Windows.UI.Notifications.KnownNotificationBindings](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.knownnotificationbindings)
+[Windows.UI.Notifications.KnownNotificationBindings](https://docs.microsoft.com/uwp/api/windows.ui.notifications.knownnotificationbindings)
 
 **属性**
 
@@ -4050,7 +4050,7 @@ Windows.UI.Notifications.KnownNotificationBindings <br /> Windows.UI.Notificatio
 
 **项**
 
-[Windows.UI.Notifications.Notification](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.notification)
+[Windows.UI.Notifications.Notification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification)
 
 **属性**
 
@@ -4060,7 +4060,7 @@ Windows.UI.Notifications.Notification <br /> Windows.UI.Notifications.Notificati
 
 **项**
 
-[Windows.UI.Notifications.NotificationBinding](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.notificationbinding)
+[Windows.UI.Notifications.NotificationBinding](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationbinding)
 
 **属性**
 
@@ -4070,7 +4070,7 @@ Windows.UI.Notifications.NotificationBinding <br /> Windows.UI.Notifications.Not
 
 **项**
 
-[Windows.UI.Notifications.NotificationKinds](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.notificationkinds)
+[Windows.UI.Notifications.NotificationKinds](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationkinds)
 
 **属性**
 
@@ -4080,7 +4080,7 @@ Windows.UI.Notifications.NotificationKinds <br /> Windows.UI.Notifications.Notif
 
 **项**
 
-[Windows.UI.Notifications.NotificationMirroring](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.notificationmirroring)
+[Windows.UI.Notifications.NotificationMirroring](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationmirroring)
 
 **属性**
 
@@ -4090,7 +4090,7 @@ Windows.UI.Notifications.NotificationMirroring <br /> Windows.UI.Notifications.N
 
 **项**
 
-[Windows.UI.Notifications.NotificationVisual](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.notificationvisual)
+[Windows.UI.Notifications.NotificationVisual](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationvisual)
 
 **属性**
 
@@ -4100,7 +4100,7 @@ Windows.UI.Notifications.NotificationVisual <br /> Windows.UI.Notifications.Noti
 
 **项**
 
-[Windows.UI.Notifications.ShownTileNotification](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.showntilenotification)
+[Windows.UI.Notifications.ShownTileNotification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.showntilenotification)
 
 **属性**
 
@@ -4110,7 +4110,7 @@ Windows.UI.Notifications.ShownTileNotification <br /> Windows.UI.Notifications.S
 
 **项**
 
-[Windows.UI.Notifications.TileUpdateManagerForUser](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.tileupdatemanagerforuser)
+[Windows.UI.Notifications.TileUpdateManagerForUser](https://docs.microsoft.com/uwp/api/windows.ui.notifications.tileupdatemanagerforuser)
 
 **属性**
 
@@ -4120,7 +4120,7 @@ Windows.UI.Notifications.TileUpdateManagerForUser <br /> Windows.UI.Notification
 
 **项**
 
-[Windows.UI.Notifications.ToastNotificationManagerForUser](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.toastnotificationmanagerforuser)
+[Windows.UI.Notifications.ToastNotificationManagerForUser](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotificationmanagerforuser)
 
 **属性**
 
@@ -4130,7 +4130,7 @@ Windows.UI.Notifications.ToastNotificationManagerForUser <br /> Windows.UI.Notif
 
 **项**
 
-[Windows.UI.Notifications.UserNotification](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.usernotification)
+[Windows.UI.Notifications.UserNotification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification)
 
 **属性**
 
@@ -4140,7 +4140,7 @@ Windows.UI.Notifications.UserNotification <br /> Windows.UI.Notifications.UserNo
 
 **项**
 
-[Windows.UI.Notifications.UserNotificationChangedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.usernotificationchangedeventargs)
+[Windows.UI.Notifications.UserNotificationChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotificationchangedeventargs)
 
 **属性**
 
@@ -4150,7 +4150,7 @@ Windows.UI.Notifications.UserNotificationChangedEventArgs <br /> Windows.UI.Noti
 
 **项**
 
-[Windows.UI.Notifications.UserNotificationChangedKind](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.usernotificationchangedkind)
+[Windows.UI.Notifications.UserNotificationChangedKind](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotificationchangedkind)
 
 **属性**
 
@@ -4160,7 +4160,7 @@ Windows.UI.Notifications.UserNotificationChangedKind <br /> Windows.UI.Notificat
 
 **项**
 
-[Windows.UI.Notifications.Management.UserNotificationListener](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.management.usernotificationlistener)
+[Windows.UI.Notifications.Management.UserNotificationListener](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener)
 
 **属性**
 
@@ -4170,7 +4170,7 @@ Windows.UI.Notifications.Management.UserNotificationListener <br /> Windows.UI.N
 
 **项**
 
-[Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.management.usernotificationlisteneraccessstatus)
+[Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlisteneraccessstatus)
 
 **属性**
 
@@ -4180,7 +4180,7 @@ Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus <br /> 
 
 **项**
 
-[Windows.UI.WebUI.EnteredBackgroundEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.webui.enteredbackgroundeventargs)
+[Windows.UI.WebUI.EnteredBackgroundEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.webui.enteredbackgroundeventargs)
 
 **属性**
 
@@ -4190,7 +4190,7 @@ Windows.UI.WebUI.EnteredBackgroundEventArgs <br /> Windows.UI.WebUI.EnteredBackg
 
 **项**
 
-[Windows.UI.WebUI.EnteredBackgroundEventHandler](https://msdn.microsoft.com/library/windows/apps/windows.ui.webui.enteredbackgroundeventhandler)
+[Windows.UI.WebUI.EnteredBackgroundEventHandler](https://docs.microsoft.com/uwp/api/windows.ui.webui.enteredbackgroundeventhandler)
 
 **属性**
 
@@ -4200,7 +4200,7 @@ Windows.UI.WebUI.EnteredBackgroundEventHandler <br /> Windows.UI.WebUI.EnteredBa
 
 **项**
 
-[Windows.UI.WebUI.LeavingBackgroundEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.webui.leavingbackgroundeventargs)
+[Windows.UI.WebUI.LeavingBackgroundEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.webui.leavingbackgroundeventargs)
 
 **属性**
 
@@ -4210,7 +4210,7 @@ Windows.UI.WebUI.LeavingBackgroundEventArgs <br /> Windows.UI.WebUI.LeavingBackg
 
 **项**
 
-[Windows.UI.WebUI.LeavingBackgroundEventHandler](https://msdn.microsoft.com/library/windows/apps/windows.ui.webui.leavingbackgroundeventhandler)
+[Windows.UI.WebUI.LeavingBackgroundEventHandler](https://docs.microsoft.com/uwp/api/windows.ui.webui.leavingbackgroundeventhandler)
 
 **属性**
 
@@ -4220,7 +4220,7 @@ Windows.UI.WebUI.LeavingBackgroundEventHandler <br /> Windows.UI.WebUI.LeavingBa
 
 **项**
 
-[Windows.UI.WebUI.WebUIUserDataAccountProviderActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.webui.webuiuserdataaccountprovideractivatedeventargs)
+[Windows.UI.WebUI.WebUIUserDataAccountProviderActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.webui.webuiuserdataaccountprovideractivatedeventargs)
 
 **属性**
 
@@ -4230,7 +4230,7 @@ Windows.UI.WebUI.WebUIUserDataAccountProviderActivatedEventArgs <br /> Windows.U
 
 **项**
 
-[Windows.UI.Xaml.ApplicationRequiresPointerMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.applicationrequirespointermode)
+[Windows.UI.Xaml.ApplicationRequiresPointerMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.applicationrequirespointermode)
 
 **属性**
 
@@ -4240,7 +4240,7 @@ Windows.UI.Xaml.ApplicationRequiresPointerMode <br /> Windows.UI.Xaml.Applicatio
 
 **项**
 
-[Windows.UI.Xaml.ElementSoundKind](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.elementsoundkind)
+[Windows.UI.Xaml.ElementSoundKind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementsoundkind)
 
 **属性**
 
@@ -4250,7 +4250,7 @@ Windows.UI.Xaml.ElementSoundKind <br /> Windows.UI.Xaml.ElementSoundKind.Focus <
 
 **项**
 
-[Windows.UI.Xaml.ElementSoundMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.elementsoundmode)
+[Windows.UI.Xaml.ElementSoundMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementsoundmode)
 
 **属性**
 
@@ -4260,7 +4260,7 @@ Windows.UI.Xaml.ElementSoundMode <br /> Windows.UI.Xaml.ElementSoundMode.Default
 
 **项**
 
-[Windows.UI.Xaml.ElementSoundPlayer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.elementsoundplayer)
+[Windows.UI.Xaml.ElementSoundPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementsoundplayer)
 
 **属性**
 
@@ -4270,7 +4270,7 @@ Windows.UI.Xaml.ElementSoundPlayer <br /> Windows.UI.Xaml.ElementSoundPlayer.Sta
 
 **项**
 
-[Windows.UI.Xaml.ElementSoundPlayerState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.elementsoundplayerstate)
+[Windows.UI.Xaml.ElementSoundPlayerState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementsoundplayerstate)
 
 **属性**
 
@@ -4280,7 +4280,7 @@ Windows.UI.Xaml.ElementSoundPlayerState <br /> Windows.UI.Xaml.ElementSoundPlaye
 
 **项**
 
-[Windows.UI.Xaml.EnteredBackgroundEventHandler](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.enteredbackgroundeventhandler)
+[Windows.UI.Xaml.EnteredBackgroundEventHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.enteredbackgroundeventhandler)
 
 **属性**
 
@@ -4290,7 +4290,7 @@ Windows.UI.Xaml.EnteredBackgroundEventHandler <br /> Windows.UI.Xaml.EnteredBack
 
 **项**
 
-[Windows.UI.Xaml.FocusVisualKind](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.focusvisualkind)
+[Windows.UI.Xaml.FocusVisualKind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind)
 
 **属性**
 
@@ -4300,7 +4300,7 @@ Windows.UI.Xaml.FocusVisualKind <br /> Windows.UI.Xaml.FocusVisualKind.DottedLin
 
 **项**
 
-[Windows.UI.Xaml.LeavingBackgroundEventHandler](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.leavingbackgroundeventhandler)
+[Windows.UI.Xaml.LeavingBackgroundEventHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.leavingbackgroundeventhandler)
 
 **属性**
 
@@ -4310,7 +4310,7 @@ Windows.UI.Xaml.LeavingBackgroundEventHandler <br /> Windows.UI.Xaml.LeavingBack
 
 **项**
 
-[Windows.UI.Xaml.Automation.Peers.InkToolbarAutomationPeer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.inktoolbarautomationpeer)
+[Windows.UI.Xaml.Automation.Peers.InkToolbarAutomationPeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.inktoolbarautomationpeer)
 
 **属性**
 
@@ -4320,7 +4320,7 @@ Windows.UI.Xaml.Automation.Peers.InkToolbarAutomationPeer
 
 **项**
 
-[Windows.UI.Xaml.Automation.Peers.MediaPlayerElementAutomationPeer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.mediaplayerelementautomationpeer)
+[Windows.UI.Xaml.Automation.Peers.MediaPlayerElementAutomationPeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.mediaplayerelementautomationpeer)
 
 **属性**
 
@@ -4330,7 +4330,7 @@ Windows.UI.Xaml.Automation.Peers.MediaPlayerElementAutomationPeer <br /> Windows
 
 **项**
 
-[Windows.UI.Xaml.Controls.CommandBarDefaultLabelPosition](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbardefaultlabelposition)
+[Windows.UI.Xaml.Controls.CommandBarDefaultLabelPosition](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbardefaultlabelposition)
 
 **属性**
 
@@ -4340,7 +4340,7 @@ Windows.UI.Xaml.Controls.CommandBarDefaultLabelPosition <br /> Windows.UI.Xaml.C
 
 **项**
 
-[Windows.UI.Xaml.Controls.CommandBarDynamicOverflowAction](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbardynamicoverflowaction)
+[Windows.UI.Xaml.Controls.CommandBarDynamicOverflowAction](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbardynamicoverflowaction)
 
 **属性**
 
@@ -4350,7 +4350,7 @@ Windows.UI.Xaml.Controls.CommandBarDynamicOverflowAction <br /> Windows.UI.Xaml.
 
 **项**
 
-[Windows.UI.Xaml.Controls.CommandBarLabelPosition](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbarlabelposition)
+[Windows.UI.Xaml.Controls.CommandBarLabelPosition](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbarlabelposition)
 
 **属性**
 
@@ -4360,7 +4360,7 @@ Windows.UI.Xaml.Controls.CommandBarLabelPosition <br /> Windows.UI.Xaml.Controls
 
 **项**
 
-[Windows.UI.Xaml.Controls.CommandBarOverflowButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbaroverflowbuttonvisibility)
+[Windows.UI.Xaml.Controls.CommandBarOverflowButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbaroverflowbuttonvisibility)
 
 **属性**
 
@@ -4370,7 +4370,7 @@ Windows.UI.Xaml.Controls.CommandBarOverflowButtonVisibility <br /> Windows.UI.Xa
 
 **项**
 
-[Windows.UI.Xaml.Controls.DynamicOverflowItemsChangingEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.dynamicoverflowitemschangingeventargs)
+[Windows.UI.Xaml.Controls.DynamicOverflowItemsChangingEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.dynamicoverflowitemschangingeventargs)
 
 **属性**
 
@@ -4380,7 +4380,7 @@ Windows.UI.Xaml.Controls.DynamicOverflowItemsChangingEventArgs <br /> Windows.UI
 
 **项**
 
-[Windows.UI.Xaml.Controls.FocusDisengagedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.focusdisengagedeventargs)
+[Windows.UI.Xaml.Controls.FocusDisengagedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.focusdisengagedeventargs)
 
 **属性**
 
@@ -4390,7 +4390,7 @@ Windows.UI.Xaml.Controls.FocusDisengagedEventArgs
 
 **项**
 
-[Windows.UI.Xaml.Controls.FocusEngagedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.focusengagedeventargs)
+[Windows.UI.Xaml.Controls.FocusEngagedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.focusengagedeventargs)
 
 **属性**
 
@@ -4400,7 +4400,7 @@ Windows.UI.Xaml.Controls.FocusEngagedEventArgs
 
 **项**
 
-[Windows.UI.Xaml.Controls.ICommandBarElement2](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.icommandbarelement2)
+[Windows.UI.Xaml.Controls.ICommandBarElement2](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.icommandbarelement2)
 
 **属性**
 
@@ -4410,7 +4410,7 @@ Windows.UI.Xaml.Controls.ICommandBarElement2 <br /> Windows.UI.Xaml.Controls.ICo
 
 **项**
 
-[Windows.UI.Xaml.Controls.IInsertionPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.iinsertionpanel)
+[Windows.UI.Xaml.Controls.IInsertionPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.iinsertionpanel)
 
 **属性**
 
@@ -4420,7 +4420,7 @@ Windows.UI.Xaml.Controls.IInsertionPanel <br /> Windows.UI.Xaml.Controls.IInsert
 
 **项**
 
-[Windows.UI.Xaml.Controls.InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar)
+[Windows.UI.Xaml.Controls.InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)
 
 **属性**
 
@@ -4430,7 +4430,7 @@ Windows.UI.Xaml.Controls.InkToolbar <br /> Windows.UI.Xaml.Controls.InkToolbar.#
 
 **项**
 
-[Windows.UI.Xaml.Controls.InkToolbarBallpointPenButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarballpointpenbutton)
+[Windows.UI.Xaml.Controls.InkToolbarBallpointPenButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarballpointpenbutton)
 
 **属性**
 
@@ -4440,7 +4440,7 @@ Windows.UI.Xaml.Controls.InkToolbarBallpointPenButton <br /> Windows.UI.Xaml.Con
 
 **项**
 
-[Windows.UI.Xaml.Controls.InkToolbarCustomPen](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustompen)
+[Windows.UI.Xaml.Controls.InkToolbarCustomPen](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarcustompen)
 
 **属性**
 
@@ -4450,7 +4450,7 @@ Windows.UI.Xaml.Controls.InkToolbarCustomPen <br /> Windows.UI.Xaml.Controls.Ink
 
 **项**
 
-[Windows.UI.Xaml.Controls.InkToolbarCustomPenButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustompenbutton)
+[Windows.UI.Xaml.Controls.InkToolbarCustomPenButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarcustompenbutton)
 
 **属性**
 
@@ -4460,7 +4460,7 @@ Windows.UI.Xaml.Controls.InkToolbarCustomPenButton <br /> Windows.UI.Xaml.Contro
 
 **项**
 
-[Windows.UI.Xaml.Controls.InkToolbarCustomToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustomtogglebutton)
+[Windows.UI.Xaml.Controls.InkToolbarCustomToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarcustomtogglebutton)
 
 **属性**
 
@@ -4470,7 +4470,7 @@ Windows.UI.Xaml.Controls.InkToolbarCustomToggleButton <br /> Windows.UI.Xaml.Con
 
 **项**
 
-[Windows.UI.Xaml.Controls.InkToolbarCustomToolButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustomtoolbutton)
+[Windows.UI.Xaml.Controls.InkToolbarCustomToolButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarcustomtoolbutton)
 
 **属性**
 
@@ -4480,7 +4480,7 @@ Windows.UI.Xaml.Controls.InkToolbarCustomToolButton <br /> Windows.UI.Xaml.Contr
 
 **项**
 
-[Windows.UI.Xaml.Controls.InkToolbarEraserButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbareraserbutton)
+[Windows.UI.Xaml.Controls.InkToolbarEraserButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbareraserbutton)
 
 **属性**
 
@@ -4490,7 +4490,7 @@ Windows.UI.Xaml.Controls.InkToolbarEraserButton <br /> Windows.UI.Xaml.Controls.
 
 **项**
 
-[Windows.UI.Xaml.Controls.InkToolbarHighlighterButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarhighlighterbutton)
+[Windows.UI.Xaml.Controls.InkToolbarHighlighterButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarhighlighterbutton)
 
 **属性**
 
@@ -4500,7 +4500,7 @@ Windows.UI.Xaml.Controls.InkToolbarHighlighterButton <br /> Windows.UI.Xaml.Cont
 
 **项**
 
-[Windows.UI.Xaml.Controls.InkToolbarInitialControls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarinitialcontrols)
+[Windows.UI.Xaml.Controls.InkToolbarInitialControls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarinitialcontrols)
 
 **属性**
 
@@ -4510,7 +4510,7 @@ Windows.UI.Xaml.Controls.InkToolbarInitialControls <br /> Windows.UI.Xaml.Contro
 
 **项**
 
-[Windows.UI.Xaml.Controls.InkToolbarPenButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenbutton)
+[Windows.UI.Xaml.Controls.InkToolbarPenButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarpenbutton)
 
 **属性**
 
@@ -4520,7 +4520,7 @@ Windows.UI.Xaml.Controls.InkToolbarPenButton <br /> Windows.UI.Xaml.Controls.Ink
 
 **项**
 
-[Windows.UI.Xaml.Controls.InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton)
+[Windows.UI.Xaml.Controls.InkToolbarPencilButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarpencilbutton)
 
 **属性**
 
@@ -4530,7 +4530,7 @@ Windows.UI.Xaml.Controls.InkToolbarPencilButton <br /> Windows.UI.Xaml.Controls.
 
 **项**
 
-[Windows.UI.Xaml.Controls.InkToolbarPenConfigurationControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenconfigurationcontrol)
+[Windows.UI.Xaml.Controls.InkToolbarPenConfigurationControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarpenconfigurationcontrol)
 
 **属性**
 
@@ -4540,7 +4540,7 @@ Windows.UI.Xaml.Controls.InkToolbarPenConfigurationControl <br /> Windows.UI.Xam
 
 **项**
 
-[Windows.UI.Xaml.Controls.InkToolbarRulerButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarrulerbutton)
+[Windows.UI.Xaml.Controls.InkToolbarRulerButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarrulerbutton)
 
 **属性**
 
@@ -4550,7 +4550,7 @@ Windows.UI.Xaml.Controls.InkToolbarRulerButton <br /> Windows.UI.Xaml.Controls.I
 
 **项**
 
-[Windows.UI.Xaml.Controls.InkToolbarToggle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbartoggle)
+[Windows.UI.Xaml.Controls.InkToolbarToggle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbartoggle)
 
 **属性**
 
@@ -4560,7 +4560,7 @@ Windows.UI.Xaml.Controls.InkToolbarToggle <br /> Windows.UI.Xaml.Controls.InkToo
 
 **项**
 
-[Windows.UI.Xaml.Controls.InkToolbarToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbartogglebutton)
+[Windows.UI.Xaml.Controls.InkToolbarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbartogglebutton)
 
 **属性**
 
@@ -4570,7 +4570,7 @@ Windows.UI.Xaml.Controls.InkToolbarToggleButton <br /> Windows.UI.Xaml.Controls.
 
 **项**
 
-[Windows.UI.Xaml.Controls.InkToolbarTool](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbartool)
+[Windows.UI.Xaml.Controls.InkToolbarTool](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbartool)
 
 **属性**
 
@@ -4580,7 +4580,7 @@ Windows.UI.Xaml.Controls.InkToolbarTool <br /> Windows.UI.Xaml.Controls.InkToolb
 
 **项**
 
-[Windows.UI.Xaml.Controls.InkToolbarToolButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbartoolbutton)
+[Windows.UI.Xaml.Controls.InkToolbarToolButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbartoolbutton)
 
 **属性**
 
@@ -4590,7 +4590,7 @@ Windows.UI.Xaml.Controls.InkToolbarToolButton <br /> Windows.UI.Xaml.Controls.In
 
 **项**
 
-[Windows.UI.Xaml.Controls.LightDismissOverlayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.lightdismissoverlaymode)
+[Windows.UI.Xaml.Controls.LightDismissOverlayMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.lightdismissoverlaymode)
 
 **属性**
 
@@ -4600,7 +4600,7 @@ Windows.UI.Xaml.Controls.LightDismissOverlayMode <br /> Windows.UI.Xaml.Controls
 
 **项**
 
-[Windows.UI.Xaml.Controls.MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement)
+[Windows.UI.Xaml.Controls.MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)
 
 **属性**
 
@@ -4610,7 +4610,7 @@ Windows.UI.Xaml.Controls.MediaPlayerElement <br /> Windows.UI.Xaml.Controls.Medi
 
 **项**
 
-[Windows.UI.Xaml.Controls.MediaPlayerPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerpresenter)
+[Windows.UI.Xaml.Controls.MediaPlayerPresenter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerpresenter)
 
 **属性**
 
@@ -4620,7 +4620,7 @@ Windows.UI.Xaml.Controls.MediaPlayerPresenter <br /> Windows.UI.Xaml.Controls.Me
 
 **项**
 
-[Windows.UI.Xaml.Controls.PivotHeaderFocusVisualPlacement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivotheaderfocusvisualplacement)
+[Windows.UI.Xaml.Controls.PivotHeaderFocusVisualPlacement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivotheaderfocusvisualplacement)
 
 **属性**
 
@@ -4630,7 +4630,7 @@ Windows.UI.Xaml.Controls.PivotHeaderFocusVisualPlacement <br /> Windows.UI.Xaml.
 
 **项**
 
-[Windows.UI.Xaml.Controls.RequiresPointer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.requirespointer)
+[Windows.UI.Xaml.Controls.RequiresPointer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.requirespointer)
 
 **属性**
 
@@ -4640,7 +4640,7 @@ Windows.UI.Xaml.Controls.RequiresPointer <br /> Windows.UI.Xaml.Controls.Require
 
 **项**
 
-[Windows.UI.Xaml.Controls.Maps.MapVisibleRegionKind](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapvisibleregionkind)
+[Windows.UI.Xaml.Controls.Maps.MapVisibleRegionKind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapvisibleregionkind)
 
 **属性**
 
@@ -4650,7 +4650,7 @@ Windows.UI.Xaml.Controls.Maps.MapVisibleRegionKind <br /> Windows.UI.Xaml.Contro
 
 **项**
 
-[Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbaseclosingeventargs)
+[Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbaseclosingeventargs)
 
 **属性**
 
@@ -4660,7 +4660,7 @@ Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs <br /> Windows.UI
 
 **项**
 
-[Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeydisplaydismissedeventargs)
+[Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.accesskeydisplaydismissedeventargs)
 
 **属性**
 
@@ -4670,7 +4670,7 @@ Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs <br /> Windows.UI.Xaml.
 
 **项**
 
-[Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeydisplayrequestedeventargs)
+[Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.accesskeydisplayrequestedeventargs)
 
 **属性**
 
@@ -4680,7 +4680,7 @@ Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs <br /> Windows.UI.Xaml.
 
 **项**
 
-[Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeyinvokedeventargs)
+[Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.accesskeyinvokedeventargs)
 
 **属性**
 
@@ -4690,7 +4690,7 @@ Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs <br /> Windows.UI.Xaml.Input.Acc
 
 **项**
 
-[Windows.UI.Xaml.Input.AccessKeyManager](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager)
+[Windows.UI.Xaml.Input.AccessKeyManager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.accesskeymanager)
 
 **属性**
 
@@ -4700,7 +4700,7 @@ Windows.UI.Xaml.Input.AccessKeyManager <br /> Windows.UI.Xaml.Input.AccessKeyMan
 
 **项**
 
-[Windows.UI.Xaml.Input.ContextRequestedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.contextrequestedeventargs)
+[Windows.UI.Xaml.Input.ContextRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.contextrequestedeventargs)
 
 **属性**
 
@@ -4710,7 +4710,7 @@ Windows.UI.Xaml.Input.ContextRequestedEventArgs <br /> Windows.UI.Xaml.Input.Con
 
 **项**
 
-[Windows.UI.Xaml.Media.BrushCollection](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.brushcollection)
+[Windows.UI.Xaml.Media.BrushCollection](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.brushcollection)
 
 **属性**
 
@@ -4720,7 +4720,7 @@ Windows.UI.Xaml.Media.BrushCollection <br /> Windows.UI.Xaml.Media.BrushCollecti
 
 **项**
 
-[Windows.UI.Xaml.Media.FastPlayFallbackBehaviour](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.fastplayfallbackbehaviour)
+[Windows.UI.Xaml.Media.FastPlayFallbackBehaviour](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.fastplayfallbackbehaviour)
 
 **属性**
 
@@ -4730,7 +4730,7 @@ Windows.UI.Xaml.Media.FastPlayFallbackBehaviour <br /> Windows.UI.Xaml.Media.Fas
 
 **项**
 
-[Windows.UI.Xaml.Media.MediaTransportControlsThumbnailRequestedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.mediatransportcontrolsthumbnailrequestedeventargs)
+[Windows.UI.Xaml.Media.MediaTransportControlsThumbnailRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.mediatransportcontrolsthumbnailrequestedeventargs)
 
 **属性**
 
@@ -4740,7 +4740,7 @@ Windows.UI.Xaml.Media.MediaTransportControlsThumbnailRequestedEventArgs <br /> W
 
 **项**
 
-[Windows.UI.Xaml.Media.Animation.ConnectedAnimation](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimation)
+[Windows.UI.Xaml.Media.Animation.ConnectedAnimation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.connectedanimation)
 
 **属性**
 
@@ -4750,7 +4750,7 @@ Windows.UI.Xaml.Media.Animation.ConnectedAnimation <br /> Windows.UI.Xaml.Media.
 
 **项**
 
-[Windows.UI.Xaml.Media.Animation.ConnectedAnimationService](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice)
+[Windows.UI.Xaml.Media.Animation.ConnectedAnimationService](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
 **属性**
 
@@ -4760,7 +4760,7 @@ Windows.UI.Xaml.Media.Animation.ConnectedAnimationService <br /> Windows.UI.Xaml
 
 **项**
 
-[Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpservercustomvalidationrequestedeventargs)
+[Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.web.http.filters.httpservercustomvalidationrequestedeventargs)
 
 **属性**
 
@@ -4770,7 +4770,7 @@ Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs <br /> Win
 
 **项**
 
-[Windows.Graphics.Printing3D.Printing3DFaceReductionOptions](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dfacereductionoptions)
+[Windows.Graphics.Printing3D.Printing3DFaceReductionOptions](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dfacereductionoptions)
 
 **属性**
 
@@ -4780,7 +4780,7 @@ Windows.Graphics.Printing3D.Printing3DFaceReductionOptions <br /> Windows.Graphi
 
 **项**
 
-[Windows.Media.Capture.AppCaptureVideoEncodingFrameRateMode](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.appcapturevideoencodingframeratemode)
+[Windows.Media.Capture.AppCaptureVideoEncodingFrameRateMode](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturevideoencodingframeratemode)
 
 **属性**
 
@@ -4790,7 +4790,7 @@ Windows.Media.Capture.AppCaptureVideoEncodingFrameRateMode <br /> Windows.Media.
 
 **项**
 
-[Windows.Security.EnterpriseData.ProtectionPolicyAuditAction](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicyauditaction)
+[Windows.Security.EnterpriseData.ProtectionPolicyAuditAction](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicyauditaction)
 
 **属性**
 
@@ -4800,7 +4800,7 @@ Windows.Security.EnterpriseData.ProtectionPolicyAuditAction <br /> Windows.Secur
 
 **项**
 
-[Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicyauditinfo)
+[Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicyauditinfo)
 
 **属性**
 
@@ -4810,7 +4810,7 @@ Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo <br /> Windows.Securit
 
 **项**
 
-[Windows.Security.EnterpriseData.ProtectionPolicyRequestAccessBehavior](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicyrequestaccessbehavior)
+[Windows.Security.EnterpriseData.ProtectionPolicyRequestAccessBehavior](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicyrequestaccessbehavior)
 
 **属性**
 
@@ -4820,7 +4820,7 @@ Windows.Security.EnterpriseData.ProtectionPolicyRequestAccessBehavior <br /> Win
 
 **项**
 
-[Windows.Services.Maps.LocalSearch.LocalLocationHoursOfOperationItem](https://msdn.microsoft.com/library/windows/apps/windows.services.maps.localsearch.locallocationhoursofoperationitem)
+[Windows.Services.Maps.LocalSearch.LocalLocationHoursOfOperationItem](https://docs.microsoft.com/uwp/api/windows.services.maps.localsearch.locallocationhoursofoperationitem)
 
 **属性**
 
@@ -4830,7 +4830,7 @@ Windows.Services.Maps.LocalSearch.LocalLocationHoursOfOperationItem <br /> Windo
 
 **项**
 
-[Windows.Services.Maps.LocalSearch.LocalLocationRatingInfo](https://msdn.microsoft.com/library/windows/apps/windows.services.maps.localsearch.locallocationratinginfo)
+[Windows.Services.Maps.LocalSearch.LocalLocationRatingInfo](https://docs.microsoft.com/uwp/api/windows.services.maps.localsearch.locallocationratinginfo)
 
 **属性**
 
@@ -4840,7 +4840,7 @@ Windows.Services.Maps.LocalSearch.LocalLocationRatingInfo <br /> Windows.Service
 
 **项**
 
-[Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerEnteredEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrolbusinesslandmarkpointerenteredeventargs)
+[Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerEnteredEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrolbusinesslandmarkpointerenteredeventargs)
 
 **属性**
 
@@ -4850,7 +4850,7 @@ Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerEnteredEventArgs 
 
 **项**
 
-[Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerExitedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrolbusinesslandmarkpointerexitedeventargs)
+[Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerExitedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrolbusinesslandmarkpointerexitedeventargs)
 
 **属性**
 
@@ -4860,7 +4860,7 @@ Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerExitedEventArgs <
 
 **项**
 
-[Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerEnteredEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontroltransitfeaturepointerenteredeventargs)
+[Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerEnteredEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontroltransitfeaturepointerenteredeventargs)
 
 **属性**
 
@@ -4870,7 +4870,7 @@ Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerEnteredEventArgs <b
 
 **项**
 
-[Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerExitedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontroltransitfeaturepointerexitedeventargs)
+[Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerExitedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontroltransitfeaturepointerexitedeventargs)
 
 **属性**
 
@@ -4880,7 +4880,7 @@ Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerExitedEventArgs <br
 
 **项**
 
-[Windows.Services.Store.StoreAcquireLicenseResult](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeacquirelicenseresult)
+[Windows.Services.Store.StoreAcquireLicenseResult](https://docs.microsoft.com/uwp/api/windows.services.store.storeacquirelicenseresult)
 
 **属性**
 
@@ -4890,7 +4890,7 @@ Windows.Services.Store.StoreAcquireLicenseResult <br /> Windows.Services.Store.S
 
 **项**
 
-[Windows.Services.Store.StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense)
+[Windows.Services.Store.StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense)
 
 **属性**
 
@@ -4900,7 +4900,7 @@ Windows.Services.Store.StoreAppLicense <br /> Windows.Services.Store.StoreAppLic
 
 **项**
 
-[Windows.Services.Store.StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability)
+[Windows.Services.Store.StoreAvailability](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability)
 
 **属性**
 
@@ -4910,7 +4910,7 @@ Windows.Services.Store.StoreAvailability <br /> Windows.Services.Store.StoreAvai
 
 **项**
 
-[Windows.Services.Store.StoreCollectionData](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecollectiondata)
+[Windows.Services.Store.StoreCollectionData](https://docs.microsoft.com/uwp/api/windows.services.store.storecollectiondata)
 
 **属性**
 
@@ -4920,7 +4920,7 @@ Windows.Services.Store.StoreCollectionData <br /> Windows.Services.Store.StoreCo
 
 **项**
 
-[Windows.Services.Store.StoreConsumableResult](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeconsumableresult)
+[Windows.Services.Store.StoreConsumableResult](https://docs.microsoft.com/uwp/api/windows.services.store.storeconsumableresult)
 
 **属性**
 
@@ -4930,7 +4930,7 @@ Windows.Services.Store.StoreConsumableResult <br /> Windows.Services.Store.Store
 
 **项**
 
-[Windows.Services.Store.StoreConsumableStatus](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeconsumablestatus)
+[Windows.Services.Store.StoreConsumableStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storeconsumablestatus)
 
 **属性**
 
@@ -4940,7 +4940,7 @@ Windows.Services.Store.StoreConsumableStatus <br /> Windows.Services.Store.Store
 
 **项**
 
-[Windows.Services.Store.StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext)
+[Windows.Services.Store.StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)
 
 **属性**
 
@@ -4950,7 +4950,7 @@ Windows.Services.Store.StoreContext <br /> Windows.Services.Store.StoreContext.U
 
 **项**
 
-[Windows.Services.Store.StoreDurationUnit](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storedurationunit)
+[Windows.Services.Store.StoreDurationUnit](https://docs.microsoft.com/uwp/api/windows.services.store.storedurationunit)
 
 **属性**
 
@@ -4960,7 +4960,7 @@ Windows.Services.Store.StoreDurationUnit <br /> Windows.Services.Store.StoreDura
 
 **项**
 
-[Windows.Services.Store.StoreImage](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeimage)
+[Windows.Services.Store.StoreImage](https://docs.microsoft.com/uwp/api/windows.services.store.storeimage)
 
 **属性**
 
@@ -4970,7 +4970,7 @@ Windows.Services.Store.StoreImage <br /> Windows.Services.Store.StoreImage.Capti
 
 **项**
 
-[Windows.Services.Store.StoreLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storelicense)
+[Windows.Services.Store.StoreLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storelicense)
 
 **属性**
 
@@ -4980,7 +4980,7 @@ Windows.Services.Store.StoreLicense <br /> Windows.Services.Store.StoreLicense.E
 
 **项**
 
-[Windows.Services.Store.StorePackageLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackagelicense)
+[Windows.Services.Store.StorePackageLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storepackagelicense)
 
 **属性**
 
@@ -4990,7 +4990,7 @@ Windows.Services.Store.StorePackageLicense <br /> Windows.Services.Store.StorePa
 
 **项**
 
-[Windows.Services.Store.StorePackageUpdate](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate)
+[Windows.Services.Store.StorePackageUpdate](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate)
 
 **属性**
 
@@ -5000,7 +5000,7 @@ Windows.Services.Store.StorePackageUpdate <br /> Windows.Services.Store.StorePac
 
 **项**
 
-[Windows.Services.Store.StorePackageUpdateResult](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdateresult)
+[Windows.Services.Store.StorePackageUpdateResult](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdateresult)
 
 **属性**
 
@@ -5010,7 +5010,7 @@ Windows.Services.Store.StorePackageUpdateResult <br /> Windows.Services.Store.St
 
 **项**
 
-[Windows.Services.Store.StorePackageUpdateState](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdatestate)
+[Windows.Services.Store.StorePackageUpdateState](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestate)
 
 **属性**
 
@@ -5020,7 +5020,7 @@ Windows.Services.Store.StorePackageUpdateState <br /> Windows.Services.Store.Sto
 
 **项**
 
-[Windows.Services.Store.StorePackageUpdateStatus](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdatestatus)
+[Windows.Services.Store.StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus)
 
 **属性**
 
@@ -5030,7 +5030,7 @@ Windows.Services.Store.StorePackageUpdateStatus <br /> Windows.Services.Store.St
 
 **项**
 
-[Windows.Services.Store.StorePrice](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeprice)
+[Windows.Services.Store.StorePrice](https://docs.microsoft.com/uwp/api/windows.services.store.storeprice)
 
 **属性**
 
@@ -5040,7 +5040,7 @@ Windows.Services.Store.StorePrice <br /> Windows.Services.Store.StorePrice.Curre
 
 **项**
 
-[Windows.Services.Store.StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct)
+[Windows.Services.Store.StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct)
 
 **属性**
 
@@ -5050,7 +5050,7 @@ Windows.Services.Store.StoreProduct <br /> Windows.Services.Store.StoreProduct.D
 
 **项**
 
-[Windows.Services.Store.StoreProductPagedQueryResult](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproductpagedqueryresult)
+[Windows.Services.Store.StoreProductPagedQueryResult](https://docs.microsoft.com/uwp/api/windows.services.store.storeproductpagedqueryresult)
 
 **属性**
 
@@ -5060,7 +5060,7 @@ Windows.Services.Store.StoreProductPagedQueryResult <br /> Windows.Services.Stor
 
 **项**
 
-[Windows.Services.Store.StoreProductQueryResult](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproductqueryresult)
+[Windows.Services.Store.StoreProductQueryResult](https://docs.microsoft.com/uwp/api/windows.services.store.storeproductqueryresult)
 
 **属性**
 
@@ -5070,7 +5070,7 @@ Windows.Services.Store.StoreProductQueryResult <br /> Windows.Services.Store.Sto
 
 **项**
 
-[Windows.Services.Store.StoreProductResult](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproductresult)
+[Windows.Services.Store.StoreProductResult](https://docs.microsoft.com/uwp/api/windows.services.store.storeproductresult)
 
 **属性**
 
@@ -5080,7 +5080,7 @@ Windows.Services.Store.StoreProductResult <br /> Windows.Services.Store.StorePro
 
 **项**
 
-[Windows.Services.Store.StorePurchaseProperties](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepurchaseproperties)
+[Windows.Services.Store.StorePurchaseProperties](https://docs.microsoft.com/uwp/api/windows.services.store.storepurchaseproperties)
 
 **属性**
 
@@ -5090,7 +5090,7 @@ Windows.Services.Store.StorePurchaseProperties <br /> Windows.Services.Store.Sto
 
 **项**
 
-[Windows.Services.Store.StorePurchaseResult](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepurchaseresult)
+[Windows.Services.Store.StorePurchaseResult](https://docs.microsoft.com/uwp/api/windows.services.store.storepurchaseresult)
 
 **属性**
 
@@ -5100,7 +5100,7 @@ Windows.Services.Store.StorePurchaseResult <br /> Windows.Services.Store.StorePu
 
 **项**
 
-[Windows.Services.Store.StorePurchaseStatus](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepurchasestatus)
+[Windows.Services.Store.StorePurchaseStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepurchasestatus)
 
 **属性**
 
@@ -5110,7 +5110,7 @@ Windows.Services.Store.StorePurchaseStatus <br /> Windows.Services.Store.StorePu
 
 **项**
 
-[Windows.Services.Store.StoreRequestHelper](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storerequesthelper)
+[Windows.Services.Store.StoreRequestHelper](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper)
 
 **属性**
 
@@ -5120,7 +5120,7 @@ Windows.Services.Store.StoreRequestHelper <br /> Windows.Services.Store.StoreReq
 
 **项**
 
-[Windows.Services.Store.StoreSendRequestResult](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesendrequestresult)
+[Windows.Services.Store.StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult)
 
 **属性**
 
@@ -5130,7 +5130,7 @@ Windows.Services.Store.StoreSendRequestResult <br /> Windows.Services.Store.Stor
 
 **项**
 
-[Windows.Services.Store.StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku)
+[Windows.Services.Store.StoreSku](https://docs.microsoft.com/uwp/api/windows.services.store.storesku)
 
 **属性**
 
@@ -5140,7 +5140,7 @@ Windows.Services.Store.StoreSku <br /> Windows.Services.Store.StoreSku.Availabil
 
 **项**
 
-[Windows.Services.Store.StoreSubscriptionInfo](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesubscriptioninfo)
+[Windows.Services.Store.StoreSubscriptionInfo](https://docs.microsoft.com/uwp/api/windows.services.store.storesubscriptioninfo)
 
 **属性**
 
@@ -5150,7 +5150,7 @@ Windows.Services.Store.StoreSubscriptionInfo <br /> Windows.Services.Store.Store
 
 **项**
 
-[Windows.Services.Store.StoreVideo](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storevideo)
+[Windows.Services.Store.StoreVideo](https://docs.microsoft.com/uwp/api/windows.services.store.storevideo)
 
 **属性**
 

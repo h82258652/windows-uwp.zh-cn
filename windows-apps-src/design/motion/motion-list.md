@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ca332b73aba067c2ae003d458e8d0d97c7a7e3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 228fec1571ab3f9c01b4a8dd4084e19bc28dbfe7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642832"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366744"
 ---
 # <a name="add-and-delete-animations"></a>添加和删除动画
 
@@ -21,7 +21,7 @@ ms.locfileid: "57642832"
 
 列表动画可使你向集合（如相册或搜索结果列表）中插入或从中删除单个或多个项。
 
-> **重要的 API**：[**AddDeleteThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/br243048)
+> **重要的 API**：[**AddDeleteThemeTransition 类**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition.)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
@@ -38,10 +38,10 @@ ms.locfileid: "57642832"
 
 ## <a name="related-articles"></a>相关文章
 
-* [动画概述](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [对列表添加和删除操作进行动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
-* [快速入门：对 UI 使用库动画进行动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**AddDeleteThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/br243048)
+* [动画概述](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [对列表添加和删除操作进行动画处理](https://docs.microsoft.com/previous-versions/windows/apps/jj649430(v=win.10))
+* [快速入门：对 UI 使用库动画进行动画处理](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [**AddDeleteThemeTransition 类**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition.)
 
  
 

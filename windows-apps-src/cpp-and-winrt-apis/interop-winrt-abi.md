@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 3eee6b75d3ea86c183293ffc27289e9cae2929ce
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: a1745f9ad98ed8dac2e54e17d18467981eafdcec
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291675"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360228"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>实现 C++/WinRT 与 ABI 之间的互操作
 
@@ -104,7 +104,7 @@ int main()
 }
 ```
 
-**as** 函数的实现调用了 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)。 如果你需要仅调用 [**AddRef**](https://msdn.microsoft.com/library/windows/desktop/ms691379) 的较低级别的转换，则可以使用 [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) 和 [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) 帮助程序函数。 后面这个代码示例向上面的代码示例添加了这些较低级别的转换。
+**as** 函数的实现调用了 [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))。 如果你需要仅调用 [**AddRef**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) 的较低级别的转换，则可以使用 [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) 和 [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) 帮助程序函数。 后面这个代码示例向上面的代码示例添加了这些较低级别的转换。
 
 ```cppwinrt
 int main()
@@ -173,7 +173,7 @@ T convert_from_abi(::IUnknown* from)
 }
 ```
 
-该函数只需调用 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) 来查询请求的 C++/WinRT 类型的默认接口。
+该函数只需调用 [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 来查询请求的 C++/WinRT 类型的默认接口。
 
 正如我们所见，从 C++/WinRT 对象转换成等效的 ABI 接口指针不需要帮助程序函数。 只需使用 [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)（或 [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)）成员函数来查询请求的接口。 **as** 和 **try_as** 函数将返回环绕请求的 ABI 类型的 [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) 对象。
 
@@ -244,8 +244,8 @@ int main()
 ```
 
 ## <a name="important-apis"></a>重要的 API
-* [AddRef 函数](https://msdn.microsoft.com/library/windows/desktop/ms691379)
-* [QueryInterface 函数](https://msdn.microsoft.com/library/windows/desktop/ms682521)
+* [AddRef 函数](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)
+* [QueryInterface 函数](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
 * [winrt::attach_abi function](/uwp/cpp-ref-for-winrt/attach-abi)
 * [winrt::com_ptr 结构模板](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::copy_from_abi function](/uwp/cpp-ref-for-winrt/copy-from-abi)

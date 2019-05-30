@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 8319d4a0975e209edea7cb70b22910e8124f16c1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 72b7f168c9f4e812b1cfb459ebea91f61a988122
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593972"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371307"
 ---
 # <a name="create-a-windows-hello-login-app"></a>创建 Windows Hello 登录应用
 
@@ -415,7 +415,7 @@ ms.locfileid: "57593972"
     }
     ```
 
--   你可能已经注意到，注释代码引用了 MicrosoftPassportHelper 中的方法。 在 MicrosoftPassportHelper.cs 中，添加名为 CreatePassportKeyAsync 的新方法。 此方法使用 [**KeyCredentialManager**](https://msdn.microsoft.com/library/windows/apps/dn973043) 中的 Windows Hello API。 调用 [**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) 将创建特定于 *accountId* 和本地计算机的 Passport 密钥。 如果你对在真实应用场景中进行实现感兴趣，请注意 switch 语句中的注释。
+-   你可能已经注意到，注释代码引用了 MicrosoftPassportHelper 中的方法。 在 MicrosoftPassportHelper.cs 中，添加名为 CreatePassportKeyAsync 的新方法。 此方法使用 [**KeyCredentialManager**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredentialManager) 中的 Windows Hello API。 调用 [**RequestCreateAsync**](https://docs.microsoft.com/previous-versions/windows/dn973048(v=win.10)) 将创建特定于 *accountId* 和本地计算机的 Passport 密钥。 如果你对在真实应用场景中进行实现感兴趣，请注意 switch 语句中的注释。
 
     ```cs
     /// <summary>
@@ -624,7 +624,7 @@ ms.locfileid: "57593972"
 
     ![Windows Hello 欢迎屏幕](images/passport-login-9.png)
 
--   在 Views 文件夹中，创建名为“UserSelection.xaml”的新空白页，然后添加以下 XAML 来定义用户界面。 此页面将包含一个用于在本地帐户列表中显示所有用户的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)，以及一个用于导航到登录页的 Button，从而让用户可以添加其他帐户。
+-   在 Views 文件夹中，创建名为“UserSelection.xaml”的新空白页，然后添加以下 XAML 来定义用户界面。 此页面将包含一个用于在本地帐户列表中显示所有用户的 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)，以及一个用于导航到登录页的 Button，从而让用户可以添加其他帐户。
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">

@@ -7,12 +7,12 @@ ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 910e3108009704d444fb81b195f9dd9eae3daa9d
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: b2e1e2dfdb1dd52e1dd07a146badd78a6bb809fa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63798189"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359930"
 ---
 # <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 参考
 
@@ -1373,7 +1373,7 @@ ms.locfileid: "63798189"
 | URI 参数 | 描述 |
 | :---          | :--- |
 | autoreboot   | （**可选**）True 或 False。 这指示系统在出现故障或锁定后是否自动重新启动。 |
-| dumptype   | （**可选**）转储类型。 有关支持的值，请参阅 [CrashDumpType 枚举](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx)。|
+| dumptype   | （**可选**）转储类型。 有关支持的值，请参阅 [CrashDumpType 枚举](https://docs.microsoft.com/previous-versions/azure/reference/dn802457(v=azure.100))。|
 | maxdumpcount   | （**可选**）要保存的最大转储数。 |
 | overwrite   | （**可选**）True 或 False。 这指示在达到 *maxdumpcount* 指定的转储计数器限制时是否覆盖旧转储。 |
 
@@ -1457,7 +1457,7 @@ ms.locfileid: "63798189"
 
 | Command | 描述 |
 | :----- | :----- |
-| 提供程序 *{guid}* 启用 *{level}* | 在指定的级别上启用由 *{guid}*（不带括号）标记的提供程序。 *{level}* 是从 1（最少细节）到 5（详细）的 **int**。 |
+| 提供程序 *{guid}* 启用 *{level}* | 在指定的级别上启用由 *{guid}* （不带括号）标记的提供程序。 *{level}* 是从 1（最少细节）到 5（详细）的 **int**。 |
 | 提供程序 *{guid}* 禁用 | 禁用由 *{guid}* 标记（不带括号）的提供程序。 |
 
 此响应将从服务器发送到客户端。 此响应以文本形式发送，并且你通过解析 JSON 来获取以下格式。
@@ -2362,7 +2362,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| GET | /api/power/cfg/*<power scheme path>* |
+| GET | /api/power/cfg/ *<power scheme path>* |
 
 选项：
 - SCHEME_CURRENT
@@ -2500,7 +2500,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 发布 | /api/power/cfg/*<power scheme path>* |
+| 发布 | /api/power/cfg/ *<power scheme path>* |
 
 
 **URI 参数**

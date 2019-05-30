@@ -7,28 +7,28 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fb0e5aee9e7b3e57ebf0ebeaf3d035180e52c65b
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 1a0c632089c8c4cf84ecf6df99935671423b51a6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63817499"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370809"
 ---
 # <a name="launch-the-windows-settings-app"></a>启动 Windows 设置应用
 
 **重要的 Api**
 
--   [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)
--   [**PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482)
--   [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)
+-   [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
+-   [**PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
+-   [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
 了解如何启动 Windows"设置"应用。 本主题介绍**ms 设置：** URI 方案。 使用此 URI 方案将 Windows 设置应用启动到特定设置页面。
 
-启动为设置应用是编写隐私感知应用的重要组成部分。 如果你的应用无法访问敏感资源，我们建议为用户提供到该资源的隐私设置的方便链接。 有关详细信息，请参阅[隐私感知应用指南](https://msdn.microsoft.com/library/windows/apps/hh768223)。
+启动为设置应用是编写隐私感知应用的重要组成部分。 如果你的应用无法访问敏感资源，我们建议为用户提供到该资源的隐私设置的方便链接。 有关详细信息，请参阅[隐私感知应用指南](https://docs.microsoft.com/windows/uwp/security/index)。
 
 ## <a name="how-to-launch-the-settings-app"></a>如何启动“设置”应用
 
-若要启动“设置”应用，请使用以下示例中所示的 `ms-settings:` URI 方案。
+若要启动“设置”应用，请使用以下示例中所示的 `ms-settings:` URI 方案。 
 
 在此示例中，超链接 XAML 控件用于使用 `ms-settings:privacy-microphone` URI 启动麦克风的隐私设置页面。
 
@@ -44,7 +44,7 @@ ms.locfileid: "63817499"
 </TextBlock>
 ```
 
-此外，你的应用可以调用 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法来启动**设置**应用。 此示例介绍了如何使用 `ms-settings:privacy-webcam` URI 启动到相机的隐私设置页面。
+此外，你的应用可以调用 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法来启动**设置**应用。 此示例介绍了如何使用 `ms-settings:privacy-webcam` URI 启动到相机的隐私设置页面。
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
@@ -239,7 +239,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 相机 | ms-settings:privacy-webcam |
 | 联系人 | ms-settings:privacy-contacts |
 | 文档 | ms-settings:privacy-documents |
-| 电子邮件 | ms-settings:privacy-email |
+| Email | ms-settings:privacy-email |
 | “目视跟踪器” | ms-settings:privacy-eyetracker（需要眼球跟踪器硬件） |
 | 反馈和诊断 | ms-settings:privacy-feedback |
 | 文件系统 | ms-settings:privacy-broadfilesystemaccess |

@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e0b8ffbebdca920bc6cc584dd735062a364d1d9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fad621eb9b6ef9ef863240644ae0fa46d41baacc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627932"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371606"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows 运行时 8.x 到 UWP 案例研究：Bookstore1
 
 
-本主题介绍了将移植到 Windows 10 通用 Windows 平台 (UWP) 应用非常简单的通用 8.1 应用的案例研究。 一个通用的 8.1 应用程序是指生成一个应用程序包以进行 Windows 8.1 和 Windows Phone 8.1 的不同的应用包。 Windows 10 中，您可以创建单个应用包，你的客户可以将安装到各种设备，并且这就是我们要在此案例研究。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+本主题介绍了将移植到 Windows 10 通用 Windows 平台 (UWP) 应用非常简单的通用 8.1 应用的案例研究。 一个通用的 8.1 应用程序是指生成一个应用程序包以进行 Windows 8.1 和 Windows Phone 8.1 的不同的应用包。 Windows 10 中，您可以创建单个应用包，你的客户可以将安装到各种设备，并且这就是我们要在此案例研究。 请参阅 [UWP 应用指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。
 
 我们将移植的应用包含绑定到视图模型的 **ListBox**。 该视图模型具有显示标题、作者和书籍封面的书籍列表。 书籍封面已将**生成操作**设置为**内容**，并将**复制到输出目录**设置为**不要复制**。
 
@@ -122,7 +122,7 @@ Bookstore1\_81 应用使用两个不同的资源字典 (BookstoreStyles.xaml) �
 
 移植移动设备上运行的 Windows 10 应用
 
-## <a name="conclusion"></a>结论
+## <a name="conclusion"></a>结束语
 
 此案例研究介绍了移植非常简单的应用（可以认为是一个过分简单的应用）的过程。 例如，列表框可用于选择或者用于建立导航的上下文；应用导航到具有有关所点击项的更多详细信息的页面。 根据用户的选择，此特定应用不执行任何操作，并且它没有导航。 即便如此，案例研究可用于打破僵局、介绍移植过程和演示可在真实的 UWP App 中使用的重要技术。
 

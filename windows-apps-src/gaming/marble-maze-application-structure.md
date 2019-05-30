@@ -6,19 +6,19 @@ ms.date: 09/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 示例, directx, 结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 55b933db7f9b26de2caa3877bde445f96c08d561
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a04e6714772d9b17c281f81ad93582d1fb691c9b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653722"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368505"
 ---
 # <a name="marble-maze-application-structure"></a>Marble Maze 应用程序结构
 
 
 
 
-DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构不同。 Windows 运行时提供了接口（如 [[Windows::UI::Core::ICoreWindow](https://msdn.microsoft.com/library/windows/desktop/aa383751)](https://msdn.microsoft.com/library/windows/apps/br208296)），以便你可以采用更现代、面向对象的方式开发 UWP 应用，而不是使用句柄类型（如 [HWND](https://msdn.microsoft.com/library/windows/desktop/ms632679)）和函数（如 CreateWindow）。 文档的这一部分介绍了如何构造 Marble Maze 应用代码。
+DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构不同。 Windows 运行时提供了接口（如 [[Windows::UI::Core::ICoreWindow](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types)](https://docs.microsoft.com/uwp/api/Windows.UI.Core.ICoreWindow)），以便你可以采用更现代、面向对象的方式开发 UWP 应用，而不是使用句柄类型（如 [HWND](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-createwindowa)）和函数（如 CreateWindow）。 文档的这一部分介绍了如何构造 Marble Maze 应用代码。
 
 > [!NOTE]
 > 与本文档对应的示例代码位于 [DirectX Marble Maze 游戏示例](https://go.microsoft.com/fwlink/?LinkId=624011)中。
@@ -79,7 +79,7 @@ HLSL 着色器是使用不同设计时和运行时格式的一个资源示例。
 ##  <a name="application-life-cycle"></a>应用程序生命周期
 
 
-Marble Maze 遵循典型的 UWP 应用的生命周期。 有关 UWP 应用的生命周期的详细信息， 请参阅[应用生命周期](https://msdn.microsoft.com/library/windows/apps/mt243287)。
+Marble Maze 遵循典型的 UWP 应用的生命周期。 有关 UWP 应用的生命周期的详细信息， 请参阅[应用生命周期](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle)。
 
 UWP 游戏初始化时，它通常会初始化运行时组件（例如 Direct3D、Direct2D）和它使用的任何输入、音频或物理库。 它还在游戏开始之前加载特定于游戏的必要资源。 此初始化过程在一个游戏会话中发生一次。
 
@@ -240,7 +240,7 @@ Marble Maze 执行以下任务来支持暂停和恢复：
 -   它通过将状态保存到持久存储来响应暂停通知。
 -   它通过从持久存储加载状态来响应恢复通知。 它也会在启动期间加载以前的状态。
 
-为了支持暂停和恢复，Marble Maze 定义了 **PersistentState** 类。 （参见 **PersistentState.h** 和 **PersistentState.cpp**）。 此类使用 [Windows::Foundation::Collections::IPropertySet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IPropertySet) 接口读取和写入属性。 **PersistentState** 类提供了从备份存储读取和向其写入基元数据类型（例如 **bool**、**int**、**float**、[XMFLOAT3](https://msdn.microsoft.com/library/windows/desktop/ee419475) 和 [Platform::String](https://docs.microsoft.com/cpp/cppcx/platform-string-class)）的方法。
+为了支持暂停和恢复，Marble Maze 定义了 **PersistentState** 类。 （参见 **PersistentState.h** 和 **PersistentState.cpp**）。 此类使用 [Windows::Foundation::Collections::IPropertySet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IPropertySet) 接口读取和写入属性。 **PersistentState** 类提供了从备份存储读取和向其写入基元数据类型（例如 **bool**、**int**、**float**、[XMFLOAT3](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat3) 和 [Platform::String](https://docs.microsoft.com/cpp/cppcx/platform-string-class)）的方法。
 
 ```cpp
 ref class PersistentState
@@ -414,7 +414,7 @@ void MarbleMazeMain::LoadState()
 > [!IMPORTANT]
 > Marble Maze 不会区分冷启动（即首次启动，之前没有暂停事件）和从暂停状态恢复。 这是所有 UWP 应用的建议设计。
 
-有关应用程序数据的详细信息，请参阅[存储和检索设置以及其他应用数据](https://msdn.microsoft.com/library/windows/apps/mt299098)。
+有关应用程序数据的详细信息，请参阅[存储和检索设置以及其他应用数据](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)。
 
 ##  <a name="next-steps"></a>后续步骤
 
@@ -425,7 +425,7 @@ void MarbleMazeMain::LoadState()
 
 * [向 Marble Maze 示例添加可视内容](adding-visual-content-to-the-marble-maze-sample.md)
 * [Marble Maze 示例基础知识](marble-maze-sample-fundamentals.md)
-* [Marble Maze、 c + + 和 DirectX 的 UWP 游戏开发](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [开发中的 UWP 游戏 Marble MazeC++和 DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

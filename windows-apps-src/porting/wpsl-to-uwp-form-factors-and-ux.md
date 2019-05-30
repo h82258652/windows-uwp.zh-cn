@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9efa6cae8994c12ce742aac0a6301346d6eae0d1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: efd024838194876532dc3a1925f9c43430513cda
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57622062"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370734"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>移植到 UWP 的 Windows Phone Silverlight 的外形规格和用户体验
 
@@ -48,15 +48,15 @@ Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常
 
 将移动版本限制为仅纵向方向，因为这是适用于书籍列表的最佳纵横比；而且我们应对同一页面中的文本执行相同的操作，这最好在移动设备上保留为一列。 但页面在 PC 和平板电脑屏幕的任一方向上都显得很大，因此移动设备的约束在较大的设备上似乎是不必要的限制。
 
-以光学方式缩放此应用来使其看起来像移动版本，只会使其变得更大，而不能充分利用设备及其额外空间，从而不能很好地为用户提供服务。 我们应该考虑显示更多内容，而不是使相同内容显示得更大。 即使在平板手机上，我们也可以多显示几行内容。 我们可以使用额外空间来显示不同的内容（如广告），也可以将该列表框更改为列表视图，并让其将项目包装到多个列中，如果可以这样做，则采用此方式利用空间。 请参阅[列表和网格视图控件指南](https://msdn.microsoft.com/library/windows/apps/mt186889)。
+以光学方式缩放此应用来使其看起来像移动版本，只会使其变得更大，而不能充分利用设备及其额外空间，从而不能很好地为用户提供服务。 我们应该考虑显示更多内容，而不是使相同内容显示得更大。 即使在平板手机上，我们也可以多显示几行内容。 我们可以使用额外空间来显示不同的内容（如广告），也可以将该列表框更改为列表视图，并让其将项目包装到多个列中，如果可以这样做，则采用此方式利用空间。 请参阅[列表和网格视图控件指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists)。
 
-除了如列表视图和网格视图的新控件，大部分已建立的布局类型从 Windows Phone Silverlight 通用 Windows 平台 (UWP) 中具有等效项。 例如，[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)、[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 和 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)。 移植使用这些类型的大部分 UI 应该比较简单，但应始终寻找利用这些布局面板的动态布局功能以自动调整大小并在不同大小的设备上重新布局的方法。
+除了如列表视图和网格视图的新控件，大部分已建立的布局类型从 Windows Phone Silverlight 通用 Windows 平台 (UWP) 中具有等效项。 例如，[**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)、[**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 和 [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)。 移植使用这些类型的大部分 UI 应该比较简单，但应始终寻找利用这些布局面板的动态布局功能以自动调整大小并在不同大小的设备上重新布局的方法。
 
 超越系统控件和布局面板中内置的动态布局，我们可以使用名为的新 Windows 10 功能[自适应视觉状态管理器](wpsl-to-uwp-porting-xaml-and-ui.md)。
 
 ## <a name="input-modalities"></a>输入形式
 
-Windows Phone Silverlight 界面是特定于触控的。 当然，已移植应用的界面还应该支持触摸，但是你可以选择支持除此之外的其他输入形式，例如鼠标和键盘。 在 UWP 中，将鼠标、笔和触控输入统一称为*指针输入*。 有关详细信息，请参阅[处理指针输入](https://msdn.microsoft.com/library/windows/apps/mt404610)和[键盘交互](https://msdn.microsoft.com/library/windows/apps/mt185607)。
+Windows Phone Silverlight 界面是特定于触控的。 当然，已移植应用的界面还应该支持触摸，但是你可以选择支持除此之外的其他输入形式，例如鼠标和键盘。 在 UWP 中，将鼠标、笔和触控输入统一称为*指针输入*。 有关详细信息，请参阅[处理指针输入](https://docs.microsoft.com/windows/uwp/input-and-devices/handle-pointer-input)和[键盘交互](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)。
 
 ## <a name="maximizing-markup-and-code-re-use"></a>最大程度地重复使用标记和代码
 
@@ -65,8 +65,8 @@ Windows Phone Silverlight 界面是特定于触控的。 当然，已移植应�
 ## <a name="more-info-and-design-guidelines"></a>详细信息和设计指南
 
 -   [设计 UWP 应用](https://developer.microsoft.com/en-us/windows/apps/design)
--   [字体准则](https://msdn.microsoft.com/library/windows/apps/hh700394)
--   [针对不同外形因素的计划](https://msdn.microsoft.com/library/windows/apps/dn958435)
+-   [字体准则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts)
+-   [针对不同外形因素的计划](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)
 
 ## <a name="related-topics"></a>相关主题
 

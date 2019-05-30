@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: fb1ff6431b3ccf609b7362db819569c2f6cebc48
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0ddadde2502e8512ba38dc30c6ac24d22631d62c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657012"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372646"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>具有 Windows Hello 配套 (IoT) 设备的 Windows 解锁
 
@@ -50,7 +50,7 @@ Windows Hello 配套设备框架实现为在 Windows 上运行的服务（在本
 
 与 Windows Hello 配套设备框架集成需要：
 
-- 从 Windows 应用商店下载的配套设备的[通用 Windows 平台 (UWP)](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) Windows Hello 配套设备应用。 
+- 从 Windows 应用商店下载的配套设备的[通用 Windows 平台 (UWP)](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) Windows Hello 配套设备应用。 
 - 能够在 Windows Hello 配套设备上创建两个 256 位的 HMAC 密钥，并通过它生成 HMAC（使用 SHA-256）。
 - 正确配置 Windows 10 桌面版的安全设置。 配套身份验证服务将要求在任何 Windows Hello 配套设备插入此 PIN 前先设置它。 用户必须通过“设置”&gt;“帐户”&gt;“登录”选项来设置 PIN。
 
@@ -346,7 +346,7 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>身份验证
 
 身份验证需要两个 API 调用的辅助身份验证服务：StartAuthenticationAsync 和 FinishAuthencationAsync。
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, direct3d, 深度缓冲区
 ms.localizationpriority: medium
-ms.openlocfilehash: f5ce1ec522a194111e175e41f82c4275cda4fbf5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dfd45f620addcf7a3f6292ed2257bdfccc862cd3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613692"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368895"
 ---
 # <a name="create-depth-buffer-device-resources"></a>创建深度缓冲区设备资源
 
@@ -38,7 +38,7 @@ ms.locfileid: "57613692"
 ## <a name="check-feature-support"></a>检查功能支持
 
 
-然后再创建深度映射，调用[ **CheckFeatureSupport** ](https://msdn.microsoft.com/library/windows/desktop/ff476497)方法在 Direct3D 设备上请求**D3D11\_功能\_D3D9\_卷影\_支持**，并提供[ **D3D11\_功能\_数据\_D3D9\_卷影\_支持**](https://msdn.microsoft.com/library/windows/desktop/jj247569)结构。
+然后再创建深度映射，调用[ **CheckFeatureSupport** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport)方法在 Direct3D 设备上请求**D3D11\_功能\_D3D9\_卷影\_支持**，并提供[ **D3D11\_功能\_数据\_D3D9\_卷影\_支持**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_d3d9_shadow_support)结构。
 
 ```cpp
 D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT isD3D9ShadowSupported;
@@ -82,7 +82,7 @@ HRESULT hr = pD3DDevice->CreateTexture2D(
     );
 ```
 
-然后创建资源视图。 在深度模具视图上将 mip 片设置为零，在着色器资源视图上将 mip 级别设置为 1。 都有一个纹理尺寸为 TEXTURE2D，并且两者都需要使用匹配[ **DXGI\_格式**](https://msdn.microsoft.com/library/windows/desktop/bb173059)。
+然后创建资源视图。 在深度模具视图上将 mip 片设置为零，在着色器资源视图上将 mip 级别设置为 1。 都有一个纹理尺寸为 TEXTURE2D，并且两者都需要使用匹配[ **DXGI\_格式**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)。
 
 ```cpp
 D3D11_DEPTH_STENCIL_VIEW_DESC depthStencilViewDesc;

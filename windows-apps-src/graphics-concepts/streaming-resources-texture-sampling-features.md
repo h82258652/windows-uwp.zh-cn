@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b6290fba9d4194df78c39902b8d96e952134682
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: eb0e870aa467641f82d24f03278a199ab56d0c8d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607412"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370975"
 ---
 # <a name="streaming-resources-texture-sampling-features"></a>流式资源纹理采样功能
 
@@ -27,12 +27,12 @@ ms.locfileid: "57607412"
 ## <a name="span-idshaderstatusfeedbackaboutmappedareasspanspan-idshaderstatusfeedbackaboutmappedareasspanspan-idshaderstatusfeedbackaboutmappedareasspanshader-status-feedback-about-mapped-areas"></a><span id="Shader_status_feedback_about_mapped_areas"></span><span id="shader_status_feedback_about_mapped_areas"></span><span id="SHADER_STATUS_FEEDBACK_ABOUT_MAPPED_AREAS"></span>有关映射区域的着色器状态反馈
 
 
-从流式资源读取和/或写入流式资源的任何着色器指令将导致系统记录状态信息。 此状态显示为进入 32 位临时寄存器的每条资源访问指令的可选额外返回值。 返回值的内容是透明的。 也就是说，不允许着色器程序直接读取。 但你可以使用 [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 函数来提取状态信息。
+从流式资源读取和/或写入流式资源的任何着色器指令将导致系统记录状态信息。 此状态显示为进入 32 位临时寄存器的每条资源访问指令的可选额外返回值。 返回值的内容是透明的。 也就是说，不允许着色器程序直接读取。 但你可以使用 [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) 函数来提取状态信息。
 
 ## <a name="span-idfullymappedcheckspanspan-idfullymappedcheckspanspan-idfullymappedcheckspanfully-mapped-check"></a><span id="Fully_mapped_check"></span><span id="fully_mapped_check"></span><span id="FULLY_MAPPED_CHECK"></span>完全映射的检查
 
 
-[  **CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 函数解释从内存访问返回的状态并指示正在访问的所有数据是否已在资源中映射。 **CheckAccessFullyMapped** 在数据已映射的情况下返回 true (0xFFFFFFFF)，在数据未映射的情况下返回 false (0x00000000)。
+[  **CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) 函数解释从内存访问返回的状态并指示正在访问的所有数据是否已在资源中映射。 **CheckAccessFullyMapped** 在数据已映射的情况下返回 true (0xFFFFFFFF)，在数据未映射的情况下返回 false (0x00000000)。
 
 在筛选操作期间，有时给定纹素的权重以 0.0 结束。 与直接在纹素 center 上的纹理坐标的线性示例是一个示例：3 （它们是哪些功能可能会因硬件而异） 其他纹素参与到筛选器，但与 0 的权重。 这些 0 权重纹素完全不影响筛选结果，因此如果它们恰好落在 **NULL** 磁贴上，则不算作未映射的访问。 请注意，相同保证适用于包含多个 mip 级别的纹理筛选器；如果其中一个 mipmap 上的纹素未映射但纹素权重为 0，则这些纹素不算作未映射的访问。
 
@@ -40,7 +40,7 @@ ms.locfileid: "57607412"
 
 着色器可以检查状态，并针对失败情况采取任何需要的操作。 例如，操作可以是记录“未命中数”（例如通过 UAV 写入）和/或发出固定到已知已映射的粗粒度 LOD 的另一个读数。 应用程序可能还需跟踪成功的访问，以获知所访问的是映射磁贴组的哪一部分。
 
-记录的复杂之处在于，目前尚无机制可用于报告已被访问的确切磁贴组。 应用程序可以根据已知用于访问的坐标并使用 LOD 指令进行保守猜测，例如，[**tex2Dlod**](https://msdn.microsoft.com/library/windows/desktop/bb509680) 将返回硬件 LOD 计算结果。
+记录的复杂之处在于，目前尚无机制可用于报告已被访问的确切磁贴组。 应用程序可以根据已知用于访问的坐标并使用 LOD 指令进行保守猜测，例如，[**tex2Dlod**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-tex2dlod) 将返回硬件 LOD 计算结果。
 
 另一个难点是，大量访问将指向同一组磁贴，因此将产生大量冗余记录并可能引起内存争用。 如果能允许硬件在别处已报告磁贴访问的情况下不再重复报告，就会更加方便。 此类跟踪状态也许可以从 API（可能位于帧边界）重置。
 
@@ -49,11 +49,11 @@ ms.locfileid: "57607412"
 
 为帮助着色器避开 Mip 映射流式资源中已知的非映射区域，使用采样器（筛选）的大多数着色器指令都有相应模式，允许着色器将额外的 float32 MinLOD 固定参数传递到纹理样本。 此值位于视图的 mipmap 数空间，而不是基础资源。
 
-硬件在 LOD 计算中发生按资源 MinLOD 固定的相同位置执行 ` max(fShaderMinLODClamp,fComputedLOD) `，同时也是 [**max**](https://msdn.microsoft.com/library/windows/desktop/bb509624)()。
+硬件在 LOD 计算中发生按资源 MinLOD 固定的相同位置执行 ` max(fShaderMinLODClamp,fComputedLOD) `，同时也是 [**max**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-max)()。
 
 如果应用每个示例 LOD clamp 和采样器中定义的任何其他 LOD clamps 的结果为空集，结果是相同的超出边界访问结果作为每个资源 minLOD clamp:对组件中的图面上的格式和缺少的组件的默认值为 0。
 
-先于此处所述的按样本 MinLOD 固定的 LOD 指令（例如 [**tex2Dlod**](https://msdn.microsoft.com/library/windows/desktop/bb509680)）将返回已固定和未固定的 LOD。 从此 LOD 指令返回的已固定 LOD 反映所有固定，包括按资源固定，但并非按样本固定。 按样本固定由着色器控制和知悉，因此着色器作者可在需要时为 LOD 指令的返回值手动应用固定。
+先于此处所述的按样本 MinLOD 固定的 LOD 指令（例如 [**tex2Dlod**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-tex2dlod)）将返回已固定和未固定的 LOD。 从此 LOD 指令返回的已固定 LOD 反映所有固定，包括按资源固定，但并非按样本固定。 按样本固定由着色器控制和知悉，因此着色器作者可在需要时为 LOD 指令的返回值手动应用固定。
 
 ## <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>最小/最大减少筛选
 

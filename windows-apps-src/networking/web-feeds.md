@@ -6,23 +6,23 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b5312614c7060118fdb4678aa80ae51d6734486
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a9d3b4b9b404ab2c0828ea302f0c564ae1c8e7b4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660302"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372787"
 ---
 # <a name="rssatom-feeds"></a>RSS/Atom 源
 
 
 **重要的 Api**
 
--   [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819)
--   [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)
--   [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632)
+-   [**Windows.Data.Xml.Dom**](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom)
+-   [**Windows.Web.AtomPub**](https://docs.microsoft.com/uwp/api/Windows.Web.AtomPub)
+-   [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication)
 
-使用综合订阅源检索或创建最新和最热门的 Web 内容，这些订阅源是使用 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空间中的功能根据 RSS 和 Atom 标准生成的。
+使用综合订阅源检索或创建最新和最热门的 Web 内容，这些订阅源是使用 [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication) 命名空间中的功能根据 RSS 和 Atom 标准生成的。
 
 ## <a name="what-is-a-feed"></a>什么是订阅源？
 
@@ -30,11 +30,11 @@ Web 订阅源是一个文档，其中包含任意数量的由文本、链接和�
 
 ## <a name="which-feed-format-standards-are-supported"></a>支持哪些订阅源格式标准？
 
-通用 Windows 平台 (UWP) 支持从 RSS 0.91 到 RSS 2.0 的 RSS 格式标准的订阅源检索，也支持从 0.3 到 1.0 的 Atom 标准的订阅源检索。 [  **Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空间中的类可定义订阅源和能够表示 RSS 和 Atom 元素的订阅源项目。
+通用 Windows 平台 (UWP) 支持从 RSS 0.91 到 RSS 2.0 的 RSS 格式标准的订阅源检索，也支持从 0.3 到 1.0 的 Atom 标准的订阅源检索。 [  **Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication) 命名空间中的类可定义订阅源和能够表示 RSS 和 Atom 元素的订阅源项目。
 
-此外，Atom 1.0 和 RSS 2.0 格式都允许各自的订阅源文档包含在正式规范中未定义的元素或属性。 随着时间的推移，这些自定义元素和属性已经成为其他 Web 服务数据格式（如 GDATA 和 OData）用于指定域的特定信息的一种方式。 为了支持这一新增功能，[**SyndicationNode**](https://msdn.microsoft.com/library/windows/apps/br243585) 类表示泛型 XML 元素。 通过结合使用 **SyndicationNode** 和 [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819) 命名空间中的类，应用可以访问属性、扩展以及它们可能包含的任何内容。
+此外，Atom 1.0 和 RSS 2.0 格式都允许各自的订阅源文档包含在正式规范中未定义的元素或属性。 随着时间的推移，这些自定义元素和属性已经成为其他 Web 服务数据格式（如 GDATA 和 OData）用于指定域的特定信息的一种方式。 为了支持这一新增功能，[**SyndicationNode**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationNode) 类表示泛型 XML 元素。 通过结合使用 **SyndicationNode** 和 [**Windows.Data.Xml.Dom**](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom) 命名空间中的类，应用可以访问属性、扩展以及它们可能包含的任何内容。
 
-请注意，对于综合内容的发布，根据 Atom 和 Atom Publication 标准，Atom 发布协议的 UWP 实现 ([**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)) 仅支持订阅源内容操作。
+请注意，对于综合内容的发布，根据 Atom 和 Atom Publication 标准，Atom 发布协议的 UWP 实现 ([**Windows.Web.AtomPub**](https://docs.microsoft.com/uwp/api/Windows.Web.AtomPub)) 仅支持订阅源内容操作。
 
 ## <a name="using-syndicated-content-with-network-isolation"></a>使用带有网络隔离功能的综合内容
 
@@ -42,7 +42,7 @@ UWP 中的网络隔离功能使开发人员能够控制和限制 UWP 应用的�
 
 网络隔离允许开发人员为每个应用定义所需网络访问的范围。 没有指定相应范围的应用被阻止访问特定类型的网络和特定类型的网络请求（出站客户端发起的请求或未经请求的入站请求和出站客户端发起的请求）。 设置并强制执行网络隔离功能可确保如果一个应用变得具有威胁，则该应用只能访问已明确授权它访问的网络。 这大大降低了对其他应用程序和 Windows 的范围影响。
 
-网络隔离功能可影响尝试访问网络的 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 和 [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609) 命名空间中的任何类元素。 Windows 会主动强制实现网络隔离。 如果尚未启用相应的网络功能，则调用 **Windows.Web.Syndication** 或 **Windows.Web.AtomPub** 命名空间中的类元素可能会因为网络隔离导致网络访问失败。
+网络隔离功能可影响尝试访问网络的 [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication) 和 [**Windows.Web.AtomPub**](https://docs.microsoft.com/uwp/api/Windows.Web.AtomPub) 命名空间中的任何类元素。 Windows 会主动强制实现网络隔离。 如果尚未启用相应的网络功能，则调用 **Windows.Web.Syndication** 或 **Windows.Web.AtomPub** 命名空间中的类元素可能会因为网络隔离导致网络访问失败。
 
 在生成应用时，在应用清单中配置其网络功能。 通常，使用 Microsoft Visual Studio 2015 开发应用程序时添加网络功能。 也可使用文本编辑器在应用清单文件中手动设置网络功能。
 
@@ -50,7 +50,7 @@ UWP 中的网络隔离功能使开发人员能够控制和限制 UWP 应用的�
 
 ## <a name="how-to-access-a-web-feed"></a>如何访问 Web 订阅源
 
-此部分展示了如何在采用 C# 或 Javascript 编写的 UWP 应用中使用 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空间中的类检索和显示 Web 订阅源。
+此部分展示了如何在采用 C# 或 Javascript 编写的 UWP 应用中使用 [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication) 命名空间中的类检索和显示 Web 订阅源。
 
 **必备条件**
 
@@ -58,9 +58,9 @@ UWP 中的网络隔离功能使开发人员能够控制和限制 UWP 应用的�
 
 **从 web 源中检索整合的内容**
 
-现在，我们将查看一些代码，用于演示如何检索订阅源，然后显示订阅源所包含的每个单独项。 在我们可以配置和发送请求前，我们将定义一些将在操作期间使用的变量，并初始化 [**SyndicationClient**](https://msdn.microsoft.com/library/windows/apps/br243456) 的实例，该实例定义我们将用于检索和显示订阅源的方法和属性。
+现在，我们将查看一些代码，用于演示如何检索订阅源，然后显示订阅源所包含的每个单独项。 在我们可以配置和发送请求前，我们将定义一些将在操作期间使用的变量，并初始化 [**SyndicationClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationClient) 的实例，该实例定义我们将用于检索和显示订阅源的方法和属性。
 
-如果传递给 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) 构造函数的 *uriString* 不是有效 URI，该构造函数将引起异常。 因此，我们使用 try/catch 块验证 *uriString*。
+如果传递给 [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) 构造函数的 *uriString* 不是有效 URI，该构造函数将引起异常。 因此，我们使用 try/catch 块验证 *uriString*。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -93,13 +93,13 @@ try {
 }
 ```
 
-接下来，我们通过设置所有需要的服务器凭据（[**ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461) 属性）、代理凭据（[**ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459) 属性）和 HTTP 标头（[**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br243462) 方法）来配置请求。 已配置基本请求参数，即有效的 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) 对象，它是使用应用提供的订阅源 URI 字符串创建的。 然后，**Uri** 对象将传递给 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) 函数以请求订阅源。
+接下来，我们通过设置所有需要的服务器凭据（[**ServerCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.servercredential) 属性）、代理凭据（[**ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.proxycredential) 属性）和 HTTP 标头（[**SetRequestHeader**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.setrequestheader) 方法）来配置请求。 已配置基本请求参数，即有效的 [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) 对象，它是使用应用提供的订阅源 URI 字符串创建的。 然后，**Uri** 对象将传递给 [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 函数以请求订阅源。
 
 假设所需订阅源内容已返回，示例代码将在每个订阅源项上循环，从而调用 **displayCurrentItem**（将在下面定义），以通过 UI 以列表形式显示这些项及其内容。
 
 当你调用大部分异步网络方法时，必须编写代码以处理异常。 异常处理程序可以检索关于异常原因的更详细的信息，以便更好地了解此次失败，然后作出正确的决策。
 
-如果不能与 HTTP 服务器建立连接，或者 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br243460) 对象没有指向有效的 AtomPub 或 RSS 订阅源，[**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br226017) 方法会引发异常。 如果发生错误，Javascrip 示例代码将使用 **onError** 函数捕捉任何异常，并打印出关于异常的更详细的信息。
+如果不能与 HTTP 服务器建立连接，或者 [**Uri**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 对象没有指向有效的 AtomPub 或 RSS 订阅源，[**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) 方法会引发异常。 如果发生错误，Javascrip 示例代码将使用 **onError** 函数捕捉任何异常，并打印出关于异常的更详细的信息。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -157,7 +157,7 @@ function retreiveFeed(uri) {
 }
 ```
 
-在上面的步骤中，[**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) 返回了请求的订阅源内容，并且示例代码已在可用的订阅源项上实施循环访问。 这些项的每个项将使用 [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) 对象表示，其中包含相关联合标准（RSS 或 Atom）提供的所有项属性和内容。 在以下示例中，我们将看到作用于每个项和通过各种命名的 UI 元素显示其内容的 **displayCurrentItem** 函数。
+在上面的步骤中，[**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 返回了请求的订阅源内容，并且示例代码已在可用的订阅源项上实施循环访问。 这些项的每个项将使用 [**SyndicationItem**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationItem) 对象表示，其中包含相关联合标准（RSS 或 Atom）提供的所有项属性和内容。 在以下示例中，我们将看到作用于每个项和通过各种命名的 UI 元素显示其内容的 **displayCurrentItem** 函数。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -199,7 +199,7 @@ function displayCurrentItem() {
                 //displayCurrentItem is continued below.
 ```
 
-如上面所述，根据用于发布订阅源的不同订阅源标准（RSS 或 Atom），[**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) 对象所表示的内容类型会有所不同。 例如，Atom 订阅源能够提供 [**Contributors**](https://msdn.microsoft.com/library/windows/apps/br243540) 的列表，但 RSS 订阅源则不能。 但是，不受任一标准支持的包含在订阅源项中的扩展元素（例如 Dublin Core 扩展元素）可以通过使用 [**SyndicationItem.ElementExtensions**](https://msdn.microsoft.com/library/windows/apps/br243543) 属性进行访问并随后显示，如以下示例代码所示。
+如上面所述，根据用于发布订阅源的不同订阅源标准（RSS 或 Atom），[**SyndicationItem**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationItem) 对象所表示的内容类型会有所不同。 例如，Atom 订阅源能够提供 [**Contributors**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.contributors) 的列表，但 RSS 订阅源则不能。 但是，不受任一标准支持的包含在订阅源项中的扩展元素（例如 Dublin Core 扩展元素）可以通过使用 [**SyndicationItem.ElementExtensions**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.elementextensions) 属性进行访问并随后显示，如以下示例代码所示。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: d3bf92e308d42b9dd93539ebbe44525067f23b6f
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e6e75483ca6c01958a4b8bda2c5c3bb60e764eff
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335125"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372482"
 ---
 # <a name="manage-add-on-submissions"></a>管理加载项提交
 
@@ -94,7 +94,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
     > [!NOTE]
     > SAS URI 提供对 Azure 存储中的安全资源的访问权限（无需帐户密钥）。 有关 SAS URI 及其与 Azure Blob 存储一起使用的背景信息，请参阅[共享访问签名（第 1 部分）：了解 SAS 模型](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1)和[共享访问签名，第 2 部分：创建并将 SAS 用于 Blob 存储](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
-4. 如果要为提交添加新的图标，请[准备图标](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon)并将它们添加到 ZIP 存档。
+4. 如果要为提交添加新的图标，请[准备图标](https://docs.microsoft.com/windows/uwp/publish/create-iap-descriptions)并将它们添加到 ZIP 存档。
 
 5. 使用新提交所需的任何更改来更新[加载项提交](#add-on-submission-object)数据，并执行以下方法来更新提交。 有关详细信息，请参阅[更新加载项提交](update-an-add-on-submission.md)。
 
@@ -110,7 +110,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
     * [Azure Storage SDK for Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
     * [Azure Storage SDK for Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-    以下 C# 代码示例演示了如何在用于 .NET 的 Azure 存储客户端库中使用 [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) 类将 ZIP 存档上载到 Azure Blob 存储。 此示例假定 ZIP 存档已写入流对象。
+    以下 C# 代码示例演示了如何在用于 .NET 的 Azure 存储客户端库中使用 [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob?redirectedfrom=MSDN) 类将 ZIP 存档上载到 Azure Blob 存储。 此示例假定 ZIP 存档已写入流对象。
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -251,7 +251,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 此资源包含[加载项的列表信息](../publish/create-add-on-store-listings.md)。 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述       |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述       |
 |-----------------|---------|------|
 |  description               |    string     |   加载项列表的描述。   |     
 |  图标               |   对象      |包含加载项列表的图标数据的[图标资源](#icon-object)。    |
@@ -276,10 +276,10 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 | ReplTest1           | 在任务栏的搜索框中键入    | 描述    |
 |-----------------|---------|------|
-|  marketSpecificPricings               |    对象     |  键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为[价格段](#price-tiers)。 这些项表示[加载项在特定市场中的自定义价格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-prices)。 此字典中的任何项替代 *priceId* 值针对特定市场所指定的基价。     |     
+|  marketSpecificPricings               |    对象     |  键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为[价格段](#price-tiers)。 这些项表示[加载项在特定市场中的自定义价格](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。 此字典中的任何项替代 *priceId* 值针对特定市场所指定的基价。     |     
 |  sales               |   数组      |  **已弃用**。 包含加载项销售信息的[销售资源](#sale-object)数组。     |     
-|  priceId               |   string      |  用于指定加载项[基价](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price)的[价格段](#price-tiers)。    |    
-|  isAdvancedPricingModel               |   布尔值      |  如果为 **true**，你的开发人员帐户可以使用从 0.99 美元到 1999.99 美元的扩展价格段。 如果为 **false**，你的开发人员帐户可以使用从 0.99 美元到 999.99 美元的原始价格段。 有关其他价格段的详细信息，请参阅[价格段](#price-tiers)。<br/><br/>**注意**&nbsp;&nbsp;此字段为只读字段。   |
+|  priceId               |   string      |  用于指定加载项[基价](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)的[价格段](#price-tiers)。    |    
+|  isAdvancedPricingModel               |   boolean      |  如果为 **true**，你的开发人员帐户可以使用从 0.99 美元到 1999.99 美元的扩展价格段。 如果为 **false**，你的开发人员帐户可以使用从 0.99 美元到 999.99 美元的原始价格段。 有关其他价格段的详细信息，请参阅[价格段](#price-tiers)。<br/><br/>**注意**&nbsp;&nbsp;此字段为只读字段。   |
 
 
 <span id="sale-object" />
@@ -295,13 +295,13 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述           |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述           |
 |-----------------|---------|------|
 |  name               |    string     |   销售的名称。    |     
 |  basePriceId               |   string      |  要用于销售基价的[价格段](#price-tiers)。    |     
 |  startDate               |   string      |   采用 ISO 8601 格式的销售的开始日期。  |     
 |  endDate               |   string      |  采用 ISO 8601 格式的销售的结束日期。      |     
-|  marketSpecificPricings               |   对象      |   键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为[价格段](#price-tiers)。 这些项表示[加载项在特定市场中的自定义价格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-pricess)。 此字典中的任何项替代 *basePriceId* 值针对特定市场所指定的基价。    |
+|  marketSpecificPricings               |   对象      |   键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为[价格段](#price-tiers)。 这些项表示[加载项在特定市场中的自定义价格](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。 此字典中的任何项替代 *basePriceId* 值针对特定市场所指定的基价。    |
 
 <span id="status-details-object" />
 
@@ -321,7 +321,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 此资源包含关于提交的任何相关错误或警告的附加详细信息。 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述    |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述    |
 |-----------------|---------|------|
 |  code               |    string     |   描述错误或警告类型的[提交状态代码](#submission-status-code)。   |     
 |  details               |     string    |  包含有关问题的更多详细信息的消息。     |
@@ -332,9 +332,9 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 此资源提供对提交的认证报告数据的访问权限。 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述               |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述               |
 |-----------------|---------|------|
-|     日期            |    string     |  日期和时间生成报表，采用 ISO 8601 格式。    |
+|     date            |    string     |  日期和时间生成报表，采用 ISO 8601 格式。    |
 |     reportUrl            |    string     |  用于访问报告的 URL。    |
 
 ## <a name="enums"></a>枚举
@@ -383,4 +383,4 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 * [创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)
 * [管理加载项使用的 Microsoft Store 提交 API](manage-add-ons.md)
-* [合作伙伴中心中的外接程序提交](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)
+* [合作伙伴中心中的外接程序提交](https://docs.microsoft.com/windows/uwp/publish/iap-submissions)

@@ -5,16 +5,16 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: windows 10，uwp，WinRT API，索引器搜索
 localizationpriority: medium
-ms.openlocfilehash: b2ac43c9aa2d27f8745e9075abc13d8feaba2370
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2a77bfc37d853efd28bde9bc3043d072888822f2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592682"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369262"
 ---
 # <a name="using-supplemental-properties"></a>使用补充属性  
 
-## <a name="summary"></a>摘要  
+## <a name="summary"></a>总结  
 - 补充属性允许具有属性的标记文件的应用程序而无需更改的文件 
 - 有用的无法修改的拥有属性很难计算或该文件 
 - 使用补充属性等同于 Windows 属性系统上使用任何其他属性  
@@ -27,7 +27,7 @@ ms.locfileid: "57592682"
 数十年时间，在 Windows 上的快速搜索解决方案已索引器和创意者更新中已更新以支持这些新方案。 应用现可使用除系统提取这些之外的其他属性的标记文件。 这些属性被视为第一个类成员  
 
 ## <a name="windows-properties"></a>Windows 属性 
-[Windows 属性系统](https://msdn.microsoft.com/library/windows/desktop/ff728898)已多年与文件进行交互的重要组成部分。 它允许应用从文件读取属性，而无需了解的所有不同的文件格式或语言文件可能是在内部结构。 所有的抽象化为您作为开发人员，您需要做的就是列表并指定按升序或降序。  
+[Windows 属性系统](https://docs.microsoft.com/windows/desktop/properties/windows-properties-system)已多年与文件进行交互的重要组成部分。 它允许应用从文件读取属性，而无需了解的所有不同的文件格式或语言文件可能是在内部结构。 所有的抽象化为您作为开发人员，您需要做的就是列表并指定按升序或降序。  
 
 属性系统而使用 Windows 索引器，它从其作用域内的文件中读取所有属性，并将其存储。 更高版本时应用要求提供一组要进行的修改日期排序的文件夹中的所有.docx 但不包括那些作者 John Smith 的索引器可以返回列表，可立即。  
 

@@ -6,16 +6,16 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 声音
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d5a976ef65bee5efc3329afc98bf198d094b037
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 945270247b8a288554e1910ac1c6f8e5c1ec1619
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589932"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367845"
 ---
 # <a name="add-sound"></a>添加声音
 
-在本主题中，我们创建一个简单的声音引擎 using [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) Api。 如果您不熟悉__XAudio2__，现已下的简短介绍[音频概念](#audio-concepts)。
+在本主题中，我们创建一个简单的声音引擎 using [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-introduction) Api。 如果您不熟悉__XAudio2__，现已下的简短介绍[音频概念](#audio-concepts)。
 
 >[!Note]
 >如果你尚未下载适用于此示例的最新游戏代码，请转到 [Direct3D 游戏示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此示例是大型 UWP 功能示例集合的一部分。 有关如何下载示例的说明，请参阅[从 GitHub 获取 UWP 示例](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
@@ -129,10 +129,10 @@ void Simple3DGame::Initialize(
 
 ## <a name="create-and-initialize-the-audio-resources"></a>创建和初始化的音频资源
 
-* 使用[XAudio2Create](https://msdn.microsoft.com/library/windows/desktop/ee419212)，XAudio2 API，以创建两个新 XAudio2 对象定义的音乐和声音效果引擎。 此方法返回一个指向对象的[IXAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415908)界面，用于管理所有音频引擎指出，音频处理线程、 语音图形和的详细信息。
-* 引擎已实例化后，使用[IXAudio2::CreateMasteringVoice](https://msdn.microsoft.com/library/windows/desktop/hh405048)掌握语音创建的每个声音引擎对象。
+* 使用[XAudio2Create](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-xaudio2create)，XAudio2 API，以创建两个新 XAudio2 对象定义的音乐和声音效果引擎。 此方法返回一个指向对象的[IXAudio2](https://docs.microsoft.com/windows/desktop/api/xaudio2/nn-xaudio2-ixaudio2)界面，用于管理所有音频引擎指出，音频处理线程、 语音图形和的详细信息。
+* 引擎已实例化后，使用[IXAudio2::CreateMasteringVoice](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2-createmasteringvoice)掌握语音创建的每个声音引擎对象。
 
-有关详细信息，请转到[如何：初始化 XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx)。
+有关详细信息，请转到[如何：初始化 XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--initialize-xaudio2)。
 
 ### <a name="audiocreatedeviceindependentresources-method"></a>Audio::CreateDeviceIndependentResources 方法
 
@@ -172,29 +172,29 @@ void Audio::CreateDeviceIndependentResources()
 
 ### <a name="mediareaderloadmedia-method"></a>MediaReader::LoadMedia 方法
 
-此方法使用[媒体基础](https://msdn.microsoft.com/library/windows/desktop/ms694197) API 作为脉冲编码调制 (PCM) 缓冲区读入 .wav 音频文件。
+此方法使用[媒体基础](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk) API 作为脉冲编码调制 (PCM) 缓冲区读入 .wav 音频文件。
 
 #### <a name="set-up-the-source-reader"></a>设置源读取器
 
-1. 使用[MFCreateSourceReaderFromURL](https://msdn.microsoft.com/library/windows/desktop/dd388110)若要创建媒体源读取器 ([IMFSourceReader](https://msdn.microsoft.com/library/windows/desktop/dd374655))。
-2. 使用[MFCreateMediaType](https://msdn.microsoft.com/library/windows/desktop/ms693861)若要创建的媒体类型 ([IMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms704850)) 对象 (_mediaType_)。 它表示媒体格式的说明。 
+1. 使用[MFCreateSourceReaderFromURL](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-mfcreatesourcereaderfromurl)若要创建媒体源读取器 ([IMFSourceReader](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nn-mfreadwrite-imfsourcereader))。
+2. 使用[MFCreateMediaType](https://docs.microsoft.com/windows/desktop/api/mfapi/nf-mfapi-mfcreatemediatype)若要创建的媒体类型 ([IMFMediaType](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfmediatype)) 对象 (_mediaType_)。 它表示媒体格式的说明。 
 3. 指定的_mediaType_解码的输出是 PCM 音频，这是一个音频类型__XAudio2__可以使用。
-4. 集的已解码的输出媒体类型的源读取器通过调用[IMFSourceReader::SetCurrentMediaType](https://msdn.microsoft.com/library/windows/desktop/dd374667.aspx)。
+4. 集的已解码的输出媒体类型的源读取器通过调用[IMFSourceReader::SetCurrentMediaType](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-setcurrentmediatype)。
 
-我们为什么使用源读取器的详细信息，请转到[源读取器](https://msdn.microsoft.com/library/windows/desktop/dd940436.aspx)。
+我们为什么使用源读取器的详细信息，请转到[源读取器](https://docs.microsoft.com/windows/desktop/medfound/source-reader)。
 
 #### <a name="describe-the-data-format-of-the-audio-stream"></a>描述数据格式的音频流
 
-1. 使用[IMFSourceReader::GetCurrentMediaType](https://msdn.microsoft.com/library/windows/desktop/dd374660)的流中获取当前的媒体类型。
-2. 使用[IMFMediaType::MFCreateWaveFormatExFromMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms702177)要转换到当前的音频媒体类型[WAVEFORMATEX](https://msdn.microsoft.com/library/windows/hardware/ff538799)缓冲区，使用早期的操作的结果作为输入。 此结构指定 wave 音频流后加载音频时使用的数据格式。 
+1. 使用[IMFSourceReader::GetCurrentMediaType](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-getcurrentmediatype)的流中获取当前的媒体类型。
+2. 使用[IMFMediaType::MFCreateWaveFormatExFromMFMediaType](https://docs.microsoft.com/windows/desktop/api/mfapi/nf-mfapi-mfcreatewaveformatexfrommfmediatype)要转换到当前的音频媒体类型[WAVEFORMATEX](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)缓冲区，使用早期的操作的结果作为输入。 此结构指定 wave 音频流后加载音频时使用的数据格式。 
 
-__WAVEFORMATEX__格式可用于描述 PCM 缓冲区。 相比[WAVEFORMATEXTENSIBLE](https://msdn.microsoft.com/library/windows/hardware/ff538802)结构，它仅可用于描述波形音频格式的子集。 有关详细信息之间的差异__WAVEFORMATEX__并__WAVEFORMATEXTENSIBLE__，请参阅[可扩展波形格式说明符](https://docs.microsoft.com/windows-hardware/drivers/audio/extensible-wave-format-descriptors)。
+__WAVEFORMATEX__格式可用于描述 PCM 缓冲区。 相比[WAVEFORMATEXTENSIBLE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)结构，它仅可用于描述波形音频格式的子集。 有关详细信息之间的差异__WAVEFORMATEX__并__WAVEFORMATEXTENSIBLE__，请参阅[可扩展波形格式说明符](https://docs.microsoft.com/windows-hardware/drivers/audio/extensible-wave-format-descriptors)。
 
 #### <a name="read-the-audio-stream"></a>读取的音频流
 
-1.  获取的持续时间，以秒为单位，通过调用的音频流[IMFSourceReader::GetPresentationAttribute](https://msdn.microsoft.com/library/windows/desktop/dd374662) ，然后将持续时间转换为字节。
-2.  读取流的形式中的音频文件，通过调用[IMFSourceReader::ReadSample](https://msdn.microsoft.com/library/windows/desktop/dd374665)。 __ReadSample__从媒体源中读取下一个示例。
-3.  使用[IMFSample::ConvertToContiguousBuffer](https://msdn.microsoft.com/library/windows/desktop/ms698917.aspx)音频采样缓冲区的内容复制 (_示例_) 到一个数组 (_mediaBuffer_)。
+1.  获取的持续时间，以秒为单位，通过调用的音频流[IMFSourceReader::GetPresentationAttribute](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-getpresentationattribute) ，然后将持续时间转换为字节。
+2.  读取流的形式中的音频文件，通过调用[IMFSourceReader::ReadSample](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-readsample)。 __ReadSample__从媒体源中读取下一个示例。
+3.  使用[IMFSample::ConvertToContiguousBuffer](https://docs.microsoft.com/windows/desktop/api/mfobjects/nf-mfobjects-imfsample-converttocontiguousbuffer)音频采样缓冲区的内容复制 (_示例_) 到一个数组 (_mediaBuffer_)。
 
 ```cpp
 Platform::Array<byte>^ MediaReader::LoadMedia(_In_ Platform::String^ filename)
@@ -342,8 +342,8 @@ void SoundEffect::Initialize(
 ### <a name="soundeffectplaysound-method"></a>SoundEffect::PlaySound 方法
 
 * 使用源语音对象**m\_sourceVoice**若要开始播放的声音数据缓冲区**m\_soundData**
-* 创建[XAUDIO2\_缓冲区](https://msdn.microsoft.com/library/windows/desktop/ee419228)到它提供对声音数据缓冲区的引用的其中，然后将其提交到调用[IXAudio2SourceVoice::SubmitSourceBuffer](https://msdn.microsoft.com/library/windows/desktop/ee418473)。 
-* 使用声音数据排队等候， **SoundEffect::PlaySound**开始播放通过调用[IXAudio2SourceVoice::Start](https://msdn.microsoft.com/library/windows/desktop/ee418471)。
+* 创建[XAUDIO2\_缓冲区](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_buffer)到它提供对声音数据缓冲区的引用的其中，然后将其提交到调用[IXAudio2SourceVoice::SubmitSourceBuffer](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2sourcevoice-submitsourcebuffer)。 
+* 使用声音数据排队等候， **SoundEffect::PlaySound**开始播放通过调用[IXAudio2SourceVoice::Start](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2sourcevoice-start)。
 
 ```cpp
 void SoundEffect::PlaySound(_In_ float volume)
@@ -457,9 +457,9 @@ void Simple3DGame::UpdateDynamics()
 
 ## <a name="audio-concepts"></a>音频概念
 
-对于 Windows 10 游戏开发，使用 XAudio2 版本为 2.9。 此版本随附于 Windows 10。 有关详细信息，请转到[XAudio2 版本](https://msdn.microsoft.com/library/windows/desktop/ee415802.aspx)。
+对于 Windows 10 游戏开发，使用 XAudio2 版本为 2.9。 此版本随附于 Windows 10。 有关详细信息，请转到[XAudio2 版本](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-versions)。
 
-__AudioX2__是信号处理和混合 foundation 提供了一个低级别 API。 有关详细信息，请参阅[XAudio2 的基础概念](https://msdn.microsoft.com/library/windows/desktop/ee415764.aspx)。
+__AudioX2__是信号处理和混合 foundation 提供了一个低级别 API。 有关详细信息，请参阅[XAudio2 的基础概念](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-key-concepts)。
 
 ### <a name="xaudio2-voices"></a>XAudio2 语音
 
@@ -473,13 +473,13 @@ __AudioX2__是信号处理和混合 foundation 提供了一个低级别 API。 �
 
 ### <a name="audio-graph"></a>音频图形
 
-音频图形是一系列[XAudio2 语音](/windows/desktop/xaudio2/xaudio2-voices)。 音频开始在源语音在音频图形的一侧，根据需要通过一个或多个 submix 语音，并结束于掌握语音。 音频图形将包含当前正在播放，零个或多个 submix 语音，每个声音的源语音和掌握语音。 最简单的音频图形和 XAudio2，在发出任何声音所需的最低要求是单个源语音输出直接到掌握语音。 有关详细信息，请转到[音频图形](https://msdn.microsoft.com/library/windows/desktop/ee415739.aspx)。
+音频图形是一系列[XAudio2 语音](/windows/desktop/xaudio2/xaudio2-voices)。 音频开始在源语音在音频图形的一侧，根据需要通过一个或多个 submix 语音，并结束于掌握语音。 音频图形将包含当前正在播放，零个或多个 submix 语音，每个声音的源语音和掌握语音。 最简单的音频图形和 XAudio2，在发出任何声音所需的最低要求是单个源语音输出直接到掌握语音。 有关详细信息，请转到[音频图形](https://docs.microsoft.com/windows/desktop/xaudio2/audio-graphs)。
 
 ### <a name="additional-reading"></a>其他阅读材料
 
-* [How to:初始化 XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx)
-* [How to:加载中 XAudio2 音频数据文件](https://msdn.microsoft.com/library/windows/desktop/ee415781(v=vs.85).aspx)
-* [How to:播放声音，XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415787.aspx)
+* [如何：Initialize XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--initialize-xaudio2)
+* [如何：加载中 XAudio2 音频数据文件](https://msdn.microsoft.com/library/windows/desktop/ee415781(v=vs.85).aspx)
+* [如何：播放声音，XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--play-a-sound-with-xaudio2)
 
 ## <a name="key-audio-h-files"></a>密钥音频.h 文件
 

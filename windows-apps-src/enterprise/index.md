@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fae4d5b57ac5cfb5c47fca1a2f3476cd16a56534
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a44a1adb8685ad182620b4c68024176628b9204d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582132"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369658"
 ---
 # <a name="enterprise"></a>企业
 
@@ -102,9 +102,9 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司�
 
 | 主题 | 描述 |
 |-------|-------------|
-| [安全 Windows 应用开发简介](https://msdn.microsoft.com/library/windows/apps/mt622741) | 本入门文章介绍各个身份验证阶段、未送达数据和静止数据的各种 Windows 安全功能。 它还介绍如何将这些阶段集成到应用中。 它涵盖了大量主题，主要目的是帮助应用架构师更好地了解可使创建通用 Windows 平台应用变得快捷的 Windows 功能。 |
-| [身份验证和用户标识](https://msdn.microsoft.com/library/windows/apps/mt270184) | 对于本文中所述的用户身份验证，UWP 应用具有多个选项。 对于企业，强烈建议使用新的 Microsoft Passport 功能。 Microsoft Passport 使用强双因素身份验证 (2FA) 来替换密码，方法是验证现有凭据和创建一个受用户手势（基于生物识别或 PIN）保护的特定于设备的凭据，从而创造既便利又高度安全的体验。 |
-| [加密](https://msdn.microsoft.com/library/windows/apps/mt270191) | 加密部分概述 UWP 应用可用的加密功能。 文章的范围从有关如何轻松加密敏感业务数据的初级操作实例，一直到操作加密密钥以及使用 MAC、哈希和签名等高级主题。 |
+| [安全 Windows 应用开发简介](https://docs.microsoft.com/windows/uwp/security/intro-to-secure-windows-app-development) | 本入门文章介绍各个身份验证阶段、未送达数据和静止数据的各种 Windows 安全功能。 它还介绍如何将这些阶段集成到应用中。 它涵盖了大量主题，主要目的是帮助应用架构师更好地了解可使创建通用 Windows 平台应用变得快捷的 Windows 功能。 |
+| [身份验证和用户标识](https://docs.microsoft.com/windows/uwp/security/authentication-and-user-identity) | 对于本文中所述的用户身份验证，UWP 应用具有多个选项。 对于企业，强烈建议使用新的 Microsoft Passport 功能。 Microsoft Passport 使用强双因素身份验证 (2FA) 来替换密码，方法是验证现有凭据和创建一个受用户手势（基于生物识别或 PIN）保护的特定于设备的凭据，从而创造既便利又高度安全的体验。 |
+| [加密](https://docs.microsoft.com/windows/uwp/security/cryptography) | 加密部分概述 UWP 应用可用的加密功能。 文章的范围从有关如何轻松加密敏感业务数据的初级操作实例，一直到操作加密密钥以及使用 MAC、哈希和签名等高级主题。 |
 | [Windows 信息保护 (WIP)](wip-hub.md) | 此中心主题涉及关于 Windows 信息保护 (EDP) 与文件、缓冲区、剪贴板、网络、后台任务以及锁屏下的数据保护有何关联的完整开发人员蓝图。 |
 
 ## <a name="data-binding-and-databases"></a>数据绑定和数据库
@@ -113,8 +113,8 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司�
 
 | 主题 | 描述 |
 |-------|-------------|
-| [数据绑定概述](https://msdn.microsoft.com/library/windows/apps/mt269383) | 本主题介绍了如何在通用 Windows 平台 (UWP) 应用中将控件（或其他 UI 元素）绑定到单个项目，或者将项目控件绑定到项目集合。 此外，它还介绍了如何控制项的呈现、基于所选内容实现详细信息视图，以及转换数据以供显示。 |
-| [面向 UWP 的 Entity Framework 7](https://msdn.microsoft.com/library/windows/apps/mt592863) | 针对大数据集执行复杂查询通过使用 Entity Framework 7（支持 UWP）得到了大幅简化。 在本操作实例中，你将生成一个使用 Entity Framework 针对本地 SQLite 数据库执行基本数据访问的 UWP 应用。 |
+| [数据绑定概述](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart) | 本主题介绍了如何在通用 Windows 平台 (UWP) 应用中将控件（或其他 UI 元素）绑定到单个项目，或者将项目控件绑定到项目集合。 此外，它还介绍了如何控制项的呈现、基于所选内容实现详细信息视图，以及转换数据以供显示。 |
+| [面向 UWP 的 Entity Framework 7](https://docs.microsoft.com/windows/uwp/data-access/entity-framework-7-with-sqlite-for-csharp-apps) | 针对大数据集执行复杂查询通过使用 Entity Framework 7（支持 UWP）得到了大幅简化。 在本操作实例中，你将生成一个使用 Entity Framework 针对本地 SQLite 数据库执行基本数据访问的 UWP 应用。 |
 | [SQLite 本地数据库](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | 本视频是使用 SQLite（本地应用数据库的建议解决方案）的全面开发人员指南。 请访问 [SQLite](https://www.sqlite.org/download.html) 以下载适用于 UWP 的最新版本，或使用已经与 Windows 10 SDK 一起提供的版本。 |
 
 ## <a name="networking-and-data-serialization"></a>网络和数据序列化
@@ -123,10 +123,10 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司�
 
 | 主题 | 描述 |
 |-------|-------------|
-| [网络基础知识](https://msdn.microsoft.com/library/windows/apps/mt280233) | 本操作实例介绍与所有 UWP 应用相关的基本网络概念，不考虑使用何种通信协议。  |
-| [选择哪一种网络技术？](https://msdn.microsoft.com/library/windows/apps/mt280235) | 适用于 UWP 应用的网络技术的简短概述，以及关于如何选择最适合自己应用的技术的建议。 |
-| [XML 和 SOAP 序列化](https://msdn.microsoft.com/library/90c86ass.aspx) | XML 序列化将对象转换为符合特定的 XML 架构定义语言 (XSD) 的 XML 流。 若要在 XML 和强类型的类之间进行转换，可以使用本机 [XDocument](https://msdn.microsoft.com/library/system.xml.linq.xdocument.aspx) 类或外部库。 |
-| [JSON 序列化](https://msdn.microsoft.com/library/windows/apps/br240639) | JSON（JavaScript 对象表示法）序列化是用于与 REST API 进行通信的流行格式。 [Newtonsoft Json.NET](https://www.newtonsoft.com/json)，在 UWP 应用中受到完全支持。 |
+| [网络基础知识](https://docs.microsoft.com/windows/uwp/networking/networking-basics) | 本操作实例介绍与所有 UWP 应用相关的基本网络概念，不考虑使用何种通信协议。  |
+| [选择哪一种网络技术？](https://docs.microsoft.com/windows/uwp/networking/which-networking-technology) | 适用于 UWP 应用的网络技术的简短概述，以及关于如何选择最适合自己应用的技术的建议。 |
+| [XML 和 SOAP 序列化](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | XML 序列化将对象转换为符合特定的 XML 架构定义语言 (XSD) 的 XML 流。 若要在 XML 和强类型的类之间进行转换，可以使用本机 [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument?redirectedfrom=MSDN) 类或外部库。 |
+| [JSON 序列化](https://docs.microsoft.com/uwp/api/Windows.Data.Json) | JSON（JavaScript 对象表示法）序列化是用于与 REST API 进行通信的流行格式。 [Newtonsoft Json.NET](https://www.newtonsoft.com/json)，在 UWP 应用中受到完全支持。 |
 
 ## <a name="devices"></a>设备
 
@@ -134,9 +134,9 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司�
 
 | 主题  | 描述 |
 |--------|-------------|
-| [枚举设备](https://msdn.microsoft.com/library/windows/apps/mt187355) | 本文介绍如何使用 [Windows.Devices.Enumeration](https://msdn.microsoft.com/library/windows/apps/br225459) 命名空间找到内部连接到系统的、外部连接的或通过无线或网络协议可检测到的设备。 如果你要生成任何使用设备的应用，请从此处开始。 |
-| [打印和扫描](https://msdn.microsoft.com/library/windows/apps/mt204544) | 介绍了如何从应用打印和扫描，包括连接到和使用业务设备，如销售点 (POS) 系统、收据打印机和高容量送纸扫描仪。 |
-| [蓝牙](https://msdn.microsoft.com/library/windows/apps/mt270288) | 除了将传统蓝牙连接用于发送和接收数据或控制设备外，Windows 10 还支持使用低耗电蓝牙 (BTLE) 在后台发送或接收信号。 使用此功能在用户接近或离开特定位置时显示通知或启用功能。 |
+| [枚举设备](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices) | 本文介绍如何使用 [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) 命名空间找到内部连接到系统的、外部连接的或通过无线或网络协议可检测到的设备。 如果你要生成任何使用设备的应用，请从此处开始。 |
+| [打印和扫描](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning) | 介绍了如何从应用打印和扫描，包括连接到和使用业务设备，如销售点 (POS) 系统、收据打印机和高容量送纸扫描仪。 |
+| [蓝牙](https://docs.microsoft.com/windows/uwp/devices-sensors/bluetooth) | 除了将传统蓝牙连接用于发送和接收数据或控制设备外，Windows 10 还支持使用低耗电蓝牙 (BTLE) 在后台发送或接收信号。 使用此功能在用户接近或离开特定位置时显示通知或启用功能。 |
 | [企业共享存储](enterprise-shared-storage.md) | 在设备锁定方案中，了解数据可如何在相同应用、应用的实例之间甚至是在应用之间共享。 |
 
 ## <a name="device-targeting"></a>设备定位
@@ -145,7 +145,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司�
 
 | 主题 | 描述 |
 |-------|-------------|
-| [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631) | 在此初级指南中，你将熟悉 Windows 10 UWP 平台，包括：什么是设备系列和如何决定要面向哪个设备、可使你针对不同设备外形规格改编 UI 的新 UI 控件和面板以及如何了解和控制适用于应用的 API 图面。 |
+| [UWP 应用指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) | 在此初级指南中，你将熟悉 Windows 10 UWP 平台，包括：什么是设备系列和如何决定要面向哪个设备、可使你针对不同设备外形规格改编 UI 的新 UI 控件和面板以及如何了解和控制适用于应用的 API 图面。 |
 | [自适应 XAML UI 代码示例](https://go.microsoft.com/fwlink/p/?LinkId=619992) | 此代码示例展示了应用的所有可能的布局选项和控件，而不考虑设备类型，并允许你与面板交互以演示如何实现你需要的任何布局。 除了演示每个控件如何响应不同的外形规格外，应用本身也具有响应性，并显示实现自定义 UI 的各种方法。 |
 | [Xamarin 主题](/xamarin/) | 以手机为应用目标的 Xamarin |
 
@@ -155,7 +155,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司�
 
 | 主题 | 描述 |
 |-------|-------------|
-| [将 LOB 应用分配到企业](https://msdn.microsoft.com/library/windows/apps/mt608995) | 你可以通过适用于企业的 Microsoft Store 向企业直接发布业务线应用以获取批量购置，而无需将应用广泛提供给公众。 |
+| [将 LOB 应用分配到企业](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | 你可以通过适用于企业的 Microsoft Store 向企业直接发布业务线应用以获取批量购置，而无需将应用广泛提供给公众。 |
 | [旁加载应用](https://technet.microsoft.com/library/mt269549) | 当你旁加载应用时，你将一个已签名的应用包部署到设备。 你维护这些应用的签名、承载和部署。 旁加载应用的过程已在 Windows 10 中得到简化。             |
 | [将应用发布到 Microsoft Store](https://dev.windows.com/publish) | 利用统一的 Microsoft Store，你可以针对所有 Windows 设备发布和管理你的所有应用。 通过每个市场的定价、分配和可见性控件以及其他选项自定义应用的可用性。 |
 

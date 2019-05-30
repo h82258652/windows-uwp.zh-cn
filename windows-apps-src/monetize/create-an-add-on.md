@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建加载项, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: b358eecd1799e76573cf6d254a80e7a7971bc123
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 00eb1a865631ce51cfa065d27ed00b44c66a6757
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334165"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371258"
 ---
 # <a name="create-an-add-on"></a>创建加载项
 
@@ -20,7 +20,7 @@ ms.locfileid: "58334165"
 > [!NOTE]
 > 此方法无需任何提交即可创建加载项。 若要创建加载项提交，请参阅[管理加载项提交](manage-add-on-submissions.md)中的方法。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -50,7 +50,7 @@ ms.locfileid: "58334165"
 |  参数  |  在任务栏的搜索框中键入  |  描述  |  必需  |
 |------|------|------|------|
 |  applicationIds  |  数组  |  包含应用（与此加载项相关联）的应用商店 ID 的数组。 只有一个项在此数组中受支持。   |  是  |
-|  productId  |  string  |  加载项的产品 ID。 这是一个标识符，可在代码中用于引用加载项。 有关详细信息，请参阅[设置你的产品类型和产品 ID](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id)。  |  是  |
+|  productId  |  string  |  加载项的产品 ID。 这是一个标识符，可在代码中用于引用加载项。 有关详细信息，请参阅[设置你的产品类型和产品 ID](https://docs.microsoft.com/windows/uwp/publish/set-your-iap-product-id)。  |  是  |
 |  productType  |  string  |  加载项的产品类型。 支持以下值：**持久**并**可使用**。  |  是  |
 
 

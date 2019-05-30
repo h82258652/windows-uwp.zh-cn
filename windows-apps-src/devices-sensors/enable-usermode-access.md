@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: 442b3b9328212a5115384b5175b519b76286dd28
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f41bf9f56b63f59844bec976e9d6e5e3d650b271
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620302"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370272"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>启用 GPIO、I2C 和 SPI 的用户模式访问
 
@@ -41,7 +41,7 @@ Device(RHPX)
 * _CID – 兼容 ID。必须为“MSFT8000”。
 * _UID – 唯一 ID。设置为 1。
 
-接下来，声明应向用户模式公开的每个 GPIO 和 SPB 资源。 资源声明的顺序非常重要，因为使用资源索引将属性与资源关联起来。 如果存在多条公开的 I2C 或 SPI 总线，声明的第一条总线被视为该类型的“默认”总线，并且会是 [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) 和 [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx) 的 `GetDefaultAsync()` 方法返回的实例。
+接下来，声明应向用户模式公开的每个 GPIO 和 SPB 资源。 资源声明的顺序非常重要，因为使用资源索引将属性与资源关联起来。 如果存在多条公开的 I2C 或 SPI 总线，声明的第一条总线被视为该类型的“默认”总线，并且会是 [Windows.Devices.I2c.I2cController](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2ccontroller) 和 [Windows.Devices.Spi.SpiController](https://docs.microsoft.com/uwp/api/windows.devices.spi.spicontroller) 的 `GetDefaultAsync()` 方法返回的实例。
 
 ### <a name="spi"></a>SPI
 
@@ -156,10 +156,10 @@ Package(2) { "bus-SPI-SPI1", Package() { 2 }},
 #### <a name="spi-driver-requirements"></a>SPI 驱动程序要求
 
 * 必须使用 `SpbCx` 或与 SpbCx 兼容
-* 必须已通过 [MITT SPI 测试](https://msdn.microsoft.com/library/windows/hardware/dn919873.aspx)
+* 必须已通过 [MITT SPI 测试](https://docs.microsoft.com/windows-hardware/drivers/spb/spi-tests-in-mitt)
 * 必须支持 4Mhz 时钟速度
 * 必须支持 8 位数据长度
-* 必须支持所有 SPI 模式：0、 1、 2、 3
+* 必须支持所有 SPI 模式：0, 1, 2, 3
 
 ### <a name="i2c"></a>I2C
 
@@ -201,7 +201,7 @@ I2CSerialBus\(\) 描述符的以下字段是固定的：
 #### <a name="i2c-driver-requirements"></a>I2C 驱动程序要求
 
 * 必须使用 SpbCx 或与 SpbCx 兼容
-* 必须已通过 [MITT I2C 测试](https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx)
+* 必须已通过 [MITT I2C 测试](https://docs.microsoft.com/windows-hardware/drivers/spb/run-mitt-tests-for-an-i2c-controller-)
 * 必须支持 7 位寻址
 * 必须支持 100kHz 时钟速度
 * 必须支持 400kHz 时钟速度
@@ -228,7 +228,7 @@ GpioInt(Edge, ActiveBoth, Shared, PullUp, 0, “\\_SB.GPI0”,) { 5 }
 
 声明 GPIO 引脚时，必须遵守以下要求：
 
-* 仅支持内存映射的 GPIO 控制器。 通过 I2C/SPI 交互的 GPIO 控制器不受支持。 如果控制器驱动程序在 [CLIENT_CONTROLLER_BASIC_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/hh439358.aspx) 结构中设置 [MemoryMappedController](https://msdn.microsoft.com/library/windows/hardware/hh439449.aspx) 标志来响应 [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx) 回调，则它是内存映射的控制器。
+* 仅支持内存映射的 GPIO 控制器。 通过 I2C/SPI 交互的 GPIO 控制器不受支持。 如果控制器驱动程序在 [CLIENT_CONTROLLER_BASIC_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_client_controller_basic_information) 结构中设置 [MemoryMappedController](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_controller_attribute_flags) 标志来响应 [CLIENT_QueryControllerBasicInformation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information) 回调，则它是内存映射的控制器。
 * 每个引脚都需要 GpioIO 和 GpioInt 资源。 GpioInt 资源必须紧跟着 GpioIO 资源，并且必须引用相同的引脚编号。
 * 必须按升序引脚编号对 GPIO 资源进行排序。
 * 每个 GpioIO 和 GpioInt 资源都必须恰好包含引脚列表中的一个引脚编号。
@@ -282,7 +282,7 @@ Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 },
 Package (2) { “GPIO-PinCount”, 54 },
 ```
 
-**PinCount** 属性应与通过 `GpioClx` 驱动程序的 [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx) 回调中的 **TotalPins** 属性返回的值相匹配。
+**PinCount** 属性应与通过 `GpioClx` 驱动程序的 [CLIENT_QueryControllerBasicInformation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information) 回调中的 **TotalPins** 属性返回的值相匹配。
 
 选择与你的开发板的现有发布文档最兼容的编号方案。 例如，Raspberry Pi 使用本机引脚编号，因为许多现有的引出线图使用 BCM2835 引脚编号。 MinnowBoardMax 使用顺序引脚编号（因为有几个现有的引出线图），并且顺序引脚编号简化了开发人员体验（因为超过 200 个引脚中只公开了 10 个引脚）。 决定使用顺序引脚编号还是使用本机引脚编号应以减少开发人员混淆为目标。
 
@@ -331,9 +331,9 @@ Package(2) { "bus-UART-UART2", Package() { 2 }},
 
 引脚复用可以将同一物理引脚用于不同功能。 多个不同的芯片上外围设备（例如 I2C 控制器、SPI 控制器和 GPIO 控制器）可以路由到 SOC 上的同一物理引脚。 复用块控制哪项功能在任何给定时间在引脚上处于活动状态。 通常，固件负责在启动时建立功能分配，此分配通过启动会话保持静态。 运行时引脚复用允许在运行时重新配置引脚功能分配。 支持用户在运行时选择引脚的功能可加速开发（方法是支持用户快速重新配置开发板的引脚），同时使硬件可以支持范围更广的应用程序（相较于静态配置而言）。
 
-无需编写任何其他代码，用户就可以使用对 GPIO、I2C、SPI 和 UART 的复用支持。 当用户使用 [OpenPin\(\)](https://msdn.microsoft.com/library/dn960157.aspx) 或 [FromIdAsync\(\)](https://msdn.microsoft.com/windows.devices.i2c.i2cdevice.fromidasync) 打开 GPIO 或总线时，基础物理引脚会自动复用为请求的功能。 如果其他功能已在使用该引脚，OpenPin\(\) 或 FromIdAsync\(\) 调用将失败。 当用户通过释放 [GpioPin](https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.gpiopin.aspx)、[I2cDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2cdevice.aspx)、[SpiDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spidevice.aspx) 或 [SerialDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.serialcommunication.serialdevice.aspx) 对象关闭设备时，会释放引脚，从而允许它们稍后供其他功能打开。
+无需编写任何其他代码，用户就可以使用对 GPIO、I2C、SPI 和 UART 的复用支持。 当用户使用 [OpenPin\(\)](https://docs.microsoft.com/uwp/api/windows.devices.gpio.gpiocontroller.openpin) 或 [FromIdAsync\(\)](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2cdevice.fromidasync) 打开 GPIO 或总线时，基础物理引脚会自动复用为请求的功能。 如果其他功能已在使用该引脚，OpenPin\(\) 或 FromIdAsync\(\) 调用将失败。 当用户通过释放 [GpioPin](https://docs.microsoft.com/uwp/api/windows.devices.gpio.gpiopin)、[I2cDevice](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2cdevice)、[SpiDevice](https://docs.microsoft.com/uwp/api/windows.devices.spi.spidevice) 或 [SerialDevice](https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication.serialdevice) 对象关闭设备时，会释放引脚，从而允许它们稍后供其他功能打开。
 
-Windows 在 [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh439515.aspx)、[SpbCx](https://msdn.microsoft.com/library/windows/hardware/hh406203.aspx) 和 [SerCx](https://msdn.microsoft.com/library/windows/hardware/dn265349.aspx) 框架中包含对引脚复用的内置支持。 当访问 GPIO 引脚或总线时，这些框架协同工作，以自动将引脚切换到正确的功能。 仲裁对引脚的访问，以防止在多个客户端之间发生冲突。 除了此内置支持，适用于引脚复用的接口和协议是通用的，可以进行扩展以支持其他设备和方案。
+Windows 在 [GpioClx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)、[SpbCx](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension) 和 [SerCx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index) 框架中包含对引脚复用的内置支持。 当访问 GPIO 引脚或总线时，这些框架协同工作，以自动将引脚切换到正确的功能。 仲裁对引脚的访问，以防止在多个客户端之间发生冲突。 除了此内置支持，适用于引脚复用的接口和协议是通用的，可以进行扩展以支持其他设备和方案。
 
 本文档首先介绍引脚复用所涉及的基础接口和协议，然后介绍如何将对引脚复用的支持添加到 GpioClx、SpbCx 和 SerCx 控制器驱动程序。
 
@@ -353,8 +353,8 @@ Windows 在 [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh4395
 
 ![引脚复用客户端服务器交互](images/usermode-access-diagram-1.png)
 
-1. 客户端在其 [EvtDevicePrepareHardware\(\)](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 回调中从 ACPI 固件接收 MsftFunctionConfig 资源。
-2. 客户端使用资源中心帮助程序函数 `RESOURCE_HUB_CREATE_PATH_FROM_ID()` 从资源 ID 创建路径，然后打开路径句柄（使用 [ZwCreateFile\(\)](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx)、[IoGetDeviceObjectPointer\(\)](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx) 或 [WdfIoTargetOpen\(\)](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx)）。
+1. 客户端在其 [EvtDevicePrepareHardware\(\)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 回调中从 ACPI 固件接收 MsftFunctionConfig 资源。
+2. 客户端使用资源中心帮助程序函数 `RESOURCE_HUB_CREATE_PATH_FROM_ID()` 从资源 ID 创建路径，然后打开路径句柄（使用 [ZwCreateFile\(\)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)、[IoGetDeviceObjectPointer\(\)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer) 或 [WdfIoTargetOpen\(\)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetopen)）。
 3. 服务器使用资源中心帮助程序函数 `RESOURCE_HUB_ID_FROM_FILE_NAME()` 从文件路径提取资源中心 ID，然后查询资源中心以获取资源描述符。
 4. 服务器为描述符中的每个引脚执行共享仲裁，然后完成 IRP_MJ_CREATE 请求。
 5. 客户端在收到的句柄上发出 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 请求。
@@ -369,7 +369,7 @@ Windows 在 [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh4395
 
 #### <a name="parsing-resources"></a>解析资源
 
-WDF 驱动程序在其 [EvtDevicePrepareHardware\(\)](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 例程中接收 `MsftFunctionConfig()` 资源。 MsftFunctionConfig 资源可以由以下字段来标识：
+WDF 驱动程序在其 [EvtDevicePrepareHardware\(\)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 例程中接收 `MsftFunctionConfig()` 资源。 MsftFunctionConfig 资源可以由以下字段来标识：
 
 ```cpp
 CM_PARTIAL_RESOURCE_DESCRIPTOR::Type = CmResourceTypeConnection
@@ -504,7 +504,7 @@ NTSTATUS AcquireFunctionConfigResource (
 }
 ```
 
-驱动程序应该在它的其中一个上下文区域中存储 WDFIOTARGET，以便它可以稍后进行关闭。 当驱动程序准备释放复用配置时，它应该通过调用 [WdfObjectDelete\(\)](https://msdn.microsoft.com/library/windows/hardware/ff548734.aspx) 或 [WdfIoTargetClose\(\)](https://msdn.microsoft.com/library/windows/hardware/ff548586.aspx) 来关闭资源句柄（如果你打算重新使用 WDFIOTARGET）。
+驱动程序应该在它的其中一个上下文区域中存储 WDFIOTARGET，以便它可以稍后进行关闭。 当驱动程序准备释放复用配置时，它应该通过调用 [WdfObjectDelete\(\)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete) 或 [WdfIoTargetClose\(\)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetclose) 来关闭资源句柄（如果你打算重新使用 WDFIOTARGET）。
 
 ```cpp
     WdfObjectDelete(resourceHandle);
@@ -532,7 +532,7 @@ NTSTATUS AcquireFunctionConfigResource (
 
 如果共享仲裁失败，应使用 *STATUS_GPIO_INCOMPATIBLE_CONNECT_MODE* 完成请求。 如果共享仲裁成功，应使用 *STATUS_SUCCESS* 完成请求。
 
-请注意，应从 MsftFunctionConfig 描述符而不是从 [IrpSp-&gt;Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx) 中获取传入请求的共享模式。
+请注意，应从 MsftFunctionConfig 描述符而不是从 [IrpSp-&gt;Parameters.Create.ShareAccess](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create) 中获取传入请求的共享模式。
 
 #### <a name="handling-ioctlgpiocommitfunctionconfigpins-requests"></a>处理 IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS 请求
 
@@ -614,7 +614,7 @@ Device(I2C1)
 * CLIENT_ConnectFunctionConfigPins – 由 `GpioClx` 调用以命令微型端口驱动程序应用指定的复用配置。
 * CLIENT_DisconnectFunctionConfigPins – 由 `GpioClx` 调用以命令微型端口驱动程序恢复复用配置。
 
-有关这些例程的描述，请参阅 [GpioClx 事件回调函数](https://msdn.microsoft.com/library/windows/hardware/hh439464.aspx)。
+有关这些例程的描述，请参阅 [GpioClx 事件回调函数](https://docs.microsoft.com/previous-versions//hh439464(v=vs.85))。
 
 除了这两个新的 DDI，应针对引脚复用兼容性审核现有 DDI：
 
@@ -633,11 +633,11 @@ Device(I2C1)
 
 在设备初始化期间，`SpbCx` 和 `SerCx` 框架会解析作为硬件资源提供给设备的所有 `MsftFunctionConfig()` 资源。 然后 SpbCx/SerCx 按需获取和释放引脚复用资源。
 
-`SpbCx` 应用 pin muxing 配置中的其*IRP_MJ_CREATE*处理程序，只需调用客户端驱动程序之前[EvtSpbTargetConnect()](https://msdn.microsoft.com/library/windows/hardware/hh450818.aspx)回调。 如果无法应用复用配置，将不会调用控制器驱动程序的 `EvtSpbTargetConnect()` 回调。 因此，SPB 控制器驱动程序可能会假设在调用 `EvtSpbTargetConnect()` 时，引脚会复用为 SPB 功能。
+`SpbCx` 应用 pin muxing 配置中的其*IRP_MJ_CREATE*处理程序，只需调用客户端驱动程序之前[EvtSpbTargetConnect()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect)回调。 如果无法应用复用配置，将不会调用控制器驱动程序的 `EvtSpbTargetConnect()` 回调。 因此，SPB 控制器驱动程序可能会假设在调用 `EvtSpbTargetConnect()` 时，引脚会复用为 SPB 功能。
 
-`SpbCx` 将恢复 pin muxing 配置中的其*IRP_MJ_CLOSE*处理程序中的，紧靠调用控制器驱动程序[EvtSpbTargetDisconnect()](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx)回调。 结果是，每当外设驱动程序打开 SPB 控制器驱动程序的句柄时，引脚就会复用为 SPB 功能；当外设驱动程序关闭其句柄时，会复用回引脚。
+`SpbCx` 将恢复 pin muxing 配置中的其*IRP_MJ_CLOSE*处理程序中的，紧靠调用控制器驱动程序[EvtSpbTargetDisconnect()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect)回调。 结果是，每当外设驱动程序打开 SPB 控制器驱动程序的句柄时，引脚就会复用为 SPB 功能；当外设驱动程序关闭其句柄时，会复用回引脚。
 
-`SerCx` 行为类似。 `SerCx` 获取所有`MsftFunctionConfig()`中的资源及其*IRP_MJ_CREATE*处理程序之前调用控制器驱动程序[EvtSerCx2FileOpen()](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx)回调，并释放其 IRP_MJ_CLOSE 中的所有资源处理程序中的，紧靠调用控制器驱动程序[EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx)回调。
+`SerCx` 行为类似。 `SerCx` 获取所有`MsftFunctionConfig()`中的资源及其*IRP_MJ_CREATE*处理程序之前调用控制器驱动程序[EvtSerCx2FileOpen()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen)回调，并释放其 IRP_MJ_CLOSE 中的所有资源处理程序中的，紧靠调用控制器驱动程序[EvtSerCx2FileClose](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose)回调。
 
 适用于 `SerCx` 和 `SpbCx` 控制器驱动程序的动态引脚复用的含义就是：它们必须能够容忍在某些时候从 SPB/UART 功能复用回引脚。 控制器驱动程序需要假设：在调用 `EvtSpbTargetConnect()` 或 `EvtSerCx2FileOpen()` 之前，不会复用引脚。 在以下回调期间，引脚不必复用为 SPB/UART 功能。 以下列表虽然不完整，但呈现了控制器驱动程序所实现的最常用 PNP 例程。
 
@@ -800,7 +800,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 
 使用下面的示例验证从 UWP 工作的设备。
 
-| 示例 | Link |
+| 示例 | 链接 |
 |------|------|
 | IoT-GPIO | https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-GPIO |
 | IoT-I2C | https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-I2C |
@@ -835,7 +835,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 
 ## <a name="resources"></a>资源
 
-| 目标 | Link |
+| 目标 | 链接 |
 |-------------|------|
 | ACPI 5.0 规范 | http://acpi.info/spec.htm |
 | Asl.exe（Microsoft ASL 编译器） | https://msdn.microsoft.com/library/windows/hardware/dn551195.aspx |

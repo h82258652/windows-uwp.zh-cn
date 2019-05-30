@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建外部测试版
 ms.localizationpriority: medium
-ms.openlocfilehash: af5ffe0dd72f0c3aae21a2dc522b469358626bab
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0c71dfc05bf2f283652087620848396b731871cd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603452"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371966"
 ---
 # <a name="create-a-package-flight"></a>创建软件包外部测试版
 
@@ -20,7 +20,7 @@ ms.locfileid: "57603452"
 > [!NOTE]
 > 此方法无需任何提交即可创建软件包外部测试版。 若要创建软件包外部测试版的提交，请参阅[管理软件包外部测试版提交](manage-flight-submissions.md)中的方法。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -33,21 +33,21 @@ ms.locfileid: "57603452"
 
 | 方法 | 请求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights``` |
+| 发布    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights``` |
 
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 
 ### <a name="request-parameters"></a>请求参数
 
 | 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字符串 | 必需。 要创建软件包外部测试版的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
+| applicationId | string | 必需。 要创建软件包外部测试版的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -56,9 +56,9 @@ ms.locfileid: "57603452"
 
 |  参数  |  在任务栏的搜索框中键入  |  描述  |  必需  |
 |------|------|------|------|
-|  friendlyName  |  字符串  |  软件包外部测试版的名称，如开发人员所指定。  |  否  |
-|  groupIds  |  数组  |  包含与软件包外部测试版关联的外部测试版组 ID 的字符串数组。 有关外部测试版组的详细信息，请参阅[软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。  |  否  |
-|  rankHigherThan  |  字符串  |  排名紧跟在当前软件包外部测试版之后的软件包外部测试版的友好名称。 如果未设置此参数，新软件包外部测试版在所有软件包外部测试版中排名最高。 有关排名的外部测试版组的详细信息，请参阅 [软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。    |  否  |
+|  friendlyName  |  string  |  软件包外部测试版的名称，如开发人员所指定。  |  否  |
+|  groupIds  |  数组  |  包含与软件包外部测试版关联的外部测试版组 ID 的字符串数组。 有关外部测试版组的详细信息，请参阅[软件包外部测试版](https://docs.microsoft.com/windows/uwp/publish/package-flights)。  |  否  |
+|  rankHigherThan  |  string  |  排名紧跟在当前软件包外部测试版之后的软件包外部测试版的友好名称。 如果未设置此参数，新软件包外部测试版在所有软件包外部测试版中排名最高。 有关排名的外部测试版组的详细信息，请参阅 [软件包外部测试版](https://docs.microsoft.com/windows/uwp/publish/package-flights)。    |  否  |
 
 
 ### <a name="request-example"></a>请求示例
@@ -98,10 +98,10 @@ Content-Type: application/json
 
 | 值      | 在任务栏的搜索框中键入   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightId            | 字符串  | 软件包外部测试版的 ID。 通过合作伙伴中心提供此值。  |
-| friendlyName           | 字符串  | 软件包外部测试版的名称，如请求中所指定。   |  
-| groupIds           | 数组  | 包含与软件包外部测试版关联的外部测试版组 ID 的字符串数组，如请求中所指定。 有关外部测试版组的详细信息，请参阅[软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。   |
-| rankHigherThan           | 字符串  | 排名紧跟在当前软件包外部测试版之后的软件包外部测试版的友好名称，如请求中所指定。 有关排名的外部测试版组的详细信息，请参阅 [软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。  |
+| flightId            | string  | 软件包外部测试版的 ID。 通过合作伙伴中心提供此值。  |
+| friendlyName           | string  | 软件包外部测试版的名称，如请求中所指定。   |  
+| groupIds           | 数组  | 包含与软件包外部测试版关联的外部测试版组 ID 的字符串数组，如请求中所指定。 有关外部测试版组的详细信息，请参阅[软件包外部测试版](https://docs.microsoft.com/windows/uwp/publish/package-flights)。   |
+| rankHigherThan           | string  | 排名紧跟在当前软件包外部测试版之后的软件包外部测试版的友好名称，如请求中所指定。 有关排名的外部测试版组的详细信息，请参阅 [软件包外部测试版](https://docs.microsoft.com/windows/uwp/publish/package-flights)。  |
 
 
 ## <a name="error-codes"></a>错误代码

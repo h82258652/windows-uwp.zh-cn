@@ -5,12 +5,12 @@ keywords: 最近更新, 更新, 功能, 新增, Windows 10, 1709, 10 月, 最新
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d2a4e657d9fe574131625b2ab2374700dc59cdf
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: bf9b6461bb3f1783be2157cde2f89462d0480099
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984142"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372885"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>面向开发人员的 Windows 10 版本 16299 中的最近更新
 
@@ -40,7 +40,7 @@ UI 控件 | 使用这些新控件能够更快速轻松地构建美观的 UI。 <
 游戏广播 |  **[Windows.Media.AppBroadcasting](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting)** 命名空间中的新 API 允许应用启动系统提供的游戏广播 UI。 </br>你也可以登记通知应用广播何时开始或停止的事件。 使用 **[Windows.Media.AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording)** 命名空间中的新 API，你可以录制音频和视频并且捕获游戏截图。 </br>你也可以提供系统将嵌入广播和捕获流中的元数据，以便应用提供与游戏事件同步的查看体验。 有关这些功能的更多信息，请参阅[游戏广播和捕获](../gaming/game-broadcast-and-capture.md)。
 游戏聊天覆盖 | [GameChatOverlay 类](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamechatoverlay)提供了用于获取默认游戏聊天覆盖实例、设置希望的覆盖位置以及添加消息的方法。
 游戏设备信息 | 由于控制台的功能不同，通用 Windows 平台 (UWP) 的游戏开发人员需要通过某种方法确定运行游戏的控制台类型，以便在运行时选择充分利用硬件的方式。  **&lt;gamingdeviceinformation.h&gt;** 中的[游戏设备信息](https://aka.ms/gamingdeviceinfo) API 具有此项功能。
-游戏模式 | 适用于通用 Windows 平台 (UWP) 的[游戏模式](https://msdn.microsoft.com/library/windows/desktop/mt808808) API 让你可以利用 Windows 10 中的游戏模式产生最优化的游戏体验。 这些 API 位于 **&lt;expandedresources.h&gt;** 标头中。
+游戏模式 | 适用于通用 Windows 平台 (UWP) 的[游戏模式](https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal) API 让你可以利用 Windows 10 中的游戏模式产生最优化的游戏体验。 这些 API 位于 **&lt;expandedresources.h&gt;** 标头中。
 游戏监视器 | [GameMonitor 类](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamemonitor)允许应用获取设备的游戏监视权限状态，并且可能会提示用户启用游戏监视。
 TruePlay | [TruePlay](https://aka.ms/trueplay) 为开发人员提供一组反电脑游戏作弊技术的新工具。 加入 TruePlay 的游戏将在受保护的程序中运行，减少了常见的攻击类型。 适用于通用 Windows 平台 (UWP) 的 TruePlay API 允许 Windows 10 电脑上的游戏以及游戏监视系统之间进行有限的交互。 这些 API 位于 **&lt;gamemonitor.h&gt;** 标头中。
 Xbox Live | 我们添加了面向 Xbox Live 开发人员、适用于 UWP 和 Xbox 开发人员工具包 (XDK) 游戏的文档。 </br>* 请参阅 [Xbox Live 开发人员指南](https://docs.microsoft.com/gaming/xbox-live//index.md)以了解如何使用 Xbox Live API 将你的游戏连接到 Xbox Live 社交游戏网络。 </br>* 借助 [Xbox Live 创意者计划](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)，任何 UWP 游戏开发人员都可以在电脑和 Xbox One 上开发和发布支持 Xbox Live 的游戏。 </br>* 请参阅 [Xbox Live 开发人员计划概述](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md)，获取有关 Xbox Live 开发人员可用程序和功能的信息。
@@ -56,7 +56,7 @@ Xbox Live | 我们添加了面向 Xbox Live 开发人员、适用于 UWP 和 Xbo
 Cortana | 使用 [Cortana 技能工具包](https://docs.microsoft.com/cortana/skills/overview)添加和测试技能，以便扩展 Cortana 的自然功能并使之与你的应用和服务交互。
 桌面桥 | 我们添加了三个指南，帮助你将现代化体验带入 Windows 10 上的桌面应用程序： </br>* [增强适用于 Windows 10 桌面应用程序](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)指导来找到并引用正确的文件，然后编写代码更好的 Windows 10 用户的 UWP 体验。 </br></br>* [扩展桌面应用程序的与现代 UWP 组件](/windows/apps/desktop/modernize/desktop-to-uwp-extend)合并现代的 XAML Ui 和其他必须在 UWP 应用容器中运行的 UWP 体验。 </br></br>* [应用程序迁移到通用 Windows 平台](/windows/apps/desktop/modernize/desktop-to-uwp-migrate)WPF、 Windows 窗体、 UWP、 Android 和 iOS 应用程序之间共享代码。
 桌面桥打包 | Visual Studio 引入了新的[打包项目](../porting/desktop-to-uwp-packaging-dot-net.md)，能够消除在打包完全受信任的桌面应用程序时必需的所有手动步骤。 只需添加打包项目，参考桌面项目，再按 F5 进行应用调试。 无需手动调整。 相比于使用以往版本的 Visual Studio 的体验，新的简洁体验是一个巨大的改进。
-诊断和线程处理 | 新的诊断 API 提供运行应用的相关信息： </br></br>* [AppMemoryReport](https://docs.microsoft.com/uwp/api/Windows.System.AppMemoryReport) 类提供应用预计总提交限制、私有提交使用等信息。 </br>* [AppDiagnosticInfo](https://docs.microsoft.com/uwp/api/windows.system.appdiagnosticinfo) 类现在可以监视应用或任务的执行状态，并且在执行状态改变时发出通知。 </br>* [MemoryManager](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) 类提供了若干新的方法，能够设置应用内存使用限制并报告预计的应用内存使用限制。 </br></br>你可以按优先顺序排列任务，并且使用 [DispatcherQueue](https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueue) 类在不同的线程上运行任务。 通过 [CreateDispatcherQueueController](https://msdn.microsoft.com/library/windows/desktop/mt826210.aspx) 函数，在 Win32 中也可以使用此项功能。
+诊断和线程处理 | 新的诊断 API 提供运行应用的相关信息： </br></br>* [AppMemoryReport](https://docs.microsoft.com/uwp/api/Windows.System.AppMemoryReport) 类提供应用预计总提交限制、私有提交使用等信息。 </br>* [AppDiagnosticInfo](https://docs.microsoft.com/uwp/api/windows.system.appdiagnosticinfo) 类现在可以监视应用或任务的执行状态，并且在执行状态改变时发出通知。 </br>* [MemoryManager](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) 类提供了若干新的方法，能够设置应用内存使用限制并报告预计的应用内存使用限制。 </br></br>你可以按优先顺序排列任务，并且使用 [DispatcherQueue](https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueue) 类在不同的线程上运行任务。 通过 [CreateDispatcherQueueController](https://docs.microsoft.com/windows/desktop/api/dispatcherqueue/nf-dispatcherqueue-createdispatcherqueuecontroller) 函数，在 Win32 中也可以使用此项功能。
 EdgeHTML 16 | 支持 Microsoft Edge 以及基于 JS 的通用 Windows 平台的 Web 平台已更新到 EdgeHTML 16，并且现在加入对 F12 开发人员工具、CSS 网格布局支持以及其他重要功能的重大改进。 </br></br> * Microsoft Edge 中现在支持 [CSS 网格布局](https://docs.microsoft.com/microsoft-edge/dev-guide/css/grid-layout)。 网格布局是一种基于网格的二维布局系统，比使用浮点或脚本定位更能够实现良好的布局流度。</br></br> * 更新了 [Microsoft Edge F12 DevTools 文档](https://docs.microsoft.com/microsoft-edge/f12-devtools-guide)，提高了可靠性和性能。 添加了新功能，以优化你的开发体验。 </br></br>* 仅 Microsoft Edge 中的 [WebVR](https://docs.microsoft.com/microsoft-edge/webvr/) 添加了对[运动控制器](https://docs.microsoft.com/microsoft-edge/webvr/input#controller-buttons)以及各种 [Windows Mixed Reality 头戴显示设备](https://docs.microsoft.com/microsoft-edge/webvr/hardware)的支持。 WebVR 也已经过优化，每秒最多可支持 90 帧。 </br></br> 请参阅 [Microsoft Edge 开发人员指南](https://docs.microsoft.com/microsoft-edge/dev-guide)获取完整的更改以及受支持的最新 API 的列表。
 3D 地图元素 | 你可以在地图中添加三维对象。 你可以使用新的 [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) 类从 [3D 制造格式 (3MF)](https://3mf.io/specification/) 文件中导入 3D 对象。
 地图元素样式 | 您可以使用两个新自定义地图元素的外观[MapElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement)属性：[MapStyleSheetEntry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.MapStyleSheetEntry)，并[MapStyleSheetEntryState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.MapStyleSheetEntryState)。 </br></br>* 你可以使用 [MapStyleSheetEntry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.MapStyleSheetEntry) 属性使得地图元素看起来是底图的一部分（比如，通过将元素样式设置为地图样式表中的现有输入，比如 *Water*）。 </br></br>* 你可以使用 [MapStyleSheetEntryState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.MapStyleSheetEntryState) 属性，以便使用地图样式表中的默认状态（比如 *Hover* 和 *Selected*）修改地图元素的外观 ，或者将其覆盖以创建自定义样式。

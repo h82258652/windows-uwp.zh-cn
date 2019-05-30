@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b74eccd5f6138e5a9d670aa3a0a93239813cf4d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9ae9d6e3092acb994c755b01d2ed2487c71011c1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658352"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372602"
 ---
 # <a name="cryptographic-keys"></a>加密密钥
 
@@ -23,7 +23,7 @@ ms.locfileid: "57658352"
 ## <a name="symmetric-keys"></a>对称密钥
 
 
-对称密钥加密又称为密钥加密，它要求用来解密的密钥与用来加密的密钥相同。 可使用 [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) 类指定对称算法、创建密钥或导入密钥。 可将 [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) 类上的静态方法与算法和密钥结合使用来加密和解密数据。
+对称密钥加密又称为密钥加密，它要求用来解密的密钥与用来加密的密钥相同。 可使用 [**SymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider) 类指定对称算法、创建密钥或导入密钥。 可将 [**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) 类上的静态方法与算法和密钥结合使用来加密和解密数据。
 
 对称密钥加密一般使用块加密和块加密模式。 块加密是一种对固定大小块操作的对称加密功能。 如果要加密的消息大于块长度，则必须使用块加密模式。 块加密模式是一种通过使用块加密构建的对称加密功能。 它作为一系列固定大小块加密纯文本。 应用支持以下模式：
 
@@ -32,18 +32,18 @@ ms.locfileid: "57658352"
 -   CCM（使用 CBC-MAC 的计数器） 模式将 CBC 块加密模式与消息验证代码 (MAC) 合并在一起。
 -   GCM（Galois 计数器模式） 模式将计数器加密模式与 Galois 验证模式合并在一起。
 
-有些模式（如 CBC）要求对第一个 ciphertext 块使用初始化矢量 (IV)。 下面是常用的初始化矢量。 在调用 [**CryptographicEngine.Encrypt**](https://msdn.microsoft.com/library/windows/apps/br241494) 时指定 IV。 大多数情况下，IV 不与相同密钥重复使用，这一点很重要。
+有些模式（如 CBC）要求对第一个 ciphertext 块使用初始化矢量 (IV)。 下面是常用的初始化矢量。 在调用 [**CryptographicEngine.Encrypt**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographicengine.encrypt) 时指定 IV。 大多数情况下，IV 不与相同密钥重复使用，这一点很重要。
 
 -   固定 对要加密的所有消息使用相同的 IV。 这将泄漏信息，不建议使用此模式。
 -   计数器 对每个块增量使用 IV。
--   随机可创建一个伪随机 IV。 可使用 [**CryptographicBuffer.GenerateRandom**](https://msdn.microsoft.com/library/windows/apps/br241392) 创建 IV。
+-   随机可创建一个伪随机 IV。 可使用 [**CryptographicBuffer.GenerateRandom**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.cryptographicbuffer.generaterandom) 创建 IV。
 -   Nonce 生成对要加密的每个消息使用唯一编号。 通常，nonce 是一个修改的消息或事务标识符。 nonce 不必保密，但不得在同一密钥下重用。
 
 大多数模式都要求纯文本的长度是块大小的整数倍。 这通常要求填充纯文本来获取相应长度。
 
 尽管分组加密对固定大小的数据块进行加密，但是流加密是结合纯文本位和伪随机位流（称为密钥流）来生成已加密文本的对称加密功能。 一些分组加密模式（如输出反馈模式 (OTF) 和计数器模式 (CTR)）将分组加密有效地转换为流加密。 但是，实际的流加密（如 RC4）的操作速度比分组加密模式能够获取的速度高。
 
-以下示例说明如何使用 [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) 类创建对称密钥并使用其加密和解密数据。
+以下示例说明如何使用 [**SymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider) 类创建对称密钥并使用其加密和解密数据。
 
 ## <a name="asymmetric-keys"></a>不对称密钥
 
@@ -62,17 +62,17 @@ ms.locfileid: "57658352"
 -   Alice 使用其私钥（来自私钥/公钥对）来解密 Bob 的对称密钥。
 -   Alice 使用 Bob 的对称密钥来解密该邮件。
 
-可使用 [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) 对象指定不对称算法或签名算法、创建或导入短暂密钥对，或者导入密钥对的公钥部分。
+可使用 [**AsymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) 对象指定不对称算法或签名算法、创建或导入短暂密钥对，或者导入密钥对的公钥部分。
 
 ## <a name="deriving-keys"></a>派生密钥
 
 
-通常有必要从共享机密派生附加密钥。 你可以使用 [**KeyDerivationAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241518) 类以及 [**KeyDerivationParameters**](https://msdn.microsoft.com/library/windows/apps/br241524) 类中的以下特殊方法之一来派生密钥。
+通常有必要从共享机密派生附加密钥。 你可以使用 [**KeyDerivationAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.KeyDerivationAlgorithmProvider) 类以及 [**KeyDerivationParameters**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.KeyDerivationParameters) 类中的以下特殊方法之一来派生密钥。
 
-| 对象                                                                            | 描述                                                                                                                                |
+| Object                                                                            | 描述                                                                                                                                |
 |-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| [**BuildForPbkdf2**](https://msdn.microsoft.com/library/windows/apps/br241525)    | 创建一个 KeyDerivationParameters 对象以在基于密码的密钥派生函数 2 (PBKDF2) 中使用。                                 |
-| [**BuildForSP800108**](https://msdn.microsoft.com/library/windows/apps/br241526)  | 创建一个 KeyDerivationParameters 对象以在某个计数器模式的、基于哈希的邮件身份验证代码 (HMAC) 密钥派生函数中使用。 |
-| [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | 创建一个 KeyDerivationParameters 对象以在 SP800-56A 密钥派生函数中使用。                                                 |
+| [**BuildForPbkdf2**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.keyderivationparameters.buildforpbkdf2)    | 创建一个 KeyDerivationParameters 对象以在基于密码的密钥派生函数 2 (PBKDF2) 中使用。                                 |
+| [**BuildForSP800108**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.keyderivationparameters.buildforsp800108)  | 创建一个 KeyDerivationParameters 对象以在某个计数器模式的、基于哈希的邮件身份验证代码 (HMAC) 密钥派生函数中使用。 |
+| [**BuildForSP80056a**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.keyderivationparameters.buildforsp80056a)  | 创建一个 KeyDerivationParameters 对象以在 SP800-56A 密钥派生函数中使用。                                                 |
 
  

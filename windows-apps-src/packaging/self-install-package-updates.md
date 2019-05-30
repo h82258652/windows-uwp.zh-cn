@@ -6,12 +6,12 @@ ms.date: 04/04/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e73452cdcb02798d4ebd225b48272ab77c40fef9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fc5fca95ca475444792fb0209a936bdfc64cb3c6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604442"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372353"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>从 Microsoft Store 下载并安装程序包更新
 
@@ -30,10 +30,10 @@ Windows 10 版本 1803 中引入的其他 [StoreContext](https://docs.microsoft.
 
 该代码示例假定：
 
-* 代码在 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 的上下文中运行。
-* **Page** 包含名为 ```downloadProgressBar``` 的 [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx)，可提供下载操作的状态。
+* 代码在 [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) 的上下文中运行。
+* **Page** 包含名为 ```downloadProgressBar``` 的 [ProgressBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar)，可提供下载操作的状态。
 * 代码文件具有一个适用于 **Windows.Services.Store**、**Windows.Threading.Tasks** 和 **Windows.UI.Popups** 命名空间的 **using** 语句。
-* 该应用是单用户应用，仅在启动该应用的用户上下文中运行。 对于[多用户应用](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法（而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法）获取 **StoreContext** 对象。
+* 该应用是单用户应用，仅在启动该应用的用户上下文中运行。 对于[多用户应用](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法（而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法）获取 **StoreContext** 对象。
 
 ```csharp
 private StoreContext context = null;
@@ -99,7 +99,7 @@ public async Task DownloadAndInstallAllUpdatesAsync()
 
 该代码示例假定：
 * 该代码文件需要使用 **using** 语句导入 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空间。
-* 该应用是单用户应用，仅在启动该应用的用户上下文中运行。 对于[多用户应用](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法（而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法）获取 **StoreContext** 对象。
+* 该应用是单用户应用，仅在启动该应用的用户上下文中运行。 对于[多用户应用](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法（而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法）获取 **StoreContext** 对象。
 
 > [!NOTE]
 > 本示例中代码调用的 **IsNowAGoodTimeToRestartApp**、**RetryDownloadAndInstallLater** 和 **RetryInstallLater** 方法是占位符方法，你可以根据自己的应用设计按需实现它们。
@@ -330,7 +330,7 @@ private void HandleMandatoryPackageError()
 
 以下代码示例演示如何调用 [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync)。 此示例假定：
 * 该代码文件需要使用 **using** 语句导入 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空间。
-* 该应用是单用户应用，仅在启动该应用的用户上下文中运行。 对于[多用户应用](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法（而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法）获取 **StoreContext** 对象。
+* 该应用是单用户应用，仅在启动该应用的用户上下文中运行。 对于[多用户应用](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法（而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法）获取 **StoreContext** 对象。
 
 ```csharp
 public async Task UninstallPackage(Windows.ApplicationModel.Package package)
@@ -373,7 +373,7 @@ public async Task UninstallPackage(Windows.ApplicationModel.Package package)
 
 以下代码示例演示如何调用 [GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync) 来获取正在为当前应用处理的程序包更新并检索每个包的状态信息。 此示例假定：
 * 该代码文件需要使用 **using** 语句导入 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空间。
-* 该应用是单用户应用，仅在启动该应用的用户上下文中运行。 对于[多用户应用](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法（而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法）获取 **StoreContext** 对象。
+* 该应用是单用户应用，仅在启动该应用的用户上下文中运行。 对于[多用户应用](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法（而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法）获取 **StoreContext** 对象。
 
 > [!NOTE]
 > 本示例中代码所调用的 **MarkUpdateInProgressInUI**、**RemoveItemFromUI**、**MarkInstallCompleteInUI**、**MarkInstallErrorInUI** 和 **MarkInstallPausedInUI** 方法是占位符方法，你可以根据自己的应用设计按需实现它们。

@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: fb16f682e5e1f57196737a6e15a9ffbadbfd0e84
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e262a647e8c37d088c3a5b081076275a52cb8071
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626982"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363738"
 ---
 # <a name="make-your-app-localizable"></a>对应用进行可本地化处理
 
@@ -135,14 +135,14 @@ ms.locfileid: "57626982"
 不妨请考虑以下几个选项。
 
 - **可以通过在项目中直接打开这些转换的资源文件。** 对于需要翻译成两种或三种语言的字符串数量较少的项目，此方法比较适用。 在开发人员使用多种语言并且愿意处理翻译过程的情况下，可以使用这种方法。 这种方法的优势在于快速、无需工具并且误译的风险最小。 但这种方法不可扩展。 特别是，不同语言中的资源很容易不同步，这会导致不好的用户体验和维护困难。
-- **字符串资源文件是 XML 或 ResJSON 文本格式，因此无法使用任何文本编辑器的转换传递。然后将将已翻译的文件复制回项目。** 此方法存在翻译人员意外编辑 XML 标记的风险，但它允许在 Microsoft Visual Studio 项目外进行翻译工作。 对于需要翻译成少数几种语言的项目，此方法可能比较适用。 XLIFF 格式是专门用于本地化的 XML 格式，应该可以很好地受到一些本地化供应商或本地化工具的支持。 你可以使用[多语言应用工具包](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx)从其他资源文件中（如 .resw 或 .resjson）生成 XLIFF 文件。
+- **字符串资源文件是 XML 或 ResJSON 文本格式，因此无法使用任何文本编辑器的转换传递。然后将将已翻译的文件复制回项目。** 此方法存在翻译人员意外编辑 XML 标记的风险，但它允许在 Microsoft Visual Studio 项目外进行翻译工作。 对于需要翻译成少数几种语言的项目，此方法可能比较适用。 XLIFF 格式是专门用于本地化的 XML 格式，应该可以很好地受到一些本地化供应商或本地化工具的支持。 你可以使用[多语言应用工具包](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10))从其他资源文件中（如 .resw 或 .resjson）生成 XLIFF 文件。
 
 > [!NOTE]
 > 本地化可能还需要其他资产，包括图像和音频文件。
 
 你还应考虑以下：
 
-- **本地化工具**多种本地化工具都是可用于分析资源文件和只允许可翻译字符串翻译人员进行编辑。 这种方法减少了翻译人员意外编辑 XML 标记的风险。 但它的缺点是向本地化流程中引入了新的工具和流程。 本地化工具适合具有大量字符串但需要翻译为少数语言的项目。 若要了解详细信息，请参阅[如何使用 多语言应用工具包](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx)。
+- **本地化工具**多种本地化工具都是可用于分析资源文件和只允许可翻译字符串翻译人员进行编辑。 这种方法减少了翻译人员意外编辑 XML 标记的风险。 但它的缺点是向本地化流程中引入了新的工具和流程。 本地化工具适合具有大量字符串但需要翻译为少数语言的项目。 若要了解详细信息，请参阅[如何使用 多语言应用工具包](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10))。
 - **本地化供应商**请考虑使用本地化供应商，如果你的应用程序包含大量需要转换为大量的语言的字符串。 本地化供应商可提供有关工具和流程的建议，并可翻译你的资源文件。 这是一种理想的解决方案，但也是花费最大的选项，并且会增加翻译内容的检查时间。
 
 ## <a name="keep-access-keys-and-labels-consistent"></a>使访问键和标签保持一致

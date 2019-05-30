@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 063106362a36aa32d0874be15dd589b5fb573409
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 291c16d14428f8c6476b12fbadf00f84c26a4235
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66214947"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359480"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>与 Windows 10 和 UWP 集成打包桌面应用程序
 
@@ -99,7 +99,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 您可以确保用户对于特定类型的文件而不是打开您的应用程序的桌面版本的默认情况下打开新打包的应用程序。
 
-为达到该目的，需指定每个想要从中继承文件关联的应用程序的[编程标识符 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx)。
+为达到该目的，需指定每个想要从中继承文件关联的应用程序的[编程标识符 (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids)。
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
@@ -123,8 +123,8 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |名称 |描述 |
 |-------|-------------|
 |Category |始终为 ``windows.fileTypeAssociation``。
-|名称 |应用的唯一 ID。 此 ID 内部用于生成与文件类型关联相关联的经过哈希处理的[编程标识符 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx)。 此 ID 可用于管理将来版本的应用中的更改。 |
-|MigrationProgId |[编程标识符 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx)描述应用程序、 组件和你想要继承文件关联的桌面应用程序版本。|
+|名称 |应用的唯一 ID。 此 ID 内部用于生成与文件类型关联相关联的经过哈希处理的[编程标识符 (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids)。 此 ID 可用于管理将来版本的应用中的更改。 |
+|MigrationProgId |[编程标识符 (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids)描述应用程序、 组件和你想要继承文件关联的桌面应用程序版本。|
 
 #### <a name="example"></a>示例
 
@@ -182,7 +182,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |名称 |描述 |
 |-------|-------------|
 |Category |始终为 ``windows.fileTypeAssociation``。
-|名称 |应用的唯一 ID。 此 ID 内部用于生成与文件类型关联相关联的经过哈希处理的[编程标识符 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx)。 此 ID 可用于管理将来版本的应用中的更改。   |
+|名称 |应用的唯一 ID。 此 ID 内部用于生成与文件类型关联相关联的经过哈希处理的[编程标识符 (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids)。 此 ID 可用于管理将来版本的应用中的更改。   |
 |FileType |应用支持的文件扩展名。 |
 
 #### <a name="example"></a>示例
@@ -410,7 +410,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 
 使用扩展标识这些文件夹。 这样，系统就能找到并加载你放在这些文件夹中的文件。 可以将该扩展看作是 _%PATH%_ 环境变量的替代品。
 
-如果你不使用该扩展，系统将按以下顺序进行搜索：进程的程序包依赖关系图、程序包根文件夹、系统目录 ( _%SystemRoot%\system32_)。 若要了解详细信息，请参阅 [Windows 应用的搜索顺序](https://msdn.microsoft.com/library/windows/desktop/ms682586.aspx#_search_order_for_windows_store_apps)。
+如果你不使用该扩展，系统将按以下顺序进行搜索：进程的程序包依赖关系图、程序包根文件夹、系统目录 ( _%SystemRoot%\system32_)。 若要了解详细信息，请参阅 [Windows 应用的搜索顺序](https://docs.microsoft.com/windows/desktop/Dlls/dynamic-link-library-search-order)。
 
 每个程序包只能包含一个这种类型的扩展。 也就是说，你可以将其中一个扩展添加到主程序包，然后向你的每个[可选包和相关的集](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)添加一个扩展。
 
@@ -510,7 +510,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 * ``Single``：在第一个所选文件一次激活应用程序。 忽略其他文件。
 * ``Document``：为每个所选文件激活你的应用程序的新单独实例。
 
- 可以为不同的文件类型和操作设置不同的首选项。 例如，可能会希望以“文档”模式打开*文档*，以“播放机”模式打开*图像*。
+ 可以为不同的文件类型和操作设置不同的首选项。 例如，可能会希望以“文档”  模式打开*文档*，以“播放机”  模式打开*图像*。
 
 #### <a name="example"></a>示例
 
@@ -539,7 +539,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 </Package>
 ```
 
-如果用户打开 15 个或更少的文件，**MultiSelectModel** 特性的默认选项为*播放机*。 否则，默认选项“文档”。 始终将 UWP 应用启动为*播放机*。
+如果用户打开 15 个或更少的文件，**MultiSelectModel** 特性的默认选项为*播放机*。 否则，默认选项“文档”  。 始终将 UWP 应用启动为*播放机*。
 
 <a id="show" />
 
@@ -673,7 +673,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 在文件资源管理器中，用户可以使用该字段对这些文件进行分组。 系统组件也会将此字段用于不同的用途，例如建立索引。
 
-若要详细了解**类型**字段以及可对此字段使用的值，请参阅[使用类型名称](https://msdn.microsoft.com/library/windows/desktop/cc144136.aspx)。
+若要详细了解**类型**字段以及可对此字段使用的值，请参阅[使用类型名称](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names)。
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
@@ -702,7 +702,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |Category |始终为 ``windows.fileTypeAssociation``。
 |名称 |应用的唯一 ID。 |
 |FileType |相关的文件扩展名。 |
-|value |有效的[类型值](https://msdn.microsoft.com/en-us/library/windows/desktop/cc144136.aspx#kind_hierarchy) |
+|value |有效的[类型值](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
 
 #### <a name="example"></a>示例
 
@@ -1069,8 +1069,8 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 |DropTargetHandler |实现的应用程序的类 ID [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)接口。 系统会将可移动媒体中的文件传递给你的 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 实现的 [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) 方法。  |
 |Parameters |你不必为所有内容事件实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于任意内容事件，你可以提供命令行参数，而不是实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于这些事件，自动播放将使用这些命令行参数启动应用程序。 你可以在应用的初始化代码中解析这些参数，确定应用是否由自动播放启动，然后提供自定义实现。 |
 |DeviceEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的设备事件的名称。 当有设备连接到电脑时，将引发设备事件。 设备事件以字符串 ``WPD`` 开头，你可以在[此处](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到设备事件列表。 |
-|HWEventHandler |实现应用程序的类 ID [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx)接口。 |
-|InitCmdLine |你要传递给 [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx) 接口的 [Initialize](https://msdn.microsoft.com/en-us/library/windows/desktop/bb775495.aspx) 方法的字符串参数。 |
+|HWEventHandler |实现应用程序的类 ID [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler)接口。 |
+|InitCmdLine |你要传递给 [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) 接口的 [Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize) 方法的字符串参数。 |
 
 ### <a name="example"></a>示例
 
@@ -1101,14 +1101,14 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 如果你的应用程序打开，当用户向其安装更新时，应用程序关闭。
 
-如果您希望该应用程序更新后重新启动完成后，调用[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)中你想要重新启动每个进程的函数。
+如果您希望该应用程序更新后重新启动完成后，调用[RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart)中你想要重新启动每个进程的函数。
 
-在应用程序中的每个活动窗口接收[WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx)消息。 此时，你的应用程序可以调用[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)函数再次更新命令行，如有必要。
+在应用程序中的每个活动窗口接收[WM_QUERYENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-queryendsession)消息。 此时，你的应用程序可以调用[RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart)函数再次更新命令行，如有必要。
 
-当应用程序中的每个活动窗口收到[WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx)消息，你的应用程序应将数据保存并关闭。
+当应用程序中的每个活动窗口收到[WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession)消息，你的应用程序应将数据保存并关闭。
 
 >[!NOTE]
-活动窗口也会收到[WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx)以防应用程序不会处理消息[WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx)消息。
+活动窗口也会收到[WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close)以防应用程序不会处理消息[WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession)消息。
 
 此时，你的应用程序有 30 秒的时间以关闭其自己的进程或平台强制终止它们。
 

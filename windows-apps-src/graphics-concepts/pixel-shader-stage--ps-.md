@@ -7,19 +7,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e1f7e787f2ee80a3168d38a9afd9a249dc0e6de0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 81b2bc5e78087b19d8829df4dab4b03e4db76467
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603062"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370979"
 ---
 # <a name="pixel-shader-ps-stage"></a>像素着色器 (PS) 阶段
 
 
 像素着色器 (PS) 阶段接收基元的插值数据并生成每像素数据，如颜色。
 
-这是一个可编程着色阶段；它在[图形管道](graphics-pipeline.md)图中显示为一个圆角块。 此着色器阶段将公开自己的独特功能，该功能基于着色器模型 4.0 [常用着色器核心](https://msdn.microsoft.com/library/windows/desktop/bb509580)进行构建。
+这是一个可编程着色阶段；它在[图形管道](graphics-pipeline.md)图中显示为一个圆角块。 此着色器阶段将公开自己的独特功能，该功能基于着色器模型 4.0 [常用着色器核心](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-common-core)进行构建。
 
 像素着色器 (PS) 阶段支持丰富的着色技术，如每像素照明和后处理。 像素着色器是一个程序，它将常变量、纹理数据、内插的每顶点值和其他数据组合起来以生成每像素输出。 [光栅器 (RS) 阶段](rasterizer-stage--rs-.md)将为基元覆盖的每个像素调用一个像素着色器，但是，可以指定 **NULL** 着色器以避免运行着色器。
 
@@ -34,9 +34,9 @@ ms.locfileid: "57603062"
 
 像素着色器输入数据包含顶点属性（可以在使用或不使用透视校正的情况下内插），或者也可以被视为每基元常量。 像素着色器输入根据声明的内插模式从正在光栅化的基元的顶点属性内插。 如果基元在光栅化之前被剪裁，内插模式在剪裁过程中也受支持。
 
-顶点属性在像素着色器中心位置被内插（或评估）。 在[参数](https://msdn.microsoft.com/library/windows/desktop/bb509606)或[输入结构](https://msdn.microsoft.com/library/windows/desktop/bb509668)中，像素着色器属性内插模式将逐个元素地在输入寄存器声明中声明。 可以线性内插属性，也可以利用质心采样内插属性。 请参阅[光栅化规则](rasterization-rules.md)中的“多重采样抗锯齿时的质心采样”。 质心计算仅在多重采样期间相关，以包含像素由基元覆盖但像素中心可能并非如此的情况；质心计算尽可能靠近（非覆盖）像素中心进行。
+顶点属性在像素着色器中心位置被内插（或评估）。 在[参数](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-function-parameters)或[输入结构](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-struct)中，像素着色器属性内插模式将逐个元素地在输入寄存器声明中声明。 可以线性内插属性，也可以利用质心采样内插属性。 请参阅[光栅化规则](rasterization-rules.md)中的“多重采样抗锯齿时的质心采样”。 质心计算仅在多重采样期间相关，以包含像素由基元覆盖但像素中心可能并非如此的情况；质心计算尽可能靠近（非覆盖）像素中心进行。
 
-输入也可以用[系统值语义](https://msdn.microsoft.com/library/windows/desktop/bb509647)声明，该语意将标记由其他管道阶段使用的参数。 例如，像素位置应标记为与 SV\_位置语义。 [输入组装器 (IA) 阶段](input-assembler-stage--ia-.md)可能导致像素着色器产生一个标量 (使用 SV\_PrimitiveID);[光栅器 (RS) 阶段](rasterizer-stage--rs-.md)还可以为像素着色器 （使用 SV生成一个标量\_IsFrontFace)。
+输入也可以用[系统值语义](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)声明，该语意将标记由其他管道阶段使用的参数。 例如，像素位置应标记为与 SV\_位置语义。 [输入组装器 (IA) 阶段](input-assembler-stage--ia-.md)可能导致像素着色器产生一个标量 (使用 SV\_PrimitiveID);[光栅器 (RS) 阶段](rasterizer-stage--rs-.md)还可以为像素着色器 （使用 SV生成一个标量\_IsFrontFace)。
 
 ## <a name="span-idoutputsspanspan-idoutputsspanspan-idoutputsspanoutputs"></a><span id="Outputs"></span><span id="outputs"></span><span id="OUTPUTS"></span>输出
 

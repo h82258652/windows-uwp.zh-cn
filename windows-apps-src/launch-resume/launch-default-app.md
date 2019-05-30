@@ -6,21 +6,21 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c5c8b99ec3646d1eebbb922557f97c9e9304ed4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d80cb18fc502df5f6d51d2b7bdc719e860730534
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658362"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370883"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>启动 URI 的默认应用
 
 
 **重要的 Api**
 
-- [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)
-- [**PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482)
-- [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)
+- [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
+- [**PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
+- [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
 了解如何启动统一资源标识符 (URI) 的默认应用。 URI 允许你启动其他应用以执行特定任务。 本主题还提供许多内置于 Windows 的 URI 方案的概述。 你也可以启动自定义 URI。 有关注册自定义 URI 方案和处理 URI 激活的详细信息，请参阅[处理 URI 激活](handle-uri-activation.md)。
 
@@ -33,8 +33,8 @@ URI 方案允许你通过单击超链接来打开应用。 正如可以使用 **
 |[bing maps:、 ms-到驱动器:，和 ms-到审核： ](#maps-app-uri-schemes) | “地图”应用 |
 |[http:](#http-uri-scheme) | 默认 Web 浏览器 |
 |[mailto:](#email-uri-scheme) | 默认电子邮件应用 |
-|[ms-调用：](#call-app-uri-scheme) |  调用应用 |
-|[ms-聊天：](#messaging-app-uri-scheme) | “消息”应用 |
+|[ms-call:](#call-app-uri-scheme) |  调用应用 |
+|[ms-chat:](#messaging-app-uri-scheme) | “消息”应用 |
 |[ms-人：](#people-app-uri-scheme) | “人脉”应用 |
 |[ms-照片：](#photos-app-uri-scheme) | “照片”应用 |
 |[ms-设置：](#settings-app-uri-scheme) | “设置”应用 |
@@ -54,9 +54,9 @@ URI 方案允许你通过单击超链接来打开应用。 正如可以使用 **
 
 ### <a name="call-launchuriasync-to-launch-a-uri"></a>调用 LaunchUriAsync 以启动 URI
 
-使用 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法启动 URI。 调用此方法时，你的应用必须是前台应用，即对于用户必须是可见的。 此要求有助于确保用户保持控制。 为满足此要求，请确保将 URI 的所有启动都直接绑定到到应用的 UI 中。 用户必须总是采取某种操作来发起 URI 启动。 如果尝试启动 URI 并且你的应用不在前台运行，则启动将失败，且会调用错误回调。
+使用 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法启动 URI。 调用此方法时，你的应用必须是前台应用，即对于用户必须是可见的。 此要求有助于确保用户保持控制。 为满足此要求，请确保将 URI 的所有启动都直接绑定到到应用的 UI 中。 用户必须总是采取某种操作来发起 URI 启动。 如果尝试启动 URI 并且你的应用不在前台运行，则启动将失败，且会调用错误回调。
 
-首先创建 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/system.uri.aspx) 对象来表示 URI，然后将其传递给 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法。 使用返回结果以查看调用是否成功，如以下示例所示。
+首先创建 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) 对象来表示 URI，然后将其传递给 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法。 使用返回结果以查看调用是否成功，如以下示例所示。
 
 ```cs
 private async void launchURI_Click(object sender, RoutedEventArgs e)
@@ -82,7 +82,7 @@ private async void launchURI_Click(object sender, RoutedEventArgs e)
 
 ![警告对话框覆盖了应用的灰显背景。 该对话框询问用户是否需要切换应用，而且在右下方有“是”和“否”按钮。 “否”按钮会突出显示。](images/warningdialog.png)
 
-如果始终希望出现此提示，请使用 [**Windows.System.LauncherOptions.TreatAsUntrusted**](https://msdn.microsoft.com/library/windows/apps/hh701442) 属性告诉操作系统显示一个警告。
+如果始终希望出现此提示，请使用 [**Windows.System.LauncherOptions.TreatAsUntrusted**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.treatasuntrusted) 属性告诉操作系统显示一个警告。
 
 ```cs
 // The URI to launch
@@ -102,7 +102,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriBing, promptOption
 
 当多个应用注册为处理某个 URI 方案时，推荐还是有用的。 通过推荐一个特定应用，Windows 将打开该应用（如果已安装该应用）。
 
-若要进行推荐，则调用 [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701484) 方法，并将 [**LauncherOptions.preferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) 设置为应用商店中要推荐的应用的程序包系列名称。 操作系统会使用此信息将在应用商店中搜索应用这一常规选项替换为从应用商店中获取推荐的应用这一具体选项。
+若要进行推荐，则调用 [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.) 方法，并将 [**LauncherOptions.preferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) 设置为应用商店中要推荐的应用的程序包系列名称。 操作系统会使用此信息将在应用商店中搜索应用这一常规选项替换为从应用商店中获取推荐的应用这一具体选项。
 
 ```cs
 // Set the recommended app
@@ -117,9 +117,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="set-remaining-view-preference"></a>设置其余视图首选项
 
-调用 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 的源应用可请求在 URI 启动后停留于屏幕上。 默认情况下，Windows 会尝试在处理该 URI 的源应用和目标应用之间平等地共享所有可用空间。 源应用可使用 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 属性向操作系统指示希望其应用占用较多或较少的可用空间。 此外，还可使用 **DesiredRemainingView** 指示源应用在 URI 启动后无需停留于屏幕上，并可由目标应用完全替代。 此属性仅指定调用应用的首选窗口大小。 不指定可能会同时显示在屏幕上的其他应用的行为。
+调用 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 的源应用可请求在 URI 启动后停留于屏幕上。 默认情况下，Windows 会尝试在处理该 URI 的源应用和目标应用之间平等地共享所有可用空间。 源应用可使用 [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) 属性向操作系统指示希望其应用占用较多或较少的可用空间。 此外，还可使用 **DesiredRemainingView** 指示源应用在 URI 启动后无需停留于屏幕上，并可由目标应用完全替代。 此属性仅指定调用应用的首选窗口大小。 不指定可能会同时显示在屏幕上的其他应用的行为。
 
-**请注意**  Windows 会考虑多个不同的因素时它确定源应用程序的最后一个窗口大小，例如，源应用程序的首选项、 屏幕、 屏幕方向等上的应用数。 设置 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 并不能保证为源应用设定具体的窗口化行为。
+**请注意**  Windows 会考虑多个不同的因素时它确定源应用程序的最后一个窗口大小，例如，源应用程序的首选项、 屏幕、 屏幕方向等上的应用数。 设置 [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) 并不能保证为源应用设定具体的窗口化行为。
 
 ```cs
 // Set the desired remaining view.
@@ -161,13 +161,13 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="maps-app-uri-schemes"></a>“地图”应用 URI 方案
 
-使用**bing maps:**， **ms-到驱动器：**，和**ms-到审核：** URI 方案为[启动 Windows 映射应用](launch-maps-app.md)到特定地图、 方向和搜索结果。 例如，以下 URI 将打开 Windows 地图应用，并显示以纽约市为中心的地图。
+使用**bing maps:** ， **ms-到驱动器：** ，和**ms-到审核：** URI 方案为[启动 Windows 映射应用](launch-maps-app.md)到特定地图、 方向和搜索结果。 例如，以下 URI 将打开 Windows 地图应用，并显示以纽约市为中心的地图。
 
 `bingmaps:?cp=40.726966~-74.006076`
 
 ![Windows 地图应用的示例。](images/mapnyc.png)
 
-有关详细信息，请参阅[启动 Windows 地图应用](launch-maps-app.md)。 若要在你自己的应用中使用地图控件，请参阅[以 2D、3D 和街景视图方式显示地图](https://msdn.microsoft.com/library/windows/apps/mt219695)。
+有关详细信息，请参阅[启动 Windows 地图应用](launch-maps-app.md)。 若要在你自己的应用中使用地图控件，请参阅[以 2D、3D 和街景视图方式显示地图](https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps)。
 
 ### <a name="messaging-app-uri-scheme"></a>“消息”应用 URI 方案
 
@@ -189,7 +189,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 |------------|---------|
 | ms-tonepicker: | 选取铃声、闹钟和系统音。 |
 
-参数通过 LaunchURI API 的 [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx) 传递。 有关详细信息，请参阅[使用 ms-tonepicker URI 方案选择并保存音调](launch-ringtone-picker.md)。
+参数通过 LaunchURI API 的 [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) 传递。 有关详细信息，请参阅[使用 ms-tonepicker URI 方案选择并保存音调](launch-ringtone-picker.md)。
 
 ### <a name="nearby-numbers-app-uri-scheme"></a>“114 查号”应用 URI 方案
 
@@ -228,7 +228,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ![相机隐私设置。](images/privacyawarenesssettingsapp.png)
 
-有关详细信息，请参阅[启动 Windows“设置”应用](launch-settings-app.md)和[隐私感知应用指南](https://msdn.microsoft.com/library/windows/apps/hh768223)。
+有关详细信息，请参阅[启动 Windows“设置”应用](launch-settings-app.md)和[隐私感知应用指南](https://docs.microsoft.com/windows/uwp/security/index)。
 
 ### <a name="store-app-uri-scheme"></a>“应用商店”应用 URI 方案
 
@@ -244,4 +244,4 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 | URI 方案 | 结果 |
 |------------|---------|
-| msnweather://forecast?la=\[纬度\]& lo =\[经度\] | 将启动基于位置的地理坐标预测页中的天气应用程序。<br>`latitude` 是指位置的纬度。<br> `longitude` 是指位置的经度。<br> |
+| msnweather://forecast?la=\[latitude\]&lo=\[longitude\] | 将启动基于位置的地理坐标预测页中的天气应用程序。<br>`latitude` 是指位置的纬度。<br> `longitude` 是指位置的经度。<br> |

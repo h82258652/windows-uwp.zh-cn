@@ -6,32 +6,32 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 定期工作项, 线程处理, 计时器
 ms.localizationpriority: medium
-ms.openlocfilehash: 05ed3b4bc4fa6dbe1119dca40d22107e94cea576
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cf3a5817e459c7089eafb8f2c38d58b0e8eef03c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636902"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371565"
 ---
 # <a name="create-a-periodic-work-item"></a>创建定期工作项
 
 
 <b>重要的 Api</b>
 
--   [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915)
--   [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587)
+-   [**CreatePeriodicTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer)
+-   [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer)
 
 了解如何创建定期重复的工作项。
 
 ## <a name="create-the-periodic-work-item"></a>创建定期工作项
 
-使用 [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) 方法创建定期工作项。 提供用于完成工作的 lambda，并使用 *period* 参数指定两次提交之间的间隔。 使用 [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) 结构指定此期限。 每次在此期限到期时将重新提交工作项，因此请确保该期限足够长，以便完成工作。
+使用 [**CreatePeriodicTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer) 方法创建定期工作项。 提供用于完成工作的 lambda，并使用 *period* 参数指定两次提交之间的间隔。 使用 [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan) 结构指定此期限。 每次在此期限到期时将重新提交工作项，因此请确保该期限足够长，以便完成工作。
 
-[**CreateTimer** ](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx)返回[ **ThreadPoolTimer** ](https://msdn.microsoft.com/library/windows/apps/BR230587)对象。 存储该对象，以防需要取消计时器。
+[**CreateTimer** ](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer)返回[ **ThreadPoolTimer** ](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer)对象。 存储该对象，以防需要取消计时器。
 
 > **请注意**  避免指定的值为零 （或小于一毫秒的任何值） 的间隔。 这将导致定期计时器像单次计时器一样操作。
 
-> **请注意**  可以使用[ **CoreDispatcher.RunAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh750317)访问 UI 并显示从工作项的进度。
+> **请注意**  可以使用[ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows)访问 UI 并显示从工作项的进度。
 
 以下示例创建每 60 秒运行一次的工作项：
 
@@ -87,7 +87,7 @@ ms.locfileid: "57636902"
 
 ## <a name="handle-cancellation-of-the-periodic-work-item-optional"></a>处理定期工作项的取消（可选）
 
-如果需要，可以使用 [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) 处理定期计时器的取消。 使用 [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) 重载以提供用于处理定期工作项取消的其他 lambda。
+如果需要，可以使用 [**TimerDestroyedHandler**](https://docs.microsoft.com/uwp/api/windows.system.threading.timerdestroyedhandler) 处理定期计时器的取消。 使用 [**CreatePeriodicTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer) 重载以提供用于处理定期工作项取消的其他 lambda。
 
 以下示例创建每 60 秒重复一次的定期工作项，并且它还提供一个取消处理程序：
 
@@ -186,7 +186,7 @@ ms.locfileid: "57636902"
 
 ## <a name="cancel-the-timer"></a>取消计时器
 
-如有必要，调用 [**Cancel**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) 方法停止定期工作项重复运行。 如果取消定期计时器时正在运行工作项，则允许完成该工作项。 当定期工作项的所有实例完成时，请调用 [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926)（如已提供）。
+如有必要，调用 [**Cancel**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.cancel) 方法停止定期工作项重复运行。 如果取消定期计时器时正在运行工作项，则允许完成该工作项。 当定期工作项的所有实例完成时，请调用 [**TimerDestroyedHandler**](https://docs.microsoft.com/uwp/api/windows.system.threading.timerdestroyedhandler)（如已提供）。
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp

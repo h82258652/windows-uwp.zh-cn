@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 63c678f4b2dde1a5e35c0131b5154493c9703951
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0ea3e7ec73b042eeef560af3d88754afdfa5b441
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623372"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370463"
 ---
 # <a name="geometry-shader-gs-stage"></a>几何着色器 (GS) 阶段
 
@@ -28,7 +28,7 @@ ms.locfileid: "57623372"
 
 几何着色器还支持有限的几何放大和解扩。 在给定输入基元的情况下，几何着色器可以丢弃基元，或者发出一个或多个新的基元。
 
-几何着色器 (GS) 阶段是一个可编程着色器阶段；它在[图形管道](graphics-pipeline.md)图中显示为圆块。 此着色器阶段将公开自己的独特功能，该功能基于着色器模型（请参阅[常用着色器核心](https://msdn.microsoft.com/library/windows/desktop/bb509580)）进行构建。
+几何着色器 (GS) 阶段是一个可编程着色器阶段；它在[图形管道](graphics-pipeline.md)图中显示为圆块。 此着色器阶段将公开自己的独特功能，该功能基于着色器模型（请参阅[常用着色器核心](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-common-core)）进行构建。
 
 几何着色器阶段非常适合以下算法：
 
@@ -59,10 +59,10 @@ ms.locfileid: "57623372"
 
  
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
-几何着色器 (GS) 阶段能够输出形成单个选定拓扑的多个顶点。 可用的几何着色器输出拓扑有 **tristrip**、**linestrip** 和 **pointlist**。 在几何着色器的任何调用中，发出的基元的数目可以自由地变化，但是必须静态地声明可发出的顶点的最大数目。 从几何着色器调用发出的带长度可以是任意的，并且可以通过 [RestartStrip](https://msdn.microsoft.com/library/windows/desktop/bb509660) HLSL 函数创建新带。
+几何着色器 (GS) 阶段能够输出形成单个选定拓扑的多个顶点。 可用的几何着色器输出拓扑有 **tristrip**、**linestrip** 和 **pointlist**。 在几何着色器的任何调用中，发出的基元的数目可以自由地变化，但是必须静态地声明可发出的顶点的最大数目。 从几何着色器调用发出的带长度可以是任意的，并且可以通过 [RestartStrip](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) HLSL 函数创建新带。
 
 几何着色器实例的执行与其他调用是不可分割的，除了添加到流的数据是串行的。 几何着色器的给定调用的输出独立于其他调用（尽管遵循排序）。 生成三角形条的几何着色器将在每次调用时启动一个新的带。
 
