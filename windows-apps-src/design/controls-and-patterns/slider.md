@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f01aec2a0dc6010eab53122d69e64c57fe4f5c3d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 841903f9bc998af5ead2a3486c500487cb070855
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589922"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364296"
 ---
 # <a name="sliders"></a>滑块
 
@@ -25,7 +25,7 @@ ms.locfileid: "57589922"
 
 滑块是一种可让用户通过沿轨迹移动 thumb 控件从一个值范围中进行选择的控件。
 
-> **重要的 API**：[Slider 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)，[的 Value 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)， [ValueChanged 事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
+> **重要的 API**：[Slider 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)，[的 Value 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value)， [ValueChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ![滑块控件](images/controls/slider.png)
 
@@ -100,7 +100,7 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-从 [Value](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx) 属性中获取并设置滑块的值。 若要响应值更改，可使用数据绑定以绑定到 Value 属性或处理 [ValueChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx) 事件。
+从 [Value](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value) 属性中获取并设置滑块的值。 若要响应值更改，可使用数据绑定以绑定到 Value 属性或处理 [ValueChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) 事件。
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -192,4 +192,4 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 ## <a name="related-topics"></a>相关主题
 - [切换开关](toggles.md)
-- [Slider 类](https://msdn.microsoft.com/library/windows/apps/br209614)
+- [Slider 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)

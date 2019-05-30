@@ -1,24 +1,24 @@
 ---
 description: 标量值需要先封装到引用类对象内，然后再传递到需要 **IInspectable** 的函数。 该封装过程称为对值进行*装箱*。
 title: 通过 C++/WinRT 将标量值装箱到 IInspectable 和从 IInspectable 取消标量值装箱
-ms.date: 04/10/2018
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 装箱, 标量, 值
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c86d1ac8ce83ea092ce0e2730ea0e9d4a201b94
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1bd69e07f2285b6c05581a60ddbaf4b394d0b6d0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639672"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361194"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>通过 C++/WinRT 将标量值装箱到 IInspectable 和从 IInspectable 取消标量值装箱
  
-[  **IInspectable 接口**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)是 Windows 运行时 (WinRT) 中每个运行时类的根接口。 这类似于位于每个 COM 接口和类的根处的 [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)；而且类似于位于每个[通用类型系统](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system)类的根处的**System.Object**。
+[  **IInspectable 接口**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)是 Windows 运行时 (WinRT) 中每个运行时类的根接口。 这类似于位于每个 COM 接口和类的根处的 [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)；而且类似于位于每个[通用类型系统](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system)类的根处的**System.Object**。
 
 换言之，可向任何运行时类的实例传递需要 **IInspectable** 的函数。 但是你无法将标量值（如数值或文本值）直接传递到此类函数。 相反，标量值需要封装到引用类对象内。 该封装过程称为对值进行*装箱*。
 
-[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)提供了[ **winrt::box_value** ](/uwp/cpp-ref-for-winrt/box-value)函数，它将标量值，并返回值装箱到**IInspectable**。 对于取消 **IInspectable** 装箱返回到标量值，提供 [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) 和 [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) 函数。
+[C++/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)提供了[ **winrt::box_value** ](/uwp/cpp-ref-for-winrt/box-value)函数，它将标量值，并返回值装箱到**IInspectable**。 对于取消 **IInspectable** 装箱返回到标量值，提供 [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) 和 [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) 函数。
 
 ## <a name="examples-of-boxing-a-value"></a>取消值装箱的示例
 [  **LaunchActivatedEventArgs::Arguments**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.Arguments) 访问器函数返回 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)，这是一个标量值。 我们可以将该 **hstring** 值进行装箱并将其传递到需要 **IInspectable** 的函数，如下所示。

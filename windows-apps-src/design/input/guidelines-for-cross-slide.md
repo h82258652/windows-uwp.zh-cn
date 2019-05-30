@@ -6,12 +6,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b2d402bca61fc271b6d1e2e972cca280693f9ce3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 36ebabbfd8f7e5f40e31be44d6dc7e4483a199ee
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658122"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363704"
 ---
 # <a name="guidelines-for-cross-slide"></a>交叉滑动指南
 
@@ -20,9 +20,9 @@ ms.locfileid: "57658122"
 
 **重要的 Api**
 
--   [**CrossSliding**](https://msdn.microsoft.com/library/windows/apps/br241942)
--   [**CrossSlideThresholds**](https://msdn.microsoft.com/library/windows/apps/br241941)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+-   [**CrossSliding**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crosssliding)
+-   [**CrossSlideThresholds**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crossslidethresholds)
+-   [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
 使用交叉滑动来支持使用轻扫手势进行选择以及使用滑动手势拖动（移动）交互。
 
@@ -54,7 +54,7 @@ ms.locfileid: "57658122"
 
 如果应用中包括横向滑动功能，请考虑以下指南。
 
-对在单个方向上滚动的列表或集合使用横向滑动。 有关详细信息，请参阅[添加 ListView 控件](https://msdn.microsoft.com/library/windows/apps/hh465382)。
+对在单个方向上滚动的列表或集合使用横向滑动。 有关详细信息，请参阅[添加 ListView 控件](https://docs.microsoft.com/previous-versions/windows/apps/hh465382(v=win.10))。
 
 **请注意**  在其中在两个方向，如 web 浏览器或电子阅读器素数内容区域的情况下应使用按下保持定时的交互来调用对象，如图像和超链接的上下文菜单。
 
@@ -123,7 +123,7 @@ ms.locfileid: "57658122"
 
 ### <span id="draganddrop"></span><span id="DRAGANDDROP"></span>
 
-**拖动**
+**Drag**
 
 使用拖动操作将一个或多个对象从一个位置移动到另一个位置。
 
@@ -144,7 +144,7 @@ ms.locfileid: "57658122"
 * [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
 * [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
 * [输入：Windows 8 手势示例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [输入：操作和手势 （c + +） 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [输入：操作和手势 (C++) 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 触摸输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 

@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 71a56bc23b4b727d5be2ed35fb77afae03f0689c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8731e5c794210c1a084c3de3cbf5004c7749a5e0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613222"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359913"
 ---
 # <a name="optimize-background-activity"></a>优化后台活动
 
 通用 Windows 应用应跨所有设备系列一致地执行。 在电池供电的设备上，电源消耗在应用的用户整体体验中是一个关键因素。 全天的电池使用时间对每个用户都是想要的功能，但它要求设备上安装的所有软件（包括你自己的软件）都可节电。 
 
-后台任务行为可以说是应用的总能耗成本的最重要因素。 后台任务是已在系统上注册为无需打开应用即可运行的任何程序活动。 有关详细信息，请参阅[创建和注册进程外后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)。
+后台任务行为可以说是应用的总能耗成本的最重要因素。 后台任务是已在系统上注册为无需打开应用即可运行的任何程序活动。 有关详细信息，请参阅[创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)。
 
 ## <a name="background-activity-permissions"></a>后台活动权限
 
@@ -39,7 +39,7 @@ ms.locfileid: "57613222"
 
 ![后台任务权限关闭](images/background-task-permissions-off.png)
 
-在应用中，可以使用 [**BackgroundExecutionManager.RequestAccessAsync()**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync.aspx) 方法调用返回的 [**BackgroundAccessStatus**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) 枚举值来确定其当前后台活动权限设置。
+在应用中，可以使用 [**BackgroundExecutionManager.RequestAccessAsync()** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) 方法调用返回的 [**BackgroundAccessStatus**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) 枚举值来确定其当前后台活动权限设置。
 
 这表示如果你的应用不实现负责的后台活动管理，用户可能完全拒绝应用的后台权限，这对任何一方都是不想看到的。 如果应用被拒绝了在后台运行的权限，但是需要后台活动才能为用户完成操作，则可以通知用户并引导其进入“设置”应用。 这可以通过向“后台应用”或“电池使用详细信息”页面[启动“设置”应用](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/launch-settings-app)来完成。
 
@@ -52,10 +52,10 @@ ms.locfileid: "57613222"
 以下是注册后台任务时可以采取的其他步骤，以使它们更省电。
 
 ### <a name="use-a-maintenance-trigger"></a>使用维护触发器 
-可以使用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.maintenancetrigger.aspx) 对象而不是 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemtrigger.aspx) 对象来确定后台任务的启动时间。 当设备连接到交流电源且允许它们运行较长时间时，使用维护触发器的任务才会运行。 有关说明，请参阅[使用维护触发器](https://msdn.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger)。
+可以使用 [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.maintenancetrigger) 对象而不是 [**SystemTrigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.systemtrigger) 对象来确定后台任务的启动时间。 当设备连接到交流电源且允许它们运行较长时间时，使用维护触发器的任务才会运行。 有关说明，请参阅[使用维护触发器](https://docs.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger)。
 
 ### <a name="use-the-backgroundworkcostnothigh-system-condition-type"></a>使用 **BackgroundWorkCostNotHigh** 系统条件类型
-必须满足系统条件才能使后台任务运行（请参阅[设置运行后台任务的条件](https://msdn.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task)以获取详细信息)。 后台工作成本是表示运行后台任务的*相对*能量影响的度量方法。 将设备插入到交流电源时运行的任务会标记为**低**（少/不影响电池）。 当设备使用电池电源且屏幕关闭时运行的任务会标记为**高**，因为可能当时在设备上运行的程序活动很少，因此后台任务有更高的相对成本。 当设备使用电池电源且屏幕*打开*时运行的任务会标记为**中等**，因为可能已有某些程序活动在运行，而且后台任务将增加一点能源成本。 **BackgroundWorkCostNotHigh** 系统条件只会延迟你的任务运行，直到屏幕打开或设备连接到交流电源。
+必须满足系统条件才能使后台任务运行（请参阅[设置运行后台任务的条件](https://docs.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task)以获取详细信息)。 后台工作成本是表示运行后台任务的*相对*能量影响的度量方法。 将设备插入到交流电源时运行的任务会标记为**低**（少/不影响电池）。 当设备使用电池电源且屏幕关闭时运行的任务会标记为**高**，因为可能当时在设备上运行的程序活动很少，因此后台任务有更高的相对成本。 当设备使用电池电源且屏幕*打开*时运行的任务会标记为**中等**，因为可能已有某些程序活动在运行，而且后台任务将增加一点能源成本。 **BackgroundWorkCostNotHigh** 系统条件只会延迟你的任务运行，直到屏幕打开或设备连接到交流电源。
 
 ## <a name="test-battery-efficiency"></a>测试电池效率
 
@@ -63,6 +63,6 @@ ms.locfileid: "57613222"
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建和注册进程外后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
-* [规划性能](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
+* [创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
+* [规划性能](https://docs.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
 

@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10，uwp，应用程序认证
 ms.localizationpriority: medium
-ms.openlocfilehash: 42ec5c1e91fbeebcaad68f346f317893fdfb2e1c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3f979edbd49699447040880964dd1378bc7c94c0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606882"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362076"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 桌面桥应用测试
 
@@ -118,7 +118,7 @@ Windows 桌面桥应用的可选测试，仅用于参考，并不会用于在 Mi
 图像 {image name} 不是有效的图像文件。  | 确保所有应用图像都符合相应的文件格式类型限制。 在实际消息中，{image name} 包含无效的图像名称。 
 图像“BadgeLogo”在位置 (x, y) 上具有一个无效的 ABGR 值 {value}。 像素必须为白色 (##FFFFFF) 或透明 (00######)  | 锁屏提醒徽标是显示在锁屏提醒通知旁边的图像，用于在锁屏上标识应用。 该图像必须是单色图像（它只能包含白色和透明像素）。 在实际消息中，{value} 在图像中包含无效的颜色值。 
 图像“BadgeLogo”在位置 (x, y) 上具有一个对高对比度白色图像来说无效的 ABGR 值 {value}。 像素必须为 (##2A2A2A) 或更暗，或者透明 (00######)。  | 锁屏提醒徽标是显示在锁屏提醒通知旁边的图像，用于在锁屏上标识应用。 因为当处于高对比度白色背景中时锁屏提醒徽标出现在白色背景上，因此它必须是较暗版本的正常锁屏提醒徽标。 在高对比度白色背景中，锁屏提醒徽标只能包含比 (##2A2A2A) 暗或透明的像素。 在实际消息中，{value} 在图像中包含无效的颜色值。 
-图像必须至少定义一个没有 TargetSize 限定符的变量。 它必须定义一个 Scale 限定符或者保持 Scale 和 TargetSize 为未指定状态，默认值为 Scale-100。  | 有关详细信息，请参阅有关[响应式设计](https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx)和[应用资源](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data)的指南。 
+图像必须至少定义一个没有 TargetSize 限定符的变量。 它必须定义一个 Scale 限定符或者保持 Scale 和 TargetSize 为未指定状态，默认值为 Scale-100。  | 有关详细信息，请参阅有关[响应式设计](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)和[应用资源](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data)的指南。 
 该程序包缺少一个“resources.pri”文件。  | 如果你在应用清单中包含可本地化的内容，请确保你的应用包包含有效的 resources.pri 文件。 
 “resources.pri”文件必须包含一个其名称与程序包名称 {package full name} 相匹配的资源映射  | 如果清单发生更改并且 resources.pri 中的资源映射名称不再与清单中的程序包名称相匹配，你将遇到此错误。 在实际消息中，{package full name} 包含 resources.pri 必须包含的程序包名称。 为了解决此问题，你需要重新构建 resources.pri，而这样做的最简单方法就是重新构建应用包。 
 “resources.pri”文件不得启用 AutoMerge。  | MakePRI.exe 支持一个名为 AutoMerge 的选项。 AutoMerge 的默认值为 off。 启用后，AutoMerge 在运行时将应用的语言包资源合并到一个 resources.pri 中。 我们不建议这样对于你打算分发通过 Microsoft Store 的应用。 通过 Microsoft Store 分发的应用的 resources.pri 必须为应用程序的包的根目录中，包含该应用支持的所有语言参考。 
@@ -156,7 +156,7 @@ Windows 桌面桥应用的可选测试，仅用于参考，并不会用于在 Mi
 * **框架依赖关系规则**  
 此测试强制要求应用声明对 UWP 的适当依赖关系。 如果存在不适当的依赖关系，该测试将失败。 如果应用面向的操作系统版本和框架依赖关系采用的操作系统版本不匹配，该测试将失败。 如果应用引用了任何“预览”版的框架 DLL，该测试也将失败。
 * **进程间通信 (IPC) 验证**  
-此测试强制要求桌面桥应用不在应用容器外部与桌面组件通信。 进程间通信仅适用于旁加载应用。 使用等效于 `DesktopApplicationPath` 的名称指定 [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) 的应用无法通过此测试。  
+此测试强制要求桌面桥应用不在应用容器外部与桌面组件通信。 进程间通信仅适用于旁加载应用。 使用等效于 `DesktopApplicationPath` 的名称指定 [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) 的应用无法通过此测试。  
 
 **纠正措施**  
 针对[应用包要求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)中所述的要求检查应用清单。
@@ -217,10 +217,10 @@ Windows 桌面桥应用的可选测试，仅用于参考，并不会用于在 Mi
 这可以通过确保应用编译为发行版本而不是调试版本来进行更正。 
 
 > [!NOTE]
-> 应用程序的调试版本将失败此测试，即使该应用程序仅使用[UWP 应用的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。 检查错误消息以确定存在的 API 不允许的 API 适用于 UWP 应用。 
+> 应用程序的调试版本将失败此测试，即使该应用程序仅使用[UWP 应用的 Api](https://docs.microsoft.com/uwp/)。 检查错误消息以确定存在的 API 不允许的 API 适用于 UWP 应用。 
 
 > [!NOTE]
-> 调试配置中生成的 c + + 应用程序将失败此测试，即使配置仅适用于 UWP 应用使用 Windows SDK 中的 Api。 请参阅[UWP 应用中的 Windows Api 的替代方法](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)有关详细信息。
+> C++即使配置仅适用于 UWP 应用使用 Windows SDK 中的 Api，内置的调试配置的应用程序将失败此测试。 请参阅[UWP 应用中的 Windows Api 的替代方法](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)有关详细信息。
 
 ### <a name="6-user-account-control-uac-test"></a>6.用户帐户控制 (UAC) 测试  
 
@@ -286,4 +286,4 @@ Windows 应用认证工具包中“对被禁止文件的检查”当前会对以
 
 ## <a name="related-topics"></a>相关主题
 
-* [Microsoft Store 策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)

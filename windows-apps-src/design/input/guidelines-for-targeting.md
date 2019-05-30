@@ -8,12 +8,12 @@ ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c05b6686d31606a9510b1433339dc8829a52893
-ms.sourcegitcommit: 7a1d5198345d114c58287d8a047eadc4fe10f012
+ms.openlocfilehash: 34f8d15b971cc9ed286471010a21d1b44b84af13
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59247175"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363473"
 ---
 # <a name="guidelines-for-touch-targets"></a>触摸目标的准则
 
@@ -25,7 +25,7 @@ ms.locfileid: "59247175"
 
 在本主题中，我们将介绍这些默认行为，以便您可以设计您的应用程序的使用平台控件和自定义控件 （如果您的应用程序需要） 的最大可用性。
 
-> **重要的 API**：[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)， [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **重要的 API**：[**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)， [ **Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)， [ **Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
 ## <a name="fluent-standard-sizing"></a>Fluent 标准调整大小
 
@@ -79,22 +79,22 @@ ms.locfileid: "59247175"
 
 - [UWP 应用设计简介](../basics/design-and-ui-intro.md)
 - [控件的大小和密度](../style/spacing.md)
-- [对齐、边距和填充](../layout/alignment-margin-padding.md)
+- [对齐、 边距、 填充](../layout/alignment-margin-padding.md)
 
 ### <a name="samples"></a>示例
 
-- [基本输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-- [低延迟输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+- [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+- [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 - [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-- [焦点视觉示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 ### <a name="archive-samples"></a>存档示例
 
 - [输入：XAML 用户输入的事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
 - [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
 - [输入：触控命中测试示例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-- [XAML 滚动、平移以及缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
+- [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
 - [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
 - [输入：Windows 8 手势示例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
 - [输入：操作和手势 (C++) 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-- [DirectX 触控输入示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+- [DirectX 触摸输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)

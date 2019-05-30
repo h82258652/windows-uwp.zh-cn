@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c7d40765e0d12e3543f198aebd5acd15ed3aff3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2e1eba68d1046892a67d779d353fd9b2e6bf224e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595492"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366943"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>使用 three.js 创建 3D JavaScript 游戏
 
@@ -1084,7 +1084,7 @@ function lockChange() {
 现在你拥有的 UWP 应用，则可以将其发布到 Microsoft Store （假设做出的改进首先 ！）此流程包含几个步骤。
 
 1.  你必须以 Windows 开发人员的身份[注册](https://developer.microsoft.com/store/register)。
-2.  你必须使用应用提交[清单](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。
-3.  必须将此应用提交以进行[认证](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)。
+2.  你必须使用应用提交[清单](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
+3.  必须将此应用提交以进行[认证](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)。
 有关更多详细信息，请参阅[UWP 应用程序发布](https://developer.microsoft.com/store/publish-apps)。
 

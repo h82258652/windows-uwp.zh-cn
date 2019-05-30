@@ -8,18 +8,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 524cc15dbb7a3264d8476210f727508ea41ace87
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 08a7ca0b08a9df57d3c496f33f963fcd9d0ebfe2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639602"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367058"
 ---
 # <a name="create-adaptive-tiles"></a>创建自适应磁贴
 
 自适应磁贴模板是在 Windows 10 中，从而在设计您自己使用一种简单而灵活的标记语言适应不同屏幕密度的磁贴通知内容的新功能。 本文介绍了如何为通用 Windows 平台 (UWP) 应用创建自适应动态磁贴。 有关自适应元素和属性的完整列表，请参阅[自适应磁贴架构](../tiles-and-notifications/tile-schema.md)。
 
-(如果您愿意，您仍可以使用从预设的模板[Windows 8 磁贴模板目录](https://msdn.microsoft.com/library/windows/apps/hh761491)设计适用于 Windows 10 的通知时。)
+(如果您愿意，您仍可以使用从预设的模板[Windows 8 磁贴模板目录](https://docs.microsoft.com/previous-versions/windows/apps/hh761491(v=win.10))设计适用于 Windows 10 的通知时。)
 
 
 ## <a name="getting-started"></a>即刻体验
@@ -284,7 +284,7 @@ TileContent content = new TileContent()
 
  
 
-## <a name="display-name"></a>显示名称
+## <a name="display-name"></a>Display name
 
 
 你可以通过输入你使用 **displayName** 属性选择的文本字符串来替代通知的显示名称。 与品牌一样，可在 [TileVisual](../tiles-and-notifications/tile-schema.md#tilevisual) 元素上指定它（这将影响整个通知有效负载），或者可在 [TileBinding](../tiles-and-notifications/tile-schema.md#tilebinding) 元素上指定它（这仅影响个别磁贴）。
@@ -335,7 +335,7 @@ TileContent content = new TileContent()
 
 ![自适应磁贴显示名称](images/adaptive-tiles-displayname.png)
 
-## <a name="text"></a>文本
+## <a name="text"></a>Text
 
 
 [AdaptiveText](../tiles-and-notifications/tile-schema.md#adaptivetext) 元素用于显示文本。 你可以使用提示来修改文本显示方式。
@@ -414,7 +414,7 @@ new AdaptiveText()
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
-| &lt;文本提示的 style ="\*"/&gt; | 字体高度               | 字体粗细 |
+| &lt;text hint-style="\*" /&gt; | 字体高度               | 字体粗细 |
 | 描述文字                        | 12 个有效像素 (epx) | 常规     |
 | 正文                           | 15 epx                    | 常规     |
 | 基本                           | 15 epx                    | 半粗    |

@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
-ms.openlocfilehash: d72a8d3fcaf337973f585ab19370140cd80f3826
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5aee0ed5969d87cd5a9d8ef7a621b383d4078d38
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640172"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360586"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>通过 MediaFrameReader 使用开放源计算机视觉库 (OpenCV)
 
-本文介绍了如何通过 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) 类（可同时读取多个源中的媒体帧）使用开放源计算机视觉库 (OpenCV)，后者是一个本机代码库，可提供各类图像处理算法。 本文中的示例代码向你展示了一款简单的应用，该应用可通过颜色传感器获取帧，使用 OpenCV 库模糊每帧，然后在 XAML **Image** 控件中显示经过处理的图像。 
+本文介绍了如何通过 [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) 类（可同时读取多个源中的媒体帧）使用开放源计算机视觉库 (OpenCV)，后者是一个本机代码库，可提供各类图像处理算法。 本文中的示例代码向你展示了一款简单的应用，该应用可通过颜色传感器获取帧，使用 OpenCV 库模糊每帧，然后在 XAML **Image** 控件中显示经过处理的图像。 
 
 >[!NOTE]
 >OpenCV.Win.Core 和 OpenCV.Win.ImgProc 不会定期更新，但仍建议安装这两个包，用于创建 OpenCVHelper，如本页所述。
@@ -50,7 +50,7 @@ ms.locfileid: "57640172"
 [!code-cs[OpenCVInitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVInitMediaCapture)]
 
 ## <a name="initialize-the-mediaframereader"></a>初始化 MediaFrameReader
-接着，为上一步中检索到的 RGB 帧源创建一个 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader)。 为了维持良好的帧率，你可能需要处理分辨率低于传感器分辨率的帧。 本示例提供了 **[MediaCapture.CreateFrameReaderAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync)** 方法的可选 **[BitmapSize](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapsize)** 参数，以请求将帧阅读器提供的帧调整为 640 x 480 像素。
+接着，为上一步中检索到的 RGB 帧源创建一个 [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader)。 为了维持良好的帧率，你可能需要处理分辨率低于传感器分辨率的帧。 本示例提供了 **[MediaCapture.CreateFrameReaderAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync)** 方法的可选 **[BitmapSize](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapsize)** 参数，以请求将帧阅读器提供的帧调整为 640 x 480 像素。
 
 创建帧阅读器后，为 **[FrameArrived](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.FrameArrived)** 事件注册一个处理程序。 然后，创建一个新的 **[SoftwareBitmapSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource)** 对象，**FrameRenderer** 帮助程序类可以使用该对象来展示处理的图像。 然后调用 **FrameRenderer** 的构造函数。 初始化 OpenCVBridge Windows 运行时组件中定义的 **OpenCVHelper** 类实例。 **FrameArrived** 处理程序将使用此帮助程序类来处理每个帧。 最后，通过调用 **[StartAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.StartAsync)** 启动帧阅读器。
 

@@ -5,12 +5,12 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e0fcb903bd272bd10d434a27d41e6e4558a624ea
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: a6a1d93b1deaad084ff25db946199b678b35703c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334895"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369514"
 ---
 # <a name="best-practices-for-writing-to-files"></a>向文件进行写入的最佳做法
 
@@ -192,7 +192,7 @@ else
 
 ### <a name="synchronize-access-to-the-file"></a>同步对文件的访问
 
-[使用.NET 博客进行并行编程](https://blogs.msdn.microsoft.com/pfxteam/)是一个不错的资源的并行编程有关的指南。 具体而言，[发表 AsyncReaderWriterLock](https://blogs.msdn.microsoft.com/pfxteam/2012/02/12/building-async-coordination-primitives-part-7-asyncreaderwriterlock/)描述如何维护独占访问的文件的写入，同时允许并发读取访问权限。 请注意，序列的 I/O 会影响性能。
+[使用.NET 博客进行并行编程](https://devblogs.microsoft.com/pfxteam/)是一个不错的资源的并行编程有关的指南。 具体而言，[发表 AsyncReaderWriterLock](https://devblogs.microsoft.com/pfxteam/building-async-coordination-primitives-part-7-asyncreaderwriterlock/)描述如何维护独占访问的文件的写入，同时允许并发读取访问权限。 请注意，序列的 I/O 会影响性能。
 
 ## <a name="see-also"></a>请参阅
 

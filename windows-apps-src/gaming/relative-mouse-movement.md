@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 鼠标, 输入
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
 ms.localizationpriority: medium
-ms.openlocfilehash: 71985841e6c0fa764201c179fb12408581823e5e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1d36d81aa3f4e0124f79cf8c736b715eb91590d0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639652"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368197"
 ---
 # <a name="relative-mouse-movement-and-corewindow"></a>相对鼠标移动和 CoreWindow
 
@@ -39,7 +39,7 @@ ms.locfileid: "57639652"
 ## <a name="handling-relative-mouse-movement"></a>处理相对鼠标移动
 
 
-要访问相对鼠标增量值，请注册 [MouseDevice::MouseMoved](https://msdn.microsoft.com/library/windows/apps/xaml/windows.devices.input.mousedevice.mousemoved.aspx) 事件，如下所示。
+要访问相对鼠标增量值，请注册 [MouseDevice::MouseMoved](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved) 事件，如下所示。
 
 
 ```cpp
@@ -85,13 +85,13 @@ void MoveLookController::OnMouseMoved(
 
 ```
 
-此代码示例中的事件处理程序 **OnMouseMoved** 根据鼠标的移动来呈现视图。 鼠标指针的位置作为 [MouseEventArgs](https://msdn.microsoft.com/library/windows/apps/xaml/windows.devices.input.mouseeventargs.aspx) 对象传递到该处理程序。 
+此代码示例中的事件处理程序 **OnMouseMoved** 根据鼠标的移动来呈现视图。 鼠标指针的位置作为 [MouseEventArgs](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseEventArgs) 对象传递到该处理程序。 
 
-当你的应用更改为处理相对鼠标移动值时，从 [CoreWindow::PointerMoved](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.core.corewindow.pointermoved.aspx) 事件跳过处理绝对鼠标数据。 但是，如果由于鼠标输入（相对于触控输入）而发生 **CoreWindow::PointerMoved** 事件时，将仅跳过此输入。 通过将 [CoreWindow::PointerCursor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.core.corewindow.pointercursor.aspx) 设置为 **nullptr** 隐藏光标。 
+当你的应用更改为处理相对鼠标移动值时，从 [CoreWindow::PointerMoved](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) 事件跳过处理绝对鼠标数据。 但是，如果由于鼠标输入（相对于触控输入）而发生 **CoreWindow::PointerMoved** 事件时，将仅跳过此输入。 通过将 [CoreWindow::PointerCursor](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) 设置为 **nullptr** 隐藏光标。 
 
 ## <a name="returning-to-absolute-mouse-movement"></a>返回到绝对鼠标移动
 
-当应用退出三维对象或场景操作模式且不再使用相对鼠标移动时（例如当它返回到菜单屏幕时），返回到正常的绝对鼠标移动处理。 此时，停止读取相对鼠标数据，重新启动标准鼠标（和指针）事件处理，并将 [CoreWindow::PointerCursor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.core.corewindow.pointercursor.aspx) 设置为非空值。 
+当应用退出三维对象或场景操作模式且不再使用相对鼠标移动时（例如当它返回到菜单屏幕时），返回到正常的绝对鼠标移动处理。 此时，停止读取相对鼠标数据，重新启动标准鼠标（和指针）事件处理，并将 [CoreWindow::PointerCursor](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) 设置为非空值。 
 
 > **注意**  
 当你的应用处于三维对象/场景操作模式（处理相对鼠标移动，关闭光标）时，鼠标将无法调用边缘 UI，例如超级按钮、Back 堆栈或应用栏。 因此，请务必提供一种机制退出此特殊模式，例如通过常用的 **Esc** 键退出。

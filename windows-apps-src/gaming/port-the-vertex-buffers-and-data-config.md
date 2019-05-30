@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 移植, 顶点缓冲区, 数据, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c961a8852fb1e03e4e86209f62bda821b980f8c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8445339d442fb740e9e2aba5e9d1cb0388c746ef
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592812"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368245"
 ---
 # <a name="port-the-vertex-buffers-and-data"></a>移植顶点缓冲区和数据
 
@@ -20,9 +20,9 @@ ms.locfileid: "57592812"
 
 **重要的 Api**
 
--   [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)
--   [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456)
--   [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588)
+-   [**ID3DDevice::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer)
+-   [**ID3DDeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers)
+-   [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-iasetindexbuffer)
 
 在此步骤中，你将定义将包含网格的顶点缓冲区以及允许着色器按照指定的顺序遍历顶点的索引缓冲区。
 
@@ -130,7 +130,7 @@ typedef struct
 
 在 Direct3D 中，必须提供输入布局以描述在创建缓冲区时（而不是绘制几何图形之前）顶点缓冲区中顶点数据的结构。 为此，使用一个与内存中各个顶点的数据布局相对应的输入布局。 精确地指定此内容非常重要！
 
-在此部分，创建的输入的数组的形式描述[ **D3D11\_输入\_元素\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180)结构。
+在此部分，创建的输入的数组的形式描述[ **D3D11\_输入\_元素\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc)结构。
 
 Direct3D:定义输入的布局说明。
 
@@ -151,11 +151,11 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 
 ```
 
-该输入描述将顶点定义为两个 3 位坐标矢量对：一个三维矢量用于存储模型坐标中顶点的位置，另一个三维矢量用于存储与顶点关联的 RGB 颜色值。 在本例中，使用 3x32 位浮点格式，我们采用代码将其中的元素表示为 `XMFLOAT3(X.Xf, X.Xf, X.Xf)`。 处理将用于着色器的数据时，都应该使用来自 [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415574) 库的类型，因为它可以确保使该数据进行正确的打包和对齐。 （例如，对于矢量数据，使用 [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) 或 [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608)；对于矩阵，使用 [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621)）。
+该输入描述将顶点定义为两个 3 位坐标矢量对：一个三维矢量用于存储模型坐标中顶点的位置，另一个三维矢量用于存储与顶点关联的 RGB 颜色值。 在本例中，使用 3x32 位浮点格式，我们采用代码将其中的元素表示为 `XMFLOAT3(X.Xf, X.Xf, X.Xf)`。 处理将用于着色器的数据时，都应该使用来自 [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/ovw-xnamath-reference) 库的类型，因为它可以确保使该数据进行正确的打包和对齐。 （例如，对于矢量数据，使用 [**XMFLOAT3**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat3) 或 [**XMFLOAT4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4)；对于矩阵，使用 [**XMFLOAT4X4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4x4)）。
 
-有关所有可能的格式类型的列表，请参阅[ **DXGI\_格式**](https://msdn.microsoft.com/library/windows/desktop/bb173059)。
+有关所有可能的格式类型的列表，请参阅[ **DXGI\_格式**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)。
 
-定义了每个顶点输入布局后，可以创建布局对象。 在以下代码中，您将其写入**m\_inputLayout**，类型的变量**ComPtr** (它指向类型的对象[ **ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575)). **fileData** 包含上一步[移植着色器](port-the-shader-config.md)中已编译好的顶点着色器对象。
+定义了每个顶点输入布局后，可以创建布局对象。 在以下代码中，您将其写入**m\_inputLayout**，类型的变量**ComPtr** (它指向类型的对象[ **ID3D11InputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11inputlayout)). **fileData** 包含上一步[移植着色器](port-the-shader-config.md)中已编译好的顶点着色器对象。
 
 Direct3D:创建顶点缓冲区所使用的输入的布局。
 
@@ -188,11 +188,11 @@ glBindBuffer(GL_ARRAY_BUFFER, renderer->vertexBuffer);
 glBufferData(GL_ARRAY_BUFFER, sizeof(VERTEX) * CUBE_VERTICES, renderer->vertices, GL_STATIC_DRAW);   
 ```
 
-在 Direct3D 中，可访问着色器的缓冲区均作为[ **D3D11\_SUBRESOURCE\_数据**](https://msdn.microsoft.com/library/windows/desktop/ff476220)结构。 若要将此缓冲区的位置绑定到着色器对象，您需要创建 CD3D11\_缓冲区\_DESC 结构对于具有每个缓冲区[ **ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)，然后将设置通过调用 set 方法特定于该缓冲区类型，如 Direct3D 设备上下文的缓冲区[ **ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456)。
+在 Direct3D 中，可访问着色器的缓冲区均作为[ **D3D11\_SUBRESOURCE\_数据**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)结构。 若要将此缓冲区的位置绑定到着色器对象，您需要创建 CD3D11\_缓冲区\_DESC 结构对于具有每个缓冲区[ **ID3DDevice::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer)，然后将设置通过调用 set 方法特定于该缓冲区类型，如 Direct3D 设备上下文的缓冲区[ **ID3DDeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers)。
 
 设置缓冲区时，必须从缓冲区的开头设置步幅（单个顶点的数据元素大小）以及偏移（顶点数据数组实际开始的位置）。
 
-请注意，我们将分配到指针**vertexIndices**到数组**pSysMem**字段[ **D3D11\_SUBRESOURCE\_数据**](https://msdn.microsoft.com/library/windows/desktop/ff476220)结构。 如果该操作不正确，你的网格将遭到破坏或为空！
+请注意，我们将分配到指针**vertexIndices**到数组**pSysMem**字段[ **D3D11\_SUBRESOURCE\_数据**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)结构。 如果该操作不正确，你的网格将遭到破坏或为空！
 
 Direct3D:创建并设置顶点缓冲区
 
@@ -248,7 +248,7 @@ glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->indexBuffer);
 glDrawElements (GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);
 ```
 
-对于 Direct3D，虽然有点说教，但这个过程有点类似。 提供索引缓冲区作为配置 Direct3D 时创建的 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 的 Direct3D 子资源。 通过使用为索引数组配置的子资源调用 [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588) 来完成该操作，如下所示。 (同样，请注意，将分配到指针**cubeIndices**到数组**pSysMem**字段[ **D3D11\_SUBRESOURCE\_数据**](https://msdn.microsoft.com/library/windows/desktop/ff476220)结构。)
+对于 Direct3D，虽然有点说教，但这个过程有点类似。 提供索引缓冲区作为配置 Direct3D 时创建的 [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) 的 Direct3D 子资源。 通过使用为索引数组配置的子资源调用 [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-iasetindexbuffer) 来完成该操作，如下所示。 (同样，请注意，将分配到指针**cubeIndices**到数组**pSysMem**字段[ **D3D11\_SUBRESOURCE\_数据**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)结构。)
 
 Direct3D:创建索引缓冲区。
 
@@ -274,7 +274,7 @@ m_d3dContext->IASetIndexBuffer(
   0);
 ```
 
-之后，你将通过调用 [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409)（对于无索引顶点，则通过调用 [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407)）绘制三角形，如下所示。 （有关详细信息，请向前跳至[绘制到屏幕](draw-to-the-screen.md)。）
+之后，你将通过调用 [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed)（对于无索引顶点，则通过调用 [**ID3D11DeviceContext::Draw**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw)）绘制三角形，如下所示。 （有关详细信息，请向前跳至[绘制到屏幕](draw-to-the-screen.md)。）
 
 Direct3D:绘制索引的顶点。
 
@@ -301,7 +301,7 @@ m_d3dContext->DrawIndexed(
 
 ## <a name="remarks"></a>备注
 
-当构造你的 Direct3D 时，将在 [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) 上调用方法的代码分离成一个当需要重新创建设备资源时调用的方法。 （在 Direct3D 项目模板中，该代码位于呈现器对象的 **CreateDeviceResource** 方法中。） 另一方面，更新设备上下文 ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) 的代码位于 **Render** 方法中，因为这是你实际构造着色器阶段以及绑定数据的位置。
+当构造你的 Direct3D 时，将在 [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device) 上调用方法的代码分离成一个当需要重新创建设备资源时调用的方法。 （在 Direct3D 项目模板中，该代码位于呈现器对象的 **CreateDeviceResource** 方法中。） 另一方面，更新设备上下文 ([**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)) 的代码位于 **Render** 方法中，因为这是你实际构造着色器阶段以及绑定数据的位置。
 
 ## <a name="related-topics"></a>相关主题
 

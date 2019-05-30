@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp，WNS，windows 通知服务、 通知、 windows、 防火墙故障排除、 IP、 流量、 企业版、 网络、 IPv4、 VIP、 FQDN，公共 IP 地址
 ms.localizationpriority: medium
-ms.openlocfilehash: 466463bfc984707af4cb30618f9cbfa47d78703c
-ms.sourcegitcommit: fd7d358aad3a5b7112f5a587bb6ea86805dc8a4d
+ms.openlocfilehash: 9ed4ad6ed828abda9d487ef96beca9b655c92421
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976247"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366668"
 ---
 # <a name="allowing-windows-notification-traffic-through-enterprise-firewalls"></a>允许 Windows 通知流量通过企业防火墙
 
@@ -78,10 +78,10 @@ ms.locfileid: "65976247"
 
 ## <a name="related-topics"></a>相关主题
 
-* [快速入门：发送推送通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [如何请求、 创建和保存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [如何截获用于运行应用程序的通知](https://msdn.microsoft.com/library/windows/apps/xaml/jj709907.aspx)
-* [如何进行身份验证使用 Windows 推送通知服务 (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [推送通知服务请求和响应标头](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [指导原则和清单的推送通知](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [快速入门：发送推送通知](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
+* [如何请求、 创建和保存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
+* [如何截获用于运行应用程序的通知](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
+* [如何进行身份验证使用 Windows 推送通知服务 (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
+* [推送通知服务请求和响应标头](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
+* [指导原则和清单的推送通知](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
  

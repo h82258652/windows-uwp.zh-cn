@@ -1,16 +1,16 @@
 ---
 description: 对你可能有的关于通过 C++/WinRT 创作和使用 Windows 运行时 API 的问题的解答。
 title: C++/WinRT 常见问题
-ms.date: 10/26/2018
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 问的, 问题, 常见问题
 ms.localizationpriority: medium
-ms.openlocfilehash: 70aedf4034ce433b0aa529375799cf45a18ca3e0
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: 7ac7f8e46974b7c12b42f6d6f94052e61902b240
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291885"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360252"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>C++/WinRT 常见问题
 您可能具有有关创作和使用与 Windows 运行时 Api 的问题的答案[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
@@ -21,8 +21,11 @@ ms.locfileid: "58291885"
 ## <a name="how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>如何执行我重定目标，我C++到更高版本的 Windows SDK /WinRT 项目？
 请参阅[如何重定目标，在C++/WinRT 项目到更高版本的 Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。
 
+## <a name="why-wont-my-new-project-compile-now-that-ive-moved-to-cwinrt-20"></a>为什么不会我新项目进行编译，现在，我已移到C++WinRT 2.0？
+有关完整的更改 （包括的重大更改） 集，请参阅[新闻和更改，在C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20)。 例如，对于协同程序支持 (包括协同程序帮助程序，如**winrt::resume_background**， **winrt::resume_foreground**，并**winrt::resume_on_signal**)，你将需要`#include <winrt/coroutine.h>`。 如果您使用的基于范围的`for`上的 Windows 运行时集合，然后您现在需要为`#include <winrt/Windows.Foundation.Collections.h>`。
+
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>为什么我的新项目将不会编译？ 我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，和 SDK 版本版本 17134
-如果您使用的 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及针对 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)，然后对新创建C++/WinRT 项目可能无法编译出现错误"*错误 C3861: from_abi:找不到标识符*"，并与来自其他错误同时*base.h*。 解决方法到任一目标是更高版本的 （更符合） 版本的 Windows SDK 或设置项目属性**C /C++** > **语言** >  **符合模式：否**(此外，如果**触发-** 出现在项目属性**C /C++** > **命令行**下**其他选项**，然后将其删除)。
+如果您使用的 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及针对 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)，然后对新创建C++/WinRT 项目可能无法编译出现错误"*错误 C3861: from_abi:找不到标识符*"，并与来自其他错误同时*base.h*。 解决方法到任一目标是更高版本的 （更符合） 版本的 Windows SDK 或设置项目属性**C /C++**  > **语言** >  **符合模式：否**(此外，如果**触发-** 出现在项目属性**C /C++**  > **命令行**下**其他选项**，然后将其删除)。
 
 ## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>如何解决生成错误" C++WinRT VSIX 不再提供项目的生成支持。  请添加对 Microsoft.Windows.CppWinRT Nuget 包的项目引用"？
 安装**Microsoft.Windows.CppWinRT**到你的项目的 NuGet 包。 有关详细信息，请参阅[早期版本的 VSIX 扩展](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
@@ -44,7 +47,7 @@ ms.locfileid: "58291885"
 ## <a name="why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error"></a>为什么会链接器为我提供"LNK2019:无法解析的外部符号"错误？
 如果无法解析的符号是 C++/WinRT 投影的 Windows 命名空间头文件中的 API（位于 **winrt** 命名空间），则是因为该 API 在已包含的头文件中做了前置声明，但其定义位于尚未包含的头文件中。 请包括以 API 的命名空间命名的头文件，并重新生成。 有关详细信息，请参阅 [C++/WinRT 投影头文件](consume-apis.md#cwinrt-projection-headers)。
 
-如果无法解析的符号是 Windows 运行时的可用函数，例如[RoInitialize](https://msdn.microsoft.com/library/br224650)，则需要显式链接[WindowsApp.lib](/uwp/win32-and-com/win32-apis)涵盖性库项目中的。 C++/WinRT 投影依赖于这些自由（非成员）函数和入口点。 如果为应用程序使用了某个 [C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix) 项目模板，则会自动链接 `WindowsApp.lib`。 如果没有自动链接，则可以使用项目链接设置包含它，或在源代码中进行。
+如果无法解析的符号是 Windows 运行时的可用函数，例如[RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize)，则需要显式链接[WindowsApp.lib](/uwp/win32-and-com/win32-apis)涵盖性库项目中的。 C++/WinRT 投影依赖于这些自由（非成员）函数和入口点。 如果为应用程序使用了某个 [C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix) 项目模板，则会自动链接 `WindowsApp.lib`。 如果没有自动链接，则可以使用项目链接设置包含它，或在源代码中进行。
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")
@@ -61,7 +64,7 @@ ms.locfileid: "58291885"
 ## <a name="can-i-use-llvmclang-to-compile-with-cwinrt"></a>C++/WinRT 可以使用 LLVM/Clang 编译吗？
 C++/WinRT 不支持 LLVM 和 Clang 工具链，但我们在内部使用 LLVM 和 Clang 验证 C++/WinRT 的合规性。 例如，如果想模拟内部执行的操作，可以尝试进行如下所述的实验。
 
-转到 [LLVM 下载页面](https://releases.llvm.org/download.html)，查找 **Download LLVM 6.0.0** > **Pre-Built Binaries**，并下载 **Clang for Windows (64-bit)**。 安装期间，选择将 LLVM 添加到 PATH 系统变量，以便能够从命令提示符调用它。 在本实验中，如果遇到任何“Failed to find MSBuild toolsets directory”和/或“MSVC integration install failed”错误，可以忽略。 调用 LLVM/Clang 的方法有很多，下面的示例只演示了其中一种。
+转到 [LLVM 下载页面](https://releases.llvm.org/download.html)，查找 **Download LLVM 6.0.0** > **Pre-Built Binaries**，并下载 **Clang for Windows (64-bit)** 。 安装期间，选择将 LLVM 添加到 PATH 系统变量，以便能够从命令提示符调用它。 在本实验中，如果遇到任何“Failed to find MSBuild toolsets directory”和/或“MSVC integration install failed”错误，可以忽略。 调用 LLVM/Clang 的方法有很多，下面的示例只演示了其中一种。
 
 ```cmd
 C:\ExperimentWithLLVMClang>type main.cpp

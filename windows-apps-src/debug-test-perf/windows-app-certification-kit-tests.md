@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，应用程序认证
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb7cb68b57e3d9b30a25237a63410d3bfa319b3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0a7cf1e89c91f9ad53777aa21af1d43e070c4fc8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645082"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362231"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 应用认证工具包测试
 
@@ -34,7 +34,7 @@ ms.locfileid: "57645082"
 
 在整个认证测试中，我们将测试应用的恢复能力和稳定性。
 
-Windows 应用认证工具包调用 [**IApplicationActivationManager::ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) 来启动应用。 若要使 **ActivateApplication** 启动应用，必须启用用户帐户控制 (UAC) 并且屏幕分辨率必须至少为 1024 x 768 或 768 x 1024。 如果不满足任何条件，那么你的应用将无法通过此测试。
+Windows 应用认证工具包调用 [**IApplicationActivationManager::ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) 来启动应用。 若要使 **ActivateApplication** 启动应用，必须启用用户帐户控制 (UAC) 并且屏幕分辨率必须至少为 1024 x 768 或 768 x 1024。 如果不满足任何条件，那么你的应用将无法通过此测试。
 
 ### <a name="corrective-actions"></a>更正操作
 
@@ -42,10 +42,10 @@ Windows 应用认证工具包调用 [**IApplicationActivationManager::ActivateAp
 
 确保在屏幕足够大的计算机上运行测试。
 
-如果你的应用无法启动并且你的测试平台满足 [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) 的先决条件，那么你可以通过查看激活事件日志来解决此问题。 若要在事件日志中找到这些条目，请执行以下操作：
+如果你的应用无法启动并且你的测试平台满足 [**ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) 的先决条件，那么你可以通过查看激活事件日志来解决此问题。 若要在事件日志中找到这些条目，请执行以下操作：
 
 1.  打开 eventvwr.exe 并导航到应用程序和服务日志\\Microsoft\\Windows\\Immersive Shell 文件夹。
-2.  筛选视图以显示事件 Id:5900-6000。
+2.  筛选视图以显示事件 Id:5900-6000.
 3.  查看日志条目，了解可能说明了应用为何未启动的信息。
 
 排除文件的问题，识别并修复问题。 重新构建和重新测试应用。 你还可以检查 Windows App 认证工具包日志文件夹中是否已生成转储文件，该文件可用于调试你的应用。
@@ -64,7 +64,7 @@ Windows App 认证工具包使用 HighVersionLie 来检测应用检查操作系�
 
 ### <a name="corrective-action"></a>更正操作
 
-应用应使用版本 API 帮助程序函数来检查此版本。 有关详细信息，请参阅[操作系统版本](https://msdn.microsoft.com/library/windows/desktop/ms724832)。
+应用应使用版本 API 帮助程序函数来检查此版本。 有关详细信息，请参阅[操作系统版本](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version)。
 
 ## <a name="background-tasks-cancellation-handler-validation"></a>后台任务取消处理程序验证
 
@@ -80,7 +80,7 @@ Windows 应用可注册一个在后台运行的进程。 例如，电子邮件�
 
 ### <a name="corrective-action"></a>更正操作
 
-将取消处理程序添加到你的应用。 有关详细信息，请参阅[使用后台任务支持应用](https://msdn.microsoft.com/library/windows/apps/Mt299103)。
+将取消处理程序添加到你的应用。 有关详细信息，请参阅[使用后台任务支持应用](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
 
 ## <a name="app-count"></a>应用计数
 
@@ -110,7 +110,7 @@ Windows 应用可注册一个在后台运行的进程。 例如，电子邮件�
 
 ### <a name="test-details"></a>测试详细信息
 
-检查应用清单验证内容是否正确，如[应用包要求](https://msdn.microsoft.com/library/windows/apps/Mt148525)中所述。
+检查应用清单验证内容是否正确，如[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述。
 
 -   **文件扩展名和协议**
 
@@ -124,11 +124,11 @@ Windows 应用可注册一个在后台运行的进程。 例如，电子邮件�
 
 -   **进程间通信 (IPC) 验证**
 
-    此测试强制执行 UWP 应用不会对桌面组件在应用容器外通信要求。 进程间通信仅适用于旁加载应用。 使用等效于“DesktopApplicationPath”的名称指定 [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) 的应用无法通过此测试。
+    此测试强制执行 UWP 应用不会对桌面组件在应用容器外通信要求。 进程间通信仅适用于旁加载应用。 使用等效于“DesktopApplicationPath”的名称指定 [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) 的应用无法通过此测试。
 
 ### <a name="corrective-action"></a>更正操作
 
-针对[应用包要求](https://msdn.microsoft.com/library/windows/apps/Mt148525)中所述的要求检查应用清单。
+针对[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述的要求检查应用清单。
 
 ## <a name="windows-security-features-test"></a>Windows 安全功能测试
 
@@ -172,7 +172,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 属性可以从签名程序集中�
 
 不要使用强命名程序集上的 APTCA 属性，除非你的项目需要它且已充分了解风险。 为防不时之需，请确保所有 API 都在相应的代码访问安全性要求下受到了保护。 当程序集包含在通用 Windows 平台 (UWP) 应用中时，APTCA 不会生效。
 
-**备注**
+**注释**
 
 仅在托管代码（C#、.NET 等）上执行此测试。
 
@@ -186,7 +186,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 属性可以从签名程序集中�
 
 生成应用时，在链接器命令中启用 /SAFESEH 选项。 默认情况下，此选项处于打开状态（位于 Visual Studio 的“发布”配置中）。 确认在生成指令中为应用中的所有可执行模块启用了此选项。
 
-**备注**
+**注释**
 
 不在 64 位二元文件或 ARM 芯片集二元文件上执行此测试，因为它们不将异常处理程序地址存储在堆栈上。
 
@@ -200,7 +200,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 属性可以从签名程序集中�
 
 生成应用时，在链接器命令中启用 /NXCOMPAT 选项。 默认情况下，此选项在支持数据执行保护 (DEP) 的链接器版本中处于打开状态。
 
-**备注**
+**注释**
 
 我们建议，在支持 DEP 的 CPU 上测试你的应用，并修复你发现的由于 DEP 所导致的任何故障。
 
@@ -214,7 +214,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 属性可以从签名程序集中�
 
 在生成应用时，在链接器命令中启用 /DYNAMICBASE 选项。 验证你的应用使用的所有模块也使用此链接器选项。
 
-**备注**
+**注释**
 
 通常，ASLR 不影响性能。 但在某些情况下，在 32 位系统上有少许的性能改进。 原因可能是，在许多不同内存位置加载许多映像的高拥堵系统中，性能可能会降级。
 
@@ -224,13 +224,13 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 属性可以从签名程序集中�
 
 **Windows 应用程序认证包出现错误消息：** SharedSectionsCheck 测试失败。
 
-如果二进制文件包含标记为共享的可写入节，那么它就是一种安全威胁。 除非必须，否则不要构建包含共享的可写入节的应用。 使用 [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) 或 [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) 创建受到适当保护的共享内存对象。
+如果二进制文件包含标记为共享的可写入节，那么它就是一种安全威胁。 除非必须，否则不要构建包含共享的可写入节的应用。 使用 [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) 或 [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) 创建受到适当保护的共享内存对象。
 
 **如果您的应用程序无法通过此测试，怎么办**
 
-从应用中删除任何共享节，使用合适的安全属性调用 [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) 或 [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) 来创建共享内存对象，然后重新生成你的应用。
+从应用中删除任何共享节，使用合适的安全属性调用 [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) 或 [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) 来创建共享内存对象，然后重新生成你的应用。
 
-**备注**
+**注释**
 
 此测试仅在使用非托管语言（如使用 C 或 C++）编写的应用上执行。
 
@@ -246,7 +246,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 如果托管可执行文件，则测试失败，请确保你使用的最新的编译器和链接器，如 Microsoft Visual Studio 生成的 UWP 应用。
 
-**备注**
+**注释**
 
 此测试在所有 .exe 文件和非托管 DLL 上执行。
 
@@ -260,7 +260,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 不要将导入表合并到可执行代码节中。 确保 Visual C++ 链接器的 */merge* 标记未设置为将“.rdata”节合并到代码节中。
 
-**备注**
+**注释**
 
 此测试在除纯粹的托管程序集以外的所有二进制代码上执行。
 
@@ -274,7 +274,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 请确保该二进制文件不具有可写或可执行文件的部分，该二进制文件的*SectionAlignment*值是否至少等于其*页面\-大小*。
 
-**备注**
+**注释**
 
 此测试在所有 .exe 文件和本机非托管 DLL 上执行。
 
@@ -315,11 +315,11 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 确保应用编译为一个发行版本，而不是调试版本。
 
-> **请注意**  应用程序的调试版本将失败此测试，即使该应用使用仅[UWP 应用的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。
+> **请注意**  应用程序的调试版本将失败此测试，即使该应用使用仅[UWP 应用的 Api](https://docs.microsoft.com/uwp/)。
 
-查看不是此应用使用的标识 API 的错误消息[适用于 UWP 应用的 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。
+查看不是此应用使用的标识 API 的错误消息[适用于 UWP 应用的 API](https://docs.microsoft.com/uwp/)。
 
-> **请注意**  调试配置中生成的 c + + 应用程序将失败此测试，即使配置仅适用于 UWP 应用使用 Windows SDK 中的 Api。 查看，请[UWP 应用中的 Windows Api 的替代方法](https://go.microsoft.com/fwlink/p/?LinkID=244022)的详细信息。
+> **请注意**   C++中的调试配置生成的应用程序将失败此测试，即使配置仅适用于 UWP 应用使用 Windows SDK 中的 Api。 查看，请[UWP 应用中的 Windows Api 的替代方法](https://go.microsoft.com/fwlink/p/?LinkID=244022)的详细信息。
 
 ## <a name="performance-tests"></a>性能测试
 
@@ -412,7 +412,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 <tr><td>
 <p>图像必须至少定义一个没有 TargetSize 限定符的变量。 它必须定义一个 Scale 限定符或者保持 Scale 和 TargetSize 为未指定状态，默认值为 Scale-100。</p>
 </td><td>
-<p>有关详细信息，请参阅 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx">UWP 应用的响应式设计基础</a>和<a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">应用资源指南</a>。</p>
+<p>有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">UWP 应用的响应式设计基础</a>和<a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">应用资源指南</a>。</p>
 </td></tr>
 <tr><td>
 <p>该程序包缺少一个“resources.pri”文件。</p>
@@ -434,7 +434,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 <tr><td>
 <p>字符串 {string} 不符合 {number} 个字符的最大长度限制。</p>
 </td><td>
-<p>请参阅<a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">应用包要求</a>。</p>
+<p>请参阅<a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">应用包要求</a>。</p>
 <p>在实际消息中，{string} 替换为有错误的字符串并且 {number} 包含最大长度。</p>
 </td></tr>
 <tr><td>
@@ -447,12 +447,12 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 <tr><td>
 <p>字符串必须非空（长度大于零）</p>
 </td><td>
-<p>有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">应用包要求</a>。</p>
+<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">应用包要求</a>。</p>
 </td></tr>
 <tr><td>
 <p>“resources.pri”文件中没有指定的默认资源。</p>
 </td><td>
-<p>有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">应用资源指南</a>。</p>
+<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">应用资源指南</a>。</p>
 <p>在默认版本配置中，Visual Studio 在生成捆绑包时仅在应用包中包含比例为 200 的图像资源，从而将其他资源放入资源包中。 确保你包含比例为 200 的图像资源或将项目配置为包含你拥有的资源。</p>
 </td></tr>
 <tr><td>
@@ -523,7 +523,7 @@ HTML、CSS 和 JavaScript 文件必须使用带有相应字节顺序标记 (BOM)
 
 ### <a name="corrective-action"></a>更正操作
 
-在 Visual Studio 中打开受影响的文件，并从“文件”菜单中选择“另存为”。 选择“保存”按钮旁边的下拉控件，并选择“编码保存”。 从“高级”保存选项对话框中，选择 Unicode（带签名的 UTF-8）选项，并单击“确定”。
+在 Visual Studio 中打开受影响的文件，并从“文件”  菜单中选择“另存为”  。 选择“保存”  按钮旁边的下拉控件，并选择“编码保存”  。 从“高级”  保存选项对话框中，选择 Unicode（带签名的 UTF-8）选项，并单击“确定”  。
 
 ## <a name="direct3d-feature-level-test"></a>Direct3D 功能级别测试
 
@@ -551,15 +551,15 @@ Microsoft Store 需要使用 Direct3D 正确呈现或正常上失败的所有应
 
 ### <a name="background"></a>后台
 
-如果该应用不在其 Direct3D 设备上调用 [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346)，则该应用不会释放为其早期 3D 工作分配的内存。 这将增加由于系统内存压力而终止应用的风险。
+如果该应用不在其 Direct3D 设备上调用 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim)，则该应用不会释放为其早期 3D 工作分配的内存。 这将增加由于系统内存压力而终止应用的风险。
 
 ### <a name="test-details"></a>测试详细信息
 
-检查应用是否符合 d3d 要求，并确保应用在 Suspend 回调时调用新的 [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API。
+检查应用是否符合 d3d 要求，并确保应用在 Suspend 回调时调用新的 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
 
 ### <a name="corrective-action"></a>更正操作
 
-每当应用即将暂停时应在其 [**IDXGIDevice3**](https://msdn.microsoft.com/library/windows/desktop/Dn280345) 接口上调用 [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API。
+每当应用即将暂停时应在其 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) 接口上调用 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
 
 ## <a name="app-capabilities-test"></a>应用功能测试
 
@@ -668,5 +668,5 @@ WinJS 后台任务测试可确保 JavaScript 应用具有适当的 close 语句�
 ## <a name="related-topics"></a>相关主题
 
 * [Windows 桌面桥应用程序测试](windows-desktop-bridge-app-tests.md)
-* [Microsoft Store 策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)
  

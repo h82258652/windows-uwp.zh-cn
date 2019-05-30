@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, 输入, 示例
 ms.localizationpriority: medium
-ms.openlocfilehash: d545f696a93bfa8416e1a772ecc015867a3615c2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8daada2424dfc7a1bbe0a227449911f1fbb3b34d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611812"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369185"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>向 Marble Maze 添加输入和交互性示例
 
@@ -28,7 +28,7 @@ ms.locfileid: "57611812"
 
 -   如果可能，支持多种输入设备，使你的游戏能够适应更广泛的客户偏好和能力。 尽管游戏控制器和传感器的使用是可选的，但我们强烈建议使用它来增强玩家体验。 我们设计了游戏控制器和传感器 API 来帮助你更轻松地集成这些输入设备。
 
--   要初始化触摸，必须注册窗口事件，例如在指针被激活、释放和移动时。 要初始化加速计，可在初始化应用时创建一个 [Windows::Devices::Sensors::Accelerometer](https://msdn.microsoft.com/library/windows/apps/br225687) 对象。 Xbox 控制器不需要初始化。
+-   要初始化触摸，必须注册窗口事件，例如在指针被激活、释放和移动时。 要初始化加速计，可在初始化应用时创建一个 [Windows::Devices::Sensors::Accelerometer](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer) 对象。 Xbox 控制器不需要初始化。
 
 -   对于单人游戏，考虑是否组合来自所有可能 Xbox 控制器的输入。 这样，你无需跟踪何种输入来自哪个控制器。 或者，只需跟踪仅来自最近添加的控制器的输入，如我们在此示例中所做的。
 
@@ -56,7 +56,7 @@ Marble Maze 支持通过 Xbox 控制器、鼠标和触摸来选择菜单项，�
 ## <a name="initializing-input-devices"></a>初始化输入设备
 
 
-Xbox 控制器不需要初始化。 要初始化触摸，必须注册窗口事件，例如指针被激活（例如，玩家按下鼠标按钮或触摸屏幕）、释放和移动时。 若要初始化加速计，必须在初始化应用程序时创建一个 [Windows::Devices::Sensors::Accelerometer](https://msdn.microsoft.com/library/windows/apps/br225687) 对象。
+Xbox 控制器不需要初始化。 要初始化触摸，必须注册窗口事件，例如指针被激活（例如，玩家按下鼠标按钮或触摸屏幕）、释放和移动时。 若要初始化加速计，必须在初始化应用程序时创建一个 [Windows::Devices::Sensors::Accelerometer](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer) 对象。
 
 下面的示例展示了 **App::SetWindow** 方法如何注册 [Windows::UI::Core::CoreWindow::PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerPressed)、[Windows::UI::Core::CoreWindow::PointerReleased](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerReleased) 和 [Windows::UI::Core::CoreWindow::PointerMoved](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerMoved) 指针事件。 这些事件在应用程序初始化期间和游戏循环之前注册。
 
@@ -490,7 +490,7 @@ for (TouchMap::const_iterator iter = m_touches.cbegin();
 
 ### <a name="processing-accelerometer-input"></a>处理加速计输入
 
-若要处理加速计输入，**MarbleMazeMain::Update** 方法会调用 [Windows::Devices::Sensors::Accelerometer::GetCurrentReading](https://msdn.microsoft.com/library/windows/apps/br225699) 方法。 此方法返回一个 [Windows::Devices::Sensors::AccelerometerReading](https://msdn.microsoft.com/library/windows/apps/br225688) 对象，它表示一个加速计读数。 **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** 和 **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** 属性具有分别沿 X 和 Y 轴的 G-Force 加速。
+若要处理加速计输入，**MarbleMazeMain::Update** 方法会调用 [Windows::Devices::Sensors::Accelerometer::GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.devices.sensors.accelerometer.getcurrentreading) 方法。 此方法返回一个 [Windows::Devices::Sensors::AccelerometerReading](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.AccelerometerReading) 对象，它表示一个加速计读数。 **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** 和 **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** 属性具有分别沿 X 和 Y 轴的 G-Force 加速。
 
 下面的示例展示了 **MarbleMazeMain::Update** 方法如何轮询加速计并更新组合的输入值。 倾斜设备时，重力会导致弹珠移动速度更快。
 
@@ -548,7 +548,7 @@ if ((oppositeSquared + adjacentSquared) > m_deadzoneSquared)
 
  
 
-在 **MarbleMazeMain::Update** 方法处理输入后，将会创建一个矢量来表示在倾斜迷宫时对弹珠的影响。 下面的示例展示了 Marble Maze 如何使用 [XMVector3Normalize](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.geometric.xmvector3normalize) 函数创建一个规范化的重力矢量。 **maxTilt** 变量约束迷宫倾斜的程度并阻止迷宫朝一侧倾斜。
+在 **MarbleMazeMain::Update** 方法处理输入后，将会创建一个矢量来表示在倾斜迷宫时对弹珠的影响。 下面的示例展示了 Marble Maze 如何使用 [XMVector3Normalize](https://docs.microsoft.com/windows/desktop/api/directxmath/nf-directxmath-xmvector3normalize) 函数创建一个规范化的重力矢量。 **maxTilt** 变量约束迷宫倾斜的程度并阻止迷宫朝一侧倾斜。
 
 ```cpp
 const float maxTilt = 1.0f / 8.0f;
@@ -615,7 +615,7 @@ if (marblePosition.z >= resetDepth)
 
 * [向 Marble Maze 示例添加音频](adding-audio-to-the-marble-maze-sample.md)
 * [向 Marble Maze 示例添加可视内容](adding-visual-content-to-the-marble-maze-sample.md)
-* [Marble Maze、 c + + 和 DirectX 的 UWP 游戏开发](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [开发中的 UWP 游戏 Marble MazeC++和 DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

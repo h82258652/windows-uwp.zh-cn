@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bfe034ed697661c81b2f01b67fafeee1941832d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b6177e565e98c725326122fefad7c7ee23948b49
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640312"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359791"
 ---
 # <a name="planning-for-performance"></a>规划性能
 
@@ -27,7 +27,7 @@ ms.locfileid: "57640312"
 
 最好设置初始目标，后续再加以修订，而不要根本就没有目标。 应用的性能目标应为具体且可衡量的，并且应分为以下三类：用户或应用完成任务需要花费多长时间（时间）；应用本身为响应用户交互进行重绘的速率和连续性（流畅性）；应用能够在多大程度上节约系统资源，包括电池电源（效率）。
 
-## <a name="time"></a>时间
+## <a name="time"></a>Time
 
 考虑用户若要在应用中完成其任务，（*交互类*）所用时间的可接受范围。 为每个交互类分配一个标签、感知的用户情绪以及理想和最长持续时间。 下面是一些建议。
 
@@ -47,7 +47,7 @@ ms.locfileid: "57640312"
 
 <!-- DHALE: used HTML table here b/c WDCML src used rowspans -->
 <table>
-<tr><th>方案</th><th>时间点</th><th>用户体验</th><th>交互类</th></tr>
+<tr><th>应用场景</th><th>时间点</th><th>用户体验</th><th>交互类</th></tr>
 <tr><td rowspan="3">导航到食谱页面 </td><td>第一个响应</td><td>页面过渡动画启动</td><td>快（100 至 200 毫秒）</td></tr>
 <tr><td>响应</td><td>加载配方列表；无图像</td><td>响应（500 毫秒至 1 秒）</td></tr>
 <tr><td>可视部分完成</td><td>加载所有内容；显示图像</td><td>连续（500 毫秒至 5 秒）</td></tr>
@@ -82,15 +82,15 @@ ms.locfileid: "57640312"
 **UI**
 
 -   通过[优化 XAML 标记](optimize-xaml-loading.md)最大程度地为应用每个页面（尤其初始页面）的 UI 提高分析和加载时间效率以及内存效率。 简而言之，在需要 UI 和代码之前先将其延迟加载。
--   对于 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)，使所有项目都保持相同大小并尽可能多地使用 [ListView 和 GridView 优化技术](optimize-gridview-and-listview.md)。
+-   对于 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)，使所有项目都保持相同大小并尽可能多地使用 [ListView 和 GridView 优化技术](optimize-gridview-and-listview.md)。
 -   采用框架可以在区块中加载并重用的标记形式声明 UI，而不是在代码中以命令方式构建。
 -   在用户需要 UI 元素之前延迟创建这些元素。 请参阅 [**x:Load**](../xaml-platform/x-load-attribute.md) 属性。
--   首选主题过渡和动画而不是情节提要动画。 有关详细信息，请参阅[动画概述](https://msdn.microsoft.com/library/windows/apps/Mt187350)。 请记住，情节提要动画需要持续更新屏幕，并保持 CPU 和图形管道处于活动状态。 若要维持电池电量，当用户未与应用交互时，请不要运行动画。
--   你加载的图像的大小应适合将使用 [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) 方法显示它的视图。
+-   首选主题过渡和动画而不是情节提要动画。 有关详细信息，请参阅[动画概述](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)。 请记住，情节提要动画需要持续更新屏幕，并保持 CPU 和图形管道处于活动状态。 若要维持电池电量，当用户未与应用交互时，请不要运行动画。
+-   你加载的图像的大小应适合将使用 [**GetThumbnailAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getthumbnailasync) 方法显示它的视图。
 
 **CPU、 内存和电源**
 
--   将优先级较低的工作安排在优先级较低的线程和/或内核上运行。 请参阅[异步编程](https://msdn.microsoft.com/library/windows/apps/Mt187335)、[**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR209054) 属性和 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) 类。
+-   将优先级较低的工作安排在优先级较低的线程和/或内核上运行。 请参阅[异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps)、[**Dispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.dispatcher) 属性和 [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 类。
 -   通过在应用暂停时释放开销较大的资源来最大程度减少应用的内存占用量。
 -   最大程度地减少代码的工作集。
 -   通过尽可能取消注册事件处理程序以及取消引用 UI 元素来避免内存泄露。
@@ -98,29 +98,29 @@ ms.locfileid: "57640312"
 
 **数据访问**
 
--   预取内容（如果可能）。 有关自动预取，请参阅 [**ContentPrefetcher**](https://msdn.microsoft.com/library/windows/apps/Dn279042) 类。 有关手动预取，请参阅 [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/BR224847) 命名空间和 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Hh700517) 类。
--   缓存访问开销较大的内容（如果可能）。 请参阅 [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/BR241621) 和 [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622) 属性。
+-   预取内容（如果可能）。 有关自动预取，请参阅 [**ContentPrefetcher**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.ContentPrefetcher) 类。 有关手动预取，请参阅 [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background) 命名空间和 [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) 类。
+-   缓存访问开销较大的内容（如果可能）。 请参阅 [**LocalFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder) 和 [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings) 属性。
 -   对于缓存失误，尽快显示占位符 UI 以指示应用仍在加载内容。 以一种不会让用户感到不协调的方式从占位符过渡到实时内容。 例如，在应用加载实时内容时，不要更改用户手指下或鼠标指针下的内容的位置。
 
 **应用程序启动和恢复**
 
--   延迟应用的初始屏幕，除非有必要，否则不要延长应用的初始屏幕。 有关详细信息，请参阅[创建快速且流畅的应用启动体验](https://go.microsoft.com/fwlink/p/?LinkId=317595)和[延长显示初始屏幕的时间](https://msdn.microsoft.com/library/windows/apps/Mt187309)。
+-   延迟应用的初始屏幕，除非有必要，否则不要延长应用的初始屏幕。 有关详细信息，请参阅[创建快速且流畅的应用启动体验](https://go.microsoft.com/fwlink/p/?LinkId=317595)和[延长显示初始屏幕的时间](https://docs.microsoft.com/windows/uwp/launch-resume/create-a-customized-splash-screen)。
 -   禁用在欢迎屏幕消除后立即出现的动画，因为这些动画只会导致应用启动时间延迟的感觉。
 
 **自适应 UI 和方向**
 
--   使用 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) 类。
+-   使用 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) 类。
 -   仅完成马上需要的工作，将密集的应用工作延迟到以后（在用户看到应用 UI 的裁剪状态之前，应用有 200 到 800 毫秒的时间完成工作）。
 
 准备好性能相关的设计后，你便可以开始对应用进行编码。
 
 ## <a name="instrument-for-performance"></a>性能检测
 
-在编写代码时，添加用于在应用运行的某些时刻记录消息和事件的代码。 之后，在测试应用时，你可以使用 Windows Performance Recorder 和 Windows Performance Analyzer（均包含在 [Windows Performance Toolkit](https://msdn.microsoft.com/library/windows/apps/xaml/hh162945.aspx) 中）等分析工具，以创建和查看有关你的应用的性能报告。 在此报告中，可以查找以下消息和事件以帮助你更加轻松地分析报告的结果。
+在编写代码时，添加用于在应用运行的某些时刻记录消息和事件的代码。 之后，在测试应用时，你可以使用 Windows Performance Recorder 和 Windows Performance Analyzer（均包含在 [Windows Performance Toolkit](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10)) 中）等分析工具，以创建和查看有关你的应用的性能报告。 在此报告中，可以查找以下消息和事件以帮助你更加轻松地分析报告的结果。
 
-通用 Windows 平台 (UWP) 提供了日志记录 API，在 [Windows 事件跟踪 (ETW)](https://msdn.microsoft.com/library/windows/desktop/Bb968803) 的支持下，它们共同提供丰富的事件日志记录和跟踪解决方案。 这些 API（属于 [**Windows.Foundation.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/BR206677) 命名空间）包括 [**FileLoggingSession**](https://msdn.microsoft.com/library/windows/apps/Dn264138)、[**LoggingActivity**](https://msdn.microsoft.com/library/windows/apps/Dn264195)、[**LoggingChannel**](https://msdn.microsoft.com/library/windows/apps/Dn264202) 和 [**LoggingSession**](https://msdn.microsoft.com/library/windows/apps/Dn264217) 类。
+通用 Windows 平台 (UWP) 提供了日志记录 API，在 [Windows 事件跟踪 (ETW)](https://docs.microsoft.com/windows/desktop/ETW/event-tracing-portal) 的支持下，它们共同提供丰富的事件日志记录和跟踪解决方案。 这些 API（属于 [**Windows.Foundation.Diagnostics**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics) 命名空间）包括 [**FileLoggingSession**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.FileLoggingSession)、[**LoggingActivity**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingActivity)、[**LoggingChannel**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingChannel) 和 [**LoggingSession**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingSession) 类。
 
-若要在应用运行到某个特定时刻时在报告中记录一条消息，请创建一个 **LoggingChannel** 对象，然后调用此对象的 [**LogMessage**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.diagnostics.loggingchannel.logmessage.aspx) 方法，如下所示。
+若要在应用运行到某个特定时刻时在报告中记录一条消息，请创建一个 **LoggingChannel** 对象，然后调用此对象的 [**LogMessage**](https://docs.microsoft.com/uwp/api/windows.foundation.diagnostics.loggingchannel.logmessage) 方法，如下所示。
 
 ```csharp
 // using Windows.Foundation.Diagnostics;
@@ -133,7 +133,7 @@ myLoggingChannel.LogMessage(LoggingLevel.Information, "Here' s my logged message
 // ...
 ```
 
-若要在应用运行的某个时间段内在报告中记录开始和停止事件，请创建一个 **LoggingActivity** 对象，然后调用此对象的 [**LoggingActivity**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.diagnostics.loggingactivity.loggingactivity.aspx) 构造函数，如下所示。
+若要在应用运行的某个时间段内在报告中记录开始和停止事件，请创建一个 **LoggingActivity** 对象，然后调用此对象的 [**LoggingActivity**](https://docs.microsoft.com/uwp/api/windows.foundation.diagnostics.loggingactivity.loggingactivity) 构造函数，如下所示。
 
 ```csharp
 // using Windows.Foundation.Diagnostics;
@@ -165,19 +165,19 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 -   针对各种不同硬件配置进行测试，包括一体机和台式电脑、笔记本电脑、超极本和平板电脑以及其他移动设备。
 -   针对各种不同屏幕尺寸进行测试。 尽管更大的屏幕可以显示更多的内容，但呈现所有额外内容可能会对性能产生负面影响。
 -   尽量消除测试因素。
-    -   在测试设备上关闭后台应用。 为此，请在 Windows 中，选择**设置**从开始菜单&gt;**个性化** &gt; **锁屏**。 选择每个活动应用，然后选择“无”。
+    -   在测试设备上关闭后台应用。 为此，请在 Windows 中，选择**设置**从开始菜单&gt;**个性化** &gt; **锁屏**。 选择每个活动应用，然后选择“无”  。
     -   在将应用部署到测试设备之前，通过使用发布配置生成应用将其编译为本机代码。
-    -   若要确保自动维护不会影响测试设备的性能，请手动将其触发并等待完成。 在 Windows 的“开始”菜单中，搜索“安全和维护”。 在“维护”区域的“自动维护”下，选择“开始维护”并等待状态从“正在进行维护”发生变化。
+    -   若要确保自动维护不会影响测试设备的性能，请手动将其触发并等待完成。 在 Windows 的“开始”菜单中，搜索“安全和维护”  。 在“维护”  区域的“自动维护”  下，选择“开始维护”  并等待状态从“正在进行维护”  发生变化。
     -   多次运行应用有助于消除随机测试变量，并且有助于确保一致的测量结果。
 -   测试降低功能可用性。 用户设备的功率可能明显低于你的开发计算机。 Windows 设计时考虑到了低功率设备，例如移动电脑。 在平台上运行的应用应确保在这些设备上也可以良好地执行。 提示：预期低功率设备的运行速度大约是台式机的四分之一，请相应地设置你的目标。
 -   使用 Microsoft Visual Studio 和 Windows Performance Analyzer 等工具的组合衡量应用性能。 Visual Studio 可以提供侧重于应用的分析，如源代码链接。 Windows Performance Analyzer 可以提供侧重于系统的分析，如提供系统信息、关于触摸操作事件以及关于磁盘输入/输出 (I/O) 和图形处理单元 (GPU) 开销的信息。 这两个工具都会跟踪捕获和导出，并且都可以重新打开共享跟踪和事后跟踪。
--   你将应用提交到应用商店进行认证之前，请务必将合并到你的测试计划与性能相关测试用例中的"性能测试"部分所述[Windows 应用认证工具包测试](windows-app-certification-kit-tests.md)并在"性能和稳定性"部分[UWP 应用的测试用例](https://msdn.microsoft.com/library/windows/apps/Dn275879)。
+-   你将应用提交到应用商店进行认证之前，请务必将合并到你的测试计划与性能相关测试用例中的"性能测试"部分所述[Windows 应用认证工具包测试](windows-app-certification-kit-tests.md)并在"性能和稳定性"部分[UWP 应用的测试用例](https://docs.microsoft.com/previous-versions/windows/apps/dn275879(v=win.10))。
 
 有关详细信息，请参阅以下资源和分析工具。
 
--   [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/apps/xaml/hh448170.aspx)
--   [Windows 性能工具包](https://msdn.microsoft.com/library/windows/apps/xaml/hh162945.aspx)
--   [分析性能使用 Visual Studio 诊断工具](https://msdn.microsoft.com/library/windows/apps/xaml/hh696636.aspx)
+-   [Windows Performance Analyzer](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))
+-   [Windows 性能工具包](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))
+-   [分析性能使用 Visual Studio 诊断工具](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015)
 -   //build/ 会话 [XAML 性能](https://channel9.msdn.com/Events/Build/2015/3-698)
 -   //build/ 会话 [Visual Studio 2015 中新增的 XAML 工具](https://channel9.msdn.com/Events/Build/2015/2-697)
 

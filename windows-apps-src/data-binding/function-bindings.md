@@ -5,25 +5,25 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10，uwp xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: b85777c254c36cc7bf5b156569c7cef267a6c567
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 879be9591bae36a1dbcd485387fbb4ac7f502fea
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626212"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360076"
 ---
 # <a name="functions-in-xbind"></a>x:Bind 中的函数
 
 > [!NOTE]
-> 有关使用在应用中使用数据绑定的常规信息 **{x： 绑定}** (和之间的全部比较 **{x： 绑定}** 并 **{Binding}**)，请参阅[数据在深度绑定](data-binding-in-depth.md)。
+> 有关使用在应用中使用数据绑定的常规信息 **{x： 绑定}** (和之间的全部比较 **{x： 绑定}** 并 **{Binding}** )，请参阅[数据在深度绑定](data-binding-in-depth.md)。
 
-从 Windows 10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这样：
+从 Windows 10 版本 1607 开始， **{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这样：
 
 - 实现值转换的更简单方法
 - 依赖多个参数适用于绑定的方法
 
 > [!NOTE]
-> 若要使用 **{x:Bind}** 的函数，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，无法使用这些函数。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 若要使用 **{x:Bind}** 的函数，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，无法使用这些函数。 有关目标版本的详细信息，请参阅[版本自适应代码](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 在以下示例中，项目的背景和前景会绑定到这些函数，根据颜色参数执行转换。
 

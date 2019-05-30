@@ -6,12 +6,12 @@ ms.date: 03/24/2017
 ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: d9e11445d77434320c8842608bf8183a078c0660
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: debc4572a26db9e849dd31f17b114f15aa9ef055
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644462"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362484"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>为 Device Portal 编写自定义插件
 
@@ -75,7 +75,7 @@ ms.locfileid: "57644462"
 ```
 
 > [!NOTE]
-> 功能“devicePortalProvider”是受限的（“rescap”），这意味着必须先从应用商店获取事先批准，然后才能在其中发布应用。 但是，这不会阻止通过旁加载在本地测试应用。 有关受限功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities)。
+> 功能“devicePortalProvider”是受限的（“rescap”），这意味着必须先从应用商店获取事先批准，然后才能在其中发布应用。 但是，这不会阻止通过旁加载在本地测试应用。 有关受限功能的详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
 
 ## <a name="set-up-your-background-task-and-winrt-component"></a>设置后台任务和 WinRT 组件
 若要设置 Device Portal 连接，应用必须将来自 Device Portal 服务的应用服务连接与在应用中运行的 Device Portal 实例关联。 若要执行此操作，请使用实现 [**IBackgroundTask**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.ibackgroundtask) 的类向应用程序添加新的 WinRT 组件。

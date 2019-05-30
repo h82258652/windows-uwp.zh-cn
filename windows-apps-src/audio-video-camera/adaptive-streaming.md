@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 66618d79166e06f6ee2696ed3c9f193a310b6ae9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9ee2f8fd670da6bf843962e6b4dcac7a4b0c516d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617872"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359134"
 ---
 # <a name="adaptive-streaming"></a>自适应流式处理
 
 
-本文介绍如何将自适应流多媒体内容的播放添加到通用 Windows 平台 (UWP) 应用。 此功能支持 HTTP Live Streaming (HLS) 和基于 HTTP 的动态流式处理 (DASH) 内容的播放。 从 Windows 10 版本 1803 开始，**[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)** 支持平滑流式处理。
+本文介绍如何将自适应流多媒体内容的播放添加到通用 Windows 平台 (UWP) 应用。 此功能支持 HTTP Live Streaming (HLS) 和基于 HTTP 的动态流式处理 (DASH) 内容的播放。 从 Windows 10 版本 1803 开始， **[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)** 支持平滑流式处理。
 
 有关受支持的 HLS 协议标记的列表，请参阅 [HLS 标记支持](hls-tag-support.md)。 
 
@@ -27,17 +27,17 @@ ms.locfileid: "57617872"
 
 ## <a name="simple-adaptive-streaming-with-mediaplayer-and-mediaplayerelement"></a>使用 MediaPlayer 和 MediaPlayerElement 的简单自适应流式处理
 
-若要在 UWP 应用中播放自适应流式处理媒体，请创建一个指向 DASH 或 HLS 清单文件的 **Uri** 对象。 创建 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 类的实例。 调用 [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912) 以创建一个新的 **MediaSource** 对象，然后将该对象设置为 **MediaPlayer** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) 属性。 调用 [**Play**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Play) 以开始播放媒体内容。
+若要在 UWP 应用中播放自适应流式处理媒体，请创建一个指向 DASH 或 HLS 清单文件的 **Uri** 对象。 创建 [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) 类的实例。 调用 [**MediaSource.CreateFromUri**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfromuri) 以创建一个新的 **MediaSource** 对象，然后将该对象设置为 **MediaPlayer** 的 [**Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.source) 属性。 调用 [**Play**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.play) 以开始播放媒体内容。
 
 [!code-cs[DeclareMediaPlayer](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetDeclareMediaPlayer)]
 
 [!code-cs[ManifestSourceNoUI](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetManifestSourceNoUI)]
 
-上述示例将播放媒体内容的音频，但它不会在 UI 中自动呈现该内容。 大多数播放视频内容的应用都将希望在 XAML 页面中呈现该内容。  为此，请将一个 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) 控件添加到 XAML 页面。
+上述示例将播放媒体内容的音频，但它不会在 UI 中自动呈现该内容。 大多数播放视频内容的应用都将希望在 XAML 页面中呈现该内容。  为此，请将一个 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) 控件添加到 XAML 页面。
 
 [!code-xml[MediaPlayerElementXAML](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml#SnippetMediaPlayerElementXAML)]
 
-调用 [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912) 以从 DASH 或 HLS 清单文件的 URI 创建一个 **MediaSource**。 然后设置 **MediaPlayerElement** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227420) 属性。 **MediaPlayerElement** 将为该内容自动创建一个新的 **MediaPlayer** 对象。 你可以在 **MediaPlayer** 上调用 **Play** 以开始播放内容。
+调用 [**MediaSource.CreateFromUri**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfromuri) 以从 DASH 或 HLS 清单文件的 URI 创建一个 **MediaSource**。 然后设置 **MediaPlayerElement** 的 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaelement.sourceproperty) 属性。 **MediaPlayerElement** 将为该内容自动创建一个新的 **MediaPlayer** 对象。 你可以在 **MediaPlayer** 上调用 **Play** 以开始播放内容。
 
 [!code-cs[ManifestSource](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetManifestSource)]
 
@@ -48,35 +48,35 @@ ms.locfileid: "57617872"
 
 如果你的应用需要更多高级自适应流式处理功能（如提供自定义 HTTP 标头、监视当前下载和播放比特率或调整用于确定系统何时切换自适应流的比特率的时间），请使用 **[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)** 对象。
 
-在 [**Windows.Media.Streaming.Adaptive**](https://msdn.microsoft.com/library/windows/apps/dn931279) 命名空间中可以找到自适应流式处理 API。 本文中的示例使用以下命名空间中的 API。
+在 [**Windows.Media.Streaming.Adaptive**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive) 命名空间中可以找到自适应流式处理 API。 本文中的示例使用以下命名空间中的 API。
 
 [!code-cs[AdaptiveStreamingUsing](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAdaptiveStreamingUsing)]
 
 ## <a name="initialize-an-adaptivemediasource-from-a-uri"></a>通过 URI 初始化 AdaptiveMediaSource。
 
-通过调用 [**CreateFromUriAsync**](https://msdn.microsoft.com/library/windows/apps/dn931261) 来使用自适应流式处理清单文件的 URI 初始化 **AdaptiveMediaSource**。 从此方法返回的 [**AdaptiveMediaSourceCreationStatus**](https://msdn.microsoft.com/library/windows/apps/dn946917) 值可使你知道媒体源是否已成功创建。 如果成功，则通过调用 [**MediaSource.CreateFromAdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource.AdaptiveMediaSource) 来创建 **MediaSource** 对象，然后将该对象分配给媒体播放器的 [**Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Source) 属性，你可以将该对象设置为你的 **MediaPlayer** 的流源。 在此示例中，将查询 [**AvailableBitrates**](https://msdn.microsoft.com/library/windows/apps/dn931257) 属性来确定此流的受支持的最大比特率，然后将该值设置为初始比特率。 此示例中还为在本文中后面部分讨论的几个 **AdaptiveMediaSource** 事件注册了处理程序。
+通过调用 [**CreateFromUriAsync**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.createfromuriasync) 来使用自适应流式处理清单文件的 URI 初始化 **AdaptiveMediaSource**。 从此方法返回的 [**AdaptiveMediaSourceCreationStatus**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationStatus) 值可使你知道媒体源是否已成功创建。 如果成功，则通过调用 [**MediaSource.CreateFromAdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource.AdaptiveMediaSource) 来创建 **MediaSource** 对象，然后将该对象分配给媒体播放器的 [**Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Source) 属性，你可以将该对象设置为你的 **MediaPlayer** 的流源。 在此示例中，将查询 [**AvailableBitrates**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.availablebitrates) 属性来确定此流的受支持的最大比特率，然后将该值设置为初始比特率。 此示例中还为在本文中后面部分讨论的几个 **AdaptiveMediaSource** 事件注册了处理程序。
 
 [!code-cs[InitializeAMS](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetInitializeAMS)]
 
 ## <a name="initialize-an-adaptivemediasource-using-httpclient"></a>使用 HttpClient 初始化 AdaptiveMediaSource
 
-如果你需要设置自定义 HTTP 标头以用于获取清单文件，你可以创建 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 对象、设置所需的标头，然后将该对象传递到 **CreateFromUriAsync** 的重载中。
+如果你需要设置自定义 HTTP 标头以用于获取清单文件，你可以创建 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 对象、设置所需的标头，然后将该对象传递到 **CreateFromUriAsync** 的重载中。
 
 [!code-cs[InitializeAMSWithHttpClient](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetInitializeAMSWithHttpClient)]
 
-当系统即将从服务器检索资源时，会引发 [**DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn931272) 事件。 传递到事件处理程序的 [**AdaptiveMediaSourceDownloadRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn946935) 会公开提供有关要请求的资源的信息（资源的类型和 URI）的属性。
+当系统即将从服务器检索资源时，会引发 [**DownloadRequested**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.downloadrequested) 事件。 传递到事件处理程序的 [**AdaptiveMediaSourceDownloadRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedEventArgs) 会公开提供有关要请求的资源的信息（资源的类型和 URI）的属性。
 
 ## <a name="modify-resource-request-properties-using-the-downloadrequested-event"></a>使用 DownloadRequested 事件修改资源请求属性
 
-你可以通过更新事件参数所提供的 [**AdaptiveMediaSourceDownloadResult**](https://msdn.microsoft.com/library/windows/apps/dn946942) 对象的属性来使用 **DownloadRequested** 事件处理程序修改资源请求。 在以下示例中，将从中检索资源的 URI 通过更新结果对象的 [**ResourceUri**](https://msdn.microsoft.com/library/windows/apps/dn931250) 属性来进行修改。 还可以重写媒体段的字节范围偏移和长度，或者如以下示例所示，更改资源 URI 以下载完整资源并将字节范围偏移和长度设置为 null。
+你可以通过更新事件参数所提供的 [**AdaptiveMediaSourceDownloadResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadResult) 对象的属性来使用 **DownloadRequested** 事件处理程序修改资源请求。 在以下示例中，将从中检索资源的 URI 通过更新结果对象的 [**ResourceUri**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadresult.resourceuri) 属性来进行修改。 还可以重写媒体段的字节范围偏移和长度，或者如以下示例所示，更改资源 URI 以下载完整资源并将字节范围偏移和长度设置为 null。
 
-通过设置结果对象的 [**Buffer**](https://msdn.microsoft.com/library/windows/apps/dn946943) 或 [**InputStream**](https://msdn.microsoft.com/library/windows/apps/dn931249) 属性，你可以替代所请求的资源的内容。 在以下示例中，清单资源的内容通过设置 **Buffer** 属性来替换。 请注意，如果要使用以异步方式获取的数据更新资源请求（如从远程服务器或异步用户身份验证检索数据），必须调用 [**AdaptiveMediaSourceDownloadRequestedEventArgs.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn946936) 来获取延迟，然后在操作完成时调用 [**Complete**](https://msdn.microsoft.com/library/windows/apps/dn946934) 以向系统发出下载请求操作可以继续的信号。
+通过设置结果对象的 [**Buffer**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadresult.buffer) 或 [**InputStream**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadresult.inputstream) 属性，你可以替代所请求的资源的内容。 在以下示例中，清单资源的内容通过设置 **Buffer** 属性来替换。 请注意，如果要使用以异步方式获取的数据更新资源请求（如从远程服务器或异步用户身份验证检索数据），必须调用 [**AdaptiveMediaSourceDownloadRequestedEventArgs.GetDeferral**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadrequestedeventargs.getdeferral) 来获取延迟，然后在操作完成时调用 [**Complete**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadrequesteddeferral.complete) 以向系统发出下载请求操作可以继续的信号。
 
 [!code-cs[AMSDownloadRequested](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDownloadRequested)]
 
 ## <a name="use-bitrate-events-to-manage-and-respond-to-bitrate-changes"></a>使用比特率事件管理和响应比特率更改
 
-**AdaptiveMediaSource** 对象提供可使你在下载或播放比特率发生更改时作出反应的事件。 在此示例中，当前比特率仅在 UI 中更新。 请注意，你可以修改用于确定系统何时切换自适应流的比特率的比率。 有关详细信息，请参阅 [**AdvancedSettings**](https://msdn.microsoft.com/library/windows/apps/mt628697) 属性。
+**AdaptiveMediaSource** 对象提供可使你在下载或播放比特率发生更改时作出反应的事件。 在此示例中，当前比特率仅在 UI 中更新。 请注意，你可以修改用于确定系统何时切换自适应流的比特率的比率。 有关详细信息，请参阅 [**AdvancedSettings**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.advancedsettings) 属性。
 
 [!code-cs[AMSBitrateEvents](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSBitrateEvents)]
 
@@ -100,7 +100,7 @@ ms.locfileid: "57617872"
 [!code-cs[AMSDiagnosticAvailable](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDiagnosticAvailable)]
 
 ## <a name="defer-binding-of-adaptive-streaming-content-for-items-in-a-playback-list-by-using-mediabinder"></a>使用 MediaBinder 为播放列表中的项延迟自适应流式处理内容的绑定
-[  **MediaBinder**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder) 类支持延迟 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 中的媒体内容的绑定。 从 Windows 10 版本 1703 开始，可以提供 [**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource) 作为绑定内容。 自适应媒体源的延迟绑定的过程与绑定其他类型的媒体（在[媒体项、播放列表和曲目](media-playback-with-mediasource.md)中进行了介绍）大致相同。 
+[  **MediaBinder**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder) 类支持延迟 [**MediaPlaybackList**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackList) 中的媒体内容的绑定。 从 Windows 10 版本 1703 开始，可以提供 [**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource) 作为绑定内容。 自适应媒体源的延迟绑定的过程与绑定其他类型的媒体（在[媒体项、播放列表和曲目](media-playback-with-mediasource.md)中进行了介绍）大致相同。 
 
 创建 **MediaBinder** 实例，设置应用定义的 [**Token**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder.Token) 字符串以标识要绑定的内容，然后为 [**Binding**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder.Binding) 事件进行注册。 通过调用 [**MediaSource.CreateFromMediaBinder**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfrommediabinder)，从 **Binder** 创建 **MediaSource**。 然后，通过 **MediaSource** 创建一个 **MediaPlaybackItem** 并将它添加到播放列表。
 

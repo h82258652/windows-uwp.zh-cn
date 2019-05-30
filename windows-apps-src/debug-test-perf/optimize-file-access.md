@@ -6,21 +6,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cacd915530bb599936730ec404a6e524fef0105d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: bc42fecf0a29784c8abe6e61a328d6e5024cc532
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597262"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362271"
 ---
 # <a name="optimize-file-access"></a>优化文件访问
 
 
 创建可高效访问文件系统的通用 Windows 平台 (UWP) 应用，避免因磁盘延迟和内存/CPU 周期而产生的性能问题。
 
-如果你希望访问较大的文件集合，并且你希望访问除典型的 Name、FileType 和 Path 属性之外的属性值，可通过创建 [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) 和调用 [**SetPropertyPrefetch**](https://msdn.microsoft.com/library/windows/apps/hh973319) 来访问它们。 **SetPropertyPrefetch** 方法可显著改善应用的性能，这些应用可显示从文件系统获取的项目集合，如图像集合。 下一组示例介绍了一些访问多个文件的方法。
+如果你希望访问较大的文件集合，并且你希望访问除典型的 Name、FileType 和 Path 属性之外的属性值，可通过创建 [**QueryOptions**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) 和调用 [**SetPropertyPrefetch**](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions.setpropertyprefetch) 来访问它们。 **SetPropertyPrefetch** 方法可显著改善应用的性能，这些应用可显示从文件系统获取的项目集合，如图像集合。 下一组示例介绍了一些访问多个文件的方法。
 
-第一个示例使用 [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273) 来检索一组文件的名称信息。 这个方法具有很好的性能，因为该示例仅访问名称属性。
+第一个示例使用 [**Windows.Storage.StorageFolder.GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) 来检索一组文件的名称信息。 这个方法具有很好的性能，因为该示例仅访问名称属性。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -44,7 +44,7 @@ ms.locfileid: "57597262"
 > Next i
 > ```
 
-第二个示例使用 [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273)，然后检索每个文件的图像属性。 这个方法的性能逊色不少。
+第二个示例使用 [**Windows.Storage.StorageFolder.GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync)，然后检索每个文件的图像属性。 这个方法的性能逊色不少。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -70,7 +70,7 @@ ms.locfileid: "57597262"
 > Next i
 > ```
 
-第三个示例使用 [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) 来获取关于一组文件的信息。 此方法提供的性能优于前面的示例。
+第三个示例使用 [**QueryOptions**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) 来获取关于一组文件的信息。 此方法提供的性能优于前面的示例。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -133,7 +133,7 @@ ms.locfileid: "57597262"
 
 ### <a name="buffering-between-uwp-and-net-streams"></a>UWP 与 .NET 数据流之间的缓冲
 
-当你希望将 UWP 数据流（例如 [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) 或 [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)）转换为 .NET 数据流 ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)) 时，可以使用多种方案。 例如，在编写 UWP 应用并希望将在数据流上可用的现有 .NET 代码用于 UWP 文件系统时，这非常有用。 若要启用此功能，适用于 UWP 应用的.NET Api 提供扩展方法，可用于.NET 和 UWP 流类型之间转换。 有关详细信息，请参阅 [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx)。
+当你希望将 UWP 数据流（例如 [**Windows.Storage.Streams.IInputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IInputStream) 或 [**IOutputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IOutputStream)）转换为 .NET 数据流 ([**System.IO.Stream**](https://docs.microsoft.com/dotnet/api/system.io.stream?redirectedfrom=MSDN)) 时，可以使用多种方案。 例如，在编写 UWP 应用并希望将在数据流上可用的现有 .NET 代码用于 UWP 文件系统时，这非常有用。 若要启用此功能，适用于 UWP 应用的.NET Api 提供扩展方法，可用于.NET 和 UWP 流类型之间转换。 有关详细信息，请参阅 [**WindowsRuntimeStreamExtensions**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN)。
 
 在将 UWP 流转换为 .NET 流时，有效地为基础 UWP 流创建适配器。 在某些情况下，在 UWP 数据流上调用方法会产生与此行为关联的运行时成本。 这可能会影响你的应用的速度，尤其在执行若干频繁读或写的小操作时。
 
@@ -194,7 +194,7 @@ ms.locfileid: "57597262"
 
 ### <a name="working-with-large-data-sets"></a>使用大型数据集
 
-在读取或写入较大的数据集时，你可以通过为 [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx)、[**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx) 和 [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx) 扩展方法提供较大的缓冲区大小来提高读取或写入吞吐量。 这将为数据流适配器提供较大的内部缓冲区大小。 例如，将来自大型文件的数据流传递给 XML 分析程序时，分析程序可以从数据流中执行多个连续的小读取操作。 大型缓冲区可以减少对基础 UWP 流的调用次数并提高性能。
+在读取或写入较大的数据集时，你可以通过为 [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN)、[**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN) 和 [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN) 扩展方法提供较大的缓冲区大小来提高读取或写入吞吐量。 这将为数据流适配器提供较大的内部缓冲区大小。 例如，将来自大型文件的数据流传递给 XML 分析程序时，分析程序可以从数据流中执行多个连续的小读取操作。 大型缓冲区可以减少对基础 UWP 流的调用次数并提高性能。
 
 > **请注意**  设置缓冲区大小大于大约 80 KB，因为这会使垃圾回收器堆上的碎片时应谨慎 (请参阅[提高垃圾回收性能](improve-garbage-collection-performance.md)). 以下代码示例创建具有 81,920 个字节缓冲区的托管流适配器。
 
@@ -208,7 +208,7 @@ Stream managedStream = nativeStream.AsStreamForRead(bufferSize: 81920);
 Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 ```
 
-[  **Stream.CopyTo**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.copyto.aspx) 和 [**CopyToAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.copytoasync.aspx) 方法还会分配本地缓冲区以用于流之间的复制操作。 与 [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx) 扩展方法一样，你可以通过覆盖默认缓冲区大小来为大型流复制操作获取较好的性能。 以下代码示例演示了更改 **CopyToAsync** 调用的默认缓冲区大小。
+[  **Stream.CopyTo**](https://docs.microsoft.com/dotnet/api/system.io.stream.copyto?redirectedfrom=MSDN#overloads) 和 [**CopyToAsync**](https://docs.microsoft.com/dotnet/api/system.io.stream.copytoasync?redirectedfrom=MSDN#overloads) 方法还会分配本地缓冲区以用于流之间的复制操作。 与 [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN) 扩展方法一样，你可以通过覆盖默认缓冲区大小来为大型流复制操作获取较好的性能。 以下代码示例演示了更改 **CopyToAsync** 调用的默认缓冲区大小。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -236,6 +236,6 @@ Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 
 如果你希望低延迟地读取和写入并且不希望在基础 UWP 数据流之外的大型数据块中进行读取操作，则也可能希望避免使用缓冲。 例如，如果你使用数据流进行网络通信，则可能希望低延迟地读取和写入。
 
-在聊天应用中，你可以使用数据流通过网络接口以便发送来往消息。 在这种情况下，你希望在准备好后立即发送消息，而不等待填满缓冲区。 如果在调用 [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx)、[**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx) 和 [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx) 扩展方法时将缓冲区大小设置为 0，则所得的适配器将不分配缓冲区，并且所有调用直接操作基础 UWP 数据流。
+在聊天应用中，你可以使用数据流通过网络接口以便发送来往消息。 在这种情况下，你希望在准备好后立即发送消息，而不等待填满缓冲区。 如果在调用 [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN)、[**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN) 和 [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN) 扩展方法时将缓冲区大小设置为 0，则所得的适配器将不分配缓冲区，并且所有调用直接操作基础 UWP 数据流。
 
 

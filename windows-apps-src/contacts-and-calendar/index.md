@@ -6,12 +6,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp, 联系人, 日历, 约会, 电子邮件
 ms.localizationpriority: medium
-ms.openlocfilehash: 239dbaa7799d9991a63223d1cd8706d34445a16b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6356e20966fc3899196e00ba5a99ebcf0104f8d6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582282"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361262"
 ---
 # <a name="contacts-my-people-and-calendar"></a>联系人、我的人脉和日历
 
@@ -22,10 +22,10 @@ ms.locfileid: "57582282"
 
 | 主题 | 描述 |
 |-------|-------------|
-| [选择联系人](selecting-contacts.md) | [  <strong>Windows.ApplicationModel.Contacts</strong>](https://msdn.microsoft.com/library/windows/apps/BR225002) 命名空间提供了多个用来选择联系人的选项。 下面，我们将向你介绍如何选择一个联系人或多个联系人，并且还介绍如何将联系人选取器配置为仅检索应用所需的联系人信息。 |
+| [选择联系人](selecting-contacts.md) | [  <strong>Windows.ApplicationModel.Contacts</strong>](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts) 命名空间提供了多个用来选择联系人的选项。 下面，我们将向你介绍如何选择一个联系人或多个联系人，并且还介绍如何将联系人选取器配置为仅检索应用所需的联系人信息。 |
 | [发送电子邮件](sending-email.md) | 显示如何启动撰写电子邮件对话框以允许用户发送电子邮件。 你可以在显示该对话框之前，使用数据预填充电子邮件的字段。 该消息将在用户点击发送按钮后发出。 |
 | [发送短信](sending-an-sms-message.md) | 本主题向你展示如何启动撰写短信对话框以允许用户发送短信。 你可以在显示该对话框之前，使用数据预填充短信的字段。 该消息将在用户点击发送按钮后发出。 |
-| [管理约会](managing-appointments.md) | 通过 [<strong>Windows.ApplicationModel.Appointments</strong>](https://msdn.microsoft.com/library/windows/apps/Dn263359) 命名空间，你可以在用户的日历应用中创建和管理约会。 我们将在此处向你介绍如何创建约会、将其添加到日历应用、在日历应用中替换它以及从日历应用中删除它。 我们还将介绍如何显示日历应用的时间跨度以及创建一个约会循环对象。 |
+| [管理约会](managing-appointments.md) | 通过 [<strong>Windows.ApplicationModel.Appointments</strong>](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Appointments) 命名空间，你可以在用户的日历应用中创建和管理约会。 我们将在此处向你介绍如何创建约会、将其添加到日历应用、在日历应用中替换它以及从日历应用中删除它。 我们还将介绍如何显示日历应用的时间跨度以及创建一个约会循环对象。 |
 | [将你的应用与联系人卡片上的操作关联起来](integrating-with-contacts.md) | 介绍如何使应用显示在联系人卡片或微型联系人卡片上的操作旁边。 用户可以选择你的应用执行某项操作，如打开个人资料页面、打电话或发送消息。 |
 | [为应用程序添加“我的人脉”支持](my-people-support.md) | 介绍了如何为应用程序添加“我的人脉”支持，以及如何在任务栏上固定和取消固定联系人。 |
 | [“我的人脉”共享](my-people-sharing.md) | 介绍了如何添加“我的人脉”支持，这让用户能够通过将文件从文件资源管理器拖到“我的人脉”固定区域，来与他们固定的联系人分享内容。 |

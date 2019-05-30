@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 设置, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 789b235220e5d22b85f7b3038d5d468729439501
-ms.sourcegitcommit: 7a3d28472901edbe4ecdde7e1a01a505ee5bc028
+ms.openlocfilehash: ca91926ec374015eeb88be6d89d3e1741d8b9c6d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58658763"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367684"
 ---
 # <a name="set-up-the-game-project"></a>设置游戏项目
 
@@ -38,10 +38,10 @@ Visual Studio 模板是一个设置和代码文件集合，专用于基于首选
 用于本教程的模板是标题为 **DirectX 11 应用(通用 Windows)** 的模板。 
 
 在 Visual Studio 中创建 DirectX 11 游戏项目的步骤：
-1.  选择**文件...**&gt; **新**&gt; **项目...**
+1.  选择**文件...** &gt; **新**&gt; **项目...**
 2.  在左窗格中，选择**已安装** &gt; **模板** &gt; **Visual C++**  &gt; **Windows世界**
 3.  在中心窗格中，选择 **DirectX 11 应用（通用 Windows）**
-4.  为你的游戏项目命名，并单击“确定”。
+4.  为你的游戏项目命名，并单击“确定”  。
 
 ![显示如何选择 directx11 模板来创建新游戏项目的屏幕截图](images/simple-dx-game-setup-new-project.png)
 
@@ -53,7 +53,7 @@ Visual Studio 模板是一个设置和代码文件集合，专用于基于首选
 
 ### <a name="inspect-apph"></a>检查 **App.h**。
 
-让我们快速看一下中的 5 个方法**app.h 中** &mdash; [**初始化**](https://msdn.microsoft.com/library/windows/apps/hh700495)， [ **SetWindow** ](https://msdn.microsoft.com/library/windows/apps/hh700509)， [**负载**](https://msdn.microsoft.com/library/windows/apps/hh700501)， [**运行**](https://msdn.microsoft.com/library/windows/apps/hh700505)，以及[**取消初始化**](https://msdn.microsoft.com/library/windows/apps/hh700523)实现时[ **IFrameworkView** ](https://msdn.microsoft.com/library/windows/apps/hh700469)定义的视图提供程序的接口。 这些方法由启动游戏时创建的应用单一实例运行，并加载应用的所有资源以及连接相应的事件处理程序。
+让我们快速看一下中的 5 个方法**app.h 中** &mdash; [**初始化**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize)， [ **SetWindow** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow)， [**负载**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.load)， [**运行**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run)，以及[**取消初始化**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize)实现时[ **IFrameworkView** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.run)定义的视图提供程序的接口。 这些方法由启动游戏时创建的应用单一实例运行，并加载应用的所有资源以及连接相应的事件处理程序。
 
 ```cpp
     // Main entry point for our app. Connects the app with the Windows shell and handle application lifecycle events.
@@ -129,11 +129,11 @@ void App::Run()
 
 ![package.appx 清单编辑器的屏幕截图。](images/simple-dx-game-setup-app-manifest.png)
 
-有关 **package.appxmanifest** 文件和打包的详细信息，请参阅[清单设计器](https://msdn.microsoft.com/library/windows/apps/br230259.aspx)。 现在，请看一下“功能”选项卡并查看提供的选项。
+有关 **package.appxmanifest** 文件和打包的详细信息，请参阅[清单设计器](https://docs.microsoft.com/previous-versions/br230259(v=vs.140))。 现在，请看一下“功能”  选项卡并查看提供的选项。
 
 ![显示 Direct3D 应用的默认功能的屏幕截图。](images/simple-dx-game-setup-capabilities.png)
 
-如果不选择游戏使用的功能（如用于全球高分榜的“Internet”），你将无法访问相应的资源或功能。 在创建新游戏时，请确保选择了运行游戏所需的功能！
+如果不选择游戏使用的功能（如用于全球高分榜的“Internet”  ），你将无法访问相应的资源或功能。 在创建新游戏时，请确保选择了运行游戏所需的功能！
 
 现在，我们看一下 **DirectX 11 应用（通用 Windows）** 模板附带的其他文件。
 

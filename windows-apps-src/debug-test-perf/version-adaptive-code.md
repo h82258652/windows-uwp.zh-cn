@@ -6,22 +6,22 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
-ms.openlocfilehash: d62ce9abd84a0769a2393db169b8198d3d9f6cec
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f542c76d879881af296351ce51a803aa9986ecbb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616402"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359713"
 ---
 # <a name="version-adaptive-code"></a>版本自适应代码
 
-你可以考虑编写自适应代码，这与考虑如何[创建自适应 UI](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml) 类似。 当你检测到自己的应用在较大的屏幕上运行时，你可以设计基本的 UI 以在最小的屏幕上运行，然后移动或添加元素。 借助自适应代码，可编写基础代码以在最低的操作系统版本上运行，并且可以在检测到应用运行所在的较高版本上提供新功能时，添加精心挑选的功能。
+你可以考虑编写自适应代码，这与考虑如何[创建自适应 UI](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml) 类似。 当你检测到自己的应用在较大的屏幕上运行时，你可以设计基本的 UI 以在最小的屏幕上运行，然后移动或添加元素。 借助自适应代码，可编写基础代码以在最低的操作系统版本上运行，并且可以在检测到应用运行所在的较高版本上提供新功能时，添加精心挑选的功能。
 
 有关 ApiInformation、API 协定和配置 Visual Studio 的重要背景信息，请参阅[版本自适应应用](version-adaptive-apps.md)。
 
 ### <a name="runtime-api-checks"></a>运行时 API 检查
 
-有条件地在代码中使用 [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) 类，测试是否存在要调用的 API。 此条件将进行评估（无论你的应用在何处运行），但仅针对存在相应 API 的设备评估为 **True**，从而可调用该 API。 这将允许你编写版本自适应代码，以便创建相关应用，它们使用仅在特定操作系统版本上提供的 API。
+有条件地在代码中使用 [Windows.Foundation.Metadata.ApiInformation](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation) 类，测试是否存在要调用的 API。 此条件将进行评估（无论你的应用在何处运行），但仅针对存在相应 API 的设备评估为 **True**，从而可调用该 API。 这将允许你编写版本自适应代码，以便创建相关应用，它们使用仅在特定操作系统版本上提供的 API。
 
 下面我们看一下面向 Windows Insider Preview 中的新功能的特定示例。 有关使用 **ApiInformation** 的总体概述，请参阅[设备系列概述](https://docs.microsoft.com/en-us/uwp/extension-sdks/device-families-overview#writing-code)和博客文章[使用 API 合约动态检测功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)。
 
@@ -34,7 +34,7 @@ ms.locfileid: "57616402"
 
 如果要使用以下内容，则必须提高应用的最低版本：
 - 需要一项在较早版本中并未提供的功能的新 API。 必须将受支持的最低版本提高到包含该功能的版本。 有关详细信息，请参阅[应用功能声明](../packaging/app-capability-declarations.md)。
-- 任何已添加到 generic.xaml 并且在早期版本中不可用的新资源键。 运行时所使用的 generic.xaml 版本由设备运行所在的操作系统版本确定。 无法使用运行时 API 检查来确定是否存在 XAML 资源。 因此，你只能使用应用支持的最低版本中提供的资源键，否则 [XAMLParseException](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.markup.xamlparseexception.aspx) 将导致应用在运行时崩溃。
+- 任何已添加到 generic.xaml 并且在早期版本中不可用的新资源键。 运行时所使用的 generic.xaml 版本由设备运行所在的操作系统版本确定。 无法使用运行时 API 检查来确定是否存在 XAML 资源。 因此，你只能使用应用支持的最低版本中提供的资源键，否则 [XAMLParseException](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.xamlparseexception) 将导致应用在运行时崩溃。
 
 ### <a name="adaptive-code-options"></a>自适应代码选项
 
@@ -73,9 +73,9 @@ ms.locfileid: "57616402"
 
 ### <a name="example-1-new-enum-value"></a>示例 1：新枚举值
 
-Windows 10 版本 1607年添加到一个新值[InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.inputscopenamevalue.aspx)枚举：**ChatWithoutEmoji**。 这一新输入范围与 **Chat** 输入范围具有相同的输入行为（拼写检查、自动完成、首字母自动大写），但其无需表情符号按钮即可映射到触摸键盘。 如果你要创建自己的表情符号选取器，并希望禁用触摸键盘中内置的表情符号按钮，这将很有用。 
+Windows 10 版本 1607年添加到一个新值[InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue)枚举：**ChatWithoutEmoji**。 这一新输入范围与 **Chat** 输入范围具有相同的输入行为（拼写检查、自动完成、首字母自动大写），但其无需表情符号按钮即可映射到触摸键盘。 如果你要创建自己的表情符号选取器，并希望禁用触摸键盘中内置的表情符号按钮，这将很有用。 
 
-此示例显示了如何检查是否存在 **ChatWithoutEmoji** 枚举值，并设置 **TextBox** 的 [InputScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.inputscope.aspx) 属性（如果存在该枚举值）。 如果在应用运行所在的系统上不存在该枚举值，则改为将 **InputScope** 设置为 **Chat**。 所示代码可放置在 Page 构造函数或 Page.Loaded 事件处理程序中。
+此示例显示了如何检查是否存在 **ChatWithoutEmoji** 枚举值，并设置 **TextBox** 的 [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 属性（如果存在该枚举值）。 如果在应用运行所在的系统上不存在该枚举值，则改为将 **InputScope** 设置为 **Chat**。 所示代码可放置在 Page 构造函数或 Page.Loaded 事件处理程序中。
 
 > [!TIP]
 > 在检查 API 时，使用静态字符串而不是依赖于 .NET 语言功能，否则你的应用可能会尝试访问未定义的类型并在运行时崩溃。
@@ -156,20 +156,20 @@ private void messageBox_Loaded(object sender, RoutedEventArgs e)
 
 ### <a name="example-2-new-control"></a>示例 2：新的控件
 
-新的 Windows 版本通常会将新控件引入到 UWP API 图面，进而为平台引入新功能。 若要利用存在的新控件，请使用 [ApiInformation.IsTypePresent](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) 方法。
+新的 Windows 版本通常会将新控件引入到 UWP API 图面，进而为平台引入新功能。 若要利用存在的新控件，请使用 [ApiInformation.IsTypePresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.istypepresent) 方法。
 
-Windows 10 版本 1607 引入了名为 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 的新媒体控件。 此控件基于 [MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) 类生成，因此它将提供相关功能（例如能够轻松绑定到后台音频），并且它将使用媒体堆栈中的体系结构改进。
+Windows 10 版本 1607 引入了名为 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 的新媒体控件。 此控件基于 [MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer) 类生成，因此它将提供相关功能（例如能够轻松绑定到后台音频），并且它将使用媒体堆栈中的体系结构改进。
 
-但是，如果应用运行所在的设备运行的是版本 1607 之前的 Windows 10 版本，则必须使用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.aspx) 控件而不是新的 **MediaPlayerElement** 控件。 可以使用 [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) 方法来检查在运行时是否存在 MediaPlayerElement 控件，并加载适用于应用运行所在的系统的控件。
+但是，如果应用运行所在的设备运行的是版本 1607 之前的 Windows 10 版本，则必须使用 [**MediaElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaelement) 控件而不是新的 **MediaPlayerElement** 控件。 可以使用 [**ApiInformation.IsTypePresent**](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.istypepresent) 方法来检查在运行时是否存在 MediaPlayerElement 控件，并加载适用于应用运行所在的系统的控件。
 
-此示例显示了如何创建使用新 MediaPlayerElement 或旧 MediaElement 的应用，这具体取决于是否存在 MediaPlayerElement 类型。 在此代码中，使用 [UserControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol.aspx) 类来组件化控件及其相关 UI 和代码，以便你可以基于操作系统版本切换它们。 作为替代方法，你可以使用自定义控件，该控件提供的功能和自定义行为比这一简单示例所需的内容要多。
+此示例显示了如何创建使用新 MediaPlayerElement 或旧 MediaElement 的应用，这具体取决于是否存在 MediaPlayerElement 类型。 在此代码中，使用 [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) 类来组件化控件及其相关 UI 和代码，以便你可以基于操作系统版本切换它们。 作为替代方法，你可以使用自定义控件，该控件提供的功能和自定义行为比这一简单示例所需的内容要多。
  
 **MediaPlayerUserControl** 
 
 `MediaPlayerUserControl` 封装 **MediaPlayerElement** 和用于按帧跳过媒体框架的多个按钮。 UserControl 使你可以将这些控件视为单个实体，并使在较旧的系统上使用 MediaElement 切换变得更容易。 此用户控件应当仅在存在 MediaPlayerElement 的系统上使用，因此你无需在此用户控件内的代码中使用 ApiInformation 检查。
 
 > [!NOTE]
-> 若要使此示例既简单又有焦点，请将帧步骤按钮放置在媒体播放器的外部。 若要实现更好的用户体验，应自定义 MediaTransportControls 以包括自定义按钮。 有关详细信息，请参阅[自定义传输控件](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls)。 
+> 若要使此示例既简单又有焦点，请将帧步骤按钮放置在媒体播放器的外部。 若要实现更好的用户体验，应自定义 MediaTransportControls 以包括自定义按钮。 有关详细信息，请参阅[自定义传输控件](https://docs.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls)。 
 
 **XAML**
 ```xaml
@@ -305,7 +305,7 @@ public MainPage()
 
 ### <a name="example-1-new-property"></a>示例 1：新的属性
 
-设置可扩展状态触发器的第一步是子类化 [StateTriggerBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.statetriggerbase.aspx) 类来创建自定义触发器，该触发器将基于是否存在 API 来激活。 此示例演示了在存在属性与 XAML 中设置的 `_isPresent` 变量匹配时激活的触发器。
+设置可扩展状态触发器的第一步是子类化 [StateTriggerBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.statetriggerbase) 类来创建自定义触发器，该触发器将基于是否存在 API 来激活。 此示例演示了在存在属性与 XAML 中设置的 `_isPresent` 变量匹配时激活的触发器。
 
 **C#**
 ```csharp
@@ -339,7 +339,7 @@ class IsPropertyPresentTrigger : StateTriggerBase
 
 下一步是在 XAML 中设置视觉状态触发器，以便基于是否存在该 API 生成两个不同的视觉状态。 
 
-Windows 10 版本 1607 在 [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.aspx) 类上引入了名为 [AllowFocusOnInteraction](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.allowfocusoninteraction.aspx) 的新属性，该属性用于确定控件是否在用户与其交互时获得焦点。 如果要在用户单击某个按钮时使焦点位于文本框上以便进行数据输入（并使触摸键盘保持显示），这将很有用。
+Windows 10 版本 1607 在 [FrameworkElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement) 类上引入了名为 [AllowFocusOnInteraction](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.allowfocusoninteraction) 的新属性，该属性用于确定控件是否在用户与其交互时获得焦点。 如果要在用户单击某个按钮时使焦点位于文本框上以便进行数据输入（并使触摸键盘保持显示），这将很有用。
 
 如果该属性存在，该示例中的触发器将处于选中状态。 如果该属性存在，Button 上的 **AllowFocusOnInteraction** 属性将设为 **false**；如果该属性不存在，Button 将保留其原始状态。 TextBox 包括在内，以便于在运行代码时更轻松地查看此属性的效果。
 

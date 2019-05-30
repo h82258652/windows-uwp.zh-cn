@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, opengl, direct3d, 缓冲区, uniform, 顶点属性
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a1db1890e47257412a7e2ee8e08c40164d0d927
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9d79a4573438aec49d4aa1b828c90e72c04150de
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656242"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368156"
 ---
 # <a name="compare-opengl-es-20-buffers-uniforms-and-vertex-attributes-to-direct3d"></a>将 OpenGL ES 2.0 缓冲区、uniform 和顶点属性与 Direct3D 进行比较
 
@@ -20,9 +20,9 @@ ms.locfileid: "57656242"
 
 **重要的 Api**
 
--   [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
--   [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512)
--   [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454)
+-   [**ID3D11Device1::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)
+-   [**ID3D11Device1::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout)
+-   [**ID3D11DeviceContext1::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout)
 
 在从 OpenGL ES 2.0 移植到 Direct3D 11 的过程中，必须更改用于在应用和着色器程序之间传递数据的语法和 API 行为。
 
@@ -34,9 +34,9 @@ ms.locfileid: "57656242"
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | uniform                   | 常量缓冲区 (**cbuffer**) 字段。                                                                                                                                                |
 | 属性                 | 顶点缓冲区元素字段，由一个输入布局指定并且标记有特定的 HLSL 语法。                                                                                |
-| 缓冲区对象             | 缓冲区;请参阅[ **D3D11\_SUBRESOURCE\_数据**](https://msdn.microsoft.com/library/windows/desktop/ff476220)并[ **D3D11\_缓冲区\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092)和常规使用缓冲区定义。 |
-| 帧缓冲区对象 (FBO) | 呈现目标；请参阅具有 [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) 的 [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)。                                       |
-| 后台缓冲区               | 具有“后台缓冲区”图面的交换链；请参阅附加了 [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) 的 [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)。                       |
+| 缓冲区对象             | 缓冲区;请参阅[ **D3D11\_SUBRESOURCE\_数据**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)并[ **D3D11\_缓冲区\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)和常规使用缓冲区定义。 |
+| 帧缓冲区对象 (FBO) | 呈现目标；请参阅具有 [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d) 的 [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)。                                       |
+| 后台缓冲区               | 具有“后台缓冲区”图面的交换链；请参阅附加了 [**IDXGISurface1**](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgisurface1) 的 [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1)。                       |
 
  
 
@@ -73,9 +73,9 @@ glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(int) * CUBE_INDICES, renderer->vert
 
 在 Direct3D 11 中，缓冲区数据元素被视为“子资源”，范围可以从各个顶点数据元素到 MIP 映射纹理。
 
--   填充[ **D3D11\_SUBRESOURCE\_数据**](https://msdn.microsoft.com/library/windows/desktop/ff476220)具有配置的缓冲区数据元素的结构。
--   填充[ **D3D11\_缓冲区\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092)结构中的缓冲区，以及该缓冲区类型的单个元素的大小。
--   使用这两个结构调用 [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575)。
+-   填充[ **D3D11\_SUBRESOURCE\_数据**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)具有配置的缓冲区数据元素的结构。
+-   填充[ **D3D11\_缓冲区\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)结构中的缓冲区，以及该缓冲区类型的单个元素的大小。
+-   使用这两个结构调用 [**ID3D11Device1::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)。
 
 Direct3D 11:创建和填充顶点缓冲区和索引缓冲区。
 
@@ -106,7 +106,7 @@ m_d3dDevice->CreateBuffer(
     
 ```
 
-可写入的像素缓冲区或映射（如帧缓冲区）可以创建为 [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) 对象。 可将这些内容作为资源绑定到 [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) 或 [**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628)，绘制到其中之后，可以使用关联的交换链进行显示或者传递到着色器。
+可写入的像素缓冲区或映射（如帧缓冲区）可以创建为 [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d) 对象。 可将这些内容作为资源绑定到 [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview) 或 [**ID3D11ShaderResourceView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11shaderresourceview)，绘制到其中之后，可以使用关联的交换链进行显示或者传递到着色器。
 
 Direct3D 11:创建一个帧缓冲区对象。
 
@@ -147,7 +147,7 @@ glUniformMatrix4fv(renderer->mvpLoc, 1, GL_FALSE, (GLfloat*) &renderer->mvpMatri
 uniform mat4 u_mvpMatrix;
 ```
 
-Direct3D 将 uniform 数据指定为“常量缓冲区”，与 uniform 一样，它包含提供给各个着色器的常量数据。 与 uniform 缓冲区一样，应采用同样的方法将内存中的常量缓冲区数据打包以使着色器能够解释该数据，这一点非常重要。 使用 DirectXMath 类型 (如[ **XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608)) 而不是平台类型 (如**float\*** 或**float\[4\]**) 可保证正确的数据元素的对齐方式。
+Direct3D 将 uniform 数据指定为“常量缓冲区”，与 uniform 一样，它包含提供给各个着色器的常量数据。 与 uniform 缓冲区一样，应采用同样的方法将内存中的常量缓冲区数据打包以使着色器能够解释该数据，这一点非常重要。 使用 DirectXMath 类型 (如[ **XMFLOAT4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4)) 而不是平台类型 (如**float\*** 或**float\[4\]** ) 可保证正确的数据元素的对齐方式。
 
 常量缓冲区必须在 GPU 上拥有一个关联的 GPU 寄存器，用于参考该数据。 按照缓冲区布局的指示将数据打包到寄存器位置。
 
@@ -224,7 +224,7 @@ attribute vec4 a_position;
 attribute vec4 a_color;                     
 ```
 
-在某些方面，同样的过程适用于 Direct3D。 在输入缓冲区（包括顶点缓冲区以及相应的索引缓冲区）中提供顶点数据而不是属性。 但是，由于 Direct3D 没有“attribute”声明，因此你必须指定一个输入布局（该布局声明顶点缓冲区中数据元素的单个组件）以及指示顶点着色器解释这些组件的位置和方法的 HLSL 语义。 HLSL 语义要求你使用特定字符串（它会告知着色器引擎关于组件的用途）定义每个组件的用法。 例如，顶点位置数据标记为 POSITION，法线数据标记为 NORMAL，而顶点颜色数据标记为 COLOR。 （其他着色器阶段还需要特定的语义，并且这些语义具有不同的解释基于着色器阶段）。有关 HLSL 语义的详细信息，请阅读[端口着色器管道](change-your-shader-loading-code.md)并[HLSL 语义](https://msdn.microsoft.com/library/windows/desktop/bb205574)。
+在某些方面，同样的过程适用于 Direct3D。 在输入缓冲区（包括顶点缓冲区以及相应的索引缓冲区）中提供顶点数据而不是属性。 但是，由于 Direct3D 没有“attribute”声明，因此你必须指定一个输入布局（该布局声明顶点缓冲区中数据元素的单个组件）以及指示顶点着色器解释这些组件的位置和方法的 HLSL 语义。 HLSL 语义要求你使用特定字符串（它会告知着色器引擎关于组件的用途）定义每个组件的用法。 例如，顶点位置数据标记为 POSITION，法线数据标记为 NORMAL，而顶点颜色数据标记为 COLOR。 （其他着色器阶段还需要特定的语义，并且这些语义具有不同的解释基于着色器阶段）。有关 HLSL 语义的详细信息，请阅读[端口着色器管道](change-your-shader-loading-code.md)并[HLSL 语义](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps)。
 
 设置顶点缓冲区和索引缓冲区以及设置输入布局的过程统称为 Direct3D 图形管道的“输入程序集”(IA) 阶段。
 
@@ -255,7 +255,7 @@ m_d3dContext->IASetInputLayout(m_inputLayout.Get());
 -   顶点位置坐标在主内存中表示为 XMFLOAT3，它是由 (x, y, z) 坐标的 3 个 32 位浮点值构成的已对齐数组。
 -   顶点颜色值表示为 XMFLOAT4，它是由颜色 (RGBA) 的 4 个 32 位浮点值构成的已对齐数组。
 
-为每个组件分配一个语义以及一个格式类型。 然后，将描述传递给 [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512)。 如果在呈现方法期间设置输入程序集，则会在调用 [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) 时使用输入布局。
+为每个组件分配一个语义以及一个格式类型。 然后，将描述传递给 [**ID3D11Device1::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout)。 如果在呈现方法期间设置输入程序集，则会在调用 [**ID3D11DeviceContext1::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) 时使用输入布局。
 
 Direct3D 11:描述与特定的语义输入的布局
 

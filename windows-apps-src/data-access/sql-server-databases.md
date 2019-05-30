@@ -1,19 +1,19 @@
 ---
 title: 在 UWP 应用中使用 SQL Server 数据库
 description: 在 UWP 应用中使用 SQL Server 数据库。
-ms.date: 11/13/2017
+ms.date: 3/28/2019
 ms.topic: article
 keywords: Windows 10, uwp, SQL Server, 数据库
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fe215a593293ff91afb7f71a830512ac365093f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f8986f14872d4e5de2c45bba264de6619ef07141
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621152"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360153"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>在 UWP 应用中使用 SQL Server 数据库
-通过使用 [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 命名空间中的类，你的应用可以直接连接到 SQL Server 数据库然后存储和检索数据。
+通过使用 [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) 命名空间中的类，你的应用可以直接连接到 SQL Server 数据库然后存储和检索数据。
 
 在本指南中，我们将向你介绍一种操作方法。 如果你将 [Northwind](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) 示例数据库安装到 SQL Server 实例上，然后使用这些代码段，你最终将获得显示了来自 Northwind 示例数据库的产品的基本 UI。
 
@@ -50,7 +50,7 @@ ms.locfileid: "57621152"
 ： 五个：填充产品 UI。
 
 >[!NOTE]
-> 本节介绍了一种组织你的数据访问代码的方法。 这不仅仅是为了提供如何使用 [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 在 SQL Server 数据库中存储和检索数据的示例。 你可以采用对你的应用程序设计最有意义的任何方式组织你的代码。
+> 本节介绍了一种组织你的数据访问代码的方法。 这不仅仅是为了提供如何使用 [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) 在 SQL Server 数据库中存储和检索数据的示例。 你可以采用对你的应用程序设计最有意义的任何方式组织你的代码。
 
 ### <a name="add-a-connection-string"></a>添加连接字符串
 
@@ -77,7 +77,7 @@ sealed partial class App : Application
 
 ### <a name="create-a-class-to-hold-product-data"></a>创建用于保存产品数据的类
 
-我们将创建一个实现 [INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged.aspx) 事件的类，以便将 XAML UI 中的属性绑定到此类中的属性。
+我们将创建一个实现 [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN) 事件的类，以便将 XAML UI 中的属性绑定到此类中的属性。
 
 ```csharp
 public class Product : INotifyPropertyChanged
@@ -106,7 +106,7 @@ public class Product : INotifyPropertyChanged
 
 ### <a name="retrieve-products-from-the-sql-server-database"></a>从 SQL Server 数据库检索产品
 
-创建一个从 Northwind 示例数据库获取产品的方法，然后将这些产品作为 ``Product`` 实例的 [ObservableCollection](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) 集合返回。
+创建一个从 Northwind 示例数据库获取产品的方法，然后将这些产品作为 ``Product`` 实例的 [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN) 集合返回。
 
 ```csharp
 public ObservableCollection<Product> GetProducts(string connectionString)
@@ -208,7 +208,7 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 
 ### <a name="show-products-in-the-listview"></a>在 ListView 中显示产品
 
-打开 **MainPage.xaml.cs** 文件，并将代码添加到 ``MainPage`` 类的构造函数，该类可将 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 的 **ItemSource** 属性设置为 ``Product`` 实例的 [ObservableCollection](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx)。
+打开 **MainPage.xaml.cs** 文件，并将代码添加到 ``MainPage`` 类的构造函数，该类可将 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 的 **ItemSource** 属性设置为 ``Product`` 实例的 [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN)。
 
 ```csharp
 public MainPage()
@@ -222,7 +222,7 @@ public MainPage()
 
 ![Northwind 产品](images/products-northwind.png)
 
-探索 [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 命名空间以了解 SQL Server 数据库中的数据的其他作用。
+探索 [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) 命名空间以了解 SQL Server 数据库中的数据的其他作用。
 
 ## <a name="trouble-connecting-to-your-database"></a>连接数据库时遇到问题？
 

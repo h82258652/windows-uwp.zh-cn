@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c9ff9760b3ae9b852fe1ae1b86d1cc48e49c5dd4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e8e9395517511a40c215e31816962c186968c9f3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602442"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362103"
 ---
 # <a name="accessibility-checklist"></a>辅助功能清单
 
@@ -23,25 +23,25 @@ ms.locfileid: "57602442"
 
 1. 为应用中的内容和交互 UI 元素设置辅助名称（必选）和辅助说明（可选）。
 
-    辅助名称是屏幕阅读器用于述说 UI 元素的简短且具有描述性的文本字符串。 一些 UI 元素（如 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 和 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)）将其文本内容提升为默认辅助名称；请参阅[基本辅助功能信息](basic-accessibility-information.md#name_from_inner_text)。
+    辅助名称是屏幕阅读器用于述说 UI 元素的简短且具有描述性的文本字符串。 一些 UI 元素（如 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)）将其文本内容提升为默认辅助名称；请参阅[基本辅助功能信息](basic-accessibility-information.md#name_from_inner_text)。
 
-    你应当为图像或没有将内部文本内容提升为隐式辅助名称的其他控件明确设置辅助名称。 你应当针对窗体元素使用标签，以便标签文本可以用作 Microsoft UI 自动化模型中的 [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) 目标来将标签与输入相关联。 如果你想要为用户提供的 UI 指南比辅助名称中通常包括的指南多，则可以使用辅助说明和工具提示来帮助用户了解 UI。
+    你应当为图像或没有将内部文本内容提升为隐式辅助名称的其他控件明确设置辅助名称。 你应当针对窗体元素使用标签，以便标签文本可以用作 Microsoft UI 自动化模型中的 [**LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v%3Dvs.95)) 目标来将标签与输入相关联。 如果你想要为用户提供的 UI 指南比辅助名称中通常包括的指南多，则可以使用辅助说明和工具提示来帮助用户了解 UI。
 
     有关详细信息，请参阅[辅助名称](basic-accessibility-information.md#accessible_name)和[辅助说明](basic-accessibility-information.md)。
 
 2. 实现键盘辅助功能：
 
-    * 测试 UI 的默认 Tab 键索引顺序。 必要时调整 Tab 键索引顺序，这可能需要启用或禁用某些控件或者更改某些 UI 元素上 [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 的默认值。
+    * 测试 UI 的默认 Tab 键索引顺序。 必要时调整 Tab 键索引顺序，这可能需要启用或禁用某些控件或者更改某些 UI 元素上 [**TabIndex**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.tabindex) 的默认值。
     * 为复合元素使用支持箭头键导航的控件。 对于默认控件，通常已经实现了箭头键导航。
-    * 使用支持键盘激活的控件。 对于默认控件，特别是那些支持 UI 自动化 [**Invoke**](https://msdn.microsoft.com/library/windows/apps/BR242582) 模式的控件，通常提供键盘激活功能；请检查该控件的文档。
+    * 使用支持键盘激活的控件。 对于默认控件，特别是那些支持 UI 自动化 [**Invoke**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IInvokeProvider) 模式的控件，通常提供键盘激活功能；请检查该控件的文档。
     * 为 UI 中支持交互的特定部分设置访问键或实现加速键。
-    * 对于 UI 中所使用的任何自定义控件，请验证你已经用正确的 [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 激活支持实现了这些控件，而且已经根据需要定义了键处理替换选项以支持激活、遍历、访问键或加速键。
+    * 对于 UI 中所使用的任何自定义控件，请验证你已经用正确的 [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) 激活支持实现了这些控件，而且已经根据需要定义了键处理替换选项以支持激活、遍历、访问键或加速键。
 
-    有关详细信息，请参阅[键盘交互](https://msdn.microsoft.com/library/windows/apps/Mt185607)。
+    有关详细信息，请参阅[键盘交互](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)。
 
 3. 请确保文本是可读大小
 
-    * Windows 包括各种可访问性工具和设置，用户可以充分利用并调整其自己的需求和用于读取文本的首选项。 这些地方包括：
+    * Windows 包括各种可访问性工具和设置，用户可以充分利用并调整其自己的需求和用于读取文本的首选项。 这些问题包括：
         * 放大镜工具，它将放大选定的区域的用户界面。 您应确保应用程序中的文本的布局不会使其难以使用放大镜以进行读取。
         * 中的全局规模和解决方法设置**设置-> 系统-> 显示-> 扩展和布局**。 完全有哪些大小调整选项可能有所不同，因为这取决于显示设备的功能。
         * 中的文本大小设置**设置-> 轻松访问-> 显示**。 调整**使文本更大**设置支持跨所有应用程序和屏幕 （所有 UWP 文本控件都支持缩放体验，而无任何自定义或模板化的文本） 的控件中指定的文本大小。
@@ -58,7 +58,7 @@ ms.locfileid: "57602442"
 
 5. 运行辅助功能工具，解决报告的问题以及验证屏幕读取体验。
 
-    使用 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 之类的工具验证编程访问，运行诊断工具（如 [**AccChecker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985)）发现常见错误以及使用讲述人验证屏幕读取体验。
+    使用 [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) 之类的工具验证编程访问，运行诊断工具（如 [**AccChecker**](https://docs.microsoft.com/windows/desktop/WinAuto/ui-accessibility-checker)）发现常见错误以及使用讲述人验证屏幕读取体验。
 
     有关详细信息，请参阅[辅助功能测试](accessibility-testing.md)。
 
@@ -75,5 +75,5 @@ ms.locfileid: "57602442"
 * [辅助文本要求](accessible-text-requirements.md)
 * [文本缩放](../input/text-scaling.md)
 * [辅助功能](accessibility.md)
-* [可访问性的设计](https://msdn.microsoft.com/library/windows/apps/Hh700407)
+* [可访问性的设计](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
 * [要避免的做法](practices-to-avoid.md)

@@ -6,15 +6,15 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ccb9447e9594f71907f0da5d0e15f9c6c65bb6b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a63cf64fec32be5439838618e534617d1f4a9afc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57622752"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359363"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>方案 1：从字符串资源和资产文件生成 PRI 文件
-在此方案中，我们使用[包资源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690) 让新应用代表我们的自定义生成系统。 请记住，此自定义生成系统的目的是为目标 UWP 应用创建 PRI 文件。 因此，作为此演练的一部分，我们将创建一些示例资源文件（包含字符串和其他类型的资源）来代表该目标 UWP 应用的资源。
+在此方案中，我们使用[包资源索引 (PRI) API](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference) 让新应用代表我们的自定义生成系统。 请记住，此自定义生成系统的目的是为目标 UWP 应用创建 PRI 文件。 因此，作为此演练的一部分，我们将创建一些示例资源文件（包含字符串和其他类型的资源）来代表该目标 UWP 应用的资源。
 
 ## <a name="new-project"></a>新建项目
 首先在 Microsoft Visual Studio 中创建新项目。 创建 **Visual C++ Windows 控制台应用程序**项目，然后将其命名为 *CBSConsoleApp*（“自定义生成系统控制台应用”的简称）。
@@ -227,11 +227,11 @@ MrmResourceIndexerHandle indexer;
 
 第一个字符串资源是来自 `en-US\resources.resw` 的 *EnOnlyString*，它仅有一个候选项（与 *language-en-US* 限定符匹配）。 接下来是来自 `resources.resw` 和 `en-US\resources.resw` 的 *LocalizedString1*。 因此，它有两个候选项：一个与 *language-en-US* 匹配，另一个回退与任何上下文匹配的中性候选项。 同样，*LocalizedString2* 有两个候选项：*language-de-DE* 和中性。 最后，*NeutralOnlyString* 仅以中性形式存在。 将其命名为该名称以明确不应对它进行本地化。
 
-## <a name="summary"></a>摘要
-在此方案中，我们介绍了如何使用[包资源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690) 创建资源索引器。 我们将字符串资源和资产文件添加到资源索引器。 然后，我们使用资源索引器生成二进制 PRI 文件。 最后，我们以 XML 形式转储二进制 PRI 文件，以便可以确认其中含有预期的信息。
+## <a name="summary"></a>总结
+在此方案中，我们介绍了如何使用[包资源索引 (PRI) API](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference) 创建资源索引器。 我们将字符串资源和资产文件添加到资源索引器。 然后，我们使用资源索引器生成二进制 PRI 文件。 最后，我们以 XML 形式转储二进制 PRI 文件，以便可以确认其中含有预期的信息。
 
 ## <a name="important-apis"></a>重要的 API
-* [索引 (PRI) 引用的包资源](https://msdn.microsoft.com/library/windows/desktop/mt845690)
+* [索引 (PRI) 引用的包资源](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference)
 
 ## <a name="related-topics"></a>相关主题
 * [包资源索引 (PRI) API 和自定义生成系统](pri-apis-custom-build-systems.md)

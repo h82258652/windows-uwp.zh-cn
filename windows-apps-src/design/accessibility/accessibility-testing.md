@@ -8,12 +8,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d84683544628a9b6df0eafb2999fabb134465ea8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8af03b32453bcdacb3da95678cf23a988c375f1b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635562"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359635"
 ---
 # <a name="accessibility-testing"></a>辅助功能测试  
 
@@ -23,7 +23,7 @@ ms.locfileid: "57635562"
 <span id="RUN_ACCESSIBILITY_TESTING_TOOLS"/>
 
 ## <a name="run-accessibility-testing-tools"></a>运行辅助功能测试工具  
-Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例如 [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239)、[**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 和 [**UI Accessibility Checker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985)。 这些工具可帮助你验证应用的辅助功能。 确保验证所有应用方案和 UI 元素。
+Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例如 [**AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope)、[**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) 和 [**UI Accessibility Checker**](https://docs.microsoft.com/windows/desktop/WinAuto/ui-accessibility-checker)。 这些工具可帮助你验证应用的辅助功能。 确保验证所有应用方案和 UI 元素。
 
 可从 Microsoft Visual Studio 命令提示符或从 Windows SDK 工具文件夹（你的开发计算机上安装 Windows SDK 的 bin 子目录）启动辅助功能测试工具。
   
@@ -35,16 +35,16 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 
 ### <a name="accscope"></a>**AccScope**  
 
-[  **AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) 工具允许开发人员和测试人员在其应用的开发和设计期间评估该应用的辅助功能，并且可能在早期原型设计阶段进行，而不是在应用开发周期的后期测试阶段。 它专门用于测试应用程序的讲述人辅助功能方案。
+[  **AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) 工具允许开发人员和测试人员在其应用的开发和设计期间评估该应用的辅助功能，并且可能在早期原型设计阶段进行，而不是在应用开发周期的后期测试阶段。 它专门用于测试应用程序的讲述人辅助功能方案。
 
 <span id="inspect"/>
 <span id="INSPECT"/>
 
 ### <a name="inspect"></a>**检查**  
 
-[**检查**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) ，可选择任何 UI 元素并查看其可访问性数据。 可以查看 Microsoft UI 自动化属性和控件模式并测试 UI 自动化树中自动化元素的导航结构。 当你开发 UI 以验证如何在 UI 自动化中公开辅助功能属性时，请使用 **Inspect**。 在某些情况下，属性来自已经为默认 XAML 控件实现的 UI 自动化支持。 在其他情况下，属性来自已经在 XAML 标记中设置为 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties) 附加属性的特定值。
+[**检查**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) ，可选择任何 UI 元素并查看其可访问性数据。 可以查看 Microsoft UI 自动化属性和控件模式并测试 UI 自动化树中自动化元素的导航结构。 当你开发 UI 以验证如何在 UI 自动化中公开辅助功能属性时，请使用 **Inspect**。 在某些情况下，属性来自已经为默认 XAML 控件实现的 UI 自动化支持。 在其他情况下，属性来自已经在 XAML 标记中设置为 [**AutomationProperties**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties) 附加属性的特定值。
 
-下图展示了 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 工具，用于查询记事本中 **“编辑”** 菜单元素的 UI 自动化属性。
+下图展示了 [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) 工具，用于查询记事本中 **“编辑”** 菜单元素的 UI 自动化属性。
 
 ![“检查”工具的屏幕截图。](./images/inspect.png)
 
@@ -52,7 +52,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 <span id="UI_ACCESSIBILITY_CHECKER"/>
 
 ### <a name="ui-accessibility-checker"></a>**UI 辅助功能检查器**  
-**UI 辅助功能检查器 (AccChecker)** 有助于发现运行时的辅助功能问题。 如果你的 UI 完整且可使用，则将 **AccChecker** 用于测试不同的方案、验证运行时辅助功能信息的正确性以及发现运行时问题。 可以在 UI 或命令行模式下运行 **AccChecker**。 若要运行 UI 模式工具，在 Windows SDK bin 目录中打开 **AccChecker** 目录、运行 acccheckui.exe，然后单击“帮助”菜单。
+**UI 辅助功能检查器 (AccChecker)** 有助于发现运行时的辅助功能问题。 如果你的 UI 完整且可使用，则将 **AccChecker** 用于测试不同的方案、验证运行时辅助功能信息的正确性以及发现运行时问题。 可以在 UI 或命令行模式下运行 **AccChecker**。 若要运行 UI 模式工具，在 Windows SDK bin 目录中打开 **AccChecker** 目录、运行 acccheckui.exe，然后单击“帮助”  菜单。
 
 <span id="ui_automation_verify"/>
 <span id="UI_AUTOMATION_VERIFY"/>
@@ -64,7 +64,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 <span id="ACCESSIBLE_EVENT_WATCHER"/>
 
 ### <a name="accessible-event-watcher"></a>**辅助功能事件查看器**  
-[**可访问事件观察器 (AccEvent)** ](https://msdn.microsoft.com/library/windows/desktop/Dd317979)测试是否应用的 UI 元素触发 UI 更改发生时的相应 UI 自动化和 Microsoft Active Accessibility 事件。 当焦点改变时，或者当 UI 元素被调用、选择或者其状态或属性发生变化时，UI 会发生变化。
+[**可访问事件观察器 (AccEvent)** ](https://docs.microsoft.com/windows/desktop/WinAuto/accessible-event-watcher)测试是否应用的 UI 元素触发 UI 更改发生时的相应 UI 自动化和 Microsoft Active Accessibility 事件。 当焦点改变时，或者当 UI 元素被调用、选择或者其状态或属性发生变化时，UI 会发生变化。
 
 > [!NOTE]
 > 文档中提及的大多数辅助功能测试工具在电脑而不是手机上运行。 开发和使用模拟器时可以运行某些工具，但其中大部分工具无法在模拟器中公开 UI 自动化树。
@@ -95,7 +95,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 
 ## <a name="verify-your-app-with-display-settings"></a>使用显示设置验证你的应用  
 
-使用可调节屏幕的每英寸点数 (dpi) 值的系统屏幕选项，并确保当该 dpi 值发生更改时，你的应用 UI 可正确缩放。 (某些用户更改 dpi 值作为辅助功能选项，便可从**轻松访问**也一样显示属性。)如果发现任何问题，请按照[布局按比例缩放指南](https://msdn.microsoft.com/library/windows/apps/Dn611863)并提供其他资源的比例系数不同。
+使用可调节屏幕的每英寸点数 (dpi) 值的系统屏幕选项，并确保当该 dpi 值发生更改时，你的应用 UI 可正确缩放。 (某些用户更改 dpi 值作为辅助功能选项，便可从**轻松访问**也一样显示属性。)如果发现任何问题，请按照[布局按比例缩放指南](https://developer.microsoft.com/windows/design)并提供其他资源的比例系数不同。
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
@@ -142,9 +142,9 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 
     某些控件提供其他操作。 若要显示完整列表，请用四根手指点击。
 
-    如果控件响应鼠标或键盘，但不响应主要触摸交互或辅助触摸交互，则控件可能需要实现其他的 [UI 自动化](https://msdn.microsoft.com/library/windows/desktop/Ee684009)控件模式。
+    如果控件响应鼠标或键盘，但不响应主要触摸交互或辅助触摸交互，则控件可能需要实现其他的 [UI 自动化](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)控件模式。
 
-还应考虑使用 [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) 工具测试应用的“讲述人”辅助功能方案。 [  **AccScope 工具主题**](https://msdn.microsoft.com/library/windows/desktop/Dn433239)介绍了如何配置 **AccScope** 来测试“讲述人”方案。
+还应考虑使用 [**AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) 工具测试应用的“讲述人”辅助功能方案。 [  **AccScope 工具主题**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope)介绍了如何配置 **AccScope** 来测试“讲述人”方案。
 
 <span id="Examine_the_UI_Automation_representation_for_your_app"/>
 <span id="examine_the_ui_automation_representation_for_your_app"/>
@@ -153,15 +153,15 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 ## <a name="examine-the-ui-automation-representation-for-your-app"></a>检查应用的 UI 自动化表示  
 前面提到的某些 UI 自动化测试工具提供了一种查看应用的方式，这种方式有意不考虑应用的外观，而以 UI 自动化元素结构表示应用。 在辅助功能方案中，UI 自动化客户端（主要是辅助技术）将通过此方式与你的应用进行交互。
 
-[  **AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) 工具提供了一种十分有趣的应用视图，因为你既能以可视化表示的形式查看 UI 自动化元素，也能以列表形式来查看。 如果使用可视化效果，那么你可以深入查看各个部分，从而对应用 UI 的视觉外观有一定的了解。 你甚至可以在为 UI 指定全部逻辑之前对最初 UI 原型的辅助功能进行测试，确保应用的视觉交互和辅助功能方案导航保持平衡。
+[  **AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) 工具提供了一种十分有趣的应用视图，因为你既能以可视化表示的形式查看 UI 自动化元素，也能以列表形式来查看。 如果使用可视化效果，那么你可以深入查看各个部分，从而对应用 UI 的视觉外观有一定的了解。 你甚至可以在为 UI 指定全部逻辑之前对最初 UI 原型的辅助功能进行测试，确保应用的视觉交互和辅助功能方案导航保持平衡。
 
-可供测试的一个方面是，UI 自动化元素视图中是否存在不应出现在其中的元素。 如果发现要从该视图中去除的元素，或者恰好相反，视图中缺少某些元素，则可以使用 [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.accessibilityview) XAML 附加属性调整 XAML 控件在辅助功能视图中的显示方式。 查看基本辅助功能视图后，还可以通过启用箭头键重新检查 Tab 键序列或空间导航，从而确保用户可以查看控件视图中公开的各个交互部分。
+可供测试的一个方面是，UI 自动化元素视图中是否存在不应出现在其中的元素。 如果发现要从该视图中去除的元素，或者恰好相反，视图中缺少某些元素，则可以使用 [**AutomationProperties.AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityview) XAML 附加属性调整 XAML 控件在辅助功能视图中的显示方式。 查看基本辅助功能视图后，还可以通过启用箭头键重新检查 Tab 键序列或空间导航，从而确保用户可以查看控件视图中公开的各个交互部分。
 
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>相关主题  
 * [辅助功能](accessibility.md)
 * [要避免的做法](practices-to-avoid.md)
-* [UI 自动化](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
+* [UI 自动化](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)
 * [Windows 中的辅助功能](https://go.microsoft.com/fwlink/p/?LinkId=320802)
 * [开始使用讲述人](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

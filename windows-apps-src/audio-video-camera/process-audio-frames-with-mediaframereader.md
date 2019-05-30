@@ -6,16 +6,16 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c78e16a50bdca09f474d5016fdc86b6d27702d5b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 60abc29ad4f9e16dc9d37e99f94c9f30039c0087
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598582"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360703"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>使用 MediaFrameReader 处理音频帧
 
-本文介绍了如何将 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) 和 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 结合使用以从媒体帧源中获取音频数据。 若要了解如何使用 **MediaFrameReader** 获取图像数据（例如从彩色相机、红外相机或深度相机），请参阅[使用 MediaFrameReader 处理媒体帧](process-media-frames-with-mediaframereader.md)。 本文概述了帧阅读器使用模式，并讨论了 **MediaFrameReader** 类的一些其他功能，如使用 **MediaFrameSourceGroup** 同时从多个源检索帧。 
+本文介绍了如何将 [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) 和 [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) 结合使用以从媒体帧源中获取音频数据。 若要了解如何使用 **MediaFrameReader** 获取图像数据（例如从彩色相机、红外相机或深度相机），请参阅[使用 MediaFrameReader 处理媒体帧](process-media-frames-with-mediaframereader.md)。 本文概述了帧阅读器使用模式，并讨论了 **MediaFrameReader** 类的一些其他功能，如使用 **MediaFrameSourceGroup** 同时从多个源检索帧。 
 
 > [!NOTE] 
 > 本文中讨论的功能仅从 Windows 10 版本 1803 开始提供。
@@ -28,16 +28,16 @@ ms.locfileid: "57598582"
 
 **将功能添加到应用程序清单**
 
-1.  在 Microsoft Visual Studio 的“解决方案资源管理器”中，通过双击“package.appxmanifest”项，打开应用程序清单的设计器。
+1.  在 Microsoft Visual Studio 的“解决方案资源管理器”中，通过双击“package.appxmanifest”项，打开应用程序清单的设计器。  
 2.  选择**功能**选项卡。
-3.  选中“摄像头”框和“麦克风”框。
+3.  选中“摄像头”框和“麦克风”框。  
 4.  若要访问图片库和视频库，请选中**图片库**框和**视频库**框。
 
 
 
 ## <a name="select-frame-sources-and-frame-source-groups"></a>选择帧源和帧源组
 
-捕获音频帧的第一步是初始化表示音频数据源的 [**MediaFrameSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource)，如麦克风或其他音频捕获设备。 若要执行此操作，必须创建 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 对象的新实例。 此示例中，**MediaCapture** 的唯一初始化设置是设置 [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode) 以指示我们要从捕获设备中流式传输音频。 
+捕获音频帧的第一步是初始化表示音频数据源的 [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource)，如麦克风或其他音频捕获设备。 若要执行此操作，必须创建 [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) 对象的新实例。 此示例中，**MediaCapture** 的唯一初始化设置是设置 [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode) 以指示我们要从捕获设备中流式传输音频。 
 
 调用 [**MediaCapture.InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync) 后，可以使用 [**FrameSources**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.framesources) 属性获取可访问媒体帧源的列表。 此示例中使用 Linq 查询选择描述帧源的 [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo) 具有**音频**的 [**MediaStreamType**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo.mediastreamtype) 的所有帧源，指示媒体源产生音频数据。
 

@@ -6,27 +6,27 @@ ms.date: 06/03/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cdad8f3405420e0548974c734ad23bfd44f2c6b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8278e02de4d0f9a0efa301051a57bf59bce8d520
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648822"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363302"
 ---
 # <a name="sockets"></a>套接字
 套接字是实现许多网络协议所基于的低级数据传输技术。 UWP 为客户端-服务器或对等应用程序提供 TCP 和 UDP 套接字类，无论连接长期存在还是不需要建立连接。
 
-本主题重点介绍如何使用 [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) 命名空间中的通用 Windows 平台 (UWP) 套接字类。 但是，你也可以在 UWP 应用中使用 [Windows 套接字 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673)。
+本主题重点介绍如何使用 [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) 命名空间中的通用 Windows 平台 (UWP) 套接字类。 但是，你也可以在 UWP 应用中使用 [Windows 套接字 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)。
 
 > [!NOTE]
-> 由于[网络隔离](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)，Windows 不允许在通过本地环回地址 (127.0.0.0) 或明确指定本地 IP 地址运行于同一台计算机的两个 UWP 应用之间建立套接字连接（Sockets 或 WinSock）。 有关 UWP 应用相互通信机制的详细信息，请参阅[应用到应用的通信](/windows/uwp/app-to-app/index)。
+> 由于[网络隔离](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))，Windows 不允许在通过本地环回地址 (127.0.0.0) 或明确指定本地 IP 地址运行于同一台计算机的两个 UWP 应用之间建立套接字连接（Sockets 或 WinSock）。 有关 UWP 应用相互通信机制的详细信息，请参阅[应用到应用的通信](/windows/uwp/app-to-app/index)。
 
 ## <a name="build-a-basic-tcp-socket-client-and-server"></a>构建基本的 TCP 套接字客户端和服务器
 TCP（传输控制协议）套接字对于长时间的连接提供双向低级网络数据传输。 TCP 套接字是由大部分网络协议在 Internet 上使用的基础功能。 为了演示基本的 TCP 操作，下面的示例代码显示了通过 TCP 发送和接收数据的 [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) 和 [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener)，它们构成了一对 echo 客户端和服务器。
 
 为了尽量保持简明 &mdash; 同时先避开网络隔离问题 &mdash; 请创建一个新项目，并将下面的客户端和服务器代码放到同一个项目中。
 
-你需要在项目中[声明应用功能](../packaging/app-capability-declarations.md)。 打开应用包清单源文件（`Package.appxmanifest` 文件），在“功能”选项卡上，选中**私有网络（客户端和服务器）**。 `Package.appxmanifest` 标记如下所示。
+你需要在项目中[声明应用功能](../packaging/app-capability-declarations.md)。 打开应用包清单源文件（`Package.appxmanifest` 文件），在“功能”选项卡上，选中**私有网络（客户端和服务器）** 。 `Package.appxmanifest` 标记如下所示。
 
 ```xml
 <Capability Name="privateNetworkClientServer" />
@@ -1379,9 +1379,9 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 
 ## <a name="related-topics"></a>相关主题
 * [应用到应用的通信](/windows/uwp/app-to-app/index)
-* [并发和异步操作使用 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [如何设置网络功能](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)
-* [Windows 套接字 (Winsock) 2](https://msdn.microsoft.com/library/windows/desktop/ms740673)
+* [并发和异步操作与C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
+* [如何设置网络功能](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
+* [Windows 套接字 (Winsock) 2](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)
 
 ## <a name="samples"></a>示例
 * [StreamSocket 示例](https://go.microsoft.com/fwlink/p/?LinkId=620609)

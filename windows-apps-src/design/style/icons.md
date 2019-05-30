@@ -11,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fb97f69ccdffcec86dfdaf5fa6c5f817644ebd61
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5e464251200812e79474d05d9d0a680b49167871
+ms.sourcegitcommit: 7da28cf4f4e8390bc9a21a9488b03af39271cbbe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612442"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64564545"
 ---
 # <a name="icons-for-uwp-apps"></a>适用于 UWP 应用的图标
 
@@ -31,13 +31,13 @@ ms.locfileid: "57612442"
         **Icons inside the app**
 
         ![icons inside the app](images/icons/inside-icons.png)
-        Inside your app, you use icons to represent an action, such as copying text or navigating to the settings page.
+在您的应用程序，您可以使用图标来表示操作，例如将文本复制或导航到设置页。
     :::column-end:::
     :::column:::
-        **Icons outside the app**
+**此应用外部的图标**
 
         ![icons outside the app](images/icons/outside-icons.jpg)
-         Outside your app, Windows uses an icon to represent your app in the start menu and in the taskbar. If the user chooses to pin your app to the start menu, your app's start tile can feature your app's icon. Your app's icon appears in the title bar and you can choose to create a splash screen with your app's logo.
+外部应用程序，Windows 使用图标来表示您在开始菜单和任务栏中的应用程序。 如果用户选择将应用固定到开始菜单，您的应用程序启动磁贴可以功能应用程序的图标。 应用程序的图标将出现在标题栏，您可以选择创建初始屏幕的应用程序的徽标。
     :::column-end:::
 :::row-end:::
 
@@ -52,13 +52,13 @@ ms.locfileid: "57612442"
         ![do](images/do.svg)
         ![icons standard image](images/icons/icons-standard.svg)<br>
 
-        Use an icon for actions, like cut, copy, paste, and save, or for navigation items in a navigation menu.
+使用执行操作，如剪切、 复制、 粘贴、 和保存或导航菜单中的导航项的图标。
     :::column-end:::
     :::column:::
         ![don't](images/dont.svg)
         ![icons concept image](images/icons/icons-concept.svg)<br>
 
-        Use an icon if one already exists for the concept you want to represent. (To see whether an icon exists, check the Segoe icon list.)
+如果你想要表示的概念已有，使用一个图标。 （若要查看是否存在一个图标，检查 Segoe 图标列表。）
     :::column-end:::
 :::row-end:::
 
@@ -67,13 +67,13 @@ ms.locfileid: "57612442"
         ![do](images/do.svg)
         ![icon shopping cart](images/icons/icon-shopping-cart.svg)<br>
 
-        Use an icon if it's easy for the user to understand what the icon means and it's simple enough to be clear at small sizes.
+如果是便于用户了解图标的含义，并且很轻松地清除在小尺寸为，使用一个图标。
     :::column-end:::
     :::column:::
         ![dont](images/dont.svg)
         ![icons concept image](images/icons/icon-bad-example.png)<br>
 
-        Don't use an icon if its meaning isn't clear, or if making it clear requires a complex shape.
+不要使用一个图标，如果其含义不是很清晰，或者使用户清楚地知道需要复杂的形状。
     :::column-end:::
 :::row-end:::
 
@@ -86,7 +86,7 @@ ms.locfileid: "57612442"
 ### <a name="use-a-predefined-icon"></a>使用预定义的图标。
 :::row:::
     :::column:::
-        Microsoft provides over 1000 icons in the form of the Segoe MDL2 Assets font. It might not be intuitive to get an icon from a font, but our font display technology means these icons will look crisp and sharp on any display, at any resolution, and at any size. 
+Microsoft 提供了 Segoe MDL2 资产字体的窗体中的 1000 个以上图标。 从字体获取图标可能不直观，但我们的字体显示技术意味着这些图标在任何显示、任何分辨率、任何尺寸下都能够有简洁、清晰的外观。 有关说明，请参阅[Segoe MDL2 图标](segoe-ui-symbol-font.md)。
     :::column-end:::
     :::column:::
         ![pre-defined icon image](images/icons/predefined-icon.png)
@@ -96,7 +96,7 @@ ms.locfileid: "57612442"
 ### <a name="use-a-font"></a>使用字体。
 :::row:::
     :::column:::
-        You don't have to use the Segoe MDL2 Assets font--you can use any font the user has installed on their system, such as Wingdings or Webdings.
+无需使用 Segoe MDL2 资产字体，即可以使用任何用户已安装在其系统上，如 Wingdings 或 Webdings 字体。
     :::column-end:::
     :::column:::
         ![wingdings image](images/icons/wingdings.png)
@@ -106,7 +106,7 @@ ms.locfileid: "57612442"
 ### <a name="use-a-scalable-vector-graphics-svg-file"></a>使用可缩放的向量图形 (SVG) 文件。
 :::row:::
     :::column:::
-        SVG resources are ideal for icons, because they always look sharp at any size or resolution. Most drawing applications can export to SVG. 
+SVG 资源非常适用于图标，因为它们始终显示在任意大小或分辨率清晰。 大多数绘图应用程序都可以导出到 SVG。 有关说明，请参阅[SVGImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource)。
     :::column-end:::
     :::column:::
         ![SVG image](images/icons/icon-scale.gif)
@@ -116,7 +116,7 @@ ms.locfileid: "57612442"
 ### <a name="use-geometry-objects"></a>使用几何图形对象。
 :::row:::
     :::column:::
-        Like SVG files, geometries are a vector-based resource, so they always look sharp. However, creating a geometry is complicated because you have to individually specify each point and curve. It's really only a good choice if you need to modify the icon while your app is running (to animate it, for example). For instructions, see [Move and draw commands for geometries](../../xaml-platform/move-draw-commands-syntax.md). 
+SVG 像文件一样，几何图形是基于矢量的资源，因此它们始终看起来清晰。 不过，创建几何图形比较复杂，因为必须单独指定每个点和曲线。 如果你需要在应用运行时修改图标（例如，动画处理），这确实是唯一的好选择。 有关说明，请参阅[移动和绘制几何图形的命令](../../xaml-platform/move-draw-commands-syntax.md)。 
     :::column-end:::
     :::column:::
         ![Geometry objects image](images/icons/geometry-objects.png)
@@ -126,7 +126,7 @@ ms.locfileid: "57612442"
 ### <a name="you-can-also-use-a-bitmap-image-such-as-png-gif-or-jpeg-although-we-dont-recommend-it"></a>你也可以使用位图图像（如 PNG、GIF 或 JPEG），不过我们不建议这样做。
 :::row:::
     :::column:::
-        Bitmap images are created at a specific size, so they have to be scaled up or down depending on how large you want the icon to be and the resolution of the screen. When the image is scaled down (shrunk), it can appear blurry; when it's scaled up, it can appear blocky and pixelated. If you have to use a bitmap image we recommend using a PNG or GIF over a JPEG. 
+位图图像创建特定大小，因此他们需要进行增加或减少根据大你想要的图标和屏幕的分辨率。 当图像缩小（收缩）时，它可能显示得比较模糊；当放大时，它可能显示得斑驳且像素化。 如果你必须使用位图图像，建议使用 PNG 或 GIF 而不是 JPEG。 
     :::column-end:::
     :::column:::
         ![don't](images/dont.svg)
@@ -149,7 +149,7 @@ ms.locfileid: "57612442"
 :::row:::
     :::column span="2":::
         <b>Step 1</b><br>
-        Set the button's font family to `Segoe MDL2 Assets` and its content property to the unicode value of the glyph you want to use:
+将按钮的字体系列设置为`Segoe MDL2 Assets`，其内容属性设为你想要使用的标志符号的 unicode 值：
     :::column-end:::
     :::column:::
         ![Create an icon button step 1](images/icons/create-icon-step-1.svg)
@@ -163,10 +163,7 @@ ms.locfileid: "57612442"
 :::row:::
     :::column span="2":::
         <b>Step 2</b><br>
-        You can use one of the icon element objects: [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon),
-        [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon), 
-        [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon), or
-        [SymbolIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbolicon). This gives you more types of icons to choose from, and enables you to combine icons and other types of content, such as text, if you want:
+可以使用图标元素对象之一：[BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon)， [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)， [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon)，或[SymbolIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbolicon)。 这使您更多类型的图标可供选择，并使您可以将图标和其他类型的内容，例如文本，如果你想要：
     :::column-end:::
     :::column:::
         ![Create an icon button step 2](images/icons/icon-text-step-2.svg)
@@ -186,7 +183,7 @@ ms.locfileid: "57612442"
 
 :::row:::
     :::column span:::
-        When you have a series of commands that go together, such as cut/copy/paste or a set of drawing commands for a photo-editing program, put them together in a [command bar](../controls-and-patterns/app-bars.md). A command bar takes one or more app bar buttons or app bar toggle buttons, each of which represents an action. Each button has an [Icon](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon) property you use to control which icon it displays. There are a variety of ways to specify the icon. 
+当具有一系列合在一起，将命令，例如剪切/复制/粘贴或一系列绘图命令的照片编辑程序，将其放在一起在[命令栏](../controls-and-patterns/app-bars.md)。 命令栏采用一个或多个应用栏按钮或应用栏切换按钮，每个按钮表示一项操作。 每个按钮有一个[图标](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon)属性，你用它来控制要显示哪个图标。 可以通过多种方式指定图标。 
     :::column-end:::
     :::column:::
         ![Example of a command bar with icons](images/icons/create-icon-command-bar.svg)

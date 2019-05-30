@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d95ffc14e9ae6d4ea59a4b3bdc33fd215cb61be
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b10ba23db301a675bf102fd8fb6e278dbba11da8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616372"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371025"
 ---
 # <a name="pipeline-access-to-streaming-resources"></a>对流式资源的管道访问
 
@@ -60,7 +60,7 @@ ms.locfileid: "57616372"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="hlsl-streaming-resources-exposure.md">HLSL 流式处理资源泄露</a></p></td>
-<td align="left"><p>支持 <a href="https://msdn.microsoft.com/library/windows/desktop/ff471356">Shader 模型 5</a> 中的流式资源需要特定 Microsoft 高级着色器语言 (HLSL) 语法。</p></td>
+<td align="left"><p>支持 <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/d3d11-graphics-reference-sm5">Shader 模型 5</a> 中的流式资源需要特定 Microsoft 高级着色器语言 (HLSL) 语法。</p></td>
 </tr>
 </tbody>
 </table>

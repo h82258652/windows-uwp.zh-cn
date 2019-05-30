@@ -5,18 +5,18 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp, mrt, pri. 资源, 游戏, centennial, desktop app converter, mui, 卫星程序集
 ms.localizationpriority: medium
-ms.openlocfilehash: b17dffec37a5cadb450e93ea15508becfd7b9233
-ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.openlocfilehash: 82050c92311ce8bb7457637a486943a5fed3e334
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320630"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359331"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>在旧应用或游戏中使用 Windows 10 资源管理系统
 
 .NET 和 Win32 应用和游戏通常本地化为不同语言，从而扩展总目标市场。 有关对应用进行本地化的价值主张的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)。 通过打包你的.NET 或 Win32 应用程序或游戏为 MSIX 或 AppX 包，您可以利用资源管理系统加载到运行时上下文定制的应用程序资源。 本主题对方法进行了深入描述。
 
-有多种方法可本地化传统的 Win32 应用程序，但 Windows 8 引入了[新资源管理系统](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.aspx)，它可以跨各种编程语言和应用程序类型进行工作，并提供超越简单本地化的功能。 本主题中，该系统将被称为“MRT”。 过去，这代表“现代资源技术”，但“现代”一词已停止使用。 资源管理器也可以被称为 MRM（现代资源管理器）或 PRI（包资源索引）。
+有多种方法可本地化传统的 Win32 应用程序，但 Windows 8 引入了[新资源管理系统](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))，它可以跨各种编程语言和应用程序类型进行工作，并提供超越简单本地化的功能。 本主题中，该系统将被称为“MRT”。 过去，这代表“现代资源技术”，但“现代”一词已停止使用。 资源管理器也可以被称为 MRM（现代资源管理器）或 PRI（包资源索引）。
 
 与基于 MSIX 或基于 AppX 的部署 （例如，从 Microsoft Store 中) 结合使用，MRT 可自动提供给定用户的最适用的资源 / 设备中将其最大程度减少下载并安装你的应用程序的大小。 减小大小对于具有大量本地化内容的应用程序来说非常有意义，或许近似于 AAA 游戏的几*千兆字节*。 MRT 的其他好处包括 Windows Shell 和 Microsoft Store 的本地化列表，用户的首选语言与可用资源不匹配时的自动回退逻辑。
 
@@ -66,7 +66,7 @@ ms.locfileid: "58320630"
 
 在图中，应用程序代码引用三个逻辑资源名称。 在运行时，`GetResource` 伪函数使用 MRT 在资源表（也称为 PRI 文件）中查找这些资源名称，并根据环境条件（用户的语言和显示的比例系数）查找最适合的候选项。 如果是标签，则直接使用字符串。 如果是徽标图像，字符串解释为文件名，并从磁盘读取文件。 
 
-如果用户说出英语和德语，以外的语言或显示缩放比例 100%或 300%以外，MRT 会选取基于一组的回退规则的"最靠近的"匹配候选项 (请参阅[资源管理系统](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.aspx)的详细信息背景）。
+如果用户说出英语和德语，以外的语言或显示缩放比例 100%或 300%以外，MRT 会选取基于一组的回退规则的"最靠近的"匹配候选项 (请参阅[资源管理系统](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))的详细信息背景）。
 
 请注意，MRT 支持专门针对于多个限定符的资源-例如，如果徽标图像包含嵌入的文本，也需要进行本地化，徽标将有四个候选项：EN/规模-100、 DE/规模-100、 EN/规模-300 和 DE/规模-300。
 
@@ -150,7 +150,7 @@ ms.locfileid: "58320630"
 
 有关程序包清单文件和包布局的详细信息，请参阅[应用程序包清单](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest)。
 
-最后，如果使用 Visual Studio 来创建新项目并在将现有代码迁移，请参阅[创建"Hello，world"应用](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。 可以到新的项目，包括您的现有代码，但您可能需要进行大量更改代码 （尤其是在用户界面中） 以作为纯 UWP 应用运行。 这些更改不是本文档讨论的范围。
+最后，如果使用 Visual Studio 来创建新项目并在将现有代码迁移，请参阅[创建"Hello，world"应用](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。 可以到新的项目，包括您的现有代码，但您可能需要进行大量更改代码 （尤其是在用户界面中） 以作为纯 UWP 应用运行。 这些更改不是本文档讨论的范围。
 
 ## <a name="phase-1-localize-the-manifest"></a>第 1 阶段：本地化清单
 

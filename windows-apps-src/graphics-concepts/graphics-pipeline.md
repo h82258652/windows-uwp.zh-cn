@@ -8,19 +8,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 55621cec768e0aac680c3a84fd803e591459a97d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1b931268dc20f40c1bc1d7c700f346d29d6aa9d6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605432"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370614"
 ---
 # <a name="graphics-pipeline"></a>图形管道
 
 
 Direct3D 图形管道旨在为实时游戏应用程序生成图形。 数据通过各个可配置或可编程的阶段从输入流到输出。
 
-所有阶段都可以使用 Direct3D API 进行配置。 具有常见着色器核心（圆角矩形块）的阶段可通过使用 [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561) 编程语言进行编程。 这使得管道具有非常高的灵活性和适应性。
+所有阶段都可以使用 Direct3D API 进行配置。 具有常见着色器核心（圆角矩形块）的阶段可通过使用 [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl) 编程语言进行编程。 这使得管道具有非常高的灵活性和适应性。
 
 最常用的是顶点着色器 (VS) 阶段和像素着色器 (PS) 阶段。 如果你甚至不提供这些着色器阶段，则使用默认的无操作、传递式顶点和像素着色器。
 
@@ -48,7 +48,7 @@ Direct3D 图形管道旨在为实时游戏应用程序生成图形。 数据通�
 
 ## <a name="geometry-shader-stage"></a>几何着色器阶段
 
-|-|-| |作用|[几何着色器 (GS) 阶段](geometry-shader-stage--gs-.md)处理整个基元：三角形、线和点，以及它们的相邻顶点。 它支持几何放大和解扩。 它对于点精灵扩展、动态粒子系统、皮毛/鳍生成、阴影卷生成、单通道渲染到 Cubemap、每基元材料交换和每基元材料设置等算法很有用 - 包括将重心坐标生成为基元数据，使得像素着色器可以执行定制属性内插。 | |输入|与在单个顶点上操作的顶点着色器不同，几何着色器的输入是完整基元的顶点（三角形为三个顶点，线为两个顶点或点为单个顶点）。| |输出|几何着色器 (GS) 阶段能够输出形成单个选定拓扑的多个顶点。 可用的几何着色器输出拓扑有 <strong>tristrip</strong>、<strong>linestrip</strong> 和 <strong>pointlist</strong>。 在几何着色器的任何调用中，发出的基元的数目可以自由地变化，但是必须静态地声明可发出的顶点的最大数目。 从几何着色器调用发出的带长度可以是任意的，并且可以通过 [RestartStrip](https://msdn.microsoft.com/library/windows/desktop/bb509660) HLSL 函数创建新带。|
+|-|-| |作用|[几何着色器 (GS) 阶段](geometry-shader-stage--gs-.md)处理整个基元：三角形、线和点，以及它们的相邻顶点。 它支持几何放大和解扩。 它对于点精灵扩展、动态粒子系统、皮毛/鳍生成、阴影卷生成、单通道渲染到 Cubemap、每基元材料交换和每基元材料设置等算法很有用 - 包括将重心坐标生成为基元数据，使得像素着色器可以执行定制属性内插。 | |输入|与在单个顶点上操作的顶点着色器不同，几何着色器的输入是完整基元的顶点（三角形为三个顶点，线为两个顶点或点为单个顶点）。| |输出|几何着色器 (GS) 阶段能够输出形成单个选定拓扑的多个顶点。 可用的几何着色器输出拓扑有 <strong>tristrip</strong>、<strong>linestrip</strong> 和 <strong>pointlist</strong>。 在几何着色器的任何调用中，发出的基元的数目可以自由地变化，但是必须静态地声明可发出的顶点的最大数目。 从几何着色器调用发出的带长度可以是任意的，并且可以通过 [RestartStrip](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) HLSL 函数创建新带。|
 
 ## <a name="stream-output-stage"></a>流输出阶段
 

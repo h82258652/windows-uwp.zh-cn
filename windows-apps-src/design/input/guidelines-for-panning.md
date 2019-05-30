@@ -8,19 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 363ea5728b94d6b42f29299e8d240bcfc6242b4c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5fc43d5229ecd2bd9502fd74fef7f5197f758c62
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625112"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363593"
 ---
 # <a name="guidelines-for-panning"></a>平移指南
 
 
 平移或滚动允许用户在单个视图中导航，以显示在视口内不适合的视图内容。 示例视图包括计算机的文件夹结构、文档库或相册。
 
-> **重要的 API**：[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **重要的 API**：[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)， [ **Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
@@ -79,10 +79,9 @@ ms.locfileid: "57625112"
 与使用鼠标滚动类似，通过一个或多个手指轻扫或滑动，以使用触控进行平移。 平移交互与滚动鼠标滚轮或滑动滚动框而不是单击滚动条最为相似。 除非进行这种区分是在 API 中进行所需的一些特定于设备的 Windows UI，我们只需引用与平移这两个交互。
 
 > <div id="main">
-> <strong>Windows 10 Fall Creators Update 的行为更改</strong>
-> </div>
-> 默认情况下，主动笔现在可在 UWP 应用中滚动/平移，而不是进行文本选择（与触控、触摸板和被动笔一样）。  
+> <strong>Windows 10 Fall Creators Update 的行为更改</strong>默认情况下，而不是文本选择 active 笔现在滚动/pan （如触摸、 触摸板和被动笔） 的 UWP 应用中。  
 > 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 有关详细信息，请参阅 API 参考主题<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 类</a>。
+> </div>
 
 根据输入设备的不同，用户使用以下方式之一在可平移区域内进行平移：
 
@@ -172,9 +171,9 @@ Windows 8 支持三种类型的平移：
 ## <a name="related-articles"></a>相关文章
 
 
-* [自定义用户交互](https://msdn.microsoft.com/library/windows/apps/mt185599)
-* [优化 ListView 和 GridView](https://msdn.microsoft.com/library/windows/apps/mt204776)
-* [键盘辅助功能](https://msdn.microsoft.com/library/windows/apps/mt244347)
+* [自定义用户交互](https://developer.microsoft.com/windows/design/inputs-devices)
+* [优化 ListView 和 GridView](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)
+* [键盘辅助功能](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
 
 **示例**
 * [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
@@ -189,7 +188,7 @@ Windows 8 支持三种类型的平移：
 * [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
 * [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
 * [输入：Windows 8 手势示例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [输入：操作和手势 （c + +） 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [输入：操作和手势 (C++) 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 触摸输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 

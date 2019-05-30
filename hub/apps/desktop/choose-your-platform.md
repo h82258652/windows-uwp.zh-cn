@@ -7,12 +7,12 @@ ms.date: 03/18/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ece6c5eea6cc05a966a7eae4cd16958dddee4d4
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 996bbaf4dd05ce5b24e536459c6d7d009a53fa19
+ms.sourcegitcommit: f167775291cbc566b72b0859ae6b426d848c5c89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215042"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266409"
 ---
 # <a name="choose-your-app-platform"></a>选择应用平台
 
@@ -29,7 +29,10 @@ ms.locfileid: "66215042"
 
 * **Win32 API**。 Win32 API （也称为 Windows API） 是原始的平台，用于本机 C /C++需要直接访问 Windows 和硬件的 Windows 应用程序。 它提供了一流的开发体验，而无具体取决于.NET 和 WinRT 类似的托管运行时环境。 这使得 Win32 API 的应用程序需要最高级别的性能和直接访问系统硬件的理想平台。
 
-本文介绍了这些平台中更多详细信息，并可帮助您确定最适合你的应用程序。
+本文介绍了这些平台中更多详细信息，并可帮助您确定最适合你的应用程序。 
+
+> [!NOTE]
+> 无论你选择的应用程序平台，可以使用许多功能的通用 Windows 平台 (UWP) 可以在 Windows 10 应用程序中提供的新式体验。 例如，即使对桌面应用程序使用 WPF、 Windows 窗体或 Win32 API 生成的仍可以使用首次引入 UWP，例如 MSIX 包部署和 UWP XAML 控件的许多功能。 有关详细信息，请参阅[对桌面应用进行现代化](modernize/index.md)。
 
 ## <a name="uwp"></a>UWP
 

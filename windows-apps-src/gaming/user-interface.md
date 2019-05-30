@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 模板
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a4491fe9a3bb97a73652c40a2968f2f53c377b5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5eb36b66cc067111e2749ebd51a05994a011ba01
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634242"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367477"
 ---
 # <a name="directx-game-project-templates"></a>DirectX 游戏项目模板
 
@@ -19,7 +19,7 @@ ms.locfileid: "57634242"
 
 DirectX 和通用 Windows 平台 (UWP) 模板使你可以快速创建一个项目来作为游戏的起始点。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 
 要创建该项目，你需要执行以下操作：
@@ -33,7 +33,7 @@ Visual Studio 2015 包括三个 DirectX 和 UWP 模板：
 
 -   DirectX 11 应用（通用 Windows）- DirectX 11 应用（通用 Windows）模板创建向使用 DirectX 11 的应用窗口直接呈现的 UWP 项目。
 -   DirectX 12 应用（通用 Windows）- DirectX 12 应用（通用 Windows）模板创建向使用 DirectX 12 的应用窗口直接呈现的UWP 项目。
--   DirectX 11 和 XAML 应用（通用 Windows）- DirectX 11 和 XAML 应用（通用 Windows）模板创建在使用 DirectX 11 的 XAML 控件内呈现的 UWP 项目。 此模板使用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834)，因此你可以使用 XAML UI 控件。 这可以使添加用户界面元素更容易，但使用 XAML 模板可能会导致 性能降低。
+-   DirectX 11 和 XAML 应用（通用 Windows）- DirectX 11 和 XAML 应用（通用 Windows）模板创建在使用 DirectX 11 的 XAML 控件内呈现的 UWP 项目。 此模板使用 [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)，因此你可以使用 XAML UI 控件。 这可以使添加用户界面元素更容易，但使用 XAML 模板可能会导致 性能降低。
 
 所选模板取决于性能以及要使用的 技术。
 
@@ -76,4 +76,4 @@ DirectX 通用 Windows 模板包含以下文件：
 如果你要创建新的 DirectX 游戏，请参阅下列主题。
 
 -   [使用 DirectX 创建简单的 UWP 游戏](tutorial--create-your-first-uwp-directx-game.md)
--   [开发 c + + 和 DirectX 中通用 Windows 平台游戏 Marble Maze](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+-   [开发中通用 Windows 平台游戏 Marble MazeC++和 DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)

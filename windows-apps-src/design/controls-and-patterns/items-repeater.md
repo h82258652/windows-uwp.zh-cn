@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3344230bc52013825d94cfbe3668acfa0d7a2e13
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.openlocfilehash: 93a81501b524826484111419899675fbb99b86fa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913997"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364754"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -22,7 +22,7 @@ ms.locfileid: "58913997"
 
 您可以看作[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)从概念上讲为数据驱动的面板，而不是像 ListView 完全控制。 可以指定要显示的数据项目的集合、 项模板生成 UI 元素为每个数据项，以及确定如何调整大小和定位元素的布局。 然后，ItemsRepeater 生成基于数据源的子元素，并将它们显示为指定的项模板和布局。 显示的项目不需要是同构的因为 ItemsRepeater 可以加载内容以表示在一个数据模板选择器中指定的条件的数据项目。
 
-| **获取 Windows UI 库** |
+| **获取 Windows 用户界面库** |
 | - |
 | 此控件是作为 Windows UI 库，包含新控件和适用于 UWP 应用的 UI 功能的 NuGet 包的一部分。 有关详细信息，包括安装说明，请参阅[Windows 用户界面库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
@@ -59,17 +59,30 @@ ItemsRepeater 不具有内置的项集合。 如果您需要的项集合直接�
 
 ## <a name="scrolling-with-itemsrepeater"></a>与 ItemsRepeater 滚动
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)不是派生自[控制](/uwp/api/windows.ui.xaml.controls.control)，使其不包含控件模板。 因此，它不包含像 ListView 滚动任何内置或其他集合控件执行操作。
+[**ItemsRepeater** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)不是派生自[**控制**](/uwp/api/windows.ui.xaml.controls.control)，使其不包含控件模板。 因此，它不包含像 ListView 滚动任何内置或其他集合控件执行操作。
 
-当使用 ItemsRepeater 时，应通过将其在包装提供滚动功能[ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)控件。
+当你使用**ItemsRepeater**，则应通过将其在包装提供滚动功能[ **ScrollViewer** ](/uwp/api/windows.ui.xaml.controls.scrollviewer)控件。
+
+> [!NOTE]
+> 如果您的应用程序将运行早期版本的 Windows 的那些释放*之前*Windows 10，版本 1809-然后您还需要托管**ScrollViewer**内部[ **ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost)。 
+> ```xaml
+> <muxc:ItemsRepeaterScrollHost>
+>     <ScrollViewer>
+>         <muxc:ItemsRepeater ... />
+>     </ScrollViewer>
+> </muxc:ItemsRepeaterScrollHost>
+> ```
+> 如果您的应用程序将仅在最新版本的 Windows 10，版本 1809年及更高版本-上运行，则无需使用[ **ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost)。
+>
+> 在 Windows 10，版本 1809 前, **ScrollViewer**未实现[ **IScrollAnchorProvider** ](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider)接口的**ItemsRepeater**需要。  **ItemsRepeaterScrollHost**使**ItemsRepeater**与进行协调**ScrollViewer**上早期版本，若要正确地保留项的可见位置用户查看。  否则，项可能会显示要移动或更改列表中的项或调整应用程序后突然消失。
 
 ## <a name="create-an-itemsrepeater"></a>创建 ItemsRepeater
 
-若要使用[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)，您需要为其提供要显示的 ItemsSource 属性设置的数据。 然后，告诉它如何通过设置显示的项[ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)属性。
+若要使用[ **ItemsRepeater**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)，你需要为其提供要通过设置显示的数据**ItemsSource**属性。 然后，告诉它如何通过设置显示的项[ **ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)属性。
 
 ### <a name="itemssource"></a>ItemsSource
 
-若要填充的视图，设置[ItemsSource](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource)属性设置为数据项的集合。 在这里，直接向集合的实例的代码中设置 ItemsSource。
+若要填充的视图，设置[ **ItemsSource** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource)属性设置为数据项的集合。 在这里， **ItemsSource**直接向集合的实例的代码中设置。
 
 ```csharp
 ObservableCollection<string> Items = new ObservableCollection<string>();
@@ -78,21 +91,23 @@ ItemsRepeater itemsRepeater1 = new ItemsRepeater();
 itemsRepeater1.ItemsSource = Items;
 ```
 
-还可以将 ItemsSource 属性绑定到 XAML 中的集合。 有关数据绑定的详细信息，请参阅[数据绑定概述](https://msdn.microsoft.com/windows/uwp/data-binding/data-binding-quickstart)。
+此外可以绑定**ItemsSource** XAML 中的一个集合的属性。 有关数据绑定的详细信息，请参阅[数据绑定概述](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart)。
 
 
 ```xaml
 <ItemsRepeater ItemsSource="{x:Bind Items}"/>
 ```
 
-### <a name="data-template"></a>数据模板
+### <a name="itemtemplate"></a>ItemTemplate
+若要指定如何可视化数据的项，设置[ **ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)属性设置为[ **DataTemplate** ](/uwp/api/windows.ui.xaml.datatemplate)或[ **DataTemplateSelector** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector)已定义。 数据模板定义如何直观显示数据。 默认情况下，项目显示在与视图**TextBlock**使用数据对象的字符串表示形式。
 
-项的模板定义数据可视化的方式。 默认情况下，项在视图中显示为向其绑定使用 TextBlock 的数据对象的字符串表示形式。 但是，你通常会希望更丰富地呈现你的数据。 若要指定完全项的显示方式，您可以定义[DataTemplate](/uwp/api/windows.ui.xaml.datatemplate)。 DataTemplate 中的 XAML 定义用于显示各项的控件的布局和外观。 该布局中的控件可绑定到数据对象的属性，或者具有在内联中定义的静态内容。 将分配到 DataTemplate [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) ItemsRepeater 属性。
+但是，通常想要显示的数据更丰富的演示使用模板定义的布局和将用于显示单个项的一个或多个控件的外观。 在模板中使用的控件可以绑定到数据对象的属性或具有静态内容以内联方式定义。
 
-在此示例中，数据对象是一个简单的字符串。 使用 DataTemplate 将图像添加到左侧的文本，并设置样式的 TextBlock 青色中显示的字符串。
+#### <a name="datatemplate"></a>DataTemplate
+在此示例中，数据对象是一个简单的字符串。 **DataTemplate**包含左侧的文本和样式的图像**TextBlock**青色颜色中显示的字符串。
 
 > [!NOTE]
-> 在 DataTemplate 中使用 [x:Bind 标记扩展](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)时，你必须指定 DataTemplate 中的 DataType (`x:DataType`)。
+> 当你使用[x： 绑定标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)中**DataTemplate**，则必须指定数据类型 (`x:DataType`) 上的 DataTemplate。
 
 ```xaml
 <DataTemplate x:DataType="x:String">
@@ -109,23 +124,46 @@ itemsRepeater1.ItemsSource = Items;
 </DataTemplate>
 ```
 
-下面是项将显示与此数据模板时的显示方式。
+下面是显示与此项将如何显示**DataTemplate**。
 
 ![使用数据模板中显示的项](images/listview-itemstemplate.png)
 
-如果您的视图显示大量的项的数据模板中使用的项的元素数可以对性能产生重大影响。 有关详细信息和如何使用数据模板来定义在列表中的各项的外观的示例，请参阅[项的容器和模板](item-containers-templates.md)。
+使用中的元素数**DataTemplate**的项可以有显著影响性能，如果您的视图显示大量的项。 有关详细信息和示例的用法**DataTemplate**以定义查找范围的项在列表中，请参阅[项容器和模板](item-containers-templates.md)。
 
 > [!TIP]
-> ItemsRepeater 不受限制的 DataTemplate 在 ListView 和其他集合控件等项容器中的内容。 相反，ItemsRepeater 显示仅在 DataTemplate 中定义。 如果你想在项目，以与列表视图项相同的外观，您可以使用容器，如 ListViewItem，数据模板中。 ItemsRepeater 将显示列表视图项的视觉对象，但不能使用其他功能，如选择或显示多选复选框。
+> 为方便起见，当你想要以声明内联模板而不是作为静态资源引用，您可以指定**DataTemplate**或**DataTemplateSelector** 的直接子级作为**ItemsRepeater**。  将为其分配的值作为**ItemTemplate**属性。 例如，这是有效的：
+> ```xaml
+> <ItemsRepeater ItemsSource="{x:Bind Items}">
+>     <DataTemplate>
+>         <!-- ... -->
+>     </DataTemplate>
+> </ItemsRepeater>
+> ```
+
+> [!TIP]
+> 与不同**ListView**和其他集合控件， **ItemsRepeater**不会从元素换行**DataTemplate**与包括的其他项容器默认策略，如边距、 填充、 选择视觉对象或通过可视状态的指针。 相反， **ItemsRepeater**仅显示中定义的内容**DataTemplate**。 如果你想在项目，以与列表视图项相同的外观，您可以显式添加一个容器，如**ListViewItem**，数据模板中。 **ItemsRepeater**将显示**ListViewItem**视觉对象，但不会自动进行使用的其他功能，例如所选内容或显示多选复选框。
 >
-> 类似地，如果你的数据集合的实际控件的集合，如按钮 (`List<Button>`)，可以将 ContentPresenter 放在你的 DataTemplate 以显示该控件。
+> 类似地，如果你的数据集合的实际控件的集合，如**按钮**(`List<Button>`)，可以放置**ContentPresenter**中你**DataTemplate**到显示的控件。
 
 #### <a name="datatemplateselector"></a>DataTemplateSelector
 
-在视图中显示的项不需要的类型相同。 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)可以使用**DataTemplateSelector**加载数据模板，用于表示基于指定的条件的数据项目。 有关详细信息和示例，请参阅[DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector)。
+在视图中显示的项不需要的类型相同。 你可以提供[ **ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)具有属性[ **DataTemplateSelector** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector)选择不同**DataTemplate**基于您指定的条件。
+
+此示例假定**DataTemplateSelector**已定义两个不同的决定**DataTemplate**s 表示大型和小型项。
+
+```xaml
+<ItemsRepeater ...>
+    <ItemsRepeater.ItemTemplate>
+        <local:VariableSizeTemplateSelector Large="{StaticResource LargeItemTemplate}" 
+                                            Small="{StaticResource SmallItemTemplate}"/>
+    </ItemsRepeater.ItemTemplate>
+</ItemsRepeater>
+```
+
+定义时**DataTemplateSelector**用于**ItemsRepeater**只需实现的替代[ **SelectTemplateCore(Object)** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector.selecttemplatecore#Windows_UI_Xaml_Controls_DataTemplateSelector_SelectTemplateCore_System_Object_)方法。 有关详细信息和示例，请参阅[ **DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector)。
 
 > [!NOTE]
-> 使用 DataTemplate 或 DataTemplateSelector 的替代方法是实现您自己的类派生自[Microsoft.UI.Xaml.Controls.ElementFactory](/uwp/api/microsoft.ui.xaml.controls.elementfactory) ，它负责生成请求时的内容。
+> 一种替代方法**DataTemplate**来管理如何在更高级的方案中创建元素是实现您自己[ **Windows.UI.Xaml.Controls.IElementFactory** ](/uwp/api/windows.ui.xaml.controls.ielementfactory)要用作**ItemTemplate**。  它将负责生成请求时的内容。
 
 ## <a name="configure-the-data-source"></a>配置数据源
 
@@ -632,6 +670,7 @@ public sealed class MediaCollectionView : Control
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+<!-- Include the <muxc:ItemsRepeaterScrollHost> if targeting Windows 10 versions earlier than 1809. -->
 <ScrollViewer>
   <muxc:ItemsRepeater ItemsSource="{x:Bind Categories}"
                       Background="LightGreen">
@@ -639,6 +678,7 @@ public sealed class MediaCollectionView : Control
       <DataTemplate x:DataType="local:Category">
         <StackPanel Margin="12,0">
           <TextBlock Text="{x:Bind Name}" Style="{ThemeResource TitleTextBlockStyle}"/>
+          <!-- Include the <muxc:ItemsRepeaterScrollHost> if targeting Windows 10 versions earlier than 1809. -->
           <ScrollViewer HorizontalScrollMode="Enabled"
                                           VerticalScrollMode="Disabled"
                                           HorizontalScrollBarVisibility="Auto" >

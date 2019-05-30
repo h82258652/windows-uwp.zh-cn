@@ -8,12 +8,12 @@ ms.date: 01/24/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d81957c379bd948a50d08b980ff20debc6c223c5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 28a1bd46646deae8f6e6519d72295d42ce2766db
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611262"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359561"
 ---
 # <a name="landmarks-and-headings"></a>标志和标题
 
@@ -33,7 +33,7 @@ ms.locfileid: "57611262"
 
 设置应用将可供访问，无需标志和标题，但会变得更易于使用它们。 屏幕阅读器用户可以快速轻松地到达其所需的组（标志），然后也快速到达子组（标题）。 
 
-使用 [AutomationProperties.LandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) 将 UI 元素设置为所需的[标志类型](https://msdn.microsoft.com/library/windows/desktop/mt759299)。 此标志 UI 元素将封装对于该标志来说有意义的所有其他 UI 元素。 
+使用 [AutomationProperties.LandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) 将 UI 元素设置为所需的[标志类型](https://docs.microsoft.com/windows/desktop/WinAuto/landmark-type-identifiers)。 此标志 UI 元素将封装对于该标志来说有意义的所有其他 UI 元素。 
 
 使用 [AutomationProperties.LocalizedLandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) 专门命名该标志。 如果你选择预定义的标志类型，如主或导航，这些名称将用于标志名称。 但是，如果将标志类型设置为自定义，你必须通过此属性专门命名标志。 你还可以使用此属性覆盖非自定义标志类型中的默认名称。 
 

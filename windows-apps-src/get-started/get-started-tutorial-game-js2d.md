@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d10dbf52f0ed01d46f9e5cba83cd14d48bfc88d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9d4910a514c9fc1f16c29056319043393506a9e2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639172"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366908"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>用 JavaScript 创建 UWP 游戏
 
@@ -51,7 +51,7 @@ ms.locfileid: "57639172"
 
 ![克隆存储库](images/JS2D_2.png)
 
-也可以将项目下载为 zip 文件，或者通过任何其他标准方式使用 [GitHub 项目](https://msdn.microsoft.com/en-us/windows/uwp/get-started/get-uwp-app-samples)。
+也可以将项目下载为 zip 文件，或者通过任何其他标准方式使用 [GitHub 项目](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
 
 解决方案加载到 Visual Studio 后，你会看到多个文件，包括：
 
@@ -214,7 +214,7 @@ function animate_clouds()
     stage.on("stagemousedown", mouseClicked);
 ```
 
-现在，只要玩家点击按键或点击鼠标，我们就会调用两个函数。 两个事件均会调用 **userDidSomething()**，该函数通过查找游戏状态变量来决定现在进行的是什么游戏以及接下来需要发生的事情。
+现在，只要玩家点击按键或点击鼠标，我们就会调用两个函数。 两个事件均会调用 **userDidSomething()** ，该函数通过查找游戏状态变量来决定现在进行的是什么游戏以及接下来需要发生的事情。
 
 游戏状态是游戏中使用的常见设计模式。 所有一切均通过打点计时器调用的 **gameLoop()** 函数来进行。 gameLoop() 通过一个变量跟踪游戏是正在进行中，还是处于“游戏结束状态”或“准备就绪状态”或是创作者定义的任何其他状态。 此状态变量已在交换语句中经过测试，它用于定义调用了哪些其他函数。 因此，如果将状态设为“进行中”，则会调用用于使恐龙跳跃和让桶滚动的函数。 如果恐龙被杀死，则游戏状态变量将设为“游戏结束状态”，此时将会显示 消息“游戏结束！”。 如果你对游戏设计模式感兴趣，那么[游戏编程模式](https://gameprogrammingpatterns.com/)一书将对你非常有用。
 
@@ -261,8 +261,8 @@ function animate_clouds()
 此流程包含几个步骤。
 
 1. 你必须以 Windows 开发人员的身份[注册](https://developer.microsoft.com/en-us/store/register)。
-2. 你必须使用应用提交[清单](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。
-3. 必须将此应用提交以进行[认证](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)。
+2. 你必须使用应用提交[清单](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
+3. 必须将此应用提交以进行[认证](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)。
 
 有关更多详细信息，请参阅[UWP 应用程序发布](https://developer.microsoft.com/en-us/store/publish-apps)。
 

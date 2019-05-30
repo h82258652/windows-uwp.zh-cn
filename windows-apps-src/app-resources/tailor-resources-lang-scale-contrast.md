@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ac80888019044beabc44335290bc6ad59cf377c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0e5ba7ddb6ef37b4aa54584602fc890bbabc8998
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608132"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359344"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>定制语言、比例、高对比度和其他限定符的资源
 
@@ -114,7 +114,7 @@ ms.locfileid: "57608132"
 
 ## <a name="alternateform"></a>AlternateForm
 
-`alternateform` 限定符用于为某些特殊用途提供资源的替代形式。 这通常仅供日语应用开发人员使用，用于提供保留 `msft-phonetic` 值所针对的假名注音字符串（请参阅[如何为本地化做好准备](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)中的“支持可存储的日语字符串的假名注音”部分。
+`alternateform` 限定符用于为某些特殊用途提供资源的替代形式。 这通常仅供日语应用开发人员使用，用于提供保留 `msft-phonetic` 值所针对的假名注音字符串（请参阅[如何为本地化做好准备](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))中的“支持可存储的日语字符串的假名注音”部分。
 
 你的目标系统或应用必须提供匹配 `alternateform` 限定符所依据的值。 请不要将 `msft-` 前缀用于自己的自定义 `alternateform` 限定符值。
 
@@ -250,7 +250,7 @@ Windows 会根据其 DPI（每英寸点数）和设备的观看距离自动为�
 
 ## <a name="targetsize"></a>TargetSize
 
-`targetsize` 限定符主要用于指定要在文件资源管理器中显示的[文件类型关联图标](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh127427)或[协议图标](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bb266530)。 限定符值表示以原始（物理）像素为单位的正方形图像的边长。 系统会加载其值与文件资源管理器中的“视图”设置匹配的资源；或者在缺少完全匹配的情况下加载具有下一个最大值的资源。
+`targetsize` 限定符主要用于指定要在文件资源管理器中显示的[文件类型关联图标](https://docs.microsoft.com/windows/desktop/shell/how-to-assign-a-custom-icon-to-a-file-type)或[协议图标](https://docs.microsoft.com/windows/desktop/search/-search-3x-wds-ph-ui-extensions)。 限定符值表示以原始（物理）像素为单位的正方形图像的边长。 系统会加载其值与文件资源管理器中的“视图”设置匹配的资源；或者在缺少完全匹配的情况下加载具有下一个最大值的资源。
 
 你可以在应用程序包清单设计器的“可见资产”选项卡中定义资产，以表示应用图标 (`/Assets/Square44x44Logo.png`) 的 `targetsize` 限定符值的一些大小。
 
@@ -259,6 +259,21 @@ Windows 会根据其 DPI（每英寸点数）和设备的观看距离自动为�
 ## <a name="theme"></a>主题
 
 `theme` 限定符用于提供与默认应用模式设置最匹配的资源，或使用 [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application.requestedtheme) 的应用替代。
+
+
+## <a name="shell-light-theme-and-unplated-resources"></a>Shell 浅色主题和未着色的资源
+*Windows 10 可能 2019年更新*适用于 Windows 外壳程序引入新的"light"主题。 因此，现在将浅色背景上显示以前在深色背景显示一些应用程序资产。 对于应用该应用程序，提供 altform 未着色资产对于任务栏和窗口切换器 （Alt + Tab、 任务视图等），您应验证它们具有可接受的对比度浅色背景上。
+
+### <a name="providing-light-theme-specific-assets"></a>提供浅色主题特定资产
+想要提供量身定制的资源，shell 浅色主题就可以使用新的替代形式的资源限定符的应用： `altform-lightunplated`。 此限定符镜像现有 altform 未着色限定符。 
+
+### <a name="downlevel-considerations"></a>下层注意事项
+应用程序不应使用`theme-light`限定符`altform-unplated`限定符。 这将导致不可预知的行为上 RS5 和为任务栏加载早期版本的 Windows 由于方式资源。 在早期版本的 windows 中，可能会错误地使用的主题 light 版本。 `altform-lightunplated`限定符可避免此问题。 
+
+### <a name="compatibility-behavior"></a>兼容性的行为
+有关向后兼容性，Windows 包括逻辑来检测单色图标，并检查它是否与预期背景对比。 如果图标不能满足对比度要求，Windows 将查找对比度-白色版的资产。 如果不可用，Windows 将回退到使用镍的版的资产。
+
+
 
 ## <a name="important-apis"></a>重要的 API
 
@@ -269,7 +284,7 @@ Windows 会根据其 DPI（每英寸点数）和设备的观看距离自动为�
 
 * [有效像素和缩放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [资源管理系统](resource-management-system.md)
-* [用于本地化的准备工作](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
+* [用于本地化的准备工作](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))
 * [检测到平台上运行你的应用](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
 * [设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
 * [本地化 UI 字符串](localize-strings-ui-manifest.md)

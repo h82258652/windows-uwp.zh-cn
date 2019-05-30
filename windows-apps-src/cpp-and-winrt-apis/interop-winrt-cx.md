@@ -5,21 +5,21 @@ ms.date: 10/09/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 558f3fa75e7dd599927a9d2ace256bf1feb98e77
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5394443b4832864e5b46bfbf917c04f0af6d8a19
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621642"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360220"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>实现 C++/WinRT 与 C++/CX 之间的互操作
 
-逐渐迁移中的代码的策略您[C + + /cli CX](/cpp/cppcx/visual-c-language-reference-c-cx)投影到[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)中讨论了[将移到 C + + WinRT 从 C + + CX](move-to-winrt-from-cx.md)。
+逐渐迁移中的代码的策略您[ C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)项目到[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)中讨论了[将移到C++/WinRT 从C++/CX](move-to-winrt-from-cx.md)。
 
-本主题介绍可以使用 C + 之间进行转换的两个 helper 函数 + /CX 和 C + + /cli 的同一项目中的 WinRT 对象。 可以使用它们来使用这两种语言投影的代码之间的互操作或可以使用函数，移植将代码与 C + + /cli CX 到 C + + WinRT。
+本主题介绍可以使用之间进行转换的两个 helper 函数C++/CX 和C++/WinRT 对象对同一项目中的。 可以使用它们来使用这两种语言投影的代码之间的互操作或移植中的代码，可以使用函数C++到 /CX C++/WinRT。
 
 ## <a name="fromcx-and-tocx-functions"></a>from_cx 和 to_cx 函数
-下面的帮助程序函数将 C++/CX 对象转换为等效的 C++/WinRT 对象。 该函数将 C++/CX 对象强制转换为其基础 [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) 接口指针。 然后，它对该指针调用 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) 来查询 C++/WinRT 对象的默认接口。 **QueryInterface** 是 C++/CX safe_cast 扩展的 Windows 运行时应用程序二进制接口 (ABI) 等效项。 此外，[**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) 函数将检索 C++/WinRT 对象的基础 **IUnknown** 接口指针的地址，使该地址能够设置为其他值。
+下面的帮助程序函数将 C++/CX 对象转换为等效的 C++/WinRT 对象。 该函数将 C++/CX 对象强制转换为其基础 [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) 接口指针。 然后，它对该指针调用 [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 来查询 C++/WinRT 对象的默认接口。 **QueryInterface** 是 C++/CX safe_cast 扩展的 Windows 运行时应用程序二进制接口 (ABI) 等效项。 此外，[**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) 函数将检索 C++/WinRT 对象的基础 **IUnknown** 接口指针的地址，使该地址能够设置为其他值。
 
 ```cppwinrt
 template <typename T>
@@ -47,12 +47,12 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 
 ## <a name="example-project-showing-the-two-helper-functions-in-use"></a>显示两个帮助程序函数中使用的示例项目
 
-若要重现，简单的方式，方案的逐步移植的代码在 C + + /cli CX 项目到 C + + WinRT，可以首先创建一个新项目在 Visual Studio 中使用一个 C + + WinRT 项目模板 (请参阅[Visual Studio 支持 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)).
+若要重现，简单的方式，逐渐将移植代码中的方案C++到 /CX 项目C++/WinRT，可以开始通过在 Visual Studio 中使用之一中创建一个新的项目C++/WinRT 项目模板 (请参阅[Visual Studio支持C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。
 
-此示例项目还说明了如何可用于命名空间别名的代码中，不同的数据岛以处理否则为潜在的命名空间冲突之间 C + + WinRT 投影和 C + + /cli CX 投影。
+此示例项目还说明了如何以处理否则为潜在之间的命名空间冲突，为不同的数据岛的代码中，使用命名空间别名C++/WinRT 投影和C++/CX 投影。
 
-- 创建**Visual c + +** \> **Windows Universal** > **Core 应用 (C + + WinRT)** 项目。
-- 在项目属性中， **C/c + +** \> **常规** \> **使用 Windows 运行时扩展** \> **是 (/ZW)**. 这将打开项目支持 C + + /cli CX。
+- 创建**可视化C++**  \> **Windows Universal** > **Core 应用 (C++/WinRT)** 项目。
+- 在项目属性中， **C /C++**  \> **常规** \> **使用 Windows 运行时扩展** \> **是 (/ZW)** 。 这将打开项目支持C++/CX。
 - 内容替换为`App.cpp`与以下代码清单。
 
 ```cppwinrt
@@ -253,10 +253,10 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ```
 
 ## <a name="important-apis"></a>重要的 API
-* [IUnknown 接口](https://msdn.microsoft.com/library/windows/desktop/ms680509)
-* [QueryInterface 函数](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [winrt::get_abi 函数](/uwp/cpp-ref-for-winrt/get-abi)
-* [winrt::put_abi 函数](/uwp/cpp-ref-for-winrt/put-abi)
+* [IUnknown 接口](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)
+* [QueryInterface 函数](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
+* [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
+* [winrt::put_abi function](/uwp/cpp-ref-for-winrt/put-abi)
 
 ## <a name="related-topics"></a>相关主题
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)

@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 43639ac22c07501da89e29419a226a8a3ce8af48
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d41590914fb66cb8061298f77f24e5efcdd03bf5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613062"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364628"
 ---
 # <a name="password-box"></a>密码框
 
@@ -25,7 +25,7 @@ ms.locfileid: "57613062"
 
 密码框是指出于隐私目的隐藏所键入的字符的文本输入框。 密码框的外观类似文本框，区别在于它在已输入文本的位置呈现占位符。 可配置占位符。
 
-> **重要的 API**：[PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)， [Password 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx)， [PasswordChar 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx)， [PasswordRevealMode 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)， [PasswordChanged 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)
+> **重要的 API**：[PasswordBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)， [Password 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password)， [PasswordChar 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar)， [PasswordRevealMode 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode)， [PasswordChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
 
 默认情况下，密码框向用户提供了查看其密码的方法，即按下显示按钮。 你可以禁用显示按钮，或提供显示密码的替代机制，如复选框。
 
@@ -67,7 +67,7 @@ ms.locfileid: "57613062"
 
 ## <a name="create-a-password-box"></a>创建密码框
 
-使用 [Password](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx) 属性获取或设置 PasswordBox 的内容。 你可以在 [PasswordChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx) 事件的处理程序中执行此操作，以便在用户输入密码时执行验证。 或者，你可以使用其他事件（如按钮 [Click](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)），以在用户完成文本输入后执行验证。
+使用 [Password](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password) 属性获取或设置 PasswordBox 的内容。 你可以在 [PasswordChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged) 事件的处理程序中执行此操作，以便在用户输入密码时执行验证。 或者，你可以使用其他事件（如按钮 [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)），以在用户完成文本输入后执行验证。
 
 下面是密码框控件的 XAML，演示了 PasswordBox 的默认外观。 当用户输入密码时，通过检查以判断它是否为文本值“Password”。 如果是，则向用户显示一条消息。
 
@@ -99,7 +99,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ### <a name="password-character"></a>密码字符
 
-通过设置 [PasswordChar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx) 属性，你可以更改用于屏蔽密码的字符。 此处使用星号替换默认项目符号。
+通过设置 [PasswordChar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar) 属性，你可以更改用于屏蔽密码的字符。 此处使用星号替换默认项目符号。
 
 ```xaml
 <PasswordBox x:Name="passwordBox" Width="200" PasswordChar="*"/>
@@ -111,7 +111,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ### <a name="headers-and-placeholder-text"></a>标头和占位符文本
 
-你可以使用 [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.header.aspx) 和 [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.placeholdertext.aspx) 属性为 PasswordBox 提供上下文。 这在你拥有多个框时（例如在更改密码的窗体上）非常有用。
+你可以使用 [Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.header) 和 [PlaceholderText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.placeholdertext) 属性为 PasswordBox 提供上下文。 这在你拥有多个框时（例如在更改密码的窗体上）非常有用。
 
 ```xaml
 <PasswordBox x:Name="passwordBox" Width="200" Header="Password" PlaceholderText="Enter your password"/>
@@ -121,7 +121,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ### <a name="maximum-length"></a>最大长度。
 
-通过设置 [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.maxlength.aspx) 属性，指定用户可输入的最大字符数。 不存在指定最小长度的属性，但你可以在应用代码中检查密码长度并执行任何其他验证。
+通过设置 [MaxLength](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.maxlength) 属性，指定用户可输入的最大字符数。 不存在指定最小长度的属性，但你可以在应用代码中检查密码长度并执行任何其他验证。
 
 ## <a name="password-reveal-mode"></a>密码显示模式
 
@@ -133,19 +133,19 @@ PasswordBox 具有内置按钮，用户按下该按钮可显示密码文本。 �
 
 默认情况下，会显示密码显示按钮（或“速览”按钮）。 用户必须持续按住按钮来查看密码，以便保持较高级别的安全性。
 
-[PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) 属性值不是确定用户能否看到密码显示按钮的唯一因素。 其他因素包括控件所示宽度是否大于最小值、PasswordBox 是否具有焦点以及文本输入字段是否至少包含一个字符。 密码显示按钮仅在 PasswordBox 首次接收焦点并且在用户输入一个字符后显示。 如果 PasswordBox 失去焦点后又重新获得焦点，除非已清除密码并从头开始输入字符，否则显示按钮将不会再次显示。
+[PasswordRevealMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) 属性值不是确定用户能否看到密码显示按钮的唯一因素。 其他因素包括控件所示宽度是否大于最小值、PasswordBox 是否具有焦点以及文本输入字段是否至少包含一个字符。 密码显示按钮仅在 PasswordBox 首次接收焦点并且在用户输入一个字符后显示。 如果 PasswordBox 失去焦点后又重新获得焦点，除非已清除密码并从头开始输入字符，否则显示按钮将不会再次显示。
 
 > **注意**&nbsp;&nbsp;在 Windows 10 之前，密码显示按钮在默认情况下不显示。 如果应用安全要求始终掩盖密码，请确保将 PasswordRevealMode 设置为 Hidden。
 
 ### <a name="hidden-and-visible-modes"></a>隐藏和可见模式
 
-其他 [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordrevealmode.aspx) 枚举值（**Hidden** 和 **Visible**）会隐藏密码显示按钮，并允许你以编程方式管理是否掩盖密码。
+其他 [PasswordRevealMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordRevealMode) 枚举值（**Hidden** 和 **Visible**）会隐藏密码显示按钮，并允许你以编程方式管理是否掩盖密码。
 
 若要始终掩盖密码，请将 PasswordRevealMode 设置为 Hidden。 如果你不需要始终掩盖密码，可以提供自定义 UI，使用户在 Hidden 和 Visible 之间切换 PasswordRevealMode。
 
-在以前版本的 Windows Phone 中，PasswordBox 使用复选框切换是否掩盖密码。 你可以为你的应用创建类似的 UI，如以下示例所示。 你还可以使用其他控件（例如 [ToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx)）以使用户切换模式。
+在以前版本的 Windows Phone 中，PasswordBox 使用复选框切换是否掩盖密码。 你可以为你的应用创建类似的 UI，如以下示例所示。 你还可以使用其他控件（例如 [ToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton)）以使用户切换模式。
 
-此示例展示了如何使用 [CheckBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx) 使用户切换 PasswordBox 的显示模式。
+此示例展示了如何使用 [CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 使用户切换 PasswordBox 的显示模式。
 
 ```xaml
 <StackPanel Width="200">
@@ -179,7 +179,7 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 
 若要帮助用户使用触摸键盘或软输入面板 (SIP) 输入数据，你可以将文本控件的输入范围设置为与期望用户输入的数据类型匹配。 PasswordBox 仅支持 **Password** 和 **NumericPin** 输入范围值。 将忽略任何其他值。
 
-有关如何使用输入范围的详细信息，请参阅[使用输入范围更改触摸键盘](https://msdn.microsoft.com/library/windows/apps/mt280229)。
+有关如何使用输入范围的详细信息，请参阅[使用输入范围更改触摸键盘](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard)。
 
 ## <a name="recommendations"></a>建议
 
@@ -199,8 +199,8 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 [文本控件](text-controls.md)
 
 - [拼写检查的准则](text-controls.md)
-- [添加搜索](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [添加搜索](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
 - [文本输入的准则](text-controls.md)
-- [TextBox 类](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [Windows.UI.Xaml.Controls PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Windows.UI.Xaml.Controls PasswordBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 - [String.Length 属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

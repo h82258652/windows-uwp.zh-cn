@@ -5,18 +5,18 @@ keywords: XAML, UWP, 入门
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a1eacc42720e7bce4290476676b0864fbd8a3694
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d540b41620110a41676d08f5e6239efd0ef4ca46
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592952"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361225"
 ---
 # <a name="tutorial-create-custom-styles"></a>教程：创建自定义样式
 
 本教程向你介绍如何自定义 XAML 应用的 UI。 警告：本教程可能包括或不包括独角兽图形。 （包括！）  
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 * [Visual Studio 2017 和 Windows 10 SDK (10.0.15063.468 或更高版本)](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="part-0-get-the-code"></a>第 0 部分：获取代码
@@ -60,9 +60,10 @@ PhotoLab 应用有两个主要页面：
 
     [Windows.XAML.Ui.Shapes 命名空间](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes)可提供七种形状以供选择。 有椭圆、矩形和一个叫“路径”的东西，这个东西可以制作任何类型的形状 - 是的，甚至是独角兽！ 
     
-    <!-- TODO reduce size --> ![Unicorn](../basics/images/xaml-basics/unicorn.png)
+    <!-- TODO reduce size -->
+    ![Unicorn](../basics/images/xaml-basics/unicorn.png)
     
-    > **阅读有关它：**[绘制的形状](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)文章告诉您需要了解有关 XAML 形状的所有内容。 
+    > **阅读有关它：** [绘制的形状](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)文章告诉您需要了解有关 XAML 形状的所有内容。 
     
     我们想要创建一个三角形样子的小工具 - 有点像你在立体声音量控件上看到的形状。
     
@@ -179,7 +180,7 @@ PhotoLab 应用有两个主要页面：
 
 XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量，并且可以更加非常轻松地更新应用的外观。
 
-若要定义样式，你可以将 [Style](https://msdn.microsoft.com/library/windows/apps/br208849) 元素添加到某个元素的 [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) 属性中，该元素包含你要设置样式的控件。  如果你将样式添加到 **Page.Resources** 属性中，则整个页面将可以使用你的样式。 如果你在 App.xaml 文件内将你的样式添加到 **Application.Resources** 中，则整个应用将可以使用该样式。
+若要定义样式，你可以将 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 元素添加到某个元素的 [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) 属性中，该元素包含你要设置样式的控件。  如果你将样式添加到 **Page.Resources** 属性中，则整个页面将可以使用你的样式。 如果你在 App.xaml 文件内将你的样式添加到 **Application.Resources** 中，则整个应用将可以使用该样式。
 
 你可以创建命名样式和常规样式。 命名样式必须显式应用于特定控件；常规样式会应用于任何与指定的 **TargetType** 匹配的控件。 
 
@@ -337,7 +338,8 @@ XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量
 
 6. 编译并运行应用。 看起来应该...相同。 但是，你应该会从编写可维护的高效代码中获得美妙的满足感和成就感。
 
-<!-- TODO add new start/end points --> 恭喜，你已完成第 2 部分 ！
+<!-- TODO add new start/end points -->
+恭喜，你已完成了第 2 部分！
 
 
 ## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>第 3 部分：使用控件模板进行特别滑块
@@ -858,4 +860,5 @@ XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量
     
     如你所见，我们的更新改进了多边形的定位；现在，多边形的底部与滑动条的底部对齐。
     
-<!-- TODO correct folder --> 恭喜，已完成本教程 ！ 如果你遇到困难或者想要查看最终解决方案，则可以在 [UWP 应用示例存储库](https://github.com/Microsoft/Windows-universal-samples)中查找完整的示例。
+<!-- TODO correct folder -->
+恭喜，你已完成了本教程！ 如果你遇到困难或者想要查看最终解决方案，则可以在 [UWP 应用示例存储库](https://github.com/Microsoft/Windows-universal-samples)中查找完整的示例。

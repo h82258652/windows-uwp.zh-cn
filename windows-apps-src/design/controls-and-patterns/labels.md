@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4345daf5b879fed7ba9805e4a448c473299031d7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5996fb15c0d7302c7360c2e45613f0da2720d415
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654142"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364645"
 ---
 # <a name="labels"></a>标签
 
@@ -24,9 +24,9 @@ ms.locfileid: "57654142"
 
 标签是一个控件或一组相关控件的名称或标题。
 
-> **重要的 API**：标头属性[TextBlock 类](https://msdn.microsoft.com/library/windows/apps/br209652)
+> **重要的 API**：标头属性[TextBlock 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
-在 XAML 中，许多控件都具有用于显示标签的内置 Header 属性。 对于没有 Header 属性的控件，或要为多组控件添加标签，你可以改用 [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)。
+在 XAML 中，许多控件都具有用于显示标签的内置 Header 属性。 对于没有 Header 属性的控件，或要为多组控件添加标签，你可以改用 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
 
 ![说明标准标签控件的屏幕截图](images/label-standard.png)
 
@@ -43,15 +43,15 @@ ms.locfileid: "57654142"
 
 ## <a name="related-topics"></a>相关主题
 * [文本控件](text-controls.md)
-* [TextBox.Header 属性](https://msdn.microsoft.com/library/windows/apps/dn252861)
-* [PasswordBox.Header 属性](https://msdn.microsoft.com/library/windows/apps/dn299051)
-* [ToggleSwitch.Header 属性](https://msdn.microsoft.com/library/windows/apps/br209713)
-* [DatePicker.Header 属性](https://msdn.microsoft.com/library/windows/apps/dn279460)
-* [TimePicker.Header 属性](https://msdn.microsoft.com/library/windows/apps/dn299286)
-* [Slider.Header 属性](https://msdn.microsoft.com/library/windows/apps/dn252829)
-* [ComboBox.Header 属性](https://msdn.microsoft.com/library/windows/apps/dn279416)
-* [RichEditBox.Header 属性](https://msdn.microsoft.com/library/windows/apps/dn252726)
-* [TextBlock 类](https://msdn.microsoft.com/library/windows/apps/br209652)
+* [TextBox.Header 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.header)
+* [PasswordBox.Header 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.header)
+* [ToggleSwitch.Header 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.header)
+* [DatePicker.Header 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.header)
+* [TimePicker.Header 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.header)
+* [Slider.Header 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider.header)
+* [ComboBox.Header 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox.header)
+* [RichEditBox.Header 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.header)
+* [TextBlock 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
  
 

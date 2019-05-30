@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f503910a46254f4e885dd2ded1d43b975d78f84e
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: d20f2d372354cf7bbfa596318f165c424f08c8ee
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244309"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66358861"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>用于视频捕获的手动相机控件
 
@@ -21,7 +21,7 @@ ms.locfileid: "59244309"
 
 本文中讨论的视频设备控件全部使用相同模式添加到你的应用中。 首先，检查运行你的应用的当前设备是否支持该控件。 如果控件受支持，则为控件设置所需模式。 通常，如果特定控件在当前设备上不受支持，你应禁用或隐藏允许用户启用该功能的 UI 元素。
 
-本文中讨论的所有设备控件 API 都是 [**Windows.Media.Devices**](https://msdn.microsoft.com/library/windows/apps/br206902) 命名空间的成员。
+本文中讨论的所有设备控件 API 都是 [**Windows.Media.Devices**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices) 命名空间的成员。
 
 [!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
@@ -30,21 +30,21 @@ ms.locfileid: "59244309"
 
 ## <a name="hdr-video"></a>HDR 视频
 
-高动态范围 (HDR) 视频功能将 HDR 处理应用到捕获设备的视频流。 通过选择 [**HdrVideoControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926682) 属性来确定 HDR 视频是否受支持。
+高动态范围 (HDR) 视频功能将 HDR 处理应用到捕获设备的视频流。 通过选择 [**HdrVideoControl.Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.hdrvideocontrol.supported) 属性来确定 HDR 视频是否受支持。
 
-HDR 视频控件支持以下三种模式：开、关和自动。这意味着设备以动态方式确定 HDR 视频处理是否会改进媒体捕获；如果会改进，则启用 HDR 视频。 若要确定特定模式在当前设备上是否受支持，请检查以查看 [**HdrVideoControl.SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926683) 集合是否包含所需模式。
+HDR 视频控件支持以下三种模式：开、关和自动。这意味着设备以动态方式确定 HDR 视频处理是否会改进媒体捕获；如果会改进，则启用 HDR 视频。 若要确定特定模式在当前设备上是否受支持，请检查以查看 [**HdrVideoControl.SupportedModes**](https://docs.microsoft.com/uwp/api/windows.media.devices.hdrvideocontrol.supportedmodes) 集合是否包含所需模式。
 
-通过将 [**HdrVideoControl.Mode**](https://msdn.microsoft.com/library/windows/apps/dn926681) 设置为所需模式，启用或禁用 HDR 视频处理。
+通过将 [**HdrVideoControl.Mode**](https://docs.microsoft.com/uwp/api/windows.media.devices.hdrvideocontrol.mode) 设置为所需模式，启用或禁用 HDR 视频处理。
 
 [!code-cs[SetHdrVideoMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetHdrVideoMode)]
 
 ## <a name="exposure-priority"></a>曝光优先级
 
-启用 [**ExposurePriorityVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926644) 时，将评估来自捕获设备的视频帧以确定视频是否正在捕获光线较暗的场景。 如果是，该控件将降低已捕获视频的帧速率，以便增加每个帧的曝光时间并改进已捕获视频的视觉质量。
+启用 [**ExposurePriorityVideoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.ExposurePriorityVideoControl) 时，将评估来自捕获设备的视频帧以确定视频是否正在捕获光线较暗的场景。 如果是，该控件将降低已捕获视频的帧速率，以便增加每个帧的曝光时间并改进已捕获视频的视觉质量。
 
-通过检查 [**ExposurePriorityVideoControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926647) 属性，确定曝光优先级控件在当前设备上是否受支持。
+通过检查 [**ExposurePriorityVideoControl.Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurepriorityvideocontrol.supported) 属性，确定曝光优先级控件在当前设备上是否受支持。
 
-通过将 [**ExposurePriorityVideoControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926646) 设置为所需模式，启用或禁用曝光优先级控件。
+通过将 [**ExposurePriorityVideoControl.Enabled**](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurepriorityvideocontrol.enabled) 设置为所需模式，启用或禁用曝光优先级控件。
 
 [!code-cs[EnableExposurePriority](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEnableExposurePriority)]
 
@@ -86,9 +86,9 @@ HDR 视频控件支持以下三种模式：开、关和自动。这意味着设�
 
 ## <a name="related-topics"></a>相关主题
 
-* [相机](camera.md)
-* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [使用 MediaFrameReader 处理媒体帧](process-media-frames-with-mediaframereader.md)
+* [摄像头](camera.md)
+* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [处理媒体帧与 MediaFrameReader](process-media-frames-with-mediaframereader.md)
 *  [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
  
 

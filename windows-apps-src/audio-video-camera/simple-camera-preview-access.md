@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 24b2885597599607ca405e858a9f713f5a6af4c7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7fba78a619f18d7da2e190758d73ac7a56b12fb9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644872"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360658"
 ---
 # <a name="display-the-camera-preview"></a>显示相机预览
 
@@ -26,13 +26,13 @@ ms.locfileid: "57644872"
 
 **将功能添加到应用程序清单**
 
-1.  在 Microsoft Visual Studio 的“解决方案资源管理器”中，通过双击“package.appxmanifest”项，打开应用程序清单的设计器。
+1.  在 Microsoft Visual Studio 的“解决方案资源管理器”中，通过双击“package.appxmanifest”项，打开应用程序清单的设计器。  
 2.  选择**功能**选项卡。
 3.  选中**摄像头**框和**麦克风**框。
 
 ## <a name="add-a-captureelement-to-your-page"></a>将 CaptureElement 添加到你的页面
 
-使用 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 以在你的 XAML 页面内显示预览流。
+使用 [**CaptureElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CaptureElement) 以在你的 XAML 页面内显示预览流。
 
 [!code-xml[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
 
@@ -40,7 +40,7 @@ ms.locfileid: "57644872"
 
 ## <a name="use-mediacapture-to-start-the-preview-stream"></a>使用 MediaCapture 启动预览流
 
-[  **MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 对象为你的设备相机的应用界面。 此类是 Windows.Media.Capture 命名空间的成员。 除了默认项目模板包含的这些 API，本文的示例还使用来自 [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 和 [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) 命名空间的 API。
+[  **MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) 对象为你的设备相机的应用界面。 此类是 Windows.Media.Capture 命名空间的成员。 除了默认项目模板包含的这些 API，本文的示例还使用来自 [**Windows.ApplicationModel**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel) 和 [System.Threading.Tasks](https://docs.microsoft.com/dotnet/api/system.threading.tasks?redirectedfrom=MSDN) 命名空间的 API。
 
 添加 using 指令以将以下命名空间包含在你的页面的 .cs 文件中。
 
@@ -50,19 +50,19 @@ ms.locfileid: "57644872"
 
 [!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
-声明用于确保屏幕在运行预览时不会关闭的 [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.System.Display.DisplayRequest) 类型的变量。
+声明用于确保屏幕在运行预览时不会关闭的 [**DisplayRequest**](https://docs.microsoft.com/uwp/api/Windows.System.Display.DisplayRequest) 类型的变量。
 
 [!code-cs[DeclareDisplayRequest](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareDisplayRequest)]
 
 创建帮助程序方法以启动相机预览，在本示例中被称为 **StartPreviewAsync**。 根据应用方案的不同，你可能想要通过在加载页面时调用的 **OnNavigatedTo** 事件处理程序调用它，或者等待并启用预览以响应 UI 事件。
 
-创建 **MediaCapture** 类的一个新实例并调用 [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) 以初始化捕获设备。 例如，此方法在没有相机的设备上可能会失败，所以你应当从 **try** 块内调用它。 如果用户已在该设备的隐私设置中禁用相机访问，则在尝试初始化相机时会引发 **UnauthorizedAccessException**。 如果你忘记将合适的功能添加到你的应用清单，在开发期间也会看到此异常。
+创建 **MediaCapture** 类的一个新实例并调用 [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync) 以初始化捕获设备。 例如，此方法在没有相机的设备上可能会失败，所以你应当从 **try** 块内调用它。 如果用户已在该设备的隐私设置中禁用相机访问，则在尝试初始化相机时会引发 **UnauthorizedAccessException**。 如果你忘记将合适的功能添加到你的应用清单，在开发期间也会看到此异常。
 
-**重要提示** 对于某些设备系列，在授予应用访问设备相机的权限前，会向用户显示用户同意提示。 出于此原因，必须从主 UI 线程仅调用 [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598)。 尝试从其他线程初始化相机可能会导致初始化失败。
+**重要提示** 对于某些设备系列，在授予应用访问设备相机的权限前，会向用户显示用户同意提示。 出于此原因，必须从主 UI 线程仅调用 [**MediaCapture.InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync)。 尝试从其他线程初始化相机可能会导致初始化失败。
 
-通过设置 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) 属性来将 **MediaCapture** 连接到 **CaptureElement**。 通过调用 [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) 启动预览。 如果其他应用拥有捕获设备的独占控制权，则此方法会引发 **FileLoadException**。 有关侦听独占控制权更改的信息，请参阅下一部分。
+通过设置 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.captureelement.source) 属性来将 **MediaCapture** 连接到 **CaptureElement**。 通过调用 [**StartPreviewAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.startpreviewasync) 启动预览。 如果其他应用拥有捕获设备的独占控制权，则此方法会引发 **FileLoadException**。 有关侦听独占控制权更改的信息，请参阅下一部分。
 
-调用 [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/Windows.System.Display.DisplayRequest.RequestActive) 确保在运行预览时设备不会进入睡眠状态。 最后，将 [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayInformation.AutoRotationPreferences) 属性设为 [**Landscape**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayOrientations)，防止 UI 和 **CaptureElement** 在用户更改设备方向时旋转。 有关处理设备方向更改的详细信息，请参阅[**使用 MediaCapture 处理设备方向**](handle-device-orientation-with-mediacapture.md)。  
+调用 [**RequestActive**](https://docs.microsoft.com/uwp/api/windows.system.display.displayrequest.requestactive) 确保在运行预览时设备不会进入睡眠状态。 最后，将 [**DisplayInformation.AutoRotationPreferences**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.autorotationpreferences) 属性设为 [**Landscape**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)，防止 UI 和 **CaptureElement** 在用户更改设备方向时旋转。 有关处理设备方向更改的详细信息，请参阅[**使用 MediaCapture 处理设备方向**](handle-device-orientation-with-mediacapture.md)。  
 
 [!code-cs[StartPreviewAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
 
@@ -75,23 +75,23 @@ ms.locfileid: "57644872"
 
 当你使用预览流完成操作时，应当始终关闭该流并适当地释关联资源，以确保该相机可用于设备上的其他应用。 关闭预览流所需的步骤如下：
 
--   如果相机当前正在预览，请调用 [**StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622) 以停止预览流。 如果在预览没有运行时调用 **StopPreviewAsync**，将引发异常。
--   将 **CaptureElement** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) 属性设置为 null。 使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx)，确保此调用在 UI 线程上执行。
--   调用 **MediaCapture** 对象的 [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) 方法以发布该对象。 同样，使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx)，确保此调用在 UI 线程上执行。
+-   如果相机当前正在预览，请调用 [**StopPreviewAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.stoppreviewasync) 以停止预览流。 如果在预览没有运行时调用 **StopPreviewAsync**，将引发异常。
+-   将 **CaptureElement** 的 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.captureelement.source) 属性设置为 null。 使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)，确保此调用在 UI 线程上执行。
+-   调用 **MediaCapture** 对象的 [**Dispose**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.dispose) 方法以发布该对象。 同样，使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)，确保此调用在 UI 线程上执行。
 -   将 **MediaCapture** 成员变量设置为 null。
--   调用 [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/Windows.System.Display.DisplayRequest.RequestRelease) 以支持在屏幕处于非活动状态时关闭屏幕。
+-   调用 [**RequestRelease**](https://docs.microsoft.com/uwp/api/windows.system.display.displayrequest.requestrelease) 以支持在屏幕处于非活动状态时关闭屏幕。
 
 [!code-cs[CleanupCameraAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCleanupCameraAsync)]
 
-当用户通过替代 [**OnNavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) 方法导航离开你的页面时，应当关闭预览流。
+当用户通过替代 [**OnNavigatedFrom**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) 方法导航离开你的页面时，应当关闭预览流。
 
 [!code-cs[OnNavigatedFrom](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
-你还应当在应用暂停时正确关闭预览流。 若要执行此操作，请在你的页面的构造函数中注册 [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) 事件的处理程序。
+你还应当在应用暂停时正确关闭预览流。 若要执行此操作，请在你的页面的构造函数中注册 [**Application.Suspending**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.suspending) 事件的处理程序。
 
 [!code-cs[RegisterSuspending](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRegisterSuspending)]
 
-在 **Suspending** 事件处理程序中，首先进行查看以通过比较 [**CurrentSourcePageType**](https://msdn.microsoft.com/library/windows/apps/hh702390) 属性的页面类型，确保应用程序的 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 正显示该页面。 如果当前未显示该页面，则应当已引发 **OnNavigatedFrom** 事件并关闭预览流。 如果当前显示该页面，从已传入到处理程序中的事件参数中获取 [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) 对象，以确保直到关闭预览流系统才暂停你的应用。 关闭流后，调用延迟的 [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) 方法以使系统继续暂停你的应用。
+在 **Suspending** 事件处理程序中，首先进行查看以通过比较 [**CurrentSourcePageType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.currentsourcepagetype) 属性的页面类型，确保应用程序的 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) 正显示该页面。 如果当前未显示该页面，则应当已引发 **OnNavigatedFrom** 事件并关闭预览流。 如果当前显示该页面，从已传入到处理程序中的事件参数中获取 [**SuspendingDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.SuspendingDeferral) 对象，以确保直到关闭预览流系统才暂停你的应用。 关闭流后，调用延迟的 [**Complete**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.suspendingdeferral.complete) 方法以使系统继续暂停你的应用。
 
 [!code-cs[SuspendingHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSuspendingHandler)]
 

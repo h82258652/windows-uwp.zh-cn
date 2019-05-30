@@ -3,7 +3,7 @@ description: 可以通过将 ItemsSource 绑定到分层数据源，创建可展
 title: 树视图
 label: Tree view
 template: detail.hbs
-ms.date: 01/03/2019
+ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 pm-contact: predavid
@@ -13,13 +13,13 @@ doc-status: Published
 dev_langs:
 - csharp
 - vb
-ms.custom: RS5
-ms.openlocfilehash: 7c666d417fb980cab72165681583ac83e9eaca00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.custom: RS5, 19H1
+ms.openlocfilehash: d9f0396558186008430ccf1454e48f5e2194ee0e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628512"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364001"
 ---
 # <a name="treeview"></a>树视图
 
@@ -85,7 +85,7 @@ TreeView API 支持以下功能：
 > [!IMPORTANT]
 > ItemsSource 和其相关的 Api 需要 Windows 10，版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本，或[Windows 用户界面库](https://docs.microsoft.com/uwp/toolkits/winui/)。
 >
-> ItemsSource 是 TreeView.RootNodes 将内容放入 TreeView 控件的一种替代机制。 不能同时设置 ItemsSource 和 RootNodes。 当使用 ItemsSource 时，，创建节点和从 TreeView.RootNodes 属性可以访问它们。
+> ItemsSource 是 TreeView.RootNodes 将内容放入 TreeView 控件的一种替代机制。 不能同时设置 ItemsSource 和 RootNodes。 当使用 ItemsSource 时，节点为您创建的并可以从 TreeView.RootNodes 属性访问它们。
 
 下面是一个使用 XAML 声明的简单树视图示例。 通常以代码方式添加节点，但这里我们显示的是 XAML 层次结构，因为这有助于更直观地显示节点层次结构的创建方式。
 
@@ -171,17 +171,17 @@ End Sub
 
 可以使用以下 API 管理树视图的数据层次结构。
 
-| **[树视图](/uwp/api/windows.ui.xaml.controls.treeview)** | |
+| **[TreeView](/uwp/api/windows.ui.xaml.controls.treeview)** | |
 | - | - |
 | [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) | 一个树视图可以有一个或多个根节点。 向 RootNodes 集合添加一个 TreeViewNode 对象会创建一个根节点。 根节点的 **Parent** 始终为 **null**。 根节点的 **Depth** 为 0。 |
 
 | **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
 | - | - |
-| [子级](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) | 向父节点的 Children 集合添加 TreeViewNode 对象可创建节点层次结构。 节点是其 **Children** 集合中的所有节点的 **Parent**。 |
+| [Children](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) | 向父节点的 Children 集合添加 TreeViewNode 对象可创建节点层次结构。 节点是其 **Children** 集合中的所有节点的 **Parent**。 |
 | [HasChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.haschildren) | 如果节点有已实现的子级，则为 **true**。 **false** 表示空的文件夹或项目。 |
 | [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) | 填充展开的节点时可以使用此属性。 请参阅本文稍后部分的_填充正在展开的节点_。 |
 | [深度](/uwp/api/windows.ui.xaml.controls.treeviewnode.depth) | 指示子节点距根节点的距离。 |
-| [父](/uwp/api/windows.ui.xaml.controls.treeviewnode.parent) | 获取拥有此节点所属的 **Children** 集合的 TreeViewNode。 |
+| [Parent](/uwp/api/windows.ui.xaml.controls.treeviewnode.parent) | 获取拥有此节点所属的 **Children** 集合的 TreeViewNode。 |
 
 树视图使用 **HasChildren** 和 **HasUnrealizedChildren** 属性确定是否显示展开/折叠图标。 如果任一属性为 **true**，则显示图标；否则不显示。
 
@@ -932,5 +932,5 @@ End Sub
 ## <a name="related-articles"></a>相关文章
 
 - [树视图类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
-- [ListView 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
+- [ListView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)
 - [ListView 和 GridView](listview-and-gridview.md)

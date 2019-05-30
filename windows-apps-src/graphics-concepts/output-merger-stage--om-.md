@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a77048bed3ad27f2040a672d93380d0250f9aa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 177d5a8fed47396fa694bd8fb88baea8d8b7bbb3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641092"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371185"
 ---
 # <a name="output-merger-om-stage"></a>输出合并 (OM) 阶段
 
@@ -37,7 +37,7 @@ OM 阶段将使用以下项的组合生成最终呈现的像素颜色：
 
 ![混合数据的工作原理的图示](images/d3d10-blend-state.png)
 
-从概念上来说，你可以将在输出合并阶段实施了两次的此流程图可视化：第一次混合 RGB 数据，第二次混合 alpha 数据，两者并行执行。 若要了解如何使用 API 创建和设置混合状态，请参阅[配置混合功能](https://msdn.microsoft.com/library/windows/desktop/bb205072)。
+从概念上来说，你可以将在输出合并阶段实施了两次的此流程图可视化：第一次混合 RGB 数据，第二次混合 alpha 数据，两者并行执行。 若要了解如何使用 API 创建和设置混合状态，请参阅[配置混合功能](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-blend-state)。
 
 可为每个呈现目标单独启用固定函数混合。 但是，只存在一组混合控件，这是为了在启用混合后让同一混合应用于所有 RenderTarget。 在混合之前，混合值（包括 BlendFactor）始终固定到呈现目标格式的范围。 根据呈现目标类型，固定对每个呈现目标执行一次。 唯一的例外情况是 float16、float11 或 float10 格式，为了让针对这些格式的混合运算可在至少具有与输出格式相等的精度/范围的情况下完成，没有对这些格式进行固定。 在所有情况下都会传播 NaN 和有符号零（包括 0.0 混合权重）。
 
@@ -79,7 +79,7 @@ OM 阶段将使用以下项的组合生成最终呈现的像素颜色：
 -   呈现目标的内容
 -   深度/模板缓冲区的内容。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 ### <a name="span-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanoutput-write-mask-overview"></a><span id="Output-write-mask-overview"></span><span id="output-write-mask-overview"></span><span id="OUTPUT-WRITE-MASK-OVERVIEW"></span>输出写掩码概述

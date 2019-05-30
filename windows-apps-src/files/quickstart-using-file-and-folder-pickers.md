@@ -6,32 +6,32 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 09ddb212cd84b9754c35adccdf6e60ad96a4f94f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5d45c907215f21977b0a59acede5a8314d6ed168
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662762"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369322"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>使用选取器打开文件和文件夹
 
 **重要的 Api**
 
--   [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847)
--   [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)
--   [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
+-   [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker)
+-   [**FolderPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FolderPicker)
+-   [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)
 
-通过让用户选取器交互来访问文件和文件夹。 你可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 类访问文件，并使用 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) 访问文件夹。
+通过让用户选取器交互来访问文件和文件夹。 你可以使用 [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 和 [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) 类访问文件，并使用 [**FolderPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FolderPicker) 访问文件夹。
 
 > [!NOTE]
 > 有关完整示例，请参阅[文件选取器示例](https://go.microsoft.com/fwlink/p/?linkid=619994)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
-    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](https://msdn.microsoft.com/library/windows/apps/mt187337)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://msdn.microsoft.com/library/windows/apps/mt187334)。
+    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
 -   **对位置的访问权限**
 
@@ -55,9 +55,9 @@ ms.locfileid: "57662762"
 ## <a name="how-pickers-work"></a>选取器的工作原理
 
 
-通过选取器，你的应用可以在用户的系统上访问、浏览以及保存文件和文件夹。 你的应用会接收这些选取项作为 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 和 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 对象，然后你能在这些对象上进行操作。
+通过选取器，你的应用可以在用户的系统上访问、浏览以及保存文件和文件夹。 你的应用会接收这些选取项作为 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 和 [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) 对象，然后你能在这些对象上进行操作。
 
-选取器使用一个单一的统一界面，让用户从文件系统或从其他应用选取文件和文件夹。 从其他应用选取的文件与文件系统中的文件类似：它们是作为 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 对象返回的。 通常，你的应用可以按与其他对象相同的方式对它们进行操作。 其他应用通过参与文件选取器合约使文件可用。 如果你希望你的应用提供文件、保存位置或其他应用的文件更新，请参阅[与文件选取器合约集成](https://msdn.microsoft.com/library/windows/apps/hh465192)。
+选取器使用一个单一的统一界面，让用户从文件系统或从其他应用选取文件和文件夹。 从其他应用选取的文件与文件系统中的文件类似：它们是作为 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 对象返回的。 通常，你的应用可以按与其他对象相同的方式对它们进行操作。 其他应用通过参与文件选取器合约使文件可用。 如果你希望你的应用提供文件、保存位置或其他应用的文件更新，请参阅[与文件选取器合约集成](https://docs.microsoft.com/previous-versions/windows/apps/hh465192(v=win.10))。
 
 例如，你可能会在你的应用中调用文件选取器，以便你的用户可以打开文件。 这会使你的应用成为调用应用。 文件选取器与系统和/或其他应用交互来让用户导航和选取文件。 当你的用户选择文件时，文件选取器会将该文件返回到你的应用。 这里是从提供的应用（如 OneDrive）中选择文件所遇到的情形的过程。
 
@@ -103,13 +103,13 @@ else
     ```
     在文件选取器对象上设置与你的用户和应用相关的属性。
 
-    此示例创建直观丰富的图片显示在方便的位置的用户均可选择从通过设置三个属性：[**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855)， [ **SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854)，以及[ **FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850)。
+    此示例创建直观丰富的图片显示在方便的位置的用户均可选择从通过设置三个属性：[**ViewMode**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.viewmode)， [ **SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation)，以及[ **FileTypeFilter**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter)。
 
-    -   设置[ **ViewMode** ](https://msdn.microsoft.com/library/windows/apps/br207855)到[ **PickerViewMode** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) **缩略图**枚举值创建了内容丰富、通过使用图片缩略图来表示文件选取器中的文件的可视显示。 此操作用于选取可视文件（如图片或视频）。 否则，请使用 [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list)。 假定的电子邮件应用可在显示文件选取器之前设置适用于功能的 **ViewMode**，该应用具有**附加图片或视频**和**附加文档**功能。
+    -   设置[ **ViewMode** ](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.viewmode)到[ **PickerViewMode** ](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerViewMode) **缩略图**枚举值创建了内容丰富、通过使用图片缩略图来表示文件选取器中的文件的可视显示。 此操作用于选取可视文件（如图片或视频）。 否则，请使用 [**PickerViewMode.List**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerViewMode)。 假定的电子邮件应用可在显示文件选取器之前设置适用于功能的 **ViewMode**，该应用具有**附加图片或视频**和**附加文档**功能。
 
-    -   使用 [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207854) 将 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207890) 设置为图片可让用户在他们有可能找到图片的某个位置开始。 将 **SuggestedStartLocation** 设置为适用于要选取的文件类型（例如音乐、图片、视频或文档）的位置。 用户可以从开始位置导航到其他位置。
+    -   使用 [**PickerLocationId.PicturesLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) 将 [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerLocationId) 设置为图片可让用户在他们有可能找到图片的某个位置开始。 将 **SuggestedStartLocation** 设置为适用于要选取的文件类型（例如音乐、图片、视频或文档）的位置。 用户可以从开始位置导航到其他位置。
 
-    -   使用 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) 指定文件类型可保持用户专注于选取相关的文件。 若要将 **FileTypeFilter** 中以前的文件类型替换为新条目，请使用 [**ReplaceAll**](https://msdn.microsoft.com/library/windows/apps/br207844) 而不是 [**Add**](https://msdn.microsoft.com/library/windows/apps/br207834)。
+    -   使用 [**FileTypeFilter**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter) 指定文件类型可保持用户专注于选取相关的文件。 若要将 **FileTypeFilter** 中以前的文件类型替换为新条目，请使用 [**ReplaceAll**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileextensionvector.replaceall) 而不是 [**Add**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileextensionvector.append)。
 
 2.  **显示 FileOpenPicker**
 
@@ -173,4 +173,4 @@ else
 ```
 
 > [!TIP]
-> 不论何时，只要你的应用通过选取器访问文件或文件夹，就将它添加到应用的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 或 [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) 以便对进行跟踪。 你可以在[如何跟踪最近使用的文件和文件夹](how-to-track-recently-used-files-and-folders.md)中了解有关使用这些列表的详细信息。
+> 不论何时，只要你的应用通过选取器访问文件或文件夹，就将它添加到应用的 [**FutureAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) 或 [**MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) 以便对进行跟踪。 你可以在[如何跟踪最近使用的文件和文件夹](how-to-track-recently-used-files-and-folders.md)中了解有关使用这些列表的详细信息。

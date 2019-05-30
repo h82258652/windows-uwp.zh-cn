@@ -8,22 +8,22 @@ keywords: Windows 墨迹, Windows 墨迹书写, DirectInk, InkPresenter, InkCanv
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c7bcb66396ca2731de1ccb2237bb982bf9b541df
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: f402c88efaca909fa5558880825629d94cc2a64b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334955"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363746"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>将 Windows Ink 笔划识别为文本和形状
 
 使用 Windows Ink 内置的识别功能将笔划墨迹转换为文本和形状。
 
-> **重要的 API**：[**在 InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)， [ **Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
+> **重要的 API**：[**在 InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)， [ **Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="free-form-recognition-with-ink-analysis"></a>带有墨迹分析的自由格式识别
 
-我们在此处演示如何使用 Windows Ink 分析引擎 ([Windows.UI.Input.Inking.Analysis](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis) 将 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上的一组自由格式笔划分类、分析和识别为文本或形状。 （除了文本和形状识别外，墨迹分析还可用于识别文档结构、项目符号列表和通用绘画。）
+我们在此处演示如何使用 Windows Ink 分析引擎 ([Windows.UI.Input.Inking.Analysis](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis) 将 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 上的一组自由格式笔划分类、分析和识别为文本或形状。 （除了文本和形状识别外，墨迹分析还可用于识别文档结构、项目符号列表和通用绘画。）
 
 > [!NOTE]
 > 对于基本的单行纯文本情形（如表单输入），请参阅本主题后面的[受限制的手写识别](#constrained-handwriting-recognition)。
@@ -78,8 +78,8 @@ ms.locfileid: "58334955"
 ```
 
 4. 接着，我们设置一些基本墨迹输入行为：
-    - 将 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 配置为将来自笔、鼠标和触摸的输入数据解释为墨迹笔划 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))。 
-    - 笔划墨迹使用指定的 [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/apps/dn858535) 在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/desktop/ms695050) 上呈现。 
+    - 将 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 配置为将来自笔、鼠标和触摸的输入数据解释为墨迹笔划 ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))。 
+    - 笔划墨迹使用指定的 [**InkDrawingAttributes**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 在 [**InkCanvas**](https://docs.microsoft.com/windows/desktop/tablet/inkdrawingattributes-class) 上呈现。 
     - 还声明一个用于“识别”按钮上的单击事件的侦听器。
 
 ```csharp
@@ -285,7 +285,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 在上一个部分（[带有墨迹分析的自由格式识别](#free-form-recognition-with-ink-analysis)）中，我们演示了如何使用[墨迹分析 API](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis) 分析和识别 InkCanvas 区域内的任意墨迹笔划。
 
-在本部分中，我们将演示如何使用 Windows Ink 手写识别引擎（不是墨迹分析）将 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上的一组笔划转换为文本（基于已安装的默认语言包）。
+在本部分中，我们将演示如何使用 Windows Ink 手写识别引擎（不是墨迹分析）将 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 上的一组笔划转换为文本（基于已安装的默认语言包）。
 
 > [!NOTE]
 > 本部分所示的基本手写识别最适合于单行文本输入情形，如表单输入。 有关包括分析和解释文档结构的更丰富识别情况下，列表项、 形状和绘图 （除了执行文本识别），请参阅上一节：[使用墨迹分析的自由格式识别](#free-form-recognition-with-ink-analysis)。
@@ -296,7 +296,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 1. 首先，我们设置 UI。
 
-    此 UI 包括一个“识别”按钮、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 以及一个用于显示识别结果的区域。    
+    此 UI 包括一个“识别”按钮、[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 以及一个用于显示识别结果的区域。    
 
     ```xaml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -335,7 +335,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 3. 然后，我们设置一些基本墨迹输入行为。
 
-    将 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))。 笔划墨迹使用指定的 [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/apps/dn858535) 在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/desktop/ms695050) 上呈现。 还声明一个用于“识别”按钮上的单击事件的侦听器。
+    将 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))。 笔划墨迹使用指定的 [**InkDrawingAttributes**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 在 [**InkCanvas**](https://docs.microsoft.com/windows/desktop/tablet/inkdrawingattributes-class) 上呈现。 还声明一个用于“识别”按钮上的单击事件的侦听器。
 
     ```csharp
     public MainPage()
@@ -361,14 +361,14 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 4. 最后，执行基本手写识别。 在本例中，我们使用“识别”按钮的单击事件处理程序来执行手写识别。
 
-    [  **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 将所有笔划墨迹存储在 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 对象中。 笔划通过 **InkPresenter** 的 [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) 属性公开，并使用 [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) 方法检索。
+    [  **InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 将所有笔划墨迹存储在 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 对象中。 笔划通过 **InkPresenter** 的 [**StrokeContainer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokecontainer) 属性公开，并使用 [**GetStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.getstrokes) 方法检索。
 
     ```csharp
     // Get all strokes on the InkCanvas.
         IReadOnlyList<InkStroke> currentStrokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
     ```
 
-    创建一个 [**InkRecognizerContainer**](https://msdn.microsoft.com/library/windows/apps/br208479) 来管理手写识别过程。
+    创建一个 [**InkRecognizerContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizerContainer) 来管理手写识别过程。
 
     ```csharp
     // Create a manager for the InkRecognizer object
@@ -377,9 +377,9 @@ private void DrawText(string recognizedText, Rect boundingRect)
             new InkRecognizerContainer();
     ```
 
-    [**RecognizeAsync** ](https://msdn.microsoft.com/library/windows/apps/br208446)调用以检索一系列[ **InkRecognitionResult** ](https://msdn.microsoft.com/library/windows/apps/br208464)对象。
+    [**RecognizeAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.recognizeasync)调用以检索一系列[ **InkRecognitionResult** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult)对象。
 
-    为检测到的每个单词生成识别结果[ **InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478)。
+    为检测到的每个单词生成识别结果[ **InkRecognizer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer)。
 
     ```csharp
     // Recognize all ink strokes on the ink canvas.
@@ -389,9 +389,9 @@ private void DrawText(string recognizedText, Rect boundingRect)
                 InkRecognitionTarget.All);
     ```
 
-    每个[ **InkRecognitionResult** ](https://msdn.microsoft.com/library/windows/apps/br208464)对象包含一系列文本候选项。 识别引擎视为此列表中的最顶层项是最佳匹配项后, 跟剩余候选人降低置信度的顺序。
+    每个[ **InkRecognitionResult** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult)对象包含一系列文本候选项。 识别引擎视为此列表中的最顶层项是最佳匹配项后, 跟剩余候选人降低置信度的顺序。
 
-    我们将遍历每个[ **InkRecognitionResult** ](https://msdn.microsoft.com/library/windows/apps/br208464)和编译的候选项的列表。 然后显示候选项并[ **InkStrokeContainer** ](https://msdn.microsoft.com/library/windows/apps/br208492)清除 (这也将删除[ **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535))。
+    我们将遍历每个[ **InkRecognitionResult** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult)和编译的候选项的列表。 然后显示候选项并[ **InkStrokeContainer** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer)清除 (这也将删除[ **InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas))。
 
     ```csharp
     string str = "Recognition result\n";
@@ -479,7 +479,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 内置于 Windows 墨迹平台的手写识别包括 Windows 支持的一小组广泛的区域设置和语言。
 
-有关 [**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478) 支持的语言列表，请参阅 [**InkRecognizer.Name**](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkrecognizer.name.aspx) 属性主题。
+有关 [**InkRecognizer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer) 支持的语言列表，请参阅 [**InkRecognizer.Name**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkrecognizer.name) 属性主题。
 
 你的应用可以查询已安装的手写识别引擎的集合，并使用其中一个引擎或让用户选择其首选语言。
 
@@ -493,13 +493,13 @@ private void DrawText(string recognizedText, Rect boundingRect)
 4. 单击该语言，然后选择**选项**。
 5. 在**语言选项**页面上，下载**手写识别引擎**（也可以在此处下载完整的语言包、语音识别引擎和键盘布局）。
 
-我们在此处演示如何使用手写识别引擎基于所选的识别器来解释 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上的一组笔划。
+我们在此处演示如何使用手写识别引擎基于所选的识别器来解释 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 上的一组笔划。
 
 用户通过在完成书写时单击某个按钮来启动识别。
 
 1. 首先，我们设置 UI。
 
-    UI 包含一个“识别”按钮、一个列出已安装手写识别器的组合框、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 和一个用于显示识别结果的区域。
+    UI 包含一个“识别”按钮、一个列出已安装手写识别器的组合框、[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 和一个用于显示识别结果的区域。
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -545,7 +545,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 2. 然后，我们设置一些基本墨迹输入行为。
 
-    将 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))。 笔划墨迹使用指定的 [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/apps/dn858535) 在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/desktop/ms695050) 上呈现。
+    将 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))。 笔划墨迹使用指定的 [**InkDrawingAttributes**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 在 [**InkCanvas**](https://docs.microsoft.com/windows/desktop/tablet/inkdrawingattributes-class) 上呈现。
 
     我们调用 `InitializeRecognizerList` 函数以使用已安装手写识别器的列表来填充识别器组合框。
 
@@ -582,7 +582,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 3. 我们使用已安装手写识别器的列表来填充识别器组合框。
 
-    创建一个 [**InkRecognizerContainer**](https://msdn.microsoft.com/library/windows/apps/br208479) 来管理手写识别过程。 使用此对象调用 [**GetRecognizers**](https://msdn.microsoft.com/library/windows/apps/br208480) 并检索已安装识别器的列表来填充识别器组合框。
+    创建一个 [**InkRecognizerContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizerContainer) 来管理手写识别过程。 使用此对象调用 [**GetRecognizers**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkrecognizercontainer.getrecognizers) 并检索已安装识别器的列表来填充识别器组合框。
 
 ```csharp
 // Populate the recognizer combo box with installed recognizers.
@@ -604,7 +604,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 4. 如果识别器组合框选择发生更改，请更新手写识别器。
 
-    基于识别器组合框中所选的识别器使用 [**InkRecognizerContainer**](https://msdn.microsoft.com/library/windows/apps/br208479) 调用 [**SetDefaultRecognizer**](https://msdn.microsoft.com/library/windows/apps/hh920328)。
+    基于识别器组合框中所选的识别器使用 [**InkRecognizerContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizerContainer) 调用 [**SetDefaultRecognizer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkrecognizercontainer.setdefaultrecognizer)。
 
 ```csharp
 // Handle recognizer change.
@@ -618,7 +618,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 5. 最后，我们基于所选的手写识别器执行手写识别。 在本例中，我们使用“识别”按钮的单击事件处理程序来执行手写识别。
 
-    [  **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 将所有笔划墨迹存储在 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 对象中。 笔划通过 **InkPresenter** 的 [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) 属性公开，并使用 [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) 方法检索。
+    [  **InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 将所有笔划墨迹存储在 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 对象中。 笔划通过 **InkPresenter** 的 [**StrokeContainer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokecontainer) 属性公开，并使用 [**GetStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.getstrokes) 方法检索。
 
 ```csharp
 // Get all strokes on the InkCanvas.
@@ -626,9 +626,9 @@ private void DrawText(string recognizedText, Rect boundingRect)
         inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
 ```
 
-    [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/br208446) is called to retrieve a set of [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) objects.
+    [**RecognizeAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.recognizeasync) is called to retrieve a set of [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) objects.
 
-    Recognition results are produced for each word that is detected by an [**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478).
+    Recognition results are produced for each word that is detected by an [**InkRecognizer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer).
 
 ```csharp
 // Recognize all ink strokes on the ink canvas.
@@ -638,9 +638,9 @@ private void DrawText(string recognizedText, Rect boundingRect)
             InkRecognitionTarget.All);
 ```
 
-    Each [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) object contains a set of text candidates. The topmost item in this list is considered by the recognition engine to be the best match, followed by the remaining candidates in order of decreasing confidence.
+    Each [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) object contains a set of text candidates. The topmost item in this list is considered by the recognition engine to be the best match, followed by the remaining candidates in order of decreasing confidence.
 
-    We iterate through each [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) and compile the list of candidates. The candidates are then displayed and the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) is cleared (which also clears the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)).
+    We iterate through each [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) and compile the list of candidates. The candidates are then displayed and the [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) is cleared (which also clears the [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)).
 
 ```csharp
 string str = "Recognition result\n";
@@ -738,7 +738,7 @@ string str = "Recognition result\n";
     DispatcherTimer recoTimer;
 ```
 
-2. 我们将添加两个 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 笔划事件（[**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024) 和 [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)）的侦听器（而不是用于启动识别的按钮），并设置一个带有一秒 [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244250) 间隔的基本计时器 ([**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244256))。
+2. 我们将添加两个 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 笔划事件（[**StrokesCollected**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokescollected) 和 [**StrokeStarted**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted)）的侦听器（而不是用于启动识别的按钮），并设置一个带有一秒 [**Tick**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DispatcherTimer) 间隔的基本计时器 ([**DispatcherTimer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dispatchertimer.tick))。
 
 ```csharp
     public MainPage()
@@ -770,12 +770,12 @@ string str = "Recognition result\n";
 
 3. 然后，我们为第一步中声明的 InkPresenter 事件定义处理程序（我们还替代 [**OnNavigatingFrom**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.page.onnavigatingfrom) 页面事件以管理我们的计时器）。
 
-    - [**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024)  
+    - [**StrokesCollected**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokescollected)  
     将墨迹笔划 ([**AddDataForStrokes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.adddataforstrokes)) 添加到 InkAnalyzer，当用户（通过抬起笔或手指或释放鼠标按钮）停止墨迹书写时，启动识别计时器。 在无墨迹输入的一秒后，启动识别。  
 
         使用 [**SetStrokeDataKind**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.setstrokedatakind) 方法指定是只对文本（包括文档结构和项目符号列表）感兴趣，还是只对绘画（包括形状识别）感兴趣。
 
-    - [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)  
+    - [**StrokeStarted**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted)  
     如果新的笔划在下一个计时器滴答事件前开始，则停止计时器，因为新的笔划可能是单次手写输入的延续。
 
 ```csharp
@@ -816,7 +816,7 @@ string str = "Recognition result\n";
     } 
 ```
 
-4. 最后，执行手写识别。 在此示例中，我们使用 [**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244256) 的 [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244250) 事件处理程序来启动手写识别。
+4. 最后，执行手写识别。 在此示例中，我们使用 [**DispatcherTimer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dispatchertimer.tick) 的 [**Tick**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DispatcherTimer) 事件处理程序来启动手写识别。
     - 调用 [**AnalyzeAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.AnalyzeAsync) 以启动墨迹分析并获得 [**InkAnalysisResult**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult)。
     - 如果 [**Status**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult.Status) 返回**已更新**状态，请为 [**InkAnalysisNodeKind.InkWord**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind) 节点类型调用 [**FindNodes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisroot.findnodes)。
     - 重复节点并显示识别出的文本。

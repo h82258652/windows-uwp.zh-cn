@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a3bf2ce69105787b7ca9e83c7f7fe5db8ae1038
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 14f5fa06cfa0a6a7e393f3e2d513af0898d1f822
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624852"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360942"
 ---
 # <a name="periodic-notification-overview"></a>定期通知概述
  
@@ -34,14 +34,14 @@ ms.locfileid: "57624852"
 
 定期通知要求应用托管一个云服务。 该服务将由所有安装了该应用的用户定期进行轮询。 Windows 在每个轮询间隔（例如一小时一次）向 URI 发送 HTTP GET 请求，下载响应请求而提供的磁贴或锁屏提醒内容（如 XML），并在应用磁贴上显示此内容。
 
-请注意，定期更新不能与 Toast 通知配合使用。 Toast 最好通过[计划](https://msdn.microsoft.com/library/windows/apps/hh465417)或[推送](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)通知来传递。
+请注意，定期更新不能与 Toast 通知配合使用。 Toast 最好通过[计划](https://docs.microsoft.com/previous-versions/windows/apps/hh465417(v=win.10))或[推送](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))通知来传递。
 
 ## <a name="uri-location-and-xml-content"></a>URI 位置和 XML 内容
 
 
 任何有效的 HTTP 或 HTTPS 网址均可用作要轮询 URI。
 
-云服务器的响应包括已下载的内容。 从 URI 返回的内容必须符合[磁贴](adaptive-tiles-schema.md)或[锁屏提醒](https://msdn.microsoft.com/library/windows/apps/br212851) XML 架构规格，并且必须为 UTF-8 编码。 可使用已定义的 HTTP 标头来指定通知的[到期时间](#expiration-of-tile-and-badge-notifications)或标记。
+云服务器的响应包括已下载的内容。 从 URI 返回的内容必须符合[磁贴](adaptive-tiles-schema.md)或[锁屏提醒](https://docs.microsoft.com/uwp/schemas/tiles/badgeschema/schema-root) XML 架构规格，并且必须为 UTF-8 编码。 可使用已定义的 HTTP 标头来指定通知的[到期时间](#expiration-of-tile-and-badge-notifications)或标记。
 
 ## <a name="polling-behavior"></a>轮询行为
 
@@ -84,13 +84,13 @@ ms.locfileid: "57624852"
 ## <a name="periodic-notifications-in-the-notification-queue"></a>通知队列中的定期通知
 
 
-你可将定期磁贴更新与[通知循环](https://msdn.microsoft.com/library/windows/apps/hh781199)结合使用。 默认情况下，“开始”屏幕中的磁贴会显示单条通知的内容，直到有新的通知替换当前的通知。 启用循环之后，队列中最多会保留 5 条通知，磁贴会循环显示这些通知。
+你可将定期磁贴更新与[通知循环](https://docs.microsoft.com/previous-versions/windows/apps/hh781199(v=win.10))结合使用。 默认情况下，“开始”屏幕中的磁贴会显示单条通知的内容，直到有新的通知替换当前的通知。 启用循环之后，队列中最多会保留 5 条通知，磁贴会循环显示这些通知。
 
-如果队列达到了 5 条通知的容量上限，则下一条新通知将替换队列中最早的通知。 但是，通过在通知上设置标记，你可以影响队列的替换策略。 标记是特定于应用的字符串，区分大小写，最多包含 16 个字母数字字符，可在响应负载的 [X-WNS-Tag](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_tag) HTTP 标头中指定。 Windows 将传入通知的标记与队列中已存在的所有通知的标记进行比较。 如果发现匹配，则新通知将替换队列中标记相同的通知。 如果发现不匹配，则应用默认替换规则，新通知将替换队列中最早的通知。
+如果队列达到了 5 条通知的容量上限，则下一条新通知将替换队列中最早的通知。 但是，通过在通知上设置标记，你可以影响队列的替换策略。 标记是特定于应用的字符串，区分大小写，最多包含 16 个字母数字字符，可在响应负载的 [X-WNS-Tag](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) HTTP 标头中指定。 Windows 将传入通知的标记与队列中已存在的所有通知的标记进行比较。 如果发现匹配，则新通知将替换队列中标记相同的通知。 如果发现不匹配，则应用默认替换规则，新通知将替换队列中最早的通知。
 
 你可使用通知队列和标记来实现各种丰富的通知方案。 例如，股票应用可发送 5 条通知，每条通知关注一支不同的股票并以相应股票的名称作为标记。 这可以防止队列包含两条有关同一股票的通知，其中较早的通知为过时通知。
 
-有关详细信息，请参阅[使用通知队列](https://msdn.microsoft.com/library/windows/apps/hh781199)。
+有关详细信息，请参阅[使用通知队列](https://docs.microsoft.com/previous-versions/windows/apps/hh781199(v=win.10))。
 
 ### <a name="enabling-the-notification-queue"></a>启用通知队列
 
@@ -103,7 +103,7 @@ ms.locfileid: "57624852"
 ## <a name="related-topics"></a>相关主题
 
 
-* [定期通知的准则](https://msdn.microsoft.com/library/windows/apps/hh761461)
-* [如何设置徽章的定期通知](https://msdn.microsoft.com/library/windows/apps/hh761476)
-* [如何设置用于磁贴的定期通知](https://msdn.microsoft.com/library/windows/apps/hh761476)
+* [定期通知的准则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-periodic-notification-overview)
+* [如何设置徽章的定期通知](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
+* [如何设置用于磁贴的定期通知](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
  

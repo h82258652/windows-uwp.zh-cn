@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a31464d208e8d9abe68703560552c99e5d957463
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0e5c5e19c6e23f4c0094220a735a0c2a48c1cc34
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638232"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362055"
 ---
 # <a name="guidelines-for-app-settings"></a>应用设置指南
 
@@ -30,7 +30,7 @@ ms.locfileid: "57638232"
 -   取决于用户首选项的选项，如音乐、音效或颜色主题。
 -   不经常访问的应用信息，例如隐私策略、帮助、应用版本或版权信息。
 
-包含在典型应用工作流中的命令（例如在艺术应用中更改画笔大小）不应该在设置页面上。 若要了解有关命令放置的详细信息，请参阅[命令设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958433)。
+包含在典型应用工作流中的命令（例如在艺术应用中更改画笔大小）不应该在设置页面上。 若要了解有关命令放置的详细信息，请参阅[命令设计基础知识](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)。
 
 ## <a name="general-recommendations"></a>常规建议
 
@@ -67,7 +67,7 @@ ms.locfileid: "57638232"
 
 对于表或透视表布局，我们不推荐将应用设置入口点作为顶部项之一放在导航中。 相反，应用设置的入口点应放置在应用栏的“更多”溢出菜单中。
 
-**主-详细信息**
+**Master-details**
 
 与其将应用设置入口点深埋在大纲-细节窗格中，不如将其设置为高级大纲窗格上的最后一个固定项。
 
@@ -135,17 +135,17 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
     -   [超链接](../controls-and-patterns/hyperlinks.md):若要将用户转到应用中的另一个页面或外部网站。 当用户单击超链接时，“设置”浮出控件将会消失。
     -   [按钮](../controls-and-patterns/buttons.md):若要使用户可以启动即时操作，而关闭当前的设置浮出控件。
 -   如果禁用其中一个控件，则添加描述性消息。 将此消息置于禁用的控件上。
--   在为“设置”浮出控件和标头设置动画后，将内容和控件作为单个块进行动画处理。 使用左偏移 100px 的 [**enterPage**](https://msdn.microsoft.com/library/windows/apps/br212672) 或 [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) 动画为内容创建动画。
+-   在为“设置”浮出控件和标头设置动画后，将内容和控件作为单个块进行动画处理。 使用左偏移 100px 的 [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) 或 [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 动画为内容创建动画。
 -   使用节标题、段落和标签来协助组织和阐述内容（如果需要）。
 -   如果你需要重复设置，请使用 UI 的其他级别或展开/折叠模式，但避免两级以上深度的层次结构。 例如，天气应用提供按城市设置（即，列出各个城市）并让用户在城市上点击以打开一个新浮出控件或展开以显示设置选项。
--   如果加载控件或 Web 内容需要花费时间，请使用不确定的进度控件以指示用户该信息正在加载。 有关详细信息，请参阅[进度控件指南](https://msdn.microsoft.com/library/windows/apps/hh465469)。
+-   如果加载控件或 Web 内容需要花费时间，请使用不确定的进度控件以指示用户该信息正在加载。 有关详细信息，请参阅[进度控件指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)。
 -   请勿使用导航按钮或提交更改按钮。 使用超链接导航到其他页面（而不是使用提交更改按钮）从而自动保存在用户取消“设置”浮出控件时对应用设置所做的更改。
 
 
 
 ## <a name="related-articles"></a>相关文章
 
-* [命令设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958433)
-* [进度控件的指导原则](https://msdn.microsoft.com/library/windows/apps/hh465469)
-* [存储和检索应用程序数据](https://msdn.microsoft.com/library/windows/apps/mt299098)
-* [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
+* [命令设计基础知识](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
+* [进度控件的指导原则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
+* [存储和检索应用程序数据](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
+* [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)

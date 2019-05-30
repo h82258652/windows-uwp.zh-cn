@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 291c2a922e2b2df7111da8bfc6aefb57b87e84bb
-ms.sourcegitcommit: 4bad5f9427e7db27b57bedc6d7df19077c62e8c3
+ms.openlocfilehash: d4150e7296badd3d31a9aacc7becd3d849f6affd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535191"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360424"
 ---
 # <a name="my-people-notifications"></a>“我的人脉”通知
 
@@ -126,7 +126,7 @@ experienceType=”shoulderTap”
 ![Spritesheet 通知](images/pizza-notification-small.gif)
 
 ## <a name="starting-the-notification"></a>启动通知
-为了启动“我的人脉”通知，我们需要将 Toast 模板转换为 [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx) 对象。 当你已在 XML 文件（此处名为“content.xml”）中定义 Toast 时，可以使用此 C# 代码启动它：
+为了启动“我的人脉”通知，我们需要将 Toast 模板转换为 [XmlDocument](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument) 对象。 当你已在 XML 文件（此处名为“content.xml”）中定义 Toast 时，可以使用此 C# 代码启动它：
 
 ```CSharp
 string xmlText = File.ReadAllText("content.xml");

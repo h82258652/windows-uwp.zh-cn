@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e508feb8a530f29b40d5a3839df573cb2ce89896
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 60d713efd9deeffa0856a5d1dbc92688c229288e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634392"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363582"
 ---
 # <a name="drag-and-drop"></a>拖放
 
 拖放是在应用程序内部或在 Windows 桌面上的应用程序之间传输数据的一种直观方式。 拖放操作可以让用户使用标准手势（用手指按住并平移或用鼠标或触笔按住并平移）在应用程序之间或在应用程序内部传输数据。
 
-> **重要的 API**：[CanDrag 属性](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag)， [AllowDrop 属性](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 
+> **重要的 API**：[CanDrag 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.candrag)， [AllowDrop 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) 
 
 拖动源（即触发拖动手势的应用程序或区域）通过填充数据包对象提供要传输的数据，而该数据包对象可以包含标准数据格式，包括文本、RTF、HTML、位图、存储项目或自定义数据格式。 源还指示其支持的操作种类：复制、移动或链接。 释放指针后，即会进行放置。 拖放目标（即指针下面的应用程序或区域）将会处理数据包并返回所执行操作的类型。
 
@@ -37,11 +37,11 @@ ms.locfileid: "57634392"
 
 ## <a name="enable-dragging"></a>启用拖动
 
-若要在某个元素上启用拖动，请将其 [**CanDrag**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag) 属性设置为 **true**。 这会使该元素（以及在像 ListView 这样的集合的情况下它所包含的元素）可以进行拖动。
+若要在某个元素上启用拖动，请将其 [**CanDrag**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.candrag) 属性设置为 **true**。 这会使该元素（以及在像 ListView 这样的集合的情况下它所包含的元素）可以进行拖动。
 
 明确什么是可以拖动的。 用户并不希望在你的应用中拖动所有内容，只希望拖动某些项目，如图像或文本。 
 
-下面显示了如何设置 [**CanDrag**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag)。
+下面显示了如何设置 [**CanDrag**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.candrag)。
 
 [!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]
 
@@ -51,26 +51,26 @@ ms.locfileid: "57634392"
 
 在大多数情况下，系统会为你构造数据包。 系统自动处理：
 * 映像
-* 文本 
+* Text 
 
 对于其他内容，你需要处理 **DragStarted** 和 **DragCompleted** 事件并使用它们来构造你自己的 [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage)。
 
 ## <a name="enable-dropping"></a>启用放置
 
-以下标记显示了如何使用 [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 将应用的特定区域设置为释放操作的有效区域。 如果用户尝试释放到别处，则系统将不会允许他们如此操作。 如果你希望用户能够将项目释放到应用上的任何位置，请将整个背景设置为释放目标。
+以下标记显示了如何使用 [**AllowDrop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) 将应用的特定区域设置为释放操作的有效区域。 如果用户尝试释放到别处，则系统将不会允许他们如此操作。 如果你希望用户能够将项目释放到应用上的任何位置，请将整个背景设置为释放目标。
 
 [!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
 
 
 ## <a name="handle-the-dragover-event"></a>处理 DragOver 事件
 
-当用户将某个项拖动到你的应用上方但尚未释放时，将触发 [**DragOver**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.DragOver) 事件。 在此处理程序中，你需要使用 [**AcceptedOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.AcceptedOperation) 属性指定你的应用支持哪些类型的操作。 复制是最常见的操作。
+当用户将某个项拖动到你的应用上方但尚未释放时，将触发 [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover) 事件。 在此处理程序中，你需要使用 [**AcceptedOperation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.acceptedoperation) 属性指定你的应用支持哪些类型的操作。 复制是最常见的操作。
 
 [!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]
 
 ## <a name="process-the-drop-event"></a>处理 Drop 事件
 
-当用户在有效的释放区域中释放项目时，将发生 [**Drop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.Drop) 事件。 使用 [**DataView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.DataView) 属性处理它们。
+当用户在有效的释放区域中释放项目时，将发生 [**Drop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop) 事件。 使用 [**DataView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.dataview) 属性处理它们。
 
 为简单起见，在下面的示例中，我们假设用户已放置一张照片并直接进行访问。 实际上，用户可以同时释放格式不同的多个项目。 你的应用应通过以下方式处理这种可能情况：检查已放置文件的类型和数量并相应地进行处理。 如果用户正在尝试执行你的应用不支持的操作，你还应考虑通知用户。
 
@@ -78,13 +78,13 @@ ms.locfileid: "57634392"
 
 ## <a name="customize-the-ui"></a>自定义 UI
 
-系统提供用于拖放的默认 UI。 但是，你还可以选择通过设置自定义字幕和字形，或者选择完全不显示 UI 来自定义 UI 的各个部分。 若要自定义 UI，请使用 [**DragEventArgs.DragUIOverride**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.DragUIOverride) 属性。
+系统提供用于拖放的默认 UI。 但是，你还可以选择通过设置自定义字幕和字形，或者选择完全不显示 UI 来自定义 UI 的各个部分。 若要自定义 UI，请使用 [**DragEventArgs.DragUIOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.draguioverride) 属性。
 
 [!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]
 
 ## <a name="open-a-context-menu-on-an-item-you-can-drag-with-touch"></a>在可通过触摸拖动的项目上打开上下文菜单
 
-在使用触摸时，拖动 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement) 和打开其上下文菜单共享类似的触摸手势；每个都以长按开始。 下面介绍对于应用中同时支持两种操作的元素，系统如何区分两者： 
+在使用触摸时，拖动 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 和打开其上下文菜单共享类似的触摸手势；每个都以长按开始。 下面介绍对于应用中同时支持两种操作的元素，系统如何区分两者： 
 
 * 如果用户长按某个项目并在 500 毫秒内开始拖动它，将拖动项目，但不显示上下文菜单。 
 * 如果用户长按但未在 500 毫秒内拖动，将打开上下文菜单。 
@@ -92,9 +92,9 @@ ms.locfileid: "57634392"
 
 ## <a name="designate-an-item-in-a-listview-or-gridview-as-a-folder"></a>将 ListView 或 GridView 中的某个项目指定为文件夹
 
-可以将 [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ListViewItem) 或 [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridViewItem) 指定为文件夹。 这对树视图和文件资源管理器方案尤其有用。 若要执行此操作，请在该项目上将 [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 属性显式设置为 **True**。 
+可以将 [**ListViewItem**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewItem) 或 [**GridViewItem**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridViewItem) 指定为文件夹。 这对树视图和文件资源管理器方案尤其有用。 若要执行此操作，请在该项目上将 [**AllowDrop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) 属性显式设置为 **True**。 
 
-系统将自动显示释放到文件夹和非文件夹项目的相应动画。 你的应用代码必须继续处理文件夹项目上（以及非文件夹项目上）的 [**Drop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.Drop) 事件，以便更新数据源并将释放的项目添加到目标文件夹。
+系统将自动显示释放到文件夹和非文件夹项目的相应动画。 你的应用代码必须继续处理文件夹项目上（以及非文件夹项目上）的 [**Drop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop) 事件，以便更新数据源并将释放的项目添加到目标文件夹。
 
 ## <a name="implementing-custom-drag-and-drop"></a>实现自定义拖放
 
@@ -109,14 +109,14 @@ ms.locfileid: "57634392"
 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [应用到应用的通信](index.md)
-* [AllowDrop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.allowdrop.aspx)
-* [CanDrag](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.candrag.aspx)
-* [DragOver](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.dragover.aspx)
-* [AcceptedOperation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.acceptedoperation.aspx)
-* [DataView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.dataview.aspx)
-* [DragUIOverride](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.draguioverride.aspx)
-* [删除](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx)
-* [IsDragSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isdragsource.aspx)
+* [AllowDrop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop)
+* [CanDrag](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.candrag)
+* [DragOver](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
+* [AcceptedOperation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.acceptedoperation)
+* [DataView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.dataview)
+* [DragUIOverride](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.draguioverride)
+* [Drop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
+* [IsDragSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isdragsource)

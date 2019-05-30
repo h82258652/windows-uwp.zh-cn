@@ -1,16 +1,16 @@
 ---
 description: 本主题通过一个完整的 Direct2D 代码示例展示了如何通过 C++/WinRT 来使用 COM 类和接口。
 title: 通过 C++/WinRT 使用 COM 组件
-ms.date: 07/23/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10、 uwp、 标准版、 c + +、 cpp、 winrt、 COM、 组件、 类、 接口
 ms.localizationpriority: medium
-ms.openlocfilehash: 16425fd6d296a4abd4ed62c0c64cd23ef1f88891
-ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.openlocfilehash: dc4acd288496d83d5d91f1bdf206be19fe2fbb06
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58618404"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361150"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>通过 C++/WinRT 使用 COM 组件
 
@@ -30,7 +30,7 @@ ms.locfileid: "58618404"
 winrt::com_ptr<ID2D1Factory1> factory;
 ```
 
-上面的代码演示如何声明指向未初始化智能指针[ **ID2D1Factory1** ](https://msdn.microsoft.com/library/Hh404596) COM 接口。 智能指针是未初始化，因此尚不支持指向**ID2D1Factory1**属于 （它不指向接口根本） 任何实际对象的接口。 但它有可能如此操作。它具有通过 COM 引用计数来管理它指向的接口的所属对象的生存期和要按其调用的函数时该接口的介质的功能 （在智能指针）。
+上面的代码演示如何声明指向未初始化智能指针[ **ID2D1Factory1** ](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1factory1) COM 接口。 智能指针是未初始化，因此尚不支持指向**ID2D1Factory1**属于 （它不指向接口根本） 任何实际对象的接口。 但它有可能如此操作。它具有通过 COM 引用计数来管理它指向的接口的所属对象的生存期和要按其调用的函数时该接口的介质的功能 （在智能指针）。
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-void"></a>返回为一个接口指针的 COM 函数**void**
 
@@ -46,7 +46,7 @@ D2D1CreateFactory(
 );
 ```
 
-调用上面的代码[ **D2D1CreateFactory** ](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory)函数，它将返回**ID2D1Factory1**通过具有其最后一个参数的接口指针**void\* \*** 类型。 许多 COM 函数会返回**void\*\***。 对于此类函数中，使用[ **com_ptr::put_void** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function)所示。
+调用上面的代码[ **D2D1CreateFactory** ](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory)函数，它将返回**ID2D1Factory1**通过具有其最后一个参数的接口指针**void\* \*** 类型。 许多 COM 函数会返回**void\*\*** 。 对于此类函数中，使用[ **com_ptr::put_void** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function)所示。
 
 ## <a name="com-functions-that-return-a-specific-interface-pointer"></a>返回特定的接口指针的 COM 函数
 
@@ -72,7 +72,7 @@ D2D1CreateFactory(
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-iunknown"></a>返回为一个接口指针的 COM 函数**IUnknown**
 
-[ **DWriteCreateFactory** ](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory)函数将返回其最后一个参数，已通过 DirectWrite 工厂接口指针[ **IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509)类型。 对于此类函数中，使用[ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function)，但重新解释强制转换到**IUnknown**。
+[ **DWriteCreateFactory** ](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory)函数将返回其最后一个参数，已通过 DirectWrite 工厂接口指针[ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)类型。 对于此类函数中，使用[ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function)，但重新解释强制转换到**IUnknown**。
 
 ```cppwinrt
 DWriteCreateFactory(
@@ -169,7 +169,7 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 
 ## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>最小的 Direct2D 应用程序的完整源代码列表
 
-如果你想要生成并运行此源的代码示例然后第一，在 Visual Studio 中，创建一个新**核心应用程序 (C++/WinRT)**。 `Direct2D` 是一个合理的名称对于项目，但您可以命名为任何希望对其进行命名。 打开`App.cpp`，删除其整个内容，并粘贴下面的列表中。
+如果你想要生成并运行此源的代码示例然后第一，在 Visual Studio 中，创建一个新**核心应用程序 (C++/WinRT)** 。 `Direct2D` 是一个合理的名称对于项目，但您可以命名为任何希望对其进行命名。 打开`App.cpp`，删除其整个内容，并粘贴下面的列表中。
 
 ```cppwinrt
 #include "pch.h"
@@ -477,7 +477,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
-    CoreApplication::Run(App());
+    CoreApplication::Run(winrt::make<App>());
 }
 ```
 

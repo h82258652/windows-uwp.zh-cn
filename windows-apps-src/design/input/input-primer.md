@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bae6e5b21369c30c8ed067fe7283c0a116d220b8
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: 55879c33e30564f4639b8880c3a12f4b4181245e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343286"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365924"
 ---
 # <a name="interaction-primer"></a>交互入门
 
@@ -135,7 +135,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 ### <a name="more-info"></a>详细信息
 
-[语音设计指南](https://msdn.microsoft.com/library/windows/apps/dn596121)
+[语音设计指南](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
  
 
 ## <a name="pen"></a>笔
@@ -168,7 +168,7 @@ Windows 墨迹平台与笔设备相得益彰，提供了一种创建手写便笺
 
 ### <a name="more-info"></a>详细信息
 
-[笔设计指南](https://msdn.microsoft.com/library/windows/apps/dn456352)
+[笔设计指南](https://docs.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions)
  
 
 ## <a name="touch"></a>触控
@@ -203,7 +203,7 @@ Surface Hub 设备可以识别 100 个独特的并发触摸点。
 
 ### <a name="more-info"></a>详细信息
 
-[触摸设计指南](https://msdn.microsoft.com/library/windows/apps/hh465370)
+[触摸设计指南](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction)
  
 
 ## <a name="touchpad"></a>触摸板
@@ -227,7 +227,7 @@ Surface Hub 设备可以识别 100 个独特的并发触摸点。
 
 ### <a name="more-info"></a>详细信息
 
-[触摸板设计指南](https://msdn.microsoft.com/library/windows/apps/dn456353)
+[触摸板设计指南](https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions)
  
 
 ## <a name="keyboard"></a>键盘
@@ -267,7 +267,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 
 ### <a name="more-info"></a>详细信息
 
-[键盘设计指南](https://msdn.microsoft.com/library/windows/apps/hh972345)
+[键盘设计指南](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
  
 
 ## <a name="mouse"></a>鼠标
@@ -294,7 +294,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 
 ### <a name="more-info"></a>详细信息
 
-[鼠标设计指南](https://msdn.microsoft.com/library/windows/apps/dn456351)
+[鼠标设计指南](https://docs.microsoft.com/windows/uwp/input-and-devices/mouse-interactions)
  
 
 ## <a name="gesture"></a>手势

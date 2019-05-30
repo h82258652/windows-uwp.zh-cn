@@ -6,32 +6,32 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c17fb7de151308e41a2e613d86a9c0413c7517e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0731f551afaa2420451521b186515255c3724c36
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649112"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370146"
 ---
 # <a name="epson-escpos-with-formatting"></a>Epson ESC/POS（可进行格式设置）
 
 
 **重要的 Api**
 
--   [**PointofService 打印机**](https://msdn.microsoft.com/library/windows/apps/Mt426652)
--   [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
+-   [**PointofService 打印机**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService)
+-   [**Windows.Devices.PointOfService**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService)
 
 了解如何使用 ESC/POS 命令语言来为服务点打印机设置文本的格式（如粗体和双倍大小字符）。
 
 ## <a name="escpos-usage"></a>ESC/POS 用法
 
-Windows 服务点提供使用各种打印机，包括多个 Epson TM 系列打印机（有关受支持打印机的完整列表，请参阅 [PointofService 打印机](https://msdn.microsoft.com/library/windows/apps/Mt426652)页面）。 Windows 支持使用 ESC/POS 打印机控制语言的打印，该语言为与你的打印机通信提供高效且功能丰富的命令。
+Windows 服务点提供使用各种打印机，包括多个 Epson TM 系列打印机（有关受支持打印机的完整列表，请参阅 [PointofService 打印机](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService)页面）。 Windows 支持使用 ESC/POS 打印机控制语言的打印，该语言为与你的打印机通信提供高效且功能丰富的命令。
 
 ESC/POS 是由 Epson 创建的命令系统，适用于各种 POS 打印机系统，旨在通过提供通用的适用性避免不兼容的命令集。 大多数现代打印机都支持 ESC/POS。
 
 所有命令以 ESC 字符（ASCII 27，十六进制 1B）或 GS（ASCII 29，十六进制 1D）开头，后跟指定命令的其他字符。 正常文本仅发送到打印机，以换行符分隔。
 
-[  **Windows PointOfService API**](https://msdn.microsoft.com/library/windows/apps/Dn298071) 通过 **Print()** 或 **PrintLine()** 方法为你提供大部分功能。 但是，若要获取特定格式或发送特定命令，则必须使用 ESC/POS 命令、生成为字符串并发送到打印机。
+[  **Windows PointOfService API**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) 通过 **Print()** 或 **PrintLine()** 方法为你提供大部分功能。 但是，若要获取特定格式或发送特定命令，则必须使用 ESC/POS 命令、生成为字符串并发送到打印机。
 
 ## <a name="example-using-bold-and-double-size-characters"></a>使用粗体和双倍大小字符的示例
 
@@ -59,4 +59,4 @@ printJob.PrintLine(DoubleOn + "Here is some large text." + DoubleOff);
 printJob.ExecuteAsync();
 ```
 
-有关 ESC/POS（包括可用命令）的详细信息，请查看 [Epson ESC/POS 常见问题](https://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf)。 有关 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) 和所有可用功能的详细信息，请参阅 MSDN 上的 [PointofService 打印机](https://msdn.microsoft.com/library/windows/apps/Mt426652)。
+有关 ESC/POS（包括可用命令）的详细信息，请查看 [Epson ESC/POS 常见问题](https://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf)。 有关 [**Windows.Devices.PointOfService**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) 和所有可用功能的详细信息，请参阅 MSDN 上的 [PointofService 打印机](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService)。

@@ -1,21 +1,21 @@
 ---
 description: C++/WinRT 可以帮助你创作经典 COM 组件，就像它可以帮助你创作 Windows 运行时类一样。
 title: 通过 C++/WinRT 创作 COM 组件
-ms.date: 09/06/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10、 uwp、 标准版、 c + +、 cpp、 winrt、 投影、 作者、 COM、 组件
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 27c55e94a4e11bbbf550c21fd61ee384c8b21f9c
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 3badcd59155bc4bb5ef8d9e29271b853c245c24e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244353"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360314"
 ---
 # <a name="author-com-components-with-cwinrt"></a>通过 C++/WinRT 创作 COM 组件
 
-[C++/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)可帮助你创作经典组件对象模型 (COM) 组件 （或组件类），就像它可帮助你创作 Windows 运行时类。 下面是如果您将代码粘贴到可以测试的简单说明`pch.h`并`main.cpp`的新**Visual C++**   >  **Windows 桌面** >  **Windows 控制台应用程序 (C++/WinRT)** 项目。
+[C++/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)可帮助你创作经典组件对象模型 (COM) 组件 （或组件类），就像它可帮助你创作 Windows 运行时类。 下面是如果您将代码粘贴到可以测试的简单说明`pch.h`并`main.cpp`的新**Windows 控制台应用程序 (C++/WinRT)** 项目。
 
 ```cppwinrt
 // pch.h
@@ -74,7 +74,7 @@ int main()
 
 ## <a name="create-a-windows-console-application-project-toastandcallback"></a>创建一个 Windows 控制台应用程序项目 (ToastAndCallback)
 
-首先在 Microsoft Visual Studio 中创建新项目。 创建**可视化C++**   >  **Windows 桌面** > **Windows 控制台应用程序 (C++/WinRT)** 项目，并将其命名*ToastAndCallback*。
+首先在 Microsoft Visual Studio 中创建新项目。 创建**Windows 控制台应用程序 (C++/WinRT)** 项目，并将其命名*ToastAndCallback*。
 
 打开`pch.h`，并添加`#include <unknwn.h>`之前包括任何 C + WinRT 标头。 下面是结果;内容替换为你`pch.h`与此列表。
 
@@ -89,7 +89,6 @@ int main()
 
 ```cppwinrt
 // main.cpp : Defines the entry point for the console application.
-//
 
 #include "pch.h"
 
@@ -173,7 +172,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-上面的组件类实现遵循相同的模式中所示[作者 Api 与C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class)。 因此，您可以使用相同技术来实现 COM 接口，以及 Windows 运行时接口。 COM 组件和 Windows 运行时类公开接口通过其功能。 每个 COM 接口最终派生[ **IUnknown 接口**](https://msdn.microsoft.com/library/windows/desktop/ms680509)接口。 Windows 运行时基于 COM&mdash;一个区别正在 Windows 运行时接口最终派生自[ **IInspectable 接口**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (和**IInspectable**派生自**IUnknown**)。
+上面的组件类实现遵循相同的模式中所示[作者 Api 与C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class)。 因此，您可以使用相同技术来实现 COM 接口，以及 Windows 运行时接口。 COM 组件和 Windows 运行时类公开接口通过其功能。 每个 COM 接口最终派生[ **IUnknown 接口**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)接口。 Windows 运行时基于 COM&mdash;一个区别正在 Windows 运行时接口最终派生自[ **IInspectable 接口**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (和**IInspectable**派生自**IUnknown**)。
 
 在上面的代码中组件类，我们实现**INotificationActivationCallback::Activate**方法，即当用户单击上一条 toast 通知的回调按钮时调用的函数。 可以调用该函数之前，请组件类的实例需要创建，并为的作业，但**IClassFactory::CreateInstance**函数。
 
@@ -540,7 +539,7 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 
 ## <a name="important-apis"></a>重要的 API
 * [IInspectable 接口](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
-* [IUnknown 接口](https://msdn.microsoft.com/library/windows/desktop/ms680509)
+* [IUnknown 接口](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)
 * [winrt::implements 结构模板](/uwp/cpp-ref-for-winrt/implements)
 
 ## <a name="related-topics"></a>相关主题

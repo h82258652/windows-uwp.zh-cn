@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 09647347134463c8dd2d93f6b869796c8def44e2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 739abc139eabc9f773938f55c15d3e18aaf562ce
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57619802"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365961"
 ---
 # <a name="special-tile-templates"></a>特殊磁贴模板
  
@@ -96,7 +96,7 @@ ms.locfileid: "57619802"
 
 **步骤 5：将它放在一起**
 
-下图说明了如何将各个 API 和负载与图标磁贴模板的每个方面关联在一起。 [磁贴通知](https://msdn.microsoft.com/library/windows/apps/hh779724)（包含那些 &lt;binding&gt; 元素）用于指定图标模板和图像资源；[锁屏提醒通知](https://msdn.microsoft.com/library/windows/apps/hh779719)指定数值；磁贴属性控制你的磁贴的显示名称、颜色等。
+下图说明了如何将各个 API 和负载与图标磁贴模板的每个方面关联在一起。 [磁贴通知](https://docs.microsoft.com/previous-versions/windows/apps/hh779724(v=win.10))（包含那些 &lt;binding&gt; 元素）用于指定图标模板和图像资源；[锁屏提醒通知](https://docs.microsoft.com/previous-versions/windows/apps/hh779719(v=win.10))指定数值；磁贴属性控制你的磁贴的显示名称、颜色等。
 
 ![与图标磁贴模板关联的 API 和负载](images/iconic-template-properties-info.png)
 

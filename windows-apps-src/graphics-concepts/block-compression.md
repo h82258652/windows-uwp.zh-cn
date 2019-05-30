@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f6a1277dbb2d756f0d3a4ffc1fd545f892a2096
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2ac7f0785894849cffe09cd902f459015f1f7b6b
+ms.sourcegitcommit: ea15237291ae3ade0bf22e38bd292c3a23947a03
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596502"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377324"
 ---
 # <a name="block-compression"></a>块压缩
 
@@ -73,7 +73,7 @@ ms.locfileid: "57596502"
 
 图示左侧显示为未压缩的 60×40 纹理生成的 mipmap 级别大小。 最高级别的大小取自生成纹理的 API 调用；每个后续级别是上一个级别大小的一半。 对于未压缩的纹理，虚拟（声明）大小和物理（实际）大小之间没有区别。
 
-图示右侧显示了为使用压缩的同一 60×40 纹理生成的 mipmap 级别大小。 注意，第二个和第三个级别均有内存填充，以使每个级别上的大小为 4 的因数。 这很有必要，以便算法可以在 4×4 纹素块上操作。 这在你考虑小于 4×4 的 mipmap 级别时尤为明显；分配纹理内存时，这些非常小的 mipmap 级别的大小将四舍五入为最接近 4 的因数。
+图示右侧显示了为使用压缩的同一 60×40 纹理生成的 mipmap 级别大小。 注意，第二个和第三个级别均有内存填充，以使每个级别上的大小为 4 的因数。 这很有必要，以便算法可以在 4×4 纹素块上操作。 这就显得如果考虑 mipmap 级别小于 4 × 4;这些非常小的 mipmap 级别的大小将向上舍入到最接近原来的四分之一纹理内存分配时。
 
 采样硬件使用虚拟大小；如果对纹理采样，将忽略内存填充。 对于小于 4×4 的 mipmap 级别，只有前四个纹素将用于 2×2 的映射，并且只有第一个纹素将由 1×1 的块使用。 但是，没有公开物理大小（包括内存填充）的 API 结构。
 
@@ -346,13 +346,13 @@ FLOAT32 f = 1.0f;
 UINT32 u;
 ```
 
-若要将“f”重新解释为类型“u”，请使用 [memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx)：
+若要将“f”重新解释为类型“u”，请使用 [memcpy](https://docs.microsoft.com/cpp/c-runtime-library/reference/memcpy-wmemcpy)：
 
 ```cpp
 memcpy( &u, &f, sizeof( f ) ); // 'u' becomes equal to 0x3F800000.
 ```
 
-在上一重新解释中，数据的基础值不变；[memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx) 将浮点数重新解释为无符号整数。
+在上一重新解释中，数据的基础值不变；[memcpy](https://docs.microsoft.com/cpp/c-runtime-library/reference/memcpy-wmemcpy) 将浮点数重新解释为无符号整数。
 
 若要执行更典型的转换类型，请使用分配：
 

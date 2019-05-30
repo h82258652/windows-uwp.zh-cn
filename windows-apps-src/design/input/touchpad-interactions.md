@@ -8,12 +8,12 @@ keywords: 触摸板, PTP, 触摸, 指针, 输入, 用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 895bf1ffe4fc79a65fdf452235ee9466e91b7215
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7a4c3c5e2c3041aef3e2223e3bb45c1c3d3d37ad
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593902"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365273"
 ---
 # <a name="touchpad-design-guidelines"></a>触摸板设计指南
 
@@ -42,7 +42,7 @@ ms.locfileid: "57593902"
 
 触摸板将间接多点触控输入与指针设备（如鼠标）的精确输入结合。 这种组合使触摸板既适用于触摸优化的 UI，也适用于效率应用和桌面环境通常较小的目标。 针对触控输入优化 UWP 应用设计，并默认获取触摸板支持。
 
-由于触摸板支持聚合的交互体验，所以除了触摸输入的内置支持，我们还建议使用 [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968) 事件来提供鼠标样式的 UI 命令。 例如，使用“上一页”和“下一页”按钮，使用户既可以翻阅网页内容，也可以通过平移浏览内容。
+由于触摸板支持聚合的交互体验，所以除了触摸输入的内置支持，我们还建议使用 [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered) 事件来提供鼠标样式的 UI 命令。 例如，使用“上一页”和“下一页”按钮，使用户既可以翻阅网页内容，也可以通过平移浏览内容。
 
 本主题中讨论的手势和指南可以帮助确保你的应用使用最少的代码无缝支持触摸板输入。
 
@@ -119,7 +119,7 @@ ms.locfileid: "57593902"
 ## <a name="hardware"></a>硬件
 
 
-查询鼠标设备功能 ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)) 以确定触摸板硬件可以直接访问你的应用 UI 的哪些方面。 我们建议提供适用于触摸和鼠标输入的 UI。
+查询鼠标设备功能 ([**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities)) 以确定触摸板硬件可以直接访问你的应用 UI 的哪些方面。 我们建议提供适用于触摸和鼠标输入的 UI。
 
 有关查询设备功能的详细信息，请参阅[标识输入设备](identify-input-devices.md)。
 
@@ -132,14 +132,14 @@ ms.locfileid: "57593902"
 -   不要将焦点矩形与触摸板交互结合使用。 保留焦点矩形是为了进行键盘交互。
 -   对于所有代表相同输入目标的元素，同时显示视觉反馈。
 
-有关视觉反馈的更常规的指南，请参阅[视觉反馈指南](https://msdn.microsoft.com/library/windows/apps/hh465342)。
+有关视觉反馈的更常规的指南，请参阅[视觉反馈指南](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-visualfeedback)。
 
 ## <a name="cursors"></a>光标
 
 
 为触摸板指针提供了一组标准光标。 它们用来表示元素的主要操作。
 
-每个标准光标都有一个与它相关联的默认图像。 用户或应用可以随时替换与任何标准光标相关联的默认图像。 UWP 应用通过 [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) 功能指定光标图像。
+每个标准光标都有一个与它相关联的默认图像。 用户或应用可以随时替换与任何标准光标相关联的默认图像。 UWP 应用通过 [**PointerCursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) 功能指定光标图像。
 
 如果你需要自定义鼠标光标：
 

@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 呈现
 ms.localizationpriority: medium
-ms.openlocfilehash: 108e9bf21b0552ac7f88721bf4b1ee72ca2a5e2c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2b44558232247de969f22d5767a16d921cfbf252
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610502"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367572"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>呈现框架 II:游戏渲染
 
@@ -37,7 +37,7 @@ ms.locfileid: "57610502"
 呈现器负责创建和维护用于生成游戏视觉显示的所有 D3D11 和 D2D 对象。 __GameRenderer__ 类是此示例游戏的呈现器，满足该游戏的呈现需求。
 
 以下是可用于帮助你设计游戏呈现器的一些概念：
-* 由于 Direct3D 11 API 定义为 [COM](https://msdn.microsoft.com/library/windows/desktop/ms694363.aspx) API，因此必须提供对这些 API 定义的对象的 [ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class) 引用。 当应用终止时这些对象的最后引用超出范围时，将自动释放这些对象。 有关详细信息，请参阅 [ComPtr](https://github.com/Microsoft/DirectXTK/wiki/ComPtr)。 这些对象的示例：常量缓冲区、着色器对象 - [顶点着色器](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders)、[像素着色器](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders)以及着色器资源对象。
+* 由于 Direct3D 11 API 定义为 [COM](https://docs.microsoft.com/windows/desktop/com/the-component-object-model) API，因此必须提供对这些 API 定义的对象的 [ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class) 引用。 当应用终止时这些对象的最后引用超出范围时，将自动释放这些对象。 有关详细信息，请参阅 [ComPtr](https://github.com/Microsoft/DirectXTK/wiki/ComPtr)。 这些对象的示例：常量缓冲区、着色器对象 - [顶点着色器](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders)、[像素着色器](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders)以及着色器资源对象。
 * 在此类中定义常量缓冲区是为了保留呈现所需的各种数据。
     * 使用具有不同频率的多个常量缓冲区是为了减少每帧必须发送到 GPU 的数据量。 该示例基于常量必须更新的频率将它们分为不同的缓冲区。 这是 Direct3D 编程的最佳做法。 
     * 在此游戏示例中，定义了 4 个常量缓冲区。
@@ -46,7 +46,7 @@ ms.locfileid: "57610502"
         3. __m\_constantBufferChangesEveryFrame__包含视图矩阵。 此矩阵依赖于相机位置和观看方向（投影的法线），并且使用 __Render__ 方法每帧仅更改一次。 这之前在讨论__呈现框架实现：对呈现简介__下[ __GameRenderer::Render__方法](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method)。
         4. __m\_constantBufferChangesEveryPrim__包含每个基元的模型矩阵和材料属性。 模型矩阵将顶点从本地坐标转换为世界坐标。 这些常量特定于每个基元并在每次绘图调用时更新。 这之前在讨论__呈现框架实现：对呈现简介__下[基元呈现](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering)。
 * 保持基元纹理的着色器资源对象也在此类中定义。
-    * 一些纹理已预先定义（[DDS](https://msdn.microsoft.com/library/windows/desktop/bb943991.aspx) 是可用来存储压缩和未压缩纹理的文件格式。 DDS 纹理用于游戏世界的墙壁和地面以及弹药范围。）
+    * 一些纹理已预先定义（[DDS](https://docs.microsoft.com/windows/desktop/direct3ddds/dx-graphics-dds-pguide) 是可用来存储压缩和未压缩纹理的文件格式。 DDS 纹理用于游戏世界的墙壁和地面以及弹药范围。）
     * 在此游戏的示例中，着色器资源对象是： __m\_sphereTexture__， __m\_cylinderTexture__， __m\_ceilingTexture__， __m\_floorTexture__， __m\_wallsTexture__。
 * 在此类中定义的着色器对象用于计算基元和纹理。 
     * 在此游戏的示例中，着色器对象是__m\_vertexShader__， __m\_vertexShaderFlat__，以及__m\_pixelShader__，__m\_pixelShaderFlat__。

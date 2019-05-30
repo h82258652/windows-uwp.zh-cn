@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cb87bea001492e39a0f60b96f884db70b5bd28ad
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d5774b5301f7e8ce0616df72cfbf4fc81d0d0cf7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592522"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363249"
 ---
 # <a name="command-bar-flyout"></a>命令栏浮出控件
 
@@ -153,7 +153,7 @@ CommandBarFlyout 控件具有可用于添加命令和内容的 2 个属性：[Pr
 
 ### <a name="app-bar-buttons"></a>应用栏按钮
 
-您可以填充 PrimaryCommands 和直接与 SecondaryCommands [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx)， [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx)，并[AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx)控件。
+您可以填充 PrimaryCommands 和直接与 SecondaryCommands [AppBarButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton)， [AppBarToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton)，并[AppBarSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator)控件。
 
 应用栏按钮控件以一个图标和文本标签为特征。 这些控件进行优化以使用命令栏中，具体取决于是否在控件显示在命令栏或溢出菜单中更改其外观。
 
@@ -384,7 +384,7 @@ CommandBarFlyout 控件具有可用于添加命令和内容的 2 个属性：[Pr
 
 此表显示了包含在 TextCommandBarFlyout，它们会在显示时的命令。
 
-| 命令 | 所示... |
+| Command | 所示... |
 | ------- | -------- |
 | Bold | 当文本控件不是只读的 (RichEditBox 仅)。 |
 | Italic | 当文本控件不是只读的 (RichEditBox 仅)。 |
@@ -411,4 +411,4 @@ TextCommandBarFlyout 不能自定义，并且每个文本控件将自动管理�
 ## <a name="related-articles"></a>相关文章
 
 - [适用于 UWP 应用的命令设计基础知识](../basics/commanding-basics.md)
-- [CommandBar 类](https://msdn.microsoft.com/library/windows/apps/dn279427)
+- [CommandBar 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)

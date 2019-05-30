@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 加载, 栅格化, 网格, 位图, 2D, 3D
 ms.localizationpriority: medium
-ms.openlocfilehash: afd08d62182bd0980f43ce1c4578c1181f8a6d2f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 942a775fca262903b1ee72831b4eae6612d25786
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613742"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368858"
 ---
 # <a name="fundamentals-of-directx-programming"></a>DirectX 编程基础知识
 
@@ -42,7 +42,7 @@ DirectX 游戏的基本 3D 图形主题通过介绍 Direct3D 概念和 API 的�
 <td align="left"><p>使用 DirectX 创建 2D 图形。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/windows/uwp/graphics-concepts/index">Direct3D 图形学习指南</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/uwp/graphics-concepts/index">Direct3D 图形学习指南</a></p></td>
 <td align="left"><p>了解 Direct3D 图形概念。</p></td>
 </tr>
 <tr class="odd">

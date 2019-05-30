@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d66d717d77d2797e8a483871b8d3369befb5b6b
-ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.openlocfilehash: f199d70fc9194f211533820a7b23e20de929752d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320580"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359343"
 ---
 # <a name="uri-schemes"></a>URI 方案
 
@@ -249,11 +249,11 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 ### <a name="path-ms-resource"></a>路径 (ms-resource)
 
-路径标识 [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) 子树（请参阅[资源管理系统](https://msdn.microsoft.com/library/windows/apps/jj552947)）和其中的 [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live) 的分层位置。 通常情况下，它对应资源文件 (.resw) 的文件名（不包括扩展）和其中的字符串资源的标识符。
+路径标识 [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) 子树（请参阅[资源管理系统](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))）和其中的 [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live) 的分层位置。 通常情况下，它对应资源文件 (.resw) 的文件名（不包括扩展）和其中的字符串资源的标识符。
 
 有关示例和详细信息，请参阅[本地化 UI 和应用包清单中的字符串](localize-strings-ui-manifest.md)和[磁贴和 toast 通知的语言、比例和高对比度支持](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)。
 
-`ms-resource` 的路径组件同通用 URI 一样区分大小写。 但却提供了基础检索[CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628)与*ignoreCase*设置为`true`。
+`ms-resource` 的路径组件同通用 URI 一样区分大小写。 但却提供了基础检索[CompareStringOrdinal](https://docs.microsoft.com/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal)与*ignoreCase*设置为`true`。
 
 URI 的标准化形式保持大小写，并对 RFC 3986 未保留的字符进行百分比解码（“%”符号后紧跟两位十六进制表示形式）。 字符“？”、“#”、“/”、“*”和‘”’（双引号）在路径中必须为百分比编码以表示文件或文件名等数据。 所有百分比编码字符在检索前解码。 因此，若要从资源文件中检索字符串资源名为`Hello#World.resw`，使用此 URI。
 
@@ -274,5 +274,5 @@ ms-resource:///Hello%23World/String1
 * [从 XAML 标记和代码中引用图像或其他资产](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [存储和检索设置和其他应用程序数据](../design/app-settings/store-and-retrieve-app-data.md)
 * [对 UI 和应用包清单中的字符串进行本地化](localize-strings-ui-manifest.md)
-* [资源管理系统](https://msdn.microsoft.com/library/windows/apps/jj552947)
+* [资源管理系统](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))
 * [磁贴和 toast 通知支持的语言、 缩放性和高对比度](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

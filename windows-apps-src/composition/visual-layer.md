@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4607280fd031fa556bfc5d1c719f4b4e1aeb928e
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 7c61f6580039b9fe3da915491acd84c939088370
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984103"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361389"
 ---
 # <a name="visual-layer"></a>可视化层
 
@@ -38,7 +38,7 @@ Windows UWP 应用已在通过 UI 框架之一使用可视化层。 还可以非
 
 ### <a name="content"></a>内容
 
-内容由使用视觉对象的动画和效果系统进行托管、转换并提供进行使用。 类层次结构的底层是 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 类，这是应用进程中用于合成器中的视觉状态的轻型线程敏捷代理。 视觉对象的类包括  [**ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810)若要允许的子级创建的视觉对象的树并[ **SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433) ，包含内容，并且可以使用任一纯色，自定义绘制的内容或可视化效果绘制。 这些 Visual 类型一起组成 2D UI 的可视化树结构并支持大多数可见 XAML FrameworkElement。
+内容由使用视觉对象的动画和效果系统进行托管、转换并提供进行使用。 类层次结构的底层是 [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) 类，这是应用进程中用于合成器中的视觉状态的轻型线程敏捷代理。 视觉对象的类包括  [**ContainerVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual)若要允许的子级创建的视觉对象的树并[ **SpriteVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) ，包含内容，并且可以使用任一纯色，自定义绘制的内容或可视化效果绘制。 这些 Visual 类型一起组成 2D UI 的可视化树结构并支持大多数可见 XAML FrameworkElement。
 
 有关详细信息，请参阅[合成视觉对象](composition-visual-tree.md)概述。
 
@@ -58,7 +58,7 @@ Windows UWP 应用已在通过 UI 框架之一使用可视化层。 还可以非
 
 ### <a name="working-with-your-xaml-uwp-app"></a>使用 XAML UWP 应用
 
-可以访问 XAML 框架创建的视觉对象，并使用 [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908) 中的 [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) 类支持可见 FrameworkElement。 请注意，框架创建的视觉对象对自定义具有一些限制。 这是因为框架在管理偏移、转换和生存期。 但是可以创建自己的视觉对象，并通过 ElementCompositionPreview 将它们附加到现有 XAML 元素（或通过将其添加到可视化树结构中某个位置的现有 ContainerVisual）。
+可以访问 XAML 框架创建的视觉对象，并使用 [**Windows.UI.Xaml.Hosting**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting) 中的 [**ElementCompositionPreview**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview) 类支持可见 FrameworkElement。 请注意，框架创建的视觉对象对自定义具有一些限制。 这是因为框架在管理偏移、转换和生存期。 但是可以创建自己的视觉对象，并通过 ElementCompositionPreview 将它们附加到现有 XAML 元素（或通过将其添加到可视化树结构中某个位置的现有 ContainerVisual）。
 
 有关详细信息，请参阅[将可视化层与 XAML 结合使用](using-the-visual-layer-with-xaml.md)概述。
 
@@ -66,11 +66,11 @@ Windows UWP 应用已在通过 UI 框架之一使用可视化层。 还可以非
 
 可以使用可视化层以增强的外观、 感受和功能在 WPF 中，Windows 窗体和C++Win32 桌面应用程序。 你可以迁移岛的内容，使用可视化层，并将你的 UI 的其余部分保留在其现有的框架。 这意味着您可以进行重大更新和增强功能到应用程序 UI 而无需对现有代码进行大量更改基。
 
-有关详细信息，请参阅[实现使用可视化层桌面应用程序的现代化](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps)。
+有关详细信息，请参阅[使用可视化层实现桌面应用的现代化](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps)。
 
 ## <a name="additional-resources"></a>其他资源
 
-* [**API 的完整的参考文档**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
+* [**API 的完整的参考文档**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
 * [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) 中的高级 UI 和复合示例
 * [Windows.UI.Composition 示例库](https://aka.ms/winuiapp)
 * [@windowsui Twitter 订阅源 ](https://twitter.com/windowsui)

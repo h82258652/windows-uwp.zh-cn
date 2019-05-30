@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e0c709261b08231fa82af615d5398fd66648d4e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7381d8d99f47a69ba7398366762a7dbb4088e04a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646462"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364179"
 ---
 # <a name="split-view-control"></a>拆分视图控件
 
 拆分视图控件具有一个可展开/可折叠的窗格和一个内容区域。
 
-> **重要的 API**：[SplitView 类](https://msdn.microsoft.com/library/windows/apps/dn864360)
+> **重要的 API**：[SplitView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView)
 
 下面是使用 SplitView 显示其中心的 Microsoft Edge 应用的示例。
 
@@ -32,11 +32,11 @@ ms.locfileid: "57646462"
 
  拆分视图的内容区域始终可见。 窗格可以展开和折叠或停留在打开状态，而且可以从应用窗口的左侧或右侧显示其自身。 窗格中有四种模式：
 
--   **覆盖层**
+-   **Overlay**
 
     在打开之前隐藏窗格。 在打开时，窗格覆盖内容区域。
 
--   **内联**
+-   **Inline**
 
     窗格始终可见，并且不会覆盖内容区域。 窗格和内容区域划分可用的屏幕空间。
 

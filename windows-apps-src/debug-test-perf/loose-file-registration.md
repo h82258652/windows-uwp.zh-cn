@@ -5,12 +5,12 @@ ms.date: 6/1/2018
 ms.topic: article
 keywords: windows 10、 uwp、 设备门户、 应用程序管理器、 部署、 sdk
 ms.localizationpriority: medium
-ms.openlocfilehash: 928c07bd23228f0fefd78be6019a0d116b2e6e4b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: adc944f3e84e2ea7ba3dacd2021bc2e141bf8cdd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635422"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362321"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>通过松散文件注册部署应用 
 
@@ -34,7 +34,7 @@ ms.locfileid: "57635422"
 Windows 提供了多个开发人员工具来注册在本地和远程设备上的松散文件布局。 您可以从中`WinDeployAppCmd`（Windows SDK 工具），Windows Device Portal、 PowerShell，并[Visual Studio](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#register-layout-from-network)。 下面我们将详细阐述如何注册使用这些工具的松散文件。 但首先，确保您具有以下设置：
 
 - 你的设备必须在 Windows 10 创意者更新 (生成 14965) 或更高版本。
-- 您将需要启用[开发人员模式](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)并[设备发现](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development#device-discovery)在所有设备上。
+- 您将需要启用[开发人员模式](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)并[设备发现](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development#device-discovery)在所有设备上。
 
 > [!IMPORTANT]
 > 松散文件注册才支持网络共享 (SMB) 协议的设备上可用：桌面和 Xbox。 

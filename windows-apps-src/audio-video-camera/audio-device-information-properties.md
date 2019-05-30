@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 443bcc3c0280aca85de31d8c9f3704302432cb76
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 97b6bd0c3567c00902a9528d54e6417f41ac66ed
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627172"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359099"
 ---
 # <a name="audio-device-information-properties"></a>音频设备信息属性
 
-本文列出了与音频设备相关的设备信息属性。 在 Windows 上，每台硬件设备均已关联了 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 属性，该属性提供关于设备的详细信息，可供你在需要关于设备的特定信息时或生成设备选择器时使用。 有关在 Windows 上枚举设备的常规信息，请参阅[枚举设备](../devices-sensors/enumerate-devices.md)和[设备信息属性](../devices-sensors/device-information-properties.md)。
+本文列出了与音频设备相关的设备信息属性。 在 Windows 上，每台硬件设备均已关联了 [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) 属性，该属性提供关于设备的详细信息，可供你在需要关于设备的特定信息时或生成设备选择器时使用。 有关在 Windows 上枚举设备的常规信息，请参阅[枚举设备](../devices-sensors/enumerate-devices.md)和[设备信息属性](../devices-sensors/device-information-properties.md)。
 
 
 |名称|在任务栏的搜索框中键入|描述|

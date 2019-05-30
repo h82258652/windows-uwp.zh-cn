@@ -10,12 +10,12 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: a984e30bbdc569522b04d328087775aa9e8ce2bc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3fc54662b29255b73e972bcfb0fa4b6bb2dcf968
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648532"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363062"
 ---
 # <a name="content-links-in-text-controls"></a>文本控件中的内容链接
 
@@ -303,7 +303,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 ```
 
 > [!TIP]
-> 在文本控件中使用 ContentLink 而其他文本元素采用 XAML 时，请将内容放置在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，并对 Span 应用 `xml:space="preserve"` 属性以在 ContentLink 和其他元素之间保留空白区域。
+> 在文本控件中使用 ContentLink 而其他文本元素采用 XAML 时，请将内容放置在 [Span](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span) 容器中，并对 Span 应用 `xml:space="preserve"` 属性以在 ContentLink 和其他元素之间保留空白区域。
 
 ## <a name="examples"></a>示例
 

@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, 联系人, 联系人卡片, 注释
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a3485635a49b1690116e7cb271435e63bee2151
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 506f0d2c778a934c3f8861493f4a512a39fe66fc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616432"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360456"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>将你的应用与联系人卡片上的操作关联起来
 
@@ -136,7 +136,7 @@ await annotationList.TrySaveAnnotationAsync(annotation);
   </uap:Extension>
 </Extensions>
 ```
-你还可以在 Visual Studio 中的清单设计器的“声明”选项卡中添加这些协议处理程序。
+你还可以在 Visual Studio 中的清单设计器的“声明”  选项卡中添加这些协议处理程序。
 
 ![清单设计器的“声明”选项卡](images/manifest-designer-protocols.png)
 
@@ -154,7 +154,7 @@ await annotationList.TrySaveAnnotationAsync(annotation);
 
 ![微型联系人卡片](images/mini-contact-card.png)
 
-“邮件”应用等应用会打开微型联系人卡片。 你的应用也可以打开它们。 此代码演示如何执行该操作。
+“邮件”  应用等应用会打开微型联系人卡片。 你的应用也可以打开它们。 此代码演示如何执行该操作。
 
 ```cs
 public async void OpenContactCard(object sender, RoutedEventArgs e)
@@ -181,13 +181,13 @@ public async void OpenContactCard(object sender, RoutedEventArgs e)
 
 ## <a name="perform-operations-when-users-select-your-app-in-a-contact-card"></a>当用户在联系人卡片中选择你的应用时执行操作
 
-在 **App.cs** 文件中替代 [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) 方法，并将用户导航到你的应用中的页面。 [联系人卡片集成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)演示了执行该操作的一种方法。
+在 **App.cs** 文件中替代 [Application.OnActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated) 方法，并将用户导航到你的应用中的页面。 [联系人卡片集成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)演示了执行该操作的一种方法。
 
-在页面的代码隐藏文件中，替代 [Page.OnNavigatedTo](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx) 方法。 联系人卡片向此方法传递操作名称和用户 ID。
+在页面的代码隐藏文件中，替代 [Page.OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) 方法。 联系人卡片向此方法传递操作名称和用户 ID。
 
-若要启动的视频或音频的调用，请参阅此示例：[VoIP 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP)。 你将在 [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx) 命名空间中找到完整的 API。
+若要启动的视频或音频的调用，请参阅此示例：[VoIP 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP)。 你将在 [WIndows.ApplicationModel.Calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls) 命名空间中找到完整的 API。
 
-若要促进消息传送，请参阅 [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.aspx) 命名空间。
+若要促进消息传送，请参阅 [Windows.ApplicationModel.Chat](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat) 命名空间。
 
 你还可以启动另一个应用。 这是此代码的作用。
 

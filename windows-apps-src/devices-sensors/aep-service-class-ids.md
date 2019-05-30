@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08a186e0a8e7293b139f756b69966cd8d4b49c92
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1e4b4c89fff2854c36bd76cc680197fad1aa8dff
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598212"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370407"
 ---
 # <a name="aep-service-class-ids"></a>AEP 服务类 ID
 
@@ -23,7 +23,7 @@ ms.locfileid: "57598212"
 
 关联终结点 (AEP) 服务为设备通过给定协议支持的服务提供编程合约。 其中多个服务具有现成的标识符，应在引用它们时使用。 这些合约通过 **System.Devices.AepService.ServiceClassId** 属性标识。 本主题列出了几个众所周知的 AEP 服务类 ID。 AEP 服务类 ID 也可应用于具有客户类 ID 的协议。
 
-应用开发人员应使用基于这些类 ID 的高级查询语法 (AQS) 筛选器来将其查询限制于其打算使用的 AEP 服务。 这既会将查询限制于相关服务，又会显著提高设备的性能、电池寿命和服务质量。 例如，应用程序可以通过这些服务类 ID 将设备用作 Miracast 同步或 DLNA 苏自媒体呈现器 (DMR)。 有关其他设备和服务彼此如何交互的详细信息，请参阅[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)。
+应用开发人员应使用基于这些类 ID 的高级查询语法 (AQS) 筛选器来将其查询限制于其打算使用的 AEP 服务。 这既会将查询限制于相关服务，又会显著提高设备的性能、电池寿命和服务质量。 例如，应用程序可以通过这些服务类 ID 将设备用作 Miracast 同步或 DLNA 苏自媒体呈现器 (DMR)。 有关其他设备和服务彼此如何交互的详细信息，请参阅[**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind)。
 
 ## <a name="bluetooth-and-bluetooth-le-services"></a>蓝牙和蓝牙 LE 服务
 
@@ -72,7 +72,7 @@ ms.locfileid: "57598212"
 
  
 
-有关可用蓝牙服务的更完整列表，请参阅[此处](https://go.microsoft.com/fwlink/p/?LinkID=619586)和[此处](https://go.microsoft.com/fwlink/p/?LinkID=619587)的蓝牙协议和服务页面。 你还可以使用 [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571) API 获取一些常见的 GATT 服务。
+有关可用蓝牙服务的更完整列表，请参阅[此处](https://go.microsoft.com/fwlink/p/?LinkID=619586)和[此处](https://go.microsoft.com/fwlink/p/?LinkID=619587)的蓝牙协议和服务页面。 你还可以使用 [**GattServiceUuids**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids) API 获取一些常见的 GATT 服务。
 
 ## <a name="custom-bluetooth-le-services"></a>自定义蓝牙 LE 服务
 
@@ -118,7 +118,7 @@ WSD 服务使用以下协议标识符：{782232aa-a2f9-4993-971b-aedc551346b0}
 
 ## <a name="aqs-sample"></a>AQS 示例
 
-此 AQS 将对支持 DIAL 的所有 UPnP **AssociationEndpointService** 对象进行筛选。 在此情况下，[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 设置为 **AsssociationEndpointService**。
+此 AQS 将对支持 DIAL 的所有 UPnP **AssociationEndpointService** 对象进行筛选。 在此情况下，[**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) 设置为 **AsssociationEndpointService**。
 
 ``` syntax
 System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND
