@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, 呈现框架, 转换, direct3d 9, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: aba723a5ee2443664d6d640adc124b991ff0da7e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6629ba035a7fb0085e28f3fa033e58a1c1105ccf
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608822"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368022"
 ---
 # <a name="convert-the-rendering-framework"></a>转换呈现框架
 
@@ -93,7 +93,7 @@ technique RenderSceneSimple
 }
 ```
 
-在 Direct3D 11 中，我们仍然可以使用我们的 HLSL 着色器。 我们将每个着色器放置到它自己的 HLSL 文件中以便 Visual Studio 将它们编译成单独的文件，之后我们会将它们作为单独的 Direct3D 资源加载。 我们在目标级别设置为[着色器模型 4 级别 9\_1 (/ 4\_0\_级别\_9\_1)](https://msdn.microsoft.com/library/windows/desktop/ff476876)因为 DirectX 9.1 gpu 编写这些着色器。
+在 Direct3D 11 中，我们仍然可以使用我们的 HLSL 着色器。 我们将每个着色器放置到它自己的 HLSL 文件中以便 Visual Studio 将它们编译成单独的文件，之后我们会将它们作为单独的 Direct3D 资源加载。 我们在目标级别设置为[着色器模型 4 级别 9\_1 (/ 4\_0\_级别\_9\_1)](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)因为 DirectX 9.1 gpu 编写这些着色器。
 
 定义了输入布局之后，我们要确保它表示我们用来在系统内存和 GPU 内存中存储每个顶点数据的相同数据结构。 同样，顶点着色器的输出应该与用作像素着色器输入的结构相匹配。 在 C++ 中，将数据从一个函数传递到另一个函数时的规则并不相同；你可以忽略位于结构结尾部分的未使用的变量。 但不能重新排列顺序，并且不能跳过数据结构中间的内容。
 
@@ -101,7 +101,7 @@ technique RenderSceneSimple
 
  
 
-可以在 HLSL 文件，使用较旧的语法着色器语义-例如，而不是 SV 的颜色\_目标。 如果是这样，那么你将需要启用 HLSL 兼容模式（/Gec 编译器选项）或将着色器[语义](https://msdn.microsoft.com/library/windows/desktop/bb509647)更新为当前语法。 该示例中的顶点着色器已经使用当前语法进行了更新。
+可以在 HLSL 文件，使用较旧的语法着色器语义-例如，而不是 SV 的颜色\_目标。 如果是这样，那么你将需要启用 HLSL 兼容模式（/Gec 编译器选项）或将着色器[语义](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)更新为当前语法。 该示例中的顶点着色器已经使用当前语法进行了更新。
 
 下面是我们的硬件转换顶点着色器，这次是在它自己的文件中定义的。
 
@@ -185,7 +185,7 @@ PS_OUTPUT main(PS_INPUT In)
 ## <a name="compile-and-load-shaders"></a>编译和加载着色器
 
 
-Direct3D 9 游戏通常使用“效果”库作为实现可编程管道的便捷方法。 可以使用 [**D3DXCreateEffectFromFile function**](https://msdn.microsoft.com/library/windows/desktop/bb172768) 方法在运行时编译效果。
+Direct3D 9 游戏通常使用“效果”库作为实现可编程管道的便捷方法。 可以使用 [**D3DXCreateEffectFromFile function**](https://docs.microsoft.com/windows/desktop/direct3d9/d3dxcreateeffectfromfile) 方法在运行时编译效果。
 
 在 Direct3D 9 中加载效果
 
@@ -234,7 +234,7 @@ m_d3dDevice->CreateVertexShader(
     );
 ```
 
-若要在编译的应用程序包中包含着色器字节码，只需将 HLSL 文件添加到 Visual Studio 项目。 Visual Studio 将使用[效果编译器工具](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC) 将 HLSL 文件编译到编译的着色器对象（.CSO 文件）中，并将其包含在应用包中。
+若要在编译的应用程序包中包含着色器字节码，只需将 HLSL 文件添加到 Visual Studio 项目。 Visual Studio 将使用[效果编译器工具](https://docs.microsoft.com/windows/desktop/direct3dtools/fxc) (FXC) 将 HLSL 文件编译到编译的着色器对象（.CSO 文件）中，并将其包含在应用包中。
 
 > **请注意**  请确保将正确的目标功能级别设置为 HLSL 编译器： 右键单击 Visual Studio 中的 HLSL 源代码文件，选择属性，并更改**着色器模型**下设置**HLSL 编译器-&gt;常规**。 当你的应用创建 Direct3D 着色器资源时，Direct3D 会针对硬件功能检查此属性。
 
@@ -242,11 +242,11 @@ m_d3dDevice->CreateVertexShader(
 
 ![hlsl 着色器属性](images/hlslshaderpropertiesmenu.png)![hlsl 着色器类型](images/hlslshadertypeproperties.png)
 
-这是创建输入布局的最佳位置，它对应于 Direct3D 9 中的顶点流声明。 每个顶点数据结构需要与顶点着色器使用的数据结构相匹配；在 Direct3D 11 中，我们对输入布局拥有更多控制；我们可以定义数组大小、浮点矢量的位长度，并可为顶点着色器指定语义。 我们将创建[ **D3D11\_输入\_元素\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180)结构并使用它可以通知 Direct3D 的每个顶点数据的外观。 我们一直等到加载完顶点着色器之后才定义输入布局，因为 API 要针对顶点着色器资源对输入布局进行验证。 如果输入布局不兼容，则 Direct3D 会引发异常。
+这是创建输入布局的最佳位置，它对应于 Direct3D 9 中的顶点流声明。 每个顶点数据结构需要与顶点着色器使用的数据结构相匹配；在 Direct3D 11 中，我们对输入布局拥有更多控制；我们可以定义数组大小、浮点矢量的位长度，并可为顶点着色器指定语义。 我们将创建[ **D3D11\_输入\_元素\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc)结构并使用它可以通知 Direct3D 的每个顶点数据的外观。 我们一直等到加载完顶点着色器之后才定义输入布局，因为 API 要针对顶点着色器资源对输入布局进行验证。 如果输入布局不兼容，则 Direct3D 会引发异常。
 
-每个顶点数据必须采用兼容的类型存储在系统内存中。 可帮助 DirectXMath 数据类型;例如，DXGI\_格式\_R32G32B32\_FLOAT 对应于[ **XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475)。
+每个顶点数据必须采用兼容的类型存储在系统内存中。 可帮助 DirectXMath 数据类型;例如，DXGI\_格式\_R32G32B32\_FLOAT 对应于[ **XMFLOAT3**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat3)。
 
-> **请注意**  常量缓冲区使用一次将对齐到四个浮点数的固定输入的布局。 [**XMFLOAT4** ](https://msdn.microsoft.com/library/windows/desktop/ee419608) （和其衍生产品） 的常量缓冲区数据建议。
+> **请注意**  常量缓冲区使用一次将对齐到四个浮点数的固定输入的布局。 [**XMFLOAT4** ](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4) （和其衍生产品） 的常量缓冲区数据建议。
 
  
 
@@ -483,7 +483,7 @@ m_d3dContext->DrawIndexed(
 m_swapChain->Present(1, 0);
 ```
 
-将从在 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中实现的游戏循环调用我们刚刚创建的呈现链。 如下所示[第 3 部分：视区和游戏循环](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)。
+将从在 [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run) 方法中实现的游戏循环调用我们刚刚创建的呈现链。 如下所示[第 3 部分：视区和游戏循环](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)。
 
  
 

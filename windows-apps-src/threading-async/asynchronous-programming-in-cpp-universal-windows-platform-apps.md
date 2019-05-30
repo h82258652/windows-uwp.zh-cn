@@ -1,23 +1,23 @@
 ---
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
-description: 本文介绍使用 Visual c + + 组件扩展中的异步方法的建议的方法 (C + + /cli CX) 通过使用在 ppltasks.h 中的并发命名空间中定义的任务类。
+description: 本指南介绍了使用视觉对象中的异步方法的建议的方法C++组件扩展 (C++/CX) 通过使用在 ppltasks.h 中的并发命名空间中定义的任务类。
 title: 使用 C++ 进行异步编程
 ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, uwp, 线程, 异步, C++
 ms.localizationpriority: medium
-ms.openlocfilehash: beab78415ab36fc7bc0659af1b3466b2c3601d88
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: bfbae15e65e4acfe08ae1778a3fa71416e0cbe6e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662832"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372696"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>使用 C++/CX 异步编程
 > [!NOTE]
 > 本主题旨在帮助你维护 C++/CX 应用程序。 不过，我们建议你使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 编写新应用程序。 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。
 
-本文介绍使用 Visual c + + 组件扩展中的异步方法的建议的方法 (C + + /cli CX) 通过使用`task`类中定义的`concurrency`ppltasks.h 中的命名空间。
+本指南介绍了使用视觉对象中的异步方法的建议的方法C++组件扩展 (C++/CX) 通过使用`task`中定义的类`concurrency`ppltasks.h 中的命名空间。
 
 ## <a name="universal-windows-platform-uwp-asynchronous-types"></a>通用 Windows 平台 (UWP) 异步类型
 通用 Windows 平台 (UWP) 功能具有一个定义完善的用于调用异步方法的模型，并提供了使用此类方法所需的类型。 如果你对 UWP 异步模型不熟悉，请在阅读本文其余部分之前阅读[异步编程][AsyncProgramming]。
@@ -35,7 +35,7 @@ ms.locfileid: "57662832"
 本文提供了有关如何将 **task** 类与 UWP 异步 API 一起使用的基本指南。 有关详细信息的完整文档有关**任务**包括及其相关方法[**创建\_任务**][createTask]，请参阅[任务并行 （并发运行时）][taskParallelism]。 
 
 ## <a name="consuming-an-async-operation-by-using-a-task"></a>通过任务使用异步操作
-以下示例说明如何利用任务类来使用返回 [**IAsyncOperation**][IAsyncOperation] 接口且其操作会生成一个值的 **async** 方法。 以下是基本步骤：
+以下示例说明如何利用任务类来使用返回 [**IAsyncOperation**][IAsyncOperation] 接口且其操作会生成一个值的 **async** 方法。 基本步骤如下：
 
 1.  调用 `create_task` 方法并将其传递到 **IAsyncOperation^** 对象。
 
@@ -80,7 +80,7 @@ void App::TestAsync()
 尽管你在本地堆栈上声明任务变量，但它仍然管理其生存期，这样在其所有操作完成并且对其的所有引用离开作用域之前都不会被删除（即使该方法在操作完成之前返回）。
 
 ## <a name="creating-a-chain-of-tasks"></a>创建任务链
-在异步编程中，常见的做法是定义一个操作序列，也称作*任务链*，其中每个延续只有在前一个延续完成后才能执行。 在某些情况下，上一个（或*先行*）任务会产生一个延续接受为输入的值。 通过使用 [**task::then**][taskThen] 方法，你可以按照直观且简单的方式创建任务链；该方法返回一个 **task<T>**，其中 **T** 是 lambda 函数的返回类型。 您可以编写到任务链的多个继续符： `myTask.then(…).then(…).then(…);`
+在异步编程中，常见的做法是定义一个操作序列，也称作*任务链*，其中每个延续只有在前一个延续完成后才能执行。 在某些情况下，上一个（或*先行*）任务会产生一个延续接受为输入的值。 通过使用 [**task::then**][taskThen] 方法，你可以按照直观且简单的方式创建任务链；该方法返回一个 **task<T>** ，其中 **T** 是 lambda 函数的返回类型。 您可以编写到任务链的多个继续符： `myTask.then(…).then(…).then(…);`
 
 当延续创建一个新的异步操作时，任务链尤其有用；此类任务称为异步任务。 以下示例将介绍具有两个延续的任务链。 初始任务获取一个现有文件的句柄，当该操作完成后，第一个延续会启动一个新的异步操作来删除该文件。 当该操作完成后，第二个延续将运行，并且输出一条确认消息。
 
@@ -104,7 +104,7 @@ void App::DeleteWithTasks(String^ fileName)
 
 上一个示例说明了四个要点：
 
--   第一个延续将 [**IAsyncAction^**][IAsyncAction] 对象转换为 **task<void>** 并返回 **task**。
+-   第一个延续将 [**IAsyncAction^** ][IAsyncAction] 对象转换为 **task<void>** 并返回 **task**。
 
 -   第二个延续执行无错误处理，因此接受 **void** 而不是 **task<void>** 作为输入。 它是一个基于值的延续。
 
@@ -115,9 +115,9 @@ void App::DeleteWithTasks(String^ fileName)
 **请注意**  创建的任务链是一种要使用的**任务**类组合异步操作。 还可以通过使用连接和选择运算符 **&&** 和 **||** 来组合操作。 有关详细信息，请参阅[任务并行度（并发运行时）][taskParallelism]。
 
 ## <a name="lambda-function-return-types-and-task-return-types"></a>Lambda 函数返回类型和任务返回类型
-在任务延续中，lambda 函数的返回类型包含在 **task** 对象中。 如果该 lambda 返回 **double**，则延续任务的类型为 **task<double>**。 但是，任务对象的设计目的是为了不生成无需嵌套的返回类型。 如果 lambda 返回 **IAsyncOperation&lt;SyndicationFeed^&gt;^**，则延续返回 **task&lt;SyndicationFeed^&gt;**，而不是 **task&lt;task&lt;SyndicationFeed^&gt;&gt;** 或 **task&lt;IAsyncOperation&lt;SyndicationFeed^&gt;^&gt;^**。 此过程称为*异步解包*，并且它还确保延续内部的异步操作在调用下一个延续之前完成。
+在任务延续中，lambda 函数的返回类型包含在 **task** 对象中。 如果该 lambda 返回 **double**，则延续任务的类型为 **task<double>** 。 但是，任务对象的设计目的是为了不生成无需嵌套的返回类型。 如果 lambda 返回 **IAsyncOperation&lt;SyndicationFeed^&gt;^** ，则延续返回 **task&lt;SyndicationFeed^&gt;** ，而不是 **task&lt;task&lt;SyndicationFeed^&gt;&gt;** 或 **task&lt;IAsyncOperation&lt;SyndicationFeed^&gt;^&gt;^** 。 此过程称为*异步解包*，并且它还确保延续内部的异步操作在调用下一个延续之前完成。
 
-请注意，在上一个示例中，即使其 lambda 返回 [**IAsyncInfo**][IAsyncInfo] 对象，该任务仍然会返回 **task<void>**。 下表总结了在 lambda 函数和封闭任务之间发生的类型转换：
+请注意，在上一个示例中，即使其 lambda 返回 [**IAsyncInfo**][IAsyncInfo] 对象，该任务仍然会返回 **task<void>** 。 下表总结了在 lambda 函数和封闭任务之间发生的类型转换：
 
 | | |
 |--------------------------------------------------------|---------------------|
@@ -131,7 +131,7 @@ void App::DeleteWithTasks(String^ fileName)
 
 
 ## <a name="canceling-tasks"></a>取消任务
-为用户提供取消异步操作的选项通常是一个不错的方法。 另外，在某些情况下，你可能必须以编程方式从任务链外部取消操作。 尽管每个\***异步**返回类型具有[**取消**] [ IAsyncInfoCancel]它所继承的方法[ **IAsyncInfo**][IAsyncInfo]，很难将其公开给外部方法。 在任务链中支持取消操作的首选的方法是使用[**取消\_令牌\_源**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749985.aspx)创建[**取消\_令牌**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749975.aspx)，然后将令牌传递给构造函数的初始任务。 如果使用了取消标记，创建一个异步任务并[**取消\_令牌\_source::cancel** ](https://msdn.microsoft.com/library/windows/apps/xaml/hh750076.aspx)调用时，该任务会自动调用**取消**上**IAsync\*** 取消操作并传递请求下其延续链。 下面的伪代码演示了基本方法。
+为用户提供取消异步操作的选项通常是一个不错的方法。 另外，在某些情况下，你可能必须以编程方式从任务链外部取消操作。 尽管每个\***异步**返回类型具有[**取消**] [ IAsyncInfoCancel]它所继承的方法[ **IAsyncInfo**][IAsyncInfo]，很难将其公开给外部方法。 在任务链中支持取消操作的首选的方法是使用[**取消\_令牌\_源**](https://docs.microsoft.com/cpp/parallel/concrt/reference/cancellation-token-source-class)创建[**取消\_令牌**](https://docs.microsoft.com/cpp/parallel/concrt/reference/cancellation-token-class)，然后将令牌传递给构造函数的初始任务。 如果使用了取消标记，创建一个异步任务并[**取消\_令牌\_source::cancel** ](https://docs.microsoft.com/cpp/parallel/concrt/reference/cancellation-token-source-class?view=vs-2017)调用时，该任务会自动调用**取消**上**IAsync\*** 取消操作并传递请求下其延续链。 下面的伪代码演示了基本方法。
 
 ``` cpp
 //Class member:
@@ -146,14 +146,14 @@ auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName),
 //getFileTask2.then ...
 ```
 
-取消任务时， [**任务\_取消**] [ taskCanceled]任务链中向下传播异常。 基于值的延续将不执行，但是基于任务的延续将在调用 [**task::get**][taskGet] 时导致引发异常。 如果你有一个错误处理继续符，请确保它捕获**任务\_取消**异常显式。 （此异常不是派生自 [**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755825.aspx)。）
+取消任务时， [**任务\_取消**] [ taskCanceled]任务链中向下传播异常。 基于值的延续将不执行，但是基于任务的延续将在调用 [**task::get**][taskGet] 时导致引发异常。 如果你有一个错误处理继续符，请确保它捕获**任务\_取消**异常显式。 （此异常不是派生自 [**Platform::Exception**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class)。）
 
-取消是协作式操作。 如果延续要执行一些长时间的工作，而不仅是调用 UWP 方法，则需要负责定期检查取消令牌的状态，并且在其被取消后停止执行。 清理期间分配的延续任务的所有资源后，调用[**取消\_当前\_任务**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749945.aspx)取消该任务，并将传播到任何取消在其后的基于值延续。 下面是另外一个示例：你可以创建一个任务链用于表示 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871) 操作的结果。 如果用户选择**取消**按钮，则不会调用 [**IAsyncInfo::Cancel**][IAsyncInfoCancel] 方法。 相反，操作成功，但返回 **nullptr**。 延续可以测试输入的参数并调用**取消\_当前\_任务**如果输入是**nullptr**。
+取消是协作式操作。 如果延续要执行一些长时间的工作，而不仅是调用 UWP 方法，则需要负责定期检查取消令牌的状态，并且在其被取消后停止执行。 清理期间分配的延续任务的所有资源后，调用[**取消\_当前\_任务**](https://docs.microsoft.com/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017)取消该任务，并将传播到任何取消在其后的基于值延续。 下面是另外一个示例：你可以创建一个任务链用于表示 [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) 操作的结果。 如果用户选择**取消**按钮，则不会调用 [**IAsyncInfo::Cancel**][IAsyncInfoCancel] 方法。 相反，操作成功，但返回 **nullptr**。 延续可以测试输入的参数并调用**取消\_当前\_任务**如果输入是**nullptr**。
 
-有关详细信息，请参阅 [PPL 中的取消](https://msdn.microsoft.com/library/windows/apps/xaml/dd984117.aspx)
+有关详细信息，请参阅 [PPL 中的取消](https://docs.microsoft.com/cpp/parallel/concrt/cancellation-in-the-ppl)
 
 ## <a name="handling-errors-in-a-task-chain"></a>在任务链中处理错误
-如果要让一个延续即使在先行被取消或引发异常的情况下也能够执行，请将该延续的 lambda 函数的输入指定为 **task<TResult>** 或 **task<void>**，使该延续成为基于任务的延续，但前提是先行任务的 lambda 返回 [**IAsyncAction^**][IAsyncAction]。
+如果要让一个延续即使在先行被取消或引发异常的情况下也能够执行，请将该延续的 lambda 函数的输入指定为 **task<TResult>** 或 **task<void>** ，使该延续成为基于任务的延续，但前提是先行任务的 lambda 返回 [**IAsyncAction^** ][IAsyncAction]。
 
 若要在任务链中处理错误和取消，则无需使每个延续成为基于任务的延续，也不用将每个可能引发异常的操作封装在 `try…catch` 块中。 相反，你可以将基于任务的延续添加至任务链的末尾，并且在那里处理所有错误。 任何异常，这包括[**任务\_取消**] [ taskCanceled]异常 — 将沿任务链向下传播，绕过任何基于值的延续，以便您可以在错误处理基于任务的延续中处理它。 我们可以重写上一个示例以使用基于任务的错误处理延续：
 
@@ -198,7 +198,7 @@ void App::DeleteWithTasksHandleErrors(String^ fileName)
 ## <a name="managing-the-thread-context"></a>管理线程上下文
 UWP 应用的 UI 在单线程单元 (STA) 中运行。 其 lambda 返回 [**IAsyncAction**][IAsyncAction] 或 [**IAsyncOperation**][IAsyncOperation] 的任务具有单元意识。 如果该任务在 STA 中创建，则默认情况下，除非你另外指定，否则该任务的所有要运行的延续也将在该 STA 中运行。 换句话说，整个任务链从父任务继承单元意识。 该行为可帮助简化与 UI 控件的交互，这些 UI 控件只能从 STA 访问。
 
-例如，在 UWP 应用中，在任何表示 XAML 页面的类的成员函数中，可从 [**task::then**][taskThen] 方法内部填充 [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) 控件，而无需使用 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) 对象。
+例如，在 UWP 应用中，在任何表示 XAML 页面的类的成员函数中，可从 [**task::then**][taskThen] 方法内部填充 [**ListBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox) 控件，而无需使用 [**Dispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 对象。
 
 ``` cpp
 #include <ppltasks.h>
@@ -219,9 +219,9 @@ void App::SetFeedText()
 
 如果任务不返回 [**IAsyncAction**][IAsyncAction] 或 [**IAsyncOperation**][IAsyncOperation]，则它不具有单元意识，并且默认情况下，其延续在第一个可用的后台线程上运行。
 
-可以使用的重载来覆盖这两种任务的默认线程上下文[ **task:: then** ] [ taskThen]采用[**任务\_延续\_上下文**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749968.aspx)。 例如，在某些情况下，在后台线程上计划具有单元意识的任务的延续或许是可取的。 在这种情况下，可以将传递[**任务\_延续\_context::use\_任意**] [ useArbitrary]上计划任务的工作在多线程单元中的下一个可用线程。 这可以改善延续的性能，因为其工作不必与 UI 线程上发生的其他工作同步。
+可以使用的重载来覆盖这两种任务的默认线程上下文[ **task:: then** ] [ taskThen]采用[**任务\_延续\_上下文**](https://docs.microsoft.com/cpp/parallel/concrt/reference/task-continuation-context-class)。 例如，在某些情况下，在后台线程上计划具有单元意识的任务的延续或许是可取的。 在这种情况下，可以将传递[**任务\_延续\_context::use\_任意**] [ useArbitrary]上计划任务的工作在多线程单元中的下一个可用线程。 这可以改善延续的性能，因为其工作不必与 UI 线程上发生的其他工作同步。
 
-下面的示例演示时，用于指定[**任务\_延续\_context::use\_任意**] [ useArbitrary]选项，并且它还演示如何默认继续上下文可用于同步对非线程安全集合的并发操作。 在此代码中，我们遍历 RSS 源的 URL 列表，并为每个 URL 启动一个异步操作以检索源数据。 我们无法控制检索订阅的顺序，而我们其实并不关心。 当每个 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR210642) 操作完成时，第一个延续接受 [**SyndicationFeed^**](https://msdn.microsoft.com/library/windows/apps/BR243485) 对象并使用它来初始化应用定义的 `FeedData^` 对象。 这些操作均与其他无关，因为我们有可能会加快工作速度会通过指定**任务\_延续\_context::use\_任意**延续上下文. 但是，在初始化每个 `FeedData` 对象之后，我们必须将其添加到一个不属于线程安全集合的 [**Vector**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) 中。 因此，我们创建一个继续符，并指定[**任务\_延续\_context::use\_当前**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750085.aspx)以确保对所有调用[**追加**](https://msdn.microsoft.com/library/windows/apps/BR206632)发生在同一 Application Single-Threaded 单元 (ASTA) 上下文中。 因为[**任务\_延续\_context::use\_默认**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750085.aspx)是默认上下文，我们无需显式指定，但我们现在要做这样的 sake 为清晰性。
+下面的示例演示时，用于指定[**任务\_延续\_context::use\_任意**] [ useArbitrary]选项，并且它还演示如何默认继续上下文可用于同步对非线程安全集合的并发操作。 在此代码中，我们遍历 RSS 源的 URL 列表，并为每个 URL 启动一个异步操作以检索源数据。 我们无法控制检索订阅的顺序，而我们其实并不关心。 当每个 [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.isyndicationclient.retrievefeedasync) 操作完成时，第一个延续接受 [**SyndicationFeed^** ](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationFeed) 对象并使用它来初始化应用定义的 `FeedData^` 对象。 这些操作均与其他无关，因为我们有可能会加快工作速度会通过指定**任务\_延续\_context::use\_任意**延续上下文. 但是，在初始化每个 `FeedData` 对象之后，我们必须将其添加到一个不属于线程安全集合的 [**Vector**](https://docs.microsoft.com/cpp/cppcx/platform-collections-vector-class) 中。 因此，我们创建一个继续符，并指定[**任务\_延续\_context::use\_当前**](https://docs.microsoft.com/cpp/parallel/concrt/reference/task-continuation-context-class?view=vs-2017)以确保对所有调用[**追加**](https://docs.microsoft.com/uwp/api/windows.foundation.collections.ivector_t_.append)发生在同一 Application Single-Threaded 单元 (ASTA) 上下文中。 因为[**任务\_延续\_context::use\_默认**](https://docs.microsoft.com/cpp/parallel/concrt/reference/task-continuation-context-class?view=vs-2017)是默认上下文，我们无需显式指定，但我们现在要做这样的 sake 为清晰性。
 
 ``` cpp
 #include <ppltasks.h>
@@ -285,14 +285,14 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 嵌套任务（即在延续内部创建的新任务）不继承初始任务的单元意识。
 
 ## <a name="handing-progress-updates"></a>处理进度更新
-在操作完成之前，支持 [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) 或 [**IAsyncActionWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx) 的方法会在操作执行过程中定期提供进度更新。 进度报告独立于任务和延续概念。 你只需为对象的 [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) 属性提供委托。 委派的一个典型用途是更新 UI 中的进度栏。
+在操作完成之前，支持 [**IAsyncOperationWithProgress**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_) 或 [**IAsyncActionWithProgress**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncActionWithProgress_TProgress_) 的方法会在操作执行过程中定期提供进度更新。 进度报告独立于任务和延续概念。 你只需为对象的 [**Progress**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_) 属性提供委托。 委派的一个典型用途是更新 UI 中的进度栏。
 
 ## <a name="related-topics"></a>相关主题
-* [创建异步操作，在 C + + /cli CX 适用于 UWP 应用](https://msdn.microsoft.com/library/hh750082)
-* [Visual c + + 语言参考](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
+* [创建异步操作在C++/CX 的 UWP 应用](https://docs.microsoft.com/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)
+* [VisualC++语言参考](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx)
 * [异步编程][AsyncProgramming]
 * [任务并行度（并发运行时）][taskParallelism]
-* [concurrency:: task](/cpp/parallel/concrt/reference/task-class)
+* [concurrency::task](/cpp/parallel/concrt/reference/task-class)
 
 <!-- LINKS -->
 [AsyncProgramming]: <https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps> "AsyncProgramming"

@@ -6,12 +6,12 @@ keywords: 应用的通信，进程间通信，IPC、 消息传送，后台通信
 ms.date: 01/16/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 96ecad8494ad82dc4927b3675ad322f07a8ca7f3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 21e1b409406cf03d83ff10b04d96d7ff9f0413dd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57643572"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370738"
 ---
 # <a name="create-and-consume-an-app-service"></a>创建和使用应用服务
 
@@ -27,7 +27,7 @@ ms.locfileid: "57643572"
 
 1. 在 Visual Studio 2015 或更高版本，创建新的 UWP 应用项目并将其命名**AppServiceProvider**。
     1. 选择**文件 > 新建 > 项目...** 
-    2. 在中**新的项目**对话框中，选择**已安装 > Visual C# > 空白应用 (通用 Windows)**。 这将是能够向其他 UWP 应用提供应用服务的应用。
+    2. 在中**新的项目**对话框中，选择**已安装 > Visual C# > 空白应用 (通用 Windows)** 。 这将是能够向其他 UWP 应用提供应用服务的应用。
     3. 将项目命名**AppServiceProvider**，为其选择一个位置，然后单击**确定**。
 
 2. 当系统询问是否选择**目标**并**最低版本**对于项目，请选择至少**10.0.14393**。 如果你想要使用的新**SupportsMultipleInstances**属性中，你必须使用 Visual Studio 2017 和目标**10.0.15063** (**Windows 10 创意者更新**) 或更高版本。
@@ -75,7 +75,7 @@ ms.locfileid: "57643572"
 
 ## <a name="create-the-app-service"></a>创建应用服务
 
-1.  应用服务可作为后台任务实现。 这允许前台应用程序调用另一个应用程序中的应用服务。 若要创建应用服务作为后台任务，向解决方案添加新的 Windows 运行时组件项目 (**文件&gt;添加&gt;新项目**) 名为**MyAppService**。 在中**添加新项目**对话框框中，选择**已安装 > Visual C# > Windows 运行时组件 (通用 Windows)**。
+1.  应用服务可作为后台任务实现。 这允许前台应用程序调用另一个应用程序中的应用服务。 若要创建应用服务作为后台任务，向解决方案添加新的 Windows 运行时组件项目 (**文件&gt;添加&gt;新项目**) 名为**MyAppService**。 在中**添加新项目**对话框框中，选择**已安装 > Visual C# > Windows 运行时组件 (通用 Windows)** 。
 2.  在中**AppServiceProvider**项目中，添加对新的项目到项目引用**MyAppService**项目 (在**解决方案资源管理器**，右键单击**AppServiceProvider**项目 >**添加** > **引用** > **项目** >  **解决方案**，选择**MyAppService** > **确定**)。 此步骤至关重要，因为如果不添加引用，应用服务将不会在运行时进行连接。
 3.  在中**MyAppService**项目中，添加以下**使用**到顶部的语句**Class1.cs**:
     ```cs
@@ -133,7 +133,7 @@ ms.locfileid: "57643572"
     * 如果调用方位于前台时，应用程序服务生存期等同于调用方。
     * 如果调用方是在后台，应用服务将获取运行 30 秒。 执行延迟可一次多提供 5 秒。
 
-    **OnTaskCanceled**任务被取消时调用。 任务被取消时客户端应用程序释放[AppServiceConnection](https://msdn.microsoft.com/library/windows/apps/dn921704)、 客户端应用已挂起、 操作系统关闭的情况下或休眠，或者 OS 资源以运行此任务用尽。
+    **OnTaskCanceled**任务被取消时调用。 任务被取消时客户端应用程序释放[AppServiceConnection](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection)、 客户端应用已挂起、 操作系统关闭的情况下或休眠，或者 OS 资源以运行此任务用尽。
 
 ## <a name="write-the-code-for-the-app-service"></a>编写应用服务的代码
 
@@ -202,15 +202,15 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 }
 ```
 
-请注意， **OnRequestReceived**是**异步**因为我们创建一个可等待方法调用[SendResponseAsync](https://msdn.microsoft.com/library/windows/apps/dn921722)在此示例中。
+请注意， **OnRequestReceived**是**异步**因为我们创建一个可等待方法调用[SendResponseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appservicerequest.sendresponseasync)在此示例中。
 
-延迟执行，以便服务可以使用**异步**中的方法**OnRequestReceived**处理程序。 它可确保对 **OnRequestReceived** 的调用不会在完成处理消息之前结束。  [SendResponseAsync](https://msdn.microsoft.com/library/windows/apps/dn921722)将结果发送给调用方。 **SendResponseAsync** 不会在调用完成时发出信号。 它是向发出信号，延迟完成[SendMessageAsync](https://msdn.microsoft.com/library/windows/apps/dn921712)的**OnRequestReceived**已完成。 在调用**SendResponseAsync**都包装在 try/finally 块中，因为必须完成延迟即使**SendResponseAsync**将引发异常。
+延迟执行，以便服务可以使用**异步**中的方法**OnRequestReceived**处理程序。 它可确保对 **OnRequestReceived** 的调用不会在完成处理消息之前结束。  [SendResponseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appservicerequest.sendresponseasync)将结果发送给调用方。 **SendResponseAsync** 不会在调用完成时发出信号。 它是向发出信号，延迟完成[SendMessageAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appserviceconnection.sendmessageasync)的**OnRequestReceived**已完成。 在调用**SendResponseAsync**都包装在 try/finally 块中，因为必须完成延迟即使**SendResponseAsync**将引发异常。
 
-应用服务使用[ValueSet](https://msdn.microsoft.com/library/windows/apps/dn636131)要交换信息的对象。 可以传递的数据大小仅受限于系统资源。 没有你可以在 **ValueSet** 中使用的预定义项。 你必须确定哪些项值将用于定义你的应用服务的协议。 请牢记，必须使用该协议编写调用方。 在此示例中，我们选择了名为 `Command` 的项，它具有一个值，用于指示我们是否希望应用服务提供库存项目的名称或其价格。 库存名称的索引存储在 `ID` 项下。 返回值存储在 `Result` 项下。
+应用服务使用[ValueSet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet)要交换信息的对象。 可以传递的数据大小仅受限于系统资源。 没有你可以在 **ValueSet** 中使用的预定义项。 你必须确定哪些项值将用于定义你的应用服务的协议。 请牢记，必须使用该协议编写调用方。 在此示例中，我们选择了名为 `Command` 的项，它具有一个值，用于指示我们是否希望应用服务提供库存项目的名称或其价格。 库存名称的索引存储在 `ID` 项下。 返回值存储在 `Result` 项下。
 
-[AppServiceClosedStatus](https://msdn.microsoft.com/library/windows/apps/dn921703)枚举返回给调用方以指示对应用服务的调用是成功还是失败。 对应用服务的调用可能失败的原因示例：操作系统中止服务端点，因为资源已耗尽。 可以通过 [ValueSet](https://msdn.microsoft.com/library/windows/apps/dn636131) 返回其他错误信息。 在此示例中，我们使用名为 `Status` 的项将更详细的错误信息返回给调用方。
+[AppServiceClosedStatus](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService.AppServiceClosedStatus)枚举返回给调用方以指示对应用服务的调用是成功还是失败。 对应用服务的调用可能失败的原因示例：操作系统中止服务端点，因为资源已耗尽。 可以通过 [ValueSet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) 返回其他错误信息。 在此示例中，我们使用名为 `Status` 的项将更详细的错误信息返回给调用方。
 
-对 [SendResponseAsync](https://msdn.microsoft.com/library/windows/apps/dn921722) 的调用将 [ValueSet](https://msdn.microsoft.com/library/windows/apps/dn636131) 返回给调用方。
+对 [SendResponseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appservicerequest.sendresponseasync) 的调用将 [ValueSet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) 返回给调用方。
 
 ## <a name="deploy-the-service-app-and-get-the-package-family-name"></a>部署服务应用并获取程序包系列名称
 
@@ -302,9 +302,9 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 
     该代码首先建立了与应用服务的连接。 该连接将保持打开状态，直到你释放 `this.inventoryService`。 应用服务名称必须与匹配`AppService`元素的`Name`属性添加到**AppServiceProvider**项目的**Package.appxmanifest**文件。 在此示例中为 `<uap3:AppService Name="com.microsoft.inventory"/>`。
 
-    一个[ValueSet](https://msdn.microsoft.com/library/windows/apps/dn636131)名为`message`创建来指定我们想要将发送到应用服务的命令。 示例应用服务需要命令指示要采取两种操作中的哪一种操作。 我们从客户端应用程序中，在文本框中获取其索引，然后调用该服务与`Item`命令来获取项的说明。 然后，我们使用 `Price` 命令进行调用，以获取项目的价格。 按钮文本设置为结果。
+    一个[ValueSet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet)名为`message`创建来指定我们想要将发送到应用服务的命令。 示例应用服务需要命令指示要采取两种操作中的哪一种操作。 我们从客户端应用程序中，在文本框中获取其索引，然后调用该服务与`Item`命令来获取项的说明。 然后，我们使用 `Price` 命令进行调用，以获取项目的价格。 按钮文本设置为结果。
 
-    因为[AppServiceResponseStatus](https://msdn.microsoft.com/library/windows/apps/dn921724)仅指示操作系统是否能够连接到应用服务的调用，我们检查`Status`中的键[ValueSet](https://msdn.microsoft.com/library/windows/apps/dn636131)我们从应用接收若要确保它已能够完成请求的服务。
+    因为[AppServiceResponseStatus](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService.AppServiceResponseStatus)仅指示操作系统是否能够连接到应用服务的调用，我们检查`Status`中的键[ValueSet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet)我们从应用接收若要确保它已能够完成请求的服务。
 
 6. 设置**ClientApp**项目为启动项目 (右键单击该中**解决方案资源管理器** > **设为启动项目**) 并运行解决方案。 在文本框中输入数字 1 并单击该按钮。 应获取"椅子：价格 = 88.99"返回的服务。
 
@@ -329,7 +329,7 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 
 1.  按照前面步骤中的说明来调试调用应用服务的客户端。
 2.  启动**ClientApp**从开始菜单。
-3.  附加到调试器**ClientApp.exe**过程 (不**ApplicationFrameHost.exe**过程)。 （在 Visual Studio 中，依次选择**调试&gt;附加到进程...**。）
+3.  附加到调试器**ClientApp.exe**过程 (不**ApplicationFrameHost.exe**过程)。 （在 Visual Studio 中，依次选择**调试&gt;附加到进程...** 。）
 4.  在中**ClientApp**项目中中, 设置断点**按钮\_单击**。
 5.  输入数字 1 到文本框中的时，现在会命中客户端和应用服务中的断点**ClientApp** ，然后单击按钮。
 
@@ -359,7 +359,7 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 * 添加`windows.appService`到应用服务提供程序的扩展**Package.appxmanifest**文件。
 * 获取应用服务提供程序的包系列名称，以便我们可以从客户端应用程序连接到它。
 * 从应用服务提供程序项目的项目到项目引用添加到应用程序服务项目。
-* 使用[Windows.ApplicationModel.AppService.AppServiceConnection](https://msdn.microsoft.com/library/windows/apps/dn921704)来调用服务。
+* 使用[Windows.ApplicationModel.AppService.AppServiceConnection](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection)来调用服务。
 
 ## <a name="full-code-for-myappservice"></a>MyAppService 的完整代码
 
@@ -461,4 +461,4 @@ namespace MyAppService
 
 * [将应用服务转换为与其主机应用在同一个进程中运行](convert-app-service-in-process.md)
 * [支持使用后台任务对应用程序](support-your-app-with-background-tasks.md)
-* [应用服务的代码示例 (C#，c + + 和 VB)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)
+* [应用服务的代码示例 (C#， C++，和 VB)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)

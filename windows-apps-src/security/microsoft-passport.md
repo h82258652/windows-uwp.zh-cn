@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: aacce5710f8ed0066e5efdfb5e0344473f718f9b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1026bd153f43d5e956fbacdcc33728d890f34e34
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651542"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371971"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
@@ -115,16 +115,16 @@ if (!keyCredentialAvailable)
 
 在此方案中，我们使用电子邮件地址作为用户的唯一标识符。 用户注册后，你应考虑发送验证电子邮件以确保该地址有效。 这为你提供了用于重置帐户（如果有必要）的机制。
 
-如果用户已设置他或她的 PIN，应用将创建用户的 [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029)。 应用还获取可选的密钥证明信息，以获取密钥已在 TPM 上生成的加密证明。 生成的公钥和证明（可选）将发送到后端服务器以注册要使用的设备。 每台设备上生成的每个密钥对都将是唯一的。
+如果用户已设置他或她的 PIN，应用将创建用户的 [**KeyCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredential)。 应用还获取可选的密钥证明信息，以获取密钥已在 TPM 上生成的加密证明。 生成的公钥和证明（可选）将发送到后端服务器以注册要使用的设备。 每台设备上生成的每个密钥对都将是唯一的。
 
-用于创建 [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) 的代码如下所示：
+用于创建 [**KeyCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredential) 的代码如下所示：
 
 ```csharp
 var keyCreationResult = await KeyCredentialManager.RequestCreateAsync(
     AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
-[  **RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) 是创建公钥和私钥的部分。 如果设备具有正确的 TPM 芯片，API 将请求 TPM 芯片创建私钥和公钥并存储结果；如果不存在可用的 TPM 芯片，操作系统将在代码中创建密钥对。 应用无法直接访问所创建的私钥。 部分创建的密钥对也是生成的证明信息。 （有关证明的详细信息，请参阅下一部分。）
+[  **RequestCreateAsync**](https://docs.microsoft.com/previous-versions/windows/dn973048(v=win.10)) 是创建公钥和私钥的部分。 如果设备具有正确的 TPM 芯片，API 将请求 TPM 芯片创建私钥和公钥并存储结果；如果不存在可用的 TPM 芯片，操作系统将在代码中创建密钥对。 应用无法直接访问所创建的私钥。 部分创建的密钥对也是生成的证明信息。 （有关证明的详细信息，请参阅下一部分。）
 
 在设备上创建密钥对和证明信息后，需要将公钥、可选证明信息和唯一标识符（如电子邮件地址）发送到后端注册服务并存储在后端中。
 
@@ -208,8 +208,8 @@ static async void RegisterUser(string AccountId)
 - AIK 证书具有有效期。
 - 链中所有颁发的 CA 证书都具有有效期，并且不会撤销。
 - 证明语句格式正确。
-- [  **KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 上的签名使用 AIK 公钥。
-- 包含在 [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 中的公钥与和证明语句一起发送的公共 RSA 密钥匹配。
+- [  **KeyAttestation**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.KeyAttestationHelper) blob 上的签名使用 AIK 公钥。
+- 包含在 [**KeyAttestation**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.KeyAttestationHelper) blob 中的公钥与和证明语句一起发送的公共 RSA 密钥匹配。
 
 你的应用可能为用户分配不同的授权级别，具体取决于这些条件。 例如，如果其中一项检查失败，它可能不会注册用户或可能限制用户可以执行的操作。
 
@@ -219,7 +219,7 @@ static async void RegisterUser(string AccountId)
 
 ### <a name="33-force-the-user-to-sign-in-again"></a>3.3 强制用户再次登录
 
-对于某些方案，你可能希望用户在访问应用前或有时在应用内执行特定操作前证明他或她是当前登录的人员。 例如，在银行应用向服务器发送转帐命令前，你希望确保是用户而不是某个捡到已登录设备的人正在尝试执行该事务。 你可以通过使用 [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) 类强制用户再次登录。 以下代码行将强制用户输入他们的凭据。
+对于某些方案，你可能希望用户在访问应用前或有时在应用内执行特定操作前证明他或她是当前登录的人员。 例如，在银行应用向服务器发送转帐命令前，你希望确保是用户而不是某个捡到已登录设备的人正在尝试执行该事务。 你可以通过使用 [**UserConsentVerifier**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier) 类强制用户再次登录。 以下代码行将强制用户输入他们的凭据。
 
 以下代码行将强制用户输入他们的凭据。
 
@@ -267,7 +267,7 @@ if (openKeyResult.Status == KeyCredentialStatus.Success)
 }
 ```
 
-第一行 [**KeyCredentialManager.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn973046) 将要求操作系统打开密钥句柄。 如果成功完成该操作，你可以对质询消息进行签名，其中 [**KeyCredential.RequestSignAsync**](https://msdn.microsoft.com/library/windows/apps/dn973058) 方法将触发操作系统通过 Windows Hello 请求用户的 PIN 或生物识别。 开发人员在任何时候都无法访问用户的私钥。 这全部通过 API 保持安全。
+第一行 [**KeyCredentialManager.OpenAsync**](https://docs.microsoft.com/uwp/api/windows.security.credentials.keycredentialmanager.openasync) 将要求操作系统打开密钥句柄。 如果成功完成该操作，你可以对质询消息进行签名，其中 [**KeyCredential.RequestSignAsync**](https://docs.microsoft.com/uwp/api/windows.security.credentials.keycredential.requestsignasync) 方法将触发操作系统通过 Windows Hello 请求用户的 PIN 或生物识别。 开发人员在任何时候都无法访问用户的私钥。 这全部通过 API 保持安全。
 
 这些 API 请求操作系统使用私钥对质询进行签名。 然后系统要求用户输入 PIN 码或进行已配置的生物识别登录。 输入正确的信息后，系统可以要求 TPM 芯片执行加密功能并对质询进行签名。 （或者在 TPM 不可用时，使用回退软件解决方案）。 客户端必须将已签名的质询发送回服务器。
 
@@ -387,9 +387,9 @@ UI 外观可能如下所示：
 
 ![Windows Hello UI](images/passport-ui.png)
 
-如果用户选择开始使用 Windows Hello，你可以创建之前所述的 [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029)。 后端注册服务器将公钥和可选证明语句添加到数据库。 由于已经使用用户名和密码对用户进行身份验证，因此服务器可以将新的凭据链接到数据库中的当前用户信息。 数据库模型可能与之前所述的示例相同。
+如果用户选择开始使用 Windows Hello，你可以创建之前所述的 [**KeyCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredential)。 后端注册服务器将公钥和可选证明语句添加到数据库。 由于已经使用用户名和密码对用户进行身份验证，因此服务器可以将新的凭据链接到数据库中的当前用户信息。 数据库模型可能与之前所述的示例相同。
 
-如果应用能够创建用户 [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029)，它会将用户 ID 存储在隔离存储中，以便用户可以在应用再次启动后从列表中选取此帐户。 从此时起，流程完全遵循之前的章节所述的示例。
+如果应用能够创建用户 [**KeyCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredential)，它会将用户 ID 存储在隔离存储中，以便用户可以在应用再次启动后从列表中选取此帐户。 从此时起，流程完全遵循之前的章节所述的示例。
 
 迁移到完整 Windows Hello 方案的最后步骤是在应用中禁用登录名和密码选项，并从数据库中删除已存储的哈希密码。
 
@@ -408,7 +408,7 @@ Windows 10 引入了更高级别且易于实施的安全性。 Windows Hello 提
 ### <a name="61-articles-and-sample-code"></a>6.1 文章和示例代码
 
 - [Windows Hello 概述](https://windows.microsoft.com/windows-10/getstarted-what-is-hello)
-- [Windows hello 企业实现详细信息](https://msdn.microsoft.com/library/mt589441)
+- [Windows hello 企业实现详细信息](https://technet.microsoft.com/itpro/windows/keep-secure/microsoft-passport-guide)
 - [Windows Hello 的代码示例在 GitHub 上](https://go.microsoft.com/fwlink/?LinkID=717812)
 
 ### <a name="62-terminology"></a>6.2 术语

@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 175009773f7969adbaf36a036e733443f593467f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 940de8c00dc2639785ae82e87d63f4994b1b6b2e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620552"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367738"
 ---
 #  <a name="define-the-uwp-app-framework"></a>定义 UWP 应用框架
 
@@ -25,7 +25,7 @@ ms.locfileid: "57620552"
 * [__初始化__](#initialize-the-view-provider)
 * [__SetWindow__](#configure-the-window-and-display-behaviors)
 * [__负载__](#load-method-of-the-view-provider)
-* [__运行__](#run-method-of-the-view-provider)
+* [__Run__](#run-method-of-the-view-provider)
 * [__取消初始化__](#uninitialize-method-of-the-view-provider)
 
 __Initialize__ 方法在应用程序启动时调用。 __SetWindow__ 方法在 __Initialize__ 之后调用。 然后调用 __Load__ 方法。 __Run__ 方法在游戏运行时调用。 当游戏结束时，调用 __Uninitialize__ 方法。 有关详细信息，请参阅 [__IFrameworkView__ API 参考](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview)。 
@@ -71,7 +71,7 @@ IFrameworkView^ DirectXApplicationSource::CreateView()
 
 ## <a name="initialize-the-view-provider"></a>初始化视图提供程序
 
-创建视图提供程序对象后，应用单一实例在应用程序启动时调用 [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) 方法。 因此，使用此方法处理 UWP 游戏的大多数基本行为非常重要，如处理主窗口的激活以及确保游戏可以处理突然暂停（可能随后恢复）事件。
+创建视图提供程序对象后，应用单一实例在应用程序启动时调用 [**Initialize**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize) 方法。 因此，使用此方法处理 UWP 游戏的大多数基本行为非常重要，如处理主窗口的激活以及确保游戏可以处理突然暂停（可能随后恢复）事件。
 
 此时，游戏应用可以处理暂停（或继续）消息。 但仍没有要使用的窗口，并且游戏未初始化。 还需要提供更多内容！
 
@@ -105,11 +105,11 @@ void App::Initialize(
 
 ## <a name="configure-the-window-and-display-behaviors"></a>配置窗口和显示行为
 
-现在，我们来看看 [__SetWindow__](https://msdn.microsoft.com/library/windows/apps/hh700509) 的实现。 在 __SetWindow__ 方法中，你配置窗口和显示行为。
+现在，我们来看看 [__SetWindow__](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow) 的实现。 在 __SetWindow__ 方法中，你配置窗口和显示行为。
 
 ### <a name="appsetwindow-method"></a>App::SetWindow 方法
 
-应用单一实例提供一个表示游戏主窗口的 [__CoreWindow__](https://msdn.microsoft.com/library/windows/apps/br208225) 对象，并将其资源和事件提供给游戏。 现在，已经有一个要处理的窗口了，游戏现在可以开始在基本 UI 组件和事件中进行添加了。
+应用单一实例提供一个表示游戏主窗口的 [__CoreWindow__](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 对象，并将其资源和事件提供给游戏。 现在，已经有一个要处理的窗口了，游戏现在可以开始在基本 UI 组件和事件中进行添加了。
 
 然后，使用 __CoreCursor__ 方法创建指针，此方法可由鼠标和触摸控件使用。
 
@@ -162,7 +162,7 @@ void App::SetWindow(
 
 ## <a name="load-method-of-the-view-provider"></a>视图提供程序的 Load 方法
 
-在设置主窗口之后，应用单一实例将调用 [__Load__](https://msdn.microsoft.com/library/windows/apps/hh700501)。 此方法使用一组异步任务来创建游戏对象、加载图形资源以及初始化游戏的状态机。 如果你希望预取游戏数据或资源，此位置比 **SetWindow** 或 **Initialize** 更好。 
+在设置主窗口之后，应用单一实例将调用 [__Load__](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.load)。 此方法使用一组异步任务来创建游戏对象、加载图形资源以及初始化游戏的状态机。 如果你希望预取游戏数据或资源，此位置比 **SetWindow** 或 **Initialize** 更好。 
 
 由于 Windows 会对你的游戏在必须开始处理输入前所能花费的时间施加限制，因此你需要为快速完成 __Load__ 方法进行设计，以使其可以开始处理输入。 如果加载需要一段时间或者如果有很多资源，则向用户提供一个定期更新的进度栏。 此方法还用于在游戏开始之前做一些必要的准备，如设置任意开始状态或全局值。
 
@@ -308,9 +308,9 @@ GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) 
     * __停用__:游戏窗口停用（失去焦点）或贴靠。 在发生此事件时，游戏将暂停事件处理并等待窗口获得焦点或取消贴靠。
     * __TooSmall__:游戏更新其自己的状态，并将呈现用于显示图形。
 
-在你的游戏获得焦点时，必须处理消息队列中到达的每个事件，因此必须使用 **ProcessAllIfPresent** 选项调用 [**CoreWindowDispatch.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)。 其他选项可能导致延迟处理消息事件，这会让人感到游戏停止响应，或者导致触摸行为反应慢和没有“粘合力”。
+在你的游戏获得焦点时，必须处理消息队列中到达的每个事件，因此必须使用 **ProcessAllIfPresent** 选项调用 [**CoreWindowDispatch.ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents)。 其他选项可能导致延迟处理消息事件，这会让人感到游戏停止响应，或者导致触摸行为反应慢和没有“粘合力”。
 
-当游戏不可见、暂停或贴靠时，你不希望应用使用任何资源循环去调度永不会到达的消息。 这种情况下，你的游戏必须使用 **ProcessOneAndAllPending**，它在获得事件前将进行阻止，随即在获得事件后处理该事件以及处理队列中在处理第一个事件期间到达的任何其他事件。 [**ProcessEvents** ](https://msdn.microsoft.com/library/windows/apps/br208215)然后立即返回处理队列后。
+当游戏不可见、暂停或贴靠时，你不希望应用使用任何资源循环去调度永不会到达的消息。 这种情况下，你的游戏必须使用 **ProcessOneAndAllPending**，它在获得事件前将进行阻止，随即在获得事件后处理该事件以及处理队列中在处理第一个事件期间到达的任何其他事件。 [**ProcessEvents** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents)然后立即返回处理队列后。
 
 ```cpp
 void App::Run()

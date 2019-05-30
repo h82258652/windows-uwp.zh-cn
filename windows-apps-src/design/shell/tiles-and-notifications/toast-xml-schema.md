@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b9535cd8c2dd82b0c209919080df9a88bb80ccc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 33244391ca9f2ffcba21adacccebf2e9b1d73419
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612772"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363359"
 ---
 # <a name="toast-content-xml-schema"></a>Toast 内容 XML 架构
 
@@ -79,15 +79,15 @@ scenario?
 
 lang?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
 
 baseUri?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
 
 addImageQuery?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
 
 **中的属性&lt;绑定&gt;**
 
@@ -99,27 +99,27 @@ template?
 
 lang?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
 
 baseUri?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
 
 addImageQuery?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
 
 **中的属性&lt;文本&gt;**
 
 lang?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
 
 **中的属性&lt;图像&gt;**
 
 src
 
--   有关此必需属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230844)。
+-   有关此必需属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image)。
 
 placement?
 
@@ -131,11 +131,11 @@ placement?
 
 alt?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230844)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image)。
 
 addImageQuery?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230844)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image)。
 
 hint-crop?
 
@@ -148,15 +148,15 @@ hint-crop?
 
 src?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230842)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio)。
 
 loop?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230842)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio)。
 
 silent?
 
--   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230842)。
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio)。
 
 ## <a name="schemas-ltactiongt"></a>架构：&lt;action&gt;
 

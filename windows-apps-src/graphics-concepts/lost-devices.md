@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f0b42a10c2cdd61aef84e08d6bd4f6408a978c3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8a280d07ab7d715adaa7da941be641cd54e24443
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617312"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371008"
 ---
 # <a name="lost-devices"></a>丢失的设备
 
@@ -21,7 +21,7 @@ Direct3D 设备可以处于运行状态或丢失状态。 *运行*状态是设�
 
 根据设计，未指定可导致设备丢失的所有场景。 一些典型的示例包括丢失焦点，例如当用户按下 ALT+TAB 时或当系统对话框进行初始化时。 设备也可能由于电源管理事件或另一个应用程序采取全屏操作而丢失。 此外，任何重置设备故障都会使设备进入丢失状态。
 
-从 [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) 派生的所有方法都可以保证在设备丢失后正常工作。 设备丢失后，每个函数一般有以下三个选项：
+从 [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) 派生的所有方法都可以保证在设备丢失后正常工作。 设备丢失后，每个函数一般有以下三个选项：
 
 -   失败并返回“设备丢失”错误 - 这意味着应用程序需要认识到设备已丢失，以便应用程序知道某些事件没有按预期出现。
 -   以静默方式失败，并且返回 S\_确定或任何其他返回代码-如果一个函数以静默方式失败，应用程序通常不能区分结果的"成功"和"无提示失败"。

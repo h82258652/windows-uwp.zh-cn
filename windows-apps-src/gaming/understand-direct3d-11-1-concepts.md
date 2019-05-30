@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, direct3d 9, direct3d 11, 更改
 ms.localizationpriority: medium
-ms.openlocfilehash: ecdd8591efb3920d2cfe333aa8ec02c65c1a1465
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e3e3ecfaee8a99522623ee6b021d8e3a2d78ab85
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638962"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367545"
 ---
 # <a name="important-changes-from-direct3d-9-to-direct3d-11"></a>从 Direct3D 9 到 Direct3D 11 的重要更改
 
@@ -31,41 +31,41 @@ ms.locfileid: "57638962"
 ## <a name="core-api-functions"></a>核心 API 函数
 
 
-在 Direct3D 9 中，你必须先创建一个到 Direct3D API 的接口，然后才能开始使用它。 在 Direct3D 11 通用 Windows 平台 (UWP) 游戏中，可调用 名为 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 的静态函数，创建设备和设备上下文。
+在 Direct3D 9 中，你必须先创建一个到 Direct3D API 的接口，然后才能开始使用它。 在 Direct3D 11 通用 Windows 平台 (UWP) 游戏中，可调用 名为 [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 的静态函数，创建设备和设备上下文。
 
 ## <a name="devices-and-device-context"></a>设备和设备上下文
 
 
-Direct3D 11 设备表示一个虚拟化的图形适配器。 它用于在视频内存中创建资源，例如：将纹理上载到 GPU、在纹理资源和交换链上创建视图，以及创建纹理采样器。 有关 Direct3D 11 设备接口用途的完整列表，请参见 [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) 和 [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)。
+Direct3D 11 设备表示一个虚拟化的图形适配器。 它用于在视频内存中创建资源，例如：将纹理上载到 GPU、在纹理资源和交换链上创建视图，以及创建纹理采样器。 有关 Direct3D 11 设备接口用途的完整列表，请参见 [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device) 和 [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)。
 
-Direct3D 11 设备上下文用于设置管道状态，并生成呈现命令。 例如，Direct3D 11 呈现链使用设备上下文来设置呈现链并绘制场景（请参见下文）。 设备上下文用于访问（映射）Direct3D 设备资源使用的视频内存，它也可用于更新子资源数据（例如常量缓冲区数据）。 有关 Direct3D 11 设备上下文用途的完整列表，请参见 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 和 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)。 请注意，我们的大多数示例均使用即时上下文直接呈现给设备，但 Direct3D 11 还支持递延的设备上下文，这主要用于多线程处理。
+Direct3D 11 设备上下文用于设置管道状态，并生成呈现命令。 例如，Direct3D 11 呈现链使用设备上下文来设置呈现链并绘制场景（请参见下文）。 设备上下文用于访问（映射）Direct3D 设备资源使用的视频内存，它也可用于更新子资源数据（例如常量缓冲区数据）。 有关 Direct3D 11 设备上下文用途的完整列表，请参见 [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) 和 [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)。 请注意，我们的大多数示例均使用即时上下文直接呈现给设备，但 Direct3D 11 还支持递延的设备上下文，这主要用于多线程处理。
 
-在 Direct3D 11 中，设备句柄和设备上下文句柄都通过调用 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 获取。 此方法也是你在图形适配器支持的 Direct3D 功能级别上请求一组特定硬件功能并检索信息的位置。 有关设备、设备上下文和线程处理注意事项的详细信息，请参阅 [Direct3D 11 中的设备简介](https://msdn.microsoft.com/library/windows/desktop/ff476880)。
+在 Direct3D 11 中，设备句柄和设备上下文句柄都通过调用 [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 获取。 此方法也是你在图形适配器支持的 Direct3D 功能级别上请求一组特定硬件功能并检索信息的位置。 有关设备、设备上下文和线程处理注意事项的详细信息，请参阅 [Direct3D 11 中的设备简介](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-intro)。
 
 ## <a name="device-infrastructure-frame-buffers-and-render-target-views"></a>设备基础结构、帧缓存和呈现目标视图
 
 
-在 Direct3D 11 中，设备适配器和硬件配置均使用 [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) 和 [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/hh404543) COM 接口通过 DirectX 图形基础结构 (DXGI) API 进行设置。 缓冲区和其他窗口资源（可见或位于屏幕外）使用特定 DXGI 接口创建和配置，[**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) 出厂模式实现获取帧缓冲区之类的 DXGI 资源。 由于 DXGI 拥有交换链，因此 DXGI 接口用于将帧呈现到屏幕上：请参见 [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)。
+在 Direct3D 11 中，设备适配器和硬件配置均使用 [**IDXGIAdapter**](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgiadapter) 和 [**IDXGIDevice1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgidevice2) COM 接口通过 DirectX 图形基础结构 (DXGI) API 进行设置。 缓冲区和其他窗口资源（可见或位于屏幕外）使用特定 DXGI 接口创建和配置，[**IDXGIFactory2**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgifactory2) 出厂模式实现获取帧缓冲区之类的 DXGI 资源。 由于 DXGI 拥有交换链，因此 DXGI 接口用于将帧呈现到屏幕上：请参见 [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1)。
 
-使用 [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) 创建与你的游戏兼容的交换链。 你需要为核心窗口或为复合（XAML 互操作）创建一个交换链，而不是为 HWND 创建一个交换链。
+使用 [**IDXGIFactory2**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgifactory2) 创建与你的游戏兼容的交换链。 你需要为核心窗口或为复合（XAML 互操作）创建一个交换链，而不是为 HWND 创建一个交换链。
 
 ## <a name="device-resources-and-resource-views"></a>设备资源和资源视图
 
 
-对于名为视图的视频内存资源，Direct3D 11 支持一种额外的多态性。 从本质上说，如果你有一个 Direct3D 9 对象供获取纹理，则你现在拥有两个对象：纹理资源（保留数据）和资源视图（指示该视图用于呈现的方式）。 基于资源的视图使该资源能够用于特定目的。 例如，将一个 2D 纹理资源创建为 [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)，然后在对其创建一个着色器资源视图 ([**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628))，以便该资源在着色器中可用作纹理。 还可以在同一 2D 纹理资源上创建一个呈现目标视图 ([**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582))，以便该资源可用作绘图表面。 在另一个示例中，通过对一个纹理资源使用 2 个不同的视图以 2 种不同的像素格式表示相同的像素数据。
+对于名为视图的视频内存资源，Direct3D 11 支持一种额外的多态性。 从本质上说，如果你有一个 Direct3D 9 对象供获取纹理，则你现在拥有两个对象：纹理资源（保留数据）和资源视图（指示该视图用于呈现的方式）。 基于资源的视图使该资源能够用于特定目的。 例如，将一个 2D 纹理资源创建为 [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)，然后在对其创建一个着色器资源视图 ([**ID3D11ShaderResourceView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11shaderresourceview))，以便该资源在着色器中可用作纹理。 还可以在同一 2D 纹理资源上创建一个呈现目标视图 ([**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview))，以便该资源可用作绘图表面。 在另一个示例中，通过对一个纹理资源使用 2 个不同的视图以 2 种不同的像素格式表示相同的像素数据。
 
-底层资源必须使用与创建所用的视图类型兼容的属性创建。 例如，如果[ **ID3D11RenderTargetView** ](https://msdn.microsoft.com/library/windows/desktop/ff476582)应用到图面上，使用创建该图面[ **D3D11\_绑定\_呈现\_目标**](https://msdn.microsoft.com/library/windows/desktop/ff476085)标志。 在图面还必须具有与呈现兼容的 DXGI 表面格式 (请参阅[ **DXGI\_格式**](https://msdn.microsoft.com/library/windows/desktop/bb173059))。
+底层资源必须使用与创建所用的视图类型兼容的属性创建。 例如，如果[ **ID3D11RenderTargetView** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)应用到图面上，使用创建该图面[ **D3D11\_绑定\_呈现\_目标**](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_bind_flag)标志。 在图面还必须具有与呈现兼容的 DXGI 表面格式 (请参阅[ **DXGI\_格式**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format))。
 
-用于呈现的大部分资源都继承自[**ID3D11Resource**](https://msdn.microsoft.com/library/windows/desktop/ff476584) 接口，而此接口又继承自 [**ID3D11DeviceChild**](https://msdn.microsoft.com/library/windows/desktop/ff476380)。 顶点缓冲区、索引缓冲区、常量缓冲区以及着色器均为 Direct3D 11 资源。 输入布局和采样器状态直接继承自 [**ID3D11DeviceChild**](https://msdn.microsoft.com/library/windows/desktop/ff476380)。
+用于呈现的大部分资源都继承自[**ID3D11Resource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11resource) 接口，而此接口又继承自 [**ID3D11DeviceChild**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicechild)。 顶点缓冲区、索引缓冲区、常量缓冲区以及着色器均为 Direct3D 11 资源。 输入布局和采样器状态直接继承自 [**ID3D11DeviceChild**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicechild)。
 
-资源视图使用 DXGI\_格式的枚举值，以指示的像素格式。 不是每个 D3DFMT 支持作为 DXGI\_格式。 例如，没有 24bpp RGB 格式中没有等效于 D3DFMT DXGI\_R8G8B8。 也有不为每个 RGB 格式 BGR 等效项 (DXGI\_格式\_R10G10B10A2\_UNORM 相当于 D3DFMT\_A2B10G10R10，但没有直接等效项到 D3DFMT\_A2R10G10B10)。 在生成时，你应该计划将任何采用这些传统格式的内容转换为支持的格式。 有关完整列表的 DXGI 格式，请参阅[ **DXGI\_格式**](https://msdn.microsoft.com/library/windows/desktop/bb173059)枚举。
+资源视图使用 DXGI\_格式的枚举值，以指示的像素格式。 不是每个 D3DFMT 支持作为 DXGI\_格式。 例如，没有 24bpp RGB 格式中没有等效于 D3DFMT DXGI\_R8G8B8。 也有不为每个 RGB 格式 BGR 等效项 (DXGI\_格式\_R10G10B10A2\_UNORM 相当于 D3DFMT\_A2B10G10R10，但没有直接等效项到 D3DFMT\_A2R10G10B10)。 在生成时，你应该计划将任何采用这些传统格式的内容转换为支持的格式。 有关完整列表的 DXGI 格式，请参阅[ **DXGI\_格式**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)枚举。
 
 在呈现场景之前创建 Direct3D 设备资源（和资源视图）。 设备上下文用于设置呈现链，如下所述。
 
 ## <a name="device-context-and-the-rendering-chain"></a>设备上下文和呈现链
 
 
-在 Direct3D 9 和 Direct3D 10.x 中，有一个管理资源创建、状态和绘图的 Direct3D 设备对象。 在 Direct3D 11 中，该 Direct3D 设备接口仍管理资源创建，但所有状态和绘图操作均使用 Direct3D 设备上下文处理。 下面是如何使用设备上下文（[**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 接口）设置呈现链的示例：
+在 Direct3D 9 和 Direct3D 10.x 中，有一个管理资源创建、状态和绘图的 Direct3D 设备对象。 在 Direct3D 11 中，该 Direct3D 设备接口仍管理资源创建，但所有状态和绘图操作均使用 Direct3D 设备上下文处理。 下面是如何使用设备上下文（[**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 接口）设置呈现链的示例：
 
 -   设置和清除呈现目标视图（以及深度模板视图）
 -   为输入装配器阶段（IA 阶段）设置顶点缓冲区、索引缓冲区和输入布局
@@ -74,7 +74,7 @@ Direct3D 11 设备上下文用于设置管道状态，并生成呈现命令。 �
 -   将纹理视图和采样器绑定到像素着色器
 -   绘制场景
 
-调用其中一个 [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) 方法时，会在呈现目标视图上绘制场景。 当你完成所有绘图时，DXGI 适配器将用于通过调用 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 呈现完整的帧。
+调用其中一个 [**ID3D11DeviceContext::Draw**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw) 方法时，会在呈现目标视图上绘制场景。 当你完成所有绘图时，DXGI 适配器将用于通过调用 [**IDXGISwapChain1::Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1) 呈现完整的帧。
 
 ## <a name="state-management"></a>状态管理
 
@@ -90,11 +90,11 @@ Direct3D 9 通过使用 SetRenderState、SetSamplerState 和 SetTextureStageStat
 
 Direct3D 具有一种新机制来确定名为功能级别的硬件支持。 通过允许你请求一组明确定义的 GPU 功能，功能级别简化了指出图形适配器可执行操作的任务。 例如，9\_1 功能级别实现 Direct3D 9 图形适配器，包括着色器提供的功能模型 2.x。 由于 9\_1 为最低功能级别，有望获得所有设备都支持顶点着色器和像素着色器已由 Direct3D 9 可编程的着色器模型支持的相同阶段。
 
-你的游戏将使用 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 来创建 Direct3D 设备和设备上下文。 调用该函数时，你将提供游戏可支持的功能级别列表。 将从该列表返回受支持的最高功能级别。 例如，如果您的游戏可以使用 BC4/BC5 纹理 （DirectX 10 硬件的功能），应包括至少 9\_1 和 10\_的受支持的功能级别的列表中为 0。 如果游戏在 DirectX 9 的硬件上运行，并且 BC4/BC5 纹理不能使用，然后[ **D3D11CreateDevice** ](https://msdn.microsoft.com/library/windows/desktop/ff476082)将返回 9\_1。 然后，你的游戏可回退到不同的纹理格式（以及更小的纹理）。
+你的游戏将使用 [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 来创建 Direct3D 设备和设备上下文。 调用该函数时，你将提供游戏可支持的功能级别列表。 将从该列表返回受支持的最高功能级别。 例如，如果您的游戏可以使用 BC4/BC5 纹理 （DirectX 10 硬件的功能），应包括至少 9\_1 和 10\_的受支持的功能级别的列表中为 0。 如果游戏在 DirectX 9 的硬件上运行，并且 BC4/BC5 纹理不能使用，然后[ **D3D11CreateDevice** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice)将返回 9\_1。 然后，你的游戏可回退到不同的纹理格式（以及更小的纹理）。
 
 如果你决定扩展 Direct3D 9 游戏以支持更高的 Direct3D 功能级别，则最好先完成现有 Direct3D 9 图形代码的移植。 之后，你可以让游戏在 Direct3D 11 中工作，通过增强的图形可以比较容易地增加额外的呈现路径。
 
-有关功能级别支持的详细解释，请参见 [Direct3D 功能级别](https://msdn.microsoft.com/library/windows/desktop/ff476876)。 有关 Direct3D 11 功能的完整列表， 请参阅 [Direct3D 11 功能](https://msdn.microsoft.com/library/windows/desktop/ff476342)和 [Direct3D 11.1 功能](https://msdn.microsoft.com/library/windows/desktop/hh404562)。
+有关功能级别支持的详细解释，请参见 [Direct3D 功能级别](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)。 有关 Direct3D 11 功能的完整列表， 请参阅 [Direct3D 11 功能](https://docs.microsoft.com/windows/desktop/direct3d11/direct3d-11-features)和 [Direct3D 11.1 功能](https://docs.microsoft.com/windows/desktop/direct3d11/direct3d-11-1-features)。
 
 ## <a name="feature-levels-and-the-programmable-pipeline"></a>功能级别和可编程管道
 

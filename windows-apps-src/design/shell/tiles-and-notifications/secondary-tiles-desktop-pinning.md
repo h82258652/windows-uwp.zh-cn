@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, 桌面桥, 辅助磁贴, 固定, 快速入门, 代码示例, 示例, secondarytile, 桌面应用程序, win32, winforms, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e713f37cd5e5fbf4b2771e76fb7e132b5976629
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7ca6471122ee1870a94ef0834a5eed8f83a4d4a7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57609622"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362618"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>从桌面应用程序固定辅助磁贴
 
@@ -34,7 +34,7 @@ ms.locfileid: "57609622"
 
 ## <a name="enable-access-to-iinitializewithwindow-interface"></a>启用对 IInitializeWithWindow 接口的访问
 
-如果应用程序使用托管语言（如 C# 或 Visual Basic）编写，则在应用代码中使用 [ComImport](https://msdn.microsoft.com/library/system.runtime.interopservices.comimportattribute.aspx) 和 Guid 属性声明 IInitializeWithWindow 接口，如以下 C# 示例所示。 此示例假设代码文件具有 System.Runtime.InteropServices 命名空间的 using 语句。
+如果应用程序使用托管语言（如 C# 或 Visual Basic）编写，则在应用代码中使用 [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute?redirectedfrom=MSDN) 和 Guid 属性声明 IInitializeWithWindow 接口，如以下 C# 示例所示。 此示例假设代码文件具有 System.Runtime.InteropServices 命名空间的 using 语句。
 
 ```csharp
 [ComImport]
@@ -66,7 +66,7 @@ SecondaryTile tile = new SecondaryTile(
 
 ## <a name="assign-the-window-handle"></a>分配窗口句柄
 
-这是桌面应用程序的关键步骤。 将对象强制转换为 [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx) 对象。 然后，调用 [IInitializeWithWindow.Initialize](https://msdn.microsoft.com/library/windows/desktop/hh706982.aspx) 方法，并传递你希望成为模式对话框所有者的窗口的句柄。 以下 C# 示例显示如何将应用主窗口的句柄传递到该方法。
+这是桌面应用程序的关键步骤。 将对象强制转换为 [IInitializeWithWindow](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) 对象。 然后，调用 [IInitializeWithWindow.Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) 方法，并传递你希望成为模式对话框所有者的窗口的句柄。 以下 C# 示例显示如何将应用主窗口的句柄传递到该方法。
 
 ```csharp
 // Assign the window handle

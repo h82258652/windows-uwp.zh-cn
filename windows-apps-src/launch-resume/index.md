@@ -6,12 +6,12 @@ ms.date: 10/04/2017
 ms.topic: article
 keywords: windows 10, uwp, 后台任务, 应用服务, 连接设备, 远程系统
 ms.localizationpriority: medium
-ms.openlocfilehash: d12113329381c6602edf87a11fc1cc6b822dab4e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 79f3f1d28294527d6987540a159baa31d663db4c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582398"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371720"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>启动、恢复和后台任务
 
@@ -95,7 +95,7 @@ ms.locfileid: "57582398"
 | 主题 | 描述 |
 |-------|-------------|
 | [后台任务指南](guidelines-for-background-tasks.md)                                       | 确保你的应用满足运行后台任务的要求。 |
-| [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 |
+| [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 |
 | [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)       | 创建和注册在前台应用所在的同一进程中运行的后台任务。 |
 | [创建和注册进程外后台任务](create-and-register-a-background-task.md)           | 创建和注册一个与你的应用不在同一个进程中运行的后台任务，然后将它注册为在应用不在前台运行时运行。 |
 | [将进程外后台任务移植到进程内后台任务](convert-out-of-process-background-task.md) | 了解如何将进程外后台任务移植到与前台应用在同一进程中运行的进程内后台任务。|
@@ -106,14 +106,14 @@ ms.locfileid: "57582398"
 | [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)       | 了解应用可以识别后台任务进度和完成的方式。 |
 | [优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) |了解如何减少后台中使用的能量并与后台活动的用户设置进行交互。 |
 | [注册后台任务](register-a-background-task.md)                                                 | 了解如何创建可以重新使用以安全注册大部分后台任务的函数。 |
-| [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)         | 了解如何创建响应 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 事件的后台任务。 |
+| [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)         | 了解如何创建响应 [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) 事件的后台任务。 |
 | [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)                                    | 了解如何计划一次性后台任务，或运行周期性后台任务。 |
 | [在后台无限期运行](run-in-the-background-indefinetly.md)                                    | 使用可在后台无限期运行后台任务或扩展执行会话的功能。 |
 | [从应用中触发后台任务](trigger-background-task-from-app.md) | 了解如何使用 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) 从应用中激活后台任务。|
 | [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)             | 了解如何设置控制何时运行后台任务的条件。 |
-| [在后台传输数据](https://msdn.microsoft.com/library/windows/apps/mt280377)                 | 使用后台传输 API 以便在后台复制文件。 |
+| [在后台传输数据](https://docs.microsoft.com/windows/uwp/networking/background-transfers)                 | 使用后台传输 API 以便在后台复制文件。 |
 | [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)                   | 使用后台任务，以最新内容更新应用的动态磁贴。 |
-| [使用维护触发器](use-a-maintenance-trigger.md)                                                   | 了解如何在插入设备的情况下使用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 类在后台运行轻型代码。 |
+| [使用维护触发器](use-a-maintenance-trigger.md)                                                   | 了解如何在插入设备的情况下使用 [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) 类在后台运行轻型代码。 |
 
 ## <a name="remote-systems"></a>远程系统
 

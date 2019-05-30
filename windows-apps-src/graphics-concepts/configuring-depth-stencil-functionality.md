@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 98cb6c62248fbf273a9d7ca1ef0d1d82293122eb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cd23938387b40c8ce268c65209d1fb11d5da529c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656182"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370632"
 ---
 # <a name="span-iddirect3dconceptsconfiguringdepth-stencilfunctionalityspanconfiguring-depth-stencil-functionality"></a><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>配置深度模具功能
 
@@ -24,7 +24,7 @@ ms.locfileid: "57656182"
 ## <a name="span-idcreatedepthstencilstatespanspan-idcreatedepthstencilstatespanspan-idcreatedepthstencilstatespancreate-depth-stencil-state"></a><span id="Create_Depth_Stencil_State"></span><span id="create_depth_stencil_state"></span><span id="CREATE_DEPTH_STENCIL_STATE"></span>创建深度模具状态
 
 
-输出合并器阶段通过深度模具状态来判断如何执行[深度模具测试](https://msdn.microsoft.com/library/windows/desktop/bb205120)。 深度模具测试确定是否应该绘制给定像素。
+输出合并器阶段通过深度模具状态来判断如何执行[深度模具测试](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage)。 深度模具测试确定是否应该绘制给定像素。
 
 ## <a name="span-idbinddepthstenciltotheomstagespanspan-idbinddepthstenciltotheomstagespanspan-idbinddepthstenciltotheomstagespanbind-depth-stencil-data-to-the-om-stage"></a><span id="Bind_Depth_Stencil_to_the_OM_Stage"></span><span id="bind_depth_stencil_to_the_om_stage"></span><span id="BIND_DEPTH_STENCIL_TO_THE_OM_STAGE"></span>将深度模具数据绑定到 OM 阶段
 
@@ -77,7 +77,7 @@ Direct3D 应用程序使用贴纸来控制将特定基元图像中的哪些像�
 
 如果模具掩码与你正在渲染的基元的大小和形状相同，则在生成的图像中，基元应在的位置有一个洞。 然后，应用程序可以用黑色填充这个洞，以生成基元剪影。
 
-### <a name="span-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwosidedstencilspantwo-sided-stencil"></a><span id="Two_Sided_Stencil"></span><span id="two_sided_stencil"></span><span id="TWO_SIDED_STENCIL"></span>双侧模具
+### <a name="span-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwo-sided-stenciltwo-sided-stencil"></a><span id="Two_Sided_Stencil"></span><span id="two_sided_stencil"></span><span id="TWO_SIDED_STENCIL"></span><span id="two-sided-stencil">双侧模具
 
 阴影卷用于在模具缓冲区中绘制阴影。 应用程序通过遮挡几何图形计算阴影卷大小，方法是计算剪影边缘并将它们从光线中挤压到一组 3D 卷中。 然后，这些卷将两次渲染到模具缓冲区中。
 
@@ -98,4 +98,4 @@ Direct3D 应用程序使用贴纸来控制将特定基元图像中的哪些像�
 
 [图形管道](graphics-pipeline.md)
 
-[输出合并器阶段](https://msdn.microsoft.com/library/windows/desktop/bb205120)
+[输出合并器阶段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage)

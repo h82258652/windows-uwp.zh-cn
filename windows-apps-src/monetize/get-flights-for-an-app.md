@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版, 软件包外部测试版
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f55a218c0cb4f4964fe12eb8e2eeb5b504f6405
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 66e64f2c499835a345bb9563fd005b86a926a4d2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334775"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372016"
 ---
 # <a name="get-package-flights-for-an-app"></a>获取应用的软件包外部测试版
 
-在 Microsoft Store 提交 API 中使用此方法，若要列出到合作伙伴中心帐户注册的应用包航班。 有关软件包外部测试版的详细信息，请参阅[软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。
+在 Microsoft Store 提交 API 中使用此方法，若要列出到合作伙伴中心帐户注册的应用包航班。 有关软件包外部测试版的详细信息，请参阅[软件包外部测试版](https://docs.microsoft.com/windows/uwp/publish/package-flights)。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -44,7 +44,7 @@ ms.locfileid: "58334775"
 
 |  名称  |  在任务栏的搜索框中键入  |  描述  |  必需  |
 |------|------|------|------|
-|  applicationId  |  string  |  要检索软件包外部测试版的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
+|  applicationId  |  string  |  要检索软件包外部测试版的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
 |  top  |  int  |  要在请求中返回的项数（即，要返回的软件包外部测试版数）。 如果你的帐户具有的软件包外部测试版超过在查询中指定的值，响应正文将包括可追加到方法 URI 的相对 URI 路径，用于请求下一页数据。  |  否  |
 |  skip  |  int  |  返回剩余项之前，在查询中绕过的项数。 使用此参数分页浏览数据集。 例如，top=10 和 skip=0 可检索项目 1 到 10，top=10 和 skip=10 可检索项目 11 到 20，依此类推。  |  否  |
 
@@ -102,7 +102,7 @@ Authorization: Bearer <your access token>
 | ReplTest1      | 在任务栏的搜索框中键入   | 描述       |
 |------------|--------|---------------------|
 | @nextLink  | string | 如果存在数据的其他页，此字符串中包含可附加到基本 `https://manage.devcenter.microsoft.com/v1.0/my/` 请求 URI 的相对路径，用于请求下一页数据。 例如，如果初始请求正文的 *top* 参数设置为 2，但应用中有 4 个软件包外部测试版，响应正文将包含 `applications/{applicationid}/listflights/?skip=2&top=2` 的 @nextLink 值，指示你可以调用 `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2` 请求接下来的 2 个软件包外部测试版。 |
-| 值      | 数组  | 为指定的应用提供软件包外部测试版相关信息的对象数组。 有关每个对象中的数据的详细信息，请参阅[外部测试版资源](get-app-data.md#flight-object)。               |
+| value      | 数组  | 为指定的应用提供软件包外部测试版相关信息的对象数组。 有关每个对象中的数据的详细信息，请参阅[外部测试版资源](get-app-data.md#flight-object)。               |
 | totalCount | int    | 查询的数据结果中的行总数（即，指定应用的软件包外部测试版的总数）。   |
 
 

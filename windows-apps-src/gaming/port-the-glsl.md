@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, glsl, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 809440f9e77af19c01f4a050eee3b6f8d1c709b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 210f98476a06b88e7d3d543006a6d4ec886cfd45
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621372"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368256"
 ---
 # <a name="port-the-glsl"></a>移植 GLSL
 
@@ -20,18 +20,18 @@ ms.locfileid: "57621372"
 
 **重要的 Api**
 
--   [HLSL 语义](https://msdn.microsoft.com/library/windows/desktop/bb205574)
--   [着色器常量 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)
+-   [HLSL 语义](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps)
+-   [着色器常量 (HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)
 
 转到创建和配置缓冲区及着色器对象的代码之后，应该将这些着色器中的代码从 OpenGL ES 2.0 的 GL 着色器语言 (GLSL) 移植到 Direct3D 11 的高级着色器语言 (HLSL)。
 
 在 OpenGL ES 2.0 着色器返回的数据之后执行，如使用内部函数**gl\_位置**， **gl\_FragColor**，或者**gl\_FragData\[n\]**  （其中 n 是特定呈现器目标的索引）。 在 Direct3D 中，没有特定的内部函数，着色器以其各自的 main() 函数的返回类型返回数据。
 
-要在着色器阶段之间进行内插的数据（如顶点位置或法线）通过使用 **varying** 声明进行处理。 但是，Direct3D 没有此声明；在着色器阶段之间传递的所有数据都必须使用 [HLSL 语义](https://msdn.microsoft.com/library/windows/desktop/bb205574)进行标记。 所选择的特定语义指示数据的用途及含义。 例如，将要在各个片段着色器之间进行插值的顶点数据声明为：
+要在着色器阶段之间进行内插的数据（如顶点位置或法线）通过使用 **varying** 声明进行处理。 但是，Direct3D 没有此声明；在着色器阶段之间传递的所有数据都必须使用 [HLSL 语义](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps)进行标记。 所选择的特定语义指示数据的用途及含义。 例如，将要在各个片段着色器之间进行插值的顶点数据声明为：
 
 `float4 vertPos : POSITION;`
 
-或者
+或
 
 `float4 vertColor : COLOR;`
 
@@ -54,7 +54,7 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 };
 ```
 
-在此处，常量缓冲区使用寄存器 b0 来包含打包的缓冲区。 所有寄存器在窗体 b 中被都引用到\#。 有关常量缓冲区、寄存器以及数据打包的 HLSL 实现的详细信息，请阅读[着色器常量 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)。
+在此处，常量缓冲区使用寄存器 b0 来包含打包的缓冲区。 所有寄存器在窗体 b 中被都引用到\#。 有关常量缓冲区、寄存器以及数据打包的 HLSL 实现的详细信息，请阅读[着色器常量 (HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)。
 
 <a name="instructions"></a>说明
 ------------
@@ -159,10 +159,10 @@ float4 main(PixelShaderInput input) : SV_TARGET
 ---------
 [绘制到屏幕](draw-to-the-screen.md) 备注
 -------
-了解 HLSL 语义以及常量缓冲区的打包可以为你省去调试的麻烦，并且还可以提供优化机会。 如果您有机会，通读[变量语法 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706)，[简介 Direct3D 11 中的缓冲区](https://msdn.microsoft.com/library/windows/desktop/ff476898)，和[如何：创建常量缓冲区](https://msdn.microsoft.com/library/windows/desktop/ff476896)。 如果没有机会通读这些内容，那么请记住下面这些有关语义和常量缓冲区的开始提示：
+了解 HLSL 语义以及常量缓冲区的打包可以为你省去调试的麻烦，并且还可以提供优化机会。 如果您有机会，通读[变量语法 (HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-syntax)，[简介 Direct3D 11 中的缓冲区](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-intro)，和[如何：创建常量缓冲区](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-constant-how-to)。 如果没有机会通读这些内容，那么请记住下面这些有关语义和常量缓冲区的开始提示：
 
 -   始终要仔细检查呈现器的 Direct3D 配置代码，以确保常量缓冲区的结构与 HLSL 中的 cbuffer struct 声明相匹配，并且确保两个声明之间的组件标量类型相匹配。
--   在呈现器的 C++ 代码中，在常量缓冲区声明中使用 [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) 类型，以确保正确的数据打包。
+-   在呈现器的 C++ 代码中，在常量缓冲区声明中使用 [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal) 类型，以确保正确的数据打包。
 -   有效使用常量缓冲区的最佳方法是，根据它们的更新频率将着色器变量组织成常量缓冲区。 例如，如果你有一些每个帧都进行更新的 uniform 数据，还有仅在相机移动时更新的其他 uniform 数据，则需考虑将该数据分为两个不同的常量缓冲区。
 -   你忘记应用或应用错误的语义将是着色器编译 (FXC) 错误的最早来源。 一定要对它们进行仔细检查！ 本文可能有点乱，因为很多较旧的页面和示例都参考了 Direct3D 11 之前不同版本的 HLSL 语义。
 -   确保你了解每个着色器的目标 Direct3D 功能级别。 功能的语义级别 9\_ \*区别于 11\_1。

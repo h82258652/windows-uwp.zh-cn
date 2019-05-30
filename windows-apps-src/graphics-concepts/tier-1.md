@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae76111f6feefa0bb63fd18516e033050cc06fc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3aeb30fca8e9fbad21f274162aab3106afcf2e45
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589882"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370841"
 ---
 # <a name="tier-1"></a>第 1 层
 
@@ -52,7 +52,7 @@ ms.locfileid: "57589882"
 
 若要引用通过池中磁贴的磁贴之间切换[缓冲区](introduction-to-buffers.md)资源引用通过相同的磁贴[纹理](introduction-to-textures.md)资源，或进行相反转换、 最新的更新磁贴映射，或者复制定义映射到这些磁贴的磁贴映射的池磁贴必须为相同的资源维度 (与纹理缓冲区\*) 作为资源维度将用于访问磁贴。 否则行为将是未定义状态，可能出现设备重置等情况。
 
-因此，举例来说，更新磁贴映射以定义某个缓冲区的磁贴映射，然后通过 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) 资源更新指向磁贴池中相同磁贴的磁贴映射，再通过缓冲区访问磁贴，属于无效操作。 解决办法可以是在缓冲区和纹理（反之亦然）共享磁贴之间切换时重新定义某个资源的磁贴映射，或者永远不在缓冲区资源和纹理资源之间共享磁贴池中的磁贴。
+因此，举例来说，更新磁贴映射以定义某个缓冲区的磁贴映射，然后通过 [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) 资源更新指向磁贴池中相同磁贴的磁贴映射，再通过缓冲区访问磁贴，属于无效操作。 解决办法可以是在缓冲区和纹理（反之亦然）共享磁贴之间切换时重新定义某个资源的磁贴映射，或者永远不在缓冲区资源和纹理资源之间共享磁贴池中的磁贴。
 
 ### <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>最小/最大减少筛选
 

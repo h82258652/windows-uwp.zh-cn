@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7aeb60d67f0cdee77772797816e45fdd9bdc41b4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 04d75d4c854a407fd733c6ecdfb3cabac84faef6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623612"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369598"
 ---
 # <a name="use-the-light-sensor"></a>使用光传感器
 
 
 **重要的 Api**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**LightSensor**](https://msdn.microsoft.com/library/windows/apps/BR225790)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**LightSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.LightSensor)
 
 **示例**
 
@@ -29,7 +29,7 @@ ms.locfileid: "57623612"
 
 氛围光传感器是允许应用程序响应用户环境变化的多种类型的环境传感器之一。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 
 您应了解与 Extensible Application Markup Language (XAML)，Microsoft Visual C#，和事件。
 
@@ -41,7 +41,7 @@ ms.locfileid: "57623612"
 
 ###  <a name="instructions"></a>说明
 
--   创建新项目，从“Visual C#”项目模板中选择“空白应用(通用 Windows)”。
+-   创建新项目，从“Visual C#”  项目模板中选择“空白应用(通用 Windows)”  。
 
 -   打开项目的 BlankPage.xaml.cs 文件，然后使用下列内容替换现有的代码。
 
@@ -135,11 +135,11 @@ ms.locfileid: "57623612"
 
 你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**LightingCS**的项目，则使用 `x:Class="LightingCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 还应当将 `xmlns:local="using:App1"` 替换为 `xmlns:local="using:LightingCS"`。
 
--   按 F5 或依次选择“调试” > “开始调试”来生成、部署并运行应用。
+-   按 F5 或依次选择“调试”   > “开始调试”  来生成、部署并运行应用。
 
 应用运行后，你可以通过更改可射入传感器的光线或使用仿真器工具更改光线传感器的值。
 
--   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试” > “停止调试”来停止应用。
+-   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”   > “停止调试”  来停止应用。
 
 ###  <a name="explanation"></a>说明
 

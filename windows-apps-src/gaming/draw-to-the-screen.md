@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, directx, 图形
 ms.localizationpriority: medium
-ms.openlocfilehash: fc93111d48f71a6ca8acad8191a2afb535fad2f0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 68d2c6ec250286b9820ff218f9b35637f49f3b97
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660932"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368753"
 ---
 # <a name="draw-to-the-screen"></a>绘制到屏幕
 
@@ -20,24 +20,24 @@ ms.locfileid: "57660932"
 
 **重要的 Api**
 
--   [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)
--   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)
--   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)
+-   [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)
+-   [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)
+-   [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1)
 
 最终，我们会移植可将旋转立方体绘制到屏幕的代码。
 
 在 OpenGL ES 2.0 中，你的绘制上下文被定义为 EGLContext 类型，该类型包含窗口和图面参数以及绘制到呈现目标所需的资源，将使用呈现目标来编写显示到窗口的最终图像。 你将使用此上下文来配置图形资源，以便在显示器上正确显示着色器管道的结果。 其中一个主要资源是“后台缓冲区”（或“帧缓冲区对象”），它包含可显示到显示器的最终复合呈现目标。
 
-对于 Direct3D，配置图形资源以便绘制到显示器的过程说教性较强，并且需要相当多的 API。 （Microsoft Visual Studio Direct3D 模板可以显著地简化此过程中，但 ！）若要获取的上下文 （称为 Direct3D 设备上下文），你首先必须获取[**对 ID3D11Device1** ](https://msdn.microsoft.com/library/windows/desktop/hh404575)对象，并使用它来创建和配置[ **ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598)对象。 结合使用这两个对象来配置绘制到显示器所需的特定资源。
+对于 Direct3D，配置图形资源以便绘制到显示器的过程说教性较强，并且需要相当多的 API。 （Microsoft Visual Studio Direct3D 模板可以显著地简化此过程中，但 ！）若要获取的上下文 （称为 Direct3D 设备上下文），你首先必须获取[**对 ID3D11Device1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)对象，并使用它来创建和配置[ **ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)对象。 结合使用这两个对象来配置绘制到显示器所需的特定资源。
 
 简而言之，DXGI API 包含的 API 主要用于管理与图形适配器直接相关的资源，而 Direct3D 包含的 API 可用作 GPU 与在 CPU 上运行的主要程序之间的接口。
 
 为了在该示例中进行比较，我们在下面给出了每个 API 的相关类型：
 
--   [**对 ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)： 提供图形设备和其资源的虚拟表示形式。
--   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)： 提供的接口进行配置的缓冲区，并颁发呈现命令。
--   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)： 交换链后台缓冲区 OpenGL ES 2.0 中相当。 它是图形适配器上的内存区域，其中包含用于显示的最终呈现的图像。 它称为“交换链”，因为它包含多个可以写入以及“已进行交换”可向屏幕提供最新呈现的缓冲区。
--   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)： 此项包含 2D 位图缓冲区 Direct3D 设备上下文绘制，并提供通过交换链。 和 OpenGL ES 2.0 一样，你可以拥有多个呈现目标，其中一些目标未绑定到交换链，但用于多通道着色技术。
+-   [**对 ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)： 提供图形设备和其资源的虚拟表示形式。
+-   [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)： 提供的接口进行配置的缓冲区，并颁发呈现命令。
+-   [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1)： 交换链后台缓冲区 OpenGL ES 2.0 中相当。 它是图形适配器上的内存区域，其中包含用于显示的最终呈现的图像。 它称为“交换链”，因为它包含多个可以写入以及“已进行交换”可向屏幕提供最新呈现的缓冲区。
+-   [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)： 此项包含 2D 位图缓冲区 Direct3D 设备上下文绘制，并提供通过交换链。 和 OpenGL ES 2.0 一样，你可以拥有多个呈现目标，其中一些目标未绑定到交换链，但用于多通道着色技术。
 
 在该模板中，呈现器对象包含以下字段：
 
@@ -63,7 +63,7 @@ m_d3dDevice->CreateRenderTargetView(
   &m_d3dRenderTargetViewWin);
 ```
 
-Direct3D 运行时为 [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) 隐式创建一个 [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343)，它将纹理表示为交换链可以用于显示器的“后台缓冲区”。
+Direct3D 运行时为 [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d) 隐式创建一个 [**IDXGISurface1**](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgisurface1)，它将纹理表示为交换链可以用于显示器的“后台缓冲区”。
 
 Direct3D 设备和设备上下文以及呈现目标的初始化和配置可以在 Direct3D 模板的自定义 **CreateDeviceResources** 和 **CreateWindowSizeDependentResources** 方法中找到。
 
@@ -123,15 +123,15 @@ void Render(GraphicsContext *drawContext)
 
 在 Direct3D 11 中，该过程非常相似。 （我们假定你使用 Direct3D 模板中的视区和呈现目标配置。）
 
--   通过调用 [**ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790) 更新常量缓冲区（在本例中为 model-view-projection 矩阵）。
--   通过 [**ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) 设置顶点缓冲区。
--   通过 [**ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) 设置索引缓冲区。
--   通过 [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) 设置特定的三角形拓扑（三角形列表）。
--   通过 [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) 设置顶点缓冲区的输入布局。
--   通过 [**ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) 绑定顶点着色器。
--   通过 [**ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) 绑定片段着色器。
--   通过着色器发送索引的顶点，并通过 [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) 将颜色结果输出到呈现目标缓冲区。
--   通过 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 显示呈现目标缓冲区。
+-   通过调用 [**ID3D11DeviceContext1::UpdateSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nf-d3d11_1-id3d11devicecontext1-updatesubresource1) 更新常量缓冲区（在本例中为 model-view-projection 矩阵）。
+-   通过 [**ID3D11DeviceContext1::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers) 设置顶点缓冲区。
+-   通过 [**ID3D11DeviceContext1::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer) 设置索引缓冲区。
+-   通过 [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) 设置特定的三角形拓扑（三角形列表）。
+-   通过 [**ID3D11DeviceContext1::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) 设置顶点缓冲区的输入布局。
+-   通过 [**ID3D11DeviceContext1::VSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) 绑定顶点着色器。
+-   通过 [**ID3D11DeviceContext1::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) 绑定片段着色器。
+-   通过着色器发送索引的顶点，并通过 [**ID3D11DeviceContext1::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) 将颜色结果输出到呈现目标缓冲区。
+-   通过 [**IDXGISwapChain1::Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1) 显示呈现目标缓冲区。
 
 Direct3D 11:呈现用于显示帧
 
@@ -196,7 +196,7 @@ void RenderObject::Render()
 
 ```
 
-调用 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 之后，你的帧会输出到配置的显示器。
+调用 [**IDXGISwapChain1::Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1) 之后，你的帧会输出到配置的显示器。
 
 ## <a name="previous-step"></a>上一步
 

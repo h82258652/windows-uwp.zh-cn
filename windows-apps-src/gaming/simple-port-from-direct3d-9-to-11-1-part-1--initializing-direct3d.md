@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, direct3d 11, 初始化, 移植, direct3d 9
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aaf6dcc001a09e33588ac18898767b9cf92819c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c5a7f33ddbc6d70af5293b92165892c2098e452d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604182"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368034"
 ---
 # <a name="initialize-direct3d-11"></a>初始化 Direct3D 11
 
@@ -29,7 +29,7 @@ ms.locfileid: "57604182"
 ## <a name="initialize-the-direct3d-device"></a>初始化 Direct3D 设备
 
 
-在 Direct3D 9 中，我们通过调用 [**IDirect3D9::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174313) 创建了 Direct3D 设备的一个句柄。 我们先获取指向 [**IDirect3D9 interface**](https://msdn.microsoft.com/library/windows/desktop/bb174300) 的指针，然后指定了控制 Direct3D 设备和交换链配置的很多参数。 执行该操作之前，我们调用了 [**GetDeviceCaps**](https://msdn.microsoft.com/library/windows/desktop/dd144877) 以确保我们没有要求设备执行无法完成的操作。
+在 Direct3D 9 中，我们通过调用 [**IDirect3D9::CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-createdevice) 创建了 Direct3D 设备的一个句柄。 我们先获取指向 [**IDirect3D9 interface**](https://docs.microsoft.com/windows/desktop/api/d3d9helper/nn-d3d9helper-idirect3d9) 的指针，然后指定了控制 Direct3D 设备和交换链配置的很多参数。 执行该操作之前，我们调用了 [**GetDeviceCaps**](https://docs.microsoft.com/windows/desktop/api/wingdi/nf-wingdi-getdevicecaps) 以确保我们没有要求设备执行无法完成的操作。
 
 Direct3D 9
 
@@ -69,7 +69,7 @@ m_pD3D->CreateDevice(
 
 在 Direct3D 11 中，设备上下文和图形基础结构被认为是与设备本身分离的。 初始化分为多个步骤。
 
-首先，我们创建设备。 我们会得到设备所支持的功能级别列表 - 该列表将告知我们想知道的有关 GPU 的大部分内容。 而且，我们无需创建接口即可访问 Direct3D。 我们使用 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 核心 API。 这会为我们提供设备句柄以及设备的即时上下文。 设备上下文用来设置管道状态以及生成呈现命令。
+首先，我们创建设备。 我们会得到设备所支持的功能级别列表 - 该列表将告知我们想知道的有关 GPU 的大部分内容。 而且，我们无需创建接口即可访问 Direct3D。 我们使用 [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 核心 API。 这会为我们提供设备句柄以及设备的即时上下文。 设备上下文用来设置管道状态以及生成呈现命令。
 
 创建 Direct3D 11 设备和上下文之后，我们可以利用 COM 指针功能获取最新版本的接口，该指针功能还包括其他功能，因此我们总是推荐使用它。
 
@@ -125,7 +125,7 @@ Direct3D 11 包含一个称为 DirectX 图形基础结构 (DXGI) 的设备 API�
 
 Direct3D 设备为 DXGI 实现一个 COM 接口。 首先，我们需要获取该接口并使用该接口来请求托管设备的 DXGI 适配器。 然后，我们使用 DXGI 适配器来创建 DXGI 工厂。
 
-> **请注意**  这些是 COM 接口，因此第一个响应可能是使用[ **QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)。 应该使用 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 智能指针。 然后，只需调用 [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) 方法，从而提供正确接口类型的一个空 COM 指针。
+> **请注意**  这些是 COM 接口，因此第一个响应可能是使用[ **QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))。 应该使用 [**Microsoft::WRL::ComPtr**](https://docs.microsoft.com/cpp/windows/comptr-class) 智能指针。 然后，只需调用 [**As()** ](https://docs.microsoft.com/previous-versions/br230426(v=vs.140)) 方法，从而提供正确接口类型的一个空 COM 指针。
 
  
 
@@ -147,7 +147,7 @@ dxgiAdapter->GetParent(
     );
 ```
 
-既然我们拥有了 DXGI 工厂，那么我们便可以使用它来创建交换链。 下面我们定义交换链参数。 我们需要指定的图面上的格式;我们将选择[ **DXGI\_格式\_B8G8R8A8\_UNORM** ](https://msdn.microsoft.com/library/windows/desktop/bb173059)由于与 Direct2D 兼容。 我们将关闭显示缩放、多重采样以及立体呈现，因为该示例中没有使用这些功能。 由于我们直接在 CoreWindow 中运行，因此可以将宽度和高度设置为 0 并自动获取全屏值。
+既然我们拥有了 DXGI 工厂，那么我们便可以使用它来创建交换链。 下面我们定义交换链参数。 我们需要指定的图面上的格式;我们将选择[ **DXGI\_格式\_B8G8R8A8\_UNORM** ](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)由于与 Direct2D 兼容。 我们将关闭显示缩放、多重采样以及立体呈现，因为该示例中没有使用这些功能。 由于我们直接在 CoreWindow 中运行，因此可以将宽度和高度设置为 0 并自动获取全屏值。
 
 > **请注意**  始终集*SDKVersion* D3D11 参数\_SDK\_适用于 UWP 应用的版本。
 
@@ -167,9 +167,9 @@ dxgiFactory->CreateSwapChainForCoreWindow(
 swapChain.As(&m_swapChain);
 ```
 
-若要确保我们不通常不是屏幕实际上可以显示呈现，我们将帧延迟设置为 1 和使用[ **DXGI\_交换\_效果\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077). 这不仅能够省电而且还是应用商店的认证要求；我们将在本操作实例的第 2 部分中了解有关呈现到屏幕的更多信息。
+若要确保我们不通常不是屏幕实际上可以显示呈现，我们将帧延迟设置为 1 和使用[ **DXGI\_交换\_效果\_FLIP\_SEQUENTIAL**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_effect). 这不仅能够省电而且还是应用商店的认证要求；我们将在本操作实例的第 2 部分中了解有关呈现到屏幕的更多信息。
 
-> **请注意**  可以使用多线程处理 (例如， [ **ThreadPool** ](https://msdn.microsoft.com/library/windows/apps/br229642)工作项) 时能够继续执行其他工作呈现线程被阻止。
+> **请注意**  可以使用多线程处理 (例如， [ **ThreadPool** ](https://docs.microsoft.com/uwp/api/Windows.System.Threading)工作项) 时能够继续执行其他工作呈现线程被阻止。
 
  
 

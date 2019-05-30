@@ -8,19 +8,19 @@ keywords: 键盘, 文本, 输入, 用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9679e6e658e7fa1eb50b41331e7e59ec2115fc14
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fc227904e57577a30eb2d171a060fb69d39b71f0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612502"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363498"
 ---
 # <a name="selecting-text-and-images"></a>选择文本和图像
 
 
 本文介绍了选择和操作文本、图像和控件，并提供了将这些机制用于应用中时应考虑的用户体验指南。
 
-> **重要的 API**：[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)， [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+> **重要的 API**：[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)， [ **Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
  
 
 
@@ -109,7 +109,7 @@ Windows 将识别两个可能状态的所选内容交互，可编辑的和不可
 
 
 **面向开发人员**
-* [自定义用户交互](https://msdn.microsoft.com/library/windows/apps/mt185599)
+* [自定义用户交互](https://developer.microsoft.com/windows/design/inputs-devices)
 
 **示例**
 * [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
@@ -124,7 +124,7 @@ Windows 将识别两个可能状态的所选内容交互，可编辑的和不可
 * [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
 * [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
 * [输入：Windows 8 手势示例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [输入：操作和手势 （c + +） 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [输入：操作和手势 (C++) 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 触摸输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 

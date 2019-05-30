@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 阴影卷, 深度缓冲区, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 2feecb3080efefb2f9625fd8b66c5b722ad02a45
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2ce0cbd310ea89c5fa7b5c68033402f559768a24
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57622272"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368513"
 ---
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>操作实例：实现在 Direct3D 11 中使用深度缓冲区的卷影卷
 
@@ -65,7 +65,7 @@ Windows 8 添加真正 d 深度比较功能，到功能级别 9\_1 和 9\_3。 �
 
 在完成本演练，请您应熟悉如何在兼容功能级别为 9 的 Direct3D 11 中实现基本兼容的卷影卷技术\_1 及更高版本。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 
 
 应该[准备通用 Windows 平台 (UWP) DirectX 游戏开发的开发人员环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 您不需要模板，但是您将需要 Microsoft Visual Studio 2015 生成在本演练中的代码示例。
@@ -75,13 +75,13 @@ Windows 8 添加真正 d 深度比较功能，到功能级别 9\_1 和 9\_3。 �
 
 **Direct3D**
 
-* [在 Direct3D 中编写 HLSL 着色器 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [在 Direct3D 中编写 HLSL 着色器 9](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-writing-shaders-9)
 * [为 UWP 创建新的 DirectX 11 项目](user-interface.md)
 
 **卷影映射技术文章**
 
-* [常见的技术以提高阴影深度映射](https://msdn.microsoft.com/library/windows/desktop/ee416324)
-* [级联的卷影映射](https://msdn.microsoft.com/library/windows/desktop/ee416307)
+* [常见的技术以提高阴影深度映射](https://docs.microsoft.com/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps)
+* [级联的卷影映射](https://docs.microsoft.com/windows/desktop/DxTechArts/cascaded-shadow-maps)
 
  
 

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f9f9a69c0e30459929d1e31084ea88b3f7ebbd0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c48b02de34bd37acced8ef65859708f31fd78ca2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612882"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370863"
 ---
 # <a name="tier-2"></a>第 2 层
 
@@ -42,7 +42,7 @@ ms.locfileid: "57612882"
 
 足迹跨 **NULL** 和非 **NULL** 磁贴的磁贴筛选在整体筛选操作中以 0 表示 **NULL** 磁贴上的纹素（默认值表示缺失的格式组件）。 部分早期硬件不满足此要求，如果任何纹素（权重不为零）落在 **NULL** 磁贴上，则为完整筛选结果返回 0（缺失格式组件返回默认值）。 不允许任何其他硬件违反在筛选操作中纳入所有（非零权重的）纹素的要求。
 
-**NULL** 纹素访问将引起 [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 针对纹理读取返回 false 的状态反馈的操作。 无论纹理访问结果如何屏蔽着色器中的写入，以及纹理格式包含多少组件（二者结合可能导致纹理看似不需要访问），都会产生上述结果。
+**NULL** 纹素访问将引起 [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) 针对纹理读取返回 false 的状态反馈的操作。 无论纹理访问结果如何屏蔽着色器中的写入，以及纹理格式包含多少组件（二者结合可能导致纹理看似不需要访问），都会产生上述结果。
 
 ## <a name="span-idalignmentconstraintsspanspan-idalignmentconstraintsspanspan-idalignmentconstraintsspanalignment-constraints"></a><span id="Alignment_constraints"></span><span id="alignment_constraints"></span><span id="ALIGNMENT_CONSTRAINTS"></span>对齐约束
 

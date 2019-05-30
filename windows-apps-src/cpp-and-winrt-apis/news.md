@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10、 uwp、 标准版、 c + +、 cpp、 winrt、 投影、 新闻、 什么的新
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b84736e41e039d350a849c55fead008cbab5fdea
-ms.sourcegitcommit: bc64db47b6ff326f15cac15fc2cfd709fa7f877b
+ms.openlocfilehash: a84e118d988d8bf6a7d26eba7d5dd009c7ad44f3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65626215"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360134"
 ---
 # <a name="whats-new-in-cwinrt"></a>新增功能C++/WinRT
 
@@ -302,7 +302,7 @@ struct MainPage : PageT<MainPage>
 
 目前，Windows SDK 标头文件隔离到唯一的例外是内部函数，和的数字。 没有这些最后一个剩余依赖关系与任何已知的问题。
 
-在项目中，您可以在需要时重新启用与 Windows SDK 标头进行互操作。 您可能，例如，想要实现 COM 接口 (来源于[ **IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509))。 对于该示例，包括`unknwn.h`包括任何之前C++/WinRT 标头。 执行操作会导致C++/WinRT 基库启用各种挂钩，以支持经典 COM 接口。 有关代码示例，请参阅[作者 COM 组件与C++/WinRT](author-coclasses.md)。 同样，显式包含类型和/或你想要调用的函数声明任何其他 Windows SDK 标头。
+在项目中，您可以在需要时重新启用与 Windows SDK 标头进行互操作。 您可能，例如，想要实现 COM 接口 (来源于[ **IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown))。 对于该示例，包括`unknwn.h`包括任何之前C++/WinRT 标头。 执行操作会导致C++/WinRT 基库启用各种挂钩，以支持经典 COM 接口。 有关代码示例，请参阅[作者 COM 组件与C++/WinRT](author-coclasses.md)。 同样，显式包含类型和/或你想要调用的函数声明任何其他 Windows SDK 标头。
 
 ### <a name="how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>如何重定目标，在C++到更高版本的 Windows SDK /WinRT 项目
 
@@ -315,7 +315,7 @@ struct MainPage : PageT<MainPage>
 
 如果使用这两种方法之一后遇到任何编译器或链接器错误，则可以尝试清理解决方案 (**构建** > **清理解决方案**和/或手动删除所有临时文件夹和文件） 然后再尝试重新生成。
 
-如果C++编译器会生成"*错误 C2039:IUnknown： 不是成员的 '\`全局命名空间'*"，然后添加`#include <unknwn.h>`到顶部你`pch.h`文件 (包括任何之前C++/WinRT 标头)。
+如果C++编译器会生成"*错误 C2039:IUnknown： 不是成员的 '\`全局命名空间'* "，然后添加`#include <unknwn.h>`到顶部你`pch.h`文件 (包括任何之前C++/WinRT 标头)。
 
 您可能还需要添加`#include <hstring.h>`之后。
 

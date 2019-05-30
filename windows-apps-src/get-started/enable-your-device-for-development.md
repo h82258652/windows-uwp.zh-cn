@@ -3,15 +3,15 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: 启用设备进行开发
 description: 配置 Windows 10 设备进行开发和调试。
 keywords: 入门 开发人员许可证 Visual Studio，开发人员许可证 启用设备
-ms.date: 05/30/2018
+ms.date: 4/9/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 90ff8e8c0d11e58d251e9c2f5bfb00f3b8aedf1a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f927d8bce1e59ba9a8ed9b0f3f08ce3575c6d7bd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618952"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367020"
 ---
 # <a name="enable-your-device-for-development"></a>启用设备进行开发
 
@@ -93,11 +93,11 @@ ms.locfileid: "57618952"
 若要了解有关 Device Portal 的详细信息，请参阅 [Windows Device Portal 概述](../debug-test-perf/device-portal.md)。
 
 有关特定于设备的设置说明，请参阅：
-- [桌面设备门户](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
+- [桌面设备门户](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
 - [对于 HoloLens 设备门户](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
 - [Iot 设备门户](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [适用于移动设备的设备门户](../debug-test-perf/device-portal-mobile.md)
-- [Xbox 的设备门户](../debug-test-perf/device-portal-xbox.md)
+- [Xbox 的设备门户](../xbox-apps/device-portal-xbox.md)
 
 如果在启用开发人员模式或 Device Portal 时遇到问题，请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛以查找这些问题的解决方法，或者访问[无法安装开发人员模式程序包](#failure-to-install-developer-mode-package)以获取更多详细信息，并了解可以使用哪些 WSUS KB 来解除阻止开发人员模式程序包。
 
@@ -128,13 +128,13 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
  在桌面设备系列上，**面向开发人员**设置页提供可用于针对开发任务对电脑进行优化的设置的快捷方式。 对于每个设置，可以选中相应复选框，然后单击**应用**或单击**显示设置**链接打开该选项的设置页。
 
 
-## <a name="notes"></a>注释
+## <a name="notes"></a>说明
 在早期版本的 Windows 10 Mobile 中，“开发人员设置”菜单中有“故障转储”选项。  这已经移到 [Device Portal](../debug-test-perf/device-portal.md)，以便可以远程使用而不只是通过 USB。  
 
 有多个工具可用来将应用从 Windows 10 电脑部署到 Windows 10 设备。 两台设备均必须通过有线或无线的连接方式连接到网络的同一子网，或者它们必须通过 USB 进行连接。 所列的两种方法仅会安装应用包 (.appx/.appxbundle)，不安装证书。
 
--   使用 Windows 10 应用程序部署 (WinAppDeployCmd) 工具。 了解有关 [WinAppDeployCmd 工具](https://msdn.microsoft.com/library/windows/apps/mt203806.aspx)的详细信息。
--   你可以使用 [Device Portal](../debug-test-perf/device-portal.md) 从浏览器部署到运行 Windows 10 版本 1511 或更高版本的移动设备。 在 Device Portal 中使用**[应用](../debug-test-perf/device-portal.md#apps-manager)** 页上传应用包 (.appx) 并在设备上安装它。
+-   使用 Windows 10 应用程序部署 (WinAppDeployCmd) 工具。 了解有关 [WinAppDeployCmd 工具](https://docs.microsoft.com/previous-versions/windows/apps/mt203806(v=vs.140))的详细信息。
+-   你可以使用 [Device Portal](../debug-test-perf/device-portal.md) 从浏览器部署到运行 Windows 10 版本 1511 或更高版本的移动设备。 在 Device Portal 中使用 **[应用](../debug-test-perf/device-portal.md#apps-manager)** 页上传应用包 (.appx) 并在设备上安装它。
 
 ## <a name="failure-to-install-developer-mode-package"></a>无法安装开发人员模式程序包。
 有时，由于网络或管理问题，开发人员模式无法正确安装。 开发人员模式程序包是**远程**部署到此电脑的必需条件 - 使用来自浏览器的 Device Portal 或设备发现启用 SSH - 但不用于本地部署。  即使你遇到这些问题，你仍然可以使用 Visual Studio 本地部署应用，或者从本设备向其他设备部署。
@@ -154,7 +154,7 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 
 1. 确保你的计算机连接到 Internet。
 2. 如果你位于加入域的计算机上，请与网络管理员联系。 默认情况下，WSUS 中阻止了开发人员模式程序包，如所有按需功能。
-2.1. 若要取消阻止当前和以前版本中的开发人员模式包，应在 WSUS 中允许以下知识库：4016509、 3180030、 3197985  
+2.1. 若要取消阻止当前和以前版本中的开发人员模式包，应在 WSUS 中允许以下知识库：4016509, 3180030, 3197985  
 3. 在“设置”&gt;“更新和安全”&gt;“Windows 更新”中检查 Windows 更新。
 4. 在“设置”&gt;“系统”&gt;“应用和功能”&gt;“管理可选功能”&gt;“添加功能”中验证 Windows 开发人员模式是否存在。 如果缺少，Windows 无法为计算机找到正确的程序包。
 
@@ -201,20 +201,20 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 1.  运行 **regedit**。
 2.  若要启用旁加载，请将此 DWORD 的值设置为 1：
 
-    -   **HKLM\\软件\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
+    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
 
     - 或 -
 
     若要启用开发人员模式，请将此 DWORD 的值设置为 1：
 
-    -   **HKLM\\软件\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
+    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
 
 **使用 PowerShell 启用你的设备**
 
 1.  使用管理员权限运行 PowerShell。
 2.  若要启用旁加载，请运行此命令：
 
-    -   **PS c:\\WINDOWS\\system32&gt; reg 添加"HKEY\_本地\_机\\软件\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock"/t REG\_DWORD /f /v"AllowAllTrustedApps"/d"1"**
+    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
 
     - 或 -
 
@@ -235,7 +235,7 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 
 错误：DEP0700:应用程序注册失败。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [第一个应用](your-first-app.md)
 * [发布 UWP 应用](https://developer.microsoft.com/store/publish-apps)。

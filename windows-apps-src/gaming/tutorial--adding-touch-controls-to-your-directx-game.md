@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 触摸, 控件, directx, 输入
 ms.localizationpriority: medium
-ms.openlocfilehash: e8892219b485d320bb77f90ac0d172e8e2403392
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b1f683f2d357057e33f3daa613e1b027a83776af
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618732"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367758"
 ---
 # <a name="touch-controls-for-games"></a>游戏的触摸控件
 
@@ -119,7 +119,7 @@ public:
 
 最后，我们使用这些方法和属性来初始化、访问和更新相机控制器状态信息。
 
--   **Initialize** 是一个事件处理程序，应用调用此处理程序来初始化控件，并将它们附加到描述显示窗口的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 对象。
+-   **Initialize** 是一个事件处理程序，应用调用此处理程序来初始化控件，并将它们附加到描述显示窗口的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 对象。
 -   **SetPosition** 是一个方法，应用调用此方法在场景空间中设置控件的（x、y 和 z）坐标。 注意，z 坐标在整个教程中始终为 0。
 -   **获取\_位置**是一个属性，我们的应用程序访问以获取场景空间中相机的当前位置。 使用此属性作为当前相机位置与应用进行通信的方法。
 -   **获取\_FixedLookPoint**是我们的应用程序访问以获取向面向控制器照相机的当前点的属性。 在本示例中，它通常锁定到 x-y 平面。
@@ -134,15 +134,15 @@ public:
 
 Windows 运行时事件调度程序提供我们希望自己的应用处理的 3 个事件：
 
--   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
--   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
--   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)
+-   [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed)
+-   [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)
+-   [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)
 
-这些事件在 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 类型上实现。 我们假设你有一个 **CoreWindow** 对象要处理。 有关详细信息，请参阅[如何设置 UWP C++ 应用以显示 DirectX 视图](https://msdn.microsoft.com/library/windows/apps/hh465077)。
+这些事件在 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 类型上实现。 我们假设你有一个 **CoreWindow** 对象要处理。 有关详细信息，请参阅[如何设置 UWP C++ 应用以显示 DirectX 视图](https://docs.microsoft.com/previous-versions/windows/apps/hh465077(v=win.10))。
 
 由于在应用运行时将触发这些事件，因此处理程序将更新相机控制器在我们的私有字段中定义的状态信息。
 
-首先，让我们填充触摸指针事件处理程序。 在第一个事件处理程序 **OnPointerPressed** 中，我们在用户触摸屏幕或单击鼠标时从用于管理显示的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 中获取指针的 x-y 坐标。
+首先，让我们填充触摸指针事件处理程序。 在第一个事件处理程序 **OnPointerPressed** 中，我们在用户触摸屏幕或单击鼠标时从用于管理显示的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 中获取指针的 x-y 坐标。
 
 **OnPointerPressed**
 
@@ -190,7 +190,7 @@ void CameraPanController::OnPointerMoved(
 }
 ```
 
-最后，当玩家停止触摸屏幕时，我们需要停用相机平移行为。 我们使用**OnPointerReleased**，时调用[ **PointerReleased** ](https://msdn.microsoft.com/library/windows/apps/br208279)触发时，若要设置**m\_panInUse**为 FALSE 和关闭移动相机平移，并将指针 ID 设置为 0。
+最后，当玩家停止触摸屏幕时，我们需要停用相机平移行为。 我们使用**OnPointerReleased**，时调用[ **PointerReleased** ](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)触发时，若要设置**m\_panInUse**为 FALSE 和关闭移动相机平移，并将指针 ID 设置为 0。
 
 **OnPointerReleased**
 
@@ -239,7 +239,7 @@ void CameraPanController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** 将指向该应用的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 实例的引用作为参数提供，并在该 **CoreWindow** 上注册我们已开发的相应事件处理程序。
+**Initialize** 将指向该应用的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 实例的引用作为参数提供，并在该 **CoreWindow** 上注册我们已开发的相应事件处理程序。
 
 ## <a name="getting-and-setting-the-position-of-the-camera-controller"></a>获取并设置相机控制器的位置
 

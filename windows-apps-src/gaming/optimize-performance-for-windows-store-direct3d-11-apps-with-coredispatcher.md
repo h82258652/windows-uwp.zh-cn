@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 输入延迟
 ms.localizationpriority: medium
-ms.openlocfilehash: 537dd6e9d3f300666a0692b66f422ce00dd68460
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a74e2e24810dee058aa166800091af91d55cdef4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601742"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368449"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>优化通用 Windows 平台 (UWP) DirectX 游戏的输入延迟
 
@@ -65,7 +65,7 @@ ms.locfileid: "57601742"
 
 七巧板游戏的首次迭代仅在用户移动一片七巧板时更新屏幕。 用户可以将一片七巧板拖到某个位置，或者通过选中它并触摸正确的目标位置来贴靠该七巧板。 在第二种情况中，该七巧板将跳到目标位置，此处没有任何动画或效果。
 
-该代码在 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中具有使用 **CoreProcessEventsOption::ProcessOneAndAllPending** 的单线程游戏循环。 使用该选项将调度队列中所有当前可用的事件。 如果没有等待的事件，游戏循环将等到出现一个事件为止。
+该代码在 [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run) 方法中具有使用 **CoreProcessEventsOption::ProcessOneAndAllPending** 的单线程游戏循环。 使用该选项将调度队列中所有当前可用的事件。 如果没有等待的事件，游戏循环将等到出现一个事件为止。
 
 ``` syntax
 void App::Run()
@@ -96,7 +96,7 @@ void App::Run()
 
 在第二次迭代中，游戏经过修改，当用户选中一块七巧板并触摸它的正确目标位置时，将出现它越过屏幕到达目标位置的动画。
 
-与之前一样，该代码具有使用 **ProcessOneAndAllPending** 的单线程游戏循环，以调度队列中的输入事件。 现在的区别在于：在动画效果期间，该循环更改为使用 **CoreProcessEventsOption::ProcessAllIfPresent**，以使其不再等待新的输入事件。 如果没有等待的事件，[**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 将立即返回并允许应用呈现动画中的下一个帧。 动画完成后，该循环将切换回 **ProcessOneAndAllPending** 以限制屏幕更新。
+与之前一样，该代码具有使用 **ProcessOneAndAllPending** 的单线程游戏循环，以调度队列中的输入事件。 现在的区别在于：在动画效果期间，该循环更改为使用 **CoreProcessEventsOption::ProcessAllIfPresent**，以使其不再等待新的输入事件。 如果没有等待的事件，[**ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) 将立即返回并允许应用呈现动画中的下一个帧。 动画完成后，该循环将切换回 **ProcessOneAndAllPending** 以限制屏幕更新。
 
 ``` syntax
 void App::Run()
@@ -182,7 +182,7 @@ void App::Run()
 
 一些游戏可以忽略或补偿增加的输入延迟（如方案 3 中所见）。 然而，如果较短的输入延迟对于游戏体验和玩家感受反馈十分重要，以 60 帧每秒的速度渲染的游戏需要在单独线程上处理输入。
 
-七巧板游戏的第四次迭代在方案 3 上构建，方法是将游戏循环中的输入处理和图形渲染拆分为单独的线程。 各自具有单独的线程可确保输入不被图形输出延迟；但是，代码因此变得更加复杂。 在方案 4 中，输入线程使用 [**CoreProcessEventsOption::ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217) 调用 [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)，它将等待新事件并调度所有可用事件。 它将继续此行为，直到窗口关闭或游戏调用 [**CoreWindow::Close**](https://msdn.microsoft.com/library/windows/apps/br208260) 为止。
+七巧板游戏的第四次迭代在方案 3 上构建，方法是将游戏循环中的输入处理和图形渲染拆分为单独的线程。 各自具有单独的线程可确保输入不被图形输出延迟；但是，代码因此变得更加复杂。 在方案 4 中，输入线程使用 [**CoreProcessEventsOption::ProcessUntilQuit**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreProcessEventsOption) 调用 [**ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents)，它将等待新事件并调度所有可用事件。 它将继续此行为，直到窗口关闭或游戏调用 [**CoreWindow::Close**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.close) 为止。
 
 ``` syntax
 void App::Run()
@@ -233,7 +233,7 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-**DirectX 11 和 XAML 应用 (通用 Windows)** Microsoft Visual Studio 2015 中的模板将游戏循环拆分为多个线程中类似的方式。 它使用 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 对象启动专用于处理输入的线程，还创建独立于 XAML UI 线程的呈现线程。 有关这些模板的更多详细信息，请阅读[从模板创建通用 Windows 平台和 DirectX 游戏项目](user-interface.md)。
+**DirectX 11 和 XAML 应用 (通用 Windows)** Microsoft Visual Studio 2015 中的模板将游戏循环拆分为多个线程中类似的方式。 它使用 [**Windows::UI::Core::CoreIndependentInputSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreIndependentInputSource) 对象启动专用于处理输入的线程，还创建独立于 XAML UI 线程的呈现线程。 有关这些模板的更多详细信息，请阅读[从模板创建通用 Windows 平台和 DirectX 游戏项目](user-interface.md)。
 
 ## <a name="additional-ways-to-reduce-input-latency"></a>缩短输入延迟的其他方法
 

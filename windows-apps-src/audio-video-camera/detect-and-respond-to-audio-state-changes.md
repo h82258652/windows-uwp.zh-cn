@@ -6,17 +6,17 @@ ms.date: 04/03/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 69eeb82fd9a1e043e99b7fe0d635ca750779eda5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1a680347e9d1a749cc6e1d86ef1f02da280b4b74
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631672"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361783"
 ---
 # <a name="detect-and-respond-to-audio-state-changes"></a>检测和响应音频的状态变化
 从 Windows 10 版本 1803 开始，应用可检测到系统何时降低或静音应用使用的音频流的音频级别。 可以接收捕获和呈现流、特定音频设备和音频类别或应用用于媒体播放的 [**MediaPlayer**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer) 对象的通知。 例如，当警报响起时，系统可能降低（或者“闪避”）音频播放级别。 如果应用没有在应用清单中声明 *backgroundMediaPlayback* 功能，系统将在应用进入后台时将其静音。 
 
-对于所有受支持的音频流，处理音频状态更改的模式是相同的。 首先，创建 [**AudioStateMonitor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor) 类的实例。 在以下示例中，应用使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 类捕获游戏聊天的音频。 调用工厂方法以获取与默认通信设备的游戏聊天音频捕获流相关联的音频状态监视器。  接下来，为 [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) 事件注册处理程序，这将在系统更改关联流的音频级别时引发。
+对于所有受支持的音频流，处理音频状态更改的模式是相同的。 首先，创建 [**AudioStateMonitor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor) 类的实例。 在以下示例中，应用使用 [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) 类捕获游戏聊天的音频。 调用工厂方法以获取与默认通信设备的游戏聊天音频捕获流相关联的音频状态监视器。  接下来，为 [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) 事件注册处理程序，这将在系统更改关联流的音频级别时引发。
 
 [!code-cs[DeviceIdCategoryVars](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeviceIdCategoryVars)]
 
@@ -28,7 +28,7 @@ ms.locfileid: "57631672"
 
 有关使用 **MediaCapture** 捕获音频的详细信息，请参阅[使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)。
 
-[  **MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 类的每个实例都具有与它相关联的 **AudioStateMonitor**，可用于检测系统何时更改当前播放的内容的音量级别。 根据正在播放内容的类型，可以决定以不同的方式处理音频状态更改。 例如，可以决定在音频降低时暂停播客的播放，但如果内容是音乐，则继续播放。 
+[  **MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) 类的每个实例都具有与它相关联的 **AudioStateMonitor**，可用于检测系统何时更改当前播放的内容的音量级别。 根据正在播放内容的类型，可以决定以不同的方式处理音频状态更改。 例如，可以决定在音频降低时暂停播客的播放，但如果内容是音乐，则继续播放。 
 
 [!code-cs[AudioStateVars](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetAudioStateVars)]
 

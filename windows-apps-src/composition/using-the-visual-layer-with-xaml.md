@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 66b61b9db88392c7ca7370f06fb2150deba7c8c3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c00bf23a8539f7ee37974e16586a4477cc6b78bb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606822"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360394"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>将可视化层与 XAML 结合使用
 
@@ -45,20 +45,20 @@ XAML 和可视化层互操作功能可用于创建单独使用 XAML API 时无�
 
 ## <a name="the-elementcompositionpreview-class"></a>ElementCompositionPreview 类
 
-[**ElementCompositionPreview** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.aspx)是一个静态类，提供了 XAML 和可视化层的互操作功能。 有关可视化层及其功能的概述，请参阅[可视化层](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer)。 **ElementCompositionPreview** 类提供以下方法：
+[**ElementCompositionPreview** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview)是一个静态类，提供了 XAML 和可视化层的互操作功能。 有关可视化层及其功能的概述，请参阅[可视化层](https://docs.microsoft.com/windows/uwp/graphics/visual-layer)。 **ElementCompositionPreview** 类提供以下方法：
 
--   [**GetElementVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx):获取"讲义"视觉对象，它用于呈现此元素
--   [**SetElementChildVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual.aspx):设置"handin"视觉对象，最后一个子级的此元素的可视化树。 此视觉对象将在元素其余部分上进行绘制。 
--   [**GetElementChildVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx):检索 Visual 集使用**SetElementChildVisual**
--   [**GetScrollViewerManipulationPropertySet**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx):获取一个对象，可用于创建基于滚动偏移量以 60 fps 动画**ScrollViewer**
+-   [**GetElementVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual):获取"讲义"视觉对象，它用于呈现此元素
+-   [**SetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual):设置"handin"视觉对象，最后一个子级的此元素的可视化树。 此视觉对象将在元素其余部分上进行绘制。 
+-   [**GetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual):检索 Visual 集使用**SetElementChildVisual**
+-   [**GetScrollViewerManipulationPropertySet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual):获取一个对象，可用于创建基于滚动偏移量以 60 fps 动画**ScrollViewer**
 
 ## <a name="remarks-on-elementcompositionpreviewgetelementvisual"></a>关于 ElementCompositionPreview.GetElementVisual 的备注
 
 **ElementCompositionPreview.GetElementVisual** 返回用于呈现给定 **UIElement** 的“handout”视觉对象。 诸如 **Visual.Opacity**、**Visual.Offset** 和 **Visual.Size** 之类的属性由 XAML 框架基于 UIElement 的状态设置。 这将支持隐式重新定位动画等技术（请参阅*秘诀*）。
 
-请注意，由于“偏移”和“大小”根据 XAML 框架布局设置，因此开发人员应在修改或对这些属性进行动画处理时小心。 开发人员应仅在元素的左上角在布局中与其父项的左上角位置相同时修改偏移或对其进行动画处理。 通常不应该修改大小，但访问属性可能很有用。 例如，下面的投影和毛玻璃示例使用 handout 视觉对象的大小作为对动画的输入。
+请注意，由于“偏移”  和“大小”  根据 XAML 框架布局设置，因此开发人员应在修改或对这些属性进行动画处理时小心。 开发人员应仅在元素的左上角在布局中与其父项的左上角位置相同时修改偏移或对其进行动画处理。 通常不应该修改大小，但访问属性可能很有用。 例如，下面的投影和毛玻璃示例使用 handout 视觉对象的大小作为对动画的输入。
 
-作为附加警告，handout 视觉对象的更新属性将不会反映在相应的 UIElement 中。 因此，例如，将 **UIElement.Opacity** 设置为 0.5 会将相应的 handout 视觉对象的不透明度设置为 0.5。 但是，将 handout 视觉对象的 Visual 的“不透明度”设置为 0.5 会导致内容以 50% 的不透明度显示，但不会更改相应 UIElement 的 Opacity 属性的值。
+作为附加警告，handout 视觉对象的更新属性将不会反映在相应的 UIElement 中。 因此，例如，将 **UIElement.Opacity** 设置为 0.5 会将相应的 handout 视觉对象的不透明度设置为 0.5。 但是，将 handout 视觉对象的 Visual 的“不透明度”  设置为 0.5 会导致内容以 50% 的不透明度显示，但不会更改相应 UIElement 的 Opacity 属性的值。
 
 ### <a name="example-of-offset-animation"></a>**Offset** 动画的示例
 
@@ -96,13 +96,13 @@ ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", par
 
 ## <a name="getalphamask-methods"></a>**GetAlphaMask** 方法
 
-[**图像**](https://msdn.microsoft.com/library/windows/apps/br242752)， [ **TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)，以及[**形状**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)每个实现一个名为方法**GetAlphaMask** ，它返回**CompositionBrush**表示灰度图像包含的元素的形状。 此 **CompositionBrush** 可充当复合 **DropShadow** 的输入，因此阴影可以反映元素的形状，而不是矩形。 这将为文本、带有 alpha 的图像和形状启用像素完美、基于轮廓的阴影。 有关此 API 的示例，请参阅下面的*投影*。
+[**图像**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)， [ **TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)，以及[**形状**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)每个实现一个名为方法**GetAlphaMask** ，它返回**CompositionBrush**表示灰度图像包含的元素的形状。 此 **CompositionBrush** 可充当复合 **DropShadow** 的输入，因此阴影可以反映元素的形状，而不是矩形。 这将为文本、带有 alpha 的图像和形状启用像素完美、基于轮廓的阴影。 有关此 API 的示例，请参阅下面的*投影*。
 
 ## <a name="recipes"></a>秘诀
 
 ### <a name="reposition-animation"></a>重新定位动画
 
-使用复合隐式动画，开发人员可以在元素的布局中对相对于其父项的更改自动进行动画处理。 例如，如果你更改下面的按钮的“边距”，它将自动动画处理到它的新布局位置。
+使用复合隐式动画，开发人员可以在元素的布局中对相对于其父项的更改自动进行动画处理。 例如，如果你更改下面的按钮的“边距”  ，它将自动动画处理到它的新布局位置。
 
 #### <a name="implementation-overview"></a>实现概述
 
@@ -362,8 +362,8 @@ private void InitializeFrostedGlass(UIElement glassHost)
 
 ## <a name="additional-resources"></a>其他资源
 
-- [可视化层概览](https://msdn.microsoft.com/windows/uwp/composition/visual-layer)
-- [**ElementCompositionPreview**类](https://msdn.microsoft.com/library/windows/apps/mt608976)
+- [可视化层概览](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
+- [**ElementCompositionPreview**类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
 - [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) 中的高级 UI 和复合示例
 - [BasicXamlInterop 示例](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
 - [ParallaxingListItems 示例](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)

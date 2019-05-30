@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 线程, 线程池
 ms.localizationpriority: medium
-ms.openlocfilehash: 423f0efa9118f581d6e768a815dd2550801aa87e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ff47115c228e3cf6530e12aa4686c88660f16fcd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658012"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371549"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>向线程池提交工作项
 
@@ -19,19 +19,19 @@ ms.locfileid: "57658012"
 
 <b>重要的 Api</b>
 
--   [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593)
--   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)
+-   [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync)
+-   [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)
 
 了解如何通过向线程池提交工作项，在单独的线程中完成工作。 使用此快速入门可维护 UI 快速响应，同时仍然可以完成需要花费大量时间来完成的工作，并且可以使用它来并行完成多个任务。
 
 ## <a name="create-and-submit-the-work-item"></a>创建和提交工作项
 
-通过调用 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) 创建工作项。 提供委派来完成工作（你可使用一个 lambda 或 delegate 函数）。 请注意，**RunAsync** 返回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) 对象；存储此对象以用于下一个步骤。
+通过调用 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 创建工作项。 提供委派来完成工作（你可使用一个 lambda 或 delegate 函数）。 请注意，**RunAsync** 返回 [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction) 对象；存储此对象以用于下一个步骤。
 
-[  **RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) 有 3 个版本，你可指定工作项的优先级，控制它是否与其他工作项同时运行。
+[  **RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 有 3 个版本，你可指定工作项的优先级，控制它是否与其他工作项同时运行。
 
 >[!NOTE]
->使用[ **CoreDispatcher.RunAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh750317)访问 UI 线程并显示从工作项的进度。
+>使用[ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows)访问 UI 线程并显示从工作项的进度。
 
 以下示例创建工作项并提供 lambda 以执行此工作：
 
@@ -269,13 +269,13 @@ auto asyncAction = ThreadPool::RunAsync(workItem);
 m_workItem = asyncAction;
 ```
 
-在调用 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) 后，线程池将对工作项进行排队，并在线程可用时运行工作项。 线程池工作项异步运行，并且它们可以任何顺序运行，以便确保你的工作项独立运行。
+在调用 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 后，线程池将对工作项进行排队，并在线程可用时运行工作项。 线程池工作项异步运行，并且它们可以任何顺序运行，以便确保你的工作项独立运行。
 
-请注意，该工作项会检查 [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593) 属性，如果该工作项被取消，则退出。
+请注意，该工作项会检查 [**IAsyncInfo.Status**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncinfo.status) 属性，如果该工作项被取消，则退出。
 
 ## <a name="handle-work-item-completion"></a>处理工作项完成
 
-通过设置工作项的 [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) 属性来提供完成处理程序。 提供委派（可使用 lambda 或 delegate 函数）来处理工作项的完成。 例如，使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 访问 UI 线程并显示结果。
+通过设置工作项的 [**IAsyncAction.Completed**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction.completed) 属性来提供完成处理程序。 提供委派（可使用 lambda 或 delegate 函数）来处理工作项的完成。 例如，使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 访问 UI 线程并显示结果。
 
 以下示例使用在步骤 1 中所提交工作项的结果更新 UI：
 

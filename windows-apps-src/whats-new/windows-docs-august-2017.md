@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 1708
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: edf81f0474855c868ea1fb50afa683523aedcd07
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 53bd11950d30e3924d6d196e911fa05208d0f5ec
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57614862"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371909"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>2017 年 8 月 Windows 开发人员文档中的新增功能
 
@@ -32,7 +32,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="game-mode"></a>游戏模式
 
-适用于通用 Windows 平台 (UWP) 的[游戏模式](https://msdn.microsoft.com/library/windows/desktop/mt808808) API 让你可以利用 Windows 10 中的游戏模式产生最优化的游戏体验。 这些 API 位于 **&lt;expandedresources.h&gt;** 标头中。
+适用于通用 Windows 平台 (UWP) 的[游戏模式](https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal) API 让你可以利用 Windows 10 中的游戏模式产生最优化的游戏体验。 这些 API 位于 **&lt;expandedresources.h&gt;** 标头中。
 
 ![游戏模式](images/game-mode.png)
 
@@ -45,7 +45,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="data-schemas-for-store-products"></a>应用商店产品的数据架构
 
-我们添加了[应用商店产品的数据架构](../monetize/data-schemas-for-store-products.md)文章。 此文章提供了对 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中的多个对象可用的与应用商店相关的数据的架构，包括 [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 和 [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense)。
+我们添加了[应用商店产品的数据架构](../monetize/data-schemas-for-store-products.md)文章。 此文章提供了对 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间中的多个对象可用的与应用商店相关的数据的架构，包括 [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 和 [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense)。
 
 ### <a name="desktop-bridge"></a>桌面桥
 

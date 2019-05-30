@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c31d414bab1e551b418a1ff653678665d66aea5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 64a54dfaef6b6e89a345651c1f6013930cc936e0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602602"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372385"
 ---
 # <a name="troubleshooting-porting-windows-runtime-8x-to-uwp"></a>将 Windows 运行时 8.x 移植到 UWP 疑难解答
 
@@ -32,8 +32,8 @@ XAML 分析异常可能难以诊断出来，特别是在此类异常中没有含
 
 本部分介绍要执行的操作如果在 Visual Studio 中打开的 Windows 10 项目，你将看到消息"需要 Visual Studio 更新。 一个或多个项目需要平台 SDK <version>（未安装该 SDK 版本，也未将其作为 Visual Studio 后续更新的一部分进行提供）。”
 
--   首先，确定 SDK 适用于 Windows 10 的已安装的版本号。 导航到**c:\\Program Files (x86)\\Windows 工具包\\10\\Include\\ <versionfoldername>** 并记下*<versionfoldername>*，该选项位于四部分表示法，"Major.Minor.Build.Revision"。
--   打开项目文件以进行编辑，并找到 `TargetPlatformVersion` 和 `TargetPlatformMinVersion` 元素。 将它们编辑为如下形式，使用你在磁盘上找到的四部分表示法版本号替换 *<versionfoldername>*：
+-   首先，确定 SDK 适用于 Windows 10 的已安装的版本号。 导航到**c:\\Program Files (x86)\\Windows 工具包\\10\\Include\\ <versionfoldername>** 并记下 *<versionfoldername>* ，该选项位于四部分表示法，"Major.Minor.Build.Revision"。
+-   打开项目文件以进行编辑，并找到 `TargetPlatformVersion` 和 `TargetPlatformMinVersion` 元素。 将它们编辑为如下形式，使用你在磁盘上找到的四部分表示法版本号替换 *<versionfoldername>* ：
 
 ```xml
    <TargetPlatformVersion><versionfoldername></TargetPlatformVersion>
@@ -48,9 +48,9 @@ XAML 分析异常可能难以诊断出来，特别是在此类异常中没有含
 |---------|--------|
 | 在 Visual Studio 中打开的 Windows 10 项目，你将看到消息"需要 Visual Studio 更新。 一个或多个项目需要平台 SDK &lt;version&gt;（未安装该 SDK 版本，也未将其作为 Visual Studio 后续更新的一部分进行提供）。” | 请参阅本主题中的 [TargetPlatformVersion](#targetplatformversion) 部分。 |
 | 当在 xaml.cs 文件中调用 InitializeComponent 时，将引发 System.InvalidCastException。| 当你有多个 xaml 文件（至少其中一个受 MRT 限定）共享同一个 xaml.cs 文件并且元素具有在两个 xaml 文件之间不一致的 x:Name 属性时，可能会发生这种情况。 尝试将相同名称添加到两个 xaml 文件中的相同元素，或全部省略名称。 |
-| 当设备上运行，该应用程序终止，或从 Visual Studio 启动，当你看到错误"无法激活 Windows 运行时 8.x 应用\[...\]. 激活请求失败并显示错误‘Windows 无法与目标应用程序进行通信。’ 这通常指示目标应用的过程已中止。 \[...\]"。 | 问题可能是在初始化过程中，在你自己的页面或绑定属性（或其他类型）中运行的强制性代码。 或者，它可能在分析将要在应用终止时显示的 XAML 文件时发生（如果从 Visual Studio 中启动，这将是启动页）。 查找无效的资源键和/或尝试使用本主题的“跟踪问题”部分中的一些指南。|
-| XAML 分析程序或编译器或者运行时异常会提供错误“*无法解析资源‘<resourcekey>’。*”。 | 该资源键不适用于通用 Windows 平台 (UWP) 应用（例如，对于某些 Windows Phone 资源，存在此情况）。 找到对应的等效资源并更新你的标记。 例如，你可能立即遇到诸如 `PhoneAccentBrush` 的系统键。 |
-| C#编译器则报告错误"*类型或命名空间名称<name>未找到\[...\]* "*类型或命名空间名称<name>命名空间中不存在\[...\]* "*类型或命名空间名称<name>在当前上下文中不存在*"。 | 这可能意味着，该类型在扩展 SDK 中实现（尽管可能存在这样的情况，即补救措施并非简单易用）。 使用 [Windows API](https://msdn.microsoft.com/library/windows/apps/bg124285) 引用内容确定用于实现 API 的扩展 SDK，然后通过使用 Visual Studio 的 **Add** > **Reference** 命令，将对该 SDK 的引用添加到项目。 如果应用面向称为通用设备系列的 API 集，则须在调用扩展 SDK 之前，先使用 [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) 类在运行时测试这些 API 是否存在（这称为自适应代码），这一点非常重要。 如果存在通用 API，则它始终优于扩展 SDK 中的 API。 有关详细信息，请参阅[扩展 SDK](w8x-to-uwp-porting-to-a-uwp-project.md)。 |
+| 当设备上运行，该应用程序终止，或从 Visual Studio 启动，当你看到错误"无法激活 Windows 运行时 8.x 应用\[...\]. 激活请求失败并显示错误‘Windows 无法与目标应用程序进行通信。’ 这通常指示目标应用的过程已中止。 \[…\]”. | 问题可能是在初始化过程中，在你自己的页面或绑定属性（或其他类型）中运行的强制性代码。 或者，它可能在分析将要在应用终止时显示的 XAML 文件时发生（如果从 Visual Studio 中启动，这将是启动页）。 查找无效的资源键和/或尝试使用本主题的“跟踪问题”部分中的一些指南。|
+| XAML 分析程序或编译器或者运行时异常会提供错误“*无法解析资源‘<resourcekey>’。* ”。 | 该资源键不适用于通用 Windows 平台 (UWP) 应用（例如，对于某些 Windows Phone 资源，存在此情况）。 找到对应的等效资源并更新你的标记。 例如，你可能立即遇到诸如 `PhoneAccentBrush` 的系统键。 |
+| C#编译器则报告错误"*类型或命名空间名称<name>未找到\[...\]* "*类型或命名空间名称<name>命名空间中不存在\[...\]* "*类型或命名空间名称<name>在当前上下文中不存在*"。 | 这可能意味着，该类型在扩展 SDK 中实现（尽管可能存在这样的情况，即补救措施并非简单易用）。 使用 [Windows API](https://docs.microsoft.com/uwp/) 引用内容确定用于实现 API 的扩展 SDK，然后通过使用 Visual Studio 的 **Add** > **Reference** 命令，将对该 SDK 的引用添加到项目。 如果应用面向称为通用设备系列的 API 集，则须在调用扩展 SDK 之前，先使用 [**ApiInformation**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.ApiInformation) 类在运行时测试这些 API 是否存在（这称为自适应代码），这一点非常重要。 如果存在通用 API，则它始终优于扩展 SDK 中的 API。 有关详细信息，请参阅[扩展 SDK](w8x-to-uwp-porting-to-a-uwp-project.md)。 |
 
 下一主题是[移植 XAML 和 UI](w8x-to-uwp-porting-xaml-and-ui.md)。
 

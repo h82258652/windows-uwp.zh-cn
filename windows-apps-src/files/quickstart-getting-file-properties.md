@@ -6,31 +6,31 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cde9d8753248614603ee49fb1415ec18ec4669b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 01eda8eefea7e1b3b1102ef154a019e1630e80c2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596992"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369309"
 ---
 # <a name="get-file-properties"></a>获取文件属性
 
 **重要的 Api**
 
--   [**StorageFile.GetBasicPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh701737)
--   [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225)
--   [**StorageItemContentProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770652)
+-   [**StorageFile.GetBasicPropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getbasicpropertiesasync)
+-   [**StorageFile.Properties**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.properties)
+-   [**StorageItemContentProperties.RetrievePropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.storageitemcontentproperties.retrievepropertiesasync)
 
-获取由 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 对象表示的文件属性：顶级、基本和扩展。
+获取由 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 对象表示的文件属性：顶级、基本和扩展。
 
 > [!NOTE]
 > 有关完整示例，请参阅[文件访问示例](https://go.microsoft.com/fwlink/p/?linkid=619995)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
-    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](https://msdn.microsoft.com/library/windows/apps/mt187337)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://msdn.microsoft.com/library/windows/apps/mt187334)。
+    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
 -   **对位置的访问权限**
 
@@ -38,7 +38,7 @@ ms.locfileid: "57596992"
 
 ## <a name="getting-a-files-top-level-properties"></a>获取文件的顶级属性
 
-很多顶级文件属性都可以作为 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 类的成员进行访问。 这些属性包括文件属性、内容类型、创建日期、显示名称和文件类型等。
+很多顶级文件属性都可以作为 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 类的成员进行访问。 这些属性包括文件属性、内容类型、创建日期、显示名称和文件类型等。
 
 > [!NOTE]
 > 请记住声明 **picturesLibrary** 功能。
@@ -63,7 +63,7 @@ foreach (Windows.Storage.StorageFile file in files)
 
 ## <a name="getting-a-files-basic-properties"></a>获取文件的基本属性
 
-很多基本文件属性都通过先调用 [**StorageFile.GetBasicPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh701737) 方法获得。 此方法会返回一个 [**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) 对象，该对象将定义项（文件或文件夹）的大小属性，以及上次修改项的时间。
+很多基本文件属性都通过先调用 [**StorageFile.GetBasicPropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getbasicpropertiesasync) 方法获得。 此方法会返回一个 [**BasicProperties**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.BasicProperties) 对象，该对象将定义项（文件或文件夹）的大小属性，以及上次修改项的时间。
 
 此示例枚举了图片库中的所有文件，从而访问每个文件中的一些基础属性。
 
@@ -88,11 +88,11 @@ foreach (Windows.Storage.StorageFile file in files)
 
 ## <a name="getting-a-files-extended-properties"></a>获取文件的扩展属性
 
-除了顶级和基本文件属性之外，还有一些与文件内容有关的属性。 这些扩展属性可以通过调用 [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) 方法来访问。 (A [ **BasicProperties** ](https://msdn.microsoft.com/library/windows/apps/br212113)对象获取通过调用[ **StorageFile.Properties** ](https://msdn.microsoft.com/library/windows/apps/br227225)属性。)虽然顶层和基本文件属性是类的属性的可访问性 —[**StorageFile** ](https://msdn.microsoft.com/library/windows/apps/br227171)并**BasicProperties**分别 — 扩展属性获取通过传递[IEnumerable](https://go.microsoft.com/fwlink/p/?LinkID=313091)系列[字符串](https://go.microsoft.com/fwlink/p/?LinkID=325032)对象表示要从中检索到的属性的名称**BasicProperties.RetrievePropertiesAsync**方法。 此方法随后会返回一个 [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238) 集合。 然后，可以按名称或按索引从该集合中检索每个扩展属性。
+除了顶级和基本文件属性之外，还有一些与文件内容有关的属性。 这些扩展属性可以通过调用 [**BasicProperties.RetrievePropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.basicproperties.retrievepropertiesasync) 方法来访问。 (A [ **BasicProperties** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.BasicProperties)对象获取通过调用[ **StorageFile.Properties** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.properties)属性。)虽然顶层和基本文件属性是类的属性的可访问性 —[**StorageFile** ](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)并**BasicProperties**分别 — 扩展属性获取通过传递[IEnumerable](https://go.microsoft.com/fwlink/p/?LinkID=313091)系列[字符串](https://go.microsoft.com/fwlink/p/?LinkID=325032)对象表示要从中检索到的属性的名称**BasicProperties.RetrievePropertiesAsync**方法。 此方法随后会返回一个 [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238) 集合。 然后，可以按名称或按索引从该集合中检索每个扩展属性。
 
-以下示例枚举了图片库中的所有文件，并指定了一个 [List](https://go.microsoft.com/fwlink/p/?LinkID=325246) 对象中所需属性（**DataAccessed** 和 **FileOwner**）的名称，将该 [List](https://go.microsoft.com/fwlink/p/?LinkID=325246) 对象传递到 [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) 以检索这些属性，然后按名称从返回的 [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238) 对象中检索这些属性。
+以下示例枚举了图片库中的所有文件，并指定了一个 [List](https://go.microsoft.com/fwlink/p/?LinkID=325246) 对象中所需属性（**DataAccessed** 和 **FileOwner**）的名称，将该 [List](https://go.microsoft.com/fwlink/p/?LinkID=325246) 对象传递到 [**BasicProperties.RetrievePropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.basicproperties.retrievepropertiesasync) 以检索这些属性，然后按名称从返回的 [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238) 对象中检索这些属性。
 
-有关文件扩展属性的完整列表，请参阅 [Windows 核心属性](https://msdn.microsoft.com/library/windows/desktop/mt805470)。
+有关文件扩展属性的完整列表，请参阅 [Windows 核心属性](https://docs.microsoft.com/windows/desktop/properties/core-bumper)。
 
 ```csharp
 const string dateAccessedProperty = "System.DateAccessed";

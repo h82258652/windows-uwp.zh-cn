@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10，uwp，已连接设备、 远程系统、 罗马、 项目罗马
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
-ms.openlocfilehash: c785e6d2a8021148f572df88a6d9e6ba07c4a457
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ae9229378f75adeb215a881bdaf955b010cd7806
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601172"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366375"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>连接的应用和设备 (Project Rome)
 
@@ -19,7 +19,7 @@ ms.locfileid: "57601172"
 
 大多数用户拥有多台设备，并且通常在一台设备上开始某项活动，而在其他设备上结束该活动。 为了满足此要求，应用需要横跨设备和平台。 项目罗马，可发现远程设备、 启动远程设备上的应用和与远程设备上的应用服务进行通信。
 
-Windows 10 版本 1607 中引入了[远程系统 API](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)，可使你编写允许用户在一台设备上开始某项任务而在另一台设备上结束该任务的应用。 将集中处理该任务，用户可在最方便的设备上执行工作。 例如，在车上用户可能会收听手机上的收音机，但当回到家中，他们可能会想将播放转到连接家庭立体声系统的 Xbox One。
+Windows 10 版本 1607 中引入了[远程系统 API](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)，可使你编写允许用户在一台设备上开始某项任务而在另一台设备上结束该任务的应用。 将集中处理该任务，用户可在最方便的设备上执行工作。 例如，在车上用户可能会收听手机上的收音机，但当回到家中，他们可能会想将播放转到连接家庭立体声系统的 Xbox One。
 
 还可将 Project Rome 用于配套设备或远程控制方案。 使用应用服务消息处理 API 在两台设备之间创建应用通道，以发送和接收自定义消息。 例如，可为手机编写控制电视播放的应用，或者编写提供关于通过其他应用观看的电视节目人物信息的伴侣应用。  
 

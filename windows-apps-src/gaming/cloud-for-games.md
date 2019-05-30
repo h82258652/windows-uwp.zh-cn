@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 云服务
 ms.localizationpriority: medium
-ms.openlocfilehash: 5781d8f8606f68360018cfa17d5cfe5719ed31a6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 15a7e3bed746a31ce2d8f458045cdd1126b71b8c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57637682"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368996"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>使用适用于 UWP 游戏的云服务
 
@@ -91,7 +91,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
             <ul>
                 <li><a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=06m52s">使用 Service Fabric 构建游戏：上移量 MMO 游戏 （视频） 的保留时间</a>
                 <li><a href="https://channel9.msdn.com/Events/Build/2016/KEY02#time=57m20s">使用 Azure Service Fabric （视频） 的微服务的形式管理游戏组件</a> 
-                <li><a href="https://channel9.msdn.com/Shows/Azure-Friday/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET">面试与 Age of Ascent 开发人员 （视频）</a>
+                <li><a href="/Blogs/Azure/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET">面试与 Age of Ascent 开发人员 （视频）</a>
             </ul>
         </td>
     </tr>
@@ -163,10 +163,10 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
 | 在云中托管你的域     | 有效地响应 DNS 查询            | [Azure DNS](https://azure.microsoft.com/services/dns/) | 托管你的域以实现高性能和高可用性  |
 | 登录，身份验证      | 对玩家登录信息和玩家身份进行验证  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | 通过多重身份验证单一登录到任何云和本地 Web 应用            | 
-| 使用基础结构即服务 (IaaS) 的游戏      | 游戏托管在云中虚拟机上       | [Azure Vm](https://azure.microsoft.com/services/virtual-machines/) | 从 1 扩展到数千个虚拟机实例以用作游戏服务器（内置虚拟网络连接和负载平衡）；本地系统的混合一致性           |
+| 使用基础结构即服务 (IaaS) 的游戏      | 游戏托管在云中虚拟机上       | [Azure VMs](https://azure.microsoft.com/services/virtual-machines/) | 从 1 扩展到数千个虚拟机实例以用作游戏服务器（内置虚拟网络连接和负载平衡）；本地系统的混合一致性           |
 | 使用平台即服务模型 (PaaS) 的 Web 或手机游戏            | 游戏托管在托管平台上                | [Azure App Service](https://azure.microsoft.com/services/app-service/) | 适用于网站或手机游戏的 PaaS（这意味着 Azure VM 与中间件/开发工具/BI/DB 管理相互配合）   |
 | 可用性高的可缩放型 n 层云游戏，并且可以更好地控制操作系统 (PaaS)        | 游戏托管在托管平台上                | [Azure 云服务](https://azure.microsoft.com/services/app-service/) | 旨在支持可缩放、可靠且运行成本低廉的应用程序的 PaaS   |
-| 用于提高性能和可用性的跨区域负载平衡 | 传送传入的游戏请求。 可以充当第一级负载平衡。       | [Azure 流量管理器](https://azure.microsoft.com/en-us/services/traffic-manager/) | 提供了多种自动故障转移选项，并且能够均衡地或通过加权值分配你的流量。 可以无缝地合并本地系统和云系统。 |
+| 用于提高性能和可用性的跨区域负载平衡 | 传送传入的游戏请求。 可以充当第一级负载平衡。       | [Azure Traffic Manager](https://azure.microsoft.com/en-us/services/traffic-manager/) | 提供了多种自动故障转移选项，并且能够均衡地或通过加权值分配你的流量。 可以无缝地合并本地系统和云系统。 |
 | 游戏数据的云存储       | 最新游戏数据存储在云中，并发送到客户端设备 | [Azure Blob 存储](https://azure.microsoft.com/services/storage/blobs/)| 可以存储的文件类型不受限制；对象存储适用于大量非结构化数据（如图像、音频、视频等）。  |
 | 临时数据存储表| 游戏事务（游戏状态的变化）临时存储在表中 | [Azure 表存储](https://azure.microsoft.com/services/storage/tables/)| 可以根据游戏需求以灵活模式存储游戏数据 |
 | 队列游戏事务/请求| 以队列形式处理游戏事务 | [Azure 队列存储](https://azure.microsoft.com/services/storage/queues/)| 队列会吸收意外的突发流量，并可以防止服务器因游戏中突然产生的大量请求而不堪重负。   |
@@ -221,7 +221,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
 
 ## <a name="related-links"></a>相关链接
 
-* [Windows 10 游戏开发指南](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
+* [Windows 10 游戏开发指南](https://docs.microsoft.com/windows/uwp/gaming/e2e)
 * [面向游戏的 azure](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
 * [适用于初创企业的 Microsoft](https://startups.microsoft.com)

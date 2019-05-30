@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10，uwp，已连接设备、 远程系统、 罗马、 项目罗马
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
-ms.openlocfilehash: 26a67816195105572d9f690599b9a880ece90c98
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ac4a5783250f3bd21cb8a3b96a579715830e687d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658412"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371717"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>启动远程设备上的应用
 
@@ -62,7 +62,7 @@ ms.locfileid: "57658412"
 
 ## <a name="launch-an-app-on-a-remote-device"></a>启动远程设备上的应用
 
-通过将希望连接的设备传递给 [**RemoteLauncher.LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelauncher.launchuriasync.aspx) API，远程启动应用。 此方法有三个重载。 最简单的重载（即该示例中所演示的重载）用于指定将激活远程设备上的应用的 URI。 在该示例中，URI 将打开远程计算机上具有三维太空针塔视图的“地图”应用。
+通过将希望连接的设备传递给 [**RemoteLauncher.LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotelauncher.launchuriasync) API，远程启动应用。 此方法有三个重载。 最简单的重载（即该示例中所演示的重载）用于指定将激活远程设备上的应用的 URI。 在该示例中，URI 将打开远程计算机上具有三维太空针塔视图的“地图”应用。
 
 其他 **RemoteLauncher.LaunchUriAsync** 重载允许你指定网站 URI 之类的选项，以便查看是否没有合适的应用在远程设备上启动，以及可用于启动远程设备上 URI 的程序包系列名称的可选列表。 也可以采用键/值对的形式提供数据。 可以将数据传递给正在激活的应用，以便为远程应用提供上下文，例如将播放的歌曲名称，以及将播放从一台设备转移到另一台设备时的当前播放位置。
 
@@ -70,11 +70,11 @@ ms.locfileid: "57658412"
 
 [!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetRemoteUriLaunch)]
 
-从 **RemoteLauncher.LaunchUriAsync()** 返回的 [**RemoteLaunchUriStatus**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelaunchuristatus.aspx) 对象提供有关远程启动是否成功以及失败原因（如果失败）的信息。
+从 **RemoteLauncher.LaunchUriAsync()** 返回的 [**RemoteLaunchUriStatus**](https://docs.microsoft.com/uwp/api/windows.system.remotelaunchuristatus) 对象提供有关远程启动是否成功以及失败原因（如果失败）的信息。
 
 ## <a name="related-topics"></a>相关主题
 
-[远程系统 API 参考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
+[远程系统 API 参考](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)  
 [已连接的应用和设备 （项目罗马） 概述](connected-apps-and-devices.md)  
 [发现远程设备](discover-remote-devices.md)  
 [远程系统示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)演示了如何发现远程系统、在远程系统上启动应用，以及使用应用服务在两个系统上运行的应用之间发送消息。

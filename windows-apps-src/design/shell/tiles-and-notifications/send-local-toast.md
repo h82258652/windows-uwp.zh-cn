@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, 发送 toast 通知, 通知, 发送通知, toast 通知, 操作方法, 快速入门, 开始使用, 代码示例, 演练
 ms.localizationpriority: medium
-ms.openlocfilehash: 410e8121aecfe13805586c9287f62444f80a1b1b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4c8def5d1a220fe0458dd5c244d875b991b2b76c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605922"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365932"
 ---
 # <a name="send-a-local-toast-notification"></a>发送本地 toast 通知
 
@@ -42,7 +42,7 @@ Toast 通知是用户当前未在应用内部时应用可构造并发送给用�
 > **重要的 API**：[ToastNotification 类](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)， [ToastNotificationActivatedEventArgs 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要完全理解此主题，事先掌握以下内容会很有用...
 
@@ -54,7 +54,7 @@ Toast 通知是用户当前未在应用内部时应用可构造并发送给用�
 > 与 Windows 8/8.1 不同，无需在应用清单中声明应用能够显示 toast 通知。 所有应用都能发送和显示 toast 通知。
 
 > [!NOTE]
-> **Windows 8/8.1 应用**:请使用[存档文档](https://msdn.microsoft.com/library/windows/apps/xaml/hh868254.aspx)。
+> **Windows 8/8.1 应用**:请使用[存档文档](https://docs.microsoft.com/previous-versions/windows/apps/hh868254(v=win.10))。
 
 
 ## <a name="install-nuget-packages"></a>安装 NuGet 程序包
@@ -238,7 +238,7 @@ toast.ExpirationTime = DateTime.Now.AddDays(2);
 
 如要以编程方式删除或替换发送的通知，需使用 Tag 属性（还可选择使用 Group 属性）来为通知提供主键。 然后，你可以在以后使用此主键来删除或替换该通知。
 
-若要查看更多详细信息替换/删除已发送 toast 通知，请参阅[快速入门：管理操作中心 (XAML) 中的 toast 通知](https://msdn.microsoft.com/library/windows/apps/xaml/dn631260.aspx)。
+若要查看更多详细信息替换/删除已发送 toast 通知，请参阅[快速入门：管理操作中心 (XAML) 中的 toast 通知](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))。
 
 Tag 和 Group 组合充当复合主键。 组是更通用的标识符，您可以在其中分配组，例如"wallPosts"、"消息"、"friendRequests"，等等。然后标记应唯一标识通知本身从组中。 使用通用组时，可以使用 [RemoveGroup API](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) 删除该组中的所有通知。
 
@@ -270,7 +270,7 @@ UWP 应用负责删除和清除它们自己的通知。 当你的应用启动时
 3. 应用打开该对话，然后清除该对话的所有 toast（方法是对该对话的应用提供的组使用 [RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_)）
 4. 用户的操作中心现在能正确反映通知状态，因为操作中心未留有该对话的过期通知。
 
-若要了解有关清除所有通知或删除特定的通知，请参阅[快速入门：管理操作中心 (XAML) 中的 toast 通知](https://msdn.microsoft.com/library/windows/apps/xaml/dn631260.aspx)。
+若要了解有关清除所有通知或删除特定的通知，请参阅[快速入门：管理操作中心 (XAML) 中的 toast 通知](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))。
 
 
 ## <a name="handling-activation"></a>处理激活

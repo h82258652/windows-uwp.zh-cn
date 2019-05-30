@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 网格, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b6717c0b2d9d85e9c81e78fcaa1df1abbea23b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9b5aa00b5beb7c80a903fbf17d432f73f16561a2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595642"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368984"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>创建和显示基本网格
 
@@ -28,9 +28,9 @@ ms.locfileid: "57595642"
 
 ### <a name="technologies"></a>技术
 
--   [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh769064)
+-   [Direct3D](https://docs.microsoft.com/windows/desktop/getting-started-with-direct3d)
 
-### <a name="prerequisites"></a>必备条件
+### <a name="prerequisites"></a>先决条件
 
 -   线性代数和三维坐标系的基础知识
 -   Visual Studio 2015 或更高版本的 Direct3D 模板
@@ -77,7 +77,7 @@ SimpleCubeVertex cubeVertices[] =
 
 ### <a name="step-2-set-up-the-input-layout"></a>步骤 2：设置输入布局
 
-现在，你在内存中已拥有顶点。 但你的图形设备拥有其自己的内存，并且你使用 Direct3D 来访问该内存。 若要使你的顶点数据进入图形设备以便进行处理，你需要扫除障碍，因为你必须声明顶点数据的布局方式，以便图形设备从你的游戏获取顶点数据时图形设备可以对其进行解释。 若要执行该操作，需要使用 [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575)。
+现在，你在内存中已拥有顶点。 但你的图形设备拥有其自己的内存，并且你使用 Direct3D 来访问该内存。 若要使你的顶点数据进入图形设备以便进行处理，你需要扫除障碍，因为你必须声明顶点数据的布局方式，以便图形设备从你的游戏获取顶点数据时图形设备可以对其进行解释。 若要执行该操作，需要使用 [**ID3D11InputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11inputlayout)。
 
 为顶点缓冲区声明和设置输入布局。
 
@@ -110,17 +110,17 @@ m_d3dDevice->CreateInputLayout(
 
     **COLOR** 值通常在着色器管道结尾处以 4 个分量的 RGBA 值的形式返回。 对于该示例，在所有像素的着色器管道中，你将“A”alpha 值设置为 1.0（最大不透明度）。
 
-有关格式的完整列表，请参阅[ **DXGI\_格式**](https://msdn.microsoft.com/library/windows/desktop/bb173059)。 有关 HLSL 语义的完整列表，请参阅[语义](https://msdn.microsoft.com/library/windows/desktop/bb509647)。
+有关格式的完整列表，请参阅[ **DXGI\_格式**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)。 有关 HLSL 语义的完整列表，请参阅[语义](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)。
 
-在 Direct3D 设备上，调用 [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) 并创建输入布局。 现在，你需要创建一个可以实际包含数据的缓冲区！
+在 Direct3D 设备上，调用 [**ID3D11Device::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout) 并创建输入布局。 现在，你需要创建一个可以实际包含数据的缓冲区！
 
 ### <a name="step-3-populate-the-vertex-buffers"></a>步骤 3:填充顶点缓冲区
 
 顶点缓冲区包含网格中每个三角形的顶点列表。 每个顶点都必须在该列表中唯一。 在我们的示例中，立方体有 8 个顶点。 顶点着色器在图形设备上运行并从顶点缓冲区中读取，并且它根据你在上一步中指定的输入布局来解释数据。
 
-在下面的示例中，为缓冲区提供一个描述和一个子资源，它们会告知 Direct3D 有关顶点数据的物理映射以及如何在图形设备的内存中对其进行处理的大量信息。 这是必需的，因为你使用的常规 [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) 可能会包含所有内容！ [ **D3D11\_缓冲区\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092)并[ **D3D11\_SUBRESOURCE\_数据**](https://msdn.microsoft.com/library/windows/desktop/ff476220)结构也提供了确保 Direct3D 了解缓冲区，以及顶点列表的最大大小中包括的每个顶点元素大小的缓冲区的物理内存布局。 你也可以在此处控制对缓冲区内存的访问以及遍历的方式，但这有点超出本教程的范围。
+在下面的示例中，为缓冲区提供一个描述和一个子资源，它们会告知 Direct3D 有关顶点数据的物理映射以及如何在图形设备的内存中对其进行处理的大量信息。 这是必需的，因为你使用的常规 [**ID3D11Buffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer) 可能会包含所有内容！ [ **D3D11\_缓冲区\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)并[ **D3D11\_SUBRESOURCE\_数据**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)结构也提供了确保 Direct3D 了解缓冲区，以及顶点列表的最大大小中包括的每个顶点元素大小的缓冲区的物理内存布局。 你也可以在此处控制对缓冲区内存的访问以及遍历的方式，但这有点超出本教程的范围。
 
-配置缓冲区之后，调用 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) 来实际创建缓冲区。 很明显，如果你拥有多个对象，则为每个唯一的模型创建缓冲区。
+配置缓冲区之后，调用 [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) 来实际创建缓冲区。 很明显，如果你拥有多个对象，则为每个唯一的模型创建缓冲区。
 
 声明并创建顶点缓冲区。
 
@@ -159,8 +159,8 @@ m_d3dDevice->CreateBuffer(
 
 ![构造菱形时的索引顺序](images/rhombus-surface-1.png)
 
--   三角形 1:\[0、 1、 2\]
--   三角形 2:\[0、 2、 3\]
+-   三角形 1:\[0, 1, 2\]
+-   三角形 2:\[0, 2, 3\]
 
 在条带或风扇拓扑中，你进行排序 （例如，在端从索引 0 到索引 2 映像中。） 遍历期间消除了许多冗余边的方式的顶点对于大型网格，这将显著减少顶点着色器运行时，并显著提高了性能次数。 但是，我们将保持它的简单性并且继续使用三角形列表。
 
@@ -187,9 +187,9 @@ unsigned short cubeIndices[] =
     0, 4, 7 };
 ```
 
-当你只有 8 个顶点时，缓冲区中的 36 个索引元素非常多余！ 如果您选择消除一些冗余，并使用一个不同的顶点列表类型，例如条带还是风扇，则必须指定该类型时提供特定[ **D3D11\_基元\_拓扑**](https://msdn.microsoft.com/library/windows/desktop/ff476189)值设为[ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://msdn.microsoft.com/library/windows/desktop/ff476455)方法。
+当你只有 8 个顶点时，缓冲区中的 36 个索引元素非常多余！ 如果您选择消除一些冗余，并使用一个不同的顶点列表类型，例如条带还是风扇，则必须指定该类型时提供特定[ **D3D11\_基元\_拓扑**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ff476189(v=vs.85))值设为[ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology)方法。
 
-有关不同索引列表技术的详细信息，请参阅[基元拓扑](https://msdn.microsoft.com/library/windows/desktop/bb205124)。
+有关不同索引列表技术的详细信息，请参阅[基元拓扑](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-primitive-topologies)。
 
 ### <a name="step-5-create-a-constant-buffer-for-your-transformation-matrices"></a>步骤 5：创建转换矩阵的常量缓冲区
 
@@ -289,7 +289,7 @@ m_constantBufferData.projection = DirectX::XMFLOAT4X4(
             );
 ```
 
-当你位于此处时，在 [ID3D11DeviceContext](https://msdn.microsoft.com/library/windows/desktop/ff476149) 上设置顶点和索引缓冲区，以及你使用的拓扑。
+当你位于此处时，在 [ID3D11DeviceContext](https://docs.microsoft.com/windows/desktop/direct3d11/d3d11-graphics-reference-10level9-context) 上设置顶点和索引缓冲区，以及你使用的拓扑。
 
 ```cpp
 // Set the vertex and index buffers, and specify the way they define geometry.
@@ -412,7 +412,7 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 ### <a name="step-8-rasterizing-and-displaying-the-mesh"></a>步骤 8：光栅化和显示网格
 
-让我们运行管道。 该操作非常简单：调用 [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/bb173565)。
+让我们运行管道。 该操作非常简单：调用 [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawindexed)。
 
 绘制该立方体！
 

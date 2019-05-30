@@ -1,16 +1,16 @@
 ---
 description: 利用 C++/WinRT，你可以使用标准 C++ 宽字符串类型来调用 Windows 运行时 API，或者也可以使用 winrt::hstring 类型。
 title: C++/WinRT 中的字符串处理
-ms.date: 10/03/2018
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 字符串
 ms.localizationpriority: medium
-ms.openlocfilehash: b6f1e12b82ec3ee41cdacc86fcc5f41d664262be
-ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.openlocfilehash: d66cdcff8eff8c620d58a5948cbcf081acea2f45
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58618394"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360174"
 ---
 # <a name="string-handling-in-cwinrt"></a>C++/WinRT 中的字符串处理
 
@@ -72,14 +72,14 @@ hstring domainHstring{ contosoUri.Domain() }; // L"contoso.com"
 domainHstring = awUri.Domain(); // L"adventure-works.com"
 ```
 
-同样，[**IStringable::ToString**](https://msdn.microsoft.com/library/windows/desktop/dn302136) 将返回 hstring。
+同样，[**IStringable::ToString**](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nf-windows-foundation-istringable-tostring) 将返回 hstring。
 
 ```cppwinrt
 public:
     hstring ToString() const;
 ```
 
-**Uri** 将实现 [**IStringable**](https://msdn.microsoft.com/library/windows/desktop/dn302135) 接口。
+**Uri** 将实现 [**IStringable**](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-istringable) 接口。
 
 ```cppwinrt
 // Access hstring's IStringable::ToString, via a conversion operator to a standard type.
@@ -150,7 +150,7 @@ WINRT_ASSERT(w == L"Hello, World!");
 有关 **hstring** 函数和运算符的更多示例和信息，请参阅 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) API 参考主题。
 
 ## <a name="the-rationale-for-winrthstring-and-winrtparamhstring"></a>**winrt::hstring** 和 **winrt::param::hstring** 的原理
-Windows 运行时根据 **wchar_t** 字符实现，但 Windows 运行时的应用程序二进制接口 (ABI) 不是 **std::wstring** 或 **std::wstring_view** 提供的内容的一部分。 使用这些将导致效率显著降低。 相反，C++/WinRT 提供了 **winrt::hstring**，它表示与基础 [HSTRING](https://msdn.microsoft.com/library/windows/desktop/br205775) 一致的不可变字符串，在与 **std::wstring** 的接口相似的接口后面实现。 
+Windows 运行时根据 **wchar_t** 字符实现，但 Windows 运行时的应用程序二进制接口 (ABI) 不是 **std::wstring** 或 **std::wstring_view** 提供的内容的一部分。 使用这些将导致效率显著降低。 相反，C++/WinRT 提供了 **winrt::hstring**，它表示与基础 [HSTRING](https://docs.microsoft.com/windows/desktop/WinRT/hstring) 一致的不可变字符串，在与 **std::wstring** 的接口相似的接口后面实现。 
 
 你可能会注意到在逻辑上应该接受 **winrt::hstring** 的 C++/WinRT 输入参数实际上需要 **winrt::param::hstring**。 **param** 命名空间包含一组类型，专用于优化输入参数以自然地绑定到 C++ 标准库类型，以及避免副本和其他低效率现象。 你不应直接使用这些类型。 如果你要对自己的函数使用优化，则应使用 **std::wstring_view**。
 

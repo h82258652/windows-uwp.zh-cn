@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a01814729e38668e05201b4b7c8876dc150c488e
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: fe97d689711202511dcfec023b718cd1ba9b0b1d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291765"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370930"
 ---
 # <a name="transform-overview"></a>转换概述
 
@@ -60,7 +60,7 @@ ms.locfileid: "58291765"
 
 ![用于统一缩放的矩阵的等式](images/matrix.png)
 
-在 C++ 中，Direct3D 使用矩阵结构将矩阵声明为二维数组。 以下示例说明如何初始化 [**D3DMATRIX**](https://msdn.microsoft.com/library/windows/desktop/bb172573) 结构以充当统一缩放矩阵（比例系数“s”）。
+在 C++ 中，Direct3D 使用矩阵结构将矩阵声明为二维数组。 以下示例说明如何初始化 [**D3DMATRIX**](https://docs.microsoft.com/windows/desktop/direct3d9/d3dmatrix) 结构以充当统一缩放矩阵（比例系数“s”）。
 
 ```cpp
 D3DMATRIX scale = {

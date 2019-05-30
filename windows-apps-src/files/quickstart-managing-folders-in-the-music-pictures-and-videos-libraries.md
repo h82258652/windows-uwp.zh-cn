@@ -6,12 +6,12 @@ ms.date: 06/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e04170fb8952ecd5802b6190816d44012f56d8a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f9dba57d8e75ba105a2154be5add5b101a4a6aa4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661432"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369335"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>音乐、图片和视频库中的文件和文件夹
 
@@ -19,12 +19,12 @@ ms.locfileid: "57661432"
 
 库是虚拟的文件夹集合，其中包括一个默认的已知文件夹，以及用户通过使用你的应用或任一内置应用添加到库的任何其他文件夹。 例如，图片库默认包含“图片”已知文件夹。 用户可以通过使用你的应用或内置的“照片”应用，将文件夹添加到图片库或从中删除它们。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
-    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](https://msdn.microsoft.com/library/windows/apps/mt187337)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://msdn.microsoft.com/library/windows/apps/mt187334)。
+    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
 -   **对位置的访问权限**
 
@@ -42,11 +42,11 @@ ms.locfileid: "57661432"
 > 请记住声明相应的功能。 有关详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
  
 
-若要获取对用户的音乐、图片或视频库的引用，请调用 [**StorageLibrary.GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/dn251725) 方法。 提供 [**KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399) 枚举中的相应值。
+若要获取对用户的音乐、图片或视频库的引用，请调用 [**StorageLibrary.GetLibraryAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.getlibraryasync) 方法。 提供 [**KnownLibraryId**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownLibraryId) 枚举中的相应值。
 
--   [**KnownLibraryId.Music**](https://msdn.microsoft.com/library/windows/apps/br227155)
--   [**KnownLibraryId.Pictures**](https://msdn.microsoft.com/library/windows/apps/br227156)
--   [**KnownLibraryId.Videos**](https://msdn.microsoft.com/library/windows/apps/br227159)
+-   [**KnownLibraryId.Music**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.musiclibrary)
+-   [**KnownLibraryId.Pictures**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.pictureslibrary)
+-   [**KnownLibraryId.Videos**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.videoslibrary)
 
 ```cs
 var myPictures = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.Storage.KnownLibraryId.Pictures);
@@ -55,7 +55,7 @@ var myPictures = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.St
 ## <a name="get-the-list-of-folders-in-a-library"></a>获取库中的文件夹的列表
 
 
-若要获取库中的文件夹的列表，请获取 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) 属性的值。
+若要获取库中的文件夹的列表，请获取 [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) 属性的值。
 
 ```cs
 using Windows.Foundation.Collections;
@@ -65,7 +65,7 @@ IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.F
 ## <a name="get-the-folder-in-a-library-where-new-files-are-saved-by-default"></a>获取默认保存新文件的库中的文件夹
 
 
-若要获取默认保存新文件的库中的文件夹，请获取 [**StorageLibrary.SaveFolder**](https://msdn.microsoft.com/library/windows/apps/dn251728) 属性的值。
+若要获取默认保存新文件的库中的文件夹，请获取 [**StorageLibrary.SaveFolder**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.savefolder) 属性的值。
 
 ```cs
 Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
@@ -73,7 +73,7 @@ Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
 
 ## <a name="add-an-existing-folder-to-a-library"></a>将现有文件夹添加到库
 
-若要向库中添加文件夹，请调用 [**StorageLibrary.RequestAddFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251726)。 以图片库为例，调用此方法会导致向用户显示一个带有**将此文件夹添加到“图片”** 按钮的文件夹选取器。 如果用户选取了一个文件夹，则该文件夹仍将保留在其在磁盘上的原始位置并成为 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) 属性中（和内置“照片”应用中）的项，但该文件夹不会作为“图片”文件夹的子文件夹而出现在文件资源管理器中。
+若要向库中添加文件夹，请调用 [**StorageLibrary.RequestAddFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestaddfolderasync)。 以图片库为例，调用此方法会导致向用户显示一个带有**将此文件夹添加到“图片”** 按钮的文件夹选取器。 如果用户选取了一个文件夹，则该文件夹仍将保留在其在磁盘上的原始位置并成为 [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) 属性中（和内置“照片”应用中）的项，但该文件夹不会作为“图片”文件夹的子文件夹而出现在文件资源管理器中。
 
 
 ```cs
@@ -82,11 +82,11 @@ Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync
 
 ## <a name="remove-a-folder-from-a-library"></a>从库中删除文件夹
 
-若要从库中删除文件夹，请调用 [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) 方法并指定要删除的文件夹。 你可以使用 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) 和 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 控件（或类似控件）帮助用户选择要删除的文件夹。
+若要从库中删除文件夹，请调用 [**StorageLibrary.RequestRemoveFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync) 方法并指定要删除的文件夹。 你可以使用 [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) 和 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 控件（或类似控件）帮助用户选择要删除的文件夹。
 
-当你调用 [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) 时，用户将看到确认对话框，指出该文件夹“再也不会在‘图片’中显示，但不会被删除。” 这意味着该文件夹仍保留在其在磁盘上的原始位置上、会从 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) 属性中删除，并且将不再包含在内置的“照片”应用中。
+当你调用 [**StorageLibrary.RequestRemoveFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync) 时，用户将看到确认对话框，指出该文件夹“再也不会在‘图片’中显示，但不会被删除。” 这意味着该文件夹仍保留在其在磁盘上的原始位置上、会从 [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) 属性中删除，并且将不再包含在内置的“照片”应用中。
 
-以下示例假设用户已从名为 **lvPictureFolders** 的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 控件中选择要删除的文件夹。
+以下示例假设用户已从名为 **lvPictureFolders** 的 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 控件中选择要删除的文件夹。
 
 
 ```cs
@@ -96,7 +96,7 @@ bool result = await myPictures.RequestRemoveFolderAsync(folder);
 ## <a name="get-notified-of-changes-to-the-list-of-folders-in-a-library"></a>获取对库中的文件夹列表的更改的通知
 
 
-若要获取对库中的文件夹列表的更改的通知，请为库的 [**StorageLibrary.DefinitionChanged**](https://msdn.microsoft.com/library/windows/apps/dn251723) 事件注册一个处理程序。
+若要获取对库中的文件夹列表的更改的通知，请为库的 [**StorageLibrary.DefinitionChanged**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.definitionchanged) 事件注册一个处理程序。
 
 
 ```cs
@@ -158,7 +158,7 @@ private async void getSongs()
 
 默认情况下，用户可以选择将文件存储在可选的 SD 卡上。 但是，应用可以停止允许将文件存储在 SD 卡上。 因此，媒体库可以在设备的内部存储和 SD 卡上进行拆分。
 
-你无需写入其他代码即可处理这种情况。 [  **Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) 命名空间中用于查询已知文件夹的方法以透明方式合并这两个位置中的查询结果。 你也无需在应用清单文件中指定 **removableStorage** 功能来获取这些合并的结果。
+你无需写入其他代码即可处理这种情况。 [  **Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命名空间中用于查询已知文件夹的方法以透明方式合并这两个位置中的查询结果。 你也无需在应用清单文件中指定 **removableStorage** 功能来获取这些合并的结果。
 
 请考虑下图中显示的设备的存储状态：
 
@@ -175,7 +175,7 @@ private async void getSongs()
 
 **捕获它在应用中打开一张照片**
 
-如果你希望让用户以后在捕获照片的应用中再次打开该照片，则可以通过使用类似于以下示例的代码，与照片的元数据一起保存 **CreatorAppId**。 在此示例中，**testPhoto** 是 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)。
+如果你希望让用户以后在捕获照片的应用中再次打开该照片，则可以通过使用类似于以下示例的代码，与照片的元数据一起保存 **CreatorAppId**。 在此示例中，**testPhoto** 是 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)。
 
 ```cs
 IDictionary<string, object> propertiesToSave = new Dictionary<string, object>();

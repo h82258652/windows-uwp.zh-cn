@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 096cc0aaa9b0580eb6b45328a3243ba75d82f202
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5ec8778f590ba9b50c67209eaf4b80e2cbed2f16
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649802"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364804"
 ---
 # <a name="content-transition-animations"></a>内容过渡动画
 
@@ -23,7 +23,7 @@ ms.locfileid: "57649802"
 
 内容过渡动画可让你更改屏幕区域的内容，同时保持容器或背景不变。 新的内容将淡入。 如果存在要替换的现有内容，则该内容将淡出。
 
-> **重要的 API**：[**ContentThemeTransition 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
+> **重要的 API**：[**ContentThemeTransition 类 (XAML)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.)
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
 
@@ -41,10 +41,10 @@ ms.locfileid: "57649802"
 ## <a name="related-articles"></a>相关文章
 
 **面向开发人员 (XAML)**
-* [动画概述](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [对内容的转换进行动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/jj649426)
-* [快速入门：对 UI 使用库动画进行动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**ContentThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/br243104)
+* [动画概述](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [对内容的转换进行动画处理](https://docs.microsoft.com/previous-versions/windows/apps/jj649426(v=win.10))
+* [快速入门：对 UI 使用库动画进行动画处理](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [**ContentThemeTransition 类**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.)
 
  
 

@@ -5,20 +5,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ae656b473a4dd5999588057b0ec970645703eec
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 35488417497ac157969ff2641fbeaa0d4bb02591
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635082"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370121"
 ---
 # <a name="bluetooth-gatt-client"></a>蓝牙 GATT 客户端
 
 
 **重要的 Api**
 
--   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
--   [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
+-   [**Windows.Devices.Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
+-   [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
 
 本文演示用于通用 Windows 平台 (UWP) 应用的蓝牙通用属性 (GATT) 客户端 API 的用法，以及用于常见 GATT 客户端任务的示例代码：
 - 查询附近设备
@@ -28,9 +28,9 @@ ms.locfileid: "57635082"
 - 订阅特征值更改时的通知
 
 ## <a name="overview"></a>概述
-开发人员可使用 [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) 命名空间中的 API 访问蓝牙 LE 设备。 蓝牙 LE 设备通过以下内容的集合公开其功能：
+开发人员可使用 [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile) 命名空间中的 API 访问蓝牙 LE 设备。 蓝牙 LE 设备通过以下内容的集合公开其功能：
 
--   服务
+-   Services
 -   特性
 -   描述符
 
@@ -51,9 +51,9 @@ ms.locfileid: "57635082"
 - Windows.Devices.Enumeration 中的 DeviceWatcher
 - Windows.Devices.Bluetooth.Advertisement 中的 AdvertisementWatcher
 
-第二个方法在[播发](ble-beacon.md)文档中进行了详细讨论，因此在此处不会进行深入讨论，但基本思路是查找满足特定[播发筛选器](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.advertisementfilter.aspx)的附近设备的蓝牙地址。 拥有地址之后，便可以调用 [BluetoothLEDevice.FromBluetoothAddressAsync](https://msdn.microsoft.com/en-us/library/windows/apps/mt608819.aspx) 以获取对设备的引用。 
+第二个方法在[播发](ble-beacon.md)文档中进行了详细讨论，因此在此处不会进行深入讨论，但基本思路是查找满足特定[播发筛选器](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.advertisementfilter)的附近设备的蓝牙地址。 拥有地址之后，便可以调用 [BluetoothLEDevice.FromBluetoothAddressAsync](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothledevice.frombluetoothaddressasync) 以获取对设备的引用。 
 
-现在返回到 DeviceWatcher 方法。 蓝牙 LE 设备就像 Windows 中的任何其他设备一样，可以使用[枚举 API](https://msdn.microsoft.com/library/windows/apps/BR225459) 进行查询。 使用 [DeviceWatcher](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher) 类，并传入指定要查找的设备的查询字符串： 
+现在返回到 DeviceWatcher 方法。 蓝牙 LE 设备就像 Windows 中的任何其他设备一样，可以使用[枚举 API](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) 进行查询。 使用 [DeviceWatcher](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher) 类，并传入指定要查找的设备的查询字符串： 
 
 ```csharp
 // Query for extra properties you want returned
@@ -78,10 +78,10 @@ deviceWatcher.Stopped += DeviceWatcher_Stopped;
 // Start the watcher.
 deviceWatcher.Start();
 ```
-启动了 DeviceWatcher 之后，对于满足相关设备的 [Added](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher.added) 事件处理程序中的查询的每个设备，你都会收到 [DeviceInformation](https://msdn.microsoft.com/library/windows/apps/br225393)。 有关 DeviceWatcher 的更详细介绍，请参阅 [Github 上](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing)的完整示例。 
+启动了 DeviceWatcher 之后，对于满足相关设备的 [Added](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added) 事件处理程序中的查询的每个设备，你都会收到 [DeviceInformation](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)。 有关 DeviceWatcher 的更详细介绍，请参阅 [Github 上](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing)的完整示例。 
 
 ## <a name="connecting-to-the-device"></a>连接到设备
-发现所需设备之后，使用 [DeviceInformation.Id](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.id) 获取相关设备的蓝牙 LE 设备对象： 
+发现所需设备之后，使用 [DeviceInformation.Id](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id) 获取相关设备的蓝牙 LE 设备对象： 
 
 ```csharp
 async void ConnectDevice(DeviceInformation deviceInfo)
@@ -168,7 +168,7 @@ if (result.Status == GattCommunicationStatus.Success)
     // Successfully wrote to device
 }
 ```
-> **提示**：获取适应了使用[DataReader](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.streams.datareader.aspx)并[DataWriter](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.streams.datawriter.aspx)。 使用从许多 Bluetooth API 获取的原始缓冲区时，其功能必不可少。 
+> **提示**：获取适应了使用[DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader)并[DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter)。 使用从许多 Bluetooth API 获取的原始缓冲区时，其功能必不可少。 
 ## <a name="subscribing-for-notifications"></a>订阅通知
 
 确保特征支持“指示”或“通知”（检查特征属性以进行确保）。 

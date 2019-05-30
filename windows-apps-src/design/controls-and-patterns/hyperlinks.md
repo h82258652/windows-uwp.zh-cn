@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9aa5053d83518c61335807874cd0d31943a60695
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b17220a039612e0b13cd9842800c37c39bf194dd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606472"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362761"
 ---
 # <a name="hyperlinks"></a>超链接
 
@@ -25,7 +25,7 @@ ms.locfileid: "57606472"
 
 超链接会将用户导航到应用的另一部分、导航到另一个应用，或使用单独的浏览器应用启动特定的统一资源标识符 (URI)。 可使用两种方法向 XAML 应用添加超链接：**Hyperlink** 文本元素和 **HyperlinkButton** 控件。
 
-> **重要的 API**：[超链接文本元素](https://msdn.microsoft.com/library/windows/apps/dn279356)， [HyperlinkButton 控件](https://msdn.microsoft.com/library/windows/apps/br242739)
+> **重要的 API**：[超链接文本元素](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink)， [HyperlinkButton 控件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
 
 ![“超链接”按钮](images/controls/hyperlink-button.png)
 
@@ -38,7 +38,7 @@ ms.locfileid: "57606472"
 
 -   在文本控件内使用内联 **Hyperlink** 文本元素。 Hyperlink 元素随其他文本元素流动，你可以在任何 InlineCollection 中使用它。 如果你希望自动文本换行但不一定需要较大的命中目标，请使用文本超链接。 超链接文本可能较小且难以命中，对于触摸尤其如此。
 -   将 **HyperlinkButton** 用于独立超链接。 HyperlinkButton 是一种专用按钮控件，可在需要使用按钮的任何位置使用。
--   使用带有[图像](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx)的 **HyperlinkButton** 作为其内容，以创建可单击的图像。
+-   使用带有[图像](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image)的 **HyperlinkButton** 作为其内容，以创建可单击的图像。
 
 ## <a name="examples"></a>示例
 
@@ -58,7 +58,7 @@ ms.locfileid: "57606472"
 
 ## <a name="create-a-hyperlink-text-element"></a>创建 Hyperlink 文本元素
 
-此示例将演示如何在 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 内使用 Hyperlink 文本元素。
+此示例将演示如何在 [TextBlock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock) 内使用 Hyperlink 文本元素。
 
 ```xml
 <StackPanel Width="200">
@@ -73,7 +73,7 @@ ms.locfileid: "57606472"
 
 ![作为文本元素的超链接示例](images/controls_hyperlink-element.png) 
 
-> **提示**&nbsp;&nbsp;当你在文本控件中使用超链接而其他文本元素采用 XAML 时，请将内容放置在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，并将 `xml:space="preserve"` 属性应用到 Span 以在超链接和其他元素之间保留空白区域。
+> **提示**&nbsp;&nbsp;当你在文本控件中使用超链接而其他文本元素采用 XAML 时，请将内容放置在 [Span](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span) 容器中，并将 `xml:space="preserve"` 属性应用到 Span 以在超链接和其他元素之间保留空白区域。
 
 ## <a name="create-a-hyperlinkbutton"></a>创建 HyperlinkButton
 
@@ -116,7 +116,7 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 > [!NOTE]
 > URI 由 [Windows.Foundation.Uri](/uwp/api/windows.foundation.uri) 类表示。 使用 .NET 编程时，此类将隐藏，你应该使用 [System.Uri](https://docs.microsoft.com/dotnet/api/system.uri) 类。 有关详细信息，请参阅这些类的参考页面。
 
-无需使用 **http:** 或 **https:**  方案。 你可以使用诸如 **ms-appx:**、**ms-appdata:** 或 **ms-resources:** 等方案，前提是这些位置中存在适合在浏览器中加载的资源内容。 但是，明确禁止 **file:** 方案。 有关详细信息，请参阅 [URI 方案](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)。
+无需使用 **http:** 或 **https:**  方案。 你可以使用诸如 **ms-appx:** 、**ms-appdata:** 或 **ms-resources:** 等方案，前提是这些位置中存在适合在浏览器中加载的资源内容。 但是，明确禁止 **file:** 方案。 有关详细信息，请参阅 [URI 方案](https://docs.microsoft.com/previous-versions/windows/apps/jj655406(v=win.10))。
 
 当用户单击超链接时，NavigateUri 属性的值传递到 URI 类型和方案的系统处理程序。 然后，系统启动针对为 NavigateUri 提供的 URI 的方案注册的应用。
 
@@ -125,7 +125,7 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 **处理单击事件**
 
-对于除在浏览器中启动 URI 以外的操作（例如应用内导航），请使用 Click 事件。 例如，如果你希望加载新应用页面而不是打开浏览器，请在 Click 事件内调用 [Frame.Navigate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.frame.navigate.aspx) 方法来导航到新应用页面。 如果你希望外部的绝对 URI 在 [WebView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) 控件（同样存在于应用中）内加载，请调用 [WebView.Navigate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.navigate.aspx) 作为 Click 处理程序逻辑的一部分。
+对于除在浏览器中启动 URI 以外的操作（例如应用内导航），请使用 Click 事件。 例如，如果你希望加载新应用页面而不是打开浏览器，请在 Click 事件内调用 [Frame.Navigate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) 方法来导航到新应用页面。 如果你希望外部的绝对 URI 在 [WebView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview) 控件（同样存在于应用中）内加载，请调用 [WebView.Navigate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigate) 作为 Click 处理程序逻辑的一部分。
 
 通常不同时处理 Click 事件和指定 NavigateUri 值，因为它们表示使用超链接元素的两种不同方式。 如果你的意图是在默认浏览器中打开 URI，并且你已为 NavigateUri 指定了值，请不要处理 Click 事件。 相反，如果你处理 Click 事件，请不要指定 NavigateUri。
 
@@ -136,15 +136,15 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 **超链接文本元素**
 
-你可以设置 [UnderlineStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.hyperlink.underlinestyle.aspx) 属性来禁用下划线。 如果执行此操作，请考虑使用 [FontWeight](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontweight.aspx) 或 [FontStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontstyle.aspx) 来区分链接文本。
+你可以设置 [UnderlineStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.hyperlink.underlinestyle) 属性来禁用下划线。 如果执行此操作，请考虑使用 [FontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement.fontweight) 或 [FontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement.fontstyle) 来区分链接文本。
 
-**超链接按钮** 
+**HyperlinkButton** 
 
-默认情况下，当你将一个字符串设置为 [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) 属性的值时，HyperlinkButton 显示为带下划线的文本。
+默认情况下，当你将一个字符串设置为 [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 属性的值时，HyperlinkButton 显示为带下划线的文本。
 
 在以下情况下，文本不会显示为带下划线：
-- 将 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 设置为 Content 属性的值，并在 TextBlock 上设置 [Text](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.text.aspx) 属性。
-- 重新设置 HyperlinkButton 的模板，并更改 [ContentPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx) 模板部分的名称。
+- 将 [TextBlock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock) 设置为 Content 属性的值，并在 TextBlock 上设置 [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 属性。
+- 重新设置 HyperlinkButton 的模板，并更改 [ContentPresenter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentpresenter) 模板部分的名称。
 
 如果你需要一个显示为不带下划线的文本的按钮，请考虑使用标准按钮控件，并对其 Style 属性应用内置 `TextBlockButtonStyle` 系统资源。
 
@@ -154,17 +154,17 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 **输入的事件**
 
-由于超链接不是 [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx)，因此它没有 UI 元素输入事件集，如 Tapped、PointerPressed 等。 不过，超链接具有其自己的 Click 事件以及系统加载任何指定为 NavigateUri 的 URI 的隐式行为。 系统会处理所有应调用超链接操作并引发 Click 事件作为回应的输入操作。
+由于超链接不是 [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)，因此它没有 UI 元素输入事件集，如 Tapped、PointerPressed 等。 不过，超链接具有其自己的 Click 事件以及系统加载任何指定为 NavigateUri 的 URI 的隐式行为。 系统会处理所有应调用超链接操作并引发 Click 事件作为回应的输入操作。
 
-**内容**
+**Content**
 
-超链接对可能存在于其 [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) 集合中的内容具有限制。 具体来说，超链接仅允许 [Run](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx) 和非另一个超链接的其他 [Span](/uwp/api/windows.ui.xaml.documents.span) 类型。 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) 不可在超链接的内联集合中。 尝试添加受限制的内容会引发无效参数异常或 XAML 分析异常。
+超链接对可能存在于其 [Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span.inlines) 集合中的内容具有限制。 具体来说，超链接仅允许 [Run](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.run) 和非另一个超链接的其他 [Span](/uwp/api/windows.ui.xaml.documents.span) 类型。 [InlineUIContainer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.inlineuicontainer) 不可在超链接的内联集合中。 尝试添加受限制的内容会引发无效参数异常或 XAML 分析异常。
 
 **超链接和主题/样式行为**
 
-超链接不从 [Control](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.aspx) 继承，因此它没有 [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.style.aspx) 属性或 [Template](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.template.aspx)。 你可以编辑从 [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.aspx) 继承的属性（如 Foreground 或 FontFamily）来更改超链接的外观，但你无法使用常见样式或模板来应用更改。 请考虑为超链接属性的值使用常见资源（而不是使用模板）以保持一致性。 超链接的某些属性使用系统提供的 {ThemeResource} 标记扩展值的默认值。 这使超链接外观可以在用户在运行时更改系统主题时以相应的方式进行切换。
+超链接不从 [Control](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control) 继承，因此它没有 [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) 属性或 [Template](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template)。 你可以编辑从 [TextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement) 继承的属性（如 Foreground 或 FontFamily）来更改超链接的外观，但你无法使用常见样式或模板来应用更改。 请考虑为超链接属性的值使用常见资源（而不是使用模板）以保持一致性。 超链接的某些属性使用系统提供的 {ThemeResource} 标记扩展值的默认值。 这使超链接外观可以在用户在运行时更改系统主题时以相应的方式进行切换。
 
-超链接的默认颜色为系统的主题色。 你可以设置 [Foreground](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.foreground.aspx) 属性来覆盖此颜色。
+超链接的默认颜色为系统的主题色。 你可以设置 [Foreground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement.foreground) 属性来覆盖此颜色。
 
 ## <a name="recommendations"></a>建议
 
@@ -183,5 +183,5 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 - [工具提示的准则](tooltips.md)
 
 **面向开发人员 (XAML)**
-- [Windows.UI.Xaml.Documents.Hyperlink 类](https://msdn.microsoft.com/library/windows/apps/dn279356)
-- [Windows.UI.Xaml.Controls.HyperlinkButton 类](https://msdn.microsoft.com/library/windows/apps/br242739)
+- [Windows.UI.Xaml.Documents.Hyperlink 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink)
+- [Windows.UI.Xaml.Controls.HyperlinkButton 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)

@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 503f7baad0d91f4e7c29010145ecb162f98bc81c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b1ea41a509b1673b7c4f5812d34db93dd6b0c93e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606282"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365946"
 ---
 # <a name="choose-a-notification-delivery-method"></a>选择通知传递方法
 
@@ -27,9 +27,9 @@ ms.locfileid: "57606282"
 
 应用可使用 4 种机制传递通知：
 
--   **本地**
+-   **Local**
 -   **计划**
--   **定期**
+-   **Periodic**
 -   **推送**
 
 下表总结了通知传递类型。
@@ -153,7 +153,7 @@ ms.locfileid: "57606282"
 有关详细信息，请参阅：
 
 -   [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)
--   [推送通知指导原则](https://msdn.microsoft.com/library/windows/apps/hh761462)
+-   [推送通知指导原则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
 -   [通用 Windows 平台 (UWP) 通知的代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
@@ -162,8 +162,8 @@ ms.locfileid: "57606282"
 
 * [发送本地磁贴通知](sending-a-local-tile-notification.md)
 * [发送本地 toast 通知](send-local-toast.md)
-* [推送通知指导原则](https://msdn.microsoft.com/library/windows/apps/hh761462)
-* [Toast 通知准则](https://msdn.microsoft.com/library/windows/apps/hh465391)
+* [推送通知指导原则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [Toast 通知准则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
 * [定期通知概述](periodic-notification-overview.md)
 * [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)
 * [通用 Windows 平台 (UWP) 通知的代码在 GitHub 上的示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)

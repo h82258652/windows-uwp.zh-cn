@@ -9,12 +9,12 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a7a34846cbadfa9e133976695239b98294a0dd2
-ms.sourcegitcommit: 559d3387d5929431212d147d9e085895e162916a
+ms.openlocfilehash: ba1e09a3819b2c22de52760519f352adc36d6362
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66184572"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372373"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual Studio 打包 UWP 应用
 
@@ -46,7 +46,7 @@ ms.locfileid: "66184572"
 
 1.  **测试您的应用程序。** 打包合作伙伴中心提交应用之前，请确保它按预期您计划支持的所有设备系列上工作。 这些设备系列可能包括桌面设备、移动设备、Surface Hub、Xbox、IoT 设备或其他设备。 有关部署和测试应用程序使用 Visual Studio 的详细信息，请参阅[部署和调试 UWP 应用](../debug-test-perf/deploying-and-debugging-uwp-apps.md)。
 2.  **优化您的应用程序。** 你可以使用 Visual Studio 的分析和调试工具来优化你的 UWP 应用的性能。 例如，用于 UI 响应能力的时间线工具、内存使用工具、CPU 使用工具等。 有关这些工具的详细信息，请参阅[分析功能教程](https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour)主题。
-3.  **检查.NET Native 兼容性 (对于 VB 和C#应用程序)。** 在通用 Windows 平台中，有一个本机编译器可以提升应用的运行时性能。 通过这项更改，你应在该编译环境中测试你的应用。 默认情况下，**Release** 版本配置会启用 .NET 本机工具链，因此请务必使用此 **Release** 配置测试应用并检查应用是否按预期运行。 [调试 .NET Native Windows 通用应用](https://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx)对在使用 .NET Native 时可能遇到的一些常见调试问题做了更详细的说明。
+3.  **检查.NET Native 兼容性 (对于 VB 和C#应用程序)。** 在通用 Windows 平台中，有一个本机编译器可以提升应用的运行时性能。 通过这项更改，你应在该编译环境中测试你的应用。 默认情况下，**Release** 版本配置会启用 .NET 本机工具链，因此请务必使用此 **Release** 配置测试应用并检查应用是否按预期运行。 [调试 .NET Native Windows 通用应用](https://blogs.msdn.microsoft.com/devops/2015/07/29/debugging-net-native-windows-universal-apps/)对在使用 .NET Native 时可能遇到的一些常见调试问题做了更详细的说明。
 
 ## <a name="configure-an-app-package"></a>配置应用包
 
@@ -61,7 +61,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 3.  现在，你可以确定如何配置你的应用。 每个选项卡都包含可以配置的有关应用的信息，以及更多信息的链接（如果需要）。  
     ![Visual Studio 中的清单设计器](images/packaging-screen1.jpg)
 
-    检查是否在“视觉资源”选项卡上拥有 UWP 应用所需的所有图像。
+    检查是否在“视觉资源”选项卡上拥有 UWP 应用所需的所有图像。 
 
     你可以从**打包**选项卡中输入发布数据。 你可以从此位置选择用于对你的应用进行签名的证书。 所有 UWP 应用都必须使用证书进行签名。
 
@@ -118,9 +118,9 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 **若要验证本地应用程序包**
 
-1. 在最后一个**已创建包**页**创建应用程序包**向导中，保留**本地计算机**选项，并单击**启动Windows 应用认证工具包**。 有关使用 Windows 应用认证工具包测试应用的详细信息，请参阅 [Windows 应用认证工具包](https://msdn.microsoft.com/library/windows/apps/Mt186449)。
+1. 在最后一个**已创建包**页**创建应用程序包**向导中，保留**本地计算机**选项，并单击**启动Windows 应用认证工具包**。 有关使用 Windows 应用认证工具包测试应用的详细信息，请参阅 [Windows 应用认证工具包](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit)。
 
-    Windows 应用认证工具包会执行多种测试并返回结果。 有关更具体的信息，请参阅 [Windows 应用认证工具包测试](https://msdn.microsoft.com/library/windows/apps/mt186450)。
+    Windows 应用认证工具包会执行多种测试并返回结果。 有关更具体的信息，请参阅 [Windows 应用认证工具包测试](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests)。
 
     如果你有想要用于测试的远程 Windows 10 设备，需要在该设备上手动安装 Windows 应用认证工具包。 下一节将指导你完成这些步骤。 完成该操作后，你可以选择**远程计算机**并单击**启动 Windows 应用认证工具包**，以连接到远程设备并运行验证测试。
 
@@ -128,30 +128,30 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 **若要验证远程 Windows 10 设备上的应用包**
 
-1.  通过启用 Windows 10 设备进行开发[启用设备进行开发](https://msdn.microsoft.com/library/windows/apps/Dn706236)说明。
+1.  通过启用 Windows 10 设备进行开发[启用设备进行开发](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)说明。
     >[!IMPORTANT]
     > 适用于 Windows 10，无法验证你的远程 ARM 设备上的应用程序包。
-2.  下载并安装适用于 Visual Studio 的远程工具。 这些工具用于远程运行 Windows 应用认证工具包。 你可以通过访问[在远程计算机上运行 UWP 应用](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor)获取有关这些工具的详细信息，包括下载位置。
+2.  下载并安装适用于 Visual Studio 的远程工具。 这些工具用于远程运行 Windows 应用认证工具包。 你可以通过访问[在远程计算机上运行 UWP 应用](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-on-a-remote-machine?view=vs-2015)获取有关这些工具的详细信息，包括下载位置。
 3.  下载所需[Windows 应用认证工具包](https://go.microsoft.com/fwlink/p/?LinkID=309666)然后将其安装在远程 Windows 10 设备。
-4.  在向导的“程序包创建已完成”页面上，选择“远程计算机”选项按钮，然后选择“测试连接”按钮旁边的省略号按钮。
+4.  在向导的“程序包创建已完成”页面上，选择“远程计算机”选项按钮，然后选择“测试连接”按钮旁边的省略号按钮。   
     >[!NOTE]
-    > **远程计算机**选项按钮已选中至少一个支持验证的解决方案配置时才可用。 有关使用 WACK 测试应用的详细信息，请参阅 [Windows 应用认证工具包](https://msdn.microsoft.com/library/windows/apps/Mt186449)。
+    > **远程计算机**选项按钮已选中至少一个支持验证的解决方案配置时才可用。 有关使用 WACK 测试应用的详细信息，请参阅 [Windows 应用认证工具包](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit)。
 5.  指定你的子网内部的设备规格，或提供你的子网外部的设备的域名服务器 (DNS) 名称或 IP 地址。
 6.  在**身份验证模式**列表中，如果你的设备没有要求你使用 Windows 凭据登录该设备，请选择**无**。
-7.  选择**选择**按钮，然后选择**启动 Windows 应用认证工具包**按钮。 如果远程工具正在该设备上运行，Visual Studio 将与其连接，然后执行验证测试。 请参阅 [Windows 应用认证工具包测试](https://msdn.microsoft.com/library/windows/apps/mt186450)。
+7.  选择**选择**按钮，然后选择**启动 Windows 应用认证工具包**按钮。 如果远程工具正在该设备上运行，Visual Studio 将与其连接，然后执行验证测试。 请参阅 [Windows 应用认证工具包测试](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests)。
 
 ### <a name="automate-store-submission"></a>自动提交到应用商店
 
 从 Visual Studio 2019 开始，你可以生成的.appxupload 文件到 Microsoft Store 从 IDE 直接通过选择提交**自动将提交到 Microsoft Store Windows 应用程序认证包在验证之后**选项。 必须指定用于提交的凭据。 这些凭据包含三个部分： **Azure 租户 ID**，则**客户端 ID**并**客户端机密**。 请按照下列步骤以获取这些操作：
 
-1. 在合作伙伴中心，请转到您**开发人员设置**，单击**用户**，并将你组织的开发人员中心帐户与你组织的 Azure AD 目录相关联。 有关详细说明，请参阅[管理帐户用户](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
+1. 在合作伙伴中心，请转到您**开发人员设置**，单击**用户**，并将你组织的开发人员中心帐户与你组织的 Azure AD 目录相关联。 有关详细说明，请参阅[管理帐户用户](https://docs.microsoft.com/windows/uwp/publish/manage-account-users)。
 2. 在中**用户**页上，单击**添加 Azure AD 应用程序**，添加代表该应用程序的 Azure AD 应用程序或服务将用于访问提交为您的开发人员中心帐户，并将其分配管理器角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在“添加 Azure AD 应用程序”页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在**添加 Azure AD 应用程序**页面上创建新的 Azure AD 应用程序。 有关详细信息，请参阅[添加用户、 组和 Azure AD 应用程序到合作伙伴中心帐户](/windows/uwp/publish/add-users-groups-and-azure-ad-applications)。
 3. 返回到**管理用户**页上，单击 Azure AD 应用程序，请转到应用程序设置，并复制名称**租户 ID**并**客户端 ID**值。
 4. 单击**添加新密钥**。 在以下屏幕上，复制密钥值，该值对应于客户端机密。 你将无法再访问此信息后离开此页上，因此请确保不会丢失。 有关详细信息，请参阅有关中管理密钥的信息[添加用户、 组和 Azure AD 应用程序到合作伙伴中心帐户](/windows/uwp/publish/add-users-groups-and-azure-ad-applications)。
     ![验证并发布进度](images/packaging-screen8.jpg)
     > [!Important] 
     > 你的凭据可以保存到配置文件以供将来提交中使用
-5. 单击 **“确定”**。
+5. 单击 **“确定”** 。
 
 WACK 测试完成后，将开始提交。 你可以跟踪在提交进度**验证和发布**窗口。
 

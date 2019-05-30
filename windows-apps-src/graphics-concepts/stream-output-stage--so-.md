@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 87eb6562c6ee66ca1d409d3748e688861d5f3920
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e3614b7bde3a87c8f5fa6fdc0eada560fd7bbcdc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605042"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370967"
 ---
 # <a name="stream-output-so-stage"></a>流输出 (SO) 阶段
 
@@ -31,14 +31,14 @@ ms.locfileid: "57605042"
 将流输出数据馈送至管道的方式有两种：
 
 -   可将流输出数据回送至输入汇编程序 (IA) 阶段。
--   流输出数据可由可编程的着色器使用[加载](https://msdn.microsoft.com/library/windows/desktop/bb509694)功能读取。
+-   流输出数据可由可编程的着色器使用[加载](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-load)功能读取。
 
 ## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>输入
 
 
 来自之前着色器阶段的顶点数据。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 流输出 (SO) 阶段连续地将来自前一活动阶段的顶点数据（例如几何着色器 (GS) 阶段）输出（或流入）到内存中的一个或多个缓冲区。 如果几何着色器 (GS) 阶段处于非活动状态，则 Stream 输出 (SO) 阶段持续输出缓冲区在内存中 （或如果 DS 还处于非活动状态，来自顶点着色器 (VS) 阶段） 到来自域着色器 (DS) 阶段的顶点数据。

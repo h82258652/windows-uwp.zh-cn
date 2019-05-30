@@ -6,12 +6,12 @@ ms.date: 06/23/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 概述, 编程, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 83ac401892761e1e6433d337babbce00dc559b98
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 56da2fabbe0e3e6ae49ebb817a6f57e4d62d7ae9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608842"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368804"
 ---
 # <a name="directx-programming"></a>DirectX 编程
 
@@ -61,7 +61,7 @@ ms.locfileid: "57608842"
 </table>
 
 
-有关 DirectX 参考和编程指南，请参阅 [Direct3D 11 图形](https://msdn.microsoft.com/library/windows/desktop/ff476080.aspx)和 [Direct3D 12 图形](https://msdn.microsoft.com/library/windows/desktop/dn903821.aspx)。
+有关 DirectX 参考和编程指南，请参阅 [Direct3D 11 图形](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11)和 [Direct3D 12 图形](https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics)。
  
 
 

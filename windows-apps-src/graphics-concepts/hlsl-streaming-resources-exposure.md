@@ -7,35 +7,35 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 00d6c16ecaa64abf7d83154fdb864671dbff3eae
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: db8a368f6cd9e0b6d38fb16d81dbc31a0f8a615f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57643482"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370599"
 ---
 # <a name="hlsl-streaming-resources-exposure"></a>HLSL 流式资源暴露
 
 
-支持 [Shader 模型 5](https://msdn.microsoft.com/library/windows/desktop/ff471356) 中的流式资源需要特定 Microsoft 高级着色器语言 (HLSL) 语法。
+支持 [Shader 模型 5](https://docs.microsoft.com/windows/desktop/direct3dhlsl/d3d11-graphics-reference-sm5) 中的流式资源需要特定 Microsoft 高级着色器语言 (HLSL) 语法。
 
 仅能在支持流式资源的设备上使用 Shader 模型 5 的 HLSL 语法。 下表中用于流式资源的每个相关 HLSL 方法接受一个（反馈）或两个（以此顺序的固定和反馈）其他的可选参数。 例如，**Sample** 方法是：
 
 **示例 (采样器、 位置\[，偏移量\[，clamp \[，反馈\] \] \])**
 
-**Sample** 方法的一个示例是 [**Texture2D.Sample(S,float,int,float,uint)**](https://msdn.microsoft.com/library/windows/desktop/dn393787)。
+**Sample** 方法的一个示例是 [**Texture2D.Sample(S,float,int,float,uint)** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/t2darray-sample-s-float-int-float-uint-)。
 
 offset、clamp 和 feedback 参数都是可选的。 你必须指定所需的所有可选参数，这与默认函数参数的 C ++ 规则一致。 例如，如果需要 feedback 状态，则需要向 **Sample** 显式提供 offset 和 clamp 参数，即使在逻辑上可能不需要它们。
 
 clamp 参数是标量浮点值。 clamp=0.0f 的文本值表明 clamp 操作未执行。
 
-feedback 参数是 **uint** 变量，可将其提供给内存访问查询内部 [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 函数。 不得修改或解释 feedback 参数的值；但是编译器不提供任何高级分析和诊断来检测是否修改了值。
+feedback 参数是 **uint** 变量，可将其提供给内存访问查询内部 [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) 函数。 不得修改或解释 feedback 参数的值；但是编译器不提供任何高级分析和诊断来检测是否修改了值。
 
-以下是 [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 的语法：
+以下是 [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) 的语法：
 
-**（在 uint FeedbackVar); bool CheckAccessFullyMapped**
+**bool CheckAccessFullyMapped(in uint FeedbackVar);**
 
-[**CheckAccessFullyMapped** ](https://msdn.microsoft.com/library/windows/desktop/dn292083)解释的值*FeedbackVar* ，如果正在访问的所有数据都已在资源映射; 否则为返回 true **CheckAccessFullyMapped**返回 false。
+[**CheckAccessFullyMapped** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped)解释的值*FeedbackVar* ，如果正在访问的所有数据都已在资源映射; 否则为返回 true **CheckAccessFullyMapped**返回 false。
 
 如果存在 clamp 或 feedback 参数，则编译器将发出基本指令的变体。 例如，流式资源的示例会生成 `sample_cl_s` 指令。
 
@@ -56,7 +56,7 @@ clamp 值 0.0f 表示不执行 clamp；因此，驱动程序编译器可以进�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/ff471359">HLSL 对象</a> </th>
+<th align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/d3d11-graphics-reference-sm5-objects">HLSL 对象</a> </th>
 <th align="left">具有 feedback 选项 (*) 的内部方法 - 也具有 clamp 选项</th>
 </tr>
 </thead>

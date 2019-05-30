@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5752a7bf18d785121258ea3fe75afe8383be2aff
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4a6b61463204b4ae60fbb853cd00a10c7185a084
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636102"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362694"
 ---
 # <a name="send-a-local-tile-notification"></a>发送本地磁贴通知
  
@@ -204,7 +204,7 @@ TileUpdateManager.CreateTileUpdaterForApplication().Clear();
 
 **使用通知队列**
 
-在执行了第一次磁贴更新之后，你可以通过启用[通知队列](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)来扩展磁贴的功能。
+在执行了第一次磁贴更新之后，你可以通过启用[通知队列](https://docs.microsoft.com/previous-versions/windows/apps/hh868234(v=win.10))来扩展磁贴的功能。
 
 **其他通知传递方法**
 
@@ -291,7 +291,7 @@ var notification = new TileNotification(doc);
 * [通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
 * [**Windows.UI.Notifications 命名空间**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
-* [如何使用通知队列 (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
+* [如何使用通知队列 (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/hh868234(v=win.10))
 * [将通知传递](choosing-a-notification-delivery-method.md)
  
 

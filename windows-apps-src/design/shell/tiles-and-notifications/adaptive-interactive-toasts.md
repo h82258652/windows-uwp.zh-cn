@@ -8,12 +8,12 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, toast 通知, 交互式 toast, 自适应 toast, toast 内容, toast 有效负载
 ms.localizationpriority: medium
-ms.openlocfilehash: a75e39dfcddbef5bb5c37c2a253a46a7b9cc9577
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 75e5ea7e83a1a274b90b14588f7d809a4aa91269
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596822"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366870"
 ---
 # <a name="toast-content"></a>Toast 内容
 
@@ -22,7 +22,7 @@ ms.locfileid: "57596822"
 > **重要的 API**：[UWP 社区工具包通知 NuGet 程序包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> 若要查看 Windows 8.1 和 Windows Phone 8.1 中的旧模板，请参阅[旧 toast 模板目录](https://msdn.microsoft.com/library/windows/apps/hh761494)。
+> 若要查看 Windows 8.1 和 Windows Phone 8.1 中的旧模板，请参阅[旧 toast 模板目录](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10))。
 
 
 ## <a name="getting-started"></a>即刻体验
@@ -294,7 +294,7 @@ ToastContent toastContent = new ToastContent()
 ```
 
 
-## <a name="progress-bar"></a>进度条
+## <a name="progress-bar"></a>进度栏
 
 **创意者更新中的新增功能**:在你的 toast 通知来操作，如下载等方面的进度通知用户，可以提供一个进度栏。
 

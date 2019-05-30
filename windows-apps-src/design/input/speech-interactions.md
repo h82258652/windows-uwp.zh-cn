@@ -8,12 +8,12 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 09787d5a83415b65b8946860edb5b7cad09a5846
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fb292ad5cba892275709fbc89d5d53fa136144f3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57637072"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365301"
 ---
 # <a name="speech-interactions"></a>语音交互
 
@@ -23,7 +23,7 @@ ms.locfileid: "57637072"
 
 **TTS** TTS 使用语音合成引擎（语音）将文本字符串转换为语音字词。 输入字符串既可以是基本的未经处理的文本，也可以是更复杂的语音合成标记语言 (SSML)。 SSML 提供用于控制语音输出特征（例如发音、音量、音调、音速和重读）的标准方式。
 
-**其他语音相关组件：**
+**其他语音相关组件：** 
 Windows 应用程序中的 **Cortana** 使用自定义语音命令（说出或键入）在前台启动你的应用（应用获得焦点，就好像是从“开始”菜单启动一样）或者作为一项后台任务而运行（**Cortana** 保持焦点，但提供来自应用的结果）。 如果要使用 **Cortana** UI 公开应用功能，请参阅 [Cortana 语音命令 (VCD) 指南](https://docs.microsoft.com/en-us/cortana/voice-commands/vcd)。
 
 ## <a name="speech-interaction-design"></a>语音交互设计
@@ -80,21 +80,21 @@ Windows 应用程序中的 **Cortana** 使用自定义语音命令（说出或�
 
 -   预定义语法（听写或 Web 搜索）
 
-    -   “侦听”屏幕。
-    -   “思考”屏幕。
-    -   “听到你说”屏幕或错误屏幕。
+    -   “侦听”  屏幕。
+    -   “思考”  屏幕。
+    -   “听到你说”  屏幕或错误屏幕。
 -   字词或短语列表，或者 SRGS 语法文件
 
-    -   “侦听”屏幕。
-    -   “你说的是”屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
-    -   “听到你说”屏幕或错误屏幕。
+    -   “侦听”  屏幕。
+    -   “你说的是”  屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
+    -   “听到你说”  屏幕或错误屏幕。
 
 在 **“侦听”** 屏幕上，你可以：
 
 -   自定义标题文本。
 -   提供用户可以说出的示例文本。
--   指定是否显示“听到你说”屏幕。
--   在“听到你说”屏幕上向用户读出已识别的字符串。
+-   指定是否显示“听到你说”  屏幕。
+-   在“听到你说”屏幕上向用户读出已识别的字符串  。
 
 以下示例显示了使用 SRGS 定义的约束的语音识别器的内置识别流程。 在本例中，语音识别是成功的。
 
@@ -164,7 +164,7 @@ Windows 应用程序中的 **Cortana** 使用自定义语音命令（说出或�
     -   使每个语法保持简短。 与包含许多短语的较大语法相比，包含较少短语的语法往往可提供更准确的识别度。 最好将多个较小语法用于特定方案，而不是将单个语法用于整个应用。
     -   让用户了解针对每个应用上下文说哪些内容，并按照需要启用和禁用语法。
     -   设计每个语法，以便用户可以使用多种方式说出同一条命令。 例如，可以使用 **GARBAGE** 规则来匹配你的语法没有定义的语音输入。 这将使用户可以说出对你的应用没有任何意义的其他字词。 例如，“给我”、“和”、“呃”、“可能”等等。
-    -   使用 [sapi:subset](https://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx) 元素，帮助匹配语音输入。 这是针对 SRGS 规范的 Microsoft 扩展，可帮助匹配部分短语。
+    -   使用 [sapi:subset](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/jj572474(v=office.14)) 元素，帮助匹配语音输入。 这是针对 SRGS 规范的 Microsoft 扩展，可帮助匹配部分短语。
     -   尽量避免在语法中定义只包含一个音节的短语。 对于包含两个或更多音节的短语，识别往往更为准确。
     -   避免使用听起来相似的短语。 例如，“hello”、“bellow”和“fellow”等短语可使识别引擎难以分辨，从而导致较差的识别准确度。
 
@@ -175,11 +175,11 @@ Windows 应用程序中的 **Cortana** 使用自定义语音命令（说出或�
 
 如果你的应用包含了带有不常见或虚构字词的专用词汇或带有罕见发音的字词，你可能能够通过定义自定义发音来提高对这些字词的识别性能。
 
-对于包含字词和短语的小型列表，或包含不常用字词和短语的列表，可以使用 SRGS 语法创建自定义发音。 有关详细信息，请参阅[令牌元素](https://msdn.microsoft.com/library/windowsphone/design/hh361600.aspx)。
+对于包含字词和短语的小型列表，或包含不常用字词和短语的列表，可以使用 SRGS 语法创建自定义发音。 有关详细信息，请参阅[令牌元素](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361600(v=office.14))。
 
-对于包含字词和短语的较大列表，或包含常用字词和短语的列表，可以创建单独的发音词典文档。 有关详细信息，请参阅[关于词典和音标字母](https://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx)。
+对于包含字词和短语的较大列表，或包含常用字词和短语的列表，可以创建单独的发音词典文档。 有关详细信息，请参阅[关于词典和音标字母](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361646(v=office.14))。
 
-## <a name="testing"></a>测试
+## <a name="testing"></a>正在测试
 
 通过应用目标受众测试语音识别准确度以及任何支持的 UI。 这是确定应用的语音交互体验有效性的最佳方式。 例如，用户是否因你的应用无法聆听常见短语而获得了较差的识别结果？
 
@@ -200,7 +200,7 @@ TTS 从纯文本或 SSML 生成语音输出。
 -   将一系列不常见单词串联在一起，或者说出零件编号或标点可能会导致短语变得无法识别。
 -   当母语使用者说出短语时的韵律或节奏不同时，语音可能听起来不自然。
 
-将 SSML 而不是将纯文本用作语音合成器的输入可以解决这两种问题。 有关 SSML 的详细信息，请参阅[使用 SSML 控制合成的语音](https://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx)和[语音合成标记语言参考](https://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx)。
+将 SSML 而不是将纯文本用作语音合成器的输入可以解决这两种问题。 有关 SSML 的详细信息，请参阅[使用 SSML 控制合成的语音](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14))和[语音合成标记语言参考](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14))。
 
 ## <a name="other-articles-in-this-section"></a>本部分中的其他文章 
 
@@ -215,8 +215,8 @@ TTS 从纯文本或 SSML 生成语音输出。
 
 ## <a name="related-articles"></a>相关文章
 
-* [语音交互](https://msdn.microsoft.com/library/windows/apps/mt185614)
-* [Cortana 交互](https://msdn.microsoft.com/library/windows/apps/mt185598)
+* [语音交互](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
+* [Cortana 交互](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-interactions)
 
  **示例**
 

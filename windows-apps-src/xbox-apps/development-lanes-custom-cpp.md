@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 ms.localizationpriority: medium
-ms.openlocfilehash: 23dfb8843ed8e70fc6f979bd778a517d0c30327a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 585289fdc66b8730036f3d14faeafce8c22c09a7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613872"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371363"
 ---
 # <a name="bring-custom-c-games-to-uwp-on-xbox"></a>将自定义 C++ 游戏移植到 Xbox 上的 UWP
 
@@ -19,7 +19,7 @@ ms.locfileid: "57613872"
 
 通用 Windows 平台 (UWP) 上的 C++ 游戏使用 DirectX 进行渲染。 有关详细信息，请参阅 [DirectX 图形和游戏](https://msdn.microsoft.com/library/windows/desktop/ee663274(v=vs.85).aspx)。
 
-你可以编写[内含组件扩展的 C++](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx) (C++/CX)，也可以编写[标准 C++](https://msdn.microsoft.com/library/windows/apps/mt592904.aspx)（Win32 和 COM）。
+你可以编写[内含组件扩展的 C++](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx) (C++/CX)，也可以编写[标准 C++](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)（Win32 和 COM）。
 
 若要了解如何将你的主机转变为开发工具包以及如何通过 Visual Studio 进行部署，请参阅[游戏和 DirectX](../gaming/index.md) 和[入门](getting-started.md)指南。
 
@@ -27,7 +27,7 @@ ms.locfileid: "57613872"
 > Xbox One 目前不支持 DirectX 12。
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 - [将现有游戏移植到 Xbox](development-lanes-landing.md)
 - [在 Xbox One 上 UWP](index.md)
 

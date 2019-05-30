@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c622c037f878d1ad34cdadf897dde10683532832
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 28376f6e96cc490c7c44f4ed60093591e873300e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660862"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370998"
 ---
 # <a name="rasterization-rules"></a>光栅化规则
 
@@ -97,7 +97,7 @@ srcColor \* srcAlpha + destColor \* (1-srcAlpha)
 
 -   对于点，将为每个样本位置执行覆盖测试（不适合像素中心）。
 
-多重采样格式可在呈现目标中使用，该目标可通过[加载](https://msdn.microsoft.com/library/windows/desktop/bb509694)读回到着色器中，因为着色器访问的各个样本不需要解析。 多重采样资源不支持深度格式，因此，深度格式被限制为仅限呈现目标。
+多重采样格式可在呈现目标中使用，该目标可通过[加载](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-load)读回到着色器中，因为着色器访问的各个样本不需要解析。 多重采样资源不支持深度格式，因此，深度格式被限制为仅限呈现目标。
 
 无类型格式支持多重采样以允许资源视图以不同的方式解释数据。 例如，可创建多重采样资源使用 R8G8B8A8\_TYPELESS，呈现到该呈现目标视图资源使用 R8G8B8A8\_UINT 格式，然后将内容解析为与 R8G8B8A8 的另一个资源\_UNORM 数据格式。
 

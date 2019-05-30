@@ -6,36 +6,36 @@ ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
-ms.openlocfilehash: 50e818059436cf7653bf7ac7b2203b0761b93377
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f37ffe21795fc68ff72b4e6f1de591c96d2f8b90
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615792"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366214"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>创建和注册进程内后台任务
 
 **重要的 Api**
 
--   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
--   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
+-   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler)
 
 本主题演示了如何创建和注册在你的应用所在的同一进程中运行的后台任务。
 
-与进程外后台任务相比，进程内后台任务更易于实现。 但是，它们不够灵活。 如果在进程内后台任务中运行的代码崩溃，这将降低你的应用的性能。 另请注意，[DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx)、[DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) 和 **IoTStartupTask** 无法与进程内模型一起使用。 也无法在你的应用程序内激活 VoIP 后台任务。 这些触发器和任务仍支持使用进程外后台任务模型。
+与进程外后台任务相比，进程内后台任务更易于实现。 但是，它们不够灵活。 如果在进程内后台任务中运行的代码崩溃，这将降低你的应用的性能。 另请注意，[DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger)、[DeviceServicingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceservicingtrigger) 和 **IoTStartupTask** 无法与进程内模型一起使用。 也无法在你的应用程序内激活 VoIP 后台任务。 这些触发器和任务仍支持使用进程外后台任务模型。
 
 请注意，如果后台活动的运行时间超过执行时间限制，即使在应用的前台进程内运行，后台活动也会终止。 出于某些目的，复原将工作分离到可在单独进程中运行的后台任务仍然有用。 对于不需要与前台应用程序通信的工作，最好是使后台任务作为独立于前台应用程序的任务工作。
 
 ## <a name="fundamentals"></a>基础
 
-进程内模型可通过应用在前台运行还是在后台运行的改进通知增强应用程序生命周期。 两个新事件中的这些转换应用程序对象有：[**EnteredBackground** ](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground)并[ **LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)。 基于你的应用程序的可见性状态，这些事件适合应用程序生命周期。在[应用生命周期](app-lifecycle.md)中阅读有关这些事件的详细信息，以及它们如何影响应用程序生命周期。
+进程内模型可通过应用在前台运行还是在后台运行的改进通知增强应用程序生命周期。 两个新事件中的这些转换应用程序对象有：[**EnteredBackground** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground)并[ **LeavingBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground)。 基于你的应用程序的可见性状态，这些事件适合应用程序生命周期。在[应用生命周期](app-lifecycle.md)中阅读有关这些事件的详细信息，以及它们如何影响应用程序生命周期。
 
 在较高级别上，处理 **EnteredBackground** 事件以运行将在应用在后台运行时执行的代码，处理 **LeavingBackground** 以了解应用何时移至前台。
 
 ## <a name="register-your-background-task-trigger"></a>注册你的后台任务触发器
 
-进程内后台活动的注册方式与进程外后台活动大致相同。 所有后台触发器均从使用 [BackgroundTaskBuilder](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.aspx?f=255&MSPPError=-2147217396) 注册开始。 借助生成器，可轻松通过在一个位置设置所有所需值来注册后台任务。
+进程内后台活动的注册方式与进程外后台活动大致相同。 所有后台触发器均从使用 [BackgroundTaskBuilder](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder?f=255&MSPPError=-2147217396) 注册开始。 借助生成器，可轻松通过在一个位置设置所有所需值来注册后台任务。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -48,16 +48,16 @@ ms.locfileid: "57615792"
 > ```
 
 > [!NOTE]
-> 通用 Windows 应用必须在注册任何后台触发器类型之前调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
-> 若要确保通用 Windows 应用在你发布更新后继续正常运行，必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然后调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
+> 通用 Windows 应用必须在注册任何后台触发器类型之前调用 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)。
+> 若要确保通用 Windows 应用在你发布更新后继续正常运行，必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess)，然后调用 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
-对于进程内后台活动，不要设置 `TaskEntryPoint.`。将其保留为空可启用默认入口点，这是 Application 对象上称为 [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) 的一种新的受保护方法。
+对于进程内后台活动，不要设置 `TaskEntryPoint.`。将其保留为空可启用默认入口点，这是 Application 对象上称为 [OnBackgroundActivated()](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated) 的一种新的受保护方法。
 
-注册触发器后，将基于在 [SetTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.settrigger.aspx) 方法中设置的触发器类型引发它。 在上面的示例中，使用 [TimeTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.timetrigger.aspx)，这将在注册之后的十五分钟引发。
+注册触发器后，将基于在 [SetTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.settrigger) 方法中设置的触发器类型引发它。 在上面的示例中，使用 [TimeTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.timetrigger)，这将在注册之后的十五分钟引发。
 
 ## <a name="add-a-condition-to-control-when-your-task-will-run-optional"></a>添加条件控制任务何时运行（可选）
 
-在触发器事件发生后，你可以添加条件控制任务何时运行。 例如，如果你不希望在用户存在前运行任务，请使用条件 **UserPresent**。 有关可能条件的列表，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+在触发器事件发生后，你可以添加条件控制任务何时运行。 例如，如果你不希望在用户存在前运行任务，请使用条件 **UserPresent**。 有关可能条件的列表，请参阅 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
 
 以下示例代码指定需要用户存在的条件：
 
@@ -68,7 +68,7 @@ ms.locfileid: "57615792"
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>将你的后台活动代码放置在 OnBackgroundActivated() 中
 
-将在后台活动代码放入[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)后台触发器激发时响应。 可将 **OnBackgroundActivated** 视为 [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396) 进行处理。 该方法具有[BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)参数，它包含的所有内容的**运行**方法提供。 例如，在 App.xaml.cs 中：
+将在后台活动代码放入[OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated)后台触发器激发时响应。 可将 **OnBackgroundActivated** 视为 [IBackgroundTask.Run](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run?f=255&MSPPError=-2147217396) 进行处理。 该方法具有[BackgroundActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.backgroundactivatedeventargs)参数，它包含的所有内容的**运行**方法提供。 例如，在 App.xaml.cs 中：
 
 ``` cs
 using Windows.ApplicationModel.Background;
@@ -114,7 +114,7 @@ sealed partial class App : Application
 
 * [将进程外后台任务转换为进程内的后台任务](convert-out-of-process-background-task.md)
 * [创建和注册进程外后台任务](create-and-register-a-background-task.md)
-* [在背景中播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [在背景中播放媒体](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
 * [注册后台任务](register-a-background-task.md)
 * [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
@@ -131,4 +131,4 @@ sealed partial class App : Application
 
 **后台任务 API 参考**
 
-* [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
+* [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)

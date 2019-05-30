@@ -5,25 +5,25 @@ keywords: DirectX, XAML
 ms.date: 10/24/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cb1c9f9cf6cbc6cce0c5d4547ed503bb9a06e56
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 39fc465a38aa31e86d5c6162c4b333517c9efb4d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660112"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367689"
 ---
 # <a name="extend-the-game-sample"></a>扩展游戏示例
 
 此时，我们已经介绍了基本的通用 Windows 平台 (UWP) DirectX 3D 游戏的关键组件。 你可以设置游戏的框架，包括视图提供程序和呈现管道，并实现基本的游戏循环。 还可以创建基本的用户界面覆盖层、合并声音、实现控件。 你已经踏上了创建自己游戏的旅程，如果你需要更多帮助和信息，请查看这些资源。
 
--   [DirectX 图形和游戏](https://msdn.microsoft.com/library/windows/desktop/ee663274)
--   [Direct3D 11 概述](https://msdn.microsoft.com/library/windows/desktop/ff476345)
--   [Direct3D 11 的引用](https://msdn.microsoft.com/library/windows/desktop/ff476147)
+-   [DirectX 图形和游戏](https://docs.microsoft.com/windows/desktop/directx)
+-   [Direct3D 11 概述](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews)
+-   [Direct3D 11 的引用](https://docs.microsoft.com/windows/desktop/direct3d11/d3d11-graphics-reference)
 
 ## <a name="using-xaml-for-the-overlay"></a>将 XAML 用于覆盖层
 
 
-还有一种方法我们未深入讨论，即使用 XAML 代替 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) 作为覆盖层。 与 Direct2D 相比，XAML 在绘制用户界面元素方面有许多优势。 最重要的好处是，它可用于将 Windows 10 外观和感觉合并到您的 DirectX 游戏更方便。 许多用于定义 UWP 应用的常用元素、 样式和行为都紧密集成到 XAML 模型中，大幅减少了游戏开发人员的实现工作。 如果你自己设计的游戏有一个复杂的用户界面，请考虑使用 XAML 代替 Direct2D。
+还有一种方法我们未深入讨论，即使用 XAML 代替 [Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal) 作为覆盖层。 与 Direct2D 相比，XAML 在绘制用户界面元素方面有许多优势。 最重要的好处是，它可用于将 Windows 10 外观和感觉合并到您的 DirectX 游戏更方便。 许多用于定义 UWP 应用的常用元素、 样式和行为都紧密集成到 XAML 模型中，大幅减少了游戏开发人员的实现工作。 如果你自己设计的游戏有一个复杂的用户界面，请考虑使用 XAML 代替 Direct2D。
 
 使用 XAML，我们可以制作一个外观与之前制作的 Direct2D 界面类似的游戏界面。
 
@@ -37,8 +37,8 @@ ms.locfileid: "57660112"
 
 功能 | XAML| Direct2D
 :----------|:----------- | :-----------
-定义覆盖 | 在 XAML 文件 `\*.xaml` 中定义。 在了解了 XAML 后，与 Direct2D 相比，创建和配置更复杂的覆盖变得更加简单。| 定义为手动放置并写入 Direct2D 目标缓冲区的 Direct2D 基元和 [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) 字符串的集合。 
-用户界面元素 | XAML 用户界面元素来自属于 Windows 运行时 XAML API 一部分的标准化元素，其中包括 [**Windows::UI::Xaml**](https://msdn.microsoft.com/library/windows/apps/br209045) 和 [**Windows::UI::Xaml::Controls**](https://msdn.microsoft.com/library/windows/apps/br227716)。 处理 XAML 用户界面元素行为的代码在代码隐藏文件 Main.xaml.cpp 中定义。 | 简单的形状可以像矩形和省略号一样绘制。
+定义覆盖 | 在 XAML 文件 `\*.xaml` 中定义。 在了解了 XAML 后，与 Direct2D 相比，创建和配置更复杂的覆盖变得更加简单。| 定义为手动放置并写入 Direct2D 目标缓冲区的 Direct2D 基元和 [DirectWrite](https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal) 字符串的集合。 
+用户界面元素 | XAML 用户界面元素来自属于 Windows 运行时 XAML API 一部分的标准化元素，其中包括 [**Windows::UI::Xaml**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml) 和 [**Windows::UI::Xaml::Controls**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls)。 处理 XAML 用户界面元素行为的代码在代码隐藏文件 Main.xaml.cpp 中定义。 | 简单的形状可以像矩形和省略号一样绘制。
 调整窗口大小 | 自然地处理调整大小和视图状态更改事件，并相应地转换覆盖层 | 需要手动指定如何重绘覆盖层的组件。
 
 
@@ -78,7 +78,7 @@ void App::OnLaunched(_In_ LaunchActivatedEventArgs^ /* args */)
 ```
 
 
-若要将配置的交换链连接到 XAML 定义的 [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 实例，必须获取底层本机 [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/dn302143) 接口实现的指针并对其调用 [**ISwapChainPanelNative::SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144)，从而向其传递配置的交换链。 
+若要将配置的交换链连接到 XAML 定义的 [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 实例，必须获取底层本机 [**ISwapChainPanelNative**](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative) 接口实现的指针并对其调用 [**ISwapChainPanelNative::SetSwapChain**](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain)，从而向其传递配置的交换链。 
 
 以下 [**DX::DeviceResources::CreateWindowSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/Common/DeviceResources.cpp#L218-L521) 的代码段详细介绍了 DirectX/XAML 互操作的这个方面：
 

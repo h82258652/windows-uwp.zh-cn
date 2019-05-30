@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e07ac565fe2e223b2fb33573ad083edfdfbc888a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fd7071092a66f46a81095a5cb6aff8b623a774a5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610202"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366625"
 ---
 # <a name="edge-based-ui-animations"></a>基于边缘的 UI 动画
 
@@ -23,7 +23,7 @@ ms.locfileid: "57610202"
 
 基于边缘的动画显示或隐藏源自屏幕边缘的 UI。 显示和隐藏动画可以由用户或应用启动。 此 UI 可以覆盖应用，也可以作为主屏表面的一部分。 如果此 UI 是应用图面的一部分，那么应用的其余部分可能需要相应调整大小。
 
-> **重要的 API**：[**EdgeUIThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/hh702324)
+> **重要的 API**：[**EdgeUIThemeTransition 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
@@ -45,13 +45,13 @@ ms.locfileid: "57610202"
 
 
 **面向开发人员**
-* [动画概述](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [对基于边缘的 UI 进行动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
-* [快速入门：对 UI 使用库动画进行动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**EdgeUIThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/hh702324)
-* [**PaneThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/hh969160)
-* [进行淡化动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [进行重新定位动画处理](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
+* [动画概述](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [对基于边缘的 UI 进行动画处理](https://docs.microsoft.com/previous-versions/windows/apps/jj649428(v=win.10))
+* [快速入门：对 UI 使用库动画进行动画处理](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [**EdgeUIThemeTransition 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
+* [**PaneThemeTransition 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PaneThemeTransition)
+* [进行淡化动画处理](https://docs.microsoft.com/previous-versions/windows/apps/jj649429(v=win.10))
+* [进行重新定位动画处理](https://docs.microsoft.com/previous-versions/windows/apps/jj649434(v=win.10))
 
  
 

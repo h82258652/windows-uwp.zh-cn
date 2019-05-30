@@ -8,18 +8,18 @@ keywords: 视觉反馈, 焦点反馈, 触摸反馈, 接触可视化, 输入, 交
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b043ec71eb7d5883a1b22c4f0d8f43824034d454
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1f716b930a4d8b96a55a5741e5a520be624526fa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640782"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363543"
 ---
 # <a name="guidelines-for-visual-feedback"></a>视觉反馈指南
 
 当检测、解释和处理用户的交互时，可使用视觉反馈显示给用户。 视觉反馈可通过鼓励交互来帮助用户。 它将指示交互是否成功，以加强用户的控制感觉。 它还可以传送系统状态并减少错误。
 
-> **重要的 API**：[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)， [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [ **Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
+> **重要的 API**：[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)， [ **Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)， [ **Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
 
 ## <a name="recommendations"></a>建议
 
@@ -27,7 +27,7 @@ ms.locfileid: "57640782"
     - 有关自定义控件属性（包括视觉状态属性）的详细信息，请参阅 [XAML 样式](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles)。
     - 有关更改控件模板的详细信息，请参阅 [UserControl 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)
     - 如果需要对控件模板进行重大更改，请考虑创建自定义模板化控件。 有关自定义模板化控件的示例，请参阅[自定义编辑控件示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)。
-- 请勿使用可能会干扰应用使用的触摸视觉化。 有关详细信息，请参阅 [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969)。
+- 请勿使用可能会干扰应用使用的触摸视觉化。 有关详细信息，请参阅 [**ShowGestureFeedback**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback)。
 - 除非绝对有必要，否则不要显示反馈。 除非你要添加的值在其他任何地方都不可用，否则，请不要显示视觉反馈来保持 UI 干净整洁。
 - 尽量不要大幅自定义内置 Windows 手势的视觉反馈行为，因为这样会产生不一致的情况，并且会带来混淆的用户体验。
 
@@ -44,7 +44,7 @@ ms.locfileid: "57640782"
 
 视觉反馈通常依赖输入设备（触摸、触摸板、鼠标、笔/触笔、键盘等）。 例如，鼠标的内置反馈通常涉及到移动和更改光标，而触摸和笔需要接触可视化，键盘输入和导航使用焦点矩形和突出显示。
 
-使用 [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969) 设置平台手势的反馈行为。
+使用 [**ShowGestureFeedback**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback) 设置平台手势的反馈行为。
 
 如果要自定义反馈 UI，请确保你提供支持而且适合所有输入模式的反馈。
 
@@ -73,7 +73,7 @@ ms.locfileid: "57640782"
 ```
 ![高可见性焦点视觉边距厚度](images/FocusMargin.png)
 
-边距是类型 [**Thickness**](https://msdn.microsoft.com/library/system.windows.thickness) 的属性，因此可以自定义边距以仅显示在控件的特定侧。 见下方：![高可见性焦点 visual 边距粗细仅底部](images/FocusThicknessSide.png)
+边距是类型 [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness?redirectedfrom=MSDN) 的属性，因此可以自定义边距以仅显示在控件的特定侧。 见下方：![高可见性焦点 visual 边距粗细仅底部](images/FocusThicknessSide.png)
 
 边距是控件的视觉边界与焦点视觉*辅助边框*的开始部分之间的间距。 默认边距与控件边界的距离为 **1px**。 可以通过更改 **FocusVisualMargin** 属性来基于每个控件编辑此边距：
 ```XAML
@@ -112,7 +112,7 @@ ms.locfileid: "57640782"
 * [平移的准则](guidelines-for-panning.md)
 
 **面向开发人员**
-* [自定义用户交互](https://msdn.microsoft.com/library/windows/apps/mt185599)
+* [自定义用户交互](https://developer.microsoft.com/windows/design/inputs-devices)
 
 **示例**
 * [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
@@ -127,7 +127,7 @@ ms.locfileid: "57640782"
 * [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
 * [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
 * [输入：Windows 8 手势示例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [输入：操作和手势 （c + +） 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [输入：操作和手势 (C++) 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 触摸输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 

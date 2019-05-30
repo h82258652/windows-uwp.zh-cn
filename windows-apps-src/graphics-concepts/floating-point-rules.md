@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4de5ba146c8241598527dd268d604fcc9bb97d6d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a29fbe49e45b819ddf4ffc3172445996d3622360
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662352"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370618"
 ---
 # <a name="span-iddirect3dconceptsfloating-pointrulesspanfloating-point-rules"></a><span id="direct3dconcepts.floating-point_rules"></span>浮点规则
 
@@ -82,13 +82,13 @@ Direct3D 支持多种浮点表示。 所有浮点计算都依照 IEEE 754 32 位
 -   x +/- 0.0f 的结果始终是 x（除了 denorm 刷新）。 但是 -0 + 0 = +0。
 -   融合运算（例如 mad、dp3）产生的结果与运算的未融合扩展的评估的最差的串行排序一样准确。 对于给定的融合运算，出于容差的目的，最差的排序的定义不是固定的定义；它取决于输入的特定值。 允许未融合扩展中的各个步骤出现 1 个 ULP 容差（或者，Direct3D 调用的命令具有比 1 个 ULP 更宽松的容差，则允许出现更宽松的容差）。
 -   融合运算遵守与非融合运算相同的 NaN 规则。
--   sqrt 和 rcp 有 1 个 ULP 容差。 着色器倒数指令和倒数平方根指令 [**rcp**](https://msdn.microsoft.com/library/windows/desktop/hh447205) 和 [**rsq**](https://msdn.microsoft.com/library/windows/desktop/hh447221) 拥有各自的宽松精度要求。
+-   sqrt 和 rcp 有 1 个 ULP 容差。 着色器倒数指令和倒数平方根指令 [**rcp**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/hh447205(v=vs.85)) 和 [**rsq**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/rsq--sm4---asm-) 拥有各自的宽松精度要求。
 -   乘法和除法运算为 32 位浮点精度水平（乘法的精度为 0.5 ULP，倒数的精度为 1.0 ULP）。 如果直接实现 x/y，结果必须比两步法具有更大或相等的精度。
 
 ## <a name="span-iddoubleprec64bitspanspan-iddoubleprec64bitspan64-bit-double-precision-floating-point-rules"></a><span id="double_prec_64_bit"></span><span id="DOUBLE_PREC_64_BIT"></span>64 位 （双精度） 浮动点规则
 
 
-硬件和显示驱动程序可选择支持双精度浮点。 若要指示的支持，在调用时[ **ID3D11Device::CheckFeatureSupport** ](https://msdn.microsoft.com/library/windows/desktop/ff476497)与[ **D3D11\_功能\_双精度型值**](https://msdn.microsoft.com/library/windows/desktop/ff476124#d3d11-feature-doubles)，驱动程序集**DoublePrecisionFloatShaderOps**的[ **D3D11\_功能\_数据\_DOUBLE**](https://msdn.microsoft.com/library/windows/desktop/ff476127)为 TRUE。 驱动程序和硬件必须支持所有双精度浮点指令。
+硬件和显示驱动程序可选择支持双精度浮点。 若要指示的支持，在调用时[ **ID3D11Device::CheckFeatureSupport** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport)与[ **D3D11\_功能\_双精度型值**](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_feature)，驱动程序集**DoublePrecisionFloatShaderOps**的[ **D3D11\_功能\_数据\_DOUBLE**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_doubles)为 TRUE。 驱动程序和硬件必须支持所有双精度浮点指令。
 
 双精度指令遵循 IEEE 754R 行为要求。
 
@@ -148,9 +148,9 @@ float11/float10 值 (v) 遵循以下规则：
 
 [附录](appendix.md)
 
-[资源](https://msdn.microsoft.com/library/windows/desktop/ff476894)
+[资源](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources)
 
-[纹理](https://msdn.microsoft.com/library/windows/desktop/ff476902)
+[纹理](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-textures)
 
  
 

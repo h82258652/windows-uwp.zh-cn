@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: feef520614e1cc6076e6abc388fe419fe61d3a92
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: a02d562b73f61094f820e74a213614d80c4fb5e1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343246"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365848"
 ---
 # <a name="mouse-interactions"></a>鼠标交互
 
@@ -145,7 +145,7 @@ ms.locfileid: "58343246"
 
 为鼠标指针提供了一组标准光标。 它们用来表示元素的主要操作。
 
-每个标准光标都有一个与它相关联的默认图像。 用户或应用可以随时替换与任何标准光标相关联的默认图像。 通过 [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) 函数指定光标图像。
+每个标准光标都有一个与它相关联的默认图像。 用户或应用可以随时替换与任何标准光标相关联的默认图像。 通过 [**PointerCursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) 函数指定光标图像。
 
 如果你需要自定义鼠标光标：
 

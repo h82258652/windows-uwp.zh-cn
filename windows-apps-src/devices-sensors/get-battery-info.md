@@ -6,31 +6,31 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 81f4232d038b89f2c49cf584346d632911fb70e2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ea9be48da57e260cdb3d5d1c9a9a0b564c1f4386
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650342"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370045"
 ---
 # <a name="get-battery-information"></a>获取电池信息
 
 
 ** 重要的 API **
 
--   [**Windows.Devices.Power**](https://msdn.microsoft.com/library/windows/apps/Dn895017)
--   [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/BR225432)
+-   [**Windows.Devices.Power**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power)
+-   [**DeviceInformation.FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)
 
-了解如何使用 [**Windows.Devices.Power**](https://msdn.microsoft.com/library/windows/apps/Dn895017) 命名空间中的 API 获取电池的详细信息。 *电池报告* ([**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)) 描述了某一电池或聚合电池的充电、容量和状态。 本主题演示了应用如何获取电池报告和更改通知。 代码示例可从列在本主题末尾处的基本电池应用中获取。
+了解如何使用 [**Windows.Devices.Power**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power) 命名空间中的 API 获取电池的详细信息。 *电池报告* ([**BatteryReport**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport)) 描述了某一电池或聚合电池的充电、容量和状态。 本主题演示了应用如何获取电池报告和更改通知。 代码示例可从列在本主题末尾处的基本电池应用中获取。
 
 ## <a name="get-aggregate-battery-report"></a>获取聚合电池报告
 
 
-某些设备拥有多个电池，而对于每个电池在此类设备的总能量容量中所发挥的功能，并非总是显而易见。 这时就要用到 [**AggregateBattery**](https://msdn.microsoft.com/library/windows/apps/Dn895011) 类了。 *聚合电池*表示所有连接到设备的电池控制器并可提供一个整体 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 对象。
+某些设备拥有多个电池，而对于每个电池在此类设备的总能量容量中所发挥的功能，并非总是显而易见。 这时就要用到 [**AggregateBattery**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.aggregatebattery) 类了。 *聚合电池*表示所有连接到设备的电池控制器并可提供一个整体 [**BatteryReport**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport) 对象。
 
-**请注意**  A [**电池**](https://msdn.microsoft.com/library/windows/apps/Dn895004)类实际上对应于电池控制器。 控制器有时连接至物理电池，而有时又连接至设备机箱，具体视设备而定。 因此，即使没有电池也可以创建电池对象。 其他时候，电池对象可能为 **null**。
+**请注意**  A [**电池**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.Battery)类实际上对应于电池控制器。 控制器有时连接至物理电池，而有时又连接至设备机箱，具体视设备而定。 因此，即使没有电池也可以创建电池对象。 其他时候，电池对象可能为 **null**。
 
-一旦有了聚合电池对象，你便可以调用 [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) 来获取对应的 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)。
+一旦有了聚合电池对象，你便可以调用 [**GetReport**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.getreport) 来获取对应的 [**BatteryReport**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport)。
 
 ```csharp
 private void RequestAggregateBatteryReport()
@@ -48,7 +48,7 @@ private void RequestAggregateBatteryReport()
 
 ## <a name="get-individual-battery-reports"></a>获取单个电池报告
 
-还可以为各个电池创建 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 对象。 将 [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getdeviceselector.aspx) 方法与 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/BR225432) 方法结合使用，以获取表示已连接至设备的任何电池控制器的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象集合。 然后，通过所需 **DeviceInformation** 对象的 **Id** 属性，使用 [**FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.fromidasync.aspx) 方法来创建相应的 [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004)。 最后，调用 [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) 以获取单个电池报告。
+还可以为各个电池创建 [**BatteryReport**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport) 对象。 将 [**GetDeviceSelector**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.getdeviceselector) 方法与 [**FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) 方法结合使用，以获取表示已连接至设备的任何电池控制器的 [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) 对象集合。 然后，通过所需 **DeviceInformation** 对象的 **Id** 属性，使用 [**FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.fromidasync) 方法来创建相应的 [**Battery**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.Battery)。 最后，调用 [**GetReport**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.getreport) 以获取单个电池报告。
 
 此示例显示了如何为所有连接到设备的电池创建电池报告。
 
@@ -77,7 +77,7 @@ async private void RequestIndividualBatteryReports()
 
 ## <a name="access-report-details"></a>访问报告详细信息
 
-[  **BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 对象提供了大量电池信息。 有关详细信息，请参阅其属性的 API 参考：**状态**( [ **BatteryStatus** ](https://msdn.microsoft.com/library/windows/apps/Dn818458)枚举)， [ **ChargeRateInMilliwatts**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.chargerateinmilliwatts.aspx)， [ **DesignCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.designcapacityinmilliwatthours.aspx)， [ **FullChargeCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours.aspx)，并[ **RemainingCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours)。 此示例显示了一些基本电池应用所使用的电池报告属性，这将在本主题后面介绍。
+[  **BatteryReport**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport) 对象提供了大量电池信息。 有关详细信息，请参阅其属性的 API 参考：**状态**( [ **BatteryStatus** ](https://docs.microsoft.com/previous-versions/windows/dn818458(v=win.10))枚举)， [ **ChargeRateInMilliwatts**](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.chargerateinmilliwatts)， [ **DesignCapacityInMilliwattHours**](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.designcapacityinmilliwatthours)， [ **FullChargeCapacityInMilliwattHours**](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours)，并[ **RemainingCapacityInMilliwattHours**](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours)。 此示例显示了一些基本电池应用所使用的电池报告属性，这将在本主题后面介绍。
 
 ```csharp
 ...
@@ -91,7 +91,7 @@ TextBlock txt6 = new TextBlock { Text = "Remaining energy capacity (mWh): " + re
 
 ## <a name="request-report-updates"></a>请求报告更新
 
-当电池的充电、容量或状态发生变化时，[**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) 对象会触发 [**ReportUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.reportupdated) 事件。 这通常会在发生状态变化时立即发生，在发生所有其他变化时定期发生。 此示例显示了如何注册电池报告更新。
+当电池的充电、容量或状态发生变化时，[**Battery**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.Battery) 对象会触发 [**ReportUpdated**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.reportupdated) 事件。 这通常会在发生状态变化时立即发生，在发生所有其他变化时定期发生。 此示例显示了如何注册电池报告更新。
 
 ```csharp
 ...
@@ -101,7 +101,7 @@ Battery.AggregateBattery.ReportUpdated += AggregateBattery_ReportUpdated;
 
 ## <a name="handle-report-updates"></a>处理报告更新
 
-发生电池更新时，[**ReportUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.reportupdated) 事件会将相应的 [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) 对象传递到事件处理程序方法。 但是，不会从 UI 线程调用此事件处理程序。 你将需要使用 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) 对象来调用任意 UI 更改，如此示例中所示。
+发生电池更新时，[**ReportUpdated**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.reportupdated) 事件会将相应的 [**Battery**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.Battery) 对象传递到事件处理程序方法。 但是，不会从 UI 线程调用此事件处理程序。 你将需要使用 [**Dispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 对象来调用任意 UI 更改，如此示例中所示。
 
 ```csharp
 async private void AggregateBattery_ReportUpdated(Battery sender, object args)
@@ -132,7 +132,7 @@ async private void AggregateBattery_ReportUpdated(Battery sender, object args)
 
 ## <a name="example-basic-battery-app"></a>示例：基本电池应用
 
-通过在 Microsoft Visual Studio 中生成下列基本电池应用来测试这些 API。 在 Visual Studio 开始页上，单击“新建项目”，然后在“Visual C#”&gt;“Windows”&gt;“通用”模板下，使用“空白应用”模板创建一个新应用。
+通过在 Microsoft Visual Studio 中生成下列基本电池应用来测试这些 API。 在 Visual Studio 开始页上，单击“新建项目”  ，然后在“Visual C#”&gt;“Windows”&gt;“通用”  模板下，使用“空白应用”  模板创建一个新应用。
 
 接下来，打开文件 **MainPage.xaml**，并将下列 XML 复制到此文件中（替换其原始内容）。
 
@@ -334,9 +334,9 @@ namespace App1
 
 如果你的应用未命名为 **App1**，将需要用你命名项目的名称为以上示例中的命名空间重命名。 例如，如果你创建了一个名为**BasicBatteryApp**的项目，请将命名空间 `App1` 替换为命名空间 `BasicBatteryApp`。
 
-最后，若要运行此基本电池应用：在“调试”菜单上，单击“开始调试”以测试该解决方案。
+最后，若要运行此基本电池应用：在“调试”  菜单上，单击“开始调试”  以测试该解决方案。
 
-**提示**  接收从数值[ **BatteryReport** ](https://msdn.microsoft.com/library/windows/apps/Dn895005)对象，在调试应用**本地计算机**或外部**设备**（如 Windows Phone)。 在设备仿真器上调试时，**BatteryReport** 对象会将 **null** 返回到容量和比率属性。
+**提示**  接收从数值[ **BatteryReport** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport)对象，在调试应用**本地计算机**或外部**设备**（如 Windows Phone)。 在设备仿真器上调试时，**BatteryReport** 对象会将 **null** 返回到容量和比率属性。
 
  
 

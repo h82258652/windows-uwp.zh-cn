@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f8c1cc6e17d95f55cc97af7695c12b374edcaaa8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2c7fadaf902b4aa543234bc8d43fbc1595a54219
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632882"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369686"
 ---
 # <a name="use-the-compass"></a>使用指南针
 
 
 **重要的 Api**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**指南针**](https://msdn.microsoft.com/library/windows/apps/BR225705)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**指南针**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass)
 
 **示例**
 
@@ -29,7 +29,7 @@ ms.locfileid: "57632882"
 
 应用可以相对于磁性来检索当前的方位，如果为 True，则是北面。 导航应用使用指南针来确定设备面向的方向，然后相应地在地图上定位。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 
 您应了解与 Extensible Application Markup Language (XAML)，Microsoft Visual C#，和事件。
 
@@ -41,7 +41,7 @@ ms.locfileid: "57632882"
 
 ### <a name="instructions"></a>说明
 
--   创建新项目，从“Visual C#”项目模板中选择“空白应用(通用 Windows)”。
+-   创建新项目，从“Visual C#”  项目模板中选择“空白应用(通用 Windows)”  。
 
 -   打开项目的 MainPage.xaml.cs 文件，使用下列内容替换现有代码。
 
@@ -134,11 +134,11 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**CompassCS**的项目，则使用 `x:Class="CompassCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 还应当将 `xmlns:local="using:App1"` 替换为 `xmlns:local="using:CompassCS"`。
 
--   按 F5 或依次选择“调试” > “开始调试”来生成、部署并运行应用。
+-   按 F5 或依次选择“调试”   > “开始调试”  来生成、部署并运行应用。
 
 应用运行后，你可以通过移动设备或使用仿真器工具更改指南针的值。
 
--   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试” > “停止调试”来停止应用。
+-   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”   > “停止调试”  来停止应用。
 
 ### <a name="explanation"></a>说明
 

@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cda37ee9964a3e7e02f4e4ce3829a8b55e823692
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fd0e7137f31a8f1620f7937b52efe1ca84a6b99a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660892"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370785"
 ---
 # <a name="launch-the-microsoft-store-app"></a>打开 Microsoft Store 应用
 
 
 
-本主题介绍**ms windows 应用商店：** URI 方案。 您的应用程序可以使用此 URI 方案通过启动到存储区中的特定页的 Microsoft Store 应用[ **LaunchUriAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701476)方法。
+本主题介绍**ms windows 应用商店：** URI 方案。 您的应用程序可以使用此 URI 方案通过启动到存储区中的特定页的 Microsoft Store 应用[ **LaunchUriAsync** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)方法。
 
 此示例显示了如何在“游戏”页面中打开 Microsoft Store：
 
@@ -41,7 +41,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">启动产品的产品详细信息页面 (PDP)。 <p>Store ID 推荐用于 Windows 10 上的客户，其将适用于所有操作系统版本，但执行此操作时的早期方法 (例如：PFN) 仍然是支持的。</p>
-<p>这些值可在<a href="https://partner.microsoft.com/dashboard">合作伙伴中心</a>上<a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">应用标识</a>页为每个应用的应用程序管理部分。</p>
+<p>这些值可在<a href="https://partner.microsoft.com/dashboard">合作伙伴中心</a>上<a href="https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details">应用标识</a>页为每个应用的应用程序管理部分。</p>
 </td>
 <td>
 Store ID <p>（建议）</p>

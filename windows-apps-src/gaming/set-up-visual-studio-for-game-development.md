@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, visual studio, 工具, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a3938f486d52942031944b1184a711ddbc579db
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f4ff471ae4c45761a1c1dad5819e97c8245746a1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653472"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368135"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>用于游戏编程的 Visual Studio 工具
 
@@ -43,7 +43,7 @@ ms.locfileid: "57653472"
 
 创建[生成自定义文件](#build-customizations-for-3d-assets)以在生成时将这些内容转换为 .dds 文件。
 
-有关详细信息，请参阅[使用纹理和图像](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx)。
+有关详细信息，请参阅[使用纹理和图像](https://docs.microsoft.com/visualstudio/designers/working-with-textures-and-images?view=vs-2015)。
 
 > **请注意**  使用图像编辑器不是为了替代完整功能图像编辑应用，但适用于许多简单查看和编辑方案。
 
@@ -62,7 +62,7 @@ ms.locfileid: "57653472"
 
 ![茶壶](images/modeleditor.png)
 
-有关详细信息，请参阅[使用 3D 模型](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx)。
+有关详细信息，请参阅[使用 3D 模型](https://docs.microsoft.com/visualstudio/designers/working-with-3-d-models?view=vs-2015)。
 
 > **请注意**  使用模型编辑器不是为了替代完整的功能模型编辑应用，但适用于许多简单查看和编辑方案。
 
@@ -109,20 +109,20 @@ float3 LambertLighting(
 }
 ```
 
-有关详细信息，请参阅[使用着色器](https://msdn.microsoft.com/library/windows/apps/hh873117.aspx)。
+有关详细信息，请参阅[使用着色器](https://docs.microsoft.com/visualstudio/designers/working-with-shaders?view=vs-2015)。
 
 ## <a name="build-customizations-for-3d-assets"></a>为 3D 资源生成自定义
 
 
 你可以向项目中添加生成自定义以便 Visual Studio 将资源转换为可以使用的格式。 在此之后，你可以将资源加载到应用中 并通过创建和填充 DirectX 资源来使用它们，就像在任何其他 DirectX 应用中一样。
 
-若要添加生成自定义，请在“解决方案资源管理器”中右键单击该项目，然后选择“生成自定义...”。可以向项目中添加以下类型的生成自定义。
+若要添加生成自定义，请在“解决方案资源管理器”  中右键单击该项目，然后选择“生成自定义...”  。可以向项目中添加以下类型的生成自定义。
 
 -   图像内容管道获取图像文件作为输入，并输出 DirectDraw 表面 (.dds) 文件。
 -   网格内容管道获取网格文件（如 .fbx）并输出 .cmo 网格文件。
 -   着色器内容管道从 Visual Studio 着色器编辑器中获取着色器视觉图 (.dgsl) 并输出编译的着色器输出 (.cso) 文件。
 
-有关详细信息，请参阅[在游戏或应用中使用 3D 资源](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx)。
+有关详细信息，请参阅[在游戏或应用中使用 3D 资源](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015)。
 
 ## <a name="debugging-directx-graphics"></a>调试 DirectX 图形
 
@@ -139,7 +139,7 @@ Visual Studio 提供特定于图形的调试工具。 可使用这些工具来�
 -   有限的 Direct2D 支持。
 -   操作系统和 SDK 要求。
 
-有关详细信息，请参阅[调试 DirectX 图形](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)。
+有关详细信息，请参阅[调试 DirectX 图形](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015)。
 
 
  

@@ -6,12 +6,12 @@ ms.date: 06/20/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, 横幅, 广告控件, 间隙
 ms.localizationpriority: medium
-ms.openlocfilehash: 84ed7f5f1eb65f06a47e92de962777ca9d3c50c7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0ef3050e2583674bf6cd5a601dbde1500f6b457e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658492"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372555"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft 广告 SDK 在你的应用中显示广告
 
@@ -48,7 +48,7 @@ ms.locfileid: "57658492"
     <br/>
     <a href="best-practices-for-ads-in-apps.md">最佳做法</a>
     <br/>
-    <a href="https://msdn.microsoft.com/en-us/library/windows/apps/mt691884.aspx">API 参考</a>
+    <a href="https://docs.microsoft.com/uwp/api/overview/advertising">API 参考</a>
     </td>
 </tr>
 </tbody>
@@ -108,7 +108,7 @@ Microsoft 广告 SDK 提供了你可以在应用中使用的多种不同类型�
 
 要获取有关使用 Microsoft 广告 SDK 的其他帮助，请使用以下资源。
 
-|  任务    | 资源 |               
+|  任务    | Resource |               
 |----------|-------|
 | 报告错误或获取对广告的辅助支持     | 访问[支持页面](https://developer.microsoft.com/en-us/windows/support)，然后选择**应用内广告**。        |
 | 获取社区支持     | 访问[论坛](https://go.microsoft.com/fwlink/p/?LinkId=401266)。       |

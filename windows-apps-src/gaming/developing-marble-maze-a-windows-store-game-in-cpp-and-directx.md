@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 示例, directx, 3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 39f915ad9cf200a5c2c762976ab3c39c2ef85410
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f287110584c02a5d7822f6b1d84cd332d4d6199d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662462"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368917"
 ---
 # <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>开发 Marble Maze，一款使用 C++ 和 DirectX 的 UWP 游戏
 
@@ -39,11 +39,11 @@ Marble Maze 为用户提供了多种方式来与游戏板交互。 如果你有�
 
 ![Marble Maze 游戏的屏幕截图。](images/marblemaze-2.png)
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 
 -   Windows 10 创意者更新
--   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
+-   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
 -   C++ 编程知识
 -   熟悉 DirectX 和 DirectX 术语
 -   COM 的基础知识
@@ -61,9 +61,9 @@ Marble Maze 为用户提供了多种方式来与游戏板交互。 如果你有�
 本文档将介绍如何：
 
 -   使用 Windows 运行时 API 和 DirectX 创建 UWP 游戏。
--   使用 [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476080) 和 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) 处理可视内容，例如模型、纹理、顶点和像素着色器，以及 2D 覆盖。
+-   使用 [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11) 和 [Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal) 处理可视内容，例如模型、纹理、顶点和像素着色器，以及 2D 覆盖。
 -   集成各种输入机制，例如触摸、加速计和 Xbox One 控制器。
--   使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049) 合并音乐和声音效果。
+-   使用 [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal) 合并音乐和声音效果。
 
 ## <a name="what-this-documentation-does-not-cover"></a>本文未涵盖的内容
 
@@ -77,7 +77,7 @@ Marble Maze 为用户提供了多种方式来与游戏板交互。 如果你有�
 -   如何准备在世界其他地方使用你的游戏。
 -   如何向 Microsoft Store 认证和发布你的游戏。
 
-Marble Maze 还使用 [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) 库处理 3D 几何图形并执行力学计算，例如碰撞。 本节未深入介绍 DirectXMath。 有关 Marble Maze 如何使用 DirectXMath 的详细信息，请参见源代码。
+Marble Maze 还使用 [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal) 库处理 3D 几何图形并执行力学计算，例如碰撞。 本节未深入介绍 DirectXMath。 有关 Marble Maze 如何使用 DirectXMath 的详细信息，请参见源代码。
 
 尽管 Marble Maze 提供了许多可重用的组件，但它不是一个完整的游戏开发框架。 在我们认为 Marble Maze 组件可在游戏中重用时，我们会在本文档中着重介绍它。
 
@@ -86,10 +86,10 @@ Marble Maze 还使用 [DirectXMath](https://msdn.microsoft.com/library/windows/d
 
 我们建议你首先从 [Marble Maze 示例基础](marble-maze-sample-fundamentals.md)入手，了解 Marble Maze 结构和 Marble Maze 源代码遵循的一些编码和风格指南。 下表列出了本节中的文档，以便你更容易查阅它们。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
-| Title                                                                                                                    | 描述                                                                                                                                                                                                                                        |
+| 标题                                                                                                                    | 描述                                                                                                                                                                                                                                        |
 |--------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Marble Maze 示例基础知识](marble-maze-sample-fundamentals.md)                                                   | 概述游戏结构，以及源代码所遵循的一些代码和风格指南。                                                                                                                                 |
 | [Marble Maze 应用程序结构](marble-maze-application-structure.md)                                               | 描述如何构建 Marble Maze 应用程序代码，以及 DirectX UWP 应用的结构与传统的桌面应用程序的结构有何不同。                                                                                    |

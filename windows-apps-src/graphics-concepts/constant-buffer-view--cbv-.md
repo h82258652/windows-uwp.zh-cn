@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 33e850ba16be7a8d2621f061015d39c8b334cab2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7179f8644970a24a9e7b9ce50a4bcb4d5d225d46
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651062"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370453"
 ---
 # <a name="constant-buffer-view-cbv"></a>常量缓冲区视图 (CBV)
 
@@ -21,7 +21,7 @@ ms.locfileid: "57651062"
 
 常量缓冲区的典型数据是世界、投影和视图矩阵，它们在绘制一帧的整个过程中保持恒定。
 
-常量缓冲区布局应匹配 HLSL 布局（请参考[常量变量的封装规则](https://msdn.microsoft.com/library/windows/desktop/bb509632.aspx)）。
+常量缓冲区布局应匹配 HLSL 布局（请参考[常量变量的封装规则](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-packing-rules)）。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 

@@ -5,20 +5,20 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 堆栈跟踪, 错误, 桌面应用程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cc8aaef2b26af88234efe62bf7cf1cb998e19bc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4aaa71c431a9dac6ad6650d05f71df897f0884fa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57659892"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372686"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>获取桌面应用程序中的错误的堆栈跟踪
 
-在 Microsoft Store 分析 API 使用此方法，可获取已添加到 [Windows 桌面应用程序计划](https://msdn.microsoft.com/library/windows/desktop/mt826504)的桌面应用程序的错误堆栈跟踪。 此方法只能下载过去 30 天内发生的错误的堆栈跟踪。 堆栈跟踪也会出现在[运行状况报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)合作伙伴中心中的桌面应用程序。
+在 Microsoft Store 分析 API 使用此方法，可获取已添加到 [Windows 桌面应用程序计划](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的桌面应用程序的错误堆栈跟踪。 此方法只能下载过去 30 天内发生的错误的堆栈跟踪。 堆栈跟踪也会出现在[运行状况报告](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)合作伙伴中心中的桌面应用程序。
 
 在可以使用此方法之前，必须首先使用[获取桌面应用程序中的错误的详细信息](get-details-for-an-error-in-your-desktop-application.md)方法来检索与想要检索堆栈跟踪的错误相关联的 CAB 文件 ID 哈希。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 
 
 若要使用此方法，首先需要执行以下操作：
@@ -39,17 +39,17 @@ ms.locfileid: "57659892"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
  
 
 ### <a name="request-parameters"></a>请求参数
 
 | 参数        | 在任务栏的搜索框中键入   |  描述      |  必需  |
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 要为其获取堆栈跟踪的桌面应用程序的产品 ID。 若要获取的桌面应用程序的产品 ID，请打开任意[分析报告，以便您在合作伙伴中心中的桌面应用程序](https://msdn.microsoft.com/library/windows/desktop/mt826504)(如**运行状况报告**)，并从 URL 检索产品 ID。 |  是  |
-| cabIdHash | 字符串 | 获取与要检索堆栈跟踪的错误相关联的 CAB 文件的唯一 ID 哈希。 要获取此值，请使用[获取桌面应用程序中的错误的详细信息](get-details-for-an-error-in-your-desktop-application.md)方法来检索应用程序中特定错误的详细信息，并使用该方法的响应正文中的 **cabIdHash** 值。 |  是  |
+| applicationId | string | 要为其获取堆栈跟踪的桌面应用程序的产品 ID。 若要获取的桌面应用程序的产品 ID，请打开任意[分析报告，以便您在合作伙伴中心中的桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)(如**运行状况报告**)，并从 URL 检索产品 ID。 |  是  |
+| cabIdHash | string | 获取与要检索堆栈跟踪的错误相关联的 CAB 文件的唯一 ID 哈希。 要获取此值，请使用[获取桌面应用程序中的错误的详细信息](get-details-for-an-error-in-your-desktop-application.md)方法来检索应用程序中特定错误的详细信息，并使用该方法的响应正文中的 **cabIdHash** 值。 |  是  |
 
  
 ### <a name="request-example"></a>请求示例
@@ -69,7 +69,7 @@ Authorization: Bearer <your access token>
 | 值      | 在任务栏的搜索框中键入    | 描述                  |
 |------------|---------|--------------------------------|
 | 值      | 数组   | 一组对象，其中每个包含堆栈跟踪数据的一个帧。 有关每个对象中的数据的详细信息，请参阅以下[堆栈跟踪值](#stack-trace-values)部分。 |
-| @nextLink  | 字符串  | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10，但查询的错误超过 10 行时，就会返回此值。 |
+| @nextLink  | string  | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10，但查询的错误超过 10 行时，就会返回此值。 |
 | TotalCount | 整数 | 查询的数据结果中的行总数。          |
 
 
@@ -77,12 +77,12 @@ Authorization: Bearer <your access token>
 
 *Value* 数组中的元素包含以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述      |
+| ReplTest1           | 在任务栏的搜索框中键入    | 描述      |
 |-----------------|---------|----------------|
-| level            | 字符串  |  此元素在调用堆栈中表示的帧编号。  |
-| image   | 字符串  |   可执行文件或库映像的名称，包含在此堆栈帧中调用的函数。           |
-| function | 字符串  |  在此堆栈帧中调用的函数名称。 仅当应用包含可执行文件或库的符号时才可用。              |
-| offset     | 字符串  |  相对于函数开始的当前指令的字节偏移量。      |
+| level            | string  |  此元素在调用堆栈中表示的帧编号。  |
+| image   | string  |   可执行文件或库映像的名称，包含在此堆栈帧中调用的函数。           |
+| function | string  |  在此堆栈帧中调用的函数名称。 仅当应用包含可执行文件或库的符号时才可用。              |
+| offset     | string  |  相对于函数开始的当前指令的字节偏移量。      |
 
 
 ### <a name="response-example"></a>响应示例

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, directx, 图形
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dbdf6072f57d12d424f0787cfa2e8993a1624af
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 556c5c74e5c8284e56047b4b8a9b2c2bf9c0155c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621792"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369077"
 ---
 # <a name="basic-3d-graphics-for-directx-games"></a>DirectX 游戏的基本 3D 图形
 
@@ -21,7 +21,7 @@ ms.locfileid: "57621792"
 
 **目标：** 了解如何编写 3D 图形应用程序。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 
 我们假定你熟悉 C++。 你还需要具有图形编程概念方面的基本经验。
@@ -31,15 +31,15 @@ ms.locfileid: "57621792"
 ## <a name="where-to-go-from-here"></a>自此处转至
 
 
-在这里，我们将讨论如何开发使用 DirectX 和 c + + 的 3D 图形\\Cx。 此教程包含五个部分，向你介绍 [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) API 以及在其他许多 DirectX 示例中也会用到的概念和代码。 这些部分从介绍如何为 UWP C++ 应用配置 DirectX，到如何设置基元的纹理和添加效果，循序渐进，逐层深入。
+在这里，我们将讨论如何开发使用 DirectX 的 3D 图形和C++ \\Cx。 此教程包含五个部分，向你介绍 [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d) API 以及在其他许多 DirectX 示例中也会用到的概念和代码。 这些部分从介绍如何为 UWP C++ 应用配置 DirectX，到如何设置基元的纹理和添加效果，循序渐进，逐层深入。
 
-> **请注意**  列矢量与本教程使用右手坐标系。 很多 DirectX 示例和应用都使用具有行向量的左手坐标系。 为了获得更完整的图形数学解决方案以及支持具有行向量的左手坐标系的解决方案，请考虑使用 [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833)。 有关详细信息，请参阅[将 DirectXMath 与 Direct3D 结合使用](https://msdn.microsoft.com/library/windows/desktop/ff729728#Use_DXMath_with_D3D)。
+> **请注意**  列矢量与本教程使用右手坐标系。 很多 DirectX 示例和应用都使用具有行向量的左手坐标系。 为了获得更完整的图形数学解决方案以及支持具有行向量的左手坐标系的解决方案，请考虑使用 [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal)。 有关详细信息，请参阅[将 DirectXMath 与 Direct3D 结合使用](https://docs.microsoft.com/windows/desktop/dxmath/pg-xnamath-migration-d3dx)。
 
  
 
 我们将向你展示如何：
 
--   使用 Windows 运行时初始化 [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) 接口。
+-   使用 Windows 运行时初始化 [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d) 接口。
 -   应用每顶点着色器操作
 -   设置几何图形
 -   将场景栅格化（将 3D 场景扁平化为 2D 投影）
@@ -56,9 +56,9 @@ ms.locfileid: "57621792"
 ## <a name="related-topics"></a>相关主题
 
 
-* [Direct3D 11 图形](https://msdn.microsoft.com/library/windows/desktop/ff476080)
-* [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534)
-* [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561)
+* [Direct3D 11 图形](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11)
+* [DXGI](https://docs.microsoft.com/windows/desktop/direct3ddxgi/dx-graphics-dxgi)
+* [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl)
 
  
 

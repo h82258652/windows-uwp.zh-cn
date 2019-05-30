@@ -5,12 +5,12 @@ keywords: 托管 Web 应用, HWA, REST API, 单页应用, SPA
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c76f0da8c3ac1d50ccd2d328dd321df9aa9bd3e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c38a7182cd27abcfb0de66c721f0e06b95b695d5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624622"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366987"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>创建具有 REST 后端的单页 Web 应用
 
@@ -22,7 +22,7 @@ ms.locfileid: "57624622"
 
 我们将使用一些最受欢迎的 Web 技术，其中包括用于服务器端开发的 [Node.js](https://nodejs.org/en/) 运行时和 [Express](https://expressjs.com/)、[Bootstrap](https://getbootstrap.com/) UI 框架、[Pug](https://www.npmjs.com/package/pug) 模板引擎，以及用于生成 RESTful API 的 [Swagger](https://swagger.io/tools/)。 你还可以获得用于云托管并使用 [Visual Studio Code](https://code.visualstudio.com/) 编辑器的 [Azure 门户](https://ms.portal.azure.com/)的相关经验。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 
 如果你的计算机上还没有这些资源，请使用以下下载链接：
 
@@ -30,7 +30,7 @@ ms.locfileid: "57624622"
 
  - [Express 生成器](https://expressjs.com/en/starter/generator.html)-后安装节点，通过运行安装 Express `npm install express-generator -g`
 
- - [Visual Studio 代码](https://code.visualstudio.com/)
+ - [Visual Studio Code](https://code.visualstudio.com/)
 
 如果你想要完成在 Microsoft Azure 上托管 API 服务和记忆游戏应用的最终步骤，你将需要[创建免费的 Azure 帐户](https://azure.microsoft.com/en-us/free/)（如果尚未这样做）。
 
@@ -115,7 +115,7 @@ ms.locfileid: "57624622"
 
 1. 创建一个新文件夹（比如在你本地的 *GitHub* 目录中），并下载包含记忆游戏 API 定义的 [**api.json**](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/api.json?token=ACEfklXAHTeLkHYaI5plV20QCGuqC31cks5ZFhVIwA%3D%3D) 文件。 请确保你的文件夹名称不包含任何空格。
 
-2. 打开你喜爱的该文件夹的 Shell（[或使用 Visual Studio Code 的集成终端！](https://code.visualstudio.com/docs/editor/integrated-terminal)），并运行以下节点包管理器 (NPM) 命令，为你的全局 (**-g**) Node 环境安装 [Yeoman](https://yeoman.io/) (yo) 代码基架工具和 Swagger 生成器：
+2. 打开你喜爱的该文件夹的 Shell（[或使用 Visual Studio Code 的集成终端！](https://code.visualstudio.com/docs/editor/integrated-terminal)），并运行以下节点包管理器 (NPM) 命令，为你的全局 ( **-g**) Node 环境安装 [Yeoman](https://yeoman.io/) (yo) 代码基架工具和 Swagger 生成器：
 
     ```
     npm install -g yo
@@ -131,7 +131,7 @@ ms.locfileid: "57624622"
 4. **swaggerize** 命令会询问你几个问题。
     - swagger 文档的路径（或 URL）：**api.json**
     - 框架：**express**
-    - 你希望怎样称呼此项目（YourFolderNameHere）：**[输入]**
+    - 你希望怎样称呼此项目（YourFolderNameHere）： **[输入]**
 
     根据个人意愿回答其他所有问题；此信息主要是为 *package.json* 文件提供你的联系信息，以便你可以以 NPM 程序包的形式分发代码。
 
@@ -142,7 +142,7 @@ ms.locfileid: "57624622"
     npm install swaggerize-ui
     ```
 
-    现在开始 VS 代码和**文件** > **打开文件夹…**，并移至 MemoryGameAPI 目录。 这是你刚才创建的 Node.js API 服务器！ 它使用受欢迎的 [ExpressJS](https://expressjs.com/en/4x/api.html) Web 应用程序框架来构建和运行项目。
+    现在开始 VS 代码和**文件** > **打开文件夹…** ，并移至 MemoryGameAPI 目录。 这是你刚才创建的 Node.js API 服务器！ 它使用受欢迎的 [ExpressJS](https://expressjs.com/en/4x/api.html) Web 应用程序框架来构建和运行项目。
 
 ### <a name="2-customize-the-server-code-and-setup-debugging"></a>2.自定义的服务器代码和安装程序调试
 
@@ -237,7 +237,7 @@ Swagger 文件 (config\swagger.json) 通过将它定义的每个 URL 路径映�
 
 请确保你已将所有更改保存在 VS 代码内，并再次启动服务器（VS 代码中按 F5，通过 shell 使用 `npm start`，然后浏览到 [https://localhost:8000](https://localhost:8000)）以测试游戏 API。
 
-每次按**试用！** 按钮（**/game**、**/guess** 或 **/new** 操作其中一个）时，请检查生成的**响应正文**和**响应代码**（如下），以确认所有部分都按预期工作。
+每次按**试用！** 按钮（ **/game**、 **/guess** 或 **/new** 操作其中一个）时，请检查生成的**响应正文**和**响应代码**（如下），以确认所有部分都按预期工作。
 
 尝试： 
 
@@ -636,7 +636,7 @@ Bootstrap 的网格系统允许网格系统折叠为一个垂直列，就像你�
 
  1. 创建 [Windows 开发人员](https://developer.microsoft.com/en-us/store/register)帐户
  2. 使用应用提交[清单](https://docs.microsoft.com/en-us/windows/uwp/publish/app-submissions)
- 3. 提交你的应用进行[认证](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)
+ 3. 提交你的应用进行[认证](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)
 
 下面是一些帮助你深入探索的有用资源：
 

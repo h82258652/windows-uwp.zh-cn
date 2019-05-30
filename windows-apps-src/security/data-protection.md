@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c93527a2ee738a3e6b0f4e9b9d2a1343158441b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 15feb86677cd70774a99fe4046d817c71fc71f90
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608262"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372583"
 ---
 # <a name="data-protection"></a>数据保护
 
 
 
-本文介绍了如何在 UWP 应用中使用 [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) 命名空间中的 [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) 类加密和解密数字数据。
+本文介绍了如何在 UWP 应用中使用 [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) 命名空间中的 [**DataProtectionProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) 类加密和解密数字数据。
 
 可以多种方式使用数据保护 API：
 
@@ -26,12 +26,12 @@ ms.locfileid: "57608262"
 -   使用对称密钥保护数据。 例如，这用于将数据保护到非 AD 主体，如 Live ID。
 -   保护在登录到网站时使用的凭据（密码）的数据。
 
-为保护数据，在创建 [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) 对象时，必须在调用 [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) 或 [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) 之前指定保护描述符。 以下示例显示了可能的示例保护描述符。
+为保护数据，在创建 [**DataProtectionProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) 对象时，必须在调用 [**ProtectAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectasync) 或 [**ProtectStreamAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectstreamasync) 之前指定保护描述符。 以下示例显示了可能的示例保护描述符。
 
 ## <a name="protecting-static-data"></a>保护静态数据
 
 
-以下示例说明了如何使用 [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) 和 [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) 方法以非对称方式针对当前用户的 SID 保护静态数据。
+以下示例说明了如何使用 [**ProtectAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectasync) 和 [**UnprotectAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.unprotectasync) 方法以非对称方式针对当前用户的 SID 保护静态数据。
 
 ```cs
 using Windows.Security.Cryptography;
@@ -116,7 +116,7 @@ namespace SampleProtectAsync
 ## <a name="protecting-stream-data"></a>保护流数据
 
 
-以下示例显示了如何使用 [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) 和 [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) 方法以异步方式针对当前用户的 SID 保护流数据。
+以下示例显示了如何使用 [**ProtectStreamAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectstreamasync) 和 [**UnprotectStreamAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.unprotectstreamasync) 方法以异步方式针对当前用户的 SID 保护流数据。
 
 ```cs
 using Windows.Security.Cryptography;

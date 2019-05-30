@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, opengl, direct3d 11, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b6d06ff168f778c87e46fa399775492a3cebcaa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3c17e0b8ceb5938b7ca224f4a67198929a37a7f4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594212"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368362"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>将简单的 OpenGL ES 2.0 呈现器移植到 Direct3D 11
 
@@ -27,7 +27,7 @@ ms.locfileid: "57594212"
 
 本主题会在创建新的 DirectX 11 项目之后开始。 若要了解如何创建新的 DirectX 11 项目， 请阅读[创建新的用于通用 Windows 平台 (UWP) 的 DirectX 11 项目](user-interface.md)。
 
-通过上面任一链接创建的项目准备了 [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476345) 基础结构的所有代码， 你可以直接执行将呈现器从 Open GL ES 2.0 移植到 Direct3D 11 的过程。
+通过上面任一链接创建的项目准备了 [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews) 基础结构的所有代码， 你可以直接执行将呈现器从 Open GL ES 2.0 移植到 Direct3D 11 的过程。
 
 本主题介绍了执行以下同一基本图形任务的两种代码路径：在窗口中显示一个旋转的顶点着色立方体。 在这两种情况下，该代码涉及以下流程：
 
@@ -89,10 +89,10 @@ typedef struct
 
 ### <a name="technologies"></a>技术
 
--   [Microsoft Visual c + +](https://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
+-   [Microsoft Visual C++](https://docs.microsoft.com/previous-versions/60k1461a(v=vs.140))
 -   OpenGL ES 2.0
 
-### <a name="prerequisites"></a>必备条件
+### <a name="prerequisites"></a>先决条件
 
 -   可选。 查看[将 EGL 代码移植到 DXGI 和 Direct3D](moving-from-egl-to-dxgi.md)。 阅读本主题以便更好地了解 DirectX 提供的图形接口。
 
