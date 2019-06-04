@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1a0c632089c8c4cf84ecf6df99935671423b51a6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d720b256ae528192d694f98877126a6df087a18e
+ms.sourcegitcommit: 26bd7953ee5c5e625d4ed8f93df0391511c76f23
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370809"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66491138"
 ---
 # <a name="launch-the-windows-settings-app"></a>启动 Windows 设置应用
 
@@ -274,7 +274,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 |-------------|-----|
 | 关于 | ms-settings:about |
 | 高级显示设置 | ms-settings:display-advanced（仅适用于支持高级显示选项的设备） |
-| 应用卷和设备首选项 | ms-settings:apps-volume |
+| 应用卷和设备首选项 | ms-设置： 应用程序的卷 (**新增于 Windows 10，版本 1903年**)|
 | 节电模式 | ms-settings:batterysaver（仅在具有电池的设备[如平板电脑]上可用） |
 | “节电模式”设置 | ms-settings:batterysaver-settings（仅在具有电池的设备[如平板电脑]上可用） |
 | 电池使用 | ms-settings:batterysaver-usagedetails（仅在具有电池的设备[如平板电脑]上可用） |

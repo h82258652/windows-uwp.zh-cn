@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 291c16d14428f8c6476b12fbadf00f84c26a4235
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 814d8c04943e32ff4d2f0c81bd847e78becd5ebb
+ms.sourcegitcommit: a4fe508e62827a10471e2359e81e82132dc2ac5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359480"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66468323"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>与 Windows 10 和 UWP 集成打包桌面应用程序
 
@@ -465,6 +465,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 * [在文件资源管理器的预览窗格中显示文件内容](#preview)
 * [在文件资源管理器中使用的类型的列启用用户到组文件](#enable)
 * [向搜索、 索引、 属性对话框和详细信息窗格中提供文件属性](#make-file-properties)
+* [指定文件类型的上下文菜单处理程序](#context-menu)
 * [使文件从你的云服务在文件资源管理器中显示](#cloud-files)
 
 <a id="define" />
@@ -784,6 +785,104 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
             <desktop2:DesktopPropertyHandler Clsid ="20000000-0000-0000-0000-000000000001"/>
           </uap3:FileTypeAssociation>
         </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>
+```
+
+<a id="context-menu" />
+
+### <a name="specify-a-context-menu-handler-for-a-file-type"></a>指定文件类型的上下文菜单处理程序
+
+如果您的桌面应用程序定义[上下文菜单处理程序](https://docs.microsoft.com/windows/desktop/shell/context-menu-handlers)，此扩展用于注册菜单处理程序。
+
+#### <a name="xml-namespaces"></a>XML 命名空间
+
+* http://schemas.microsoft.com/appx/manifest/foundation/windows10
+* http://schemas.microsoft.com/appx/manifest/desktop/windows10/4
+
+#### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
+
+```XML
+<Extensions>
+    <com:Extension Category="windows.comServer">
+        <com:ComServer>
+            <com:SurrogateServer AppId="[AppID]" DisplayName="[DisplayName]">
+                <com:Class Id="[Clsid]" Path="[Path]" ThreadingModel="[Model]"/>
+            </com:SurrogateServer>
+        </com:ComServer>
+    </com:Extension>
+    <desktop4:Extension Category="windows.fileExplorerContextMenus">
+        <desktop4:FileExplorerContextMenus>
+            <desktop4:ItemType Type="[Type]">
+                <desktop4:Verb Id="[ID]" Clsid="[Clsid]" />
+            </desktop4:ItemType>
+        </desktop4:FileExplorerContextMenus>
+    </desktop4:Extension>
+</Extensions>
+```
+
+查找此处的完整架构引用： [com:ComServer](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver)并[desktop4:FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus)。
+
+#### <a name="instructions"></a>说明
+
+若要注册您的上下文菜单处理程序，请按照这些说明。
+
+1. 桌面应用程序中实现[上下文菜单句柄](https://docs.microsoft.com/windows/desktop/shell/context-menu-handlers)通过实现[IExplorerCommand](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand)或[IExplorerCommandState](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommandstate)接口。 有关示例，请参阅[ExplorerCommandVerb](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/winui/shell/appshellintegration/ExplorerCommandVerb)代码示例。 请确保定义的每个实现对象的类 GUID。 例如，下面的代码定义的实现的类 ID [IExplorerCommand](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand)。
+
+    ```cpp
+    class __declspec(uuid("d0c8bceb-28eb-49ae-bc68-454ae84d6264")) CExplorerCommandVerb;
+    ```
+
+2. 在包清单中，指定[com:ComServer](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) COM 代理项服务器注册到的类 ID 的上下文菜单处理程序实现的应用程序扩展。
+
+    ```xml
+    <com:Extension Category="windows.comServer">
+        <com:ComServer>
+            <com:SurrogateServer AppId="d0c8bceb-28eb-49ae-bc68-454ae84d6264" DisplayName="ContosoHandler">
+                <com:Class Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
+            </com:SurrogateServer>
+        </com:ComServer>
+    </com:Extension>
+    ```
+
+2. 在包清单中，指定[desktop4:FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus)注册在上下文菜单处理程序实现的应用程序扩展。
+
+    ```xml
+    <desktop4:Extension Category="windows.fileExplorerContextMenus">
+        <desktop4:FileExplorerContextMenus>
+            <desktop4:ItemType Type=".rar">
+                <desktop4:Verb Id="Command1" Clsid="d0c8bceb-28eb-49ae-bc68-454ae84d6264" />
+            </desktop4:ItemType>
+        </desktop4:FileExplorerContextMenus>
+    </desktop4:Extension>
+    ```
+
+#### <a name="example"></a>示例
+
+```XML
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:desktop4="http://schemas.microsoft.com/appx/manifest/desktop/windows10/4"
+  IgnorableNamespaces="desktop4">
+  <Applications>
+    <Application>
+      <Extensions>
+        <com:Extension Category="windows.comServer">
+          <com:ComServer>
+            <com:SurrogateServer AppId="d0c8bceb-28eb-49ae-bc68-454ae84d6264" DisplayName="ContosoHandler"">
+              <com:Class Id="Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
+            </com:SurrogateServer>
+          </com:ComServer>
+        </com:Extension>
+        <desktop4:Extension Category="windows.fileExplorerContextMenus">
+          <desktop4:FileExplorerContextMenus>
+            <desktop4:ItemType Type=".contoso">
+              <desktop4:Verb Id="Command1" Clsid="d0c8bceb-28eb-49ae-bc68-454ae84d6264" />
+            </desktop4:ItemType>
+          </desktop4:FileExplorerContextMenus>
+        </desktop4:Extension>
       </Extensions>
     </Application>
   </Applications>
