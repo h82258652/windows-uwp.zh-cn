@@ -6,12 +6,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, 指南, 最佳做法
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f044890e49f4631abf710764bc2f9746a1306f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7bb187092158386c503b91973d8d63ce291b4760
+ms.sourcegitcommit: c62b260eecd373e57b19a623bae77e29180e0f3d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639142"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66565517"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>广告的 UI 和用户体验指南
 
@@ -76,6 +76,8 @@ ms.locfileid: "57639142"
 * 通过在应用程序上下文中运行的 Microsoft Advertising 库之外的方式编写或分发调用广告服务的代码。
 
 * 与未记录的界面或 Microsoft Advertising 库创建的子对象（例如，**WebView** 或 **MediaElement**）交互。
+
+* 将广告放在 viewbox 以缩减以比正常页上允许多个广告的广告。
 
 <span id="interstitialbestpractices10" />
 
