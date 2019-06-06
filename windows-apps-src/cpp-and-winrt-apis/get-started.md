@@ -1,23 +1,23 @@
 ---
 description: 为了帮助你更快地开始使用 C++/WinRT，本主题将详细介绍一个简单的代码示例。
 title: C++/WinRT 入门
-ms.date: 04/03/2019
+ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 获取, 获得, 开始
 ms.localizationpriority: medium
-ms.openlocfilehash: 4928540d9b6e7e1c3df67f7c247aa3664618a65c
-ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.openlocfilehash: 64104124a6342da3f6963c61bafc871838fd00f6
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921683"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721675"
 ---
 # <a name="get-started-with-cwinrt"></a>C++/WinRT 入门
 
 若要获取你掌握使用[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，本主题将指导完成一个简单的代码示例基于新**Windows 控制台应用程序 (C++/WinRT)** 项目。 本主题演示如何[添加C++/WinRT 支持添加到 Windows 桌面应用程序项目](#modify-a-windows-desktop-application-project-to-add-cwinrt-support)。
 
-> [!IMPORTANT]
-> 如果您使用的 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及针对 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)，然后对新创建C++/WinRT 项目可能无法编译出现错误"*错误 C3861: from_abi:找不到标识符*"，并与来自其他错误同时*base.h*。 解决方法到任一目标是更高版本的 （更符合） 版本的 Windows SDK 或设置项目属性**C /C++** > **语言** >  **符合模式：否**(此外，如果**触发-** 出现在项目属性**C /C++** > **语言** >  **Command Line**下**其他选项**，然后将其删除)。
+> [!NOTE]
+> 虽然我们建议在开发与最新版本的 Visual Studio 和 Windows SDK 中，如果您使用的 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及针对 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)，然后新创建的C++/WinRT 项目可能无法编译出现错误"*错误 C3861: from_abi： 找不到标识符*"，并与来自其他错误同时*base.h*。 解决方法到任一目标是更高版本的 （更符合） 版本的 Windows SDK 或设置项目属性**C /C++**  > **语言** >  **符合模式：否**(此外，如果**触发-** 出现在项目属性**C /C++**  > **语言** >  **Command Line**下**其他选项**，然后将其删除)。
 
 ## <a name="a-cwinrt-quick-start"></a>C++/WinRT 快速入门
 
@@ -30,11 +30,10 @@ ms.locfileid: "58921683"
 
 ```cppwinrt
 // pch.h
-...
-#include <iostream>
+#pragma once
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
-...
+#include <iostream>
 ```
 
 ```cppwinrt
@@ -67,10 +66,12 @@ int main()
 #include <winrt/Windows.Web.Syndication.h>
 ```
 
-我们包含的标头是 SDK 的一部分，位于文件夹 `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt` 内。 Visual Studio 将该路径包含在其 *IncludePath* 宏中。 这些标头包含投影到 C++/WinRT 中的 Windows API。 换言之，对于每个 Windows 类型，C++/WinRT 都会定义 C++ 友好等效项（称为*投影类型*）。 投影类型具有与 Windows 类型相同的完全限定名称，但放置于 C++ **winrt** 命名空间中。 将这些内容放置在预编译标头中将减少增量生成时间。
+使用默认项目设置，附带的标头来自 Windows SDK，在文件夹内`%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt`。 Visual Studio 将该路径包含在其 *IncludePath* 宏中。 但不严格依赖 Windows SDK 中，因为你的项目 (通过`cppwinrt.exe`工具) 到你的项目将生成这些相同的标头 *$(GeneratedFilesDir)* 文件夹。 如果他们找不到其他位置，或更改项目设置，它们将从该文件夹中加载。
+
+这些标头包含投影到 C++/WinRT 中的 Windows API。 换言之，对于每个 Windows 类型，C++/WinRT 都会定义 C++ 友好等效项（称为*投影类型*）。 投影类型具有与 Windows 类型相同的完全限定名称，但放置于 C++ **winrt** 命名空间中。 将这些内容放置在预编译标头中将减少增量生成时间。
 
 > [!IMPORTANT]
-> 如果希望使用来自 Windows 命名空间的类型，请包括对应的 C++/WinRT Windows 命名空间标头文件，如下所示。 *对应*标头是与该类型的命名空间具有相同名称的标头。 例如，若要为 [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) 运行时类使用 C++/WinRT 投影，则应 `#include <winrt/Windows.Foundation.Collections.h>`。
+> 只要您想要使用 Windows 命名空间中的类型，包括相应的C++WinRT Windows 命名空间标头文件，如上所示。 *对应*标头是与该类型的命名空间具有相同名称的标头。 例如，若要为 [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) 运行时类使用 C++/WinRT 投影，则应 `#include <winrt/Windows.Foundation.Collections.h>`。 如果包括`winrt/Windows.Foundation.Collections.h`，则不这样做*还*需要包括`winrt/Windows.Foundation.h`。 每个C++/WinRT 投影标头自动包括其父命名空间的头文件;因此你不*需要*显式包括它。 虽然你这样做也不会出现错误。
 
 ```cppwinrt
 using namespace winrt;
@@ -84,7 +85,7 @@ using namespace Windows::Web::Syndication;
 winrt::init_apartment();
 ```
 
-调用 **winrt::init_apartment** 将初始化 COM；默认情况下，使用多线程单元。
+在调用**winrt::init_apartment**初始化 Windows 运行时中; 默认情况下，在多线程单元中的线程。 此外可以在调用初始化 com。
 
 ```cppwinrt
 Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
@@ -103,7 +104,7 @@ SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri
 for (const SyndicationItem syndicationItem : syndicationFeed.Items()) { ... }
 ```
 
-[**SyndicationFeed.Items** ](/uwp/api/windows.web.syndication.syndicationfeed.items)是由迭代器返回的定义的范围内**开始**并**最终**函数 （或其常量、 反向，和常量反向变体）。 因此，你可以使用基于范围的 `for` 语句或使用 **std::for_each** 模板函数枚举**项目**。
+[**SyndicationFeed.Items** ](/uwp/api/windows.web.syndication.syndicationfeed.items)是由迭代器返回的定义的范围内**开始**并**最终**函数 （或其常量、 反向，和常量反向变体）。 因此，你可以使用基于范围的 `for` 语句或使用 **std::for_each** 模板函数枚举**项目**。 每当您循环访问 Windows 运行时的集合，你将需要`#include <winrt/Windows.Foundation.Collections.h>`。
 
 ```cppwinrt
 winrt::hstring titleAsHstring = syndicationItem.Title().Text();
@@ -128,11 +129,11 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 确认您不受[我的新项目将不会为什么编译？](/windows/uwp/cpp-and-winrt-apis/faq)。
 
-因为C++/WinRT 使用 C + + 17 标准，将项目属性中的功能**C /C++** > **语言** >   **C++语言标准**到*ISO C + + 17 标准 (/ /std: c + + 17)*。
+因为C++/WinRT 使用 C + + 17 标准，将项目属性中的功能**C /C++**  > **语言** >   **C++语言标准**到*ISO C + + 17 标准 (/ /std: c + + 17)* 。
 
 ### <a name="the-precompiled-header"></a>预编译标头
 
-默认项目模板为你命名为创建预编译标头`framework.h`，或`stdafx.h`。 重命名为`pch.h`。 如果有`stdafx.cpp`文件，然后重命名为`pch.cpp`。 设置项目属性**C /C++** > **预编译标头** > **预编译头文件**到*pch.h*.
+默认项目模板为你命名为创建预编译标头`framework.h`，或`stdafx.h`。 重命名为`pch.h`。 如果有`stdafx.cpp`文件，然后重命名为`pch.cpp`。 设置项目属性**C /C++**  > **预编译标头** > **预编译标头**到*创建 (/Yc)* ，并**预编译头文件**到*pch.h*。
 
 查找和替换所有`#include "framework.h"`(或`#include "stdafx.h"`) 与`#include "pch.h"`。
 
@@ -148,7 +149,7 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 C++/WinRT 语言投影依赖于某些 Windows 运行时可用 （非成员） 函数和入口点，需要将链接到[WindowsApp.lib](/uwp/win32-and-com/win32-apis)涵盖性库。 本部分介绍三种方法满足链接器。
 
-第一个选项是将添加到您的 Visual Studio 项目的所有C++WinRT MSBuild 属性和目标。 若要执行此操作，安装[Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)到你的项目。 打开 Visual Studio 项目中，单击**项目** \> **管理 NuGet 包...**\> **浏览**，键入或粘贴**Microsoft.Windows.CppWinRT**在搜索框中，在搜索结果中选择的项，然后单击**安装**若要安装该项目的包。
+第一个选项是将添加到您的 Visual Studio 项目的所有C++WinRT MSBuild 属性和目标。 若要执行此操作，安装[Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)到你的项目。 打开 Visual Studio 项目中，单击**项目** \> **管理 NuGet 包...** \> **浏览**，键入或粘贴**Microsoft.Windows.CppWinRT**在搜索框中，在搜索结果中选择的项，然后单击**安装**若要安装该项目的包。
 
 此外可以使用项目链接设置为显式链接`WindowsApp.lib`。 或者，你可以执行此操作在源代码中 (在`pch.h`，例如) 如下所示。
 
@@ -162,7 +163,7 @@ C++/WinRT 语言投影依赖于某些 Windows 运行时可用 （非成员） �
 * [SyndicationClient::RetrieveFeedAsync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [SyndicationFeed.Items 属性](/uwp/api/windows.web.syndication.syndicationfeed.items)
 * [winrt::hstring 结构](/uwp/cpp-ref-for-winrt/hstring)
-* [winrt::hresult 错误结构](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+* [winrt::hresult-error struct](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
 ## <a name="related-topics"></a>相关主题
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
@@ -170,4 +171,4 @@ C++/WinRT 语言投影依赖于某些 Windows 运行时可用 （非成员） �
 * [实现 C++/WinRT 与 C++/CX 之间的互操作](interop-winrt-cx.md)
 * [实现 C++/WinRT 与 ABI 之间的互操作](interop-winrt-abi.md)
 * [从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md)
-* [C++/WinRT 中的字符串处理](strings.md)
+* [字符串中的处理C++/WinRT](strings.md)

@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 错误, 处理, 异常
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ec6feb34307e0b7c17387d0127cb7d29098e6a6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1b72bb3cb2527585c114d386981e02d4730614a2
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361071"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721637"
 ---
 # <a name="error-handling-with-cwinrt"></a>C++/WinRT 的错误处理
 
@@ -38,7 +38,6 @@ ms.locfileid: "66361071"
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Storage.h>
 #include <winrt/Windows.UI.Xaml.Media.Imaging.h>
-#include <winrt/coroutine.h>
 
 using namespace winrt;
 using namespace Windows::Foundation;

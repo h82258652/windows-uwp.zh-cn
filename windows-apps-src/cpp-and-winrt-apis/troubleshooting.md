@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 疑难解答, HRESULT, 错误
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fe67fd0593c9c1f605a5d1cc7418c348b6ca9c3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 563545e8a819ab6af5bbc0604c18b4833d76bebb
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360098"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721672"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>C++/WinRT 问题疑难解答
 
@@ -51,7 +51,6 @@ XAML 分析异常可能很难进行诊断，特别是在此类异常中没有含
 | C++编译器会生成"*错误 C2039:IUnknown： 不是成员的 '\`全局命名空间'* "。 | 请参阅[如何重定目标，在C++/WinRT 项目到更高版本的 Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
 | C++链接器生成"*错误 LNK2019： 无法解析的外部符号_WINRT_CanUnloadNow@0函数中引用_VSDesignerCanUnloadNow@0* " | 请参阅[如何重定目标，在C++/WinRT 项目到更高版本的 Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
 | 生成过程将生成错误消息 *C++WinRT VSIX 不再提供项目的生成支持。请添加对 Microsoft.Windows.CppWinRT Nuget 包的项目引用*。 | 安装**Microsoft.Windows.CppWinRT**到你的项目的 NuGet 包。 有关详细信息，请参阅[早期版本的 VSIX 扩展](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。 |
-| C++编译器会生成错误消息，指出*std:: experimental'* ，和/或错误的窗体*错误 C3861: resume_background： 找不到标识符*。 | 在[ C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20)，对于任何协同程序支持 (包括协同程序帮助程序，如**winrt::resume_background**， **winrt::resume_foreground**，和**winrt::resume_on_signal**)，你将需要`#include <winrt/coroutine.h>`。 |
 | C++链接器生成*错误 LNK2019： 无法解析的外部符号*，与提到*winrt::impl::consume_Windows_Foundation_Collections_IVector*。 | 在[ C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20)，如果您正在使用基于范围`for`上的 Windows 运行时集合，然后你将现在需要`#include <winrt/Windows.Foundation.Collections.h>`。 |
 
 > [!NOTE]

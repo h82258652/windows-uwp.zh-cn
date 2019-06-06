@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10、 uwp、 标准、 c + +、 cpp、 winrt、 投影、 强、 弱引用
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c9fb112c6f83fa7bd9a3612916efd2527d821c29
-ms.sourcegitcommit: 6c7e1aa3bd396a1ad714e8b77c0800759dc2d8e1
+ms.openlocfilehash: 46a0e21295ba430671be4e36ab213e182c2b1737
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65821075"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721628"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>在强和弱引用C++/WinRT
 
@@ -25,7 +25,6 @@ Windows 运行时是引用计数系统;在此类系统是您必须了解的有�
 // pch.h
 #pragma once
 #include <iostream>
-#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.h>
 
 // main.cpp : Defines the entry point for the console application.

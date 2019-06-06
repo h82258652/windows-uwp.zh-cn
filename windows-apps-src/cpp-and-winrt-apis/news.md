@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10、 uwp、 标准版、 c + +、 cpp、 winrt、 投影、 新闻、 什么的新
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a84e118d988d8bf6a7d26eba7d5dd009c7ad44f3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 11249335f9d29d37bb0824fa779d3ae151c74799
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360134"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721649"
 ---
 # <a name="whats-new-in-cwinrt"></a>新增功能C++/WinRT
 
@@ -160,13 +160,17 @@ C++/ WinRT 本身为实现每个 API 生成此模式。 具有数千个 API 函�
 
 `module.g.cpp`文件现在还包含两个其他可组合的帮助程序，名为**winrt_can_unload_now**，和**winrt_get_activation_factory**。 这些设计为较大的项目，一个 DLL 组成数 libs，每个都有其自己的运行时类。 在这种情况下，您需要手动将拼结在一起的 DLL **DllGetActivationFactory**并**DllCanUnloadNow**。 这些帮助程序使其大大简化了为此，请通过避免虚假资助创始费错误。 `cppwinrt.exe`工具的`-lib`标志还可用于为每个单个 lib 提供其自己的前导码 (而非`winrt_xxx`)，以便每个 lib 函数可能会单独命名，并因此结合使用明确。
 
-#### <a name="new-winrtcoroutineh-header"></a>新`winrt/coroutine.h`标头
+#### <a name="coroutine-support"></a>协同程序支持
 
-`winrt/coroutine.h`标头是的新主服务器的所有C++/WinRT 的协同程序支持。 这种支持以前，驻留在几个地方，我们认为这太有一定的局限性。 由于现在生成 Windows 运行时异步接口，而不是手动编写的它们现在位于`winrt/Windows.Foundation.h`。 除了作为更易维护且受支持，这意味着该协同例程帮助程序，例如[ **resume_foreground** ](/uwp/cpp-ref-for-winrt/resume-foreground)不再需要附加到特定的命名空间标头的末尾。 相反，它们可以更随意地包括其依赖项。 这进一步使**resume_foreground**若要支持不仅恢复上给定[ **Windows::UI::Core::CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher)，但它可以现在还支持在恢复给定[ **Windows::System::DispatcherQueue**](/uwp/api/windows.system.dispatcherqueue)。 以前，无法支持只有一个;但不是同时，由于定义仅可以驻留在一个命名空间中。
+协同程序支持将自动包含在。 支持以前，驻留在多个位置，我们认为这太有一定的局限性。 然后针对版本 2.0 暂时`winrt/coroutine.h`标头文件是有必要，但不再需要。 由于现在生成 Windows 运行时异步接口，而不是手动编写的它们现在位于`winrt/Windows.Foundation.h`。 除了作为更易维护且受支持，这意味着该协同例程帮助程序，例如[ **resume_foreground** ](/uwp/cpp-ref-for-winrt/resume-foreground)不再需要附加到特定的命名空间标头的末尾。 相反，它们可以更随意地包括其依赖项。 这进一步使**resume_foreground**若要支持不仅恢复上给定[ **Windows::UI::Core::CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher)，但它可以现在还支持在恢复给定[ **Windows::System::DispatcherQueue**](/uwp/api/windows.system.dispatcherqueue)。 以前，无法支持只有一个;但不是同时，由于定义仅可以驻留在一个命名空间中。
 
 下面是举例**DispatcherQueue**支持。
 
 ```cppwinrt
+...
+#include <winrt/Windows.System.h>
+using namespace Windows::System;
+...
 fire_and_forget Async(DispatcherQueueController controller)
 {
     bool queued = co_await resume_foreground(controller.DispatcherQueue());

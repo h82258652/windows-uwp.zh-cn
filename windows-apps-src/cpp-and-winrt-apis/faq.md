@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 问的, 问题, 常见问题
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ac7f8e46974b7c12b42f6d6f94052e61902b240
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 914cf884b97d14af523cc61b0fcce719104783ba
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360252"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721689"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>C++/WinRT 常见问题
 您可能具有有关创作和使用与 Windows 运行时 Api 的问题的答案[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
@@ -22,7 +22,7 @@ ms.locfileid: "66360252"
 请参阅[如何重定目标，在C++/WinRT 项目到更高版本的 Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。
 
 ## <a name="why-wont-my-new-project-compile-now-that-ive-moved-to-cwinrt-20"></a>为什么不会我新项目进行编译，现在，我已移到C++WinRT 2.0？
-有关完整的更改 （包括的重大更改） 集，请参阅[新闻和更改，在C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20)。 例如，对于协同程序支持 (包括协同程序帮助程序，如**winrt::resume_background**， **winrt::resume_foreground**，并**winrt::resume_on_signal**)，你将需要`#include <winrt/coroutine.h>`。 如果您使用的基于范围的`for`上的 Windows 运行时集合，然后您现在需要为`#include <winrt/Windows.Foundation.Collections.h>`。
+有关完整的更改 （包括的重大更改） 集，请参阅[新闻和更改，在C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20)。 例如，如果您使用的基于范围的`for`上的 Windows 运行时集合，然后您现在需要为`#include <winrt/Windows.Foundation.Collections.h>`。
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>为什么我的新项目将不会编译？ 我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，和 SDK 版本版本 17134
 如果您使用的 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及针对 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)，然后对新创建C++/WinRT 项目可能无法编译出现错误"*错误 C3861: from_abi:找不到标识符*"，并与来自其他错误同时*base.h*。 解决方法到任一目标是更高版本的 （更符合） 版本的 Windows SDK 或设置项目属性**C /C++**  > **语言** >  **符合模式：否**(此外，如果**触发-** 出现在项目属性**C /C++**  > **命令行**下**其他选项**，然后将其删除)。
