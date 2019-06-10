@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 用户角色, 用户权限, 自定义角色, 用户访问权限, 自定义权限, 标准角色
 ms.localizationpriority: medium
-ms.openlocfilehash: 450fc4d016debb72364cbefedb6b69a80cc6235b
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: dc2786df57ebe1364f045795c52b301ef5feed0f
+ms.sourcegitcommit: 94316b8daf60a89a90a661ea17428c3d2734fee8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63790593"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66814413"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>为帐户用户设置角色或自定义权限
 
@@ -51,15 +51,15 @@ ms.locfileid: "63790593"
 
 下表显示了每个角色（和帐户所有者）可用的一些特定功能。
 
-|                                 |    帐户所有者                 |    Manager                       |    开发人员                     |    业务参与者    |    财务参与者    |    营销人员                      |
-|---------------------------------|----------------------------------|----------------------------------|----------------------------------|----------------------------|---------------------------|----------------------------------|
-|    购置报告           |    可以查看                      |    可以查看                      |     不能访问                    |     不能访问              |    可以查看               |    不能访问                     |
-|    反馈报告/响应    |    可以查看和发送反馈    |    可以查看和发送反馈    |    可以查看和发送反馈    |     不能访问              |     不能访问             |    可以查看和发送反馈    |
-|    运行状况报告                |    可以查看                      |    可以查看                      |    可以查看                      |    可以查看                |     不能访问             |    不能访问                     |
-|    使用情况报告                 |    可以查看                      |    可以查看                      |    可以查看                      |    可以查看                |     不能访问             |    不能访问                     |
-|    付款帐户               |    可以更新                    |    不能访问                     |    不能访问                     |    不能访问               |    可以查看               |    不能访问                     |
-|    税务配置文件                  |    可以更新                    |    不能访问                     |    不能访问                     |    不能访问               |    可以查看               |    不能访问                     |
-|    付款摘要               |    可以查看                      |    不能访问                     |    不能访问                     |    不能访问               |    可以查看               |    不能访问                     |
+|                                                       |    帐户所有者                 |    Manager                       |    开发人员                     |    业务参与者    |    财务参与者    |    营销人员                      |
+|-------------------------------------------------------|----------------------------------|----------------------------------|----------------------------------|----------------------------|---------------------------|----------------------------------|
+|    获取报表 （包括准实时数据） |    可以查看                      |    可以查看                      |    不能访问                     |    不能访问               |    可以查看               |    不能访问                     |
+|    反馈报告/响应                          |    可以查看和发送反馈    |    可以查看和发送反馈    |    可以查看和发送反馈    |    不能访问               |    不能访问              |    可以查看和发送反馈    |
+|    运行状况报告 （包括准实时数据）      |    可以查看                      |    可以查看                      |    可以查看                      |    可以查看                |    不能访问              |    不能访问                     |
+|    使用情况报告                                       |    可以查看                      |    可以查看                      |    可以查看                      |    可以查看                |    不能访问              |    不能访问                     |
+|    付款帐户                                     |    可以更新                    |    不能访问                     |    不能访问                     |    不能访问               |    可以查看               |    不能访问                     |
+|    税务配置文件                                        |    可以更新                    |    不能访问                     |    不能访问                     |    不能访问               |    可以查看               |    不能访问                     |
+|    付款摘要                                     |    可以查看                      |    不能访问                     |    不能访问                     |    不能访问               |    可以查看               |    不能访问                     |
 
 如果没有合适的标准角色，或者希望限制访问特定应用和/或加载项，可选中**自定义权限**，将自定义权限授予用户，如下所述。
 
@@ -123,7 +123,6 @@ ms.locfileid: "63790593"
 <tr><td align="left">    <b>付款帐户</b>                      </td><td align="left">  可在<b>“帐户设置”</b>中查看<a href="setting-up-your-payout-account-and-tax-forms.md#payout-account">付款信息</a>。     </td><td align="left">  可在<b>“帐户设置”</b>中编辑和查看<a href="setting-up-your-payout-account-and-tax-forms.md#payout-account">付款信息</a>。       </td></tr>
 <tr><td align="left">    <b>付款摘要</b>                      </td><td align="left">  可查看<a href="payout-summary.md">付款摘要</a>，访问并下载付款报告信息。       </td><td align="left">  可查看<a href="payout-summary.md">付款摘要</a>，访问并下载付款报告信息。   </td></tr>
 <tr><td align="left">    <b>依赖方</b>&nbsp;*                   </td><td align="left">  可查看依赖方，检索 XTokens。    </td><td align="left">  可管理和查看依赖方，检索 XTokens。     </td></tr>
-<tr><td align="left">    <b>光盘请求</b>&nbsp;*                   </td><td align="left">  可查看游戏光盘请求。    </td><td align="left">  可生成并查看游戏光盘请求。     </td></tr>
 <tr><td align="left">    <b>沙盒</b>&nbsp;*                         </td><td align="left">  可访问<b>沙盒</b>页，并查看帐户中的沙盒以及这些沙盒的任何适用配置。 无法查看每个沙盒的产品和提交，除非授予相应的产品级别权限。 </td><td align="left">  可访问<b>沙盒</b>页，并查看和管理帐户中的沙盒，包括创建和删除沙盒以及管理它们的配置。 无法查看每个沙盒的产品和提交，除非授予相应的产品级别权限。    </td></tr>
 <tr><td align="left">    <b>Microsoft Store 促销活动</b>&nbsp;*                            </td><td align="left">  不可用    </td><td align="left">  可以将选项配置为在 Microsoft Store 促销活动中自动加入产品。     </td></tr>
 <tr><td align="left">    <b>计税配置文件</b>                         </td><td align="left">  可查看<b>帐户设置</b>中的<a href="setting-up-your-payout-account-and-tax-forms.md#tax-forms">税务配置文件信息和表单</a>。     </td><td align="left">  可填写税单和更新<b>帐户设置</b>中的<a href="setting-up-your-payout-account-and-tax-forms.md#tax-forms">税务配置文件信息</a>。     </td></tr>
@@ -166,9 +165,9 @@ ms.locfileid: "63790593"
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>收购</b>     </td><td>    可查看产品的<a href="acquisitions-report.md">购置</a>和<a href="add-on-acquisitions-report.md">加载项购置</a>报告。        </td><td>    不可用    </td><td>    N/A (父产品的设置包括**外接程序收购**报表)        </td><td>    不可用                         </td></tr>
+    <tr><td align="left">    <b>收购</b>（包括准实时数据） </td><td>    可查看产品的<a href="acquisitions-report.md">购置</a>和<a href="add-on-acquisitions-report.md">加载项购置</a>报告。        </td><td>    不可用    </td><td>    N/A (父产品的设置包括**外接程序收购**报表)        </td><td>    不可用                         </td></tr>
     <tr><td align="left">    <b>使用情况</b> </td><td>    可查看产品的<a href="usage-report.md">使用情况报告</a>。     </td><td>    不可用       </td><td>    不可用     </td><td>    不可用         </td></tr>
-    <tr><td align="left">    <b>运行状况</b> </td><td>    可查看产品的<a href="health-report.md">运行状况报告</a>。    </td><td>    不可用     </td><td>    不可用     </td><td>    不可用         </td></tr>
+    <tr><td align="left">    <b>运行状况</b>（包括准实时数据） </td><td>    可查看产品的<a href="health-report.md">运行状况报告</a>。    </td><td>    不可用     </td><td>    不可用     </td><td>    不可用         </td></tr>
     <tr><td align="left">    <b>客户反馈</b>    </td><td>    可查看产品的<a href="reviews-report.md">评论</a>和<a href="feedback-report.md">反馈</a>报告。       </td><td>    不适用（若要响应反馈或评论，必须授予<b>联系客户</b>权限）   </td><td>    不可用     </td><td>    不可用         </td></tr>
     <tr><td align="left">    <b>Xbox 分析</b> </td><td>    可以查看<a href="xbox-analytics-report.md">Xbox 的分析报告</a>的产品。    </td><td>    不可用   </td><td>    不可用       </td><td>    不可用          </td></tr>
     </tbody>
@@ -208,15 +207,18 @@ ms.locfileid: "63790593"
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>定价和可用性</b>  </td><td>    可查看产品提交的<a href="set-app-pricing-and-availability.md">定价和可用性</a>页面。     </td><td>    可查看和编辑产品提交的<a href="set-app-pricing-and-availability.md">定价和可用性</a>页面。 </td><td>    可查看加载项提交的<a href="set-add-on-pricing-and-availability.md">定价和可用性</a>页面。   </td><td>    可查看和编辑加载项提交的<a href="set-add-on-pricing-and-availability.md">定价和可用性</a>页面。          </td></tr>
-    <tr><td align="left">    <b>属性</b>   </td><td>    可查看产品提交的<a href="enter-app-properties.md">属性</a>页面。      </td><td>    可查看和编辑产品提交的<a href="enter-app-properties.md">属性</a>页面。       </td><td>    可查看加载项提交的<a href="enter-add-on-properties.md">属性</a>页面。     </td><td>    可查看和编辑加载项提交的<a href="enter-add-on-properties.md">属性</a>页面。               </td></tr>
-    <tr><td align="left">    <b>+ 年龄分级</b>    </td><td>    可查看产品提交的<a href="age-ratings.md">年龄分级</a>页面。       </td><td>    可查看和编辑产品提交的<a href="age-ratings.md">年龄分级</a>页面。    </td><td>    可查看加载项提交的“年龄分级”页面。          </td><td>     可查看和编辑加载项提交的“年龄分级”页面。       </td></tr>
-    <tr><td align="left">    <b>包</b>        </td><td>    可查看产品提交的<a href="upload-app-packages.md">程序包</a>页面。  </td><td>    可查看和编辑产品提交的<a href="upload-app-packages.md">程序包</a>页面，包括上传程序包。     </td><td>   可查看加载项提交的设备系列目标和程序包（如果适用）。   </td><td>     可查看和编辑加载项提交的设备系列目标，包括上传程序包（如果适用）。             </td></tr>
-    <tr><td align="left">    <b>存储列表</b>  </td><td>    可查看产品提交的<a href="create-app-store-listings.md">应用商店一览页面</a>。  </td><td>    可查看和编辑产品提交的<a href="create-app-store-listings.md">应用商店一览页面</a>，并可添加不同语言的新应用商店一览。     </td><td>    可查看加载项提交的<a href="create-add-on-store-listings.md">应用商店一览页面</a>。            </td><td>    可查看和编辑加载项提交的<a href="create-add-on-store-listings.md">应用商店一览页面</a>，并可添加不同语言的应用商店一览。                 </td></tr>
+    <tr><td align="left">    <b>产品安装程序</b>  </td><td>    可以查看产品的产品安装程序页。     </td><td>    可以查看和编辑产品的产品安装程序页。 </td><td>    可以查看外接程序的产品安装程序页。   </td><td>    可以查看和编辑产品安装程序页外接程序。          </td></tr>
+    <tr><td align="left">    <b>定价和可用性</b>  </td><td>    可以查看<a href="set-app-pricing-and-availability.md">定价和可用性</a>产品页。     </td><td>    可以查看和编辑<a href="set-app-pricing-and-availability.md">定价和可用性</a>产品页。 </td><td>    可以查看<a href="set-add-on-pricing-and-availability.md">定价和可用性</a>外接程序页。   </td><td>    可以查看和编辑<a href="set-add-on-pricing-and-availability.md">定价和可用性</a>外接程序页。          </td></tr>
+    <tr><td align="left">    <b>属性</b>   </td><td>    可以查看<a href="enter-app-properties.md">属性</a>产品页。      </td><td>    可以查看和编辑<a href="enter-app-properties.md">属性</a>产品页。       </td><td>    可以查看<a href="enter-add-on-properties.md">属性</a>外接程序页。     </td><td>    可以查看和编辑<a href="enter-add-on-properties.md">属性</a>外接程序页。               </td></tr>
+    <tr><td align="left">    <b>+ 年龄分级</b>    </td><td>    可以查看<a href="age-ratings.md">年龄分级</a>产品页。       </td><td>    可以查看和编辑<a href="age-ratings.md">年龄分级</a>产品页。    </td><td>    可以查看外接程序的年龄分级页。          </td><td>     可以查看和编辑外接程序的年龄分级页。       </td></tr>
+    <tr><td align="left">    <b>包</b>        </td><td>    可以查看<a href="upload-app-packages.md">包</a>产品页。  </td><td>    可以查看和编辑<a href="upload-app-packages.md">包</a>的产品，包括包上传页。     </td><td>   可以查看<a href="upload-app-packages.md">包</a>页面的加载项 （如果适用）。   </td><td>     可以查看和编辑<a href="upload-app-packages.md">包</a>页面的加载项 （如果适用）。             </td></tr>
+    <tr><td align="left">    <b>存储列表</b>  </td><td>    可以查看<a href="create-app-store-listings.md">存储列表页面</a>的产品。  </td><td>    可以查看和编辑<a href="create-app-store-listings.md">存储列表页面</a>的产品，并可以添加对不同语言的新应用商店列表。     </td><td>    可以查看<a href="create-add-on-store-listings.md">存储列表页面</a>的外接程序。            </td><td>    可以查看和编辑<a href="create-add-on-store-listings.md">存储列表页面</a>的外接程序，并可以添加对不同语言的应用商店列表。                 </td></tr>
     <tr><td align="left">    <b>提交到应用商店</b>     </td><td>    如果“无法访问”设置为“只读”，则将授予此权限。           </td><td>    可将产品提交到应用商店，并查看认证报告。 包含全新和更新的提交。 </td><td>如果“无法访问”设置为“只读”，则将授予此权限。     </td><td>    可将加载项提交到应用商店，并查看认证报告。 包含全新和更新的提交。</td></tr>
     <tr><td align="left">    <b>创建新的提交</b>       </td><td>    如果“无法访问”设置为“只读”，则将授予此权限。        </td><td>    可为产品创建新<a href="app-submissions.md">提交</a>。  </td><td>    如果“无法访问”设置为“只读”，则将授予此权限。   </td><td>    可为加载项创建新<a href="add-on-submissions.md">提交</a>。        </td></tr>
     <tr><td align="left">    <b>新外接程序</b>    </td><td>    如果“无法访问”设置为“只读”，则将授予此权限。 </td><td>    可为产品<a href="set-your-add-on-product-id.md">创建新加载项</a>。 </td><td>    不可用    </td><td>    不可用        </td></tr>
     <tr><td align="left">    <b>名称保留项</b>   </td><td>    可查看产品的<a href="manage-app-names.md">管理应用名称</a>页面。</td><td>    可查看和编辑产品的<a href="manage-app-names.md">管理应用名称</a>页面，包括预留其他名称和删除预留的名称。 </td><td>   可查看加载项的预留名称。    </td><td>   可查看和编辑加载项的预留名称。          </td></tr>
+    <tr><td align="left">    <b>光盘请求</b>   </td><td>    可以查看光盘请求页。 </td><td>    可以创建光盘的请求。 </td><td>   不可用    </td><td>   不可用          </td></tr>
+    <tr><td align="left">    <b>光盘版税 </b>   </td><td>    可以查看光盘版税页。</td><td>    可以创建光盘版税。 </td><td>   不可用    </td><td>   不可用          </td></tr>
     </tbody>
     </table>
 
@@ -233,8 +235,15 @@ ms.locfileid: "63790593"
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>应用频道</b>&nbsp;*</td><td>    不可用  </td><td>    可通过 OneGuide 将促销视频频道发布到 Xbox 主机以供观看。  </td><td>  不可用 </td><td> 不可用 </td></tr>
-    <tr><td align="left">    <b>服务配置</b>&nbsp;*    </td><td>    可查看与成就、多人游戏、排行榜和产品的其他 Xbox Live 配置相关的设置。  </td><td>    可查看和编辑与成就、多人游戏、排行榜和产品的其他 Xbox Live 配置相关的设置。  </td><td>    不可用     </td><td>    不可用                      </td></tr>
+    <tr><td align="left">    <b>信赖方</b>&nbsp;*</td><td>    可以查看的帐户的信赖方页面。   </td><td>    可以查看和编辑帐户的信赖方页。    </td><td>    不可用    </td><td>    不可用                      </td></tr>
+    <tr><td align="left">    <b>合作伙伴服务</b>&nbsp;*</td><td>    可以查看 Web 服务页中的帐户。  </td><td>    可以查看和编辑 Web 服务页中的帐户。      </td><td>    不可用    </td><td>    不可用                      </td></tr>
+    <tr><td align="left">    <b>Xbox 测试帐户</b>&nbsp;*</td><td>    可以查看帐户的 Xbox 测试帐户页。  </td><td>    可以查看和编辑帐户的 Xbox 测试帐户页。    </td><td>    不可用    </td><td>    不可用                      </td></tr>
+    <tr><td align="left">    <b>每个沙盒 Xbox 测试帐户</b>&nbsp;*</td><td>    可以查看的帐户仅指定的沙盒的 Xbox 测试帐户页。  </td><td>    可以查看和编辑 Xbox 测试。   <tr><td align="left">    <b>仅指定沙盒帐户的帐户页    </td><td>    不可用    </td><td>    不可用                      </td></tr>
+    <tr><td align="left">    <b>Xbox 设备</b>&nbsp;*</td><td>    可以查看帐户的 Xbox 一个开发控制台页。  </td><td>    可以查看和编辑 Xbox 开发控制台单页的帐户。    </td><td>    不可用    </td><td>    不可用                      </td></tr>
+    <tr><td align="left">    <b>每个沙盒的 Xbox 设备</b>&nbsp;*</td><td>    可以查看的帐户仅指定的沙盒的 Xbox 一个开发控制台页。  </td><td>    可以查看和编辑只有一个帐户的指定沙盒的 Xbox 一个开发控制台页。    </td><td>    不可用    </td><td>    不可用                      </td></tr>
+    <tr><td align="left">    <b>应用程序通道</b>&nbsp;*</td><td>    不可用  </td><td>    可通过 OneGuide 将促销视频频道发布到 Xbox 主机以供观看。    </td><td>    不可用    </td><td>    不可用                      </td></tr>
+    <tr><td align="left">    <b>服务配置</b>&nbsp;*</td><td>    可以查看产品的 Xbox Live 服务配置页。  </td><td>    可以查看和编辑产品的 Xbox Live 服务配置页。    </td><td>    不可用    </td><td>    不可用                      </td></tr>
+    <tr><td align="left">    <b>工具访问</b>&nbsp;*</td><td>    可以运行 Xbox Live 工具产品仅查看数据。  </td><td>    可以在要查看和编辑数据的产品上运行 Xbox Live 工具。    </td><td>    不可用    </td><td>    不可用                      </td></tr>
 </tbody>
 </table>
 
