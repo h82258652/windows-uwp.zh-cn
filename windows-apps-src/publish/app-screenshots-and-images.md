@@ -6,12 +6,12 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, uwp, 预告片, 视频, 屏幕截图, 图像, 图标, Microsoft Store 一览, Microsoft Store 一览图像
 ms.localizationpriority: medium
-ms.openlocfilehash: a27763d76d2be65c7e0d2c6ccaeb0cd13123bdae
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 3f1931a15b5517264cd11dca8d8086dda7094b93
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244303"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826157"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>应用屏幕截图、图像和预告片
 
@@ -128,7 +128,7 @@ ms.locfileid: "59244303"
 
 还必须遵循以下所列的要求。
 
-**将预告片添加到你的应用商店一览中：**
+**若要将尾部添加到您的列表：**
 1. 在指示框中上传预告片**视频文件**。 如果你想重新使用已上传的预告片（可能是不同语言的应用商店一览），也会显示一个下拉框。
 2. 上传预告片后，你需要上传与之相应的**缩略图**。 略缩图必须为 1920 x 1080 像素的 .png 文件，通常应为取自预告片的静态图像。
 3. 单击铅笔图标,为预告片添加**标题**（255 字符或更少）。
@@ -152,7 +152,7 @@ ms.locfileid: "59244303"
 - 标题不能超过 255 个字符。 
 - 在你的预告片中不包含年龄分级。
 
-与 Store 一览页中的其他字段相似，预告片必须通过认证才能发布到 Microsoft Store 中。 请确保预告片遵守 [Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
+与 Store 一览页中的其他字段相似，预告片必须通过认证才能发布到 Microsoft Store 中。 请确保预告片遵守 [Microsoft Store 策略](store-policies.md)。
 
 还有其他要求，具体取决于文件类型。
 
@@ -223,7 +223,7 @@ ms.locfileid: "59244303"
 
 如果您先前所提交的应用程序支持早期的 OS 版本 (Windows 8.x 和/或 Windows Phone 8.x)，必须使我们考虑采用促销布局中的应用 （尽管它们不能保证将特色应用程序） 中提供这些映像。 如果您的应用程序不支持这些早期的 OS 版本，请跳过此部分。 （此部分以前称为**可选促销图像**。）
 
-**适用于 Windows Phone 8.1 及更早版本**、 两个映像大小可在促销布局：**1000 x 800 像素 (5:4)** 并**358 x 358 像素为单位 (1:1)**。 如果您的应用程序在运行 Windows Phone 8.1 或更低版本，我们建议提供在这种这些大小的图像。  
+**适用于 Windows Phone 8.1 及更早版本**、 两个映像大小可在促销布局：**1000 x 800 像素 (5:4)** 并**358 x 358 像素为单位 (1:1)** 。 如果您的应用程序在运行 Windows Phone 8.1 或更低版本，我们建议提供在这种这些大小的图像。  
 
 > [!TIP]
 > 对于任何支持 Windows Phone 8.1 或更早版本的提交，请务必在[应用商店徽标](#store-logos)部分中提供 300 x 300 的应用磁贴图标图像。 这将确保你的应用不会在应用商店中显示为空白图标。  

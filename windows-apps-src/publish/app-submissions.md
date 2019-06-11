@@ -6,12 +6,12 @@ keywords: 清单, Windows, uwp, 提交, 游戏, 应用
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b98ea7f1d28c4fcd63cd2d4706905578b240e126
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 24d3c99636009ebf65f3e24d39d657297b105150
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57643282"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826116"
 ---
 # <a name="app-submissions"></a>应用提交
 
@@ -38,10 +38,10 @@ ms.locfileid: "57643282"
 下面标出了你需要提供或指定的项目。 某些区域是可选的，或已提供你可以按需更改的默认值。 您无需在此处列出的顺序在这些部分上处理。
 
 ### <a name="pricing-and-availability-page"></a>定价和可用性页面
-| 字段名称                    | 注释                                       | 有关详细信息                                                             |
+| 字段名称                    | 说明                                       | 有关详细信息                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **市场**                   | Default：所有可能的市场  | [定义定价和市场选择](define-pricing-and-market-selection.md)         |
-| **受众**                | Default：公共受众 | [受众](choose-visibility-options.md#audience) |
+| **Audience**                | Default：公共受众 | [Audience](choose-visibility-options.md#audience) |
 | **可发现性**                | Default：在存储中将此应用程序可用和可发现性 | [可发现性](choose-visibility-options.md#discoverability) |
 | **计划**                  | Default：尽可能快地发布        | [配置精确发布计划](configure-precise-release-scheduling.md) |
 | **基本价格**                | 必需                                    | [设置和应用的定价计划](set-and-schedule-app-pricing.md)              |
@@ -53,10 +53,10 @@ ms.locfileid: "57643282"
 
 ### <a name="properties-page"></a>属性页面
 
-| 字段名称                    | 注释                                       | 有关详细信息                                                             |
+| 字段名称                    | 说明                                       | 有关详细信息                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **类别和子类别**  | 必需                                    | [类别和子类别的表](category-and-subcategory-table.md)       |
-| **隐私策略 URL**            | 在许多应用中是必需的。 请参阅[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和 [Microsoft Store 策略](https://docs.microsoft.com/en-us/legal/windows/agreements/store-policies#105-personal-information) | [隐私策略 URL](enter-app-properties.md#privacy-policy-url)        |
+| **隐私策略 URL**            | 在许多应用中是必需的。 请参阅[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和 [Microsoft Store 策略](store-policies.md#105-personal-information) | [隐私策略 URL](enter-app-properties.md#privacy-policy-url)        |
 | **网站**                   | 可选                                    | [网站](enter-app-properties.md#website)                   |
 | **支持联系人信息**      | 如果你的产品适用于 Xbox，则这些为必填信息；否则为选填（但建议填写）信息                                   | [支持联系人信息](enter-app-properties.md#support-contact-info)              |
 | **游戏的设置**             | 可选（仅适用于游戏）         | [游戏的设置](enter-app-properties.md#game-settings) |
@@ -68,7 +68,7 @@ ms.locfileid: "57643282"
 
 ### <a name="age-ratings-page"></a>年龄分级页面
 
-| 字段名称                    | 注释                                       | 有关详细信息                          |
+| 字段名称                    | 说明                                       | 有关详细信息                          |
 |-------------------------------|---------------------------------------------|----------------------------------------|
 | **+ 年龄分级**               | 必需                                    | [+ 年龄分级](age-ratings.md)          |
 
@@ -76,7 +76,7 @@ ms.locfileid: "57643282"
 
 ### <a name="packages-page"></a>程序包页面
 
-| 字段名称                    | 注释                                  | 有关详细信息                          |
+| 字段名称                    | 说明                                  | 有关详细信息                          |
 |-------------------------------|----------------------------------------|----------------------------------------|
 | **包上传控件**    | 必需（至少一个程序包）        | [上载应用程序包](upload-app-packages.md) |
 | **设备系列可用性** | 默认：基于你的程序包       | [设备系列可用性](device-family-availability.md) |
@@ -88,18 +88,18 @@ ms.locfileid: "57643282"
 
 你需要你的应用支持的至少一种语言的所有必需信息。 我们建议你提供应用支持的所有语言的[应用商店一览](create-app-store-listings.md)，你还可以[提供其他语言的应用商店一览](create-app-store-listings.md#store-listing-languages)。 若要轻松管理相同产品的多个一览，你可以[导入和导出 Microsoft Store 一览](import-and-export-store-listings.md)。
 
-| 字段名称                    | 注释                                       | 有关详细信息                                                     |
+| 字段名称                    | 说明                                       | 有关详细信息                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
-| **描述**               | 必需                                    | [编写出色的应用程序的说明](write-a-great-app-description.md) |
+| **说明**               | 必需                                    | [编写出色的应用程序的说明](write-a-great-app-description.md) |
 | **什么是此版本中的新增功能**   | 可选                                 | [发行说明](create-app-store-listings.md#whats-new-in-this-version)       |
 | **应用功能**              | 可选                                    | [产品功能](create-app-store-listings.md#product-features)         |
 | **屏幕截图**               | 必需（至少一张屏幕截图；建议提供四张或更多）          | [屏幕截图](app-screenshots-and-images.md#screenshots)          |
 | **应用商店徽标**               | 建议；对于某些操作系统版本为必需 | [应用商店徽标](app-screenshots-and-images.md#store-logos)             |
 | **尾部**                  | 可选                                    | [尾部](app-screenshots-and-images.md#trailers)                | 
 | **Windows 10 和 Xbox 映像 （16:9 超级英雄画面）**     | 推荐        | [Windows 10 和 Xbox 映像 （16:9 超级英雄画面）
-] (app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
 | **Xbox 映像**     | 如果将发布到 Xbox 所需的正确显示        | [Xbox 映像
-] (应用程序的屏幕截图和 images.md #xbox 映像) |
+](app-screenshots-and-images.md#xbox-images) |
 | **补充字段**  | 可选                                    | [补充字段](create-app-store-listings.md#supplemental-fields) 
 | **搜索词**              | 可选                                    | [搜索词](create-app-store-listings.md#search-terms)         |
 | **版权和商标信息** | 可选                                 | [版权和商标信息](create-app-store-listings.md#copyright-and-trademark-info) |
@@ -111,10 +111,10 @@ ms.locfileid: "57643282"
 
 ### <a name="submission-options-page"></a>提交选项页面
 
-| 字段名称                    | 注释                                       | 有关详细信息                                                     |
+| 字段名称                    | 说明                                       | 有关详细信息                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **发布保留选项**     | Default：发布此提交，只要它通过了认证 （或每个日期中所选的计划部分）      | [发布保留选项](manage-submission-options.md#publishing-hold-options)    
-| **证书的说明**     | 推荐          | [证书的说明](notes-for-certification.md)             |
+| **证书的说明**     | 建议          | [证书的说明](notes-for-certification.md)             |
 | **受限制的功能**     | 所需产品声明任何[受限制的功能](../packaging/app-capability-declarations.md#restricted-capabilities)    | [受限制的功能](manage-submission-options.md#publishing-hold-options)       
 
 <span/>

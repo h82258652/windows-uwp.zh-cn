@@ -6,12 +6,12 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp, 外部测试
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c0d299ba5b3a37b2f80a5e3c9b4456d63c3e0d4
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: abd4b26d0943bf032f93f62719959ef6650e0d65
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788475"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826134"
 ---
 # <a name="package-flights"></a>软件包外部测试版
 
@@ -75,7 +75,7 @@ ms.locfileid: "63788475"
 
 ## <a name="submit-your-package-flight-to-the-store"></a>将软件包外部测试版提交到应用商店
 
-当已指定软件包并已配置任何所需选项时，单击**提交到应用商店**。 你的软件包外部测试版随后将通过[应用认证过程](the-app-certification-process.md)。 请注意，在包中包含的包必须符合[Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)，如同处理所有提交。
+当已指定软件包并已配置任何所需选项时，单击**提交到应用商店**。 你的软件包外部测试版随后将通过[应用认证过程](the-app-certification-process.md)。 请注意，在包中包含的包必须符合[Microsoft Store 策略](store-policies.md)，如同处理所有提交。
 
 在与该软件包外部测试版关联的外部测试版组中的用户已拥有你的应用，并且现在可以使用包括在软件包外部测试版中的程序包获取更新。 如果这些用户尚未获取你的应用，在安装软件包外部测试版时可从中获取程序包。 
 

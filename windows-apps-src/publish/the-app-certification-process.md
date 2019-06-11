@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10，uwp，发布，预处理，认证，释放，挂起、 提交、 发布状态，时间
 ms.localizationpriority: medium
-ms.openlocfilehash: fe9df9ce95c6b17bcd3d702bf09ac57b9f205e0c
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: d88d8deeb467f186f120fb8c1e579d5c9222aaf1
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63790583"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826225"
 ---
 # <a name="the-app-certification-process"></a>应用认证过程
 
@@ -29,7 +29,7 @@ ms.locfileid: "63790583"
 -   **技术符合性测试：** 通过 Windows 应用认证工具包测试技术符合性。 （你应该始终确保先[使用 Windows 应用认证工具包测试应用](../debug-test-perf/windows-app-certification-kit.md)，然后再将其提交至应用商店。）
 -   **内容合规性：** 花费的时间量大小取决于您的应用程序是多么复杂，它有多大可视内容和最近已提交多少个应用。 请务必在[认证说明](notes-for-certification.md)页中提供测试者需注意的全部信息。
 
-认证流程完成后，你将会收到一份认证报告，告知你的应用是否已通过认证。 如果应用未通过认证，该报告将指出未能通过哪项测试，或者未能满足哪项[策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)。 修复问题后，你可以为应用创建新提交以再次开始认证过程。
+认证流程完成后，你将会收到一份认证报告，告知你的应用是否已通过认证。 如果应用未通过认证，该报告将指出未能通过哪项测试，或者未能满足哪项[策略](store-policies.md)。 修复问题后，你可以为应用创建新提交以再次开始认证过程。
 
 ## <a name="release"></a>发行版本
 
@@ -51,10 +51,10 @@ ms.locfileid: "63790583"
 
 ## <a name="in-the-store"></a>已在应用商店 
 
-在成功完成上述步骤后，提交的状态将从“正在发布”更改为“已在应用商店”。 你的提交将在 Microsoft Store 中提供给客户以供其下载（除非你选择了另外的[可发现性](choose-visibility-options.md#discoverability)选项）。 
+在成功完成上述步骤后，提交的状态将从“正在发布”  更改为“已在应用商店”  。 你的提交将在 Microsoft Store 中提供给客户以供其下载（除非你选择了另外的[可发现性](choose-visibility-options.md#discoverability)选项）。 
 
 > [!NOTE]
-> 我们还会在应用发布后对应用进行抽查，以便可以找出潜在问题并确保你的应用符合所有 [Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)。 如果我们发现任何问题，将通知你该问题及其解决方法（如果适用）或是否已从应用商店中删除。
+> 我们还会在应用发布后对应用进行抽查，以便可以找出潜在问题并确保你的应用符合所有 [Microsoft Store 策略](store-policies.md)。 如果我们发现任何问题，将通知你该问题及其解决方法（如果适用）或是否已从应用商店中删除。
 
  
 

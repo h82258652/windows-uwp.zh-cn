@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 开发者帐户, 个人, 公司, 业务, windows 10, uwp, developer account, individual, company, business
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b35f95556a13d880992a12d7434af76feed4334
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 7556ca526ecfa28b1d97346501ec1875f938ca35
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63770885"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826214"
 ---
 # <a name="account-types-locations-and-fees"></a>帐户类型、位置和费用
 
@@ -31,9 +31,9 @@ Windows 程序中[合作伙伴中心](https://partner.microsoft.com/dashboard)�
 
 | 个人帐户 | 公司帐户 |
 |--------------------|-----------------|
-| <ul><li>大约花费 19 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li><li>较短的帐户验证过程</li></ul> | <ul><li>大约花费 99 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li><li>需要更高的帐户验证</li><li>需要你的公司的真实性在其所在国家或地区得到确认</li><li>能够提交具有受限功能的应用（如 [Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)中所述）</li></ul> |
+| <ul><li>大约花费 19 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li><li>较短的帐户验证过程</li></ul> | <ul><li>大约花费 99 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li><li>需要更高的帐户验证</li><li>需要你的公司的真实性在其所在国家或地区得到确认</li><li>能够提交具有受限功能的应用（如 [Microsoft Store 策略](store-policies.md#1014-account-type)中所述）</li></ul> |
 
-公司帐户花费稍多，这主要是因为我们要采取一些额外步骤来确保你有权代表公司建立该帐户。 每个[商店策略](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)、 使用某些功能，如那些访问财务应用程序的帐户信息或需要身份验证 （不使用安全的专用第三方访问的主要功能身份验证提供程序），仅可以由公司帐户发布。
+公司帐户花费稍多，这主要是因为我们要采取一些额外步骤来确保你有权代表公司建立该帐户。 每个[商店策略](store-policies.md#1014-account-type)、 使用某些功能，如那些访问财务应用程序的帐户信息或需要身份验证 （不使用安全的专用第三方访问的主要功能身份验证提供程序），仅可以由公司帐户发布。
 
 ## <a name="account-verification"></a>帐户验证
 
@@ -252,4 +252,4 @@ Windows 程序中[合作伙伴中心](https://partner.microsoft.com/dashboard)�
 | 赞比亚                            | 19 USD              | 99 USD           | ZMK 支付到银行 | 否     |  
 | 津巴布韦                          | 19 USD              | 99 USD           | USD 支付到银行 | 否     |
 
-\*  PayPal 可用作付款方式的付款帐户在此市场中，但不能用于支付 fo 是开发人员帐户的注册费。
+\*  PayPal 可以用作付款方式的这个市场中的付款帐户，但不能用于支付开发人员帐户的注册费。

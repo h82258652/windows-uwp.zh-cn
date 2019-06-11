@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bab1d6bd629aa85351e28a907d4b5ad705fb377
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 47011a22353f26361a392690d857bde1fc180c03
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788365"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826103"
 ---
 # <a name="product-declarations"></a>产品声明
 
@@ -21,7 +21,7 @@ ms.locfileid: "63788365"
 
 ## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>此应用，用户可以进行购买，但不使用 Microsoft Store 商务系统。
 
-几乎每次提交时，您应保持未选中此框，因为这些工具提供了途径购买的应用是，或可以使用或在您的应用程序中使用的项必须使用 Microsoft Store 应用内购买 API 创建和提交外接程序。 每个[应用程序开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，已创建并在 2015 年 6 月 29 日之前提交的应用程序无法继续而无需购买功能只要使用 Microsoft 的商务引擎，提供应用内购买功能符合[Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions)。 如果这适用于你的应用，你必须选中此框。 否则，请不要选中。
+几乎每次提交时，您应保持未选中此框，因为这些工具提供了途径购买的应用是，或可以使用或在您的应用程序中使用的项必须使用 Microsoft Store 应用内购买 API 创建和提交外接程序。 每个[应用程序开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，已创建并在 2015 年 6 月 29 日之前提交的应用程序无法继续而无需购买功能只要使用 Microsoft 的商务引擎，提供应用内购买功能符合[Microsoft Store 策略](store-policies.md#108-financial-transactions)。 如果这适用于你的应用，你必须选中此框。 否则，请不要选中。
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>已对此应用进行辅助功能指南符合度测试。
 
