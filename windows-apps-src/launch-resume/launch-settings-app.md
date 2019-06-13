@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d720b256ae528192d694f98877126a6df087a18e
-ms.sourcegitcommit: 26bd7953ee5c5e625d4ed8f93df0391511c76f23
+ms.openlocfilehash: 9ce2024131035e77e7d8140c047e37979c6ac490
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66491138"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67040137"
 ---
 # <a name="launch-the-windows-settings-app"></a>启动 Windows 设置应用
 
@@ -251,7 +251,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 通知 | ms-settings:privacy-notifications |
 | 其他设备 | ms-settings:privacy-customdevices |
 | 图片 | ms-settings:privacy-pictures |
-| 电话呼叫 | ms-设置： 隐私-电话呼叫 (**Windows 10，版本 1809年及更高版本中弃用**) |
+| 电话呼叫 | ms-设置： 隐私-电话联络 (**Windows 10，版本 1809年及更高版本中弃用**) |
 | 无线电收发器 | ms-settings:privacy-radios |
 | 语音、墨迹书写和键入 |ms-settings:privacy-speechtyping |
 | 任务 | ms-settings:privacy-tasks |
