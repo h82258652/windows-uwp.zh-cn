@@ -8,10 +8,10 @@ keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: B15D4F19-4E6A-4C27-AD64-F03014D11BA9
 ms.openlocfilehash: 550ffeac8912769fc7e319d819f4de67f6d36cf1
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66826414"
 ---
 # <a name="app-quality"></a>应用质量
@@ -86,7 +86,7 @@ Microsoft Store 页面上的元数据（图标、标题、屏幕截图和描述�
 - 有关详细信息，请阅读[与客户互动](https://developer.microsoft.com/store/engage)。
 
 
-### <a name="see-also"></a>请参阅
+### <a name="see-also"></a>另请参阅
 
 - [Microsoft Store 策略和行为准则](store-policies-and-code-of-conduct.md)
 - [应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)

@@ -8,10 +8,10 @@ keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 ms.openlocfilehash: 3511fb221e1e087f7ced5ce11aca8d53bd027079
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66826474"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store 策略
@@ -467,7 +467,7 @@ Xbox Live 的游戏产品必须遵守针对服务使用量的以下要求：
 ---
 <sup>1</sup>“Store”或“Microsoft Store”（不论其称谓如何）是指 Microsoft 拥有或由其运作的平台，通过该平台，应用可以提供给客户或由客户获取。 除非另行说明，否则 Store 包括 Microsoft Store、Windows 应用商店、Xbox 商店、适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store。
 
-### <a name="see-also"></a>请参阅
+### <a name="see-also"></a>另请参阅
 
 - [Microsoft Store 策略更改历史记录](store-policies-change-history.md)
 - [Microsoft Store 策略和行为准则](store-policies-and-code-of-conduct.md)

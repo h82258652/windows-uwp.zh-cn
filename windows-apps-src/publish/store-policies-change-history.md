@@ -8,10 +8,10 @@ keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 ms.openlocfilehash: a846b48565a6029656ecfdd21763931df74b5375
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66826454"
 ---
 # <a name="change-history-for-microsoft-store-policies"></a>Microsoft Store 策略更改历史记录
@@ -25,7 +25,7 @@ ms.locfileid: "66826454"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Date</th>
+<th>日期</th>
 <th>文档版本</th>
 <th>更改说明</th>
 </tr>
@@ -59,10 +59,10 @@ ms.locfileid: "66826454"
 <tr class="even">
 <td>2018 年 8 月 6 日</td>
 <td>7.9</td>
-<td><p>10.1.2 更新内容：添加了对文件类型和协议的要求。</p>
-<p>10.1.4 更新内容：添加了 Microsoft Store 中的活动状态。</p>
-<p>10.8.4 更新内容：增加了试用体验。</p>
-<p>10.13.11 更新内容：添加了个人信息要求。</p></td>
+<td><p>10\.1.2 更新内容：添加了对文件类型和协议的要求。</p>
+<p>10\.1.4 更新内容：添加了 Microsoft Store 中的活动状态。</p>
+<p>10\.8.4 更新内容：增加了试用体验。</p>
+<p>10\.13.11 更新内容：添加了个人信息要求。</p></td>
 </tr>
 <tr class="odd">
 <td>2018 年 4 月 17 日</td>
@@ -184,7 +184,7 @@ ms.locfileid: "66826454"
 </table>
 
 
-### <a name="see-also"></a>请参阅
+### <a name="see-also"></a>另请参阅
 
 - [Microsoft Store 策略和行为准则](store-policies-and-code-of-conduct.md)
 - [应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)

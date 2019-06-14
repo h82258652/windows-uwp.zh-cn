@@ -8,10 +8,10 @@ keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: 2B84B877-794A-468F-A478-DA09E4694513
 ms.openlocfilehash: a9e96431594cf1a046741659011e546807294f7a
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66826444"
 ---
 # <a name="developer-code-of-conduct"></a>开发人员行为准则
@@ -34,7 +34,7 @@ ms.locfileid: "66826444"
 不得在 Microsoft Store 或合作伙伴中心内从事任何欺诈或欺骗活动。 这包括但不限于：尝试操控对你的应用或任何其他应用的排名、搜索结果、评分或评价；妨碍任何其他方使用 Microsoft Store 服务（或 Microsoft 提供的任何关联服务）；尝试任何形式的金融诈骗（包括但不限于广告印象或点击欺诈）；从事任何与你的应用程序的广告位和广告创意相关的欺诈活动；或者通过直接或间接方式获取或尝试获取对个人信息未经授权的访问权限以及使用此类信息。
 
 
-### <a name="see-also"></a>请参阅
+### <a name="see-also"></a>另请参阅
 
 - [Microsoft Store 策略和行为准则](store-policies-and-code-of-conduct.md)
 - [应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
