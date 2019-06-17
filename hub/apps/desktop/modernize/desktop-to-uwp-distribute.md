@@ -8,12 +8,12 @@ ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e1aa424fe038a50a5e29364c7f8246e324dc07c
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 45d298aca60155915900f494654dce8e89fb1ee0
+ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215001"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131902"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>分发打包桌面应用程序
 
@@ -57,12 +57,6 @@ ms.locfileid: "66215001"
 若要使用的证书签名应用程序，请参阅[签名应用程序包使用 SignTool](/windows/uwp/packaging/sign-app-package-using-signtool)。
 
 旁加载应用程序转移到其他设备，请参阅[Windows 10 中的旁加载 LOB 应用](/windows/application-management/sideload-apps-in-windows-10)。
-
-**视频**
-
-|发布到 Microsoft Store 应用程序 |分发企业应用程序  |
-|---|---|
-|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Windows-Store-Publication-3cWyG5WhD_5506218965"      width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Distribution-for-Enterprise-Apps-XJ5Hd5WhD_1106218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
 <a id="transition-users" />
 
@@ -167,10 +161,6 @@ private void RemoveDesktopApp()
 
 }
 ```
-
-### <a name="video"></a>视频
-
-<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Transition-Taskbar-Pins-Start-Tiles-File-Type-Associations-and-Protocol-Handlers-MD5mv5WhD_2406218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="next-steps"></a>后续步骤
 

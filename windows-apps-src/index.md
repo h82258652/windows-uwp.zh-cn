@@ -9,12 +9,12 @@ ms.date: 08/04/2017
 keywords: windows uwp, 通用 Windows 平台, Windows 运行时 API, windows api, windows api 参考, winrt api, uwp api, uwp api 参考, 开发 uwp, 设计 uwp, 发布 uwp
 ms.localizationpriority: medium
 ms.technology: uwp-conceptual-docs
-ms.openlocfilehash: 04adb7de9fa52988329bd8b5739b6bc315ddf786
-ms.sourcegitcommit: a4fe508e62827a10471e2359e81e82132dc2ac5a
+ms.openlocfilehash: 7b89ef27fb83ff12fc2d65e622975ca5dd4f1510
+ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66468331"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131916"
 ---
 # <a name="universal-windows-platform-documentation"></a>通用 Windows 平台文档
 
@@ -217,7 +217,7 @@ ms.locfileid: "66468331"
                 <div class="card">
                     <div class="cardText">
                         <h3>刚接触开发？</h3>
-                        <p><a href="//mva.microsoft.com/training-topics/c-app-development">Microsoft Virtual Academy</a></p>
+                        <p><a href="//docs.microsoft.com/learn">Microsoft Learn</a></p>
                         <p><a href="//www.linkedin.com/learning/learning-universal-windows-app-development/welcome">领英学习</a></p>
                         </div>
                     </div>

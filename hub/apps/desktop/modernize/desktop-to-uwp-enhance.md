@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 22aefb58dc06a35ed3a10338eb585aa6c49e55fc
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 4846a29e914ffed15e4c3dea938cc51cefd566e0
+ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215105"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131948"
 ---
 # <a name="call-uwp-apis-in-desktop-apps"></a>在桌面应用程序中调用 UWP Api
 
@@ -213,10 +213,6 @@ void UWP::ShowToast()
 可以不考虑用户所运行的 Windows 版本而为所有 Windows 用户编译一组二进制文件。 你的应用程序调用 Windows 运行时 Api 仅当用户为运行您的应用程序打包的应用程序在 Windows 10 上。
 
 若要添加到代码中的运行时检查的最简单方法是安装此 Nuget 包：[桌面桥帮助程序](https://www.nuget.org/packages/DesktopBridge.Helpers/)，然后使用``IsRunningAsUWP()``方法调用的 Windows 运行时 Api 的所有代码的入口。 请参阅此博客文章的更多详细信息：[桌面桥-标识应用程序的上下文](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/)。
-
-## <a name="related-video"></a>相关视频
-
-<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Use-UWP-APIs-in-Your-Code-3d78c6WhD_9506218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="related-samples"></a>相关示例
 
