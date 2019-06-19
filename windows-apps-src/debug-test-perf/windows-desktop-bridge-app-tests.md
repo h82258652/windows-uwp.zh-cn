@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10，uwp，应用程序认证
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f979edbd49699447040880964dd1378bc7c94c0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 38c9a40dbe1a46aa125c76cd1fcc88a84685c8cc
+ms.sourcegitcommit: 280193dfe5a106fc6b4c85df3ac40535547b855c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362076"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67235167"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 桌面桥应用测试
 
@@ -30,7 +30,7 @@ Windows 桌面桥应用的可选测试，仅用于参考，并不会用于在 Mi
 测试扫描包中的所有可移植可执行文件，并在其标头中检查签名。 建议对所有 PE 文件进行数字签名。 如果有任何 PE 文件未进行签名，则会生成警告。
  
 **纠正措施**  
-始终建议使用数字签名文件。 有关详细信息，请参阅[代码签名简介](https://msdn.microsoft.com/en-us/library/ms537361(v=vs.85).aspx)。
+始终建议使用数字签名文件。 有关详细信息，请参阅[代码签名简介](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85))。
 
 ### <a name="2-file-association-verbs"></a>2.文件关联的谓词 
 **背景**  
