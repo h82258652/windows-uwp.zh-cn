@@ -8,12 +8,12 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2848b22c69960075297546d401689d4c51c637aa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: dc13b53450c97ffcd3d44b58d564c813344abf0a
+ms.sourcegitcommit: ed32219e04f814a12ea018348e9cf678fcfd5e3a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361931"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67253056"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>存储和检索设置以及其他应用数据
 
@@ -430,7 +430,7 @@ localSettings.DeleteContainer("exampleContainer");
 ## <a name="versioning-your-app-data"></a>对应用数据进行版本控制
 
 
-视情况，也可以对应用的应用数据进行版本控制。 这将使你能够创建应用的未来版本，更改它的应用数据的格式，而不会导致与以前应用版本出现兼容性问题。 应用将检查数据存储中的应用数据版本，如果该版本低于应用想要的版本，应用应该将应用数据更新为新格式并更新该版本。 有关详细信息，请参阅 [**Application.Version**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.version) 属性和 [**ApplicationData.SetVersionAsync**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.) 方法。
+视情况，也可以对应用的应用数据进行版本控制。 这将使你能够创建应用的未来版本，更改它的应用数据的格式，而不会导致与以前应用版本出现兼容性问题。 应用将检查数据存储中的应用数据版本，如果该版本低于应用想要的版本，应用应该将应用数据更新为新格式并更新该版本。 有关详细信息，请参阅 [**Application.Version**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.version) 属性和 [**ApplicationData.SetVersionAsync**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.setversionasync) 方法。
 
 ## <a name="related-articles"></a>相关文章
 

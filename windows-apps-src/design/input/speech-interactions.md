@@ -8,12 +8,12 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fb292ad5cba892275709fbc89d5d53fa136144f3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ef8cdad247a57ce5fab461e70c2725fda4231efd
+ms.sourcegitcommit: ed32219e04f814a12ea018348e9cf678fcfd5e3a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365301"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67253059"
 ---
 # <a name="speech-interactions"></a>语音交互
 
@@ -200,7 +200,7 @@ TTS 从纯文本或 SSML 生成语音输出。
 -   将一系列不常见单词串联在一起，或者说出零件编号或标点可能会导致短语变得无法识别。
 -   当母语使用者说出短语时的韵律或节奏不同时，语音可能听起来不自然。
 
-将 SSML 而不是将纯文本用作语音合成器的输入可以解决这两种问题。 有关 SSML 的详细信息，请参阅[使用 SSML 控制合成的语音](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14))和[语音合成标记语言参考](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14))。
+作为语音合成器的输入而不纯文本使用 SSML 可解决这两个问题。 有关 SSML 的详细信息，请参阅[使用 SSML 控制合成的语音](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14))和[语音合成标记语言参考](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14))。
 
 ## <a name="other-articles-in-this-section"></a>本部分中的其他文章 
 
