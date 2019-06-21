@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
-ms.openlocfilehash: 1476410c96900eff7ba4b8d0ad34c9d7b5599434
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1b9a538dc36818c065e790170f693576650f5024
+ms.sourcegitcommit: 34671182c26f5d0825c216a6cededc02b0059a9e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372732"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286932"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>为程序包签名创建证书
 
@@ -21,7 +21,7 @@ ms.locfileid: "66372732"
 > [!IMPORTANT] 
 > 如果你使用 Visual Studio 开发应用，建议使用 Visual Studio 向导导入证书并对你的应用包签名。 有关详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 - **打包或未打包应用**  
 包含 AppxManifest.xml 文件的应用。 在创建用于给最终应用包签名的证书时，你将需要参考清单文件。 有关如何手动打包应用的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。
@@ -57,7 +57,7 @@ ms.locfileid: "66372732"
 基于上一示例中的 AppxManifest.xml 文件，你应该使用下面的语法创建证书。 在提升的 PowerShell 提示符中：
 
 ```powershell
-New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName "Your friendly name goes here" -CertStoreLocation "Cert:\LocalMachine\My" -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}")
+New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName "Your friendly name goes here" -CertStoreLocation "Cert:\CurrentUser\My" -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}")
 ```
 
 请注意以下有关的某些参数的详细信息：
@@ -75,7 +75,7 @@ New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso 
 你可以使用以下命令在 PowerShell 窗口中查看你的证书：
 
 ```powershell
-Set-Location Cert:\LocalMachine\My
+Set-Location Cert:\CurrentUser\My
 Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 ```
 
@@ -91,13 +91,13 @@ Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 
 ```powershell
 $pwd = ConvertTo-SecureString -String <Your Password> -Force -AsPlainText 
-Export-PfxCertificate -cert "Cert:\LocalMachine\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd
+Export-PfxCertificate -cert "Cert:\CurrentUser\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd
 ```
 
 ### <a name="protectto-usage"></a>ProtectTo 使用
 
 ```powershell
-Export-PfxCertificate -cert Cert:\LocalMachine\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
+Export-PfxCertificate -cert Cert:\CurrentUser\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
 ```
 
 创建并导出你的证书后，准备好使用 **SignTool** 给你的应用包签名。 有关手动打包过程中的后续步骤，请参阅[使用 SignTool 给应用包签名](https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool)。
