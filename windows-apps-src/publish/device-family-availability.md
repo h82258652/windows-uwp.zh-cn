@@ -5,12 +5,12 @@ ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp, 程序包, 上传, 设备系列可用性
 ms.localizationpriority: medium
-ms.openlocfilehash: af2152eb8d174f6d2e40e20c8cdaccd0e87605bb
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 088fb859ae38e608182b22b94300b9c27063054e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787100"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320022"
 ---
 # <a name="device-family-availability"></a>设备系列可用性
 
@@ -30,7 +30,7 @@ ms.locfileid: "63787100"
 
 你可以取消选中任何 Windows 10 设备系列的复选框（如果你不希望向该设备类型上的客户提供提交）。 如果未选中某个设备系列的复选框，该设备类型上的新客户将无法获取应用（尽管已拥有该应用的客户仍然可以使用它，并将获取提交的任何更新）。
 
-如果你的应用支持它们，建议你将所有复选框保持选中状态，除非你有特殊原因需要限制可以获取你的应用的 Windows 10 设备类型。 例如，如果你知道你的应用不会在 [Surface Hub](https://developer.microsoft.com/windows/surfacehub) 和/或 [Microsoft HoloLens](https://developer.microsoft.com/windows/mixed-reality) 上提供良好的体验，则可以取消选中 **Windows 10 协同版**和/或 **Windows 10 全息版**复选框。 这将阻止任何新客户在这些设备上获取应用。 如果你之后决定已准备好将该应用提供给那些客户，可通过选中这些复选框来新建提交。
+如果你的应用支持它们，建议你将所有复选框保持选中状态，除非你有特殊原因需要限制可以获取你的应用的 Windows 10 设备类型。 例如，如果你知道你的应用不会在 [Surface Hub](https://developer.microsoft.com/windows/surfacehub) 和/或 [Microsoft HoloLens](https://developer.microsoft.com/mixed-reality) 上提供良好的体验，则可以取消选中 **Windows 10 协同版**和/或 **Windows 10 全息版**复选框。 这将阻止任何新客户在这些设备上获取应用。 如果你之后决定已准备好将该应用提供给那些客户，可通过选中这些复选框来新建提交。
 
 <span id="xbox" />
 
@@ -42,7 +42,7 @@ ms.locfileid: "63787100"
 > 若要解决此错误，可以执行以下操作之一：
 > - 将适用的程序包替换为使用 Windows SDK 版本 14393 或更高版本编译的新程序包。
 > - 如果已有的程序包支持 Xbox 并使用 Windows SDK 版本 14393 或更高版本进行了编译，则增加它的版本号，以便它提交中版本最高的程序包。
-> - 取消选中“Windows 10 Xbox”复选框。
+> - 取消选中“Windows 10 Xbox”  复选框。
 >   
 > 如果仍然无法解决该问题，请联系支持人员。
 

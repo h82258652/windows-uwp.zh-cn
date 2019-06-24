@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bcc9a6d89a143d8fd03d73dbd83b832ed9513ee2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9692a8ef21e9f62114b38c6bb5d15199b8c0e04a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644412"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318153"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a>调整效果和使用 Windows UI 体验
 
@@ -112,13 +112,13 @@ CompositionCapabilities 功能已用于丙烯画材料，材料回退到具体�
     }
     ```
 
-可以上找到完整的示例代码[Windows UI Github 存储库](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2015063/CompCapabilities)。
+可以上找到完整的示例代码[Windows UI Github 存储库](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 15063/CompCapabilities)。
 
 ## <a name="fast-vs-slow-effects"></a>快速和慢速的效果
 
 根据从所提供的反馈[AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported)并[AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) CompositionCapabilities API 中的方法，该应用程序可以决定交换成本高或不受支持的效果针对设备优化他们选择的其他效果。 一些效果已知一直为比其他的多个占用大量资源，应谨慎使用，并可以更自由地使用其他效果。 对于所有效果，但是，注意应使用链接和对作为某些方案或组合进行动画处理可能更改影响关系图的性能特征时。 以下是一些经验法则性能特性的单个效果：
 
-- 已知会影响高性能的影响如下所示 – 高斯模糊、 卷影的掩码、 BackDropBrush、 HostBackDropBrush，和可视化层。 不建议使用这些低端设备[（功能级别 9.1-9.3）](https://msdn.microsoft.com/library/windows/desktop/ff476876(v=vs.85).aspx)，并应十分谨慎高端设备上。
+- 已知会影响高性能的影响如下所示 – 高斯模糊、 卷影的掩码、 BackDropBrush、 HostBackDropBrush，和可视化层。 不建议使用这些低端设备[（功能级别 9.1-9.3）](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)，并应十分谨慎高端设备上。
 - 效果与中等性能影响包括颜色矩阵，（亮度、 颜色、 饱和度和 Hue），某些 Blend 效果 BlendModes 聚焦、 SceneLightingEffect，和 （取决于方案） BorderEffect。 这些效果可能适用于某些情况下，在低端设备上，但链接和动画处理时，应使用护理。 建议用途限制为两个或更少，并在仅转换进行动画处理。
 - 所有其他效果低性能产生影响和工作时进行动画处理和链接的所有合理方案中。
 

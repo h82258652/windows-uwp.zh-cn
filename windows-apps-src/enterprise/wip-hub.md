@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp, Windows 信息保护, 企业数据, 企业数据保护, edp, 启发式应用
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
-ms.openlocfilehash: f6938118b3a9041eea27367c3916e94ce34d468e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 42f08127567704b1c8623ac64857cc5afe0ef882
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595472"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321395"
 ---
 # <a name="windows-information-protection-wip"></a>Windows 信息保护 (WIP)
 
@@ -42,8 +42,8 @@ WIP 和 MDM 一起使组织可以更好地控制如何处理组织所管理的�
 ![WIP 生命周期](images/wip-lifecycle.png)
 
 > **了解有关 WIP 的更多信息** <br>
-* [引入 Windows 信息保护](https://blogs.technet.microsoft.com/windowsitpro/2016/06/29/introducing-windows-information-protection/)
-* [保护企业数据使用 Windows 信息保护 (WIP)](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx)
+* [引入 Windows 信息保护](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
+* [保护企业数据使用 Windows 信息保护 (WIP)](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
 
 如果你的应用在允许列表上，则你的应用生成的所有数据都将受到策略限制。 这意味着，如果管理员吊销用户对企业数据的访问权限，则这些用户将失去对你的应用所生成的所有数据的访问权限。
 
@@ -65,7 +65,7 @@ WIP 和 MDM 一起使组织可以更好地控制如何处理组织所管理的�
 
 [Windows 信息保护 (WIP) 开发人员指南](wip-dev-guide.md)。
 
-**使用 c + + 生成的桌面应用程序**
+**使用生成的桌面应用程序C++**
 
 [Windows 信息保护 (WIP) 开发人员指南 (C++)](https://go.microsoft.com/fwlink/?LinkId=822192)。
 

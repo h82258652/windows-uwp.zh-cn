@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 盈利
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ef957700f6554ccece9d0c3bf51ccf4244a4b74
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4c84c42da0e2653f0e5958583ad0ee9b9babe3bc
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368408"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318952"
 ---
 #  <a name="monetization-for-games"></a>通过游戏盈利
 
@@ -99,8 +99,8 @@ Microsoft Store 可以使您的游戏可供下载在 200 多个国家和地区�
 #### <a name="publish-the-game-as-hidden"></a>将游戏发布为已隐藏
 
 1. 转到[合作伙伴中心](https://partner.microsoft.com/dashboard)并登录。
-2. 在__仪表板概述__或__所有应用__页面上，单击要使用的应用。 如果尚未创建应用提交，请单击“创建新应用”并保留名称。
-3. 在“应用概述”页面上，单击“开始提交”。
+2. 在__仪表板概述__或__所有应用__页面上，单击要使用的应用。 如果尚未创建应用提交，请单击__创建新应用__并保留名称。
+3. 在__应用概述__页面上，单击__开始提交__。
 4. 配置此新提交。 在提交页面上：
     * 单击__定价和可用性__。 在中__可见性__部分中，选择__隐藏此应用，并防止获取...__ 以确保您的开发团队可以访问的游戏。 有关更多详细信息，请转到[分发和可见性](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。
     * 单击__属性__。 在__类别和子类别__部分中，选择__游戏__和适合你的游戏的子类别。
@@ -195,7 +195,7 @@ Microsoft 广告 SDK 中的 [AdControl](https://docs.microsoft.com/uwp/api/micro
 
 #### <a name="vungle"></a>Vungle
 
-适用于 Windows 的 Vungle SDK 在应用和游戏中提供视频广告。 若要下载 SDK，请转到 [Vungle SDK](https://v.vungle.com/sdk)。
+适用于 Windows 的 Vungle SDK 在应用和游戏中提供视频广告。 若要下载 SDK，请转到 [Vungle SDK](https://publisher.vungle.com/sdk/)。
 
 #### <a name="smaato"></a>Smaato
 

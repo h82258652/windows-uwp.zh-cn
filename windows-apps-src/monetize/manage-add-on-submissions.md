@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: e6e75483ca6c01958a4b8bda2c5c3bb60e764eff
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6a287889f27712d1272dd0a2f8f3d068b376fefe
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372482"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320205"
 ---
 # <a name="manage-add-on-submissions"></a>管理加载项提交
 
@@ -92,7 +92,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
     响应正文包含[加载项提交](#add-on-submission-object)资源，该资源包括新的提交 ID、共享访问签名 (SAS) URI（用于将提交的所有加载项图标上载到 Azure Blob 存储）以及所有新的提交数据（如列表和定价信息）。
 
     > [!NOTE]
-    > SAS URI 提供对 Azure 存储中的安全资源的访问权限（无需帐户密钥）。 有关 SAS URI 及其与 Azure Blob 存储一起使用的背景信息，请参阅[共享访问签名（第 1 部分）：了解 SAS 模型](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1)和[共享访问签名，第 2 部分：创建并将 SAS 用于 Blob 存储](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
+    > SAS URI 提供对 Azure 存储中的安全资源的访问权限（无需帐户密钥）。 有关 SAS URI 及其与 Azure Blob 存储一起使用的背景信息，请参阅[共享访问签名（第 1 部分）：了解 SAS 模型](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)和[共享访问签名，第 2 部分：创建并将 SAS 用于 Blob 存储](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
 4. 如果要为提交添加新的图标，请[准备图标](https://docs.microsoft.com/windows/uwp/publish/create-iap-descriptions)并将它们添加到 ZIP 存档。
 
@@ -232,7 +232,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 |------------|--------|----------------------|
 | id            | string  | 提交的 ID。 此 ID 包含在 [create an add-on submission](create-an-add-on-submission.md)、[get all add-ons](get-all-add-ons.md) 和 [get an add-on](get-an-add-on.md) 请求的响应数据中。 在合作伙伴中心创建的提交，此 ID 是也可用在合作伙伴中心中的提交页的 URL。  |
 | contentType           | string  |  加载项中提供的[内容类型](../publish/enter-add-on-properties.md#content-type)。 这可以是以下值之一： <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| keywords           | 数组  | 字符串数组，其中最多包含加载项的 10 个[关键字](../publish/enter-add-on-properties.md#keywords)。 应用可以使用这些关键字来查询加载项。   |
+| keywords           | array  | 字符串数组，其中最多包含加载项的 10 个[关键字](../publish/enter-add-on-properties.md#keywords)。 应用可以使用这些关键字来查询加载项。   |
 | lifetime           | string  |  加载项的生存期。 这可以是以下值之一： <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | listings           | 对象  |  键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为含有加载项列表信息的[列表资源](#listing-object)对象。  |
 | pricing           | 对象  | 包含加载项的定价信息的[定价资源](#pricing-object)。   |
@@ -251,7 +251,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 此资源包含[加载项的列表信息](../publish/create-add-on-store-listings.md)。 此资源具有以下值。
 
-| ReplTest1           | 在任务栏的搜索框中键入    | 描述       |
+| 值           | 在任务栏的搜索框中键入    | 描述       |
 |-----------------|---------|------|
 |  description               |    string     |   加载项列表的描述。   |     
 |  图标               |   对象      |包含加载项列表的图标数据的[图标资源](#icon-object)。    |
@@ -263,7 +263,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 此资源包含加载项列表的图标数据。 此资源具有以下值。
 
-| ReplTest1           | 在任务栏的搜索框中键入    | 描述     |
+| 值           | 在任务栏的搜索框中键入    | 描述     |
 |-----------------|---------|------|
 |  fileName               |    string     |   ZIP 存档中已为提交上载的图标文件的名称。 图标必须是大小正好为 300 x 300 像素的 .png 文件。   |     
 |  fileStatus               |   string      |  图标文件的状态。 这可以是以下值之一： <ul><li>无</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
@@ -277,7 +277,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 | ReplTest1           | 在任务栏的搜索框中键入    | 描述    |
 |-----------------|---------|------|
 |  marketSpecificPricings               |    对象     |  键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为[价格段](#price-tiers)。 这些项表示[加载项在特定市场中的自定义价格](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。 此字典中的任何项替代 *priceId* 值针对特定市场所指定的基价。     |     
-|  sales               |   数组      |  **已弃用**。 包含加载项销售信息的[销售资源](#sale-object)数组。     |     
+|  sales               |   array      |  **已弃用**。 包含加载项销售信息的[销售资源](#sale-object)数组。     |     
 |  priceId               |   string      |  用于指定加载项[基价](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)的[价格段](#price-tiers)。    |    
 |  isAdvancedPricingModel               |   boolean      |  如果为 **true**，你的开发人员帐户可以使用从 0.99 美元到 1999.99 美元的扩展价格段。 如果为 **false**，你的开发人员帐户可以使用从 0.99 美元到 999.99 美元的原始价格段。 有关其他价格段的详细信息，请参阅[价格段](#price-tiers)。<br/><br/>**注意**&nbsp;&nbsp;此字段为只读字段。   |
 
@@ -347,7 +347,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 以下值表示加载项提交的[定价资源](#pricing-object)中可用的价格段。
 
-| ReplTest1           | 描述       |
+| 值           | 描述       |
 |-----------------|------|
 |  Base               |   未设置价格段；使用加载项的基价。      |     
 |  NotAvailable              |   加载项在特定区域中不可用。    |     
@@ -360,7 +360,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 以下值表示提交的状态代码。
 
-| ReplTest1           |  描述      |
+| 值           |  描述      |
 |-----------------|---------------|
 |  无            |     未指定任何代码。         |     
 |      InvalidArchive        |     包含程序包的 ZIP 存档无效或具有无法识别的存档格式。  |

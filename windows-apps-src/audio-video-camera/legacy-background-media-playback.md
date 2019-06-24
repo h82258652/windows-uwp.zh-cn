@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: da18981a2be03c40e15df666f58d60ac91b6f130
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: dee2bcb05b9d30177c68b1beac468ac19f4a1be9
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360773"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318346"
 ---
 # <a name="legacy-background-media-playback"></a>传统后台媒体播放
 
@@ -64,7 +64,7 @@ ms.locfileid: "66360773"
 
 后台任务的生命周期与应用的当前播放状态紧密相连。 例如，当用户暂停音频播放时，系统可能会根据情况终止或取消你的应用。 在音频播放停止一段时间后，系统可能会自动关闭后台任务。
 
-在你的应用第一次通过在前台应用中运行的代码访问 [**MessageReceivedFromBackground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.messagereceivedfrombackground) 时，或当你为 [**BackgroundMediaPlayer.Current**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.current) 事件注册处理程序时（以先发生的为准），将调用 [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.) 方法。 建议你第一次先注册消息接收的处理程序，再调用 **BackgroundMediaPlayer.Current**，以便前台应用不会错过从后台进程发来的任何消息。
+在你的应用第一次通过在前台应用中运行的代码访问 [**MessageReceivedFromBackground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.messagereceivedfrombackground) 时，或当你为 [**BackgroundMediaPlayer.Current**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.current) 事件注册处理程序时（以先发生的为准），将调用 [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法。 建议你第一次先注册消息接收的处理程序，再调用 **BackgroundMediaPlayer.Current**，以便前台应用不会错过从后台进程发来的任何消息。
 
 若要使后台任务保持活动状态，你的应用必须请求 **Run** 方法中的 [**BackgroundTaskDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskDeferral) 并在任务实例接收 [**Canceled**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled) 或 [**Completed**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.completed) 事件时调用 [**BackgroundTaskDeferral.Complete**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskdeferral.complete)。 不要使用 **Run** 方法进行循环或等待，因为这将使用资源，并且可能会导致应用的后台任务被系统终止。
 

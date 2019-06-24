@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: efd024838194876532dc3a1925f9c43430513cda
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 03a994930e956cb3c2e775c32e77c6e62b526a17
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370734"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322315"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>移植到 UWP 的 Windows Phone Silverlight 的外形规格和用户体验
 
@@ -30,7 +30,7 @@ Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常
 
 客观来讲，屏幕应以英寸为测量单位，并且应采用物理（原始）像素。 知道这两个指标后，你便可以知道一英寸可以容纳的像素数。 这是像素密度，既可称为 DPI（每英寸点数），又可称为 PPI（每英寸像素）。 DPI 的倒数近似于像素的物理大小。 像素密度也称为*分辨率*，尽管该术语通常用于表示像素计数。
 
-由于观看距离增加，所有这些目标指标*看起来*都会更小，而且它们将解析为屏幕的*有效大小*及其*有效分辨率*。 以下设备与眼睛的距离按从近到远的顺序依次为：手机、平板电脑和 PC 显示器、[Surface Hub](https://www.microsoft.com/microsoft-surface-hub) 设备和电视。 若要进行补偿，在客观上设备距离通常应大于观看距离。 当设置 UI 元素的大小时，应采用称为有效像素 (epx) 的单位来设置这些大小。 和 Windows 10 将考虑到帐户 DPI 和从一台设备，典型的观看距离来计算最佳物理像素提供最佳的视觉体验中的 UI 元素的大小。 请参阅[视图/有效像素、观看距离和比例系数](wpsl-to-uwp-porting-xaml-and-ui.md)。
+由于观看距离增加，所有这些目标指标*看起来*都会更小，而且它们将解析为屏幕的*有效大小*及其*有效分辨率*。 以下设备与眼睛的距离按从近到远的顺序依次为：手机、平板电脑和 PC 显示器、[Surface Hub](https://www.microsoft.com/surface/devices/surface-hub) 设备和电视。 若要进行补偿，在客观上设备距离通常应大于观看距离。 当设置 UI 元素的大小时，应采用称为有效像素 (epx) 的单位来设置这些大小。 和 Windows 10 将考虑到帐户 DPI 和从一台设备，典型的观看距离来计算最佳物理像素提供最佳的视觉体验中的 UI 元素的大小。 请参阅[视图/有效像素、观看距离和比例系数](wpsl-to-uwp-porting-xaml-and-ui.md)。
 
 即便如此，我们仍建议你用多种不同的设备来测试你的应用，以便你可以自行确认每种体验。
 

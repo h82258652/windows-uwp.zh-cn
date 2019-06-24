@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API
 ms.localizationpriority: medium
-ms.openlocfilehash: e8e7653174eaf31f11341a5c8e21b69ec54a6189
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0a926b9383231e7cec9dc168afe8d0a0b34136a2
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371280"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318598"
 ---
 # <a name="create-and-manage-submissions"></a>创建和管理提交
 
@@ -136,7 +136,7 @@ grant_type=client_credentials
 
 | 问题      | 分辨率                                          |
 |---------------|---------------------------------------------|
-| 在通过 PowerShell 调用 Microsoft Store 提交 API 后，如果使用 [ConvertFrom-Json](https://technet.microsoft.com/library/hh849898.aspx) cmdlet 将该 API 的响应数据从 JSON 格式转换为 PowerShell 对象，然后使用 [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) cmdlet 将响应数据转换回为 JSON 格式，该响应数据会损坏。 |  默认情况下，[ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) cmdlet 的 *-Depth* 参数设置为 2 级对象，这对于大多数由 Microsoft Store 提交 API 返回的 JSON 对象而言深度不够。 调用 [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) cmdlet 时，请将 *-Depth* 参数设置为较大数值（如 20）。 |
+| 在通过 PowerShell 调用 Microsoft Store 提交 API 后，如果使用 [ConvertFrom-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertFrom-Json) cmdlet 将该 API 的响应数据从 JSON 格式转换为 PowerShell 对象，然后使用 [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet 将响应数据转换回为 JSON 格式，该响应数据会损坏。 |  默认情况下，[ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet 的 *-Depth* 参数设置为 2 级对象，这对于大多数由 Microsoft Store 提交 API 返回的 JSON 对象而言深度不够。 调用 [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet 时，请将 *-Depth* 参数设置为较大数值（如 20）。 |
 
 ## <a name="additional-help"></a>其他帮助
 

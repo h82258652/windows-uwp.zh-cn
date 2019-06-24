@@ -6,18 +6,18 @@ ms.date: 08/08/2018
 ms.topic: article
 keywords: windows 10, uwp, 教育版
 ms.localizationpriority: medium
-ms.openlocfilehash: bee8a04e3b4d57caf7da3e21f2be3c789d83be90
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 31672ff989da7d72f751a33ec3df3d8d528e22ec
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627592"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317823"
 ---
 # <a name="take-a-test-javascript-api"></a>参加测验 JavaScript API
 
-[进行测试](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)呈现锁定的在线评估高风险测试，允许教师可以专注于评估内容而不是如何提供安全的基于浏览器的 UWP 应用测试环境。 为了实现此目的，它使用任何 Web 应用程序都可以利用的 JavaScript API。 “参加测验”API 支持高利害关系通用核心测试的 [SBAC 浏览器 API 标准](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
+[进行测试](https://docs.microsoft.com/education/windows/take-tests-in-windows-10)呈现锁定的在线评估高风险测试，允许教师可以专注于评估内容而不是如何提供安全的基于浏览器的 UWP 应用测试环境。 为了实现此目的，它使用任何 Web 应用程序都可以利用的 JavaScript API。 “参加测验”API 支持高利害关系通用核心测试的 [SBAC 浏览器 API 标准](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
 
-有关应用本身的详细信息，请参阅[参加测验应用技术参考](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。 有关疑难解答帮助，请参阅[使用事件查看器对 Microsoft 参加测验进行疑难解答](troubleshooting.md)。
+有关应用本身的详细信息，请参阅[参加测验应用技术参考](https://docs.microsoft.com/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。 有关疑难解答帮助，请参阅[使用事件查看器对 Microsoft 参加测验进行疑难解答](troubleshooting.md)。
 
 ## <a name="reference-documentation"></a>参考文档
 参加测验 API 存在于以下命名空间中。 注意，所有 API 都依赖于全局 `SecureBrowser` 对象。
@@ -32,17 +32,17 @@ ms.locfileid: "57627592"
 
 | 方法 | 描述   |
 |--------|---------------|
-|[锁定](#lockDown) | 锁定用于测试的设备。 |
+|[lockDown](#lockDown) | 锁定用于测试的设备。 |
 |[isEnvironmentSecure](#isEnvironmentSecure) | 确定锁定上下文是否仍然应用于设备。 |
-|[GetDeviceInfo](#getDeviceInfo) | 获取有关运行测试应用程序的平台的详细信息。 |
+|[getDeviceInfo](#getDeviceInfo) | 获取有关运行测试应用程序的平台的详细信息。 |
 |[examineProcessList](#examineProcessList)|获取正在运行的用户和系统进程的列表。|
-|[关闭](#close) | 关闭浏览器并解锁设备。 |
+|[close](#close) | 关闭浏览器并解锁设备。 |
 |[getPermissiveMode](#getPermissiveMode)|检查许可模式是处于打开状态还是关闭状态。|
 |[setPermissiveMode](#setPermissiveMode)|打开或关闭许可模式。|
-|[清空剪贴板](#emptyClipBoard)|清除系统剪贴板。|
+|[emptyClipBoard](#emptyClipBoard)|清除系统剪贴板。|
 |[getMACAddress](#getMACAddress)|获取设备的 MAC 地址列表。|
 |[getStartTime](#getStartTime) | 获取启动测试应用的时间。 |
-|[GetCapability](#getCapability) | 查询功能是处于启用状态还是禁用状态。 |
+|[getCapability](#getCapability) | 查询功能是处于启用状态还是禁用状态。 |
 |[setCapability](#setCapability)|启用或禁用指定功能。| 
 |[isRemoteSession](#isRemoteSession) | 检查当前会话是否是远程登录。 |
 |[isVMSession](#isVMSession) | 检查当前会话是否在虚拟机上运行。 |
@@ -58,7 +58,7 @@ ms.locfileid: "57627592"
 `void SecureBrowser.security.lockDown(Boolean enable, Function onSuccess, Function onError);`
 
 **Parameters**  
-* `enable` - **true**运行在锁屏界面上方 Take a 测试应用并应用策略在此讨论[文档](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。 若为 **false**，将停止在锁屏界面上运行“参加测验”并关闭它，除非该应用不处于锁定状态；在此情况下没有影响。  
+* `enable` - **true**运行在锁屏界面上方 Take a 测试应用并应用策略在此讨论[文档](https://docs.microsoft.com/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。 若为 **false**，将停止在锁屏界面上运行“参加测验”并关闭它，除非该应用不处于锁定状态；在此情况下没有影响。  
 * `onSuccess` -[可选] 要调用后锁定已成功启用或禁用的函数。 其形式必须是 `Function(Boolean currentlockdownstate)`。  
 * `onError` -[可选] 如果锁定操作失败，则调用的函数。 其形式必须是 `Function(Boolean currentlockdownstate)`。  
 
@@ -120,7 +120,7 @@ Windows 10 版本 1709
 `void SecureBrowser.security.examineProcessList(String[] blacklistedProcessList, Function callback);`
 
 **Parameters**  
-* `blacklistedProcessList` 的测试应用程序已列入阻止列表的进程列表。  
+* `blacklistedProcessList` 的测试应用程序已列入黑名单的进程列表。  
 `callback` -要调用在找到活动进程之后的函数。 其形式必须为：`Function(String foundBlacklistedProcesses)`，其中 `foundBlacklistedProcesses` 的形式为：`"['process1.exe','process2.exe','processEtc.exe']"`。 如果未找到已列入禁止列表的进程，它将为空。 如果为 null，则指示原始函数调用时发生错误。
 
 **备注** 该列表不包括系统进程。
@@ -184,7 +184,7 @@ Windows 10 版本 1709
 <span id="emptyClipBoard"/>
 
 ### <a name="emptyclipboard"></a>emptyClipBoard
-清除系统剪贴板。 测试应用程序应调用此方法，强制清除可能存储在系统剪贴板中的任何数据。  **[lockDown](#lockDown)** 函数也执行此操作。
+清除系统剪贴板。 测试应用程序应调用此方法，强制清除可能存储在系统剪贴板中的任何数据。 **[lockDown](#lockDown)** 函数也执行此操作。
 
 **语法**  
 `void SecureBrowser.security.emptyClipBoard();`
@@ -205,7 +205,7 @@ Windows 10 版本 1709
 **Parameters**  
 * `callback` 的此调用完成时要调用函数。 其形式必须为：`Function(String addressArray)`，其中 `addressArray` 的形式为：`"['00:11:22:33:44:55','etc']"`。
 
-**备注**  
+**注释**  
 很难依靠源 IP 地址来区分测试服务器中的最终用户计算机，因为学校通常会使用防火墙/NAT/代理。 出于诊断目的，MAC 地址允许应用区分常见防火墙之后的最终客户端计算机处。
 
 **要求**  
@@ -261,7 +261,7 @@ Windows 10 版本 1709
 * `onSuccess` -[可选] 要设置操作已成功完成后调用的函数。 其形式必须为：`Function(String jsonValue)`，其中 *jsonValue* 的形式为：`{<feature>:true|false|undefined}`。  
 * `onError` -[可选] 如果在设置操作失败，则调用的函数。 其形式必须为：`Function(String jsonValue)`，其中 *jsonValue* 的形式为：`{<feature>:true|false|undefined}`。
 
-**备注**  
+**注释**  
 如果浏览器不知道目标功能，则此函数将向回调函数传递值 `undefined`。
 
 **要求** Windows 10 版本 1703
@@ -295,7 +295,7 @@ Windows 10 版本 1709
 **返回值**  
 如果当前会话在虚拟机中运行，则为 **true**，否则为 **false**。
 
-**备注**  
+**注释**  
 此 API 检查只可以检测在实现适当 API 的特定虚拟机监控程序中运行的 VM 会话
 
 **要求**  

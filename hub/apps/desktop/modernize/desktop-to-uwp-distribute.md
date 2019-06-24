@@ -8,12 +8,12 @@ ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 45d298aca60155915900f494654dce8e89fb1ee0
-ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
+ms.openlocfilehash: 2d10836da46cce4d862f7f727890b0c9c107df5a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131902"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317062"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>分发打包桌面应用程序
 
@@ -26,7 +26,7 @@ ms.locfileid: "67131902"
 
 [Microsoft Store](https://www.microsoft.com/store/apps) 是客户获取应用最便利的方法。
 
-发布到 Microsoft Store 应用程序，以覆盖最广泛的受众。 此外，组织的客户可以获取你的应用程序在内部分发给其组织通过[于企业的 Microsoft Store](https://www.microsoft.com/business-store)。
+发布到 Microsoft Store 应用程序，以覆盖最广泛的受众。 此外，组织的客户可以获取你的应用程序在内部分发给其组织通过[于企业的 Microsoft Store](https://businessstore.microsoft.com/store)。
 
 如果你打算发布到 Microsoft Store，在提交过程中，系统将要求你额外回答几个问题。 这是因为程序包清单声明名为 **runFullTrust** 的受限功能，我们需要批准该功能对你的应用程序的使用。 你可以阅读更多有关此要求此处：[受限制的功能](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
 

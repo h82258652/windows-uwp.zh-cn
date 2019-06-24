@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d5d4e7b71ea0fcc6f18106ee1d11c3dead1438c7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d25cd3f8a963d85f704e32482475827462ddba58
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360673"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318265"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>使用 MediaPlayer 播放音频和视频
 
@@ -161,7 +161,7 @@ ms.locfileid: "66360673"
 
 [!code-cs[CreateSourceWithOpenCompleted](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetCreateSourceWithOpenCompleted)]
 
-使用 **OpenOperationCompleted** 处理程序有机会发现媒体源内容的持续时间。 确定持续时间后，**Slider** 控件的最大值设置为媒体项的总秒数。 此值在 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 调用中设置，以确保它在 UI 线程上运行。
+使用 **OpenOperationCompleted** 处理程序有机会发现媒体源内容的持续时间。 确定持续时间后，**Slider** 控件的最大值设置为媒体项的总秒数。 此值在 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 调用中设置，以确保它在 UI 线程上运行。
 
 [!code-cs[DeclareDuration](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDeclareDuration)]
 

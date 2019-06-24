@@ -5,12 +5,12 @@ keywords: 用户活动, 时间线, cortana 从你离开的位置继续, cortana 
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2756231b067176da66c6dbcedf7a1452d5d109f4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ed268dd4ba07604db468ee24e5ea348acf806b39
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641152"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321813"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>即便跨设备，也继续用户活动
 
@@ -32,7 +32,7 @@ ms.locfileid: "57641152"
 
 一个 [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity) 是 Windows 中一个用户参与单位。 它包含三个部分：用于激活该活动所属应用的 URI、视觉对象和用于描述该活动的元数据。
 
-1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) 用于通过特定上下文继续执行应用程序操作。 通常情况下，此链接采用两种形式：方案的协议处理程序（例如“my-app://page2?action=edit”）或 AppUriHandler（例如， http://constoso.com/page2?action=edit)。
+1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) 用于通过特定上下文继续执行应用程序操作。 通常情况下，此链接采用两种形式：方案的协议处理程序（例如“my-app://page2?action=edit”）或 AppUriHandler（例如， http://constoso.com/page2?action=edit) 。
 2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) 公开一个类，允许用户使用标题、描述或自适应卡片元素来直观标识活动。
 3. 最后，[内容](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content)是可用于存储活动元数据的位置，通过这一位置，可按特定上下文来对活动进行归组和检索。 通常，它采用 [https://schema.org](https://schema.org) 数据的形式。
 
@@ -73,7 +73,7 @@ private async Task GenerateActivityAsync()
 
 获取或创建 **UserActivity** 后，指定其他两个必填字段：`UserActivity.VisualElements.DisplayText` 和 `UserActivity.ActivationUri`。
 
-接下来，通过调用 [SaveAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.saveasync) 保存 **UserActivity** 元数据，最后调用会返回 [UserActivitySession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitysession) 的 [CreateSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession)。 **UserActivitySession** 是一个对象，可用于管理用户的 **UserActivity** 的实际参与情况。 例如，我们应在用户离开页面时，调用 **UserActivitySession** 上的 `Dispose()`。 在以上示例中，我们还在调用 `CreateSession()` 之前调用 `_currentActivity` 上的 `Dispose()`。 这是因为我们使 `_currentActivity` 成为页面的成员字段，并希望先停止任何现有活动再开始新活动（请注意：`?`是在执行成员访问之前测试 null 的 [null 条件运算符](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-conditional-operators)）。
+接下来，通过调用 [SaveAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.saveasync) 保存 **UserActivity** 元数据，最后调用会返回 [UserActivitySession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitysession) 的 [CreateSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession)。 **UserActivitySession** 是一个对象，可用于管理用户的 **UserActivity** 的实际参与情况。 例如，我们应在用户离开页面时，调用 **UserActivitySession** 上的 `Dispose()`。 在以上示例中，我们还在调用 `CreateSession()` 之前调用 `_currentActivity` 上的 `Dispose()`。 这是因为我们使 `_currentActivity` 成为页面的成员字段，并希望先停止任何现有活动再开始新活动（请注意：`?`是在执行成员访问之前测试 null 的 [null 条件运算符](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/member-access-operators#null-conditional-operators--and-)）。
 
 由于在此情况下，`ActivationUri` 是自定义方案，所以我们还需要在应用程序清单中注册该协议。 这是在 Package.appmanifest XML 文件中，或使用设计器完成的。
 
@@ -149,16 +149,16 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 ## <a name="cross-platform-and-service-to-service-integration"></a>跨平台及服务到服务集成
 
-如果应用跨平台（例如，在 Android 和 iOS 上）运行，或在云中维护用户状态，可通过 [Microsoft Graph](https://developer.microsoft.com/graph/) 发布 UserActivities。
-在使用 Microsoft 帐户对应用程序或服务进行了身份验证后，只需通过两个简单 REST 调用，使用上文所述的相同数据，生成[活动](https://developer.microsoft.com/graph/docs/api-reference/beta/api/projectrome_put_activity)和[历史记录](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/projectrome_historyitem)对象。
+如果应用跨平台（例如，在 Android 和 iOS 上）运行，或在云中维护用户状态，可通过 [Microsoft Graph](https://developer.microsoft.com/graph) 发布 UserActivities。
+在使用 Microsoft 帐户对应用程序或服务进行了身份验证后，只需通过两个简单 REST 调用，使用上文所述的相同数据，生成[活动](https://docs.microsoft.com/graph/api/resources/projectrome-activity)和[历史记录](https://docs.microsoft.com/graph/api/resources/projectrome-historyitem)对象。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 可使用 [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) API 在时间线和 Cortana 中显示应用。
 * 详细了解如何[ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * 查看[示例代码](https://github.com/Microsoft/project-rome)。
 * 请参阅[更复杂的自适应卡片](https://adaptivecards.io/)。
-* 通过 [Microsoft Graph](https://developer.microsoft.com/graph/) 从 iOS、Android 或 web 服务发布 **UserActivity**。
+* 通过 [Microsoft Graph](https://developer.microsoft.com/graph) 从 iOS、Android 或 web 服务发布 **UserActivity**。
 * 了解有关 [GitHub 上的 Project Rome](https://github.com/Microsoft/project-rome)的详细信息。
 
 ## <a name="key-apis"></a>关键 API
@@ -172,4 +172,4 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 * [自适应卡可视化工具示例](https://adaptivecards.io/)
 * [处理 URI 激活](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [使用 Microsoft Graph、 活动源，和自适应卡任何平台上的客户参与](https://channel9.msdn.com/Events/Connect/2017/B111)
-* [Microsoft Graph](https://developer.microsoft.com/graph/)
+* [Microsoft Graph](https://developer.microsoft.com/graph)

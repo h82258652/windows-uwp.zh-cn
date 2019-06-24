@@ -7,16 +7,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d3f72e563f6463d55af40acae74d061b5030aa9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d66962971844f1983b527c6cea436dba03d63b8b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371608"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322334"
 ---
 # <a name="move-from-ios-to-uwp"></a>从 iOS 移动到 UWP
 
-如果你是 iOS 开发人员，并且想知道如何扩展用户群以将 Windows 10 和通用 Windows 平台 (UWP) 包括在内，则你可以寻求帮助的工具已经越来越多。 你可以采取的方法取决于正在处理的应用类型（游戏、生活方式、企业等）以及你在开发进程中的进度。 例如，严重依赖 OpenGL 或 Cocos2D 的完成或接近完成的游戏是[适用于 iOS 的 Windows 桥](https://dev.windows.com/bridges/ios)的理想候选项，而如果你要规划一款适用于小型企业的跨平台应用，则应该考虑使用 [Xamarin.Forms](https://www.xamarin.com/forms)。 如果你已经使用跨平台工具（例如 Unity）编写应用，[发布到 Windows](https://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) 会相当简单。
+如果你是 iOS 开发人员，并且想知道如何扩展用户群以将 Windows 10 和通用 Windows 平台 (UWP) 包括在内，则你可以寻求帮助的工具已经越来越多。 你可以采取的方法取决于正在处理的应用类型（游戏、生活方式、企业等）以及你在开发进程中的进度。 例如，严重依赖 OpenGL 或 Cocos2D 的完成或接近完成的游戏是[适用于 iOS 的 Windows 桥](https://developer.microsoft.com/windows/bridges/ios)的理想候选项，而如果你要规划一款适用于小型企业的跨平台应用，则应该考虑使用 [Xamarin.Forms](https://docs.microsoft.com/xamarin/xamarin-forms/)。 如果你已经使用跨平台工具（例如 Unity）编写应用，[发布到 Windows](https://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) 会相当简单。
 
 ## <a name="why-windows"></a>为什么选择 Windows？
 
@@ -34,4 +34,4 @@ ms.locfileid: "66371608"
 
 **为设计人员和开发人员**
 * [构建适用于所有 Windows 设备的通用 Windows 应用](https://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [下载适用于 UWP 应用的设计资源](https://dev.windows.com/design/assets)
+* [下载适用于 UWP 应用的设计资源](https://docs.microsoft.com/windows/uwp/design/downloads/index)

@@ -4,12 +4,12 @@ description: 开发人员可以使用协议激活和启动激活来自动启动�
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: f61fcfcef549295b8f3c9004572a74043a2917a2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: abc0b40178dc9b7c386342af6a6d85c6fb61945a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365826"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320270"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>自动启动 Windows 10 UWP 应用
 
@@ -136,7 +136,7 @@ C:\Program Files (x86)\Windows Kits\10\App Certification Kit\microsoft.windows.s
 
 ### <a name="launcher-application"></a>启动器应用程序
 
-你可以单独创建一个支持使用 COM 的应用程序以用于启动。 以下示例显示启动程序中用于通过启动激活启动的 C++ 代码。 使用此代码，你可以创建 **ApplicationActivationManager** 对象并调用传入之前查找的 AUMID 的 **ActivateApplication** 和任何参数。 有关其他参数的详细信息，请参阅 [IApplicationActivationManager::ActivateApplication 方法 (MSDN)](https://msdn.microsoft.com/library/windows/desktop/hh706903(v=vs.85).aspx)。
+你可以单独创建一个支持使用 COM 的应用程序以用于启动。 以下示例显示启动程序中用于通过启动激活启动的 C++ 代码。 使用此代码，你可以创建 **ApplicationActivationManager** 对象并调用传入之前查找的 AUMID 的 **ActivateApplication** 和任何参数。 有关其他参数的详细信息，请参阅 [IApplicationActivationManager::ActivateApplication 方法 (MSDN)](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication)。
 
 ```
 #include <ShObjIdl.h>

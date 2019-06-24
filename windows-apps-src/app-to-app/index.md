@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dfd86d53805573d002984aaf33ba5f1bf17241c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3a55ea95f5c67a4184e1fd1592c4b6ac3356a75c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582106"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317695"
 ---
 # <a name="app-to-app-communication"></a>应用到应用的通信
 
@@ -36,4 +36,4 @@ ms.locfileid: "57582106"
 | [拖放](../design/input/drag-and-drop.md) | 本文说明如何将拖放操作添加到你的通用 UWP 应用中。 拖放是一种与内容（例如图像和文件）交互的经典且自然的方法。 实现后，拖放会在所有方向上无缝运行，包括应用到应用、应用到桌面和桌面到应用。 |
 
 ## <a name="see-also"></a>另请参阅
-- [开发 UWP 应用](https://developer.microsoft.com/windows/develop)
+- [开发 UWP 应用](https://docs.microsoft.com/windows/uwp/develop/)

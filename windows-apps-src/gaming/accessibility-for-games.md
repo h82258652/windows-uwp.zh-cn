@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, uwp, 辅助功能, 游戏
 ms.localizationpriority: medium
-ms.openlocfilehash: a3ef82db2d0ddb7883179279fd7e48c1acf38dd3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 74ff2c25d38f20b94f50cc05a548778ee212bad0
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369177"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321355"
 ---
 #  <a name="making-games-accessible"></a>使游戏成为辅助游戏
 
@@ -19,11 +19,11 @@ ms.locfileid: "66369177"
 
 ## <a name="gaming-for-everyone"></a>适合所有用户的游戏
 
-在 Microsoft，我们认为游戏应为每个人带来乐趣。 我们“必须付出更多努力来让游戏成为欢迎每个人的包容环境。 从根本上我们相信，我们为粉丝创造的内容以及我们的展现方式 - Microsoft 的内部和外部 - 是我们身份的体现。 我们设计程序以反映我们作为一个组织的核心价值，我们相信这个程序会促成积极的改变 - 不仅是在我们的工作场所，还有我们为我们所服务的玩家打造的产品。” （来自 Phil Spencer 的[博客文章](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone)）
+在 Microsoft，我们认为游戏应为每个人带来乐趣。 我们“必须付出更多努力来让游戏成为欢迎每个人的包容环境。 从根本上我们相信，我们为粉丝创造的内容以及我们的展现方式 - Microsoft 的内部和外部 - 是我们身份的体现。 我们设计程序以反映我们作为一个组织的核心价值，我们相信这个程序会促成积极的改变 - 不仅是在我们的工作场所，还有我们为我们所服务的玩家打造的产品。” （来自 Phil Spencer 的[博客文章](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone/)）
 
-我们想要打造一种有趣、多样和包容的环境，每个人都可以在这个环境中畅玩游戏。 “想要真正产生持久的影响需要文化的转变，这不是一日之功就能实现的。 然而，我们的团队每天都在致力于让自己变得更好，在我们的决策过程中互相学习，思考世界各地的游戏玩家之间的需求、能力和兴趣的多样性。” （来自 Phil Spencer 的[博客文章](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone)）
+我们想要打造一种有趣、多样和包容的环境，每个人都可以在这个环境中畅玩游戏。 “想要真正产生持久的影响需要文化的转变，这不是一日之功就能实现的。 然而，我们的团队每天都在致力于让自己变得更好，在我们的决策过程中互相学习，思考世界各地的游戏玩家之间的需求、能力和兴趣的多样性。” （来自 Phil Spencer 的[博客文章](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone/)）
 
-我们希望你能够加入这个旅程，与我们一道将[适合所有用户的游戏](https://news.microsoft.com/gamingforeveryone)变为现实。 
+我们希望你能够加入这个旅程，与我们一道将[适合所有用户的游戏](https://news.microsoft.com/gamingforeveryone/)变为现实。 
 
 ##  <a name="why-make-games-accessible"></a>为什么使游戏成为辅助游戏？
 
@@ -69,7 +69,7 @@ ms.locfileid: "66369177"
 
 ## <a name="defining-disability"></a>定义残障
 
-残障定义为“个体的需求与所提供的服务、产品或环境之间的不匹配”。 ([非独占视频](https://www.microsoft.com/design/inclusive)，Microsoft.com。)这意味着，任何人都可能会遇到为残疾人士，和它可以是短期或态势条件。 想象一下具有这些状况的玩家在玩游戏时可能遇到的挑战，并思考如何针对它们更好地设计你的游戏。 下面是需要考虑的某些残障：
+残障定义为“个体的需求与所提供的服务、产品或环境之间的不匹配”。 ([非独占视频](https://www.microsoft.com/design/inclusive/)，Microsoft.com。)这意味着，任何人都可能会遇到为残疾人士，和它可以是短期或态势条件。 想象一下具有这些状况的玩家在玩游戏时可能遇到的挑战，并思考如何针对它们更好地设计你的游戏。 下面是需要考虑的某些残障：
 
 ### <a name="vision"></a>视觉
 
@@ -196,7 +196,7 @@ ms.locfileid: "66369177"
 
 游戏设备未连接麦克风的用户仍可以与发言的其他人进行语音对话。 他们可以在聊天窗口中键入文本并将这些消息转换为语音。 它还让听力不是很好的用户能够阅读来自语音聊天用户的转录的文本消息。
 
-对于参与 ID@Xbox 和托管合作伙伴计划的开发人员，文本到语音转换和语音到文本转换功能作为 Xbox Live 服务的[游戏聊天 2 辅助功能](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/using-game-chat-2.md#accessibility)的一部分提供。 有关详细信息，请参阅[游戏聊天 2 概述](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/game-chat-2-overview.md)。
+对于参与 ID@Xbox 和托管合作伙伴计划的开发人员，文本到语音转换和语音到文本转换功能作为 Xbox Live 服务的[游戏聊天 2 辅助功能](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility)的一部分提供。 有关详细信息，请参阅[游戏聊天 2 概述](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/game-chat-2-overview.md)。
 
 ### <a name="sound-feedback"></a>声音反馈
 
@@ -225,7 +225,7 @@ ms.locfileid: "66369177"
 
 ### <a name="photosensitivity-epilepsy-testing"></a>光敏性癫痫测试
 
-光敏性癫痫 (PSE) 是一种由视觉刺激（包括暴露在闪光灯或特定的移动视觉形式和模式下）触发病情发作的病症。 大约 3% 的人会出现此病症，并且在儿童和青少年中更常见。 在数字方面，我们看到大约[每 4000 个用户中有 1 个年龄段为 5-24](https://www.epilepsy.com/information/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-3)。
+光敏性癫痫 (PSE) 是一种由视觉刺激（包括暴露在闪光灯或特定的移动视觉形式和模式下）触发病情发作的病症。 大约 3% 的人会出现此病症，并且在儿童和青少年中更常见。 在数字方面，我们看到大约[每 4000 个用户中有 1 个年龄段为 5-24](https://www.epilepsy.com/learn/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-0)。
 
 在玩视频游戏时，有许多因素可能会导致光敏反映，包括游戏的持续时间、闪光的频率、光的强度、背景和光的对比度、屏幕和玩家之间的距离以及光的波长。
 
@@ -253,7 +253,7 @@ ms.locfileid: "66369177"
 
 ### <a name="game-accessibility-guidelines"></a>游戏辅助功能指南
 * [游戏的辅助功能准则](https://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation 指南](https://www.includification.com/)
+* [AbleGamers Foundation 指南](https://accessible.games/accessible-player-experiences/)
 * [设计普遍可访问 (UA) 游戏](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
 ### <a name="custom-input-controllers"></a>自定义输入控制器
@@ -262,14 +262,14 @@ ms.locfileid: "66369177"
 
 ## <a name="references-used"></a>使用的参考
 * [游戏的辅助功能准则](https://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation 指南](https://www.includification.com/)
+* [AbleGamers Foundation 指南](https://accessible.games/accessible-player-experiences/)
 * [颜色密件意识，社区感兴趣公司](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
 * [如何执行操作对白字幕格式-Gamasutra 的 Ian Hamilton 的博客文章](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
 * [所有计划的创新](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
 * [病人发病 foundation](https://www.epilepsy.com/)
 
 ## <a name="related-links"></a>相关链接
-* [非独占设计](https://www.microsoft.com/design/inclusive)
+* [非独占设计](https://www.microsoft.com/design/inclusive/)
 * [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/windows/accessible-apps)
 * [开发可访问的 UWP 应用](https://docs.microsoft.com/windows/uwp/accessibility/accessibility)
 * [工程软件的可访问性电子书](https://www.microsoft.com/download/details.aspx?id=19262)

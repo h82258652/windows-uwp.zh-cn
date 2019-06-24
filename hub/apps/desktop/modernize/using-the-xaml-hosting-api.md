@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 545e1e1b220de9edf444ca06c3b21140227e8284
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 16f61c1f950583ee0fef7f30b7e17939df7ea538
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215143"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317756"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用桌面应用程序中托管 API UWP XAML
 
@@ -34,7 +34,7 @@ ms.locfileid: "66215143"
 
 本文介绍如何使用托管 API，而不是由 Windows 社区工具包提供的控件在应用程序中直接 UWP XAML。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 托管 API UWP XAML 具有这些系统必备组件：
 
@@ -71,7 +71,7 @@ ms.locfileid: "66215143"
 
 ### <a name="c-win32"></a>C++ Win32
 
-[C++Win32 示例](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island)。 此示例演示如何承载 UWP 用户控件中未打包的完整实现C++Win32 应用程序 （即，没有内置在 MSIX 包应用程序）。
+[C++Win32 示例](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island)。 此示例演示如何承载 UWP 用户控件中未打包的完整实现C++Win32 应用程序 （即，没有内置在 MSIX 包应用程序）。
 
 ### <a name="wpf-and-windows-forms"></a>WPF 和 Windows 窗体
 
@@ -162,7 +162,7 @@ ms.locfileid: "66215143"
 
 有关演示这些任务的工作示例应用程序上下文中的完整示例，请参阅以下的代码文件：
 
-  * **C++Win32:** 请参阅[XamlBridge.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/XamlBridge.cpp)中的文件[ C++ Win32 示例](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island)。
+  * **C++Win32:** 请参阅[XamlBridge.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/XamlBridge.cpp)中的文件[ C++ Win32 示例](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island)。
 
   * **WPF:** 请参阅[WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs)并[WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) Windows 社区工具包中的文件。  
 
@@ -176,7 +176,7 @@ ms.locfileid: "66215143"
 
 若要正确处理键盘输入的每个 XAML 岛，你的应用程序必须将传递所有 Windows 消息给 UWP XAML 框架，以便可以正确处理特定消息。 若要执行此操作，在你的应用程序可以访问的消息循环中的某处中强制转换**DesktopWindowXamlSource**对象对每个 XAML 岛**IDesktopWindowXamlSourceNative2** COM 接口。 然后，调用**PreTranslateMessage**此接口并传入当前消息的方法。
 
-  * 一个C++Win32 应用程序可以调用**PreTranslateMessage**直接在其主消息循环中。 有关示例，请参阅[SampleApp.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L61)代码文件中的[ C++ Win32 示例](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island)。
+  * 一个C++Win32 应用程序可以调用**PreTranslateMessage**直接在其主消息循环中。 有关示例，请参阅[SampleApp.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L61)代码文件中的[ C++ Win32 示例](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island)。
 
   * WPF 应用程序可以调用**PreTranslateMessage**的事件处理程序从[ **ComponentDispatcher.ThreadFilterMessage** ](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage?view=netframework-4.7.2)事件。 有关示例，请参阅[WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) Windows 社区工具包中的文件。
 
@@ -202,7 +202,7 @@ ms.locfileid: "66215143"
 
 当用户更改父 UI 元素的大小时，你将需要处理任何必要的布局更改，以确保按预期显示在 UWP 控件。 以下是一些要考虑的重要方案。
 
-* 在C++Win32 应用程序，当你的应用程序处理的 WM_SIZE 消息，它可以通过使用重新定位承载的 XAML 岛[SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos)函数。 有关示例，请参阅[SampleApp.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L191)代码文件中的[ C++ Win32 示例](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island)。
+* 在C++Win32 应用程序，当你的应用程序处理的 WM_SIZE 消息，它可以通过使用重新定位承载的 XAML 岛[SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos)函数。 有关示例，请参阅[SampleApp.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L191)代码文件中的[ C++ Win32 示例](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island)。
 
 * 当父 UI 元素需要获得适合所需的矩形区域的大小**Windows.UI.Xaml.UIElement**承载上的**DesktopWindowXamlSource**，调用[**度量值**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure)方法**Windows.UI.Xaml.UIElement**。 例如：
 
@@ -245,11 +245,11 @@ ms.locfileid: "66215143"
 2. 调用[ **GetXamlType** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider.getxamltype)根元数据提供程序时分配 UWP XAML 控件的类型名称的方法 （这可能在代码中在运行时分配，或您可以选择启用此选项以将分配的 Visual Studio 属性窗口中）。
 
     有关示例，请参阅以下的代码文件：
-      * **C++Win32:** 请参阅[XamlApplication.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/Microsoft.UI.Xaml.Markup/XamlApplication.cpp)代码文件中的[ C++ Win32 示例](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island)。
+      * **C++Win32:** 请参阅[XamlApplication.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/Microsoft.UI.Xaml.Markup/XamlApplication.cpp)代码文件中的[ C++ Win32 示例](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island)。
 
       * **WPF 和 Windows 窗体**:请参阅[XamlApplication.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/XamlApplication.cs)并[UWPTypeFactory.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/UWPTypeFactory.cs)代码在 Windows 社区工具包中的文件。 这些文件是共享的实现的一部分**WindowsXamlHost** WPF 和 Windows 窗体，可帮助演示了如何使用托管在这些类型的应用程序中的 API UWP XAML 类。
 
-3. 将自定义的 UWP XAML 控件的源代码集成到主机应用程序解决方案生成自定义控件，然后在你的应用程序中使用它。 对于 WPF 或 Windows 窗体应用程序的说明，请参阅[这些说明](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost#add-a-custom-uwp-control)。 例如对于C++Win32 应用程序，请参阅[Microsoft.UI.Xaml.Markup](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island/Microsoft.UI.Xaml.Markup)并[MyApp](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island/MyApp)中的项目[ C++ Win32 示例](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island)。
+3. 将自定义的 UWP XAML 控件的源代码集成到主机应用程序解决方案生成自定义控件，然后在你的应用程序中使用它。 对于 WPF 或 Windows 窗体应用程序的说明，请参阅[这些说明](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost#add-a-custom-uwp-control)。 例如对于C++Win32 应用程序，请参阅[Microsoft.UI.Xaml.Markup](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island/Microsoft.UI.Xaml.Markup)并[MyApp](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island/MyApp)中的项目[ C++ Win32 示例](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island)。
 
 ## <a name="troubleshooting"></a>疑难解答
 
@@ -274,4 +274,4 @@ ms.locfileid: "66215143"
 ## <a name="related-topics"></a>相关主题
 
 * [桌面应用程序中的 UWP 控件](xaml-islands.md)
-* [C++Win32 XAML 群岛示例](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island)
+* [C++Win32 XAML 群岛示例](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island)

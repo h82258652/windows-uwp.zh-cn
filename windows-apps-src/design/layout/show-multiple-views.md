@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 097ff0bb9e2ac8d36780a692172afb0a7933fdd1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 275dc6ab7cdb310dff817a3e0017568ad2fed80c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66364965"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317126"
 ---
 # <a name="show-multiple-views-for-an-app"></a>显示应用的多个视图
 
@@ -83,7 +83,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 3.  在新线程上，填充窗口。
 
-    使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 方法在新视图的 UI 线程上安排工作。 使用 [lambda 表达式](https://go.microsoft.com/fwlink/p/?LinkId=389615)将函数作为参数传递到 **RunAsync** 方法。 你在 lambda 函数中执行的工作将在新视图的线程上进行。
+    使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 方法在新视图的 UI 线程上安排工作。 使用 [lambda 表达式](https://go.microsoft.com/fwlink/p/?LinkId=389615)将函数作为参数传递到 **RunAsync** 方法。 你在 lambda 函数中执行的工作将在新视图的线程上进行。
 
     在 XAML中，通常向 [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) 的 [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content) 属性添加 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)，然后将 **Frame** 导航到你已为其定义应用内容的 XAML [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)。 有关详细信息，请参阅[两个页面之间的对等导航](../basics/navigate-between-two-pages.md)
 
@@ -125,7 +125,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 其他视图都是辅助视图，包括你通过调用应用代码中的 [**CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview) 创建的所有视图。 主视图和辅助视图均存储于 [**CoreApplication.Views**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.views) 集合中。 通常情况下，创建辅助视图以响应用户操作。 在某些情况中，系统会为你的应用创建辅助视图。
 
 > [!NOTE]
-> 你可以使用 Windows *分配的访问权限*功能在[展台模式](https://technet.microsoft.com/library/mt219050.aspx)中运行应用。 执行此操作时，系统会创建一个辅助视图以显示锁屏界面上方的应用 UI。 不允许使用应用创建的辅助视图，因此如果你尝试在展台模式下显示自己的辅助视图，将引发异常。
+> 你可以使用 Windows *分配的访问权限*功能在[展台模式](https://docs.microsoft.com/windows/manage/set-up-a-device-for-anyone-to-use)中运行应用。 执行此操作时，系统会创建一个辅助视图以显示锁屏界面上方的应用 UI。 不允许使用应用创建的辅助视图，因此如果你尝试在展台模式下显示自己的辅助视图，将引发异常。
 
 ## <a name="switch-from-one-view-to-another"></a>从一个视图切换到另一个视图
 

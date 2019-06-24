@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e9db0960070c77485fbe8b2f3231f7ce8035b5c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2b77fb147ab614b19993700d5d99572f0247d54e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361484"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318272"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 处理媒体帧
 
@@ -93,7 +93,7 @@ ms.locfileid: "66361484"
 ## <a name="set-the-preferred-format-for-the-frame-source"></a>为帧源设置首选格式
 若要为帧源设置首选格式，需要获取表示源的 [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource) 对象。 通过访问已初始化的 **MediaCapture** 对象的 [**Frames**](https://docs.microsoft.com/previous-versions/windows/apps/phone/jj207578(v=win.10)) 字典，并指定希望使用的帧源的标识符，获取此对象。 这就是我们在选择帧源组时保存 [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 对象的原因。
 
-[  **MediaFrameSource.SupportedFormats**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats) 属性包含 [**MediaFrameFormat**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameFormat) 对象列表，此类对象用于描述帧源的受支持格式。 使用 **Where** Linq 扩展方法以根据所需属性选择某种格式。 在本例中，选择了宽度为 1080 像素并且可以提供 32 位 RGB 格式的帧格式。 **FirstOrDefault** 扩展方法选择列表中的第一个条目。 如果所选格式为 null，则请求的格式不受帧源支持。 如果该格式受支持，可以请求源通过调用 [**SetFormatAsync**](https://developer.microsoft.com/windows/apps/develop) 来使用此格式。
+[  **MediaFrameSource.SupportedFormats**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats) 属性包含 [**MediaFrameFormat**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameFormat) 对象列表，此类对象用于描述帧源的受支持格式。 使用 **Where** Linq 扩展方法以根据所需属性选择某种格式。 在本例中，选择了宽度为 1080 像素并且可以提供 32 位 RGB 格式的帧格式。 **FirstOrDefault** 扩展方法选择列表中的第一个条目。 如果所选格式为 null，则请求的格式不受帧源支持。 如果该格式受支持，可以请求源通过调用 [**SetFormatAsync**](https://docs.microsoft.com/windows/uwp/develop/) 来使用此格式。
 
 [!code-cs[GetPreferredFormat](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetPreferredFormat)]
 
@@ -127,11 +127,11 @@ ms.locfileid: "66361484"
 
 此时可以实现 **FrameArrived** 事件处理程序。 调用处理程序时，*sender* 参数包含对引发该事件的 **MediaFrameReader** 对象的引用。 调用此对象上的 [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe) 以尝试获取最新帧。 如名称所示，**TryAcquireLatestFrame** 可能不会成功返回帧。 因此，当依次访问 VideoMediaFrame 和 SoftwareBitmap 属性时，请确保测试它们是否为 null。 在本示例中，null 条件运算符 用于访问 **SoftwareBitmap**，然后检查检索的对象是否为 null。
 
-**Image** 控件仅可以显示格式为 BRGA8 并且已经预乘或者没有 alpha 的图像。 如果到达的帧不是这种格式，则使用静态方法 [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows) 将软件位图转换为正确的格式。
+**Image** 控件仅可以显示格式为 BRGA8 并且已经预乘或者没有 alpha 的图像。 如果到达的帧不是这种格式，则使用静态方法 [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.convert) 将软件位图转换为正确的格式。
 
 接下来，使用 [**Interlocked.Exchange**](https://docs.microsoft.com/dotnet/api/system.threading.interlocked.exchange?redirectedfrom=MSDN#System_Threading_Interlocked_Exchange__1___0____0_) 方法来将到达位图的引用交换为后台缓冲区位图。 此方法在线程安全的原子操作中交换这些引用。 交换后，以前的后台缓冲区图像现在位于 *softwareBitmap* 变量中，释放该图像可以清理资源。
 
-接下来，使用与 **Image** 元素关联的 [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 通过调用 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 创建在 UI 线程上运行的任务。 由于异步任务将在任务中执行，因此传递到 **RunAsync** 的 lambda 表达式使用 *async* 关键字声明。
+接下来，使用与 **Image** 元素关联的 [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 通过调用 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 创建在 UI 线程上运行的任务。 由于异步任务将在任务中执行，因此传递到 **RunAsync** 的 lambda 表达式使用 *async* 关键字声明。
 
 在任务中，查看 *_taskRunning* 变量以确保一次只运行任务的一个实例。 如果尚未运行该任务，将 *_taskRunning* 设置为 true，以防止任务再次运行。 在 *while* 循环中，调用 **Interlocked.Exchange** 以将后台缓冲区的内容复制到临时 **SoftwareBitmap**，直到后台缓冲区图像为 null。 每次在填充临时位图时，**Image** 的 **Source** 属性转换为 **SoftwareBitmapSource**，然后调用 [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) 以设置图像源。
 

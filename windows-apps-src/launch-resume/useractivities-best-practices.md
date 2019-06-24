@@ -5,12 +5,12 @@ keywords: 用户活动, 时间线, cortana 从你离开的位置继续, cortana 
 ms.date: 08/23/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e98f5d73cf2d1afb26a823ed417c8980d118485c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9b2ad2e68c21167df7b0210a04b62e161fd264ab
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589902"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318709"
 ---
 # <a name="user-activities-best-practices"></a>用户活动的最佳做法
 
@@ -46,7 +46,7 @@ ms.locfileid: "57589902"
 用户活动的三个组件组成： 激活 URI、 可视化数据和内容元数据。
 * 激活 URI 是一个 URI，可以传递给应用程序或体验以便恢复应用程序使用特定的上下文。 通常情况下，这些链接将带窗体的协议处理程序的方案 (例如，"我的 app://page2?action=edit")。 它是由开发人员确定自己的应用程序将如何处理 URI 参数。 请参阅[处理 URI 激活](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)有关详细信息。
 * 可视化数据，包含一组必需和可选属性 (例如： 标题、 说明或自适应卡元素)，允许用户直观地识别活动。 有关如何为您的活动创建自适应卡片视觉对象的指南，请参阅下文。
-* 内容的元数据是可用于分组并检索在特定上下文下的活动的 JSON 数据。 这通常情况下，采用的形式 http://schema.org数据。 有关填充此数据的指导原则，请参阅下文。
+* 内容的元数据是可用于分组并检索在特定上下文下的活动的 JSON 数据。 这通常情况下，采用的形式 http://schema.org 数据。 有关填充此数据的指导原则，请参阅下文。
 
 ### <a name="adaptive-card-design-guidelines"></a>自适应卡设计指南
 
@@ -104,4 +104,4 @@ ms.locfileid: "57589902"
 * [自适应卡可视化工具示例](https://adaptivecards.io/)
 * [处理 URI 激活](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [使用 Microsoft Graph、 活动源，和自适应卡任何平台上的客户参与](https://channel9.msdn.com/Events/Connect/2017/B111)
-* [Microsoft Graph](https://developer.microsoft.com/graph/)
+* [Microsoft Graph](https://developer.microsoft.com/graph)

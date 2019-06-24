@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: cb21573dac0c4cc4fc2d6aa2e2345c56631fde87
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 61525e2a4a088e37184bb93526722e0bf23fbd56
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372765"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319811"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -140,7 +140,7 @@ steps:
 
 ## <a name="related-topics"></a>相关主题
 
-- [为 Windows 构建.NET 应用程序](https://www.visualstudio.com/docs/build/get-started/dot-net)
+- [为 Windows 构建.NET 应用程序](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
 - [打包 UWP 应用](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
-- [在 Windows 10 中的旁加载 LOB 应用](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
+- [在 Windows 10 中的旁加载 LOB 应用](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
 - [创建进行包签名证书](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)

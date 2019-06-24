@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 63656fc545596fc045dc536167313c0c8e3f6ad2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 57532c45bdf6c2b8feb2af1277be74a0f8b2c759
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371163"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320299"
 ---
 # <a name="property-path-syntax"></a>Property-path 语法
 
@@ -58,7 +58,7 @@ ms.locfileid: "66371163"
 
 ### <a name="attached-properties"></a>附加的属性
 
-属性路径可以包括对附加属性的引用。 因为附加属性的识别名称中已包括点，所以你必须将任何附加属性名称括在括号内，以便不会将点视为对象-属性的分隔符。 例如，用于指定你希望使用 [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v%3Dvs.95)) 作为绑定路径的字符串为“(Canvas.ZIndex)”。 有关附加属性的详细信息，请参阅[附加属性概述](attached-properties-overview.md)。
+属性路径可以包括对附加属性的引用。 因为附加属性的识别名称中已包括点，所以你必须将任何附加属性名称括在括号内，以便不会将点视为对象-属性的分隔符。 例如，用于指定你希望使用 [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) 作为绑定路径的字符串为“(Canvas.ZIndex)”。 有关附加属性的详细信息，请参阅[附加属性概述](attached-properties-overview.md)。
 
 ### <a name="combining-property-path-syntax"></a>合并属性路径语法
 
@@ -70,7 +70,7 @@ ms.locfileid: "66371163"
 
 ## <a name="property-path-for-animation-targeting"></a>动画目标的属性路径
 
-动画依赖于选择在动画运行时便应用情节提要值的依赖属性作为目标。 为了标识存在待进行动画处理的属性的对象，动画按名称（[x:Name 属性](x-name-attribute.md)）选择元素作为目标。 通常需要定义以标识为 [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8) 的对象开始、以应该应用动画的特殊依赖属性值结束的属性路径。 属性路径用作 [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95)) 的值。
+动画依赖于选择在动画运行时便应用情节提要值的依赖属性作为目标。 为了标识存在待进行动画处理的属性的对象，动画按名称（[x:Name 属性](x-name-attribute.md)）选择元素作为目标。 通常需要定义以标识为 [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8) 的对象开始、以应该应用动画的特殊依赖属性值结束的属性路径。 属性路径用作 [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)) 的值。
 
 有关如何在 XAML 中定义动画的详细信息，请参阅[情节提要动画](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)。
 
@@ -107,7 +107,7 @@ ms.locfileid: "66371163"
 
 大多数情况下，你可以在 XAML 中应用 [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)，而根本不使用任何代码。 但在某些情况下，你可能希望使用代码定义一个 **PropertyPath** 对象并在运行时将其分配给某个属性。
 
-[**PropertyPath** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)已[ **PropertyPath(String)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.)构造函数，并且没有默认构造函数。 你传递给此构造函数的字符串是一个使用我们前面介绍的属性路径语法定义的字符串。 这也是你用于将 [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) 分配为 XAML 属性的同一字符串。 **PropertyPath** 类的另一个（也是唯一一个）API 是 [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path) 属性，该属性是只读的。 你可以将此属性用作另一个 **PropertyPath** 实例的构造字符串。
+[**PropertyPath** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)已[ **PropertyPath(String)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.-ctor)构造函数，并且没有默认构造函数。 你传递给此构造函数的字符串是一个使用我们前面介绍的属性路径语法定义的字符串。 这也是你用于将 [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) 分配为 XAML 属性的同一字符串。 **PropertyPath** 类的另一个（也是唯一一个）API 是 [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path) 属性，该属性是只读的。 你可以将此属性用作另一个 **PropertyPath** 实例的构造字符串。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -116,6 +116,6 @@ ms.locfileid: "66371163"
 * [{Binding} 标记扩展](binding-markup-extension.md)
 * [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)
 * [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)
-* [**绑定构造函数**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.)
+* [**绑定构造函数**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.-ctor)
 * [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext)
 

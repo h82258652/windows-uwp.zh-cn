@@ -5,19 +5,19 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox Live 分析
 ms.localizationpriority: medium
-ms.openlocfilehash: dd10fadea415bd769061e198fcf29f8edf0f3124
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 5ab41001f7331defc6d37b0561e2844392ccca3c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162664"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321853"
 ---
 # <a name="get-xbox-live-analytics-data"></a>获取 Xbox Live 分析数据
 
-在 Microsoft Store 分析 API 中使用此方法来获取玩你的[支持 Xbox Live 的游戏](https://docs.microsoft.com/gaming/xbox-live//index.md)的客户的前 30 天常规分析数据，包括设备附件使用情况、Internet 连接类型、玩家分数分布、游戏统计数据，以及好友和关注者数据。 此信息也位于[Xbox 的分析报告](../publish/xbox-analytics-report.md)在合作伙伴中心。
+在 Microsoft Store 分析 API 中使用此方法来获取玩你的[支持 Xbox Live 的游戏](https://docs.microsoft.com/gaming/xbox-live/index.md)的客户的前 30 天常规分析数据，包括设备附件使用情况、Internet 连接类型、玩家分数分布、游戏统计数据，以及好友和关注者数据。 此信息也位于[Xbox 的分析报告](../publish/xbox-analytics-report.md)在合作伙伴中心。
 
 > [!IMPORTANT]
-> 该方法只支持 Xbox 游戏或使用 Xbox Live 服务的游戏。 这些游戏必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括 [Microsoft 合作伙伴](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners)发布的游戏以及通过 [ID@Xbox 计划](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id)提交的游戏。 该方法当前不支持通过 [Xbox Live 创意者计划](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏。
+> 该方法只支持 Xbox 游戏或使用 Xbox Live 服务的游戏。 这些游戏必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括 [Microsoft 合作伙伴](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#microsoft-partners)发布的游戏以及通过 [ID@Xbox 计划](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#id)提交的游戏。 该方法当前不支持通过 [Xbox Live 创意者计划](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏。
 
 针对支持 Xbox Live 的游戏的额外分析数据通过以下方法提供：
 * [获取 Xbox Live 成就数据](get-xbox-live-achievements-data.md)
@@ -27,7 +27,7 @@ ms.locfileid: "58162664"
 * [获取 Xbox Live 多玩家数据](get-xbox-live-multiplayer-data.md)
 * [获取 Xbox Live 并发使用情况数据](get-xbox-live-concurrent-usage-data.md)
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -72,7 +72,7 @@ Authorization: Bearer <your access token>
 
 此方法返回一个包含以下对象的 *Value* 数组。
 
-| 对象      | 描述                  |
+| Object      | 描述                  |
 |-------------|---------------------------------------------------|
 | ProductData   |   包含一个 [DeviceProperties](#deviceproperties) 对象以及一个 [UserProperties](#userproperties) 对象，它们包含过去 30 天内您的游戏的设备和用户分析数据。    |  
 | XboxwideData   |  包含一个 [DeviceProperties](#deviceproperties) 对象以及一个 [UserProperties](#userproperties) 对象，它们包含过去 30 天内所有 Xbox Live 客户的平均设备和用户分析数据（百分比形式）。 包含此数据是为了对您的游戏数据进行比较。   |                                           
@@ -82,10 +82,10 @@ Authorization: Bearer <your access token>
 
 此资源包含过去 30 天内您的游戏的设备使用情况数据或所有 Xbox Live 客户的平均设备使用情况数据。
 
-| ReplTest1           | 在任务栏的搜索框中键入    | 描述        |
+| 值           | 在任务栏的搜索框中键入    | 描述        |
 |-----------------|---------|------|
 |  applicationId               |    string     |  检索其分析数据的游戏的 [Store ID](in-app-purchases-and-trials.md#store-ids)。   |
-|  connectionTypeDistribution               |    数组     |   包含指示 Xbox 有多少客户使用有线 Internet 连接，多少客户使用无线 Internet 连接的对象。 每个对象都有两个字符串字段： <ul><li>**conType**:指定连接类型。</li><li>**deviceCount**:在中**ProductData**对象，此字段指定使用的连接类型的游戏的客户数。 在 **XboxwideData** 对象中，此字段指定使用该连接类型的所有 Xbox Live 客户的百分比。</li></ul>   |     
+|  connectionTypeDistribution               |    array     |   包含指示 Xbox 有多少客户使用有线 Internet 连接，多少客户使用无线 Internet 连接的对象。 每个对象都有两个字符串字段： <ul><li>**conType**:指定连接类型。</li><li>**deviceCount**:在中**ProductData**对象，此字段指定使用的连接类型的游戏的客户数。 在 **XboxwideData** 对象中，此字段指定使用该连接类型的所有 Xbox Live 客户的百分比。</li></ul>   |     
 |  deviceCount               |   string      |  在 **ProductData** 对象中，此字段指定过去 30 天内用于玩你的游戏的客户设备的数量。 在 **XboxwideData** 对象中，此字段将为始终为 1，指示所有 Xbox Live 客户的数据的起始百分比为 100%。   |     
 |  eliteControllerPresentDeviceCount               |   string      |  在 **ProductData** 对象中，此字段指定使用 Xbox Elite 无线控制器的游戏客户的数量。 在 **XboxwideData** 对象中，此字段指定使用 Xbox Elite 无线控制器的所有 Xbox Live 客户的百分比。  |     
 |  externalDrivePresentDeviceCount               |   string      |  在 **ProductData** 对象中，此字段指定在 Xbox 上使用外部硬盘驱动器的游戏客户的数量。 在 **XboxwideData** 对象中，此字段指定在 Xbox 上使用外部硬盘驱动器的所有 Xbox Live 客户的百分比。  |
@@ -99,13 +99,13 @@ Authorization: Bearer <your access token>
 |-----------------|---------|------|
 |  applicationId               |    string     |   检索其分析数据的游戏的 [Store ID](in-app-purchases-and-trials.md#store-ids)。  |
 |  UserCount               |    string     |   在 **ProductData** 对象中，此字段指定过去 30 天内玩你的游戏的客户的数量。 在 **XboxwideData** 对象中，此字段将为始终为 1，指示所有 Xbox Live 客户的数据的起始百分比为 100%。   |     
-|  dvrUsageCounts               |   数组      |  包含表明多少客户使用了游戏 DVR 来录制和查看游戏的对象。 每个对象都有两个字符串字段： <ul><li>**dvrName**:指定游戏 DVR 功能使用。 可能的值为 **gameClipUploads**、**gameClipViews**、**screenshotUploads** 和 **screenshotViews**。</li><li>**userCount**:在中**ProductData**对象，此字段指定使用指定的游戏 DVR 功能的游戏的客户数。 在 **XboxwideData** 对象中，此字段指定使用指定游戏 DVR 功能的所有 Xbox Live 客户的百分比。</li></ul>   |     
-|  followerCountPercentiles               |   数组      |  包含提供有关客户关注者数的详细信息的对象。 每个对象都有两个字符串字段： <ul><li>**百分比**:目前，此值始终为 50，指示作为中的值提供的跟踪块数据。</li><li>**值**:在中**ProductData**对象，此字段指定为您的游戏客户的关注者数中值。 在 **XboxwideData** 对象中，此字段指定所有 Xbox Live 客户的关注者的中值数量。</li></ul>  |   
-|  friendCountPercentiles               |   数组      |  包含提供有关客户好友数的详细信息。 每个对象都有两个字符串字段： <ul><li>**百分比**:目前，此值始终为 50，指示作为中的值提供的友元数据。</li><li>**值**:在中**ProductData**对象，此字段指定为您的游戏客户好友数中值。 在 **XboxwideData** 对象中，此字段指定所有 Xbox Live 客户的好友的中值数量。</li></ul>  |     
-|  gamerScoreRangeDistribution               |   数组      |  包含提供有关客户玩家分数分布情况的详细信息。 每个对象都有两个字符串字段： <ul><li>**scoreRange**:所有范围以下字段为其提供使用情况数据。 例如 **10K-25K**。</li><li>**userCount**:在中**ProductData**对象，此字段指定的已播放的所有游戏的指定范围中具有所有游戏的客户数。 在 **XboxwideData** 对象中，此字段指定所有 Xbox Live 客户在其玩过的所有游戏中其玩家分数属于指定范围的客户的百分比。</li></ul>  |
-|  titleGamerScoreRangeDistribution               |   数组      |  包含提供有关游戏玩家分数分布情况的详细信息的对象。 每个对象都有两个字符串字段： <ul><li>**scoreRange**:所有范围以下字段为其提供使用情况数据。 例如 **100-200**。</li><li>**userCount**:在中**ProductData**对象，此字段指定的具有所有指定的范围为您的游戏中的游戏的客户数。 在 **XboxwideData** 对象中，此字段指定所有 Xbox Live 客户在你的游戏中其玩家分数属于指定范围的客户的百分比。</li></ul>   |
-|  socialUsageCounts               |   数组      |  包含提供有关客户社交使用情况的详细信息的对象。 每个对象都有两个字符串字段： <ul><li>**scName**:社交使用情况的类型。 例如 **gameInvites**和**textMessages**。</li><li>**userCount**:在中**ProductData**对象，此字段指定参加了您的游戏客户数在指定的社交用法类型。 在 **XboxwideData** 对象中，此字段指定所有参与指定社交使用情况类型的 Xbox Live 客户的百分比。</li></ul>   |
-|  streamingUsageCounts               |   数组      |  包含提供有关客户流式处理使用情况的详细信息。 每个对象都有两个字符串字段： <ul><li>**stName**:流式处理平台的类型。 例如，**youtubeUsage**、**twitchUsage** 和 **mixerUsage**。</li><li>**userCount**:在中**ProductData**对象，此字段指定的已使用指定的流式处理平台的游戏的客户数。 在 **XboxwideData** 对象中，此字段指定使用指定流式处理平台的所有 Xbox Live 客户的百分比。</li></ul>  |
+|  dvrUsageCounts               |   array      |  包含表明多少客户使用了游戏 DVR 来录制和查看游戏的对象。 每个对象都有两个字符串字段： <ul><li>**dvrName**:指定游戏 DVR 功能使用。 可能的值为 **gameClipUploads**、**gameClipViews**、**screenshotUploads** 和 **screenshotViews**。</li><li>**userCount**:在中**ProductData**对象，此字段指定使用指定的游戏 DVR 功能的游戏的客户数。 在 **XboxwideData** 对象中，此字段指定使用指定游戏 DVR 功能的所有 Xbox Live 客户的百分比。</li></ul>   |     
+|  followerCountPercentiles               |   array      |  包含提供有关客户关注者数的详细信息的对象。 每个对象都有两个字符串字段： <ul><li>**百分比**:目前，此值始终为 50，指示作为中的值提供的跟踪块数据。</li><li>**值**:在中**ProductData**对象，此字段指定为您的游戏客户的关注者数中值。 在 **XboxwideData** 对象中，此字段指定所有 Xbox Live 客户的关注者的中值数量。</li></ul>  |   
+|  friendCountPercentiles               |   array      |  包含提供有关客户好友数的详细信息。 每个对象都有两个字符串字段： <ul><li>**百分比**:目前，此值始终为 50，指示作为中的值提供的友元数据。</li><li>**值**:在中**ProductData**对象，此字段指定为您的游戏客户好友数中值。 在 **XboxwideData** 对象中，此字段指定所有 Xbox Live 客户的好友的中值数量。</li></ul>  |     
+|  gamerScoreRangeDistribution               |   array      |  包含提供有关客户玩家分数分布情况的详细信息。 每个对象都有两个字符串字段： <ul><li>**scoreRange**:所有范围以下字段为其提供使用情况数据。 例如 **10K-25K**。</li><li>**userCount**:在中**ProductData**对象，此字段指定的已播放的所有游戏的指定范围中具有所有游戏的客户数。 在 **XboxwideData** 对象中，此字段指定所有 Xbox Live 客户在其玩过的所有游戏中其玩家分数属于指定范围的客户的百分比。</li></ul>  |
+|  titleGamerScoreRangeDistribution               |   array      |  包含提供有关游戏玩家分数分布情况的详细信息的对象。 每个对象都有两个字符串字段： <ul><li>**scoreRange**:所有范围以下字段为其提供使用情况数据。 例如 **100-200**。</li><li>**userCount**:在中**ProductData**对象，此字段指定的具有所有指定的范围为您的游戏中的游戏的客户数。 在 **XboxwideData** 对象中，此字段指定所有 Xbox Live 客户在你的游戏中其玩家分数属于指定范围的客户的百分比。</li></ul>   |
+|  socialUsageCounts               |   array      |  包含提供有关客户社交使用情况的详细信息的对象。 每个对象都有两个字符串字段： <ul><li>**scName**:社交使用情况的类型。 例如 **gameInvites**和**textMessages**。</li><li>**userCount**:在中**ProductData**对象，此字段指定参加了您的游戏客户数在指定的社交用法类型。 在 **XboxwideData** 对象中，此字段指定所有参与指定社交使用情况类型的 Xbox Live 客户的百分比。</li></ul>   |
+|  streamingUsageCounts               |   array      |  包含提供有关客户流式处理使用情况的详细信息。 每个对象都有两个字符串字段： <ul><li>**stName**:流式处理平台的类型。 例如，**youtubeUsage**、**twitchUsage** 和 **mixerUsage**。</li><li>**userCount**:在中**ProductData**对象，此字段指定的已使用指定的流式处理平台的游戏的客户数。 在 **XboxwideData** 对象中，此字段指定使用指定流式处理平台的所有 Xbox Live 客户的百分比。</li></ul>  |
 
 
 ### <a name="response-example"></a>响应示例

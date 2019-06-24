@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c61f6580039b9fe3da915491acd84c939088370
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bf9cc4f97cdfcb02eb725b81163f215b22b259e4
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361389"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318058"
 ---
 # <a name="visual-layer"></a>可视化层
 
@@ -71,7 +71,7 @@ Windows UWP 应用已在通过 UI 框架之一使用可视化层。 还可以非
 ## <a name="additional-resources"></a>其他资源
 
 * [**API 的完整的参考文档**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
-* [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) 中的高级 UI 和复合示例
+* [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples) 中的高级 UI 和复合示例
 * [Windows.UI.Composition 示例库](https://aka.ms/winuiapp)
 * [@windowsui Twitter 订阅源 ](https://twitter.com/windowsui)
 * 阅读有关此 API Kenny Kerr 的 MSDN 文章：[图形和动画-Windows 组合支持 10 倍缩放](https://msdn.microsoft.com/magazine/mt590968)

@@ -6,12 +6,12 @@ ms.date: 01/3/2019
 ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 2561f18e2ac054c8b378b0c7c0a9689bebcc4140
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3b25283dbe8feff74ba994efba31c542f59171d9
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611252"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317880"
 ---
 # <a name="device-portal-for-hololens"></a>适用于 HoloLens 的 Device Portal
 
@@ -21,12 +21,12 @@ ms.locfileid: "57611252"
 ### <a name="enable-device-portal"></a>启用 Device Portal
 
 1. 打开 HoloLens 的电源，然后戴上设备。
-2. 执行[绽放](https://dev.windows.com/holographic/Gestures.html#Bloom)手势来启动主菜单。
-3. 凝视“设置”磁贴，然后执行[空中点击](https://dev.windows.com/holographic/Gestures.html#Press_and_release)手势。 执行第二个空中点击，以便将该应用放入你的环境中。 在放置“设置”应用后，将启动该应用。
-4. 选择“更新”菜单项。
-5. 选择“面向开发人员”菜单项。
-6. 启用“开发人员模式”。
-7. [向下滚动](https://dev.windows.com/holographic/Gestures.html#Navigation)，然后启用 Device Portal。
+2. 执行[绽放](https://developer.microsoft.com/mixed-reality#Bloom)手势来启动主菜单。
+3. 凝视“设置”  磁贴，然后执行[空中点击](https://developer.microsoft.com/mixed-reality#Press_and_release)手势。 执行第二个空中点击，以便将该应用放入你的环境中。 在放置“设置”应用后，将启动该应用。
+4. 选择“更新”  菜单项。
+5. 选择“面向开发人员”  菜单项。
+6. 启用“开发人员模式”  。
+7. [向下滚动](https://developer.microsoft.com/mixed-reality#Navigation)，然后启用 Device Portal。
 
 
 ### <a name="pair-your-device"></a>配对设备
@@ -51,7 +51,7 @@ ms.locfileid: "57611252"
 #### <a name="connect-to-an-emulator"></a>连接到仿真器 
 
 也可以将 Device Portal 与仿真器结合使用。 若要连接到 Device Portal，请使用工具栏。 单击此图标：
-- 打开设备门户：为 HoloLens 操作系统在模拟器中打开 Windows Device Portal。
+- 打开设备门户：在仿真器中打开 HoloLens OS 的 Windows 设备门户。
 
 #### <a name="create-a-username-and-password"></a>创建用户名和密码 
 
@@ -174,7 +174,7 @@ HoloLens 上的“系统性能”工具有 3 个可以记录的附加指标。
 
 单击或点击虚拟键盘下的区域，即可将键击发送到 HoloLens。 在“输入文本”文本框中键入，然后单击或点击“发送”以将键击发送到活动应用。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [Windows Device Portal 概述](device-portal.md)
 * [设备门户核心 API 参考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)（所有 Windows 10 设备通用的 API）

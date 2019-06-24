@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f9dba57d8e75ba105a2154be5add5b101a4a6aa4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369335"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>音乐、图片和视频库中的文件和文件夹
@@ -19,7 +19,7 @@ ms.locfileid: "66369335"
 
 库是虚拟的文件夹集合，其中包括一个默认的已知文件夹，以及用户通过使用你的应用或任一内置应用添加到库的任何其他文件夹。 例如，图片库默认包含“图片”已知文件夹。 用户可以通过使用你的应用或内置的“照片”应用，将文件夹添加到图片库或从中删除它们。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
@@ -28,7 +28,7 @@ ms.locfileid: "66369335"
 
 -   **对位置的访问权限**
 
-    在 Visual Studio 中，在“清单设计器”中打开应用清单文件。 在 **“功能”** 页上，选择你的应用管理的库。
+    在 Visual Studio 中，在“清单设计器”中打开应用清单文件。 在“功能”页上，选择应用管理的库  。
 
     -   **音乐库**
     -   **图片库**
@@ -173,7 +173,7 @@ private async void getSongs()
 
 “本机照片”和“已保存图片”文件夹不支持深入查询。
 
-**捕获它在应用中打开一张照片**
+**在捕获照片的应用中打开该照片**
 
 如果你希望让用户以后在捕获照片的应用中再次打开该照片，则可以通过使用类似于以下示例的代码，与照片的元数据一起保存 **CreatorAppId**。 在此示例中，**testPhoto** 是 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)。
 

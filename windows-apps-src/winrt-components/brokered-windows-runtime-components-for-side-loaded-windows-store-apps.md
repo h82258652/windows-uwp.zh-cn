@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: a9b6c6fc7a7e3ddfab70fe289a41bb4d436e9722
-ms.sourcegitcommit: ea15237291ae3ade0bf22e38bd292c3a23947a03
+ms.openlocfilehash: 24878d3c63de7df9c55f48571984b7d60d1ea240
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377314"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320364"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>适用于旁加载 UWP 应用的中转 Windows 运行时组件
 
@@ -19,7 +19,7 @@ ms.locfileid: "66377314"
 
 ## <a name="introduction"></a>简介
 
->**请注意**  可能会为下载此白皮书附带的示例代码 [Visual Studio 2015 和 2017年](https://aka.ms/brokeredsample)。 Microsoft Visual Studio 模板，以生成中转 Windows 运行时组件可以在此处下载：[面向通用 Windows 应用的 Windows 10 的 visual Studio 2015 模板](https://marketplace.visualstudio.com/vsgallery/10be07b3-67ef-4e02-9243-01b78cd27935)
+>**请注意**  可能会为下载此白皮书附带的示例代码 [Visual Studio 2015 和 2017年](https://aka.ms/brokeredsample)。 Microsoft Visual Studio 模板，以生成中转 Windows 运行时组件可以在此处下载：[面向通用 Windows 应用的 Windows 10 的 visual Studio 2015 模板](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
 Windows 包含名为的新功能 *的 Windows 运行时组件中转旁加载应用程序*。 我们使用术语 IPC（进程间通信）来描述在单个进程（桌面组件）中运行现有桌面软件资源的同时，在 UWP 应用中与此代码交互的能力。 这对于企业开发人员来说是熟悉的模型，因为数据库应用程序以及在 Windows 中使用 NT 服务的应用程序共享相似的多进程体系结构。
 
@@ -590,7 +590,7 @@ struct PersonStruct
 
 ## <a name="resources"></a>资源
 
--   [适用于 Windows 10 和 VS 2015 中转的 WinRT 组件项目模板](https://marketplace.visualstudio.com/vsgallery/10be07b3-67ef-4e02-9243-01b78cd27935)
+-   [适用于 Windows 10 和 VS 2015 中转的 WinRT 组件项目模板](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
 -   [NorthwindRT 中转 WinRT 组件示例](https://go.microsoft.com/fwlink/p/?LinkID=397349)
 

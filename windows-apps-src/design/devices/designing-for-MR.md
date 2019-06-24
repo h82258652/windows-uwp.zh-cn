@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: df81348dee781d1c329562d558ed8df30fd40bc5
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 0e8cee688cbfbda0fe3822017b769560fc0fffe3
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244113"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319386"
 ---
 # <a name="designing-for-mixed-reality"></a>针对混合现实而开发
 
@@ -38,7 +38,7 @@ HoloLens 和 Windows Mixed Reality 头戴显示设备支持在 UWP 平台上运�
 
 沉浸式应用接管对用户显示的整个屏幕，同时将用户置于由应用创建的视图的中心。 例如，沉浸式游戏可将用户置于异形星球的表面上，或者导游应用可将用户置于南美洲的某个村庄。 创建沉浸式应用需要 3D 图形或捕获的立体视频。 沉浸式应用通常是通过使用第三方游戏引擎（如 Unity）或利用 DirectX 来开发的。
 
-如果要创建沉浸式应用，你应访问 [Windows Mixed Reality 开发人员中心](https://developer.microsoft.com/windows/mixed-reality)以了解更多信息。
+如果要创建沉浸式应用，你应访问 [Windows Mixed Reality 开发人员中心](https://developer.microsoft.com/mixed-reality)以了解更多信息。
 
 2D 应用作为传统的平面窗口在用户的视图内运行。 在 HoloLens 上，这表示固定到墙的某个视图或用户自己的真实客厅或办公室空间中的某点。 在 Windows Mixed Reality 头戴显示设备中，该应用已固定到[混合现实家庭版](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home)（有时称为*悬崖小屋*）中的墙上。
 
@@ -82,7 +82,7 @@ HoloLens 和混合现实平台上均支持键盘和鼠标。 你可以通过蓝�
 * [手势](https://developer.microsoft.com/windows/mixed-reality/gestures)（仅限 HoloLens，但仅用于启动 2D 应用）
 * [游戏板支持](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories)（两个环境均适用）
 * [遥控器设备](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories)（仅限 HoloLens）
-* [运动控制器](https://developer.microsoft.com/windows/mixed-reality/motion_controllers)（仅限混合现实设备，如上所示。）
+* [运动控制器](https://docs.microsoft.com/windows/mixed-reality/motion-controllers)（仅限混合现实设备，如上所示。）
 
 这些控制器使得与虚拟对象的交互似乎变得自然和精确。 其中一些交互可免费获取。 例如，HoloLens 选择手势，或单击动作控制器的 Windows 键或触发器将生成您所料，同样，无需编码即可您输入的响应。
 
@@ -98,7 +98,7 @@ HoloLens 和混合现实平台上均支持键盘和鼠标。 你可以通过蓝�
 
 * 当用于运动控制器、游戏板或手势时拖放可能不适用。 如果应用程序很大程度上依赖于拖放操作，你将面要提供支持此操作的替代方法，例如呈现一个用于确认对象是否迁移到新位置的对话。
 
-* 注意声音更改的方式。 如果应用生成声音效果，则声音源将显示在应用在虚拟世界中的固定位置。 随着用户远离应用，声音将减小。 有关更多信息，请参阅[空间音效](https://developer.microsoft.com/windows/mixed-reality/spatial_sound)。
+* 注意声音更改的方式。 如果应用生成声音效果，则声音源将显示在应用在虚拟世界中的固定位置。 随着用户远离应用，声音将减小。 有关更多信息，请参阅[空间音效](https://docs.microsoft.com/windows/mixed-reality/spatial-sound)。
 
 * 考虑视野并提供提示。 并非每个设备都提供与计算机监视器一样大的视野。 有关完整的详细信息，请参阅[全息照相帧](https://developer.microsoft.com/windows/mixed-reality/holographic_frame)。 此外，用户可能距正在运行的应用有一些距离。 也就是说，应用可能显示固定到（真实或虚拟）世界中不同位置处的墙上。 应用可能需要获取用户关注，或始终考虑整个视图不可见。 Toast 通知可用，但获取用户关注的另一种方式可能是发出声音或[语音](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpeechRecognitionAndSynthesis/cs/Scenario_SynthesizeText.xaml.cs)警报。
 
@@ -163,8 +163,8 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 ## <a name="related-articles"></a>相关文章
 
 
-* [从 shell 中使用 API 的应用的当前限制](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
-* [构建 2D 应用](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
+* [从 shell 中使用 Api 应用的当前限制](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
+* [构建 2D 应用程序](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
 * [HoloLens:构建 UWP 2D 适用于 Microsoft HoloLens 应用](https://channel9.msdn.com/Events/Build/2016/B854)
 * [条件 XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 模板
 ms.localizationpriority: medium
-ms.openlocfilehash: 5eb36b66cc067111e2749ebd51a05994a011ba01
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 668a41a69c2b7dab338d251d95e23e801fa85cf6
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367477"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321144"
 ---
 # <a name="directx-game-project-templates"></a>DirectX 游戏项目模板
 
@@ -24,7 +24,7 @@ DirectX 和通用 Windows 平台 (UWP) 模板使你可以快速创建一个项�
 
 要创建该项目，你需要执行以下操作：
 
--   [下载 Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions)。 Visual Studio 2015 具有图形编程，如调试工具的工具。 有关 DirectX 图形和游戏功能及工具的概述，请参阅 [用于 DirectX 游戏开发的 Visual Studio 工具](set-up-visual-studio-for-game-development.md)。
+-   [下载 Microsoft Visual Studio 2015](https://visualstudio.microsoft.com/vs/)。 Visual Studio 2015 具有图形编程，如调试工具的工具。 有关 DirectX 图形和游戏功能及工具的概述，请参阅 [用于 DirectX 游戏开发的 Visual Studio 工具](set-up-visual-studio-for-game-development.md)。
 
 ## <a name="choosing-a-template"></a>选择模板
 

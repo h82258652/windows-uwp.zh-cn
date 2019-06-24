@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d1f139ca4cf134ff8515a4da1134da16c338a4a8
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1cc13470c1f07d1ee420253c8a147ff7a5c3fc40
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371337"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318772"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>使用自动播放自动启动
 
@@ -225,7 +225,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 可以将应用注册为“自动播放”  设备事件的选项。 “自动播放”  设备事件会在设备连接到电脑时引发。
 
-下面显示了如何将应用标识为在将相机连接到电脑时的“自动播放”  选项。 该应用将注册一个处理程序**WPD\\ImageSourceAutoPlay**事件。 当相机和其他图像设备通知事件它们为使用 MTP 的 ImageSource 时，此为 Windows Portable Device (WPD) 系统引发的常见事件。 有关详细信息，请参阅 [Windows Portable Device](https://docs.microsoft.com/previous-versions//ff597729(v=vs.85))。
+下面显示了如何将应用标识为在将相机连接到电脑时的“自动播放”  选项。 该应用将注册一个处理程序**WPD\\ImageSourceAutoPlay**事件。 当相机和其他图像设备通知事件它们为使用 MTP 的 ImageSource 时，此为 Windows Portable Device (WPD) 系统引发的常见事件。 有关详细信息，请参阅 [Windows Portable Device](https://docs.microsoft.com/previous-versions/ff597729(v=vs.85))。
 
 **重要**   [ **Windows.Devices.Portable.StorageDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice) Api 属于[桌面设备系列](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。 应用程序可以仅在桌面设备系列 （如电脑） 中的 Windows 10 设备上使用这些 Api。
 
@@ -240,7 +240,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 5.  在“可用声明”  下拉列表中，选择“文件类型关联”  ，然后单击“添加”  。 中的新属性**文件类型关联**声明中，设置**显示名称**字段**显示图像从照相机传送**和**名称**字段**照相机\_association1**。 在“支持的文件类型”  部分中，单击“新增”  （如果需要）。 将“文件类型”  字段设置为 **.jpg**。 在“支持的文件类型”  部分中，再次单击“新增”  。 将新文件关联的“文件类型”  字段设置为 **.png**。 对于内容事件，自动播放功能会筛选掉任何未与应用显式关联的文件类型。
 6.  保存并关闭清单文件。
 
-| 设置             | 值            |
+| 设置             | ReplTest1            |
 |---------------------|------------------|
 | Verb                | 显示             |
 | 操作显示名称 | 显示图片    |
@@ -437,7 +437,7 @@ CustomEvent=AutoPlayCustomEventQuickstart
 5.  在“可用声明”  下拉列表中，选择“文件类型关联”  ，然后单击“添加”  。 中的新属性**文件类型关联**声明中，设置**显示名称**字段**显示.ms 文件**并**名称**字段**ms\_关联**。 在“支持的文件类型”  部分中，单击“新增”  。 将“文件类型”  字段设置为 **.ms**。 对于内容事件，“自动播放”功能会筛选掉任何未与应用显式关联的文件类型。
 6.  保存并关闭清单文件。
 
-| 设置             | 值                         |
+| 设置             | ReplTest1                         |
 |---------------------|-------------------------------|
 | Verb                | 显示                          |
 | 操作显示名称 | 显示文件                    |

@@ -6,12 +6,12 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ebc87c685d92fa4dbc1a954e2fc6f0cf549a5554
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 62f603a6ff5aadc1c3e5342db6a7d771f8c37a7b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366070"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320838"
 ---
 # <a name="storyboarded-animations"></a>情节提要动画
 
@@ -70,7 +70,7 @@ ms.locfileid: "66366070"
 
 ### <a name="targeting-the-dependency-property-to-animate"></a>确定要创建动画的依赖属性目标
 
-在动画中为 [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95)) 设置一个值。 这将确定要为哪个目标对象的特定属性创建动画。
+在动画中为 [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)) 设置一个值。 这将确定要为哪个目标对象的特定属性创建动画。
 
 有时，你需要确定不是目标对象的直接属性的属性目标，而它可能嵌套在对象属性关系的更深位置。 你通常需要执行此操作以便深入到构成对象和属性值的集中，直至你可以引用可创建动画的属性类型为止（[**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN)、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、[**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)）。 此概念称为*间接目标*，采用此方式确定属性目标的语法称为*属性路径*。
 
@@ -93,23 +93,23 @@ ms.locfileid: "66366070"
 
 下面是动画目标方案的列表，你可能从中使用间接属性目标，以及与你将使用的语法类似的某些属性路径字符串：
 
-- 对进行动画处理[ **X** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.translatetransform.x)的值[ **TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)，如应用于[ **RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform): `(UIElement.RenderTransform).(TranslateTransform.X)`
-- 对进行动画处理[**颜色**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)内[ **GradientStop** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop)的[ **LinearGradientBrush** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)，如应用于[**填充**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill): `(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
-- 对进行动画处理[ **X** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.translatetransform.x)的值[ **TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)，即 1 4 中的转换[ **TransformGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TransformGroup)，如应用于[ **RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform):`(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)`
+- 对进行动画处理[**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.translatetransform.x)的值[**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)，如应用于[**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform): `(UIElement.RenderTransform).(TranslateTransform.X)`
+- 对进行动画处理[**颜色**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)内[**GradientStop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop)的[**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)，如应用于[**填充**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill): `(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
+- 对进行动画处理[**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.translatetransform.x)的值[**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)，即 1 4 中的转换[**TransformGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TransformGroup)，如应用于[**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform):`(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)`
 
 你将发现某些示例使用方括号来包含数字。 这是一种索引器。 它指示它前面的属性名称具有用作值的一个集合，并且你需要该集合中的一项（按照从零开始的索引标识）。
 
 你还可以为 XAML 附加的属性创建动画。 始终在括号内包含附加属性的全称，例如 `(Canvas.Left)`。 有关详细信息，请参阅[创建 XAML 附加属性的动画](./storyboarded-animations.md#animating-xaml-attached-properties)。
 
-有关如何使用属性的间接目标的属性路径来实现动画的详细信息，请参阅 [Property-path 语法](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)或 [**Storyboard.TargetProperty 附加属性**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95))。
+有关如何使用属性的间接目标的属性路径来实现动画的详细信息，请参阅 [Property-path 语法](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)或 [**Storyboard.TargetProperty 附加属性**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95))。
 
 ### <a name="animation-types"></a>动画类型
 
 Windows 运行时动画系统具有情节提要动画可以应用于的三种特定类型：
 
 -   [**双精度**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN)，可与任何进行动画处理[ **DoubleAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation)
--   [**点**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)，可与任何进行动画处理[ **PointAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointAnimation)
--   [**颜色**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)，可与任何进行动画处理[ **ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation)
+-   [**点**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)，可与任何进行动画处理[**PointAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointAnimation)
+-   [**颜色**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)，可与任何进行动画处理[**ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation)
 
 对于对象引用值，还存在通用化 [**Object**](https://docs.microsoft.com/dotnet/api/system.object?redirectedfrom=MSDN) 动画类型，我们将在后面部分对此进行讨论。
 
@@ -323,7 +323,7 @@ myStoryBoard.Begin()
 
 ## <a name="animating-xaml-attached-properties"></a>创建 XAML 附加属性的动画
 
-这不是一个常见情形，但你可以将动画值应用到 XAML 附加属性。 有关哪些附加属性及其工作原理的详细信息，请参阅[附加属性概述](https://docs.microsoft.com/windows/uwp/xaml-platform/attached-properties-overview)。 确定附加属性目标需要括号中包含属性名的 [Property-path语法](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)。 你可以通过使用应用不连续整数值的 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) 创建内置附加属性的动画，如 [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v%3Dvs.95))。 不过，Windows 运行时 XAML 实现的现有局限性是无法创建自定义附加属性的动画。
+这不是一个常见情形，但你可以将动画值应用到 XAML 附加属性。 有关哪些附加属性及其工作原理的详细信息，请参阅[附加属性概述](https://docs.microsoft.com/windows/uwp/xaml-platform/attached-properties-overview)。 确定附加属性目标需要括号中包含属性名的 [Property-path语法](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)。 你可以通过使用应用不连续整数值的 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) 创建内置附加属性的动画，如 [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95))。 不过，Windows 运行时 XAML 实现的现有局限性是无法创建自定义附加属性的动画。
 
 ## <a name="more-animation-types-and-next-steps-for-learning-about-animating-your-ui"></a>更多动画类型，以及了解有关创建 UI 动画的后续步骤
 
@@ -337,7 +337,7 @@ myStoryBoard.Begin()
 * [可视状态的已形成演示图板动画效果](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))
 * [控件模板](https://docs.microsoft.com/windows/uwp/controls-and-patterns/control-templates)
 * [**情节提要**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)
-* [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95))
+* [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95))
  
 
  

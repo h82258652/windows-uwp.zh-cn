@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dfdc0c8a888890d4052dda1ac7cbf0ed2b6a667
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 996cc797ff46bd7eb9a172d66ffbb1fd6fe621bc
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362375"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317542"
 ---
 # <a name="improve-garbage-collection-performance"></a>改进垃圾回收性能
 
 
 使用 C# 和 Visual Basic 编写的通用 Windows 平台 (UWP) 应用从 .NET 垃圾回收器获取自动内存管理。 本部分汇总了 UWP 应用中的 .NET 垃圾回收器的行为和性能最佳实践。 有关 .NET 垃圾回收器的工作原理以及调试和分析垃圾回收器性能的工具的详细信息，请参阅[垃圾回收](https://docs.microsoft.com/dotnet/standard/garbage-collection/index)。
 
-**请注意**  无需人工干预的垃圾回收器的默认行为是强烈表明您的应用程序的常规内存问题。 有关详细信息，请参阅[在 Visual Studio 2015 中调试时使用的内存使用工具](https://blogs.msdn.microsoft.com/devops/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015/)。 本主题仅适用于 C# 和 Visual Basic。
+**请注意**  无需人工干预的垃圾回收器的默认行为是强烈表明您的应用程序的常规内存问题。 有关详细信息，请参阅[在 Visual Studio 2015 中调试时使用的内存使用工具](https://devblogs.microsoft.com/devops/memory-usage-tool-while-debugging-in-visual-studio-2015/)。 本主题仅适用于 C# 和 Visual Basic。
 
  
 

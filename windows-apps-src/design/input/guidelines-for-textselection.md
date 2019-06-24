@@ -8,12 +8,12 @@ keywords: 键盘, 文本, 输入, 用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fc227904e57577a30eb2d171a060fb69d39b71f0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8dab8d26436d312601b749bed7e97048ed5805bb
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363498"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317288"
 ---
 # <a name="selecting-text-and-images"></a>选择文本和图像
 
@@ -109,7 +109,7 @@ Windows 将识别两个可能状态的所选内容交互，可编辑的和不可
 
 
 **面向开发人员**
-* [自定义用户交互](https://developer.microsoft.com/windows/design/inputs-devices)
+* [自定义用户交互](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
 **示例**
 * [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)

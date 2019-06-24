@@ -6,12 +6,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: c6dc07ff35cdd90deaddff06f89aa585aa63156a
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 49f03a1ae5ed0ea1a602103e2181c252c8c29c2f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335025"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319322"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>使用多语言应用工具包 4.0
 
@@ -58,7 +58,7 @@ ms.locfileid: "58335025"
 按照以下步骤向你的项目添加语言。
 
 1. 在解决方案资源管理器中，右键单击项目节点。
-2. 单击**多语言应用工具包** > **添加翻译语言…**。
+2. 单击**多语言应用工具包** > **添加翻译语言…** 。
 3. 在“翻译语言”对话框中，选择想要支持的语言，然后单击“确定”。
 
 工具包将作出响应，执行这些操作。
@@ -115,11 +115,11 @@ ms.locfileid: "58335025"
 
 #### <a name="option-2-send-the-xlf-files-to-a-third-party-for-translation"></a>选项 2 将 .xlf 文件发送给第三方进行翻译
 
-若要将翻译和编辑工作外包给本地化人员，在解决方案资源管理器中选择所需 .xlf 文件，右键单击这些文件，然后单击**多语言应用工具包** > **导出翻译...**。
+若要将翻译和编辑工作外包给本地化人员，在解决方案资源管理器中选择所需 .xlf 文件，右键单击这些文件，然后单击**多语言应用工具包** > **导出翻译...** 。
 
 选择**输出：邮件收件人**在导出字符串资源对话框中，单击确定，文件将压缩并连接到新的电子邮件。 选择**输出：文件文件夹位置**，浏览器的某个文件夹，然后单击确定，根据需要选择对所有文件进行压缩，单击确定，并且为你的文件 (zip 格式和) 保存在你选择为你的项目名为的新文件夹内的位置。
 
-在本地化人员完成翻译工作并向你发送已翻译的 .xlf 文件后，便可以将这些文件导入项目。 在解决方案资源管理器中选择所需的.xlf 文件，右键单击它们，然后单击**多语言应用工具包** > **导入/回收翻译...**.单击**外**，导航到.xlf 或.zip 文件，然后单击**导入**。
+在本地化人员完成翻译工作并向你发送已翻译的 .xlf 文件后，便可以将这些文件导入项目。 在解决方案资源管理器中选择所需的.xlf 文件，右键单击它们，然后单击**多语言应用工具包** > **导入/回收翻译...** .单击**外**，导航到.xlf 或.zip 文件，然后单击**导入**。
 
 **注意**导入过程在导入之前会执行基本的验证。 这将确保正在导入的文件中的目标文化信息与现有 .xlf 文件中的目标文化信息相匹配。
 
@@ -127,11 +127,11 @@ ms.locfileid: "58335025"
 
 以下第三方提供商提供本地化服务，可能对你有所帮助。
 
-- [Elanex](https://www.elanex.com/)
+- [Elanex](https://www.strakertranslations.com/)
 - [Keywords Studios](https://www.keywordsstudios.com/)
 - [Lionbridge](https://www.lionbridge.com)
-- [Moravia](https://www.moravia.com/)
-- [SDL](https://www.sdl.com/languagecloud/managed-translation/ilp/instantquote)
+- [Moravia](https://www.rws.com/what-we-do/rws-moravia/)
+- [SDL](https://www.sdl.com/translate/get-started/instant-quote.html)
 - [Welocalize](https://www.welocalize.com/)
 
 > [!NOTE]

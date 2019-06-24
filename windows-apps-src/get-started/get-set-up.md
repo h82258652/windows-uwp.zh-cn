@@ -1,29 +1,32 @@
 ---
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: 准备工作
-description: 准备工作比想像中的简单。 按照这些说明进行操作并开始创建适用于 Windows 10 通用 Windows 平台 (UWP) 应用。
+description: 准备工作比想像中的简单。 按照以下说明开始为 Windows 10 创建通用 Windows 平台 (UWP) 应用。
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a92b8d0f921bc747108b802d285b783e7f2bcaa8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.openlocfilehash: 5d0f3e7ca98f01750d7d05cc06b56783e3b32359
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658642"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64564458"
 ---
 # <a name="get-set-up"></a>准备工作
 
 ![使用 Visual Studio 的准备工作](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-准备工作比想像中的简单。 按照这些说明进行操作并开始创建适用于 Windows 10 通用 Windows 平台 (UWP) 应用。
+准备工作比想像中的简单。 按照以下说明开始为 Windows 10 创建通用 Windows 平台 (UWP) 应用。
 
 ## <a name="1-download-or-update-visual-studio"></a>1.下载或更新 Visual Studio
 
-Microsoft Visual Studio 2017 可帮助设计、 编码、 测试和调试您的应用程序。
+> [!NOTE]
+> 新版 Visual Studio 的外观可能与这些说明随附的屏幕截图不同。 不用担心！ 遵照这些说明仍可完成设置。
 
-如果还没有 Visual Studio 2017，可以安装免费 Microsoft Visual Studio Community 2017。 此下载包含用于测试应用的设备模拟器：
+Microsoft Visual Studio 2019 可帮助你设计、编码、测试和调试应用。
+
+如果你尚未获得 Visual Studio 2019，则可以安装免费的 Microsoft Visual Studio Community 2019。 此下载包含用于测试应用的设备模拟器：
 
 -   [下载 Windows 10 开发人员工具](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 
@@ -33,7 +36,7 @@ Microsoft Visual Studio 2017 可帮助设计、 编码、 测试和调试您的�
 
 需要 Visual Studio 方面的帮助吗？ 请参阅 [Visual Studio 入门](https://www.visualstudio.com/vs/getting-started)。
 
-如果你已开始使用 Visual Studio，但发现缺少部分组件，则可以通过*新建项目*对话框再次启动安装程序：
+如果你已开始使用 Visual Studio，但发现缺少部分组件，可以通过*新建项目*对话框再次启动安装程序：
 
    ![如何重复安装流程](images/win10-cs-install.png)
 
@@ -60,7 +63,7 @@ Microsoft Visual Studio 2017 可帮助设计、 编码、 测试和调试您的�
 
 如果想要自定义设备并安装其他功能或包，请查看该项目的系统安装脚本。
 
-- [开发人员安装程序脚本](https://github.com/Microsoft/windows-dev-box-setup-scripts)
+- [开发人员安装脚本](https://github.com/Microsoft/windows-dev-box-setup-scripts)
 
 ## <a name="want-more-tools-and-downloads"></a>需要更多的工具和下载吗？
 
@@ -68,6 +71,6 @@ Microsoft Visual Studio 2017 可帮助设计、 编码、 测试和调试您的�
 
 ## <a name="see-also"></a>另请参阅
 
-* [UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
+* [适用于 UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
 * [UWP 应用是什么？](universal-application-platform-guide.md)
 * [注册 Windows 帐户](sign-up.md)

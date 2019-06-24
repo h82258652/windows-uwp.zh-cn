@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e54e843369299ccfa5208c373d76099f3ffb959
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ba17b8a63d169f2d232930b209bfadd5a2fbdff5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372334"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319774"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
 
@@ -48,7 +48,7 @@ ms.locfileid: "66372334"
 <td align="left"><strong>用户界面标记语言。</strong> <br><br>一种呈现和描述 UI 及其组件的标记语言。 每个平台都提供了用于视觉编辑和标记编辑的编辑器。<br/></td>
 <td align="left">使用 <strong>Android Studio</strong> 或 <strong>Eclipse</strong> 编辑的 <strong>XML 布局</strong>。</td>
 <td align="left">使用 Xcode 内的 <strong>Interface Builder</strong> 编辑的 <strong>XIB</strong> 和<strong>情节提要</strong>。</td>
-<td align="left"><strong><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview">XAML</a></strong>、 使用编辑过<strong><a href="https://www.visualstudio.com/">Microsoft Visual Studio</a></strong>并 <strong><a href="https://docs.microsoft.com/visualstudio/designers/creating-a-ui-by-using-blend-for-visual-studio?view=vs-2015">Blend for Visual Studio</a></strong>。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/index">XAML 平台</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui">使用 XAML 创建 UI</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml">定义与 XAML 的布局</a></td>
+<td align="left"><strong><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview">XAML</a></strong>、 使用编辑过<strong><a href="https://visualstudio.microsoft.com/">Microsoft Visual Studio</a></strong>并 <strong><a href="https://docs.microsoft.com/visualstudio/designers/creating-a-ui-by-using-blend-for-visual-studio?view=vs-2015">Blend for Visual Studio</a></strong>。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/index">XAML 平台</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui">使用 XAML 创建 UI</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml">定义与 XAML 的布局</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>内置用户界面控件。</strong> <br><br>由该平台提供的可重用 UI 元素，如按钮、列表控件和文本控件。</td>
@@ -96,7 +96,7 @@ ms.locfileid: "66372334"
 <td align="left"><strong>内置的触摸手势。</strong> <br><br>通过处理高级别的抽象化笔势事件（例如点击和双击视图和控件）提供自定义的触控支持。</td>
 <td align="left"><strong>笔势检测器</strong>可检测常用触控笔势，包括滚动、长按、点击、双击和投掷。</td>
 <td align="left">UIKit 框架提供了内置的<strong>笔势识别器</strong>，可检测诸如点击、收缩、平移、轻扫、旋转和长按之类触控笔势。</td>
-<td align="left"><strong>UI 元素</strong>允许你处理<strong>静态笔势事件</strong>（包括点击、双击、右键点击和按住）和<strong>操作笔势事件</strong>（包括滑动、轻扫、转动、收缩和拉伸）。 笔势事件属于<strong>路由事件</strong>并且可以通过包含子 UIElement 的父对象处理。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions">触摸式交互</a><br/><br/><a href="https://developer.microsoft.com/windows/design/inputs-devices">自定义用户交互的笔势，操作和交互</a></td>
+<td align="left"><strong>UI 元素</strong>允许你处理<strong>静态笔势事件</strong>（包括点击、双击、右键点击和按住）和<strong>操作笔势事件</strong>（包括滑动、轻扫、转动、收缩和拉伸）。 笔势事件属于<strong>路由事件</strong>并且可以通过包含子 UIElement 的父对象处理。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions">触摸式交互</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/design/layout/index">自定义用户交互的笔势，操作和交互</a></td>
 </tr>
 </tbody>
 </table>
@@ -127,7 +127,7 @@ ms.locfileid: "66372334"
 <td align="left"><strong>对等方的导航。</strong> <br><br>通过在具有同等层次结构重要性的页面之间导航向用户呈现。</td>
 <td align="left"><strong>选项卡</strong>、<strong>轻扫视图</strong>和<strong>导航箱</strong>均提供<strong>横向导航</strong>。</td>
 <td align="left"><strong>选项卡栏控制器</strong>、<strong>拆分视图控制器</strong>和<strong>页面视图控制器</strong>允许在同等层次结构的视图之间导航。</td>
-<td align="left">你可以使用<strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot">选项卡/透视</a></strong>在内容上方显示链接/选项卡的永久性列表。  <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/split-view">导航窗格/拆分视图</a></strong>允许你在内容旁显示一列链接。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigation-basics">导航</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigate-between-two-pages">两个页面之间导航</a></td>
+<td align="left">你可以使用<strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot">选项卡/透视</a></strong>在内容上方显示链接/选项卡的永久性列表。 <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/split-view">导航窗格/拆分视图</a></strong>允许你在内容旁显示一列链接。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigation-basics">导航</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigate-between-two-pages">两个页面之间导航</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>分层导航。</strong> <br><br>在层次结构的父页面和子页面之间导航。</td>
@@ -176,7 +176,7 @@ ms.locfileid: "66372334"
 <td align="left"><strong>自定义用户输入。</strong> <br><br>处理键盘、鼠标、触笔和其他输入。</td>
 <td align="left">受支持的交互包括<strong>触控</strong>、<strong>触控板</strong>、<strong>触笔</strong>、<strong>鼠标</strong>和<strong>键盘</strong>。 报告移动和输入的方式与触控相同，但可以检测到有关<strong>输入设备</strong>的详细信息。</td>
 <td align="left">提供对<strong>触控</strong>、<strong>Apple Pencil</strong> 和硬件<strong>键盘</strong>的支持。</td>
-<td align="left">你将发现支持各种各样的交互，如<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions">触控</a></strong>、<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/touchpad-interactions">触控板</a></strong>、采用数字墨迹的<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions">笔/触笔</a></strong>、<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/mouse-interactions">鼠标</a></strong>和<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions">键盘</a></strong>。 应用无需知道所使用的输入设备即可处理数据，并且可以访问原始输入设备数据（如果需要）。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/handle-pointer-input">处理指针输入</a><br/><br/><a href="https://developer.microsoft.com/windows/design/inputs-devices">自定义用户交互</a></td>
+<td align="left">你将发现支持各种各样的交互，如<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions">触控</a></strong>、<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/touchpad-interactions">触控板</a></strong>、采用数字墨迹的<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions">笔/触笔</a></strong>、<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/mouse-interactions">鼠标</a></strong>和<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions">键盘</a></strong>。 应用无需知道所使用的输入设备即可处理数据，并且可以访问原始输入设备数据（如果需要）。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/handle-pointer-input">处理指针输入</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/design/layout/index">自定义用户交互</a></td>
 </tr>
 </tbody>
 </table>
@@ -201,7 +201,7 @@ ms.locfileid: "66372334"
 <td align="left"><strong>本地应用程序数据。</strong> <br><br>在本地存储与应用相关的设置和文件。</td>
 <td align="left">可以使用 <strong>openFileOutput</strong> 和 <strong>openFileInput</strong> 保存本地文件。 可以使用 <strong>getSharedPreferences</strong> 访问<strong>共享首选项文件</strong>中的设置。</td>
 <td align="left">本地文件可以存储在<strong>应用程序支持</strong>目录中，可以通过 <strong>NSFileManager</strong> 类访问。 <strong>首选项</strong>文件中的设置可以通过 <strong>NSUserDefaults</strong> 类访问。</td>
-<td align="left"> <strong><a href="https://docs.microsoft.com/uwp/api/Windows.Storage">Windows.Storage</a></strong> 类会为你统一处理本地数据存储。 将设置存储为 <strong><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataContainer">ApplicationDataContainer</a></strong> 对象，可通过 <strong><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings">ApplicationData.LocalSettings</a></strong> 属性访问。 将文件存储在 <strong><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder">StorageFolder</a></strong> 对象中，可通过 <strong><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder">ApplicationData.LocalFolder</a></strong> 属性访问。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">存储和检索设置和其他应用程序数据</a></td>
+<td align="left"><strong><a href="https://docs.microsoft.com/uwp/api/Windows.Storage">Windows.Storage</a></strong> 类会为你统一处理本地数据存储。 将设置存储为 <strong><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataContainer">ApplicationDataContainer</a></strong> 对象，可通过 <strong><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings">ApplicationData.LocalSettings</a></strong> 属性访问。 将文件存储在 <strong><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder">StorageFolder</a></strong> 对象中，可通过 <strong><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder">ApplicationData.LocalFolder</a></strong> 属性访问。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">存储和检索设置和其他应用程序数据</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>本地数据库存储。</strong> <br><br>使用对象关系映射程序 (ORM) 将应用数据存储在关系数据库中（如果适用）。</td>
@@ -225,7 +225,7 @@ ms.locfileid: "66372334"
 <td align="left"><strong>HTTP 文件下载。</strong> <br><br>通过 HTTP 下载大型和小型文件。</td>
 <td align="left">可以使用 <strong>URLConnection</strong> 和 <strong>HTTPURLConnection</strong> 通过 HTTP 和 FTP 进行下载，也可以使用系统<strong>下载管理器</strong>在后台进行下载。</td>
 <td align="left"><strong>NSURLSession</strong> 和 <strong>NSURLConnection</strong> 可以用于通过 HTTP 和 FTP 下载文件。</td>
-<td align="left"> <strong><a href="https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer">后台传输 API</a></strong> 使你可以可靠地通过 HTTP 和 FTP 传输文件，考虑应用暂停、连接丢失并根据连接和电池使用时间进行调整。 你还可以使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.web.http.httpclient">HttpClient</a></strong>，它非常适合较小的文件。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/networking/which-networking-technology">选择哪一种网络技术？</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/networking/background-transfers">后台传输</a></td>
+<td align="left"><strong><a href="https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer">后台传输 API</a></strong> 使你可以可靠地通过 HTTP 和 FTP 传输文件，考虑应用暂停、连接丢失并根据连接和电池使用时间进行调整。 你还可以使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.web.http.httpclient">HttpClient</a></strong>，它非常适合较小的文件。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/networking/which-networking-technology">选择哪一种网络技术？</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/networking/background-transfers">后台传输</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>套接字。</strong> <br><br>创建低级别的 UDP 数据报和 TCP 套接字，以便使用自己的协议与其他设备进行通信。</td>
@@ -243,7 +243,7 @@ ms.locfileid: "66372334"
 <td align="left"><strong>OAuth 库。</strong> <br><br>允许访问第三方 OAuth 提供程序和内置于平台的任何帐户管理的 OAuth 库。</td>
 <td align="left">不提供任何通用 OAuth 库。 针对 OAuth 身份验证的 <strong>GoogleAuthUtil</strong> 类通过 Google Play 服务提供。<br/></td>
 <td align="left">不提供任何通用 OAuth 库。 <strong>帐户框架</strong>提供对已存储在设备上的用户帐户（如 Facebook 和 Twitter）的访问权限。</td>
-<td align="left">通用 OAuth 库 <strong><a href="https://docs.microsoft.com/windows/uwp/security/web-authentication-broker">Web 身份验证代理</a></strong>允许你连接到第三方标识提供者服务。  <strong><a href="https://docs.microsoft.com/windows/uwp/security/credential-locker">凭据保险箱</a></strong>允许你的用户保存其登录名并在多台设备上使用。  <strong><a href="https://docs.microsoft.com/previous-versions/office/developer/onedrive-live-sdk-reference/dn896755(v=office.15)">Microsoft.Live</a></strong> 命名空间使你可以轻松地访问 Live SDK OAuth，进而访问 Microsoft 服务。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/security/authentication-and-user-identity">身份验证和用户标识</a><br/><br/><a href="https://docs.microsoft.com/uwp/api/windows.security.authentication.web">Windows.Security.Authentication.Web API 文档</a><br/><br/><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker">WebAuthenticationBroker 的代码示例</a></td>
+<td align="left">通用 OAuth 库 <strong><a href="https://docs.microsoft.com/windows/uwp/security/web-authentication-broker">Web 身份验证代理</a></strong>允许你连接到第三方标识提供者服务。 <strong><a href="https://docs.microsoft.com/windows/uwp/security/credential-locker">凭据保险箱</a></strong>允许你的用户保存其登录名并在多台设备上使用。 <strong><a href="https://docs.microsoft.com/previous-versions/office/developer/onedrive-live-sdk-reference/dn896755(v=office.15)">Microsoft.Live</a></strong> 命名空间使你可以轻松地访问 Live SDK OAuth，进而访问 Microsoft 服务。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/security/authentication-and-user-identity">身份验证和用户标识</a><br/><br/><a href="https://docs.microsoft.com/uwp/api/windows.security.authentication.web">Windows.Security.Authentication.Web API 文档</a><br/><br/><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker">WebAuthenticationBroker 的代码示例</a></td>
 </tr>
 </tbody>
 </table>
@@ -268,7 +268,7 @@ ms.locfileid: "66372334"
 <td align="left"><strong>IDE。</strong> <br><br>用于创建应用的工具集。</td>
 <td align="left"><strong>Android Studio</strong> 和 <strong>Eclipse</strong>，随着 Google 推动开发人员转向使用 Android Studio。</td>
 <td align="left"><strong>Xcode</strong></td>
-<td align="left"><strong><a href="https://www.visualstudio.com/features/universal-windows-platform-vs.aspx">Visual Studio</a></strong> 并<strong><a href="https://docs.microsoft.com/visualstudio/designers/creating-a-ui-by-using-blend-for-visual-studio?view=vs-2015">Blend for Visual Studio</a></strong>具有所需的代码、 设计、 连接、 调试、 分析、 优化和测试 UWP 应用的所有工具。 Visual Studio 还为你提供了适用于 Windows 10 设备的<strong><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/test-with-the-emulator">仿真器</a></strong>，以便你可以在一系列仿真设备中测试应用。<br/><br/><a href="https://dev.windows.com/downloads">下载和适用于 UWP 的工具</a></td>
+<td align="left"><strong><a href="https://visualstudio.microsoft.com/features/universal-windows-platform-vs">Visual Studio</a></strong> 并<strong><a href="https://docs.microsoft.com/visualstudio/designers/creating-a-ui-by-using-blend-for-visual-studio?view=vs-2015">Blend for Visual Studio</a></strong>具有所需的代码、 设计、 连接、 调试、 分析、 优化和测试 UWP 应用的所有工具。 Visual Studio 还为你提供了适用于 Windows 10 设备的<strong><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/test-with-the-emulator">仿真器</a></strong>，以便你可以在一系列仿真设备中测试应用。<br/><br/><a href="https://developer.microsoft.com/windows/downloads">下载和适用于 UWP 的工具</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>代码的组织。</strong> <br><br>应用的基本文件夹结构，通常从初始模板中创建。</td>
@@ -662,7 +662,7 @@ ms.locfileid: "66372334"
 <td align="left"><strong>软件设计模式。</strong> <br><br>针对平台推荐的或适用于平台的模式。</td>
 <td align="left">尽管 Beta 版“数据绑定框架”支持广泛使用 <strong>Model-View-ViewModel (MVVM)</strong> 模式，但并没有针对 Android 开发推荐或提供任何正式模式。 许多第三方文章和框架推荐使用 <strong>Model-View-Presenter (MVP)</strong> 和 <strong>MVVM</strong> 方法。</td>
 <td align="left"><strong>Model-View-Controller (MVC)</strong> 是与 iOS 一起使用的常见模式，并且已集成到平台中。</td>
-<td align="left">在针对 UWP 进行生成时，不要局限于某一特定模式。<br/><br/>你可以使用内置的<a href="https://docs.microsoft.com/windows/uwp/data-binding/index">数据绑定</a>模式以确保彻底分离数据和 UI 问题，并避免对随后会更新属性值的 UI 事件处理程序进行编码。<br/><br/>你可以通过利用第三方 MVVM 库（如 <a href="https://mvvmlight.codeplex.com/">MVVM 光工具包</a>），或者滚动自己的 MVVM 库并保持逻辑退出代码隐藏来扩展数据绑定，以遵循 <strong>Model-View-ViewModel (MVVM)</strong> 模式。<br/><br/><a href="https://docs.microsoft.com/previous-versions/msp-n-p/hh848246(v=pandp.10)">MVVM 模式</a><br/><br/><a href="https://github.com/Windows-XAML/Template10/wiki">模板 10 Visual Studio 项目模板</a></td>
+<td align="left">在针对 UWP 进行生成时，不要局限于某一特定模式。<br/><br/>你可以使用内置的<a href="https://docs.microsoft.com/windows/uwp/data-binding/index">数据绑定</a>模式以确保彻底分离数据和 UI 问题，并避免对随后会更新属性值的 UI 事件处理程序进行编码。<br/><br/>你可以通过利用第三方 MVVM 库（如 <a href="https://archive.codeplex.com/?p=mvvmlight">MVVM 光工具包</a>），或者滚动自己的 MVVM 库并保持逻辑退出代码隐藏来扩展数据绑定，以遵循 <strong>Model-View-ViewModel (MVVM)</strong> 模式。<br/><br/><a href="https://docs.microsoft.com/previous-versions/msp-n-p/hh848246(v=pandp.10)">MVVM 模式</a><br/><br/><a href="https://github.com/Windows-XAML/Template10/wiki">模板 10 Visual Studio 项目模板</a></td>
 </tr>
 </tbody>
 </table>

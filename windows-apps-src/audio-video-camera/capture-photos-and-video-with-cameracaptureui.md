@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 35eed8310b406a960334c90d6c359c0313b2660c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f23d80b4d2796b4d9c86648c09d6bece5e82d482
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66358899"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317833"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>使用 Windows 内置相机 UI 捕获照片和视频
 
@@ -36,7 +36,7 @@ ms.locfileid: "66358899"
 > [!NOTE]
 > 移动设备系列中的设备不支持 **CameraCaptureUI** 中的图像处理剪裁。 在这些设备上运行应用时，将忽略 [**AllowCropping**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureuiphotocapturesettings.allowcropping) 属性的值。
 
-调用 [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.) 并指定 [**CameraCaptureUIMode.Photo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUIMode) 以指定应捕获的照片。 如果捕获成功，该方法将返回包含该图像的 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 实例。 如果用户取消捕获，则返回的对象为 Null。
+调用 [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.capturefileasync) 并指定 [**CameraCaptureUIMode.Photo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUIMode) 以指定应捕获的照片。 如果捕获成功，该方法将返回包含该图像的 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 实例。 如果用户取消捕获，则返回的对象为 Null。
 
 [!code-cs[CapturePhoto](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCapturePhoto)]
 
@@ -62,7 +62,7 @@ ms.locfileid: "66358899"
 
 [!code-cs[UsingSoftwareBitmapSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmapSource)]
 
-**Image** 控件要求该图像源是带有预乘 alpha 或没有 alpha 的 BGRA8 格式，因此调用静态方法 [**SoftwareBitmap.Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows) 以使用所需格式创建一个新的软件位图。 接下来，创建一个新的 [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) 对象并调用 [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) 将软件位图分配给该源。 最后，设置 **Image** 控件的 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) 属性以显示 UI 中已捕获的照片。
+**Image** 控件要求该图像源是带有预乘 alpha 或没有 alpha 的 BGRA8 格式，因此调用静态方法 [**SoftwareBitmap.Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) 以使用所需格式创建一个新的软件位图。 接下来，创建一个新的 [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) 对象并调用 [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) 将软件位图分配给该源。 最后，设置 **Image** 控件的 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) 属性以显示 UI 中已捕获的照片。
 
 [!code-cs[SetImageSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetImageSource)]
 
@@ -70,7 +70,7 @@ ms.locfileid: "66358899"
 
 若要捕获视频，请创建新的 [**CameraCaptureUI**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI) 对象。 使用对象的 [**VideoSettings**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.videosettings) 属性，你可以为返回的视频指定属性，例如视频的格式。
 
-调用 [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.) 并指定 [**Video**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.videosettings) 以指定应捕获的视频。 如果捕获成功，该方法将返回包含该视频的 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 实例。 如果用户取消捕获，则返回的对象为 Null。
+调用 [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.capturefileasync) 并指定 [**Video**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.videosettings) 以指定应捕获的视频。 如果捕获成功，该方法将返回包含该视频的 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 实例。 如果用户取消捕获，则返回的对象为 Null。
 
 [!code-cs[CaptureVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCaptureVideo)]
 

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c4b796c8af493508328730c2b958a0beb38bf60c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a50ca6eaeecd2528eaa0d8558ef70552ae49944a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361961"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317292"
 ---
 # <a name="expose-basic-accessibility-information"></a>公开基本的辅助功能信息  
 
@@ -97,7 +97,7 @@ XAML
 <span id="LABELS"/>
 
 ## <a name="labels-and-labeledby"></a>标签和 LabeledBy  
-将标签与窗体元素相关联的首选方法是针对标签文本结合使用 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 **x:Name**，然后将窗体元素上的 [**AutomationProperties.LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v%3Dvs.95)) 附加属性设置为按其 XAML 名称引用标签 **TextBlock**。 如果你使用此模式，当用户单击该标签时，焦点会移动到相关的控件上，辅助技术可以使用标签文本作为窗体字段的辅助名称。 以下示例显示此技术。
+将标签与窗体元素相关联的首选方法是针对标签文本结合使用 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 **x:Name**，然后将窗体元素上的 [**AutomationProperties.LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v=vs.95)) 附加属性设置为按其 XAML 名称引用标签 **TextBlock**。 如果你使用此模式，当用户单击该标签时，焦点会移动到相关的控件上，辅助技术可以使用标签文本作为窗体字段的辅助名称。 以下示例显示此技术。
 
 XAML
 ```xml

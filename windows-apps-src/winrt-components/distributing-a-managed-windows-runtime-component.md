@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b4e05a1f24e6192d25c80c043cdb4a51e7ac61ec
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b9fcdff5b8648822bb5cc22771daded23f6d52a5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372366"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322232"
 ---
 # <a name="distributing-a-managed-windows-runtime-component"></a>分配托管的 Windows 运行时组件
 
@@ -53,7 +53,7 @@ For example: Microsoft.Cpp.Build.dll
 
 **若要创建扩展 SDK**
 
-1.  请确保已安装 Visual Studio SDK。 你可以从 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页面下载 Visual Studio SDK。
+1.  请确保已安装 Visual Studio SDK。 你可以从 [Visual Studio 下载](https://visualstudio.microsoft.com/downloads/download-visual-studio-vs)页面下载 Visual Studio SDK。
 2.  使用 VSIX 项目模板创建新项目。 你可以在“扩展性”类别的 Visual C# 或 Visual Basic 下找到该模板。 此模板作为 Visual Studio SDK 的一部分进行安装。 ([演练：创建 SDK 使用C#或 Visual Basic](https://docs.microsoft.com/visualstudio/extensibility/walkthrough-creating-an-sdk-using-csharp-or-visual-basic?view=vs-2015)或[演练：创建 SDK 使用C++ ](https://docs.microsoft.com/visualstudio/extensibility/walkthrough-creating-an-sdk-using-cpp?view=vs-2015)，演示如何使用此模板中一个非常简单的方案。 )
 3.  确定 SDK 的文件夹结构。 该文件夹结构和“引用”  、“Redist”  以及DesignTime  文件夹开始于 VSIX 项目的根级别。
 

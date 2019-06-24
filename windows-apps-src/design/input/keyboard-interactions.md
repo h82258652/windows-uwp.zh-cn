@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: e3fcf6b792990fad9cb0071aece878cac31f5420
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 20cb1e3162f0c852a60c620be92afd37ad9f8232
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662912"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317274"
 ---
 # <a name="keyboard-interactions"></a>键盘交互
 
@@ -59,7 +59,7 @@ ms.locfileid: "57662912"
 |-----------------------------------|-----------------|
 |键盘（硬件和软件）   |除了标准的硬件键盘，UWP 应用程序支持两个软件键盘：[触摸屏输入 （或软件） 键盘](#software-keyboard)并[屏幕键盘](#on-screen-keyboard)。|
 |游戏板和遥控器         |Xbox 游戏板和遥控器是 [10 英尺体验](../devices/designing-for-tv.md)中的基础输入设备。 有关游戏板和遥控器的 UWP 支持的特定详细信息，请参阅[游戏板和遥控器交互](gamepad-and-remote-interactions.md)。|
-|屏幕读取器（讲述人）          |讲述人是一款面向 Windows 的内置屏幕读取器，可提供独特的交互体验和功能，但仍依赖于基本的键盘导航和输入。 有关讲述人的详细信息，请参阅[讲述人入门](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)。|
+|屏幕读取器（讲述人）          |讲述人是一款面向 Windows 的内置屏幕读取器，可提供独特的交互体验和功能，但仍依赖于基本的键盘导航和输入。 有关讲述人的详细信息，请参阅[讲述人入门](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)。|
 
 ## <a name="custom-experiences-and-efficient-keyboarding"></a>自定义体验和高效键盘操作
 如前所述，为了确保应用程序非常适合具有不同技能、能力和期望的用户，键盘支持是不可或缺的。 建议优先考虑以下各项。
@@ -320,7 +320,7 @@ UWP 控件默认情况下之后箭头键导航。 有关自定义布局和控制
       <p><img src="images/keyboard/dialog.png" alt="Dialog buttons"/></p>
       <p><sup>对话框按钮</sup></p>
       <p><img src="images/keyboard/radiobutton.png" alt="Radio buttons"/></p>
-      <p><sup>单选按钮</sup></p>     
+      <p><sup>RadioButtons</sup></p>     
     </td>
     <td>
       <p><img src="images/keyboard/appbar.png" alt="AppBar buttons"/></p>
@@ -364,7 +364,7 @@ UWP 控件默认情况下之后箭头键导航。 有关自定义布局和控制
 
 ### <a name="keyboard-and-narrator"></a>键盘和讲述人
 
-讲述人是一款面向键盘用户的 UI 辅助功能工具（也支持其他输入类型）。 但是，讲述人功能超出了 UWP 应用支持的键盘交互，因此，为讲述人设计 UWP 应用时需要注意。 （[讲述人基础知识页面](https://support.microsoft.com/help/22808/windows-10-narrator-learning-basics)将引导你完成讲述人用户体验。）
+讲述人是一款面向键盘用户的 UI 辅助功能工具（也支持其他输入类型）。 但是，讲述人功能超出了 UWP 应用支持的键盘交互，因此，为讲述人设计 UWP 应用时需要注意。 （[讲述人基础知识页面](https://support.microsoft.com/help/22808/windows-10-narrator-basics)将引导你完成讲述人用户体验。）
 
 UWP 键盘行为与讲述人支持的键盘行为之间的部分差异如下：
 -   未通过标准键盘导航公开的其他 UI 元素导航键组合（如 Caps lock + 箭头键用于读取控件标签）。
@@ -400,13 +400,13 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 
 以下所示为键盘、游戏板和遥控器之间的部分键映射。
 
-| **键盘**  | **游戏手柄**                         | **远程控制**  |
+| **键盘**  | **手柄**                         | **远程控制**  |
 |---------------|-------------------------------------|---------------------|
 | 空格         | A 按钮                            | 选择按钮       |
 | Enter         | A 按钮                            | 选择按钮       |
 | 退出        | B 按钮                            | 后退按钮         |
-| Home/End      | 不适用                                 | 不适用                 |
-| 向上/向下翻页  | 扳机键按钮用于垂直滚动，缓冲键按钮用于水平滚动   | 不适用                 |
+| Home/End      | 不可用                                 | 不可用                 |
+| 向上/向下翻页  | 扳机键按钮用于垂直滚动，缓冲键按钮用于水平滚动   | 不可用                 |
 
 设计 UWP 应用以供与游戏板和遥控器搭配使用时应注意的一些主要差异包括：
 -   文本输入需要用户按 A 激活文本控件。
@@ -535,10 +535,10 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 -   单选按钮
 -   滚动条
 -   树
--   树项目
+-   树项
 -   菜单
 -   菜单栏
--   菜单项目
+-   Menu item
 -   工具栏
 -   列表
 -   列表项

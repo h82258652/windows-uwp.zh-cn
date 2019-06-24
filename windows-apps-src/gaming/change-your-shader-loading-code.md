@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, opengl, direct3d, 着色器管道
 ms.localizationpriority: medium
-ms.openlocfilehash: 8793ef8b44df1ca1d93133383666434f525f2d07
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fc5e1eb9c261a4397d83c833591f2497521aa1c6
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368977"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321385"
 ---
 # <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>将 OpenGL ES 2.0 着色器管道与 Direct3D 进行比较
 
@@ -21,8 +21,8 @@ ms.locfileid: "66368977"
 **重要的 Api**
 
 -   [输入装配器阶段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage)
--   [顶点着色器阶段](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85))
--   [像素着色器阶段](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85))
+-   [顶点着色器阶段](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85))
+-   [像素着色器阶段](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85))
 
 从概念上来说，Direct3D 11 着色器管道与 OpenGL ES 2.0 中的着色器管道非常相似。 但是，就 API 设计而言，用于创建和管理着色器阶段的主要组件是两个主要接口 [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 和 [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 的一部分。 本主题尝试在这些接口中将常用的 OpenGL ES 2.0 着色器管道 API 模式映射到 Direct3D 11 同等模式。
 
@@ -34,10 +34,10 @@ ms.locfileid: "66368977"
 Direct3D 11 图形管道由 [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 接口的实例管理，并且包含以下阶段：
 
 -   [输入装配器阶段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage)。 输入装配器阶段为管道提供数据（三角形、直线和点）。 [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)支持此阶段的方法都带有前缀"IA"。
--   [顶点着色器阶段](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85)) - 顶点着色器阶段处理顶点，通常执行诸如转换、换肤以及照明之类的操作。 顶点着色器始终获取一个输入顶点并生成一个输出顶点。 [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)支持此阶段的方法都带有前缀"VS"。
+-   [顶点着色器阶段](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85)) - 顶点着色器阶段处理顶点，通常执行诸如转换、换肤以及照明之类的操作。 顶点着色器始终获取一个输入顶点并生成一个输出顶点。 [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)支持此阶段的方法都带有前缀"VS"。
 -   [流输出阶段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-stream-stage) - 流输出阶段将管道中的基元数据沿着到光栅器的路线流到内存中。 数据可以流出和/或传递到光栅器中。 流出到内存的数据可以作为输入数据再次循环回到管道，或者从 CPU 读回。 [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)支持此阶段的方法都带有前缀"等"。
 -   [光栅器阶段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage) - 光栅器剪辑基元，为像素着色器准备基元并确定如何调用像素着色器。 您可以禁用光栅化通信来孤立管道没有没有像素着色器 (设置为 NULL 与像素着色器阶段[ **ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader))，和禁用深度和模具测试 （设置为 FALSE 在 DepthEnable 和 StencilEnable [ **D3D11\_深度\_模具\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_depth_stencil_desc))。 禁用后，与光栅化有关的管道计数器将无法更新。
--   [像素着色器阶段](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85)) - 像素着色器阶段接收基元的插值数据并生成每像素数据，如颜色。 [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)支持此阶段的方法都带有"PS"前缀。
+-   [像素着色器阶段](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85)) - 像素着色器阶段接收基元的插值数据并生成每像素数据，如颜色。 [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)支持此阶段的方法都带有"PS"前缀。
 -   [输出合并器阶段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage) - 输出合并器阶段将各种类型的输出数据（像素着色器值、深度和模具信息）与呈现器目标的内容以及深度/模具缓冲区组合在一起，以生成最终的管道结果。 [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)支持此阶段的方法都带有前缀"OM"。
 
 （此外，还有个几何着色器、 外壳着色器、 tesselators 和域着色器阶段，但由于它们有没有类似物 OpenGL ES 2.0 中，我们不讨论这些此处。）有关这三个阶段的方法的完整列表，请参阅[ **ID3D11DeviceContext** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)并[ **ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)引用页。 **ID3D11DeviceContext1** 扩展了 Direct3D 11 的 **ID3D11DeviceContext**。

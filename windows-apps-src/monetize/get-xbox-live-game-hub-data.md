@@ -5,20 +5,20 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox Live 分析, 游戏中心
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f9e8440384dfac755a4791e71b42dafa80cb957
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 83f86f4c7dc5fba10650701d2830a7dce809e4ce
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162852"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321802"
 ---
 # <a name="get-xbox-live-game-hub-data"></a>获取 Xbox Live 游戏中心数据
 
 
-在 Microsoft Store 分析 API 中使用此方法获取你的[支持 Xbox Live 的游戏](https://docs.microsoft.com/gaming/xbox-live//index.md)的游戏中心数据。 此信息也位于[Xbox 的分析报告](../publish/xbox-analytics-report.md)在合作伙伴中心。
+在 Microsoft Store 分析 API 中使用此方法获取你的[支持 Xbox Live 的游戏](https://docs.microsoft.com/gaming/xbox-live/index.md)的游戏中心数据。 此信息也位于[Xbox 的分析报告](../publish/xbox-analytics-report.md)在合作伙伴中心。
 
 > [!IMPORTANT]
-> 该方法只支持 Xbox 游戏或使用 Xbox Live 服务的游戏。 这些游戏必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括 [Microsoft 合作伙伴](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners)发布的游戏以及通过 [ID@Xbox 计划](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id)提交的游戏。 该方法当前不支持通过 [Xbox Live 创意者计划](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏。
+> 该方法只支持 Xbox 游戏或使用 Xbox Live 服务的游戏。 这些游戏必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括 [Microsoft 合作伙伴](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#microsoft-partners)发布的游戏以及通过 [ID@Xbox 计划](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#id)提交的游戏。 该方法当前不支持通过 [Xbox Live 创意者计划](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -50,8 +50,8 @@ ms.locfileid: "58162852"
 |---------------|--------|---------------|------|
 | applicationId | string | 你要检索 Xbox Live 游戏中心数据的游戏的 [Store ID](in-app-purchases-and-trials.md#store-ids)。  |  是  |
 | metricType | string | 指定要检索的 Xbox Live 分析数据的类型的字符串。 对于此方法，指定值 **communitymanagergamehub**。  |  是  |
-| startDate | 日期 | 要检索的游戏中心数据日期范围中的开始日期。 默认值为当前日期之前 30 天。 |  否  |
-| endDate | 日期 | 要检索的游戏中心数据日期范围中的结束日期。 默认值为当前日期。 |  否  |
+| startDate | date | 要检索的游戏中心数据日期范围中的开始日期。 默认值为当前日期之前 30 天。 |  否  |
+| endDate | date | 要检索的游戏中心数据日期范围中的结束日期。 默认值为当前日期。 |  否  |
 | top | int | 要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。 |  否  |
 | skip | int | 要在查询中跳过的行数。 使用此参数可以浏览较大的数据集。 例如，top=10000 和 skip=0，将检索前 10000 行数据；top=10000 和 skip=10000，将检索之后的 10000 行数据，依此类推。 |  否  |
 
@@ -68,9 +68,9 @@ Authorization: Bearer <your access token>
 ## <a name="response"></a>响应
 
 
-| 值      | 在任务栏的搜索框中键入   | 描述                  |
+| ReplTest1      | 在任务栏的搜索框中键入   | 描述                  |
 |------------|--------|-------------------------------------------------------|
-| ReplTest1      | 数组  | 一个对象数组，其中包含指定时间范围内每个日期的游戏中心数据。 有关每个对象中的数据的详细信息，请参阅下表。                                                                                                                      |
+| 值      | array  | 一个对象数组，其中包含指定时间范围内每个日期的游戏中心数据。 有关每个对象中的数据的详细信息，请参阅下表。                                                                                                                      |
 | @nextLink  | string | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10000，但查询的数据超过 10000 行时，就会返回此值。 |
 | TotalCount | int    | 查询的数据结果中的行总数。  |
 
@@ -79,7 +79,7 @@ Authorization: Bearer <your access token>
 
 | 值               | 在任务栏的搜索框中键入   | 描述                           |
 |---------------------|--------|-------------------------------------------|
-| 日期                | string | 此项目中游戏中心数据的日期。 |
+| date                | string | 此项目中游戏中心数据的日期。 |
 | applicationId       | string | 你要为其检索游戏中心数据的游戏的 Store ID。     |
 | gameHubLikeCount     | 数字 |   在指定日期添加到游戏中心页面上的赞的数量。   |
 | gameHubCommentCount          | 数字 |  在指定日期添加到你的应用的游戏中心页面上的评论的数量。  |

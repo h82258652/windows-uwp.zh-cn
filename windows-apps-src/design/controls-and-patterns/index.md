@@ -8,12 +8,12 @@ ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ffed5cdc063a35b4693aa4a9323e2143b69e4fc
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: 2ecf82294614114e711483dfdc58cfad36591369
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065355"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319562"
 ---
 # <a name="controls-for-uwp-apps"></a>适用于 UWP 应用的控件 
 
@@ -133,6 +133,6 @@ ms.locfileid: "65065355"
 
 ## <a name="additional-controls"></a>其他控件
 
-可以从 <a href="https://www.telerik.com/">Telerik</a>、<a href="https://www.syncfusion.com/products/uwp">SyncFusion</a>、<a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>、<a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>、<a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a>、<a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a> 等公司获取用于 UWP 开发的其他控件。 这些控件通过使用自定义控件和服务扩展标准系统控件来为企业和 .NET 开发人员提供额外的支持。  
+可以从 <a href="https://www.telerik.com/">Telerik</a>、<a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>、<a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>、<a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>、<a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a>、<a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a> 等公司获取用于 UWP 开发的其他控件。 这些控件通过使用自定义控件和服务扩展标准系统控件来为企业和 .NET 开发人员提供额外的支持。  
 
 如果你有兴趣了解有关这些控件的详细信息，请查看 GitHub 上的<a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">客户订单数据库</a>示例。 此示例使用了 Telerik 的数据网格控件和数据输入验证功能，它们是 Telerik 的 UI for UWP 套件的一部分。 UI for UWP 套件是一个包含 20 多个控件的集合，通过 .NET Foundation 以开源项目的形式提供。

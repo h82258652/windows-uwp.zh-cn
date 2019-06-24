@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: f41bf9f56b63f59844bec976e9d6e5e3d650b271
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3dbb06f53f760724da312e00f545d799d6a24200
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370272"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321574"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>启用 GPIO、I2C 和 SPI 的用户模式访问
 
@@ -614,7 +614,7 @@ Device(I2C1)
 * CLIENT_ConnectFunctionConfigPins – 由 `GpioClx` 调用以命令微型端口驱动程序应用指定的复用配置。
 * CLIENT_DisconnectFunctionConfigPins – 由 `GpioClx` 调用以命令微型端口驱动程序恢复复用配置。
 
-有关这些例程的描述，请参阅 [GpioClx 事件回调函数](https://docs.microsoft.com/previous-versions//hh439464(v=vs.85))。
+有关这些例程的描述，请参阅 [GpioClx 事件回调函数](https://docs.microsoft.com/previous-versions/hh439464(v=vs.85))。
 
 除了这两个新的 DDI，应针对引脚复用兼容性审核现有 DDI：
 
@@ -744,7 +744,7 @@ devcon status *msft8000
 
 现在 rhproxy 已经运行，它应该已经创建了可由用户模式访问的设备接口。 我们将使用几种命令行工具来枚举设备，并查看它们是否显示。
 
-克隆[ https://github.com/ms-iot/samples ](https://github.com/ms-iot/samples)存储库和生成`GpioTestTool`， `I2cTestTool`， `SpiTestTool`，和`Mincomm`示例。 将工具复制到正在测试的设备，并使用以下命令枚举设备。
+克隆[ https://github.com/ms-iot/samples ](https://github.com/ms-iot/samples)存储库和生成`GpioTestTool` ， `I2cTestTool` ， `SpiTestTool` ，和`Mincomm` 示例。 将工具复制到正在测试的设备，并使用以下命令枚举设备。
 
 ```ps
 I2cTestTool.exe -list

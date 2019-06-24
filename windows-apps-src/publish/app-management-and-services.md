@@ -6,16 +6,16 @@ ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ba28fb49accc213f570e470142e259c08122b704
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e9567e06f80035bbcf811b5aaeaf8058ffee41a3
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334575"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320031"
 ---
 # <a name="app-management-and-services"></a>应用管理和服务
 
-可以管理和查看到您的应用程序的每个相关的详细信息[合作伙伴中心](https://partner.microsoft.com/dashboard/)，并配置服务，例如通知、 A / B 测试和映射。
+可以管理和查看到您的应用程序的每个相关的详细信息[合作伙伴中心](https://partner.microsoft.com/dashboard)，并配置服务，例如通知、 A / B 测试和映射。
 
 使用合作伙伴中心中的应用，你将看到的左侧的导航菜单中的部分**Services**并**应用程序管理**。 可以展开这些部分，访问如下所述的功能。
 
@@ -25,7 +25,7 @@ ms.locfileid: "58334575"
 
 ## <a name="xbox-live"></a>Xbox Live
 
-如果您要发布一个游戏，则可以启用[Xbox Live Creators 计划](https://xbox.com/developers/creators-program)此页上。 这样可以启动配置和测试 Xbox Live 功能，并最终发布您的 Xbox Live Creators 计划游戏。
+如果您要发布一个游戏，则可以启用[Xbox Live Creators 计划](https://www.xbox.com/developers/creators-program)此页上。 这样可以启动配置和测试 Xbox Live 功能，并最终发布您的 Xbox Live Creators 计划游戏。
 
 有关详细信息，请参阅[开始使用 Xbox Live Creators 计划](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)并[创建一个新的 Xbox Live Creators 计划标题，并将发布到测试环境](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title)。
 
@@ -51,7 +51,7 @@ ms.locfileid: "58334575"
 
 如果您的产品与 Azure AD 集成，并调用 Api 请求任一[应用程序权限或委派的权限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要管理员同意，请输入你的 Azure AD 客户端 ID。 这样，获取适用于您的产品可以代表租户中的所有用户执行操作其组织授予许可的应用的管理员。
 
-有关详细信息，请参阅[请求整个租户的许可](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
+有关详细信息，请参阅[请求整个租户的许可](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#requesting-consent-for-an-entire-tenant)。
 
 ## <a name="app-management"></a>应用管理
 
@@ -76,9 +76,9 @@ ms.locfileid: "58334575"
 > [!NOTE]
 > 直到你的应用完成发布后，你才会在此处看到信息。
 
-将显示每个程序包的名称、版本和体系结构。 单击“详细信息”可显示支持的语言、应用功能和文件大小等其他信息。 所见到的每个程序包的具体信息可能有所不同，具体取决于目标操作系统和其他因素。 
+将显示每个程序包的名称、版本和体系结构。 单击“详细信息”可显示支持的语言、应用功能和文件大小等其他信息。  所见到的每个程序包的具体信息可能有所不同，具体取决于目标操作系统和其他因素。 
 
-具有 OEM 权限的开发人员还可以在“当前程序包”页面[生成预安装程序包](generate-preinstall-packages-for-oems.md)。
+具有 OEM 权限的开发人员还可以在“当前程序包”页面[生成预安装程序包](generate-preinstall-packages-for-oems.md)。 
 
 ## <a name="wnsmpns"></a>WNS/MPNS
 

@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a44a1adb8685ad182620b4c68024176628b9204d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 087192160fd098d63042f3d1ad16fe7a811de337
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369658"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321512"
 ---
 # <a name="enterprise"></a>企业
 
@@ -156,8 +156,8 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司�
 | 主题 | 描述 |
 |-------|-------------|
 | [将 LOB 应用分配到企业](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | 你可以通过适用于企业的 Microsoft Store 向企业直接发布业务线应用以获取批量购置，而无需将应用广泛提供给公众。 |
-| [旁加载应用](https://technet.microsoft.com/library/mt269549) | 当你旁加载应用时，你将一个已签名的应用包部署到设备。 你维护这些应用的签名、承载和部署。 旁加载应用的过程已在 Windows 10 中得到简化。             |
-| [将应用发布到 Microsoft Store](https://dev.windows.com/publish) | 利用统一的 Microsoft Store，你可以针对所有 Windows 设备发布和管理你的所有应用。 通过每个市场的定价、分配和可见性控件以及其他选项自定义应用的可用性。 |
+| [旁加载应用](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) | 当你旁加载应用时，你将一个已签名的应用包部署到设备。 你维护这些应用的签名、承载和部署。 旁加载应用的过程已在 Windows 10 中得到简化。             |
+| [将应用发布到 Microsoft Store](https://developer.microsoft.com/store/publish-apps) | 利用统一的 Microsoft Store，你可以针对所有 Windows 设备发布和管理你的所有应用。 通过每个市场的定价、分配和可见性控件以及其他选项自定义应用的可用性。 |
 
 ## <a name="enterprise-uwp-samples"></a>企业 UWP 示例
 

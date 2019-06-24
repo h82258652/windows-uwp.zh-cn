@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 205ccd6a8a2424d96f2c18068f5bf4c15596fdcb
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: fb8bdb2d2052bb50ee9bc2c9c719f102ac1d9aa0
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63785010"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319981"
 ---
 # <a name="opening-a-developer-account"></a>开设开发者帐户
 
@@ -65,14 +65,14 @@ ms.locfileid: "63785010"
 -   将公司电话号码添加到 Microsoft 帐户的安全信息。 尝试使用不需要扩展，并且是关键团队成员可以访问的数字。
 -   一般情况下，让开发人员使用[受信任的设备](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)中登录到公司的开发人员帐户。 所有关键团队成员都应具有对这些受信任的设备的访问权限。 这将减少访问帐户时对发送安全代码的需求。 每个帐户每周可生成的代码数量有限。
 -   如果需要允许从不受信任的电脑访问帐户，请将开发人员访问人数上限限制为五人。 理想情况下，这些开发人员应从共享相同地理和网络位置的计算机访问该帐户。
--   经常查看公司的安全信息，请参阅 https://account.microsoft.com/security以确保它都是最新。
+-   经常查看公司的安全信息，请参阅 https://account.microsoft.com/security 以确保它都是最新。
 
 
 ## <a name="microsoft-account-security"></a>Microsoft 帐户安全
 
 我们通过将 Microsoft 帐户与多种形式的身份验证相结合，使用所提供的安全信息来提高 Microsoft 帐户的安全级别。 这样一来，未经授权访问 Microsoft 帐户（和开发者帐户）的难度将大大提高。 此外，如果你忘记密码或有人试图访问你的帐户，我们可联系你以确认所有权和/或恢复帐户相应控制权限。
 
-Microsoft 帐户上必须具有至少两个电子邮件地址和/或电话号码。 我们建议添加尽可能多的信息。 请记住，必须对某些安全信息进行确认，它才能生效。 同样，确保经常查看你的安全信息并确保它处于最新状态。 你可以通过转到管理你的安全信息 https://account.microsoft.com/security和 Microsoft 帐户登录。 请参阅[的安全信息和安全代码](https://support.microsoft.com/help/12428/microsoft-account-security-info-and-security-codes)的详细信息。
+Microsoft 帐户上必须具有至少两个电子邮件地址和/或电话号码。 我们建议添加尽可能多的信息。 请记住，必须对某些安全信息进行确认，它才能生效。 同样，确保经常查看你的安全信息并确保它处于最新状态。 你可以通过转到管理你的安全信息 https://account.microsoft.com/security 和 Microsoft 帐户登录。 请参阅[的安全信息和安全代码](https://support.microsoft.com/help/12428/microsoft-account-security-info-verification-codes)的详细信息。
 
 当你登录到合作伙伴中心使用 Microsoft 帐户时，系统可能会请求通过发送必须提供要完成登录过程的安全代码验证你的身份。 我们建议指定为经常使用的 Pc*受信任的设备*。 在登录时从受信任的设备，你通常不会提示对于代码，尽管可能偶尔会提示在特定情况下，或如果你尚未登录该设备上的长时间。 请参阅[将受信任的设备添加到你的 Microsoft 帐户](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)的详细信息。
 

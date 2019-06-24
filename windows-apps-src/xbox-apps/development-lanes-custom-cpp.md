@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 ms.localizationpriority: medium
-ms.openlocfilehash: 585289fdc66b8730036f3d14faeafce8c22c09a7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 276a352918e4458e145755bbafad09d4278ec4d7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371363"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322052"
 ---
 # <a name="bring-custom-c-games-to-uwp-on-xbox"></a>将自定义 C++ 游戏移植到 Xbox 上的 UWP
 
 如果你要编写一个自定义 C++ 引擎，Xbox One 完全支持 C++。 
 
-通用 Windows 平台 (UWP) 上的 C++ 游戏使用 DirectX 进行渲染。 有关详细信息，请参阅 [DirectX 图形和游戏](https://msdn.microsoft.com/library/windows/desktop/ee663274(v=vs.85).aspx)。
+通用 Windows 平台 (UWP) 上的 C++ 游戏使用 DirectX 进行渲染。 有关详细信息，请参阅 [DirectX 图形和游戏](https://docs.microsoft.com/windows/desktop/directx)。
 
 你可以编写[内含组件扩展的 C++](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx) (C++/CX)，也可以编写[标准 C++](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)（Win32 和 COM）。
 

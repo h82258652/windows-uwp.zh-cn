@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fe9805bfd754c050371b41ff091b1b2edf47891
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: da0031dbb87bffb457786170494140dbee0b2a6e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66364933"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317110"
 ---
 # <a name="transforms-overview"></a>转换概述
 
@@ -46,7 +46,7 @@ ms.locfileid: "66364933"
 
 您每次使用转换[ **UIElement.RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)，请记住，有另一个属性[ **UIElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) ，影响转换的行为方式：[**RenderTransformOrigin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransformorigin)。 **RenderTransformOrigin** 所声明的是整个转换应用到元素的默认点 (0,0)，还是应用到某个该元素相对坐标空间内的其他原点。 对于典型的元素，(0,0) 将转换放置到左上角。 你可能会选择更改 **RenderTransformOrigin** 而不是在转换上对 **CenterX** 和 **CenterY** 值进行调整，这取决于你需要的效果。 请注意，如果同时应用 **RenderTransformOrigin** 和 **CenterX** / **CenterY** 值，结果可能会相当混乱，当你为这些值中的任意一个设置动画时尤其如此。
 
-出于命中测试的目的，将应用转换的对象会继续以与其 x-y 空间上的视觉外观一致的预期方式响应输入。 比如，如果你使用了 [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) 将 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 在 UI 中横向移动 400 个像素，则当该用户按下该 **Rectangle** 在视觉上出现的点时，**Rectangle** 可以响应 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件。 如果用户按下转换前 **Rectangle** 所在的区域，将不会获得 false 事件。 对于任何影响命中测试的 Z 索引注意事项，应用转换不会产生任何差异；Z 索引仍按照容器中声明的子顺序进行评估，该索引可管理哪个元素可处理 x-y 空间中的点的输入事件。 尽管就 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 对象的子元素而言，可以通过对子元素应用 [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v%3Dvs.95)) 附加属性来调整顺序，但该顺序通常与在 XAML 中声明元素的顺序相同。
+出于命中测试的目的，将应用转换的对象会继续以与其 x-y 空间上的视觉外观一致的预期方式响应输入。 比如，如果你使用了 [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) 将 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 在 UI 中横向移动 400 个像素，则当该用户按下该 **Rectangle** 在视觉上出现的点时，**Rectangle** 可以响应 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件。 如果用户按下转换前 **Rectangle** 所在的区域，将不会获得 false 事件。 对于任何影响命中测试的 Z 索引注意事项，应用转换不会产生任何差异；Z 索引仍按照容器中声明的子顺序进行评估，该索引可管理哪个元素可处理 x-y 空间中的点的输入事件。 尽管就 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 对象的子元素而言，可以通过对子元素应用 [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) 附加属性来调整顺序，但该顺序通常与在 XAML 中声明元素的顺序相同。
 
 ## <a name="span-idothertransformpropertiesspanspan-idothertransformpropertiesspanspan-idothertransformpropertiesspanother-transform-properties"></a><span id="Other_transform_properties"></span><span id="other_transform_properties"></span><span id="OTHER_TRANSFORM_PROPERTIES"></span>其他转换属性
 
@@ -95,7 +95,7 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 
 ## <a name="span-idaccountingforcoordinateframesofreferenceatruntimespanspan-idaccountingforcoordinateframesofreferenceatruntimespanspan-idaccountingforcoordinateframesofreferenceatruntimespanaccounting-for-coordinate-frames-of-reference-at-run-time"></a><span id="Accounting_for_coordinate_frames_of_reference_at_run_time"></span><span id="accounting_for_coordinate_frames_of_reference_at_run_time"></span><span id="ACCOUNTING_FOR_COORDINATE_FRAMES_OF_REFERENCE_AT_RUN_TIME"></span>在运行时在核算的坐标的参考框架
 
-[**UIElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)具有一个名为方法[ **TransformToVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.)，这可能会生成[**转换**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Transform)关联坐标的参考框架的两个 UI 元素。 如果将根视觉对象作为第一个参数传递，则可以使用它将元素与应用的默认参考坐标系进行对比。 当从不同元素捕获了输入事件时，或尝试在未实际请求布局传递的情况下预测布局行为时，这可能很有用。
+[**UIElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)具有一个名为方法[ **TransformToVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.transformtovisual)，这可能会生成[**转换**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Transform)关联坐标的参考框架的两个 UI 元素。 如果将根视觉对象作为第一个参数传递，则可以使用它将元素与应用的默认参考坐标系进行对比。 当从不同元素捕获了输入事件时，或尝试在未实际请求布局传递的情况下预测布局行为时，这可能很有用。
 
 从指针事件获取的事件数据将提供 [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpoint.getcurrentpoint) 方法的访问权限，可以在该方法中指定 *relativeTo* 参数以更改特定元素而非应用默认元素的参考坐标系。 该方法仅仅在内部应用转换，并在创建返回的 [**PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) 对象时，为你转换 x-y 坐标数据。
 

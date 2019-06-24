@@ -7,15 +7,15 @@ ms.topic: article
 ms.assetid: 40335c70-46cc-40fd-9fe0-3cc8e6200482
 ms.localizationpriority: medium
 ms.openlocfilehash: fa390123389b20564a94d1e59f9248adcf673061
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66372920"
 ---
-# <a name="new-apis-in-windows-10-build-14393"></a>Windows 10 版本 14393 中的新增 API
+# <a name="new-apis-in-windows-10-build-14393"></a>Windows 10 内部版本 14393 中的新增 API
 
-开发人员已可使用 Windows 10 版本 14393 中新增的和更新的 API 命名空间，此更新也称为周年更新或版本 1607。 此表列出了在此版本中添加或更改的命名空间。
+开发人员已可使用 Windows 10 内部版本 14393 中新增的和更新的 API 命名空间，此更新也称为周年更新或版本 1607。 此表列出了在此版本中添加或更改的命名空间。
 
 
 **项**

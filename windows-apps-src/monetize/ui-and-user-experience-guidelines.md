@@ -6,12 +6,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, 指南, 最佳做法
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bb187092158386c503b91973d8d63ce291b4760
-ms.sourcegitcommit: c62b260eecd373e57b19a623bae77e29180e0f3d
+ms.openlocfilehash: cf7f61f427ef0b1a0ff5b6f3b66d02d13d02e4ab
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66565517"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320675"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>广告的 UI 和用户体验指南
 
@@ -25,10 +25,10 @@ ms.locfileid: "66565517"
 在查看本文中针对不同类型广告的指南之前，我们先看一下有助于增加广告收入的一般性最佳做法。
 
 * [仔细计划广告位置](https://blogs.windows.com/buildingapps/2017/04/10/monetizing-app-advertisement-placement/)。 请参见我们[优化广告单元可见性](optimize-ad-unit-viewability.md)的相关指南。
-* [使用间隙横幅广告作为间隙视频广告的次选广告](https://blogs.windows.com/buildingapps/2017/04/17/monetizing-app-use-interstitial-banner-fallback-interstitial-video)。
+* [使用间隙横幅广告作为间隙视频广告的次选广告](https://blogs.windows.com/buildingapps/2017/04/17/monetizing-app-use-interstitial-banner-fallback-interstitial-video/)。
 * [了解用户以提供更好的定向广告](https://blogs.windows.com/buildingapps/2017/05/17/monetize-app-know-user-serve-better-targeted-ads/)。
 * [使用最新的 Advertising 库](https://blogs.windows.com/buildingapps/2017/05/22/earn-money-moving-latest-advertising-libraries/)。
-* [为应用设置正确 COPPA 设置](https://blogs.windows.com/buildingapps/2017/06/21/monetizing-app-set-coppa-settings-app)。
+* [为应用设置正确 COPPA 设置](https://blogs.windows.com/buildingapps/2017/06/21/monetizing-app-set-coppa-settings-app/)。
 
 
 ## <a name="guidelines-for-banner-ads"></a>横幅广告指南
@@ -39,7 +39,7 @@ ms.locfileid: "66565517"
 
 建议在应用中实施横幅广告时遵循下列最佳做法：
 
-* [采用美国互动广告局建议尺寸](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes)（契合设备布局）。
+* [采用美国互动广告局建议尺寸](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes/)（契合设备布局）。
 
 * 将大部分应用 UI 投入到功能性空间和内容中。
 

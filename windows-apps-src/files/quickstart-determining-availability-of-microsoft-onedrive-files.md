@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: effb28fa453ec884152dbc404245f00f4893ef5a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369425"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>确定 Microsoft OneDrive 文件的可用性
 
 
-**重要的 Api**
+**重要的 API**
 
 -   [**FileIO 类**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)
 -   [**StorageFile 类**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)
@@ -24,13 +24,13 @@ ms.locfileid: "66369425"
 
 使用 [**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable) 属性确定 Microsoft OneDrive 文件是否可用。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
     若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
--   **应用 capabilty 声明**
+-   **应用功能声明**
 
     请参阅[文件访问权限](file-access-permissions.md)。
 
@@ -38,7 +38,7 @@ ms.locfileid: "66369425"
 
 用户能够将 OneDrive 文件标记为脱机可用（默认）或仅联机可用。 此功能使用户能够将大文件（例如图片和视频）移动到其 OneDrive、将其标记为仅联机可用，并节省磁盘空间（在本地保留的唯一内容是元数据文件）。
 
-[**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable)，用于确定文件是否当前可用。 下表显示了在各种方案中 **StorageFile.IsAvailable** 属性的值。
+[**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable) 用于确定某个文件当前是否可用。 下表显示了在各种方案中 **StorageFile.IsAvailable** 属性的值。
 
 | 文件类型                              | 联机 | 按流量计费的网络        | 脱机 |
 |-------------------------------------------|--------|------------------------|---------|

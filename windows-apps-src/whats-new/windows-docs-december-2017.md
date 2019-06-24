@@ -6,11 +6,11 @@ ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a79edb39cc4bfa5794d79d68f4fb8d5b0e976105
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645312"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63806041"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>2017 年 12 月 Windows 开发人员文档中的新增功能
 
@@ -20,14 +20,14 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ## <a name="features"></a>功能
 
-### <a name="windows-mixed-reality-enthusiasts-guide"></a>Windows 混合的现实：他酷爱钻研技术的指南
+### <a name="windows-mixed-reality-enthusiasts-guide"></a>Windows Mixed Reality：发烧友指南
 
 [发烧友指南](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/)面向探索混合现实领域的技术发烧友，回答了大家对 Windows Mixed Reality 的主要问题。 
 
 在该指南中，你将了解： 
 - 购买前常见问题解答， 
 - 如何检查电脑的兼容性， 
-- 设置说明， 
+- 设置说明 
 - 如何使用头戴显示设备和控制器， 
 - 如何下载和畅玩沉浸式游戏、360 视频、2D 应用、WebVR 和 SteamVR， 
 - 如何排查问题，等等。
@@ -36,9 +36,9 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="keyboard-interactions"></a>键盘交互
 
-设计和优化你的 UWP 应用，以便使用更新的[键盘交互](../design/input/keyboard-interactions.md)为高级用户提供更轻松的访问体验和强大的功能。 我们更新了相关建议和指南，以反映 Fall Creators Update 中交互方面的新增改进。
+设计和优化 UWP 应用，以便使用更新的[键盘交互](../design/input/keyboard-interactions.md)为高级用户提供更轻松的访问体验和强大的功能。 我们更新了相关建议和指南，以反映 Fall Creators Update 中交互方面的新增改进。
 
-请参阅[键盘快捷方式](../design/input/keyboard-accelerators.md)和[自定义键盘交互](../design/input/custom-keyboard-interactions.md)以扩展你的应用的键盘功能。
+请参阅[键盘快捷方式](../design/input/keyboard-accelerators.md)和[自定义键盘交互](../design/input/custom-keyboard-interactions.md)以扩展应用的键盘功能。
 
 在支持触摸交互的设备上，根据[响应触摸键盘的状态](../design/input/respond-to-the-presence-of-the-touch-keyboard.md)以及[使用输入范围更改触摸键盘](../design/input/use-input-scope-to-change-the-touch-keyboard.md)文章添加键盘功能。
 
@@ -46,11 +46,11 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 Microsoft Collaborate 门户提供广泛的工具和服务，旨在通过分享工程系统工作项（bug、功能请求等）以及分配内容（版本、文档、规范）来简化 Microsoft 生态系统中的工程协作。 [了解详情](https://docs.microsoft.com/en-us/collaborate)。
 
-![在合作伙伴中心 Microsoft 开展协作](images/microsoft_collaborate_screenshot.PNG)
+![合作伙伴中心内的 Microsoft Collaborate](images/microsoft_collaborate_screenshot.PNG)
 
 ### <a name="package-desktop-applications-with-uwp-projects"></a>打包桌面应用程序以及 UWP 项目
 
-Visual Studio 2017 第 15.5 版已更新 **Windows 应用程序包项目**模板，因此更方便添加 UWP 项目。 你不需要再使用基于 JavaScript 的程序包项目，然后手动调整程序包清单。  
+Visual Studio 2017 第 15.5 版已更新 **Windows 应用程序包项目**模板，因此更方便添加 UWP 项目。 不再需要使用基于 JavaScript 的程序包项目，然后手动调整程序包清单。  
 
 请参阅[使用 Visual Studio 创建应用包](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)获取有关如何使用新模板打包桌面应用程序的指南。
 
@@ -58,23 +58,23 @@ Visual Studio 2017 第 15.5 版已更新 **Windows 应用程序包项目**模板
 
 ### <a name="subscription-add-ons-are-now-available-to-developers-in-the-windows-dev-center-insider-program"></a>参加 Windows 开发人员中心会员计划的开发人员现在可以使用订阅加载项
 
-所有开发人员加入开发人员中心预览体验计划现在可以都使用订阅外接程序来销售其应用应用程序 （如应用程序功能或数字内容） 的数字产品与自动定期的计费周期。 有关详细信息，请参阅[启用应用加载项订阅](../monetize/enable-subscription-add-ons-for-your-app.md)。
+所有参加开发人员中心会员计划的开发人员现在都可以使用订阅加载项，以便在自动定期计费周期内销售自主应用中的数字产品（比如应用功能或数字内容）。 有关详细信息，请参阅[启用应用加载项订阅](../monetize/enable-subscription-add-ons-for-your-app.md)。
 
 ## <a name="developer-guidance"></a>开发人员指南
 
 ### <a name="color"></a>颜色
 
-为了尽可能地提高用户体验，我们添加了一些有关如何在应用中使用颜色的新指南。 这包括 API 使用情况，以及有关 UI 设计和辅助功能的一般指南。 我们还更新了可供用户在 Xbox 上使用的主题色列表。 [请查看更新后的颜色文章。](../design/style/color.md)
+为了尽可能地提高用户体验，我们添加了一些有关如何在应用中使用颜色的新指南。 这包括 API 使用情况，以及有关 UI 设计和辅助功能的一般指南。 我们还更新了可供用户在 Xbox 上使用的主题色列表。 [在此查看更新的颜色使用指南。](../design/style/color.md)
 
 ![通用 Windows 调色板](../design/basics/images/colors.png)
 
 ### <a name="data-access-guides"></a>数据访问指南
 
-我们添加了 [SQL Server 指南](../data-access/sql-server-databases.md)以说明你的应用可以如何直接访问 SQL Server 数据库。 无需服务层。
+我们添加了 [SQL Server 指南](../data-access/sql-server-databases.md)以介绍应用如何直接访问 SQL Server 数据库。 无需任何服务层。
 
 我们对 [SQLite 指南](../data-access/sqlite-databases.md)进行了全面整改，使外观更加简洁，我们还加入了有关在用户设备上的轻量级数据库中存储和检索数据的最新优秀实践。
 
-### <a name="forms"></a>表单
+### <a name="forms"></a>窗体
 
 我们添加了有关[如何在应用中构建表单](../design/controls-and-patterns/forms.md)的新文章，以便收集和提交用户数据。 这包括有关实施表单的具体信息，以及有关在何时何处使用表单的一般指南。
 
@@ -85,7 +85,7 @@ Visual Studio 2017 第 15.5 版已更新 **Windows 应用程序包项目**模板
 
 ### <a name="request-ratings-and-reviews"></a>请求评分和评价
 
-我们添加了一篇说明你可以如何[请求应用评分和评价](../monetize/request-ratings-and-reviews.md)的新文章。 你可以在应用中显示评分和评价对话框，也可以在 Store 中打开应用的评分和评价页面。
+我们添加了一篇说明你可以如何[请求应用评分和评价](../monetize/request-ratings-and-reviews.md)的新文章。 可以在应用中显示评分和评价对话框，也可以在 Store 中打开应用的评分和评价页面。
 
 ## <a name="samples"></a>示例
 
@@ -95,6 +95,6 @@ Visual Studio 2017 第 15.5 版已更新 **Windows 应用程序包项目**模板
 
 ## <a name="videos"></a>视频
 
-### <a name="package-a-net-app-in-visual-studio"></a>在 Visual Studio 中创建 .NET 应用程序包
+### <a name="package-a-net-app-in-visual-studio"></a>在 Visual Studio 中打包 .NET 应用
 
 将桌面应用发布到通用 Windows 平台变得前所未有的简单。 [观看视频](https://www.youtube.com/watch?v=fJkbYPyd08w)了解如何打包要分发的 .NET 应用，然后[查看此页面](../porting/desktop-to-uwp-packaging-dot-net.md)了解更多详细信息。

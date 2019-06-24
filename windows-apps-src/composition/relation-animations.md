@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: b6fdc59e8a7203a3bb8c6ad79adabd446b884639
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: bfed00cf4866d79d4ac3097026cc09c70f9327cd
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597712"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318169"
 ---
 # <a name="relation-based-animations"></a>基于关系的动画
 
@@ -55,11 +55,11 @@ Expression 还支持一系列关键字 - 一种特殊的短语，仅在 Expressi
 在 UWP 应用中生成 Expression 有两种选项：
 
 1. 通过官方的公共 API 以字符串形式构建等式。
-1. 通过开源 ExpressionBuilder 工具在类型安全的对象模型中生成等式。 请参阅 [Github 源代码和文档](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/ExpressionBuilder)。
+1. 通过开源 ExpressionBuilder 工具在类型安全的对象模型中生成等式。 请参阅 [Github 源代码和文档](https://github.com/microsoft/WindowsCompositionSamples/tree/master/ExpressionBuilder)。
 
 为使该文档表述清晰，我们将使用 ExpressionBuilder 定义我们的 Expression。
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>Parameters
 
 参数构成了 Expression 的核心。 有两种类型的参数：
 

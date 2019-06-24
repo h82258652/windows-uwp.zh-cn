@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e4f7b0469ae8c50e6da40fb248678a69a2827931
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5bdd090b380160952dfbb8b5f04b95b6c84b75b7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57663822"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322345"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a>在 Mac 上设置 Windows 10
 
@@ -22,7 +22,7 @@ ms.locfileid: "57663822"
 
 准备好开始开发通用 Windows 应用，却没有一台随手可用的电脑？ 没关系 - 你可以使用 Mac！ Apple Boot Camp、 根据 Oracle VirtualBox、 VMware Fusion 和 Parallels Desktop 等热门第三方解决方案，可以在 Apple 计算机上安装 Windows 10 和 Microsoft Visual Studio。
 
-**请注意**  需要将磁盘或 USB 闪存驱动器上的 Windows 10 可启动映像。 如果你是 MSDN 订户，可以从 MSDN 订户下载中心下载安装映像。 如果不是订户，安装程序是否可以从购买[Microsoft Store](https://apps.microsoft.com/windows/app)。 也可以从[此位置](https://go.microsoft.com/fwlink/?LinkId=623906)下载安装程序，这在你已运行 Windows 并希望升级时很有用。
+**请注意**  需要将磁盘或 USB 闪存驱动器上的 Windows 10 可启动映像。 如果你是 MSDN 订户，可以从 MSDN 订户下载中心下载安装映像。 如果不是订户，安装程序是否可以从购买[Microsoft Store](https://www.microsoft.com/store/apps)。 也可以从[此位置](https://go.microsoft.com/fwlink/?LinkId=623906)下载安装程序，这在你已运行 Windows 并希望升级时很有用。
 
 Windows 运行后，可以安装最新版本的 Visual Studio 中从[开发人员下载适用于 Windows 10](https://developer.microsoft.com/en-us/windows/downloads)并开始编写应用程序 ！
 

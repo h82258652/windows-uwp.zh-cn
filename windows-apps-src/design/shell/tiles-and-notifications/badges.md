@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b41069f1ca964f978ba0cff73f5c34a9db133a10
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7e0c3802f0b6163ad5f0e179d90148bae543aeab
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649082"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320845"
 ---
 # <a name="badge-notifications-for-uwp-apps"></a>适用于 UWP 应用的锁屏提醒通知
 
@@ -34,7 +34,7 @@ ms.locfileid: "57649082"
 
 <table>
     <tr>
-        <th>值</th>
+        <th>ReplTest1</th>
         <th>Badge</th>
         <th>XML</th>
     </tr>
@@ -196,7 +196,7 @@ private void clearBadge()
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
-* [通知示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> 显示如何创建动态磁贴、发送锁屏提醒更新和显示 Toast 通知。 
+* [通知示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)<br/> 显示如何创建动态磁贴、发送锁屏提醒更新和显示 Toast 通知。 
 
 ## <a name="related-articles"></a>相关文章
 

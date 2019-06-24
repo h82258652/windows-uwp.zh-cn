@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, xaml 互操作
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a7b9800bbcc9746db03eae50a99b701bfbfa815
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ad03a86ba18f11d8d63c2c98649e7f159f3d4f52
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368871"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321290"
 ---
 # <a name="directx-and-xaml-interop"></a>DirectX 和 XAML 互操作
 
@@ -32,7 +32,7 @@ DirectX 为二维和三维图形提供了两个功能强大的库：Direct2D 和
 如果要实现自定义 XAML 和 DirectX 互操作，需要知道以下两个概念：
 
 -   共享图面是由 XAML（可以使用 DirectX 间接绘入）使用 [Windows::UI::Xaml::Media::ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagesource) 类型定义的调整大小的显示区域。 对于共享图面，不对新内容显示在屏幕上的情形控制精确计时。 而将对共享图面的更新同步到 XAML 框架的更新。
--   [交换链](https://msdn.microsoft.com/library/windows/desktop/bb206356(v=vs.85).aspx)表示用于以最小延迟显示图形的缓冲区集合。 通常，交换链独立于 UI 线程以每秒 60 帧的速度进行更新。 但是，交换链会使用更多的内存和 CPU 资源来支持快速更新，并且更难以使用，因为你必须管理多个线程。
+-   [交换链](https://docs.microsoft.com/windows/desktop/direct3d9/what-is-a-swap-chain-)表示用于以最小延迟显示图形的缓冲区集合。 通常，交换链独立于 UI 线程以每秒 60 帧的速度进行更新。 但是，交换链会使用更多的内存和 CPU 资源来支持快速更新，并且更难以使用，因为你必须管理多个线程。
 
 考虑 DirectX 的用途。 它是否用于合成适合显示窗口维度的单一控件或对其进行动画处理？ 它是否包含像游戏中那样需要呈现和实时控制的输出？ 如果是，你可能需要实现一个交换链。 否则，可以使用共享图面。
 
@@ -72,7 +72,7 @@ DirectX 为二维和三维图形提供了两个功能强大的库：Direct2D 和
         (void **)&m_sisNativeWithD2D);
     ```
 
-3.  首先调用 [D3D11CreateDevice](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 和 [D2D1CreateDevice](https://msdn.microsoft.com/library/windows/desktop/hh404272(v=vs.85).aspx)，然后将设备和文本传递到 [ISurfaceImageSourceNativeWithD2D::SetDevice](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-setdevice)，以创建 DXGI 和 D2D 设备。 
+3.  首先调用 [D3D11CreateDevice](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 和 [D2D1CreateDevice](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nf-d2d1_1-d2d1createdevice)，然后将设备和文本传递到 [ISurfaceImageSourceNativeWithD2D::SetDevice](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-setdevice)，以创建 DXGI 和 D2D 设备。 
 
     > [!NOTE]
     > 如果将从后台线程绘制到 **SurfaceImageSource**，则你也需要确保 DXGI 设备已启用多线程访问。 仅可在出于性能原因需要从后台线程进行绘制时才可进行此操作。

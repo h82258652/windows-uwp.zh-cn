@@ -6,12 +6,12 @@ ms.date: 4/8/2019
 ms.topic: article
 keywords: Windows 10, uwp, 调试, 测试, 性能
 ms.localizationpriority: medium
-ms.openlocfilehash: 3263f7a0f1c353cfd15bf83e6fe1b0004b3bcc94
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 96e6f712f1a9882a10cf0706452628329c0c085d
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362677"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317954"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和调试 UWP 应用
 
@@ -41,7 +41,7 @@ Microsoft Visual Studio，可部署和调试位于使用不同的 Windows 10 设
 
 选择“不启动，但在启动时调试代码”  将导致 Visual Studio 调试程序在你在自定义时打开它时附加到你的 UWP 应用。 这是从[不同的启动方法](../xbox-apps/automate-launching-uwp-apps.md)调试控件路径的有效方法，如使用自定义参数的协议激活。  
 
-可以在 Windows 8.1 或更高版本上开发和编译 UWP 应用，但需要运行 Windows 10。 如果你要在 Windows 8.1 电脑上开发 UWP 应用，你可以远程调试在另一台 Windows 10 设备上运行的 UWP 应用，前提是主机和目标计算机在同一个 LAN 上。 若要执行此操作，请在两台计算机上下载和安装 [Visual Studio 远程工具](https://www.visualstudio.com/downloads/)。 已安装的版本必须与你已安装的现有 Visual Studio 版本匹配，并且你选择的体系结构（x86、x64）还必须与你的目标应用的体系结构匹配。
+可以在 Windows 8.1 或更高版本上开发和编译 UWP 应用，但需要运行 Windows 10。 如果你要在 Windows 8.1 电脑上开发 UWP 应用，你可以远程调试在另一台 Windows 10 设备上运行的 UWP 应用，前提是主机和目标计算机在同一个 LAN 上。 若要执行此操作，请在两台计算机上下载和安装 [Visual Studio 远程工具](https://visualstudio.microsoft.com/downloads/)。 已安装的版本必须与你已安装的现有 Visual Studio 版本匹配，并且你选择的体系结构（x86、x64）还必须与你的目标应用的体系结构匹配。
 
 ## <a name="package-layout"></a>程序包布局
 
@@ -94,7 +94,7 @@ Microsoft Visual Studio，可部署和调试位于使用不同的 Windows 10 设
 
 若要将其更改为**无身份验证**，在**远程调试器**，转到**工具** - &gt; **选项**，和然后将其设置为**无身份验证**。 在设置远程调试器后，你还必须确保已将主机设备设置为[开发人员模式](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。 在这之后，你可以从部署计算机进行部署。
 
-有关详细信息，请参阅 [Visual Studio 下载中心](https://www.visualstudio.com/downloads/) 页面。
+有关详细信息，请参阅 [Visual Studio 下载中心](https://visualstudio.microsoft.com/downloads/) 页面。
 
 ## <a name="passing-command-line-debug-arguments"></a>传递命令行调试参数
 

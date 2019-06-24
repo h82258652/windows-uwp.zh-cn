@@ -5,12 +5,12 @@ ms.date: 04/21/2017
 ms.topic: article
 keywords: windows 10、 uwp、 更新、 后台任务、 updatetask、 后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: 3683595926f20fdd9f9af5929db65396b0001bcc
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d943623a9978d39fd3930edc07e7524fe1cadf55
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371479"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321790"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>在 UWP 应用更新时运行后台任务
 
@@ -27,7 +27,7 @@ Update Task 与使用 [ServicingComplete](https://docs.microsoft.com/uwp/api/Win
 - 向你的解决方案添加一个 Windows 运行时组件项目。
 - 创建从你的应用到该组件的引用。
 - 在实现 [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 的组件中创建一个公共的密封类。
-- 实现 [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.) 方法，该方法是 Update Task 运行时调用的必需的入口点。 如果你要从后台任务进行异步调用，[创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)介绍了如何通过 **Run** 方法使用延迟。
+- 实现 [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法，该方法是 Update Task 运行时调用的必需的入口点。 如果你要从后台任务进行异步调用，[创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)介绍了如何通过 **Run** 方法使用延迟。
 
 你无需注册此后台任务（**创建和注册进程外后台任务**主题的“注册要运行的后台任务”部分）即可使用 Update Task。 这是使用 Update Task 的主要原因，因为你无需在你的应用中添加任何代码来注册任务，应用也无需在更新前运行至少一次来注册后台任务。
 

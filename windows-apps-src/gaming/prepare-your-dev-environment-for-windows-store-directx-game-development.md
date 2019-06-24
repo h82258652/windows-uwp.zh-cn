@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 模板, 工具, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: a272c579fb3ead676fe76f16c33b70f557de4ed8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 090cb13faa00f55f5c611abc20f4ee9e90977113
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653762"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321183"
 ---
 # <a name="project-templates-and-tools-for-games"></a>适用于游戏的项目模板和工具
 
@@ -25,7 +25,7 @@ ms.locfileid: "57653762"
 ## <a name="get-visual-studio"></a>获取 Visual Studio
 
 
-[下载并安装 Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions)。
+[下载并安装 Microsoft Visual Studio 2015](https://visualstudio.microsoft.com/vs/)。
 
 <table>
 <colgroup>
@@ -67,7 +67,7 @@ ms.locfileid: "57653762"
 如果你要创建新的 DirectX 游戏，请参阅下列主题。
 
 -   [使用 DirectX 创建简单的 UWP 游戏](tutorial--create-your-first-uwp-directx-game.md)
--   [开发 c + + 和 DirectX 中通用 Windows 平台游戏 Marble Maze](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+-   [开发中通用 Windows 平台游戏 Marble MazeC++和 DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

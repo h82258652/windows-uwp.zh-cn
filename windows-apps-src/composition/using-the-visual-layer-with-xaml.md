@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c00bf23a8539f7ee37974e16586a4477cc6b78bb
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4d118633d9d0d9b7007c94ec4d5053db34b09e29
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360394"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318046"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>将可视化层与 XAML 结合使用
 
@@ -25,7 +25,7 @@ XAML 和可视化层互操作功能可用于创建单独使用 XAML API 时无�
 - 像素完美投影
 
 这些效果和动画可应用于现有 XAML 内容，因此你无需大幅重构 XAML 应用即可充分利用新功能。
-布局动画、阴影和模糊效果将在下面的秘诀部分进行介绍。 有关代码示例实现视差，请参阅 [ParallaxingListItems 示例](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)。 [WindowsUIDevLabs 存储库](https://github.com/Microsoft/WindowsUIDevLabs)还有用于实现动画、阴影和效果的其他示例。
+布局动画、阴影和模糊效果将在下面的秘诀部分进行介绍。 有关代码示例实现视差，请参阅 [ParallaxingListItems 示例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/ParallaxingListItems)。 [WindowsUIDevLabs 存储库](https://github.com/microsoft/WindowsCompositionSamples)还有用于实现动画、阴影和效果的其他示例。
 
 ## <a name="the-xamlcompositionbrushbase-class"></a>XamlCompositionBrushBase 类
 
@@ -364,6 +364,6 @@ private void InitializeFrostedGlass(UIElement glassHost)
 
 - [可视化层概览](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
 - [**ElementCompositionPreview**类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
-- [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) 中的高级 UI 和复合示例
-- [BasicXamlInterop 示例](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
-- [ParallaxingListItems 示例](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)
+- [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples) 中的高级 UI 和复合示例
+- [BasicXamlInterop 示例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/BasicXamlInterop)
+- [ParallaxingListItems 示例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/ParallaxingListItems)

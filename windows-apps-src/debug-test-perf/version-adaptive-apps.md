@@ -5,12 +5,12 @@ ms.date: 05/17/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 579f92cc51ed5f9eeea522d81cfdb030f85ef0da
-ms.sourcegitcommit: f282c906cddf0d57217484e61a5cbd2fe8469421
+ms.openlocfilehash: b947d0b6cc83dc6bca45efb7103a933e79972e3b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65852276"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317453"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>自适应应用程序版本：使用新的 Api，同时保持与早期版本兼容性
 
@@ -59,9 +59,9 @@ ms.locfileid: "65852276"
 | 2018 年 10 月更新 | 1809 | 17763 |
 | 2019 年 5 更新 | 1903 | 18362 |
 
-可以从 [Windows SDK 和仿真器存档](https://developer.microsoft.com/downloads/sdk-archive)下载任何发布的 SDK 版本。 可以从 [Windows 预览体验成员](https://insider.windows.com/Home/BuildWithWindows)站点的开发人员部分下载最新的 Windows Insider Preview SDK。
+可以从 [Windows SDK 和仿真器存档](https://developer.microsoft.com/windows/downloads/sdk-archive)下载任何发布的 SDK 版本。 可以从 [Windows 预览体验成员](https://insider.windows.com/for-developers/)站点的开发人员部分下载最新的 Windows Insider Preview SDK。
 
- 有关 Windows 10 更新的详细信息，请参阅[Windows 10 发布信息](https://technet.microsoft.com/windows/release-info)。 有关 Windows 10 的支持生命周期的重要信息，请参阅[Windows 生命周期简报](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)。
+ 有关 Windows 10 更新的详细信息，请参阅[Windows 10 发布信息](https://www.microsoft.com/itpro/windows-10/release-information)。 有关 Windows 10 的支持生命周期的重要信息，请参阅[Windows 生命周期简报](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)。
 
 ## <a name="perform-api-checks"></a>执行 API 检查
 

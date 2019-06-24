@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 68260cadd4322d51c528bf6c6af7f5c8472f2199
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 23cb51ec6b2c6c2560c0a1f6d583ba916768254c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361860"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318562"
 ---
 # <a name="create-schedule-and-manage-media-breaks"></a>创建、计划和管理媒体中断
 
@@ -66,7 +66,7 @@ ms.locfileid: "66361860"
 
 [!code-cs[RegisterMediaBreakEvents](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetRegisterMediaBreakEvents)]
 
-开始媒体中断时会引发 [**BreakStarted**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakmanager.breakstarted)。 你可能希望更新 UI 以让用户知道正在播放媒体中断内容。 此示例使用传递到处理程序的 [**MediaBreakStartedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaBreakStartedEventArgs) 获取对已开始的媒体中断的引用。 然后使用 [**CurrentItemIndex**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacklist.currentitemindex) 属性确定此时在播放媒体中断播放列表内的哪个媒体项。 然后更新 UI，向用户显示中断中剩余的当前广告索引和广告数。 请记住，必须在 UI 线程上更新 UI，因此应该在 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 调用中进行调用。 
+开始媒体中断时会引发 [**BreakStarted**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakmanager.breakstarted)。 你可能希望更新 UI 以让用户知道正在播放媒体中断内容。 此示例使用传递到处理程序的 [**MediaBreakStartedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaBreakStartedEventArgs) 获取对已开始的媒体中断的引用。 然后使用 [**CurrentItemIndex**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacklist.currentitemindex) 属性确定此时在播放媒体中断播放列表内的哪个媒体项。 然后更新 UI，向用户显示中断中剩余的当前广告索引和广告数。 请记住，必须在 UI 线程上更新 UI，因此应该在 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 调用中进行调用。 
 
 [!code-cs[BreakStarted](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakStarted)]
 

@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
-ms.openlocfilehash: 6729711a424bfdcf9af2da92d60f12a066500256
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 950f9415e63a31a5204a15f4f72b968535489cfa
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368786"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321245"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 游戏开发指南
 
@@ -50,15 +50,15 @@ ms.locfileid: "66368786"
     </colgroup>
     <tr>
         <td>Windows 开发人员中心主要门户</td>
-        <td><a href="https://dev.windows.com">Windows 开发人员中心</a></td>
+        <td><a href="https://developer.microsoft.com/windows">Windows 开发人员中心</a></td>
     </tr>
     <tr>
         <td>开发 Windows 应用</td>
-        <td><a href="https://dev.windows.com/develop">开发 Windows 应用</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/develop">开发 Windows 应用</a></td>
     </tr>
     <tr>
         <td>通用 Windows 平台应用开发</td>
-        <td><a href="https://developer.microsoft.com/windows/apps/">Windows 10 应用的操作方法指南</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps">Windows 10 应用的操作方法指南</a></td>
     </tr>
     <tr>
         <td>UWP 游戏的操作方法指南</td>
@@ -169,7 +169,7 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
 
 ### <a name="game-samples"></a>游戏示例
 
-有许多 Windows 10 游戏和应用示例可以帮助你了解 Windows 10 游戏功能和快速开始开发游戏。 会定期开发和发布更多示例，所以不要忘记时不时返回到示例门户，查看一下新增内容。 你还可以[查看](https://help.github.com/articles/watching-repositories/) GitHub 存储库以接收有关更改和新增内容的通知。
+有许多 Windows 10 游戏和应用示例可以帮助你了解 Windows 10 游戏功能和快速开始开发游戏。 会定期开发和发布更多示例，所以不要忘记时不时返回到示例门户，查看一下新增内容。 你还可以[查看](https://help.github.com/en/articles/watching-and-unwatching-repositories) GitHub 存储库以接收有关更改和新增内容的通知。
 
 <table>
     <colgroup>
@@ -306,7 +306,7 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
     </tr>
     <tr>
         <td>Visual Studio 开发人员工具博客</td>
-        <td><a href="https://devblogs.microsoft.com/">开发者工具博客</a></td>
+        <td><a href="https://devblogs.microsoft.com/visualstudio/">开发者工具博客</a></td>
     </tr>
     <tr>
         <td>Somasegar 的开发人员工具博客</td>
@@ -599,7 +599,7 @@ Direct3D 11.3 是一个低级别图形 API，使用熟悉的 Direct3D 编程模�
     </tr>
     <tr>
         <td>Direct3D 11 on 12 概述</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-11-on-12">在 12 Direct3D 11</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-11-on-12">Direct3D 11 on 12</a></td>
     </tr>
 </table>
 
@@ -619,11 +619,11 @@ Direct3D 11.3 是一个低级别图形 API，使用熟悉的 Direct3D 编程模�
     </colgroup>
     <tr>
         <td>UWP 桥</td>
-        <td><a href="https://dev.windows.com/bridges/">为 Windows 自带代码</a></td>
+        <td><a href="https://developer.microsoft.com/windows/bridges">为 Windows 自带代码</a></td>
     </tr>
     <tr>
         <td>适用于 iOS 的 Windows 桥</td>
-        <td><a href="https://dev.windows.com/bridges/ios">将你的 iOS 应用引入 Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/bridges/ios">将你的 iOS 应用引入 Windows</a></td>
     </tr>
     <tr>
         <td>适用于桌面应用程序（.NET 和 Win32）的 Windows 桥</td>
@@ -688,11 +688,11 @@ Unity 提供用于创建美丽动人的 2D、3D、VR 和 AR 游戏和应用的�
     </colgroup>
     <tr>
         <td>Unity 游戏引擎</td>
-        <td><a href="https://unity3d.com/">Unity 的游戏引擎</a></td>
+        <td><a href="https://unity.com/">Unity 的游戏引擎</a></td>
     </tr>
     <tr>
         <td>获取 Unity</td>
-        <td><a href="https://unity3d.com/get-unity">获取 Unity</a></td>
+        <td><a href="https://store.unity.com/">获取 Unity</a></td>
     </tr>
     <tr>
         <td>Windows 的 Unity 文档</td>
@@ -756,7 +756,7 @@ Havok 模块化的工具和技术套件可帮助游戏创建者达到交互式�
     </tr>
     <tr>
         <td>Havok 支持论坛</td>
-        <td><a href="https://support.havok.com">Havok</a></td>
+        <td><a href="https://www.havok.com/">Havok</a></td>
     </tr>
 </table>
  
@@ -957,7 +957,7 @@ Windows 10 引入通用 Windows 平台 (UWP)，该平台在 Windows 10 设备�
     </colgroup>
     <tr>
         <td>UWP 开发入门</td>
-        <td><a href="https://dev.windows.com/getstarted">Windows 应用入门</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/getstarted">Windows 应用入门</a></td>
     </tr>
     <tr>
         <td>开始 UWP 开发</td>
@@ -991,7 +991,7 @@ Windows 10 引入通用 Windows 平台 (UWP)，该平台在 Windows 10 设备�
     </colgroup>
     <tr>
         <td>通用 Windows 平台应用开发概述</td>
-        <td><a href="https://dev.windows.com/develop">开发 Windows 应用</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/develop">开发 Windows 应用</a></td>
     </tr>
     <tr>
         <td>UWP 中的网络编程概述</td>
@@ -1235,11 +1235,11 @@ UI 地图是一个游戏导航布局，在其中菜单以流程图的形式呈�
     </tr>
     <tr>
         <td>资源绑定概念（涉及描述符、描述符表、描述符堆以及根签名） </td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/resource-binding">在 Direct3D 12 资源绑定</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/resource-binding">Direct3D 12 中的资源绑定</a></td>
     </tr>
     <tr>
         <td>管理内存</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/memory-management">在 Direct3D 12 中的内存管理</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/memory-management">Direct3D 12 中的内存管理</a></td>
     </tr>
 </table>
  
@@ -1347,7 +1347,7 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
     </tr>
     <tr>
         <td>适用于 Visual Studio 的 UWP 磁贴生成器扩展</td>
-        <td><a href="https://marketplace.visualstudio.com/vsgallery/09611e90-f3e8-44b7-9c83-18dba8275bb2">工具，用于创建使用单一映像所需的所有磁贴</a></td>
+        <td><a href="https://marketplace.visualstudio.com/items?itemName=shenchauhan.UWPTileGenerator">工具，用于创建使用单一映像所需的所有磁贴</a></td>
     </tr>
     <tr>
         <td>适用于 Visual Studio 的 UWP 磁贴生成器扩展（博客文章）</td>
@@ -1397,7 +1397,7 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
     </colgroup>
     <tr>
         <td>测试你的代码性能</td>
-        <td><a href="https://www.visualstudio.com/team-services/cloud-load-testing/">云的基于的负载测试</a></td>
+        <td><a href="https://azure.microsoft.com/services/devops/test-plans/">云的基于的负载测试</a></td>
     </tr>
     <tr>
         <td>使用游戏设备信息获取 Xbox 主机类型</td>
@@ -1464,7 +1464,7 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
     </tr>
     <tr>
         <td>Direct3D 12 编程指南</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics">Direct3D 12 的编程指南</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics">Direct3D 12 编程指南</a></td>
     </tr>
     <tr>
         <td>组合 DirectX 和 XAML</td>
@@ -1530,7 +1530,7 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
     </colgroup>
     <tr>
         <td>合作伙伴中心应用发布</td>
-        <td><a href="https://dev.windows.com/publish">发布 Windows 应用</a></td>
+        <td><a href="https://developer.microsoft.com/store/publish-apps">发布 Windows 应用</a></td>
     </tr>
     <tr>
         <td>合作伙伴中心高级发布 (GDN)</td>
@@ -1658,7 +1658,7 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
     </tr>
     <tr>
         <td>推广游戏的方法</td>
-        <td><a href="https://dev.windows.com/store-promotion">推广你的应用</a></td>
+        <td><a href="https://developer.microsoft.com/store/promote-your-apps">推广你的应用</a></td>
     </tr>
 </table>
  
@@ -1692,7 +1692,7 @@ Visual Studio Application Insights 提供关于发布的游戏的性能、遥测
     </colgroup>
     <tr>
         <td>使用 GameAnalytics 了解玩家行为</td>
-        <td><a href="https://www.gameanalytics.com/">GameAnalytics</a></td>
+        <td><a href="https://gameanalytics.com/">GameAnalytics</a></td>
     </tr>
     <tr>
         <td>将 UWP 游戏连接到 Google Analytics</td>
@@ -1712,7 +1712,7 @@ Visual Studio Application Insights 提供关于发布的游戏的性能、遥测
     </tr>
     <tr>
         <td>使用 Vungle 将视频广告添加到游戏中</td>
-        <td><a href="https://v.vungle.com/sdk">Windows SDK 获得 Vungle</a></td>
+        <td><a href="https://publisher.vungle.com/sdk/">Windows SDK 获得 Vungle</a></td>
     </tr>
 </table>
  

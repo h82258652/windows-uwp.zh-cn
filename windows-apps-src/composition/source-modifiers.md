@@ -5,18 +5,18 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: 834f631cd5c4b8696e75f83f194b95f809b1cf8a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 87e4eb90b4801d01ecb85c91b5e64ccc9155d199
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649862"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318096"
 ---
 # <a name="pull-to-refresh-with-source-modifiers"></a>使用 SourceModifier 的下拉刷新
 
 在本文中，我们将深入探讨如何使用 InteractionTracker 的 SourceModifier 功能，并通过创建自定义的下拉刷新控件展示其用法。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 我们在此假设你熟悉这些文章中所述的概念：
 
@@ -48,7 +48,7 @@ ms.locfileid: "57649862"
 
 ![具有下拉刷新效果的列表](images/animation/city-list.gif)
 
-在 [GitHub 上的窗口 UI 开发实验室存储库](https://github.com/Microsoft/WindowsUIDevLabs)中可以找到实现此体验的可行代码。 下面是生成上述体验的分步演练。
+在 [GitHub 上的窗口 UI 开发实验室存储库](https://github.com/microsoft/WindowsCompositionSamples)中可以找到实现此体验的可行代码。 下面是生成上述体验的分步演练。
 在 XAML 标记代码中，有以下内容：
 
 ```xaml

@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9541ea1c00d473bc4881a80d8597625592e278f9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4a47a5f8ffca1d9ca2ddab05fe0baf2f85977d7f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630832"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318194"
 ---
 # <a name="shadows-in-windows-ui"></a>Windows UI 中的阴影
 
@@ -113,9 +113,9 @@ shadow.StartAnimation("BlurRadius", blurAnimation);
 
 如果你想要添加到更复杂的框架元素的阴影，有几种与阴影 XAML 和组合之间的互操作的方法：
 
-1. 使用[DropShadowPanel](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) Windows 社区工具包中提供。 请参阅[DropShadowPanel 文档](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel)有关如何使用它的详细信息。
+1. 使用[DropShadowPanel](https://github.com/windows-toolkit/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) Windows 社区工具包中提供。 请参阅[DropShadowPanel 文档](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel)有关如何使用它的详细信息。
 1. 创建视觉对象使用与卷影主机环境并将其绑定到 XAML 讲义视觉对象。
-1. 使用组合示例库[SamplesCommon](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SamplesCommon/SamplesCommon) CompositionShadow 的自定义控件。 请参阅此处的使用情况的示例。
+1. 使用组合示例库[SamplesCommon](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SamplesCommon/SamplesCommon) CompositionShadow 的自定义控件。 请参阅此处的使用情况的示例。
 
 ## <a name="performance"></a>性能
 
@@ -132,4 +132,4 @@ CompositionDropShadowSourcePolicy.InheritFromVisualContent | 高
 ## <a name="additional-resources"></a>其他资源
 
 - [组合 DropShadow API](/uwp/api/Windows.UI.Composition.DropShadow)
-- [WindowsUIDevLabs GitHub 存储库](https://github.com/Microsoft/WindowsUIDevLabs)
+- [WindowsUIDevLabs GitHub 存储库](https://github.com/microsoft/WindowsCompositionSamples)

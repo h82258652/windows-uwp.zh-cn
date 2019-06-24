@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 607b7956786f5713b6133633c2609b801883c76b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2c2314110b4967653b02db6c374e6c66375814d0
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362403"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317554"
 ---
 # <a name="keep-the-ui-thread-responsive"></a>保持 UI 线程有响应
 
@@ -20,7 +20,7 @@ ms.locfileid: "66362403"
 
 应用由事件驱动，这意味着代码将在响应事件时执行工作，然后在出现下一事件之前保持空闲状态。 用于 UI（布局、输入、引发事件等）的平台代码以及用于 UI 的应用代码都在同一 UI 线程上执行。 该线程上执行一次只能执行一个指令，因此如果应用代码处理事件的时间过长，则框架将无法运行布局或引发表示用户交互的新事件。 应用的响应能力与处理工作的 UI 线程的可用性相关。
 
-你需要使用 UI 线程进行几乎所有对 UI 线程的更改，包括创建 UI 类型以及访问其成员。 无法从后台线程更新 UI，但可以使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 向其发布消息以使代码在该处运行。
+你需要使用 UI 线程进行几乎所有对 UI 线程的更改，包括创建 UI 类型以及访问其成员。 无法从后台线程更新 UI，但可以使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 向其发布消息以使代码在该处运行。
 
 > **请注意**  一个例外是没有可应用不会影响如何处理输入的 UI 更改的单独呈现线程或基本布局。 例如，许多不会影响布局的动画和过渡都可以在此呈现线程上运行。
 
@@ -43,7 +43,7 @@ ms.locfileid: "66362403"
 
 你可以使用 C# 中的 **await** 运算符、Visual Basic 中的 **Await** 运算符或 C++ 中的委托异步安排工作。 但这并不保证你安排的工作将在后台线程上运行。 许多通用 Windows 平台 (UWP) API 将为你在后台线程中安排工作，但如果你仅使用 **await** 或某个委托调用你的应用代码，请在 UI 线程上运行该委托或方法。 你必须明确指出希望何时在后台线程上运行你的应用代码。 在C#和 Visual Basic 可以完成此操作通过将传递到代码[ **Task.Run**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run?redirectedfrom=MSDN#overloads)。
 
-请记住，可能只能从 UI 线程访问 UI 元素。 先使用 UI 线程访问 UI 元素，再启动后台工作，并且/或者在后台线程上使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 或 [**CoreDispatcher.RunIdleAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runidleasync)。
+请记住，可能只能从 UI 线程访问 UI 元素。 先使用 UI 线程访问 UI 元素，再启动后台工作，并且/或者在后台线程上使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 或 [**CoreDispatcher.RunIdleAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runidleasync)。
 
 可以在后台线程上执行的工作的一个示例是计算游戏中的计算机 AI。 执行对计算机的下一次移动进行计算的代码需要花费很长时间。
 
@@ -105,4 +105,4 @@ public class AsyncExample
 
 ## <a name="related-topics"></a>相关主题
 
-* [自定义用户交互](https://developer.microsoft.com/windows/design/inputs-devices)
+* [自定义用户交互](https://docs.microsoft.com/windows/uwp/design/layout/index)

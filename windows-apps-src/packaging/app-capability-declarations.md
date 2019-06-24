@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: cb02e9c332ab1c27886520c0a9c95a312a8c395d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cc613177f7cdd57691fa261519127e8bbf03e3ad
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372738"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319892"
 ---
 # <a name="app-capability-declarations"></a>应用功能声明
 
@@ -51,7 +51,7 @@ ms.locfileid: "66372738"
 | **VoIP 呼叫** | **VoipCall**功能允许应用访问 Api 调用中的 VoIP [ **Windows.ApplicationModel.Calls** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Calls)命名空间。<br /><br />当在应用的程序包清单中声明 **voipCall** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="voipCall"/></Capabilities>```
 | **三维对象** | **objects3D** 功能允许应用编程访问 3D 对象文件。 此功能通常用在需要访问整个 3D 对象库的 3D 应用和游戏中。<br /><br />若要使用 [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命令空间中的 API 访问包含 3D 对象的文件夹，则需要此功能。<br /><br />当在应用的程序包清单中声明 **objects3D** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="objects3D"/></Capabilities>```
 | **读取阻止的消息**\* | **blockedChatMessages** 功能允许应用读取已由“垃圾邮件筛选器”应用阻止的短信和彩信。<br /><br />若要使用 [**Windows.ApplicationModel.Chat**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Chat) 命令空间中的 API 访问已阻止的消息，则需要此功能。<br /><br />当在应用的程序包清单中声明 **blockedChatMessages** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="blockedChatMessages"/></Capabilities>```
-| **自定义设备** | **LowLevelDevices**功能允许应用访问自定义设备时满足其他要求的数量。 不要将此功能与相混淆**lowLevel**允许 GPIO、 I2C、 SPI 和 PWM 设备的访问权限的设备功能。<br /><br /> 如果您开发的自定义驱动程序，公开[设备接口](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)和你想要打开此设备的句柄并发送 Ioctl，则必须： <ul><li>启用**lowLevelDevices**应用程序清单中的功能： ```<Capabilities><iot:Capability Name="lowLevelDevices"/></Capabilities>```</li><li>启用[嵌入的模式](https://docs.microsoft.com/windows/iot-core/develop-your-app/EmbeddedMode)</li><li>将标记作为设备接口[受限](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted)，而是在你[INF](https://msdn.microsoft.com/library/windows/desktop/hh404264(v=vs.85).aspx)或通过调用[WdfDeviceAssignInterfaceProperty()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty)驱动程序中。</ul>然后，可以使用[ **Windows.Devices.Custom.CustomDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Custom.CustomDevice)打开到设备的句柄。 有关详细信息，请参阅[UWP 设备应用程序的内部设备](https://docs.microsoft.com/windows-hardware/drivers/devapps/uwp-device-apps-for-specialized-devices)。
+| **自定义设备** | **LowLevelDevices**功能允许应用访问自定义设备时满足其他要求的数量。 不要将此功能与相混淆**lowLevel**允许 GPIO、 I2C、 SPI 和 PWM 设备的访问权限的设备功能。<br /><br /> 如果您开发的自定义驱动程序，公开[设备接口](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)和你想要打开此设备的句柄并发送 Ioctl，则必须： <ul><li>启用**lowLevelDevices**应用程序清单中的功能： ```<Capabilities><iot:Capability Name="lowLevelDevices"/></Capabilities>```</li><li>启用[嵌入的模式](https://docs.microsoft.com/windows/iot-core/develop-your-app/EmbeddedMode)</li><li>将标记作为设备接口[受限](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted)，而是在你[INF](https://docs.microsoft.com/previous-versions/windows/desktop/deviceaccess/register-the-device-interface-class-as-privileged)或通过调用[WdfDeviceAssignInterfaceProperty()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty)驱动程序中。</ul>然后，可以使用[ **Windows.Devices.Custom.CustomDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Custom.CustomDevice)打开到设备的句柄。 有关详细信息，请参阅[UWP 设备应用程序的内部设备](https://docs.microsoft.com/windows-hardware/drivers/devapps/uwp-device-apps-for-specialized-devices)。
 | **IoT 系统管理** | **systemManagement** 功能允许应用具有基本的系统管理权限，例如关机或重启、区域设置和时区。<br /><br />若要访问 [**Windows.System**](https://docs.microsoft.com/uwp/api/Windows.System) 命名空间中的某些 API，则需要此功能。<br /><br />当在应用的程序包清单中声明 **systemManagement** 功能时，该功能必须包含 **iot** 命名空间，如下所示。<br /><br />```<Capabilities><iot:Capability Name="systemManagement"/></Capabilities>```
 | **背景媒体播放** | **backgroundMediaPlayback** 功能更改了特定于媒体的 API（如 [**MediaPlayer**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer) 和 [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph) 类）的行为，支持应用在后台时的媒体播放。 所有活动音频流将不再静音，在应用转换到后台时将继续发声。 此外，播放进行时，应用生存时间将自动延长。
 | **远程系统** | **remoteSystem** 功能使应用有权访问与用户的 Microsoft 帐户关联的设备列表。 对于执行在设备间持续的任何操作，需要访问设备列表。 若要访问以下命名空间和方法中的所有成员，此功能是必需的。<ul><li>[Windows.System.RemoteSystems](https://docs.microsoft.com/uwp/api/windows.system.remotesystems)命名空间</li><li>[Windows.System.RemoteLauncher](https://docs.microsoft.com/uwp/api/Windows.System.RemoteLauncher)类</li><li>[AppServiceConnection.OpenRemoteAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appserviceconnection.openremoteasync)方法</li></ul> |
@@ -110,7 +110,7 @@ ms.locfileid: "66372738"
 
 ### <a name="restricted-capability-approval-process"></a>受限功能审核流程
 
-以前，你需要联系支持部门来获得使用某项功能的批准。 我们现在允许你提供此信息在[合作伙伴中心](https://partner.microsoft.com/dashboard/)作为的一部分[提交过程](../publish/app-submissions.md)。
+以前，你需要联系支持部门来获得使用某项功能的批准。 我们现在允许你提供此信息在[合作伙伴中心](https://partner.microsoft.com/dashboard)作为的一部分[提交过程](../publish/app-submissions.md)。
 
 当将包上载您的提交时，我们将检测是否声明任何受限制的功能。 如果我们检测到声明了此类功能，则你需要在[提交选项](../publish/manage-submission-options.md#restricted-capabilities)页面上提供有关你的产品如何使用每项功能的详细信息。 请务必提供尽可能详细的信息，以帮助我们了解你的产品需要声明该功能的原因。 请注意，这可能会给你的提交增加一些额外的时间来完成认证过程。
 

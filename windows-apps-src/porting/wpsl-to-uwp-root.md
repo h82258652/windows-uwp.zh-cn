@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c9088f695fb70d171f0b9d5474a4a0f2a63cae05
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d611c57ff6d8382a70bcc5078e04e9af8b6fd4ca
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372425"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322265"
 ---
 #  <a name="move-from-windowsphone-silverlight-to-uwp"></a>从 Windows Phone Silverlight 移动到 UWP
 
 
 如果你是 Windows Phone Silverlight 应用程序的开发人员，然后可充分利用您的技能和你的源代码中移动到 Windows 10。 使用 Windows 10 中，可以创建一个通用 Windows 平台 (UWP) 应用，这是你的客户可以安装到每种设备上的单个应用包。 有关 Windows 10、 UWP 应用和自适应代码和自适应 UI，我们将在此迁移指南中介绍的概念的更多背景，请参阅[通用 Windows 平台 (UWP) 应用的指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。
 
-当你将 Windows Phone Silverlight 应用移植到 Windows 10 应用时，你将能够赶上上的移动功能的[在 Windows Phone 8.1 中引入的](https://docs.microsoft.com/previous-versions/windows/apps/ff402535(v%3dvs.105))，和远不止他们使用通用 Windows 平台 (UWP) 应用程序模型和 UI 框架则是通用跨所有 Windows 10 设备。 这使得通过一个基本代码和一个应用包支持 PC、平板电脑、手机和大量其他种类的设备成为可能。 这将大幅增加应用的潜在受众，并通过共享数据、购买消费品等创造新的可能性。 有关新功能的详细信息，请参阅[What's new for Windows 10 中的开发人员](https://dev.windows.com/getstarted/whats-new-windows-10)。
+当你将 Windows Phone Silverlight 应用移植到 Windows 10 应用时，你将能够赶上上的移动功能的[在 Windows Phone 8.1 中引入的](https://docs.microsoft.com/previous-versions/windows/apps/ff402535(v=vs.105))，和远不止他们使用通用 Windows 平台 (UWP) 应用程序模型和 UI 框架则是通用跨所有 Windows 10 设备。 这使得通过一个基本代码和一个应用包支持 PC、平板电脑、手机和大量其他种类的设备成为可能。 这将大幅增加应用的潜在受众，并通过共享数据、购买消费品等创造新的可能性。 有关新功能的详细信息，请参阅[What's new for Windows 10 中的开发人员](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest)。
 
 如果你愿意，您的应用程序的 Windows Phone Silverlight 版本和它的 Windows 10 版本都可以是向客户提供在同一时间。
 
@@ -79,7 +79,7 @@ Windows Phone Silverlight 有一个基于 Silverlight 4.0 和程序针对的.NET
 ## <a name="related-topics"></a>相关主题
 
 **文档**
-* [什么是 Windows 10 中的开发人员的新增功能](https://dev.windows.com/getstarted/whats-new-windows-10)
+* [什么是 Windows 10 中的开发人员的新增功能](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest)
 * [通用 Windows 平台 (UWP) 应用指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 * [使用通用 Windows 平台 (UWP) 应用的路线图C#或 Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10))
 * [什么是 Windows Phone 8 开发人员下一步](https://docs.microsoft.com/previous-versions/windows/apps/dn655121(v=vs.105))

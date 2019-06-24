@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d4150e7296badd3d31a9aacc7becd3d849f6affd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4cfd970b3ca070218adcea86612016e567df3879
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360424"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318023"
 ---
 # <a name="my-people-notifications"></a>“我的人脉”通知
 
@@ -76,7 +76,7 @@ experienceType=”shoulderTap”
 
 > [!NOTE]
 > 如果应用使用 [ContactStore API](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore)，并且使用 [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) 属性将存储在电脑上的联系人链接至远程存储的联系人，则 RemoteId 属性的值必须稳定并且是唯一的。 这意味着远程 ID 必须一致地标识单个用户帐户，并且应包含唯一标记，以保证它不与电脑上其他联系人（包括其他应用所拥有的联系人）的远程 ID 冲突。
-> 如果无法保证应用所使用的远程 ID 的稳定性和唯一性，则可以使用 [RemoteIdHelper 类](https://msdn.microsoft.com/en-us/library/windows/apps/jj207024(v=vs.105).aspx#BKMK_UsingtheRemoteIdHelperclass)，以便在将所有远程 ID 添加到系统之前，先将唯一标记添加到这些 ID 中。 或者，你也可以选择彻底不使用 RemoteId 属性，而是创建一个自定义扩展属性来存储联系人的远程 ID。
+> 如果无法保证应用所使用的远程 ID 的稳定性和唯一性，则可以使用 [RemoteIdHelper 类](https://docs.microsoft.com/previous-versions/windows/apps/jj207024(v=vs.105)#BKMK_UsingtheRemoteIdHelperclass)，以便在将所有远程 ID 添加到系统之前，先将唯一标记添加到这些 ID 中。 或者，你也可以选择彻底不使用 RemoteId 属性，而是创建一个自定义扩展属性来存储联系人的远程 ID。
 
 除了第二个绑定和负载，你必须在回退 Toast 的第一个绑定中包含另一个负载。 如果回退 Toast 被强制恢复为普通 Toast，通知将使用该负载（[本文末尾](/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast)进行了进一步说明）。
 

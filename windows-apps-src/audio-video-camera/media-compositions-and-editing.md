@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4054f1f4ce4db7f158c1297b748ecea8cab83602
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6a0b21ac4c2bc1a2278757cdaa542be39c01f481
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360734"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318256"
 ---
 # <a name="media-compositions-and-editing"></a>媒体合成和编辑
 
@@ -21,7 +21,7 @@ ms.locfileid: "66360734"
 
 ## <a name="create-a-new-media-composition"></a>创建新的媒体合成
 
-[  **MediaComposition**](https://docs.microsoft.com/uwp/api/Windows.Media.Editing.MediaComposition) 类是包含组成合成的所有媒体剪辑的容器，用于负责呈现最终合成、将合成加载并保存到光盘，以及提供合成的预览流，以便用户可以在 UI 中查看它。 若要在你的应用中使用 **MediaComposition**，需包括 [**Windows.Media.Editing**](https://docs.microsoft.com/uwp/api/Windows.Media.Editing) 命名空间以及提供你将需要的相关 API 的 [**Windows.Media.Core**](https://docs.microsoft.com/uwp/api/Windows.Media.Core) 命名空间。
+[**MediaComposition**](https://docs.microsoft.com/uwp/api/Windows.Media.Editing.MediaComposition) 类是包含组成合成的所有媒体剪辑的容器，用于负责呈现最终合成、将合成加载并保存到光盘，以及提供合成的预览流，以便用户可以在 UI 中查看它。 若要在你的应用中使用 **MediaComposition**，需包括 [**Windows.Media.Editing**](https://docs.microsoft.com/uwp/api/Windows.Media.Editing) 命名空间以及提供你将需要的相关 API 的 [**Windows.Media.Core**](https://docs.microsoft.com/uwp/api/Windows.Media.Core) 命名空间。
 
 [!code-cs[Namespace1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
 
@@ -44,7 +44,7 @@ ms.locfileid: "66360734"
 
 -   **MediaClip** 只能包含在合成中一次。 尝试添加已由合成使用的 **MediaClip** 将导致错误。 若要在合成中多次重复使用视频剪辑，可调用 [**Clone**](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.clone) 以创建新的 **MediaClip** 对象，这些对象随后将添加到合成中。
 
--   通用 Windows 应用没有访问整个文件系统的权限。 [  **StorageApplicationPermissions**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageApplicationPermissions) 类的 [**FutureAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) 属性允许你的应用存储已由用户选择的文件的记录，以便你可以保留访问该文件的权限。 **FutureAccessList** 最多可以包含 1000 个条目，因此你的应用需要管理列表，以确保列表不会饱和。 如果你计划支持加载和修改之前创建的合成，这一点尤其重要。
+-   通用 Windows 应用没有访问整个文件系统的权限。 [**StorageApplicationPermissions**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageApplicationPermissions) 类的 [**FutureAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) 属性允许你的应用存储已由用户选择的文件的记录，以便你可以保留访问该文件的权限。 **FutureAccessList** 最多可以包含 1000 个条目，因此你的应用需要管理列表，以确保列表不会饱和。 如果你计划支持加载和修改之前创建的合成，这一点尤其重要。
 
 -   **MediaComposition** 支持采用 MP4 格式的视频剪辑。
 
@@ -86,7 +86,7 @@ ms.locfileid: "66360734"
 
 [!code-cs[Namespace2](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace2)]
 
-允许用户使用 [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) 选择输出文件后，通过调用 **MediaComposition** 对象的 [**RenderToFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.editing.mediacomposition.rendertofileasync) 将合成呈现到选定的文件。 以下示例中的剩余代码只需遵循处理 [**AsyncOperationWithProgress**](https://docs.microsoft.com/previous-versions//br205807(v=vs.85)) 的模式即可。
+允许用户使用 [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) 选择输出文件后，通过调用 **MediaComposition** 对象的 [**RenderToFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.editing.mediacomposition.rendertofileasync) 将合成呈现到选定的文件。 以下示例中的剩余代码只需遵循处理 [**AsyncOperationWithProgress**](https://docs.microsoft.com/previous-versions/br205807(v=vs.85)) 的模式即可。
 
 [!code-cs[RenderCompositionToFile](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
 

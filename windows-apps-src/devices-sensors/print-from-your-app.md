@@ -6,12 +6,12 @@ ms.date: 01/29/2018
 ms.topic: article
 keywords: windows 10、 uwp、 打印
 ms.localizationpriority: medium
-ms.openlocfilehash: 743df4398792d910626f63900d244ab4da388fb0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1a60def61e974bca493fb932cc0fb8716ba521f0
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369819"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321492"
 ---
 # <a name="print-from-your-app"></a>从应用打印
 
@@ -137,7 +137,7 @@ async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
 
 ## <a name="format-your-apps-content"></a>格式化应用的内容
 
-调用 **ShowPrintUIAsync** 时会引发 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件。 此步骤中显示的 **PrintTaskRequested** 事件处理程序将通过调用 [**PrintTaskRequest.CreatePrintTask**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtaskrequest.createprinttask) 方法创建 [**PrintTask**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintTask)，并传递打印页面的标题和 [**PrintTaskSourceRequestedHandler**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.source) 委托的名称。 请注意，在此示例中，**PrintTaskSourceRequestedHandler** 是以内联方式定义的。 **PrintTaskSourceRequestedHandler** 提供用于打印的格式化内容，并在以后对其进行介绍。
+调用 **ShowPrintUIAsync** 时会引发 [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) 事件。 此步骤中显示的 **PrintTaskRequested** 事件处理程序将通过调用 [**PrintTaskRequest.CreatePrintTask**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtaskrequest.createprinttask) 方法创建 [**PrintTask**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintTask)，并传递打印页面的标题和 [**PrintTaskSourceRequestedHandler**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.source) 委托的名称。 请注意，在此示例中，**PrintTaskSourceRequestedHandler** 是以内联方式定义的。 **PrintTaskSourceRequestedHandler** 提供用于打印的格式化内容，并在以后对其进行介绍。
 
 在此示例中，还会定义一个完成处理程序以捕获错误。 最好对完成事件进行处理，因为，那样你的应用可以让用户知道是否发生了错误并提供可能的解决方案。 同样，你的应用可以使用完成事件来指示用户在打印作业成功之后要采取的后续步骤。
 
@@ -258,7 +258,7 @@ protected virtual void AddPrintPages(object sender, AddPagesEventArgs e)
 | **打印选定内容**  | 仅打印用户选择的内容。|
 | **打印范围**      | 显示编辑控件，用户可以将要打印的页面输入到该控件中。|
 
-首先，修改 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件处理程序以添加代码，从而获取一个 [**PrintTaskOptionDetails**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails) 对象。
+首先，修改 [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) 事件处理程序以添加代码，从而获取一个 [**PrintTaskOptionDetails**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails) 对象。
 
 ```csharp
 PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrintTaskOptions(printTask.Options);

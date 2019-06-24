@@ -7,12 +7,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10、 uwp、 通知、 集合、 组、 用户体验、 用户体验指南，指导、 操作、 toast、 操作中心、 noninterruptive、 有效的通知、 非侵入式通知可操作的管理、 组织
 ms.localizationpriority: medium
-ms.openlocfilehash: 878df85db9ab0e33db06a86ddb726f07dc28f013
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 327a2add84343be3b972f7bb1f232298e7ef92ad
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615762"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320731"
 ---
 # <a name="toast-notification-ux-guidance"></a>Toast 通知用户体验指南
 通知是现代生活; 的必要部分它们可帮助用户提高工作效率和参与与应用程序和网站，及使用的任何更新了解最新。 但是，通知可以快速打开从适用于 overbearing 和侵入性，如果它们不设计以用户为中心的方式。 通知是一个右键单击从正在关闭，并且不太可能已关闭后，它们将再次打开。  因此请确保您的通知是用户的屏幕空间和时间，不会冒犯他人，因此可以保持此 engagement 通道打开。
@@ -65,4 +65,4 @@ ms.locfileid: "57615762"
 * [Toast 通知内容](adaptive-interactive-toasts.md)
 * [原始通知](raw-notification-overview.md)
 * [挂起的更新](toast-pending-update.md)
-* [GitHub （Windows 社区工具包的一部分） 上的通知库](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [GitHub （Windows 社区工具包的一部分） 上的通知库](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

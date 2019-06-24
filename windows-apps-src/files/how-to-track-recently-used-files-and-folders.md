@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 97ad2485abab0bd4733699bc4ffcf29e17a22844
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369440"
 ---
 # <a name="track-recently-used-files-and-folders"></a>跟踪最近使用的文件和文件夹
 
-**重要的 Api**
+**重要的 API**
 
 - [**MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist)
 - [**FileOpenPicker**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-fileopenpicker)
@@ -25,9 +25,9 @@ ms.locfileid: "66369440"
 你的应用的 MRU 由 [**StorageItemMostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList) 类表示，你可从静态 [**StorageApplicationPermissions.MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) 属性获取该类。 MRU 项存储为 [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem) 对象，这意味着 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 对象（代表文件）和 [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) 对象（代表文件夹）都可以添加到 MRU 中。
 
 > [!NOTE]
-> 有关完整示例，请参阅[文件选取器示例](https://go.microsoft.com/fwlink/p/?linkid=619994)并[文件访问示例](https://go.microsoft.com/fwlink/p/?linkid=619995)。
+> 有关完整示例，请参阅[文件选取器示例](https://go.microsoft.com/fwlink/p/?linkid=619994)和[文件访问示例](https://go.microsoft.com/fwlink/p/?linkid=619995)。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>必备条件
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
@@ -52,10 +52,10 @@ ms.locfileid: "66369440"
     string mruToken = mru.Add(file, "profile pic");
     ```
 
-    [**StorageItemMostRecentlyUsedList.Add** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add)重载。 此示例中使用了 [**Add(IStorageItem, String)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add)，这样便可将元数据与文件关联。 设置元数据可以记录项目的用途，例如“用户头像”。 你还可以通过调用 [**Add(IStorageItem)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) 将文件添加到不包含元数据的 MRU 中。 当你向 MRU 中添加项时，该方法会返回一个唯一标识的字符串（称为令牌），用于检索该项。
+    将重载 [**StorageItemMostRecentlyUsedList.Add**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add)。 此示例中使用了 [**Add(IStorageItem, String)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add)，这样便可将元数据与文件关联。 设置元数据可以记录项目的用途，例如“用户头像”。 你还可以通过调用 [**Add(IStorageItem)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) 将文件添加到不包含元数据的 MRU 中。 当你向 MRU 中添加项时，该方法会返回一个唯一标识的字符串（称为令牌），用于检索该项。
 
 > [!TIP]
-> 你将需要该令牌从 MRU 中检索项，因此请将它保留在某处。 有关应用数据的详细信息，请参阅[管理应用程序数据](https://docs.microsoft.com/previous-versions/windows/apps/hh465109(v=win.10))。
+> 需要使用该令牌从 MRU 中检索项，因此请将它保留在某处。 有关应用数据的详细信息，请参阅[管理应用程序数据](https://docs.microsoft.com/previous-versions/windows/apps/hh465109(v=win.10))。
 
 ## <a name="use-a-token-to-retrieve-an-item-from-the-mru"></a>使用令牌从 MRU 检索项
 

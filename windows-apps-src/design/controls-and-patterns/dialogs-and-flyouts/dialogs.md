@@ -13,15 +13,15 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1277d9089e900451ac4c537805079ff479f808fa
-ms.sourcegitcommit: f47620e72ff8127fae9b024c70ddced3a5c45d91
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66748446"
 ---
 # <a name="dialog-controls"></a>对话框控件
 
-对话框控件是提供上下文的应用程序信息的模式 UI 层重叠。 它们被显式关闭之前阻止与应用程序窗口的交互。 它们通常会请求用户进行某种类型的操作。
+对话框控件是用于提供上下文应用信息的模式 UI 覆盖。 除非显式取消这些控件，否则它们会阻止与应用窗口的交互。 它们通常会请求用户进行某种类型的操作。
 
 ![对话框示例](../images/dialogs/dialog_RS2_delete_file.png)
 
@@ -32,7 +32,7 @@ ms.locfileid: "66748446"
 
 使用对话框通知用户重要信息或在可以完成某个操作之前请求确认或其他信息。
 
-有关何时使用对话框与何时使用浮出控件 （类似控件） 的建议，请参阅[对话框和浮出控件](index.md)。 
+有关何时使用对话框以及何时使用浮出控件（类似控件）的建议，请参阅[对话框和浮出控件](index.md)。 
 
 ## <a name="examples"></a>示例
 
@@ -66,7 +66,7 @@ ms.locfileid: "66748446"
     - 确保操作按钮的文本保持简明。 简短的字符串使用户能够快速、自信地做出选择。
     - 除了安全、无破坏性的操作外，你还可以选择为用户提供一个或两个与主要说明相关的操作按钮。 这些“执行”操作按钮用于确认对话框的重点。 使用 PrimaryButton 和 SecondaryButton API 可添加这些“执行”操作。
     - “执行”操作按钮应显示为最左侧按钮。 安全、无破坏性的操作应显示为最右侧的按钮。
-    - 你可以选择三个按钮之一作为对话框的默认按钮。 使用 DefaultButton API 可区分其中一个按钮。  
+    - 可以选择三个按钮之一作为对话框的默认按钮。 使用 DefaultButton API 可区分其中一个按钮。  
 -   不要为与页面上的特定位置具有上下文关系的错误（例如，密码字段等位置的验证错误）使用对话框，请使用应用的画布本身显示内联错误。
 - 使用 [ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)生成对话框体验。 不要使用已弃用的 MessageDialog API。
 
@@ -118,8 +118,8 @@ private async void DisplayDeleteFileDialog()
 }
 ```
 
-## <a name="provide-a-safe-action"></a>提供安全的操作
-由于对话框会阻止用户交互，而且按钮是用户消除对话框的主要机制，因此请确保你的对话框至少包含一个“安全”且无破坏性的按钮，如“关闭”或“明白!”。 **所有对话都应都包含至少一个安全的操作按钮关闭对话框。** 这可以确保用户能自信地关闭对话框，而未执行操作。<br>![未一个按钮的对话框](../images/dialogs/dialog_RS2_one_button.png)
+## <a name="provide-a-safe-action"></a>提供安全操作
+由于对话框会阻止用户交互，而且按钮是用户消除对话框的主要机制，因此请确保你的对话框至少包含一个“安全”且无破坏性的按钮，如“关闭”或“明白!”。 **所有对话应都至少应包含一个安全操作按钮来关闭对话框。** 这可以确保用户能自信地关闭对话框，而未执行操作。<br>![一个按钮对话框](../images/dialogs/dialog_RS2_one_button.png)
 
 ```csharp
 private async void DisplayNoWifiDialog()
@@ -154,9 +154,9 @@ private async void DisplayLocationPromptDialog()
 }
 ```
 
-当你向用户提供两个“执行”操作和一个“不执行”操作时，可使用三个按钮对话框。 应慎用三个按钮对话框，辅助操作与安全/关闭操作之间应有清晰的区别。
+向用户提供两个“执行”操作和一个“不执行”操作时，可以使用三个按钮对话框。 应慎用三个按钮对话框，辅助操作与安全/关闭操作之间应有清晰的区别。
 
-![三个按钮对话框](../images/dialogs/dialog_RS2_three_button.png)
+![包含三个按钮的对话框](../images/dialogs/dialog_RS2_three_button.png)
 
 ```csharp
 private async void DisplaySubscribeDialog()
@@ -186,7 +186,7 @@ ContentDialog 有三种不同类型的按钮可用于构建对话框体验。
 ### <a name="closebutton"></a>CloseButton
 每个对话框都应包含一个可使用户安心退出对话框的安全、无破坏性的操作按钮。
 
-使用 ContentDialog.CloseButton API 可创建此按钮。 这样你便可以为包括鼠标、键盘、触控和游戏板在内的所有输入创建适当的用户体验。 此体验将在以下情况下发生：
+使用 ContentDialog.CloseButton API 可创建此按钮。 这样便可以为包括鼠标、键盘、触控和游戏板在内的所有输入创建适当的用户体验。 此体验将在以下情况下发生：
 <ol>
     <li>用户单击或点击关闭按钮 </li>
     <li>用户按下系统后退按钮 </li>
@@ -197,17 +197,17 @@ ContentDialog 有三种不同类型的按钮可用于构建对话框体验。
 当用户单击某个对话框按钮时，[ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync) 方法返回一个 [ContentDialogResult](/uwp/api/Windows.UI.Xaml.Controls.ContentDialogResult) 来通知你用户单击了哪个按钮。 按 CloseButton 返回 ContentDialogResult.None。
 
 ### <a name="primarybutton-and-secondarybutton"></a>PrimaryButton 和 SecondaryButton
-除了 CloseButton，你还可以选择向用户提供与主要说明相关的一个或两个操作按钮。
+除了 CloseButton，还可以选择向用户提供与主要说明相关的一个或两个操作按钮。
 将 PrimaryButton 用于第一个“执行”操作，将 SecondaryButton 用于第二个“执行”操作。 在三个按钮的对话框中，PrimaryButton 通常表示肯定的“执行”操作，而 SecondaryButton 通常表示中性或辅助“执行”操作。
 例如，应用可能会提示用户订阅服务。 作为肯定“执行”操作的 PrimaryButton 将托管“订阅”文本，而作为中性“执行”操作的 SecondaryButton 将托管“尝试”文本。 CloseButton 允许用户取消，而不执行任何操作。
 
 当用户单击 PrimaryButton 时，[ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync) 方法将返回 ContentDialogResult.Primary。
 当用户单击 SecondaryButton 时，[ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync) 方法将返回 ContentDialogResult.Secondary。
 
-![三个按钮对话框](../images/dialogs/dialog_RS2_three_button.png)
+![包含三个按钮的对话框](../images/dialogs/dialog_RS2_three_button.png)
 
 ### <a name="defaultbutton"></a>DefaultButton
-你可以选择区分三个按钮之一，使其作为默认按钮。 指定默认按钮将导致发生以下情况：
+可以选择区分三个按钮之一，使其作为默认按钮。 指定默认按钮将导致发生以下情况：
 - 该按钮接收“突出”按钮视觉处理
 - 该按钮将自动响应 ENTER 键
     - 当用户在键盘上按 ENTER 键时，与“默认”按钮关联的单击处理程序将激发，并且 ContentDialogResult 将返回与“默认”按钮关联的值
@@ -250,13 +250,13 @@ private async void DisplaySubscribeDialog()
 
 > 某些平台将确认按钮放置在右侧，而不是左侧。 那么，为什么我们建议将它放在左侧呢？  如果你假设大多数用户惯用右手并且他们用右手拿着手机，按位于左侧的确认按钮实际上更为舒适，因为该按钮更有可能处于用户的拇指弧范围内。位于屏幕右侧的按钮需要用户将拇指向内收缩到不太舒适的位置。
 
-## <a name="contentdialog-in-appwindow-or-xaml-islands"></a>ContentDialog AppWindow 或 Xaml 群岛
+## <a name="contentdialog-in-appwindow-or-xaml-islands"></a>AppWindow 或 Xaml 岛中的 ContentDialog
 
-> 注意：本部分仅适用于面向 Windows 10，版本 1903年或更高版本的应用。 AppWindow 和 XAML 群岛不是早期版本中提供的。 有关版本控制的详细信息，请参阅[版本自适应应用](../../../debug-test-perf/version-adaptive-apps.md)。
+> 注意：本部分仅适用于面向 Windows 10 版本 1903 或更高版本的应用。 AppWindow 和 XAML 岛在早期的版本中不可用。 有关版本的详细信息，请参阅[版本自适应应用](../../../debug-test-perf/version-adaptive-apps.md)。
 
-默认情况下，内容对话框有模式地显示相对于根[ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)。 当内部或者使用 ContentDialog [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)或[XAML 岛](/apps/desktop/modernize/xaml-islands)，您需要手动设置[XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) XAML 主机的根到对话框上。
+默认情况下，内容对话框相对于根 [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) 按模式显示。 使用 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 或 [XAML 岛](/apps/desktop/modernize/xaml-islands)中的 ContentDialog 时，需要手动将对话框中的 [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) 设置为 XAML 宿主的根。
 
-为此，请将 ContentDialog XamlRoot 属性设置为相同 XamlRoot 为已在 AppWindow 或 XAML 岛元素上，如下所示。
+为此，请将 ContentDialog 的 XamlRoot 属性设置为 AppWindow 或 XAML 岛中已包含的某个元素的同一 XamlRoot，如下所示。
 
 ```csharp
 private async void DisplayNoWifiDialog()
@@ -280,7 +280,7 @@ private async void DisplayNoWifiDialog()
 ```
 
 > [!WARNING]
-> 只能有一个 ContentDialog 一次打开每个线程。 尝试打开两个 ContentDialogs 将引发异常，即使他们正在尝试在单独 AppWindows 中打开。
+> 每次只能在每个线程中打开一个 ContentDialog。 尝试打开两个 ContentDialog 会引发异常，即使尝试在独立的 AppWindow 中打开。
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
@@ -289,5 +289,5 @@ private async void DisplayNoWifiDialog()
 ## <a name="related-articles"></a>相关文章
 - [工具提示](../tooltips.md)
 - [菜单和上下文菜单](../menus.md)
-- [浮出控件类](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+- [Flyout 类](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 - [ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)

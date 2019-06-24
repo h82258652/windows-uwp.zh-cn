@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ec16f9810a0802fc319b3ebac679cc4cb2f8334
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a4302568b398c76198e241aeb37980165e1bb864
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361714"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318364"
 ---
 # <a name="import-media-from-a-device"></a>从设备导入媒体
 
@@ -50,7 +50,7 @@ ms.locfileid: "66361714"
 
 在典型的媒体导入方案中，你向用户显示可供导入的媒体项列表，可能有大量的媒体文件可供选择，通常你需要为每个媒体项显示缩略图。 出于此原因，当用户在列表中向下滚动时，此示例使用三个帮助程序类以增量方式将条目加载到 ListView 控件中。
 
-* **IncrementalLoadingBase** 类 - 实现 [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist?redirectedfrom=MSDN)、[**ISupportIncrementalLoading**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading) 和 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/system.collections.specialized.inotifycollectionchanged(v=vs.105).aspx) 来提供基本增量加载行为。
+* **IncrementalLoadingBase** 类 - 实现 [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist?redirectedfrom=MSDN)、[**ISupportIncrementalLoading**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading) 和 [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?redirectedfrom=MSDN) 来提供基本增量加载行为。
 * **GeneratorIncrementalLoadingClass** 类 - 提供增量加载基类的实现。
 * **ImportableItemWrapper** 类 - [**PhotoImportItem**](https://docs.microsoft.com/uwp/api/Windows.Media.Import.PhotoImportItem) 类周围的一个精简包装器，用于为每个已导入项的缩略图图像添加可绑定的 [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) 属性。
 

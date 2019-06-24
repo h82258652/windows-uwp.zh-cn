@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b07ab7fa6b65e16f39d9e2a77a677d33d3c70254
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: afcb94ca0e6692d5dfede526f1368b71920ab771
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360511"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318206"
 ---
 # <a name="composition-effects"></a>合成效果
 
@@ -142,7 +142,7 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 
 ### <a name="installing-visual-studio"></a>安装 Visual Studio
 
-- 如果尚未安装受支持版本的 Visual Studio，请转到[此处](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)的 Visual Studio 下载页。
+- 如果尚未安装受支持版本的 Visual Studio，请转到[此处](https://visualstudio.microsoft.com/downloads/download-visual-studio-vs)的 Visual Studio 下载页。
 
 ### <a name="creating-a-new-project"></a>创建新的项目
 
@@ -237,7 +237,7 @@ LoadImage(surfaceBrush);
 
 ## <a name="more-information"></a>详细信息
 
-- [Microsoft – 组合 GitHub](https://github.com/Microsoft/composition)
+- [Microsoft – 组合 GitHub](https://github.com/microsoft/WindowsCompositionSamples)
 - [**Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
 - [在 Twitter 上的 Windows Composition 团队](https://twitter.com/wincomposition)
 - [组合概述](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)

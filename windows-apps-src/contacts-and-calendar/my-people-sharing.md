@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 91d88dc78fd02ae3f16e1d980aa207d1dd458417
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9d0f6cdf4818743e3b5a3cc7c5a6b13f69f40afa
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597822"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318460"
 ---
 # <a name="my-people-sharing"></a>“我的人脉”共享
 
@@ -29,7 +29,7 @@ ms.locfileid: "57597822"
 
 1. [声明对应用程序清单中的 shareTarget 激活协定的支持。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
 2. [批注的用户可以使用您的应用程序共享的联系人。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
-3. 支持同时运行应用程序的多个实例。  用户必须能够与完整版本的应用程序进行交互，并且同时也可以使用应用程序与其他人共享。 他们可以同时在多个共享窗口中使用该应用程序。 为了对此提供支持，应用程序需要能够同时运行多个视图。 若要了解如何执行此操作，请参阅文章[“显示应用的多个视图”](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views)。
+3. 支持同时运行应用程序的多个实例。  用户必须能够与完整版本的应用程序进行交互，并且同时也可以使用应用程序与其他人共享。 他们可以同时在多个共享窗口中使用该应用程序。 为了对此提供支持，应用程序需要能够同时运行多个视图。 若要了解如何执行此操作，请参阅文章[“显示应用的多个视图”](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views)。
 
 当你完成此操作后，应用程序将在“我的人脉”共享窗口中显示为共享目标，可以通过以下两种方式启动共享目标：
 1. 通过共享超级按钮选择联系人。
@@ -131,7 +131,7 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 }
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 + [添加我的人支持](my-people-support.md)
 + [ShareTarget 类](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
 + [联系人卡集成示例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)

@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08acb2972469a84e6a37d7293ed00cae8df94dfb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 58bf8df4551c8bcfc663d2c832bef3a879ff6350
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611532"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317974"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>为应用程序添加“我的人脉”支持
 
@@ -29,7 +29,7 @@ ms.locfileid: "57611532"
 
 1. [声明对应用程序清单中的 shareTarget 激活协定的支持。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
 2. [批注的用户可以使用您的应用程序共享的联系人。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
-3.  支持同时运行应用程序的多个实例。 用户必须能够与完整版本的应用程序进行交互，并且可以同时在联系人面板中使用该应用程序。  他们甚至可以同时在多个联系人面板中使用该应用程序。  为了对此提供支持，应用程序需要能够同时运行多个视图。 若要了解如何执行此操作，请参阅文章[“显示应用的多个视图”](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views)。
+3.  支持同时运行应用程序的多个实例。 用户必须能够与完整版本的应用程序进行交互，并且可以同时在联系人面板中使用该应用程序。  他们甚至可以同时在多个联系人面板中使用该应用程序。  为了对此提供支持，应用程序需要能够同时运行多个视图。 若要了解如何执行此操作，请参阅文章[“显示应用的多个视图”](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views)。
 
 完成此操作后，应用程序将显示在已注释联系人的联系人面板中。
 
@@ -179,7 +179,7 @@ ContactPanel 对象还允许你设置联系人面板标题的背景颜色（如�
 
 ## <a name="supporting-notification-badging"></a>支持通知锁屏提醒
 
-如果想要任务栏中固定的联系人在应用收到来自与该联系人相关的新通知时进行锁屏提醒，则你必须将 **hint-people**参数包含在 [Toast 通知](https://docs.microsoft.com/en-us/windows/uwp/shell/tiles-and-notifications/adaptive-interactive-toasts) 中并在[“我的人脉”通知](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications)中体现出来。
+如果想要任务栏中固定的联系人在应用收到来自与该联系人相关的新通知时进行锁屏提醒，则你必须将 **hint-people**参数包含在 [Toast 通知](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) 中并在[“我的人脉”通知](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications)中体现出来。
 
 ![人脉通知锁屏提醒](images/my-people-badging.png)
 
@@ -248,7 +248,7 @@ async Task PinMultipleContacts(Contact[] contacts)
 
 **注意：** 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 + [“我的人脉”共享](my-people-sharing.md)
 + [我的用户通知](my-people-notifications.md)
 + [第 9 频道视频添加到应用程序支持我的人](https://channel9.msdn.com/Events/Build/2017/P4056)

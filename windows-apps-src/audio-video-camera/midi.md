@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2737713030d68dbc19aaad3df767cea103b53f35
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 73806735401f53a73b1051f37c72119b45b574be
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361598"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318291"
 ---
 # <a name="midi"></a>MIDI
 
@@ -73,7 +73,7 @@ ms.locfileid: "66361598"
 -   [**更新**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.updated) -更新与现有设备关联的信息时引发。
 -   [**EnumerationCompleted** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.enumerationcompleted)的观察程序完成其请求的设备类型的枚举时引发。
 
-在以上每个事件的事件处理程序中，将调用帮助程序方法 **UpdateDevices**，以通过当前设备列表更新 **ListBox**。 因为未在 UI 线程上调用 **UpdateDevices** 更新 UI 元素和这些事件处理程序，因此每个调用都必须打包在对 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 的调用中，这将导致指定代码在 UI 线程上运行。
+在以上每个事件的事件处理程序中，将调用帮助程序方法 **UpdateDevices**，以通过当前设备列表更新 **ListBox**。 因为未在 UI 线程上调用 **UpdateDevices** 更新 UI 元素和这些事件处理程序，因此每个调用都必须打包在对 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 的调用中，这将导致指定代码在 UI 线程上运行。
 
 [!code-cs[WatcherEventHandlers](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherEventHandlers)]
 

@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 57f8d7d57c016c015d01e80b07fc0e2c0260ef7f
-ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.openlocfilehash: f069899da69e4689e21fa578ff7124fbaf453ea3
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320610"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317719"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>加载为比例、主题、高对比度和其他定制的图像和资产
 你的应用可以加载为[显示比例系数](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)、主题、高对比度和其他运行时上下文定制的图像资源文件（或其他资产文件）。 这些图像可以从强制性代码或 XAML 标记引用，如作为 **Image** 的 **Source** 属性。 它们还可以显示在应用包清单源文件（`Package.appxmanifest` 文件）中 &mdash; 例如，作为 Visual Studio 清单设计器的“视觉资源”选项卡上应用图标的值 &mdash; 或显示在磁贴和 toast 上。 通过在图像的文件名称中使用限定符，并选择性地在 [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) 的帮助下动态加载它们，你可以加载与用户的显示比例、主题、高对比度、语言和其他上下文的运行时设置最匹配的最合适图像文件。
@@ -86,7 +86,7 @@ var storagefile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsy
 this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 ```
 
-对于这些示例中所示的任何方案，请使用推断 [UriKind](https://docs.microsoft.com/en-us/dotnet/api/system.urikind) 的 [Uri 构造函数](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_)重载。 指定一个包括方案和颁发机构的有效的绝对 URI，或者如上述示例所示让颁发机构默认为应用包。
+对于这些示例中所示的任何方案，请使用推断 [UriKind](https://docs.microsoft.com/dotnet/api/system.urikind?view=netframework-4.8) 的 [Uri 构造函数](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_)重载。 指定一个包括方案和颁发机构的有效的绝对 URI，或者如上述示例所示让颁发机构默认为应用包。
 
 注意在这些示例 URI 中，方案（“`ms-appx`”或“`ms-appx-web`”）后依次跟随“`://`”和绝对路径。 在绝对路径中，前导“`/`”导致从包的根解释路径。
 

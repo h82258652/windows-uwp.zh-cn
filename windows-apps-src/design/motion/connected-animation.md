@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d1d459ab10614ddf9186275b1a6b66e8fa5703ec
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f448f481b2b55a42cbaa158cc4b07261e2d7717b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66364960"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317136"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>适用于 UWP 应用的连贯动画
 
@@ -34,7 +34,7 @@ ms.locfileid: "66364960"
 <td>
     <p>如果有<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序安装，请单击此处<a href="xamlcontrolsgallery:/item/ConnectedAnimation">打开应用并在操作中看到连接动画</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
@@ -101,7 +101,7 @@ ms.locfileid: "66364960"
 | 配置 | 尊重 DefaultDuration？ | 尊重 DefaultEasingFunction？ |
 | - | - | - |
 | 引力 | 是 | 是* <br/> **从 A 到 B 的基本转换使用此缓动函数，但是"重力 dip"具有其自己的缓动函数。*  |
-| 直接 | 否 <br/> *超过 150ms年之间进行动画处理。*| 否 <br/> *使用缓动函数在减速。* |
+| Direct | 否 <br/> *超过 150ms年之间进行动画处理。*| 否 <br/> *使用缓动函数在减速。* |
 | 基本 | 是 | 是 |
 
 ## <a name="how-to-implement-connected-animation"></a>如何实现连接的动画

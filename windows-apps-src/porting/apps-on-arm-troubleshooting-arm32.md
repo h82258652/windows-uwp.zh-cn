@@ -5,19 +5,19 @@ ms.date: 01/03/2019
 ms.topic: article
 keywords: windows 10 s, 始终连接, 基于 ARM 的 ARM32 应用, 基于 ARM 的 windows 10, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: ddf28627838ebc8cb2df620c398f3803c026cb17
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b93a4a3bdf4a6abd12a0df8bfc1871cb38647f63
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366837"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319749"
 ---
 # <a name="troubleshooting-arm-uwp-apps"></a>故障排除 ARM UWP 应用
 
 如果你 ARM32 或 ARM64 UWP 应用程序未在 ARM 上正常工作，下面是一些指南，可帮助。
 
 >[!NOTE]
-> 若要生成 UWP 应用程序以本机面向 ARM64 的平台，你必须具有 Visual Studio 2017 版本 15.9 或更高版本。 有关详细信息，请参阅[这篇博客文章](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development)。
+> 若要生成 UWP 应用程序以本机面向 ARM64 的平台，你必须具有 Visual Studio 2017 版本 15.9 或更高版本。 有关详细信息，请参阅[这篇博客文章](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/)。
 
 ## <a name="common-issues"></a>常见问题
 以下是一些常见的问题进行故障排除 ARM32 和 ARM64 应用时，需要注意。

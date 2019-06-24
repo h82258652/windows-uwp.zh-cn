@@ -5,12 +5,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 16b75226d6b79b19978ddf7e37231b15ac7a4e3e
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 344ee7060edcee3376e271fc21e104490d8724d7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984171"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319713"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>移到 UWP 的桌面应用程序
 
@@ -18,15 +18,15 @@ ms.locfileid: "65984171"
 
 ## <a name="package-your-desktop-application-in-an-msix-package"></a>MSIX 包中的将桌面应用程序打包
 
-可以打包桌面应用程序 MSIX 包中获取到更多的 Windows 10 功能的访问权限。 MSIX 是为所有 Windows 应用，包括 UWP、 WPF、 Windows 窗体和 Win32 应用提供了通用的打包体验的现代 Windows 应用包格式。 打包桌面 Windows 应用程序在 MSIX 包中的获取访问权限的可靠的安装和使用灵活功能系统、 支持 Microsoft Store、 企业管理和许多自定义模型更新体验，受管理的安全分发模型。 您可以打包应用程序是否有源代码，或如果您只需一个现有的安装程序文件 （如 MSI 或 APP-V 安装程序）。 打包你的应用程序后，可以将集成 UWP 功能，例如打包扩展和其他 UWP 组件。
+可以打包桌面应用程序 MSIX 包中获取到更多的 Windows 10 功能的访问权限。 MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（包括 UWP、WPF、Windows 窗体和 Win32 应用）的通用打包体验。 将桌面 Windows 应用打包到 MSIX 包中即可访问可靠的安装和更新体验、功能系统灵活的托管安全模型、对 Microsoft Store 的支持、企业管理以及许多自定义分发模型。 您可以打包应用程序是否有源代码，或如果您只需一个现有的安装程序文件 （如 MSI 或 APP-V 安装程序）。 打包你的应用程序后，可以将集成 UWP 功能，例如打包扩展和其他 UWP 组件。
 
 有关详细信息，请参阅[打包桌面应用程序 （桌面桥）](/windows/msix/desktop/desktop-to-uwp-root)并[要求包标识的功能](/windows/apps/desktop/modernize/modernize-packaged-apps)。
 
 ## <a name="use-uwp-apis"></a>使用 UWP Api
 
-可以直接在你的 WPF、 Windows 窗体中调用许多 UWP Api 或C++Win32 桌面应用程序集成的轻型 Windows 10 用户注册新式体验。 例如，可以调用 UWP Api 为桌面应用程序添加 toast 通知。
+可以在 WPF、Windows 窗体或 C++ Win32 桌面应用中直接调用许多 UWP API，以便集成对 Windows 10 用户来说焕然一新的体验。 例如，可以调用 UWP API，以便将 Toast 通知添加到桌面应用。
 
-有关详细信息，请参阅[桌面应用中使用 UWP Api](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)。
+有关详细信息，请参阅[在桌面应用中使用 UWP API](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)。
 
 ## <a name="migrate-a-net-framework-app-to-a-uwp-app"></a>迁移.NET Framework 应用程序向 UWP 应用
 
@@ -239,7 +239,7 @@ public sealed partial class MainPage : Page
 ![Xamarin 应用](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->跨平台项目非常适合具有极少特定于平台的功能的应用。 你可以使用它们构建一个在 iOS、Android 和 Windows 上运行的基于 XAML 的本机 UI。 在[此处](https://www.xamarin.com/forms)了解详细信息。
+>跨平台项目非常适合具有极少特定于平台的功能的应用。 你可以使用它们构建一个在 iOS、Android 和 Windows 上运行的基于 XAML 的本机 UI。 在[此处](https://docs.microsoft.com/xamarin/xamarin-forms/)了解详细信息。
 
 然后，从你的 Android、iOS 或跨平台项目中，添加对类库项目的引用。
 
@@ -278,7 +278,7 @@ public class MainActivity : ListActivity
 }
 ```
 
-若要开始使用 Android、iOS 和跨平台项目，请参阅 [Xamarin 开发人员门户](https://developer.xamarin.com/)。
+若要开始使用 Android、iOS 和跨平台项目，请参阅 [Xamarin 开发人员门户](https://docs.microsoft.com/xamarin)。
 
 ## <a name="next-steps"></a>后续步骤
 

@@ -4,12 +4,12 @@ description: 本文概述了通用 Windows 平台 (UWP) 新增的 CPUSets API，
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: 49662d476d6d022ca05d53e9358fc547fda92a32
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 693abe68fcc7e4a341d773c6fa1af0d777c60c15
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625662"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322158"
 ---
 # <a name="cpusets-for-game-development"></a>适用于游戏开发的 CPUSets
 
@@ -52,8 +52,8 @@ GetSystemCpuSetInformation(cpuSets, size, &size, curProc, 0);
 | 成员名称  | 数据类型 | 描述 |
 | ------------- | ------------- | ------------- |
 | 在任务栏的搜索框中键入  | CPU_SET_INFORMATION_TYPE  | 结构中信息的类型。 如果此成员的值不是 **CpuSetInformation**，应忽略它。  |
-| ID  | 无符号长整型  | 指定 CPU 设置的 ID。 这是应与 CPU 设置函数（如 **SetThreadSelectedCpuSets**）结合使用的 ID。  |
-| 组  | 无符号短整型  | 指定 CPU 设置的“处理器组”。 处理器组允许电脑具有超过 64 个逻辑核心，并允许在系统运行期间热交换 CPU。 不是服务器但具有多个组的电脑并不常见。 除非你要编写的应用程序打算在大型服务器或服务器场上运行，否则最好使用单个组中的 CPU 设置，因为大多数消费者电脑只具有一个处理器组。 此结构中的其他所有值都与 Group 有关。  |
+| Id  | 无符号长整型  | 指定 CPU 设置的 ID。 这是应与 CPU 设置函数（如 **SetThreadSelectedCpuSets**）结合使用的 ID。  |
+| Group  | 无符号短整型  | 指定 CPU 设置的“处理器组”。 处理器组允许电脑具有超过 64 个逻辑核心，并允许在系统运行期间热交换 CPU。 不是服务器但具有多个组的电脑并不常见。 除非你要编写的应用程序打算在大型服务器或服务器场上运行，否则最好使用单个组中的 CPU 设置，因为大多数消费者电脑只具有一个处理器组。 此结构中的其他所有值都与 Group 有关。  |
 | LogicalProcessorIndex  | 无符号字符型  | CPU 设置的 Group 相关索引  |
 | CoreIndex  | 无符号字符型  | CPU 设置所在的物理 CPU 核心的 Group 相关索引  |
 | LastLevelCacheIndex  | 无符号字符型  | 与此 CPU 设置关联的最后一级缓存的 Group 相关索引。 此缓存的速度最慢，除非系统利用 NUMA 节点，通常为 L2 或 L3 缓存。  |
@@ -186,12 +186,12 @@ for (size_t i = 0; i < count; ++i)
 
 ![Lumia 950 缓存](images/cpusets-lumia950cache.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 适用于 UWP 开发的 CPUSets API 提供了与你的多线程选项有关的大量信息和控制。 相比于以前的适用于 Windows 开发的多线程 API，增加的复杂性具有一些学习曲线，但提升的灵活性最终允许在一些消费者电脑和其他硬件目标之间实现较好的性能。
 
 ## <a name="additional-resources"></a>其他资源
-- [CPU 集 (MSDN)](https://msdn.microsoft.com/library/windows/desktop/mt186420(v=vs.85).aspx)
+- [CPU 集 (MSDN)](https://docs.microsoft.com/windows/desktop/ProcThread/cpu-sets)
 - [提供的 ATG CPUSets 示例](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
 - [在 Xbox One 上 UWP](index.md)
 

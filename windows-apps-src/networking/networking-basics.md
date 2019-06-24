@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a22b583f4da59af5694156b57ede3c6a353cef5a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66371645"
 ---
 # <a name="networking-basics"></a>网络基础知识
@@ -31,12 +31,12 @@ ms.locfileid: "66371645"
 
 | 功能 | 描述 |
 |------------|-------------|
-| **enterpriseAuthentication** | 允许应用连接至要求提供域凭据的网络资源。 例如，应用从专用 Intranet 上的 SharePoint 服务器检索数据。 通过此功能可以使用你的凭据来访问要求提供凭据的网络中的网络资源。 具有此功能的应用可在网络上模拟其用户。 不需要此功能，以便允许应用通过身份验证代理访问 Internet。<br/><br/>有关详细信息，请参阅的文档*企业*中的功能方案[受限的能力](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。 |
-| **proximity** | 与邻近计算机的设备进行近距离感应通信所必需的功能。 近距离感应可用于向附近设备上的应用程序发送邀请或与其进行连接。 <br/><br/> 此功能让应用可以访问邻近设备网络，并在用户同意发送或接受邀请的情况下与这些设备进行连接。 |
+| **enterpriseAuthentication** | 允许应用连接至要求提供域凭据的网络资源。 例如，某个应用从专用 Intranet 上的 SharePoint 服务器中检索数据。 通过此功能可以使用你的凭据来访问要求提供凭据的网络中的网络资源。 具有此功能的应用可在网络上模拟其用户。 无需使用此功能即可让应用通过身份验证的代理访问 Internet。<br/><br/>有关更多详细信息，请参阅[受限功能](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)中“企业”功能方案的文档  。 |
+| **邻近感应** | 与邻近计算机的设备进行近距离感应通信所必需的功能。 近距离感应可用于向附近设备上的应用程序发送邀请或与其进行连接。 <br/><br/> 此功能让应用可以访问邻近设备网络，并在用户同意发送或接受邀请的情况下与这些设备进行连接。 |
 | **sharedUserCertificates** | 此功能让应用可以访问软件和硬件证书，如智能卡证书。 在运行过程中调用此功能时，用户必须采取插入卡或选择证书等操作。 <br/><br/> 使用此功能时，应用会将你的软件和硬件证书或智能卡用于识别。 你的雇主、银行或政府服务机构可以使用此功能来进行识别。 |
 
 ## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>当你的应用不在前台时通信
-[使用后台任务支持应用](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)包含了有关应用不在前台时使用后台任务进行工作的常规信息。 更具体地说，当它不是当前的前台应用，但数据仍通过网络发送给它时，你的代码必须采取特殊的步骤以接收通知。 控制通道触发器用于在 Windows 8 中，此目的，但它们仍支持在 Windows 10 中。 [  **here**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 提供了有关使用控制通道触发器的完整信息。 Windows 10 中新的技术提供更好功能进行较低的开销，在某些情况下，例如启用了推送的流套接字： 套接字 broker 和套接字活动触发器。
+[使用后台任务支持应用](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)包含了有关应用不在前台时使用后台任务进行工作的常规信息。 更具体地说，当它不是当前的前台应用，但数据仍通过网络发送给它时，你的代码必须采取特殊的步骤以接收通知。 为此，你在 Windows 8 中使用了控制通道触发器，这些触发器在 Windows 10 中仍受支持。 [  **here**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 提供了有关使用控制通道触发器的完整信息。 Windows 10 中的新技术提供了更好的功能，可在某些应用场景中降低开销，例如已启用推送的流套接字：套接字代理和套接字活动触发器。
 
 如果你的应用使用了 [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)、[**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 或 [**StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener)，则你的应用可以将开放套接字的所有权转移给系统提供的套接字代理，然后退出前台甚至终止。 在已传输的套接字上建立连接或流量送达该套接字后，你的应用或其指定的后台任务将被激活。 如果你的应用未运行，它将启动。 然后，套接字代理将使用 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger) 通知你的应用收到新流量。 你的应用将从套接字代理回收套接字并处理该套接字上的流量。 这意味着，当你的应用未处理网络流量时，将消耗非常少的系统资源。
 
@@ -60,21 +60,21 @@ ms.locfileid: "66371645"
 
 有以下两种方法可以借助 SSL/TLS 确保 [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 连接的安全：
 
--   [**ConnectAsync** ](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) -进行到网络服务的初始连接并立即协商的所有通信使用 SSL/TLS。
--   [**UpgradeToSslAsync** ](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.upgradetosslasync) -最初连接到未加密的网络服务。 应用可以发送或接收数据。 然后升级连接，对此后所有通信使用 SSL/TLS。
+-   [**ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) - 建立到网络服务的初始连接并立即协商对所有通信使用 SSL/TLS。
+-   [**UpgradeToSslAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.upgradetosslasync) - 先不加密连接到网络服务。 应用可以发送或接收数据。 然后升级连接，对此后所有通信使用 SSL/TLS。
 
 SocketProtectionLevel 指定应用建立或升级连接所需的套接字保护级别。 但是，对于已建立的连接，其最终保护级别取决于连接的两个终结点之间的协商进程。 如果另一个终结点需要更低的保护级别，则最终的保护级别可能要比你指定的级别更低。 
 
- 异步操作成功完成后，你可以通过 [**StreamSocketinformation.ProtectionLevel**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocketinformation.protectionlevel) 属性检索 [**ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) 或 [**UpgradeToSslAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.upgradetosslasync) 调用中使用的要求保护级别。 但是，这不会反映连接使用的实际保护级别。
+ 异步操作成功完成后，可以通过 [**StreamSocketinformation.ProtectionLevel**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocketinformation.protectionlevel) 属性检索 [**ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) 或 [**UpgradeToSslAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.upgradetosslasync) 调用中使用的要求保护级别。 但是，这不会反映连接使用的实际保护级别。
 
 > [!NOTE]
-> 你的代码不应隐式依赖于使用特定的保护级别或默认使用给定安全级别的假设。 安全状况会不断变化，为了避免使用带有已知缺陷的协议，协议和默认保护级别将随着时间的推移而发生变化。 默认值可能会因单个计算机配置或已安装的软件和已应用的修补程序而异。 如果应用依赖于使用特定的安全级别，则必须明确指定该级别，然后进行检查以确保在已建立的连接上实际使用了该安全级别。
+> 代码不应隐式依赖于使用特定的保护级别或默认使用给定安全级别的假设。 安全状况会不断变化，为了避免使用带有已知缺陷的协议，协议和默认保护级别将随着时间的推移而发生变化。 默认值可能会因单个计算机配置或已安装的软件和已应用的修补程序而异。 如果应用依赖于使用特定的安全级别，则必须明确指定该级别，然后进行检查以确保在已建立的连接上实际使用了该安全级别。
 
 ### <a name="use-connectasync"></a>使用 ConnectAsync
-[**ConnectAsync** ](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync)可用于建立初始连接使用网络服务，然后再协商立即进行所有通信使用 SSL/TLS。 有两种 **ConnectAsync** 方法支持传递 *protectionLevel* 参数：
+[**ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) 可用于建立与网络服务的初始连接，并随后立即协商对所有通信使用 SSL/TLS。 有两种 **ConnectAsync** 方法支持传递 *protectionLevel* 参数：
 
--   [ **（EndpointPair，SocketProtectionLevel） ConnectAsync** ](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) -上启动异步操作[ **StreamSocket** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)对象以连接到远程网络目标指定作为[ **EndpointPair** ](https://docs.microsoft.com/uwp/api/Windows.Networking.EndpointPair)对象和一个[ **SocketProtectionLevel**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.SocketProtectionLevel)。
--   [ **(主机名、 字符串、 SocketProtectionLevel) ConnectAsync** ](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) -上启动异步操作[ **StreamSocket** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)要连接到远程目标对象指定远程主机名、 远程服务名称和一个[ **SocketProtectionLevel**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.SocketProtectionLevel)。
+-   [**ConnectAsync(EndpointPair, SocketProtectionLevel)** ](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) - 在 [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 对象上启动异步操作以连接到指定为 [**EndpointPair**](https://docs.microsoft.com/uwp/api/Windows.Networking.EndpointPair) 对象和 [**SocketProtectionLevel**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.SocketProtectionLevel) 的远程网络目标。
+-   [**ConnectAsync(HostName, String, SocketProtectionLevel)** ](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) - 在 [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 对象上启动异步操作以连接到由远程主机名、远程服务名和 [**SocketProtectionLevel**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.SocketProtectionLevel) 所指定的远程目标。
 
 如果 *protectionLevel* 参数设置为 **Windows.Networking.Sockets.SocketProtectionLevel.Ssl**，当调用上述任一 [**ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) 方法时，必须建立 [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 才能使用 SSL/TLS 进行加密。 此值需要加密而且绝不允许使用 NULL 密码。
 
@@ -460,11 +460,11 @@ using Windows::Storage::Streams;
 
 如果客户端发出的初始请求不包含此值，或提供了与服务器的预期不相符的值，则预期值会在发生 WebSocket 握手错误时 从服务器发送到客户端。
 
-## <a name="authentication"></a>身份验证
+## <a name="authentication"></a>Authentication
 如何在通过网络进行连接时提供身份验证凭据。
 
 ### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>通过 StreamSocket 类提供客户端证书
-[  **Windows.Networking.StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 类支持使用 SSL/TLS 应用来验证应用正在与其交互的服务器。 在某些情况下，应用还需要使用 TLS 客户端证书对服务器进行自身验证。 在 Windows 10 中，可以提供有关客户端证书[ **StreamSocket.Control** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketControl) （这必须设置开始在 TLS 握手之前） 的对象。 如果服务器请求客户端证书，Windows 将通过提供的证书做出响应。
+[  **Windows.Networking.StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 类支持使用 SSL/TLS 应用来验证应用正在与其交互的服务器。 在某些情况下，应用还需要使用 TLS 客户端证书对服务器进行自身验证。 在 Windows 10 中，可以在 [**StreamSocket.Control**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketControl) 对象上提供客户端证书（这必须在启动 TLS 握手之前进行设置）。 如果服务器请求客户端证书，Windows 将通过提供的证书做出响应。
 
 下面是演示如何实现此目的的代码段：
 
@@ -487,7 +487,7 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 |  | [**BackgroundDownloader.ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounddownloader.proxycredential) |
 |  | [**BackgroundUploader.ServerCredential**](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounduploader.servercredential) |
 |  | [**BackgroundUploader.ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounduploader.proxycredential) |
-| **Syndication** | [**SyndicationClient(PasswordCredential)** ](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.) |
+| **联合** | [**SyndicationClient(PasswordCredential)** ](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.) |
 |  | [**SyndicationClient.ServerCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.servercredential) |
 |  | [**SyndicationClient.ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.proxycredential) |
 | **AtomPub** | [**AtomPubClient(PasswordCredential)** ](https://docs.microsoft.com/uwp/api/windows.web.atompub.atompubclient.) |

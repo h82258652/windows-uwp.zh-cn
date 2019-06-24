@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, 广告网络, 应用元数据
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
-ms.openlocfilehash: 0122c2fbe1e0e9905a8509694c4a589e04e33247
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d47b1fb567c647ade6ae81373b391c42354f7d88
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621132"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318625"
 ---
 # <a name="app-metadata-api-for-advertising-networks"></a>广告网络的应用元数据 API
 
@@ -67,9 +67,9 @@ ms.locfileid: "57621132"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Ocp-Apim-Subscription-Key | 字符串 | 必需。 [从应用元数据 API 门户中检索](#get-key)到的订阅密钥。  |
+| Ocp-Apim-Subscription-Key | string | 必需。 [从应用元数据 API 门户中检索](#get-key)到的订阅密钥。  |
 
 <span/>
 
@@ -77,7 +77,7 @@ ms.locfileid: "57621132"
 
 | 名称        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------|
-| app_id | 字符串 | 必需。 要检索元数据的应用的 ID。 这可以是以下值之一：<br/><br/><ul><li>应用的应用商店 ID。 应用商店 ID 的一个示例是  9NBLGGH29DM8。</li><li>最初面向 Windows 8.x 或 Windows Phone 8.x 生成的应用的产品 ID（有时也称为*应用 ID*）。 GUID 的产品 ID。</li></ul> |
+| app_id | string | 必需。 要检索元数据的应用的 ID。 这可以是以下值之一：<br/><br/><ul><li>应用的应用商店 ID。 应用商店 ID 的一个示例是  9NBLGGH29DM8。</li><li>最初面向 Windows 8.x 或 Windows Phone 8.x 生成的应用的产品 ID（有时也称为*应用 ID*）。 GUID 的产品 ID。</li></ul> |
 
 <span/>
 
@@ -126,24 +126,24 @@ Ocp-Apim-Subscription-Key: <subscription key>
 
 有关响应正文中这些值的详细信息，请参阅下表。
 
-| 值      | 在任务栏的搜索框中键入   | 描述    |
+| ReplTest1      | 在任务栏的搜索框中键入   | 描述    |
 |------------|--------|--------------------|
-| storeId           | 字符串  | 应用的应用商店 ID。 应用商店 ID 的一个示例是  9NBLGGH29DM8。     |  
-| name           | 字符串  | 应用名称。   |
-| description           | 字符串  | 应用的应用商店一览中的描述。  |
-| phoneStoreGuid           | 字符串  | 应用的产品 ID (Windows Phone 8.x)。 这是一个 GUID。  |
-| windowsStoreGuid           | 字符串  | 应用的产品 ID (Windows 8.x)。 这是一个 GUID。 |
-| storeCategory           | 字符串  | 应用在应用商店中的类别。 有关受支持的值，请参阅适用于应用商店中的应用的[类别和子类别表](../publish/category-and-subcategory-table.md)。  |
-| iabCategory           | 字符串  | 由美国互动广告局 (IAB) 定义的应用的内容类别。 例如，**新闻**或**体育**。 有关内容类别的列表，请参阅 IAB 网站上的 [IAB 技术实验室内容分类](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy)页面。   |
-| iabCategoryId           | 字符串  | 应用的内容类别的 ID。 例如，**IAB12** 为新闻类别的 ID，**IAB17** 为体育类别的 ID。 有关内容类别 ID 的列表，请参阅 [OpenRTB API 规范](https://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf)中的 5.1 节。 |
+| storeId           | string  | 应用的应用商店 ID。 应用商店 ID 的一个示例是  9NBLGGH29DM8。     |  
+| name           | string  | 应用名称。   |
+| description           | string  | 应用的应用商店一览中的描述。  |
+| phoneStoreGuid           | string  | 应用的产品 ID (Windows Phone 8.x)。 这是一个 GUID。  |
+| windowsStoreGuid           | string  | 应用的产品 ID (Windows 8.x)。 这是一个 GUID。 |
+| storeCategory           | string  | 应用在应用商店中的类别。 有关受支持的值，请参阅适用于应用商店中的应用的[类别和子类别表](../publish/category-and-subcategory-table.md)。  |
+| iabCategory           | string  | 由美国互动广告局 (IAB) 定义的应用的内容类别。 例如，**新闻**或**体育**。 有关内容类别的列表，请参阅 IAB 网站上的 [IAB 技术实验室内容分类](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy/)页面。   |
+| iabCategoryId           | string  | 应用的内容类别的 ID。 例如，**IAB12** 为新闻类别的 ID，**IAB17** 为体育类别的 ID。 有关内容类别 ID 的列表，请参阅 [OpenRTB API 规范](https://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf)中的 5.1 节。 |
 | coppa           | 布尔  | 如果应用面向 13 岁以下的儿童，则为 true，因此有义务遵循《儿童在线隐私保护法》(COPPA)，否则，则为 false。  |
-| downloadUrl           | 字符串  | 指向应用商店中应用一览的链接。 此链接采用格式 ```https://www.microsoft.com/store/apps/<Store ID>```。  |
+| downloadUrl           | string  | 指向应用商店中应用一览的链接。 此链接采用格式 ```https://www.microsoft.com/store/apps/<Store ID>```。  |
 | isLive           | 布尔  | 如果应用商店中当前可提供此应用，则为 True；否则，为 false。  |
-| iconUrls           | 数组  |  一个或多个字符串数组，包含与此应用关联的 URL 图标的相对路径。 若要检索图标，请向该 URL 添加前缀 *http* 或 *https*。  |
-| type           | 字符串  | 以下字符串之一：**应用程序**或**游戏**。  |
-| 设备           |  数组  | 一个数组的一个或多个指定的应用支持的设备类型的以下字符串：**PC**，**电话**， **Xbox**， **IoT**，**服务器**，并**Holographic**。  |
-| platformVersions           | 数组  |  一个数组的一个或多个指定的应用支持的平台的以下字符串：**Windows.Universal**， **Windows.Windows8x**，和**Windows.WindowsPhone8x**。  |
-| screenshotUrls           | 数组  | 一个或多个字符串数组，包含此应用截屏 URL 的相对路径。 若要检索截屏，请向该 URL 添加前缀 *http* 或 *https*。  |
+| iconUrls           | array  |  一个或多个字符串数组，包含与此应用关联的 URL 图标的相对路径。 若要检索图标，请向该 URL 添加前缀 *http* 或 *https*。  |
+| type           | string  | 以下字符串之一：**应用程序**或**游戏**。  |
+| 设备           |  array  | 一个数组的一个或多个指定的应用支持的设备类型的以下字符串：**PC**，**电话**， **Xbox**， **IoT**，**服务器**，并**Holographic**。  |
+| platformVersions           | array  |  一个数组的一个或多个指定的应用支持的平台的以下字符串：**Windows.Universal**， **Windows.Windows8x**，和**Windows.WindowsPhone8x**。  |
+| screenshotUrls           | array  | 一个或多个字符串数组，包含此应用截屏 URL 的相对路径。 若要检索截屏，请向该 URL 添加前缀 *http* 或 *https*。  |
 
 <span/>
 

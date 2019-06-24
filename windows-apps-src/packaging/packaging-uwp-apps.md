@@ -9,12 +9,12 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: 265e034b264cf82bacfa5a32141eb5d999d57108
-ms.sourcegitcommit: aa5a055e3ff9ee9defc73ed9567196d59f59542a
+ms.openlocfilehash: 3f24d91231b4da1a4a456846faceb604d9ee450d
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66825035"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319845"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual Studio 打包 UWP 应用
 
@@ -46,7 +46,7 @@ ms.locfileid: "66825035"
 
 1.  **测试您的应用程序。** 打包合作伙伴中心提交应用之前，请确保它按预期您计划支持的所有设备系列上工作。 这些设备系列可能包括桌面设备、移动设备、Surface Hub、Xbox、IoT 设备或其他设备。 有关部署和测试应用程序使用 Visual Studio 的详细信息，请参阅[部署和调试 UWP 应用](../debug-test-perf/deploying-and-debugging-uwp-apps.md)。
 2.  **优化您的应用程序。** 你可以使用 Visual Studio 的分析和调试工具来优化你的 UWP 应用的性能。 例如，用于 UI 响应能力的时间线工具、内存使用工具、CPU 使用工具等。 有关这些工具的详细信息，请参阅[分析功能教程](https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour)主题。
-3.  **检查.NET Native 兼容性 (对于 VB 和C#应用程序)。** 在通用 Windows 平台中，有一个本机编译器可以提升应用的运行时性能。 通过这项更改，你应在该编译环境中测试你的应用。 默认情况下，**Release** 版本配置会启用 .NET 本机工具链，因此请务必使用此 **Release** 配置测试应用并检查应用是否按预期运行。 [调试 .NET Native Windows 通用应用](https://blogs.msdn.microsoft.com/devops/2015/07/29/debugging-net-native-windows-universal-apps/)对在使用 .NET Native 时可能遇到的一些常见调试问题做了更详细的说明。
+3.  **检查.NET Native 兼容性 (对于 VB 和C#应用程序)。** 在通用 Windows 平台中，有一个本机编译器可以提升应用的运行时性能。 通过这项更改，你应在该编译环境中测试你的应用。 默认情况下，**Release** 版本配置会启用 .NET 本机工具链，因此请务必使用此 **Release** 配置测试应用并检查应用是否按预期运行。 [调试 .NET Native Windows 通用应用](https://devblogs.microsoft.com/devops/debugging-net-native-windows-universal-apps/)对在使用 .NET Native 时可能遇到的一些常见调试问题做了更详细的说明。
 
 ## <a name="configure-an-app-package"></a>配置应用包
 

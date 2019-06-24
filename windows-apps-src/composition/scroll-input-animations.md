@@ -5,18 +5,18 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: 118b3f6e306e60d1d8d569f0d58f2d77ea30d9a8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 25b0732b7c29653d18f0e018698ab4b6398d402a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635062"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318065"
 ---
 # <a name="enhance-existing-scrollviewer-experiences"></a>增强现有 ScrollViewer 体验
 
 本文介绍了如何使用 XAML ScrollViewer 和 ExpressionAnimation 来创建动态的输入驱动运动体验。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 
 我们在此假设你熟悉这些文章中所述的概念：
 
@@ -61,7 +61,7 @@ ScrollManipulationPropertySet 包含一个名为 Translation 的 Vector3 属性�
 
 ## <a name="example"></a>示例
 
-看一下以上显示的 Parallax 示例是如何组合出来的。 为便于参考，[GitHub 上的窗口 UI 开发实验室存储库](https://github.com/Microsoft/WindowsUIDevLabs)提供该应用的所有代码。
+看一下以上显示的 Parallax 示例是如何组合出来的。 为便于参考，[GitHub 上的窗口 UI 开发实验室存储库](https://github.com/microsoft/WindowsCompositionSamples)提供该应用的所有代码。
 
 首先获取对 ScrollManipulationPropertySet 的引用。
 

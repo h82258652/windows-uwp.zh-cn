@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 21743f588fa26fcab424a67d6befdd720a891688
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 47134c951fe0351966a34b4a58fe657a6aeeb602
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359113"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317569"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>使用 MediaCapture 捕获基本的照片、视频和音频
 
@@ -104,7 +104,7 @@ Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Win
 ### <a name="play-and-edit-captured-video-files"></a>播放和编辑捕获的视频文件
 将视频捕获到文件后，你可能想要在应用的 UI 中加载并播放该文件。 可使用 **[MediaPlayerElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)** XAML 控件和关联的 **[MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)** 执行此操作。 若要了解如何在 XAML 页面播放媒体，请参阅[使用 MediaPlayer 播放音频和视频](play-audio-and-video-with-mediaplayer.md)。
 
-还可通过调用 **[CreateFromFileAsync](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.createfromfileasync)** 从视频文件创建 **[MediaClip](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip)** 对象。   **[MediaComposition](https://docs.microsoft.com/uwp/api/windows.media.editing.mediacomposition)** 提供基本的视频编辑功能，如排列 **MediaClip** 对象的序列、剪裁视频长度、创建层、添加背景音乐和应用视频效果。 若要详细了解如何使用媒体合成功能，请参阅[媒体合成和编辑](media-compositions-and-editing.md)。
+还可通过调用 **[CreateFromFileAsync](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.createfromfileasync)** 从视频文件创建 **[MediaClip](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip)** 对象。  **[MediaComposition](https://docs.microsoft.com/uwp/api/windows.media.editing.mediacomposition)** 提供基本的视频编辑功能，如排列 **MediaClip** 对象的序列、剪裁视频长度、创建层、添加背景音乐和应用视频效果。 若要详细了解如何使用媒体合成功能，请参阅[媒体合成和编辑](media-compositions-and-editing.md)。
 
 ## <a name="pause-and-resume-video-recording"></a>暂停和恢复视频录制
 通过依次调用 [**PauseAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.pauseasync) 和 [**ResumeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.resumeasync)，可暂停并恢复视频录制，无需创建单独的输出文件。
@@ -113,7 +113,7 @@ Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Win
 
 [!code-cs[ResumeRecordingSimple](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetResumeRecordingSimple)]
 
-从 Windows 10 版本 1607 开始，可暂停视频录制，并接收暂停录制前最后捕获的帧。 然后可在相机预览上覆盖此帧，以允许用户在恢复录制前将相机与暂停的帧保持一致。 调用 [**PauseWithResultAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.pausewithresultasync) 将返回 [**MediaCapturePauseResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapturePauseResult) 对象。 [  **LastFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturepauseresult.lastframe) 属性是表示最后一帧的 [**VideoFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.VideoFrame) 对象。 若要在 XAML 中显示帧，请获取视频帧的 **SoftwareBitmap** 表示形式。 目前仅支持预乘或空 alpha 通道且格式为 BGRA8 的图像，因此如果需要获取正确的格式，请调用 [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows)。  创建新 [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) 对象，并调用 [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) 以对其进行初始化。 最后，设置 XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 控件的 **Source** 属性以显示该图像。 若要使此技巧有效，图像必须与 **CaptureElement** 控件保持一致，并且不透明度值应小于 1。 请记住，仅可在 UI 线程上修改 UI，因为请在 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 内部进行此次调用。
+从 Windows 10 版本 1607 开始，可暂停视频录制，并接收暂停录制前最后捕获的帧。 然后可在相机预览上覆盖此帧，以允许用户在恢复录制前将相机与暂停的帧保持一致。 调用 [**PauseWithResultAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.pausewithresultasync) 将返回 [**MediaCapturePauseResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapturePauseResult) 对象。 [  **LastFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturepauseresult.lastframe) 属性是表示最后一帧的 [**VideoFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.VideoFrame) 对象。 若要在 XAML 中显示帧，请获取视频帧的 **SoftwareBitmap** 表示形式。 目前仅支持预乘或空 alpha 通道且格式为 BGRA8 的图像，因此如果需要获取正确的格式，请调用 [**Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert)。  创建新 [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) 对象，并调用 [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) 以对其进行初始化。 最后，设置 XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 控件的 **Source** 属性以显示该图像。 若要使此技巧有效，图像必须与 **CaptureElement** 控件保持一致，并且不透明度值应小于 1。 请记住，仅可在 UI 线程上修改 UI，因为请在 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 内部进行此次调用。
 
 **PauseWithResultAsync** 也会返回在上一段中录制的视频持续时间，以防你需要跟踪录制的总时长。
 

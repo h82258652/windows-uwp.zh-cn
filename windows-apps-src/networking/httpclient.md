@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bb098aae346c7a81771262793f5f6a042d62d5a3
-ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66721607"
 ---
 # <a name="httpclient"></a>HttpClient
 
-**重要的 Api**
+**重要的 API**
 
 -   [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)
 -   [**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http)
@@ -45,11 +45,11 @@ ms.locfileid: "66721607"
 
 -   [**HttpBufferContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpBufferContent)。 缓冲区形式的内容
 -   [**HttpFormUrlEncodedContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpFormUrlEncodedContent)。 使用 **application/x-www-form-urlencoded** MIME 类型编码的名称和值元组形式的内容
--   [**HttpMultipartContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpMultipartContent)。 中的窗体的内容**多部分 /\***  MIME 类型。
+-   [**HttpMultipartContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpMultipartContent)。 采用 **multipart/\*** MIME 类型格式的内容。
 -   [**HttpMultipartFormDataContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpMultipartFormDataContent)。 编码为 **multipart/form-data** MIME 类型的内容。
 -   [**HttpStreamContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpStreamContent)。 流（供 HTTP GET 方法接收数据和 HTTP POST 方法上载数据使用的内部类型）形式的内容
 -   [**HttpStringContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpStringContent)。 字符串形式的内容。
--   [**IHttpContent** ](https://docs.microsoft.com/uwp/api/Windows.Web.Http.IHttpContent) -开发人员能够创建他们自己的内容对象的基接口
+-   [**IHttpContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.IHttpContent) - 供开发人员创建其自己的内容对象的基接口
 
 “通过 HTTP 发送简单的 GET 请求”部分中的代码段使用 [**HttpStringContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpStringContent) 类，以字符串的形式表示来自 HTTP GET 请求的 HTTP 响应。
 
@@ -57,7 +57,7 @@ ms.locfileid: "66721607"
 
 ## <a name="send-a-simple-get-request-over-http"></a>通过 HTTP 发送简单的 GET 请求
 
-正如本文前面提到的，[**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 命名空间允许 UWP 应用发送 GET 请求。 下面的代码段演示如何将发送到 GET 请求 http://www.contoso.com使用[ **Windows.Web.Http.HttpClient** ](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)类和[ **Windows.Web.Http.HttpResponseMessage** ](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage)类，以从 GET 请求读取响应。
+正如本文前面提到的，[**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 命名空间允许 UWP 应用发送 GET 请求。 以下代码片段演示了如何使用 [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 类和 [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) 类读取来自 GET 请求的响应，以将 GET 请求发送到 http://www.contoso.com 。
 
 ```csharp
 //Create an HTTP client object
@@ -156,12 +156,12 @@ int main()
 }
 ```
 
-## <a name="post-binary-data-over-http"></a>通过 HTTP POST 二进制数据
+## <a name="post-binary-data-over-http"></a>通过 HTTP 发布二进制数据
 
-[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis)下面的代码示例演示如何使用窗体数据和 POST 请求发送少量的二进制数据作为文件上传到 web 服务器。 该代码使用[ **HttpBufferContent** ](/uwp/api/windows.web.http.httpbuffercontent)类来表示二进制数据，并且[ **HttpMultipartFormDataContent** ](/uwp/api/windows.web.http.httpmultipartformdatacontent)类表示多部分窗体数据。
+以下 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis) 代码示例演示如何使用表单数据和 POST 请求，以文件上传的形式将少量的二进制数据发送到 Web 服务器。 该代码使用 [**HttpBufferContent**](/uwp/api/windows.web.http.httpbuffercontent) 类表示二进制数据，使用 [**HttpMultipartFormDataContent**](/uwp/api/windows.web.http.httpmultipartformdatacontent) 类表示多部分表单数据。
 
 > [!NOTE]
-> 调用**获取**（如下面的代码示例所示） 并不适合 UI 线程。 要在这种情况下使用的正确技术，请参阅[并发和异步操作与C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。
+> 不适合对 UI 线程调用 **get**（如以下代码示例所示）。 有关在这种情况下可使用的适当方法，请参阅[使用 C++/WinRT 进行并发和异步操作](/windows/uwp/cpp-and-winrt-apis/concurrency)。
 
 ```cppwinrt
 // pch.h
@@ -226,13 +226,13 @@ int main()
 }
 ```
 
-若要发布的实际二进制文件 （而非显式上面使用的二进制数据） 的内容，您会发现它更轻松地使用[HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent)对象。 构造一个，并为其构造函数的参数，传递从调用返回的值[StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync)。 该方法返回的二进制文件中的数据的流。
+若要发布实际二进制文件（而不是上面使用的显式二进制数据）的内容，你会发现，使用 [HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent) 对象会更方便。 构造这样的一个对象后，请传递调用 [StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync) 后返回的值作为该对象的构造函数的参数。 该方法将返回二进制文件中数据的流。
 
-此外，如果要上传大型文件 （大于约 10 MB），则建议使用 Windows 运行时[后台传输](/uwp/api/windows.networking.backgroundtransfer)Api。
+此外，如果上传大型文件（大于 10MB），则我们建议使用 Windows 运行时[后台传输](/uwp/api/windows.networking.backgroundtransfer) API。
 
-## <a name="post-json-data-over-http"></a>通过 HTTP POST JSON 数据
+## <a name="post-json-data-over-http"></a>通过 HTTP 发布 JSON 数据
 
-以下示例将发布到的终结点，一些 JSON，然后写出响应正文。
+以下示例将一些 JSON 发布到终结点，然后写出响应正文。
 
 ```cs
 using System;
@@ -277,7 +277,7 @@ private async Task TryPostJsonAsync()
 
 将统一资源标识符 (URI) 的无效字符串传递给 [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 对象的构造函数时，将引发异常。
 
-**.NET:**    [ **Windows.Foundation.Uri** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri)类型显示为[ **System.Uri** ](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN)中C#和VB。
+**.NET：**   [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 类型在 C# 和 VB 中显示为 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN)。
 
 在 C# 和 Visual Basic 中，通过使用 .NET 4.5 中的 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) 类和 [**System.Uri.TryCreate**](https://docs.microsoft.com/dotnet/api/system.uri.trycreate?redirectedfrom=MSDN#overloads) 方法之一在构造 URI 之前测试从用户收到的字符串，可以避免该错误。
 
@@ -285,9 +285,9 @@ private async Task TryPostJsonAsync()
 
 [  **Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 缺少方便函数。 所以，使用 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 和该命名空间中其他类的应用需要使用 **HRESULT** 值。
 
-使用.NET Framework 4.5 中的应用中C#，VB.NET [System.Exception](https://docs.microsoft.com/dotnet/api/system.exception?redirectedfrom=MSDN)发生异常时在应用程序执行过程中表示的错误。 [System.Exception.HResult](https://docs.microsoft.com/dotnet/api/system.exception.hresult?redirectedfrom=MSDN#System_Exception_HResult) 属性将返回分配到特定异常的 **HRESULT**。 [System.Exception.Message](https://docs.microsoft.com/dotnet/api/system.exception.message?redirectedfrom=MSDN#System_Exception_Message) 属性将返回用于描述异常的消息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来根据异常原因修改应用行为。
+在采用 C#、VB.NET 编写的使用 .NET Framework 4.5 的应用中发生异常时，[System.Exception](https://docs.microsoft.com/dotnet/api/system.exception?redirectedfrom=MSDN) 表示应用执行期间的错误。 [System.Exception.HResult](https://docs.microsoft.com/dotnet/api/system.exception.hresult?redirectedfrom=MSDN#System_Exception_HResult) 属性将返回分配到特定异常的 **HRESULT**。 [System.Exception.Message](https://docs.microsoft.com/dotnet/api/system.exception.message?redirectedfrom=MSDN#System_Exception_Message) 属性将返回用于描述异常的消息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来根据异常原因修改应用行为。
 
 在使用托管的 C++ 的应用中发生异常时，[Platform::Exception](https://docs.microsoft.com/cpp/cppcx/platform-exception-class) 表示应用执行期间的错误。 [Platform::Exception::HResult](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#hresult) 属性将返回分配到特定异常的 **HRESULT**。 [Platform::Exception::Message](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#message) 属性将返回系统提供的与 **HRESULT** 值关联的字符串。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来根据异常原因修改应用行为。
 
-对于大多数参数验证错误， **HRESULT**返回是**E\_INVALIDARG**。 对于某些非法方法调用， **HRESULT**返回是**E\_非法\_方法\_调用**。
+对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。 对于某些非法的方法调用，返回的 **HRESULT** 为 **E\_ILLEGAL\_METHOD\_CALL**。
 

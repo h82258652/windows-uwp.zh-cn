@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 972556a3d8d46dce11b251fc11d209fa96d3b751
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 150ea5fc9f5e91171f29cc985351856487e91d4a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362590"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318760"
 ---
 # <a name="data-binding-in-depth"></a>深入了解数据绑定
 
@@ -43,7 +43,7 @@ ms.locfileid: "66362590"
 **演示 {x： 绑定} 应用程序示例**
 
 -   [{x:Bind} 示例](https://go.microsoft.com/fwlink/p/?linkid=619989)。
--   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)。
+-   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)。
 -   [XAML UI 基本示例](https://go.microsoft.com/fwlink/p/?linkid=619992)。
 
 **演示 {Binding} 应用程序示例**
@@ -199,7 +199,7 @@ void HostViewModel::PropertyChanged(winrt::event_token const& token) noexcept
 
 现在，**NextButtonText** 属性可供观察。 当创作到该属性的单向或双向绑定（将在稍后介绍操作方法）时，生成的绑定对象将订阅 **PropertyChanged** 事件。 引发该事件后，绑定对象的处理程序将接收一个包含已更改的属性名的参数。 这是绑定对象知道已更改和重新读取的属性值的方式。
 
-因此，无需实现模式显示多次，上方，如果您使用的C#然后就可以从派生**BindableBase**您会发现中的低音类[QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)示例 （在"Common"的文件夹）。 下面是具体操作的一个示例。
+因此，无需实现模式显示多次，上方，如果您使用的C#然后就可以从派生**BindableBase**您会发现中的低音类[QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)示例 （在"Common"的文件夹）。 下面是具体操作的一个示例。
 
 ```csharp
 public class HostViewModel : BindableBase
@@ -604,7 +604,7 @@ Click="{x:Bind RootFrame.GoForward}"/>
 
 重载方法不适用于借助此技术来处理事件。 此外，如果用于处理事件的方法包含一些参数，则这些参数均须根据各自对应的事件参数类型进行赋值。 在此情况下，[**Frame.GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward) 不重载且不含任何参数（但即使其包含两个 **object** 参数，也仍然有效）。 [**Frame.GoBack** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback)已重载，但是，因此我们不能使用该方法利用这种技术。
 
-事件绑定技术类似于实现和使用命令（一个命令返回一种属性，该属性将返回实现 [**ICommand**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) 接口的对象）。 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 和 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) 均适用于命令。 可使用 [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) 示例（位于“Common”文件夹中）中提供的 **DelegateCommand** 帮助程序类，这样便无需多次实现命令模式。
+事件绑定技术类似于实现和使用命令（一个命令返回一种属性，该属性将返回实现 [**ICommand**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) 接口的对象）。 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 和 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) 均适用于命令。 可使用 [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) 示例（位于“Common”文件夹中）中提供的 **DelegateCommand** 帮助程序类，这样便无需多次实现命令模式。
 
 ## <a name="binding-to-a-collection-of-folders-or-files"></a>绑定到文件夹或文件集合
 

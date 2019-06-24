@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 733ce75942a05482ade88c1510e788f1cbd515d4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c23de238a0004066b44cfe962e2de72216eb7a6d
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602202"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318468"
 ---
 # <a name="using-lights-in-windows-ui"></a>Windows UI 中使用灯
 
@@ -38,7 +38,7 @@ Windows.UI.Composition Api 使你能够创建实时动画和效果。 组合照�
 | [AmbientLight](/uwp/api/windows.ui.composition.ambientlight) | 发出出现的非定向光源的光源反射场景中的所有内容。 |
 | [DistantLight](/uwp/api/windows.ui.composition.distantlight) | 无限大远处的光源的发光的一个方向。 如 sun。 |
 | [PointLight](/uwp/api/windows.ui.composition.pointlight) | 发出的所有方向光的光点源。 如灯泡。 |
-| [聚焦](/uwp/api/windows.ui.composition.spotlight) | 发出的光线的内部和外部圆锥光源。 如手电筒。 |
+| [SpotLight](/uwp/api/windows.ui.composition.spotlight) | 发出的光线的内部和外部圆锥光源。 如手电筒。 |
 
 ## <a name="targets"></a>目标
 
@@ -63,7 +63,7 @@ Windows.UI.Composition Api 使你能够创建实时动画和效果。 组合照�
 _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock.ActualHeight / 2, (float)TextBlock.FontSize);
 ```
 
-请参阅完整[文本闪现](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2014393/TextShimmer)WindowUIDevLabs 示例条样，若要了解更多示例。
+请参阅完整[文本闪现](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 14393/TextShimmer)WindowUIDevLabs 示例条样，若要了解更多示例。
 
 ## <a name="restrictions"></a>限制
 
@@ -83,11 +83,11 @@ _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock
 
 属性 | 描述
 --- | ---
-**颜色** | [颜色](/uwp/api/windows.ui.color)光。 通过定义照明颜色值[D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties)漫射、 Ambient，并定义所发出的颜色的反射。 照明的光; 使用 RGBA 值不使用 alpha 颜色组件。
+**Color** | [颜色](/uwp/api/windows.ui.color)光。 通过定义照明颜色值[D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties)漫射、 Ambient，并定义所发出的颜色的反射。 照明的光; 使用 RGBA 值不使用 alpha 颜色组件。
 **方向** | 光的方向。 光所指方向指定相对于其[CoordinateSpace](/uwp/api/windows.ui.composition.distantlight.coordinatespace) Visual。
 **坐标空间** | 每个视觉对象具有隐式的三维坐标空间。 X 方向是从左到右。 Y 方向是从上到下。 Z 方向是从平面的点。 此坐标的原始点是左上角的视觉对象，且单位是设备独立像素 (DIP)。 在此坐标中定义的光源的偏移量。
 **内部和外部圆锥** | 聚光发出的光锥包括两个部分：一个明亮的内锥和一个外锥。 组合允许你控制对内部和外部锥角和颜色。
-**偏移量** | 相对于其坐标空间 Visual 光源的偏移量。
+**Offset** | 相对于其坐标空间 Visual 光源的偏移量。
 
 > [!NOTE]
 > 当多个光源达到相同的视觉对象，或每当光源的颜色值获取足够大，以超过 1.0 时，可能会由于夹紧的灯颜色通道更改光的颜色。
@@ -121,7 +121,7 @@ _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock
 --- | ---
 **法线贴图** | NormalMaps 创建其中指示灯正常指向将更亮和正常指向立即将不断变暗的纹理的效果。 若要向目标 visual 使用 NormalMap [CompositionSurfaceBrush](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)使用 LoadedImageSurface 加载 NormalMap 资产。
 **环境** | 环境属性主要用于控制总体颜色反射。
-**反射** | 反射高光反射对象，使它们看起来有光泽上创建突出显示。 您可以控制的反射高光反射级别以及闪光的级别。  这些属性操作创建材料效果，例如 shinny 金属或光泽纸。
+**Specular** | 反射高光反射对象，使它们看起来有光泽上创建突出显示。 您可以控制的反射高光反射级别以及闪光的级别。  这些属性操作创建材料效果，例如 shinny 金属或光泽纸。
 **漫射** | 扩散型的反射散布在所有方向上的指示灯。
 **反射度模型** | [反射度模型](/uwp/api/windows.ui.composition.effects.scenelightingeffectreflectancemodel)允许你选择之间[Blinn 冯氏](https://docs.microsoft.com/visualstudio/designers/how-to-create-a-basic-phong-shader)和以物理方式基于 Blinn Phong。  如果想要具有精简反射高光，您可以选择以物理方式基于 Blinn 冯氏。
 
@@ -167,4 +167,4 @@ CompositionBrush CreateNormalMapBrush(ICompositionSurface normalMapImage)
 - [CompositionCapabilities API](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities)
 - [照明的数学](https://docs.microsoft.com/windows/uwp/graphics-concepts/mathematics-of-lighting)
 - [SceneLightingEffect](https://docs.microsoft.com/uwp/api/windows.ui.composition.effects.scenelightingeffect)
-- [WindowsUIDevLabs GitHub 存储库](https://github.com/Microsoft/WindowsUIDevLabs)
+- [WindowsUIDevLabs GitHub 存储库](https://github.com/microsoft/WindowsCompositionSamples)

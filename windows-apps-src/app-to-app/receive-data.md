@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bfd84d5e0e41f07b53be0c0afce4b881a8a75d59
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4a171df5312d6c4613dfca1215f5ddd948153a8f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359219"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317864"
 ---
 # <a name="receive-data"></a>接收数据
 
@@ -47,7 +47,7 @@ ms.locfileid: "66359219"
 
 ## <a name="handle-share-activation"></a>处理共享激活
 
-当用户选择你的应用时（通常从共享 UI 中可用目标应用的列表中进行选择），将引发 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Application.OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs)) 事件。 你的应用需要处理此事件才能处理用户要共享的数据。
+当用户选择你的应用时（通常从共享 UI 中可用目标应用的列表中进行选择），将引发 [**OnShareTargetActivated**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) 事件。 你的应用需要处理此事件才能处理用户要共享的数据。
 
 <!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -87,7 +87,7 @@ shareOperation.ReportStarted();
 shareOperation.ReportSubmittedBackgroundTask(); 
 ```
 
-如果发生错误，调用 [**ReportError**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportError(System.String)) 向系统发送一条错误消息。 用户在检查共享的状态时将看到该消息。 此时，你的应用将关闭并且共享将结束。 用户将需要再次启动才能将内容共享到你的应用。 根据你的方案，你可能确定某个特殊错误并不严重，不足以结束共享操作。 在这种情况下，你可以选择不调用 **ReportError** 并且继续此共享。
+如果发生错误，调用 [**ReportError**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation#Windows_ApplicationModel_DataTransfer_ShareTarget_ShareOperation_ReportError_System_String_) 向系统发送一条错误消息。 用户在检查共享的状态时将看到该消息。 此时，你的应用将关闭并且共享将结束。 用户将需要再次启动才能将内容共享到你的应用。 根据你的方案，你可能确定某个特殊错误并不严重，不足以结束共享操作。 在这种情况下，你可以选择不调用 **ReportError** 并且继续此共享。
 
 ```cs
 shareOperation.ReportError("Could not reach the server! Try again later."); 

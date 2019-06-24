@@ -7,26 +7,26 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b0246e338c13027f8afc8da4aa919faa0911b39c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66371625"
 ---
 # <a name="network-communications-in-the-background"></a>后台网络通信
-若要继续的网络通信，尽管这不是在前台，您的应用程序可以使用后台任务以及这两个选项之一。
-- 套接字代理。 如果应用使用套接字进行长期连接然后，它会离开时，它可以委派给系统套接字 broker 套接字的所有权。 然后 broker： 套接字; 上的流量到达时将激活您的应用程序将所有权转移回给您的应用程序;然后，您的应用程序再处理到达的流量。
+不是在前台操作的情况下，若要继续进行网络通信，应用可以使用后台任务和以下两个选项之一。
+- 套接字代理。 如果应用使用套接字进行长期连接，则当它退出前台时，可将套接字的所有权委托给系统套接字代理。 在流量到达套接字上后，该代理会激活应用并将所有权传输回应用；然后应用会处理到达的流量。
 - 控制通道触发器。 
 
 ## <a name="performing-network-operations-in-background-tasks"></a>在后台任务中执行网络操作
-- 在检索到程序包并且需要执行生存期较短的任务时，使用 [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) 激活后台任务。 后执行该任务，后台任务应终止以节约电源。
+- 在检索到程序包并且需要执行生存期较短的任务时，使用 [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) 激活后台任务。 执行任务后，后台任务将会终止，以节省能源。
 - 在检索到程序包并且需要执行生存期较长的任务时，使用 [ControlChannelTrigger](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 激活后台任务。
 
 **与网络相关的条件和标志**
 
 - 将 **InternetAvailable** 条件添加到你的后台任务 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)，以将后台任务触发时间延迟到网络堆栈运行后。 此条件可以省电，因为必须有网络连接才会执行后台任务。 此条件不提供实时激活。
 
-无论使用哪种触发器，请设置后台任务上的 [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder)，以确保在后台任务运行时网络保持连接。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果不使用后台任务**IsNetworkRequested**，则后台任务将不能访问在连接待机模式下 （例如，当手机的屏幕处于关闭状态） 网络。
+无论使用哪种触发器，请设置后台任务上的 [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder)，以确保在后台任务运行时网络保持连接。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果后台任务未使用 **IsNetworkRequested**，则当处于连接待机模式时（例如，当手机屏幕关闭时），后台任务将无法访问网络。
 
 ## <a name="socket-broker-and-the-socketactivitytrigger"></a>套接字代理和 SocketActivityTrigger
 如果应用使用 [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)、[**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 或 [**StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 连接，尽管它不在前台，你应该使用 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger) 和套接字代理收到流量到达你的应用的通知。
@@ -59,9 +59,9 @@ ms.locfileid: "66371625"
 在正确设置套接字后，如果应用即将暂停，则调用该套接字上的 **TransferOwnership** 以将其传输给套接字代理。 代理会监视该套接字并在收到数据时激活你的后台任务。 以下示例包含了一个实用工具 **TransferOwnership** 函数来执行 **StreamSocketListener** 套接字的传输。 （注意，每一个不同类型的套接字都有其自己的 **TransferOwnership** 方法，因此你必须调用适用于正在传输其所有权的套接字的方法。 对于你使用的每个套接字类型，你的代码可能会包含带有一个实现的过载 **TransferOwnership** 帮助程序，以便 **OnSuspending** 代码可轻松读取。）
 
 通过使用以下一种适当方法，应用会将套接字的所有权传输给套接字代理并传递后台任务的 ID：
--   [  **DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket) 上的 [**TransferOwnership**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.datagramsocket.transferownership) 方法之一。
--   [  **StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 上的 [**TransferOwnership**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.transferownership) 方法之一。
--   [  **StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 上的 [**TransferOwnership**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocketlistener.transferownership) 方法之一。
+-   [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket) 上的 [**TransferOwnership**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.datagramsocket.transferownership) 方法之一。
+-   [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 上的 [**TransferOwnership**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.transferownership) 方法之一。
+-   [**StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 上的 [**TransferOwnership**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocketlistener.transferownership) 方法之一。
 
 ```csharp
 
@@ -150,14 +150,14 @@ case SocketActivityTriggerReason.SocketClosed:
   deferral.Complete();
 ```
 
-有关演示使用 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger) 和套接字代理的完整示例，请参阅 [SocketActivityStreamSocket 示例](https://go.microsoft.com/fwlink/p/?LinkId=620606)。 在 Scenario1 中执行的套接字初始化\_Connect.xaml.cs，后台任务实现处于 SocketActivityTask.cs。
+有关演示使用 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger) 和套接字代理的完整示例，请参阅 [SocketActivityStreamSocket 示例](https://go.microsoft.com/fwlink/p/?LinkId=620606)。 在 Scenario1\_Connect.xaml.cs 中执行套接字的初始化，在 SocketActivityTask.cs 中执行后台任务实现。
 
 你可能会注意到示例在创建新的套接字或获取现有套接字后立刻调用 **TransferOwnership**，而不是如本主题所述使用 **OnSuspending** 事件处理程序执行此操作。 这是因为此示例主要用于演示 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)，并且不使用该套接字来获取其他任何活动（尽管它在运行中）。 你的应用可能变得更加复杂，并且应该使用 **OnSuspending** 来确定调用 **TransferOwnership** 的时间。
 
 ## <a name="control-channel-triggers"></a>控制通道触发器
-首先，请确保你使用的是正确的控制通道触发器 (CCT)。 如果您使用的[ **DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)， [ **StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)，或[ **StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener)连接，则我们建议你使用[ **SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)。 你可以将 CCT 用于 **StreamSocket**，不过它们会使用更多资源，并且在连接待机模式下可能不起作用。
+首先，请确保你使用的是正确的控制通道触发器 (CCT)。 如果使用的是 [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)、[**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 或 [**StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 连接，我们建议使用 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)。 你可以将 CCT 用于 **StreamSocket**，不过它们会使用更多资源，并且在连接待机模式下可能不起作用。
 
-如果您使用的 Websocket [ **IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2)， [ **System.Net.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)，或[ **Windows.Web.Http.HttpClient**](/uwp/api/windows.web.http.httpclient)，则必须使用[ **ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)。
+如果使用的是 WebSockets、[**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2)、[**System.Net.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 或 [**Windows.Web.Http.HttpClient**](/uwp/api/windows.web.http.httpclient)，则必须使用 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)。
 
 ## <a name="controlchanneltrigger-with-websockets"></a>ControlChannelTrigger 与 WebSockets
 将 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 与 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 结合使用时，需要应用某些特殊注意事项。 将 **MessageWebSocket** 或 **StreamWebSocket** 与 **ControlChannelTrigger** 结合使用时，应遵循某些特定于传输的使用模式和最佳做法。 此外，这些注意事项影响在 **StreamWebSocket** 上接收数据包的请求的处理方式。 不影响在 **MessageWebSocket** 上接收数据包的请求。
@@ -165,7 +165,7 @@ case SocketActivityTriggerReason.SocketClosed:
 将 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 与 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 结合使用时，应遵循以下使用模式和最佳做法：
 
 -   必须始终保持发布一个未完成的套接字接收。 这是允许发生推送通知任务所必需的。
--   WebSocket 协议为保持连接消息定义一个标准模型。 [  **WebSocketKeepAlive**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.WebSocketKeepAlive) 类可以将客户端发起的 WebSocket 协议保持连接消息发送给服务器。 应用应该将 **WebSocketKeepAlive** 类注册为 KeepAliveTrigger 的 TaskEntryPoint。
+-   WebSocket 协议为保持连接消息定义一个标准模型。 [**WebSocketKeepAlive**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.WebSocketKeepAlive) 类可以将客户端发起的 WebSocket 协议保持连接消息发送给服务器。 应用应该将 **WebSocketKeepAlive** 类注册为 KeepAliveTrigger 的 TaskEntryPoint。
 
 某些特殊的注意事项影响在 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 上接收数据包的请求的处理方式。 尤其在将 **StreamWebSocket** 与 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 结合使用时，应用必须使用用于处理读取操作的原始异步模式，而不是 C# 和 VB.NET 中的 **await** 模型或 C++ 中的 Task。 本部分后面的代码示例中说明了原始异步模式。
 
@@ -261,7 +261,7 @@ Websocket 的附加详细信息为保持连接处理程序。 WebSocket 协议�
 
 使用 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 时，请将 [**WebSocketKeepAlive**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.WebSocketKeepAlive) 类实例注册为 KeepAliveTrigger 的 [**TaskEntryPoint**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.taskentrypoint)，以便不会暂停应用并允许其向服务器（远程终结点）定期发送保持连接消息。 此操作应作为后台注册应用代码的一部分，并在 程序包清单中完成。
 
-[  **Windows.Sockets.WebSocketKeepAlive**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.WebSocketKeepAlive) 的此任务入口点需要在两个位置中指定：
+[**Windows.Sockets.WebSocketKeepAlive**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.WebSocketKeepAlive) 的此任务入口点需要在两个位置中指定：
 
 -   在源代码中创建 KeepAliveTrigger 触发器时（参见下例）。
 -   在保持连接后台任务声明的应用包清单中。
@@ -580,7 +580,7 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 
 结合使用 [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2) 和 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 时的使用模式和最佳做法
 
--   [  **IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2) 对象在用作传输时，其生存时间仅有一个请求/响应。 在与 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 对象结合使用时，可以方便地创建并设置 **ControlChannelTrigger** 对象一次，然后重复调用 [**UsingTransport**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.controlchanneltrigger.usingtransport) 方法，每次关联一个新的 **IXMLHTTPRequest2** 对象。 应用应首先删除上一个 **IXMLHTTPRequest2** 对象，然后再提供新 **IXMLHTTPRequest2** 对象，以确保应用不超出分配的资源限制。
+-   [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2) 对象在用作传输时，其生存时间仅有一个请求/响应。 在与 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 对象结合使用时，可以方便地创建并设置 **ControlChannelTrigger** 对象一次，然后重复调用 [**UsingTransport**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.controlchanneltrigger.usingtransport) 方法，每次关联一个新的 **IXMLHTTPRequest2** 对象。 应用应首先删除上一个 **IXMLHTTPRequest2** 对象，然后再提供新 **IXMLHTTPRequest2** 对象，以确保应用不超出分配的资源限制。
 -   在调用 [**Send**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nf-msxml6-ixmlhttprequest2-send) 方法前，应用可能需要调用 [**SetProperty**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nf-msxml6-ixmlhttprequest2-setproperty) 和 [**SetRequestHeader**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nf-msxml6-ixmlhttprequest2-setrequestheader) 方法来设置 HTTP 传输。
 -   应用可能需要进行初始 [**Send**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nf-msxml6-ixmlhttprequest2-send) 请求以正确测试并设置传输，然后再创建要用于 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 的传输。 在应用确定正确设置传输后，可以将 [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2) 对象配置为与 **ControlChannelTrigger** 一起使用的传输对象。 设计此过程是为了防止在某些情况下断开通过传输建立的连接。 使用 SSL 与证书，应用可能需要显示一个对话框以输入 PIN 或者用于存在多个证书可供选择时。 可能需要进行代理身份验证和服务器身份验证。 如果代理或服务器身份验证已过期，则可能会关闭连接。 应用可以处理这些身份验证过期问题的一个方法是设置计时器。 当需要 HTTP 重定向时，不能保证能够可靠建立第二次连接。 初始测试请求可以确保在将 **IXMLHTTPRequest2** 对象用作 **ControlChannelTrigger** 对象的传输之前，应用使用最新的重定向 URL。
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10 s, 始终连接, 限制, 基于 ARM 的 Windows 10
 ms.localizationpriority: medium
 redirect_url: https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-troubleshooting-x86
-ms.openlocfilehash: b282cda4e77533f5cf946e0d73121dffb1bcfd48
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: ebca781ecfd3373d63185b0afb3d7bd0ecf84c0f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63814976"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319791"
 ---
 # <a name="limitations-of-apps-and-experiences-on-arm"></a>ARM 上的应用和体验限制
 基于 ARM 的 Windows 10 有以下必要限制：
@@ -34,7 +34,7 @@ ms.locfileid: "63814976"
 |-----|--------|
 | 你的应用依赖于不是为 ARM 设计的驱动程序。 | 将你的 x86 驱动程序重新编译为 ARM64 驱动程序。 请参阅[使用 WDK 构建 ARM64 驱动程序](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers)。 |
 | 你的应用只适用于 x64。 | 如果你的应用是为 Microsoft Store 开发的，请提交应用的 ARM 版本。 有关详细信息，请参阅[应用包体系结构](../packaging/device-architecture.md)。 如果你是 Win32 开发人员，请分发应用的 x86 版本。 |
-| 你的应用使用了高于 1.1 版本的 OpenGL，或者需要硬件加速的 OpenGL。 | 使用 DirectX 9、DirectX 10、DirectX 11 和 DirectX 12 的 x86 应用将可在 ARM 上正常运行。 有关详细信息，请参阅 [DirectX 图形和游戏](https://msdn.microsoft.com/en-us/library/windows/desktop/ee663274(v=vs.85).aspx)。 |
+| 你的应用使用了高于 1.1 版本的 OpenGL，或者需要硬件加速的 OpenGL。 | 使用 DirectX 9、DirectX 10、DirectX 11 和 DirectX 12 的 x86 应用将可在 ARM 上正常运行。 有关详细信息，请参阅 [DirectX 图形和游戏](https://docs.microsoft.com/windows/desktop/directx)。 |
 | 你的 x86 应用无法按预期工作。 | 按照 [ARM 上的程序兼容性疑难解答](apps-on-arm-program-compat-troubleshooter.md)中的指南尝试使用兼容性疑难解答。 有关其他一些疑难解答步骤，请参阅[基于 ARM 的 x86 应用疑难解答](apps-on-arm-troubleshooting-x86.md)。 |
-| 你的 x86 应用没有检测到它正在 ARM 上运行。 | 使用 [IsWow64Process2](https://msdn.microsoft.com/en-us/library/windows/desktop/mt804318(v=vs.85).aspx) 确定你的应用是否在 ARM 上运行。 |
+| 你的 x86 应用没有检测到它正在 ARM 上运行。 | 使用 [IsWow64Process2](https://docs.microsoft.com/windows/desktop/api/wow64apiset/nf-wow64apiset-iswow64process2) 确定你的应用是否在 ARM 上运行。 |
 | 你的 UWP ARM32 应用无法按预期工作。 | 请参阅[基于 ARM 的 ARM32 应用疑难解答](apps-on-arm-troubleshooting-arm32.md)，了解如何让你的应用在 ARM 上正常工作。 |

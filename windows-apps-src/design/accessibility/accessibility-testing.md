@@ -8,12 +8,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8af03b32453bcdacb3da95678cf23a988c375f1b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 60be53bfcb351866a0cf124fe4ef6f21ff889f88
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359635"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318958"
 ---
 # <a name="accessibility-testing"></a>辅助功能测试  
 
@@ -95,7 +95,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 
 ## <a name="verify-your-app-with-display-settings"></a>使用显示设置验证你的应用  
 
-使用可调节屏幕的每英寸点数 (dpi) 值的系统屏幕选项，并确保当该 dpi 值发生更改时，你的应用 UI 可正确缩放。 (某些用户更改 dpi 值作为辅助功能选项，便可从**轻松访问**也一样显示属性。)如果发现任何问题，请按照[布局按比例缩放指南](https://developer.microsoft.com/windows/design)并提供其他资源的比例系数不同。
+使用可调节屏幕的每英寸点数 (dpi) 值的系统屏幕选项，并确保当该 dpi 值发生更改时，你的应用 UI 可正确缩放。 (某些用户更改 dpi 值作为辅助功能选项，便可从**轻松访问**也一样显示属性。)如果发现任何问题，请按照[布局按比例缩放指南](https://developer.microsoft.com/windows/apps/design)并提供其他资源的比例系数不同。
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
@@ -164,4 +164,4 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 * [要避免的做法](practices-to-avoid.md)
 * [UI 自动化](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)
 * [Windows 中的辅助功能](https://go.microsoft.com/fwlink/p/?LinkId=320802)
-* [开始使用讲述人](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)
+* [开始使用讲述人](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)
