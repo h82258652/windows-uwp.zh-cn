@@ -8,12 +8,12 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f01c3faf115bc2bac29854462d3bd321ae48a8ec
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d6100b68c66f72a619c7aad0beca488d7318182a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361952"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317327"
 ---
 # <a name="custom-automation-peers"></a>自定义的自动化对等  
 
@@ -402,7 +402,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 
 * [**GetBoundingRectangleCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getboundingrectanglecore):返回[ **Rect** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)结构基于已知的布局特征。 如果 [**IsOffscreen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.isoffscreen) 为 **true**，则返回 0 值 **Rect**。
 * [**GetClickablePointCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getclickablepointcore):返回[**点**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)结构基于已知的布局特征，因为没有非零**BoundingRectangle**。
-* [**GetNameCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getnamecore):更广泛的行为不是可以汇总如下;请参阅[ **GetNameCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getnamecore)。 基本上，它会尝试对 [**ContentControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl) 的任何已知内容或具有内容的相关类进行字符串转换。 另外，如果 [**LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v%3Dvs.95)) 有一个值，则会将该项的 **Name** 值用作 **Name**。
+* [**GetNameCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getnamecore):更广泛的行为不是可以汇总如下;请参阅[ **GetNameCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getnamecore)。 基本上，它会尝试对 [**ContentControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl) 的任何已知内容或具有内容的相关类进行字符串转换。 另外，如果 [**LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v=vs.95)) 有一个值，则会将该项的 **Name** 值用作 **Name**。
 * [**HasKeyboardFocusCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.haskeyboardfocuscore):评估基于所有者[ **FocusState** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.focusstate)并[ **IsEnabled** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled)属性。 不是控件的元素始终返回 **false**。
 * [**IsEnabledCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.isenabledcore):评估基于所有者[ **IsEnabled** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled)属性，它是否[**控制**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control)。 不是控件的元素始终返回 **true**。 这并不意味着已在传统的交互意义上启用所有者；它表示已启用对等，即使所有者不具有 **IsEnabled** 属性。
 * [**IsKeyboardFocusableCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.iskeyboardfocusablecore):返回 **，则返回 true**如果所有者是[**控制**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control); 否则它是**false**。
@@ -422,7 +422,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 
 有关 [**AutomationProperties**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) 附加属性的详细信息，请参阅[基本辅助功能信息](basic-accessibility-information.md)。
 
-由于制定了有关 UI 自动化提供程序应如何报告信息的一般合约，因此会存在一些 [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) 方法，但这些方法通常不在控件对等中实现。 这是因为该信息应当由 [**AutomationProperties**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) 值提供，而且这些值应用到在特定 UI 中使用控件的应用代码。 例如，大多数应用会通过应用 [**AutomationProperties.LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v%3Dvs.95)) 值在 UI 中定义两个不同控件之间的标签关系。 但是，[**LabeledByCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getlabeledbycore) 在某些代表控件中数据或项目关系的对等中实现，例如，使用标头部分对数据字段部分进行标记、使用项目容器对项目进行标记或者执行类似的方案。
+由于制定了有关 UI 自动化提供程序应如何报告信息的一般合约，因此会存在一些 [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) 方法，但这些方法通常不在控件对等中实现。 这是因为该信息应当由 [**AutomationProperties**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) 值提供，而且这些值应用到在特定 UI 中使用控件的应用代码。 例如，大多数应用会通过应用 [**AutomationProperties.LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v=vs.95)) 值在 UI 中定义两个不同控件之间的标签关系。 但是，[**LabeledByCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getlabeledbycore) 在某些代表控件中数据或项目关系的对等中实现，例如，使用标头部分对数据字段部分进行标记、使用项目容器对项目进行标记或者执行类似的方案。
 
 <span id="Implementing_patterns"/>
 <span id="implementing_patterns"/>

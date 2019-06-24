@@ -5,12 +5,12 @@ ms.date: 08/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 应用内购买, IAP, 加载项, 错误代码
 ms.localizationpriority: medium
-ms.openlocfilehash: ba505b30076c356a39ae195e1d187cbc49d8a66a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e887e5fec2a2e04658332a25a3a6c8e23fe2550c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662872"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321720"
 ---
 # <a name="error-codes-for-store-operations"></a>Microsoft Store 操作错误代码
 
@@ -53,7 +53,7 @@ ms.locfileid: "57662872"
 | 0x803F8009<br/>0x803F800A   | 此应用的试用期已到期。   |
 | 0x803F8190   |  许可证不允许在当前国家/地区或设备的所在区域使用此产品。  |
 | 0x803F81F5<br/>0x803F81F6<br/>0x803F81F7<br/>0x803F81F8<br/>0x803F81F9   |  你已达到可与 Microsoft Store 中的游戏和应用同时使用的最大设备数量。 若要在当前设备上使用此游戏或应用，请先删除帐户中的其他设备。  |
-| 0x803F9000<br/>0x803F9001    |  许可证已过期或损坏。 若要帮助解决此错误，请尝试在运行[Windows 应用程序故障排除工具](https://support.microsoft.com/help/4027498/windows-run-the-troubleshooter-for-windows-apps)以重置存储缓存。     |
+| 0x803F9000<br/>0x803F9001    |  许可证已过期或损坏。 若要帮助解决此错误，请尝试在运行[Windows 应用程序故障排除工具](https://support.microsoft.com/help/4027498/microsoft-store-fix-problems-with-apps)以重置存储缓存。     |
 | 0x803F9006    |  对此产品拥有权限的用户未使用其 Microsoft 帐户登录，因此操作无法完成。            |
 | 0x803F9008<br/>0x803F9009    |  你的设备处于离线状态。 你的设备需要处于在线状态才能使用此产品。            |
 | 0x803F900A    |  订阅已过期。            |

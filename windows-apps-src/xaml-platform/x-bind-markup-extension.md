@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c32fee5d9cbe5d40b9fe324eb8d6bad6d87eb9b3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4a6f182ab5f34f7bbb99e54626001126b3741522
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371083"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320279"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 标记扩展
 
@@ -29,7 +29,7 @@ XAML 编译时， **{x:Bind}** 将转换为从数据源上的某一属性中获�
 **演示 {x： 绑定} 应用程序示例**
 
 -   [{x： 绑定} 示例](https://go.microsoft.com/fwlink/p/?linkid=619989)
--   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)
+-   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)
 -   [XAML UI 基础知识示例](https://go.microsoft.com/fwlink/p/?linkid=619992)
 
 ## <a name="xaml-attribute-usage"></a>XAML 属性使用方法

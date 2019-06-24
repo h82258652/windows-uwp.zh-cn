@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d2d1b2b4e6875730d5a6bfa8dd711e11ac5d049c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 81f50625d3af6728adcc6c377a249410354489dd
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642912"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322358"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-quizgame-sample-app"></a>Windows 运行时 8.x 到 UWP 案例研究：QuizGame 示例应用
 
@@ -40,7 +40,7 @@ ms.locfileid: "57642912"
 
 [下载 QuizGame10 Windows 10 应用](https://go.microsoft.com/fwlink/?linkid=532954)。 这是应用刚移植后的状态。 
 
-[在 GitHub 上查看此示例的最新版本](https://github.com/Microsoft/Windows-appsample-quizgame)。
+[在 GitHub 上查看此示例的最新版本](https://github.com/microsoft/Windows-appsample-networkhelper)。
 
 ## <a name="the-winrt-81-solution"></a>WinRT 8.1 解决方案
 
@@ -94,7 +94,7 @@ QuizGame 具有以下部分。
 
 **P2PHelper**
 
--   在解决方案中，创建一个新 Windows 10 类库项目 (**新的项目** &gt; **Windows Universal** &gt; **类库 （Windows 通用）**) 并将其命名 P2PHelper。
+-   在解决方案中，创建一个新 Windows 10 类库项目 (**新的项目** &gt; **Windows Universal** &gt; **类库 （Windows 通用）** ) 并将其命名 P2PHelper。
 -   从新项目中删除 Class1.cs。
 -   将 P2PSession.cs、P2PSessionClient.cs 和 P2PSessionHost.cs 复制到新项目的文件夹中，并在新项目中包括已复制的文件。
 -   该项目无需其他更改即可构建。
@@ -106,9 +106,9 @@ QuizGame 具有以下部分。
 
 **QuizGameHost**
 
--   创建一个新的 Windows 10 应用程序项目 (**外** &gt; **新建项目** &gt; **Windows 通用** &gt; **空白应用程序 （Windows 通用）**) 并将其命名 QuizGameHost。
+-   创建一个新的 Windows 10 应用程序项目 (**外** &gt; **新建项目** &gt; **Windows 通用** &gt; **空白应用程序 （Windows 通用）** ) 并将其命名 QuizGameHost。
 -   添加对 P2PHelper 的引用 (**添加引用** &gt; **项目** &gt; **解决方案** &gt; **P2PHelper**).
--   在“解决方案资源管理器”中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击刚创建的每个文件夹，然后单击**外** &gt; **现有项**和导航到上一个文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”。
+-   在“解决方案资源管理器”中，为磁盘上的每个共享文件夹创建一个新文件夹。  反过来，右键单击刚创建的每个文件夹，然后单击**外** &gt; **现有项**和导航到上一个文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”。 
 -   复制从 MainPage.xaml \\QuizGame.Windows\\到\\QuizGameHost\\和命名空间更改为 QuizGameHost。
 -   复制从 App.xaml \\QuizGame.Shared\\到\\QuizGameHost\\和命名空间更改为 QuizGameHost。
 -   我们会将该版本保留在新项目中，并只进行一个定向更改以支持本地测试模式，而不是覆盖 app.xaml.cs。 在 app.xaml.cs 中，将此行代码
@@ -133,9 +133,9 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 **QuizGameClient**
 
--   创建一个新的 Windows 10 应用程序项目 (**外** &gt; **新建项目** &gt; **Windows 通用** &gt; **空白应用程序 （Windows 通用）**) 并将其命名 QuizGameClient。
+-   创建一个新的 Windows 10 应用程序项目 (**外** &gt; **新建项目** &gt; **Windows 通用** &gt; **空白应用程序 （Windows 通用）** ) 并将其命名 QuizGameClient。
 -   添加对 P2PHelper 的引用 (**添加引用** &gt; **项目** &gt; **解决方案** &gt; **P2PHelper**).
--   在“解决方案资源管理器”中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击刚创建的每个文件夹，然后单击**外** &gt; **现有项**和导航到上一个文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”。
+-   在“解决方案资源管理器”中，为磁盘上的每个共享文件夹创建一个新文件夹。  反过来，右键单击刚创建的每个文件夹，然后单击**外** &gt; **现有项**和导航到上一个文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”。 
 -   复制从 MainPage.xaml \\QuizGame.WindowsPhone\\到\\QuizGameClient\\和命名空间更改为 QuizGameClient。
 -   复制从 App.xaml \\QuizGame.Shared\\到\\QuizGameClient\\和命名空间更改为 QuizGameClient。
 -   在 package.appxmanifest 中，将功能名称从 internetClient 更改为 internetClientServer。
@@ -193,6 +193,6 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 通过最后一项调整，该应用的行为和外观将与移植前完全相同，此外它现在可在任意位置运行。
 
-## <a name="conclusion"></a>结论
+## <a name="conclusion"></a>结束语
 
 我们在此案例研究中移植的应用是涉及到多个项目、一个类库以及大量代码和用户界面的相对复杂的应用。 即便如此，该移植仍然很简单。 一些移植的易用性是直接由引起 Windows 10 开发人员平台和 Windows 8.1 和 Windows Phone 8.1 平台之间的相似性。 另一些是由于原始应用的设计方式使模型、视图模型和视图保持分离。

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 88d2377f95efbe79853b1416213a25e22ed7d5f0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e9cc88792e6cfdc581a4c7dc27ecc060cc0000c3
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639692"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317348"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>针对 Windows 10 设计非独占软件  
 
@@ -23,7 +23,7 @@ ms.locfileid: "57639692"
 
 这一新设计理念称为非独占设计。 该想法是在设计软件的最开始就考虑到所有人。 这与将辅助功能视为在开发过程末尾为满足一小群用户而补上的技术相反。
 
-“我们将残障定义为个体的需求与所提供的服务、产品或环境之间的不匹配。 任何人都可能遇到残障的情况。 这是一个需要排除的常见人体特征。”  \- 从[Inclusive](https://www.microsoft.com/design/inclusive)视频  
+“我们将残障定义为个体的需求与所提供的服务、产品或环境之间的不匹配。 任何人都可能遇到残障的情况。 这是一个需要排除的常见人体特征。”  \- 从[Inclusive](https://www.microsoft.com/design/inclusive/)视频  
 
 非独占设计为所有人创造更好的产品。 它与考虑整个人类多样性有关。 考虑你现在在大部分街角人行道上发现路边切口。 它们之前明显是供坐轮椅的人使用的。 但是，现在几乎每个人都使用它们，包括推着婴儿车、骑着脚踏车和玩滑板的人。 甚至行人通常也会使用路边切口，因为它们随时提供更好的体验。 可以将电视遥控器视为面向身体不便人士的辅助技术 (AT)。 而如今几乎不可能买到没有遥控器的电视。 在孩子们学会绑鞋带之前，他们可穿易脱穿的或易固定的鞋子。 在日常生活中通常首选易穿脱的鞋子，因为在进入家门前需脱掉鞋子。 它们也适合于行动不便的人士，如关节炎患者或者甚至是手腕骨折的人士。
 
@@ -50,7 +50,7 @@ ms.locfileid: "57639692"
 
 除了永久性残障，个人遇到的困难的严重程度和类型在其一生中可能有所不同。 根本不存在“正常人”。 我们的功能始终在变化。 Margaret Meade 说过：“我们都是独一无二的。 独一无二又会使我们实现统一。”  
 
-Microsoft 致力于进行计算机科学和软件工程研究，目的是增强计算体验和构想新颖的计算技术。 请参阅[当前 Microsoft 研究和开发项目](https://www.microsoft.com/enable/microsoft/research.aspx)，这些项目旨在使计算机更便于访问，并且更易于查看、侦听和与之交互。  
+Microsoft 致力于进行计算机科学和软件工程研究，目的是增强计算体验和构想新颖的计算技术。 请参阅[当前 Microsoft 研究和开发项目](https://www.microsoft.com/accessibility/)，这些项目旨在使计算机更便于访问，并且更易于查看、侦听和与之交互。  
 
 ## <a name="practical-design-steps"></a>实际设计步骤  
 如果你满足上述条件，本部分适合你。 该部分介绍了为应用实现非独占设计时应考虑的实际设计步骤。  
@@ -104,7 +104,7 @@ Windows 中的内置辅助功能之一是高对比度模式，该模式可增强
 7.  交付已完成的产品，并为可能在你之后继续从事该项目的人员记录你的实现。  
 
 ## <a name="related-topics"></a>相关主题  
-* [非独占设计](https://design.microsoft.com/inclusive)
+* [非独占设计](https://www.microsoft.com/design/inclusive/)
 * [可访问性的工程软件](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/windows/accessible-apps)
 * [开发非独占 Windows 应用](developing-inclusive-windows-apps.md) 

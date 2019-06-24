@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 23d4a4e0159fc18ac524937326e69d6fbc3a627e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 64a093ddd8a53d72ccb6780b73f280e7b2874612
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370713"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320956"
 ---
 # <a name="launch-an-app-for-results"></a>针对结果启动应用
 
@@ -20,10 +20,10 @@ ms.locfileid: "66370713"
 
 **重要的 Api**
 
--   [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows)
+-   [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync)
 -   [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet)
 
-了解如何从其他应用启动某个应用，以及在这两者之间交换数据。 这就是*针对结果启动应用*。 此处示例演示了如何针对结果使用 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows) 启动应用。
+了解如何从其他应用启动某个应用，以及在这两者之间交换数据。 这就是*针对结果启动应用*。 此处示例演示了如何针对结果使用 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync) 启动应用。
 
 新应用的通信 Api 在 Windows 10 中使 Windows 应用 （和 Windows Web 应用） 以启动应用和 exchange 数据和文件。 这样你便可以从多个应用生成混合解决方案。 使用这些新 API，使得原本需要用户使用多个应用才能完成的复杂任务现在可以无缝地进行处理。 例如，你的应用可启动社交网络应用来选择联系人，或启动结算应用来完成支付流程。
 
@@ -36,8 +36,8 @@ ms.locfileid: "66370713"
 
 协议扩展中的 **ReturnResults** 属性接受以下值之一：
 
--   **optional** - 可通过使用 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows) 方法针对结果启动应用，如果不针对结果，则使用 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 启动应用。 当你使用 **optional** 时，启动应用必须确定它是否针对结果启动。 可以通过检查 [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated) 事件参数进行确认。 如果参数的 [**IActivatedEventArgs.Kind**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) 属性返回 [**ActivationKind.ProtocolForResults**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind)，或事件参数的类型是 [**ProtocolActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs)，则应用通过 **LaunchUriForResultsAsync** 启动。
--   **always** - 可以仅针对结果启动应用；也就是说，它只能响应 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows)。
+-   **optional** - 可通过使用 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync) 方法针对结果启动应用，如果不针对结果，则使用 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 启动应用。 当你使用 **optional** 时，启动应用必须确定它是否针对结果启动。 可以通过检查 [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated) 事件参数进行确认。 如果参数的 [**IActivatedEventArgs.Kind**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) 属性返回 [**ActivationKind.ProtocolForResults**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind)，或事件参数的类型是 [**ProtocolActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs)，则应用通过 **LaunchUriForResultsAsync** 启动。
+-   **always** - 可以仅针对结果启动应用；也就是说，它只能响应 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync)。
 -   **none** - 无法针对结果启动应用，它只能响应 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)。
 
 在此协议扩展示例中，应用只能针对结果进行启动。 这将简化 **OnActivated** 方法（将在下面进行讨论）内部的逻辑，因为我们只需要处理“针对结果启动”的情况，而无需处理可激活应用的其他方式。
@@ -186,7 +186,7 @@ string familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
 ## <a name="remarks"></a>备注
 
 
-本操作方法中的示例将通过“hello world”介绍针对结果启动应用。 需要注意的重要事项是，新的 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows) API 允许你异步启动应用并通过 [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) 类通信。 通过 **ValueSet** 传递的数据量被限制为 100KB。 如果需要传递更多数据，可以通过使用 [**SharedStorageAccessManager**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) 类创建可在应用之间传递的文件标记来共享文件。 例如，存在一个名为 `inputData` 的 **ValueSet**，你可以将该标记存储到要与启动应用共享的文件中：
+本操作方法中的示例将通过“hello world”介绍针对结果启动应用。 需要注意的重要事项是，新的 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync) API 允许你异步启动应用并通过 [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) 类通信。 通过 **ValueSet** 传递的数据量被限制为 100KB。 如果需要传递更多数据，可以通过使用 [**SharedStorageAccessManager**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) 类创建可在应用之间传递的文件标记来共享文件。 例如，存在一个名为 `inputData` 的 **ValueSet**，你可以将该标记存储到要与启动应用共享的文件中：
 
 ```cs
 inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
@@ -198,7 +198,7 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 
 
 * [**LaunchUri**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
-* [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows)
+* [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync)
 * [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet)
 
  

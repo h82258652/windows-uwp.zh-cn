@@ -8,12 +8,12 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3709a9076ce1d258ce2eca7f97aa1478088a9044
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 646f4ad98e6c914c2318a164629d31ce7b67dab4
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363568"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317308"
 ---
 # <a name="continuous-dictation"></a>连续听写
 
@@ -125,7 +125,7 @@ speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
 
 2.  然后检查 [**Confidence**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.confidence) 属性。 如果 Confidence 的值是 [**Medium**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionConfidence) 或更好，我们便将文本追加到 StringBuilder。 我们还在收集输入时更新 UI。
 
-    **请注意**   [ **ResultGenerated** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated)无法直接更新 UI 的后台线程上引发事件。 如果需要更新 UI 处理程序 (作为\[语音和 TTS 示例\]does)，您必须将其调度到 UI 线程通过更新[ **RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows)调度程序的方法。
+    **请注意**   [ **ResultGenerated** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated)无法直接更新 UI 的后台线程上引发事件。 如果需要更新 UI 处理程序 (作为\[语音和 TTS 示例\]does)，您必须将其调度到 UI 线程通过更新[ **RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)调度程序的方法。
 ```csharp
 private async void ContinuousRecognitionSession_ResultGenerated(
       SpeechContinuousRecognitionSession sender,
@@ -165,7 +165,7 @@ speechRecognizer.ContinuousRecognitionSession.Completed +=
 
 4.  事件处理程序检查“Status”属性，以确定识别是否成功。 它还可处理用户已停止说话的情况。 通常，将 [**TimeoutExceeded**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) 视为成功的识别，因为这意味着用户已结束说话。 你应该在代码中对这种情况进行处理以提供良好体验。
 
-    **请注意**   [ **ResultGenerated** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated)无法直接更新 UI 的后台线程上引发事件。 如果需要更新 UI 处理程序 (作为\[语音和 TTS 示例\]does)，您必须将其调度到 UI 线程通过更新[ **RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows)调度程序的方法。
+    **请注意**   [ **ResultGenerated** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated)无法直接更新 UI 的后台线程上引发事件。 如果需要更新 UI 处理程序 (作为\[语音和 TTS 示例\]does)，您必须将其调度到 UI 线程通过更新[ **RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)调度程序的方法。
 ```csharp
 private async void ContinuousRecognitionSession_Completed(
       SpeechContinuousRecognitionSession sender,

@@ -6,19 +6,19 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10，uwp，响应，响应，查看
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d45b5144bb13e66c506c4a55115bf252288064d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fa73c8f43c449e8cf7b1c5aa67574f6ff00e7a15
+ms.sourcegitcommit: 7effecb544952b493250337fc622848232fa5995
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633962"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67325864"
 ---
 # <a name="respond-to-customer-reviews"></a>回复客户评论
 
 
 您可以客户知道会听取他们的反馈响应的应用程序以让评审。 使用评论回复，可以告诉客户你根据他们的评论已添加的功能或已修复的错误，或获取有关如何改进应用的更具体的反馈。 您的响应将显示在所有 Windows 10 客户，若要查看 Microsoft Store。 您还可以选择通过电子邮件向客户发送的响应，（如果它们尚未退出，并使用运行 Windows 10，版本 1803 版或更高版本的设备）。
 
-若要查看你的应用程序评论，并提供响应，发现的应用程序中[合作伙伴中心](https://partner.microsoft.com/dashboard)。 在左侧的导航菜单中，展开*Analytics**，然后单击**评审**以显示[评审报表](reviews-report.md)。 选择**响应以查看**提供您的响应。
+若要查看你的应用程序评论，并提供响应，发现的应用程序中[合作伙伴中心](https://partner.microsoft.com/dashboard)。 在左侧导航菜单中，展开“分析”  ，然后单击“评价”  以显示[评价报告](reviews-report.md)。 选择**响应以查看**提供您的响应。
 
 > [!TIP]
 > 除了使用合作伙伴中心对评审的响应，您可以响应评论[以编程方式](../monetize/submit-responses-to-app-reviews.md)。

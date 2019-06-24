@@ -6,17 +6,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
 ms.localizationpriority: medium
-ms.openlocfilehash: 019db8c93b61f84dde400f7be9f98bf82b1466e8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: afebfd089b80b7402929bd85ea482b86aca0e694
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660322"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320210"
 ---
 # <a name="bringing-html-games-to-uwp-on-xbox"></a>将 HTML 游戏移植到 Xbox 上的 UWP
-Xbox One 是适用于 HTML 5 游戏的一个优秀平台。 HTML 5 游戏在 [Microsoft Edge](https://developer.microsoft.com/microsoft-edge/) 浏览器引擎上运行。 Microsoft Edge 速度较快，并且完全支持 HTML 5 和 CSS 3 功能（如 WebGL 和画布）。
+Xbox One 是适用于 HTML 5 游戏的一个优秀平台。 HTML 5 游戏在 [Microsoft Edge](https://developer.microsoft.com/microsoft-edge) 浏览器引擎上运行。 Microsoft Edge 速度较快，并且完全支持 HTML 5 和 CSS 3 功能（如 WebGL 和画布）。
 
-[Construct 2](https://www.scirra.com/blog/176/announcing-xbox-one-export-beta) 等热门游戏引擎支持 Xbox One。 我们并未对每一个 HTML 框架和引擎都进行测试，但从我们目前所了解到的情况来看，它们中的大多数都适用于 Xbox One。
+[Construct 2](https://www.construct.net/en/blogs/construct-official-blog-1/announcing-xbox-one-export-beta-857) 等热门游戏引擎支持 Xbox One。 我们并未对每一个 HTML 框架和引擎都进行测试，但从我们目前所了解到的情况来看，它们中的大多数都适用于 Xbox One。
 
 HTML 游戏与任何其他类型的游戏势均力敌。 开发人员可以获取本机 API（如控制器输入）、Kinect 等的完全访问权限。
 
@@ -31,6 +31,6 @@ Xbox One 在通用 Windows 平台上运行，这意味着如同其他 Microsoft 
 
 若要开始操作，请下载你选择的引擎，然后查找适用于 Windows 10 应用的说明。 此外，请务必阅读[入门指南](getting-started.md)，以了解有关将你的主机转变为开发工具包的信息以及如何通过 Visual Studio 进行部署。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 - [将现有游戏移植到 Xbox](development-lanes-landing.md)
 - [在 Xbox One 上 UWP](index.md)

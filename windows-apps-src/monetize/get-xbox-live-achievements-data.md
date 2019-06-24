@@ -5,19 +5,19 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox Live 分析, 成就
 ms.localizationpriority: medium
-ms.openlocfilehash: f1d9f7f27e4d0a219aa8bf474b9f57efbb1c74a0
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 422024445be4662aab0a47b5527369c8b7091446
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162612"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317772"
 ---
 # <a name="get-xbox-live-achievements-data"></a>获取 Xbox Live 成就数据
 
-在 Microsoft Store 分析 API 中使用此方法获取在成就数据可用的最近一天内、到那天的前 30 天，游戏的总存在时间内到那天为止已经解锁你的[支持 Xbox Live 的游戏](https://docs.microsoft.com/gaming/xbox-live//index.md)的每个成就的客户的数量。 此信息也位于[Xbox 的分析报告](../publish/xbox-analytics-report.md)在合作伙伴中心。
+在 Microsoft Store 分析 API 中使用此方法获取在成就数据可用的最近一天内、到那天的前 30 天，游戏的总存在时间内到那天为止已经解锁你的[支持 Xbox Live 的游戏](https://docs.microsoft.com/gaming/xbox-live/index.md)的每个成就的客户的数量。 此信息也位于[Xbox 的分析报告](../publish/xbox-analytics-report.md)在合作伙伴中心。
 
 > [!IMPORTANT]
-> 该方法只支持 Xbox 游戏或使用 Xbox Live 服务的游戏。 这些游戏必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括 [Microsoft 合作伙伴](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners)发布的游戏以及通过 [ID@Xbox 计划](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id)提交的游戏。 该方法当前不支持通过 [Xbox Live 创意者计划](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏。
+> 该方法只支持 Xbox 游戏或使用 Xbox Live 服务的游戏。 这些游戏必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括 [Microsoft 合作伙伴](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#microsoft-partners)发布的游戏以及通过 [ID@Xbox 计划](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#id)提交的游戏。 该方法当前不支持通过 [Xbox Live 创意者计划](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -66,9 +66,9 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>响应
 
-| ReplTest1      | 在任务栏的搜索框中键入   | 描述                  |
+| 值      | 在任务栏的搜索框中键入   | 描述                  |
 |------------|--------|-------------------------------------------------------|
-| ReplTest1      | 数组  | 包含你的游戏中每个成就的数据的对象数组。 有关每个对象中的数据的详细信息，请参阅下表。                                                                                                                      |
+| ReplTest1      | array  | 包含你的游戏中每个成就的数据的对象数组。 有关每个对象中的数据的详细信息，请参阅下表。                                                                                                                      |
 | @nextLink  | string | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 100，但查询的数据超过 100 行时，就会返回此值。 |
 | TotalCount | int    | 查询的数据结果中的行总数。  |
 

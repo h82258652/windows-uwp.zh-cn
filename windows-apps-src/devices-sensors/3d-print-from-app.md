@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，3dprinting，3d 打印
 ms.localizationpriority: medium
-ms.openlocfilehash: 712efde0293edff6134309ac2d6d9105413a2877
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e2ed99720afdccef297d46853d4a2445b497195e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370423"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321699"
 ---
 # <a name="3d-printing-from-your-app"></a>从应用进行 3D 打印
 
@@ -54,7 +54,7 @@ ms.locfileid: "66370423"
 ## <a name="get-the-3d-data"></a>获取 3D 数据
 
 
-应用获取 3D 几何图形数据的方法将有所不同。 应用可能从 3D 扫描检索数据、从 Web 资源下载模型数据或者使用数学公式或用户输入以编程方式生成 3D 网格。 为了简便起见，本指南将介绍如何从设备存储将 3D 数据文件（几种常见文件类型的任意一种）加载到程序内存中。 [3D Builder 模型库](https://developer.microsoft.com/windows/hardware/3d-builder-model-library)提供各种可供你轻松下载到设备的模型。
+应用获取 3D 几何图形数据的方法将有所不同。 应用可能从 3D 扫描检索数据、从 Web 资源下载模型数据或者使用数学公式或用户输入以编程方式生成 3D 网格。 为了简便起见，本指南将介绍如何从设备存储将 3D 数据文件（几种常见文件类型的任意一种）加载到程序内存中。 [3D Builder 模型库](https://developer.microsoft.com/windows/hardware/3d-print/windows-3d-printing)提供各种可供你轻松下载到设备的模型。
 
 在 `OnLoadClick` 方法中，使用 [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 类将单个文件加载到应用的内存中。
 

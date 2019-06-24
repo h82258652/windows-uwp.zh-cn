@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10、 uwp、 打印
 ms.localizationpriority: medium
-ms.openlocfilehash: 68f8f990209a66a8677afbd1913c95bfd2fce187
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8d13f67ecff5c670707ca1832ea44b85ca8319d9
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370294"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321557"
 ---
 # <a name="customize-the-print-preview-ui"></a>自定义打印预览 UI
 
@@ -54,9 +54,9 @@ ms.locfileid: "66370294"
 
 ### <a name="define-the-options-to-display"></a>定义要显示的选项
 
-加载应用的屏幕时，该屏幕将注册打印合约。 定义 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件处理程序是注册的一部分。 会将用于自定义在打印预览 UI 中显示的选项的代码添加到 **PrintTaskRequested** 事件处理程序中。
+加载应用的屏幕时，该屏幕将注册打印合约。 定义 [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) 事件处理程序是注册的一部分。 会将用于自定义在打印预览 UI 中显示的选项的代码添加到 **PrintTaskRequested** 事件处理程序中。
 
-修改 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件处理程序以包含 [**printTask.options**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.options) 说明，以便配置需要在打印预览 UI 中显示的打印设置。对于希望显示打印选项自定义列表的应用的屏幕，请覆盖帮助程序类中的 **PrintTaskRequested** 事件处理程序，以包含指定打印此屏幕时要显示的选项的代码。
+修改 [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) 事件处理程序以包含 [**printTask.options**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.options) 说明，以便配置需要在打印预览 UI 中显示的打印设置。对于希望显示打印选项自定义列表的应用的屏幕，请覆盖帮助程序类中的 **PrintTaskRequested** 事件处理程序，以包含指定打印此屏幕时要显示的选项的代码。
 
 ``` csharp
 protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequestedEventArgs e)
@@ -109,7 +109,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 
 ## <a name="add-new-print-options"></a>添加新的打印选项
 
-本部分显示了如何创建一个新打印选项，定义该选项支持的值列表，然后将该选项添加到打印预览。 像上一部分那样，在 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件处理程序中添加新的打印选项。
+本部分显示了如何创建一个新打印选项，定义该选项支持的值列表，然后将该选项添加到打印预览。 像上一部分那样，在 [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) 事件处理程序中添加新的打印选项。
 
 首先，获取一个 [**PrintTaskOptionDetails**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails) 对象。 这用于向打印预览 UI 添加新的打印选项。 然后，清除在打印预览 UI 中显示的选项列表，并添加当用户想要从应用打印时你希望显示的选项。 之后，创建新打印选项并初始化选项值列表。 最后，添加新的选项并为 **OptionChanged** 事件分配一个处理程序。
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 41b6ef053f50e5a326543a785cf530c7b3bf2fc7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c5f3fcd796e813719a5aa99c5ec70706e9630ce5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359234"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317846"
 ---
 # <a name="copy-and-paste"></a>复制和粘贴
 
@@ -50,14 +50,14 @@ dataPackage.RequestedOperation = DataPackageOperation.Move;
 dataPackage.SetText("Hello World!");
 ```
 
-最后一步是通过调用静态 [**SetContent**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(Windows.ApplicationModel.DataTransfer.DataPackage)) 方法将 [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) 添加到剪贴板。
+最后一步是通过调用静态 [**SetContent**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.Clipboard#Windows_ApplicationModel_DataTransfer_Clipboard_SetContent_Windows_ApplicationModel_DataTransfer_DataPackage_) 方法将 [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) 添加到剪贴板。
 
 ```cs
 Clipboard.SetContent(dataPackage);
 ```
 ## <a name="paste"></a>粘贴
 
-若要获取剪贴板的内容，请调用静态 [**GetContent**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboard.getcontent) 方法。 此方法将返回一个包含该内容的 [**DataPackageView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackageView)。 该对象几乎与 [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) 对象完全相同，只不过其内容为只读。 通过该对象，你可以使用 [**AvailableFormats**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackageview.availableformats) 或 [**Contains**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.Contains(System.String)) 方法来确定哪些格式可用。 然后，你可以调用相应的 [**DataPackageView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackageView) 方法来获取数据。
+若要获取剪贴板的内容，请调用静态 [**GetContent**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboard.getcontent) 方法。 此方法将返回一个包含该内容的 [**DataPackageView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackageView)。 该对象几乎与 [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) 对象完全相同，只不过其内容为只读。 通过该对象，你可以使用 [**AvailableFormats**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackageview.availableformats) 或 [**Contains**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackageView#Windows_ApplicationModel_DataTransfer_DataPackageView_Contains_System_String_) 方法来确定哪些格式可用。 然后，你可以调用相应的 [**DataPackageView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackageView) 方法来获取数据。
 
 ```cs
 async void OutputClipboardText()

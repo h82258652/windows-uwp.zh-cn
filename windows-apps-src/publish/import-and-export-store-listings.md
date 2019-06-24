@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 导入 store 一览, 导出 store 一览, 导入导出, store 一览 csv
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d98795d6ab43f92ad2927553b037524e2fc1ec7
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: b45f12a9ef7212ddb23b647894189491bfa73549
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63784763"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320636"
 ---
 # <a name="import-and-export-store-listings"></a>导入和导出应用商店一览
 
@@ -27,7 +27,7 @@ ms.locfileid: "63784763"
 
 在应用的提交概述页中，单击**导出一览**（位于**应用商店一览**部分）以生成采用 UTF-8 编码的 .csv 文件。 将该文件保存到计算机上。
 
-可以使用 Microsoft Excel 或其他编辑器来编辑该文件。 请注意，Office 365 版本的 Excel 可将 .csv 文件另存为 **CSV UTF-8（逗号分隔）(*.csv)** 文件，但其他版本不支持此功能。 有关支持此功能的 Excel 版本的详细信息，请参阅 [Excel 2016 新功能公告](https://support.office.com/en-us/article/What-s-new-in-Excel-2016-for-Windows-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73)，或[点此](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16)了解关于在多种编辑器中采用 UTF-8 编码的详细信息。
+可以使用 Microsoft Excel 或其他编辑器来编辑该文件。 请注意，Office 365 版本的 Excel 可将 .csv 文件另存为 **CSV UTF-8（逗号分隔）(*.csv)** 文件，但其他版本不支持此功能。 有关支持此功能的 Excel 版本的详细信息，请参阅 [Excel 2016 新功能公告](https://support.office.com/article/what-s-new-in-excel-for-office-365-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73?ui=en-US&rs=en-001&ad=US)，或[点此](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16)了解关于在多种编辑器中采用 UTF-8 编码的详细信息。
       
 如果尚未为产品创建任何一览，则导出的 .csv 文件将不包含任何自定义数据。 将看到**字段**、**ID**、**类型**和**默认**列，以及与应用商店一览中出现的各项相对应的各行。
 
@@ -36,7 +36,7 @@ ms.locfileid: "63784763"
 以下概述了导出的 .csv 文件中各列包含的内容：
 - **字段**列包含与应用商店一览每一部分相关联的名称。 这些会对应于相同的项可以提供在合作伙伴中心中创建应用商店列表时尽管一些名称略有不同。 对于可以输入多个相同类型项目的各项，在文件中可以看到多行，可达到所提供的最大数量。 例如，在**应用功能**中可以看到**功能 1**、**功能 2** 等，一直到**功能 20**（因为可提供至多 20 个应用功能）。
 - **ID**列包含合作伙伴中心将与每个字段相关联的数量。 
-- **类型**列提供了有关哪种类型的信息可为该字段，如提供常规指南**文本**或**相对路径 （或在合作伙伴中心中的文件 URL）**。 
+- **类型**列提供了有关哪种类型的信息可为该字段，如提供常规指南**文本**或**相对路径 （或在合作伙伴中心中的文件 URL）** 。 
 - **默认**列（以及标有语言区域设置代码的任何列）表示与应用商店一览每一部分相关联的文本或资产。 可以编辑这些列中的字段以更新应用商店一览。
 
 >[!IMPORTANT]
@@ -65,7 +65,7 @@ ms.locfileid: "63784763"
 
 已导出一览中的许多字段都需要文本条目，例如上述示例中的**描述**和**发行说明**。 对于这些类型的字段，只需在每种语言的字段中输入相应文本。 请确保遵守每个字段的长度和其他要求。 有关这些要求的详细信息，请参阅[创建应用商店一览](create-app-store-listings.md)。
 
-为与资产（例如图像和预告片）相对应的字段提供信息则更加复杂。 而非**文本**，则**类型**对于这些资产是**相对路径 （或在合作伙伴中心中的文件 URL）**。 
+为与资产（例如图像和预告片）相对应的字段提供信息则更加复杂。 而非**文本**，则**类型**对于这些资产是**相对路径 （或在合作伙伴中心中的文件 URL）** 。 
      
 如果已为应用商店一览上载资产，则这些资产将以 URL 表示。 这些 URL 可重复用于产品的多个描述中，或者同一开发者帐户的不同产品中，所以可以复制这些 URL 以重复用于不同字段中。
 

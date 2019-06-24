@@ -6,12 +6,12 @@ ms.date: 4/9/2019
 ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 39715dc3f4b88a2e9a91a7cb659208f8370f16f2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 59e7e46ea68f6bb5fe7fd63e6ac35b9256103c38
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362419"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317901"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概述
 
@@ -212,7 +212,7 @@ T | 字符串的 null 字符分隔列表 | 用户应用的设备标记。 有关
 
 ### <a name="csrf-protection-and-scripting"></a>CSRF 保护和脚本
 
-为了防止受到 [CSRF 攻击](https://wikipedia.org/wiki/Cross-site_request_forgery)，所有非 GET 请求上都需要唯一的令牌。 此令牌 X-CSRF-Token 请求标头派生自会话 Cookie CSRF-Token。 在 Device Portal Web UI 中，CSRF-Token Cookie 将复制到每个请求的 X-CSRF-Token 标头中。
+为了防止受到 [CSRF 攻击](https://en.wikipedia.org/wiki/Cross-site_request_forgery)，所有非 GET 请求上都需要唯一的令牌。 此令牌 X-CSRF-Token 请求标头派生自会话 Cookie CSRF-Token。 在 Device Portal Web UI 中，CSRF-Token Cookie 将复制到每个请求的 X-CSRF-Token 标头中。
 
 > [!IMPORTANT]
 > 这种保护会阻止从独立的客户端 （如命令行实用程序） 的 REST api 的用法。 这可以通过 3 种方法解决：

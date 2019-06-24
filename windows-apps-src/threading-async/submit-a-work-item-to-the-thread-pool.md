@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 线程, 线程池
 ms.localizationpriority: medium
-ms.openlocfilehash: ff47115c228e3cf6530e12aa4686c88660f16fcd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0ff0eca18eeab72dbf0a2f9a539e452a5923392d
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371549"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322019"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>向线程池提交工作项
 
@@ -31,7 +31,7 @@ ms.locfileid: "66371549"
 [  **RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 有 3 个版本，你可指定工作项的优先级，控制它是否与其他工作项同时运行。
 
 >[!NOTE]
->使用[ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows)访问 UI 线程并显示从工作项的进度。
+>使用[ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)访问 UI 线程并显示从工作项的进度。
 
 以下示例创建工作项并提供 lambda 以执行此工作：
 
@@ -195,7 +195,7 @@ const unsigned int n = 9999;
 // A shared pointer to the result.
 // We use a shared pointer to keep the result alive until the
 // thread is done.
-std::shared_ptr<unsigned long> nthPrime = make_shared<unsigned long int>(0);
+std::shared_ptr<unsigned long> nthPrime = std::make_shared<unsigned long int>(0);
 
 // Simulates work by searching for the nth prime number. Uses a
 // naive algorithm and counts 2 as the first prime number.
@@ -275,7 +275,7 @@ m_workItem = asyncAction;
 
 ## <a name="handle-work-item-completion"></a>处理工作项完成
 
-通过设置工作项的 [**IAsyncAction.Completed**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction.completed) 属性来提供完成处理程序。 提供委派（可使用 lambda 或 delegate 函数）来处理工作项的完成。 例如，使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 访问 UI 线程并显示结果。
+通过设置工作项的 [**IAsyncAction.Completed**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction.completed) 属性来提供完成处理程序。 提供委派（可使用 lambda 或 delegate 函数）来处理工作项的完成。 例如，使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 访问 UI 线程并显示结果。
 
 以下示例使用在步骤 1 中所提交工作项的结果更新 UI：
 

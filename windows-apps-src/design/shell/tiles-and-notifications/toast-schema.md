@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 30aba6c796d86662795d1c1f86ef7d76cc62925c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 57ddb366964c259fccddc3f905c6a03a382d0f17
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363372"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320745"
 ---
 # <a name="toast-content-schema"></a>Toast 内容架构
 
@@ -148,7 +148,7 @@ Toast 子元素的标记界面，包括文本、图像、组等。
 ### <a name="adaptivetextalign"></a>AdaptiveTextAlign
 控制文本的水平对齐。
 
-| ReplTest1 | 含义 |
+| 值 | 含义 |
 |---|---|
 | **默认** | 默认值。 对齐方式由呈现器自动确定。 |
 | **自动** | 对齐方式由当前的语言和文化确定。 |
@@ -183,7 +183,7 @@ Toast 子元素的标记界面，包括文本、图像、组等。
 ### <a name="adaptiveimagealign"></a>AdaptiveImageAlign
 指定图像在水平方向上的对齐方式。
 
-| 值 | 含义 |
+| ReplTest1 | 含义 |
 |---|---|
 | **默认** | 默认值。 由渲染器确定的对齐行为。 |
 | **Stretch** | 图像拉伸以填充可用宽度（根据图像的位置，可能还要填充可用高度）。 |
@@ -272,7 +272,7 @@ TextStacking 指定内容在垂直方向上的对齐方式。
 ### <a name="toastgenericapplogocrop"></a>ToastGenericAppLogoCrop
 控制应用徽标图像裁剪。
 
-| ReplTest1 | 含义 |
+| 值 | 含义 |
 |---|---|
 | **默认** | 裁剪使用渲染器的默认行为。 |
 | **无** | 图像不裁剪，显示为方形。 |
@@ -389,7 +389,7 @@ toast 按钮的标记界面。
 ### <a name="toastactivationtype"></a>ToastActivationType
 决定用户与特定操作交互时将使用的激活的类型。
 
-| ReplTest1 | 含义 |
+| 值 | 含义 |
 |---|---|
 | **前景色** | 默认值。 启动前台应用。 |
 | **背景** | 将触发你相应的后台任务（假设你已完成一切设置），并且你可以在后台执行代码（如发送用户的快速回复消息）而不会打扰用户。 |
@@ -408,7 +408,7 @@ toast 按钮的标记界面。
 ### <a name="toastafteractivationbehavior"></a>ToastAfterActivationBehavior
 指定当用户在 Toast 上执行操作时 Toast 应使用的行为。
 
-| ReplTest1 | 含义 |
+| 值 | 含义 |
 |---|---|
 | **默认** | 默认行为。 当用户在 Toast 上执行操作时将消除 Toast。 |
 | **PendingUpdate** | 用户单击 Toast 上的按钮后，通知仍存在，且处于“挂起的更新”视觉状态。 应立即从后台任务更新 Toast，以便用户不会长时间看到此“挂起的更新”视觉状态。 |
@@ -480,4 +480,4 @@ toast 按钮的标记界面。
 ## <a name="related-topics"></a>相关主题
 
 * [快速入门：发送本地 toast 和句柄激活](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10/)
-* [GitHub 上的通知库](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
+* [GitHub 上的通知库](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/dev/Notifications)

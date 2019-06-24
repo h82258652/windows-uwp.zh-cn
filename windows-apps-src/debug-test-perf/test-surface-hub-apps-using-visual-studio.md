@@ -6,12 +6,12 @@ ms.date: 10/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a846aab77fad6f087057fe930d11ac781ed7171
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 37c7f9edbaee008b6e16ef2ca202ff5cbcf39ca2
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362198"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317506"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>使用 Visual Studio 测试 Surface Hub 应用
 Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及测试通用 Windows 平台 \(UWP\) 应用（包括针对 Microsoft Surface Hub 生成的应用）的环境。 模拟器不使用相同的用户界面为 Surface Hub，但它可用于测试您的应用程序的外观和行为与 Surface Hub 屏幕大小和分辨率。
@@ -69,7 +69,7 @@ Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及
     ![Visual Studio 模拟器分辨率](images/vs-simulator-resolutions.png)
 
    > [!TIP]
-   > [打开 Tablet 模式](https://windows.microsoft.com/windows-10/getstarted-like-a-tablet)以更好地模拟 Surface Hub 的体验。
+   > [打开 Tablet 模式](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet)以更好地模拟 Surface Hub 的体验。
 
 ## <a name="deploy-apps-to-a-surface-hub-device-from-visual-studio"></a>从 Visual Studio 将应用部署到 Surface Hub 设备
 手动将应用部署到 Surface Hub 是一个简单的过程。

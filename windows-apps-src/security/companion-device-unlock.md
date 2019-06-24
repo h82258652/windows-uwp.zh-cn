@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ddadde2502e8512ba38dc30c6ac24d22631d62c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f653ebe874bfa4d4ad8bb608acf9495f02191de7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372646"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320628"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>具有 Windows Hello 配套 (IoT) 设备的 Windows 解锁
 
@@ -38,7 +38,7 @@ Windows Hello 配套设备是可以与你的 Windows 10 桌面版一起使用来
 
 ### <a name="biometric-enabled-windows-hello-companion-devices"></a>启用生物识别的 Windows Hello 配套设备
 
-如果配套设备支持生物识别，在某些情况下，[Windows 生物识别框架](https://msdn.microsoft.com/library/windows/hardware/mt608302(v=vs.85).aspx)可能是比 Windows Hello 配套设备框架更好的解决方案。 请联系 [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com)，我们将帮助你选取正确的方法。
+如果配套设备支持生物识别，在某些情况下，[Windows 生物识别框架](https://msdn.microsoft.com/windows/hardware/commercialize/design/device-experiences/windows-hello)可能是比 Windows Hello 配套设备框架更好的解决方案。 请联系 [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com)，我们将帮助你选取正确的方法。
 
 ### <a name="components-of-the-solution"></a>解决方案的构成
 

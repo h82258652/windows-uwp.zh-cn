@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: db2e444b9f13ba41127b362483774c92d45f1f77
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66372748"
 ---
 # <a name="which-networking-technology"></a>选择哪一种网络技术？
@@ -22,7 +22,7 @@ ms.locfileid: "66372748"
 
 如果你正在与另一台设备通信而想要使用自己的协议，可使用[套接字](sockets.md)。
 
-套接字的两个实现都适用于通用 Windows 平台 (UWP) 开发人员：[**Windows.Networking.Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)，并[Winsock](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)。 如果你需要编写新的代码，则 Windows.Networking.Sockets 的优势在于 API 不仅先进且专为 UWP 开发人员“量身打造”。 若要使用跨平台网络库或其他现有 Winsock 代码，或者想要使用 Winsock API，则可以使用该套接字。
+有以下两种套接字实现可供通用 Windows 平台 (UWP) 开发人员使用：[**Windows.Networking.Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets) 和 [Winsock](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)。 如果你需要编写新的代码，则 Windows.Networking.Sockets 的优势在于 API 不仅先进且专为 UWP 开发人员“量身打造”。 若要使用跨平台网络库或其他现有 Winsock 代码，或者想要使用 Winsock API，则可以使用该套接字。
 
 ### <a name="when-to-use-sockets"></a>何时使用套接字
 
@@ -69,7 +69,7 @@ ms.locfileid: "66372748"
 
 当你希望通过网络可靠地传输文件时，请使用[后台传输 API](background-transfers.md)。 后台传输 API 提供应用暂停期间在后台运行的高级上载和下载功能，并持续至应用终止。 API 监视网络状态，并在连接丢失时自动暂停和恢复传输，并且传输还具有流量感知和电量感知功能，这意味着可以根据当前连接和设备电池状态调整下载活动。 当你的应用在移动设备或电池供电的设备上运行时，这些功能是必不可少的。 该 API 适用于使用 HTTP 上载和下载较大文件。 还支持 FTP，但只能用于下载。
 
-Windows 10 中的新后台传输功能是能够触发后续处理完成后的文件传输，以便可以更新本地目录、 激活其他应用程序，或下载完成时通知用户。
+Windows 10 中新后台传输功能可在文件传输完成后触发后处理，以便你可以更新本地目录、激活其他应用或在下载完成时通知用户。
 
 ### <a name="when-to-use-background-transfers"></a>何时使用后台传输
 
@@ -127,7 +127,7 @@ Windows 10 中的新后台传输功能是能够触发后续处理完成后的文
 
 ### <a name="mobile-operators"></a>移动运营商
 
-Windows 10 到宽的开发人员受众会公开一些以前仅知道设备制造商和移动运营商的 Api。 请注意，尽管这些 API 现已公开，但它们仍受特定应用功能的限制，即必须得到 Microsoft 批准之后，才能发布应用。 这些 API 的实际使用主要限于设备制造商和移动运营商。
+Windows 10 向广大开发人员受众公开了一些之前只公开给设备制造商和移动运营商的 API。 请注意，尽管这些 API 现已公开，但它们仍受特定应用功能的限制，即必须得到 Microsoft 批准之后，才能发布应用。 这些 API 的实际使用主要限于设备制造商和移动运营商。
 
 ### <a name="network-operations"></a>网络运营
 

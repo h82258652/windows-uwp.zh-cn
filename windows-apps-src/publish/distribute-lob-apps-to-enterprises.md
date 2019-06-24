@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, lob, 业务线, 企业应用, 适用于企业的 store, 适用于教育的 store, 企业
 ms.localizationpriority: medium
-ms.openlocfilehash: d44d2b248ddc2bff6ffa91860621fe315fb22c47
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
+ms.openlocfilehash: cf970c1812b4200cea4e4902ad883ef8b0b5e141
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66826147"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319999"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>将 LOB 应用分配到企业
 
@@ -71,7 +71,7 @@ ms.locfileid: "66826147"
 单击“提交到应用商店”  后，应用将完成认证过程。 准备就绪后，企业管理员必须在适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店门户中将应用添加到其专用应用商店。 企业稍后可以将应用部署到其用户。
 
 > [!NOTE]
-> 为了获取 LOB 应用，组织必须位于[受支持的市场](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets)中，并且不得在提交应用时[排除该市场](define-pricing-and-market-selection.md)。 
+> 为了获取 LOB 应用，组织必须位于[受支持的市场](https://docs.microsoft.com/windows/whats-new/windows-store-for-business-overview#supported-markets)中，并且不得在提交应用时[排除该市场](define-pricing-and-market-selection.md)。 
 
 有关详细信息，请参阅[使用业务线应用](https://go.microsoft.com/fwlink/p/?LinkId=698846)和[使用专用应用商店分配应用](https://go.microsoft.com/fwlink/p/?LinkId=698847)。
 

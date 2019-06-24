@@ -8,12 +8,12 @@ keywords: 视觉反馈, 焦点反馈, 触摸反馈, 接触可视化, 输入, 交
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f716b930a4d8b96a55a5741e5a520be624526fa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9ab5d8b12539b7669f3459e62159177bfd95269d
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363543"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317158"
 ---
 # <a name="guidelines-for-visual-feedback"></a>视觉反馈指南
 
@@ -112,7 +112,7 @@ ms.locfileid: "66363543"
 * [平移的准则](guidelines-for-panning.md)
 
 **面向开发人员**
-* [自定义用户交互](https://developer.microsoft.com/windows/design/inputs-devices)
+* [自定义用户交互](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
 **示例**
 * [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)

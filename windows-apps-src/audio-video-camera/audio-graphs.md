@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 75066b566fde3f25ea4feb2ed82358b106ffcf7c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ff067729e71ed4d4a49a082adf9fc754804836a6
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359115"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317602"
 ---
 # <a name="audio-graphs"></a>音频图
 
@@ -48,7 +48,7 @@ Windows 运行时音频图 API：
 
 ## <a name="audiograph-class"></a>AudioGraph 类
 
-[  **AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph) 类是构成音频图的所有节点的父类。 使用此对象创建所有音频节点类型的实例。 可通过以下方式创建 **AudioGraph** 类的实例：初始化包含音频图的配置设置的 [**AudioGraphSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings) 对象，然后调用 [**AudioGraph.CreateAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.)。 返回的 [**CreateAudioGraphResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.CreateAudioGraphResult) 将提供对创建的音频图的访问权限，或提供一个错误值（如果音频图创建失败）。
+[  **AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph) 类是构成音频图的所有节点的父类。 使用此对象创建所有音频节点类型的实例。 可通过以下方式创建 **AudioGraph** 类的实例：初始化包含音频图的配置设置的 [**AudioGraphSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings) 对象，然后调用 [**AudioGraph.CreateAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createasync)。 返回的 [**CreateAudioGraphResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.CreateAudioGraphResult) 将提供对创建的音频图的访问权限，或提供一个错误值（如果音频图创建失败）。
 
 [!code-cs[DeclareAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareAudioGraph)]
 
@@ -168,7 +168,7 @@ Windows 运行时音频图 API：
 -   因为此方法可访问含有基础 Windows 运行时类型的原始缓冲区，所以必须使用 **unsafe** 关键字进行声明。 你还必须使用 Microsoft Visual Studio 配置你的项目，以允许通过以下操作编译不安全的代码：打开项目的 **“属性”** 页面、单击 **“生成”** 属性页，然后选中 **“允许不安全代码”** 复选框。
 -   通过将所需的缓冲区大小传入构造函数，在 **Windows.Media** 命名空间中初始化 [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame) 的新实例。 缓冲区大小等于样本数乘以每个样本的大小。
 -   通过调用 [**LockBuffer**](https://docs.microsoft.com/uwp/api/windows.media.audioframe.lockbuffer) 获取音频帧的 [**AudioBuffer**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioBuffer)。
--   通过调用 [**CreateReference**](https://docs.microsoft.com/uwp/api/windows.media.audiobuffer.createreference) 从音频缓冲区获取 [**IMemoryBufferByteAccess**](https://docs.microsoft.com/previous-versions//mt297505(v=vs.85)) COM 接口的实例。
+-   通过调用 [**CreateReference**](https://docs.microsoft.com/uwp/api/windows.media.audiobuffer.createreference) 从音频缓冲区获取 [**IMemoryBufferByteAccess**](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85)) COM 接口的实例。
 -   通过调用 [**IMemoryBufferByteAccess.GetBuffer**](https://docs.microsoft.com/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer) 获取指向原始音频缓冲区数据的指针，并将其转换为音频数据的样本数据类型。
 -   使用数据填充缓冲区并返回 [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame) 以提交到音频图中。
 
@@ -241,7 +241,7 @@ Windows 运行时音频图 API：
 ## <a name="spatial-audio"></a>空间音频
 自 Windows 10 版本 1607 开始，**AudioGraph** 支持空间音频，这使你可以根据来自任何输入或子混合节点发出的音频指定 3D 空间中的位置。 还可以指定发出音频的形状和方向、将用于 Doppler 切换节点音频的速率，以及定义描述音频如何随距离衰减的衰减模型。 
 
-若要创建发射器，可以先创建从发射器投射声音所用的形状，该形状可以是锥形或全向。 [  **AudioNodeEmitterShape**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioNodeEmitterShape) 类提供用于创建其中每个形状的静态方法。 接下来，创建一个衰减模型。 该模型定义发射器的音频音量如何随侦听器距离的增加而降低。 [  **CreateNatural**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitterdecaymodel.createnatural) 方法创建衰减模型，可使用距离平方衰减模型模拟声音的自然衰减。 最后，创建 [**AudioNodeEmitterSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioNodeEmitterSettings) 对象。 当前，此对象仅用于启用和禁用基于速率的发射器音频的 Doppler 衰减。 调用 [**AudioNodeEmitter**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitter.) 构造函数，传入刚创建的初始化对象。 默认情况下，将发射器放置在原点，但你可以使用 [**Position**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitter.position) 属性设置发射器的位置。
+若要创建发射器，可以先创建从发射器投射声音所用的形状，该形状可以是锥形或全向。 [  **AudioNodeEmitterShape**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioNodeEmitterShape) 类提供用于创建其中每个形状的静态方法。 接下来，创建一个衰减模型。 该模型定义发射器的音频音量如何随侦听器距离的增加而降低。 [  **CreateNatural**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitterdecaymodel.createnatural) 方法创建衰减模型，可使用距离平方衰减模型模拟声音的自然衰减。 最后，创建 [**AudioNodeEmitterSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioNodeEmitterSettings) 对象。 当前，此对象仅用于启用和禁用基于速率的发射器音频的 Doppler 衰减。 调用 [**AudioNodeEmitter**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitter.-ctor) 构造函数，传入刚创建的初始化对象。 默认情况下，将发射器放置在原点，但你可以使用 [**Position**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitter.position) 属性设置发射器的位置。
 
 > [!NOTE]
 > 音频节点发射器只可以处理采样频率为 48kHz 的单声道格式的音频。 尝试使用立体声音频或其他采样频率的音频会导致异常。

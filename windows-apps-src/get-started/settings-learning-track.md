@@ -7,10 +7,10 @@ keywords: 入门, uwp, windows 10, 学习轨迹, 设置, 保存设置, 加载设
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 490dd8f0f3841fae089626ec9c283d54cc0d8cd9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66370488"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>在 UWP 应用中保存和加载设置
@@ -23,9 +23,9 @@ ms.locfileid: "66370488"
 
 ## <a name="what-do-you-need-to-know"></a>需要了解哪些内容
 
-使用应用设置存储配置数据，如用户首选项和应用状态。  设备特定的设置存储在本地。 在你安装应用的设备上应用的设置存储在漫游数据存储中。 设置在用户使用同一个 Microsoft 帐户登录并安装了相同应用版本的设备之间漫游。
+使用应用设置存储配置数据，如用户首选项和应用状态。  设备特定的设置存储在本地。 在安装应用的设备上应用的设置存储在漫游数据存储中。 设置在用户使用同一个 Microsoft 帐户登录并安装了相同应用版本的设备之间漫游。
 
-设置可以使用以下数据类型：整数、加倍、浮点、字符、字符串、点、DateTimes，等等。 你还可以存储 [ApplicationDataCompositeValue](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue) 类的实例，当存在应被视为单元的多个设置时这很有用。 例如，用于在应用的阅读面板中显示文本的字体名称和点大小应该作为单个单元保存/还原。 当由于在一个设置之前漫游另一个设置而出现延时，这将防止一个设置与另一个设置不同步。
+设置可以使用以下数据类型：整数、加倍、浮点、字符、字符串、点、DateTimes，等等。 还可以存储 [ApplicationDataCompositeValue](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue) 类的实例，当存在应被视为单元的多个设置时这很有用。 例如，用于在应用的阅读面板中显示文本的字体名称和点大小应该作为单个单元保存/还原。 当由于在一个设置之前漫游另一个设置而出现延时，这将防止一个设置与另一个设置不同步。
 
 下面是你需要了解的用于保存或加载应用设置的主要 API：
 
@@ -51,11 +51,11 @@ composite["FontSize"] = 11;
 roamingSettings.Values["RoamingFontInfo"] = composite;
  ```
 
-将设置保存到本地设备：通过使用  `Windows.Storage.ApplicationData.Current.LocalSettings` 首先为本地设置数据存储获取 **ApplicationDataContainer**。 你分配到此实例的键/值字典对在本地设备设置数据存储中保存。
+将设置保存到本地设备：通过使用 `Windows.Storage.ApplicationData.Current.LocalSettings` 首先为本地设置数据存储获取 **ApplicationDataContainer**。 分配到此实例的键/值字典对在本地设备设置数据存储中保存。
 
 使用类似的模式保存漫游设置。 首先通过 `Windows.Storage.ApplicationData.Current.RoamingSettings` 为漫游设置数据存储获取 **ApplicationDataContainer**。 然后将键/值对分配到此实例。  这些键/值对将在设备之间自动漫游。
 
-在上述代码段中，**ApplicationDataCompositeValue** 存储多个键/值对。 当你有多个不应彼此脱离同步的设置时，复合值非常有用。 当你保存 **ApplicationDataCompositeValue** 时，值作为一个单元保存和加载或自动完成。 通过这种方式，相关的设置不会脱离同步，因为它们作为一个单元而不是单独漫游。
+在上述代码片段中，**ApplicationDataCompositeValue** 存储多个键/值对。 如果你有多个不应彼此脱离同步的设置，复合值非常有用。 保存 **ApplicationDataCompositeValue** 时，值作为一个单元保存和加载或自动完成。 通过这种方式，相关的设置不会脱离同步，因为它们作为一个单元而不是单独漫游。
 
 ## <a name="load-app-settings"></a>加载应用设置
 
@@ -74,7 +74,7 @@ if (composite != null)
 }
 ```
 
-从本地设备加载设置：通过使用  `Windows.Storage.ApplicationData.Current.LocalSettings` 首先为本地设置数据存储获取 **ApplicationDataContainer** 实例。 然后使用它来检索键/值对。
+从本地设备加载设置：通过使用 `Windows.Storage.ApplicationData.Current.LocalSettings` 首先为本地设置数据存储获取 **ApplicationDataContainer** 实例。 然后使用它来检索键/值对。
 
 按照类似的模式加载漫游设置。 首先通过 `Windows.Storage.ApplicationData.Current.RoamingSettings` 从漫游设置数据存储获取 **ApplicationDataContainer** 实例。 从该实例访问键/值对。 如果数据尚未漫游到你从其访问设置的设备，你将获得一个空 **ApplicationDataContainer**。 这就是上面的示例代码中有一个 `if (composite != null)` 检查的原因。
 
@@ -89,14 +89,14 @@ if (composite != null)
 | [ApplicationData.LocalSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) | 从本地应用数据存储获取应用程序设置容器。 |
 | [ApplicationData.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) | 从漫游应用数据存储获取应用程序设置容器。 |
 | [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) | 支持创建、删除、枚举和遍历容器层次结构的应用设置的容器。 |
-| [Windows.UI.ApplicationSettings Namespace](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | 提供你用于定义显示在 Windows shell 的设置窗格中的应用设置的类。 |
+| [Windows.UI.ApplicationSettings 命名空间](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | 提供用于定义显示在 Windows shell 的设置窗格中的应用设置的类。 |
 
 ### <a name="useful-docs"></a>有用的文档
 
 | 主题 | 描述 |
 |-------|----------------|
-| [有关应用设置的准则](https://docs.microsoft.com/windows/uwp/design/app-settings/guidelines-for-app-settings) | 介绍有关创建和显示应用设置的最佳做法。 |
-| [存储和检索设置和其他应用程序数据](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#create-and-read-a-local-file) | 保存和检索设置（包括漫游设置）演练。 |
+| [应用设置指南](https://docs.microsoft.com/windows/uwp/design/app-settings/guidelines-for-app-settings) | 介绍有关创建和显示应用设置的最佳做法。 |
+| [存储和检索设置以及其他应用数据](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#create-and-read-a-local-file) | 保存和检索设置（包括漫游设置）演练。 |
 
 ## <a name="useful-code-samples"></a>有用的代码示例
 

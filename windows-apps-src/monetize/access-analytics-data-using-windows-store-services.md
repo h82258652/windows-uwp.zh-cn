@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 14a1b73a2c82beea746d40c25bfa18ddf6171203
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5514ea3a0e416ad2a0b7b75084bc66ad057c1a73
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372003"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320969"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用应用商店服务访问分析数据
 
@@ -106,7 +106,7 @@ grant_type=client_credentials
 
 ### <a name="methods-for-xbox-live-services"></a>适用于 Xbox Live 服务的方法
 
-使用 [Xbox Live 服务](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md)的游戏开发人员帐户可以使用以下其他方法。
+使用 [Xbox Live 服务](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md)的游戏开发人员帐户可以使用以下其他方法。
 
 | 应用场景       | 方法      |
 |---------------|--------------------|

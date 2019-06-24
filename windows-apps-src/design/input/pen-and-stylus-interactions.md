@@ -8,12 +8,12 @@ keywords: Windows 墨迹, Windows 墨迹书写, DirectInk, InkPresenter, InkCanv
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d60c85efe8f0a959ac66ffbd3dc8a05f312d0f2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 427d359676bd064e577ab4f13f7b0a17f61d7e3e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365652"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317166"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>UWP 应用中的笔交互和 Windows Ink
 
@@ -64,8 +64,7 @@ Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、�
 在本例中，[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 覆盖了背景图。
 
 > [!NOTE]
-> InkCanvas 具有默认值[**高度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height)并[**宽度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width)属性为零，除非它是元素的子级的自动调整大小及其子元素，如[StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel
-)或[网格](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)控件。
+> InkCanvas 具有默认值[**高度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height)并[**宽度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width)属性为零，除非它是元素的子级的自动调整大小及其子元素，如[StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel)或[网格](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)控件。
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -475,7 +474,7 @@ Windows Ink 平台未为需要修改输入的操作（例如笔划选择）提�
 * [处理指针输入](handle-pointer-input.md)
 * [标识输入设备](identify-input-devices.md)
 
-**Api**
+**API**
 
 * [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
 * [**Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)

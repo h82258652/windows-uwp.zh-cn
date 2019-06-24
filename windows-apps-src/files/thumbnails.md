@@ -1,6 +1,6 @@
 ---
-Description: 如何使用图像的缩略图来帮助用户预览 UWP 应用中的文件。
-title: UWP 应用中的缩略图图像指南
+Description: 如何使用缩略图来帮助用户预览 UWP 应用中的文件。
+title: 有关 UWP 应用中的缩略图的指导
 label: Thumbnail images
 template: detail.hbs
 ms.date: 12/19/2018
@@ -8,23 +8,23 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 15984e00b036bf44d6e4a7f60cb6435ea1add291
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642002"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63808749"
 ---
 # <a name="thumbnail-images"></a>缩略图图像
 
-这些指南介绍如何使用缩略图图像帮助用户在 UWP 应用中浏览时预览文件。 
+这些指南介绍如何使用缩略图帮助用户在 UWP 应用中浏览时预览文件。 
 
-**重要的 Api**
+**重要的 API**
 
 -   [**ThumbnailMode**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
 
 ## <a name="should-my-app-include-thumbnails"></a>我的应用应该包括缩略图吗？
 
-如果应用允许用户浏览文件，则可以显示缩略图图像以帮助用户快速预览这些文件。 
+如果应用允许用户浏览文件，则可以显示缩略图以帮助用户快速预览这些文件。 
 
 使用缩略图的情况： 
 - 显示库集合（例如文件和文件夹）中多个项目的预览。 例如，照片库应使用缩略图，以在用户浏览照片文件时为用户提供每张照片的小视图。
@@ -36,23 +36,23 @@ ms.locfileid: "57642002"
     ![视频预览](images/thumbnail-preview.png)
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
-- 在检索缩略图时，指定[缩略图模式](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)（PicturesView、VideosView、DocumentsView、MusicView、ListView 或 SingleItem）。 这可确保缩略图图像经过优化，显示用户想要查看的文件类型。 
+- 在检索缩略图时，指定[缩略图模式](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)（PicturesView、VideosView、DocumentsView、MusicView、ListView 或 SingleItem）。 这可确保缩略图经过优化，显示用户想要查看的文件类型。 
     - 使用 SingleItem 模式检索单个项目的缩略图（不论文件类型）。 其他缩略图模式旨在显示多个文件的预览。 
 
 - 在加载缩略图时显示通用占位符图像以代替缩略图。 使用占位符有助于让应用看起来更具响应能力，因为用户可以在加载缩略图之前与预览进行交互。 
 
     占位符图像应：
     * 特定于它代表的项目类型。 例如，文件夹、图片和视频都应有其自己的专用占位符。 
-    * 与其代表的缩略图图像具有相同的大小和纵横比。 
-    * 在缩略图图像加载完毕前一直显示。 
+    * 与其代表的缩略图具有相同的大小和纵横比。 
+    * 在缩略图加载完毕前一直显示。 
 
 - 使用带有文本标签的占位符图像来表示文件夹和文件组，以区别于单个文件。
 
 - 如果无法检索缩略图，则显示占位符图像。 
 
-- 提供文档和音乐文件的预览时显示其他文件信息。 然后，用户可以识别可能无法仅从缩略图图像中轻松获得的文件关键信息。 例如，对于音乐文件，可以显示艺术家的姓名和专辑封面的缩略图。 
+- 提供文档和音乐文件的预览时显示其他文件信息。 然后，用户可以识别可能无法仅从缩略图中轻松获得的文件关键信息。 例如，对于音乐文件，可以显示艺术家的姓名和专辑封面的缩略图。 
 
-- 不显示图片和视频文件的其他文件信息。 在大多数情况下，缩略图图像足以让用户浏览图片和视频。 
+- 不显示图片和视频文件的其他文件信息。 在大多数情况下，缩略图足以让用户浏览图片和视频。 
 
 ## <a name="additional-usage-guidelines"></a>其他使用指南
 推荐的[缩略图模式](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)和功能：
@@ -61,21 +61,21 @@ ms.locfileid: "57642002"
 <tr>
 <th> 显示预览</th>
 <th> 缩略图模式 </th>
-<th> 所检索到的缩略图图像的功能 </th>
+<th> 所检索到的缩略图的功能 </th>
 </tr>
 <tr>
 <td> 图片<br /> 视频 </td>
 <td> PicturesView <br />VideosView </td>
-<td> <b>大小</b>： 中等，最好是至少 190 （如果图像大小为 190 x 130） <br />
-<b>纵横比</b>: 统一、 宽纵横比的大约.7 (190 x 130 如果大小为 190) <br />
+<td> <b>大小</b>： 中等，最好至少为 190（如果图像大小为 190x130） <br />
+<b>纵横比</b>： 一致，宽纵横比约为 0.7（如果大小为 190，则为 190x130） <br />
 裁剪以供预览。 <br /> 
 由于纵横比一致，因此非常适合在网格中对齐图像。  </td>
 </tr>
 <tr>
 <td> 文档<br />音乐 </td>
 <td> DocumentsView <br />MusicView <br /> ListView</td>
-<td> <b>大小</b>： 较小，最好是至少 40 x 40 像素 <br />
-<b>纵横比</b>:  统一的方形纵横比  <br />
+<td> <b>大小</b>： 小，最好至少为 40 x 40 像素 <br />
+<b>纵横比</b>：  一致，平方纵横比  <br />
 由于平方纵横比一致，因此非常适合预览专辑封面。 <br /> 
 文档与在文件选取器窗口中看起来相同（它使用相同的图标）。 </td>
 </tr>
@@ -83,14 +83,14 @@ ms.locfileid: "57642002"
 <tr>
 <td> 任何单个项目（不论文件类型） </td>
 <td> SingleItem </td>
-<td> <b>大小</b>： 较小，最好是至少 40 x 40 像素 <br />
-<b>纵横比</b>:  统一的方形纵横比  <br />
+<td> <b>大小</b>： 小，最好至少为 40 x 40 像素 <br />
+<b>纵横比</b>：  一致，平方纵横比  <br />
 由于平方纵横比一致，因此非常适合预览专辑封面。 <br /> 
 文档与在文件选取器窗口中看起来相同（它使用相同的图标）。 </td>
 </tr>
 </table>
 
-以下是显示检索的缩略图图像（因文件类型和缩略图模式而异）的不同之处的示例：
+以下是显示检索的缩略图（因文件类型和缩略图模式而异）的不同之处的示例：
 <div class="mx-responsive-img">
 <table>
 <tr>
@@ -144,7 +144,7 @@ ms.locfileid: "57642002"
 <td>如果文件夹中包含图片文件，则使用图片缩略图。  <br />
 <img src="images/thumbnail-dir-picvid-modes.png" alt="Folder thumbnail in picture or video mode"/> <br />
 否则不会检索任何缩略图。</td>
-<td>未检索到任何缩略图图像。</td>
+<td>未检索到任何缩略图。</td>
 <td>缩略图为文件夹图标。<br />
 <img src="images/thumbnail-dir-single-mode.png" alt="Folder icon thumbnail in single mode"/></td>
 </tr>

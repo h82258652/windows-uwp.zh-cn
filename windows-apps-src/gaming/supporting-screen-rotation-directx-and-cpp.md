@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 屏幕方向, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cb741e8eb87987c51324c5f4e5f2d0f0da23f74
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 84dc81734d945e32d222bdc3e1fe9c7468f078bb
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368013"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321148"
 ---
 # <a name="supporting-screen-orientation-directx-and-c"></a>支持屏幕方向（DirectX 和 C++）
 
@@ -368,7 +368,7 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 
 默认情况下，Windows 10 提供的任何应用程序，而不考虑应用程序模型或语言中，若要完成的图像的旋转时间短，但明显窗口。 但是，很可能当你的应用使用此处所述的技术之一执行旋转计算时，在此时间窗口已关闭之前，此计算将很好地完成。 你更愿意回到那个时候并完成旋转动画，是吗？ 这就是 [**CoreWindowResizeManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindowResizeManager) 出现的位置。
 
-以下是使用 [**CoreWindowResizeManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindowResizeManager) 的方法：当引发 [**DisplayInformation::OrientationChanged**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 事件时，在该事件的处理程序内调用 [**CoreWindowResizeManager::GetForCurrentView**](https://docs.microsoft.com/previous-versions//hh404170(v=vs.85)) 以获取 **CoreWindowResizeManager** 的实例，并且当完成并演示新方向的布局时，调用 [**NotifyLayoutCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindowresizemanager.notifylayoutcompleted) 以让 Windows 知道它可以完成旋转动画并显示应用屏幕。
+以下是使用 [**CoreWindowResizeManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindowResizeManager) 的方法：当引发 [**DisplayInformation::OrientationChanged**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 事件时，在该事件的处理程序内调用 [**CoreWindowResizeManager::GetForCurrentView**](https://docs.microsoft.com/previous-versions/hh404170(v=vs.85)) 以获取 **CoreWindowResizeManager** 的实例，并且当完成并演示新方向的布局时，调用 [**NotifyLayoutCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindowresizemanager.notifylayoutcompleted) 以让 Windows 知道它可以完成旋转动画并显示应用屏幕。
 
 以下是 [**DisplayInformation::OrientationChanged**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 的事件处理程序中的代码可能的外观：
 

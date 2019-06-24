@@ -6,18 +6,18 @@ ms.topic: article
 keywords: 入门, uwp, windows 10, 学习轨迹, 布局, 表单
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 45c4acda953808a85363d1cec7c623dd79cc08f1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.openlocfilehash: cd3fb1c294ac81f42bb53c23d307eed49a6708fd
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656442"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64564579"
 ---
 # <a name="create-and-customize-a-form"></a>创建和自定义表单
 
-如果要创建的应用程序需要用户输入大量的信息，很可能会想要创建用于他们填写的窗体。本文将说明您需要知道，才能创建是有用且功能强大的窗体。
+如果你正在创建一个需要用户输入大量信息的应用，可以创建一个表单供用户填写信息。本文将会介绍有关创建有用且功能强大的表单方面的知识。
 
-这不是教程。 如果想查看教程，请参阅我们的[自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md)，它提供了分步指南体验。
+本文并非教程。 如果想查看教程，请参阅我们的[自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md)，它提供了分步指南体验。
 
 我们将讨论表单包含哪些 **XAML 控件**，如何最好地在页面上安排它们，以及如何为不同的屏幕大小优化表单。 但由于表单的核心内容在于视觉元素的相对位置，因此我们先讨论使用 XAML 时的页面布局。
 
@@ -45,9 +45,9 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 ## <a name="what-goes-in-a-form"></a>表单包含哪些元素？
 
-需要使用各种 [XAML 控件](../design/controls-and-patterns/controls-and-events-intro.md)填充表单。 你可能对这些控件很熟悉，但如果需要复习，请重温以下参考资料。 特别是，你需要允许用户输入文本或从值列表中进行选择的控件。 这是基本选项可以添加的列表 – 无需阅读了所有有关，是为了足够让您了解它们的外观和它们的工作原理。
+需要使用各种 [XAML 控件](../design/controls-and-patterns/controls-and-events-intro.md)填充表单。 你可能对这些控件很熟悉，但如果需要复习，请重温以下参考资料。 特别是，你需要允许用户输入文本或从值列表中进行选择的控件。 以下是可以添加的选项的基本列表 - 不必掌握有关它们的一切内容，只需要了解它们的外观及其工作方式。
 
-* [文本框](../design/controls-and-patterns/text-box.md)到你的应用允许用户输入的文本。
+* [TextBox](../design/controls-and-patterns/text-box.md) 让用户向应用中输入文本。
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) 让用户从两个选项中做出选择。
 * [DatePicker](../design/controls-and-patterns/date-picker.md) 让用户选择一个日期值。
 * [TimePicker](../design/controls-and-patterns/time-picker.md) 让用户选择一个时间值。
@@ -96,29 +96,38 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 上面给出的基本表单框架就是一个**流动布局**，因为它主要取决于控件的相对位置，最大限度减少了特定像素大小和位置的使用。 请在日后创建更多 UI 时牢记这一点。
 
-对于响应式布局来说，更重要的是**可视状态**。 可视状态定义了当给定条件为真时应用于给定元素的属性值。 [了解如何在 XAML 中进行该操作](../design/layout/layouts-with-xaml.md#set-visual-states-in-xaml-markup)，然后在表单中实现它们。 下面对我们之前的示例做了更改，实现了一个*非常* 基础的可视状态：
+对于响应式布局来说，更重要的是**可视状态**。 可视状态定义了当给定条件为真时应用于给定元素的属性值。 [了解如何在 XAML 中进行该操作](../design/layout/layouts-with-xaml.md#set-visual-states-in-xaml-markup)，然后在表单中实现它们。 下面对我们之前的示例做了更改，实现了一个非常基础的可视状态  ：
 
 ```xaml
-<VisualStateManager.VisualStateGroups>
-    <VisualStateGroup>
-        <VisualState>
-            <VisualState.StateTriggers>
-                <AdaptiveTrigger MinWindowWidth="640" />
-            </VisualState.StateTriggers>
+<Page ...>
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="640" />
+                    </VisualState.StateTriggers>
 
-            <VisualState.Setters>
-                <Setter Target="Associate.(RelativePanel.RightOf)" Value="Customer"/>
-                <Setter Target="Associate.(RelativePanel.Below)" Value=""/>
-                <Setter Target="Save.(RelativePanel.Below)" Value="Customer"/>
-            </VisualState.Setters>
-        </VisualState>
-    </VisualStateGroup>
-</VisualStateManager.VisualStateGroups>
+                    <VisualState.Setters>
+                        <Setter Target="Associate.(RelativePanel.RightOf)" Value="Customer"/>
+                        <Setter Target="Associate.(RelativePanel.Below)" Value=""/>
+                        <Setter Target="Save.(RelativePanel.Below)" Value="Customer"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
 
-<RelativePanel>
-    <!--Previous 3 stack panels-->
-</RelativePanel>
+        <RelativePanel>
+            <!-- Customer StackPanel -->
+            <!-- Associate StackPanel -->
+            <!-- Save StackPanel -->
+        </RelativePanel>
+    </Grid>
+</Page>
 ```
+
+> [!IMPORTANT]
+> 使用 StateTriggers 时，请始终确保将 VisualStateGroups 附加到根的第一个子级。 在此处，**Grid** 是根 **Page** 元素的第一个子元素。
 
 为各种屏幕大小创建可视状态不切实际，而且也不大可能对应用的用户体验产生重大影响。 建议改为对关键断点进行设计 - 有关详细信息，请[在此了解更多信息](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)。
 
@@ -133,7 +142,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 ## <a name="going-further"></a>深入探索
 
-虽然本文创建的只是一个表单，但布局和控件的概念适用于你可能构建的所有 XAML UI。 随意返回执行我们已链接到并尝试使用已添加新用户界面功能并进一步优化用户体验在窗体的文档。 如果你想通过更详细的布局功能的分步指南，请参阅我们[自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md)
+虽然本文创建的只是一个表单，但布局和控件的概念适用于你可能构建的所有 XAML UI。 请抽时间浏览本文中提供的链接文档，对已有表单进行试验 - 添加新 UI 功能并进一步改进用户体验。 如果需要更详细布局功能的分步指南，请参阅[自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md)。
 
 表单不一定非得单独使用，你也可以更进一步 - 将它们嵌入到[大纲/细节模式](../design/controls-and-patterns/master-details.md)或[透视表控件](../design/controls-and-patterns/pivot.md)中。 或者，如果要对表单背后的代码做些改动，请参阅[事件概述](../xaml-platform/events-and-routed-events-overview.md)。
 
@@ -145,32 +154,32 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 | API | 描述 |
 |------|---------------|
-| [用于窗体控件](../design/controls-and-patterns/forms.md#input-controls) | 用于创建表单的有用输入控件的列表，以及在何处使用它们的基本指南。 |
+| [对表单有用的控件](../design/controls-and-patterns/forms.md#input-controls) | 用于创建表单的有用输入控件的列表，以及在何处使用它们的基本指南。 |
 | [网格](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) | 用于以多行或多列布局安排元素的面板。 |
 | [RelativePanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | 用于相对于其他元素和面板边界安排项目的面板。 |
 | [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) | 用于以单行或单列布局安排元素的面板。 |
-| [VisualState](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) | 允许你设置 UI 元素处于特定状态时的外观。 |
+| [VisualState](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) | 用于设置 UI 元素处于特定状态时的外观。 |
 
 ### <a name="useful-docs"></a>有用的文档
 
 | 主题 | 描述 |
 |-------|----------------|
 | [辅助功能概述](../design/accessibility/accessibility-overview.md) | 对应用中辅助功能选项的宽泛介绍。 |
-| [可访问性清单](../design/accessibility/accessibility-checklist.md) | 确保应用符合辅助功能标准的实用清单。 |
+| [辅助功能清单](../design/accessibility/accessibility-checklist.md) | 确保应用符合辅助功能标准的实用清单。 |
 | [事件概述](../xaml-platform/events-and-routed-events-overview.md) | 有关添加和构造事件以处理 UI 操作的详细信息。 |
 | [窗体](../design/controls-and-patterns/forms.md) | 关于创建表单的总括指南。 |
 | [布局面板](../design/layout/layout-panels.md) | 概述布局面板类型以及在何处使用它们。 |
-| [母版/详细信息模式](../design/controls-and-patterns/master-details.md) | 可以围绕一个或多个表单实现的设计模式。 |
+| [大纲/细节模式](../design/controls-and-patterns/master-details.md) | 可以围绕一个或多个表单实现的设计模式。 |
 | [Pivot 控件](../design/controls-and-patterns/pivot.md) | 一种可以包含一个或多个表单的控件。 |
-| [响应式设计](../design/layout/responsive-design.md) | 对响应式设计原则的宽泛介绍。 | 
-| [使用 XAML 的响应式布局](../design/layout/layouts-with-xaml.md) | 关于响应式设计可视状态及其他实现的特定信息。 |
-| [响应式设计的屏幕大小](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | 关于应将响应式布局限制在哪些屏幕大小范围内的指南。 |
+| [响应式设计](../design/layout/responsive-design.md) | 对响应式设计原则的宽泛介绍。 |
+| [采用 XAML 的响应式布局](../design/layout/layouts-with-xaml.md) | 关于响应式设计可视状态及其他实现的特定信息。 |
+| [面向响应式设计的屏幕大小](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | 关于应将响应式布局限制在哪些屏幕大小范围内的指南。 |
 
 ## <a name="useful-code-samples"></a>有用的代码示例
 
 | 代码示例 | 描述 |
 |-----------------|---------------|
-| [自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md) | 对于自适应布局和响应式设计的分步指导体验。 | 
+| [自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md) | 对于自适应布局和响应式设计的分步指导体验。 |
 | [客户订单数据库](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | 了解布局和表单在多页企业示例中的应用。 |
 | [XAML 控件库](https://github.com/Microsoft/Xaml-Controls-Gallery) | 了解一些精选的 XAML 控件及其实现方式。 |
-| [额外的代码示例](https://developer.microsoft.com//windows/samples) | 在类别下拉列表中选择**控件、布局和文本**，以查看相关代码示例。 |
+| [其他代码示例](https://developer.microsoft.com//windows/samples) | 在类别下拉列表中选择**控件、布局和文本**，以查看相关代码示例。 |

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 定期工作项, 线程处理, 计时器
 ms.localizationpriority: medium
-ms.openlocfilehash: cf3a5817e459c7089eafb8f2c38d58b0e8eef03c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8e045c12f96cc9404abb4ba9be395eb49b1ab850
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371565"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322001"
 ---
 # <a name="create-a-periodic-work-item"></a>创建定期工作项
 
@@ -31,7 +31,7 @@ ms.locfileid: "66371565"
 
 > **请注意**  避免指定的值为零 （或小于一毫秒的任何值） 的间隔。 这将导致定期计时器像单次计时器一样操作。
 
-> **请注意**  可以使用[ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows)访问 UI 并显示从工作项的进度。
+> **请注意**  可以使用[ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)访问 UI 并显示从工作项的进度。
 
 以下示例创建每 60 秒运行一次的工作项：
 

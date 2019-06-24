@@ -11,12 +11,12 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 77e39b9c7440fab491b3d7ef85baa757d299fff8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3fb07dd9aec475566940dbf98ae6bd1c5f9c1337
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604392"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317329"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>UWP 应用中的凝视交互和目视跟踪
 
@@ -66,7 +66,7 @@ ms.locfileid: "57604392"
 
 在此示例中，我们演示了如何在 UWP 应用程序内跟踪用户的是凝视，以及如何使用具有基本点击测试的计时函数指示他们在特定元素上保持凝视焦点的情况。
 
-一个小椭圆形用于显示凝视点在应用程序视区内的位置，同时来自 [Windows 社区工具包](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/)的 [RadialProgressBar](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/controls/radialprogressbar) 随机放在画布上。 当在进度栏上检测到凝视焦点时，计时器将启动，当进度栏到达 100% 时会在画布上随机重新定位。
+一个小椭圆形用于显示凝视点在应用程序视区内的位置，同时来自 [Windows 社区工具包](https://docs.microsoft.com/windows/communitytoolkit/)的 [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) 随机放在画布上。 当在进度栏上检测到凝视焦点时，计时器将启动，当进度栏到达 100% 时会在画布上随机重新定位。
 
 ![带计时器的凝视跟踪示例](images/gaze/gaze-input-timed2.gif)
 
@@ -405,7 +405,7 @@ ms.locfileid: "57604392"
 
     我们分别在 `GazeEntered` 和 `GazeExited` 中显示和隐藏凝视跟踪椭圆。
 
-    在 `GazeMoved` 中，我们根据 [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs) 的 [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) 提供的 [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) 移动凝视跟踪椭圆。 我们还在 [RadialProgressBar](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/controls/radialprogressbar) 上管理凝视焦点计时器，这将触发进度栏的重新定位。 详细信息请参见下一步。
+    在 `GazeMoved` 中，我们根据 [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs) 的 [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) 提供的 [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) 移动凝视跟踪椭圆。 我们还在 [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) 上管理凝视焦点计时器，这将触发进度栏的重新定位。 详细信息请参见下一步。
 
     ```csharp
     /// <summary>
@@ -596,11 +596,11 @@ ms.locfileid: "57604392"
     }
     ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 ### <a name="resources"></a>资源
 
-- [Windows 社区工具包注视库](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/gaze/gazeinteractionlibrary)
+- [Windows 社区工具包注视库](https://docs.microsoft.com/windows/communitytoolkit/gaze/gazeinteractionlibrary)
 
 ### <a name="topic-samples"></a>主题示例
 

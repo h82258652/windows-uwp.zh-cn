@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: ee386199fbee7d2f9b839d6b1805c6181e4d70a9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c9b4060fbd2e59a545451c9c8ebe103c9bb527a0
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371395"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320604"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>安全 Windows 应用开发简介
 
@@ -175,7 +175,7 @@ Windows Hello 为设备识别个人用户提供了可靠的方法；这解决了
 
 你收集的注册信息可能比在此简单方案中要包括更多的标识信息。 例如，如果你的应用访问受保护的服务（如银行服务），你需要在注册过程中请求标识证明和其他内容。 满足所有条件后，此用户的公钥将存储在后端，并用于在用户下次使用该服务时进行验证。
 
-有关 Windows Hello 的详细信息，请参阅 [Windows Hello 指南](https://technet.microsoft.com/itpro/windows/keep-secure/microsoft-passport-guide)和 [Windows Hello 开发人员指南](microsoft-passport.md)。
+有关 Windows Hello 的详细信息，请参阅 [Windows Hello 指南](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide)和 [Windows Hello 开发人员指南](microsoft-passport.md)。
 
 ## <a name="3-data-in-flight-security-methods"></a>3 未送达数据安全方法
 
@@ -456,7 +456,7 @@ Windows 10 中的通用 Windows 平台提供许多种利用操作系统功能创
 
 当数据到达设备时，在防止 Windows 应用模型以未经授权的方式访问其他应用的数据时，它会更好地控制如何安装、更新应用以及如何访问其数据。 凭据保险箱可以安全存储操作系统管理的用户凭据，而其他数据可以在设备上使用通用 Windows 平台提供的加密和哈希 API 进行保护。
 
-## <a name="6-resources"></a>6. 资源
+## <a name="6-resources"></a>6\. 资源
 
 
 ### <a name="61-how-to-articles"></a>6.1 操作方法文章
@@ -478,14 +478,14 @@ Windows 10 中的通用 Windows 平台提供许多种利用操作系统功能创
 
 ### <a name="62-code-samples"></a>6.2 代码示例
 
--   [凭据保险箱](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/PasswordVault)
--   [凭据选取器](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CredentialPicker)
--   [使用 Azure 登录名的设备锁定](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/DeviceLockdownAzureLogin)
--   [企业数据保护](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/EnterpriseDataProtection)
--   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/KeyCredentialManager)
--   [智能卡](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SmartCard)
--   [Web 帐户管理](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAccountManagement)
--   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAuthenticationBroker)
+-   [凭据保险箱](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PasswordVault)
+-   [凭据选取器](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CredentialPicker)
+-   [使用 Azure 登录名的设备锁定](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceLockdownAzureLogin)
+-   [企业数据保护](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)
+-   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/KeyCredentialManager)
+-   [智能卡](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SmartCard)
+-   [Web 帐户管理](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
+-   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker)
 
 ### <a name="63-api-reference"></a>6.3 API 参考
 

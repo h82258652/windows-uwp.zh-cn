@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d45c907215f21977b0a59acede5a8314d6ed168
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369322"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>使用选取器打开文件和文件夹
 
-**重要的 Api**
+**重要的 API**
 
 -   [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker)
 -   [**FolderPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FolderPicker)
@@ -26,7 +26,7 @@ ms.locfileid: "66369322"
 > [!NOTE]
 > 有关完整示例，请参阅[文件选取器示例](https://go.microsoft.com/fwlink/p/?linkid=619994)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
@@ -103,9 +103,9 @@ else
     ```
     在文件选取器对象上设置与你的用户和应用相关的属性。
 
-    此示例创建直观丰富的图片显示在方便的位置的用户均可选择从通过设置三个属性：[**ViewMode**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.viewmode)， [ **SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation)，以及[ **FileTypeFilter**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter)。
+    此示例在某个方便的位置创建一种丰富的图片视觉显示，用户可以通过设置以下三个属性从该位置选取：[**ViewMode**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.viewmode)、[**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) 和 [**FileTypeFilter**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter)。
 
-    -   设置[ **ViewMode** ](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.viewmode)到[ **PickerViewMode** ](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerViewMode) **缩略图**枚举值创建了内容丰富、通过使用图片缩略图来表示文件选取器中的文件的可视显示。 此操作用于选取可视文件（如图片或视频）。 否则，请使用 [**PickerViewMode.List**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerViewMode)。 假定的电子邮件应用可在显示文件选取器之前设置适用于功能的 **ViewMode**，该应用具有**附加图片或视频**和**附加文档**功能。
+    -   将 [**ViewMode**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.viewmode) 设置为 [**PickerViewMode**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerViewMode)。**Thumbnail** 枚举值可通过使用图片缩略图创建丰富的视觉显示，以显示文件选取器中的文件。 此操作用于选取可视文件（如图片或视频）。 否则，请使用 [**PickerViewMode.List**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerViewMode)。 假定的电子邮件应用可在显示文件选取器之前设置适用于功能的 **ViewMode**，该应用具有**附加图片或视频**和**附加文档**功能。
 
     -   使用 [**PickerLocationId.PicturesLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) 将 [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerLocationId) 设置为图片可让用户在他们有可能找到图片的某个位置开始。 将 **SuggestedStartLocation** 设置为适用于要选取的文件类型（例如音乐、图片、视频或文档）的位置。 用户可以从开始位置导航到其他位置。
 
@@ -113,7 +113,7 @@ else
 
 2.  **显示 FileOpenPicker**
 
-    - **若要选择单个文件**
+    - **选取单个文件**
 
         ```cs
         Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
@@ -128,7 +128,7 @@ else
         }
         ```
 
-    - **若要选择多个文件**  
+    - **选取多个文件**  
 
         ```cs
         var files = await picker.PickMultipleFilesAsync();
@@ -173,4 +173,4 @@ else
 ```
 
 > [!TIP]
-> 不论何时，只要你的应用通过选取器访问文件或文件夹，就将它添加到应用的 [**FutureAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) 或 [**MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) 以便对进行跟踪。 你可以在[如何跟踪最近使用的文件和文件夹](how-to-track-recently-used-files-and-folders.md)中了解有关使用这些列表的详细信息。
+> 不论何时，只要应用通过选取器访问文件或文件夹，就将它添加到应用的 [**FutureAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) 或 [**MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) 以便对进行跟踪。 你可以在[如何跟踪最近使用的文件和文件夹](how-to-track-recently-used-files-and-folders.md)中了解有关使用这些列表的详细信息。

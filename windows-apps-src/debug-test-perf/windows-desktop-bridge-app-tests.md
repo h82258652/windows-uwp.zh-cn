@@ -6,16 +6,16 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10，uwp，应用程序认证
 ms.localizationpriority: medium
-ms.openlocfilehash: 38c9a40dbe1a46aa125c76cd1fcc88a84685c8cc
-ms.sourcegitcommit: 280193dfe5a106fc6b4c85df3ac40535547b855c
+ms.openlocfilehash: a28c344ed7c8645f3788719185aac71c7a036d5c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67235167"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317415"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 桌面桥应用测试
 
-[桌面桥应用](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)是的 Windows 桌面应用程序转换为通用 Windows 平台 (UWP) 应用程序使用[桌面桥](https://developer.microsoft.com/en-us/windows/bridges/desktop)。 转换后，将以面向 Windows 10 桌面版的 UWP 应用包（.appx 或 .appxbundle）的形式打包、维护和部署 Windows 桌面应用程序。
+[桌面桥应用](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)是的 Windows 桌面应用程序转换为通用 Windows 平台 (UWP) 应用程序使用[桌面桥](https://developer.microsoft.com/en-us/windows/bridges/desktop)。 转换后，将以面向 Windows 10 桌面版的 UWP 应用包（.appx 或 .appxbundle）的形式打包、维护和部署 Windows 桌面应用程序。
 
 ## <a name="required-versus-optional-tests"></a>必需测试与可选测试
 Windows 桌面桥应用的可选测试，仅用于参考，并不会用于在 Microsoft Store 载入过程中计算您的应用程序。 我们建议调查这些测试结果以生成更好的优质应用。 应用商店载入的整体通过/失败条件取决于必需测试，而不是这些可选测试。
@@ -40,7 +40,7 @@ Windows 桌面桥应用的可选测试，仅用于参考，并不会用于在 Mi
 可以使用各种通用 Windows 平台 (UWP) API 增强已转换的桌面应用。 此测试检查应用中的 UWP 二进制文件是否未调用非 UWP API。 UWP 二进制文件设置了 **AppContainer** 标志。
 
 **纠正措施**  
-请参阅[桌面到 UWP 桥：应用扩展](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-extensions)有关这些扩展以及如何正确使用它们的说明。 
+请参阅[桌面到 UWP 桥：应用扩展](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions)有关这些扩展以及如何正确使用它们的说明。 
 
 ### <a name="3-debug-configuration-test"></a>3.调试配置测试
 此测试验证 appx 不是调试版本。
@@ -118,14 +118,14 @@ Windows 桌面桥应用的可选测试，仅用于参考，并不会用于在 Mi
 图像 {image name} 不是有效的图像文件。  | 确保所有应用图像都符合相应的文件格式类型限制。 在实际消息中，{image name} 包含无效的图像名称。 
 图像“BadgeLogo”在位置 (x, y) 上具有一个无效的 ABGR 值 {value}。 像素必须为白色 (##FFFFFF) 或透明 (00######)  | 锁屏提醒徽标是显示在锁屏提醒通知旁边的图像，用于在锁屏上标识应用。 该图像必须是单色图像（它只能包含白色和透明像素）。 在实际消息中，{value} 在图像中包含无效的颜色值。 
 图像“BadgeLogo”在位置 (x, y) 上具有一个对高对比度白色图像来说无效的 ABGR 值 {value}。 像素必须为 (##2A2A2A) 或更暗，或者透明 (00######)。  | 锁屏提醒徽标是显示在锁屏提醒通知旁边的图像，用于在锁屏上标识应用。 因为当处于高对比度白色背景中时锁屏提醒徽标出现在白色背景上，因此它必须是较暗版本的正常锁屏提醒徽标。 在高对比度白色背景中，锁屏提醒徽标只能包含比 (##2A2A2A) 暗或透明的像素。 在实际消息中，{value} 在图像中包含无效的颜色值。 
-图像必须至少定义一个没有 TargetSize 限定符的变量。 它必须定义一个 Scale 限定符或者保持 Scale 和 TargetSize 为未指定状态，默认值为 Scale-100。  | 有关详细信息，请参阅有关[响应式设计](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)和[应用资源](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data)的指南。 
+图像必须至少定义一个没有 TargetSize 限定符的变量。 它必须定义一个 Scale 限定符或者保持 Scale 和 TargetSize 为未指定状态，默认值为 Scale-100。  | 有关详细信息，请参阅有关[响应式设计](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)和[应用资源](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data)的指南。 
 该程序包缺少一个“resources.pri”文件。  | 如果你在应用清单中包含可本地化的内容，请确保你的应用包包含有效的 resources.pri 文件。 
 “resources.pri”文件必须包含一个其名称与程序包名称 {package full name} 相匹配的资源映射  | 如果清单发生更改并且 resources.pri 中的资源映射名称不再与清单中的程序包名称相匹配，你将遇到此错误。 在实际消息中，{package full name} 包含 resources.pri 必须包含的程序包名称。 为了解决此问题，你需要重新构建 resources.pri，而这样做的最简单方法就是重新构建应用包。 
 “resources.pri”文件不得启用 AutoMerge。  | MakePRI.exe 支持一个名为 AutoMerge 的选项。 AutoMerge 的默认值为 off。 启用后，AutoMerge 在运行时将应用的语言包资源合并到一个 resources.pri 中。 我们不建议这样对于你打算分发通过 Microsoft Store 的应用。 通过 Microsoft Store 分发的应用的 resources.pri 必须为应用程序的包的根目录中，包含该应用支持的所有语言参考。 
 字符串 {string} 不符合 {number} 个字符的最大长度限制。  | 请参阅[应用包要求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 在实际消息中，{string} 替换为有错误的字符串并且 {number} 包含最大长度。 
 字符串 {string} 不得包含前导空格/尾随空格。  | 应用部件清单 (manifest) 中元素的架构不允许前导空格或尾随空格字符。 在实际消息中，{string} 替换为有错误的字符串。 确保 resources.pri 中清单字段的任何本地化值都没有前导空格或尾随空格字符。 
 字符串必须非空（长度大于零）  | 有关详细信息，请参阅[应用包要求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 
-“resources.pri”文件中没有指定的默认资源。  | 有关详细信息，请参阅有关[应用资源](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data)的指南。 在默认版本配置中，Visual Studio 在生成捆绑包时仅在应用包中包含比例为 200 的图像资源，从而将其他资源放入资源包中。 确保你包含比例为 200 的图像资源或将项目配置为包含你拥有的资源。 
+“resources.pri”文件中没有指定的默认资源。  | 有关详细信息，请参阅有关[应用资源](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data)的指南。 在默认版本配置中，Visual Studio 在生成捆绑包时仅在应用包中包含比例为 200 的图像资源，从而将其他资源放入资源包中。 确保你包含比例为 200 的图像资源或将项目配置为包含你拥有的资源。 
 “resources.pri”文件中没有指定的资源值。  | 确保应用清单具有在 resources.pri 中定义的有效资源。 
 图像文件 {filename} 必须小于 204800 字节。  | 减小指示图像的大小。 
 {filename} 文件不能包含反向映射部分。  | 如果反向映射是在调用 makepri.exe 时在 Visual Studio 的 F5 调试期间生成的，通过在生成 pri 文件时运行 makepri.exe（不具有 /m 参数）可删除该反向映射。 

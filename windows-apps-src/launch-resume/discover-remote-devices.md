@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，已连接设备、 远程系统、 罗马、 项目罗马
 ms.localizationpriority: medium
-ms.openlocfilehash: 665a40cf69b7518643390abddc3895be07c63c5c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 83230e17548f022767dcdde6b17fa9a93d6d9304
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366194"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320965"
 ---
 # <a name="discover-remote-devices"></a>发现远程设备
 你的应用可以使用无线网络、蓝牙和云连接来发现使用发现设备的相同 Microsoft 帐户登录的 Windows 设备。 无需安装任何特殊软件，即可发现远程设备。
@@ -48,7 +48,7 @@ ms.locfileid: "66366194"
 从此处开始，处理事件、检索 [**RemoteSystem**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem) 对象和连接到远程设备的过程与[启动远程应用](launch-a-remote-app.md)中的过程完全相同。 简而言之，**RemoteSystem** 对象作为 [**RemoteSystemAddedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystemAddedEventArgs) 对象的属性存储，这些都随每个 **RemoteSystemAdded** 事件传递。
 
 ## <a name="discover-devices-by-address-input"></a>通过地址输入发现设备
-某些设备可能与用户没有关联，或无法通过扫描发现，但是如果发现应用使用直接地址，仍可以查找到它们。 [  **HostName**](https://docs.microsoft.com/uwp/api/windows.networking.hostname) 类用于表示远程设备的地址。 该地址通常以 IP 地址的形式存储，但也允许存储为其他几种格式（请参阅 [**HostName 构造函数**](https://docs.microsoft.com/uwp/api/windows.networking.hostname.)，了解详细信息）。
+某些设备可能与用户没有关联，或无法通过扫描发现，但是如果发现应用使用直接地址，仍可以查找到它们。 [  **HostName**](https://docs.microsoft.com/uwp/api/windows.networking.hostname) 类用于表示远程设备的地址。 该地址通常以 IP 地址的形式存储，但也允许存储为其他几种格式（请参阅 [**HostName 构造函数**](https://docs.microsoft.com/uwp/api/windows.networking.hostname.-ctor)，了解详细信息）。
 
 如果提供了有效的 **HostName** 对象，即可检索 **RemoteSystem** 对象。 如果地址数据无效，将返回 `null` 对象引用。
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 72a7a7d4bbe6987781c538a7276bf3942f10cf5b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 87299ad36ac1cca3318a240e55cb2ce73c2a8699
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372205"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320310"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>诊断 Windows 运行时组件错误条件
 
@@ -25,7 +25,7 @@ ms.locfileid: "66372205"
 ## <a name="error-message-for-implementing-async-interface-provides-incorrect-type"></a>实现异步接口的错误消息提供错误类型
 
 
-托管的 Windows 运行时组件无法实现表示异步操作的通用 Windows 平台 (UWP) 接口（[IAsyncAction](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-iasyncaction)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://docs.microsoft.com/previous-versions//br205784(v=vs.85))、[IAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_) 或 [IAsyncOperationWithProgress&lt;TResult、TProgress&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)）。 相反，.NET Framework 提供用于在 Windows 运行时组件中生成异步操作的 [AsyncInfo](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime?redirectedfrom=MSDN) 类。 Winmdexp.exe 在你错误地尝试实现异步接口时显示的错误消息使用之前的名称 AsyncInfoFactory 引用此类。 .NET Framework 不再包括 AsyncInfoFactory 类。
+托管的 Windows 运行时组件无法实现表示异步操作的通用 Windows 平台 (UWP) 接口（[IAsyncAction](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-iasyncaction)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://docs.microsoft.com/previous-versions/br205784(v=vs.85))、[IAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_) 或 [IAsyncOperationWithProgress&lt;TResult、TProgress&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)）。 相反，.NET Framework 提供用于在 Windows 运行时组件中生成异步操作的 [AsyncInfo](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime?redirectedfrom=MSDN) 类。 Winmdexp.exe 在你错误地尝试实现异步接口时显示的错误消息使用之前的名称 AsyncInfoFactory 引用此类。 .NET Framework 不再包括 AsyncInfoFactory 类。
 
 | 错误编号 | 消息文本|       
 |--------------|-------------|

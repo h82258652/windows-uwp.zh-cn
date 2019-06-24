@@ -5,19 +5,19 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 865c95fe5453a038a73b397fdcf32f77f9e8defb
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: aa8bec12ca3920b1e273d8f2d98186f62a340016
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63828082"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321534"
 ---
 # <a name="supported-point-of-service-peripherals"></a>支持的服务点外设
 
 ## <a name="barcode-scanner"></a>条形码扫描仪
 | 连接性 | 支持 |
 | -------------|-------------|
-| USB          | <p>Windows 包含的内置类驱动程序连接的 USB 条码扫描器的基于定义的 HID POS 扫描程序使用表 (8c) 规范[USB.org](https://www.usb.org/developers/hidpage/)。有关已知兼容设备的列表，请参阅下表。  请参阅条形码扫描仪手册或联系制造商，以确定如何在 **USB.HID.POS 扫描仪**模式下配置扫描仪。 </p><p>Windows 还支持供应商特定驱动程序的实现，以便为不支持 USB.HID.POS 扫描仪标准的其他条形码扫描仪提供支持。 请与条形码扫描仪制造商联系以核实供应商特定驱动程序可用性。</p><p>有关创建自定义条形码扫描仪驱动程序的信息，请联系条形码扫描仪制造商，或者参阅[条形码扫描仪驱动程序设计指南](https://aka.ms/pointofservice-drv)</p> |
+| USB          | <p>Windows 包含的内置类驱动程序连接的 USB 条码扫描器的基于定义的 HID POS 扫描程序使用表 (8c) 规范[USB.org](https://www.usb.org/hid)。有关已知兼容设备的列表，请参阅下表。  请参阅条形码扫描仪手册或联系制造商，以确定如何在 **USB.HID.POS 扫描仪**模式下配置扫描仪。 </p><p>Windows 还支持供应商特定驱动程序的实现，以便为不支持 USB.HID.POS 扫描仪标准的其他条形码扫描仪提供支持。 请与条形码扫描仪制造商联系以核实供应商特定驱动程序可用性。</p><p>有关创建自定义条形码扫描仪驱动程序的信息，请联系条形码扫描仪制造商，或者参阅[条形码扫描仪驱动程序设计指南](https://aka.ms/pointofservice-drv)</p> |
 | 蓝牙    | <p>Windows 支持串行端口协议 - 基于简单串行接口 (SPP SSI) 的蓝牙条形码扫描仪。 有关已知兼容设备的列表，请参阅下表。 请参阅条形码扫描仪手册或联系制造商，以确定如何在 **SPP-SSI** 模式下配置扫描仪。</p> |
 | Webcam       | <p>从 Windows 10 版本 1803 开始，你可以通过来自通用 Windows 应用程序的标准相机镜头来读取条形码。 建议使用支持自动对焦且最低分辨率为 1920x1440 的相机。  如果条形码打印得足够大，一些分辨率较低的相机可以读取标准条形码。  宽度更窄的条形码可能需要使用分辨率更高的相机。</p>| 
 |
@@ -68,8 +68,8 @@ ms.locfileid: "63828082"
 
 
 ¹ Upgradable 以支持通过 Honeywell 2D 条形码 <br/>
-² 最小值固件 009 (2018.07.09) 所需。 可升级使用斑马[123Scan](http://www.zebra.com/123Scan)。<br/>
-³ 最小值固件 016 (2018.01.18) 所需。 可升级使用斑马[123Scan](http://www.zebra.com/123Scan)。 
+² 最小值固件 009 (2018.07.09) 所需。 可升级使用斑马[123Scan](http://www.zebra.com/123scan)。<br/>
+³ 最小值固件 016 (2018.01.18) 所需。 可升级使用斑马[123Scan](http://www.zebra.com/123scan)。 
 
 
 <hr>

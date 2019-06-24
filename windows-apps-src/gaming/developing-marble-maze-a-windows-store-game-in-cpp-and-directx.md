@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 示例, directx, 3d
 ms.localizationpriority: medium
-ms.openlocfilehash: f287110584c02a5d7822f6b1d84cd332d4d6199d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 754d1eb535fa2ac2930513981bb7d85a428778e5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368917"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321341"
 ---
 # <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>开发 Marble Maze，一款使用 C++ 和 DirectX 的 UWP 游戏
 
@@ -39,11 +39,11 @@ Marble Maze 为用户提供了多种方式来与游戏板交互。 如果你有�
 
 ![Marble Maze 游戏的屏幕截图。](images/marblemaze-2.png)
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 
 -   Windows 10 创意者更新
--   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
+-   [Microsoft Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
 -   C++ 编程知识
 -   熟悉 DirectX 和 DirectX 术语
 -   COM 的基础知识

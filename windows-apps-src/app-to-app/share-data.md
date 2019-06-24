@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bebd214f5f634e501f7a79bc57cc306f1b559e7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 08dbe9ed7aaa732172d488712aa47d6d3631508a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359198"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317705"
 ---
 # <a name="share-data"></a>共享数据
 
@@ -60,7 +60,7 @@ ms.locfileid: "66359198"
 
 ## <a name="handle-errors"></a>处理错误
 
-在大多数情况下，共享内容是一个简单直接的过程。 然而，意外总是有可能发生。 例如，应用可能需要用户选择用于共享的内容，但用户未选择任何内容。 若要处理这些情况，请使用 [**FailWithDisplayText**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest.FailWithDisplayText(System.String)) 方法，它将在出现问题时向用户显示一条消息。
+在大多数情况下，共享内容是一个简单直接的过程。 然而，意外总是有可能发生。 例如，应用可能需要用户选择用于共享的内容，但用户未选择任何内容。 若要处理这些情况，请使用 [**FailWithDisplayText**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest#Windows_ApplicationModel_DataTransfer_DataRequest_FailWithDisplayText_System_String_) 方法，它将在出现问题时向用户显示一条消息。
 
 ## <a name="delay-share-with-delegates"></a>通过委托延迟共享
 

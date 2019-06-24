@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, 编程
 ms.localizationpriority: medium
-ms.openlocfilehash: b855bc9adc79b3ae5dd5ab7128be7035a78a4aa0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 684180d9fc86c870475351ed8e429ea83f968735
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369098"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321372"
 ---
 # <a name="game-programming-resources"></a>游戏编程资源
 
@@ -29,7 +29,7 @@ ms.locfileid: "66369098"
 ## <a name="game-design-guidance"></a>游戏设计指南
 
 
--   [适用于 UWP 应用的索引的用户体验指南](https://developer.microsoft.com/windows/design)
+-   [适用于 UWP 应用的索引的用户体验指南](https://developer.microsoft.com/windows/apps/design)
 
 ## <a name="blogs"></a>博客
 

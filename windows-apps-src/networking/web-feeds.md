@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a9d3b4b9b404ab2c0828ea302f0c564ae1c8e7b4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66372787"
 ---
 # <a name="rssatom-feeds"></a>RSS/Atom 源
 
 
-**重要的 Api**
+**重要的 API**
 
 -   [**Windows.Data.Xml.Dom**](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom)
 -   [**Windows.Web.AtomPub**](https://docs.microsoft.com/uwp/api/Windows.Web.AtomPub)
@@ -44,7 +44,7 @@ UWP 中的网络隔离功能使开发人员能够控制和限制 UWP 应用的�
 
 网络隔离功能可影响尝试访问网络的 [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication) 和 [**Windows.Web.AtomPub**](https://docs.microsoft.com/uwp/api/Windows.Web.AtomPub) 命名空间中的任何类元素。 Windows 会主动强制实现网络隔离。 如果尚未启用相应的网络功能，则调用 **Windows.Web.Syndication** 或 **Windows.Web.AtomPub** 命名空间中的类元素可能会因为网络隔离导致网络访问失败。
 
-在生成应用时，在应用清单中配置其网络功能。 通常，使用 Microsoft Visual Studio 2015 开发应用程序时添加网络功能。 也可使用文本编辑器在应用清单文件中手动设置网络功能。
+在生成应用时，在应用清单中配置其网络功能。 网络功能通常在开发应用时通过 Microsoft Visual Studio 2015 添加。 也可使用文本编辑器在应用清单文件中手动设置网络功能。
 
 有关网络隔离和网络功能的详细信息，请参阅[网络基础知识](networking-basics.md)主题中的“功能”部分。
 
@@ -56,7 +56,7 @@ UWP 中的网络隔离功能使开发人员能够控制和限制 UWP 应用的�
 
 若要确保你的 UWP 应用能够使用网络，必须设置在项目 **Package.appxmanifest** 文件中所需的任何网络功能。 如果你的应用需要作为客户端连接到 Internet 上的远程服务，则需要具有 **“internetClient”** 功能。 有关详细信息，请参阅[网络基础知识](networking-basics.md)主题中的“功能”部分。
 
-**从 web 源中检索整合的内容**
+**检索来自 Web 订阅源的综合内容**
 
 现在，我们将查看一些代码，用于演示如何检索订阅源，然后显示订阅源所包含的每个单独项。 在我们可以配置和发送请求前，我们将定义一些将在操作期间使用的变量，并初始化 [**SyndicationClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationClient) 的实例，该实例定义我们将用于检索和显示订阅源的方法和属性。
 

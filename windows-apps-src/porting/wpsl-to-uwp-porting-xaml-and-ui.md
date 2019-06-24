@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ac96354fa1752f655307a5dfd18678233e59c724
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a72a4e7349a5d72b7081873814389c0924ca9308
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372438"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322287"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>迁移 Windows Phone Silverlight XAML 和 UWP 的 UI
 
@@ -201,7 +201,7 @@ Windows Phone Silverlight 应用程序使用控件中定义**Microsoft.Phone.Con
 
 **请注意**   PointerOver 视觉状态是在自定义样式/模板在 Windows 10 应用中，但 Windows Phone Silverlight 应用程序中不相关。 还有其他原因你现有的自定义样式/模板可能适用于 Windows 10 应用，包括系统资源键使用的，对集的使用，视觉状态和性能改进对 Windows 10 默认样式所做的更改 /模板。 我们建议适用于 Windows 10 编辑控件的默认模板的新副本，然后重新应用到的样式和模板自定义。
 
-有关 UWP 控件的详细信息，请参阅[按功能列出的控件](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function)、[控件列表](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/)和[控件指南](https://developer.microsoft.com/windows/design/controls-patterns)。
+有关 UWP 控件的详细信息，请参阅[按功能列出的控件](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function)、[控件列表](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/)和[控件指南](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/index)。
 
 ##  <a name="design-language-in-windows10"></a>Windows 10 中的设计语言
 
@@ -211,7 +211,7 @@ Windows Phone Silverlight 应用程序使用控件中定义**Microsoft.Phone.Con
 
 对本地化的字符串，您可以重复使用.resx 文件从 Windows Phone Silverlight 项目在 UWP 应用项目中。 复制文件，将其添加到项目，并将其重命名为 Resources.resw，以便查找机制默认找到它。 将 **“生成操作”** 设置为**PRIResource**并将 **“复制到输出目录”** 设置为 **“不要复制”** 。 然后你可以通过在 XAML 元素上指定 **“x:Uid”** 属性来使用标记中的字符串。 请参阅[快速入门：使用字符串资源](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10))。
 
-Windows Phone Silverlight 应用程序使用**CultureInfo**课程，帮助全球化应用程序。 UWP 应用使用 MRT（现代资源技术），此技术支持在运行时和在 Visual Studio 设计图面中动态加载应用资源（本地化、比例和主题）。 有关详细信息，请参阅[文件、数据和全球化指南](https://developer.microsoft.com/windows/design/usability)。
+Windows Phone Silverlight 应用程序使用**CultureInfo**课程，帮助全球化应用程序。 UWP 应用使用 MRT（现代资源技术），此技术支持在运行时和在 Visual Studio 设计图面中动态加载应用资源（本地化、比例和主题）。 有关详细信息，请参阅[文件、数据和全球化指南](https://docs.microsoft.com/windows/uwp/design/usability/index)。
 
 [  **ResourceContext.QualifierValues**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues) 主题介绍了如何基于设备系列资源选择规格加载特定于设备系列的资源。
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 98bc1e93c918310b902c70709df1c2cc1b38a238
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e3e29dabf074eab59f6c788c139524f7dc2474df
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360844"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318321"
 ---
 # <a name="audio-video-and-camera"></a>音频、视频和相机
 
@@ -40,7 +40,7 @@ ms.locfileid: "66360844"
 | [屏幕捕获](screen-capture.md) | 介绍了如何使用 [Windows.Graphics.Capture 命名空间](https://docs.microsoft.com/uwp/api/windows.graphics.capture)从屏幕或应用程序窗口获取帧，以创建用于生成协作和交互式体验的视频流或快照。 |
 
 ## <a name="see-also"></a>另请参阅
-- [开发 UWP 应用](https://developer.microsoft.com/windows/develop)
+- [开发 UWP 应用](https://docs.microsoft.com/windows/uwp/develop/)
 
  
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 教育版
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c2333d960ba91b1d1c3d3030481108407909594
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3d68fd78a7da3f1b98f61225f3aad8ca1590140e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359208"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317609"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>开发通用 Windows 应用教育版
 ![捕获测试应用的屏幕截图](images/take-a-test-screen-small.png)
@@ -23,7 +23,7 @@ ms.locfileid: "66359208"
 
 
 ### <a name="secure-assessments"></a>安全评估
-为了防止学生在测试时使用其他计算机或 Internet 资源，评估/测试应用通常需要生成*锁定*环境。 此功能通过[参加测验 API](take-a-test-api.md)提供。 有关为高利害关系测试锁定了在线评估的测试环境的示例，请参阅 Windows IT 中心中的[参加测验](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) Web 应用。
+为了防止学生在测试时使用其他计算机或 Internet 资源，评估/测试应用通常需要生成*锁定*环境。 此功能通过[参加测验 API](take-a-test-api.md)提供。 有关为高利害关系测试锁定了在线评估的测试环境的示例，请参阅 Windows IT 中心中的[参加测验](https://docs.microsoft.com/education/windows/take-tests-in-windows-10) Web 应用。
 
 ### <a name="user-input"></a>用户输入
 用户输入是教育应用的关键部分；UI 控件必须具有响应性且直观显示，以便中断其用户的焦点。 有关可用于通用 Windows 应用的输入选项的一般概述，请参阅“设计和 UI”部分中的[输入基础版](https://docs.microsoft.com/windows/uwp/design/input/input-primer)及其下方的主题。 此外，以下示例应用展示了在通用 Windows 平台中处理的基本 UI。
@@ -41,4 +41,4 @@ Windows Ink 平台通过使教育应用适应学生惯于使用的输入模式�
 教育应用通常在特定情况下发布给特定组织。 若要获取相关信息，请参阅[将业务线应用分配到企业](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises)。
 
 ## <a name="related-topics"></a>相关主题
-- Windows IT 中心上的 [Windows 10 教育版](https://technet.microsoft.com/edu/windows/index)
+- Windows IT 中心上的 [Windows 10 教育版](https://docs.microsoft.com/education/windows/index)

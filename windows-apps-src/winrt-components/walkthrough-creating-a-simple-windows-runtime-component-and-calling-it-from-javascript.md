@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 855c629e961df36970886b4076e5091726d07c93
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8d6f77c92efdd5ebe93a32514513747174ab9e9c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372928"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322189"
 ---
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>操作实例：创建简单的 Windows 运行时组件并通过 JavaScript 调用它
 
@@ -557,7 +557,7 @@ events1Button.addEventListener("click", events1, false);
 ## <a name="exposing-asynchronous-operations"></a>公开异步操作
 
 
-.NET Framework 具有一组丰富的工具，用于基于 Task 和泛型 [Task&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1?redirectedfrom=MSDN) 类进行异步处理和并行处理。 若要在 Windows 运行时组件中公开基于任务的异步处理，请使用 Windows 运行时接口 [IAsyncAction](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-iasyncaction)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://docs.microsoft.com/previous-versions//br205784(v=vs.85))、[IAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/previous-versions//br205802(v=vs.85)) 和 [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://docs.microsoft.com/previous-versions//br205807(v=vs.85))。 （在 Windows 运行时中，操作会返回结果，但执行不会。）
+.NET Framework 具有一组丰富的工具，用于基于 Task 和泛型 [Task&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1?redirectedfrom=MSDN) 类进行异步处理和并行处理。 若要在 Windows 运行时组件中公开基于任务的异步处理，请使用 Windows 运行时接口 [IAsyncAction](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-iasyncaction)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://docs.microsoft.com/previous-versions/br205784(v=vs.85))、[IAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/previous-versions/br205802(v=vs.85)) 和 [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://docs.microsoft.com/previous-versions/br205807(v=vs.85))。 （在 Windows 运行时中，操作会返回结果，但执行不会。）
 
 此部分演示了一个可取消的用于报告进度和返回结果的异步操作。 GetPrimesInRangeAsync 方法使用 [AsyncInfo](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime?redirectedfrom=MSDN) 类生成一个任务并将其取消和进度报告功能连接到 WinJS.Promise 对象。 首先将 GetPrimesInRangeAsync 方法添加到示例类：
 

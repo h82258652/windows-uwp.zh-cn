@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 云服务
 ms.localizationpriority: medium
-ms.openlocfilehash: 15a7e3bed746a31ce2d8f458045cdd1126b71b8c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b1b63c6eb3c803b26ead85332affe1fc4f20e314
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368996"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321337"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>使用适用于 UWP 游戏的云服务
 
@@ -111,7 +111,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
         </td>
     </tr>
     <tr>
-        <td><a href="https://www.crimecoast.com/">像素队</a></td>
+        <td><a href="http://www.crimecoast.com/">像素队</a></td>
         <td>Pixel Squad 使用 Unity 游戏引擎和 Azure 开发了<b>罪恶港湾</b>。 <b>罪恶港湾</b>是一款社交策略游戏，适用于 Android、iOS 和 Windows 平台。 这款游戏使用了 Azure Blob 存储、托管的 Azure Redis 缓存、负载平衡 IIS VM 阵列和 Microsoft 通知中心。 了解它们如何管理扩展以及如何处理 5000 名玩家同时在线时的玩家数量飙升情况。
         </td>
         <td>
@@ -182,7 +182,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
 | 收集和分析游戏数据| 大规模并行处理来自关系型和非关系型数据库的数据 | [Azure 数据仓库](https://azure.microsoft.com/services/sql-data-warehouse/)| 弹性数据仓库即服务（内含企业类功能）   |
 | 吸引用户以增加用法和保留| 从任何后端向任何平台发送定向推送通知以引起兴趣，并鼓励执行特定游戏操作 | [Azure 通知中心](https://azure.microsoft.com/services/notification-hubs/)| 快速推送广播可在所有主流平台上覆盖数百万移动设备 &mdash; 例如 iOS、Android、Windows、Kindle、百度。 可以在任何后端上托管你的游戏 &mdash; 例如云或本地。|
 | 将媒体内容流式传输到你的本地和全球受众，同时保护你的内容| 广播优质游戏预告片并且可以从所有设备观看电影剪辑| [Azure 媒体服务](https://azure.microsoft.com/services/media-services/)| 利用集成内容分发网络功能点播和直播视频流。 使用一个播放器满足你的所有播放需求，包括内容保护和加密。| 
-| 开发、分发你的移动应用以及对其进行 Beta 测试 | 测试和分发你的移动应用。 应用性能和用户体验管理。 | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| 将崩溃报告和用户指标与应用分发和用户反馈平台集成。 支持 Android、Cordova、iOS、OS X、Unity、Windows 和 Xamarin 应用。 此外，请考虑[Visual Studio Mobile Center](https://www.visualstudio.com/vs/mobile-center/) &mdash;的任务控制为结合了丰富的分析的应用崩溃报告、 推送通知、 应用分发和的详细信息。 |
+| 开发、分发你的移动应用以及对其进行 Beta 测试 | 测试和分发你的移动应用。 应用性能和用户体验管理。 | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| 将崩溃报告和用户指标与应用分发和用户反馈平台集成。 支持 Android、Cordova、iOS、OS X、Unity、Windows 和 Xamarin 应用。 此外，请考虑[Visual Studio Mobile Center](https://visualstudio.microsoft.com/app-center/) &mdash;的任务控制为结合了丰富的分析的应用崩溃报告、 推送通知、 应用分发和的详细信息。 |
 | 创建市场营销活动以增加用法和保留  | 根据数据分析，向目标玩家发送推送通知以引起兴趣，并鼓励执行特定游戏操作 | [Mobile Engagement](https://azure.microsoft.com/services/mobile-engagement/) - 将于 2018 年 3 月停用，目前仅适用于现有客户 |  增加所有主流平台（iOS、Android、Windows、Windows Phone）上的游戏时间和用户保留 |
 
 
@@ -206,7 +206,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
 ## <a name="tools-and-other-useful-links"></a>工具和其他有用的链接
 
 * [MSDN 论坛&mdash;Azure 平台](https://social.msdn.microsoft.com/Forums/azure/home?category=windowsazureplatform)
-* [云基于负载测试工具](https://www.visualstudio.com/team-services/cloud-load-testing/)
+* [云基于负载测试工具](https://visualstudio.microsoft.com/team-services/cloud-load-testing/)
 * [Sdk 和命令行工具](https://azure.microsoft.com/downloads/)
     
 ## <a name="software-as-a-service-for-game-backend"></a>适用于游戏后端的软件即服务
