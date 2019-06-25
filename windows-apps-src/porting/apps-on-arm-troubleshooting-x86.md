@@ -5,12 +5,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, 始终连接, ARM 上的 x86 模拟, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f40c53c70a457057f678cdc227a98fc694e2273
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3c29151ae2823aa70711bf002e8954148cc0861b
+ms.sourcegitcommit: f7e3782e24d46b2043023835c5b59d12d3b4ed4b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319671"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67345676"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>x86 桌面应用疑难解答
 >[!IMPORTANT]
@@ -47,3 +47,8 @@ ms.locfileid: "67319671"
 
 ## <a name="virtual-machines"></a>虚拟机
 Qualcomm Snapdragon 835 移动电脑平台不支持 Windows 虚拟机监控程序平台。 因此，使用 Hyper-V 运行虚拟机将失败。 我们将继续在未来的 Qualcomm 芯片组上投资这些技术。 
+
+## <a name="dynamic-code-generation"></a>动态代码生成
+桌面应用程序都仿真 ARM64 的由系统生成 ARM64 说明在运行时的 X86。 这意味着如果 x86 桌面应用程序会阻止动态代码生成或不能支持在其进程中，该应用的修改将作为 x86 在 ARM64 上运行。 
+
+这是某些应用程序，其过程使用一个安全缓解[SetProcessMitigationPolicy](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) API 使用`ProcessDynamicCodePolicy`标志。 若要在为 x86 ARM64 上成功运行过程中，此缓解策略将需要禁用。 

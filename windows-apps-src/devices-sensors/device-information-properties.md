@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e26908839204c67a4746f602acc08c6776e889c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7223123ef6f71a45acc967aa60feffa1003b66d1
+ms.sourcegitcommit: 58d35b89662d4ad240650933e43fee0b00e9a962
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370255"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67344529"
 ---
 # <a name="device-information-properties"></a>设备信息属性
 
 
 
-**重要的 Api**
+**重要的 API**
 
 - [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
@@ -101,6 +101,15 @@ ms.locfileid: "66370255"
 
  
 
+## <a name="devicepanel-properties"></a>DevicePanel 属性
+
+| 名称                                            | 在任务栏的搜索框中键入    | 描述                                                                                                      |
+|-------------------------------------------------|---------|------------------------------------------------------------------------------------------------------------------|
+| **System.Devices.Panel.PanelId**                | 字符串  | 标识符**DevicePanel**对象。                                                                    |
+| **System.Devices.Panel.PanelGroup**             | 字符串  | 父级的标识符**PanelGroup**。                                                                      |
+ 
+ 
+ 
 ## <a name="associationendpoint-properties"></a>AssociationEndpoint 属性
 
 | 名称                                  | 在任务栏的搜索框中键入       | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -155,9 +164,3 @@ ms.locfileid: "66370255"
 | **System.Devices.AepService.ServiceClassId**    | GUID    | 由此设备表示的服务的标识。                                                             |
 | **System.Devices.AepService.ServiceId**         | 字符串  | 此服务的标识。 这也是 [**DeviceInformation.Id**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id) 的值。 |
 | **System.ItemNameDisplay**                      | 字符串  | 该服务的最佳显示名称。                                                                           |
-
- 
-
- 
-
- 

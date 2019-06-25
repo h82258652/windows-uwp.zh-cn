@@ -5,17 +5,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 35488417497ac157969ff2641fbeaa0d4bb02591
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9cc74b1c150e3103e62ec7c7af99608908cf0451
+ms.sourcegitcommit: f7e3782e24d46b2043023835c5b59d12d3b4ed4b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370121"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67345681"
 ---
 # <a name="bluetooth-gatt-client"></a>蓝牙 GATT 客户端
 
 
-**重要的 Api**
+**重要的 API**
 
 -   [**Windows.Devices.Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
 -   [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
@@ -159,11 +159,11 @@ if (result.Status == GattCommunicationStatus.Success)
 写入特征遵循类似模式： 
 ```csharp
 var writer = new DataWriter();
-// WriteByte used for simplicity. Other commmon functions - WriteInt16 and WriteSingle
+// WriteByte used for simplicity. Other common functions - WriteInt16 and WriteSingle
 writer.WriteByte(0x01);
 
-GattReadResult result = await selectedCharacteristic.WriteValueAsync(writer.DetachBuffer());
-if (result.Status == GattCommunicationStatus.Success)
+GattCommunicationStatus result = await selectedCharacteristic.WriteValueAsync(writer.DetachBuffer());
+if (result == GattCommunicationStatus.Success)
 {
     // Successfully wrote to device
 }

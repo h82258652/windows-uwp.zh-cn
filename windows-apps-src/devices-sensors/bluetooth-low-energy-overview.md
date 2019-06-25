@@ -5,12 +5,12 @@ ms.date: 03/19/2017
 ms.topic: article
 keywords: Windows 10, uwp, 蓝牙, 蓝牙 LE, 低耗电, gatt, gap, 中央, 外围, 客户端, 服务器, 观察程序, 发布者
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f23bdc658d2a82e3edeefd0a7be471ca9620d33
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 7921094c55944b4cfed4fdb3f3e6d895eb7fe0a4
+ms.sourcegitcommit: 58d35b89662d4ad240650933e43fee0b00e9a962
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321613"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67344514"
 ---
 # <a name="bluetooth-low-energy"></a>低耗电蓝牙
 低耗电蓝牙 (LE) 是一种规范，定义高能效设备之间的发现和通信协议。 设备的发现通过通用访问配置文件 (GAP) 协议进行。 发现之后，设备到设备之间的通信通过通用属性 (GATT) 协议进行。 本主题提供 UWP 应用中的蓝牙 LE 的快速概述。 若要查看有关蓝牙 LE 的更多详细信息，请参阅[蓝牙核心规范](https://www.bluetooth.com/specifications/bluetooth-core-specification/)版本 4.0，其中介绍了蓝牙 LE。 
@@ -21,7 +21,7 @@ ms.locfileid: "67321613"
 
 可以使用以下命名空间在 UWP 应用中实现 GATT 和 GAP 协议。
 - [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
-- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
+- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement)
 
 ## <a name="central-and-peripheral"></a>中央和外围
 发现的两个主要角色称为中央和外围。 一般情况下，Windows 在中央模式下运行，并连接到不同的外围设备。 
@@ -41,5 +41,5 @@ ms.locfileid: "67321613"
 
 ## <a name="see-also"></a>请参阅
 - [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
-- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
-- [蓝牙核心规范](https://www.bluetooth.com/specifications/bluetooth-core-specification/)
+- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement)
+- [蓝牙核心规范](https://www.bluetooth.com/specifications/bluetooth-core-specification)
