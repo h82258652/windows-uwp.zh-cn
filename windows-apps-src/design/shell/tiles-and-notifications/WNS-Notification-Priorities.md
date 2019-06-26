@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: windows 10，uwp，WinRT API WNS
 localizationpriority: medium
-ms.openlocfilehash: 2719c3228c95075eb2a940d12b6c91049b67f524
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: f5c4b9f1db58a091dc4f9389888ad3739c4439e5
+ms.sourcegitcommit: b0edd3c09f931b9b62f9c2d17037fb58d826174f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291783"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67349863"
 ---
 # <a name="wns-notification-priorities"></a>WNS 通知优先级
 通过将通知的优先级并使用简单的标头设置为 WNS 发布消息，可以控制如何在电池敏感的情况下传递通知。
@@ -41,7 +41,7 @@ Windows 不知道的通知非常重要的任何用户或应用程序中，因此
 
 ## <a name="setting-the-priority"></a>设置优先级
 
-通知请求上设置的优先级是通过 POST 请求的其他标头`X-WNS-PRIORITY`。 这是一个整数值介于 0 到 3 之间映射到一个优先级： 
+通知请求上设置的优先级是通过 POST 请求的其他标头`X-WNS-PRIORITY`。 这是一个整数值介于 1 和 4 之间映射到一个优先级： 
 
 | 优先级名称 | X WNS 优先级值 | 默认值： |
 |---------------|----------------------|------------------|

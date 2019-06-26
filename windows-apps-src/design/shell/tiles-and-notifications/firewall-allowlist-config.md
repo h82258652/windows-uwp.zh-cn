@@ -11,18 +11,20 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp，WNS，windows 通知服务、 通知、 windows、 防火墙故障排除、 IP、 流量、 企业版、 网络、 IPv4、 VIP、 FQDN，公共 IP 地址
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ed4ad6ed828abda9d487ef96beca9b655c92421
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 23a9b11cd961e03217aba8ca3d1d988447a2f80b
+ms.sourcegitcommit: b0edd3c09f931b9b62f9c2d17037fb58d826174f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366668"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67349856"
 ---
 # <a name="allowing-windows-notification-traffic-through-enterprise-firewalls"></a>允许 Windows 通知流量通过企业防火墙
 
 ## <a name="background"></a>后台
 许多企业使用防火墙来阻止不需要的网络流量;遗憾的是，这还可以阻止 Windows 通知服务通信等的重要事项。 这意味着所有通过 WNS 发送的通知将被删除。 若要避免此问题，网络管理员可以将已批准的 WNS 频道列表添加到要允许 WNS 流量通过防火墙，其例外列表。 以下是如何更多详细信息和要添加的内容。 
 
+> [!Note] 
+自 6/24/2019，Windows 客户端起**不这样做**支持代理，到 WNS 的连接必须直接连接。
 
 ## <a name="what-information-should-be-added-to-the-allowlist"></a>应将哪些信息添加到允许列表
 下面的列表包含 Fqdn、 Vip 和和 IP 地址使用 Windows 通知服务的范围。 
