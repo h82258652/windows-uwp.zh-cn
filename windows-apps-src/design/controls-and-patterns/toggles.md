@@ -13,19 +13,19 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: a23a7a7da9605c0ffb5a537c75d63e3f06705881
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625462"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63775160"
 ---
 # <a name="toggle-switches"></a>切换开关
 
-切换开关表示允许用户打开等电灯开关打开或关闭，内容的物理交换机。 使用切换开关控件向用户显示两个相互排斥的选项（如开/关），选择其中一个选项会立即提供结果。
+切换开关表示允许用户打开或关闭选项的物理开关，如灯开关。 使用切换开关控件向用户显示两个相互排斥的选项（如开/关），选择其中一个选项会立即提供结果。
 
 若要创建一个切换开关控件，可以使用 [ToggleSwitch 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)。
 
-> **重要的 API**：[ToggleSwitch 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)， [IsOn 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison)， [Toggled 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
+> **重要的 API**：[ToggleSwitch 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)、[IsOn 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison)、[Toggled 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -44,7 +44,7 @@ ms.locfileid: "57625462"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/ToggleSwitch">ToggleSwitch</a> 或 <a href="xamlcontrolsgallery:/item/ToggleButton">ToggleButton</a> 的实际应用。</p>
+    <p>如果已安装 XAML 控件库应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/ToggleSwitch">ToggleSwitch</a> 或 <a href="xamlcontrolsgallery:/item/ToggleButton">ToggleButton</a> 的实际应用<strong style="font-weight: semi-bold"></strong>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
@@ -61,13 +61,13 @@ ms.locfileid: "57625462"
 
     ![切换开关与复选框](images/toggleswitches02.png)
 
-    在此示例中，很显然需在使用切换开关时将厨房灯设置为“启用”。 但使用复选框时，用户需要考虑是立即启用灯光还是需要用户选中该框来启用灯光。
+    在此示例中，很显然需在使用切换开关时将厨房灯设置为“开”。 但使用复选框时，用户需要考虑是立即启用灯光还是需要用户选中该框来启用灯光。
 
 - 对可选项使用复选框（“这个控件真好”）。
 - 当用户必须执行额外的步骤才能使更改生效时，使用复选框。 例如，如果用户必须单击“提交”或“下一步”按钮才能应用更改，则使用复选框。
 - 当用户可选择与单个设置或功能相关的多个项时，请使用复选框。
 
-## <a name="toggle-switches-in-the-windows-ui"></a>在 Windows 用户界面中的切换开关
+## <a name="toggle-switches-in-the-windows-ui"></a>Windows UI 中的切换开关
 
 这些图像显示了 Windows UI 如何使用切换开关。 下面介绍智能存储设置屏幕如何使用切换开关：
 

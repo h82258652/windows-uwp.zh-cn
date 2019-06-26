@@ -6,11 +6,11 @@ ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 421fb7c973c1aaa4e9e1924548d7f11439fd5350
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632862"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63780297"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>2018 年 2 月 Windows 开发人员文档中的新增功能
 
@@ -29,25 +29,25 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 使用[通知镜像](../design/shell/tiles-and-notifications/notification-mirroring.md)和[通用消除](../design/shell/tiles-and-notifications/universal-dismiss.md)在各用户设备间扩展通知。
 
-使用 [Toast 标题](../design/shell/tiles-and-notifications/toast-headers.md)和[挂起的更新激活](../design/shell/tiles-and-notifications/toast-pending-update.md)分组和管理通知。
+使用 [Toast 标头](../design/shell/tiles-and-notifications/toast-headers.md)和[挂起的更新激活](../design/shell/tiles-and-notifications/toast-pending-update.md)分组和管理通知。
 
 ![操作中的挂起更新激活](../design/shell/tiles-and-notifications/images/toast-pendingupdate.gif)
 
 ### <a name="page-layouts-with-xaml"></a>使用 XAML 的页面布局
 
-我们更新了 [XAML 页面布局](../design/layout/layouts-with-xaml.md)文档，增加了新的动态布局和视觉状态信息。 借助这些新功能，可以更好地控制应用中元素的位置如果响应和适应可用视觉空间。
+我们更新了 [XAML 页面布局](../design/layout/layouts-with-xaml.md)文档，增加了新的动态布局和视觉状态信息。 借助这些新功能，可以更好地控制应用中元素的位置如何响应和适应可用视觉空间。
 
 ![XAML 页面布局的边距和填充](../design/layout/images/xaml-layout-margins-padding.png)
 
 ### <a name="subscription-add-ons-are-now-available-to-all-developers"></a>订阅加载项现在可供所有开发人员使用
 
-按照自动定期帐单期间创建和发布订阅加载项来在你的应用和游戏中销售数字产品（如应用功能或数字内容）。 有关详细信息，请参阅[启用应用加载项订阅](../monetize/enable-subscription-add-ons-for-your-app.md)。
+按照自动定期帐单期间创建和发布订阅加载项以在你的应用和游戏中销售数字产品（如应用功能或数字内容）。 有关详细信息，请参阅[启用应用加载项订阅](../monetize/enable-subscription-add-ons-for-your-app.md)。
 
 ## <a name="developer-guidance"></a>开发人员指南
 
 ### <a name="design-basics"></a>设计基础知识
 
-我们的 [UWP 应用设计简介](../design/basics/design-and-ui-intro.md)已经改进，提供了大量新的视觉示例。 每个 UWP 中的通用设计功能概述现在重点介绍了如何将 Fluent Design 系统的功能投入使用。
+我们的 [UWP 应用设计简介](../design/basics/design-and-ui-intro.md)已经改进，提供了大量新的可视化示例。 每个 UWP 中的通用设计功能概述现在重点介绍了如何将 Fluent Design System 的功能投入使用。
 
 我们在[内容设计基础知识](../design/basics/content-basics.md)中增加了常见页面模式的展示，提供了应用如何显示不同内容类型的示例库。
 
@@ -55,11 +55,11 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="writing-style"></a>写入样式
 
-我们已升级并扩充了有关语音和声调的文章内容，现在变为[写入样式指南](../design/style/writing-style.md)。 这些新信息提供在应用中创建有效文本的准则，并为控件编写（如错误消息或对话）推荐最佳做法。
+我们已升级并扩充了有关语音和声调的文章内容，现在变为[编写样式指南](../design/style/writing-style.md)。 这些新信息提供在应用中创建有效文本的准则，并为控件编写（如错误消息或对话）推荐最佳做法。
 
 ### <a name="getting-started-for-game-development"></a>游戏开发入门
 
-对开发适用于 Windows 10 的游戏感兴趣？ 新的[游戏开发入门](../gaming/getting-started.md)页面为你提供了自行完成设置、注册并准备好提交应用和游戏所需完成事项的完整概述。
+对开发适用于 Windows 10 的游戏感兴趣？ 新的[游戏开发入门](../gaming/getting-started.md)页面为你提供了自行完成设置、注册并准备好提交应用和游戏所需完成事项的完整概述。
 
 ## <a name="videos"></a>视频
 
@@ -69,7 +69,7 @@ Xbox Live 创意者计划支持开发人员快速将 UWP 游戏发布到 Xbox On
 
 ### <a name="creating-3d-app-launchers-for-windows-mixed-reality"></a>创建适用于 Windows Mixed Reality 的 3D 应用启动器
 
-3D 启动器为用户提供在其混合现实家庭环境中放置应用的真正立体表示形式的唯一途径。 [观看视频](https://www.youtube.com/watch?v=TxIslHsEXno)了解如何准备 3D 模型并将其指定为应用的启动器，然后[阅读开发人员文档](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_app_launchers)并[查看我们的设计指南](https://developer.microsoft.com/windows/mixed-reality/3d_app_launcher_design_guidance)了解详细信息。
+3D 启动器为用户提供在其混合现实家庭环境中放置应用的真正立体表示形式的独特途径。 [观看视频](https://www.youtube.com/watch?v=TxIslHsEXno)了解如何准备 3D 模型并将其指定为应用的启动器，然后[阅读开发人员文档](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_app_launchers)并[查看我们的设计指南](https://developer.microsoft.com/windows/mixed-reality/3d_app_launcher_design_guidance)了解详细信息。
 
 ### <a name="motion-controller-tracking"></a>运动控制器跟踪
 

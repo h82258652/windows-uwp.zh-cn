@@ -4,35 +4,35 @@ title: WebSockets
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
 ms.date: 06/04/2018
 ms.topic: article
-keywords: windows 10, uwp, 联网, websocket, messagewebsocket, streamwebsocketwindows 10, uwp, networking, websocket, messagewebsocket, streamwebsocket
+keywords: windows 10, uwp, 联网, websocket, messagewebsocket, streamwebsocket
 ms.localizationpriority: medium
 ms.openlocfilehash: 8af1f478bc466719eef3c5e19d055ac6073a0b11
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615412"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63777841"
 ---
 # <a name="websockets"></a>WebSockets
 WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与服务器之间进行既快捷又安全的双向通信，同时支持 UTF-8 和二进制消息。
 
-在 [WebSocket Protocol](https://tools.ietf.org/html/rfc6455) 下，数据通过全双工单套接字连接立即传输，从而允许从两个终结点实时发送和接收消息。 WebSocket 非常适用于在多玩家游戏（实时游戏和基于轮次的游戏）、即时社交网络通知、显示的最新股票和天气信息以及需要安全、快速地传输数据的其他应用。
+在 [WebSocket Protocol](https://tools.ietf.org/html/rfc6455) 下，数据通过全双工单套接字连接立即传输，从而允许从两个终结点实时发送和接收消息。 WebSocket 非常适用于在多玩家游戏（实时游戏和回合制游戏）、即时社交网络通知、显示的最新股票和天气信息以及需要安全、快速地传输数据的其他应用。
 
 为建立 WebSocket 连接，需在客户端与服务器之间交换基于 HTTP 的特定握手。 如果成功，则会使用前面建立的 TCP 连接将应用程序层协议从 HTTP“升级”到 WebSocket。 此后，HTTP 完全被排除在外；这两个终结点均可使用 WebSocket 协议发送或接收数据，直至 WebSocket 连接断开。
 
-**注意** 除非服务器也使用 WebSocket 协议，否则客户端无法使用 Websocket 传输数据。 如果服务器不支持 WebSocket，你必须使用其他数据传输方法。
+注意：除非服务器也使用 WebSocket 协议，否则客户端无法使用 Websocket 传输数据  。 如果服务器不支持 WebSocket，则必须使用其他数据传输方法。
 
-通用 Windows 平台 (UWP) 支持客户端和服务器都使用 Websocket。 [  **Windows.Networking.Sockets**](/uwp/api/windows.networking.sockets) 命名空间定义两个供客户端使用的 WebSocket 类&mdash;[**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket) 和 [**StreamWebSocket** ](/uwp/api/windows.networking.sockets.streamwebsocket)。 下面对这两个 WebSocket 类进行了比较。
+通用 Windows 平台 (UWP) 支持客户端和服务器使用 Websocket。 [Windows.Networking.Sockets](/uwp/api/windows.networking.sockets) 命名空间定义两个供客户端使用的 WebSocket 类&mdash;[MessageWebSocket](/uwp/api/windows.networking.sockets.messagewebsocket) 和 [StreamWebSocket](/uwp/api/windows.networking.sockets.streamwebsocket)    。 下面对这两个 WebSocket 类进行了比较。
 
 | [MessageWebSocket](/uwp/api/windows.networking.sockets.messagewebsocket) | [StreamWebSocket](/uwp/api/windows.networking.sockets.streamwebsocket) |
 | - | - |
-| 在单个操作中读取/写入整个 WebSocket 消息。 | 可通过每个读取操作读取部分消息。 |
+| 在单个操作中读取/写入整个 WebSocket 消息。 | 可通过每个读取操作读取消息的各部分。 |
 | 适用于消息不太长的情况。 | 适用于传输大文件（如照片或视频）的情况。 |
 | 支持 UTF-8 和二进制消息。 | 仅支持二进制消息。 |
-| 与 [UDP 或数据报套接字](sockets.md#build-a-basic-udp-socket-client-and-server)相似（从适用于频繁、小型消息的角度而言），但又具有 TCP 的可靠性、数据包顺序保证和拥塞控制。 | 与 [TCP 或流套接字](sockets.md#build-a-basic-tcp-socket-client-and-server)相似。 |
+| 与 [UDP 或数据报套接字](sockets.md#build-a-basic-udp-socket-client-and-server)相似（从适用于频繁、小型消息的角度而言），但又具有 TCP 的可靠性、数据包顺序保证和拥塞控制。 | 类似于 [TCP 或流套接字](sockets.md#build-a-basic-tcp-socket-client-and-server)。 |
 
-## <a name="secure-your-connection-with-tlsssl"></a>用 TLS/SSL 保证连接安全
-在大多数情况下，你会希望使用安全的 WebSocket 连接，以便对你发送和接收的数据加密。 这还将提高连接成功的几率，因为防火墙和代理之类的许多媒介都会拒绝未加密的 WebSocket 连接。 [WebSocket 协议](https://tools.ietf.org/html/rfc6455#section-3)定义了以下两种 URI 方案。
+## <a name="secure-your-connection-with-tlsssl"></a>通过 TLS/SSL 保证连接安全
+在大多数情况下，需要使用安全的 WebSocket 连接，以便对你发送和接收的数据加密。 这还将提高连接成功的几率，因为防火墙和代理之类的许多媒介都会拒绝未加密的 WebSocket 连接。 [WebSocket 协议](https://tools.ietf.org/html/rfc6455#section-3)定义了以下两种 URI 方案。
 
 | URI 方案 | 用途 |
 | - | - |
@@ -67,9 +67,9 @@ IAsyncAction OnNavigatedTo(NavigationEventArgs /* e */)
 ```
 
 ## <a name="use-messagewebsocket-to-connect"></a>使用 MessageWebSocket 连接
-[**MessageWebSocket** ](/uwp/api/windows.networking.sockets.messagewebsocket)允许整个的 WebSocket 消息，需要在单个操作中读取/写入。 因此，它适用于消息不太长的情况。 该类同时支持 UTF-8 和二进制消息。
+[MessageWebSocket](/uwp/api/windows.networking.sockets.messagewebsocket) 允许在单个操作中读取/写入整个 WebSocket 消息  。 因此，它适用于消息不太长的情况。 该类同时支持 UTF-8 和二进制消息。
 
-下面的代码示例使用了 WebSocket.org 回显服务器 &mdash; 将服务回显到向其发送任一消息的发送方。
+下面的代码示例使用了 WebSocket.org 回显服务器 &mdash; 该服务将其接收的任何消息回显回发送者。
 
 ```csharp
 private Windows.Networking.Sockets.MessageWebSocket messageWebSocket;
@@ -292,20 +292,20 @@ private:
     }
 ```
 
-### <a name="handle-the-messagewebsocketmessagereceived-and-messagewebsocketclosed-events"></a>处理 MessageWebSocket.MessageReceived and MessageWebSocket.Closed 事件
-如上例所示，在用 **MessageWebSocket** 建立连接并发送数据之前，应订阅 [**MessageWebSocket.MessageReceived**](/uwp/api/windows.networking.sockets.messagewebsocket.MessageReceived) 和 [**MessageWebSocket.Closed**](/uwp/api/windows.networking.sockets.messagewebsocket.Closed) 事件。
+### <a name="handle-the-messagewebsocketmessagereceived-and-messagewebsocketclosed-events"></a>处理 MessageWebSocket.MessageReceived 和 MessageWebSocket.Closed 事件
+如上例所示，在用 MessageWebSocket 建立连接并发送数据之前，应订阅 [MessageWebSocket.MessageReceived](/uwp/api/windows.networking.sockets.messagewebsocket.MessageReceived) 和 [MessageWebSocket.Closed](/uwp/api/windows.networking.sockets.messagewebsocket.Closed) 事件    。
  
-接收数据时会引发 **MessageReceived**。 可通过 [**MessageWebSocketMessageReceivedEventArgs**](/uwp/api/windows.networking.sockets.messagewebsocketmessagereceivedeventargs) 访问数据。 当客户端或服务器关闭套接字时会引发 **Closed**。
+接收数据时会引发 MessageReceived  。 可通过 [MessageWebSocketMessageReceivedEventArgs](/uwp/api/windows.networking.sockets.messagewebsocketmessagereceivedeventargs) 访问数据  。 客户端或服务器关闭套接字时会引发 Closed  。
  
 ### <a name="send-data-on-a-messagewebsocket"></a>通过 MessageWebSocket 发送数据
-在建立连接后，可以向服务器发送数据。 执行此操作的方法是使用 [**MessageWebSocket.OutputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream) 属性和 [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) 写入数据。 
+建立连接后，可以向服务器发送数据。 执行此操作的方法是使用 [MessageWebSocket.OutputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream) 属性和 [DataWriter](/uwp/api/windows.storage.streams.datawriter) 写入数据   。 
 
-**注意****DataWriter** 获得输出流的所有权。 当 **DataWriter** 超出范围时，如果输出流与之连接，**DataWriter** 将解除分配输出流。 此后，使用该输出流的任何后续尝试都会失败，HRESULT 值为 0x80000013。 但你可以调用 [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream) 使输出流与 **DataWriter** 分离并将该流的所有权返回给 **MessageWebSocket**。
+注意：DataWriter 获得输出流的所有权   。 DataWriter 超出范围时，如果输出流与之连接，DataWriter 将解除分配输出流   。 此后，使用该输出流的任何后续尝试都会失败，HRESULT 值为 0x80000013。 但你可以调用 [DataWriter.DetachStream](/uwp/api/windows.storage.streams.datawriter.DetachStream) 使输出流与 DataWriter 分离并将该流的所有权返回给 MessageWebSocket    。
 
 ## <a name="use-streamwebsocket-to-connect"></a>使用 StreamWebSocket 连接
-[**StreamWebSocket** ](/uwp/api/windows.networking.sockets.streamwebsocket)允许浏览器进行每次读取操作的消息的区域。 因此，它适用于传输大文件（如照片或视频）的情况。 该类仅支持二进制消息。
+[StreamWebSocket](/uwp/api/windows.networking.sockets.streamwebsocket) 允许通过每个读取操作读取消息的各部分  。 因此，它适用于传输大文件（如照片或视频）的情况。 该类仅支持二进制消息。
 
-下面的代码示例使用了 WebSocket.org 回显服务器 &mdash; 将服务回显到向其发送任一消息的发送方。
+下面的代码示例使用了 WebSocket.org 回显服务器 &mdash; 该服务将其接收的任何消息回显回发送者。
 
 ```csharp
 private Windows.Networking.Sockets.StreamWebSocket streamWebSocket;
@@ -561,20 +561,20 @@ private:
 ```
 
 ### <a name="handle-the-streamwebsocketclosed-event"></a>处理 StreamWebSocket.Closed 事件
-在用 **StreamWebSocket** 建立连接和发送数据之前，应该订阅 [**StreamWebSocket.Closed**](/uwp/api/windows.networking.sockets.streamwebsocket.Closed) 事件。 当客户端或服务器关闭套接字时会引发 **Closed**。
+在用 StreamWebSocket 建立连接和发送数据之前，应该订阅 [StreamWebSocket.Closed](/uwp/api/windows.networking.sockets.streamwebsocket.Closed) 事件   。 客户端或服务器关闭套接字时会引发 Closed  。
  
 ### <a name="send-data-on-a-streamwebsocket"></a>通过 StreamWebSocket 发送数据
-在建立连接后，可以向服务器发送数据。 执行此操作的方法是使用 [**StreamWebSocket.OutputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream) 属性和 [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) 写入数据。
+建立连接后，可以向服务器发送数据。 执行此操作的方法是使用 [StreamWebSocket.OutputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream) 属性和 [DataWriter](/uwp/api/windows.storage.streams.datawriter) 写入数据   。
 
-**注意** 如果你要在同一套接字中写入许多数据，则务必在 **DataWriter** 超出范围之前调用 [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream)，以使输出流与 **DataWriter** 分离。 此操作会将流的所有权返回给 **MessageWebSocket**。
+注意：如果你要在同一套接字中写入许多数据，则务必在 DataWriter 超出范围之前调用 [DataWriter.DetachStream](/uwp/api/windows.storage.streams.datawriter.DetachStream)，以使输出流与 DataWriter 分离     。 此操作会将流的所有权返回给 MessageWebSocket  。
 
 ### <a name="receive-data-on-a-streamwebsocket"></a>通过 StreamWebSocket 接收数据
-使用 [**StreamWebSocket.InputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream) 属性和 [**DataReader**](/uwp/api/windows.storage.streams.datareader) 可读取数据。
+使用 [StreamWebSocket.InputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream) 属性和 [DataReader](/uwp/api/windows.storage.streams.datareader) 可读取数据   。
 
 ## <a name="advanced-options-for-messagewebsocket-and-streamwebsocket"></a>用于 MessageWebSocket 和 StreamWebSocket 的高级选项
-在建立连接之前，可以通过设置 [**MessageWebSocketControl**](/uwp/api/windows.networking.sockets.messagewebsocketcontrol) 或 [**StreamWebSocketControl**](/uwp/api/windows.networking.sockets.streamwebsocketcontrol) 的属性来设置用于套接字的高级选项。 通过它的相应 [**MessageWebSocket.Control**](/uwp/api/windows.networking.sockets.messagewebsocket.control) 属性或 [**StreamWebSocket.Control**](/uwp/api/windows.networking.sockets.streamwebsocket.control) 属性可从套接字对象自身中访问这些类的实例。
+在建立连接之前，可以通过设置 [MessageWebSocketControl](/uwp/api/windows.networking.sockets.messagewebsocketcontrol) 或 [StreamWebSocketControl](/uwp/api/windows.networking.sockets.streamwebsocketcontrol) 的属性来设置用于套接字的高级选项   。 通过它的相应 [MessageWebSocket.Control](/uwp/api/windows.networking.sockets.messagewebsocket.control) 属性或 [StreamWebSocket.Control](/uwp/api/windows.networking.sockets.streamwebsocket.control) 属性可从套接字对象自身中访问这些类的实例   。
 
-下面是使用 **StreamWebSocket** 的示例。 相同的模式适用于 **MessageWebSocket**。
+下面是使用 StreamWebSocket 的示例  。 相同的模式适用于 MessageWebSocket  。
 
 ```csharp
 var streamWebSocket = new Windows.Networking.Sockets.StreamWebSocket();
@@ -603,30 +603,30 @@ streamWebSocket->Control->NoDelay = false;
 auto connectTask = Concurrency::create_task(streamWebSocket->ConnectAsync(ref new Uri(L"wss://echo.websocket.org")));
 ```
 
-**注意** 不要尝试在调用 **ConnectAsync***之后* 更改控件属性。 该规则的唯一例外是 [MessageWebSocketControl.MessageType](/uwp/api/windows.networking.sockets.messagewebsocketcontrol.MessageType)。
+注意：不要尝试在调用 ConnectAsync 之后更改控件属性    。 该规则的唯一例外是 [MessageWebSocketControl.MessageType](/uwp/api/windows.networking.sockets.messagewebsocketcontrol.MessageType)。
 
 ## <a name="websocket-information-classes"></a>WebSocket 信息类
-[**MessageWebSocket** ](/uwp/api/windows.networking.sockets.messagewebsocket)并[ **StreamWebSocket** ](/uwp/api/windows.networking.sockets.streamwebsocket)每个具有一个对应类，提供有关对象的其他信息。
+[MessageWebSocket](/uwp/api/windows.networking.sockets.messagewebsocket) 和 [StreamWebSocket](/uwp/api/windows.networking.sockets.streamwebsocket) 都具有相应的类，用于提供有关对象的其他信息   。
 
-[**MessageWebSocketInformation** ](/uwp/api/windows.networking.sockets.messagewebsocketinformation)提供以下信息**MessageWebSocket**，并检索它使用的一个实例[ **MessageWebSocket.Information**](/uwp/api/windows.networking.sockets.messagewebsocket.Information)属性。
+[MessageWebSocketInformation](/uwp/api/windows.networking.sockets.messagewebsocketinformation) 提供有关 MessageWebSocket 的信息，以便于使用 [MessageWebSocket.Information](/uwp/api/windows.networking.sockets.messagewebsocket.Information) 属性检索它的实例    。
 
-[**StreamWebSocketInformation** ](/uwp/api/Windows.Networking.Sockets.StreamWebSocketInformation)提供以下信息**StreamWebSocket**，并检索它使用的一个实例[ **StreamWebSocket.Information**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket.Information)属性。
+[StreamWebSocketInformation](/uwp/api/Windows.Networking.Sockets.StreamWebSocketInformation) 提供有关 StreamWebSocket 的信息，以便于使用 [StreamWebSocket.Information](/uwp/api/Windows.Networking.Sockets.StreamWebSocket.Information) 属性检索它的实例    。
 
 请注意，这些信息类上的属性均为只读形式，但你能够在 Web 套接字对象的生存期内随时使用它们来检索信息。
 
 ## <a name="handling-exceptions"></a>处理异常
-在进行 [**MessageWebSocket**](/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 操作时发生的错误将以 **HRESULT** 值的形式返回。 可将 **HRESULT** 值传递给 [**WebSocketError.GetStatus**](/uwp/api/windows.networking.sockets.websocketerror.getstatus) 方法，将其转换为 [**WebErrorStatus**](/uwp/api/Windows.Web.WebErrorStatus) 枚举值。
+在进行 [**MessageWebSocket**](/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 操作时发生的错误将以 **HRESULT** 值的形式返回。 可将该 HRESULT 值传递给 [WebSocketError.GetStatus](/uwp/api/windows.networking.sockets.websocketerror.getstatus) 方法，将其转换为 [WebErrorStatus](/uwp/api/Windows.Web.WebErrorStatus) 枚举值    。
 
-大部分 **WebErrorStatus** 枚举值对应由本机 HTTP 客户端操作返回的错误。 应用可以打开 **WebErrorStatus** 枚举值来基于异常原因修改应用行为。
+大部分 WebErrorStatus 枚举值对应由本机 HTTP 客户端操作返回的错误  。 应用可以打开 WebErrorStatus 枚举值来基于异常原因修改应用行为  。
 
-对于参数验证错误，你可以使用来自异常的 **HRESULT** 了解有关错误的更详细信息。 `Winerror.h` 中列出了可能的 **HRESULT** 值。你可以在 SDK 安装位置中找到 Winerror.h，例如，`C:\Program Files (x86)\Windows Kits\10\Include\<VERSION>\shared` 文件夹。 对于大多数参数验证错误，返回的 **HRESULT** 为 **E_INVALIDARG**。
+对于参数验证错误，可以使用来自异常的 HRESULT 了解有关错误的更详细信息  。 `Winerror.h` 中列出了可能的 HRESULT 值，可以在 SDK 安装位置中找到 Winerror.h，例如，`C:\Program Files (x86)\Windows Kits\10\Include\<VERSION>\shared` 文件夹  。 对于大多数参数验证错误，返回的 HRESULT 为 E_INVALIDARG   。
 
 ## <a name="setting-timeouts-on-websocket-operations"></a>对 WebSocket 操作设置超时
-**MessageWebSocket** 和 **StreamWebSocket** 使用内部系统服务，发送 WebSocket 客户端请求并从服务器接收响应。 WebSocket 连接操作使用的 默认超时值为 60 秒。 如果支持 WebSocket 的 HTTP 服务器不对或无法对 WebSocket 连接请求做出响应（临时关闭或因网络中断而被阻止），则内部系统服务将先等待默认 60 秒，然后返回一个错误。 该错误会导致 WebSocket **ConnectAsync** 方法中引发异常。 建立 WebSocket 连接后，用于发送和接收操作的默认超时为 30 秒。
+MessageWebSocket 和 StreamWebSocket 使用内部系统服务，发送 WebSocket 客户端请求并从服务器接收响应   。 WebSocket 连接操作使用的 默认超时值为 60 秒。 如果支持 WebSocket 的 HTTP 服务器不对或无法对 WebSocket 连接请求做出响应（临时关闭或因网络中断而被阻止），则内部系统服务将先等待默认 60 秒，然后返回一个错误。 该错误会导致 WebSocket ConnectAsync 方法中引发异常  。 建立 WebSocket 连接后，用于发送和接收操作的默认超时为 30 秒。
 
 如果对 URI 中 HTTP 服务器名称进行名称查询时返回该名称的多个 IP 地址，则内部系统将为该站点尝试最多 5 个 IP 地址，并且在每次尝试失败前都默认超时 60 秒。 因此，你的应用可能会在尝试连接多个 IP 地址时等待几分钟，然后再处理异常。 此行为可能会使用户以为应用已停止工作。 
 
-若要使你的应用更具响应性并尽量减少这些问题，看为连接请求设置更短的超时。 为 **MessageWebSocket** 和 **StreamWebSocket** 设置超时的方式类似。
+若要使你的应用更具响应性并尽量减少这些问题，可为连接请求设置更短的超时。 为 MessageWebSocket 和 StreamWebSocket 设置超时的方式类似   。
 
 ```csharp
 private Windows.Networking.Sockets.MessageWebSocket messageWebSocket;
@@ -838,4 +838,4 @@ protected:
 * [套接字](sockets.md)
 
 ## <a name="samples"></a>示例
-* [WebSocket 示例](https://go.microsoft.com/fwlink/p/?LinkId=620623)
+* [WebSocket sample](https://go.microsoft.com/fwlink/p/?LinkId=620623)

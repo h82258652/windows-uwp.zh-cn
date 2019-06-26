@@ -1,20 +1,20 @@
 ---
 title: Windows 10 Fall Creators Update API 更改
 description: 开发人员可以使用以下列表标识 Windows 10 版本 16299 中的新增或更改的命名空间
-keywords: 新增功能, 更新, Windows 10, 1709, 秋季, 创意者, api, 16299
+keywords: 新增功能, 新功能, 更新, Windows 10, 1709, 秋季, 创意者, api, 16299
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 25707dfbf6753c51b4cf47bcbe95dc66802ee781
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647952"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63780442"
 ---
 # <a name="new-apis-in-windows-10-build-16299"></a>Windows 10 版本 16299 中的新增 API
 
-开发人员已可使用 Windows 10 版本 16299 中新增的和更新的 API 命名空间，此更新也称为 Fall Creators Update 或版本 1709。 下面是为此版本中添加或修改的命名空间所发布的文档的完整列表。
+开发人员已可使用 Windows 10 版本 16299（也称为 Fall Creators Update 或版本 1709）中新增的和更新的 API 命名空间。 下面是为此版本中添加或修改的命名空间所发布的文档的完整列表。
 
 有关上一公共版本中添加的 API 的信息，请参阅 [Windows 10 创意者更新中的新 API](windows-10-build-15063-api-diff.md)。
 
@@ -106,7 +106,7 @@ contactlistdeletecontactrequesteventargs <br> contactlistdeletecontactrequesteve
 
 contactchangetracker.istracking
 
-#### <a name="contactlisthttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcontactscontactlist"></a>[联系人列表](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactlist)
+#### <a name="contactlisthttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcontactscontactlist"></a>[contactlist](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactlist)
 
 contactlist.getchangetracker <br> contactlist.limitedwriteoperations
 
@@ -370,7 +370,7 @@ customsensorreading.performancecount
 
 ### <a name="windowsdevicessensorshttpsdocsmicrosoftcomuwpapiwindowsdevicessensors"></a>[windows.devices.sensors](https://docs.microsoft.com/uwp/api/windows.devices.sensors)
 
-#### <a name="accelerometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsaccelerometer"></a>[加速感应器](https://docs.microsoft.com/uwp/api/windows.devices.sensors.accelerometer)
+#### <a name="accelerometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsaccelerometer"></a>[accelerometer](https://docs.microsoft.com/uwp/api/windows.devices.sensors.accelerometer)
 
 accelerometer.fromidasync <br> accelerometer.getdeviceselector
 
@@ -378,7 +378,7 @@ accelerometer.fromidasync <br> accelerometer.getdeviceselector
 
 accelerometerreading.performancecount <br> accelerometerreading.properties
 
-#### <a name="altimeterhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsaltimeter"></a>[Altimeter](https://docs.microsoft.com/uwp/api/windows.devices.sensors.altimeter)
+#### <a name="altimeterhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsaltimeter"></a>[altimeter](https://docs.microsoft.com/uwp/api/windows.devices.sensors.altimeter)
 
 altimeter.maxbatchsize <br> altimeter.reportlatency
 
@@ -386,7 +386,7 @@ altimeter.maxbatchsize <br> altimeter.reportlatency
 
 altimeterreading.performancecount <br> altimeterreading.properties
 
-#### <a name="barometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsbarometer"></a>[计量仪](https://docs.microsoft.com/uwp/api/windows.devices.sensors.barometer)
+#### <a name="barometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsbarometer"></a>[barometer](https://docs.microsoft.com/uwp/api/windows.devices.sensors.barometer)
 
 barometer.fromidasync <br> barometer.getdeviceselector <br> barometer.maxbatchsize <br> barometer.reportlatency
 
@@ -394,7 +394,7 @@ barometer.fromidasync <br> barometer.getdeviceselector <br> barometer.maxbatchsi
 
 barometerreading.performancecount <br> barometerreading.properties
 
-#### <a name="compasshttpsdocsmicrosoftcomuwpapiwindowsdevicessensorscompass"></a>[指南针](https://docs.microsoft.com/uwp/api/windows.devices.sensors.compass)
+#### <a name="compasshttpsdocsmicrosoftcomuwpapiwindowsdevicessensorscompass"></a>[compass](https://docs.microsoft.com/uwp/api/windows.devices.sensors.compass)
 
 compass.fromidasync <br> compass.getdeviceselector <br> compass.maxbatchsize <br> compass.reportlatency
 
@@ -402,7 +402,7 @@ compass.fromidasync <br> compass.getdeviceselector <br> compass.maxbatchsize <br
 
 compassreading.performancecount <br> compassreading.properties
 
-#### <a name="gyrometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsgyrometer"></a>[陀螺测试仪感应](https://docs.microsoft.com/uwp/api/windows.devices.sensors.gyrometer)
+#### <a name="gyrometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsgyrometer"></a>[gyrometer](https://docs.microsoft.com/uwp/api/windows.devices.sensors.gyrometer)
 
 gyrometer.fromidasync <br> gyrometer.getdeviceselector <br> gyrometer.maxbatchsize <br> gyrometer.reportlatency
 
@@ -410,7 +410,7 @@ gyrometer.fromidasync <br> gyrometer.getdeviceselector <br> gyrometer.maxbatchsi
 
 gyrometerreading.performancecount <br> gyrometerreading.properties
 
-#### <a name="inclinometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsinclinometer"></a>[倾斜仪](https://docs.microsoft.com/uwp/api/windows.devices.sensors.inclinometer)
+#### <a name="inclinometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsinclinometer"></a>[inclinometer](https://docs.microsoft.com/uwp/api/windows.devices.sensors.inclinometer)
 
 inclinometer.fromidasync <br> inclinometer.getdeviceselector <br> inclinometer.maxbatchsize <br> inclinometer.reportlatency
 
@@ -426,7 +426,7 @@ lightsensor.fromidasync <br> lightsensor.getdeviceselector <br> lightsensor.maxb
 
 lightsensorreading.performancecount <br> lightsensorreading.properties
 
-#### <a name="magnetometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsmagnetometer"></a>[磁力仪](https://docs.microsoft.com/uwp/api/windows.devices.sensors.magnetometer)
+#### <a name="magnetometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsmagnetometer"></a>[magnetometer](https://docs.microsoft.com/uwp/api/windows.devices.sensors.magnetometer)
 
 magnetometer.fromidasync <br> magnetometer.getdeviceselector <br> magnetometer.maxbatchsize <br> magnetometer.reportlatency
 
@@ -1040,7 +1040,7 @@ placeinfohelper <br> placeinfohelper.createfromlocallocation
 
 ### <a name="windowsservicesmapshttpsdocsmicrosoftcomuwpapiwindowsservicesmaps"></a>[windows.services.maps](https://docs.microsoft.com/uwp/api/windows.services.maps)
 
-#### <a name="maproutehttpsdocsmicrosoftcomuwpapiwindowsservicesmapsmaproute"></a>[即使用 maproute](https://docs.microsoft.com/uwp/api/windows.services.maps.maproute)
+#### <a name="maproutehttpsdocsmicrosoftcomuwpapiwindowsservicesmapsmaproute"></a>[maproute](https://docs.microsoft.com/uwp/api/windows.services.maps.maproute)
 
 maproute.isscenic
 
@@ -1356,7 +1356,7 @@ compositionlineargradientbrush <br> compositionlineargradientbrush.endpoint <br>
 
 compositionobject.dispatcherqueue
 
-#### <a name="compositorhttpsdocsmicrosoftcomuwpapiwindowsuicompositioncompositor"></a>[排序器](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositor)
+#### <a name="compositorhttpsdocsmicrosoftcomuwpapiwindowsuicompositioncompositor"></a>[compositor](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositor)
 
 compositor.createcolorgradientstop <br> compositor.createcolorgradientstop <br> compositor.createlineargradientbrush <br> compositor.createspringscalaranimation <br> compositor.createspringvector2animation <br> compositor.createspringvector3animation
 
@@ -1388,7 +1388,7 @@ pointlight.intensity
 
 scalarnaturalmotionanimation <br> scalarnaturalmotionanimation.finalvalue <br> scalarnaturalmotionanimation.initialvalue <br> scalarnaturalmotionanimation.initialvelocity
 
-#### <a name="spotlighthttpsdocsmicrosoftcomuwpapiwindowsuicompositionspotlight"></a>[聚焦](https://docs.microsoft.com/uwp/api/windows.ui.composition.spotlight)
+#### <a name="spotlighthttpsdocsmicrosoftcomuwpapiwindowsuicompositionspotlight"></a>[spotlight](https://docs.microsoft.com/uwp/api/windows.ui.composition.spotlight)
 
 spotlight.innerconeintensity <br> spotlight.outerconeintensity
 
@@ -1662,7 +1662,7 @@ charactercasing
 
 colorchangedeventargs <br> colorchangedeventargs.newcolor <br> colorchangedeventargs.oldcolor
 
-#### <a name="colorpickerhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscolorpicker"></a>[颜色选取器](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)
+#### <a name="colorpickerhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscolorpicker"></a>[colorpicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)
 
 colorpicker <br> colorpicker.color <br> colorpicker.colorchanged <br> colorpicker.colorpicker <br> colorpicker.colorproperty <br> colorpicker.colorspectrumcomponents <br> colorpicker.colorspectrumcomponentsproperty <br> colorpicker.colorspectrumshape <br> colorpicker.colorspectrumshapeproperty <br> colorpicker.isalphaenabled <br> colorpicker.isalphaenabledproperty <br> colorpicker.isalphaslidervisible <br> colorpicker.isalphaslidervisibleproperty <br> colorpicker.isalphatextinputvisible <br> colorpicker.isalphatextinputvisibleproperty <br> colorpicker.iscolorchanneltextinputvisible <br> colorpicker.iscolorchanneltextinputvisibleproperty <br> colorpicker.iscolorpreviewvisible <br> colorpicker.iscolorpreviewvisibleproperty <br> colorpicker.iscolorslidervisible <br> colorpicker.iscolorslidervisibleproperty <br> colorpicker.iscolorspectrumvisible <br> colorpicker.iscolorspectrumvisibleproperty <br> colorpicker.ishexinputvisible <br> colorpicker.ishexinputvisibleproperty <br> colorpicker.ismorebuttonvisible <br> colorpicker.ismorebuttonvisibleproperty <br> colorpicker.maxhue <br> colorpicker.maxhueproperty <br> colorpicker.maxsaturation <br> colorpicker.maxsaturationproperty <br> colorpicker.maxvalue <br> colorpicker.maxvalueproperty <br> colorpicker.minhue <br> colorpicker.minhueproperty <br> colorpicker.minsaturation <br> colorpicker.minsaturationproperty <br> colorpicker.minvalue <br> colorpicker.minvalueproperty <br> colorpicker.previouscolor <br> colorpicker.previouscolorproperty
 
@@ -1678,7 +1678,7 @@ colorspectrumcomponents
 
 colorspectrumshape
 
-#### <a name="comboboxhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscombobox"></a>[组合框](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)
+#### <a name="comboboxhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscombobox"></a>[combobox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)
 
 combobox.placeholderforeground <br> combobox.placeholderforegroundproperty
 
@@ -1690,7 +1690,7 @@ contentdialog.showasync
 
 contentdialogplacement
 
-#### <a name="controlhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscontrol"></a>[控件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control)
+#### <a name="controlhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscontrol"></a>[control](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control)
 
 control.oncharacterreceived <br> control.onpreviewkeydown <br> control.onpreviewkeyup
 
@@ -1702,7 +1702,7 @@ disabledformattingaccelerators
 
 fonticonsource <br> fonticonsource.fontfamily <br> fonticonsource.fontfamilyproperty <br> fonticonsource.fonticonsource <br> fonticonsource.fontsize <br> fonticonsource.fontsizeproperty <br> fonticonsource.fontstyle <br> fonticonsource.fontstyleproperty <br> fonticonsource.fontweight <br> fonticonsource.fontweightproperty <br> fonticonsource.glyph <br> fonticonsource.glyphproperty <br> fonticonsource.istextscalefactorenabled <br> fonticonsource.istextscalefactorenabledproperty <br> fonticonsource.mirroredwhenrighttoleft <br> fonticonsource.mirroredwhenrighttoleftproperty
 
-#### <a name="gridhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsgrid"></a>[网格](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)
+#### <a name="gridhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsgrid"></a>[grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)
 
 grid.columnspacing <br> grid.columnspacingproperty <br> grid.rowspacing <br> grid.rowspacingproperty
 
@@ -1802,7 +1802,7 @@ ratingiteminfo <br> ratingiteminfo.ratingiteminfo
 
 richeditbox.charactercasing <br> richeditbox.charactercasingproperty <br> richeditbox.copyingtoclipboard <br> richeditbox.cuttingtoclipboard <br> richeditbox.disabledformattingaccelerators <br> richeditbox.disabledformattingacceleratorsproperty <br> richeditbox.horizontaltextalignment <br> richeditbox.horizontaltextalignmentproperty
 
-#### <a name="richtextblockhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsrichtextblock"></a>[按](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock)
+#### <a name="richtextblockhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsrichtextblock"></a>[richtextblock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock)
 
 richtextblock.horizontaltextalignment <br> richtextblock.horizontaltextalignmentproperty <br> richtextblock.istexttrimmed <br> richtextblock.istexttrimmedchanged <br> richtextblock.istexttrimmedproperty <br> richtextblock.texthighlighters
 
@@ -1850,7 +1850,7 @@ symboliconsource <br> symboliconsource.symbol <br> symboliconsource.symboliconso
 
 textblock.horizontaltextalignment <br> textblock.horizontaltextalignmentproperty <br> textblock.istexttrimmed <br> textblock.istexttrimmedchanged <br> textblock.istexttrimmedproperty <br> textblock.texthighlighters
 
-#### <a name="textboxhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolstextbox"></a>[文本框](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox)
+#### <a name="textboxhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolstextbox"></a>[textbox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox)
 
 textbox.beforetextchanging <br> textbox.charactercasing <br> textbox.charactercasingproperty <br> textbox.copyingtoclipboard <br> textbox.cuttingtoclipboard <br> textbox.horizontaltextalignment <br> textbox.horizontaltextalignmentproperty <br> textbox.placeholderforeground <br> textbox.placeholderforegroundproperty
 
@@ -1868,11 +1868,11 @@ textcontrolcuttingtoclipboardeventargs <br> textcontrolcuttingtoclipboardeventar
 
 ### <a name="windowsuixamldocumentshttpsdocsmicrosoftcomuwpapiwindowsuixamldocuments"></a>[windows.ui.xaml.documents](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents)
 
-#### <a name="blockhttpsdocsmicrosoftcomuwpapiwindowsuixamldocumentsblock"></a>[块](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block)
+#### <a name="blockhttpsdocsmicrosoftcomuwpapiwindowsuixamldocumentsblock"></a>[block](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block)
 
 block.horizontaltextalignment <br> block.horizontaltextalignmentproperty
 
-#### <a name="hyperlinkhttpsdocsmicrosoftcomuwpapiwindowsuixamldocumentshyperlink"></a>[超链接](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.hyperlink)
+#### <a name="hyperlinkhttpsdocsmicrosoftcomuwpapiwindowsuixamldocumentshyperlink"></a>[hyperlink](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.hyperlink)
 
 hyperlink.istabstop <br> hyperlink.istabstopproperty <br> hyperlink.tabindex <br> hyperlink.tabindexproperty
 
@@ -1926,7 +1926,7 @@ processkeyboardacceleratoreventargs <br> processkeyboardacceleratoreventargs.han
 
 ### <a name="windowsuixamlmarkuphttpsdocsmicrosoftcomuwpapiwindowsuixamlmarkup"></a>[windows.ui.xaml.markup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup)
 
-#### <a name="markupextensionhttpsdocsmicrosoftcomuwpapiwindowsuixamlmarkupmarkupextension"></a>[标记扩展](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.markupextension)
+#### <a name="markupextensionhttpsdocsmicrosoftcomuwpapiwindowsuixamlmarkupmarkupextension"></a>[markupextension](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.markupextension)
 
 markupextension <br> markupextension.markupextension <br> markupextension.providevalue
 

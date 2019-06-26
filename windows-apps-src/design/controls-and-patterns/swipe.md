@@ -3,7 +3,7 @@ pm-contact: kisai
 design-contact: ksulliv
 dev-contact: Shmazlou
 doc-status: Published
-Description: 轻扫发出命令是上下文菜单的触摸加速器。
+Description: 轻扫命令是上下文菜单的触摸式加速键。
 title: Swipe
 label: Swipe
 template: detail.hbs
@@ -12,30 +12,30 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d575eb25d9a013aa999cf304db6d83faeb87765
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626652"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63774708"
 ---
 # <a name="swipe"></a>Swipe
 
-轻扫命令是上下文菜单的快捷方式，用户可以通过它以触控方式轻松访问常见菜单操作，而无需在应用中更改状态。
+轻扫命令是上下文菜单的加速键。通过它，用户无需在应用中更改状态即可以触控方式轻松访问常见菜单操作。
 
-> **重要的 API**：[SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol)， [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem)， [ListView 类](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+> **重要的 API**：[SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol)、[SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem)、[ListView 类](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 
-![“执行”和“显示”轻扫主题](images/LightThemeSwipe.png)
+![“执行”和“显示”浅色主题](images/LightThemeSwipe.png)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-轻扫命令节省空间。 它对于需要连续多次重复相同操作的情况来说非常有用。 并且可以对项目提供“快速操作”，无需完全弹出或在页面中更改状态。
+轻扫命令可节省空间。 在用户可能要快速连续地对多个项目执行相同操作的情况下，此命令非常有用。 它对项目提供了“快速操作”，无需完全弹出或在页面中更改状态。
 
-当你拥有一组可能很大的项目并且每个项目均具有 1-3 项操作，并且用户需要定期执行这些操作时，应使用轻扫命令。 这些操作可能包括但不限于：
+如果你有一组项目可能很大，且每个项目都有用户可能想要定期执行的 1 到 3 个操作，则应使用轻扫命令。 这些操作可能包括但不限于：
 
 - 删除
 - 标记或归档
 - 保存或下载
-- 回复
+- 答复
 
 ## <a name="examples"></a>示例
 
@@ -44,7 +44,7 @@ ms.locfileid: "57626652"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/SwipeControl">打开此应用，了解 SwipeControl 的实际应用</a>。</p>
+    <p>如果已安装 XAML 控件库应用，请单击此处<a href="xamlcontrolsgallery:/item/SwipeControl">打开此应用，查看 SwipeControl 的实际应用</a><strong style="font-weight: semi-bold"></strong>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
@@ -57,48 +57,48 @@ ms.locfileid: "57626652"
 
 > [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev015/player]
 
-## <a name="how-does-swipe-work"></a>轻扫如何运作？
+## <a name="how-does-swipe-work"></a>“轻扫”的工作原理
 
-UWP 轻扫发出命令有两种模式：[揭示](/uwp/api/windows.ui.xaml.controls.swipemode)并[执行](/uwp/api/windows.ui.xaml.controls.swipemode)。 它还支持四种不同的轻扫方向：向上、向下、向左和向右。
+UWP 轻扫命令有两种模式：[显示](/uwp/api/windows.ui.xaml.controls.swipemode)和[执行](/uwp/api/windows.ui.xaml.controls.swipemode)。 它还支持四种不同的轻扫方向：向上、向下、向左和向右。
 
 ### <a name="reveal-mode"></a>显示模式
 
-在“显示”模式下，用户轻扫某个项目即可打开一个或多个命令的菜单，并且必须明确地点击命令才能执行它。 当用户轻扫并释放某个项目时，菜单将保持打开，直到选择命令或者再次通过轻扫、点击关闭或将已打开的项目滚离屏幕关闭菜单。
+在显示模式下，用户轻扫某个项目即可打开包含一个或多个命令的菜单，且必须明确地点击命令才能执行它。 当用户轻扫并释放某个项目时，菜单将保持打开状态，直到选中命令或者通过轻扫、点击关闭或将已打开的项目滚离屏幕来再次关闭菜单。
 
 ![轻扫以显示](images/SwipeCommand-Reveal_v2.gif)
 
-显示模式是一种更安全、更具多样性的轻扫模式，可用于大部分菜单操作，甚至是可能有破坏性的操作，如删除。
+显示模式是一种更安全、更通用的轻扫模式，可用于大部分类型的菜单操作，甚至是删除等可能有破坏性的操作。
 
-当用户选择在显示的打开和休眠状态下显示的其中一个选项时，就会调用该项目的命令并且轻扫控制将关闭。
+当用户选择在显示的打开和休眠状态下出现的其中一个选项时，就会调用该项目的命令，且轻扫控制将关闭。
 
 ### <a name="execute-mode"></a>执行模式
 
-在“执行”模式下，用户轻扫打开的项目即可通过此轻扫显示并执行单个命令。 如果用户在轻扫通过阈值之前释放所轻扫的项目，菜单就会关闭，并且命令不会执行。 如果用户在轻扫通过阈值后释放项目，则会直接执行命令。
+在执行模式下，用户轻扫打开项目即可通过此轻扫显示并执行单个命令。 如果用户在轻扫通过阈值之前释放所轻扫的项目，菜单就会关闭，且命令不会执行。 如果用户在轻扫通过阈值后释放项目，则直接执行命令。
 
 ![轻扫以执行](images/SwipeCommand_Delete_v2.gif)
 
-如果用户在达到阈值后不松开手指并再次下拉关闭的轻扫项目，则命令不会执行，并且不会对该项目执行任何操作。
+如果用户在到达阈值后不松开手指并再次下拉关闭的轻扫项目，则命令不会执行，且不对该项目执行任何操作。
 
 轻扫项目时，执行模式可以通过颜色和标签方向提供更多视觉反馈。
 
-当用户执行的操作为最常见操作时，最适合使用执行。
+当用户执行的操作为最常见操作时，最适合使用执行模式。
 
-此外，它也适合用于更有破坏性的操作，如删除项目。 但是，请注意，“执行”只需在一个方向进行轻扫操作，这与“显示”不同，后者需要明确单击按钮。
+此外，它也适合用于更有破坏性的操作，如删除项目。 但请注意，“执行”只需在一个方向轻扫一次，这与“显示”不同，后者需要明确单击按钮。
 
 ### <a name="swipe-directions"></a>轻扫方向
 
-轻扫在所有基本方向均适用，包括：向上、向下、向左和向右。 每个轻扫方向均可以保留其自己的轻扫项目或内容，但一次只能对单个可轻扫元素设置一个方向实例。
+轻扫适合所有基本方向，包括：向上、向下、向左和向右。 每个轻扫方向均可以保留其自己的轻扫项目或内容，但一次只能对单个可轻扫元素设置一个方向实例。
 
 例如，不能在同一 SwipeControl 上设置两个 [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems) 定义。
 
 ## <a name="how-to-create-a-swipe-command"></a>如何创建轻扫命令
 
-轻扫命令有两个需要定义的组件：
+轻扫命令具有两个需要定义的组件：
 
-- 包装内容的 [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol)。 在集合（例如 ListView）中，它位于 DataTemplate 中。
-- 轻扫菜单项，这是一个或多个[SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem)对象放置在轻扫控件的方向容器：[LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems)， [RightItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.RightItems)， [TopItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.TopItems)，或[BottomItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.BottomItems)
+- 在内容四周环绕的 [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol)。 在集合（例如 ListView）中，它位于 DataTemplate 中。
+- 轻扫菜单项，可以是一个或多个 [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem) 对象，放在轻扫控件的方向容器中：[LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems)、[RightItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.RightItems)、[TopItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.TopItems) 或 [BottomItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.BottomItems)
 
-轻扫内容可内联放置，或在页面或应用的“Resources”部分定义。
+轻扫内容可内联放置，或在页面或应用的“资源”部分定义。
 
 下面是用于环绕某些文本的简单 SwipeControl 示例。 它显示了创建轻扫命令所需的 XAML 元素的层次结构。
 
@@ -121,9 +121,9 @@ UWP 轻扫发出命令有两种模式：[揭示](/uwp/api/windows.ui.xaml.contro
 </SwipeControl>
 ```
 
-现在我们来看一个通常在列表中如何使用轻扫命令的更完整示例。 在此示例中，将设置一个使用 Execute 模式的删除命令，还有一个使用 Reveal 模式的其他命令的菜单。 这两组命令都是在页面的“Resources”部分定义的。 你将对一个 ListView 中的项目应用轻扫命令。
+现在我们来看一个更完整的示例，了解通常在列表中如何使用轻扫命令。 在此示例中，将设置一个使用执行模式的删除命令，还有一个使用模式模式的其他命令的菜单。 这两组命令都是在页面的“资源”部分定义的。 你将对一个 ListView 中的项目应用轻扫命令。
 
-首先，以页面级资源的形式创建表示命令的轻扫项目。 SwipeItem 使用 [IconSource](/uwp/api/windows.ui.xaml.controls.iconsource) 作为其图标。 同样，以资源的形式创建图标。
+首先，创建轻扫项目，它们将命令表示为页面级资源。 SwipeItem 使用 [IconSource](/uwp/api/windows.ui.xaml.controls.iconsource) 作为其图标。 同样，以资源的形式创建图标。
 
 ```xaml
 <Page.Resources>
@@ -182,9 +182,9 @@ UWP 轻扫发出命令有两种模式：[揭示](/uwp/api/windows.ui.xaml.contro
 
 ## <a name="handle-an-invoked-swipe-command"></a>处理调用的轻扫命令
 
-要对轻扫命令执行操作，可以处理其 [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked) 事件。 (用户可以详细了解如何调用命令，查看_轻扫是如何工作？_ 本文前面的部分。)通常情况下，轻扫命令是 ListView 或类似于列表的应用场景中。 在这种情况下，调用命令时，表示你要对所轻扫的项目执行操作。
+要对轻扫命令执行操作，可以处理其 [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked) 事件。 （要详细了解用户可如何调用命令，请查看本文前面的[“轻扫”的工作原理]部分。  ）通常，轻扫命令位于 ListView 和类似列表的方案中。 在这种情况下，调用命令时，表示你要对所轻扫的项目执行操作。
 
-下面介绍如何处理你之前创建的 _delete_ 轻扫项目的 Invoked 事件。
+下面介绍如何处理你之前创建的 delete 轻扫项目的 Invoked 事件  。
 
 ```xaml
 <SwipeItems x:Key="ExecuteDelete" Mode="Execute">
@@ -208,14 +208,14 @@ UWP 轻扫发出命令有两种模式：[揭示](/uwp/api/windows.ui.xaml.contro
 在此特定实例中，你从列表中删除了项目，因此所轻扫项目的最终可视状态并不重要。 但是，在只希望执行一项操作后就再次折叠轻扫的情况下，可以将 [BehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipeitem.BehaviorOnInvoked) 属性设置为 [SwipeBehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipebehavioroninvoked) 枚举值之一。
 
 - **自动**
-  - 在“执行”模式下，打开的轻扫项目在调用时将保持打开。
-  - 在“显示”模式下，打开的轻扫项目在调用时将折叠。
+  - 在执行模式下，打开的轻扫项目在调用时将保持打开状态。
+  - 在显示模式下，打开的轻扫项目在调用时将折叠。
 - **关闭**
   - 项目被调用时，无论处于何种模式，轻扫控件将始终折叠并返回至正常状态。
 - **RemainOpen**
   - 项目被调用时，无论处于何种模式，轻扫控件将始终处于打开状态。
 
-在这里，一个 _reply_ 轻扫项目设置为在调用后关闭。
+在这里，一个 reply 轻扫项目设置为在调用后关闭  。
 
 ```xaml
 <SwipeItem Text="Reply" IconSource="{StaticResource ReplyIcon}"
@@ -226,7 +226,7 @@ UWP 轻扫发出命令有两种模式：[揭示](/uwp/api/windows.ui.xaml.contro
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
 
 - 请勿在 FlipView、Hub 或 Pivot 中使用轻扫。 用户可能会因轻扫指令冲突而混淆组合。
-- 请勿将水平轻扫与水平导航或者垂直轻扫与垂直导航组合使用。
+- 请勿将水平轻扫和水平导航组合在一起，也不要将垂直轻扫和垂直导航混在一起。
 - 务必确保用户轻扫的内容为相同操作，并且在可轻扫的所有相关项目中保持一致。
 - 务必对用户将要执行的主要操作使用轻扫。
 - 务必对需要多次重复执行相同操作的项目使用轻扫。
@@ -239,6 +239,6 @@ UWP 轻扫发出命令有两种模式：[揭示](/uwp/api/windows.ui.xaml.contro
 
 ## <a name="related-articles"></a>相关文章
 
-- [列表视图和网格视图](listview-and-gridview.md)
-- [项容器和模板](item-containers-templates.md)
-- [下拉以刷新](pull-to-refresh.md)
+- [L列表视图和网格视图](listview-and-gridview.md)
+- [项目容器和模板](item-containers-templates.md)
+- [下拉刷新](pull-to-refresh.md)

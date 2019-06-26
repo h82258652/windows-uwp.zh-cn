@@ -1,20 +1,20 @@
 ---
-title: 什么是 Windows 文档中 2018 年 9 月中的新增功能-开发 UWP 应用
-description: 新功能、 视频、 示例和开发人员指南具有已添加到 2018 年 9 月的 Windows 10 开发人员文档。
-keywords: 最新内容、 更新、 功能、 开发人员指南，Windows 10 年 9 月
+title: 2018 年 9 月 Windows 文档中的新增功能 - 开发 UWP 应用
+description: 新增功能、视频、示例和开发人员指南已添加到 2018 年 9 月 Windows 10 开发人员文档。
+keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 九月
 ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0876b2d9b65143cde2387a42e221460cc617cf0b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618252"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63800491"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>什么是 Windows 开发人员文档中在 2018 年 9 月的新增功能
+# <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>2018 年 9 月 Windows 开发人员文档中的新增功能
 
-Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 以下功能概述、 开发人员指南和视频进行了年 9 月的月份中可用。
+Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 九月当月提供了以下功能概述、开发人员指南和视频。
 
 只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
@@ -22,46 +22,46 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="windows-machine-learning"></a>Windows 机器学习
 
-[Windows 机器学习文档](https://docs.microsoft.com/windows/ai/)现在驻留在其自己的站点，并为最新 Windows Insider SDK 更新。 有桌面和 c + + 中的 UWP 教程和C#来帮助你开始将 WinML 添加到你的应用程序。
+[Windows 机器学习文档](https://docs.microsoft.com/windows/ai/)现位于它们自己的站点，并针对最新的 Windows 预览体验成员 SDK 进行了更新。 C++ 和 C# 中的桌面和 UWP 教程可帮助你开始将 WinML 添加到应用程序。
 
-[Windows.AI.MachineLearning API 参考](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning)已更新为最新 Windows Insider SDK。
+[Windows.AI.MachineLearning API 参考](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning)已针对最新的 Windows 预览体验成员 SDK 进行了更新。
 
-[Windows 机器学习 GitHub 存储库](https://github.com/Microsoft/Windows-Machine-Learning)已使用新的示例使用最新的 SDK 的更新。
+[Windows 机器学习 GitHub 存储库](https://github.com/Microsoft/Windows-Machine-Learning)已更新了使用最新 SDK 的新示例。
 
-![Windows 机器学习图](images/winml-graphic.png)
+![Windows 机器学习图形](images/winml-graphic.png)
 
 ### <a name="windows-ui-library"></a>Windows UI 库
 
-[Windows 用户界面库](https://aka.ms/winui-docs)是一组控件和其他用户界面元素为 UWP 应用提供的 NuGet 包。 这些包也是与早期版本的 Windows 10 兼容的因此即使用户不具有最新的操作系统版本，适用于您的应用程序。
+[Windows UI 库](https://aka.ms/winui-docs)是一组 NuGet 程序包，提供用于 UWP 应用的控件和其他用户界面元素。 这些程序包还与 Windows 10 的早期版本兼容，因此即使用户没有最新的操作系统版本，应用也可以正常工作。
 
-Windows 用户界面库的详细信息，请参阅[API 命名空间包含在 NuGet 包中的此列表。](https://docs.microsoft.com/uwp/api/overview/winui/)
+有关 Windows UI 库的详细信息，请参阅 [NuGet 包中包含的 API 命名空间列表。](https://docs.microsoft.com/uwp/api/overview/winui/)
 
 ## <a name="developer-guidance"></a>开发人员指南
 
-### <a name="how-blur-effects-work"></a>如何模糊效果工作
+### <a name="how-blur-effects-work"></a>模糊效果如何生效
 
-我们的编写器，标志 Mike Jacobs，之一已开始一的系列文章在介质中有关模糊，从应用和游戏设计摄影的设想。 如果有兴趣了解有关此通用的视觉效果详细信息，请查看[愿景和摄影上的第一篇文章](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)和[中图形的反别名在第二个。](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
+受人尊敬的 Mike Jacobs（我们的作者之一）已经开始在 Medium 上发表关于模糊的一系列文章，涉及视觉到摄影再到应用和游戏设计。 如果你有兴趣了解关于这种普遍存在的视觉效果的更多信息，请查看[关于视觉和摄影的第一篇文章](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)和[关于图形中的抗锯齿的第二篇文章。](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
 
-![使操作变得模糊](images/blur-example.jpg)
+![实际的模糊](images/blur-example.jpg)
 
-### <a name="contributing-guidance"></a>相关指南
+### <a name="contributing-guidance"></a>参与指南
 
-我们已更新[我们的相关指南](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md)UWP 文档。 工作流和发布到我们的文档的外部内容的期望，阐明了该新指南。
+我们更新了适用于 UWP 文档的[参与指南](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md)。 这一新的指南阐明了针对我们的文档进行外部参与的工作流和预期。
 
 ## <a name="videos"></a>视频
 
-### <a name="one-dev-question"></a>一个适用于开发人员问题
+### <a name="one-dev-question"></a>一个开发问题
 
-在开发人员的一个问题视频系列中，资深 Microsoft 开发者介绍一系列的有关 Windows 开发、 团队区域性和历史记录的问题。 下面是我们回答的最新问题 ！
+在“一个开发问题”视频系列中，资深的 Microsoft 开发人员介绍了关于 Windows 开发、团队文化和发展历程的一系列问题。 以下是我们已回答的最新问题！
 
-Aaron Gustafson:
+Aaron Gustafson：
 
-* [渐进式 Web 应用上的 6 视频](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
+* [关于渐进式 Web 应用的 6 个视频](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
 
 Chris Heilmann
 
-* [4 个视频上 webhint 工具](https://www.youtube.com/watch?v=eXfmxmiA00Y&list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
+* [关于 webhint 工具的 4 个视频](https://www.youtube.com/watch?v=eXfmxmiA00Y&list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
 
-Larry Osterman:
+Larry Osterman：
 
-* [Windows 运行时中的 COM 哪些部分？](https://youtu.be/_nsMjHqRn1w)
+* [COM 的哪些部分在 Windows 运行时中？](https://youtu.be/_nsMjHqRn1w)

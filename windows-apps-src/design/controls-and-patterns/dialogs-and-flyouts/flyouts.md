@@ -1,6 +1,6 @@
 ---
 Description: 对话框和浮出控件显示当用户请求这些元素或发生需要通知或批准的操作时出现的瞬态 UI 元素。
-title: 浮出控件
+title: 浮出控件控制
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
@@ -12,11 +12,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 52de0933bf51adaae6b0923868e12eb92ced4a1a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625012"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63793790"
 ---
 # <a name="flyouts"></a>浮出控件
 
@@ -24,13 +24,13 @@ ms.locfileid: "57625012"
 
 ![嵌套在浮出控件内的上下文菜单](../images/flyout-nested.png)
 
-> **重要的 API**：[浮出控件类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+> **重要的 API**：[Flyout 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 * 不要使用浮出控件替代[工具提示](../tooltips.md)或[上下文菜单](../menus.md)。 使用工具提示显示在指定时间后隐藏的简短描述。 针对与 UI 元素相关的上下文操作（如复制和粘贴）使用上下文菜单。
 
-有关何时使用浮出控件与何时使用对话框 （类似控件） 的建议，请参阅[对话框和浮出控件](index.md)。 
+有关何时使用浮出控件以及何时使用对话框（类似控件）的建议，请参阅[对话框和浮出控件](index.md)。 
 
 ## <a name="examples"></a>示例
 
@@ -51,7 +51,7 @@ ms.locfileid: "57625012"
 ##  <a name="how-to-create-a-flyout"></a>如何创建浮出控件
 
 
-浮出控件附加到特定控件。 可以使用[放置](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement)属性来指定浮出控件的显示位置：顶部、 左、 下、 右或完整。 如果你选择[完整放置模式](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode)，应用将拉伸浮出控件，并使其在应用窗口中居中。 某些控件（如 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)）提供可用于关联浮出控件或[上下文菜单](../menus.md) 的 [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout) 属性。
+浮出控件附加到特定控件。 可以使用 [Placement](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) 属性指定浮出控件显示的位置：顶部、左侧、底部、右侧或完整。 如果你选择[完整放置模式](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode)，应用将拉伸浮出控件，并使其在应用窗口中居中。 某些控件（如 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)）提供可用于关联浮出控件或[上下文菜单](../menus.md) 的 [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout) 属性。
 
 此示例创建一个在按下按钮时显示一些文本的简单浮出控件。
 ````xaml
@@ -145,9 +145,9 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 </Flyout>
 ````
 
-## <a name="styling-flyouts-for-10-foot-experiences"></a>设置为 10 英尺体验浮出控件的样式
+## <a name="styling-flyouts-for-10-foot-experiences"></a>设置浮出控件样式，以实现 10 英尺体验
 
-轻型消除控件（如浮出控件）会捕获瞬态 UI 内的键盘焦点和游戏板焦点，直到消除为止。 若要为此行为提供视觉提示，Xbox 上的轻型消除控件将绘制覆盖，以便使 UI 范围之外的对比度和可见性变暗。 可以使用 [`LightDismissOverlayMode`](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode) 属性修改此行为。 默认情况下，浮出控件将在 Xbox（而非其他设备系列）上绘制轻型消除覆盖，不过应用可以选择强制使覆盖始终**打开**或始终**关闭**。
+轻型消除控件（如浮出控件）会捕获瞬态 UI 内的键盘焦点和游戏板焦点，直到消除为止。 若要为此行为提供视觉提示，Xbox 上的轻型消除控件将绘制覆盖，以便使 UI 范围之外的对比度和可见性变暗。 可以使用 [`LightDismissOverlayMode`](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode) 属性修改此行为。 默认情况下，浮出控件将在 Xbox（而非其他设备系列）上绘制轻型消除覆盖，不过应用可以选择强制使覆盖始终“打开”或始终“关闭”   。
 
 ![带有变暗覆盖的浮出控件](../images/flyout-smoke.png)
 
@@ -162,7 +162,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 -   按硬件或软件系统后退按钮
 -   按游戏板 B 按钮
 
-当通过点击消除时，此手势通常会被吸收，不会传递到下面的 UI。 例如，如果在开放式浮出控件后有一个按钮可见，则用户的第一次点击会消除浮出控件，但不会激活此按钮。 按下该按钮需要第二次点击。
+通过点击消除时，此手势通常会被吸收，不会传递到下面的 UI。 例如，如果在开放式浮出控件后有一个按钮可见，则用户的第一次点击会消除浮出控件，但不会激活此按钮。 按下该按钮需要第二次点击。
 
 可通过将该按钮指定为浮出控件的输入直通元素来更改此行为。 浮出控件将因上述轻型消除操作而关闭，还会将点击事件传递给它的指定 `OverlayInputPassThroughElement`。 请考虑采用此行为，以加快功能类似项目上的用户交互。 如果你的应用有收藏夹集合并且该集合中的每个项目都包括一个附加的浮出控件，用户可能希望快速连续地与多个浮出控件进行交互。
 
@@ -215,5 +215,5 @@ private void Folder2_Click(object sender, RoutedEventArgs e)
 ## <a name="related-articles"></a>相关文章
 - [工具提示](../tooltips.md)
 - [菜单和上下文菜单](../menus.md)
-- [浮出控件类](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+- [Flyout 类](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 - [ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
