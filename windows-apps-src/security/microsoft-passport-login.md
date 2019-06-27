@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 72b7f168c9f4e812b1cfb459ebea91f61a988122
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 24ae3fb7442ac955b5edf4127dfdf66176c81a43
+ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371307"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67399622"
 ---
 # <a name="create-a-windows-hello-login-app"></a>创建 Windows Hello 登录应用
 
@@ -224,10 +224,14 @@ ms.locfileid: "66371307"
     }
     ```
 
--   你将需要一种帐户处理方法。 对于本动手实验，由于没有服务器或数据库，因此将本地保存和加载用户列表。 右键单击 Utils 文件夹，然后添加名为“AccountHelper.cs”的新类。 将类定义更改为公共静态。 AccountHelper 为静态类，其中包含本地保存和加载帐户列表的所有必需方法。 使用 XmlSerializer 即可进行保存和加载。 你还需要记住保存的文件及其保存位置。 需要其他命名空间以供引用。
+-   你将需要一种帐户处理方法。 对于本动手实验，由于没有服务器或数据库，因此将本地保存和加载用户列表。 右键单击 Utils 文件夹，然后添加名为“AccountHelper.cs”的新类。 将类定义更改为公共静态。 AccountHelper 为静态类，其中包含本地保存和加载帐户列表的所有必需方法。 使用 XmlSerializer 即可进行保存和加载。 你还需要记住保存的文件及其保存位置。
     
     ```cs
+    using System;
+    using System.Collections.Generic;
     using System.IO;
+    using System.Text;
+    using System.Threading.Tasks;
     using System.Xml.Serialization;
     using Windows.Storage;
     using PassportLogin.Models;

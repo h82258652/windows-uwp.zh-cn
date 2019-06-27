@@ -6,12 +6,12 @@ ms.date: 07/06/2018
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: 08f163fb660ad158694f925467711e4d62bf8217
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4eaff7142c3c14f04b780b93a7e98e1447f068d8
+ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371450"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67399609"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>在计时器上运行后台任务
 
@@ -33,7 +33,7 @@ ms.locfileid: "66371450"
 
 > [!NOTE]
 > 如果*FreshnessTime*设置为少于 15 分钟，尝试注册后台任务时引发异常。
- 
+
 例如，此触发器将使后台任务一次为每小时运行。
 
 ```cs
