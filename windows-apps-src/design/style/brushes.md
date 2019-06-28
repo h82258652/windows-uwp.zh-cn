@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e5f8dfc780b50e70f92fc388a04258ce7be11a4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66366843"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>使用画笔绘制背景、前景和轮廓
 
-使用 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 对象绘制 XAML 形状、文本和各控件部分的内部或轮廓，以便所绘制的对象在 UI 中可见。 让我们了解一下可用的画笔以及如何使用画笔。
+使用 [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) 对象绘制 XAML 形状、文本和各控件部分的内部或轮廓，以便所绘制的对象在 UI 中可见  。 让我们了解一下可用的画笔以及如何使用画笔。
 
-> **重要的 API**：[画笔类](/uwp/api/Windows.UI.Xaml.Media.Brush)
+> **重要的 API**：[Brush 类](/uwp/api/Windows.UI.Xaml.Media.Brush)
 
 ## <a name="introduction-to-brushes"></a>画笔简介
 
@@ -37,7 +37,7 @@ ms.locfileid: "66366843"
 
 ### <a name="predefined-color-names"></a>预定义颜色名称
 
-可以使用预定义的颜色名称（如 [**Yellow**](https://docs.microsoft.com/uwp/api/windows.ui.colors.yellow) 或 [**Magenta**](https://docs.microsoft.com/uwp/api/windows.ui.colors.magenta)）。 共有 256 种已命名的颜色。 XAML 解析器会将颜色名称转换为具有正确颜色通道的 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 结构。 基于命名的 256 种颜色*X11*已从级联样式表，级别 3 (CSS3) 规范，因此您可能已经熟悉这一系列的颜色名称命名的颜色，如果您以前使用过 web 开发或设计。
+可以使用预定义的颜色名称（如 [**Yellow**](https://docs.microsoft.com/uwp/api/windows.ui.colors.yellow) 或 [**Magenta**](https://docs.microsoft.com/uwp/api/windows.ui.colors.magenta)）。 共有 256 种已命名的颜色。 XAML 解析器会将颜色名称转换为具有正确颜色通道的 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 结构。 这 256 种已命名的颜色基于级联样式表 3 层 (CSS3) 规范中的 X11 颜色名称，因此，如果你以前有过 Web 开发或设计经验，则可能已经熟悉这个已命名颜色的列表  。
 
 下面是将 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Fill**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.fill) 属性设置为预定义颜色 [**Red**](https://docs.microsoft.com/uwp/api/windows.ui.colors.red) 的示例。
 
@@ -53,9 +53,9 @@ ms.locfileid: "66366843"
 
 ### <a name="hexadecimal-color-values"></a>十六进制颜色值
 
-可以使用十六进制格式字符串来声明精确的 24 位颜色值，其中有 8 位 alpha 通道用于 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)。 从 0 到 F 这一范围中的两个字符定义每个组成部分的值，而且十六进制字符串中各个组成部分的值顺序为：alpha 通道（不透明度）、红色通道、绿色通道和蓝色通道 (**ARGB**)。 例如，十六进制值"\#FFFF0000"定义完全不透明红色 (alpha ="FF"，红色 ="FF"，绿色 ="00"和蓝色 ="00")。
+可以使用十六进制格式字符串来声明精确的 24 位颜色值，其中有 8 位 alpha 通道用于 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)。 从 0 到 F 这一范围中的两个字符定义每个组成部分的值，而且十六进制字符串中各个组成部分的值顺序为：alpha 通道（不透明度）、红色通道、绿色通道和蓝色通道 (**ARGB**)。 例如，十六进制值“\#FFFF0000”定义完全不透明的红色（alpha=“FF”，红色=“FF”，绿色=“00”，蓝色=“00”）。
 
-此 XAML 示例设置[**填充**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.fill)属性[**矩形**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)为十六进制值"\#FFFF0000"，并提供使用已命名的颜色的相同结果[ **Colors.Red**](https://docs.microsoft.com/uwp/api/windows.ui.colors.red)。
+下面的 XAML 示例将 [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [Fill](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.fill) 属性设置为十六进制值“\#FFFF0000”，其结果与使用命名颜色 [Colors.Red](https://docs.microsoft.com/uwp/api/windows.ui.colors.red) 时相同    。
 
 ```xml
 <StackPanel>
@@ -85,7 +85,7 @@ ms.locfileid: "66366843"
 
 渐变停点的 [**Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color) 属性指定渐变停点的颜色。 你可以使用预定义颜色名称或指定十六进制的 **ARGB** 值来设置颜色。
 
-[**GradientStop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop) 的 [**Offset**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.offset) 属性指定每个 **GradientStop** 在渐变轴上的位置。 **Offset** 是 **double** 型参数，范围为 0 到 1。 如果 **Offset** 为 0，则会将 **GradientStop** 放在渐变轴的起点，也就是说靠近 [**StartPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.lineargradientbrush.startpoint) 的位置。 如果 **Offset** 为 1，则会将 **GradientStop** 放在 [**EndPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.lineargradientbrush.endpoint) 处。 有用的 [**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush) 至少应当有两个 **GradientStop** 值，每个 **GradientStop** 都应当指定一个不同的[**Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color)，而且具有一个不同的 **Offset**（范围是从 0 到 1）。
+[  **GradientStop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop) 的 [**Offset**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.offset) 属性指定每个 **GradientStop** 在渐变轴上的位置。 **Offset** 是 **double** 型参数，范围为 0 到 1。 如果 **Offset** 为 0，则会将 **GradientStop** 放在渐变轴的起点，也就是说靠近 [**StartPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.lineargradientbrush.startpoint) 的位置。 如果 **Offset** 为 1，则会将 **GradientStop** 放在 [**EndPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.lineargradientbrush.endpoint) 处。 有用的 [**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush) 至少应当有两个 **GradientStop** 值，每个 **GradientStop** 都应当指定一个不同的[**Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color)，而且具有一个不同的 **Offset**（范围是从 0 到 1）。
 
 下面的示例使用四种颜色创建了一种线性渐变效果，并用它来绘制 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)。
 
@@ -105,9 +105,9 @@ ms.locfileid: "66366843"
 
 渐变停点之间每个点的颜色均以两个边界渐变停点指定的颜色组合呈线性相互融合。 该图突出显示了上述示例中的渐变停点。 圆圈标出了渐变停点的位置，虚线显示的是渐变轴。
 
-![梯度停止点](images/linear-gradients-stops.png)可以更改的梯度停止点位于通过设置的行[ **StartPoint** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.lineargradientbrush.startpoint)并[**终结点**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.lineargradientbrush.endpoint)属性为不同的值比`(0,0)`和`(1,1)`启动默认值。 通过更改 **StartPoint** 和 **EndPoint** 坐标值，可以创建水平或垂直渐变，颠倒渐变方向，或者加快渐变速度以便应用于比整个绘制区域小的范围。 若要加快渐变，必须将 **StartPoint** 和/或 **EndPoint** 的值设置为 0 到 1 之间的值。 例如，如果你需要一个水平渐变，该渐变所有的淡化都发生在画笔的左半部分，画笔的右侧是纯色且与上一个 [**GradientStop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop) 颜色相同，请将 **StartPoint** 指定为 `(0,0)`，将 **EndPoint** 指定为 `(0.5,0)`。
+![渐变停点](images/linear-gradients-stops.png)你可以通过将 [StartPoint](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.lineargradientbrush.startpoint) 和 [EndPoint](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.lineargradientbrush.endpoint) 属性设置为不同于 `(0,0)` 和 `(1,1)` 起始默认值的值，更改渐变停点所在的直线   。 通过更改 **StartPoint** 和 **EndPoint** 坐标值，可以创建水平或垂直渐变，颠倒渐变方向，或者加快渐变速度以便应用于比整个绘制区域小的范围。 若要加快渐变，必须将 **StartPoint** 和/或 **EndPoint** 的值设置为 0 到 1 之间的值。 例如，如果你需要一个水平渐变，该渐变所有的淡化都发生在画笔的左半部分，画笔的右侧是纯色且与上一个 [**GradientStop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop) 颜色相同，请将 **StartPoint** 指定为 `(0,0)`，将 **EndPoint** 指定为 `(0.5,0)`。
 
-### <a name="span-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanuse-tools-to-make-gradients"></a><span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>使用工具来进行渐变
+### <a name="span-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanuse-tools-to-make-gradients"></a><span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>使用工具创建渐变
 
 既然你知道了线性渐变的工作原理，你可以使用 Visual Studio 或 Blend 简化创建这些渐变的工作。 若要创建一个渐变，请在设计图面或 XAML 视图中选择要应用渐变的对象。 展开“笔画”  并选择“线性渐变”  选项卡（请参阅下一张屏幕截图）。
 
@@ -137,7 +137,7 @@ ms.locfileid: "66366843"
 
 ![显示的 ImageBrush。](images/brushes-imagebrush.jpg)
 
-[**ImageBrush** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush)并[**图像**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)都引用图像源文件的统一资源标识符 (URI)，该映像的源文件位置使用几种可能的映像格式。 这些图像源文件指定为 URI。 有关指定图像源、可用的图像格式并将它们打包到一个应用中的详细信息，请参阅[图像和 ImageBrush](https://docs.microsoft.com/windows/uwp/controls-and-patterns/images-imagebrushes)。
+[ImageBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) 和 [Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 均按统一资源标识符 (URI) 引用图像源文件，该图像源文件使用多种可能的图像格式   。 这些图像源文件指定为 URI。 有关指定图像源、可用的图像格式并将它们打包到一个应用中的详细信息，请参阅[图像和 ImageBrush](https://docs.microsoft.com/windows/uwp/controls-and-patterns/images-imagebrushes)。
 
 ## <a name="brushes-and-text"></a>画笔和文本
 
@@ -151,15 +151,15 @@ ms.locfileid: "66366843"
 
 ## <a name="xamlcompositionbrushbase"></a>XamlCompositionBrushBase
 
-[**XamlCompositionBrushBase** ](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)是基类用于创建自定义画笔使用[ **CompositionBrush** ](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionBrush)绘制 XAML UI 元素。
+[XamlCompositionBrushBase](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) 是一个基类，用于创建使用 [CompositionBrush](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionBrush) 绘制 XAML UI 元素的自定义画笔   。
 
-这支持 Windows.UI.Xaml 和 Windows.UI.Composition 层之间的“下拉”互操作，如[**可视化层概述**](/windows/uwp/composition/visual-layer)中所述。 
+这支持 Windows.UI.Xaml 和 Windows.UI.Composition 层之间的“下拉”互操作，如[可视化层概述](/windows/uwp/composition/visual-layer)中所述  。 
 
-若要创建自定义画笔，创建一个继承自 XamlCompositionBrushBase 的新类，并实施所需方法。
+要创建自定义画笔，请创建一个继承自 XamlCompositionBrushBase 的新类，并实现所需方法。
 
-例如，这可以用于使用 [**CompositionEffectBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionEffectBrush) 将[**效果**](/windows/uwp/composition/composition-effects)应用到 XAML UIElement，如在由 [**XamlLight**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamllight) 照明时控制 XAML UIElement 的反射属性的 **GaussianBlurEffect** 或 [**SceneLightingEffect**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect)。
+例如，这可以用于使用 [CompositionEffectBrush](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionEffectBrush) 将[效果](/windows/uwp/composition/composition-effects)应用到 XAML UIElement，如在由 [XamlLight](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamllight) 照明时控制 XAML UIElement 的反射属性的“GaussianBlurEffect”或 [SceneLightingEffect](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect)      。
 
-有关代码示例，请参阅 [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) 的参考页面。
+有关代码示例，请参阅 [XamlCompositionBrushBase](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) 的参考页面  。
 
 ## <a name="brushes-as-xaml-resources"></a>画笔作为 XAML 资源
 
@@ -189,10 +189,10 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 对于 [**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush) 和 [**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush)，请使用默认的构造函数，然后在尝试使用用于 UI 属性的该画笔前调用其他 API。
 
--   [**ImageSource** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesourceproperty)要求[ **BitmapImage** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) (不是一个 URI) 定义时[ **ImageBrush** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush)使用代码。 如果源是一个流，请使用 [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 方法来初始化该值。 如果源是一个 URI（其中包含应用中使用 **ms-appx** 或 **ms-resource** 方案的内容），请使用获取 URI 的 [**BitmapImage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.) 构造函数。 如果在检索或解码图像资源时存在任何计时问题，而你可能在图像资源可用前需要使用替代内容用以显示，则还可以考虑处理 [**ImageOpened**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imageopened) 事件。
+-   使用代码定义 [ImageBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) 时，[ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesourceproperty) 需要 [BitmapImage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage)（而非 URI）    。 如果源是一个流，请使用 [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 方法来初始化该值。 如果源是一个 URI（其中包含应用中使用 **ms-appx** 或 **ms-resource** 方案的内容），请使用获取 URI 的 [**BitmapImage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.) 构造函数。 如果在检索或解码图像资源时存在任何计时问题，而你可能在图像资源可用前需要使用替代内容用以显示，则还可以考虑处理 [**ImageOpened**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imageopened) 事件。
 -   对于 [**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush)，如果你最近已重设 [**SourceName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewbrush.sourcename) 属性或者如果 [**WebView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) 的内容也随代码更改，则可能需要调用 [**Redraw**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewbrush.redraw)。
 
-有关代码示例，请参阅 [**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush)、[**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) 和 [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) 的参考页面。
+有关代码示例，请参阅 [WebViewBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush)、[ImageBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) 和 [XamlCompositionBrushBase](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) 的参考页面    。
  
 
  

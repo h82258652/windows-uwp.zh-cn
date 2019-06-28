@@ -12,17 +12,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9544988837d44f42d963b268a2ce3d37cce83952
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364112"
 ---
 # <a name="xaml-theme-resources"></a>XAML 主题资源
 
-XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪个系统主题处于活动状态。 有 3 个 XAML 框架支持的主题："Light"、"深色"和"高对比度"。
+XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪个系统主题处于活动状态。 XAML 框架支持三种主题：“浅色”、“深色”和“高对比度”。
 
-**先决条件**:本主题假设你已阅读 [ResourceDictionary 和 XAML 资源引用](resourcedictionary-and-xaml-resource-references.md)。
+**先决条件**：本主题假设你已阅读 [ResourceDictionary 和 XAML 资源引用](resourcedictionary-and-xaml-resource-references.md)。
 
 ## <a name="theme-resources-v-static-resources"></a>主题资源与 静态资源
 
@@ -34,21 +34,21 @@ XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪
 
 ## <a name="theme-resources-in-the-resource-dictionary-structure"></a>资源字典结构中的主题资源
 
-每个主题资源都是 XAML 文件 themeresources.xaml 的一部分。 用于设计目的 themeresources.xaml 现已推出\\(Program Files)\\Windows 工具包\\10\\DesignTime\\CommonConfiguration\\非特定于\\UAP\\ &lt;SDK 版本&gt;\\Generic 文件夹从 Windows 软件开发工具包 (SDK) 安装。 themeresources.xaml 中的资源字典还在同一目录中的 generic.xaml 中重现。
+每个主题资源都是 XAML 文件 themeresources.xaml 的一部分。 出于设计目的，themeresources.xaml 在 Windows 软件开发工具包 (SDK) 安装中的 \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK 版本&gt;\\Generic 文件夹中提供。 themeresources.xaml 中的资源字典还在同一目录中的 generic.xaml 中重现。
 
 Windows 运行时不使用这些物理文件进行运行时查找。 这就是它们专门在 DesignTime 文件夹中，并且在默认情况下不复制到应用中的原因。 这些资源字典在内存中作为 Windows 运行时本身的一部分存在，并且你的应用的对主题资源（或系统资源）的 XAML 资源引用将在运行时在该处进行解析。
 
 ## <a name="guidelines-for-custom-theme-resources"></a>自定义主题资源指南
 
-当定义和使用你自己的自定义主题资源时，请遵循以下指南：
+当定义和使用你自己的自定义主题资源时，请遵循这些指南：
 
 - 除“高对比度”字典以外，还需指定“浅色”和“深色”的主题字典。 尽管你可以在将“默认”作为键的情况下创建 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary)，但建议以明确的方式改用“浅色”、“深色”和“高对比度”。
 
-- 使用[{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)中：样式和 Setter，控制模板、 属性 setter 和动画。
+- 在以下位置使用 [{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)：Styles、Setters、Control 模板、Property 资源库和 Animations。
 
 - 请勿在你的 [ThemeDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) 内的资源定义中使用 [{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)。 改用 [{StaticResource} 标记扩展](../../xaml-platform/staticresource-markup-extension.md)。
 
-    异常：可以使用[{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)是不可知的应用主题中的参考资源你[ThemeDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries)。 这些资源的示例是主题色资源（例如 `SystemAccentColor`）或通常带有“SystemColor”前缀的系统颜色资源（例如 `SystemColorButtonFaceColor`）。
+    例外：可以使用 [{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)，以引用对于 [ThemeDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) 中的应用主题不可知的资源。 这些资源的示例是主题色资源（例如 `SystemAccentColor`）或通常带有“SystemColor”前缀的系统颜色资源（例如 `SystemColorButtonFaceColor`）。
 
 > [!CAUTION]
 > 如果不遵循这些指南，可能会出现与应用中的主题相关的意外行为。 有关详细信息，请参阅[主题资源疑难解答](#troubleshooting-theme-resources)部分。
@@ -63,7 +63,7 @@ Windows 运行时不使用这些物理文件进行运行时查找。 这就是�
 
 XAML 框架提供了一个已命名的 [Color](/uwp/api/Windows.UI.Color) 资源集，其中包含的值专为“浅色”和“深色”主题而定制。 用于引用这些内容的键遵循以下命名格式：`System[Simple Light/Dark Name]Color`。
 
-此表列出了密钥、 简单名称和颜色的字符串表示形式 (使用\#aarrggbb 格式) 的 XAML 框架提供的"Light"和"深色"资源。 该键用于引用应用中的资源。 将“简单浅色/深色名称”用作我们后面介绍的画笔命名约定的一部分。
+针对 XAML 框架提供的“浅色”和“深色”资源，此表列出了该颜色的键、简单名称和字符串表示形式（使用 \#aarrggbb 格式）。 该键用于引用应用中的资源。 将“简单浅色/深色名称”用作我们后面介绍的画笔命名约定的一部分。
 
 | 键                             | 简单浅色/深色名称 | 浅色      | 深色       |
 |---------------------------------|------------------------|------------|------------|
@@ -155,10 +155,10 @@ XAML 框架提供了一个已命名的 [Color](/uwp/api/Windows.UI.Color) 资源
 |-------------------------------|--------------------------------|--------------------------|-----------------|
 | SystemColorButtonFaceColor    | **按钮文本**（背景）   | 后台               | \#FFF0F0F0      |
 | SystemColorButtonTextColor    | **按钮文本**（前景）   | Foreground               | \#FF000000      |
-| SystemColorGrayTextColor      | **已禁用的文本**              | Disabled                 | \#FF6D6D6D      |
+| SystemColorGrayTextColor      | **禁用的文本**              | Disabled                 | \#FF6D6D6D      |
 | SystemColorHighlightColor     | **选定文本**（背景） | Highlight                | \#FF3399FF      |
 | SystemColorHighlightTextColor | **选定文本**（前景） | HighlightAlt             | \#FFFFFFFF      |
-| SystemColorHotlightColor      | **超链接**                 | 超链接                | \#FF0066CC      |
+| SystemColorHotlightColor      | **超链接**                 | Hyperlink                | \#FF0066CC      |
 | SystemColorWindowColor        | **背景**                 | PageBackground           | \#FFFFFFFF      |
 | SystemColorWindowTextColor    | **文本**                       | PageText                 | \#FF000000      |
 
@@ -177,7 +177,7 @@ XAML 框架提供了一个已命名的 [Color](/uwp/api/Windows.UI.Color) 资源
 
 ### <a name="theme-dependent-brushes"></a>依赖于主题的画笔
 
-使用前面部分中所示的颜色资源来设置系统主题资源字典中的 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 资源的 [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 属性。 你可以使用画笔资源将颜色应用到 XAML 元素中。 画笔资源的键遵循以下命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如， `SystemControlBackroundAltHighBrush` 。
+使用前面部分中所示的颜色资源来设置系统主题资源字典中的 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 资源的 [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 属性。 你可以使用画笔资源将颜色应用到 XAML 元素中。 画笔资源的键遵循以下命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如， `SystemControlBackroundAltHighBrush`。
 
 让我们看一下如何在运行时确定此画笔的颜色值。 在“浅色”和“深色”资源字典中，定义此画笔，如下所示：
 
@@ -202,7 +202,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 -->
 
 > [!NOTE]
-> 不是每个组合\[*简单的高对比度名称*\]\[*浅/深的简单名称*\]用作画笔资源。
+> 并非\[简单的高对比度名称\]\[简单的浅色/深色名称\]的每个组合都作为画笔资源提供   。
 
 ## <a name="the-xaml-type-ramp"></a>XAML 类型渐变
 
@@ -228,7 +228,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ### <a name="basetextblockstyle"></a>BaseTextBlockStyle
 
-**TargetType**:[TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+**TargetType**：[TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
 为所有其他 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 容器样式提供常用属性。
 
@@ -338,7 +338,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ### <a name="baserichtextblockstyle"></a>BaseRichTextBlockStyle
 
-**TargetType**:[RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)
+**TargetType**：[RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)
 
 为所有其他 [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 容器样式提供常用属性。
 
@@ -375,7 +375,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </Style>
 ```
 
-**注意**：  [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)样式不具有的所有文本负载增加样式[TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)存在，主要是因为基于块的文档对象模型有关**RichTextBlock**使得更轻松地在单个文本元素上设置属性。 同样，使用 XAML 内容属性设置 [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 将出现以下情况：没有要设置样式的文本元素，因此你必须设置容器样式。 对于 **RichTextBlock**，这不是问题，因为其文本内容始终位于特定的文本元素（例如 [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph)）中，你可能在该元素中为页面标头、页面子标头和类似文本渐变定义应用 XAML 样式。
+**注意**：  [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 样式不具有 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 包含的所有文本渐变样式，主要原因是适用于“RichTextBlock”的基于块的文档对象模型使对个别文本元素设置属性更为简单  。 同样，使用 XAML 内容属性设置 [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 将出现以下情况：没有要设置样式的文本元素，因此你必须设置容器样式。 对于"RichTextBlock"，这不是问题，因为其文本内容始终位于特定的文本元素（例如 [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph)）中，你可能会在该元素中为页面标头、页面子标头和类似文本渐变定义应用 XAML 样式  。
 
 ## <a name="miscellaneous-named-styles"></a>其他命名样式
 
@@ -383,13 +383,13 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ### <a name="textblockbuttonstyle"></a>TextBlockButtonStyle
 
-**TargetType**:[ButtonBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)
+**TargetType**：[ButtonBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)
 
-当你需要显示用户可以点击以进行操作的文本时，请将此样式应用到 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。 使用当前主题色设置该文本的样式以在交互时进行区分，并且该文本具有非常适用于文本的焦点矩形。 与 [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 的隐式样式不同，**TextBlockButtonStyle** 不会为文本添加下划线。
+当你需要显示用户可以点击以进行操作的文本时，请将此样式应用到 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。 使用当前主题色设置该文本的样式以在交互时进行区分，并且该文本具有非常适用于文本的焦点矩形。 与 [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 的隐式样式不同，“TextBlockButtonStyle”不会为文本添加下划线  。
 
 该模板还设置显示文本的样式以使用 **SystemControlHyperlinkBaseMediumBrush**（适用于“PointerOver”状态）、**SystemControlHighlightBaseMediumLowBrush**（适用于“Pressed”状态）和 **SystemControlDisabledBaseLowBrush**（适用于“Disabled”状态）。
 
-下面介绍向其应用了 **TextBlockButtonStyle** 资源的 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。
+下面介绍向其应用了“TextBlockButtonStyle”资源的 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)  。
 
 ```XAML
 <Button Content="Clickable text" Style="{StaticResource TextBlockButtonStyle}"
@@ -402,11 +402,11 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ### <a name="navigationbackbuttonnormalstyle"></a>NavigationBackButtonNormalStyle
 
-**TargetType**:[Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
+**TargetType**：[Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
 
-此 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 提供的适用于 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的完整模板可能是适用于导航应用的导航后退按钮。 默认尺寸是 40 x 40 像素。 若要定制样式，你可以明确设置 [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height)、[Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、[FontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontsize) 和 **Button** 上的其他属性，也可以使用 [BasedOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.basedon) 创建一个派生的样式。
+此 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 提供的适用于 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的完整模板可能是适用于导航应用的导航后退按钮。 默认尺寸是 40 x 40 像素。 要定制样式，可明确设置 [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height)、[Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、[FontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontsize) 和“Button”上的其他属性，也可以使用 [BasedOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.basedon) 创建一个派生的样式  。
 
-下面介绍向其应用了 **NavigationBackButtonNormalStyle** 资源的 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。
+下面介绍向其应用了“NavigationBackButtonNormalStyle”资源的 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)  。
 
 ```XAML
 <Button Style="{StaticResource NavigationBackButtonNormalStyle}" />
@@ -418,11 +418,11 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ### <a name="navigationbackbuttonsmallstyle"></a>NavigationBackButtonSmallStyle
 
-**TargetType**:[按钮](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
+**TargetType**：[Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
 
-此 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 提供的适用于 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的完整模板可能是适用于导航应用的导航后退按钮。 它与 **NavigationBackButtonNormalStyle** 类似，但尺寸为 30 x 30 像素。
+此 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 提供的适用于 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的完整模板可能是适用于导航应用的导航后退按钮。 它与“NavigationBackButtonNormalStyle”类似，但尺寸为 30 x 30 像素  。
 
-下面是一个应用了 **NavigationBackButtonSmallStyle** 资源的 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。
+下面是一个应用了“NavigationBackButtonSmallStyle”资源的 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)  。
 
 ```XAML
 <Button Style="{StaticResource NavigationBackButtonSmallStyle}" />

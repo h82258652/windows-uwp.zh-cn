@@ -1,5 +1,5 @@
 ---
-Description: 使用 ListView 和 GridView 控件来显示和处理的数据，例如映像的库或一组电子邮件消息集。
+Description: 使用 ListView 和 GridView 控件显示和操控数据组，例如图像库或一组电子邮件。
 title: 列表视图和网格视图
 label: List view and grid view
 template: detail.hbs
@@ -13,17 +13,17 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1664da65beed21dededb481aadd56f793af20f01
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364678"
 ---
 # <a name="list-view-and-grid-view"></a>列表视图和网格视图
 
 大多数应用都会操纵和显示数据集，例如图像库或一组电子邮件。 XAML UI 框架提供了轻松显示和操控应用数据的 ListView 和 GridView 控件。  
 
-> **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)， [GridView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)， [ItemsSource 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)，[项属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items)
+> **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)、[GridView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)、[ItemsSource 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)、[Items 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items)
 
 ListView 和 GridView 都从 ListViewBase 类派生，因此它们的功能相同，但数据显示方法不同。 在本文中，当谈论 ListView 时，信息都适用于 ListView 和 GridView 控件，除非另行指定。 我们可能会引用 ListView 或 ListViewItem 等类，但“List”前缀可使用相应网格等效项（GridView 或 GridViewItem）的“Grid”代替。 
 
@@ -61,7 +61,7 @@ GridView 显示可在行和列中垂直滚动的项目集合。 数据水平堆�
 
 **重要提示**&nbsp;&nbsp;可以使用 Items 或 ItemsSource 填充列表，但无法同时使用这两者。 如果你设置 ItemsSource 属性并使用 XAML 添加项目，将忽略添加的项目。 如果 ItemsSource 属性已设置且使用代码向项集合中添加项，则会引发异常。
 
-> **注意**&nbsp;&nbsp;为方便起见，本文中的许多示例直接填充了 **Items** 集合。 但是，列表中的项目来自于动态源的情况更常见，例如书籍列表来自于在线数据库。 出于此目的，你使用 **ItemsSource** 属性。 
+> **注意**&nbsp;&nbsp;为方便起见，本文中的许多示例直接填充了“Items”集合  。 但是，列表中的项目来自于动态源的情况更常见，例如书籍列表来自于在线数据库。 出于此目的，你使用 **ItemsSource** 属性。 
 
 ### <a name="add-items-to-the-items-collection"></a>将项添加到项集合
 
@@ -203,11 +203,11 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 ## <a name="change-the-layout-of-items"></a>更改项目的布局
 
 当你将项目添加到列表视图或网格视图时，控件会使每个项目在项目容器中自动换行，然后设置所有项目容器的布局。 这些项目容器的布局方式取决于控件的 [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)。  
-- 默认情况下，**ListView** 使用 [ItemsStackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel)，这可以生成垂直列表，如下所示。
+- 默认情况下，“ListView”使用 [ItemsStackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel)，这可以生成垂直列表，如下所示  。
 
 ![简单的列表视图](images/listview-simple.png)
 
-- **GridView** 使用 [ItemsWrapGrid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemswrapgrid)，这会水平添加项目，并且垂直换行和滚动，如下所示。
+- “GridView”使用 [ItemsWrapGrid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemswrapgrid)，这会水平添加项目，并且垂直换行和滚动，如下所示  。
 
 ![简单的网格视图](images/gridview-simple.png)
 
@@ -215,7 +215,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 > 注意&nbsp;&nbsp; 如果更改 ItemsPanel，注意不要禁用虚拟化。 **ItemsStackPanel** 和 **ItemsWrapGrid** 均支持虚拟化，所以可以安全使用它们。 如果你使用任何其他面板，可能会禁用虚拟化，并且降低列表视图的性能。 有关详细信息，请参阅[性能](https://docs.microsoft.com/windows/uwp/debug-test-perf/performance-and-xaml-ui)下的列表视图文章。 
 
-此示例显示如何通过更改 **ItemsStackPanel** 的 [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel.orientation) 属性来使 **ListView** 在水平列表中设置项目容器的布局。
+此示例显示如何通过更改“ItemsStackPanel”的 [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel.orientation) 属性来使“ListView”在水平列表中设置项目容器的布局   。
 因为默认情况下列表视图垂直滚动，所以你还需要在列表视图的内部 [ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) 上调整某些属性以使其可以水平滚动。
 - [ScrollViewer.HorizontalScrollMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode) 设置为 **Enabled** 或 **Auto**
 - [ScrollViewer.HorizontalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility) 设置为 **Auto** 
@@ -250,7 +250,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
  在下一个示例中，通过使用 **ItemsWrapGrid** 而非 **ItemsStackPanel**，**ListView** 在垂直换行列表中设置项目的布局。 
  
-> **注意**&nbsp;&nbsp;列表视图的高度必须受限，以强制控件使容器换行。
+> **注意**&nbsp;&nbsp;列表视图的高度必须受限，以强制控件打包容器。
 
 **XAML**
 ```xaml
@@ -290,13 +290,13 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 若要启用此交互： | 使用这些设置： | 处理此事件： | 使用此属性以获取选定的项目：
 ----------------------------|---------------------|--------------------|--------------------------------------------
-无交互 | [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) = **None**、[IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) = **False** | 不可用 | 不可用 
+无交互 | [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) = **None**、[IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) = **False** | N/A | N/A 
 单选 | SelectionMode = **Single**、IsItemClickEnabled = **False** | [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem)、[SelectedIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex)  
 多选 | SelectionMode = **Multiple**、IsItemClickEnabled = **False** | [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)  
 扩展选择 | SelectionMode = **Extended**、IsItemClickEnabled = **False** | [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)  
-单击 | SelectionMode = **None**、IsItemClickEnabled = **True** | [ItemClick](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.itemclick) | 不可用 
+单击 | SelectionMode = **None**、IsItemClickEnabled = **True** | [ItemClick](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.itemclick) | N/A 
 
-> **注意**&nbsp;&nbsp;从 Windows 10 开始，你可以启用 IsItemClickEnabled 以引发 ItemClick 事件，同时 SelectionMode 也设置为 Single、Multiple 或 Extended。 如果你执行此操作，将先后引发 ItemClick 事件和 SelectionChanged 事件。 在某些情况下（例如在 ItemClick 事件处理程序中导航到其他页面），不会引发 SelectionChanged 事件，并且不会选择该项目。
+> **注意**&nbsp;&nbsp;从 Windows 10 开始，可启用 IsItemClickEnabled 来引发 ItemClick 事件，同时 SelectionMode 也可设置为 Single、Multiple 或 Extended。 如果你执行此操作，将先后引发 ItemClick 事件和 SelectionChanged 事件。 在某些情况下（例如在 ItemClick 事件处理程序中导航到其他页面），不会引发 SelectionChanged 事件，并且不会选择该项目。
 
 可以采用 XAML 或代码设置这些属性，如下所示。
 
@@ -328,7 +328,7 @@ myGridView.IsItemClickEnabled = true;
 无 | <li>用户可以使用空格键、鼠标单击或触摸点击来选择单个项。</li>
 Ctrl | <li>用户可以使用空格键、鼠标单击或触摸点击来取消选择单个项。</li><li>通过使用箭头键，用户可以独立于选择来移动焦点。</li>
 
-当 SelectionMode 设置为 **Single** 时，可以从 [SelectedItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) 属性获取选定的数据项。 你可以使用 [SelectedIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex) 属性获取选定项目集合中的索引。 如果没有选择任何项目，则 SelectedItem 为 **null**，并且 SelectedIndex 为 -1。 
+当 SelectionMode 设置为“Single”时，可以从 [SelectedItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) 属性获取选定的数据项  。 你可以使用 [SelectedIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex) 属性获取选定项目集合中的索引。 如果没有选择任何项目，则 SelectedItem 为 **null**，并且 SelectedIndex 为 -1。 
  
 如果你尝试设置像 **SelectedItem** 那样不在 **Items** 集合中的项目，则该操作将被忽略，并且 SelectedItem 为 **null**。 但是，如果你尝试在列表中将 **SelectedIndex** 设置为超出 **Items** 范围的索引，将会发生 **System.ArgumentException** 异常。 
 
@@ -351,7 +351,7 @@ Shift | <li>用户可以通过先后单击或点击选择中的第一个和最�
 Ctrl | <li>用户可以使用空格键、鼠标单击或触摸点击来选择多个项目，以在聚焦项目上切换选择。</li><li>通过使用箭头键，用户可以独立于选择来移动焦点。</li>
 Shift | <li>用户可以通过先后单击或点击选择中的第一个和最后一个项目来选择多个连续项目。</li><li>通过使用箭头键，用户可以创建从在按下 Shift 时选择的项目开始的连续选择。</li>
 
-当 SelectionMode 设置为 **Multiple** 或 **Extended** 时，可以从 [SelectedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems) 属性获取选定的数据项。 
+当 SelectionMode 设置为“Multiple”或“Extended”时，可以从 [SelectedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems) 属性获取选定的数据项   。 
 
 **SelectedIndex**、**SelectedItem** 和 **SelectedItems** 属性已同步。 例如，如果你将 SelectedIndex 设置为 -1、将 SelectedItem 设置为 **null** 并且将 SelectedItems 设置为空；如果你将 SelectedItem 设置为 **null**、将 SelectedIndex 设置为 -1 并且将 SelectedItems 设置为空。
 
@@ -471,7 +471,7 @@ private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
 
 当使用索引范围选择项目时，请使用 [SelectedRanges](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectedranges) 属性获取列表中的所有选定范围。
 
-如果 ItemsSource 实现了 [IItemsRangeInfo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.iitemsrangeinfo)，并且你使用这些方法修改选择，则 **AddedItems** 和 **RemovedItems** 属性将不会在 SelectionChangedEventArgs 中进行设置。 设置这些属性需要对项目对象执行取消虚拟化操作。 改为使用 **SelectedRanges** 属性获取项目。
+如果 ItemsSource 实现了 [IItemsRangeInfo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.iitemsrangeinfo)，并且你使用这些方法修改选择，则“AddedItems”和“RemovedItems”属性将不会在 SelectionChangedEventArgs 中进行设置   。 设置这些属性需要对项目对象执行取消虚拟化操作。 改为使用 **SelectedRanges** 属性获取项目。
 
 通过调用 SelectAll 方法，可以选择集合中的所有项目。 但是没有相应的方法来取消选择所有项目。 你可以通过以下方法取消选择所有项目：调用 DeselectRange，并传递 [FirstIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.itemindexrange.firstindex) 值为 0 并且 [Length](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.itemindexrange.length) 值等于集合中项目数的 [ItemIndexRange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.itemindexrange)。 
 
@@ -526,5 +526,5 @@ ListView 和 GridView 控件支持在其自身内部以及它们自身与其他 
 ## <a name="related-articles"></a>相关文章
 
 - [列表](lists.md)
-- [项容器和模板](item-containers-templates.md)
+- [项目容器和模板](item-containers-templates.md)
 - [拖放](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
