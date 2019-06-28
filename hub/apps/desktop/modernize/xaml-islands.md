@@ -8,18 +8,18 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 62dc89b9e17f1ae9c2394629100e0bd54606594b
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: e6074202a05c80a9dc759cdf81b2c20c7cc17d07
+ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215126"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414099"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>主机 UWP XAML 控制在桌面应用程序 （XAML 群岛）
 
 从 Windows 10，版本 1903，开始可以托管在非 UWP 桌面应用程序使用名为的功能中的 UWP 控件*XAML 群岛*。 此功能可以增强的外观、 感受和功能的最新的 Windows 10 用户界面功能仅通过 UWP 控件提供的现有桌面应用程序。 这意味着可以使用如 UWP 功能[Windows 墨迹](/windows/uwp/design/input/pen-and-stylus-interactions)和支持的控件[Fluent 设计系统](/windows/uwp/design/fluent-design-system/index)在你现有 WPF 中，Windows 窗体和C++的 Win32 应用程序。
 
-我们提供多种方式来使用 XAML 在 WPF 中，Windows 窗体中的群岛和C++Win32 应用程序，具体取决于技术或正在使用的框架。
+我们提供多种方式来使用 XAML 在 WPF 中，Windows 窗体中的群岛和C++Win32 应用程序，具体取决于技术或正在使用的框架。 
 
 > [!NOTE]
 > 如果您将得到 XAML 群岛反馈，创建中的一个新问题[Microsoft.Toolkit.Win32 存储库](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues)和那里留言。 如果想要私下提交您的反馈，您可以将其发送到XamlIslandsFeedback@microsoft.com。 你的见解和方案是对我们非常重要。
@@ -35,7 +35,7 @@ ms.locfileid: "66215126"
 > [!NOTE]
 > C++Win32 桌面应用程序必须使用托管 API 主机 UWP 控件到 UWP XAML。 Windows 社区工具包中的 XAML 岛控件不可用于C++Win32 桌面应用程序。
 
-有两种类型的 XAML 岛控件提供的 Windows 社区工具包用于 WPF 和 Windows 窗体应用程序：*包装控件*并*主机控件*。
+有两种类型的 XAML 岛控件提供的 Windows 社区工具包用于 WPF 和 Windows 窗体应用程序：*包装控件*并*主机控件*。 
 
 ### <a name="wrapped-controls"></a>已包装的控件
 
@@ -67,14 +67,6 @@ XAML 岛的已包装控件，除了 Windows 社区工具包还提供以下控件
 ![托管控件体系结构](images/xaml-islands/host-controls.png)
 
 此图表底部所示的 API 随 Windows SDK 提供。 已包装的控件和宿主控件均可通过 Windows 社区工具包中的 Nuget 包。
-
-## <a name="feature-roadmap"></a>功能路线图
-
-从发布的 Windows 10，版本 1903，开始包装的控件和 Windows 社区工具包中的主机控件是仍在开发者预览版可用控件的版本 1.0 发行之前。
-
-* 在.NET Framework 4.6.2 的控件的 1.0 版和更高版本计划在中发布[6.0 版本的工具包](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones)。
-* 该工具包的更高版本计划 1.0 版的.NET Core 3 的控件。
-* 如果你想要尝试这些控件的版本 1.0 版本的最新预览版的.NET Framework 和.NET Core 3，请参阅**6.0.0-preview3**中的 NuGet 包[UWP 社区工具包](https://dotnet.myget.org/gallery/uwpcommunitytoolkit)库。
 
 ## <a name="requirements"></a>要求
 
@@ -112,8 +104,19 @@ XAML 群岛需要 Windows 10，版本 1903，及更高版本。 若要在应用�
     </assembly>
     ```
 
+## <a name="feature-roadmap"></a>功能路线图
+
+从发布的 Windows 10，版本 1903，开始包装的控件和 Windows 社区工具包中的主机控件是仍在开发者预览版可用控件的版本 1.0 发行之前。
+
+* 在.NET Framework 4.6.2 的控件的 1.0 版和更高版本计划在中发布[6.0 版本的工具包](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones)。
+* 该工具包的更高版本计划 1.0 版的.NET Core 3 的控件。
+* 如果你想要尝试这些控件的版本 1.0 版本的最新预览版的.NET Framework 和.NET Core 3，请参阅**6.0.0-preview3**中的 NuGet 包[UWP 社区工具包](https://dotnet.myget.org/gallery/uwpcommunitytoolkit)库。
+
+有关更多详细信息，请参阅[这篇博客文章](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap)。
+
 ## <a name="additional-resources"></a>其他资源
 
 有关详细背景信息和有关使用 XAML 岛的教程，请参阅以下文章和资源：
 
-* [XAML 群岛实验室](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/tree/microsoftlearn)。 此综合实验室提供了有关使用 Windows 社区工具包中的已包装的控件和宿主控件，将 UWP 控件添加到现有的 WPF 业务线应用程序的分步说明。 此实验室还包括[WPF 应用程序的完整代码](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/tree/microsoftlearn/Lab)，以及[的详细说明](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/blob/microsoftlearn/Manual/README.md)过程中每个步骤。
+* [实现现代化 WPF 应用程序教程](modernize-wpf-tutorial.md):本教程提供有关使用 Windows 社区工具包中的已包装的控件和宿主控件，将 UWP 控件添加到现有的 WPF 业务线应用程序的分步说明。 本教程过程中包括的 WPF 应用程序的完整代码以及有关每个步骤的详细的说明。
+* [XAML 群岛 v1-更新和路线图](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap):这篇博客文章讨论有关 XAML 群岛的许多常见问题，并提供详细的开发路线图。
