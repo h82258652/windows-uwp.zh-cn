@@ -12,10 +12,10 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b69bc093fb9aae6e35618949bf6eebe8c36c893
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364171"
 ---
 # <a name="text-block"></a>文本块
@@ -24,7 +24,7 @@ ms.locfileid: "66364171"
 
  文本块是应用中用于显示只读文本的主要控件。 你可以使用它来显示单行或多行文本、内联超链接以及粗体、斜体或带下划线格式的文本。
  
- > **重要的 API**：[TextBlock 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)， [Text 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text)， [Inlines 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)
+ > **重要的 API**：[TextBlock 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[Text 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text)、[Inlines 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -70,7 +70,7 @@ textBlock1.Text = "Hello, world!";
 
 ### <a name="content-model"></a>内容模型
 
-有两个属性可用于将内容添加到 TextBlock:[文本](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text)并[Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)。
+可使用两种属性将内容添加到 TextBlock：[Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 和 [Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)。
 
 显示文本的最常用方法是将 Text 属性设置为字符串值，如在之前示例中所示。
 
@@ -88,18 +88,18 @@ textBlock1.Text = "Hello, world!";
 XAML 应尽可能地使用更有效的布局文本的代码路径。 此快速路径既能降低总体内存使用率，又能大幅减少执行文本测量和排列的 CPU 时间。 此快速路径仅适用于 TextBlock，因此应仅在基于 RichTextBlock 时首选它。
 
 某些条件要求 TextBlock 回退到具有更多功能的 CPU 密集型代码路径，以便进行文本呈现。 若要使文本呈现在快速路径上，请确保在设置此处列出的属性时遵循以下指南。
-- [文本](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text):最重要的条件为仅通过将 Text 属性显式设置在 XAML 或代码 （如前面的示例中所示） 中设置文本时使用的快速路径。 由于多种格式的潜在复杂性，通过 TextBlock 的 Inlines 集合（例如 `<TextBlock>Inline text</TextBlock>`）设置文本将禁用快速路径。
-- [CharacterSpacing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.characterspacing):0 的默认值是快速路径。
-- [TextTrimming](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming):仅**无**， **CharacterEllipsis**，并**WordEllipsis**的值为快速路径。 **Clip** 值将禁用快速路径。
+- [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text)：最重要的条件是，快速路径仅在你通过在 XAML 或代码中显式设置 Text 属性来设置文本（如前面的示例所示）时使用。 由于多种格式的潜在复杂性，通过 TextBlock 的 Inlines 集合（例如 `<TextBlock>Inline text</TextBlock>`）设置文本将禁用快速路径。
+- [CharacterSpacing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.characterspacing)：仅默认值 0 是快速路径。
+- [TextTrimming](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming)：仅“None”、“CharacterEllipsis”和“WordEllipsis”值是快速路径    。 **Clip** 值将禁用快速路径。
 
 > **注意**&nbsp;&nbsp;在 Windows 10 版本 1607 之前，其他属性也会影响快速路径。 如果应用在早期版本的 Windows 上运行，这些条件也会导致文本在慢速路径上呈现。 有关版本的详细信息，请参阅版本自适应代码。
-- [版式](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography):仅各种版式属性的默认值是快速路径。
-- [LineStackingStrategy](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy):如果[LineHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight)是不为 0， **BaselineToBaseline**并**MaxHeight**值禁用快速路径。
-- [IsTextSelectionEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled):仅**false**是快速路径。 通过将此属性设置为 **true**，禁用快速路径。
+- [Typography](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)：仅各个 Typography 属性的默认值是快速路径。
+- [LineStackingStrategy](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy)：如果 [LineHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight) 不为 0，“BaselineToBaseline”或“MaxHeight”值将禁用快速路径   。
+- [IsTextSelectionEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled)：仅“false”才是快速路径  。 通过将此属性设置为 **true**，禁用快速路径。
 
 你可以在调试期间将 [DebugSettings.IsTextPerformanceVisualizationEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled) 属性设置为 **true** 来确定文本是否正在使用快速路径呈现。 当此属性设置为 true 时，快速路径上的文本将显示为亮绿色。
 
->**提示**&nbsp;&nbsp;此功能在此会话中所述深度从生成 2015年- [XAML 性能：最大化通用 Windows 应用程序体验的技术使用 XAML 生成](https://channel9.msdn.com/Events/Build/2015/3-698)。
+>**提示**&nbsp;&nbsp;此功能在 Build 2015 的以下会话中进行了深入介绍：[XAML 性能：最大程度提高使用 XAML 构建的通用 Windows 应用体验的技巧](https://channel9.msdn.com/Events/Build/2015/3-698)。
 
 
 
@@ -137,7 +137,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 虽然 Text 属性存储纯文本，但你可以将各种格式设置选项应用到 TextBlock 控件以自定义文本在应用中的呈现方式。 你可以设置标准控件属性（例如 FontFamily、FontSize、FontStyle、Foreground 和 CharacterSpacing）以更改文本外观。 你还可以使用内联文本元素和 Typography 附加属性设置文本格式。 这些选项仅影响 TextBlock 在本地显示文本的方式，所以举例来说，如果你将文本复制并粘贴到 RTF 控件，则不会应用任何格式。
 
->**注意**&nbsp;&nbsp;请记住，如在上一节中所述，内联文本元素和非默认版式值不会呈现在快速路径上。
+>**注意**&nbsp;&nbsp;请记住，正如上一节中所述，内联文本元素和非默认版式值不会呈现在快速路径上。
 
 
 ### <a name="inline-elements"></a>内联元素
@@ -195,9 +195,9 @@ Windows.UI.Xaml.Documents.Typography.SetStylisticSet4(textBlock1, true);
 ## <a name="related-articles"></a>相关文章
 
 - [文本控件](text-controls.md)
-- [拼写检查的准则](text-controls.md)
+- [拼写检查指南](text-controls.md)
 - [添加搜索](search.md)
-- [文本输入的准则](text-controls.md)
+- [文本输入指南](text-controls.md)
 - [TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [Windows.UI.Xaml.Controls PasswordBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 - [String.Length 属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

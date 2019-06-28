@@ -13,10 +13,10 @@ dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e401e700728e1d481fd2142281fe81524d146f94
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364432"
 ---
 # <a name="scroll-viewer-controls"></a>滚动查看器控件
@@ -25,9 +25,9 @@ ms.locfileid: "66364432"
 
 当 UI 内容超出一个区域的容量时，可以使用滚动查看器控件。
 
-> **重要的 API**：[ScrollViewer 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)，[滚动条类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
+> **重要的 API**：[ScrollViewer 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)、[ScrollBar 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
 
-滚动查看器允许内容延伸到视区（可见区域）边界外。 用户可以通过触摸、鼠标滚轮、键盘或游戏板操作滚动查看器图面或者使用鼠标或笔光标操作滚动查看器滚动条查看此内容。 此图显示了滚动查看器控件的几个示例。
+滚动查看器允许内容延伸到视区（可见区域）边界外。 用户可以通过触摸、鼠标滚轮、键盘或游戏板操作滚动查看器图面，或者使用鼠标或笔光标操作滚动查看器滚动条查看此内容。 此图显示了滚动查看器控件的几个示例。
 
 ![说明标准滚动栏控件的屏幕截图](images/ScrollBar_Standard.jpg)
 
@@ -35,7 +35,7 @@ ms.locfileid: "66364432"
 
 ![标准滚动条和平移指示器控件的外观示例](images/SCROLLBAR.png)
 
-滚动查看器注意用户输入法，并用它来确定以哪种可视化效果显示。
+滚动查看器注意用户输入法，并用它来确定要显示的可视化效果。
 
 * 当通过触摸等方式不直接操作滚动条滚动区域时，平移指示器就会出现，显示当前滚动位置。
 * 将鼠标或笔光标移动到平移指示器上方时，它会变为传统滚动条。  拖动滚动条滑块可操作滚动区域。
@@ -87,7 +87,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 </Page>
 ```
 
-此 XAML 演示如何启用水平滚动，在滚动查看器中将图像，并启用缩放。
+此 XAML 显示如何启用水平滚动，在滚动查看器中放置图像并启用缩放。
 
 ```xaml
 <ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10"

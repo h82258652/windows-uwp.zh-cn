@@ -13,10 +13,10 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 841903f9bc998af5ead2a3486c500487cb070855
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364296"
 ---
 # <a name="sliders"></a>滑块
@@ -25,7 +25,7 @@ ms.locfileid: "66364296"
 
 滑块是一种可让用户通过沿轨迹移动 thumb 控件从一个值范围中进行选择的控件。
 
-> **重要的 API**：[Slider 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)，[的 Value 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value)， [ValueChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
+> **重要的 API**：[Slider 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)、[Value 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value)、[ValueChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ![滑块控件](images/controls/slider.png)
 
@@ -40,11 +40,11 @@ ms.locfileid: "66364296"
 
 下面是决定是否使用滑块时要考虑的一些其他因素：
 
--   **该设置是否起来相对数量？** 如果不是，使用[单选按钮](radio-button.md)或[列表框](lists.md)。
--   **是的设置完全匹配、 已知数值？** 如果是，请使用数值[文本框](text-box.md)。
--   **用户将受益于设置的更改的影响的即时反馈？** 如果是，请使用滑块。 例如，用户可以通过立即查看色调、饱和度或亮度值更改的效果，从而更加轻松地选择颜色。
--   **该设置是否具有四个或多个值的范围？** 如果不是，请使用[单选按钮](radio-button.md)。
--   **用户可以更改值？** 滑块用于用户交互。 如果用户无法更改该值，请改为使用只读文本。
+-   **该设置是否是相对数量？** 如果不是，使用[单选按钮](radio-button.md)或[列表框](lists.md)。
+-   **该设置是否为确切的已知数值？** 如果是，请使用数值[文本框](text-box.md)。
+-   **用户是否会从设置更改效果的即时反馈中获益？** 如果是，请使用滑块。 例如，用户可以通过立即查看色调、饱和度或亮度值更改的效果，从而更加轻松地选择颜色。
+-   **该设置是否包含四个或更多值？** 如果不是，请使用[单选按钮](radio-button.md)。
+-   **用户是否可以更改该值？** 滑块用于用户交互。 如果用户无法更改该值，请改为使用只读文本。
 
 如果你在滑块和数值文本框之间进行选择，请在以下情况下使用数值文本框：
 
@@ -117,7 +117,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 -   调整控件大小，以便用户可以轻松设置所需的值。 对于具有离散值的设置，请确保用户可以使用鼠标轻松选择任何值。 确保滑块的终点始终位于视图边界内。
 -   在用户选择时或选择后，提供即时反馈（如果实际）。 例如，Windows 音量控件会蜂鸣以指示选定的音频音量。
--   使用标签显示值范围。 例外：如果滑块的垂直方向和顶部标签是最大值，较高，更多，或等效的则可以省略其他标签因为含义是清除。
+-   使用标签显示值范围。 例外：如果滑块垂直放置，并且顶部标签为“最大”、“高”、“更多”或同等标签，则可以忽略其他标签，因为它的意思已明确。
 -   在禁用滑块时禁用所有关联标签或反馈视觉对象。
 -   当设置你的滑块的流向和/或方向时，请考虑文本方向。 在某些语言中，书写文字从左向右排列，在另一些语言中却从右向左排列。
 -   不使用滑块作为进度指示器。
@@ -169,7 +169,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
     -   标记滑块范围的两端，除非垂直方向使得不必要这样做。
     -   如果可能，为每个标签仅使用一个词。
     -   不要使用结束标点符号。
-    -   确保这些标签具有描述性且相对应。 示例：大/最小、 更多/更少，低/高、 音量软/高。
+    -   确保这些标签具有描述性且相对应。 示例：最大/最小，更多/更少，高/低、温和/高声。
 -   **值标签**
 
     值标签显示滑块的当前值。

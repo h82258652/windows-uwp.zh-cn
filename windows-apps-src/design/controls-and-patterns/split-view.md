@@ -13,10 +13,10 @@ dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 7381d8d99f47a69ba7398366762a7dbb4088e04a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364179"
 ---
 # <a name="split-view-control"></a>拆分视图控件
@@ -50,7 +50,7 @@ ms.locfileid: "66364179"
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-拆分视图控件可用于创建任何“抽屉”体验，其中用户可以打开和关闭补充窗格。 例如，你可以使用 SplitView 构建[大纲/细节](master-details.md)模式。
+拆分视图控件可用于创建任何“抽屉”体验，其中用户可以打开和关闭补充窗格。 例如，可以使用 SplitView 构建[大纲/细节](master-details.md)模式。
 
 若要生成带有展开/折叠按钮和导航项列表的导航菜单，可使用 [NavigationView](navigationview.md) 控件。
 

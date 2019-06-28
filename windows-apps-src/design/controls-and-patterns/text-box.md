@@ -12,10 +12,10 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2db08cc577a82ddf6973cb33e41f9bdb39fdffde
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364224"
 ---
 # <a name="text-box"></a>文本框
@@ -24,7 +24,7 @@ TextBox 控件可使用户在应用中键入文本。 它通常用于捕获单�
 
 TextBox 具有大量可简化文本输入的功能。 它附带熟悉的内置上下文菜单，并提供对复制和粘贴文本的支持。 “清除所有”按钮使用户可以快速删除所输入的所有文本。 它还内置了拼写检查功能，并且在默认情况下处于启用状态。
 
-> **重要的 API**：[TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)， [Text 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
+> **重要的 API**：[TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[Text 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -47,7 +47,7 @@ TextBox 具有大量可简化文本输入的功能。 它附带熟悉的内置�
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/TextBox">打开此应用，了解 TextBox 的实际应用</a>。</p>
+    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/TextBox">打开应用，了解 TextBox 的实际操作</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
@@ -83,7 +83,7 @@ rootGrid.Children.Add(textBox);
 
 通常使用文本框接受表单上的数据输入，并使用 [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) 属性获取来自文本框的完整文本字符串。 通常使用提交按钮单击之类的事件来访问 Text 属性，但如果你需要在文本发生更改时执行某些操作，可以处理 [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) 或 [TextChanging](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanging) 事件。
 
-此示例演示如何获取和设置文本框中的当前内容。
+此示例显示如何获取和设置文本框的当前内容。
 
 ```xaml
 <TextBox name="SampleTextBox" Text="Sample Text"/>
@@ -111,7 +111,7 @@ SampleTextBox.Text = "Sample text retrieved";
 - **AcceptsReturn** 为 **true**
 - **TextWrap** 具有非 **NoWrap** 的值
 
-此示例演示如何获取和设置文本框中的当前内容。
+此示例显示如何获取和设置文本框的当前内容。
 
 ```xaml
 <TextBox name="SampleTextBox" Text="Sample Text"/>
@@ -138,10 +138,10 @@ IsEnabled
 
 有两个可用于控制文本框是否在多行上显示文本的属性。 通常同时设置这两个属性来创建多行文本框。
 
-- 若要使文本框允许和显示新行或返回字符，请将 [AcceptsReturn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.acceptsreturn) 属性设置为 **true**。
-- 若要启用文本换行，请将 [TextWrapping](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textwrapping) 属性设置为 **Wrap**。 这会导致文本在其到达文本框边缘时独立于行分隔符换行。
+- 若要使文本框允许和显示新行或返回字符，请将 [AcceptsReturn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.acceptsreturn) 属性设置为“true”  。
+- 若要启用文本换行，请将 [TextWrapping](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textwrapping) 属性设置为“Wrap”  。 这会导致文本在其到达文本框边缘时独立于行分隔符换行。
 
-> **注意**&nbsp;&nbsp;TextBox 和 RichEditBox 不支持其 TextWrapping 属性的 **WrapWholeWords** 值。 如果你尝试使用 WrapWholeWords 作为 TextBox.TextWrapping 或 RichEditBox.TextWrapping 的值，将引发无效参数异常。
+> **注意**&nbsp;&nbsp;TextBox 和 RichEditBox 不支持其 TextWrapping 属性的“WrapWholeWords”值  。 如果你尝试使用 WrapWholeWords 作为 TextBox.TextWrapping 或 RichEditBox.TextWrapping 的值，将引发无效参数异常。
 
 在输入文本时多行文本框将持续在垂直方向上增长，除非它受到其 [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) 或 [MaxHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight) 属性或父容器的约束。 你应测试多行文本框是否会增长到其可见区域之外，如果确实如此，则约束其增长。 我们建议你始终为多行文本框指定相应的高度，使其在用户键入时高度不会增长。
 
@@ -207,7 +207,7 @@ rootGrid.Children.Add(textBox);
 
 默认情况下，文本框上下文菜单中显示的命令取决于文本框的状态。 例如，以下命令可以在文本框可编辑时显示。
 
-Command | 在以下情况下显示...
+命令 | 在以下情况下显示...
 ------- | -------------
 复制 | 文本处于选中状态。
 剪切 | 文本处于选中状态。
@@ -314,9 +314,9 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 ## <a name="related-articles"></a>相关文章
 
 - [文本控件](text-controls.md)
-- [拼写检查的准则](text-controls.md)
+- [拼写检查指南](text-controls.md)
 - [添加搜索](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
-- [文本输入的准则](text-controls.md)
+- [文本输入指南](text-controls.md)
 - [TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [PasswordBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 - [String.Length 属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

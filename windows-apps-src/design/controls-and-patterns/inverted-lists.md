@@ -12,10 +12,10 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: c552109b243688c2618425adce797c4d208eac31
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364779"
 ---
 # <a name="inverted-lists"></a>反转列表
@@ -24,11 +24,11 @@ ms.locfileid: "66364779"
 
 在采用外观不同的项表示发送方/接收方的聊天体验中，你可以使用列表视图表示对话。  使用不同的颜色和水平对齐方式将来自发送方/接收方的消息分隔开来有助于用户在对话中快速适应。
 
-> **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)， [ItemsStackPanel 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel)， [ItemsUpdatingScrollMode 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode)
+> **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)、[ItemsStackPanel 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel)、[ItemsUpdatingScrollMode 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode)
  
 你通常需要将列表呈现为看起来从底部向上增长，而不是从顶部向下增长。  当新消息到达并添加到末尾时，之前的消息会向上滑动，以留出空间，从而将用户的注意力吸引到最新到达的内容上。  但是，如果用户向上滚动以查看之前的回复，则新消息的到达不得引起会干扰用户注意力的视觉转移。
 
-![带有反转列表的聊天应用](images/listview-inverted.png)
+![带倒排列表的聊天应用](images/listview-inverted.png)
 
 ## <a name="create-an-inverted-list"></a>创建反转列表
 
@@ -59,4 +59,4 @@ ms.locfileid: "66364779"
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
-- [XAML 自下而上的列表示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBottomUpList)
+- [XAML 自下而上列表示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBottomUpList)

@@ -12,10 +12,10 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e671c61058ec1c048fbb1b547cc79060a7cd0d0a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364335"
 ---
 # <a name="rich-text-block"></a>RTF 块
@@ -24,7 +24,7 @@ ms.locfileid: "66364335"
 
 RTF 块提供了多种适用于高级文本布局的功能，你可以在需要支持段落、内联 UI 元素或复杂文本布局时使用。
 
-> **重要的 API**：[按类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)， [RichTextBlockOverflow 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow)，[段落类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph)，[版式类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)
+> **重要的 API**：[RichTextBlock 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、[RichTextBlockOverflow 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow)、[Paragraph 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph)、[Typography 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -158,14 +158,14 @@ RichTextBlock 支持：
 [文本控件](text-controls.md)
 
 **面向设计人员**
-- [拼写检查的准则](text-controls.md)
+- [拼写检查指南](text-controls.md)
 - [添加搜索](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
-- [文本输入的准则](text-controls.md)
+- [文本输入指南](text-controls.md)
 
 **面向开发人员 (XAML)**
 - [TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [Windows.UI.Xaml.Controls PasswordBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 
 
-**面向开发人员 （其他）**
+**面向开发人员（其他）**
 - [String.Length 属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

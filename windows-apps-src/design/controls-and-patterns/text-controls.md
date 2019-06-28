@@ -12,10 +12,10 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: cdf361bfd993ce93e2c3b9eec4e66cb1417e36f8
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364136"
 ---
 # <a name="text-controls"></a>文本控件
@@ -23,9 +23,9 @@ ms.locfileid: "66364136"
 文本控件由文本输入框、密码框、自动建议框和文本块组成。 XAML 框架提供用于呈现、输入和编辑文本的多个控件，以及一组用于设置文本格式的属性。
 
 - 用于显示只读文本的控件是 [TextBlock](text-block.md) 和 [RichTextBlock](rich-text-block.md)。
-- 文本输入和编辑控件的：[文本框](text-box.md)， [RichEditBox](rich-edit-box.md)， [AutoSuggestBox](auto-suggest-box.md)，并且[PasswordBox](password-box.md)。
+- 用于文本输入和编辑的控件是：[TextBox](text-box.md)、[RichEditBox](rich-edit-box.md)、[AutoSuggestBox](auto-suggest-box.md) 和 [PasswordBox](password-box.md)。
 
-> **重要的 API**：[TextBlock 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)， [RichTextBlock 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)， [TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)， [RichEditBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)， [AutoSuggestBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)，[PasswordBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+> **重要的 API**：[TextBlock class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[RichTextBlock class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、[TextBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[RichEditBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)、[AutoSuggestBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)、[PasswordBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -57,18 +57,18 @@ RichTextBlock 的内容属性是 [Blocks](https://docs.microsoft.com/uwp/api/win
 
 使用 **RichEditBox** 显示和编辑文本文件。 不要像使用其他标准文本输入框那样使用 RichEditBox 在应用中获取用户输入。 而应使用它来处理独立于应用的文本文件。 通常需要将输入到 RichEditBox 的文本保存为 .rtf 文件。
 
-**是文本输入的最佳选项？**
+**文本输入是否是最佳选项？**
 
 有多种在应用中获取用户输入的方法。 这些问题将有助于回答最适合用于获取用户输入的是标准文本输入框之一还是其他控件。
 
--   **是用于有效率地枚举所有有效的值？** 如果是，请考虑使用选择控件之一，例如[复选框](checkbox.md)、[下拉列表](lists.md)、列表框、[单选按钮](radio-button.md)、[滑块](slider.md)、[切换开关](toggles.md)、[日期选取器](date-and-time.md)或时间选取器。
--   **有一相当小的有效的值吗？** 如果是，请考虑使用[下拉列表](lists.md)或列表框，在值的长度超过几个字符的情况下尤其如此。
--   **是有效的数据完全不受约束？或者有效的数据仅受格式 （受约束的长度或字符类型）？** 如果是，请使用文本输入控件。 你可以限制可输入的字符数，并且可以在应用代码中验证格式。
--   **值是否表示具有专用的公共控件的数据类型？** 如果是，请使用相应的控件，而不要使用文本输入控件。 例如，使用 [DatePicker](https://docs.microsoft.com/previous-versions/windows/apps/br211681(v=win.10))（而非文本输入控件）接受日期输入。
+-   **高效枚举所有有效值是否可行？** 如果是，请考虑使用选择控件之一，例如[复选框](checkbox.md)、[下拉列表](lists.md)、列表框、[单选按钮](radio-button.md)、[滑块](slider.md)、[切换开关](toggles.md)、[日期选取器](date-and-time.md)或时间选取器。
+-   **有效值集是否非常小？** 如果是，请考虑使用[下拉列表](lists.md)或列表框，在值的长度超过几个字符的情况下尤其如此。
+-   **有效数据是否完全不受限制？或者有效数据是否仅受格式限制（长度或字符类型受限制）？** 如果是，请使用文本输入控件。 你可以限制可输入的字符数，并且可以在应用代码中验证格式。
+-   **该值是否表示具有常见专用控件的数据类型？** 如果是，请使用相应的控件，而不要使用文本输入控件。 例如，使用 [DatePicker](https://docs.microsoft.com/previous-versions/windows/apps/br211681(v=win.10))（而非文本输入控件）接受日期输入。
 -   如果数据完全为数值：
-    -   **被输入的值被近似和/或相对于另一个数量相同的页面上？** 如果是，请使用[滑块](slider.md)。
-    -   **用户将受益于设置的更改的影响的即时反馈？** 如果是，请使用[滑块](slider.md)（可能带有随附控件）。
-    -   **被输入的值可能会观察到，此类与卷或屏幕亮度后调整？** 如果是，请使用[滑块](slider.md)。
+    -   **输入的值是否为近似值，并且/或者与同一页面的另一个数量相关？** 如果是，请使用[滑块](slider.md)。
+    -   **用户是否会从设置更改效果的即时反馈中获益？** 如果是，请使用[滑块](slider.md)（可能带有随附控件）。
+    -   **输入的值是否很可能在观察结果后得到调整（例如，调节音量或屏幕亮度）？** 如果是，请使用[滑块](slider.md)。
 
 ## <a name="examples"></a>示例
 
@@ -113,21 +113,21 @@ RichTextBlock 的内容属性是 [Blocks](https://docs.microsoft.com/uwp/api/win
 有关字体指南，请参阅以下文章：
 
 - [版式指南](../style/typography.md)
-- [Segoe MDL2 图标列表和指导原则](../style/segoe-ui-symbol-font.md)
+- [Segoe MDL2 图标列表和指南](../style/segoe-ui-symbol-font.md)
 
 ## <a name="pen-input"></a>笔输入
 
-**适用于：** 文本框中，RichEditBox，AutoSuggestBox
+**适用对象：** TextBox、RichEditBox、AutoSuggestBox
 
-从 Windows 10 版本 1803 开始，XAML 文本输入框默认支持使用 [Windows Ink](../input/pen-and-stylus-interactions.md) 进行笔输入。 当用户使用 Windows 手写笔点击进入文本输入框时，文本框会进行转换，以允许用户直接用手写笔进行写入，而不是打开一个单独的输入面板。
+从 Windows 10 版本 1803 开始，XAML 文本输入框默认支持使用 [Windows Ink](../input/pen-and-stylus-interactions.md) 进行笔输入。 当用户使用 Windows 笔点击进入文本输入框时，文本框会进行转换，以允许用户直接用笔进行写入，而不是打开一个单独的输入面板。
 
-![用手写笔点击时，文本框会扩展](images/handwritingview/handwritingview2.gif)
+![用笔点击时，文本框会展开](images/handwritingview/handwritingview2.gif)
 
-有关详细信息，请参阅[文本输入手写视图](text-handwriting-view.md)。
+有关详细信息，请参阅[带手写视图的文本输入](text-handwriting-view.md)。
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>为文本控件选择正确的键盘
 
-**适用于：** 文本框中，PasswordBox RichEditBox
+**适用对象：** TextBox、PasswordBox、RichEditBox
 
 若要帮助用户使用触摸键盘或软输入面板 (SIP) 输入数据，你可以将文本控件的输入范围设置为与期望用户输入的数据类型匹配。
 
@@ -137,14 +137,14 @@ RichTextBlock 的内容属性是 [Blocks](https://docs.microsoft.com/uwp/api/win
 
 例如，如果文本框中仅用于输入一个 4 位数的 PIN，请将 [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 属性设置为 **Number**。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
 
->重要提示  
+>重要  
 >输入范围不会导致任何输入验证的执行，并且不会阻止用户通过硬件键盘或其他输入设备提供任何输入。 你仍然负责按需在代码中验证输入。
 
 有关详细信息，请参阅[使用输入范围更改触摸键盘](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard)。
 
 ## <a name="color-fonts"></a>颜色字体
 
-**适用于：** TextBlock，RichTextBlock，文本框中 RichEditBox
+**适用对象：** TextBlock、RichTextBlock、TextBox、RichEditBox
 
 Windows 具有使字体为每个字形包含多个颜色层的功能。 例如，Segoe UI Emoji 字体定义表情和其他表情符号字符的颜色版本。
 
@@ -162,7 +162,7 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 
 ## <a name="guidelines-for-line-and-paragraph-separators"></a>行和段落分隔符指南
 
-**适用于：** TextBlock，RichTextBlock，多行文本框中 RichEditBox
+**适用对象：** TextBlock、RichTextBlock、multi-line TextBox、RichEditBox
 
 使用行分隔符 (0x2028) 和段分隔符 (0x2029) 划分纯文本。 在每个行分隔符后开始新行。 在每个段分隔符后开始新段落。
 
@@ -174,7 +174,7 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 
 ## <a name="guidelines-for-spell-checking"></a>拼写检查指南
 
-**适用于：** 文本框中 RichEditBox
+**适用对象：** TextBox、RichEditBox
 
 在文本输入和编辑过程中，拼写检查通过使用红色波形曲线突出显示拼写错误的字词来通知用户，并提供一种供用户纠正拼写错误的方法。
 
@@ -184,11 +184,11 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 
 对文本输入控件使用拼写检查可用于以下两个目的：
 
--   **为自动更正拼写错误**
+-   **自动更正拼写错误**
 
     拼写检查引擎会在有绝对把握的情况下自动更正拼错的词。 例如，该引擎会自动将“teh”更改为“the”。
 
--   **若要显示替换拼写**
+-   **显示备选拼写**
 
     当拼写检查引擎对于更正不确信时，它会在拼错的字词下面显示一条红线，并在你点击或右键单击该字词时在上下文菜单中显示备选词。
 
@@ -202,7 +202,7 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 
 **面向设计人员**
 - [版式指南](../style/typography.md)
-- [Segoe MDL2 图标列表和指导原则](../style/segoe-ui-symbol-font.md)
+- [Segoe MDL2 图标列表和指南](../style/segoe-ui-symbol-font.md)
 - [添加搜索](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
 
 **面向开发人员 (XAML)**

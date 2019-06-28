@@ -13,10 +13,10 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: a574ff858f8eab3fa1984ecd883a786fa0e0f19c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364723"
 ---
 # <a name="lists"></a>列表
@@ -30,14 +30,14 @@ ms.locfileid: "66364723"
 
 已为每种列表模式提供了设计指南、功能和示例。
 
-> **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)， [GridView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)， [ComboBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+> **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)、[ComboBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 
 > <div id="main">
-> <strong>Windows 10 Fall Creators Update 的行为更改</strong>
+> <strong>Windows 10 Fall Creators Update - 行为更改</strong>
 > </div>
 > 默认情况下，主动笔现在可在 UWP 应用中滚动/平移列表，而不是进行选择（与触摸、触摸板和被动笔一样）。
-> 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 有关详细信息，请参阅 API 参考主题<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 类</a>。
+> 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 类</a>的 API 参考主题。
 
 ## <a name="list-views"></a>列表视图
 
@@ -80,23 +80,23 @@ ms.locfileid: "66364723"
 <td align="left"><p>了解在应用中使用列表视图或网格视图的基本知识。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="item-containers-templates.md">项容器和模板</a></p></td>
+<td align="left"><p><a href="item-containers-templates.md">项目容器和模板</a></p></td>
 <td align="left"><p>你在列表或网格中显示的项目可能在应用的整体外观中扮演重要的角色。 修改控件模板和数据模板以定义项目的外观，并使应用外观精美。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="item-templates-listview.md">列表视图中的项模板</a></p></td>
+<td align="left"><p><a href="item-templates-listview.md">列表视图项模板</a></p></td>
 <td align="left"><p>使用这些 ListView 的示例项模板可获得常见应用类型的外观。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="inverted-lists.md">倒排的列表</a></p></td>
+<td align="left"><p><a href="inverted-lists.md">倒排列表</a></p></td>
 <td align="left"><p>反转列表在底部添加新项目，例如在聊天应用中。 遵循本指南在应用中使用反转列表。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="pull-to-refresh.md">Pull-to-refresh</a></p></td>
+<td align="left"><p><a href="pull-to-refresh.md">下拉刷新</a></p></td>
 <td align="left"><p>下拉刷新模式允许用户使用触摸来下拉数据列表，以便检索更多数据。 使用本指南在列表视图中实现下拉刷新。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="nested-ui.md">嵌套的 UI</a></p></td>
+<td align="left"><p><a href="nested-ui.md">嵌套 UI</a></p></td>
 <td align="left"><p>嵌套 UI 是公开包含在容器内的可操作控件的用户界面，并且用户同样可以对该容器执行操作。 例如，你可能有包含一个按钮的列表视图项，并且用户可以选择该列表项，或按嵌套在其中的按钮。 按照这些最佳做法为用户提供最佳的嵌套 UI 体验。</p></td>
 </tr>
 </tbody>
@@ -147,15 +147,15 @@ ms.locfileid: "66364723"
 <td align="left"><p>了解在应用中使用列表视图或网格视图的基本知识。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="item-containers-templates.md">项容器和模板</a></p></td>
+<td align="left"><p><a href="item-containers-templates.md">项目容器和模板</a></p></td>
 <td align="left"><p>你在列表或网格中显示的项目可能在应用的整体外观中扮演重要的角色。 修改控件模板和数据模板以定义项目的外观，并使应用外观精美。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="item-templates-gridview.md">网格视图的项模板</a></p></td>
+<td align="left"><p><a href="item-templates-gridview.md">网格视图项模板</a></p></td>
 <td align="left"><p>使用这些 GridView 的示例项模板可获得常见应用类型的外观。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="nested-ui.md">嵌套的 UI</a></p></td>
+<td align="left"><p><a href="nested-ui.md">嵌套 UI</a></p></td>
 <td align="left"><p>嵌套 UI 是公开包含在容器内的可操作控件的用户界面，并且用户同样可以对该容器执行操作。 例如，你可能有包含一个按钮的列表视图项，并且用户可以选择该列表项，或按嵌套在其中的按钮。 按照这些最佳做法为用户提供最佳的嵌套 UI 体验。</p></td>
 </tr>
 </tbody>
@@ -229,9 +229,9 @@ ms.locfileid: "66364723"
 
 有以下三种选择模式：
 
--   单个：用户可以选择一次只有一个项。
--   多个：用户可以选择多个项，而无需使用一个修饰符。
--   扩展：用户可以选择使用修饰符，如按下 SHIFT 键的多个项。
+-   Single：用户一次只能选择一个项目。
+-   Multiple：用户无需使用修改器即可选择多个项目。
+-   Extended：用户可以使用修改器选择多个项目，例如长按 Shift。
 
 在项目上点击任意位置即可将其选中。 点击命令栏操作会影响所有选定项。 如果没有选择任何项目，命令栏操作应处于非活动状态，除了“全选”。
 

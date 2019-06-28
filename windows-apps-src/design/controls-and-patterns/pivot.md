@@ -1,5 +1,5 @@
 ---
-Description: Pivot 控件启用触摸轻扫一小部分的内容部分之间。
+Description: Pivot 控件可在一小组内容部分之间进行触控滑动。
 title: Pivot
 template: detail.hbs
 ms.date: 06/19/2018
@@ -11,17 +11,17 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 232da8afeccf5d82f65b51ae0a40905b3433d412
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364534"
 ---
 # <a name="pivot"></a>Pivot
 
-[Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)控件使触摸轻扫一小部分的内容部分之间。
+[Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) 控件可在一小组内容部分之间进行触控滑动。
 
-> **重要的 API**：[透视类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)， [NavigationView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
+> **重要的 API**：[Pivot 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)、[NavigationView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
 ## <a name="examples"></a>示例
 
@@ -30,7 +30,7 @@ ms.locfileid: "66364534"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果有<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序安装，请单击此处<a href="xamlcontrolsgallery:/item/Pivot">打开应用并查看操作中的 Pivot 控件</a>。</p>
+    <p>如果已安装 XAML 控件库应用，请单击此处<a href="xamlcontrolsgallery:/item/Pivot">打开此应用，了解 Pivot 控件的实际应用</a><strong style="font-weight: semi-bold"></strong>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
@@ -39,26 +39,26 @@ ms.locfileid: "66364534"
 </tr>
 </table>
 
-Pivot 控件，就像[NavigationView](navigationview.md)，用下划线标出所选的项。
+与 [NavigationView](navigationview.md) 一样，Pivot 控件强调所选项。
 
 ![默认焦点为选择的标题添加下划线](images/pivot_focus_selectedHeader.png)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-若要实现常见的顶部导航栏和选项卡模式，我们建议使用[NavigationView](navigationview.md)，自动适应不同屏幕大小和允许进行更高版本的自定义。
+要实现常见的顶部导航和标签模式，建议使用 [NavigationView](navigationview.md)，它会自动适应不同的屏幕尺寸，并允许更高版本的自定义。
 
-但是，如果您的导航需要触摸轻扫，我们建议使用透视。
+但如果导航需要触控滑动，则最好使用 Pivot。
 
-NavigationView 和 Pivot 控件之间的其他主要区别是默认溢出行为和导航 API:
+NavigationView 和 Pivot 控件之间的其他主要区别是默认溢出行为和导航 API：
 
-- 透视转盘溢出项，而 NavigationView 使用菜单下拉列表中溢出，以便用户可以看到所有项。
-- Pivot 处理内容的部分，而 NavigationView 允许更灵活地控制导航行为之间进行导航。
+- Pivot 轮转溢出项目，而 NavigationView 使用菜单下拉溢出，以便用户可以查看所有项目。
+- Pivot 处理内容部分之间的导航，而 NavigationView 支持对导航行为的更多控制。
 
-## <a name="use-navigationview-instead-of-pivot"></a>使用而不是 Pivot 的 NavigationView
+## <a name="use-navigationview-instead-of-pivot"></a>使用 NavigationView 而不是 Pivot
 
-如果应用程序的 UI 使用 Pivot 控件，然后您可以将转换透视为 NavigationView 下面的代码。
+如果应用的 UI 使用 Pivot 控件，则可使用以下代码将 Pivot 转换为 NavigationView。
 
-此 XAML 创建包含 3 个部分的内容，如示例透视 NavigationView 中[创建一个 pivot 控件](#create-a-pivot-control)。
+此 XAML 创建包含 3 个部分内容的 NavigationView，如[创建 Pivot 控件](#create-a-pivot-control)中的示例 Pivot。
 
 ```xaml
 <NavigationView x:Name="rootNavigationView" Header="Category Title"
@@ -83,7 +83,7 @@ NavigationView 和 Pivot 控件之间的其他主要区别是默认溢出行为�
 </Page>
 ```
 
-NavigationView 可提供更好地控制导航自定义，并且需要相应的代码隐藏。 若要提供补充上述 XAML，使用以下代码隐藏：
+NavigationView 提供了对导航定制的更多控制，并且需要相应的代码隐藏。 若要为上述 XAML 提供补充，请使用以下代码隐藏：
 
 ```csharp
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -112,11 +112,11 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 }
 ```
 
-此代码会模拟透视控件的内置导航体验，减去内容部分的触摸轻扫体验。 但是，正如您所看到的则您可能还用自定义多个点，包括动画的转换、 导航参数和堆栈功能。
+此代码模拟 Pivot 控件的内置导航体验，消除了内容部分之间的触控滑动体验。 但是，正如你所看到的，还可自定义多个点，包括动态转换、导航参数和堆叠功能。
 
 ## <a name="create-a-pivot-control"></a>创建透视表控件
 
-此代码将创建 3 个部分的内容与基本透视控件。
+此代码使用 3 个部分的内容创建基本 Pivot 控件。
 
 ```xaml
 <Pivot x:Name="rootPivot" Title="Category Title">
@@ -145,7 +145,7 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 
 你可以使用 [LeftHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.leftheader) 和 [RightHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.rightheader) 属性将其他控件添加到透视表标题。
 
-例如，你可以在透视表的 RightHeader 中添加 [CommandBar](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/app-bars)。
+例如，可在透视表的 RightHeader 中添加 [CommandBar](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/app-bars)。
 
 ```xaml
 <Pivot>
@@ -172,18 +172,18 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 
 该控件有以下两种模式：
 
-**保持静止**
+**固定不动**
 
 - 当所有透视表标题都适合所允许的空间时，透视表将固定不动。
 - 点击某个透视表标签即可导航到相应的页面，即使透视表无法自行移动也是如此。 活动透视表将突出显示。
 
-**轮播**
+**旋转**
 
 - 当所有透视表标题不适合所允许的空间时，可旋转透视表。
 - 点击某个透视表标签即可导航到相应的页面，并且活动透视表标签将旋转至第一个位置。
 - 从最后一个到第一个透视表部分的旋转循环中的透视表项目。
 
-> **注意**透视表标题不应在 [10 英尺环境](../devices/designing-for-tv.md)中旋转。 如果你的应用将在 Xbox 上运行，请将 [IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) 属性设置为 **false**。
+> **注意** 透视表标题不应在 [10 英尺环境](../devices/designing-for-tv.md)中旋转。 如果你的应用将在 Xbox 上运行，请将 [IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) 属性设置为“false”  。
 
 ## <a name="recommendations"></a>建议
 
@@ -195,5 +195,5 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 
 ## <a name="related-topics"></a>相关主题
 
-- [透视类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)
+- [Pivot 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)
 - [导航设计基础知识](../basics/navigation-basics.md)

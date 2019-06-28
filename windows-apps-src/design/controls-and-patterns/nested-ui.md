@@ -12,10 +12,10 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: aa672c99dc83e7955c4d4f91b5bc34620c48ed01
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364551"
 ---
 # <a name="nested-ui-in-list-items"></a>列表项中嵌套的 UI
@@ -26,7 +26,7 @@ ms.locfileid: "66364551"
 
 你可以使用嵌套的 UI 来向用户显示附加选项，从而有助于促使用户采取重要的操作。 但是，公开的操作越多，UI 就变得越复杂。 在选择使用此 UI 模式时需要格外谨慎。 本文提供了指南来帮助你针对特定 UI 确定最佳做法。
 
-> **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)， [GridView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)
+> **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)、[GridView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)
 
 在本文中，我们将讨论如何在 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 和 [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) 项目中创建嵌套的 UI。 尽管本部分不讨论其他嵌套的 UI 情形，但是这些概念是可转移的。 在开始之前，你应当熟悉在 UI 中使用 ListView 或 GridView 控件的常规指南，可在[列表](lists.md)以及[列表视图和网格视图](listview-and-gridview.md)文章中找到它。
 
@@ -109,7 +109,7 @@ ms.locfileid: "66364551"
 
 ![嵌套的 UI 部分](images/nested-ui-navigation.png)
 
-**Gamepad**
+**手柄**
 
 当输入来自游戏板时，提供此用户体验：
 
@@ -167,7 +167,7 @@ ms.locfileid: "66364551"
 
 当列表项不执行操作时，建议使用本指南处理使用游戏板或键盘进行的导航。
 
-**Gamepad**
+**手柄**
 
 当输入来自游戏板时，提供此用户体验：
 
