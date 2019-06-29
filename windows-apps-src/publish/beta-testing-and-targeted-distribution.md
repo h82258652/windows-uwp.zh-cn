@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10，uwp, beta 测试版本, 有限分发, beta 版本, 测试, 测试人员
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c0a4d1053c35a831458c832131659b9cb888259
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 6cf7fb20129c0b616fcdb537ff8e612aec9b94a4
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787173"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468918"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>Beta 测试和目标分发
 
@@ -65,12 +65,12 @@ ms.locfileid: "63787173"
 与上述选项不同，此选项适用于 Windows Phone 8.1 以及 Windows 10 客户（而不适用于 Windows 8.x 客户）。 任何客户都不能通过在 Microsoft Store 中搜索或浏览找到该应用，但如果有 Microsoft Store 一览的直接链接，任何人都可以在运行 Windows Phone 8.1 或更早版本的设备或在 Windows 10 设备上下载它。 请记住，为了让测试人员免费下载应用，必须将其价格设置为**免费**。
 
 要使用此选项，请执行以下操作：
-- 在**定价和可用性**页面的**可见性**部分中，选择[可发现性](choose-visibility-options.md#discoverability)下方的**使此产品在 Microsoft Store 中可用，但不可被发现**。 选择的选项**仅直接链接：任何具有直接链接到该产品的列表的客户可以上进行下载，除 Windows 8.x。**。
+- 在**定价和可用性**页面的**可见性**部分中，选择[可发现性](choose-visibility-options.md#discoverability)下方的**使此产品在 Microsoft Store 中可用，但不可被发现**。 选择的选项**仅直接链接：任何具有直接链接到该产品的列表的客户可以上进行下载，除 Windows 8.x。** 。
 - 在发布产品后，将链接（[应用标识页面](view-app-identity-details.md)上的 **URL**）分发给测试人员，以便他们进行试用。
 - 当你准备好向公众提供应用时，请创建一个新提交并将**可见性**选项更改为**使此产品在 Microsoft Store 中可用，并使其可被发现**（你也可以更改其他需要改动的内容）。
 
 > [!IMPORTANT]
-> 自 2018 年 10 月 31 日起，新创建的产品不能包含包面向 Windows Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+> 自 2018 年 10 月 31 日起，新创建的产品不能包含包面向 Windows Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
 
 ## <a name="targeted-distribution-to-windows-phone-customers-with-specified-email-addresses"></a>向具有指定电子邮件地址的 Windows Phone 客户定向分发
 

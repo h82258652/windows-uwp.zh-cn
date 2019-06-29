@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bf71e5f6dd77da025a50866d32caca2870d3525b
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: cfab93064cf2fa2edd91798167a2c2fbc368ecb1
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788427"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468901"
 ---
 # <a name="package-version-numbering"></a>程序包版本编号
 
@@ -64,7 +64,7 @@ Windows 10，您可以编写一个基本代码，在任何位置运行。 这使
 ## <a name="version-numbering-for-windows81-and-earlier-and-windows-phone-81-packages"></a>版本编号为 Windows 8.1 （及更早版本） 和 Windows Phone 8.1 包
 
 > [!IMPORTANT]
-> 自 2018 年 10 月 31 日起，新创建的产品不能包括面向 Windows 8.x/Windows 包 Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+> 自 2018 年 10 月 31 日起，新创建的产品不能包括面向 Windows 8.x/Windows 包 Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
 
 对于面向 Windows Phone 8.1 的 .appx 程序包，新提交中的程序包版本号必须始终大于上一提交（或之前任意提交）中所含的程序包版本号。
 

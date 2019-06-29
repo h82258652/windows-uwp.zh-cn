@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: df7c1bbbc77374b8afb4272e1d9618c8294a4b6e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1df93195578c1e7c6fd87ab7403375a1a3dcc825
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591852"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468911"
 ---
 # <a name="resolve-submission-errors"></a>解决提交错误
 
@@ -30,9 +30,9 @@ ms.locfileid: "57591852"
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x 及更早版本
 
 > [!IMPORTANT]
-> 自 2018 年 10 月 31 日起，新创建的产品不能包含包面向 Windows Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+> 自 2018 年 10 月 31 日起，新创建的产品不能包含包面向 Windows Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
 
-在预处理过程中检测到 Windows Phone 程序包的问题时，你可能会看到**错误 2001**。 在大多数情况下，需要重新生成你的应用包来更正错误。 完成后，请在提交的[程序包](upload-app-packages.md)页面上将旧程序包替换为新程序包，然后再单击“提交到应用商店”。
+在预处理过程中检测到 Windows Phone 程序包的问题时，你可能会看到**错误 2001**。 在大多数情况下，需要重新生成你的应用包来更正错误。 完成后，请在提交的[程序包](upload-app-packages.md)页面上将旧程序包替换为新程序包，然后再单击“提交到应用商店”  。
 
 有多种错误可能会导致此错误。 查看下面的列表来确定哪一种情形可能适用于你的程序包。
 
@@ -49,7 +49,7 @@ ms.locfileid: "57591852"
 如果您看到的错误指出**包中找到的名称不是保留应用程序名称的一个。请保留应用名称和/或使用此语言的正确的应用程序名称更新你的包**，则可能是因为已在包中输入不正确的名称。 如果您在合作伙伴中心将尚未保留应用程序名称，也可以发生此错误。 通常，你可以遵循以下步骤来解决此错误：
 
 - 转到应用[应用标识](view-app-identity-details.md)页（在**应用管理**下），确认应用是否分配了标识。 如果没有，将看到创建一个标识的选项。 需要保留一个应用名称才能创建该标识。 请确保这是已在程序包中使用过的名称。
-- 如果应用已经具有标识，可能仍然需要保留要在程序包中使用的名称。 在**应用管理**下，单击[管理应用名称](manage-app-names.md)。 输入你想要使用的名称，然后单击“保留应用名称”。
+- 如果应用已经具有标识，可能仍然需要保留要在程序包中使用的名称。 在**应用管理**下，单击[管理应用名称](manage-app-names.md)。 输入你想要使用的名称，然后单击“保留应用名称”  。
 
 > [!IMPORTANT]
 >  如果想要使用的名称不可用，可能是其他应用已经保留了该名称。 如果应用已经使用该名称发布，或者如果认为你有权使用它，请[联系支持人员](https://go.microsoft.com/fwlink/p/?LinkId=331509)。  

@@ -6,19 +6,19 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10、 uwp、 包、 上传、 包上传
 ms.localizationpriority: medium
-ms.openlocfilehash: 07643b42a4c897c3af1865b895fb174e0eee4a3e
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 97735a8e860f7c941cc35d77a21496696683640f
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787937"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468881"
 ---
 # <a name="upload-app-packages"></a>上传应用包
 
 **包**页是在其中你将上载的所有提交的应用包文件 （.msix、.msixupload、.msixbundle、.appx、.appxupload，和/或.appxbundle）。 可以上传你在此页上，在同一应用的所有包和应用商店客户下载您的应用程序时，将自动提供与最适合于其设备的包的每个客户。 上传程序包后，将看到一个表格，指示将以排名顺序[向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包](#device-family-availability)。
 
 > [!IMPORTANT]
-> 自 2018 年 10 月 31 日起，新创建的产品不能包括面向 Windows 8.x/Windows 包 Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+> 自 2018 年 10 月 31 日起，新创建的产品不能包括面向 Windows 8.x/Windows 包 Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
 
 有关程序包所包含的内容以及应如何构建程序包的详细信息，请参阅[应用包要求](app-package-requirements.md)。 您还需要了解[如何版本号的影响的程序包传递到特定客户](package-version-numbering.md)并[如何管理包针对各种方案](guidance-for-app-package-management.md)。
 
@@ -37,16 +37,16 @@ ms.locfileid: "63787937"
 
 ## <a name="device-family-availability"></a>设备系列可用性
 
-在已成功上传程序包后，“设备系列可用性”部分将显示一个表格，指示将以排名顺序向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包。 本部分还允许选择是否向特定 Windows 10 设备系列上的客户提供提交。
+在已成功上传程序包后，“设备系列可用性”  部分将显示一个表格，指示将以排名顺序向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包。 本部分还允许选择是否向特定 Windows 10 设备系列上的客户提供提交。
 
 有关详细信息，请参阅[设备系列可用性](device-family-availability.md)。
 
 
 ## <a name="package-details"></a>程序包详细信息
 
-按目标操作系统进行分组，列出已上传的包。 将显示程序包的名称、版本和体系结构。 有关详细信息（例如每个程序包的支持语言、应用功能和文件大小），请单击“显示详细信息”。
+按目标操作系统进行分组，列出已上传的包。 将显示程序包的名称、版本和体系结构。 有关详细信息（例如每个程序包的支持语言、应用功能和文件大小），请单击“显示详细信息”  。
 
-如果你需要将某个程序包从提交中删除，请单击每个程序包的“详细信息”部分底部的“删除”链接。
+如果你需要将某个程序包从提交中删除，请单击每个程序包的“详细信息”  部分底部的“删除”  链接。
 
 
 ## <a name="removing-redundant-packages"></a>删除冗余程序包
@@ -58,14 +58,14 @@ ms.locfileid: "63787937"
 
 ## <a name="gradual-package-rollout"></a>逐步部署程序包
 
-如果提交是以前发布的应用的更新，你将看到一个复选框，指示“在此提交发布后，逐渐（仅向 Windows 10 客户）推出更新”。 这样一来，你就可以选择将从提交获取程序包的客户比例，以便你可以监视反馈和分析数据，从而确保在更广泛地推出更新前对此更新无虑。 你可以随时增加比例（或停止更新），而无需创建新的提交。 
+如果提交是以前发布的应用的更新，你将看到一个复选框，指示“在此提交发布后，逐渐（仅向 Windows 10 客户）推出更新”  。 这样一来，你就可以选择将从提交获取程序包的客户比例，以便你可以监视反馈和分析数据，从而确保在更广泛地推出更新前对此更新无虑。 你可以随时增加比例（或停止更新），而无需创建新的提交。 
 
 有关详细信息，请参阅[逐步推出程序包](gradual-package-rollout.md)。
 
 
 ## <a name="mandatory-update"></a>强制更新
 
-如果提交是以前发布的应用的更新，你将看到一个复选框，指示“强制此更新”。 这允许你为强制更新设置日期和时间，假定你已使用 Windows.Services.Store API，以允许应用采用编程方式检查程序包更新并下载和安装更新的程序包。 要使用此选项，应用必须面向 Windows 10 版本 1607 或更高版本。
+如果提交是以前发布的应用的更新，你将看到一个复选框，指示“强制此更新”  。 这允许你为强制更新设置日期和时间，假定你已使用 Windows.Services.Store API，以允许应用采用编程方式检查程序包更新并下载和安装更新的程序包。 要使用此选项，应用必须面向 Windows 10 版本 1607 或更高版本。
 
 有关详细信息，请参阅[为你的应用下载并安装程序包更新](../packaging/self-install-package-updates.md)。
 

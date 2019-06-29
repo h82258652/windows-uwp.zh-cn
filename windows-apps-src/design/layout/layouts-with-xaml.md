@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 749466e8ebce798f68295df28ad9f11a15e46702
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 69facfe9b1cdac408fe1fd63dfa144de072dfdfd
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365014"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468979"
 ---
 # <a name="responsive-layouts-with-xaml"></a>采用 XAML 的响应式布局
 
@@ -22,7 +22,7 @@ XAML 布局系统为你提供了自动大小调整、布局面板、视觉状态
 
 XAML 布局系统支持静态布局和动态布局。 在静态布局中，你会对控件给定明确的像素大小和位置。 当用户更改其设备的分辨率或方向时，UI 保持不变。 静态布局可对不同的外形规格和显示尺寸进行剪裁。 另一方面，动态布局可缩小、放大和重新排列，从而响应设备上的可用视觉空间。 
 
-实际上，你可以结合使用静态元素和动态元素来创建你的 UI。 你仍可以在一些地方使用静态元素和值，但应确保整体 UI 响应可不同的分辨率、屏幕大小和视图。
+实际上，你可以结合使用静态元素和动态元素来创建你的 UI。 仍在一些地方，使用静态元素和值，但请确保总体 UI 能够响应不同的分辨率、 屏幕大小和视图。
 
 在此处，我们将讨论如何使用 XAML 属性和布局面板创建动态布局。
 
