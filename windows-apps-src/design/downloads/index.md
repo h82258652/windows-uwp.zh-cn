@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 20980562f73bca2087d4c0a6ee049c848404d6a6
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5fababa6903880c4c4aa70d93d36e49fd4ea89b5
+ms.sourcegitcommit: f4b64245cf784793b431f2c9d8bded6f321e7788
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319416"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67412109"
 ---
 ![设计基础知识](../images/downloads-2x.png)
 
@@ -29,7 +29,7 @@ ms.locfileid: "67319416"
     :::column:::
 ![主图](images/figma.png)
 <b>Figma 工具包</b><br>
-v1810，2018 年 10 月<br>
+v1905，2019 年 5 月<br>
 <a href="https://aka.ms/figmatoolkit">下载</a>
     :::column-end:::
     :::column:::

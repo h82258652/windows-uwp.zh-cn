@@ -43,6 +43,20 @@
               href: apps/desktop/modernize/desktop-to-uwp-extend.md
             - name: 分发打包的应用
               href: apps/desktop/modernize/desktop-to-uwp-distribute.md
+        - name: 教程：实现 WPF 应用现代化
+          items:
+            - name: 概述
+              href: apps/desktop/modernize/modernize-wpf-tutorial.md
+            - name: 将 Contoso Expenses 应用迁移到 .NET Core 3
+              href: apps/desktop/modernize/modernize-wpf-tutorial-1.md
+            - name: 使用 XAML Islands 添加 UWP InkCanvas 控件
+              href: apps/desktop/modernize/modernize-wpf-tutorial-2.md
+            - name: 使用 XAML Islands 添加 UWP CalendarView 控件
+              href: apps/desktop/modernize/modernize-wpf-tutorial-3.md
+            - name: 添加 Windows 10 用户活动和通知
+              href: apps/desktop/modernize/modernize-wpf-tutorial-4.md
+            - name: 使用 MSIX 打包和部署
+              href: apps/desktop/modernize/modernize-wpf-tutorial-5.md
     - name: Fluent Design 系统
       href: apps/fluent-design-system.md
     - name: 辅助功能

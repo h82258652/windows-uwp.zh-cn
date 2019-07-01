@@ -1,7 +1,7 @@
 ---
 author: mijacobs
 layout: LandingPage
-description: 借助通用 Windows 平台 (UWP)，可以生成适用于任何 Windows 设备（电脑、手机、Xbox One、HoloLens 以及其他设备）的应用，然后将这些应用发布到 Store。
+description: 借助通用 Windows 平台 (UWP)，可以生成适用于任何 Windows 设备（电脑、Xbox One、HoloLens 等等）的应用，然后将这些应用发布到 Store。
 title: UWP 文档 - UWP 应用开发人员 | Microsoft Docs
 ms.topic: landing-page
 ms.author: mijacobs
@@ -9,12 +9,12 @@ ms.date: 08/04/2017
 keywords: windows uwp, 通用 Windows 平台, Windows 运行时 API, windows api, windows api 参考, winrt api, uwp api, uwp api 参考, 开发 uwp, 设计 uwp, 发布 uwp
 ms.localizationpriority: medium
 ms.technology: uwp-conceptual-docs
-ms.openlocfilehash: 7b89ef27fb83ff12fc2d65e622975ca5dd4f1510
-ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
+ms.openlocfilehash: 06a06ca78532a26dd45480e451d9541efe38c496
+ms.sourcegitcommit: e0471306399e11200252361fa36cc8e6a2add31f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131916"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67409974"
 ---
 # <a name="universal-windows-platform-documentation"></a>通用 Windows 平台文档
 
