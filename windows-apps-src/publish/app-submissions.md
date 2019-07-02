@@ -6,12 +6,12 @@ keywords: 清单, Windows, uwp, 提交, 游戏, 应用
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fe5d44823821208a2384aec9d66037c4da3865f
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 7c535b77c68f4375f70fe344165f96d66a551eaf
+ms.sourcegitcommit: d8ce1a25ac0373acafb394837eb5c0737f6efec8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468933"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486424"
 ---
 # <a name="app-submissions"></a>应用提交
 
@@ -96,10 +96,8 @@ ms.locfileid: "67468933"
 | **屏幕截图**               | 必需（至少一张屏幕截图；建议提供四张或更多）          | [屏幕截图](app-screenshots-and-images.md#screenshots)          |
 | **应用商店徽标**               | 建议；对于某些操作系统版本为必需 | [应用商店徽标](app-screenshots-and-images.md#store-logos)             |
 | **尾部**                  | 可选                                    | [尾部](app-screenshots-and-images.md#trailers)                | 
-| **Windows 10 和 Xbox 映像 （16:9 超级英雄画面）**     | 推荐        | [Windows 10 和 Xbox 映像 （16:9 超级英雄画面）
-](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
-| **Xbox 映像**     | 如果将发布到 Xbox 所需的正确显示        | [Xbox 映像
-](app-screenshots-and-images.md#xbox-images) |
+| **Windows 10 和 Xbox 映像 （16:9 超级英雄画面）**     | 推荐        | [Windows 10 和 Xbox 映像 （16:9 超级英雄画面）](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+| **Xbox 映像**     | 如果将发布到 Xbox 所需的正确显示        | [Xbox 映像](app-screenshots-and-images.md#xbox-images) |
 | **补充字段**  | 可选                                    | [补充字段](create-app-store-listings.md#supplemental-fields) 
 | **搜索词**              | 可选                                    | [搜索词](create-app-store-listings.md#search-terms)         |
 | **版权和商标信息** | 可选                                 | [版权和商标信息](create-app-store-listings.md#copyright-and-trademark-info) |
@@ -114,7 +112,7 @@ ms.locfileid: "67468933"
 | 字段名称                    | 说明                                       | 有关详细信息                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **发布保留选项**     | Default：发布此提交，只要它通过了认证 （或每个日期中所选的计划部分）      | [发布保留选项](manage-submission-options.md#publishing-hold-options)    
-| **证书的说明**     | 建议          | [证书的说明](notes-for-certification.md)             |
+| **证书的说明**     | 推荐          | [证书的说明](notes-for-certification.md)             |
 | **受限制的功能**     | 所需产品声明任何[受限制的功能](../packaging/app-capability-declarations.md#restricted-capabilities)    | [受限制的功能](manage-submission-options.md#publishing-hold-options)       
 
 <span/>

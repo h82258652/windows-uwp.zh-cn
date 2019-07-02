@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: f653ebe874bfa4d4ad8bb608acf9495f02191de7
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 8bba51627445c553c67b2c02bd66d65486f9caf6
+ms.sourcegitcommit: 68051d2adcf3facc036c9f4c76d82bb4d342a75f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320628"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67498911"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>具有 Windows Hello 配套 (IoT) 设备的 Windows 解锁
 
 Windows Hello 配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 通过使用 Windows Hello 配套设备框架，即使是在生物识别不可用时（例如，在 Windows 10 桌面版缺少相机进行面部身份验证或缺少指纹读取器设备时），配套设备也能提供丰富的 Windows Hello 体验。
 
-> **请注意**Microsoft 将会在将来弃用 Windows Hello 配套设备框架和将发布日期提前为确保客户拥有足够的提前部署的替代解决方案。
+> **请注意**Microsoft 将弃用 Windows Hello 配套设备中的框架 2020 年上半年的 API。
 
 > **注意** Windows Hello 配套设备框架是不向所有应用开发人员提供的特定功能。 若要使用此框架，应用必须由 Microsoft 专门设置，并且在它的清单中列出受限制的 *secondaryAuthenticationFactor* 功能。 若要获得批准，请联系 [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com)。
 

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 开发者帐户, 个人, 公司, 业务, windows 10, uwp, developer account, individual, company, business
 ms.localizationpriority: medium
-ms.openlocfilehash: 7556ca526ecfa28b1d97346501ec1875f938ca35
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
+ms.openlocfilehash: 92f657386c3a5d1ca6815b9b0a9e56b4d6f2578b
+ms.sourcegitcommit: 35a511c2b29ae3d5008612a5fc13d3eb6370d2d0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66826214"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67495744"
 ---
 # <a name="account-types-locations-and-fees"></a>帐户类型、位置和费用
 
@@ -58,198 +58,196 @@ Windows 程序中[合作伙伴中心](https://partner.microsoft.com/dashboard)�
 
 **PayPal** 列说明了是否支持[付款帐户](setting-up-your-payout-account-and-tax-forms.md)使用 PayPal 作为付款方式（以及使用该付款方式支付开发者帐户注册费，除非另有说明）。
 
-| 国家/地区                    | 个人注册费用 | 公司注册费用 | 付款           | PayPal |
-|-----------------------------------|---------------------|------------------|------------------|--------|
-| 阿富汗                       | 19 USD              | 99 USD           | USD 支付到银行 | 否     |
-| 阿尔巴尼亚                           | 19 USD              | 99 USD           | USD 支付到银行 | 否     |
-| 阿尔及利亚                           | 1535 DZD            | 7000 DZD         | USD 支付到银行 | 否     |  
-| 安道尔                           | 14 EUR              | 75 EUR           | 未付款        | 否     |  
-| 安哥拉                            | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 安提瓜和巴布达               | 19 USD              | 99 USD           | XCD 支付到银行 | 否     |  
-| 阿根廷                         | 106 ARS             | 420 ARS          | USD 支付到银行 | 否     |  
-| 亚美尼亚                           | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 澳大利亚                         | 21 AUD              | 110 AUD          | AUD 支付到银行 | 是    |  
-| 奥地利                           | 14 EUR              | 75 EUR           | EUR 支付到银行 | 是    |  
-| 阿塞拜疆                        | 19 USD              | 99 USD           | AZN 支付到银行 | 否     |  
-| 巴哈马                       | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 巴林                           | 7 BHD               | 38 BHD           | BHD 支付到银行 | 否     |  
-| 孟加拉国                        | 1468 BDT            | 7600 BDT         | BDT 支付到银行 | 否     |  
-| 巴巴多斯                          | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 白俄罗斯                           | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 比利时                           | 14 EUR              | 75 EUR           | EUR 支付到银行 | 是    |  
-| 伯利兹                            | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 贝宁                             | 19 USD              | 99 USD           | XOF 支付到银行 | 否     |  
-| 不丹                            | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 玻利维亚                           | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 波斯尼亚和黑塞哥维那            | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 博茨瓦纳                          | 19 USD              | 99 USD           | BWP 支付到银行 | 否     |  
-| 巴西                            | 46 BRL              | 160 BRL          | USD 支付到银行 | 否     |  
-| 文莱                            | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 保加利亚                          | 28 BGN              | 160 BGN          | BGN 支付到银行 | 否     |  
-| 布基纳法索                      | 19 USD              | 99 USD           | XOF 支付到银行 | 否     |  
-| 布隆迪                           | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 佛得角                        | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 柬埔寨                          | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 喀麦隆                          | 19 USD              | 99 USD           | XAF 支付到银行 | 否     |  
-| 加拿大                            | 20 CAD              | 99 CAD           | CAD 支付到银行 | 是    |  
-| 中非共和国          | 19 USD              | 99 USD           | XAF 支付到银行 | 否     |  
-| 乍得                              | 19 USD              | 99 USD           | XAF 支付到银行 | 否     |  
-| 智利                             | 9776 CLP            | 46,000 CLP        | USD 支付到银行 | 否     |  
-| 中国                             | 116 CNY             | 600 CNY          | USD 支付到银行 | 是*   |  
-| 哥伦比亚                          | 36543 COP           | 180,000 COP       | USD 支付到银行 | 否     |  
-| 科摩罗                           | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 刚果                             | 19 USD              | 99 USD           | XAF 支付到银行 | 否     |  
-| 刚果（民主共和国）                       | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 哥斯达黎加                        | 9578 CRC            | 49725 CRC        | CRC 支付到银行 | 否     |  
-| 科特迪瓦                     | 19 USD              | 99 USD           | XOF 支付到银行 | 否     |  
-| 克罗地亚                           | 107 HRK             | 500 HRK          | HRK 支付到银行 | 否     |  
-| 塞浦路斯                            | 14 EUR              | 75 EUR           | EUR 支付到银行 | 是    |  
-| 捷克共和国                    | 365 CZK             | 1720 CZK         | CZK 支付到银行 | 是    |  
-| 丹麦                           | 106 DKK             | 530 DKK          | DKK 支付到银行 | 是    |  
-| 吉布提                          | 19 USD              | 99 USD           | 未付款        | 否     | 
-| 多米尼加                          | 19 USD              | 99 USD           | XCD 支付到银行 | 否     | 
-| 多米尼加共和国                | 19 USD              | 99 USD           | DOP 支付到银行 | 否     |  
-| 厄瓜多尔                           | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 埃及                             | 133 EGP             | 600 EGP          | EGP 支付到银行 | 否     |  
-| 萨尔瓦多                       | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 赤道几内亚                 | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 厄立特里亚                           | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 爱沙尼亚                           | 14 EUR              | 75 EUR           | EUR 支付到银行 | 是    |  
-| 埃塞俄比亚                          | 19 USD              | 99 USD           | ETB 支付到银行 | 否     |  
-| 法罗群岛                     | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 斐济                              | 19 USD              | 99 USD           | FJD 支付到银行 | 否     |  
-| 芬兰                           | 14 EUR              | 75 EUR           | EUR 支付到银行 | 是    |  
-| 法国                            | 14 EUR              | 75 EUR           | EUR 支付到银行 | 是    |  
-| 加蓬                             | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 冈比亚                        | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 格鲁吉亚                           | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 德国                           | 14 EUR              | 75 EUR           | EUR 支付到银行 | 是    |  
-| 加纳                             | 19 USD              | 99 USD           | GHS 支付到银行 | 否     |  
-| 希腊                            | 14 EUR              | 75 EUR           | EUR 支付到银行 | 是    |  
-| 格陵兰                         | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 格林纳达                           | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 危地马拉                         | 145 GTQ             | 750 GTQ          | GTQ 支付到银行 | 否     |  
-| 几内亚                            | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 几内亚比绍                     | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 圭亚那                            | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 海地                             | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 洪都拉斯                          | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 香港特别行政区                     | 147 HKD             | 760 HKD          | HKD 支付到银行 | 是    |  
-| 匈牙利                           | 4237 HUF            | 18,800 HUF        | HUF 支付到银行 | 是*   |  
-| 冰岛                           | 2319 ISK            | 11929 ISK        | USD 支付到银行 | 否     | 
-| 印度                             | 1201 INR            | 4,500 INR         | INR 支付到银行 | 否     |  
-| 印度尼西亚                         | 203015 IDR          | 1000000 IDR      | IDR 支付到银行 | 否     | 
-| 伊拉克                              | 22078 IQD           | 120000 IQD       | USD 支付到银行 | 否     |  
-| 爱尔兰                           | 14 EUR              | 75 EUR           | EUR 支付到银行 | 是    |  
-| 以色列                            | 67 ILS              | 350 ILS          | ILS 支付到银行 | 是    |  
-| 意大利                             | 14 EUR              | 75 EUR           | EUR 支付到银行 | 是    |  
-| 牙买加                           | 19 USD              | 99 USD           | JMD 支付到银行 | 否     |  
-| 日本                             | 1847 JPY            | 9,800 JPY         | JPY 支付到银行 | 是    |  
-| 约旦                            | 13 JOD              | 70 JOD           | JOD 支付到银行 | 否     |  
-| 哈萨克斯坦                        | 2897 KZT            | 15038 KZT        | KZT 支付到银行 | 否     |  
-| 肯尼亚                             | 1900 KES            | 9999 KES         | KES 支付到银行 | 否     |  
-| 基里巴斯                          | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 韩国                             | 21216 KRW           | 108,000 KRW       | USD 支付到银行 | 否     |  
-| 科威特                            | 5 KWD               | 28 KWD           | KWD 支付到银行 | 否     |  
-| 吉尔吉斯坦                        | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 老挝                              | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 拉脱维亚                            | 14 EUR              | 75 EUR           | EUR 支付到银行 | 否     |  
-| 黎巴嫩                           | 28690 LBP           | 149686 LBP       | LBP 支付到银行 | 否     |  
-| 莱索托                           | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 利比里亚                           | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 利比亚                             | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 列支敦士登                     | 17 CHF              | 93 CHF           | CHF 支付到银行 | 是    |  
-| 立陶宛                         | 14 EUR              | 75 EUR           | EUR 支付到银行 | 否     |  
-| 卢森堡                        | 14 EUR              | 75 EUR           | EUR 支付到银行 | 是    |  
-| 澳门特别行政区                         | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 马其顿语(马其顿共和国)                 | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 马达加斯加                        | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 马拉维                            | 19 USD              | 99 USD           | MWK 支付到银行 | 否     |  
-| 马来西亚                          | 62 MYR              | 300 MYR          | USD 支付到银行 | 否     |  
-| 马尔代夫                          | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 马里                              | 19 USD              | 99 USD           | XOF 支付到银行 | 否     |  
-| 马耳他                             | 14 EUR              | 75 EUR           | EUR 支付到银行 | 是    |  
-| 马绍尔群岛                  | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 毛里塔尼亚                        | 5681 MRO            | 30046 MRO        | 未付款        | 否     |  
-| 毛里求斯                         | 19 USD              | 99 USD           | MUR 支付到银行 | 否     |  
-| 墨西哥                            | 247 MXN             | 1140 MXN         | MXN 支付到银行 | 是    |  
-| 密克罗尼西亚                        | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 摩纳哥                            | 14 EUR              | 75 EUR           | EUR 支付到银行 | 否     |  
-| 蒙古                          | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 黑山                        | 14 EUR              | 75 EUR           | EUR 支付到银行 | 否     |  
-| 摩洛哥                           | 158 MAD             | 800 MAD          | MAD 支付到银行 | 否     |  
-| 莫桑比克                        | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 缅甸                           | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 纳米比亚                           | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 瑙鲁                             | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 尼泊尔                             | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 荷兰                       | 14 EUR              | 75 EUR           | EUR 支付到银行 | 是    |  
-| 新西兰                       | 24 NZD              | 140 NZD          | NZD 支付到银行 | 是    |  
-| 尼加拉瓜                         | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 尼日尔                             | 19 USD              | 99 USD           | XOF 支付到银行 | 否     |  
-| 尼日利亚                           | 3700 NGN            | 19500 NGN        | NGN 支付到银行 | 否     |  
-| 挪威                            | 113 NOK             | 580 NOK          | NOK 支付到银行 | 是    |  
-| 阿曼                              | 7 OMR               | 40 OMR           | OMR 支付到银行 | 否     |  
-| 巴基斯坦                          | 1959 PKR            | 9000 PKR         | PKR 支付到银行 | 否     |  
-| 帕劳                             | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 巴拿马                            | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 巴布亚新几内亚                  | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 巴拉圭                          | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 秘鲁                              | 54 PEN              | 280 PEN          | PEN 支付到银行 | 否     |  
-| 菲律宾                       | 832 PHP             | 4400 PHP         | PHP 支付到银行 | 是    |  
-| 波兰                            | 59 PLN              | 280 PLN          | PLN 支付到银行 | 是    |  
-| 葡萄牙                          | 14 EUR              | 75 EUR           | EUR 支付到银行 | 是    |  
-| 卡塔尔                             | 69 QAR              | 360 QAR          | QAR 支付到银行 | 否     |  
-| 罗马尼亚                           | 14 EUR              | 75 EUR           | USD 支付到银行 | 否     |  
-| 俄罗斯                            | 626 RUB             | 3,000 RUB         | RUB 支付到银行 | 是*   |  
-| 卢旺达                            | 19 USD              | 99 USD           | RWF 支付到银行 | 否     |  
-| 圣基茨和尼维斯             | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 圣卢西亚                       | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 圣文森特和格林纳丁斯  | 19 USD              | 99 USD           | XCD 支付到银行 | 否     |  
-| 萨摩亚                             | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 圣马力诺                        | 14 EUR              | 75 EUR           | 未付款        | 否     |  
-| 圣多美和普林西比             | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 沙特阿拉伯                      | 71 SAR              | 380 SAR          | SAR 支付到银行 | 否     |  
-| 塞内加尔                           | 19 USD              | 99 USD           | XOF 支付到银行 | 否     |  
-| 塞尔维亚                            | 1619 RSD            | 7000 RSD         | USD 支付到银行 | 否     |  
-| 塞舌尔                        | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 塞拉利昂                      | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 新加坡                         | 24 SGD              | 120 SGD          | SGD 支付到银行 | 是    |  
-| 斯洛伐克                          | 14 EUR              | 75 EUR           | EUR 支付到银行 | 是    |  
-| 斯洛文尼亚                          | 14 EUR              | 75 EUR           | EUR 支付到银行 | 是    |  
-| 所罗门群岛                   | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 索马里                           | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 南非                      | 193 ZAR             | 700 ZAR          | ZAR 支付到银行 | 否     |  
-| 西班牙                             | 14 EUR              | 75 EUR           | EUR 支付到银行 | 是    |  
-| 斯里兰卡                         | 19 USD              | 99 USD           | LKR 支付到银行 | 否     |  
-| 苏里南                          | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 斯威士兰                         | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 瑞典                            | 123 SEK             | 700 SEK          | SEK 支付到银行 | 是    |  
-| 瑞士                       | 17 CHF              | 90 CHF           | CHF 支付到银行 | 是    |  
-| 中国台湾                            | 568 TWD             | 2,840 TWD         | USD 支付到银行 | 是    |  
-| 塔吉克斯坦                        | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 坦桑尼亚                          | 19 USD              | 99 USD           | TZS 支付到银行 | 否     |  
-| 泰国                          | 601 THB             | 3,000 THB         | THB 支付到银行 | 是    |  
-| 东帝汶                       | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 多哥                              | 19 USD              | 99 USD           | XOF 支付到银行 | 否     |  
-| 汤加                             | 19 USD              | 99 USD           | TOP 支付到银行 | 否     |  
-| 特立尼达和多巴哥               | 122 TTD             | 636 TTD          | TTD 支付到银行 | 否     |  
-| 突尼斯                           | 31 TND              | 140 TND          | TND 支付到银行 | 否     |  
-| 土耳其                            | 37 TRY              | 160 TRY          | TRY 支付到银行 | 否     |  
-| 土库曼斯坦                      | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 图瓦卢                            | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 乌干达                            | 19 USD              | 99 USD           | UGX 支付到银行 | 否     |  
-| 乌克兰                           | 156 UAH             | 800 UAH          | USD 支付到银行 | 否     |  
-| 阿拉伯联合酋长国              | 19 USD              | 99 USD           | EUR 支付到银行 | 是    |  
-| 英国                    | 12 GBP              | 65 GBP           | GBP 支付到银行 | 是    |  
-| 美国                     | 19 USD              | 99 USD           | USD 支付到银行 | 是    |  
-| 乌拉圭                           | 19 USD              | 99 USD           | UYU 支付到银行 | 否     |  
-| 乌兹别克斯坦                        | 19 USD              | 99 USD           | USD 支付到银行 | 否     |  
-| 瓦努阿图                           | 19 USD              | 99 USD           | 未付款        | 否     |  
-| 委内瑞拉                         | 119 VEF             | 420 VEF          | USD 支付到银行 | 否     |  
-| 越南                           | 400425 VND          | 2000000 VND      | VND 支付到银行 | 否     |  
-| 也门                             | 4080 YER            | 21245 YER        | 未付款        | 否     |  
-| 赞比亚                            | 19 USD              | 99 USD           | ZMK 支付到银行 | 否     |  
-| 津巴布韦                          | 19 USD              | 99 USD           | USD 支付到银行 | 否     |
-
-\*  PayPal 可以用作付款方式的这个市场中的付款帐户，但不能用于支付开发人员帐户的注册费。
+| 国家/地区                    | 个人注册费用 | 公司注册费用 |
+|-----------------------------------|---------------------|------------------|
+| 阿富汗                       | 19 USD              | 99 USD           |
+| 阿尔巴尼亚                           | 19 USD              | 99 USD           |
+| 阿尔及利亚                           | 1535 DZD            | 7000 DZD         |  
+| 安道尔                           | 14 EUR              | 75 EUR           |  
+| 安哥拉                            | 19 USD              | 99 USD           |  
+| 安提瓜和巴布达               | 19 USD              | 99 USD           |  
+| 阿根廷                         | 106 ARS             | 420 ARS          |  
+| 亚美尼亚                           | 19 USD              | 99 USD           |  
+| 澳大利亚                         | 21 AUD              | 110 AUD          |  
+| 奥地利                           | 14 EUR              | 75 EUR           |  
+| 阿塞拜疆                        | 19 USD              | 99 USD           |  
+| 巴哈马                       | 19 USD              | 99 USD           |  
+| 巴林                           | 7 BHD               | 38 BHD           |  
+| 孟加拉国                        | 1468 BDT            | 7600 BDT         |  
+| 巴巴多斯                          | 19 USD              | 99 USD           |  
+| 白俄罗斯                           | 19 USD              | 99 USD           |  
+| 比利时                           | 14 EUR              | 75 EUR           |  
+| 伯利兹                            | 19 USD              | 99 USD           |  
+| 贝宁                             | 19 USD              | 99 USD           |  
+| 不丹                            | 19 USD              | 99 USD           |  
+| 玻利维亚                           | 19 USD              | 99 USD           |  
+| 波斯尼亚和黑塞哥维那            | 19 USD              | 99 USD           |  
+| 博茨瓦纳                          | 19 USD              | 99 USD           |  
+| 巴西                            | 46 BRL              | 160 BRL          |  
+| 文莱                            | 19 USD              | 99 USD           |  
+| 保加利亚                          | 28 BGN              | 160 BGN          |  
+| 布基纳法索                      | 19 USD              | 99 USD           |  
+| 布隆迪                           | 19 USD              | 99 USD           |  
+| 佛得角                        | 19 USD              | 99 USD           |  
+| 柬埔寨                          | 19 USD              | 99 USD           |  
+| 喀麦隆                          | 19 USD              | 99 USD           |  
+| 加拿大                            | 20 CAD              | 99 CAD           |  
+| 中非共和国          | 19 USD              | 99 USD           |  
+| 乍得                              | 19 USD              | 99 USD           |  
+| 智利                             | 9776 CLP            | 46,000 CLP        |  
+| 中国                             | 116 CNY             | 600 CNY          |  
+| 哥伦比亚                          | 36543 COP           | 180,000 COP       |  
+| 科摩罗                           | 19 USD              | 99 USD           |  
+| 刚果                             | 19 USD              | 99 USD           |  
+| 刚果（民主共和国）                       | 19 USD              | 99 USD           |  
+| 哥斯达黎加                        | 9578 CRC            | 49725 CRC        |  
+| 科特迪瓦                     | 19 USD              | 99 USD           |  
+| 克罗地亚                           | 107 HRK             | 500 HRK          |  
+| 塞浦路斯                            | 14 EUR              | 75 EUR           |  
+| 捷克共和国                    | 365 CZK             | 1720 CZK         |  
+| 丹麦                           | 106 DKK             | 530 DKK          |  
+| 吉布提                          | 19 USD              | 99 USD           | 
+| 多米尼加                          | 19 USD              | 99 USD           | 
+| 多米尼加共和国                | 19 USD              | 99 USD           |  
+| 厄瓜多尔                           | 19 USD              | 99 USD           |  
+| 埃及                             | 133 EGP             | 600 EGP          |  
+| 萨尔瓦多                       | 19 USD              | 99 USD           |  
+| 赤道几内亚                 | 19 USD              | 99 USD           |  
+| 厄立特里亚                           | 19 USD              | 99 USD           |  
+| 爱沙尼亚                           | 14 EUR              | 75 EUR           |  
+| 埃塞俄比亚                          | 19 USD              | 99 USD           |  
+| 法罗群岛                     | 19 USD              | 99 USD           |  
+| 斐济                              | 19 USD              | 99 USD           |  
+| 芬兰                           | 14 EUR              | 75 EUR           |  
+| 法国                            | 14 EUR              | 75 EUR           |  
+| 加蓬                             | 19 USD              | 99 USD           |  
+| 冈比亚                        | 19 USD              | 99 USD           |  
+| 格鲁吉亚                           | 19 USD              | 99 USD           |  
+| 德国                           | 14 EUR              | 75 EUR           |  
+| 加纳                             | 19 USD              | 99 USD           |  
+| 希腊                            | 14 EUR              | 75 EUR           |  
+| 格陵兰                         | 19 USD              | 99 USD           |  
+| 格林纳达                           | 19 USD              | 99 USD           |  
+| 危地马拉                         | 145 GTQ             | 750 GTQ          |  
+| 几内亚                            | 19 USD              | 99 USD           |  
+| 几内亚比绍                     | 19 USD              | 99 USD           |  
+| 圭亚那                            | 19 USD              | 99 USD           |  
+| 海地                             | 19 USD              | 99 USD           |  
+| 洪都拉斯                          | 19 USD              | 99 USD           |  
+| 香港特别行政区                     | 147 HKD             | 760 HKD          |  
+| 匈牙利                           | 4237 HUF            | 18,800 HUF        |  
+| 冰岛                           | 2319 ISK            | 11929 ISK        |
+| 印度                             | 1201 INR            | 4,500 INR         |  
+| 印度尼西亚                         | 203015 IDR          | 1000000 IDR      |
+| 伊拉克                              | 22078 IQD           | 120000 IQD       |  
+| 爱尔兰                           | 14 EUR              | 75 EUR           |  
+| 以色列                            | 67 ILS              | 350 ILS          |  
+| 意大利                             | 14 EUR              | 75 EUR           |  
+| 牙买加                           | 19 USD              | 99 USD           |  
+| 日本                             | 1847 JPY            | 9,800 JPY         |  
+| 约旦                            | 13 JOD              | 70 JOD           |  
+| 哈萨克斯坦                        | 2897 KZT            | 15038 KZT        |  
+| 肯尼亚                             | 1900 KES            | 9999 KES         |  
+| 基里巴斯                          | 19 USD              | 99 USD           |  
+| 韩国                             | 21216 KRW           | 108,000 KRW       |  
+| 科威特                            | 5 KWD               | 28 KWD           |  
+| 吉尔吉斯坦                        | 19 USD              | 99 USD           |  
+| 老挝                              | 19 USD              | 99 USD           |  
+| 拉脱维亚                            | 14 EUR              | 75 EUR           |  
+| 黎巴嫩                           | 28690 LBP           | 149686 LBP       |  
+| 莱索托                           | 19 USD              | 99 USD           |  
+| 利比里亚                           | 19 USD              | 99 USD           |  
+| 利比亚                             | 19 USD              | 99 USD           |  
+| 列支敦士登                     | 17 CHF              | 93 CHF           |  
+| 立陶宛                         | 14 EUR              | 75 EUR           |  
+| 卢森堡                        | 14 EUR              | 75 EUR           |  
+| 澳门特别行政区                         | 19 USD              | 99 USD           |  
+| 马其顿语(马其顿共和国)                 | 19 USD              | 99 USD           |  
+| 马达加斯加                        | 19 USD              | 99 USD           |  
+| 马拉维                            | 19 USD              | 99 USD           |  
+| 马来西亚                          | 62 MYR              | 300 MYR          |  
+| 马尔代夫                          | 19 USD              | 99 USD           |  
+| 马里                              | 19 USD              | 99 USD           |  
+| 马耳他                             | 14 EUR              | 75 EUR           |  
+| 马绍尔群岛                  | 19 USD              | 99 USD           |  
+| 毛里塔尼亚                        | 5681 MRO            | 30046 MRO        |  
+| 毛里求斯                         | 19 USD              | 99 USD           |  
+| 墨西哥                            | 247 MXN             | 1140 MXN         |  
+| 密克罗尼西亚                        | 19 USD              | 99 USD           |  
+| 摩纳哥                            | 14 EUR              | 75 EUR           |  
+| 蒙古                          | 19 USD              | 99 USD           |  
+| 黑山                        | 14 EUR              | 75 EUR           |  
+| 摩洛哥                           | 158 MAD             | 800 MAD          |  
+| 莫桑比克                        | 19 USD              | 99 USD           |  
+| 缅甸                           | 19 USD              | 99 USD           |  
+| 纳米比亚                           | 19 USD              | 99 USD           |  
+| 瑙鲁                             | 19 USD              | 99 USD           |  
+| 尼泊尔                             | 19 USD              | 99 USD           |  
+| 荷兰                       | 14 EUR              | 75 EUR           |  
+| 新西兰                       | 24 NZD              | 140 NZD          |  
+| 尼加拉瓜                         | 19 USD              | 99 USD           |  
+| 尼日尔                             | 19 USD              | 99 USD           |  
+| 尼日利亚                           | 3700 NGN            | 19500 NGN        |  
+| 挪威                            | 113 NOK             | 580 NOK          |  
+| 阿曼                              | 7 OMR               | 40 OMR           |  
+| 巴基斯坦                          | 1959 PKR            | 9000 PKR         |  
+| 帕劳                             | 19 USD              | 99 USD           |  
+| 巴拿马                            | 19 USD              | 99 USD           |  
+| 巴布亚新几内亚                  | 19 USD              | 99 USD           |  
+| 巴拉圭                          | 19 USD              | 99 USD           |  
+| 秘鲁                              | 54 PEN              | 280 PEN          |  
+| 菲律宾                       | 832 PHP             | 4400 PHP         |  
+| 波兰                            | 59 PLN              | 280 PLN          |  
+| 葡萄牙                          | 14 EUR              | 75 EUR           |  
+| 卡塔尔                             | 69 QAR              | 360 QAR          |  
+| 罗马尼亚                           | 14 EUR              | 75 EUR           |  
+| 俄罗斯                            | 626 RUB             | 3,000 RUB         |  
+| 卢旺达                            | 19 USD              | 99 USD           |  
+| 圣基茨和尼维斯             | 19 USD              | 99 USD           |  
+| 圣卢西亚                       | 19 USD              | 99 USD           |  
+| 圣文森特和格林纳丁斯  | 19 USD              | 99 USD           |  
+| 萨摩亚                             | 19 USD              | 99 USD           |  
+| 圣马力诺                        | 14 EUR              | 75 EUR           |  
+| 圣多美和普林西比             | 19 USD              | 99 USD           |  
+| 沙特阿拉伯                      | 71 SAR              | 380 SAR          |  
+| 塞内加尔                           | 19 USD              | 99 USD           |  
+| 塞尔维亚                            | 1619 RSD            | 7000 RSD         |  
+| 塞舌尔                        | 19 USD              | 99 USD           |  
+| 塞拉利昂                      | 19 USD              | 99 USD           |  
+| 新加坡                         | 24 SGD              | 120 SGD          |  
+| 斯洛伐克                          | 14 EUR              | 75 EUR           |  
+| 斯洛文尼亚                          | 14 EUR              | 75 EUR           |  
+| 所罗门群岛                   | 19 USD              | 99 USD           |  
+| 索马里                           | 19 USD              | 99 USD           |  
+| 南非                      | 193 ZAR             | 700 ZAR          |  
+| 西班牙                             | 14 EUR              | 75 EUR           |  
+| 斯里兰卡                         | 19 USD              | 99 USD           |  
+| 苏里南                          | 19 USD              | 99 USD           |  
+| 斯威士兰                         | 19 USD              | 99 USD           |  
+| 瑞典                            | 123 SEK             | 700 SEK          |  
+| 瑞士                       | 17 CHF              | 90 CHF           |  
+| 中国台湾                            | 568 TWD             | 2,840 TWD         |  
+| 塔吉克斯坦                        | 19 USD              | 99 USD           |  
+| 坦桑尼亚                          | 19 USD              | 99 USD           |  
+| 泰国                          | 601 THB             | 3,000 THB         |  
+| 东帝汶                       | 19 USD              | 99 USD           |  
+| 多哥                              | 19 USD              | 99 USD           |  
+| 汤加                             | 19 USD              | 99 USD           |  
+| 特立尼达和多巴哥               | 122 TTD             | 636 TTD          |  
+| 突尼斯                           | 31 TND              | 140 TND          |  
+| 土耳其                            | 37 TRY              | 160 TRY          |  
+| 土库曼斯坦                      | 19 USD              | 99 USD           |  
+| 图瓦卢                            | 19 USD              | 99 USD           |  
+| 乌干达                            | 19 USD              | 99 USD           |  
+| 乌克兰                           | 156 UAH             | 800 UAH          |  
+| 阿拉伯联合酋长国              | 19 USD              | 99 USD           |  
+| 英国                    | 12 GBP              | 65 GBP           |  
+| 美国                     | 19 USD              | 99 USD           |  
+| 乌拉圭                           | 19 USD              | 99 USD           |  
+| 乌兹别克斯坦                        | 19 USD              | 99 USD           |  
+| 瓦努阿图                           | 19 USD              | 99 USD           |  
+| 委内瑞拉                         | 119 VEF             | 420 VEF          |  
+| 越南                           | 400425 VND          | 2000000 VND      |  
+| 也门                             | 4080 YER            | 21245 YER        |  
+| 赞比亚                            | 19 USD              | 99 USD           |  
+| 津巴布韦                          | 19 USD              | 99 USD           |

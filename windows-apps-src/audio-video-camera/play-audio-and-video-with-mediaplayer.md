@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d25cd3f8a963d85f704e32482475827462ddba58
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3d2d95711196a9bf2ab113527e5fc8f44459dc3d
+ms.sourcegitcommit: d8ce1a25ac0373acafb394837eb5c0737f6efec8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318265"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486434"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>使用 MediaPlayer 播放音频和视频
 
@@ -189,7 +189,7 @@ ms.locfileid: "67318265"
 ## <a name="play-spherical-video-with-mediaplayer"></a>使用 MediaPlayer 播放球面视频
 从 Windows 10 版本 1703 开始，**MediaPlayer** 支持用于球面视频播放的 equirectangular 投影。 由于只要视频编码受支持，**MediaPlayer** 便会呈现视频，因此球面视频内容与常规的平面视频没什么不同。 对于包含的元数据标记指定视频使用 equirectangular 投影的球面视频，**MediaPlayer** 可以使用指定视野和视图方向呈现视频。 这样可实现使用头盔显示屏的虚拟现实视频播放或是仅仅允许用户使用鼠标或键盘输入在球面视频中四处平移这类方案。
 
-若要播放球面视频，请使用本文前面介绍的用于播放视频内容的步骤。 还有一个步骤是为 [**MediaPlayer.MediaOpened**])https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened) 事件注册处理程序。 此事件使你可以启用并控制球面视频播放参数。
+若要播放球面视频，请使用本文前面介绍的用于播放视频内容的步骤。 一个步骤是注册的处理程序[ **MediaPlayer.MediaOpened** ](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened)事件。 此事件使你可以启用并控制球面视频播放参数。
 
 [!code-cs[OpenSphericalVideo](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOpenSphericalVideo)]
 

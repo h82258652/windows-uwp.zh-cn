@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 地图身份验证密钥, 地图控件
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f62ecfab5bd8d09092e5264831327b8c63666bc
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bb6cf66a6725e8231fac693a81a39bc2f0b15fd2
+ms.sourcegitcommit: 68051d2adcf3facc036c9f4c76d82bb4d342a75f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370514"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67498903"
 ---
 # <a name="request-a-maps-authentication-key"></a>请求地图身份验证密钥
 
@@ -48,7 +48,7 @@ ms.locfileid: "66370514"
     -   **应用程序名称：** 你的应用程序的名称。
     -   **应用程序 URL （可选）：** 你的应用程序的 URL。
     -   **密钥类型：** 选择**基本**或**企业**。
-    -   **应用程序类型：** 选择**通用 Windows 应用程序**通用 Windows 应用中使用。
+    -   **应用程序类型：** 选择**Windows 应用程序**通用 Windows 应用中使用。
 
     这是一个表格呈现内容的示例。
 

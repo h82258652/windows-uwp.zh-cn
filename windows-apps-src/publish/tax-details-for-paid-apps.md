@@ -6,12 +6,12 @@ ms.date: 03/05/2019
 ms.topic: article
 keywords: windows 10, uwp, 税收, 应用税收, 税收要求, 商业扩张, 税率
 ms.localizationpriority: medium
-ms.openlocfilehash: 82f10abe57d9d5542286183180012b26478f88cf
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 3c23189df3daf71090493c6080308749c632f871
+ms.sourcegitcommit: 35a511c2b29ae3d5008612a5fc13d3eb6370d2d0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788157"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67495757"
 ---
 # <a name="tax-details-for-windows-appgame-developers-and-azure-marketplace-publishers"></a>Windows 应用程序/游戏开发人员和 Azure Marketplace 发布者的税务详细信息
 
@@ -275,7 +275,7 @@ ms.locfileid: "63788157"
 ## <a name="mixed-remittance-countriesregions-for-windows-appgame-developers"></a>面向 Windows 应用程序/游戏开发人员的混合的汇款国家/地区
 
 
-某些 Microsoft 结算合作伙伴可能会征收并汇寄营业税、使用税、商品与服务税、增值税或类似税款（如果有），这适用于客户通过下列国家/地区的应用商店获取的应用或应用内产品。 Microsoft 提供的[报告](payout-summary.md#downloading-payment-transactions)将对结算合作伙伴已经征收了营业税、使用税、商品与服务税、增值税或类似税款（适用于客户通过应用商店获取的应用或应用内产品）的交易进行识别。 除了此类报告中所述的交易外，无论 Microsoft 还是其计费服务提供商都不会在这些国家/地区缴纳与客户购买您的应用或应用内产品相关的任何销售税、使用税、商品与服务税、增值税或其他类似税款。 您有责任检查提供给您的报告，以及确定和遵守义务（如果有）以注册、收取和缴纳与应用或应用内产品相关交易的税款。
+某些 Microsoft 结算合作伙伴可能会征收并汇寄营业税、使用税、商品与服务税、增值税或类似税款（如果有），这适用于客户通过下列国家/地区的应用商店获取的应用或应用内产品。 Microsoft 提供的[报告](payout-summary.md#transaction-history-download-export)将对结算合作伙伴已经征收了营业税、使用税、商品与服务税、增值税或类似税款（适用于客户通过应用商店获取的应用或应用内产品）的交易进行识别。 除了此类报告中所述的交易外，无论 Microsoft 还是其计费服务提供商都不会在这些国家/地区缴纳与客户购买您的应用或应用内产品相关的任何销售税、使用税、商品与服务税、增值税或其他类似税款。 您有责任检查提供给您的报告，以及确定和遵守义务（如果有）以注册、收取和缴纳与应用或应用内产品相关交易的税款。
 
 | 混合汇款的国家/地区 |
 |------------------------------------|

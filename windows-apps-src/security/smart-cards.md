@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 5498480e0dbe2c8be96d92df766b15676a3e6b7b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ff17facbb22e4e336b302415b0b64d0dffda93e0
+ms.sourcegitcommit: 68051d2adcf3facc036c9f4c76d82bb4d342a75f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371937"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67498888"
 ---
 # <a name="smart-cards"></a>智能卡
 
@@ -82,6 +82,9 @@ SmartCardProvisioning provisioning = await
 ```
 
 [  **RequestVirtualSmartCardCreationAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcardcreationasync) 返回关联的 [**SmartCardProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning) 对象之后，将设置虚拟智能卡并且为使用做好准备。
+
+>[!NOTE]
+>若要创建虚拟智能卡使用 UWP 应用，运行该应用程序的用户必须是 administrators 组的成员。 如果用户不是 administrators 组的成员，虚拟智能卡创建将失败。
 
 ## <a name="handle-authentication-challenges"></a>处理身份验证质询
 
