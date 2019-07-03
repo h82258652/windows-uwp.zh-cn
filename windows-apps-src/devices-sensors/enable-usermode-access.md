@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dbb06f53f760724da312e00f545d799d6a24200
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 991d86dd61c660553e5b0a3fdbbdec0336c7fb8b
+ms.sourcegitcommit: d63e5a4fd24434068067cae5b8fb3bed4931247e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321574"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67515150"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>启用 GPIO、I2C 和 SPI 的用户模式访问
 
@@ -268,7 +268,7 @@ SupportedDriveModes 属性指示哪些驱动器模式受 GPIO 控制器支持。
 Windows 支持两种引脚编号方案：
 
 * 顺序引脚编号 - 用户看到诸如 0、1、2 ... 数字，一直到公开的引脚数。 0 是 ASL 中声明的第一个 GpioIo 资源，1 是 ASL 中声明的第二个 GpioIo 资源，依此类推。
-* 本机引脚编号 – 用户看到 GpioIo 描述符中指定的引脚编号，例如 4、5、12、13 …。
+* 本机 Pin 编号 – 用户看到 pin 号码指定在 GpioIo 描述符，例如 4，5，12，13，...
 
 ```cpp
 Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 },
