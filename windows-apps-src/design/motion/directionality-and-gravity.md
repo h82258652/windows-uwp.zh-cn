@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3cdb20516d4f21933c7770f43701af322e09c886
-ms.sourcegitcommit: 7effecb544952b493250337fc622848232fa5995
+ms.openlocfilehash: 8f1e36f0febeeaac5a12d408d7be8a717f0ab398
+ms.sourcegitcommit: 7c3b88198178d6f6a535f35e1bf8665410d41d92
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67325893"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67569116"
 ---
 # <a name="directionality-and-gravity"></a>方向性和引力
 
@@ -43,8 +43,8 @@ ms.locfileid: "67325893"
 
 :::row:::
     :::column:::
-        Direction of movement corresponds to physical motion. Just like in nature, objects can move in any world axis - X,Y,Z. This is how we think of the movement of objects on the screen.
-        When you move objects, avoid unnatural collisions. Keep in mind where objects come from and go to, and alway support higher level constructs that may be used in the scene, such as scroll direction or layout hierarchy.
+移动的方向对应于物理运动。 就像在自然界中一样，对象可以沿任意世界轴（X、Y、Z）移动。 我们按照这种方式看待对象在屏幕上的运动。
+当移动对象时，避免非自然冲突。 请的注意对象来自并转到，并始终在场景中，如滚动方向或布局层次结构支持可能使用的更高级构造。
     :::column-end:::
     :::column:::
         ![direction backward in](images/Direction.gif)
@@ -75,8 +75,7 @@ ms.locfileid: "67325893"
 
 :::row:::
     :::column:::
-        **Forward-In**
-        Celebrate content entering the scene in a manner that does not collide with outgoing content. Content decelerates into the scene.
+**正向中**庆祝内容不包含传出内容冲突的方式输入场景。 内容在场景减速。
     :::column-end:::
     :::column:::
         ![direction forward in](images/forwardIN.gif)
@@ -84,8 +83,7 @@ ms.locfileid: "67325893"
 :::row-end:::
 :::row:::
     :::column:::
-        **Forward-Out**
-        Content exits quickly. Objects accelerate off screen.
+**进扩展**内容很快退出。 关闭屏幕加速对象。
     :::column-end:::
     :::column:::
         ![direction forward out](images/forwardOUT.gif)
@@ -93,8 +91,7 @@ ms.locfileid: "67325893"
 :::row-end:::
 :::row:::
     :::column:::
-        **Backward-In**
-        Same as Forward-In, but reversed.
+**向后接**与正向中相同但反转。
     :::column-end:::
     :::column:::
         ![direction backward in](images/backwardIN.gif)
@@ -102,8 +99,7 @@ ms.locfileid: "67325893"
 :::row-end:::
 :::row:::
     :::column:::
-        **Backward-Out**
-        Same as Forward-Out, but reversed.
+**向后扩展**进扩展相同但反转。
     :::column-end:::
     :::column:::
         ![direction backward out](images/backwardOUT.gif)
