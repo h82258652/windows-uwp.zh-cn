@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: 20cb1e3162f0c852a60c620be92afd37ad9f8232
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: eef1c3dd50f06d38023102122cc7fc63a36df25c
+ms.sourcegitcommit: 3ec8c1d0ea3798cdb2745e7a941a025cf3cf21c8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317274"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650787"
 ---
 # <a name="keyboard-interactions"></a>键盘交互
 
@@ -278,7 +278,7 @@ Esc 键让用户可以取消瞬态 UI（以及该 UI 中的任何正在进行的
 
 下表是经常使用的键盘快捷方式的小示例。 
 
-| 操作                               | 键命令                                      |
+| Action                               | 键命令                                      |
 |--------------------------------------|--------------------------------------------------|
 | 全选                           | Ctrl+A                                           |
 | 连续选择                  | Shift+箭头键                                  |
@@ -369,7 +369,7 @@ UWP 控件默认情况下之后箭头键导航。 有关自定义布局和控制
 UWP 键盘行为与讲述人支持的键盘行为之间的部分差异如下：
 -   未通过标准键盘导航公开的其他 UI 元素导航键组合（如 Caps lock + 箭头键用于读取控件标签）。
 -   至已禁用项的导航。 默认情况下，已禁用项未通过标准键盘导航公开。
-    -   用于根据 UI 粒度进行更快导航的控件“视图”。 用户可以导航至项目、字符、字、行、段落、链接、标题、表格、地标和建议位置。 标准键盘导航将这些对象公布为简单列表，如果不提供快捷键则会使导航比较麻烦。
+-   用于根据 UI 粒度进行更快导航的控件“视图”。 用户可以导航至项目、字符、字、行、段落、链接、标题、表格、地标和建议位置。 标准键盘导航将这些对象公布为简单列表，如果不提供快捷键则会使导航比较麻烦。
 
 #### <a name="case-study--autosuggestbox-control"></a>案例研究 – AutoSuggestBox control
 
@@ -485,16 +485,21 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 
 如前文所述，您应尝试确保方向导航对应于应用程序的 UI 中控件的可视化顺序。
 
-某些控件，如 ContextMenu、 AppBarOverflowMenu 和自动建议，包括位置和方向相对于主控件 （根据可用的屏幕空间） 中显示的弹出菜单。 例如，如果向下打开（默认方向）菜单的空间不足，那么它会向上打开。 无法保证每次打开菜单的方向均相同。
+某些控件 （如上下文菜单、 命令栏溢出菜单中，和自动建议菜单中） 显示的弹出菜单中的位置和方向 （向下的默认值） 相对于主控件和可用的屏幕空间。 请注意，可以在运行时由多种因素影响的打开方向。
 
 <table>
   <td><img src="images/keyboard/command-bar-open-down.png" alt="command bar opens down with down arrow key" /></td>
   <td><img src="images/keyboard/command-bar-open-up.png" alt="command bar opens up with down arrow key" /></td>
 </table>
 
-对于这些控件，首次打开菜单（且用户未选择任何项目）时，向下箭头键始终会将焦点设置为第一个项目，向上箭头键始终会将焦点设置为菜单上的最后一个项目。 同样地，当选择最后一个项目且按下向下箭头键时，焦点将会移至菜单上的第一个项目，当选择第一个项目且按下向上箭头键时，焦点将移至菜单上的最后一个项目。
+对于这些控件，当第一次打开菜单 （和用户已选择任何项），向下键始终将焦点设置到的第一项而向上箭头键始终将焦点设置到最后一项在菜单上。 
 
-你应尝试在你的自定义控件中模拟这些行为。 有关如何实现此行为的代码示例可在[编程实现的焦点导航](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element)文档。
+如果最后一项具有焦点并按向下键时，焦点将移到第一项在菜单上。 同样，如果第一项具有焦点并按向上箭头键时，焦点将移到最后一个项在菜单上。 此行为被称为*循环*并可用于导航在不可预测的方向可以打开的弹出菜单。
+
+> [!NOTE]
+> 循环应避免在非弹出 Ui 用户可能会感到安装进入无限循环。 
+
+我们建议你自定义控件中模拟这些相同的行为。 有关如何实现此行为的代码示例可在[编程实现的焦点导航](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element)文档。
 
 ## <a name="test-your-app"></a>测试应用
 
@@ -540,7 +545,7 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 -   菜单栏
 -   Menu item
 -   工具栏
--   列表
+-   List
 -   列表项
 
 下面是适用于触摸键盘的其他模式的示例。 第一个图像是默认布局，第二个图像是缩略图布局（可能不适用于所有语言）。
