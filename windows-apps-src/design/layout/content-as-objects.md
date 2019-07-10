@@ -3,12 +3,13 @@ description: ''
 title: 作为对象的内容
 template: detail.hbs
 ms.localizationpriority: medium
-ms.openlocfilehash: ed2ac8530d69929cc0e0e921cfb1cc5368058cd2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.date: 04/18/2019
+ms.openlocfilehash: b73e595454121fa34b536f3672c75a5c554ee0f3
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593112"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714031"
 ---
 # <a name="content-as-objects"></a>作为对象的内容
 
@@ -140,7 +141,7 @@ ms.locfileid: "57593112"
 Depth is meaningful; it establishes visual and interactive hierarchy for users to efficiently complete tasks. Depth orients users in our system. 
 -->
 
-## <a name="example-tbd"></a>示例：TBD
+## <a name="example-tbd"></a>例如：TBD
 > TODO:演示如何改编使用 z 顺序的通用 UI 模式。 我们应显示说明和代码。 
 
 ## <a name="download-the-code-samples"></a>下载代码示例

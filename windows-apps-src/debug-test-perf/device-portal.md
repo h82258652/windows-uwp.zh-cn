@@ -2,16 +2,16 @@
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Windows Device Portal 概述
 description: 了解 Windows Device Portal 如何支持你通过网络或 USB 连接远程配置和管理你的设备。
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 59e7e46ea68f6bb5fe7fd63e6ac35b9256103c38
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1f776a9d0ffe15f4bec26fbf8a26ce52a73345e9
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317901"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713869"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概述
 
@@ -45,11 +45,11 @@ Phone | 在开发人员模式内启用 | 80| 443 | http://127.0.0.1:10080
 
 有关特定于设备的设置说明，请参阅：
 
-- [对于 HoloLens 设备门户](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
-- [Iot 设备门户](https://go.microsoft.com/fwlink/?LinkID=616499)
+- [适用于 HoloLens 的设备门户](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
+- [适用于 IoT 的设备门户](https://go.microsoft.com/fwlink/?LinkID=616499)
 - [适用于移动设备的设备门户](device-portal-mobile.md)
-- [Xbox 的设备门户](../xbox-apps/device-portal-xbox.md)
-- [桌面设备门户](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
+- [适用于 Xbox 的设备门户](../xbox-apps/device-portal-xbox.md)
+- [适用于台式机的设备门户](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
 
 ## <a name="features"></a>功能
 
@@ -201,7 +201,7 @@ ETW 日志记录页管理设备上的实时事件跟踪 Windows (ETW) 信息。
 
 Device Portal 使用 DNS-SD 公布其存在于本地网络上。 所有 Device Portal 实例都将在“WDP._wdp._tcp.local”下公布，无论其设备类型如何。 服务实例的 TXT 记录提供以下信息：
 
-键 | 在任务栏的搜索框中键入 | 描述
+键 | type | 描述
 ----|------|-------------
 S | int | Device Portal 的安全端口。 如果为 0（零），则表示 Device Portal 不侦听 HTTPS 连接。
 D | string | 设备类型。 这将采用“Windows.*”格式，例如 Windows.Xbox 或 Windows.Desktop

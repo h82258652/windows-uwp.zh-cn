@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 16f61c1f950583ee0fef7f30b7e17939df7ea538
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: fa38c952d4d46d83ea9b4e9f0db5f516fe09ce59
+ms.sourcegitcommit: f9a30bfd1e8eab50d0b1db97dd2f650ce66b5d34
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317756"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690890"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用桌面应用程序中托管 API UWP XAML
 
-从 Windows 10，版本 1903年，非 UWP 桌面应用程序 (包括 WPF、 Windows 窗体和C++Win32 应用程序) 可以使用*托管 API 的 UWP XAML*到任何与之关联的 UI 元素中的主机 UWP 控件窗口句柄 (HWND)。 此 API 允许非 UWP 桌面应用程序使用的最新的 Windows 10 UI 功能，才可通过 UWP 控件。 例如，非 UWP 桌面应用程序可以使用此 API 使用的主机 UWP 控件[Fluent 设计系统](/windows/uwp/design/fluent-design-system/index)服务与支持[Windows 墨迹](/windows/uwp/design/pen-and-stylus-interactions)。
+从 Windows 10，版本 1903年，非 UWP 桌面应用程序 (包括 WPF、 Windows 窗体和C++Win32 应用程序) 可以使用*托管 API 的 UWP XAML*到任何与之关联的 UI 元素中的主机 UWP 控件窗口句柄 (HWND)。 此 API 允许非 UWP 桌面应用程序使用的最新的 Windows 10 UI 功能，才可通过 UWP 控件。 例如，非 UWP 桌面应用程序可以使用此 API 使用的主机 UWP 控件[Fluent 设计系统](/windows/uwp/design/fluent-design-system/index)服务与支持[Windows 墨迹](/windows/uwp/design/input/pen-and-stylus-interactions)。
 
 托管 API UWP XAML 为更广泛的一组控件，我们提供使开发人员能够引入到非 UWP 桌面应用程序的 Fluent UI 提供了基础。 此功能被称为*XAML 群岛*。 有关此功能的概述，请参阅[桌面应用程序中的 UWP 控件](xaml-islands.md)。
 

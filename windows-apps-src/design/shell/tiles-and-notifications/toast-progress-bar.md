@@ -3,16 +3,16 @@ Description: 了解如何使用一个进度栏内 toast 通知。
 title: Toast 进度栏和数据绑定
 label: Toast progress bar and data binding
 template: detail.hbs
-ms.date: 12/7/2017
+ms.date: 12/07/2017
 ms.topic: article
 keywords: windows 10, uwp, toast, 进度栏, toast 进度栏, 通知, toast 数据绑定
 ms.localizationpriority: medium
-ms.openlocfilehash: f955f2a71fed6444c65f9550e1f4fa3baeabe092
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 742270a4cdc6cbbc9eed0879e30b3e7066722f05
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624822"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714102"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>Toast 进度栏和数据绑定
 
@@ -32,10 +32,10 @@ ms.locfileid: "57624822"
 
 <img alt="Toast with progress bar properties labeled" src="images/toast-progressbar-annotated.png" width="626"/>
 
-| 属性 | 在任务栏的搜索框中键入 | 必需 | 描述 |
+| 属性 | type | 必需 | 描述 |
 |---|---|---|---|
 | **Title** | 字符串或 [BindableString](toast-schema.md#bindablestring) | false | 获取或设置可选标题字符串。 支持数据绑定。 |
-| **值** | Double 或 [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) 或 [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | false | 获取或设置进度栏的值。 支持数据绑定。 默认为 0。 可以为 0.0 和 1.0 之间的双精度浮点数、`AdaptiveProgressBarValue.Indeterminate` 或 `new BindableProgressBarValue("myProgressValue")`。 |
+| **ReplTest1** | Double 或 [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) 或 [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | false | 获取或设置进度栏的值。 支持数据绑定。 默认为 0。 可以为 0.0 和 1.0 之间的双精度浮点数、`AdaptiveProgressBarValue.Indeterminate` 或 `new BindableProgressBarValue("myProgressValue")`。 |
 | **ValueStringOverride** | 字符串或 [BindableString](toast-schema.md#bindablestring) | false | 获取或设置要显示的可选字符串，而不是默认百分比字符串。 如果未提供，会显示诸如“70%”的内容。 |
 | **状态** | 字符串或 [BindableString](toast-schema.md#bindablestring) | true | 获取或设置状态字符串（必需），它显示在左侧进度栏下方。 此字符串应反映操作的状态，如“正在下载...”或“正在安装...” |
 

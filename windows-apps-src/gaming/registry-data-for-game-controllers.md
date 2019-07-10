@@ -2,16 +2,16 @@
 title: 游戏控制器注册表数据
 description: 了解可以添加到电脑注册表中以使控制器能够在 UWP 游戏中使用的数据。
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.date: 4/8/2019
+ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 输入, 注册表, 自定义
 ms.localizationpriority: medium
-ms.openlocfilehash: 5578faeb5a35ae909e590741de759c2597b9c7ed
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 30c1f0d8c9fac09d071d158563c964c6a598e073
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244393"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714052"
 ---
 # <a name="registry-data-for-game-controllers"></a>游戏控制器注册表数据
 
@@ -31,7 +31,7 @@ ms.locfileid: "59244393"
 <table>
     <tr>
         <th>名称</th>
-        <th>在任务栏的搜索框中键入</th>
+        <th>type</th>
         <th>是否为必需？</th>
         <th>T:System.Diagnostics.Switch</th>
     </tr>
@@ -555,7 +555,7 @@ ms.locfileid: "59244393"
 
 <table>
     <tr>
-        <th>源</th>
+        <th>Source</th>
         <th>值名称</th>
         <th>值类型</th>
         <th>是否为必需？</th>
@@ -635,7 +635,7 @@ ms.locfileid: "59244393"
 
 <table>
     <tr>
-        <th>源</th>
+        <th>Source</th>
         <th>值名称</th>
         <th>值类型</th>
         <th>是否为必需？</th>
@@ -806,7 +806,7 @@ ms.locfileid: "59244393"
 
 <table>
     <tr>
-        <th>源</th>
+        <th>Source</th>
         <th>值名称</th>
         <th>值类型</th>
         <th>值信息</th>
@@ -820,7 +820,7 @@ ms.locfileid: "59244393"
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>、<b>FourWay</b> 或 <b>EightWay</b>
+        <td><b>TwoWay</b>， <b>FourWay</b>，或<b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -1347,6 +1347,6 @@ Windows Registry Editor Version 5.00
 
 ## <a name="see-also"></a>请参阅
 
-* [Windows.Gaming.Input 命名空间](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.Custom 命名空间](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [Windows.Gaming.Input Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+* [Windows.Gaming.Input.Custom Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
 * [INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)

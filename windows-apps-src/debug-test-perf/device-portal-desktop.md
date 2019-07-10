@@ -2,16 +2,16 @@
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: 适用于 Windows 桌面的设备门户
 description: 了解 Windows Device Portal 如何在 Windows 桌面上打开诊断和自动化。
-ms.date: 02/6/2019
+ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fe1f2a51199dd12cd1d285c17c5d48c9a25b969
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 00cf497d5d57f5a3cdc5c52ecfeead7885ff7d56
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654522"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713802"
 ---
 # <a name="device-portal-for-windows-desktop"></a>适用于 Windows 桌面的设备门户
 
@@ -71,7 +71,7 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
 - 功能
 - 混合现实
 - 流式安装调试程序
-- 位置
+- Location
 - Scratch
 
 ## <a name="more-device-portal-options"></a>更多设备门户选项
@@ -115,9 +115,9 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
 
 1. 导航到**设置 > 更新和安全 > Windows 预览体验计划**，并确认**Windows Insider 帐户**部分具有正确的帐户信息。 如果看不到该部分，选择**Windows Insider 帐户链接**中，添加你的电子邮件帐户，并确认它显示在下面**Windows Insider 帐户**标题 (可能需要选择**Windows Insider 帐户链接**第二个时间实际上链接到新添加的帐户)。
  
-2. 下**要接收的内容类型？**，请确保**开发的 Windows**处于选中状态。
+2. 下**要接收的内容类型？** ，请确保**开发的 Windows**处于选中状态。
  
-3. 下**想要获取新生成哪些进度？**，请确保**快速 Windows Insider**处于选中状态。
+3. 下**想要获取新生成哪些进度？** ，请确保**快速 Windows Insider**处于选中状态。
  
 4. 现在应能够安装 FoDs。 如果你在快速 Windows 预览体验和仍不能安装 FoDs，请提供反馈并附加下的日志文件已确认**C:\Windows\Logs\CBS**。
 
@@ -129,7 +129,7 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
 
 如果您是按流量计费的 internet 连接，可能会收到此错误。 你将无法下载开发人员包按流量计费的连接。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [Windows Device Portal 概述](device-portal.md)
 * [设备门户 core API 参考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

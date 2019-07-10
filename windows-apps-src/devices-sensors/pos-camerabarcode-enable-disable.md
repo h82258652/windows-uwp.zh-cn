@@ -1,16 +1,16 @@
 ---
 title: 相机条形码扫描仪配置
 description: 相机条形码扫描仪启用或禁用
-ms.date: 4/8/2019
+ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 7db48b610d5bdf256d6a44d4786b8642d984c0b0
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3f4b11d6a360f09a9600961a3e50e3dd6701bf46
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321539"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714017"
 ---
 # <a name="enable-or-disable-the-software-decoder-that-ships-with-windows"></a>启用或禁用 Windows 附带的软件解码器
 
@@ -20,7 +20,7 @@ ms.locfileid: "67321539"
 
 Windows 附带的软件解码器可以通过系统注册表启用或禁用：在 *HKLM\Software\Microsoft\PointOfService\BarcodeScanner* 下添加注册表项 *InboxDecoder*，并对 *Enable* 值进行如下设置。
 
-| 值名称  | 值类型 | 值 | 状态 |
+| 值名称  | 值类型 | ReplTest1 | 状态 |
 | ----------- | --------- | -------|--------|
 | 启用      | DWORD     | 1（默认值）<br/>0 |  启用 Windows 附带的软件解码器 <br/> 禁用 Windows 附带的软件解码器 |
 

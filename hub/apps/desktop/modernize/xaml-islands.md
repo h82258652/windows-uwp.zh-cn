@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: e6074202a05c80a9dc759cdf81b2c20c7cc17d07
-ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
+ms.openlocfilehash: 8ceb314424ae2611e141ef866a84c08e55b0ba2d
+ms.sourcegitcommit: f9a30bfd1e8eab50d0b1db97dd2f650ce66b5d34
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414099"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690879"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>主机 UWP XAML 控制在桌面应用程序 （XAML 群岛）
 
@@ -86,10 +86,10 @@ XAML 群岛需要 Windows 10，版本 1903，及更高版本。 若要在应用�
 
 #### <a name="option-2-set-the-maxversiontested-value-in-your-assembly-manifest"></a>选项 2：在程序集清单中设置 maxVersionTested 值
 
-如果不想要打包应用程序，MSIX 包中的，您可以添加[-并行程序集清单](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests)到你的项目并添加**maxVersionTested**到清单中指定的值在应用程序是与 Windows 10，1903年或更高版本兼容。
+如果不想要打包应用程序，MSIX 包中的，您可以添加[应用程序清单](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests)到你的项目并添加**maxVersionTested**到清单中指定的元素应用应用程序是与 Windows 10，1903年或更高版本兼容。
 
-1. 如果还没有你的项目中的清单，将新的 XML 文件添加到你的项目并将其命名程序集**app.manifest**。 对于 WPF 或 Windows 窗体的应用程序，请确保也将分配**清单**属性设置为 **。 应用程序清单**中**应用程序**页你[项目属性](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-csharp?view=vs-2019#resources)。
-2. 在程序集清单中，包括**兼容性**元素，并在下面的示例所示的子元素。 替换**Id**的属性**maxVersionTested**您面向的 Windows 10 的版本号的元素 （这必须是 Windows 10，版本 1903年或更高版本）。 
+1. 如果还没有应用程序清单在项目中，将新的 XML 文件添加到你的项目并将其命名**app.manifest**。 对于 WPF 或 Windows 窗体的应用程序，请确保也将分配**清单**属性设置为 **。 应用程序清单**中**应用程序**页你[项目属性](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-csharp?view=vs-2019#resources)。
+2. 在应用程序清单中，包括**兼容性**元素，并在下面的示例所示的子元素。 替换**Id**的属性**maxVersionTested**您面向的 Windows 10 的版本号的元素 （这必须是 Windows 10，版本 1903年或更高版本）。
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -103,6 +103,9 @@ XAML 群岛需要 Windows 10，版本 1903，及更高版本。 若要在应用�
         </compatibility>
     </assembly>
     ```
+
+> [!NOTE]
+> 当您将添加**maxVersionTested**元素中的应用程序清单C++Win32 项目 （在 Visual Studio 中使用 Windows 桌面应用程序项目模板） 中，可能会在项目中看到以下生成警告： `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. 此警告并不表示任何内容是在项目中，错误，则可以忽略它。
 
 ## <a name="feature-roadmap"></a>功能路线图
 
