@@ -11,10 +11,10 @@ template: detail.hbs
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cd11427ed1b53641a25c32742ca114b121efcfe8
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363958"
 ---
 # <a name="xaml-styles"></a>XAML 样式
@@ -165,7 +165,7 @@ ms.locfileid: "66363958"
 </Page.Resources>
 ```
 
-对于诸如 PointerOver（鼠标悬停在按钮上）、**PointerPressed**（按钮已调用）或 Disabled（按钮不可交互）的状态。 这些行尾追加到原始的轻量样式名称：**ButtonBackgroundPointerOver**， **ButtonForegroundPointerPressed**， **ButtonBorderBrushDisabled**，等等。将其修改画笔，将确保您的控件着色一致地为你的应用的主题。
+对于诸如 PointerOver（鼠标悬停在按钮上）、**PointerPressed**（按钮已调用）或 Disabled（按钮不可交互）的状态。 这些后缀将追加到原始轻型样式设置名称：**ButtonBackgroundPointerOver**、**ButtonForegroundPointerPressed**、**ButtonBorderBrushDisabled** 等。修改这些画笔还将确保控件的配色与应用的主题保持一致。
 
 在 **App.Resources** 级别上放置这些画笔替代将更改整个应用（而不是单个页面）内的所有按钮。
 

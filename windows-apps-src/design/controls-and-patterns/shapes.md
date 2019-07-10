@@ -7,20 +7,20 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 06f5ce8ad7576114137adb862f89720e27d3802b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364293"
 ---
 # <a name="draw-shapes"></a>绘制图形
 
 了解如何绘制形状，如椭圆、矩形、多边形以及路径。 [  **Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 类是在 XAML UI 中可视化基于相当复杂矢量的绘图语言的方法；例如，可以绘制贝塞尔曲线。
 
-> **重要的 API**：[Path 类](/uwp/api/Windows.UI.Xaml.Shapes.Path)， [Windows.UI.Xaml.Shapes 命名空间](/uwp/api/Windows.UI.Xaml.Shapes)， [Windows.UI.Xaml.Media 命名空间](/uwp/api/Windows.UI.Xaml.Media)
+> **重要的 API**：[路径类](/uwp/api/Windows.UI.Xaml.Shapes.Path)、[Windows.UI.Xaml.Shapes 命名空间](/uwp/api/Windows.UI.Xaml.Shapes)、[Windows.UI.Xaml.Media 命名空间](/uwp/api/Windows.UI.Xaml.Media)
 
 
-两个集的类定义 XAML 用户界面中的空间区域：[**形状**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)类和[ **Geometry** ](/uwp/api/Windows.UI.Xaml.Media.Geometry)类。 这些类之间的主要区别在于，**Shape** 具有一个与其关联的画笔并可以呈现到屏幕，而 **Geometry** 只定义一个空间区域并且不进行呈现，除非它用于帮助将信息提供给另一 UI 属性。 你可以将 **Shape** 视为 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)，其边界通过 **Geometry** 定义。 本主题主要讨论 **Shape** 类。
+可以使用下面的两组类定义 XAML UI 中的空间区域：[**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) 类和 [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) 类。 这些类之间的主要区别在于，**Shape** 具有一个与其关联的画笔并可以呈现到屏幕，而 **Geometry** 只定义一个空间区域并且不进行呈现，除非它用于帮助将信息提供给另一 UI 属性。 你可以将 **Shape** 视为 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)，其边界通过 **Geometry** 定义。 本主题主要讨论 **Shape** 类。
 
 [  **Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) 类包括 [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line)、[**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse)、[**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)、[**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon)、[**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 和 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)。 **Path** 非常有趣，因为它可以定义任意几何图形，同时还会在此处介绍 [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) 类，因为这是定义部分 **Path** 的一个方法。
 
@@ -63,7 +63,7 @@ layoutRoot.Children.Add(ellipse1);
 
 6 个 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 元素为一个组，它们属于 [**ProgressRing**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing) 控件的控件模板，并且 2 个同心 **Ellipse** 元素属于 [**RadioButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)。
 
-## <a name="span-idrectanglespanspan-idrectanglespanspan-idrectanglespanrectangle"></a><span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>矩形
+## <a name="span-idrectanglespanspan-idrectanglespanspan-idrectanglespanrectangle"></a><span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>Rectangle
 
 [  **Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 形状有四个边而且相对的两个边相等。 若要创建基本的 **Rectangle**，请指定 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、[**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 和 [**Fill**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.fill)。
 
@@ -102,7 +102,7 @@ layoutRoot.Children.Add(rectangle1);
 
 ![呈现的矩形。](images/shapes-rectangle.jpg)
 
-**提示**  位置而不是使用有的 UI 定义的一些方案[**矩形**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)即[**边框**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border)可能会更合适。 如果你打算在其他内容周围创建一个矩形形状，最好使用 **Border**，因为它可能会有子内容而且将自动在子内容周围调整大小，而不是像 **Rectangle** 那样使用固定的高度和宽度尺寸。 **Border** 在你设置了 [**CornerRadius**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.cornerradius) 属性的情况下还提供了创建圆角的选项。
+**提示**  对于 UI 定义来说，在某些情况下，不使用 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)，使用 [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) 可能更合理。 如果你打算在其他内容周围创建一个矩形形状，最好使用 **Border**，因为它可能会有子内容而且将自动在子内容周围调整大小，而不是像 **Rectangle** 那样使用固定的高度和宽度尺寸。 **Border** 在你设置了 [**CornerRadius**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.cornerradius) 属性的情况下还提供了创建圆角的选项。
 
 另一方面，[**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 可能是控件组合的较好选择。 **Rectangle** 形状可以在很多控件模板中看到，因为它用作可获得焦点的控件的“FocusVisual”部分。 当控件处于“已设置焦点”视觉状态时，此矩形可见，在其他状态时，它处于隐藏状态。
 
@@ -141,7 +141,7 @@ layoutRoot.Children.Add(polygon1);
 
 ![呈现的多边形。](images/shapes-polygon.jpg)
 
-**提示**  A [**点**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)值通常用于为 XAML 中的类型声明的形状顶点以外的方案。 例如，**Point** 属于触摸事件的事件数据，因此你可以精确了解触摸操作发生在坐标空间的哪个位置。 有关 **Point** 以及如何将其用于 XAML 或代码的详细信息，请参阅 [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 的 API 参考主题。
+**提示**  在除了声明形状顶点的其他方案的 XAML 中，[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 值通常用作类型。 例如，**Point** 属于触摸事件的事件数据，因此你可以精确了解触摸操作发生在坐标空间的哪个位置。 有关 **Point** 以及如何将其用于 XAML 或代码的详细信息，请参阅 [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 的 API 参考主题。
 
 ## <a name="line"></a>Line
 
@@ -169,7 +169,7 @@ layoutRoot.Children.Add(line1);
 
 [  **Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 与 [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) 类似，该形状的边也是通过一组点来进行定义，只不过 **Polyline** 的最后一个点不与第一个点相连。
 
-**请注意**  无法显式具有完全相同的起始点并在终结点[**点**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.polyline.points)设置为[**折线**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline)，但在这种情况下您可能也可以使用[**多边形**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon)相反。
+**注意**   你可以在 [**Points**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.polyline.points) 中为 [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 明确设置相同的起点和终点，但是，在这种情况下，你可能已改用 [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon)。
 
 如果你指定 [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 的 [**Fill**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.fill)，则 **Fill** 会绘制形状的内部空间，即使为 **Polyline** 设置的 [**Points**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.polyline.points) 的起点和终点不相交也是如此。 如果你没有指定 **Fill**，则 **Polyline** 与指定了多个单独的、其连续直线的起点和终点相交的 [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) 元素时所呈现的内容相似。
 
@@ -233,7 +233,7 @@ layoutRoot.Children.Add(polyline1);
 
 ![显示的路径。](images/shapes-path.jpg)
 
-下一示例将介绍我们讨论过的其他技术的用法：具有 [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry) 的 [**GeometryGroup**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.geometrygroup)。 此示例中运用某种可作为的一部分的参与 geometry 类型**PathGeometry**:[**PathFigure** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathFigure)并可以是中的某个段的各种元素[ **PathFigure.Segments**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.segments)。
+下一示例将介绍我们讨论过的其他技术的用法：具有 [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry) 的 [**GeometryGroup**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.geometrygroup)。 本例对某些可用作 **PathGeometry** 的一部分的参与几何类型进行练习：[**PathFigure**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathFigure) 和在 [**PathFigure.Segments**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.segments) 中作为片段的各种元素。
 
 ```xaml
 <Path Stroke="Black" StrokeThickness="1" Fill="#CCCCFF">

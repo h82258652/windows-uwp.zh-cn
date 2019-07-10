@@ -10,10 +10,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b212ff435e58bdb8766972d1832bbf0690db3ed1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364734"
 ---
 # <a name="media-player"></a>媒体播放器
@@ -24,7 +24,7 @@ ms.locfileid: "66364734"
 
 ![具有传输控件的媒体播放器元素](images/controls/mtc_double_video_inprod.png)
 
-> **重要的 API**：[MediaPlayerElement 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)， [MediaTransportControls 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediatransportcontrols)
+> **重要的 API**：[MediaPlayerElement 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)、[MediaTransportControls 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediatransportcontrols)
 
 
 > [!NOTE]
@@ -65,7 +65,7 @@ Windows 10 入门应用中的媒体播放器。
                     Width="400" AutoPlay="True"/>
 ```
 
-此 XAML 会创建一个 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)，同时启用内置传输控件并将 [AutoPlay](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.autoplay) 属性设置为 **False**。
+此 XAML 创建一个 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)，同时启用内置传输控件并将 [AutoPlay](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.autoplay) 属性设置为 **false**。
 
 
 ```xaml
@@ -91,13 +91,13 @@ Windows 10 入门应用中的媒体播放器。
 
 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 自动与系统媒体传输控件集成。 系统媒体传输控件是在按下硬件媒体键时弹出的控件，例如键盘上的媒体按钮。 有关详细信息，请参阅 [SystemMediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls)。
 
-> **请注意**&nbsp; &nbsp; [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)未自动集成的系统媒体传输控制，因此你必须自己对它们进行连接。 有关详细信息，请参阅[系统媒体传输控件](https://docs.microsoft.com/windows/uwp/audio-video-camera/system-media-transport-controls)。
+> **注意**&nbsp;&nbsp; [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 不会与系统媒体传输控件自动集成，因此你必须自行连接它们。 有关详细信息，请参阅[系统媒体传输控件](https://docs.microsoft.com/windows/uwp/audio-video-camera/system-media-transport-controls)。
 
 
 ### <a name="set-the-media-source"></a>设置媒体源
 若要播放网络上的文件或嵌入在应用中的文件，请将 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 属性设置为带有该文件路径的 [MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource)。
 
-**提示**  若要从 internet 打开文件，您需要声明**Internet （客户端）** 应用程序的清单 (Package.appxmanifest) 中的功能。 有关声明功能的详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
+**提示**  若要打开 Internet 中的文件，需要在应用的清单 (Package.appxmanifest) 中声明 **Internet（客户端）** 功能。 有关声明功能的详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
 
  
 
@@ -143,7 +143,7 @@ private void LoadMediaFromString(string path)
 }
 ```
 
-若要将媒体源设置为嵌入在应用中的媒体文件，请初始化一个路径以 ms-appx:/// 为前缀的 [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.)、创建带有该 Uri 的 [MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource)，然后将 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 设置为该 Uri。 例如，对于 **Videos** 子文件夹中名为 **video1.mp4** 的文件，路径将如下所示：**ms-appx:///Videos/video1.mp4**
+若要将媒体源设置为嵌入在应用中的媒体文件，请初始化一个路径以 **ms-appx:///** 为前缀的 [Uri](https://docs.microsoft.com/uwp/api/windows.foundation.uri.)、创建带有该 Uri 的 [MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource)，然后将 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 设置为该 Uri。 例如，对于 **Videos** 子文件夹中名为 **video1.mp4** 的文件，路径将如下所示：**ms-appx:///Videos/video1.mp4**
 
 此代码将之前使用 XAML 定义的 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 的 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 属性设置为 **ms-appx:///Videos/video1.mp4**。
 
@@ -173,7 +173,7 @@ private void LoadEmbeddedAppFile()
 
 [FileOpenPicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 不需要特殊功能即可访问本地文件系统上的文件（例如用户的**音乐**或**视频**文件夹），因为用户对所访问的文件具有完全控制权。 从安全性和隐私性角度来看，最好尽量减少你的应用使用的功能数。
 
-**若要打开本地媒体使用 FileOpenPicker**
+**使用 FileOpenPicker 打开本地媒体**
 
 1.  调用 [FileOpenPicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 以使用户选取媒体文件。
 
@@ -246,7 +246,7 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 
 > **注意**&nbsp;&nbsp;如果 [MediaPlayerElement.IsFullWindow](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow) 设置为 true 并且正在播放媒体，将自动阻止屏幕停用。
 
-**若要使屏幕保持活动状态**
+**使屏幕保持活动状态**
 
 1.  创建一个全局 [DisplayRequest](https://docs.microsoft.com/uwp/api/Windows.System.Display.DisplayRequest) 变量。 将它初始化为 null。
 ```csharp
@@ -303,7 +303,7 @@ private DisplayRequest appDisplayRequest = null;
 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 提供大量属性、方法和事件用于通过 [MediaPlayerElement.MediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) 属性控制音频和视频播放。 有关属性、方法和事件的完整列表，请参阅 [MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer) 参考页。
 
 ### <a name="advanced-media-playback-scenarios"></a>高级媒体播放方案
-对于较复杂的媒体播放方案（如播放一个播放列表、在音频语言之间切换或创建自定义元数据轨），请将 [MediaPlayerElement.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 设置为 [MediaPlaybackItem](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackitem) 或 [MediaPlaybackList](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacklist)。 请参阅[媒体播放](https://docs.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource)有关如何启用各种高级的媒体功能的详细信息页。
+对于较复杂的媒体播放方案（如播放一个播放列表、在音频语言之间切换或创建自定义元数据轨），请将 [MediaPlayerElement.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 设置为 [MediaPlaybackItem](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackitem) 或 [MediaPlaybackList](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacklist)。 有关如何启用各种高级媒体功能的详细信息，请参阅[媒体播放](https://docs.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource)页。
 
 ### <a name="enable-full-window-video-rendering"></a>启用全屏视频呈现
 
@@ -396,5 +396,5 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 ## <a name="related-articles"></a>相关文章
 
-- [适用于 UWP 应用的命令设计基础知识](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
-- [适用于 UWP 应用的内容设计基础知识](https://docs.microsoft.com/windows/uwp/layout/content-basics)
+- [UWP 应用的命令设计基础知识](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
+- [UWP 应用的内容设计基础知识](https://docs.microsoft.com/windows/uwp/layout/content-basics)

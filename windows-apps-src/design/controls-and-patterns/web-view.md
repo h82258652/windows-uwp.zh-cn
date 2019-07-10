@@ -9,10 +9,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c996b22395fc8186fb1b6dc786a73fa4a97ecf16
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363984"
 ---
 # <a name="web-view"></a>Web 视图
@@ -28,7 +28,7 @@ Web 视图控件将一个视图嵌入你的应用中，以便使用 Microsoft Ed
 
 ## <a name="create-a-web-view"></a>创建 Web 视图
 
-**修改 web 视图的外观**
+**修改 Web 视图的外观**
 
 [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) 不是 [Control](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) 子类，因此它不具有控件模板。 但是，你可以设置各种属性来控制 Web 视图的某些可视部分。
 - 若要限制显示区域，请设置 [Width](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width) 和 [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) 属性。 
@@ -36,19 +36,19 @@ Web 视图控件将一个视图嵌入你的应用中，以便使用 Microsoft Ed
 - 若要控制 Web 视图的不透明度，请设置 [Opacity](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.opacity) 属性。
 - 若要在 HTML 内容不指定颜色的情况下指定一种用作 Web 页面背景的颜色，请设置 [DefaultBackgroundColor](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.defaultbackgroundcolor) 属性。 
 
-**获取 web 页标题**
+**获取 Web 页面标题**
 
 你可以使用 [DocumentTitle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.documenttitle) 属性获取 Web 视图中当前显示的 HTML 文档标题。 
 
-**输入的事件和 tab 键顺序**
+**输入事件和 Tab 键顺序**
 
 尽管 WebView 不是控件子类，但它可接收键盘输入焦点，并加入 Tab 键序列。 它提供 [Focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.focus) 方法，以及 [GotFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus) 和 [LostFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus) 事件，但它不具有 Tab 键相关属性。 它在 Tab 键序列中的位置与在 XAML 文档顺序中的位置相同。 Tab 键序列包括 Web 视图内容中的所有元素，这些元素可以接收输入焦点。 
 
-如 [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) 类页上的“事件”表中所示，Web 视图不支持继承自 [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的大部分用户输入事件，如 [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)、[KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 和 [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)。 你可以改为将 [InvokeScriptAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.invokescriptasync) 与 JavaScript **eval** 函数结合使用来使用 HTML 事件处理程序，并通过 HTML 事件处理程序中的 **window.external.notify** 以使用 [WebView.ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify) 通知应用程序。
+如 [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) 类页上的“事件”表中所示，Web 视图不支持继承自 [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的大部分用户输入事件，如 [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)、[KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 和 [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)。 可以改为将 [InvokeScriptAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.invokescriptasync) 与 JavaScript **eval** 函数结合使用来使用 HTML 事件处理程序，并通过 HTML 事件处理程序中的 **window.external.notify** 以使用 [WebView.ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify) 通知应用程序。
 
 ### <a name="navigating-to-content"></a>导航到内容
 
-Web 视图提供了几个 Api 的基本导航：[GoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.goback)， [GoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.goforward)，[停止](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.stop)，[刷新](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.refresh)， [CanGoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cangoback)，和[CanGoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cangoforward). 这些 API 可用于向你的应用添加典型的 Web 浏览功能。 
+Web 视图提供多个 API 以进行基本导航：[GoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.goback)、[GoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.goforward)、[Stop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.stop)、[Refresh](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.refresh)、[CanGoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cangoback) 和 [CanGoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cangoforward)。 这些 API 可用于向你的应用添加典型的 Web 浏览功能。 
 
 若要设置 Web 视图的初始内容，请设置 XAML 中的 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.source) 属性。 XAML 分析程序会自动将字符串转换为 [Uri](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri)。 
 
@@ -91,7 +91,7 @@ webView1.Navigate("ms-appx-web:///help/about.html");
 
 ### <a name="responding-to-navigation-events"></a>响应导航事件
 
-Web 视图控件提供的多个事件可用于响应导航和内容加载状态。 中的根 web 视图内容的以下顺序发生事件：[NavigationStarting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigationstarting)， [ContentLoading](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.contentloading)， [DOMContentLoaded](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.domcontentloaded)， [NavigationCompleted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigationcompleted)
+Web 视图控件提供的多个事件可用于响应导航和内容加载状态。 对于根 Web 视图内容，事件发生顺序如下所示：[NavigationStarting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigationstarting)、[ContentLoading](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.contentloading)、[DOMContentLoaded](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.domcontentloaded)、[NavigationCompleted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigationcompleted)
 
 
 **NavigationStarting** - 在 Web 视图导航到新内容之前发生。 通过将 WebViewNavigationStartingEventArgs.Cancel 属性设置为 true，可以在处理程序中取消针对此事件的导航。 
@@ -258,7 +258,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 Web 视图内容中的脚本可以使用带有字符串参数的 **window.external.notify** 将信息发送回你的应用。 若要接收这些消息，请处理 [ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify) 事件。 
 
-若要在调用 window.external.notify 时，允许外部网页引发 **ScriptNotify** 事件，必须在应用清单的 **ApplicationContentUriRules** 部分包含该页面的 URI。 （您可以执行此操作在 Microsoft Visual Studio 中的 Package.appxmanifest 设计器的内容 Uri 选项卡上。）此列表中的 Uri 必须使用 HTTPS，并且可能包含子域通配符 (例如， `https://*.microsoft.com`)，但它们不能包含通配符域 (例如，`https://*.com`和`https://*.*`)。 该部件清单要求不适用于源自应用包的内容、使用 ms-local-stream:// URI 的内容或使用 [NavigateToString](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetostring) 加载的内容。 
+若要在调用 window.external.notify 时，允许外部网页引发 **ScriptNotify** 事件，必须在应用清单的 **ApplicationContentUriRules** 部分包含该页面的 URI。 （可以在 Microsoft Visual Studio 中的 Package.appxmanifest 设计器的“内容 URI”选项卡上执行此操作。）此列表中的 URI 必须使用 HTTPS，可以包含子域通配符（例如 `https://*.microsoft.com`），但不能包含域通配符（例如 `https://*.com` 和 `https://*.*`）。 该部件清单要求不适用于源自应用包的内容、使用 ms-local-stream:// URI 的内容或使用 [NavigateToString](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetostring) 加载的内容。 
 
 ### <a name="accessing-the-windows-runtime-in-a-web-view"></a>访问 Web 视图中的 Windows 运行时
 
@@ -278,7 +278,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 有关详细信息，请参阅 [WebView.AddWebAllowedObject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.addweballowedobject)。 
 
-此外，还可以允许 Web 视图中受信任的 JavaScript 内容直接访问 Windows 运行时 API。 这为 Web 视图中承载的 Web 应用提供了强大的本机功能。 若要启用此功能，必须在 Package.appxmanifest 中将受信任内容的 URI 列入应用的 ApplicationContentUriRules 中的允许列表，并且明确地将 WindowsRuntimeAccess 设置为“all”。 
+此外，还可以允许 Web 视图中受信任的 JavaScript 内容直接访问 Windows 运行时 API。 这为 Web 视图中承载的 Web 应用提供了强大的本机功能。 若要启用此功能，必须在 Package.appxmanifest 中将受信任内容的 URI 列入应用的 ApplicationContentUriRules 中的白名单，并且明确地将 WindowsRuntimeAccess 设置为“all”。 
 
 此示例显示应用清单的一部分。 此处，本地 URI 可访问 Windows 运行时。 
 

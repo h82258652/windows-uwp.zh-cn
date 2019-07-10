@@ -20,7 +20,7 @@ ms.locfileid: "57601932"
 
 捕获媒体的另外一个方法是使用 **[Windows.Media.AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording)** 命名空间的 API。 如果在设备上启用了捕获，你的应用可以开始捕获游戏，在经过一段时间后，你可以停止捕获，此时媒体被写入文件。 如果用户已启用历史捕获，你也可以通过指定过去的开始时间以及要录制的持续时间来录制已经发生的游戏。 这两种方法都可以生成一个可供你的应用访问的视频文件，并且根据你选择保存文件的位置，也可供用户访问。 本文的中间部分向你演示这些方案的实现。
 
- **[Windows.Media.Capture](https://docs.microsoft.com/uwp/api/windows.media.capture)** 命名空间用于创建元数据的 API，这些元数据描述被捕获或广播的游戏。 它可以包括文本或数字值，并且具有一个标识各数据项的文本标签。 元数据可以表示发生在某一时刻的“事件”，如当用户在赛车游戏中完成一圈时，或者可以表示持续一段时间的“状态”，如用户当前所处的游戏地图。 元数据被写入到缓存中，由系统为你的应用进行分配和管理。 元数据被嵌入到广播流和捕获的视频文件中，包括内置系统捕获或自定义应用捕获方法。 本文的最后部分向你演示如何写入游戏元数据。
+**[Windows.Media.Capture](https://docs.microsoft.com/uwp/api/windows.media.capture)** 命名空间用于创建元数据的 API，这些元数据描述被捕获或广播的游戏。 它可以包括文本或数字值，并且具有一个标识各数据项的文本标签。 元数据可以表示发生在某一时刻的“事件”，如当用户在赛车游戏中完成一圈时，或者可以表示持续一段时间的“状态”，如用户当前所处的游戏地图。 元数据被写入到缓存中，由系统为你的应用进行分配和管理。 元数据被嵌入到广播流和捕获的视频文件中，包括内置系统捕获或自定义应用捕获方法。 本文的最后部分向你演示如何写入游戏元数据。
 
 > [!NOTE] 
 > 游戏元数据可以嵌入到媒体文件中，而且这些媒体文件有可能不受用户控制而通过网络进行共享，因此你不能在元数据中包括个人身份信息或其他潜在的敏感数据。
@@ -46,13 +46,13 @@ ms.locfileid: "57601932"
 ## <a name="add-the-windows-desktop-extensions-for-the-uwp-to-your-app"></a>将适用于 UWP 的 Windows 桌面扩展添加到你的应用
 录制音频和视频以及直接从你的应用捕获屏幕截图的 API 位于 **[Windows.Media.AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording)** 命名空间中，不包括在通用 API 协定中。 若要访问 API，你必须按照以下步骤将适用于 UWP 的 Windows 桌面扩展的引用添加到你的应用。
 
-1. 在 Visual Studio 的**解决方案资源管理器**中，展开你的 UWP 项目并右键单击**引用**，然后选择**添加引用...**。 
+1. 在 Visual Studio 的**解决方案资源管理器**中，展开你的 UWP 项目并右键单击**引用**，然后选择**添加引用...** 。 
 2. 展开**通用 Windows** 节点并选择**扩展**。
 3. 在扩展列表中，选中与你的项目的目标版本匹配的**适用于 UWP 的 Windows 桌面扩展**条目旁边的复选框。 对于应用广播功能，版本必须为 1709 或更高版本。
-4. 单击“确定” 。
+4. 单击“确定”  。
 
 ## <a name="get-an-instance-of-apprecordingmanager"></a>获取 AppRecordingManager 的一个实例
- **[AppRecordingManager](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager)** 类是用于管理应用录制的中央 API。 通过调用工厂方法 **[GetDefault](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetDefault)** 来获取此类的一个实例。 使用 **Windows.Media.AppRecording** 命名空间中的任何 API 之前，应检查该 API 在当前设备上是否存在。 在操作系统版本早于 Windows 10 版本 1709 的设备上，这些 API 不可用。 也可以不检查具体的操作系统版本，改用 **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** 方法查询 *Windows.Media.AppBroadcasting.AppRecordingContract* 版本 1.0。 如果此协定存在，则录制 API 在该设备上可用。 本文中的示例代码检查 API 一次，然后在执行后续操作前检查 **AppRecordingManager** 是否为空。
+**[AppRecordingManager](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager)** 类是用于管理应用录制的中央 API。 通过调用工厂方法 **[GetDefault](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetDefault)** 来获取此类的一个实例。 使用 **Windows.Media.AppRecording** 命名空间中的任何 API 之前，应检查该 API 在当前设备上是否存在。 在操作系统版本早于 Windows 10 版本 1709 的设备上，这些 API 不可用。 也可以不检查具体的操作系统版本，改用 **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** 方法查询 *Windows.Media.AppBroadcasting.AppRecordingContract* 版本 1.0。 如果此协定存在，则录制 API 在该设备上可用。 本文中的示例代码检查 API 一次，然后在执行后续操作前检查 **AppRecordingManager** 是否为空。
 
 [!code-cpp[GetAppRecordingManager](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetGetAppRecordingManager)]
 
@@ -71,7 +71,7 @@ ms.locfileid: "57601932"
 
 [!code-cpp[StartRecordToFile](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetStartRecordToFile)]
 
-录制操作完成后，检查返回的 **[AppRecordingResult](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult)** 对象的 **[已成功](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.Succeeded)** 属性以确定录制操作是否成功。 如果成功，你可以检查 **[IsFileTruncated](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.IsFileTruncated)** 属性以确定系统是否因为存储原因而被强制截断捕获的文件。 你可以检查**[持续时间](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.Duration)** 属性，如果文件被截断，你会发现录制文件的实际持续时间可能短于录制操作的持续时间。
+录制操作完成后，检查返回的 **[AppRecordingResult](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult)** 对象的 **[已成功](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.Succeeded)** 属性以确定录制操作是否成功。 如果成功，你可以检查 **[IsFileTruncated](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.IsFileTruncated)** 属性以确定系统是否因为存储原因而被强制截断捕获的文件。 你可以检查 **[持续时间](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.Duration)** 属性，如果文件被截断，你会发现录制文件的实际持续时间可能短于录制操作的持续时间。
 
 [!code-cpp[OnRecordingComplete](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetOnRecordingComplete)]
 
@@ -115,14 +115,14 @@ ms.locfileid: "57601932"
 本文的以下部分介绍如何提供系统将嵌入到已捕获游戏或已广播游戏的 MP4 流中的元数据。 元数据可以嵌入到使用内置系统 UI 捕获的媒体中或由应用使用 **AppRecordingManager** 捕获的媒体中。 你的应用和其他应用在媒体播放过程中可以提取此元数据，以提供与捕获或广播的游戏同步的依赖于上下文的体验。
 
 ### <a name="get-an-instance-of-appcapturemetadatawriter"></a>获取 AppCaptureMetadataWriter 的一个实例
-用于管理应用捕获元数据的主要类是 **[AppCaptureMetadataWriter](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter)**。 在初始化此类的实例时，使用 **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** 方法查询 *Windows.Media.Capture.AppCaptureMetadataContract* 1.0，以验证 API 在当前设备上可用。
+用于管理应用捕获元数据的主要类是 **[AppCaptureMetadataWriter](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter)** 。 在初始化此类的实例时，使用 **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** 方法查询 *Windows.Media.Capture.AppCaptureMetadataContract* 1.0，以验证 API 在当前设备上可用。
 
 [!code-cpp[GetMetadataWriter](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetGetMetadataWriter)]
 
 ### <a name="write-metadata-to-the-system-cache-for-your-app"></a>将元数据写入到你的应用的系统缓存
 每个元数据项都有一个字符串标签，用于标识元数据项、关联的数据值（可能是字符串、整数或双值），以及一个来自 **[AppCaptureMetadataPriority](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 枚举的值，该值指示数据项的相对优先级。 元数据项可以被视为发生在单个时间点的“事件”或在一个时间窗口内维持一个值的“状态”。 元数据被写入到内存缓存中，由系统为你的应用进行分配和管理。 系统对元数据的内存缓存强制执行大小限制，并且当达到此限制时，系统将基于每个元数据项被写入时的优先级清除数据。 本文的下一部分演示如何管理你的应用的元数据内存分配。
 
-一个典型的应用可以选择在捕获会话开始时写入一些元数据，以便为后续数据提供一些上下文。 在此方案中，建议你使用即时“事件”数据。 此示例调用 **[AddStringEvent](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.addstringevent)**、**[AddDoubleEvent](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.adddoubleevent)** 和 **[AddInt32Event](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.addint32event)** 设置每个数据类型的即时值。
+一个典型的应用可以选择在捕获会话开始时写入一些元数据，以便为后续数据提供一些上下文。 在此方案中，建议你使用即时“事件”数据。 此示例调用 **[AddStringEvent](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.addstringevent)** 、 **[AddDoubleEvent](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.adddoubleevent)** 和 **[AddInt32Event](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.addint32event)** 设置每个数据类型的即时值。
 
 [!code-cpp[StartSession](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetStartSession)]
 
