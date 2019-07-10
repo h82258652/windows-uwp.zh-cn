@@ -1,25 +1,25 @@
 ---
-description: 本主题介绍了可用于在 C++/CX 和 C++/WinRT 对象之间转换的两个帮助程序函数。
+description: 本主题介绍了可用于在 C++/CX 和 C++/WinRT 对象之间进行转换的两个帮助程序函数。
 title: 实现 C++/WinRT 与 C++/CX 之间的互操作
 ms.date: 10/09/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: 5394443b4832864e5b46bfbf917c04f0af6d8a19
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66360220"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>实现 C++/WinRT 与 C++/CX 之间的互操作
 
-逐渐迁移中的代码的策略您[ C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)项目到[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)中讨论了[将移到C++/WinRT 从C++/CX](move-to-winrt-from-cx.md)。
+用于将 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 项目中的代码逐渐移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的策略在[从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md) 中进行了讨论。
 
-本主题介绍可以使用之间进行转换的两个 helper 函数C++/CX 和C++/WinRT 对象对同一项目中的。 可以使用它们来使用这两种语言投影的代码之间的互操作或移植中的代码，可以使用函数C++到 /CX C++/WinRT。
+本主题介绍了可用于在项目项目中的 C++/CX 和 C++/WinRT 对象之间进行转换的两个帮助程序函数。 你可以借助这些技术，为使用两个语言投影的代码实现互操作，也可以在将代码从 C++/CX 移植到 C++/WinRT 时使用这些技术。
 
 ## <a name="fromcx-and-tocx-functions"></a>from_cx 和 to_cx 函数
-下面的帮助程序函数将 C++/CX 对象转换为等效的 C++/WinRT 对象。 该函数将 C++/CX 对象强制转换为其基础 [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) 接口指针。 然后，它对该指针调用 [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 来查询 C++/WinRT 对象的默认接口。 **QueryInterface** 是 C++/CX safe_cast 扩展的 Windows 运行时应用程序二进制接口 (ABI) 等效项。 此外，[**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) 函数将检索 C++/WinRT 对象的基础 **IUnknown** 接口指针的地址，使该地址能够设置为其他值。
+下面的帮助程序函数将 C++/CX 对象转换为等效的 C++/WinRT 对象。 该函数将 C++/CX 对象强制转换为其基础 [IUnknown  ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) 接口指针。 然后，它对该指针调用 [QueryInterface  ](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 来查询 C++/WinRT 对象的默认接口。 QueryInterface  是 C++/CX safe_cast 扩展的 Windows 运行时应用程序二进制接口 (ABI) 等效项。 此外，[winrt::put_abi  ](/uwp/cpp-ref-for-winrt/put-abi) 函数将检索 C++/WinRT 对象的基础 IUnknown  接口指针的地址，使该地址能够设置为其他值。
 
 ```cppwinrt
 template <typename T>
@@ -35,7 +35,7 @@ T from_cx(Platform::Object^ from)
 }
 ```
 
-下面的帮助程序函数将 C++/WinRT 对象转换为等效的 C++/CX 对象。 [  **winrt::get_abi**](/uwp/cpp-ref-for-winrt/get-abi) 函数将检索指向 C++/WinRT 对象的基础 **IUnknown** 接口的指针。 在使用 C++/CX safe_cast 扩展查询请求的 C++/CX 类型之前，此函数会将该指针强制转换为 C++/CX 对象。
+下面的帮助程序函数将 C++/WinRT 对象转换为等效的 C++/CX 对象。 [winrt::get_abi  ](/uwp/cpp-ref-for-winrt/get-abi) 函数将检索指向 C++/WinRT 对象的基础 IUnknown  接口的指针。 在使用 C++/CX safe_cast 扩展查询请求的 C++/CX 类型之前，此函数会将该指针强制转换为 C++/CX 对象。
 
 ```cppwinrt
 template <typename T>
@@ -45,15 +45,15 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 }
 ```
 
-## <a name="example-project-showing-the-two-helper-functions-in-use"></a>显示两个帮助程序函数中使用的示例项目
+## <a name="example-project-showing-the-two-helper-functions-in-use"></a>演示正在使用的两个帮助程序函数的示例项目
 
-若要重现，简单的方式，逐渐将移植代码中的方案C++到 /CX 项目C++/WinRT，可以开始通过在 Visual Studio 中使用之一中创建一个新的项目C++/WinRT 项目模板 (请参阅[Visual Studio支持C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。
+若要以简单方式重现将 C++/CX 项目中的代码逐渐移植到 C++/WinRT 的方案，可以首先在 Visual Studio 中使用 C++/WinRT 项目模板之一创建新项目（请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。
 
-此示例项目还说明了如何以处理否则为潜在之间的命名空间冲突，为不同的数据岛的代码中，使用命名空间别名C++/WinRT 投影和C++/CX 投影。
+此示例项目还说明如何使用不同代码岛的命名空间别名处理 C++/WinRT 投影与 C++/CX 投影之间潜在的命名空间冲突。
 
-- 创建**可视化C++**  \> **Windows Universal** > **Core 应用 (C++/WinRT)** 项目。
-- 在项目属性中， **C /C++**  \> **常规** \> **使用 Windows 运行时扩展** \> **是 (/ZW)** 。 这将打开项目支持C++/CX。
-- 内容替换为`App.cpp`与以下代码清单。
+- 创建“Visual C++”  \>“Windows 通用”   > “核心应用(C++/WinRT)”  项目。
+- 在项目属性中，“C/C++”  \>“常规”  \>“使用 Windows 运行时扩展”  \>“是(/ZW)”  。 这会打开对 C++/CX 的项目支持。
+- 将 `App.cpp` 中的内容替换为下面列出的代码。
 
 ```cppwinrt
 // App.cpp
@@ -255,8 +255,8 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ## <a name="important-apis"></a>重要的 API
 * [IUnknown 接口](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)
 * [QueryInterface 函数](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
-* [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
-* [winrt::put_abi function](/uwp/cpp-ref-for-winrt/put-abi)
+* [winrt::get_abi 函数](/uwp/cpp-ref-for-winrt/get-abi)
+* [winrt::put_abi 函数](/uwp/cpp-ref-for-winrt/put-abi)
 
 ## <a name="related-topics"></a>相关主题
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)

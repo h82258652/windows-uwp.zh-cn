@@ -1,59 +1,59 @@
 ---
 ms.openlocfilehash: f8e74688d0f7048276b12680237b85663d7e2b81
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66214738"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>向 UWP 概念性文档投稿
 
 感谢你对通用 Windows 平台 (UWP) 文档的关注！ 感谢你向我们的文档提供反馈以及编辑和添加内容。
 
-## <a name="writing-content"></a>写入内容
+## <a name="writing-content"></a>编写内容
 
-Markdown，轻量文本样式语法编写我们的文档。 如果您不熟悉 Markdown，可以[了解在 GitHub 上的基础知识](https://guides.github.com/features/mastering-markdown/)。 如果不确定，始终可以从我们的文档中的其他页面复制格式设置样式。
+我们的文档采用 Markdown（一种轻型文本样式语法）进行编写。 如果不熟悉 Markdown，则可以[在 GitHub 上了解基础知识](https://guides.github.com/features/mastering-markdown/)。 不确定时，始终可以从我们文档中的其他页面复制格式设置样式。
 
-## <a name="public-contributions"></a>公开发表的内容
+## <a name="public-contributions"></a>公开投稿
 
-你是否**不**可以通过参与 Microsoft 员工[公共内容存储库](https://github.com/MicrosoftDocs/windows-uwp)。 公开发表的内容是适用于更改和对现有页面的说明。
+如果你不是  Microsoft 员工，则可以通过[公共内容存储库](https://github.com/MicrosoftDocs/windows-uwp)进行投稿。 公开投稿适用于对现有页面的更改和说明。
 
 ### <a name="editing-a-file"></a>编辑文件
 
-如果您已在公共内容存储库中，首先导航到你想要更改的文件。 在此处，选择上面显示的内容开始编辑的铅笔图标。
+如果已处于公共内容存储库中，请首先导航到要更改的文件。 在此处，选择显示的内容上方的铅笔图标以开始编辑。
 
-或者，如果在 docs.microsoft.com 中查看一个页面，则可以选择**编辑**上页面的右上角的按钮。 这将重定向到存储库中的关联的源代码文件。
+或者，如果在 docs.microsoft.com 中查看页面，则可以选择页面右上角的“编辑”  按钮。 这会使你重定向到存储库中的关联源文件。
 
-当您开始编辑时，GitHub 会自动使用分叉官方存储库到个人 GitHub 帐户，您可以在其中进行更改。 完成后，提交拉取请求回**docs**分支。
+开始编辑时，GitHub 会自动将官方存储库分叉到你的个人 GitHub 帐户中，在其中可以进行更改。 完成后，将拉取请求提交回“文档”  分支。
 
 ### <a name="pull-requests"></a>拉取请求
 
-提交你的拉取请求后，它是针对内容质量清单，以确保其满足我们的基本标准进行评估。 如果该测试通过，它被分配给进一步评审的 UWP 文档团队的成员。 如果失败，你将告诉要进行哪些更改。
+提交拉取请求之后，会按照内容质量清单对它进行评估，以确保它满足我们的基本标准。 如果通过评估，则会将它分配给 UWP 文档团队的成员以进行进一步审阅。 如果失败，则会告诉你要进行哪些更改。
 
-已分配的审阅者可以批准或拒绝拉取请求，或与您协作以进行进一步的更改。
+分配的审阅者可以批准或拒绝 PR，或与你合作进行进一步更改。
 
-## <a name="internal-contributions"></a>内部发布内容
+## <a name="internal-contributions"></a>内部投稿
 
-如果你是 Microsoft 员工，你可以通过参与[专用内容存储库](https://github.com/microsoftdocs/windows-uwp-pr)。 您可以找到有关使用此存储库中的指南[Windows 创作指南](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master)。 必须通过专用存储库提供有关即将推出的功能的文档。
+如果你是 Microsoft 员工，则可以通过[内容存储库](https://github.com/microsoftdocs/windows-uwp-pr)进行投稿。 可以在 [Windows 创作指南](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master)中找到有关使用此存储库的指导。 只能通过私有存储库对有关即将推出的功能的文档进行投稿。
 
 ### <a name="editing-a-file"></a>编辑文件
 
-如下所示的公共存储库，可小更改到专用存储库在浏览器中，而无需创建本地克隆。 您**必须**确保你正确分支上参与。 有关创建个人分支的详细信息，请参阅[Windows 创作指南中的说明](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/branches?branch=master)。
+与在公共存储库中一样，可以在浏览器中对私有存储库进行小更改，而无需创建本地克隆。 必须  确保在正确分支上进行投稿。 有关创建个人分支的详细信息，请参阅 [Windows 创作指南中的说明](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/branches?branch=master)。
 
 ### <a name="making-substantial-changes"></a>进行重大更改
 
-若要对现有文章进行更广泛的更改，添加或更改图像，或参与新的项目，创建专用内容存储库的本地克隆。 有关详细信息，请按照[Windows 创作指南中的说明](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/)。
+若要对现有文章进行大量更改、添加或更改图像或是投稿新文章，请创建私有内容存储库的本地克隆。 有关详细信息，请遵循 [Windows 创作指南中的说明](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/)。
 
 ### <a name="pull-requests"></a>拉取请求
 
-当在内部存储库中创建的拉取请求，请确保正在将你的个人分支合并到从中创建它的分支。
+在内部存储库中创建拉取请求时，请确保将个人分支合并到从中创建它的分支中。
 
-提交你的拉取请求后，它针对计算[内容质量清单](https://review.docs.microsoft.com/windows-authoring-guide/managing-contributions/editorial-checklist?branch=master)以确保其满足我们的基本标准。 如果该测试通过，它被分配给进一步评审的 UWP 文档团队的成员。 如果失败，你将告诉要进行哪些更改。
+提交拉取请求之后，会按照[内容质量清单](https://review.docs.microsoft.com/windows-authoring-guide/managing-contributions/editorial-checklist?branch=master)对它进行评估，以确保它满足我们的基本标准。 如果通过评估，则会将它分配给 UWP 文档团队的成员以进行进一步审阅。 如果失败，则会告诉你要进行哪些更改。
 
-已分配的审阅者可以批准或拒绝拉取请求，或与您协作以进行进一步的更改。 除非你已自行批准，审阅者不会合并拉取请求。
+分配的审阅者可以批准或拒绝 PR，或与你合作进行进一步更改。 除非已自行批准，否则审阅者不会合并 PR。
 
 ## <a name="using-issues-to-provide-feedback-on-uwp-conceptual-documentation"></a>使用问题提供有关 UWP 概念性文档的反馈
 
-如果你想要提供反馈，而不是对文档进行编辑自己，则可[公共存储库中创建问题](https://github.com/MicrosoftDocs/windows-uwp/issues)。 选择**问题**选项卡并选择**新问题**按钮。 请务必包含主题标题和页面的 URL。 你的问题将分配给评审的 UWP 文档团队的成员。
+如果要提供有关文档的反馈，而不是自己进行编辑，则可以[在公共存储库中创建问题](https://github.com/MicrosoftDocs/windows-uwp/issues)。 选择“问题”  选项卡并选择“新问题”  按钮。 请务必包含主题标题和页面的 URL。 问题会被分配给 UWP 文档团队成员进行审阅。
 
-* 对于内部问题，使用[WDG 内容请求工具](https://aka.ms/pubrequest)。
+* 对于内部问题，使用 [WDG 内容请求工具](https://aka.ms/pubrequest)。

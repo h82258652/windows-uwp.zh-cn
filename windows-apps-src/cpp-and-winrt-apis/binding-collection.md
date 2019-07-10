@@ -1,35 +1,35 @@
 ---
-description: 可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 本主题介绍如何实现和使用可观测集合以及如何将 XAML 项目控件绑定到该集合。
+description: 可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 本主题介绍了如何实现和使用可观测集合以及如何将 XAML 项目控件绑定到该集合。
 title: XAML 项目控件；绑定到 C++/WinRT 集合
 ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 集合
 ms.localizationpriority: medium
 ms.openlocfilehash: 7669c6536f28d5f979567f5b433dbf614800bec3
-ms.sourcegitcommit: d23dab1533893b7fe0f01ca6eb273edfac4705e6
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65627679"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML 项目控件；绑定到 C++/WinRT 集合
 
-可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 这一想法基于称为*观察者模式*的软件设计模式。 本主题演示如何实现中的可观察集合[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何将绑定 XAML 项目，这些控件。
+可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 这一想法基于称为“观察者模式”的软件设计模式  。 本主题介绍如何在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中实现可观测集合以及如何将 XAML 项目控件绑定到这些集合。
 
-如果你想要按照本主题中，则我们建议您首先创建的项目中所述[XAML 控制; 绑定到C++/WinRT 属性](binding-property.md)。 本主题将更多的代码添加到该项目，并向该主题中介绍的概念。
+如果想要跟随此主题进行操作，建议先创建 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md)中所介绍的项目。 本主题向该项目添加更多代码，更详细地阐释该主题所介绍的概念。
 
 > [!IMPORTANT]
 > 有关支持你了解如何利用 C++/WinRT 来使用和创作运行时类的基本概述和术语，请参阅[通过 C++/WinRT 使用 API](consume-apis.md) 和[通过 C++/WinRT 创作 API](author-apis.md)。
 
-## <a name="what-does-observable-mean-for-a-collection"></a>对于集合来说，*可观测*意味着什么？
-如果表示集合的运行时类选择每当在其中添加或删除元素时引发 [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) 事件，则该运行时类是可观测集合。 XAML 项目控件可检索更新的集合然后将自行更新以显示当前元素，从而绑定到这些事件并处理事件。
+## <a name="what-does-observable-mean-for-a-collection"></a>对于集合来说，可观测意味着什么  ？
+如果表示集合的运行时类选择每当在其中添加或删除元素时引发 [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) 事件，则该运行时类是可观测集合  。 XAML 项目控件可检索更新的集合然后将自行更新以显示当前元素，从而绑定到这些事件并处理事件。
 
 > [!NOTE]
-> 有关如何安装和使用信息C++WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包 （该一起提供项目模板，并生成支持），请参阅[适用于 Visual Studio 支持C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 有关安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息，请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
-## <a name="add-a-bookskus-collection-to-bookstoreviewmodel"></a>将 **BookSkus** 集合添加到 **BookstoreViewModel**
+## <a name="add-a-bookskus-collection-to-bookstoreviewmodel"></a>将 BookSkus 集合添加到 BookstoreViewModel  
 
-在 [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md)中，我们已将类型 **BookSku** 的属性添加到主视图模型。 在此步骤中，我们将使用[ **winrt::single_threaded_observable_vector** ](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)工厂函数模板来帮助我们实现的可观察集合**BookSku**上同一个视图模型。
+在 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md)中，我们已将类型 BookSku 的属性添加到主视图模型  。 在此步骤中，我们将使用 [winrt::single_threaded_observable_vector](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) 出厂函数模板来帮助我们在同一视图模型上实现 BookSku 的可观测集合   。
 
 声明 `BookstoreViewModel.idl` 中的新属性。
 
@@ -45,9 +45,9 @@ runtimeclass BookstoreViewModel
 ```
 
 > [!IMPORTANT]
-> 在上面的 MIDL 3.0 列表中，请注意，类型**BookSkus**属性是[ **IObservableVector** ](/uwp/api/windows.foundation.collections.ivector_t_)的[ **IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). 本主题的下一个部分，我们将为绑定的项目源[**列表框**](/uwp/api/windows.ui.xaml.controls.listbox)到**BookSkus**。 列表框是项控件，并正确设置[ **ItemsControl.ItemsSource** ](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)属性，则需要将其设置为值类型**IObservableVector** (或**IVector**) 的**IInspectable**，或的互操作性类型，如[ **IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。
+> 在上述 MIDL 3.0 列表中，注意 BookSkus 属性的类型是 [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) 的 [IObservableVector](/uwp/api/windows.foundation.collections.ivector_t_)    。 在本主题的下一节中，我们会将 [ListBox](/uwp/api/windows.ui.xaml.controls.listbox) 的项目源绑定到 BookSkus   。 列表框是项目控件，用于正确设置 [ItemsControl.ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 属性，你需要将其设置为 IInspectable 的 IObservableVector（或 IVector）类型的值，或 [IBindableObservableVector](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector) 等互操作性类型的值      。
 
-保存并生成。 复制从访问器存根`BookstoreViewModel.h`并`BookstoreViewModel.cpp`中`\Bookstore\Bookstore\Generated Files\sources`文件夹 (有关更多详细信息，请参阅上一个主题[XAML 控制; 绑定到C++/WinRT 属性](binding-property.md))。 实现此类的这些访问器存根 （stub）。
+保存并生成。 复制 `\Bookstore\Bookstore\Generated Files\sources` 文件夹中 `BookstoreViewModel.h` 和 `BookstoreViewModel.cpp` 的访问器存根（有关详细信息，请参阅上一主题：[XAML 控件；绑定到 C++/WinRT 属性](binding-property.md)）。 实现这些访问器存根，如下所示。
 
 ```cppwinrt
 // BookstoreViewModel.h
@@ -89,8 +89,8 @@ Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspec
 ...
 ```
 
-## <a name="bind-a-listbox-to-the-bookskus-property"></a>将 ListBox 绑定到 **BookSkus** 属性
-打开 `MainPage.xaml`，其中包含主 UI 页面的 XAML 标记。 在与 **Button** 相同的 **StackPanel** 内添加以下标记。
+## <a name="bind-a-listbox-to-the-bookskus-property"></a>将 ListBox 绑定到 BookSkus 属性 
+打开 `MainPage.xaml`，其中包含主 UI 页面的 XAML 标记。 在与 Button 相同的 StackPanel 内添加以下标记   。
 
 ```xaml
 <ListBox ItemsSource="{x:Bind MainViewModel.BookSkus}">
@@ -102,7 +102,7 @@ Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspec
 </ListBox>
 ```
 
-在 `MainPage.cpp` 中，将一行代码添加到 **Click** 事件处理程序以将书籍追加到集合。
+在 `MainPage.cpp` 中，将一行代码添加到 Click 事件处理程序以将书籍追加到集合  。
 
 ```cppwinrt
 // MainPage.cpp
@@ -115,7 +115,7 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 ...
 ```
 
-立即生成并运行该项目。 单击该按钮以执行 **Click** 事件处理程序。 我们看到了**追加**的实现引发了让 UI 知道该集合已发生更改的事件；而且 **ListBox** 重新查询了集合以更新其自己的**项目**值。 和以前一样，其中一本书籍的标题发生了更改；而且该标题更改反映在按钮上和列表框中。
+立即生成并运行该项目。 单击该按钮以执行 Click 事件处理程序  。 我们看到了追加的实现引发了让 UI 知道该集合已发生更改的事件；而且 ListBox 重新查询了集合以更新其自己的“项目”值    。 和以前一样，其中一本书籍的标题发生了更改；而且该标题更改反映在按钮上和列表框中。
 
 ## <a name="important-apis"></a>重要的 API
 * [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)

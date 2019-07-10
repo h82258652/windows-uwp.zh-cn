@@ -148,7 +148,7 @@ _注意：C#的样式的强制转换语法比附加的属性语法更为灵活�
 > [!NOTE]
 > 如果你要将标记从 **{Binding}** 转换为 **{x:Bind}** ，请注意在 **Mode** 属性默认值方面的差异。
  
-> [**x: DefaultBindMode**](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute) 可用于更改特定段落标记树的 x: Bind 的默认模式。 所选的模式将应用该元素及其子元素上的任何 x:Bind 表达，不明确指定某个模式作为绑定的一部分。 使用 OneTime 时的性能比使用 OneWay 时更好，因为使用 OneWay 将导致生成更多代码以连接到和处理更改检测。
+> [**x:DefaultBindMode**](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute) 可用于更改特定段落标记树的 x: Bind 的默认模式。 所选的模式将应用该元素及其子元素上的任何 x:Bind 表达，不明确指定某个模式作为绑定的一部分。 使用 OneTime 时的性能比使用 OneWay 时更好，因为使用 OneWay 将导致生成更多代码以连接到和处理更改检测。
 
 ## <a name="remarks"></a>备注
 

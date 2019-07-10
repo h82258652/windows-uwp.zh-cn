@@ -12,10 +12,10 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 7942839b43739ca5fb15106abbfa1877ead81dc2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66362772"
 ---
 # <a name="flip-view"></a>翻转视图
@@ -24,7 +24,7 @@ ms.locfileid: "66362772"
 
 使用翻转视图浏览集合中的图像或其他项目（例如相册中的照片或产品详细信息页中的项目），一次显示一个项目。 对于触摸设备，轻扫某个项将在整个集合中进行浏览。 对于鼠标，导航按钮显示在鼠标悬停位置上。 对于键盘，使用箭头键移动浏览该集合。
 
-> **重要的 API**：[FlipView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview)， [ItemsSource 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)， [ItemTemplate 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
+> **重要的 API**：[FlipView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview)（FlipView 类），[ItemsSource 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)，[ItemTemplate 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
@@ -38,7 +38,7 @@ ms.locfileid: "66362772"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/FlipView">打开此应用，了解 FlipView 的实际应用</a>。</p>
+    <p>如果已安装 XAML 控件库应用，请单击此处<a href="xamlcontrolsgallery:/item/FlipView">打开此应用，了解 FlipView 的实际应用</a><strong style="font-weight: semi-bold"></strong>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
@@ -126,7 +126,7 @@ stackPanel1.Children.Add(flipView1);
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**注意**&nbsp;&nbsp;可以通过将项目添加到其 Items 集合或设置其 ItemsSource 属性来填充翻转视图，但不能同时使用这两种方式。 如果你设置 ItemsSource 属性并使用 XAML 添加项目，将忽略添加的项目。 如果 ItemsSource 属性已设置且使用代码向项集合中添加项，则会引发异常。
+>注意：可以通过将项目添加到其&nbsp;Items&nbsp;集合或设置其 ItemsSource 属性来填充翻转视图，但不能同时使用这两种方式  。 如果你设置 ItemsSource 属性并使用 XAML 添加项目，将忽略添加的项目。 如果 ItemsSource 属性已设置且使用代码向项集合中添加项，则会引发异常。
 
 ### <a name="specify-the-look-of-the-items"></a>指定项目的外观
 
@@ -231,5 +231,5 @@ stackPanel1.Children.Add(flipView1);
 
 ## <a name="related-articles"></a>相关文章
 
-- [列表的指导原则](lists.md)
+- [列表指南](lists.md)
 - [**FlipView 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)

@@ -6,10 +6,10 @@ ms.topic: article
 keywords: Windows 10, uwp, SQL Server, 数据库
 ms.localizationpriority: medium
 ms.openlocfilehash: f8986f14872d4e5de2c45bba264de6619ef07141
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66360153"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>在 UWP 应用中使用 SQL Server 数据库
@@ -27,9 +27,9 @@ ms.locfileid: "66360153"
 
 ![Windows SDK 的最低版本](images/min-version-fall-creators.png)
 
-在清单设计器中打开你的 UWP 项目的 **Package.appxmanifest** 文件。
+在清单设计器中打开你的 UWP 项目的 Package.appxmanifest  文件。
 
-在中**功能**选项卡上，选择**企业身份验证**复选框，如果使用 Windows 身份验证进行身份验证您的 SQL Server。
+在“功能”  选项卡中，如果要使用 Windows 身份验证对 SQL Server 进行身份验证，则选中“企业身份验证”  复选框。
 
 ![企业身份验证功能](images/enterprise-authentication.png)
 
@@ -39,22 +39,22 @@ ms.locfileid: "66360153"
 
 在本节中，我们将执行以下操作：
 
-： 一个：添加连接字符串。
+:one:添加连接字符串。
 
-： 两个：创建用于容纳产品数据的类。
+:two:创建用于保存产品数据的类。
 
-： 三个：从 SQL Server 数据库中检索的产品。
+:three:从 SQL Server 数据库检索产品。
 
-： 四个：添加基本用户界面。
+:four:添加基本用户界面。
 
-： 五个：填充产品 UI。
+:five:使用产品填充 UI。
 
 >[!NOTE]
 > 本节介绍了一种组织你的数据访问代码的方法。 这不仅仅是为了提供如何使用 [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) 在 SQL Server 数据库中存储和检索数据的示例。 你可以采用对你的应用程序设计最有意义的任何方式组织你的代码。
 
 ### <a name="add-a-connection-string"></a>添加连接字符串
 
-在 **App.xaml.cs** 文件中，向 ``App`` 类添加一个属性，该属性为你的解决方案中的其他类提供了对连接字符串的访问权限。
+在 App.xaml.cs  文件中，向 ``App`` 类添加一个属性，该属性为你的解决方案中的其他类提供了对连接字符串的访问权限。
 
 我们的连接字符串指向 SQL Server Express 实例中的 Northwind 数据库。
 
@@ -156,7 +156,7 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 
 ### <a name="add-a-basic-user-interface"></a>添加基本用户界面
 
- 将以下 XAML 添加到 UWP 项目的 **MainPage.xaml** 文件。
+ 将以下 XAML 添加到 UWP 项目的 MainPage.xaml  文件。
 
  此 XAML 将创建一个 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)（用来显示你在上一个代码段中返回的每个产品），并会将 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 中的每个行的属性绑定到我们在 ``Product`` 类中定义的属性。
 
@@ -208,7 +208,7 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 
 ### <a name="show-products-in-the-listview"></a>在 ListView 中显示产品
 
-打开 **MainPage.xaml.cs** 文件，并将代码添加到 ``MainPage`` 类的构造函数，该类可将 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 的 **ItemSource** 属性设置为 ``Product`` 实例的 [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN)。
+打开 MainPage.xaml.cs  文件，并将代码添加到 ``MainPage`` 类的构造函数，该类可将 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 的 ItemSource  属性设置为 ``Product`` 实例的 [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN)。
 
 ```csharp
 public MainPage()
@@ -226,7 +226,7 @@ public MainPage()
 
 ## <a name="trouble-connecting-to-your-database"></a>连接数据库时遇到问题？
 
-在大多数情况下，需要更改 SQL Server 配置的某些方面。 如果能够从其他类型的桌面应用程序（例如 Windows 窗体或 WPF 应用程序）连接到数据库，请确保已为 SQL Server 启用 TCP/IP。 可以在**计算机管理**控制台中执行该操作。
+在大多数情况下，需要更改 SQL Server 配置的某些方面。 如果能够从其他类型的桌面应用程序（例如 Windows 窗体或 WPF 应用程序）连接到数据库，请确保已为 SQL Server 启用 TCP/IP。 可以在“计算机管理”  控制台中执行该操作。
 
 ![计算机管理](images/computer-management.png)
 
@@ -236,14 +236,14 @@ public MainPage()
 
 ## <a name="next-steps"></a>后续步骤
 
-**使用轻型数据库来存储用户设备上的数据**
+**使用轻量级数据库在用户设备上存储数据**
 
 参阅[在 UWP 应用中使用 SQLite 数据库](sqlite-databases.md)。
 
-**不同的应用程序跨不同平台之间共享代码**
+**在跨不同平台的不同应用之间共享代码**
 
 参阅[在桌面应用和 UWP 应用之间共享代码](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate)。
 
-**添加 Azure SQL 后端使用的主详细信息页**
+**使用 Azure SQL 后端添加大纲/细节页面**
 
 参阅[客户订单数据库示例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)。

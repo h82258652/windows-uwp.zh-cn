@@ -196,7 +196,7 @@ UWP 应用可以侦听以下指针事件：
 
 在大多数情况下，我们建议你通过事件处理程序的 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 获取指针信息。
 
-如果事件自变量不会公开所需的指针详细信息，可以获取扩展的访问权限[ **PointerPoint** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint)信息通过公开[ **GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint)和 [**GetIntermediatePoints**]https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints)方法[ **PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs)。
+如果事件自变量不会公开所需的指针详细信息，可以获取扩展的访问权限[ **PointerPoint** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint)信息通过公开[ **GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint)和 [**GetIntermediatePoints**]https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) 方法[ **PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs)。
 
 以下代码设置用于跟踪每个活动指针的全局字典对象，并为该目标对象标识各个指针事件侦听器。
 
@@ -572,7 +572,7 @@ private void Target_PointerCaptureLost(object sender, PointerRoutedEventArgs e)
 
 ### <a name="get-pointer-properties"></a>获取指针属性
 
-如前面所述，必须获取扩展有最指针信息从[ **Windows.UI.Input.PointerPoint** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint)对象通过获得[ **GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint)和 [**GetIntermediatePoints**]https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints)方法[ **PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs)。 下面的代码段显示操作步骤。
+如前面所述，必须获取扩展有最指针信息从[ **Windows.UI.Input.PointerPoint** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint)对象通过获得[ **GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint)和 [**GetIntermediatePoints**]https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) 方法[ **PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs)。 下面的代码段显示操作步骤。
 
 -   首先，我们为每个指针创建一个新的 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
 
@@ -892,7 +892,7 @@ namespace UWP_Pointers
 ```
 
 ### <a name="create-the-ui"></a>创建 UI
-此示例中的 UI 限制为输入**[画布](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas)**，我们在其中跟踪所有指针并呈现指针指示器和主指针动画（如果适用），同时显示一个包含指针计数器和主指针标识符的标题栏。
+此示例中的 UI 限制为输入 **[画布](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas)** ，我们在其中跟踪所有指针并呈现指针指示器和主指针动画（如果适用），同时显示一个包含指针计数器和主指针标识符的标题栏。
 
 下面是 MainPage.xaml：
 

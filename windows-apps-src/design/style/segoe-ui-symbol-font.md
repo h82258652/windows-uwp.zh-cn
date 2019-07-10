@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 076e4b0ddf30a23271bbb6b488f235f7233b28c2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649052"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63843105"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2 图标
 
@@ -22,11 +22,11 @@ ms.locfileid: "57649052"
 
 本文列出了由 Segoe MDL2 Assets 字体提供的图标。 
 
-> **重要的 API**：[**符号枚举**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)， [ **FontIcon 类**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+> **重要的 API**：[Symbol enum](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)（Symbol 枚举）、[FontIcon class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)（FontIcon 类）  
 
 ## <a name="about-segoe-mdl2-assets"></a>关于 Segoe MDL2 Assets
 
-对于版本 Windows 10，Windows 8/8.1 Segoe UI Symbol 图标字体已替换为 Segoe MDL2 Assets 字体。 <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (**Segoe UI 符号**将仍可用作"传统"的资源，但我们建议在更新应用以使用新**Segoe MDL2 资产**。)
+随着 Windows 10 的发布，Windows 8/8.1 Segoe UI Symbol 图标字体已替换为 Segoe MDL2 Assets 字体。 <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> （Segoe UI Symbol 仍将作为“传统”资源提供，但我们建议你更新应用以便使用新的 Segoe MDL2 Assets。   ）
 
 **Segoe MDL2 Assets** 字体中随附的大部分图标和 UI 控件均将映射至 Unicode 专用区 (PUA)。 PUA 允许字体开发人员将专用 Unicode 值分配给未映射到现有代码点的字形。 在创建符号字体时这非常有用，但也会带来互操作性问题。 如果字体不可用，则字形将不显示。 仅当你能够指定 **Segoe MDL2 Assets** 字体时，才使用这些字形。
 
@@ -43,30 +43,30 @@ ms.locfileid: "57649052"
 大部分图标还具有镜像样式，以供在使用从右到左文本方向的语言（如阿拉伯语、波斯语和希伯来语）中使用。
 
 ## <a name="using-the-icons"></a>使用图标
-如果你正在开发中的应用C#/VB/c + + 和 XAML，可以使用从使用 Segoe MDL2 资产的指定标志符号[符号枚举](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)。 
+如果使用 C#/VB/C++ 和 XAML 开发应用，可通过 [Symbol 枚举](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)使用 Segoe MDL2 Assets 中的指定字形。 
 
 ```xaml
 <SymbolIcon Symbol="GlobalNavigationButton"/>
 ```
 
-如果想使用 Symbol 枚举中未包含的 **Segoe MDL2 Assets** 字体的字形，可使用 [**FontIcon**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)。
+如果想使用 Symbol 枚举中未包含的 Segoe MDL2 Assets 字体的字形，可使用 [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)   。
 
 ```xaml
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
 
-此外可以使用静态资源`SymbolThemeFontFamily`访问**Segoe MDL2 资产**，而不是按名称指定字体：
+还可以使用静态资源 `SymbolThemeFontFamily` 访问 Segoe MDL2 Assets，而不是按名称指定字体  ：
 ```xaml
 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
 ```
 
 
 ## <a name="how-do-i-get-this-font"></a>如何获取该字体？
-* 在 Windows 10:没有任何需要执行，该字体附带了 Windows。
-* 在 Mac 上，您需要下载并安装此字体：<a href="https://aka.ms/SegoeFonts">获取 Segoe UI 和 MDL2 图标字体</a>
+* 在 Windows 10 上：无需进行任何操作，Windows 自带该字体。
+* 在 Mac 上，需下载并安装该字体：<a href="https://aka.ms/SegoeFonts">获取 Segoe UI 和 MDL2 图标字体</a>
 
 ## <a name="icon-list"></a>图标列表
-请注意，除此处显示的图标之外，**Segoe MDL2 Assets** 字体还包含许多其他图标。 许多图标的用途特殊，通常不用于这些用途之外的其他方面。
+请记住，Segoe MDL2 Assets 字体所包含的图标远多于此处显示的图标  。 许多图标都用于特定用途，通常不用于其他位置。
 
 
 <table style="background-color: white; color: black">
@@ -270,7 +270,7 @@ ms.locfileid: "57649052"
  </tr>
 <tr><td><img src="images/segoe-mdl/E731.png" width="32" height="32" alt="EMI" /></td>
   <td>E731</td>
-  <td>电磁干扰</td>
+  <td>EMI</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E734.png" width="32" height="32" alt="FavoriteStar" /></td>
   <td>E734</td>
@@ -2362,7 +2362,7 @@ ms.locfileid: "57649052"
  </tr>
 <tr><td><img src="images/segoe-mdl/E9D5.png" width="32" height="32" alt="CheckList" /></td>
   <td>E9D5</td>
-  <td>核对清单</td>
+  <td>CheckList</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9D9.png" width="32" height="32" alt="Diagnostic" /></td>
   <td>E9D9</td>
@@ -2370,7 +2370,7 @@ ms.locfileid: "57649052"
  </tr>
 <tr><td><img src="images/segoe-mdl/E9E9.png" width="32" height="32" alt="Equalizer" /></td>
   <td>E9E9</td>
-  <td>均衡器</td>
+  <td>Equalizer</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9F3.png" width="32" height="32" alt="Process" /></td>
   <td>E9F3</td>
@@ -2394,7 +2394,7 @@ ms.locfileid: "57649052"
  </tr>
 <tr><td><img src="images/segoe-mdl/EA18.png" width="32" height="32" alt="Shield" /></td>
   <td>EA18</td>
-  <td>防护罩</td>
+  <td>Shield</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EA1F.png" width="32" height="32" alt="Info2" /></td>
   <td>EA1F</td>
@@ -2690,7 +2690,7 @@ ms.locfileid: "57649052"
  </tr>
 <tr><td><img src="images/segoe-mdl/EB44.png" width="32" height="32" alt="Radar" /></td>
   <td>EB44</td>
-  <td>雷达图</td>
+  <td>Radar</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EB47.png" width="32" height="32" alt="BusSolid" /></td>
   <td>EB47</td>
@@ -3438,7 +3438,7 @@ ms.locfileid: "57649052"
  </tr>
 <tr><td><img src="images/segoe-mdl/ECAD.png" width="32" height="32" alt="Calories" /></td>
   <td>ECAD</td>
-  <td>卡路里</td>
+  <td>Calories</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/ECB9.png" width="32" height="32" alt="BandBattery0" /></td>
   <td>ECB9</td>
@@ -3974,11 +3974,11 @@ ms.locfileid: "57649052"
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3B.png" width="32" height="32" alt="Replay" /></td>
   <td>EF3B</td>
-  <td>重播</td>
+  <td>Replay</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3C.png" width="32" height="32" alt="Eyedropper" /></td>
   <td>EF3C</td>
-  <td>取色器</td>
+  <td>Eyedropper</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3D.png" width="32" height="32" alt="LineDisplay" /></td>
   <td>EF3D</td>
@@ -4018,7 +4018,7 @@ ms.locfileid: "57649052"
  </tr>
 <tr><td><img src="images/segoe-mdl/F003.png" width="32" height="32" alt="Relationship" /></td>
   <td>F003</td>
-  <td>关系</td>
+  <td>Relationship</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F080.png" width="32" height="32" alt="DefaultAPN" /></td>
   <td>F080</td>
@@ -4078,7 +4078,7 @@ ms.locfileid: "57649052"
  </tr>
 <tr><td><img src="images/segoe-mdl/F0B4.png" width="32" height="32" alt="Protractor" /></td>
   <td>F0B4</td>
-  <td>量角器</td>
+  <td>Protractor</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F0B5.png" width="32" height="32" alt="ChecklistMirrored" /></td>
   <td>F0B5</td>
@@ -4506,7 +4506,7 @@ ms.locfileid: "57649052"
  </tr>
 <tr><td><img src="images/segoe-mdl/F180.png" width="32" height="32" alt="Lexicon " /></td>
   <td>F180</td>
-  <td>词典 </td>
+  <td>Lexicon </td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F182.png" width="32" height="32" alt="ScreenTime" /></td>
   <td>F182</td>
@@ -4598,7 +4598,7 @@ ms.locfileid: "57649052"
  </tr>
 <tr><td><img src="images/segoe-mdl/F270.png" width="32" height="32" alt="Ear" /></td>
   <td>F270</td>
-  <td>耳朵</td>
+  <td>Ear</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F271.png" width="32" height="32" alt="PointerHand" /></td>
   <td>F271</td>
@@ -4606,7 +4606,7 @@ ms.locfileid: "57649052"
  </tr>
 <tr><td><img src="images/segoe-mdl/F272.png" width="32" height="32" alt="Bullseye" /></td>
   <td>F272</td>
-  <td>靶心</td>
+  <td>Bullseye</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F32A.png" width="32" height="32" alt="PassiveAuthentication" /></td>
   <td>F32A</td>
@@ -4742,7 +4742,7 @@ ms.locfileid: "57649052"
  </tr>
 <tr><td><img src="images/segoe-mdl/F540.png" width="32" height="32" alt="Safe" /></td>
   <td>F540</td>
-  <td>安全</td>
+  <td>Safe</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F552.png" width="32" height="32" alt="LaptopSecure" /></td>
   <td>F552</td>
@@ -5166,7 +5166,7 @@ ms.locfileid: "57649052"
 
 ## <a name="related-articles"></a>相关文章
 
-* [适用于图标准则](../style/icons.md)
+* [图标指南](../style/icons.md)
 * [Symbol 枚举](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
 * [FontIcon 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 

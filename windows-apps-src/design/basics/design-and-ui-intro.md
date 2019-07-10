@@ -1,5 +1,5 @@
 ---
-Description: 每个 UWP 应用的帮助中包括的通用设计功能生成美观地缩放各种各样的设备的应用。
+Description: 每个 UWP 应用中所包含的通用设计功能都有助于生成跨各种设备完美缩放的应用。
 title: 通用 Windows 平台 (UWP) 应用设计（Windows 应用）简介
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 ms.date: 05/05/2018
@@ -8,10 +8,10 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 25dc7118fcb7d9c6e997fae458ef7846777b1262
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65983920"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP 应用设计简介
@@ -20,17 +20,17 @@ ms.locfileid: "65983920"
 
 通用 Windows 平台 (UWP) 设计指南可帮助你设计和构建美观、优化的应用。
 
-它不是一份说明性规则的清单 - 它是一个动态文档，旨在适应我们不断演变的 [Fluent Design 系统](/windows/apps/fluent-design-system)以及应用构建社区的需求。
+它不是一份说明性规则的清单 - 它是一个动态文档，旨在适应我们不断演变的 [Fluent Design System](/windows/apps/fluent-design-system) 以及应用构建社区的需求。
 
 此引言概述了各项 UWP 应用中包含的通用设计功能，并帮助你构建可在多台设备中完美扩展的用户界面 (UI)。
 
 ## <a name="effective-pixels-and-scaling"></a>有效像素和缩放
 
-在所有上运行 UWP 应用[Windows 10 设备](../devices/index.md)，从您的平板电脑或 PC 到电视。 那么，如何设计 UI 看起来在各种设备和屏幕尺寸上很好？
+UWP 应用可以在所有 [Windows 10 设备](../devices/index.md)（从电视到平板电脑或电脑）上运行。 那如何设计在各种设备上以及各种尺寸的屏幕上呈现效果优秀的 UI？
 
 ![各种设备上的同一应用](images/universal-image-1.jpg)
 
-UWP 帮助通过自动调整 UI 元素，以便它们可以清晰且易于与所有设备和屏幕大小进行都交互。
+UWP 可以发挥促进作用，即通过自动调整 UI 元素的大小，以使它们在所有设备和屏幕大小上清晰可见并易于交互。
 
 当你的应用在设备上运行时，系统将使用算法来使 UI 元素在屏幕上的显示方式规范化。 此缩放算法考虑了观看距离和屏幕密度（每英寸像素），以针对感知大小（而不是物理大小）进行优化。 该缩放算法确保用户可从 10 英尺远处识别 Surface Hub 上高 24 像素的字体，正如从几英寸远处识别 5 英寸手机上高 24 像素的字体。
 
@@ -96,7 +96,7 @@ UWP 帮助通过自动调整 UI 元素，以便它们可以清晰且易于与所
 
 也可以在 Visual Studio 中使用 [Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master) 为应用设计布局。
 
-## <a name="controls"></a>Controls
+## <a name="controls"></a>控制
 
 UWP 的设计平台提供了一系列保证在所有支持 Windows 的设备上都能正常工作的常用控件，它们遵循 [Fluent Design 系统](/windows/apps/fluent-design-system)原则。 这些控件包括从简单控件（如按钮和文本元素）到复杂控件（可从一组数据和一个模板生成列表）的一切控件。
 
@@ -106,9 +106,9 @@ UWP 的设计平台提供了一系列保证在所有支持 Windows 的设备上�
 
 ## <a name="style"></a>样式
 
-常用控件自动反映系统主题和主题色，使用所有输入类型并扩展到所有设备。 它们通过这种方式体现 Fluent Design 系统的特点 - 自适应、共鸣和美观。 常用控件的默认样式使用了灯光、运动和深度，因此一旦使用它们，就等于将 Fluent Design 系统集成到了你的应用之中。
+常用控件自动反映系统主题和主题色，使用所有输入类型并扩展到所有设备。 它们通过这种方式体现 Fluent Design 系统的特点 - 自适应、能够引发共鸣并且美观。 常用控件的默认样式使用了灯光、运动和深度，因此一旦使用它们，就等于将 Fluent Design 系统集成到了你的应用之中。
 
-常用控件是可高度自定义的，你可以更改控件的前景色或完全自定义其外观。 要覆盖控件中的默认样式，请使用[轻型样式设置](../controls-and-patterns/xaml-styles.md#lightweight-styling)或在 XAML 中创建[自定义控件](../controls-and-patterns/control-templates.md)。
+常用控件可以灵活自定义，可以更改控件的前景色或完全自定义其外观。 要覆盖控件中的默认样式，请使用[轻型样式设置](../controls-and-patterns/xaml-styles.md#lightweight-styling)或在 XAML 中创建[自定义控件](../controls-and-patterns/control-templates.md)。
 
 ![主题色 gif](images/intro-style.gif)
 
@@ -142,17 +142,17 @@ UWP 的设计平台提供了一系列保证在所有支持 Windows 的设备上�
 
 ![设备](../layout/images/size-classes.svg)
 
-同样，虽然 UWP 会自动将应用扩展到不同的设备，但你也可以[针对特定设备优化 UWP 应用](../devices/index.md)。
+同样，虽然 UWP 会自动缩放应用以适应不同的设备，但你也可以[针对特定设备优化 UWP 应用](../devices/index.md)。
 
 ## <a name="usability"></a>可用性
 
 <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REYaAb?ver=727c">
 
-最后但并非最不重要的是，可用性是对所有用户开放你的应用体验。 每个人都可从真正非独占的用户体验中受益 - 请参阅 [UWP 应用中的可用性](../usability/index.md)以了解如何使你的应用可供每个人轻松使用。
+最后一点也很重要：可用即对所有用户开放你的应用体验。 真正具有包容性的用户体验可以让每个人受益 - 请参阅 [UWP 应用中的可用性](../usability/index.md)，了解如何让每个人都能轻松使用你的应用。
 
 如果是面向全球用户设计，你可能需要了解[全球化和本地化](../globalizing/globalizing-portal.md)。
 
-你还可能需要考虑面向在视觉、听觉和行动方面受限的用户的[辅助功能](../accessibility/accessibility-overview.md)。 如果辅助功能从一开始便内置于设计中，则[使你的应用可供访问](../accessibility/accessibility-in-the-store.md)应只需花费极少的额外时间和精力。
+你还可能需要考虑面向在视觉、听觉和行动方面受限的用户的[辅助功能](../accessibility/accessibility-overview.md)。 如果辅助功能从一开始便内置于设计中，那么应该几乎不用花费额外的时间和精力就可以[使你的应用易于访问](../accessibility/accessibility-in-the-store.md)。
 
 ## <a name="tools-and-design-toolkits"></a>工具和设计工具包
 

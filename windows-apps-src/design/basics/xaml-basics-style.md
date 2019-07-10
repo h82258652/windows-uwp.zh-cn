@@ -6,21 +6,21 @@ ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d540b41620110a41676d08f5e6239efd0ef4ca46
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66361225"
 ---
 # <a name="tutorial-create-custom-styles"></a>教程：创建自定义样式
 
 本教程向你介绍如何自定义 XAML 应用的 UI。 警告：本教程可能包括或不包括独角兽图形。 （包括！）  
 
-## <a name="prerequisites"></a>先决条件
-* [Visual Studio 2017 和 Windows 10 SDK (10.0.15063.468 或更高版本)](https://developer.microsoft.com/windows/downloads)
+## <a name="prerequisites"></a>必备条件
+* [Visual Studio 2017 和 Windows 10 SDK（10.0.15063.468 或更高版本）](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="part-0-get-the-code"></a>第 0 部分：获取代码
-本实验室的起点位于 [xaml-basics-starting-points/style/ 文件夹](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style)内的 PhotoLab 示例存储库中。 克隆/下载存储库后，你可以使用 Visual Studio 2017 打开 PhotoLab.sln 来编辑项目。
+本实验室的起点位于 [xaml-basics-starting-points/style/ 文件夹](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style)内的 PhotoLab 示例存储库中。 克隆/下载存储库后，可以使用 Visual Studio 2017 打开 PhotoLab.sln 来编辑项目。
 
 PhotoLab 应用有两个主要页面：
 
@@ -30,7 +30,7 @@ PhotoLab 应用有两个主要页面：
 **DetailPage.xaml：** 选择单张照片后显示此照片。 利用浮出编辑菜单，可以修改、重命名和保存照片。
 ![DetailPage](../basics/images/xaml-basics/detailpage.png)
 
-## <a name="part-1-create-a-fancy-slider-control"></a>第 1 部分：创建精美的滑块控件  
+## <a name="part-1-create-a-fancy-slider-control"></a>第 1 部分：创建精致的滑块控件  
 
 通用 Windows 平台 (UWP) 提供了多种用于自定义应用外观的方法。 从字体和版式设置到颜色和渐变再到模糊效果，你有很多选择。 
 
@@ -38,47 +38,47 @@ PhotoLab 应用有两个主要页面：
 
 <figure>
     <img src="../basics/images/xaml-basics/slider-start.png" />
-    <figure>*带默认样式的谦卑滑块。*</figure>
+    <figure>采用默认样式的小滑块。 </figure>
 </figure>
 
-这些滑块很棒，它们能够执行滑块应该执行的所有操作，但不是很奇特。 让我们来修复一下。 
+这些滑块很棒，它们能够执行滑块应该执行的所有操作，但不是很精致。 让我们来解决这个问题。 
 
 曝光滑块可调整图像的曝光：将其向左滑动，图像会变暗；将其向右滑动，图像会变亮。 让我们为滑块提供一个从黑色渐变到白色的背景，以使其变得更酷。 背景将使滑块更美观，这非常棒，但是它还将提供关于滑块所提供的功能的视觉提示。
 
 ### <a name="customize-a-slider-control"></a>自定义滑块控件
 
 <!-- TODO: Update folder -->
-1. 下载存储库中后，在 xaml-basics-starting-points/style/ 文件夹中打开 **PhotoLab.sln**，并将解决方案平台设置为 x86 或 x64（而不是 ARM）。 
+1. 下载存储库中后，在 xaml-basics-starting-points/style/ 文件夹中打开 PhotoLab.sln，并将解决方案平台设置为 x86 或 x64（而不是 ARM）  。 
 
     按 F5 编译并运行应用。 第一个屏幕显示了图像库。 单击图像以转到图像详细信息页面。 到达此页面后，单击“编辑”按钮以查看我们将使用的编辑控件。 退出应用并返回到 Visual Studio。  
 
-2. 在“解决方案资源管理器”面板中，双击 **DetailPage.xaml** 以将其打开。 
+2. 在“解决方案资源管理器”面板中，双击 DetailPage.xaml 以将其打开  。 
 
     ![Visual Studio 2017 解决方案资源管理器中的 DetailPage.xaml 文件。](../basics/images/xaml-basics/style-detail-page-explorer.png)
 
-3. 使用 Polygon 元素为曝光滑块创建背景形状。
+3. 使用多边形元素为曝光滑块创建背景形状。
 
     [Windows.XAML.Ui.Shapes 命名空间](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes)可提供七种形状以供选择。 有椭圆、矩形和一个叫“路径”的东西，这个东西可以制作任何类型的形状 - 是的，甚至是独角兽！ 
     
     <!-- TODO reduce size -->
-    ![Unicorn](../basics/images/xaml-basics/unicorn.png)
+    ![独角兽](../basics/images/xaml-basics/unicorn.png)
     
-    > **阅读有关它：** [绘制的形状](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)文章告诉您需要了解有关 XAML 形状的所有内容。 
+    > **阅读相关信息：** [绘制形状](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)一文会介绍有关 XAML 形状的所有需知内容。 
     
-    我们想要创建一个三角形样子的小工具 - 有点像你在立体声音量控件上看到的形状。
+    我们想要创建一个类似三角形的小工具 - 有点像立体声音响的音量控制器上的形状。
     
     ![音量滑块](../basics/images/xaml-basics/style-volume-slider.png)
     
-    听起来像是一个与多边形相关的工作！ 若要定义多边形，你可以指定一组点，并进行填充。 让我们创建一个宽约 200 像素、高约 20 像素的多边形，并进行渐变填充。
+    听起来像是多边形派上用场的时候了！ 若要定义多边形，可以指定一组点，并进行填充。 让我们创建一个宽约 200 像素、高约 20 像素的多边形，并进行渐变填充。
     
     在 DetailPage.xaml 中，查找曝光滑块的代码，然后就在该代码前面创建一个 Polygon 元素： 
 
-    * 将 **Grid.Row** 设置为“2”以将多边形放在曝光滑块所在的相同行中。 
-    * 将 **Points** 属性设置为“0,20 200,20 200,0”以定义三角形。
-    * 将 **Stretch** 属性设置为“Fill”，并将 **HorizontalAlignment** 属性设置为“Stretch”。
-    * 将 **Height** 设置为“20”，并将 **VerticalAlignment** 设置为“Center”。 
-    * 为此 **Polygon** 提供线性渐变填充。     
-    * 在曝光滑块上，将 **Foreground** 属性设置为“Transparent”，以便你可以看到此多边形。 
+    * 将 Grid.Row 设置为“2”以将多边形放在曝光滑块所在的行中  。 
+    * 将 Points 属性设置为“0,20 200,20 200,0”以定义三角形  。
+    * 将 Stretch 属性设置为“Fill”，并将 HorizontalAlignment 属性设置为“Stretch”   。
+    * 将 Height 设置为“20”，并将 VerticalAlignment 设置为“Center”   。 
+    * 为此 Polygon 提供线性渐变填充  。     
+    * 在曝光滑块上，将 Foreground 属性设置为“Transparent”，以便可以看到此多边形  。 
 
     **之前**
     ```xaml
@@ -116,7 +116,7 @@ PhotoLab 应用有两个主要页面：
 
 4. 编译并运行应用。 现在，你的滑块应该看起来相当棒：
 
-    ![奇特的曝光滑块](../basics/images/xaml-basics/style-exposure-slider-done.png)
+    ![精致的曝光滑块](../basics/images/xaml-basics/style-exposure-slider-done.png)
 
 5. 让我们升级一下下一个滑块，即温度滑块。 温度滑块更改图像的色温；向左滑会使图像更蓝，向右滑会使图像更黄。
 
@@ -161,18 +161,18 @@ PhotoLab 应用有两个主要页面：
             Maximum="1" />
     ```
 
-6. 编译并运行应用。 你现在应具有两个奇特的滑块。
+6. 编译并运行应用。 你现在应有两个精致的滑块。
 
-    ![两个奇特的滑块](../basics/images/xaml-basics/style-2sliders-done.png)
+    ![两个精致的滑块](../basics/images/xaml-basics/style-2sliders-done.png)
 
-7. **更好的成果**
+7. 额外信用 
 
     为色调滑块添加一个从绿色渐变为红色的背景形状。 
 
-    ![3 个奇特的滑块](../basics/images/xaml-basics/style-3sliders-done.png)
+    ![3 个精致的滑块](../basics/images/xaml-basics/style-3sliders-done.png)
 
 
-恭喜，你已完成了第 1 部分！ 如果你遇到困难或者想要查看最终解决方案，则可以在 **UWP Academy\XAML\Styling\Part1\Finish** 中查找完成的代码。
+恭喜，你已完成了第 1 部分！ 如果遇到困难或者想要查看最终解决方案，可以在 UWP Academy\XAML\Styling\Part1\Finish 中查找完成的代码  。
 
  
     
@@ -180,11 +180,11 @@ PhotoLab 应用有两个主要页面：
 
 XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量，并且可以更加非常轻松地更新应用的外观。
 
-若要定义样式，你可以将 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 元素添加到某个元素的 [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) 属性中，该元素包含你要设置样式的控件。  如果你将样式添加到 **Page.Resources** 属性中，则整个页面将可以使用你的样式。 如果你在 App.xaml 文件内将你的样式添加到 **Application.Resources** 中，则整个应用将可以使用该样式。
+若要定义样式，可以将 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 元素添加到包含要设置样式的控件的元素的 [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) 属性。  如果你将样式添加到 Page.Resources 属性中，则整个页面将可以使用你的样式  。 如果你在 App.xaml 文件内将你的样式添加到 Application.Resources 中，则整个应用将可以使用该样式  。
 
-你可以创建命名样式和常规样式。 命名样式必须显式应用于特定控件；常规样式会应用于任何与指定的 **TargetType** 匹配的控件。 
+可以创建命名样式和常规样式。 命名样式必须显式应用于特定控件；常规样式会应用于任何与指定的 TargetType 匹配的控件  。 
 
-在本示例中，第一个样式具有 **x:Key** 属性，其目标类型为 **Button**。 第一个按钮的 **Style** 属性设置为此键，所以此样式是命名样式并且必须显式应用该样式。 第二个样式会自动应用于第二个按钮，因为其目标类型为 **Button**，并且该样式没有 **x:Key** 属性。
+在本示例中，第一个样式具有 x:Key 特性，其目标类型为 Button   。 第一个按钮的 Style 属性设置为此键，所以此样式是命名样式并且必须显式应用该样式  。 第二个样式会自动应用于第二个按钮，因为其目标类型为 Button，并且该样式没有 x:Key 属性   。
 
 
 ```XAML
@@ -207,7 +207,7 @@ XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量
 </Grid>
 ```
 
-让我们向应用添加一个样式。 在 DetailsPage.xaml 中，查看位于曝光、温度和色调滑块旁边的文本块。 这些文本块中的每一个文本块都会显示滑块的值。 下面是曝光滑块的文本块。 请注意，**Margin**、**VerticalAlignment** 和 **Padding** 属性已设置。
+让我们向应用添加一个样式。 在 DetailsPage.xaml 中，查看位于曝光、温度和色调滑块旁边的文本块。 这些文本块中的每一个文本块都会显示滑块的值。 下面是曝光滑块的文本块。 请注意，Margin、VerticalAlignment 和 Padding 属性已设置    。
 
 ```XAML
 <TextBlock Grid.Row="2"
@@ -222,7 +222,7 @@ XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量
 <!-- TODO: add second starting point -->
 1. 打开 DetailsPage.xaml。
 
-2. 查找名为 **EditControlsGrid** 的 **Grid** 控件。 它包含我们的滑块和文本框。 注意，网格已为我们的滑块定义了样式。 
+2. 查找名为 EditControlsGrid 的 Grid 控件   。 它包含我们的滑块和文本框。 注意，网格已为我们的滑块定义了样式。 
 
     ```XAML
     <Grid x:Name="EditControlsGrid"
@@ -243,7 +243,7 @@ XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量
             </Style>
         </Grid.Resources>    
     ```
-3. 为 **TextBlock** 创建样式，以将其 **Margin** 设置为“10,8,0,0”、将其 **VerticalAlignment** 设置为“Center”，并将其 **Padding** 设置为“0”。
+3. 为 TextBlock 创建样式，以将其 Margin 设置为“10,8,0,0”、将其 VerticalAlignment 设置为“Center”，并将其 Padding 设置为“0”     。
 
     **之前**
     ```XAML
@@ -289,7 +289,7 @@ XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量
         </Grid.Resources>
     ```    
 
-4. 让我们将其设置为命名样式，以便能够指定它所应用于的 **TextBlock** 控件。 将样式的 **x:Key** 属性设置为“ValueTextBox”。 
+4. 让我们将其设置为命名样式，以便能够指定它所应用于的 TextBlock 控件  。 将样式的 x:Key 属性设置为“ValueTextBox”  。 
 
     **之前**
     ```XAML
@@ -316,7 +316,7 @@ XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量
             </Style>                            
     ```    
 
-5. 对于每个 **TextBlock**，请删除其 **Margin**、**VerticalAlignment** 和 **Padding** 属性，并将其 **Style** 属性设置为“{StaticResource ValueTextBox}”。
+5. 对于每个 TextBlock，请删除其 Margin、VerticalAlignment 和 Padding 属性，并将其 Style 属性设置为“{StaticResource ValueTextBox}”      。
 
     **之前**
     ```XAML
@@ -342,16 +342,16 @@ XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量
 恭喜，你已完成了第 2 部分！
 
 
-## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>第 3 部分：使用控件模板进行特别滑块
+## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>第 3 部分：使用控件模板制作精致的滑块
 
 还记得第 1 部分中我们如何在滑块后面添加形状使其看起来很酷吗？
 
 嗯，我们已完成了这项工作，但是有一个更好的方法可以达到相同的效果：即创建控件模板。 
 
 <!-- TODO add new starting points -->
-1. 在“解决方案资源管理器”面板中，双击 **DetailPage.xaml**。
+1. 在“解决方案资源管理器”面板中，双击 DetailPage.xaml  。
 
-2. 接下来，我们将使用滑块的默认控件模板作为起点。 将此 XAML 添加到 **Page.Resources** 元素中。 （**Page.Resources** 元素接近页面的开头。）
+2. 接下来，我们将使用滑块的默认控件模板作为起点。 将此 XAML 添加到 Page.Resources 元素中  。 （Page.Resources 元素接近页面的开头。  ）
 
     ```XAML
     <ControlTemplate x:Key="FancySliderControlTemplate" TargetType="Slider">
@@ -615,7 +615,7 @@ XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量
 
     噢，有大量的 XAML！ 控件模板是一项强大的功能，但是它们可能相当复杂，这就是从默认模板开始操作通常是一个好主意的原因。 
     
-3. 在你刚添加的 **ControlTemplate** 中，查找名为 **HorizontalTemplate** 的网格控件。 此网格定义我们想要更改的模板部分。
+3. 在你刚添加的 ControlTemplate 中，查找名为 HorizontalTemplate 的网格控件   。 此网格定义我们想要更改的模板部分。
 
     ```XAML
     <Grid x:Name="HorizontalTemplate" MinHeight="44">
@@ -631,7 +631,7 @@ XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量
         </Grid.RowDefinitions>
     ```
 
-5.  创建一个多边形，此多边形就像你在第 1 部分中为曝光滑块创建的多边形一样。 在右 **Grid.RowDefinitions** 标记后面添加多边形。 将 **Grid.Row** 设置为“0”，将 **Grid.RowSpan** 设置为“3”，并将 **Grid.ColumnSpan** 设置为“3”。 
+5.  创建一个多边形，此多边形就像你在第 1 部分中为曝光滑块创建的多边形一样。 在右 Grid.RowDefinitions 标记后面添加多边形  。 将 Grid.Row 设置为“0”，将 Grid.RowSpan 设置为“3”，并将 Grid.ColumnSpan 设置为“3”    。 
 
     **之前**
     ```XAML
@@ -675,7 +675,7 @@ XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量
         </Polygon>           
     ```
 
-6. 删除 **Polygon.Fill** 设置。 将 **Fill** 设置为“{TemplateBinding Background}”。 这样，设置滑块的 **Background** 属性时便会设置多边形的 **Fill** 属性。 
+6. 删除 Polygon.Fill 设置  。 将 Fill 设置为“{TemplateBinding Background}”  。 这样，设置滑块的 Background 属性时便会设置多边形的 Fill 属性   。 
 
     **之前**
     ```XAML
@@ -702,7 +702,7 @@ XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量
         </Polygon>           
     ```    
 
-7. 就在你添加的多边形后面，有一个名为 **HorizontalTrackRect** 的矩形。 删除此矩形的 **Fill** 设置，以便矩形将不可见并且不会阻碍我们的多边形。 （我们不想完全删除矩形，因为控件模板还会将其用于交互视觉对象，如悬停。）
+7. 就在你添加的多边形后面，有一个名为 HorizontalTrackRect 的矩形  。 删除此矩形的 Fill 设置，以便矩形将不可见并且不会阻碍我们的多边形  。 （我们不想完全删除矩形，因为控件模板还会将其用于交互视觉对象，如悬停。）
 
     **之前**
     ```XAML
@@ -725,7 +725,7 @@ XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量
     
 8. 我们来更新一下我们的曝光滑块。
 
-    * 将滑块的 **Template** 属性设置为“{StaticResource FancySliderControlTemplate}”。
+    * 将滑块的 Template 属性设置为“{StaticResource FancySliderControlTemplate}”  。
     * 删除滑块的 Background="Transparent" 设置。 
     * 将滑块的背景设置为从黑色过渡到白色的线性渐变。
     * 删除我们在第 1 部分中创建的背景多边形。

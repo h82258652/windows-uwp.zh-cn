@@ -13,10 +13,10 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: b17220a039612e0b13cd9842800c37c39bf194dd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66362761"
 ---
 # <a name="hyperlinks"></a>超链接
@@ -25,7 +25,7 @@ ms.locfileid: "66362761"
 
 超链接会将用户导航到应用的另一部分、导航到另一个应用，或使用单独的浏览器应用启动特定的统一资源标识符 (URI)。 可使用两种方法向 XAML 应用添加超链接：**Hyperlink** 文本元素和 **HyperlinkButton** 控件。
 
-> **重要的 API**：[超链接文本元素](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink)， [HyperlinkButton 控件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
+> **重要的 API**：[Hyperlink 文本元素](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink)，[HyperlinkButton 控件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
 
 ![“超链接”按钮](images/controls/hyperlink-button.png)
 
@@ -47,7 +47,7 @@ ms.locfileid: "66362761"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/HyperlinkButton">打开此应用，了解 HyperlinkButton 的实际应用</a>。</p>
+    <p>如果已安装 XAML 控件库应用，请单击此处<a href="xamlcontrolsgallery:/item/HyperlinkButton">打开此应用，了解 HyperlinkButton 的实际应用</a><strong style="font-weight: semi-bold"></strong>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
@@ -73,7 +73,7 @@ ms.locfileid: "66362761"
 
 ![作为文本元素的超链接示例](images/controls_hyperlink-element.png) 
 
-> **提示**&nbsp;&nbsp;当你在文本控件中使用超链接而其他文本元素采用 XAML 时，请将内容放置在 [Span](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span) 容器中，并将 `xml:space="preserve"` 属性应用到 Span 以在超链接和其他元素之间保留空白区域。
+> 提示：当你在文本控件中使用超链接而其他文本元素采用&nbsp;XAML&nbsp;时，请将内容放置在 [Span](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span) 容器中，并将 `xml:space="preserve"` 属性应用到 Span 以在超链接和其他元素之间保留空白区域  。
 
 ## <a name="create-a-hyperlinkbutton"></a>创建 HyperlinkButton
 
@@ -109,21 +109,21 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 对于这两种类型的超链接，你可以采用相同的方式处理导航；可设置 **NavigateUri** 属性，或处理 **Click** 事件。
 
-**导航到的 URI**
+导航到 URI 
 
 若要使用超链接导航到 URI，请设置 NavigateUri 属性。 当用户单击或点击超链接时，指定的 URI 将在默认浏览器中打开。 默认浏览器将在独立于应用的进程中运行。
 
 > [!NOTE]
-> URI 由 [Windows.Foundation.Uri](/uwp/api/windows.foundation.uri) 类表示。 使用 .NET 编程时，此类将隐藏，你应该使用 [System.Uri](https://docs.microsoft.com/dotnet/api/system.uri) 类。 有关详细信息，请参阅这些类的参考页面。
+> URI 由 [Windows.Foundation.Uri](/uwp/api/windows.foundation.uri) 类表示。 使用 .NET 编程时，此类将隐藏，应使用 [System.Uri](https://docs.microsoft.com/dotnet/api/system.uri) 类。 有关详细信息，请参阅这些类的参考页面。
 
-无需使用 **http:** 或 **https:**  方案。 你可以使用诸如 **ms-appx:** 、**ms-appdata:** 或 **ms-resources:** 等方案，前提是这些位置中存在适合在浏览器中加载的资源内容。 但是，明确禁止 **file:** 方案。 有关详细信息，请参阅 [URI 方案](https://docs.microsoft.com/previous-versions/windows/apps/jj655406(v=win.10))。
+无需使用 http: 或 https: 方案   。 你可以使用 ms-appx:、ms-appdata: 或 ms-resources: 等方案，前提是这些位置中存在适合在浏览器中加载的资源内容    。 但是，明确禁止 file: 方案  。 有关详细信息，请参阅 [URI 方案](https://docs.microsoft.com/previous-versions/windows/apps/jj655406(v=win.10))。
 
 当用户单击超链接时，NavigateUri 属性的值传递到 URI 类型和方案的系统处理程序。 然后，系统启动针对为 NavigateUri 提供的 URI 的方案注册的应用。
 
 如果你不希望超链接在默认的 Web 浏览器中加载内容（并且不希望浏览器显示），则不要为 NavigateUri 设置值。 改为处理 Click 事件，并编写执行所需操作的代码。
 
 
-**处理单击事件**
+处理 Click 事件 
 
 对于除在浏览器中启动 URI 以外的操作（例如应用内导航），请使用 Click 事件。 例如，如果你希望加载新应用页面而不是打开浏览器，请在 Click 事件内调用 [Frame.Navigate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) 方法来导航到新应用页面。 如果你希望外部的绝对 URI 在 [WebView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview) 控件（同样存在于应用中）内加载，请调用 [WebView.Navigate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigate) 作为 Click 处理程序逻辑的一部分。
 
@@ -134,11 +134,11 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 ## <a name="hyperlink-underlines"></a>超链接下划线
 默认情况下，超链接带下划线。 此下划线很重要，因为它有助于满足辅助功能要求。 色盲用户使用下划线来区分超链接和其他文本。 如果你禁用下划线，应考虑添加某些其他类型的格式差异来将超链接与其他文本区分开来，如 FontWeight 或 FontStyle。
 
-**超链接文本元素**
+超链接文本元素 
 
 你可以设置 [UnderlineStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.hyperlink.underlinestyle) 属性来禁用下划线。 如果执行此操作，请考虑使用 [FontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement.fontweight) 或 [FontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement.fontstyle) 来区分链接文本。
 
-**HyperlinkButton** 
+HyperlinkButton  
 
 默认情况下，当你将一个字符串设置为 [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 属性的值时，HyperlinkButton 显示为带下划线的文本。
 
@@ -152,15 +152,15 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 本部分仅适用于超链接文本元素，不适用于 HyperlinkButton 控件。
 
-**输入的事件**
+输入事件 
 
 由于超链接不是 [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)，因此它没有 UI 元素输入事件集，如 Tapped、PointerPressed 等。 不过，超链接具有其自己的 Click 事件以及系统加载任何指定为 NavigateUri 的 URI 的隐式行为。 系统会处理所有应调用超链接操作并引发 Click 事件作为回应的输入操作。
 
-**Content**
+内容 
 
 超链接对可能存在于其 [Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span.inlines) 集合中的内容具有限制。 具体来说，超链接仅允许 [Run](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.run) 和非另一个超链接的其他 [Span](/uwp/api/windows.ui.xaml.documents.span) 类型。 [InlineUIContainer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.inlineuicontainer) 不可在超链接的内联集合中。 尝试添加受限制的内容会引发无效参数异常或 XAML 分析异常。
 
-**超链接和主题/样式行为**
+超链接和主题/样式行为 
 
 超链接不从 [Control](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control) 继承，因此它没有 [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) 属性或 [Template](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template)。 你可以编辑从 [TextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement) 继承的属性（如 Foreground 或 FontFamily）来更改超链接的外观，但你无法使用常见样式或模板来应用更改。 请考虑为超链接属性的值使用常见资源（而不是使用模板）以保持一致性。 超链接的某些属性使用系统提供的 {ThemeResource} 标记扩展值的默认值。 这使超链接外观可以在用户在运行时更改系统主题时以相应的方式进行切换。
 
@@ -180,8 +180,8 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 ## <a name="related-articles"></a>相关文章
 
 - [文本控件](text-controls.md)
-- [工具提示的准则](tooltips.md)
+- [工具提示指南](tooltips.md)
 
-**面向开发人员 (XAML)**
+面向开发人员 (XAML) 
 - [Windows.UI.Xaml.Documents.Hyperlink 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink)
 - [Windows.UI.Xaml.Controls.HyperlinkButton 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)

@@ -3,19 +3,19 @@ description: C++/WinRT 可以帮助你创作经典 COM 组件，就像它可以�
 title: 通过 C++/WinRT 创作 COM 组件
 ms.date: 04/24/2019
 ms.topic: article
-keywords: windows 10、 uwp、 标准版、 c + +、 cpp、 winrt、 投影、 作者、 COM、 组件
+keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 创作, COM, 组件
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3badcd59155bc4bb5ef8d9e29271b853c245c24e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66360314"
 ---
 # <a name="author-com-components-with-cwinrt"></a>通过 C++/WinRT 创作 COM 组件
 
-[C++/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)可帮助你创作经典组件对象模型 (COM) 组件 （或组件类），就像它可帮助你创作 Windows 运行时类。 下面是如果您将代码粘贴到可以测试的简单说明`pch.h`并`main.cpp`的新**Windows 控制台应用程序 (C++/WinRT)** 项目。
+[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 可以帮助你创作经典组件对象模型 (COM) 组件（或组件类），就像它可以帮助你创作 Windows 运行时类一样。 下面是一个简单例证，如果将代码粘贴到新 Windows 控制台应用程序 (C++/WinRT)  项目的 `pch.h` 和 `main.cpp` 中，则可以进行测试。
 
 ```cppwinrt
 // pch.h
@@ -64,19 +64,19 @@ int main()
 }
 ```
 
-另请参阅[使用 COM 组件与C++/WinRT](consume-com.md)。
+另请参阅[通过 C++/WinRT 使用 COM 组件](consume-com.md)。
 
-## <a name="a-more-realistic-and-interesting-example"></a>一个更现实、 更有趣的示例
+## <a name="a-more-realistic-and-interesting-example"></a>一个更现实且有趣的示例
 
-此主题的其余部分将指导完成创建的最小的控制台应用程序项目中使用C++/WinRT 来实现基本组件类 （COM 组件或 COM 类） 和类工厂。 示例应用程序演示如何传递包含，一个回调按钮和组件类的 toast 通知 (它实现**INotificationActivationCallback** COM 接口) 允许应用程序启动，并且命名为返回当用户单击该按钮上的 toast 通知。
+此主题的其余部分演练如何创建使用 C++/WinRT 实现基本组件类（COM 组件或 COM 类）和类工厂的最小控制台应用程序项目。 示例应用程序演示如何提供具有一个回调按钮的 toast 通知，组件类（实现 INotificationActivationCallback  COM 接口）使应用程序可以启动并在用户单击 toast 上的该按钮时进行回调。
 
-有关的 toast 通知功能区的更多背景信息，请参阅[发送本地 toast 通知](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)。 在该部分中的文档使用的代码示例都没有C++/WinRT，不过，因此我们建议您希望在本主题中所示的代码。
+有关 toast 通知功能区域的更多背景信息可以在[发送本地 toast 通知](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)中找到。 不过文档该部分中没有代码示例使用 C++/WinRT，因此建议首选本主题中演示的代码。
 
-## <a name="create-a-windows-console-application-project-toastandcallback"></a>创建一个 Windows 控制台应用程序项目 (ToastAndCallback)
+## <a name="create-a-windows-console-application-project-toastandcallback"></a>创建 Windows 控制台应用程序项目 (ToastAndCallback)
 
-首先在 Microsoft Visual Studio 中创建新项目。 创建**Windows 控制台应用程序 (C++/WinRT)** 项目，并将其命名*ToastAndCallback*。
+首先在 Microsoft Visual Studio 中创建新项目。 创建“Windows 控制台应用程序(C++/WinRT)”  项目，然后将它命名为 ToastAndCallback  。
 
-打开`pch.h`，并添加`#include <unknwn.h>`之前包括任何 C + WinRT 标头。 下面是结果;内容替换为你`pch.h`与此列表。
+打开 `pch.h`，在用于任何 C++/WinRT 标头的 include 语句之前添加 `#include <unknwn.h>`。 下面是结果；可以将你的 `pch.h` 的内容替换为此清单。
 
 ```cppwinrt
 // pch.h
@@ -85,7 +85,7 @@ int main()
 #include <winrt/Windows.Foundation.h>
 ```
 
-打开`main.cpp`，并删除使用指令的项目模板生成。 在其位置插入以下代码 （库、 标头和我们需要的类型名称，请为我们提供了）。 下面是结果;内容替换为你`main.cpp`与此列表 (我们还将删除从代码`main`在列表中，因为我们将会替换该函数更高版本)。
+打开 `main.cpp`，删除项目模板生成 using 指令。 在其位置插入以下代码（该代码提供我们所需的库、标头和类型名称）。 下面是结果；可以将你的 `main.cpp` 的内容替换为此清单（我们还会在下面的清单中删除 `main` 中的代码，因为我们会在以后替换该函数）。
 
 ```cppwinrt
 // main.cpp : Defines the entry point for the console application.
@@ -112,11 +112,11 @@ using namespace Windows::UI::Notifications;
 int main() { }
 ```
 
-该项目不会生成尚未;我们已添加代码后，将提示您生成并运行。
+项目尚未生成；完成添加代码之后，系统会提示生成并运行。
 
-## <a name="implement-the-coclass-and-class-factory"></a>实现的组件类和类工厂
+## <a name="implement-the-coclass-and-class-factory"></a>实现组件类和类工厂
 
-在C++/WinRT，您通过派生自实现组件类和类工厂[ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements)基结构。 立即三个使用-在指令后面如上所示 (以及之前`main`)，粘贴此代码以实现你的 toast 通知 COM 激活器组件。
+在 C++/WinRT 中，通过从 [winrt::implements  ](/uwp/cpp-ref-for-winrt/implements) 基结构派生来实现组件类和类工厂。 紧接着上面所示的三个 using 指令之后（并且在 `main` 之前），粘贴此代码以实现 toast 通知 COM 激活器组件。
 
 ```cppwinrt
 static constexpr GUID callback_guid // BAF2FA85-E121-4CC9-A942-CE335B6F917F
@@ -172,21 +172,21 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-上面的组件类实现遵循相同的模式中所示[作者 Api 与C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class)。 因此，您可以使用相同技术来实现 COM 接口，以及 Windows 运行时接口。 COM 组件和 Windows 运行时类公开接口通过其功能。 每个 COM 接口最终派生[ **IUnknown 接口**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)接口。 Windows 运行时基于 COM&mdash;一个区别正在 Windows 运行时接口最终派生自[ **IInspectable 接口**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (和**IInspectable**派生自**IUnknown**)。
+上面的组件类实现遵循在[使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class) 中演示的相同模式。 因此，可以使用相同技术实现 COM 接口以及 Windows 运行时接口。 COM 组件和 Windows 运行时类会通过接口公开其功能。 每个 COM 接口最终派生自 [IUnknown 接口  ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)接口。 Windows 运行时基于 COM &mdash; 一个区别是 Windows 运行时接口最终派生自 [IInspectable 接口  ](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)（并且 IInspectable  派生自 IUnknown  ）。
 
-在上面的代码中组件类，我们实现**INotificationActivationCallback::Activate**方法，即当用户单击上一条 toast 通知的回调按钮时调用的函数。 可以调用该函数之前，请组件类的实例需要创建，并为的作业，但**IClassFactory::CreateInstance**函数。
+在上面代码中的组件类中，我们实现 INotificationActivationCallback::Activate  方法，这是在用户单击 toast 通知上的回调按钮时调用的函数。 但是在可以调用该函数之前，需要创建组件类的实例，这是 IClassFactory::CreateInstance  函数的工作。
 
-我们只是实现 coclass 称为*COM 激活器*通知，以及它有其类 id (CLSID) 中的窗体`callback_guid`标识符 (类型的**GUID**)，如上所示。 我们将使用该标识符更高版本，在开始菜单快捷方式和 Windows 注册表项的窗体中。 COM 激活器 CLSID，以及指向其关联的 COM 服务器 （这是我们此处要生成的可执行文件的路径） 的路径是一条 toast 通知知道什么类来创建实例单击其回调按钮时所依据的机制 (是否单击通知在操作中心中或不）。
+我们刚刚实现的组件类称为通知的 COM 激活器  ，其类 id (CLSID) 的形式为如上所示的 `callback_guid` 标识符（类型为 GUID  ）。 我们会在以后采用“开始”菜单快捷方式和 Windows 注册表项的形式来使用该标识符。 COM 激活器 CLSID 以及指向其关联 COM 服务器的路径（这是在此处生成的可执行文件的路径）是一种机制，toast 通知该机制可知道在单击其回调按钮时要创建哪个类的实例（无论是否在操作中心内单击通知）。
 
-## <a name="best-practices-for-implementing-com-methods"></a>实现的 COM 方法的最佳做法
+## <a name="best-practices-for-implementing-com-methods"></a>实现 COM 方法的最佳做法
 
-有关错误处理和资源管理的技术可以转手中手动。 它是更方便和实际使用比错误代码的异常。 如果您采用资源-获取-即-初始化 (RAII) 惯用做法，然后您可以避免显式检查错误代码，然后显式地释放资源。 此类显式检查使代码更复杂比实际所需，并使 bug 很多要隐藏的位数。 相反，使用 RAII，并引发/catch 异常。 这样一来，资源分配是异常安全的并且你的代码很简单。
+用于错误处理和资源管理的方法可以一起进行。 使用异常比错误代码更加方便且实用。 如果采用资源获取即初始化 (RAII) 惯用做法，则可以避免显式检查错误代码，然后显式释放资源。 这类显式检查使代码比实际所需更复杂，并使 bug 有大量位置可以隐藏。 相反，使用 RAII，并引发/捕获异常。 这样，资源分配是异常安全的，并且代码十分简单。
 
-但是，你不得允许异常转义您 COM 方法的实现。 可以确保使用`noexcept`COM 方法说明符。 是使用你的调用关系图中任意位置引发异常，只要您的方法退出之前，会处理它们。 如果使用`noexcept`，但然后允许异常转义你的方法，则你的应用程序将终止。
+但是，不得允许异常转义 COM 方法实现。 可以通过对 COM 方法使用 `noexcept` 说明符来确保这一点。 可以在方法调用关系图中的任意位置引发异常，只要在方法退出之前处理它们。 如果使用 `noexcept`，但随后允许异常转义方法，则应用程序会终止。
 
-## <a name="add-helper-types-and-functions"></a>添加帮助器类型和函数
+## <a name="add-helper-types-and-functions"></a>添加帮助程序类型和函数
 
-在此步骤中，我们将添加代码的其余部分使某些帮助器类型以及函数的使用。 这样之前, `main`，将以下内容添加。
+在此步骤中，我们会添加一些帮助程序类型和函数，代码的其余部分会使用它们。 就在 `main` 之前添加以下内容。
 
 ```cppwinrt
 struct prop_variant : PROPVARIANT
@@ -256,9 +256,9 @@ std::wstring get_shortcut_path()
 }
 ```
 
-## <a name="implement-the-remaining-functions-and-the-wmain-entry-point-function"></a>实现剩余函数和 wmain 入口点函数
+## <a name="implement-the-remaining-functions-and-the-wmain-entry-point-function"></a>实现其余函数和 wmain 入口点函数
 
-删除你`main`函数，并在其原位置粘贴此代码列表，其中包括代码以注册你组件类，，然后将返回调用应用程序的支持 toast 通知。
+删除 `main` 函数，在其原位置粘贴此代码清单，其中包括用于注册组件类，然后提供能够回调应用程序的 toast 的代码。
 
 ```cppwinrt
 void register_callback()
@@ -419,29 +419,29 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 ## <a name="how-to-test-the-example-application"></a>如何测试示例应用程序
 
-生成该应用程序，然后在以管理员身份在注册时和其他设置，若要运行的代码会导致至少一次运行它。 若要执行此操作的一种方法是以管理员身份运行 Visual Studio，然后从 Visual Studio 运行应用程序。 若要显示跳转列表，右键单击跳转列表中，Visual Studio，然后单击任务栏中右键单击 Visual Studio**以管理员身份运行**。 在提示符下，即表示同意，然后打开项目。 在运行该应用程序时，会显示一条消息是，该值指示以管理员身份运行该应用程序。 如果不是，注册和其他设置不会运行。 该注册和其他安装程序必须至少运行一次为应用程序才能正常工作。
+生成应用程序，然后至少以管理员身份运行一次，以便使注册（和其他设置）代码运行。 执行此操作的一种方法是以管理员身份运行 Visual Studio，然后从 Visual Studio 运行应用。 在任务栏中右键单击 Visual Studio 以显示跳转列表，在跳转列表右键单击 Visual Studio，然后单击“以管理员身份运行”  。 同意提示，然后打开项目。 运行应用程序时，会显示一条消息，指出是否在以管理员身份运行应用程序。 如果不是，则注册和其他设置不会运行。 该注册和其他设置必须至少运行一次，才能使应用程序正常工作。
 
-指示是否以管理员身份运行该应用程序，按 'T' 导致 toast 通知显示。 然后可以单击**回叫 ToastAndCallback**按钮直接从弹出，字样的 toast 通知或从操作中心和你的应用程序将启动，实例化的组件类和**INotificationActivationCallback::Activate**执行方法。
+无论是否在以管理员身份运行应用程序，按“T”使 toast 显示。 然后可以直接从弹出的 toast 通知或是从操作中心单击“回调 ToastAndCallback”  按钮，这样会启动应用程序，实例化组件类并执行 INotificationActivationCallback::Activate  方法。
 
 ## <a name="in-process-com-server"></a>进程内 COM 服务器
 
-*ToastAndCallback*上述示例应用程序充当本地 （或进程外） 的 COM 服务器。 这将由[LocalServer32](/windows/desktop/com/localserver32)可用于将注册其组件类的 CLSID 的 Windows 注册表项。 本地 COM 服务器承载可执行二进制文件在其 coclass(es) ( `.exe`)。
+上面的 ToastAndCallback  示例应用可充当本地（或进程外）COM 服务器。 这由 [LocalServer32](/windows/desktop/com/localserver32) Windows 注册表项进行指示，该项用于注册其组件类的 CLSID。 本地 COM 服务器在可执行二进制文件 (`.exe`) 中承载其组件类。
 
-或者 （和无疑是更有可能），您可以选择托管你 coclass(es) 内动态链接库 ( `.dll`)。 为进程内 COM 服务器，已知 DLL 的窗体中的 COM 服务器和使用注册的 Clsid 指示[InprocServer32](/windows/desktop/com/inprocserver32) Windows 注册表项。
+或者（并且可能更有可能），可以选择在动态链接库 (`.dll`) 中承载组件类。 采用 DLL 形式的 COM 服务器称为进程内 COM 服务器，由使用 [InprocServer32](/windows/desktop/com/inprocserver32) Windows 注册表项注册 CLSID 进行指示。
 
-### <a name="create-a-dynamic-link-library-dll-project"></a>创建一个动态链接库 (DLL) 项目
+### <a name="create-a-dynamic-link-library-dll-project"></a>创建动态链接库 (DLL) 项目
 
-你可以开始在 Microsoft Visual Studio 中创建新项目创建进程内 COM 服务器的任务。 创建**可视化C++**   >  **Windows 桌面** > **动态链接库 (DLL)** 项目。
+可以通过在 Microsoft Visual Studio 中创建新项目，来开始创建进程内 COM 服务器的任务。 创建“Visual C++”   > “Windows 桌面”   > “动态链接库(DLL)”  项目。
 
-若要添加C++/WinRT 支持添加到新项目中，按照中所述的步骤[修改 Windows 桌面应用程序项目，以添加C++/WinRT 支持](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support)。
+若要向新项目添加 C++/WinRT 支持，请执行[修改 Windows 桌面应用程序项目以添加 C++/WinRT 支持](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support)中所述的步骤。
 
-### <a name="implement-the-coclass-class-factory-and-in-proc-server-exports"></a>实现 coclass、 类工厂和进程内服务器导出
+### <a name="implement-the-coclass-class-factory-and-in-proc-server-exports"></a>实现组件类、类工厂和进程内服务器导出
 
-打开`dllmain.cpp`，并向其添加如下所示的代码列表。
+打开 `dllmain.cpp`，并向其添加如下所示的代码清单。
 
-如果已有一个 DLL，它实现C++WinRT Windows 运行时类，则您必须已经**DllCanUnloadNow**函数如下所示。 如果你想要将组件类添加到该 DLL，则可以添加**DllGetClassObject**函数。
+如果已具有一个实现 C++WinRT Windows 运行时类的 DLL，则表示已具有如下所示的 DllCanUnloadNow  函数。 如果要将组件类添加到该 DLL，则可以添加 DllGetClassObject  函数。
 
-如果没有现有[Windows 运行时C++模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)你想要保持与兼容，则可以删除 WRL 的代码部分中所示的代码。
+如果没有要保持与之兼容的现有 [Windows 运行时 C++ 模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) 代码，则可以从显示的代码中删除 WRL 部分。
 
 ```cppwinrt
 // dllmain.cpp
@@ -522,13 +522,13 @@ HRESULT __stdcall DllGetClassObject(GUID const& clsid, GUID const& iid, void** r
 }
 ```
 
-### <a name="support-for-weak-references"></a>弱引用支持
+### <a name="support-for-weak-references"></a>对弱引用的支持
 
-另请参阅[中的弱引用C++/WinRT](weak-references.md#weak-references-in-cwinrt)。
+另请参阅 [C++/WinRT 中的弱引用](weak-references.md#weak-references-in-cwinrt)。
 
-C++/ WinRT (具体而言， [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements)基结构模板) 实现[ **IWeakReferenceSource** ](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource) ，如果你类型实现[ **IInspectable** ](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (或任何派生的接口**IInspectable**)。
+如果类型实现 [IInspectable  ](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)（或任何派生自 IInspectable  的接口），则 C++/WinRT（具体而言，[winrt::implements  ](/uwp/cpp-ref-for-winrt/implements) 基结构模板）会实现 [IWeakReferenceSource  ](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource)。
 
-这是因为**IWeakReferenceSource**并[ **IWeakReference** ](/windows/desktop/api/weakreference/nn-weakreference-iweakreference)专为 Windows 运行时类型。 因此，您可以打开弱引用支持用于 coclass 你只需通过添加**winrt::Windows::Foundation::IInspectable** (或接口派生自**IInspectable**) 到您的实现。
+这是因为 IWeakReferenceSource  和 [IWeakReference  ](/windows/desktop/api/weakreference/nn-weakreference-iweakreference) 旨在用于 Windows 运行时类型。 因此，只需通过向实现添加 winrt::Windows::Foundation::IInspectable  （或派生自 IInspectable  的接口），即可为组件类启用弱引用支持。
 
 ```cppwinrt
 struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows::Foundation::IInspectable>

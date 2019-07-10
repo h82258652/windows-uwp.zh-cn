@@ -13,17 +13,17 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: c3076e9a098ff62ba9000b4337417013e400375e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66361099"
 ---
 # <a name="auto-suggest-box"></a>自动建议框
 
 使用 AutoSuggestBox 提供建议列表，以便用户在键入时从中进行选择。
 
-> **重要的 API**：[AutoSuggestBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)， [TextChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged)， [SuggestionChose 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen)， [QuerySubmitted 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted)
+> **重要的 API**：[AutoSuggestBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)、[TextChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged)、[SuggestionChose 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen)、[QuerySubmitted 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted)
 
 ![自动建议框](images/controls/auto-suggest-box-open.png)
 
@@ -40,7 +40,7 @@ ms.locfileid: "66361099"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/AutoSuggestBox">打开此应用，了解 AutoSuggestBox 的实际应用</a>。</p>
+    <p>如果已安装 XAML 控件库应用，请单击此处<a href="xamlcontrolsgallery:/item/AutoSuggestBox">打开此应用，了解 AutoSuggestBox 的实际应用</a><strong style="font-weight: semi-bold"></strong>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
@@ -184,6 +184,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 - [文本控件](text-controls.md)
 - [拼写检查](text-controls.md)
 - [搜索](search.md)
-- [TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [TextBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)（TextBox 类）
 - [Windows.UI.Xaml.Controls PasswordBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 - [String.Length 属性](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)
