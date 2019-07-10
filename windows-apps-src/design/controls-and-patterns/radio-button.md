@@ -13,15 +13,15 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 91903365a258d54804b420cd217dd7c25d79406a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606132"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63813687"
 ---
 # <a name="radio-buttons"></a>单选按钮
 
-> **重要的 API**：[RadioButton 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)，[选中的事件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)， [IsChecked 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
+> **重要的 API**：[RadioButton 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)、[Checked 事件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)、[IsChecked 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 单选按钮允许用户从一组中选择一个选项。 每个选项都表示为一个单选按钮，用户只能选择单选按钮组中的一个单选按钮。
 
@@ -169,7 +169,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 ![两个组中的单选按钮](images/radio-button-groups.png)
 
-单选按钮有两个状态：*已选择*或*已清除*。 当选择单选按钮时，其 [IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked) 属性为 **true**。 当清除单选按钮时，其 **IsChecked** 属性为 **false**。 某个单选按钮可以通过单击同一组中的另外一个单选按钮进行清除，但再次单击该按钮时将无法将其清除。 但是，你可以通过将单选按钮的 IsChecked 属性设置为 **false** 以编程方式清除它。 实际上，通过获取 **IsChecked** 属性的 **Value** 可以将 **IsChecked** 属性与一个布尔值进行比较。
+单选按钮有两个状态：*已选择*或*已清除*。 当选择单选按钮时，其 [IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked) 属性为 true  。 当清除单选按钮时，其 **IsChecked** 属性为 **false**。 某个单选按钮可以通过单击同一组中的另外一个单选按钮进行清除，但再次单击该按钮时将无法将其清除。 但是，你可以通过将单选按钮的 IsChecked 属性设置为 **false** 以编程方式清除它。 实际上，通过获取 IsChecked  属性的 Value  可以将 IsChecked  属性与一个布尔值进行比较
 
 ## <a name="recommendations"></a>建议
 

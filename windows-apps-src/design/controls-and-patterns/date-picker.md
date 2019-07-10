@@ -14,10 +14,10 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e0a7d1732833f8e6fc750f8ee481fa3c1116b50
-ms.sourcegitcommit: 0d6110cd3d868612bee347566f5b85b724cb57df
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66823601"
 ---
 # <a name="date-picker"></a>日期选取器
@@ -26,7 +26,7 @@ ms.locfileid: "66823601"
 
 日期选取器向你提供了一种标准化方式，可使用户通过触摸、鼠标或键盘输入选取本地化格式的日期值。 
 
-> **重要的 API**：[DatePicker 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker)，[日期属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.date)
+> **重要的 API**：[DatePicker class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker)（DatePicker 类），[Date 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.date)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
@@ -41,7 +41,7 @@ ms.locfileid: "66823601"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/DatePicker">打开此应用，了解 DatePicker 的实际应用</a>。</p>
+    <p>如果已安装 XAML 控件库应用，请单击此处<a href="xamlcontrolsgallery:/item/DatePicker">打开此应用，了解 DatePicker 的实际应用</a><strong style="font-weight: semi-bold"></strong>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
@@ -71,7 +71,7 @@ birthDatePicker.Header = "Date of birth";
 
 ![日期选取器示例](images/date-picker-closed.png)
 
-> **注意**&nbsp;&nbsp;有关日期值的重要信息，请参阅日期和时间控件文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
+> 注意：有关日期值的重要信息，请参阅日期和时间控件文章中的 [DateTime&nbsp;和&nbsp;Calendar 值](date-and-time.md#datetime-and-calendar-values)  。
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 

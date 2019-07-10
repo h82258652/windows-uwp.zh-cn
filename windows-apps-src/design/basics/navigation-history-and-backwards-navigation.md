@@ -1,32 +1,32 @@
 ---
-Description: 了解如何实现向后导航以遍历 UWP 应用中的用户的导航历史记录。
+Description: 了解如何在 UWP 应用中实现向后导航以遍历用户的导航历史记录。
 title: 导航历史记录和向后导航（Windows 应用）
 template: detail.hbs
 op-migration-status: ready
-ms.date: 06/21/2018
+ms.date: 4/9/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c74d4ebd08dfeddfb4a0149cffcd7bb845ceff11
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.openlocfilehash: 8e3ab6760ed3eff1d284e51205de261796db0fb2
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595042"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63799156"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP 应用的导航历史记录和向后导航
 
-> **重要的 API**：[BackRequested 事件](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested)， [SystemNavigationManager 类](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager)， [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
+> **重要的 API**：[BackRequested 事件](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested)、[SystemNavigationManager 类](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager)、[OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
 通用 Windows 平台 (UWP) 提供了一个一致的后退导航系统，用于遍历用户在应用内和应用之间（具体取决于设备）的导航历史记录。
 
-要在应用中实现向后导航，请在应用的 UI 的左上角放置一个[后退按钮](#Back-button)。 如果你的应用使用了 [NavigationView](../controls-and-patterns/navigationview.md) 控件，你可以使用 [NavigationView 的内置后退按钮](../controls-and-patterns/navigationview.md#backwards-navigation)。
+要在应用中实现向后导航，请在应用的 UI 的左上角放置一个[后退按钮](#back-button)。 如果你的应用使用了 [NavigationView](../controls-and-patterns/navigationview.md) 控件，你可以使用 [NavigationView 的内置后退按钮](../controls-and-patterns/navigationview.md#backwards-navigation)。
 
 用户预期后退按钮导航到应用导航历史记录中的上一个位置。 请注意，由你来决定要将哪些导航操作添加到导航历史记录以及如何响应后退按钮按下操作。
 
-## <a name="back-button"></a>后退按钮
+## <a name="back-button"></a>“后退”按钮
 
-若要创建一个后退按钮，使用[按钮](../controls-and-patterns/buttons.md)控件，其`NavigationBackButtonNormalStyle`样式，并将按钮放置在应用程序的 UI 在左上角 （有关详细信息，请参阅下面的 XAML 代码示例）。
+要创建后退按钮，请将[按钮](../controls-and-patterns/buttons.md)控件与 `NavigationBackButtonNormalStyle` 样式结合使用，并将按钮放在应用的 UI 的左上角（有关详细信息，请参阅下面的 XAML 代码示例）。
 
 ![应用的 UI 的左上角的后退按钮](images/back-nav/BackEnabled.png)
 
@@ -43,13 +43,13 @@ ms.locfileid: "57595042"
 Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 ```
 
-为了将应用内四处移动的 UI 元素最小化，请在 Backstack 中没有任何内容时显示一个禁用的后退按钮（参阅下面的代码示例）。 但是，如果希望您的应用程序永远不会 backstack，则不需要随时显示后退按钮。
+为了将应用内四处移动的 UI 元素最小化，请在 Backstack 中没有任何内容时显示一个禁用的后退按钮（参阅下面的代码示例）。 但是，如果希望应用从不会具有 backstack，则完全不需要显示后退按钮。
 
 ![后退按钮状态](images/back-nav/BackDisabled.png)
 
 ## <a name="code-example"></a>代码示例
 
-以下代码示例演示如何使用后退按钮实现向后导航行为。 该代码将响应 Button [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) 事件并在 [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)（在导航到新页面时调用）中禁用/启用按钮可见性。 该代码示例还通过为 [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) 事件注册侦听器来处理来自从硬件和软件系统后退键的输入。
+以下代码示例演示如何使用后退按钮实现向后导航行为。 该代码将响应 Button [Click  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) 事件并在 [OnNavigatedTo  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)（在导航到新页面时调用）中禁用/启用按钮可见性。 该代码示例还通过为 [BackRequested  ](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) 事件注册侦听器来处理来自从硬件和软件系统后退键的输入。
 
 ```xaml
 <!-- MainPage.xaml -->
@@ -167,9 +167,9 @@ namespace winrt::PageNavTest::implementation
 }
 ```
 
-更高版本，我们向后处理单个页导航。 如果你想要从后退导航中排除的特定页面或想要显示的页之前执行页级别的代码，您可以处理每个页面中的导航。
+我们在上面为单个页面处理向后导航。 如果你想要从后退导航排除特定页面，或想要在显示页面前执行页面级别代码，可以在每个页面中处理导航。
 
-若要处理向后导航整个应用程序，将注册的全局侦听器[ **BackRequested** ](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested)中的事件`App.xaml`代码隐藏文件。
+若要为整个应用处理向后导航，请在 `App.xaml` 代码隐藏文件中为 [BackRequested  ](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) 事件注册全局侦听器。
 
 App.xaml 代码隐藏：
 
@@ -261,9 +261,9 @@ bool App::On_BackRequested()
 
 本向后导航设计指南适用于所有设备，但不同的设备和外形规格可以受益于优化。 这还取决受不同的 shell 支持的硬件后退按钮。
 
-- **手机/平板电脑**:硬件或软件后退按钮始终是提供了有关移动和平板电脑，但我们建议绘制为清楚起见应用内后退按钮。
-- **桌面/集线器**:在应用程序的 UI 的左上角上绘制在应用中的后退按钮。
-- **Xbox/电视**:它会将添加不必要的 UI 混乱的则不绘制一个后退按钮。 相反，应依靠手柄 B 按钮进行向后导航。
+- 手机/平板电脑  ：手机和平板电脑上总是有硬件或软件后退按钮，但为了清楚起见，我们建议绘制应用内后退按钮。
+- 台式机/中心  ：在应用的 UI 的左上角绘制应用内后退按钮。
+- Xbox/电视  ：不要绘制后退按钮，因为这会为 UI 增加不必要的杂乱感。 相反，应依靠手柄 B 按钮进行向后导航。
 
 如果你的应用将在多台设备上运行，请[创建用于 Xbox 的自定义视觉触发器](../devices/designing-for-tv.md#custom-visual-state-trigger-for-xbox)以切换按钮的可见性。 如果你的应用正在 Xbox 上运行，NavigationView 控件将自动切换后退按钮的可见性。 
 
@@ -282,22 +282,22 @@ bool App::On_BackRequested()
 
 ## <a name="system-back-behavior-for-backward-compatibilities"></a>针对后向兼容性的系统后退行为
 
-以前，UWP 应用使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) 来实现向后导航。 API 将继续支持以确保向后兼容，但我们不再建议依赖[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)。 相反，你的应用应该绘制自己的应用内后退按钮。
+以前，UWP 应用使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) 来实现向后导航。 API 将继续获得支持以确保向后兼容性，但我们不会再建议依靠 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)。 相反，你的应用应该绘制自己的应用内后退按钮。
 
-如果您的应用程序将继续使用[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)，则系统用户界面将呈现在标题栏内的系统后退按钮。 （后退按钮的外观和用户交互是早期的版本相比并无变化。）
+如果应用继续使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)，则系统 UI 会在标题栏中呈现系统后退按钮。 （后退按钮的外观和用户交互与以前版本相比并无变化。）
 
-![标题栏中后退按钮](images/nav-back-pc.png)
+![标题栏后退按钮](images/nav-back-pc.png)
 
-### <a name="system-back-bar"></a>系统恢复栏
+### <a name="system-back-bar"></a>系统后退栏
 
 > [!NOTE]
-> "系统恢复栏"是仅描述，不的正式名称。
+> “系统后退栏”只是描述，不是正式名称。
 
-系统恢复栏是选项卡的带区与应用程序的内容区域之间插入一个"带"。 此区带横跨整个应用，“后退”按钮位于左边缘。 带区的垂直高度为 32 像素，以确保足够触摸目标大小的后退按钮。
+系统后退栏是在选项卡区带和应用的内容区域之间插入的“区带”。 此区带横跨整个应用，后退按钮位于左边缘。 其具有 32 像素的垂直高度以确保后退按钮有足够的触摸目标大小。
 
-系统后退栏基于“后退”按钮的可见性动态显示。 后退按钮可见时，系统后插入栏，转移应用内容向下的选项卡带以下 32 像素。 当隐藏后退按钮、 系统恢复动态删除栏，x 32 像素以满足选项卡外转移应用内容。 若要避免必须应用的 UI shift，向上或向下，我们建议绘图[应用程序内后退按钮](#back-button)。
+系统后退栏基于后退按钮的可见性动态显示。 当后退按钮可见时，系统后退栏插入，将应用内容下移到比选项卡区带低 32 像素。 当后退按钮隐藏时，系统后退栏动态删除，将应用内容上移 32 像素以紧挨选项卡区带。 若要避免应用的 UI 上移或下移，我们建议绘制[应用内后退按钮](#back-button)。
 
-[标题栏的自定义](../shell/title-bar.md)将会转到应用选项卡和系统返回栏。 如果您的应用程序指定前景色和背景颜色属性与[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)，则颜色将应用于选项卡和系统后栏。
+[标题栏自定义](../shell/title-bar.md)会延续到应用选项卡和系统后退栏。 如果应用使用 [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar) 指定背景色和前景色属性，这些颜色将应用到选项卡和系统后退栏。
 
 ## <a name="guidelines-for-custom-back-navigation-behavior"></a>自定义后退导航行为指南
 
@@ -313,38 +313,38 @@ bool App::On_BackRequested()
 </thead>
 <tbody>
 <tr class="odd">
-<td style="vertical-align:top;"><strong>页进行分页，不同的对等组</strong></td>
-<td style="vertical-align:top;"><strong>是的</strong>
+<td style="vertical-align:top;"><strong>页面到页面，不同的对等组</strong></td>
+<td style="vertical-align:top;"><strong>是</strong>
 <p>在此图中，用户从应用的级别 1 导航到级别 2，并且跨对等组，因此该导航将添加到导航历史记录。</p>
 <p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Navigation across peer groups" /></p>
 <p>在下图中，用户在两个同级别的对等组之间导航，并且再次跨对等组，因此该导航将添加到导航历史记录。</p>
 <p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Navigation across peer groups" /></p></td>
 </tr>
 <tr class="even">
-<td style="vertical-align:top;"><strong>页上，为页相同对等组，不屏幕导航元素</strong>
-<p>用户从一个页面导航到同一对等组内的另一个页面。 无屏幕没有导航元素 (如<a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>)，它提供直接导航到这两个页。</p></td>
-<td style="vertical-align:top;"><strong>是的</strong>
-<p>在下图中，用户在相同的对等组中，两个页之间导航和导航应添加到导航历史记录。</p>
+<td style="vertical-align:top;"><strong>页面到页面，同一对等组，无屏幕导航元素</strong>
+<p>用户从一个页面导航到同一对等组内的另一个页面。 没有可用于直接导航到两个页面的屏幕导航元素（如 <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>）。</p></td>
+<td style="vertical-align:top;"><strong>是</strong>
+<p>在下图中，用户在同一对等组中的两个页面之间导航，并且导航应添加到导航历史记录。</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
-<td style="vertical-align:top;"><strong>到页上，相同的对等组，页与屏幕导航元素</strong>
-<p>用户从一个页面导航到同一对等组内的另一个页面。 这两个页面显示在相同的导航元素中，如<a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>。</p></td>
-<td style="vertical-align:top;"><strong>它依赖于</strong>
-<p>是的将添加到导航历史记录，有两个值得注意的例外。 如果您希望能够对应用程序用户通常情况下，对等组中的网页间切换，或如果你想要保留的导航层次结构，则不要添加到导航历史记录。 在这种情况下，当用户按下后退时，将在用户导航到当前对等组之前返回到上一个页面。 </p>
+<td style="vertical-align:top;"><strong>页面到页面，同一对等组，带有屏幕导航元素</strong>
+<p>用户从一个页面导航到同一对等组内的另一个页面。 两个页面显示在相同的导航元素中，如 <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>。</p></td>
+<td style="vertical-align:top;"><strong>视情况而定</strong>
+<p>是的，添加到导航历史记录，有两个明显例外。 如果预计应用的用户经常在对等组中的页面之间切换，或者希望保留导航层次结构，则不要添加到导航历史记录。 在这种情况下，当用户按下后退时，将在用户导航到当前对等组之前返回到上一个页面。 </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
-<td style="vertical-align:top;"><strong>显示瞬时 UI</strong>
+<td style="vertical-align:top;"><strong>显示瞬态 UI</strong>
 <p>应用显示弹出窗口或子窗口（例如对话框、初始屏幕或屏幕键盘），或应用进入特殊模式（例如多重选择模式）。</p></td>
-<td style="vertical-align:top;"><strong>不</strong>
+<td style="vertical-align:top;"><strong>否</strong>
 <p>当用户按下后退按钮时，取消瞬态 UI（隐藏屏幕键盘、取消对话框等）并返回到生成瞬态 UI 的页面。</p>
 <p><img src="images/back-nav/back-transui.png" alt="Showing a transient UI" /></p></td>
 </tr>
 <tr class="odd">
-<td style="vertical-align:top;"><strong>枚举项</strong>
+<td style="vertical-align:top;"><strong>枚举项目</strong>
 <p>应用显示屏幕项目的内容，例如大纲/细节列表中的选定项目的详细信息。</p></td>
-<td style="vertical-align:top;"><strong>不</strong>
+<td style="vertical-align:top;"><strong>否</strong>
 <p>枚举项目与在对等组内导航类似。 当用户按下后退时，导航到位于当前页面前面的具有项目枚举的页面。</p>
 <p><img src="images/back-nav/nav-enumerate.png" alt="Iterm enumeration" /></p></td>
 </tr>

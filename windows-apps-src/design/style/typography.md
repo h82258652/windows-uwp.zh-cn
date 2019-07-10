@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 76196add0829dcfa0aa638a2d8ae6995fafce69e
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244383"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63820553"
 ---
 # <a name="typography"></a>版式
 
@@ -21,7 +21,7 @@ ms.locfileid: "59244383"
 
 ## <a name="font"></a>Font
 
-应在应用的全部 UI 中使用同一种字体，建议始终使用 UWP 应用的默认字体 **Segoe UI**。 其设计目的是为保持不同字体大小和像素密度下的最佳可读性，并提供可润色系统内容的清晰、明朗的美学效果。
+应在应用的全部 UI 中使用同一种字体，建议始终使用 UWP 应用的默认字体 Segoe UI  。 其设计目的是为保持不同字体大小和像素密度下的最佳可读性，并提供可润色系统内容的清晰、明朗的美学效果。
 
 ![Segoe UI 字体的示例文本](images/type/segoe-sample.svg)
 
@@ -110,7 +110,7 @@ UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻�
     :::column-end:::
 :::row-end:::
 
-## <a name="alignment"></a>对齐方式
+## <a name="alignment"></a>对齐
 
 默认 [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) 是左对齐，在大多数情况下，左边对齐但右边不对齐可提供一致的内容编排效果和统一的布局。 有关 RTL 语言，请参阅[调整布局和字体以支持全球化](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)。
 
@@ -154,7 +154,7 @@ UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻�
     :::column-end:::
 :::row-end:::
 
-**注意**：如果容器不是明确定义 （例如没有区别性背景色），或如果有一个链接来查看更多的文本，然后使用省略号。
+**注意**：如果未对容器进行完善定义（例如，不区分背景颜色），或者当存在用于查看更多文本的链接时，则使用省略号。
 
 ## <a name="languages"></a>语言 
 
@@ -171,7 +171,7 @@ Segoe UI 适用于英语、欧洲语言、希腊语、希伯来语、亚美尼�
 <tr class="header">
 <th align="left">字体系列</th>
 <th align="left">样式</th>
-<th align="left">说明</th>
+<th align="left">注释</th>
 </tr>
 </thead>
 <tbody>
@@ -244,7 +244,7 @@ Sans-serif 字体是用于标题和 UI 元素的不错选择。
 <tr class="header">
 <th align="left">字体系列</th>
 <th align="left">样式</th>
-<th align="left">说明</th>
+<th align="left">注释</th>
 </tr>
 </thead>
 <tbody>
@@ -287,7 +287,7 @@ Serif 字体适合用于显示大量文本。
 <tr class="header">
 <th align="left">字体系列</th>
 <th align="left">样式</th>
-<th align="left">说明</th>
+<th align="left">注释</th>
 </tr>
 </thead>
 <tbody>
@@ -323,7 +323,7 @@ Serif 字体适合用于显示大量文本。
 <tr class="header">
 <th align="left">字体系列</th>
 <th align="left">样式</th>
-<th align="left">说明</th>
+<th align="left">注释</th>
 </tr>
 </thead>
 <tbody>
@@ -350,4 +350,4 @@ Serif 字体适合用于显示大量文本。
 * [文本控件](../controls-and-patterns/text-controls.md)
 * [XAML 主题资源](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
 * [XAML 样式](../controls-and-patterns/xaml-styles.md)
-* [Microsoft 版式](https://docs.microsoft.com/typography/)
+* [Microsoft 板式](https://docs.microsoft.com/typography/)
