@@ -12,17 +12,17 @@ dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1897eded4d18a00a3c11cf1926adb1ebec6ae69a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638932"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63791702"
 ---
 # <a name="person-picture-control"></a>个人图片控件
 
-如果用户头像可用，个人图片控件将显示用户头像；否则，将显示该用户的姓名缩写或通用字形。 你可以使用该控件来显示 [Contact 对象](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact)（该对象管理用户的联系信息），你也可以手动提供联系信息，例如显示名称和个人资料图片。  
+如果用户头像可用，个人图片控件将显示用户头像；否则，将显示该用户的姓名缩写或通用字形。 可以使用该控件来显示 [Contact 对象](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact)（该对象管理用户的联系信息），也可以手动提供联系信息，例如显示名称和个人资料图片。  
 
-> **重要的 API**：[PersonPicture 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture)，[联系类](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact)， [ContactManager 类](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> **重要的 API**：[PersonPicture 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact 类](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager 类](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
 该图显示两个人图片控件，附带两个显示用户名的[文本块](text-block.md)元素。 
 ![个人图片控件](images/person-picture/person-picture_hero.png)
@@ -36,7 +36,7 @@ ms.locfileid: "57638932"
 * 显示消息的发送者 
 * 显示社交媒体联系人
 
-该图中的联系人列表显示人员图片控件：![个人图片控件](images/person-picture/person-picture-control.png)
+该图在联系人列表中显示个人图片控件：![个人图片控件](images/person-picture/person-picture-control.png)
 
 ## <a name="examples"></a>示例
 
@@ -56,7 +56,7 @@ ms.locfileid: "57638932"
 
 ## <a name="how-to-use-the-person-picture-control"></a>如何使用个人图片控件
 
-若要创建个人图片，你可以使用 PersonPicture 类。 此示例创建一个 PersonPicture 控件，并手动提供此人的显示名称、个人资料图片和姓名缩写：
+若要创建个人图片，可以使用 PersonPicture 类。 此示例创建一个 PersonPicture 控件，并手动提供此人的显示名称、个人资料图片和姓名缩写：
 
 ```xaml
 <Page
@@ -79,7 +79,7 @@ ms.locfileid: "57638932"
 
 ## <a name="using-the-person-picture-control-to-display-a-contact-object"></a>使用个人图片控件来显示 Contact 对象
 
-你可以使用用户选取器控件来显示 [Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact) 对象： 
+可以使用用户选取器控件来显示 [Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact) 对象： 
 
 ```xaml
 <Page
@@ -171,7 +171,7 @@ namespace SampleApp
 
 ## <a name="determining-which-info-to-display"></a>确定要显示的信息
 
-当你提供 [Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact) 对象时，个人图片控件将对其进行评估，以确定它可以显示哪些信息。 
+提供 [Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact) 对象时，个人图片控件将对其进行评估，以确定它可以显示哪些信息。 
 
 如果图像可用，该控件将显示它找到的第一个图像，顺序如下：
 
@@ -190,4 +190,4 @@ namespace SampleApp
 ## <a name="related-articles"></a>相关文章
 
 * [联系人和日历](../../contacts-and-calendar/index.md)
-* [联系人卡示例](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+* [Contact cards sample](https://go.microsoft.com/fwlink/p/?LinkId=624040)（联系人卡片示例）

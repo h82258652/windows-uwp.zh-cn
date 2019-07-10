@@ -12,17 +12,17 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 215a15e3a8e1b0264987adcf6228ec52a696f50c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654472"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63801318"
 ---
 # <a name="color-picker"></a>颜色选取器
 
 颜色选取器用于浏览和选择颜色。 默认情况下，它使用户可以在色谱上浏览颜色，或在红-绿-蓝 (RGB)、色调饱和度值 (HSV) 或十六进制文本框中指定颜色。
 
-> **重要的 API**：[颜色选取器类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)，[颜色属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color)， [ColorChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
+> **重要的 API**：[ColorPicker 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)、[Color 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color)、[ColorChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
 
 ![默认颜色选取器](images/color-picker-default.png)
 
@@ -79,13 +79,13 @@ ms.locfileid: "57654472"
 </Rectangle>
 ```
 
-此示例使用只带有圆形和滑块的简化颜色选取器，这是常用的“非正式”颜色选取体验。 当颜色更改可以进行显示并在受影响对象上实时发生时，你无需显示颜色预览栏。 有关详细信息，请参阅*自定义颜色选取器*部分。
+此示例使用只带有圆形和滑块的简化颜色选取器，这是常用的“非正式”颜色选取体验。 当颜色更改可以进行显示并在受影响对象上实时发生时，无需显示颜色预览栏。 有关详细信息，请参阅*自定义颜色选取器*部分。
 
 ### <a name="save-the-chosen-color"></a>保存所选颜色
 
 在某些情况下，你不想立即应用颜色更改。 例如，在浮出控件中承载颜色选取器时，建议仅在用户确认选择或关闭浮出控件之后，才应用所选颜色。 还可以保存所选颜色值以供将来使用。
 
-在此示例中，在具有 Confirm 和 Cancel 按钮的浮出控件中承载颜色选取器。 当用户确认其颜色选择时，保存所选颜色以便将来在应用中使用。
+在此示例中，在具有“确认”和“取消”按钮的浮出控件中承载颜色选取器。 当用户确认其颜色选择时，保存所选颜色以便将来在应用中使用。
 
 ```xaml
 <Page.Resources>
@@ -172,7 +172,7 @@ private void cancelColor_Click(object sender, RoutedEventArgs e)
 
 #### <a name="show-a-simple-picker"></a>显示简单选取器
 
-此示例演示如何配置具有简单 UI 的颜色选取器以进行“非正式”使用。 会显示圆形色谱并隐藏默认文本输入框。 当颜色更改可以进行显示并在受影响对象上实时发生时，你无需显示颜色预览栏。 否则，应让颜色预览保持可见。
+此示例演示如何配置具有简单 UI 的颜色选取器以进行“非正式”使用。 会显示圆形色谱并隐藏默认文本输入框。 当颜色更改可以进行显示并在受影响对象上实时发生时，无需显示颜色预览栏。 否则，应让颜色预览保持可见。
 
 ```xaml
 <ColorPicker x:Name="myColorPicker"

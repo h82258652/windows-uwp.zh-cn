@@ -6,17 +6,17 @@ ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
 ms.openlocfilehash: 0a772c0ec6aad2c0d6a099b54eb4c6faa413cc7b
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913937"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63793965"
 ---
 # <a name="item-templates-for-list-view"></a>列表视图项模板
 
 本节包含可以对 [**ListView**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView) 控件使用的项模板。 使用这些模板可获得常见应用类型的外观。 
 
-若要演示数据绑定，这些模板将绑定**ListViewItems**到示例录制类从[数据绑定概述](../../data-binding/data-binding-quickstart.md)。
+为了演示数据绑定，这些模板将 **ListViewItems** 绑定到[数据绑定概述](../../data-binding/data-binding-quickstart.md)中的示例 Recording 类。
 
 > [!NOTE] 
 > 目前，如果一个 **DataTemplate** 包含多个控件（例如多个 **TextBlock**），屏幕阅读器的默认可访问名称来自于项上的 .ToString()。 为方便起见，可以在 **DataTemplate** 的根元素上设置 [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties)。 有关辅助功能的详细信息，请参阅[辅助功能概述](../accessibility/accessibility-overview.md)。

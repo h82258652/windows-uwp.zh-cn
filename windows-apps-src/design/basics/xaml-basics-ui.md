@@ -6,17 +6,17 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bae8455f1062b3ad62aeac3807c6c58ae274a1b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640812"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63794829"
 ---
 # <a name="tutorial-create-a-user-interface"></a>教程：创建用户界面
 
-在本教程中，您将了解如何通过以下方法为图像编辑程序创建基本 UI： 
+本教程介绍如何通过以下方法为图像编辑程序创建基本 UI： 
 
-+ 使用 Visual Studio 中的 XAML 工具（例如 XAML 设计器、工具箱、XAML 编辑器、“属性”面板和文档大纲）将控件和内容添加到你的 UI 中
++ 使用 Visual Studio 中的 XAML 工具（例如 XAML 设计器、工具箱、XAML 编辑器、“属性”面板和文档大纲）将控件和内容添加到 UI 中
 + 利用一些最常见的 XAML 布局面板，如 RelativePanel、网格和 StackPanel。
 
 图像编辑程序有两个页面/屏幕：
@@ -32,33 +32,33 @@ ms.locfileid: "57640812"
 
 ## <a name="prerequisites"></a>必备条件
 
-* Visual Studio 2017:[下载 Visual Studio 2017 Community （免费）](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
-* Windows 10 SDK (10.0.15063.468 或更高版本):[下载最新的 Windows SDK （免费）](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* Visual Studio 2017：[下载 Visual Studio 2017 社区版（免费）](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Windows 10 SDK（10.0.15063.468 或更高版）：[下载最新的 Windows SDK（免费）](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 
 ## <a name="part-0-get-the-starter-code-from-github"></a>第 0 部分：从 github 获取起始代码
 
-在本教程中，你将从一个简化版的 PhotoLab 示例开始。 
+在本教程中，我们将从一个简化版的 PhotoLab 示例开始。 
 
-1. 转到[ https://github.com/Microsoft/Windows-appsample-photo-lab ](https://github.com/Microsoft/Windows-appsample-photo-lab)。 这将让你访问 GitHub 页上的示例。 
-2. 接下来，你将需要克隆或下载示例。 单击**克隆或下载**按钮。 一个子菜单将出现。
+1. 转到 [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab)。 这将让你访问 GitHub 页上的示例。 
+2. 接下来，需要克隆或下载示例。 单击“克隆或下载”  按钮。 一个子菜单将出现。
     <figure>
         <img src="images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">
         <figcaption>GitHub 页面上的 PhotoLab 示例的“克隆或下载”<b></b>菜单。</figcaption>
     </figure>
 
-    **如果您不熟悉 GitHub:**
+    **如果你不熟悉 GitHub:**
     
-    a. 单击**下载 ZIP** 并在本地保存文件。 这将下载一个包含你需要的所有项目文件的 .zip 文件。
-    b. 将该文件解压缩。 使用文件资源管理器导航到你刚才下载的 .zip 文件，右键单击它，然后选择**全部解压缩…**。c. 导航到示例的本地副本，然后访问 `Windows-appsample-photo-lab-master\xaml-basics-starting-points\user-interface` 目录。    
+    a. 单击“下载 ZIP”  并在本地保存文件。 这将下载一个包含你需要的所有项目文件的 .zip 文件。
+    b. 将该文件解压缩。 使用文件资源管理器导航到你刚才下载的 .zip 文件，右键单击它，然后选择“全部解压缩…”  。c. 导航到示例的本地副本，然后访问 `Windows-appsample-photo-lab-master\xaml-basics-starting-points\user-interface` 目录。    
 
-    **如果您熟悉 GitHub:**
+    **如果你熟悉 GitHub：**
 
     a. 在本地克隆 repo 的主分支。
     b. 导航到 `Windows-appsample-photo-lab\xaml-basics-starting-points\user-interface` 目录。
 
 3. 通过单击 `Photolab.sln` 打开项目。
 
-## <a name="part-1-add-a-textblock-using-xaml-designer"></a>第 1 部分：添加一个使用 XAML 设计器的文本块
+## <a name="part-1-add-a-textblock-using-xaml-designer"></a>第 1 部分：使用 XAML 设计器添加 TextBlock
 
 为了使创建 XAML UI 更轻松，Visual Studio 提供了一些工具。 利用 XAML 设计器，你可以将控件拖到设计图面上并查看它们的外观，然后再运行应用。 利用“属性”面板，你可以查看和设置设计器中处于活动状态的所有控件属性。 文档大纲显示了 UI 的 XAML 可视化树的父子结构。 利用 XAML 编辑器，你可以直接输入和修改 XAML 标记。
 
@@ -68,22 +68,22 @@ ms.locfileid: "57640812"
 
 利用这些工具中的每个工具，都可以更加轻松地创建你的 UI，因此我们将在本教程中使用所有这些工具。 首先，你将使用 XAML 设计器添加控件。 
 
-**添加使用 XAML 设计器控件：**
+**使用 XAML 设计器添加控件：**
 
-1. 在“解决方案资源管理器”中双击“MainPage.xaml”打开它。 这将显示未添加任何 UI 元素的应用主页面。
+1. 在“解决方案资源管理器”中双击“MainPage.xaml”  打开它。 这将显示未添加任何 UI 元素的应用主页面。
 
-2. 在执行进一步操作之前，你需要对 Visual Studio 进行一些调整。
+2. 在执行进一步操作之前，需要对 Visual Studio 进行一些调整。
 
     - 请确保将解决方案平台设置为 x86 或 x64，而不是 ARM。
     - 将主页面 XAML 设计器设置为显示 13.3 英寸的桌面预览。
 
-    你应该会在窗口顶部附近看到两个设置，如下所示。
+    应该会在窗口顶部附近看到两个设置，如下所示。
 
     ![VS 设置](images/xaml-basics/layout-vs-settings.png)
 
-    现在，你可以运行该应用，但不会看到太多内容。 让我们添加一些 UI 元素以使内容变得更有趣。
+    现在，可以运行该应用，但不会看到太多内容。 让我们添加一些 UI 元素以使内容变得更有趣。
 
-3. 在工具箱中，展开**常见 XAML 控件**并查找 [TextBlock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock) 控件。 将 TextBlock 拖到页面左上角附近的设计图面上。
+3. 在工具箱中，展开“常见 XAML 控件”  并查找 [TextBlock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock) 控件。 将 TextBlock 拖到页面左上角附近的设计图面上。
 
     此 TextBlock 会添加到页面中，并且设计器会根据对你需要的布局的最佳猜测来设置一些属性。 TextBlock 周围会以蓝色高亮显示以指明它现在是活动对象。 请注意设计器添加的边距和其他设置。 你的 XAML 将如下所示。 如果其格式与下面不完全相同，也不用担心；为了更易于阅读，我们在此处进行了缩减。
 
@@ -100,11 +100,11 @@ ms.locfileid: "57640812"
 
 4. 在“属性”面板中，将 TextBlock 的“名称”值从 **textBlock** 更改为**TitleTextBlock**。 （请确保 TextBlock 仍然是活动对象。）
 
-5. 在**通用**下面，将“文本”值更改为**集合**。
+5. 在“通用”  下面，将“文本”值更改为“集合”  。
 
     ![TextBlock 属性](images/xaml-basics/text-block-properties.png)
 
-    在 XAML 编辑器中，你的 XAML 现在如下所示。
+    在 XAML 编辑器中，XAML 现在如下所示。
 
     ```xaml
     <TextBlock x:Name="TitleTextBlock"
@@ -115,7 +115,7 @@ ms.locfileid: "57640812"
                VerticalAlignment="Top"/>
     ```
 
-6. 若要定位 TextBlock，应首先删除 Visual Studio 添加的属性值。 在文档大纲中，右键单击 **TitleTextBlock**，然后依次选择**布局 > 重置全部**。
+6. 若要定位 TextBlock，应首先删除 Visual Studio 添加的属性值。 在“文档大纲”中，右键单击“TitleTextBlock”  ，然后依次选择“布局”>“全部重置”  。
 
 ![文档大纲](images/xaml-basics/doc-outline-reset.png)
 
@@ -123,11 +123,11 @@ ms.locfileid: "57640812"
 
     ![TextBlock 边距](images/xaml-basics/margins.png)
 
-    边距可在页面上对元素进行最基本的定位。 它们可用于微调你的布局，但是使用大边距值（如 Visual Studio 添加的大边距值）会使 UI 难以适应各种屏幕大小，因此应该避免使用大边距值。
+    边距可在页面上对元素进行最基本的定位。 它们可用于微调布局，但是使用大边距值（如 Visual Studio 添加的大边距值）会使 UI 难以适应各种屏幕大小，因此应该避免使用大边距值。
 
     有关详细信息，请参阅[对齐、边距和填充](../layout/alignment-margin-padding.md)。
 
-8. 在“文档大纲”面板中，右键单击“TitleTextBlock”，然后依次选择“编辑样式”>“应用资源”>“TitleTextBlockStyle”。 这会对你的标题文本应用系统定义的样式。
+8. 在“文档大纲”面板中，右键单击“TitleTextBlock”  ，然后依次选择“编辑样式”>“应用资源”>“TitleTextBlockStyle”  。 这会对你的标题文本应用系统定义的样式。
 
     ```xaml
     <TextBlock x:Name="TitleTextBlock"
@@ -137,24 +137,24 @@ ms.locfileid: "57640812"
                Style="{StaticResource TitleTextBlockStyle}"/>
     ```
 
-9. 在“属性”面板内的搜索框中输入 **textwrapping** 可以查找 **TextWrapping** 属性。 单击 **TextWrapping** 属性的_属性标记_以打开其菜单。 (_属性标记_是每个属性值右侧的小框符号。 _属性标记_为黑色以指示属性设置为非默认值。)上**属性**菜单中，选择**重置**重置 TextWrapping 属性。
+9. 在“属性”面板内的搜索框中输入 **textwrapping** 可以查找 **TextWrapping** 属性。 单击 **TextWrapping** 属性的属性标记  以打开其菜单。 （属性标记  是每个属性值右侧的小框符号。 此属性标记  为黑色，表示该属性设置为非默认值。）在“属性”  菜单上，选择“重置”  以重置 TextWrapping 属性。
 
-    Visual Studio 会添加此属性，但你应用的样式中已设置该属性，因此，此处不需要该属性。
+    Visual Studio 会添加此属性，但应用的样式中已设置该属性，因此，此处不需要该属性。
 
-你已将 UI 的第一部分添加到你的应用中！ 请立即运行该应用以查看其外观。
+你已将 UI 的第一部分添加到应用中！ 请立即运行该应用以查看其外观。
 
-你可能已注意到，在 XAML 设计器中，你的应用在黑色背景中显示了白色文本，但当你运行它时，它在白色背景中显示了黑色文本。 这是因为，Windows 具有深色和浅色主题，并且默认主题因设备而异。 在电脑上，默认主题是“浅色”。 你可以单击 XAML 设计器顶部的齿轮图标以打开设备预览设置，并将主题更改为“浅色”以使 XAML 设计器中的应用看上去与电脑上的应用相同。
+你可能已注意到，在 XAML 设计器中，应用在黑色背景中显示了白色文本，但当你运行它时，它在白色背景中显示了黑色文本。 这是因为，Windows 具有深色和浅色主题，并且默认主题因设备而异。 在电脑上，默认主题是“浅色”。 可以单击 XAML 设计器顶部的齿轮图标以打开设备预览设置，并将主题更改为“浅色”以使 XAML 设计器中的应用看上去与电脑上的应用相同。
 
 > [!NOTE]
 > 在此部分教程中，你通过拖放添加了控件。 你也可以通过在工具箱中双击来添加控件。 试一下，看看 Visual Studio 生成的 XAML 有哪些区别。
 
-## <a name="part-2-add-a-gridview-control-using-the-xaml-editor"></a>第 2 部分：添加 GridView 控件使用 XAML 编辑器
+## <a name="part-2-add-a-gridview-control-using-the-xaml-editor"></a>第 2 部分：使用 XAML 编辑器添加 GridView 控件
 
-在第 1 部分中，你尝试了使用 XAML 设计器和 Visual Studio 提供的一些其他工具。 在此，你将使用 XAML 编辑器直接处理 XAML 标记。 随着你对 XAML 的了解越来越多，你可能会发现这是一种更有效的工作方式。
+在第 1 部分中，你尝试了使用 XAML 设计器和 Visual Studio 提供的一些其他工具。 在这里，你将使用 XAML 编辑器直接处理 XAML 标记。 随着你对 XAML 的了解越来越多，你可能会发现这是一种更有效的工作方式。
 
 首先，你将根布局 [Grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) 替换为 [**RelativePanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel)。 利用 RelativePanel，可更加轻松地相对于面板或其他部分 UI 重新排列 UI 块。 你将在 [XAML 自适应布局](xaml-basics-adaptive-layout.md)教程中了解它的用处。 
 
-然后，你将添加 [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) 控件以显示你的数据。
+然后，你将添加 [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) 控件来显示数据。
 
 **使用 XAML 编辑器添加控件**
 
@@ -182,9 +182,9 @@ ms.locfileid: "57640812"
 
     有关使用 **RelativePanel** 的布局的详细信息，请参阅[布局面板](https://docs.microsoft.com/windows/uwp/layout/layout-panels#relativepanel)。
 
-2. 在 **TextBlock** 元素下面，添加名为“ImageGridView”的 **GridView 控件**。 设置**RelativePanel** _附加属性_放置控件的标题文本的下方并使其扩展到整个屏幕的宽度。
+2. 在 **TextBlock** 元素下面，添加名为“ImageGridView”的 **GridView 控件**。 设置 **RelativePanel** _附加属性_以将此控件放在标题文本下面，并使其横跨整个屏幕宽度。
 
-    **添加此 XAML**
+    **添加以下 XAML**
 
     ```xaml
     <GridView x:Name="ImageGridView"
@@ -194,7 +194,7 @@ ms.locfileid: "57640812"
               RelativePanel.Below="TitleTextBlock"/>
     ```
 
-    **TextBlock 后**
+    **添加到以下 TextBlock 之后**
     ```xaml
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="TitleTextBlock"
@@ -228,25 +228,25 @@ ms.locfileid: "57640812"
 > [!NOTE]
 > 你可以在[布局面板](https://docs.microsoft.com/windows/uwp/layout/layout-panels#relativepanel)文章中找到有关使用 **RelativePanel** 的布局的详细信息。 看一看，然后通过在 **TextBlock** 和 **GridView** 上设置 RelativePanel 附加属性，来实验一些其他布局。
 
-## <a name="part-3-add-a-datatemplate-to-display-your-data"></a>第 3 部分：添加数据模板来显示数据
+## <a name="part-3-add-a-datatemplate-to-display-your-data"></a>第 3 部分：添加 DataTemplate 以显示你的数据
 
 现在，你将创建 [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate)，以告诉 GridView 如何显示你的数据。 有关数据模板的完整说明，请参阅[项容器和模板](../controls-and-patterns/item-containers-templates.md)。
 
 目前，你将仅添加占位符以帮助你创建所需的布局。 在 [XAML 数据绑定](../../data-binding/xaml-basics-data-binding.md)教程中，你将用 **ImageFileInfo** 类中的实际数据替换这些占位符。 如果你想要查看数据对象的外观，现在可以打开 ImageFileInfo.cs 文件。
 
-**将一个数据模板添加到网格视图**
+**将数据模板添加到网格视图**
 
 1. 打开 MainPage.xaml。
 
-2. 若要显示分级，你可以使用 [Telerik 的 UI for UWP](https://github.com/telerik/UI-For-UWP) NuGet 程序包中的 **RadRating** 控件。 添加 XAML 命名空间引用以指定 Telerik 控件的命名空间。 将此项放在左 **Page** 标记中，紧靠在其他“xmlns:”条目后面。
+2. 若要显示分级，可以使用 [Telerik 的 UI for UWP](https://github.com/telerik/UI-For-UWP) NuGet 包中的 **RadRating** 控件。 添加 XAML 命名空间引用以指定 Telerik 控件的命名空间。 将此项放在左 **Page** 标记中，紧靠在其他“xmlns:”条目后面。
 
-    **添加此 XAML**
+    **添加以下 XAML**
 
     ```xaml
     xmlns:telerikInput="using:Telerik.UI.Xaml.Controls.Input"
     ```
 
-    **在最后一个 xmlns: 条目**
+    **添加到以下最后一个“xmlns:”条目后面**
 
     ```xaml
     <Page x:Name="page"
@@ -263,13 +263,13 @@ ms.locfileid: "57640812"
 
     有关 XAML 命名空间的详细信息，请参阅 [XAML 命名空间和命名空间映射](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping)。
 
-3. 在“文档大纲”中，右键单击 **ImageGridView**。 在上下文菜单中，选择**编辑其他模板 > 编辑生成的项 (ItemTemplate) > 创建空...**.**创建资源**对话框随即打开。
+3. 在“文档大纲”中，右键单击“ImageGridView”  。 在上下文菜单中，选择“编辑其他模板”>“编辑生成的项(ItemTemplate)”>“创建空...”  。  “创建资源”对话框将会打开。
 
-4. 在此对话框中，将“名称”（键）值更改为 **ImageGridView_DefaultItemTemplate**，然后单击**确定**。
+4. 在此对话框中，将“名称”（键）值更改为 **ImageGridView_DefaultItemTemplate**，然后单击“确定”  。
 
-    单击**确定**时，会出现以下几种情况。
+    单击“确定”  时，会出现以下几种情况。
 
-    - **DataTemplate** 将添加到 MainPage.xaml 的 Page.Resources 部分。
+    - **DataTemplate** 将添加到 MainPage.xaml 的 Page.Resources 节。
 
         ```xaml
         <Page.Resources>
@@ -281,7 +281,7 @@ ms.locfileid: "57640812"
 
     - “文档大纲”范围会被设置为 **DataTemplate**。
 
-        创建完数据模板后，你可以单击“文档大纲”左上角中的向上箭头以返回到页面范围。
+        创建完数据模板后，可以单击“文档大纲”左上角中的向上箭头以返回到页面范围。
 
     - GridView 的 **ItemTemplate** 属性被设置为 **DataTemplate** 资源。
 
@@ -319,7 +319,7 @@ ms.locfileid: "57640812"
 
     a. 在第一个网格行中添加 **Image** 控件。 此处将显示图像，但是目前，你将使用应用的应用商店徽标作为占位符。
 
-    b. 添加 **TextBlock** 控件以显示图像的名称、文件类型和尺寸。 为此，你可以使用 **StackPanel** 控件排列文本块。
+    b. 添加 **TextBlock** 控件以显示图像的名称、文件类型和尺寸。 为此，可以使用 **StackPanel** 控件排列文本块。
 
     有关 **StackPanel** 布局的详细信息，请参阅[布局面板](https://docs.microsoft.com/windows/uwp/layout/layout-panels#stackpanel)
 
@@ -376,21 +376,21 @@ ms.locfileid: "57640812"
     </Grid>
     ```
 
-现在，运行应用以查看 **GridView** 以及你刚刚创建的项模板。 但是，你可能不会看到分级控件，因为它的白星在白色背景中。 接下来，你将更改背景颜色。
+现在，运行应用以查看 **GridView** 以及刚刚创建的项模板。 但是，你可能不会看到分级控件，因为它的白星在白色背景中。 接下来，你将更改背景颜色。
 
 ![应用 UI 检查点 2](images/xaml-basics/layout-1.png)
 
 ## <a name="part-4-modify-the-item-container-style"></a>第 4 部分：修改项容器样式
 
-项目的控件模板包含用于显示状态的视觉对象，例如选择、将指针悬停在上方和对焦。 这些视觉对象呈现在数据模板的顶部或下方。 在此，你将修改控件模板的 **Background** 和 **Margin** 属性，以为 **GridView** 项提供灰色背景。
+项目的控件模板包含用于显示状态的视觉对象，例如选择、将指针悬停在上方和对焦。 这些视觉对象呈现在数据模板的顶部或下方。 在此，你将修改控件模板的 **Background** 和 **Margin** 属性，为 **GridView** 项提供灰色背景。
 
-**修改的项容器**
+**修改项容器**
 
-1. 在“文档大纲”中，右键单击 **ImageGridView**。 在上下文菜单中，选择**编辑其他模板 > 编辑生成的项容器 (ItemContainerStyle) > 编辑副本...**.**创建资源**对话框随即打开。
+1. 在“文档大纲”中，右键单击“ImageGridView”  。 在上下文菜单上，选择“编辑其他模板”&gt;“编辑生成的项目容器 (ItemContainerStyle)”&gt;“编辑副本...”  。  “创建资源”对话框将会打开。
 
-2. 在此对话框中，将“名称”（键）值更改为 **ImageGridView_DefaultItemContainerStyle**，然后单击**确定**。
+2. 在此对话框中，将“名称”（键）值更改为 **ImageGridView_DefaultItemContainerStyle**，然后单击“确定”  。
 
-    默认样式副本会添加到 XAML 的 **Page.Resources** 部分中。
+    默认样式副本会添加到 XAML 的 **Page.Resources** 节中。
 
     ```xaml
     <Style x:Key="ImageGridView_DefaultItemContainerStyle" TargetType="GridViewItem">
@@ -424,7 +424,7 @@ ms.locfileid: "57640812"
     </Style>
     ```
 
-    **GridViewItem** 默认样式将设置大量属性。 你始终应该从默认样式的副本开始，同时仅修改必需属性。 否则，视觉对象可能不按预期方式显示，因为某些属性未正确设置。
+    **GridViewItem** 默认样式将设置大量属性。 始终应从默认样式的副本开始，同时仅修改必需属性。 否则，视觉对象可能不按预期方式显示，因为某些属性未正确设置。
 
     像在上一步中一样，GridView 的 **ItemContainerStyle** 属性会设置为新的 **Style** 资源。
 
@@ -462,20 +462,20 @@ ms.locfileid: "57640812"
         <Setter Property="Margin" Value="8"/>
     ```
 
-立即运行应用并查看其外观。 调整应用窗口大小。 **GridView** 负责为你重新排列图像，但是当为某些宽度时，应用窗口右侧会有大量空间。 如果图像居中放置，则看起来更美观。 接下来，我们将执行这项操作。
+立即运行应用并查看其外观。 调整应用窗口大小 **GridView** 负责重新排列图像，但是在为某些宽度时，应用窗口右侧会有大量空间。 如果图像居中放置，则看起来更美观。 接下来，我们将执行这项操作。
 
 ![应用 UI 检查点 3](images/xaml-basics/layout-2.png)
 
 > [!Note]
 > 如果你想要试验一下，请尝试将 Background 和 Margin 属性设置为不同的值，并查看一下效果如何。
 
-## <a name="part-5-apply-some-final-adjustments-to-the-layout"></a>第 5 部分：将一些最终调整应用到布局
+## <a name="part-5-apply-some-final-adjustments-to-the-layout"></a>第 5 部分：对布局应用一些最后的调整
 
-若要在页面中居中放置图像，你需要在页面中调整 Grid 的对齐方式。 或者，你需要在 **GridView** 中调整 Images 的对齐方式吗？ 这有关系吗？ 让我们来看一看。
+若要在页面中居中放置图像，需要在页面中调整 Grid 的对齐方式。 或者，需要在 **GridView** 中调整 Images 的对齐方式吗？ 这有关系吗？ 让我们来看一看。
 
 有关对齐的详细信息，请参阅[对齐、边距和填充](../layout/alignment-margin-padding.md)。
 
-（你可能会在这一步中尝试将 **GridView** 的 **Background** 设置为你最喜爱的颜色。 这样，你将可以更清楚地看到布局中发生的情况。）
+（你可以在这一步中尝试将 **GridView** 的 **Background** 设置为最喜爱的颜色。 这样，你将可以更清楚地看到布局中发生的情况。）
 
 **修改图像的对齐方式**
 
@@ -506,15 +506,15 @@ ms.locfileid: "57640812"
 
 2. 运行应用并调整窗口的大小。 向下滚动以查看更多图像。
 
-    图像居中放置，看上去更美观。 但是，滚动条与 **GridView** 的边缘对齐，而不是与窗口边缘对齐。 若要解决此问题，你可以在 **GridView** 中居中放置图像，而不是在页面中居中放置 **GridView**。 这虽然需要多做一些工作，但最后看起来更美观。
+    图像居中放置，看上去更美观。 但是，滚动条与 **GridView** 的边缘对齐，而不是与窗口边缘对齐。 若要解决此问题，可以在 **GridView** 中居中放置图像，而不是在页面中居中放置 **GridView**。 这虽然需要多做一些工作，但最后看起来更美观。
 
-3. 从上一个步骤中删除 **HorizontalAlignment** 设置。
+3. 删除上一个步骤中的 **HorizontalAlignment** 设置。
 
-4. 在“文档大纲”中，右键单击 **ImageGridView**。 在上下文菜单中，选择**编辑其他模板 > 编辑布局项 (ItemsPanel) > 编辑副本...**.**创建资源**对话框随即打开。
+4. 在“文档大纲”中，右键单击“ImageGridView”  。 在上下文菜单中，选择**编辑其他模板 > 编辑项目布局 (ItemsPanel) > 编辑副本...** 。  “创建资源”对话框将会打开。
 
-5. 在此对话框中，将“名称”（键）值更改为 **ImageGridView_ItemsPanelTemplate**，然后单击**确定**。
+5. 在此对话框中，将“名称”（键）值更改为 **ImageGridView_ItemsPanelTemplate**，然后单击“确定”  。
 
-    默认 **ItemsPanelTemplate** 副本会添加到 XAML 的 **Page.Resources** 部分中。 （和以前一样，**GridView** 将会更新以引用此资源。）
+    默认 **ItemsPanelTemplate** 副本会添加到 XAML 的 **Page.Resources** 节中。 （和以前一样，**GridView** 将会更新以引用此资源。）
 
     ```xaml
     <ItemsPanelTemplate x:Key="ImageGridView_ItemsPanelTemplate">
@@ -549,7 +549,7 @@ ms.locfileid: "57640812"
 
 ## <a name="going-further"></a>深入探索
 
-既然你已创建基本 UI，请查看以下其他教程（同样基于 PhotoLab 示例）： 
+创建基本 UI 以后，请查看以下其他教程（同样基于 PhotoLab 示例）： 
 
 * [XAML 数据绑定教程](../../data-binding/xaml-basics-data-binding.md)中的“添加真实图像和数据”。
 * [XAML 自适应布局教程](xaml-basics-adaptive-layout.md)中的“让 UI 适应不同的屏幕大小”。

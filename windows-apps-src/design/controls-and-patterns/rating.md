@@ -11,11 +11,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c5736e917d77415eeb6df53b3fd92f7ab584884
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644922"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63787456"
 ---
 # <a name="rating-control"></a>评分控件
 
@@ -78,7 +78,7 @@ private void RatingChanged(RatingControl sender, object args)
 
 ![只读长列表](images/rating_rs2_doc_reviews.png)
 
-为此，你需要执行以下操作：
+为此，需要执行以下操作：
 
 ```XAML
 <RatingControl IsReadOnly="True"/>

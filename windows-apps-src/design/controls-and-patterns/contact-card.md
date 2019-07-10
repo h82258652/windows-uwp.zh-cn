@@ -10,21 +10,21 @@ dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c227629ace1f3fdbb2af8582401f9273cf11c2e
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913977"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63799639"
 ---
 # <a name="contact-card"></a>联系人卡片
 
-联系人卡片显示[联系人](/uwp/api/Windows.ApplicationModel.Contacts.Contact)（UWP 用来表示用户和企业的机制）的联系人信息，例如姓名、电话号码和地址。  联系人卡片还允许用户编辑联系人信息。 你可以选择显示紧凑式联系人卡片或包含更多信息的完整联系人卡片。
+联系人卡片显示[联系人](/uwp/api/Windows.ApplicationModel.Contacts.Contact)（UWP 用来表示用户和企业的机制）的联系人信息，例如姓名、电话号码和地址。  联系人卡片还允许用户编辑联系人信息。 可以选择显示紧凑式联系人卡片或包含更多信息的完整联系人卡片。
 
-> **重要的 API**：[ShowContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)， [ShowFullContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard)， [IsShowContactCardSupported 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported)，[联系类](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
+> **重要的 API**：[ShowContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)、[ShowFullContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard)、[IsShowContactCardSupported 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported)、[Contact 类](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
 有两种显示联系人卡片的方式：  
 * 以标准联系人卡片方式显示在可轻型消除的浮出控件中，当用户在联系人卡片外部单击时联系人卡片消失。 
-* 以完整联系人卡片方式显示，占用更多空间，并且不可轻型消除，用户必须单击**关闭**才能关闭它。 
+* 以完整联系人卡片方式显示，占用更多空间，并且不可轻型消除，用户必须单击“关闭”  才能关闭它。 
 
 
 <figure>
@@ -40,7 +40,7 @@ ms.locfileid: "58913977"
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-当你想要显示联系人的联系人信息时，请使用联系人卡片。 如果只想显示联系人的姓名和头像，请使用[个人图片控件](person-picture.md)。 
+想要显示联系人的联系人信息时，请使用联系人卡片。 如果只想显示联系人的姓名和头像，请使用[个人图片控件](person-picture.md)。 
 
 
 <!-- TODO: Add examples back when the contact card has been added. -->
@@ -88,7 +88,7 @@ ms.locfileid: "58913977"
 
     ```
 
-3. 使用你在步骤 1 中创建的实用工具函数获取触发该事件的控件的边界（以便我们不会用联系人卡片覆盖它）。
+3. 使用你在步骤 1 中创建的实用工具函数获取触发该事件的控件的边界（这样我们就不会用联系人卡片覆盖它）。
 
     ```csharp
             Rect selectionRect = GetElementRect((FrameworkElement)sender); 
@@ -181,5 +181,5 @@ private void onUserClickShowContactCard()
 
 ## <a name="related-articles"></a>相关文章
 - [联系人和日历](/windows/uwp/contacts-and-calendar/)
-- [联系人卡片示例](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+- [Contact cards sample](https://go.microsoft.com/fwlink/p/?LinkId=624040)（联系人卡片示例）
 - [个人图片控件](/windows/uwp/controls-and-patterns/person-picture/)

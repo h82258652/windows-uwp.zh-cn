@@ -6,24 +6,24 @@ ms.topic: article
 keywords: Windows 10, uwp, SQLite, 数据库
 ms.localizationpriority: medium
 ms.openlocfilehash: 465376214f1bf1b390ec6db8609783e4e7872196
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66362789"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>在 UWP 应用中使用 SQLite 数据库
-你可以使用 SQLite 在用户设备上的轻量级数据库中存储和检索数据。 本指南演示如何执行该操作。
+可以使用 SQLite 在用户设备上的轻量级数据库中存储和检索数据。 本指南演示如何执行该操作。
 
 ## <a name="some-benefits-of-using-sqlite-for-local-storage"></a>使用 SQLite 进行本地存储一些好处
 
-:heavy_check_mark:SQLite 是轻型且自包含。 它是没有其他任何依赖项的代码库。 无需进行任何配置。
+:heavy_check_mark:SQLite 具有轻量和独立的特点。 它是没有其他任何依赖项的代码库。 无需进行任何配置。
 
-:heavy_check_mark:没有数据库的服务器。 客户端和服务器在同一进程中运行。
+:heavy_check_mark:没有数据库服务器。 客户端和服务器在同一进程中运行。
 
-:heavy_check_mark:SQLite 是公共域中，因此可以自由地使用并将它与您的应用程序一起分发。
+:heavy_check_mark:SQLite 位于公共域中，因此你可以自由地使用它并将它与应用一起分配。
 
-:heavy_check_mark:SQLite 是跨平台和体系结构。
+:heavy_check_mark:SQLite 可跨平台和体系结构工作。
 
 可在[此处](https://sqlite.org/about.html)了解有关 SQLite 的详细信息。
 
@@ -33,7 +33,7 @@ ms.locfileid: "66362789"
 
 ### <a name="entity-framework-core"></a>Entity Framework Core
 
-Entity Framework (EF) 是一个对象关系映射程序，可用于使用特定于域的对象处理关系数据。 如果你已使用此框架处理其他 .NET 应用中的数据，则可以将该代码迁移到 UWP 应用，它将处理对连接字符串的相应更改。
+Entity Framework (EF) 是一个对象关系映射程序，可用于使用特定于域的对象处理关系数据。 如果已使用此框架处理其他 .NET 应用中的数据，则可以将该代码迁移到 UWP 应用，它将处理对连接字符串的相应更改。
 
 若要试用它，请参阅[开始使用通用 Windows 平台 (UWP) 上的带新数据库的 EF Core](https://docs.microsoft.com/ef/core/get-started/uwp/getting-started)。
 
@@ -45,31 +45,31 @@ Entity Framework (EF) 是一个对象关系映射程序，可用于使用特定�
 
 ## <a name="set-up-your-solution-to-use-the-microsoftdatasqlite-library"></a>将解决方案设置为使用 Microsoft.Data.SQlite 库
 
-我们将从基本 UWP 项目入手，添加类库，然后安装合适的 Nuget 程序包。
+我们将从基本 UWP 项目入手，添加类库，然后安装合适的 Nuget 包。
 
-你添加到你的解决方案的类库的类型以及你安装的特定程序包取决于你的应用面向的最低版本的 Windows SDK。 你可以在 UWP 项目的属性页中找到该信息。
+添加到解决方案的类库的类型以及安装的特定程序包取决于应用面向的最低版本的 Windows SDK。 可以在 UWP 项目的属性页中找到该信息。
 
 ![Windows SDK 的最低版本](images/min-version.png)
 
-根据你的 UWP 项目面向的最低版本的 Windows SDK 使用以下章节之一。
+根据 UWP 项目面向的最低版本的 Windows SDK，使用以下章节之一。
 
-### <a name="the-minimum-version-of-your-project-does-not-target-the-fall-creators-update"></a>你的项目的最低版本没有将秋季创意者更新作为目标
+### <a name="the-minimum-version-of-your-project-does-not-target-the-fall-creators-update"></a>项目的最低版本没有将 Fall Creators Update 作为目标
 
-如果你使用的是 Visual Studio 2015，请单击“帮助”  ->“关于 Microsoft Visual Studio”  。 然后，在已安装程序的列表中，确保你具有 NuGet 程序包管理器版本 **3.5** 或更高版本。 如果你的版本号较低，请[在此处](https://www.nuget.org/downloads)安装更高版本的 NuGet。 在该页面上，你将发现所有版本的 Nuget 都在 **Visual Studio 2015** 标题下方列出。
+如果使用的是 Visual Studio 2015，请单击“帮助”  ->“关于 Microsoft Visual Studio”  。 然后，在已安装程序的列表中，确保你具有 NuGet 包管理器版本 **3.5** 或更高版本。 如果版本号较低，请安装[此处](https://www.nuget.org/downloads)提供的更高版本的 NuGet。 在该页面上，你将发现所有版本的 Nuget 都在 **Visual Studio 2015** 标题下方列出。
 
-接下来，将类库添加到你的解决方案。 你不必使用类库来包含你的数据访问代码，但我们会使用一个我们的示例。 我们将库命名为 **DataAccessLibrary**，并将库中的类命名为 **DataAccess**。
+接下来，将类库添加到解决方案。 你不必使用类库来包含你的数据访问代码，但我们会使用一个我们的示例。 我们将库命名为 **DataAccessLibrary**，并将库中的类命名为 **DataAccess**。
 
 ![类库](images/class-library.png)
 
-右键单击该解决方法，然后单击“管理解决方案的 NuGet 程序包”  。
+右键单击该解决方法，然后单击“管理解决方案的 NuGet 包”  。
 
-![管理 NuGet 程序包](images/manage-nuget.png)
+![管理 NuGet 包](images/manage-nuget.png)
 
-如果你使用的是 Visual Studio 2015，请选择“已安装”  选项卡，并确保 **Microsoft.NETCore.UniversalWindowsPlatform** 程序包的版本号为 **5.2.2** 或更高。
+如果使用的是 Visual Studio 2015，请选择“已安装”  选项卡，并确保 **Microsoft.NETCore.UniversalWindowsPlatform** 程序包的版本号为 **5.2.2** 或更高。
 
 ![.NETCore 的版本](images/package-version.png)
 
-如果不是，请将程序包更新到更新的版本。
+如果不是，请将包更新到更新的版本。
 
 选择“浏览”  选项卡，然后搜索“Microsoft.Data.SQLite”  程序包。 安装该程序包的版本 **1.1.1**（或更低）。
 
@@ -83,21 +83,21 @@ Entity Framework (EF) 是一个对象关系映射程序，可用于使用特定�
 
 首先，你可以使用 .NET Standard 2.0 库而不是常规的类库。 这意味着你可以将数据访问代码与任何其他基于 .NET 的应用（如 WPF、Windows 窗体、Android、iOS 或 ASP.NET 应用）共享。
 
-其次，您的应用程序不必 SQLite 的库打包。 相反，你的应用可以使用随 Windows 一起安装的 SQLite 版本。 这将带来几个方面的好处。
+其次，应用不需将 SQLite 库打包。 相反，应用可以使用随 Windows 一起安装的 SQLite 版本。 这将带来几个方面的好处。
 
-:heavy_check_mark:因为无需下载二进制，SQLite，然后将其作为你的应用程序的一部分进行打包，减少了您的应用程序的大小。
+:heavy_check_mark:减小了应用程序的大小，因为你不必下载 SQLite 二进制文件然后将其打包为应用程序的一部分。
 
-:heavy_check_mark:使您不必将您的应用程序的新版本推送到用户在的 SQLite 将关键修补程序发布到 bug 和 SQLite 中的安全漏洞。 Windows 版本的 SQLite 由 Microsoft 与 SQLite.org 协作维护。
+:heavy_check_mark:如果 SQLite 发布了针对 SQLite 中的 bug 和安全漏洞的重要修复程序，你就不必向用户推送你的应用的新版本。 Windows 版本的 SQLite 由 Microsoft 与 SQLite.org 协作维护。
 
-:heavy_check_mark:应用加载时有可能更快，因为很可能，SQLite 的 SDK 版本将已加载到内存。
+:heavy_check_mark:应用加载时间可能更短，因为 SDK 版本的 SQLite 很有可能已被加载到内存中。
 
 让我们开始向你的解决方案添加 .NET Standard 2.0 类库。 你不必使用类库来包含你的数据访问代码，但我们会使用一个我们的示例。 我们将库命名为 **DataAccessLibrary**，并将库中的类命名为 **DataAccess**。
 
 ![类库](images/dot-net-standard.png)
 
-右键单击该解决方法，然后单击“管理解决方案的 NuGet 程序包”  。
+右键单击该解决方法，然后单击“管理解决方案的 NuGet 包”  。
 
-![管理 NuGet 程序包](images/manage-nuget-2.png)
+![管理 NuGet 包](images/manage-nuget-2.png)
 
 此时，你已经有一个选择。 你可以使用 Windows 附带的 SQLite 版本，如果你出于某种原因要使用特定版本的 SQLite，则可以在程序中包含 SQLite 库。
 
@@ -125,19 +125,19 @@ Entity Framework (EF) 是一个对象关系映射程序，可用于使用特定�
 
 我们将执行以下操作：
 
-： 一个：准备将数据访问类。
+:one:准备数据访问类。
 
-： 两个：初始化 SQLite 数据库。
+:two:初始化 SQLite 数据库。
 
-： 三个：SQLite 数据库中插入数据。
+:three:将数据插入到 SQLite 数据库。
 
-： 四个：SQLite 数据库中检索数据。
+:four:从 SQLite 数据库检索数据。
 
-： 五个：添加基本用户界面。
+:five:添加基本用户界面。
 
 ### <a name="prepare-the-data-access-class"></a>准备数据访问类
 
-从你的 UWP 项目中，添加对你的解决方案中的 **DataAccessLibrary** 项目的引用。
+从 UWP 项目中，添加对解决方案中的 **DataAccessLibrary** 项目的引用。
 
 ![数据访问类库](images/ref-class-library.png)
 
@@ -163,7 +163,7 @@ namespace DataAccessLibrary
 
 ```
 
-添加以下 using 语句到此文件的顶部。
+将以下 using 语句添加到此文件顶部。
 
 ```csharp
 using Microsoft.Data.Sqlite;
@@ -317,14 +317,14 @@ private void AddData(object sender, RoutedEventArgs e)
 
 ## <a name="next-steps"></a>后续步骤
 
-**您的应用程序直接连接到 SQL Server 数据库**
+**将应用直接连接到 SQL Server 数据库**
 
 请参阅[在 UWP 应用中使用 SQL Server 数据库](sql-server-databases.md)。
 
-**不同的应用程序跨不同平台之间共享代码**
+**在跨不同平台的不同应用之间共享代码**
 
 参阅[在桌面应用和 UWP 应用之间共享代码](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate)。
 
-**添加 Azure SQL 后端使用的主详细信息页**
+**使用 Azure SQL 后端添加大纲/细节页面**
 
 参阅[客户订单数据库示例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)。

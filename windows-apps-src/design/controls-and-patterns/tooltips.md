@@ -13,10 +13,10 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dabfee25df08d933fc892c3ed6e46f3cc6f4513
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364025"
 ---
 # <a name="tooltips"></a>工具提示
@@ -25,7 +25,7 @@ ms.locfileid: "66364025"
 
 ![工具提示](images/controls/tool-tip.png)
 
-> **重要的 API**：[工具提示类](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)， [ToolTipService 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
+> **重要的 API**：[ToolTip 类](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)、[ToolTipService 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -33,25 +33,25 @@ ms.locfileid: "66364025"
 
 应在何时使用工具提示？ 在决定之前，请考虑以下问题：
 
-- **应基于指针悬停在信息变得可见？**
+- **信息是否应当基于指针悬停显示？**
     如果不是，请使用其他控件。 仅在与用户交互时显示提示，工具提示从来不会自行显示。
 
 - **控件是否有文本标签？**
     如果没有，请使用工具提示提供标签。 比较好的 UX 设计做法是以内联方式为大多数控件添加标签，对于这些控件，你不需要使用工具提示。 仅显示图标的工具栏控件和命令按钮需要工具提示。
 
-- **一个对象是否从说明或进一步信息受益？**
+- **对象是否受益于相关说明或更详细的信息？**
     如果是，请使用工具提示。 但是，文本必须是补充性的文本，也就是说不是主要任务必需的文本。 如果是必需的文本，请将它直接放在 UI 中，这样用户便不必查找或搜寻它。
 
-- **错误、 警告或状态是补充信息？**
+- **补充信息是否为错误、警告或状态？**
     如果是，请使用其他 UI 元素（如弹出窗口）。
 
 - **用户是否需要与提示进行交互？**
     如果是，请使用其他控件。 用户不能与提示进行交互，因为移动鼠标会导致提示消失。
 
-- **用户是否需要打印的补充信息？**
+- **用户是否需要打印补充信息？**
     如果是，请使用其他控件。
 
-- **用户将找到令人讨厌的或分散注意力的提示？**
+- **用户是否会觉得提示令人厌烦或者让人分心？**
     如果是，请考虑使用其他解决方案（包括不执行任何操作）。 如果你的确使用了可能会让人分心的提示，请允许用户关闭它们。
 
 ## <a name="example"></a>示例
@@ -112,7 +112,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 默认情况下，工具提示在指针上方居中显示。 工具提示的放置位置不受应用窗口的约束，因此工具提示可能部分或完全显示在应用窗口边界的外部。
 
-对于广泛的调整，使用[放置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)属性或**ToolTipService.Placement**附加属性指定是否应绘制工具提示，上面、 下面左侧或右侧的指针。 可以设置[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)或[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)属性以更改指针和工具提示之间的距离。 只有一个偏移量的两个值将会影响最终位置-VerticalOffset 放置时顶部或底部，HorizontalOffset 时放置左或向右。
+若要进行广泛的调整，请使用 [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) 属性或 **ToolTipService.Placement** 附加属性指定是将工具提示放置在指针的上方、下方、左方还是右方。 可以通过设置 [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset) 或 [HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset) 属性更改指针与工具提示之间的距离。 只有两个偏移值中的一个会影响最终位置 - 当 Placement 为 Top 或 Bottom 时，VerticalOffset 会影响该位置；当 Placement 为 Left 或 Right 时，HorizontalOffset 会影响该位置。
 
 ```xaml
 <!-- An Image with an offset ToolTip. -->
@@ -125,7 +125,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 </Image>
 ```
 
-如果工具提示遮盖它所引用的内容，您可以调整它准确地使用新的放置位置**PlacementRect**属性。 PlacementRect 锚点的工具提示的位置，并提供足够的屏幕空间，无法在此区域外绘制工具提示还作为工具提示不会遮蔽，一个区域。 您可以指定相对于工具提示的所有者和高度的矩形的原点和排除区域的宽度。 [放置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)属性将定义如果上面、 下面左侧或右侧的 PlacementRect 应绘制工具提示。 
+如果工具提示遮盖了它所指的内容，可以使用新的 **PlacementRect** 属性精确调整工具提示的位置。 PlacementRect 锚定工具提示的位置，且工具提示不得遮蔽该区域，前提是有足够的屏幕空间，因此可以在该区域之外放置工具提示。 可以指定矩形的原点（相对于工具提示的所有者），以及排除区域的高和宽。 可以通过 [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) 属性来定义是将工具提示放置在指针的上方、下方、左方还是右方。 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->
@@ -153,4 +153,4 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 ## <a name="related-articles"></a>相关文章
 
-- [工具提示类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip)
+- [ToolTip 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip)

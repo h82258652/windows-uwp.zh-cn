@@ -1,5 +1,5 @@
 ---
-Description: 页的常见模式和 UWP 应用程序中显示内容的 UI 元素的概述。
+Description: 概述在 UWP 应用中显示内容时常见的页面模式和 UI 元素。
 title: 通用 Windows 平台 (UWP) 应用的内容设计基础知识
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e5b46223ea7dfa5e43b5a50a04a4c3f31307d49
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913957"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63796310"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>UWP 应用的内容设计基础知识
 
@@ -26,11 +26,11 @@ ms.locfileid: "58913957"
 
 许多应用使用部分或所有此类常见页面模式来显示不同类型的内容。 同样地，可以随意混合和匹配这些模式以针对应用的内容进行优化。
 
-### <a name="landing"></a>登录
+### <a name="landing"></a>登陆
 
-![登录页面](images/content-basics/hero-screen.png)
+![登陆页面](images/content-basics/hero-screen.png)
 
-登录页面（也称为 hero 屏幕）通常显示在应用体验的最高层。 大型图面区域充当一个平台以供应用突出显示用户可能要浏览和使用的内容。
+登陆页面（也称为 hero 屏幕）通常显示在应用体验的最高层。 大型图面区域充当一个平台以供应用突出显示用户可能要浏览和使用的内容。
 
 ### <a name="collections"></a>集合
 
@@ -53,10 +53,10 @@ ms.locfileid: "58913957"
 
 要针对屏幕大小变化进行调整，也请考虑创建一个[响应式设计](design-and-ui-intro.md)，用于相应地隐藏/显示 UI 元素。
 
-### <a name="forms"></a>表单
+### <a name="forms"></a>窗体
 ![表单](images/content-basics/forms.png)
 
-[表单](../controls-and-patterns/forms.md)是一组控件，用于收集和提交来自用户的数据。 大多数（而非全部）应用将某种形式的表单用于设置页面、登录门户、反馈中心、账户创建或其他目的。 
+[表单](../controls-and-patterns/forms.md)是一组控件，用于收集和提交来自用户的数据。 大多数（而非全部）应用将某种形式的表单用于设置页面、登录门户、反馈中心、帐户创建或其他目的。 
 
 ## <a name="common-content-elements"></a>常见内容元素
 
@@ -108,7 +108,7 @@ ms.locfileid: "58913957"
 <td align="left">地图<br/><br/>
     <img src="images/content-basics/mapcontrol.png" alt="map control" /></td>
 <td align="left"><a href="../../maps-and-location/display-maps.md">MapControl</a></td>
-<td align="left">显示地球的符号或逼真映射。</td>
+<td align="left">显示地球的符号或逼真地图。</td>
 </tr>
 <tr class="even">
 <td align="left">WebView</td>

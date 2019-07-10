@@ -12,19 +12,19 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ac2bd55d1cea25359c3c609148c7098532d76c46
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654052"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63796457"
 ---
 # <a name="command-design-basics-for-uwp-apps"></a>UWP 应用的命令设计基础知识
 
-在通用 Windows 平台 (UWP) 应用中，*命令元素*是允许用户执行操作，例如发送电子邮件、 删除项，或提交窗体的交互式 UI 元素。 *命令接口*由组成常用命令元素、 命令图面，托管它们、 它们支持的交互和它们提供的体验。
+在通用 Windows 平台 (UWP) 应用中，*命令元素*是使用户能够执行诸如发送电子邮件、删除项或提交表单等操作的交互式 UI 元素。 命令界面  包含常见命令元素、托管它们的命令图面、它们支持的交互，以及它们提供的体验。
 
-## <a name="provide-the-best-command-experience"></a>提供最佳的命令体验
+## <a name="provide-the-best-command-experience"></a>提供最佳命令体验
 
-一个命令接口的最重要方面是你想要让用户完成。 规划您的应用程序的功能，请考虑完成这些任务和你想要启用的用户体验所需的步骤。 完成这些体验的初稿后，你可以进行决策的工具和交互来实现它们。
+命令界面最重要的方面是你尝试让用户完成的东西。 在规划应用的功能时，请考虑好完成这些任务的必需步骤，以及需要启用的用户体验。 完成这些体验的初稿后，即可确定实现这些体验所需的工具和交互。
 
 下面是一些常见的命令体验：
 
@@ -34,7 +34,7 @@ ms.locfileid: "57654052"
 - 打开、保存和删除文件
 - 编辑或创建内容
 
-要与命令体验的设计创意。 选择哪个输入设备应用程序支持，并应用到每个设备的响应方式。 通过支持广泛的功能和首选项可以将你的应用作为可用，可移植，并尽可能可访问 (请参阅[发出命令的通用 Windows 平台 (UWP) 应用的设计](../controls-and-patterns/commanding.md)以了解详细信息)。
+在设计命令体验时要有创意。 选择应用支持的输入设备，以及应用响应每个设备的方式。 通过支持最广泛范围的功能和首选项，尽可能提高应用的可用性、可移植性和可访问性（如需更多详细信息，请参阅[通用 Windows 平台 (UWP) 应用的命令控制设计](../controls-and-patterns/commanding.md)）。
 
 
 
@@ -42,9 +42,9 @@ ms.locfileid: "57654052"
 When designing a command interface, the most important decision is choosing what a user can do. To plan the right type of interactions, focus on your app - consider the user experiences you want to enable, and what steps users will need to take. Once you decide what you want users to accomplish, then you can provide them the tools to do so.
 -->
 
-## <a name="choose-the-right-command-elements"></a>选择正确的命令元素
+## <a name="choose-the-right-command-elements"></a>选择适当的命令元素
 
-在一个命令接口中使用正确的元素可以使直观且易于使用的应用程序和困难、 令人困惑的应用程序之间的差异。 通用 Windows 平台 (UWP) 中提供一套全面的命令的元素。 下面是一些最常见的 UWP 命令元素的列表。
+若要区分直观的易用应用与令人费解和困惑的应用，一条标准是能否在命令界面中使用适当的元素。 通用 Windows 平台 (UWP) 中提供范围广泛的命令元素。 下面列出了一些最常见的 UWP 命令元素。
 
 :::row:::
     :::column:::
@@ -100,11 +100,11 @@ When designing a command interface, the most important decision is choosing what
 
 ## <a name="place-commands-on-the-right-surface"></a>将命令放置在合适的图面上
 
-在您的应用程序，包括应用画布或特殊命令容器，如命令栏中，命令栏浮出控件、 菜单栏或对话框中，可以将命令元素放置在数量的图面上。
+可以将命令元素放置在应用中的各种图面上，包括应用画布或特殊命令容器（例如命令栏、命令栏浮出控件、菜单栏或对话框）。
 
-始终尝试让用户直接操作内容而不是通过执行命令的内容，例如拖动和删除重新排列列表的项，而不是向上和向下命令按钮。 
+始终尝试让用户直接操作内容而不是通过命令来操作内容，例如，让用户通过拖拉来重新排列列表项，而不是通过向上和向下命令按钮这样做。 
 
-但是，这可能无法使用某些输入设备，或当以适应特定用户的能力和首选项。 在这些情况下，应提供尽可能多的命令提示，并将这些命令元素放在应用程序中的命令表面。
+不过，在某些输入设备中可能无法这样做；在需要适应特定的用户功能和首选项时，可能也无法这样做。 在这些情况下，请尽可能多地提供命令控制，并将这些命令元素置于应用的命令图面上。
 
 下面列出了一些最常见的命令图面。
 
@@ -144,10 +144,10 @@ When designing a command interface, the most important decision is choosing what
 
 ## <a name="provide-command-feedback"></a>提供命令反馈 
 
-命令反馈会传达给用户交互或命令已检测到、 如何解释和处理，该命令时，该命令是成功还是失败。 这可以帮助用户了解他们已经完成，以及他们可以执行的下一步。 理想的情况下，应该在 UI 中自然地集成反馈，这样用户就不必被打断或采取额外行动（除非绝对有必要）。
+命令反馈告知用户：检测到了交互或命令、命令是如何解释和处理的，以及命令是否成功。 这可以让用户了解他们做了什么，以及他们下一步可以做什么。 理想的情况下，应该在 UI 中自然地集成反馈，这样用户就不必被打断或采取额外行动（除非绝对有必要）。
 
 > [!NOTE]
-> 仅在必要时，仅当其他位置不可用，请提供反馈。 保留你的应用程序 UI 清晰且整洁除非要添加值。
+> 只有在必要且其他地方不提供反馈的情况下才提供反馈。 使应用程序 UI 保持整洁，除非要添加值。
 
 下面是几种在应用中提供反馈的方法。
 
@@ -168,7 +168,7 @@ When designing a command interface, the most important decision is choosing what
     :::column span="2":::
         <b>Flyouts</b>
 
-       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">浮出控件</a>是可以通过点击或单击浮出控件外部的某个位置来取消的轻量上下文弹出。
+       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">浮出控件</a>是轻型上下文弹出窗口，可以通过点击或单击浮出控件之外的某个位置来消除。
 :::row-end:::
 
 :::row:::
@@ -187,7 +187,7 @@ When designing a command interface, the most important decision is choosing what
 
 ### <a name="when-to-confirm-or-undo-actions"></a>何时确认或撤消操作
 
-不论如何设计良好应用程序的 UI 是，所有用户都执行需要它们没有的操作。 您的应用程序可帮助在这些情况下，通过要求确认的操作，或通过提供一种方法，若要撤消最近的操作。
+无论应用程序 UI 的设计如何精良，所有用户都会在执行操作时犯错。 在这些情况下，应用可以通过以下方式提供帮助：要求确认某个操作，或提供一种用于撤消最近操作的方法。
 
 :::row:::
     :::column:::

@@ -12,17 +12,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d8968104ec7b28a6b4a59eb6a83c422807282a7c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66362984"
 ---
 # <a name="control-templates"></a>控件模板
 
 通过在 XAML 框架中创建控件模板，你可以自定义控件的可视结构和可视行为。 控件有多个属性，如 [**Background**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background)、[**Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.foreground) 以及 [**FontFamily**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontfamily)，可以设置这些属性以指定控件外观的多个方面。 但是可以通过设置这些属性所做的更改有限。 你可以通过使用 [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 类创建模板来指定其他自定义。 我们在此处介绍如何创建 **ControlTemplate** 以自定义 [**CheckBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 控件的外观。
 
-> **重要的 API**：[**ControlTemplate 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)， [ **Control.Template 属性**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template)
+> **重要的 API**：[**ControlTemplate 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)、[**Control.Template 属性**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template)
 
 ## <a name="custom-control-template-example"></a>自定义控件模板示例
 
@@ -53,7 +53,7 @@ ms.locfileid: "66362984"
 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) 是一种特殊的绑定，将一个控件模板中的属性值链接到模板控件上的某个其他公开的属性的值。 TemplateBinding 只能在 XAML 中的 ControlTemplate 定义中使用。 有关详细信息，请参阅 [TemplateBinding 标记扩展](../../xaml-platform/templatebinding-markup-extension.md)。
 
 > [!NOTE]
-> 从 Windows 10，版本 1809年开始 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk))，可以使用[ **x： 绑定**](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)在您使用的位置的标记扩展[TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md). 有关详细信息，请参阅 [TemplateBinding 标记扩展](../../xaml-platform/templatebinding-markup-extension.md)。
+> 从 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 开始，可以在使用 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) 的位置使用 [**x:Bind**](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 标记扩展。 有关详细信息，请参阅 [TemplateBinding 标记扩展](../../xaml-platform/templatebinding-markup-extension.md)。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -105,7 +105,7 @@ ms.locfileid: "66362984"
 
 使用 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 对象可指定控件在某种状态下的外观。 **VisualState** 包含可更改 [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 中元素外观的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.BeginStoryboard) 或 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)。 当控件进入 [**VisualState.Name**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstate.name) 属性指定的状态时，将应用 **Setter** 或 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 中的属性更改。 当控件退出该状态时，这些更改将会删除。 你可以将 **VisualState** 对象添加到 [**VisualStateGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateGroup) 对象。 还可以将 **VisualStateGroup** 对象添加到 [**VisualStateManager.VisualStateGroups**](https://docs.microsoft.com/dotnet/api/system.windows.visualstatemanager?view=netframework-4.8) 附加属性，这些对象在 **ControlTemplate** 的根 [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 上设置。
 
-以下 XAML 介绍在 `Checked`、`Unchecked` 和 `Indeterminate` 状态下的 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 对象。 该示例在 [**Border**](https://docs.microsoft.com/dotnet/api/system.windows.visualstatemanager?view=netframework-4.8) 上设置 [**VisualStateManager.VisualStateGroups**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) 附加属性，它是 [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 的根元素。 `Checked` **VisualState**规定[**不透明度**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)的[**路径**](/uwp/api/Windows.UI.Xaml.Shapes.Path)名为`CheckGlyph` （我们在前面的示例中显示） 为 1。 `Indeterminate` **VisualState**规定**不透明度**的[**椭圆**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse)名为`IndeterminateGlyph`为 1。 `Unchecked` **VisualState**没有[ **Setter** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter)或[**情节提要**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)，因此[**复选框**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox)返回到其默认外观。
+以下 XAML 介绍在 `Checked`、`Unchecked` 和 `Indeterminate` 状态下的 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 对象。 该示例在 [**Border**](https://docs.microsoft.com/dotnet/api/system.windows.visualstatemanager?view=netframework-4.8) 上设置 [**VisualStateManager.VisualStateGroups**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) 附加属性，它是 [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 的根元素。 `Checked` **VisualState** 指定名为 `CheckGlyph` 的 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)（已在前面的示例中介绍）的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 1。 `Indeterminate` **VisualState** 指定名为 `IndeterminateGlyph` 的 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 的 **Opacity** 为 1。 `Unchecked` **VisualState** 没有 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 或 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)，因此 [**CheckBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 将返回到其默认外观。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -173,9 +173,9 @@ ms.locfileid: "66362984"
 |                                      |                                                                                                                                                                                                                                                                                                                                                |                                                   |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
 | 状态转换                     | 引发的结果                                                                                                                                                                                                                                                                                                                                   | 转换完成时的 CheckBox 外观 |
-| 从 `Unchecked` 到 `Checked`。       | [ **Setter** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter)的值`Checked` [ **VisualState** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState)应用，因此[**不透明度** ](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)的`CheckGlyph`为 1。                                                                                                                                                         | 显示 X。                                |
-| 从 `Checked` 到 `Indeterminate`。   | [ **Setter** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter)的值`Indeterminate` [ **VisualState** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState)应用，因此[**不透明度** ](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)的`IndeterminateGlyph`为 1。 **Setter**的值`Checked` **VisualState**被删除，因此[**不透明度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.brush.opacity)的`CheckGlyph`为 0。 | 显示一个圆形。                            |
-| 从 `Indeterminate` 到 `Unchecked`。 | [ **Setter** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter)的值`Indeterminate` [ **VisualState** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState)被删除，因此[**不透明度** ](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)的`IndeterminateGlyph`为 0。                                                                                                                                           | 不显示任何符号。                             |
+| 从 `Unchecked` 到 `Checked`。       | 应用 `Checked` [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 值，因此 `CheckGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 1。                                                                                                                                                         | 显示 X。                                |
+| 从 `Checked` 到 `Indeterminate`。   | 应用 `Indeterminate` [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 值，因此 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 1。 删除 `Checked` **VisualState** 的 **Setter** 值，因此 `CheckGlyph` 的 [**Opacity**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.brush.opacity) 为 0。 | 显示一个圆形。                            |
+| 从 `Indeterminate` 到 `Unchecked`。 | 删除 `Indeterminate` [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 值，因此 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 0。                                                                                                                                           | 不显示任何符号。                             |
 
  
 有关如何创建控件的视觉状态（尤其是如何使用 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 类和动画类型）的详细信息，请参阅[视觉状态的情节提要动画](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))。

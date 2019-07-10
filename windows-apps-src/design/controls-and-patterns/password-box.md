@@ -13,10 +13,10 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d41590914fb66cb8061298f77f24e5efcdd03bf5
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364628"
 ---
 # <a name="password-box"></a>密码框
@@ -25,7 +25,7 @@ ms.locfileid: "66364628"
 
 密码框是指出于隐私目的隐藏所键入的字符的文本输入框。 密码框的外观类似文本框，区别在于它在已输入文本的位置呈现占位符。 可配置占位符。
 
-> **重要的 API**：[PasswordBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)， [Password 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password)， [PasswordChar 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar)， [PasswordRevealMode 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode)， [PasswordChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
+> **重要的 API**：[PasswordBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)、[Password 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password)、[PasswordChar 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar)、[PasswordRevealMode 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode)、[PasswordChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
 
 默认情况下，密码框向用户提供了查看其密码的方法，即按下显示按钮。 你可以禁用显示按钮，或提供显示密码的替代机制，如复选框。
 
@@ -198,9 +198,9 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 
 [文本控件](text-controls.md)
 
-- [拼写检查的准则](text-controls.md)
+- [拼写检查指南](text-controls.md)
 - [添加搜索](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
-- [文本输入的准则](text-controls.md)
+- [文本输入指南](text-controls.md)
 - [TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [Windows.UI.Xaml.Controls PasswordBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 - [String.Length 属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

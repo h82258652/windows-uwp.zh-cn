@@ -13,11 +13,11 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f04d364aac79ed232f35cbdd8378bc50393d2c74
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57614372"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63789049"
 ---
 # <a name="sound"></a>声音
 
@@ -29,13 +29,13 @@ ms.locfileid: "57614372"
 
 UWP 提供了一个可轻松访问的声音系统，使你只需“翻转开关”即可在你的整个应用中获取沉浸式的音频体验。
 
-[  **ElementSoundPlayer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.elementsoundplayer) 是 XAML 中的集成声音系统，并且在所有默认控件都打开时自动播放声音。
+[**ElementSoundPlayer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.elementsoundplayer) 是 XAML 中的集成声音系统，并且在所有默认控件都打开时自动播放声音。
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
-**ElementSoundPlayer**有三种不同状态：**上****关闭**并**自动**。
+**ElementSoundPlayer** 有三种不同的状态：**开**、**关**和**自动**。
 
-如果设置为“关”，无论你的应用在何处运行，都始终不会播放声音。 如果设置为“开”，你的应用将在每个平台上播放声音。
+如果设置为“关”  ，无论你的应用在何处运行，都始终不会播放声音。 如果设置为“开”  ，你的应用将在每个平台上播放声音。
 
 启用 ElementSoundPlayer 也将自动启用空间音频（3D 声音）。 若要禁用 3D 声音（同时仍保持声音为开启状态），请禁用 ElementSoundPlayer 的 **SpatialAudioMode**： 
 
@@ -44,20 +44,20 @@ ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
 ```
 
 **SpatialAudioMode** 属性可以采用以下值： 
-- **自动**：空间音频时声音将开启上。 
-- **Off**:空间音频是始终关闭，即使声音上。
-- **打开**：空间音频将始终发挥作用。
+- **自动**：空间音频将在声音开启时启用。 
+- **Off**:空间音频始终关闭，即使声音处于开启状态。
+- **打开**：始终播放空间音频。
 
 若要详细了解空间音频以及 XAML 如何处理它，请参阅 [AudioGraph - 空间音频](/windows/uwp/audio-video-camera/audio-graphs#spatial-audio)。
 
 ### <a name="sound-for-tv-and-xbox"></a>电视和 Xbox 的声音
 
-声音是10 英尺体验的关键部分，并且默认情况下，**ElementSoundPlayer** 的状态为“自动”，这意味着只有当应用在 Xbox 上运行时才可获取声音。
+声音是10 英尺体验的关键部分，并且默认情况下，**ElementSoundPlayer** 的状态为“自动”  ，这意味着只有当应用在 Xbox 上运行时才可获取声音。
 若要了解有关针对 Xbox 和电视进行设计的详细信息，请参阅[针对 Xbox 和电视进行设计](https://go.microsoft.com/fwlink/?LinkId=760736)。
 
 ## <a name="sound-volume-override"></a>音量覆盖
 
-应用内的所有声音均可通过“音量”控件呈灰显状态。 但是，应用内的声音音量不能*比系统音量更加响亮*。
+应用内的所有声音均可通过“音量”  控件呈灰显状态。 但是，应用内的声音音量不能*比系统音量更加响亮*。
 
 若要设置应用音量级别，请调用：
 ```C#
@@ -69,7 +69,7 @@ ElementSoundPlayer.Volume = 0.5;
 
 如果不想使用控件的默认声音，可以禁用它。 可以通过控件上的 **ElementSoundMode** 完成此操作。
 
-**ElementSoundMode**有两种状态：**关闭**并**默认**。 当不对其进行设置时，则为“默认”。 如果设置为“关”，*除了焦点声音之外*，控件播放的每种声音都将静音。
+**ElementSoundMode** 有两种状态：“关”  和“默认”  。 当不对其进行设置时，则为“默认”  。 如果设置为“关”  ，*除了焦点声音之外*，控件播放的每种声音都将静音。
 
 ```XAML
 <Button Name="ButtonName" Content="More Info" ElementSoundMode="Off"/>
@@ -87,7 +87,7 @@ ButtonName.ElementSoundState = ElementSoundMode.Off;
 
 ### <a name="invoking-an-element"></a>调用元素
 
-现在在我们的系统上触发的最常见控件声音是“调用”声音。 此声音在用户通过在游戏板上点击/单击/输入/空间或按下“A”按钮来调用控件时播放。
+现在在我们的系统上触发的最常见控件声音是“调用”  声音。 此声音在用户通过在游戏板上点击/单击/输入/空间或按下“A”按钮来调用控件时播放。
 
 通常情况下，此声音仅当用户通过[输入设备](../input/index.md)明确定位简单控件或控件部件时才播放。
 
@@ -100,16 +100,16 @@ ElementSoundPlayer.Play(ElementSoundKind.Invoke);
 
 ### <a name="showing--hiding-content"></a>显示和隐藏内容
 
-在 XAML 中有很多浮出控件、对话框和可闪退的 UI，并且触发这些叠加项之一的任何操作都应调用“显示”或“隐藏”声音。
+在 XAML 中有很多浮出控件、对话框和可闪退的 UI，并且触发这些叠加项之一的任何操作都应调用“显示”  或“隐藏”  声音。
 
-当叠加内容窗口引入视图时，应调用“显示”声音：
+当叠加内容窗口引入视图时，应调用“显示”  声音：
 
 &lt;此处为 OverlayIn.mp3 声音剪辑&gt;
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Show);
 ```
-反之，当叠加内容窗口关闭（或者闪退）时，应调用“隐藏”声音：
+反之，当叠加内容窗口关闭（或者闪退）时，应调用“隐藏”  声音：
 
 &lt;此处为 OverlayOut.mp3 声音剪辑&gt;
 
@@ -118,7 +118,7 @@ ElementSoundPlayer.Play(ElementSoundKind.Hide);
 ```
 ### <a name="navigation-within-a-page"></a>页面内的导航
 
-面板或视图中应用的页面之间导航时 (请参阅[选项卡和透视](../controls-and-patterns/pivot.md))，通常是双向移动。 这意味着你可以移动到下一个视图/面板或者上一个视图/面板，而无需离开你所在的当前的应用页面。
+在应用页面内的面板或视图之间导航时（请参阅[表和透视表](../controls-and-patterns/pivot.md)），通常是双向移动。 这意味着你可以移动到下一个视图/面板或者上一个视图/面板，而无需离开你所在的当前的应用页面。
 
 **MovePrevious** 和 **MoveNext** 声音包含围绕此导航概念的音频体验。
 
@@ -149,9 +149,9 @@ ElementSoundPlayer.Play(ElementSoundKind.GoBack);
 
 **焦点**声音仅在我们的系统中为隐式声音。 这意味着用户不直接与任何内容进行交互，但仍能听到声音。
 
-当用户在应用内导航时发生聚焦，这可能与游戏板/键盘/遥控器或支架有关。 通常“焦点”声音*不在 PointerEntered 或鼠标悬停事件上播放*。
+当用户在应用内导航时发生聚焦，这可能与游戏板/键盘/遥控器或支架有关。 通常“焦点”  声音*不在 PointerEntered 或鼠标悬停事件上播放*。
 
-若要在控件接收焦点时设置控件以播放“焦点”声音，请调用：
+若要在控件接收焦点时设置控件以播放“焦点”  声音，请调用：
 
 &lt;此处为 ElementFocus1.mp3 声音剪辑&gt;
 

@@ -1,5 +1,5 @@
 ---
-Description: 命令栏浮出控件向用户授予内联访问你的应用的最常见的任务。
+Description: 命令栏浮出控件使用户能够以内联方式访问应用的最常见任务。
 title: 命令栏浮出控件
 label: Command bar flyout
 template: detail.hbs
@@ -13,43 +13,43 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: d5774b5301f7e8ce0616df72cfbf4fc81d0d0cf7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363249"
 ---
 # <a name="command-bar-flyout"></a>命令栏浮出控件
 
-在命令栏浮出控件可以显示在浮动工具栏与 UI 画布上的元素相关的命令将用户提供轻松访问常见任务。
+使用命令栏浮出控件时，可以在浮动工具栏中显示与 UI 画布上的某个元素相关的命令，方便用户访问常见任务。
 
-![展开的文本命令栏浮出控件](images/command-bar-flyout-header.png)
+![扩展的文本命令栏浮出控件](images/command-bar-flyout-header.png)
 
-> CommandBarFlyout 需要 Windows 10，版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本，或[Windows 用户界面库](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> CommandBarFlyout 需要 Windows 10 版本 1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或更高版本，或 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
-> - **平台 Api**:[CommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.commandbarflyout)， [TextCommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)， [AppBarButton 类](/uwp/api/windows.ui.xaml.controls.appbarbutton)， [AppBarToggleButton 类](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)， [AppBarSeparator 类](/uwp/api/windows.ui.xaml.controls.appbarseparator)
->- **Windows UI 库 Api**:[CommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)， [TextCommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
+> - **平台 API**：[CommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)、[AppBarButton 类](/uwp/api/windows.ui.xaml.controls.appbarbutton)、[AppBarToggleButton 类](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、[AppBarSeparator 类](/uwp/api/windows.ui.xaml.controls.appbarseparator)
+>- **Windows UI 库 API**：[CommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 
-像[CommandBar](app-bars.md)，CommandBarFlyout 已**PrimaryCommands**并**SecondaryCommands**属性可用于添加命令。 可以将命令放在集合中或两者。 何时以及如何显示主要和辅助命令取决于显示模式。
+与 [CommandBar](app-bars.md) 一样，CommandBarFlyout 的 **PrimaryCommands** 和 **SecondaryCommands** 属性可以用来添加命令。 可以将命令置于这两个集合中，或者置于其中的一个中。 主要命令和辅助命令何时显示以及以何种方式显示取决于显示模式。
 
-在命令栏浮出控件有两种显示模式：*折叠*并*展开*。
+命令栏浮出控件有两个显示模式：折叠和展开。  
 
-- 在折叠模式下，只有主命令会显示。 如果在命令栏浮出控件具有主和辅助命令，"查看更多"按钮，表示由省略号\[• • • 以\]，会显示。 这使用户可以通过转换为扩展模式获取辅助命令的访问。
-- 在展开模式下，会显示这两个主要和辅助命令。 （如果该控件具有仅辅助项，它们会显示 MenuFlyout 控件相似的方式。）
+- 在折叠模式下，仅显示主要命令。 如果命令栏浮出控件包含主要命令和辅助命令，则会显示由省略号 \[•••\] 表示的“查看更多”按钮。 这样用户就可以通过切换到展开模式来访问辅助命令。
+- 在展开模式下，主要命令和辅助命令都会显示。 （如果此控件只有辅助项，则这些辅助项的显示方式类似于 MenuFlyout 控件。）
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-CommandBarFlyout 控件用于显示给用户，如按钮和菜单项，在应用画布上的元素的上下文中的命令的集合。
+使用 CommandBarFlyout 控件，可以在应用画布的元素上下文中为用户显示一系列命令，例如按钮和菜单项。
 
-TextCommandBarFlyout TextBox、 TextBlock、 RichEditBox、 RichTextBlock 和 PasswordBox 控件中显示的文本命令。 命令自动正确配置到当前选定文本。 使用 CommandBarFlyout 替换文本控件的默认文本命令。
+TextCommandBarFlyout 在 TextBox、TextBlock、RichEditBox、RichTextBlock 和 PasswordBox 控件中显示文本命令。 系统会根据当前的文本选择情况自动配置这些命令。 使用 CommandBarFlyout 可以替换文本控件上的默认文本命令。
 
-若要显示上下文列表项上的命令，请按照中的指导[集合和列表的上下文命令](collection-commanding.md)。
+若要在列表项上显示上下文命令，请按[用于集合和列表的上下文命令](collection-commanding.md)中的指南操作。
 
-### <a name="commandbarflyout-vs-menuflyout"></a>CommandBarFlyout vs MenuFlyout
+### <a name="commandbarflyout-vs-menuflyout"></a>CommandBarFlyout 与 MenuFlyout
 
-若要显示的上下文菜单中的命令，可以使用 CommandBarFlyout 或 MenuFlyout。 我们建议 CommandBarFlyout，因为它提供了比 MenuFlyout 更多的功能。 可以使用与仅辅助命令的 CommandBarFlyout 来获得的行为和查找的 MenuFlyout 或主要和辅助命令中使用完整的命令栏浮出控件。
+若要在上下文菜单中显示命令，可以使用 CommandBarFlyout 或 MenuFlyout。 建议使用 CommandBarFlyout，因为它提供的功能比 MenuFlyout 多。 可以将 CommandBarFlyout 仅仅与辅助命令配合使用以获取 MenuFlyout 的行为和外观，也可以将整个命令栏浮出控件与主要命令和辅助命令配合使用。
 
-> 有关相关信息，请参阅[浮出控件](../controls-and-patterns/dialogs-and-flyouts/flyouts.md)，[菜单和上下文菜单](menus.md)，并[命令栏](app-bars.md)。
+> 如需相关信息，请参阅[浮出控件](../controls-and-patterns/dialogs-and-flyouts/flyouts.md)、[菜单和上下文菜单](menus.md)和[命令栏](app-bars.md)。
 
 ## <a name="examples"></a>示例
 
@@ -58,7 +58,7 @@ TextCommandBarFlyout TextBox、 TextBlock、 RichEditBox、 RichTextBlock 和 Pa
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果有<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序安装，请单击此处<a href="xamlcontrolsgallery:/item/CommandBarFlyout">打开应用，请参阅操作中的 CommandBarFlyout</a>。</p>
+    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/CommandBarFlyout">打开此应用，了解 CommandBarFlyout 的实际应用</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
@@ -67,27 +67,27 @@ TextCommandBarFlyout TextBox、 TextBlock、 RichEditBox、 RichTextBlock 和 Pa
 </tr>
 </table>
 
-## <a name="proactive-vs-reactive-invocation"></a>主动与被动调用
+## <a name="proactive-vs-reactive-invocation"></a>主动调用与被动调用
 
-通常有两种方法来调用浮出控件或 UI 画布上的元素与关联的菜单：_主动调用_并_反应调用_。
+通常可以通过两种方式来调用与 UI 画布上的某个元素相关联的浮出控件或菜单：主动调用和被动调用。  
 
-在主动调用命令会在用户与命令关联的项交互时自动显示。 例如，文本格式设置命令可能会弹出当用户在文本框中选择文本。 在这种情况下，命令栏浮出控件才会焦点。 相反，它提供了接近与用户进行交互的项的相关命令。 如果用户不与命令进行交互，它们被否定。
+在主动调用中，当用户与项交互时，与该项关联的命令会自动显示。 例如，当用户选择文本框中的文本时，文本格式设置命令可能会弹出。 在这种情况下，命令栏浮出控件不占据焦点位置， 而是为与用户进行交互的项呈现相关命令。 如果用户不与这些命令交互，这些命令会被取消。
 
-在被动调用中，命令所示显式用户操作的响应来请求命令;例如，右键单击。 这对应于传统的概念[上下文菜单](menus.md)。
+在被动调用中，只有在用户通过显式操作（例如右键单击）来请求命令时，命令才会显示。 这对应于传统的[上下文菜单](menus.md)概念。
 
-可以使用中的方法或甚至混合使用两个 CommandBarFlyout。
+可以通过任一方式使用 CommandBarFlyout，甚至可以将这两种方式混合使用。
 
 ## <a name="create-a-command-bar-flyout"></a>创建命令栏浮出控件
 
-此示例演示如何创建命令栏浮出控件和主动和被动都使用它。 点击该映像，浮出控件是显示在折叠模式下。 当显示为上下文菜单，浮出控件将显示在展开模式下。 在任一情况下，用户可以展开或折叠浮出控件，在打开后。
+以下示例介绍了如何创建命令栏浮出控件并以主动和被动两种方式使用它。 点击图像时，浮出控件以折叠模式显示。 作为上下文菜单显示时，浮出控件以展开模式显示。 不管哪一种情况，用户都可以在浮出控件打开后将其展开或折叠。
 
-![折叠的命令栏浮出控件的示例](images/command-bar-flyout-img-collapsed.png)
+![折叠的命令栏浮出控件示例](images/command-bar-flyout-img-collapsed.png)
 
-> _折叠的命令栏浮出控件_
+> 折叠的命令栏浮出控件 
 
-![扩展的命令栏浮出控件的示例](images/command-bar-flyout-img-expanded.png)
+![展开的命令栏浮出控件示例](images/command-bar-flyout-img-expanded.png)
 
-> _扩展的命令栏浮出控件_
+> 展开的命令栏浮出控件 
 
 ```xaml
 <Grid>
@@ -126,68 +126,68 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 ### <a name="show-commands-proactively"></a>主动显示命令
 
-主动显示上下文命令时，只有主命令应显示默认情况下 （在命令栏浮出控件应已折叠）。 将最重要的命令放在主命令集合，并会传统上进入上下文菜单中的辅助命令集合的其他命令。
+主动显示上下文命令时，默认情况下只应显示主要命令（命令栏浮出控件应该折叠）。 请将最重要的命令置于主要命令集合中，将其他会按传统方式进入上下文菜单中的命令置于辅助命令集合中。
 
-若要主动显示命令，通常处理[单击](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)或[点击](/uwp/api/windows.ui.xaml.uielement.tapped)事件显示在命令栏浮出控件。 设置在浮出控件[ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode)到**暂时性**或**TransientWithDismissOnPointerMoveAway**在其折叠模式下打开浮出控件，而无需使焦点。
+若要主动显示命令，通常需要通过处理 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 或 [Tapped](/uwp/api/windows.ui.xaml.uielement.tapped) 事件来显示命令栏浮出控件。 将浮出控件的 [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) 设置为 **Transient** 或 **TransientWithDismissOnPointerMoveAway** 可以在折叠模式下打开浮出控件，不获取焦点。
 
-从 Windows 10 Insider Preview 开始，文本控件具有**SelectionFlyout**属性。 浮出控件分配给此属性后，自动显示选定文本。
+从 Windows 10 Insider Preview 开始，文本控件有一个 **SelectionFlyout** 属性。 为此属性分配浮出控件后，当文本处于选中状态时，该控件就会自动显示。
 
 ### <a name="show-commands-reactively"></a>被动显示命令
 
-被动，上下文菜单显示上下文命令，辅助命令 （命令栏浮出控件应已展开） 的默认情况下显示。 在这种情况下，命令栏浮出控件可能主要和辅助命令或仅辅助命令。
+被动显示上下文命令时，默认情况下会显示充当上下文菜单的辅助命令（命令栏浮出控件应该展开）。 在这种情况下，命令栏浮出控件可能有主要命令和辅助命令，也可能只有辅助命令。
 
-若要在上下文菜单中显示的命令，您通常分配的 flyout [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) UI 元素的属性。 这样一来，打开浮出控件由该元素，并且无需执行任何其他操作。
+若要在上下文菜单中显示命令，通常需将浮出控件分配给 UI 元素的 [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) 属性。 这样就可以由该元素负责打开浮出控件，你不需执行任何其他操作。
 
-如果你处理其中显示用户在浮出控件 (例如，在[RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped)事件)，设置浮出控件的[ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode)到**标准**在其扩展模式下打开浮出控件和为其提供焦点。
+如果你自己负责显示浮出控件（例如，在出现 [RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped) 事件时这样做），请将浮出控件的 [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) 设置为 **Standard**，以便在展开模式下打开浮出控件并为其提供焦点。
 
 > [!TIP]
-> 有关显示浮出控件以及如何控制的 flyout 的位置时的选项的详细信息，请参阅[浮出控件](../controls-and-patterns/dialogs-and-flyouts/flyouts.md)。
+> 若要详细了解显示浮出控件时的选项以及如何控制浮出控件的放置，请参阅[浮出控件](../controls-and-patterns/dialogs-and-flyouts/flyouts.md)。
 
 ## <a name="commands-and-content"></a>命令和内容
 
-CommandBarFlyout 控件具有可用于添加命令和内容的 2 个属性：[PrimaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.primarycommands)并[SecondaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.secondarycommands)。
+CommandBarFlyout 控件有 2 个可用于添加命令和内容的属性：[PrimaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.primarycommands) 和 [SecondaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.secondarycommands)。
 
-默认情况下，添加到命令栏中的项目也会添加到 **PrimaryCommands** 集合中。 这些命令的命令栏中所示，在折叠和展开模式中可见。 与不同的 CommandBar 中，主命令不会自动向辅助命令的溢出，并可能会被截断。
+默认情况下，添加到命令栏中的项目也会添加到 PrimaryCommands 集合中  。 这些命令显示在命令栏中，在折叠模式和展开模式下均可见。 与 CommandBar 不同，主要命令不会自动溢出到辅助命令，可能会被截断。
 
-您还可以添加到命令**SecondaryCommands**集合。 辅助命令的控件的菜单部分中显示，并仅在展开模式中可见。
+也可将命令添加到 SecondaryCommands 集合中  。 辅助命令显示在控件的菜单部分，仅在展开模式下可见。
 
 ### <a name="app-bar-buttons"></a>应用栏按钮
 
-您可以填充 PrimaryCommands 和直接与 SecondaryCommands [AppBarButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton)， [AppBarToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton)，并[AppBarSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator)控件。
+可以直接使用 [AppBarButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton)、[AppBarToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton) 和 [AppBarSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) 控件填充 PrimaryCommands 和 SecondaryCommands。
 
-应用栏按钮控件以一个图标和文本标签为特征。 这些控件进行优化以使用命令栏中，具体取决于是否在控件显示在命令栏或溢出菜单中更改其外观。
+应用栏按钮控件以一个图标和文本标签为特征。 这些控件经优化后适合在命令栏中使用，其外观会变化，具体取决于控件是显示在命令栏中还是显示在溢出菜单中。
 
-- 与仅其图标，在命令栏中显示应用栏按钮用作主要命令不显示的文本标签。 我们建议你使用工具提示显示该命令的文本说明如下所示。
+- 用作主要命令的应用栏按钮在应用栏中显示时只有其图标；文本标签未显示。 建议使用工具提示来显示命令的文本说明，如下所示。
     ```xaml
     <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy"/>
     ```
-- 应用程序栏按钮用作辅助命令所示的菜单中，使用标签和可见的图标。
+- 用作辅助命令的应用栏按钮显示在菜单中，标签和图标均可见。
 
 ### <a name="other-content"></a>其他内容
 
-通过将它们放置在 AppBarElementContainer，可以向命令栏浮出控件中添加其他控件。 这允许您添加的控件，如[DropDownButton](buttons.md)或[SplitButton](buttons.md)，或添加容器类似[StackPanel](buttons.md)创建更复杂的 UI。
+可以将其他控件添加到命令栏浮出控件中，只需将它们包装在 AppBarElementContainer 中即可。 这样就可以添加 [DropDownButton](buttons.md) 或 [SplitButton](buttons.md) 之类的控件，或者添加 [StackPanel](buttons.md) 之类的容器，以便创建更复杂的 UI。
 
-要添加到命令栏浮出控件主要或辅助命令集合中，元素必须实现[ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement)接口。 AppBarElementContainer 是实现此接口，因此可以将元素添加到命令栏中，即使它不实现接口本身的包装。
+元素必须实现 [ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement) 接口才能添加到命令栏浮出控件的主要命令或辅助命令集合中。 AppBarElementContainer 是一个实现此接口的包装器，因此即使某个元素不自行实现此接口，也可将该元素添加到命令栏。
 
-在这里，AppBarElementContainer 用于将额外的元素添加到命令栏浮出控件。 拆分按钮添加到的主要命令，以允许所选内容的颜色。 StackPanel 添加到辅助的命令，以允许更复杂的缩放控件的布局。
+在这里，使用了 AppBarElementContainer 将额外元素添加到命令栏浮出控件。 为主要命令添加了 SplitButton，用于选择颜色。 为辅助命令添加了 StackPanel，以便为缩放控件实现更复杂的布局。
 
 > [!TIP]
-> 默认情况下，为应用画布设计元素看起来不太正确命令栏中。 当添加使用 AppBarElementContainer 对元素时，有将与其他命令栏元素相匹配的元素时应执行一些步骤：
+> 默认情况下，为应用画布设计的元素可能会在应用栏中显示不正常。 使用 AppBarElementContainer 添加某个元素时，应该执行某些步骤，使该元素与其他命令栏元素匹配：
 >
-> - 重写的默认画笔[轻型样式](/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling)以使该元素的背景和匹配应用程序栏按钮的边框。
-> - 调整大小和元素的位置。
-> - 在使用宽度和高度 16px Viewbox 中换行的图标。
+> - 使用[轻型样式设置](/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling)覆盖默认的画笔，使该元素的背景和边框与应用栏按钮匹配。
+> - 调整元素的大小和位置。
+> - 将图标包装在宽度和高度为 16px 的 Viewbox 中。
 
 > [!NOTE]
-> 此示例演示仅在命令栏浮出控件 UI，它不实现任何显示的命令。 实现命令的详细信息，请参阅[按钮](buttons.md)并[命令设计基础知识](../basics/commanding-basics.md)。
+> 此示例仅显示命令栏浮出控件 UI，并未实现任何显示的命令。 若要详细了解如何实现这些命令，请参阅[按钮](buttons.md)和[命令设计基础知识](../basics/commanding-basics.md)。
 
-![命令栏浮出控件使用的拆分按钮](images/command-bar-flyout-split-button.png)
+![带拆分按钮的命令栏浮出控件](images/command-bar-flyout-split-button.png)
 
-> _折叠的命令栏浮出控件与打开的拆分按钮_
+> SplitButton 已打开的折叠的命令栏浮出控件 
 
-![命令栏浮出控件使用复杂的 UI](images/command-bar-flyout-custom-ui.png)
+![带复杂 UI 的命令栏浮出控件](images/command-bar-flyout-custom-ui.png)
 
-> _使用菜单中的自定义显示比例 UI 扩展的命令栏浮出控件_
+> 菜单中包含自定义缩放 UI 的展开的命令栏浮出控件 
 
 
 ```xaml
@@ -292,13 +292,13 @@ CommandBarFlyout 控件具有可用于添加命令和内容的 2 个属性：[Pr
 </CommandBarFlyout>
 ```
 
-## <a name="create-a-context-menu-with-secondary-commands-only"></a>使用辅助命令仅创建一个上下文菜单
+## <a name="create-a-context-menu-with-secondary-commands-only"></a>创建仅包含辅助命令的上下文菜单
 
-可以使用辅助命令仅为使用 CommandBarFlyout[上下文菜单](menus.md)，代替 MenuFlyout。
+可以将仅包含辅助命令的 CommandBarFlyout 用作[上下文菜单](menus.md)，代替 MenuFlyout。
 
-![仅辅助命令与命令栏浮出控件](images/command-bar-flyout-context-menu.png)
+![仅包含辅助命令的命令栏浮出控件](images/command-bar-flyout-context-menu.png)
 
-> _命令栏浮出控件为上下文菜单_
+> 充当上下文菜单的命令栏浮出控件 
 
 ```xaml
 <Grid>
@@ -320,11 +320,11 @@ CommandBarFlyout 控件具有可用于添加命令和内容的 2 个属性：[Pr
 </Grid>
 ```
 
-此外可以使用与 DropDownButton CommandBarFlyout 创建标准菜单。
+也可将 CommandBarFlyout 与 DropDownButton 配合使用来创建标准菜单。
 
-![命令栏浮出控件与作为下拉列表按钮菜单](images/command-bar-flyout-dropdown.png)
+![带下拉按钮菜单的命令栏浮出控件](images/command-bar-flyout-dropdown.png)
 
-> _下拉列表按钮菜单命令栏浮出控件中_
+> 命令栏浮出控件中的下拉按钮菜单 
 
 ```xaml
 <CommandBarFlyout>
@@ -367,41 +367,41 @@ CommandBarFlyout 控件具有可用于添加命令和内容的 2 个属性：[Pr
 </CommandBarFlyout>
 ```
 
-## <a name="command-bar-flyouts-for-text-controls"></a>命令栏浮出控件的文本控件
+## <a name="command-bar-flyouts-for-text-controls"></a>用于文本控件的命令栏浮出控件
 
-[TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)是专用的命令栏浮出控件包含编辑文本的命令。 每个文本控件显示 TextCommandBarFlyout 自动为上下文菜单 （右键单击），或选择文本。 文本命令栏浮出控件调整以仅显示相关命令的文本选定内容。
+[TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout) 是专用的命令栏浮出控件，其中包含用于编辑文本的命令。 每个文本控件会自动将 TextCommandBarFlyout 显示为上下文菜单（右键单击），或者会在文本处于选中状态时显示它。 文本命令栏浮出控件会根据文本选择情况进行调整，仅显示相关命令。
 
 ![折叠的文本命令栏浮出控件](images/command-bar-flyout-text-selection.png)
 
-> _文本的所选文本命令栏浮出控件_
+> 在选中文本后出现的文本命令栏浮出控件 
 
-![展开的文本命令栏浮出控件](images/command-bar-flyout-text-full.png)
+![扩展的文本命令栏浮出控件](images/command-bar-flyout-text-full.png)
 
-> _展开的文本命令栏浮出控件_
+> 扩展的文本命令栏浮出控件 
 
 
-### <a name="available-commands"></a>可用的命令
+### <a name="available-commands"></a>可用命令
 
-此表显示了包含在 TextCommandBarFlyout，它们会在显示时的命令。
+下表介绍了包含在 TextCommandBarFlyout 中的命令，以及这些命令何时显示。
 
-| Command | 所示... |
+| 命令 | 在以下情况下显示... |
 | ------- | -------- |
-| Bold | 当文本控件不是只读的 (RichEditBox 仅)。 |
-| Italic | 当文本控件不是只读的 (RichEditBox 仅)。 |
-| Underline | 当文本控件不是只读的 (RichEditBox 仅)。 |
-| 校对 | 何时 IsSpellCheckEnabled **，则返回 true**和拼写错误的文本选择。 |
-| 剪切 | 当文本控件不是只读的和已选定文本。 |
-| 复制 | 当选定文本。 |
-| 粘贴 | 当文本控件不是只读的并且剪贴板包含的内容。 |
-| 撤销 | 当没有可撤消的操作。 |
-| 全选 | 何时可以选择文本。 |
+| Bold | 当文本控件不是只读时（仅 RichEditBox）。 |
+| Italic | 当文本控件不是只读时（仅 RichEditBox）。 |
+| Underline | 当文本控件不是只读时（仅 RichEditBox）。 |
+| 校对 | 当 IsSpellCheckEnabled 为 **true** 且拼写错误的文本处于选中状态时。 |
+| 剪切 | 当文本控件不是只读且文本处于选中状态时。 |
+| 复制 | 当文本处于选中状态时。 |
+| 粘贴 | 当文本控件不是只读且剪贴板有内容时。 |
+| 撤销 | 当存在可以撤消的操作时。 |
+| 全选 | 当文本可以选择时。 |
 
 ### <a name="custom-text-command-bar-flyouts"></a>自定义文本命令栏浮出控件
 
-TextCommandBarFlyout 不能自定义，并且每个文本控件将自动管理。 但是，可以将默认 TextCommandBarFlyout 为使用自定义命令。
+TextCommandBarFlyout 不能自定义，由每个文本控件自动管理。 不过，可以将默认的 TextCommandBarFlyout 替换为自定义命令。
 
-- 若要替换默认文本所选内容显示的 TextCommandBarFlyout，可以创建自定义 CommandBarFlyout （或其他浮出控件类型），并将其分配给**SelectionFlyout**属性。 如果将为 SelectionFlyout **null**，没有命令显示所选内容上。
-- 若要替换默认 TextCommandBarFlyout 显示为上下文菜单上，将分配自定义 CommandBarFlyout （或其他浮出控件类型） 到**ContextFlyout**文本控件上的属性。 如果 ContextFlyout 设置为**null**、 菜单浮出控件显示在上一版本中的文本的控件显示而不是 TextCommandBarFlyout。
+- 若要替换在选中文本时会显示的默认 TextCommandBarFlyout，可以创建一个自定义 CommandBarFlyout（或其他浮出控件类型）并将其分配给 **SelectionFlyout** 属性。 如果将 SelectionFlyout 设置为 **null**，则在选中文本时不显示任何命令。
+- 若要替换默认的作为上下文菜单显示的 TextCommandBarFlyout，请将自定义 CommandBarFlyout（或其他浮出控件类型）分配给文本控件上的 **ContextFlyout** 属性。 如果将 ContextFlyout 设置为 **null**，则会显示在旧版文本控件中显示的菜单浮出控件，代替 TextCommandBarFlyout。
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
@@ -410,5 +410,5 @@ TextCommandBarFlyout 不能自定义，并且每个文本控件将自动管理�
 
 ## <a name="related-articles"></a>相关文章
 
-- [适用于 UWP 应用的命令设计基础知识](../basics/commanding-basics.md)
+- [UWP 应用的命令设计基础知识](../basics/commanding-basics.md)
 - [CommandBar 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)

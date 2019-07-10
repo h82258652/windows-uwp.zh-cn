@@ -1,5 +1,5 @@
 ---
-Description: 使用链接内容，以在文本控件中嵌入丰富的数据。
+Description: 使用内容链接将丰富的数据嵌入文本控件。
 title: 文本控件中的内容链接
 label: Content links
 template: detail.hbs
@@ -11,10 +11,10 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fc54662b29255b73e972bcfb0fa4b6bb2dcf968
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363062"
 ---
 # <a name="content-links-in-text-controls"></a>文本控件中的内容链接
@@ -23,10 +23,10 @@ ms.locfileid: "66363062"
 
 当用户在 RichEditBox 中对某个条目使用与号 (@) 前缀时，它们会显示人员列表和/或与相应条目匹配的位置建议。 例如，当用户选取一个位置时，该位置的 ContentLink 就会插入文本中。 当用户从 RichEditBox 调用内容链接时，就会显示一个浮出控件，该控件具有地图和与位置有关的其他信息。
 
-> **重要的 API**：[ContentLink 类](/uwp/api/windows.ui.xaml.documents.contentlink)， [ContentLinkInfo 类](/uwp/api/windows.ui.text.contentlinkinfo)， [RichEditTextRange 类](/uwp/api/windows.ui.text.richedittextrange)
+> **重要的 API**：[ContentLink 类](/uwp/api/windows.ui.xaml.documents.contentlink)、[ContentLinkInfo 类](/uwp/api/windows.ui.text.contentlinkinfo)、[RichEditTextRange 类](/uwp/api/windows.ui.text.richedittextrange)
 
 > [!NOTE]
-> 有关内容的链接 Api 分布在以下命名空间：Windows.UI.Xaml.Controls、 Windows.UI.Xaml.Documents 和 Windows.UI.Text。
+> 内容链接 API 分布在以下命名空间中：Windows.UI.Xaml.Controls、Windows.UI.Xaml.Documents 和 Windows.UI.Text。
 
 
 
@@ -39,7 +39,7 @@ ms.locfileid: "66363062"
 
 下面是内容链接在 RichEditBox 和 TextBlock 中的默认外观。
 
-![内容链接中丰富的编辑框](images/content-link-default-richedit.png)
+![格式文本编辑框中的内容链接](images/content-link-default-richedit.png)
 ![文本块中的内容链接](images/content-link-default-textblock.png)
 
 下面几节详细介绍在用法、呈现和行为方面的不同。 此表快速比较了 RichEditBox 和文本块中的内容链接之间的主要不同。
@@ -61,7 +61,7 @@ ms.locfileid: "66363062"
 
 ### <a name="content-link-providers"></a>内容链接提供程序
 
-你可以通过向 [RichEditBox.ContentLinkProviders](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkProviders) 集合中添加一个或多个内容链接提供程序来在 RichEditBox 中启用内容链接。 XAML 框架中内置有两个内容链接提供程序。
+可以通过向 [RichEditBox.ContentLinkProviders](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkProviders) 集合中添加一个或多个内容链接提供程序，在 RichEditBox 中启用内容链接。 XAML 框架中内置有两个内容链接提供程序。
 
 - [ContactContentLinkProvider](/uwp/api/windows.ui.xaml.documents.contactcontentlinkprovider) – 使用**人脉**应用查找联系人。
 - [PlaceContentLinkProvider](/uwp/api/windows.ui.xaml.documents.placecontentlinkprovider) – 使用**地图**应用查找位置。
@@ -82,7 +82,7 @@ ms.locfileid: "66363062"
 </RichEditBox>
 ```
 
-你也可以在 Style 中添加内容链接提供程序，然后对多个这样的 RichEditBox 进行应用。
+也可以在 Style 中添加内容链接提供程序，然后对多个这样的 RichEditBox 进行应用。
 
 ```xaml
 <Page.Resources>
@@ -129,7 +129,7 @@ ContentLinkInfo 对象包含用于显示、调用和管理内容链接的信息�
 - **SecondaryText** - 此字符串显示在呈现的内容链接的 ToolTip 中。
   - 在选取器创建的 Place 内容链接中，它包含位置的地址（如果可用）。
 - **Uri** – 指向有关内容链接主题的更多信息的链接。 此 Uri 可打开已安装的应用或网站。
-- **Id** - 这是 RichEditBox 控件创建的基于每个控件的只读计数器。 它用于在操作（如删除或编辑）期间跟踪此 ContentLinkInfo。 如果 ContentLinkInfo 剪切并粘贴返回到该控件，它将获取新的 id。Id 值是递增的。
+- **Id** - 这是 RichEditBox 控件创建的基于每个控件的只读计数器。 它用于在操作（如删除或编辑）期间跟踪此 ContentLinkInfo。 如果 ContentLinkInfo 被剪切并重新粘贴到控件中，它将获得一个新 Id。Id 值是递增的。
 - **LinkContentKind** – 描述内容链接类型的字符串。 内置内容类型为 _Places_ 和 _Contacts_。 值区分大小写。
 
 #### <a name="link-content-kind"></a>链接内容类型
@@ -137,7 +137,7 @@ ContentLinkInfo 对象包含用于显示、调用和管理内容链接的信息�
 有几种情况下 LinkContentKind 非常重要。
 
 - 当用户复制一个 RichEditBox 中的内容链接并将其粘贴到另一个 RichEditBox 中时，这两个空间都必须有该内容类型的 ContentLinkProvider。 否则，链接将以文本形式粘贴。
-- 你可以在 [ContentLinkChanged](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkChanged) 事件处理程序中使用 LinkContentKind 来确定在应用的其他部分使用内容链接时如何处理它。 请参阅“示例”部分了解更多信息。
+- 可以在 [ContentLinkChanged](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkChanged) 事件处理程序中使用 LinkContentKind 来确定在应用的其他部分使用内容链接时如何处理它。 请参阅“示例”部分了解更多信息。
 - LinkContentKind 影响链接被调用时系统打开 Uri 的方式。 我们将在接下来关于 Uri 启动的讨论中看到这一点。
 
 #### <a name="uri-launching"></a>Uri 启动
@@ -151,18 +151,18 @@ Uri 属性的工作方式与 Hyperlink 的 NavigateUri 属性非常类似。 当
 Places 选取器创建 Uri 根为 https://maps.windows.com/ 的 ContentLinkInfo。 可通过 3 种方式打开此链接：
 
 - 如果 LinkContentKind = "Places"，将在浮出控件中打开信息卡。 浮出控件类似于内容链接选取器浮出控件。 它是 Windows 部件，在独立于应用的进程中运行。
-- 如果 LinkContentKind 不是 "Places"，则将打开**地图**应用到指定的位置。 例如，如果你在 ContentLinkChanged 事件处理程序中修改了 LinkContentKind，就会发生这种情况。
-- 如果 Uri 在“地图”应用中无法打开，则会在默认浏览器中打开地图。 这通常发生在用户的_网站应用_ 设置不允许使用**地图**应用打开 Uri 的情况下。
+- 如果 LinkContentKind 不是 "Places"，则将打开**地图**应用到指定的位置。 例如，如果在 ContentLinkChanged 事件处理程序中修改了 LinkContentKind，就会发生这种情况。
+- 如果 Uri 在“地图”应用中无法打开，则会在默认浏览器中打开地图。 这通常发生在用户的网站应用  设置不允许使用**地图**应用打开 Uri 的情况下。
 
 ##### <a name="people"></a>人脉
 
 People 选取器创建 Uri 使用 **ms-people** 协议的 ContentLinkInfo。
 
 - 如果 LinkContentKind = "People"，将在浮出控件中打开信息卡。 浮出控件类似于内容链接选取器浮出控件。 它是 Windows 部件，在独立于应用的进程中运行。
-- 如果 LinkContentKind 不是 "People"，则将打开**人脉**应用。 例如，如果你在 ContentLinkChanged 事件处理程序中修改了 LinkContentKind，就会发生这种情况。
+- 如果 LinkContentKind 不是 "People"，则将打开**人脉**应用。 例如，如果在 ContentLinkChanged 事件处理程序中修改了 LinkContentKind，就会发生这种情况。
 
 > [!TIP]
-> 有关从您的应用程序中打开其他应用程序和网站的详细信息，请参阅下的主题[启动应用程序的 Uri](/windows/uwp/launch-resume/launch-app-with-uri)。
+> 有关从你的应用打开其他应用和网站的更多信息，请参阅[使用 URI 启动应用](/windows/uwp/launch-resume/launch-app-with-uri)下的主题。
 
 #### <a name="invoked"></a>Invoked
 
@@ -209,7 +209,7 @@ private void editor_ContentLinkInvoked(RichEditBox sender, ContentLinkInvokedEve
 
 #### <a name="enumerate-content-links-in-a-richeditbox"></a>枚举 RichEditBox 中的内容链接
 
-你可以使用 RichEditTextRange.ContentLink 属性获取格式文本编辑文档中的内容链接。 TextRangeUnit 枚举具有 ContentLink 值，该值指定当导航文本范围时要作为一个单元使用的内容链接。
+可以使用 RichEditTextRange.ContentLink 属性获取格式文本编辑文档中的内容链接。 TextRangeUnit 枚举具有 ContentLink 值，该值指定当导航文本范围时要作为一个单元使用的内容链接。
 
 此示例显示如何枚举 RichEditBox 中的所有内容链接并将人员提取到一个列表中。
 
@@ -273,7 +273,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
 内容链接的外观是由其前景、背景和光标决定的。 在文本块中，可以设置 Foreground（从 TextElement）和 [Background](/uwp/api/windows.ui.xaml.documents.contentlink.background) 属性来更改默认颜色。
 
-默认情况下，当用户将光标悬停在内容链接上方时会显示 [Hand](/uwp/api/windows.ui.core.corecursortype) 光标。 与 RichEditBlock 不同，文本块控件不会根据链接类型自动更改光标。 你可以设置 [Cursor](/uwp/api/windows.ui.xaml.documents.contentlink.Cursor) 属性来根据链接类型或其他因素更改光标。
+默认情况下，当用户将光标悬停在内容链接上方时会显示 [Hand](/uwp/api/windows.ui.core.corecursortype) 光标。 与 RichEditBlock 不同，文本块控件不会根据链接类型自动更改光标。 可以设置 [Cursor](/uwp/api/windows.ui.xaml.documents.contentlink.Cursor) 属性，根据链接类型或其他因素更改光标。
 
 下面是 TextBlock 中使用的 ContentLink 示例。 代码中创建了 ContentLinkInfo 并将其分配给在 XAML 中创建的 ContentLink 文本元素的 Info 属性。
 

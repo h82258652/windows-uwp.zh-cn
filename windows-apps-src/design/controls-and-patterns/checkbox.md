@@ -13,10 +13,10 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3905ef8786a06d4221ce42511f786927c3173ba6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363167"
 ---
 # <a name="check-boxes"></a>复选框
@@ -25,7 +25,7 @@ ms.locfileid: "66363167"
 
 复选框用于选择或取消选择操作项目。 它可用于单个项目或用户可以选择的多个项目列表。 该控件具有三个选择状态：未选中、已选中和不确定。 在子选择集具有未选中和已选中两种状态时，使用不确定状态。
 
-> **重要的 API**：[复选框类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox)，[选中的事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)， [IsChecked 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
+> **重要的 API**：[CheckBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox)、[Checked 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)、[IsChecked 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
 ![复选框状态示例](images/templates-checkbox-states-default.png)
 
@@ -134,7 +134,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 
 每当选中的状态更改时都会发生 **Click** 事件。 如果你处理 Click 事件，请使用 **IsChecked** 属性确定复选框状态。
 
-**Checked** 和 **Unchecked** 事件独立发生。 如果你处理这些事件，应同时处理它们以响应复选框中的状态更改。
+**Checked** 和 **Unchecked** 事件独立发生。 如果处理这些事件，应同时处理它们以响应复选框中的状态更改。
 
 在以下示例中，我们展示了处理 Click 事件以及 Checked 和 Unchecked 事件。
 
@@ -294,9 +294,9 @@ private void SetCheckedState()
 
     ![不确定复选框](images/checkbox4_spicy.png)
 
-    相反，使用具有三个选项的单选按钮组：不辣味、 辣味，和额外辣味。
+    相反，请使用有三个选项的单选按钮组：“不辣”、“辛辣”和“超辣”。
 
-    ![包含三个选项的单选按钮组：不辣味、 辣味，和额外辣味](images/spicyoptions.png)
+    ![具有三个选项的单选按钮组：“不辣”、“辛辣”和“超辣”](images/spicyoptions.png)
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
@@ -304,6 +304,6 @@ private void SetCheckedState()
 
 ## <a name="related-articles"></a>相关文章
 
-- [复选框类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
+- [CheckBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
 - [单选按钮](radio-button.md)
 - [切换开关](toggles.md)
