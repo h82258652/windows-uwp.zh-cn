@@ -822,6 +822,8 @@
           href: ../cpp-and-winrt-apis/binding-collection.md
         - name: XAML 自定义（模板化）控件
           href: ../cpp-and-winrt-apis/xaml-cust-ctrl.md
+        - name: 将参数传递到 ABI 边界
+          href: ../cpp-and-winrt-apis/pass-parms-to-abi.md
         - name: 使用 COM 组件
           href: ../cpp-and-winrt-apis/consume-com.md
         - name: 创作 COM 组件

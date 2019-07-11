@@ -1,16 +1,16 @@
 ---
 description: C++/WinRT 是适用于 Windows 运行时 (WinRT) API 的完全标准的现代 C++17 语言投影，以基于标头文件的库的形式实现。
 title: C++/WinRT
-ms.date: 05/14/2018
+ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 664fd22fc954403776e1becc31563a06d5fdd15b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8b3cb74e3b3613cf562af7b5290697f111722226
+ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582101"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67800544"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -55,6 +55,7 @@ C++ 编程语言适用于企业*和*独立软件供应商 (ISV) 行业中重视�
 | [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md) | 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 本主题介绍了如何实现和使用可观测属性以及如何将 XAML 控件绑定到该属性。 |
 | [XAML 项目控件; 绑定到 C++/WinRT 集合](binding-collection.md) | 可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 本主题介绍了如何实现和使用可观测集合以及如何将 XAML 项目控件绑定到该集合。 |
 | [XAML 自定义（模板化）控件与 C++/WinRT](xaml-cust-ctrl.md) | 本主题引导你完成使用 C++/WinRT 创建简单的自定义控件的步骤。 你可以基于此处的信息创建你自己的功能丰富且可自定义的 UI 控件。 |
+| [将参数传递到 ABI 边界](pass-parms-to-abi.md) | C++/ WinRT 通过提供针对常见情况的自动转换，简化了将参数传递到 ABI 边界。 |
 | [通过 C++/WinRT 使用 COM 组件](consume-com.md) | 本主题通过一个完整的 Direct2D 代码示例展示了如何通过 C++/WinRT 来使用 COM 类和接口。 |
 | [通过 C++/WinRT 创作 COM 组件](author-coclasses.md) | C++/WinRT 可以帮助你创作经典 COM 组件，就像它可以帮助你创作 Windows 运行时类一样。 |
 | [从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md) | 本主题介绍了如何将 C++/CX 代码移植到 C++/WinRT 中的等效项。 |
