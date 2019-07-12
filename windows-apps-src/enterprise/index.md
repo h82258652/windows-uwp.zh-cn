@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 087192160fd098d63042f3d1ad16fe7a811de337
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: baac4498fcc6dd65d106166f73ca89db89cbfc6b
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321512"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821006"
 ---
 # <a name="enterprise"></a>企业
 
@@ -21,7 +21,7 @@ ms.locfileid: "67321512"
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
-Windows Template Studio 是一个 Visual Studio 2017 扩展，它使用基于向导的体验加速创建新的通用 Windows 平台 (UWP) 应用。 生成的 UWP 项目是格式良好且可阅读的代码，它包含了最新的 Windows 10 功能，同时实施了经过证实的模式和最佳做法。
+Windows Template Studio 是一个 Visual Studio 2017 和 Visual Studio 2019 扩展，它使用基于向导的体验加快创建新的通用 Windows 平台 (UWP) 应用的速度。 生成的 UWP 项目是格式良好且可阅读的代码，它包含了最新的 Windows 10 功能，同时实施了经过证实的模式和最佳做法。
 
 ![Windows Template Studio](images/windows-template-studio.png)
 
