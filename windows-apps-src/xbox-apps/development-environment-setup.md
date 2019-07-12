@@ -6,28 +6,29 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 ms.localizationpriority: medium
-ms.openlocfilehash: 02c33e0dbe1209f3c31937df800ceecb354475f5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 84818561e2f49827a1a76d446fa6a7cfcf2f9896
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322136"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820386"
 ---
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>在 Xbox 开发环境上设置你的 UWP
 
 Xbox 开发环境上的通用 Windows 平台 (UWP) 由通过本地网络连接到 Xbox One 控制台的开发电脑组成。
-开发电脑需要 Windows 10、Visual Studio 2017 或 Visual Studio 2015 Update 3、Windows 10 SDK 内部版本 14393 或更高版本以及各种支持工具。
-
+开发 PC 需要 Visual Studio 2015 Update 3，Visual Studio 2017 或 Visual Studio 2019。
+开发计算机还需要 Windows 10、 Windows 10 SDK 版本 14393 或更高版本和一系列支持工具。
 
 本文介绍了设置和测试你的开发环境的步骤。
 
 ## <a name="visual-studio-setup"></a>Visual Studio 安装程序
 
-1. 安装 Visual Studio 2017，Visual Studio 2015 Update 3 或 Visual Studio 的最新版本。 有关详细信息以及安装方式，请参阅[适用于 Windows 10 的下载和工具](https://developer.microsoft.com/windows/downloads)。 我们建议使用最新版本的 Visual Studio，以便为开发人员和安全接收最新的更新。
+1. 安装 Visual Studio 2015 Update 3，Visual Studio 2017 或 Visual Studio 2019。 有关详细信息以及安装方式，请参阅[适用于 Windows 10 的下载和工具](https://dev.windows.com/downloads)。 我们建议使用最新版本的 Visual Studio，以便为开发人员和安全接收最新的更新。
 
-2. 如果要安装 Visual Studio 2017，请确保选择**通用 Windows 平台开发**工作负载。 如果你是 C++ 开发人员，请确保还要在右侧的**摘要**窗格中选择**通用 Windows 平台开发**下的 **C++ 通用 Windows 平台工具**复选框。 它不是默认安装的一部分。
 
-    ![安装 Visual Studio 2017](images/development-environment-setup-1.png)
+2. 如果要安装 Visual Studio 2017 或 Visual Studio 2019，请确保你选择**通用 Windows 平台开发**工作负荷。 如果你是 C++ 开发人员，请确保还要在右侧的**摘要**窗格中选择**通用 Windows 平台开发**下的 **C++ 通用 Windows 平台工具**复选框。 它不是默认安装的一部分。
+
+    ![安装 Visual Studio 2019](images/development-environment-setup-1.png)
 
     如果要安装 Visual Studio 2015 Update 3，请确保选中**通用 Windows 应用开发工具**复选框。
 

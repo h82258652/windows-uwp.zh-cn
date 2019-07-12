@@ -5,12 +5,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c94d27e87853b570268e3a39fe941c817b3eda6a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 19756730177485c6d16ad9a42ff1174eba8ca3b9
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590972"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820311"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>Xbox One 上的 UWP 应用开发入门
 
@@ -20,20 +20,20 @@ ms.locfileid: "57590972"
 
 在开始之前，你将需要执行以下操作：
 -   设置与最新版本的 Windows 10 的 PC。
-<!-- -  Install Microsoft Visual Studio 2015 Update 3 or Microsoft Visual Studio 2017.
+<!-- -  Install Microsoft Visual Studio 2015 Update 3 or Microsoft Visual Studio 2019.
 
     > [!NOTE]
-    > Visual Studio 2017 is required if you are using the Windows 10, build 15063 SDK. -->
+    > Visual Studio 2019 is required if you are using the Windows 10, build 15063 SDK. -->
 
 - 在 Xbox One 主机上具有至少 5 GB 的可用空间。
 
 ## <a name="setting-up-your-development-pc"></a>设置你的开发电脑
 
-1.  安装 Visual Studio 2015 Update 3 或 Visual Studio 2017。
+1.  安装 Visual Studio 2015 Update 3，Visual Studio 2017 或 Visual Studio 2019。
 
-    如果要安装 Visual Studio 2015 Update 3，请确保你选择**自定义**安装，并选择**通用 Windows 应用开发工具**复选框 – 它不是默认值的一部分安装。 如果你是 C++ 开发人员，确保选择“自定义安装”，然后选择“C++”。
+    如果要安装 Visual Studio 2015 Update 3，请确保你选择**自定义**安装，并选择**通用 Windows 应用开发工具**复选框 – 它不是默认值的一部分安装。 如果你是 C++ 开发人员，确保选择“自定义安装”  ，然后选择“C++”  。
 
-    如果要安装 Visual Studio 2017，请确保选择**通用 Windows 平台开发**工作负载。 如果您在 c + + 开发人员，**摘要**在右侧窗格下**通用 Windows 平台开发**，请确保你选择**c + + 通用 Windows 平台工具**复选框。 它不是默认安装的一部分。
+    如果要安装 Visual Studio 2017 或 Visual Studio 2019，请确保你选择**通用 Windows 平台开发**工作负荷。 如果你是C++开发人员，请在**摘要**在右侧窗格下**通用 Windows 平台开发**，请确保你选择**C++通用 Windows平台工具**复选框。 它不是默认安装的一部分。
 
     有关详细信息，请参阅[设置在 Xbox 开发环境在 UWP](development-environment-setup.md)。
 
@@ -66,7 +66,7 @@ ms.locfileid: "57590972"
 
     你可以通过在主机上启动“开发人员主页”（“主页”右侧的大磁贴）并查看左上角找到你的 Xbox One IP 地址。 有关开发人员主页的详细信息，请参阅 [Xbox One 工具简介](introduction-to-xbox-tools.md)。  
 
-2.  **对于 c + + 和 HTML/Javascript 项目**:遵循一个类似于路径C#项目，但在项目属性中转到**调试**选项卡上，选择**远程计算机**在调试器中，打开下拉列表，键入 IP 地址或主机名到控制台**计算机名称**字段，然后选择**通用 （未加密的协议）** 中**身份验证类型**字段。
+2.  **有关C++和 HTML/Javascript 项目**:遵循一个类似于路径C#项目，但在项目属性中转到**调试**选项卡上，选择**远程计算机**在调试器中，打开下拉列表，键入 IP 地址或主机名到控制台**计算机名称**字段，然后选择**通用 （未加密的协议）** 中**身份验证类型**字段。
 
 3. 选择**x64**从顶部菜单栏中的绿色播放按钮左侧的下拉列表。
    
@@ -74,7 +74,7 @@ ms.locfileid: "57590972"
   
 5.  第一次执行此操作时，Visual Studio 将提示你为 Xbox One 输入 PIN。 可以通过在 Xbox One 上启动 Dev 主页并选择获取 PIN**显示 Visual Studio pin**按钮。
   
-6.  在配对后，你的应用将开始部署。 第一次执行此操作时可能有点慢（我们将所有工具复制到 Xbox），但是如果它不只需要几分钟，则可能出现了某些错误。 请确保你已遵循以上所有步骤（尤其是你是否已将“身份验证模式”设置为“通用”？），并且你正在使用与 Xbox One 的有线网络连接。  
+6.  在配对后，你的应用将开始部署。 第一次执行此操作时可能有点慢（我们将所有工具复制到 Xbox），但是如果它不只需要几分钟，则可能出现了某些错误。 请确保你已遵循以上所有步骤（尤其是你是否已将“身份验证模式”  设置为“通用”  ？），并且你正在使用与 Xbox One 的有线网络连接。  
 
 7. 坐下来放松。 享受你的第一个在主机上运行的应用！  
 
@@ -82,7 +82,7 @@ ms.locfileid: "57590972"
 
 ![Hello World](images/getting-started-hello-world.png)
 
-## <a name="see-also"></a>另请参阅  
-- [常见问题](frequently-asked-questions.md)  
+## <a name="see-also"></a>请参阅  
+- [常见问题解答](frequently-asked-questions.md)  
 - [在 Xbox 开发人员计划上的 UWP 的已知的问题](known-issues.md)
 - [在 Xbox One 上 UWP](index.md) 

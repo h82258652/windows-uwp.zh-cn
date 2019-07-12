@@ -9,12 +9,12 @@ ms.date: 12/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 91396051ec822f469e300f51217191fc4e704cac
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 466747cbbfe6f599f42a39f0d2766f78775ec6c8
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714051"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820591"
 ---
 # <a name="globalization-and-localization"></a>全球化和本地化
 
@@ -67,6 +67,6 @@ Windows 的使用遍及世界各地，用户的语言、区域及文化背景各
 | [使您的应用程序可本地化](prepare-your-app-for-localization.md) | 本地化应用是一种可针对其他市场、语言或地区进行本地化且未发现应用中的任何功能性缺陷的应用。 可本地化应用最重要的属性是其可执行代码与其可本地化资源完全分隔。 |
 | [国际字体](loc-international-fonts.md) | 本主题列出了可用于 UWP 应用的已本地化为美国以外的语言的字体（美国）。 |
 | [设计应用程序的双向文本](design-for-bidi-text.md) | 设计应用，使其提供双向文本支持（双向），以便组合从左到右和从右到左写入系统的脚本。 |
-| [使用多语言应用工具包 4.0](use-mat.md) | 多语言应用工具包 (MAT) 4.0 与 Microsoft Visual Studio 2017 集成，为 UWP 应用提供翻译支持、翻译文件管理和编辑工具。 |
+| [使用多语言应用工具包 4.0](use-mat.md) | 多语言应用工具包 (MAT) 4.0 集成 Microsoft Visual Studio 2017 和更高版本，若要向 UWP 应用提供翻译支持、 翻译文件管理和编辑器工具。 |
 | [多语言应用工具包 4.0 常见问题和故障排除](mat-faq-troubleshooting.md) | 本主题提供有关多语言应用工具包 (MAT) 4.0 的常见问题解答。 |
 | [准备用于日语纪元更改应用程序](japanese-era-change.md) | 了解 2019 年 5 月日本纪元更改以及如何使你的应用程序准备就绪。 |

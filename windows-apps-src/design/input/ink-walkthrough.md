@@ -6,12 +6,12 @@ keywords: 墨迹, 墨迹书写, 教程
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: be7005e64a431d65006315fbee551e5c6c3a2a6f
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: 929d72da46c52cfdb510f1e1b6a97ddcbbe066d5
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343276"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820571"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>教程：在 UWP 应用中支持墨迹
 
@@ -36,7 +36,7 @@ ms.locfileid: "58343276"
 ## <a name="prerequisites"></a>先决条件
 
 * 一台运行当前版本 Windows 10 的计算机（或虚拟机）
-* [Visual Studio 2017 和 RS2 SDK](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio 2019 和 RS2 SDK](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * 具体取决于您的配置，您可能需要安装[Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet 包并启用**开发人员模式**中 （设置-> 更新您的系统设置& 安全-> 的开发人员-> 使用开发人员的功能)。
 * 如果你还不熟悉使用 Visual Studio 进行通用 Windows 平台 (UWP) 应用开发，请在开始此教程前浏览一下这些主题：  
@@ -71,7 +71,7 @@ ms.locfileid: "58343276"
 | [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | 包含可自定义且可扩展的激活中关联墨迹相关功能的按钮集合的 XAML UI 平台控件[ **InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)。 |
 | [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer)<br/>我们不在这里介绍此功能，有关详细信息，请参阅[复杂墨迹示例](https://go.microsoft.com/fwlink/p/?LinkID=620314)。 | 支持将笔划墨迹呈现到通用 Windows 应用的指定 Direct2D 设备上下文，而非默认的 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件。 |
 
-## <a name="step-1-run-the-sample"></a>第 1 步：运行示例
+## <a name="step-1-run-the-sample"></a>步骤 1：运行示例
 
 下载 RadialController 示例应用后，确认它在运行：
 1. 在 Visual Studio 中打开示例项目。
@@ -125,7 +125,7 @@ ms.locfileid: "58343276"
 
 ![基本墨迹书写](images/ink/ink-app-step1-name-small.png)
 
-## <a name="step-3-support-inking-with-touch-and-mouse"></a>步骤 3:支持使用触摸和鼠标墨迹书写
+## <a name="step-3-support-inking-with-touch-and-mouse"></a>步骤 3：支持使用触摸和鼠标墨迹书写
 
 你将注意到，默认情况下，墨迹仅支持使用触控笔输入。 如果你尝试使用手指、鼠标或触摸板书写或绘画，你会失望。
 
@@ -464,7 +464,7 @@ Windows Ink 还支持从剪贴板复制和粘贴笔划墨迹。
 
 ## <a name="related-articles"></a>相关文章
 
-* [触控笔交互和 UWP 应用中的 Windows 墨迹](pen-and-stylus-interactions.md)
+* [UWP 应用中的笔交互和 Windows Ink](pen-and-stylus-interactions.md)
 
 ### <a name="samples"></a>示例
 

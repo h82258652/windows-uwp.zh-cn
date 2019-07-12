@@ -6,12 +6,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 956e4050e3077ac827cf8107470698b42878a5e1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 182a2862589ef5b6b0bd5d76cb1b9ef9599b2ed6
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370877"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820634"
 ---
 # <a name="add-a-splash-screen"></a>添加初始屏幕
 
@@ -27,7 +27,7 @@ ms.locfileid: "66370877"
 
     以下屏幕快照显示了 Visual Studio 中的 “Package.appxmanifest”窗口。 根据对象的类型，你将看到一组稍有不同的可视资源。
 
-    ![Visual Studio 2017 中“Package.appxmanifest”窗口的屏幕快照](images/appmanifest.png)
+    ![Visual Studio 2019 中的"package.appxmanifest"窗口的屏幕截图](images/appmanifest.png)
 
     如果你在文本编辑器中打开“Package.appxmanifest”，[**SplashScreen 元素**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-splashscreen)会显示为 [**VisualElements 元素**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements)的子元素。 清单文件中的默认初始屏幕标记在文本编辑器中显示如下：
 

@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e5ba7ddb6ef37b4aa54584602fc890bbabc8998
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: db5ba7fb6e13d2a5aab4b74014458073aa88e7f4
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359344"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820216"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>定制语言、比例、高对比度和其他限定符的资源
 
@@ -61,7 +61,7 @@ ms.locfileid: "66359344"
 
 ## <a name="reference-a-string-or-image-resource-by-name"></a>按名称引用字符串或图像资源
 
-请参阅[引用 XAML 标记中的字符串资源标识符](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-xaml-markup)、[引用代码中的字符串资源标识符](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-code)以及[引用 XAML 标记和代码中的图像或其他资产](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)。
+请参阅[引用 XAML 标记中的字符串资源标识符](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-xaml)、[引用代码中的字符串资源标识符](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-code)以及[引用 XAML 标记和代码中的图像或其他资产](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)。
 
 ## <a name="actual-and-neutral-qualifier-matches"></a>实际与中性限定符匹配项
 你无需为*每个*限定符值都提供资源文件。 例如，如果你发现高对比度和标准对比度都只需要一个视觉资产，则可以按如下所示命名这些资产。

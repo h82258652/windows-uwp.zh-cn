@@ -5,12 +5,12 @@ keywords: 应用扩展, 应用服务, 后台
 ms.date: 10/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a7bb6f719f95766c07c1e5f92b50148cf0f2cce
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2cfb3be556cb681bc9ed2d9d46bb86304182e5ca
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642362"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821021"
 ---
 # <a name="create-and-host-an-app-extension"></a>创建和托管应用扩展
 
@@ -18,7 +18,7 @@ ms.locfileid: "57642362"
 
 本文伴有代码示例：
 - 下载并解压缩[数学扩展代码示例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip)。
-- 在 Visual Studio 2017 中，打开 MathExtensionSample.sln。 将生成类型设置为 x86（**生成** > **Configuration Manager**，然后针对两个项目将**平台**更改为 **x86**）。
+- 在 Visual Studio 2019，打开 MathExtensionSample.sln。 将生成类型设置为 x86（**生成** > **Configuration Manager**，然后针对两个项目将**平台**更改为 **x86**）。
 - 部署解决方案：**构建** > **部署解决方案**。
 
 ## <a name="introduction-to-app-extensions"></a>应用扩展简介
@@ -41,7 +41,7 @@ UWP 应用扩展是 UWP 应用，这些应用具有的扩展声明允许它们�
 4. 定义主机及其扩展的通信方式。
 5. 使用主机应用中的 [Windows.ApplicationModel.AppExtensions](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppExtensions) API 访问扩展。
 
-我们来看一下如何通过检查[数学扩展代码示例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip)来完成此操作，此代码示例实现了一个假想的计算器，你可以使用扩展向该计算器添加新的函数。 在 Microsoft Visual Studio 2017 中，从此代码示例加载 **MathExtensionSample.sln**。
+我们来看一下如何通过检查[数学扩展代码示例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip)来完成此操作，此代码示例实现了一个假想的计算器，你可以使用扩展向该计算器添加新的函数。 在 Microsoft Visual Studio 2019，加载**MathExtensionSample.sln**从代码示例。
 
 ![数学扩展代码示例](images/mathextensionhost-calctab.png)
 
@@ -120,12 +120,12 @@ _Package.appxmanifest MathExtension 项目中：_
 
 `<uap3:AppExtension>` 属性的含义如下：
 
-|属性|描述|必需|
+|特性|描述|必填|
 |---------|-----------|:------:|
 |**名称**|这是扩展约定名称。 当它与主机中声明的 **Name** 匹配时，该主机将能够找到此扩展。| :heavy_check_mark: |
 |**ID**| 唯一标识此扩展。 因为可能存在多个使用相同扩展约定名称的扩展（请设想一个支持一些扩展的画图应用），所以你可以使用 ID 将它们区分开来。 应用扩展主机可以使用 ID 推断有关扩展类型的内容。 例如，你可能具有一个针对桌面设计的扩展和另一个针对移动设备设计的扩展，并且可以用 ID 进行区分。 为此，你还可以使用以下讨论的 **Properties** 元素。| :heavy_check_mark: |
 |**DisplayName**| 可以从主机应用中使用它来识别用户的扩展。 它可以从[新资源管理系统](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) 中查询，并且可以使用该系统进行本地化。 本地化的内容从应用扩展包中加载，而不是从主机应用中加载。 | |
-|**描述** | 可以从主机应用中使用它来描述用户的扩展。 它可以从[新资源管理系统](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) 中查询，并且可以使用该系统进行本地化。 本地化的内容从应用扩展包中加载，而不是从主机应用中加载。 | |
+|**说明** | 可以从主机应用中使用它来描述用户的扩展。 它可以从[新资源管理系统](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) 中查询，并且可以使用该系统进行本地化。 本地化的内容从应用扩展包中加载，而不是从主机应用中加载。 | |
 |**PublicFolder**|相对于程序包根目录的文件夹（你可以与扩展主机共享该文件夹中的内容）的名称。 按照惯例，此名称是“Public”，但是你可以使用与扩展中的文件夹匹配的任何名称。| :heavy_check_mark: |
 
 `<uap3:Properties>` 是可选元素，它包含自定义主机可以在运行时读取的元数据。 在代码示例中，扩展以应用服务形式来实现，因此主机需要一种方法来获取该应用服务的名称，以便主机可以调用该服务。 此应用服务的名称在我们所定义的 <Service> 元素中定义（我们可以将其叫做我们想要的任何名称）。 此代码示例中的主机会在运行时查找此属性以了解应用服务的名称。

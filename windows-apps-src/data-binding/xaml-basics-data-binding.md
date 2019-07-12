@@ -5,12 +5,12 @@ keywords: XAML, UWP, 入门
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 21a053934d7391d12f7cd987026524b9ff4c279d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 707c2ed110498f4ef18fea31ace87d1fd2434112
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639982"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820346"
 ---
 # <a name="create-data-bindings"></a>创建数据绑定
 
@@ -20,12 +20,12 @@ ms.locfileid: "57639982"
 
 你将从简化版本的 PhotoLab 示例开始。 此简易版本包括完整的数据层以及基本 XAML 页面布局，并省去了许多功能以使代码更易于在上下文中浏览。 本教程并不构建完整的应用，因此，请务必查看最终版本以了解诸如自定义动画和手机支持等功能。 你可以在 [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab) 存储库的根文件夹中查找最终版本。 
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
-* [Visual Studio 2017 和最新版本的 Windows 10 SDK](https://developer.microsoft.com/windows/downloads)。
+* [Visual Studio 2019 和最新版本的 Windows 10 SDK](https://developer.microsoft.com/windows/downloads)。
 
 ## <a name="part-0-get-the-code"></a>第 0 部分：获取代码
-本实验室的起点位于 [xaml-basics-starting-points/data-binding](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/data-binding) 文件夹内的 PhotoLab 示例存储库中。 克隆或下载存储库后，你可以使用 Visual Studio 2017 打开 PhotoLab.sln 来编辑项目。
+本实验室的起点位于 [xaml-basics-starting-points/data-binding](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/data-binding) 文件夹内的 PhotoLab 示例存储库中。 已克隆或下载存储库后，您可以通过使用 Visual Studio 2019 打开 PhotoLab.sln 编辑项目。
 
 PhotoLab 应用有两个主要页面：
 
@@ -160,7 +160,7 @@ PhotoLab 应用有两个主要页面：
               ItemsSource="{x:Bind Images}" 
     ```
 
-    **映像**属性属于类型**ObservableCollection\<ImageFileInfo\>**，因此中显示的各个项**GridView**是类型的**ImageFileInfo**。 这与第 1 部分中所描述的 **x:DataType** 值匹配。 
+    **映像**属性属于类型**ObservableCollection\<ImageFileInfo\>** ，因此中显示的各个项**GridView**是类型的**ImageFileInfo**。 这与第 1 部分中所描述的 **x:DataType** 值匹配。 
 
 到目前为止，我们所看到的所有绑定都是一次性只读绑定，这是普通 **x:Bind** 表达式的默认行为。 数据仅在初始化时才加载，这样可以实现高性能绑定 - 特别适合支持大数据集的多个复杂视图。 
 
@@ -171,7 +171,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
     = new ObservableCollection<ImageFileInfo>();
 ```
 
-**映像**永远不会更改属性值，因为该属性的类型，但**ObservableCollection\<T\>**，则*内容*的可以更改集合，并且绑定将自动，请注意，所做的更改并更新 UI。 
+**映像**永远不会更改属性值，因为该属性的类型，但**ObservableCollection\<T\>** ，则*内容*的可以更改集合，并且绑定将自动，请注意，所做的更改并更新 UI。 
 
 为了对此进行测试，我们将暂时添加一个删除当前所选图像的按钮。 此按钮不在最终版本中，因为选择图像会将你带入到详细信息页面中。 但是的行为**ObservableCollection\<T\>** 是在最终 PhotoLab 示例仍然很重要，因为在该页的构造函数中初始化 XAML (通过**InitializeComponent**方法调用)，但**映像**更高版本中填充集合**OnNavigatedTo**方法。 
 
@@ -557,7 +557,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 > 尝试将函数绑定与最后一个播放点中的 **TextBlock** 配合使用，并将其绑定到新方法，当你为该方法传递 **ItemSize** 值时，该方法会返回“000 x 000”格式的字符串。
 
 
-## <a name="conclusion"></a>结论
+## <a name="conclusion"></a>结束语
 
 本教程让你亲身感受了数据绑定，并向你介绍了一些可用的功能。 在我们结束之前，请注意一点：并非所有内容都可以绑定，有时你尝试连接到的值与你尝试绑定的属性不兼容。 虽然绑定的灵活性很大，但并非适用于各种情况。
 

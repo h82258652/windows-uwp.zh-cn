@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
-ms.openlocfilehash: 950f9415e63a31a5204a15f4f72b968535489cfa
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 53e977e07337c11036916c2087a00e9ec7a95118
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321245"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821119"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 游戏开发指南
 
@@ -521,7 +521,7 @@ C++/CX 是一种高性能、低开销的语言，可提供速度、兼容性和�
     </tr>
     <tr>
         <td>Visual C++ 编程指南和参考</td>
-        <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">VisualC++在 Visual Studio 2017</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">VisualC++在 Visual Studio 2019</a></td>
     </tr>
 </table>
  

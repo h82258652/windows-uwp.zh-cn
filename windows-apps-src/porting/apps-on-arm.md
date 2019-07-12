@@ -5,12 +5,12 @@ ms.date: 02/15/2018
 ms.topic: article
 keywords: windows 10 s, 始终连接, ARM, ARM64, x86 模拟
 ms.localizationpriority: medium
-ms.openlocfilehash: 24f33ffc1c5661c5450c24c6fa271e59788e5229
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 6bafc890ca6ea279e487e20886ce5d8eae2e6629
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319705"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821075"
 ---
 # <a name="windows-10-on-arm"></a>Windows 10 on ARM
 起初，Windows 10（与 Windows 10 移动版不同）只能在采用 x86 和 x64 处理器的电脑上运行。 但现在，应用了 Fall Creators Update 的 Windows 10 桌面版（专业版和 S 版本）可在采用 ARM64 处理器的计算机上运行。 ARM CPU 体系结构的省电特性使这些电脑拥有全天的电池使用时间，并且支持移动数据网络。 这些电脑将提供出色的应用程序兼容性，让你在不进行任何修改的情况下运行现有的 x86 win32 应用程序。 例如 Adobe reader。 有关详细信息或演示，请观看[第 9 频道视频：始终连接的电脑](https://channel9.msdn.com/Events/Build/2017/P4171)。
@@ -26,7 +26,8 @@ Edge、Cortana、“开始”菜单、资源管理器等内置 Windows 10 体验
 ARM 上的 Windows 10 运行所有 x86，ARM32 和 ARM64 [UWP 应用](../get-started/universal-application-platform-guide.md)从 Microsoft Store。 ARM32 和 ARM64 应用而不用任何仿真本机运行时在模拟情况下运行应用的 x86。 如果你是 UWP 开发人员，请确保为你的应用提交 ARM 包，因为这将为设备提供最佳的用户体验。 有关详细信息，请参阅[应用包体系结构](../packaging/device-architecture.md)。
 
 >[!NOTE]
-> 若要生成 UWP 应用程序以本机面向 ARM64 的平台，你必须具有 Visual Studio 2017 版本 15.9 或更高版本。 有关详细信息，请参阅[这篇博客文章](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/)。
+> 若要生成 UWP 应用程序以本机面向 ARM64 的平台，你必须具有 Visual Studio 2017 版本 15.9 或更高版本或 Visual Studio 2019。 有关详细信息，请参阅[这篇博客文章](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development)。
+
 
 >[!IMPORTANT]
 > 当用户从 Microsoft Store 下载 UWP 应用时，将在 ARM64 设备上安装 ARM32 版本，除非只有 x86 版本可用。 有关体系结构的详细信息，请参阅[应用包体系结构](../packaging/device-architecture.md)。

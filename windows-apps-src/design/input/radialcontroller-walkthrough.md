@@ -6,12 +6,12 @@ keywords: 转盘, 径向, 教程
 ms.date: 03/11/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a16b455d692eaf9f73b7dc90200bd0f021025e52
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4cf27f6f9893b3d4cc68c899bf3ff1902320a910
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365660"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820564"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>教程：在 UWP 应用中支持 Surface Dial（和其他滚轮设备）
 
@@ -41,7 +41,7 @@ Dial 支持三种基本手势：
 ## <a name="prerequisites"></a>系统必备
 
 * 运行 Windows 10 创意者更新或更高版本的计算机（或虚拟机）
-* [Visual Studio 2017 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * 滚轮设备（现在仅限 [Surface Dial](https://aka.ms/purchasesurfacedial)）
 * 如果你还不熟悉使用 Visual Studio 进行通用 Windows 平台 (UWP) 应用开发，请在开始此教程前浏览一下这些主题：  
@@ -90,7 +90,7 @@ Dial 支持三种基本手势：
 | [**RadialController**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)和相关 | 表示滚轮输入设备或附件，例如 Surface Dial。 |
 | [**IRadialControllerConfigurationInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) / [**IRadialControllerInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>我们不在这里介绍此功能，有关详细信息，请参阅 [Windows 经典桌面示例](https://aka.ms/radialcontrollerclassicsample)。 | 通过 UWP 应用支持互操作性。 |
 
-## <a name="step-1-run-the-sample"></a>第 1 步：运行示例
+## <a name="step-1-run-the-sample"></a>步骤 1：运行示例
 
 下载 RadialController 示例应用后，确认它在运行：
 1. 在 Visual Studio 中打开示例项目。
@@ -120,7 +120,7 @@ Dial 支持三种基本手势：
 
 现在，我们将开始执行一些基本的自定义。
 
-## <a name="step-3-add-controls-for-wheel-input"></a>步骤 3:添加滚轮输入的控件
+## <a name="step-3-add-controls-for-wheel-input"></a>步骤 3：添加滚轮输入的控件
 
 首先，我们来为应用添加 UI：
 
@@ -641,6 +641,6 @@ Surface Dial 和其他滚轮设备可以向用户提供与当前交互对应的�
 #### <a name="other-samples"></a>其他示例
 [着色通讯簿示例](https://github.com/Microsoft/Windows-appsample-coloringbook)
 
-[通用 Windows 平台的示例 (C#和C++)](https://go.microsoft.com/fwlink/?linkid=832713)
+[通用 Windows 平台示例（C# 和 C++）](https://go.microsoft.com/fwlink/?linkid=832713)
 
 [Windows 经典桌面示例](https://aka.ms/radialcontrollerclassicsample)

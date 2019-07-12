@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 58bf8df4551c8bcfc663d2c832bef3a879ff6350
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 67a96b8423d589036ef1c6896f056d097282dc33
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317974"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820228"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>为应用程序添加“我的人脉”支持
 
@@ -20,7 +20,7 @@ ms.locfileid: "67317974"
 
 ## <a name="requirements"></a>要求
 
-+ Windows 10 和 Microsoft Visual Studio 2017。 有关安装详细信息，请参阅[设置 Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
++ Windows 10 和 Microsoft Visual Studio 2019。 有关安装详细信息，请参阅[设置 Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
 + C# 或类似面向对象的编程语言的基础知识。 若要开始使用 C#，请参阅[创建“Hello, world”应用](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
 ## <a name="overview"></a>概述
@@ -185,7 +185,7 @@ ContactPanel 对象还允许你设置联系人面板标题的背景颜色（如�
 
 若要为联系人设置锁屏提醒，最高级 Toast 节点必须包含 hint-people 参数，以表示发送或相关联系人。 此参数可能具有以下任何值：
 + **电子邮件地址** 
-    + 例如 mailto:johndoe@mydomain.com
+    + 例如 [https://doi.org/10.13012/J8PN93H8](mailto:johndoe@mydomain.com)
 + **电话号码** 
     + 例如 tel:888-888-8888
 + **远程 ID** 

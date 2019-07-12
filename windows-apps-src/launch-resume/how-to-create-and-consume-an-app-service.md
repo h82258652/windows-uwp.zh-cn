@@ -6,12 +6,12 @@ keywords: 应用的通信，进程间通信，IPC、 消息传送，后台通信
 ms.date: 01/16/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 21e1b409406cf03d83ff10b04d96d7ff9f0413dd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d122a51c53fc7eb32ab79f6decc570238af22973
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370738"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821046"
 ---
 # <a name="create-and-consume-an-app-service"></a>创建和使用应用服务
 
@@ -27,10 +27,10 @@ ms.locfileid: "66370738"
 
 1. 在 Visual Studio 2015 或更高版本，创建新的 UWP 应用项目并将其命名**AppServiceProvider**。
     1. 选择**文件 > 新建 > 项目...** 
-    2. 在中**新的项目**对话框中，选择**已安装 > Visual C# > 空白应用 (通用 Windows)** 。 这将是能够向其他 UWP 应用提供应用服务的应用。
-    3. 将项目命名**AppServiceProvider**，为其选择一个位置，然后单击**确定**。
+    2. 在中**创建一个新项目**对话框中，选择**空白应用 (通用 Windows) C#** 。 这将是能够向其他 UWP 应用提供应用服务的应用。
+    3. 单击**下一步**，然后命名项目**AppServiceProvider**，为其选择一个位置，然后单击**创建**。
 
-2. 当系统询问是否选择**目标**并**最低版本**对于项目，请选择至少**10.0.14393**。 如果你想要使用的新**SupportsMultipleInstances**属性中，你必须使用 Visual Studio 2017 和目标**10.0.15063** (**Windows 10 创意者更新**) 或更高版本。
+2. 当系统询问是否选择**目标**并**最低版本**对于项目，请选择至少**10.0.14393**。 如果你想要使用的新**SupportsMultipleInstances**属性，则必须使用 Visual Studio 2017 或 Visual Studio 2019 和目标**10.0.15063** (**Windows 10 创意者更新**)或更高版本。
 
 <span id="appxmanifest"/>
 

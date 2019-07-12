@@ -1,21 +1,21 @@
 ---
-Description: 多语言应用工具包 (MAT) 4.0 与 Microsoft Visual Studio 2017 集成，为 UWP 应用提供翻译支持、翻译文件管理和编辑工具。
+Description: Microsoft Visual Studio 2019 使用翻译支持、 翻译文件管理和编辑器工具提供 UWP 应用与集成多语言应用工具包 (MAT) 4.0。
 title: 使用多语言应用工具包
 template: detail.hbs
 ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 49f03a1ae5ed0ea1a602103e2181c252c8c29c2f
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 428238f9d8a3468ab308841850ac13e8da22961f
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319322"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820584"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>使用多语言应用工具包 4.0
 
-多语言应用工具包 (MAT) 4.0 与 Microsoft Visual Studio 2017 集成，为 UWP 应用提供翻译支持、翻译文件管理和编辑工具。 下面是一些此工具包的值建议。
+Microsoft Visual Studio 2019 使用翻译支持、 翻译文件管理和编辑器工具提供 UWP 应用与集成多语言应用工具包 (MAT) 4.0。 下面是一些此工具包的值建议。
 
 - 帮助你在开发期间管理资源更改和翻译状态。
 - 提供 UI，可基于配置的翻译提供程序来选择语言。
@@ -38,10 +38,10 @@ ms.locfileid: "67319322"
 
 多语言应用工具包 4.0 (MAT 4.0) 具有两个部分，每个部分都有其自己的安装程序。
 
-- [适用于 Visual Studio 2017 的多语言应用工具包 4.0 扩展](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)。 它包含 .vsix 安装程序形式的适用于 Visual Studio 2017 的 MAT 4.0 扩展。
+- [多语言应用工具包 4.0 扩展 Visual Studio 2017 及更高版本](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)。 这包含 MAT 4.0 扩展 Visual Studio 2019，形式的.vsix 安装程序。
 - [多语言应用工具包 4.0 编辑器](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)。 它包含 .msi 安装程序形式的 MAT 4.0 独立多语言编辑器工具。 此外，它还包含适用于 Visual Studio 2015 和 Visual Studio 2013 的 MAT 4.0 扩展。
 
-如果使用 Visual Studio 2017，请逐个下载并运行这两种安装程序。 如果使用 Visual Studio 2015 或 Visual Studio 2013，请下载并运行 .msi 安装程序。
+如果使用 Visual Studio 2017 或 Visual Studio 2019，然后下载并运行两个安装程序，一个接一个。 如果使用 Visual Studio 2015 或 Visual Studio 2013，请下载并运行 .msi 安装程序。
 
 ### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>步骤 3： 针对项目启用多语言应用工具包
 

@@ -6,12 +6,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 内容组映射, 流式处理安装, uwp 应用流式处理安装, 源内容组映射
 ms.localizationpriority: medium
-ms.openlocfilehash: 882db0a6a97c5ee203a072156ca3eb82615607bb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7e25f30a2288f6be76ce108de2056ab6407187de
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647942"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821036"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>创建和转换源内容组映射
 
@@ -143,7 +143,7 @@ ms.locfileid: "57647942"
 
 ## <a name="convert-sourceappxcontentgroupmapxml-to-appxcontentgroupmapxml"></a>将 SourceAppxContentGroupMap.xml 转换为 AppxContentGroupMap.xml
 
-若要将 `SourceAppxContentGroupMap.xml` 转换为最终版本 `AppxContentGroupMap.xml`，可使用 Visual Studio 2017 或 **MakeAppx.exe** 命令行工具。
+要转换`SourceAppxContentGroupMap.xml`到最终版本`AppxContentGroupMap.xml`，可以使用 Visual Studio 2019 或**MakeAppx.exe**命令行工具。
 
 使用 Visual Studio 转换内容组映射：
 1. 向项目文件夹添加 `SourceAppxContentGroupMap.xml`

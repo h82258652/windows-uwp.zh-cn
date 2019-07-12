@@ -6,12 +6,12 @@ ms.date: 03/24/2017
 ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: debc4572a26db9e849dd31f17b114f15aa9ef055
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fe1c2130c3fae70f8aa5aa18acee83a6b6247ef5
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362484"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820160"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>为 Device Portal 编写自定义插件
 
@@ -22,7 +22,7 @@ ms.locfileid: "66362484"
 ## <a name="create-a-new-uwp-app-project"></a>创建新的 UWP 应用项目
 在本指南中，我们将创建一个适用于简单解决方案的所有内容。
 
-在 Microsoft Visual Studio 2017，创建新的 UWP 应用项目。 转到“文件”->“新建项目”，然后依次选择“模板”->“Visual C#”->“Windows 通用”->“空白应用(Windows 通用)”。 将它命名为“DevicePortalProvider”。 这将是包含应用服务的应用。 确保选择要支持的创意者更新 SDK。  可能需要更新 Visual Studio 或安装新的 SDK - 有关详细信息，请参阅[此处](https://blogs.windows.com/buildingapps/2017/04/05/updating-tooling-windows-10-creators-update/)。 
+在 Microsoft Visual Studio 2019，创建一个新的 UWP 应用项目。 转到文件 > 新建 > 项目并选择空白应用 （Windows 通用） 的C#，然后单击下一步。 在配置新项目对话框。 命名项目"DevicePortalProvider"，然后单击创建。 这将是包含应用服务的应用。 请确保选择"Windows 10 创意者更新 (10.0;内部版本 15063）"以支持。  可能需要更新 Visual Studio 或安装新的 SDK - 有关详细信息，请参阅[此处](https://blogs.windows.com/buildingapps/2017/04/05/updating-tooling-windows-10-creators-update/)。 
 
 ## <a name="add-the-deviceportalprovider-extension-to-your-packageappxmanifest-file"></a>向 package.appxmanifest 文件添加 devicePortalProvider 扩展
 需要向 *package.appxmanifest* 文件添加一些代码，以便使应用作为 Device Portal 插件正常运行。 首先，在文件顶部添加以下命名空间定义。 还需将它们添加到 `IgnorableNamespaces` 属性。

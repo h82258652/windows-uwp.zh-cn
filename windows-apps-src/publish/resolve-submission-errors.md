@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1df93195578c1e7c6fd87ab7403375a1a3dcc825
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 8ec2b10b402db7398dad6643355e064c26318170
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468911"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820604"
 ---
 # <a name="resolve-submission-errors"></a>解决提交错误
 
@@ -25,7 +25,7 @@ ms.locfileid: "67468911"
 
 ## <a name="desktop-application"></a>桌面应用程序
 
-如果你打算提交包含 Win32 和 UWP 的二进制文件的包，请确保使用现已推出 Visual Studio 2017 Update 4 的 Windows 打包项目创建的包。 如果使用的 UWP 项目模板创建包，您可能不能提交的应用商店或旁加载到其打包到其他电脑上。 即使已成功发布包，它可能会以意外方式在用户的 PC 上的行为。 有关详细信息，请参阅[打包应用程序通过使用 Visual Studio （桌面桥）]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)。
+如果您计划提交包中包含 Win32 和 UWP 的二进制文件，请确保使用在 Visual Studio 2017 Update 4 和更高版本中可用的 Windows 打包项目创建的包。 如果使用的 UWP 项目模板创建包，您可能不能提交的应用商店或旁加载到其打包到其他电脑上。 即使已成功发布包，它可能会以意外方式在用户的 PC 上的行为。 有关详细信息，请参阅[打包应用程序通过使用 Visual Studio （桌面桥）]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)。
 
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x 及更早版本
 

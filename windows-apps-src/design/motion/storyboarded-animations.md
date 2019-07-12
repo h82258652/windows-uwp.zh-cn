@@ -6,12 +6,12 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 62f603a6ff5aadc1c3e5342db6a7d771f8c37a7b
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: cc5b3598f2d50a49aa9d51721c2c1eb1261c8aa8
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320838"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820513"
 ---
 # <a name="storyboarded-animations"></a>情节提要动画
 
@@ -93,9 +93,9 @@ ms.locfileid: "67320838"
 
 下面是动画目标方案的列表，你可能从中使用间接属性目标，以及与你将使用的语法类似的某些属性路径字符串：
 
-- 对进行动画处理[**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.translatetransform.x)的值[**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)，如应用于[**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform): `(UIElement.RenderTransform).(TranslateTransform.X)`
-- 对进行动画处理[**颜色**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)内[**GradientStop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop)的[**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)，如应用于[**填充**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill): `(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
-- 对进行动画处理[**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.translatetransform.x)的值[**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)，即 1 4 中的转换[**TransformGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TransformGroup)，如应用于[**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform):`(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)`
+- 对进行动画处理[ **X** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.translatetransform.x)的值[ **TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)，如应用于[ **RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform): `(UIElement.RenderTransform).(TranslateTransform.X)`
+- 对进行动画处理[**颜色**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)内[ **GradientStop** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop)的[ **LinearGradientBrush** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)，如应用于[**填充**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill): `(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
+- 对进行动画处理[ **X** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.translatetransform.x)的值[ **TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)，即 1 4 中的转换[ **TransformGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TransformGroup)，如应用于[ **RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform):`(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)`
 
 你将发现某些示例使用方括号来包含数字。 这是一种索引器。 它指示它前面的属性名称具有用作值的一个集合，并且你需要该集合中的一项（按照从零开始的索引标识）。
 
@@ -108,8 +108,8 @@ ms.locfileid: "67320838"
 Windows 运行时动画系统具有情节提要动画可以应用于的三种特定类型：
 
 -   [**双精度**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN)，可与任何进行动画处理[ **DoubleAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation)
--   [**点**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)，可与任何进行动画处理[**PointAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointAnimation)
--   [**颜色**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)，可与任何进行动画处理[**ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation)
+-   [**点**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)，可与任何进行动画处理[ **PointAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointAnimation)
+-   [**颜色**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)，可与任何进行动画处理[ **ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation)
 
 对于对象引用值，还存在通用化 [**Object**](https://docs.microsoft.com/dotnet/api/system.object?redirectedfrom=MSDN) 动画类型，我们将在后面部分对此进行讨论。
 
@@ -265,7 +265,7 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 作为一名应用开发人员，你还可以选择应用应用级设置，该设置始终禁用从属动画，甚至禁用其中 **EnableDependentAnimation** 为 **true** 的那些动画。 请参阅 [**Timeline.AllowDependentAnimations**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.allowdependentanimations)。
 
 > [!TIP]
-> 如果您使用动画窗格在 Blend for Visual Studio 2017 中，每当您试图将依赖的动画应用于可视状态属性，将在设计器中显示警告。 在生成输出或错误列表中，不会显示警告。 如果要手动编辑 XAML，设计器不会显示一条警告。 在运行时调试时，输出窗格的调试输出将显示一条警告，动画不是独立且将跳过。
+> 如果您使用动画窗格在 Blend for Visual Studio 2019，每当您试图将依赖的动画应用于可视状态属性，将在设计器中显示警告。 在生成输出或错误列表中，不会显示警告。 如果要手动编辑 XAML，设计器不会显示一条警告。 在运行时调试时，输出窗格的调试输出将显示一条警告，动画不是独立且将跳过。
 
 
 ## <a name="starting-and-controlling-an-animation"></a>启动动画和控制动画
