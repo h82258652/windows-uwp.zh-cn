@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, 调试, 测试, 性能
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bd1c15a971beca0b0015e774865808310138fd0
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: c75eec01a41d31270e55b0da6f11ed38c971e8cb
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713820"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820327"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和调试 UWP 应用
 
@@ -65,7 +65,7 @@ Microsoft Visual Studio，可部署和调试位于使用不同的 Windows 10 设
 
 ![“远程连接”对话框](images/debug-remote-connections.png)
 
-若要返回到此对话框，可以打开项目属性，然后转到“调试”  选项卡。从此处，选择“远程计算机:”  旁边的“查找” 
+若要返回到此对话框，可以打开项目属性，然后转到“调试”  选项卡。从此处，选择“远程计算机:”旁边的“查找” 
 
 ![“调试”选项卡](images/debug-remote-machine-config.png)
 
@@ -98,10 +98,10 @@ Microsoft Visual Studio，可部署和调试位于使用不同的 Windows 10 设
 
 ## <a name="passing-command-line-debug-arguments"></a>传递命令行调试参数
 
-在 Visual Studio 2017 中，可以在开始调试 UWP 应用程序时传递命令行调试参数。 可以通过 [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application) 类的 **OnLaunched** 方法中的 *args* 参数访问命令行调试参数。 若要指定命令行调试参数，请打开项目的属性并导航到**调试**选项卡。
+在 Visual Studio 2019，可以传递命令行调试参数，在开始调试 UWP 应用程序时。 可以通过 [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application) 类的 **OnLaunched** 方法中的 *args* 参数访问命令行调试参数。 若要指定命令行调试参数，请打开项目的属性并导航到**调试**选项卡。
 
 > [!NOTE]
-> 这在适用于 C#、VB 和 C++ 的 Visual Studio 2017（版本 15.1）中可用。 JavaScript 在 Visual Studio 2017 的更高版本中可用。 命令行调试参数可用于所有部署类型（模拟器除外）。
+> 这在适用于 C#、VB 和 C++ 的 Visual Studio 2017（版本 15.1）中可用。 更高版本中提供了 JavaScript。 命令行调试参数可用于所有部署类型（模拟器除外）。
 
 对于 C# 和 VB UWP 项目，你会在**启动选项**下看到**参数命令行:** 字段。
 
