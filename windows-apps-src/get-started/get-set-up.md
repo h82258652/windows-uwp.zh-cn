@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d0f3e7ca98f01750d7d05cc06b56783e3b32359
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 30ffec0f2a5e771e649eda6240d9e7ef90f50890
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564458"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318794"
 ---
 # <a name="get-set-up"></a>准备工作
 
@@ -34,7 +34,7 @@ Microsoft Visual Studio 2019 可帮助你设计、编码、测试和调试应用
 
 ![适用于 UWP 的 Visual Studio 工具](images/vs-2017-community-setup.png)
 
-需要 Visual Studio 方面的帮助吗？ 请参阅 [Visual Studio 入门](https://www.visualstudio.com/vs/getting-started)。
+需要 Visual Studio 方面的帮助吗？ 请参阅 [Visual Studio 入门](https://visualstudio.microsoft.com/vs/getting-started/)。
 
 如果你已开始使用 Visual Studio，但发现缺少部分组件，可以通过*新建项目*对话框再次启动安装程序：
 

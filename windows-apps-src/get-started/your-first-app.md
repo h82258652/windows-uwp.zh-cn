@@ -6,12 +6,12 @@ ms.date: 01/25/2017
 ms.topic: article
 keywords: Windows 10, uwp, 第一个应用, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e42f627624cb559a84b7da73958f7aa93b0fee2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c6f66d90e96b0dfe941e4311ebf79cd3b9b5f4ae
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564548"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318752"
 ---
 # <a name="create-your-first-app"></a>创建你的第一个应用
 
@@ -65,7 +65,7 @@ ms.locfileid: "64564548"
 
 Web 应用可以作为托管的 Web 应用轻松地打包到 UWP 框架中，并且可在 Microsoft Store 中进行升级。
 
-* [托管的 Web 应用](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
+* [托管的 Web 应用](https://developer.microsoft.com/windows/pwa)
 * [将 Web 应用程序转换为 UWP 应用](../porting/hwa-create-windows.md)
 
 

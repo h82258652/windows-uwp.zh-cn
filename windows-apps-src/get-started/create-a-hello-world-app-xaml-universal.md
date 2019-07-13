@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, uwp, 第一个应用, Hello World
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a7f0302dfdc9f9fa980f0fe93a3371328f9e5c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 65dfc7b5f9a870f3ccdd5c0c046b996a01c06a00
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66367436"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321210"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>创建“Hello, world”应用 \(XAML\)
 
@@ -40,7 +40,7 @@ ms.locfileid: "66367436"
 
 
 
-## <a name="step-1-create-a-new-project-in-visual-studio"></a>第 1 步：在 Visual Studio 中创建新项目。
+## <a name="step-1-create-a-new-project-in-visual-studio"></a>第 1 步：在 Visual Studio 中创建新项目
 
 1.  启动 Visual Studio。
 
@@ -240,8 +240,8 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 ## <a name="see-also"></a>另请参阅
 
 * [你的第一个应用](your-first-app.md)
-* [发布 UWP 应用](https://developer.microsoft.com/store/publish-apps)。
-* [有关开发 UWP 应用的操作方法文章](https://developer.microsoft.com/windows/apps/develop)
+* [发布 UWP 应用](https://docs.microsoft.com/windows/uwp/publish/)。
+* [有关开发 UWP 应用的操作方法文章](https://docs.microsoft.com/windows/uwp/develop/)
 * [适用于 UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
 * [什么是通用 Windows 应用？](universal-application-platform-guide.md)
 * [注册 Windows 帐户](sign-up.md)

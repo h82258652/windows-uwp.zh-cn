@@ -5,12 +5,12 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: webvr, edge, web 开发, babylon, babylonjs, babylon.js, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d8029752790e19adc5eb4266615372fb346e001
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 5f212e4e06035134b0ac5b5ea69381ed0d985783
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63798204"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321164"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>将 WebVR 支持添加到 3D Babylon.js 游戏
 
@@ -23,7 +23,7 @@ ms.locfileid: "63798204"
 </iframe>
 
 这是一个 3D 游戏，在平面屏幕上效果很好，但在 VR 中将如何？
-在此教程中，我们将演练实现此想法并使用 WebVR 运行的几个步骤。 我们将使用可以在 Microsoft Edge 中利用 WebVR 附加支持的 [Windows Mixed Reality](https://developer.microsoft.com/en-us/windows/mixed-reality) 耳机。 我们将这些更改应用于游戏后，你还可以期待在支持 WebVR 的其他浏览器/耳机组合中使用。
+在此教程中，我们将演练实现此想法并使用 WebVR 运行的几个步骤。 我们将使用可以在 Microsoft Edge 中利用 WebVR 附加支持的 [Windows Mixed Reality](https://developer.microsoft.com/mixed-reality) 耳机。 我们将这些更改应用于游戏后，你还可以期待在支持 WebVR 的其他浏览器/耳机组合中使用。
 
 
 
@@ -132,12 +132,12 @@ navigator.getVRDisplays().then(function (displays) {
 
 ## <a name="creating-and-selecting-the-initial-camera"></a>创建和选择初始摄像头
 
-有了 Babylon.js，可以使用 [`WebVRFreeCamera`](https://doc.babylonjs.com/classes/3.1/webvrfreecamera) 快速添加 WebVR。 此摄像头可以采取键盘输入，支持使用 VR 耳机来控制你的“头”旋转。
+有了 Babylon.js，可以使用 [`WebVRFreeCamera`](https://doc.babylonjs.com/api/classes/babylon.webvrfreecamera) 快速添加 WebVR。 此摄像头可以采取键盘输入，支持使用 VR 耳机来控制你的“头”旋转。
 
 
 ### <a name="step-1-checking-for-headsets"></a>第 1 步：检查耳机
 
-对于我们的回退摄像头，我们将使用原始游戏中当前使用的 [`UniversalCamera`](https://doc.babylonjs.com/classes/3.1/universalcamera)。
+对于我们的回退摄像头，我们将使用原始游戏中当前使用的 [`UniversalCamera`](https://doc.babylonjs.com/api/classes/babylon.universalcamera)。
 
 我们将检查 `headset` 变量，以确定是否可以使用 `WebVRFreeCamera` 摄像头。
 

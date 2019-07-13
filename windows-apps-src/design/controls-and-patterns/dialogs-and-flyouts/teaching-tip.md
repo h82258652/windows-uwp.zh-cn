@@ -10,18 +10,18 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ea4dc1d77c5cf7199d084d4646b5862599a1d54
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: dc696c9a57e84e2caade6a2623a72a6048b65621
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63794367"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319099"
 ---
 # <a name="teaching-tip"></a>教学提示
 
 教学提示是一个提供上下文信息的半持久型浮出控件，其中可显示丰富的内容。 它通常用于通知、提醒以及教授用户可改进用户体验的重要功能和新功能。
 
- 重要的 API：[TeachingTip 类](https://docs.microsoft.com/en-us/uwp/api/microsoft.ui.xaml.controls.teachingtip)
+ 重要的 API：[TeachingTip 类](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.teachingtip?view=winui-2.2)
 
 教学提示可能是轻型消除提示，或需要显式操作才能关闭。 教学提示可通过其尾部指明作为其目标的特定 UI 元素，也可在没有尾部或目标的情况下使用。
 

@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 12 月
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a79edb39cc4bfa5794d79d68f4fb8d5b0e976105
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c715a48e0f9d6dea5939e6363441b0300544c252
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63806041"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321908"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>2017 年 12 月 Windows 开发人员文档中的新增功能
 
@@ -44,7 +44,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="microsoft-collaborate"></a>Microsoft Collaborate
 
-Microsoft Collaborate 门户提供广泛的工具和服务，旨在通过分享工程系统工作项（bug、功能请求等）以及分配内容（版本、文档、规范）来简化 Microsoft 生态系统中的工程协作。 [了解详情](https://docs.microsoft.com/en-us/collaborate)。
+Microsoft Collaborate 门户提供广泛的工具和服务，旨在通过分享工程系统工作项（bug、功能请求等）以及分配内容（版本、文档、规范）来简化 Microsoft 生态系统中的工程协作。 [了解详情](https://docs.microsoft.com/collaborate/)。
 
 ![合作伙伴中心内的 Microsoft Collaborate](images/microsoft_collaborate_screenshot.PNG)
 
@@ -52,7 +52,7 @@ Microsoft Collaborate 门户提供广泛的工具和服务，旨在通过分享�
 
 Visual Studio 2017 第 15.5 版已更新 **Windows 应用程序包项目**模板，因此更方便添加 UWP 项目。 不再需要使用基于 JavaScript 的程序包项目，然后手动调整程序包清单。  
 
-请参阅[使用 Visual Studio 创建应用包](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)获取有关如何使用新模板打包桌面应用程序的指南。
+请参阅[使用 Visual Studio 创建应用包](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)获取有关如何使用新模板打包桌面应用程序的指南。
 
 请参阅[使用现代 UWP 组件扩展桌面应用程序](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend)获取有关如何将 UWP 项目添加到程序包的指南。
 

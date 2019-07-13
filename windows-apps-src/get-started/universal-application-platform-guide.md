@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: 37207d4ce65551a7bdd33d57f72f3fa6a0a6185d
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8b1f6e0e04cdf81512918e0cd3e33ec0f93e2245
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66370701"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321001"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>什么是通用 Windows 平台 (UWP) 应用？
 
@@ -121,13 +121,12 @@ Microsoft 的设计系统名为 Fluent。 Fluent Design 系统是一套结合了
 
 - 使用[适用于 UWP 应用的导航设计基础知识](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)设计你的工作流，以适应移动设备、小屏幕和大屏幕设备。 [设置你的用户界面布局](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)来响应不同的屏幕大小和分辨率。
 
-- 请考虑如何容纳多种输入类型。 请参阅[交互指南](https://developer.microsoft.com/windows/design/inputs-devices)，了解用户如何使用 [Cortana](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-design-guidelines)、[语音](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)、[触摸交互](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction)、[触摸键盘](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)等与你的应用交互。  或请参阅[文本和文本输入指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/text-controls)，以获取更多的传统交互体验。
+- 请考虑如何容纳多种输入类型。 请参阅[交互指南](https://docs.microsoft.com/windows/uwp/design/layout/index)，了解用户如何使用 [Cortana](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-design-guidelines)、[语音](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)、[触摸交互](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction)、[触摸键盘](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)等与你的应用交互。  或请参阅[文本和文本输入指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/text-controls)，以获取更多的传统交互体验。
 
 ### <a name="add-services"></a>添加服务
 
 - 使用[云服务](https://go.microsoft.com/fwlink/?LinkId=526377)跨设备同步。
 - 了解如何[连接到 Web 服务](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))以支持应用体验。
-- 了解如何[将 Cortana 添加到应用](https://mva.microsoft.com/training-courses/integrating-cortana-in-your-apps-8487?l=20D3s5Xz_5904984382)以使应用能够响应语音命令。
 - 将[推送通知](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)和[应用内购买](https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases)包含在规划中。 这些功能应该能够跨设备运行。
 
 ### <a name="submit-your-app-to-the-store"></a>向应用商店提交应用
@@ -142,7 +141,7 @@ Microsoft 的设计系统名为 Fluent。 Fluent Design 系统是一套结合了
 
 - 了解如何使用[用户活动](https://blogs.windows.com/buildingapps/2017/12/19/application-engagement-windows-timeline-user-activities/#tHuZ6tLPtCXqYKvw.97)，让应用中的用户活动显示在 Windows 时间线和 Cortana 的“Pick Up Where I Left Off”功能中。
 - 了解如何使用[适用于 UWP 应用的磁贴、锁屏提醒和通知](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/)。
-- 有关适用于 UWP 应用的 Win32 API 的完整列表，请参阅 [UWP 应用的 API 集](https://docs.microsoft.com/previous-versions//mt186421(v=vs.85))和 [UWP 应用的 Dll](https://docs.microsoft.com/previous-versions//mt186422(v=vs.85))。
+- 有关适用于 UWP 应用的 Win32 API 的完整列表，请参阅 [UWP 应用的 API 集](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85))和 [UWP 应用的 Dll](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85))。
 - 请参阅 [.NET 中的通用 Windows 应用](https://devblogs.microsoft.com/dotnet/universal-windows-apps-in-net/)查看编写 .NET UWP 应用的概述。
 - 有关可以在 UWP 应用中使用的 .NET 类型的列表，请参阅[适用于 UWP 应用的 .NET](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
 - [使用 .NET Native 编译应用](https://docs.microsoft.com/dotnet/framework/net-native/)

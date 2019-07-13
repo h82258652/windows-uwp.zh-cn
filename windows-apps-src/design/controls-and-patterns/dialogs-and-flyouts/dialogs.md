@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1277d9089e900451ac4c537805079ff479f808fa
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 67ba9f5c9bc4a5e723eb2696d88804df5300eda0
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66748446"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468988"
 ---
 # <a name="dialog-controls"></a>对话框控件
 
@@ -254,7 +254,7 @@ private async void DisplaySubscribeDialog()
 
 > 注意：本部分仅适用于面向 Windows 10 版本 1903 或更高版本的应用。 AppWindow 和 XAML 岛在早期的版本中不可用。 有关版本的详细信息，请参阅[版本自适应应用](../../../debug-test-perf/version-adaptive-apps.md)。
 
-默认情况下，内容对话框相对于根 [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) 按模式显示。 使用 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 或 [XAML 岛](/apps/desktop/modernize/xaml-islands)中的 ContentDialog 时，需要手动将对话框中的 [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) 设置为 XAML 宿主的根。
+默认情况下，内容对话框相对于根 [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) 按模式显示。 使用 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 或 [XAML 岛](/windows/apps/desktop/modernize/xaml-islands)中的 ContentDialog 时，需要手动将对话框中的 [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) 设置为 XAML 宿主的根。
 
 为此，请将 ContentDialog 的 XamlRoot 属性设置为 AppWindow 或 XAML 岛中已包含的某个元素的同一 XamlRoot，如下所示。
 

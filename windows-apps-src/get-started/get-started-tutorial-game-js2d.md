@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d4910a514c9fc1f16c29056319043393506a9e2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 1d485e6e2926f0065e090e7ef9d2bfab0683f396
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66366908"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318819"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>用 JavaScript 创建 UWP 游戏
 
@@ -264,7 +264,7 @@ function animate_clouds()
 2. 必须使用应用提交[清单](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
 3. 必须提交此应用以进行[认证](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)。
 
-有关更多详细信息，请参阅[发布 UWP 应用](https://developer.microsoft.com/en-us/store/publish-apps)。
+有关更多详细信息，请参阅[发布 UWP 应用](https://docs.microsoft.com/windows/uwp/publish/)。
 
 ## <a name="suggestions-for-other-features"></a>其他功能建议。
 

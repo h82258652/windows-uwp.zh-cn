@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 入门, uwp, windows 10, 学习轨迹, 文件, 文件 io, 读取文件, 写入文件, 创建文件, 写入文本, 读取文本
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5480638e201dca8a5eb5363d7a5944422c626f67
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 29cfeef852f240548f1cd961f73766346da7afa4
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66366893"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321135"
 ---
 # <a name="work-with-files"></a>处理文件
 
@@ -145,4 +145,4 @@ UWP 应用必须通过在其清单中添加相应的功能来声明访问特定�
 | [文件访问示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | 展示如何创建、读取、写入、复制和删除文件。 |
 | [文件选取器示例](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | 展示如何通过让用户使用 UI 选择文件和文件夹来访问它们，以及如何保存文件，以便用户可以指定要保存文件的名称、文件类型和位置。 |
 | [JSON 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | 展示如何使用 [Windows.Data.Json 命名空间](https://docs.microsoft.com/uwp/api/Windows.Data.Json)编码和解码 JavaScript 对象表示法 (JSON) 的对象、数组、字符串、数字和布尔值。 |
-| [其他代码示例](https://developer.microsoft.com//windows/samples) | 在类别下拉列表中选择**文件、文件夹和库**。 |
+| [其他代码示例](https://developer.microsoft.com/windows/samples) | 在类别下拉列表中选择**文件、文件夹和库**。 |

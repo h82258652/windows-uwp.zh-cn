@@ -5,12 +5,12 @@ ms.date: 11/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 实验性, api
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d6e236368134086081141e220088358f4897033
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 0e564d0bf7dc2acb3ffa05eaaf70def63a0908cd
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63788144"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321976"
 ---
 # <a name="experimental-apis"></a>实验性 API
 
@@ -31,4 +31,4 @@ IntelliSense 会告知你 API 是否为实验性 API。 在使用实验性 API �
 
 ## <a name="providing-feedback"></a>提供反馈
 
-如果已试用实验性 API，并且想要提供反馈，请使用 [Windows 反馈中心](https://support.microsoft.com/en-us/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)中的“开发人员平台”类别  。
+如果已试用实验性 API，并且想要提供反馈，请使用 [Windows 反馈中心](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub)中的“开发人员平台”类别  。

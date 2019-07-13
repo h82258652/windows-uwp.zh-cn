@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 43423bc1475e446fcc0c6ab3f0d65b5a844d19d2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 97407ec48eaac3415980b9313092b21e9532250a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66370682"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321113"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>生成复杂的通用 Windows 平台 (UWP) 应用
 
@@ -220,7 +220,7 @@ ms.locfileid: "66370682"
 
 ![应用的电脑和移动设备设计](images/ux-budgettracker1-md-notablet.png)
 
-有关针对不同屏幕大小进行设计的详细信息，请参阅[响应式设计的屏幕大小和断点](https://docs.microsoft.com/en-us/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)。
+有关针对不同屏幕大小进行设计的详细信息，请参阅[响应式设计的屏幕大小和断点](https://docs.microsoft.com/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)。
 
 ## <a name="make-a-good-first-impression"></a>留下良好的第一印象
 
@@ -238,4 +238,4 @@ ms.locfileid: "66370682"
 
 在进行更深层次的应用开发之前，应该根据指南、用户印象以及要求验证你的设计或原型，以避免以后返工。 每个功能都有一组可帮助你优化应用的 UX 指南以及一组 Store 要求，在 Microsoft Store 中发布应用时必须满足这些要求。 你可以使用 [Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)测试对应用商店要求的技术合规性。 还可以使用 Microsoft Visual Studio 中的性能工具以确保你在所有情况下都为用户提供极佳体验。
 
-使用 [UWP 应用的详细 UX 指南](https://developer.microsoft.com/windows/design)确保你专注于重要功能。 使用 [Visual Studio 性能工具](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015)分析每个应用方案的性能。
+使用 [UWP 应用的详细 UX 指南](https://developer.microsoft.com/windows/apps/design)确保你专注于重要功能。 使用 [Visual Studio 性能工具](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015)分析每个应用方案的性能。

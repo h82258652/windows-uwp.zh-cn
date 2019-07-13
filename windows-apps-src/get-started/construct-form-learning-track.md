@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 入门, uwp, windows 10, 学习轨迹, 布局, 表单
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cd3fb1c294ac81f42bb53c23d307eed49a6708fd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 2e64392e1de5f6061b802acc0a2eed81c3e750fb
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564579"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318809"
 ---
 # <a name="create-and-customize-a-form"></a>创建和自定义表单
 
@@ -182,4 +182,4 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 | [自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md) | 对于自适应布局和响应式设计的分步指导体验。 |
 | [客户订单数据库](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | 了解布局和表单在多页企业示例中的应用。 |
 | [XAML 控件库](https://github.com/Microsoft/Xaml-Controls-Gallery) | 了解一些精选的 XAML 控件及其实现方式。 |
-| [其他代码示例](https://developer.microsoft.com//windows/samples) | 在类别下拉列表中选择**控件、布局和文本**，以查看相关代码示例。 |
+| [其他代码示例](https://developer.microsoft.com/windows/samples) | 在类别下拉列表中选择**控件、布局和文本**，以查看相关代码示例。 |

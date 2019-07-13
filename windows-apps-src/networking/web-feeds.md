@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a9d3b4b9b404ab2c0828ea302f0c564ae1c8e7b4
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: bc422f57cdc268ea517aff729a9c3e57c80acf69
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66372787"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320614"
 ---
 # <a name="rssatom-feeds"></a>RSS/Atom 源
 
@@ -60,7 +60,7 @@ UWP 中的网络隔离功能使开发人员能够控制和限制 UWP 应用的�
 
 现在，我们将查看一些代码，用于演示如何检索订阅源，然后显示订阅源所包含的每个单独项。 在我们可以配置和发送请求前，我们将定义一些将在操作期间使用的变量，并初始化 [**SyndicationClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationClient) 的实例，该实例定义我们将用于检索和显示订阅源的方法和属性。
 
-如果传递给 [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) 构造函数的 *uriString* 不是有效 URI，该构造函数将引起异常。 因此，我们使用 try/catch 块验证 *uriString*。
+如果传递给 [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_) 构造函数的 *uriString* 不是有效 URI，该构造函数将引起异常。 因此，我们使用 try/catch 块验证 *uriString*。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -93,13 +93,13 @@ try {
 }
 ```
 
-接下来，我们通过设置所有需要的服务器凭据（[**ServerCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.servercredential) 属性）、代理凭据（[**ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.proxycredential) 属性）和 HTTP 标头（[**SetRequestHeader**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.setrequestheader) 方法）来配置请求。 已配置基本请求参数，即有效的 [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) 对象，它是使用应用提供的订阅源 URI 字符串创建的。 然后，**Uri** 对象将传递给 [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 函数以请求订阅源。
+接下来，我们通过设置所有需要的服务器凭据（[**ServerCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.servercredential) 属性）、代理凭据（[**ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.proxycredential) 属性）和 HTTP 标头（[**SetRequestHeader**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.setrequestheader) 方法）来配置请求。 已配置基本请求参数，即有效的 [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri) 对象，它是使用应用提供的订阅源 URI 字符串创建的。 然后，**Uri** 对象将传递给 [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 函数以请求订阅源。
 
 假设所需订阅源内容已返回，示例代码将在每个订阅源项上循环，从而调用 **displayCurrentItem**（将在下面定义），以通过 UI 以列表形式显示这些项及其内容。
 
 当你调用大部分异步网络方法时，必须编写代码以处理异常。 异常处理程序可以检索关于异常原因的更详细的信息，以便更好地了解此次失败，然后作出正确的决策。
 
-如果不能与 HTTP 服务器建立连接，或者 [**Uri**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 对象没有指向有效的 AtomPub 或 RSS 订阅源，[**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) 方法会引发异常。 如果发生错误，Javascrip 示例代码将使用 **onError** 函数捕捉任何异常，并打印出关于异常的更详细的信息。
+如果不能与 HTTP 服务器建立连接，或者 [**Uri**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 对象没有指向有效的 AtomPub 或 RSS 订阅源，[**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.foundation.uri) 方法会引发异常。 如果发生错误，Javascrip 示例代码将使用 **onError** 函数捕捉任何异常，并打印出关于异常的更详细的信息。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 232da8afeccf5d82f65b51ae0a40905b3433d412
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e975c47ae783fe9984950cf30cc82844b344aa7c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364534"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319275"
 ---
 # <a name="pivot"></a>Pivot
 
@@ -145,7 +145,7 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 
 你可以使用 [LeftHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.leftheader) 和 [RightHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.rightheader) 属性将其他控件添加到透视表标题。
 
-例如，可在透视表的 RightHeader 中添加 [CommandBar](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/app-bars)。
+例如，可在透视表的 RightHeader 中添加 [CommandBar](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/app-bars)。
 
 ```xaml
 <Pivot>

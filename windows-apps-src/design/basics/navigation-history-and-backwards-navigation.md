@@ -3,16 +3,16 @@ Description: 了解如何在 UWP 应用中实现向后导航以遍历用户的�
 title: 导航历史记录和向后导航（Windows 应用）
 template: detail.hbs
 op-migration-status: ready
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e3ab6760ed3eff1d284e51205de261796db0fb2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: de2e70a09f75ed5380a47bed225c0689eb029e89
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63799156"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713801"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP 应用的导航历史记录和向后导航
 
@@ -31,7 +31,17 @@ ms.locfileid: "63799156"
 ![应用的 UI 的左上角的后退按钮](images/back-nav/BackEnabled.png)
 
 ```xaml
-<Button Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+<Page>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+
+    </Grid>
+</Page>
 ```
 
 如果你的应用有顶部 [CommandBar](../controls-and-patterns/app-bars.md)，高度为 44px 的 Button 控件将无法很好地与 48px AppBarButtons 对齐。 但是，为了避免不一致，请在 48px 边界内对齐 Button 控件的顶部。
@@ -39,8 +49,23 @@ ms.locfileid: "63799156"
 ![顶部命令栏上的后退按钮](images/back-nav/CommandBar.png)
 
 ```xaml
-<Button VerticalAlignment="Top" HorizontalAlignment="Left" 
-Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+<Page>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <CommandBar>
+            <CommandBar.Content>
+                <Button Style="{StaticResource NavigationBackButtonNormalStyle}" VerticalAlignment="Top"/>
+            </CommandBar.Content>
+        
+            <AppBarButton Icon="Delete" Label="Delete"/>
+            <AppBarButton Icon="Save" Label="Save"/>
+        </CommandBar>
+    </Grid>
+</Page>
 ```
 
 为了将应用内四处移动的 UI 元素最小化，请在 Backstack 中没有任何内容时显示一个禁用的后退按钮（参阅下面的代码示例）。 但是，如果希望应用从不会具有 backstack，则完全不需要显示后退按钮。
@@ -287,17 +312,6 @@ bool App::On_BackRequested()
 如果应用继续使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)，则系统 UI 会在标题栏中呈现系统后退按钮。 （后退按钮的外观和用户交互与以前版本相比并无变化。）
 
 ![标题栏后退按钮](images/nav-back-pc.png)
-
-### <a name="system-back-bar"></a>系统后退栏
-
-> [!NOTE]
-> “系统后退栏”只是描述，不是正式名称。
-
-系统后退栏是在选项卡区带和应用的内容区域之间插入的“区带”。 此区带横跨整个应用，后退按钮位于左边缘。 其具有 32 像素的垂直高度以确保后退按钮有足够的触摸目标大小。
-
-系统后退栏基于后退按钮的可见性动态显示。 当后退按钮可见时，系统后退栏插入，将应用内容下移到比选项卡区带低 32 像素。 当后退按钮隐藏时，系统后退栏动态删除，将应用内容上移 32 像素以紧挨选项卡区带。 若要避免应用的 UI 上移或下移，我们建议绘制[应用内后退按钮](#back-button)。
-
-[标题栏自定义](../shell/title-bar.md)会延续到应用选项卡和系统后退栏。 如果应用使用 [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar) 指定背景色和前景色属性，这些颜色将应用到选项卡和系统后退栏。
 
 ## <a name="guidelines-for-custom-back-navigation-behavior"></a>自定义后退导航行为指南
 

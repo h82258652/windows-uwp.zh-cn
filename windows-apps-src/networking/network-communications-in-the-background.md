@@ -6,12 +6,12 @@ ms.date: 06/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b0246e338c13027f8afc8da4aa919faa0911b39c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 4fcf2e1fa39ae1e40edc07c9ca3df81386c17823
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66371625"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319935"
 ---
 # <a name="network-communications-in-the-background"></a>后台网络通信
 不是在前台操作的情况下，若要继续进行网络通信，应用可以使用后台任务和以下两个选项之一。
@@ -169,7 +169,7 @@ case SocketActivityTriggerReason.SocketClosed:
 
 某些特殊的注意事项影响在 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 上接收数据包的请求的处理方式。 尤其在将 **StreamWebSocket** 与 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 结合使用时，应用必须使用用于处理读取操作的原始异步模式，而不是 C# 和 VB.NET 中的 **await** 模型或 C++ 中的 Task。 本部分后面的代码示例中说明了原始异步模式。
 
-使用原始异步模式，Windows 可以将 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 的后台任务上的 [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.) 方法与接收完成回调的返回同步。 在完成回调返回后，将调用 **Run** 方法。 这将确保应用已在调用 **Run** 方法前收到数据/错误。
+使用原始异步模式，Windows 可以将 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 的后台任务上的 [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法与接收完成回调的返回同步。 在完成回调返回后，将调用 **Run** 方法。 这将确保应用已在调用 **Run** 方法前收到数据/错误。
 
 请务必注意，应用必须在从完成回调返回控件前发布另一个读取操作。 另请务必注意，[**DataReader**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 无法直接与 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 传输一起使用，因为这将中断上面所述的同步。 不支持在传输顶部直接使用 [**DataReader.LoadAsync**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.loadasync) 方法。 相反，[**StreamWebSocket.InputStream**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamwebsocket.inputstream) 属性上的 [**IBuffer**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IBuffer)（由 [**IInputStream.ReadAsync**](https://docs.microsoft.com/uwp/api/windows.storage.streams.iinputstream.readasync) 方法返回）可以在稍后传递给 [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.frombuffer) 方法以进行进一步处理。
 
@@ -216,7 +216,7 @@ void PostSocketRead(int length)
 }
 ```
 
-在调用 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 的后台任务上的 [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.) 方法前，将保证引发读取完成处理程序。 Windows 已进行内部同步以等待应用从读取完成回调中返回。 应用通常会在读取完成回调中快速处理 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 中的数据或错误。 消息本身会在 **IBackgroundTask.Run** 方法的上下文内部进行处理。 在下面示例中，将通过使用读取完成处理程序将消息插入到其中和后台任务稍后处理的消息队列解释这一点。
+在调用 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 的后台任务上的 [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法前，将保证引发读取完成处理程序。 Windows 已进行内部同步以等待应用从读取完成回调中返回。 应用通常会在读取完成回调中快速处理 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 中的数据或错误。 消息本身会在 **IBackgroundTask.Run** 方法的上下文内部进行处理。 在下面示例中，将通过使用读取完成处理程序将消息插入到其中和后台任务稍后处理的消息队列解释这一点。
 
 以下示例展示读取完成处理程序在 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 上使用用于处理读取操作的原始同步模式。
 
@@ -483,7 +483,7 @@ private void SetupHttpRequestAndSendToHttpServer()
 
 某些特殊的注意事项影响在 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 上发送 HTTP 请求以启动接收响应的请求的处理方式。 尤其在将 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 与 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 结合使用时，你的应用必须使用处理发送操作的 Task 而不是 **await** 模型。
 
-使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637)，不会将 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 的后台任务上的 [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.) 方法与接收完成回调的返回同步。 出于此原因，应用仅可以在 **Run** 方法中使用阻止 HttpResponseMessage 技术并等待，直至收到整个响应。
+使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637)，不会将 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 的后台任务上的 [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法与接收完成回调的返回同步。 出于此原因，应用仅可以在 **Run** 方法中使用阻止 HttpResponseMessage 技术并等待，直至收到整个响应。
 
 结合使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 和 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 明显不同于 [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)、[**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 传输。 由于 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 代码，通过 Task 将 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 接收回调提供给应用。 这意味着，**ControlChannelTrigger** 推送通知任务会在将数据或错误调度到应用后立即引发。 在下面的示例中，代码将 [HttpClient.SendAsync](https://go.microsoft.com/fwlink/p/?linkid=241637) 方法返回的 responseTask 存储在推送通知任务将选取和内联处理的全局存储中。
 

@@ -5,12 +5,12 @@ keywords: 托管 Web 应用, HWA, REST API, 单页应用, SPA
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c38a7182cd27abcfb0de66c721f0e06b95b695d5
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b1b837d6585507311dc2246d42f3094ce8b07421
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66366987"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321168"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>创建具有 REST 后端的单页 Web 应用
 
@@ -233,7 +233,7 @@ Swagger 文件 (config\swagger.json) 通过将它定义的每个 URL 路径映�
  - 此 [guess.js](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/data/guess.js?token=ACEfkvY69Zr1AZQ4iXgfCgDxeinT21bBks5ZFhYBwA%3D%3D) 代码到你的 data\guess.js 文件 
  - 此 [new.js](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/data/new.js?token=ACEfkiqeDN0HjZ4-gIKRh3wfVZPSlEmgks5ZFhYPwA%3D%3D) 代码到你的 data\new.js 文件 
 
-为简单起见，我们将我们的游戏板存储在 Node 服务器的全局变量 (`global.board`) 中。 但实际上，你使用云存储（如 Google [Cloud Datastore](https://cloud.google.com/datastore/) 或 Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/)）来让这成为同时支持多个游戏和玩家的可行记忆游戏 API 服务。
+为简单起见，我们将我们的游戏板存储在 Node 服务器的全局变量 (`global.board`) 中。 但实际上，你使用云存储（如 Google [Cloud Datastore](https://cloud.google.com/datastore/) 或 Azure [DocumentDB](https://azure.microsoft.com/services/cosmos-db/)）来让这成为同时支持多个游戏和玩家的可行记忆游戏 API 服务。
 
 请确保你已将所有更改保存在 VS Code 内，并再次启动服务器（VS Code 中按 F5，通过 shell 使用 `npm start`，然后浏览到 [https://localhost:8000](https://localhost:8000)）以测试游戏 API。
 
@@ -284,7 +284,7 @@ Azure 文档将引导你完成：
 
 ### <a name="going-further"></a>深入探索
 
-若要使记忆游戏 API 成为生产应用的可行后端服务，你将需要扩展代码，以支持多个玩家和游戏。 为此，你可能需要为你的 API 探索[身份验证](https://swagger.io/docs/specification/authentication/)（用于管理玩家身份）、[NoSQL 数据库](https://docs.microsoft.com/en-us/azure/documentdb/)（用于跟踪游戏和玩家），以及一些基本[单元测试](https://apigee.com/about/blog/developer/swagger-test-templates-test-your-apis)的使用。
+若要使记忆游戏 API 成为生产应用的可行后端服务，你将需要扩展代码，以支持多个玩家和游戏。 为此，你可能需要为你的 API 探索[身份验证](https://swagger.io/docs/specification/authentication/)（用于管理玩家身份）、[NoSQL 数据库](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/)（用于跟踪游戏和玩家），以及一些基本[单元测试](https://apigee.com/about/blog/api-technology/swagger-test-templates-test-your-apis)的使用。
 
 下面是一些帮助你深入探索的有用资源：
 
@@ -292,7 +292,7 @@ Azure 文档将引导你完成：
 
  - [Azure Web + 移动文档](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
 
- - [Azure DocumentDB 文档](https://docs.microsoft.com/en-us/azure/documentdb/index)
+ - [Azure DocumentDB 文档](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/)
 
 ## <a name="part-ii-build-a-single-page-web-application"></a>第二部分：生成单页 Web 应用程序
 
@@ -575,7 +575,7 @@ Bootstrap 的网格系统允许网格系统折叠为一个垂直列，就像你�
 ### <a name="5-add-a-card-flip-animation-with-css-transforms"></a>5.使用 CSS 变换添加卡片翻转动画
 将 memory\public\stylesheets 中的 style.css 文件替换为 Start 文件夹中的 style.css 文件。
 
-使用 [CSS 变换](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/css/transforms)添加翻转动画将让卡片呈现逼真的 3D 翻转移动。 游戏中的卡片通过使用以下 HTML 结构创建，并以编程方式添加到游戏板（在之前显示的 `drawGameBoard()` 函数中）。
+使用 [CSS 变换](https://developer.mozilla.org/docs/Web/CSS/CSS_Transforms)添加翻转动画将让卡片呈现逼真的 3D 翻转移动。 游戏中的卡片通过使用以下 HTML 结构创建，并以编程方式添加到游戏板（在之前显示的 `drawGameBoard()` 函数中）。
 
 ``` html
 <div class="flipContainer">
@@ -642,6 +642,6 @@ Bootstrap 的网格系统允许网格系统折叠为一个垂直列，就像你�
 
  - [将应用程序开发项目部署到 Azure 网站](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
 
- - [将 Web 应用程序转换为通用 Windows 平台 (UWP) 应用](https://docs.microsoft.com/en-us/windows/uwp/porting/hwa-create-windows)
+ - [将 Web 应用程序转换为通用 Windows 平台 (UWP) 应用](https://docs.microsoft.com/microsoft-edge/progressive-web-apps)
 
- - [发布 Windows 应用](https://developer.microsoft.com/en-us/store/publish-apps)
+ - [发布 Windows 应用](https://docs.microsoft.com/windows/uwp/publish/)

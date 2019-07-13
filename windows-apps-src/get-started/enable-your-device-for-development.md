@@ -3,15 +3,15 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: 启用设备进行开发
 description: 配置 Windows 10 设备进行开发和调试。
 keywords: 入门 开发人员许可证 Visual Studio，开发人员许可证 启用设备
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f927d8bce1e59ba9a8ed9b0f3f08ce3575c6d7bd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 9c1979f8e8232ee3bfd2e2961307608bf8da7836
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66367020"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714148"
 ---
 # <a name="enable-your-device-for-development"></a>启用设备进行开发
 
@@ -56,7 +56,7 @@ ms.locfileid: "66367020"
 
 ### <a name="sideload-apps"></a>旁加载应用
 
-旁加载应用设置通常由需要在未通过 Microsoft Store 认证的托管设备上安装自定义应用的公司或学校使用。 在此情况下，组织通常会强制执行禁用“UWP 应用”设置的策略，如之前的设置页图像中所示  。 组织还会提供旁加载应用所需的证书和安装位置。 有关详细信息，请参阅 TechNet 文章[在 Windows 10 中旁加载应用](https://technet.microsoft.com/library/mt269549.aspx)和 [Microsoft Intune 中的应用部署入门](https://technet.microsoft.com/library/dn646955.aspx)。
+旁加载应用设置通常由需要在未通过 Microsoft Store 认证的托管设备上安装自定义应用的公司或学校使用。 在此情况下，组织通常会强制执行禁用“UWP 应用”设置的策略，如之前的设置页图像中所示  。 组织还会提供旁加载应用所需的证书和安装位置。 有关详细信息，请参阅 TechNet 文章[在 Windows 10 中旁加载应用](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)和 [Microsoft Intune 中的应用部署入门](https://docs.microsoft.com/intune/deploy-use/add-apps)。
 
 设备系列特定信息
 
@@ -94,7 +94,7 @@ ms.locfileid: "66367020"
 
 有关特定于设备的设置说明，请参阅：
 - [适用于台式机的设备门户](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [适用于 HoloLens 的设备门户](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
+- [适用于 HoloLens 的设备门户](https://developer.microsoft.com/mixed-reality)
 - [适用于 IoT 的设备门户](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [适用于移动设备的设备门户](../debug-test-perf/device-portal-mobile.md)
 - [适用于 Xbox 的设备门户](../xbox-apps/device-portal-xbox.md)
@@ -238,8 +238,8 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 ## <a name="see-also"></a>另请参阅
 
 * [你的第一个应用](your-first-app.md)
-* [发布 UWP 应用](https://developer.microsoft.com/store/publish-apps)。
-* [有关开发 UWP 应用的操作方法文章](https://developer.microsoft.com/windows/apps/develop)
+* [发布 UWP 应用](https://docs.microsoft.com/windows/uwp/publish/)。
+* [有关开发 UWP 应用的操作方法文章](https://docs.microsoft.com/windows/uwp/develop/)
 * [适用于 UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
 * [UWP 应用是什么？](universal-application-platform-guide.md)
 * [注册 Windows 帐户](sign-up.md)

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
-ms.openlocfilehash: 64a00c1c281c8cc7ddf427449c92e560668cccad
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a3fa5833d126ea41a6efbf714d2f9dae87eba933
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564526"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318881"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>用 MonoGame 2D 创建 UWP 游戏
 
@@ -698,4 +698,4 @@ if (gameOver)
 
 必须将此应用提交以进行[认证](https://docs.microsoft.com/en-us/windows/uwp/publish/the-app-certification-process)。
 
-有关更多详细信息，请参阅[发布 UWP 应用](https://developer.microsoft.com/en-us/store/publish-apps)。
+有关更多详细信息，请参阅[发布 UWP 应用](https://docs.microsoft.com/windows/uwp/publish/)。

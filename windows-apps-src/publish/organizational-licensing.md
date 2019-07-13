@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 适用于企业的 store, 适用于教育的 store, 组织, 批量许可, 企业, 教育 store, 企业 store, 批量购买, 批量
 localizationpriority: high
-ms.openlocfilehash: b7f0ecc1eb7faec39eaad925ccd6c9d501d39749
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8cfa4d4a18112ef1cad793048399d04835ff4633
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63788396"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320575"
 ---
 # <a name="organizational-licensing-options"></a>组织许可选项
 
@@ -59,7 +59,7 @@ ms.locfileid: "63788396"
 目前，位于某些市场中的开发者帐户可以提供通过适用于企业的 Microsoft 应用商店批量购置的付费应用。 
 
 > [!NOTE]
-> 在某些市场中，同一价格段内的应用在适用于企业的 Microsoft Store 或适用于教育的 Microsoft Store 中显示的价格可能不同于 Microsoft Store 中向零售客户显示的价格。 组织购买应用的收益付款计算方式与消费者购买应用的收益付款计算方式相同。 有关详细信息，请参阅[获得收入](getting-paid-apps.md)和[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。 有关支持适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store 的市场列表，请参阅[适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store 概述](https://technet.microsoft.com/itpro/windows/manage/windows-store-for-business-overview#supported-markets)。
+> 在某些市场中，同一价格段内的应用在适用于企业的 Microsoft Store 或适用于教育的 Microsoft Store 中显示的价格可能不同于 Microsoft Store 中向零售客户显示的价格。 组织购买应用的收益付款计算方式与消费者购买应用的收益付款计算方式相同。 有关详细信息，请参阅[获得收入](getting-paid-apps.md)和[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。 有关支持适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store 的市场列表，请参阅[适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store 概述](https://docs.microsoft.com/windows/manage/windows-store-for-business-overview#supported-markets)。
 
 如果下面未列出你所在的国家或地区，你的付费应用当前将不能在适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store 中提供。 如果是这样，你为付费应用选择的组织许可可能在以后应用，因为我们可能会在将来添加对来自其他开发者帐户市场的提交的支持。
 
