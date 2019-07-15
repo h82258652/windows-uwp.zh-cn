@@ -840,6 +840,8 @@
           href: ../cpp-and-winrt-apis/weak-references.md
         - name: 敏捷对象
           href: ../cpp-and-winrt-apis/agile-objects.md
+        - name: 一个简单的 C++WinRT WinUI 示例
+          href: ../cpp-and-winrt-apis/simple-winui-example.md
         - name: C++ 语言
           items:
             - name: 值类别和引用
