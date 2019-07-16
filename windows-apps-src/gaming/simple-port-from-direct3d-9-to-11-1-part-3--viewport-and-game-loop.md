@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, 移植, 游戏循环, direct3d 9, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: bd6a17b5e1684fbee21965158295dba123737bd6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9b3a18d9ee63a2ecded07f8b779195d5274b6210
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367916"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141823"
 ---
 # <a name="port-the-game-loop"></a>移植游戏循环
 
@@ -33,7 +33,7 @@ ms.locfileid: "66367916"
 
 UWP 环境具有更简单的系统。 不再设置传统的窗口，Microsoft Store 游戏使用 DirectX 实现 [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView)。 对于要直接在应用容器内的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 中运行的 DirectX 应用和游戏来说，存在该接口。
 
-> **请注意**   Windows 提供资源，例如源应用程序对象的托管的指针和[ **CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)。 请参阅 [**句柄对象运算符 (^)** ]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx。
+> **请注意**   Windows 提供资源，例如源应用程序对象的托管的指针和[ **CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)。 请参阅[**对象句柄运算符 (^)** ](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)。
 
  
 

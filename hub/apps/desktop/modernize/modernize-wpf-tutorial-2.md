@@ -1,6 +1,6 @@
 ---
 description: 本教程演示如何添加 UWP XAML 用户界面、 创建 MSIX 包和其他新式组件合并到 WPF 应用。
-title: 添加 UWP InkCanvas 控件使用 XAML 群岛
+title: 使用 XAML Islands 添加 UWP InkCanvas 控件
 ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
@@ -8,14 +8,14 @@ author: mcleanbyron
 keywords: windows 10、 uwp、 windows 窗体、 wpf、 xaml 群岛
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 2f8cf18bce7bec880a2cb0bef298c0b565e20208
-ms.sourcegitcommit: 1eec0e4fd8a5ba82803fdce6e23fcd01b9488523
+ms.openlocfilehash: 35b6886389640c7960c4120772c169161779ab68
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67420094"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141839"
 ---
-# <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>第 2 部分：添加 UWP InkCanvas 控件使用 XAML 群岛
+# <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>第 2 部分：使用 XAML Islands 添加 UWP InkCanvas 控件
 
 这是本教程演示如何实现名为 Contoso 费用的示例 WPF 桌面应用的现代化的第二部分。 教程、 先决条件和说明下载示例应用程序的概述，请参阅[教程：使 WPF 应用现代化](modernize-wpf-tutorial.md)。 本文假定你已完成[第 1 部分](modernize-wpf-tutorial-1.md)。
 
@@ -38,20 +38,20 @@ ms.locfileid: "67420094"
 
 4. 选择**应用程序清单文件**，其命名**app.manifest**，然后单击**添加**。
 
-5. 在打开清单文件中，找到**兼容性**部分，并识别以下带注释的条目。
+5. 在打开清单文件中，找到**兼容性**部分，并标识以下注释**supportedOS**适用于 Windows 10 的元素。
 
     ```xml
     <!-- Windows 10 -->
     <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
     ```
 
-6. 此项下面添加以下项。
+6. 此元素下添加以下**maxversiontested**元素。
 
     ```xml
     <maxversiontested Id="10.0.18362.0"/>
     ```
 
-7. 取消注释**supportedOS**适用于 Windows 10 的条目。 此部分现在应如下所示。
+7. 取消注释**supportedOS**适用于 Windows 10 的元素。 此部分现在应如下所示。
 
     ```xml
     <!-- Windows 10 -->
@@ -60,7 +60,7 @@ ms.locfileid: "67420094"
     ```
 
     > [!NOTE]
-    > 此项指定了该应用程序需要 Windows 10，版本 1903年 （内部 18362） 或更高版本。 这是支持 XAML 岛的 Windows 10 的第一个版本。 没有此应用程序清单中的条目，则应用将引发运行时异常。
+    > **Maxversiontested**元素指定应用程序需要 Windows 10，版本 1903年 （内部 18362） 或更高版本。 这是支持 XAML 岛的 Windows 10 的第一个版本。 没有此应用程序清单中的条目，则应用将引发运行时异常。 添加此元素后您可能会看到你的项目下生成警告： `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`。 此警告并不表示任何内容是在项目中，错误，则可以忽略它。
 
 8. 在清单文件中，找到以下注释**应用程序**部分。
 
