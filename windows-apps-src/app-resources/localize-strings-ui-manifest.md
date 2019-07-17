@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 23cd899a196fbe3d28b7156890d65e90ac88cdad
-ms.sourcegitcommit: 9f097438937539f94b6a14a09ee65d30f71da9c6
-ms.translationtype: HT
+ms.openlocfilehash: 6412416fe2d73c4fc313a32fdc2929fff9dc51c4
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68223967"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270090"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>对 UI 和应用包清单中的字符串实施本地化
 
@@ -303,7 +303,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 
 1. 使用[GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse)而不是[GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview)时解析代码中的资源，因为没有任何*当前视图*中非打包方案。 如果调用，会发生以下异常[GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview)中非打包方案：*可能不具有 CoreWindow 的线程上创建资源的上下文。*
 1. 使用[MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri)手动生成应用的 resources.pri 文件。
-    - 运行 `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /dq <DEFAULTLANGUAGEQUALIFIER> /of resources.pri`
+    - 运行 `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`
     - &lt;PRICONFIG&gt;必须省略"&lt;打包&gt;"部分，以便在单个 resources.pri 文件中捆绑的所有资源。 如果使用默认[MakePri.exe 配置文件](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration)创建的[createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command)，则需要删除"&lt;打包&gt;"在创建后手动部分。
     - &lt;PRICONFIG&gt;必须包含将您的项目中的所有资源都合并到单个 resources.pri 文件所需的所有相关索引器。 默认值[MakePri.exe 配置文件](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration)创建的[createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command)包括所有索引器。
     - 如果不使用默认配置，请确保启用 PRI 索引器 （查看如何执行此操作的默认配置） 来合并 PRIs 从 UWP 项目的引用，NuGet 引用等，找到位于项目根目录中。
