@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 61525e2a4a088e37184bb93526722e0bf23fbd56
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5837674f2cb20710a59eeac0af59498bf28b197e
+ms.sourcegitcommit: a86d0bd1c2f67e5986cac88a98ad4f9e667cfec5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319811"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68229381"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -64,11 +64,21 @@ steps:
 
 默认模板会尝试使用在.csproj 文件中指定的证书对包进行签名。 如果你想要在生成过程中登录您的包必须具有访问私钥。 否则，禁用签名通过添加参数`/p:AppxPackageSigningEnabled=false`到`msbuildArgs`YAML 文件中的部分。
 
-## <a name="add-your-project-certificate-to-a-repository"></a>将你项目的证书添加到存储库
+## <a name="add-your-project-certificate-to-the-secure-files-library"></a>将你项目的证书添加到安全文件库
 
-管道适用于 Azure 存储库的 Git 和 TFVC 存储库。 如果使用 Git 存储库，请将项目的证书文件添加到存储库，以便生成代理可以对应用包签名。 如果不执行此操作，则 Git 存储库将忽略证书文件。 若要将证书文件添加到你的存储库中，右键单击中的证书文件**解决方案资源管理器**，然后在快捷菜单中，选择**将忽略文件添加到源代码管理**命令。
+应避免提交到存储库如有可能，证书和 git 将其忽略默认情况下。 若要管理安全处理的敏感文件与证书一样，Azure DevOps 支持[保护文件](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops)。
 
-![如何包含证书](images/building-screen1.png)
+若要上传在自动生成的证书：
+
+1. 在 Azure 管道中，展开**管道**在导航窗格中单击**库**。
+2. 单击**保护的文件**选项卡，然后单击 **+ 安全文件**。
+
+    ![如何上传安全文件](images/secure-file1.png)
+
+3. 浏览到证书文件，然后单击**确定**。
+4. 上传证书后，选择它以查看其属性。 下**管道的权限**，启用**以便在所有管道中使用 Authorize**切换。
+
+    ![如何上传安全文件](images/secure-file2.png)
 
 ## <a name="configure-the-build-solution-build-task"></a>配置生成解决方案生成任务
 
@@ -79,10 +89,15 @@ steps:
 |--------------------|---------|---------------|
 | AppxPackageDir | $(Build.ArtifactStagingDirectory)\AppxPackages | 定义要存储生成的项目的文件夹。 |
 | AppxBundlePlatforms | $(Build.BuildPlatform) | 可以定义要包含在绑定中的平台。 |
-| AppxBundle | 始终 | 使用指定的平台的.msix/.appx 文件创建.msixbundle/.appxbundle。 |
+| AppxBundle | Always | 使用指定的平台的.msix/.appx 文件创建.msixbundle/.appxbundle。 |
 | UapAppxPackageBuildMode | StoreUpload | 生成.msixupload/.appxupload 文件和 **_Test**文件夹以进行旁加载。 |
 | UapAppxPackageBuildMode | CI | 生成仅.msixupload/.appxupload 文件。 |
-| UapAppxPackageBuildMode | SideloadOnly | 将生成 **_Test**文件夹以进行旁加载只 |
+| UapAppxPackageBuildMode | SideloadOnly | 将生成 **_Test**仅旁加载的文件夹。 |
+| AppxPackageSigningEnabled | true | 启用包签名。 |
+| PackageCertificateThumbprint | 证书指纹 | 此值**必须**匹配中的签名证书的指纹，或为空字符串。 |
+| PackageCertificateKeyFile | Path | 指向要使用的证书的路径。 这是从安全的文件元数据检索。 |
+
+### <a name="configure-the-build"></a>配置生成
 
 如果你想要使用命令行中，或使用任何其他生成系统生成您的解决方案，请使用这些自变量运行 MSBuild。
 
@@ -92,6 +107,41 @@ steps:
 /p:AppxBundlePlatforms="$(Build.BuildPlatform)"
 /p:AppxBundle=Always
 ```
+
+### <a name="configure-package-signing"></a>配置包签名
+
+MSIX （或 APPX） 程序包进行签名管道需要检索签名证书。 若要执行此操作，添加 DownloadSecureFile 任务之前 VSBuild 任务。
+这将授予你访问的签名证书通过```signingCert```。
+
+```yml
+- task: DownloadSecureFile@1
+  name: signingCert
+  displayName: 'Download CA certificate'
+  inputs:
+    secureFile: '[Your_Pfx].pfx'
+```
+
+接下来，更新引用的签名证书的 VSBuild 任务：
+
+```yml
+- task: VSBuild@1
+  inputs:
+    platform: 'x86'
+    solution: '$(solution)'
+    configuration: '$(buildConfiguration)'
+    msbuildArgs: '/p:AppxBundlePlatforms="$(buildPlatform)" 
+                  /p:AppxPackageDir="$(appxPackageDir)" 
+                  /p:AppxBundle=Always 
+                  /p:UapAppxPackageBuildMode=StoreUpload 
+                  /p:AppxPackageSigningEnabled=true
+                  /p:PackageCertificateThumbprint="" 
+                  /p:PackageCertificateKeyFile="$(signingCert.secureFilePath)"'
+```
+
+> [!NOTE]
+> 有意将 PackageCertificateThumbprint 参数设置为空字符串作为预防措施。 如果指纹在项目中设置，但不匹配的签名证书，生成将失败并出现错误： `Certificate does not match supplied signing thumbprint`。
+
+### <a name="review-parameters"></a>检查参数
 
 使用定义的参数`$()`语法是在生成定义中定义的变量，将在其他的更改生成系统。
 
@@ -131,7 +181,7 @@ steps:
 
 出现此错误是因为，在解决方案级别上，哪个应用应出现在程序包中不明确。 若要解决此问题，请打开每个项目文件，并在第一个的末尾添加以下属性`<PropertyGroup>`元素。
 
-|**Project**|**属性**|
+|**项目**|**属性**|
 |-------|----------|
 |应用|`<AppxBundle>Always</AppxBundle>`|
 |UnitTests|`<AppxBundle>Never</AppxBundle>`|

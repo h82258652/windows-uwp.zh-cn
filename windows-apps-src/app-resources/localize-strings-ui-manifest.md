@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: b6caf2de67b72c01391d47037150d76500a1cb42
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
-ms.translationtype: MT
+ms.openlocfilehash: 23cd899a196fbe3d28b7156890d65e90ac88cdad
+ms.sourcegitcommit: 9f097438937539f94b6a14a09ee65d30f71da9c6
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820302"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68223967"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>对 UI 和应用包清单中的字符串实施本地化
 
@@ -301,23 +301,21 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 
 若要在非打包应用程序中使用的资源，应该做一些事情：
 
-1. 若要支持非打包的方案，请使用[GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse)而不是[GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview)因为没有任何*当前视图*中非打包方案。 如果调用，会发生以下异常[GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview)中非打包方案：*可能不具有 CoreWindow 的线程上创建资源的上下文。*
+1. 使用[GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse)而不是[GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview)时解析代码中的资源，因为没有任何*当前视图*中非打包方案。 如果调用，会发生以下异常[GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview)中非打包方案：*可能不具有 CoreWindow 的线程上创建资源的上下文。*
 1. 使用[MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri)手动生成应用的 resources.pri 文件。
     - 运行 `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /dq <DEFAULTLANGUAGEQUALIFIER> /of resources.pri`
-    - <PRICONFIG>必须省略"<packaging>"部分，以便在单个 resources.pri 文件中捆绑的所有资源。 如果使用默认[MakePri.exe 配置文件](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration)创建的[createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command)，则需要删除"<packaging>"在创建后手动部分。
-    - <PRICONFIG>必须包含将您的项目中的所有资源都合并到单个 resources.pri 文件所需的所有相关索引器。 默认值[MakePri.exe 配置文件](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration)创建的[createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command)包括所有索引器。
+    - &lt;PRICONFIG&gt;必须省略"&lt;打包&gt;"部分，以便在单个 resources.pri 文件中捆绑的所有资源。 如果使用默认[MakePri.exe 配置文件](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration)创建的[createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command)，则需要删除"&lt;打包&gt;"在创建后手动部分。
+    - &lt;PRICONFIG&gt;必须包含将您的项目中的所有资源都合并到单个 resources.pri 文件所需的所有相关索引器。 默认值[MakePri.exe 配置文件](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration)创建的[createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command)包括所有索引器。
     - 如果不使用默认配置，请确保启用 PRI 索引器 （查看如何执行此操作的默认配置） 来合并 PRIs 从 UWP 项目的引用，NuGet 引用等，找到位于项目根目录中。
         > [!NOTE]
-        > 通过省略`/IndexName`，并且不具有应用程序清单项目，PRI 文件的索引名称/根命名空间自动设置为*应用程序*，其运行时了解对于非打包的应用 (此操作将删除上一个硬依赖项包 ID）。 但是，可以按如下所示显式指定根命名空间：
-        > - ResourceLoader.GetForViewIndependentUse("ControlName\Resources").GetStringForUri(new Uri("ms-resource:///ManagedWinRT/Resources/Header"))
-        > - ResourceLoader.GetForViewIndependentUse("ControlName\Resources").GetStringForUri(new Uri("ms-resource://Application/ManagedWinRT/Resources/Header"))
+        > 通过省略`/IndexName`，并且不具有应用程序清单项目，PRI 文件的索引名称/根命名空间自动设置为*应用程序*，其运行时了解对于非打包的应用 (此操作将删除上一个硬依赖项包 ID）。 在指定的资源 Uri，ms 资源: / / 引用省略的根命名空间推断*应用程序*作为非打包的应用的根命名空间 (也可以指定*应用程序*显式为在 ms-resource://Application/)。
 1. 将该 PRI 文件复制到生成输出目录中的.exe
 1. 运行.exe 
     > [!NOTE]
     > 资源管理系统使用的系统显示语言，而不是用户首选的语言列表解析资源时基于非打包应用程序中的语言。 用户首选的语言列表仅用于 UWP 应用。
 
 > [!Important]
-> 如果资源文件的内容发生更改，例如处理的后期生成脚本必须手动重新生成 PRI 文件[MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri)命令，并将 resources.pri 输出复制到.exe 目录。
+> 每当修改资源时，必须手动重新生成 PRI 文件。 我们建议使用后期生成脚本处理[MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri)命令，并将 resources.pri 输出复制到.exe 目录。
 
 ## <a name="important-apis"></a>重要的 API
 * [ApplicationModel.Resources.ResourceLoader](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
@@ -326,7 +324,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 
 ## <a name="related-topics"></a>相关主题
 * [移植的 XAML 和 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
-* [x:Uid directive](../xaml-platform/x-uid-directive.md)
+* [X:uid 指令](../xaml-platform/x-uid-directive.md)
 * [附加的属性](../xaml-platform/attached-properties-overview.md)
 * [可本地化的清单项目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
 * [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)
