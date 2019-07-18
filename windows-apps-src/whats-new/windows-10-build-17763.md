@@ -6,16 +6,16 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2b172844e75d9af3d0112e03f155708af3ca6bed
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d393ee92be8768861da0fb0783372c8bafc6f815
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63780352"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821113"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>面向开发人员的 Windows 10 内部版本 17763 中的新增功能
 
-Windows 10 内部版本 17763（又称 2018 年 10 月更新或版本 1809）与 Visual Studio 2017 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了丰富的工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+Windows 10 内部版本 17763（又称 2018 年 10 月更新或版本 1809）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 17763 API 更改](windows-10-build-17763-api-diff.md)。 有关 Windows 10 中亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的详尽概述。
 
@@ -97,7 +97,7 @@ C++/WinRT 是一种编写和使用 Windows 运行时 API 的新方式。 它仅�
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>开发人员入门：在 Windows 10 上创建和自定义窗体
 
-针对 Windows 开发人员的[入门文档](../get-started/index.md)现在提供基本应用开发任务的实践经验。 此视频将引导你了解其中一个主题，并介绍在应用中创建窗体 UI 的基本知识。 [观看视频](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)，查看实际操作中使用的代码，然后[自行查看主题。](https://aka.ms/CreateForms)
+面向 Windows 开发人员的[入门文档](../get-started/index.md)现在提供基本应用开发任务的实践经验。 此视频将引导你了解其中一个主题，并介绍在应用中创建窗体 UI 的基本知识。 [观看视频](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)，查看实际操作中使用的代码，然后[自行查看主题。](https://aka.ms/CreateForms)
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>使用“项目个性化聊天”增强机器人
 

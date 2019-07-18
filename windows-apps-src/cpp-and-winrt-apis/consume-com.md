@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, COM, 组件, 类, 接口
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c36c7b896b4d08240f08e85570110b45e0a9f3c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: bb28ec7afa22f81033bfce2aff530119e53a4b91
+ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66421257"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660150"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>通过 C++/WinRT 使用 COM 组件
 
@@ -30,7 +30,7 @@ ms.locfileid: "66421257"
 winrt::com_ptr<ID2D1Factory1> factory;
 ```
 
-以上代码演示如何声明指向 [**ID2D1Factory1**](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1factory1) COM 接口的未初始化智能指针。 该智能指针未初始化，因此暂时不会指向属于任何实际对象的 **ID2D1Factory1** 接口（根本不指向任何接口）。 但它可以做到这一点；（作为一个智能指针）它能够通过 COM 引用计数来管理它所指向的接口的拥有对象的生存期，并充当中介来让你针对该接口调用函数。
+以上代码演示如何声明指向 [**ID2D1Factory1**](/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1factory1) COM 接口的未初始化智能指针。 该智能指针未初始化，因此暂时不会指向属于任何实际对象的 **ID2D1Factory1** 接口（根本不指向任何接口）。 但它可以做到这一点；（作为一个智能指针）它能够通过 COM 引用计数来管理它所指向的接口的拥有对象的生存期，并充当中介来让你针对该接口调用函数。
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-void"></a>返回 **void** 形式的接口指针的 COM 函数
 
@@ -72,7 +72,7 @@ D2D1CreateFactory(
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-iunknown"></a>返回 **IUnknown** 形式的接口指针的 COM 函数
 
-[**DWriteCreateFactory**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) 函数通过其最后一个参数返回 [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) 类型的 DirectWrite 工厂接口指针。 对于此类函数，请使用 [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function)，但需要将其重新解释并转换为 **IUnknown**。
+[**DWriteCreateFactory**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) 函数通过其最后一个参数返回 [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown) 类型的 DirectWrite 工厂接口指针。 对于此类函数，请使用 [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function)，但需要将其重新解释并转换为 **IUnknown**。
 
 ```cppwinrt
 DWriteCreateFactory(
@@ -171,7 +171,7 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 
 若要生成并运行此源代码示例，请先在 Visual Studio 中创建一个新的 **Core 应用 (C++/WinRT)** 。 `Direct2D` 是项目的合理名称，但你可以指定任意名称。 打开 `App.cpp`，删除其整个内容，然后粘贴以下列表。
 
-以下代码会尽量使用 [winrt::com_ptr::capture 函数](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function)。
+以下代码会尽量使用 [winrt::com_ptr::capture 函数](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function)。 `WINRT_ASSERT` 是宏定义，并且扩展到 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
 
 ```cppwinrt
 #include "pch.h"
@@ -488,6 +488,55 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 可以看到，C++/WinRT 支持实现和调用 COM 接口。 若要使用 BSTR 和 VARIANT 等 COM 类型，我们建议使用 [Windows 实现库 (WIL)](https://github.com/Microsoft/wil) 提供的包装器，例如 **wil::unique_bstr** 和 **wil::unique_variant**（用于管理资源生存期）。
 
 [WIL](https://github.com/Microsoft/wil) 取代了活动模板库 (ATL) 等框架，以及 Visual C++ 编译器的 COM 支持。 我们建议覆盖你自己的包装器，或者按原始格式使用 BSTR 和 VARIANT 等 COM 类型（结合相应的 API）。
+
+## <a name="avoiding-namespace-collisions"></a>避免命名空间冲突
+
+正如本主题中列出的代码所示，在 C++/WinRT 中，常见的做法是大量使用 using 指令。 但在某些情况下，这可能导致将冲突名称导入全局命名空间这种问题。 下面提供了一个示例。
+
+C++/WinRT 包含名为 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) 的类型，而 COM 则定义名为 [ **::IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown) 的类型。 那么，我们考虑一下，在使用 COM 标头的 C++/WinRT 项目中使用以下代码会出现什么情况。
+
+```cppwinrt
+using namespace winrt::Windows::Foundation;
+...
+void MyFunction(IUnknown*); // error C2872:  'IUnknown': ambiguous symbol
+```
+
+未限定的名称 *IUnknown* 在全局命名空间中发生冲突，因此会出现“符号不明确”编译器错误。  可以改将 C++/WinRT 版名称隔离到 **winrt** 命名空间中，如下所示。
+
+```cppwinrt
+namespace winrt
+{
+    using namespace Windows::Foundation;
+}
+...
+void MyFunctionA(IUnknown*); // Ok.
+void MyFunctionB(winrt::IUnknown const&); // Ok.
+```
+
+或者，如果你希望利用 `using namespace winrt`，那么就可以那样做。 只需对全局版 *IUnknown* 进行限定即可，如下所示。
+
+```cppwinrt
+using namespace winrt;
+namespace winrt
+{
+    using namespace Windows::Foundation;
+}
+...
+void MyFunctionA(::IUnknown*); // Ok.
+void MyFunctionB(winrt::IUnknown const&); // Ok.
+```
+
+自然，这适用于任何 C++/WinRT 命名空间。
+
+```cppwinrt
+namespace winrt
+{
+    using namespace Windows::Storage;
+    using namespace Windows::System;
+}
+```
+
+然后，你可以引用 **winrt::Windows::Storage::StorageFile**。例如，直接以 **winrt::StorageFile** 形式引用。
 
 ## <a name="important-apis"></a>重要的 API
 * [winrt::check_hresult 函数](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)

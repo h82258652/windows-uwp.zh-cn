@@ -1,17 +1,17 @@
 ---
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: 使用 C++/CX 创建 Hello World 应用 (Windows 10)
-description: 借助 Microsoft Visual Studio 2017，可以使用 C++/CX 开发可在 Windows 10 上运行的应用，包括可在运行 Windows 10 的手机上运行的应用。 这些应用具有使用可扩展应用程序标记语言 (XAML) 定义的 UI。
+description: 借助 Microsoft Visual Studio 2019，可以使用 C++/CX 开发可在 Windows 10 上运行的应用，包括可在运行 Windows 10 的手机上运行的应用。 这些应用具有使用可扩展应用程序标记语言 (XAML) 定义的 UI。
 ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cf7e2c56f7d059a164d94bd608fbb8c179d5125f
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 65436d7efd1de6e9c3649ad27b29b925bc632d95
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66367378"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820664"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>使用 C++/CX 创建“Hello world”应用
 
@@ -21,7 +21,7 @@ ms.locfileid: "66367378"
 借助 Microsoft Visual Studio，可以使用 C++/CX 开发可在 Windows 10 上运行的应用，且这些应用具有使用可扩展应用程序标记语言 (XAML) 定义的 UI。
 
 > [!NOTE]
-> 本教程使用 Visual Studio Community 2017。 如果使用的是不同版本的 Visual Studio，则其外观可能稍有不同。
+> 本教程使用 Visual Studio Community 2019。 如果使用的是不同版本的 Visual Studio，则其外观可能稍有不同。
 
 ## <a name="before-you-start"></a>开始之前
 
@@ -73,22 +73,15 @@ ms.locfileid: "66367378"
 
 **首先在 Visual Studio 中创建一个解决方案**
 
-1.  在 Visual Studio 的菜单栏上，选择“文件” > “新建” > “项目”    。
+1.  在 Visual Studio 的菜单栏上，选择“文件” > “新建” > “项目...”    。
 
-2.  在“新建项目”对话框的左侧窗格中，展开“已安装” > “Visual C++” > “Windows 通用”     。
+2.  在“创建新项目”对话框中，选择“空白应用(通用 Windows - C++/CX)”   。  如果没有看到此选项，请确保已安装通用 Windows 应用开发工具。 有关详细信息，请参阅[准备工作](get-set-up.md)。
 
-> [!NOTE]
-> 系统将会提示你安装用于 C++ 开发的 Windows 通用工具。
+![“创建新项目”对话框中的 C++/CX 项目模板 ](images/vs2019-uwp-01.png)
 
-3.  在中心窗格中，选择“空白应用(通用 Windows)”  。
+3.  选择“下一步”，  然后输入项目名称。 我们将其命名为 HelloWorld。
 
-   （如果你没有看到这些选项，请确保已安装通用 Windows 应用开发工具。 有关详细信息，请参阅[准备工作](get-set-up.md)。）
-
-4.  输入项目名称。 我们将其命名为 HelloWorld。
-
- ![“新建项目”对话框中的 C++/CX 项目模板 ](images/vs2017-uwp-01.png)
-
-5.  选择“确定”按钮  。
+4.  选择“创建”  按钮。
 
 > [!NOTE]
 > 如果你是首次使用 Visual Studio，则可能会看到要求启用“开发人员模式”的“设置”对话框  。 开发人员模式是一种用于启用某些功能（如允许直接运行应用，而不是只能从 Store 运行）的特殊设置。 有关更多信息，请阅读[启用设备进行开发](enable-your-device-for-development.md)。 若要继续使用本指南，请选择“开发人员模式”，然后单击“是”并关闭对话框   。

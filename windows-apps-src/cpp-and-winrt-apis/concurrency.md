@@ -1,16 +1,16 @@
 ---
 description: 本主题介绍了你可通过 C++/WinRT 创建和使用 Windows 运行时异步对象的方式。
 title: 使用 C++/WinRT 执行并发和异步操作
-ms.date: 04/24/2019
+ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, async, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: 910d7a7ca2aaebac6dd462d7104b26a989cf8814
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: cbabf38f41ae940f5c92944154638eae7016e043
+ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721658"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660089"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>使用 C++/WinRT 执行并发和异步操作
 
@@ -230,12 +230,16 @@ IASyncAction DoWorkAsync(Param const& value)
 }
 ```
 
-在协同例程中，在第一个暂停点之前，执行是同步的；到达第一个暂停点时，控制返回到调用方。 在协同例程恢复时，引用参数引用的源值可能已发生更改。 从协同例程的角度来看，引用参数具有不受控制的生命周期。 因此，在上面的示例中，在 `co_await` 之前，我们可以安全地访问 *value*，但之后就无法保证安全了。 如果 **DoOtherWorkAsync** 函数有可能暂停并在恢复后尝试使用 *value*，我们也无法安全地将 *value* 传递给 DoOtherWorkAsync。 为了能够在暂停和恢复后安全地使用参数，默认情况下，协同例程应使用按值传递，以确保捕获参数的值并避免生命周期问题。 确信不遵从该指引也能安全进行操作的情况是很少见的。
+在协同例程中，在第一个暂停点之前，执行是同步的；到达第一个暂停点时，控制返回到调用方。 在协同例程恢复时，引用参数引用的源值可能已发生更改。 从协同例程的角度来看，引用参数具有不受控制的生命周期。 因此，在上面的示例中，在 `co_await` 之前，我们可以安全地访问 *value*，但之后就无法保证安全了。 如果调用方销毁了 *value*，则尝试在协同例程中访问它会导致内存损坏。 如果 **DoOtherWorkAsync** 函数有可能暂停并在恢复后尝试使用 *value*，我们也无法安全地将 *value* 传递给 DoOtherWorkAsync。
+
+为了能够在暂停和恢复后安全地使用参数，默认情况下，协同例程应使用按值传递，以确保按值进行捕获并避免生命周期问题。 确信不遵从该指引也能安全进行操作的情况是很少见的。
 
 ```cppwinrt
 // Coroutine
-IASyncAction DoWorkAsync(Param value);
+IASyncAction DoWorkAsync(Param value); // not const&
 ```
+
+按值传递要求参数的移动或复制开销不高，智能指针通常就是这样的。
 
 传递 const 值是否是一个好的做法也还存在争议（除非你想移动值）。 它不会对要复制的源值产生任何影响，但有助于表明意图，并避免你无意间修改副本。
 
@@ -245,6 +249,38 @@ IASyncAction DoWorkAsync(Param const value);
 ```
 
 另请参阅[标准数组和向量](std-cpp-data-types.md#standard-arrays-and-vectors)，其中介绍了如何将标准向量传递到异步被调用方。
+
+如果不能更改协同例程的签名，但是能够更改实现，则可在首次执行 `co_await` 之前进行本地复制。
+
+```cppwinrt
+IASyncAction DoWorkAsync(Param const& value)
+{
+    auto safe_value = value;
+    // It's ok to access both safe_value and value here.
+
+    co_await DoOtherWorkAsync();
+
+    // It's ok to access only safe_value here (not value).
+}
+```
+
+如果 `Param` 复制起来开销很大，则在首次执行 `co_await` 之前只提取所需的片段。
+
+```cppwinrt
+IASyncAction DoWorkAsync(Param const& value)
+{
+    auto safe_data = value.data;
+    // It's ok to access safe_data, value.data, and value here.
+
+    co_await DoOtherWorkAsync();
+
+    // It's ok to access only safe_data here (not value.data, nor value).
+}
+```
+
+## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>在类成员协同例程中安全访问 *this* 指针
+
+请参阅 [C++/WinRT 中的强引用和弱引用](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine)。
 
 ## <a name="offloading-work-onto-the-windows-thread-pool"></a>将工作卸载到 Windows 线程池
 
@@ -723,6 +759,23 @@ int main()
     // Do other work here.
 }
 ```
+
+**winrt::fire_and_forget** 也可用作事件处理程序的返回类型，前提是需在其中执行异步操作。 下面是一个示例（另请参阅 [C++/WinRT 中的强引用和弱引用](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine)）。
+
+```cppwinrt
+winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, MediaBindingEventArgs args)
+{
+    auto lifetime{ get_strong() }; // Prevent *this* from prematurely being destructed.
+    auto ensure_completion{ unique_deferral(args.GetDeferral()) }; // Take a deferral, and ensure that we complete it.
+
+    auto file{ co_await StorageFile::GetFileFromApplicationUriAsync(Uri(L"ms-appx:///video_file.mp4")) };
+    args.SetStorageFile(file);
+
+    // The destructor of unique_deferral completes the deferral here.
+}
+```
+
+第一个参数 (*sender*) 未命名，因为我们从未使用它。 因此，可以安全地将它保留为引用。 但请注意，*args* 是按值传递的。 请参阅上面的[参数传递](#parameter-passing)部分。
 
 ## <a name="important-apis"></a>重要的 API
 * [concurrency::task 类](/cpp/parallel/concrt/reference/task-class)

@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 装箱, 标量, 值
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bd69e07f2285b6c05581a60ddbaf4b394d0b6d0
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b50a0d6b231b9c526fc619a98c37f81520db3ff2
+ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66361194"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660118"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>通过 C++/WinRT 将标量值装箱到 IInspectable 和从 IInspectable 取消标量值装箱
  
@@ -54,6 +54,8 @@ void Unbox(winrt::Windows::Foundation::IInspectable const& object)
 
 ## <a name="determine-the-type-of-a-boxed-value"></a>确定装箱值的类型
 如果收到装箱值但不确定它所包含的类型（需要知道类型以便取消装箱），可以查询装箱值的 [IPropertyValue](/uwp/api/windows.foundation.ipropertyvalue) 接口，然后对其调用 Type   。 下面是代码示例。
+
+`WINRT_ASSERT` 是宏定义，并且扩展到 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
 
 ```cppwinrt
 float pi = 3.14f;

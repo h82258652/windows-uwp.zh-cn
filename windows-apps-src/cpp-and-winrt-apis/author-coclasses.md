@@ -6,16 +6,64 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 创作, COM, 组件
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3badcd59155bc4bb5ef8d9e29271b853c245c24e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 7e3101147f31f630ed6d7d23916eb675f8bc2d21
+ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360314"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67800521"
 ---
 # <a name="author-com-components-with-cwinrt"></a>通过 C++/WinRT 创作 COM 组件
 
-[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 可以帮助你创作经典组件对象模型 (COM) 组件（或组件类），就像它可以帮助你创作 Windows 运行时类一样。 下面是一个简单例证，如果将代码粘贴到新 Windows 控制台应用程序 (C++/WinRT)  项目的 `pch.h` 和 `main.cpp` 中，则可以进行测试。
+[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 可以帮助你创作经典组件对象模型 (COM) 组件（或组件类），就像它可以帮助你创作 Windows 运行时类一样。 本主题演示如何执行该操作。
+
+## <a name="how-cwinrt-behaves-by-default-with-respect-to-com-interfaces"></a>默认情况下，C++/WinRT 在 COM 接口方面的表现如何
+
+C++/WinRT 的 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 模板是直接或间接派生运行时类和激活工厂的基础。
+
+默认情况下，**winrt::implements** 仅支持基于 [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable) 的接口，并且会以无提示方式忽略经典的 COM 接口。 因此，通过 **QueryInterface** (QI) 调用经典 COM 接口会失败，并出现 **E_NOINTERFACE** 错误。
+
+我们稍后会讲述如何克服这种情况，现在让我们先来看看一个代码示例，了解默认情况下会发生什么。
+
+```idl
+// Sample.idl
+runtimeclass Sample
+{
+    Sample();
+    void DoWork();
+}
+
+// Sample.h
+#include "pch.h"
+#include <shobjidl.h> // Needed only for this file.
+
+namespace winrt::MyProject
+{
+    struct Sample : implements<Sample, IInitializeWithWindow>
+    {
+        IFACEMETHOD(Initialize)(HWND hwnd);
+        void DoWork();
+    }
+}
+```
+
+下面是使用 **Sample** 类的客户端代码。
+
+```cppwinrt
+// Client.cpp
+Sample sample; // Construct a Sample object via its projection.
+
+// This next line crashes, because the QI for IInitializeWithWindow fails.
+sample.as<IInitializeWithWindow>()->Initialize(hwnd); 
+```
+
+好在要让 **winrt::implements** 支持经典 COM 接口，只需在包括任何 C++/WinRT 头文件之前包括 `unknwn.h` 即可。
+
+可以显式这样做，也可以间接这样做，只需包括一些其他的头文件（例如 `ole2.h`）即可。 一个建议的方法是包括 `wil\cppwinrt.h` 头文件，该文件是 [Windows 实现库 (WIL)](https://github.com/Microsoft/wil) 的一部分。 `wil\cppwinrt.h` 头文件不仅可确保在 `winrt/base.h` 之前包括 `unknwn.h`，而且可以让 C++/WinRT 和 WIL 了解彼此的异常和错误代码。
+
+## <a name="a-simple-example-of-a-com-component"></a>COM 组件的简单示例
+
+下面是使用 C++/WinRT 编写的 COM 组件的简单示例。 这是一个迷你应用程序的完整列表，因此如果将代码粘贴到新 **Windows 控制台应用程序 (C++/WinRT)** 项目的 `pch.h` 和 `main.cpp` 中，则可对其进行测试。
 
 ```cppwinrt
 // pch.h

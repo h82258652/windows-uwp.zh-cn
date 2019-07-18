@@ -1,16 +1,16 @@
 ---
 description: 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 本主题介绍了如何实现和使用可观测属性以及如何将 XAML 控件绑定到该属性。
 title: XAML 控件；绑定到 C++/WinRT 属性
-ms.date: 04/24/2019
+ms.date: 06/21/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 属性
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fe5c03eebd2b68e98ae908ea4624471fbd2b3d2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 25ce3164ece443c8c1d95bccbc2bfb57e3347a55
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65627671"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717651"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控件；绑定到 C++/WinRT 属性
 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 这一想法基于称为“观察者模式”的软件设计模式  。 本主题介绍如何在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中实现可观测属性以及如何将 XAML 控件绑定到这些属性。
@@ -210,7 +210,7 @@ namespace Bookstore
 
 若要解决预期发生的错误，则现在需要将 MainViewModel 属性的访问器存根从生成的文件（`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` 和 `MainPage.cpp`）复制到 `\Bookstore\Bookstore\MainPage.h` 和 `MainPage.cpp`  。 操作步骤如下所示。
 
-在 `\Bookstore\Bookstore\MainPage.h` 中包括 `BookstoreViewModel.h`，它为 BookstoreViewModel 声明实现类型（即 winrt::Bookstore::implementation::BookstoreViewModel）   。 添加私有成员以存储视图模型。 注意，属性访问器函数（以及成员 m_mainViewModel）根据 BookstoreViewModel 的投影类型（即 Bookstore::BookstoreViewModel）实现   。 实现类型与应用程序位于同一项目（编译单元），因此通过采用 `nullptr_t` 的构造函数重载构造 m_mainViewModel。 此外删除 MyProperty 属性  。
+在 `\Bookstore\Bookstore\MainPage.h` 中包括 `BookstoreViewModel.h`，它为 BookstoreViewModel 声明实现类型（即 winrt::Bookstore::implementation::BookstoreViewModel）   。 添加私有成员以存储视图模型。 注意，属性访问器函数（以及成员 m_mainViewModel）根据 BookstoreViewModel 的投影类型（即 Bookstore::BookstoreViewModel）实现   。 实现类型与应用程序位于同一项目（编译单元），因此我们通过采用 **std::nullptr_t** 的构造函数重载来构造 m_mainViewModel。 此外删除 MyProperty 属性  。
 
 ```cppwinrt
 // MainPage.h
@@ -276,6 +276,28 @@ namespace winrt::Bookstore::implementation
 
 ## <a name="using-the-binding-markup-extension-with-cwinrt"></a>配合使用 {Binding} 标记扩展与 C++/WinRT
 对于当前发布的 C++/WinRT 版本，为了能够使用 {Binding} 标记扩展，需要实现 [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) 和 [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) 接口。
+
+## <a name="element-to-element-binding"></a>元素间的绑定
+
+可以将一个 XAML 元素的属性绑定到另一个 XAML 元素的属性。 下面是在标记中进行的该操作的一个示例。
+
+```xaml
+<TextBox x:Name="myTextBox" />
+<TextBlock Text="{x:Bind myTextBox.Text, Mode=OneWay}" />
+```
+
+需要在 Midl 文件 (.idl) 中将命名的 XAML 实体 `myTextBox` 声明为只读属性。
+
+```idl
+// MainPage.idl
+runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+{
+    MainPage();
+    Windows.UI.Xaml.Controls.TextBox myTextBox{ get; };
+}
+```
+
+必须这样做的原因是： XAML 编译器进行验证所需的所有类型（包括在 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 中使用的类型）都是从 Windows 元数据 (WinMD) 读取的。 你只需将只读属性添加到 Midl 文件即可。 请勿实现它，因为自动生成的 XAML 代码隐藏会为你提供实现。
 
 ## <a name="important-apis"></a>重要的 API
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)

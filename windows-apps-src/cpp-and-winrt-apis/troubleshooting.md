@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 疑难解答, HRESULT, 错误
 ms.localizationpriority: medium
-ms.openlocfilehash: 563545e8a819ab6af5bbc0604c18b4833d76bebb
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e53fb74b8287b6aee25ddbdd4563846403ff087e
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721672"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717558"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>C++/WinRT 问题疑难解答
 
@@ -29,7 +29,7 @@ XAML 分析异常可能很难进行诊断&mdash;特别是在此类异常中没�
 ## <a name="symptoms-and-remedies"></a>症状和补救方法
 | 症状 | 补救方法 |
 |---------|--------|
-| 在运行时抛出异常，并显示 HRESULT 值 REGDB_E_CLASSNOTREGISTERED。 | 此错误的一个原因是 Windows 运行时组件无法加载。 请确保该组件的 Windows 运行时元数据文件 (`.winmd`) 与组件二进制文件 (`.dll`) 的名称相同，这也是项目名称和根命名空间的名称。 此外，请确保生成过程已将 Windows 运行时元数据和二进制文件正确地复制到使用应用的 `Appx` 文件夹。 同时确认使用应用的 `AppxManifest.xml`（也在 `Appx` 文件夹中）包含 &lt;InProcessServer&gt;  元素，该元素正确声明了可激活的类和二进制文件名称。 如果你错误地通过投影类型的默认构造函数实例化了一个在本地实现的运行时类，则也会发生此错误。 请参阅 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md)，详细了解在这种情况下应如何正确使用投影类型。 |
+| 在运行时抛出异常，并显示 HRESULT 值 REGDB_E_CLASSNOTREGISTERED。 | 请参阅[为什么会收到“类未注册”异常？](faq.md#why-am-i-getting-a-class-not-registered-exception)。 |
 | C++ 编译器生成以下错误：“‘implements_type’: 不是 &lt;投影类型&gt;  的任何直接或间接基类的成员”。 | 使用实现类型的未限定命名空间的名称（例如“MyRuntimeClass”）来调用“make”时，如果没有包括该类型的标头，就会出现此错误   。 编译器会将“MyRuntimeClass”解释为投影类型  。 解决办法是包括实现类型的标头（例如 `MyRuntimeClass.h`）。 |
 | C++ 编译器生成以下错误：“正在尝试引用已删除的函数”  。 | 调用“make”并且你作为模板参数传递的实现类型具有 `= delete` 默认构造函数时，就会出现此错误  。 编辑实现类型的标头文件并将 `= delete` 更改为 `= default`。 你还可以为运行时类添加一个构造函数到 IDL 中。 |
 | 你已经实现 [INotifyPropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged)，但 XAML 绑定没有更新（UI 没有订阅 [PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)）   。 | 请记得在 XAML 标记中的绑定表达式上设置 `Mode=OneWay`（或 TwoWay）。 请参阅 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md)。 |
@@ -46,12 +46,19 @@ XAML 分析异常可能很难进行诊断&mdash;特别是在此类异常中没�
 | C++编译器生成“错误 C2338：这仅适用于弱引用支持”  。|你请求针对某个类型的弱引用，该类型将“winrt::no_weak_ref”标记结构作为模板参数传递给其基类  。 请参阅[选择退出弱引用支持](weak-references.md#opting-out-of-weak-reference-support)|
 | C++ 链接器生成“错误 LNK2019：未解析的外部符号” |请参阅[为什么链接器会提供“LNK2019：未解析的外部符号”错误？](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error)。|
 | 与 C++/WinRT 一起使用时，LLVM 和 Clang 工具链会生成错误。|我们不支持适用于 C++/WinRT 的 LLVM 和 Clang 工具链，但是如果你想模拟如何在内部使用它，则可尝试进行实验，如[是否可以结合使用 C++/WinRT 和 LLVM/Clang 进行编译？](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt)中所述。|
-| C++ 编译器为投影类型生成“没有适当的默认构造函数”  。 | 如果试图延迟运行时类对象的初始化，或者在同一个项目中使用和实现运行时类，则需要调用 `nullptr_t` 构造函数。 有关详细信息，请参阅[通过 C++/WinRT 使用 API](consume-apis.md)。 |
+| C++ 编译器为投影类型生成“没有适当的默认构造函数”  。 | 如果试图延迟运行时类对象的初始化，或者在同一个项目中使用和实现运行时类，则需要调用 **std::nullptr_t** 构造函数。 有关详细信息，请参阅[通过 C++/WinRT 使用 API](consume-apis.md)。 |
 | C++ 编译器生成“错误 C3861:'from_abi'：未找到标识符”，以及源自 base.h 的其他错误   。 如果使用 Visual Studio 2017（版本 15.8.0 或更高版本），并且要面向 Windows SDK 版本 10.0.17134.0（Windows 10 版本 1803），则可能会看到此错误。 | 要么定位 Windows SDK 的更新（更符合）版本，要么设置项目属性“C/C++” > “语言” > “一致性模式：   否”（此外，如果“/permissive-”出现在“其他选项”下的项目属性“C/C++” > “语言” > “命令行”中，将其删除）       。 |
 | C++ 编译器会生成“错误 C2039:IUnknown: 不是 \`global namespace 的成员”  。 | 请参阅[如何将 C++/WinRT 项目重新定位到更高版本的 Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
 | C++ 链接器生成“错误 LNK2019: 函数 _VSDesignerCanUnloadNow@0 中引用了未解析的外部符号 _WINRT_CanUnloadNow@0”  | 请参阅[如何将 C++/WinRT 项目重新定位到更高版本的 Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
 | 生成过程生成错误消息“C++/WinRT VSIX 不再提供项目生成支持。请将项目引用添加到 Microsoft.Windows.CppWinRT Nuget 包”  。 | 将 “Microsoft.Windows.CppWinRT”NuGet 包安装到项目中  。 有关详细信息，请参阅 [VSIX 扩展的早期版本](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。 |
 | C++ 链接器生成“错误 LNK2019: 未解析的外部符号”，并提及“winrt::impl::consume_Windows_Foundation_Collections_IVector”   。 | 从 [C++/WinRT 2.0](news.md#news-and-changes-in-cwinrt-20) 开始，如果在 Windows 运行时集合上使用基于范围的 `for`，那么现在需要 `#include <winrt/Windows.Foundation.Collections.h>`。 |
+| C++ 编译器会生成“错误 C4002:  类函数宏的调用 GetCurrentTime 参数太多”。 | 请参阅[如何使用 GetCurrentTime 和/或 TRY 解析多义性？](faq.md#how-do-i-resolve-ambiguities-with-getcurrenttime-andor-try)。 |
+| C++ 编译器生成“错误 C2334: '{' 的前面有意外标记；跳过明显的函数体”  。 | 请参阅[如何使用 GetCurrentTime 和/或 TRY 解析多义性？](faq.md#how-do-i-resolve-ambiguities-with-getcurrenttime-andor-try)。 |
+| C++ 编译器生成“winrt::impl::produce&lt;D,I&gt; 无法实例化抽象类，因为缺少 GetBindingConnector  ”。 | 你需要 `#include <winrt/Windows.UI.Xaml.Markup.h>`。 |
+| C++ 编译器生成“错误 C2039: 'promise_type': 不是 'std::experimental::coroutine_traits<void>' 的成员  ”。 | 协同例程需要返回异步操作对象或 **winrt::fire_and_forget**。 请参阅[并发操作和异步操作](concurrency.md)。 |
+| 项目生成“'PopulatePropertyInfoOverride' 的访问不明确  ”。 | 在 IDL 中声明一个基类，同时在 XAML 标记中声明一个不同的基类时，可能发生此错误。 |
+| 首次加载 C++/WinRT 解决方案时生成“项目 'MyProject.vcxproj' 的配置 'Debug\|x86' 的设计时生成失败。  IntelliSense 可能不可用。”。 | 在首次生成后，此 IntelliSense 问题会解决。 |
+| 在注册委托时尝试指定 [**winrt::auto_revoke**](/uwp/cpp-ref-for-winrt/auto-revoke-t) 会生成 [**winrt::hresult_no_interface**](/uwp/cpp-ref-for-winrt/error-handling/hresult-no-interface) 异常。 | 请参阅[如果“自动撤销”委托无法注册](handle-events.md#if-your-auto-revoke-delegate-fails-to-register)。 |
 
 > [!NOTE]
 > 如果此主题未回答你的问题，则可以通过访问 [Visual Studio C++ 开发人员社区](https://developercommunity.visualstudio.com/spaces/62/index.html)或使用 [Stack Overflow 上的 `c++-winrt` 标记](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)获得帮助。

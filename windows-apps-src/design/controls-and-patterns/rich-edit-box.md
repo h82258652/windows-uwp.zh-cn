@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f6fe36fb8955b6234cdf3cb42e4db02a602f4a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 00a65324b799b0cf974271da23fdbcb36aa6c8e2
+ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364348"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67399617"
 ---
 # <a name="rich-edit-box"></a>富编辑框
 
@@ -29,8 +29,7 @@ ms.locfileid: "66364348"
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 使用 **RichEditBox** 显示和编辑文本文件。 不要像使用其他标准文本输入框那样使用 RichEditBox 在应用中获取用户输入。 而应使用它来处理独立于应用的文本文件。 通常需要将输入到 RichEditBox 的文本保存为 .rtf 文件。
--   如果多行文本框的主要用途是创建文档（如日志条目或电子邮件内容），则这些文档要求富文本使用 RTF 框。
--   如果你希望用户能够设置其文本格式，请使用富文本框。
+-   如果多行文本框的主要用途是创建只读文档（如博客条目或电子邮件内容），且这些文档需要富文本，则请改用[富文本块](/windows/uwp/design/controls-and-patterns/rich-text-block)。
 -   在捕获将仅供使用但不向用户重新显示的文本时，请使用纯文本输入控件。
 -   对于所有其他情况，请使用纯文本输入控件。
 

@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 字符串
 ms.localizationpriority: medium
-ms.openlocfilehash: d66cdcff8eff8c620d58a5948cbcf081acea2f45
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 004aa3e267bab86527ac3d5c3fe0383ccd4ad904
+ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360174"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67844311"
 ---
 # <a name="string-handling-in-cwinrt"></a>C++/WinRT 中的字符串处理
 
@@ -137,6 +137,8 @@ hstring  是一个范围，因此你可以将其与基于范围的 `for` 或与 
 
 我们发现很多 C++ 库使用了 std::string  ，并且仅与 UTF-8 文本配合。 为方便起见，我们提供了 [winrt::to_string  ](/uwp/cpp-ref-for-winrt/to-string)、[winrt::to_hstring  ](/uwp/cpp-ref-for-winrt/to-hstring) 等用于来回转换的帮助程序。
 
+`WINRT_ASSERT` 是宏定义，并且扩展到 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
+
 ```cppwinrt
 winrt::hstring w{ L"Hello, World!" };
 
@@ -152,7 +154,7 @@ WINRT_ASSERT(w == L"Hello, World!");
 ## <a name="the-rationale-for-winrthstring-and-winrtparamhstring"></a>winrt::hstring  和 winrt::param::hstring  的原理
 Windows 运行时根据 wchar_t  字符实现，但 Windows 运行时的应用程序二进制接口 (ABI) 不是 std::wstring  或 std::wstring_view  提供的内容的一部分。 使用这些将导致效率显著降低。 相反，C++/WinRT 提供了 winrt::hstring  ，它表示与基础 [HSTRING](https://docs.microsoft.com/windows/desktop/WinRT/hstring) 一致的不可变字符串，在与 std::wstring  的接口相似的接口后面实现。 
 
-你可能会注意到在逻辑上应该接受 winrt::hstring  的 C++/WinRT 输入参数实际上需要 winrt::param::hstring  。 param  命名空间包含一组类型，专用于优化输入参数以自然地绑定到 C++ 标准库类型，以及避免副本和其他低效率现象。 你不应直接使用这些类型。 如果你要对自己的函数使用优化，则应使用 std::wstring_view  。
+你可能会注意到在逻辑上应该接受 winrt::hstring  的 C++/WinRT 输入参数实际上需要 winrt::param::hstring  。 param  命名空间包含一组类型，专用于优化输入参数以自然地绑定到 C++ 标准库类型，以及避免副本和其他低效率现象。 你不应直接使用这些类型。 如果你要对自己的函数使用优化，则应使用 std::wstring_view  。 另请参阅[将参数传递到 ABI 边界](/windows/uwp/cpp-and-winrt-apis/pass-parms-to-abi)。
 
 这样，你便可以在很大程度上忽略 Windows 运行时字符串管理的细节，并使用你了解的资源高效地工作。 考虑到在 Windows 运行时中使用字符串的频率，这一点很重要。
 
@@ -169,6 +171,22 @@ void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
     wstringstream << L"Pointer pressed at (" << point.x << L"," << point.y << L")" << std::endl;
     ::OutputDebugString(wstringstream.str().c_str());
 }
+```
+
+## <a name="the-correct-way-to-set-a-property"></a>设置属性的正确方式
+
+可以将值传递给 setter 函数，以这种方式设置属性。 下面提供了一个示例。
+
+```cppwinrt
+// The right way to set the Text property.
+myTextBlock.Text(L"Hello!");
+```
+
+以下代码不正确。 它可以编译，但只是修改 **Text()** 访问器函数返回的临时 **winrt::hstring**，然后就会将结果抛开。
+
+```cppwinrt
+// *Not* the right way to set the Text property.
+myTextBlock.Text() = L"Hello!";
 ```
 
 ## <a name="important-apis"></a>重要的 API

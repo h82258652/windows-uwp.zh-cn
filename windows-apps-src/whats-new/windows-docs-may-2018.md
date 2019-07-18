@@ -5,16 +5,16 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 5 月, �
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 69df2bbe8bc91fcf4a2631c0f257fc44851c24f2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 9adf5a80595e00a30098044536d1ecfe4fd62279
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63805877"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820496"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>2018 年 5 月 Windows 开发人员文档中的新增功能
 
-Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 五月份提供了与 [Microsoft Build 2018](https://www.microsoft.com/build) 开发人员大会一致的以下功能概述、开发人员指南、视频和示例。
+Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 五月份提供了与 [Microsoft Build 2018](https://www.microsoft.com/build/) 开发人员大会一致的以下功能概述、开发人员指南、视频和示例。
 
 只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
@@ -55,7 +55,7 @@ Fluent Design System 中，动作的使用基于计时、缓动、方向性和�
 
 ### <a name="app-installer-files-in-visual-studio"></a>Visual Studio 中的应用安装程序文件
 
-现在可以使用 Visual Studio 2017 Update 15.7 创建应用安装程序文件。 [了解如何使用 Visual Studio 创建应用安装程序文件](../packaging/create-appinstallerfile-vs.md)并启用应用自动更新。 如果遇到问题，请参阅[排查应用安装程序文件的安装问题](../packaging/troubleshoot-appinstaller-issues.md)，以查看常见问题和解决方法。
+现在可以使用 Visual Studio 2017 Update 15.7 及更高版本创建应用安装程序文件。 [了解如何使用 Visual Studio 创建应用安装程序文件](../packaging/create-appinstallerfile-vs.md)并启用应用自动更新。 如果遇到问题，请参阅[排查应用安装程序文件的安装问题](../packaging/troubleshoot-appinstaller-issues.md)，以查看常见问题和解决方法。
 
 ### <a name="edge-webview-control-for-windows-forms-and-wpf-applications"></a>Windows 窗体和 WPF 应用程序的 Edge WebView 控件
 
@@ -87,7 +87,7 @@ MSIX 打包格式是一种开源格式，可让我们的合作伙伴更轻松地
 
 ### <a name="page-transitions"></a>页面过渡
 
-[页面过渡](../design/motion/page-transitions.md)导航应用中页面之间的用户。 它们帮助用户了解自己在导航层次结构中的位置，并提供有关页面之间关系的反馈。
+[页面过渡](../design/motion/page-transitions.md)可将用户导航到应用中的各个页面。 它们帮助用户了解自己在导航层次结构中的位置，并提供有关页面之间关系的反馈。
 
 ### <a name="project-rome"></a>Project Rome
 
@@ -126,7 +126,7 @@ C++/WinRT 是一种新的编写和使用 Windows 运行时 API 的方式。 该�
 
 ### <a name="multi-instance-uwp-apps"></a>多实例 UWP 应用
 
-Windows 现在可以运行 UWP 应用中的多个实例，每个实例都在各自独立的进程中运行。 [观看视频](https://www.youtube.com/watch?v=clnnf4cigd0&feature=youtu.be)了解如何创建支持该功能的新应用，然后[阅读开发人员文档](../launch-resume/multi-instance-uwp.md)以获取更多使用该功能的方式和原因的有关指导。
+Windows 现在支持运行多个 UWP 应用实例，每个实例都在其自己独立的进程中运行。 [观看视频](https://www.youtube.com/watch?v=clnnf4cigd0&feature=youtu.be)了解如何创建支持该功能的新应用，然后[阅读开发人员文档](../launch-resume/multi-instance-uwp.md)以获取更多使用该功能的方式和原因的有关指导。
 
 ## <a name="samples"></a>示例
 

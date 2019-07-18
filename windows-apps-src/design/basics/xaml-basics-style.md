@@ -5,22 +5,22 @@ keywords: XAML, UWP, 入门
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d540b41620110a41676d08f5e6239efd0ef4ca46
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 804f1994e187d3b09ed4dcb2186105cf615f5de0
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66361225"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820504"
 ---
 # <a name="tutorial-create-custom-styles"></a>教程：创建自定义样式
 
 本教程向你介绍如何自定义 XAML 应用的 UI。 警告：本教程可能包括或不包括独角兽图形。 （包括！）  
 
 ## <a name="prerequisites"></a>必备条件
-* [Visual Studio 2017 和 Windows 10 SDK（10.0.15063.468 或更高版本）](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio 2019 和 Windows 10 SDK（10.0.15063.468 或更高版本）](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="part-0-get-the-code"></a>第 0 部分：获取代码
-本实验室的起点位于 [xaml-basics-starting-points/style/ 文件夹](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style)内的 PhotoLab 示例存储库中。 克隆/下载存储库后，可以使用 Visual Studio 2017 打开 PhotoLab.sln 来编辑项目。
+本实验室的起点位于 [xaml-basics-starting-points/style/ 文件夹](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style)内的 PhotoLab 示例存储库中。 克隆/下载存储库后，可以使用 Visual Studio 2019 打开 PhotoLab.sln 来编辑项目。
 
 PhotoLab 应用有两个主要页面：
 
@@ -54,7 +54,7 @@ PhotoLab 应用有两个主要页面：
 
 2. 在“解决方案资源管理器”面板中，双击 DetailPage.xaml 以将其打开  。 
 
-    ![Visual Studio 2017 解决方案资源管理器中的 DetailPage.xaml 文件。](../basics/images/xaml-basics/style-detail-page-explorer.png)
+    ![Visual Studio 2019 解决方案资源管理器中的 DetailPage.xaml 文件。](../basics/images/xaml-basics/style-detail-page-explorer.png)
 
 3. 使用多边形元素为曝光滑块创建背景形状。
 
@@ -63,7 +63,7 @@ PhotoLab 应用有两个主要页面：
     <!-- TODO reduce size -->
     ![独角兽](../basics/images/xaml-basics/unicorn.png)
     
-    > **阅读相关信息：** [绘制形状](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)一文会介绍有关 XAML 形状的所有需知内容。 
+    > **阅读相关信息：** [绘制形状](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/shapes)一文会介绍有关 XAML 形状的所有需知内容。 
     
     我们想要创建一个类似三角形的小工具 - 有点像立体声音响的音量控制器上的形状。
     

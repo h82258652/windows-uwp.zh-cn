@@ -5,12 +5,12 @@ keywords: XAML, UWP, 入门
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b444a11ab032034976d2f1b269bd10a89bf339e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 67d5861e65a85a07cdda486ddb9c9634c388e819
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63798596"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820458"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教程：创建自适应布局
 
@@ -28,7 +28,7 @@ ms.locfileid: "63798596"
 
 ## <a name="prerequisites"></a>必备条件
 
-* Visual Studio 2017：[下载 Visual Studio 2017 社区版（免费）](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Visual Studio 2019：[下载 Visual Studio 2019 Community（免费）](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
 * Windows 10 SDK（10.0.15063.468 或更高版）：[下载最新的 Windows SDK（免费）](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Windows 移动版模拟器：[下载 Windows 10 移动版模拟器（免费）](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
 
@@ -321,8 +321,8 @@ ms.locfileid: "63798596"
 
 如果遇到问题，可以在[使用 XAML 定义页面布局](../layout/layouts-with-xaml.md)的以下部分中找到更多指南。
 
-+ [视觉状态和状态触发器](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#visual-states-and-state-triggers)
-+ [定制布局](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#tailored-layouts)
++ [视觉状态和状态触发器](https://docs.microsoft.com/windows/uwp/design/layout/layouts-with-xaml#visual-states-and-state-triggers)
++ [定制布局](https://docs.microsoft.com/windows/uwp/design/layout/layouts-with-xaml#tailored-layouts)
 
 或者，如果你想要了解有关如何构建初始照片编辑应用的详细信息，请查看这些有关 XAML [用户界面](../basics/xaml-basics-ui.md)和[数据绑定](../../data-binding/xaml-basics-data-binding.md)的教程。
 

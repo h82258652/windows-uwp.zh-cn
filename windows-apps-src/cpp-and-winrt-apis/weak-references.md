@@ -6,18 +6,20 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 强, 弱, 引用
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 46a0e21295ba430671be4e36ab213e182c2b1737
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 77fcd8369b2df3fdb42facf9d2b2a1d93188322b
+ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721628"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67844325"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>C++/WinRT 中的强引用和弱引用
 
 Windows 运行时是引用在其中占有重要地位的一个系统；在这样的系统中，了解强引用与弱引用（以及非强、非弱引用，例如隐式 *this* 指针）的意义和区别非常重要。 如本主题中所述，了解如何正确管理这些引用可以了解平稳运行的可靠系统与不可预见地崩溃的系统之间的差别。 通过提供深度支持语言投影的帮助器函数，[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 基本上能够满足方便正确地构建更复杂系统的需求。
 
 ## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>在类成员协同例程中安全访问 *this* 指针
+
+有关协同例程的详细信息和代码示例，请参阅[使用 C++/WinRT 执行并发和异步操作](/windows/uwp/cpp-and-winrt-apis/concurrency)。
 
 以下代码列表显示了某个协同例程（某个类的成员函数）的典型示例。 可将此示例复制并粘贴到新的 **Windows 控制台应用程序 (C++/WinRT)** 项目中指定的文件内。
 
@@ -59,14 +61,16 @@ int main()
 
 **MyClass::RetrieveValueAsync** 将花费一段时间来运行，最终返回 `MyClass::m_value` 数据成员的副本。 调用 **RetrieveValueAsync** 会导致创建异步对象，该对象具有隐式 *this* 指针（最终将通过此指针访问 `m_value`）。
 
+请记住，在协同例程中，在第一个暂停点之前，执行是同步的；到达第一个暂停点时，控制返回到调用方。 在 **RetrieveValueAsync** 中，第一个 `co_await` 是第一个暂停点。 当协同例程恢复时（在此示例中为大约五秒以后），我们用来访问 `m_value` 的隐式 *this* 指针可能会发生任何情况。
+
 下面是完整的事件序列。
 
 1. 在 **main** 中创建 **MyClass** 的实例 (`myclass_instance`)。
 2. 创建指向（通过 *this*）`myclass_instance` 的 `async` 对象。
-3. **Winrt::Windows::Foundation::IAsyncAction::get** 函数会阻塞几秒钟，然后返回 **RetrieveValueAsync** 的结果。
+3. **Winrt::Windows::Foundation::IAsyncAction::get** 函数在遇到第一个暂停点时会阻塞几秒钟，然后返回 **RetrieveValueAsync** 的结果。
 4. **RetrieveValueAsync** 返回 `this->m_value` 值。
 
-只要 *this* 有效，步骤 4 就是安全的。
+只有在 *this* 始终有效的情况下，步骤 4 才是安全的。
 
 但是，如果在异步操作完成之前销毁了类实例，会出现什么情况？ 在异步方法完成之前，类实例可能会在各种情况下超出范围。 但是，我们可以通过将类实例设置为 `nullptr` 来模拟这些情况。
 
@@ -193,7 +197,9 @@ int main()
 }
 ```
 
-模式是，事件接收方具有一个依赖于其 *this* 指针的 lambda 事件处理程序。 每当事件接收方的生存期超过事件源时，它的生存期也会超过这些依赖项。 在这种常见的情况下，该模式可正常运作。 这些情况中有一部分很明显，例如当 UI 页面处理由页面上的控件引发的事件时。 页面的生存期超过按钮 &mdash; 因此，处理程序的生存期也超过按钮。 每当接收方拥有源（例如作为数据成员）时，或者每当接收方和源是同级且直接由其他某个对象拥有时，就会出现这种情况。 如果你不确定是否遇到处理程序的生存期不会超过它依赖的 *this* 的情况，则通常可以捕获 *this* 而不考虑强或弱生存时间。
+模式是，事件接收方具有一个依赖于其 *this* 指针的 lambda 事件处理程序。 每当事件接收方的生存期超过事件源时，它的生存期也会超过这些依赖项。 在这种常见的情况下，该模式可正常运作。 这些情况中有一部分很明显，例如当 UI 页面处理由页面上的控件引发的事件时。 页面的生存期超过按钮 &mdash; 因此，处理程序的生存期也超过按钮。 每当接收方拥有源（例如作为数据成员）时，或者每当接收方和源是同级且直接由其他某个对象拥有时，就会出现这种情况。 另一种安全情况是，当事件源以同步方式引发其事件时，你就可以放心地撤销处理程序：不会收到更多事件了。
+
+在不确定是否会遇到处理程序的生存期不会超过它依赖的 *this* 的情况时，通常可以捕获 *this* 而不考虑强或弱生存时间。
 
 但仍有一些情况，*this* 的生存期不及它在处理程序（包括用于由异步操作和运算引发的完成和进度事件的处理程序）中的使用时间。必须了解如何处理这种情况。
 

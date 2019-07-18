@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fbe10e41da1b330d6f5042bea109a8a0e04f8ad
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d2b92bf5e265c2d596a7fc7eb54b127010cee897
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360163"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717607"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>从 C++/CX 移动到 C++/WinRT
 
@@ -181,7 +181,7 @@ private:
 };
 ```
 
-移植到 C++/WinRT 的同一个代码。 请注意 `nullptr` 构造函数的使用。 有关该构造函数的详细信息，请参阅[通过 C++/WinRT 使用 API](consume-apis.md)。
+移植到 C++/WinRT 的同一个代码。 请注意 **std::nullptr_t** 构造函数的使用。 有关该构造函数的详细信息，请参阅[通过 C++/WinRT 使用 API](consume-apis.md#delayed-initialization)。
 
 ```cppwinrt
 using namespace winrt::Windows::Storage::Streams;
@@ -365,7 +365,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 ### <a name="port-platformstring-to-winrthstring"></a>从 Platform::String\^  移植到 winrt::hstring 
 Platform::String\^  等同于 Windows 运行时 HSTRING ABI 类型。 对于 C++/WinRT，等效项是 [winrt::hstring  ](/uwp/cpp-ref-for-winrt/hstring)。 但使用 C++/WinRT，你可以使用 C++ 标准库宽字符串类型（如 std::wstring  ）和/或宽字符串文字调用 Windows 运行时 API。 有关更多详细信息和代码示例，请参阅 [C++/WinRT 中的字符串处理](strings.md)。
 
-通过 C++/CX，你可以访问 [Platform::String::Data  ](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) 属性来作为 C 样式 const wchar_t\*  数组检索字符串（例如，将其传递到 std::wcout  ）。
+通过 C++/CX，你可以访问 [Platform::String::Data  ](https://docs.microsoft.com/cpp/cppcx/platform-string-class?view=vs-2019#data) 属性来作为 C 样式 const wchar_t\*  数组检索字符串（例如，将其传递到 std::wcout  ）。
 
 ```cppcx
 auto var{ titleRecord->TitleName->Data() };

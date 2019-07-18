@@ -5,18 +5,18 @@ keywords: 新增功能, 新功能, 更新, 刷新, 功能, 新, Windows 10, 最�
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b7fe830e07c1daf95928ab747259cb57aaa7a9f
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: dc35dc50b8dc523aff5478b3ec19c3daeed9dafb
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66371343"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820451"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>面向开发人员的 Windows 10 内部版本 17134 中的新增功能
 
-Windows 10 内部版本 17134（又称 4 月更新或版本 1803）与 Visual Studio 2017 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了丰富的工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+Windows 10 内部版本 17134（又称 4 月更新或版本 1803）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
-该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 17134 API 更改](windows-10-build-17134-api-diff.md)。 有关 Windows 10 亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的高级概述。
+该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 17134 API 更改](windows-10-build-17134-api-diff.md)。 有关 Windows 10 亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的详尽概述。
 
 ## <a name="design--ui"></a>设计和 UI
 
@@ -36,7 +36,7 @@ Fluent Design 更新 | 我们已经更新了许多 Fluent Design 页面，增加
 声音 | XAML 现在通过 **SpatialAudioMode** 属性支持 3D 音频。 请参阅[声音](../design/style/sound.md)了解有关如何配置的信息。
 磁贴 | 基于 JavaScript 的 UWP 应用现支持[可追踪磁贴通知](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md)。<br><br>[桌面桥应用现在支持](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications)辅助磁贴和锁屏提醒通知。
 树视图 | [树视图](../design/controls-and-patterns/tree-view.md)控件支持分层列表，其中具有包含嵌套项的展开节点和折叠节点。 它可用于说明你的用户界面中的文件夹结构或嵌套关系。
-写入样式 | 我们已升级并扩充了有关语音和声调的文章内容，现在变为[写入样式指南](../design/style/writing-style.md)。 这些新信息提供在应用中创建有效文本的准则，并为控件编写（如错误消息或对话）推荐最佳做法。
+写入样式 | 我们已升级并扩充了有关语音和声调的文章内容，现在变为[编写样式指南](../design/style/writing-style.md)。 这些新信息提供在应用中创建有效文本的准则，并为控件编写（如错误消息或对话）推荐最佳做法。
 
 ## <a name="gaming"></a>游戏
 功能 | 描述
@@ -78,7 +78,7 @@ Windows Mixed Reality 文档 | Windows Mixed Reality 开发人员指南[现在�
 从 Microsoft Store 下载并安装程序包更新 | 我们已更新[下载和安装来自 Microsoft Store 的程序包更新](../packaging/self-install-package-updates.md)，并提供关于如何下载和安装程序包更新而不向用户显示通知 UI 的新指南和示例，卸载可选程序包，以及获取关于应用的下载和安装队列中的程序包的信息。
 使用特定市场的当地货币输入自由格式价格 | 在覆盖特定市场的应用基价后，将不再受限于选择其中一个标准价格段；现在可以选择使用市场的当地货币输入自由格式价格。 有关详细信息，请参阅[设置和计划应用定价](../publish/set-and-schedule-app-pricing.md)。 **此功能适用于所有的 Windows 开发人员，并且不需要更新的 SDK。**
 存储上下文 | [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 类已经更新，增强了一系列新方法。 这些方法管理应用的程序包更新和加载项的下载和安装。
-订阅加载项现在可供所有开发人员使用 | 按照自动定期帐单期间创建和发布订阅加载项来在你的应用和游戏中销售数字产品（如应用功能或数字内容）。 有关详细信息，请参阅[启用应用加载项订阅](../monetize/enable-subscription-add-ons-for-your-app.md)。 **此功能适用于所有的 Windows 开发人员，并且不需要更新的 SDK。**
+订阅加载项现在可供所有开发人员使用 | 按照自动定期帐单期间创建和发布订阅加载项以在你的应用和游戏中销售数字产品（如应用功能或数字内容）。 有关详细信息，请参阅[启用应用加载项订阅](../monetize/enable-subscription-add-ons-for-your-app.md)。 **此功能适用于所有的 Windows 开发人员，并且不需要更新的 SDK。**
 
 ## <a name="videos"></a>视频
 
@@ -90,7 +90,7 @@ Windows 10 SDK 拥有多种可帮助你测试并改进应用辅助功能的工�
 
 ### <a name="creating-3d-app-launchers-for-windows-mixed-reality"></a>创建适用于 Windows Mixed Reality 的 3D 应用启动器
 
-3D 启动器为用户提供在其混合现实家庭环境中放置应用的真正立体表示形式的唯一途径。 [观看视频](https://www.youtube.com/watch?v=TxIslHsEXno)了解如何准备 3D 模型并将其指定为应用的启动器，然后[阅读开发人员文档](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_app_launchers)并[查看我们的设计指南](https://developer.microsoft.com/windows/mixed-reality/3d_app_launcher_design_guidance)了解详细信息。
+3D 启动器为用户提供在其混合现实家庭环境中放置应用的真正立体表示形式的独特途径。 [观看视频](https://www.youtube.com/watch?v=TxIslHsEXno)了解如何准备 3D 模型并将其指定为应用的启动器，然后[阅读开发人员文档](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_app_launchers)并[查看我们的设计指南](https://developer.microsoft.com/windows/mixed-reality/3d_app_launcher_design_guidance)了解详细信息。
 
 ### <a name="creating-a-uwp-console-app"></a>创建 UWP 控制台应用
 
@@ -102,7 +102,7 @@ Windows 机器学习支持你构建用于评估 Windows 10 设备上的本地预
 
 ### <a name="motion-controller-tracking"></a>运动控制器跟踪
 
-运动控制器在 Windows Mixed Reality 中代表用户的手。 [观看视频](https://www.youtube.com/watch?v=rkDpRllbLII)了解运动控制器在混合现实头戴显示设备的视野内外如何工作，并[在此处阅读有关控制器跟踪的详细信息。](https://developer.microsoft.com/windows/mixed-reality/motion_controllers#controller_tracking_state%E2%80%9D)
+运动控制器在 Windows Mixed Reality 中代表用户的手。 [观看视频](https://www.youtube.com/watch?v=rkDpRllbLII)了解运动控制器在混合现实头戴显示设备的视野内外如何工作，并[在此处阅读有关控制器跟踪的详细信息。](https://docs.microsoft.com/windows/mixed-reality/motion-controllers#controller_tracking_state%E2%80%9D)
 
 ### <a name="package-a-net-app-in-visual-studio"></a>在 Visual Studio 中打包 .NET 应用
 

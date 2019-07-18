@@ -5,12 +5,12 @@ keywords: XAML, UWP, 入门
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bae8455f1062b3ad62aeac3807c6c58ae274a1b
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d4da7e661b0a9c1f389ae93fe4da4782629014f4
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63794829"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820523"
 ---
 # <a name="tutorial-create-a-user-interface"></a>教程：创建用户界面
 
@@ -32,7 +32,7 @@ ms.locfileid: "63794829"
 
 ## <a name="prerequisites"></a>必备条件
 
-* Visual Studio 2017：[下载 Visual Studio 2017 社区版（免费）](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Visual Studio 2019：[下载 Visual Studio 2019 Community（免费）](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
 * Windows 10 SDK（10.0.15063.468 或更高版）：[下载最新的 Windows SDK（免费）](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 
 ## <a name="part-0-get-the-starter-code-from-github"></a>第 0 部分：从 github 获取起始代码

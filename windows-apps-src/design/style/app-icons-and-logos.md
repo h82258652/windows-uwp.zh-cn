@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 31b90866a0f612fb8f488d11e7d989380f14da99
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 0352e01363fc077439325eba4f74fe97febac33c
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63784971"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820549"
 ---
 # <a name="app-icons-and-logos"></a>应用图标和徽标 
 
@@ -105,18 +105,18 @@ For more information, see [App screenshots, images, and trailers in the Microsof
 
 Visual Studio 提供了一个非常有用的工具来管理应用图标，名为“清单设计器”  。 
 
-> 如果未安装 Visual Studio 2017，则有几个版本可供使用，其中包括免费版本 (Visual Studio 2017 Community Edition)，其他版本也提供免费试用版。 可以在此处下载：[https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)
+> 如果未安装 Visual Studio 2019，则有几个版本可供使用，其中包括免费版本 (Visual Studio 2019 Community Edition)，其他版本也提供免费试用版。 可以在此处下载：[https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)
 
 
 若要启动清单设计器：
 <!-- 1. Use Visual Studio to open a UWP project.
 2. In the **Solution Explorer**, double-click the package.appmanifest file. 
 
-    ![The Visual Studio 2017 Solution Explorer](images/icons/vs-solution-explorer.png)
+    ![The Visual Studio 2019 Solution Explorer](images/icons/vs-solution-explorer.png)
 
     Visual Studio displays the manifest designer.
 
-    ![The Visual Studio 2017 manifest designer](images/icons/vs-manfiest-designer.png)
+    ![The Visual Studio 2019 manifest designer](images/icons/vs-manfiest-designer.png)
 3. Click the **Visual Assets** tab.
 
     ![The Visual Assets tab](images/icons/vs-manfiest-designer-visual-assets.png) -->
@@ -135,7 +135,7 @@ Visual Studio 提供了一个非常有用的工具来管理应用图标，名为
         2. 在解决方案资源管理器中，双击 Package.appxmanifest 文件  。
     :::column-end:::
     :::column:::
-        ![The Visual Studio 2017 Manifest Designer](images/icons/vs-solution-explorer.png)
+        ![The Visual Studio 2019 Manifest Designer](images/icons/vs-solution-explorer.png)
     :::column-end:::
 :::row-end:::
 :::row:::

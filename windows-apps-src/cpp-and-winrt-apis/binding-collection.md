@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 集合
 ms.localizationpriority: medium
-ms.openlocfilehash: 7669c6536f28d5f979567f5b433dbf614800bec3
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 999238d72017b92f1eb64c2e3089305166f993f2
+ms.sourcegitcommit: bf32c7ea6ca94b60dbd01cae279b31c6e0e5f338
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65627679"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348642"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML 项目控件；绑定到 C++/WinRT 集合
 
@@ -39,13 +39,16 @@ ms.locfileid: "65627679"
 runtimeclass BookstoreViewModel
 {
     BookSku BookSku{ get; };
-    Windows.Foundation.Collections.IObservableVector<IInspectable> BookSkus{ get; };
+    Windows.Foundation.Collections.IObservableVector<BookSku> BookSkus{ get; };
 }
 ...
 ```
 
-> [!IMPORTANT]
-> 在上述 MIDL 3.0 列表中，注意 BookSkus 属性的类型是 [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) 的 [IObservableVector](/uwp/api/windows.foundation.collections.ivector_t_)    。 在本主题的下一节中，我们会将 [ListBox](/uwp/api/windows.ui.xaml.controls.listbox) 的项目源绑定到 BookSkus   。 列表框是项目控件，用于正确设置 [ItemsControl.ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 属性，你需要将其设置为 IInspectable 的 IObservableVector（或 IVector）类型的值，或 [IBindableObservableVector](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector) 等互操作性类型的值      。
+> [!NOTE]
+> 在上述 MIDL 3.0 列表中，注意 **BookSkus** 属性的类型是 **BookSku** 的 [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_)。 在本主题的下一节中，我们会将 [ListBox](/uwp/api/windows.ui.xaml.controls.listbox) 的项目源绑定到 BookSkus   。 列表框是项控件，用于正确设置 [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 属性，你需要将其设置为某个类型为 **IObservableVector** 或 **IVector** 的值，或者某个互操作性类型（例如 [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)）的值。
+
+> [!WARNING]
+> 本主题中显示的代码适用于 C++/WinRT 2.0.190530.8 及更高版本。 如果使用更低版本，则需对所示代码进行一些细微调整。 在上述 MIDL 3.0 列表中，请将 **BookSkus** 属性更改为 [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) 的 [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_)。 然后，在实现中也使用 **IInspectable**（而不是 **BookSku**）。
 
 保存并生成。 复制 `\Bookstore\Bookstore\Generated Files\sources` 文件夹中 `BookstoreViewModel.h` 和 `BookstoreViewModel.cpp` 的访问器存根（有关详细信息，请参阅上一主题：[XAML 控件；绑定到 C++/WinRT 属性](binding-property.md)）。 实现这些访问器存根，如下所示。
 
@@ -58,11 +61,11 @@ struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
 
     Bookstore::BookSku BookSku();
 
-    Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> BookSkus();
+    Windows::Foundation::Collections::IObservableVector<Bookstore::BookSku> BookSkus();
 
 private:
     Bookstore::BookSku m_bookSku{ nullptr };
-    Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> m_bookSkus;
+    Windows::Foundation::Collections::IObservableVector<Bookstore::BookSku> m_bookSkus;
 };
 ...
 ```
@@ -73,7 +76,7 @@ private:
 BookstoreViewModel::BookstoreViewModel()
 {
     m_bookSku = winrt::make<Bookstore::implementation::BookSku>(L"Atticus");
-    m_bookSkus = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>();
+    m_bookSkus = winrt::single_threaded_observable_vector<Bookstore::BookSku>();
     m_bookSkus.Append(m_bookSku);
 }
 
@@ -82,7 +85,7 @@ Bookstore::BookSku BookstoreViewModel::BookSku()
     return m_bookSku;
 }
 
-Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> BookstoreViewModel::BookSkus()
+Windows::Foundation::Collections::IObservableVector<Bookstore::BookSku> BookstoreViewModel::BookSkus()
 {
     return m_bookSkus;
 }

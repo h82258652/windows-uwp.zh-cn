@@ -6,16 +6,16 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
 ms.localizationpriority: medium
-ms.openlocfilehash: dbf7c5d8d0f788fb37150ae348d60e61d34753d5
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 83c1952a3cb21945a3e4c22aaa6ffe9f7f55c8f8
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66372907"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821096"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-15063"></a>面向开发人员的 Windows 10 内部版本 15063 中的新增功能
 
-Windows 10 内部版本 15063（又称创意者更新或版本 1703）与 Visual Studio 2017 和更新的 SDK 相结合，为打造卓越的通用 Windows 平台应用提供了丰富的工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+Windows 10 内部版本 15063（又称 Creators Update 或版本 1703）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 这是一系列开发人员感兴趣的新增和改进功能。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 15063 API 更改](windows-10-build-15063-api-diff.md)。 有关 Windows 10 亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的高级概述。
 
@@ -32,7 +32,7 @@ Windows 10 内部版本 15063（又称创意者更新或版本 1703）与 Visual
 Direct3D | 已向 [Direct3D 12](https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics) 添加新 API，以支持原子缓冲副本（实现后期锁存技术）、可编程的示例位置、深度界限测试、驻留优先级等。 </br></br> 已添加围墙 API，以支持 [Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11) 中的多设备方案和 Direct3D 11 与 Direct3D 12 间的互操作方案。 运行时现在支持操作系统管理的着色器缓存，以降低应用程序加载时间和提高性能。
 EdgeHTML 15 | 支持 Microsoft Edge 和基于 JS 的通用 Windows 平台应用的 Web 平台现已更新到 EdgeHTML 15，且现在包含对支付请求 API、WebVR 、内容安全策略 2 及其他功能的支持。 请参阅 [Microsoft Edge 开发人员指南](https://docs.microsoft.com/microsoft-edge/dev-guide)获取完整更改列表。
 FlightStick 和 RawGameController | 已将新 API 添加到 [Windows.Gaming.Input 命名空间](https://docs.microsoft.com/uwp/api/windows.gaming.input)，包括对[飞行杆](https://docs.microsoft.com/windows/uwp/gaming/flight-stick)以及[原始游戏控制器](https://docs.microsoft.com/windows/uwp/gaming/raw-game-controller)的支持，这样便可从任何类型的控制器收集输入并允许玩家选择自定义输入映射。
-Win32 中的高 DPI | 已向桌面应用程序添加[全新“Per-Monitor v2”DPI 感知上下文](https://msdn.microsoft.com/library/mt791579(v=vs.85))。 Per-Monitor v2 仍会在相关 DPI 改变时自动调整窗口的缩放比例，但应用程序仍能按顶级窗口逐一访问新 DPI 缩放行为。
+Win32 中的高 DPI | 已向桌面应用程序添加[全新“Per-Monitor v2”DPI 感知上下文](https://docs.microsoft.com/windows/desktop/hidpi/dpi-awareness-context)。 Per-Monitor v2 仍会在相关 DPI 改变时自动调整窗口的缩放比例，但应用程序仍能按顶级窗口逐一访问新 DPI 缩放行为。
 墨迹 | [墨迹](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)添加了针对量角器和标尺模具、墨迹输入时间戳、优化的高对比度荧光笔以及通过编程方式创建墨迹笔划的额外支持。 </br></br> [墨迹分析](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis)可提供 Windows Ink 应用的墨迹笔划输入分析，包括形状检测和识别、手写识别和布局解释及分类。 </br></br> 已对[墨迹工具栏](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar)进行常规优化，包括模具按钮（用于标尺和量角器）、浮出控件控制类型和浮出控件位置/方向。 </br></br> 现在，可在[墨迹工作区](https://docs.microsoft.com/uwp/api/windows.applicationmodel.preview.inkworkspace)指定墨迹书写应用。
 输入注入 | [输入插入](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)支持从各种设备以编程方式生成输入和自动输入。
 IoT | [Windows IoT 核心版](https://developer.microsoft.com/windows/iot/Explore/IoTCore)更新包括 Cortana 支持、IoT 仪表板改进、Azure 设备管理支持和适用于 IoT 的 Device Guard。 有关最新功能的完整概述，请参阅 [Windows 10 IoT 核心版新增功能](https://developer.microsoft.com/windows/iot/Docs/WhatsNew)。

@@ -7,12 +7,12 @@ keywords: Windows 10, uwp, 版本, 内部版本, Windows, 选择, 更新
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e7e086cbe87ea146703ad2661de95a92dbc0e172
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: f691a0d600fd6508f1f8ec2bbffec9bf02a98da7
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66371537"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821054"
 ---
 # <a name="choose-a-uwp-version"></a>选择 UWP 版本
 
@@ -26,10 +26,10 @@ ms.locfileid: "66371537"
 | 版本 | 描述 |
 | --- | --- |
 | 内部版本 18362（版本 1903） | 这是最新版本的 Windows 10，已于 2019 年 4 月发布。 此版本中的一些突出功能如下： </br> \* **XAML 岛：** 现在，Windows 10 支持在非 UWP 桌面应用程序中使用 UWP 控件。 如果你正在进行 WPF、Windows 窗体或 C++ Win32 方面的开发，请[查看如何将最新的 Windows 10 UI 功能添加到现有应用](../xaml-platform/xaml-host-controls.md)。 </br> \* **适用于 Linux 的 Windows 子系统：** 现在，可以直接在 Windows 中访问 Linux 文件，并使用多个新的命令行选项。 请参阅[关于 WSL](https://docs.microsoft.com/windows/wsl/about.md) 中的最新信息。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或[面向开发人员的 Windows 10 中的新增功能](../whats-new/windows-10-build-18362.md)上的详细信息页面。
-| 内部版本 17763（版本 1809） | 此版本的 Windows 10 已于 2018 年 10 月发布。 **请注意，必须使用 Visual Studio 2017 以面向此版本的 Windows。**  此版本中的一些突出功能如下： </br> \* **Windows 机器学习：** Windows 机器学习现已正式推出，为尖端机器学习模型提供更快的评估和支持等功能。 若要了解有关此平台的详细信息，请参阅 [Windows 机器学习](https://docs.microsoft.com/windows/ai/)。 </br> \* **流畅设计：** 菜单栏、命令栏浮出控件和 XAML 属性动画等新功能已添加到 Windows 10。 请参阅[流畅设计概述](../design/fluent-design-system/index.md)中的最新信息。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或[面向开发人员的 Windows 10 中的新增功能](../whats-new/windows-10-build-17763.md)上的详细信息页面。
-| 内部版本 17134（版本 1803） | 此版本的 Windows 10 已于 2018 年 4 月发布。 **请注意，必须使用 Visual Studio 2017 以面向此版本的 Windows。**  此版本中的一些突出功能如下： </br> \* **流畅设计：** 树视图、下拉刷新和导航视图等新功能已添加到 Windows 10。 请参阅[流畅设计概述](../design/fluent-design-system/index.md)中的最新信息。 </br> \* **控制台 UWP 应用：** 现在可以编写在控制台窗口（如 DOS 或 PowerShell 控制台窗口）中运行的 C++ /WinRT 或 /CX UWP 控制台应用。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或[面向开发人员的 Windows 10 中的新增功能](../whats-new/windows-10-build-17134.md)上的详细信息页面。
-| 内部版本 16299（Fall Creators Update 版本 1709） | 此版本的 Windows 10 已于 2017 年 10 月发布。 **请注意，必须使用 Visual Studio 2017 以面向此版本的 Windows。**  此版本中的一些突出功能如下： </br> \* **.NET Standard 2.0：** 显著增加了 .NET API，并在 .NET Standard 中融入了最常用的 NuGet 程序包以及第三方库。 在[此处](https://docs.microsoft.com/dotnet/standard/net-standard)查看更多详细信息并探索文档。 请注意，必须将**最低版本**设置为版本 16299 才可访问这些新 API。 </br> \* **流畅设计：** 使用光线、深度、透视和移动来改善应用并帮助用户关注重要的 UI 元素。 </br> \* **条件 XAML：** 根据在运行时是否存在 API 轻松设置属性并实例化对象，从而使应用能够跨不同设备和版本无缝运行。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或[面向开发人员的 Windows 10 中的新增功能](../whats-new/windows-10-build-16299.md)上的详细信息页面。
-| 内部版本 15063（Creators Update 版本 1703） | 此版本的 Windows 10 已于 2017 年 3 月发布。 **请注意，必须使用 Visual Studio 2017 以面向此版本的 Windows。**  此版本中的一些突出功能如下：  </br> \* **墨迹分析：** Windows Ink 现在可将墨迹笔划分类为编写笔划或绘图笔划，并识别文本、形状和基本布局结构。 </br> \* **Windows.Ui.Composition API：** 在整个应用中轻松组合与应用动画。 </br> \* **动态编辑：** 在应用运行的时候编辑 XAML，并可查看实时更改。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或[面向开发人员的 Windows 10 中的新增功能](../whats-new/windows-10-build-15063.md)上的详细信息页面。  |
+| 内部版本 17763（版本 1809） | 此版本的 Windows 10 已于 2018 年 10 月发布。 **请注意，必须使用 Visual Studio 2017 或 Visual Studio 2019 才能以此版 Windows 为目标。**  此版本中的一些突出功能如下： </br> \* **Windows 机器学习：** Windows 机器学习现已正式推出，为尖端机器学习模型提供更快的评估和支持等功能。 若要了解有关此平台的详细信息，请参阅 [Windows 机器学习](https://docs.microsoft.com/windows/ai/)。 </br> \* **流畅设计：** 菜单栏、命令栏浮出控件和 XAML 属性动画等新功能已添加到 Windows 10。 请参阅[流畅设计概述](../design/fluent-design-system/index.md)中的最新信息。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或[面向开发人员的 Windows 10 中的新增功能](../whats-new/windows-10-build-17763.md)上的详细信息页面。
+| 内部版本 17134（版本 1803） | 此版本的 Windows 10 已于 2018 年 4 月发布。 **请注意，必须使用 Visual Studio 2017 或 Visual Studio 2019 才能以此版 Windows 为目标。**  此版本中的一些突出功能如下： </br> \* **流畅设计：** 树视图、下拉刷新和导航视图等新功能已添加到 Windows 10。 请参阅[流畅设计概述](../design/fluent-design-system/index.md)中的最新信息。 </br> \* **控制台 UWP 应用：** 现在可以编写在控制台窗口（如 DOS 或 PowerShell 控制台窗口）中运行的 C++ /WinRT 或 /CX UWP 控制台应用。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或[面向开发人员的 Windows 10 中的新增功能](../whats-new/windows-10-build-17134.md)上的详细信息页面。
+| 内部版本 16299（Fall Creators Update 版本 1709） | 此版本的 Windows 10 已于 2017 年 10 月发布。 **请注意，必须使用 Visual Studio 2017 或 Visual Studio 2019 才能以此版 Windows 为目标。**  此版本中的一些突出功能如下： </br> \* **.NET Standard 2.0：** 显著增加了 .NET API，并在 .NET Standard 中融入了最常用的 NuGet 程序包以及第三方库。 在[此处](https://docs.microsoft.com/dotnet/standard/net-standard)查看更多详细信息并探索文档。 请注意，必须将**最低版本**设置为版本 16299 才可访问这些新 API。 </br> \* **流畅设计：** 使用光线、深度、透视和移动来改善应用并帮助用户关注重要的 UI 元素。 </br> \* **条件 XAML：** 根据在运行时是否存在 API 轻松设置属性并实例化对象，从而使应用能够跨不同设备和版本无缝运行。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或[面向开发人员的 Windows 10 中的新增功能](../whats-new/windows-10-build-16299.md)上的详细信息页面。
+| 内部版本 15063（Creators Update 版本 1703） | 此版本的 Windows 10 已于 2017 年 3 月发布。 **请注意，必须使用 Visual Studio 2017 或 Visual Studio 2019 才能以此版 Windows 为目标。**  此版本中的一些突出功能如下：  </br> \* **墨迹分析：** Windows Ink 现在可将墨迹笔划分类为编写笔划或绘图笔划，并识别文本、形状和基本布局结构。 </br> \* **Windows.Ui.Composition API：** 在整个应用中轻松组合与应用动画。 </br> \* **动态编辑：** 在应用运行的时候编辑 XAML，并可查看实时更改。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或[面向开发人员的 Windows 10 中的新增功能](../whats-new/windows-10-build-15063.md)上的详细信息页面。  |
 | 内部版本 14393（周年更新版本 1607） | 此版本的 Windows 10 已于 2016 年 7 月发布。 此版本中的一些突出功能如下： </br> \* **Windows Ink：** 新的 InkCanvas 和 InkToolbar 控件。 </br> \* **Cortana API：** 使用新的 Cortana 操作将 Cortana 支持与应用的特殊功能集成。 </br> \* **Windows Hello：** Microsoft Edge 现在支持 Windows Hello，使 Web 开发人员能够访问生物识别身份验证。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或[面向开发人员的 Windows 10 中的新增功能](../whats-new/windows-10-build-14393.md)上的详细信息页面。  |
 | 内部版本 10586（11 月更新版本 1511） | 此版本的 Windows 10 已于 2015 年 11 月发布。 突出功能包括引入了用于在 Microsoft Edge 中进行视频通信的 ORTC（对象实时通信）和用于支持应用使用 Windows Hello 人脸身份验证的提供者 API。 [有关此版本中引入的功能的详细信息。](../whats-new/windows-10-build-10586.md) |
 | 内部版本 10240（Windows 10 版本 1507） | 这是 Windows 10 的初始发行版本，已于 2015 年 7 月发布。 [有关此版本中引入的功能的详细信息。](../whats-new/windows-10-build-10240.md) |
@@ -44,7 +44,7 @@ Windows 10 的每个连续版本中都提供了适用于 UWP 的全新和更改�
 
 ## <a name="net-api-availability-in-uwp-versions"></a>UWP 版本中的 .NET API 可用性
 
-UWP 支持有限的 .NET API 子集，无论项目的**目标版本**或**最低版本**是什么，都可以使用这些 API。 [此页提供了有关可用类型的详细信息](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)。
+UWP 支持有限的 .NET API 子集，无论项目的**目标版本**或**最低版本**是什么，都可以使用这些 API。 [此页提供了有关可用类型的详细信息](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)。
 
 若要创建可重用的跨平台库，可以在 UWP 中使用 .NET Standard。 [.NET Standard 文档](https://docs.microsoft.com/dotnet/standard/net-standard)提供了有关哪些版本支持 .NET Standard 的信息。
 

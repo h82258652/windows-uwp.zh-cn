@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f8e74688d0f7048276b12680237b85663d7e2b81
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a91c080805bca5d536aad3755ca7edf052d1fe0e
+ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66214738"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414061"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>向 UWP 概念性文档投稿
 
@@ -48,7 +48,7 @@ ms.locfileid: "66214738"
 
 在内部存储库中创建拉取请求时，请确保将个人分支合并到从中创建它的分支中。
 
-提交拉取请求之后，会按照[内容质量清单](https://review.docs.microsoft.com/windows-authoring-guide/managing-contributions/editorial-checklist?branch=master)对它进行评估，以确保它满足我们的基本标准。 如果通过评估，则会将它分配给 UWP 文档团队的成员以进行进一步审阅。 如果失败，则会告诉你要进行哪些更改。
+在你提交拉取请求之后，我们会使用 [PR 合并器](https://review.docs.microsoft.com/help/contribute/prmerger-overview?branch=master)对它进行评估，确保它满足我们的基本标准。 如果它通过评估，则可加注 `#sign-off`，将它传给 UWP 文档团队的成员进行进一步评审。 如果无法加注，系统会告知你需要进行哪些更改才能进行签署。
 
 分配的审阅者可以批准或拒绝 PR，或与你合作进行进一步更改。 除非已自行批准，否则审阅者不会合并 PR。
 
