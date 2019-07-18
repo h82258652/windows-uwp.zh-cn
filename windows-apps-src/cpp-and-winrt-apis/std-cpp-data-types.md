@@ -5,16 +5,18 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 数据, 类型
 ms.localizationpriority: medium
-ms.openlocfilehash: 83d2c0c2c544d63d2806dc71bfc367613d34e23a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a87ba48a0853058ba1259e079c586b97af551656
+ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64745286"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67844334"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>标准 C++ 数据类型和 C++/WinRT
 
 借助 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，可以使用标准 C++ 数据类型（包括某些 C++ 标准库数据类型）调用 Windows 运行时 API。 可以将标准字符串传递到 API（请参阅 ](strings.md)C++/WinRT 中的字符串处理[），还可以将初始值列表和标准容器传递到 API，这些 API 需要语义上等价的集合。
+
+另请参阅[将参数传递到 ABI 边界](/windows/uwp/cpp-and-winrt-apis/pass-parms-to-abi)。
 
 ## <a name="standard-initializer-lists"></a>标准初始值列表
 初始值列表 (std::initializer_list) 是 C++ 标准库构造  。 调用特定的 Windows 运行时构造函数和方法时，可以使用初始值列表。 例如，可以使用初始值列表来调用 [DataWriter::WriteBytes](/uwp/api/windows.storage.streams.datawriter.writebytes)  。
