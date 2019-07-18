@@ -6,24 +6,24 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 682a69726b20be52a3217f49bed4947b8b621230
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 0b5423c9aae607d4f6ffe14b755c8f73e013d8b6
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564499"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820970"
 ---
 # <a name="create-a-hello-world-app-js"></a>创建“Hello, world”应用 (JS)
 
 本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的“Hello, world”应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。 通过 Microsoft Visual Studio 中的单个项目，可以生成可在任何 Windows 10 设备上运行的应用。
 
 > [!NOTE]
-> 本教程使用 Visual Studio Community 2017。 如果使用的是不同版本的 Visual Studio，则其外观可能稍有不同。
+> 本教程使用 Visual Studio Community 2019。 如果使用的是不同版本的 Visual Studio，则其外观可能稍有不同。
 
 
 在此处，你将了解如何：
 
--   创建面向 **Windows 10** 和 **UWP** 的新 **Visual Studio** 项目。
+-   创建面向 **Windows 10** 和 **UWP** 的新 **Visual Studio 2019** 项目。
 -   添加 HTML 和 JavaScript 内容
 -   在 Visual Studio 中，在本地桌面中运行该项目
 
@@ -35,17 +35,15 @@ ms.locfileid: "64564499"
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>第 1 步：在 Visual Studio 中创建新项目
 
-1.  启动 Visual Studio。
+1.  启动 Visual Studio 2019。
 
-2.  在“文件”菜单中，选择“新建”>“项目...”打开“新建项目”对话框    。
+2.  在“文件”菜单中选择“新建”>“项目...”，打开“创建新项目”对话框    。
 
-3.  在左侧的模板列表中，打开“已安装”>“模板”>“JavaScript”，然后选择“Windows 通用”查看 UWP 项目模板列表   。
+3.  选择“空白应用(通用 Windows) JavaScript”，然后选择“下一步”。  
 
-    （如果未看到任何通用模板，可能是缺少用于创建 UWP 应用的组件。） 可以通过在“新建项目”对话框中单击“打开 Visual Studio 安装程序”来重复安装流程并添加 UWP 支持   。 请参阅[准备工作](get-set-up.md)
+    （如果未看到任何通用模板，可能是缺少用于创建 UWP 应用的组件。 在“创建新项目”对话框中单击“打开 Visual Studio 安装程序”即可重复安装流程并添加 UWP 支持   。 请参阅[准备工作](get-set-up.md)
 
-4.  选择“空白应用(通用 Windows)”模板，然后输入“HelloWorld”作为**名称**  。 选择“确定”  。
-
-    ![“新建项目”窗口](images/win10-js-01.png)
+4.  在“配置新项目”对话框中，输入“HelloWorld”作为“项目名称”，然后选择“创建”    。
 
 > [!NOTE]
 > 如果你是首次使用 Visual Studio，则可能会看到要求启用“开发人员模式”的“设置”对话框  。 开发人员模式是一种用于启用某些功能（如允许直接运行应用，而不是只能从 Store 运行）的特殊设置。 有关更多信息，请阅读[启用设备进行开发](enable-your-device-for-development.md)。 若要继续使用本指南，请选择“开发人员模式”，然后单击“是”并关闭对话框   。

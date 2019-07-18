@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 新增功能, 功能, 新增
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 11249335f9d29d37bb0824fa779d3ae151c74799
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 537150f6fc000794b11ef9236bfd88469d3f6b19
+ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721649"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67800587"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 中的新增功能
 
@@ -144,13 +144,13 @@ C++/WinRT 本身会为实现的每个 API 都生成此模式。 借助数千个 
 
 #### <a name="component-optimizations"></a>组件优化
 
-此更新添加了对适用于 C++/WinRT 的几个附加选择加入优化（如以下各节所述）的支持。 由于这些优化是重大更改（可能需要进行次要更改以便支持），因此需要使用 `cppwinrt.exe` 工具的 `-opt` 标志显式启用它们。
+此更新添加了对适用于 C++/WinRT 的几个附加选择加入优化（如以下各节所述）的支持。 由于这些优化是重大更改（你可能需要进行次要更改以便支持它们），因此需要显式启用它们。 在 Visual Studio 中，将项目属性“常见属性”   > “C++/WinRT”   > “已优化”  设置为“是”  。 该操作的效果是将 `<CppWinRTOptimized>true</CppWinRTOptimized>` 添加到项目文件。 并且它与从命令行调用 `cppwinrt.exe` 时添加 `-opt[imize]` 开关具有相同的效果。
 
 新项目（来自项目模板）在默认情况下会使用 `-opt`。
 
 ##### <a name="uniform-construction-and-direct-implementation-access"></a>统一构造和直接实现访问
 
-这两个优化使组件可以直接访问自己的实现类型，即使在它只使用投影类型时。 如果只是要使用公共 API 外围应用，则无需使用 [make  ](/uwp/cpp-ref-for-winrt/make)、[make_self  ](/uwp/cpp-ref-for-winrt/make-self) 和 [get_self  ](/uwp/cpp-ref-for-winrt/get-self)。 调用会向下编译为直接调用实现，甚至可能完全内联。
+这两个优化使组件可以直接访问自己的实现类型，即使在它只使用投影类型时。 如果只是要使用公共 API 外围应用，则无需使用 [make  ](/uwp/cpp-ref-for-winrt/make)、[make_self  ](/uwp/cpp-ref-for-winrt/make-self) 和 [get_self  ](/uwp/cpp-ref-for-winrt/get-self)。 调用会向下编译为直接调用实现，甚至可能完全内联。 有关统一构造的详细信息，请参阅常见问题解答[为什么会收到“类未注册”异常？](faq.md#why-am-i-getting-a-class-not-registered-exception)。
 
 ##### <a name="type-erased-factories"></a>类型擦除工厂
 
@@ -198,9 +198,13 @@ fire_and_forget Async(DispatcherQueueController controller)
 
 #### <a name="support-for-deferred-destruction-and-safe-qi-during-destruction"></a>在析构过程中对延迟析构和安全 QI 的支持
 
-XAML 应用程序可能会遇到困难，因为它需要在析构函数中执行 [QueryInterface  ](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) (QI)，以便在层次结构中向上或向下调用一些清理实现。 但是，在对象的引用计数已达到零之后，该调用会涉及 QI。 此更新添加了对引用计数进行反跳的支持，从而确保一旦它达到零，便绝不可能恢复；同时仍允许在析构过程所需的任何临时 QI。 此过程在某些 XAML 应用程序/控件中是不可避免的，C++/WinRT 现在对它具有弹性。
+在运行时类对象的析构函数中调用暂时影响引用计数的方法并非罕见。 当引用计数返回到零时，该对象将第二次进行析构。 在 XAML 应用程序中，你可能需要在析构函数中执行 [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) (QI)，以便在层次结构中向上或向下调用某个清理实现。 但是，对象的引用计数已达到零，这样 QI 也形成引用计数回弹。
 
-可以通过提供静态 final_release  函数，并将 unique_ptr  的所有权移动到某个其他上下文，来延迟析构。
+此更新添加了对引用计数进行反跳的支持，从而确保一旦它达到零，便绝不可能恢复；同时仍允许在析构过程为所需的任何临时目标执行 QI。 此过程在某些 XAML 应用程序/控件中是不可避免的，C++/WinRT 现在对它具有弹性。
+
+可以通过在实现类型上提供一个静态 **final_release** 函数来延迟析构。 指向对象的最后一个剩余指针（其形式为 **std:: unique_ptr**）会传递给 **final_release**。 然后，你可以选择将该指针的所有权转移到其他某个上下文。 对指针执行 QI 而不触发双析构，是非常安全的。 但在你析构对象时，对引用计数的净更改必须为零。
+
+**final_release** 的返回值可以是 `void`、异步操作对象（例如 [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction)）或 **winrt::fire_and_forget**。
 
 ```cppwinrt
 struct Sample : implements<Sample, IStringable>
@@ -215,14 +219,16 @@ struct Sample : implements<Sample, IStringable>
         // Called when the unique_ptr below is reset.
     }
 
-    static void final_release(std::unique_ptr<Sample> ptr) noexcept
+    static void final_release(std::unique_ptr<Sample> self) noexcept
     {
-        // Move 'ptr' as needed to delay destruction.
+        // Move 'self' as needed to delay destruction.
     }
 };
 ```
 
-在以下示例中，一旦发布了 MainPage  （最后一次），便会调用 final_release  。 该函数会等待五秒（在线程池中），然后使用页面的调度程序  进行恢复（这需要 QI/AddRef/Release 正在工作）。 随后它会清除 unique_ptr  ，这会导致实际调用 MainPage  析构函数。 即使在此处，会调用 DataContext  ，这需要适用于 IFrameworkElement  的 QI。 显然，不必实现 final_release  作为协同例程。 但是这确实有效，并且可非常简单地将析构移动到不同的线程。
+在以下示例中，一旦发布了 MainPage  （最后一次），便会调用 final_release  。 该函数会等待五秒（在线程池中），然后使用页面的调度程序  进行恢复（这需要 QI/AddRef/Release 正在工作）。 然后，它会清理该 UI 线程上的资源。 最后，它会清除 **unique_ptr**，这会导致实际调用 **MainPage** 析构函数。 甚至在该析构函数中也会调用 **DataContext**，这需要为 **IFrameworkElement** 执行 QI。
+
+不必实现 **final_release** 作为协同例程。 但是这确实有效，并且会使得将析构移动到不同的线程非常简单，下面的示例中正是如此。
 
 ```cppwinrt
 struct MainPage : PageT<MainPage>
@@ -236,13 +242,17 @@ struct MainPage : PageT<MainPage>
         DataContext(nullptr);
     }
 
-    static IAsyncAction final_release(std::unique_ptr<MainPage> ptr)
+    static IAsyncAction final_release(std::unique_ptr<MainPage> self)
     {
         co_await 5s;
 
-        co_await resume_foreground(ptr->Dispatcher());
+        co_await resume_foreground(self->Dispatcher());
+        co_await self->resource.CloseAsync();
 
-        ptr = nullptr;
+        // The object is destructed normally at the end of final_release,
+        // when the std::unique_ptr<MyClass> destructs. If you want to destruct
+        // the object earlier than that, then you can set *self* to `nullptr`.
+        self = nullptr;
     }
 };
 ```
@@ -279,10 +289,10 @@ struct MainPage : PageT<MainPage>
 
 其他更改。
 
-- 重大更改  。 [winrt::get_abi(winrt::hstring const&)  ](/uwp/cpp-ref-for-winrt/get-abi) 现在返回 `void*` 而不是 `HSTRING`。 可以使用 `static_cast<HSTRING>(get_abi(my_hstring));` 获取 HSTRING。
-- 重大更改  。 [winrt::put_abi(winrt::hstring&)  ](/uwp/cpp-ref-for-winrt/put-abi) 现在返回 `void**` 而不是 `HSTRING*`。 可以使用 `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` 获取 HSTRING*。
+- 重大更改  。 [winrt::get_abi(winrt::hstring const&)  ](/uwp/cpp-ref-for-winrt/get-abi) 现在返回 `void*` 而不是 `HSTRING`。 可以使用 `static_cast<HSTRING>(get_abi(my_hstring));` 获取 HSTRING。 请参阅[与 ABI 的 HSTRING 进行互操作](interop-winrt-abi.md#interoperating-with-the-abis-hstring)。
+- 重大更改  。 [winrt::put_abi(winrt::hstring&)  ](/uwp/cpp-ref-for-winrt/put-abi) 现在返回 `void**` 而不是 `HSTRING*`。 可以使用 `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` 获取 HSTRING*。 请参阅[与 ABI 的 HSTRING 进行互操作](interop-winrt-abi.md#interoperating-with-the-abis-hstring)。
 - 重大更改  。 HRESULT 现在投影为 winrt::hresult  。 如果需要 HRESULT（用于执行类型检查，或支持类型特征），则可以对 winrt::hresult  执行 `static_cast` 操作。 否则，winrt::hresult  会转换为 HRESULT，只要在包含任何 C++/WinRT 标头之前包含 `unknwn.h`。
-- 重大更改  。 GUID 现在投影为 winrt::guid  。 对于实现的 API，必须将 winrt::guid  用于 GUID 参数。 否则，winrt::guid  会转换为 GUID，只要在包含任何 C++/WinRT 标头之前包含 `unknwn.h`。
+- 重大更改  。 GUID 现在投影为 winrt::guid  。 对于实现的 API，必须将 winrt::guid  用于 GUID 参数。 否则，winrt::guid  会转换为 GUID，只要在包含任何 C++/WinRT 标头之前包含 `unknwn.h`。 请参阅[与 ABI 的 GUID 结构进行互操作](interop-winrt-abi.md#interoperating-with-the-abis-guid-struct)。
 - 重大更改  。 [winrt::handle_type 构造函数  ](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor)已通过使其显式进行了强化（现在更难使用它编写不正确的代码）。 如果需要分配原始句柄值，则改为调用 [handle_type::attach 函数  ](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function)。
 - 重大更改  。 WINRT_CanUnloadNow  和 WINRT_GetActivationFactory  的签名已更改。 完全不能声明这些函数。 而是包含 `winrt/base.h`（在包含任何 C++/WinRT Windows 命名空间头文件时自动包含）以包含这些函数的声明。
 - 对于 [winrt::clock struct  ](/uwp/cpp-ref-for-winrt/clock)，from_FILETIME/to_FILETIME  已弃用，以支持 from_file_time/to_file_time  。
