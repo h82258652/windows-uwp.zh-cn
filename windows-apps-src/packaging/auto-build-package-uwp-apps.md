@@ -1,37 +1,37 @@
 ---
 title: 设置 UWP 应用的自动生成
 description: 如何配置自动生成以生成旁加载和/或应用商店程序包。
-ms.date: 09/30/2018
+ms.date: 07/17/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 5837674f2cb20710a59eeac0af59498bf28b197e
-ms.sourcegitcommit: a86d0bd1c2f67e5986cac88a98ad4f9e667cfec5
+ms.openlocfilehash: 86e9b15ee71c3ed831a46e369e8feaef8641e714
+ms.sourcegitcommit: 2062d06567ef087ad73507a03ecc726a7d848361
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68229381"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68303585"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
-Azure 管道可用于创建 UWP 项目的自动的生成。 在本文中，我们将介绍多种不同方式执行此操作。 我们将还展示你如何执行这些任务使用命令行，以便您可以与任何其他生成系统集成。
+您可以使用 Azure Pipelines 创建 UWP 项目的自动生成。 本文介绍了执行此操作的不同方式。 我们还将演示如何使用命令行执行这些任务, 以便可以与任何其他生成系统集成。
 
 ## <a name="create-a-new-azure-pipeline"></a>创建新的 Azure 管道
 
-首先[注册 Azure 管道](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-sign-up)如果尚未这样做已经。
+首先[注册 Azure Pipelines (](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-sign-up)如果尚未这样做)。
 
-接下来，创建的管道，可用于生成源代码。 有关生成管道生成的 GitHub 存储库的教程，请参阅[创建第一个管道](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml)。 Azure 管道支持列出的存储库类型[这篇文章中](https://docs.microsoft.com/azure/devops/pipelines/repos)。
+接下来, 创建可用于生成源代码的管道。 有关生成用于构建 GitHub 存储库的管道的教程, 请参阅[创建第一个管道](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml)。 Azure Pipelines 支持[本文中](https://docs.microsoft.com/azure/devops/pipelines/repos)列出的存储库类型。
 
 ## <a name="set-up-an-automated-build"></a>设置自动生成
 
-我们将开始 UWP 生成现已推出 Azure 开发运营的定义以及然后演示如何配置管道的默认值。
+首先, 我们将使用 Azure Dev Ops 提供的默认 UWP 生成定义, 并向您展示如何配置管道。
 
 在生成定义模板列表中，选择**通用 Windows 平台**模板。
 
 ![选择 UWP 模板](images/select-yaml-template.png)
 
-此模板包括要生成 UWP 项目的基本配置：
+此模板包含用于构建 UWP 项目的基本配置:
 
 ```yml
 trigger:
@@ -62,44 +62,47 @@ steps:
 
 ```
 
-默认模板会尝试使用在.csproj 文件中指定的证书对包进行签名。 如果你想要在生成过程中登录您的包必须具有访问私钥。 否则，禁用签名通过添加参数`/p:AppxPackageSigningEnabled=false`到`msbuildArgs`YAML 文件中的部分。
+默认模板尝试用 .csproj 文件中指定的证书对包进行签名。 如果要在生成过程中对包进行签名, 则必须有权访问私钥。 否则, 可以通过将参数`/p:AppxPackageSigningEnabled=false`添加到 YAML 文件的`msbuildArgs`部分来禁用签名。
 
-## <a name="add-your-project-certificate-to-the-secure-files-library"></a>将你项目的证书添加到安全文件库
+## <a name="add-your-project-certificate-to-the-secure-files-library"></a>将项目证书添加到安全文件库
 
-应避免提交到存储库如有可能，证书和 git 将其忽略默认情况下。 若要管理安全处理的敏感文件与证书一样，Azure DevOps 支持[保护文件](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops)。
+应尽量避免将证书提交到存储库 (如果可能), 并且默认情况下, git 将忽略它们。 为了管理敏感文件 (如证书) 的安全处理, Azure DevOps 支持[安全文件](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops)功能。
 
-若要上传在自动生成的证书：
+为自动生成上载证书:
 
-1. 在 Azure 管道中，展开**管道**在导航窗格中单击**库**。
-2. 单击**保护的文件**选项卡，然后单击 **+ 安全文件**。
+1. 在 Azure Pipelines 中, 展开导航窗格中的 "**管道**", 然后单击 "**库**"。
+2. 单击 "**安全文件**" 选项卡, 然后单击 " **+ Secure file**"。
 
     ![如何上传安全文件](images/secure-file1.png)
 
-3. 浏览到证书文件，然后单击**确定**。
-4. 上传证书后，选择它以查看其属性。 下**管道的权限**，启用**以便在所有管道中使用 Authorize**切换。
+3. 浏览到证书文件, 然后单击 **"确定"** 。
+4. 上载证书后, 选择它以查看其属性。 在 "**管道权限**" 下, 启用 "**授权在所有管道中使用**" 切换。
 
     ![如何上传安全文件](images/secure-file2.png)
 
+> [!NOTE]
+> 从 Visual Studio 2019 开始, 不会再在 UWP 项目中生成临时证书。 若要创建或导出证书, 请使用[本文](create-certificate-package-signing.md)中介绍的 PowerShell cmdlet。
+
 ## <a name="configure-the-build-solution-build-task"></a>配置生成解决方案生成任务
 
-此任务将编译到二进制文件在工作文件夹中，并产生输出应用包文件的任何解决方案。
+此任务将工作文件夹中的任何解决方案编译为二进制文件, 并生成输出应用包文件。
 此任务使用 MSBuild 参数。 你必须指定这些参数的值。 使用下表作为指南。
 
 |**MSBuild 参数**|**ReplTest1**|**说明**|
 |--------------------|---------|---------------|
 | AppxPackageDir | $(Build.ArtifactStagingDirectory)\AppxPackages | 定义要存储生成的项目的文件夹。 |
-| AppxBundlePlatforms | $(Build.BuildPlatform) | 可以定义要包含在绑定中的平台。 |
-| AppxBundle | Always | 使用指定的平台的.msix/.appx 文件创建.msixbundle/.appxbundle。 |
-| UapAppxPackageBuildMode | StoreUpload | 生成.msixupload/.appxupload 文件和 **_Test**文件夹以进行旁加载。 |
-| UapAppxPackageBuildMode | CI | 生成仅.msixupload/.appxupload 文件。 |
-| UapAppxPackageBuildMode | SideloadOnly | 将生成 **_Test**仅旁加载的文件夹。 |
+| AppxBundlePlatforms | $(Build.BuildPlatform) | 使您能够定义要包含在捆绑中的平台。 |
+| AppxBundle | Always | 使用指定平台的. .msix/.appx 文件创建 .msixbundle/.appxbundle。 |
+| UapAppxPackageBuildMode | StoreUpload | 生成 msixupload/.appxupload 文件和 **_Test**文件夹以进行旁加载。 |
+| UapAppxPackageBuildMode | CI | 仅生成 msixupload/.appxupload 文件。 |
+| UapAppxPackageBuildMode | SideloadOnly | 只为旁加载生成 **_Test**文件夹。 |
 | AppxPackageSigningEnabled | true | 启用包签名。 |
-| PackageCertificateThumbprint | 证书指纹 | 此值**必须**匹配中的签名证书的指纹，或为空字符串。 |
-| PackageCertificateKeyFile | Path | 指向要使用的证书的路径。 这是从安全的文件元数据检索。 |
+| PackageCertificateThumbprint | 证书指纹 | 此值**必须**与签名证书中的指纹匹配, 或为空字符串。 |
+| PackageCertificateKeyFile | Path | 要使用的证书的路径。 这是从安全文件元数据中检索到的。 |
 
 ### <a name="configure-the-build"></a>配置生成
 
-如果你想要使用命令行中，或使用任何其他生成系统生成您的解决方案，请使用这些自变量运行 MSBuild。
+如果要使用命令行或使用任何其他生成系统来生成解决方案, 请使用这些参数运行 MSBuild。
 
 ```powershell
 /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppxPackages\\"
@@ -110,8 +113,8 @@ steps:
 
 ### <a name="configure-package-signing"></a>配置包签名
 
-MSIX （或 APPX） 程序包进行签名管道需要检索签名证书。 若要执行此操作，添加 DownloadSecureFile 任务之前 VSBuild 任务。
-这将授予你访问的签名证书通过```signingCert```。
+若要对 .MSIX (或 APPX) 包进行签名, 管道需要检索签名证书。 为此, 请在 VSBuild 任务之前添加 DownloadSecureFile 任务。
+这将允许你通过```signingCert```访问签名证书。
 
 ```yml
 - task: DownloadSecureFile@1
@@ -121,7 +124,7 @@ MSIX （或 APPX） 程序包进行签名管道需要检索签名证书。 若�
     secureFile: '[Your_Pfx].pfx'
 ```
 
-接下来，更新引用的签名证书的 VSBuild 任务：
+接下来, 更新 VSBuild 任务以引用签名证书:
 
 ```yml
 - task: VSBuild@1
@@ -139,19 +142,19 @@ MSIX （或 APPX） 程序包进行签名管道需要检索签名证书。 若�
 ```
 
 > [!NOTE]
-> 有意将 PackageCertificateThumbprint 参数设置为空字符串作为预防措施。 如果指纹在项目中设置，但不匹配的签名证书，生成将失败并出现错误： `Certificate does not match supplied signing thumbprint`。
+> PackageCertificateThumbprint 参数被有意设置为空字符串, 作为预防措施。 如果在项目中设置指纹但不匹配签名证书, 则生成将失败, 并出现以下错误: `Certificate does not match supplied signing thumbprint`。
 
-### <a name="review-parameters"></a>检查参数
+### <a name="review-parameters"></a>查看参数
 
-使用定义的参数`$()`语法是在生成定义中定义的变量，将在其他的更改生成系统。
+用`$()`语法定义的参数是在生成定义中定义的变量, 将在其他生成系统中发生更改。
 
 ![默认变量](images/building-screen5.png)
 
-若要查看所有预定义的变量，请参阅[预定义生成变量](https://docs.microsoft.com/azure/devops/pipelines/build/variables)。
+若要查看所有预定义的变量, 请参阅[预定义的生成变量](https://docs.microsoft.com/azure/devops/pipelines/build/variables)。
 
-## <a name="configure-the-publish-build-artifacts-task"></a>配置发布生成项目任务
+## <a name="configure-the-publish-build-artifacts-task"></a>配置 "发布生成项目" 任务
 
-默认 UWP 管道不会保存生成的项目。 若要将发布功能添加到你的 YAML 定义，添加以下任务。
+默认 UWP 管道不保存生成的项目。 若要向 YAML 定义添加发布功能, 请添加以下任务。
 
 ```yml
 - task: CopyFiles@2
@@ -167,30 +170,30 @@ MSIX （或 APPX） 程序包进行签名管道需要检索签名证书。 若�
     PathtoPublish: '$(build.artifactstagingdirectory)'
 ```
 
-您可以看到在生成的产物**项目**选项生成的结果页。
+可以在 "生成结果" 页的 "**项目**" 选项中查看生成的项目。
 
 ![项目](images/building-screen6.png)
 
-因为我们设置了`UapAppxPackageBuildMode`自变量`StoreUpload`，项目文件夹包括提交到应用商店 (.msixupload/.appxupload) 的包。 请注意，您还可以提交常规应用包 (.msix/.appx) 或应用程序捆绑 (.msixbundle/.appxbundle/) 到存储区。 在本文中，我们将使用 .appxupload 文件。
+由于我们已将`UapAppxPackageBuildMode`参数设置为`StoreUpload`, 因此项目文件夹包含用于提交到应用商店的包 (. msixupload/. .appxupload)。 请注意, 你还可以将常规的应用程序包 (. .msix/.appx) 或应用捆绑包 (. .msixbundle/.appxbundle/) 提交到存储区。 在本文中，我们将使用 .appxupload 文件。
 
-## <a name="address-bundle-errors"></a>处理绑定错误
+## <a name="address-bundle-errors"></a>地址绑定错误
 
-如果将多个 UWP 项目添加到你的解决方案，然后尝试创建捆绑包时，可能会收到如下错误。
+如果将多个 UWP 项目添加到解决方案中, 然后尝试创建捆绑包, 可能会收到类似于下面的错误。
 
   `MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "AppOne.UnitTests_0.1.2595.0_x86.appx" and package full name "8ef641d1-4557-4e33-957f-6895b122f1e6_0.1.2595.0_x86__scrj5wvaadcy6" is not valid in the bundle because it has a different package family name than other packages in the bundle`
 
-出现此错误是因为，在解决方案级别上，哪个应用应出现在程序包中不明确。 若要解决此问题，请打开每个项目文件，并在第一个的末尾添加以下属性`<PropertyGroup>`元素。
+出现此错误是因为，在解决方案级别上，哪个应用应出现在程序包中不明确。 若要解决此问题, 请打开每个项目文件, 并在第一个`<PropertyGroup>`元素的末尾添加以下属性。
 
-|**项目**|**属性**|
+|**投影**|**属性**|
 |-------|----------|
 |应用|`<AppxBundle>Always</AppxBundle>`|
 |UnitTests|`<AppxBundle>Never</AppxBundle>`|
 
-然后，删除`AppxBundle`MSBuild 参数，从生成步骤。
+然后, 删除生成`AppxBundle`步骤中的 MSBuild 参数。
 
 ## <a name="related-topics"></a>相关主题
 
-- [为 Windows 构建.NET 应用程序](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
+- [生成适用于 Windows 的 .NET 应用](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
 - [打包 UWP 应用](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
-- [在 Windows 10 中的旁加载 LOB 应用](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
-- [创建进行包签名证书](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)
+- [Windows 10 中的旁加载 LOB 应用](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
+- [为包签名创建证书](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)

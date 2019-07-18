@@ -2,19 +2,19 @@
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: 打包 UWP 应用
 description: 要分发或销售你的通用 Windows 平台 (UWP) 应用，你需要为其创建一个应用包。
-ms.date: 06/10/2019
+ms.date: 07/17/2019
 ms.topic: article
 keywords: windows 10, uwp
 f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f24d91231b4da1a4a456846faceb604d9ee450d
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1038913732c8b25a5baa3daf2c04176ff747a85f
+ms.sourcegitcommit: 2062d06567ef087ad73507a03ecc726a7d848361
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319845"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68303597"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual Studio 打包 UWP 应用
 
@@ -65,8 +65,11 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
     你可以从**打包**选项卡中输入发布数据。 你可以从此位置选择用于对你的应用进行签名的证书。 所有 UWP 应用都必须使用证书进行签名。
 
-    >[!IMPORTANT]
-    >如果你是在 Microsoft Store 中发布应用，将使用你的受信任的证书进行签名。 这让用户能够安装和运行你的应用，而不必安装关联的应用签名证书。
+    > [!NOTE]
+    > 从 Visual Studio 2019 开始, 不会再在 UWP 项目中生成临时证书。 若要创建或导出证书, 请使用[本文](create-certificate-package-signing.md)中介绍的 PowerShell cmdlet。
+
+    > [!IMPORTANT]
+    > 如果你是在 Microsoft Store 中发布应用，将使用你的受信任的证书进行签名。 这让用户能够安装和运行你的应用，而不必安装关联的应用签名证书。
 
     如果你不打算发布应用，只想旁加载应用包，则你首先需要信任该程序包。 要信任该程序包，必须在用户设备上安装证书。 有关旁加载的详细信息，请参阅[启用设备进行开发](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。
 
@@ -81,7 +84,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 >[!NOTE]
 > 如果你想要手动创建应用包 （.appx 或.msix） 或应用程序捆绑包 （.appxbundle 或.msixbundle），请参阅[MakeAppx.exe 工具创建应用程序包](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。
 
-### <a name="create-your-app-package-upload-file-using-visual-studio"></a>创建使用 Visual Studio 在应用程序包上传文件
+### <a name="create-your-app-package-upload-file-using-visual-studio"></a>使用 Visual Studio 创建应用包上传文件
 
 1.  在**解决方案资源管理器**中，打开适用于你的 UWP 应用项目的解决方案。
 2.  右键单击该项目，然后依次选择 **Microsoft Store**->**创建应用包**。 如果此选项处于禁用状态或根本没有显示，请检查该项目是否为通用 Windows 项目。  
@@ -100,10 +103,10 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
     ![使用包配置所示创建应用程序包窗口](images/packaging-screen5.jpg)
 7.  包含到完整 PDB 符号文件[分析应用程序性能](https://docs.microsoft.com/windows/uwp/publish/analytics)从合作伙伴中心后发布你的应用。 配置任何其他详细信息，例如版本编号或包输出位置。
 8.  单击**创建**生成应用包。 如果您选择某一**我想要创建要上传到 Microsoft Store 的包**中的选项的步骤 3，并且创建用于合作伙伴中心提交包时，该向导将创建包上载 （.appxupload 或.msixupload） 文件。 如果所选**我想要创建包以进行旁加载**在步骤 3 中，向导将创建一个应用程序包或应用捆绑包基于在步骤 6 中所选内容。
-9. 已成功打包您的应用程序，您将看到此对话框并可以检索指定的输出位置上的应用程序包上传文件。 此时，你可以[验证你在本地计算机或远程计算机上的应用程序包](#validate-your-app-package)并[自动执行应用商店提交](#automate-store-submissions)。
+9. 已成功打包您的应用程序，您将看到此对话框并可以检索指定的输出位置上的应用程序包上传文件。 此时, 你可以在[本地计算机或远程计算机上验证应用包](#validate-your-app-package), 并[自动执行存储提交](#automate-store-submissions)。
     ![包创建已完成窗口中，但显示的验证选项](images/packaging-screen6.jpg)
 
-### <a name="create-your-app-package-upload-file-manually"></a>手动创建应用程序包上传文件
+### <a name="create-your-app-package-upload-file-manually"></a>手动创建应用包上传文件
 
 1. 将以下文件放置在文件夹中：
     - 一个或多个应用包 （.msix 或.appx） 或应用程序捆绑 （.msixbundle 或.appxbundle）。
@@ -115,17 +118,17 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 您将其提交到合作伙伴中心在本地或远程计算机上的证书之前，请验证您的应用程序。 你只能验证应用包的发布版本而不是调试版本。 将应用提交到合作伙伴中心的详细信息，请参阅[应用程序提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
 
-### <a name="validate-your-app-package-locally"></a>验证本地应用程序包
+### <a name="validate-your-app-package-locally"></a>本地验证应用程序包
 
 1. 在最后一个**已创建包**页**创建应用程序包**向导中，保留**本地计算机**选项，并单击**启动Windows 应用认证工具包**。 有关使用 Windows 应用认证工具包测试应用的详细信息，请参阅 [Windows 应用认证工具包](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit)。
 
-    Windows 应用认证工具包 (WACK) 执行各种测试，并返回结果。 有关更具体的信息，请参阅 [Windows 应用认证工具包测试](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests)。
+    Windows 应用程序认证工具包 (WACK) 执行各种测试并返回结果。 有关更具体的信息，请参阅 [Windows 应用认证工具包测试](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests)。
 
     如果你有想要用于测试的远程 Windows 10 设备，需要在该设备上手动安装 Windows 应用认证工具包。 下一节将指导你完成这些步骤。 完成该操作后，你可以选择**远程计算机**并单击**启动 Windows 应用认证工具包**，以连接到远程设备并运行验证测试。
 
 2. WACK 完毕且应用已通过认证后，已准备好将应用提交到合作伙伴中心。 请确保上传正确的文件。 可以在你的解决方案的根文件夹中找到该文件的默认位置`\[AppName]\AppPackages`且将结束.appxupload 或.msixupload 文件扩展名。 名称将是窗体`[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload`或`[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload`如果您选择与所选的包体系结构的所有应用程序捆绑包。
 
-### <a name="validate-your-app-package-on-a-remote-windows10-device"></a>验证远程 Windows 10 设备上的应用包
+### <a name="validate-your-app-package-on-a-remote-windows10-device"></a>在远程 Windows 10 设备上验证应用包
 
 1. 通过启用 Windows 10 设备进行开发[启用设备进行开发](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)说明。
     >[!IMPORTANT]
@@ -134,55 +137,55 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 3. 下载所需[Windows 应用认证工具包](https://go.microsoft.com/fwlink/p/?LinkID=309666)然后将其安装在远程 Windows 10 设备。
 4. 在向导的“程序包创建已完成”页面上，选择“远程计算机”选项按钮，然后选择“测试连接”按钮旁边的省略号按钮。   
     >[!NOTE]
-    > **远程计算机**选项按钮已选中至少一个支持验证的解决方案配置时才可用。 有关使用 WACK 测试应用的详细信息，请参阅 [Windows 应用认证工具包](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit)。
+    >           **远程计算机**选项按钮已选中至少一个支持验证的解决方案配置时才可用。 有关使用 WACK 测试应用的详细信息，请参阅 [Windows 应用认证工具包](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit)。
 5. 指定你的子网内部的设备规格，或提供你的子网外部的设备的域名服务器 (DNS) 名称或 IP 地址。
 6. 在**身份验证模式**列表中，如果你的设备没有要求你使用 Windows 凭据登录该设备，请选择**无**。
 7. 选择**选择**按钮，然后选择**启动 Windows 应用认证工具包**按钮。 如果远程工具正在该设备上运行，Visual Studio 将与其连接，然后执行验证测试。 请参阅 [Windows 应用认证工具包测试](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests)。
 
-## <a name="automate-store-submissions"></a>自动执行应用商店提交
+## <a name="automate-store-submissions"></a>自动应用商店提交
 
-从 Visual Studio 2019 开始，你可以生成的.appxupload 文件到 Microsoft Store 从 IDE 直接通过选择提交**自动将提交到 Microsoft Store Windows 应用程序认证包在验证之后**选项的末尾[创建应用程序包向导](#create-your-app-package-upload-file-using-visual-studio)。 此功能利用用于访问合作伙伴中心帐户信息发布您的应用程序所需的 Azure Active Directory。 若要使用此功能，您将需要将 Azure Active Directory 与你的合作伙伴中心帐户相关联并检索所需的提交的多个凭据。
+从 Visual Studio 2019 开始, 你可以通过选择 "在**Windows 应用认证包验证后自动提交到 Microsoft Store** " .appxupload Microsoft Store 文件, 将生成的[创建应用程序包向导](#create-your-app-package-upload-file-using-visual-studio)。 此功能利用 Azure Active Directory 访问发布应用所需的合作伙伴中心帐户信息。 若要使用此功能, 需要将 Azure Active Directory 与合作伙伴中心帐户关联, 并检索提交所需的多个凭据。
 
-### <a name="associate-azure-active-directory-with-your-partner-center-account"></a>将 Azure Active Directory 与你的合作伙伴中心帐户相关联
+### <a name="associate-azure-active-directory-with-your-partner-center-account"></a>将 Azure Active Directory 与合作伙伴中心帐户关联
 
-您可以检索所需的自动存储区提交的凭据之前，您必须首先按照这些步骤[合作伙伴中心仪表板](https://partner.microsoft.com/dashboard)如果你尚未这样做已经。
+在检索自动存储提交所需的凭据之前, 必须先在[合作伙伴中心仪表板](https://partner.microsoft.com/dashboard)中执行这些步骤 (如果尚未这样做)。
 
-1. [将你的合作伙伴中心帐户与你组织的 Azure Active Directory 相关联](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center)。 如果你的组织已经使用 Office 365 或 Microsoft 的其他业务服务，则你已经具有 Azure AD。 否则，您可以创建一个新的 Azure AD 租户从合作伙伴中心内不收取附加费用。
+1. [将合作伙伴中心帐户与组织的 Azure Active Directory 相关联](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center)。 如果你的组织已经使用 Office 365 或 Microsoft 的其他业务服务，则你已经具有 Azure AD。 否则, 你可以在合作伙伴中心内创建新的 Azure AD 租户, 无额外费用。
 
-2. [添加到你的合作伙伴中心帐户的 Azure AD 应用程序](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account)。 此 Azure AD 应用程序表示应用程序或服务，将用于访问你的开发人员中心帐户的提交。 必须将分配到此应用程序**Manager**角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在**添加 Azure AD 应用程序**页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在**添加 Azure AD 应用程序**页面上创建新的 Azure AD 应用程序。
+2. [将 Azure AD 应用程序添加到合作伙伴中心帐户](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account)。 此 Azure AD 应用程序表示将用于访问开发人员中心帐户的提交的应用或服务。 必须将此应用程序分配给**管理员**角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在**添加 Azure AD 应用程序**页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在**添加 Azure AD 应用程序**页面上创建新的 Azure AD 应用程序。
 
-### <a name="retrieve-the-credentials-required-for-submissions"></a>检索用于提交所需的凭据
+### <a name="retrieve-the-credentials-required-for-submissions"></a>检索提交所需的凭据
 
-接下来，可以检索所需的提交的合作伙伴中心凭据： **Azure 租户 ID**，则**客户端 ID**并**客户端密钥**。
+接下来, 你可以检索提交所需的合作伙伴中心凭据: **Azure 租户 id**、**客户端 Id**和**客户端密钥**。
 
-1. 转到[合作伙伴中心仪表板](https://partner.microsoft.com/dashboard)并使用你的 Azure AD 凭据登录。
+1. 请参阅[合作伙伴中心仪表板](https://partner.microsoft.com/dashboard), 并通过 Azure AD 凭据进行登录。
 
-2. 在合作伙伴中心仪表板中，选择齿轮图标 （靠近仪表板的右上角），然后选择**开发人员设置**。
+2. 在 "合作伙伴中心" 仪表板上, 选择 "齿轮" 图标 (位于仪表板的右上角附近), 然后选择 "**开发人员设置**"。
 
-3. 在中**设置**菜单中的左窗格中，单击**用户**。
+3. 在左侧窗格的 "**设置**" 菜单中, 单击 "**用户**"。
 
-4. 单击 Azure AD 应用程序，请转到应用程序的设置名称。 在此页上，复制**租户 ID**并**客户端 ID**值。
+4. 单击你的 Azure AD 应用程序的名称以打开应用程序的设置。 在此页上, 复制 "**租户 id** " 和 "**客户端 id** " 值。
 
-5. 在中**密钥**部分中，单击**添加新的密钥**。 在下一个屏幕上，复制**密钥**值，该值对应于客户端机密。 你将无法再访问此信息后离开此页上，因此请确保不会丢失。 有关详细信息，请参阅[管理 Azure AD 应用程序的密钥](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys-for-an-azure-ad-application)。
+5. 在 "**密钥**" 部分中, 单击 "**添加新项**"。 在下一个屏幕上, 复制与客户端密码对应的**密钥**值。 离开此页面后, 你将无法再次访问此信息, 因此请确保不会丢失它。 有关详细信息，请参阅[管理 Azure AD 应用程序的密钥](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys-for-an-azure-ad-application)。
 
-### <a name="configure-automatic-store-submissions-in-visual-studio"></a>在 Visual Studio 中配置自动应用商店提交
+### <a name="configure-automatic-store-submissions-in-visual-studio"></a>在 Visual Studio 中配置自动存储提交
 
-完成前面的步骤后，你可以在 Visual Studio 2019 中配置自动应用商店提交。
+完成前面的步骤后, 可以在 Visual Studio 2019 中配置自动存储提交。
 
-1. 在末尾[创建应用程序包向导](#create-your-app-package-upload-file-using-visual-studio)，选择**自动提交到 Microsoft Store Windows 应用程序认证包在验证之后**单击**重新配置**.
+1. 在 "[创建应用程序包" 向导](#create-your-app-package-upload-file-using-visual-studio)的末尾, 选择 "**自动提交到 Windows 应用认证工具包验证后的 Microsoft Store** , 然后单击"**重新配置**"。
 
-2. 在中**配置 Microsoft Store 提交设置**对话框中，输入 Azure 租户 ID、 客户端 ID 和客户端密钥。
+2. 在 "**配置 Microsoft Store 提交设置**" 对话框中, 输入 AZURE 租户 Id、客户端 Id 和客户端密钥。
 
     ![配置 Microsoft Store 提交设置](images/packaging-screen8.jpg)
 
     > [!Important]
-    > 你的凭据可以保存到配置文件以供将来提交中使用
+    > 可以将你的凭据保存到你的配置文件中, 以便在将来提交时使用
 
 3. 单击 **“确定”** 。
 
-WACK 测试完成后，将开始提交。 你可以跟踪在提交进度**验证和发布**窗口。
+WACK 测试完成后, 将启动该提交。 可以在 "**验证和发布**" 窗口中跟踪提交进度。
 
-![验证并发布进度](images/packaging-screen9.jpg)
+![验证和发布进度](images/packaging-screen9.jpg)
 
 ## <a name="sideload-your-app-package"></a>旁加载应用包
 
@@ -194,12 +197,12 @@ WACK 测试完成后，将开始提交。 你可以跟踪在提交进度**验证
 
 ### <a name="sideload-your-app-package-on-windows-10-anniversary-update-or-later"></a>旁加载应用程序打包在 Windows 10 周年更新或更高版本
 
-在 Windows 10 周年更新 （Windows 10，版本 1607年） 中引入，可以只需通过双击应用包文件安装应用包。 为此，导航到你的应用包或应用程序捆绑包文件，并双击它。 [应用安装程序](https://docs.microsoft.com/windows/msix/app-installer/app-installer-root)启动，并提供基本的应用信息，以及安装按钮，安装进度栏和任何相关的错误消息。
+在 Windows 10 周年更新 (Windows 10, 版本 1607) 中引入, 只需双击应用包文件即可安装应用程序包。 为此，导航到你的应用包或应用程序捆绑包文件，并双击它。 [应用程序安装程序](https://docs.microsoft.com/windows/msix/app-installer/app-installer-root)将启动并提供基本应用程序信息、安装按钮、安装进度栏和任何相关错误消息。
 
 ![安装名为 Contoso 的示例应用时的应用安装程序显示](images/appinstaller-screen.png)
 
 > [!NOTE]
-> 应用安装程序假定应用程序受信任设备。 如果你旁加载开发人员或企业应用，则需要向存储在设备上的“Trusted People or Trusted Publishers Certification Authorities”安装签名证书。 如果你不确定如何执行此操作，请参阅[安装测试证书](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates)。
+> 应用安装程序假定设备信任该应用。 如果你旁加载开发人员或企业应用，则需要向存储在设备上的“Trusted People or Trusted Publishers Certification Authorities”安装签名证书。 如果你不确定如何执行此操作，请参阅[安装测试证书](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates)。
 
 ### <a name="sideload-your-app-package-on-previous-versions-of-windows"></a>在以前版本的 Windows 应用包旁加载
 

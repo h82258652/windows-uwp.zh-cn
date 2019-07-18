@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: a55f543aae5efae101590bd892278a30b3ca9907
-ms.sourcegitcommit: cba3ba9b9a9f96037cfd0e07d05bd4502753c809
+ms.openlocfilehash: 7be1fe8f23d51ecff6dbee30ad6ebecc6d65b4d8
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2019
-ms.locfileid: "67870325"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270026"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -61,6 +61,7 @@ C++ 编程语言适用于企业*和*独立软件供应商 (ISV) 行业中重视�
 | [从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md) | 本主题介绍了如何将 C++/CX 代码移植到 C++/WinRT 中的等效项。 |
 | [实现 C++/WinRT 与 C++/CX 之间的互操作](interop-winrt-cx.md) | 本主题介绍了可用于在 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 和 C++/WinRT 对象之间进行转换的两个帮助程序函数。 |
 | [从 WRL 移动到 C++/WinRT](move-to-winrt-from-wrl.md) | 本主题介绍了如何将 [Windows 运行时 C++ 模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) 代码移植到 C++/WinRT 中的等效项。 |
+| [从 C# 移动到 C++/WinRT](move-to-winrt-from-csharp.md) | 本主题介绍了如何将 C# 代码移植到 C++/WinRT 中的等效项。 |
 | [实现 C++/WinRT 与 ABI 之间的互操作](interop-winrt-abi.md) | 本主题介绍了如何在应用程序二进制接口 (ABI) 和 C++/WinRT 对象之间进行转换。 |
 | [C++/WinRT 中的弱引用](weak-references.md) | Windows 运行时是引用在其中占有重要地位的一个系统；在这样的系统中，了解强引用与弱引用的意义和区别非常重要。 |
 | [敏捷对象](agile-objects.md) | 敏捷对象是可从任何线程访问的对象。 C++/WinRT 类型默认情况下是敏捷对象，但你可以选择退出。 |
