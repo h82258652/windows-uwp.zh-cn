@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: e6bf1e7fb32533aa9d7b865ac7c8afc374290e54
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 88a4c65b20c2fb805baecb8a90498e8e4ec9b229
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360352"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717624"
 ---
 # <a name="consume-apis-with-cwinrt"></a>通过 C++/WinRT 使用 API
 
@@ -79,6 +79,8 @@ int main()
 ## <a name="accessing-members-via-the-object-via-an-interface-or-via-the-abi"></a>通过对象、接口或通过 ABI 访问成员
 使用 C++/WinRT 投影，Windows 运行时类的运行时表示形式将只是基础 ABI 接口。 不过，为方便起见，你可以通过类作者预期的方式根据类编码。 例如，你可以调用 [Uri  ](/uwp/api/windows.foundation.uri) 的 ToString  方法，就像它是该类的方法（实际上，再深入一层，它是单独的 IStringable  接口上的方法）。
 
+`WINRT_ASSERT` 是宏定义，并且它扩展到 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
+
 ```cppwinrt
 Uri contosoUri{ L"http://www.contoso.com" };
 WINRT_ASSERT(contosoUri.ToString() == L"http://www.contoso.com/"); // QueryInterface is called at this point.
@@ -107,15 +109,17 @@ int main()
     winrt::init_apartment();
     Uri contosoUri{ L"http://www.contoso.com" };
 
-    int port = contosoUri.Port(); // Access the Port "property" accessor via C++/WinRT.
+    int port{ contosoUri.Port() }; // Access the Port "property" accessor via C++/WinRT.
 
-    winrt::com_ptr<ABI::Windows::Foundation::IUriRuntimeClass> abiUri = contosoUri.as<ABI::Windows::Foundation::IUriRuntimeClass>();
+    winrt::com_ptr<ABI::Windows::Foundation::IUriRuntimeClass> abiUri{
+        contosoUri.as<ABI::Windows::Foundation::IUriRuntimeClass>() };
     HRESULT hr = abiUri->get_Port(&port); // Access the get_Port ABI function.
 }
 ```
 
 ## <a name="delayed-initialization"></a>延迟初始化
-投影类型的默认构造函数甚至会导致创建支持 Windows 运行时对象。 如果你想要构造投影类型的变量，而无需它反之构造 Windows 运行时对象（以便你可以延迟该工作），你可以这样做。 使用该投影类型的特殊 C++/WinRT `nullptr_t` 构造函数声明你的变量或字段。
+
+投影类型的默认构造函数甚至会导致创建支持 Windows 运行时对象。 如果你想要构造投影类型的变量，而无需它反之构造 Windows 运行时对象（以便你可以延迟该工作），你可以这样做。 使用该投影类型的特殊 C++/WinRT **std::nullptr_t** 构造函数声明你的变量或字段。 C++/WinRT 投影会将此构造函数注入到每个运行时类。
 
 ```cppwinrt
 #include <winrt/Windows.Storage.Streams.h>
@@ -144,7 +148,7 @@ int main()
 }
 ```
 
-除  `nullptr_t` 构造函数以外的投影类型上的所有构造函数都将导致创建支持 Windows 运行时对象。 `nullptr_t` 构造函数本质上是一个无操作。 它预期投影对象会在后续时间初始化。 因此，不论运行时类是否具有默认的构造函数，你都可以使用此技巧实现有效的延迟初始化。
+除  **std::nullptr_t** 构造函数以外的投影类型上的所有构造函数都将导致创建后备 Windows 运行时对象。 **std::nullptr_t** 构造函数本质上不执行任何操作。 它预期投影对象会在后续时间初始化。 因此，不论运行时类是否具有默认的构造函数，你都可以使用此技巧实现有效的延迟初始化。
 
 此注意事项会影响在其中调用默认构造函数的其他位置（如在向量和映射中）。 请考虑此代码示例，对它需要“空白应用(C++/WinRT)”  项目。
 
@@ -158,6 +162,98 @@ lookup[2] = value;
 ```cppwinrt
 std::map<int, TextBlock> lookup;
 lookup.insert_or_assign(2, value);
+```
+
+### <a name="dont-delay-initialize-by-mistake"></a>不要错误地延迟初始化
+
+请注意不要错误地调用 **std:: nullptr_t** 构造函数。 编译器的冲突解决偏向于它而非工厂构造函数。 例如，请考虑这两个运行时类定义。
+
+```idl
+// GiftBox.idl
+runtimeclass GiftBox
+{
+    GiftBox();
+}
+
+// Gift.idl
+runtimeclass Gift
+{
+    Gift(GiftBox giftBox); // You can create a gift inside a box.
+}
+```
+
+假设我们想要构造一个不在盒子内的 **Gift**（使用未初始化的 **GiftBox** 构造的 **Gift**）。 首先，让我们看看错误  的做法。 我们知道有一个接受 **GiftBox** 的 **Gift** 构造函数。 但是，如果我们想要传递 null **GiftBox**（通过统一初始化调用 **Gift** 构造函数，如下所示），那么我们不会  获得我们想要的结果。
+
+```cppwinrt
+// These are *not* what you intended. Doing it in one of these two ways
+// actually *doesn't* create the intended backing Windows Runtime Gift object;
+// only an empty smart pointer.
+
+Gift gift{ nullptr };
+auto gift{ Gift(nullptr) };
+```
+
+在此处得到的是一个未初始化的 **Gift**。 你无法通过未初始化的 **GiftBox** 得到 **Gift**。 下面是正确  的做法。
+
+```cppwinrt
+// Doing it in one of these two ways creates an initialized
+// Gift with an uninitialized GiftBox.
+
+Gift gift{ GiftBox{ nullptr } };
+auto gift{ Gift(GiftBox{ nullptr }) };
+```
+
+在不正确的示例中，传递 `nullptr` 文本会以有利于延迟初始化构造函数的方式解析。 若要以有利于工厂构造函数的方式解析，参数的类型必须是 **GiftBox**。 仍然可以选择传递一个显式延迟初始化 **GiftBox**，如正确的示例中所示。
+
+下一个示例也正确  ，因为参数的类型为 GiftBox，而不是 **std:: nullptr_t**。
+
+```cppwinrt
+GiftBox giftBox{ nullptr };
+Gift gift{ giftBox }; // Calls factory constructor.
+```
+
+仅当传递 `nullptr` 文本时才会引起多义性。
+
+## <a name="dont-copy-construct-by-mistake"></a>不要错误地复制构造。
+
+此警告类似于上面的[不要错误地延迟初始化](#dont-delay-initialize-by-mistake)部分中所述的警告。
+
+除了该延迟初始化构造函数之外，C++/WinRT 投影也会将复制构造函数注入到每个运行时类中。 它是一个单参数构造函数，接受与所构造对象相同的类型。 生成的智能指针指向其构造函数参数指向的同一后备 Windows 运行时对象。 结果是两个智能指针对象指向同一后备对象。
+
+下面是我们将在代码示例中使用的运行时类定义。
+
+```idl
+// GiftBox.idl
+runtimeclass GiftBox
+{
+    GiftBox(GiftBox biggerBox); // You can place a box inside a bigger box.
+}
+```
+
+假设我们想要在一个较大的 **GiftBox** 内构造 **GiftBox**。
+
+```cppwinrt
+GiftBox bigBox{ ... };
+
+// These are *not* what you intended. Doing it in one of these two ways
+// copies bigBox's backing-object-pointer into smallBox.
+// The result is that smallBox == bigBox.
+
+GiftBox smallBox{ bigBox };
+auto smallBox{ GiftBox(bigBox) };
+```
+
+ 正确的做法是显式调用激活工厂。
+
+```cppwinrt
+GiftBox bigBox{ ... };
+
+// These two ways call the activation factory explicitly.
+
+GiftBox smallBox{
+    winrt::get_activation_factory<GiftBox, IGiftBoxFactory>().CreateInstance(bigBox) };
+auto smallBox{
+    winrt::get_activation_factory<GiftBox, IGiftBoxFactory>().CreateInstance(bigBox) };
 ```
 
 ## <a name="if-the-api-is-implemented-in-a-windows-runtime-component"></a>如果在 Windows 运行时组件中实现此 API
@@ -185,7 +281,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 ## <a name="if-the-api-is-implemented-in-the-consuming-project"></a>如果在使用的项目中实现 API
 通过 XAML UI 使用的类型必须为运行时类，即使其位于与 XAML 相同的项目中。
 
-在这种情况下，从运行时类的 Windows 运行时元数据 (`.winmd`) 中生成一个投影类型。 两样，包含一个标头，但这次是通过其 `nullptr` 构造函数构造投影类型。 该构造函数不执行任何初始化，所以你接下来必须通过 [winrt::make  ](/uwp/cpp-ref-for-winrt/make) 帮助程序函数向该实例分配一个值，同时传递任何必要的构造函数参数。 在使用代码的同一项目中实现的运行时类无需进行注册，且无需通过 Windows 运行时/COM 激活进行实例化。
+在这种情况下，从运行时类的 Windows 运行时元数据 (`.winmd`) 中生成一个投影类型。 再次包含一个头文件，但这次是通过其 **std::nullptr_t** 构造函数来构造投影类型。 该构造函数不执行任何初始化，所以你接下来必须通过 [winrt::make  ](/uwp/cpp-ref-for-winrt/make) 帮助程序函数向该实例分配一个值，同时传递任何必要的构造函数参数。 在使用代码的同一项目中实现的运行时类无需进行注册，且无需通过 Windows 运行时/COM 激活进行实例化。
 
 对于此代码示例，需要“空白应用(C++/WinRT)”  项目。
 

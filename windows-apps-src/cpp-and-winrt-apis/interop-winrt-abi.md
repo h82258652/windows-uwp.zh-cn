@@ -5,16 +5,18 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: a1745f9ad98ed8dac2e54e17d18467981eafdcec
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d1def649772f94a03d5a1f352dcec1d32c7b0868
+ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360228"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67800578"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>实现 C++/WinRT 与 ABI 之间的互操作
 
 本主题介绍了如何在 SDK 应用程序二进制接口 (ABI) 和 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 对象之间转换。 你可以借助这些技术，为使用 Windows 运行时的这两种编程方式的代码实现互操作，也可以在将代码从 ABI 逐步迁移到 C++/WinRT 时使用这些技术。
+
+一般情况下，C++/WinRT 将 ABI 类型公开为 **void\*** ，以便不需要包括平台头文件。
 
 ## <a name="what-is-the-windows-runtime-abi-and-what-are-abi-types"></a>什么是 Windows 运行时 ABI？什么是 ABI 类型？
 Windows 运行时类（运行时类）实际上是一种抽象。 这种抽象定义了一个二进制接口（应用程序二进制接口，或 ABI），它允许各种编程语言与一个对象进行交互。 不管使用何种编程语言，客户端代码与 Windows 运行时对象的交互发生在最低级别，在此客户端语言构造被转换为对象的 ABI 调用。
@@ -141,6 +143,8 @@ int main()
 
 对于仅复制地址的低级别转换，你可以使用 [winrt::get_abi  ](/uwp/cpp-ref-for-winrt/get-abi)、[winrt::detach_abi  ](/uwp/cpp-ref-for-winrt/detach-abi) 和 [winrt::attach_abi  ](/uwp/cpp-ref-for-winrt/attach-abi) 帮助程序函数。
 
+`WINRT_ASSERT` 是宏定义，并且它扩展到 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
+
 ```cppwinrt
     // The code in main() already shown above remains here.
 
@@ -242,6 +246,111 @@ int main()
     WINRT_ASSERT(uri == uri_from_abi);
 }
 ```
+
+## <a name="interoperating-with-abi-com-interface-pointers"></a>与 ABI COM 接口指针进行互操作
+
+以下帮助器函数模板演示了如何将给定类型的 ABI COM 接口指针复制到其等效 C++/WinRT 投影智能指针类型。
+
+```cppwinrt
+template<typename To, typename From>
+To to_winrt(From* ptr)
+{
+    To result{ nullptr };
+    winrt::check_hresult(ptr->QueryInterface(winrt::guid_of<To>(), winrt::put_abi(result)));
+    return result;
+}
+...
+ID2D1Factory1* com_ptr{ ... };
+auto cppwinrt_ptr {to_winrt<winrt::com_ptr<ID2D1Factory1>>(com_ptr)};
+```
+
+此下一个帮助程序函数模板是等效的，只不过它从 [Windows 实现库 (WIL)](https://github.com/Microsoft/wil) 中的智能指针类型进行复制。
+
+```cppwinrt
+template<typename To, typename From, typename ErrorPolicy>
+To to_winrt(wil::com_ptr_t<From, ErrorPolicy> const& ptr)
+{
+    To result{ nullptr };
+    if constexpr (std::is_same_v<typename ErrorPolicy::result, void>)
+    {
+        ptr.query_to(winrt::guid_of<To>(), winrt::put_abi(result));
+    }
+    else
+    {
+        winrt::check_result(ptr.query_to(winrt::guid_of<To>(), winrt::put_abi(result)));
+    }
+    return result;
+}
+```
+
+另请参阅[通过 C++/WinRT 使用 COM 组件](/windows/uwp/cpp-and-winrt-apis/consume-com)。
+
+### <a name="unsafe-interop-with-abi-com-interface-pointers"></a>与 ABI COM 接口指针进行的不安全互操作
+
+下表显示给定类型的 ABI COM 接口指针和其等效 C++/WinRT 投影智能指针类型之间的不安全转换（以及其他操作）。 对于表中的代码，假定以下声明。
+
+```cppwinrt
+winrt::Sample s;
+ISample* p;
+
+void GetSample(_Out_ ISample** pp);
+```
+
+进一步假定 **ISample** 是 **Sample** 的默认接口。
+
+可以在编译时使用此代码对其进行声明。
+
+```cppwinrt
+static_assert(std::is_same_v<winrt::default_interface<winrt::Sample>, winrt::ISample>);
+```
+
+| 操作 | 如何实现 | 注释 |
+|-|-|-|
+| 从 **winrt::Sample** 提取 **ISample\*** | `p = reinterpret_cast<ISample*>(get_abi(s));` | *s* 仍拥有该对象。 |
+| 从 **winrt::Sample** 分离 **ISample\*** | `p = reinterpret_cast<ISample*>(detach_abi(s));` | *s* 不再拥有该对象。 |
+| 将 **ISample\*** 传输到新的 **winrt::Sample** | `winrt::Sample s{ p, winrt::take_ownership_from_abi };` | *s* 取得该对象的所有权。 |
+| 将 **ISample\*** 设置到 **winrt::Sample** 中 | `*put_abi(s) = p;` | *s* 取得该对象的所有权。 以前 *s* 所拥有的任何对象已泄露（将在调试中声明）。 |
+| 将 **ISample\*** 接收到 **winrt::Sample** 中 | `GetSample(reinterpret_cast<ISample**>(put_abi(s)));` | *s* 取得该对象的所有权。 *s* 以前拥有的任何对象被泄露（将在调试中声明）。 |
+| 替换 **winrt::Sample** 中的 **ISample\*** | `attach_abi(s, p);` | *s* 取得该对象的所有权。 *s* 以前拥有的对象被释放。 |
+| 将 **ISample\*** 复制到 **winrt::Sample** 中 | `copy_from_abi(s, p);` | *s* 对该对象进行了新引用。 *s* 以前拥有的对象被释放。 |
+| 将 **winrt::Sample** 复制到 **ISample\*** | `copy_to_abi(s, reinterpret_cast<void*&>(p));` | *p* 接收该对象的副本。 *s* 以前拥有的任何对象被泄露。 |
+
+## <a name="interoperating-with-the-abis-guid-struct"></a>与 ABI 的 GUID 结构进行互操作
+
+[**GUID**](/previous-versions/aa373931(v%3Dvs.80)) 投影为 **winrt::guid**。 对于实现的 API，必须将 winrt::guid  用于 GUID 参数。 否则，**winrt::guid** 与 **GUID** 之间存在自动转换，只要你在包括任何 C++/WinRT 头文件之前包括 `unknwn.h`（通过 <windows.h> 和许多其他头文件隐式包括）。
+
+如果不这样做，则可以在它们之间执行硬 `reinterpret_cast` 操作。 对于下面的表，假定这些声明。
+
+```cppwinrt
+winrt::guid winrtguid;
+GUID abiguid;
+```
+
+| 转换 | 有 `#include <unknwn.h>` | 没有 `#include <unknwn.h>` |
+|-|-|-|
+| 从 **winrt::guid** 到 **GUID** | `abiguid = winrtguid;` | `abiguid = reinterpret_cast<GUID&>(winrtguid);` |
+| 从 **GUID** 到 **winrt::guid** | `winrtguid = abiguid;` | `winrtguid = reinterpret_cast<winrt::guid&>(abiguid);` |
+
+## <a name="interoperating-with-the-abis-hstring"></a>与 ABI 的 HSTRING 进行互操作
+
+下表显示 **winrt::hstring** 与 [**HSTRING**](/windows/win32/winrt/hstring) 之间的转换以及其他操作。 对于表中的代码，假定以下声明。
+
+```cppwinrt
+winrt::hstring s;
+HSTRING h;
+
+void GetString(_Out_ HSTRING* value);
+```
+
+| 操作 | 如何实现 | 注释 |
+|-|-|-|
+| 从 **hstring** 提取 **HSTRING** | `h = static_cast<HSTRING>(get_abi(s));` | *s* 仍拥有该字符串。 |
+| 从 **hstring** 分离 **HSTRING** | `h = reinterpret_cast<HSTRING>(detach_abi(s));` | *s* 不再拥有该字符串。 |
+| 将 **HSTRING** 设置到 **hstring** 中 | `*put_abi(s) = h;` | *s* 取得字符串的所有权。 *s* 以前拥有的任何字符串被泄露（将在调试中声明）。 |
+| 将 **HSTRING** 接收到 **hstring** 中 | `GetString(reinterpret_cast<HSTRING*>(put_abi(s)));` | *s* 取得字符串的所有权。 *s* 以前拥有的任何字符串被泄露（将在调试中声明）。 |
+| 替换 **hstring** 中的 **HSTRING** | `attach_abi(s, h);` | *s* 取得字符串的所有权。 *s* 以前拥有的字符串被释放。 |
+| 将 **HSTRING** 复制到 **hstring** | `copy_from_abi(s, h);` | *s* 生成该字符串的私有副本。 *s* 以前拥有的字符串被释放。 |
+| 将 **hstring** 复制到 **HSTRING** | `copy_to_abi(s, reinterpret_cast<void*&>(h));` | *h* 接收该字符串的副本。 *h* 以前拥有的任何字符串被泄露。 |
 
 ## <a name="important-apis"></a>重要的 API
 * [AddRef 函数](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)

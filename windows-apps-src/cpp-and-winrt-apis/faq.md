@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 提问, 问题, 常见问题解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 914cf884b97d14af523cc61b0fcce719104783ba
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 01ff6fb443550287330d6fe503c3d49d81e2142c
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721689"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717641"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有关 C++/WinRT 的常见问题解答
 对你可能存疑的关于通过 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 创作和使用 Windows 运行时 API 的问题的解答。
@@ -54,6 +54,24 @@ ms.locfileid: "66721689"
 ```
 
 请务必通过链接 **WindowsApp.lib** 而不是替代的静态链接库来解决所有链接器错误，否则应用程序通不过 Visual Studio 和 Microsoft Store 用来验证提交内容的 [Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)测试（这意味着，应用程序最终无法成功引入到 Microsoft Store）。
+
+## <a name="why-am-i-getting-a-class-not-registered-exception"></a>为什么会收到“类未注册”异常？
+
+在这种情况下，症状是&mdash;在构造运行时类或访问静态成员时&mdash;，看到在运行时引发的异常，其中 HRESULT 值为 REGDB_E_CLASSNOTREGISTERED。
+
+一个原因可能是 Windows 运行时组件无法加载。 请确保该组件的 Windows 运行时元数据文件 (`.winmd`) 与组件二进制文件 (`.dll`) 的名称相同，这也是项目名称和根命名空间的名称。 此外，请确保生成过程已将 Windows 运行时元数据和二进制文件正确地复制到使用应用的 `Appx` 文件夹。 同时确认使用应用的 `AppxManifest.xml`（也在 `Appx` 文件夹中）包含 &lt;InProcessServer&gt;  元素，该元素正确声明了可激活的类和二进制文件名称。
+
+### <a name="uniform-construction"></a>统一构造
+
+如果尝试通过任何投影类型的构造函数（不是其 **std:: nullptr_t** 构造函数）实例化本地实现的运行时类，也可能会发生此错误。 为了解决此问题，你将需要通常称为“统一构造”的 C++/WinRT 2.0 功能。 但是，有关实例化不  需要统一构造的本地实现运行时类的方法，请参阅 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md)。
+
+如果  确实需要统一构造，则默认情况下会为新项目启用它。 对于现有项目，你将需要通过配置 `cppwinrt.exe` 工具来选择启用统一构造。 在 Visual Studio 中，将项目属性“常见属性”   > “C++/WinRT”   > “已优化”  设置为“是”  。 该操作的效果是将 `<CppWinRTOptimized>true</CppWinRTOptimized>` 添加到项目文件。 并且它与从命令行调用 `cppwinrt.exe` 时添加 `-opt[imize]` 开关具有相同的效果。
+
+如果在不使用该设置的情况下生成项目  ，产生的 C++/WinRT 投影会调用 [**RoGetActivationFactory**](/windows/win32/api/roapi/nf-roapi-rogetactivationfactory) 来访问运行时类的构造函数和静态成员。 这需要类进行注册并且你的模块实现 [**DllGetActivationFactory**](/previous-versions/br205771(v=vs.85)) 入口点。
+
+ 使用 `-opt[imize]` 开关生成项目时，这会导致项目为组件中的类绕过 **RoGetActivationFactory**，从而使你可以采用在这些类位于组件之外时你可采用的所有相同方式构造它们（无需进行注册）。
+
+若要使用统一构造，还需要在包括实现头文件后编辑每个实现的 `.cpp` 文件以添加 `#include <Sub/Namespace/ClassName.g.cpp>`。
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>我是否应实现 [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable)，如果是，该怎么实现？
 如果你有在其构造函数中释放资源的运行时类，而且有旨在从其实现编译单元外部所使用的运行时类（即适用于 Windows 运行时客户端应用的一般使用的 Windows 运行时组件），则我们建议你还要实现 **IClosable**，以支持缺乏确定性终止化的语言对运行时类的使用。 确保资源得到释放，无论调用的是析构函数 [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) 还是两者。 可调用 **IClosable::Close** 任意次数。
@@ -155,5 +173,24 @@ a.f();
 ## <a name="how-do-i-turn-a-string-into-a-typemdashfor-navigation-for-example"></a>如何将字符串转换为其他类型 &mdash; 例如，以方便导航？
 在[导航视图代码示例](/windows/uwp/design/controls-and-patterns/navigationview#code-example)（主要是 C# 代码）的末尾，有一个 C++/WinRT 代码片段演示了如何进行这种转换。
 
+## <a name="how-do-i-resolve-ambiguities-with-getcurrenttime-andor-try"></a>如何使用 GetCurrentTime 和/或 TRY 解析多义性？
+
+头文件 `winrt/Windows.UI.Xaml.Media.Animation.h` 声明一个名为 **GetCurrentTime** 的方法，而 `windows.h`（通过 `winbase.h`）定义一个名为 **GetCurrentTime** 的宏。 当二者发生冲突时，C++ 编译器会生成“错误 C4002:  类函数宏的调用 GetCurrentTime 参数太多”。
+
+同样，`winrt/Windows.Globalization.h` 声明一个名为 **TRY** 的方法，而 `afx.h` 定义一个名为 **GetCurrentTime** 的宏。 当这些发生冲突时，C++ 编译器会生成“错误 C2334:‘{’的前面有意外标记；跳过明显的函数体”  。
+
+若要解决一个或两个问题，可以执行此操作。
+
+```cppwinrt
+#pragma push_macro("GetCurrentTime")
+#pragma push_macro("TRY")
+#undef GetCurrentTime
+#undef TRY
+#include <winrt/include_your_cppwinrt_headers_here.h>
+#include <winrt/include_your_cppwinrt_headers_here.h>
+#pragma pop_macro("TRY")
+#pragma pop_macro("GetCurrentTime")
+```
+
 > [!NOTE]
-> 如果本主题未解答你的问题，可以访问 [Visual Studio C++ 开发人员社区](https://developercommunity.visualstudio.com/spaces/62/index.html)或使用 [`c++-winrt`Stack Overflow 上的标记](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)来获得帮助。
+> 如果此主题未回答你的问题，则可以通过访问 [Visual Studio C++ 开发人员社区](https://developercommunity.visualstudio.com/spaces/62/index.html)或使用 [Stack Overflow 上的 `c++-winrt` 标记](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)获得帮助。

@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 210431928c5dd7c5d5dfb99855322f1560e91dd7
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8f8d4172389fc2778fda4e335a29b3bae7d90fd0
+ms.sourcegitcommit: 5fcd3a595efd3686009505602c34e10163fd0aa5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363232"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67558763"
 ---
 # <a name="buttons"></a>按钮
 
@@ -26,37 +26,39 @@ ms.locfileid: "66363232"
 
 ![按钮示例](images/controls/button.png)
 
-XAML 框架提供了一个标准按钮控件，以及多个专用的按钮控件。
+[Extensible Application Markup Language (XAML)](../../xaml-platform/xaml-overview.md) 框架提供了一个标准按钮控件，以及多个专用的按钮控件。
 
 控件 | 描述
 ------- | -----------
-[Button](/uwp/api/windows.ui.xaml.controls.button) | 启动即时操作。 可以与 Click 事件或命令绑定配合使用。
-[RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | 一种按钮，在被按下时会持续引发 Click 事件。
-[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | 一种按钮，其样式设置类似于超链接，用于导航。 有关详细信息，请参阅[超链接](hyperlinks.md)。
+[Button](/uwp/api/windows.ui.xaml.controls.button) | 用于启动即时操作的按钮。 可以与 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件或 [Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) 绑定配合使用。
+[RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | 一种按钮，在被按下时会持续引发 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。
+[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | 一种按钮，其样式设置类似于超链接，用于导航。 有关超链接的详细信息，请参阅[超链接](hyperlinks.md)。
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | 一种带 V 形图标的按钮，用于打开附加的浮出控件。
 [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | 一种按钮，分为两端。 一端启动操作，另一端打开菜单。
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | 一种切换按钮，分为两端。 一端进行开/关切换，另一端打开菜单。
 
 | **获取 Windows UI 库** |
 | - |
-| DropDownButton、SplitButton 和 ToggleSplitButton 作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，包含新控件和 UWP 应用的 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| **DropDownButton**、**SplitButton** 和 **ToggleSplitButton** 作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 UWP 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 | **平台 API** | **Windows UI 库** |
 | - | - |
-| [Click 事件](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)、[Command 属性](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [DropDownButton 类](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)、[SplitButton 类](/uwp/api/microsoft.ui.xaml.controls.splitbutton)、[ToggleSplitButton 类](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
+| [Click 事件](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)<br/> [Command 属性](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [DropDownButton 类](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)<br/> [SplitButton 类](/uwp/api/microsoft.ui.xaml.controls.splitbutton)<br/> [ToggleSplitButton 类](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-用户可以使用**按钮**启动即时操作，如提交表单。
+用户可以使用 **Button** 控件启动即时操作，如提交表单。
 
-当操作是导航到另一个页面时，不要使用按钮，应改用 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton)。 有关详细信息，请参阅[超链接](hyperlinks.md)。
-> 例外：对于向导导航，请使用标记为“上一步”和“下一步”的按钮。 对于其他类型的向后导航或向上导航，请使用[“上一步”按钮](../basics/navigation-history-and-backwards-navigation.md)。
+当操作是导航到另一个页面时，不要使用 **Button** 控件，应改用 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) 控件。 有关超链接的详细信息，请参阅[超链接](hyperlinks.md)。
 
-当用户可能需要反复触发某个操作时，使用 **RepeatButton**。 例如，使用 RepeatButton 将计数器中的某个值递增或递减。
+> [!IMPORTANT]
+> 对于向导导航，请使用标记为“上一步”和“下一步”的按钮   。 对于其他类型的向后导航或向上导航，请使用[“上一步”按钮](../basics/navigation-history-and-backwards-navigation.md)。
 
-当按钮的浮出控件包含多个选项时，使用 **DropDownButton**。 默认的 V 形以视觉方式提示用户，此按钮包含浮出控件。
+当用户可能需要反复触发某个操作时，请使用 **RepeatButton** 控件。 例如，使用 **RepeatButton** 控件将计数器中的某个值递增或递减。
 
-如果希望用户能够启动即时操作或从其他选项中独立进行选择，则使用 **SplitButton**。
+当按钮的浮出控件包含多个选项时，使用 **DropDownButton** 控件。 默认的 V 形以视觉方式提示用户，此按钮包含浮出控件。
+
+如果希望用户能够启动即时操作或从其他选项中独立进行选择，则使用 **SplitButton** 控件。
 
 ## <a name="examples"></a>示例
 
@@ -65,16 +67,16 @@ XAML 框架提供了一个标准按钮控件，以及多个专用的按钮控件
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/Button">打开此应用，了解 Button 的实际应用</a>。</p>
+    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>，请单击此处<a href="xamlcontrolsgallery:/item/Button">打开此应用，了解 Button 的实际作用</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-此示例在请求位置访问权限的对话框中使用两个按钮，即 Allow 和 Block。
+此示例在请求位置访问权限的对话框中使用两个按钮，即 **Allow** 和 **Block**。
 
 ![在对话框中使用的按钮示例](images/dialogs/dialog_RS2_two_button.png)
 
@@ -99,7 +101,7 @@ subscribeButton.Click += SubscribeButton_Click;
 stackPanel1.Children.Add(subscribeButton);
 ```
 
-处理 Click 事件。
+处理 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。
 
 ```csharp
 private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
@@ -120,23 +122,28 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 ### <a name="button-interaction"></a>按钮交互
 
-当你用手指或触笔点击某个按钮或在指针位于其上时按鼠标左键时，按钮会引发 [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。 如果按钮具有键盘焦点，则按 Enter 键或空格键也会引发 Click 事件。
+如果用手指或触笔点击某个 **Button** 控件，或在指针位于该控件上时按鼠标左键，则按钮会引发 [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。 如果按钮具有键盘焦点，则按 Enter 键或空格键也会引发 **Click** 事件。
 
-你通常无法处理按钮上的低级别 [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件，因为它具有 Click 行为。 有关详细信息，请参阅[事件和路由事件概述](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)。
+你通常无法处理 **Button** 对象上的低级别 [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件，因为它具有 **Click** 行为。 有关详细信息，请参阅[事件和路由事件概述](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)。
 
-你可以通过更改 [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode) 属性来更改按钮引发 Click 事件的方式。 ClickMode 默认值为 **Release**，但你也可以将按钮的 ClickMode 设置为 **Hover** 或 **Press**。 如果 ClickMode 为 **Hover**，则无法通过键盘或触摸引发 Click 事件。
+可以通过更改 [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode) 属性来更改按钮引发 **Click** 事件的方式。 **ClickMode** 默认值为 **Release**，但你也可以将按钮的 **ClickMode** 值设置为 **Hover** 或 **Press**。 如果 **ClickMode** 为 **Hover**，则无法使用键盘或触控引发 **Click** 事件。
 
 
 ### <a name="button-content"></a>按钮内容
 
-按钮是 [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl)。 它的 XAML 内容属性为 [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content)，这对于 XAML 支持如下所示的语法：`<Button>A button's content</Button>`。 可以将任何对象设置为按钮的内容。 如果内容是一个 [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)，则会在按钮中呈现它。 如果该内容是另一种类型的对象，则会在按钮中显示其字符串表示形式。
+**Button** 是 [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl) 类的内容控件。 它的 XAML 内容属性为 [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content)，这对于 XAML 支持如下所示的语法：`<Button>A button's content</Button>`。 可以将任何对象设置为按钮的内容。 如果内容是一个 [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 对象，则会在按钮中呈现它。 如果该内容是另一种类型的对象，则会在按钮中显示其字符串表示形式。
 
-按钮内容通常为文本。 下面是对具有文本内容的按钮的设计建议：
--   使用简洁具体而又明晰易懂的文本来清楚地描述按钮可以执行的操作。 通常，按钮文本内容是一个字词（动词）。
--   请使用默认字体，除非你的品牌指南告诉你使用不同的字体。
--   对于较短的文本，通过使用最小按钮宽度 120px 避免命令按钮过窄。
+按钮内容通常为文本。 在设计该文本时，请使用以下建议：
+
+-  使用简洁具体而又明晰易懂的文本来清楚地描述按钮可以执行的操作。 通常，按钮文本内容是一个作为动词的单个字词。
+
+-  请使用默认字体，除非你的品牌指南告诉你使用其他字体。
+
+-  对于较短的文本，通过使用最小按钮宽度 120px 避免命令按钮过窄。
+
 - 对于较长的文本，通过将文本最大长度限制为 26 个字符避免命令按钮过宽。
--   如果按钮的文本内容是动态的（例如，它已[本地化](../globalizing/globalizing-portal.md)），应考虑按钮大小将如何调整以及其周围控件将有哪些影响。
+
+-  如果按钮的文本内容是动态的（即，它已[本地化](../globalizing/globalizing-portal.md)），请考虑按钮大小将如何调整及其对周围控件的影响。
 
 <table>
 <tr>
@@ -153,7 +160,7 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 </tr>
 </table>
 
-还可以自定义构成按钮外观的视觉效果。 例如，可以将文本替换为图标，或使用图标加文本。
+还可以自定义构成按钮外观的视觉效果。 例如，可以将文本替换为图标，或使用图标以及文本。
 
 在这里，我们将一个包含图像和文本的 **StackPanel** 设置为按钮内容。
 
@@ -175,9 +182,9 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-repeat-button"></a>创建重复按钮
 
-[RepeatButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) 是一个从按下到释放为止重复引发 [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件的按钮。 设置 [Delay](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.delay) 属性来指定 RepeatButton 在其被按下后和开始重复单击操作之间等待的时间。 设置 [Interval](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.interval) 属性来指定重复单击操作之间的时间。 两个属性的时间都以毫秒为单位指定。
+[RepeatButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) 控件是一个从按下时到释放为止重复引发 [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件的按钮。 设置 [Delay](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.delay) 属性可指定 **RepeatButton** 控件在其被按下后和开始重复单击操作之间等待的时间。 设置 [Interval](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.interval) 属性来指定重复单击操作之间的时间。 两个属性的时间都以毫秒为单位指定。
 
-以下示例显示两个 RepeatButton 控件，两者各自的 Click 事件用于增加和减少文本块中显示的值。
+以下示例显示两个 **RepeatButton** 控件，两者各自的 **Click** 事件用于增加和减少文本块中显示的值。
 
 ```xaml
 <StackPanel>
@@ -207,18 +214,19 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-drop-down-button"></a>创建下拉按钮
 
-> DropDownButton 需要 Windows 10 版本 1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或更高版本，或 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> **DropDownButton** 需要 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)或 Windows 10 版本 1809（SDK 17763）或更高版本。 若要下载最新 SDK，请参阅 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)；若要下载较早的 SDK，请参阅 [Windows SDK 和模拟器存档](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)。
 
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) 是一个按钮，它显示一个 V 形图标作为视觉指示器，表明其附加的浮出控件包含更多选项。 其行为与包含浮出控件的标准 Button 相同，仅外观存在差异。
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) 是一个按钮，它显示一个 V 形图标作为视觉指示器，表明其附加的浮出控件包含更多选项。 其行为与包含浮出控件的标准 **Button** 控件相同，仅外观存在差异。
 
-下拉按钮继承了 Click 事件，但你通常不使用它， 而是使用 Flyout 属性附加一个浮出控件，并使用浮出控件中的菜单选项来调用操作。 单击按钮时，浮出控件会自动打开。 请务必指定浮出控件的 [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) 属性，确保与按钮相关的放置符合需要。 默认的放置算法不一定在所有情况下都能确保放置符合需求。
+该下拉按钮继承了 **Click** 事件，但你通常不使用它， 而是使用 **Flyout** 属性附加一个浮出控件，并使用浮出控件中的菜单选项来调用操作。 单击按钮时，浮出控件会自动打开。
+请务必指定浮出控件的 [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) 属性，确保与按钮相关的放置符合需要。 默认的放置算法不一定在所有情况下都能确保放置符合需求。
 
 > [!TIP]
 > 有关浮出控件的详细信息，请参阅[菜单和上下文菜单](menus.md)。
 
 ### <a name="example---drop-down-button"></a>示例 - 下拉按钮
 
-此示例演示如何创建带浮出控件的下拉按钮，该控件包含的命令用于在 RichEditBox 中进行段落对齐。 （有关详细信息和代码，请参阅[富编辑框](rich-edit-box.md)）。
+此示例演示如何创建带浮出控件的下拉按钮，该控件包含的命令用于在 **RichEditBox** 控件中进行段落对齐。 （有关详细信息和代码，请参阅[富编辑框](rich-edit-box.md)）。
 
 ![包含对齐命令的下拉按钮](images/drop-down-button-align.png)
 
@@ -266,24 +274,26 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-split-button"></a>创建拆分按钮
 
-> SplitButton 需要 Windows 10 版本 1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或更高版本，或 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
+ > [!IMPORTANT]
+ > **SplitButton** 需要 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)或 Windows 10 版本 1809（SDK 17763）或更高版本。 若要下载最新 SDK，请参阅 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)；若要下载较早的 SDK，请参阅 [Windows SDK 和模拟器存档](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)。
 
-[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) 有两个部分，可以分别调用。 一个部分的行为类似于标准按钮，可以调用即时操作。 另一个部分调用浮出控件，该控件包含可供用户选择的其他选项。
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) 控件有两个可以分别调用的部分。 一个部分的行为类似于标准按钮，可以调用即时操作。 另一个部分调用浮出控件，该控件包含可供用户选择的其他选项。
 
 > [!NOTE]
 > 以触控方式调用时，拆分按钮的行为与下拉按钮一样；按钮的两部分都会调用浮出控件。 使用其他输入方式时，用户可以单独调用按钮的任一部分。
 
 拆分按钮的典型行为如下：
 
-- 当用户单击按钮部分时，通过处理 Click 事件来调用当前已在下拉列表中选中的选项。
-- 当下拉列表打开时，处理下拉列表中项的调用，更改所选的选项，然后调用它。 必须调用浮出控件项，因为在使用触控时不发生按钮 Click 事件。
+- 当用户单击按钮部分时，处理 **Click** 事件来调用当前已在下拉列表中选中的选项。
+
+- 当下拉列表打开时，处理下拉列表中项的调用，更改所选的选项，然后调用它。 必须调用浮出控件项，因为在使用触控时不发生按钮 **Click** 事件。
 
 > [!TIP]
-> 可以通过多种方式将项置于下拉列表中并处理其调用。 如果使用 ListView 或 GridView，一种方式是处理 SelectionChanged 事件。 如果这样做，请将 [SingleSelectionFollowsFocus](/uwp/api/windows.ui.xaml.controls.listviewbase.singleselectionfollowsfocus) 设置为 **false**。 这样用户就可以使用键盘来导航选项，在每次变换选项时不会调用项。
+> 可以通过多种方式将项置于下拉列表中并处理其调用。 如果使用 **ListView** 或 **GridView**，一种方式是处理 **SelectionChanged** 事件。 如果这样做，请将 [SingleSelectionFollowsFocus](/uwp/api/windows.ui.xaml.controls.listviewbase.singleselectionfollowsfocus) 设置为 **false**。 这样用户就可以使用键盘来导航选项，在每次变换选项时不会调用项。
 
 ### <a name="example---split-button"></a>示例 - 拆分按钮
 
-此示例演示如何创建拆分按钮，该按钮用于更改 RichEditBox 中所选文本的前景色。 （有关详细信息和代码，请参阅[富编辑框](rich-edit-box.md)）。
+此示例演示如何创建拆分按钮，该按钮用于更改 **RichEditBox** 控件中所选文本的前景色。 （有关详细信息和代码，请参阅[富编辑框](rich-edit-box.md)）。
 拆分按钮的浮出控件使用 [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) 作为其 [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) 属性的默认值。 不能覆盖此值。
 
 ![用于选择前景色的拆分按钮](images/split-button-rtb.png)
@@ -296,7 +306,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
         <Flyout x:Name="BrushFlyout">
             <!-- Set SingleSelectionFollowsFocus="False"
                  so that keyboard navigation works correctly. -->
-            <GridView ItemsSource="{x:Bind ColorOptions}" 
+            <GridView ItemsSource="{x:Bind ColorOptions}"
                       SelectionChanged="BrushSelectionChanged"
                       SingleSelectionFollowsFocus="False"
                       SelectedIndex="0" Padding="0">
@@ -374,26 +384,29 @@ public sealed partial class MainPage : Page
 
 ## <a name="create-a-toggle-split-button"></a>创建切换式拆分按钮
 
-> ToggleSplitButton 需要 Windows 10 版本 1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或更高版本，或 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> [!NOTE]
+> **ToggleSplitButton** 需要 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)或 Windows 10 版本 1809（SDK 17763）或更高版本。 若要下载最新 SDK，请参阅 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)；若要下载较早的 SDK，请参阅 [Windows SDK 和模拟器存档](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)。
 
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) 有两个部分，可以分别调用。 一个部分的行为类似于可以打开或关闭的切换按钮。 另一个部分调用浮出控件，该控件包含可供用户选择的其他选项。
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) 控件有两个可以分别调用的部分。 一个部分的行为类似于可以打开或关闭的切换按钮。 另一个部分调用浮出控件，该控件包含可供用户选择的其他选项。
 
 切换式拆分按钮通常用于启用或禁用某项功能，该功能有多个可供用户选择的选项。 例如，在文档编辑器中，可以使用它来打开或关闭列表，而下拉按钮则用来选择列表的样式。
 
 > [!NOTE]
 > 以触控方式调用时，切换式拆分按钮的行为与下拉按钮一样。 使用其他输入方式时，用户可以切换并单独调用按钮的两个部分。 使用触控时，按钮的两部分都会调用浮出控件。 因此，必须在浮出控件中包括一个用来通过切换方式打开或关闭按钮的选项。
 
+
 ### <a name="differences-with-togglebutton"></a>与 ToggleButton 的差异
 
-与 [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) 不一样，ToggleSplitButton 没有不确定状态。 因此，应注意以下差异：
+与 [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) 不一样，**ToggleSplitButton** 没有不确定状态。 因此，应注意以下差异：
 
-- ToggleSplitButton 没有 **IsThreeState** 属性或 **Indeterminate** 事件。
-- [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked) 属性就是一个**布尔值**，而不是一个**可为 null 的布尔值**。
-- ToggleSplitButton 只有 [IsCheckedChanged](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischeckedchanged) 事件，没有单独的 **Checked** 和 **Unchecked** 事件。
+- **ToggleSplitButton** 没有 **IsThreeState** 属性或 **Indeterminate** 事件。
+- [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked) 属性就是一个布尔值，而不是一个**可为 null 的<bool>** 。
+- **ToggleSplitButton** 只有 [IsCheckedChanged](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischeckedchanged) 事件，没有单独的 **Checked** 和 **Unchecked** 事件。
+
 
 ### <a name="example---toggle-split-button"></a>示例 - 切换式拆分按钮
 
-以下示例演示如何在 RichEditBox 中使用切换式拆分按钮来打开或关闭列表格式设置，以及更改列表的样式。 （有关详细信息和代码，请参阅[富编辑框](rich-edit-box.md)）。
+以下示例演示如何在 **RichEditBox** 控件中使用切换式拆分按钮来启用或禁用列表格式设置，以及更改列表的样式。 （有关详细信息和代码，请参阅[富编辑框](rich-edit-box.md)）。
 切换式拆分按钮的浮出控件使用 [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) 作为其 [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) 属性的默认值。 不能覆盖此值。
 
 ![用于选择列表样式的切换式拆分按钮](images/toggle-split-button-open.png)
@@ -407,7 +420,7 @@ public sealed partial class MainPage : Page
     <ToggleSplitButton.Flyout>
         <Flyout>
             <ListView x:Name="ListStylesListView"
-                      SelectionChanged="ListStylesListView_SelectionChanged" 
+                      SelectionChanged="ListStylesListView_SelectionChanged"
                       SingleSelectionFollowsFocus="False">
                 <StackPanel Tag="bullet" Orientation="Horizontal">
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7C8;"/>
@@ -502,36 +515,43 @@ private void ApplyListStyle(string listStyle)
 ## <a name="recommendations"></a>建议
 
 - 请确保用户清楚地了解按钮的目的和状态。
+
 - 有多个按钮用于相同决策时（例如，在确认对话框中），请按以下顺序显示提交按钮，其中，[执行]和[不执行]是对主要说明的具体响应：
-    - 确定/[执行]/是
+  - 确定/[执行]/是
     - [不执行]/否
     - Cancel
-- 一次仅向用户显示一两个按钮，例如，“接受”和“取消”。 如果你需要为用户显示更多操作，请考虑使用用户可从中选择操作的[复选框](checkbox.md)或[单选按钮](radio-button.md)，并通过一个命令按钮来触发这些操作。
+
+- 一次仅向用户显示一两个按钮，例如，“接受”  和“取消”  。 如果你需要为用户显示更多操作，请考虑使用用户可从中选择操作的[复选框](checkbox.md)或[单选按钮](radio-button.md)，并通过一个命令按钮来触发这些操作。
+
 - 对于需要在应用的多个页面上提供的操作，请考虑使用[底部应用栏](app-bars.md)，而不要在多个页面上重复设置按钮。
 
-### <a name="recommended-single-button-layout"></a>推荐单按钮布局
+
+### <a name="recommended-single-button-layout"></a>建议的单按钮布局
 
 如果布局只需一个按钮，则它应基于其容器上下文进行左对齐或右对齐。
 
-- 只有一个按钮的对话框应使按钮**右对齐**。 如果对话框只包含一个按钮，请确保该按钮执行安全、无破坏性的操作。 如果使用 [ContentDialog](dialogs.md) 并指定单个按钮，则它会自动右对齐。
+  - 只有一个按钮的对话框应使按钮**右对齐**。 如果对话框只包含一个按钮，请确保该按钮执行安全、无破坏性的操作。 如果使用 [ContentDialog](dialogs.md) 并指定单个按钮，则它会自动右对齐。
 
-![对话框中的按钮](images/pushbutton_doc_dialog.png)
+    ![对话框中的按钮](images/pushbutton_doc_dialog.png)
 
-- 如果按钮出现在容器 UI 中（例如，在 toast 通知、浮出控件或列表视图项目中），则应在容器中使按钮**右对齐**。
+  - 如果按钮出现在容器 UI 中（例如，在 toast 通知、浮出控件或列表视图项目中），则应在容器中使按钮**右对齐**。
 
-![容器中的按钮](images/pushbutton_doc_container.png)
+    ![容器中的按钮](images/pushbutton_doc_container.png)
 
-- 在包含单个按钮的页面中（例如，处于设置页面底部的“应用”按钮），应使按钮**左对齐**。 这会确保按钮与页面内容的其余部分对齐。
+  - 在包含单个按钮的页面中（例如，处于设置页面底部的“应用”  按钮），应使按钮**左对齐**。 这会确保按钮与页面内容的其余部分对齐。
 
-![页面上的按钮](images/pushbutton_doc_page.png)
+    ![页面上的按钮](images/pushbutton_doc_page.png)
+
 
 ## <a name="back-buttons"></a>后退按钮
 
-后退按钮是一种系统提供的 UI 元素，可支持在后退堆栈或用户导航历史记录中向后导航。 你无需创建自己的后退按钮，但可能必须进行一些工作才能支持良好的后退导航体验。 有关详细信息，请参阅 [历史记录和向后导航](../basics/navigation-history-and-backwards-navigation.md)
+后退按钮是一种系统提供的 UI 元素，可支持在后退堆栈或用户导航历史记录中向后导航。 你无需创建自己的后退按钮，但可能必须进行一些工作才能支持良好的后退导航体验。 有关详细信息，请参阅 [UWP 应用的导航历史记录和向后导航](../basics/navigation-history-and-backwards-navigation.md)。
+
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
-- [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
+- [XAML 控件库](https://github.com/Microsoft/Xaml-Controls-Gallery)：此示例以交互式格式显示所有 XAML 控件。
+
 
 ## <a name="related-articles"></a>相关文章
 

@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 已投影, 投影, 处理, 事件, 委托
 ms.localizationpriority: medium
-ms.openlocfilehash: 00870a196517f975d2736298513be7567f3dd29e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 194fd9041b76acb1ef76288fed21c8098462b406
+ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64745053"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67844337"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>在 C++/WinRT 中使用委托处理事件
 
@@ -18,6 +18,15 @@ ms.locfileid: "64745053"
 
 > [!NOTE]
 > 有关安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息，请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+
+## <a name="using-visual-studio-2019-to-add-an-event-handler"></a>使用 Visual Studio 2019 添加事件处理程序
+
+一种将事件处理程序添加到项目的简便方法是使用 Visual Studio 2019 中的 XAML 设计器用户界面 (UI)。 XAML 页面在 XAML 设计器中打开后，请选择要处理其事件的控件。 在该控件的属性页中的上方，单击闪电形图标以列出所有源于该控件的事件。 然后，双击想要处理的事件，例如，*OnClicked*。
+
+XAML 设计器会将相应的事件处理程序函数原型（和存根实现）添加到源文件，供你替换为自己的实现。
+
+> [!NOTE]
+> 通常情况下，无需在 Midl 文件 (`.idl`) 中描述事件处理程序。 因此，XAML 设计器不会向 Midl 文件添加事件处理程序函数原型。 它仅将这些原型添加到 `.h` 和 `.cpp` 文件。
 
 ## <a name="register-a-delegate-to-handle-an-event"></a>注册用于处理事件的委托
 
@@ -49,7 +58,7 @@ MainPage::MainPage()
 ```
 
 > [!IMPORTANT]
-> 注册委托时，上述代码示例传递原始的 this 指针（指向当前对象）  。 若要了解如何建立对当前对象的强引用或弱引用，请参阅[使用事件处理委托安全访问 this 指针](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)一节中的“如果将成员函数用作委托”子节   。
+> 注册委托时，上述代码示例传递原始的 this 指针（指向当前对象）  。 若要了解如何建立对当前对象的强引用或弱引用，请参阅[如果使用成员函数作为委托](weak-references.md#if-you-use-a-member-function-as-a-delegate)。
 
 还有其他方法可用来构建 RoutedEventHandler  。 下面是摘自 [RoutedEventHandler](/uwp/api/windows.ui.xaml.routedeventhandler) 的文档主题的语法块（从网页右上角“语言”下拉菜单中选择 C++/WinRT）    。 请注意各种构造函数：一种采用 lambda；另一种是自由函数；还有一种（我们在上面使用的）采用对象和指向成员函数的指针。
 
@@ -177,8 +186,11 @@ Button::Click_revoker Click(winrt::auto_revoke_t,
 > [!NOTE]
 > 在上述代码示例中，`Button::Click_revoker` 是 `winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>` 的类型别名。 类似的模式适用于所有 C++/WinRT 事件。 每个 Windows 运行时事件都具有返回事件撤销程序的撤销函数重载，且该撤销程序的类型是事件源的成员。 另一个示例是，[CoreWindow::SizeChanged](/uwp/api/windows.ui.core.corewindow.sizechanged) 事件具有注册函数重载，它返回类型 CoreWindow::SizeChanged_revoker 的值   。
 
-
 在页面-导航方案中，可以考虑撤销处理程序。 如果反复进入某个页面然后退出，则可以在离开该页面时撤销任何处理程序。 或者，如果你重复使用同一页面实例，请检查令牌的值，仅在该值未设置时注册 (`if (!m_token){ ... }`)。 第三个选项是将事件撤销程序作为数据成员存储在页面中。 第四个选项（将在本主题后面描述）是捕获对 lambda 函数中的 this 对象的强引用或弱引用  。
+
+### <a name="if-your-auto-revoke-delegate-fails-to-register"></a>如果“自动撤销”委托无法注册
+
+如果在注册委托时尝试指定 [**winrt::auto_revoke**](/uwp/cpp-ref-for-winrt/auto-revoke-t)，并且结果是 [**winrt::hresult_no_interface**](/uwp/cpp-ref-for-winrt/error-handling/hresult-no-interface) 异常，那么这通常意味着，事件源不支持弱引用。 例如，这是 [**Windows.UI.Composition**](/uwp/api/windows.ui.composition) 命名空间中的常见情况。 在此情况下，不能使用自动撤销功能。 必须故障回复到手动撤销事件处理程序。
 
 ## <a name="delegate-types-for-asynchronous-actions-and-operations"></a>异步操作和运算的委托类型
 
