@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 86e9b15ee71c3ed831a46e369e8feaef8641e714
-ms.sourcegitcommit: 2062d06567ef087ad73507a03ecc726a7d848361
+ms.openlocfilehash: de623240e275dda5b6fc4df9afee31e1adf9fd4f
+ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68303585"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340850"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -80,13 +80,14 @@ steps:
 
     ![如何上传安全文件](images/secure-file2.png)
 
+5. 如果证书具有密码, 则建议在[Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates)中存储密码, 然后将密码链接到[变量组](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 您可以使用该变量来访问管道中的密码。
+
 > [!NOTE]
 > 从 Visual Studio 2019 开始, 不会再在 UWP 项目中生成临时证书。 若要创建或导出证书, 请使用[本文](create-certificate-package-signing.md)中介绍的 PowerShell cmdlet。
 
 ## <a name="configure-the-build-solution-build-task"></a>配置生成解决方案生成任务
 
-此任务将工作文件夹中的任何解决方案编译为二进制文件, 并生成输出应用包文件。
-此任务使用 MSBuild 参数。 你必须指定这些参数的值。 使用下表作为指南。
+此任务将工作文件夹中的任何解决方案编译为二进制文件, 并生成输出应用包文件。 此任务使用 MSBuild 参数。 你必须指定这些参数的值。 使用下表作为指南。
 
 |**MSBuild 参数**|**ReplTest1**|**说明**|
 |--------------------|---------|---------------|
@@ -99,6 +100,7 @@ steps:
 | AppxPackageSigningEnabled | true | 启用包签名。 |
 | PackageCertificateThumbprint | 证书指纹 | 此值**必须**与签名证书中的指纹匹配, 或为空字符串。 |
 | PackageCertificateKeyFile | Path | 要使用的证书的路径。 这是从安全文件元数据中检索到的。 |
+| PackageCertificatePassword | 密码 | 证书的密码。 建议在[Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates)中存储密码, 并将密码链接到[变量组](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 可以将变量传递给此参数。 |
 
 ### <a name="configure-the-build"></a>配置生成
 

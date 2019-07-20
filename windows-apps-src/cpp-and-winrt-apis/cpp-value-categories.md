@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 移动, 转发, 值类别, 移动语义, 完美转发, 左值, 右值, 泛左值, 纯右值, 将亡值
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1860f562233ceefa6d9ebb3741378b3265b4c3a9
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a11d7763c33df6733a8dbf78392d27417e7cf18d
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63797097"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270208"
 ---
 # <a name="value-categories-and-references-to-them"></a>值类别以及对它们的引用
 本主题介绍了 C++ 中存在的各种值类别（以及对值的引用）。 你肯定听说过左值  和右值  ，但可能未使用本主题提供的术语思考过它们。 此外还有其他类型的值。

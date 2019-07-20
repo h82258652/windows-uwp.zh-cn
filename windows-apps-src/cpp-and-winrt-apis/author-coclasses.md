@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 创作, COM, 组件
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7e3101147f31f630ed6d7d23916eb675f8bc2d21
-ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
+ms.openlocfilehash: 8da62908d33c053cee4ba3f55645be9dbdcaada9
+ms.sourcegitcommit: b9268ca84af56ee1c4f4ac0314e2452193369f01
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67800521"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68293365"
 ---
 # <a name="author-com-components-with-cwinrt"></a>通过 C++/WinRT 创作 COM 组件
 
@@ -510,8 +510,7 @@ struct __declspec(uuid("85d6672d-0606-4389-a50a-356ce7bded09"))
     {
         try
         {
-            *ppvObject = winrt::make<MyCoclass>().get();
-            return S_OK;
+            return winrt::make<MyCoclass>()->QueryInterface(riid, ppvObject);
         }
         catch (...)
         {

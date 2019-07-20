@@ -1,5 +1,5 @@
 ---
-Description: 发现桌面 Win32 应用程序具有用于发送 toast 通知的不同选项
+Description: 发现桌面 Win32 应用用于发送 toast 通知的不同选项
 title: 来自桌面应用的 Toast 通知
 label: Toast notifications from desktop apps
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/01/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, 桌面, toast 通知, 桌面桥, 用于发送 toast 的选项, com 服务器, com 激活器, com, 虚假 com, 无 com, 没有 com, 发送 toast
 ms.localizationpriority: medium
-ms.openlocfilehash: bab89962bdc7986f7653e39c7e5967a493421f05
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ef4810ec594173f3cc4da35d63143909f4859e3c
+ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636082"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340811"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>来自桌面应用的 Toast 通知
 
@@ -28,10 +28,10 @@ ms.locfileid: "57636082"
 
 下表说明了用于在桌面应用内支持 toast 的选项，以及对应的受支持的功能。 你可以使用此表来选择最适合你的情形的选项。<br/><br/>
 
-| 选项 | 视觉对象 | 操作 | 输入 | 在进程内激活 |
+| Option | 视觉对象 | 操作 | 输入 | 在进程内激活 |
 | -- | -- | -- | -- | -- |
 | [COM 激活器](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
-| [没有 COM / 存根的 CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
+| [无 COM/存根 CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
 
 
 ## <a name="preferred-option---com-activator"></a>首选选项 - COM 激活器
@@ -74,13 +74,13 @@ ms.locfileid: "57636082"
 | ToastGeneric 协议 | ✔️ | ✔️ |
 | 旧版模板 | ✔️ | ❌ |
 
-我们将来会发布介绍如何使用此选项的文档。 实质上，对于桌面桥应用，只需发送与 UWP 应用会发送的相同的 toast 通知。 当用户点击你的 toast 时，你的应用将使用你在 toast 中指定的启动参数启动命令行。
+对于桌面桥应用, 只需发送 toast 通知, 如 UWP 应用就可以。 当用户点击你的 toast 时，你的应用将使用你在 toast 中指定的启动参数启动命令行。
 
 对于经典 Win32 应用，应设置 AUMID，以便你可以发送 toast，然后还应在快捷方式上指定 CLSID。 它可以是任何随机的 GUID。 不要添加 COM 服务器/激活器。 你正在添加“存根”COM CLSID，这将导致操作中心保留通知。 请注意，你只能使用协议激活 toast，因为存根 CLSID 将中断任何其他 toast 激活的激活。 因此，你必须更新你的应用以支持协议激活，并让 toast 协议激活你自己的应用。
 
 
 ## <a name="resources"></a>资源
 
-* [从桌面发送本地 toast 通知C#应用程序](send-local-toast-desktop.md)
-* [从桌面 c + + WRL 应用发送本地 toast 通知](send-local-toast-desktop-cpp-wrl.md)
-* [Toast 通知内容文档](adaptive-interactive-toasts.md)
+* [从 destkop C#应用发送本地 toast 通知](send-local-toast-desktop.md)
+* [从 destkop C++ WRL apps 发送本地 toast 通知](send-local-toast-desktop-cpp-wrl.md)
+* [Toast 内容文档](adaptive-interactive-toasts.md)
