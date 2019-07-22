@@ -1,6 +1,7 @@
 - name: 构建 Windows 应用
-  href: apps/index.md
   items:
+    - name: 概述
+      href: apps/index.md
     - name: 构建桌面应用
       items:
         - name: 概述
@@ -63,3 +64,19 @@
       href: apps/accessibility.md
     - name: 功能和技术
       href: apps/features-and-technologies.md
+- name: 使用 Windows 进行生成
+  items:
+    - name: 使用 Python 进行开发
+      items:
+        - name: 概述
+          href: python/index.md
+        - name: 初学者入门
+          href: python/get-started/python-for-education.md
+        - name: 开始进行 Web 开发
+          href: python/get-started/python-for-web.md
+        - name: 开始进行自动化
+          href: python/get-started/python-for-scripting.md
+        - name: 常见问题
+          href: python/faqs.md
+        - name: 资源
+          href: python/resources.md
