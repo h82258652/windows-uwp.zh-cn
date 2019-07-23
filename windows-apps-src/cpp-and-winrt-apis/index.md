@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 7be1fe8f23d51ecff6dbee30ad6ebecc6d65b4d8
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 5a65fe882057370f9d0ca603157279b3aa7429fb
+ms.sourcegitcommit: 02cc7aaa408efe280b089ff27484e8bc879adf23
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270026"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68387016"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -65,6 +65,8 @@ C++ 编程语言适用于企业*和*独立软件供应商 (ISV) 行业中重视�
 | [实现 C++/WinRT 与 ABI 之间的互操作](interop-winrt-abi.md) | 本主题介绍了如何在应用程序二进制接口 (ABI) 和 C++/WinRT 对象之间进行转换。 |
 | [C++/WinRT 中的弱引用](weak-references.md) | Windows 运行时是引用在其中占有重要地位的一个系统；在这样的系统中，了解强引用与弱引用的意义和区别非常重要。 |
 | [敏捷对象](agile-objects.md) | 敏捷对象是可从任何线程访问的对象。 C++/WinRT 类型默认情况下是敏捷对象，但你可以选择退出。 |
+| [诊断直接分配](diag-direct-alloc.md) | 本主题深入探讨了一种 C++/WinRT 2.0 功能，该功能可帮助你诊断在堆栈上创建实现类型对象的错误，而无需使用 [**WinRT:: make**](/uwp/cpp-ref-for-winrt/make) 系列的帮助程序。 |
+| [有关析构函数的详细信息](details-about-destructors.md) | 使用 C++/WinRT 2.0 可以延迟析构实现类型，并可在析构期间安全地进行查询。 本主题介绍了这些功能，并说明了何时应使用这些功能。 |
 | [一个简单的 C++WinRT Windows UI 库示例](simple-winui-example.md) | 本主题将指导你完成在 C++/WinRT 项目内添加对 WinUI 的简单支持的过程。 |
 
 ### <a name="topics-about-the-c-language"></a>有关 C++ 语言的主题
