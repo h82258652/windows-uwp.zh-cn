@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 错误, 处理, 异常
 ms.localizationpriority: medium
-ms.openlocfilehash: c75cf8763b5f47772a138c15049155458772eeb5
-ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
+ms.openlocfilehash: 37819d1626d3adc6f5647f447567a9273e72668d
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660148"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270131"
 ---
 # <a name="error-handling-with-cwinrt"></a>使用 C++/WinRT 的错误处理
 
@@ -92,7 +92,9 @@ winrt::check_bool(::SetEvent(h.get()));
 你可以对常见的返回代码类型使用这些帮助程序函数，也可以响应任何错误条件并调用 [winrt::throw_last_error](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) 或 [winrt::throw_hresult](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)   。 
 
 ## <a name="throwing-exceptions-when-authoring-an-api"></a>在创作 API 时抛出异常
-由于对跨 [Windows 运行时 ABI](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) 边界的异常无效，在实现中出现的错误条件以 HRESULT 错误代码的形式跨 ABI 层返回。 在使用 C++/WinRT 创作 API 时，将生成代码以供你将在实现中抛出的任何异常转换为 HRESULT  。 [Winrt::to_hresult](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) 函数以与此类似的模式用于生成的代码  。
+所有 [Windows 运行时应用程序二进制接口](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types)边界（简称 ABI 边界）必须为 *noexcept*&mdash;即不得有异常。 创作 API 时，应始终使用 C++ `noexcept` 关键字来标记 ABI 边界。 `noexcept` 在 C++ 中有特定的行为。 如果 C++ 异常遇到 `noexcept` 边界，则会调用 **std::terminate**，导致进程很快失败。 该行为通常是理想的做法，因为未经处理的异常几乎总是意味着进程中出现了未知状态。
+
+由于异常不得跨过 ABI 边界，在实现中出现的错误条件以 HRESULT 错误代码的形式跨 ABI 层返回。 在使用 C++/WinRT 创作 API 时，将生成代码以供你将在实现中抛出的任何异常转换为 HRESULT  。 [Winrt::to_hresult](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) 函数以与此类似的模式用于生成的代码  。
 
 ```cppwinrt
 HRESULT DoWork() noexcept
@@ -110,6 +112,48 @@ HRESULT DoWork() noexcept
 ```
 
 [winrt::to_hresult](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) 处理派生自 std::exception 和 [winrt::hresult_error](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) 及其派生类型的异常    。 在你的实现中，最好使用 winrt::hresult_error 或派生类型，以便你的 API 的使用者可以收到丰富的错误信息  。 “std::exception”（映射到 E_FAIL）在你使用标准模板库时引发异常的情况下受支持  。
+
+### <a name="debuggability-with-noexcept"></a>使用 noexcept 时的可调试性
+如前所述，如果 C++ 异常遇到 `noexcept` 边界，则会调用 **std::terminate**，导致进程很快失败。 这不适用于调试，因为 **std::terminate** 通常会失去引发的大部分或所有错误或异常上下文，尤其是在涉及协同程序的情况下。
+
+因此，本部分处理的是 ABI 方法（已使用 `noexcept` 进行适当的批注）使用 `co_await` 来调用异步 C++/WinRT 投影代码的情况。 建议将对 C++/WinRT 项目代码的调用包装在 **winrt::fire_and_forget** 中。 这样做就可以在正确的位置将未经处理的异常正确记录为存放异常，大大提高可调试性。
+
+```cppwinrt
+HRESULT MyWinRTObject::MyABI_Method() noexcept
+{
+    winrt::com_ptr<Foo> foo{ get_a_foo() };
+
+    [/*no captures*/](winrt::com_ptr<Foo> foo) -> winrt::fire_and_forget
+    {
+        co_await winrt::resume_background();
+
+        foo->ABICall();
+
+        AnotherMethodWithLotsOfProjectionCalls();
+    }(foo);
+
+    return S_OK;
+}
+```
+
+**winrt::fire_and_forget** 有内置的 `unhandled_exception` 方法帮助程序，该程序调用 **winrt::terminate**，后者又调用 **RoFailFastWithErrorContext**。 这样就可以保证任何上下文（存放异常、错误代码、错误消息、堆栈回溯等）都会得到保存，不管是进行实时调试，还是进行事后转储。 为了方便起见，可以将“发后不理”部分重构成一个单独的可返回 **winrt::fire_and_forget** 的函数，然后调用它。
+
+### <a name="synchronous-code"></a>同步代码
+在某些情况下，ABI 方法（同样已使用 `noexcept` 进行适当的批注）仅调用同步代码。 换而言之，它从不使用 `co_await`，不管是用来调用异步 Windows 运行时方法，还是用来在前台和后台线程之间切换。 在这种情况下，“发后不理”方法仍可使用，但效率不高。 可以改为执行类似下面的代码。
+
+```cppwinrt
+HRESULT abi() noexcept try
+{
+    // ABI code goes here.
+} catch (...) { winrt::terminate(); }
+```
+
+### <a name="fail-fast"></a>快速失败
+上一部分的代码仍会快速失败。 从编写的内容来看，该代码不处理任何异常。 任何未经处理的异常都会导致程序终止。
+
+但该形式是很好的，因为它确保了可调试性。 在罕见情况下，可能需要使用 `try/catch`，并处理某些异常。 但这应该很罕见，因为正如本主题所述，我们反对将异常作为一种流控制机制用于预期的条件。
+
+记住，让未经处理的异常逃脱无包装的 `noexcept` 上下文是很糟糕的做法。 在该条件下，C++ 运行时会 **std::terminate** 进程，因此会失去任何存放的由 C++/WinRT 仔细记录的异常信息。
 
 ## <a name="assertions"></a>断言
 对应用程序中的内部假设，存在断言。 最好尽可能地为编译时验证使用“static_assert”  。 对于运行时条件，请使用带布尔值表达式的 `WINRT_ASSERT`。 `WINRT_ASSERT` 是宏定义，并且扩展到 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。

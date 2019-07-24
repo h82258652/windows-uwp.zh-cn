@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 74d15b517c5ec6547115bc8ffdb44a2b742c68d6
-ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
+ms.openlocfilehash: e6b1b443a847fd8d7af3ad46d5263fd6ae2675a4
+ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717668"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68328887"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 创作 API
 
@@ -126,12 +126,11 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="if-youre-authoring-a-runtime-class-in-a-windows-runtime-component"></a>如果你正在 Windows 运行时组件中创作一个运行时类
 
-如果类型打包在一个 Windows 运行时组件中以便从应用程序中使用，则它需要是一个运行时类。
+如果类型打包在一个 Windows 运行时组件中以便从应用程序中使用，则它需要是一个运行时类。 在 Microsoft 接口定义语言 (IDL) (.idl) 文件中声明运行时类（请参阅[将运行时类重构到 Midl 文件 (.idl) 中](#factoring-runtime-classes-into-midl-files-idl)）。
 
-> [!TIP]
-> 建议通过各自的接口定义语言 (IDL) 文件 (`.idl`) 声明每个运行时类，以便在编辑 IDL 文件时优化生成性能，并使 IDL 文件能与其生成的源代码文件进行逻辑通信。 Visual Studio 将所有生成的 `.winmd` 文件合并为一个与根命名空间同名的文件。 最后生成的 `.winmd` 文件将是组件使用者将参考的文件。
+每个 IDL 文件生成一个 `.winmd` 文件，Visual Studio 会将所有这些合并为一个与根命名空间同名的文件。 最后生成的 `.winmd` 文件将是组件使用者将参考的文件。
 
-下面提供了一个示例。
+下面是一个在 IDL 文件中声明运行时类的示例。
 
 ```idl
 // MyRuntimeClass.idl
@@ -211,6 +210,12 @@ namespace winrt::MyProject
 有关在运行时类上实现 INotifyPropertyChanged 接口的演练的示例，请参阅 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md)  。
 
 有关在此情况下使用运行时类的过程将在[通过 C++/WinRT 使用 API](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project) 中介绍。
+
+## <a name="factoring-runtime-classes-into-midl-files-idl"></a>将运行时类重构到 Midl 文件 (.idl) 中
+
+Visual Studio 项目和项模板为每个运行时类生成一个单独的 IDL 文件。 这样就可以在 IDL 文件及其生成的源代码文件之间形成逻辑对应关系。
+
+不过，如果将项目的所有运行时类合并成单个 IDL 文件，则可显著缩短生成时间。 若要在它们之间建立复杂的（或循环的）`import` 依赖关系，则合并操作实际上是必需的。 你会发现，如果将运行时类放置在一起，则创作和查看它们会更容易。
 
 ## <a name="runtime-class-constructors"></a>运行时类构造函数
 
@@ -455,6 +460,49 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 | `make_self<T>`|实现|使用投影类型将生成错误：`'Release': is not a member of any direct or indirect base class of 'T'`|
 | `name_of<T>`|投影|如果使用实现类型，则将获得默认接口的字符串化 GUID。|
 | `weak_ref<T>`|两者|如果使用实现类型，则该构造函数参数必须为 `com_ptr<T>`。|
+
+## <a name="overriding-base-class-virtual-methods"></a>重写基类虚拟方法
+
+如果基类和派生类都是应用定义类，则派生类可能出现虚拟方法问题，但虚拟方法是在祖父 Windows 运行时类中定义的。 实际上，如果从 XAML 类派生，则会出现这种情况。 本部分的其余内容是[派生类](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx#derived-classes)中的示例的继续。
+
+```cppwinrt
+namespace winrt::MyNamespace::implementation
+{
+    struct BasePage : BasePageT<BasePage>
+    {
+        void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e);
+    };
+
+    struct DerivedPage : DerivedPageT<DerivedPage>
+    {
+        void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e);
+    };
+}
+```
+
+层次结构为 [**Windows::UI::Xaml::Controls::Page**](/uwp/api/windows.ui.xaml.controls.page) \<- **BasePage** \<- **DerivedPage**。 **BasePage::OnNavigatedFrom** 方法正确重写了 [**Page::OnNavigatedFrom**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom)，但 **DerivedPage::OnNavigatedFrom** 不重写 **BasePage::OnNavigatedFrom**。
+
+在这里，**DerivedPage** 重用 **BasePage** 提供的 **IPageOverrides** vtable，这意味着它无法重写 **IPageOverrides::OnNavigatedFrom** 方法。 一个可能的解决方案是让 **BasePage** 本身充当一个模板类，将其实现完全置于标头文件中，但这会使得事情变得相当复杂，令人不可接受。
+
+解决方法是在基类中将 **OnNavigatedFrom** 方法声明为显式虚拟方法。 这样，当 **DerivedPage::IPageOverrides::OnNavigatedFrom** 的 vtable 条目调用 **BasePage::IPageOverrides::OnNavigatedFrom** 时，生成器会调用 **BasePage::OnNavigatedFrom**，后者因其虚拟特性，最终会调用 **DerivedPage::OnNavigatedFrom**。
+
+```cppwinrt
+namespace winrt::MyNamespace::implementation
+{
+    struct BasePage : BasePageT<BasePage>
+    {
+        // Note the `virtual` keyword here.
+        virtual void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e);
+    };
+
+    struct DerivedPage : DerivedPageT<DerivedPage>
+    {
+        void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e);
+    };
+}
+```
+
+这要求类层次结构的所有成员都认可 **OnNavigatedFrom** 方法的返回值和参数类型。 如果它们不认可，则应使用上面的版本作为虚拟方法，并将备用内容包装好。
 
 ## <a name="important-apis"></a>重要的 API
 * [winrt::com_ptr 结构模板](/uwp/cpp-ref-for-winrt/com-ptr)

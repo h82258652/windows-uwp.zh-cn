@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c8cc237dec082096eb235237490e4f5d29cc6dd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c655fbf5582ae5abbb3f415e6e0778b9c64ca7fd
+ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364317"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340829"
 ---
 # <a name="semantic-zoom"></a>语义式缩放
 
@@ -76,7 +76,7 @@ ms.locfileid: "66364317"
 **SemanticZoom** 控件没有任何其自己的可视表示形式。 它是一个主机控件，用于管理提供内容视图的另外 2 个控件，通常为 **ListView** 或 **GridView** 控件。  将视图控件设置为 SemanticZoom 的 [ZoomedInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) 和 [ZoomedOutView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) 属性。
 
 语义式缩放所需的 3 个要素为：
-- 分组数据源
+- 分组数据源。 （组在放大视图中通过 GroupStyle 定义来定义。）
 - 显示项目级数据的放大视图。
 - 显示组级数据的缩小视图。
 

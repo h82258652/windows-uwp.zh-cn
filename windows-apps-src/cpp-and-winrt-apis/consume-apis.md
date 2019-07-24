@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 88a4c65b20c2fb805baecb8a90498e8e4ec9b229
-ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
+ms.openlocfilehash: 5a3d4b554fafeb2053e4e6af831c224b5eacd151
+ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717624"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68328866"
 ---
 # <a name="consume-apis-with-cwinrt"></a>通过 C++/WinRT 使用 API
 
@@ -119,7 +119,9 @@ int main()
 
 ## <a name="delayed-initialization"></a>延迟初始化
 
-投影类型的默认构造函数甚至会导致创建支持 Windows 运行时对象。 如果你想要构造投影类型的变量，而无需它反之构造 Windows 运行时对象（以便你可以延迟该工作），你可以这样做。 使用该投影类型的特殊 C++/WinRT **std::nullptr_t** 构造函数声明你的变量或字段。 C++/WinRT 投影会将此构造函数注入到每个运行时类。
+在 C++/WinRT 中，每个投影的类型都有一个特殊的 C++/WinRT **std::nullptr_t** 构造函数。 除了该构造函数，所有其他投影类型的构造函数（包括默认的构造函数）都会导致系统创建一个支持的 Windows 运行时对象，并为你提供它的智能指针。 因此，该规则适用于使用默认构造函数的任何地方，例如未初始化的本地变量、未初始化的全局变量以及未初始化的成员变量。
+
+另一方面，如果你想要构造投影类型的变量，而无需它反过来构造支持的 Windows 运行时对象（以便你可以延迟该工作），你可以这样做。 使用该特殊 C++/WinRT **std::nullptr_t** 构造函数（C++/WinRT 投影已将它插入每个运行时类中）声明你的变量或字段。 在下面的代码示例中，我们将该特殊构造函数与 *m_gamerPicBuffer* 配合使用。
 
 ```cppwinrt
 #include <winrt/Windows.Storage.Streams.h>
@@ -163,6 +165,8 @@ lookup[2] = value;
 std::map<int, TextBlock> lookup;
 lookup.insert_or_assign(2, value);
 ```
+
+另请参阅[默认构造函数如何影响集合](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx#how-the-default-constructor-affects-collections)。
 
 ### <a name="dont-delay-initialize-by-mistake"></a>不要错误地延迟初始化
 
@@ -375,6 +379,66 @@ Uri account = factory.CreateUri(L"http://www.contoso.com");
 auto factory = winrt::get_activation_factory<BankAccountWRC::BankAccount>();
 BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::BankAccount>();
 ```
+
+## <a name="membertype-ambiguities"></a>成员/类型多义性
+
+当成员函数的名称与类型的名称相同时，会产生多义性。 根据 C++ 的在成员函数中进行非限定名称查找的规则，必须先搜索类，然后才能在命名空间中进行搜索。  “替换失败不是错误 (SFINAE)”规则不适用（在对函数模板进行重载解析时适用）。 因此，如果类中的名称没有意义，则编译器不会继续查找更好的匹配&mdash;它会直接报告一个错误。
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoWork()
+    {
+        // This doesn't compile. You get the error
+        // "'winrt::Windows::Foundation::IUnknown::as':
+        // no matching overloaded function found".
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Style>() };
+    }
+}
+```
+
+在上面的代码中，编译器认为你是在将 [**FrameworkElement.Style()** ](/uwp/api/windows.ui.xaml.frameworkelement.style)（这在 C++/WinRT 中是成员函数）作为模板参数传递给 [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)。 解决方案是将名称 `Style` 强制解释为类型 [**Windows::UI::Xaml::Style**](/uwp/api/windows.ui.xaml.style)。
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoWork()
+    {
+        // One option is to fully-qualify it.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Windows::UI::Xaml::Style>() };
+
+        // Another is to force it to be interpreted as a struct name.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<struct Style>() };
+
+        // If you have "using namespace Windows::UI;", then this is sufficient.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Xaml::Style>() };
+
+        // Or you can force it to be resolved in the global namespace (into which
+        // you imported the Windows::UI::Xaml namespace when you did
+        // "using namespace Windows::UI::Xaml;".
+        auto style = Application::Current().Resources().
+            Lookup(L"MyStyle").as<::Style>();
+    }
+}
+```
+
+非限定名称查找有一个特殊的例外，即，名称后面跟有 `::`，在这种情况下，它会忽略函数、变量和枚举值。 这样你就可以执行如下所示的代码。
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoSomething()
+    {
+        Visibility(Visibility::Collapsed); // No ambiguity here (special exception).
+    }
+}
+```
+
+对 `Visibility()` 的调用会解析为 [**UIElement.Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) 成员函数名称。 但是参数 `Visibility::Collapsed` 在 `Visibility` 一词后面跟有 `::`，因此系统会忽略方法名称，编译器会查找枚举类。
 
 ## <a name="important-apis"></a>重要的 API
 * [QueryInterface 接口](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))

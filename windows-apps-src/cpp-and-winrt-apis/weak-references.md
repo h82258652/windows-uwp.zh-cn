@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 强, 弱, 引用
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 77fcd8369b2df3fdb42facf9d2b2a1d93188322b
-ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
+ms.openlocfilehash: 3ad6bb9a98b0fe2a699580001698740e44cea14f
+ms.sourcegitcommit: cba3ba9b9a9f96037cfd0e07d05bd4502753c809
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67844325"
+ms.lasthandoff: 07/14/2019
+ms.locfileid: "67870322"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>C++/WinRT 中的强引用和弱引用
 
@@ -197,12 +197,13 @@ int main()
 }
 ```
 
-模式是，事件接收方具有一个依赖于其 *this* 指针的 lambda 事件处理程序。 每当事件接收方的生存期超过事件源时，它的生存期也会超过这些依赖项。 在这种常见的情况下，该模式可正常运作。 这些情况中有一部分很明显，例如当 UI 页面处理由页面上的控件引发的事件时。 页面的生存期超过按钮 &mdash; 因此，处理程序的生存期也超过按钮。 每当接收方拥有源（例如作为数据成员）时，或者每当接收方和源是同级且直接由其他某个对象拥有时，就会出现这种情况。 另一种安全情况是，当事件源以同步方式引发其事件时，你就可以放心地撤销处理程序：不会收到更多事件了。
+模式是，事件接收方具有一个依赖于其 *this* 指针的 lambda 事件处理程序。 每当事件接收方的生存期超过事件源时，它的生存期也会超过这些依赖项。 在这种常见的情况下，该模式可正常运作。 这些情况中有一部分很明显，例如当 UI 页面处理由页面上的控件引发的事件时。 页面的生存期超过按钮 &mdash; 因此，处理程序的生存期也超过按钮。 每当接收方拥有源（例如作为数据成员）时，或者每当接收方和源是同级且直接由其他某个对象拥有时，就会出现这种情况。
 
 在不确定是否会遇到处理程序的生存期不会超过它依赖的 *this* 的情况时，通常可以捕获 *this* 而不考虑强或弱生存时间。
 
 但仍有一些情况，*this* 的生存期不及它在处理程序（包括用于由异步操作和运算引发的完成和进度事件的处理程序）中的使用时间。必须了解如何处理这种情况。
 
+- 当事件源以同步方式引发其事件时，你就可以放心地撤销处理程序：不会收到更多事件了。  但对于异步事件，即使在撤销（尤其是在析构函数中撤销）后，你的对象在开始析构后仍可能收到正在进行的事件。 在析构之前找到取消订阅的地方也许可以缓解此问题，但若要查找稳妥的解决方案，请继续阅读。
 - 如果你要创作用于实现异步方法的协同例程，那么这是可能的。
 - 在存在特定 XAML UI 框架对象（例如，[**SwapChainPanel**](/uwp/api/windows.ui.xaml.controls.swapchainpanel)）的极少数情况下，如果接收方在完成时没有从事件源取消注册，那么这是可能的。
 
@@ -252,7 +253,7 @@ event_source.Event([this](auto&& ...)
 
 ### <a name="the-solution"></a>解决方案
 
-解决方法是捕获强引用。 强引用确实会递增引用计数，且确实会使当前对象保持活动状态。   只需声明一个捕获变量（在此示例中名为 `strong_this`），并通过调用 [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) 将其初始化，以检索对 *this* 指针的强引用。
+解决方法是捕获强引用（或者根据情况捕获弱引用，这一点我们会在后面介绍）。 强引用确实会递增引用计数，且确实会使当前对象保持活动状态。   只需声明一个捕获变量（在此示例中名为 `strong_this`），并通过调用 [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) 将其初始化，以检索对 *this* 指针的强引用。
 
 > [!IMPORTANT]
 > 由于 **get_strong** 是 **winrt::implements** 结构模板的成员函数，因此你只能从直接或间接派生自 **winrt::implements** 的类（例如某个 C++/WinRT 类）调用该函数。 有关派生自 **winrt::implements** 的详细信息和示例，请参阅[使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)。
@@ -273,7 +274,7 @@ event_source.Event([strong_this { get_strong()}](auto&& ...)
 });
 ```
 
-如果强引用不合适，则你可以改为调用 [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) 来检索对 *this* 的弱引用。 只需确认在访问成员之前仍可从此函数检索强引用。
+如果强引用不合适，则你可以改为调用 [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) 来检索对 *this* 的弱引用。 弱引用不会使当前对象保持活动状态。  因此，只需确认在访问成员之前仍可从弱引用检索强引用即可。
 
 ```cppwinrt
 event_source.Event([weak_this{ get_weak() }](auto&& ...)
@@ -284,6 +285,8 @@ event_source.Event([weak_this{ get_weak() }](auto&& ...)
     }
 });
 ```
+
+如果捕获了原始指针，则需确保让指向的对象保持活动状态。
 
 ### <a name="if-you-use-a-member-function-as-a-delegate"></a>如果使用成员函数作为委托
 
@@ -314,11 +317,15 @@ struct EventRecipient : winrt::implements<EventRecipient, IInspectable>
 event_source.Event({ get_strong(), &EventRecipient::OnEvent });
 ```
 
+捕获强引用意味着，只有在处理程序已取消注册且所有当前的回调均已返回之后，才能销毁你的对象。 不过，该保证仅适用于引发事件的时候。 如果事件处理程序是异步的，则需在第一个挂起点之前为协同程序提供一个对类实例的强引用（如需详细信息和代码，请参阅本主题前面的[在类成员协同程序中安全访问 *this* 指针](#safely-accessing-the-this-pointer-in-a-class-member-coroutine)部分）。 但这样会在事件源和你的对象之间创建一个循环引用，因此需通过撤销事件来显式中断该循环。
+
 对于弱引用，请调用 [**get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)。 C++/WinRT 确保生成的委托保留弱引用。 最后，该委托会在幕后尝试将弱引用解析为强引用，如果成功，它只会调用成员函数。
 
 ```cppwinrt
 event_source.Event({ get_weak(), &EventRecipient::OnEvent });
 ```
+
+如果委托  调用了成员函数，则 C++/WinRT 会使对象保持活动状态，直至处理程序返回。 但是，如果处理程序是异步的，并且在挂起点返回，则需在第一个挂起点之前为协同程序提供一个对类实例的强引用。 同样，如需详细信息，请参阅本主题前面的[在类成员协同程序中安全访问 *this* 指针](#safely-accessing-the-this-pointer-in-a-class-member-coroutine)部分。
 
 ### <a name="a-weak-reference-example-using-swapchainpanelcompositionscalechanged"></a>使用 **SwapChainPanel::CompositionScaleChanged** 的弱引用示例
 

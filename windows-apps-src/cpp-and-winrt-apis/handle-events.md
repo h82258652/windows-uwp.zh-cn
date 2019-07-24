@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 已投影, 投影, 处理, 事件, 委托
 ms.localizationpriority: medium
-ms.openlocfilehash: 194fd9041b76acb1ef76288fed21c8098462b406
-ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
+ms.openlocfilehash: b64fbe93198af95402161873c1d68d0da41f33f7
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67844337"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270105"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>在 C++/WinRT 中使用委托处理事件
 
@@ -126,7 +126,9 @@ MainPage::MainPage()
 
 ## <a name="revoke-a-registered-delegate"></a>撤销已注册的委托
 
-当你注册委托时，通常会向你返回一个令牌。 随后，可以使用该令牌撤销委托；这意味着将从事件取消注册委托，再次引发该事件时不会调用该委托。 为简单起见，上面的代码示例都没有介绍如何执行该操作。 但下面这个代码示例将令牌存储在结构的专用数据成员中，并在析构函数中撤销令牌的处理程序。
+当你注册委托时，通常会向你返回一个令牌。 随后，可以使用该令牌撤销委托；这意味着将从事件取消注册委托，再次引发该事件时不会调用该委托。
+
+为简单起见，上面的代码示例都没有介绍如何执行该操作。 但下面这个代码示例将令牌存储在结构的专用数据成员中，并在析构函数中撤销令牌的处理程序。
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -150,6 +152,9 @@ private:
 ```
 
 可以不进行上面示例中的强引用，而存储对按钮的弱引用（请参阅 [C++/WinRT 中的强引用和弱引用](weak-references.md)）。
+
+> [!NOTE]
+> 当事件源以同步方式引发其事件时，你就可以放心地撤销处理程序：不会收到更多事件了。 但对于异步事件，即使在撤销（尤其是在析构函数中撤销）后，你的对象在开始析构后仍可能收到正在进行的事件。 在析构之前找到取消订阅的地方也许可以缓解此问题；若要查找稳妥的解决方案，请参阅[使用事件处理委托安全访问 *this* 指针](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
 
 或者，当你注册代理时，也可以指定 winrt::auto_revoke（即 [winrt::auto_revoke_t](/uwp/cpp-ref-for-winrt/auto-revoke-t) 类型的值）以请求一个事件撤销程序（[winrt::event_revoker](/uwp/cpp-ref-for-winrt/event-revoker) 类型）    。 事件撤销程序为你保留对事件源（引发事件的对象）的弱引用。 可以通过调用 event_revoker::revoke 成员函数手动撤销；但事件撤销程序会在该函数超出范围时自动调用函数本身  。 撤销函数检查事件源是否仍然存在，如果存在，将撤销你的代理  。 在本示例中，无需存储事件源，并且不需要析构函数。
 

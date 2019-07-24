@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2efd091d90a856e45d76c0b1357f30417812160a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8fdde696a0bc1dc7706f89ede5d525194e5d2830
+ms.sourcegitcommit: f0e539359b9766db0339ddbae3f7ccf0069011e8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63791528"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67885656"
 ---
 # <a name="pull-to-refresh"></a>下拉刷新
 
@@ -183,6 +183,8 @@ private void Visualizer_RefreshStateChanged(RefreshVisualizer sender, RefreshSta
 ## <a name="examples"></a>示例
 
 ### <a name="using-a-scrollviewer-in-a-refreshcontainer"></a>在 RefreshContainer 中使用 ScrollViewer
+> [!NOTE]
+> RefreshContainer 的内容必须是可滚动的控件，例如 ScrollViewer、GridView、ListView，等等。将控件的内容设置为网格会导致未定义的行为。
 
 本示例介绍如何对滚动查看器使用下拉刷新。
 

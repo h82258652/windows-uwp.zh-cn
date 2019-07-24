@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, async, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: cbabf38f41ae940f5c92944154638eae7016e043
-ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
+ms.openlocfilehash: f7db1e5810de478f1c6198860100409d79d4f5d5
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660089"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270146"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>使用 C++/WinRT 执行并发和异步操作
 
@@ -224,13 +224,13 @@ IASyncAction DoWorkAsync(Param const& value)
 {
     // While it's ok to access value here...
 
-    co_await DoOtherWorkAsync();
+    co_await DoOtherWorkAsync(); // (this is the first suspension point)...
 
     // ...accessing value here carries no guarantees of safety.
 }
 ```
 
-在协同例程中，在第一个暂停点之前，执行是同步的；到达第一个暂停点时，控制返回到调用方。 在协同例程恢复时，引用参数引用的源值可能已发生更改。 从协同例程的角度来看，引用参数具有不受控制的生命周期。 因此，在上面的示例中，在 `co_await` 之前，我们可以安全地访问 *value*，但之后就无法保证安全了。 如果调用方销毁了 *value*，则尝试在协同例程中访问它会导致内存损坏。 如果 **DoOtherWorkAsync** 函数有可能暂停并在恢复后尝试使用 *value*，我们也无法安全地将 *value* 传递给 DoOtherWorkAsync。
+在协同程序中，在第一个暂停点之前，执行是同步的；到达第一个暂停点时，控制返回到调用方，调用帧超出范围。 在协同例程恢复时，引用参数引用的源值可能已发生更改。 从协同例程的角度来看，引用参数具有不受控制的生命周期。 因此，在上面的示例中，在 `co_await` 之前，我们可以安全地访问 *value*，但之后就无法保证安全了。 如果调用方销毁了 *value*，则尝试在协同例程中访问它会导致内存损坏。 如果 **DoOtherWorkAsync** 函数有可能暂停并在恢复后尝试使用 *value*，我们也无法安全地将 *value* 传递给 DoOtherWorkAsync。
 
 为了能够在暂停和恢复后安全地使用参数，默认情况下，协同例程应使用按值传递，以确保按值进行捕获并避免生命周期问题。 确信不遵从该指引也能安全进行操作的情况是很少见的。
 
@@ -776,6 +776,68 @@ winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, Medi
 ```
 
 第一个参数 (*sender*) 未命名，因为我们从未使用它。 因此，可以安全地将它保留为引用。 但请注意，*args* 是按值传递的。 请参阅上面的[参数传递](#parameter-passing)部分。
+
+## <a name="awaiting-a-kernel-handle"></a>等待内核句柄
+
+C++/WinRT 提供一个 **resume_on_signal** 类，用于在收到内核事件信号之前暂停。 你有责任确保在 `co_await resume_on_signal(h)` 返回之前句柄始终有效。 **resume_on_signal** 本身不能为你执行该操作，因为在 **resume_on_signal** 开始之前，你就可能已失去句柄，如此示例（第一个示例）所示。
+
+```cppwinrt
+IAsyncAction Async(HANDLE event)
+{
+    co_await DoWorkAsync();
+    co_await resume_on_signal(event); // The incoming handle is not valid here.
+}
+```
+
+传入的**句柄**仅在函数返回之前有效，该函数（为协同程序）在第一个暂停点（在此示例中为第一个 `co_await`）返回。 在等待 **DoWorkAsync** 时，控制返回到调用方，调用帧超出范围，你再也无法知道在协同程序继续时句柄是否会有效。
+
+从技术上来说，我们的协同程序在按值接收其参数，这符合预期（请参阅上面的[参数传递](#parameter-passing)）。 但在此示例中，我们需要更进一步，因此我们将遵循该指南的精神  （而不仅仅是字面涵义）。 除了句柄，我们还需要传递强引用（换句话说，所有权）。 操作方法如下。
+
+```cppwinrt
+IAsyncAction Async(winrt::handle event)
+{
+    co_await DoWorkAsync();
+    co_await resume_on_signal(event); // The incoming handle *is* not valid here.
+}
+```
+
+通过值传递 [**winrt::handle**](/uwp/cpp-ref-for-winrt/handle) 可以提供所有权语义，确保内核句柄在协同程序生存期内始终有效。
+
+下面介绍如何调用该协同程序。
+
+```cppwinrt
+namespace
+{
+    winrt::handle duplicate(winrt::handle const& other, DWORD access)
+    {
+        winrt::handle result;
+        if (other)
+        {
+            winrt::check_bool(::DuplicateHandle(::GetCurrentProcess(),
+                other.get(), ::GetCurrentProcess(), result.put(), access, FALSE, 0));
+        }
+        return result;
+    }
+
+    winrt::handle make_manual_reset_event(bool initialState = false)
+    {
+        winrt::handle event{ ::CreateEvent(nullptr, true, initialState, nullptr) };
+        winrt::check_bool(static_cast<bool>(event));
+        return event;
+    }
+}
+
+IAsyncAction SampleCaller()
+{
+    handle event{ make_manual_reset_event() };
+    auto async{ Async(duplicate(event)) };
+
+    ::SetEvent(event.get());
+    event.close(); // Our handle is closed, but Async still has a valid handle.
+
+    co_await async; // Will wake up when *event* is signaled.
+}
+```
 
 ## <a name="important-apis"></a>重要的 API
 * [concurrency::task 类](/cpp/parallel/concrt/reference/task-class)

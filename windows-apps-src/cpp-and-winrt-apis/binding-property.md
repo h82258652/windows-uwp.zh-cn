@@ -5,12 +5,12 @@ ms.date: 06/21/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 属性
 ms.localizationpriority: medium
-ms.openlocfilehash: 25ce3164ece443c8c1d95bccbc2bfb57e3347a55
-ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
+ms.openlocfilehash: 5ff15e9b86d90aa14fd56e4e7015e949e2742bf6
+ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717651"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68328878"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控件；绑定到 C++/WinRT 属性
 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 这一想法基于称为“观察者模式”的软件设计模式  。 本主题介绍如何在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中实现可观测属性以及如何将 XAML 控件绑定到这些属性。
@@ -127,7 +127,7 @@ namespace winrt::Bookstore::implementation
 ## <a name="declare-and-implement-bookstoreviewmodel"></a>声明并实现 BookstoreViewModel 
 主 XAML 页面将绑定到主视图模型。 而且该视图模型将有多个属性，包括其中一个类型 BookSku  。 在此步骤中，我们将声明并实现主视图模型运行时类。
 
-添加名为 `BookstoreViewModel.idl` 的新的 Midl 文件 (.idl) 项  。
+添加名为 `BookstoreViewModel.idl` 的新的 Midl 文件 (.idl) 项  。 另请参阅[将运行时类重构到 Midl 文件 (.idl) 中](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl)。
 
 ```idl
 // BookstoreViewModel.idl
@@ -298,6 +298,55 @@ runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
 ```
 
 必须这样做的原因是： XAML 编译器进行验证所需的所有类型（包括在 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 中使用的类型）都是从 Windows 元数据 (WinMD) 读取的。 你只需将只读属性添加到 Midl 文件即可。 请勿实现它，因为自动生成的 XAML 代码隐藏会为你提供实现。
+
+## <a name="consuming-objects-from-xaml-markup"></a>使用 XAML 标记中的对象
+
+以 XAML [ **{x:Bind} 标记扩展**](/windows/uwp/xaml-platform/x-bind-markup-extension)形式使用的所有实体必须在 IDL 中以公开方式公开。 另外，如果 XAML 标记包含对另一元素的引用，且该引用也存在于标记中，则该标记的 getter 必须存在于 IDL 中。
+
+```xaml
+<Page x:Name="MyPage">
+    <StackPanel>
+        <CheckBox x:Name="UseCustomColorCheckBox" Content="Use custom color"
+             Click="UseCustomColorCheckBox_Click" />
+        <Button x:Name="ChangeColorButton" Content="Change color"
+            Click="{x:Bind ChangeColorButton_OnClick}"
+            IsEnabled="{x:Bind UseCustomColorCheckBox.IsChecked.Value, Mode=OneWay}"/>
+    </StackPanel>
+</Page>
+```
+
+*ChangeColorButton* 元素通过绑定引用 *UseCustomColorCheckBox* 元素。 因此，此页的 IDL 必须声明一个名为 *UseCustomColorCheckBox* 的只读属性，然后它才能供绑定访问。
+
+*UseCustomColorCheckBox* 的点击事件处理程序委托使用经典的 XAML 委托语法，因此不需要在 IDL 中有一个条目，只需在实现类中处于公开状态即可。 另一方面，*ChangeColorButton* 也有一个 `{x:Bind}` 点击事件处理程序，该程序也必须进入 IDL 中。
+
+```idl
+runtimeclass MyPage : Windows.UI.Xaml.Controls.Page
+{
+    MyPage();
+
+    // These members are consumed by binding.
+    void ChangeColorButton_OnClick();
+    Windows.UI.Xaml.Controls.CheckBox UseCustomColorCheckBox{ get; };
+}
+```
+
+不需为 **UseCustomColorCheckBox** 属性提供一个实现。 XAML 代码生成器会为你这样做。
+
+### <a name="binding-to-boolean"></a>绑定到布尔值
+
+可以在诊断模式下这样做。
+
+<syntaxhighlight lang="xml">
+<TextBlock Text="{Binding CanPair}"/>
+</syntaxhighlight>
+
+这会在 C++/CX 中显示 `true` 或 `false`，但在 C++/WinRT 中则显示 **Windows.Foundation.IReference`1<Boolean>** 。
+
+绑定到布尔值时使用 `x:Bind`。
+
+```xaml
+<TextBlock Text="{x:Bind CanPair}"/>
+```
 
 ## <a name="important-apis"></a>重要的 API
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)
