@@ -1,68 +1,67 @@
 ---
-Description: 了解如何创建有效且专注于用户的通知来提高用户的工作效率和快乐。
-title: Toast 通知的用户体验指南
+Description: 了解如何创建有效且用户为重点的通知, 使用户能够高效工作。
+title: Toast UX 指南
 label: Toast UX Guidance
 template: detail.hbs
 ms.date: 05/18/2018
 ms.topic: article
-keywords: windows 10、 uwp、 通知、 集合、 组、 用户体验、 用户体验指南，指导、 操作、 toast、 操作中心、 noninterruptive、 有效的通知、 非侵入式通知可操作的管理、 组织
+keywords: windows 10, uwp, 通知, 收集, 组, ux, ux 指导, 指导, 操作, toast, 操作中心, noninterruptive, 有效通知, 产生干扰通知, 可操作, 管理, 组织
 ms.localizationpriority: medium
-ms.openlocfilehash: 327a2add84343be3b972f7bb1f232298e7ef92ad
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 111ac9a216b87e120e42c9db7761bd8588548029
+ms.sourcegitcommit: 720d8778d94ef44d2f86d2f1f0ebb05d6420805d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320731"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68415082"
 ---
-# <a name="toast-notification-ux-guidance"></a>Toast 通知用户体验指南
-通知是现代生活; 的必要部分它们可帮助用户提高工作效率和参与与应用程序和网站，及使用的任何更新了解最新。 但是，通知可以快速打开从适用于 overbearing 和侵入性，如果它们不设计以用户为中心的方式。 通知是一个右键单击从正在关闭，并且不太可能已关闭后，它们将再次打开。  因此请确保您的通知是用户的屏幕空间和时间，不会冒犯他人，因此可以保持此 engagement 通道打开。
+# <a name="toast-notification-ux-guidance"></a>Toast 通知 UX 指南
+通知是当今生活的必需部分;它们可帮助用户提高工作效率, 并与应用和网站保持同步, 并保持最新的更新。 不过, 如果在以用户为中心的方式设计时, 通知可以快速地从有用到解救和侵入。 你的通知只是在关闭时单击一次, 但一旦关闭, 它们就不会被打开。  因此, 请确保你的通知过于用户的屏幕空间和时间, 从而使此订婚通道保持打开状态。
 
 > **重要的 API**：[Windows 社区工具包通知 nuget 包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
-我们已经分析了我们的 Windows 遥测，以及其他第一个和第三方案例研究，拿围绕就很好的通知情景的四个规则。  我们确信这些规则都普遍适用，无论使用什么平台，并将帮助您对用户产生积极的影响的通知。
+我们已经分析了我们的 Windows 遥测以及其他第一方和第三方案例研究, 为您提供了四条围绕着精彩通知案例的规则。  我们确信这些规则是通用的, 不管平台如何, 都将帮助你的通知对用户产生积极的影响。
 
-## <a name="1-actionable-notifications"></a>1.可操作的通知
-可操作的通知，用户可以高效工作，而无需打开您的应用程序。  尽管它非常具有应用程序中启动、 这不是唯一的度量值的成功，并使用户能够执行完成小任务而无需转到你的应用可能非常强大的工具中，要取悦用户。
+## <a name="1-actionable-notifications"></a>1.可操作通知
+可操作的通知允许用户提高工作效率, 而无需打开应用。  尽管应用程序的启动非常好, 但这并不是成功的唯一衡量, 使用户无需进入你的应用程序就可以使用非常强大的工具来令你的用户。
 
-![具有输入的文本框和按钮设置提醒并响应该通知可操作的通知](images/actionable-notification-example01.png)
+![具有输入文本框和按钮的可操作通知, 用于设置提醒和响应通知](images/actionable-notification-example01.png)
 
-上面是一条通知，利用操作的示例。 正在完成任务的感觉是普遍正感觉，，你可以将这种感觉到你的应用或网站来发送通知，其中包含的可操作的内容。 可操作的通知还可以帮助提高工作效率，同时在企业和使用者方案中，通过减少到操作用户时间经历用来完成这些较小的任务。 我们建议包括操作定期拍摄在你的用户或想要训练用户执行的操作。  一些示例如下：
-* 根据需要收藏，标记，或男内容
-* 批准或拒绝费用报表、 休假的权限，等等。
-* 内联回复邮件，电子邮件，组聊天、 评论等。
-* 完成排序使用[挂起更新](toast-pending-update.md)
-* 另一次设置警报或提醒，以及可能在日历中预订时间
+上面是利用操作的通知的示例。 完成任务的感觉是一项广泛的假象, 你可以通过发送其中包含可操作内容的通知, 将该感受带入你的应用或网站。 在企业和使用者方案中, 可操作的通知还可以缩短用户完成这些小型任务的操作时间, 从而提高工作效率。 建议包括用户经常要执行的操作, 或尝试训练用户执行的操作。  一些示例如下：
+* 喜好、加入收藏夹 ...、标记或 starring 内容
+* 批准或拒绝支出报表、休息时间、权限等。
+* 内嵌回复消息、电子邮件、组聊天、评论等。
+* 使用挂起的[更新](toast-pending-update.md)完成订单
+* 在其他时间设置警报或提醒, 以及在日历上可能的预订时间
 
-可操作的通知是非常强大的工具，帮助用户感觉提高工作效率，完成任务，并且具有与你的应用或网站的功能强大、 高效的体验。  有很多机会此处 ！ 如果需要帮助来触发想法，随意向 windows 通知团队联系。
+可操作的通知是非常强大的工具, 可帮助用户体验工作效率、完成任务, 并为应用程序或网站提供强大而高效的体验。  这里有很多机会! 如果你想要帮助灵感触发创意, 欢迎访问 windows 通知团队。
 
 ## <a name="2-timing-and-urgency"></a>2.计时和紧急性
-与我们通常对通知，相反实时不一定是最好 ！ 我们极力主张开发人员考虑一下用户以及要发送的通知是否紧迫的信息，或不。 用户可以轻松地重载具有太多的信息，并获取焦点尝试时将被中断的情况下感到沮丧。 Windows 提供了有关如何侵入性的要发送的通知，请考虑几个选项：
+与我们经常考虑通知的方式相反, 实时不一定是最好的! 我们强烈建议开发人员考虑用户, 如果他们发送的通知是紧急信息, 则为。 如果用户在尝试关注时被中断, 则可以轻松地将其与太多信息超载, 并获得失望。 Windows 提供了一些选项, 用于说明要发送的通知的侵入性:
 
-**原始通知：** 使用[原始通知](raw-notification-overview.md)十分有益出于许多原因，尤其当它面对 ot 最大程度减少用户中断。  发送原始通知将被唤醒您的应用程序在后台，这样就可以评估是否通知意义将立即在应用程序的上下文中。 如果您认为的内容应显示给用户，可以弹出[本地 toast](send-local-toast.md)从那里。  如果它是用户不需要以查看现在，可以创建[计划 toast](https://blogs.msdn.microsoft.com/tiles_and_toasts/2016/09/30/quickstart-sending-an-alarm-in-windows-10/) ，将在更高版本时激发。
+**原始通知:** 由于许多原因, 使用[原始通知](raw-notification-overview.md)可能会很有用, 特别是在其最大限度地减少用户中断的情况下。  发送原始通知会使你的应用程序在后台唤醒, 因此你可以评估通知是否可立即在应用的上下文中交付。 如果您认为您应该立即向用户显示, 您可以从此处弹出[本地 toast](send-local-toast.md) 。  如果用户现在不需要查看, 则可以创建一个将在以后激发的[计划的 toast](https://blogs.msdn.microsoft.com/tiles_and_toasts/2016/09/30/quickstart-sending-an-alarm-in-windows-10/) 。
 
 
-**虚影 toast:** 也可以激发一条通知，将跳过弹出屏幕的右下角中，而是直接向操作中心发送通知。 这可以通过设置[SupressPopup 属性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification.suppresspopup)为 True。 虽然有一些怀疑围绕不弹出通知操作中心之外，我们看到 2-3 倍更高版本适用于通过生活在操作中心的 toast engagement 弹出 toast。  当他们已准备好接收通知，并可以控制当它们被中断，这就是为什么能够 noninvasively 通知用户更加有效地操作中心中的内容时，用户是响应速度更快。
+**虚影 toast:** 你还可以触发一个通知, 该通知将跳过屏幕右下角, 并改为直接将通知发送到操作中心。 这是通过将[SupressPopup 属性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification.suppresspopup)设置为 True 来完成的。 尽管可能存在一些怀疑不在操作中心外弹出通知的情况, 但对于在弹出 toast 上实时操作中心的 toast, 我们看到了2-3 倍。  当用户准备好接收通知并可以控制何时中断时, 用户的响应速度更快, 这就是为什么操作中心的内容可以更有效地 noninvasively 通知用户的原因。
 
-## <a name="3-clear-out-the-clutter"></a>3.清除混乱
-通知可以在操作中心中保留相当长的时间 （默认值 3 天）。  它是命令性，请确保位于此处的内容是最新且相关，每次用户打开操作中心。 您是用户的屏幕空间浪费，占用了可用于某些较新的槽。  让我们假设用户安装电子邮件管理应用，并接收 10 封电子邮件和电子邮件以及十个通知。  根据你所需的体验，可以考虑清除这些通知，如果用户具有读取相应的电子邮件，或打开了该应用程序作为一种方法从操作中心中删除旧的混乱。
+## <a name="3-clear-out-the-clutter"></a>3.消除混乱
+通知可能会持续很长时间 (默认为三天) 在操作中心内保持不变。  必须确保在此处显示的内容是最新的, 并且每次用户打开操作中心时都是相关的。 您将浪费用户的屏幕空间, 并占用可用于更高版本的产品的槽。  假设用户安装你的电子邮件管理应用, 并收到10封电子邮件和10条通知以及这些电子邮件。  根据所需的体验, 如果用户读取了相应的电子邮件, 或者打开了应用作为从操作中心删除旧杂乱的方式, 则可以考虑清除这些通知。
 
-我们提供了一系列[ToastNotificationHistory](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotificationhistory) Api，允许您看到哪些内容是在操作中心，以及管理这些通知。 是严格地遵循用户的屏幕空间，请注意，仅向用户显示相关和最新内容。
+我们有一系列[ToastNotificationHistory](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotificationhistory) api, 可让你查看操作中心的内容, 并管理这些通知。 过于用户的屏幕空间, 并注意仅向用户显示相关和当前内容。
 
-## <a name="4-keeping-organized"></a>4.保持有组织
-正如前面提到的用于在三天 does 保留操作中心中的内容。  若要帮助用户找出快速寻找的信息，组织中使用操作中心通知[标头](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/toast-headers)或[集合](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollection)。 您所见的标头下面的示例。
+## <a name="4-keeping-organized"></a>4.保持井然有序
+如前文所述, 操作中心的内容将保留三天。  若要帮助你的用户快速选择他们想要的信息, 请使用[标头](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/toast-headers)或[集合](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollection)在操作中心组织通知。 可在下方查看标题的示例。
 
-![使用标头的 toast 通知示例标记为 Camping!!](images/toast-headers-action-center.png)
+![标头标记为 "露营!!" 的 Toast 示例](images/toast-headers-action-center.png)
 
-组合这些通知的方式，以便相关的内容保持在一起 （即认为划分不同的体育一在体育应用中，或对消息进行排序的群组聊天）。 集合是组通知更明确的方法，而标头却比较细微，但同时允许用户进行会审和更快地找出通知。
+以某种方式对这些通知进行分组, 以便将相关的内容保持在一起 (例如, 将不同的体育 leagues 分散到运动应用, 或按组聊天对邮件进行分类)。 集合是对通知进行分组的更直观的方式, 而标头则更微妙, 但这两种方法都允许用户更快地会审和获取通知。
 
-## <a name="other-resources"></a>其他资源
-上述这些四个点是通过我们自己分析遥测数据，并通过第一个和第三方试验我们已找到有效的指南。 记住，但是，这些指导原则就是这样： 指导原则。  我们确信这些规则有助于提高参与度和生产力的通知，但需执行任何操作可以使用替换以用户为中心的构想，和你自己的数据中学习。  
 
-如果立即发送到 UWP 应用的通知，则可以查看分析在通知中发生了什么情况[合作伙伴中心](https://partner.microsoft.com/dashboard)！ 使用时，这些数据包括免费[存储区服务 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK)或[WNS Api](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)。 这些指标将可提供更详细地了解您的通知在 windows 平台上，会发生什么情况以及如何使用通知了解用户交互。 通过在左侧显示端参与上转到菜单中访问此数据 > 通知，然后单击通知页中的"分析"选项卡上。  该文件位于您将转到从合作伙伴中心将通知发送的同一位置。
+
+以上四个要点是我们通过我们自己的遥测分析以及第一方和第三方试验获得的指导。 但请记住, 这些指导原则只是: 准则。  我们确信这些规则将有助于提高你的通知的参与度和效率, 但不能以用户为中心的思维, 也不能从你自己的数据中进行学习。  
 
 ## <a name="related-topics"></a>相关主题
 
-* [Toast 通知内容](adaptive-interactive-toasts.md)
+* [Toast 内容](adaptive-interactive-toasts.md)
 * [原始通知](raw-notification-overview.md)
-* [挂起的更新](toast-pending-update.md)
-* [GitHub （Windows 社区工具包的一部分） 上的通知库](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [等待更新](toast-pending-update.md)
+* [GitHub 上的通知库 (Windows 社区工具包的一部分)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
