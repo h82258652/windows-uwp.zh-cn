@@ -10,12 +10,12 @@ ms.technology: hub
 keywords: python, windows 10, microsoft, python 系统管理, python 文件自动化, windows 上的 python 脚本, 在 windows 上设置 python, windows 上的 python 开发人员环境, windows 上的 python 开发人员环境, windows 上的 python 开发环境, python, 适用于文件系统任务
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 0571d442d17cdac8989df10d7c11f3e762ab6fb6
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+ms.openlocfilehash: b34bf61f4ce4d2157df572cfbbc9337fced6cf2f
+ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68349464"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473670"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>开始在 Windows 上使用 Python 进行脚本编写和自动化
 
@@ -23,10 +23,9 @@ ms.locfileid: "68349464"
 
 ## <a name="set-up-your-development-environment"></a>设置开发环境
 
-使用 Python 编写执行文件系统操作的脚本时, 我们建议您[从 Microsoft Store 安装 Python](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab)。 
+使用 Python 编写执行文件系统操作的脚本时, 我们建议您[从 Microsoft Store 安装 Python](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab)。 通过 Microsoft Store 安装将使用 basic Python3 解释器, 但会为当前用户 (避免需要管理员访问权限) 设置路径设置, 并提供自动更新。
 
-> [!IMPORTANT]
-> 如果在 Windows 上使用 Python 进行**web 开发**, 则建议为开发环境设置其他设置。 通过适用于 Linux 的 Windows 子系统安装 Python, 而不是直接在 Windows 上安装。 在本指南中查找演练:[开始在 Windows 上使用 Python 进行 web 开发](./python-for-web.md)。 如果你不熟悉 Python, 请尝试我们的指南:[开始在 Windows 上使用 Python](./python-for-education.md)。 <br>对于某些高级方案, 你可能需要考虑直接从[python.org](https://www.python.org/downloads/windows/)下载特定的 Python 版本, 或考虑安装[备用](https://www.python.org/download/alternatives)项, 例如 Anaconda、Jython、PyPy、WinPython、IronPython 等。仅当你是更高级的 Python 程序员时, 才建议使用此方法, 具体原因是选择替代实现。
+如果在 Windows 上使用 Python 进行**web 开发**, 我们建议使用适用于 Linux 的 Windows 子系统的其他设置。 在本指南中查找演练:[开始在 Windows 上使用 Python 进行 web 开发](./python-for-web.md)。 如果你不熟悉 Python, 请尝试我们的指南:[开始在 Windows 上使用 Python](./python-for-education.md)。 对于某些高级方案 (例如需要访问/修改 Python 的已安装文件、创建二进制文件的副本或直接使用 Python Dll), 你可能需要考虑直接从[python.org](https://www.python.org/downloads/)下载特定的 Python 版本, 或考虑安装一[种替代方法](https://www.python.org/download/alternatives), 如 Anaconda、Jython、PyPy、WinPython、IronPython 等。仅当你是更高级的 Python 程序员时, 才建议使用此方法, 具体原因是选择替代实现。
 
 ## <a name="install-python"></a>安装 Python
 

@@ -10,12 +10,12 @@ ms.technology: hub
 keywords: python, microsoft, windows 10, 教程, 联机课程, 博客, 事件
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: ffcb2b280077d96b0405691976e04fc82959cf4c
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+ms.openlocfilehash: a987043735dd433288fd53090cf3623b035fad7d
+ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68349405"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473637"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>用于在 Windows 上通过 Python 进行开发的资源
 
@@ -24,6 +24,8 @@ ms.locfileid: "68349405"
 ## <a name="general"></a>常规
 
 - [Microsoft 开发博客:Python](https://devblogs.microsoft.com/python/):阅读有关 Microsoft 的所有功能的最新更新。
+
+- 有关[使用 WSL 和 Visual Studio Code 在 Windows 上进行 Linux 开发的深入教程](https://devblogs.microsoft.com/commandline/an-in-depth-tutorial-on-linux-development-on-windows-with-wsl-and-visual-studio-code/):演练: 如何设置开发环境, 如何创建 Python 应用并进行一些调试。
 
 - [在 Windows 上使用 Python](https://docs.python.org/3/using/windows.html):此 Python.org 文档提供有关在 Microsoft Windows 上使用 Python 时应了解的 Windows 特定行为的概述。
 
