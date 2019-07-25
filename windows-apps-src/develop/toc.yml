@@ -816,6 +816,8 @@
           href: ../cpp-and-winrt-apis/collections.md
         - name: 并发和异步操作
           href: ../cpp-and-winrt-apis/concurrency.md
+        - name: 更高级的并发和异步
+          href: ../cpp-and-winrt-apis/concurrency-2.md
         - name: XAML 控件；绑定到属性
           href: ../cpp-and-winrt-apis/binding-property.md
         - name: XAML 项目控件；绑定到集合

@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a65fe882057370f9d0ca603157279b3aa7429fb
-ms.sourcegitcommit: 02cc7aaa408efe280b089ff27484e8bc879adf23
+ms.openlocfilehash: ba8576402165f2d36d048eb3d214cb1dad601d76
+ms.sourcegitcommit: 8179902299df0f124dd770a09a5a332397970043
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387016"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68428622"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -52,6 +52,7 @@ C++ 编程语言适用于企业*和*独立软件供应商 (ISV) 行业中重视�
 | [创作事件](author-events.md) | 本主题演示了如何创作包含引发事件的运行时类的 Windows 运行时组件。 它还演示了使用该组件并处理事件的应用。 |
 | [使用 C++/WinRT 的集合](collections.md) | C++/WinRT 提供了函数和基类，当你希望实现并/或传递集合时，它们可以为你节省大量的时间和精力。 |
 | [并发和异步操作](concurrency.md) | 本主题介绍了你可通过 C++/WinRT 创建和使用 Windows 运行时异步对象的方式。 |
+| [更高级的并发和异步](concurrency-2.md) | 使用 C++/WinRT 的具有并发性和异步性的更高级方案。 |
 | [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md) | 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 本主题介绍了如何实现和使用可观测属性以及如何将 XAML 控件绑定到该属性。 |
 | [XAML 项目控件; 绑定到 C++/WinRT 集合](binding-collection.md) | 可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 本主题介绍了如何实现和使用可观测集合以及如何将 XAML 项目控件绑定到该集合。 |
 | [XAML 自定义（模板化）控件与 C++/WinRT](xaml-cust-ctrl.md) | 本主题引导你完成使用 C++/WinRT 创建简单的自定义控件的步骤。 你可以基于此处的信息创建你自己的功能丰富且可自定义的 UI 控件。 |
