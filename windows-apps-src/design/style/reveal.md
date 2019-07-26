@@ -78,7 +78,7 @@ ms.locfileid: "66370435"
 
 | 控件名称   | 资源名称 |
 |----------|:-------------:|
-| 按钮 |  ButtonRevealStyle |
+| Button |  ButtonRevealStyle |
 | ToggleButton | ToggleButtonRevealStyle |
 | RepeatButton | RepeatButtonRevealStyle |
 | AppBarButton | AppBarButtonRevealStyle |
