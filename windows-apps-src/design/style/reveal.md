@@ -78,7 +78,7 @@ ms.locfileid: "66370435"
 
 | 控件名称   | 资源名称 |
 |----------|:-------------:|
-| 按钮 |  ButtonRevealStyle |
+| Button |  ButtonRevealStyle |
 | ToggleButton | ToggleButtonRevealStyle |
 | RepeatButton | RepeatButtonRevealStyle |
 | AppBarButton | AppBarButtonRevealStyle |
@@ -88,7 +88,7 @@ ms.locfileid: "66370435"
 若要应用这些样式，只需设置控件的[样式](/uwp/api/Windows.UI.Xaml.Style)属性：
 
 ```xaml
-<Button Content="Button Content" Style="{StaticResource ButtonRevealStyle}"/>
+<Button Content="Button Content" Style="{ThemeResource ButtonRevealStyle}"/>
 ```
 
 ### <a name="reveal-in-themes"></a>主题中的展示
