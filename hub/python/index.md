@@ -7,17 +7,17 @@ ms.author: mattwoj
 manager: jken
 ms.topic: landing-page
 ms.date: 07/19/2019
-keywords: windows, python 开发
-ms.openlocfilehash: efaa587578fef891f9b870c9f357f19c5f8e5bb7
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+keywords: windows, python 开发, 如何从 windows 上的 python 开始, 适用于 linux 的 windows 子系统上的 python, 将 python 与 wsl 配合使用, 在 windows 上设置 python 的开发环境, Windows 上适用于 python 的 IDE, windows 上安装 python 的位置, 在 windows 上运行 python, windows 上适合新手的 python
+ms.openlocfilehash: 7711230b141c57135e1cda3f68416f0ed5287eac
+ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68349336"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473651"
 ---
 # <a name="develop-with-python-on-windows"></a>在 Windows 上使用 Python 进行开发
 
-无论你是经验丰富的开发人员还是新手，你需要做出的最重要决策之一是要使用的硬件和开发环境的类型。 Windows 进行了显著改进，以便更好地支持 Python 开发人员。 请从此处开始，查找有关如何设置开发环境、是在本机 Windows 上还是在适用于 Linux 的 Windows 子系统上安装工具以及如何集成 VS Code 和 Git 等工具的指南。
+无论你是经验丰富的开发人员还是才开始编写 Python 代码的新手，你需要做出的最重要决策之一是要使用哪个开发环境。 请从此处开始，查看有关设置开发环境、是在本机 Windows 上还是在适用于 Linux 的 Windows 子系统上安装工具以及如何集成 VS Code 和 Git 等工具的指南。 Windows 正在做出支持 Python 开发人员的重大改进，我们希望帮助你入门。
 
 <ul class="cardsK panelContent">
     <li>
