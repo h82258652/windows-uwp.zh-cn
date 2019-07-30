@@ -1,19 +1,19 @@
 ---
 description: 本指南将帮助您直接在 WPF 和 Windows 窗体应用程序中创建基于 Fluent 的 UWP UI
 title: 桌面应用中的 UWP 控件
-ms.date: 07/17/2019
+ms.date: 07/26/2019
 ms.topic: article
 keywords: windows 10、uwp、windows 窗体、wpf、xaml 孤岛
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 79dcd6069a5746e04565db660e6f5c03988a94a4
-ms.sourcegitcommit: 2062d06567ef087ad73507a03ecc726a7d848361
+ms.openlocfilehash: 560d339476ef3cd45f30bfc678661fb0a4a11ee1
+ms.sourcegitcommit: f6af7aeb8506379a184207035c8e43288cb31453
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68303567"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68601536"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>在桌面应用中托管 UWP XAML 控件 (XAML 孤岛)
 
@@ -74,42 +74,16 @@ WPF 和 Windows 窗体应用程序可以在[Windows 社区工具包](https://doc
 
 ## <a name="configure-your-project-to-use-xaml-islands"></a>将项目配置为使用 XAML 孤岛
 
-XAML 孤岛需要 Windows 10 版本1903及更高版本。 若要在应用程序中使用 XAML 孤岛, 必须先设置项目。
+XAML 孤岛需要 Windows 10 版本1903及更高版本。 若要在你的应用程序中使用 XAML 孤岛, 你必须首先设置你的项目:
 
-### <a name="wpf-and-windows-forms"></a>WPF 和 Windows 窗体
+1. 修改项目以使用 Windows 运行时 Api。 有关说明, 请参阅[此文](desktop-to-uwp-enhance.md#set-up-your-project)。
+2. 在项目中安装其中一个 NuGet 包。 请确保安装版本 6.0.0-preview 6.4 或更高版本的包。
+    * WPF安装[Microsoft 工具包](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)。
+    * Windows 窗体:["Microsoft 工具包"。](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)
+    * C++Win32[XamlApplication (& e)](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication)
 
-* 修改项目以使用 Windows 运行时 Api。 有关说明, 请参阅[此文](desktop-to-uwp-enhance.md#set-up-your-project)。
-
-* 在您的项目中安装最新的[Microsoft 工具包. 控件](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)(适用于 Wpf) 或[Microsoft](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) Windows 窗体) NuGet 包。 请确保安装版本 6.0.0-preview 6.4 或更高版本的包。
-
-### <a name="cwin32"></a>C++/Win32
-
-* 修改项目以使用 Windows 运行时 Api。 有关说明, 请参阅[此文](desktop-to-uwp-enhance.md#set-up-your-project)。
-* 执行下列操作之一：
-
-    **将应用程序打包到 .msix 包中**。 在[.msix 包](https://docs.microsoft.com/windows/msix/)中打包应用程序提供了许多部署和运行时权益。
-    1. 安装 Windows 10 版本 1903 SDK (或更高版本)。
-    2. 通过向解决方案添加[Windows 应用程序打包项目](https:/docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)并添加对C++/Win32 项目的引用, 将应用程序打包在 .msix 包中。
-
-    **在应用程序清单中设置 maxversiontested 值**。 如果你不想将应用程序打包到 .MSIX 包中, 则必须在你的项目中添加一个[应用程序清单](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests)并将**maxversiontested**元素添加到该清单, 以指定你的应用程序与 Windows 10 版本1903或更高版本兼容。
-    1. 如果项目中还没有应用程序清单, 请将新的 XML 文件添加到项目中, 并将其命名为**app.config**。
-    2. 在应用程序清单中, 包括下面的示例中所示的**兼容性**元素和子元素。 将**maxversiontested**元素的**Id**属性替换为目标版本为 windows 10 (必须是 windows 10, 版本1903或更高版本)。
-
-        ```xml
-        <?xml version="1.0" encoding="UTF-8"?>
-        <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
-            <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
-                <application>
-                    <!-- Windows 10 -->
-                    <maxversiontested Id="10.0.18362.0"/>
-                    <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
-                </application>
-            </compatibility>
-        </assembly>
-        ```
-
-        > [!NOTE]
-        > 将**maxversiontested**元素添加到应用程序清单时, 可能会在项目中看到以下生成警告: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`。 此警告不表示项目中的任何错误, 并且可将其忽略。
+> [!NOTE]
+> 这些说明的早期版本已将**maxversiontested**元素添加到项目中的应用程序清单。 从 NuGet 包的最新预览版本中, 你不再需要将此元素添加到清单中。
 
 ## <a name="feature-roadmap"></a>功能路线图
 
