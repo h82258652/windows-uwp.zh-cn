@@ -738,45 +738,15 @@
         - name: 通过付款请求 API 简化付款
           href: ../monetize/payment-request.md
     - name: 打包应用
-      href: ../packaging/index.md
       items:
-        - name: 使用 Visual Studio 打包 UWP 应用
-          href: ../packaging/packaging-uwp-apps.md
-        - name: 手动打包应用
-          href: ../packaging/manual-packaging-root.md
-          items:
-            - name: 使用 MakeAppx.exe 工具创建应用包
-              href: ../packaging/create-app-package-with-makeappx-tool.md
-            - name: 为程序包签名创建证书
-              href: ../packaging/create-certificate-package-signing.md
-            - name: 使用 SignTool 对应用包进行签名
-              href: ../packaging/sign-app-package-using-signtool.md
-            - name: 用资产包和包折叠进行开发
-              href: ../packaging/package-folding.md
-            - name: 平面捆绑应用包
-              href: ../packaging/flat-bundles.md
-            - name: 资产包简介
-              href: ../packaging/asset-packages.md
-            - name: 使用打包布局创建包
-              href: ../packaging/packaging-layout.md
-        - name: 应用包体系结构
-          href: ../packaging/device-architecture.md
-        - name: UWP 应用流式安装
-          href: ../packaging/streaming-install.md
-          items:
-            - name: 创建和转换源内容组映射
-              href: ../packaging/create-cgm.md
-        - name: 可选包和相关集创作
-          href: ../packaging/optional-packages.md
-          items:
-            - name: 包含可执行代码的可选包
-              href: ../packaging/optional-packages-with-executable-code.md
-        - name: 使用 WinAppDeployCmd.exe 工具安装应用
-          href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
+        - name: 概述
+          href: ../packaging/index.md
         - name: 应用功能声明
           href: ../packaging/app-capability-declarations.md
         - name: 设置 UWP 应用的自动生成
           href: ../packaging/auto-build-package-uwp-apps.md
+        - name: 使用 WinAppDeployCmd.exe 工具安装应用
+          href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
         - name: 从 Microsoft Store 下载并安装程序包更新
           href: ../packaging/self-install-package-updates.md
 - name: 平台
