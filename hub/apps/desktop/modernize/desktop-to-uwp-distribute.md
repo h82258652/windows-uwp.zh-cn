@@ -1,6 +1,6 @@
 ---
-Description: 分发打包桌面应用程序 （桌面桥）
-title: 在打包桌面应用程序发布到 Microsoft Store 或旁加载到一个或多个设备。
+Description: 分发打包的桌面应用程序 (Desktop Bridge)
+title: 将打包的桌面应用程序发布到 Microsoft Store 或将其旁加载到一个或多个设备上。
 ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -8,55 +8,55 @@ ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d10836da46cce4d862f7f727890b0c9c107df5a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 597a283fd28b571ed968255312059c7049f3f700
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317062"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682565"
 ---
-# <a name="distribute-your-packaged-desktop-app"></a>分发打包桌面应用程序
+# <a name="distribute-your-packaged-desktop-app"></a>分发打包桌面应用
 
-如果你决定[MSIX 包中的将桌面应用程序打包](/windows/msix/desktop/desktop-to-uwp-root)，可以将发布到 Microsoft Store 或旁加载打包的应用程序放到一个或多个设备。
+如果决定将[桌面应用打包到 .msix 包中](/windows/msix/desktop/desktop-to-uwp-root), 可以将打包的应用程序发布到 Microsoft Store 或者将其旁加载到一个或多个设备上。
 
 > [!NOTE]
-> 你是否对打包的应用程序，您就可能会转换用户的计划？ 分发应用前，请参阅本指南的[将用户切换到打包的应用](#transition-users)部分，获得一些参考。
+> 你是否有计划将用户转换为打包应用程序的方法？ 分发应用前，请参阅本指南的[将用户切换到打包的应用](#transition-users)部分，获得一些参考。
 
-## <a name="distribute-your-application-by-publishing-it-to-the-microsoft-store"></a>通过将其发布到 Microsoft Store 中分发您的应用程序
+## <a name="distribute-your-application-by-publishing-it-to-the-microsoft-store"></a>通过将应用程序发布到 Microsoft Store 来分发应用程序
 
 [Microsoft Store](https://www.microsoft.com/store/apps) 是客户获取应用最便利的方法。
 
-发布到 Microsoft Store 应用程序，以覆盖最广泛的受众。 此外，组织的客户可以获取你的应用程序在内部分发给其组织通过[于企业的 Microsoft Store](https://businessstore.microsoft.com/store)。
+将您的应用程序发布到 Microsoft Store, 以吸引最广泛的受众。 此外, 组织客户可以通过[Microsoft Store For Business](https://businessstore.microsoft.com/store)获取应用程序, 以便在内部分发给其组织。
 
-如果你打算发布到 Microsoft Store，在提交过程中，系统将要求你额外回答几个问题。 这是因为程序包清单声明名为 **runFullTrust** 的受限功能，我们需要批准该功能对你的应用程序的使用。 你可以阅读更多有关此要求此处：[受限制的功能](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
+如果你打算发布到 Microsoft Store，在提交过程中，系统将要求你额外回答几个问题。 这是因为程序包清单声明名为 **runFullTrust** 的受限功能，我们需要批准该功能对你的应用程序的使用。 有关此要求的详细信息, 请参阅:[限制的功能](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
 
-您无需登录你的应用程序，然后将其提交到存储区。
+在将应用程序提交到应用商店之前, 无需对应用程序进行签名。
 
 >[!IMPORTANT]
-> 如果你打算发布到 Microsoft Store 应用程序，请确保你的应用程序运行正常的设备上的运行 Windows 10 s。这是存储要求。 请参阅[测试适用于 Windows 10 S 的 Windows 应用](/windows/msix/desktop/desktop-to-uwp-test-windows-s)。
+> 如果计划将应用程序发布到 Microsoft Store, 请确保应用程序在运行 Windows 10 S 的设备上正常运行。这是一个存储要求。 请参阅[测试适用于 Windows 10 S 的 Windows 应用](/windows/msix/desktop/desktop-to-uwp-test-windows-s)。
 
 <a id="side-load" />
 
-## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>而无需将其放到 Microsoft Store 上分发应用程序
+## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>分发应用程序而不将其放到 Microsoft Store
 
-如果您而是将而无需使用应用商店分发你的应用程序，您可以手动分发应用到一个或多个设备。
+如果要在不使用应用商店的情况下分发应用程序, 可以手动将应用分发到一个或多个设备。
 
 如果要更好地控制分发体验，或者不想涉及 Microsoft Store 证书过程，这很有意义。
 
-若要分发到其他设备的应用程序而无需将其放置在存储中，你必须获取证书，请使用该证书，然后旁加载到这些设备上的应用程序登录你的应用程序。
+若要将应用程序分发给其他设备而不将其放入存储区中, 则必须获取证书, 使用该证书对应用程序进行签名, 然后将应用程序旁加载到这些设备。
 
-你可以[创建证书](/windows/uwp/packaging/create-certificate-package-signing)或从 [Verisign](https://www.verisign.com/) 等热门供应商处获取。
+你可以[创建证书](/windows/msix/package/create-certificate-package-signing)或从 [Verisign](https://www.verisign.com/) 等热门供应商处获取。
 
-如果你打算分发到运行 Windows 10 S 的设备上的应用程序，你的应用程序必须由 Microsoft Store 签名，因此您必须在可以分发到这些设备上的应用程序之前经过应用商店提交过程。
+如果你计划将应用程序分发到运行 Windows 10 S 的设备, 你的应用程序必须由 Microsoft Store 签名, 因此, 你必须完成应用商店提交过程, 然后才能将应用程序分发到这些设备。
 
 如果创建证书，则必须将其安装到运行应用的每台设备上的**受信任根**或**受信任人**证书存储区中。 如果从热门供应商处获取证书，则不必在其他系统上安装除应用外的任何内容。  
 
 > [!IMPORTANT]
 > 确保证书上的发布者名称与应用的发布者名称匹配。
 
-若要使用的证书签名应用程序，请参阅[签名应用程序包使用 SignTool](/windows/uwp/packaging/sign-app-package-using-signtool)。
+若要使用证书对应用程序进行签名, 请参阅[使用 SignTool 对应用程序包进行签名](/windows/msix/package/sign-app-package-using-signtool)。
 
-旁加载应用程序转移到其他设备，请参阅[Windows 10 中的旁加载 LOB 应用](/windows/application-management/sideload-apps-in-windows-10)。
+若要将应用程序旁加载到其他设备, 请参阅[Windows 10 中的旁加载 LOB 应用](/windows/application-management/sideload-apps-in-windows-10)。
 
 <a id="transition-users" />
 
@@ -65,21 +65,21 @@ ms.locfileid: "67317062"
 分发应用前，请考虑向程序包清单添加几个扩展，以便帮助用户养成使用打包的应用的习惯。 下面是一些可以执行的操作。
 
 * 将现有“开始”磁贴和任务栏按钮指向打包后的应用。
-* 将打包的应用程序与文件类型的一组相关联。
-* 请打开某些类型的文件默认情况下打包的应用程序。
+* 将打包应用程序与一组文件类型相关联。
+* 默认情况下, 使打包应用程序打开特定类型的文件。
 
 有关扩展的完整列表以及如何使用它们的指南，请参阅[将用户切换到应用](desktop-to-uwp-extensions.md#transition-users-to-your-app)。
 
-此外，请考虑将代码添加到你的打包应用程序完成这些任务：
+此外, 请考虑向打包应用程序添加代码来完成以下任务:
 
-* 将与桌面应用程序打包应用程序的相应的文件夹位置与关联的用户数据迁移。
+* 将与桌面应用程序关联的用户数据迁移到打包应用的相应文件夹位置。
 * 为用户提供卸载桌面版应用的选项。
 
 下面逐个谈谈这些任务。 首先是迁移用户数据。
 
 ### <a name="migrate-user-data"></a>迁移用户数据
 
-如果您要添加将用户数据迁移的代码，最好仅在首次启动应用程序时才运行该代码。 迁移用户数据前，向用户显示一个对话框，解释将发生的情况、建议执行此操作的原因以及他们的现有数据会出现的情况。
+如果要添加用于迁移用户数据的代码, 最好只在首次启动应用程序时运行该代码。 迁移用户数据前，向用户显示一个对话框，解释将发生的情况、建议执行此操作的原因以及他们的现有数据会出现的情况。
 
 下面的示例介绍如何在基于 .NET 的打包的应用中执行此操作。
 
@@ -118,7 +118,7 @@ private void MigrateUserData()
 
 ### <a name="uninstall-the-desktop-version-of-your-app"></a>卸载桌面版应用
 
-它是更好的做法不卸载未第一个请求这些权限的用户的桌面应用程序。 显示一个对话框，向用户征得该权限。 用户可能会决定不卸载桌面版应用。 如果发生这种情况，您必须决定是否要阻止使用桌面应用程序或支持的同时使用这两个应用。
+最好不要首先向用户的桌面应用程序询问权限。 显示一个对话框，向用户征得该权限。 用户可能会决定不卸载桌面版应用。 如果发生这种情况, 你必须决定是要阻止使用桌面应用程序还是支持并行使用这两个应用。
 
 下面的示例介绍如何在基于 .NET 的打包的应用中执行此操作。
 

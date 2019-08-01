@@ -1,23 +1,23 @@
 ---
 ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
 title: 从 Microsoft Store 下载并安装程序包更新
-description: 了解如何将标记为必需在合作伙伴中心中的包，并下载并安装程序包更新在应用中编写代码。
+description: 了解如何在合作伙伴中心将包标记为必需, 并在应用程序中编写代码, 以下载和安装包更新。
 ms.date: 04/04/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fc5fca95ca475444792fb0209a936bdfc64cb3c6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cb1ac05bdc5dcaaf31074f1b89e5bbb35e4f850d
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372353"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682728"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>从 Microsoft Store 下载并安装程序包更新
 
-从 Windows 10 版本 1607 开始，你可以使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间中 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 类的方法，以编程方式从 Microsoft Store 检查当前应用的程序包更新，下载并安装更新的程序包。 您还可以查询包在合作伙伴中心已标记为必需，强制更新安装之前，应用程序中禁用功能。
+从 Windows 10 版本 1607 开始，你可以使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间中 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 类的方法，以编程方式从 Microsoft Store 检查当前应用的程序包更新，下载并安装更新的程序包。 你还可以在合作伙伴中心查询已标记为必需的包, 并在安装必需的更新之前禁用应用中的功能。
 
-Windows 10 版本 1803 中引入的其他 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 方法让你能够无提示（不向用户显示通知 UI）下载和安装程序包更新，卸载[可选包](optional-packages.md)和获取有关你的应用的下载和安装队列中的程序包相关信息。
+Windows 10 版本 1803 中引入的其他 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 方法让你能够无提示（不向用户显示通知 UI）下载和安装程序包更新，卸载[可选包](/windows/msix/package/optional-packages)和获取有关你的应用的下载和安装队列中的程序包相关信息。
 
 这些功能有助于通过最新版本的应用、可选包和 Microsoft Store 中的相关服务，自动使你的用户群保持最新状态。
 
@@ -26,7 +26,7 @@ Windows 10 版本 1803 中引入的其他 [StoreContext](https://docs.microsoft.
 该代码示例演示如何使用 [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync) 方法从 Microsoft Store 发现所有可用的程序包更新，然后调用 [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync) 方法下载和安装更新。 使用该方法下载和安装更新时，操作系统在下载更新前会显示一个对话框，请求获得用户的许可。
 
 > [!NOTE]
-> 这些方法支持应用的必需包和[可选包](optional-packages.md)。 可选包可用于可下载内容 (DLC) 加载项，因为大小限制而划分大型应用，或者用于随附从核心应用中单独分隔出来的任何其他内容。 要获取将使用可选包（包括 DLC 加载项）的应用提交到 Microsoft Store 的权限，请参阅 [Windows 开发人员支持](https://developer.microsoft.com/windows/support)。
+> 这些方法支持应用的必需包和[可选包](/windows/msix/package/optional-packages)。 可选包可用于可下载内容 (DLC) 加载项，因为大小限制而划分大型应用，或者用于随附从核心应用中单独分隔出来的任何其他内容。 要获取将使用可选包（包括 DLC 加载项）的应用提交到 Microsoft Store 的权限，请参阅 [Windows 开发人员支持](https://developer.microsoft.com/windows/support)。
 
 该代码示例假定：
 
@@ -193,14 +193,14 @@ private async Task InstallUpdate(IReadOnlyList<StorePackageUpdate> storePackageU
 
 ## <a name="mandatory-package-updates"></a>必需程序包更新
 
-为面向 Windows 10，版本 1607年或更高版本的应用在合作伙伴中心上创建包提交时你可以[将标记为必需包](../publish/upload-app-packages.md#mandatory-update)以及日期和时间在其在强制实施。 当设置此属性，并且你的应用发现有程序包更新可用时，你的应用可以确定该更新包是否为必需，并在安装更新前更改其行为（例如你的应用可以禁用功能）。
+在合作伙伴中心为面向 Windows 10 版本1607或更高版本的应用创建包提交时, 可以将[包标记为必需](../publish/upload-app-packages.md#mandatory-update), 并将其变为必需的日期和时间。 当设置此属性，并且你的应用发现有程序包更新可用时，你的应用可以确定该更新包是否为必需，并在安装更新前更改其行为（例如你的应用可以禁用功能）。
 
 > [!NOTE]
 > Microsoft 不强制程序包更新处于必需状态，并且操作系统不提供向用户指示必须安装必需应用更新的 UI。 开发人员旨在使用必需设置通过其自己的代码强制执行必需的应用更新。  
 
 若要将软件包提交标记为必需：
 
-1. 登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)并导航到您的应用程序的概述页。
+1. 登录到[合作伙伴中心](https://partner.microsoft.com/dashboard), 导航到应用的 "概述" 页。
 2. 单击包含要成为必需的程序包更新的提交名称。
 3. 导航到提交的**程序包**页面。 在此页面底部附近，选择**使此更新为必需**，然后选择该程序包更新变为必需的日期和时间。 此选项适用于提交中的所有 UWP 程序包。
 
@@ -326,7 +326,7 @@ private void HandleMandatoryPackageError()
 
 ## <a name="uninstall-optional-packages"></a>卸载可选包
 
-从 Windows 10 版本 1803 开始，你可以使用 [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync) 或 [RequestUninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackagebystoreidasync) 方法卸载当前应用的[可选包](optional-packages.md)（包括 DLC 包）。 例如，如果你的应用包含通过可选包安装的内容，则你可能需要提供 UI，以便用户可以卸载可选包来释放磁盘空间。
+从 Windows 10 版本 1803 开始，你可以使用 [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync) 或 [RequestUninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackagebystoreidasync) 方法卸载当前应用的[可选包](/windows/msix/package/optional-packages)（包括 DLC 包）。 例如，如果你的应用包含通过可选包安装的内容，则你可能需要提供 UI，以便用户可以卸载可选包来释放磁盘空间。
 
 以下代码示例演示如何调用 [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync)。 此示例假定：
 * 该代码文件需要使用 **using** 语句导入 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空间。
@@ -463,4 +463,4 @@ private void StoreItem_StatusChanged(StoreQueueItem sender, object args)
 
 ## <a name="related-topics"></a>相关主题
 
-* [可选包和相关集创作](optional-packages.md)
+* [可选包和相关集创作](/windows/msix/package/optional-packages)

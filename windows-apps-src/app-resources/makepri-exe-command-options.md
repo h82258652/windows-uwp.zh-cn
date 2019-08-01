@@ -6,23 +6,23 @@ ms.date: 04/10/2018
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: bc08376dafec8aad9d65ef5acd8d19943d242eed
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 24326c19688a0fa6f2300da50e6d13308b79ee2e
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603392"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682472"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe 命令行选项
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) 具有命令集 `createconfig`、`dump`、`new`、`resourcepack` 和 `versioned`。 本主题对命令行选项的使用进行详细介绍。
 
 > [!NOTE]
-> 选中时安装 MakePri.exe**适用于 UWP 的托管应用的 Windows SDK**选项的同时，安装 Windows 软件开发工具包。 安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及其他体系结构对于命名的文件夹）。 例如， `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 当你在安装 Windows 软件开发工具包时检查 " **UWP 托管应用的 Windows SDK** " 选项时, 将安装 makepri.exe。 它已安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (以及其他体系结构的名为的文件夹中)。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` 。
 
-## <a name="getting-help-from-the-command-line"></a>从命令行获取帮助
+## <a name="getting-help-from-the-command-line"></a>从命令行中获取帮助
 
-你可以运行`MakePri.exe help`或`MakePri.exe /?`若要查看可用于 MakePri.exe 命令。 此外可以颁发`MakePri.exe <command> /?`若要查看有关某个命令，并在极少数情况下的详细信息，甚至`MakePri.exe <command> <option>`若要查看有关某个选项的详细信息。
+您可以运行`MakePri.exe help`或`MakePri.exe /?`以查看可用于 makepri.exe 的命令。 您还可以发出`MakePri.exe <command> /?`有关命令的详细信息, 并在极少数情况下`MakePri.exe <command> <option>`查看有关选项的具体信息。
 
 ## <a name="makepri-commands"></a>MakePri 命令
 
@@ -115,7 +115,7 @@ Help:
 `dump` 命令输入一个转储文件，该文件包含指定 PRI 文件中的所有资源的列表。 运行 `MakePri.exe dump /?` 以查看关于此命令的详细帮助。
 
 > [!NOTE]
-> 无模式资源包是在 PRI 配置文件中使用 *omitSchemaFromResourcePacks* 开关创建的资源包。 若要转储无模式资源包，请使用开关 `/es <main_package_PRI_file>`。 如果未指定主文件，则会看到错误消息"*resources.pri 包中的已损坏以便加密失败 (错误 PRI222:0xdef0000f-出现未知的错误）*"。
+> 无模式资源包是在 PRI 配置文件中使用 *omitSchemaFromResourcePacks* 开关创建的资源包。 若要转储无模式资源包，请使用开关 `/es <main_package_PRI_file>`。 如果未指定主文件, 则会看到错误消息 "*包中的 resources 已损坏, 因此加密失败 (错误 PRI222:0xdef0000f-出现错误)* "。
 
 ```console
 C:\>makepri dump /?
@@ -416,22 +416,22 @@ MakePri 可以将资源包特定的信息包括在索引器元数据文件中。
 
 **FILEPATH** 是指定输入的 PRI 文件或 PRI 架构文件位置的标记。
 
-## <a name="47indexoptionsio-option"></a>&#47;IndexOptions(io) 选项
+## <a name="47indexoptionsio-option"></a>&#47;IndexOptions (io) 选项
 
-使用索引选项选项 (/ io) 与`new`， `resourcepack`，和`versioned`指定提供细致的控制资源索引器的行为的选项。 默认情况下禁用索引选项。
+使用索引选项选项 (/io) `new`和、 `resourcepack`和`versioned`来指定提供对资源索引器行为的详细控制的选项。 索引选项默认情况下处于禁用状态。
 
 ```console
 /IndexOptions(io) <OPTIONS>
 ```
 
-**选项**是以逗号分隔的列表包含以下选项。
+**Options**是一个以逗号分隔的列表, 其中包含以下选项。
 
-- + /-HiddenFiles(hf)。 索引 （+） 或忽略 （-） 隐藏文件和文件夹。
-- + /-LinkedFiles(lf)。 索引 （+） 或忽略 （-） 链接的文件和文件夹。
+- +/-HiddenFiles (hf)。 Index (+) 或忽略 (-) 隐藏文件和文件夹。
+- +/-LinkedFiles (lf)。 Index (+) 或忽略 (-) 链接的文件和文件夹。
 
 ## <a name="47mappingfilemf-option"></a>&#47;MappingFile(mf) 选项
 
-你可以使用映射文件选项 (/mf) 与 `new`、`resourcepack` 和 `versioned` 一起生成映射文件。 [MakeAppx.exe](../packaging/create-app-package-with-makeappx-tool.md) 使用映射文件生成应用包。
+你可以使用映射文件选项 (/mf) 与 `new`、`resourcepack` 和 `versioned` 一起生成映射文件。 [MakeAppx.exe](/windows/msix/package/create-app-package-with-makeappx-tool) 使用映射文件生成应用包。
 
 ```console
 /MappingFile(mf) <MAPPINGFILETYPE>
@@ -501,7 +501,7 @@ Overwrite these file(s)? [Y]es (any other key to cancel):
 
 | 错误条件 | 错误消息 |
 | --------------- | ------------- |
-| 输出文件名与配置中的其中一个资源包名称相同。 | 无效的配置：资源包名称<resource pack name>不能为输出文件 < outputfilename.pri > 相同。 |
+| 输出文件名与配置中的其中一个资源包名称相同。 | 配置无效:资源包名称<resource pack name>不能与输出文件 < >。 |
 
 ## <a name="reversemaprm-option"></a>/ReverseMap(rm) 选项
 
@@ -551,4 +551,4 @@ Overwrite these file(s)? [Y]es (any other key to cancel):
 
 ## <a name="related-topics"></a>相关主题
 
-* [MakePri.exe](compile-resources-manually-with-makepri.md)
+* [Makepri.exe](compile-resources-manually-with-makepri.md)

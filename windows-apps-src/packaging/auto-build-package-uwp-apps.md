@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: de623240e275dda5b6fc4df9afee31e1adf9fd4f
-ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
+ms.openlocfilehash: 838bd9cb790893ea24b57bb2b0bad49aa262fdbc
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340850"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682530"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -83,7 +83,7 @@ steps:
 5. 如果证书具有密码, 则建议在[Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates)中存储密码, 然后将密码链接到[变量组](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 您可以使用该变量来访问管道中的密码。
 
 > [!NOTE]
-> 从 Visual Studio 2019 开始, 不会再在 UWP 项目中生成临时证书。 若要创建或导出证书, 请使用[本文](create-certificate-package-signing.md)中介绍的 PowerShell cmdlet。
+> 从 Visual Studio 2019 开始, 不会再在 UWP 项目中生成临时证书。 若要创建或导出证书, 请使用[本文](/windows/msix/package/create-certificate-package-signing)中介绍的 PowerShell cmdlet。
 
 ## <a name="configure-the-build-solution-build-task"></a>配置生成解决方案生成任务
 
@@ -196,6 +196,6 @@ steps:
 ## <a name="related-topics"></a>相关主题
 
 - [生成适用于 Windows 的 .NET 应用](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
-- [打包 UWP 应用](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
+- [打包 UWP 应用](/windows/msix/package/packaging-uwp-apps)
 - [Windows 10 中的旁加载 LOB 应用](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
-- [为包签名创建证书](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)
+- [为包签名创建证书](/windows/msix/package/create-certificate-package-signing)

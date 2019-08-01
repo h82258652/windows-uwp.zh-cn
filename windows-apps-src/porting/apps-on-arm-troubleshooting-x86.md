@@ -5,12 +5,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, 始终连接, ARM 上的 x86 模拟, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c29151ae2823aa70711bf002e8954148cc0861b
-ms.sourcegitcommit: f7e3782e24d46b2043023835c5b59d12d3b4ed4b
+ms.openlocfilehash: 480d9cd6508b149e0d4966bae8835c05d30db7af
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67345676"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682746"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>x86 桌面应用疑难解答
 >[!IMPORTANT]
@@ -21,7 +21,7 @@ ms.locfileid: "67345676"
 |问题|解决方案|
 |-----|--------|
 | 你的应用依赖于不是为 ARM 设计的驱动程序。 | 将你的 x86 驱动程序重新编译为 ARM64 驱动程序。 请参阅[使用 WDK 构建 ARM64 驱动程序](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers)。 |
-| 你的应用只适用于 x64。 | 如果你的应用是为 Microsoft Store 开发的，请提交应用的 ARM 版本。 有关详细信息，请参阅[应用包体系结构](../packaging/device-architecture.md)。 如果你是 Win32 开发人员，我们建议将你的应用重新编译到 ARM64。 有关更多信息，请参阅[针对 ARM 开发的 Visual Studio 早期预览版 Windows 10 支持](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/)。 |
+| 你的应用只适用于 x64。 | 如果你的应用是为 Microsoft Store 开发的，请提交应用的 ARM 版本。 有关详细信息，请参阅[应用包体系结构](/windows/msix/package/device-architecture)。 如果你是 Win32 开发人员，我们建议将你的应用重新编译到 ARM64。 有关更多信息，请参阅[针对 ARM 开发的 Visual Studio 早期预览版 Windows 10 支持](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/)。 |
 | 你的应用使用了高于 1.1 版本的 OpenGL，或者需要硬件加速的 OpenGL。 | 如果可用，请使用应用的 DirectX 模式。 使用 DirectX 9、DirectX 10、DirectX 11 和 DirectX 12 的 x86 应用将可在 ARM 上正常运行。 有关详细信息，请参阅 [DirectX 图形和游戏](https://docs.microsoft.com/windows/desktop/directx)。 |
 | 你的 x86 应用无法按预期工作。 | 按照 [ARM 上的程序兼容性疑难解答](apps-on-arm-program-compat-troubleshooter.md)中的指南尝试使用兼容性疑难解答。 有关其他一些疑难解答步骤，请参阅[基于 ARM 的 x86 应用疑难解答](apps-on-arm-troubleshooting-x86.md)。 |
 
@@ -49,6 +49,6 @@ ms.locfileid: "67345676"
 Qualcomm Snapdragon 835 移动电脑平台不支持 Windows 虚拟机监控程序平台。 因此，使用 Hyper-V 运行虚拟机将失败。 我们将继续在未来的 Qualcomm 芯片组上投资这些技术。 
 
 ## <a name="dynamic-code-generation"></a>动态代码生成
-桌面应用程序都仿真 ARM64 的由系统生成 ARM64 说明在运行时的 X86。 这意味着如果 x86 桌面应用程序会阻止动态代码生成或不能支持在其进程中，该应用的修改将作为 x86 在 ARM64 上运行。 
+X86 桌面应用程序在 ARM64 上通过系统生成 ARM64 指令在运行时进行模拟。 这意味着, 如果 x86 桌面应用在其进程中阻止动态代码生成或修改, 则无法支持在 ARM64 上以 x86 身份运行该应用。 
 
-这是某些应用程序，其过程使用一个安全缓解[SetProcessMitigationPolicy](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) API 使用`ProcessDynamicCodePolicy`标志。 若要在为 x86 ARM64 上成功运行过程中，此缓解策略将需要禁用。 
+这是在使用带有`ProcessDynamicCodePolicy`标志的[SetProcessMitigationPolicy](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) API 对其进程启用的安全缓解措施。 若要在 ARM64 上成功运行作为 x86 进程, 则必须禁用此缓解策略。 

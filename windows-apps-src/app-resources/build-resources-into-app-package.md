@@ -6,18 +6,18 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bf2d34bc3dae20750f66c9116499a17444b798c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f7acabc9858f5a2fa0b6b76d752d2a342959f41f
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627282"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682513"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>将资源构建到你的应用包而非资源包
 
 某些类型的应用（多语言字典、翻译工具等）需要覆盖应用程序包的默认行为，并将资源构建到应用包，而不是单独的资源程序包（或资源包）。 本主题介绍如何实现该操作。
 
-默认情况下，构建[应用程序包 (.appxbundle)](../packaging/packaging-uwp-apps.md) 时，只会将语言、缩放和 DirectX 功能级别的默认资源构建到应用包。 翻译的资源以及为非默认缩放和/或 DirectX 功能级别定制的资源都构建到资源包中，仅供需要的设备下载。 如果客户使用语言首选项设置为西班牙语的设备从 Microsoft Store 购买应用，则只下载并安装应用和西班牙语资源包。 如果同一用户稍后在**设置**中将他们的语言首选项更改为法语，则将下载并安装应用的法语资源包。 符合缩放和 DirectX 功能级别的资源的情况也类似。 对于大多数应用，此行为会提高效率，而这正是你和客户*想要*实现的。
+默认情况下，构建[应用程序包 (.appxbundle)](/windows/msix/package/packaging-uwp-apps) 时，只会将语言、缩放和 DirectX 功能级别的默认资源构建到应用包。 翻译的资源以及为非默认缩放和/或 DirectX 功能级别定制的资源都构建到资源包中，仅供需要的设备下载。 如果客户使用语言首选项设置为西班牙语的设备从 Microsoft Store 购买应用，则只下载并安装应用和西班牙语资源包。 如果同一用户稍后在**设置**中将他们的语言首选项更改为法语，则将下载并安装应用的法语资源包。 符合缩放和 DirectX 功能级别的资源的情况也类似。 对于大多数应用，此行为会提高效率，而这正是你和客户*想要*实现的。
 
 但是如果应用支持用户在应用中即时（而不是通过**设置**）更改语言，则该默认行为并不适合使用。 你实际上希望无条件下载所有语言资源并随应用一次性安装，然后将它们保留在设备上。 你希望将所有这些资源构建到应用包而不是单独的资源包。
 
