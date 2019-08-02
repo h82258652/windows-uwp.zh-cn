@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 入门, 开始使用
 ms.localizationpriority: medium
-ms.openlocfilehash: 64104124a6342da3f6963c61bafc871838fd00f6
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 346877178b4450df5fb0151656d58e203ea0be63
+ms.sourcegitcommit: 4e74c920f1fef507c5cdf874975003702d37bcbb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721675"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372734"
 ---
 # <a name="get-started-with-cwinrt"></a>C++/WinRT 入门
 
@@ -158,6 +158,26 @@ C++/WinRT 语言投影依赖于某些 Windows 运行时自由（非成员）函�
 ```
 
 现在，可以编译、链接 C++/WinRT 代码并将其添加到项目（例如，类似于前面 [C++/WinRT 快速入门](#a-cwinrt-quick-start)部分所示的代码）。
+
+## <a name="the-three-main-scenarios-for-cwinrt"></a>C++/WinRT 的三大应用方案
+
+在使用和熟悉 C++/WinRT 的过程中，以及在阅读本文档余下内容的过程中，你可能会注意到有三大应用方案，详见后面部分的介绍。
+
+### <a name="consuming-windows-runtime-apis-and-types"></a>使用 Windows 运行时 API 和类型
+
+也就是说，使用或调用 API。   例如，通过 API 调用使用蓝牙进行通信、流式传输和提供视频、与 Windows shell 集成，等等。 C++/WinRT 完全支持此类方案。 有关详细信息，请参阅[通过 C++/WinRT 使用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis)。
+
+### <a name="authoring-windows-runtime-apis-and-types"></a>创作 Windows 运行时 API 和类型
+
+也就是说，生成 API 和类型。  例如，生成上一部分介绍的 API 类型、图形 API、存储和文件系统 API、网络 API 等。 有关详细信息，请参阅[使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)。
+
+使用 C++/WinRT 创作 API 涉及的事项要稍多于使用 API 的情况，因为你必须使用 IDL 来定义 API 的形状，然后才能实现它。 [XAML 控件；绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)中详述了此方面的操作。
+
+### <a name="xaml-applications"></a>XAML 应用程序
+
+此方案涉及在 XAML UI 框架上构建应用程序和控件。 在 XAML 应用程序中工作相当于既要使用，又要创作。 但是，由于 XAML 是当今的 Windows 主流 UI 框架，其对 Windows 运行时的影响也同样很大，因此有必要专门设置一个它的应用方案类别。
+
+请注意，XAML 最适用于提供反射的编程语言。 在 C++/WinRT 中，有时需要做一些额外的工作才能与 XAML 框架互操作。 所有这些情况均在相应文档中进行了介绍。 可以从 [XAML 控件；绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)和 [XAML 自定义（模板化）控件与 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl) 着手。
 
 ## <a name="important-apis"></a>重要的 API
 * [SyndicationClient::RetrieveFeedAsync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

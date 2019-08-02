@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 25dc7118fcb7d9c6e997fae458ef7846777b1262
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 2b0f5918b240bf5c28e49f2ede6f10dbeefcbbfc
+ms.sourcegitcommit: e13f06042a28a8455a211b8693a009098e150cd1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65983920"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68522093"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP 应用设计简介
 
@@ -47,12 +47,12 @@ UWP 可以发挥促进作用，即通过自动调整 UI 元素的大小，以使
 
 :::row:::
     :::column span:::
-        The sizes, margins, and positions of UI elements should always be in **multiples of 4 epx** in your UWP apps.
+在 UWP 应用中，UI 元素的大小、边距和位置应始终为 **4 epx 的倍数**。
 
-        UWP scales across a range of devices with scaling plateaus of 100%, 125%, 150%, 175%, 200%, 225%, 250%, 300%, 350%, and 400%. The base unit is 4 because it's the only integer that can be scaled by non-whole numbers (e.g. 4*1.5 = 6). Using multiples of four aligns all UI elements with whole pixels and ensures UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
+UWP 可以跨一系列设备进行缩放，缩放比例为 100%、125%、150%、175%、200%、225%、250%、300%、350%、400%。 基础单位为 4，因为这是可以通过非整数进行缩放的唯一整数（例如，4*1.5 = 6）。 使用 4 的倍数可以将所有 UI 元素与整个像素匹配，并可确保 UI 元素具有清晰的锐边。 （请注意，文本不会有此要求；文本的大小和位置可以是任意值。）
     :::column-end:::
     :::column:::
-        ![grid](images/4epx.svg)
+![网格](images/4epx.svg)
     :::column-end:::
 :::row-end:::
 
@@ -64,21 +64,21 @@ UWP 可以发挥促进作用，即通过自动调整 UI 元素的大小，以使
 
 :::row:::
     :::column:::
-        When a UWP app is launched on any Windows 10 device, it launches in a [Window](/uwp/api/windows.ui.xaml.window) with a [Frame](/uwp/api/windows.ui.xaml.controls.frame), which can navigate between [Page](/uwp/api/windows.ui.xaml.controls.page) instances.
+在任意 Windows 10 设备上启动 UWP 应用时，它会启动一个包含[框架](/uwp/api/windows.ui.xaml.controls.frame)（可以在[页面](/uwp/api/windows.ui.xaml.controls.page)实例间导航）的[窗口](/uwp/api/windows.ui.xaml.window)。
     :::column-end:::
     :::column:::
-        ![Frame](images/frame.svg)
+![帧](images/frame.svg)
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        You can think of your app's UI as a collection of pages. It's up to you to decide what should go on each page, and the relationships between pages.
+可以将应用的 UI 看作一组页面。 每个页面显示何种内容以及页面之间的关系由你决定。
 
-        To learn how you can organize your pages, see [Navigation basics](navigation-basics.md).
+若要了解如何组织页面，请参阅[导航基础知识](navigation-basics.md)。
     :::column-end:::
     :::column:::
-        ![Frame](images/collection-pages.svg)
+![帧](images/collection-pages.svg)
     :::column-end:::
 :::row-end:::
 
@@ -116,14 +116,14 @@ UWP 的设计平台提供了一系列保证在所有支持 Windows 的设备上�
 
 :::row:::
     :::column:::
-        Your UWP app will interact with the broader Windows experience with tiles and notifications in the Windows [Shell](../shell/tiles-and-notifications/creating-tiles.md).
+UWP 应用将与 Windows [Shell](../shell/tiles-and-notifications/creating-tiles.md) 中的磁贴和通知进行 Windows 体验范围更广泛的交互。
 
-        Tiles are displayed in the Start menu and when your app launches, and they provide a glimpse of what's going on in your app. Their power comes from the content behind them, and the intelligence and craft with which they're offered up.
+应用启动时，磁贴显示在“开始”菜单上，可以通过它们大致了解应用中的情况。 其功能来自背后的内容及其体现的智能和工艺。
 
-        UWP apps have four tile sizes (small, medium, wide, and large) that can be customized with the app's icon and identity. For guidance on designing tiles for your UWP app, see [Guidelines for tile and icon assets](../shell/tiles-and-notifications/app-assets.md).
+UWP 应用具有四种磁贴大小（小、中、宽和大），可使用应用的图标和标识来自定义这几种大小。 有关为 UWP 应用设计磁贴的指南，请参阅[磁贴和图标资产指南](../shell/tiles-and-notifications/app-assets.md)。
     :::column-end:::
     :::column:::
-        ![tiles on start menu](images/shell.svg)
+![“开始”菜单上的磁贴](images/shell.svg)
     :::column-end:::
 :::row-end:::
 
@@ -131,10 +131,10 @@ UWP 的设计平台提供了一系列保证在所有支持 Windows 的设备上�
 
 :::row:::
     :::column:::
-        UWP apps rely on smart interactions. You can design around a click interaction without having to know or define whether the click comes from a mouse, a stylus, or a tap of a finger. However, you can also design your apps for [specific input modes](../input/input-primer.md).
+UWP 应用依赖于智能交互。 你可以围绕单击交互进行设计，而无需知道或定义该单击是来自鼠标、触笔还是手指点击。 不过，你也可以针对[特定输入模式](../input/input-primer.md)设计应用。
     :::column-end:::
     :::column:::
-        ![inputs](images/inputs.svg)
+![输入](images/inputs.svg)
     :::column-end:::
 :::row-end:::
 

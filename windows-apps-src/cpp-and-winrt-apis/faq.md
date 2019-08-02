@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 提问, 问题, 常见问题解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 01ff6fb443550287330d6fe503c3d49d81e2142c
-ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
+ms.openlocfilehash: 6bac3fec34467f29d9cf2cc3f1ce4e3754187745
+ms.sourcegitcommit: 7ece8a9a9fa75e2e92aac4ac31602237e8b7fde5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717641"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485152"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有关 C++/WinRT 的常见问题解答
 对你可能存疑的关于通过 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 创作和使用 Windows 运行时 API 的问题的解答。
@@ -63,15 +63,9 @@ ms.locfileid: "67717641"
 
 ### <a name="uniform-construction"></a>统一构造
 
-如果尝试通过任何投影类型的构造函数（不是其 **std:: nullptr_t** 构造函数）实例化本地实现的运行时类，也可能会发生此错误。 为了解决此问题，你将需要通常称为“统一构造”的 C++/WinRT 2.0 功能。 但是，有关实例化不  需要统一构造的本地实现运行时类的方法，请参阅 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md)。
+如果尝试通过任何投影类型的构造函数（不是其 **std:: nullptr_t** 构造函数）实例化本地实现的运行时类，也可能会发生此错误。 为了解决此问题，你将需要通常称为“统一构造”的 C++/WinRT 2.0 功能。 若要选择加入该功能，并且需要详细信息和代码示例，请参阅[选择加入统一构造和直接实现访问](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access)。
 
-如果  确实需要统一构造，则默认情况下会为新项目启用它。 对于现有项目，你将需要通过配置 `cppwinrt.exe` 工具来选择启用统一构造。 在 Visual Studio 中，将项目属性“常见属性”   > “C++/WinRT”   > “已优化”  设置为“是”  。 该操作的效果是将 `<CppWinRTOptimized>true</CppWinRTOptimized>` 添加到项目文件。 并且它与从命令行调用 `cppwinrt.exe` 时添加 `-opt[imize]` 开关具有相同的效果。
-
-如果在不使用该设置的情况下生成项目  ，产生的 C++/WinRT 投影会调用 [**RoGetActivationFactory**](/windows/win32/api/roapi/nf-roapi-rogetactivationfactory) 来访问运行时类的构造函数和静态成员。 这需要类进行注册并且你的模块实现 [**DllGetActivationFactory**](/previous-versions/br205771(v=vs.85)) 入口点。
-
- 使用 `-opt[imize]` 开关生成项目时，这会导致项目为组件中的类绕过 **RoGetActivationFactory**，从而使你可以采用在这些类位于组件之外时你可采用的所有相同方式构造它们（无需进行注册）。
-
-若要使用统一构造，还需要在包括实现头文件后编辑每个实现的 `.cpp` 文件以添加 `#include <Sub/Namespace/ClassName.g.cpp>`。
+有关实例化不  需要统一构造的本地实现运行时类的方法，请参阅 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md)。
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>我是否应实现 [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable)，如果是，该怎么实现？
 如果你有在其构造函数中释放资源的运行时类，而且有旨在从其实现编译单元外部所使用的运行时类（即适用于 Windows 运行时客户端应用的一般使用的 Windows 运行时组件），则我们建议你还要实现 **IClosable**，以支持缺乏确定性终止化的语言对运行时类的使用。 确保资源得到释放，无论调用的是析构函数 [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) 还是两者。 可调用 **IClosable::Close** 任意次数。

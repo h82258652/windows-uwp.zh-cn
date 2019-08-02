@@ -4,13 +4,13 @@ description: 如何使用 XamlUICommand 和 StandardUICommand 类（以及 IComm
 author: Karl-Bridge-Microsoft
 ms.service: ''
 ms.topic: overview
-ms.date: 03/11/2019
-ms.openlocfilehash: a85a101cd529bf487cbc97b93bb3905f28213c19
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.date: 07/23/2019
+ms.openlocfilehash: 338cae7b6238c3c773f409322600c8bee8c193f5
+ms.sourcegitcommit: 401c8ecaf74eee247f1ed0093028cc6558b4a605
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63793838"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68446370"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>使用 StandardUICommand、XamlUICommand 和 ICommand 在通用 Windows 平台 (UWP) 应用中进行命令控制
 
@@ -36,9 +36,11 @@ ms.locfileid: "63793838"
 
 命令可以在应用的特定上下文中操作（例如，删除文本或撤消某个操作），也可在无上下文的情况下操作（例如，将音频静音或调整亮度）。
 
-下图显示两个共享许多相同命令的命令界面（一个 [CommandBar](app-bars.md) 和一个浮出式上下文 [CommandBarFlyout](command-bar-flyout.md)）。
+下图显示两个共享某些相同命令的命令界面（一个 [CommandBar](app-bars.md) 和一个浮出式上下文 [CommandBarFlyout](command-bar-flyout.md)）。
 
-![命令界面示例](images/commanding/command-interface-example.png)
+![Microsoft 照片中的命令栏](images/control-examples/command-bar-photos.png)<br>*Microsoft 照片中的命令栏*
+
+![Microsoft 照片库中的上下文菜单](images/ContextMenu_example.png)<br>*Microsoft 照片库中的上下文菜单*
 
 ## <a name="command-interactions"></a>命令交互
 

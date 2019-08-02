@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10、uwp、windows 窗体、wpf、xaml 孤岛
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 07d2c957dff61a8b1ec9f9541ffeb9706da8a0e9
-ms.sourcegitcommit: 2062d06567ef087ad73507a03ecc726a7d848361
+ms.openlocfilehash: 4d504686e2ff50700e3f4bf242ef5d16be814894
+ms.sourcegitcommit: 3cc6eb3bab78f7e68c37226c40410ebca73f82a9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68303572"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68729486"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>第 2 部分：使用 XAML Islands 添加 UWP InkCanvas 控件
 
@@ -29,7 +29,7 @@ ms.locfileid: "68303572"
 
     ![Visual Studio 中的 "管理 NuGet 包" 菜单](images/wpf-modernize-tutorial//ManageNuGetPackages.png)
 
-2. 在 " **NuGet 包管理器**" 窗口中, 单击 "**浏览**"。 选择 "**包括预发行**版" 选项, `Microsoft.Toolkit.Wpf.UI.Controls`搜索包, 并安装结果中所示的包的最新预览版本。 请确保安装版本6.0.0 或更高版本。
+2. 在 " **NuGet 包管理器**" 窗口中, 单击 "**浏览**"。 选择 "**包括预发行**版" 选项, `Microsoft.Toolkit.Wpf.UI.Controls`搜索包, 并安装结果中所示的包的最新预览版本。 请确保安装版本 6.0.0-preview7 或更高版本。
 
     > [!NOTE]
     > 此包包含在 WPF 应用程序中承载 UWP XAML 孤岛的所有必需的基础结构, 包括**InkCanvas**包装的 uwp 控件。 名`Microsoft.Toolkit.Forms.UI.Controls`为的类似包可用于 Windows 窗体应用。
