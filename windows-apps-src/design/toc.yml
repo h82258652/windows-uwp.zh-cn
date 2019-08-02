@@ -39,7 +39,13 @@
     - name: 使用 XAML 的布局
       href: layout/layouts-with-xaml.md
     - name: 显示多个视图
-      href: layout/show-multiple-views.md
+      items:
+        - name: 显示多个视图
+          href: layout/show-multiple-views.md
+        - name: 使用 AppWindow
+          href: layout/app-window.md
+        - name: 使用 ApplicationView
+          href: layout/application-view.md
     - name: 对齐、边距和填充
       href: layout/alignment-margin-padding.md
     - name: 面板
