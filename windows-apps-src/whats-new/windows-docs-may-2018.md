@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 5 月, �
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9adf5a80595e00a30098044536d1ecfe4fd62279
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: d8b72501c298f3814092ec4567a5fb608c4bb88f
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820496"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682766"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>2018 年 5 月 Windows 开发人员文档中的新增功能
 
@@ -83,7 +83,7 @@ MSIX 打包格式是一种开源格式，可让我们的合作伙伴更轻松地
 
 ### <a name="optional-packages-with-executable-code"></a>包含可执行代码的可选包
 
-应用中的可选包现在可以包含可执行的 C# 代码。 [了解如何使用 Visual Studio 将可选的附加包配置为支持你的主要应用包。](../packaging/optional-packages-with-executable-code.md)
+应用中的可选包现在可以包含可执行的 C# 代码。 [了解如何使用 Visual Studio 将可选的附加包配置为支持你的主要应用包。](/windows/msix/package/optional-packages)
 
 ### <a name="page-transitions"></a>页面过渡
 

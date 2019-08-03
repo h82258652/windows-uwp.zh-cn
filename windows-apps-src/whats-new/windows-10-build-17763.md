@@ -6,12 +6,12 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d393ee92be8768861da0fb0783372c8bafc6f815
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: faf3cdc1a3fab3bd0332b995c25b081d296a55bb
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67821113"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682770"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>面向开发人员的 Windows 10 内部版本 17763 中的新增功能
 
@@ -83,7 +83,7 @@ WebVR | 我们已对 [WebVR 开发人员指南](https://docs.microsoft.com/micro
 MSIX | [MSIX](https://docs.microsoft.com/windows/msix/overview) 是一种新的 Windows 应用包格式，能为所有 Windows 应用提供现代打包体验。 这种开源的 MSIX 格式既保留了已有程序包的功能，又具有现代部署的特色。
 MSIX 打包工具 | 即使你无权访问其源代码，也可使用新的 [MSIX 打包工具](https://docs.microsoft.com/windows/msix/mpt-overview) 以 MSIX 格式重新打包现有桌面应用程序。 它可以在命令行中运行，也可以通过其交互式 UI 运行。
 对 MSIX 的 Desktop App Converter 支持 | 通过使用 `-MakeMSIX` 参数，可使用 [Desktop App Converter](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) 来输出 MSIX 包。
-对 MSIX 的 MakeAppx.exe 工具支持 | 可以使用 MakeAppx.exe 工具为 UWP 应用或传统桌面应用程序创建 MSIX 包。 此工具包含在 Windows 10 SDK 中，并且可以从命令提示符或脚本文件中使用。 </br> 对于 UWP 应用，请参阅[使用 MakeAppx.exe 工具创建应用包](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 </br> 对于桌面应用程序，请参阅[手动打包桌面应用程序](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion)。
+对 MSIX 的 MakeAppx.exe 工具支持 | 可以使用 MakeAppx.exe 工具为 UWP 应用或传统桌面应用程序创建 MSIX 包。 此工具包含在 Windows 10 SDK 中，并且可以从命令提示符或脚本文件中使用。 </br> 对于 UWP 应用，请参阅[使用 MakeAppx.exe 工具创建应用包](/windows/msix/package/create-app-package-with-makeappx-tool)。 </br> 对于桌面应用程序，请参阅[手动打包桌面应用程序](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion)。
 包支持框架 | [包支持框架](https://docs.microsoft.com/windows/msix/package-support-framework-overview)是一个开放源代码工具包，有助于在无权访问源代码时将修补程序应用于现有桌面应用程序，以便其在 MSIX 容器中运行。
 Microsoft Store 分析 API | [Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md)现在包含以下新方法： </br> * [获取 UWP 应用的见解数据](../monetize/get-insights-data-for-your-app.md) </br> * [获取桌面应用程序的见解数据](../monetize/get-insights-data-for-your-desktop-app.md) </br>* [获取桌面应用程序的升级块](../monetize/get-desktop-block-data.md) </br> * [获取桌面应用程序的升级块详细信息](../monetize/get-desktop-block-data-details.md)
 
