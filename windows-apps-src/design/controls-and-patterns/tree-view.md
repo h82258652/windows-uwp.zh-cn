@@ -3,7 +3,7 @@ description: 可以通过将 ItemsSource 绑定到分层数据源来创建可展
 title: 树视图
 label: Tree view
 template: detail.hbs
-ms.date: 06/14/2019
+ms.date: 07/24/2019
 ms.topic: article
 ms.localizationpriority: medium
 pm-contact: predavid
@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 4c29e8f2f88469dfbf260268682cf18e0399e327
-ms.sourcegitcommit: 81cb0b597bedfed8a54ac8b7e84089ef057fa9e3
+ms.openlocfilehash: 8e18455a39441d46e13e5a9a72291c9cd379c310
+ms.sourcegitcommit: 9effd88952bd26611f7b0a0e7baa68aba7d0ee8d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68514133"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68616527"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -99,7 +99,7 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 可以将分层数据源绑定到 [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) 属性以提供树视图内容，就像使用 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 的 **ItemsSource** 时所做的那样。 同样，可以使用 [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)（以及可选的 [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)）来提供用于呈现项的 [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate)。
 
 > [!IMPORTANT]
-> **ItemsSource** 及其相关的 API 需要 Windows 10 版本 1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或更高版本，或 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> **ItemsSource** 及其相关的 API 需要 Windows 10 版本 1809（[SDK 17763 或更高版本](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
 >
 > **ItemsSource** 可以替代 **TreeView.RootNodes** 将内容置于 **TreeView** 控件中。 不能同时设置 **ItemsSource** 和 **RootNodes**。 使用 **ItemsSource** 时，系统会为你创建节点，你可以从 **TreeView.RootNodes** 属性访问它们。
 

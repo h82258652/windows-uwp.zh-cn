@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e401e700728e1d481fd2142281fe81524d146f94
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 3a3a2adee262a521bde77d657aa4f5283b68ddcf
+ms.sourcegitcommit: e0ae346eadda864dcad1453cd1644668549e66e1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364432"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68603428"
 ---
 # <a name="scroll-viewer-controls"></a>滚动查看器控件
 
@@ -101,7 +101,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 
 ScrollViewer 控件作为其他控件复合部分的形式存在是普遍情况。 仅在主机控件的布局空间限制为比扩展的内容大小更小的时候，ScrollViewer 部件和提供支持的 [ScrollContentPresenter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollContentPresenter) 类才会显示视口和滚动条。 列表经常会发生此情况，因此 [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 模板始终会包括 ScrollViewer。 [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 和 [RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) 也在其模板中包括了 ScrollViewer。
 
-当 **ScrollViewer** 部件存在于控件中时，主机控件通常对某些能够使内容滚动的输入事件和操作内置了事件处理。 例如，GridView 解释轻扫手势，而这会使内容水平滚动。 主机控件接收的输入事件和原始操作视作由该控件处理，并且低级别事件（例如 [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)）不会引发，也不会浮升到任何父容器。 你可以更改某些内置控件处理，方法是覆盖控件类和事件的 **On*** 虚拟方法，或重新模板化控件。 但这两种情况要重现原始默认行为都不简单，这种行为通常已存在，以便控件以预期方式对事件以及用户输入操作和手势做出反应。 因此应该考虑是否正需要引发该输入事件。 你可能想调查是否有不受控件处理的其他输入事件或手势，并在应用或控件交互设计中使用它们。
+当 **ScrollViewer** 部件存在于控件中时，主机控件通常对某些能够使内容滚动的输入事件和操作内置了事件处理。 例如，GridView 解释轻扫手势，而这会使内容水平滚动。 主机控件接收的输入事件和原始操作视作由该控件处理，并且低级别事件（例如 [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)）不会引发，也不会浮升到任何父容器。 可以更改某些内置控件处理，方法是覆盖控件类和事件的 **On**_Event_ 虚拟方法，或者重新设置控件的模板。 但这两种情况要重现原始默认行为都不简单，这种行为通常已存在，以便控件以预期方式对事件以及用户输入操作和手势做出反应。 因此应该考虑是否正需要引发该输入事件。 你可能想调查是否有不受控件处理的其他输入事件或手势，并在应用或控件交互设计中使用它们。
 
 为让包括 ScrollViewer 的控件能够影响 ScrollViewer 部件的某些行为和属性，ScrollViewer 定义了大量能够在样式中设置并在模板绑定中使用的 XAML 附加属性。 有关附加属性的详细信息，请参阅[附加属性概述](../../xaml-platform/attached-properties-overview.md)。
 
