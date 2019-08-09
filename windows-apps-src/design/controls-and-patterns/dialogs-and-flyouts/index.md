@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d542c9809eb939553a851508886e34265f269263
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 43d63b1831766ecdf65fe1c1d7fd15457f728f83
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582306"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867440"
 ---
 # <a name="dialogs-and-flyouts"></a>对话框和浮出控件
 
@@ -29,20 +29,20 @@ ms.locfileid: "57582306"
 
 :::row:::
     :::column:::
-        **Dialogs**
-        
-        ![Example of a dialog](../images/dialogs/dialog_RS2_delete_file.png)
+**对话框**
 
-        Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.
+![对话框示例](../images/dialogs/dialog_RS2_delete_file.png)
+
+对话框是用于提供上下文应用信息的模式 UI 覆盖。 除非明确取消对话框，否则它会阻止与应用窗口的交互。 它们通常会请求用户进行某种类型的操作。
     :::column-end:::
     :::column::: 
-        **Flyouts**
+**浮出控件**
 
-        ![Example of a flyout](../images/flyout-example2.png)
+![浮出控件示例](../images/flyout-example2.png)
 
-        A flyout is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to reveal a secondary control or show more detail about an item.
+浮出控件是轻量级上下文弹出窗口，用于显示与用户正在执行的操作相关的 UI。 它包含放置和大小调整逻辑，可用于显示辅助控件或显示关于某个项目的更多详细信息。
 
-        Unlike a dialog, a flyout can be quickly dismissed by tapping or clicking somewhere outside the flyout, pressing the Escape key or Back button, resizing the app window, or changing the device's orientation.
+和对话框不同，浮出控件可通过点击或单击浮出控件之外的某处、按 Escape 键或后退按钮、调整应用窗口大小或更改设备的方向来快速取消。
     :::column-end:::
 :::row-end:::
 
