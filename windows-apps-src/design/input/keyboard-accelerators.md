@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc696746de837c4883ae4a9ee8ebcf42cb78b12
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 8bbff4553dc4ad540f0d9afa2507ad763fa96744
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57822882"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867522"
 ---
 # <a name="keyboard-accelerators"></a>键盘加速键
 
@@ -37,18 +37,18 @@ ms.locfileid: "57822882"
 
 键盘加速键并非适用于每一项操作，但通常与菜单中公开的命令相关联（并且应该用菜单项内容来指定）。 快捷方式也可能与没有等效菜单项的操作相关联。 但是，因为用户依赖于应用程序菜单来发现和了解可用的命令集，所以你应该尝试让加速键的发现尽可能容易（使用标签或既定模式对此有帮助）。
 
-![在菜单项标签中所述的键盘快捷键](images/accelerators/accelerators_menuitemlabel.png)  
-*在菜单项标签中所述的键盘快捷键*
+![菜单项标签中所述的键盘快捷键](images/accelerators/accelerators_menuitemlabel.png)  
+*菜单项标签中所述的键盘快捷键*
 
 ## <a name="when-to-use-keyboard-accelerators"></a>何时使用键盘加速键
 
 我们建议你在 UI 的合适位置指定键盘加速键并在所有自定义控件中支持加速键。
 
-- 键盘快捷键使您的应用程序更易于访问的运动性障碍，包括可按一次只有一个密钥或难以使用 mouse.* * 这些用户的用户
+- 使用键盘快捷键, 可让残障人士更轻松地访问应用, 其中包括一次只按一个键的用户, 或者使用鼠标时有困难。 * *
 
   具有良好设计的键盘 UI 是软件辅助功能的一个重要方面。 它使具有视力缺陷或行动有障碍的用户能够在应用中导航并与应用的功能交互。 这些用户可能无法操作鼠标，而是依靠各种辅助技术，如键盘增强工具、屏幕键盘、屏幕放大器、屏幕阅读器、语音输入实用工具。 对于这些用户，广泛的命令覆盖面非常重要。
 
-- 键盘快捷键将使应用更易于使用的电源用户更喜欢通过键盘交互。
+- 键盘快捷键使您的应用程序更适用于更喜欢通过键盘进行交互的高级用户。
 
   有经验的用户通常强烈倾向于使用键盘，因为可以更为快速地输入可让基于键盘的命令，而无需将双手从键盘上挪开。 对于这些用户，效率性和一致性体验至关重要；综合性体验仅对常用命令十分重要。
 
@@ -126,14 +126,14 @@ ms.locfileid: "57822882"
 </CommandBar>
 ```
 
-![在工具提示中所述的键盘快捷键](images/accelerators/accelerators_tooltip.png)  
-***在工具提示中所述的键盘快捷键***
+![工具提示中所述的键盘快捷键](images/accelerators/accelerators_tooltip.png)  
+***工具提示中所述的键盘快捷键***
 
 [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 对象具有一个 [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) 集合，即 [KeyboardAccelerators](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators)，你可以在其中指定自定义的 KeyboardAccelerator 对象并定义键盘快捷方式的击键：
 
--   **[键](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)** - [VirtualKey](https://docs.microsoft.com/uwp/api/windows.system.virtualkey)用于键盘快捷键。
+-   **[Key](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)** -用于键盘快捷键的[VirtualKey](https://docs.microsoft.com/uwp/api/windows.system.virtualkey) 。
 
--   **[修饰符](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)** – [VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/windows.system.virtualkeymodifiers)用于键盘快捷键。 如果未设置 Modifiers，则默认值是“无”。
+-   **[修饰符](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)** –用于键盘快捷键的[VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/windows.system.virtualkeymodifiers) 。 如果未设置 Modifiers，则默认值是“无”。
 
 > [!NOTE]
 > 支持单键（A、Delete、F2、空格键、Esc、多媒体键）快捷方式和多键快捷方式 (Ctrl+Shift+M)。 但是，不支持游戏板虚拟键。
@@ -195,7 +195,7 @@ MenuFlyoutItem.KeyboardAccelerators 元素的 ScopeOwner 属性会将快捷方�
 
 [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) 对象使用 [UI 自动化 (UIA) 控件模式](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-controlpatternsoverview)在调用加速键时采取相应的操作。
 
-UIA [控件模式] 将公开常见的控件功能。 例如，按钮控件实现[Invoke](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-implementinginvoke)控件模式以支持 Click 事件 （通常调用控件的单击、 双击，或按 Enter、 预定义的键盘快捷方式，或某些其他键击组合）。 使用键盘快捷方式调用控件时，XAML 框架会查找控件是否实现了 Invoke 控件模式，如果已实现，则会激活该模式（侦听 KeyboardAcceleratorInvoked 事件并不需要该模式）。
+UIA [控件模式] 将公开常见的控件功能。 例如, Button 控件实现[Invoke](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-implementinginvoke)控件模式以支持单击事件 (通常, 通过单击、双击或按 enter、预定义的键盘快捷方式或击键的其他组合来调用控件)。 使用键盘快捷方式调用控件时，XAML 框架会查找控件是否实现了 Invoke 控件模式，如果已实现，则会激活该模式（侦听 KeyboardAcceleratorInvoked 事件并不需要该模式）。
 
 在以下示例中，Control+S 会触发 Click 事件，因为按钮会实现 Invoke 模式。
 
@@ -219,11 +219,11 @@ UIA [控件模式] 将公开常见的控件功能。 例如，按钮控件实现
 
 [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) 对象的 Invoked 事件是在执行快捷方式时激发的。 [KeyboardAcceleratorInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) 事件对象包含以下属性：
 
-- [**处理**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) （布尔值）：此值设置为 true 可以防止事件触发的控件模式，并停止 accelerator 浮升事件。 默认值为 false。
-- [**元素**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject):与快捷键关联的对象。
-- [**KeyboardAccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator):用来发出调用的事件的键盘快捷键。
+- 已[**处理**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled)(布尔值):如果将此属性设置为 true, 则会阻止触发控件模式的事件, 并停止加速器事件冒泡。 默认值为 false。
+- [**元素**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element)(System.windows.dependencyobject>):与快捷键关联的对象。
+- [**KeyboardAccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator):用于引发被调用事件的键盘快捷键。
 
-此处我们将演示如何在 ListView 中定义的键盘快捷键的项集合以及如何处理每个加速器调用的事件。
+这里, 我们将演示如何为 ListView 中的项定义键盘快捷键的集合, 以及如何为每个快捷键处理调用的事件。
 
 ``` xaml
 <ListView x:Name="MyListView">
@@ -251,7 +251,24 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ## <a name="override-default-keyboard-behavior"></a>重写默认键盘行为
 
-在某些情况下，可能需要重写如 Backspace 键或 Enter 键的特定项的默认行为。 例如， 
+某些控件 (当它们具有焦点时) 支持用于重写任何应用定义加速器的内置键盘快捷键。 例如, 当[TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox)有焦点时, Control + C 快捷键只复制当前选定的文本 (应用定义的快捷键将被忽略, 并且不执行其他功能)。
+
+尽管我们不建议覆盖默认控件行为, 因为用户熟悉和预期, 但你可以覆盖控件的内置键盘快捷键。 下面的示例演示如何通过[system.windows.forms.control.previewkeydown>](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown)事件处理程序重写[TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox)的 Control + C 键盘快捷键: 
+
+``` csharp
+ private void TextBlock_PreviewKeyDown(object sender, KeyRoutedEventArgs e)
+ {
+    var ctrlState = CoreWindow.GetForCurrentThread().GetKeyState(Windows.System.VirtualKey.Control);
+    var isCtrlDown = ctrlState == CoreVirtualKeyStates.Down || ctrlState 
+        ==  (CoreVirtualKeyStates.Down | CoreVirtualKeyStates.Locked);
+    if (isCtrlDown && e.Key == Windows.System.VirtualKey.C)
+    {
+        // Your custom keyboard accelerator behavior.
+        
+        e.Handled = true;
+    }
+ }
+```  
 
 ## <a name="disable-a-keyboard-accelerator"></a>禁用键盘快捷方式 
 
@@ -358,21 +375,21 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 由于 UWP 应用程序的 UI 中一般并不直接说明键盘加速键，因此，你可以通过[工具提示](../controls-and-patterns/tooltips.md)提高可发现性，当用户将焦点移动到某个控件、按住某个控件或将鼠标指针悬停在某个控件上时，会自动显示工具提示。 工具提示可以标识某个控件是否有关联的键盘加速键，如果有，将会标识加速键组合。
 
-**Windows 10，版本 1803年 （2018 年 4 月更新） 和更高版本**
+**Windows 10 版本 1803 (2018 更新) 及更高版本**
 
-默认情况下，当声明键盘快捷键，所有控件 (除[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)并[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) 工具提示中显示相应的键组合。
+默认情况下, 当声明键盘快捷键时, 所有控件 ( [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)除外) 都将在工具提示中显示相应的组合键。
 
 > [!NOTE] 
-> 如果控件具有定义的多个加速器，只有第一个显示。
+> 如果控件定义了多个快捷键, 则仅显示第一个快捷键。
 
 ![加速键工具提示](images/accelerators/accelerators_tooltip_savebutton_small.png)
 
-*在工具提示中的加速器键组合*
+*工具提示中的快捷键组合框*
 
-有关[按钮](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)， [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)，并[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)对象时，键盘快捷键追加到该控件的默认工具提示。 有关[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)并[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) 对象，浮出控件文本一起显示的键盘快捷键。
+对于[Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)和[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)对象, 键盘快捷键将追加到控件的默认工具提示。 对于[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) 对象, 会显示带有飞出文本的键盘快捷键。
 
 > [!NOTE]
-> 指定工具提示 （下面的示例的如下 Button1） 会重写此行为。
+> 指定工具提示 (请参阅以下示例中的 Button1) 会重写此行为。
 
 ```xaml
 <StackPanel x:Name="Container" Grid.Row="0" Background="AliceBlue">
@@ -403,7 +420,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ![加速键工具提示](images/accelerators/accelerators-button-small.png)
 
-*追加到按钮的默认工具提示的加速器键组合*
+*追加到按钮的默认工具提示的快捷键组合*
 
 ```xaml
 <AppBarButton Icon="Save" Label="Save">
@@ -415,7 +432,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ![加速键工具提示](images/accelerators/accelerators-appbarbutton-small.png)
 
-*追加到 AppBarButton 的默认工具提示的加速器键组合*
+*追加到 AppBarButton 的默认工具提示的快捷键组合框*
 
 ```xaml
 <AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">
@@ -441,9 +458,9 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ![加速键工具提示](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
 
-*追加到 MenuFlyoutItem 的文本的加速器键组合*
+*追加到 MenuFlyoutItem 文本的快捷键组合*
 
-使用控制呈现行为[KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode)属性，它接受两个值：[自动](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode)或[隐藏](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode)。    
+使用[KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode)属性控制表示行为, 该属性接受两个值:[自动](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode)或[隐藏](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode)。    
 
 ```xaml
 <Button Content="Save" Click="OnSave" KeyboardAcceleratorPlacementMode="Auto">
@@ -476,8 +493,8 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 有些平台控件默认具有此行为，尤其是 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) 和 [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) 对象，而 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) 和 [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) 在出现在 [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) 的溢出菜单中时具有此行为。
 
-![在菜单项标签中所述的键盘快捷键](images/accelerators/accelerators_menuitemlabel.png)  
-*在菜单项标签中所述的键盘快捷键*
+![菜单项标签中所述的键盘快捷键](images/accelerators/accelerators_menuitemlabel.png)  
+*菜单项标签中所述的键盘快捷键*
 
 你可以通过 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)、[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)、[AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) 和 [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) 控件的 [KeyboardAcceleratorTextOverride](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton.KeyboardAcceleratorTextOverride) 属性覆盖标签的默认加速键文本（无文本时使用一个空格）。 
 
@@ -513,7 +530,7 @@ KeyDown 事件也被一些控件用来实现内置的控件快捷方式。 当�
 预览输入事件在任何其他事件之前触发。 如果不处理这些事件，则会触发具有焦点的元素的快捷方式，然后触发 KeyDown 事件。 这两个事件均会浮升，直到被处理为止。
 
 
-![键事件序列](images/accelerators/accelerators_keyevents.png)
+![关键事件序列](images/accelerators/accelerators_keyevents.png)
 ***键事件序列***
 
 事件的顺序：
@@ -559,8 +576,8 @@ protected override void OnProcessKeyboardAccelerators(
 
 我们建议本地化所有键盘快捷方式。 你可以使用标准 UWP 资源 (.resw) 文件和 XAML 声明中的 X:uid 属性来执行此操作。 在此示例中，Windows 运行时将自动加载资源。
 
-![使用 UWP 资源文件的键盘快捷键本地化](images/accelerators/accelerators_localization.png)
-***与 UWP 资源文件的键盘快捷键本地化***
+![具有 uwp 资源的键盘快捷键本地化](images/accelerators/accelerators_localization.png)
+文件***的键盘快捷键本地化和 uwp 资源文件***
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">

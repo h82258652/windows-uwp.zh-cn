@@ -10,12 +10,12 @@ ms.technology: hub
 keywords: python, windows 10, microsoft, pip, py, 文件路径, PYTHONPATH, python 部署, python 打包
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: fd08061858fc97f1427e94c6a92a4c3a9511967d
-ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
+ms.openlocfilehash: d944e16dc96f78efdece715778a13cd3fb2d9dbd
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473660"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867350"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>有关在 Windows 上使用 Python 的常见问题
 
@@ -29,11 +29,21 @@ ms.locfileid: "68473660"
 
 [请参阅 StackOverflow 上的讨论](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379)。
 
-### <a name="what-is-pyexe"></a>什么是 py？
+## <a name="what-is-pyexe"></a>什么是 py？
 
 你可能会在计算机上安装了多个版本的 Python, 因为你正在使用不同类型的 Python 项目。 由于这些都使用`python`命令, 因此可能不是您所使用的 Python 的版本。 作为标准, 建议使用`python3`命令 (或`python3.7`选择特定的版本)。
 
 [Py 启动器](https://docs.python.org/3/using/windows.html#launcher)会自动选择已安装的最新版本的 Python。 你还可以使用命令 ( `py -3.7`如) 选择特定版本, 或`py --list`查看可以使用的版本。 **但是**, 仅当使用从[Python.org](https://www.python.org/downloads/windows/)安装的 Python 版本时, py 启动器才能工作。从 Microsoft Store 安装 Python 时, `py` **不包含**命令。 对于 Linux、macOS、WSL 和 Microsoft Store 版本的 Python, 你应使用`python3` (或`python3.7`) 命令。
+
+## <a name="why-does-running-pythonexe-open-the-microsoft-store"></a>为什么运行 python 会打开 Microsoft Store？
+
+为了帮助新用户找到正确的 Python 安装, 我们添加了一个 Windows 快捷方式, 将直接转到 Microsoft Store 中发布的最新社区包版本。 此包可以轻松安装, 无需管理员权限, 并且会将默认值`python`和`python3`命令替换为实际的。
+
+使用任意命令行参数运行快捷可执行文件将返回一个错误代码, 指示未安装 Python。 这是为了防止批处理文件和脚本在可能不适用时打开应用商店应用。
+
+如果使用[python.org](https://www.python.org/downloads/windows/)的安装程序安装 Python, 并选择 "添加到路径" 选项, 则新`python`命令将优先于快捷方式。 请注意, 其他安装程序`python`的优先级可能低于内置快捷方式。
+
+你可以禁用快捷方式, 而无需安装 Python, 只需打开 "管理应用执行别名" 即可, 查找 "应用安装程序" Python 条目并将其切换为 "关闭"。
 
 ## <a name="why-dont-file-paths-work-in-python-when-i-copy-paste-them"></a>为什么在复制粘贴时文件路径不能在 Python 中使用？
 

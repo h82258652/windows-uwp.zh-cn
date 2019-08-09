@@ -1,26 +1,26 @@
 ---
 title: Windows 10 中的辅助功能
-description: 此页提供了你开始开发可访问 Windows 应用程序的信息。
+description: 本页提供有关如何开始开发可访问的 Windows 应用的信息。
 ms.topic: article
 ms.date: 04/03/2019
 ms.localizationpriority: medium
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-keywords: Windows 10，辅助功能，构建可访问的 win32 应用程序，构建可访问的 UWP 应用，构建可访问 WPF 应用程序，构建可访问的 WinForms 应用程序中的辅助功能
-ms.openlocfilehash: b818b99ebf896b2d2de219d2eedbfd101f3a5caa
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+keywords: Windows 10 中的辅助功能, 可访问性, 构建可访问的 win32 应用, 构建可访问的 UWP 应用, 构建可访问的 WPF 应用, 构建可访问的 WinForms
+ms.openlocfilehash: bb82103c030c436655630a37678bbec11e588f61
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66214998"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867425"
 ---
 # <a name="accessibility-in-windows-10"></a>Windows 10 中的辅助功能
 
-![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
+![hero-accessibility-bar-smaller .png](images/hero-accessibility-bar-smaller.png)
 
-辅助功能的应用设计为非独占作为可能的包括这两个残障人士、 个人首选项、 特定的工作方式，或态势约束 （例如，推动、 烹饪、 炫光，等等） 的人员数量提高可用性。
+可访问的应用程序旨在通过提高尽可能多的人的可用性, 包括残障人士、个人首选项、特定工作风格或形势约束 (如驾驶、烹饪、防眩等)。
 
-此页提供有关不同的 Windows 开发框架如何构建 Windows 应用程序，如屏幕阅读器和放大器，以及软件测试工具生成的辅助技术开发人员的开发人员为支持可访问性信息创建自动化的脚本来测试应用程序的工程师。
+此页提供有关各种 Windows 开发框架如何支持用于生成 Windows 应用程序的开发人员的辅助功能的信息、辅助技术开发人员 (如屏幕阅读器和放大器) 以及软件测试工程师创建用于测试应用程序的自动化脚本。
 
 ## <a name="platform-specific-documentation"></a>特定于平台的文档
 
@@ -28,7 +28,7 @@ ms.locfileid: "66214998"
     :::column:::
         ![Universal Windows Platform (UWP)](images/platform-uwp.png)
 
-        ### Universal Windows Platform (UWP)
+        **Universal Windows Platform (UWP)**
 
         Develop accessible apps and tools on the modern platform for Windows 10 applications and games on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
 
@@ -43,7 +43,7 @@ ms.locfileid: "66214998"
     :::column:::
         ![Win32 platform apps](images/platform-win32.png)
 
-        ### Win32 platform
+        **Win32 platform**
 
         Develop accessible apps and tools on the original platform for C/C++ Windows applications.
 
@@ -68,7 +68,7 @@ ms.locfileid: "66214998"
     :::column:::
         ![WPF platform](images/platform-wpf.png)
 
-        ### Windows Presentation Foundation (WPF)
+        **Windows Presentation Foundation (WPF)**
 
         Develop accessible apps and tools on the established platform for managed Windows applications with a XAML UI model and the .NET Framework.
 
@@ -91,7 +91,7 @@ ms.locfileid: "66214998"
     :::column:::
         ![Windows Forms platform apps](images/platform-winforms.png)
 
-        ### Windows Forms (WinForms)
+        **Windows Forms (WinForms)**
 
         Develop accessible apps and tools for managed Windows applications with a XAML UI model and the .NET Framework.
 

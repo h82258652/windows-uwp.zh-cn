@@ -1,5 +1,5 @@
 ---
-Description: 优化你的应用来自 Xbox 游戏板和远程控制的输入。
+Description: 优化你的应用程序, 以便从 Xbox 游戏板和远程控制输入。
 title: 游戏板和遥控器交互
 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
@@ -9,49 +9,49 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1292051362b9751d41b530f6b47f226d36228252
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 440f758e5db8bd77d3f26290eb59d7684e5f87a3
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592802"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867654"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>游戏板和遥控器交互
 
 ![键盘和游戏板图像](images/keyboard/keyboard-gamepad.jpg)
 
-***游戏板、 远程控制和键盘间共享许多交互体验***
+***各种交互体验在游戏板、远程控制和键盘之间共享***
 
-生成通用 Windows 平台 (UWP) 应用程序，确保你的应用程序可用，可通过两种传统输入的类型的电脑、 笔记本电脑和平板电脑 （鼠标、 键盘、 触摸，等），以及输入的类型访问中的交互体验典型的电视和 Xbox *10 英尺*体验，如游戏手柄和远程控制。
+在通用 Windows 平台 (UWP) 应用程序中构建交互体验, 确保你的应用程序可供使用, 并可通过电脑、笔记本电脑和平板电脑的传统输入类型 (鼠标、键盘、触摸等) 以及输入类型进行访问电视和 Xbox *10 英尺*体验的典型, 如游戏板和遥控器。
 
-请参阅[设计与针对 Xbox 和电视节目](../devices/designing-for-tv.md)有关 UWP 应用程序中的常规设计指南*10 英尺*体验。
+请参阅在*10 英尺*体验中针对 UWP 应用程序的常规设计指南, 请参阅[为 Xbox 和电视设计设计](../devices/designing-for-tv.md)。
 
 ## <a name="overview"></a>概述
 
-在本主题中，我们讨论什么你应考虑在交互设计 （或您没有什么，如果平台看起来在其后为您），并提供指南、 建议和构建而不考虑使用起来更加愉快的 UWP 应用程序的建议设备、 输入的类型，或用户的能力和首选项。
+在本主题中, 我们将讨论你应该在交互设计中考虑的内容 (或者, 如果平台看起来不是这样, 则可以提供有关生成 UWP 应用程序的指南、建议和建议, 无论设备、输入类型或用户功能和首选项。
 
-最终结果是，你的应用程序应为直观且易于使用在*2 英尺*因为它的环境采用的是*10 英尺*环境 （反之亦然）。 支持用户的首选的设备，使他们想要执行操作可清除和不容置疑的重点放，排列内容，因此导航是一致且可预测，并为用户提供的最短路径的用户界面。
+要点是, 当应用程序在*10 英尺*环境中时, 您的应用程序应该像在*2*英尺环境中一样直观且易于使用 (反之亦然)。 支持用户的首选设备, 使 UI 专注于清晰和不容置疑、排列内容以便导航一致且可预测, 并为用户提供尽可能短的路径。
 
 > [!NOTE]
 > 本主题中的大多数代码段都是以 XAML /C# 编写的；但其原则和概念适用于所有 UWP 应用。 如果你在开发适用于 Xbox 的 HTML/JavaScript UWP 应用，请查看 GitHub 上的出色 [TVHelpers](https://github.com/Microsoft/TVHelpers/wiki) 库。
 
 
-## <a name="optimize-for-both-2-foot-and-10-foot-experiences"></a>针对 2 英尺和 10 英尺体验进行优化
+## <a name="optimize-for-both-2-foot-and-10-foot-experiences"></a>优化2英尺和10英尺体验
 
-至少，我们建议测试以确保它们非常适合在 2 英尺和 10 英尺的情况下，应用程序和所有功能都都可发现并访问 Xbox[游戏手柄和远程控制](#gamepad-and-remote-control)。
+我们至少建议你对应用程序进行测试, 以确保它们能在2英尺和10英尺方案中正常运行, 并且 Xbox[游戏板和远程控制](#gamepad-and-remote-control)功能可被发现并可访问。
 
-下面是可以优化应用以使用 2 英尺和 10 英尺体验中，并与所有输入设备 （每个链接到本主题中的相应部分） 进行的一些其他方法。
+下面是一些其他方法, 你可以通过这种方式优化你的应用程序, 以便在2英尺和10英尺体验以及所有输入设备 (每个链接都链接到本主题中的相应部分) 中使用。
 
 > [!NOTE]
-> 因为 Xbox 游戏板和进行远程控制支持许多 UWP 键盘行为和体验，这些建议是适用于这两种输入类型。 请参阅[键盘交互](keyboard-interactions.md)有关更多详细键盘信息。
+> 由于 Xbox gamepads 和远程控制支持许多 UWP 键盘行为和体验, 因此, 这些建议适用于这两种输入类型。 有关更详细的键盘信息, 请参阅[键盘交互](keyboard-interactions.md)。
 
 | 功能        | 描述           |
 | -------------------------------------------------------------- |--------------------------------|
-| [XY 焦点导航和交互](#xy-focus-navigation-and-interaction) | **XY 焦点导航**使用户能够浏览应用程序的 UI。 但是，这会限制用户只能向上、向下、向左和向右导航。 本部分概述了处理此情况的建议和其他注意事项。 |
-| [鼠标模式](#mouse-mode)|XY 焦点导航并不可行，或甚至可能，对于某些类型的映射或绘图和绘画应用等应用程序。 在这些情况下，**鼠标模式**可让用户自由导航与游戏板或远程控制，就像鼠标在 PC 上的。|
-| [焦点视觉对象](#focus-visual)  | 焦点视觉对象是突出显示了当前聚焦的 UI 元素的边框。 这有助于用户快速确定它们是在导航或与之交互的 UI。  |
-| [焦点 engagement](#focus-engagement) | 焦点 engagement 要求用户按**A/选择**游戏板或远程控制时的 UI 元素与之交互以便具有焦点的按钮。 |
-| [硬件按钮](#hardware-buttons) | 游戏板和远程控制提供非常不同的按钮和配置。 |
+| [XY 焦点导航和交互](#xy-focus-navigation-and-interaction) | 通过**XY 焦点导航**, 用户可以在应用的 UI 周围导航。 但是，这会限制用户只能向上、向下、向左和向右导航。 本部分概述了处理此情况的建议和其他注意事项。 |
+| [鼠标模式](#mouse-mode)|对于某些类型的应用程序 (例如地图、绘图和绘图应用程序), XY 焦点导航并不可行, 甚至可能不可行。 在这些情况下,**鼠标模式**使用户能够在游戏板或遥控器上自由导航, 就像 PC 上的鼠标一样。|
+| [焦点视觉对象](#focus-visual)  | 焦点视觉对象是突出显示当前聚焦的 UI 元素的边框。 这可帮助用户快速识别他们要浏览或与之交互的 UI。  |
+| [专注参与](#focus-engagement) | 当 UI 元素具有焦点以便与之进行交互时, 用户需要在游戏板或遥控器上按下 **/选择**按钮。 |
+| [硬件按钮](#hardware-buttons) | 游戏板和远程控制提供了非常不同的按钮和配置。 |
 
 ## <a name="gamepad-and-remote-control"></a>游戏板和遥控器
 
@@ -71,7 +71,7 @@ ms.locfileid: "57592802"
 
 下表列出了所有受 UWP 应用支持的硬件按钮，以及哪些输入设备支持它们。
 
-| 按钮                    | 游戏板   | 遥控器    |
+| Button                    | 游戏板   | 遥控器    |
 |---------------------------|-----------|-------------------|
 | A/“选择”按钮           | 是       | 是               |
 | B/“后退”按钮             | 是       | 是               |
@@ -100,7 +100,7 @@ UWP 将现有键盘输入行为自动映射到游戏板和遥控器输入。 下
 | Enter                 | A/“选择”按钮                       |
 | 退出                | B/“后退”按钮*                        |
 
-\*当没有[KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)也不[KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) B 按钮事件处理应用程序中，通过[SystemNavigationManager.BackRequested](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested)将触发事件，其中应导致后退应用导航。 但是，你必须自行实现此操作，如以下代码片段中所示：
+\*当应用程序不处理 B 按钮的[KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)事件和[KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)事件时, 将激发[SystemNavigationManager BackRequested](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested)事件, 这将导致在应用内后退导航。 但是，你必须自行实现此操作，如以下代码片段中所示：
 
 ```csharp
 // This code goes in the MainPage class
@@ -159,9 +159,9 @@ Xbox One 上的 UWP 应用还支持按**菜单**按钮来打开上下文菜单�
 |---------------|------------|--------------|----------------|------------------|
 | 向上/向下翻页  | 向上/向下翻页 | 左/右扳机键 | [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView)、[ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)、[ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase)、[ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、`ScrollViewer`、[Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector)、[LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector)、[ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | 支持垂直滚动的视图
 | 向左/向右翻页 | 无 | 左/右缓冲键 | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)、[ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)、[ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase)、[ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、`ScrollViewer`、[Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector)、[LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector)、[FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | 支持水平滚动的视图
-| 放大/缩小        | Ctrl +/- | 左/右扳机键 | 无 | `ScrollViewer`支持放大和缩小的视图 |
+| 放大/缩小        | Ctrl +/- | 左/右扳机键 | 无 | `ScrollViewer`, 支持放大和缩小的视图 |
 | 打开/关闭导航窗格 | 无 | 视图 | 无 | 导航窗格​​ |
-| [搜索](#search-experience) | 无 | Y 按钮 | 无 | 应用中主要搜索功能的快捷方式 |
+| 搜索 | 无 | Y 按钮 | 无 | 应用中主要搜索功能的快捷方式 |
 | [打开上下文菜单](#commandbar-and-contextflyout) | 右键单击 | “菜单”按钮 | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | 上下文菜单 |
 
 ## <a name="xy-focus-navigation-and-interaction"></a>XY 焦点导航和交互
@@ -284,15 +284,15 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 ### <a name="commandbar-and-contextflyout"></a>CommandBar 和 ContextFlyout
 
-使用时[CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)，请记住滚动浏览列表中所述的问题[问题：UI 元素位于后长的滚动列表/网格](#problem-ui-elements-located-after-long-scrolling-list-grid)。 下图显示了列表/网格底部带有 `CommandBar` 的 UI 布局。 用户需要向下一直滚动浏览列表/网格才能到达 `CommandBar`。
+使用[命令栏](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)时, 请记住, 如问题中[所述滚动列表的问题:位于长滚动列表/网格](#problem-ui-elements-located-after-long-scrolling-list-grid)后的 UI 元素。 下图显示了列表/网格底部带有 `CommandBar` 的 UI 布局。 用户需要向下一直滚动浏览列表/网格才能到达 `CommandBar`。
 
 ![位于列表/网格底部的 CommandBar](images/designing-for-tv/2d-navigation-best-practices-commandbar-and-contextflyout.png)
 
-如果放`CommandBar`*上面*列表/网格？ 尽管向下滚动列表/网格的用户必须重新向上滚动才能到达 `CommandBar`，但与之前的配置相比，导航数略少。 请注意，这假设你的应用的初始焦点放置在 `CommandBar` 旁边或上方；如果初始焦点在列表/网格下方，则此方法不起作用。 如果这些 `CommandBar` 项是无需经常访问的全局操作项（如 **“同步”** 按钮），则可以将它们放置在列表/网格上方。
+如果将其置于列表`CommandBar` /网格*之上*, 该怎么办？ 尽管向下滚动列表/网格的用户必须重新向上滚动才能到达 `CommandBar`，但与之前的配置相比，导航数略少。 请注意，这假设你的应用的初始焦点放置在 `CommandBar` 旁边或上方；如果初始焦点在列表/网格下方，则此方法不起作用。 如果这些 `CommandBar` 项是无需经常访问的全局操作项（如 **“同步”** 按钮），则可以将它们放置在列表/网格上方。
 
 尽管你无法垂直堆叠 `CommandBar` 的项，但相对于滚动方向放置它们（例如，垂直滚动列表的左侧或右侧，或者水平滚动列表的顶部或底部）是另一个需要考虑的选项（如果适用于你的 UI 布局）。
 
-如果应用的 `CommandBar` 具有需要便于用户访问的项，你可能要考虑将这些项放置在 [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) 内部，并将它们从 `CommandBar` 中删除。 `ContextFlyout` 是的一个属性[UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)是[上下文菜单](../controls-and-patterns/dialogs-and-flyouts/index.md)与该元素相关联。 在电脑上，右键单击带有 `ContextFlyout` 的元素时，会弹出上下文菜单。 在 Xbox One 上，如果焦点在此类元素上，按**菜单**按钮也会发生此行为。
+如果应用的 `CommandBar` 具有需要便于用户访问的项，你可能要考虑将这些项放置在 [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) 内部，并将它们从 `CommandBar` 中删除。 `ContextFlyout`是[UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)的属性, 是与该元素关联的[上下文菜单](../controls-and-patterns/dialogs-and-flyouts/index.md)。 在电脑上，右键单击带有 `ContextFlyout` 的元素时，会弹出上下文菜单。 在 Xbox One 上，如果焦点在此类元素上，按**菜单**按钮也会发生此行为。
 
 ### <a name="ui-layout-challenges"></a>UI 布局挑战
 
@@ -306,12 +306,12 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 以下是一个虚构的房地产应用，该应用显示可供销售的房屋列表、地图、房产说明以及其他信息。 此应用提出了三项可通过使用以下技术克服的挑战：
 
 - [UI 重新排列](#ui-rearrange)
-- [焦点 engagement](#engagement)
+- [专注参与](#engagement)
 - [鼠标模式](#mouse-mode)
 
 ![虚构房地产应用](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app.png)
 
-#### 问题：位于后长的滚动列表/网格线的 UI 元素 <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
+#### 问题：位于长滚动列表/网格后的 UI 元素<a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
 
 下图所示的房产 [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 是一个非常长的滚动列表。 如果 `ListView` 上*不*要求[占用](#focus-engagement)，当用户导航到该列表时，焦点将放置在列表中的第一个项上。 若要使用户到达**上一步**或**下一步**按钮，他们必须浏览列表中的所有项。 在这种难以要求用户遍历整个列表&mdash;即，当列表太长，无法接受此体验时&mdash;的情况下，你可能希望考虑其他选项。
 
@@ -319,7 +319,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 #### <a name="solutions"></a>解决方案
 
-**UI 重新排列 <a name="ui-rearrange"></a>**
+**UI 重新排列<a name="ui-rearrange"></a>**
 
 除非你的初始焦点放置在页面底部，否则放置在长滚动列表上方的 UI 元素通常比放置在下方更易于访问。
 如果此新布局适用于其他设备，则针对所有设备系列更改布局而不仅仅针对 Xbox One 进行特殊 UI 更改，此方法的成本可能更低。
@@ -327,20 +327,20 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 ![房地产应用：将按钮放置在长滚动列表上方](images/designing-for-tv/2d-focus-navigation-and-interaction-ui-rearrange.png)
 
-**焦点 engagement <a name="engagement"></a>**
+**专注参与<a name="engagement"></a>**
 
 当要求*占用*时，整个 `ListView` 将变为一个焦点目标。 用户将能够绕过列表的内容到达下一个可聚焦元素。 在[焦点占用](#focus-engagement)中阅读有关哪些控件支持占用以及如何使用它们的详细信息。
 
 ![房地产应用：设置要求的占用，以便只需 1 次单击即可到达“上一步”/“下一步”按钮](images/designing-for-tv/2d-focus-navigation-and-interaction-engagement.png)
 
-#### <a name="problem-scrollviewer-without-any-focusable-elements"></a>问题：不包含任何可获得焦点的元素的 ScrollViewer
+#### <a name="problem-scrollviewer-without-any-focusable-elements"></a>问题：没有任何可设定焦点的元素的 ScrollViewer
 
 由于 XY 焦点导航依赖一次导航到一个可聚焦 UI 元素，因此不包含任何可聚焦元素的 [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)（例如本示例中的仅带有文本的一个元素）可能导致用户无法查看 `ScrollViewer` 中的所有内容的方案。
 有关此问题的解决方案和其他相关方案，请参阅[焦点占用](#focus-engagement)。
 
-![房地产应用程序：仅文本使用 ScrollViewer](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
+![房地产应用:仅含文本的 ScrollViewer](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
 
-#### <a name="problem-free-scrolling-ui"></a>问题：免费滚动 UI
+#### <a name="problem-free-scrolling-ui"></a>问题：自由滚动 UI
 
 当你的应用需要自由滚动的 UI（例如绘图图面，或本示例中的地图）时，XY 焦点导航不起作用。
 在这种情况下，你可以打开[鼠标模式](#mouse-mode)以允许用户在 UI 元素内部自由导航。
@@ -423,7 +423,7 @@ public App()
 通常，在全屏显示视频或其他类型的内容时，你将需要隐藏光标，因为它可能会分散用户的注意力。 如果应用的其余部分使用鼠标模式，但你想要在显示全屏内容时将其关闭，将出现此情形。 若要实现此目的，请将全屏内容放置在其自己的 `Page` 上，并按照下面的步骤操作。
 
 1. 在 `App` 对象中，设置 `RequiresPointerMode="WhenRequested"`。
-2. 在每个 `Page` 对象中（全屏  除外-），`Page`设置 `RequiresPointer="WhenFocused"`。
+2. 在每个 `Page` 对象中（全屏 除外-），`Page`设置 `RequiresPointer="WhenFocused"`。
 3. 对于全屏 `Page`，设置 `RequiresPointer="Never"`。
 
 这样一来，光标将永远不会在显示全屏内容时出现。
@@ -485,7 +485,7 @@ public App()
 当 `IsFocusEngagementEnabled`FrameworkElement[ 对象上的属性 ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 设置为 `True` 时，它会将控件标记为需要焦点占用。 这意味着用户必须按**A/选择**按钮来占用”该控件并与其交互。 当用户完成操作时，他们可以按 **B/后退**按钮脱离该控件并导航以离开它。
 
 > [!NOTE]
-> `IsFocusEngagementEnabled` 是一个新的 API 但未记录。
+> `IsFocusEngagementEnabled`是新的 API, 但尚未记录。
 
 ### <a name="focus-trapping"></a>焦点捕获
 
@@ -514,10 +514,10 @@ public App()
 
 除了 [Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 控件，还有其他可能要求占用的控件，例如：
 
-- [列表框](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
+- [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
 - [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
-- [FlipView]https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)
+- [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)
 
 与 `Slider` 控件不同，这些控件不会将焦点捕获在自身内部；但是，当它们包含大量数据，它们可能会导致可用性问题。 以下是一个包含大量数据的 `ListView` 的示例。
 
@@ -555,13 +555,13 @@ public App()
 | ListView              | 关闭                       |
 | ScrollViewer          | 关闭                       |
 | SemanticZoom          | 关闭                       |
-| 滑块                | 开                        |
+| Slider                | 开                        |
 
 当为 `IsFocusEngagementEnabled="True"` 时，所有其他 UWP 控件都不会导致任何行为或视觉更改。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-您可以构建针对特定设备或体验，进行了优化的 UWP 应用，但通用 Windows 平台还可让你构建可跨设备，在 2 英尺和 10 英尺体验，无论输入什么成功使用的应用程序设备或用户功能。 在本文中使用的建议可以确保您的应用程序是因为它会在电视和一台 PC 上工作正常。
+你可以构建针对特定设备或体验进行了优化的 UWP 应用程序, 但通用 Windows 平台还允许你构建可跨设备成功使用的应用 (在2英尺和10英尺体验中, 无论输入如何)设备或用户能力。 使用本文中的建议可以确保你的应用程序可以在电视和 PC 上正常工作。
 
 ## <a name="related-articles"></a>相关文章
 
