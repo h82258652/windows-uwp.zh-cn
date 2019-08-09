@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 838bd9cb790893ea24b57bb2b0bad49aa262fdbc
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 9df150d4a8873630a371fa2ad02e8c88bed7f42e
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682530"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867744"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -80,7 +80,7 @@ steps:
 
     ![如何上传安全文件](images/secure-file2.png)
 
-5. 如果证书具有密码, 则建议在[Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates)中存储密码, 然后将密码链接到[变量组](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 您可以使用该变量来访问管道中的密码。
+5. 如果证书中的私钥具有密码, 则建议你将密码存储在[Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) , 然后将密码链接到[变量组](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 您可以使用该变量来访问管道中的密码。 请注意, 私钥仅支持密码;当前不支持使用本身受密码保护的证书文件。
 
 > [!NOTE]
 > 从 Visual Studio 2019 开始, 不会再在 UWP 项目中生成临时证书。 若要创建或导出证书, 请使用[本文](/windows/msix/package/create-certificate-package-signing)中介绍的 PowerShell cmdlet。
@@ -100,7 +100,7 @@ steps:
 | AppxPackageSigningEnabled | true | 启用包签名。 |
 | PackageCertificateThumbprint | 证书指纹 | 此值**必须**与签名证书中的指纹匹配, 或为空字符串。 |
 | PackageCertificateKeyFile | Path | 要使用的证书的路径。 这是从安全文件元数据中检索到的。 |
-| PackageCertificatePassword | 密码 | 证书的密码。 建议在[Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates)中存储密码, 并将密码链接到[变量组](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 可以将变量传递给此参数。 |
+| PackageCertificatePassword | 密码 | 证书中的私钥的密码。 建议在[Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates)中存储密码, 并将密码链接到[变量组](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 可以将变量传递给此参数。 |
 
 ### <a name="configure-the-build"></a>配置生成
 
