@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: c47eba0e0f5969e978cde5575cf8ab05e589350e
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 87483c5d34cfb2b0bb266fb3d903e15d1b492187
+ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682482"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959053"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>将打包桌面应用与 Windows 10 和 UWP 集成
 
@@ -110,7 +110,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-<FileTypeAssociation Name="[AppID]">
+<FileTypeAssociation Name="[Name]">
          <MigrationProgIds>
             <MigrationProgId>"[ProgID]"</MigrationProgId>
         </MigrationProgIds>
@@ -123,7 +123,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |名称 |描述 |
 |-------|-------------|
 |Category |始终为 ``windows.fileTypeAssociation``。
-|名称 |应用的唯一 ID。 此 ID 内部用于生成与文件类型关联相关联的经过哈希处理的[编程标识符 (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids)。 此 ID 可用于管理将来版本的应用中的更改。 |
+|名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |MigrationProgId |[编程标识符 (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) , 用于描述要从中继承文件关联的桌面应用程序的应用程序、组件和版本。|
 
 #### <a name="example"></a>示例
@@ -137,7 +137,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <rescap3:MigrationProgIds>
               <rescap3:MigrationProgId>Foo.Bar.1</rescap3:MigrationProgId>
               <rescap3:MigrationProgId>Foo.Bar.2</rescap3:MigrationProgId>
@@ -169,7 +169,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[file extension]"</FileType>
         </SupportedFileTypes>
@@ -182,7 +182,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |名称 |描述 |
 |-------|-------------|
 |Category |始终为 ``windows.fileTypeAssociation``。
-|名称 |应用的唯一 ID。 此 ID 内部用于生成与文件类型关联相关联的经过哈希处理的[编程标识符 (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids)。 此 ID 可用于管理将来版本的应用中的更改。   |
+|名称 | 文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。   |
 |FileType |应用支持的文件扩展名。 |
 
 #### <a name="example"></a>示例
@@ -196,9 +196,8 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="mediafiles">
             <uap:SupportedFileTypes>
-            <uap:FileType>.txt</uap:FileType>
             <uap:FileType>.avi</uap:FileType>
             </uap:SupportedFileTypes>
           </uap3:FileTypeAssociation>
@@ -231,7 +230,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedVerbs>
            <Verb Id="[ID]" Extended="[Extended]" Parameters="[parameters]">"[verb label]"</Verb>
         </SupportedVerbs>
@@ -244,7 +243,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |名称 |描述 |
 |-------|-------------|
 |Category | 始终为 ``windows.fileTypeAssociation``。
-|名称 |应用的唯一 ID。 |
+|名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |Verb |文件资源管理器上下文菜单中显示的名称。 此字符串可使用 ```ms-resource``` 进行本地化。|
 |Id |动词命令的唯一 ID。 如果你的应用程序是 UWP 应用, 则会将其作为激活事件参数的一部分传递给你的应用, 以便它能够相应地处理用户的选择。 如果你的应用程序是完全信任的打包应用程序, 则它将改为接收参数 (请参阅下一项目符号)。 |
 |Parameters |与动词命令关联的实参参数和值的列表。 如果你的应用程序是完全信任的打包应用程序, 则当激活应用程序时, 这些参数将作为事件参数传递给应用程序。 您可以根据不同的激活谓词自定义应用程序的行为。 如果变量可包含文件路径，请用引号将参数值括起来。 这将避免路径包含空格的情况下出现的任何问题。 如果应用程序是 UWP 应用程序, 则不能传递参数。 应用转而接收参数（请参阅上一项）。|
@@ -263,7 +262,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap2:SupportedVerbs>
               <uap3:Verb Id="Edit" Parameters="/e &quot;%1&quot;">Edit</uap3:Verb>
               <uap3:Verb Id="Print" Extended="true" Parameters="/p &quot;%1&quot;">Print</uap3:Verb>
@@ -295,7 +294,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]" UseUrl="true" Parameters="%1">
+    <FileTypeAssociation Name="[Name]" UseUrl="true" Parameters="%1">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -308,9 +307,9 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |名称 |描述 |
 |-------|-------------|
 |Category |始终为 ``windows.fileTypeAssociation``。
-|名称 |应用的唯一 ID。 |
+|名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |UseUrl |指示是否直接从 URL 目标打开文件。 如果未设置此值, 则通过使用 URL 打开文件的应用程序会导致系统首先在本地下载文件。 |
-|Parameters |可选参数。 |
+|Parameters | 可选参数。 |
 |FileType |相关的文件扩展名。 |
 
 #### <a name="example"></a>示例
@@ -324,7 +323,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
       <Application>
         <Extensions>
           <uap:Extension Category="windows.fileTypeAssociation">
-            <uap3:FileTypeAssociation Name="documenttypes" UseUrl="true" Parameters="%1">
+            <uap3:FileTypeAssociation Name="myfiletypes" UseUrl="true" Parameters="%1">
               <uap:SupportedFileTypes>
                 <uap:FileType>.txt</uap:FileType>
                 <uap:FileType>.doc</uap:FileType>
@@ -484,7 +483,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]" MultiSelectModel="[SelectionModel]">
+    <FileTypeAssociation Name="[Name]" MultiSelectModel="[SelectionModel]">
         <SupportedVerbs>
             <Verb Id="Edit" MultiSelectModel="[SelectionModel]">Edit</Verb>
         </SupportedVerbs>
@@ -499,7 +498,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |名称 |描述 |
 |-------|-------------|
 |Category |始终为 ``windows.fileTypeAssociation``。
-|名称 |应用的唯一 ID。 |
+|名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |MultiSelectModel |请参阅下文 |
 |FileType |相关的文件扩展名。 |
 
@@ -511,7 +510,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 * ``Single``：对于第一个选定的文件, 将激活一次应用程序。 忽略其他文件。
 * ``Document``：将为每个选定文件激活单独的应用程序的新实例。
 
- 可以为不同的文件类型和操作设置不同的首选项。 例如，可能会希望以“文档”  模式打开*文档*，以“播放机”  模式打开*图像*。
+ 可以为不同的文件类型和操作设置不同的首选项。 例如，可能会希望以“文档”模式打开*文档*，以“播放机”模式打开*图像*。
 
 #### <a name="example"></a>示例
 
@@ -525,7 +524,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="myapp" MultiSelectModel="Document">
+          <uap3:FileTypeAssociation Name="myfiletypes" MultiSelectModel="Document">
             <uap2:SupportedVerbs>
               <uap3:Verb Id="Edit" MultiSelectModel="Player">Edit</uap3:Verb>
               <uap3:Verb Id="Preview" MultiSelectModel="Document">Preview</uap3:Verb>
@@ -540,7 +539,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 </Package>
 ```
 
-如果用户打开 15 个或更少的文件，**MultiSelectModel** 特性的默认选项为*播放机*。 否则，默认选项“文档”  。 始终将 UWP 应用启动为*播放机*。
+如果用户打开 15 个或更少的文件，**MultiSelectModel** 特性的默认选项为*播放机*。 否则，默认选项“文档”。 始终将 UWP 应用启动为*播放机*。
 
 <a id="show" />
 
@@ -559,7 +558,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -574,7 +573,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |名称 |描述 |
 |-------|-------------|
 |Category |始终为 ``windows.fileTypeAssociation``。
-|名称 |应用的唯一 ID。 |
+|名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |FileType |相关的文件扩展名。 |
 |Clsid   |应用的类 ID。 |
 
@@ -591,7 +590,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap2:SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
             </uap2:SupportedFileTypes>
@@ -622,7 +621,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -636,7 +635,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |名称 |描述 |
 |-------|-------------|
 |Category |始终为 ``windows.fileTypeAssociation``。
-|名称 |应用的唯一 ID。 |
+|名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |FileType |相关的文件扩展名。 |
 |Clsid   |应用的类 ID。 |
 
@@ -653,7 +652,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap2SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
                 </uap2SupportedFileTypes>
@@ -685,7 +684,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -701,7 +700,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |名称 |描述 |
 |-------|-------------|
 |Category |始终为 ``windows.fileTypeAssociation``。
-|名称 |应用的唯一 ID。 |
+|名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |FileType |相关的文件扩展名。 |
 |value |有效的[类型值](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
 
@@ -716,7 +715,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-           <uap:FileTypeAssociation Name="Contoso">
+           <uap:FileTypeAssociation Name="mediafiles">
              <uap:SupportedFileTypes>
                <uap:FileType>.m4a</uap:FileType>
                <uap:FileType>.mta</uap:FileType>
@@ -748,7 +747,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 ```XML
 <uap:Extension Category="windows.fileTypeAssociation">
-    <uap:FileTypeAssociation Name="[AppID]">
+    <uap:FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>.bar</FileType>
         </SupportedFileTypes>
@@ -762,7 +761,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |名称 |描述 |
 |-------|-------------|
 |Category |始终为 ``windows.fileTypeAssociation``。
-|名称 |应用的唯一 ID。 |
+|名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |FileType |相关的文件扩展名。 |
 |Clsid  |应用的类 ID。 |
 
@@ -778,7 +777,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap:SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
             </uap:SupportedFileTypes>

@@ -5,17 +5,15 @@ author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-ms.prod: windows
-ms.technology: hub
 keywords: python, windows 10, microsoft, 学习 python, 适用于初学者的 windows 上的 python, 通过 microsoft store 安装 python, 与 vs code 一起安装 python, windows 上的 pygame
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 9ef2349b296e5518d6bbb85a035526d7de25ea5c
-ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
+ms.openlocfilehash: 5c1861d76a98ff76b130f3012d730980482cda75
+ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473681"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959096"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>开始在 Windows 上使用 Python
 

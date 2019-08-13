@@ -5,17 +5,15 @@ author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-ms.prod: windows
-ms.technology: hub
 keywords: windows 上的 python、windows 10、microsoft、python、具有 wsl 的 python web 应用、适用于 linux 的 python web 应用、windows 上的 python web 开发、windows 上的 flask 应用、windows 上的 django 应用、windows 上的应用、python web、windows 上的 flask web devwindows web dev with python, vs code python web dev, remote wsl extension, ubuntu, wsl, venv, pip, microsoft python extension, 在 windows 上运行 python, 在 windows 上使用 python, 在 windows 上使用 python 生成
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: eafe85ac7e954d1a76708b059a191c14526afff8
-ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
+ms.openlocfilehash: fa6da9f5151d9457aafd255c9d10c91e3d219cee
+ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473684"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959078"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>开始在 Windows 上使用 Python 进行 web 开发
 
@@ -35,7 +33,7 @@ ms.locfileid: "68473684"
 
 1. 转到 "**开始**" 菜单 (左下方的窗口图标), 键入 "打开或关闭 windows 功能", 然后选择指向 "**控制面板**" 的链接以打开 " **windows 功能**" 弹出菜单。 在列表中找到 "适用于 Linux 的 Windows 子系统" 并选中复选框以启用该功能。
 
-2. 出现提示时, 请重新启动计算机。
+2. 出现提示时重新启动计算机。
 
 ## <a name="install-a-linux-distribution"></a>安装 Linux 分发版
 
@@ -170,7 +168,7 @@ Python 是一种解释型语言, 支持不同类型的 interpretors (Python2、A
 
 8. 为 Python 代码创建新文件:`touch app.py`
 
-9. 在 VS Code 的文件资源管理器 (`Ctrl+Shift+E`, 然后选择 app.py 文件) 中打开 app.py 文件。 这会激活 Python 扩展以选择解释器。 它应默认为**Python 3.6.8 64 位 (venv): venv)** 。 请注意, 它还检测到你的虚拟环境。
+9. 在 VS Code的文件资源管理器 (`Ctrl+Shift+E`, 然后选择 app.py 文件) 中打开 app.py 文件。 这会激活 Python 扩展以选择解释器。 它应默认为**Python 3.6.8 64 位 (venv): venv)** 。 请注意, 它还检测到你的虚拟环境。
 
     ![激活的虚拟环境](../../images/virtual-environment.png)
 
