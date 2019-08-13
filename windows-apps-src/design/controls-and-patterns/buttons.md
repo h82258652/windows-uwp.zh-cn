@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8f8d4172389fc2778fda4e335a29b3bae7d90fd0
-ms.sourcegitcommit: 5fcd3a595efd3686009505602c34e10163fd0aa5
+ms.openlocfilehash: e454bed6dc1a9429fe313e305dc9ba818d86e765
+ms.sourcegitcommit: 802699ce8d21e7fa4639f0b19b1c5b6c46c2c727
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67558763"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68835638"
 ---
 # <a name="buttons"></a>按钮
 
@@ -36,6 +36,7 @@ ms.locfileid: "67558763"
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | 一种带 V 形图标的按钮，用于打开附加的浮出控件。
 [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | 一种按钮，分为两端。 一端启动操作，另一端打开菜单。
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | 一种切换按钮，分为两端。 一端进行开/关切换，另一端打开菜单。
+[ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) | 可以打开或关闭的按钮。
 
 | **获取 Windows UI 库** |
 | - |
@@ -59,6 +60,8 @@ ms.locfileid: "67558763"
 当按钮的浮出控件包含多个选项时，使用 **DropDownButton** 控件。 默认的 V 形以视觉方式提示用户，此按钮包含浮出控件。
 
 如果希望用户能够启动即时操作或从其他选项中独立进行选择，则使用 **SplitButton** 控件。
+
+如果希望用户能够在两个互斥状态之间进行即时切换，则使用 **ToggleButton** 控件，而按钮最能满足你的 UI 需求。 除非 UI 适合使用按钮，否则使用 [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、[CheckBox](checkbox.md)、[RadioButton](radio-button.md) 或 [ToggleSwitch](toggles.md) 可能会更好。
 
 ## <a name="examples"></a>示例
 

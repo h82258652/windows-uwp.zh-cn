@@ -6,12 +6,12 @@ keywords: 入门 开发人员许可证 Visual Studio，开发人员许可证 启
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 09f115cad236582ccb0008c2274a7472ed4c0d55
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 705ff7fab00d13123211feb747ea9a9f95b0cc43
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682659"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867615"
 ---
 # <a name="enable-your-device-for-development"></a>启用设备进行开发
 
@@ -46,6 +46,9 @@ ms.locfileid: "68682659"
 
 ## <a name="which-setting-should-i-choose-sideload-apps-or-developer-mode"></a>应选择哪些设置：旁加载应用还是开发人员模式？
 
+> [!NOTE]
+> 从 Windows 预览体验成员版本 18956 开始，旁加载选项已经删除，而“开发人员模式”现在是一个切换。 有关旁加载的详细信息，请参阅下一部分。 
+
  你可以启用设备以进行开发，或仅进行旁加载。
 
 -   “Microsoft Store 应用”为默认设置  。 如果不是在开发应用或者未使用公司发布的特殊内部应用，则启用此设置。
@@ -55,6 +58,9 @@ ms.locfileid: "68682659"
 默认情况下，只能从 Microsoft Store 安装通用 Windows 平台 (UWP) 应用。 将这些设置更改为使用开发人员功能时可能需更改设备的安全级别。 不应从未经验证的源安装应用。
 
 ### <a name="sideload-apps"></a>旁加载应用
+
+> [!NOTE]
+> 从 Windows 预览体验成员版本 18956 开始，默认启用旁加载。 现在可以在不进行特殊配置的情况下将签名的 MSIX 包部署到设备上。 
 
 旁加载应用设置通常由需要在未通过 Microsoft Store 认证的托管设备上安装自定义应用的公司或学校使用。 在此情况下，组织通常会强制执行禁用“UWP 应用”设置的策略，如之前的设置页图像中所示  。 组织还会提供旁加载应用所需的证书和安装位置。 有关详细信息，请参阅 TechNet 文章[在 Windows 10 中旁加载应用](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)和 [Microsoft Intune 中的应用部署入门](https://docs.microsoft.com/intune/deploy-use/add-apps)。
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 76196add0829dcfa0aa638a2d8ae6995fafce69e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 1d162fcf9a0f1023c58792e8c9f7a0e22fac4440
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63820553"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867756"
 ---
 # <a name="typography"></a>版式
 
@@ -25,16 +25,14 @@ ms.locfileid: "63820553"
 
 ![Segoe UI 字体的示例文本](images/type/segoe-sample.svg)
 
-若要在应用上显示非英语语言或为应用选择另一种字体，请参阅[语言](#Languages)和[字体](#Fonts)，了解我们推荐的 UWP 应用字体。
+若要在应用上显示非英语语言或为应用选择另一种字体，请参阅[语言](#languages)和[字体](#fonts)，了解我们推荐的 UWP 应用字体。
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Pick one font for your UI.
+![应做事项](images/do.svg) 为 UI 选取一种字体。
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Don't mix multiple fonts.
+![禁止事项](images/dont.svg) 不要混用多种字体。
     :::column-end:::
 :::row-end:::
 
@@ -48,12 +46,10 @@ UWP 应用中的字号可在所有设备上自动缩放。 该缩放算法确保
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Follow the UWP [type ramp](#type-ramp) sizing.
+![应做事项](images/do.svg) 遵循 UWP [字体渐变](#type-ramp)大小调整方式。
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use a font size smaller than 12 px.
+![禁止事项](images/dont.svg) 使用小于 12 像素的字号。
     :::column-end:::
 :::row-end:::
 
@@ -61,10 +57,10 @@ UWP 应用中的字号可在所有设备上自动缩放。 该缩放算法确保
 
 :::row:::
     :::column:::
-        Users rely on visual hierarchy when scanning a page: headers summarize content, and body text provides more detail. To create a clear visual hierarchy in your app, follow the UWP type ramp.
+用户在扫描页面时依赖于视觉层次结构：标题用于总结内容，正文文本用于提供更多详细信息。 若要在应用中创建清晰的视觉层次结构，请遵循 UWP 字体渐变。
     :::column-end:::
     :::column:::
-        ![text block styles](images/type/type-hierarchy.svg)
+![文本块样式](images/type/type-hierarchy.svg)
     :::column-end:::
 :::row-end:::
 
@@ -78,10 +74,10 @@ UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻�
 
 :::row:::
     :::column:::
-        You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp). The styles follow the `*TextBlockStyle` naming convention.
+可以像访问 XAML [静态资源](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)那样访问字体渐变的不同层次。 样式遵循 `*TextBlockStyle` 命名约定。
     :::column-end:::
     :::column:::
-        ![text block styles](images/type/text-block-type-ramp.svg)
+![文本块样式](images/type/text-block-type-ramp.svg)
     :::column-end:::
 :::row-end:::
 
@@ -97,16 +93,14 @@ UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻�
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Use "Body" for most text.
+![应做事项](images/do.svg) 对大多数文本使用“Body”。
 
-        Use "Base" for titles when space is constrained.
+对空间受限的标题使用“Base”。
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use "Caption" for primary action or any long strings.
+![禁止事项](images/dont.svg) 对主要操作或任何长字符串使用“Caption”。
 
-        Use "Header" or "Subheader" if text needs to wrap.
+如果文本需要换行，请使用“Header”或“Subheader”。
     :::column-end:::
 :::row-end:::
 
@@ -124,12 +118,10 @@ UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻�
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Keep to 50–60 letters per line for ease of reading.
+![应做事项](images/do.svg) 每行保持 50-60 个字母以便于阅读。
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Less than 20 characters or more than 60 characters per line is difficult to read.
+![禁止事项](images/dont.svg) 每行少于 20 个字符或多于 60 个字符将不便于阅读。
     :::column-end:::
 :::row-end:::
 
@@ -145,12 +137,10 @@ UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻�
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Clip text, and wrap if multiple lines are enabled.
+![应做事项](images/do.svg) 剪裁文本，如果启用了多行显示则换行。
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use ellipses to avoid visual clutter.
+![禁止事项](images/dont.svg) 使用省略号以避免视觉上的杂乱感。
     :::column-end:::
 :::row-end:::
 

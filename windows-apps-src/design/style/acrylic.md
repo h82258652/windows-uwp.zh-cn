@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4731ab089189a8a03656281d1a9a6da6e4d24e89
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 7ed9feb6edae58b906d4f37f0e1f011d4fa42ee9
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65984263"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867735"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
@@ -27,12 +27,10 @@ Acrylic 是一种[画笔](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xa
 
 :::row:::
     :::column:::
-        Acrylic in light theme
-        ![Acrylic in light theme](images/Acrylic_LightTheme_Base.png)
+Acrylic 在浅色主题中的应用 ![Acrylic 在浅色主题中的应用](images/Acrylic_LightTheme_Base.png)
     :::column-end:::
     :::column:::
-        Acrylic in dark theme
-        ![Acrylic in dark theme](images/Acrylic_DarkTheme_Base.png)
+Acrylic 在深色主题中的应用 ![Acrylic 在深色主题中的应用](images/Acrylic_DarkTheme_Base.png)
     :::column-end:::
 :::row-end:::
 

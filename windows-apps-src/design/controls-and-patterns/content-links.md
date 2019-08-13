@@ -10,18 +10,18 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fc54662b29255b73e972bcfb0fa4b6bb2dcf968
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b72d7fced63a4c3ef4b1b233afcbb9f9874d9a3f
+ms.sourcegitcommit: 81e29e66f0cb1e13c3daa3a239e4dcc4dd674a66
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363062"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796715"
 ---
 # <a name="content-links-in-text-controls"></a>文本控件中的内容链接
 
 内容链接控件提供了访问文本控件中的嵌入式格式数据的方法，让用户无需离开应用上下文即可查找和使用有关人员或位置的更多信息。
 
-当用户在 RichEditBox 中对某个条目使用与号 (@) 前缀时，它们会显示人员列表和/或与相应条目匹配的位置建议。 例如，当用户选取一个位置时，该位置的 ContentLink 就会插入文本中。 当用户从 RichEditBox 调用内容链接时，就会显示一个浮出控件，该控件具有地图和与位置有关的其他信息。
+当用户在 RichEditBox 中对某个条目使用 at (@) 符号前缀时，会显示一系列与条目匹配的人员和/或位置建议。 例如，当用户选取一个位置时，该位置的 ContentLink 就会插入文本中。 当用户从 RichEditBox 调用内容链接时，就会显示一个浮出控件，该控件具有地图和与位置有关的其他信息。
 
 > **重要的 API**：[ContentLink 类](/uwp/api/windows.ui.xaml.documents.contentlink)、[ContentLinkInfo 类](/uwp/api/windows.ui.text.contentlinkinfo)、[RichEditTextRange 类](/uwp/api/windows.ui.text.richedittextrange)
 
