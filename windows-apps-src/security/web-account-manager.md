@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c1a7de0e9e6817fc4b0bf1ada113f49e798641e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f567637f3d38ce80c320bfe92fff392efadeda8d
+ms.sourcegitcommit: 7803f11ba4c9194c350217cc06069a4707f15ed6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320538"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69017432"
 ---
 # <a name="web-account-manager"></a>Web 帐户管理器
 
@@ -116,7 +116,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-接下来，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法获取提供程序。 提供程序的 URL 因提供程序而异，并且可以在提供程序的文档中找到。 对于 Microsoft 帐户和 Azure Active Directory，应为“https://login.microsoft.com”。 
+接下来，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法获取提供程序。 提供程序的 URL 因提供程序而异，并且可以在提供程序的文档中找到。 对于 Microsoft 帐户和 Azure Active Directory, 它是 "https\://login.microsoft.com"。 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -178,7 +178,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 * 有关 OneDrive 的作用域，请参阅 [OneDrive 身份验证和登录](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
 
 > [!TIP]
-> （可选） 如果您的应用程序使用的登录提示 （若要填充默认电子邮件地址的用户字段） 或其他与登录体验相关的特殊属性，将其列在 **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性。 这将导致系统以缓存 web 帐户，这样可防止缓存中的帐户不匹配时忽略此属性。
+> （可选） 如果您的应用程序使用的登录提示 （若要填充默认电子邮件地址的用户字段） 或其他与登录体验相关的特殊属性，将其列在 **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性。 这将导致系统在缓存 web 帐户时忽略属性, 这会阻止缓存中的帐户不匹配。
 
 如果在开发企业应用，可能需要连接到 Azure Active Directory (AAD) 实例，并使用 Microsoft Graph API，而非常规的 MSA 服务。 在此方案中，使用以下代码： 
 
@@ -338,7 +338,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="remove-a-stored-account"></a>删除已存储帐户
 
-如果保留 web 帐户，你可能希望用户能够解除他们的帐户与你的应用之间的关联。 这样一来，它们可以有效地"注销"应用程序： 其帐户信息将不再自动加载在启动时。 若要执行此操作，首先从存储中删除任何保存的帐户和提供商信息。 然后，调用 **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** 清除缓存，并使应用可能拥有的任何现有令牌失效。 
+如果保留 web 帐户，你可能希望用户能够解除他们的帐户与你的应用之间的关联。 这样, 他们就可以有效地 "注销" 应用程序: 启动时, 将不再自动加载其帐户信息。 若要执行此操作，首先从存储中删除任何保存的帐户和提供商信息。 然后，调用 **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** 清除缓存，并使应用可能拥有的任何现有令牌失效。 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)
@@ -422,9 +422,9 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 ## <a name="see-also"></a>请参阅
 
-[Windows.Security.Authentication.Web.Core 命名空间](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
+[Windows. System.web 命名空间](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
 
-[Windows.Security.Credentials 命名空间](https://docs.microsoft.com/uwp/api/windows.security.credentials)
+[Windows 安全凭据命名空间](https://docs.microsoft.com/uwp/api/windows.security.credentials)
 
 [AccountsSettingsPane 类](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane)
 
@@ -432,4 +432,4 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 [Web 帐户管理示例](https://go.microsoft.com/fwlink/p/?LinkId=620621)
 
-[午餐计划程序应用程序](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
+[就餐计划程序应用](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
