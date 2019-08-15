@@ -363,7 +363,7 @@ NuGet 包是可用于处理这两种要求。 安装这些包，需要将引用�
 
 ## <a name="add-the-control-to-your-form"></a>将控件添加到你的窗体
 
-具有自定义控件来承载组合内容，可以将其添加到应用程序 UI 中。 在这里，您添加上一步中创建的 CompositionHostControl 的实例。 CompositionHostControl 自动添加到 Visual Studio 工具箱下**_项目名称_组件**。
+具有自定义控件来承载组合内容，可以将其添加到应用程序 UI 中。 在这里，您添加上一步中创建的 CompositionHostControl 的实例。 CompositionHostControl 自动添加到 Visual Studio 工具箱下 **_项目名称_组件**。
 
 1. 在 Form1.CS 设计视图中，添加一个按钮的 ui。
 
@@ -381,7 +381,7 @@ NuGet 包是可用于处理这两种要求。 安装这些包，需要将引用�
 1. 句柄按钮单击事件。
 
    - 在属性窗格中，单击闪电形，若要切换到事件视图。
-   - 在事件列表中，选择**单击**事件中，键入*Button_Click*，然后按 Enter。
+   - 在事件列表中，选择 **单击** 事件中，键入 *Button_Click* ，然后按 Enter。
    - 在 Form1.cs 中添加此代码：
 
     ```csharp
