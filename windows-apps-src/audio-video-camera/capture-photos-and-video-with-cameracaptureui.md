@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fb8132e7b382ee801d83986261bf71d8fef490f
-ms.sourcegitcommit: 04a6e60c3b24d6efae0f0e2ada1d66a369471fb3
+ms.openlocfilehash: d582d4815b4fb2168b187a1efff3795cc98aca02
+ms.sourcegitcommit: 99595e4938213aafdb49635d684d8ba8eb3f697a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68830418"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69487808"
 ---
 # <a name="capture-photos-and-video-with-the-windows-built-in-camera-ui"></a>通过 Windows 内置照相机 UI 捕获照片和视频
 
@@ -46,7 +46,7 @@ ms.locfileid: "68830418"
 
 若要在应用中使用你的照片，你可能希望创建可以与多个不同的通用 Windows 应用功能结合使用的 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 对象。
 
-首先, 您应在项目中包括[**Windows. Graphics**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging)命名空间。
+首先, 将[**Windows 映像**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging)命名空间包含在项目中。
 
 [!code-cs[UsingSoftwareBitmap](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmap)]
 
