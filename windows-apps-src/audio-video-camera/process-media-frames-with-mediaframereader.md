@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b77fb147ab614b19993700d5d99572f0247d54e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3f2442647d39c4142b50c0a2a9b1fbc2c0eb66ca
+ms.sourcegitcommit: be519a7ecff53696b853754c879db32be9a53289
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318272"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69544914"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 处理媒体帧
 
@@ -34,21 +34,21 @@ ms.locfileid: "67318272"
 
 **将功能添加到应用程序清单**
 
-1.  在 Microsoft Visual Studio 的“解决方案资源管理器”中，通过双击“package.appxmanifest”项，打开应用程序清单的设计器。  
+1.  在 Microsoft Visual Studio 的“解决方案资源管理器”中，通过双击“package.appxmanifest”项，打开应用程序清单的设计器。
 2.  选择**功能**选项卡。
-3.  选中“摄像头”框和“麦克风”框。  
-4.  若要访问图片库和视频库，请选中“图片库”框和“视频库”框。  
+3.  选中“摄像头”框和“麦克风”框。
+4.  若要访问图片库和视频库，请选中“图片库”框和“视频库”框。
 
 除了默认项目模板包含的这些 API，本文的示例代码还使用来自以下命名空间的 API。
 
 [!code-cs[FramesUsing](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFramesUsing)]
 
 ## <a name="select-frame-sources-and-frame-source-groups"></a>选择帧源和帧源组
-处理媒体帧的许多应用都需要同时从多个源获取帧，例如设备的彩色和深度相机。 [ **MediaFrameSourceGroup** ](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup)对象都表示一组可同时使用的媒体帧源。 调用静态方法 [**MediaFrameSourceGroup.FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.findallasync) 获取当前设备支持的所有帧源组列表。
+处理媒体帧的许多应用都需要同时从多个源获取帧，例如设备的彩色和深度相机。 [**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup)对象表示可同时使用的一组媒体帧源。 调用静态方法 [**MediaFrameSourceGroup.FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.findallasync) 获取当前设备支持的所有帧源组列表。
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-此外可以创建[ **DeviceWatcher** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)使用[ **DeviceInformation.CreateWatcher** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher) 从返回的值和[ **MediaFrameSourceGroup.GetDeviceSelector** ](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector)可用帧源分组的设备更改，例如当外部照相机已接通电源时接收通知。 有关详细信息，请参阅[**枚举设备**](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
+你还可以使用[**DeviceInformation**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher)创建[**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)和从[**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector)返回的值, 以便在设备上的可用帧源组时接收通知更改, 例如插入外部照相机的时间。 有关详细信息，请参阅[**枚举设备**](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
 
 [  **MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup) 具有 [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 对象集合，用于描述组内包括的帧源。 检索可在设备上使用的帧源组后，可以选择公开所关注帧源的组。
 
@@ -79,12 +79,12 @@ ms.locfileid: "67318272"
 
 [!code-cs[DeclareMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
-通过调用构造函数创建 **MediaCapture** 对象实例。 接下来，创建用于初始化 **MediaCapture** 对象的 [**MediaCaptureSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSettings) 对象。 本示例使用以下设置：
+通过调用构造函数创建 **MediaCapture** 对象实例。 接下来, 创建一个[**MediaCaptureInitializationSettings**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings)对象, 该对象将用于初始化**MediaCapture**对象。 本示例使用以下设置：
 
-* [**组**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sourcegroup) -这会告诉你将用于获取帧的源组系统。 请记住，源组定义可以同时使用的一组媒体帧源。
-* [**SharingMode** ](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sharingmode) -这将告知系统是否需要捕获源设备的独有控制。 如果将它设置为 [**ExclusiveControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSharingMode)，意味着可以更改捕获设备的设置（例如它生成的帧格式），但也意味着如果其他应用已经拥有独占控制权，你的应用在尝试初始化媒体捕获设备时会失败。 如果将它设置为 [**SharedReadOnly**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSharingMode)，则可以检索帧源的帧，即使其他应用已经在使用这些帧也是如此，但无法更改设备设置。
-* [**MemoryPreference** ](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.memorypreference) -如果你指定[ **CPU**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference)，则系统将使用 CPU 内存用于保证，帧到达时，它们可用作[ **SoftwareBitmap** ](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)对象。 如果指定 [**Auto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference)，系统将动态选择存储帧的最佳内存位置。 如果系统选择使用 GPU 内存，媒体帧将作为 [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 对象（而非 **SoftwareBitmap** 对象）到达。
-* [**StreamingCaptureMode** ](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode) -将此设置为[**视频**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.StreamingCaptureMode)以指示不需要的音频进行流式处理。
+* [**SourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sourcegroup) -此项告诉系统将使用哪个源组来获取帧。 请记住，源组定义可以同时使用的一组媒体帧源。
+* [**SharingMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sharingmode) -此消息告诉系统你是否需要对捕获源设备进行独占控制。 如果将它设置为 [**ExclusiveControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSharingMode)，意味着可以更改捕获设备的设置（例如它生成的帧格式），但也意味着如果其他应用已经拥有独占控制权，你的应用在尝试初始化媒体捕获设备时会失败。 如果将它设置为 [**SharedReadOnly**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSharingMode)，则可以检索帧源的帧，即使其他应用已经在使用这些帧也是如此，但无法更改设备设置。
+* [**MemoryPreference**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.memorypreference) -如果指定[**cpu**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference), 系统将使用 cpu 内存来保证帧到达时, 它们将作为[**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)对象提供。 如果指定 [**Auto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference)，系统将动态选择存储帧的最佳内存位置。 如果系统选择使用 GPU 内存，媒体帧将作为 [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 对象（而非 **SoftwareBitmap** 对象）到达。
+* [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode) -将此项设置为[**视频**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.StreamingCaptureMode), 指示音频不需要进行流式处理。
 
 调用 [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync) 以使用所需设置初始化 **MediaCapture**。 请确保在 *try* 块中调用此函数，防止初始化失败。
 
