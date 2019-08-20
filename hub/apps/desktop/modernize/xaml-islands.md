@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 560d339476ef3cd45f30bfc678661fb0a4a11ee1
-ms.sourcegitcommit: f6af7aeb8506379a184207035c8e43288cb31453
+ms.openlocfilehash: 765fefa0b489e1620d7a37fe75acd02acb8d5ae8
+ms.sourcegitcommit: 3cc6eb3bab78f7e68c37226c40410ebca73f82a9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68601536"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68729480"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>在桌面应用中托管 UWP XAML 控件 (XAML 孤岛)
 
@@ -41,7 +41,7 @@ ms.locfileid: "68601536"
 
 WPF 和 Windows 窗体应用程序可以在[Windows 社区工具包](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中使用所选的包装 UWP 控件。 它们被称为*换行控制*, 因为它们包装特定 UWP 控件的界面和功能。 可以直接将这些控件添加到 WPF 或 Windows 窗体项目的设计图面上, 然后在设计器中将其与任何其他 WPF 或 Windows 窗体控件一起使用。
 
-以下用于实现 XAML 孤岛的已包装 UWP 控件目前可用于 WPF (请参阅["")](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)和 "Windows 窗体应用程序" (请参阅[""](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)).
+以下用于实现 XAML 孤岛的已包装 UWP 控件目前可用于 WPF (请参阅 [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) ) 和 "Windows 窗体应用程序" (请参阅 [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) ).
 
 | 控件 | 支持的最低操作系统 | 描述 |
 |-----------------|-------------------------------|-------------|
@@ -49,7 +49,7 @@ WPF 和 Windows 窗体应用程序可以在[Windows 社区工具包](https://doc
 | [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 版本 1903 | 嵌入用于在 Windows 窗体或 WPF 桌面应用程序中流式传输和呈现媒体内容 (如视频) 的视图。 |
 | [MapControl](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10 版本 1903 | 使您能够在 Windows 窗体或 WPF 桌面应用程序中显示符号或照片的照片。 |
 
-除了 XAML 孤岛的已包装控件外, Windows 社区工具包还提供以下控件, 用于在 WPF 中承载 web 内容 (请[参阅 "Windows 窗体](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls.WebView)的应用程序) 和应用程序 (请参阅[Microsoft 工具包](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls.WebView). node.js. e。
+除了 XAML 孤岛的已包装控件外, Windows 社区工具包还提供以下控件, 用于在 WPF 中承载 web 内容 (请参阅 [Microsoft.Toolkit.Wpf.UI.Controls.WebView](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls.WebView) ) 和应用程序 (请参阅[Microsoft.Toolkit.Forms.UI.Controls.WebView](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls.WebView)。
 
 | 控件 | 支持的最低操作系统 | 描述 |
 |-----------------|-------------------------------|-------------|
@@ -77,7 +77,7 @@ WPF 和 Windows 窗体应用程序可以在[Windows 社区工具包](https://doc
 XAML 孤岛需要 Windows 10 版本1903及更高版本。 若要在你的应用程序中使用 XAML 孤岛, 你必须首先设置你的项目:
 
 1. 修改项目以使用 Windows 运行时 Api。 有关说明, 请参阅[此文](desktop-to-uwp-enhance.md#set-up-your-project)。
-2. 在项目中安装其中一个 NuGet 包。 请确保安装版本 6.0.0-preview 6.4 或更高版本的包。
+2. 在项目中安装其中一个 NuGet 包。 请确保安装版本 6.0.0-preview7 或更高版本的包。
     * WPF安装[Microsoft 工具包](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)。
     * Windows 窗体:["Microsoft 工具包"。](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)
     * C++Win32[XamlApplication (& e)](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication)
@@ -91,7 +91,7 @@ XAML 孤岛需要 Windows 10 版本1903及更高版本。 若要在你的应用�
 
 * .NET Framework 4.6.2 和更高版本的控件的1.0 版将在[工具包的6.0 版本](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones)中发布。
 * 适用于 .NET Core 3 的控件版本1.0 计划在更高版本的工具包中。
-* 若要尝试对 .NET Framework 和 .NET Core 3 的这些控件版本1.0 版本进行最新预览, 请参阅[UWP 社区工具包](https://dotnet.myget.org/gallery/uwpcommunitytoolkit)库中的**6.0.0-preview 6.4** NuGet 包。
+* 如果要尝试对 .NET Framework 和 .NET Core 3 的这些控件版本1.0 版本进行最新的预览, 请参阅[UWP 社区工具包](https://dotnet.myget.org/gallery/uwpcommunitytoolkit)库中的 preview7 NuGet 包**6.0.0** 。
 
 有关更多详细信息，请参阅[这篇博客文章](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap)。
 

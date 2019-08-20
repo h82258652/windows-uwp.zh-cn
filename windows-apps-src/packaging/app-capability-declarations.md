@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 21df2a5b12af7b84c0d3f857f121820c35424fb6
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 2a846fee7f72242d9e3becc19cf5be71128dbd9e
+ms.sourcegitcommit: 81e29e66f0cb1e13c3daa3a239e4dcc4dd674a66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682603"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796726"
 ---
 # <a name="app-capability-declarations"></a>应用功能声明
 
@@ -66,10 +66,10 @@ ms.locfileid: "68682603"
 
 | 功能应用场景 | 功能用法 |
 |---------------------|------------------|
-| **位置**\* | **location** 功能提供对定位功能的访问权限，定位功能通常从专用硬件（如电脑中的 GPS 传感器）检索获得或从可用的网络信息中获得。 应用必须处理用户从“设置”  超级按钮禁用定位服务的情况。 |
-| **十分** | **microphone** 功能提供对麦克风音频源的访问权限，让应用可以录制来自所连接麦克风的音频。 应用必须处理用户从“设置”  超级按钮禁用麦克风的情况。 |
+| **位置**\* | **location** 功能提供对定位功能的访问权限，定位功能通常从专用硬件（如电脑中的 GPS 传感器）检索获得或从可用的网络信息中获得。 应用必须处理用户从“设置”超级按钮禁用定位服务的情况。 |
+| **十分** | **microphone** 功能提供对麦克风音频源的访问权限，让应用可以录制来自所连接麦克风的音频。 应用必须处理用户从“设置”超级按钮禁用麦克风的情况。 |
 | **程度** | **proximity** 功能支持临近的多台设备彼此通信。 此功能通常用在一般的多玩家游戏和交换信息的应用中。 设备会尝试使用可提供最佳连接的通信技术，包括蓝牙、Wi-Fi 和 Internet。 此功能仅用于在设备之间发起通信。 |
-| **摄像头** | **webcam** 功能提供对内置相机或外部摄像头的视频源的访问权限，这使应用可以捕获照片和视频。 在 Windows 上，应用必须处理用户从“设置”  超级按钮禁用相机的情况。<br/>**webcam** 功能仅授予对视频流的访问权限。 若要也授予对音频流的访问权限，必须添加 **microphone** 功能。 |
+| **摄像头** | **webcam** 功能提供对内置相机或外部摄像头的视频源的访问权限，这使应用可以捕获照片和视频。 在 Windows 上，应用必须处理用户从“设置”超级按钮禁用相机的情况。<br/>**webcam** 功能仅授予对视频流的访问权限。 若要也授予对音频流的访问权限，必须添加 **microphone** 功能。 |
 | **USB** | **usb** 设备功能允许访问[为 USB 设备更新应用清单程序包](https://go.microsoft.com/fwlink/p/?LinkId=302259)中的 API。 |
 | **人体学接口设备 (HID)** | **humaninterfacedevice** 设备功能允许访问[如何为 HID 指定设备功能](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-hid)中的 API。 |
 | **服务点 (POS)** | **pointOfService** 设备功能允许访问 [**Windows.Devices.PointOfService**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) 命名空间中的 API。 该命名空间允许你的应用访问服务点 (POS) 条码扫描仪和磁条阅读器。 该命名空间提供一个独立于供应商的接口，可用于从 UWP 应用访问由各种制造商提供的 POS 设备。 |
@@ -80,7 +80,7 @@ ms.locfileid: "68682603"
 | **运动活动** | **activity** 设备功能允许应用检测设备的当前运动。<br/>若要使用 [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors) 命名空间中的某些 API，则需要此功能。 |
 | **串行通信** | **serialcommunication** 设备功能提供了对于 Windows.Devices.SerialCommunication 命名空间中的 API 的访问，这样 Windows 应用便可与公开了串行端口或串行端口的某些抽象的设备进行通信。 若要使用 [**Windows.Devices.SerialCommnication**](https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication) 命名空间中的 API，则需要该功能。 |
 | **目视跟踪器** | 在连接了兼容的目视跟踪设备时，**gazeInput** 功能允许应用在应用程序边界内检测用户正在查看的位置。 使用[**Windows. 输入**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.input.preview)命名空间中的某些 api 需要此功能。 |
-| **GPIO、I2C、SPI 和 PWM** | **LowLevel**设备功能提供对 GPIO、I2C、SPI 和 PWM 设备的访问权限。 使用以下命名空间中的 Api 需要此功能:[**Windows. Gpio**](https://docs.microsoft.com/uwp/api/windows.devices.gpio), [**windows. I2c**](https://docs.microsoft.com/uwp/api/windows.devices.i2c) [ **, Windows**](https://docs.microsoft.com/uwp/api/windows.devices.spi)....[**Pwm**](https://docs.microsoft.com/uwp/api/windows.devices.pwm)。<br /><br />```<Capabilities><DeviceCapability Name="lowLevel"/></Capabilities>``` |
+| **GPIO、I2C、SPI 和 PWM** | **LowLevel**设备功能提供对 GPIO、I2C、SPI 和 PWM 设备的访问权限。 使用以下命名空间中的 Api 需要此功能:[**Windows.Devices.Gpio**](https://docs.microsoft.com/uwp/api/windows.devices.gpio), [**Windows.Devices.I2c**](https://docs.microsoft.com/uwp/api/windows.devices.i2c), [**Windows.Devices.Spi**](https://docs.microsoft.com/uwp/api/windows.devices.spi),[**Windows.Devices.Pwm**](https://docs.microsoft.com/uwp/api/windows.devices.pwm).<br /><br />```<Capabilities><DeviceCapability Name="lowLevel"/></Capabilities>``` |
 
 <span id="special-and-restricted-capabilities" />
 
@@ -119,7 +119,7 @@ ms.locfileid: "68682603"
 如果我们不批准你对此功能的使用, 则你的提交将无法通过认证, 我们将在认证报告中提供反馈。 然后，你可以选择创建新的提交并上传未声明该功能的程序包，或者在适用情况下解决与使用该功能有关的任何问题，然后在新提交中申请批准。
 
 > [!NOTE]
-> 如果你的提交使用合作伙伴中心的开发沙盒 (例如, 对于与 Xbox Live 集成的任何游戏, 则你必须提前请求批准, 而不是在 "**提交选项**" 页面上提供信息)。 若要执行该操作，请访问 [Windows 开发人员支持页面](https://developer.microsoft.com/windows/support)。 选择开发人员支持主题**仪表板问题**、颁发类型**应用提交**和**子类别**。 然后介绍你使用该功能的方式, 以及你的产品需要它的原因。 如果不提供所有必要信息，将拒绝你的请求。 还可能会要求你提供更多信息。 请注意，该流程通常需要 5 个工作日或更长时间，因此请提前提交请求。
+> 如果你的提交使用合作伙伴中心的开发沙盒 (例如, 对于与 Xbox Live 集成的任何游戏, 则你必须提前请求批准, 而不是在 "**提交选项**" 页面上提供信息)。 若要执行该操作，请访问 [Windows 开发人员支持页面](https://developer.microsoft.com/windows/support)。 选择开发人员支持主题**仪表板问题**、颁发类型**应用提交**和子类别。 然后介绍你使用该功能的方式, 以及你的产品需要它的原因。 如果不提供所有必要信息，将拒绝你的请求。 还可能会要求你提供更多信息。 请注意，该流程通常需要 5 个工作日或更长时间，因此请提前提交请求。
 >
 > 你还可以使用此方法来请求批准 (而不是在提交期间提供此信息), 而无论你是否在使用开发沙盒, 如果你希望在启动服从.
 
@@ -148,7 +148,7 @@ ms.locfileid: "68682603"
 | **VPN 应用** | **networkingVpnProvider** 受限功能允许应用具有对 VPN 功能的完整访问权限，包括管理连接和提供 VPN 插件功能的能力。<br /><br />若要使用 [**Windows.Networking.Vpn**](https://docs.microsoft.com/uwp/api/Windows.Networking.Vpn) 命名空间中的某些 API，则需要此功能。 |
 | **其他应用管理** | **packageManagement** 受限功能允许应用直接管理其他应用。<br /><br />**packageQuery** 设备功能允许应用收集有关其他应用的信息。<br /><br />若要访问 [**PackageManager**](https://docs.microsoft.com/uwp/api/Windows.Management.Deployment.PackageManager) 类中的某些方法和属性，这些功能是必需的。 |
 | **屏幕投影** | **screenDuplication** 受限功能允许应用将屏幕投影到另一台设备上。<br /><br />若要使用 DirectX 命名空间中的 API，此功能是必需的。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下, 不会批准使用此功能。 |
-| **用户主体名称** | **userPrincipalName** 受限功能允许应用修改和访问照片的缩略图缓存。<br /><br />若要调用 [**GetUserNameEx**](https://docs.microsoft.com/windows/desktop/api/secext/nf-secext-getusernameexa) 函数，则需要此功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下, 不会批准使用此功能。 |
+| **用户主体名称** | **UserPrincipalName**限制功能允许应用访问当前用户的用户主体名称 (UPN)。<br /><br />若要调用 [**GetUserNameEx**](https://docs.microsoft.com/windows/desktop/api/secext/nf-secext-getusernameexa) 函数，则需要此功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下, 不会批准使用此功能。 |
 | **月历** | **walletSystem** 受限功能允许应用具有对存储的电子钱包卡的完整访问权限。<br /><br />若要使用 [**Windows.ApplicationModel.Wallet.System**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Wallet.System) 命名空间中的 API，则需要此功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下, 不会批准使用此功能。 |
 | **位置历史记录** | **locationHistory** 受限功能允许应用访问设备的位置历史记录。<br /><br />若要使用 [**Windows.Devices.Geolocation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation) 命名空间中的 API，则需要此功能。
 | **应用关闭确认** | **confirmAppClose** 受限功能允许应用关闭本身及其自己的窗口，以及延迟应用的关闭。<br /><br />应用可以在 Windows 10 版本 1703（内部版本 10.0.15063）及更高版本中请求此功能。 在以前的 Windows 10 版本中，此功能是专用的，会导致应用安装失败，并显示错误消息“无法授权此应用程序访问请求的功能”。 |
