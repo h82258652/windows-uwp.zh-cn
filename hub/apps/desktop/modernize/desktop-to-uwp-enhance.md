@@ -1,59 +1,59 @@
 ---
-Description: 通过使用通用 Windows 平台 (UWP) Api 来提高您的 Windows 10 用户的桌面应用程序。
-title: 在桌面应用程序中使用 UWP Api
-ms.date: 04/19/2019
+Description: 使用通用 Windows 平台 (UWP) Api 增强适用于 Windows 10 用户的桌面应用程序。
+title: 在桌面应用中使用 UWP Api
+ms.date: 08/20/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 0545ea525b96d3a9310f3a761fd60a644f21baeb
-ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
+ms.openlocfilehash: 44ea01bbc2200c1b028ed41e7c6a2845c7a1568b
+ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414073"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69643362"
 ---
-# <a name="call-uwp-apis-in-desktop-apps"></a>在桌面应用程序中调用 UWP Api
+# <a name="call-uwp-apis-in-desktop-apps"></a>在桌面应用中调用 UWP Api
 
-可以使用通用 Windows 平台 (UWP) Api 向您的 Windows 10 用户打造更出色的桌面应用程序添加现代体验。
+你可以使用通用 Windows 平台 (UWP) Api 向适用于 Windows 10 用户的桌面应用添加新式体验。
 
-首先，设置你的项目所需的引用。 然后，从你的代码添加到桌面应用程序体验 Windows 10 时会调用 UWP Api。 可以生成单独的 Windows 10 用户，也可以将分发到所有用户的 Windows 版本无论它们运行相同的二进制文件。
+首先, 将你的项目设置为所需的引用。 然后, 从代码调用 UWP Api, 将 Windows 10 体验添加到你的桌面应用。 你可以为 Windows 10 用户单独生成, 或将相同的二进制文件分发给所有用户, 而不管他们运行的是哪个版本的 Windows。
 
-UWP Api 仅支持在桌面应用程序中打包[MSIX 包](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)。 有关详细信息，请参阅[可用的 UWP Api](desktop-to-uwp-supported-api.md)。
+某些 UWP Api 仅在打包在[.msix 包](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)中的桌面应用程序中受支持。 有关详细信息, 请参阅[可用 UWP api](desktop-to-uwp-supported-api.md)。
 
-## <a name="set-up-your-project"></a>将项目设置
+## <a name="set-up-your-project"></a>设置项目
 
 你需要对项目进行一些更改才能使用 UWP API。
 
-### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>将.NET 项目修改为使用 Windows 运行时 Api
+### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>修改 .NET 项目以使用 Windows 运行时 Api
 
-有两个选项为.NET 项目：
+.NET 项目有两个选项:
 
-* 如果你的应用面向 Windows 10 版本 1803 版或更高版本，可以安装一个 NuGet 包，提供所有必要的引用。
-* 或者，可以手动添加这些引用。
+* 如果你的应用面向 Windows 10 版本1803或更高版本, 则可以安装提供所有必需引用的 NuGet 包。
+* 或者, 您可以手动添加引用。
 
-#### <a name="to-use-the-nuget-option"></a>若要使用 NuGet 选项
+#### <a name="to-use-the-nuget-option"></a>使用 NuGet 选项
 
-1. 请确保[的包引用](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files)启用：
+1. 确保启用[包引用](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files):
 
-    1. 在 Visual Studio 中，单击**工具-> NuGet 包管理器-> 包管理器设置**。
-    2. 请确保**PackageReference**选择了**默认包管理格式**。
+    1. 在 Visual Studio 中, 单击 "**工具"-> "NuGet 包管理器-> 包管理器设置**"。
+    2. 请确保已为**默认包管理格式**选择**PackageReference** 。
 
-2. 在 Visual Studio 中打开项目后，右键单击您的项目**解决方案资源管理器**，然后选择**管理 NuGet 包**。
+2. 在 Visual Studio 中打开项目后, 在**解决方案资源管理器**中右键单击项目, 然后选择 "**管理 NuGet 包**"。
 
-3. 在中**NuGet 包管理器**窗口中，选择**浏览**选项卡并搜索`Microsoft.Windows.SDK.Contracts`。
+3. 在 " **NuGet 包管理器**" 窗口中, 确保选择 "**包括预发行**版"。 然后, 选择 "**浏览**" 选项卡, `Microsoft.Windows.SDK.Contracts`然后搜索。
 
-4. 之后`Microsoft.Windows.SDK.Contracts`找到包，在右窗格中**NuGet 包管理器**窗口中选择**版本**你想要安装基于想要面向的 Windows 10 版本的包：
+4. 找到包后, 在 " **NuGet 包管理器**" 窗口的右窗格中, 根据要作为目标的 Windows 10 版本选择要安装的包的**版本:** `Microsoft.Windows.SDK.Contracts`
 
-    * **10.0.18362.xxxx-preview**:适用于 Windows 10，版本 1903年选择此选项。
-    * **10.0.17763.xxxx-preview**:适用于 Windows 10，版本 1809年选择此选项。
-    * **10.0.17134.xxxx-preview**:适用于 Windows 10，版本 1803年选择此选项。
+    * **10.0.18362-预览**:为 Windows 10 (版本 1903) 选择此版本。
+    * **10.0.17763-预览**:为 Windows 10 (版本 1809) 选择此版本。
+    * **10.0.17134-预览**:为 Windows 10 (版本 1803) 选择此版本。
 
-5. 单击“安装”  。
+5. 单击“安装”。
 
-#### <a name="to-add-the-required-references-manually"></a>若要手动添加所需的引用
+#### <a name="to-add-the-required-references-manually"></a>手动添加所需引用
 
 1. 打开**引用管理器**对话框，选择**浏览**按钮，然后选择**所有文件**。
 
@@ -66,57 +66,62 @@ UWP Api 仅支持在桌面应用程序中打包[MSIX 包](https://docs.microsoft
     |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
     |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
     |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\\<*sdk version*>\Facade|
-    |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
-    |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
+    |windows winmd|C:\Program Files (x86) \windows Kits\10\UnionMetadata\\<*sdk 版本*> \Facade|
+    |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86) \windows Kits\10\References\\<*sdk 版本*> \Windows.Foundation.UniversalApiContract\<*版本*>|
+    |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86) \windows Kits\10\References\\<*sdk 版本*> \Windows.Foundation.FoundationContract\<*版本*>|
 
 3. 在**属性**窗口中，将每个 **.winmd** 文件的*复制本地*字段设为 **False**。
 
     ![复制本地字段](images/desktop-to-uwp/copy-local-field.png)
 
-### <a name="modify-a-c-project-to-use-windows-runtime-apis"></a>修改C++项目以使用 Windows 运行时 Api
+### <a name="modify-a-c-win32-project-to-use-windows-runtime-apis"></a>修改C++ Win32 项目以使用 Windows 运行时 api
 
-使用[ C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/)若要使用 Windows 运行时 Api。 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。
+使用[ C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/)来使用 Windows 运行时 api。 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。
 
-若要配置的项目C++/WinRT，请参阅[修改 Windows 桌面应用程序项目，以添加C++/WinRT 支持](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support)。
+若要为C++/WinRT 配置项目:
+
+* 对于新项目, 可以安装[ C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) , 并使用该扩展中包含C++的/WinRT 项目模板之一。
+* 对于现有项目, 可以在项目中安装[CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet 包。
+
+有关这些选项的更多详细信息, 请参阅[此文](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="add-windows-10-experiences"></a>添加 Windows 10 体验
 
 现在一切已准备就绪，可以添加用户在 Windows 10 上运行你的应用程序时可享受的现代化体验。 使用此设计流。
 
-:white_check_mark:**首先，确定你想要添加哪些的体验**
+:white_check_mark:**首先, 确定要添加的体验**
 
-有许多选项。 例如，可以通过使用简化你的采购订单流[货币化 Api](/windows/uwp/monetize)，或[指向你的应用程序](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)时有一些共享有趣的事情，如新图片另一个用户已发布。
+有许多选项。 例如, 您可以通过使用[盈利 api](/windows/uwp/monetize)来简化您的采购订单流, 或在您有一些值得共享的内容 (例如其他用户已发布的新图片) 时[直接关注您的应用程序](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)。
 
 ![toast](images/desktop-to-uwp/toast.png)
 
-即使用户忽略或关闭你的消息，他们仍可在操作中心中再次看到该消息，然后单击该消息打开你的应用。 这会增加与你的应用程序的合作，使你的应用程序会显示与操作系统深度集成的好处。 我们将稍后在本文中展示你的代码这种体验。
+即使用户忽略或关闭你的消息，他们仍可在操作中心中再次看到该消息，然后单击该消息打开你的应用。 这会增加应用程序的参与度, 并增加了额外的优点, 使应用程序看起来与操作系统深度集成。 本文稍后将向你展示该体验的代码。
 
-请访问[UWP 文档](/windows/uwp/get-started/)的更多想法。
+请访问[UWP 文档](/windows/uwp/get-started/)了解更多建议。
 
-:white_check_mark:**决定是否以增强或扩展**
+:white_check_mark:**决定是增强还是扩展**
 
-您经常会听到我们使用术语*增强*并*扩展*，因此我们来看一段时间来介绍完全每个这些术语平均值。
+你经常会听到我们使用术语 "*增强*" 和 "*扩展*", 因此我们将花点时间来准确说明每个术语的含义。
 
-我们使用术语*增强*来描述您可以直接从桌面应用程序 （无论您打包应用程序，MSIX 包中的） 调用的 Windows 运行时 Api。 已选择 Windows 10 体验，标识来创建，然后确定该 API 是否显示在所需的 Api[此列表](desktop-to-uwp-supported-api.md)。 这是您可以直接从桌面应用程序调用的 Api 的列表。 如果你的 API 未出现在此列表中，那是因为与该 API 关联的功能只在 UWP 进程内运行。 通常情况下，其中包括如 UWP 地图控件或 Windows Hello 安全提示呈现 UWP XAML 的 Api。
+我们使用术语 "*增强*" 来说明可以直接从桌面应用程序调用 Windows 运行时 api (无论是否选择将应用程序打包到 .msix 包中)。 选择了 Windows 10 体验后, 确定需要创建的 Api, 然后查看[此列表](desktop-to-uwp-supported-api.md)中是否显示了该 api。 这是可以直接从桌面应用程序调用的 Api 列表。 如果你的 API 未出现在此列表中，那是因为与该 API 关联的功能只在 UWP 进程内运行。 通常情况下, 这些 Api 包含用于呈现 UWP XAML 的 Api, 例如 UWP 地图控件或 Windows Hello 安全提示。
 
 > [!NOTE]
-> 虽然不能直接从您的桌面调用通常呈现 UWP XAML 的 Api，你可以使用替代方法。 如果你想要托管 UWP XAML 控件或其他自定义的视觉体验，则可以使用[XAML 群岛](xaml-islands.md)（从 Windows 10，版本 1903年） 和[可视化层](visual-layer-in-desktop-apps.md)（从 Windows 10，版本 1803年）。 可以在打包或未打包桌面应用中使用这些功能。
+> 尽管通常不能直接从桌面调用呈现 UWP XAML 的 Api, 但你可能可以使用其他方法。 如果要承载 UWP XAML 控件或其他自定义视觉体验, 可以使用[XAML 孤岛](xaml-islands.md)(从 windows 10 版本1903开始) 和[可视层](visual-layer-in-desktop-apps.md)(从 windows 10 版本1803开始)。 可以在打包或未打包的桌面应用中使用这些功能。
 
-如果您已选择 MSIX 包中的将桌面应用程序打包，另一个选项是*扩展*通过将 UWP 项目添加到你的解决方案的应用程序。 桌面项目仍为应用程序的入口点但 UWP 项目的所有不显示在 Api 允许你访问[此列表](desktop-to-uwp-supported-api.md)。 与 UWP 进程进行通信的桌面应用程序可以通过使用应用服务，我们有许多指导如何完成该设置。 如果你想要添加一种体验的要求的 UWP 项目，请参阅[与 UWP 组件扩展](desktop-to-uwp-extend.md)。
+如果已选择在 .MSIX 包中打包桌面应用, 另一个选项是通过向解决方案添加 UWP 项目来*扩展*应用程序。 桌面项目仍是您的应用程序的入口点, 但 UWP 项目可让您访问[此列表](desktop-to-uwp-supported-api.md)中未显示的所有 api。 桌面应用程序可以通过使用应用服务与 UWP 进程进行通信, 我们有很多关于如何设置此操作的指导。 如果要添加需要 UWP 项目的体验, 请参阅[使用 uwp 组件扩展](desktop-to-uwp-extend.md)。
 
 :white_check_mark:**引用 API 协定**
 
-如果您可以直接从桌面应用程序调用 API，打开浏览器和搜索该 API 的参考主题。
+如果可以直接从桌面应用程序调用 API, 请打开浏览器并搜索该 API 的参考主题。
 在 API 的摘要下，你会找到一个描述用于该 API 的 API 合同的表。 下面是该表的一个示例：
 
 ![API 合同表](images/desktop-to-uwp/contract-table.png)
 
 如果你有基于 .NET 的桌面应用，请添加对该 API 合同的引用，然后将该文件的**复制本地**属性设置为 **False**。 如果你有一个基于 C++ 的项目，请将包含此合同的文件夹的路径添加到你的**附加包含目录**中。
 
-:white_check_mark:**调用 Api 来添加你的体验**
+:white_check_mark:**调用 Api 以添加你的体验**
 
-以下代码用于显示我们之前看到的通知窗口。 这些 Api 会出现在此[列表](desktop-to-uwp-supported-api.md)这样你可以将此代码添加到桌面应用程序并稍后再试运行。
+以下代码用于显示我们之前看到的通知窗口。 这些 Api 出现在此[列表](desktop-to-uwp-supported-api.md)中, 因此你可以将此代码添加到桌面应用并立即运行。
 
 ```csharp
 using Windows.Foundation;
@@ -185,7 +190,7 @@ void UWP::ShowToast()
 
 ## <a name="support-windows-xp-windows-vista-and-windows-78-install-bases"></a>支持 Windows XP、Windows Vista 和 Windows 7/8 安装库
 
-您可以运行适用于 Windows 10 应用程序的现代化，而无需创建一个新的分支和维护独立的代码库。
+你可以将你的应用程序现代化用于 Windows 10, 而不必创建新的分支并维护单独的基本代码。
 
 如果要为 Windows 10 用户生成单独的二进制文件，请使用条件编译。 如果你希望生成要部署到所有 Windows 用户的一组二进制文件，请使用运行时检查。
 
@@ -199,7 +204,7 @@ void UWP::ShowToast()
 
 ![生成配置](images/desktop-to-uwp/build-config.png)
 
-对于该生成配置，创建一个常量，若要标识调用 Windows 运行时 Api 的代码。  
+对于该生成配置, 请创建一个常数, 用于标识调用 Windows 运行时 Api 的代码。  
 
 对于基于 .NET 的项目，该常量称为**条件编译常量**。
 
@@ -236,17 +241,17 @@ void UWP::ShowToast()
 
 ### <a name="runtime-checks"></a>运行时检查
 
-可以不考虑用户所运行的 Windows 版本而为所有 Windows 用户编译一组二进制文件。 你的应用程序调用 Windows 运行时 Api 仅当用户为运行您的应用程序打包的应用程序在 Windows 10 上。
+可以不考虑用户所运行的 Windows 版本而为所有 Windows 用户编译一组二进制文件。 仅当用户在 Windows 10 上以打包应用程序的形式运行应用程序时, 应用程序才会调用 Windows 运行时 Api。
 
-若要添加到代码中的运行时检查的最简单方法是安装此 Nuget 包：[桌面桥帮助程序](https://www.nuget.org/packages/DesktopBridge.Helpers/)，然后使用``IsRunningAsUWP()``方法调用的 Windows 运行时 Api 的所有代码的入口。 请参阅此博客文章的更多详细信息：[桌面桥-标识应用程序的上下文](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/)。
+向代码添加运行时检查的最简单方法是安装以下 Nuget 包:[桌面桥接](https://www.nuget.org/packages/DesktopBridge.Helpers/)程序, 然后使用``IsRunningAsUWP()``方法来启动所有调用 Windows 运行时 api 的代码。 有关更多详细信息, 请参阅此博客文章:[桌面桥-标识应用程序的上下文](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/)。
 
 ## <a name="related-samples"></a>相关示例
 
 * [Hello World 示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/HelloWorldSample)
 * [辅助磁贴](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
-* [应用商店 API 示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/StoreSample)
+* [存储 API 示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/StoreSample)
 * [实现 UWP UpdateTask 的 WinForms 应用程序](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinFormsUpdateTaskSample)
-* [UWP 示例桌面应用桥](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
+* [桌面应用桥到 UWP 示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 ## <a name="support-and-feedback"></a>支持和反馈
 
