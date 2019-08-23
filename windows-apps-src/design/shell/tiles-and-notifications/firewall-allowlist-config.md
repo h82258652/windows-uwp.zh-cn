@@ -9,20 +9,25 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: windows 10, uwp, WNS, windows 通知服务, 通知, windows, 防火墙, 疑难解答, IP, 流量, 企业, 网络, IPv4, VIP, FQDN, 公共 IP 地址
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f8a72eec46971fa27a4bd0dec112430f2eb3535
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 817dec616a88f0b374bc019cbbf23f56fad94484
+ms.sourcegitcommit: 820704a73174e81da3dc00cf0603c0c82471cdfe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867308"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69908455"
 ---
-# <a name="allowing-windows-notification-traffic-through-enterprise-firewalls"></a>允许通过企业防火墙的 Windows 通知流量
+# <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>支持 WNS 流量的企业防火墙和代理配置
 
 ## <a name="background"></a>后台
-许多企业使用防火墙来阻止不需要的网络流量;遗憾的是, 这也会阻止 Windows 通知服务通信等重要事项。 这意味着将删除通过 WNS 发送的所有通知。 为避免出现这种情况, 网络管理员可以将已批准的 WNS 通道列表添加到其免除列表, 以允许 WNS 流量通过防火墙。 下面是有关如何以及如何添加内容的更多详细信息。 
+许多企业使用防火墙来阻止不需要的网络流量;遗憾的是, 这也会阻止 Windows 通知服务通信等重要事项。 这意味着, 通过 WNS 发送的所有通知将在某些网络配置下被丢弃。 为避免出现这种情况, 网络管理员可以将已批准的 WNS 通道列表添加到其免除列表, 以允许 WNS 流量通过防火墙。 下面更详细地介绍了如何以及如何添加哪些内容以及对不同代理类型的支持。
+
+## <a name="proxy-support"></a>代理支持
 
 > [!Note] 
-从 6/24/2019, Windows 客户端**不**支持代理, 到 WNS 的连接必须是直接连接。
+Windows 客户端**不**支持所有代理, 与 WNS 的连接必须是直接连接。
+
+**即将推出！** 我们正在积极调查不同的网络配置、代理和防火墙。 我们将更新此页, 其中包含有关常见企业方案和 WNS 支持的更多详细信息。
+
 
 ## <a name="what-information-should-be-added-to-the-allowlist"></a>应将哪些信息添加到允许列表
 下面是一个列表, 其中包含 Windows 通知服务使用的 Fqdn、Vip 和 IP 地址范围。 

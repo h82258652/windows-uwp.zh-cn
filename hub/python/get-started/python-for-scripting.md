@@ -8,16 +8,19 @@ ms.topic: article
 keywords: python, windows 10, microsoft, python 系统管理, python 文件自动化, windows 上的 python 脚本, 在 windows 上设置 python, windows 上的 python 开发人员环境, windows 上的 python 开发人员环境, windows 上的 python 开发环境, python, 适用于文件系统任务
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 93fdea3347cc15aa6231ff90fb18eb2f7defb201
-ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
+ms.openlocfilehash: dbb7a60103c27f648ca8bf23f87dee06923f0cd9
+ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959072"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69979330"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>开始在 Windows 上使用 Python 进行脚本编写和自动化
 
 下面是设置开发人员环境和开始使用 Python 在 Windows 上编写脚本和自动执行文件系统操作的循序渐进指南。
+
+> [!NOTE]
+> 本文介绍如何设置你的环境, 以便在 Python 中使用某些有用的库, 这些库可跨平台自动化任务, 如搜索文件系统、访问 internet、分析文件类型等。 对于特定于 Windows 的操作, 请查看[ctypes](https://docs.python.org/3/library/ctypes.html), 它是适用于 python、 [winreg](https://docs.python.org/3/library/winreg.html)的兼容的外部函数库, 用于将 Windows 注册表 API 公开到 python, 还可以使用[python/Windows 运行时 WinRT](https://pypi.org/project/winrt/)从Python.
 
 ## <a name="set-up-your-development-environment"></a>设置开发环境
 
