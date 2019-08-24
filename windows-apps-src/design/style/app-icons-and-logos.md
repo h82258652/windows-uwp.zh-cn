@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0352e01363fc077439325eba4f74fe97febac33c
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 760beb6b9baf63b23efb531567f4b5319f95845c
+ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820549"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69979359"
 ---
 # <a name="app-icons-and-logos"></a>应用图标和徽标 
 
@@ -22,7 +22,6 @@ ms.locfileid: "67820549"
 
 :::row:::
     :::column:::
-        * 应用窗口的标题栏
         * “开始”菜单中的应用列表
         * 任务栏和任务管理器
         * 应用磁贴
