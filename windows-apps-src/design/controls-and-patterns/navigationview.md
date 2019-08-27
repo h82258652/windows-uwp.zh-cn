@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e00c9860ca2aa8661581de265fff106c45b30ab5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 7431e9e41c008471fccdb955a64d44316855de0d
+ms.sourcegitcommit: 77df36d2a7391cbc588d44c47ac02d0701092264
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319403"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976219"
 ---
 # <a name="navigation-view"></a>导航视图
 
@@ -709,6 +709,29 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
     </Application.Resources>
 </Application>
 ```
+
+### <a name="top-whitespace"></a>顶部空白
+某些应用选择[自定义其窗口的标题栏](https://docs.microsoft.com/windows/uwp/design/shell/title-bar)，可能会将其应用内容扩展到标题栏区域中。 当 NavigationView 是**使用 [ExtendViewIntoTitleBar](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API** 扩展到标题栏的应用中的根元素时，该控件会自动调整其交互式元素的位置，以防止与[可拖动区域](https://docs.microsoft.com/windows/uwp/design/shell/title-bar#draggable-regions)重叠。 
+![扩展到标题栏中的应用](images/navigation-view-with-titlebar-padding.png)
+
+如果应用通过调用 [Window.SetTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.settitlebar) 方法来指定可拖动区域，并且你希望使“后退”和菜单按钮拖动到距离应用窗口顶部更近的位置，请将 `IsTitleBarAutoPaddingEnabled` 设置为 False。
+
+![应用扩展到标题栏而无需额外填充](images/navigation-view-no-titlebar-padding.png)
+
+```Xaml
+<muxc:NavigationView x:Name="NavView" IsTitleBarAutoPaddingEnabled="False">
+```
+
+#### <a name="remarks"></a>备注
+若要进一步调整 NavigationView 的标题区域位置，请重写 *NavigationViewHeaderMargin XAML* 主题资源，例如，在“页”资源中。
+
+```Xaml
+<Page.Resources>
+    <Thickness x:Key="NavigationViewHeaderMargin">12,0</Thickness>
+</Page.Resources>
+```
+
+此主题资源修改 [NavigationView.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.header) 周围的边距。
 
 ## <a name="related-topics"></a>相关主题
 
