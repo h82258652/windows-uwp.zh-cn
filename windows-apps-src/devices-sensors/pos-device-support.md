@@ -5,49 +5,49 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: aa8bec12ca3920b1e273d8f2d98186f62a340016
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 6d67dd7bc7d2f6323679dd7c69a98df841b2848c
+ms.sourcegitcommit: 769ec7811aaaa79fe521e3e984a2e1a2a9671caf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321534"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70057813"
 ---
 # <a name="supported-point-of-service-peripherals"></a>支持的服务点外设
 
 ## <a name="barcode-scanner"></a>条形码扫描仪
 | 连接性 | 支持 |
 | -------------|-------------|
-| USB          | <p>Windows 包含的内置类驱动程序连接的 USB 条码扫描器的基于定义的 HID POS 扫描程序使用表 (8c) 规范[USB.org](https://www.usb.org/hid)。有关已知兼容设备的列表，请参阅下表。  请参阅条形码扫描仪手册或联系制造商，以确定如何在 **USB.HID.POS 扫描仪**模式下配置扫描仪。 </p><p>Windows 还支持供应商特定驱动程序的实现，以便为不支持 USB.HID.POS 扫描仪标准的其他条形码扫描仪提供支持。 请与条形码扫描仪制造商联系以核实供应商特定驱动程序可用性。</p><p>有关创建自定义条形码扫描仪驱动程序的信息，请联系条形码扫描仪制造商，或者参阅[条形码扫描仪驱动程序设计指南](https://aka.ms/pointofservice-drv)</p> |
+| USB          | <p>Windows 包含适用于 USB 连接的条形码扫描器的内置类驱动程序, 该驱动程序基于由[USB.org](https://www.usb.org/hid)定义的 HID POS 扫描器使用情况表 (8c) 规范。有关已知兼容设备的列表，请参阅下表。  请参阅条形码扫描仪手册或联系制造商，以确定如何在 **USB.HID.POS 扫描仪**模式下配置扫描仪。 </p><p>Windows 还支持供应商特定驱动程序的实现，以便为不支持 USB.HID.POS 扫描仪标准的其他条形码扫描仪提供支持。 请与条形码扫描仪制造商联系以核实供应商特定驱动程序可用性。</p><p>有关创建自定义条形码扫描仪驱动程序的信息，请联系条形码扫描仪制造商，或者参阅[条形码扫描仪驱动程序设计指南](https://aka.ms/pointofservice-drv)</p> |
 | 蓝牙    | <p>Windows 支持串行端口协议 - 基于简单串行接口 (SPP SSI) 的蓝牙条形码扫描仪。 有关已知兼容设备的列表，请参阅下表。 请参阅条形码扫描仪手册或联系制造商，以确定如何在 **SPP-SSI** 模式下配置扫描仪。</p> |
 | Webcam       | <p>从 Windows 10 版本 1803 开始，你可以通过来自通用 Windows 应用程序的标准相机镜头来读取条形码。 建议使用支持自动对焦且最低分辨率为 1920x1440 的相机。  如果条形码打印得足够大，一些分辨率较低的相机可以读取标准条形码。  宽度更窄的条形码可能需要使用分辨率更高的相机。</p>| 
 |
 
 
-| 制造商  | 型号                          | 功能 | 连接    | 在任务栏的搜索框中键入         | 模式                      |
+| 制造商  | 型号                          | 功能 | 连接    | 类型         | 模式                      |
 |---------------|--------------------------------|------------|--------------|--------------|---------------------------|
-| 代码          | Reader™ 950                    | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| 代码          | Reader™ 1021                   | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| 代码          | Reader™ 1421                   | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| 代码          | Reader™ 5000                   | 2D         | USB          | 呈现 | HID 的 POS 扫描程序           |
-| Honeywell     | 生成 7580 g                  | 2D         | USB          | 呈现 | HID 的 POS 扫描程序           |
-| Honeywell     | Granit 198Xi                   | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| Honeywell     | Granit 191Xi                   | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| Honeywell     | N5680                          | 2D         | 内部     | 组件    | HID 的 POS 扫描程序           |
-| Honeywell     | N3680                          | 2D         | 内部     | 组件    | HID 的 POS 扫描程序           |
-| Honeywell     | 轨迹 7190 g                    | 2D         | USB          | 呈现 | HID 的 POS 扫描程序           |
-| Honeywell     | Stratos 2700                   | 2D         | USB          | 在计数器中   | HID 的 POS 扫描程序           |
-| Honeywell     | 姊妹 1200 g                  | 1D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| Honeywell     | 姊妹 1202 g                  | 1D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| Honeywell     | 姊妹 1202 bf                | 1D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| Honeywell     | 姊妹 145Xg                  | 1D / 2D¹   | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| Honeywell     | 姊妹 1602 g                  | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| Honeywell     | Xenon 1900 g                    | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| Honeywell     | Xenon 1902 g                    | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| Honeywell     | Xenon 1902 g bf                 | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| Honeywell     | Xenon 1900 h                    | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| Honeywell     | Xenon 1902 h                    | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| HP            | 值条形码扫描程序 (HR2150) | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| Intermec      | SG20                           | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
+| 代码          | 读卡器™950                    | 图         | USB          | 手持设备     | HID POS 扫描器           |
+| 代码          | 读卡器™1021                   | 图         | USB          | 手持设备     | HID POS 扫描器           |
+| 代码          | 读卡器™1421                   | 图         | USB          | 手持设备     | HID POS 扫描器           |
+| 代码          | 读卡器™5000                   | 图         | USB          | 呈现 | HID POS 扫描器           |
+| Honeywell     | Genesis 7580g                  | 图         | USB          | 呈现 | HID POS 扫描器           |
+| Honeywell     | Granit 198Xi                   | 图         | USB          | 手持设备     | HID POS 扫描器           |
+| Honeywell     | Granit 191Xi                   | 图         | USB          | 手持设备     | HID POS 扫描器           |
+| Honeywell     | N5680                          | 图         | 内部     | 组件    | HID POS 扫描器           |
+| Honeywell     | N3680                          | 图         | 内部     | 组件    | HID POS 扫描器           |
+| Honeywell     | 轨道7190g                    | 图         | USB          | 呈现 | HID POS 扫描器           |
+| Honeywell     | Stratos 2700                   | 图         | USB          | 在计数器中   | HID POS 扫描器           |
+| Honeywell     | Voyager 1200g                  | 1D         | USB          | 手持设备     | HID POS 扫描器           |
+| Honeywell     | Voyager 1202g                  | 1D         | USB          | 手持设备     | HID POS 扫描器           |
+| Honeywell     | Voyager 1202-bf                | 1D         | USB          | 手持设备     | HID POS 扫描器           |
+| Honeywell     | Voyager 145Xg                  | 1D/2D<sup>1</sup>   | USB          | 手持设备     | HID POS 扫描器           |
+| Honeywell     | Voyager 1602g                  | 图         | USB          | 手持设备     | HID POS 扫描器           |
+| Honeywell     | Xenon 1900g                    | 图         | USB          | 手持设备     | HID POS 扫描器           |
+| Honeywell     | Xenon 1902g                    | 图         | USB          | 手持设备     | HID POS 扫描器           |
+| Honeywell     | Xenon 1902g-bf                 | 图         | USB          | 手持设备     | HID POS 扫描器           |
+| Honeywell     | Xenon 1900h                    | 图         | USB          | 手持设备     | HID POS 扫描器           |
+| Honeywell     | Xenon 1902h                    | 图         | USB          | 手持设备     | HID POS 扫描器           |
+| HP            | 值条形码扫描器 (HR2150) | 图         | USB          | 手持设备     | HID POS 扫描器           |
+| Intermec      | SG20                           | 图         | USB          | 手持设备     | HID POS 扫描器           |
 | Socket Mobile | CHS 7Ci                        | 1D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
 | Socket Mobile | CHS 7Di                        | 1D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
 | Socket Mobile | CHS 7Mi                        | 1D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
@@ -55,41 +55,41 @@ ms.locfileid: "67321534"
 | Socket Mobile | CHS 8Ci                        | 1D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
 | Socket Mobile | DuraScan D700                  | 1D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
 | Socket Mobile | DuraScan D730                  | 1D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
-| Socket Mobile | DuraScan D740                  | 2D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
+| Socket Mobile | DuraScan D740                  | 图         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
 | Socket Mobile | SocketScan S700                | 1D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
 | Socket Mobile | SocketScan S730                | 1D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
-| Socket Mobile | SocketScan S740                | 2D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
+| Socket Mobile | SocketScan S740                | 图         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
 | Socket Mobile | SocketScan S800                | 1D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
-| Socket Mobile | SocketScan S850                | 2D         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
-| 斑马         | DS2208²                        | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| 斑马         | DS2278                         | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-| 斑马         | DS8108³                        | 2D         | USB          | 手持设备     | HID 的 POS 扫描程序           |
-|
+| Socket Mobile | SocketScan S850                | 图         | 蓝牙    | 手持设备     | 串行端口配置文件 (SPP) |
+| 斑马         | DS2208<sup>2</sup>                        | 图         | USB          | 手持设备     | HID POS 扫描器           |
+| 斑马         | DS2278                         | 图         | USB          | 手持设备     | HID POS 扫描器           |
+| 斑马         | DS8108<sup>3</sup>                        | 图         | USB          | 手持设备     | HID POS 扫描器           |
+| 斑马         | DS8178<sup>4</sup>                         | 图         | USB          | 手持设备     | HID POS 扫描器           | 
 
 
-¹ Upgradable 以支持通过 Honeywell 2D 条形码 <br/>
-² 最小值固件 009 (2018.07.09) 所需。 可升级使用斑马[123Scan](http://www.zebra.com/123scan)。<br/>
-³ 最小值固件 016 (2018.01.18) 所需。 可升级使用斑马[123Scan](http://www.zebra.com/123scan)。 
-
+<sup>1</sup>可升级以通过 Honeywell 支持2d 条形码 <br/>
+至少需要<sup>2</sup>个固件 009 (2018.07.09)。 使用斑马[123Scan](http://www.zebra.com/123scan)进行升级。<br/>
+需要<sup>3</sup>个最低固件 016 (2018.01.18)。 使用斑马[123Scan](http://www.zebra.com/123scan)进行升级。<br/> 
+需要<sup>4 个</sup>最低固件 023 (2019.03.11)。 使用斑马[123Scan](http://www.zebra.com/123scan)进行升级。<br/>
 
 <hr>
 
-### <a name="windows-devices-with-built-in-barcode-scanner"></a>使用内置的条形码扫描程序的 Windows 设备
+### <a name="windows-devices-with-built-in-barcode-scanner"></a>带有内置条形码扫描器的 Windows 设备
 | 制造商   | 型号 | 操作系统 |
 |----------------|-------|------------------|
 | Innowi         | ChecOut-M | Windows 10   |
 
-### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>使用内置的条形码扫描程序在 Windows 移动设备
+### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>带有内置条形码扫描器的 Windows Mobile 设备
 | 制造商   | 型号 | 操作系统 |
 |----------------|-------|------------------|
-| 蓝       | EF400 | Windows Mobile   |
-| 蓝       | EF500 | Windows Mobile   |
-| 蓝       | EF500R | Windows Mobile   |
+| Bluebird       | EF400 | Windows Mobile   |
+| Bluebird       | EF500 | Windows Mobile   |
+| Bluebird       | EF500R | Windows Mobile   |
 | Honeywell      | CT50   | Windows Mobile   |
 | Honeywell      | D75e | Windows Mobile   |
 | Janam          | XT2      | Windows Mobile   |
-| 松下      | FZ-E1 | Windows Mobile   |
-| 松下      | FZ-F1 |Windows Mobile   |
+| 松下      | FZ-F1-E1 | Windows Mobile   |
+| 松下      | FZ-F1-F1 |Windows Mobile   |
 | PointMobile    | PM80 | Windows Mobile   |
 | 斑马          | TC700j | Windows Mobile   |
 | HP             | 精英 X3 Jacket | Windows Mobile   |
@@ -100,7 +100,7 @@ ms.locfileid: "67321534"
 ## <a name="cash-drawer"></a>收银机
 | 连接性 | 支持 |
 | -------------|-------------|
-| 网络/蓝牙 | <p> 可以通过网络或蓝牙直接连接到收银机，具体取决于收银机设备的功能。 </p><p>APG 银：NetPRO、BluePRO</p> |
+| 网络/蓝牙 | <p> 可以通过网络或蓝牙直接连接到收银机，具体取决于收银机设备的功能。 </p><p>APG 银箱:NetPRO、BluePRO</p> |
 | DK 端口 | <p> 没有网络或蓝牙功能的收银机可以通过支持的收据打印机或 Star Micronics DK-AirCash 附件上的 DK 端口进行连接。 </p>
 | OPOS    | <p> 通过制造商提供的 OPOS 服务对象支持任何 OPOS 兼容收银机。 按照设备制造商安装说明安装 OPOS 驱动程序。 </p> |
 
