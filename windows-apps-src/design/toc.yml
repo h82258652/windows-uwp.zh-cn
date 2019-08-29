@@ -533,13 +533,11 @@
           href: accessibility/practices-to-avoid.md
         - name: 自定义的自动化对等
           href: accessibility/custom-automation-peers.md
-          items:
-            - name: 控件模式和接口
-              href: accessibility/control-patterns-and-interfaces.md
+        - name: 控件模式和接口
+          href: accessibility/control-patterns-and-interfaces.md
     - name: 应用设置
-      href: app-settings/app-settings-and-data.md
       items:
-        - name: 指南
+        - name: 应用设置指南
           href: app-settings/guidelines-for-app-settings.md
         - name: 存储和检索应用设置和数据
           href: app-settings/store-and-retrieve-app-data.md
@@ -572,9 +570,10 @@
           href: globalizing/use-utf8-code-page.md
         - name: 准备你的应用程序以进行日本纪元更改
           href: globalizing/japanese-era-change.md
-    - name: 应用帮助指南
-      href: in-app-help/guidelines-for-app-help.md
+    - name: 应用内帮助
       items:
+        - name: 应用帮助指南
+          href: in-app-help/guidelines-for-app-help.md
         - name: 说明性 UI
           href: in-app-help/instructional-ui.md
         - name: 应用内帮助
