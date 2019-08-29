@@ -8,42 +8,37 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e5c5e19c6e23f4c0094220a735a0c2a48c1cc34
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 72da3d17f3584d0c295926880b949591b83b47a7
+ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362055"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70076401"
 ---
 # <a name="guidelines-for-app-settings"></a>应用设置指南
 
+应用设置是通过应用设置页访问的通用 Windows 平台 (UWP) 应用的用户可自定义部分。 例如, 新闻阅读器应用程序可让用户指定要显示哪些新闻源或在屏幕上显示的列数, 同时, 天气应用程序可让用户在摄氏和华氏之间进行选择。 本文提供了有关创建和显示应用设置的建议和最佳实践。
 
-
-应用设置是应用的用户可自定义部分，并位于应用设置页面内。 例如，新闻阅读器应用中的应用设置可以让用户指定要显示的新闻源或屏幕上要显示的列数，而天气应用的设置则可以让用户在摄氏度和华氏度之间选择默认的测量单位。 本文将介绍有关创建和显示应用设置的最佳做法。
-
-
-## <a name="should-i-include-a-settings-page-in-my-app"></a>应用中应包含设置页面吗？
+## <a name="when-to-provide-a-settings-page"></a>何时提供设置页
 
 以下是属于应用设置页面的应用选项的示例：
 
--   影响应用的行为并且不需要频繁调整的配置选项，例如在天气应用中在摄氏度或华氏度之间选择默认的温度单位，更改邮件应用的帐户设置、通知设置或辅助选项。
--   取决于用户首选项的选项，如音乐、音效或颜色主题。
--   不经常访问的应用信息，例如隐私策略、帮助、应用版本或版权信息。
+- 影响应用的行为并且不需要频繁调整的配置选项，例如在天气应用中在摄氏度或华氏度之间选择默认的温度单位，更改邮件应用的帐户设置、通知设置或辅助选项。
+- 取决于用户首选项的选项，如音乐、音效或颜色主题。
+- 不经常访问的应用信息，例如隐私策略、帮助、应用版本或版权信息。
 
 包含在典型应用工作流中的命令（例如在艺术应用中更改画笔大小）不应该在设置页面上。 若要了解有关命令放置的详细信息，请参阅[命令设计基础知识](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)。
 
 ## <a name="general-recommendations"></a>常规建议
 
-
--   保持设置页面简洁，并使用二进制（开/关）控件。 通常，[切换开关](../controls-and-patterns/toggles.md)是二进制设置的最佳控件。
--   对于让用户从最多 5 个互相排斥的一组相关选项中选择一个项的设置，请使用[单选按钮](../controls-and-patterns/radio-button.md)。
--   在应用设置页面上为所有应用设置创建入口点。
--   使设置保持简单。 定义智能默认值，并使设置数保持最少。
--   当用户更改设置时，应用应当立即反映所做的更改。
--   不要包括属于常见应用工作流的命令。
+- 保持设置页面简洁，并使用二进制（开/关）控件。 通常，[切换开关](../controls-and-patterns/toggles.md)是二进制设置的最佳控件。
+- 对于让用户从最多 5 个互相排斥的一组相关选项中选择一个项的设置，请使用[单选按钮](../controls-and-patterns/radio-button.md)。
+- 在应用设置页面上为所有应用设置创建入口点。
+- 使设置保持简单。 定义智能默认值，并使设置数保持最少。
+- 当用户更改设置时，应用应当立即反映所做的更改。
+- 不要包括属于常见应用工作流的命令。
 
 ## <a name="entry-point"></a>入口点
-
 
 用户进入应用设置页面的方式应取决于应用的布局。
 
@@ -63,11 +58,11 @@ ms.locfileid: "66362055"
 
 如果你要使用中心布局，应用设置的入口点应放置在应用栏的“更多”溢出菜单中。
 
-**选项卡/数据透视表**
+**选项卡/透视**
 
 对于表或透视表布局，我们不推荐将应用设置入口点作为顶部项之一放在导航中。 相反，应用设置的入口点应放置在应用栏的“更多”溢出菜单中。
 
-**Master-details**
+**Master-详细信息**
 
 与其将应用设置入口点深埋在大纲-细节窗格中，不如将其设置为高级大纲窗格上的最后一个固定项。
 
@@ -117,35 +112,35 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 
 当你有一个要包括在应用设置页面中的项目列表后，请考虑以下指南：
 
--   将相似或相关的设置分到单个设置标签下。
--   尽力使设置总数保持在 4 个或 5 个以下。
--   无论应用的上下文如何，都显示相同的设置。 如果某些设置在特定的上下文不相关，则在应用“设置”浮出控件中禁用这些设置。
--   使用描述性的单个词标签来介绍设置。 例如，对于与帐户相关的设置，将该设置命名为“帐户”而非“帐户设置”。 如果希望设置只有一个选项并且设置不为其本身提供描述性标签，则请使用“选项”或“默认”。
--   如果设置直接链接到 Web 而非浮出控件，请使用可视化提示让用户知道这一情况，例如[超链接](../controls-and-patterns/hyperlinks.md)样式的“帮助（在线）”或“Web 论坛”。 请考虑将多个指向 Web 的链接分组到一个具有单个设置的浮出控件。 例如，“关于”设置可以打开具有指向“使用条款”、“隐私策略”和“应用支持”的链接的浮出控件。
--   将不太常用的设置组合到一个入口中，以便每个更常见的设置都有其各自的入口。 将仅包含信息的内容或链接放入“关于”设置。
--   不要复制“权限”窗格中的功能。 默认情况下，Windows 提供此窗格，你无法修改它。
+- 将相似或相关的设置分到单个设置标签下。
+- 尽力使设置总数保持在 4 个或 5 个以下。
+- 无论应用的上下文如何，都显示相同的设置。 如果某些设置在特定的上下文不相关，则在应用“设置”浮出控件中禁用这些设置。
+- 使用描述性的单个词标签来介绍设置。 例如，对于与帐户相关的设置，将该设置命名为“帐户”而非“帐户设置”。 如果希望设置只有一个选项并且设置不为其本身提供描述性标签，则请使用“选项”或“默认”。
+- 如果设置直接链接到 Web 而非浮出控件，请使用可视化提示让用户知道这一情况，例如[超链接](../controls-and-patterns/hyperlinks.md)样式的“帮助（在线）”或“Web 论坛”。 请考虑将多个指向 Web 的链接分组到一个具有单个设置的浮出控件。 例如，“关于”设置可以打开具有指向“使用条款”、“隐私策略”和“应用支持”的链接的浮出控件。
+- 将不太常用的设置组合到一个入口中，以便每个更常见的设置都有其各自的入口。 将仅包含信息的内容或链接放入“关于”设置。
+- 不要复制“权限”窗格中的功能。 默认情况下，Windows 提供此窗格，你无法修改它。
 
--   向“设置”浮出控件添加设置内容
--   在单个列中从上至下展示内容，支持滚动（如果需要）。 滚动限制的最大值是屏幕高度的两倍。
--   使用以下应用设置控件：
+- 向“设置”浮出控件添加设置内容
+- 在单个列中从上至下展示内容，支持滚动（如果需要）。 滚动限制的最大值是屏幕高度的两倍。
+- 使用以下应用设置控件：
 
-    -   [切换开关](../controls-and-patterns/toggles.md):若要让用户可打开或关闭设置值。
-    -   [单选按钮](../controls-and-patterns/radio-button.md):若要使用户可以从一组最多 5 互斥的选择一项相关的选项。
-    -   [文本输入的框](../controls-and-patterns/text-block.md):若要使用户可以输入文本。 使用与要从用户那里获取的文本类型（如电子邮件或密码）相对应的文本输入框类型。
-    -   [超链接](../controls-and-patterns/hyperlinks.md):若要将用户转到应用中的另一个页面或外部网站。 当用户单击超链接时，“设置”浮出控件将会消失。
-    -   [按钮](../controls-and-patterns/buttons.md):若要使用户可以启动即时操作，而关闭当前的设置浮出控件。
--   如果禁用其中一个控件，则添加描述性消息。 将此消息置于禁用的控件上。
--   在为“设置”浮出控件和标头设置动画后，将内容和控件作为单个块进行动画处理。 使用左偏移 100px 的 [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) 或 [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 动画为内容创建动画。
--   使用节标题、段落和标签来协助组织和阐述内容（如果需要）。
--   如果你需要重复设置，请使用 UI 的其他级别或展开/折叠模式，但避免两级以上深度的层次结构。 例如，天气应用提供按城市设置（即，列出各个城市）并让用户在城市上点击以打开一个新浮出控件或展开以显示设置选项。
--   如果加载控件或 Web 内容需要花费时间，请使用不确定的进度控件以指示用户该信息正在加载。 有关详细信息，请参阅[进度控件指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)。
--   请勿使用导航按钮或提交更改按钮。 使用超链接导航到其他页面（而不是使用提交更改按钮）从而自动保存在用户取消“设置”浮出控件时对应用设置所做的更改。
+    - [切换开关](../controls-and-patterns/toggles.md):允许用户设置或禁用值。
+    - [单选按钮](../controls-and-patterns/radio-button.md):允许用户从最多5个互相排斥的相关选项集中选择一项。
+    - [文本输入框](../controls-and-patterns/text-block.md):允许用户输入文本。 使用与要从用户那里获取的文本类型（如电子邮件或密码）相对应的文本输入框类型。
+    - [超链接](../controls-and-patterns/hyperlinks.md):将用户转到应用中的其他页面或外部网站。 当用户单击超链接时，“设置”浮出控件将会消失。
+    - [按钮](../controls-and-patterns/buttons.md):如果为, 则允许用户立即启动操作而不关闭当前设置浮出控件。
+- 如果禁用其中一个控件，则添加描述性消息。 将此消息置于禁用的控件上。
+- 在为“设置”浮出控件和标头设置动画后，将内容和控件作为单个块进行动画处理。 使用左偏移 100px 的 [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) 或 [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 动画为内容创建动画。
+- 使用节标题、段落和标签来协助组织和阐述内容（如果需要）。
+- 如果你需要重复设置，请使用 UI 的其他级别或展开/折叠模式，但避免两级以上深度的层次结构。 例如，天气应用提供按城市设置（即，列出各个城市）并让用户在城市上点击以打开一个新浮出控件或展开以显示设置选项。
+- 如果加载控件或 Web 内容需要花费时间，请使用不确定的进度控件以指示用户该信息正在加载。 有关详细信息，请参阅[进度控件指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)。
+- 请勿使用导航按钮或提交更改按钮。 使用超链接导航到其他页面（而不是使用提交更改按钮）从而自动保存在用户取消“设置”浮出控件时对应用设置所做的更改。
 
 
 
 ## <a name="related-articles"></a>相关文章
 
 * [命令设计基础知识](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
-* [进度控件的指导原则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
-* [存储和检索应用程序数据](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
+* [进度控制准则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
+* [存储和检索应用数据](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
 * [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)

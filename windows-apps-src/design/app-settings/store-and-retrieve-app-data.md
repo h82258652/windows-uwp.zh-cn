@@ -8,39 +8,39 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dc13b53450c97ffcd3d44b58d564c813344abf0a
-ms.sourcegitcommit: ed32219e04f814a12ea018348e9cf678fcfd5e3a
+ms.openlocfilehash: 3958d69dc3142702eb2d2a41d6dba5ebeb9fa8ce
+ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67253056"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70076383"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>存储和检索设置以及其他应用数据
 
-*应用数据*是特定于具体应用的可变数据。 它包含运行时状态、用户首选项和其他设置。 应用数据不同于*用户数据*，它是用户使用应用时创建和管理的数据。 用户数据包含文档或媒体文件、电子邮件或通信脚本或保留用户所创建内容的数据库记录。 用户数据可能对于多个应用都非常有用或有意义。 通常，此为用户要操作或作为独立于应用自身的实体进行传输的数据，例如文档。
+*应用程序数据*是由特定应用程序创建和管理的可变数据。 它包括运行时状态、应用设置、用户首选项、引用内容 (如字典应用中的字典定义) 和其他设置。 应用数据不同于*用户数据*，它是用户使用应用时创建和管理的数据。 用户数据包含文档或媒体文件、电子邮件或通信脚本或保留用户所创建内容的数据库记录。 用户数据可能对于多个应用都非常有用或有意义。 通常，此为用户要操作或作为独立于应用自身的实体进行传输的数据，例如文档。
 
-**有关应用程序数据的重要说明：** 应用数据的生命周期与应用的生命周期相关联。 如果应用被删除，则会丢失所有应用数据。 不要使用应用数据存储用户数据或用户可能视作有价值和不可替代内容的任何数据。 我们建议使用用户的库和 Microsoft OneDrive 存储此类信息。 应用数据非常适合存储特定于应用的用户首选项、设置和收藏夹。
+**有关应用数据的重要说明:** 应用数据的生命周期与应用的生命周期相关联。 如果应用被删除，则会丢失所有应用数据。 不要使用应用数据存储用户数据或用户可能视作有价值和不可替代内容的任何数据。 我们建议使用用户的库和 Microsoft OneDrive 存储此类信息。 应用数据非常适合存储特定于应用的用户首选项、设置和收藏夹。
 
 ## <a name="types-of-app-data"></a>应用数据类型
 
-
 应用数据有两类：设置和文件。
 
--   **设置**
+### <a name="settings"></a>设置
 
-    使用设置存储用户首选项和应用程序状态信息。 应用数据 API 使你能够轻松创建和检索设置（我们将在本文的后面部分介绍一些示例）。
+使用设置存储用户首选项和应用程序状态信息。 应用数据 API 使你能够轻松创建和检索设置（我们将在本文的后面部分介绍一些示例）。
 
-    下面是可以用于应用设置的数据类型：
+下面是可以用于应用设置的数据类型：
 
-    -   **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
-    -   **Boolean**
-    -   **Char16**、**String**
-    -   [**日期时间**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime)， [ **TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)
-    -   **GUID**、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、[**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)、[**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)
-    -   [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue):一组相关的应用设置必须序列化和反序列化以原子方式。 使用复合设置可轻松处理相互依赖的设置的原子更新。 系统会在并发访问和漫游时确保复合设置的完整性。 复合设置针对少量数据进行了优化，如果将它们用于大型数据集，性能可能很差。
--   **文件**
+- **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
+- **Boolean**
+- **Char16**、**String**
+- [**DateTime**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime)、 [ **TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)
+- **GUID**、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、[**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)、[**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)
+- [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue):必须以原子方式进行序列化和反序列化的一组相关应用设置。 使用复合设置可轻松处理相互依赖的设置的原子更新。 系统会在并发访问和漫游时确保复合设置的完整性。 复合设置针对少量数据进行了优化，如果将它们用于大型数据集，性能可能很差。
 
-    使用文件存储二进制数据，或支持自己的自定义序列化类型。
+### <a name="files"></a>文件
+
+使用文件存储二进制数据，或支持自己的自定义序列化类型。
 
 ## <a name="storing-app-data-in-the-app-data-stores"></a>在应用数据存储中存储应用数据
 
@@ -160,19 +160,19 @@ async void ReadTimestamp()
 
 ### <a name="roaming-data-dos-and-donts"></a>漫游数据应做事项和禁止事项
 
--   将漫游用于用户首选项和自定义、链接以及小型数据文件。 例如，使用漫游在所有设备上保留用户的背景颜色首选项。
--   使用漫游以允许用户跨设备继续执行任务。 例如，诸如草稿电子邮件的内容或阅读器应用中最近查看的页面的漫游应用数据。
--   通过更新应用数据处理 [**DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged) 事件。 当应用数据从云中完成同步时，会发生该事件。
--   漫游会引用内容而不是原始数据。 例如，会漫游 URL 而不是联机文章的内容。
--   对于重要的、对时间敏感的设置，使用与 [**RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) 相关联的 *HighPriority* 设置。
--   不要漫游特定于设备的应用数据。 某些信息仅在本地才合理，例如指向本地文件资源的路径名。 如果你决定漫游本地信息，请确保信息在第二台设备上无效时该应用可以进行恢复。
--   不要漫游较大的应用数据集。 应用可以漫游的应用数据量存在限制；使用 [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota) 属性获取这个最大值。 如果应用达到该上限，在应用数据存储的大小不再超过该限制之前，不能漫游任何数据。 在你设计应用时，必须考虑如何为较大数据设置一个限制以免超过此限值。 例如，如果每保存一个游戏状态需要 10KB，则应用可能仅允许用户最多储存 10 个游戏。
--   不要为依赖即时同步的数据使用漫游。 Windows 不保证实现即时同步；如果用户脱机或在严重延迟的网络上，漫游可能会大大延迟。 请确保你的 UI 不依赖即时同步。
--   不要使用用于频繁更改的数据漫游。 例如，如果你的应用跟踪频繁更改信息（例如歌曲中每秒的进度位置），则不要将此类信息存储为漫游应用数据。 相反，选取较不频繁但仍提供良好用户体验的表示形式，例如当前播放的歌曲。
+- 将漫游用于用户首选项和自定义、链接以及小型数据文件。 例如，使用漫游在所有设备上保留用户的背景颜色首选项。
+- 使用漫游以允许用户跨设备继续执行任务。 例如，诸如草稿电子邮件的内容或阅读器应用中最近查看的页面的漫游应用数据。
+- 通过更新应用数据处理 [**DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged) 事件。 当应用数据从云中完成同步时，会发生该事件。
+- 漫游会引用内容而不是原始数据。 例如，会漫游 URL 而不是联机文章的内容。
+- 对于重要的、对时间敏感的设置，使用与 [**RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) 相关联的 *HighPriority* 设置。
+- 不要漫游特定于设备的应用数据。 某些信息仅在本地才合理，例如指向本地文件资源的路径名。 如果你决定漫游本地信息，请确保信息在第二台设备上无效时该应用可以进行恢复。
+- 不要漫游较大的应用数据集。 应用可以漫游的应用数据量存在限制；使用 [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota) 属性获取这个最大值。 如果应用达到该上限，在应用数据存储的大小不再超过该限制之前，不能漫游任何数据。 在你设计应用时，必须考虑如何为较大数据设置一个限制以免超过此限值。 例如，如果每保存一个游戏状态需要 10KB，则应用可能仅允许用户最多储存 10 个游戏。
+- 不要为依赖即时同步的数据使用漫游。 Windows 不保证实现即时同步；如果用户脱机或在严重延迟的网络上，漫游可能会大大延迟。 请确保你的 UI 不依赖即时同步。
+- 不要将漫游用于经常更改的数据。 例如，如果你的应用跟踪频繁更改信息（例如歌曲中每秒的进度位置），则不要将此类信息存储为漫游应用数据。 相反，选取较不频繁但仍提供良好用户体验的表示形式，例如当前播放的歌曲。
 
 ### <a name="roaming-pre-requisites"></a>漫游先决条件
 
-如果用户使用 Microsoft 帐户登录相应的设备，则任何用户都可以享受到漫游应用数据的益处。 但是，用户和组策略管理员可以随时在设备上关闭漫游应用数据。 如果用户选择不使用 Microsoft 帐户或禁用漫游数据功能，她仍将能够使用你的应用，但将每个设备的本地应用程序数据。
+如果用户使用 Microsoft 帐户登录相应的设备，则任何用户都可以享受到漫游应用数据的益处。 但是，用户和组策略管理员可以随时在设备上关闭漫游应用数据。 如果用户选择不使用 Microsoft 帐户或禁用漫游数据功能, 她仍可以使用您的应用程序, 但应用程序数据将是每个设备的本地应用程序数据。
 
 [  **PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault) 中存储的数据仅将在用户使设备成为“受信任”设备的情况下传输。 如果设备不受信任，则不会漫游在该保管库中安全存储的数据。
 
@@ -198,9 +198,9 @@ async void ReadTimestamp()
 
 开发人员可锁定自己的设备，以触发漫游应用数据的同步。 如果应用数据看起来没有在特定时段进行传输，请检查以下项目并确保：
 
--   你的漫游数据未超过最大大小（有关详细信息，请参阅 [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota)）。
--   你的文件已关闭且发布正确。
--   至少存在两台运行相同应用版本的设备。
+- 你的漫游数据未超过最大大小（有关详细信息，请参阅 [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota)）。
+- 你的文件已关闭且发布正确。
+- 至少存在两台运行相同应用版本的设备。
 
 
 ### <a name="register-to-receive-notification-when-roaming-data-changes"></a>进行注册以在漫游数据发生更改时收到通知
@@ -434,8 +434,8 @@ localSettings.DeleteContainer("exampleContainer");
 
 ## <a name="related-articles"></a>相关文章
 
-* [**Windows.Storage.ApplicationData**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData)
-* [**Windows.Storage.ApplicationData.RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings)
-* [**Windows.Storage.ApplicationData.RoamingFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingfolder)
-* [**Windows.Storage.ApplicationData.RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota)
-* [**Windows.Storage.ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue)
+* [**ApplicationData**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData)
+* [**ApplicationData. RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings)
+* [**ApplicationData. RoamingFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingfolder)
+* [**ApplicationData. RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota)
+* [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue)
