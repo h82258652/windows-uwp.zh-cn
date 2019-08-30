@@ -5,36 +5,36 @@ title: UWP 应用中的可用性 - Windows 应用开发
 layout: LandingPage
 template: detail.hbs
 ms.date: 10/18/2017
-ms.topic: landing-page
+ms.topic: article
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
-ms.openlocfilehash: f218df3b4118508049023218b64e6c7321fbbda9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a6912932b7ad71fd3d04c038eab7e0aa4dd6cb11
+ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582278"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70076393"
 ---
 # <a name="usability-for-uwp-apps"></a>UWP 应用中的可用性
-
-
 
 这些较小的优化额外关注了细节方面，可将良好的用户体验转换为一次能满足全球用户需求的真正具有包容性的用户体验。
 
 本部分中的设计和编码说明可以帮助你使你的 UWP 应用更具包容性，方法是添加辅助功能、支持全球化和本地化、允许用户自定义其体验，以及随时为用户提供帮助。
 
-
-## <a name="accessiblity"></a>辅助功能
+## <a name="accessibility"></a>辅助功能
 
 辅助功能是指应用可供那些对使用常规用户界面存在限制（阻碍或阻止他们使用）的用户使用。 对于某些情况，辅助功能要求由法律强制实施。 但是，无论法律是否有规定，最好都解决辅助功能问题，以尽可能扩大应用的受众范围。
 
+[辅助功能门户](../accessibility/accessibility.md)
+
+<!--
 <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-overview.md">辅助功能概述</a></b> <br/> 本文概述了与 UWP 应用的辅助功能方案相关的概念和技术。</p>
+<p><b><a href="../accessibility/accessibility-overview.md">Accessibility overview</a></b> <br/> This article is an overview of the concepts and technologies related to accessibility scenarios for UWP apps.</p>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@ ms.locfileid: "57582278"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/designing-inclusive-software.md">设计非独占软件</a></b><br/>了解如何改进适用于 Windows 10 的通用 Windows 平台 (UWP) 应用的非独占设计。  以辅助功能思维设计和生成非独占软件。</p>
+<p><b><a href="../accessibility/designing-inclusive-software.md">Designing inclusive software</a></b><br/>Learn about evolving inclusive design with Universal Windows Platform (UWP) apps for Windows 10.  Design and build inclusive software with accessibility in mind.</p>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@ ms.locfileid: "57582278"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/developing-inclusive-windows-apps.md">开发非独占 Windows 应用</a></b><br/> 本文是开发辅助 UWP 应用的路线图。</p>
+<p><b><a href="../accessibility/developing-inclusive-windows-apps.md">Developing inclusive Windows apps</a></b><br/> This article is a roadmap for developing accessible UWP apps.</p>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@ ms.locfileid: "57582278"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-testing.md">辅助功能测试</a> </b><br/>为确保 UWP 应用为辅助应用所要遵循的测试过程。</p>
+<p><b><a href="../accessibility/accessibility-testing.md">Accessibility testing</a> </b><br/>Testing procedures to follow to ensure that your UWP app is accessible.</p>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@ ms.locfileid: "57582278"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-in-the-store.md">Microsoft Store 中的辅助功能</a></b><br/>介绍了有关在 Microsoft Store 中将 UWP 应用声明为辅助应用的要求。</p>
+<p><b><a href="../accessibility/accessibility-in-the-store.md">Accessibility in the Store</a></b><br/>Describes the requirements for declaring your UWP app as accessible in the Microsoft Store.</p>
                     </div>
                 </div>
             </div>
@@ -89,7 +89,7 @@ ms.locfileid: "57582278"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-checklist.md">辅助功能清单</a></b><br/>提供了可帮助你确保 UWP 应用为辅助应用的清单。</p>
+<p><b><a href="../accessibility/accessibility-checklist.md">Accessibility checklist</a></b><br/>Provides a checklist to help you ensure that your UWP app is accessible.</p>
                     </div>
                 </div>
             </div>
@@ -100,7 +100,7 @@ ms.locfileid: "57582278"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/basic-accessibility-information.md">公开基本的辅助功能信息</a></b><br/>基本的辅助功能信息通常按照名称、角色和值进行分类。 本主题介绍了可帮助应用公开辅助技术所需的基本信息的代码。</p>
+<p><b><a href="../accessibility/basic-accessibility-information.md">Expose basic accessibility information</a></b><br/>Basic accessibility info is often categorized into name, role, and value. This topic describes code to help your app expose the basic information that assistive technologies need.</p>
                     </div>
                 </div>
             </div>
@@ -111,7 +111,7 @@ ms.locfileid: "57582278"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/keyboard-accessibility.md">键盘辅助功能</a></b><br/>如果应用未提供良好的键盘访问，则盲人用户或行动不便的用户在使用该应用时会存在困难，或者可能根本无法使用该应用。</p>
+<p><b><a href="../accessibility/keyboard-accessibility.md">Keyboard accessibility</a></b><br/>If your app does not provide good keyboard access, users who are blind or have mobility issues can have difficulty using your app or may not be able to use it at all.</p>
                     </div>
                 </div>
             </div>
@@ -122,7 +122,7 @@ ms.locfileid: "57582278"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/high-contrast-themes.md">高对比度主题</a></b><br/>介绍了为确保 UWP 应用在高对比度主题处于活动状态时可供使用所需的步骤。 </p>
+<p><b><a href="../accessibility/high-contrast-themes.md">High-contrast themes</a></b><br/>Describes the steps needed to ensure your UWP app is usable when a high-contrast theme is active. </p>
                     </div>
                 </div>
             </div>
@@ -133,7 +133,7 @@ ms.locfileid: "57582278"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessible-text-requirements.md">辅助文本要求</a></b><br/>本主题介绍了应用中的文本的最佳辅助功能做法：确保颜色和背景满足必需的对比率。 本主题还讨论了 UWP 应用中的文本元素可以具有的 Microsoft UI 自动化角色，以及图形中文本的最佳做法。</p>                    
+<p><b><a href="../accessibility/accessible-text-requirements.md">Accessible text requirements</a></b><br/>This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio. This topic also discusses the Microsoft UI Automation roles that text elements in a UWP app can have, and best practices for text in graphics.</p>                    
                     </div>
                 </div>
             </div>
@@ -144,7 +144,7 @@ ms.locfileid: "57582278"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/practices-to-avoid.md">要避免的辅助功能做法</a></b><br/>列出创建辅助的 UWP 应用时应避免的做法。</p>                    
+<p><b><a href="../accessibility/practices-to-avoid.md">Accessibility practices to avoid</a></b><br/>Lists the practices to avoid if you want to create an accessible UWP app.</p>                    
                     </div>
                 </div>
             </div>
@@ -155,7 +155,7 @@ ms.locfileid: "57582278"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/custom-automation-peers.md">自定义自动化对等</a></b><br/>介绍 UI 自动化的自动化对等概念以及如何为自己的自定义 UI 类提供自动化支持。</p>                    
+<p><b><a href="../accessibility/custom-automation-peers.md">Custom automation peers</a></b><br/>Describes the concept of automation peers for UI Automation, and how you can provide automation support for your own custom UI class.</p>                    
                     </div>
                 </div>
             </div>
@@ -166,20 +166,14 @@ ms.locfileid: "57582278"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/control-patterns-and-interfaces.md">控件模式和接口</a></b><br/>列出 Microsoft UI 自动化控件模式、客户端用于访问这些模式的类以及提供程序用于实现这些模式的接口。</p>                    
+<p><b><a href="../accessibility/control-patterns-and-interfaces.md">Control patterns and interfaces</a></b><br/>Lists the Microsoft UI Automation control patterns, the classes that clients use to access them, and the interfaces providers use to implement them.</p>                    
                     </div>
                 </div>
             </div>
         </div>
     </li>     
 </ul>
-
-
-## <a name="globalization-and-localization"></a>全球化和本地化
-
-Windows 的使用遍及世界各地，用户的语言、区域及文化背景各不相同。 用户讲各种不同的语言，位于不同的国家和地区。 某些用户会说多种语言。 因此，应用在涉及语言、区域和文化系统设置的多种组合的配置上运行。 通过使用*全球化*和*本地化*对应用进行设计使其更具有适应性，拓展其潜在市场。
-
-<a href="../globalizing/globalizing-portal.md">全球化和本地化门户</a>
+-->
 
 ## <a name="app-settings"></a>应用设置
 
@@ -210,6 +204,11 @@ Windows 的使用遍及世界各地，用户的语言、区域及文化背景各
     </li>
 </ul>
 
+## <a name="globalization-and-localization"></a>全球化和本地化
+
+Windows 的使用遍及世界各地，用户的语言、区域及文化背景各不相同。 用户讲各种不同的语言，位于不同的国家和地区。 某些用户会说多种语言。 因此，应用在涉及语言、区域和文化系统设置的多种组合的配置上运行。 通过使用*全球化*和*本地化*对应用进行设计使其更具有适应性，拓展其潜在市场。
+
+<a href="../globalizing/globalizing-portal.md">全球化和本地化门户</a>
 
 ## <a name="in-app-help"></a>应用内帮助
 无论你设计的应用有多好，某些用户仍将需要一些额外帮助。
