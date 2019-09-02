@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 入门, 开始使用
 ms.localizationpriority: medium
-ms.openlocfilehash: 346877178b4450df5fb0151656d58e203ea0be63
-ms.sourcegitcommit: 4e74c920f1fef507c5cdf874975003702d37bcbb
+ms.openlocfilehash: e900cdddaa86857554c11605d00f59fd45a7e5ee
+ms.sourcegitcommit: b186f70f0b1601b6b6a5db91d87d034f6b155e3b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68372734"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063779"
 ---
 # <a name="get-started-with-cwinrt"></a>C++/WinRT 入门
 
@@ -22,7 +22,7 @@ ms.locfileid: "68372734"
 ## <a name="a-cwinrt-quick-start"></a>C++/WinRT 快速入门
 
 > [!NOTE]
-> 有关安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息，请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 有关设置 Visual Studio 以进行 C++/WinRT 部署的信息 &mdash; 包括安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息 &mdash; 请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 创建一个新的 **Windows 控制台应用程序(C++/WinRT)** 项目。
 
