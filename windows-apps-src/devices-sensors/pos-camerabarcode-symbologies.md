@@ -5,15 +5,15 @@ ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 14cb42e0bd0f1bac307a9dfc1ac188d8b11d8cb8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cc2aaaf4e9779cb2be712119fb1dacdf946952c5
+ms.sourcegitcommit: 0dec04de501a3db6b22dfd4a320fc09b5c4a21b5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610322"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70243327"
 ---
 # <a name="symbologies"></a>标志
-本主题提供了每个支持的 Windows 10，包括随附软件条形码解码器符号示例条形码：UPC/EAN、 代码 39、 代码 128，二五，堆积数据条全向、 数据条，QR 码和 GS1DWCode。
+本主题提供了 Windows 10 随附的软件条码解码器支持的每个符号的示例条码，其中包括：UPC/EAN，代码39，代码128，交错 2 of 5，数据条形全向，数据条形堆积，QR 码，GS1DWCode。
 
 ## <a name="1d-symbologies"></a>1D 标志
 
@@ -56,3 +56,9 @@ ms.locfileid: "57610322"
 
 > [!NOTE]
 > 内置于 Windows 10 的软件解码器提供 [*Digimarc Corporation*](https://www.digimarc.com/) 的成果
+
+## <a name="see-also"></a>请参阅
+
+### <a name="samples"></a>示例
+
+- [条形码扫描器示例](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
