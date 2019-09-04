@@ -14,76 +14,76 @@ ms.locfileid: "57633712"
 ---
 # <a name="page-layout"></a>页面布局
 
-在 UWP 应用中，每个[**页面**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)通常包含导航面板、 命令栏和内容元素。 
+在 UWP 应用中，每个[**页面**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)通常包含导航、命令栏和内容元素。 
 
-您的应用程序可以包含多个页面： 当用户启动的 UWP 应用时，程序代码在应用[**窗口**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window)内部创建[**框架**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)。 框架则可以在应用程序[**页面**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)之间进行[导航](../basics/navigate-between-two-pages.md)。 
+应用可以包含多个页面：当用户启动 UWP 应用时，应用程序代码会创建要放在应用[**窗口**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window)内部的[**框架**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)。框架随后即可以在应用程序的[**页面**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)实例之间进行[导航](../basics/navigate-between-two-pages.md)。 
 
-大多数页面结构遵循一个通用的布局方案，本文将介绍您的应用需要哪些UI元素，并且这些UI元素都应该安置在页面的什么位置。
+大多数页面采用通用的布局结构，本文将介绍你将需要哪些 UI 元素，以及它们应该安置在页面的什么位置。
 
 ![页面结构](images/page-components.svg)
 
 ## <a name="navigation"></a>导航
-您的应用布局从您选择的导航模型开始，该模型定义了用户在应用中的页面之间导航的方式。 在本文中，我们将讨论两种通用导航模式： 左导航栏和顶部导航。 对于其他导航的介绍，请参阅[适用于 UWP 应用的导航设计基础知识](../basics/navigation-basics.md)。
+应用布局以你所选的导航模型开始，该模型定义了用户在应用中的页面之间的导航方式。在本文中，我们将讨论两种通用导航模式： 左导航和顶部导航。有关选择其他导航选项的说明，请参阅[适用于 UWP 应用的导航设计基础知识](../basics/navigation-basics.md)。
 
 ![顶部和左侧的导航模式](images/top-left-nav.svg)
 
 ### <a name="left-nav"></a>左侧导航
-左侧导航，或[导航面板](../controls-and-patterns/navigationview.md)模式，通常只用作应用级导航。 这意味着，它在应用中处在最高层级，始终可见并且始终可用。 当您的应用中有超过五个导航项目或者页面时，我们建议您使用左侧导航面板。 导航面板模式通常包含：
+左侧导航，或[导航窗格](../controls-and-patterns/navigationview.md)模式，通常只用作应用级导航，并且在应用中处在最高层级，这意味着它应始终可见并且始终可用。当应用中有超过五个导航项目或者页面时，我们建议使用左侧导航。导航窗格模式通常包含：
 - 导航项
 - 应用程序设置入口点
 - 帐户设置入口点
 
-[NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)控件为 UWP 实现了左侧导航面板模式。
+[NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview) 控件为 UWP 实现了左侧导航模式。
 
-当某个导航项被选定后，框架应导航到选定的项所对应的页面。
+选择某个导航项后，框架应导航到选定的项所对应的页面。
 
-![展开导航面板](images/navview-expanded.svg)
+![展开导航窗格](images/navview-expanded.svg)
 
-菜单按钮允许用户展开和折叠导航面板。 当屏幕尺寸大于640像素时，单击菜单按钮会将导航面板折叠为条形。
+菜单按钮允许用户展开和折叠导航窗格。当屏幕尺寸大于640像素时，单击菜单按钮会将导航窗格折叠为条形。
 
-![compact 的导航面板](images/navview-compact.svg)
+![压缩的导航窗格](images/navview-compact.svg)
 
-当屏幕尺寸小于 640 像素，导航面板会完全折叠。
+当屏幕大小小于 640 像素时，导航窗格会完全折叠。
 
 ![最小的导航窗格](images/navview-minimal.svg)
 
 ### <a name="top-nav"></a>顶部导航
 
-顶部导航也可以用作顶级导航。 与左侧导航面板可以折叠收起的风格不同，顶部导航始终是可见的。 [NavigationView](../controls-and-patterns/navigationview.md)控件同样为 UWP 实现了顶部的导航和选项卡视图模式。
+顶部导航也可以用作顶级导航。与左侧导航可以折叠收起的风格不同，顶部导航始终是可见的。[NavigationView](../controls-and-patterns/navigationview.md) 控件为 UWP 实现了顶部的导航和选项卡模式。
 
 ![顶部导航栏](images/pivot-large.svg)
 
 ## <a name="command-bar"></a>命令栏
 
-接下来，您可能会向用户提供应用中常用功能的快捷访问方式。 这种情况下，[命令栏](../controls-and-patterns/app-bars.md)就可以提供应用级或页级命令访问的快捷方式。命令栏可在任何导航模式中使用。
+接下来，你可能想为用户提供应用中常用任务的快捷访问方式。[命令栏](../controls-and-patterns/app-bars.md)可以提供应用级或页级命令的访问途径，并且可在任何导航模式中使用。
 
 ![放置在顶部的命令栏](images/app-bar-desktop.svg)
 
-命令栏可以放置在页面的顶部，也可以放置在页面的底部。您可以选择最适合您应用的位置放置命令栏。
+命令栏可以放置在页面顶部或页面底部，以最适合应用的放置位置为准。
 
-![放置在底部命令栏](images/app-bar-mobile.svg)
+![放置在底部的命令栏](images/app-bar-mobile.svg)
 
 ## <a name="content"></a>内容
 
-最后，内容因应用不同，会有很大差异。 因此您可以通过多种不同方式呈现内容。 在这里，我们将介绍一些常见的页面模式。 您可能会希望将这些页面模式使用在您的应用当中。 许多应用会使用这些常见页面模式中的一部分或者全部，来显示不同类型的内容。 当然，您也可以随意混合和搭配使用这些模式来优化您的应用。
+最后，内容会因应用不同而有很大差异，因此可以通过多种不同方式呈现内容。在这里，我们介绍了一些你可能想在应用中使用的常见页面模式。许多应用会使用此处的部分或者全部常见页面模式来显示不同类型的内容。当然，也可以随意混合和搭配使用这些模式来优化应用。
 
-## <a name="landing"></a>登陆(Landing)
+## <a name="landing"></a>登陆
 
-![登陆页面(Landing Page)](images/hero-screen.svg)
+![登陆页面](images/hero-screen.svg)
 
-登陆页面（Landing Page），也称作 hero 屏幕，通常显示在应用体验的最高层。 登陆页面使用巨大的图面作为舞台，突出显示用户可能想要浏览和使用的内容。
+登陆页面，也称作 hero 屏幕，通常显示在应用体验的最高层。巨大的图面区域充当平台，供应用突出显示用户可能想要浏览和使用的内容。
 
 ## <a name="collections"></a>集合
 
 ![库](images/gridview.svg)
 
-集合可以让用户浏览一组内容或数据。 如果要展示以照片或者媒体为主的内容，那么使用[网格视图]../controls-and-patterns/item-templates-gridview.md)是个不错的选择。如果要展示以文字或数据为主的内容，那么使用[列表视图](../controls-and-patterns/item-templates-listview.md)则更为合适。
+集合可以让用户浏览以组划分的内容或数据。如果要展示以照片或者媒体为主的内容，那么使用[网格视图]../controls-and-patterns/item-templates-gridview.md)是个不错的选择。如果要展示以文字或数据为主的内容，那么使用[列表视图](../controls-and-patterns/item-templates-listview.md)则更为合适。
 
 ## <a name="masterdetail"></a>大纲/细节
 
 ![大纲细节](images/master-detail.svg)
 
-[大纲/细节](../controls-and-patterns/master-details.md)模型包含一个列表视图（大纲）和一个内容视图（细节）。 这两个窗格都是固定的，并且具有垂直滚动。 选择列表视图中的项后，就会相应地更新内容视图。 
+[大纲/细节](../controls-and-patterns/master-details.md)模型包含一个列表视图（大纲）和一个内容视图（细节）。这两个窗格都是固定的，并且具有垂直滚动功能。选择列表视图中的项后，就会相应地更新内容视图。 
 
 ## <a name="forms"></a>表单
 ![表单](images/form.svg)
