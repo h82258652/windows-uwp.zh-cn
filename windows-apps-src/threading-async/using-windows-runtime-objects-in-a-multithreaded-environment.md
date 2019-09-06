@@ -1,20 +1,20 @@
 ---
 title: 在多线程环境中使用 Windows 运行时对象 | Microsoft 文档
-description: 本文讨论了 .NET Framework 从 C# 和 Visual Basic 代码到 Windows 运行时或 Windows 运行时组件提供的对象处理调用的方式。
+description: 本文讨论 .NET Framework 处理从C# Windows 运行时或 Windows 运行时组件提供的对象 Visual Basic 代码的调用的方式。
 ms.date: 01/14/2017
 ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 keywords: windows 10, uwp, 计时器, 线程
 ms.localizationpriority: medium
-ms.openlocfilehash: 3afa1720ede9728e9cc25af434a431300faf26d6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4fc4f704d8e9f53282ab09dbc61bc5e625d00da9
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371211"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393531"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>在多线程环境中使用 Windows 运行时对象
-本文讨论了 .NET Framework 从 C# 和 Visual Basic 代码到 Windows 运行时或 Windows 运行时组件提供的对象处理调用的方式。
+本文讨论 .NET Framework 处理从C# Windows 运行时或 Windows 运行时组件提供的对象 Visual Basic 代码的调用的方式。
 
 在 .NET Framework 中，默认情况下你可以从多个线程访问任意对象，而无需进行特殊处理。 你需要的仅仅是对该对象的引用。 在 Windows 运行时中，此类对象称为*敏捷*。 大多数 Windows 运行时类都为敏捷类，但有几类除外，而且即使是敏捷类也可能需要进行特殊处理。
 

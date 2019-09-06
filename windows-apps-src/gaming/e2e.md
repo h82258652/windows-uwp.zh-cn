@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a4e151851ef663055a4199b7ec9b8c1b168b578
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: db510c1dc084fd1af986d618716854ed09cfc618
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682610"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393604"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 游戏开发指南
 
@@ -106,12 +106,12 @@ ms.locfileid: "68682610"
 
 [在合作伙伴中心注册开发人员帐户](https://developer.microsoft.com/store/register)是发布 Windows 游戏的第一步。 开发人员帐户让你可以保留游戏名称和将免费或付费游戏提交到适用于所有 Windows 设备的 Microsoft Store。 使用开发人员帐户管理游戏和游戏内产品、获取详细分析，以及支持全世界玩家创建绝佳体验的服务。 
 
-Microsoft 还提供多个开发人员计划，可帮助你开发和发布 Windows 游戏。 在注册合作伙伴中心帐户之前, 我们建议你查看是否有合适的权限。 有关详细信息，请转到[开发人员计划](#developer-programs)
+Microsoft 还提供多个开发人员计划，可帮助你开发和发布 Windows 游戏。 在注册合作伙伴中心帐户之前，我们建议你查看是否有合适的权限。 有关详细信息，请转到[开发人员计划](#developer-programs)
 
 
 ### <a name="developer-programs"></a>开发人员计划
 
-Microsoft 提供多个开发人员计划，可帮助你开发和发布 Windows 游戏。 如果你想要开发适用于 Xbox One 的游戏并在游戏中集成 Xbox Live 功能，请考虑加入开发人员计划。 若要在 Microsoft Store 中发布游戏, 还需要在[合作伙伴中心](https://partner.microsoft.com/dashboard)创建一个开发人员帐户。
+Microsoft 提供多个开发人员计划，可帮助你开发和发布 Windows 游戏。 如果你想要开发适用于 Xbox One 的游戏并在游戏中集成 Xbox Live 功能，请考虑加入开发人员计划。 若要在 Microsoft Store 中发布游戏，还需要在[合作伙伴中心](https://partner.microsoft.com/dashboard)创建一个开发人员帐户。
 
 #### <a name="xbox-live-creators-program"></a>Xbox Live 创意者计划
 
@@ -134,7 +134,7 @@ Microsoft 提供多个开发人员计划，可帮助你开发和发布 Windows �
 
 #### <a name="idxbox"></a>ID@Xbox
 
-ID@Xbox 计划可帮助符合资格的游戏开发人员自行在 Windows 和 Xbox One 上发布游戏。 如果你想开发适用于 Xbox One 的应用，或将诸如玩家分数、成就和排行榜等 Xbox Live 功能添加到 Windows 10 游戏，请注册 ID@Xbox。 成为一名 ID@Xbox 开发人员，获取所需的工具和支持，来发挥你的创造力并最大可能地取得成功。 建议先将应用到ID@Xbox , 然后在合作伙伴中心注册开发人员帐户。
+ID@Xbox 计划可帮助符合资格的游戏开发人员自行在 Windows 和 Xbox One 上发布游戏。 如果你想开发适用于 Xbox One 的应用，或将诸如玩家分数、成就和排行榜等 Xbox Live 功能添加到 Windows 10 游戏，请注册 ID@Xbox。 成为一名 ID@Xbox 开发人员，获取所需的工具和支持，来发挥你的创造力并最大可能地取得成功。 建议先将应用到ID@Xbox ，然后在合作伙伴中心注册开发人员帐户。
 
 <table>
     <colgroup>
@@ -258,11 +258,11 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
     </tr>
     <tr>
         <td>DirectX Microsoft Store 游戏（存档的论坛文章）</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/vstudio/home?forum=wingameswithdirectx">用 DirectX 构建 Microsoft Store 游戏 (已存档)</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/vstudio/home?forum=wingameswithdirectx">用 DirectX 构建 Microsoft Store 游戏（已存档）</a></td>
     </tr>
     <tr>
         <td>Windows 10 托管的合作伙伴开发人员论坛</td>
-        <td><a href="https://aka.ms/win10devforums">XBOX 开发人员论坛:Windows 10</a></td>
+        <td><a href="https://aka.ms/win10devforums">XBOX 开发人员论坛：Windows 10</a></td>
     </tr>
     <tr>
         <td>DirectX 论坛</td>
@@ -517,7 +517,7 @@ C++/CX 是一种高性能、低开销的语言，可提供速度、兼容性和�
     </colgroup>
     <tr>
         <td>C++/CX 参考和概述</td>
-        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">可视C++语言参考 (C++/cx)</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">可视C++语言参考（C++/cx）</a></td>
     </tr>
     <tr>
         <td>Visual C++ 编程指南和参考</td>
@@ -560,9 +560,9 @@ Windows JavaScript 应用可以采用一种简单而又直观的方式访问 Uni
 </table>
 
 
-#### <a name="use-windows-runtime-components-to-combine-languages"></a>使用 Windows 运行时组件合并语言
+#### <a name="use-windows-runtime-components-to-combine-languages"></a>使用 Windows 运行时组件组合语言
 
-借助通用 Windows 平台，可轻松将采用不同语言编写的组件结合使用。 使用 C++、C# 或 Visual Basic 创建 Windows 运行时组件，然后通过 JavaScript、C#、C++ 或 Visual Basic 调用这些组件。 采用你所选定的语言编写你游戏的部分程序，是一个不错的方法。 借助组件，你也可以使用仅提供特定语言版本的外部库，并使用你已编写的传统代码。
+借助通用 Windows 平台，可轻松将采用不同语言编写的组件结合使用。 C++在、 C#或 Visual Basic 中创建 Windows 运行时组件，然后从 JavaScript、 C#、 C++或 Visual Basic 调入它们。 采用你所选定的语言编写你游戏的部分程序，是一个不错的方法。 借助组件，你也可以使用仅提供特定语言版本的外部库，并使用你已编写的传统代码。
 
 <table>
     <colgroup>
@@ -571,14 +571,14 @@ Windows JavaScript 应用可以采用一种简单而又直观的方式访问 Uni
     </colgroup>
     <tr>
         <td>如何创建 Windows 运行时组件</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp">创建 Windows 运行时组件</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp">用C++/cx Windows 运行时组件</a></td>
     </tr>
 </table>
 
 
 ### <a name="which-version-of-directx-should-your-game-use"></a>你的游戏应该使用哪个版本的 DirectX？
 
-如果为游戏选择 DirectX, 则需要确定要使用的版本:Microsoft Direct3D 12 或 Microsoft Direct3D 11。
+如果为游戏选择 DirectX，则需要确定要使用的版本：Microsoft Direct3D 12 或 Microsoft Direct3D 11。
 
 DirectX 12 比以前的任何版本都更快更高效。 Direct3D 12 提供更丰富的场景、更多的对象、更复杂的效果，并且能全面利用 Windows 10 电脑和 Xbox One 上的现代 GPU 硬件。 由于 Direct3D 12 在较低级别工作，因此它能够向专业图形开发团队或有经验的 DirectX 11 开发团队提供最大程度优化图形所需的所有控制。
 
@@ -645,7 +645,7 @@ Direct3D 11.3 是一个低级别图形 API，使用熟悉的 Direct3D 编程模�
         <td><a href="https://playfab.com/">工具和服务概述</a></td>
     </tr>
     <tr>
-        <td>即刻体验</td>
+        <td>入门</td>
         <td><a href="https://api.playfab.com/docs/general-getting-started">常规入门指南</a></td>
     </tr>
     <tr>
@@ -662,7 +662,7 @@ Direct3D 11.3 是一个低级别图形 API，使用熟悉的 Direct3D 编程模�
     </tr>
     <tr>
         <td>GitHub 存储库</td>
-        <td><a href="https://github.com/PlayFab">获取各种平台 (包括 Android、iOS、Windows、Unity 和 Unreal) 的脚本和 Sdk。</a></td>
+        <td><a href="https://github.com/PlayFab">获取各种平台（包括 Android、iOS、Windows、Unity 和 Unreal）的脚本和 Sdk。</a></td>
     </tr>
     <tr>
         <td>API 文档</td>
@@ -776,7 +776,7 @@ MonoGame 是最初基于 Microsoft 的 XNA Framework 4.0 的跨平台开源游�
     </tr>
     <tr>
         <td>MonoGame 文档</td>
-        <td><a href="https://www.monogame.net/documentation/">MonoGame 文档 (最新版本)</a></td>
+        <td><a href="https://www.monogame.net/documentation/">MonoGame 文档（最新版本）</a></td>
     </tr>
     <tr>
         <td>Monogame 下载</td>
@@ -898,7 +898,7 @@ BabylonJS 是一个完整的 JavaScript 框架，供使用 HTML5、WebGL、WebVR
     </tr>
     <tr>
         <td>从 DirectX 9 移植到 DirectX 11</td>
-        <td><a href="porting-your-directx-9-game-to-windows-store.md">从 DirectX 9 到通用 Windows 平台 (UWP) 的端口</a></td>
+        <td><a href="porting-your-directx-9-game-to-windows-store.md">从 DirectX 9 到通用 Windows 平台（UWP）的端口</a></td>
     </tr>
     <tr>
         <td>从 Direct3D 11 移植到 Direct3D 12</td>
@@ -914,7 +914,7 @@ BabylonJS 是一个完整的 JavaScript 框架，供使用 HTML5、WebGL、WebVR
     </tr>
     <tr>
         <td>UWP 中的经典 Windows API 等效内容</td>
-        <td><a href="https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps">通用 Windows 平台 (UWP) 应用中的 Windows Api 的替代方法</a></td>
+        <td><a href="https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps">通用 Windows 平台（UWP）应用中的 Windows Api 的替代方法</a></td>
     </tr>
 </table>
 
@@ -1030,7 +1030,7 @@ Windows 10 引入通用 Windows 平台 (UWP)，该平台在 Windows 10 设备�
     </tr>
     <tr>
         <td>Windows API 的替代项</td>
-        <td><a href="https://docs.microsoft.com/uwp/win32-and-com/alternatives-to-windows-apis-uwp">通用 Windows 平台 (UWP) 应用中的 Windows Api 的替代方法</a></td>
+        <td><a href="https://docs.microsoft.com/uwp/win32-and-com/alternatives-to-windows-apis-uwp">通用 Windows 平台（UWP）应用中的 Windows Api 的替代方法</a></td>
     </tr>
 </table>
  
@@ -1098,7 +1098,7 @@ Windows 10 引入通用 Windows 平台 (UWP)，该平台在 Windows 10 设备�
     </colgroup>
     <tr>
         <td>颜色指南</td>
-        <td><a href="https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip">最佳做法:颜色</a></td>
+        <td><a href="https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip">最佳做法：颜色</a></td>
     </tr>
 </table>
  
@@ -1114,7 +1114,7 @@ Windows 10 引入通用 Windows 平台 (UWP)，该平台在 Windows 10 设备�
     </colgroup>
     <tr>
         <td>版式指南</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535007">最佳做法:版式</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535007">最佳做法：版式</a></td>
     </tr>
 </table>
  
@@ -1130,7 +1130,7 @@ UI 地图是一个游戏导航布局，在其中菜单以流程图的形式呈�
     </colgroup>
     <tr>
         <td>UI 地图指南</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">最佳做法:UI 映射</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">最佳做法：UI 映射</a></td>
     </tr>
 </table>
 
@@ -1204,7 +1204,7 @@ UI 地图是一个游戏导航布局，在其中菜单以流程图的形式呈�
     </tr>
     <tr>
         <td>DirectX 12 基础（视频）</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12">更好的功率, 更好的性能:DirectX 12 中的游戏</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12">更好的功率，更好的性能：DirectX 12 中的游戏</a></td>
     </tr>
 </table>
 
@@ -1278,7 +1278,7 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
         <td><a href="https://go.microsoft.com/fwlink/?LinkID=615560">DirectXMath</a></td>
     </tr>
     <tr>
-        <td>DirectXTK 中的 Direct3D 12 支持 (博客文章)</td>
+        <td>DirectXTK 中的 Direct3D 12 支持（博客文章）</td>
         <td><a href="https://github.com/Microsoft/DirectXTK/issues/2">支持 DirectX 12</a></td>
     </tr>
 </table>
@@ -1293,7 +1293,7 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>NvidiaDX12 和不应做 (博客文章) </td>
+        <td>NvidiaDX12 和不应做（博客文章） </td>
         <td><a href="https://developer.nvidia.com/dx12-dos-and-donts-updated">Nvidia Gpu 上的 DirectX 12</a></td>
     </tr>
     <tr>
@@ -1356,9 +1356,9 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
 </table>
  
 
-### <a name="enable-in-app-product-add-on-purchases"></a>启用应用内产品 (外接程序) 购买
+### <a name="enable-in-app-product-add-on-purchases"></a>启用应用内产品（外接程序）购买
 
-外接程序 (应用内产品) 是播放机可以在游戏中购买的补充项目。 外接程序可以是游戏级别、物品或玩家可能会喜欢的任何其他内容。 适当地使用外接程序可以提供收入, 同时改善游戏体验。 通过合作伙伴中心定义和发布游戏的外接程序, 并在游戏代码中启用应用内购买。
+外接程序（应用内产品）是播放机可以在游戏中购买的补充项目。 外接程序可以是游戏级别、物品或玩家可能会喜欢的任何其他内容。 适当地使用外接程序可以提供收入，同时改善游戏体验。 通过合作伙伴中心定义和发布游戏的外接程序，并在游戏代码中启用应用内购买。
 
 <table>
     <colgroup>
@@ -1388,7 +1388,7 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
 
 若要优化性能，请利用 Windows 10 中的游戏模式，通过充分利用当前硬件的能力，为玩家提供可能最佳的游戏体验。
 
-Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具可生成有关 Windows 操作系统和应用程序的详细性能概况。 该工具包在监视内存使用量和改善游戏性能方面尤其有用。 Windows Performance Toolkit 包含在 Windows 10 SDK 和 Windows ADK 中。 此工具包包含两个独立的工具:Windows 性能记录器 (") 和 Windows 性能分析器 (WPA)。 ProcDump 是 [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default) 的一部分，也是监视 CPU 峰值的命令行实用程序，并且会在游戏崩溃期间生成转储文件。 
+Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具可生成有关 Windows 操作系统和应用程序的详细性能概况。 该工具包在监视内存使用量和改善游戏性能方面尤其有用。 Windows Performance Toolkit 包含在 Windows 10 SDK 和 Windows ADK 中。 此工具包包含两个独立的工具：Windows 性能记录器（"）和 Windows 性能分析器（WPA）。 ProcDump 是 [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default) 的一部分，也是监视 CPU 峰值的命令行实用程序，并且会在游戏崩溃期间生成转储文件。 
 
 <table>
     <colgroup>
@@ -1533,11 +1533,11 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
         <td><a href="https://developer.microsoft.com/store/publish-apps">发布 Windows 应用</a></td>
     </tr>
     <tr>
-        <td>合作伙伴中心高级发布 (GDN)</td>
+        <td>合作伙伴中心高级发布（GDN）</td>
         <td><a href="https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx">合作伙伴中心高级发布指南</a></td>
     </tr>
     <tr>
-        <td>使用 Azure Active Directory (AAD) 将用户添加到合作伙伴中心帐户</td>
+        <td>使用 Azure Active Directory （AAD）将用户添加到合作伙伴中心帐户</td>
         <td><a href="https://docs.microsoft.com/windows/uwp/publish/manage-account-users">管理帐户用户</a></td>
     </tr>   
     <tr>
@@ -1555,7 +1555,7 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
     </colgroup>
     <tr>
         <td>了解如何使用流式安装和可选包（视频）</td>
-        <td><a href="https://channel9.msdn.com/Events/Build/2017/B8093">Nextgen UWP 应用分发:构建可扩展、流能力的组件化应用</a></td>
+        <td><a href="https://channel9.msdn.com/Events/Build/2017/B8093">Nextgen UWP 应用分发：构建可扩展、流能力的组件化应用</a></td>
     </tr>
     <tr>
         <td>划分和组合内容以启用流式安装</td>
@@ -1627,7 +1627,7 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
     </colgroup>
     <tr>
         <td>应用商店清单架构</td>
-        <td><a href="https://docs.microsoft.com/uwp/schemas/storemanifest/storemanifestschema2015/schema-root">Storemanifest.xml 架构 (Windows 10)</a></td>
+        <td><a href="https://docs.microsoft.com/uwp/schemas/storemanifest/storemanifestschema2015/schema-root">Storemanifest.xml 架构（Windows 10）</a></td>
     </tr>
 </table>
  
@@ -1755,7 +1755,7 @@ Xbox Live 是首要游戏网络，连接着世界各地的数百万玩家。 开
     </tr>
     <tr>
         <td>了解可根据计划使用哪些功能</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table">开发人员计划概述:功能表</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table">开发人员计划概述：功能表</a></td>
     </tr>
     <tr>
         <td>用于开发 Xbox Live 游戏的有用资源的链接</td>
@@ -1822,7 +1822,7 @@ Xbox Live 是首要游戏网络，连接着世界各地的数百万玩家。 开
     </tr>
     <tr>
         <td>将 Xbox Live 添加到使用 Unity 创建的 UWP 游戏</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md">为 UWP 添加 Xbox Live 支持, 并将 IL2CPP 脚本后端用于 ID 和托管合作伙伴</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md">为 UWP 添加 Xbox Live 支持，并将 IL2CPP 脚本后端用于 ID 和托管合作伙伴</a></td>
     </tr>
     <tr>
         <td>设置你的开发沙盒</td>
@@ -1842,11 +1842,11 @@ Xbox Live 是首要游戏网络，连接着世界各地的数百万玩家。 开
     </tr>
     <tr>
         <td>跨平台比赛（视频）</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay">Xbox Live 多玩家:引入跨平台婚介和游戏的服务</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay">Xbox Live 多玩家：引入跨平台婚介和游戏的服务</a></td>
     </tr>
     <tr>
         <td>Fable Legends 中的跨设备玩法（视频）</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live">Fable 图例:与 Xbox Live 跨设备游戏</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live">Fable 图例：与 Xbox Live 跨设备游戏</a></td>
     </tr>
     <tr>
         <td>Xbox Live 统计数据和成就（视频）</td>

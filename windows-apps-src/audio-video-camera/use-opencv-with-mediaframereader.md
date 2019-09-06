@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aee0ed5969d87cd5a9d8ef7a621b383d4078d38
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e5a1993ea4808cabf9f82640f03f0187d431f3d2
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360586"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393507"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>通过 MediaFrameReader 使用开放源计算机视觉库 (OpenCV)
 
@@ -24,15 +24,15 @@ ms.locfileid: "66360586"
 
 * [使用 MediaFrameReader 处理媒体帧](process-media-frames-with-mediaframereader.md) - 此文提供了有关使用 **MediaFrameReader** 获取一个或多个媒体帧源的详细信息，并详细介绍了大部分示例代码。 **使用 MediaFrameReader 处理媒体帧**中专门提供了帮助程序类 **FrameRenderer** 的代码列表，该代码可以处理 XAML **Image** 元素中媒体帧展示。 本文中的示例代码也使用此帮助程序类。
 
-* [使用 OpenCV 处理软件位图](process-software-bitmaps-with-opencv.md) - 此文向你展示了如何创建本机代码 Windows 运行时组件 **OpenCVBridge**，该组件有助于在 **MediaFrameReader** 使用的 **SoftwareBitmap** 对象与 OpenCV 库使用的 **Mat** 类型之间转换。 此文中的示例代码假定你已按步骤将 **OpenCVBridge** 组件添加到 UWP 应用解决方案中。
+* [使用 OpenCV 处理软件位图](process-software-bitmaps-with-opencv.md)-本文逐步讲解如何创建 Windows 运行时 Component， **OpenCVBridge**的本机代码，这有助于在 MediaFrameReader 使用的**SoftwareBitmap**对象之间进行转换和 OpenCV 库使用的**材料**类型。 此文中的示例代码假定你已按步骤将 **OpenCVBridge** 组件添加到 UWP 应用解决方案中。
 
 若要查看和下载本文中所述方案的完整、端到端工作示例，除了这些文章以外，请参阅 Windows 通用示例 GitHub 存储库中的[相机帧 + OpenCV 示例](https://go.microsoft.com/fwlink/?linkid=854003)。
 
-若要开始快速开发，您可以包括 OpenCV 库在 UWP 应用项目中使用 NuGet 包，但这些包可能无法通过应用 certficication 过程时，将应用提交到应用商店中，因此建议您下载 OpenCV库的源代码，并将应用提交之前自行生成二进制文件。 使用 OpenCV 进行开发的信息可以在 [https://opencv.org](https://opencv.org) 中找到
+若要快速开始开发，可以使用 NuGet 包在 UWP 应用项目中包含 OpenCV 库，但当你将应用提交到应用商店时，这些包可能不会传递应用 certficication 进程，因此建议你下载 OpenCV库源代码，并在提交应用之前自行生成二进制文件。 使用 OpenCV 进行开发的信息可以在 [https://opencv.org](https://opencv.org) 中找到
 
 
-## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>实施 OpenCVHelper 本机 Windows 运行时组件
-请按照[使用 OpenCV 处理软件位图](process-software-bitmaps-with-opencv.md)中的步骤创建 OpenCV 帮助程序 Windows 运行时组件并向你的 UWP 应用解决方案中添加组件项目引用。
+## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>实现 OpenCVHelper 本机 Windows 运行时组件
+按照[使用 OpenCV 处理软件位图](process-software-bitmaps-with-opencv.md)中的步骤创建 OpenCV helper Windows 运行时组件，并向 UWP 应用解决方案添加对组件项目的引用。
 
 ## <a name="find-available-frame-source-groups"></a>查找可用的帧源组
 首先，你需要从将要获取的媒体帧中查找媒体帧源组。 通过调用 **[MediaFrameSourceGroup.FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.FindAllAsync)** 获取当前设备上的可用源组列表。 然后选择为你的应用方案提供所需传感器类型的源组。 对于此示例，我们只需选择一个可提供 RGB 相机帧的源组即可。
@@ -52,7 +52,7 @@ ms.locfileid: "66360586"
 ## <a name="initialize-the-mediaframereader"></a>初始化 MediaFrameReader
 接着，为上一步中检索到的 RGB 帧源创建一个 [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader)。 为了维持良好的帧率，你可能需要处理分辨率低于传感器分辨率的帧。 本示例提供了 **[MediaCapture.CreateFrameReaderAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync)** 方法的可选 **[BitmapSize](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapsize)** 参数，以请求将帧阅读器提供的帧调整为 640 x 480 像素。
 
-创建帧阅读器后，为 **[FrameArrived](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.FrameArrived)** 事件注册一个处理程序。 然后，创建一个新的 **[SoftwareBitmapSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource)** 对象，**FrameRenderer** 帮助程序类可以使用该对象来展示处理的图像。 然后调用 **FrameRenderer** 的构造函数。 初始化 OpenCVBridge Windows 运行时组件中定义的 **OpenCVHelper** 类实例。 **FrameArrived** 处理程序将使用此帮助程序类来处理每个帧。 最后，通过调用 **[StartAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.StartAsync)** 启动帧阅读器。
+创建帧阅读器后，为 **[FrameArrived](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.FrameArrived)** 事件注册一个处理程序。 然后，创建一个新的 **[SoftwareBitmapSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource)** 对象，**FrameRenderer** 帮助程序类可以使用该对象来展示处理的图像。 然后调用 **FrameRenderer** 的构造函数。 初始化在 OpenCVBridge Windows 运行时组件中定义的**OpenCVHelper**类的实例。 **FrameArrived** 处理程序将使用此帮助程序类来处理每个帧。 最后，通过调用 **[StartAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.StartAsync)** 启动帧阅读器。
 
 [!code-cs[OpenCVFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVFrameReader)]
 
@@ -67,9 +67,9 @@ ms.locfileid: "66360586"
 * [摄像头](camera.md)
 * [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [处理媒体帧与 MediaFrameReader](process-media-frames-with-mediaframereader.md)
-* [使用 OpenCV 进程软件位图](process-software-bitmaps-with-opencv.md)
+* [用 OpenCV 处理软件位图](process-software-bitmaps-with-opencv.md)
 * [相机帧示例](https://go.microsoft.com/fwlink/?LinkId=823230)
-* [照相机帧 + OpenCV 示例](https://go.microsoft.com/fwlink/?linkid=854003)
+* [照相机相框 + OpenCV 示例](https://go.microsoft.com/fwlink/?linkid=854003)
  
 
  

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e0148e1a997cf97942fbbb80eff2b42b1c71d4e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5fd8fa2b5264328619619df862d21f02f70f52e0
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359532"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393754"
 ---
 # <a name="keyboard-accessibility"></a>键盘辅助功能  
 
@@ -103,7 +103,7 @@ XAML
 
 为依靠屏幕阅读器和其他辅助技术的用户提供简单方法来发现应用的快捷键，这一点很有必要。 通过使用工具提示、辅助名称、辅助说明和某种其他形式的屏幕通信来传达快捷键。 至少需要将快捷键详细记录在应用的帮助内容中。
 
-可以通过屏幕阅读器记录访问键，方法是将 [**AutomationProperties.AccessKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey?view=netframework-4.8) 附加属性设置为用于说明快捷键的字符串。 还有一个 [**AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.acceleratorkey?view=netframework-4.8) 附加属性，用于记录非助记快捷键，尽管屏幕阅读器通常对这两个属性的处理方式相同。 尝试采用多种方式记录快捷键：使用工具提示、自动化属性以及书面帮助文档。
+可以通过屏幕阅读器记录访问键，方法是将 [**AutomationProperties.AccessKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accesskeyproperty) 附加属性设置为用于说明快捷键的字符串。 还有一个 [**AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.acceleratorkeyproperty) 附加属性，用于记录非助记快捷键，尽管屏幕阅读器通常对这两个属性的处理方式相同。 尝试采用多种方式记录快捷键：使用工具提示、自动化属性以及书面帮助文档。
 
 以下示例说明了如何记录用于媒体播放、暂停以及停止按钮的快捷键。
 
@@ -144,7 +144,7 @@ XAML
 ```
 
 > [!IMPORTANT]
-> 设置 [**AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.acceleratorkey?view=netframework-4.8) 或 [**AutomationProperties.AccessKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey?view=netframework-4.8) 不会启用键盘功能。 而只是向 UI 自动化框架报告应当使用哪些键，以便此类信息可以通过辅助技术传递给用户。 对于键处理的实现仍需要在代码（而非 XAML）中完成。 你将仍需要在相关控件上附加 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 或 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件的处理程序，以便在你的应用中真正实现键盘快捷键行为。 此外，不会自动为访问键提供带下划线的文本效果。 如果你希望在 UI 中显示带下划线的文本，则必须明确对助记键中特定键的文本标注下划线，作为嵌入式 [**Underline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Underline) 格式。
+> 设置 AcceleratorKey 或[**automationproperties.livesetting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accesskeyproperty)不会启用键盘功能。 [**automationproperties.livesetting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.acceleratorkeyproperty) 而只是向 UI 自动化框架报告应当使用哪些键，以便此类信息可以通过辅助技术传递给用户。 对于键处理的实现仍需要在代码（而非 XAML）中完成。 你将仍需要在相关控件上附加 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 或 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件的处理程序，以便在你的应用中真正实现键盘快捷键行为。 此外，不会自动为访问键提供带下划线的文本效果。 如果你希望在 UI 中显示带下划线的文本，则必须明确对助记键中特定键的文本标注下划线，作为嵌入式 [**Underline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Underline) 格式。
 
 为简单起见，上一个示例对于“Ctrl+A”之类的字符串没有使用资源。 但是，本地化过程中也必须考虑快捷键。 对快捷键进行本地化是相关的，因为选择将哪个键用作快捷键通常取决于元素的可见文本标签。
 
@@ -175,7 +175,7 @@ XAML
 ## <a name="an-example-of-a-visual-state-for-a-focus-indicator"></a>焦点指示符的视觉状态示例  
 我们之前曾提到，任何允许用户为其设置焦点的自定义控件都应当具有一个视觉焦点指示器。 通常，该焦点指示器可以简单到直接围绕控件的普通边界矩形周围绘制一个矩形形状。 视觉焦点的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 是该控件在控件模板中的其余组合的对等元素，但它最初是用 **Collapsed** 的 [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) 值设置的，因为该控件尚未获取焦点。 然后，当控件获取焦点时，会调用一个专门为对于 **Visible** 可见的焦点设置 **Visibility** 的视觉状态。 在焦点移到其他位置之后，会调用另一个视觉状态，**Visibility** 会变成 **Collapsed**。
 
-所有默认 XAML 控件在获得焦点时（如果它们可以获得焦点），都将显示相应的视觉焦点指示器。 此外，还有可能不同的外观，具体取决于用户的选定的主题 （尤其是当用户正在使用高对比度模式。）如果你的 UI 和不会替代控件模板中使用的 XAML 控件，您不必执行任何额外操作来获取有关的行为，并正确显示控件的可视焦点指示器。 但是如果你想要重新创建控件模板，或者如果你对 XAML 控件如何提供其视觉焦点指示器感兴趣，则本部分的剩余部分将介绍如何在 XAML 中和控件逻辑中完成此操作。
+所有默认 XAML 控件在获得焦点时（如果它们可以获得焦点），都将显示相应的视觉焦点指示器。 根据用户选择的主题，可能会有不同的外观（特别是在用户使用高对比度模式时）。如果在用户界面中使用 XAML 控件而不是替换控件模板，则无需执行任何额外操作即可在行为和正确显示的控件上获得视觉焦点指示器。 但是如果你想要重新创建控件模板，或者如果你对 XAML 控件如何提供其视觉焦点指示器感兴趣，则本部分的剩余部分将介绍如何在 XAML 中和控件逻辑中完成此操作。
 
 下面是来自 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的默认 XAML 模板的示例 XAML。
 
@@ -203,7 +203,7 @@ XAML
 </ControlTemplate>
 ```
 
-到目前为止，这只是一个组合。 若要控制焦点指示器的可见性，需要定义可切换 [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) 属性的视觉状态。 使用 [**VisualStateManager.VisualStateGroups**](https://docs.microsoft.com/dotnet/api/system.windows.visualstatemanager?view=netframework-4.8) 附加属性可完成此操作，该附加属性应用于用来定义此组合的根元素。
+到目前为止，这只是一个组合。 若要控制焦点指示器的可见性，需要定义可切换 [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) 属性的视觉状态。 这是使用[VisualStateManager](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager)和 VisualStateManager 附加属性实现的，应用于定义组合的根元素。
 
 XAML
 ```xml
@@ -239,15 +239,15 @@ XAML
 <span id="KEYBOARD_ACCESSIBILITY_AND_WINDOWS_PHONE"/>
 
 ## <a name="keyboard-accessibility-and-windows-phone"></a>键盘辅助功能和 Windows Phone
-Windows Phone 设备通常不具有专用的硬件键盘。 但是，软输入面板 (SIP) 可以支持若干键盘辅助功能方案。 屏幕阅读器可以读出“文本”  SIP 的文本输入，包括读出删除的内容。 用户可以发现其手指所在的位置，因为屏幕阅读器可以检测到用户正在浏览各键，并且它可以大声读出浏览到的键名称。 同样，可以将某些面向键盘的辅助功能概念映射到完全不使用键盘的相关辅助技术行为。 例如，即使 SIP 不包括 Tab 键，讲述人也支持等效于按下 Tab 键的触摸手势，因此在 UI 中各个控件具有有用的 Tab 键顺序仍然是一项重要的辅助功能原则。 用于导航复杂控件中的各个部件的箭头键也可通过讲述人触摸手势受到支持。 在焦点到达不用于文本输入的控件后，讲述人支持可调用该控件的操作的手势。
+Windows Phone 设备通常不具有专用的硬件键盘。 但是，软输入面板 (SIP) 可以支持若干键盘辅助功能方案。 屏幕阅读器可以读出“文本”SIP 的文本输入，包括读出删除的内容。 用户可以发现其手指所在的位置，因为屏幕阅读器可以检测到用户正在浏览各键，并且它可以大声读出浏览到的键名称。 同样，可以将某些面向键盘的辅助功能概念映射到完全不使用键盘的相关辅助技术行为。 例如，即使 SIP 不包括 Tab 键，讲述人也支持等效于按下 Tab 键的触摸手势，因此在 UI 中各个控件具有有用的 Tab 键顺序仍然是一项重要的辅助功能原则。 用于导航复杂控件中的各个部件的箭头键也可通过讲述人触摸手势受到支持。 在焦点到达不用于文本输入的控件后，讲述人支持可调用该控件的操作的手势。
 
 键盘快捷方式通常不与 Windows Phone 应用相关，因为 SIP 不包含 Ctrl 或 Alt 键。
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>相关主题  
+## <a name="related-topics"></a>相关主题
+
 * [辅助功能](accessibility.md)
 * [键盘交互](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
 * [触摸键盘示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [XAML 可访问性示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
-
+* [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
