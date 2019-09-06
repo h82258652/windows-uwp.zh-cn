@@ -351,7 +351,7 @@
               href: ../debug-test-perf/optimize-suspend-resume.md
             - name: 优化文件访问
               href: ../debug-test-perf/optimize-file-access.md
-            - name: Windows 运行时组件和优化的互操作
+            - name: Windows 运行时组件和优化互操作
               href: ../debug-test-perf/windows-runtime-components-and-optimizing-interop.md
             - name: 用于分析和性能的工具
               href: ../debug-test-perf/tools-for-profiling-and-performance.md
@@ -935,7 +935,7 @@
       items:
         - name: 使用 C++/CX 创建 Windows 运行时组件
           href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
-        - name: '操作实例：使用 C++/CX 创建一个基本 Windows 运行时组件并通过 JavaScript 或 C# 调用此组件'
+        - name: C++/CX Windows 运行时组件的演练
           href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
         - name: '使用 C# 和 Visual Basic 创建 Windows 运行时组件'
           href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
@@ -948,9 +948,9 @@
               href: ../winrt-components/diagnosing-windows-runtime-component-error-conditions.md
             - name: 分配托管的 Windows 运行时组件
               href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
-            - name: Windows 运行时类型的 .NET Framework 映射
+            - name: Windows 运行时类型的 .NET 映射
               href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
-        - name: 操作实例：创建简单的 Windows 运行时组件并通过 JavaScript 调用它
+        - name: 'C# 或 Visual Basic Windows 运行时组件的演练'
           href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
         - name: 在 Windows 运行时组件中引发事件
           href: ../winrt-components/raising-events-in-windows-runtime-components.md
