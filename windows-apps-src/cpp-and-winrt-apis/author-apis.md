@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 18dc65198d476204cfd54bd241fbd3c9ac401155
-ms.sourcegitcommit: 7ece8a9a9fa75e2e92aac4ac31602237e8b7fde5
+ms.openlocfilehash: ae8aca92d7eb7bc93ba4be99449d5e813238d744
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485169"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393499"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 创作 API
 
@@ -126,7 +126,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="if-youre-authoring-a-runtime-class-in-a-windows-runtime-component"></a>如果你正在 Windows 运行时组件中创作一个运行时类
 
-如果类型打包在一个 Windows 运行时组件中以便从应用程序中使用，则它需要是一个运行时类。 在 Microsoft 接口定义语言 (IDL) (.idl) 文件中声明运行时类（请参阅[将运行时类重构到 Midl 文件 (.idl) 中](#factoring-runtime-classes-into-midl-files-idl)）。
+如果类型打包在一个 Windows 运行时组件中以方便从应用程序中使用，则它需要是一个运行时类。 在 Microsoft 接口定义语言 (IDL) (.idl) 文件中声明运行时类（请参阅[将运行时类重构到 Midl 文件 (.idl) 中](#factoring-runtime-classes-into-midl-files-idl)）。
 
 每个 IDL 文件生成一个 `.winmd` 文件，Visual Studio 会将所有这些合并为一个与根命名空间同名的文件。 最后生成的 `.winmd` 文件将是组件使用者将参考的文件。
 

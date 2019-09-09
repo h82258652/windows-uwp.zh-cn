@@ -5,17 +5,17 @@ ms.date: 05/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: 9695548c7e12cf5fad905a171f22e6fa1f9c1af7
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 7b313e80b744279f8dc955e8c07d31aba2860c3f
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270053"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393439"
 ---
 # <a name="move-to-cwinrt-from-wrl"></a>从 WRL 移动到 C++/WinRT
 本主题介绍了如何将 [Windows 运行时 C++ 模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) 代码移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的等效项。
 
-移植到 C++/WinRT 的第一步是向项目手动添加 C++/WinRT 支持（请参阅[针对 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。 为此，请在项目中安装 [Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 在 Visual Studio 中打开项目，然后单击“项目”\>“管理 NuGet 包...”   \>“浏览”，在搜索框中键入或粘贴 **Microsoft.Windows.CppWinRT**，在搜索结果中选择该项，然后单击“安装”以安装该项目的包。   这一更改的一个效果是对 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 的支持在项目中关闭。 如果你在项目中使用 C++/CX，那么你可以让支持保持关闭状态，同时将 C++/CX 代码更新到 C++/WinRT（请参阅[从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md)）。 或者你可以重新打开支持（在项目属性中，“C/C++”  \>“常规”  \>“使用 Windows 运行时扩展”  \>  “是(/ZW)”），并首先关注移植 WRL 代码。 C++/CX 和C++/WinRT 代码可以在同一个项目中共存，但是 XAML 编译器支持和 Windows 运行时组件除外（请参阅[从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md)）。
+移植到 C++/WinRT 的第一步是向项目手动添加 C++/WinRT 支持（请参阅[针对 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。 为此，请在项目中安装 [Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 在 Visual Studio 中打开项目，然后单击“项目”\>“管理 NuGet 包...”   \>“浏览”，在搜索框中键入或粘贴 **Microsoft.Windows.CppWinRT**，在搜索结果中选择该项，然后单击“安装”以安装该项目的包。   这一更改的一个效果是对 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 的支持在项目中关闭。 如果你在项目中使用 C++/CX，那么你可以让支持保持关闭状态，同时将 C++/CX 代码更新到 C++/WinRT（请参阅[从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md)）。 或者你可以重新打开支持（在项目属性中，“C/C++”  \>“常规”  \>“使用 Windows 运行时扩展”  \>  “是(/ZW)”），并首先关注移植 WRL 代码。 C++/CX 和 C++/WinRT 代码可以在同一个项目中共存，但是 XAML 编译器支持和 Windows 运行时组件除外（请参阅[从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md)）。
 
 将项目属性“常规”  \>  “目标平台版本”设置为 10.0.17134.0（Windows 10 版本 1803）或更高版本。
 

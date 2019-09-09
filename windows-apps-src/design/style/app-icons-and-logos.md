@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 760beb6b9baf63b23efb531567f4b5319f95845c
-ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
+ms.openlocfilehash: 0801ba9036f69aef340881b9c92807e80af6b09f
+ms.sourcegitcommit: e43bc20c2f6e9375f61931c2fce95f06fd1f31df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979359"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70212070"
 ---
 # <a name="app-icons-and-logos"></a>应用图标和徽标 
 
@@ -59,14 +59,13 @@ ms.locfileid: "69979359"
 比例系数决定 UI 元素（例如文本）的大小。 比例系数范围是：100%到 400%。 较大的值会创建较大的 UI 元素，可以轻松地在高 DPI 显示器上查看。 
 
 :::row:::
-    :::column:::
-        Windows automatically sets the scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. 
-
-        (Users can override the default value by going to the **Settings &gt; Display &gt; Scale and layout** page.)
-    :::column-end:::
-    :::column:::
-        ![](images/icons/display-settings-screen.png)
-    :::column-end:::
+   :::column:::
+      Windows 会根据每个显示器的 DPI（每英寸点数）和设备的观看距离自动为显示器设置缩放比例。 
+      （用户可以转到“设置”&gt;“显示器”&gt;“缩放和布局”  页来重写默认值。）
+   :::column-end:::
+   :::column:::
+      ![](images/icons/display-settings-screen.png)
+   :::column-end:::
 :::row-end:::  
 
 

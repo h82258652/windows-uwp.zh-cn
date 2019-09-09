@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 404a6985c95718363f3dbbc3b8f27a7793b28e86
-ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
+ms.openlocfilehash: 92088906078a3a705e5fae052a50fc914561c77c
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68328852"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393460"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>从 C++/CX 移动到 C++/WinRT
 
@@ -18,7 +18,7 @@ ms.locfileid: "68328852"
 
 ## <a name="porting-strategies"></a>移植策略
 
-如果要将 C++/CX 代码逐渐移植到 C++/WinRT，那么可以这样做。 C++/CX 和C++/WinRT 代码可以在同一个项目中共存，但是 XAML 编译器支持和 Windows 运行时组件除外。 对于这两种例外情况，需要在同一个项目中针对 C++/CX 或 C++/WinRT。
+如果要将 C++/CX 代码逐渐移植到 C++/WinRT，那么可以这样做。 C++/CX 和 C++/WinRT 代码可以在同一个项目中共存，但是 XAML 编译器支持和 Windows 运行时组件除外。 对于这两种例外情况，需要在同一个项目中针对 C++/CX 或 C++/WinRT。
 
 > [!IMPORTANT]
 > 如果项目生成 XAML 应用程序，则一个建议工作流是首先在 Visual Studio 中使用 C++/WinRT 项目模板之一创建新项目（请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。 随后，开始从 C++/CX 项目复制源代码和标记。 可以使用“项目”  \>“添加新项...”  \>“Visual C++”   > “空白页(C++/WinRT)”  来添加新 XAML 页面。
@@ -471,11 +471,11 @@ C++/CX 将 Windows 运行时字符串表示为引用类型，而 C++/WinRT 则�
 | 操作 | C++/CX | C++/WinRT|
 |-|-|-|
 | 字符串类型类别 | 引用类型 | 值类型 |
-| null **HSTRING** 投影方式 | `(String^)nullptr` | `hstring{ nullptr }` |
+| null **HSTRING** 投影方式 | `(String^)nullptr` | `hstring{}` |
 | null 和 `""` 是否相同？ | 是 | 是 |
 | null 的有效性 | `s = nullptr;`<br>`s->Length == 0`（有效） | `s = nullptr;`<br>`s.size() == 0`（有效） |
 | 将字符串装箱 | `o = s;` | `o = box_value(s);` |
-| 如果 `s` 为 `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{nullptr});`<br>`o != nullptr` |
+| 如果 `s` 为 `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
 | 如果 `s` 为 `""` | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
 | 将字符串装箱，保留 null | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
 | 将字符串强制装箱 | `o = PropertyValue::CreateString(s);` | `o = box_value(s);` |
@@ -514,7 +514,7 @@ C++/CX 在平台  命名空间中提供了多个数据类型。 这些类型不�
 | Platform::Object\^  | winrt::Windows::Foundation::IInspectable  |
 | Platform::String\^  | [winrt::hstring  ](/uwp/cpp-ref-for-winrt/hstring) |
 
-### <a name="port-platformagile-to-winrtagileref"></a>将 Platform::Agile\^  移植到 winrt::agile_ref 
+### <a name="port-platformagile-to-winrtagile_ref"></a>将 Platform::Agile\^  移植到 winrt::agile_ref 
 
 C++/CX 中的 Platform::Agile\^  类型表示可以从任何线程访问的 Windows 运行时类。 C++/WinRT 的等效项是 [winrt::agile_ref  ](/uwp/cpp-ref-for-winrt/agile-ref)。
 
@@ -534,7 +534,7 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 选项包括使用初始值设定项列表、std::array  或 std::vector  。 有关详细信息和代码示例，请参阅[标准初始值设定项列表](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists)和[标准数组和矢量](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors)。
 
-### <a name="port-platformexception-to-winrthresulterror"></a>将 Platform::Exception\^  移植到 winrt::hresult_error 
+### <a name="port-platformexception-to-winrthresult_error"></a>将 Platform::Exception\^  移植到 winrt::hresult_error 
 
 当 Windows 运行时 API 返回非 S\_OK HRESULT 时，Platform::Exception\^  类型在 C++/CX 中生成。 C++/WinRT 的等效项是 [winrt::hresult_error  ](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)。
 

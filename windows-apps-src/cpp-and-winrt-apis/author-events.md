@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 创作, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: 4499b2191734c6ae66131ce92aa2654188313d5e
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: e8bb86bd8d52ff96f010bf41758f1e4602330d52
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270180"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393477"
 ---
 # <a name="author-events-in-cwinrt"></a>在 C++/WinRT 中创作事件
 
@@ -104,7 +104,7 @@ namespace winrt::BankAccountWRC::implementation
 
 现在创建新项目（在 `BankAccountWRC` 解决方案中，或在一个新解决方案中）。 创建核心应用 (C++/WinRT) 项目，然后将其命名为 BankAccountCoreApp   。
 
-添加一个引用，然后浏览到 `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`（或如果同一解决方案中有两个项目，添加一个项目到项目引用）。 单击“添加”，然后单击“确定”   。 立即生成 BankAccountCoreApp。 如果你看到一个显示负载文件 `readme.txt` 不存在的错误，从 Windows 运行时组件项目中排除该文件，重新生成该文件，然后重新生成 BankAccountCoreApp。
+添加一个引用，然后浏览到 `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`（或如果同一解决方案中有两个项目，添加一个项目到项目引用）。 单击“添加”，然后单击“确定”   。 立即生成 BankAccountCoreApp。 在极少数情况下，如果看到一个显示负载文件 `readme.txt` 不存在的错误，请从 Windows 运行时组件项目中排除该文件，重新生成该文件，然后重新生成 BankAccountCoreApp。
 
 生成过程期间,`cppwinrt.exe` 工具会运行以将引用的 `.winmd` 文件处理到包含投影类型的源代码文件中,从而为你在使用组件时提供支持。 组件的运行时类的投影类型的标头&mdash;名为 `BankAccountWRC.h`&mdash;将生成在文件夹 `\BankAccountCoreApp\BankAccountCoreApp\Generated Files\winrt\` 中。
 
