@@ -1,42 +1,44 @@
 ---
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: 使用 WinAppDeployCmd.exe 工具安装应用
-description: Windows 应用程序部署 (Winappdeploycmd.exe) 是一种命令行工具, 可用于将 Windows 10 电脑中的通用 Windows 平台 (UWP) 应用部署到任何 Windows 10 设备。
+description: Windows 应用程序部署（Winappdeploycmd.exe）是一种命令行工具，可用于将 Windows 10 电脑中的通用 Windows 平台（UWP）应用部署到任何 Windows 10 设备。
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 79e92cd781a83295a8cbbee4fe4b25022295568a
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: d6c8383a5b0041d5edf6e0c2c8d94acf82572d13
+ms.sourcegitcommit: afc25d41229d4e340c9557651b35e016d7595c3a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682654"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70808450"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>使用 WinAppDeployCmd.exe 工具安装应用
 
+Windows 应用程序部署（Winappdeploycmd.exe）是一种命令行工具，可用于将 Windows 10 电脑中的通用 Windows 平台（UWP）应用部署到任何 Windows 10 设备。 当 Windows 10 设备通过 USB 连接或在同一子网上可用，而无需为该应用 Microsoft Visual Studio 或解决方案时，可以使用此工具来部署应用程序包。 你还可以将事先未打包的应用部署到远程电脑或 Xbox One。 本文介绍如何使用此工具安装 UWP 应用。
 
-Windows 应用程序部署 (Winappdeploycmd.exe) 是一种命令行工具, 可用于将 Windows 10 电脑中的通用 Windows 平台 (UWP) 应用部署到任何 Windows 10 设备。 当 Windows 10 设备通过 USB 连接或在同一子网上可用, 而无需为该应用 Microsoft Visual Studio 或解决方案时, 可以使用此工具来部署应用程序包。 你还可以将事先未打包的应用部署到远程电脑或 Xbox One。 本文介绍如何使用此工具安装 UWP 应用。
-
-只需安装 Windows 10 SDK, 就可以从命令提示符或脚本文件运行 Winappdeploycmd.exe 工具。 当使用 Winappdeploycmd.exe 安装应用时, 将使用 .appx/. .msix 文件或 Appxmanifest.xml (对于松散文件) 将应用程序放在 Windows 10 设备上。 此命令不会安装应用所需的证书。 若要运行该应用, Windows 10 设备必须处于开发人员模式或已安装证书。
+只需安装 Windows 10 SDK，就可以从命令提示符或脚本文件运行 Winappdeploycmd.exe 工具。 当使用 Winappdeploycmd.exe 安装应用时，将使用 .appx/. .msix 文件或 Appxmanifest.xml （对于松散文件）将应用程序放在 Windows 10 设备上。 此命令不会安装应用所需的证书。 若要运行该应用，Windows 10 设备必须处于开发人员模式或已安装证书。
 
 若要部署到移动设备，必须首先创建程序包。 有关详细信息，请查看[此处](/windows/msix/package/packaging-uwp-apps)。
 
-**Winappdeploycmd.exe**工具位于 WINDOWS 10 电脑上的以下位置:**C:\\Program Files (x86)\\Windows 工具包\\10\\bin\\SDK版本&gt;x86\\winappdeploycmd.exe(基于\\&lt;** SDK 的安装路径)。 
-> [!NOTE]
-> 在 15063 版本及更高版本的 SDK 中，SDK 并行安装到版本特定的文件夹中。  以前的 SDK（14393 及以前）直接写入父文件夹。
+**Winappdeploycmd.exe**工具位于 WINDOWS 10 电脑上的以下位置：**C：\\Program Files （x86）\\Windows 工具包\\10\\bin\\SDK版本&gt;x86\\winappdeploycmd.exe（基于\\&lt;** SDK 的安装路径）。
 
-首先, 将 Windows 10 设备连接到同一子网, 或将其直接连接到使用 USB 连接的 Windows 10 计算机。 然后使用以下语法和本文后面的此命令的示例部署 UWP 应用：
+> [!NOTE]
+> 在 15063 版本及更高版本的 SDK 中，SDK 并行安装到版本特定的文件夹中。 以前的 SDK（14393 及以前）直接写入父文件夹。
+
+首先，将 Windows 10 设备连接到同一子网，或将其直接连接到使用 USB 连接的 Windows 10 计算机。 然后使用以下语法和本文后面的此命令的示例部署 UWP 应用：
 
 ## <a name="winappdeploycmd-syntax-and-options"></a>WinAppDeployCmd 语法和选项
 
 这是用于 **WinAppDeployCmd.exe** 的常规语法：
-```syntax
+
+```CMD
 WinAppDeployCmd command -option <argument>
 ```
 
 下面是关于使用各种命令的一些其他语法示例：
-```syntax
+
+```CMD
 WinAppDeployCmd devices
 WinAppDeployCmd devices <x>
 WinAppDeployCmd install -file <path> -ip <address>
@@ -59,7 +61,6 @@ WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 
 下表介绍了 **WinAppDeployCmd.exe** 命令。
 
-
 | **Command**  | **说明**                                                     |
 |--------------|---------------------------------------------------------------------|
 | 设备      | 显示可用网络设备列表。                         |
@@ -73,9 +74,7 @@ WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 | getcreds     | 从网络共享运行应用程序时，获取目标使用的网络凭据。|
 | deletecreds  | 从网络共享运行应用程序时，删除目标使用的网络凭据。|
 
-
 下表介绍了 **WinAppDeployCmd.exe** 的选项。
-
 
 | **Command**  | **说明**  |
 |--------------|------------------|
@@ -93,7 +92,6 @@ WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 | -remotedeploydir | 要将文件复制到的远程设备上的相对目录路径/名称；这将是一个自动确定的已知远程部署文件夹。 |
 | -deleteextrafile | 用于指示是否应清除远程目录中的现有文件以匹配源目录的开关。 |
 
-
 下表介绍了 **WinAppDeployCmd.exe** 的选项。
 
 | **参数**           | **说明**                                                              |
@@ -109,44 +107,43 @@ WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 | &lt;password&gt;       | 有权访问文件网络上的服务器的凭据的密码。 |
 | &lt;remotedeploydir&gt;| 设备上相对于部署位置的目录                      |
 
- 
 ## <a name="winappdeploycmdexe-examples"></a>WinAppDeployCmd.exe 示例
 
-以下是一些有关如何使用 **WinAppDeployCmd.exe** 语法在命令行进行部署的示例。
+下面是有关如何使用**winappdeploycmd.exe**的语法从命令行部署的一些示例。
 
 显示可用于部署的设备。 命令超时 3 秒。
 
-``` syntax
+``` CMD
 WinAppDeployCmd devices 3
 ```
 
-将应用程序从计算机的下载目录中的 MyApp .appx 包安装到 IP 地址为192.168.0.1 的 Windows 10 设备, 并建立与设备的连接
+将应用程序从计算机的下载目录中的 MyApp .appx 包安装到 IP 地址为192.168.0.1 的 Windows 10 设备，并建立与设备的连接
 
-``` syntax
+``` CMD
 WinAppDeployCmd install -file "Downloads\MyApp.appx" -ip 192.168.0.1 -pin A1B2C3
 ```
 
 从 IP 地址为 192.168.0.1 的 Windows 10 设备中卸载指定的程序包（基于其完整名称）。 你可以使用列表命令查看安装在设备上的任意程序包的完整名称。
 
-``` syntax
+``` CMD
 WinAppDeployCmd uninstall -package Company.MyApp_1.0.0.1_x64__qwertyuiop -ip 192.168.0.1
 ```
 
-使用指定的应用包, 更新 IP 地址为192.168.0.1 的 Windows 10 设备上已安装的应用。
+使用指定的应用包，更新 IP 地址为192.168.0.1 的 Windows 10 设备上已安装的应用。
 
-``` syntax
+``` CMD
 WinAppDeployCmd update -file "Downloads\MyApp.appx" -ip 192.168.0.1
 ```
 
 将应用的文件部署到 IP 地址为 192.168.0.1 的电脑或 Xbox 中，这些文件与该设备的部署路径下的 app1_F5 目录中 AppxManifest 位于同一文件夹中。
 
-``` syntax
+``` CMD
 WinAppDeployCmd deployfiles -file "C:\apps\App1\AppxManifest.xml" -remotedeploydir app1_F5 -ip 192.168.0.1
 ```
 
 将应用注册在 IP 地址为 192.168.0.1 的电脑或 Xbox 的部署路径下的 app1_F5 目录。
 
-``` syntax
+``` CMD
 WinAppDeployCmd registerfiles -file app1_F5 -ip 192.168.0.1
 ```
 
@@ -155,7 +152,8 @@ WinAppDeployCmd registerfiles -file app1_F5 -ip 192.168.0.1
 从电脑运行使你无需复制二进制文件就可以将 UWP 应用程序部署到 Xbox One，而不是将这些二进制文件托管在 Xbox 所在同一网络的网络共享上。  为此，需要开发人员已解锁的 Xbox One 和 Xbox 可以访问的网络驱动器上的松散文件（即 UWP 应用程序）。
 
 运行此命令注册应用：
-``` syntax
+
+``` CMD
 WinAppDeployCmd registerfiles -ip <Xbox One IP> -remotedeploydir <location of app> -username <user for network> -password <password for user>
 
 ex. WinAppDeployCmd register files -ip 192.168.0.1 -remotedeploydir \\driveA\myAppLocation -username admin -password A1B2C3
