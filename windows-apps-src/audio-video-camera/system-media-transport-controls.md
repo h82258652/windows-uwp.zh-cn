@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e306cfe1ee03e9ef4a0688145c2db7b3addd68e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 0a4163105b934f5c1e2970fab9f51b76d69d1bd8
+ms.sourcegitcommit: c95915f8a13736705eab74951a12b2cf528ea612
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318505"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876222"
 ---
 # <a name="manual-control-of-the-system-media-transport-controls"></a>手动控制系统媒体传输控件
 
@@ -66,6 +66,11 @@ ms.locfileid: "67318505"
 
 [!code-cs[SystemMediaTransportControlsUpdaterManual](./code/SMTCWin10/cs/MainPage.xaml.cs#SystemMediaTransportControlsUpdaterManual)]
 
+> [!Note]
+> 即使应用程序未提供由系统[媒体传输控件](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolsdisplayupdater.type#Windows_Media_SystemMediaTransportControlsDisplayUpdater_Type
+)显示的其他媒体元数据，也应为 SystemMediaTransportControlsDisplayUpdater 属性设置一个值。 此值有助于系统正确处理媒体内容，包括阻止屏幕保护程序在播放期间激活。
+
+
 ## <a name="update-the-system-media-transport-controls-timeline-properties"></a>更新系统媒体传输控件时间线属性
 
 系统传输控件显示有关当前播放的媒体项时间线的信息，包括媒体项的当前播放位置、开始时间和结束时间。 若要更新系统传输控件时间线属性，请创建一个新的 [**SystemMediaTransportControlsTimelineProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControlsTimelineProperties) 对象。 设置对象的属性以反映正在播放的媒体项的当前状态。 调用 [**SystemMediaTransportControls.UpdateTimelineProperties**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.updatetimelineproperties) 会导致控件更新时间线。
@@ -74,7 +79,7 @@ ms.locfileid: "67318505"
 
 -   必须提供 [**StartTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.starttime)、[**EndTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.endtime) 和 [**Position**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.playbackpositionchangerequested) 的值，才能使系统控件显示正在播放的项的时间线。
 
--   [**MinSeekTime** ](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.minseektime)并[ **MaxSeekTime** ](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.maxseektime) ，可以指定用户可以查找的时间线内的范围。 此操作的典型方案是允许内容提供商在其媒体中包含广告中断。
+-   [**MinSeekTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.minseektime)和[**MaxSeekTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.maxseektime)允许指定时间线内用户可查找的范围。 此操作的典型方案是允许内容提供商在其媒体中包含广告中断。
 
     你必须设置 [**MinSeekTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.minseektime) 和 [**MaxSeekTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.maxseektime)，才能引发 [**PositionChangeRequest**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.playbackpositionchangerequested)。
 
@@ -111,8 +116,8 @@ ms.locfileid: "67318505"
 
 ## <a name="related-topics"></a>相关主题
 * [媒体播放](media-playback.md)
-* [将与集成系统媒体传输控件](integrate-with-systemmediatransportcontrols.md) 
-* [系统媒体传输示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
+* [与系统媒体传输控件集成](integrate-with-systemmediatransportcontrols.md) 
+* [系统 Media Tranport 示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
 
  
 

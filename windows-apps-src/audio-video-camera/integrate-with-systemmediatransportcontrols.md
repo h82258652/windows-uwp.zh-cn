@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 81065c214cc2b0583a99ac88cf1c3e4cd784658a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d2c8e05d2b01b110085ed82c19cecd251c9c6971
+ms.sourcegitcommit: c95915f8a13736705eab74951a12b2cf528ea612
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361687"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876243"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a>与系统媒体传输控件集成
 
@@ -34,6 +34,11 @@ ms.locfileid: "66361687"
 [!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
 
 [!code-cs[SetMusicProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetMusicProperties)]
+
+
+> [!Note]
+> 即使应用程序未提供由系统媒体传输控件显示的其他媒体元数据，也应为[**Type**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaitemdisplayproperties.type)属性设置一个值。 此值有助于系统正确处理媒体内容，包括阻止屏幕保护程序在播放期间激活。
+
 
 ## <a name="use-commandmanager-to-modify-or-override-the-default-smtc-commands"></a>使用 CommandManager 修改或替代默认的 SMTC 命令。
 你的应用可以使用 [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) 类修改或完全替代 SMTC 控件的行为。 可以通过访问 [**CommandManager**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.commandmanager) 属性来为 **MediaPlayer** 类的每个实例获取命令管理器实例。
@@ -77,9 +82,9 @@ ms.locfileid: "66361687"
 
 ## <a name="related-topics"></a>相关主题
 * [媒体播放](media-playback.md)
-* [播放音频和视频使用 MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [手动控制的系统媒体传输控件](system-media-transport-controls.md)
-* [Github 上的系统媒体传输控件示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
+* [通过 MediaPlayer 播放音频和视频](play-audio-and-video-with-mediaplayer.md)
+* [手动控制系统媒体传输控件](system-media-transport-controls.md)
+* [Github 上的系统媒体 Tranport 控件示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
  
 
  
