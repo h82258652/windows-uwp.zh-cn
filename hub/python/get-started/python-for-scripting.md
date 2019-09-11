@@ -8,25 +8,25 @@ ms.topic: article
 keywords: python, windows 10, microsoft, python 系统管理, python 文件自动化, windows 上的 python 脚本, 在 windows 上设置 python, windows 上的 python 开发人员环境, windows 上的 python 开发人员环境, windows 上的 python 开发环境, python, 适用于文件系统任务
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: dbb7a60103c27f648ca8bf23f87dee06923f0cd9
-ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
+ms.openlocfilehash: 7ca9d5023a74610d6daa78f98ce03abf2a38e375
+ms.sourcegitcommit: 06bb87839fec26afd5d3a05c03d77b2cf1fb46e0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979330"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70887317"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>开始在 Windows 上使用 Python 进行脚本编写和自动化
 
 下面是设置开发人员环境和开始使用 Python 在 Windows 上编写脚本和自动执行文件系统操作的循序渐进指南。
 
 > [!NOTE]
-> 本文介绍如何设置你的环境, 以便在 Python 中使用某些有用的库, 这些库可跨平台自动化任务, 如搜索文件系统、访问 internet、分析文件类型等。 对于特定于 Windows 的操作, 请查看[ctypes](https://docs.python.org/3/library/ctypes.html), 它是适用于 python、 [winreg](https://docs.python.org/3/library/winreg.html)的兼容的外部函数库, 用于将 Windows 注册表 API 公开到 python, 还可以使用[python/Windows 运行时 WinRT](https://pypi.org/project/winrt/)从Python.
+> 本文介绍如何设置你的环境，以便在 Python 中使用某些有用的库，这些库可跨平台自动化任务，如搜索文件系统、访问 internet、分析文件类型等。 对于特定于 Windows 的操作，请查看[ctypes](https://docs.python.org/3/library/ctypes.html)，它是适用于 python、 [winreg](https://docs.python.org/3/library/winreg.html)的兼容的外部函数库，用于将 Windows 注册表 API 公开到 python，还可以使用[python/Windows 运行时 WinRT](https://pypi.org/project/winrt/)从Python.
 
 ## <a name="set-up-your-development-environment"></a>设置开发环境
 
-使用 Python 编写执行文件系统操作的脚本时, 我们建议您[从 Microsoft Store 安装 Python](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab)。 通过 Microsoft Store 安装将使用 basic Python3 解释器, 但会为当前用户 (避免需要管理员访问权限) 设置路径设置, 并提供自动更新。
+使用 Python 编写执行文件系统操作的脚本时, 我们建议您[从 Microsoft Store 安装 Python](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab)。 通过 Microsoft Store 安装将使用 basic Python3 解释器，但会为当前用户（避免需要管理员访问权限）设置路径设置，并提供自动更新。
 
-如果在 Windows 上使用 Python 进行**web 开发**, 我们建议使用适用于 Linux 的 Windows 子系统的其他设置。 在本指南中查找演练:[开始在 Windows 上使用 Python 进行 web 开发](./python-for-web.md)。 如果你不熟悉 Python, 请尝试我们的指南:[开始在 Windows 上使用 Python](./python-for-education.md)。 对于某些高级方案 (例如需要访问/修改 Python 的已安装文件、创建二进制文件的副本或直接使用 Python Dll), 你可能需要考虑直接从[python.org](https://www.python.org/downloads/)下载特定的 Python 版本, 或考虑安装一[种替代方法](https://www.python.org/download/alternatives), 如 Anaconda、Jython、PyPy、WinPython、IronPython 等。仅当你是更高级的 Python 程序员时, 才建议使用此方法, 具体原因是选择替代实现。
+如果在 Windows 上使用 Python 进行**web 开发**，我们建议使用适用于 Linux 的 Windows 子系统的其他设置。 在本指南中查找演练:[开始在 Windows 上使用 Python 进行 web 开发](./python-for-web.md)。 如果你不熟悉 Python, 请尝试我们的指南:[开始在 Windows 上使用 Python](./python-for-education.md)。 对于某些高级方案（例如需要访问/修改 Python 的已安装文件、创建二进制文件的副本或直接使用 Python Dll），你可能需要考虑直接从[python.org](https://www.python.org/downloads/)下载特定的 Python 版本，或考虑安装一[种替代方法](https://www.python.org/download/alternatives)，如 Anaconda、Jython、PyPy、WinPython、IronPython 等。仅当你是更高级的 Python 程序员时, 才建议使用此方法, 具体原因是选择替代实现。
 
 ## <a name="install-python"></a>安装 Python
 
@@ -96,20 +96,20 @@ VS Code 包含一个[内置终端](https://code.visualstudio.com/docs/editor/int
 3. 创建一些用于我们的示例脚本的目录:
 
     ```powershell
-    mkdir food, food/fruits, food/fruits/apples, food/fruits/oranges, food/vegetables
+    mkdir food, food\fruits, food\fruits\apples, food\fruits\oranges, food\vegetables
     ```
 
 4. 在这些目录中创建一些与我们的脚本一起使用的文件:
 
     ```powershell
-    new-item food/fruits/banana.txt, food/fruits/strawberry.txt, food/fruits/blueberry.txt, food/fruits/apples/honeycrisp.txt, food/fruits/oranges/mandarin.txt, food/vegetables/carrot.txt
+    new-item food\fruits\banana.txt, food\fruits\strawberry.txt, food\fruits\blueberry.txt, food\fruits\apples\honeycrisp.txt, food\fruits\oranges\mandarin.txt, food\vegetables\carrot.txt
     ```
 
 5. 在 python 脚本目录中创建新的 python 文件:
 
     ```powershell
     mkdir src
-    new-item src/list-directory-contents.py
+    new-item src\list-directory-contents.py
     ```
 
 6. 通过输入以下内容在 VS Code 中打开项目:`code .`
@@ -126,14 +126,14 @@ VS Code 包含一个[内置终端](https://code.visualstudio.com/docs/editor/int
     ```python
     import os
 
-    root = '%s%s%s' % ('..', os.path.sep, 'food')
+    root = os.path.join('..', 'food')
     for directory, subdir_list, file_list in os.walk(root):
-        print('Directory: ' + directory)
+        print('Directory:', directory)
         for name in subdir_list:
-            print ('Subdirectory: ' + name)
+            print('Subdirectory:', name)
         for name in file_list:
-            print('File: ' + name)
-        print(os.linesep)
+            print('File:', name)
+        print()
     ```
 
 9. 使用反撇号字符打开 VS Code 集成终端 (**Ctrl + '** ), 然后输入刚刚保存 Python 脚本的 src 目录:
@@ -151,24 +151,24 @@ VS Code 包含一个[内置终端](https://code.visualstudio.com/docs/editor/int
     应会看到如下所示的输出:
 
     ```powershell
-    Directory: ../food
+    Directory: ..\food
     Subdirectory: fruits
     Subdirectory: vegetables
 
-    Directory: ../food\fruits
+    Directory: ..\food\fruits
     Subdirectory: apples
     Subdirectory: oranges
     File: banana.txt
     File: blueberry.txt
     File: strawberry.txt
 
-    Directory: ../food\fruits\apples
+    Directory: ..\food\fruits\apples
     File: honeycrisp.txt
 
-    Directory: ../food\fruits\oranges
+    Directory: ..\food\fruits\oranges
     File: mandarin.txt
 
-    Directory: ../food\vegetables
+    Directory: ..\food\vegetables
     File: carrot.txt
     ```
 
@@ -195,15 +195,15 @@ VS Code 包含一个[内置终端](https://code.visualstudio.com/docs/editor/int
     import datetime
     import os
 
-    root = '%s%s%s' % ('..', os.path.sep, 'food')
+    root = os.path.join('..', 'food')
     for directory, subdir_list, file_list in os.walk(root):
         for name in file_list:
-            source_name = '%s%s%s' % (directory, os.path.sep, name)
+            source_name = os.path.join(directory, name)
             timestamp = os.path.getmtime(source_name)
             modified_date = str(datetime.datetime.fromtimestamp(timestamp)).replace(':', '.')
-            target_name = '%s%s%s_%s' % (directory, os.path.sep, modified_date, name)
+            target_name = os.path.join(directory, f'{modified_date}_{name}')
 
-            print ('Renaming: %s to: %s' % (source_name, target_name))
+            print(f'Renaming: {source_name} to: {target_name}')
 
             os.rename(source_name, target_name)
     ```
@@ -220,7 +220,7 @@ VS Code 包含一个[内置终端](https://code.visualstudio.com/docs/editor/int
     Renaming: ..\food\fruits\oranges\mandarin.txt to: ..\food\fruits\oranges\2019-07-18 12.24.46.398151_mandarin.txt
     Renaming: ..\food\vegetables\carrot.txt to: ..\food\vegetables\2019-07-18 12.24.46.402496_carrot.txt
 
-    ~/src/python-scripting/src$ python3 .\list-directory-contents.py
+    PS C:\src\python-scripting\src> python3 .\list-directory-contents.py
     ..\food\
     Directory: ..\food
     Subdirectory: fruits
@@ -251,6 +251,6 @@ VS Code 包含一个[内置终端](https://code.visualstudio.com/docs/editor/int
 ## <a name="additional-resources"></a>其他资源
 
 - [Python 文档:文件和目录访问](https://docs.python.org/3.7/library/filesys.html):有关使用文件系统和使用模块读取文件属性、以可移植方式操作路径以及创建临时文件的 Python 文档。
-- [了解 Python:String_Formatting 教程](https://www.learnpython.org/en/String_Formatting):有关使用 "%" 运算符进行字符串格式设置的详细信息。
+- [了解 Python:String_Formatting 教程](https://www.learnpython.org/en/String_Formatting)：有关使用 "%" 运算符进行字符串格式设置的详细信息。
 - [需要了解10个 Python 文件系统方法](https://towardsdatascience.com/10-python-file-system-methods-you-should-know-799f90ef13c2):有关用和`shutil`操作文件和文件夹的`os`中型文章。
 - [Python 的 Hitchhikers 指南:系统管理](https://docs.python-guide.org/scenarios/admin/):"固执指南" 提供有关 Python 相关主题的概述和最佳实践。 本部分介绍系统管理工具和框架。 本指南托管在 GitHub 上, 因此你可以提出问题并做出贡献。
