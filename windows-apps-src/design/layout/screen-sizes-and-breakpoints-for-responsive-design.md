@@ -100,6 +100,6 @@ UWP 应用会自动缩放 UI，以保证应用在所有 Windows 10 设备上都�
 - 使[导航窗格](../controls-and-patterns/navigationview.md)处于停靠模式，以使其始终显示。
 
 >[!TIP] 
-> 当使用[**Continuum for Phones**](https://go.microsoft.com/fwlink/p/?LinkID=699431)功能时，用户可以将监视器、 鼠标和键盘连接到兼容的 Windows 10 移动设备上，这项功能可以让移动设备以类似笔记本电脑的方式工作。针对特定断点进行设计时请记住这一新功能 - 手机将不会始终保持在固定的尺寸级别。
+> 当使用[**Continuum for Phones**](https://go.microsoft.com/fwlink/p/?LinkID=699431)功能时，用户可以将监视器、 鼠标和键盘连接到兼容的 Windows 10 移动设备上，这项功能可以让移动设备像笔记本电脑一样工作。针对特定断点进行设计时请记住这一新功能 - 手机将不会始终保持在固定的尺寸级别。
 
 
