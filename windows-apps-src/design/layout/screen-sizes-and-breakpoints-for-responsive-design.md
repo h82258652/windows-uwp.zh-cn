@@ -15,7 +15,7 @@ ms.locfileid: "57612922"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>屏幕大小和断点
 
-UWP 应用可以在运行 Windows 10 的任何设备上运行，包括手机、平板电脑、台式机、电视等。 在面对 Windows 10 生态系统海量的设备类型和屏幕尺寸进行开发时，我们的建议是：不要试图针对每种设备的屏幕进行 UI 设计，只需要针对几个关键宽度类别（称作“断点”）设计即可： 
+UWP 应用可以在运行 Windows 10 的任何设备上运行，包括手机、平板电脑、台式机、电视等。 鉴于 Windows 10 生态系统中海量的设备类型和屏幕尺寸，我们建议不要针对每种设备优化 UI，而是针对几个关键宽度类别（也称作“断点”）进行优化： 
 - 小（640px 以下）
 - 中等（641px 到 1007px）
 - 大（1008px 和以上）
@@ -77,29 +77,29 @@ UWP 应用会自动缩放 UI，以保证应用在所有 Windows 10 设备上都�
 ## <a name="general-recommendations"></a>常规建议
 
 ### <a name="small"></a>小
-- 将左右窗口边距设置为 12px 以在应用窗口的左侧和右侧边缘创建可视间隔。
+- 将左右窗口边距设置为 12px 以在应用窗口的左侧和右侧边缘之间创建可视间隔。
 - 将[应用栏](../controls-and-patterns/app-bars.md)放置在应用窗口底部以改进可访问性。
 - 一次使用一个列/区域。
 - 使用图标表示搜索（不显示搜索框）。
 - 使[导航窗格](../controls-and-patterns/navigationview.md)处于覆盖模式，以节省屏幕空间。
-- 如果你使用的是[大纲细节模式](../controls-and-patterns/master-details.md)，请使用堆叠模式来节省屏幕空间。
+- 如果你使用的是[大纲细节模式](../controls-and-patterns/master-details.md)，请使用堆叠演示模式来节省屏幕空间。
 
 ### <a name="medium"></a>中等
-- 将左右窗口边距设置为 24px 以在应用窗口的左侧和右侧边缘创建可视间隔。
+- 将左右窗口边距设置为 24px 以在应用窗口的左侧和右侧边缘之间创建可视间隔。
 - 将命令元素（如[应用栏](../controls-and-patterns/app-bars.md)）放置在应用窗口顶部。
 - 使用最多两个列/区域。
 - 显示搜索框。
-- 使[导航窗格](../controls-and-patterns/navigationview.md)处于紧缩模式，以便始终显示导航图标。
+- 使[导航窗格](../controls-and-patterns/navigationview.md)处于紧缩模式，以便始终在狭长的条带区域内显示图标。
 - 请考虑针对[电视体验](https://go.microsoft.com/fwlink/?LinkId=760736)进行进一步定制。
 
 ### <a name="large"></a>大
-- 将左右窗口边距设置为 24px 以在应用窗口的左侧和右侧边缘创建可视间隔。
+- 将左右窗口边距设置为 24px 以在应用窗口的左侧和右侧边缘之间创建可视间隔。
 - 将命令元素（如[应用栏](../controls-and-patterns/app-bars.md)）放置在应用窗口顶部。
 - 使用最多三个列/区域。
 - 显示搜索框。
 - 使[导航窗格](../controls-and-patterns/navigationview.md)处于停靠模式，以使其始终显示。
 
 >[!TIP] 
-> 当使用[**Continuum for Phones**](https://go.microsoft.com/fwlink/p/?LinkID=699431)功能时，用户可以将监视器、 鼠标和键盘连接到兼容的 Windows 10 移动设备上，这项功能可以让移动设备像笔记本电脑一样工作。针对特定断点进行设计时请记住这一新功能 - 手机将不会始终保持在固定的尺寸级别。
+> 使用[手机版 Continuum](https://go.microsoft.com/fwlink/p/?LinkID=699431) 时，用户可以将监视器、 鼠标和键盘连接到兼容的 Windows 10 移动设备上，让移动设备像笔记本电脑一样工作。针对特定断点进行设计时请记住这一新功能 - 手机将不会始终保持在固定的尺寸级别。
 
 
