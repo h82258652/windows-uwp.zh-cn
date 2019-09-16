@@ -24,7 +24,7 @@ ms.locfileid: "65984114"
 
 介绍结合了最佳做法的 UWP 功能，用于创建在所有类型的支持 Windows 的设备上都表现出色的应用。
 
-[ **Fluent Design System**](/windows/apps/fluent-design-system)
+[**Fluent Design System**](/windows/apps/fluent-design-system)
 
 Fluent Design System 展示了我们创建自适应、共鸣和美观用户界面的目标和原则。
 
