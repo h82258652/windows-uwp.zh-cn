@@ -13,12 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e3465d108fc725c45999782eff80593832208b5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 31371c2b2a4826939de428fb6d7c082b78d05843
+ms.sourcegitcommit: 6951827b7d0948618e1fbb082c28794c7f23f83c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319512"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70923146"
 ---
 # <a name="menus-and-context-menus"></a>菜单和上下文菜单
 
@@ -32,7 +32,7 @@ ms.locfileid: "67319512"
 
 | **平台 API** | **Windows UI 库** |
 | - | - |
-| [MenuFlyout 类](/uwp/api/windows.ui.xaml.controls.menuflyout)、[MenuBar 类](/uwp/api/windows.ui.xaml.controls.menubar)、[ContextFlyout 属性](/uwp/api/windows.ui.xaml.uielement.contextflyout)、[FlyoutBase.AttachedFlyout 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) | [MenuBar 类](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| [MenuFlyout 类](/uwp/api/windows.ui.xaml.controls.menuflyout)、[MenuBar 类](/uwp/api/windows.ui.xaml.controls.menubar)、[ContextFlyout 属性](/uwp/api/windows.ui.xaml.uielement.contextflyout)、[FlyoutBase.AttachedFlyout 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) | [MenuBar 类](/uwp/api/microsoft.ui.xaml.controls.menubar) |
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -90,7 +90,7 @@ MenuBar 和 CommandBar 都表示可用于向用户公开命令的表面。 MenuB
 - 具有始终显示的单个入口点（例如，位于屏幕顶部的“文件”菜单）。
 - 通常附加到某个按钮或父菜单项。
 - 通过左键单击（或等效操作，例如用手指点击）进行调用。
-- 通过 [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout) 或 [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) 属性与元素相关联，或在应用窗口顶部的菜单栏中进行分组。
+- 通过 [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout) 或 [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) 属性与元素相关联，或在应用窗口顶部的菜单栏中进行分组。
 
 ### <a name="context-menus"></a>上下文菜单
 
