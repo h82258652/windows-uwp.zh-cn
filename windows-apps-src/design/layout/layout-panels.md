@@ -5,12 +5,12 @@ ms.date: 04/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b1d663c0d4c4ff86650f015e5e428d6505af156
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 154271e455996bee15ac01c2e41f55b0d9c08fe0
+ms.sourcegitcommit: 61194375c0889b73ee2b978c444c4b90a576b3e4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317140"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039145"
 ---
 # <a name="layout-panels"></a>布局面板
 
@@ -21,6 +21,22 @@ ms.locfileid: "67317140"
 - 面板如何调整其子元素的大小。
 - 如何交错放置重叠子元素（z 顺序）。
 - 创建所需布局时需要的嵌套面板元素的数量和复杂度。
+
+## <a name="examples"></a>示例
+
+<table>
+<th align="left">XAML 控件库<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/RatingControl">打开此应用，了解 RatingControl 的实际应用</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="panel-properties"></a>面板属性
 
@@ -58,14 +74,14 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
 
 ## <a name="relativepanel"></a>RelativePanel
 
-[**RelativePanel** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel)允许您通过指定它们在哪里相对于其他元素，而相对于面板布局 UI 元素。 默认情况下，将一个元素放置在面板的左上角。 你可以将 RelativePanel 与 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) 和 [**AdaptiveTrigger**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) 一起使用，以针对不同的窗口大小重新排列 UI。
+通过[**RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) ，您可以通过指定它们相对于其他元素的位置以及与面板相关的方式来对 UI 元素进行布局。 默认情况下，将一个元素放置在面板的左上角。 你可以将 RelativePanel 与 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) 和 [**AdaptiveTrigger**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) 一起使用，以针对不同的窗口大小重新排列 UI。
 
 此表显示了可用于相对于面板或其他元素对齐某个元素的附加属性。
 
 面板对齐 | 同级对齐 | 同级位置
 ----------------|-------------------|-----------------
-[**AlignTopWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithpanelproperty) | [**AlignTopWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithproperty) | [**Above**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel)  
-[**AlignBottomWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithpanelproperty) | [**AlignBottomWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithproperty) | [**下面**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.belowproperty)  
+[**AlignTopWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithpanelproperty) | [**AlignTopWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithproperty) | [**上述**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel)  
+[**AlignBottomWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithpanelproperty) | [**AlignBottomWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithproperty) | [**在线订购**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.belowproperty)  
 [**AlignLeftWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel) | [**AlignLeftWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.getalignleftwith) | [**LeftOf**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.leftofproperty)  
 [**AlignRightWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignrightwithpanelproperty) | [**AlignRightWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignrightwithproperty) | [**RightOf**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.setrightof)  
 [**AlignHorizontalCenterWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithpanelproperty) | [**AlignHorizontalCenterWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithproperty) | &nbsp;   
@@ -105,7 +121,7 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
 
 ## <a name="stackpanel"></a>StackPanel
 
-[**StackPanel** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)将其子元素排列成水平或垂直的一行。 StackPanel 通常用于在页面上排列一小部分 UI。
+[**System.windows.controls.stackpanel>** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)将其子元素排列成可水平或垂直方向的单个线条。 StackPanel 通常用于在页面上排列一小部分 UI。
 
 你可以使用 [**Orientation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel.orientation) 属性来指定子元素的方向。 默认方向是 [**Vertical**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Orientation)。
 
@@ -166,13 +182,13 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
 
 通过使用 **Auto** 缩放或比例缩放，你可以分配列或行中的空间。 自动调整大小可用于 UI 元素调整大小以适应其内容或父容器。 还可以将自动调整大小用于网格的行和列。 若要使用自动调整大小，请将 UI 元素的高度和/或宽度设置为**自动**。
 
-你可以使用成比例调整大小（也称为*比例缩放*）以按加权比例来分配网格的行和列的可用空间。 在 XAML 中，星号值表示作为\*(或*n* \*加权星形调整大小)。 例如，若要指定比第二列中的两列布局 5 次更广的那一个列，请使用"5\*"和"\*"用于[**宽度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width)中的属性[**ColumnDefinition** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition)元素。
+你可以使用成比例调整大小（也称为*比例缩放*）以按加权比例来分配网格的行和列的可用空间。 在 XAML 中，星号值表示为\* （对于加权星形大小调整，为*n* \* ）。 例如，若要指定某一列比2列布局中的第二列宽5倍，请在[**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition)元素中\*为[**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width)属性\*使用 "5" 和 ""。
 
 此示例在具有 4 列的 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 中，结合使用了固定、自动、成比例调整大小。
 
 &nbsp;|&nbsp;|&nbsp;
 ------|------|------
-Column_1 | **自动** | 列会调整为适合其内容的大小。
+Column_1 | **Auto** | 列会调整为适合其内容的大小。
 Column_2 | * | Auto 列经过计算后，列获得剩余宽度的一部分。 Column_2 将是 Column_4 宽度的一半。
 Column_3 | **44** | 该列宽度将是 44 像素。
 Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分。 Column_4 将是 Column_2 的两倍宽。
@@ -197,7 +213,7 @@ Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分
 
 ## <a name="variablesizedwrapgrid"></a>VariableSizedWrapGrid
 
-[**VariableSizedWrapGrid** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid)是其中的行或列自动换行到新行或列的网格样式布局面板时[ **MaximumRowsOrColumns** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns)达到值. 
+[**VariableSizedWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid)是网格样式布局面板，其中的行或列在达到[**MaximumRowsOrColumns**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns)值时自动换行到新行或列。 
 
 [  **Orientation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.orientation) 属性在换行前指定网格将在行还是列中添加其项目。 默认方向为 **Vertical**，这意味着网格将从上到下添加项目，直到列填满，然后换行到新列。 当该值为 **Horizontal** 时，网格从左到右添加项目，然后换行到新行。
 
@@ -256,3 +272,6 @@ Canvas 不对其子素的大小进行任何调整。 每个元素都必须指定
 
 存在多种只能用作 [**ItemsPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) 来显示 [**ItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) 中的项的特殊用途面板。 它们是 [**ItemsStackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsStackPanel)、[**ItemsWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid)、[**VirtualizingStackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VirtualizingStackPanel) 和 [**WrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WrapGrid)。 你无法将这些面板用于常规 UI 布局。
 
+## <a name="get-the-sample-code"></a>获取示例代码
+
+- [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
