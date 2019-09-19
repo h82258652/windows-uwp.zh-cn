@@ -7,12 +7,12 @@ ms.date: 05/01/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, 桌面, toast 通知, 桌面桥, 用于发送 toast 的选项, com 服务器, com 激活器, com, 虚假 com, 无 com, 没有 com, 发送 toast
 ms.localizationpriority: medium
-ms.openlocfilehash: ef4810ec594173f3cc4da35d63143909f4859e3c
-ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
+ms.openlocfilehash: 030f8b1380dc28a41e65989ccbda688523fad965
+ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340811"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71100820"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>来自桌面应用的 Toast 通知
 
@@ -28,7 +28,7 @@ ms.locfileid: "68340811"
 
 下表说明了用于在桌面应用内支持 toast 的选项，以及对应的受支持的功能。 你可以使用此表来选择最适合你的情形的选项。<br/><br/>
 
-| Option | 视觉对象 | 操作 | 输入 | 在进程内激活 |
+| 选项 | 视觉对象 | 操作 | 输入 | 在进程内激活 |
 | -- | -- | -- | -- | -- |
 | [COM 激活器](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
 | [无 COM/存根 CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
@@ -54,7 +54,7 @@ ms.locfileid: "68340811"
 > [!NOTE]
 > 如果你将 COM 激活器添加到你现有的桌面桥应用，前台/后台和旧版通知激活现在将激活 COM 激活器而不是命令行。
 
-若要了解如何使用此选项，请参阅[从桌面 C# 应用发送本地 toast 通知](send-local-toast-desktop.md)或[从桌面 C++ WRL 应用发送本地 toast 通知](send-local-toast-desktop-cpp-wrl.md)。
+若要了解如何使用此选项，请参阅[从桌面C#应用发送本地 toast 通知](send-local-toast-desktop.md)或[从 desktop C++ WRL apps 发送本地 toast 通知](send-local-toast-desktop-cpp-wrl.md)。
 
 
 ## <a name="alternative-option---no-com--stub-clsid"></a>备用选项 - 无 COM / 存根 CLSID
