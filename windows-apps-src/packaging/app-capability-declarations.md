@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bc591f66505fa6e7019cb37fed636700d8dec709
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 5905c494babfcbbe8dd93b85e30602ef490fcc81
+ms.sourcegitcommit: f0588a086cf2499968bf03b10c6bce5f518e90cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393601"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71141948"
 ---
 # <a name="app-capability-declarations"></a>应用功能声明
 
@@ -31,7 +31,10 @@ ms.locfileid: "70393601"
 
 ## <a name="general-use-capabilities"></a>常用功能
 
-常用功能适用于最常见的应用场景。
+一般使用功能是使用应用包清单中的**功能**元素指定的。 这些功能适用于最常见的应用方案。
+
+> [!NOTE]
+> 所有**功能**元素都必须在包清单中的 "**功能**" 节点下的 " [CustomCapability](#custom-capabilities) " 和 " [DeviceCapability](#device-capabilities) " 元素之前。
 
 | 功能应用场景 | 功能用法 |
 |---------------------|------------------|
@@ -59,10 +62,10 @@ ms.locfileid: "70393601"
 
 ## <a name="device-capabilities"></a>设备功能
 
-设备功能允许你的应用访问外围设备和内部设备。 可在你的应用包清单中使用 **DeviceCapability** 元素指定设备功能。 此元素可能需要其他子元素，并且某些设备功能需要手动添加到该程序包清单。 有关详细信息，请参阅[如何在程序包清单中指定设备功能](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest)和 [**DeviceCapability Schema reference**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability)。
+设备功能允许你的应用访问外围设备和内部设备。 在应用程序包清单中使用**DeviceCapability**元素指定设备功能。 此元素可能需要其他子元素，并且某些设备功能需要手动添加到该程序包清单。 有关详细信息，请参阅[如何在程序包清单中指定设备功能](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest)和 [**DeviceCapability Schema reference**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability)。
 
 > [!NOTE]
-> 在**功能**元素下可以有多个**DeviceCapability**和**功能**元素，但所有**DeviceCapability**元素必须位于**功能**元素之后。
+> 包清单中的**功能**元素下可以有多个**DeviceCapability**元素。 所有**DeviceCapability**元素必须位于任何**功能**和[CustomCapability](#custom-capabilities)元素之后。
 
 | 功能应用场景 | 功能用法 |
 |---------------------|------------------|
@@ -107,6 +110,9 @@ ms.locfileid: "70393601"
 </Capabilities>
 </Package>
 ```
+
+> [!NOTE]
+> 所有受限功能元素都必须在包清单中 "**功能**" 节点下的 " [CustomCapability](#custom-capabilities) " 和 " [DeviceCapability](#device-capabilities) " 元素之前。
 
 ### <a name="restricted-capability-approval-process"></a>受限功能审核流程
 
@@ -243,6 +249,9 @@ ms.locfileid: "70393601"
 </Capabilities>
 </Package>
 ```
+
+> [!NOTE]
+> 所有**CustomCapability**元素都必须在包清单中的 "**功能**" 节点下[的任何](#device-capabilities)**功能**元素和之前。
 
 ## <a name="related-topics"></a>相关主题
 
