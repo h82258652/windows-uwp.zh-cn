@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 91903365a258d54804b420cd217dd7c25d79406a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: f623c18db5af8e503965c0c4518e35e263791a51
+ms.sourcegitcommit: 61194375c0889b73ee2b978c444c4b90a576b3e4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63813687"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039158"
 ---
 # <a name="radio-buttons"></a>单选按钮
 
@@ -187,14 +187,20 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 ![单选按钮间距指南](images/radiobutton-redlines.png)
 
+## <a name="get-the-sample-code"></a>获取示例代码
+
+- [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
+
 ## <a name="related-topics"></a>相关主题
 
-**面向设计人员**
+### <a name="for-designers"></a>对于设计人员
+
 - [按钮](buttons.md)
 - [切换开关](toggles.md)
 - [复选框](checkbox.md)
 - [列表和组合框](lists.md)
 - [滑块](slider.md)
 
-**面向开发人员 (XAML)**
+### <a name="for-developers-xaml"></a>面向开发人员 (XAML)
+
 - [RadioButton 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.radiobutton)
