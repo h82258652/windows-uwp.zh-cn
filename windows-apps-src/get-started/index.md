@@ -6,15 +6,15 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: 入门, Windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: c3f34d6ff8b23d23589d6899984f53fd6be34aca
-ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
+ms.openlocfilehash: 106e85fc0bd74740d99d5de6cb34c8b5a6e75e0f
+ms.sourcegitcommit: 7791596c25baf9d222729e057ecdf81b45a59f0c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131933"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71205908"
 ---
-# <a name="get-started-with-windows-10-apps"></a>Windows 10 应用入门 
- 
+# <a name="get-started-with-windows-10-apps"></a>Windows 10 应用入门
+
 <p>构建可用于所有 Windows 10 设备的应用，或使用新功能和更新功能增强现有应用。</p>  
 <ul class="cardsK panelContent">
     <li>
@@ -222,8 +222,7 @@ ms.locfileid: "67131933"
                 <div class="card">
                     <div class="cardText">
                         <h3>刚接触开发？</h3>
-                        <p><a href="//docs.microsoft.com/learn">Microsoft Learn</a></p>
-                        <p><a href="//www.linkedin.com/learning/learning-universal-windows-app-development/welcome">领英学习</a></p>
+                        <p><a href="//docs.microsoft.com/en-us/learn/browse/?products=windows&resource_type=module">Microsoft Learn 上的 Windows</a></p>
                         </div>
                     </div>
                 </div>
@@ -235,7 +234,7 @@ ms.locfileid: "67131933"
                 <div class="card">
                     <div class="cardText">
                         <h3>浏览相关文档</h3>
-                        <p><a href="//docs.microsoft.com/dotnet/csharp/index">C# 指南</a></p>
+                        <p><a href="//docs.microsoft.com/dotnet/csharp/">C# 指南</a></p>
                         <p><a href="//docs.microsoft.com/visualstudio/ide/">Visual Studio</a></p>
                     </div>
                 </div>

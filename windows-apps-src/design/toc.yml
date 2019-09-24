@@ -169,6 +169,8 @@
           href: controls-and-patterns/navigationview.md
         - name: Pivot
           href: controls-and-patterns/pivot.md
+        - name: 选项卡视图
+          href: controls-and-patterns/tab-view.md
     - name: 人脉
       items:
         - name: 联系人卡片

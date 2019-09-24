@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c85eaacd62de9a2efe380197ba467c5009cd0c5
-ms.sourcegitcommit: 9f8f431fcacdb519126a0d831ba93baab21459f8
+ms.sourcegitcommit: f0588a086cf2499968bf03b10c6bce5f518e90cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2019
+ms.lasthandoff: 09/20/2019
 ms.locfileid: "68757440"
 ---
 # <a name="launch-the-windows-maps-app"></a>启动 Windows 地图应用
@@ -18,7 +18,7 @@ ms.locfileid: "68757440"
 
 
 
-了解如何从你的应用启动 Windows 地图应用。 本主题介绍**bingmaps**:、 **ms-drive to:** 、 **ms-行走:** 和**ms settings:** 统一资源标识符 (URI) 方案。 使用这些 URI 方案来将 Windows 地图应用启动为特定的地图、路线和搜索结果或从“设置”应用下载 Windows 地图离线地图。
+了解如何从你的应用启动 Windows 地图应用。 本主题介绍**bingmaps**：、 **ms-drive to：** 、 **ms-行走：** 和**ms settings：** 统一资源标识符（URI）方案。 使用这些 URI 方案来将 Windows 地图应用启动为特定的地图、路线和搜索结果或从“设置”应用下载 Windows 地图离线地图。
 
 **提示** 若要了解有关从你的应用启动 Windows 地图应用的详细信息，请从 GitHub 上的 [Windows 通用示例存储库](https://go.microsoft.com/fwlink/p/?LinkId=619979)中下载[通用 Windows 平台 (UWP) 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)。
 
@@ -26,9 +26,9 @@ ms.locfileid: "68757440"
 
 URI 方案允许你通过单击超链接（或在你的应用中以编程方式）打开应用。 正如可以使用 **mailto:** 打开新的电子邮件或使用 **http:** 打开 Web 浏览器，你还可以使用 **bingmaps:** 、**ms-drive-to:** 和 **ms-walk-to:** 打开 Windows 地图应用。
 
--   **Bingmaps:** URI 提供位置、搜索结果、方向和流量的地图。
--   **Ms 驱动器:** URI 提供从当前位置开始旋转的行车路线。
--   **Ms 演练:** URI 提供当前位置的转走行走方向。
+-   **Bingmaps：** URI 提供位置、搜索结果、方向和流量的地图。
+-   **Ms 驱动器：** URI 提供从当前位置开始旋转的行车路线。
+-   **Ms 演练：** URI 提供当前位置的转走行走方向。
 
 例如，以下 URI 将打开 Windows 地图应用，并显示以纽约市为中心的地图。
 
@@ -40,7 +40,7 @@ URI 方案允许你通过单击超链接（或在你的应用中以编程方式�
 
 下面是 URI 方案的说明：
 
-**bingmaps:？查询**
+**bingmaps：？查询**
 
 在此 URI 方案中，*query* 是一系列参数名称/值对：
 
@@ -51,7 +51,7 @@ URI 方案允许你通过单击超链接（或在你的应用中以编程方式�
 ## <a name="launch-a-uri-from-your-app"></a>从你的应用启动 URI
 
 
-若要从应用启动 Windows Maps 应用, 请调用[**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)方法, 并使用**bingmaps:** 、 **ms-驱动器到:** 或**ms 演练:** OMA-URI. 以下示例启动前一个示例中相同的 URI。 有关通过 URI 启动应用的详细信息，请参阅[启动 URI 的默认应用](launch-default-app.md)。
+若要从应用启动 Windows Maps 应用，请调用[**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)方法，并使用**bingmaps：** 、 **ms-驱动器到：** 或**ms 演练：** OMA-URI. 以下示例启动前一个示例中相同的 URI。 有关通过 URI 启动应用的详细信息，请参阅[启动 URI 的默认应用](launch-default-app.md)。
 
 ```cs
 // Center on New York City
@@ -77,10 +77,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps:?                                                                 | 打开地图应用。                                                                                                                                                                            |
 | bingmaps:?cp=40.726966~-74.006076                                          | 显示以纽约市为中心的地图。                                                                                                                                                    |
 | bingmaps:?cp=40.726966~-74.006076&amp;lvl=10                                   | 使用缩放级别 10 显示以纽约市为中心的地图。                                                                                                                            |
-| bingmaps:？ bb = 39.719\_-74.52 ~ 41.71\_-73。5                                   | 显示纽约市（**bb** 参数中指定的区域）的地图。                                                                                                           |
-| bingmaps:？ bb = 39.719\_-74.52 ~ 41.71\_-73.5 & cp = 47 ~-122                        | 显示纽约市（使用边界框参数指定的区域）的地图。 将忽略使用 **cp** 参数为西雅图指定的中心点，因为指定了 *bb*。 |
-| bingmaps:？ collection = 36.116584\_-115.176753\_Caesars% 20Palace & lvl = 16 | 显示名为恺撒王宫酒店的某个点（位于拉斯维加斯）的地图并将缩放级别设置为 16。                                                                                                 |
-| bingmaps:？ collection = 40.726966\_-74.006076\_部分% 255FBusiness        | 显示一个具有名为 "部分\_业务" 的点的地图 (在内华达州拉斯维加斯)。                                                                                                                               |
+| bingmaps：？ bb = 39.719\_-74.52 ~ 41.71\_-73。5                                   | 显示纽约市（**bb** 参数中指定的区域）的地图。                                                                                                           |
+| bingmaps：？ bb = 39.719\_-74.52 ~ 41.71\_-73.5 & cp = 47 ~-122                        | 显示纽约市（使用边界框参数指定的区域）的地图。 将忽略使用 **cp** 参数为西雅图指定的中心点，因为指定了 *bb*。 |
+| bingmaps：？ collection = 36.116584\_-115.176753\_Caesars% 20Palace & lvl = 16 | 显示名为恺撒王宫酒店的某个点（位于拉斯维加斯）的地图并将缩放级别设置为 16。                                                                                                 |
+| bingmaps：？ collection = 40.726966\_-74.006076\_部分% 255FBusiness        | 显示一个具有名为 "部分\_业务" 的点的地图（在内华达州拉斯维加斯）。                                                                                                                               |
 | bingmaps:?cp=40.726966~-74.006076&amp;trfc=1&amp;sty=a                             | 显示纽约市的地图并已启用路况和鸟瞰图样式。                                                                                                                          |
 | bingmaps:?cp=47.6204~-122.3491&amp;sty=3d                                      | 显示 Space Needle 的 3D 视图。                                                                                                                                                        |
 | bingmaps:?cp=47.6204~-122.3491&amp;sty=3d&amp;rad=200&amp;pit=75&amp;hdg=165               | 显示 Space Needle 的 3D 视图（半径 200 米、俯仰 75 度和方位 165 度）。                                                                             |
@@ -97,7 +97,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps:?q=1600%20Pennsylvania%20Ave,%20Washington,%20DC     | 显示地图并搜索位于华盛顿哥伦比亚特区的白宫的地址。 |
 | bingmaps:?q=coffee&amp;where=Seattle                              | 搜索西雅图的咖啡馆。                                                    |
 | bingmaps:?cp=40.726966~-74.006076&where=New%20York            | 在指定的中心点附近搜索纽约。                             |
-| bingmaps:？ bb = 39.719\_-74.52 ~ 41.71\_-73.5 & q = 比萨饼              | 在指定的边框（即在纽约市）搜索比萨。      |
+| bingmaps：？ bb = 39.719\_-74.52 ~ 41.71\_-73.5 & q = 比萨饼              | 在指定的边框（即在纽约市）搜索比萨。      |
 
  
 ## <a name="display-multiple-points"></a>显示多个点
@@ -107,11 +107,11 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 | 示例 URI | 结果                                                                                                                   |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:？ collection = 36.116584\_-115.176753\_Caesars% 20Palace                                                                                                | 搜索拉斯维加斯的恺撒王宫酒店，并在地图上以最佳的地图视图显示结果。                         |
-| bingmaps:？ collection = 36.116584\_-115.176753\_Caesars% 20Palace & lvl = 16                                                                                         | 显示名为恺撒王宫酒店（位于拉斯维加斯）的图钉，缩放级别为 16。                                               |
-| bingmaps:？\_collection = 36.116584-115.176753\_Caesars% 20Palace ~ 36.113126\_-115.175188\_% 20Bellagio & lvl = 16 & cp = 36.114902 ~-115.176669                   | 显示名为恺撒王宫酒店和百乐宫酒店（均位于拉斯维加斯）的两枚图钉，缩放级别为 16。              |
-| bingmaps:？ collection = 40.726966\_-74.006076\_虚设% 255FBusiness% 255Fwith% 255FUnderscore                                                                        | 使用带\_\_下划线的名为虚设Business的\_图钉显示纽约。                                                  |
-| bingmaps:？ collection = name。宾馆%\_20List ~ 36.116584-115.176753\_Caesars% 20Palace ~ point. 36.113126\_-115.175188\_% 20Bellagio & lvl = 16 & cp = 36.114902 ~-115.176669 | 显示名为酒店列表的列表，以及拉斯维加斯的恺撒王宫酒店和百乐宫酒店的两枚图钉，缩放级别为 16。 |
+| bingmaps：？ collection = 36.116584\_-115.176753\_Caesars% 20Palace                                                                                                | 搜索拉斯维加斯的恺撒王宫酒店，并在地图上以最佳的地图视图显示结果。                         |
+| bingmaps：？ collection = 36.116584\_-115.176753\_Caesars% 20Palace & lvl = 16                                                                                         | 显示名为恺撒王宫酒店（位于拉斯维加斯）的图钉，缩放级别为 16。                                               |
+| bingmaps：？\_collection = 36.116584-115.176753\_Caesars% 20Palace ~ 36.113126\_-115.175188\_% 20Bellagio & lvl = 16 & cp = 36.114902 ~-115.176669                   | 显示名为恺撒王宫酒店和百乐宫酒店（均位于拉斯维加斯）的两枚图钉，缩放级别为 16。              |
+| bingmaps：？ collection = 40.726966\_-74.006076\_虚设% 255FBusiness% 255Fwith% 255FUnderscore                                                                        | 使用带\_\_下划线的名为虚设Business的\_图钉显示纽约。                                                  |
+| bingmaps：？ collection = name。宾馆%\_20List ~ 36.116584-115.176753\_Caesars% 20Palace ~ point. 36.113126\_-115.175188\_% 20Bellagio & lvl = 16 & cp = 36.114902 ~-115.176669 | 显示名为酒店列表的列表，以及拉斯维加斯的恺撒王宫酒店和百乐宫酒店的两枚图钉，缩放级别为 16。 |
 
  
 
@@ -124,10 +124,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 | 示例 URI                                                                                                              | 结果                                                                                                                                                         |
 |-------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:？ rtp = 44.9160\_-110.4158 ~ 45.0475\_-109.4187                                                             | 显示带有点对点路线的地图。 因为未指定 *mode*，所以将使用交通首选项的用户的模式提供路线。 |
+| bingmaps：？ rtp = 44.9160\_-110.4158 ~ 45.0475\_-109.4187                                                             | 显示带有点对点路线的地图。 因为未指定 *mode*，所以将使用交通首选项的用户的模式提供路线。 |
 | bingmaps:?cp=43.0332~-87.9167&amp;trfc=1                                                                                    | 显示以威斯康辛州的密尔沃基市为中心的地图以及路况。                                                                                                        |
-| bingmaps:？ rtp = adr。一种 Microsoft 方法, Redmond, WA 98052 ~ 39.0731\_-108.7238                                           | 显示带有从指定的地址到指定位置的路线的地图。                                                                            |
-| bingmaps:？ rtp = adr% 20Microsoft% 20Way,% 20Redmond,% 20WA,% 2098052 ~ 36.1223\_-111.9495\_总计% 20Canyon% 20northern% 20rim | 显示从 1 Microsoft Way, Redmond, WA, 98052 到 Grand Canyon's northern rim 的路线。                                                                |
+| bingmaps：？ rtp = adr。一种 Microsoft 方法，Redmond，WA 98052 ~ 39.0731\_-108.7238                                           | 显示带有从指定的地址到指定位置的路线的地图。                                                                            |
+| bingmaps：？ rtp = adr% 20Microsoft% 20Way，% 20Redmond，% 20WA，% 2098052 ~ 36.1223\_-111.9495\_总计% 20Canyon% 20northern% 20rim | 显示从 1 Microsoft Way, Redmond, WA, 98052 到 Grand Canyon's northern rim 的路线。                                                                |
 | bingmaps:?rtp=adr.Davenport, CA~adr.Yosemite Village                                                                    | 显示地图以及从指定的位置到指定的地标的驾车路线。                                                                   |
 | bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&amp;mode=d                      | 显示从芒廷维尤到旧金山国际机场（这两者均位于加利福尼亚州）的驾车路线。                                                                  |
 | bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&amp;mode=w                      | 显示从芒廷维尤到旧金山国际机场（这两者均位于加利福尼亚州）的步行路线。                                                                  |
@@ -136,9 +136,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 ## <a name="display-turn-by-turn-directions"></a>显示路线规划
 
 
-**Ms 驱动器到:** 和**ms 演练:** URI 方案使你可以直接启动到路由的打开视图。 这些 URI 方案只能提供自用户的当前位置开始的路线。 如果必须在不包含用户当前位置的点之间提供指示, 请使用**bingmaps:** URI 方案, 如前一部分中所述。 有关这些 URI 方案的详细信息，请参阅 [ms-drive-to:](#ms-drive-to-param-reference) 和 [ms-walk-to:](#ms-walk-to-param-reference) 参数引用。
+**Ms 驱动器到：** 和**ms 演练：** URI 方案使你可以直接启动到路由的打开视图。 这些 URI 方案只能提供自用户的当前位置开始的路线。 如果必须在不包含用户当前位置的点之间提供指示，请使用**bingmaps：** URI 方案，如前一部分中所述。 有关这些 URI 方案的详细信息，请参阅 [ms-drive-to:](#ms-drive-to-param-reference) 和 [ms-walk-to:](#ms-walk-to-param-reference) 参数引用。
 
-> **重要提示** 当**ms 驱动器到:** 或**ms 演练:** 将启动 URI 方案, 映射应用将检查设备是否曾经有 GPS 位置修复。 如果有，则“地图”应用将继续进行路线规划。 如果没有，应用将显示路线概述，如[显示路线和路况](#display-directions-and-traffic)中所述。
+> **重要提示** 当**ms 驱动器到：** 或**ms 演练：** 将启动 URI 方案，映射应用将检查设备是否曾经有 GPS 位置修复。 如果有，则“地图”应用将继续进行路线规划。 如果没有，应用将显示路线概述，如[显示路线和路况](#display-directions-and-traffic)中所述。
 
 ![路线规划的示例](images/windowsmapsappdirections.png)
 
@@ -150,7 +150,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 ## <a name="download-offline-maps"></a>下载离线地图
 
-**Ms 设置:** URI 方案使你可以直接启动到 "设置" 应用中的特定页面。 但**ms 设置:** URI 方案不会启动到 Maps 应用程序, 它允许你直接启动到 "设置" 应用中的 "脱机地图" 页, 并显示一个确认对话框, 用于下载 Maps 应用使用的脱机地图。 URI 方案接受由纬度和经度指定的点，并自动确定是否存在可用于包含该点的离线地图。  如果经过的纬度和经度恰好落在多个下载区域内，确认对话框将让用户选取要下载其中哪一个区域。 如果离线地图不适用于包含该点的区域，则“设置”应用中的“离线地图”页面将显示一个错误对话框。
+**Ms 设置：** URI 方案使你可以直接启动到 "设置" 应用中的特定页面。 但**ms 设置：** URI 方案不会启动到 Maps 应用程序，它允许你直接启动到 "设置" 应用中的 "脱机地图" 页，并显示一个确认对话框，用于下载 Maps 应用使用的脱机地图。 URI 方案接受由纬度和经度指定的点，并自动确定是否存在可用于包含该点的离线地图。  如果经过的纬度和经度恰好落在多个下载区域内，确认对话框将让用户选取要下载其中哪一个区域。 如果离线地图不适用于包含该点的区域，则“设置”应用中的“离线地图”页面将显示一个错误对话框。
 
 | 示例 URI  | 结果 |
 |-------------|---------|
@@ -217,7 +217,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p>特定位置、路标或地点的搜索词。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><b>:</b></p></td>
+<td align="left"><p><b>：</b></p></td>
 <td align="left"><p>查询词</p></td>
 <td align="left"><p>q = "q="</p>
 <p>whereval</p>
@@ -241,13 +241,13 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>sty=a</p></td>
 <td align="left"><p>定义地图样式 此参数的有效值包括：</p>
 <ul>
-<li><b>答</b>:显示地图的空中视图。</li>
-<li><b>r</b>:显示地图的道路视图。</li>
-<li><b>3d</b>:显示地图的3D 视图。 可与 <b>cp</b> 参数结合使用，也可以与 <b>rad</b> 参数结合使用。</li>
+<li><b>答</b>：显示地图的空中视图。</li>
+<li><b>r</b>：显示地图的道路视图。</li>
+<li><b>3d</b>：显示地图的3D 视图。 可与 <b>cp</b> 参数结合使用，也可以与 <b>rad</b> 参数结合使用。</li>
 </ul>
 <p>在 Windows 10 中，鸟瞰图和 3D 视图样式相同。</p>
 <div class="alert">
-<b>请</b>注意  , 省略<b>sty</b>参数将产生与 sty = r 相同的结果。
+<b>请</b>注意  ，省略<b>sty</b>参数将产生与 sty = r 相同的结果。
 </div>
 <div>
  
@@ -285,7 +285,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>ss=1</p></td>
 <td align="left"><p>指示在 <code>ss=1</code> 时所显示的街景图像。 省略 <b>ss</b> 参数将产生与 <code>ss=0</code> 相同的结果。 通过与 <b>cp</b> 参数结合使用，指定街道级视图的位置。</p>
 <div class="alert">
-<b>请</b>注意  , 街道级别的图像在所有区域中都不可用。
+<b>请</b>注意  ，街道级别的图像在所有区域中都不可用。
 </div>
 <div>
  
@@ -299,7 +299,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>trfc=1</p></td>
 <td align="left"><p>指定地图上是否包含路况信息。 省略 trfc 参数将产生与 <code>trfc=0</code> 时相同的结果。</p>
 <div class="alert">
-<b>注意</b>:  流量数据在所有区域中都不可用。
+<b>注意</b>：  流量数据在所有区域中都不可用。
 </div>
 <div>
  
@@ -318,7 +318,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>whereval = 1( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "" / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
 
 
-<p>示例：</p>
+<p>例如：</p>
 <p>rtp=adr.Mountain%20View,%20CA~adr.SFO</p>
 <p>rtp=adr.One%20Microsoft%20Way,%20Redmond,%20WA~pos.45.23423_-122.1232 _My%20Picnic%20Spot</p></td>
 <td align="left"><p>定义要在地图上绘制的路线起点和终点，由波形符 (<b>~</b>) 分隔。 每个经过点可能是通过使用纬度和经度的位置定义的，也可能是通过可选标题或地址标识符定义的。</p>
@@ -328,7 +328,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>如果给出一条不完整的路线，则不会绘制任何路线。</p>
 <p>通过与 <b>mode</b> 参数结合使用，指定交通的模式（驾车、公交或步行）。 如果未指定 <b>mode</b>，将使用交通首选项的用户的模式提供路线。</p>
 <div class="alert">
-<b>注意</b>如果  位置由<b>pos</b>参数值指定, 则标题可用于某个位置。 将显示标题，而不是显示纬度和经度。
+<b>注意</b>如果  位置由<b>pos</b>参数值指定，则标题可用于某个位置。 将显示标题，而不是显示纬度和经度。
 </div>
 <div>
  
@@ -342,9 +342,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>mode=d</p></td>
 <td align="left"><p>定义交通模式。 此参数的有效值包括：</p>
 <ul>
-<li><b>d</b>:显示行车路线的路线概述</li>
-<li><b>t</b>:显示传输方向的路由概述</li>
-<li><b>w</b>:显示路线概述以了解方向</li>
+<li><b>d</b>：显示行车路线的路线概述</li>
+<li><b>t</b>：显示传输方向的路由概述</li>
+<li><b>w</b>：显示路线概述以了解方向</li>
 </ul>
 <p>针对交通路线与 <b>rtp</b> 参数结合使用。 如果未指定 <b>mode</b>，将使用交通首选项的用户的模式提供路线。 在提供 <b>mode</b> 时，可以不提供任何路线参数用于为该模式输入从当前位置的路线输入。</p></td>
 </tr>
@@ -410,7 +410,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 ## <a name="ms-settings-parameter-reference"></a>ms-settings: 参数引用
 
-用于映射**ms 设置**应用程序特定参数的语法:URI 方案定义如下。 **maps-downloadmaps**与**ms 设置**一起指定:**Ms-settings: map-downloadmaps？** 格式的 URI, 用于指示 "脱机地图设置" 页。 
+用于映射**ms 设置**应用程序特定参数的语法：URI 方案定义如下。 **maps-downloadmaps**与**ms 设置**一起指定：**Ms-settings： map-downloadmaps？** 格式的 URI，用于指示 "脱机地图设置" 页。 
 
 | 参数 | 定义 | 示例 | 详细信息 |
 |-----------|------------|---------|----------|
