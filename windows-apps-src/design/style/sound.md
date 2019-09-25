@@ -12,18 +12,34 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d0955e7a018472141b137935c5bc87a9f75a5c6d
-ms.sourcegitcommit: 0c5f81100986cc4b74b54cd1ca2debd283c5b7f6
+ms.openlocfilehash: ce81088495716e43a32dab94d1d47d399dd6a309
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68375270"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061912"
 ---
 # <a name="sound"></a>声音
 
 ![主图](images/header-sound.svg)
 
 可通过许多方式来使用声音增强应用。 可以使用声音来补充其他 UI 元素，从而使用户能够依靠音频识别事件。 对于视觉障碍用户，声音是有效的用户界面元素。 可以使用声音来创造气氛，并使用户沉浸在这种气氛中；例如，可以在拼图游戏背景下播放怪异的原声带，或者将恐怖音效用于恐怖/求生游戏。
+
+## <a name="examples"></a>示例
+
+<table>
+<th align="left">XAML 控件库<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/Sound">打开此应用，了解声音的实际应用</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="sound-global-api"></a>声音全局 API
 
@@ -150,6 +166,10 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 作为一项调用 **ElementSound.Focus** 的添加功能，声音系统将在每个导航触发器上默认循环播放 4 种不同的声音。 这意味着其中两种焦点声音播放后将不会确定即将播放的其他两种声音。
 
 隐藏此循环功能的目的是为了防止焦点声音变得单调乏味以及防止被用户注意到；焦点声音播放次数最多，并且应该是最微妙的。
+
+## <a name="get-the-sample-code"></a>获取示例代码
+
+- [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
 
 ## <a name="related-articles"></a>相关文章
 

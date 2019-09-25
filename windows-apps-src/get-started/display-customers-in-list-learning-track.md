@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 入门, uwp, windows 10, 了解轨迹, 数据绑定, 列表
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c4d339a1eedb798f11d5567be6a48ec2269cf8ac
-ms.sourcegitcommit: 280193dfe5a106fc6b4c85df3ac40535547b855c
+ms.openlocfilehash: a63bcc73be0146a9f580ae3afe3684f85e51d00e
+ms.sourcegitcommit: 88431e67d282d9a2a4fe4afcb254310f90c7cd7e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67235154"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71127443"
 ---
 # <a name="display-customers-in-a-list"></a>以列表形式显示客户
 
@@ -102,7 +102,7 @@ public sealed partial class MainPage : Page
 
 ## <a name="edit-your-customers-through-the-ui"></a>通过 UI 编辑客户
 
-你已经以列表形式显示了客户，而数据 B=binding 可以让你做得更多。 如果可以直接从 UI 编辑数据会怎样？ 若要执行此操作，我们首先来讨论一下三种数据绑定模式：
+你已经以列表形式显示了客户，而数据绑定可以让你做得更多。 如果可以直接从 UI 编辑数据会怎样？ 若要执行此操作，我们首先来讨论一下三种数据绑定模式：
 
 * *一次性*：此数据绑定只激活一次，并且不会对更改作出响应。
 * *单向*：此数据绑定将使用对数据源所做的所有更改更新 UI。

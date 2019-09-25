@@ -6,12 +6,12 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ff88332e0b44749bcd86e06adafeb596ca8678b3
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 1c535e4ea4ad3c93acb048de2050d5ae7a9c2c2b
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63820642"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061936"
 ---
 # <a name="control-size-and-density"></a>控件大小和密度
 
@@ -20,6 +20,22 @@ ms.locfileid: "63820642"
 默认情况下，UWP 应用使用低密度（或`Standard`）布局进行呈现。 但是从 WinUI 2.1 开始，也支持适用于信息丰富的 UI 和类似专用方案的高密度（或 `Compact`）布局选项。 这可以通过基本样式资源进行指定（请参阅以下示例）。
 
 虽然功能和行为没有变化，在两个大小和密度选项间保持一致，但是默认正文字号已对所有控件更新为 14px，以支持这两个密度选项。 此字号可跨区域和设备正常工作，确保应用程序对用户保持平衡和舒适。
+
+## <a name="examples"></a>示例
+
+<table>
+<th align="left">XAML 控件库<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/Compact Sizing">打开此应用，了解 Compact 大小的实际应用</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="fluent-standard-sizing"></a>Fluent Standard 大小
 
@@ -77,6 +93,10 @@ Compact 大小通过可以在页面级别或特定布局上在应用程序中指
     </Grid.Resources>
 </Grid>
 ```
+
+## <a name="get-the-sample-code"></a>获取示例代码
+
+- [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
 
 ## <a name="related-articles"></a>相关文章
 

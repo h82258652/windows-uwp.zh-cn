@@ -12,32 +12,47 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a574ff858f8eab3fa1984ecd883a786fa0e0f19c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8f45edc213d8abdfc43e834d023993b89249844d
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364723"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061954"
 ---
 # <a name="lists"></a>列表
 
 列表显示并启用与基于集合的内容交互。 本文中介绍的四种列表模式如下：
 
--   列表视图，主要用于显示以文字为主的内容集合
--   网格视图，主要用于显示以图像为主的内容集合
--   下拉列表，用于让用户从展开式列表中选择某一项
--   列表框，用于让用户从可滚动的框中选择一个或多个项
+- 列表视图，主要用于显示以文字为主的内容集合
+- 网格视图，主要用于显示以图像为主的内容集合
+- 下拉列表，用于让用户从展开式列表中选择某一项
+- 列表框，用于让用户从可滚动的框中选择一个或多个项
 
 已为每种列表模式提供了设计指南、功能和示例。
 
 > **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)、[ComboBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
-
 
 > <div id="main">
 > <strong>Windows 10 Fall Creators Update - 行为更改</strong>
 > </div>
 > 默认情况下，主动笔现在可在 UWP 应用中滚动/平移列表，而不是进行选择（与触摸、触摸板和被动笔一样）。
 > 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 类</a>的 API 参考主题。
+
+## <a name="examples"></a>示例
+
+<table>
+<th align="left">XAML 控件库<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请查看实际操作中的 <a href="xamlcontrolsgallery:/item/ListView">ListView</a>、<a href="xamlcontrolsgallery:/item/GridView">GridView</a>、<a href="xamlcontrolsgallery:/item/ComboBox">ComboBox</a> 和 <a href="xamlcontrolsgallery:/item/ListBox">ListBox</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="list-views"></a>列表视图
 
@@ -47,9 +62,9 @@ ms.locfileid: "66364723"
 
 使用列表视图可执行以下操作：
 
--   显示主要组成部分为文本的内容集合。
--   导航单个或已分类的内容集合。
--   在[大纲/细节模式](master-details.md)下创建大纲窗格。 大纲/细节模式常用于电子邮件应用中，其中一个窗格（大纲）具有一个包含可选项的列表，而另一个窗格（细节）具有一个包含选定项的详细视图。
+- 显示主要组成部分为文本的内容集合。
+- 导航单个或已分类的内容集合。
+- 在[大纲/细节模式](master-details.md)下创建大纲窗格。 大纲/细节模式常用于电子邮件应用中，其中一个窗格（大纲）具有一个包含可选项的列表，而另一个窗格（细节）具有一个包含选定项的详细视图。
 
 ### <a name="examples"></a>示例
 
@@ -59,8 +74,8 @@ ms.locfileid: "66364723"
 
 ### <a name="recommendations"></a>建议
 
--   列表内的项应具有相同的行为。
--   如果你的列表划分为多个组，可以使用[语义式缩放](semantic-zoom.md)，使用户更轻松地浏览分组内容。
+- 列表内的项应具有相同的行为。
+- 如果你的列表划分为多个组，可以使用[语义式缩放](semantic-zoom.md)，使用户更轻松地浏览分组内容。
 
 ### <a name="list-view-articles"></a>列表视图文章
 <table>
@@ -110,9 +125,9 @@ ms.locfileid: "66364723"
 
 使用列表视图可执行以下操作：
 
--   显示主要组成部分为图像的一个内容集合。
--   显示内容库。
--   设置与[语义式缩放](semantic-zoom.md)相关联的两个内容视图的格式。
+- 显示主要组成部分为图像的一个内容集合。
+- 显示内容库。
+- 设置与[语义式缩放](semantic-zoom.md)相关联的两个内容视图的格式。
 
 ### <a name="examples"></a>示例
 
@@ -126,8 +141,8 @@ ms.locfileid: "66364723"
 
 ### <a name="recommendations"></a>建议
 
--   列表内的项应具有相同的行为。
--   如果你的列表划分为多个组，可以使用[语义式缩放](semantic-zoom.md)，使用户更轻松地浏览分组内容。
+- 列表内的项应具有相同的行为。
+- 如果你的列表划分为多个组，可以使用[语义式缩放](semantic-zoom.md)，使用户更轻松地浏览分组内容。
 
 ### <a name="grid-view-articles"></a>网格视图文章
 <table>
@@ -167,10 +182,10 @@ ms.locfileid: "66364723"
 
 ### <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
--   使用下拉列表可让用户从一组项中选择单个值，这些项可使用单行文本完全显示。
--   使用列表视图或网格视图（而非组合框），显示包含多行文本或多张图像的项。
--   当少于五项时，应考虑使用[单选按钮](radio-button.md)（当进行单项选择时）或[复选框](checkbox.md)（当进行多项选择时）。
--   当选择项在应用流中不太重要时使用组合框。 如果在多数情况下为大部分用户推荐了默认选项，则通过使用列表视图显示所有项可能会导致用户过多地注意这些选项。 使用组合框可以节省空间并减少分心。
+- 使用下拉列表可让用户从一组项中选择单个值，这些项可使用单行文本完全显示。
+- 使用列表视图或网格视图（而非组合框），显示包含多行文本或多张图像的项。
+- 当少于五项时，应考虑使用[单选按钮](radio-button.md)（当进行单项选择时）或[复选框](checkbox.md)（当进行多项选择时）。
+- 当选择项在应用流中不太重要时使用组合框。 如果在多数情况下为大部分用户推荐了默认选项，则通过使用列表视图显示所有项可能会导致用户过多地注意这些选项。 使用组合框可以节省空间并减少分心。
 
 ### <a name="examples"></a>示例
 
@@ -188,9 +203,9 @@ ms.locfileid: "66364723"
 
 ### <a name="recommendations"></a>建议
 
--   将组合框的文本内容限制为单行。
--   以最合乎逻辑的顺序对组合框中的项进行排序。 将相关选项组合到一起并将最常见的选项置于顶部。 按字母顺序对名称进行排序、按数字顺序对数字进行排序，并按时间先后顺序对日期进行排序。
--   若要创建可在用户使用箭头键（如字体所选内容下拉列表）时实时更新的组合框，请将 SelectionChangedTrigger 设置为“Always”。  
+- 将组合框的文本内容限制为单行。
+- 以最合乎逻辑的顺序对组合框中的项进行排序。 将相关选项组合到一起并将最常见的选项置于顶部。 按字母顺序对名称进行排序、按数字顺序对数字进行排序，并按时间先后顺序对日期进行排序。
+- 若要创建可在用户使用箭头键（如字体所选内容下拉列表）时实时更新的组合框，请将 SelectionChangedTrigger 设置为“Always”。  
 
 ### <a name="text-search"></a>文本搜索
 
@@ -203,25 +218,25 @@ ms.locfileid: "66364723"
 
 ### <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
--   当列表中的项重要到需突出显示时，以及当没有足够的屏幕空间可用来显示整个列表时，列表框会很有用。
--   列表框应将用户的注意力吸引到一项重要选择的全套备选项。 相比之下，下拉列表的设计初衷则是将用户的注意力吸引到某一选定项。
--   当出现以下情况时，应避免使用列表框：
-    -   列表中的项数非常少。 始终具有两个相同选项的单选列表框可能更适合呈现为[单选按钮](radio-button.md)。 当列表中有 3 到 4 个静态项时，也可考虑使用单选按钮。
-    -   列表框为单选式且始终具有两个相同选项，其中一个可表示为另一个的对立面，例如“打开”和“关闭”。 使用单个复选框或切换开关。
-    -   项目数非常多。 网格视图和列表视图更适用于较长列表。 对于很长的分组数据列表，首选语义式缩放。
-    -   项为相邻的数字值。 如果是这种情况，应考虑使用[滑块](slider.md)。
-    -   选择项在你的应用流中不太重要，或者说对于大部分情况下的大部分用户，建议使用默认选项。 改用下拉列表。
+- 当列表中的项重要到需突出显示时，以及当没有足够的屏幕空间可用来显示整个列表时，列表框会很有用。
+- 列表框应将用户的注意力吸引到一项重要选择的全套备选项。 相比之下，下拉列表的设计初衷则是将用户的注意力吸引到某一选定项。
+- 当出现以下情况时，应避免使用列表框：
+    - 列表中的项数非常少。 始终具有两个相同选项的单选列表框可能更适合呈现为[单选按钮](radio-button.md)。 当列表中有 3 到 4 个静态项时，也可考虑使用单选按钮。
+    - 列表框为单选式且始终具有两个相同选项，其中一个可表示为另一个的对立面，例如“打开”和“关闭”。 使用单个复选框或切换开关。
+    - 项目数非常多。 网格视图和列表视图更适用于较长列表。 对于很长的分组数据列表，首选语义式缩放。
+    - 项为相邻的数字值。 如果是这种情况，应考虑使用[滑块](slider.md)。
+    - 选择项在你的应用流中不太重要，或者说对于大部分情况下的大部分用户，建议使用默认选项。 改用下拉列表。
 
 ### <a name="recommendations"></a>建议
 
--   在列表框中，项数的理想范围为 3 到 9 个。
--   当列表框中的项可以动态变化时，其效果颇佳。
--   如果可以，请设置列表框的大小，这样便无需平移或滚动其项列表。
--   验证列表框的目的以及当前选择的项目是否明确。
--   保留用于触摸反馈和选择的项目状态的视觉效果和动画。
--   将列表框项目的文本内容限制为单行。 如果项是视觉对象，你可以自定义其大小。 如果项包括多行文本或多个图像，请改用网格视图或列表视图。
--   使用默认字体，除非你的品牌指南指示使用其他字体。
--   不要使用列表框执行命令或者动态显示或隐藏其他控件。
+- 在列表框中，项数的理想范围为 3 到 9 个。
+- 当列表框中的项可以动态变化时，其效果颇佳。
+- 如果可以，请设置列表框的大小，这样便无需平移或滚动其项列表。
+- 验证列表框的目的以及当前选择的项目是否明确。
+- 保留用于触摸反馈和选择的项目状态的视觉效果和动画。
+- 将列表框项目的文本内容限制为单行。 如果项是视觉对象，你可以自定义其大小。 如果项包括多行文本或多个图像，请改用网格视图或列表视图。
+- 使用默认字体，除非你的品牌指南指示使用其他字体。
+- 不要使用列表框执行命令或者动态显示或隐藏其他控件。
 
 ## <a name="selection-mode"></a>选择模式
 
@@ -229,9 +244,9 @@ ms.locfileid: "66364723"
 
 有以下三种选择模式：
 
--   Single：用户一次只能选择一个项目。
--   Multiple：用户无需使用修改器即可选择多个项目。
--   Extended：用户可以使用修改器选择多个项目，例如长按 Shift。
+- Single：用户一次只能选择一个项目。
+- Multiple：用户无需使用修改器即可选择多个项目。
+- Extended：用户可以使用修改器选择多个项目，例如长按 Shift。
 
 在项目上点击任意位置即可将其选中。 点击命令栏操作会影响所有选定项。 如果没有选择任何项目，命令栏操作应处于非活动状态，除了“全选”。
 
@@ -259,6 +274,9 @@ ms.locfileid: "66364723"
 </tr>
 </table>
 
+## <a name="get-the-sample-code"></a>获取示例代码
+
+- [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
 
 ## <a name="related-articles"></a>相关文章
 

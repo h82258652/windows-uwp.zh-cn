@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, async, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a275d5c91e03f9eb5b6348cda673d93e7132d7a
-ms.sourcegitcommit: 7ece8a9a9fa75e2e92aac4ac31602237e8b7fde5
+ms.openlocfilehash: 1170b8e1291afd166f210feb291b644d1c7ed546
+ms.sourcegitcommit: e5a154c7b6c1b236943738febdb17a4815853de5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485141"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71164822"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>C++/WinRT 的更高级并发和异步
 
@@ -219,7 +219,7 @@ co_await static_cast<no_switch>(async);
 
 然后，C++ 编译器不会查找与 **IAsyncXxx** 匹配的三个 **await_xxx** 函数，而是查找与 **no_switch** 匹配的函数。
 
-## <a name="a-deeper-dive-into-winrtresumeforeground"></a>深入了解 **winrt::resume_foreground**
+## <a name="a-deeper-dive-into-winrtresume_foreground"></a>深入了解 **winrt::resume_foreground**
 
 从 [C++/WinRT 2.0](/windows/uwp/cpp-and-winrt-apis/newsnews#news-and-changes-in-cwinrt-20) 开始，[**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) 函数会暂停，即使是从调度程序线程来调用它（在以前的版本中，它可能会在某些情况下引入死锁，因为它暂停的前提是尚未位于调度程序线程上）。
 
@@ -745,6 +745,9 @@ int main()
     }
 }
 ```
+
+> [!NOTE]
+> **wait_for** 在接口上使用 **std::chrono::duration**，但它有一个受限范围，该范围小于 **std::chrono::duration** 提供的值（大约为 49.7 天）。
 
 下面这个示例中的 **wait_for** 会先等待约五秒钟，然后检查完成情况。 如果比较后得出的结果良好，则表明异步对象已成功完成，你的任务完成。 如果你在等待某个结果，则可随后调用 **get** 函数来检索结果。
 
