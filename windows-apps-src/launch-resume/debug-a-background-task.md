@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: 11ebd180ebc3bc08b418f3b22ebed190bf73c18d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ad133a9b1eb22695e6ce5d8b3edba9ad3a138b68
+ms.sourcegitcommit: f1261aa6f7eeb62bf770a08b58ec4357bdc20c7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366198"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71224761"
 ---
 # <a name="debug-a-background-task"></a>调试后台任务
 
 
-**重要的 Api**
+**重要的 API**
 -   [Windows.ApplicationModel.Background](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 了解如何调试后台任务，包括后台任务激活和调试 Windows 事件日志中的跟踪。
@@ -42,10 +42,13 @@ ms.locfileid: "66366198"
 
 2.  在调试程序中运行你的应用程序，然后使用**生命周期事件**工具栏触发该后台任务。 此下拉菜单显示可以由 Visual Studio 激活的后台任务的名称。
 
-    若要此功能正常运行，则后台任务必须已注册并且必须仍等待触发。 例如，如果后台任务已使用一次性 TimeTrigger 注册，并且该触发器已引发，则通过 Visual Studio 启动该任务将无效。
+> [!NOTE]
+> 默认情况下，Visual Studio 中不显示生命周期事件工具栏选项。 若要显示这些选项，请右键单击 Visual Studio 中的当前工具栏，并确保已启用 "**调试位置**" 选项。
+
+    For this to work, the background task must already be registered and it must still be waiting for the trigger. For example, if a background task was registered with a one-shot TimeTrigger and that trigger has already fired, launching the task through Visual Studio will have no effect.
 
 > [!Note]
-> 不能以这种方式激活后台任务使用以下触发器：[**应用程序触发器**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger)， [ **MediaProcessing 触发器**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger)， [ **ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)， [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)，和使用的后台任务[ **SystemTrigger** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger)与[ **除外**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)触发类型。  
+> 使用以下触发器的后台任务无法通过此方式激活：[**应用程序触发器**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger)、 [**MediaProcessing 触发器**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger)、 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)、 [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)和使用[**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger)和[**SmsReceived**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)触发器类型的后台任务。  
 > **应用程序触发器**和 **MediaProcessingTrigger** 可以在带有 `trigger.RequestAsync()` 的代码中以信号形式手动发出。
 
 ![调试后台任务](images/debugging-activation.png)
@@ -78,8 +81,8 @@ ms.locfileid: "66366198"
     如果你遵循此过程，但事件日志显示后台任务的入口点或触发器有误，则你的应用无法正确注册后台任务。 有关此任务的帮助，请参阅[注册后台任务](register-a-background-task.md)。
 
     1.  通过转到“开始”屏幕并搜索 eventvwr.exe 来打开事件查看器。
-    2.  转到**应用程序和服务日志** - &gt; **Microsoft**  - &gt; **Windows**  - &gt;**BackgroundTaskInfrastructure**事件查看器中。
-    3.  在操作窗格中选择**视图** - &gt; **显示分析和调试日志**启用诊断日志记录。
+    2.  在事件查看器中，请参阅**应用程序和服务日志** - &gt; **Microsoft**  - &gt; **Windows**  - &gt; **BackgroundTaskInfrastructure** 。
+    3.  在 "操作" 窗格中，选择 "**查看** - &gt; " "**显示分析和调试日志**" 以启用诊断日志记录。
     4.  选择**诊断日志**并单击“**启用日志**”。
     5.  现在尝试使用你的应用再次注册并激活后台任务。
     6.  查看诊断日志以了解更详细的错误信息。 这将包括为后台任务注册的入口点。
@@ -101,7 +104,7 @@ ms.locfileid: "66366198"
 -   如果后台任务需要锁屏界面访问权限，请确保在尝试调试后台任务之前将应用放在锁屏界面上。 有关为支持锁屏界面的应用指定清单选项的信息，请参阅[在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)。
 -   后台任务注册参数在注册时验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
 
-使用 VS 调试后台任务的详细信息请参阅[如何触发挂起、 继续和后台事件在 UWP 应用中的](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)。
+有关使用 VS 调试后台任务的详细信息，请参阅[如何在 UWP 应用中触发挂起、继续和后台事件](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -110,8 +113,8 @@ ms.locfileid: "66366198"
 * [注册后台任务](register-a-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
-* [如何在触发挂起、 继续和后台事件在 UWP 应用中](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
-* [分析 UWP 应用使用 Visual Studio 代码分析的代码质量](https://docs.microsoft.com/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
+* [如何在 UWP 应用中触发挂起、继续和后台事件](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
+* [通过 Visual Studio 代码分析来分析 UWP 应用的代码质量](https://docs.microsoft.com/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
 
  
 

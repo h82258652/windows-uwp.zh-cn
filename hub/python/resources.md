@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, microsoft, windows 10, 教程, 联机课程, 博客, 事件
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 28a77b9e936acddb6158d865aef933f27444c5c9
-ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
+ms.openlocfilehash: 3320cef0d3aaf48a2f93d65d93bf8876f1f997d6
+ms.sourcegitcommit: 7104ad5d01ad1c69a4ea0b3ba6732c1b2a98ec09
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959061"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249245"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>用于在 Windows 上通过 Python 进行开发的资源
 
@@ -23,7 +23,7 @@ ms.locfileid: "68959061"
 
 - [Microsoft 开发博客:Python](https://devblogs.microsoft.com/python/):阅读有关 Microsoft 的所有功能的最新更新。
 
-- 有关[使用 WSL 和 Visual Studio Code 在 Windows 上进行 Linux 开发的深入教程](https://devblogs.microsoft.com/commandline/an-in-depth-tutorial-on-linux-development-on-windows-with-wsl-and-visual-studio-code/):演练: 如何设置开发环境, 如何创建 Python 应用并进行一些调试。
+- 有关[使用 WSL 和 Visual Studio Code 在 Windows 上进行 Linux 开发的深入教程](https://devblogs.microsoft.com/commandline/an-in-depth-tutorial-on-linux-development-on-windows-with-wsl-and-visual-studio-code/)：演练：如何设置开发环境，如何创建 Python 应用并进行一些调试。
 
 - [在 Windows 上使用 Python](https://docs.python.org/3/using/windows.html):此 Python.org 文档提供有关在 Microsoft Windows 上使用 Python 时应了解的 Windows 特定行为的概述。
 
@@ -45,8 +45,7 @@ ms.locfileid: "68959061"
 
 - [Python 和 Visual Studio Code](https://code.visualstudio.com/docs/languages/python):使用 Python 与 VS Code 的概述。
 
-
-### <a name="online-courses"></a>联机课程
+## <a name="online-courses"></a>联机课程
 
 - [Microsoft Learn 上的 Python 简介](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/):尝试交互式 Microsoft Learn 平台并获得完成本模块的经验要点, 其中涵盖了有关如何编写基本 Python 代码、声明变量以及使用控制台输入和输出的基本知识。 交互式沙箱环境使其成为尚未设置 Python 开发环境的人员的理想位置。
 
