@@ -8,15 +8,14 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cad33c0f1b72bbd379be9b8f13ed648231f1a1ca
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 799913688f04421cae6b47f0d4b7db2fb1074ed4
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319364"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061920"
 ---
 # <a name="web-view"></a>Web 视图
- 
 
 Web 视图控件将一个视图嵌入你的应用中，以便使用 Microsoft Edge 呈现引擎来呈现 Web 内容。 超链接也可以在 Web 视图控件中显示并正常工作。
 
@@ -25,6 +24,22 @@ Web 视图控件将一个视图嵌入你的应用中，以便使用 Microsoft Ed
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 使用 Web 视图控件从远程 Web 服务器、动态生成的代码或者应用程序包中的内容文件显示格式丰富的 HTML 内容。 丰富的内容还可以包含脚本代码，并在脚本和你的应用代码之间通信。
+
+## <a name="examples"></a>示例
+
+<table>
+<th align="left">XAML 控件库<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/WebView">打开此应用，了解 WebView 的实际应用</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="create-a-web-view"></a>创建 Web 视图
 
@@ -319,15 +334,10 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 -   应相应地调整输入字段的大小。 用户可能不会意识到他们可以放大以输入文本。
 -   如果 Web 视图的外观与应用其他部分有差异，请考虑使用替代控件或方法完成相关任务。 如果你的 Web 视图与应用的其余部分相匹配，用户会将其视作一个整体无缝体验。
 
+## <a name="get-the-sample-code"></a>获取示例代码
 
+- [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
 
 ## <a name="related-topics"></a>相关主题
 
-* [WebView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView)
- 
-
- 
-
-
-
-
+- [WebView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView)
