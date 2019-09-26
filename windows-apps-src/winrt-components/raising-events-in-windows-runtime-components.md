@@ -279,7 +279,7 @@ IToast 接口具有一个字符串，可以检索该字符串来描述 Toast 的
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c-and-other-net-languages"></a>为组件的接口生成 GUID（C# 和其他 .NET 语言）
 
-在菜单栏上，选择“工具”&gt;“创建 GUID”。 在对话框中，选择“5. \[Guid （"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx .。。xxxx）\]。 选择“新建 GUID”按钮，然后选择“复制”按钮。
+在菜单栏上，选择“工具”&gt;“创建 GUID”。 在对话框中，选择“5. \[Guid(“xxxxxxxx-xxxx...xxxx)\]. 选择“新建 GUID”按钮，然后选择“复制”按钮。
 
 ![GUID 生成器工具](./images/guidgeneratortool.png)
 

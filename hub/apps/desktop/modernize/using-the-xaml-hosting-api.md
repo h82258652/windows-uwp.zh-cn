@@ -77,7 +77,7 @@ UWP XAML 宿主 API 包含这些主要 Windows 运行时类型和 COM 接口。
 
 下图说明了在桌面应用中托管的 XAML 岛中对象的层次结构。
 
-* 在基本级别上，是你要在其中托管 XAML 岛的应用程序中的 UI 元素。 此 UI 元素必须具有一个窗口句柄（HWND）。 可在其中承载 XAML 岛的 UI 元素的示例包括C++适用于 Win32 应用的[窗口](https://docs.microsoft.com/windows/desktop/winmsg/about-windows)、[system.windows.interop.hwndhost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)> for WPF apps，以及用于 Windows 窗体应用的 [System.Windows.Forms.Control](https://docs.microsoft.com/dotnet/api/system.windows.forms.control)。 
+* 在基本级别上，是你要在其中托管 XAML 岛的应用程序中的 UI 元素。 此 UI 元素必须具有一个窗口句柄（HWND）。 可在其中承载 XAML 岛的 UI 元素的示例包括C++适用于 Win32 应用的[窗口](https://docs.microsoft.com/windows/desktop/winmsg/about-windows)、[system.windows.interop.hwndhost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)> for WPF apps，以及用于 Windows 窗体应用的 [System.Windows.Forms.Control](https://docs.microsoft.com/dotnet/api/system.windows.forms.control)。
 
 * 下一级别是**DesktopWindowXamlSource**对象。 此对象提供用于托管 XAML 岛的基础结构。 你的代码负责创建此对象并将其附加到父 UI 元素。
 
@@ -113,9 +113,9 @@ Windows 社区工具包中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 ### <a name="configure-the-project"></a>配置项目
 
-1. 在安装了 Windows 10、版本 1903 SDK （版本10.0.18362）或更高版本的 Visual Studio 2019 中，创建一个新的**Windows 桌面应用程序**项目。 此项目可用于**C++**、 **Windows**和**桌面**项目筛选器。
+1. 在安装了 Windows 10、版本 1903 SDK （版本10.0.18362）或更高版本的 Visual Studio 2019 中，创建一个新的**Windows 桌面应用程序**项目。 此项目可用于**C++** 、 **Windows**和**桌面**项目筛选器。
 
-2. 在**解决方案资源管理器**中，右键单击解决方案节点，单击 "重**定目标解决方案**"，选择**10.0.18362.0**或更高版本的 SDK 版本，然后单击 **"确定"**。
+2. 在**解决方案资源管理器**中，右键单击解决方案节点，单击 "重**定目标解决方案**"，选择**10.0.18362.0**或更高版本的 SDK 版本，然后单击 **"确定"** 。
 
 3. 安装[CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet 包：
 
@@ -393,7 +393,7 @@ Windows 社区工具包中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 若要正确处理每个 XAML 岛的键盘输入，应用程序必须将所有 Windows 消息传递给 UWP XAML 框架，以便能够正确处理某些消息。 为此，可以在应用程序中访问消息循环的某个位置，将每个 XAML 岛的**DesktopWindowXamlSource**对象转换为**IDesktopWindowXamlSourceNative2** COM 接口。 然后，调用此接口的**PreTranslateMessage**方法，并传入当前消息。
 
-  * ** C++ Win32：**：应用可直接在其主消息循环中调用**PreTranslateMessage** 。 有关示例，请参阅[ C++ Win32 示例](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App)中的[XamlBridge](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp#L6)文件。
+  * **C++ Win32：** ：应用可直接在其主消息循环中调用**PreTranslateMessage** 。 有关示例，请参阅[ C++ Win32 示例](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App)中的[XamlBridge](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp#L6)文件。
 
   * **WPF**应用可以从[ComponentDispatcher](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage?view=netframework-4.7.2)事件的事件处理程序调用**PreTranslateMessage** 。 有关示例，请参阅 Windows 社区工具包中的[WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177)文件。
 
@@ -411,7 +411,7 @@ UWP XAML 宿主 API 提供若干类型和成员，以帮助你完成这些任务
 
 有关演示如何在运行的示例应用程序的上下文中执行此操作的示例，请参阅以下代码文件：
 
-  * ** C++/Win32**：请参阅[ C++ Win32 示例](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App)中的[XamlBridge](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp)文件。
+  * **C++/Win32**：请参阅[ C++ Win32 示例](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App)中的[XamlBridge](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp)文件。
 
   * **WPF**请参阅 Windows 社区工具包中的[WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs)文件。  
 
@@ -439,7 +439,7 @@ UWP XAML 宿主 API 提供若干类型和成员，以帮助你完成这些任务
 
 UWP XAML 框架自动处理托管 UWP 控件的 DPI 更改（例如，当用户在具有不同屏幕 DPI 的监视器之间拖动窗口时）。 为了获得最佳体验，我们建议将 Windows 窗体、WPF 或C++ Win32 应用程序配置为每监视器 DPI 感知。
 
-若要将应用程序配置为每监视器 DPI 感知，请将[并行程序集清单](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests)添加到项目中，并将**\<\> dpiAwareness**元素设置为**PerMonitorV2**。 有关此值的详细信息，请参阅[DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2](https://docs.microsoft.com/windows/desktop/hidpi/dpi-awareness-context)的说明。
+若要将应用程序配置为每监视器 DPI 感知，请将[并行程序集清单](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests)添加到项目中，并将 **\<dpiAwareness\>** 元素设置为**PerMonitorV2**。 有关此值的详细信息，请参阅[DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2](https://docs.microsoft.com/windows/desktop/hidpi/dpi-awareness-context)的说明。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>

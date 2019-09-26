@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c85eaacd62de9a2efe380197ba467c5009cd0c5
-ms.sourcegitcommit: f0588a086cf2499968bf03b10c6bce5f518e90cb
+ms.sourcegitcommit: ad2940a12a7ee59ee7696cd23a03743eef84ca31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2019
+ms.lasthandoff: 09/26/2019
 ms.locfileid: "68757440"
 ---
 # <a name="launch-the-windows-maps-app"></a>启动 Windows 地图应用
@@ -81,9 +81,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps：？ bb = 39.719\_-74.52 ~ 41.71\_-73.5 & cp = 47 ~-122                        | 显示纽约市（使用边界框参数指定的区域）的地图。 将忽略使用 **cp** 参数为西雅图指定的中心点，因为指定了 *bb*。 |
 | bingmaps：？ collection = 36.116584\_-115.176753\_Caesars% 20Palace & lvl = 16 | 显示名为恺撒王宫酒店的某个点（位于拉斯维加斯）的地图并将缩放级别设置为 16。                                                                                                 |
 | bingmaps：？ collection = 40.726966\_-74.006076\_部分% 255FBusiness        | 显示一个具有名为 "部分\_业务" 的点的地图（在内华达州拉斯维加斯）。                                                                                                                               |
-| bingmaps:?cp=40.726966~-74.006076&amp;trfc=1&amp;sty=a                             | 显示纽约市的地图并已启用路况和鸟瞰图样式。                                                                                                                          |
+| bingmaps:?cp=40.726966~-74.006076&trfc=1&amp;amp;sty=a                             | 显示纽约市的地图并已启用路况和鸟瞰图样式。                                                                                                                          |
 | bingmaps:?cp=47.6204~-122.3491&amp;sty=3d                                      | 显示 Space Needle 的 3D 视图。                                                                                                                                                        |
-| bingmaps:?cp=47.6204~-122.3491&amp;sty=3d&amp;rad=200&amp;pit=75&amp;hdg=165               | 显示 Space Needle 的 3D 视图（半径 200 米、俯仰 75 度和方位 165 度）。                                                                             |
+| bingmaps:?cp=47.6204~-122.3491&sty=3d&rad=200&pit=75&amp;amp;hdg=165               | 显示 Space Needle 的 3D 视图（半径 200 米、俯仰 75 度和方位 165 度）。                                                                             |
 | bingmaps:?cp=47.6204~-122.3491&amp;ss=1                                        | 显示 Space Needle 的街景视图。                                                                                                                                                |
 
 
@@ -144,8 +144,8 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 | 示例 URI                                                                                                | 结果                                                                                       |
 |-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| ms-drive-to:?destination.latitude=47.680504&amp;destination.longitude=-122.328262&amp;destination.name=Green Lake | 显示地图以及从你的当前位置到 Green Lake 的驾车路线规划。 |
-| ms-walk-to:?destination.latitude=47.680504&amp;destination.longitude=-122.328262&amp;destination.name=Green Lake  | 显示地图以及从你的当前位置到 Green Lake 的行走路线规划。 |
+| ms-drive-to:?destination.latitude=47.680504&destination.longitude=-122.328262&amp;amp;destination.name=Green Lake | 显示地图以及从你的当前位置到 Green Lake 的驾车路线规划。 |
+| ms-walk-to:?destination.latitude=47.680504&destination.longitude=-122.328262&amp;amp;destination.name=Green Lake  | 显示地图以及从你的当前位置到 Green Lake 的行走路线规划。 |
 
 
 ## <a name="download-offline-maps"></a>下载离线地图
