@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 47cb292b1f5aeed9473cac0f27074f449dc67032
-ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
+ms.openlocfilehash: b8ad9726397671bcb2b641d6769f014721a27a72
+ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414107"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71317090"
 ---
 # <a name="modernize-your-desktop-apps"></a>实现桌面应用的现代化
 
@@ -32,15 +32,9 @@ MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（
 
 ## <a name="net-core-3"></a>.NET Core 3
 
-.NET Core 3 是 .NET Core 的下一主要版本。 这个即将发行的版本的主要特点是支持 Windows 桌面应用，包括 Windows 窗体和 WPF 应用。 你将能够在 .NET Core 3 上运行新的和现有的 Windows 桌面应用并体验 .NET Core 具有的所有优势。 托管在 [XAML 岛](xaml-islands.md)中的 UWP 控件也可在面向 .NET Core 3 的 Windows 窗体和 WPF 应用中使用。
+.NET Core 3 是 .NET Core 的最新主要版本。 这个版本的主要特点是支持 Windows 桌面应用，包括 Windows Forms 应用和 WPF 应用。 你可以在 .NET Core 3 上运行新的和现有的 Windows 桌面应用并体验 .NET Core 提供的所有优势。 托管在 [XAML 岛](xaml-islands.md)中的 UWP 控件也可在面向 .NET Core 3 的 Windows 窗体和 WPF 应用中使用。
 
-有关详细信息，请参阅以下文章：
-
-* [.NET Core 3.0 Preview 1 公告](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-1-and-open-sourcing-windows-desktop-frameworks/)
-* [.NET Core 3.0 Preview 2 公告](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-2/)
-* [.NET Core 3.0 Preview 3 公告](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-3/)
-* [.NET Core 3.0 Preview 4 公告](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-4/)
-* [.NET Core 3.0 新增功能](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0)。
+有关详细信息，请参阅 [.NET Core 3.0 中的新增功能](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0)。
 
 ## <a name="uwp-apis"></a>UWP API
 
