@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a02d562b73f61094f820e74a213614d80c4fb5e1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b68e736cc6d413196205f84467b7e159c53cb98e
+ms.sourcegitcommit: e7589fa25d8de86c36b6ce6d90d360337718ef93
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365848"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71311231"
 ---
 # <a name="mouse-interactions"></a>鼠标交互
 
@@ -59,7 +59,7 @@ ms.locfileid: "66365848"
 <td align="left"><p>右键单击以选定和进行命令操作</p></td>
 <td align="left"><p>右键单击以使用全局命令显示导航栏（如果有的话）与应用栏。 右键单击某个元素可将其选定并显示带有所选元素的上下文命令的应用栏。</p>
 <div class="alert">
-<strong>请注意</strong>  右键单击以显示上下文菜单，如果所选内容或应用程序栏的命令不是相应 UI 行为。 但是，我们强烈建议你针对所有的命令行为使用应用栏。
+<strong>注意</strong>：  右键单击此项可显示 "选择" 或 "应用栏" 命令不适合的 UI 行为，并显示上下文菜单。 但是，我们强烈建议你针对所有的命令行为使用应用栏。
 </div>
 <div>
  
@@ -84,33 +84,33 @@ ms.locfileid: "66365848"
 </tbody>
 </table>
 
-## <a name="mouse-input-events"></a>鼠标输入的事件
+## <a name="mouse-input-events"></a>鼠标输入事件
 
-大多数鼠标输入可以通过支持的所有常见路由的输入事件处理[ **UIElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)对象。 这些问题包括：
+大多数鼠标输入都可以通过所有[**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)对象支持的常见路由输入事件进行处理。 这些问题包括：
 
 - [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
 - [**ContextCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextcanceled)
 - [**ContextRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextrequested)
 - [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)
-- [**DragEnter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragenter)
-- [**DragLeave**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
-- [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
+- [**System.windows.dragdrop.dragenter>** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragenter)
+- [**System.windows.dragdrop.dragleave>** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
+- [**拖动**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
 - [**DragStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragstarting)
-- [**Drop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
+- [**击落**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
 - [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
 - [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
 - [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
-- [**保存**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
+- [**容器**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
 - [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
 - [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
 - [**LosingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
 - [**LostFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus)
-- [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)
+- [**System.windows.uielement.manipulationcompleted>** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)
 - [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)
-- [**ManipulationInertiaStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting)
-- [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)
-- [**ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)
+- [**System.windows.uielement.manipulationinertiastarting>** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting)
+- [**System.windows.uielement.manipulationstarted>** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)
+- [**System.windows.uielement.manipulationstarting>** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)
 - [**NoFocusCandidateFound**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.nofocuscandidatefound)
 - [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)
 - [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)
@@ -120,15 +120,14 @@ ms.locfileid: "66365848"
 - [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
 - [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
 - [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
-- [**PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown)
+- [**System.windows.forms.control.previewkeydown>** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown)
 - [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup)
-- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
 - [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
-- [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
+- [**分**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
-但是，您可以充分利用特定功能 （例如鼠标滚轮事件） 的每个设备的使用中的指针、 手势，以及处理事件[Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)。
+不过，你可以使用[Windows](https://docs.microsoft.com/uwp/api/windows.ui.input)中的指针、笔势和操作事件来利用每个设备（如鼠标滚轮事件）的特定功能。
 
-**示例：** 请参阅我们[BasicInput 示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)，有关。
+**范例**请参阅[BasicInput 示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)。
 
 ## <a name="guidelines-for-visual-feedback"></a>视觉反馈指南
 
@@ -163,7 +162,7 @@ ms.locfileid: "66365848"
 
 ### <a name="samples"></a>示例
 
-- [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-- [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+- [基本输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+- [低延迟输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 - [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 - [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)

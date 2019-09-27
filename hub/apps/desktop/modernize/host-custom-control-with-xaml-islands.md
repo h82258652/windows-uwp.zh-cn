@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ab9bff69ac9ac0eaf1f02c943229829e726a0b9d
-ms.sourcegitcommit: 8cbc9ec62a318294d5acfea3dab24e5258e28c52
+ms.openlocfilehash: 3c14cfaefcf10aa051e3054d5df2e6da9fd77602
+ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70911574"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71317067"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 孤岛在 WPF 应用程序中托管自定义 UWP 控件
 
@@ -40,7 +40,7 @@ ms.locfileid: "70911574"
 > [!NOTE]
 > 如果有一个面向 .NET Framework 的现有项目，则需要将项目迁移到 .NET Core 3。 有关详细信息，请参阅[此博客系列](https://devblogs.microsoft.com/dotnet/migrating-a-sample-wpf-app-to-net-core-3-part-1/)。
 
-1. 如果尚未这样做，请安装最新版本的[.Net Core 3 预览版 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0)。
+1. 如果尚未这样做，请安装最新版本的[.Net Core 3 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0)。
 
 2. 在 Visual Studio 2019 中，创建一个新的**WPF 应用程序（.Net Core）** 项目。
 
