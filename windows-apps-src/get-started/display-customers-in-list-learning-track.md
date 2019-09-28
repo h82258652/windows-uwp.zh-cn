@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 入门, uwp, windows 10, 了解轨迹, 数据绑定, 列表
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a63bcc73be0146a9f580ae3afe3684f85e51d00e
-ms.sourcegitcommit: 88431e67d282d9a2a4fe4afcb254310f90c7cd7e
+ms.openlocfilehash: 3cebf51bdf9fa9942a0b88ed7b4cf66204671781
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71127443"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340334"
 ---
 # <a name="display-customers-in-a-list"></a>以列表形式显示客户
 
@@ -110,7 +110,7 @@ public sealed partial class MainPage : Page
 
 如果你已遵循之前的代码段，所做的绑定将使用 x:Bind 且不指定模式，这使其成为一次性绑定。 如果想要直接从 UI 编辑客户，则需要将其更改为双向绑定，以便对数据的更改传递回客户对象。 [深入了解数据绑定](../data-binding/data-binding-in-depth.md)提供了详细信息。
 
-如果数据源更改，双向绑定还将更新 UI。 若要实现此功能，必须在源上实现 [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN)，并确保其属性设置器发起 **PropertyChanged** 事件。 常见做法是让它们调用 **OnPropertyChanged** 这样的帮助程序方法，如下所示：
+如果数据源更改，双向绑定还将更新 UI。 若要实现此功能，必须在源上实现 [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged)，并确保其属性设置器发起 **PropertyChanged** 事件。 常见做法是让它们调用 **OnPropertyChanged** 这样的帮助程序方法，如下所示：
 
 ```csharp
 public class Customer : INotifyPropertyChanged
@@ -170,7 +170,7 @@ public class Customer : INotifyPropertyChanged
 | [Binding](../xaml-platform/binding-markup-extension.md) | 有关以前的 Binding 标记扩展的文档。 |
 | [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) | 显示垂直堆栈中的数据项的 UI 控件。 |
 | [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | 在 UI 中显示可编辑文本数据的基本文本控件。 |
-| [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN) | 让数据可供观察、将数据提供给数据绑定的接口。 |
+| [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged) | 让数据可供观察、将数据提供给数据绑定的接口。 |
 | [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) | 此类的 **ItemsSource** 属性允许 ListView 绑定到数据源。 |
 
 ### <a name="useful-docs"></a>有用的文档

@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 00cf409177ae077d5df9739321c4464c2c56843d
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 7d06d91d2195c483f5453aeadbc5523a8935003c
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66371408"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340572"
 ---
 # <a name="background-transfers"></a>后台传输
 使用后台传输 API 以通过网络可靠地复制文件。 后台传输 API 提供应用暂停期间在后台运行的高级上载和下载功能，并持续至应用终止。 API 监视网络状态，并在连接丢失时自动暂停和恢复传输，并且传输还具有流量感知和电量感知功能，这意味着可以根据当前连接和设备电池状态调整下载活动。 该 API 适用于使用 HTTP 上载和下载较大文件。 还支持 FTP，但只能用于下载。
@@ -282,9 +282,9 @@ public class BackgroundDownloadProcessingTask : IBackgroundTask
 ## <a name="exceptions-in-windowsnetworkingbackgroundtransfer"></a>Windows.Networking.BackgroundTransfer 中的异常
 将统一资源标识符 (URI) 的无效字符串传递给 [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 对象的构造函数时，将引发异常。
 
-**.NET：** [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 类型在 C# 和 VB 中显示为 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN)。
+**.NET：** [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 类型在 C# 和 VB 中显示为 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri)。
 
-在 C# 和 Visual Basic 中，通过使用 .NET 4.5 中的 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) 类和 [**System.Uri.TryCreate**](https://docs.microsoft.com/dotnet/api/system.uri.trycreate?redirectedfrom=MSDN#overloads) 方法之一在构造 URI 之前测试从应用用户收到的字符串，可以避免该错误。
+在 C# 和 Visual Basic 中，通过使用 .NET 4.5 中的 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri) 类和 [**System.Uri.TryCreate**](https://docs.microsoft.com/dotnet/api/system.uri.trycreate#overloads) 方法之一在构造 URI 之前测试从应用用户收到的字符串，可以避免该错误。
 
 在 C++ 中，没有可用于试用字符串和将其解析到 URI 的方法。 如果应用获取 [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 用户输入，则构造函数应位于 try/catch 块中。 如果引发了异常，该应用可以通知用户并请求新的主机名。
 

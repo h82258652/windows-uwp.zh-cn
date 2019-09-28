@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bb43307b0a95b49acfd7e2f9739a843824dbf61c
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f5d0c2f5c5aa6c5d5bfcaee8e9b0ec14bbcd4ff3
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319075"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339371"
 ---
 # <a name="control-templates"></a>控件模板
 
@@ -103,9 +103,9 @@ ms.locfileid: "67319075"
 | **null**            | `Indeterminate`    | 包含一个圆形。      |
 
 
-使用 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 对象可指定控件在某种状态下的外观。 **VisualState** 包含可更改 [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 中元素外观的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.BeginStoryboard) 或 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)。 当控件进入 [**VisualState.Name**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstate.name) 属性指定的状态时，将应用 **Setter** 或 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 中的属性更改。 当控件退出该状态时，这些更改将会删除。 你可以将 **VisualState** 对象添加到 [**VisualStateGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateGroup) 对象。 还可以将 **VisualStateGroup** 对象添加到 [**VisualStateManager.VisualStateGroups**](https://docs.microsoft.com/dotnet/api/system.windows.visualstatemanager?view=netframework-4.8) 附加属性，这些对象在 **ControlTemplate** 的根 [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 上设置。
+使用 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 对象可指定控件在某种状态下的外观。 **VisualState** 包含可更改 [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 中元素外观的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.BeginStoryboard) 或 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)。 当控件进入 [**VisualState.Name**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstate.name) 属性指定的状态时，将应用 **Setter** 或 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 中的属性更改。 当控件退出该状态时，这些更改将会删除。 你可以将 **VisualState** 对象添加到 [**VisualStateGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateGroup) 对象。 还可以将 **VisualStateGroup** 对象添加到 [**VisualStateManager.VisualStateGroups**](https://docs.microsoft.com/dotnet/api/system.windows.visualstatemanager) 附加属性，这些对象在 **ControlTemplate** 的根 [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 上设置。
 
-以下 XAML 介绍在 `Checked`、`Unchecked` 和 `Indeterminate` 状态下的 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 对象。 该示例在 [**Border**](https://docs.microsoft.com/dotnet/api/system.windows.visualstatemanager?view=netframework-4.8) 上设置 [**VisualStateManager.VisualStateGroups**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) 附加属性，它是 [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 的根元素。 `Checked` **VisualState** 指定名为 `CheckGlyph` 的 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)（已在前面的示例中介绍）的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 1。 `Indeterminate` **VisualState** 指定名为 `IndeterminateGlyph` 的 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 的 **Opacity** 为 1。 `Unchecked` **VisualState** 没有 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 或 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)，因此 [**CheckBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 将返回到其默认外观。
+以下 XAML 介绍在 `Checked`、`Unchecked` 和 `Indeterminate` 状态下的 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 对象。 该示例在 [**Border**](https://docs.microsoft.com/dotnet/api/system.windows.visualstatemanager) 上设置 [**VisualStateManager.VisualStateGroups**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) 附加属性，它是 [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 的根元素。 `Checked` **VisualState** 指定名为 `CheckGlyph` 的 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)（已在前面的示例中介绍）的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 1。 `Indeterminate` **VisualState** 指定名为 `IndeterminateGlyph` 的 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 的 **Opacity** 为 1。 `Unchecked` **VisualState** 没有 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 或 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)，因此 [**CheckBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 将返回到其默认外观。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">

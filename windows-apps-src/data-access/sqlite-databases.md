@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10, uwp, SQLite, 数据库
 ms.localizationpriority: medium
-ms.openlocfilehash: 465376214f1bf1b390ec6db8609783e4e7872196
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 1cc8cfe696d35872469d97dba24f5388ff6833b5
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66362789"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339783"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>在 UWP 应用中使用 SQLite 数据库
 可以使用 SQLite 在用户设备上的轻量级数据库中存储和检索数据。 本指南演示如何执行该操作。
@@ -39,7 +39,7 @@ Entity Framework (EF) 是一个对象关系映射程序，可用于使用特定�
 
 ### <a name="sqlite-library"></a>SQLite 库
 
-[Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) 库可在 [System.Data.Common](https://docs.microsoft.com/dotnet/api/system.data.common?redirectedfrom=MSDN) 命名空间中实现接口。 Microsoft 将主动保留这些实现，它们提供了围绕低级别本机 SQLite API 的直观的包装器。
+[Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) 库可在 [System.Data.Common](https://docs.microsoft.com/dotnet/api/system.data.common) 命名空间中实现接口。 Microsoft 将主动保留这些实现，它们提供了围绕低级别本机 SQLite API 的直观的包装器。
 
 本指南的其余部分将帮助你使用此库。
 

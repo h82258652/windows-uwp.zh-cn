@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3905ef8786a06d4221ce42511f786927c3173ba6
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c69c5e64d75e03ce5bb2ef0d82c3b816fe78a770
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363167"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339421"
 ---
 # <a name="check-boxes"></a>复选框
 
@@ -85,7 +85,7 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### <a name="bind-to-ischecked"></a>绑定到 IsChecked
 
-使用 [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) 属性确定复选框是已选中还是已清除。 你可以将 IsChecked 属性的值绑定到其他二进制值。 但是，由于 IsChecked 是一个[可空](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN)布尔值，所以必须使用值转换器才能将它绑定到某个布尔值。
+使用 [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) 属性确定复选框是已选中还是已清除。 你可以将 IsChecked 属性的值绑定到其他二进制值。 但是，由于 IsChecked 是一个[可空](https://docs.microsoft.com/dotnet/api/system.nullable-1)布尔值，所以必须使用值转换器才能将它绑定到某个布尔值。
 
 在本示例中，同意服务条款的复选框的 **IsChecked** 属性绑定到了“提交”按钮的 [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled) 属性。 “提交”按钮仅在服务条款得到同意时才启用。
 
