@@ -1,30 +1,30 @@
 ---
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
-description: Microsoft Store 提交 API 中使用这些方法来管理包航班提交到合作伙伴中心帐户注册的应用。
+description: 使用 Microsoft Store 提交 API 中的这些方法为注册到合作伙伴中心帐户的应用管理包航班提交。
 title: 管理软件包外部测试版提交
 ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 11fb2427ece0f0e37fb2a5f2759094d6e04930c8
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 813b1375b3bdba42f0568cb7d961f8108d5828a1
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320150"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340411"
 ---
 # <a name="manage-package-flight-submissions"></a>管理软件包外部测试版提交
 
 Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部测试版提交的方法，包括逐步软件包推出。 有关 Microsoft Store 提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
 > [!IMPORTANT]
-> 如果使用的 Microsoft Store 提交 API 来创建包航班的提交，请务必进行进一步更改提交到只能通过使用 API，而不是合作伙伴中心。 如果你使用仪表板更改你最初使用此 API 创建的提交，则将无法再使用此 API 更改或提交该提交。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
+> 如果使用 Microsoft Store 提交 API 来创建包航班的提交，请确保只使用 API 而不是合作伙伴中心对提交进行进一步更改。 如果你使用仪表板更改你最初使用此 API 创建的提交，则将无法再使用此 API 更改或提交该提交。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
 
 <span id="methods-for-package-flight-submissions" />
 
 ## <a name="methods-for-managing-package-flight-submissions"></a>管理软件包外部测试版提交的方法
 
-使用以下方法获取、创建、更新、提交或删除软件包外部测试版提交。 可以使用这些方法之前，必须在合作伙伴中心上已存在包航班。 您可以创建包航班[在合作伙伴中心](https://docs.microsoft.com/windows/uwp/publish/package-flights)或通过使用中的 Microsoft Store 提交 API 方法中所述[管理包航班](manage-flights.md)。
+使用以下方法获取、创建、更新、提交或删除软件包外部测试版提交。 在可以使用这些方法之前，包航班必须已存在于合作伙伴中心。 可以在[合作伙伴中心](https://docs.microsoft.com/windows/uwp/publish/package-flights)创建包航班，或使用[管理包航班](manage-flights.md)中所述的 Microsoft Store 提交 API 方法。
 
 <table>
 <colgroup>
@@ -43,12 +43,12 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}</td>
-<td align="left"><a href="get-a-flight-submission.md">获取现有的包航班提交</a></td>
+<td align="left"><a href="get-a-flight-submission.md">获取现有包航班提交</a></td>
 </tr>
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status</td>
-<td align="left"><a href="get-status-for-a-flight-submission.md">获取现有的包航班提交状态</a></td>
+<td align="left"><a href="get-status-for-a-flight-submission.md">获取现有包航班提交状态</a></td>
 </tr>
 <tr>
 <td align="left">发布</td>
@@ -63,7 +63,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 <tr>
 <td align="left">发布</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit</td>
-<td align="left"><a href="commit-a-flight-submission.md">提交新的或更新包航班提交</a></td>
+<td align="left"><a href="commit-a-flight-submission.md">提交新的或更新的包航班提交</a></td>
 </tr>
 <tr>
 <td align="left">DELETE</td>
@@ -79,7 +79,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 若要创建软件包外部测试版提交，请遵循此过程。
 
-1. 如果尚未这样做，完成先决条件中所述[创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)，包括将 Azure AD 应用程序与你的合作伙伴中心帐户相关联并获取应用客户端 ID 和密钥。 你只需执行此操作一次；有了客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。  
+1. 如果尚未执行此操作，请完成[使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)中所述的先决条件，包括将 Azure AD 应用程序与合作伙伴中心帐户关联并获取客户端 ID 和密钥。 你只需执行此操作一次；有了客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。  
 
 2. [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 在 Microsoft Store 提交 API 中，必须将此访问令牌传递给相关方法。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
@@ -92,7 +92,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
     响应正文包含[外部测试版提交](#flight-submission-object)资源（包括新提交的 ID、用于将提交的任何程序包上传到 Azure Blob 存储的共享访问签名 (SAS) URI）和新提交的数据（包括所有应用一览和定价信息）。
 
     > [!NOTE]
-    > SAS URI 提供对 Azure 存储中的安全资源的访问权限（无需帐户密钥）。 有关 SAS URI 及其与 Azure Blob 存储一起使用的背景信息，请参阅[共享访问签名（第 1 部分）：了解 SAS 模型](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)和[共享访问签名，第 2 部分：创建并将 SAS 用于 Blob 存储](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
+    > SAS URI 提供对 Azure 存储中的安全资源的访问权限（无需帐户密钥）。 有关 SAS URI 及其与 Azure Blob 存储一起使用的背景信息，请参阅[共享访问签名（第 1 部分）：了解 SAS 模型 @ no__t 和 [Shared 访问签名，第2部分：创建 SAS 并将 SAS 用于 Blob 存储 @ no__t。
 
 4. 如果要为提交添加新的软件包，请[准备软件包](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)并将它们添加到 ZIP 存档。
 
@@ -106,11 +106,11 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 4. 如果要为提交添加新包，请使用 SAS URI 将 ZIP 存档上载到 [Azure Blob 存储](https://docs.microsoft.com/azure/storage/storage-introduction#blob-storage)，该 URI 已在之前调用的 POST 方法的响应正文中提供。 你可以使用不同的 Azure 库在多个平台上进行此操作，包括：
 
-    * [适用于.NET 的 azure 存储客户端库](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
-    * [Azure Storage SDK for Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
-    * [Azure Storage SDK for Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
+    * [适用于 .NET 的 Azure 存储客户端库](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
+    * [适用于 Java 的 Azure 存储 SDK](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
+    * [用于 Python 的 Azure 存储 SDK](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-    以下 C# 代码示例演示了如何在用于 .NET 的 Azure 存储客户端库中使用 [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob?redirectedfrom=MSDN) 类将 ZIP 存档上载到 Azure Blob 存储。 此示例假定 ZIP 存档已写入流对象。
+    以下 C# 代码示例演示了如何在用于 .NET 的 Azure 存储客户端库中使用 [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) 类将 ZIP 存档上载到 Azure Blob 存储。 此示例假定 ZIP 存档已写入流对象。
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -119,7 +119,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. 通过执行以下方法[确认软件包外部测试版提交](commit-a-flight-submission.md)。 完成与您的提交和更新现在应该应用到你的帐户，这将发出警报合作伙伴中心。
+5. 通过执行以下方法[确认软件包外部测试版提交](commit-a-flight-submission.md)。 这会提醒合作伙伴中心你已完成提交，你的更新现在应应用到你的帐户。
 
     ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
@@ -133,7 +133,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
     若要确认提交状态，请查看响应正文中的 *status* 值。 如果请求成功，此值应该从 **CommitStarted** 更改为 **PreProcessing**；如果请求中存在错误，此值应该更改为 **CommitFailed**。 如果存在错误，*statusDetails* 字段将包含有关错误的更多详细信息。
 
-7. 在提交成功完成之后，提交会发送至应用商店以供引入。 您可以继续使用在前面的方法或通过访问合作伙伴中心监视提交进度。
+7. 在提交成功完成之后，提交会发送至应用商店以供引入。 你可以继续使用以前的方法或通过访问合作伙伴中心来监视提交进度。
 
 <span/>
 
@@ -155,12 +155,12 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 ## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>管理软件包外部测试版提交的逐步软件包推出
 
-可在软件包外部测试版提交中逐步向 Windows 10 上一定比例的应用客户推出已更新的软件包。 这使你可以监视特定程序包的反馈和分析数据，从而确保在更广泛地推出更新前对此更新无虑。 可更改已发布提交的推出百分比（或终止更新），而无需创建新提交。 有关详细信息，包括有关如何启用和管理在合作伙伴中心的逐步包推出的说明，请参阅[这篇文章](../publish/gradual-package-rollout.md)。
+可在软件包外部测试版提交中逐步向 Windows 10 上一定比例的应用客户推出已更新的软件包。 这使你可以监视特定程序包的反馈和分析数据，从而确保在更广泛地推出更新前对此更新无虑。 可更改已发布提交的推出百分比（或终止更新），而无需创建新提交。 有关更多详细信息，包括如何在合作伙伴中心启用和管理逐步包推出的说明，请参阅[此文](../publish/gradual-package-rollout.md)。
 
 若要以编程方式启用软件包外部测试版提交的逐步软件包推出，请遵循此过程使用 Microsoft Store 提交 API 中的以下方法：
 
   1. [创建软件包外部测试版提交](create-a-flight-submission.md)或[获取软件包外部测试版提交](get-a-flight-submission.md)。
-  2. 在响应数据中，找到 [packageRollout](#package-rollout-object) 资源、将*isPackageRollout*字段设置为 true，然后将*packageRolloutPercentage*字段设置为应获取已更新的软件包的应用客户百分比。
+  2. 在响应数据中，找到 [packageRollout](#package-rollout-object) 资源、将 *isPackageRollout* 字段设置为 true，然后将 *packageRolloutPercentage* 字段设置为应获取已更新的软件包的应用客户百分比。
   3. 将已更新的软件包外部测试版提交数据传递到[更新软件包外部测试版提交](update-a-flight-submission.md)方法。
 
 针对软件包外部测试版提交启用逐步软件包推出后，你可以使用以下方法以编程方式获取、更新、终止或完成逐步推出。
@@ -182,22 +182,22 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout</td>
-<td align="left"><a href="get-package-rollout-info-for-a-flight-submission.md">获取包航班提交逐渐推出信息</a></td>
+<td align="left"><a href="get-package-rollout-info-for-a-flight-submission.md">获取包航班提交的逐步推出信息</a></td>
 </tr>
 <tr>
 <td align="left">发布</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage</td>
-<td align="left"><a href="update-the-package-rollout-percentage-for-a-flight-submission.md">更新包航班提交逐渐推出百分比</a></td>
+<td align="left"><a href="update-the-package-rollout-percentage-for-a-flight-submission.md">更新包航班提交的逐步推出百分比</a></td>
 </tr>
 <tr>
 <td align="left">发布</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout</td>
-<td align="left"><a href="halt-the-package-rollout-for-a-flight-submission.md">停止包航班提交逐渐推出</a></td>
+<td align="left"><a href="halt-the-package-rollout-for-a-flight-submission.md">暂停包航班提交的逐步推出</a></td>
 </tr>
 <tr>
 <td align="left">发布</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout</td>
-<td align="left"><a href="finalize-the-package-rollout-for-a-flight-submission.md">完成包航班提交逐渐推出</a></td>
+<td align="left"><a href="finalize-the-package-rollout-for-a-flight-submission.md">完成包航班提交的逐步推出</a></td>
 </tr>
 </tbody>
 </table>
@@ -255,14 +255,14 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 此资源具有以下值。
 
-| ReplTest1      | 在任务栏的搜索框中键入   | 描述              |
+| ReplTest1      | 类型   | 描述              |
 |------------|--------|------------------------------|
 | id            | string  | 提交的 ID。  |
 | flightId           | string  |  提交相关联的软件包外部测试版的 ID。  |  
 | status           | string  | 提交的状态。 这可以是以下值之一： <ul><li>无</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>认证</li><li>CertificationFailed</li><li>发行版本</li><li>ReleaseFailed</li></ul>   |
-| statusDetails           | 对象  |  包含有关提交状态的附加详细信息的[状态详细信息资源](#status-details-object)，其中包括任何错误的相关信息。  |
+| statusDetails           | object  |  包含有关提交状态的附加详细信息的[状态详细信息资源](#status-details-object)，其中包括任何错误的相关信息。  |
 | flightPackages           | array  | 包含提供提交中关于每个程序包详细信息的[软件包外部测试版资源](#flight-package-object)。   |
-| packageDeliveryOptions    | 对象  | 包含提交的逐步软件包推出和强制更新设置的[软件包递送选项资源](#package-delivery-options-object)。   |
+| packageDeliveryOptions    | object  | 包含提交的逐步软件包推出和强制更新设置的[软件包递送选项资源](#package-delivery-options-object)。   |
 | fileUploadUrl           | string  | 用于为提交上载任何程序包的共享访问签名 (SAS) URI。 如果要为提交添加新的程序包，请将包含这些程序包的 ZIP 存档上载到此 URI。 有关详细信息，请参阅[创建软件包外部测试版提交](#create-a-package-flight-submission)。  |
 | targetPublishMode           | string  | 提交的发布模式。 这可以是以下值之一： <ul><li>立即</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | 提交的发布日期采用 ISO 8601 格式（如果 *targetPublishMode* 设为“SpecificDate”）。  |
@@ -274,11 +274,11 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 此资源包含有关提交状态的附加详细信息。 此资源具有以下值。
 
-| ReplTest1           | 在任务栏的搜索框中键入    | 描述                   |
+| ReplTest1           | 类型    | 描述                   |
 |-----------------|---------|------|
-|  errors               |    对象     |   包含提交的错误详细信息的[状态详细信息资源](#status-detail-object)数组。   |     
-|  warnings               |   对象      | 包含提交的警告详细信息的[状态详细信息资源](#status-detail-object)数组。     |
-|  certificationReports               |     对象    |   提供对提交的认证报告数据的访问权限的[认证报告资源](#certification-report-object)数组。 如果认证失败，可检查这些报告，获取详细信息。    |  
+|  errors               |    object     |   包含提交的错误详细信息的[状态详细信息资源](#status-detail-object)数组。   |     
+|  warnings               |   object      | 包含提交的警告详细信息的[状态详细信息资源](#status-detail-object)数组。     |
+|  certificationReports               |     object    |   提供对提交的认证报告数据的访问权限的[认证报告资源](#certification-report-object)数组。 如果认证失败，可检查这些报告，获取详细信息。    |  
 
 
 <span id="status-detail-object" />
@@ -287,7 +287,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 此资源包含关于提交的任何相关错误或警告的附加详细信息。 此资源具有以下值。
 
-| ReplTest1           | 在任务栏的搜索框中键入    | 描述       |
+| ReplTest1           | 类型    | 描述       |
 |-----------------|---------|------|
 |  code               |    string     |   描述错误或警告类型的[提交状态代码](#submission-status-code)。 |  
 |  details               |     string    |  包含有关问题的更多详细信息的消息。     |
@@ -299,9 +299,9 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 此资源提供对提交的认证报告数据的访问权限。 此资源具有以下值。
 
-| ReplTest1           | 在任务栏的搜索框中键入    | 描述         |
+| ReplTest1           | 类型    | 描述         |
 |-----------------|---------|------|
-|     date            |    string     |  日期和时间生成报表，采用 ISO 8601 格式。    |
+|     date            |    string     |  生成报表的日期和时间，采用 ISO 8601 格式。    |
 |     reportUrl            |    string     |  用于访问报告的 URL。    |
 
 
@@ -331,13 +331,13 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 此资源具有以下值。
 
 > [!NOTE]
-> 当调用[更新应用提交](update-a-flight-submission.md)方法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 通过合作伙伴中心填充其他值。
+> 当调用[更新应用提交](update-a-flight-submission.md)方法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由合作伙伴中心填充。
 
-| ReplTest1           | 在任务栏的搜索框中键入    | 描述              |
+| ReplTest1           | type    | 描述              |
 |-----------------|---------|------|
 | fileName   |   string      |  程序包的名称。    |  
 | fileStatus    | string    |  程序包的状态。 这可以是以下值之一： <ul><li>无</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
-| id    |  string   |  唯一标识程序包的 ID。 通过合作伙伴中心使用此值。   |     
+| id    |  string   |  唯一标识程序包的 ID。 此值由合作伙伴中心使用。   |     
 | version    |  string   |  应用包的版本。 有关详细信息，请参阅[程序包版本编号](https://docs.microsoft.com/windows/uwp/publish/package-version-numbering)。   |   
 | architecture    |  string   |  应用包的体系结构（例如 ARM）。   |     
 | languages    | array    |  应用所支持的语言的语言代码数组。 有关详细信息，请参阅[支持的语言](https://docs.microsoft.com/windows/uwp/publish/supported-languages)。    |     
@@ -369,9 +369,9 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 此资源具有以下值。
 
-| ReplTest1           | 在任务栏的搜索框中键入    | 描述        |
+| ReplTest1           | 类型    | 描述        |
 |-----------------|---------|------|
-| packageRollout   |   对象      |   包含提交的逐步软件包推出设置的[软件包推出资源](#package-rollout-object)。    |  
+| packageRollout   |   object      |   包含提交的逐步软件包推出设置的[软件包推出资源](#package-rollout-object)。    |  
 | isMandatoryUpdate    | boolean    |  指示是否要将此提交中的软件包视为对自行安装的应用更新强制。 有关自行安装的应用更新的强制软件包的详细信息，请参阅[为应用下载并安装包更新](../packaging/self-install-package-updates.md)。    |  
 | mandatoryUpdateEffectiveDate    |  date   |  此提交中的软件包变为强制的日期和时间，采用 ISO 8601 格式和 UTC 时区。   |        
 
@@ -381,7 +381,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 此资源包含提交的逐步[软件包推出设置](#manage-gradual-package-rollout)。 此资源具有以下值。
 
-| ReplTest1           | 在任务栏的搜索框中键入    | 描述        |
+| ReplTest1           | 类型    | 描述        |
 |-----------------|---------|------|
 | isPackageRollout   |   boolean      |  指示是否为提交启用逐步软件包推出。    |  
 | packageRolloutPercentage    | 浮点数    |  将在逐步推出中收到软件包的用户百分比。    |  
@@ -389,7 +389,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 | fallbackSubmissionId    |  string   |  将由不获取逐步推出软件包的客户接收的提交 ID。   |          
 
 > [!NOTE]
-> *PackageRolloutStatus*并*fallbackSubmissionId*值通过合作伙伴中心分配，并且不应由开发人员设置。 如果已将这些值包括在请求正文中，则将忽略这些值。
+> *PackageRolloutStatus*和*FallbackSubmissionId*值由合作伙伴中心分配，不应由开发人员设置。 如果已将这些值包括在请求正文中，则将忽略这些值。
 
 <span/>
 
@@ -424,8 +424,8 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)
-* [管理包航班使用 Microsoft Store 提交 API](manage-flights.md)
+* [使用 Microsoft Store services 创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
+* [使用 Microsoft Store 提交 API 管理包航班](manage-flights.md)
 * [获取包航班提交](get-a-flight-submission.md)
 * [创建包航班提交](create-a-flight-submission.md)
 * [更新包航班提交](update-a-flight-submission.md)

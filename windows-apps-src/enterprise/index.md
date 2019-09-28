@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: baac4498fcc6dd65d106166f73ca89db89cbfc6b
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: eec1de013efce7b23cd89e81f659a5cc530638c4
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67821006"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339966"
 ---
 # <a name="enterprise"></a>企业
 
@@ -78,7 +78,7 @@ Windows UI 库是一组 NuGet 程序包，它们提供了用于 UWP 应用的控
 
 ### <a name="sql-server-connectivity"></a>SQL Server 连接
 
-通过使用 [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN&view=netframework-4.7.2) 命名空间中的类，你的应用可以直接连接到 SQL Server 数据库然后存储和检索数据。
+通过使用 [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) 命名空间中的类，你的应用可以直接连接到 SQL Server 数据库然后存储和检索数据。
 
 请参阅[在 UWP 应用中使用 SQL Server 数据库](https://docs.microsoft.com/en-us/windows/uwp/data-access/sql-server-databases)。
 
@@ -125,7 +125,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司�
 |-------|-------------|
 | [网络基础知识](https://docs.microsoft.com/windows/uwp/networking/networking-basics) | 本操作实例介绍与所有 UWP 应用相关的基本网络概念，不考虑使用何种通信协议。  |
 | [选择哪一种网络技术？](https://docs.microsoft.com/windows/uwp/networking/which-networking-technology) | 适用于 UWP 应用的网络技术的简短概述，以及关于如何选择最适合自己应用的技术的建议。 |
-| [XML 和 SOAP 序列化](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | XML 序列化将对象转换为符合特定的 XML 架构定义语言 (XSD) 的 XML 流。 若要在 XML 和强类型的类之间进行转换，可以使用本机 [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument?redirectedfrom=MSDN) 类或外部库。 |
+| [XML 和 SOAP 序列化](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | XML 序列化将对象转换为符合特定的 XML 架构定义语言 (XSD) 的 XML 流。 若要在 XML 和强类型的类之间进行转换，可以使用本机 [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument) 类或外部库。 |
 | [JSON 序列化](https://docs.microsoft.com/uwp/api/Windows.Data.Json) | JSON（JavaScript 对象表示法）序列化是用于与 REST API 进行通信的流行格式。 [Newtonsoft Json.NET](https://www.newtonsoft.com/json)，在 UWP 应用中受到完全支持。 |
 
 ## <a name="devices"></a>设备

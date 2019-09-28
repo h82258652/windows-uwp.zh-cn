@@ -12,12 +12,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fdde8c5af2120786f215480cc7e7ae422d77c5c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3fe1389e3c3db28f834217b4f163c48633c32d14
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365057"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340165"
 ---
 # <a name="boxpanel-an-example-custom-panel"></a>BoxPanel，一个自定义面板示例
 
@@ -25,7 +25,7 @@ ms.locfileid: "66365057"
 
 学习为自定义 [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel) 类编写代码、实现 [**ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) 和 [**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 方法，以及使用 [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children) 属性。 
 
-> **重要的 API**：[**面板**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)， [ **ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)，[**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 
+> **重要的 API**：[**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)、 [**system.windows.frameworkelement.arrangeoverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)、[**system.windows.frameworkelement.measureoverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 
 
 示例代码显示了一个自定义面板实现，但我们不会花费许多时间来解释影响为不同的布局方案自定义面板方式的布局概念。 如果你需要关于这些布局概念以及它们可能如何应用到特定布局方案的详细信息，请参阅 [XAML 自定义面板概述](custom-panels-overview.md)。
 
@@ -45,7 +45,7 @@ ms.locfileid: "66365057"
 
 ## <a name="start-by-deriving-from-panel"></a>由从 **Panel** 派生开始
 
-由从 [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel) 派生自定义类开始。 执行此操作的最简单方法可能是为此类定义一个独立的代码文件，方法是从 Microsoft Visual Studio 中的“解决方案资源管理器”  中针对项目使用“添加”   | “新建项”   | “类”  上下文菜单选项。 将该类（以及文件）命名为 `BoxPanel`。
+由从 [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel) 派生自定义类开始。 执行此操作的最简单方法可能是为此类定义一个独立的代码文件，方法是从 Microsoft Visual Studio 中的“解决方案资源管理器”中针对项目使用“添加” | “新建项” | “类”上下文菜单选项。 将该类（以及文件）命名为 `BoxPanel`。
 
 类的模板文件不会从许多 **using** 语句开始，因为它不特别适用于通用 Windows 平台 (UWP) 应用。 因此，首先添加 **using** 语句。 模板文件的开头部分还包含一些你可能不需要的 **using** 语句，可以将其删除。 以下是可解析类型的 **using** 语句的建议列表，你将需要将这些语句用于典型的自定义面板代码：
 
@@ -87,7 +87,7 @@ public class BoxPanel : Panel
 
 从现在起，我们将一次向你显示一个成员定义，无论它是方法替代还是支持内容（例如依赖属性）。 你可以将它们以任何顺序添加到上述框架，而且我们将不再在代码段中显示 **using** 语句或类范围的定义，直到我们显示最终代码。
 
-## <a name="measureoverride"></a>**MeasureOverride**
+## <a name="measureoverride"></a>**System.windows.frameworkelement.measureoverride**
 
 
 ```CSharp
@@ -134,7 +134,7 @@ protected override Size MeasureOverride(Size availableSize)
 当 *availableSize* 的高度组件未绑定时，可能使用此面板。 如果确实如此，则面板没有要划分的已知高度。 在此情况下，度量传递的逻辑会通知每个子元素它尚未具有绑定的高度。 它通过为 [**Size.Height**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) 为无限的子元素将 [**Size**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) 传递到 [**Measure**](https://docs.microsoft.com/uwp/api/windows.foundation.size.height) 调用来执行此操作。 这是合法的。 当调用 **Measure** 时，逻辑为将 [**DesiredSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize) 设置为以下值中的最小值：传递到 **Measure** 的内容，或来自系数（例如明确设置的 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 和 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)）的该元素的自然大小。
 
 > [!NOTE]
-> 内部逻辑[ **StackPanel** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)也具有此行为：**StackPanel**无限维度将值传递给[**度量值**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure)对子对象，指示没有对方向维度中的子对象没有约束。 **StackPanel** 通常动态调整自身大小，以使在该维度中增长的堆栈容纳所有子元素。
+> [**System.windows.controls.stackpanel>** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)的内部逻辑也具有此行为：**System.windows.controls.stackpanel>** 传递一个无限维度值以对子级进行[**度量**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure)，这表示对于 "方向" 维度中的子级没有约束。 **StackPanel** 通常动态调整自身大小，以使在该维度中增长的堆栈容纳所有子元素。
 
 但是，面板本身无法从 [**MeasureOverride**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) 返回带有无限值的 [**Size**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)；这将在布局期间引发异常。 因此部分逻辑要找出任何子元素请求的最大高度，并将高度用作单元格高度，以防尚未从面板的自身大小约束中获得该高度的情况。 以下是在之前的代码中引用的帮助程序函数 `LimitUnboundedSize`，此函数随后获取该最大单元格高度，并使用它向面板提供一个用于返回的有限高度，以及确保在启动排列传递之前 `cellheight` 为有限值：
 
@@ -155,7 +155,7 @@ Size LimitUnboundedSize(Size input)
 }
 ```
 
-## <a name="arrangeoverride"></a>**ArrangeOverride**
+## <a name="arrangeoverride"></a>**System.windows.frameworkelement.arrangeoverride**
 
 ```CSharp
 protected override Size ArrangeOverride(Size finalSize)
@@ -182,7 +182,7 @@ protected override Size ArrangeOverride(Size finalSize)
 
 面板有时需要剪裁它们的内容。 如果它们执行此操作，剪裁的大小是 [**DesiredSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize) 中显示的大小，因为 [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) 逻辑将其设置为传递到 **Measure** 的内容的最小值，或其他自然大小系数。 因此你通常不需要在 [**Arrange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) 期间专门检查剪裁，剪裁的发生仅基于将 **DesiredSize** 传递到每个 **Arrange** 调用。
 
-如果定义呈现位置所需的所有信息通过其他方式已知，则你在经过循环访问时不需要始终计数。 例如，在 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 布局逻辑中，[**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children) 集合中的位置不重要。 在 **Canvas** 中定位每个元素所需的所有信息通过读取子元素的 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) 和 [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8) 值作为排列逻辑的一部分已知。 `BoxPanel` 逻辑恰好需要计数以对 *colcount* 进行比较，因此已知何时开始一个新行并抵消 *y* 值。
+如果定义呈现位置所需的所有信息通过其他方式已知，则你在经过循环访问时不需要始终计数。 例如，在 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 布局逻辑中，[**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children) 集合中的位置不重要。 在 **Canvas** 中定位每个元素所需的所有信息通过读取子元素的 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 和 [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) 值作为排列逻辑的一部分已知。 `BoxPanel` 逻辑恰好需要计数以对 *colcount* 进行比较，因此已知何时开始一个新行并抵消 *y* 值。
 
 通常输入 *finalSize* 和你从 [**ArrangeOverride**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) 实现返回的 [**Size**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) 相同。 有关原因的详细信息，请参阅 [XAML 自定义面板概述](custom-panels-overview.md)的“**ArrangeOverride**”部分。
 
@@ -209,13 +209,13 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 ## <a name="the-scenario-for-boxpanel"></a>面向 BoxPanel 的方案
 
-面向 `BoxPanel` 的特定方案具有这样的面板：面板中的一个如何划分空间的主要决定因素是，通过知道子项目的数量并为面板划分已知可用空间。 面板固有为矩形。 许多面板通过将该矩形空间划分为更多的矩形来操作；这是 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 对其单元格执行的操作。 对于 **Grid**，单元格的大小由 [**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition) 和 [**RowDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RowDefinition) 值设置，而且元素通过 [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8) 和 [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column?view=netframework-4.8) 附加属性声明它们进入的确切单元格。 从 **Grid** 获取良好的布局通常需要事先知道子元素的数量，以便有足够单元格且每个子元素设置其附加属性以使其适合自己的单元格。
+面向 `BoxPanel` 的特定方案具有这样的面板：面板中的一个如何划分空间的主要决定因素是，通过知道子项目的数量并为面板划分已知可用空间。 面板固有为矩形。 许多面板通过将该矩形空间划分为更多的矩形来操作；这是 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 对其单元格执行的操作。 对于 **Grid**，单元格的大小由 [**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition) 和 [**RowDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RowDefinition) 值设置，而且元素通过 [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row) 和 [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column) 附加属性声明它们进入的确切单元格。 从 **Grid** 获取良好的布局通常需要事先知道子元素的数量，以便有足够单元格且每个子元素设置其附加属性以使其适合自己的单元格。
 
 但是如果子元素的数量是动态的该怎么办？ 这当然可能。你的应用代码可将项目添加到集合中，以响应任何你认为足够重要且值得更新 UI 的动态运行时状况。 如果你对备份集合/业务对象使用数据绑定，获取此类更新和更新 UI 将自动处理，因此这通常是首选技术（请参阅[数据绑定概述](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)）。
 
-但是并非所有应用方案都适合数据绑定。 有时你在运行时需要创建新 UI 元素并使它们可见。 `BoxPanel` 适用于此方案。 变化的子项目数对 `BoxPanel` 不构成问题，因为它在计算中使用子元素计数，并且将现有和新子元素调整为新布局，以使它们全部适合。
+但是并非所有应用方案都适合数据绑定。 有时你在运行时需要创建新 UI 元素并使它们可见。 此方案 `BoxPanel`。 变化的子项目数对 `BoxPanel` 不构成问题，因为它在计算中使用子元素计数，并且将现有和新子元素调整为新布局，以使它们全部适合。
 
-用于进一步扩展 `BoxPanel` 的高级方案（此处未显示）可同时容纳动态子元素并使用子元素的 [**DesiredSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize) 作为调整个别单元格大小的更强系数。 此方案可能使用不同的行或列大小或者非网格形状来减少“浪费的”空间。 这需要一种战略，用于确定大小和纵横比各异的多个矩形如何同时出于视觉美学和最小大小而全部适合包含的矩形。 `BoxPanel` 不会这样;它使用更简单的技术为划分的空间。 `BoxPanel`方法是确定至少方形数大于子级计数。 例如，9 个项目可容纳到 3x3 正方形中。 10 个项目需要 4x4 正方形。 不过，你可以经常调整项目，同时仍然可以删除开始正方形的一行或一列，以便节省空间。 在 count=10 示例中，它可容纳到 4x3 或 3x4 矩形中。
+用于进一步扩展 `BoxPanel` 的高级方案（此处未显示）可同时容纳动态子元素并使用子元素的 [**DesiredSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize) 作为调整个别单元格大小的更强系数。 此方案可能使用不同的行或列大小或者非网格形状来减少“浪费的”空间。 这需要一种战略，用于确定大小和纵横比各异的多个矩形如何同时出于视觉美学和最小大小而全部适合包含的矩形。 `BoxPanel` 不执行此操作;它使用一种更简单的分隔空间的方法。 @no__t 0 的技术是确定大于子级计数的最小方数。 例如，9 个项目可容纳到 3x3 正方形中。 10 个项目需要 4x4 正方形。 不过，你可以经常调整项目，同时仍然可以删除开始正方形的一行或一列，以便节省空间。 在 count=10 示例中，它可容纳到 4x3 或 3x4 矩形中。
 
 你可能想知道为什么该面板不为 10 个项目选择 5x2，因为那将完美地容纳该项目数。 但是，在实际中，会将面板大小调整为很少有方向明显的纵横比的矩形。 最小二乘技术是一种影响大小逻辑的方式，以便良好适合典型布局形状，并且不鼓励单元格形状可获取奇数纵横比的大小调整。
 
@@ -223,10 +223,10 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 **参考**
 
-* [**FrameworkElement.ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)
-* [**FrameworkElement.MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
-* [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
+* [**FrameworkElement. System.windows.frameworkelement.arrangeoverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)
+* [**FrameworkElement. System.windows.frameworkelement.measureoverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
+* [**小册子**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
 
 **概念**
 
-* [对齐、 边距和填充](alignment-margin-padding.md)
+* [对齐、边距和填充](alignment-margin-padding.md)

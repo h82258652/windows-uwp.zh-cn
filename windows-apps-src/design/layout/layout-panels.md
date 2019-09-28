@@ -5,12 +5,12 @@ ms.date: 04/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fbda33e044880b263feafbcf88b041abdadc310
-ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
+ms.openlocfilehash: 9322ba847aeb7eb64c2654e1105582478a0d3b47
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061965"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340120"
 ---
 # <a name="layout-panels"></a>布局面板
 
@@ -46,7 +46,7 @@ ms.locfileid: "71061965"
 
 大多数 XAML 布局面板使用附加属性，使其子元素通知父面板应如何在 UI 中放置它们。 附加属性使用语法 *AttachedPropertyProvider.PropertyName*。 如果你有嵌套在其他面板内的面板，则 UI 元素上用于将布局特征指定到父项的附加属性仅由关系最直接的父面板解释。
 
-以下是一个有关如何才能在 XAML 中的 Button 控件上设置 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) 附加属性的示例。 这会通知父项 Canvas 应将 Button 放置在距 Canvas 的左边缘 50 个有效像素的位置。
+以下是一个有关如何才能在 XAML 中的 Button 控件上设置 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 附加属性的示例。 这会通知父项 Canvas 应将 Button 放置在距 Canvas 的左边缘 50 个有效像素的位置。
 
 ```xaml
 <Canvas>
@@ -147,9 +147,9 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
 
 [  **Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 面板支持动态布局并允许你以多行或多列布局排列控件。 你可以通过使用 [**RowDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions) 和 [**ColumnDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.columndefinitions) 属性来指定 Grid 的行和列。
 
-要将对象放置到 Grid 的特定单元格中，请使用 [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column?view=netframework-4.8) 和 [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8) 附加属性。
+要将对象放置到 Grid 的特定单元格中，请使用 [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column) 和 [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row) 附加属性。
 
-要使内容分散到多个行和列中，请使用 [**Grid.RowSpan**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v=vs.95)) 和 [**Grid.ColumnSpan**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.columnspan?view=netframework-4.8) 附加属性。
+要使内容分散到多个行和列中，请使用 [**Grid.RowSpan**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v=vs.95)) 和 [**Grid.ColumnSpan**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.columnspan) 附加属性。
 
 此 XAML 示例显示了如何创建包含两行和两列的网格。
 
@@ -245,7 +245,7 @@ Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分
 
 ## <a name="canvas"></a>画布
 
-[  **Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 面板使用固定的坐标点定位其子元素并且不支持动态布局。 通过在每个元素上设置 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) 和 [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8) 附加属性，你可以在单独子元素上指定点。 父级 Canvas 在布局的 [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) 传递期间从其子级中读取这些附加属性值。
+[  **Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 面板使用固定的坐标点定位其子元素并且不支持动态布局。 通过在每个元素上设置 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 和 [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) 附加属性，你可以在单独子元素上指定点。 父级 Canvas 在布局的 [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) 传递期间从其子级中读取这些附加属性值。
 
 Canvas 中的对象可以重叠，即在一个对象顶部绘制另一个对象。 默认情况下，Canvas 以声明子对象的顺序呈现子对象，因此最后一个子对象在顶部呈现（每个元素的默认 z-index 为 0）。 这与其他内置面板相同。 但是，Canvas 还支持 [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) 附加属性，可在每个子元素上设置。 你可以在代码中设置此属性，以在运行时期间更改元素的绘制顺序。 带有最高 Canvas.ZIndex 值的元素将最后绘制，因此它将在位于相同位置的任何其他元素上重叠绘制，或者将以任何方式进行重叠。 请注意，因为需要遵循 alpha 值（透明度），所以即使元素重叠，在重叠区域中显示的内容也可能混合（如果顶部元素具有非最大 alpha 值）。
 

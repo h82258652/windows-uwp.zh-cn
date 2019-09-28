@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ac91b3ea1c8396a89a2ec91c43cdcd6f52bbbbcd
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 49fb5ac5fbba5fad8123eb0167a2e00037725487
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393665"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340514"
 ---
 # <a name="passing-arrays-to-a-windows-runtime-component"></a>将数组传递到 Windows 运行时组件
 
@@ -20,12 +20,12 @@ ms.locfileid: "70393665"
 
 在通用 Windows 平台 (UWP) 中，参数要么用于输入，要么用于输出，决不可同时用于两者。 这意味着传递到某个方法的数组的内容以及数组本身要么用于输入，要么用于输出。 如果数组的内容用于输入，该方法将从该数组进行读取而不是对其进行写入。 如果数组的内容用于输出，该方法将对该数组进行写入而不是从中进行读取。 这对于数组参数是一项问题，因为 .NET 中的数组是引用类型，即使数组引用按值传递（Visual Basic 中的**ByVal** ），数组的内容也是可变的。 [Windows 运行时元数据导出工具 (Winmdexp.exe)](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool) 需要你通过将 ReadOnlyArrayAttribute 属性或 WriteOnlyArrayAttribute 属性应用于参数，指定数组（如果该数组未从上下文中清除）的预期用途。 数组用途已确定，如下所示：
 
--   对于返回值或输出参数（在 Visual Basic 中为带有 [OutAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.outattribute?redirectedfrom=MSDN) 属性的 **ByRef** 参数），数组始终仅用于输出。 不会应用 ReadOnlyArrayAttribute 属性。 输出参数上允许有 WriteOnlyArrayAttribute 属性，但是多余的。
+-   对于返回值或输出参数（在 Visual Basic 中为带有 [OutAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.outattribute) 属性的 **ByRef** 参数），数组始终仅用于输出。 不会应用 ReadOnlyArrayAttribute 属性。 输出参数上允许有 WriteOnlyArrayAttribute 属性，但是多余的。
 
-    > **请注意**  ，Visual Basic 编译器不强制执行仅限输出的规则。 你绝不应从输出参数中进行读取；它可能包含 **Nothing**。 始终分配新数组。
+    > **警告**  The Visual Basic 编译器不强制执行仅限输出的规则。 你绝不应从输出参数中进行读取；它可能包含 **Nothing**。 始终分配新数组。
  
 -   不允许具有 **ref** 修饰符（在 Visual Basic 中为 **ByRef**）的参数。 Winmdexp.exe 会生成错误。
--   对于通过值传递的参数，必须通过应用 [ReadOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.readonlyarrayattribute?redirectedfrom=MSDN) 属性或 [WriteOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute?redirectedfrom=MSDN) 属性来指定数组内容是用于输入还是用于输出。 同时指定这两个属性是一个错误。
+-   对于通过值传递的参数，必须通过应用 [ReadOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.readonlyarrayattribute) 属性或 [WriteOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute) 属性来指定数组内容是用于输入还是用于输出。 同时指定这两个属性是一个错误。
 
 如果某个方法必须接受用于输入的数组，请修改数组内容，并将该数组返回到调用方，然后将只读参数用于输入，而将只写参数（或返回值）用于输出。 以下代码显示了一种实现此模式的方法：
 
@@ -62,6 +62,6 @@ ms.locfileid: "70393665"
 
 ## <a name="related-topics"></a>相关主题
 
-* [ReadOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.readonlyarrayattribute?redirectedfrom=MSDN)
-* [WriteOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute?redirectedfrom=MSDN)
-* [用C#和 Visual Basic Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [ReadOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.readonlyarrayattribute)
+* [WriteOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute)
+* [使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)

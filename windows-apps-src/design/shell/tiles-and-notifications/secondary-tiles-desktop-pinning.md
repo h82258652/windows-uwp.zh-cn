@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, 桌面桥, 辅助磁贴, 固定, 快速入门, 代码示例, 示例, secondarytile, 桌面应用程序, win32, winforms, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ca6471122ee1870a94ef0834a5eed8f83a4d4a7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cd6debb076aac4286c8cb9a33730ade4942b5030
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362618"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340403"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>从桌面应用程序固定辅助磁贴
 
@@ -22,7 +22,7 @@ ms.locfileid: "66362618"
 ![辅助磁贴的屏幕截图](images/secondarytiles.png)
 
 > [!IMPORTANT]
-> **需要 Fall Creators Update**:您必须为目标 SDK 版本 16299 和运行生成 16299 或更高版本将辅助磁贴固定从桌面桥应用程序。
+> **需要秋季创意者更新**：必须面向 SDK 16299，并运行版本16299或更高版本，以便固定桌面桥应用程序的辅助磁贴。
 
 从 WPF 或 WinForms 应用程序中添加辅助磁贴非常类似于纯净版 UWP 应用的情况。 唯一的区别是，你必须指定主窗口句柄 (HWND)。 这是因为在固定磁贴时，Windows 会显示一个模式对话框，并请求用户确认他们是否想要固定磁贴。 如果桌面应用程序没有为 SecondaryTile 对象配置所有者窗口，则 Windows 不知道在哪里绘制对话框，因此操作将失败。
 
@@ -34,7 +34,7 @@ ms.locfileid: "66362618"
 
 ## <a name="enable-access-to-iinitializewithwindow-interface"></a>启用对 IInitializeWithWindow 接口的访问
 
-如果应用程序使用托管语言（如 C# 或 Visual Basic）编写，则在应用代码中使用 [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute?redirectedfrom=MSDN) 和 Guid 属性声明 IInitializeWithWindow 接口，如以下 C# 示例所示。 此示例假设代码文件具有 System.Runtime.InteropServices 命名空间的 using 语句。
+如果应用程序使用托管语言（如 C# 或 Visual Basic）编写，则在应用代码中使用 [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute) 和 Guid 属性声明 IInitializeWithWindow 接口，如以下 C# 示例所示。 此示例假设代码文件具有 System.Runtime.InteropServices 命名空间的 using 语句。
 
 ```csharp
 [ComImport]
@@ -90,7 +90,7 @@ bool isPinned = await tile.RequestCreateAsync();
 ## <a name="send-tile-notifications"></a>发送磁贴通知
 
 > [!IMPORTANT]
-> **2018 年 4 月 17134.81 或更高版本需要**:您必须运行生成 17134.81 或更高版本将从桌面桥应用磁贴或徽章通知发送到辅助磁贴。 在 17134.81 服务更新之前，从桌面桥应用向辅助磁贴发送磁贴或锁屏提醒通知时会出现 0x80070490 *未找到元素* 异常。
+> **需要2018年4月版或更高17134.81 版本**：必须运行版本17134.81 或更高版本，才能将磁贴或徽章通知发送到桌面桥应用中的辅助磁贴。 在 17134.81 服务更新之前，从桌面桥应用向辅助磁贴发送磁贴或锁屏提醒通知时会出现 0x80070490 *未找到元素* 异常。
 
 发送磁贴或锁屏提醒通知的方法与 UWP 应用相同。 要开始使用，请参阅[发送本地磁贴通知](sending-a-local-tile-notification.md)。
 
@@ -99,6 +99,6 @@ bool isPinned = await tile.RequestCreateAsync();
 
 * [完整的代码示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
 * [辅助磁贴概述](secondary-tiles.md)
-* [固定辅助磁贴 (UWP)](secondary-tiles-pinning.md)
+* [固定辅助磁贴（UWP）](secondary-tiles-pinning.md)
 * [桌面桥](https://developer.microsoft.com/windows/bridges/desktop)
 * [桌面桥代码示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)

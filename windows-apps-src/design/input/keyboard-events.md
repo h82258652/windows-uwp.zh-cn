@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ef2007648c21e015aa2ae692d28efa56c922bf5
-ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
+ms.openlocfilehash: 89257a4ec64458f5734c2b04c1e654a7c0c44f27
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660195"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339901"
 ---
 # <a name="keyboard-events"></a>键盘事件
 
@@ -94,12 +94,12 @@ void MyProject::MainPage::Grid_KeyUp(
 
 所有键盘事件对事件数据均使用 [**KeyRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs)，而且 **KeyRoutedEventArgs** 包含以下属性：
 
--   [**Key**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
+-   [**按键**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
 -   [**KeyStatus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)
--   [**处理**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
--   [**OriginalSource** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) (继承自[ **RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs))
+-   [**妥善**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
+-   [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) （继承自[**system.windows.routedeventargs.handled**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs)）
 
-### <a name="key"></a>键
+### <a name="key"></a>Key
 
 如果按下某个键，则引发 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 事件。 同样，如果释放某个键，则引发 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)。 通常会侦听这些事件以处理特定键值。 若要确定按下或释放了哪个键，请检查事件数据中的 [**Key**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) 值。 **Key** 返回 [**VirtualKey**](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKey) 值。 **VirtualKey** 枚举包括所有受支持的键。
 
@@ -277,7 +277,7 @@ End Sub
 ```
 
 > [!NOTE]
-> 在 XAML 中设置 [**AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.acceleratorkey?view=netframework-4.8) 或 [**AutomationProperties.AccessKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey?view=netframework-4.8) 会提供字符串信息，这可记录用于调用该特定操作的快捷键。 该信息由 Microsoft UI 自动化客户端（如讲述人）捕获，并且通常直接提供给用户。
+> 在 XAML 中设置 [**AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.acceleratorkey) 或 [**AutomationProperties.AccessKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey) 会提供字符串信息，这可记录用于调用该特定操作的快捷键。 该信息由 Microsoft UI 自动化客户端（如讲述人）捕获，并且通常直接提供给用户。
 >
 > 设置 **AutomationProperties.AcceleratorKey** 或 **AutomationProperties.AccessKey** 不会自行执行任何操作。 你仍需要附加 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 或 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件的处理程序，才能在你的应用中真正实现键盘快捷方式行为。 此外，不会自动为访问键提供带下划线的文本效果。 如果你希望在 UI 中显示带下划线的文本，则必须明确对助记键中特定键的文本标注下划线，作为嵌入式 [**Underline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Underline) 格式。
 
@@ -319,7 +319,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 ### <a name="addhandler-and-already-handled-keyboard-events"></a>AddHandler 和 already-handled 键盘事件
 
-可以使用特殊技术来附加处理程序，该技术对已标记为已处理的事件进行操作。 此方法使用[ **AddHandler** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)方法来注册一个处理程序，而不使用 XAML 属性或特定于语言的语法来添加处理程序，如在 C + =\#。
+可以使用特殊技术来附加处理程序，该技术对已标记为已处理的事件进行操作。 此方法使用[**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)方法来注册处理程序，而不是使用 XAML 属性或语言特定的语法添加处理程序，如 C @ no__t-2 中的 + =。
 
 此技术的一般限制是 **AddHandler** API 带有一个类型为 [**RoutedEvent**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEvent) 的参数，该参数标识相关的路由事件。 并非所有路由事件都提供 **RoutedEvent** 标识符，因此此注意事项会影响在 [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) 情况下仍然可以处理的路由事件。 [  **KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 和 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件在 [**UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydownevent) 上具有路由事件标识符（[**KeyDownEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyupevent) 和 [**KeyUpEvent**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)）。 但是，其他事件（如 [**TextBox.TextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged)）没有路由事件标识符，因此不能使用 **AddHandler** 技术。
 
@@ -327,7 +327,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 你可以替代特定控件（如 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)）的键事件，以针对各种输入设备（包括键盘和游戏板）提供一致的焦点导航。
 
-在以下示例中，我们按下任意箭头键时控件的子类并重写要将焦点移到 GridView 的 KeyDown 行为的内容。
+在下面的示例中，我们将控件划分为子类，并重写 KeyDown 行为，以便在按下任意箭头键时将焦点移到 GridView 内容。
 
 ```csharp
   public class CustomGridView : GridView
@@ -383,25 +383,25 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 ## <a name="related-articles"></a>相关文章
 
-**开发人员**
+**商**
 * [键盘交互](keyboard-interactions.md)
 * [标识输入设备](identify-input-devices.md)
-* [响应触摸键盘存在](respond-to-the-presence-of-the-touch-keyboard.md)
+* [响应触摸键盘的存在](respond-to-the-presence-of-the-touch-keyboard.md)
 
 **设计器**
-* [键盘设计指南](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
+* [键盘设计准则](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
 
 **示例**
 * [触摸键盘示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [基本输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延迟输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **存档示例**
-* [输入的示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：触摸键盘示例](https://go.microsoft.com/fwlink/p/?linkid=246019)
-* [响应的外观的屏幕键盘示例](https://go.microsoft.com/fwlink/p/?linkid=231633)
+* [输入示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Input：设备功能示例 @ no__t-0
+* [Input：触摸键盘示例 @ no__t-0
+* [响应屏幕键盘的外观示例](https://go.microsoft.com/fwlink/p/?linkid=231633)
 * [XAML 文本编辑示例](https://go.microsoft.com/fwlink/p/?LinkID=251417)
  
 

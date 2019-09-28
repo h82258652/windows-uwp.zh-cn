@@ -1,5 +1,5 @@
 ---
-title: 用C#和 Visual Basic Windows 运行时组件
+title: 使用 C# 和 Visual Basic 创建 Windows 运行时组件
 description: 从 .NET 4.5 开始，你可以使用托管代码创建你自己的 Windows 运行时类型，并将其打包到 Windows 运行时组件中。
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 ms.date: 12/04/2018
@@ -9,16 +9,16 @@ dev_langs:
 - vb
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 351d59cbecd0941cdc6218d02672b2a679cf3fce
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: c402b8e4ba98f55267a42c1bce1c16e6f090e80c
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393724"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340379"
 ---
-# <a name="windows-runtime-components-with-c-and-visual-basic"></a>用C#和 Visual Basic Windows 运行时组件
+# <a name="windows-runtime-components-with-c-and-visual-basic"></a>使用 C# 和 Visual Basic 创建 Windows 运行时组件
 
-你可以使用托管代码创建自己的 Windows 运行时类型，并将其打包到 Windows 运行时组件中。 你可以在使用C++、JavaScript、Visual Basic 或C#编写的通用 Windows 平台（UWP）应用中使用你的组件。 本主题概述了创建组件的规则，并讨论了 Windows 运行时的 .NET 支持的某些方面。 通常，此支持旨在使 .NET 程序员透明。 但是，在你创建要与 JavaScript 或 C++ 一起使用的组件时，需要意识到这些语言支持 Windows 运行时的方法差异。
+你可以使用托管代码创建自己的 Windows 运行时类型，并将其打包到 Windows 运行时组件中。 你可以在使用C++、JavaScript、Visual Basic 或C#编写的通用 Windows 平台（UWP）应用中使用你的组件。 本主题概述了用于创建组件的规则，并讨论了有关 Windows 运行时的 .NET 支持的一些方面。 一般情况下，该支持设计为对 .NET 程序员透明可见。 但是，在你创建要与 JavaScript 或 C++ 一起使用的组件时，需要意识到这些语言支持 Windows 运行时的方法差异。
 
 如果要创建仅用于以 Visual Basic 或C#编写的 uwp 应用的组件，并且该组件不包含 uwp 控件，则使用**类库**模板而不是**Windows 运行时组件**项目进行考虑Microsoft Visual Studio 中的模板。 简单类库所受限制较少。
 
@@ -28,9 +28,9 @@ ms.locfileid: "70393724"
 
 在外部，类型的成员只能为其参数和返回值公开 Windows 运行时类型。 以下列表描述了从 Windows 运行时组件公开的 .NET 类型的限制。
 
-- 组件中的所有公共类型和成员的字段、参数和返回值必须是 Windows 运行时类型。 此限制包括你创作的 Windows 运行时类型以及 Windows 运行时本身提供的类型。 它还包括许多 .NET 类型。 包含这些类型是 .net 提供的支持的一部分，它可以在托管代码&mdash;中自然地使用 Windows 运行时代码似乎使用熟悉的 .net 类型，而不是基础 Windows 运行时类型。 例如，你可以使用诸如**Int32**和**Double**的 .net 基元类型、某些基本类型（如**DateTimeOffset**和**Uri**）以及一些常用的泛型接口类型，如**IEnumerable T&lt;&gt;** （Visual Basic 中的 IEnumerable （of T）和**IDictionary&lt;TKey，TValue&gt;** 。 请注意，这些泛型类型的类型参数必须是 Windows 运行时类型。 本主题后面的将[Windows 运行时类型传递给托管代码](#passing-windows-runtime-types-to-managed-code)和[将托管类型传递给 Windows 运行时](#passing-managed-types-to-the-windows-runtime)部分对此进行了讨论。
+- 组件中的所有公共类型和成员的字段、参数和返回值必须是 Windows 运行时类型。 此限制包括你创作的 Windows 运行时类型以及 Windows 运行时本身提供的类型。 它还包括许多 .NET 类型。 包含这些类型是 .NET 提供的支持的一部分，它可以在托管代码 @ no__t-0your 代码中自然地使用 Windows 运行时，而不是使用熟悉的 .NET 类型，而不是基础 Windows 运行时类型。 例如，你可以使用诸如**Int32**和**Double**的 .net 基元类型、某些基本类型（如**DateTimeOffset**和**Uri**）以及一些常用的泛型接口类型，如**IEnumerable @ no__t-5T @ no__t-6**（Visual Basic 中的 IEnumerable （Of T）和**IDictionary @ No__t-8TKey，TValue @ no__t-9**。 请注意，这些泛型类型的类型参数必须是 Windows 运行时类型。 本主题后面的将[Windows 运行时类型传递给托管代码](#passing-windows-runtime-types-to-managed-code)和[将托管类型传递给 Windows 运行时](#passing-managed-types-to-the-windows-runtime)部分对此进行了讨论。
 
-- 公共类和接口可以包含方法、属性和事件。 可以为事件声明委托，或使用**EventHandler&lt;T&gt;** 委托。 公共类或接口不能：
+- 公共类和接口可以包含方法、属性和事件。 可以为事件声明委托，或使用**EventHandler @ no__t-1T @ no__t**委托。 公共类或接口不能：
     - 具有泛型性。
     - 实现一个接口，该接口不是 Windows 运行时接口（不过，您可以创建自己的 Windows 运行时接口并实现它们）。
     - 从不在 Windows 运行时中的类型派生 **，如 system.exception 和** **system.object**。
@@ -82,26 +82,26 @@ ms.locfileid: "70393724"
 
 | Windows 运行时                                  | .NET                                    |
 |-|-|
-| Iiterable<t>&lt;T&gt;                               | IEnumerable&lt;T&gt;                              |
-| IVector&lt;T&gt;                                 | IList&lt;T&gt;                                    |
-| IVectorView&lt;T&gt;                             | IReadOnlyList&lt;T&gt;                            |
-| IMap&lt;K，V&gt;                                 | IDictionary&lt;TKey，TValue&gt;                   |
-| IMapView&lt;K，V&gt;                             | System.collections.generic.ireadonlydictionary<tkey&lt;TKey，TValue&gt;           |
-| IKeyValuePair&lt;K，V&gt;                        | KeyValuePair&lt;TKey，TValue&gt;                  |
+| Iiterable<t> @ no__t-0T @ no__t-1                               | IEnumerable @ no__t-0T @ no__t-1                              |
+| IVector @ no__t-0T @ no__t-1                                 | IList @ no__t-0T @ no__t-1                                    |
+| IVectorView @ no__t-0T @ no__t-1                             | IReadOnlyList @ no__t-0T @ no__t-1                            |
+| IMap @ no__t-成功，V @ no__t-1                                 | IDictionary @ no__t-0TKey，TValue @ no__t-1                   |
+| IMapView @ no__t-成功，V @ no__t-1                             | System.collections.generic.ireadonlydictionary<tkey @ no__t-0TKey，TValue @ no__t-1           |
+| IKeyValuePair @ no__t-成功，V @ no__t-1                        | KeyValuePair @ no__t-0TKey，TValue @ no__t-1                  |
 | IBindableIterable                                | IEnumerable                                       |
 | IBindableVector                                  | IList                                             |
 | Windows.UI.Xaml.Data.INotifyPropertyChanged      | System.ComponentModel.INotifyPropertyChanged      |
 | Windows.UI.Xaml.Data.PropertyChangedEventHandler | System.ComponentModel.PropertyChangedEventHandler |
 | Windows.UI.Xaml.Data.PropertyChangedEventArgs    | System.ComponentModel.PropertyChangedEventArgs    |
 
-在某种类型实现多个接口时，你可以将所实现的任意接口用作成员的参数类型或返回类型。 例如，你可以将**字典&lt;int、string&gt;**  （**整数，string Visual Basic）** 作为**IDictionary&lt;int，string&gt;** ， **system.collections.generic.ireadonlydictionary<tkey 传递或返回int、string&gt;或 IEnumerable KeyValuePair TKey，TValue。 &lt;** **&lt;&gt;&lt;&gt;**
+在某种类型实现多个接口时，你可以将所实现的任意接口用作成员的参数类型或返回类型。 例如，你可以将**字典 @ no__t-1int、string @ no__t-2** （Visual Basic 中**的字典（整数，string）** ）作为**IDictionary @ no__t-5int、string @ no__t-6**、 **system.collections.generic.ireadonlydictionary<tkey @ no__t-8int、string @ no__t-9**，或**IEnumerable @ No__t-KeyValuePair @ No__t-12TKey，TValue @ no__t-13 @ no__t-14**。
 
 > [!IMPORTANT]
-> JavaScript 使用托管类型实现的接口列表中首先显示的接口。 例如，如果您将**字典&lt;int 和 string&gt;** 返回到 JavaScript 代码，无论您指定哪一个接口作为返回类型，它都显示为**IDictionary&lt;int，string。&gt;** 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
+> JavaScript 使用托管类型实现的接口列表中首先显示的接口。 例如，如果您将**Dictionary @ no__t-1int、string @ no__t-2**返回给 JavaScript 代码，无论您指定哪一个接口作为返回类型，它都显示为**IDictionary @ no__t-4int，string @ no__t-5** 。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
 
-在 Windows 运行时中，使用 IKeyValuePair 循环访问**IMap&lt;k、v&gt;** 和**IMapView&lt;K，v。&gt;** 将它们传递给托管代码时，它们将显示**为&lt;IDictionary TKey、&gt; TValue**和**system.collections.generic.ireadonlydictionary<tkey&lt;TKey，&gt;TValue**，因此，你可以自然地使用**KeyValuePair&lt;TKey，TValue&gt;** 来枚举它们。
+在 Windows 运行时中， **IMap @ no__t-1k，v @ no__t-2**和**IMapView @ no__t-4k，v @ no__t-5**将使用 IKeyValuePair 进行循环访问。 将它们传递给托管代码时，它们将显示为**IDictionary @ no__t-1TKey、TValue @ no__t-2**和**system.collections.generic.ireadonlydictionary<tkey @ no__t-4TKey、TValue @ no__t-5**，因此，你自然会使用 **@ KeyValuePair-no__t，TValue @ no__t**来枚举它们。
 
-接口在托管代码中的显示方式影响实现这些接口的类型的显示方式。 例如， **PropertySet**类实现**IMap&lt;K&gt;，V**，后者在托管代码中显示为**IDictionary&lt;TKey，TValue。&gt;** **PropertySet**看起来像是实现**了&lt;IDictionary TKey、&gt; TValue**而不是**IMap&lt;K&gt;，V**，因此在托管代码中，它看起来有一个 "**添加**" 方法，它的行为与 .NET 字典上的**Add**方法类似。 它看起来没有**Insert**方法。 您可以在[创建C#或 Visual Basic Windows 运行时组件的主题演练中查看此示例，并从 JavaScript 中调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
+接口在托管代码中的显示方式影响实现这些接口的类型的显示方式。 例如， **PropertySet**类实现**IMap @ no__t-2k，V @ no__t**，后者在托管代码中显示为**IDictionary @ no__t-5TKey，TValue @ no__t-6**。 **PropertySet**看起来像是实现**了 IDictionary @ no__t-2TKey，TValue @ no__t-3**而不是**IMap @ no__t-no__t，V @-6**，因此在托管代码中，它**的行为**类似于中的**add**方法。网络字典。 它看起来没有**Insert**方法。 您可以在[创建C#或 Visual Basic Windows 运行时组件的主题演练中查看此示例，并从 JavaScript 中调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
 
 ## <a name="passing-managed-types-to-the-windows-runtime"></a>将托管的类型传递到 Windows 运行时
 
@@ -177,13 +177,13 @@ End Function
 
 ## <a name="asynchronous-operations"></a>异步操作
 
-若要在组件中实现异步方法，请将 "Async" 添加到方法名称的末尾，并返回一个表示异步操作或操作的 Windows 运行时接口：**IAsyncAction**、 **iasyncactionwithprogress<tprogress>&lt;TProgress&gt;** 、 **iasyncoperation<tresult>&lt;tresult或&gt;** **IAsyncOperationWithProgresstresult、&lt;TProgress&gt;** .
+若要在组件中实现异步方法，请将 "Async" 添加到方法名称的末尾，并返回一个表示异步操作或操作的 Windows 运行时接口：**IAsyncAction**、 **iasyncactionwithprogress<tprogress> @ no__t-2TProgress @ no__t**、 **iasyncoperation<tresult> @ no__t-5TResult @ no__t-** IAsyncOperationWithProgress、no__t @ 8TResult- **9**。
 
-可以使用 .net 任务（[**任务**](/dotnet/api/system.threading.tasks.task)类和通用[**任务&lt;TResult&gt;** ](/dotnet/api/system.threading.tasks.task-1)类）来实现异步方法。 必须返回表示正在进行的操作的任务，例如从C#或 Visual Basic 中写入的异步方法返回的任务，或者返回从任务中返回的任务[。运行](/dotnet/api/system.threading.tasks.task.run)方法。 如果你使用构造函数创建任务，必须在返回它之前调用其 [Task.Start](/dotnet/api/system.threading.tasks.task.start) 方法。
+可以使用 .NET 任务（ [**Task**](/dotnet/api/system.threading.tasks.task)类和泛型[**Task @ no__t-4TResult @ no__t**](/dotnet/api/system.threading.tasks.task-1)类）来实现异步方法。 必须返回表示正在进行的操作的任务，例如从C#或 Visual Basic 中写入的异步方法返回的任务，或者返回从任务中返回的任务[。运行](/dotnet/api/system.threading.tasks.task.run)方法。 如果你使用构造函数创建任务，必须在返回它之前调用其 [Task.Start](/dotnet/api/system.threading.tasks.task.start) 方法。
 
-使用`await` （`Await` 在VisualBasic中`Async` ）的方法需要关键字（在VisualBasic中）。`async` 如果从 Windows 运行时组件公开此类方法，请将`async`关键字应用于传递给**Run**方法的委托。
+使用 `await` （Visual Basic 中 `Await`）的方法需要 `async` 关键字（@no__t 中的 Visual Basic）。 如果从 Windows 运行时组件公开此类方法，请将 @no__t 关键字应用于传递给**Run**方法的委托。
 
-对于不支持取消和进度报告的异步操作，你可以使用 [WindowsRuntimeSystemExtensions.AsAsyncAction](https://docs.microsoft.com/dotnet/api/system?redirectedfrom=MSDN) 或 [AsAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system?redirectedfrom=MSDN) 扩展方法来在相应的接口中打包任务。 例如，下面的代码使用任务来实现异步方法 **&lt;。运行 TResult&gt;** 方法来启动任务。 **AsAsyncOperation&lt;TResult&gt;** 扩展方法将任务作为 Windows 运行时异步操作返回。
+对于不支持取消和进度报告的异步操作，你可以使用 [WindowsRuntimeSystemExtensions.AsAsyncAction](https://docs.microsoft.com/dotnet/api/system) 或 [AsAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system) 扩展方法来在相应的接口中打包任务。 例如，下面的代码通过使用任务来实现异步方法 **。 Run @ no__t-1TResult @ no__t-2**方法来启动任务。 **AsAsyncOperation @ no__t-1TResult @ no__t**扩展方法将任务作为 Windows 运行时异步操作返回。
 
 ```csharp
 public static IAsyncOperation<IList<string>> DownloadAsStringsAsync(string id)
@@ -222,7 +222,7 @@ function asyncExample(id) {
 
 对于支持取消或进度报告的异步操作和操作，请使用[**system.runtime.interopservices.windowsruntime.asyncinfo**](/dotnet/api/system.runtime.interopservices.windowsruntime)类生成已启动的任务，并使用取消和进度挂钩任务的取消和进度报告功能报告相应 Windows 运行时接口的功能。 有关支持取消和进度报告的示例，请参阅[创建C#或 Visual Basic Windows 运行时组件的演练，并从 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
 
-请注意，即使异步方法不支持取消或进度报告，也可以使用**system.runtime.interopservices.windowsruntime.asyncinfo**类的方法。 如果使用 Visual Basic lambda 函数或C#匿名方法，请不要为标记和[iprogress<t>&lt;t&gt; ](https://docs.microsoft.com/dotnet/api/system.iprogress-1?redirectedfrom=MSDN)接口提供参数。 如果你使用 C# lambda 函数，则提供令牌参数，但忽略它。 上面的示例使用&lt;AsAsyncOperation tresult&gt;方法，当你使用 system.runtime.interopservices.windowsruntime.asyncinfo 时，它将如下所示：[**运行&lt;tresult&gt;（Func&lt;CancellationToken，Task&lt;TResult）方法重载&gt;。&gt;** ](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime?redirectedfrom=MSDN)
+请注意，即使异步方法不支持取消或进度报告，也可以使用**system.runtime.interopservices.windowsruntime.asyncinfo**类的方法。 如果使用 Visual Basic lambda 函数或C#匿名方法，请不要为标记和[iprogress<t> @ no__t-3T @ no__t](https://docs.microsoft.com/dotnet/api/system.iprogress-1)接口提供参数。 如果你使用 C# lambda 函数，则提供令牌参数，但忽略它。 上面的示例使用 AsAsyncOperation @ no__t-0TResult @ no__t 方法，当你使用 System.runtime.interopservices.windowsruntime.asyncinfo 时，此示例如下所示[ **。运行 @ no__t-4TResult @ no__t-5 （Func @ no__t-6CancellationToken，Task @ no__t-7TResult @ no__t-8 @ no__t-9**](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime)）方法改为重载。
 
 ```csharp
 public static IAsyncOperation<IList<string>> DownloadAsStringsAsync(string id)
@@ -247,7 +247,7 @@ Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 End Function
 ```
 
-如果创建可以选择支持取消或进度报告的异步方法，请考虑添加没有参数的重载或**iprogress<t>&lt;t&gt;** 接口。
+如果创建可以选择支持取消或进度报告的异步方法，请考虑添加没有参数的重载或**iprogress<t> @ no__t-1T @ no__t**接口。
 
 ## <a name="throwing-exceptions"></a>引发异常
 
@@ -269,7 +269,7 @@ End Function
 
 ## <a name="declaring-and-raising-events"></a>声明和引发事件
 
-在你声明类型以保留事件数据时，请从 Object 而非 EventArgs 派生，因为 EventArgs 不属于 Windows 运行时类型。 使用[**EventHandler&lt;TEventArgs&gt;** ](https://docs.microsoft.com/dotnet/api/system.eventhandler-1?redirectedfrom=MSDN)作为事件的类型，并使用事件参数类型作为泛型类型参数。 与在 .NET 应用程序中一样，引发事件。
+在你声明类型以保留事件数据时，请从 Object 而非 EventArgs 派生，因为 EventArgs 不属于 Windows 运行时类型。 使用[**EventHandler @ no__t-2TEventArgs @ no__t**](https://docs.microsoft.com/dotnet/api/system.eventhandler-1)作为事件的类型，并使用事件参数类型作为泛型类型参数。 与在 .NET 应用程序中一样，引发事件。
 
 在通过 JavaScript 或 C++ 使用 Windows 运行时组件时，事件遵循这些语言期望的 Windows 运行时事件模式。 使用C#或 Visual Basic 中的组件时，该事件将显示为普通的 .net 事件。 本演练中提供了[一个C#示例，说明如何创建或 Visual Basic Windows 运行时组件并从 JavaScript 中调用它](/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript)。
 
@@ -283,4 +283,4 @@ End Function
 
 ## <a name="related-topics"></a>相关主题
 * [适用于 UWP 应用的 .NET](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
-* [创建C#或 Visual Basic Windows 运行时组件并从 JavaScript 中调用该组件的演练](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+* [创建 C# 或 Visual Basic Windows 运行时组件并通过 JavaScript 调用此组件的演练](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: ad133a9b1eb22695e6ce5d8b3edba9ad3a138b68
-ms.sourcegitcommit: f1261aa6f7eeb62bf770a08b58ec4357bdc20c7e
+ms.openlocfilehash: c337de2a1fc349cfa3965402848fbead51e61e83
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71224761"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340472"
 ---
 # <a name="debug-a-background-task"></a>调试后台任务
 
@@ -36,7 +36,7 @@ ms.locfileid: "71224761"
 
 通过 Microsoft Visual Studio，可以手动触发后台任务。 然后可以单步执行代码并对其进行调试。
 
-1.  在 C# 中，在后台类的 Run 方法中放置一个断点（对于进程内后台任务，请将断点放在 App.OnBackgroundActivated() 中），和/或通过使用 [**System.Diagnostics**](https://docs.microsoft.com/dotnet/api/system.diagnostics?view=netframework-4.7.2) 编写调试输出。
+1.  在 C# 中，在后台类的 Run 方法中放置一个断点（对于进程内后台任务，请将断点放在 App.OnBackgroundActivated() 中），和/或通过使用 [**System.Diagnostics**](https://docs.microsoft.com/dotnet/api/system.diagnostics) 编写调试输出。
 
     在 C++ 中，在后台类的 Run 函数中放置一个断点（对于进程内后台任务，请将断点放在 App.OnBackgroundActivated() 中），和/或通过使用 [**OutputDebugString**](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw) 编写调试输出。
 

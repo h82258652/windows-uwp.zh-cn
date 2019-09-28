@@ -6,18 +6,18 @@ ms.date: 08/11/2017
 ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 图钉
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aca8f4daea39a190af4dd1007a6b961198994dd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b8e14693dd6ef23714da53d652b9083f202cd62d
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370546"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340439"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>在地图上显示目标点
 
 使用图钉、图像、图形和 XAML UI 元素向地图添加目标点 (POI)。 POI 是地图上表示对某事物感兴趣的特殊的点。 例如，企业、城市或好友的位置。
 
-若要了解有关在您的应用程序中显示 POI 的详细信息，下载以下示例从[Windows 通用示例存储库](https://go.microsoft.com/fwlink/p/?LinkId=619979)GitHub 上：[通用 Windows 平台 (UWP) 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)。
+若要详细了解如何在应用中显示 POI，请从 GitHub 上的[Windows 通用示例](https://go.microsoft.com/fwlink/p/?LinkId=619979)存储库下载以下示例：[通用 Windows 平台（UWP）映射示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)。
 
 通过将  [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)、[**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard)、[**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) 和 [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) 对象添加到 [**MapElementsLayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) 对象的 **MapElements** 集合，在地图上显示图钉、图像和图形。 然后，将该层对象添加到地图控件的 **Layers** 集合。
 
@@ -163,9 +163,9 @@ public void AddLandmarkPhoto()
 }
 ```
 
-没有需要研究一些更接近此代码的三个部分：图像、 引用照像机上，并[ **NormalizedAnchorPoint** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint)属性。
+此代码有三个部分需要检查一点：图像、引用照相机和[**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint)属性。
 
-### <a name="image"></a>Image
+### <a name="image"></a>图像
 
 此示例显示在项目的**资源**文件夹中保存的自定义图像。 [  **MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) 属性需要类型 [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) 的值。 此类型需要 [**Windows.Storage.Streams**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) 命名空间的 **using** 声明。
 
@@ -352,7 +352,7 @@ public Geopoint BellevueLocation { get; set; }
 </maps:MapControl>
 ```
 
-以上示例中的 ``ItemsSource`` 属性绑定到代码隐藏文件中一个类型为 [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist?view=netframework-4.70) 的属性。
+以上示例中的 ``ItemsSource`` 属性绑定到代码隐藏文件中一个类型为 [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) 的属性。
 
 ```csharp
 public sealed partial class Scenario1 : Page

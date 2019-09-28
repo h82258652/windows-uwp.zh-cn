@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f1cc0e932a1dd413ed94e1fe5d9a3d1e6b0870c
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 7359d28d968a2948e9f4049e2acc3c655edcfcb3
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393572"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339203"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>利用新式 UWP 组件扩展桌面应用
 
@@ -77,7 +77,7 @@ ms.locfileid: "70393572"
 
 ### <a name="build-your-solution"></a>构建解决方案
 
-生成解决方案，以确保不会出现任何错误。 如果收到错误，请打开**Configuration Manager**并确保项目面向同一平台。
+生成解决方案，以确保不会出现任何错误。 如果收到错误, 请打开**Configuration Manager**并确保项目面向同一平台。
 
 ![配置管理器](images/desktop-to-uwp/config-manager.png)
 
@@ -175,7 +175,7 @@ ms.locfileid: "70393572"
 
 ### <a name="start-the-uwp-app"></a>启动 UWP 应用
 
-首先，在桌面应用程序中，创建一个 [Uri](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN)，其中包含协议名称和要传入 UWP 应用的任何参数。 然后，调用 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法。
+首先，在桌面应用程序中，创建一个 [Uri](https://docs.microsoft.com/dotnet/api/system.uri)，其中包含协议名称和要传入 UWP 应用的任何参数。 然后，调用 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法。
 
 ```csharp
 
@@ -220,7 +220,7 @@ protected override void OnActivated(Windows.ApplicationModel.Activation.IActivat
 }
 ```
 
-在 XAML 页面背后的代码中，重写``OnNavigatedTo``方法以使用传入页面的参数。 在本例中，我们将使用传递给该页面的纬度和经度来在地图中显示一个位置。
+在 XAML 页面背后的代码中，重写 ``OnNavigatedTo`` 方法以使用传入页面的参数。 在本例中，我们将使用传递给该页面的纬度和经度来在地图中显示一个位置。
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -295,9 +295,9 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 </Extensions>  
 ```
 
-提供 UWP 项目生成的可执行文件的名称以及入口点类的名称。 此标记假设 UWP 应用的可执行文件的名称为`ShareTarget.exe`。
+提供 UWP 项目生成的可执行文件的名称以及入口点类的名称。 此标记假设 UWP 应用的可执行文件的名称为 `ShareTarget.exe`。
 
-你还必须指定可用你的应用共享的文件类型。 在此示例中，我们将[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) desktop 应用程序设为位图图像的共享目标，以便`Bitmap`为受支持的文件类型指定。
+你还必须指定可用你的应用共享的文件类型。 在此示例中，我们将[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) desktop 应用程序设为位图图像的共享目标，以便为受支持的文件类型指定 `Bitmap`。
 
 <a id="override" />
 
@@ -366,7 +366,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-对于用户已打开的桌面应用程序的实例，我们可能还会处理[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)事件，并将路径传递到文件位置。 这样，桌面应用程序的任何打开的实例都将显示共享照片。
+对于用户已打开的桌面应用程序的实例，我们可能还会处理[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher)事件，并将路径传递到文件位置。 这样，桌面应用程序的任何打开的实例都将显示共享照片。
 
 ```csharp
 ...

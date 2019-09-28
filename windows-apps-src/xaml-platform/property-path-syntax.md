@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 57532c45bdf6c2b8feb2af1277be74a0f8b2c759
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 34f315628af0ea181756f2456d4d0dfe70bf8377
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320299"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340551"
 ---
 # <a name="property-path-syntax"></a>Property-path 语法
 
@@ -50,11 +50,11 @@ ms.locfileid: "67320299"
 
 ### <a name="indexers"></a>索引器
 
-数据绑定的属性路径可以包括对编制了索引的属性的引用。 这样便可绑定到已排序的列表/矢量，或绑定到字典/地图。 使用方括号"\[\]"字符，它指示索引的属性。 位于这些括号中的内容可以是整数（对于排序列表），也可以是不加引号的字符串（对于字典）。 还可以绑定到键为整数的字典。 可以在同一路径中使用不同的编制了索引的属性，使用点分隔对象-属性。
+数据绑定的属性路径可以包括对编制了索引的属性的引用。 这样便可绑定到已排序的列表/矢量，或绑定到字典/地图。 使用方括号 "\[ @ no__t-1" 字符来表示索引属性。 位于这些括号中的内容可以是整数（对于排序列表），也可以是不加引号的字符串（对于字典）。 还可以绑定到键为整数的字典。 可以在同一路径中使用不同的编制了索引的属性，使用点分隔对象-属性。
 
-例如，考虑一个业务对象，它有一个“Teams”的列表（排序列表），每个队有一本名为“Players”的字典，每个队员使用姓氏作为键。 第二个团队的特定播放器示例属性路径为："团队\[1\]。玩家\[Smith\]"。 （使用 1 来指示“Teams”中的第二个项，因为该列表的索引是从零开始编制的。）
+例如，考虑一个业务对象，它有一个“Teams”的列表（排序列表），每个队有一本名为“Players”的字典，每个队员使用姓氏作为键。 第二个团队中特定播放机的示例属性路径为："团队 @ no__t-01 @ no__t-1。队员 @ no__t-2Smith @ no__t "。 （使用 1 来指示“Teams”中的第二个项，因为该列表的索引是从零开始编制的。）
 
-**请注意**  索引支持C++数据源是有限; 请参阅[深度中的数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)。
+**请注意**  Indexing 对C++数据源的支持是有限的;[深入查看数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)。
 
 ### <a name="attached-properties"></a>附加的属性
 
@@ -70,7 +70,7 @@ ms.locfileid: "67320299"
 
 ## <a name="property-path-for-animation-targeting"></a>动画目标的属性路径
 
-动画依赖于选择在动画运行时便应用情节提要值的依赖属性作为目标。 为了标识存在待进行动画处理的属性的对象，动画按名称（[x:Name 属性](x-name-attribute.md)）选择元素作为目标。 通常需要定义以标识为 [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8) 的对象开始、以应该应用动画的特殊依赖属性值结束的属性路径。 属性路径用作 [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)) 的值。
+动画依赖于选择在动画运行时便应用情节提要值的依赖属性作为目标。 为了标识存在待进行动画处理的属性的对象，动画按名称（[x:Name 属性](x-name-attribute.md)）选择元素作为目标。 通常需要定义以标识为 [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname) 的对象开始、以应该应用动画的特殊依赖属性值结束的属性路径。 属性路径用作 [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)) 的值。
 
 有关如何在 XAML 中定义动画的详细信息，请参阅[情节提要动画](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)。
 
@@ -84,19 +84,19 @@ ms.locfileid: "67320299"
 
 ## <a name="specifying-a-particular-child-in-a-collection"></a>指定集合中的特定子项
 
-若要指定集合属性中的子项，可以使用数值索引器。 使用方括号"\[\]"围绕整数的字符索引值。 可以只引用排序列表，不引用字典。 因为集合不是可进行动画处理的值，所以使用索引器时绝不能将索引器作为属性路径中的结束属性。
+若要指定集合属性中的子项，可以使用数值索引器。 在整数索引值周围使用方括号 "\[ @ no__t-1" 个字符。 可以只引用排序列表，不引用字典。 因为集合不是可进行动画处理的值，所以使用索引器时绝不能将索引器作为属性路径中的结束属性。
 
-例如，若要指定要进行动画处理的第一个颜色停止中的颜色[ **LinearGradientBrush** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)应用于控件的[**背景**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background)属性，这是属性路径:"(Control.Background)。(GradientBrush.GradientStops)\[0\]。 (GradientStop.Color)"。 注意如何实现不将索引器作为路径中的最后一步，尤其要注意最后一步必须引用集合中项 0 的 [**GradientStop.Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color) 属性来对它应用 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 动画值。
+例如，若要指定要对应用于控件的[**背景**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background)属性的[**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)中的第一种颜色停止颜色进行动画处理，则这是属性路径： "（控件背景）。（GradientBrush. GradientStops） \[0 @ no__t。（System.windows.media.gradientstop>） "。 注意如何实现不将索引器作为路径中的最后一步，尤其要注意最后一步必须引用集合中项 0 的 [**GradientStop.Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color) 属性来对它应用 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 动画值。
 
 ## <a name="animating-an-attached-property"></a>对附加属性进行动画处理
 
-虽然并不是常见情形，但可以对附加属性进行动画处理，前提是附加属性具有与动画类型匹配的属性值。 因为附加属性的识别名称中已包括点，所以你必须将任何附加属性名称括在括号内，以便不会将点视为对象-属性的分隔符。 例如，用于指定你希望对某个对象上的 [**LinearGradientBrush**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8) 附加属性进行动画处理的字符串使用属性路径“(Grid.Row)”。
+虽然并不是常见情形，但可以对附加属性进行动画处理，前提是附加属性具有与动画类型匹配的属性值。 因为附加属性的识别名称中已包括点，所以你必须将任何附加属性名称括在括号内，以便不会将点视为对象-属性的分隔符。 例如，用于指定你希望对某个对象上的 [**LinearGradientBrush**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row) 附加属性进行动画处理的字符串使用属性路径“(Grid.Row)”。
 
-**请注意**  对于此示例的值[**了一个 Grid.Row** ](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8)是**Int32**属性类型。 因此无法使用 **Double** 动画对其进行动画处理， 而应该定义一个具有 [**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame) 组件的 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)，其中 [**ObjectKeyFrame.Value**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) 设置为整数（如“0”或“1”）。
+**请注意**@no__t 此示例中， [**1For 的值为**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row) **Int32**属性类型。 因此无法使用 **Double** 动画对其进行动画处理， 而应该定义一个具有 [**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame) 组件的 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)，其中 [**ObjectKeyFrame.Value**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) 设置为整数（如“0”或“1”）。
 
 ## <a name="rules-for-the-properties-in-an-animation-targeting-property-path"></a>动画目标属性路径中的属性所遵守的规则
 
--   属性路径的假定起始点是由 [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8) 标识的对象。
+-   属性路径的假定起始点是由 [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname) 标识的对象。
 -   随属性路径引用的所有对象和属性都必须是公开的。
 -   结束属性（路径中作为最后一个命名属性的属性）必须是公开的、可读写的，而且必须是依赖属性。
 -   结束属性必须具有可由几大动画类型（[**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 动画、**Double** 动画、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 动画、[**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)）中的一类进行动画处理的属性类型。
@@ -107,12 +107,12 @@ ms.locfileid: "67320299"
 
 大多数情况下，你可以在 XAML 中应用 [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)，而根本不使用任何代码。 但在某些情况下，你可能希望使用代码定义一个 **PropertyPath** 对象并在运行时将其分配给某个属性。
 
-[**PropertyPath** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)已[ **PropertyPath(String)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.-ctor)构造函数，并且没有默认构造函数。 你传递给此构造函数的字符串是一个使用我们前面介绍的属性路径语法定义的字符串。 这也是你用于将 [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) 分配为 XAML 属性的同一字符串。 **PropertyPath** 类的另一个（也是唯一一个）API 是 [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path) 属性，该属性是只读的。 你可以将此属性用作另一个 **PropertyPath** 实例的构造字符串。
+[**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)具有[**PropertyPath （String）** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.-ctor)构造函数，但没有默认构造函数。 你传递给此构造函数的字符串是一个使用我们前面介绍的属性路径语法定义的字符串。 这也是你用于将 [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) 分配为 XAML 属性的同一字符串。 **PropertyPath** 类的另一个（也是唯一一个）API 是 [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path) 属性，该属性是只读的。 你可以将此属性用作另一个 **PropertyPath** 实例的构造字符串。
 
 ## <a name="related-topics"></a>相关主题
 
 * [深入了解数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
-* [可形成演示图板动画](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
+* [Storyboarded 动画](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
 * [{Binding} 标记扩展](binding-markup-extension.md)
 * [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)
 * [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)
