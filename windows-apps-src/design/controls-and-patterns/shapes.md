@@ -6,12 +6,12 @@ ms.date: 11/16/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 06f5ce8ad7576114137adb862f89720e27d3802b
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e78fddf1a0dae39d4479a4a1786a36687337c75e
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364293"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340234"
 ---
 # <a name="draw-shapes"></a>绘制图形
 
@@ -147,7 +147,7 @@ layoutRoot.Children.Add(polygon1);
 
 [  **Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) 只是一条在坐标空间中的两个点之间绘制的直线。 **Line** 忽略为 [**Fill**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.fill) 提供的任何值，因为它没有内部空间。 对于 **Line**，请确保为 [**Stroke**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.stroke) 和 [**StrokeThickness**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.strokethickness) 属性指定值，否则 **Line** 将不呈现。
 
-不要使用 [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 值指定 [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) 形状，而应针对 [**X1**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.x1)、[**Y1**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.y1)、[**X2**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.x2) 和 [**Y2**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.y2) 使用离散的 [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) 值。 这会使得横线或竖线的标记最少。 例如，`<Line Stroke="Red" X2="400"/>` 定义一条长为 400 个像素的横线。 另一对 X,Y 属性在默认情况下为 0，因此，从点的角度看，此 XAML 将绘制一条从 `(0,0)` 到 `(400,0)` 的直线。 如果你希望它从 (0,0) 之外的任意点开始，则可以使用 [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) 移动整个 **Line**。
+不要使用 [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 值指定 [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) 形状，而应针对 [**X1**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.x1)、[**Y1**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.y1)、[**X2**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.x2) 和 [**Y2**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.y2) 使用离散的 [**Double**](https://docs.microsoft.com/dotnet/api/system.double) 值。 这会使得横线或竖线的标记最少。 例如，`<Line Stroke="Red" X2="400"/>` 定义一条长为 400 个像素的横线。 另一对 X,Y 属性在默认情况下为 0，因此，从点的角度看，此 XAML 将绘制一条从 `(0,0)` 到 `(400,0)` 的直线。 如果你希望它从 (0,0) 之外的任意点开始，则可以使用 [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) 移动整个 **Line**。
 
 ```xaml
 <Line Stroke="Red" X2="400"/>
@@ -165,7 +165,7 @@ line1.X2 = 400;
 layoutRoot.Children.Add(line1);
 ```
 
-## <a name="span-idpolylinespanspan-idpolylinespanspan-idpolylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyline
+## <a name="span-id_polylinespanspan-id_polylinespanspan-id_polylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyline
 
 [  **Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 与 [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) 类似，该形状的边也是通过一组点来进行定义，只不过 **Polyline** 的最后一个点不与第一个点相连。
 
