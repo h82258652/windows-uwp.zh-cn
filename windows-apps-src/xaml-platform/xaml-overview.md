@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 5c846d0e0110a1285e67f6f21e1eeb7a0d9c2624
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 6d45e70afa5b0dc6e903dbd253c09042bb2046c2
+ms.sourcegitcommit: f7ef7e894d7b7fc24483b4485605686abf8f2e93
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339277"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71679213"
 ---
 # <a name="xaml-overview"></a>XAML 概述
 
@@ -144,10 +144,10 @@ XAML 是一种用于对象及其属性的声明性语言，但它也包含向标
 下面是一个简单示例。 @No__t 0 类支持名为 @no__t 的事件。 你可以为 **Click** 编写处理程序，用于运行在用户单击 **Button** 之后应当调用的代码。 在 XAML 中，你可以将 **Click** 指定为 **Button** 上的一个属性。 对于属性值，请提供一个表示你的处理程序的方法名称的字符串。
 
 ```xml
-<Button Click="showUpdatesButton-Click">Show updates</Button>
+<Button Click="showUpdatesButton_Click">Show updates</Button>
 ```
 
-当你进行编译时，编译器现在预期在代码隐藏文件中将有一个已定义的名为 `showUpdatesButton-Click` 的方法，位于 XAML 页的 [x:Class](x-class-attribute.md) 值中声明的命名空间中。 此外，该方法必须满足 @no__t 0 事件的委托协定。 例如：
+当你进行编译时，编译器现在预期在代码隐藏文件中将有一个已定义的名为 `showUpdatesButton_Click` 的方法，位于 XAML 页的 [x:Class](x-class-attribute.md) 值中声明的命名空间中。 此外，该方法必须满足 @no__t 0 事件的委托协定。 例如：
 
 ```csharp
 namespace App1
