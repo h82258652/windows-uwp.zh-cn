@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 创作, COM, 组件
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8da62908d33c053cee4ba3f55645be9dbdcaada9
-ms.sourcegitcommit: b9268ca84af56ee1c4f4ac0314e2452193369f01
+ms.openlocfilehash: 5ff3677c3624974759d1f6ff21d6e53cf9d33144
+ms.sourcegitcommit: c5699e74b60c5c7a88658b4ebe30c1475eef5c27
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293365"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71344518"
 ---
 # <a name="author-com-components-with-cwinrt"></a>通过 C++/WinRT 创作 COM 组件
 
@@ -63,7 +63,7 @@ sample.as<IInitializeWithWindow>()->Initialize(hwnd);
 
 ## <a name="a-simple-example-of-a-com-component"></a>COM 组件的简单示例
 
-下面是使用 C++/WinRT 编写的 COM 组件的简单示例。 这是一个迷你应用程序的完整列表，因此如果将代码粘贴到新 **Windows 控制台应用程序 (C++/WinRT)** 项目的 `pch.h` 和 `main.cpp` 中，则可对其进行测试。
+下面是使用 C++/WinRT 编写的 COM 组件的简单示例。 这是一个微型应用程序的完整代码清单，因此如果将其粘贴到新 **Windows 控制台应用程序 (C++/WinRT)** 项目的 `pch.h` 和 `main.cpp` 中，则可对其进行试用。
 
 ```cppwinrt
 // pch.h

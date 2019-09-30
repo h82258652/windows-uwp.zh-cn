@@ -68,6 +68,8 @@
       href: apps/accessibility.md
     - name: 功能和技术
       href: apps/features-and-technologies.md
+    - name: 最新文档更新
+      href: apps/whats-new/latest-doc-updates.md
 - name: 使用 Windows 进行生成
   items:
     - name: 使用 Python 进行开发

@@ -6,12 +6,12 @@ keywords: 入门 开发人员许可证 Visual Studio，开发人员许可证 启
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 705ff7fab00d13123211feb747ea9a9f95b0cc43
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 1a4c1f90c0fa8304f95b1dc958fe5a75e74301dd
+ms.sourcegitcommit: 7791596c25baf9d222729e057ecdf81b45a59f0c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867615"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71205928"
 ---
 # <a name="enable-your-device-for-development"></a>启用设备进行开发
 
@@ -47,7 +47,7 @@ ms.locfileid: "68867615"
 ## <a name="which-setting-should-i-choose-sideload-apps-or-developer-mode"></a>应选择哪些设置：旁加载应用还是开发人员模式？
 
 > [!NOTE]
-> 从 Windows 预览体验成员版本 18956 开始，旁加载选项已经删除，而“开发人员模式”现在是一个切换。 有关旁加载的详细信息，请参阅下一部分。 
+> 从 Windows 预览体验成员版本 18956 开始，旁加载选项已经删除，而“开发人员模式”现在是一个切换。 有关旁加载的详细信息，请参阅下一部分。
 
  你可以启用设备以进行开发，或仅进行旁加载。
 
@@ -60,7 +60,7 @@ ms.locfileid: "68867615"
 ### <a name="sideload-apps"></a>旁加载应用
 
 > [!NOTE]
-> 从 Windows 预览体验成员版本 18956 开始，默认启用旁加载。 现在可以在不进行特殊配置的情况下将签名的 MSIX 包部署到设备上。 
+> 从 Windows 预览体验成员版本 18956 开始，默认启用旁加载。 现在可以在不进行特殊配置的情况下将签名的 MSIX 包部署到设备上。
 
 旁加载应用设置通常由需要在未通过 Microsoft Store 认证的托管设备上安装自定义应用的公司或学校使用。 在此情况下，组织通常会强制执行禁用“UWP 应用”设置的策略，如之前的设置页图像中所示  。 组织还会提供旁加载应用所需的证书和安装位置。 有关详细信息，请参阅 TechNet 文章[在 Windows 10 中旁加载应用](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)和 [Microsoft Intune 中的应用部署入门](https://docs.microsoft.com/intune/deploy-use/add-apps)。
 
@@ -100,7 +100,7 @@ ms.locfileid: "68867615"
 
 有关特定于设备的设置说明，请参阅：
 - [适用于台式机的设备门户](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [适用于 HoloLens 的设备门户](https://developer.microsoft.com/mixed-reality)
+- [适用于 HoloLens 的设备门户](https://docs.microsoft.com/windows/mixed-reality/using-the-windows-device-portal)
 - [适用于 IoT 的设备门户](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [适用于移动设备的设备门户](../debug-test-perf/device-portal-mobile.md)
 - [适用于 Xbox 的设备门户](../xbox-apps/device-portal-xbox.md)
@@ -207,26 +207,26 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 1.  运行 **regedit**。
 2.  若要启用旁加载，请将此 DWORD 的值设置为 1：
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
+    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps`
 
     - 或 -
 
     若要启用开发人员模式，请将此 DWORD 的值设置为 1：
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
+    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense`
 
 **使用 PowerShell 启用设备**
 
 1.  使用管理员权限运行 PowerShell。
 2.  若要启用旁加载，请运行此命令：
 
-    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
+    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"`
 
     - 或 -
 
     若要启用开发人员模式，请运行此命令：
 
-    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"**
+    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"`
 
 ## <a name="upgrade-your-device-from-windows-81-to-windows-10"></a>将设备从 Windows 8.1 升级到 Windows 10
 
@@ -235,7 +235,7 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 **注销开发人员许可证**
 
 1.  使用管理员权限运行 PowerShell。
-2.  运行此命令：**unregister-windowsdeveloperlicense**。
+2.  运行此命令：`unregister-windowsdeveloperlicense`。
 
 在这之后你需要启用设备用于开发（如本题中所述），以便可以继续在此设备上进行开发。 如果你不执行此操作，则可能在调试应用或为其创建程序包时遇到错误。 以下是此错误的示例：
 
