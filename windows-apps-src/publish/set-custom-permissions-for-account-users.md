@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, 用户角色, 用户权限, 自定义角色, 用户访问权限, 自定义权限, 标准角色
 ms.localizationpriority: medium
 ms.openlocfilehash: ead8012c6d4b9243e70dcc09f7ef174a3d907356
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+ms.sourcegitcommit: 035b03f1247eae4e9359ee7db66429d4e1c1d09b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
+ms.lasthandoff: 09/30/2019
 ms.locfileid: "68349217"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>为帐户用户设置角色或自定义权限
@@ -120,7 +120,7 @@ ms.locfileid: "68349217"
 <tr><td align="left">    <b>新应用</b>                            </td><td align="left">  可查看新应用创建页面，但实际上无法在帐户中创建新应用。    </td><td align="left">  在帐户中预留新应用名称可<a href="create-your-app-by-reserving-a-name.md">创建新应用</a>，并可创建新提交，然后将应用提交到应用商店。     </td></tr>
 <tr><td align="left">    <b>新捆绑包</b>&nbsp;*                       </td><td align="left">  可查看新捆绑包创建页面，但实际上无法在帐户中创建新捆绑包。     </td><td align="left">  可创建产品的新捆绑包。          </td></tr>
 <tr><td align="left">    <b>合作伙伴服务</b>&nbsp;*                  </td><td align="left">  可查看检索 XTokens 服务的安装证书。     </td><td align="left">  可管理和查看检索 XTokens 服务的安装证书。       </td></tr>
-<tr><td align="left">    <b>帐户支出</b>                      </td><td align="left">  可在<b>“帐户设置”</b>中查看<a href="setting-up-your-payout-account-and-tax-forms.md#payout-account">付款信息</a>。     </td><td align="left">  可在<b>“帐户设置”</b>中编辑和查看<a href="setting-up-your-payout-account-and-tax-forms.md#payout-account">付款信息</a>。       </td></tr>
+<tr><td align="left">    <b>帐户支出</b>                      </td><td align="left">  可在<b>帐户设置</b>中查看<a href="setting-up-your-payout-account-and-tax-forms.md#payout-account">付款信息</a>。     </td><td align="left">  可在<b>帐户设置</b>中编辑和查看<a href="setting-up-your-payout-account-and-tax-forms.md#payout-account">付款信息</a>。       </td></tr>
 <tr><td align="left">    <b>支出摘要</b>                      </td><td align="left">  可查看<a href="payout-summary.md">付款摘要</a>，访问并下载付款报告信息。       </td><td align="left">  可查看<a href="payout-summary.md">付款摘要</a>，访问并下载付款报告信息。   </td></tr>
 <tr><td align="left">    <b>依赖方</b>&nbsp;*                   </td><td align="left">  可查看依赖方，检索 XTokens。    </td><td align="left">  可管理和查看依赖方，检索 XTokens。     </td></tr>
 <tr><td align="left">    <b>沙盒</b>&nbsp;*                         </td><td align="left">  可访问<b>沙盒</b>页，并查看帐户中的沙盒以及这些沙盒的任何适用配置。 无法查看每个沙盒的产品和提交，除非授予相应的产品级别权限。 </td><td align="left">  可访问<b>沙盒</b>页，并查看和管理帐户中的沙盒，包括创建和删除沙盒以及管理它们的配置。 无法查看每个沙盒的产品和提交，除非授予相应的产品级别权限。    </td></tr>
@@ -239,7 +239,7 @@ ms.locfileid: "68349217"
     <tr><td align="left">    <b>合作伙伴服务</b>&nbsp;*</td><td>    可以查看帐户的 "Web 服务" 页。  </td><td>    可以查看和编辑帐户的 "Web 服务" 页。      </td><td>    不可用    </td><td>    不可用                      </td></tr>
     <tr><td align="left">    <b>Xbox 测试帐户</b>&nbsp;*</td><td>    可以查看帐户的 "Xbox Test 帐户" 页。  </td><td>    可以查看和编辑帐户的 "Xbox Test 帐户" 页。    </td><td>    不可用    </td><td>    不可用                      </td></tr>
     <tr><td align="left">    <b>每个沙箱的 Xbox Test 帐户</b>&nbsp;*</td><td>    只能查看帐户的指定沙箱的 "Xbox 测试帐户" 页。  </td><td>    可以查看和编辑 Xbox 测试。   <tr><td align="left">    <b>帐户的 "帐户" 页仅限帐户的指定沙箱    </td><td>    不可用    </td><td>    不可用                      </td></tr>
-    <tr><td align="left">    <b>Xbox 设备</b>&nbsp;*</td><td>    可以查看帐户的 Xbox one 开发控制台页。  </td><td>    可以查看和编辑帐户的 "Xbox one 开发控制台" 页。    </td><td>    不可用    </td><td>    不可用                      </td></tr>
+    <tr><td align="left"> 个<b>Xbox 设备</b>&nbsp; @ no__t</td><td>    可以查看帐户的 Xbox one 开发控制台页。  </td><td>    可以查看和编辑帐户的 "Xbox one 开发控制台" 页。    </td><td>    不可用    </td><td>    不可用                      </td></tr>
     <tr><td align="left">    <b>每个沙箱的 Xbox 设备</b>&nbsp;*</td><td>    可以仅查看帐户的指定沙箱的 "Xbox one 开发控制台" 页。  </td><td>    只能为帐户的指定沙箱查看和编辑 Xbox one 开发控制台页。    </td><td>    不可用    </td><td>    不可用                      </td></tr>
     <tr><td align="left">    <b>应用通道</b>&nbsp;*</td><td>    不可用  </td><td>    可通过 OneGuide 将促销视频频道发布到 Xbox 主机以供观看。    </td><td>    不可用    </td><td>    不可用                      </td></tr>
     <tr><td align="left">    <b>服务配置</b>&nbsp;*</td><td>    可以查看产品的 "Xbox Live 服务配置" 页。  </td><td>    可以查看和编辑产品的 "Xbox Live 服务配置" 页。    </td><td>    不可用    </td><td>    不可用                      </td></tr>
