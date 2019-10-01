@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
-ms.openlocfilehash: a846b48565a6029656ecfdd21763931df74b5375
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 879a400d22b3032bb4ee3f3f378a85f04ad73355
+ms.sourcegitcommit: 98343e851f25a11ae02fc739477f5316fe8fcb95
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66826454"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71705569"
 ---
 # <a name="change-history-for-microsoft-store-policies"></a>Microsoft Store 策略更改历史记录
 
@@ -31,6 +31,18 @@ ms.locfileid: "66826454"
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td>2019 年 10 月 1 日</td>
+<td>7.12</td>
+<td><p>添加了新策略 10.2.6，以便禁用在设备上挖掘加密货币的应用。</p>
+<p>更新了 10.8.4，从而为提供“虚拟抽奖”或其他随机化虚拟商品的产品添加可能性披露要求。</p>
+<p>更新了 10.8.7 以添加有关定价法规的要求。</p>
+<p>更新了 10.10.1 以添加与广告真实性相关的要求。</p>
+<p>更新了 10.13.1 以阐明游戏产品，其中包括主要提供远程玩/控制游戏功能的产品。</p>
+<p>从 10.14 中删除了某些类型的应用的公司帐户要求。 </p>
+<p>添加了 11.12，其中包含有关用户生成的内容的要求。</p>
+</td>
+</tr>
 <tr class="even">
 <td>2019 年 3 月 5 日</td>
 <td>7.11</td>
@@ -59,10 +71,10 @@ ms.locfileid: "66826454"
 <tr class="even">
 <td>2018 年 8 月 6 日</td>
 <td>7.9</td>
-<td><p>10\.1.2 更新内容：添加了对文件类型和协议的要求。</p>
-<p>10\.1.4 更新内容：添加了 Microsoft Store 中的活动状态。</p>
-<p>10\.8.4 更新内容：增加了试用体验。</p>
-<p>10\.13.11 更新内容：添加了个人信息要求。</p></td>
+<td><p>10.1.2 更新内容：添加了对文件类型和协议的要求。</p>
+<p>10.1.4 更新内容：添加了 Microsoft Store 中的活动状态。</p>
+<p>10.8.4 更新内容：增加了试用体验。</p>
+<p>10.13.11 更新内容：添加了个人信息要求。</p></td>
 </tr>
 <tr class="odd">
 <td>2018 年 4 月 17 日</td>
