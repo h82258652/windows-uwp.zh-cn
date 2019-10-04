@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f87ecf0c3c90976295d85c1a995f1de091491974
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e0f6ef206dc836e48bfc904767ff8c8c7bdca9db
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359177"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340042"
 ---
 # <a name="adaptive-streaming-with-playready"></a>使用 PlayReady 的自适应流式处理
 
@@ -26,7 +26,7 @@ HLS（Apple 的 HTTP 实时流）不受 PlayReady 支持。
 
 本文仅介绍特定于 PlayReady 的自适应流式处理方面的内容。 有关一般实现自适应流式处理的信息，请参阅[自适应流式处理](adaptive-streaming.md)。
 
-本文使用的代码来自 GitHub 上 Microsoft 的 **Windows-universal-samples** 存储库中的[自适应流式处理示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 方案 4 介绍自适应流式处理与 PlayReady 的结合使用。 你可以下载 ZIP 文件形式的存储库，方法是导航到存储库的根级别并选择“下载 ZIP”  按钮。
+本文使用的代码来自 GitHub 上 Microsoft 的 **Windows-universal-samples** 存储库中的[自适应流式处理示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 方案 4 介绍自适应流式处理与 PlayReady 的结合使用。 你可以下载 ZIP 文件形式的存储库，方法是导航到存储库的根级别并选择“下载 ZIP”按钮。
 
 你将需要以下 **using** 语句：
 
@@ -274,7 +274,7 @@ async void LicenseAcquisitionRequest(
 
 ## <a name="initializing-the-adaptivemediasource"></a>初始化 AdaptiveMediaSource
 
-最后，你将需要一个函数来初始化从给定 [Uri](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) 和 [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 创建的 [AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)。 **Uri** 应为指向媒体文件（HLS 或 DASH）的链接；**MediaElement** 应在 XAML 中进行定义。
+最后，你将需要一个函数来初始化从给定 [Uri](https://docs.microsoft.com/dotnet/api/system.uri) 和 [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 创建的 [AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)。 **Uri** 应为指向媒体文件（HLS 或 DASH）的链接；**MediaElement** 应在 XAML 中进行定义。
 
 ```csharp
 async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)

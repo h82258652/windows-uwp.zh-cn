@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6c1f45b4bd3da74ea150c05800eba7ec10568894
-ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
+ms.openlocfilehash: cdcef66dc1f0026ff369eeb3f3c7881385d6e5ba
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69643405"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339301"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>在 C++ Win32 应用中使用 UWP XAML 托管 API
 
@@ -22,7 +22,7 @@ ms.locfileid: "69643405"
 UWP XAML 宿主 API 为一组更广泛的控件提供基础，使开发人员能够将熟知的 UI 引入非 UWP 桌面应用程序。 此功能称为*XAML 孤岛*。 有关此功能的概述，请参阅[在桌面应用中宿主 UWP XAML 控件（XAML 孤岛）](xaml-islands.md)。
 
 > [!NOTE]
-> 如果你有关于 XAML 孤岛的反馈，请在[Microsoft 工具包](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues)存储库中创建一个新问题，并在此处留下你的意见。 如果您想要私下提交您的反馈，则可以将其XamlIslandsFeedback@microsoft.com发送到。 你的见解和方案对我们至关重要。
+> 如果你有关于 XAML 孤岛的反馈, 请在[Microsoft 工具包](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues)存储库中创建一个新问题, 并在此处留下你的意见。 如果您想要私下提交您的反馈, 则可以将其XamlIslandsFeedback@microsoft.com发送到。 你的见解和方案对我们至关重要。
 
 ## <a name="should-you-use-the-uwp-xaml-hosting-api"></a>是否应使用 UWP XAML 宿主 API？
 
@@ -30,7 +30,7 @@ UWP XAML 宿主 API 提供低级别的基础结构，用于在桌面应用中承
 
 * 如果你有C++ Win32 桌面应用，并且想要在应用中托管 UWP 控件，则必须使用 UWP XAML 宿主 API。 此类应用没有替代项。
 
-* 对于 WPF 和 Windows 窗体应用程序，我们强烈建议你在 Windows 社区工具包中使用[XAML 岛 .net 控件](xaml-islands.md#wpf-and-windows-forms-applications)，而不是直接使用 UWP XAML 托管 API。 这些控件在内部使用 UWP XAML 宿主 API，并实现你在自行使用 UWP XAML 托管 API 时需要自行处理的所有行为，包括键盘导航和布局更改。
+* 对于 WPF 和 Windows 窗体应用程序，我们强烈建议你在 Windows 社区工具包中使用[XAML 岛 .net 控件](xaml-islands.md#wpf-and-windows-forms-applications)，而不是直接使用 UWP XAML 托管 API。 这些控件在内部使用 UWP XAML 宿主 API, 并实现你在自行使用 UWP XAML 托管 API 时需要自行处理的所有行为, 包括键盘导航和布局更改。
 
 因为我们建议只有C++ win32 应用使用 UWP XAML 托管 API，但本文主要介绍 win32 应用的C++说明和示例。 但是，如果您选择，可以在 WPF 中使用 UWP XAML 宿主 API，并 Windows 窗体应用。 本文指向适用于 WPF 的[主机控件](xaml-islands.md#host-controls)和 Windows 社区工具包中 Windows 窗体的相关源代码，以便您可以看到这些控件如何使用 UWP XAML 宿主 API。
 
@@ -146,7 +146,7 @@ Windows 社区工具包中的[WindowsXamlHost](https://docs.microsoft.com/window
 
     1. 创建一个**DesktopWindowXamlSource**对象，并将其转换为**IDesktopWindowXamlSourceNative**或**IDesktopWindowXamlSourceNative2** COM 接口。
         > [!NOTE]
-        > 这些接口是在 Windows SDK 中的**desktopwindowxamlsource**头文件中声明的。 默认情况下，此文件位于% programfiles （x86）% \ Windows Kits\10\Include\\< 内部版本号\>\um。
+        > 这些接口是在 Windows SDK 中的**desktopwindowxamlsource**头文件中声明的。 默认情况下，此文件位于% programfiles （x86）% \ Windows Kits\10\Include @ no__t-0 < 生成号 @ no__t-1\um。
 
     2. 调用**IDesktopWindowXamlSourceNative**或**IDesktopWindowXamlSourceNative2**接口的**AttachToWindow**方法，并传入应用程序中父 UI 元素的窗口句柄。
 
@@ -358,7 +358,7 @@ Windows 社区工具包中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 * **自定义 UWP 控件**。 你需要承载自定义 UWP 控件的源代码，以便可以将其与你的应用进行编译。 通常，自定义控件在与C++ Win32 项目相同的解决方案中引用的 UWP 类库项目中定义。
 
-* **定义 XamlApplication 对象的 UWP 应用项目**。 您C++的 Win32 项目必须有权访问 Windows 社区工具包`Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication`提供的类的实例。 此类型充当根元数据提供程序，用于为应用程序的当前目录中的程序集中的自定义 UWP XAML 类型加载元数据。 执行此操作的建议方法是将**空白应用（通用 Windows）** 项目添加到与C++ Win32 项目相同的解决方案，并修改此项目中`App`的默认类。
+* **定义 XamlApplication 对象的 UWP 应用项目**。 您C++的 Win32 项目必须有权访问 Windows 社区工具包`Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication`提供的类的实例。 此类型充当根元数据提供程序，用于为应用程序的当前目录中的程序集中的自定义 UWP XAML 类型加载元数据。 执行此操作的建议方法是将**空白应用（通用 Windows）** 项目添加到与C++ Win32 项目相同的解决方案，并修改此项目中的默认 `App` 类。
   > [!NOTE]
   > 你的解决方案只能包含一个定义`XamlApplication`对象的项目。 应用中的所有自定义 UWP 控件共享同`XamlApplication`一个对象。 定义`XamlApplication`对象的项目必须包括对在 XAML 岛中承载 uwp 控件的所有其他 UWP 库和项目的引用。
 
@@ -376,7 +376,7 @@ Windows 社区工具包中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 有关C++ Win32 应用程序的完整示例，请参阅[使用自定义控件的 XAML 岛](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App)中的以下项目示例：
 
-* [SampleUserControl](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleUserControl)：此项目实现名为`MyUserControl`的自定义 UWP XAML 控件，该控件包含文本框、多个按钮和组合框。
+* [SampleUserControl](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleUserControl)：此项目实现一个名为 `MyUserControl` 的自定义 UWP XAML 控件，该控件包含文本框、多个按钮和组合框。
 * [MyApp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/MyApp)：这是一个 UWP 应用项目，其中包含上述更改。
 * [SampleCppApp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp)：这是在C++ XAML 岛中承载自定义 UWP XAML 控件的 Win32 应用程序项目。
 
@@ -395,9 +395,9 @@ Windows 社区工具包中的[WindowsXamlHost](https://docs.microsoft.com/window
 
   * **C++ Win32：** ：应用可直接在其主消息循环中调用**PreTranslateMessage** 。 有关示例，请参阅[ C++ Win32 示例](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App)中的[XamlBridge](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp#L6)文件。
 
-  * **WPF**应用可以从[ComponentDispatcher](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage?view=netframework-4.7.2)事件的事件处理程序调用**PreTranslateMessage** 。 有关示例，请参阅 Windows 社区工具包中的[WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177)文件。
+  * **WPF**应用可以从[ComponentDispatcher](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage)事件的事件处理程序调用**PreTranslateMessage** 。 有关示例，请参阅 Windows 社区工具包中的[WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177)文件。
 
-  * **Windows 窗体：** 应用可以通过[system.windows.forms.control.preprocessmessage](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.preprocessmessage?view=netframework-4.7.2)方法的替代调用**PreTranslateMessage** 。 有关示例，请参阅 Windows 社区工具包中的[WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100)文件。
+  * **Windows 窗体：** 应用可以通过[system.windows.forms.control.preprocessmessage](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.preprocessmessage)方法的替代调用**PreTranslateMessage** 。 有关示例，请参阅 Windows 社区工具包中的[WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100)文件。
 
 ### <a name="keyboard-focus-navigation"></a>键盘焦点导航
 
@@ -423,7 +423,7 @@ UWP XAML 宿主 API 提供若干类型和成员，以帮助你完成这些任务
 
 * 在C++ Win32 应用程序中，当应用程序处理 WM_SIZE 消息时，它可以使用[SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos)函数重定位托管的 XAML 岛。 有关示例，请参阅[ C++ Win32 示例](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island)中的[sampleapp.exe](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L191)代码文件。
 
-* 当父 UI 元素需要获取适合你在**DesktopWindowXamlSource**上**承载的所**需的矩形区域的大小时，请调用 Windows 的[Measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure)方法，然后再调用。 例如：
+* 当父 UI 元素需要获取适合你在**DesktopWindowXamlSource**上**承载的所**需的矩形区域的大小时，请调用 Windows 的[Measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure)方法，然后再调用。. 例如：
 
     * 在 WPF 应用程序中，你可以从承载**DesktopWindowXamlSource**的[system.windows.interop.hwndhost>](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)的[system.windows.frameworkelement.measureoverride](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.measureoverride)方法执行此操作。 有关示例，请参阅 Windows 社区工具包中的[WindowsXamlHostBase.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs)文件。
 

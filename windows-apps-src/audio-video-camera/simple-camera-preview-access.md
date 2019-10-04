@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fba78a619f18d7da2e190758d73ac7a56b12fb9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1f35cbab511912bd9cf6616330f3e9e7737189fd
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360658"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339747"
 ---
 # <a name="display-the-camera-preview"></a>显示相机预览
 
@@ -24,9 +24,9 @@ ms.locfileid: "66360658"
 
 为了让你的应用可以访问设备的相机，必须声明你的应用要使用 *webcam* 和 *microphone* 设备功能。 
 
-**将功能添加到应用程序清单**
+**向应用程序清单添加功能**
 
-1.  在 Microsoft Visual Studio 的“解决方案资源管理器”中，通过双击“package.appxmanifest”项，打开应用程序清单的设计器。  
+1.  在 Microsoft Visual Studio 的**解决方案资源管理器**中，通过双击 **package.appxmanifest** 项，打开应用程序清单的设计器。
 2.  选择**功能**选项卡。
 3.  选中**摄像头**框和**麦克风**框。
 
@@ -40,7 +40,7 @@ ms.locfileid: "66360658"
 
 ## <a name="use-mediacapture-to-start-the-preview-stream"></a>使用 MediaCapture 启动预览流
 
-[  **MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) 对象为你的设备相机的应用界面。 此类是 Windows.Media.Capture 命名空间的成员。 除了默认项目模板包含的这些 API，本文的示例还使用来自 [**Windows.ApplicationModel**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel) 和 [System.Threading.Tasks](https://docs.microsoft.com/dotnet/api/system.threading.tasks?redirectedfrom=MSDN) 命名空间的 API。
+[  **MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) 对象为你的设备相机的应用界面。 此类是 Windows.Media.Capture 命名空间的成员。 除了默认项目模板包含的这些 API，本文的示例还使用来自 [**Windows.ApplicationModel**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel) 和 [System.Threading.Tasks](https://docs.microsoft.com/dotnet/api/system.threading.tasks) 命名空间的 API。
 
 添加 using 指令以将以下命名空间包含在你的页面的 .cs 文件中。
 
@@ -99,5 +99,5 @@ ms.locfileid: "66360658"
 ## <a name="related-topics"></a>相关主题
 
 * [摄像头](camera.md)
-* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [获取预览帧](get-a-preview-frame.md)
+* [带有 MediaCapture 的基本照片、视频和音频捕获](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [获取预览框架](get-a-preview-frame.md)

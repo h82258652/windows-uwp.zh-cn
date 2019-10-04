@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: be6780851c05f59abc373318f0746c8e436b74ac
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 2f9a253d8470407141c9ae56367d123d638d12c6
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318409"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339826"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>检测图像或视频中的人脸
 
 
 
-\[有些信息与预发布产品的商业发布之前可能有大幅度修改。 Microsoft 不做任何明示或暗示的担保，此处提供的信息。\]
+@no__t 0Some 信息与预先发布的产品相关，这些信息可能会在正式发布之前经过重大修改。 对于此处提供的信息，Microsoft 不作任何明示或默示的保证。 \]
 
 本主题介绍如何使用 [**FaceDetector**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceDetector) 检测图像中的人脸。 在视频帧的序列中，将随着时间的推移针对人脸跟踪优化 [**FaceTracker**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceTracker)。
 
@@ -77,7 +77,7 @@ ms.locfileid: "67318409"
 
 [!code-cs[FaceTrackingUsing](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFaceTrackingUsing)]
 
-声明 **FaceTracker** 对象的类变量。 此示例使用 [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) 以定义的间隔启动人脸跟踪。 [SemaphoreSlim](https://docs.microsoft.com/dotnet/api/system.threading.semaphoreslim?redirectedfrom=MSDN) 用于确保一次只运行一个人脸跟踪操作。
+声明 **FaceTracker** 对象的类变量。 此示例使用 [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) 以定义的间隔启动人脸跟踪。 [SemaphoreSlim](https://docs.microsoft.com/dotnet/api/system.threading.semaphoreslim) 用于确保一次只运行一个人脸跟踪操作。
 
 [!code-cs[ClassVariables3](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables3)]
 
@@ -91,7 +91,7 @@ ms.locfileid: "67318409"
 
 和 **FaceDetector** 一样，**FaceTracker** 支持一组有限的像素格式。 如果所提供的帧未采用 Nv12 格式，则此示例将放弃人脸检测。
 
-调用 [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync) 来检索表示该帧中的人脸的 [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace) 对象列表。 获得人脸列表后，你可以通过上述用于人脸检测的相同方式显示它们。 请注意，因为不在 UI 线程上调用人脸跟踪帮助器方法，则您必须进行中的调用中的任何 UI 更新[ **CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)。
+调用 [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync) 来检索表示该帧中的人脸的 [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace) 对象列表。 获得人脸列表后，你可以通过上述用于人脸检测的相同方式显示它们。 请注意，由于不会在 UI 线程上调用面部跟踪助手方法，因此必须在调用[**CoreDispatcher. RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)中进行任何 UI 更新。
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
@@ -99,7 +99,7 @@ ms.locfileid: "67318409"
 
 * [媒体捕获的场景分析](scene-analysis-for-media-capture.md)
 * [基本人脸检测示例](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [人脸跟踪的基本示例](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [基本面部跟踪示例](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
 * [摄像头](camera.md)
-* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [带有 MediaCapture 的基本照片、视频和音频捕获](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [媒体播放](media-playback.md)
