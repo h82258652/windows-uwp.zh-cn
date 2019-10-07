@@ -6,25 +6,26 @@ ms.date: 09/23/2019
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: 37e771d12dd2cb49cc9f82ea1ef3a0db25de9a54
-ms.sourcegitcommit: 571467a27884ef51fa802cee6a238dafb84dbb6d
+ms.openlocfilehash: e74b04525524593d0134587bd09b2334882a138e
+ms.sourcegitcommit: dafda665fd3d25136194e452e7500b5bab076638
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409183"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71982212"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Windows 开发人员文档的最新更新
 
-Windows 开发人员文档会定期更新，并提供新的和改进的信息和内容。 以下文档已在最后一周的最后一周结束时（2019年9月27日）查看了重大更新：
+
+Windows 开发人员文档会定期更新，并提供新的和改进的信息和内容。 以下文档已在2019年10月4日结束的最后一周内查看了重大更新：
+
 
 ## <a name="uwp-conceptual"></a>UWP 概念
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/layout-panels">通用 Windows 平台（UWP）应用的布局面板</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/style/sound">声音</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">创建具有通用 Windows 平台的应用</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/get-started/index">通用 Windows 平台（UWP）入门</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/index">通用 Windows 平台（UWP）入门</a></li></ul>
 </ul>
+
 
 
 ## <a name="win32-conceptual"></a>Win32 概念
@@ -47,6 +48,6 @@ Windows 开发人员文档会定期更新，并提供新的和改进的信息和
 <li><a href="https://docs.microsoft.com/windows/desktop/com/aggregation">聚合</a></li>
 <li><a href="https://docs.microsoft.com/windows/desktop/com/com-error-codes-9">COM 错误代码（WPN，MBN，P2P，蓝牙）</a></li>
 <li><a href="https://docs.microsoft.com/windows/desktop/direct3dtools/pixelhistoryoperation">PixelHistoryOperation 结构</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats">本机像素格式概述</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats">本机像素格式概述</a></li></ul>
 </ul>
 

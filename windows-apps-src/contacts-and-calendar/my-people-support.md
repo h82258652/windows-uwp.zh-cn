@@ -5,14 +5,17 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 67a96b8423d589036ef1c6896f056d097282dc33
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: f54cb261f6ef94545d656d5bd4f624622cc6dfff
+ms.sourcegitcommit: dafda665fd3d25136194e452e7500b5bab076638
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820228"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71982232"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>为应用程序添加“我的人脉”支持
+
+> [!Note]
+> 从 Windows 10 2019 更新版（版本1903）中，默认情况下，新的 Windows 10 安装将不再显示 "任务栏中的人员"。 客户可以通过右键单击任务栏并按 "在任务栏上显示人员" 来启用此功能。 不建议开发人员将我的人员支持添加到其应用程序，并应访问[Windows 开发人员博客](https://blogs.windows.com/windowsdeveloper/)，了解有关优化 windows 10 应用的详细信息。
 
 利用“我的人脉”功能，用户可以从应用程序中将联系人直接固定到其任务栏，从而创建一个可通过多种方式与之进行交互的新联系人对象。 本文介绍如何为此功能添加支持，以允许用户直接从应用固定联系人。 固定联系人后，可以使用新型用户交互，如[“我的人脉”共享](my-people-sharing.md)和[通知](my-people-notifications.md)。
 
@@ -27,8 +30,8 @@ ms.locfileid: "67820228"
 
 你需要执行以下三项操作以使应用程序能够使用“我的人脉”功能：
 
-1. [声明对应用程序清单中的 shareTarget 激活协定的支持。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [批注的用户可以使用您的应用程序共享的联系人。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [在应用程序清单中声明对 shareTarget 激活约定的支持。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [使用你的应用来批注用户可以共享的联系人。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3.  支持同时运行应用程序的多个实例。 用户必须能够与完整版本的应用程序进行交互，并且可以同时在联系人面板中使用该应用程序。  他们甚至可以同时在多个联系人面板中使用该应用程序。  为了对此提供支持，应用程序需要能够同时运行多个视图。 若要了解如何执行此操作，请参阅文章[“显示应用的多个视图”](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views)。
 
 完成此操作后，应用程序将显示在已注释联系人的联系人面板中。
@@ -185,7 +188,7 @@ ContactPanel 对象还允许你设置联系人面板标题的背景颜色（如�
 
 若要为联系人设置锁屏提醒，最高级 Toast 节点必须包含 hint-people 参数，以表示发送或相关联系人。 此参数可能具有以下任何值：
 + **电子邮件地址** 
-    + 例如 [https://doi.org/10.13012/J8PN93H8](mailto:johndoe@mydomain.com)
+    + 例如 mailto:johndoe@mydomain.com
 + **电话号码** 
     + 例如 tel:888-888-8888
 + **远程 ID** 
@@ -250,9 +253,9 @@ async Task PinMultipleContacts(Contact[] contacts)
 
 ## <a name="see-also"></a>请参阅
 + [“我的人脉”共享](my-people-sharing.md)
-+ [我的用户通知](my-people-notifications.md)
-+ [第 9 频道视频添加到应用程序支持我的人](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [我的人员的集成示例](https://aka.ms/mypeoplebuild2017)
-+ [请联系卡示例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
++ [我的人员通知](my-people-notifications.md)
++ [向应用程序添加我的人员支持时的第9频道视频](https://channel9.msdn.com/Events/Build/2017/P4056)
++ [我的人员集成示例](https://aka.ms/mypeoplebuild2017)
++ [联系人卡片示例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [PinnedContactManager 类文档](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
 + [将你的应用与联系人卡片上的操作关联起来](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
