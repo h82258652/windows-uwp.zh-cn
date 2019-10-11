@@ -6,33 +6,33 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: cb881d8210fda3feb9a58298b14e6761b4122d47
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 16996a8706018bde89d3eb08249ee496d7e25bb9
+ms.sourcegitcommit: e7c95c156f970fe9fdf7ff98ea81508360a64c12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393750"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172837"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>用于加载边的 UWP 应用的中转 Windows 运行时组件
 
 本文介绍 Windows 10 支持的面向企业的功能，该功能允许触摸友好的 .NET 应用使用负责关键业务关键操作的现有代码。
 
-## <a name="introduction"></a>简介
+## <a name="introduction"></a>介绍
 
->**请注意**  ，可能会为 [Visual Studio 2015 & 2017](https://aka.ms/brokeredsample)下载本文随附的示例代码。 可在此处下载用于构建中转 Windows 运行时组件的 Microsoft Visual Studio 模板：[面向适用于 Windows 10 的通用 Windows 应用的 Visual Studio 2015 模板](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
+>**请注意**@no__t-可能会为 [Visual Studio 2015 & 2017](https://aka.ms/brokeredsample)下载本文附带的1The 示例代码。 可在此处下载用于构建中转 Windows 运行时组件的 Microsoft Visual Studio 模板：[面向适用于 Windows 10 的通用 Windows 应用的 Visual Studio 2015 模板](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
-Windows 包含一项新功能 *，称为中转应用程序 Windows 运行时组件*。 我们使用术语 IPC（进程间通信）来描述在单个进程（桌面组件）中运行现有桌面软件资源的同时，在 UWP 应用中与此代码交互的能力。 这对于企业开发人员来说是熟悉的模型，因为数据库应用程序以及在 Windows 中使用 NT 服务的应用程序共享相似的多进程体系结构。
+Windows 包含的一项新功能称为*适用于旁加载应用程序的中转 Windows 运行时组件*。 我们使用术语 IPC（进程间通信）来描述在单个进程（桌面组件）中运行现有桌面软件资源的同时，在 UWP 应用中与此代码交互的能力。 这对于企业开发人员来说是熟悉的模型，因为数据库应用程序以及在 Windows 中使用 NT 服务的应用程序共享相似的多进程体系结构。
 
 应用的旁加载是此功能的关键组件。
 企业特定的应用程序在一般消费者 Microsoft Store 中并没有一席之地，并且企业对安全、隐私、分发、设置和服务有非常具体的要求。 因此，旁加载模型既是此功能的使用者的要求，也是关键的实现详细信息。
 
 以数据为中心的应用程序是此应用程序体系结构的主要目标。 根据预想，已存在的（例如在 SQL Server 中）现有业务规则将是桌面组件的公共部分。 这当然不是桌面组件可提供的唯一功能类型，但此功能的大部分需求都与现有数据和业务逻辑相关。
 
-最后，考虑到 .net 运行时和企业开发中的 C\#语言的巨大渗透，开发了此功能，其中重点介绍了如何对 UWP 应用和桌面组件端使用 .net。 尽管 UWP 应用有其他可用的语言和运行时，附带的示例只说明了 C\#，并仅限于 .net 运行时。
+最后，考虑到 .NET 运行时和企业开发中的 C @ no__t-0 语言的巨大渗透，开发了此功能，重点是将 .NET 用于 UWP 应用和桌面组件端。 尽管 UWP 应用有其他可用的语言和运行时，附带的示例只说明了 C @ no__t，并且仅限于 .NET 运行时。
 
 ## <a name="application-components"></a>应用程序组件
 
->**请注意**  ，此功能仅适用于 .net。 客户端应用和桌面组件都必须使用 .NET 进行授权。
+>**请注意** This 功能专门用于 .net。 客户端应用和桌面组件都必须使用 .NET 进行授权。
 
 **应用程序模型**
 
@@ -40,22 +40,22 @@ Windows 包含一项新功能 *，称为中转应用程序 Windows 运行时组
 
 **桌面组件**
 
-此功能中的桌面组件是作为此功能的一部分引入的新应用程序类型。 此桌面组件只能用 C\#编写，并且必须面向 .net 4.6 或更高版本的 Windows 10。 由于进程间通信格式包含 UWP 类型和类，因此该项目类型是面向 UWP 的 CLR 之间的混合类型，同时允许桌面组件调用 .NET 运行时类库的所有部分。 稍后将详细描述对 Visual Studio 项目的影响。 此混合配制允许在桌面组件上生成的应用程序间封送 UWP 类型，同时允许在桌面组件实现内部调用桌面 CLR 代码。
+此功能中的桌面组件是作为此功能的一部分引入的新应用程序类型。 此桌面组件只能用 C @ no__t 编写，并且必须面向 .NET 4.6 或更高版本的 Windows 10。 由于进程间通信格式包含 UWP 类型和类，因此该项目类型是面向 UWP 的 CLR 之间的混合类型，同时允许桌面组件调用 .NET 运行时类库的所有部分。 稍后将详细描述对 Visual Studio 项目的影响。 此混合配制允许在桌面组件上生成的应用程序间封送 UWP 类型，同时允许在桌面组件实现内部调用桌面 CLR 代码。
 
 **合同期**
 
-旁加载应用程序和桌面组件之间的合约根据 UWP 类型系统进行描述。 这涉及声明一个或多个\#可以表示 UWP 的 C 类。 有关使用c\#创建 Windows 运行时类的特定要求，请参阅 MSDN 主题[\#在 C 和 Visual Basic 中创建 Windows 运行时组件](https://docs.microsoft.com/previous-versions/windows/apps/br230301(v=vs.140))。
+旁加载应用程序和桌面组件之间的合约根据 UWP 类型系统进行描述。 这涉及声明一个或多个可以表示 UWP 的 C @ no__t 类。 有关使用 C @ no__t 创建 Windows 运行时类的特定要求，请参阅 MSDN 主题[在 c @ no__t 中创建 Windows 运行时组件和 Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br230301(v=vs.140)) 。
 
->**注意此时，** 桌面组件和边装应用程序之间的 Windows 运行时组件协定不支持枚举。  
+>**请注意**@no__t-此时，桌面组件和边装应用程序之间的 Windows 运行时组件协定不支持1Enums。
 
 **端加载的应用程序**
 
 旁加载应用程序在每个方面都是正常的 UWP 应用，除了一个方面：它是旁加载的，而不是通过 Microsoft Store 安装。 大部分安装机制都相同：清单和应用程序打包很相似（稍后介绍有关清单的一项额外说明）。 启用旁加载后，一个简单的 PowerShell 脚本便可安装必要的证书和应用程序本身。 旁加载应用程序通过 Visual Studio 中的“项目/应用商店”菜单所含的 WACK 认证测试是正常的最佳做法。
 
->**请注意** ，可以在 "设置-&gt;更新 & 安全性-&gt;面向开发人员" 中打开 "加载"。
+>**注意** 旁加载可以在“设置”-&gt;“安全和更新”-&gt;“面向开发人员”中打开。
 
 要注意的一个要点是，作为 Windows 10 一部分提供的应用代理机制仅限于 32 位。 桌面组件必须为 32 位。
-旁加载应用程序可以为 64 位（假设已同时注册 64 位和 32 位代理），但这并不是典型情况。 使用正常的 "非特定" 配置\#生成 C 中的加载端应用程序和 "首选32位" 默认情况下，会自然地创建32位端加载的应用程序。
+旁加载应用程序可以为 64 位（假设已同时注册 64 位和 32 位代理），但这并不是典型情况。 使用正常的 "非特定" 配置在 C @ no__t-0 中构建侧加载的应用程序，默认情况下，"首选32位" 默认情况下会创建32位端加载的应用程序。
 
 **服务器实例化和 Appdomain**
 
@@ -66,7 +66,7 @@ Windows 包含一项新功能 *，称为中转应用程序 Windows 运行时组
 ## <a name="defining-the-contract"></a>定义合约
 
 使用此功能创建应用程序的第一步，是创建旁加载应用程序和桌面组件之间的合约。 必须使用 Windows 运行时类型专门执行此操作。
-幸运的是，这些都可以使用 C\#类进行声明。 但是，在定义这些对话时，有一些重要的性能注意事项，将在后面的部分中进行介绍。
+幸运的是，这些都可以使用 C @ no__t 类进行声明。 但是，在定义这些对话时，有一些重要的性能注意事项，将在后面的部分中进行介绍。
 
 下面介绍的是定义合约的顺序：
 
@@ -106,7 +106,7 @@ namespace Fabrikam
 
 若要在 Visual Studio 中执行此操作，请右键单击新创建的项目并选择“卸载项目”，然后再次右键单击并选择“编辑 EnterpriseServer.csproj”，以打开项目文件（即 XML 文件）进行编辑。
 
-在打开的文件中，搜索\<OutputType\>标记并将其值更改为 "winmdobj"。
+在打开的文件中，搜索 \<OutputType @ no__t 标记，并将其值更改为 "winmdobj"。
 
 **步骤 3：** 创建用于创建 "引用" Windows 元数据文件（winmd 文件）的生成规则。 即，没有任何实现。
 
@@ -177,24 +177,24 @@ namespace Fabrikam
 </Extension>
 ```
 
-类别为 inProcessServer，因为 outOfProcessServer 类别中有多个项均不适用于此应用程序配置。 请注意， <Path>该组件必须始终包含 clrhost （但这 **不** 是强制的，并且指定不同的值将失败）。
+类别为 inProcessServer，因为 outOfProcessServer 类别中有多个项均不适用于此应用程序配置。 请注意，<Path> 组件必须始终包含 clrhost.dll （但是这**并非**强制，且指定不同的值将以未定义的方式失败）。
 
-<ActivatableClass> 部分与应用包中 Windows 运行时组件首选的真正的进程内 RuntimeClass 相同。 <ActivatableClassAttribute>是一个新元素，且属性 Name = "DesktopApplicationPath" 和 Type = "string" 是必需的，并且是固定的。 “值”属性指向桌面组件的实现 winmd 所在的位置（下一部分将介绍有关于这一点的更多详细信息）。 桌面组件首选的每个 RuntimeClass 都应具有自己的 <ActivatableClass> 元素树。 ActivatableClassId 必须匹配 RuntimeClass 的完全命名空间限定名称。
+<ActivatableClass> 部分与应用包中 Windows 运行时组件首选的真正的进程内 RuntimeClass 相同。 @no__t 为新元素，且属性 Name = "DesktopApplicationPath" 和 Type = "string" 是必需的，并且是固定的。 “值”属性指向桌面组件的实现 winmd 所在的位置（下一部分将介绍有关于这一点的更多详细信息）。 桌面组件首选的每个 RuntimeClass 都应具有自己的 <ActivatableClass> 元素树。 ActivatableClassId 必须匹配 RuntimeClass 的完全命名空间限定名称。
 
-如“定义合约”部分中所提到的，必须对桌面组件的引用 winmd 进行项目引用。 Visual Studio 项目系统通常使用相同的名称创建一个两级目录结构。 在示例中，它是\\EnterpriseIPCApplication EnterpriseIPCApplication。 将引用**winmd** 手动复制到第二个级别目录，然后使用 "项目引用" 对话框（单击 " **浏览"。** 按钮）查找并引用此**winmd。**   在此之后，桌面组件的顶级命名空间（例如 Fabrikam）应当作为顶级节点出现在该项目的“引用”部分中。
+如“定义合约”部分中所提到的，必须对桌面组件的引用 winmd 进行项目引用。 Visual Studio 项目系统通常使用相同的名称创建一个两级目录结构。 在示例中，为 EnterpriseIPCApplication @ no__t-0EnterpriseIPCApplication。 引用 **winmd** 手动复制到此二级目录，然后“项目引用”对话框用于（单击“浏览...” 按钮）定位和引用此 **winmd**。 在此之后，桌面组件的顶级命名空间（例如 Fabrikam）应当作为顶级节点出现在该项目的“引用”部分中。
 
->**注意**在加载的应用程序中使用 **引用 winmd** 非常重要。 如果你无意中将 **实现 winmd** 接管到已加载的应用程序目录并对其进行引用，则可能会收到与 "找不到 IStringable" 相关的错误。 这是一种确保引用了错误的 **winmd** 的标志。 IPC 服务器应用中的后期生成规则（在下一节中详细介绍）将这两个 **winmd** 分解为单独的目录。
+>**注意** 在旁加载应用程序中使用 **reference winmd** 非常重要。 如果你意外将 **implementation winmd** 传播到旁加载应用目录并引用它，你将可能收到与“无法找到 IStringable”相关的错误。 这是一个已引用错误 **winmd** 的确切信号。 IPC 服务器应用中的生成后规则（将在下一部分详细介绍）周密地将这两个 **winmd** 隔离到独立的目录中。
 
-环境变量（特别是% ProgramFiles%）可以在中<ActivatableClassAttribute Value="path">使用。如前文所述，App Broker 仅支持32位，因此，如果应用程序在64位操作系统上\\运行，则% ProgramFiles% 将解析为 C： Program Files （x86）。
+环境变量（特别是% ProgramFiles%）可在 <ActivatableClassAttribute Value="path"> 中使用。如前文所述，App Broker 仅支持32位，因此，如果应用程序在64位操作系统上运行，则% ProgramFiles% 将解析为 C @no__t： 1Program Files （x86）。
 
 ## <a name="desktop-ipc-server-detail"></a>桌面 IPC 服务器详细信息
 
-前面两部分介绍类的声明，以及将引用 **winmd** 传输到加载端应用程序项目的机制。 桌面组件中大部分剩余工作都涉及到实现。 由于桌面组件的全部意义在于能够调用桌面代码（通常用于重新利用现有代码资产），必须以特殊方式配置该项目。
+前两个部分介绍了类的声明以及将引用 **winmd** 传输到旁加载应用程序项目的机制。 桌面组件中大部分剩余工作都涉及到实现。 由于桌面组件的全部意义在于能够调用桌面代码（通常用于重新利用现有代码资产），必须以特殊方式配置该项目。
 正常情况下，使用 .NET 的 Visual Studio 项目使用两个“配置文件”中的一个。
 一个用于桌面（“.NetFramework”），另一个面向 CLR 的 UWP 应用部分（“.NetCore”）。 此功能中的桌面组件是这两者之间的混合。 因此，引用部分经过非常周密的构造以融合这两个配置文件。
 
 正常的 UWP 应用项目不包含显式项目引用，因为已隐式包含整个 Windows 运行时 API 图面。
-正常情况下，仅进行其他项目间引用。 但是，桌面组件项目有一组非常特殊的引用。 它以 "经典桌面\\类库" 项目开始，因此是一个桌面项目。 因此必须进行显式引用 Windows 运行时 API （通过引用 **winmd** 文件）。 添加适当的引用，如下所示。
+正常情况下，仅进行其他项目间引用。 但是，桌面组件项目有一组非常特殊的引用。 它以 "经典 Desktop @ no__t-0Class Library" 项目开始，因此是桌面项目。 因此，必须显式引用 Windows 运行时 API（通过引用 **winmd**）。 添加适当的引用，如下所示。
 
 ```XML
 <ItemGroup>
@@ -406,7 +406,7 @@ namespace Fabrikam
 
 以上引用是对此混合服务器的正确操作至关重要的引用的周密组合。 该协议旨在打开 .csproj 文件（在如何编辑项目 OutputType 中有所说明），并根据需要添加这些引用。
 
-正确配置引用后，下一个任务是实现服务器的功能。  [有关与 Windows 运行时组件（使用 C\#/VB/C++和 XAML 的 UWP 应用）的互操作性的最佳实践](https://docs.microsoft.com/previous-versions/windows/apps/hh750311(v=win.10))，请参阅 MSDN 主题。
+正确配置引用后，下一个任务是实现服务器的功能。  [有关与 Windows 运行时组件（使用 C @ no__t/VB/C++和 XAML 的 UWP 应用）的互操作性的最佳实践](https://docs.microsoft.com/previous-versions/windows/apps/hh750311(v=win.10))，请参阅 MSDN 主题。
 该任务是创建一个 Windows 运行时组件 dll，可调用桌面代码作为其实现的一部分。 附带的样本包括在 Windows 运行时中使用的主要模式：
 
 -   方法调用
@@ -419,7 +419,7 @@ namespace Fabrikam
 
 **安装**
 
-若要安装应用，请将实现 **winmd** 复制到关联的侧加载应用程序的清单中指定的正确目录<ActivatableClassAttribute>：的值 = "path"。 还需复制任何相关联的支持文件和代理/存根 dll（下面介绍了后者的详细信息）。 未能将实现 **winmd** 复制到服务器目录位置会导致所有已加载的应用程序在 RuntimeClass 上调用 new，并引发 "未注册类" 错误。 安装代理/存根失败（或注册失败）将导致所有调用失败，且无返回值。 此后一错误通常 **不** 与可见异常相关联。
+要安装该应用，请将实现 **winmd** 复制到在相关联的旁加载应用程序清单中指定的正确目录：<ActivatableClassAttribute>'s Value="path"。 还需复制任何相关联的支持文件和代理/存根 dll（下面介绍了后者的详细信息）。 未能将实现“winmd”复制到服务器目录位置将导致所有旁加载应用程序对 RuntimeClass 上的新内容的调用引发“没有注册类”错误。 安装代理/存根失败（或注册失败）将导致所有调用失败，且无返回值。 后者的错误通常**不**与可见异常相关联。
 如果由于此配置错误而观察到异常，它们可能指的是“无效的强制转换”。
 
 **服务器实现注意事项**
@@ -453,7 +453,7 @@ return Task<int>.Run( () =>
 
 ```
 
->**注意** 通常要在编写实现的同时等待一些其他潜在长期运行的操作。 如果是这样，则需要声明 **任务：运行** 代码：
+>**注意** 通常要在编写实现的同时等待一些其他潜在长期运行的操作。 如果是这样，需要声明 **Task.Run** 代码：
 
 ```csharp
 return Task<int>.Run(async () =>
@@ -468,7 +468,7 @@ return Task<int>.Run(async () =>
 
 **从应用程序后台线程调用服务器功能**
 
-由于通常客户端和服务器将由相同的组织编写，可采用以下编程做法，即所有对服务器的调用将由旁加载应用程序中的后台线程进行。 可从后台线程进行从服务器收集一批或多批数据的直接调用。 当完全检索到结果时，应用程序进程中常驻内存的一批数据通常可直接从 UI 线程检索。 C\#对象在后台线程和 UI 线程之间自然是灵活的，因此对于这种调用模式特别有用。
+由于通常客户端和服务器将由相同的组织编写，可采用以下编程做法，即所有对服务器的调用将由旁加载应用程序中的后台线程进行。 可从后台线程进行从服务器收集一批或多批数据的直接调用。 当完全检索到结果时，应用程序进程中常驻内存的一批数据通常可直接从 UI 线程检索。 在后台线程和 UI 线程之间，C @ no__t 对象自然是灵活的，因此对于这种调用模式特别有用。
 
 ## <a name="creating-and-deploying-the-windows-runtime-proxy"></a>创建和部署 Windows 运行时代理
 
@@ -483,23 +483,23 @@ return Task<int>.Run(async () =>
 
 **解决方案 > 将 > 项目添加 > C++ Visual > Win32 控制台选择 DLL 选项。**
 
-对于下面的步骤，我们假设服务器组件称为 **MyWinRTComponent**。
+对于以下步骤，假设服务器组件被称为 **MyWinRTComponent**。
 
 **步骤 3：** 从项目中删除所有 CPP/H 文件。
 
-**步骤 4：** 前面的 "定义协定" 一节包含运行 **winmdidl**、 **midl**、 **mdmerge**等的后期生成命令。 " 从该生成后命令的 MIDL 步骤得出的输出之一将生成以下 4 个重要输出：
+**步骤 4：** 前面的 "定义协定" 一节包含运行**winmdidl**、 **midl**、 **mdmerge**等的后期生成命令。 " 从该生成后命令的 MIDL 步骤得出的输出之一将生成以下 4 个重要输出：
 
 a) Dlldata.c
 
 b) 头文件（例如 MyWinRTComponent.h）
 
-c） A \* \_i .c 文件（例如 MyWinRTComponent\_）
+c）一个 \* @ no__t 文件（例如 MyWinRTComponent @ no__t-2i）
 
-d） \* \_p .c 文件（如 MyWinRTComponent\_）
+d）一个 \* @ no__t-1 p 文件（例如 MyWinRTComponent @ no__t-2 p）
 
 **步骤5：** 将这四个生成的文件添加到 "MyWinRTProxy" 项目。
 
-**步骤 6：** 将一个 def 文件添加到 "MyWinRTProxy" 项目 **（project > 将新项添加 > 代码 > 模块定义文件**），并将内容更新为：
+**步骤 6：** 将一个 def 文件添加到 "MyWinRTProxy" 项目 **（project > 将新项添加 > 代码 > 模块定义文件**），并将内容更新为：
 
 LIBRARY MyWinRTComponent.Proxies.dll
 
@@ -521,15 +521,15 @@ MyWinRTComponent.Proxies
 
 **> 添加C++ C/> 预处理器定义**
 
-WIN32\_WINDOWS;注册\_代理\_DLL "
+"WIN32; @NO__T 0WINDOWS;REGISTER @ NO__T-1PROXY @ NO__T-2DLL "
 
-**C/C++ > 预编译标头：选择 "不使用预编译标头"**
+@no__t 0C/C++ > 预编译标头：选择 "不使用预编译标头" **
 
-**链接器 > 常规 > 忽略导入库：选择 "是"**
+**Linker > 常规 > 忽略导入库：选择 "是"**
 
-**链接器 > 输入 > 其他依赖项：添加 rpcrt4; runtimeobject.lib**
+**Linker > 输入 > 其他依赖项：添加 rpcrt4; runtimeobject.lib @ no__t-0
 
-**链接器 > Windows 元数据 > 生成 Windows 元数据：选择 "否"**
+**Linker > Windows 元数据 > 生成 Windows 元数据：选择 "否"**
 
 **步骤8：** 生成 "MyWinRTProxy" 项目。
 
@@ -539,7 +539,7 @@ WIN32\_WINDOWS;注册\_代理\_DLL "
 
 必须执行一个额外配置步骤。 为了使旁加载进程加载和执行该代理，该目录必须为 ALL_APPLICATION_PACKAGES 标记为“读取/执行”。 通过 **icacls.exe** 命令行工具执行此操作。 此命令应当在实现 **winmd** 和代理/存根 dll 所在的目录中执行：
 
-*icacls./T/grant \*S-1-15-2-1： RX*
+*icacls./T/grant \*-15-2-1： RX*
 
 ## <a name="patterns-and-performance"></a>模式和性能
 
@@ -553,7 +553,7 @@ WIN32\_WINDOWS;注册\_代理\_DLL "
 
 -   结果的批量传输降低了跨进程闲聊。 这通常通过使用 Windows 运行时数组构造来执行。
 
--   返回 *List<T>* ， 其中 ** T是 异步操作或属性提取中的对象，将导致大量的跨进程交互成本。 例如，假设您返回*List&lt;人物&gt;*  对象。 每次迭代传递都将是一次跨进程调用。 返回的每个 *用户* 对象由一个代理表示，对该单个对象的方法或属性的每个调用都将导致跨进程调用。 因此，"不合法 *"&lt;列出&gt;* 了 *计数* 较大的用户 对象将导致大量的缓慢调用。 数组中内容结构的批量传输可产生更好的性能。 例如：
+-   返回 *List<T>* （其中 *T* 是来自异步操作或属性提取的对象）将导致许多跨进程闲聊。 例如，假设你返回一个 *List&lt;People&gt;* 对象。 每次迭代传递都将是一次跨进程调用。 每个返回的 *People* 对象都由代理表示，每次对该单个对象调用方法或属性都将导致跨进程调用。 因此，“无辜”*List&lt;People&gt;* 对象（其中 *Count* 很大）将导致大量的慢速调用。 数组中内容结构的批量传输可产生更好的性能。 例如：
 
 ```csharp
 struct PersonStruct
@@ -565,7 +565,7 @@ struct PersonStruct
 }
 ```
 
-然后返回 * PersonStruct\[\]* 而不*是&lt;List&gt;PersonObject*。
+然后返回 * PersonStruct @ no__t-0 @ no__t，而不是*List @ no__t-3PersonObject @ no__t*。
 这将在一次跨进程“跳跃”中获取所有数据。
 
 和所有性能注意事项一样，测量和测试至关重要。 理想情况下，应当将遥测插入到各种操作中以确定它们所需的时间。 在一定范围内进行测量十分重要：例如，在旁加载应用程序中为特定的查询使用所有 *People* 对象实际需要多少时间？
@@ -577,7 +577,7 @@ struct PersonStruct
 
 当你对服务器作出更改时，有必要确保之前运行的任何实例都不再继续运行。 COM 最终会清理该进程，但在按照削减计时器清理之前，该进程仍对迭代开发有效。 因此，终止以前运行的实例是开发期间的常用步骤。 这要求开发人员一直跟踪用于托管服务器的 dllhost 实例。
 
-可使用任务管理器或其他第三方应用查找和终止服务器进程。 命令行工具 **TaskList **也包含，具有灵活的语法，例如：
+可使用任务管理器或其他第三方应用查找和终止服务器进程。 命令行工具 **TaskList.exe** 也包含在内，并具有灵活的语法，例如：
 
   
  | **Command** | **Action** |
@@ -586,7 +586,7 @@ struct PersonStruct
  | tasklist /FI "IMAGENAME eq dllhost.exe" /M | 列出关于所有 dllhost.exe 实例的信息。 /M 开关可列出已加载的模块。 |
  | tasklist /FI "PID eq 12564" /M | 如果你知道 dllhost.exe 的 PID，可以使用该选项查询它。 |
 
-代理服务器的模块列表应 在其已加载的模块列表中列出 *clrhost*。
+用于代理服务器的模块列表应该在其加载模块列表中列出 *clrhost.dll*。
 
 ## <a name="resources"></a>资源
 

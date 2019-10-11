@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 330cbaab4a1c8313fb0b298dea55176eb66d4803
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 55bf6360f09ba4ab6c7878543ecfa0c80c4558e3
+ms.sourcegitcommit: 74c674c70b86bafeac7c8c749b1662fae838c428
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340520"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252318"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>诊断 Windows 运行时组件错误条件
 
@@ -69,7 +69,7 @@ ms.locfileid: "71340520"
 
 在通用 Windows 平台中，Windows 元数据 (.winmd) 文件中的所有公共类型必须位于共享 .winmd 文件名的命名空间或文件名的子命名空间中。 例如，如果你的 Visual Studio 项目名称为 A.B（即，Windows 运行时组件为 A.B.winmd），它可以包含公共类 A.B.Class1 和 A.B.C.Class2，但无法包含 A.Class3 (WME0006) 或 D.Class4 (WME1044)。
 
-> **请注意**  These 限制仅适用于公共类型，不适用于实现中使用的私有类型。
+> **注意**  这些限制仅适用于公共类型，而不适用于在实现中使用的专用类型。
 
 对于 A.Class3，你可以将 Class3 移动到其他命名空间或将 Windows 运行时组件的名称更改为 A.winmd。 虽然 WME0006 是一条警告，但应该将其视为错误。 在之前的示例中，调用 A.B.winmd 的代码将无法找到 A.Class3。
 
@@ -81,7 +81,7 @@ ms.locfileid: "71340520"
 
 Windows 运行时组件中的类型无法具有与命名空间相同的名称 (WME1068)。
 
-> **警告**  If 你直接调用 Winmdexp，而不使用/out 选项来指定 Windows 运行时组件的名称，则 Winmdexp 将尝试生成包含组件中所有命名空间的名称。 为命名空间重命名会更改组件的名称。
+> **警告**  如果你直接调用 Winmdexp.exe 并且不使用 /out 选项指定 Windows 运行时组件的名称，Winmdexp.exe 会尝试生成在组件中包括所有命名空间的名称。 为命名空间重命名会更改组件的名称。
 
  
 
@@ -102,9 +102,9 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 
 通常情况下，最好选择最接近类型的接口。 例如，对于 Dictionary&lt;int, string&gt;，最好选择最接近的 IDictionary&lt;int, string&gt;。
 
-> **重要**  JavaScript 使用托管类型实现的接口列表中首先显示的接口。 例如，如果你将 Dictionary&lt;int, string&gt; 返回到 JavaScript 代码，它会显示为 IDictionary&lt;int, string&gt;，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
+> **重要提示**  JavaScript 使用最先显示在托管类型实现的接口列表中的接口。 例如，如果你将 Dictionary&lt;int, string&gt; 返回到 JavaScript 代码，它会显示为 IDictionary&lt;int, string&gt;，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
 
-> **警告**@no__t-如果你的组件将由 JavaScript 使用，则1Avoid 使用非泛型[IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist)和[IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable)接口。 这些接口分别映射到 [IBindableVector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindablevector) 和 [IBindableIterator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindableiterator)。 它们支持绑定 XAML 控件，并对 JavaScript 不可见。 JavaScript 提出运行时错误“函数‘X’签名无效且无法调用。”
+> **警告**  如果 JavaScript 将使用你的组件，请避免使用非泛型 [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) 和 [IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable) 接口。 这些接口分别映射到 [IBindableVector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindablevector) 和 [IBindableIterator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindableiterator)。 它们支持绑定 XAML 控件，并对 JavaScript 不可见。 JavaScript 提出运行时错误“函数‘X’签名无效且无法调用。”
 
  
 
@@ -130,8 +130,8 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 </tr>
 <tr class="odd">
 <td align="left">WME1039</td>
-<td align="left"><p>方法 "{0}" 的签名中具有类型为 "{1}" 的参数。 尽管此泛型类型并非有效的 Windows 运行时类型，但类型或其泛型参数可以实现作为有效的 Windows 运行时类型的接口。 {2}</p>
-> **Note @ no__t-1 @ no__t-2For {2}，Winmdexp 会附加一组替代项，例如，将方法签名中的类型 "@ no__t-4T @ no__t-5" 改为以下类型之一：' System.object @ no__t-0T @ no__t，IReadOnlyList @ no__t-2T @ no__t-3、@ no__t-4T @ no__t-5 '. "的"。 "。"
+<td align="left"><p>方法 "{0}" 的签名中具有类型为 "{1}" 的参数。 尽管此泛型类型并非有效的 Windows 运行时类型，但类型或其泛型参数可以实现作为有效的 Windows 运行时类型的接口。 {2}</p>对于 {2}，Winmdexp 
+> **Note @ no__t，并将方法签名中的 "@ no__t-3T @ no__t @ @ @ @ @" 类型附加到以下类型之一：' System.object @ no__t-0T @ no__t，IReadOnlyList @ no__t-2T @ no__t-3、@ no__t-4T @ no__t-5 '. "的"。 "。"
 </td>
 </tr>
 <tr class="even">
@@ -210,7 +210,7 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> **请注意**  If 更改返回值的名称，并且新名称与另一个参数的名称冲突，则将收到错误 WME1091。
+> **注意**  如果你更改返回值的名称，而新名称与其他参数的名称相冲突，将收到错误 WME1091。
 
 JavaScript 代码可以按照名称访问方法的输出参数，包括返回值。 有关示例，请参阅 [ReturnValueNameAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.returnvaluenameattribute) 属性。
 
@@ -219,7 +219,7 @@ JavaScript 代码可以按照名称访问方法的输出参数，包括返回值
 | WME1091 | 方法 "\{0}" 具有名为 "\{1}" 的返回值，该名称与参数名称相同。 Windows 运行时方法参数和返回值的名称必须唯一。 |
 | WME1092 | 方法 "\{0}" 具有名为 "\{1}" 的参数，该参数与默认返回值名称相同。 请考虑将其他名称用于参数，或使用 System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute 显式指定返回值的名称。 |
 
-**请注意**@no__t-对于属性访问器，1The 默认名称为 "returnValue"，对于所有其他方法为 "value"。
+**注意**  属性访问器的默认名是“returnValue”，而所有其他方法的默认名是“value”。
 
 ## <a name="related-topics"></a>相关主题
 

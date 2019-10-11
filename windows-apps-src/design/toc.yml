@@ -86,7 +86,7 @@
           href: controls-and-patterns/buttons.md
         - name: 复选框
           href: controls-and-patterns/checkbox.md
-        - name: 组合框
+        - name: 组合框和列表框
           href: controls-and-patterns/combo-box.md
         - name: 超链接
           href: controls-and-patterns/hyperlinks.md
@@ -102,16 +102,15 @@
       items:
         - name: 概述
           href: controls-and-patterns/lists.md
-        - name: 集合命令处理
-          href: controls-and-patterns/collection-commanding.md
-        - name: 自定义集合视图
-          href: controls-and-patterns/items-repeater.md
-        - name: 翻转视图
-          href: controls-and-patterns/flipview.md
-        - name: 反转列表
-          href: controls-and-patterns/inverted-lists.md
         - name: 列表视图和网格视图
           href: controls-and-patterns/listview-and-gridview.md
+        - name: 翻转视图
+          href: controls-and-patterns/flipview.md
+        - name: 树视图
+          href: controls-and-patterns/tree-view.md
+        - name: ItemsRepeater
+          href: controls-and-patterns/items-repeater.md
+        - name: 项目容器和模板
           items:
             - name: 项目容器和模板
               href: controls-and-patterns/item-containers-templates.md
@@ -119,14 +118,22 @@
               href: controls-and-patterns/item-templates-listview.md
             - name: 网格视图项模板
               href: controls-and-patterns/item-templates-gridview.md
-        - name: 嵌套 UI
-          href: controls-and-patterns/nested-ui.md
-        - name: 下拉刷新
-          href: controls-and-patterns/pull-to-refresh.md
-        - name: Swipe
-          href: controls-and-patterns/swipe.md
-        - name: 树视图
-          href: controls-and-patterns/tree-view.md
+        - name: 选择和交互
+          items:
+            - name: 集合命令处理
+              href: controls-and-patterns/collection-commanding.md
+            - name: “选择模式”概述
+              href: controls-and-patterns/selection-modes.md
+            - name: Swipe
+              href: controls-and-patterns/swipe.md
+            - name: 下拉刷新
+              href: controls-and-patterns/pull-to-refresh.md
+        - name: 其他集合选项和自定义
+          items:
+            - name: 反转列表
+              href: controls-and-patterns/inverted-lists.md
+            - name: 嵌套 UI
+              href: controls-and-patterns/nested-ui.md
     - name: 对话框和浮出控件
       items:
         - name: 概述

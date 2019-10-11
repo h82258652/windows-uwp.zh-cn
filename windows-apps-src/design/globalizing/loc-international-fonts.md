@@ -1,21 +1,21 @@
 ---
-Description: 本主题列出了可用于 UWP 应用的已本地化为美国以外的语言的字体英语。
+Description: 本主题列出了已本地化为美国以外语言的 UWP 应用的可用字体。（美国）。
 title: 国际字体
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f1d618a111ee207eacfceb52680859c8272e0ed
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 06284481ccecbc3c9cd7d7a78d83ccd6e97a49a7
+ms.sourcegitcommit: f3c1a81b50f4a372a15996ac71b3f408a8ee1409
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601132"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72237518"
 ---
 # <a name="international-fonts"></a>国际字体
 
-本主题列出了可用于 UWP 应用的已本地化为美国以外的语言的字体英语。
+本主题列出了已本地化为美国以外语言的 UWP 应用的可用字体。（美国）。
 
 在下表中，“语言标记”列列出了语言的 [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)。 若要查看 Microsoft Store 专门支持的语言标记列表，请参阅[支持的语言](../../publish/supported-languages.md)。
 
@@ -37,9 +37,9 @@ ms.locfileid: "57601132"
 | 加泰罗尼亚语 | ca-ES | Segoe UI |
 | 中部库尔德语(阿拉伯语) | ku-ARAB-IQ | Segoe UI |
 | 切罗基语(切罗基语) | chr-CHER-US | Gadugi |
-| 简体中文 | zh-CN | MS YaHei UI |
-| 繁体中文(香港特别行政区) | zh-HK | MS JhengHei UI |
-| 繁体中文(台湾) | zh-TW | MS JhengHei UI |
+| 简体中文 | zh-CN | Microsoft YaHei UI |
+| 繁体中文(香港特别行政区) | zh-HK | Microsoft JhengHei UI |
+| 繁体中文(台湾) | zh-TW | Microsoft JhengHei UI |
 | 克罗地亚语 | hr-HR | Segoe UI |
 | 捷克语 | cs-CZ | Segoe UI |
 | 丹麦语 | da-DK | Segoe UI |
@@ -66,7 +66,7 @@ ms.locfileid: "57601132"
 | 索萨语 | xh-ZA | Segoe UI |
 | 祖鲁语 | zu-ZA | Segoe UI |
 | 意大利语 | it-IT | Segoe UI |
-| 日语 | ja-JP | Meiryo UI（请参阅下面的“备注”） |
+| 日语 | ja-JP | Yu Gothic UI |
 | 埃纳德语 | kn-IN | Nirmala UI |
 | 哈萨克语 | kk-KZ | Segoe UI |
 | 高棉语 | km-KH | Leelawadee UI |
@@ -128,10 +128,6 @@ ms.locfileid: "57601132"
 | 威尔士语 | cy-GB | Segoe UI |
 | 沃洛夫语 | wo-SN | Segoe UI |
 | 约鲁巴语 | yo-NG | Segoe UI |
-
-## <a name="japanese-fonts"></a>日语字体
-
-Meiryo UI 字体用于 Windows。 Windows 包含 Yu Gothic 和 Yu Mincho 两种字体系列以支持日语文档的查看和编辑。 不建议对应用 UI 使用 Yu Gothic。
 
 ## <a name="related-topics"></a>相关主题
 

@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, async, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: 1170b8e1291afd166f210feb291b644d1c7ed546
-ms.sourcegitcommit: e5a154c7b6c1b236943738febdb17a4815853de5
+ms.openlocfilehash: 9484b61aae91ae426efb1963cd37ebf276ef7c6c
+ms.sourcegitcommit: f8634aad3a3675c2f0eac62f56df3def4285a7b0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71164822"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71720434"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>C++/WinRT 的更高级并发和异步
 
@@ -787,6 +787,51 @@ case AsyncStatus::Started:
 - **AsyncStatus::Canceled** 意味着异步对象已取消。 取消通常是由调用方请求的，因此需要处理该状态的情况很罕见。 通常会直接将已取消的异步对象丢弃。
 - **AsyncStatus::Error** 意味着，从某些方面来看，异步对象已失败。 可以根据需要通过 **get** 重新引发异常。
 - **AsyncStatus::Started** 意味着异步对象仍在运行。 Windows 运行时异步模式不允许多个等待，也不允许多个等待程序。 这意味着不能以循环方式调用 **wait_for**。 如果等待实际上已超时，你可以有多个选择。 可以放弃该对象，也可以轮询其状态，然后调用 **get** 来检索任何结果。 不过，此时最佳选择是直接丢弃该对象。
+
+## <a name="returning-an-array-asynchronously"></a>异步返回数组
+
+以下是 [MIDL 3.0](/uwp/midl-3/) 示例，它生成*错误 MIDL2025: [msg]syntax error [context]: expecting > or, near "["* 。
+
+```idl
+Windows.Foundation.IAsyncOperation<Int32[]> RetrieveArrayAsync();
+```
+
+原因在于将数组用作参数化接口的形参类型实参无效。 因此，我们需要一种不太明显的方式来实现通过运行时类方法以异步方式传递回数组的目标。 
+
+可以将装箱的数组返回到 [PropertyValue](/uwp/api/windows.foundation.propertyvalue) 对象。 然后，调用代码会取消装箱。 以下是一个代码示例，在此示例中，可以将 SampleComponent 运行时类添加到 Windows Runtime Component (C++/WinRT) 项目，然后从（例如） Core App (C++/WinRT) 项目使用它    。
+
+```cppwinrt
+// SampleComponent.idl
+namespace MyComponentProject
+{
+    runtimeclass SampleComponent
+    {
+        Windows.Foundation.IAsyncOperation<IInspectable> RetrieveCollectionAsync();
+    };
+}
+
+// SampleComponent.h
+...
+struct SampleComponent : SampleComponentT<SampleComponent>
+{
+    ...
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::IInspectable> RetrieveCollectionAsync()
+    {
+        co_return Windows::Foundation::PropertyValue::CreateInt32Array({ 99, 101 }); // Box an array into a PropertyValue.
+    }
+}
+...
+
+// SampleCoreApp.cpp
+...
+MyComponentProject::SampleComponent m_sample_component;
+...
+auto boxed_array{ co_await m_sample_component.RetrieveCollectionAsync() };
+auto property_value{ boxed_array.as<winrt::Windows::Foundation::IPropertyValue>() };
+winrt::com_array<int32_t> my_array;
+property_value.GetInt32Array(my_array); // Unbox back into an array.
+...
+```
 
 ## <a name="important-apis"></a>重要的 API
 * [IAsyncAction 接口](/uwp/api/windows.foundation.iasyncaction)
