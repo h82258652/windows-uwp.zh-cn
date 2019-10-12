@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: 16996a8706018bde89d3eb08249ee496d7e25bb9
-ms.sourcegitcommit: e7c95c156f970fe9fdf7ff98ea81508360a64c12
+ms.openlocfilehash: f6eda179a3fea0c24f3a9de0d674800bd3d2015c
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172837"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282326"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>用于加载边的 UWP 应用的中转 Windows 运行时组件
 
@@ -181,7 +181,7 @@ namespace Fabrikam
 
 <ActivatableClass> 部分与应用包中 Windows 运行时组件首选的真正的进程内 RuntimeClass 相同。 @no__t 为新元素，且属性 Name = "DesktopApplicationPath" 和 Type = "string" 是必需的，并且是固定的。 “值”属性指向桌面组件的实现 winmd 所在的位置（下一部分将介绍有关于这一点的更多详细信息）。 桌面组件首选的每个 RuntimeClass 都应具有自己的 <ActivatableClass> 元素树。 ActivatableClassId 必须匹配 RuntimeClass 的完全命名空间限定名称。
 
-如“定义合约”部分中所提到的，必须对桌面组件的引用 winmd 进行项目引用。 Visual Studio 项目系统通常使用相同的名称创建一个两级目录结构。 在示例中，为 EnterpriseIPCApplication @ no__t-0EnterpriseIPCApplication。 引用 **winmd** 手动复制到此二级目录，然后“项目引用”对话框用于（单击“浏览...” 按钮）定位和引用此 **winmd**。 在此之后，桌面组件的顶级命名空间（例如 Fabrikam）应当作为顶级节点出现在该项目的“引用”部分中。
+如“定义合约”部分中所提到的，必须对桌面组件的引用 winmd 进行项目引用。 Visual Studio 项目系统通常使用相同的名称创建一个两级目录结构。 在示例中，为 EnterpriseIPCApplication @ no__t-0EnterpriseIPCApplication。 引用 **winmd** 手动复制到此二级目录，然后“项目引用”对话框用于（单击“浏览...” 按钮）定位和引用此 **winmd**。 此后，桌面组件（例如 Fabrikam）的顶级命名空间应显示为项目的 "引用" 部分中的顶级节点。
 
 >**注意** 在旁加载应用程序中使用 **reference winmd** 非常重要。 如果你意外将 **implementation winmd** 传播到旁加载应用目录并引用它，你将可能收到与“无法找到 IStringable”相关的错误。 这是一个已引用错误 **winmd** 的确切信号。 IPC 服务器应用中的生成后规则（将在下一部分详细介绍）周密地将这两个 **winmd** 隔离到独立的目录中。
 
@@ -491,9 +491,9 @@ return Task<int>.Run(async () =>
 
 a) Dlldata.c
 
-b) 头文件（例如 MyWinRTComponent.h）
+b）标头文件（例如，MyWinRTComponent）
 
-c）一个 \* @ no__t 文件（例如 MyWinRTComponent @ no__t-2i）
+c）一个 \* @ no__t 文件（例如，MyWinRTComponent @ no__t-2i）
 
 d）一个 \* @ no__t-1 p 文件（例如 MyWinRTComponent @ no__t-2 p）
 

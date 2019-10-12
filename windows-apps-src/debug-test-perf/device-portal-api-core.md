@@ -5,14 +5,14 @@ description: 了解 Windows Device Portal 核心 REST API，可用于访问数�
 ms.custom: 19H1
 ms.date: 04/19/2019
 ms.topic: article
-keywords: windows 10，uwp，设备门户
+keywords: windows 10、uwp、设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: b2e1e2dfdb1dd52e1dd07a146badd78a6bb809fa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2e6b505dfd24a57f03169df3ed38402e7b3e9bb0
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359930"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282124"
 ---
 # <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 参考
 
@@ -22,7 +22,7 @@ ms.locfileid: "66359930"
 
 ### <a name="install-an-app"></a>安装应用
 
-**请求**
+**需要**
 
 可以使用以下请求格式安装应用。
 
@@ -59,7 +59,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -71,7 +71,7 @@ ms.locfileid: "66359930"
 
 ### <a name="install-a-related-set"></a>安装相关集
 
-**请求**
+**需要**
 
 可以使用以下请求格式安装[相关集](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)。
 
@@ -108,7 +108,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -120,7 +120,7 @@ ms.locfileid: "66359930"
 
 ### <a name="register-an-app-in-a-loose-folder"></a>注册 Loose 文件夹中的应用
 
-**请求**
+**需要**
 
 你可以利用以下请求格式来注册 Loose 文件夹中的应用。
 
@@ -161,7 +161,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * Xbox
@@ -172,7 +172,7 @@ ms.locfileid: "66359930"
 
 ### <a name="register-a-related-set-in-loose-file-folders"></a>注册 Loose 文件夹中的相关集
 
-**请求**
+**需要**
 
 可以使用以下请求格式注册 Loose 文件夹中的[相关集](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)。
 
@@ -222,7 +222,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * Xbox
@@ -233,7 +233,7 @@ ms.locfileid: "66359930"
 
 ### <a name="get-app-installation-status"></a>获取应用安装状态
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取当前正在进行的应用安装状态。
  
@@ -265,7 +265,7 @@ ms.locfileid: "66359930"
 | 204 | 安装正在运行 |
 | 404 | 未找到任何安装操作 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -277,7 +277,7 @@ ms.locfileid: "66359930"
 
 ### <a name="uninstall-an-app"></a>卸载应用
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来卸载应用。
  
@@ -311,7 +311,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -323,7 +323,7 @@ ms.locfileid: "66359930"
 
 ### <a name="get-installed-apps"></a>获取已安装应用
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取系统上已安装应用的列表。
  
@@ -381,7 +381,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -397,9 +397,9 @@ ms.locfileid: "66359930"
 
 ### <a name="get-the-bluetooth-radios-on-the-machine"></a>获取计算机上的蓝牙无线收发器
 
-**请求**
+**需要**
 
-可以通过使用以下请求格式来获取计算机上的蓝牙无线收发器的列表。 这可以升级到 WebSocket 连接，使用相同的 JSON 数据。
+可以通过使用以下请求格式来获取计算机上的蓝牙无线收发器的列表。 也可以使用相同的 JSON 数据升级到 WebSocket 连接。
  
 | 方法        | 请求 URI |
 | :------          | :------ |
@@ -445,7 +445,7 @@ ms.locfileid: "66359930"
 | 4XX              | 错误代码 |
 | 5XX              | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * HoloLens
@@ -455,7 +455,7 @@ ms.locfileid: "66359930"
 
 ### <a name="turn-the-bluetooth-radio-on-or-off"></a>打开或关闭蓝牙无线收发器
 
-**请求**
+**需要**
 
 将特定的蓝牙无线收发器设置为开或关。
  
@@ -469,8 +469,8 @@ ms.locfileid: "66359930"
 
 | URI 参数 | 描述 |
 | :------          | :------ |
-| ID            | （**必需**）蓝牙无线收发器的设备 ID，必须经过 base 64 编码。 |
-| 状态         | (**必需**) 这可能是`"On"`或`"Off"`。 |
+| id            | （**必需**）蓝牙无线收发器的设备 ID，必须经过 base 64 编码。 |
+| 状态         | （**必需**）这可以 `"On"` 或 `"Off"`。 |
 
 **请求标头**
 
@@ -492,7 +492,7 @@ ms.locfileid: "66359930"
 | 4XX              | 错误代码 |
 | 5XX              | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * HoloLens
@@ -501,9 +501,9 @@ ms.locfileid: "66359930"
 ---
 ### <a name="get-a-list-of-paired-bluetooth-devices"></a>获取配对的蓝牙设备的列表
 
-**请求**
+**需要**
 
-使用以下请求格式，可以获取当前配对的蓝牙设备的列表。 这可以升级为使用相同的 JSON 数据的 WebSocket 连接。 在 WebSocket 连接的生存期内，可以更改设备列表。 通过 WebSocket 连接每次更新的时，将发送设备的完整列表。
+你可以使用以下请求格式获取当前配对的蓝牙设备的列表。 这可以升级到具有相同 JSON 数据的 WebSocket 连接。 在 WebSocket 连接的生存期内，设备列表可能会更改。 每次有更新时，将通过 WebSocket 连接发送设备的完整列表。
 
 | 方法        | 请求 URI       |
 | :---          | :---              |
@@ -534,14 +534,14 @@ ms.locfileid: "66359930"
     },...
 ]}
 ```
-*AudioConnectionStatus*字段将显示该设备可用于在此系统上的音频。 （策略和可选组件可能会影响此。）*AudioConnectionStatus*将为"已连接"断开连接"。
+如果设备可用于此系统上的音频，则会出现 " *AudioConnectionStatus* " 字段。 （策略和可选组件可能会影响此情况。）*AudioConnectionStatus*将为 "已连接" 或 "已断开连接"。
 
 ---
-### <a name="get-a-list-of-available-bluetooth-devices"></a>获取可用的蓝牙设备的列表
+### <a name="get-a-list-of-available-bluetooth-devices"></a>获取可用蓝牙设备的列表
 
-**请求**
+**需要**
 
-可以获取有关通过使用以下请求格式配对的可用蓝牙设备的列表。 这可以升级为使用相同的 JSON 数据的 WebSocket 连接。 在 WebSocket 连接的生存期内，可以更改设备列表。 通过 WebSocket 连接每次更新的时，将发送设备的完整列表。
+可以使用以下请求格式获取可用于配对的蓝牙设备的列表。 这可以升级到具有相同 JSON 数据的 WebSocket 连接。 在 WebSocket 连接的生存期内，设备列表可能会更改。 每次有更新时，将通过 WebSocket 连接发送设备的完整列表。
 
 | 方法        | 请求 URI          |
 | :---          | :---                 |
@@ -573,11 +573,11 @@ ms.locfileid: "66359930"
 ```
 
 ---
-### <a name="connect-a-bluetooth-device"></a>蓝牙设备连接
+### <a name="connect-a-bluetooth-device"></a>连接蓝牙设备
 
-**请求**
+**需要**
 
-如果该设备可用于在此系统上的音频，将连接到设备。 （策略和可选组件可能会影响此。）
+如果设备可用于此系统上的音频，将连接到设备。 （策略和可选组件可能会影响此情况。）
 
 | 方法       | 请求 URI           |
 | :---         | :---                  |
@@ -587,7 +587,7 @@ ms.locfileid: "66359930"
 
 | URI 参数 | 描述 |
 | :---          | :--- |
-| ID            | (**需**) 的关联终结点的蓝牙设备 ID 和必须采用 Base64 编码。 |
+| id            | （**必需**）蓝牙设备的关联终结点 ID 必须采用 Base64 编码。 |
 
 **请求标头**
 
@@ -609,7 +609,7 @@ ms.locfileid: "66359930"
 | 4XX              | 错误代码 |
 | 5XX              | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * HoloLens
@@ -617,11 +617,11 @@ ms.locfileid: "66359930"
 
 
 ---
-### <a name="disconnect-a-bluetooth-device"></a>蓝牙设备断开连接
+### <a name="disconnect-a-bluetooth-device"></a>断开蓝牙设备的连接
 
-**请求**
+**需要**
 
-如果该设备可用于在此系统上的音频，则将断开设备。 （策略和可选组件可能会影响此。）
+如果设备可用于此系统上的音频，会断开设备的连接。 （策略和可选组件可能会影响此情况。）
 
 | 方法       | 请求 URI              |
 | :---         | :---                     |
@@ -631,7 +631,7 @@ ms.locfileid: "66359930"
 
 | URI 参数 | 描述 |
 | :---          | :--- |
-| ID            | (**需**) 的关联终结点的蓝牙设备 ID 和必须采用 Base64 编码。 |
+| id            | （**必需**）蓝牙设备的关联终结点 ID 必须采用 Base64 编码。 |
 
 **请求标头**
 
@@ -653,7 +653,7 @@ ms.locfileid: "66359930"
 | 4XX              | 错误代码 |
 | 5XX              | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * HoloLens
@@ -665,7 +665,7 @@ ms.locfileid: "66359930"
 
 ### <a name="get-the-installed-devices-on-the-machine"></a>获取计算机上已安装的设备
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取计算机上已安装设备的列表。
 
@@ -712,7 +712,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -722,7 +722,7 @@ ms.locfileid: "66359930"
 
 ### <a name="get-data-on-connected-usb-deviceshubs"></a>在已连接的 USB 设备/集线器上获取数据
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取已连接的 USB 设备和集线器的 USB 描述符的列表。
 
@@ -798,7 +798,7 @@ ms.locfileid: "66359930"
 |  200 | 确定 | 
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * IoT
@@ -811,7 +811,7 @@ ms.locfileid: "66359930"
 
 ### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>获取应用的所有故障转储列表
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取所有旁加载应用的所有可用故障转储列表。
  
@@ -846,7 +846,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 移动版（在 Windows 预览体验计划计划中）
 * Windows 桌面版
@@ -857,7 +857,7 @@ ms.locfileid: "66359930"
 
 ### <a name="get-the-crash-dump-collection-settings-for-an-app"></a>获取应用的故障转储集合设置
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取旁加载应用的故障转储集合设置。
  
@@ -899,7 +899,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 移动版（在 Windows 预览体验计划计划中）
 * Windows 桌面版
@@ -910,7 +910,7 @@ ms.locfileid: "66359930"
 
 ### <a name="delete-a-crash-dump-for-a-sideloaded-app"></a>删除旁加载应用的故障转储
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来删除旁加载应用的故障转储。
  
@@ -948,7 +948,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 移动版（在 Windows 预览体验计划计划中）
 * Windows 桌面版
@@ -959,7 +959,7 @@ ms.locfileid: "66359930"
 
 ### <a name="disable-crash-dumps-for-a-sideloaded-app"></a>禁用旁加载应用的故障转储
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来禁用旁加载应用的故障转储。
  
@@ -996,7 +996,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 移动版（在 Windows 预览体验计划计划中）
 * Windows 桌面版
@@ -1007,7 +1007,7 @@ ms.locfileid: "66359930"
 
 ### <a name="download-the-crash-dump-for-a-sideloaded-app"></a>下载旁加载应用的故障转储
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来下载旁加载应用的故障转储。
  
@@ -1047,7 +1047,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 移动版（在 Windows 预览体验计划计划中）
 * Windows 桌面版
@@ -1058,7 +1058,7 @@ ms.locfileid: "66359930"
 
 ### <a name="enable-crash-dumps-for-a-sideloaded-app"></a>启用旁加载应用的故障转储
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来启用旁加载应用的故障转储。
  
@@ -1093,7 +1093,7 @@ ms.locfileid: "66359930"
 | :------     | :----- |
 |  200 | 确定 | 
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 移动版（在 Windows 预览体验计划计划中）
 * Windows 桌面版
@@ -1104,7 +1104,7 @@ ms.locfileid: "66359930"
 
 ### <a name="get-the-list-of-bugcheck-files"></a>获取检测错误文件列表
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取检测错误小型转储文件列表。
  
@@ -1145,7 +1145,7 @@ ms.locfileid: "66359930"
 | :------     | :----- |
 |  200 | 确定 | 
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * IoT
@@ -1154,7 +1154,7 @@ ms.locfileid: "66359930"
 
 ### <a name="download-a-bugcheck-dump-file"></a>下载检测错误转储文件
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来下载检测错误转储文件。
  
@@ -1194,7 +1194,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * IoT
@@ -1203,7 +1203,7 @@ ms.locfileid: "66359930"
 
 ### <a name="get-the-bugcheck-crash-control-settings"></a>获取检测错误故障控制设置
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取检测错误故障控制设置。
  
@@ -1238,13 +1238,13 @@ ms.locfileid: "66359930"
 
 **转储类型**
 
-0:Disabled
+0Disabled
 
-1：完全内存转储 （收集所有使用中内存）
+1：完全内存转储（收集所有使用中的内存）
 
-2：内核内存转储 （忽略用户模式内存）
+2：内核内存转储（忽略用户模式内存）
 
-3：有限的内核小型转储
+3：有限内核小型转储
 
 **状态代码**
 
@@ -1256,7 +1256,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * IoT
@@ -1265,7 +1265,7 @@ ms.locfileid: "66359930"
 
 ### <a name="get-a-live-kernel-dump"></a>获取实时内核转储
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取实时内核转储。
  
@@ -1300,7 +1300,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * IoT
@@ -1309,7 +1309,7 @@ ms.locfileid: "66359930"
 
 ### <a name="get-a-dump-from-a-live-user-process"></a>从实时用户进程中获取转储
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取实时用户进程的转储。
  
@@ -1348,7 +1348,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * IoT
@@ -1357,7 +1357,7 @@ ms.locfileid: "66359930"
 
 ### <a name="set-the-bugcheck-crash-control-settings"></a>设置检测错误故障控制设置
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来设置收集检测错误数据的设置。
  
@@ -1397,7 +1397,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * IoT
@@ -1410,7 +1410,7 @@ ms.locfileid: "66359930"
 
 ### <a name="create-a-realtime-etw-session-over-a-websocket"></a>通过 WebSocket 创建实时 ETW 会话
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来创建实时 ETW 会话。 这将通过 WebSocket 进行管理。  ETW 事件会在服务器上进行批处理，并以每秒一次的速度发送到客户端。 
  
@@ -1445,7 +1445,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -1505,7 +1505,7 @@ ms.locfileid: "66359930"
 
 ### <a name="enumerate-the-registered-etw-providers"></a>枚举已注册的 ETW 提供程序
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来枚举已注册的提供程序。
  
@@ -1546,7 +1546,7 @@ ms.locfileid: "66359930"
 | :------     | :----- |
 |  200 | 确定 | 
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -1557,7 +1557,7 @@ ms.locfileid: "66359930"
 
 ### <a name="enumerate-the-custom-etw-providers-exposed-by-the-platform"></a>枚举由平台公开的自定义 ETW 提供程序。
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来枚举已注册的提供程序。
  
@@ -1595,7 +1595,7 @@ ms.locfileid: "66359930"
 
 - 标准状态代码。
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -1610,7 +1610,7 @@ ms.locfileid: "66359930"
 
 ### <a name="get-location-override-mode"></a>获取位置替代模式
 
-**请求**
+**需要**
 
 可以使用以下请求格式来获取设备的位置堆栈替代状态。 开发人员模式必须处于打开状态才能成功进行此调用。
  
@@ -1649,7 +1649,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -1659,7 +1659,7 @@ ms.locfileid: "66359930"
 
 ### <a name="set-location-override-mode"></a>设置位置替代模式
 
-**请求**
+**需要**
 
 可以使用以下请求格式来设置设备的位置堆栈替代状态。 启用后，位置堆栈允许执行位置插入。 开发人员模式必须处于打开状态才能成功进行此调用。
 
@@ -1700,7 +1700,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -1710,7 +1710,7 @@ ms.locfileid: "66359930"
 
 ### <a name="get-the-injected-position"></a>获取插入的位置
 
-**请求**
+**需要**
 
 可以使用以下请求格式来获取设备的插入（伪）位置。 必须设置插入的位置，否则将引发错误。
  
@@ -1752,7 +1752,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -1762,7 +1762,7 @@ ms.locfileid: "66359930"
 
 ### <a name="set-the-injected-position"></a>设置插入的位置
 
-**请求**
+**需要**
 
 可以使用以下请求格式来设置设备的插入（伪）位置。 必须首先在设备上启用位置替代模式，并且设置的位置必须是有效位置，否则将引发错误。
 
@@ -1809,7 +1809,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -1825,7 +1825,7 @@ ms.locfileid: "66359930"
 
 ### <a name="get-the-machine-name"></a>获取计算机名称
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取计算机的名称。
  
@@ -1864,7 +1864,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -1876,7 +1876,7 @@ ms.locfileid: "66359930"
 
 ### <a name="get-the-operating-system-information"></a>获取操作系统信息
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取计算机的操作系统信息。
  
@@ -1921,7 +1921,7 @@ ms.locfileid: "66359930"
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -1933,7 +1933,7 @@ ms.locfileid: "66359930"
 
 ### <a name="get-the-device-family"></a>获取设备系列 
 
-**请求**
+**需要**
 
 可以使用以下请求格式来获取设备系列（Xbox、手机、台式计算机等）。
  
@@ -1976,7 +1976,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -1988,7 +1988,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="set-the-machine-name"></a>设置计算机名称
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来设置计算机的名称。
  
@@ -2023,7 +2023,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | :------     | :----- |
 | 200 | 确定 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -2039,7 +2039,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="get-the-active-user"></a>获取活动用户
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取设备上的活动用户的名称。
  
@@ -2091,7 +2091,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * HoloLens
@@ -2105,7 +2105,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="get-the-list-of-running-processes"></a>获取正在运行的进程列表
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取当前正在运行的进程列表。  这也可以升级到 WebSocket 连接，其中相同的 WebSocket 数据将以每秒一次的速度推送到客户端。 
  
@@ -2156,7 +2156,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -2167,7 +2167,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="get-the-system-performance-statistics"></a>获取系统性能统计信息
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取系统性能统计信息。 这包括诸如读写周期和已使用的内存等信息。
  
@@ -2235,7 +2235,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -2251,7 +2251,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="get-the-current-battery-state"></a>获取当前的电池状态
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取电池的当前状态。
  
@@ -2298,7 +2298,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -2309,7 +2309,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="get-the-active-power-scheme"></a>获取活动的电源方案
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取活动的电源方案。
  
@@ -2347,7 +2347,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * IoT
@@ -2356,7 +2356,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="get-the-sub-value-for-a-power-scheme"></a>获取电源方案的子值
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取电源方案的子值。
  
@@ -2391,7 +2391,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * IoT
@@ -2400,7 +2400,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="get-the-power-state-of-the-system"></a>获取系统的电源状态
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来检查系统的电源状态。 这可让你查看它是否处于低功耗状态。
  
@@ -2438,7 +2438,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * HoloLens
@@ -2448,7 +2448,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="set-the-active-power-scheme"></a>设置活动的电源方案
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来设置活动的电源方案。
  
@@ -2485,7 +2485,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * IoT
@@ -2494,7 +2494,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="set-the-sub-value-for-a-power-scheme"></a>设置电源方案的子值
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来设置电源方案的子值。
  
@@ -2530,7 +2530,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | :------     | :----- |
 | 200 | 确定 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * IoT
@@ -2539,7 +2539,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="get-a-sleep-study-report"></a>获取睡眠分析报告
 
-**请求**
+**需要**
 
 | 方法      | 请求 URI |
 | :------     | :----- |
@@ -2574,7 +2574,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * IoT
@@ -2583,7 +2583,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="enumerate-the-available-sleep-study-reports"></a>枚举可用的睡眠分析报告
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来枚举可用的睡眠分析报告。
  
@@ -2626,7 +2626,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * IoT
@@ -2635,7 +2635,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="get-the-sleep-study-transform"></a>获取睡眠分析转换
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取睡眠分析转换。 此转换为 XSLT，可将睡眠分析报告转换为用户可以读取的 XML 格式。
  
@@ -2670,7 +2670,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * IoT
@@ -2683,7 +2683,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="restart-the-target-computer"></a>重新启动目标计算机
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来重新启动目标计算机。
  
@@ -2714,7 +2714,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | :------     | :----- |
 | 200 | 确定 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -2726,7 +2726,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="shut-down-the-target-computer"></a>关闭目标计算机
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来关闭目标计算机。
  
@@ -2759,7 +2759,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -2775,7 +2775,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="start-a-modern-app"></a>启动现代应用
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来启动现代应用。
  
@@ -2813,7 +2813,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -2825,7 +2825,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="stop-a-modern-app"></a>停止现代应用
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来停止现代应用。
  
@@ -2863,7 +2863,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -2875,7 +2875,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="kill-process-by-pid"></a>终止 PID 进程
 
-**请求**
+**需要**
 
 可以使用以下请求格式终止进程。
  
@@ -2912,7 +2912,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * HoloLens
@@ -2926,7 +2926,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="get-the-current-ip-configuration"></a>获取当前的 IP 配置
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取当前的 IP 配置。
  
@@ -3001,7 +3001,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -3011,11 +3011,11 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 <hr>
 
-### <a name="set-a-static-ip-address-ipv4-configuration"></a>设置静态 IP 地址 （IPV4 配置）
+### <a name="set-a-static-ip-address-ipv4-configuration"></a>设置静态 IP 地址（IPV4 配置）
 
-**请求**
+**需要**
 
-设置了静态 IP 和 DNS 的 IPV4 配置。 如果未指定静态 IP，然后它将启用 DHCP。 如果指定静态 IP，则必须还指定 DNS。
+设置具有静态 IP 和 DNS 的 IPV4 配置。 如果未指定静态 IP，则会启用 DHCP。 如果指定了静态 IP，则还必须指定 DNS。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
@@ -3026,14 +3026,14 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 | URI 参数 | 描述 |
 | :---          | :--- |
-| 适配器名称 | (**需**) 网络接口的 GUID。 |
+| 适配器名称 | （**必需**）网络接口 GUID。 |
 | IPAddress | 要设置的静态 IP 地址。 |
-| SubnetMask | (**必需**如果*IPAddress*不为 null) 的静态子网掩码。 |
-| DefaultGateway | (**必需**如果*IPAddress*不为 null) 的静态默认网关。 |
-| PrimaryDNS | (**必需**如果*IPAddress*不为 null) 将静态的主 DNS 设置。 |
-| SecondayDNS | (**必需**如果*PrimaryDNS*不为 null) 的静态辅助 DNS 设置。 |
+| SubnetMask | （如果*IPAddress*不为 null，则为**必需**）静态子网掩码。 |
+| DefaultGateway | （如果*IPAddress*不为 null，则为**必需**）静态默认网关。 |
+| PrimaryDNS | （如果*IPAddress*不为 null，则为**必需**）要设置的静态主 DNS。 |
+| SecondayDNS | （如果*PrimaryDNS*不为 null，则为**必需**）要设置的静态辅助 DNS。 |
 
-为清楚起见，若要设置为 DHCP 的接口，序列化只`AdapterName`在网络上：
+为清楚起见，若要将接口设置为 DHCP，只需在网络上序列化 `AdapterName`：
 
 ```json
 {
@@ -3061,7 +3061,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -3073,7 +3073,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="enumerate-wireless-network-interfaces"></a>枚举无线网络接口
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来枚举可用的无线网络接口。
  
@@ -3124,7 +3124,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -3136,7 +3136,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="enumerate-wireless-networks"></a>枚举无线网络
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来枚举指定接口上的无线网络列表。
  
@@ -3171,7 +3171,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
         "AlreadyConnected": bool,
         "AuthenticationAlgorithm": string, (WPA2, etc)
         "Channel": int,
-        "CipherAlgorithm": string, (e.g. AES)
+        "CipherAlgorithm": string, (for example, AES)
         "Connectable": int, (0 | 1)
         "InfrastructureType": string,
         "ProfileAvailable": bool,
@@ -3195,7 +3195,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -3207,7 +3207,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="connect-and-disconnect-to-a-wi-fi-network"></a>建立和断开与 WLAN 网络的连接。
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来建立或断开与 WLAN 网络的连接。
  
@@ -3225,7 +3225,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 接口   | （**必需**）用于连接到网络的网络接口的 GUID。 |
 | op   | （**必需**）指示要执行的操作。 可能的值为 connect 或 disconnect。|
 | ssid   | （**如果 *op* == connect，则为必需项**）要连接到的 SSID。 |
-| 键   | （**如果 *op* == connect 并且网络需要身份验证，则为必需项**）共享的密钥。 |
+| 钥   | （**如果 *op* == connect 并且网络需要身份验证，则为必需项**）共享的密钥。 |
 | createprofile | （**必需**）在设备上为网络创建配置文件。  这将导致设备在将来自动连接到该网络。 这可以是**是**或**否**。 |
 
 **请求标头**
@@ -3246,7 +3246,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | :------     | :----- |
 | 200 | 确定 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -3258,7 +3258,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="delete-a-wi-fi-profile"></a>删除 WLAN 配置文件
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来删除与特定接口上的网络关联的配置文件。
  
@@ -3294,7 +3294,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | :------     | :----- |
 | 200 | 确定 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -3310,7 +3310,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="download-a-windows-error-reporting-wer-file"></a>下载 Windows 错误报告 (WER) 文件
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来下载 WER 相关的文件。
  
@@ -3328,7 +3328,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 用户   | （**必需**）与报告关联的用户名。 |
 | type   | （**必需**）报告的类型。 这可以是 **queried**，也可以是 **archived**。 |
 | name   | （**必需**）报告的名称。 这应采用 base64 编码。 |
-| 文件   | （**必需**）要从报告下载的文件名称。 这应采用 base64 编码。 |
+| file   | （**必需**）要从报告下载的文件名称。 这应采用 base64 编码。 |
 
 **请求标头**
 
@@ -3352,7 +3352,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * HoloLens
@@ -3362,7 +3362,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="enumerate-files-in-a-windows-error-reporting-wer-report"></a>枚举 Windows 错误报告 (WER) 报告中的文件
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来枚举 WER 报告中的文件。
  
@@ -3408,7 +3408,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * HoloLens
@@ -3418,7 +3418,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="list-the-windows-error-reporting-wer-reports"></a>列出 Windows 错误报告 (WER) 报告
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来获取 WER 报告。
  
@@ -3467,7 +3467,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows 桌面版
 * HoloLens
@@ -3481,7 +3481,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="start-tracing-with-a-custom-profile"></a>使用自定义配置文件开始跟踪
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来上载 WPR 配置文件，并使用该配置文件开始跟踪。  一次只能运行一个跟踪。 配置文件将不保留在设备上。 
  
@@ -3523,7 +3523,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -3534,7 +3534,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="start-a-boot-performance-tracing-session"></a>开始启动性能跟踪会话
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来开始启动 WPR 跟踪会话。 这也称为性能跟踪会话。
  
@@ -3580,7 +3580,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -3591,7 +3591,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="stop-a-boot-performance-tracing-session"></a>停止启动性能跟踪会话
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来停止启动 WPR 跟踪会话。 这也称为性能跟踪会话。
  
@@ -3614,7 +3614,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 **响应**
 
--  无。  **注意：** 这是长时间运行操作。  当 ETL 完成写入到磁盘时，它将返回。
+-  无。  **注意：** 这是一个长时间运行的操作。  当 ETL 完成写入到磁盘时，它将返回。
 
 **状态代码**
 
@@ -3626,7 +3626,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -3637,7 +3637,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="start-a-performance-tracing-session"></a>开始性能跟踪会话
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来开始 WPR 跟踪会话。 这也称为性能跟踪会话。  一次只能运行一个跟踪。 
  
@@ -3683,7 +3683,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -3694,7 +3694,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="stop-a-performance-tracing-session"></a>停止性能跟踪会话
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来停止 WPR 跟踪会话。 这也称为性能跟踪会话。
  
@@ -3717,7 +3717,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 **响应**
 
-- 无。  **注意：** 这是长时间运行操作。  当 ETL 完成写入到磁盘时，它将返回。  
+- 无。  **注意：** 这是一个长时间运行的操作。  当 ETL 完成写入到磁盘时，它将返回。  
 
 **状态代码**
 
@@ -3729,7 +3729,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -3740,7 +3740,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="retrieve-the-status-of-a-tracing-session"></a>检索跟踪会话的状态
 
-**请求**
+**需要**
 
 可以通过使用以下请求格式来检索当前 WPR 会话的状态。
  
@@ -3782,7 +3782,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -3793,7 +3793,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="list-completed-tracing-sessions-etls"></a>列出已完成的跟踪会话 (ETL)
 
-**请求**
+**需要**
 
 可以使用以下请求格式来获取设备上的 ETL 跟踪列表。 
 
@@ -3840,7 +3840,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -3851,7 +3851,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="download-a-tracing-session-etl"></a>下载跟踪会话 (ETL)
 
-**请求**
+**需要**
 
 可以使用以下请求格式来下载跟踪文件（启动跟踪或用户模式跟踪）。 
 
@@ -3890,7 +3890,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -3901,7 +3901,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="delete-a-tracing-session-etl"></a>删除跟踪会话 (ETL)
 
-**请求**
+**需要**
 
 可以使用以下请求格式来删除跟踪文件（启动跟踪或用户模式跟踪）。 
 
@@ -3940,7 +3940,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -3955,7 +3955,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="view-tags"></a>查看标记
 
-**请求**
+**需要**
 
 查看当前应用的设备标记。  这些标记通过 T 项中的 DNS-SD TXT 记录公布。  
  
@@ -3997,7 +3997,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 5XX | 服务器错误 |
 
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -4009,7 +4009,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="delete-tags"></a>删除标记
 
-**请求**
+**需要**
 
 删除当前由 DNS-SD 公布的所有标记。   
  
@@ -4043,7 +4043,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 5XX | 服务器错误 |
 
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -4055,7 +4055,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="delete-tag"></a>删除标记
 
-**请求**
+**需要**
 
 删除当前由 DNS-SD 公布的标记。   
  
@@ -4090,7 +4090,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 200 | 确定 |
 
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -4102,7 +4102,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="add-a-tag"></a>添加标记
 
-**请求**
+**需要**
 
 将标记添加到 DNS-SD 广告。   
  
@@ -4138,7 +4138,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 401 | 标记空间溢出。  当建议的标记对于生成的 DNS-SD 服务记录而言过长时，将出现此情形。 |
 
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -4152,7 +4152,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="get-known-folders"></a>获取已知文件夹
 
-**请求**
+**需要**
 
 获取可访问的顶级文件夹列表。
 
@@ -4191,7 +4191,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 5XX | 错误代码 |
 
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -4203,7 +4203,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="get-files"></a>获取文件
 
-**请求**
+**需要**
 
 获取文件夹中的文件列表。
 
@@ -4252,7 +4252,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -4264,7 +4264,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="download-a-file"></a>下载文件
 
-**请求**
+**需要**
 
 从已知文件夹或 appLocalData 中获取文件。
 
@@ -4301,7 +4301,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 404 | 找不到文件 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -4313,7 +4313,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="rename-a-file"></a>重命名文件
 
-**请求**
+**需要**
 
 重命名文件夹中的文件。
 
@@ -4354,7 +4354,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 404 | 找不到文件 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -4366,7 +4366,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="delete-a-file"></a>删除文件
 
-**请求**
+**需要**
 
 删除文件夹中的文件。
 
@@ -4405,7 +4405,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 404 | 找不到文件 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版
@@ -4417,7 +4417,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="upload-a-file"></a>上载文件
 
-**请求**
+**需要**
 
 将文件上载到文件夹。  这将覆盖具有相同名称的现有文件，但不会创建新的文件夹。 
 
@@ -4453,7 +4453,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用的设备系列**
+**可用设备家族**
 
 * Windows Mobile
 * Windows 桌面版

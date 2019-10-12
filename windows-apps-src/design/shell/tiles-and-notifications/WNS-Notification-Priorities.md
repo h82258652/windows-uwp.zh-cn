@@ -1,74 +1,74 @@
 ---
 title: WNS 通知优先级
-description: 可以在通知设置各种优先级的说明
+description: 针对通知可以设置的各种优先级的说明
 ms.date: 01/10/2017
 ms.topic: article
-keywords: windows 10，uwp，WinRT API WNS
+keywords: windows 10，uwp，WinRT API，WNS
 localizationpriority: medium
-ms.openlocfilehash: f5c4b9f1db58a091dc4f9389888ad3739c4439e5
-ms.sourcegitcommit: b0edd3c09f931b9b62f9c2d17037fb58d826174f
+ms.openlocfilehash: 3310b34b2748bd684e46e04775c973680f8e03a9
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67349863"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282242"
 ---
 # <a name="wns-notification-priorities"></a>WNS 通知优先级
-通过将通知的优先级并使用简单的标头设置为 WNS 发布消息，可以控制如何在电池敏感的情况下传递通知。
+通过使用简单的标头将通知的优先级设置为 WNS POST 消息，你可以控制在使用电池的情况下通知的传送方式。
 
-## <a name="power-on-windows"></a>在 Windows 上的电源
-仅在由电池供电设备上处理更多的用户，最大程度减少电源使用情况已成为一项标准要求的所有应用。 如果应用程序消耗比它们提供的值的更多能源，用户可能会卸载应用。 尽管 Windows 操作系统降低了电池上的电源使用情况，在可能的情况，负责应用的高效地工作。 
+## <a name="power-on-windows"></a>Windows 开机
+当更多用户仅在备有电池的设备上工作时，将电源使用降至最低会成为所有应用的标准要求。 如果应用消耗的能源超过其提供的值，用户可能会卸载这些应用。 虽然 Windows 操作系统尽可能降低电池的电源使用情况，但应用程序的工作职责是有效的。 
 
-WNS 优先级是一种方法将移动非关键工作电池。 WNS 优先级告知的系统应立即传递的通知和其中可以等待，直到该设备插入到电源插座。 通过这些提示，系统可以提供的确切时间它们会对用户和应用程序最有价值的通知。 
+WNS 优先级是将非关键工作移出电池的一种方法。 WNS 优先级告知系统应立即传递哪些通知，哪些通知可以等待，直到设备插入电源。 对于这些提示，系统可以将通知准确地传递给用户和应用程序的最有价值的时间。 
 
-## <a name="power-modes-on-the-device"></a>在设备上的电源模式
-通过各种电源模式 （电池、 电池保护程序和费用），每台 Windows 设备进行操作，用户希望应用程序的不同行为，在不同的电源模式下。 在设备上时，应传递的所有通知。 在省电模式，应传递仅最重要的通知。 虽然在插入设备，可以完成同步或非时间关键操作。
+## <a name="power-modes-on-the-device"></a>设备上的电源模式
+每台 Windows 设备都在各种电源模式（电池、电池保护程序和充电）上运行，并且用户需要不同电源模式下的应用程序中的不同行为。 当设备打开时，应传递所有通知。 在节电模式下，只应传递最重要的通知。 设备接通电源时，可以完成同步或非时间关键操作。
 
-Windows 不知道的通知非常重要的任何用户或应用程序中，因此系统完全依赖于应用程序将其通知的正确优先级设置。 
+Windows 不知道哪些通知对于任何用户或应用是重要的，因此系统完全依赖于应用来为其通知设置正确的优先级。 
 
-## <a name="priorities"></a>优先级
-有可用于应用程序发送推送通知时要使用的四个优先级别。 将优先级设置单独的通知，让你可以选择需要立即传递的通知 （例如，IM 消息） 和哪些可以等待 （例如，可联系照片更新）。
+## <a name="priorities"></a>因素
+发送推送通知时，应用可使用四个优先级。 此优先级设置为单独的通知，允许你选择需要立即传递的通知（例如，IM 消息）以及哪些通知可以等待（例如，联系照片更新）。
 
-优先级包括： 
+优先级如下： 
 
 |    Priority    |    用户替代    |    描述    |    示例    |
 |----------------|---------------------|-------------------|---------------|
-|    高    |    是 – 用户可以阻止从应用程序的所有通知，或者可以阻止应用在省电模式中受到限制。    |    必须传递立即在任何情况下设备可能会收到通知时最重要通知。 诸如 VoIP 呼叫或应唤醒设备的关键警报属于此类别。    |    VoIP 呼叫，时间-严重警报    |
-|    中等    |    是 – 用户可以阻止从应用程序的所有通知，或者可以阻止应用在省电模式中受到限制。    |    这些是不视为重要的是，无需立即，发生的事情的内容，但用户会很苦恼，如果它们不在后台中运行。    |    动态磁贴更新辅助电子邮件帐户同步。    |
-|    低    |    是 – 用户可以阻止从应用程序的所有通知，或者可以阻止应用在省电模式中受到限制。    |    仅当用户正在使用该设备或后台活动有意义时有意义的通知。 这些是缓存，直到用户登录或在其设备的插入不处理。    |    联系人的状态 （联机/脱机）    |
-|    非常低     |    否-它不能阻止非常低优先级服务通知省电模式中受到限制。    |    这是几乎相同，因为除用户以外的低优先级不能重写电池保护程序策略中。 节电模式将永远不会提供这些通知。    |    对于同步服务的同步文件。    |
+|    高    |    是–用户可以阻止来自应用的所有通知，也可以阻止应用在电池保护模式下受到限制。    |    当设备可以接收通知时，必须立即交付的最重要通知。 诸如 VoIP 调用或应唤醒设备的关键警报之类的问题都属于此类别。    |    VoIP 调用，时间严重警报    |
+|    中等    |    是–用户可以阻止来自应用的所有通知，也可以阻止应用在电池保护模式下受到限制。    |    这些是不太重要的事情，不需要立即发生的事情，但如果用户未在后台运行，则会厌恶。    |    辅助电子邮件帐户同步，动态磁贴更新。    |
+|    低    |    是–用户可以阻止来自应用的所有通知，也可以阻止应用在电池保护模式下受到限制。    |    仅当用户使用设备或后台活动有效时才有意义的通知。 在用户登录或插入到设备中之前，将缓存和不处理它们。    |    联系人状态（联机/脱机）    |
+|    非常低     |    否–不能防止在电池保护模式下限制极低优先级的通知。    |    这与低优先级几乎相同，但用户不能重写电池保护策略。 这些通知决不会以节电形式提供。    |    正在同步同步服务的文件。    |
 
-请注意，许多应用程序将具有在其整个生命周期的不同优先级的通知。 由于在每个通知的基础上设置优先级，这不是问题。 VoIP 应用可以发送的传入呼叫的高优先级通知，然后按照它使用低优先级一个联系人联机时。 
+请注意，许多应用程序在其整个生命周期中都有不同的优先级通知。 由于优先级是根据每个通知进行设置的，因此不会出现问题。 VoIP 应用可为传入呼叫发送高优先级通知，并在联系人联机时使用低优先级的通知。 
 
 ## <a name="setting-the-priority"></a>设置优先级
 
-通知请求上设置的优先级是通过 POST 请求的其他标头`X-WNS-PRIORITY`。 这是一个整数值介于 1 和 4 之间映射到一个优先级： 
+设置通知请求的优先级是通过 POST 请求上的附加标头（`X-WNS-PRIORITY`）完成的。 这是一个介于1和4之间的整数值，映射到优先级： 
 
-| 优先级名称 | X WNS 优先级值 | 默认值： |
+| 优先级名称 | X-WNS 优先级值 | 默认值： |
 |---------------|----------------------|------------------|
 | 高 | 1 | Toast |
-| Meduim | 2 | 磁贴和徽章 |
+| 中等 | 2 | 磁贴和徽章 |
 | 低 | 3 | 原始 |
 | 非常低 | 4 |  |
 
-要向后兼容，设置优先级不需要。 如果应用不会将其通知的优先级设置，系统将提供默认优先级。 在上方图表中显示和匹配的现有版本的 Windows 行为的默认值。 
+为了向后兼容，不需要设置优先级。 如果应用不设置其通知的优先级，系统将提供默认优先级。 默认值显示在上图中，并与现有 Windows 版本的行为匹配。 
 
-## <a name="detailed-listing-of-desktop-behavior"></a>桌面的行为的详细的列表 
+## <a name="detailed-listing-of-desktop-behavior"></a>桌面行为的详细列表 
 
-如果跨 Windows 许多不同的 Sku 发运你的应用，则通常最好遵循上面的部分中的图表。 
+如果要在多个不同的 Windows Sku 之间交付您的应用程序，通常最好按照上一部分中的图表操作。 
 
-下面列出了每个优先级更具体的建议的行为。 这不是每个设备会完全根据图表的保障。 Oem 可以自由配置的行为方式不同，但大多数接近此图表。 
+下面列出了针对每个优先级的更具体的推荐行为。 这并不能保证每个设备都能准确地根据图表工作。 Oem 可以随意配置行为，但大多数情况下都接近此图表。 
 
-| 设备状态    | 优先级：高    |    优先级：中等        | 优先级：低    |    优先级：非常低    |
+| 设备状态    | 大事高    |    大事中等        | 大事低    |    大事非常低    |
 |-------------------------------------------------------|----------------------------------------------------|----------------------------------------------------|----------------------------------------------------|--------------------------|
-|    屏幕上或接通电源    |    交付    |    交付    |    交付    |    交付    |
-|    屏幕关闭和电池    |    交付    |    如果被免除的用户： 提供 Else： 批处理     |    如果被免除的用户： 提供 Else： 缓存 *    |    缓存    |
-|    节电模式已启用    |    如果被免除的用户： 提供 Else： 缓存    |    如果被免除的用户： 提供 Else： 缓存    |    如果被免除的用户： 提供 Else： 缓存    |    缓存     |
-|    电池 + 电池保护程序上启用 + 屏幕    |    如果被免除的用户： 提供 Else： 缓存    |    如果被免除的用户： 提供 Else： 缓存    |    如果被免除的用户： 提供 Else： 缓存    |    缓存    |
+|    屏幕打开或接通电源    |    提供    |    提供    |    提供    |    提供    |
+|    屏幕关闭和使用电池    |    提供    |    如果用户被免除：发送 Else： batch     |    如果用户被免除：发送 Else： cache *    |    缓存    |
+|    已启用节电    |    如果用户免除：发送 Else： cache    |    如果用户免除：发送 Else： cache    |    如果用户免除：发送 Else： cache    |    缓存     |
+|    启用电池 + 启用节电功能 + 屏幕关闭    |    如果用户免除：发送 Else： cache    |    如果用户免除：发送 Else： cache    |    如果用户免除：发送 Else： cache    |    缓存    |
 
-请注意，默认情况下，屏幕关闭传递低优先级服务通知和电池仅对 Windows Phone 的基于设备。 这是为了维护与预先存在的 MPNS 策略的兼容性。 另请注意，第四个和第五个行是相同，只需调用不同的方案。
+请注意，默认情况下，对于基于 Windows Phone 的设备，将为 "仅屏幕关闭" 和 "仅限电池" 提供低优先级通知。 这是为了与预先存在的 MPNS 策略 maintian 兼容。 另请注意，第四行和第五行相同，只是调用不同的方案。
 
-若要使电池保护程序中的应用，用户必须转到"电池使用情况通过中的应用程序"设置并选择"允许应用程序运行后台任务。" 此用户选择免除对高、 中和低优先级服务通知的电池保护程序中的应用程序。 您还可以调用[BackgroundExecutionManager API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_)若要以编程方式要求的用户的权限。  
+若要在电池保护中免除应用，用户必须在 "设置" 中按 "应用的电池使用情况"，并选择 "允许应用运行后台任务"。 此用户选择将豁免中的应用程序，以获取高、中和低优先级通知。 你还可以调用[BACKGROUNDEXECUTIONMANAGER API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_)以编程方式请求用户的权限。  
 
 ## <a name="related-topics"></a>相关主题
 - [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)
-- [要求在后台运行的权限](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_)
+- [正在请求权限在后台运行](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_)

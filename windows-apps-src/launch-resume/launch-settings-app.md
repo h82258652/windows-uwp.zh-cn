@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4f44772a9e8b34bf7f19a3b14dc8efd3d16c792f
-ms.sourcegitcommit: e5ed95f8252ddc7f39055d8f7276e82167bb9891
+ms.openlocfilehash: 7dd8604d9c9f32c374161ec1478221ebee6972c6
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973702"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282501"
 ---
 # <a name="launch-the-windows-settings-app"></a>启动 Windows 设置应用
 
@@ -28,7 +28,7 @@ ms.locfileid: "70973702"
 
 ## <a name="how-to-launch-the-settings-app"></a>如何启动“设置”应用
 
-若要启动“设置”应用，请使用以下示例中所示的 `ms-settings:` URI 方案。
+若要启动**设置**应用，请使用以下示例中所示的 `ms-settings:` URI 方案。
 
 在此示例中，超链接 XAML 控件用于使用 `ms-settings:privacy-microphone` URI 启动麦克风的隐私设置页面。
 
@@ -151,7 +151,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |设置页面| URI |
 |-------------|-----|
-| 附加 | ms-settings:extras（仅在安装了“设置应用”后可用，例如，通过第三方安装） |
+| 附加 | ms 设置：附加（仅在安装了 "设置应用" 时可用，例如，由第三方提供） |
 
 ## <a name="gaming"></a>游戏
 

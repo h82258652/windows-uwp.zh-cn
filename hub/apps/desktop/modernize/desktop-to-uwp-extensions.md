@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 316682ba136b5b3249d26abd0a5c5a877abbcf12
-ms.sourcegitcommit: 76357092f90b70bdb21ee43a5a416fe1fbfd9b89
+ms.openlocfilehash: c99d05a701f41e24663d116773b000017b805d81
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72257939"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281802"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>将打包桌面应用与 Windows 10 和 UWP 集成
 
@@ -247,7 +247,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |Verb |文件资源管理器上下文菜单中显示的名称。 此字符串可使用 ```ms-resource``` 进行本地化。|
 |Id |动词命令的唯一 ID。 如果你的应用程序是 UWP 应用，则会将其作为激活事件参数的一部分传递给你的应用，以便它能够相应地处理用户的选择。 如果你的应用程序是完全信任的打包应用程序，则它将改为接收参数（请参阅下一项目符号）。 |
 |Parameters |与动词命令关联的实参参数和值的列表。 如果你的应用程序是完全信任的打包应用程序，则当激活应用程序时，这些参数将作为事件参数传递给应用程序。 您可以根据不同的激活谓词自定义应用程序的行为。 如果变量可包含文件路径，请用引号将参数值括起来。 这将避免路径包含空格的情况下出现的任何问题。 如果应用程序是 UWP 应用程序，则不能传递参数。 应用转而接收参数（请参阅上一项）。|
-|扩展 |指定动词命令仅在用户右键单击文件之前按住 **Shift** 键显示上下文菜单时才显示。 如果未列出该特性，则该特性可选，并且默认为值 **False**（例如，始终显示动词命令）。 为每个动词命令逐个指定此行为（“打开”除外，它始终为 **False**）。|
+|扩展 |指定动词命令仅在用户右键单击文件之前按住 **Shift** 键显示上下文菜单时才显示。 此属性是可选的，如果未列出，则默认为**False**的值（例如，始终显示谓词）。 为每个动词命令逐个指定此行为（“打开”除外，它始终为 **False**）。|
 
 #### <a name="example"></a>示例
 

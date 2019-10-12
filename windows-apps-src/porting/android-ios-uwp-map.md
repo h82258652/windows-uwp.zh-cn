@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: ebfaab1c8fe3ec3cf8893022a8f4e8dae7deac63
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: f8ace0d56e6e647ed5f977cbe6860d8f91bb2b5f
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340580"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282365"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
 
@@ -87,7 +87,7 @@ ms.locfileid: "71340580"
 <td align="left">你可以创建可重用的<strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style">样式</a></strong>，这些样式可应用于多个控件并存储在 <strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a></strong> 以便于重用。<br/><br/><a href="https://docs.microsoft.com/previous-versions/windows/apps/hh465381(v=win.10)">快速入门：样式控制 @ no__t-0</td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>编辑控件的可视结构。</strong> <br><br>除了修改属性或特性之外，还可以自定义控件的视觉结构，例如移动复选框下的复选框文本。</td>
+<td align="left"><strong>编辑控件的可视结构。</strong> <br><br>自定义控件的可视结构，而不是只修改属性或属性，例如，将复选框中的文本移到复选框下。</td>
 <td align="left">在 Android 中，编辑控件的视觉结构没有任何简易方法。</td>
 <td align="left">在 iOS 中，编辑控件的视觉结构没有任何简易方法。</td>
 <td align="left">若要自定义控件的视觉结构，可以在 XAML 标记中复制并编辑其<strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate">控件模板</a></strong>。<br/><br/><a href="https://docs.microsoft.com/previous-versions/windows/apps/hh465374(v=win.10)">快速入门：控件模板 @ no__t</td>
@@ -348,7 +348,7 @@ ms.locfileid: "71340580"
 <td align="left"><strong>异步编程。</strong> <br><br>通过利用异步编程模式避免线程的复杂性来保持 UI 线程有响应。</td>
 <td align="left">创建你自己的异步类<strong>需要使用线程</strong>。 某些内置的类都是异步类。</td>
 <td align="left">创建你自己的异步类<strong>需要使用线程</strong>。 某些内置的类都是异步类。</td>
-<td align="left">当你创建自己的 API 时，可以使用异步模式来避免阻止主线程，例如使用 C# 和 Visual Basic 中的 <strong>Async</strong> 和 <strong>Await</strong>。 你可以使用以单词 <strong>Async</strong> 结尾的异步内置 API。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps">异步编程</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic">使用 C# 或 Visual Basic 调用异步 API</a></td>
+<td align="left">创建自己的 Api 时，可以使用异步模式来避免阻止主线程，例如，使用<strong>async</strong>和<strong>await</strong> in C# and Visual Basic。 你可以使用以单词 <strong>Async</strong> 结尾的异步内置 API。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps">异步编程</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic">使用 C# 或 Visual Basic 调用异步 API</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>列表视图优化。</strong> <br><br>帮助优化数据列表的内置模式，当需要显示的数据量很大时，性能通常很差</td>

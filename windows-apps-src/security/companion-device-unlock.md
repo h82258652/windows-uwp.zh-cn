@@ -1,27 +1,27 @@
 ---
 title: 具有 Windows Hello 配套 (IoT) 设备的 Windows 解锁
-description: Windows Hello 配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 通过使用 Windows Hello 配套设备框架，即使是在生物识别不可用时（例如，在 Windows 10 桌面版缺少相机进行面部身份验证或缺少指纹读取器设备时），配套设备也能提供丰富的 Windows Hello 体验。
+description: Windows Hello 配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 使用 Windows Hello 配套设备框架，配套设备即使在生物识别不可用时也可以为 Windows Hello 提供丰富的体验（例如，如果 Windows 10 桌面缺少人脸身份验证或指纹读取器设备的照相机，例如）。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bba51627445c553c67b2c02bd66d65486f9caf6
-ms.sourcegitcommit: 68051d2adcf3facc036c9f4c76d82bb4d342a75f
+ms.openlocfilehash: 416077d2f2e7fe5f98f2586eb7273602b8075982
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67498911"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281849"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>具有 Windows Hello 配套 (IoT) 设备的 Windows 解锁
 
-Windows Hello 配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 通过使用 Windows Hello 配套设备框架，即使是在生物识别不可用时（例如，在 Windows 10 桌面版缺少相机进行面部身份验证或缺少指纹读取器设备时），配套设备也能提供丰富的 Windows Hello 体验。
+Windows Hello 配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 使用 Windows Hello 配套设备框架，配套设备即使在生物识别不可用时也可以为 Windows Hello 提供丰富的体验（例如，如果 Windows 10 桌面缺少人脸身份验证或指纹读取器设备的照相机，例如）。
 
-> **请注意**Microsoft 将弃用 Windows Hello 配套设备中的框架 2020 年上半年的 API。
+> **注意**Microsoft 将在2020的弃用中为 Windows Hello 配套设备框架 API。
 
 > **注意** Windows Hello 配套设备框架是不向所有应用开发人员提供的特定功能。 若要使用此框架，应用必须由 Microsoft 专门设置，并且在它的清单中列出受限制的 *secondaryAuthenticationFactor* 功能。 若要获得批准，请联系 [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com)。
 
-## <a name="introduction"></a>简介
+## <a name="introduction"></a>介绍
 
 > 有关视频概述，请参阅第 9 频道上来自内部版本 2016 的[具有 IoT 设备的 Windows 解锁](https://channel9.msdn.com/Events/Build/2016/P491)会话。
 
@@ -66,9 +66,9 @@ Windows Hello 配套设备框架实现为在 Windows 上运行的服务（在本
 
 每个 Windows Hello 配套设备均应与支持三种用户信号的应用结合。 这些信号可以采用操作或手势的形式。
 
-- **意向信号**:允许用户将显示其意图来解除锁定，例如，通过点击按钮上 Windows Hello 伴生设备显示。 意图信号必须在 **Windows Hello 配套设备**端收集。
-- **用户是否存在信号**:事实证明，确定存在用户。 例如，Windows Hello 配套设备可能在可用于解锁电脑前需要 PIN（不要与电脑 PIN 混淆），或者它可能需要按某个按钮。
-- **消除二义性信号**:消除歧义用户想要解锁时多个选项都适用于 Windows Hello 配套设备的 Windows 10 桌面版。
+- **意向信号**：允许用户显示他通过使用 Windows Hello 设备上的按钮进行解锁的意图。 意图信号必须在 **Windows Hello 配套设备**端收集。
+- **用户状态通知**：证明用户的状态。 例如，Windows Hello 配套设备可能在可用于解锁电脑前需要 PIN（不要与电脑 PIN 混淆），或者它可能需要按某个按钮。
+- **消除歧义信号**：消除当 Windows Hello 设备使用多个选项时，用户想要解锁哪个 Windows 10 桌面版。
 
 上述任意数量的用户信号都可以组合成一个信号。 每次使用时都必须要有用户存在信号和意图信号。
 
@@ -92,7 +92,7 @@ Windows Hello 配套设备和 Windows 10 桌面版设备的关系可以是一对
 
 注意：
 
-- 我们建议简化和自动化（如果可能）Windows Hello 配套设备应用的发现、下载和启动（例如当点击 Windows 10 桌面版设备端的 NFC 读卡器上的 Windows Hello 配套设备时，即可下载应用）。 但是，这是 Windows Hello 配套设备和 Windows Hello 配套设备应用的责任。
+- 建议优化 Windows Hello 设备应用的发现、下载和启动，如有可能，自动（例如，可以在 Windows 10 桌面版设备上的 NFC 读卡器上点击 Windows Hello 设备时下载该应用端）。 但是，这是 Windows Hello 配套设备和 Windows Hello 配套设备应用的责任。
 - 在企业环境中，Windows Hello 配套设备应用可通过 MDM 部署。
 - Windows Hello 配套设备应用负责向用户显示任何在注册时发生的错误消息。
 
@@ -130,7 +130,7 @@ Windows Hello 配套设备应用的帮助程序库会侦听锁屏界面状态更
 
 如果有多个 Windows Hello 配套设备后台任务，则第一个完成身份验证过程的后台任务将解锁电脑。 配套设备身份验证服务将忽略任何其余的身份验证调用。
 
-Windows Hello 配套设备端的体验归 Windows Hello 配套设备应用所有并由其管理。 Windows Hello 配套设备框架无法控制此部分的用户体验。 更具体地说，配套身份验证提供程序通知 Windows Hello 配套设备应用（通过后台应用）有关登录 UI 的状态更改情况（例如锁屏界面刚应用，或者用户刚点击了空格键而消除了锁屏界面），而围绕状态更改来生成体验（例如当用户点击空格键和消除锁屏界面时，开始通过 USB 寻找设备）则是 Windows Hello 配套设备应用的责任。
+Windows Hello 配套设备端的体验归 Windows Hello 配套设备应用所有并由其管理。 Windows Hello 配套设备框架无法控制此部分的用户体验。 更具体地说，伴随身份验证提供程序通知 Windows Hello 设备应用程序（通过其后台应用）有关登录 UI 中状态更改的信息（例如，锁定屏幕刚刚关闭，或者用户只需通过按空格键 dispelled 锁定屏幕）。Windows Hello 设备应用程序负责构建围绕该体验的体验（例如，当用户点击空格键并 dispelling 解锁屏幕时，开始通过 USB 查找设备）。
 
 Windows Hello 配套设备框架会提供大量（本地化的）文本和错误消息以供 Windows Hello 配套设备应用进行选择。 这些都将在锁屏界面顶部（或登录 UI 中）显示。 有关更多详细信息，请参阅“处理消息和错误”部分。
 
@@ -164,7 +164,7 @@ Windows Hello 配套设备框架会提供大量（本地化的）文本和错误
 企业有两个选择可以控制 Windows Hello 配套设备框架：
 
 - 打开或关闭功能
-- 使用 Windows 应用保险箱定义允许的 Windows Hello 配套设备允许列表
+- 使用 Windows 应用保险箱定义允许的 Windows Hello 配套设备白名单
 
 Windows Hello 配套设备框架不支持任何保留可用配套设备清单的集中式方法，或者是进一步筛选允许哪一个 Windows Hello 配套设备类型的实例的方法（例如仅允许序列号在 X 和 Y 之间的配套设备）。 但是，应用开发人员可以生成提供此类功能的服务。 有关更多详细信息，请参阅“漫游、吊销和筛选器服务”部分。
 
@@ -178,10 +178,10 @@ Windows Hello 配套设备框架不支持远程删除特定 Windows 10 桌面版
 
 配套设备供应商可以实现可用于以下方案的 Web 服务：
 
-- 用于企业的筛选器服务：企业可以限制的一组 Windows Hello 配套设备可以处理在其环境中向选择几个特定供应商。 例如，公司 Contoso 可以从供应商 X 订购 10000 台 Y 型号配套设备，并确保仅这些设备能够在 Contoso 域中运行（并且供应商 X 的任何其他设备型号都不行）。
-- 清单：企业可以确定在企业环境中使用的现有配套设备的列表。
-- 实时吊销：如果某位员工报告他伴侣设备丢失或被盗时，web 服务可以用于吊销该设备。
-- 漫游：用户仅有一次注册他伴侣设备，它适用于所有他的 Windows 10 桌面和移动版。
+- 适用于企业的筛选器服务：企业可以将可在其环境中工作的 Windows Hello 配套设备集限制为从特定供应商选择少量的设备。 例如，公司 Contoso 可以从供应商 X 订购 10000 台 Y 型号配套设备，并确保仅这些设备能够在 Contoso 域中运行（并且供应商 X 的任何其他设备型号都不行）。
+- 清单企业可以确定企业环境中使用的现有配套设备的列表。
+- 实时吊销：如果员工报告其随附设备丢失或被盗，则可以使用 web 服务吊销该设备。
+- 移动用户只需要注册其配套设备一次，并且它适用于其所有 Windows 10 桌面版和移动版。
 
 实现这些功能要求 Windows Hello 配套设备应用在注册和使用时检查 Web 服务。 Windows Hello 配套设备应用可以为要求一天仅检查一次 Web 服务之类的缓存登录方案进行优化（代价是将吊销事件延长至最多一天）。  
 
@@ -201,9 +201,9 @@ Windows Hello 配套设备应用应包含两个组件：UI 负责注册和注销
     * 确保 Windows Hello 配套设备应用存储了 HMAC 密钥（如果支持），并且 Windows Hello 配套设备应用放弃了其副本
 2. 注册后台任务
 3. 等待后台任务的正确事件
-    * WaitingForUserConfirmation:等待此事件，如果需要在 Windows Hello 配套设备端上用户操作/手势来启动身份验证流
-    * CollectingCredential:等待此事件，如果 Windows Hello 配套设备依赖于用户的操作手势，可在 PC 端 （例如，通过点击空格键） 启动身份验证流
-    * 智能卡等其他触发器：请确保查询当前的身份验证状态来调用 Api 的权限。
+    * WaitingForUserConfirmation:如果需要 Windows Hello 设备端上的用户操作/手势来启动身份验证流，请等待此事件
+    * CollectingCredential:如果 Windows Hello 设备依赖于电脑端的用户操作/手势来启动身份验证流（例如，按空格键），请等待此事件
+    * 其他触发器，如智能卡：请确保查询当前身份验证状态以调用正确的 Api。
 4. 通过调用 ShowNotificationMessageAsync，随时通知用户错误消息或要求的后续步骤。 仅在收集了意图信号后调用此 API
 5. 解除锁定
     * 确保已收集意图和用户存在信号
@@ -216,7 +216,7 @@ Windows Hello 配套设备应用应包含两个组件：UI 负责注册和注销
 
 ### <a name="registration-and-de-registration"></a>注册和注销
 
-注册需要两个 API 调用的辅助身份验证服务：RequestStartRegisteringDeviceAsync 和 FinishRegisteringDeviceAsync。
+注册需要对配套身份验证服务进行两次 API 调用：RequestStartRegisteringDeviceAsync 和 FinishRegisteringDeviceAsync。
 
 在执行任何这些调用前，Windows Hello 配套设备应用必须确保 Windows Hello 配套设备可用。 如果 Windows Hello 配套设备负责生成 HMAC 密钥（身份验证和设备密钥），Windows Hello 配套设备应用还应要求配套设备在执行任何上述两个调用前生成这些密钥。 如果 Windows Hello 配套设备应用负责生成 HMAC 密钥，则它在调用上述两个调用前也应这样做。
 
@@ -238,9 +238,9 @@ Windows Hello 配套设备应用应包含两个组件：UI 负责注册和注销
 
 第二个调用 (FinishRegisteringDeviceAsync) 完成注册。 作为注册过程的一部分，Windows Hello 配套设备应用可以使用配套身份验证服务来存储配套设备配置数据。 此数据的大小限制为 4K。 在进行身份验证时，此数据将提供给 Windows Hello 配套设备应用。 例如，此数据可用于连接 Windows Hello 配套设备（例如 MAC 地址），或者如果 Windows Hello 配套设备没有存储，但配套设备想要将电脑用于存储，则可使用配置数据。 注意，任何作为配置数据的一部分存储的敏感数据都必须使用仅 Windows Hello 配套设备知道的密钥加密。 另外，考虑到配置数据由 Windows 服务存储，它在用户配置文件上可用于 Windows Hello 配套设备应用。
 
-Windows Hello 配套设备应用可调用 AbortRegisteringDeviceAsync 以取消注册，并传入错误代码。 配套身份验证服务将在遥测数据中记录错误。 执行此调用很好的示例是 Windows Hello 配套设备出错并且无法完成注册（例如无法存储 HMAC 密钥或者丢失了 BT 连接）。
+Windows Hello 配套设备应用可调用 AbortRegisteringDeviceAsync 以取消注册，并传入错误代码。 配套身份验证服务将在遥测数据中记录错误。 此调用的一个很好的示例是当 Windows Hello 配套设备出现问题时，它无法完成注册（例如，无法存储 HMAC 密钥或 BT 连接丢失）。
 
-Windows Hello 配套设备应用必须让用户可以选择从 Windows 10 桌面版注销 Windows Hello 配套设备（例如，在他们丢失了配套设备或购买了较新的版本时）。 当用户选择该选项时，Windows Hello 配套设备应用必须调用 UnregisterDeviceAsync。 此 Windows Hello 配套设备应用的调用将触发配套设备身份验证服务从电脑端删除与调用方应用的特定设备 Id 和 AppId 对应的所有数据（包括 HMAC 密钥）。 此 API 调用不会尝试从 Windows Hello 配套设备应用或配套设备端删除 HMAC 密钥。 这留待 Windows Hello 配套设备应用来实现。
+Windows Hello 设备的设备应用必须提供一个选项，让用户从其 Windows 10 桌面取消注册其 Windows Hello 设备（例如，如果他们失去了其配套设备或购买了较新版本）。 当用户选择该选项时，Windows Hello 配套设备应用必须调用 UnregisterDeviceAsync。 此 Windows Hello 配套设备应用的调用将触发配套设备身份验证服务从电脑端删除与调用方应用的特定设备 Id 和 AppId 对应的所有数据（包括 HMAC 密钥）。 此 API 调用不会尝试从 Windows Hello 配套设备应用或配套设备端删除 HMAC 密钥。 这留待 Windows Hello 配套设备应用来实现。
 
 Windows Hello 配套设备应用负责显示在注册和注销阶段发生的任何错误消息。
 
@@ -348,7 +348,7 @@ namespace SecondaryAuthFactorSample
 
 ### <a name="authentication"></a>身份验证
 
-身份验证需要两个 API 调用的辅助身份验证服务：StartAuthenticationAsync 和 FinishAuthencationAsync。
+身份验证需要对配套身份验证服务进行两次 API 调用：StartAuthenticationAsync 和 FinishAuthencationAsync。
 
 第一个启动 API 将返回第二个 API 使用的句柄。  在其他事项中，第一个调用返回需要通过存储在 Windows Hello 配套设备上的设备密钥进行 HMAC 处理的 nonce（在与其他内容串联后）。 第二个调用返回 HMAC 的结果和设备密钥，并且最后可能验证身份成功（即用户将看到桌面）。
 
@@ -375,7 +375,7 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-两个 API 调用（StartAuthenticationAsync 和 FinishAuthencationAsync）的计时需要符合 Windows Hello 配套设备收集意图、用户存在和消除歧义信号的方式（有关详细信息，请参阅“用户信号”）。 例如，禁止在意图信号可用前提交第二个调用。 换句话说，在用户没有表达意图前，电脑不应解锁。 为了使表达更加清楚，假定蓝牙邻近感应用于电脑解锁，则必须收集显式意图信号；否则，只要用户走向厨房路过电脑旁边，电脑就会解锁。 另外，从第一个调用返回的 nonce 是有时间限制的（20 秒），并且在某段时间后将到期。 因此，仅应在 Windows Hello 配套设备应用可以清楚指示配套设备存在（例如，配套设备已插入 USB 端口或者已点击 NFC 读卡器）时，才能执行第一个调用。 使用蓝牙时，必须小心避免影响电脑端的电池或避免在检查 Windows Hello 配套设备存在时影响正在进行的其他蓝牙活动。 另外，如果需要提供用户存在信号（例如通过键入 PIN），建议在收集完该信号后执行第一个身份验证调用。
+两个 API 调用（StartAuthenticationAsync 和 FinishAuthencationAsync）的计时需要符合 Windows Hello 配套设备收集意图、用户存在和消除歧义信号的方式（有关详细信息，请参阅“用户信号”）。 例如，禁止在意图信号可用前提交第二个调用。 换句话说，在用户没有表达意图前，电脑不应解锁。 为了使表达更加清楚，假定蓝牙邻近感应用于电脑解锁，则必须收集显式意图信号；否则，只要用户走向厨房路过电脑旁边，电脑就会解锁。 另外，从第一个调用返回的 nonce 是有时间限制的（20 秒），并且在某段时间后将到期。 因此，仅当 Windows Hello 设备的设备应用有良好的指示设备存在时，才应进行第一次调用，例如，将设备插入 USB 端口，或在 NFC 读卡器上点击。 使用蓝牙时，必须小心避免影响电脑端的电池或避免在检查 Windows Hello 配套设备存在时影响正在进行的其他蓝牙活动。 此外，如果需要提供用户状态信号（例如，通过键入 PIN），建议仅在收集该信号后才进行第一次身份验证呼叫。
 
 通过提供用户所处的身份验证流程的全貌，Windows Hello 配套设备框架可帮助 Windows Hello 配套设备应用明智地作出何时执行上述两个调用的决定。 通过向应用后台任务提供锁定状态更改通知，Windows Hello 配套设备框架可提供此功能。
 
@@ -385,8 +385,8 @@ namespace SecondaryAuthFactorSample
 
 | 状态                         | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------   |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    |
-| WaitingForUserConfirmation    | 当锁屏界面应用（例如用户已按下 Windows + L）时，将触发此状态更改通知事件。 我们不建议请求与在此状态中难以查找设备相关的任何错误消息。 一般情况下，我们建议仅在提供意图信号时显示消息。 如果配套设备收集意图信号（例如点击 NFC 读卡器、在配套设备上按某个按钮，或者是诸如鼓掌等特定手势），Windows Hello 配套设备应用应在此状态中将第一个 API 调用用于身份验证，并且 Windows Hello 配套设备应用后台任务会从配套设备接收已检测到意图信号的指示。 否则，如果 Windows Hello 配套设备应用依赖电脑启动身份验证流程（通过让用户轻扫解锁屏幕或点击空格键），则 Windows Hello 配套设备应用需要等待下一个状态 (CollectingCredential)。     |
-| CollectingCredential          | 当用户打开笔记本电脑盖子、点击任意键盘按键或轻扫解锁屏幕时，将触发此状态更改通知事件。 如果 Windows Hello 配套设备依赖上述操作来开始收集意图信号，则 Windows Hello 配套设备应用应开始收集该信号（例如，通过配套设备上询问用户是否想要解锁电脑的弹出窗口）。 如果 Windows Hello 配套设备应用需要用户在配套设备上提供用户存在信号（例如在 Windows Hello 配套设备上键入 PIN），这将是提供错误情况的良好时机。                                                                                                                                                                                                                                                                                                                                            |
+| WaitingForUserConfirmation    | 锁定屏幕关闭时（例如，用户按下 Windows + L）会触发此状态更改通知事件。 我们不建议请求与在此状态中难以查找设备相关的任何错误消息。 一般情况下，我们建议仅在提供意图信号时显示消息。 如果配套设备收集意向信号（例如，点击 NFC 读卡器，在配套设备上按按钮或特定手势，如拍手），则 Windows Hello 助理设备应用应进行第一次 API 调用进行身份验证。）和 Windows Hello 设备应用后台任务会接收到检测到意向信号的伴随设备的指示。 否则，如果 Windows Hello 配套设备应用依赖电脑启动身份验证流程（通过让用户轻扫解锁屏幕或点击空格键），则 Windows Hello 配套设备应用需要等待下一个状态 (CollectingCredential)。   |
+| CollectingCredential          | 当用户打开笔记本电脑盖子、点击任意键盘按键或轻扫解锁屏幕时，将触发此状态更改通知事件。 如果 Windows Hello 设备设备依赖上述操作来开始收集意向信号，则 Windows Hello 辅助设备应用应开始收集该信号（例如，通过伴随设备上的弹出窗口询问用户是否要解锁 PC）. 如果 Windows Hello 配套设备应用需要用户在配套设备上提供用户存在信号（例如在 Windows Hello 配套设备上键入 PIN），这将是提供错误情况的良好时机。                                                                                                                                                                                                                                                                                                                                             |
 | SuspendingAuthentication      | 当 Windows Hello 配套设备应用接收此状态时，这意味着配套身份验证服务已停止接收身份验证请求。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | CredentialCollected           | 这表示另一个 Windows Hello 配套设备应用已调用了第二个 API，并且配套身份验证服务正在验证提交内容。 此时，除非当前提交的身份验证请求没有通过验证，否则配套身份验证服务不会接受任何其他身份验证请求。 Windows Hello 配套设备应用应继续关注，直到到达下一个状态。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | CredentialAuthenticated       | 这表示提交的凭据有效。 CredentialAuthenticated 拥有已成功的 Windows Hello 配套设备的设备 ID。 Windows Hello 配套设备应用应确保查看它的关联设备是否是入选方。 如果不是，则 Windows Hello 配套设备应用应避免显示任何后身份验证流程（例如配套设备上的成功消息或者可能是该设备的振动）。 请注意，如果提交的凭据无效，则状态将更改为 CollectingCredential 状态。                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -634,7 +634,7 @@ Windows Hello 配套设备应用可使用 ShowNotificationMessageAsync 向用户
 
 指导和错误消息如下所示。 设备名称是配套设备应用作为 ShowNotificationMessageAsync 的一部分传递的参数。
 
-**指南**
+**指导**
 
 - “轻扫或按空格键以使用*设备名称*登录。”
 - “正在设置配套设备。 请等待或使用其他登录选项。”

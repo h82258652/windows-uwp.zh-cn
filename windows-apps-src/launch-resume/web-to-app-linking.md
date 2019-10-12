@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d8550d346833559ccea1e8aea4ae73a8c6d4e7c
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5807cdc19e4b38c8cc8fa4ca45c4ef47e79b7742
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318662"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282247"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>使用应用 URI 处理程序启用“网站的应用”功能
 
@@ -23,7 +23,7 @@ ms.locfileid: "67318662"
 - 处理应用中的激活。
 
 > [!Note]
-> 从 Windows 10 创意者更新开始，支持的 Microsoft Edge 中单击的链接将启动相应的应用程序。 如果在其他浏览器（如 Internet Explorer 等）中点击受支持的链接，你将仍能够维持当前的浏览体验。
+> 从 Windows 10 创意者更新开始，Microsoft Edge 中单击的支持链接会启动相应的应用。 如果在其他浏览器（例如 Internet Explorer 等）中单击了支持的链接，则会使你保持浏览体验。
 
 ## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a>注册以处理应用部件清单中的 http 和 https 链接
 
@@ -46,7 +46,7 @@ ms.locfileid: "67318662"
 </Applications>
 ```
 
-上述声明将你的应用注册为处理来自指定主机的链接。 如果你的网站具有多个地址 (例如： m.example.com、 www\.example.com 和 example.com) 然后添加一个单独`<uap3:Host Name=... />`内的条目`<uap3:AppUriHandler>`为每个地址。
+上述声明将你的应用注册为处理来自指定主机的链接。 如果你的网站具有多个地址（例如： m.example.com、www\.example.com 和 example.com），则在每个地址的 @no__t 中添加单独的 @no__t 1 项。
 
 ## <a name="associate-your-app-and-website-with-a-json-file"></a>将你的应用和网站与 JSON 文件关联
 
@@ -71,12 +71,12 @@ Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器
 
 上述 JSON 文件示例演示了通配符的用法。 通配符允许你使用较少的代码行支持多种链接。 Web 到应用链接在 JSON 文件中支持两种类型的通配符：
 
-| **Wildcard** | **说明**               |
+| **通配符** | **说明**               |
 |--------------|-------------------------------|
 | **\***       | 表示任何子字符串      |
 | **?**        | 表示单个字符 |
 
-例如，给定上述示例中的 `"excludePaths" : [ "/news/*", "/blog/*" ]`，你的应用将支持以你的网站地址（例如 msn.com）开头的所有路径，**除了**`/news/` 和 `/blog/` 下的路径。 **msn.com/weather.html**将支持，但不是**msn.com/news/topnews.html**。
+例如，在上面的示例中，假设有 `"excludePaths" : [ "/news/*", "/blog/*" ]`，你的应用程序将支持以你的网站的地址（例如，msn.com）开头的所有路径，**但**不在 `/news/` 和 `/blog/` 的所有路径。 将支持**msn.com/weather.html** ，但不支持**msn.com/news/topnews.html**。
 
 ### <a name="multiple-apps"></a>多个应用
 
@@ -89,14 +89,14 @@ Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器
   "excludePaths" : [ "/news/*", "/blog/*" ]
  },
  {
-  "packageFamilyName": "Your second app's package family name, e.g. MyApp2_8jmtgj2pbbz6e",
+  "packageFamilyName": "Your second app's package family name, for example, MyApp2_8jmtgj2pbbz6e",
   "paths": [ "/example/*", "/links/*" ]
  }]
 ```
 
 若要为用户提供最佳体验，请使用排除路径以确保仅联机内容已从 JSON 文件中的受支持路径中排除。
 
-先检查排除路径，如果存在匹配项，则将使用浏览器（而不是指定应用）打开相应的页面。 在上述示例中，/news/\*包括任何页时该路径下的 / 新闻\*（没有正斜杠路线新闻） 包括在任何路径新闻\*如 newslocal /，newsinternational /，依次类推。
+先检查排除路径，如果存在匹配项，则将使用浏览器（而不是指定应用）打开相应的页面。 在上面的示例中，"/news/\*" 包含该路径下的任何页面，而 "/news @ no__t-1" （无正斜杠轨迹 "news"）包含 "news @ no__t" 下的任何路径，例如 "newslocal/"、"newsinternational/" 等等。
 
 ## <a name="handle-links-on-activation-to-link-to-content"></a>处理用于链接到内容的“激活”上的链接
 
@@ -150,19 +150,19 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 **重要提示** 请确保将最终的 `if (rootFrame.Content == null)` 路径替换为 `rootFrame.Navigate(deepLinkPageType, e);`，如上述示例所示。
 
-## <a name="test-it-out-local-validation-tool"></a>它进行测试：本地验证工具
+## <a name="test-it-out-local-validation-tool"></a>测试：本地验证工具
 
 你可以测试应用和网站的配置，方法是运行在以下位置提供的应用主机注册验证程序工具：
 
-%windir%\\system32\\**AppHostRegistrationVerifier.exe**
+% windir% \\system32 @ no__t-1**AppHostRegistrationVerifier**
 
 通过使用以下参数运行此工具来测试应用和网站的配置：
 
-**AppHostRegistrationVerifier.exe** *主机名 packagefamilyname 文件路径*
+**AppHostRegistrationVerifier** *hostname packagefamilyname filepath*
 
--   主机名：你的网站 (例如 microsoft.com)
--   包系列名称 (PFN):你的应用的 PFN
--   文件路径：本地验证的 JSON 文件 (例如 c:\\SomeFolder\\windows 应用的 web 链接)
+-   主机名：你的网站（例如，microsoft.com）
+-   包系列名称（PFN）：应用的 PFN
+-   文件路径：用于本地验证的 JSON 文件（例如，C： \\SomeFolder @ no__t-1windows）
 
 如果工具未范围任何内容，则上传时对该文件进行验证即可。 如果返回错误代码，则不起作用。
 
@@ -171,11 +171,11 @@ protected override void OnActivated(IActivatedEventArgs e)
 `HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\
 AppModel\SystemAppData\YourApp\AppUriHandlers`
 
-键名：`ForceValidation` 值： `1`
+Keyname`ForceValidation` 值： `1`
 
-## <a name="test-it-web-validation"></a>对其进行测试：Web 验证
+## <a name="test-it-web-validation"></a>测试：Web 验证
 
-关闭应用程序以验证当你单击某个链接时应用是否激活。 然后，在网站中复制受支持路径之一的地址。 例如，如果你的网站地址为"msn.com"，而且支持路径之一是"path1"，则将使用 `http://msn.com/path1`
+关闭应用程序以验证当你单击某个链接时应用是否激活。 然后，在网站中复制受支持路径之一的地址。 例如，如果网站的地址是 "msn.com"，并且其中一个支持路径是 "path1"，则会使用 `http://msn.com/path1`
 
 验证你的应用是否已关闭。 按 **Windows 键 + R** 打开 **“运行”** 对话框，并在窗口中粘贴该链接。 应启动你的应用，而不是 Web 浏览器。
 
@@ -186,7 +186,7 @@ AppModel\SystemAppData\YourApp\AppUriHandlers`
 ## <a name="appurihandlers-tips"></a>AppUriHandlers 提示：
 
 - 请确保仅指定你的应用可以处理的链接。
-- 列出你将支持的所有主机。  请注意该 www\.example.com 和 example.com 是不同的主机。
+- 列出你将支持的所有主机。  请注意，www\.example.com 和 example.com 是不同的主机。
 - 用户可以在“设置”中选择他们更希望哪个应用处理网站。
 - 你的 JSON 文件必须上载到 https 服务器。
 - 如果你需要更改你希望支持的路径，可以重新发布你的 JSON 文件，而无需重新发布你的应用。 用户将在 1-8 天内看到更改。

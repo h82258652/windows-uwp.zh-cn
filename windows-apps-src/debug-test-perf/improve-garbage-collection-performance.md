@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fdb4e80d7f8da022e2ceb5496cbad592d7d22716
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: f9e7cc16b65f4ee2727fae5a711da9372ee91c01
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339623"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282190"
 ---
 # <a name="improve-garbage-collection-performance"></a>改进垃圾回收性能
 
@@ -74,7 +74,7 @@ ms.locfileid: "71339623"
 
 ### <a name="avoid-reference-rich-objects"></a>避免引用丰富的对象
 
-垃圾回收器通过追踪对象之间的引用（从你的应用中的根开始）来确定哪些对象是实时的。 有关详细信息，请参阅[垃圾回收期间发生了什么情况](https://docs.microsoft.com/dotnet/standard/garbage-collection/fundamentals)。 如果某个对象包含许多引用，那么垃圾回收器将有更多工作要做。 一项常见的技术（特别是对于大型对象）是将引用丰富的对象转换为无引用的对象（例如，不是存储引用，而是存储索引）。 当然，此技术仅适合逻辑上可能这样做时。
+垃圾回收器通过追踪对象之间的引用（从你的应用中的根开始）来确定哪些对象是实时的。 有关详细信息，请参阅[垃圾回收期间发生了什么情况](https://docs.microsoft.com/dotnet/standard/garbage-collection/fundamentals)。 如果某个对象包含许多引用，那么垃圾回收器将有更多工作要做。 常见方法（尤其是对于大型对象）是将引用丰富的对象转换为不带引用的对象（例如，而不是存储引用、存储索引）。 当然，此技术仅适合逻辑上可能这样做时。
 
 将对象引用替换为索引可能是对应用的一种破坏性复杂更改，且对于包含大量引用的大型对象最有效。 仅当你注意到在你的应用中存在与引用频繁的对象相关的大量垃圾回收时间时，才这样做。
 

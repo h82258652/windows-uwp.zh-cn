@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: f567637f3d38ce80c320bfe92fff392efadeda8d
-ms.sourcegitcommit: 7803f11ba4c9194c350217cc06069a4707f15ed6
+ms.openlocfilehash: 557f5c03bda68d11507ba3b3b3b12823dbe6fd9f
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69017432"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282398"
 ---
 # <a name="web-account-manager"></a>Web 帐户管理器
 
@@ -76,11 +76,11 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 窗格为空的原因是系统只提供了一个 UI shell，这取决于开发人员是否使用标识提供者以编程方式填充窗格。 
 
 > [!TIP]
-> （可选） 可以使用 **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** 而不是 **[显示](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)** ，这将返回 **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)** ，若要查询操作的状态。 
+> 或者，您可以使用 **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** 而不是 **[Show](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)** ，这将返回 **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)** 以查询操作的状态。 
 
 ## <a name="register-for-accountcommandsrequested"></a>注册 AccountCommandsRequested
 
-若要向窗格添加命令，请先注册 AccountCommandsRequested 事件处理程序。 当用户要求查看窗格时（例如，单击 XAML 按钮），此事件处理程序将告知系统来运行生成逻辑。 
+若要向窗格添加命令，请先注册 AccountCommandsRequested 事件处理程序。 这会告知系统在用户要求查看窗格时（例如，单击 XAML 按钮）运行生成逻辑。 
 
 在隐藏代码中，替代 OnNavigatedTo 和 OnNavigatedFrom 事件，并向它们添加以下代码： 
 
@@ -116,7 +116,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-接下来，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法获取提供程序。 提供程序的 URL 因提供程序而异，并且可以在提供程序的文档中找到。 对于 Microsoft 帐户和 Azure Active Directory, 它是 "https\://login.microsoft.com"。 
+接下来，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法获取提供程序。 提供程序的 URL 因提供程序而异，并且可以在提供程序的文档中找到。 对于 Microsoft 帐户和 Azure Active Directory，它是 "https @ no__t-0//.com"。 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -178,7 +178,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 * 有关 OneDrive 的作用域，请参阅 [OneDrive 身份验证和登录](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
 
 > [!TIP]
-> （可选） 如果您的应用程序使用的登录提示 （若要填充默认电子邮件地址的用户字段） 或其他与登录体验相关的特殊属性，将其列在 **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性。 这将导致系统在缓存 web 帐户时忽略属性, 这会阻止缓存中的帐户不匹配。
+> （可选）如果你的应用使用登录提示（使用默认电子邮件地址填充 "用户" 字段）或其他与登录体验相关的特殊属性，请在 **[WebTokenRequest. AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性中列出它。 这将导致系统在缓存 web 帐户时忽略属性，这会阻止缓存中的帐户不匹配。
 
 如果在开发企业应用，可能需要连接到 Azure Active Directory (AAD) 实例，并使用 Microsoft Graph API，而非常规的 MSA 服务。 在此方案中，使用以下代码： 
 
@@ -338,7 +338,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="remove-a-stored-account"></a>删除已存储帐户
 
-如果保留 web 帐户，你可能希望用户能够解除他们的帐户与你的应用之间的关联。 这样, 他们就可以有效地 "注销" 应用程序: 启动时, 将不再自动加载其帐户信息。 若要执行此操作，首先从存储中删除任何保存的帐户和提供商信息。 然后，调用 **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** 清除缓存，并使应用可能拥有的任何现有令牌失效。 
+如果保留 web 帐户，你可能希望用户能够解除他们的帐户与你的应用之间的关联。 这样，他们就可以有效地 "注销" 应用程序：启动时，将不再自动加载其帐户信息。 若要执行此操作，首先从存储中删除任何保存的帐户和提供商信息。 然后，调用 **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** 清除缓存，并使应用可能拥有的任何现有令牌失效。 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)
