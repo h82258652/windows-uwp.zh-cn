@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: b3537b0d0186a80a5332a28a61f3775227c911e2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cb5687c1a6744c34231c9b368da7c691c8e77642
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371355"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282440"
 ---
 # <a name="security"></a>安全性
 
@@ -37,7 +37,7 @@ ms.locfileid: "66371355"
 <tr><td><a href="microsoft-passport-login-auth-service.md">创建 Microsoft Passport 登录服务</a></td><td>有关如何在 Windows 10 UWP（通用 Windows 平台）应用中使用 Microsoft Passport 作为传统用户名和密码身份验证系统的替代项的完整演练中的第 2 部分。</td></tr>
 <tr><td><a href="smart-cards.md">智能卡</a></td><td>本主题介绍了应用如何使用智能卡将用户连接到安全网络服务，包括如何访问物理智能卡读卡器、创建虚拟智能卡、与智能卡通信、对用户进行身份验证、重置用户 PIN 以及删除智能卡或断开智能卡连接。</td></tr>
 <tr><td><a href="share-certificates.md">在应用之间共享证书</a></td><td>需要用户 ID 和密码组合以外的安全身份验证的 UWP 应用可以使用证书进行身份验证。 当对用户进行身份验证时，认证身份验证提供高级别的信任。 在某些情况下，一组服务将要针对多个应用对用户进行身份验证。 本文介绍了如何使用同一个证书对多个应用进行身份验证，以及如何提供方便代码，用户可使用此代码导入提供的证书以访问安全的 Web 服务。</td></tr>
-<tr><td><a href="companion-device-unlock.md">具有配套 (IoT) 设备的 Windows 解锁</a></td><td>配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 通过使用配套设备框架，即使是在 Windows Hello 不可用时（例如 Windows 10 桌面版缺少相机进行面部身份验证或缺少指纹读取器设备），配套设备也能提供丰富的 Microsoft Passport 体验。</td></tr>
+<tr><td><a href="companion-device-unlock.md">具有配套 (IoT) 设备的 Windows 解锁</a></td><td>配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 通过使用“配套设备框架”，即使是在 Windows Hello 不可用时（例如 Windows 10 桌面版缺少相机进行面部身份验证或缺少指纹读取器设备），配套设备也能提供丰富的 Microsoft Passport 体验。</td></tr>
 <tr><td><a href="web-account-manager.md">Web 帐户管理器</a></td><td>本文介绍了如何使用 Windows 10 Web 帐户管理器 API 来显示 AccountsSettingsPane 并将你的通用 Windows 平台 (UWP) 应用连接到外部标识提供者，如 Microsoft 或 Facebook。 你将了解如何请求用户的权限以使用其 Microsoft 帐户、获取访问令牌，并使用它来执行基本的操作（如获取配置文件数据或将文件上传到他们的 OneDrive）。 </td></tr>
 <tr><td><a href="web-authentication-broker.md">Web 身份验证代理</a></td><td>本文介绍了如何将应用连接到使用身份验证协议（如 OpenID 或 OAuth）的在线标识提供程序（如 Facebook、Twitter、Flickr、Instagram 等）。 <a href="https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync">AuthenticateAsync</a> 方法将请求发送给联机标识提供者，并取回描述应用访问的提供者资源的访问令牌。</td></tr>
 </table>
