@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ab2ed7bea6a353ae30bb3c245e00c77365fb5af
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: b70a3f9f9fad2d81716c22ab2f383e72ea363341
+ms.sourcegitcommit: cbd900f350569a3901086a44b2d5007bb6fb7bed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339915"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72276301"
 ---
 # <a name="xaml-syntax-guide"></a>XAML 语法指南
 
@@ -105,7 +105,7 @@ XAML 与大部分 XML 用法之间的一大区别在于，XAML 通常并非通�
 
 只读属性不能在 XAML 中设置。 即使在代码中，自有类型将必须支持一些其他方式（如构造函数重载、帮助程序方法或对计算属性的支持）才能进行设置。 计算的属性依赖于其他可设置属性的值，有时还依赖具有内置处理的事件；这些功能在依赖属性系统中可用。 有关依赖属性如何用于支持计算属性的详细信息，请参阅[依赖属性概述](dependency-properties-overview.md)。
 
-XAML 中的集合语法给人一种设置只读属性的感觉，但其实不是。 请参阅本文稍后部分中的“使用集合语法设置属性”部分。
+XAML 中的集合语法给人一种设置只读属性的感觉，但其实不是。 请参阅本主题后面的 "[集合语法](#collection-syntax)"。
 
 ### <a name="setting-a-property-by-using-attribute-syntax"></a>使用属性语法设置属性
 
