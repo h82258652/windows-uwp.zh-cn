@@ -72,17 +72,65 @@
       href: apps/whats-new/latest-doc-updates.md
 - name: 使用 Windows 进行生成
   items:
+    - name: 概述
+      href: dev-environment/index.yml
     - name: 使用 Python 进行开发
       items:
         - name: 概述
           href: python/index.yml
         - name: 初学者入门
-          href: python/get-started/python-for-education.md
+          href: python/beginners.md
         - name: 开始进行 Web 开发
-          href: python/get-started/python-for-web.md
+          href: python/web-frameworks.md
         - name: 开始进行自动化
-          href: python/get-started/python-for-scripting.md
+          href: python/scripting.md
+        - name: 数据库入门
+          href: python/databases.md
         - name: 常见问题
           href: python/faqs.md
         - name: 资源
           href: python/resources.md
+    - name: 使用 Node.js 进行开发
+      items:
+        - name: 概述
+          href: nodejs/index.yml
+        - name: 设置开发环境
+          href: nodejs/setup-on-wsl2.md
+        - name: 初学者入门
+          href: nodejs/beginners.md
+        - name: Web 框架入门
+          href: nodejs/web-frameworks.md
+        - name: 数据库入门
+          href: nodejs/databases.md
+        - name: 容器入门
+          href: nodejs/containers.md
+    - name: Mac 到 Windows 指南
+      items:
+        - name: 更改开发环境
+          href: dev-environment/mac-to-windows.md
+        - name: 键盘快捷方式
+          href: 'dev-environment/mac-to-windows.md#keyboard-shortcuts'
+        - name: 触控板快捷方式
+          href: 'dev-environment/mac-to-windows.md#trackpad-shortcuts'
+        - name: 终端和 Shell
+          href: 'dev-environment/mac-to-windows.md#terminal-and-shell'
+        - name: 应用和实用程序
+          href: 'dev-environment/mac-to-windows.md#apps-and-utilities'
+    - name: 适用于 Linux 的 Windows 子系统
+      items:
+        - name: 关于 WSL
+          href: 'https://docs.microsoft.com/windows/wsl/about?context=/windows/dev-environment/dev-environment-context'
+        - name: 关于 WSL 2
+          href: 'https://docs.microsoft.com/windows/wsl/wsl2-about?context=/windows/dev-environment/dev-environment-context'
+        - name: WSL 1 和 WSL 2
+          href: 'https://docs.microsoft.com/windows/wsl/wsl2-ux-changes?context=/windows/dev-environment/dev-environment-context'
+        - name: 用户帐户和权限
+          href: 'https://docs.microsoft.com/windows/wsl/user-support?context=/windows/dev-environment/dev-environment-context'
+    - name: Windows 终端
+      items:
+        - name: 概述
+          href: 'https://github.com/microsoft/terminal#terminal--console-overview'
+        - name: 用户指南
+          href: 'https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md'
+        - name: 自定义设置
+          href: 'https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md'
