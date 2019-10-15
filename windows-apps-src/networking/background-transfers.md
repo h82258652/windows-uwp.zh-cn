@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d06d91d2195c483f5453aeadbc5523a8935003c
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: d8a4c354eff34edb0c97e9d95828d4287f9c4b99
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340572"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282488"
 ---
 # <a name="background-transfers"></a>后台传输
 使用后台传输 API 以通过网络可靠地复制文件。 后台传输 API 提供应用暂停期间在后台运行的高级上载和下载功能，并持续至应用终止。 API 监视网络状态，并在连接丢失时自动暂停和恢复传输，并且传输还具有流量感知和电量感知功能，这意味着可以根据当前连接和设备电池状态调整下载活动。 该 API 适用于使用 HTTP 上载和下载较大文件。 还支持 FTP，但只能用于下载。
@@ -53,7 +53,7 @@ ms.locfileid: "71340572"
 | 按流量计费的连接、不受数据限制。 仅当用户在“流量管理”UI 中启用“限制后台数据”时，才会发生该状态。 | 拒绝             | 拒绝    | 拒绝   |
 
 ## <a name="uploading-files"></a>上载文件
-如果使用后台传输，上传作为 [**UploadOperation**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.UploadOperation) 存在，该对象具有一系列用于重新启动或取消操作的控制方法。 系统根据 **UploadOperation** 自动处理应用事件（如暂停或终止）和连接更改；在应用暂停期间或暂停时，上传会继续运行，并且在应用终止后，仍然保持运行。 此外，正确设置 [**CostPolicy**](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounddownloader.costpolicy) 可指示在对 Internet 连接使用按流量计费的网络时，应用是否将开始上传。
+如果使用后台传输，上传作为 [**UploadOperation**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.UploadOperation) 存在，该对象具有一系列用于重新启动或取消操作的控制方法。 系统根据 **UploadOperation** 自动处理应用事件（例如暂停或终止）和连接更改；在应用挂起期间或暂停时，上传会继续运行，并且在应用终止后，仍然保持运行。 此外，正确设置 [**CostPolicy**](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounddownloader.costpolicy) 可指示在对 Internet 连接使用按流量计费的网络时，应用是否将开始上传。
 
 以下示例将指导你完成基本上传的创建和初始化，以及如何枚举和重新引入以前应用会话中保持的操作。
 
@@ -161,7 +161,7 @@ function uploadFiles() {
     [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "Enumerate persisted operations")]
 
 ## <a name="downloading-files"></a>下载文件
-如果使用后台传输，每个下载作为 [**DownloadOperation**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) 存在，该对象公开一系列用于暂停、恢复、重新启动和取消操作的控制方法。 系统根据 **DownloadOperation** 自动处理应用事件（如暂停或终止）和连接更改；在应用挂起期间或暂停时，下载会继续运行，并且在应用终止后，仍然保持运行。 对于移动网络情况，设置 [**CostPolicy**](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounddownloader.costpolicy) 属性可指示在对 Internet 连接使用按流量计费的网络时，应用是否将开始或继续下载。
+如果使用后台传输，每个下载作为 [**DownloadOperation**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) 存在，该对象公开一系列用于暂停、恢复、重新启动和取消操作的控制方法。 系统根据 **DownloadOperation** 自动处理应用事件（例如暂停或终止）和连接更改；在应用挂起期间或暂停时，下载会继续运行，并且在应用终止后，仍然保持运行。 对于移动网络情况，设置 [**CostPolicy**](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounddownloader.costpolicy) 属性可指示在对 Internet 连接使用按流量计费的网络时，应用是否将开始或继续下载。
 
 如果你下载的是可能快速完成的小型资源，应该使用 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) API 而不是后台传输。
 

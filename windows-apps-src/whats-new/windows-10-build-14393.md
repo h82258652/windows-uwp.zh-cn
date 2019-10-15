@@ -6,12 +6,12 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 ms.localizationpriority: medium
-ms.openlocfilehash: 037963109fd6f70a60c17dc1b6c1b4eef82fb080
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: b4b887ad49cfdbdea89397105809db0fe6a5ab57
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67821108"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282334"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-14393"></a>面向开发人员的 Windows 10 内部版本 14393 中的新增功能
 
@@ -60,5 +60,5 @@ Web 到应用链接 | 将应用与网站关联起来。 当用户打开指向网
 WebSockets | 添加了对 [**MessageWebSockets**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.messagewebsocket) 和 [**StreamWebSockets**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamwebsocket) 的支持，用于查看服务器证书、查看 SSL 协商期间服务器发送的中间证书、执行自定义服务器证书验证，以及指定要忽略的某些服务器证书错误。
 Windows 信息保护 (WIP) API | [**WIP**](https://docs.microsoft.com/windows/uwp/enterprise/wip-hub) 是台式机、笔记本电脑、平板电脑和手机上的一组用于移动设备管理 (MDM) 的功能。 WIP 可使企业更好地控制数据在企业管理的设备上的处理方式。 <br/><br/>可使用 WIP API 生成尊重数据策略的应用，同时将员工的个人数据分离，使其不受这些策略影响。 策略管理员将信任应用，允许它们使用组织数据。 员工也愿意他们的个人数据在设备上保持不变，即使取消注册组织的移动设备管理 (MDM) 或完全退出组织也是如此。
 Windows IOT 核心版 | Windows IoT 核心版现在完全支持 Raspberry Pi 3 以及远程屏幕体验，使用户能够远程查看和控制在 IoT 核心版设备上运行的 UWP 应用程序。
-具有配套 (IoT) 设备的 Windows 解锁 | 配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 通过使用[配套设备框架](https://docs.microsoft.com/windows/uwp/security/companion-device-unlock)，即使是在 Windows Hello 不可用时（例如 Windows 10 桌面版缺少相机进行面部身份验证或缺少指纹读取器设备），配套设备也能提供丰富的 Microsoft Passport 体验。
+具有配套 (IoT) 设备的 Windows 解锁 | 配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 通过使用[配套设备框架](https://docs.microsoft.com/windows/uwp/security/companion-device-unlock)，即使是在 Windows Hello 不可用时（例如 Windows 10 桌面版缺少相机进行面部身份验证或缺少指纹读取器设备），配套设备也能提供丰富的 Microsoft Passport 体验。
 Winsock | 通过设置 TCP_FASTOPEN 套接字选项，TCP 套接字现在可使用 [Winsock](https://tools.ietf.org/html/rfc7413) 进行配置，以使用 [RFC 7413](https://tools.ietf.org/html/rfc7413) TCP Fast Open。

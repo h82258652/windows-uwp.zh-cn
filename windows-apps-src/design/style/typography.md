@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1d162fcf9a0f1023c58792e8c9f7a0e22fac4440
-ms.sourcegitcommit: f7ef7e894d7b7fc24483b4485605686abf8f2e93
+ms.openlocfilehash: cb2aef514c8787b5afe11ea5a2818012bfdf2f41
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "68867756"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282411"
 ---
 # <a name="typography"></a>版式
 
@@ -144,7 +144,7 @@ UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻�
     :::column-end:::
 :::row-end:::
 
-**注意**：如果未对容器进行完善定义（例如，不区分背景颜色），或者当存在用于查看更多文本的链接时，则使用省略号。
+**注意**：如果未对容器进行完善定义（例如，不区分背景颜色），或者存在用于查看更多文本的链接，则使用省略号。
 
 ## <a name="languages"></a>语言 
 

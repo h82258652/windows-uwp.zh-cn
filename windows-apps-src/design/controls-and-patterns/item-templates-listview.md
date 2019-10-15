@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 0a772c0ec6aad2c0d6a099b54eb4c6faa413cc7b
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 491489c0a6462c1bcbee2015027403ae359c47a2
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63793965"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282269"
 ---
 # <a name="item-templates-for-list-view"></a>列表视图项模板
 
@@ -19,7 +19,7 @@ ms.locfileid: "63793965"
 为了演示数据绑定，这些模板将 **ListViewItems** 绑定到[数据绑定概述](../../data-binding/data-binding-quickstart.md)中的示例 Recording 类。
 
 > [!NOTE] 
-> 目前，如果一个 **DataTemplate** 包含多个控件（例如多个 **TextBlock**），屏幕阅读器的默认可访问名称来自于项上的 .ToString()。 为方便起见，可以在 **DataTemplate** 的根元素上设置 [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties)。 有关辅助功能的详细信息，请参阅[辅助功能概述](../accessibility/accessibility-overview.md)。
+> 目前，如果一个 **DataTemplate** 包含多个控件（例如多个 **TextBlock**），则屏幕阅读器的默认可访问名称来自于项上的 .ToString()。 为方便起见，可以在 **DataTemplate** 的根元素上设置 [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties)。 有关辅助功能的详细信息，请参阅[辅助功能概述](../accessibility/accessibility-overview.md)。
 
 ## <a name="single-line-list-item"></a>单行列表项
 使用此模板以显示带单行文本的图像的列表。

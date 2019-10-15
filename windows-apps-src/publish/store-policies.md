@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: 26c7a7a123d8892bf1c3584685db49f2d86c654a
-ms.sourcegitcommit: 98343e851f25a11ae02fc739477f5316fe8fcb95
+ms.openlocfilehash: ba99abd906bd84a91fae5da1505ac8845dd5b99c
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71705557"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282469"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store 策略
 
@@ -222,7 +222,7 @@ ms.locfileid: "71705557"
 
 你必须使用 Microsoft Store 产品内购买 API，以销售在产品内消费或使用的数字商品或服务。 你的产品可以支持用户使用之前购买的数字内容或服务，但不得将用户导向 Microsoft Store 产品内购买 API 以外的购买机制。
 
-你的产品中出售的产品内产品不能转换为任何法律上有效的货币（如美元、欧元等）或者任何实体商品或服务。
+你的产品中出售的产品内产品不能转换为任何法律上有效的货币（例如美元、欧元等）或者任何实体商品或服务。
 
 **10.8.2**
 

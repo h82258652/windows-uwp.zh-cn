@@ -5,12 +5,12 @@ keywords: 托管 Web 应用, HWA, REST API, 单页应用, SPA
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b1b837d6585507311dc2246d42f3094ce8b07421
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3f5195cc3ed84116797c0b424a637c255b082386
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321168"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281864"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>创建具有 REST 后端的单页 Web 应用
 
