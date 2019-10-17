@@ -8,18 +8,18 @@ ms.topic: article
 keywords: NodeJS，node.js，windows 10，microsoft，学习 NodeJS，windows 上的节点，wsl 上的节点，windows 上的节点，在 windows 上安装节点，NodeJS with vs code，在 windows 上安装节点，在 windows 上进行开发，在 NODEJS 上安装节点，在 Windows 上安装节点适用于 Linux 的子系统
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: bdc3e3c944c4aeb25f5cf880fc4d31df1019da5a
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 63c47107538d8744201f83ea1be24cfaf3193f4f
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315111"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517817"
 ---
-# <a name="get-started-connecting-nodejs-apps-to-a-database"></a>开始将 node.js 应用连接到数据库
+# <a name="get-started-using-mongodb-or-postgresql-with-nodejs-on-windows"></a>在 Windows 上开始将 MongoDB 或 PostgreSQL 与 node.js 配合使用
 
-Node.js 应用程序通常需要保存数据，这些数据可能会通过文件、本地存储、云服务或数据库发生。 此循序渐进指南将帮助你开始将 node.js 应用连接到数据库。 我们选择将重点放在两个常见选项上：MongoDB 和 PostgreSQL。
+Node.js 应用程序通常需要保存数据，这些数据可能会通过文件、本地存储、云服务或数据库发生。 此循序渐进指南将帮助你开始将 node.js 应用连接到数据库。 我们选择将重点放在两个常见选项上： MongoDB 和 PostgreSQL。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 本指南假定你已完成[用 WSL 2 设置 node.js 开发环境](./setup-on-wsl2.md)的步骤，包括：
 
@@ -48,7 +48,7 @@ VS Code 支持通过[Azure CosmosDB 扩展](https://marketplace.visualstudio.com
 - [使用 MongoDB 简介](https://docs.mongodb.com/manual/introduction/)
 - [创建用户](https://docs.mongodb.com/manual/tutorial/create-users/)
 - [连接到远程主机上的 MongoDB 实例](https://docs.mongodb.com/manual/mongo/#mongodb-instance-on-a-remote-host)
-- [CRUD：Create、Read、Update、Delete @ no__t-0
+- [CRUD：创建、读取、更新、删除](https://docs.mongodb.com/manual/crud/)
 - [参考文档](https://docs.mongodb.com/manual/reference/)
 
 ## <a name="install-postgresql"></a>安装 PostgreSQL

@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS，node.js，windows 10，microsoft，学习 NodeJS，windows 上的节点，wsl 上的节点，windows 上的节点，在 windows 上安装节点，NodeJS with vs code，在 windows 上安装节点，在 windows 上进行开发，在 NODEJS 上安装节点，在 Windows 上安装节点适用于 Linux 的子系统
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 917192d782e0a44c6de7e549960161a003c646e5
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: e5875f0bf7ce73d3615aa131d57c2384c73dd8a1
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315061"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517836"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>用 WSL 2 设置 node.js 开发环境
 
@@ -28,11 +28,11 @@ ms.locfileid: "72315061"
 
     ![Windows 更新助手](../images/windows-update-assistant2019.png)
 
-2. **[请参阅开始 > 设置 > Windows 预览体验计划](ms-settings:windowsinsider)** ：在 "Windows 预览体验计划" 窗口中，选择 "**入门**"，并**链接帐户**。
+2. **[转到 "开始 > 设置" > Windows 预览体验计划](ms-settings:windowsinsider)** "，然后选择"**开始**"，并**链接帐户**。
 
     ![Windows 预览体验计划设置](../images/windows-insider-program-settings.png)
 
-3. **[注册为 Windows 有问必答](https://insider.windows.com/getting-started/#register)** ：如果未向预览体验计划注册，则需要对[Microsoft 帐户](https://account.microsoft.com/account)执行此操作。
+3. **[注册为 Windows 预览体验](https://insider.windows.com/getting-started/#register)** 人员：如果未向预览体验计划注册，则需要使用[Microsoft 帐户](https://account.microsoft.com/account)执行此操作。
 
     ![Windows 预览体验注册](../images/windows-insider-account.png)
 
@@ -44,7 +44,7 @@ ms.locfileid: "72315061"
 
 1. 在仍处于**Windows 设置**中时，搜索 **"打开或关闭 windows 功能**"。
 2. 出现**Windows 功能**列表后，滚动查找 "查找适用于 Linux 的**虚拟机平台**和**Windows 子系统**"，确保选中此复选框以启用这两者，然后选择 **"确定"** 。
-3. 出现提示时重新启动计算机。
+3. 出现提示时，重启计算机。
 
     ![启用 Windows 功能](../images/windows-feature-settings.png)
 
@@ -96,11 +96,15 @@ WSL 2 是 WSL 中[体系结构的新版本](https://docs.microsoft.com/windows/w
 
     ![显示 LTS 和当前节点版本的 NVM 列表](../images/nvm-node-installed.png)
 
-9. 验证 node.js 是否已安装，并且当前默认版本为： `node --version`。 然后，验证是否也有 npm：`npm --version` （还可以使用 @no__t 或 `which npm` 来查看用于默认版本的路径）。
+9. 验证 node.js 是否已安装，并且当前默认版本为： `node --version`。 然后，验证是否已 npm，并使用： `npm --version` （还可以使用 `which node` 或 `which npm` 来查看用于默认版本的路径）。
 10. 若要更改要用于项目的 node.js 版本，请创建新的项目目录 `mkdir NodeTest` 并输入目录 `cd NodeTest`，然后输入 `nvm use node` 以切换到当前版本，或 `nvm use --lts` 以切换到 LTS 版本。 你还可以使用已安装的任何其他版本的特定数量，如 `nvm use v8.2.1`。 （若要列出 node.js 可用的所有版本，请使用命令： `nvm ls-remote`）。
 
 > [!TIP]
 > 如果使用 NVM 安装 node.js 和 NPM，则不需要使用 SUDO 命令来安装新的包。
+
+> [!NOTE]
+> 发布时，NVM v 0.34.0 是可用的最新版本。 你可以在[GitHub 项目页上查看 NVM 的最新版本](https://github.com/nvm-sh/nvm)，并调整上述命令以包含最新版本。
+使用卷安装较新版本的 NVM 将替换旧版本，并使已使用 NVM 的节点版本保持不变。 例如：`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash`
 
 ## <a name="alternative-version-managers"></a>备用版本管理器
 
@@ -114,7 +118,7 @@ WSL 2 是 WSL 中[体系结构的新版本](https://docs.microsoft.com/windows/w
 
 ## <a name="install-your-favorite-code-editor"></a>安装你最喜欢的代码编辑器
 
-建议使用 [**Visual Studio Code**]，并将**WSL 扩展**用于 node.js 开发项目。 这会将 VS Code 拆分为 "客户端-服务器" 体系结构，并使客户端（用户界面）在 Windows 计算机上运行，而服务器（你的代码、Git、插件等）远程运行。
+建议将**Visual Studio Code**与用于 node.js 项目的**WSL 扩展**配合使用。 这会将 VS Code 拆分为 "客户端-服务器" 体系结构，并使客户端（用户界面）在 Windows 计算机上运行，而服务器（你的代码、Git、插件等）远程运行。
 
 - 支持基于 Linux 的 Intellisense 和 linting。
 - 你的项目将在 Linux 中自动生成。
@@ -132,20 +136,11 @@ WSL 2 是 WSL 中[体系结构的新版本](https://docs.microsoft.com/windows/w
 2. 在 VS Code 上安装[WSL 扩展](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。 这使你可以将 WSL 用作集成开发环境，并将为你处理兼容性和路径。 [了解详情](https://code.visualstudio.com/docs/remote/remote-overview)。
 
 > [!IMPORTANT]
-> 如果已安装 VS Code，则需要确保将[1.35 发布](https://code.visualstudio.com/updates/v1_35)或更高版本，以便安装[远程 WSL 扩展](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。 建议不要在不使用 WSL 扩展的 VS Code 中使用 WSL，因为将失去对自动完成、调试、linting 等的支持。趣味事实：此 WSL 扩展安装在 $HOME/.vscode-server/extensions。
+> 如果已安装 VS Code，则需要确保将[1.35 发布](https://code.visualstudio.com/updates/v1_35)或更高版本，以便安装[远程 WSL 扩展](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。 建议不要在不使用 WSL 扩展的 VS Code 中使用 WSL，因为将失去对自动完成、调试、linting 等的支持。有趣的事实：此 WSL 扩展安装在 $HOME/.vscode-server/extensions。
 
 ### <a name="helpful-vs-code-extensions"></a>有用的 VS Code 扩展
 
-虽然 VS Code 附带了许多用于 node.js 开发的功能，但有一些有用的扩展可考虑在[Node.js 扩展包](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack)中安装可用。 这些问题包括：
-
-- 不起毛-一种用于 "linting" 您的代码的工具。 Linting 分析你的代码，并向你发出潜在错误的警告。
-- npm-从命令面板中运行 npm 脚本，并验证在包中定义的已安装模块。
-- JavaScript （ES6）代码段-以 ES6 语法为 JavaScript 开发添加代码片段。
-- 搜索 node_modules-快速搜索项目中的节点模块。
-- NPM IntelliSense-在代码中添加 NPM 模块的 IntelliSense。
-- 路径 IntelliSense-自动完成代码中的文件名。
-
-全部安装或选择，并选择对你来说最有用的。
+虽然 VS Code 附带了许多用于 node.js 开发的功能，但有一些有用的扩展可考虑在[Node.js 扩展包](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack)中安装可用。 全部安装或选择，并选择对你来说最有用的。
 
 安装 node.js 扩展包：
 
@@ -153,26 +148,26 @@ WSL 2 是 WSL 中[体系结构的新版本](https://docs.microsoft.com/windows/w
 
     现在，"扩展" 窗口分为三个部分（因为已安装了远程 WSL 扩展）。
     - "本地安装"：安装的扩展，用于 Windows 操作系统。
-    - "WSL： Ubuntu-18.04-已安装"：安装的用于 Ubuntu 操作系统的扩展（WSL）。
+    - "WSL： Ubuntu-18.04-已安装"：安装用于 Ubuntu 操作系统（WSL）的扩展。
     - "推荐"：根据当前项目中的文件类型 VS Code 建议的扩展。
 
     ![本地和远程 VS Code 扩展](../images/vscode-extensions-local-remote.png)
 
-2. 在 "扩展" 窗口顶部的搜索框中，输入：**节点扩展包**（或要查找的任何扩展名的名称）。 将为 VS Code 的本地实例或 WSL 实例安装扩展（或扩展），具体取决于打开当前项目的位置。 可以通过选择 "VS Code" 窗口左下角的 "远程" 链接（绿色）来进行判断。 它将为你显示打开或关闭远程连接的选项。 在 "WSL： Ubuntu-18.04" 环境中安装 node.js 扩展。
+2. 在 "扩展" 窗口顶部的搜索框中，输入： **Node Extension Pack** （或要查找的任何扩展名的名称）。 将为 VS Code 的本地实例或 WSL 实例安装扩展，具体取决于打开当前项目的位置。 可以通过选择 "VS Code" 窗口左下角的 "远程" 链接（绿色）来进行判断。 它将为你显示打开或关闭远程连接的选项。 在 "WSL： Ubuntu-18.04" 环境中安装 node.js 扩展。
 
     ![VS Code 远程链接](../images/wsl-remote-extension.png)
 
 你可能需要考虑的几个附加扩展包括：
 
-- [Chrome 的调试器](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code)：在服务器端通过 node.js 完成开发后，需要开发并测试客户端。 此扩展将您的 VS Code 编辑器与您的 Chrome 浏览器调试服务进行集成，使其更高效一些。
-- [其他编辑器中的键映射](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads)：如果是从另一个文本编辑器（例如 Atom、Sublime、Vim、eMacs、记事本 + + 等）进行转换，则这些扩展可帮助你的环境直接感觉。
-- [设置同步](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)：使你能够使用 GitHub 跨不同安装同步 VS Code 设置。 如果您在不同的计算机上工作，这有助于使您的环境在它们之间保持一致。
+- [Chrome 调试器](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code)：在服务器端通过 node.js 进行开发后，需要开发并测试客户端。 此扩展将您的 VS Code 编辑器与您的 Chrome 浏览器调试服务进行集成，使其更高效一些。
+- [从其他编辑器键映射](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads)：如果从其他文本编辑器（例如 Atom、Sublime、Vim、EMacs、记事本 + + 等）进行转换，则这些扩展可帮助你的环境直接感觉。
+- [设置同步](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)：使你能够在使用 GitHub 的不同安装之间同步 VS Code 设置。 如果您在不同的计算机上工作，这有助于使您的环境在它们之间保持一致。
 
 ## <a name="install-windows-terminal-optional"></a>安装 Windows 终端（可选）
 
 新的 Windows 终端启用多个选项卡（在命令提示符、PowerShell 或多个 Linux 分发之间快速切换）、自定义密钥绑定（创建自己的快捷键以打开或关闭选项卡、复制 + 粘贴等）、表情符号☺和自定义主题（配色方案、字体样式和字号、背景图像/模糊/透明度）。 [了解详情](https://devblogs.microsoft.com/commandline/)。
 
-1. 获取[Microsoft Store 中的 Windows 终端（预览）](https://www.microsoft.com/store/apps/9n0dx20hk701)：通过应用商店进行安装时，将自动处理更新。
+1. 获取[Microsoft Store 中的 Windows 终端（预览版）](https://www.microsoft.com/store/apps/9n0dx20hk701)：通过应用商店进行安装，将自动处理更新。
 
 2. 安装完成后，打开 Windows 终端并选择 "**设置**" 以使用 @no__t 1 文件自定义终端。 [了解有关编辑 Windows 终端设置的详细信息](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md)。
 
@@ -190,7 +185,7 @@ WSL 2 是 WSL 中[体系结构的新版本](https://docs.microsoft.com/windows/w
 
 现在已设置 node.js 开发环境。 若要开始使用 node.js 环境，请考虑尝试以下教程之一：
 
-- [适用于初学者的 node.js 入门](./beginners.md)：一种循序渐进的指南，可帮助你开始使用 node.js 开发的新手。
-- [Windows 上的 node.js web 框架入门](./web-frameworks.md)：本指南可帮助你开始使用 Windows 上的 node.js web framworks，包括 Nuxt 和 Gatsby 的入门指南。
-- [开始将 node.js 应用连接到数据库](./databases.md)：帮助你开始将 node.js 应用连接到数据库（如 MongoDB 或 Postgres）的分步指南。
-- [开始将 Docker 容器与 node.js 配合使用](./containers.md)：帮助你开始使用适用于 node.js 应用的 Docker 容器的循序渐进指南。
+- [开始将 node.js 用于初学者](./beginners.md)
+- [在 Windows 上开始处理 node.js web 框架](./web-frameworks.md)
+- [开始将 node.js 应用连接到数据库](./databases.md)
+- [开始将 Docker 容器与 node.js 配合使用](./containers.md)

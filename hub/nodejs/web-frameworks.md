@@ -8,18 +8,18 @@ ms.topic: article
 keywords: NodeJS，node.js，windows 10，microsoft，学习 NodeJS，windows 上的节点，wsl 上的节点，windows 上的节点，在 windows 上安装节点，NodeJS with vs code，在 windows 上安装节点，在 windows 上进行开发，在 NODEJS 上安装节点，在 Windows 上安装节点适用于 Linux 的子系统
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: a3c1cd980884dc50107c05207665d0c1ef88938e
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: a8ce1d08136a74504e1b3bad26feadd61b72068f
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72314951"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517788"
 ---
 # <a name="get-started-with-nodejs-web-frameworks-on-windows"></a>在 Windows 上开始处理 node.js web 框架
 
 本指南可帮助你开始使用 Windows 上的 node.js web 框架，包括下 node.js、Nuxt 和 Gatsby。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 本指南假定你已完成[用 WSL 2 设置 node.js 开发环境](./setup-on-wsl2.md)的步骤，包括：
 
@@ -29,7 +29,7 @@ ms.locfileid: "72314951"
 - 确保 Ubuntu 18.04 分发在 WSL 2 模式下运行。 （WSL 可以在 v1 或 v2 模式下运行分发。）可以通过打开 PowerShell 并输入以下内容来进行检查： `wsl -l -v`
 - 使用 PowerShell 将 Ubuntu 18.04 设置为默认分布，使用： `wsl -s ubuntu 18.04`
 
-## <a name="get-started-with-nextjs"></a>下一 .js 入门
+## <a name="get-started-with-nextjs"></a>Next.js 入门
 
 接下来，.js 是一个框架，用于基于响应 node.js、node.js、Webpack 和 Babel 创建服务器呈现的 JavaScript 应用。 它基本上是一个用于做出反应的项目样板，其中重点是最佳实践，这使你能够以简单、一致的方式创建 "通用" web 应用，几乎不需要任何配置。 这些 "通用" 服务器呈现的 web 应用有时也称为 "isomorphic"，这意味着在客户端和服务器之间共享代码。
 
@@ -61,13 +61,13 @@ ms.locfileid: "72314951"
 
 8. 让我们看一下接下来如何处理错误。 删除 `</h1>` 结束标记，使标题代码现在如下所示： `<h1 className='title'>This is my new Next.js app!`。 保存此更改，请注意，浏览器和终端中将显示 "无法编译" 错误，让你知道 @no__t 的结束标记应为0。 替换 `</h1>` 结束标记，保存，然后重新加载页面。
 
-您可以通过选择 F5 键，或在菜单栏中**查看 "查看 > 调试**" （Ctrl + Shift + D）和 "**查看 > 调试控制台**（Ctrl + shift + Y）"，将 VS Code 的调试程序与下一个 .js 应用程序结合使用。 如果在 "调试" 窗口中选择 "齿轮" 图标，将会创建一个启动配置（@no__t 0）文件，以便保存调试设置的详细信息。 若要了解详细信息，请参阅[VS Code 调试](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations)。
+您可以通过选择 F5 键，或在菜单栏中**查看 "查看 > 调试**" （Ctrl + Shift + D）和 "**查看 > 调试控制台**（Ctrl + shift + Y）"，将 VS Code 的调试程序与下一个 .js 应用程序结合使用。 如果在 "调试" 窗口中选择 "齿轮" 图标，将会创建一个启动配置（@no__t 0）文件，以便保存调试设置的详细信息。 若要了解详细信息，请参阅[VS Code 调试](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)。
 
 ![VS Code 调试窗口并启动 json 配置图标](../images/vscode-debug-launch-configuration.png)
 
 若要了解有关下一 .js 的详细信息，请参阅[下一篇 node.js 文档](https://nextjs.org/docs)。
 
-## <a name="get-started-with-nuxtjs"></a>Nuxt 入门
+## <a name="get-started-with-nuxtjs"></a>Nuxt.js 入门
 
 Nuxt 是一个框架，用于基于 Vue、node.js、Webpack 和 Babel 创建服务器呈现的 JavaScript 应用。 它通过下一 .js 成为灵感。 它基本上是 Vue 的项目样板。 正如接下来，我们将重点关注最佳做法，并使你能够以简单、一致的方式创建 "通用" web 应用，几乎不需要任何配置。 这些 "通用" 服务器呈现的 web 应用有时也称为 "isomorphic"，这意味着在客户端和服务器之间共享代码。
 
@@ -83,12 +83,12 @@ Nuxt 是一个框架，用于基于 Vue、node.js、Webpack 和 Babel 创建服�
     - 项目名称： nuxtjs-应用
     - 项目说明：我的 Nuxt 应用程序的说明。
     - 作者姓名：我使用 GitHub 别名。
-    - 选择包管理器：Yarn 或**Npm** -我们的示例使用 Npm。
+    - 选择包管理器： "Yarn" 或 " **Npm** "，我们的示例使用 Npm。
     - 选择 UI framework：无，Ant 设计 Vue，启动 Vue，等等。 在此示例中，我们选择**Vuetify** ，但 Vue 社区创建了[比较这些 UI 框架](https://vue-community.org/guide/ecosystem/ui-libraries.html#summary-tldr)以帮助你选择最适合你的项目的更好摘要。
-    - 选择自定义服务器框架：None、AdonisJs、Express、Fastify 等。 在此示例中，请选择 "**无**"，但可以在 Dev.to 站点上找到[2019-2020 服务器 framework 比较](https://dev.to/santypk4/introducing-the-best-10-node-js-frameworks-for-2019-and-2020-mcm)。
-    - 选择 Nuxt 模块（使用空格键选择模块，或仅在不需要时输入）：Axios （用于简化 HTTP 请求）或[PWA 支持](https://pwa.nuxtjs.org/)（用于添加服务辅助进程、.manifest 文件，等等）。 让我们不要为此示例添加模块。
-    - 选择 linting 工具：**ESLint**，外观，不起毛的暂存文件。 接下来，选择 " **ESLint** " （一种用于分析代码的工具，并向你发出可能的错误警告）。
-    - 选择测试框架：**None**、JEST、AVA。 请选择 "**无**"，因为本快速入门中不介绍测试。
+    - 选择自定义服务器框架： None、AdonisJs、Express、Fastify 等。 在此示例中，请选择 "**无**"，但可以在 Dev.to 站点上找到[2019-2020 服务器 framework 比较](https://dev.to/santypk4/introducing-the-best-10-node-js-frameworks-for-2019-and-2020-mcm)。
+    - 选择 Nuxt 模块（使用空格键选择模块，或只需输入（如果不需要））： Axios （用于简化 HTTP 请求）或[PWA 支持](https://pwa.nuxtjs.org/)（用于添加服务辅助角色、.manifest 文件，等等）。 让我们不要为此示例添加模块。
+    - 选择 linting 工具： **ESLint**、外观、不起毛的暂存文件。 接下来，选择 " **ESLint** " （一种用于分析代码的工具，并向你发出可能的错误警告）。
+    - 选择测试框架： **None**、JEST、AVA。 请选择 "**无**"，因为本快速入门中不介绍测试。
     - 选择呈现模式：**通用（SSR）** 或单页应用（SPA）。 对于我们的示例，我们选择**通用（SSR）** ，但[Nuxt 文档](https://nuxtjs.org/guide#server-rendered-universal-ssr-)指出了某些差异--SSR 需要运行到服务器的 node.js 服务器-呈现你的应用程序和 SPA 用于静态宿主。
     - 选择开发工具： **jsconfig.json** （建议 VS Code 以便 Intellisense 代码完成工作）
 
@@ -112,13 +112,13 @@ Nuxt 是一个框架，用于基于 Vue、node.js、Webpack 和 Babel 创建服�
 
 8. 让我们看看 Nuxt 如何处理错误。 删除 `</v-card-title>` 结束标记，使标题代码现在如下所示： `<v-card-title class="headline">This is my new Nuxt.js app!`。 保存此更改，请注意，编译错误将显示在你的浏览器和终端中，让你知道缺少 `<v-card-title>` 的结束标记，以及你的代码中可以找到该错误的行号。 替换 `</v-card-title>` 结束标记，保存，然后重新加载页面。
 
-你可以通过选择 F5 键，或通过**查看 > 调试**（Ctrl + Shift + D）并在菜单栏中**查看 > 调试控制台**（Ctrl + shift + Y）来使用 VS Code 的 Nuxt 调试器。 如果在 "调试" 窗口中选择 "齿轮" 图标，将会创建一个启动配置（@no__t 0）文件，以便保存调试设置的详细信息。 若要了解详细信息，请参阅[VS Code 调试](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations)。
+你可以通过选择 F5 键，或通过**查看 > 调试**（Ctrl + Shift + D）并在菜单栏中**查看 > 调试控制台**（Ctrl + shift + Y）来使用 VS Code 的 Nuxt 调试器。 如果在 "调试" 窗口中选择 "齿轮" 图标，将会创建一个启动配置（@no__t 0）文件，以便保存调试设置的详细信息。 若要了解详细信息，请参阅[VS Code 调试](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)。
 
 ![VS Code 调试窗口并启动 json 配置图标](../images/vscode-debug-launch-configuration.png)
 
 若要了解有关 Nuxt 的详细信息，请参阅[Nuxt 指南](https://nuxtjs.org/guide)。
 
-## <a name="get-started-with-gatsbyjs"></a>Gatsby 入门
+## <a name="get-started-with-gatsbyjs"></a>Gatsby.js 入门
 
 Gatsby 是基于响应的静态站点生成器框架，而不是服务器呈现的，如下一篇 .js 和 Nuxt。 静态站点生成器在生成时生成静态 HTML。 它不需要服务器。 接下来，Nuxt 将在运行时（每次传入新请求时）生成 HTML。 它们需要运行服务器。 Gatsby 还规定了如何在应用中处理数据（通过 GraphQL），而在下 node.js 和 Nuxt 中，会将决策留给你。
 
@@ -151,7 +151,7 @@ Gatsby 是基于响应的静态站点生成器框架，而不是服务器呈现�
 
 9. 让我们看一下接下来如何处理错误。 删除 `</h1>` 结束标记，使标题代码现在如下所示： `<h1>Hi (Your Name)!`。 保存此更改，请注意，浏览器和终端中将显示 "无法编译" 错误，让你知道 @no__t 的结束标记应为0。 替换 `</h1>` 结束标记，保存，然后重新加载页面。
 
-您可以通过选择 F5 键，或在菜单栏中**查看 "查看 > 调试**" （Ctrl + Shift + D）和 "**查看 > 调试控制台**（Ctrl + shift + Y）"，将 VS Code 的调试程序与下一个 .js 应用程序结合使用。 如果在 "调试" 窗口中选择 "齿轮" 图标，将会创建一个启动配置（@no__t 0）文件，以便保存调试设置的详细信息。 若要了解详细信息，请参阅[VS Code 调试](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations)。
+您可以通过选择 F5 键，或在菜单栏中**查看 "查看 > 调试**" （Ctrl + Shift + D）和 "**查看 > 调试控制台**（Ctrl + shift + Y）"，将 VS Code 的调试程序与下一个 .js 应用程序结合使用。 如果在 "调试" 窗口中选择 "齿轮" 图标，将会创建一个启动配置（@no__t 0）文件，以便保存调试设置的详细信息。 若要了解详细信息，请参阅[VS Code 调试](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)。
 
 ![VS Code 调试窗口并启动 json 配置图标](../images/vscode-debug-launch-configuration.png)
 

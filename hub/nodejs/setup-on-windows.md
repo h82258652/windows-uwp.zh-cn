@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Node.js、windows 10、本机 windows，直接在 windows 上
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: eaeee6e2d55bcb9221d88bd87ebeafc7c45d0a5d
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 18a8d07f790c391a6e10577ff512347106e1cf21
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315081"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517828"
 ---
 # <a name="set-up-your-nodejs-development-environment-directly-on-windows"></a>直接在 Windows 上设置 node.js 开发环境
 
@@ -70,30 +70,19 @@ ms.locfileid: "72315081"
 
 ## <a name="install-your-favorite-code-editor"></a>安装你最喜欢的代码编辑器
 
-建议[安装 VS Code](https://code.visualstudio.com)，以及 Node.js[扩展包](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack)，以便在 Windows 上通过 node.js 进行开发。
-
-Node.js 扩展包包括：
-
-- 不起毛-一种用于 "linting" 您的代码的工具。 Linting 分析你的代码，并向你发出潜在错误的警告。
-- npm-从命令面板中运行 npm 脚本，并验证在包中定义的已安装模块。
-- JavaScript （ES6）代码段-以 ES6 语法为 JavaScript 开发添加代码片段。
-- 搜索 node_modules-快速搜索项目中的节点模块。
-- NPM IntelliSense-在代码中添加 NPM 模块的 IntelliSense。
-- 路径 IntelliSense-自动完成代码中的文件名。
-
-全部安装或选择，并选择对你来说最有用的。
+建议[安装 VS Code](https://code.visualstudio.com)，以及 Node.js[扩展包](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack)，以便在 Windows 上通过 node.js 进行开发。 全部安装或选择，并选择对你来说最有用的。
 
 安装 node.js 扩展包：
 
 1. 在 VS Code 中打开 "**扩展**" 窗口（Ctrl + Shift + X）。
-2. 在 "扩展" 窗口顶部的搜索框中，输入："Node Extension Pack" （或要查找的任何扩展名的名称）。
+2. 在 "扩展" 窗口顶部的搜索框中，输入 "Node Extension Pack" （或要查找的任何扩展名的名称）。
 3. 选择 "**安装**"。 安装完成后，扩展将出现在 "**扩展**" 窗口的 "已启用" 文件夹中。 您可以通过选择新扩展的说明旁边的齿轮图标来禁用、卸载或配置设置。
 
 你可能需要考虑的几个附加扩展包括：
 
-- [Chrome 的调试器](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code)：在服务器端通过 node.js 完成开发后，需要开发并测试客户端。 此扩展将您的 VS Code 编辑器与您的 Chrome 浏览器调试服务进行集成，使其更高效一些。
-- [其他编辑器中的键映射](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads)：如果是从另一个文本编辑器（例如 Atom、Sublime、Vim、eMacs、记事本 + + 等）进行转换，则这些扩展可帮助你的环境直接感觉。
-- [设置同步](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)：使你能够使用 GitHub 跨不同安装同步 VS Code 设置。 如果您在不同的计算机上工作，这有助于使您的环境在它们之间保持一致。
+- [Chrome 调试器](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code)：在服务器端通过 node.js 进行开发后，需要开发并测试客户端。 此扩展将您的 VS Code 编辑器与您的 Chrome 浏览器调试服务进行集成，使其更高效一些。
+- [从其他编辑器键映射](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads)：如果从其他文本编辑器（例如 Atom、Sublime、Vim、EMacs、记事本 + + 等）进行转换，则这些扩展可帮助你的环境直接感觉。
+- [设置同步](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)：使你能够在使用 GitHub 的不同安装之间同步 VS Code 设置。 如果您在不同的计算机上工作，这有助于使您的环境在它们之间保持一致。
 
 ## <a name="install-git-optional"></a>安装 Git （可选）
 

@@ -8,16 +8,16 @@ ms.topic: article
 keywords: python，windows 10，postgresql，mongodb，postgres，mongo，microsoft，python on windows，在 windows 上安装 postgresql，在 windows 上安装 mongodb，使用带有 python 的 mongodb，在 postgresql 上使用 mongodb，postgresql
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 42a257361cffec974d060a6518dfdf5254d62082
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 9b1bdea86739f3d58b39cf7f0e6b8090474886f3
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72314851"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517777"
 ---
-# <a name="get-started-using-databases-with-python-on-windows"></a>在 Windows 上使用 Python 的数据库入门
+# <a name="get-started-using-postgresql-or-mongodb-with-python-on-windows"></a>在 Windows 上开始将 PostgreSQL 或 MongoDB 与 Python 配合使用
 
-Python 应用程序通常需要保存数据，这些数据可能会通过文件、本地存储、云服务或数据库发生。 此循序渐进指南可帮助你开始将 Python 应用连接到数据库。 我们选择将重点放在两个常见选项上：PostgreSQL 和 MongoDB。
+此循序渐进指南可帮助你开始将 Python 应用连接到数据库。 我们选择将重点放在两个常见选项上： PostgreSQL 和 MongoDB。
 
 ## <a name="differences-between-mongodb-and-postgresql"></a>MongoDB 和 PostgreSQL 之间的差异
 
