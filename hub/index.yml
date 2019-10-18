@@ -9,12 +9,12 @@ metadata:
   ms.author: tedhudek
   ms.topic: hub-page
   uhfHeaderId: MSDocsHeader-DocsL1
-  ms.openlocfilehash: 0cdab14a7301cdb20ca6986854523c5b6e834b21
-  ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
+  ms.openlocfilehash: 2b0eee6f53445ce2f0a0bcc3f35b756ab231a888
+  ms.sourcegitcommit: 00cd8a6616e358479a63e56126c62ef02b8da75b
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/18/2019
-  ms.locfileid: "71100832"
+  ms.lasthandoff: 10/17/2019
+  ms.locfileid: "72548386"
 highlightedContent:
   items:
   - title: 获取 Visual Studio 和 Windows SDK
@@ -38,10 +38,10 @@ additionalContent:
         url: https://docs.microsoft.com/windows/apps
       - text: 向应用添加 Windows 10 功能
         url: https://docs.microsoft.com/windows/apps/desktop/modernize/
-      - text: 在 Windows 上使用 Python 进行开发
-        url: https://docs.microsoft.com/windows/python/index
-      - text: 设置适用于 Linux 的 Windows 子系统
-        url: https://docs.microsoft.com/windows/wsl/about
+      - text: 构建桌面应用
+        url: https://docs.microsoft.com/windows/apps/desktop/
+      - text: 设置开发环境
+        url: https://docs.microsoft.com/windows/dev-environment/
       - text: 查找代码示例
         url: https://developer.microsoft.com/windows/samples
     - title: 硬件开发人员
