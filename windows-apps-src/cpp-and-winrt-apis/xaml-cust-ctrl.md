@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 自定义, 模板化, 控件
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c0b2d8fb17b90bc55834f6bf2200b22af9352ef6
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 6acbd62a8fa75eefb39598dd5bbb6ec1270388c4
+ms.sourcegitcommit: cc9f5a16386be78c12821a975e43497a0693abba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270081"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72578175"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>XAML 自定义（模板化）控件与 C++/WinRT
 
@@ -22,6 +22,9 @@ ms.locfileid: "68270081"
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>创建空白应用 (BgLabelControlApp)
 首先在 Microsoft Visual Studio 中创建新项目。 创建“空白应用 (C++/WinRT)”项目，然后将其命名为 BgLabelControlApp   。 本主题的后续部分将指导你如何生成项目（在此之前暂时不要生成）。
+
+> [!NOTE]
+> 有关设置 Visual Studio 以进行 C++/WinRT 部署的信息 &mdash; 包括安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息 &mdash; 请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 我们将创作新类来表示自定义的（模板化）控件。 我们要在同一编译单元内创作和使用该类。 但我们希望能够从 XAML 标记实例化此类，因此，它将成为一个运行时类。 而且我们将使用 C++/WinRT 来创作和使用它。
 
@@ -116,7 +119,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 
 在其构造函数中，BgLabelControl 为自身设置默认样式密钥  。 但默认样式是什么  ？ 自定义（模板化）控件需要具有包含默认控件模板的默认样式，在控件的使用者未设置样式和/或模板时，可用于呈现。 在本节中，我们将向包含默认样式的项目添加标记文件。
 
-在项目节点下，新建文件夹，并将其命名为“主题”。 在 `Themes` 下，添加类型为“Visual C++” > “XAML” > “XAML View”的新项目，并将其命名为“Generic.xaml”    。 文件夹和文件的名称必须与如下类似，以便 XAML 框架查找自定义控件的默认样式。 删除 `Generic.xaml` 的默认内容，并粘贴到下方标记中。
+在项目节点下，新建文件夹（不是筛选器，而是文件夹），并将其命名为“Themes”。 在 `Themes` 下，添加类型为“Visual C++” > “XAML” > “XAML View”的新项目，并将其命名为“Generic.xaml”    。 文件夹和文件的名称必须与如下类似，以便 XAML 框架查找自定义控件的默认样式。 删除 `Generic.xaml` 的默认内容，并粘贴到下方标记中。
 
 ```xaml
 <!-- \Themes\Generic.xaml -->

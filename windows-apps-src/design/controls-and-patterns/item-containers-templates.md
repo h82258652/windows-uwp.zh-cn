@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2402be26a14d2e57a482a68cf8d5b587f4e65dd1
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 761cd9e6d1fc92b4919f701fdd9f8f62078faedf
+ms.sourcegitcommit: b8a4b0d5a65da297290b93d73c641df3c135a086
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364944"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72531661"
 ---
 # <a name="item-containers-and-templates"></a>项目容器和模板
 
@@ -25,13 +25,20 @@ ms.locfileid: "66364944"
 
 **ListView** 和 **GridView** 控件用于管理其项目的排列方式（水平、垂直、环绕等）以及用户与项目的交互方式，而不是各个项目在屏幕上的显示方式。 项目可视化效果由项目容器管理。 向列表视图添加项目时，它们会自动放置在容器中。 用于 ListView 的默认项目容器为 [ListViewItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewItem)；对于 GridView，其项目容器为 [GridViewItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridViewItem)。
 
-> **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)、[GridView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)、[ItemTemplate 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)、[ItemContainerStyle 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)
+> **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)、[GridView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)、[ListViewItem 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.listviewitem)、[GridViewItem 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.gridviewitem)、[ItemTemplate 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)、[ItemContainerStyle 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)
 
 
 > [!NOTE]
 > ListView 和 GridView 都从 [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) 类派生，因此它们的功能相同，但数据显示方式不同。 在本文中，涉及到列表视图时，信息适用于 ListView 和 GridView 控件，除非另行指定。 我们可能会引用 ListView 或 ListViewItem 等类，但 *List* 前缀可使用相应网格等效项（GridView 或 GridViewItem）的 *Grid* 代替。 
 
-这些容器控件由两个重要的部分组成，将两者组合使用可以创建项目的最佳视觉显示：*数据模板*和*控件模板*。
+## <a name="listview-items-and-gridview-items"></a>ListView 项目和 GridView 项目
+如上所述，ListView 项目自动放置在 ListViewItem 容器中，GridView 项目放置在 GridViewItem 容器中。 这些项目容器是控件，它们具有自己的内置样式和交互，但也可以高度自定义。 但是，在自定义之前，请确保自己熟悉 ListViewItem 和 GridViewItem 的建议样式和准则：
+
+- **Listviewitem** - 项目主要以文本为重点，形状细长。 图标或图像可能显示在文本的左侧。
+- **GridViewItems** - 项目形状通常为方形，或者至少是细长的矩形形状。 项目以图像为重点，并且可能会有文本出现在图像周围或覆盖在图像上。 
+
+## <a name="introduction-to-customization"></a>自定义简介
+容器控件（例如 ListViewItem 和 GridViewItem）包含两个重要部分，它们组合在一起以创建为某个项目显示的最终视觉对象：*数据模板*和*控件模板*。
 
 - **数据模板** - 为列表视图的 [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 属性分配 [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)，以指定各个数据项的显示方式。
 - **控件模板** - 控件模板提供框架负责的部分项目可视化效果，如视觉状态。 你可以使用 [ItemContainerStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) 属性修改控件模板。 通常，若要修改列表视图颜色以匹配品牌标记，或者更改所选项目的显示方式，则执行上述操作。
@@ -72,6 +79,9 @@ ms.locfileid: "66364944"
     <x:String>Item 5</x:String>
 </ListView>
 ```
+
+> [!IMPORTANT]
+> 数据模板和控件模板用于自定义除 ListView 和 GridView 以外的许多控件的样式。 其中包括具有自己内置样式的控件（如 FlipView）和自定义创建的控件（如 ItemsRepeater）。 虽然以下示例特定于 ListView/GridView，但这些概念可以应用于许多其他控件。 
  
 ## <a name="prerequisites"></a>必备条件
 
@@ -177,7 +187,7 @@ namespace ColorsListApp
 > 在 DataTemplate 中使用 [x:Bind 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)时，你必须指定 DataTemplate 中的 DataType (`x:DataType`)。
 
 **XAML**
-```XAML
+```xaml
 <ListView x:Name="colorsListView">
     <ListView.ItemTemplate>
         <DataTemplate x:DataType="local:NamedColor">
@@ -207,6 +217,19 @@ namespace ColorsListApp
 以下是数据项通过此数据模板显示时的外观。
 
 ![使用数据模板的列表视图项目](images/listview-data-template-0.png)
+
+> [!IMPORTANT]
+> 默认情况下，Listviewitem 将其内容左对齐，即其 [HorizontalContentAlignmentProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.horizontalcontentalignment#Windows_UI_Xaml_Controls_Control_HorizontalContentAlignment) 设置为 Left。 如果在 ListViewItem 中有横向相邻的多个元素，例如横向堆叠的元素或放置在同一网格行中的元素，则这些元素均会左对齐，并且仅按其定义的边距分隔开。 
+<br/><br/> 为了使元素展开以便填充 ListItem 的整个主体，需要使用 ListView 内的 [Setter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter) 将 HorizontalContentAlignmentProperty 设置为 [Stretch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.horizontalalignment)：
+
+```xaml
+<ListView.ItemContainerStyle>
+    <Style TargetType="ListViewItem">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+    </Style>
+</ListView.ItemContainerStyle>
+```
+
 
 你可能想要以 GridView 形式显示数据。 下面是通过更适合网格布局的方式显示数据的另一数据模板。 此时，数据模板将使用 XAML 针对 GridView 定义为资源，而不是内联。
 
@@ -281,6 +304,9 @@ namespace ColorsListApp
  - 第一，布局使用单个网格。 你可以具有单列网格，并将这 3 个 Textblock 放在 StackPanel 中，但在多次创建的数据模板中，应当寻找能避免在其他布局面板内嵌入布局面板的方法。
  - 第二，Border 控件可用于呈现背景，实际上无需将项目放置在 Border 元素内。 Border 元素只能有一个子元素，因此将需要添加一个额外的布局面板，将 3 个 TextBlock 元素托管在 XAML 中的 Border 元素内。 通过不使 TextBlock 成为 Border 的子元素，无需面板即可托管 TextBlock。
  - 最后，你可以将 TextBlock 放置在 StackPanel 内，并在 StackPanel 上设置边框属性，而不是使用显式 Border 元素。 但与 StackPanel 相比，Border 元素是更轻量的控件，因此在多次呈现后，后者对性能的影响较小。
+
+### <a name="using-different-layouts-for-different-items"></a>对不同项目使用不同布局
+
 
 ## <a name="control-template"></a>控件模板
 项目的控件模板包含用于显示状态的视觉对象，例如选择、将指针悬停在上方和对焦。 这些视觉对象呈现在数据模板的顶部或下方。 下面显示了 ListView 控件模板绘制的一些常见默认视觉对象。

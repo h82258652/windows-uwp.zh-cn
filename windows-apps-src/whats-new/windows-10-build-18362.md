@@ -6,12 +6,12 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 935d7f787d0cc23965c0fd51747b7687adb80a3f
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 4e92afd112ce7600bcfa650e0bb3bbeffabd7bd0
+ms.sourcegitcommit: f120968069702a7210756b508dabc4a1a8c20d53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66468313"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72438215"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-18362"></a>面向开发人员的 Windows 10 内部版本 18362 中的新增功能
 
@@ -25,12 +25,12 @@ Windows 10 内部版本 18362（也称为 SDK 版本 1903）与 Visual Studio 20
 :------ | :------
 AnimatedVisualPlayer | [AnimatedVisualPlayer](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.animatedvisualplayer) API 用于承载和控制应用中动画视觉对象的播放。 此 API 用于控制和显示 [Lottie](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie) 视觉对象等内容，可用于在应用程序本地渲染 Adobe AfterEffects 动画。
 CompactDensity | 在应用中启用[紧密模式](../design/style/spacing.md)可以实现密集、信息丰富的控件组。 这有助于浏览大量内容，最大化页面上的可视化内容，或者在用户使用指针输入时帮助其导航和交互。
-Items Repeater | [ItemsRepeater](../design/controls-and-patterns/items-repeater.md) 控件可以创建自定义的体验来向用户显示集合。 ItemsRepeater 不提供综合性的最终用户体验或默认 UI， 而是一个构建基块，你可以使用它来创建自己的基于唯一集合的体验和自定义控件。
+Items Repeater | [ItemsRepeater](../design/controls-and-patterns/items-repeater.md) 控件可以创建用于向用户显示集合的自定义体验。 ItemsRepeater 不提供综合性的最终用户体验或默认 UI， 而是一个构建基块，你可以使用它来创建自己的基于唯一集合的体验和自定义控件。
 教学提示 | [教学提示](../design/controls-and-patterns/dialogs-and-flyouts/teaching-tip.md)是一个提供上下文信息的半持久且包含丰富内容的浮出控件。 可以使用此控件向用户通知、提醒和传授新的或重要的功能。
 UI 命令控制 | 借助 [UWP 应用中的命令控制](../design/controls-and-patterns/commanding.md)，可以使用 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 和 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 类（以及 ICommand 接口）在不同的控件类型之间共享和管理命令，不管所用的设备和输入类型是什么。
 Windows UI 库 | 最新官方版 Windows UI 库 – [WinUI 2.1](https://docs.microsoft.com/uwp/toolkits/winui/release-notes/winui-2.1) – 提供适用于 Windows 应用的丰富多样的新 XAML 控件。 WinUI 库 API 可以在较早的 Windows 10 版本上运行，所以你不需要添加版本检查或条件 XAML 以支持未使用最新版本的用户。
 桌面应用中的视觉层 | 现在可以[在桌面应用程序中使用 UWP 视觉层 API](../composition/visual-layer-in-desktop-apps.md)。 这些 API 为图形、效果和动画提供高性能的保留模式 API，是 Windows 设备上的 UI 的基础。
-Z 深度和阴影 | 使用 [Z 深度和阴影](../design/layout/depth-shadow.md)在 UWP 应用中创建垂直面。 此项新功能可使应用的 UI 更易于扫描，并更好地向用户传达需要重点关注的内容。
+Z 深度和阴影 | 使用 [Z 深度和阴影](../design/layout/depth-shadow.md)在 UWP 应用中创建垂直面。 使用这些新功能可使应用的 UI 更易于扫描，并且可以更好地向用户传达需要重点关注的内容。
 
 ## <a name="develop-windows-apps"></a>开发 Windows 应用
 
@@ -38,7 +38,7 @@ Z 深度和阴影 | 使用 [Z 深度和阴影](../design/layout/depth-shadow.md)
 :------ | :------
 反恶意软件扫描接口 (AMSI) | 了解[反恶意软件扫描接口 (AMSI) 如何帮助你防范恶意软件](https://docs.microsoft.com/windows/desktop/amsi/how-amsi-helps)，然后查看[示例代码](https://docs.microsoft.com/windows/desktop/amsi/dev-audience)了解如何在桌面应用中实现它。
 C++/WinRT 2.0 | C++/WinRT 版本 2.0 现已发布。 请查看 [C++/WinRT 中的新增功能](../cpp-and-winrt-apis/news.md)，了解所有新的更改和补充功能的完整概述。
-选择平台 | 想要创建新的桌面应用程序？ 查看我们改进的[选择平台](https://docs.microsoft.com/windows/desktop/choose-your-technology)页面，获取关于 UWP、WPF 和 Windows 窗体平台的详细介绍和对比，以及关于 Win32 API 的详细信息。
+选择平台 | 希望新建桌面应用程序？ 查看我们改进的[选择平台](https://docs.microsoft.com/windows/desktop/choose-your-technology)页面，获取关于 UWP、WPF 和 Windows 窗体平台的详细介绍和对比，以及关于 Win32 API 的详细信息。
 对话代理 | 使用 [Windows.ApplicationModel.ConversationalAgent](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent) 命名空间可将 Windows 平台代理激活运行时 (AAR) 支持的任何数字助手添加到 Windows 应用。
 云文件 API | 使用云文件 API 可以[构建一个支持占位符文件的云同步引擎](https://docs.microsoft.com/windows/desktop/cfapi/build-a-cloud-file-sync-engine)。 
 Direct 3D 12 | 如果渲染器基于“基于磁贴的延迟渲染”(TBDR) 以及其他技术，则 [Direct3D 12 渲染器通道](/windows/desktop/direct3d12/direct3d-12-render-passes)可提高渲染器的性能。 该技术通过使应用程序更好地识别资源渲染排序要求和数据依赖项，来帮助渲染器提高 GPU 效率。 这可以减少流入/流出芯片外内存的内存流量。
@@ -48,7 +48,7 @@ DirectX HLSL | [HLSL 着色器模型 6.4](https://docs.microsoft.com/windows/des
 文件系统操作 | 此[最佳做法指南](../files/best-practices-for-writing-to-files.md)可帮助你充分利用 Windows.Storage.FileIO 和 Windows.Storage.PathIO 类来执行文件系统 I/O 操作。
 游戏板和遥控器交互 | 使用[游戏手柄和远程控制交互](../design/input/gamepad-and-remote-interactions.md)构建易于使用和访问的交互体验。 借助这种交互，可以在两英尺远的位置直观轻松地使用应用程序，就如同它与你相距 10 英尺一样。
 日本年号更改 | 我们提供了[这些说明](../design/globalizing/japanese-era-change.md)来展示如何确保 Windows 应用程序针对于 2019 年 5 月 1 日进行的日本纪元更改做好准备。 [此页面也提供了日语版](https://docs.microsoft.com/ja-jp/windows/uwp/design/globalizing/japanese-era-change)。
-WPF、Windows 窗体和 WinUI 的开源 | WPF、Windows 窗体和 WinUI UX 框架现可用于 GitHub 上的开源贡献。 有关详细信息和链接，请参阅[生成 Windows 应用博客](https://blogs.windows.com/buildingapps/2018/12/04/announcing-open-source-of-wpf-windows-forms-and-winui-at-microsoft-connect-2018/#OKZjJs1VVTrMMtkL.97)。
+WPF、Windows 窗体和 WinUI 的开源 | WPF、Windows 窗体和 WinUI UX 框架现可用于 GitHub 上的开源内容。 有关详细信息和链接，请参阅[生成 Windows 应用博客](https://blogs.windows.com/buildingapps/2018/12/04/announcing-open-source-of-wpf-windows-forms-and-winui-at-microsoft-connect-2018/#OKZjJs1VVTrMMtkL.97)。
 适用于 Xbox 的渐进式 Web 应用 | 使用[适用于 Xbox One 的渐进式 Web 应用](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/xbox-considerations)，可以扩展 Web 应用程序，并通过 Microsoft Store 将其作为 Xbox One 应用提供，同时仍继续使用现有框架、CDN 和服务器后端。 在大多数情况下，可以像在 Windows 中一样打包 Xbox One 的 PWA。 此指南会引导你完成该过程，并强调重要的差异。
 Project Rome | Project Rome SDK 现在适用于 Android 和 iOS。 了解如何将图形通知与每个平台集成：[Android](https://docs.microsoft.com/windows/project-rome/notifications/how-to-guide-for-android) 和 [iOS](https://docs.microsoft.com/windows/project-rome/notifications/how-to-guide-for-ios)。
 远程相机 | 使用 DeviceWatcher 类可以[连接到远程相机](../audio-video-camera/connect-to-remote-cameras.md)，并将这些相机中的帧读入 Windows 应用。
@@ -87,7 +87,7 @@ Microsoft Learn 为 Microsoft 开发人员提供新的动手学习和培训机�
 
 ### <a name="progressive-web-apps"></a>渐进式 Web 应用
 
-渐进式 Web 应用是网站，功能类似于各种浏览器和各种 Windows 10 设备上的本机应用。 [观看视频](https://youtu.be/ugAewC3308Y)了解详细信息，然后[查看文档](https://aka.ms/Windows-PWA)获取入门知识。
+渐进式 Web 应用是网站，功能类似于各种浏览器和各种 Windows 10 设备上的本机应用。 [观看视频](https://youtu.be/ugAewC3308Y)了解详细信息，然后[查看文档](https://aka.ms/Windows-PWA)以开始。
 
 ### <a name="vs-code-series"></a>VS Code 系列
 
@@ -99,7 +99,7 @@ Microsoft Learn 为 Microsoft 开发人员提供新的动手学习和培训机�
 
 ### <a name="one-dev-question"></a>一个开发问题
 
-在“一个开发问题”视频系列中，资深的 Microsoft 开发人员介绍了一系列关于 Windows 开发、团队文化和历史记录的问题。
+在“一个开发问题”视频系列中，资深的 Microsoft 开发人员介绍了关于 Windows 开发、团队文化和发展历程的一系列问题。
 
 * [Raymond Chen：Windows 开发和历史](https://www.youtube.com/playlist?list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7)
 
