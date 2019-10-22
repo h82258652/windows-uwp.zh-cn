@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5905c494babfcbbe8dd93b85e30602ef490fcc81
-ms.sourcegitcommit: f0588a086cf2499968bf03b10c6bce5f518e90cb
+ms.openlocfilehash: f12a83a2ad31972f344d95aa9dcfe1914eeb2b3b
+ms.sourcegitcommit: 82d202478ab4d3011c5ddd2e852958c34336830d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71141948"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72715878"
 ---
 # <a name="app-capability-declarations"></a>应用功能声明
 
@@ -20,7 +20,7 @@ ms.locfileid: "71141948"
 
 可以通过在应用的[程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)中声明功能来请求对特定资源或 API 的访问权限。 你可以通过使用 Visual Studio 中的[清单设计器](/windows/msix/package/packaging-uwp-apps#configure-an-app-package)声明常规功能，或者可以手动添加它们。 有关详细信息，请参阅[如何在程序包清单中指定功能](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-capabilities-in-a-package-manifest)。 请务必了解，当客户从应用商店获取你的应用时，会向它们告知该应用声明的所有功能。 请避免声明你的应用不需要的功能。
 
-某些功能为应用提供对*敏感资源*的访问权限。 由于这些资源可用于访问用户私人数据或花费用户金钱，因此它们被认为是敏感资源。 由“设置”应用管理的隐私设置允许用户动态控制对敏感资源的访问权限。 因此，你的应用不会假设敏感资源始终可用，这一点很重要。 有关访问敏感资源的详细信息，请参阅[隐私感知应用指南](https://docs.microsoft.com/windows/uwp/security/index)。 为应用提供对*敏感资源*的访问权限的功能，该功能方案旁边\*有一个星号（）。
+某些功能为应用提供对*敏感资源*的访问权限。 由于这些资源可用于访问用户私人数据或花费用户金钱，因此它们被认为是敏感资源。 由“设置”应用管理的隐私设置允许用户动态控制对敏感资源的访问权限。 因此，你的应用不会假设敏感资源始终可用，这一点很重要。 有关访问敏感资源的详细信息，请参阅[隐私感知应用指南](https://docs.microsoft.com/windows/uwp/security/index)。 为应用提供对*敏感资源*的访问权限的功能，该功能方案旁边有一个星号（\*）。
 
 有多种类型的功能。
 
@@ -54,7 +54,7 @@ ms.locfileid: "71141948"
 | **VoIP 调用** | **VoipCall**功能允许应用访问[**windows.applicationmodel.resources.core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Calls)命名空间中的 VoIP 调用 api。<br /><br />当在应用的程序包清单中声明 **voipCall** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="voipCall"/></Capabilities>```
 | **三维对象** | **objects3D** 功能允许应用编程访问 3D 对象文件。 此功能通常用在需要访问整个 3D 对象库的 3D 应用和游戏中。<br /><br />若要使用 [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命令空间中的 API 访问包含 3D 对象的文件夹，则需要此功能。<br /><br />当在应用的程序包清单中声明 **objects3D** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="objects3D"/></Capabilities>```
 | **读取阻止的消息**\* | **blockedChatMessages** 功能允许应用读取已由“垃圾邮件筛选器”应用阻止的短信和彩信。<br /><br />若要使用 [**Windows.ApplicationModel.Chat**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Chat) 命令空间中的 API 访问已阻止的消息，则需要此功能。<br /><br />当在应用的程序包清单中声明 **blockedChatMessages** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="blockedChatMessages"/></Capabilities>```
-| **自定义设备** | 当满足一些额外的要求时， **lowLevelDevices**功能允许应用访问自定义设备。 不应将此功能与**lowLevel**设备功能混淆，这允许访问 GPIO、I2C、SPI 和 PWM 设备。<br /><br /> 如果开发一个自定义驱动程序，该驱动程序公开[设备接口](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)，并希望打开此设备的句柄并发送 IOCTLs，则必须执行以下操作： <ul><li>在应用程序清单中启用**lowLevelDevices**功能：```<Capabilities><iot:Capability Name="lowLevelDevices"/></Capabilities>```</li><li>启用[嵌入模式](https://docs.microsoft.com/windows/iot-core/develop-your-app/EmbeddedMode)</li><li>在[INF](https://docs.microsoft.com/previous-versions/windows/desktop/deviceaccess/register-the-device-interface-class-as-privileged)中或在驱动程序中调用[WdfDeviceAssignInterfaceProperty （）](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty) ，将设备接口标记为[受限制](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted)。</ul>然后，你可以使用[**CustomDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Custom.CustomDevice)来打开设备的句柄。 有关详细信息，请参阅[内部设备的 UWP 设备应用](https://docs.microsoft.com/windows-hardware/drivers/devapps/uwp-device-apps-for-specialized-devices)。
+| **自定义设备** | 当满足一些额外的要求时， **lowLevelDevices**功能允许应用访问自定义设备。 不应将此功能与**lowLevel**设备功能混淆，这允许访问 GPIO、I2C、SPI 和 PWM 设备。<br /><br /> 如果开发一个自定义驱动程序，该驱动程序公开[设备接口](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)，并希望打开此设备的句柄并发送 IOCTLs，则必须执行以下操作： <ul><li>在应用程序清单中启用**lowLevelDevices**功能： ```<Capabilities><iot:Capability Name="lowLevelDevices"/></Capabilities>```</li><li>启用[嵌入模式](https://docs.microsoft.com/windows/iot-core/develop-your-app/EmbeddedMode)</li><li>在[INF](https://docs.microsoft.com/previous-versions/windows/desktop/deviceaccess/register-the-device-interface-class-as-privileged)中或在驱动程序中调用[WdfDeviceAssignInterfaceProperty （）](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty) ，将设备接口标记为[受限制](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted)。</ul>然后，你可以使用[**CustomDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Custom.CustomDevice)来打开设备的句柄。 有关详细信息，请参阅[内部设备的 UWP 设备应用](https://docs.microsoft.com/windows-hardware/drivers/devapps/uwp-device-apps-for-specialized-devices)。
 | **IoT 系统管理** | **systemManagement** 功能允许应用具有基本的系统管理权限，例如关机或重启、区域设置和时区。<br /><br />若要访问 [**Windows.System**](https://docs.microsoft.com/uwp/api/Windows.System) 命名空间中的某些 API，则需要此功能。<br /><br />当在应用的程序包清单中声明 **systemManagement** 功能时，该功能必须包含 **iot** 命名空间，如下所示。<br /><br />```<Capabilities><iot:Capability Name="systemManagement"/></Capabilities>```
 | **后台媒体播放** | **backgroundMediaPlayback** 功能更改了特定于媒体的 API（如 [**MediaPlayer**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer) 和 [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph) 类）的行为，支持应用在后台时的媒体播放。 所有活动音频流将不再静音，在应用转换到后台时将继续发声。 此外，播放进行时，应用生存时间将自动延长。
 | **远程系统** | **remoteSystem** 功能使应用有权访问与用户的 Microsoft 帐户关联的设备列表。 对于执行在设备间持续的任何操作，需要访问设备列表。 若要访问以下命名空间和方法中的所有成员，此功能是必需的。<ul><li>[RemoteSystems](https://docs.microsoft.com/uwp/api/windows.system.remotesystems)命名空间</li><li>[RemoteLauncher](https://docs.microsoft.com/uwp/api/Windows.System.RemoteLauncher)类</li><li>[AppServiceConnection. OpenRemoteAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appserviceconnection.openremoteasync)方法</li></ul> |
@@ -69,10 +69,10 @@ ms.locfileid: "71141948"
 
 | 功能应用场景 | 功能用法 |
 |---------------------|------------------|
-| **位置**\* | **location** 功能提供对定位功能的访问权限，定位功能通常从专用硬件（如电脑中的 GPS 传感器）检索获得或从可用的网络信息中获得。 应用必须处理用户从“设置”超级按钮禁用定位服务的情况。 |
-| **十分** | **microphone** 功能提供对麦克风音频源的访问权限，让应用可以录制来自所连接麦克风的音频。 应用必须处理用户从“设置”超级按钮禁用麦克风的情况。 |
+| **位置**\* | **location** 功能提供对定位功能的访问权限，定位功能通常从专用硬件（如电脑中的 GPS 传感器）检索获得或从可用的网络信息中获得。 应用必须处理用户从**设置**超级按钮禁用定位服务的情况。 |
+| **十分** | **microphone** 功能提供对麦克风音频源的访问权限，让应用可以录制来自所连接麦克风的音频。 应用必须处理用户从**设置**超级按钮禁用麦克风的情况。 |
 | **程度** | **proximity** 功能支持临近的多台设备彼此通信。 此功能通常用在一般的多玩家游戏和交换信息的应用中。 设备会尝试使用可提供最佳连接的通信技术，包括蓝牙、Wi-Fi 和 Internet。 此功能仅用于在设备之间发起通信。 |
-| **摄像头** | **webcam** 功能提供对内置相机或外部摄像头的视频源的访问权限，这使应用可以捕获照片和视频。 在 Windows 上，应用必须处理用户从“设置”超级按钮禁用相机的情况。<br/>**webcam** 功能仅授予对视频流的访问权限。 若要也授予对音频流的访问权限，必须添加 **microphone** 功能。 |
+| **摄像头** | **webcam** 功能提供对内置相机或外部摄像头的视频源的访问权限，这使应用可以捕获照片和视频。 在 Windows 上，应用必须处理用户从**设置**超级按钮禁用相机的情况。<br/>**webcam** 功能仅授予对视频流的访问权限。 若要也授予对音频流的访问权限，必须添加 **microphone** 功能。 |
 | **USB** | **usb** 设备功能允许访问[为 USB 设备更新应用清单程序包](https://go.microsoft.com/fwlink/p/?LinkId=302259)中的 API。 |
 | **人体学接口设备（HID）** | **humaninterfacedevice** 设备功能允许访问[如何为 HID 指定设备功能](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-hid)中的 API。 |
 | **服务点（POS）** | **pointOfService** 设备功能允许访问 [**Windows.Devices.PointOfService**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) 命名空间中的 API。 该命名空间允许你的应用访问服务点 (POS) 条码扫描仪和磁条阅读器。 该命名空间提供一个独立于供应商的接口，可用于从 UWP 应用访问由各种制造商提供的 POS 设备。 |
@@ -83,7 +83,8 @@ ms.locfileid: "71141948"
 | **运动活动** | **activity** 设备功能允许应用检测设备的当前运动。<br/>若要使用 [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors) 命名空间中的某些 API，则需要此功能。 |
 | **串行通信** | **serialcommunication** 设备功能提供了对于 Windows.Devices.SerialCommunication 命名空间中的 API 的访问，这样 Windows 应用便可与公开了串行端口或串行端口的某些抽象的设备进行通信。 若要使用 [**Windows.Devices.SerialCommnication**](https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication) 命名空间中的 API，则需要该功能。 |
 | **目视跟踪器** | 在连接了兼容的目视跟踪设备时，**gazeInput** 功能允许应用在应用程序边界内检测用户正在查看的位置。 使用[**Windows. 输入**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.input.preview)命名空间中的某些 api 需要此功能。 |
-| **GPIO、I2C、SPI 和 PWM** | **LowLevel**设备功能提供对 GPIO、I2C、SPI 和 PWM 设备的访问权限。 使用以下命名空间中的 Api 需要此功能：[**Windows.Devices.Gpio**](https://docs.microsoft.com/uwp/api/windows.devices.gpio), [**Windows.Devices.I2c**](https://docs.microsoft.com/uwp/api/windows.devices.i2c), [**Windows.Devices.Spi**](https://docs.microsoft.com/uwp/api/windows.devices.spi),[**Windows.Devices.Pwm**](https://docs.microsoft.com/uwp/api/windows.devices.pwm).<br /><br />```<Capabilities><DeviceCapability Name="lowLevel"/></Capabilities>``` |
+| **GPIO、I2C、SPI 和 PWM** | **LowLevel**设备功能提供对 GPIO、I2C、SPI 和 PWM 设备的访问权限。 使用以下命名空间中的 Api 需要此功能： [**windows. Gpio**](https://docs.microsoft.com/uwp/api/windows.devices.gpio)， [**windows. I2c**](https://docs.microsoft.com/uwp/api/windows.devices.i2c) [ **，Windows**](https://docs.microsoft.com/uwp/api/windows.devices.spi)...-[**Pwm**](https://docs.microsoft.com/uwp/api/windows.devices.pwm)。<br /><br />```<Capabilities><DeviceCapability Name="lowLevel"/></Capabilities>``` |
+| **全局媒体控件** | **GlobalMediaControl**功能允许应用访问整个系统中与[**SystemMediaTransportControls**](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls)集成的播放会话，以提供播放信息并允许远程控制。 使用[**Windows. Control**](https://docs.microsoft.com/uwp/api/windows.media.control)命名空间中的某些 api 需要此功能。 |
 
 <span id="special-and-restricted-capabilities" />
 
@@ -92,7 +93,7 @@ ms.locfileid: "71141948"
 如果你的应用程序声明了任何受限功能，则必须在[应用提交过程](../publish/app-submissions.md)中提供信息，以便获得批准，以将应用发布到 Microsoft Store。 你将在提交的[提交选项](../publish/manage-submission-options.md#restricted-capabilities)页上提供此信息，说明你的应用如何使用其声明的每个受限制的功能。
 
 > [!IMPORTANT]
-> 受限功能适用于非常具体的方案。 这些功能的使用受严格限制，且受应用商店的其他上架政策和评审的约束。 请注意，你可以旁加载可声明受限功能的应用，而无需收到任何批准。 只有在将此类应用提交到 Microsoft Store 时才需要获得批准。
+> 受限功能适用于非常具体的方案。 这些功能的使用受严格限制，且受 Microsoft Store 的其他上架政策和评审的约束。 请注意，你可以旁加载可声明受限功能的应用，而无需收到任何批准。 只有在将此类应用提交到 Microsoft Store 时才需要获得批准。
 
 请确保不要声明这些受限功能，除非应用真正需要它们。 在某些情况下，这些功能是必需的或适宜的，如在使用双因素身份验证开展银行业务时，用户提供带数字签名的智能卡确认其身份。 其他应用可能主要针对企业客户而设计，并可能需要访问一些必须使用用户的域凭据才能访问的企业资源。
 
@@ -125,7 +126,7 @@ ms.locfileid: "71141948"
 如果我们不批准你对此功能的使用，则你的提交将无法通过认证，我们将在认证报告中提供反馈。 然后，你可以选择创建新的提交并上传未声明该功能的程序包，或者在适用情况下解决与使用该功能有关的任何问题，然后在新提交中申请批准。
 
 > [!NOTE]
-> 如果你的提交使用合作伙伴中心的开发沙盒（例如，对于与 Xbox Live 集成的任何游戏，则你必须提前请求批准，而不是在 "**提交选项**" 页面上提供信息）。 若要执行该操作，请访问 [Windows 开发人员支持页面](https://developer.microsoft.com/windows/support)。 选择开发人员支持主题**仪表板问题**、颁发类型**应用提交**和**子类别**。 然后介绍你使用该功能的方式，以及你的产品需要它的原因。 如果不提供所有必要信息，将拒绝你的请求。 还可能会要求你提供更多信息。 请注意，该流程通常需要 5 个工作日或更长时间，因此请提前提交请求。
+> 如果你的提交使用合作伙伴中心的开发沙盒（例如，对于与 Xbox Live 集成的任何游戏，则你必须提前请求批准，而不是在 "**提交选项**" 页面上提供信息）。 若要执行该操作，请访问 [Windows 开发人员支持页面](https://developer.microsoft.com/windows/support)。 选择开发人员支持主题**仪表板问题**、颁发类型**应用提交**和**子类别**。 然后介绍你使用该功能的方式，以及你的产品需要它的原因。 如果不提供所有必要信息，将拒绝你的请求。 我们也可能会要求你提供更多信息。 请注意，该流程通常需要 5 个工作日或更长时间，因此请提前提交请求。
 >
 > 你还可以使用此方法来请求批准（而不是在提交期间提供此信息），而无论你是否在使用开发沙盒，如果你希望在启动服从.
 
@@ -140,43 +141,43 @@ ms.locfileid: "71141948"
 
 | 功能应用场景 | 功能用法 |
 |---------------------|------------------|
-| **企业** | Windows 域凭据支持用户使用其凭据登录远程资源，其原理类似于用户已提供其用户名和密码。 **EnterpriseAuthentication**功能通常用于连接到企业内的服务器的业务线应用程序中。 <br /><br />对于一般的 Internet 通信，无需使用此功能。<br /><br />**EnterpriseAuthentication**功能旨在支持常见的业务线应用。 不要在无需访问公司资源的应用中声明此功能。 [  **文件选取器**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker)提供了一种强大的 UI 机制，让用户可以打开网络共享中要通过某个应用处理的文件。 仅当应用程序的应用场景需要编程访问且您无法使用**文件选取器**实现这些方案时，声明**enterpriseAuthentication**功能。<br /><br />当在应用的程序包清单中声明 **enterpriseAuthentication** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="enterpriseAuthentication"/></Capabilities>```<br /><br />当应用通过 Windows 信息保护策略进行管理时， **enterpriseDataPolicy**功能允许应用单独且安全地处理企业数据（例如：移动设备管理和移动应用程序管理系统）。  按如下所示声明此限制功能。 <br /><br />```<Capabilities><rescap:Capability Name="enterpriseDataPolicy"/></Capabilities>```<br /><br />若要使用以下类的所有成员，此功能是必需的。<ul><li><a href="https://docs.microsoft.com/uwp/api/Windows.Security.EnterpriseData.FileProtectionManager">FileProtectionManager</a></li><li><a href="https://docs.microsoft.com/uwp/api/Windows.Security.EnterpriseData.DataProtectionManager">Microsoft.systemcenter.dataprotectionmanager.2012.library</a></li><li><a href="https://docs.microsoft.com/uwp/api/Windows.Security.EnterpriseData.ProtectionPolicyManager">ProtectionPolicyManager</a></li></ul> |
+| **企业** | Windows 域凭据支持用户使用其凭据登录远程资源，其原理类似于用户已提供其用户名和密码。 **EnterpriseAuthentication**功能通常用于连接到企业内的服务器的业务线应用程序中。 <br /><br />对于一般的 Internet 通信，无需使用此功能。<br /><br />**EnterpriseAuthentication**功能旨在支持常见的业务线应用。 不要在无需访问公司资源的应用中声明此功能。 [  **文件选取器**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker)提供了一种强大的 UI 机制，让用户可以打开网络共享中要通过某个应用处理的文件。 仅当应用程序的应用场景需要编程访问且您无法使用**文件选取器**实现这些方案时，声明**enterpriseAuthentication**功能。<br /><br />当在应用的程序包清单中声明 **enterpriseAuthentication** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="enterpriseAuthentication"/></Capabilities>```<br /><br />当应用通过 Windows 信息保护策略进行管理（例如，移动设备管理和移动应用程序管理系统）时， **enterpriseDataPolicy**功能允许应用单独且安全地处理企业数据。  按如下所示声明此限制功能。 <br /><br />```<Capabilities><rescap:Capability Name="enterpriseDataPolicy"/></Capabilities>```<br /><br />若要使用以下类的所有成员，此功能是必需的。<ul><li><a href="https://docs.microsoft.com/uwp/api/Windows.Security.EnterpriseData.FileProtectionManager">FileProtectionManager</a></li><li><a href="https://docs.microsoft.com/uwp/api/Windows.Security.EnterpriseData.DataProtectionManager">Microsoft.systemcenter.dataprotectionmanager.2012.library</a></li><li><a href="https://docs.microsoft.com/uwp/api/Windows.Security.EnterpriseData.ProtectionPolicyManager">ProtectionPolicyManager</a></li></ul> |
 | **共享用户证书** | **SharedUserCertificates**功能使应用能够在共享用户存储中添加和访问软件和基于硬件的证书，例如存储在智能卡上的证书。 此功能通常用于需要智能卡来进行身份验证的财经或企业应用。<br /><br />当在应用的程序包清单中声明 **sharedUserCertificates** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="sharedUserCertificates"/></Capabilities>``` |
 |**文档**\* | **DocumentsLibrary**功能提供对用户的 Documents 文件夹的编程访问，筛选为在包清单中声明的文件类型关联。 例如，如果一个字处理应用程序声明了 .doc 文件类型 association，则它可以在用户的文档文件夹中打开 .doc 文件。 <br /><br />通常，应用程序应允许用户使用以下 Api 之一选择其文件的位置：<ul><li>[FileOpenPicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker)打开现有文件。</li><li>[FileSavePicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker)保存新文件。</li><li>[FolderPicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.folderpicker)选择要从中打开/保存其他文件的文件夹。</li></ul>通过使用这些 Api，用户可以选择最适合自己的位置，例如云同步的帐户（例如 OneDrive）。 用户使用这些 Api 选择文件或文件夹后，你的应用可以通过使用[FutureAccessList](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) API 来持续访问该位置。 此 API 允许你的应用程序在将来访问文件或文件夹，而不要求用户再次选择它们。<br /><br />如果现有工作流假定文件位于 "文档" 文件夹中（例如，使用现有桌面应用程序的互操作），或者你不希望用户选择位置，则可以将**documentsLibrary**功能声明为应用程序。 如果你对应用程序使用**documentsLibrary**功能，则建议你也允许用户手动选取位置。<br /><br />当在应用的程序包清单中声明 **documentsLibrary** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="documentsLibrary"/></Capabilities>``` |
-| **游戏 DVR 设置** | **appCaptureSettings** 受限功能允许应用控制游戏 DVR 的用户设置。<br /><br />若要使用 [**Windows.Media.Capture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture) 命名空间中的某些 API，则需要此功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。  |
+| **游戏 DVR 设置** | **appCaptureSettings** 受限功能允许应用控制游戏 DVR 的用户设置。<br /><br />若要使用 [**Windows.Media.Capture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture) 命名空间中的某些 API，则需要该功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。  |
 | **通信** | **cellularDeviceControl** 受限功能允许应用控制手机网络设备。<br /><br />**cellularDeviceIdentity** 功能允许应用访问手机网络标识数据。<br /><br />**cellularMessaging** 功能允许应用使用短信和 RCS。<br /><br />若要使用 [**Windows.Devices.Sms**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sms) 命名空间中的某些 API，这些功能是必需的。  |
 | **设备解锁** | **deviceUnlock** 受限功能允许应用解锁用于开发人员和企业旁加载方案的设备。<br /><br /> 不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **双 SIM 磁贴** | **dualSimTiles** 受限功能允许应用在具有多张 SIM 卡的设备上创建额外的应用列表项。<br /><br />若要使用 [**Windows.UI.StartScreen**](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen) 命名空间中的某些 API，则需要此功能。 |
+| **双 SIM 磁贴** | **dualSimTiles** 受限功能允许应用在具有多张 SIM 卡的设备上创建额外的应用列表项。<br /><br />若要使用 [**Windows.UI.StartScreen**](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen) 命名空间中的某些 API，则需要该功能。 |
 | **企业共享存储** | **enterpriseDeviceLockdown** 受限功能允许应用使用设备锁定 API 和访问企业共享存储文件夹。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **系统输入注入** | **InputInjectionBrokered**限制功能允许应用以编程方式将各种形式的输入（如 HID、触控、笔、键盘或鼠标）注入系统。 此功能通常用于可控制系统的协作应用。<br /><br />对于电脑，只有位于同一应用容器中的进程才会收到来自应用的具有该功能的输入式注入。<br /><br />```<Capabilities><rescap:Capability Name="inputInjectionBrokered" /></Capabilities>``` |
+| **系统输入注入** | **InputInjectionBrokered**限制功能允许应用以编程方式将各种形式的输入（如 HID、触控、笔、键盘或鼠标）注入系统。 该功能通常用于可控制系统的协作应用。<br /><br />对于电脑，只有位于同一应用容器中的进程才会收到来自应用的具有该功能的输入式注入。<br /><br />```<Capabilities><rescap:Capability Name="inputInjectionBrokered" /></Capabilities>``` |
 | **观察输入**\* | **inputObservation** 受限功能允许应用观察要由系统接收的各种形式的原始输入（如 HID、触摸、笔、键盘或鼠标），而不考虑其最终目标。  |
 | **禁止输入** | **inputSuppression** 受限功能允许应用隐藏要由系统接收的各种形式的原始输入，例如 HID、触摸、笔、键盘或鼠标。
-| **VPN 应用** | **networkingVpnProvider** 受限功能允许应用具有对 VPN 功能的完整访问权限，包括管理连接和提供 VPN 插件功能的能力。<br /><br />若要使用 [**Windows.Networking.Vpn**](https://docs.microsoft.com/uwp/api/Windows.Networking.Vpn) 命名空间中的某些 API，则需要此功能。 |
+| **VPN 应用** | **networkingVpnProvider** 受限功能允许应用具有对 VPN 功能的完整访问权限，包括管理连接和提供 VPN 插件功能的能力。<br /><br />若要使用 [**Windows.Networking.Vpn**](https://docs.microsoft.com/uwp/api/Windows.Networking.Vpn) 命名空间中的某些 API，则需要该功能。 |
 | **其他应用管理** | **packageManagement** 受限功能允许应用直接管理其他应用。<br /><br />**packageQuery** 设备功能允许应用收集有关其他应用的信息。<br /><br />若要访问 [**PackageManager**](https://docs.microsoft.com/uwp/api/Windows.Management.Deployment.PackageManager) 类中的某些方法和属性，这些功能是必需的。 |
-| **屏幕投影** | **screenDuplication** 受限功能允许应用将屏幕投影到另一台设备上。<br /><br />若要使用 DirectX 命名空间中的 API，此功能是必需的。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **用户主体名称** | **UserPrincipalName**限制功能允许应用访问当前用户的用户主体名称（UPN）。<br /><br />若要调用 [**GetUserNameEx**](https://docs.microsoft.com/windows/desktop/api/secext/nf-secext-getusernameexa) 函数，则需要此功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **月历** | **walletSystem** 受限功能允许应用具有对存储的电子钱包卡的完整访问权限。<br /><br />若要使用 [**Windows.ApplicationModel.Wallet.System**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Wallet.System) 命名空间中的 API，则需要此功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **位置历史记录** | **locationHistory** 受限功能允许应用访问设备的位置历史记录。<br /><br />若要使用 [**Windows.Devices.Geolocation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation) 命名空间中的 API，则需要此功能。
+| **屏幕投影** | **screenDuplication** 受限功能允许应用将屏幕投影到另一台设备上。<br /><br />若要使用 DirectX 命名空间中的 API，该功能是必需的。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
+| **用户主体名称** | **UserPrincipalName**限制功能允许应用访问当前用户的用户主体名称（UPN）。<br /><br />若要调用 [**GetUserNameEx**](https://docs.microsoft.com/windows/desktop/api/secext/nf-secext-getusernameexa) 函数，则需要该功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
+| **月历** | **walletSystem** 受限功能允许应用具有对存储的电子钱包卡的完整访问权限。<br /><br />若要使用 [**Windows.ApplicationModel.Wallet.System**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Wallet.System) 命名空间中的 API，则需要该功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
+| **位置历史记录** | **locationHistory** 受限功能允许应用访问设备的位置历史记录。<br /><br />若要使用 [**Windows.Devices.Geolocation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation) 命名空间中的 API，则需要该功能。
 | **应用关闭确认** | **confirmAppClose** 受限功能允许应用关闭本身及其自己的窗口，以及延迟应用的关闭。<br /><br />应用可以在 Windows 10 版本 1703（内部版本 10.0.15063）及更高版本中请求此功能。 在以前的 Windows 10 版本中，此功能是专用的，会导致应用安装失败，并显示错误消息“无法授权此应用程序访问请求的功能”。 |
-| **呼叫历史记录**\* | **phoneCallHistory** 受限功能允许应用读取呼叫历史记录和删除该历史记录中的条目。<br /><br />若要使用 [**Windows.ApplicationModel.Chat**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Chat) 命名空间中的 API，则需要此功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **系统级约会访问** | **appointmentsSystem** 受限功能允许应用读取和修改用户日历上的所有约会。<br /><br />若要使用 [**Windows.ApplicationModel.Appointment**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Appointments) 命名空间中的 API，则需要此功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **系统级别聊天消息访问**\* | **chatSystem** 受限功能允许应用读取和写入所有短信和彩信。<br />若要使用 [**Windows.ApplicationModel.Chat**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Chat) 命名空间中的 API，则需要此功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **系统级别联系人访问** | **contactsSystem** 受限功能允许应用读取已指定为受限或敏感的联系人信息，以及修改现有的联系人信息。<br /><br />若要使用 [**Windows.ApplicationModel.Chat**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Chat) 命名空间中的 API，则需要此功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **电子邮件访问** | **email** 受限功能允许应用读取、整理和发送用户电子邮件。<br /><br />若要使用 [**Windows.ApplicationModel.Email**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Email) 命名空间中的 API，则需要此功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **系统级电子邮件访问**| **emailSystem** 受限功能允许应用读取、整理和发送受限或敏感的电子邮件。 <br /><br />若要使用 [**Windows.ApplicationModel.Email**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Email) 命名空间中的 API，则需要此功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **系统级别呼叫历史记录访问** | **phoneCallHistorySystem** 受限功能允许应用通过更改现有条目和编写新条目来完全修改呼叫历史记录。<br /><br />若要使用 [**Windows.ApplicationModel.Calls**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Calls) 命名空间中的 API，则需要此功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **发送文本消息**\* | **smsSend** 受限功能允许应用发送短信和彩信。<br /><br />若要使用 [**Windows.ApplicationModel.Chat**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Chat) 命名空间中的 API，则需要此功能。 |
+| **呼叫历史记录**\* | **phoneCallHistory** 受限功能允许应用读取呼叫历史记录和删除该历史记录中的条目。<br /><br />若要使用 [**Windows.ApplicationModel.Chat**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Chat) 命名空间中的 API，则需要该功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
+| **系统级约会访问** | **appointmentsSystem** 受限功能允许应用读取和修改用户日历上的所有约会。<br /><br />若要使用 [**Windows.ApplicationModel.Appointment**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Appointments) 命名空间中的 API，则需要该功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
+| **系统级别聊天消息访问**\* | **chatSystem** 受限功能允许应用读取和写入所有短信和彩信。<br />若要使用 [**Windows.ApplicationModel.Chat**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Chat) 命名空间中的 API，则需要该功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
+| **系统级别联系人访问** | **contactsSystem** 受限功能允许应用读取已指定为受限或敏感的联系人信息，以及修改现有的联系人信息。<br /><br />若要使用 [**Windows.ApplicationModel.Chat**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Chat) 命名空间中的 API，则需要该功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
+| **电子邮件访问** | **email** 受限功能允许应用读取、整理和发送用户电子邮件。<br /><br />若要使用 [**Windows.ApplicationModel.Email**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Email) 命名空间中的 API，则需要该功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
+| **系统级电子邮件访问**| **emailSystem** 受限功能允许应用读取、整理和发送受限或敏感的电子邮件。 <br /><br />若要使用 [**Windows.ApplicationModel.Email**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Email) 命名空间中的 API，则需要该功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
+| **系统级别呼叫历史记录访问** | **phoneCallHistorySystem** 受限功能允许应用通过更改现有条目和编写新条目来完全修改呼叫历史记录。<br /><br />若要使用 [**Windows.ApplicationModel.Calls**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Calls) 命名空间中的 API，则需要该功能。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
+| **发送文本消息**\* | **smsSend** 受限功能允许应用发送短信和彩信。<br /><br />若要使用 [**Windows.ApplicationModel.Chat**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Chat) 命名空间中的 API，则需要该功能。 |
 | **对所有用户数据的系统级访问权限** | **userDataSystem** 受限功能允许应用访问用户数据系统数据存储。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **存储预览功能** | **previewStore** 受限功能允许应用检索和购买应用内产品的 SKU。<br /><br />若要使用 [**Windows.ApplicationModel.Store.Preview**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.Preview) 命名空间中的某些 API，则需要此功能。 |
+| **存储预览功能** | **previewStore** 受限功能允许应用检索和购买应用内产品的 SKU。<br /><br />若要使用 [**Windows.ApplicationModel.Store.Preview**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.Preview) 命名空间中的某些 API，则需要该功能。 |
 | **首次登录设置** | **firstSignInSettings** 受限功能允许应用访问用户首次登录到他们的设备时所设置的用户设置。 |
 | **Windows 团队体验** | **teamEditionExperience** 受限功能允许应用访问用于控制 Windows 团队会话的多个体验式方面的内部 API。 Windows 团队会话可在诸如 Microsoft Surface Hub 等团队设备上运行。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
 | **远程解锁** | **remotePassportAuthentication** 受限功能允许应用访问可用于解锁远程电脑的凭据。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
 | **预览合成** | **previewUiComposition** 受限功能允许应用在其用户界面上预览 [**Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition) 命名空间，以便它们可在完成前提供有关该 API 的反馈。 有关详细信息，请联系 wincomposition@microsoft.com。 |
 | **安全评估锁定** | **secureAssessment** 受限功能允许应用将 Windows 锁定到单一应用模式以供安全评估。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **连接管理器设置** | **networkConnectionManagerProvisioning** 受限功能允许应用定义通过 WWAN 与 WLAN 接口连接设备的策略。 使用此功能的应用由移动运营商创建，用来管理连接到其移动网络的设备。 |
+| **连接管理器设置** | **networkConnectionManagerProvisioning** 受限功能允许应用定义通过 WWAN 与 WLAN 接口连接设备的策略。 使用该功能的应用由移动运营商创建，用来管理连接到其移动网络的设备。 |
 | **数据计划设置** | **networkDataPlanProvisioning** 受限功能允许应用收集有关设备上流量套餐的信息并读取网络使用情况。 使用此功能的应用由移动运营商创建，用来将其客户的实际数据使用量集成到操作系统数据使用量设置中。 |
 | **软件授权** | **slapiQueryLicenseValue** 受限制功能允许应用查询软件授权策略。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **扩展执行** | **extendedBackgroundTaskTime** 受限功能可防止后台任务由于执行时间限制而被取消或终止。 它们仍遵循其他所有内存和电量使用限制。 可使用电池使用情况或后台应用隐私设置来限制此功能。 请注意，客户和管理员仍然可以通过组策略设置来控制后台任务。<br /><br />**extendedExecutionBackgroundAudio** 受限功能允许在应用不处于前台时播放音频。<br /><br />**extendedExecutionCritical** 受限功能允许应用开始一个关键扩展执行会话。<br /><br />**extendedExecutionUnconstrained** 受限功能允许应用开始一个不受限制的扩展执行会话。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。<br /><br />请参阅[使用扩展执行来推迟应用挂起](https://docs.microsoft.com/windows/uwp/launch-resume/run-minimized-with-extended-execution)，详细了解如何使用扩展执行在应用挂起时进行推迟。 |
+| **扩展执行** | **extendedBackgroundTaskTime** 受限功能可防止后台任务由于执行时间限制而被取消或终止。 它们仍遵循其他所有内存和电量使用限制。 可使用电池使用情况或后台应用隐私设置来限制此功能。 请注意，客户和管理员仍然可以通过组策略设置来控制后台任务。<br /><br />**extendedExecutionBackgroundAudio** 受限功能允许应用在后台运行时播放音频。<br /><br />**extendedExecutionCritical** 受限功能允许应用开始一个关键扩展执行会话。<br /><br />**extendedExecutionUnconstrained** 受限功能允许应用开始一个不受限制的扩展执行会话。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。<br /><br />请参阅[使用扩展执行来推迟应用挂起](https://docs.microsoft.com/windows/uwp/launch-resume/run-minimized-with-extended-execution)，详细了解如何使用扩展执行在应用挂起时进行推迟。 |
 | **移动设备管理** | **deviceManagementDmAccount** 受限功能允许应用预配和配置移动运营商开放移动联盟 - 设备管理 (MO OMA-DM) 帐户。<br /><br />**deviceManagementFoundation** 受限功能允许应用拥有对设备上的移动设备管理 (MDM) 配置服务提供程序 (CSP) 基础结构的基本访问权限。 请注意，其他功能是访问特定 CSP 时所必需的。<br /><br />**deviceManagementWapSecurityPolicies** 受限功能允许应用配置基于无线应用程序协议 (WAP) 的服务，例如彩信、服务指示/服务加载 (SI/SL)，以及开放移动联盟 - 客户端预配 (OMA-CP)。<br /><br />**deviceManagementEmailAccount** 受限功能允许移动运营商所创建的应用在设备上添加和管理其预配给用户的电子邮件帐户。 |
 | **包策略控制** | **packagePolicySystem** 受限功能允许应用拥有对与安装在设备上的应用相关的系统策略的控制权。<br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
 | **游戏列表** | **gameList** 受限功能允许应用获取系统上安装的已知游戏列表。<br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
@@ -184,15 +185,15 @@ ms.locfileid: "71141948"
 | **用于附件的语音识别** | **cortanaSpeechAccessory** 受限功能允许应用调用命令并将命令传递给 Cortana。<br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
 | **附件管理** | **accessoryManager** 受限功能允许应用注册为附件应用和选择特定应用通知，以便它们可转发到附件并显示给用户。 |
 | **驱动程序访问** | **interopServices** 受限功能允许应用直接与驱动程序交互。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **前景观察** | **inputForegroundObservation** 受限功能允许前台应用截获键盘输入并绕过所有非应用键盘输入处理。 无法通过此功能截获 SAS 组合。 若要访问 [**KeyboardDeliveryInterceptor**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.KeyboardDeliveryInterceptor) 类的成员，则需要此功能。
+| **前景观察** | **inputForegroundObservation** 受限功能允许前台应用截获键盘输入并绕过所有非应用键盘输入处理。 无法通过此功能截获 SAS 组合。 若要访问 [**KeyboardDeliveryInterceptor**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.KeyboardDeliveryInterceptor) 类的成员，则需要该功能。
 | **OEM 和 MO 合作伙伴应用** | **oemDeployment** 受限功能允许 Microsoft 合作伙伴创建的应用在设备上安装新应用并查询当前安装的应用。<br /><br />**oemPublicDirectory** 受限功能允许 Microsoft 合作伙伴创建的应用访问共享的应用文件夹。 不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **应用许可** | **appLicensing** 受限功能允许应用无需许可证即可运行。 如果你在清单中声明此功能，则无法将应用提交到应用商店。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
+| **应用许可** | **appLicensing** 受限功能允许应用无需许可证即可运行。 如果你在清单中声明该功能，则无法将应用提交到 Microsoft Store。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
 | **位置系统**| **locationSystem** 受限功能允许应用执行某些有特权的位置配置，例如设置设备的默认位置。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
 | **用户数据帐户提供程序**| **userDataAccountsProvider** 受限功能允许应用完全管理邮件、日历和联系人帐户。 |
 | **笔工作区** | **previewPenWorkspace** 功能允许应用访问要作为记住操作处理程序托管在笔工作区内的 Windows.ApplicationModel.Preview.Notes 命名空间。 |
-| **辅助身份验证系数** | **secondaryAuthenticationFactor** 功能允许应用通过在附近的配套身份验证设备上传递密钥存储解锁电脑。 例如，配套健身手环可用于解锁电脑。 若要访问 Windows.Security.Authentication.Identity.Provider 命名空间中的 API，则需要此功能。<br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
-| **存储许可证管理**| **storeLicenseManagement** 功能允许 Microsoft 合作伙伴中心应用管理设备上的应用商店许可证。 若要访问 Windows.ApplicationModel.Store.LicenseManagement 命令空间中的 API，则需要此功能。 |
-| **用户系统 ID**| **userSystemId** 功能允许应用获取特定于用户的标识符。 此标识符可唯一标识特定系统上的当前用户，并且可用于关联应用上的信息。 若要访问 Windows.System.Profile.SystemIdentification 类中的 GetUserSpecificSystemId API，则需要此功能。 |
+| **辅助身份验证系数** | **secondaryAuthenticationFactor** 功能允许应用通过在附近的配套身份验证设备上传递密钥存储解锁电脑。 例如，配套健身手环可用于解锁电脑。 若要访问 Windows.Security.Authentication.Identity.Provider 命名空间中的 API，则需要该功能。<br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
+| **存储许可证管理**| **storeLicenseManagement** 功能允许 Microsoft 合作伙伴中心应用管理设备上的应用商店许可证。 若要访问 Windows.ApplicationModel.Store.LicenseManagement 命令空间中的 API，则需要该功能。 |
+| **用户系统 ID**| **userSystemId** 功能允许应用获取特定于用户的标识符。 此标识符可唯一标识特定系统上的当前用户，并且可用于关联应用上的信息。 若要访问 Windows.System.Profile.SystemIdentification 类中的 GetUserSpecificSystemId API，则需要该功能。 |
 | **目标内容**| **targetedContent** 功能使应用程序可检索并使用 [**Windows.Services.TargetedContent**](https://docs.microsoft.com/uwp/api/windows.services.targetedcontent) 命名空间提供的目标订阅内容。<br /><br />若要使用 **Windows.System.Profile.SystemIdentification** 命名空间中的某些 API，则需要该功能。 |
 | **UI 自动化**| **uiAutomation** 功能允许 UI 自动化客户端（例如讲述人）连接到 UI 自动化服务器或提供商。<br /><br />若要使用 **Windows.Xbox.Media.Capture.Broadcaster** 命名空间中的某些 API，则需要该功能。 |
 |**游戏栏服务**| **gameBarServices** 仅限于第一方应用商店可更新的收件箱 UWA。<br /><br />若要使用 [**Windows.Media.Capture.GameBarsSrvices**](https://docs.microsoft.com/uwp/api/windows.media.capture.gamebarservices) 类，则需要该功能。<br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |

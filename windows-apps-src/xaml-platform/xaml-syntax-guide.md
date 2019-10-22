@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b70a3f9f9fad2d81716c22ab2f383e72ea363341
-ms.sourcegitcommit: cbd900f350569a3901086a44b2d5007bb6fb7bed
+ms.openlocfilehash: 0351f3566d708b7a588fa77f9f15564f382de44f
+ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72276301"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72680747"
 ---
 # <a name="xaml-syntax-guide"></a>XAML 语法指南
 
@@ -34,8 +34,8 @@ XAML 与大部分 XML 用法之间的一大区别在于，XAML 通常并非通�
 
 对于 XAML 语法，可采用 3 种方式在 XAML 中声明对象：
 
--   **直接使用对象元素语法：** 这将使用开始标记和结束标记将对象实例化为 XML 窗体元素。 你可以使用此语法声明根对象或创建可设置属性值的嵌套对象。
--   **间接使用特性语法：** 此方法使用内嵌字符串值，其中包含有关如何创建对象的说明。 XAML 分析程序使用该字符串将属性值设置为新创建的引用值。 对于它的支持仅限于某些常见对象和属性。
+-   **直接方式，使用对象元素语法：** 该方式使用起始和结束标记将一个对象实例化为 XML 格式的元素。 你可以使用此语法声明根对象或创建可设置属性值的嵌套对象。
+-   **间接方式，使用属性语法：** 该方式使用一个内联字符串值，该值中包含有关如何创建对象的说明。 XAML 分析程序使用该字符串将属性值设置为新创建的引用值。 对于它的支持仅限于某些常见对象和属性。
 -   使用一种标记扩展。
 
 这并不意味着你始终可以选择任何语法来在 XAML 词汇表中创建对象。 一些对象只能使用对象元素语法创建， 一些对象只能通过最初在属性中设置来创建。 事实上，可使用对象元素或属性语法创建的对象在 XAML 词汇表中相对较少。 即使这两种语法形式都可用，其中一种语法样式也将更常见。
@@ -87,7 +87,7 @@ XAML 与大部分 XML 用法之间的一大区别在于，XAML 通常并非通�
 </UserControl ...>
 ```
 
-**请注意**  Some 结构不能声明为对象元素。 初始化文本不受支持，而且不能用作资源。 你必须使用属性语法才能在 XAML 中将属性设置为这些值。 这些类型包括：[**持续时间**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Duration)、 [**system.windows.media.animation.timeline.repeatbehavior**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepeatBehavior)、[**点**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、 [**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)和[**大小**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)。
+**请注意**  Some 结构不能声明为对象元素。 初始化文本不受支持，而且不能用作资源。 你必须使用属性语法才能在 XAML 中将属性设置为这些值。 这些类型包括：[**Duration**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Duration)、[**RepeatBehavior**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepeatBehavior)、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、[**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect) 和 [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)。
 
 ## <a name="setting-properties"></a>设置属性
 
@@ -101,7 +101,7 @@ XAML 与大部分 XML 用法之间的一大区别在于，XAML 通常并非通�
 正如对于对象声明一样，此列表并不意味着可以使用所有的技术来设置属性。 一些属性仅支持一种技术。
 一些属性（例如，可以使用属性元素语法或特性语法的属性）可能支持多种技术。 可能的技术同时取决于属性和该属性所使用的对象类型。 在 Windows 运行时 API 引用中，你在“语法”部分将会看到可以使用的 XAML 用法。 有时还有可行的备用用法，但可能会比较繁琐。 我们通常不会显示这些繁琐用法，因为我们会尽量向你展示在 XAML 中使用该属性的最佳做法或实用方案。 对于可在 XAML 中设置的属性，已在其参考页面中有关“XAML 用法”的部分提供了供参考的 XAML 语法。
 
-还有一些对象属性无法通过任何方式在 XAML 中设置，所以只能使用代码设置。 这些属性通常更适于在代码隐藏文件中（而非 XAML 中）处理。
+某些对象上的某些属性不能通过任何方式设置为 XAML，只能使用代码进行设置。 这些属性通常更适于在代码隐藏文件中（而非 XAML 中）处理。
 
 只读属性不能在 XAML 中设置。 即使在代码中，自有类型将必须支持一些其他方式（如构造函数重载、帮助程序方法或对计算属性的支持）才能进行设置。 计算的属性依赖于其他可设置属性的值，有时还依赖具有内置处理的事件；这些功能在依赖属性系统中可用。 有关依赖属性如何用于支持计算属性的详细信息，请参阅[依赖属性概述](dependency-properties-overview.md)。
 
@@ -121,11 +121,11 @@ XAML 中的集合语法给人一种设置只读属性的感觉，但其实不是
 
 一个对象的许多属性可使用属性元素语法设置。 属性元素看上去如下所示：`<`*object*`.`*property*`>`。
 
-若要使用属性元素语法，需要为想要设置的属性创建 XAML 属性元素。 在标准 XML 中，此元素仅被视为一个名称中包含一个点的元素。 但是在 XAML 中，元素名称中的这个点将该元素标识为属性元素，*property* 应该是支持对象模型实现中的 *object* 的一个成员。 若要使用属性元素语法，必须可指定一个对象元素，才能“填充”属性元素标记。 属性元素将始终具有一些内容（单个元素、多个元素或内部文本）；任何点都不具有自结束属性元素。
+若要使用属性元素语法，需要为想要设置的属性创建 XAML 属性元素。 在标准 XML 中，此元素仅被视为一个名称中包含一个点的元素。 但是，在 XAML 中，元素名称中的点将元素标识为属性元素，其*属性*应为支持对象模型实现中的*对象*的成员。 若要使用属性元素语法，必须可指定一个对象元素，才能“填充”属性元素标记。 属性元素将始终具有一些内容（单个元素、多个元素或内部文本）；任何点都不具有自结束属性元素。
 
 在下面的语法中，*property* 是你想要设置的属性的名称，*propertyValueAsObjectElement* 是应当满足属性的值类型要求的单个对象元素。
 
-`<`*object*`>`
+`<`*对象*`>`
 
 `<`*对象*`.`*属性*`>`
 
@@ -133,9 +133,9 @@ XAML 中的集合语法给人一种设置只读属性的感觉，但其实不是
 
 `</`*对象*`.`*属性*`>`
 
-`</`*object*`>`
+`</`*对象*`>`
 
-下面的示例使用属性元素语法来设置一个具有 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 对象元素 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill)。 （在**system.windows.media.solidcolorbrush>** 中，[**颜色**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)设置为属性。）此 XAML 的分析结果与前面使用特性语法设置**Fill**的 xaml 示例相同。
+下面的示例使用属性元素语法来设置一个具有 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 对象元素 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill)。 （在 **SolidColorBrush** 内，[**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 被设置为一个属性。）此 XAML 的分析结果等同于前面使用属性语法设置 **Fill** 的 XAML 示例。
 
 ```xml
 <Rectangle
@@ -151,7 +151,7 @@ XAML 中的集合语法给人一种设置只读属性的感觉，但其实不是
 
 ### <a name="xaml-vocabularies-and-object-oriented-programming"></a>XAML 词汇和面向对象的编程
 
-显示为 Windows 运行时 XAML 类型的 XAML 成员的属性和事件通常是从基本类型继承的。 看看下面的示例：`<Button Background="Blue" .../>`。 [  **Background**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background) 属性不是在 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 类上直接声明的属性。 **Background** 是从 [**Control**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) 基类继承的。 事实上，如果查看**按钮**的参考主题，你会发现，成员列表中的每个继承成员至少包含一个来自连续基类的链：[**System.windows.controls.primitives.buttonbase.click>** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)、 [**Control**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control)、 [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement)、 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)、 [**system.windows.dependencyobject>** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)。 从 XAML 词汇意义上讲，“属性”列表中所有的读写属性和集合属性都是继承的。 事件（如各种 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 事件）也是继承的。
+显示为 Windows 运行时 XAML 类型的 XAML 成员的属性和事件通常是从基本类型继承的。 看看下面的示例：`<Button Background="Blue" .../>`。 [  **Background**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background) 属性不是在 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 类上直接声明的属性。 **Background** 是从 [**Control**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) 基类继承的。 实际上，如果你查看 **Button** 的参考主题，你将看到成员列表中至少包含一个从一系列连续的基本类中的每个类继承的成员：[**ButtonBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)、[**Control**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control)、[**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement)、[**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 和 [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)。 从 XAML 词汇意义上讲，“属性”列表中所有的读写属性和集合属性都是继承的。 事件（如各种 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 事件）也是继承的。
 
 如果你使用 Windows 运行时参考来进行 XAML 指导，则语法或示例代码中显示的元素名称有时针对的是最初定义该属性的类型，这是因为该参考主题是从基本类继承它的所有可能类型共享。 如果你在 XML 编辑器中使用 Visual Studio 的用于 XAML 的 IntelliSense，则 IntelliSense 及其下拉菜单能够很好地合并继承功能，并提供一个准确的属性列表，一旦你开始使用用于类实例的对象元素，这些属性就可供设置。
 
@@ -173,7 +173,7 @@ XAML 中的集合语法给人一种设置只读属性的感觉，但其实不是
 <TextBlock>Hello!</TextBlock>
 ```
 
-如果某个类存在一个 XAML 内容属性，则这会在该类的参考主题的“属性”部分指示出来。 查找 [**ContentPropertyAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.ContentPropertyAttribute) 的值。 此属性使用一个名为“Name”的命名字段。 “Name”的值是该类的作为 XAML 内容属性的属性的名称。 例如，在 "[**边框**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border)引用" 页上，你将看到：ContentProperty （"名称 = 子级"）。
+如果某个类存在一个 XAML 内容属性，则这会在该类的参考主题的“属性”部分指示出来。 查找 [**ContentPropertyAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.ContentPropertyAttribute) 的值。 此属性使用一个名为“Name”的命名字段。 “Name”的值是该类的作为 XAML 内容属性的属性的名称。 例如，在 [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) 参考页上，你将看到如下内容：ContentProperty("Name=Child")。
 
 有一个重要的 XAML 语法规则需要引起我们的注意，那就是不能将 XAML 内容属性和你在该元素上设置的其他属性元素混用。 XAML 内容属性必须在所有其他属性元素之前或之后完全设置。 例如，下面的 XAML 无效：
 
@@ -191,7 +191,7 @@ XAML 中的集合语法给人一种设置只读属性的感觉，但其实不是
 
 目前为止给出的所有语法都将属性设置为单一对象。 但是，许多 UI 场景要求一个给定的父元素可拥有多个子元素。 例如，一个输入窗体的 UI 需要多个文本框元素、一些标签以及可能一个“Submit”按钮。 如果打算使用一种编程对象模型访问多个这样的元素，它们通常是单个集合属性中的项，并非每个项都是不同属性的值。 XAML 支持多个子元素，还支持一种典型的支持集合模型，将使用集合类型的属性视为隐式的，并对一个集合类型的任何子元素执行特殊处理。
 
-许多集合属性还被标识为类的 XAML 内容属性。 隐式集合处理/XAML 内容语法组合在用于控件组合（如面板、视图或项目控件）的类型中经常看到。 例如，以下示例显示了在一个 [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) 内组合两个对等 UI 元素的最简单的 XAML。
+许多集合属性还被标识为类的 XAML 内容属性。 隐式集合处理/XAML 内容语法组合在用于控件组合（如面板、视图或项目控件）的类型中经常看到。 例如，下面的示例演示了在[**system.windows.controls.stackpanel>** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)内组合两个对等 UI 元素时可能出现的最简单的 XAML。
 
 ```xml
 <StackPanel>
@@ -234,15 +234,15 @@ XAML 中的集合语法给人一种设置只读属性的感觉，但其实不是
 
 每种语法都支持你声明一个对象并在该对象上设置一个属性。 第一个示例是标记中的一个元素，但实际上 XAML 处理器分析此标记的过程包含多个步骤。
 
-首先，对象元素的存在表明必须实例化一个新 *objectName* 对象。 只有存在这样一个实例，才能在它之上设置实例属性 *propertyName*。
+首先，对象元素的存在表明必须实例化一个新 *objectName* 对象。 只有在存在这样的实例后，才能对其设置实例属性*propertyName* 。
 
 另一个 XAML 规则是元素的属性必须能够按照任何顺序进行设置。 例如，`<Rectangle Height="50" Width="100" />` 和 `<Rectangle Width="100"  Height="50" />` 之间没有区别。 使用哪种顺序只是样式问题。
 
-@No__t**请注意**，如果使用 "XML 编辑器" 之外的设计图面，1XAML 设计器通常会升级排序约定，但以后可以自由编辑该 XAML，以便对属性重新排序或引入新属性。
+**请注意**，如果使用 "XML 编辑器" 之外的设计图面，则   XAML 设计器通常会升级排序约定，但可以在以后自由编辑该 XAML 来重新排序或引入新的属性。
 
-## <a name="attached-properties"></a>附加的属性
+## <a name="attached-properties"></a>附加属性
 
-XAML通过添加一个名为*附加属性*的语法元素对 XML 进行了扩展。 类似于属性元素语法，附加属性语法包含一个点，这个点对 XAML 分析具有特殊的含义。 具体来讲，这个点将附加属性的所有者提供程序与属性名称分开。
+XAML通过添加一个名为*附加属性*的语法元素对 XML 进行了扩展。 类似于属性元素语法，附加属性语法包含一个点，这个点对 XAML 分析具有特殊的含义。 具体而言，点分隔附加属性的提供程序和属性名称。
 
 在 XAML 中，使用语法 *AttachedPropertyProvider*.*PropertyName* 设置附加属性。以下是一个在 XAML 中设置附加属性 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 的示例：
 
@@ -256,18 +256,18 @@ XAML通过添加一个名为*附加属性*的语法元素对 XML 进行了扩展
 
 在 Windows 运行时 XAML 中，你将看到支持以下方案的附加属性：
 
--   子元素可以通知父容器面板在布局中的行为方式：[**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)、 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)、 [**VariableSizedWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid)。
--   控件使用情况可能会影响来自控件模板的重要控件部件的行为：[**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)、 [**VirtualizingStackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VirtualizingStackPanel)。
--   使用相关类中提供的服务，其中使用该服务的服务和类不共享继承：[**版式**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)、 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager)、 [**automationproperties.livesetting**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties)、 [**ToolTipService**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTipService)。
--   动画目标：[**情节提要**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)。
+-   子元素可以将其在布局中的行为方式（[**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas),、[**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 和 [**VariableSizedWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid)）通知给父容器面板。
+-   控件用法会影响来自控件模板的重要控件部分（[**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 和 [**VirtualizingStackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VirtualizingStackPanel)）的行为。
+-   使用相关类中提供的服务，其中使用该服务的服务和类不共享继承功能：[**Typography**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)、[**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager)、[**AutomationProperties**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) 和 [**ToolTipService**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTipService)。
+-   动画目标：[**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)。
 
 有关详细信息，请参阅[附加属性概述](attached-properties-overview.md)。
 
 ## <a name="literal--values"></a>文字“{”值
 
-因为左大括号符号 \{ 是标记扩展序列的开头，所以，可以使用转义序列指定以 "\{" 开头的文本字符串值。 转义序列为 "\{ @ no__t-1"。 例如，若要指定一个字符串值，该字符串值为单个左大括号，请将属性值指定为 "\{ @ no__t-1 @ no__t-2"。 你还可以使用替代引号（例如，在 " **"** 分隔的属性**值中的**），以字符串形式提供 "\{" 值。
+因为左大括号符号 \{ 是标记扩展序列的开头，所以，可以使用转义序列指定以 "\{" 开头的文本字符串值。 转义序列为 "\{ \}"。 例如，若要指定一个字符串值，该字符串值为单个左大括号，请将属性值指定为 "\{ \} \{"。 你还可以使用替代引号（例如，在 " **"** 分隔的属性**值中的**），以字符串形式提供 "\{" 值。
 
-**请注意**   "@no__t" 也可以在带引号的属性中使用。
+**请注意**   "\\}" 也可以在带引号的属性中使用。
  
 ## <a name="enumeration-values"></a>枚举值
 
@@ -276,7 +276,7 @@ Windows 运行时 API 中的许多属性都使用枚举作为值。 如果成员
 -   请勿使用限定形式，因为它不起作用。 例如，下面的 XAML 无效：`<Button Visibility="Visibility.Visible"/>`
 -   请勿使用常量的值。 换句话说，请勿依赖显式或隐式依赖枚举定义方式的枚举的整数值。 尽管看似可行，但无论采用 XAML 形式还是代码形式，这都是不合适的做法，因为你依赖的可能是过渡实现的详细信息。 例如，请勿执行如下操作：`<Button Visibility="1"/>`。
 
-**请注意**@no__t 1In 参考主题有关使用 XAML 和使用枚举的 api，请单击**语法**的**属性值**部分中的枚举类型的链接。 在指向枚举页面的此链接中，你可以发现该枚举的命名常量。
+**请注意**  In 有关使用 XAML 和使用枚举的 api 的参考主题，请在**语法**的**属性值**部分中单击指向枚举类型的链接。 在指向枚举页面的此链接中，你可以发现该枚举的命名常量。
 
 枚举可以具有与标志相同的作用，即，它们可以被归类于 **FlagsAttribute**。 如果你需要将具有标志作用的枚举的值组合指定为一个 XAML 属性值，请使用每个枚举常量的名称，在每个名称之间加一个逗号 (,)，不要有任何多余的空格字符。 具有标志作用的属性在 Windows 运行时 XAML 词汇中并不常见，但 [**ManipulationModes**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationModes) 示例表明了支持以 XAML 的形式设置具有标志作用的枚举值。
 
@@ -302,9 +302,9 @@ XAML 用法部分还使用各种通用性占位符。 有些情况下，这些�
 
 -   *object*：从理论上讲是任意对象值，但实际上通常被限制为特定类型的对象（例如“字符串或对象”选择），并且应查看参考页面上的“备注”部分以获取更多信息。
 -   *对象* *属性*：组合的*对象* *属性*用于所显示语法为可用作多个属性的属性值的类型的语法的情况。 例如，为[**画笔**](/uwp/api/Windows.UI.Xaml.Media.Brush)显示的**Xaml 特性用法**包括： <*对象* *属性*= "*predefinedColorName*"/>
--   *eventhandler*：此属性显示为事件属性显示的每个 XAML 语法的属性值。 此处所提供的内容为事件处理程序函数的函数名。 该函数必须在 XAML 页面的代码隐藏中定义。 在编程级别上，该函数必须与你处理的事件的委派签名匹配，或者你的应用代码未编译。 但这实际是出于编程方面的考虑，而不是 XAML 方面的考虑，因此我们不尝试在 XAML 语法中暗示有关委派类型的任何内容。 如果你希望了解你应实现事件的哪个委托，请在标记为“委托”的表行中参阅该事件参考主题的“事件信息”部分。
--   *enumMemberName*：显示在所有枚举的属性语法中。 存在使用枚举值的属性的类似占位符，但它通常为占位符附加该枚举的名称提示以作为前缀。 例如，为 [**FrameworkElement.FlowDirection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.flowdirection) 显示的语法为 <*frameworkElement* **FlowDirection** ="* flowDirectionMemberName*"/>。 如果你位于某个属性参考页面上，请在“类型:”字样旁边的“属性值”部分单击枚举类型的链接。 对于使用该枚举的属性的属性值，你可以使用“成员”列表的“成员”列中列出的任意字符串。
--   *double*、 *int*、 *string*、 *bool*：这些是 XAML 语言已知的基元类型。 如果你使用 C# 或 Visual Basic 进行编程，则这些类型将映射到 Microsoft .NET 等价类型，例如 [**Double**](https://docs.microsoft.com/dotnet/api/system.double)、[**Int32**](https://docs.microsoft.com/dotnet/api/system.int32)、[**String**](https://docs.microsoft.com/dotnet/api/system.string) 和 [**Boolean**](https://docs.microsoft.com/dotnet/api/system.boolean)，并且在使用 .NET 代码隐藏中的 XAML 定义的值时你可以使用这些 .NET 类型上的任意成员。 如果你使用 C++/CX 进行编程，则可以使用 C++ 基元类型，但也可以考虑使用 [**Platform**](https://docs.microsoft.com/cpp/cppcx/platform-namespace-c-cx) 命名空间定义的类型的等价类型，例如 [**Platform::String**](https://docs.microsoft.com/cpp/cppcx/platform-string-class)。 有时，对于特定属性存在其他值限制。 但你通常会在“属性值”部分或“备注”部分（而非 XAML 部分）看到这些限制，因为所有此类限制都既适用于代码用法也适用于 XAML 用法。
+-   *eventhandler*：这将显示为为事件属性显示的每个 XAML 语法的属性值。 此处所提供的内容为事件处理程序函数的函数名。 该函数必须在 XAML 页面的代码隐藏中定义。 在编程级别上，该函数必须与你处理的事件的委派签名匹配，或者你的应用代码未编译。 但这实际是出于编程方面的考虑，而不是 XAML 方面的考虑，因此我们不尝试在 XAML 语法中暗示有关委派类型的任何内容。 如果你希望了解你应实现事件的哪个委托，请在标记为“委托”的表行中参阅该事件参考主题的“事件信息”部分。
+-   *enumMemberName*：显示在所有枚举的属性语法中。 存在使用枚举值的属性的类似占位符，但它通常为占位符附加该枚举的名称提示以作为前缀。 例如，为 [**FrameworkElement.FlowDirection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.flowdirection) 显示的语法为 <*frameworkElement***FlowDirection**="* flowDirectionMemberName*"/>。 如果你位于某个属性参考页面上，请在“类型:”字样旁边的“属性值”部分单击枚举类型的链接。 对于使用该枚举的属性的属性值，你可以使用“成员”列表的“成员”列中列出的任意字符串。
+-   *double*、*int*、*string*、*bool*：存在 XAML 语言已知的基元类型。 如果你使用 C# 或 Visual Basic 进行编程，则这些类型将映射到 Microsoft .NET 等价类型，例如 [**Double**](https://docs.microsoft.com/dotnet/api/system.double)、[**Int32**](https://docs.microsoft.com/dotnet/api/system.int32)、[**String**](https://docs.microsoft.com/dotnet/api/system.string) 和 [**Boolean**](https://docs.microsoft.com/dotnet/api/system.boolean)，并且在使用 .NET 代码隐藏中的 XAML 定义的值时你可以使用这些 .NET 类型上的任意成员。 如果你使用 C++/CX 进行编程，则可以使用 C++ 基元类型，但也可以考虑使用 [**Platform**](https://docs.microsoft.com/cpp/cppcx/platform-namespace-c-cx) 命名空间定义的类型的等价类型，例如 [**Platform::String**](https://docs.microsoft.com/cpp/cppcx/platform-string-class)。 有时，对于特定属性存在其他值限制。 但你通常会在“属性值”部分或“备注”部分（而非 XAML 部分）看到这些限制，因为所有此类限制都既适用于代码用法也适用于 XAML 用法。
 
 ## <a name="tips-and-tricks-notes-on-style"></a>有关样式的提示、技巧和注释
 

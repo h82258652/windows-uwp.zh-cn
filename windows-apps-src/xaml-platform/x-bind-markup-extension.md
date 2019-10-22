@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eeb56dce1984afd67e7a44bbfce1453a1d9f531a
-ms.sourcegitcommit: 3360db6bc975516e01913d3d73599c964a411052
+ms.openlocfilehash: a25797f50ee76542b8f9543cb76453d2916368ac
+ms.sourcegitcommit: 82d202478ab4d3011c5ddd2e852958c34336830d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70296988"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72715854"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 标记扩展
 
-注意  有关在应用中使用数据绑定（使用 **{x:Bind}** ，以及在 **{x:Bind}** and **{binding}** 之间进行了完全比较）的常规信息，请参阅[深入了解数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)。
+**请注意** For 有关在应用中使用数据绑定的常规信息，其中包含 **{x:Bind}** （对于 **{x:Bind}** 和 **{binding}** 之间的所有比较，请参阅[深入了解数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)。
 
 **{X:Bind}** 标记扩展（适用于 Windows 10 的新）是 **{Binding}** 的替代项。 **{x:Bind}** 在比 **{Binding}** 更少的时间和较少的内存中运行，并且支持更好的调试。
 
@@ -32,7 +32,7 @@ XAML 编译时， **{x:Bind}** 将转换为从数据源上的某一属性中获�
 -   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)
 -   [XAML UI 基础示例](https://go.microsoft.com/fwlink/p/?linkid=619992)
 
-## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性用法
 
 ``` syntax
 <object property="{x:Bind}" .../>
@@ -50,7 +50,7 @@ XAML 编译时， **{x:Bind}** 将转换为从数据源上的某一属性中获�
 |------|-------------|
 | _propertyPath_ | 一个指定绑定的属性路径的字符串。 下面的[属性路径](#property-path)部分中提供了更多信息。 |
 | _bindingProperties_ |
-| _propName_ value， _propName_值\[==\]* | 使用一个名称/值对语法指定的一个或多个绑定属性。 |
+| _propName_ =_值_\[， _propName_ =_值_\] * | 使用一个名称/值对语法指定的一个或多个绑定属性。 |
 | _propName_ | 要在绑定对象上设置的属性的字符串名称。 例如，“Converter”。 |
 | _value_ | 要将属性设置为的值。 参数的语法取决于要设置的属性。 下面是 _propName_=_value_ 用法的示例，其中该值本身就是一个标记扩展：`Converter={StaticResource myConverterClass}`。 有关详细信息，请参阅下面的[可使用 {x:Bind} 设置的属性](#properties-that-you-can-set-with-xbind)部分。 |
 
@@ -83,18 +83,18 @@ XAML 编译时， **{x:Bind}** 将转换为从数据源上的某一属性中获�
 
 例如，在某一页面中，**Text="{x:Bind Employee.FirstName}"** 将查找该页面上的 **Employee** 成员，然后该对象上的 **FirstName** 成员将由 **Employee** 返回。 如果将一个项目控件绑定到一个包含员工家属的属性，则属性路径可能是“Employee.Dependents”，并且项目控件的项目模板将负责显示“Dependents”中的项。
 
-对于 C++/CX， **{x:Bind}** 无法绑定到页面或数据模型中的私有字段和属性，你需要具有其可绑定的公共属性。 绑定的图面区域需显示为 CX 类/接口，以便我们可以获取相关的元数据。 不应需要可 **\[绑定\]** 的属性。
+对于 C++/CX， **{x:Bind}** 无法绑定到页面或数据模型中的私有字段和属性，你需要具有其可绑定的公共属性。 绑定的图面区域需显示为 CX 类/接口，以便我们可以获取相关的元数据。 不应需要 **\[Bindable \]** 特性。
 
 使用 **x:Bind** 时，无需将 **ElementName=xxx** 用作绑定表达式的一部分。 相反，你可以使用元素的名称作为绑定路径的第一部分，因为命名元素成为表示根绑定源的页或用户控件中的字段。 
 
 
-### <a name="collections"></a>集合
+### <a name="collections"></a>集锦
 
-如果数据源是一个集合，则属性路径可以按照位置或索引来指定集合中的项目。 例如，"团队\[0.\]运动员 "，其中文本"\[\]"包含请求零索引集合中第一项的" 0 "。
+如果数据源是一个集合，则属性路径可以按照位置或索引来指定集合中的项目。 例如，"团队 \[0 \] 方"，其中文字 "\[ \]" 包含请求零索引集合中第一项的 "0"。
 
-若要使用索引器，该模型需要在将编入索引的属性类型上实现 **IList&lt;T&gt;** 或 **IVector&lt;T&gt;** 。 （请注意，&lt;IReadOnlyList&gt; t 和&lt;IVectorView&gt; t 不支持索引器语法。）如果已编入索引的属性类型支持 **INotifyCollectionChanged** 或 **IObservableVector** 且绑定是单向或双向，则它将针对这些接口上的更改通知进行注册和侦听。 更改检测逻辑将基于所有集合更改进行更新，即使这不会影响特定的索引值也是如此。 这是因为侦听逻辑在集合的所有实例中是通用的。
+若要使用索引器，该模型需要在将编入索引的属性类型上实现 **IList&lt;T&gt;** 或 **IVector&lt;T&gt;** 。 （请注意，IReadOnlyList &lt;T &gt; 和 IVectorView &lt;T &gt; 不支持索引器语法。）如果已编制索引的属性的类型支持**INotifyCollectionChanged**或**IObservableVector** ，而绑定是单向或双向，则它将在这些接口上注册和侦听更改通知。 更改检测逻辑将基于所有集合更改进行更新，即使这不会影响特定的索引值也是如此。 这是因为侦听逻辑在集合的所有实例中是通用的。
 
-如果数据源是字典或地图，则属性路径可以按字符串名称指定集合中的项。 例如 **&lt;TextBlock 文本 ="{x： 绑定玩家\[为 John Smith 的\]"/&gt;** 将查找名为"John Smith"的字典中的项。 名称需要使用引号括起来，单引号或双引号都可以使用。 乘幂号 (^) 可用于转义字符串中的引号。 通常最简单的做法是替换使用用于 XAML 属性的引号。 （请注意，&lt;system.collections.generic.ireadonlydictionary<tkey&gt; t 和&lt;IMapView&gt; t 不支持索引器语法。）
+如果数据源是字典或地图，则属性路径可以按字符串名称指定集合中的项。 例如 **&lt;TextBlock Text = "{X:Bind 运动员 \[" John smith "\]"/&gt;** 将在名为 "john smith" 的字典中查找一项。 名称需要使用引号括起来，单引号或双引号都可以使用。 乘幂号 (^) 可用于转义字符串中的引号。 通常最简单的做法是替换使用用于 XAML 属性的引号。 （请注意，System.collections.generic.ireadonlydictionary<tkey &lt;T &gt; 和 IMapView &lt;T &gt; 不支持索引器语法。）
 
 若要使用字符串索引器，该模型需要在将编入索引的属性类型上实现 **IDictionary&lt;string, T&gt;** 或 **IMap&lt;string, T&gt;** 。 如果已编入索引的属性类型支持 **IObservableMap** 且绑定是单向或双向，则它将针对这些接口上的更改通知进行注册和侦听。 更改检测逻辑将基于所有集合更改进行更新，即使这不会影响特定的索引值也是如此。 这是因为侦听逻辑在集合的所有实例中是通用的。
 
@@ -105,9 +105,9 @@ XAML 编译时， **{x:Bind}** 将转换为从数据源上的某一属性中获�
 ### <a name="casting"></a>强制转换
 
 已编译的绑定为强类型，并且将解析路径中的每个步骤的类型。 如果返回的类型没有成员，则它将在编译时失败。 你可以指定转换来告知绑定对象的实际类型。 在以下用例中，**obj** 为类型对象的属性，但包含一个文本框，因此我们可以使用 **Text="{x:Bind ((TextBox)obj).Text}"** 或 **Text="{x:Bind obj.(TextBox.Text)}"** 。
-文本中的**groups3**字段 **= "{x:Bind （（data： SampleDataGroup） groups3\[0\]）"。Title} "** 是对象的字典，因此必须将其强制转换为**数据： SampleDataGroup**。 请注意 xml **data:** 命名空间前缀的用法，可用于将对象类型映射到不是默认 XAML 命名空间组成部分的某一代码命名空间。
+**Text = "{x:Bind （groups3） groups3 \[0 \]）中的字段。Title} "** 是对象的字典，因此必须将其强制转换为**数据： SampleDataGroup**。 请注意 xml **data:** 命名空间前缀的用法，可用于将对象类型映射到不是默认 XAML 命名空间组成部分的某一代码命名空间。
 
-_注意：与C#附加的属性语法相比，-style 强制转换语法更为灵活，并且是以后建议使用的语法。_
+_注意： C#-样式强制转换语法比附加的属性语法更为灵活，并且是以后建议使用的语法。_
 
 ## <a name="functions-in-binding-paths"></a>绑定路径中的函数
 
@@ -115,7 +115,7 @@ _注意：与C#附加的属性语法相比，-style 强制转换语法更为灵�
 
 ## <a name="event-binding"></a>事件绑定
 
-事件绑定是编译绑定的一项独特功能。 它允许你使用绑定为事件指定处理程序，而无需使其成为代码隐藏的方法。 例如：**单击 = "{X:Bind rootFrame. GoForward}"** 。
+事件绑定是编译绑定的一项独特功能。 它允许你使用绑定为事件指定处理程序，而无需使其成为代码隐藏的方法。 例如：**Click="{x:Bind rootFrame.GoForward}"** 。
 
 对于事件，目标方法不能重载，而且还必须：
 
@@ -137,18 +137,17 @@ _注意：与C#附加的属性语法相比，-style 强制转换语法更为灵�
 |----------|-------------|
 | **Path** | 请参阅上面的[属性路径](#property-path)部分。 |
 | **转换器** | 指定绑定引擎所调用的转换器对象。 转换器可以在 XAML 中设置，但仅限于你引用你在对资源字典中的该对象的 [{StaticResource} 标记扩展](staticresource-markup-extension.md)引用中分配的对象实例。 |
-| **ConverterLanguage** | 指定转换器要使用的区域性。 （如果要设置**ConverterLanguage** ，则还应设置**转换器**。）区域性设置为基于标准的标识符。 有关详细信息，请参阅 [**ConverterLanguage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterlanguage)。 |
-| **ConverterParameter** | 指定可在转换器逻辑中使用的转换器参数。 （如果要设置**ConverterParameter** ，则还应设置**转换器**。）大多数转换器使用简单的逻辑从传递的值获取所需的所有信息以进行转换，而无需使用**ConverterParameter**值。 **ConverterParameter** 参数适用于具有多个逻辑的中等高级转换器实现，这些逻辑可切断传入 **ConverterParameter** 的内容。 你可以编写一个转换器，使用除字符串之外的值，但这种情况并不常见，请参阅 [**ConverterParameter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterparameter) 中的备注，以获取详细信息。 |
+| **ConverterLanguage** | 指定转换器要使用的区域性。 （如果要设置 **ConverterLanguage**，还应该设置 **Converter**。）区域性可设置为一个基于标准的标识符。 有关详细信息，请参阅 [**ConverterLanguage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterlanguage)。 |
+| **ConverterParameter** | 指定可在转换器逻辑中使用的转换器参数。 （如果要设置 **ConverterParameter**，还应该设置 **Converter**。）大多数转换器使用可从要转换的传递值获取所有所需信息的简单逻辑，不需要 **ConverterParameter** 值。 **ConverterParameter** 参数适用于具有多个逻辑的中等高级转换器实现，这些逻辑可切断传入 **ConverterParameter** 的内容。 你可以编写一个转换器，使用除字符串之外的值，但这种情况并不常见，请参阅 [**ConverterParameter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterparameter) 中的备注，以获取详细信息。 |
 | **FallbackValue** | 指定要在无法解析源或路径时显示的值。 |
-| **模式** | 将绑定模式指定为以下字符串之一："一次性"、"单向" 或 "双向"。 默认值是“OneTime”。 请注意，该值不是 **{Binding}** 的默认值，大多数情况下为“OneWay”。 |
+| **模式** | 将绑定模式指定为以下字符串之一：“OneTime”、“OneWay”或“TwoWay”。 默认值是“OneTime”。 请注意，该值不是 **{Binding}** 的默认值，大多数情况下为“OneWay”。 |
 | **TargetNullValue** | 指定要在源值解析但并非显式 **null** 时显示的值。 |
 | **BindBack** | 指定要用于双向绑定的相反方向的函数。 |
 | **System.windows.data.binding.updatesourcetrigger** | 指定何时将更改从控件推送回 TwoWay 绑定中的模式。 除 TextBox 之外的所有属性的默认值。 Text 为 PropertyChanged;TextBox。文本为 LostFocus。|
 
 > [!NOTE]
 > 如果你要将标记从 **{Binding}** 转换为 **{x:Bind}** ，请注意在 **Mode** 属性默认值方面的差异。
- 
-> [**x:DefaultBindMode**](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute) 可用于更改特定段落标记树的 x: Bind 的默认模式。 所选的模式将应用该元素及其子元素上的任何 x:Bind 表达，不明确指定某个模式作为绑定的一部分。 使用 OneTime 时的性能比使用 OneWay 时更好，因为使用 OneWay 将导致生成更多代码以连接到和处理更改检测。
+> 可以使用[**x:DefaultBindMode**](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute)为标记树的特定段更改 x:Bind 的默认模式。 所选的模式将应用该元素及其子元素上的任何 x:Bind 表达，不明确指定某个模式作为绑定的一部分。 使用 OneTime 时的性能比使用 OneWay 时更好，因为使用 OneWay 将导致生成更多代码以连接到和处理更改检测。
 
 ## <a name="remarks"></a>备注
 
@@ -167,7 +166,7 @@ _注意：与C#附加的属性语法相比，-style 强制转换语法更为灵�
 > [!NOTE]
 > 从 Windows 10 版本 1607 开始，XAML 框架向 Visibility 转换器提供内置布尔值。 转换器将 **true** 映射到 **Visible** 枚举值并将 **false** 映射到 **Collapsed**，以便你可以将 Visibility 属性绑定到布尔值，无需创建转换器。 注意，这不是函数绑定的特点，只是属性绑定。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
-**提示**     如果需要为某个值指定一个大括号（如在 [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) 或 [**ConverterParameter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterparameter) 中），请在它前面加上一个反斜杠：`\{`。 此外，将包含需要转义的括号的整个字符串放在第二组引号中，例如 `ConverterParameter='{Mix}'`。
+**提示**  如果需要为一个值指定一个大括号（如在[**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path)或[**ConverterParameter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterparameter)中），请在它前面加上一个反斜杠： `\{`。 此外，将包含需要转义的括号的整个字符串放在第二组引号中，例如 `ConverterParameter='{Mix}'`。
 
 [**转换器**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converter)、 [**ConverterLanguage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterlanguage)和**ConverterLanguage**都与将值或类型从绑定源转换为与绑定目标属性兼容的类型或值相关。 有关详细信息和相关示例，请参阅[深入了解数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)的“数据转换”部分。
 
