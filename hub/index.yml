@@ -9,12 +9,12 @@ metadata:
   ms.author: tedhudek
   ms.topic: hub-page
   uhfHeaderId: MSDocsHeader-DocsL1
-  ms.openlocfilehash: 2b0eee6f53445ce2f0a0bcc3f35b756ab231a888
-  ms.sourcegitcommit: 00cd8a6616e358479a63e56126c62ef02b8da75b
+  ms.openlocfilehash: 50a82a07d74e44746858e0800e2ff2007b5385e8
+  ms.sourcegitcommit: 860e8303da3e36624f603ce3273d68911c696e5d
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 10/17/2019
-  ms.locfileid: "72548386"
+  ms.lasthandoff: 10/22/2019
+  ms.locfileid: "72777257"
 highlightedContent:
   items:
   - title: 获取 Visual Studio 和 Windows SDK
@@ -40,7 +40,7 @@ additionalContent:
         url: https://docs.microsoft.com/windows/apps/desktop/modernize/
       - text: 构建桌面应用
         url: https://docs.microsoft.com/windows/apps/desktop/
-      - text: 设置开发环境
+      - text: 使用 Python、Node.js 和适用于 Linux 的 Windows 子系统进行开发
         url: https://docs.microsoft.com/windows/dev-environment/
       - text: 查找代码示例
         url: https://developer.microsoft.com/windows/samples
