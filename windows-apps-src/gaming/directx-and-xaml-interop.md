@@ -6,28 +6,25 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, xaml 互操作
 ms.localizationpriority: medium
-ms.openlocfilehash: ad03a86ba18f11d8d63c2c98649e7f159f3d4f52
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 174cb7f2608c1da89ebacc21e5032d03f7701f15
+ms.sourcegitcommit: 0179e2ccb59a14abc1676da0662e2def54af24ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321290"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72796221"
 ---
 # <a name="directx-and-xaml-interop"></a>DirectX 和 XAML 互操作
-
-
 
 你可以在通用 Windows 平台 (UWP) 游戏或应用中同时使用 Extensible Application Markup Language (XAML) 和 Microsoft DirectX。 XAML 和 DirectX 的结合可让你生成与 DirectX 呈现的内容互操作的灵活用户界面框架，并且对于图形密集型应用非常有用。 本主题将说明使用 DirectX 的 UWP 应用的结构，并指出在生成要与 DirectX 兼容的 UWP 应用时要使用的重要类型。
 
 如果你的应用主要侧重于 2D 呈现，你可能需要使用 [Win2D](https://github.com/microsoft/win2d) Windows 运行时库。 此库由 Microsoft 维护，并且基于核心 Direct2D 技术生成。 它大大简化了实现 2D 图形的使用模式，并包括对本文档中所述的某些技术的有用抽象。 有关更多详细信息，请参阅项目页面。 本文档介绍有关选择*不*使用 Win2D 的应用开发人员的指南。
 
-> **请注意**  DirectX Api 未定义为 Windows 运行时类型，因此您通常使用视觉对象C++组件扩展 (C++/CX) 来开发与 DirectX 互操作的 XAML UWP 组件。 此外，如果将 DirectX 调用包装在一个独立的 Windows 运行时元数据文件中，可以创建一个使用 DirectX 的 C# 和 XAML UWP 应用。
-
- 
+> [!NOTE]
+> DirectX api 未定义为 Windows 运行时类型，但你通常可以使用[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index)开发与 DirectX 互操作的 XAML UWP 组件。 此外，如果将 DirectX 调用包装在一个独立的 Windows 运行时元数据文件中，可以创建一个使用 DirectX 的 C# 和 XAML UWP 应用。
 
 ## <a name="xaml-and-directx"></a>XAML 和 DirectX
 
-DirectX 为二维和三维图形提供了两个功能强大的库：Direct2D 和 Microsoft Direct3D。 尽管 XAML 提供了对基本 2D 基元和效果的支持，但许多应用（例如建模和游戏应用）需要更复杂的图形支持。 对于这些应用，可以使用 Direct2D 和 Direct3D 呈现部分或全部图形，而使用 XAML 呈现所有其他内容。
+DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 Microsoft Direct3D。 尽管 XAML 提供了对基本 2D 基元和效果的支持，但许多应用（例如建模和游戏应用）需要更复杂的图形支持。 对于这些应用，可以使用 Direct2D 和 Direct3D 呈现部分或全部图形，而使用 XAML 呈现所有其他内容。
 
 如果要实现自定义 XAML 和 DirectX 互操作，需要知道以下两个概念：
 
@@ -45,7 +42,6 @@ DirectX 为二维和三维图形提供了两个功能强大的库：Direct2D 和
 -   如果你使用 DirectX 提供实时更新的图形，或者在必须以低延迟的定期间隔更新的情况下，可以使用 [SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 类，这样你无需同步到 XAML 框架刷新计时器即可刷新图形。 此类型使你能够直接访问图形设备的交换链 ([IDXGISwapChain1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1))，并将 XAML 放在呈现目标之上。 此类型很适合需要基于 XAML 的用户界面的游戏和全屏 DirectX 应用。 若要使用此方法，你必须熟悉 DirectX，包括 Microsoft DirectX 图形基础结构 (DXGI)、Direct2D 和 Direct3D 技术。 有关详细信息，请参阅 [Direct3D 11 编程指南](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews)。
 
 ## <a name="surfaceimagesource"></a>SurfaceImageSource
-
 
 [SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 提供要绘入的 DirectX 共享图面，然后将位编写到应用内容中。
 
@@ -369,9 +365,8 @@ DirectX 为二维和三维图形提供了两个功能强大的库：Direct2D 和
 若要确保良好的性能，[SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 类型有一些限制：
 
 -   每个应用的 [SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 实例不超过 4 个。
--   DirectX 交换链的高度和宽度应设置 (在[DXGI\_交换\_链\_DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) 的交换链元素的当前维度。 如果不这样做，将缩放显示内容 (使用**DXGI\_缩放\_STRETCH**) 以适应。
--   您必须将 DirectX 交换链的缩放模式设置 (在[DXGI\_交换\_链\_DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) 到**DXGI\_缩放\_STRETCH**。
--   不能设置 DirectX 交换链的 alpha 模式 (在[DXGI\_交换\_链\_DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) 到**DXGI\_ALPHA\_模式\_自左乘**。
+-   应将 DirectX 交换链的高度和宽度（在[DXGI \_SWAP \_CHAIN \_DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)）设置为交换链元素的当前尺寸。 如果不这样做，则会缩放显示内容（使用**DXGI \_SCALING \_STRETCH**）来容纳。
+-   必须将 DirectX 交换链的缩放模式（在[dxgi \_SWAP \_CHAIN \_DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)）设置为**dxgi \_SCALING \_STRETCH**。
 -   必须调用 [IDXGIFactory2::CreateSwapChainForComposition](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcomposition) 来创建 DirectX 交换链。
 
 你基于应用的需求来更新 [SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)，而不是 XAML 框架的更新。 如果需要将 **SwapChainPanel** 的更新与 XAML 框架的更新同步，可以注册 [Windows::UI::Xaml::Media::CompositionTarget::Rendering](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.compositiontarget.rendering) 事件。 否则，如果尝试通过与更新 **SwapChainPanel** 的线程不同的线程更新 XAML 元素，则必须考虑任何跨线程问题。
@@ -465,12 +460,4 @@ DirectX 为二维和三维图形提供了两个功能强大的库：Direct2D 和
 * [VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource)
 * [SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)
 * [ISwapChainPanelNative](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative)
-* [编程指南为 Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews)
-
- 
-
- 
-
-
-
-
+* [Direct3D 11 编程指南](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews)
