@@ -50,7 +50,7 @@ XAML 与大部分 XML 用法之间的一大区别在于，XAML 通常并非通�
 </Canvas>
 ```
 
-如果对象不包含其他对象，则可以通过使用一个自结束标记而不是打开/关闭对来声明对象元素： `<Canvas />`
+If the object does not contain other objects, you can declare the object element by using one self-closing tag instead of an opening/closing pair: <ph id="ph1">`&lt;Canvas /&gt;`</ph>
 
 ### <a name="containers"></a>容器
 
@@ -87,7 +87,7 @@ XAML 与大部分 XML 用法之间的一大区别在于，XAML 通常并非通�
 </UserControl ...>
 ```
 
-**请注意**  Some 结构不能声明为对象元素。 初始化文本不受支持，而且不能用作资源。 你必须使用属性语法才能在 XAML 中将属性设置为这些值。 这些类型包括：[**Duration**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Duration)、[**RepeatBehavior**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepeatBehavior)、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、[**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect) 和 [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)。
+<bpt id="p1">**</bpt>Note<ept id="p1">**</ept><ph id="ph1">  </ph>Some structures can't be declared as object elements. 初始化文本不受支持，而且不能用作资源。 你必须使用属性语法才能在 XAML 中将属性设置为这些值。 这些类型包括：[**Duration**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Duration)、[**RepeatBehavior**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepeatBehavior)、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、[**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect) 和 [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)。
 
 ## <a name="setting-properties"></a>设置属性
 
@@ -101,11 +101,11 @@ XAML 与大部分 XML 用法之间的一大区别在于，XAML 通常并非通�
 正如对于对象声明一样，此列表并不意味着可以使用所有的技术来设置属性。 一些属性仅支持一种技术。
 一些属性（例如，可以使用属性元素语法或特性语法的属性）可能支持多种技术。 可能的技术同时取决于属性和该属性所使用的对象类型。 在 Windows 运行时 API 引用中，你在“语法”部分将会看到可以使用的 XAML 用法。 有时还有可行的备用用法，但可能会比较繁琐。 我们通常不会显示这些繁琐用法，因为我们会尽量向你展示在 XAML 中使用该属性的最佳做法或实用方案。 对于可在 XAML 中设置的属性，已在其参考页面中有关“XAML 用法”的部分提供了供参考的 XAML 语法。
 
-某些对象上的某些属性不能通过任何方式设置为 XAML，只能使用代码进行设置。 这些属性通常更适于在代码隐藏文件中（而非 XAML 中）处理。
+Some properties on objects cannot be set in XAML by any means, and can only be set using code. 这些属性通常更适于在代码隐藏文件中（而非 XAML 中）处理。
 
 只读属性不能在 XAML 中设置。 即使在代码中，自有类型将必须支持一些其他方式（如构造函数重载、帮助程序方法或对计算属性的支持）才能进行设置。 计算的属性依赖于其他可设置属性的值，有时还依赖具有内置处理的事件；这些功能在依赖属性系统中可用。 有关依赖属性如何用于支持计算属性的详细信息，请参阅[依赖属性概述](dependency-properties-overview.md)。
 
-XAML 中的集合语法给人一种设置只读属性的感觉，但其实不是。 请参阅本主题后面的 "[集合语法](#collection-syntax)"。
+XAML 中的集合语法给人一种设置只读属性的感觉，但其实不是。 See "<bpt id="p1">[</bpt>Collection Syntax<ept id="p1">](#collection-syntax)</ept>" later in this topic.
 
 ### <a name="setting-a-property-by-using-attribute-syntax"></a>使用属性语法设置属性
 
@@ -121,19 +121,19 @@ XAML 中的集合语法给人一种设置只读属性的感觉，但其实不是
 
 一个对象的许多属性可使用属性元素语法设置。 属性元素看上去如下所示：`<`*object*`.`*property*`>`。
 
-若要使用属性元素语法，需要为想要设置的属性创建 XAML 属性元素。 在标准 XML 中，此元素仅被视为一个名称中包含一个点的元素。 但是，在 XAML 中，元素名称中的点将元素标识为属性元素，其*属性*应为支持对象模型实现中的*对象*的成员。 若要使用属性元素语法，必须可指定一个对象元素，才能“填充”属性元素标记。 属性元素将始终具有一些内容（单个元素、多个元素或内部文本）；任何点都不具有自结束属性元素。
+若要使用属性元素语法，需要为想要设置的属性创建 XAML 属性元素。 在标准 XML 中，此元素仅被视为一个名称中包含一个点的元素。 However, in XAML, the dot in the element name identifies the element as a property element, with <bpt id="p1">*</bpt>property<ept id="p1">*</ept> expected to be a member of <bpt id="p2">*</bpt>object<ept id="p2">*</ept> in a backing object model implementation. 若要使用属性元素语法，必须可指定一个对象元素，才能“填充”属性元素标记。 属性元素将始终具有一些内容（单个元素、多个元素或内部文本）；任何点都不具有自结束属性元素。
 
 在下面的语法中，*property* 是你想要设置的属性的名称，*propertyValueAsObjectElement* 是应当满足属性的值类型要求的单个对象元素。
 
-`<`*对象*`>`
+<ph id="ph1">`&lt;`</ph><bpt id="p1">*</bpt>object<ept id="p1">*</ept><ph id="ph2">`&gt;`</ph>
 
-`<`*对象*`.`*属性*`>`
+<ph id="ph1">`&lt;`</ph><bpt id="p1">*</bpt>object<ept id="p1">*</ept><ph id="ph2">`.`</ph><bpt id="p2">*</bpt>property<ept id="p2">*</ept><ph id="ph3">`&gt;`</ph>
 
-*propertyValueAsObjectElement*
+<bpt id="p1">*</bpt>propertyValueAsObjectElement<ept id="p1">*</ept>
 
-`</`*对象*`.`*属性*`>`
+<ph id="ph1">`&lt;/`</ph><bpt id="p1">*</bpt>object<ept id="p1">*</ept><ph id="ph2">`.`</ph><bpt id="p2">*</bpt>property<ept id="p2">*</ept><ph id="ph3">`&gt;`</ph>
 
-`</`*对象*`>`
+<ph id="ph1">`&lt;/`</ph><bpt id="p1">*</bpt>object<ept id="p1">*</ept><ph id="ph2">`&gt;`</ph>
 
 下面的示例使用属性元素语法来设置一个具有 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 对象元素 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill)。 （在 **SolidColorBrush** 内，[**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 被设置为一个属性。）此 XAML 的分析结果等同于前面使用属性语法设置 **Fill** 的 XAML 示例。
 
@@ -191,7 +191,7 @@ XAML 中的集合语法给人一种设置只读属性的感觉，但其实不是
 
 目前为止给出的所有语法都将属性设置为单一对象。 但是，许多 UI 场景要求一个给定的父元素可拥有多个子元素。 例如，一个输入窗体的 UI 需要多个文本框元素、一些标签以及可能一个“Submit”按钮。 如果打算使用一种编程对象模型访问多个这样的元素，它们通常是单个集合属性中的项，并非每个项都是不同属性的值。 XAML 支持多个子元素，还支持一种典型的支持集合模型，将使用集合类型的属性视为隐式的，并对一个集合类型的任何子元素执行特殊处理。
 
-许多集合属性还被标识为类的 XAML 内容属性。 隐式集合处理/XAML 内容语法组合在用于控件组合（如面板、视图或项目控件）的类型中经常看到。 例如，下面的示例演示了在[**system.windows.controls.stackpanel>** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)内组合两个对等 UI 元素时可能出现的最简单的 XAML。
+许多集合属性还被标识为类的 XAML 内容属性。 隐式集合处理/XAML 内容语法组合在用于控件组合（如面板、视图或项目控件）的类型中经常看到。 For example, the following example shows the simplest possible XAML for compositing two peer UI elements within a <bpt id="p1">[</bpt><bpt id="p2">**</bpt>StackPanel<ept id="p2">**</ept><ept id="p1">](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)</ept>.
 
 ```xml
 <StackPanel>
@@ -234,15 +234,15 @@ XAML 中的集合语法给人一种设置只读属性的感觉，但其实不是
 
 每种语法都支持你声明一个对象并在该对象上设置一个属性。 第一个示例是标记中的一个元素，但实际上 XAML 处理器分析此标记的过程包含多个步骤。
 
-首先，对象元素的存在表明必须实例化一个新 *objectName* 对象。 只有在存在这样的实例后，才能对其设置实例属性*propertyName* 。
+首先，对象元素的存在表明必须实例化一个新 *objectName* 对象。 Only after such an instance exists can the instance property <bpt id="p1">*</bpt>propertyName<ept id="p1">*</ept> be set on it.
 
 另一个 XAML 规则是元素的属性必须能够按照任何顺序进行设置。 例如，`<Rectangle Height="50" Width="100" />` 和 `<Rectangle Width="100"  Height="50" />` 之间没有区别。 使用哪种顺序只是样式问题。
 
-**请注意**，如果使用 "XML 编辑器" 之外的设计图面，则   XAML 设计器通常会升级排序约定，但可以在以后自由编辑该 XAML 来重新排序或引入新的属性。
+<bpt id="p1">**</bpt>Note<ept id="p1">**</ept><ph id="ph1">  </ph>XAML designers often promote ordering conventions if you use design surfaces other than the XML editor, but you can freely edit that XAML later, to reorder the attributes or introduce new ones.
 
 ## <a name="attached-properties"></a>附加属性
 
-XAML通过添加一个名为*附加属性*的语法元素对 XML 进行了扩展。 类似于属性元素语法，附加属性语法包含一个点，这个点对 XAML 分析具有特殊的含义。 具体而言，点分隔附加属性的提供程序和属性名称。
+XAML通过添加一个名为*附加属性*的语法元素对 XML 进行了扩展。 类似于属性元素语法，附加属性语法包含一个点，这个点对 XAML 分析具有特殊的含义。 Specifically, the dot separates the provider of the attached property, and the property name.
 
 在 XAML 中，使用语法 *AttachedPropertyProvider*.*PropertyName* 设置附加属性。以下是一个在 XAML 中设置附加属性 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 的示例：
 
@@ -265,9 +265,9 @@ XAML通过添加一个名为*附加属性*的语法元素对 XML 进行了扩展
 
 ## <a name="literal--values"></a>文字“{”值
 
-因为左大括号符号 \{ 是标记扩展序列的开头，所以，可以使用转义序列指定以 "\{" 开头的文本字符串值。 转义序列为 "\{ \}"。 例如，若要指定一个字符串值，该字符串值为单个左大括号，请将属性值指定为 "\{ \} \{"。 你还可以使用替代引号（例如，在 " **"** 分隔的属性**值中的**），以字符串形式提供 "\{" 值。
+Because the opening brace symbol <ph id="ph1">\{</ph> is the opening of the markup extension sequence, you use an escape sequence to specify a literal string value that starts with "<ph id="ph2">\{</ph>". The escape sequence is "<ph id="ph1">\{</ph><ph id="ph2">\}</ph>". For example, to specify a string value that is a single opening brace, specify the attribute value as "<ph id="ph1">\{</ph><ph id="ph2">\}</ph><ph id="ph3">\{</ph>". You can also use the alternative quotation marks (for example, a <bpt id="p1">**</bpt>'<ept id="p1">**</ept> within an attribute value delimited by <bpt id="p2">**</bpt>""<ept id="p2">**</ept>) to provide a "<ph id="ph1">\{</ph>" value as a string.
 
-**请注意**   "\\}" 也可以在带引号的属性中使用。
+<bpt id="p1">**</bpt>Note<ept id="p1">**</ept><ph id="ph1">  </ph>"<ph id="ph2">\\</ph>}" also works if it's inside a quoted attribute.
  
 ## <a name="enumeration-values"></a>枚举值
 
@@ -276,7 +276,7 @@ Windows 运行时 API 中的许多属性都使用枚举作为值。 如果成员
 -   请勿使用限定形式，因为它不起作用。 例如，下面的 XAML 无效：`<Button Visibility="Visibility.Visible"/>`
 -   请勿使用常量的值。 换句话说，请勿依赖显式或隐式依赖枚举定义方式的枚举的整数值。 尽管看似可行，但无论采用 XAML 形式还是代码形式，这都是不合适的做法，因为你依赖的可能是过渡实现的详细信息。 例如，请勿执行如下操作：`<Button Visibility="1"/>`。
 
-**请注意**  In 有关使用 XAML 和使用枚举的 api 的参考主题，请在**语法**的**属性值**部分中单击指向枚举类型的链接。 在指向枚举页面的此链接中，你可以发现该枚举的命名常量。
+<bpt id="p1">**</bpt>Note<ept id="p1">**</ept><ph id="ph1">  </ph>In reference topics for APIs that use XAML and use enumerations, click the link to the enumeration type in the <bpt id="p2">**</bpt>Property value<ept id="p2">**</ept> section of <bpt id="p3">**</bpt>Syntax<ept id="p3">**</ept>. 在指向枚举页面的此链接中，你可以发现该枚举的命名常量。
 
 枚举可以具有与标志相同的作用，即，它们可以被归类于 **FlagsAttribute**。 如果你需要将具有标志作用的枚举的值组合指定为一个 XAML 属性值，请使用每个枚举常量的名称，在每个名称之间加一个逗号 (,)，不要有任何多余的空格字符。 具有标志作用的属性在 Windows 运行时 XAML 词汇中并不常见，但 [**ManipulationModes**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationModes) 示例表明了支持以 XAML 的形式设置具有标志作用的枚举值。
 
@@ -286,7 +286,7 @@ Windows 运行时 API 中的许多属性都使用枚举作为值。 如果成员
 
 ## <a name="xaml-placeholder-conventions-in-windows-runtime-reference"></a>Windows 运行时参考中的 XAML 占位符约定
 
-参考主题中有针对可以使用 XAML 的 Windows 运行时 API 的“语法”部分，如果你阅读过其中某个部分，就可能会看到语法中包含很多占位符。 XAML 语法不同于C#、Microsoft Visual Basic 或 Visual C++ component extension （C++/cx）语法，因为 xaml 语法是使用语法。 它会提示你在自己的 XAML 文件中的最终用法，但不会过度规定可以使用的值。 因此，通常用法描述混合了文本和占位符的语法类型，并定义“XAML 值”部分中的某些占位符。
+参考主题中有针对可以使用 XAML 的 Windows 运行时 API 的“语法”部分，如果你阅读过其中某个部分，就可能会看到语法中包含很多占位符。 XAML syntax is different than the C#, Microsoft Visual Basic or Visual C++ component extensions (C++/CX) syntax because the XAML syntax is a usage syntax. 它会提示你在自己的 XAML 文件中的最终用法，但不会过度规定可以使用的值。 因此，通常用法描述混合了文本和占位符的语法类型，并定义“XAML 值”部分中的某些占位符。
 
 当你在某个属性的 XAML 语法中看到类型名称/元素名称时，显示的名称为最初定义该属性的类型的名称。 但 Windows 运行时 XAML 支持基于 [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) 的类的类继承模型。 因此，通常你可以使用以下类中的属性：该类从字面上看不属于定义类，但派生自首先定义该属性/特性的类。 例如，你可以将 [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) 设置为使用深度继承的任何 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 派生类上的属性。 例如：`<Button Visibility="Visible" />`。 因此，对于任意 XAML 用法语法中显示的元素名称，都不要过于拘泥于字面意思；该语法对于表示该类的元素以及表示派生类的元素也可能同样适用。 在类型很少或不能显示为采用真实用法的定义元素时，该类型名称在语法中刻意小写。 例如，你看到的 **UIElement.Visibility** 的语法为：
 
@@ -301,7 +301,7 @@ Windows 运行时 API 中的许多属性都使用枚举作为值。 如果成员
 XAML 用法部分还使用各种通用性占位符。 有些情况下，这些占位符可能并不需要在“XAML 值”中重新定义，因为你可以猜到或最终会了解到这些占位符代表的含义。 我们认为大部分读者不愿意在“XAML 值”中一再看到这些占位符，因而我们不定义这些占位符。 出于参考目的，下面列出了这些占位符中的部分占位符以及这些占位符的常规含义：
 
 -   *object*：从理论上讲是任意对象值，但实际上通常被限制为特定类型的对象（例如“字符串或对象”选择），并且应查看参考页面上的“备注”部分以获取更多信息。
--   *对象* *属性*：组合的*对象* *属性*用于所显示语法为可用作多个属性的属性值的类型的语法的情况。 例如，为[**画笔**](/uwp/api/Windows.UI.Xaml.Media.Brush)显示的**Xaml 特性用法**包括： <*对象* *属性*= "*predefinedColorName*"/>
+-   <bpt id="p1">*</bpt>object<ept id="p1">*</ept> <bpt id="p2">*</bpt>property<ept id="p2">*</ept>: <bpt id="p3">*</bpt>object<ept id="p3">*</ept> <bpt id="p4">*</bpt>property<ept id="p4">*</ept> in combination is used for cases where the syntax being shown is the syntax for a type that can be used as an attribute value for many properties. For example, the <bpt id="p1">**</bpt>Xaml Attribute Usage<ept id="p1">**</ept> shown for <bpt id="p2">[</bpt><bpt id="p3">**</bpt>Brush<ept id="p3">**</ept><ept id="p2">](/uwp/api/Windows.UI.Xaml.Media.Brush)</ept> includes: &lt;<bpt id="p4">*</bpt>object<ept id="p4">*</ept> <bpt id="p5">*</bpt>property<ept id="p5">*</ept>="<bpt id="p6">*</bpt>predefinedColorName<ept id="p6">*</ept>"/&gt;
 -   *eventhandler*：这将显示为为事件属性显示的每个 XAML 语法的属性值。 此处所提供的内容为事件处理程序函数的函数名。 该函数必须在 XAML 页面的代码隐藏中定义。 在编程级别上，该函数必须与你处理的事件的委派签名匹配，或者你的应用代码未编译。 但这实际是出于编程方面的考虑，而不是 XAML 方面的考虑，因此我们不尝试在 XAML 语法中暗示有关委派类型的任何内容。 如果你希望了解你应实现事件的哪个委托，请在标记为“委托”的表行中参阅该事件参考主题的“事件信息”部分。
 -   *enumMemberName*：显示在所有枚举的属性语法中。 存在使用枚举值的属性的类似占位符，但它通常为占位符附加该枚举的名称提示以作为前缀。 例如，为 [**FrameworkElement.FlowDirection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.flowdirection) 显示的语法为 <*frameworkElement***FlowDirection**="* flowDirectionMemberName*"/>。 如果你位于某个属性参考页面上，请在“类型:”字样旁边的“属性值”部分单击枚举类型的链接。 对于使用该枚举的属性的属性值，你可以使用“成员”列表的“成员”列中列出的任意字符串。
 -   *double*、*int*、*string*、*bool*：存在 XAML 语言已知的基元类型。 如果你使用 C# 或 Visual Basic 进行编程，则这些类型将映射到 Microsoft .NET 等价类型，例如 [**Double**](https://docs.microsoft.com/dotnet/api/system.double)、[**Int32**](https://docs.microsoft.com/dotnet/api/system.int32)、[**String**](https://docs.microsoft.com/dotnet/api/system.string) 和 [**Boolean**](https://docs.microsoft.com/dotnet/api/system.boolean)，并且在使用 .NET 代码隐藏中的 XAML 定义的值时你可以使用这些 .NET 类型上的任意成员。 如果你使用 C++/CX 进行编程，则可以使用 C++ 基元类型，但也可以考虑使用 [**Platform**](https://docs.microsoft.com/cpp/cppcx/platform-namespace-c-cx) 命名空间定义的类型的等价类型，例如 [**Platform::String**](https://docs.microsoft.com/cpp/cppcx/platform-string-class)。 有时，对于特定属性存在其他值限制。 但你通常会在“属性值”部分或“备注”部分（而非 XAML 部分）看到这些限制，因为所有此类限制都既适用于代码用法也适用于 XAML 用法。
@@ -314,7 +314,7 @@ XAML 用法部分还使用各种通用性占位符。 有些情况下，这些�
 ## <a name="related-topics"></a>相关主题
 
 * [XAML概述](xaml-overview.md)
-* [XAML 命名空间和命名空间映射](xaml-namespaces-and-namespace-mapping.md)
+* <bpt id="p1">[</bpt>XAML namespaces and namespace mapping<ept id="p1">](xaml-namespaces-and-namespace-mapping.md)</ept>
 * [ResourceDictionary 和 XAML 资源引用](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)
  
 

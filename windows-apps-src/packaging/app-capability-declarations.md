@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f12a83a2ad31972f344d95aa9dcfe1914eeb2b3b
-ms.sourcegitcommit: 82d202478ab4d3011c5ddd2e852958c34336830d
+ms.openlocfilehash: 167b388130ea02cc0613dc9638e93f0cde38eb46
+ms.sourcegitcommit: 860e8303da3e36624f603ce3273d68911c696e5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/22/2019
-ms.locfileid: "72715878"
+ms.locfileid: "72777280"
 ---
 # <a name="app-capability-declarations"></a>应用功能声明
 
@@ -59,6 +59,7 @@ ms.locfileid: "72715878"
 | **后台媒体播放** | **backgroundMediaPlayback** 功能更改了特定于媒体的 API（如 [**MediaPlayer**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer) 和 [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph) 类）的行为，支持应用在后台时的媒体播放。 所有活动音频流将不再静音，在应用转换到后台时将继续发声。 此外，播放进行时，应用生存时间将自动延长。
 | **远程系统** | **remoteSystem** 功能使应用有权访问与用户的 Microsoft 帐户关联的设备列表。 对于执行在设备间持续的任何操作，需要访问设备列表。 若要访问以下命名空间和方法中的所有成员，此功能是必需的。<ul><li>[RemoteSystems](https://docs.microsoft.com/uwp/api/windows.system.remotesystems)命名空间</li><li>[RemoteLauncher](https://docs.microsoft.com/uwp/api/Windows.System.RemoteLauncher)类</li><li>[AppServiceConnection. OpenRemoteAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appserviceconnection.openremoteasync)方法</li></ul> |
 | **空间感知** | **spatialPerception** 功能支持以编程方式访问空间映射数据，为混合现实应用提供有关用户附近空间中应用程序指定区域的表面信息。  请仅在你的应用明确会使用这些表面网格时再声明 spatialPerception 功能，因为混合现实应用在基于用户的头部姿势执行全息呈现时不需要此功能。 |
+| **全局媒体控件** | **GlobalMediaControl**功能允许应用访问整个系统中与[**SystemMediaTransportControls**](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls)集成的播放会话，以提供播放信息并允许远程控制。 使用[**Windows. Control**](https://docs.microsoft.com/uwp/api/windows.media.control)命名空间中的某些 api 需要此功能。 此功能在[uap7：功能](/uwp/schemas/appxpackage/uapmanifestschema/element-uap7-capability)元素中定义。  |
 
 ## <a name="device-capabilities"></a>设备功能
 
@@ -84,7 +85,7 @@ ms.locfileid: "72715878"
 | **串行通信** | **serialcommunication** 设备功能提供了对于 Windows.Devices.SerialCommunication 命名空间中的 API 的访问，这样 Windows 应用便可与公开了串行端口或串行端口的某些抽象的设备进行通信。 若要使用 [**Windows.Devices.SerialCommnication**](https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication) 命名空间中的 API，则需要该功能。 |
 | **目视跟踪器** | 在连接了兼容的目视跟踪设备时，**gazeInput** 功能允许应用在应用程序边界内检测用户正在查看的位置。 使用[**Windows. 输入**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.input.preview)命名空间中的某些 api 需要此功能。 |
 | **GPIO、I2C、SPI 和 PWM** | **LowLevel**设备功能提供对 GPIO、I2C、SPI 和 PWM 设备的访问权限。 使用以下命名空间中的 Api 需要此功能： [**windows. Gpio**](https://docs.microsoft.com/uwp/api/windows.devices.gpio)， [**windows. I2c**](https://docs.microsoft.com/uwp/api/windows.devices.i2c) [ **，Windows**](https://docs.microsoft.com/uwp/api/windows.devices.spi)...-[**Pwm**](https://docs.microsoft.com/uwp/api/windows.devices.pwm)。<br /><br />```<Capabilities><DeviceCapability Name="lowLevel"/></Capabilities>``` |
-| **全局媒体控件** | **GlobalMediaControl**功能允许应用访问整个系统中与[**SystemMediaTransportControls**](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls)集成的播放会话，以提供播放信息并允许远程控制。 使用[**Windows. Control**](https://docs.microsoft.com/uwp/api/windows.media.control)命名空间中的某些 api 需要此功能。 |
+
 
 <span id="special-and-restricted-capabilities" />
 
