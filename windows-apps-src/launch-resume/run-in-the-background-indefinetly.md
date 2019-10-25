@@ -2,16 +2,16 @@
 title: 在后台无限期运行
 description: 使用 extendedExecutionUnconstrained 功能可在后台无限期运行后台任务或扩展执行会话。
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: 扩展执行、 资源、 限制、 后台任务的后台任务
+keywords: 后台任务，扩展执行，资源，限制，后台任务
 ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: faac1d8d47ddcff4e5ec32d35f2e46bab7a3f4aa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dee95e02e43f3a541bd332f5150765ca76bb0955
+ms.sourcegitcommit: 234dce5fb67e435ae14eb0052d94ab01611ac5e4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630242"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72822453"
 ---
 # <a name="run-in-the-background-indefinitely"></a>在后台无限期运行
 
@@ -31,30 +31,30 @@ _Package.appxmanifest_
 ```xml
 <Package ...>
 ...
-  <Capabilities>  
-    <rescap:Capability Name="extendedExecutionUnconstrained"/>  
-  </Capabilities>  
+  <Capabilities>
+    <rescap:Capability Name="extendedExecutionUnconstrained"/>
+  </Capabilities>
 </Package>
 ```
 
 当你使用 `extendedExecutionUnconstrained` 功能时，会使用 [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) 和 [ExtendedExecutionForegroundReason](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason)，而不是使用 [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) 和 [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason)。 用于创建会话、设置成员以及异步请求扩展的相同模式仍然适用： 
 
 ```cs
-var newSession = new ExtendedExecutionForegroundSession();  
-newSession.Reason = ExtendedExecutionForegroundReason.Unconstrained;  
-newSession.Description = "Long Running Processing";  
-newSession.Revoked += SessionRevoked;  
-ExtendedExecutionResult result = await newSession.RequestExtensionAsync();  
-switch (result)  
-{  
-    case ExtendedExecutionResult.Allowed:  
-        DoLongRunningWork();  
-        break;  
+var newSession = new ExtendedExecutionForegroundSession();
+newSession.Reason = ExtendedExecutionForegroundReason.Unconstrained;
+newSession.Description = "Long Running Processing";
+newSession.Revoked += SessionRevoked;
+ExtendedExecutionResult result = await newSession.RequestExtensionAsync();
+switch (result)
+{
+    case ExtendedExecutionResult.Allowed:
+        DoLongRunningWork();
+        break;
 
-    default:  
-    case ExtendedExecutionResult.Denied:  
-        DoShortRunningWork();  
-        break;  
+    default:
+    case ExtendedExecutionResult.Denied:
+        DoShortRunningWork();
+        break;
 }
 ```
 
@@ -69,13 +69,13 @@ switch (result)  
 _Package.appxmanifest_
 ```xml
 <Package ...>
-   <Capabilities>  
-       <rescap:Capability Name="extendedBackgroundTaskTime"/>  
-   </Capabilities>  
+  <Capabilities>
+    <rescap:Capability Name="extendedBackgroundTaskTime"/>
+  </Capabilities>
 </Package>
 ```
 
-此功能将删除执行时间限制和空闲任务监视程序。 启动后台任务后，无论是通过触发器启动还是通过应用服务调用启动，一旦该任务对 **Run** 方法提供的 [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) 执行了延迟，就可以无限期运行。 如果将应用设置为**由 Windows 管理**，那么仍然可能会对它应用能耗配额，并且其后台任务在“节电模式”处于活动状态时将不会被激活。 这可以与 OS 设置更改。 [优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)中提供了详细信息。
+此功能将删除执行时间限制和空闲任务监视程序。 启动后台任务后，无论是通过触发器启动还是通过应用服务调用启动，一旦该任务对 **Run** 方法提供的 [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) 执行了延迟，就可以无限期运行。 如果将应用设置为**由 Windows 管理**，那么仍然可能会对它应用能耗配额，并且其后台任务在“节电模式”处于活动状态时将不会被激活。 可以通过 OS 设置更改此设置。 [优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)中提供了详细信息。
 
 通用 Windows 平台会监视后台任务执行情况，以确保电池使用时间长久并且拥有顺畅的前台应用体验。 但是，个人应用和企业业务线应用可以使用扩展执行和 **extendedBackgroundTaskTime** 功能，以创建只要需要就会运行而不考虑设备资源可用性的应用。
 
@@ -83,4 +83,4 @@ _Package.appxmanifest_
 
 ## <a name="see-also"></a>另请参阅
 
-[删除后台任务的资源限制](https://docs.microsoft.com/windows/application-management/enterprise-background-activity-controls)
+[删除后台任务资源限制](https://docs.microsoft.com/windows/application-management/enterprise-background-activity-controls)

@@ -18,7 +18,7 @@ ms.locfileid: "72695763"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>支持 WNS 流量的企业防火墙和代理配置
 
-## <a name="background"></a>后台
+## <a name="background"></a>背景
 许多企业使用防火墙来阻止不需要的网络流量;遗憾的是，这也会阻止 Windows 通知服务通信等重要事项。 这意味着，通过 WNS 发送的所有通知将在某些网络配置下被丢弃。 为避免出现这种情况，网络管理员可以将已批准的 WNS Fqdn 或 Vip 列表添加到其免除列表，以允许 WNS 流量通过防火墙。 下面更详细地介绍了如何以及如何添加哪些内容以及对不同代理类型的支持。
 
 ## <a name="proxy-support"></a>代理支持
