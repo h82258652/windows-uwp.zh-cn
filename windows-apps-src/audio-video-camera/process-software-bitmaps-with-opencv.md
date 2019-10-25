@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
-ms.openlocfilehash: ed8d6572fb280b2cfecf1cf035d68a739c5bc92d
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 349326ba458999b2b1e299e8260d52d608d5af1f
+ms.sourcegitcommit: e189166dea855ce330bd0634cc158b51cb4fbd69
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393514"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72811638"
 ---
 # <a name="process-bitmaps-with-opencv"></a>通过 OpenCV 处理位图
 
@@ -29,25 +29,25 @@ ms.locfileid: "70393514"
 
 ## <a name="create-a-helper-windows-runtime-component-for-opencv-interop"></a>创建 OpenCV 互操作的帮助器 Windows 运行时组件
 
-### <a name="1-add-a-new-native-code-windows-runtime-component-project-to-your-solution"></a>1.将新的本机代码 Windows 运行时组件项目添加到解决方案
+### <a name="1-add-a-new-native-code-windows-runtime-component-project-to-your-solution"></a>1. 向解决方案中添加新的本机代码 Windows 运行时组件项目
 
 1. 在“解决方案资源管理器”中右键单击你的解决方案并选择**添加->新建项目**即可在 Visual Studio 中为解决方案添加新项目。 
 2. 在 **Visual C++** 类别下，选择 **Windows 运行时组件（通用 Windows）** 。 在本示例中，将项目命名为“OpenCVBridge”并单击**确定**。 
 3. 在**新建 Windows 通用项目**对话框中，为你的应用选择目标和最低操作系统版本，然后单击**确定**。
 4. 在“解决方案资源管理器”中右键单击自动生成的文件 Class1.cpp 并选择**删除**，弹出确认对话框后，选择**删除**。 然后删除 Class1.h 头文件。
-5. 右键单击 "OpenCVBridge 项目" 图标，然后选择 "**外 > 类 ...** "。在 "**添加类**" 对话框中，在 "**类名**" 字段中输入 "OpenCVHelper"，然后单击 **"确定**"。 代码将在后续步骤中添加到已创建的类文件中。
+5. 右键单击 OpenCVBridge 项目图标并选择**添加->类...** 。在**添加类**对话框的**类名称**字段中输入“OpenCVHelper”并单击**确定**。 代码将在后续步骤中添加到已创建的类文件中。
 
-### <a name="2-add-the-opencv-nuget-packages-to-your-component-project"></a>2.将 OpenCV NuGet 包添加到组件项目
+### <a name="2-add-the-opencv-nuget-packages-to-your-component-project"></a>2. 将 OpenCV NuGet 包添加到你的组件项目
 
 1. 在解决方案资源管理器中右键单击 OpenCVBridge 项目图标，然后选择**管理 NuGet 包...**
 2. 当 NuGet 包管理器对话框打开后，选择**浏览**选项卡并在搜索框中键入“OpenCV.Win”。
 3. 选择“OpenCV.Win.Core”并单击**安装**。 在**预览**对话框中，单击**确定**。
 4. 使用相同的步骤安装“OpenCV.Win.ImgProc”包。
 
-> [!NOTE]
-> OpenCV.Win.Core 和 OpenCV.Win.ImgProc 不会定期更新，但仍建议安装这两个包，用于创建 OpenCVHelper，如本页所述。
+>[!NOTE]
+>OpenCV 和 OpenCV 不会定期更新，也不会通过应用商店合规性检查，因此这些包仅适用于试验。
 
-### <a name="3-implement-the-opencvhelper-class"></a>3.实现 OpenCVHelper 类
+### <a name="3-implement-the-opencvhelper-class"></a>3. 实现 OpenCVHelper 类
 
 将以下代码粘帖到 OpenCVHelper.h 头文件中。 此代码包含已安装的 *Core* 和 *ImgProc* 包的 OpenCV 头文件，并声明三种将在后续步骤中展示的方法。
 
@@ -82,7 +82,7 @@ ms.locfileid: "70393514"
 
 
 ## <a name="a-simple-softwarebitmap-opencv-example-using-the-helper-component"></a>有关使用帮助程序组件的简单 SoftwareBitmap OpenCV 示例
-现在已创建了 OpenCVBridge 组件，我们就可以创建一个使用 OpenCV **模糊**方法修改 **SoftwareBitmap** 的简单 C# 应用。 若要从 UWP 应用访问 Windows 运行时组件，必须首先添加对该组件的引用。 在解决方案资源管理器中，右键单击 UWP 应用项目下的 "**引用**" 节点，然后选择 "**添加引用 ...** "。在 "引用管理器" 对话框中，选择 "**项目-> 解决方案**"。 选中 OpenCVBridge 项目旁边的框并单击**确定**。
+现在已创建了 OpenCVBridge 组件，我们就可以创建一个使用 OpenCV **模糊**方法修改 **SoftwareBitmap** 的简单 C# 应用。 若要从 UWP 应用访问 Windows 运行时组件，必须首先添加对该组件的引用。 在“解决方案资源管理器”中，右键单击 UWP 应用项目下的**引用**节点并选择**添加引用...** 。在“引用管理器”中，选择**项目->解决方案**。 选中 OpenCVBridge 项目旁边的框并单击**确定**。
 
 以下示例代码使用户能够选择一个图像文件，然后使用 **[BitmapDecoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)** 创建图像的 **SoftwareBitmap** 表示。 有关使用 **SoftwareBitmap** 的详细信息，请参阅[创建、编辑和保存位图图像](https://docs.microsoft.com/windows/uwp/audio-video-camera/imaging)。
 

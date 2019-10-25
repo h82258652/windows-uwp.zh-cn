@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
-ms.openlocfilehash: e5a1993ea4808cabf9f82640f03f0187d431f3d2
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: e8f4fd041eae30269e8b876c108151e4aae45d91
+ms.sourcegitcommit: e189166dea855ce330bd0634cc158b51cb4fbd69
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393507"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72811653"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>通过 MediaFrameReader 使用开放源计算机视觉库 (OpenCV)
 
 本文介绍了如何通过 [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) 类（可同时读取多个源中的媒体帧）使用开放源计算机视觉库 (OpenCV)，后者是一个本机代码库，可提供各类图像处理算法。 本文中的示例代码向你展示了一款简单的应用，该应用可通过颜色传感器获取帧，使用 OpenCV 库模糊每帧，然后在 XAML **Image** 控件中显示经过处理的图像。 
 
 >[!NOTE]
->OpenCV.Win.Core 和 OpenCV.Win.ImgProc 不会定期更新，但仍建议安装这两个包，用于创建 OpenCVHelper，如本页所述。
+>OpenCV 和 OpenCV 不会定期更新，也不会通过应用商店合规性检查，因此这些包仅适用于试验。
 
 本文基于其他两篇文章的内容：
 
@@ -65,10 +65,10 @@ ms.locfileid: "70393507"
 ## <a name="related-topics"></a>相关主题
 
 * [摄像头](camera.md)
-* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [处理媒体帧与 MediaFrameReader](process-media-frames-with-mediaframereader.md)
+* [带有 MediaCapture 的基本照片、视频和音频捕获](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [用 MediaFrameReader 处理媒体帧](process-media-frames-with-mediaframereader.md)
 * [用 OpenCV 处理软件位图](process-software-bitmaps-with-opencv.md)
-* [相机帧示例](https://go.microsoft.com/fwlink/?LinkId=823230)
+* [照相机框架示例](https://go.microsoft.com/fwlink/?LinkId=823230)
 * [照相机相框 + OpenCV 示例](https://go.microsoft.com/fwlink/?linkid=854003)
  
 
