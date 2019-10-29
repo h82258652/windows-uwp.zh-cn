@@ -1,17 +1,17 @@
 ---
 ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
 title: 优化 XAML 标记
-description: 在内存中分析构造对象的 XAML 标记对于复杂的 UI 而言非常耗时。 你可以采取以下措施为你的应用提高 XAML 标记分析和加载时间以及内存效率。
+description: 在内存中分析构造对象的 XAML 标记对于复杂的 UI 而言非常耗时。 你可以通过以下措施为你的应用缩短 XAML 标记分析和加载时间及提高内存效率。
 ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f46967cd26f10510e2620229fee0eec13ca7f52a
-ms.sourcegitcommit: 7bbc24d770bf23a8d7e2b234503aad743eb354f3
+ms.openlocfilehash: beb6dde4036019e004d94e5f60e8f3583c78d775
+ms.sourcegitcommit: de34aabd90a92a083dfa17d4f8a98578597763f4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67852058"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72980028"
 ---
 # <a name="optimize-your-xaml-markup"></a>优化 XAML 标记
 
@@ -126,7 +126,7 @@ ListView 及其子元素不加载到内存。
 
 布局面板具有 [Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.background) 属性，因此无需只是为了将面板着色而将 [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 置于 Panel 前。
 
-**效率低下**
+**低**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -135,7 +135,7 @@ ListView 及其子元素不加载到内存。
 </Grid>
 ```
 
-**Efficient**
+**低下**
 
 ```xaml
 <Grid Background="Black"/>
@@ -145,7 +145,7 @@ ListView 及其子元素不加载到内存。
 
 ### <a name="use-images-in-place-of-vector-based-elements"></a>使用图像代替基于矢量的元素
 
-如果重用同一基于矢量的元素的次数足够多，则改为使用 [Image](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image) 元素将会更加高效。 基于矢量的元素更加耗费资源，因为 CPU 必须分别创建每个单独的元素。 图像文件仅需要解码一次。
+如果重用同一基于矢量的元素的次数足够多，则改为使用[图像](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image) 元素将会更加高效。 基于矢量的元素更加耗费资源，因为 CPU 必须分别创建每个单独的元素。 图像文件仅需要解码一次。
 
 ## <a name="optimize-resources-and-resource-dictionaries"></a>优化资源和资源字典
 
@@ -159,7 +159,7 @@ ListView 及其子元素不加载到内存。
 
 ### <a name="resourcedictionary-in-a-usercontrol"></a>UserControl 中的 ResourceDictionary
 
-在 [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) 内部定义的 ResourceDictionary 会产生负面影响。 平台将为 UserControl 的每个实例创建此类 ResourceDictionary 的副本。 如果有大量使用 UserControl，然后将从 UserControl ResourceDictionary，并将其放在页面级别。
+在 [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) 内部定义的 ResourceDictionary 会产生负面影响。 平台将为 UserControl 的每个实例创建此类 ResourceDictionary 的副本。 如果使用了大量使用的 UserControl，请将 ResourceDictionary 移出 UserControl，并将其放在页面级别。
 
 ### <a name="resource-and-resourcedictionary-scope"></a>资源和 ResourceDictionary 范围
 
@@ -167,7 +167,7 @@ ListView 及其子元素不加载到内存。
 
 在这里，因为 _InitialPage.xaml_ 使用了 _ExampleResourceDictionary.xaml_ 中的一个资源，因此在启动时必须分析整个 _ExampleResourceDictionary.xaml_。
 
-**InitialPage.xaml。**
+**InitialPage。**
 
 ```xaml
 <Page x:Class="ExampleNamespace.InitialPage" ...>
@@ -185,7 +185,7 @@ ListView 及其子元素不加载到内存。
 </Page>
 ```
 
-**ExampleResourceDictionary.xaml。**
+**ExampleResourceDictionary。**
 
 ```xaml
 <ResourceDictionary>
@@ -196,7 +196,7 @@ ListView 及其子元素不加载到内存。
 </ResourceDictionary>
 ```
 
-如果在应用中的许多页面上都使用了某个资源，将其存储在 _App.xaml_ 中是一个很好的方法，并且可以避免重复。 但 _App.xaml_ 将在启动时进行分析，因此任何仅在一个页面（除非该页面是初始页面）中使用的资源都应放置于页面的本地资源中。 此示例演示的 _App.xaml_ 包含仅由一个页面（非初始页面）使用的资源。 这会不必要地增加了应用启动时间。
+如果在应用中的许多页面上都使用了某个资源，将其存储在 _App.xaml_ 中是一个很好的方法，并且可以避免重复。 但 _App.xaml_ 将在启动时进行分析，因此任何仅在一个页面（除非该页面是初始页面）中使用的资源都应放置于页面的本地资源中。 此示例演示的 _App.xaml_ 包含仅由一个页面（非初始页面）使用的资源。 这会不必要地增加应用启动时间。
 
 **App.xaml**
 
@@ -212,7 +212,7 @@ ListView 及其子元素不加载到内存。
 </Application>
 ```
 
-**InitialPage.xaml。**
+**InitialPage。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -223,7 +223,7 @@ ListView 及其子元素不加载到内存。
 </Page>
 ```
 
-**SecondPage.xaml.**
+**SecondPage。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -234,13 +234,13 @@ ListView 及其子元素不加载到内存。
 </Page>
 ```
 
-若要使此示例更有效率，可以将 `SecondPageTextBrush` 移动到 _SecondPage.xaml_ 中，然后将 `ThirdPageTextBrush` 移动到 _ThirdPage.xaml_ 中。 `InitialPageTextBrush` 可以保留在_App.xaml_因为在应用启动时必须在任何情况下分析应用程序资源。
+若要使此示例更有效率，可以将 `SecondPageTextBrush` 移动到 _SecondPage.xaml_ 中，然后将 `ThirdPageTextBrush` 移动到 _ThirdPage.xaml_ 中。 `InitialPageTextBrush` 可以保留在_app.xaml_中，因为在任何情况下都必须在应用程序启动时分析应用程序资源。
 
 ### <a name="consolidate-multiple-brushes-that-look-the-same-into-one-resource"></a>将看起来相同的多个画笔整合到一个资源中
 
 XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这些对象。 但是，XAML 难以判断在一部分标记中声明的画笔是否与在另一部分的标记中声明的画笔相同。 此处的示例使用 [SolidColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 进行演示，但使用 [GradientBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientBrush) 的情况可能性更大也更为重要。 还需检查使用预定义颜色的画笔；例如：`"Orange"` 和 `"#FFFFA500"` 是同一颜色。
 
-**效率低下。**
+**低.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -250,7 +250,7 @@ XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这
             <TextBlock.Foreground>
                 <SolidColorBrush Color="#FFFFA500"/>
             </TextBlock.Foreground>
-        </TextBox>
+        </TextBlock>
         <Button Content="Submit">
             <Button.Foreground>
                 <SolidColorBrush Color="#FFFFA500"/>
@@ -262,7 +262,7 @@ XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这
 
 若要解决重复问题，请将画笔定义为资源。 如果其他页面中的控件使用了同一画笔，请将该画笔移动到 _App.xaml_ 中。
 
-**高效。**
+**低下.**
 
 ```xaml
 <Page ... >
@@ -291,7 +291,7 @@ XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这
 
 使用合成元素，而不是通过将多个元素分层来创建某个效果。 在此示例中，结果是双色的形状，上半部分是黑色（来自 [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 的背景），而下半部分是灰色（来自 **Grid** 黑色背景上的半透明白色 [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) Alpha 混合）。 此处填充了实现效果所需的 150% 的像素。
 
-**效率低下。**
+**低.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -304,7 +304,7 @@ XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这
 </Grid>
 ```
 
-**高效。**
+**低下.**
 
 ```xaml
 <Grid>
@@ -321,7 +321,7 @@ XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这
 
 布局面板可以有两个目的：为区域着色，以及设置子元素的布局。 如果 Z 顺序中较为后面的元素已经为区域着色，则前面的布局面板无需再绘制该区域：它可以只专注于设置其子元素的布局。 下面提供了一个示例。
 
-**效率低下。**
+**低.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -334,7 +334,7 @@ XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这
 </GridView>
 ```
 
-**高效。**
+**低下.**
 
 ```xaml
 <GridView Background="Blue">
@@ -352,7 +352,7 @@ XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这
 
 使用 [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border) 元素绘制对象周围的边框。 在此示例中，[Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 用作 [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 周围的临时边框。 但中心单元的所有像素要进行过度绘制。
 
-**效率低下。**
+**低.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -371,7 +371,7 @@ XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这
 </Grid>
 ```
 
-**高效。**
+**低下.**
 
 ```xaml
  <Border BorderBrush="Blue" BorderThickness="5" Width="300" Height="45">
@@ -387,7 +387,7 @@ XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这
 
 过度绘制的另一个来源是由许多重叠元素形成的形状。 如果针对包含合成形状的 [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)，将 [CacheMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CacheMode) 设置为 **BitmapCache**，平台会将该元素作为位图呈现一次，然后每帧使用该位图而不是过度绘制。
 
-**效率低下。**
+**低.**
 
 ```xaml
 <Canvas Background="White">
@@ -403,7 +403,7 @@ XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这
 
 ![显示重叠区域的维恩图](images/translucentvenn.png)
 
-**高效。**
+**低下.**
 
 ```xaml
 <Canvas Background="White" CacheMode="BitmapCache">
@@ -425,7 +425,7 @@ XBF2 是在运行时避免所有文本分析成本的 XAML 标记的二进制表
 
 ## <a name="related-articles"></a>相关文章
 
-- [应用程序的启动性能的最佳做法](best-practices-for-your-app-s-startup-performance.md)
+- [适用于应用的启动性能的最佳实践](best-practices-for-your-app-s-startup-performance.md)
 - [优化 XAML 布局](optimize-your-xaml-layout.md)
 - [ListView 和 GridView UI 优化](optimize-gridview-and-listview.md)
 - [用于分析和性能的工具](tools-for-profiling-and-performance.md)
