@@ -1,17 +1,17 @@
 ---
-title: 面向开发人员的 Windows 10 的新增功能、工具和功能
+title: Windows 10 内部版本 17763 中的新增功能
 description: Windows 10 内部版本 17763 和新的开发人员工具提供由通用 Windows 平台支持的工具、功能和体验。
 keywords: 新增功能, 新功能, 刷新, 功能, 新, Windows 10, 最新, 开发人员, 17763
 ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: faf3cdc1a3fab3bd0332b995c25b081d296a55bb
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: c7387a7a66d2492bf6f228c662a48b19a19afe3d
+ms.sourcegitcommit: a7740ebb14c98cd5afadd52db5cf714522821b49
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682770"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72893023"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>面向开发人员的 Windows 10 内部版本 17763 中的新增功能
 

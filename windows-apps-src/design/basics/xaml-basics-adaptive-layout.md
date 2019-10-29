@@ -5,12 +5,12 @@ keywords: XAML, UWP, 入门
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 67d5861e65a85a07cdda486ddb9c9634c388e819
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 71c04725fed4ab9d5d2158f2f892af038aefc8fd
+ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820458"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72680752"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教程：创建自适应布局
 
@@ -46,11 +46,15 @@ ms.locfileid: "67820458"
     **如果你不熟悉 GitHub:**
     
     a. 单击“下载 ZIP”  并在本地保存文件。 这将下载一个包含你需要的所有项目文件的 .zip 文件。
-    b. 将该文件解压缩。 使用文件资源管理器导航到你刚才下载的 .zip 文件，右键单击它，然后选择“全部解压缩…”  。c. 导航到示例的本地副本，然后访问 `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout` 目录。    
+
+    b. 将该文件解压缩。 使用文件资源管理器导航到你刚才下载的 .zip 文件，右键单击它，然后选择“全部解压缩…”  。 
+
+    c. 导航到示例的本地副本，然后访问 `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout` 目录。    
 
     **如果你熟悉 GitHub：**
 
     a. 在本地克隆 repo 的主分支。
+
     b. 导航到 `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout` 目录。
 
 3. 通过单击 `Photolab.sln` 打开项目。

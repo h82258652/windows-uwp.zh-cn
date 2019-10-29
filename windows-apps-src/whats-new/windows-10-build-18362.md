@@ -1,17 +1,17 @@
 ---
-title: 面向开发人员的 Windows 10 中的新增功能
+title: Windows 10 内部版本 18362 中的新增功能
 description: Windows 10 内部版本 18362 和新的开发人员工具提供由通用 Windows 平台支持的工具、功能和体验。
 keywords: 新增功能, 新功能, 更新, 刷新, 功能, 新, Windows 10, 最新, 开发人员, 18362, 五月
 ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4e92afd112ce7600bcfa650e0bb3bbeffabd7bd0
-ms.sourcegitcommit: f120968069702a7210756b508dabc4a1a8c20d53
+ms.openlocfilehash: f95193b1bbf50165619fb6c7b7222ed36853d2e2
+ms.sourcegitcommit: a7740ebb14c98cd5afadd52db5cf714522821b49
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72438215"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72893039"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-18362"></a>面向开发人员的 Windows 10 内部版本 18362 中的新增功能
 

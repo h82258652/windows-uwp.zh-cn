@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, async, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dd6ac2760189578932fc22db89c7091f2e527ab
-ms.sourcegitcommit: 8179902299df0f124dd770a09a5a332397970043
+ms.openlocfilehash: 06fadae3e33da3289726f45e7222617d51843015
+ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68428638"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72816682"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>使用 C++/WinRT 执行并发和异步操作
 
@@ -112,7 +112,7 @@ int main()
 
 也可以通过使用委托来处理异步操作的已完成和/或正在进行中的事件。 有关详细信息和代码示例，请参阅[异步操作的委托类型](handle-events.md#delegate-types-for-asynchronous-actions-and-operations)。
 
-## <a name="asychronously-return-a-windows-runtime-type"></a>异步返回 Windows 运行时类型
+## <a name="asynchronously-return-a-windows-runtime-type"></a>异步返回 Windows 运行时类型
 
 在下一个示例中，我们将针对特定 URI 封装对 **RetrieveFeedAsync** 的调用，以为我们提供异步返回 [**SyndicationFeed**](/uwp/api/windows.web.syndication.syndicationfeed) 的 **RetrieveBlogFeedAsync** 函数。
 
@@ -170,7 +170,7 @@ IAsyncOperation<winrt::hstring> ReadAsync()
 }
 ``` 
 
-## <a name="asychronously-return-a-non-windows-runtime-type"></a>异步返回非 Windows 运行时类型
+## <a name="asynchronously-return-a-non-windows-runtime-type"></a>异步返回非 Windows 运行时类型
 
 如果要异步返回非 Windows 运行时类型的类型，则应返回并行模式库 (PPL) [**concurrency::task**](/cpp/parallel/concrt/reference/task-class)。  建议使用 **concurrency::task**，因为它将提供比 **std::future** 更好的性能（以及更好的兼容性）。
 

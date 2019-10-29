@@ -1,16 +1,16 @@
 ---
-title: 面向开发人员的 Windows 10 的新增功能、工具和功能
+title: Windows 10 内部版本 17134 中的新增功能
 description: Windows 10 内部版本 17134 和新的开发人员工具提供由通用 Windows 平台支持的工具、功能和体验。
 keywords: 新增功能, 新功能, 更新, 刷新, 功能, 新, Windows 10, 最新, 开发人员, 17134
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dc35dc50b8dc523aff5478b3ec19c3daeed9dafb
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 797129b62217b9deb74781638b302c59192b7e9a
+ms.sourcegitcommit: a7740ebb14c98cd5afadd52db5cf714522821b49
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820451"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72893031"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>面向开发人员的 Windows 10 内部版本 17134 中的新增功能
 

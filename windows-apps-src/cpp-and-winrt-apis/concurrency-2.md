@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, async, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: 9484b61aae91ae426efb1963cd37ebf276ef7c6c
-ms.sourcegitcommit: f8634aad3a3675c2f0eac62f56df3def4285a7b0
+ms.openlocfilehash: 4a671a319be49e07d3a8fcdacb569c4ae76e299b
+ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71720434"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72816670"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>C++/WinRT 的更高级并发和异步
 
@@ -359,7 +359,7 @@ winrt::fire_and_forget RunAsync(DispatcherQueue queue)
 
 因此，在将 C++/WinRT 与协同程序配合使用的情况下，尤其是在进行一些传统的 Petzold 样式桌面应用程序开发的情况下，你拥有很大的控制权限。
 
-## <a name="canceling-an-asychronous-operation-and-cancellation-callbacks"></a>取消异步操作和取消回调
+## <a name="canceling-an-asynchronous-operation-and-cancellation-callbacks"></a>取消异步操作和取消回调
 
 使用 Windows 运行时的异步编程功能可以取消正在进行的异步操作或运算。 以下示例调用 [**StorageFolder::GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) 来检索可能较大的文件集合，并将生成的异步操作对象存储在数据成员中。 用户可以选择取消该操作。
 

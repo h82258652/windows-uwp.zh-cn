@@ -5,12 +5,12 @@ keywords: XAML, UWP, 入门
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 804f1994e187d3b09ed4dcb2186105cf615f5de0
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: f2c63c90170a633ae718db618c502efa41fb3f7d
+ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820504"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72680767"
 ---
 # <a name="tutorial-create-custom-styles"></a>教程：创建自定义样式
 
@@ -36,10 +36,7 @@ PhotoLab 应用有两个主要页面：
 
 在本教程的第一部分，我们会将一些照片编辑控件变得生动有趣。 
 
-<figure>
-    <img src="../basics/images/xaml-basics/slider-start.png" />
-    <figure>采用默认样式的小滑块。 </figure>
-</figure>
+![采用默认样式的小滑块。](../basics/images/xaml-basics/slider-start.png)
 
 这些滑块很棒，它们能够执行滑块应该执行的所有操作，但不是很精致。 让我们来解决这个问题。 
 
@@ -748,8 +745,7 @@ XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量
             Grid.Row="2" Background="Transparent" Foreground="Transparent"
             Value="{x:Bind item.Exposure, Mode=TwoWay}"
             Minimum="-2"
-            Maximum="2"
-            Template="{StaticResource FancySliderControlTemplate}"/>    
+            Maximum="2" />    
     ```
     
     **之后**
