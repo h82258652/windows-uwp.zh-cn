@@ -1,31 +1,31 @@
 ---
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: 本部分介绍如何修改 PlayReady web 应用程序，以支持从以前的 Windows 8.1 版本到 Windows 10 版本所做的更改。
+description: 本部分介绍如何修改 PlayReady web 应用，以支持从上一 Windows 8.1 版本到 Windows 10 版本所做的更改。
 title: PlayReady 加密媒体扩展
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ad304d22fd1c519f7364ac69882eeaac9fa1a5c7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9f4d72050ca30271a0ad2c6c2c39c857e2c10550
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360709"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061949"
 ---
 # <a name="playready-encrypted-media-extension"></a>PlayReady 加密媒体扩展
 
 
 
-本部分介绍如何修改 PlayReady web 应用程序，以支持从以前的 Windows 8.1 版本到 Windows 10 版本所做的更改。
+本部分介绍如何修改 PlayReady web 应用，以支持从上一 Windows 8.1 版本到 Windows 10 版本所做的更改。
 
 通过在 Internet Explorer 中使用 PlayReady 媒体元素，开发人员可以在强制执行内容提供商定义的访问规则的同时，创建能够向用户提供 PlayReady 内容的 Web 应用。 本部分介绍如何仅使用 HTML5 和 JavaScript 将 PlayReady 媒体元素添加到现有 Web 应用。
 
 ## <a name="whats-new-in-playready-encrypted-media-extension"></a>PlayReady 加密媒体扩展中的新增功能
 
-本部分提供了一组所做更改到 PlayReady 加密媒体扩展 (EME) 才能启用 Windows 10 上的 PlayReady 内容保护。
+本部分提供对 PlayReady 加密媒体扩展（EME）所做更改的列表，以便在 Windows 10 上启用 PlayReady 内容保护。
 
-以下列表介绍了新增功能和对 PlayReady 加密媒体扩展适用于 Windows 10 所做的更改：
+以下列表描述了对适用于 Windows 10 的 PlayReady 加密媒体扩展所做的新功能和更改：
 
 -   添加了硬件数字版权管理 (DRM)。
 
@@ -34,10 +34,10 @@ ms.locfileid: "66360709"
 -   可主动获取非永久性许可证。
 -   在一条消息中可获取多个许可证。
 
-    可以使用多个密钥标识符 (KeyIDs) 与 Windows 8.1 一样使用 PlayReady 对象也可以使用[内容解密模型数据 (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819)与多个 KeyIDs。
+    你可以使用包含多个密钥标识符（KeyIDs）的 PlayReady 对象，Windows 8.1 中使用，也可以将[内容解密模型数据（CDMData）](https://go.microsoft.com/fwlink/p/?LinkID=626819)与多个 KeyIDs 一起使用。
 
     > [!NOTE]
-    > 在 Windows 10 中，多个密钥标识符支持下&lt;KeyID&gt; CDMData 中。
+    > 在 Windows 10 中，在 CDMData 中 &lt;KeyID&gt; 下支持多个密钥标识符。
 
 -   添加了实时到期支持，或有限持续时间许可证 (LDL)。
 
@@ -90,7 +90,7 @@ ms.locfileid: "66360709"
 设置演示文稿正常结束的安全停止：
 
 1.  在开始播放前，先注册 **onEnded** 事件。
-2.  **onEnded** 事件处理程序需要从视频/音频元素对象中调用 `removeAttribute(“src”)`，以将源设置为 **NULL**，它可以触发媒体基础以关闭拓扑、销毁解密器以及设置停止状态。
+2.  **onEnded** 事件处理程序需要从视频/音频元素对象中调用 `removeAttribute("src")`，以将源设置为 **NULL**，它可以触发媒体基础以关闭拓扑、销毁解密器以及设置停止状态。
 3.  可以启动处理程序中的安全停止 CDM 会话，向服务器发送安全停止质询，以通知播放在此时已停止，但此操作也可以稍后执行。
 
 在用户导航离开页面或者关闭选项卡或浏览器时设置安全停止：
@@ -262,13 +262,13 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 ```
 
 > [!NOTE]
-> 安全停止数据`<SessionID>B64 encoded session ID</SessionID>`上面的示例中可以是一个星号 (\*)，这是一个通配符记录的所有安全停止会话。 即**SessionID**标记可以是特定会话或通配符 (\*) 以选择所有安全停止会话。
+> 上面示例中的安全停止数据 `<SessionID>B64 encoded session ID</SessionID>` 可以是星号（\*），这是记录的所有安全停止会话的通配符。 也就是说， **SessionID**标记可以是特定的会话，也可以是通配符（\*）以选择所有安全的停止会话。
 
 ## <a name="programming-considerations-for-encrypted-media-extension"></a>加密媒体扩展的编程注意事项
 
-本部分列出了适用于 Windows 10 创建启用了 PlayReady 的 web 应用时应考虑的编程注意事项。
+本部分列出了为 Windows 10 创建启用 PlayReady 的 web 应用时应考虑的编程注意事项。
 
-应用创建的 **MSMediaKeys** 和 **MSMediaKeySession** 对象必须保持活动状态，直到你的应用关闭。 确保这些对象保持活动状态的一种方法是将它们作为全局变量分配（如果声明为函数内的本地变量，这些变量将超出范围并遵循垃圾回收）。 例如，下面的示例将变量*g\_msMediaKeys*并*g\_mediaKeySession*全局变量，这会分配给**MSMediaKeys**并**MSMediaKeySession**函数中的对象。
+应用创建的 **MSMediaKeys** 和 **MSMediaKeySession** 对象必须保持活动状态，直到你的应用关闭。 确保这些对象保持活动状态的一种方法是将它们作为全局变量分配（如果声明为函数内的本地变量，这些变量将超出范围并遵循垃圾回收）。 例如，以下示例将变量*g\_msMediaKeys*和*g\_mediaKeySession*分配为全局变量，**然后将其**分配给才能.
 
 ``` syntax
 var g_msMediaKeys;
@@ -298,7 +298,7 @@ function foo() {
 
 有关详细信息，请参阅[示例应用程序](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 - [PlayReady DRM](playready-client-sdk.md)
 
 

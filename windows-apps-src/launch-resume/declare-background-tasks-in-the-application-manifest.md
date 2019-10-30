@@ -6,22 +6,22 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: 471c2851f72027c364fdd0c9c295c8c9babe17c5
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cf114ed3d2ffce95f9e9aba6ceb222029d23819c
+ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366182"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73052029"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在应用程序清单中声明后台任务
 
 
 
 
-**重要的 Api**
+**重要的 API**
 
 -   [**BackgroundTasks 架构**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [**Windows.applicationmodel.resources.core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。
 
@@ -90,7 +90,7 @@ ms.locfileid: "66366182"
 
 2.  更改 Task Type 属性列表以指示该后台任务所使用的任务注册类型。 如果后台任务注册了多个触发器类型，需要为每个触发器类型添加附加的 Task 元素和 Type 属性。
 
-    **请注意**  请确保以列出每个触发器类型使用的，或后台任务将不向未声明的触发器类型注册 ( [**注册**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)方法将失败并引发异常）。
+    **请注意**  请确保列出你正在使用的每个触发器类型，否则，将不会使用未声明的触发器类型注册后台任务（ [**register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)方法将失败并引发异常）。
 
     此代码段示例指示使用系统事件触发器和推送通知：
 
@@ -175,7 +175,7 @@ ms.locfileid: "66366182"
 
 ### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a>使用 ResourceGroup 属性指定运行后台任务的位置。
 
-下面的示例 XML 声明了在独立于同一应用的其他后台任务实例的 BackgroundTaskHost.exe 进程中运行。 注意 `ResourceGroup` 属性，可标识将同时运行哪些后台任务。
+下面的示例 XML 声明了在独立于同一应用的其他后台任务实例的 BackgroundTaskHost.exe 进程中运行。 注意 `ResourceGroup` 属性，该属性可标识将同时运行哪些后台任务。
 
 ```xml
 <Extensions>
@@ -209,7 +209,7 @@ ms.locfileid: "66366182"
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>每次用 SupportsMultipleInstances 属性触发新触发器时，在新进程中运行
 
-此示例声明在新进程中运行的后台任务，每次触发新触发器时，该进程会获取自己的资源限制（内存和 CPU）。 请注意使用可启用此行为的 `SupportsMultipleInstances`。 若要使用此属性必须为目标 SDK 版本"10.0.15063"（Windows 10 创意者更新） 或更高版本。
+此示例声明在新进程中运行的后台任务，每次触发新触发器时，该进程会获取自己的资源限制（内存和 CPU）。 请注意使用可启用此行为的 `SupportsMultipleInstances`。 若要使用此属性，必须将 SDK 版本设定为 "10.0.15063" （Windows 10 创意者更新）或更高版本。
 
 ```xml
 <Package
@@ -220,7 +220,7 @@ ms.locfileid: "66366182"
             ...
             <Extensions>
                 <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimerTriggerTask">
-                    <BackgroundTasks uap4:SupportsMultipleInstances=“True”>
+                    <BackgroundTasks uap4:SupportsMultipleInstances="True">
                         <Task Type="timer" />
                     </BackgroundTasks>
                 </Extension>

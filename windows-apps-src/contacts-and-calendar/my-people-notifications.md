@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bd9071eaaea0dd88a3dad06de78eff82b29725ec
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 41f1c19f62482dc28bc067adb2e60b2c6fafa509
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820232"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061887"
 ---
 # <a name="my-people-notifications"></a>“我的人脉”通知
 
@@ -42,24 +42,24 @@ ms.locfileid: "67820232"
 “我的人脉”通知使用 [Toast 通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)框架，但在 Toast 负载中需要一个附加的绑定节点。 此第二个绑定必须包含以下参数：
 
 ```xml
-experienceType=”shoulderTap”
+experienceType="shoulderTap"
 ```
 
 这表示 Toast 应被视为“我的人脉”通知。
 
 绑定内部的图像节点应包含以下参数：
 
-+ **src**
++ **源**
     + 资源的 URI。 这可以是 HTTP/HTTPS Web URI、msappx URI 或本地文件的路径。
 + **spritesheet-src**
     + 资源的 URI。 这可以是 HTTP/HTTPS Web URI、msappx URI 或本地文件的路径。 只有 Spritesheet 动画才需要此参数。
-+ **spritesheet-height**
++ **spritesheet-高度**
     + 帧高度（以像素为单位）。 只有 Spritesheet 动画才需要此参数。
 + **spritesheet-fps**
     + 每秒帧数 (FPS)。 只有 Spritesheet 动画才需要此参数。 仅支持值 1-120。
 + **spritesheet-startingFrame**
     + 开始播放动画的帧编号。 此参数仅用于 Spritesheet 动画，如果未提供，则默认为 0。
-+ **alt**
++ **替代**
     + 用于屏幕阅读器旁白的文本字符串。
 
 > [!NOTE]
@@ -134,7 +134,7 @@ XmlDocument xmlContent = new XmlDocument();
 xmlContent.LoadXml(xmlText);
 ```
 
-然后，你可以使用此代码来创建和发送 toast：
+然后，你可以使用此代码来创建和发送 Toast：
 
 ```CSharp
 ToastNotification notification = new ToastNotification(xmlContent);
@@ -150,8 +150,8 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 
 如果“我的人脉”通知回退到 Toast，则将忽略第二个特定于“我的人脉”的绑定，并且仅使用第一个绑定来显示 Toast。 这正是为何在第一个 Toast 绑定中提供回退负载很重要。
 
-## <a name="see-also"></a>请参阅
-+ [我的人通知示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
-+ [添加我的人支持](my-people-support.md)
-+ [自适应的 toast 通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
+## <a name="see-also"></a>另请参阅
++ [我的人员通知示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
++ [添加我的人员支持](my-people-support.md)
++ [自适应 toast 通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
 + [ToastNotification 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)

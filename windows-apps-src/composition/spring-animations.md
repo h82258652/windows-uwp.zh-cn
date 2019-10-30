@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e00aa383bcce17b7cd6b67514647c2f6137cc32
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f86ab8b3e55b7680c5ba3e47c37d1cda8c42cebb
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601942"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73062001"
 ---
 # <a name="spring-animations"></a>弹簧动画
 
@@ -26,8 +26,8 @@ ms.locfileid: "57601942"
 
 弹簧是一种常见的运动体验，我们都曾经在生活中经历过；从螺旋弹簧玩具到包含弹簧块的物理教室体验。 弹簧的运动不稳定，这通常会为观察它的人带来有趣而令人愉快的情绪反应。 因此，对于那些渴求创建更为生动的运动体验的人来说，弹簧的运动在应用程序 UI 中得到了很好的运用：“弹出”给最终用户，而不是传统的贝塞尔曲线。 在这些情况下，弹簧运动不仅能产生更为生动的运动体验，还能帮助吸引人们注意新的或目前正在显示动画效果的内容。 根据应用程序的品牌或运动语言，弹簧的振荡更加显然而显眼，但在其他情况下，它的运动不明显。
 
-![使用 spring 动画的动作](images/animation/offset-spring.gif)
-![三次方贝塞尔动画的动作](images/animation/offset-cubic-bezier.gif)
+带有弹簧动画的 ![运动](images/animation/offset-spring.gif)
+带有三次方贝塞尔动画的![动作](images/animation/offset-cubic-bezier.gif)
 
 ## <a name="using-springs-in-your-ui"></a>在 UI 中使用弹簧
 
@@ -35,7 +35,7 @@ ms.locfileid: "57601942"
 
 | 弹簧用法描述 | 视觉示例 |
 | ------------------------ | -------------- |
-| 让运动体验“弹出”并且看起来更生动  （伸缩动画处理） | ![使用弹簧动画的伸缩运动](images/animation/scale-spring.gif) |
+| 让运动体验“弹出”并且看起来更生动 （伸缩动画处理） | ![使用弹簧动画的伸缩运动](images/animation/scale-spring.gif) |
 | 使运动体验感觉起来更加有力（将 Offset 进行动画处理） | ![使用弹簧动画的 Offset 运动](images/animation/offset-spring.gif) |
 
 在以上每一种情况下，弹簧运动都可通过“弹到”和围绕一个新值振荡或围绕当前值振荡（有初始速度）来触发。
@@ -92,12 +92,12 @@ private void Button_Clicked(object sender, RoutedEventArgs e)
  {
  _expanded = true;
  _propSet.InsertBoolean("expanded", true);
- _springAnimation.InitialValueExpression[“FinalValue”] = “this.StartingValue + 250”;
+ _springAnimation.InitialValueExpression["FinalValue"] = "this.StartingValue + 250";
  } else
  {
  _expanded = false;
  _propSet.InsertBoolean("expanded", false);
-_springAnimation.InitialValueExpression[“FinalValue”] = “this.StartingValue - 250”;
+_springAnimation.InitialValueExpression["FinalValue"] = "this.StartingValue - 250";
  }
  _naviPane.StartAnimation("Offset.X", _springAnimation);
 }
@@ -152,9 +152,9 @@ StartAnimation("Translation.X", exp);
 1. 基于 Compositor 创建 SpringAnimation。
 1. 如果需要非默认值，请定义 SpringAnimation 的属性：
     - DampingRatio
-    - 期间
+    - Period
     - Final Value
-    - 初始值
+    - Initial Value
     - Initial Velocity
 1. 分配给目标。
     - 如果要对 CompositionObject 属性进行动画处理，请将 SpringAnimation 作为参数传入 StartAnimation。
