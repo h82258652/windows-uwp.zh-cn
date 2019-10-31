@@ -9,52 +9,49 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3deb89a8eba60e5c4f67b18091d78d24d9179aa3
-ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
+ms.openlocfilehash: 481b326c3f4b3608d0d3f5f7a8cec943f1d6c437
+ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979342"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142525"
 ---
 # <a name="uwp-apis-available-to-desktop-apps"></a>适用于桌面应用的 UWP Api
 
-桌面应用可以使用范围广泛的通用 Windows 平台 (UWP) Api, 即使它们未完全转换为 UWP 应用。 本文列出了您的桌面应用程序可以使用的可用类。
+桌面应用可以使用范围广泛的通用 Windows 平台（UWP） Api，即使它们未完全转换为 UWP 应用。 本文列出了您的桌面应用程序可以使用的可用类。
 
-> [!NOTE]
-> 许多 UWP Api 需要在桌面应用中使用[包标识](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。 将桌面应用打包到[.msix 包](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)时, 可使用程序包标识。 在本文中, 这些应用称为*打包应用*。
-
-大多数 UWP Api 适用于打包应用。 但是，某些功能区域尚未经过充分测试或当前无法按预期运行。
+许多 UWP Api 需要在桌面应用中使用[包标识](modernize-packaged-apps.md)。 大多数 UWP Api 使用具有包标识的良好应用。 但是，某些功能区域尚未经过充分测试或当前无法按预期运行。
 
 | 功能区域 | 详细信息 |
 |--------------|---------|
-| 约会、联系人和电子邮件 | 已打包的应用当前并不能支持所有 API。 |
-| 身份验证和用户身份 | 已打包的应用当前并不能支持所有 API。 |
-| 后台任务 | 尽管已打包的应用可以注册后台任务，但仅完全转换的 UWP 应用可以<i>作为</i>后台任务运行。 有关详细信息，请参阅 [GitHub 上的后台任务示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample)。 |
-| 蓝牙 | 已打包的应用当前并不能支持所有 API。 |
-| 聊天和电话呼叫 | 已打包的应用只有完全移植到 UWP 才能在移动设备上运行。 |
+| 约会、联系人和电子邮件 | 目前并不支持所有 Api。 |
+| 身份验证和用户身份 | 目前并不支持所有 Api。 |
+| 后台任务 | 虽然桌面应用可以注册后台任务，但仅完全 UWP 应用才能<i>作为</i>后台任务运行。 有关详细信息，请参阅 [GitHub 上的后台任务示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample)。 |
+| “蓝牙” | 目前并不支持所有 Api。 |
+| 聊天和电话呼叫 | 桌面应用程序不能在移动设备上运行，直到它们完全移植到 UWP。 |
 | 合约激活 | 协定只能激活完全 UWP 应用。 |
-| 加密 | 已打包的应用当前并不能支持所有 API。 |
-| 地理位置 | 已打包的应用当前并不能支持所有 API。 |
-| 文件和文件夹选取器 | 已打包的应用具有完全的文件系统访问权限，并且不需要 UWP 选取器。 |
-| Media | 已打包的应用当前并不能支持所有 API。 |
-| 服务点 | 已打包的应用当前并不能支持所有 API。 |
-| 智能卡 | 已打包的应用当前并不能支持所有 API。 |
-| PlayReady | 已打包的应用当前并不能支持所有 API。 |
-| VPN | 已打包的应用当前并不能支持所有 API。 |
-| 电子钱包 | 已打包的应用只有完全移植到 UWP 才能在移动设备上运行。 |
-| XAML UI | Windows 10 版本1809及更早版本不支持在桌面应用程序中承载 UWP XAML 内容。 从 Windows 10 版本1903开始, 可以使用[XAML 孤岛](xaml-islands.md)来托管 UWP XAML 内容。  |
+| 加密 | 目前并不支持所有 Api。 |
+| 地理位置 | 目前并不支持所有 Api。 |
+| 文件和文件夹选取器 | 具有标识的应用具有完全文件系统访问权限，且不需要 UWP 选取器。 |
+| Media | 目前并不支持所有 Api。 |
+| 服务点 | 目前并不支持所有 Api。 |
+| 智能卡 | 目前并不支持所有 Api。 |
+| PlayReady | 目前并不支持所有 Api。 |
+| “VPN” | 目前并不支持所有 Api。 |
+| 电子钱包 | 桌面应用程序不能在移动设备上运行，直到它们完全移植到 UWP。 |
+| XAML UI | Windows 10 版本1809及更早版本不支持在桌面应用程序中承载 UWP XAML 内容。 从 Windows 10 版本1903开始，可以使用[XAML 孤岛](xaml-islands.md)来托管 UWP XAML 内容。  |
 
 有时，这些区域中的 API 可能会正常工作。 但是，如果某个 API 没有明确列为受支持，则应避免使用该 API，因为它可能会有意外的负面影响或行为。 在未来的版本中可能会支持这些 API。 在此期间，你的应用应改为使用相关的 Win32 或 .NET API。
 
 ## <a name="list-of-apis"></a>API 列表
 
-下面是桌面应用程序中支持的 UWP Api 的完整列表。 只能在打包的应用[程序或桌面应用程序中支持](#both)[的封装应用或 api 中查看受支持的 api](#new) 。
+下面是桌面应用程序中支持的 UWP Api 的完整列表。 只能在具有[所有桌面应用中支持](#both)[的包标识或 api 的应用中查看受支持的 api](#new) 。
 
-有关如何使用 UWP Api 的示例, 请参阅 GitHub 上的[Desktop Bridge 示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) 应用示例](https://github.com/Microsoft/Windows-universal-samples)。 你还可以查阅 Windows 博客文章[从桌面应用程序调用 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/)，了解应用生成。
+有关如何使用 UWP Api 的示例，请参阅 GitHub 上的[Desktop Bridge 示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台（UWP）应用示例](https://github.com/Microsoft/Windows-universal-samples)。 你还可以查阅 Windows 博客文章[从桌面应用程序调用 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/)，了解应用生成。
 
 <a id="new" />
 
-### <a name="apis-supported-only-in-packaged-apps"></a>仅在打包的应用程序中支持 Api
+### <a name="apis-supported-only-in-apps-with-package-identity"></a>仅在具有包标识的应用中支持 Api
 
 * [Windows.applicationmodel.resources.core. DataTransfer. DataProviderHandler](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dataproviderhandler)
 * [Windows.applicationmodel.resources.core. DataTransfer. DataRequest](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -68,7 +65,7 @@ ms.locfileid: "69979342"
 * [Windows.applicationmodel.resources.core. ResourceCandidateVectorView。](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceCandidateVectorView)
 * [Windows.applicationmodel.resources.core. ResourceContext。](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext)
 * [Windows.applicationmodel.resources.core. ResourceContextLanguagesVectorView。](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContextLanguagesVectorView)
-* [Windows.applicationmodel.resources.core (& e)](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager)
+* [Windows.applicationmodel.resources.core （& e）](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager)
 * [Windows.applicationmodel.resources.core. Windows.applicationmodel.resources.core.resourcemap。](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap)
 * [Windows.applicationmodel.resources.core. ResourceMapIterator。](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMapIterator)
 * [Windows.applicationmodel.resources.core. ResourceMapMapView。](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMapMapView)
@@ -88,23 +85,23 @@ ms.locfileid: "69979342"
 * [TextPredictionGenerator。](https://docs.microsoft.com/uwp/api/Windows.Data.Text.TextPredictionGenerator)
 * [TextReverseConversionGenerator。](https://docs.microsoft.com/uwp/api/Windows.Data.Text.TextReverseConversionGenerator)
 * [WordSegmentsTokenizingHandler。](https://docs.microsoft.com/uwp/api/windows.data.text.wordsegmentstokenizinghandler)
-* [DtdEntity (& e)](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.DtdEntity)
-* [DtdNotation (& e)](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.DtdNotation)
+* [DtdEntity （& e）](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.DtdEntity)
+* [DtdNotation （& e）](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.DtdNotation)
 * [Windows. Xml. XmlAttribute](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlAttribute)
-* [XmlCDataSection (& e)](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlCDataSection)
-* [XmlComment (& e)](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlComment)
+* [XmlCDataSection （& e）](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlCDataSection)
+* [XmlComment （& e）](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlComment)
 * [Windows. Xml](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlDocument)
-* [XmlDocumentFragment (& e)](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlDocumentFragment)
-* [XmlDocumentType (& e)](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlDocumentType)
-* [XmlDomImplementation (& e)](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlDomImplementation)
+* [XmlDocumentFragment （& e）](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlDocumentFragment)
+* [XmlDocumentType （& e）](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlDocumentType)
+* [XmlDomImplementation （& e）](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlDomImplementation)
 * [Windows. Xml. XmlElement](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlElement)
-* [XmlEntityReference (& e)](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlEntityReference)
-* [XmlLoadSettings (& e)](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlLoadSettings)
-* [XmlNamedNodeMap (& e)](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlNamedNodeMap)
-* [XmlNodeList (& e)](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlNodeList)
-* [XmlProcessingInstruction (& e)](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlProcessingInstruction)
+* [XmlEntityReference （& e）](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlEntityReference)
+* [XmlLoadSettings （& e）](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlLoadSettings)
+* [XmlNamedNodeMap （& e）](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlNamedNodeMap)
+* [XmlNodeList （& e）](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlNodeList)
+* [XmlProcessingInstruction （& e）](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlProcessingInstruction)
 * [Windows .Xml。 XmlText](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlText)
-* [XsltProcessor (& e)](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Xsl.XsltProcessor)
+* [XsltProcessor （& e）](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Xsl.XsltProcessor)
 * [KeyboardCapabilities。](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.KeyboardCapabilities)
 * [MouseCapabilities。](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities)
 * [MouseDevice。](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDevice)
@@ -137,7 +134,7 @@ ms.locfileid: "69979342"
 * [AsyncActionProgressHandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionProgressHandler<TProgress>)
 * [AsyncActionWithProgressCompletedHandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionWithProgressCompletedHandler<TProgress>)
 * [AsyncOperationCompletedHandler<TResult>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationCompletedHandler<TResult>)
-* [VectorChangedEventHandler。<T>](https://docs.microsoft.com/uwp/api/windows.foundation.collections.vectorchangedeventhandler)
+* [<T> 的 VectorChangedEventHandler](https://docs.microsoft.com/uwp/api/windows.foundation.collections.vectorchangedeventhandler)
 * [DeferralCompletedHandler](https://docs.microsoft.com/uwp/api/windows.foundation.deferralcompletedhandler)
 * [FileLoggingSession。](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.FileLoggingSession)
 * [LogFileGeneratedEventArgs。](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs)
@@ -357,9 +354,9 @@ ms.locfileid: "69979342"
 * [ProcessMemoryUsageReport。](https://docs.microsoft.com/uwp/api/Windows.System.Diagnostics.ProcessMemoryUsageReport)
 * [AnalyticsInfo。](https://docs.microsoft.com/uwp/api/Windows.System.Profile.AnalyticsInfo)
 * [AnalyticsVersionInfo。](https://docs.microsoft.com/uwp/api/Windows.System.Profile.AnalyticsVersionInfo)
-* [PreallocatedWorkItem (& e)](https://docs.microsoft.com/uwp/api/Windows.System.Threading.Core.PreallocatedWorkItem)
-* [SignalHandler (& e)](https://docs.microsoft.com/uwp/api/windows.system.threading.core.signalhandler)
-* [SignalNotifier (& e)](https://docs.microsoft.com/uwp/api/Windows.System.Threading.Core.SignalNotifier)
+* [PreallocatedWorkItem （& e）](https://docs.microsoft.com/uwp/api/Windows.System.Threading.Core.PreallocatedWorkItem)
+* [SignalHandler （& e）](https://docs.microsoft.com/uwp/api/windows.system.threading.core.signalhandler)
+* [SignalNotifier （& e）](https://docs.microsoft.com/uwp/api/Windows.System.Threading.Core.SignalNotifier)
 * [Windows. ThreadPool](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPool)
 * [Windows.system.threading.threadpooltimer。](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer)
 * [TimerDestroyedHandler。](https://docs.microsoft.com/uwp/api/windows.system.threading.timerdestroyedhandler)
@@ -380,9 +377,9 @@ ms.locfileid: "69979342"
 
 <a id="both" />
 
-### <a name="apis-supported-in-both-packaged-apps-and-desktop-applications"></a>在已打包的应用和桌面应用程序中都支持的 API
+### <a name="apis-supported-in-all-desktop-applications"></a>所有桌面应用程序中支持的 Api
 
-打包应用和未打包的桌面应用程序都支持具有[DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute)的 api。 若要确定是否支持你想要从桌面应用程序调用的 API, 请在[WinRT 命名空间的参考文档](https://docs.microsoft.com/uwp/api/)中查找你感兴趣的类或成员的参考文章。 然后, 检查参考文章中的 "**属性**" 部分是否包括[DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute)属性。
+所有桌面应用都支持具有[DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute)的 api，其中包括具有包标识的 api 和无包标识的 api。 若要确定是否支持你想要从桌面应用程序调用的 API，请在[WinRT 命名空间的参考文档](https://docs.microsoft.com/uwp/api/)中查找你感兴趣的类或成员的参考文章。 然后，检查参考文章中的 "**属性**" 部分是否包括[DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute)属性。
 
 ## <a name="next-steps"></a>后续步骤
 

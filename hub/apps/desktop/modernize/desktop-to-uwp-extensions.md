@@ -8,23 +8,23 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: c99d05a701f41e24663d116773b000017b805d81
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: f51fc081c5cc18132a386197feb2ae76a22d2088
+ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281802"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142503"
 ---
-# <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>将打包桌面应用与 Windows 10 和 UWP 集成
+# <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>将桌面应用与 Windows 10 和 UWP 集成
 
-如果将[桌面应用程序打包到 .msix 容器中](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)，则可以使用[应用程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的预定义扩展，通过扩展将打包桌面应用程序与 Windows 10 集成。
+如果桌面应用具有[包标识](modernize-packaged-apps.md)，你可以通过使用[包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的预定义扩展，使用扩展将你的应用与 Windows 10 集成。
 
-例如，使用扩展创建防火墙例外，将应用程序设置为文件类型的默认应用程序，或将开始磁贴指向应用的打包版本。 若要使用扩展，只需将某些 XML 添加到应用的程序包清单文件。 不需要任何代码。
+例如，使用扩展创建防火墙例外，将应用设置为文件类型的默认应用程序，或将启动磁贴指向应用。 若要使用扩展，只需将某些 XML 添加到应用的程序包清单文件。 不需要任何代码。
 
 本文介绍了这些扩展以及使用这些扩展可以执行的任务。
 
 > [!NOTE]
-> 本文中所述的功能要求你为桌面应用程序创建 Windows 应用包。 如果尚未执行此操作，请参阅[打包桌面应用程序](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)。
+> 本文中所述的功能要求桌面应用具有[包标识](modernize-packaged-apps.md)，方法是将[桌面应用打包在 .msix 包中](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)，或通过[使用稀疏包授予应用标识](grant-identity-to-nonpackaged-apps.md)。
 
 ## <a name="transition-users-to-your-app"></a>将用户切换到应用
 
@@ -44,7 +44,7 @@ ms.locfileid: "72281802"
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
-http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3
+`http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -103,8 +103,8 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -160,10 +160,10 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 可以将打包应用程序与文件类型扩展名关联。 如果用户右键单击文件，然后选择 "**打开方式**" 选项，则应用程序将显示在建议列表中。
 
-#### <a name="xml-namespace"></a>XML 命名空间
+#### <a name="xml-namespaces"></a>XML 命名空间
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -222,9 +222,9 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/2
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -244,10 +244,10 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |-------|-------------|
 |类别 | 始终为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
-|Verb |文件资源管理器上下文菜单中显示的名称。 此字符串可使用 ```ms-resource``` 进行本地化。|
-|Id |动词命令的唯一 ID。 如果你的应用程序是 UWP 应用，则会将其作为激活事件参数的一部分传递给你的应用，以便它能够相应地处理用户的选择。 如果你的应用程序是完全信任的打包应用程序，则它将改为接收参数（请参阅下一项目符号）。 |
-|Parameters |与动词命令关联的实参参数和值的列表。 如果你的应用程序是完全信任的打包应用程序，则当激活应用程序时，这些参数将作为事件参数传递给应用程序。 您可以根据不同的激活谓词自定义应用程序的行为。 如果变量可包含文件路径，请用引号将参数值括起来。 这将避免路径包含空格的情况下出现的任何问题。 如果应用程序是 UWP 应用程序，则不能传递参数。 应用转而接收参数（请参阅上一项）。|
-|扩展 |指定动词命令仅在用户右键单击文件之前按住 **Shift** 键显示上下文菜单时才显示。 此属性是可选的，如果未列出，则默认为**False**的值（例如，始终显示谓词）。 为每个动词命令逐个指定此行为（“打开”除外，它始终为 **False**）。|
+|谓词 |文件资源管理器上下文菜单中显示的名称。 此字符串可使用 ```ms-resource``` 进行本地化。|
+|ID |动词命令的唯一 ID。 如果你的应用程序是 UWP 应用，则会将其作为激活事件参数的一部分传递给你的应用，以便它能够相应地处理用户的选择。 如果你的应用程序是完全信任的打包应用程序，则它将改为接收参数（请参阅下一项目符号）。 |
+|参数 |与动词命令关联的实参参数和值的列表。 如果你的应用程序是完全信任的打包应用程序，则当激活应用程序时，这些参数将作为事件参数传递给应用程序。 您可以根据不同的激活谓词自定义应用程序的行为。 如果变量可包含文件路径，请用引号将参数值括起来。 这将避免路径包含空格的情况下出现的任何问题。 如果应用程序是 UWP 应用程序，则不能传递参数。 应用转而接收参数（请参阅上一项）。|
+|Extended |指定动词命令仅在用户右键单击文件之前按住 **Shift** 键显示上下文菜单时才显示。 此属性是可选的，如果未列出，则默认为**False**的值（例如，始终显示谓词）。 为每个动词命令逐个指定此行为（“打开”除外，它始终为 **False**）。|
 
 #### <a name="example"></a>示例
 
@@ -287,8 +287,8 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
-* http： \//uap/appx/manifest/windows 10/
-* http： \//uap/appx/manifest/windows 10/3 "
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -309,7 +309,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |类别 |始终为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |UseUrl |指示是否直接从 URL 目标打开文件。 如果未设置此值，则通过使用 URL 打开文件的应用程序会导致系统首先在本地下载文件。 |
-|Parameters | 可选参数。 |
+|参数 | 可选参数。 |
 |FileType |相关的文件扩展名。 |
 
 #### <a name="example"></a>示例
@@ -349,7 +349,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -380,7 +380,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 |LocalPortMax |本地端口号范围内最大的端口号。 |
 |RemotePortMax |远程端口号范围内较小的端口号。 |
 |RemotePortMax |远程端口号范围内最大的端口号。 |
-|配置文件 |网络类型 |
+|个人资料 |网络类型 |
 
 #### <a name="example"></a>示例
 
@@ -415,7 +415,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
-http://schemas.microsoft.com/appx/manifest/uap/windows10/6
+`http://schemas.microsoft.com/appx/manifest/uap/windows10/6`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -475,9 +475,9 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/2
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -506,9 +506,9 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 已打包的桌面应用具有与常规桌面应用相同的三个选项。
 
-* ``Player``：你的应用程序已激活一次。 所有选定的文件都作为参数参数传递给你的应用程序。
-* ``Single``：对于第一个选定的文件，将激活一次应用程序。 忽略其他文件。
-* ``Document``：将为每个选定文件激活单独的应用程序的新实例。
+* ``Player``：应用程序一次被激活。 所有选定的文件都作为参数参数传递给你的应用程序。
+* ``Single``：为第一个所选文件激活一次应用程序。 忽略其他文件。
+* ``Document``：为每个选定文件激活单独的应用程序实例。
 
  可以为不同的文件类型和操作设置不同的首选项。 例如，可能会希望以“文档”模式打开*文档*，以“播放机”模式打开*图像*。
 
@@ -549,10 +549,10 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/2
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -612,10 +612,10 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/2
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -677,8 +677,8 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -739,9 +739,9 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -798,8 +798,8 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
-* http://schemas.microsoft.com/appx/manifest/foundation/windows10
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10/4
+* `http://schemas.microsoft.com/appx/manifest/foundation/windows10`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10/4`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -896,7 +896,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -921,8 +921,8 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |CustomStateHandler Clsid |实现 CustomStateHandler 的应用程序的类 ID。 系统使用该类 ID 请求云文件的自定义状态和列。 |
 |ThumbnailProviderHandler Clsid |实现 ThumbnailProviderHandler 的应用程序的类 ID。 系统使用该类 ID 请求云文件的缩略图图像。 |
 |ExtendedPropertyHandler Clsid |实现 ExtendedPropertyHandler 的应用程序的类 ID。  系统使用该类 ID 请求云文件的扩展属性。 |
-|Verb |你的云服务提供的文件在文件资源管理器上下文菜单中显示的名称。 |
-|Id |动词命令的唯一 ID。 |
+|谓词 |你的云服务提供的文件在文件资源管理器上下文菜单中显示的名称。 |
+|ID |动词命令的唯一 ID。 |
 
 #### <a name="example"></a>示例
 
@@ -969,7 +969,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
-http://schemas.microsoft.com/appx/manifest/uap/windows10/3
+`http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -988,7 +988,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 |-------|-------------|
 |类别 |始终为 ``windows.protocol``。
 |名称 |协议的名称。 |
-|Parameters |激活应用程序时作为事件参数传递给应用程序的参数和值的列表。 如果变量可包含文件路径，请用引号将参数值括起来。 这将避免路径包含空格的情况下出现的任何问题。 |
+|参数 |激活应用程序时作为事件参数传递给应用程序的参数和值的列表。 如果变量可包含文件路径，请用引号将参数值括起来。 这将避免路径包含空格的情况下出现的任何问题。 |
 
 ### <a name="example"></a>示例
 
@@ -1020,8 +1020,8 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -1040,7 +1040,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 |-------|-------------|
 |类别 |始终为 ``windows.appExecutionAlias``。
 |可执行文件 |调用别名时要启动的可执行文件的相对路径。 |
-|别名 |应用的简称。 它必须始终以“.exe”扩展名结尾。 只可以为程序包中每个应用程序指定一个应用执行别名。 如果多个应用都注册了同一个别名，系统会调用最后注册的一个应用，因此请确保选择其他应用不太可能覆盖的独特别名。
+|Alias |应用的简称。 它必须始终以“.exe”扩展名结尾。 只可以为程序包中每个应用程序指定一个应用执行别名。 如果多个应用都注册了同一个别名，系统会调用最后注册的一个应用，因此请确保选择其他应用不太可能覆盖的独特别名。
 |
 
 #### <a name="example"></a>示例
@@ -1083,7 +1083,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -1104,7 +1104,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 |类别 |始终为 ``windows.startupTask``。|
 |可执行文件 |要启动的可执行文件的相对路径。 |
 |TaskId |任务的唯一标识符。 使用此标识符，你的应用程序可以调用[windows.applicationmodel.resources.core. StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask)类中的 api 以编程方式启用或禁用启动任务。 |
-|Enabled |指示是启用还是禁用任务的首次启动。 启用的任务将在用户下次登录时运行（除非用户禁用它）。 |
+|启用 |指示是启用还是禁用任务的首次启动。 启用的任务将在用户下次登录时运行（除非用户禁用它）。 |
 |DisplayName |任务管理器中显示的任务名称。 可以使用 ```ms-resource``` 本地化此字符串。 |
 
 #### <a name="example"></a>示例
@@ -1139,7 +1139,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -1157,12 +1157,12 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 |名称 |描述 |
 |-------|-------------|
 |类别 |始终为 ``windows.autoPlayHandler``。
-|ActionDisplayName |一个字符串，该字符串表示用户可对其连接到 PC 的设备执行的操作（例如："导入文件"，或 "播放视频"。 |
-|ProviderDisplayName | 表示应用程序或服务的字符串（例如："Contoso 视频播放器"）。 |
+|ActionDisplayName |表示用户可以对其连接到电脑的设备执行的操作的字符串（例如：“导入文件”或“播放视频”）。 |
+|ProviderDisplayName | 表示应用程序或服务的字符串（例如： "Contoso 视频播放器"）。 |
 |ContentEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的内容事件的名称。 当卷设备（如相机内存卡、U 盘或 DVD）插入到电脑时，会引发内容事件。 你可以在[此处](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到此类事件的完整列表。  |
-|Verb |谓词设置标识为所选选项传递到应用程序的值。 你可以为自动播放事件指定多个启动操作并且可以使用谓词设置确定用户为你的应用选择的选项。 你可以通过检查传递给应用的启动事件参数的 verb 属性来标识用户选择的选项。 你可以为谓词设置使用任何值（但保留的 open 除外）。 |
+|谓词 |谓词设置标识为所选选项传递到应用程序的值。 你可以为自动播放事件指定多个启动操作并且可以使用谓词设置确定用户为你的应用选择的选项。 你可以通过检查传递给应用的启动事件参数的 verb 属性来标识用户选择的选项。 你可以为谓词设置使用任何值（但保留的 open 除外）。 |
 |DropTargetHandler |实现[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)接口的应用程序的类 ID。 系统会将可移动媒体中的文件传递给你的 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 实现的 [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) 方法。  |
-|Parameters |你不必为所有内容事件实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于任意内容事件，你可以提供命令行参数，而不是实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于这些事件，自动播放将使用这些命令行参数来启动应用程序。 你可以在应用的初始化代码中解析这些参数，确定应用是否由自动播放启动，然后提供自定义实现。 |
+|参数 |你不必为所有内容事件实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于任意内容事件，你可以提供命令行参数，而不是实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于这些事件，自动播放将使用这些命令行参数来启动应用程序。 你可以在应用的初始化代码中解析这些参数，确定应用是否由自动播放启动，然后提供自定义实现。 |
 |DeviceEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的设备事件的名称。 当有设备连接到电脑时，将引发设备事件。 设备事件以字符串 ``WPD`` 开头，你可以在[此处](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到设备事件列表。 |
 |HWEventHandler |实现[IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler)接口的应用程序的类 ID。 |
 |InitCmdLine |你要传递给 [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) 接口的 [Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize) 方法的字符串参数。 |
@@ -1227,7 +1227,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -1245,7 +1245,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 |-------|-------------|
 |类别 |始终为 ``windows.appPrinter``。
 |DisplayName |希望在应用的打印目标列表中显示的名称。 |
-|Parameters |应用程序正确处理请求所需的任何参数。 |
+|参数 |应用程序正确处理请求所需的任何参数。 |
 
 #### <a name="example"></a>示例
 
@@ -1277,7 +1277,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -1325,7 +1325,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>该扩展的元素和特性
 
@@ -1341,7 +1341,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 |-------|-------------|
 |类别 |始终为 ``windows.fullTrustProcess``。
 |GroupID |标识想要传递给可执行文件的参数集的字符串。 |
-|Parameters |想要传递给可执行文件的参数。 |
+|参数 |想要传递给可执行文件的参数。 |
 
 #### <a name="example"></a>示例
 

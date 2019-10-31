@@ -1,6 +1,6 @@
 ---
-Description: 了解如何在已打包在 Windows 应用包中的桌面应用程序中添加对 Windows 10 用户的新式体验。
-title: 实现打包桌面应用程序的现代化
+Description: 了解如何在已打包到 Windows 应用包的桌面应用程序中为 Windows 10 用户添加新式体验。
+title: 现代化打包桌面应用
 ms.date: 04/22/2019
 ms.topic: article
 keywords: windows 10, uwp
@@ -8,41 +8,40 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 191a8b8a007a866f37780a7c52cd40047dc9817f
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: ec1c56f205b270262f618ffb46db16b38276975d
+ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215198"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142506"
 ---
 # <a name="features-that-require-package-identity"></a>需要包标识的功能
 
-如果你想要更新使用对桌面应用程序[现代 Windows 10 体验](index.md)，许多功能都仅在桌面应用程序打包在 MSIX 包中可用。
+如果要使用[新式 Windows 10 体验](index.md)来更新桌面应用，则许多功能仅在具有[包标识](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)的桌面应用中可用。 可以通过多种方式将包标识授予桌面应用：
 
-MSIX 是为所有 Windows 应用程序、 WPF、 Windows 窗体和 Win32 应用提供了通用的打包体验的现代 Windows 应用包格式。 打包桌面 Windows 应用程序，可将动态磁贴和通知等现代 Windows 10 体验集成到您的应用程序。 它还获取访问权限的可靠的安装和更新体验、 具有灵活功能系统，支持 Microsoft Store、 企业管理和自定义分布的多个模型的受管理的安全模型。 有关详细信息，请参阅 MSIX 文档中的[打包桌面应用程序](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)。
+* 将其打包在[.msix 包](/windows/msix/desktop/desktop-to-uwp-root)中。 .MSIX 是一种新式应用包格式，可为所有 Windows 应用、WPF、Windows 窗体和 Win32 应用提供通用打包体验。 它提供可靠的安装和更新体验、具有灵活功能系统的托管安全模型、对 Microsoft Store、企业管理和许多自定义分发模型的支持。 有关详细信息，请参阅 MSIX 文档中的[打包桌面应用程序](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)。
+* 如果无法采用 .MSIX 打包来部署桌面应用，请从 Windows 10 有问必答 Preview Build 10.0.19000.0 开始，可以通过创建只包含包清单的*稀疏 .msix 包*来授予包标识。 有关详细信息，请参阅[向非打包桌面应用授予标识](grant-identity-to-nonpackaged-apps.md)。
 
-如果您打包桌面应用程序，然后可以使用需要的包标识、 包扩展和 UWP 组件打包应用程序中的 UWP Api。 有关详细信息，请参阅以下文章。
+如果桌面应用具有包标识，你可以在应用中使用以下功能。
 
-## <a name="use-uwp-apis-that-require-package-identity"></a>使用 UWP Api 要求包标识
+## <a name="use-uwp-apis-that-require-package-identity"></a>使用需要包标识的 UWP Api
 
-有些 UWP Api 需要[打包标识](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)桌面应用程序中使用。 MSIX 程序包 （包括包清单） 提供了此标识。
-
-有关详细信息，请参阅[这一系列 Api](desktop-to-uwp-supported-api.md#list-of-apis)。
+以下 UWP Api 列表需要在桌面应用中使用包标识： [api 列表](desktop-to-uwp-supported-api.md#list-of-apis)。
 
 ## <a name="integrate-with-package-extensions"></a>集成包扩展
 
-如果你的应用程序需要与系统集成 (例如： 建立防火墙规则)、 描述您的应用程序在包清单中的这些事物和系统将完成其余部分。 对于其中大多数任务，你根本不必编写任何代码。 使用少量的 XML 清单中，您可以执行操作像在用户登录时启动的进程，将你的应用程序集成到文件资源管理器，并添加你的应用程序出现在其他应用中的打印目标的列表。
+如果你的应用程序需要与系统集成（例如：建立防火墙规则），请在应用程序的包清单中描述这些内容，系统将执行其余操作。 对于其中大多数任务，你根本不必编写任何代码。 对于清单中的 XML，你可以执行一些操作，例如，在用户登录时启动进程，将应用程序集成到文件资源管理器，然后添加你的应用程序显示在其他应用中的打印目标的列表。
 
-有关详细信息，请参阅[将对桌面应用程序集成包扩展](desktop-to-uwp-extensions.md)。
+有关详细信息，请参阅[将桌面应用与包扩展集成](desktop-to-uwp-extensions.md)。
 
 ## <a name="extend-with-uwp-components"></a>使用 UWP 组件进行扩展
 
-一些 Windows 10 体验（例如：启用触摸功能的 UI 页面）必须在现代应用容器内运行。 一般情况下，应首先确定是否可以添加你的体验[增强](desktop-to-uwp-enhance.md)UWP Api 与您现有桌面应用程序。 如果您必须使用 UWP 组件，将获得的体验，你可以将 UWP 项目添加到你的解决方案和应用服务用于桌面应用程序和 UWP 组件之间进行通信。
+一些 Windows 10 体验（例如：启用触摸功能的 UI 页面）必须在现代应用容器内运行。 通常，你应该首先确定是否可以通过使用 UWP Api[增强](desktop-to-uwp-enhance.md)现有的桌面应用程序来添加体验。 如果必须使用 UWP 组件来实现体验，则可以将 UWP 项目添加到解决方案，并使用应用服务在桌面应用程序和 UWP 组件之间进行通信。
 
-有关详细信息，请参阅[扩展桌面应用程序与 UWP 组件](desktop-to-uwp-extend.md)。
+有关详细信息，请参阅[用 UWP 组件扩展桌面应用](desktop-to-uwp-extend.md)。
 
 ## <a name="distribute"></a>分配
 
-您可以将你的应用程序通过 Microsoft Store 发布或通过旁加载到其他系统。
+如果你将应用打包在 .MSIX 包中，则可以通过将其发布到 Microsoft Store 或将其旁加载到其他系统来分发应用。
 
-请参阅[分发打包桌面应用程序](desktop-to-uwp-distribute.md)。
+请参阅[分发打包的桌面应用](desktop-to-uwp-distribute.md)。

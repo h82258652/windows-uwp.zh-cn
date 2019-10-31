@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 7359d28d968a2948e9f4049e2acc3c655edcfcb3
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 0a404f2d9f58fc283cf47f47860362c0f5bc8164
+ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339203"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142552"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>利用新式 UWP 组件扩展桌面应用
 
@@ -21,7 +21,7 @@ ms.locfileid: "71339203"
 在许多情况下，你可以直接从桌面应用程序调用 Windows 运行时 Api，因此在查看本指南之前，请参阅[增强 For Windows 10](desktop-to-uwp-enhance.md)。
 
 > [!NOTE]
-> 本文中所述的功能要求你为桌面应用程序创建 Windows 应用包。 如果尚未执行此操作，请参阅[打包桌面应用程序](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)。
+> 本文中所述的功能要求桌面应用具有[包标识](modernize-packaged-apps.md)，方法是将[桌面应用打包在 .msix 包中](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)，或通过[使用稀疏包授予应用标识](grant-identity-to-nonpackaged-apps.md)。
 
 如果你已准备就绪，那我们开始吧。
 
@@ -77,7 +77,7 @@ ms.locfileid: "71339203"
 
 ### <a name="build-your-solution"></a>构建解决方案
 
-生成解决方案，以确保不会出现任何错误。 如果收到错误, 请打开**Configuration Manager**并确保项目面向同一平台。
+生成解决方案，以确保不会出现任何错误。 如果收到错误，请打开**Configuration Manager**并确保项目面向同一平台。
 
 ![配置管理器](images/desktop-to-uwp/config-manager.png)
 
@@ -100,15 +100,15 @@ ms.locfileid: "71339203"
 
 要显示基于 XAML 的 UI，请执行以下操作：
 
-:one:[设置你的解决方案](#solution-setup)
+:one: [设置解决方案](#solution-setup)
 
-:two:[创建 XAML UI](#xaml-UI)
+:two: [创建 XAML UI](#xaml-UI)
 
-:three:[将协议扩展添加到 UWP 项目](#add-a-protocol-extension)
+:three: [向 UWP 项目添加协议扩展](#add-a-protocol-extension)
 
-:four:[从桌面应用启动 UWP 应用](#start)
+:four: [从桌面应用启动 UWP 应用](#start)
 
-:five:[在 UWP 项目中，显示所需的页面](#parse)
+:five: [在 UWP 项目中，显示所需页面](#parse)
 
 <a id="solution-setup" />
 
@@ -220,7 +220,7 @@ protected override void OnActivated(Windows.ApplicationModel.Activation.IActivat
 }
 ```
 
-在 XAML 页面背后的代码中，重写 ``OnNavigatedTo`` 方法以使用传入页面的参数。 在本例中，我们将使用传递给该页面的纬度和经度来在地图中显示一个位置。
+在 XAML 页面背后的代码中，重写 ``OnNavigatedTo`` 方法以使用传递到页面的参数。 在本例中，我们将使用传递给该页面的纬度和经度来在地图中显示一个位置。
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -253,7 +253,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 例如，用户可以选择应用程序，以便从 Microsoft Edge、照片应用程序共享图片。 下面是具有该功能的 WPF 示例应用程序。
 
-![共享目标](images/desktop-to-uwp/share-target.png).
+![共享目标](images/desktop-to-uwp/share-target.png)。
 
 请参阅[此处](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/ShareTarget)的完整示例
 
@@ -261,15 +261,15 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 要使你的应用程序成为共享目标，请执行以下操作：
 
-:one:[添加共享目标扩展](#share-extension)
+:one: [添加共享目标扩展](#share-extension)
 
-:two:[重写 OnShareTargetActivated 事件处理程序](#override)
+：两个：[重写 OnShareTargetActivated 事件处理程序](#override)
 
-:three:[将桌面扩展添加到 UWP 项目](#desktop-extensions)
+：三个：[将桌面扩展添加到 UWP 项目](#desktop-extensions)
 
-:four:[添加完全信任进程扩展](#full-trust)
+：4：[添加完全信任进程扩展](#full-trust)
 
-:five:[修改桌面应用程序以获取共享文件](#modify-desktop)
+：5：[修改桌面应用程序以获取共享文件](#modify-desktop)
 
 <a id="share-extension" />
 
@@ -295,7 +295,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 </Extensions>  
 ```
 
-提供 UWP 项目生成的可执行文件的名称以及入口点类的名称。 此标记假设 UWP 应用的可执行文件的名称为 `ShareTarget.exe`。
+提供 UWP 项目生成的可执行文件的名称以及入口点类的名称。 此标记假设 UWP 应用的可执行文件的名称是 `ShareTarget.exe`。
 
 你还必须指定可用你的应用共享的文件类型。 在此示例中，我们将[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) desktop 应用程序设为位图图像的共享目标，以便为受支持的文件类型指定 `Bitmap`。
 
@@ -408,15 +408,15 @@ private void Watcher_Created(object sender, FileSystemEventArgs e)
 
 要创建后台服务，请执行以下操作：
 
-:one:[实现后台任务](#implement-task)
+:one: [实现后台任务](#implement-task)
 
-:two:[配置后台任务](#configure-background-task)
+:two: [配置后台任务](#configure-background-task)
 
-:three:[注册后台任务](#register-background-task)
+:three: [注册后台任务](#register-background-task)
 
 <a id="implement-task" />
 
-### <a name="implement-the-background-task"></a>实施后台任务
+### <a name="implement-the-background-task"></a>实现后台任务
 
 通过向 Windows 运行时组件项目添加以下代码来实现该后台任务。
 
