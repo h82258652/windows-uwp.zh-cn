@@ -48,6 +48,8 @@
               href: apps/desktop/modernize/desktop-to-uwp-extend.md
             - name: 分发打包的应用
               href: apps/desktop/modernize/desktop-to-uwp-distribute.md
+        - name: 向未打包的桌面应用授予标识
+          href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
         - name: 教程：实现 WPF 应用现代化
           items:
             - name: 概述
