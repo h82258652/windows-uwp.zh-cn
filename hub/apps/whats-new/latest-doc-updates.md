@@ -6,42 +6,39 @@ ms.date: 10/13/2019
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: e90d1239b48c91583dbe47f1e345a4acd7fa629c
-ms.sourcegitcommit: 8923daa8b930f4d01c772c14a1f159332c4a5ba5
+ms.openlocfilehash: 19028ca868c05ac0a1de39b3187a30f95567d915
+ms.sourcegitcommit: c7e10793cbef55ace959ac8fc6ddd08e683602bd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72303913"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73329504"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Windows 开发人员文档的最新更新
 
 
-Windows 开发人员文档会定期更新，并提供新的和改进的信息和内容。 以下文档介绍了过去一周内2019年10月11日结束的重大更新：
+Windows 开发人员文档会定期更新，并提供新的和改进的信息和内容。 以下文档介绍了上个月中的重要更新，2019年10月31日结束：
 
 
-## <a name="uwp-conceptual"></a>UWP 概念
+## <a name="winrt-conceptual"></a>WinRT 概念
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-apis">使用 C++/WinRT 创作 API</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/faq">有关C++/WinRT 的常见问题</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index">C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/app-resources/uri-schemes">URI 方案</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/composition/inertia-modifiers">使用惯性修饰符创建对齐点</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/composition/spring-animations">弹簧动画</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/concurrency">利用 C++/WinRT 实现的并发和异步操作</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/news">C++/WinRT 中的新增功能</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/data-access/index">数据访问</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/data-access/sqlite-databases">在 UWP 应用中使用 SQLite 数据库</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/input/access-keys">访问键设计准则</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/input/keyboard-events">键盘事件</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/layout-panels">通用 Windows 平台（UWP）应用的布局面板</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/transforms">转换概述</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/devices-sensors/generate-3mf">生成 3MF 程序包</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/enterprise/index">企业</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/display-poi">在地图上显示目标点 (POI)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/networking/httpclient">HttpClient</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/porting/android-ios-uwp-map">适用于 Android 和 iOS 开发人员的 Windows 应用概念映射</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/publish/store-policies">Microsoft Store 策略</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview">XAML概述</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/app-analysis">应用分析</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/pgo-for-uwp">在通用 Windows 平台（UWP）应用上运行按配置优化（PGO）</a></li>
 </ul>
 
 
+
+## <a name="winrt-api-reference"></a>WinRT API 参考
+
+<ul>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence">ID3D12Fence （d3d12）</a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence1">ID3D12Fence1 （d3d12）</a></li>
+</ul>
 
 ## <a name="win32-conceptual"></a>Win32 概念
 
@@ -64,7 +61,7 @@ Windows 开发人员文档会定期更新，并提供新的和改进的信息和
 <li><a href="https://docs.microsoft.com/windows/desktop/Power/wm-powerbroadcast">WM_POWERBROADCAST 消息</a></li>
 <li><a href="https://docs.microsoft.com/windows/desktop/Sync/interlocked-variable-access">联锁变量访问</a></li>
 <li><a href="https://docs.microsoft.com/windows/desktop/desktop-app-technologies">桌面应用技术</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/desktop-programming">开始行动</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/desktop-programming">开始使用</a></li>
 <li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directx-12-glossary">Direct3D 12 词汇表</a></li>
 <li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/multi-engine">多适配器系统</a></li>
 <li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/new-releases">新版本</a></li>
@@ -89,19 +86,10 @@ Windows 开发人员文档会定期更新，并提供新的和改进的信息和
 ## <a name="win32-api-reference"></a>Win32 API 引用
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence">ID3D12Fence （d3d12）</a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence1">ID3D12Fence1 （d3d12）</a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/index_bkp">Windows API 的编程参考</a></li>
-</ul>
-
-## <a name="winrt-api-reference"></a>WinRT API 参考
-
-<ul>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.devices.lights.lamparraykind">Windows. LampArrayKind</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.devices.lights.lamppurposes">Windows. LampPurposes</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.usb.usbdeviceclass">Windows. UsbDeviceClass</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.numerics.matrix3x2">Windows: System.numerics.matrix3x2</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.directx.direct3d11.idirect3ddevice">Direct3D11. IDirect3DDevice。</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.directx.directxpixelformat">DirectXPixelFormat。</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegetpropertystatus">Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyStatus</a></li>
-
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.textreadingorder">Windows TextReadingOrder</a></li>
 </ul>
