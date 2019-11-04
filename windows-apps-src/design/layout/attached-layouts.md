@@ -1,5 +1,5 @@
 ---
-Description: 您可以定义附加的布局以用于如 ItemsRepeater 控件的容器。
+Description: 您可以定义用于容器的附加布局，如 ItemsRepeater 控件。
 title: AttachedLayout
 label: AttachedLayout
 template: detail.hbs
@@ -7,22 +7,22 @@ ms.date: 03/13/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ff73b13acb5f5970bb79755b0bf5706fb12545a
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.openlocfilehash: dc23e86f85c5db3dd10c5cec152047be387d4513
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913987"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282288"
 ---
-# <a name="attached-layouts"></a>附加的布局
+# <a name="attached-layouts"></a>附加布局
 
-委托到另一个对象其布局逻辑的容器 （例如面板） 依赖于要为其子元素提供的布局行为的附加的布局对象。  附加的布局模型提供了灵活性来更改在运行时，项的布局的应用程序或轻松共享的 UI （例如似乎对齐列中的表的行中的项） 的不同部分之间的布局的方面。
+将其布局逻辑委托给另一个对象的容器（例如面板）依赖于附加的布局对象来提供其子元素的布局行为。  附加的布局模型为应用程序提供了灵活性，以便在运行时更改项的布局，或在 UI 的不同部分之间更轻松地共享布局的各个方面（例如，在列中显示为对齐的表的行中的项）。
 
-在本主题中，我们将介绍在创建的附加的布局 （虚拟化和非虚拟化） 的概念和类都需要了解，所涉及的内容和需要它们之间做出选择时要考虑的权衡取舍。
+在本主题中，我们介绍了创建附加布局（虚拟化和非虚拟化）所涉及的内容、需要了解的概念和类，以及在确定它们之间需要考虑的折衷。
 
 | **获取 Windows UI 库** |
 | - |
-| 此控件是作为 Windows UI 库，包含新控件和适用于 UWP 应用的 UI 功能的 NuGet 包的一部分。 有关详细信息，包括安装说明，请参阅[Windows 用户界面库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| 此控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，包含新控件和 UWP 应用的 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **重要的 API**：
 
@@ -38,33 +38,33 @@ ms.locfileid: "58913987"
 
 ## <a name="key-concepts"></a>关键概念
 
-执行布局需要为每个元素，回答两个问题：
+执行布局需要为每个元素回答两个问题：
 
-1. 什么***大小***将此元素是？
+1. 此元素的***大小***是多少？
 
-2. 将会什么***位置***此元素是？
+2. 此元素的***位置***是什么？
 
-XAML 的布局系统，回答这些问题，简要介绍作为一部分的讨论[自定义面板](/windows/uwp/design/layout/custom-panels-overview)。
+XAML 的布局系统（回答这些问题）将在对[自定义面板](/windows/uwp/design/layout/custom-panels-overview)的讨论中进行简要介绍。
 
 ### <a name="containers-and-context"></a>容器和上下文
 
-从概念上讲，XAML 的[面板](/uwp/api/windows.ui.xaml.controls.panel)填充 framework 中的两个重要角色：
+从概念上讲，XAML 的[面板](/uwp/api/windows.ui.xaml.controls.panel)填充了框架中的两个重要角色：
 
-1. 它可以包含子元素，并引入了中的元素树的分支。
-2. 它适用于这些子的一个特定的布局，策略。
+1. 它可以包含子元素，并在元素树中引入了分支。
+2. 它将特定的布局策略应用于这些子策略。
 
-出于此原因，XAML 中的一个面板通常已与布局，但从技术上讲，不止是布局。
+出于此原因，XAML 中的面板通常与布局同义，但从技术上说，不仅仅是布局。
 
-[ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)具体操作方面也像面板中，但，与不同面板，它不显示将允许以编程方式添加或删除 UIElement 子级的子级属性。  相反，对应于数据项的集合的框架会自动管理其子级的生存期。  尽管它不从 Panel 派生的但它的行为，由一个面板等框架进行处理。
+[ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)的行为与面板的行为类似，但与面板不同，它不会公开允许以编程方式添加或删除 UIElement 子项的子属性。  相反，它的子级生存期由框架自动管理，以对应于数据项的集合。  尽管它不是从面板派生的，但它的行为和由框架（如面板）处理。
 
 > [!NOTE]
-> [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel)是派生自面板，它将委托附加到其逻辑的容器[布局](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout)对象。  LayoutPanel 处于*预览版*和目前仅以*预发行版*WinUI 包的删除。
+> [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel)是一个从 Panel 派生的容器，它将其逻辑委托给附加的[布局](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout)对象。  LayoutPanel 处于*预览阶段*，目前仅在 WinUI 包的*预发行*版本中可用。
 
 #### <a name="containers"></a>容器
 
-从概念上讲，[面板](/uwp/api/windows.ui.xaml.controls.panel)是一个容器元素，还具有的功能来呈现的像素[背景](/uwp/api/windows.ui.xaml.controls.panel.background)。  面板提供一种方法来封装在一个易于使用的包的常见布局逻辑。
+从概念上讲， [Panel](/uwp/api/windows.ui.xaml.controls.panel)是元素的容器，还可以呈现[背景](/uwp/api/windows.ui.xaml.controls.panel.background)像素。  面板提供了在易于使用的包中封装公共布局逻辑的方法。
 
-这一概念**附加布局**使容器的两个角色和更清晰的布局之间的区别。  如果容器委托到另一个对象其布局逻辑我们将调用该对象的附加的布局如下面的代码段中所示。 继承的容器[FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement)，例如 LayoutPanel，自动使提供 XAML 的布局过程 （例如高度和宽度） 的输入的常见属性。
+**附加布局**的概念使得容器和布局的两个角色之间的区别更加清晰。  如果容器将其布局逻辑委托给另一个对象，我们会将该对象称为附加的布局，如以下代码片段所示。 从[FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement)继承的容器（如 LayoutPanel）会自动公开提供 XAML 布局进程（例如，Height 和 Width）的输入的通用属性。
 
 ```xaml
 <LayoutPanel>
@@ -77,11 +77,11 @@ XAML 的布局系统，回答这些问题，简要介绍作为一部分的讨论
 </LayoutPanel>
 ```
 
-在布局过程依赖于上附加的容器*UniformGridLayout*测量和排列其子级。
+在布局过程中，容器依靠附加的*UniformGridLayout*来测量和排列其子级。
 
-#### <a name="per-container-state"></a>每个容器状态
+#### <a name="per-container-state"></a>每容器状态
 
-使用附加的布局，可能与关联的布局对象的单一实例*许多*容器类似下面的代码段中; 因此，它不能依赖于或直接引用宿主容器。  例如：
+使用附加布局时，布局对象的单个实例可能与*多个*容器关联，如下面的代码段中所示;因此，它不能依赖于或直接引用宿主容器。  例如：
 
 ```xaml
 <!-- ... --->
@@ -94,73 +94,73 @@ XAML 的布局系统，回答这些问题，简要介绍作为一部分的讨论
 <!-- ... --->
 ```
 
-这种情况下*ExampleLayout*必须仔细考虑它使用在其布局计算并存储该状态，以免影响与另一个面板中的元素的布局的状态。  它将类似于自定义面板的值取决于其 MeasureOverride 和 ArrangeOverride 逻辑及其*静态*属性。
+对于这种情况， *ExampleLayout*必须仔细考虑它在其布局计算中使用的状态，以及该状态的存储位置，以避免影响一个面板中元素的布局。  它类似于自定义面板，其 System.windows.frameworkelement.measureoverride 和 System.windows.frameworkelement.arrangeoverride 逻辑依赖于其*静态*属性的值。
 
 #### <a name="layoutcontext"></a>LayoutContext
 
-目的[LayoutContext](/uwp/api/microsoft.ui.xaml.controls.layoutcontext)是应对这些挑战。  它提供附加的布局与宿主容器，如检索子元素，而不会引入两者之间的直接依赖项进行交互的功能。 上下文还使布局来存储它要求可能会与容器的子元素相关的任何状态。
+[LayoutContext](/uwp/api/microsoft.ui.xaml.controls.layoutcontext)的目的是应对这些挑战。  它为附加的布局提供与宿主容器交互的能力，如检索子元素，而不引入二者之间的直接依赖项。 上下文还启用布局，以存储可能与容器的子元素相关的任何状态。
 
-简单、 非虚拟化布局通常不需要维护任何状态，使其不产生问题。 更复杂的布局，如网格中，但是，可以选择该度量值之间维护状态，并安排调用，以避免重新计算的值。
+简单的非虚拟化布局通常不需要维护任何状态，因此不会出现问题。 但是，更复杂的布局（如网格）可以选择在度量值和排列调用之间保持状态，以避免重新计算值。
 
-虚拟化布局*通常*需要维护一些状态之间的这两个度量值和迭代布局传递之间也排列。
+虚拟化布局*通常*需要在度量值和排列之间以及迭代布局阶段之间维护某种状态。
 
-#### <a name="initializing-and-uninitializing-per-container-state"></a>初始化和取消初始化每个容器状态
+#### <a name="initializing-and-uninitializing-per-container-state"></a>初始化和取消初始化每个容器的状态
 
-当布局附加到容器，其[InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore)方法调用，并且提供初始化某个对象以存储状态的机会。
+将布局附加到容器时，会调用其[InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore)方法，并提供初始化对象以存储状态的机会。
 
-同样，当布局正在删除容器中，从[UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore)将调用方法。  这使布局有机会清理它必须与该容器关联的任何状态。
+同样，从容器中移除布局时，将调用[UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore)方法。  这使布局有机会清除它与该容器关联的任何状态。
 
-布局的状态对象可以与存储在一起并从与容器中检索[LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate)上下文属性。
+布局的状态对象可与上下文中的[LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate)属性一起存储在容器中并从中检索。
 
 ### <a name="ui-virtualization"></a>UI 虚拟化
 
-UI 虚拟化意味着延迟创建 UI 对象，直到_需要时_。  它是一种性能优化。  对于非滚动方案确定_需要时_可以基于任意数量的那些特定于应用的对象。  在这些情况下，应用应考虑使用[x： 负载](../../xaml-platform/x-load-attribute.md)。 它不需要在布局中的任何特殊处理。
+UI 虚拟化意味着在_需要时_延迟创建 UI 对象。  这是一种性能优化。  对于非滚动方案，确定_所需时间_可能基于特定于应用的任何数量。  在这些情况下，应用应考虑使用[x:Load](../../xaml-platform/x-load-attribute.md)。 不需要在布局中进行任何特殊处理。
 
-在基于滚动的方案，如列表，确定_需要时_通常基于"无法对用户可见"这主要取决于它已放置在布局过程中，需要特别注意的事项。  此方案是本文档的重点。
+在基于滚动的方案（如列表）中，确定_所需的时间_通常是基于 "对用户可见" 的，这种情况很大程度上取决于布局过程中的放置位置，需要特别注意。  此方案是本文档的重点。
 
 > [!NOTE]
-> 尽管本文档中未涉及，但无法在非滚动的情况下应用启用 UI 虚拟化中滚动方案的相同功能。  例如，数据驱动工具栏控件，用于管理它呈现并且通过回收 / 可见区域和溢出菜单之间移动元素中的可用空间的更改进行响应的命令的生存期。
+> 虽然本文档未涵盖，但在滚动方案中实现 UI 虚拟化的功能也可以应用于非滚动方案。  例如，一种数据驱动的工具栏控件，可管理它所呈现的命令的生存期，并通过在可见区域和溢出菜单之间回收/移动元素来响应可用空间的更改。
 
 ## <a name="getting-started"></a>入门
 
-首先，确定是否需要创建的布局应支持 UI 虚拟化。
+首先，确定需要创建的布局是否应支持 UI 虚拟化。
 
-**需要记住的一些事项...**
+**请注意以下几点：**
 
-1. 非虚拟化布局是作者更容易。 如果项的数目将始终为小然后创作非虚拟化布局建议。
-2. 该平台提供了一组使用的附加布局[ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater#change-the-layout-of-items)并[LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel)以涵盖了常见的需求。  熟悉这些之前您需要定义自定义布局。
-3. 虚拟化布局始终具有一些其他的 CPU 和内存成本/复杂/开销与非虚拟化布局相比。  常规的规则的经验，如果子级布局将需要管理将可能能放在一个区域中的是 3 倍的视区的大小，则不可能有虚拟化布局多获得提升。 3 倍大小更高版本中此文档更详细地讨论，但由于在 Windows 和虚拟化其影响上滚动的异步特性。
+1. 非虚拟化布局更易于创作。 如果项目数始终为小，则建议编写非虚拟化布局。
+2. 该平台提供一组附加的布局，这些布局适用于[ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater#change-the-layout-of-items)和[LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) ，以满足常见需求。  在确定需要定义自定义布局之前，先熟悉这些要求。
+3. 与非虚拟化布局相比，虚拟化布局始终具有额外的 CPU 和内存成本/复杂性/开销。  一般的经验法则是，如果布局需要进行管理，则可能会将其放在视区大小的3倍的区域，这可能不会从虚拟化布局中获得很大的收益。 此文档稍后将更详细地讨论3倍大小，但这是因为在 Windows 上滚动的异步性质及其对虚拟化的影响。
 
 > [!TIP]
-> 作为参考的默认设置[ListView](/uwp/api/windows.ui.xaml.controls.listview) (和[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)) 是回收不会开始直到项的数目都不足以填满当前视区的大小 x 3。
+> 作为参考， [ListView](/uwp/api/windows.ui.xaml.controls.listview) （和[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)）的默认设置是循环不会开始循环，直到项数足以填充当前视区的大小。
 
 **选择基类型**
 
-![附加的布局层次结构](images/xaml-attached-layout-hierarchy.png)
+![附加布局层次结构](images/xaml-attached-layout-hierarchy.png)
 
-基[布局](/uwp/api/microsoft.ui.xaml.controls.layout)类型具有两个充当用于创作附加的布局起点的派生的类型：
+基本[布局](/uwp/api/microsoft.ui.xaml.controls.layout)类型具有两个派生类型，用作创作附加布局的起点：
 
 1. [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout)
 2. [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)
 
 ## <a name="non-virtualizing-layout"></a>非虚拟化布局
 
-创建非虚拟化布局的方法应该感到很熟悉已创建的任何人都[自定义面板](/windows/uwp/design/layout/custom-panels-overview)。  涉及的概念同样适用。  主要区别在于[NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext)使用访问[子级](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children)集合和布局可以选择用于存储状态。
+创建非虚拟化布局的方法对于创建[自定义面板](/windows/uwp/design/layout/custom-panels-overview)的任何人都非常熟悉。  相同的概念也适用。  主要区别在于， [NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext)用于访问[子](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children)集合，布局可能选择存储状态。
 
-1. 派生自基类型[NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout) （而不是面板）。
-2. *（可选）* 定义依赖属性，当更改将使布局失效。
-3. _(**新建**/可选)_ 初始化所需的布局的一部分的任何状态对象[InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore)。 将其与宿主容器存储通过使用[LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate)与上下文一起提供。
-4. 重写[MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.measureoverride) ，并调用[度量值](/uwp/api/windows.ui.xaml.uielement.measure)对所有的子对象的方法。
-5. 重写[ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride) ，并调用[排列](/uwp/api/windows.ui.xaml.uielement.arrange)对所有的子对象的方法。
-6. *(**新建**/可选)* 清除任何已保存状态的一部分[UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore)。
+1. 从基类型[NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout) （而不是面板）派生。
+2. *（可选）* 定义发生更改时将使布局失效的依赖项属性。
+3. _（**New**/Optional）_ 将布局所需的任何状态对象初始化为[InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore)的一部分。 使用随上下文提供的[LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate)将其与主机容器一起使用。
+4. 重写[system.windows.frameworkelement.measureoverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.measureoverride)并对所有子级调用[Measure](/uwp/api/windows.ui.xaml.uielement.measure)方法。
+5. 重写[system.windows.frameworkelement.arrangeoverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride)并对所有子级调用 "[排列](/uwp/api/windows.ui.xaml.uielement.arrange)" 方法。
+6. *（**New**/Optional）* 清除[UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore)中的任何已保存状态。
 
-### <a name="example-a-simple-stack-layout-varying-sized-items"></a>例如：简单的堆栈布局 （大小不同的项）
+### <a name="example-a-simple-stack-layout-varying-sized-items"></a>例如：简单的堆栈布局（大小变化的项）
 
 ![MyStackLayout](images/xaml-attached-layout-mystacklayout.png)
 
-下面是非常基本非虚拟化堆栈布局的不同大小的项目。 它缺少要调整的布局行为的任何属性。 下面的实现说明了如何布局依赖为容器提供的上下文对象：
+下面是大小可变项的基本非虚拟化堆栈布局。 它缺少用于调整布局行为的任何属性。 以下实现阐释了布局如何依赖于容器提供的上下文对象：
 
-1. 获取子项的计数和
+1. 获取子级的计数，并
 2. 按索引访问每个子元素。
 
 ```csharp
@@ -209,97 +209,97 @@ public class MyStackLayout : NonVirtualizingLayout
 
 ## <a name="virtualizing-layouts"></a>虚拟化布局
 
-与非虚拟化布局类似，虚拟化布局的高级步骤是相同的。  复杂性是很大程度上在确定元素将位于视区和应意识到。
+与非虚拟化布局类似，虚拟化布局的高级步骤是相同的。  复杂性很大程度上取决于确定哪些元素会落在视区内并且应该实现。
 
 1. 派生自基类型[VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)。
-2. （可选）定义依赖属性，当更改将使布局失效。
-3. 初始化所需的布局的一部分的任何状态对象[InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore)。 将其与宿主容器存储通过使用[LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate)与上下文一起提供。
-4. 重写[MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) ，并调用[度量值](/uwp/api/windows.ui.xaml.uielement.measure)应意识到每个子级的方法。
-   1. [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法用于检索已准备好由框架 （例如应用的数据绑定） 的 UIElement。
-5. 重写[ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride) ，并调用[排列](/uwp/api/windows.ui.xaml.uielement.arrange)方法为每个已实现的孩子。
-6. （可选）清除任何保存状态的一部分[UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore)。
+2. 可有可无定义依赖属性，更改该属性后，布局会失效。
+3. 将布局所需的任何状态对象初始化为[InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore)的一部分。 使用随上下文提供的[LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate)将其与主机容器一起使用。
+4. 重写[system.windows.frameworkelement.measureoverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride)并为应实现的每个子项调用[Measure](/uwp/api/windows.ui.xaml.uielement.measure)方法。
+   1. [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法用于检索已由框架准备的 UIElement （例如，已应用数据绑定）。
+5. 重写[system.windows.frameworkelement.arrangeoverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride)并为每个已实现的子级调用 "[排列](/uwp/api/windows.ui.xaml.uielement.arrange)" 方法。
+6. 可有可无清除[UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore)中的任何已保存状态。
 
 > [!TIP]
-> 返回的值[MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)用作虚拟化的内容的大小。
+> [System.windows.frameworkelement.measureoverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)返回的值用作虚拟化内容的大小。
 
-有两种创作虚拟化布局时需要考虑的常规方法。  若要选择一个或另一个很大程度上取决于"如何将确定元素大小"。  如果其足以知道数据集或数据本身中的项的索引可以确定其最终大小，则我们认为它很**依赖于数据**。  这些是更轻松地创建。  如果，但是，确定大小的项是创建并度量值 UI，那么我们所说的唯一方法是**依赖于内容的**。  这些是更复杂。
+在创作虚拟化布局时，有两种常规方法需要考虑。  在很大程度上取决于 "如何确定元素的大小"。  如果它足以知道数据集中某项的索引，或者数据本身决定了其最终大小，则会将其视为**依赖于数据的数据**。  这种创建更简单。  但是，如果确定某项的大小的唯一方法是创建并度量 UI，则会说它**依赖于内容**。  它们更复杂。
 
 ### <a name="the-layout-process"></a>布局过程
 
-无论你要创建数据或依赖于内容的布局，务必了解布局过程和 Windows 的异步滚动的影响。
+无论您创建的是数据还是依赖于内容的布局，理解布局过程和 Windows 异步滚动的影响都很重要。
 
-（通过） 到屏幕上显示用户界面的框架，启动时执行的步骤的简化的视图是：
+（Over）简化了框架从启动到在屏幕上显示 UI 时执行的步骤：
 
-1. 分析标记。
+1. 它分析标记。
 
-2. 生成元素的树。
+2. 生成元素树。
 
-3. 执行布局处理过程。
+3. 执行布局处理。
 
-4. 执行呈现处理。
+4. 执行渲染处理。
 
-使用 UI 虚拟化，在步骤 2 中创建的元素通常所做的是延迟，或提前结束一次其已确定该足够内容已创建，以填充在视区。 虚拟化容器 (例如 ItemsRepeater) 遵从其附加布局来推动该过程。 它提供了包含的附加的布局[VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)显示其他虚拟化布局所需的信息。
+通过 UI 虚拟化，创建通常在步骤2中执行的元素将在确定已创建足够的内容以填充视区后提前延迟或结束。 虚拟化容器（例如，ItemsRepeater）会根据其附加布局来驱动此进程。 它为附加的布局提供一个[VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) ，用于显示虚拟化布局所需的其他信息。
 
 **RealizationRect （即视区）**
 
-在 Windows 上滚动发生异步到 UI 线程。 不受框架的布局。  而是交互和移动发生在系统的复合器。 此方法的优点是，平移内容始终可按 60 fps。  这方面的挑战，但"视区"，显示的布局可能稍有过期相对于什么是在屏幕上可见。 如果用户快速滚动，它们可能会越过的 UI 线程以生成新的内容和"平移到黑色"的速度。 出于此原因，是通常所需的虚拟化的布局，以生成已准备好元素不足以填充区域大于视区的附加缓冲区。 当用户滚动过程中的较重负载下仍出示的内容。
+在 Windows 上滚动时，会异步执行到 UI 线程。 它不受框架布局的控制。  相反，交互和移动发生在系统的组合器中。 此方法的优点是只能在60fps 上完成平移内容。  但这一难题在于布局所看到的 "视区" 可能会相对于屏幕上实际显示的内容稍有不同。 如果用户快速滚动，则他们可能会越过 UI 线程生成新内容和 "平移到黑色" 的速度。 出于此原因，通常需要使用虚拟化布局来生成已准备好的元素的附加缓冲区，足以填充大于视区的区域。 如果在滚动过程中重负载较重，仍会向用户显示内容。
 
 ![实现 rect](images/xaml-attached-layout-realizationrect.png)
 
-由于创建元素时是代价高昂，虚拟化容器 (例如[ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)) 程序先提供包含的附加的布局[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)匹配视区。 空闲时容器可能会增长已准备好内容的缓冲区的重复调用使用越来越大的认识到矩形布局 此行为是一种性能优化，尝试进行快速的启动时间和良好的平移体验之间取得平衡。 最大缓冲区大小，将生成 ItemsRepeater 控制通过其[VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength)并[HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength)属性。
+由于元素创建成本高昂，虚拟化容器（例如， [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)）将最初提供与视区匹配的[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)的附加布局。 在空闲时，容器可以通过使用越来越大的实现矩形对布局进行重复调用，从而增加已准备的内容缓冲区。 此行为是一种性能优化，它尝试在快速启动时间与良好的平移体验之间取得平衡。 ItemsRepeater 将生成的最大缓冲区大小由其[VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength)和[HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength)属性控制。
 
-**重新使用元素 （回收）**
+**重新使用元素（循环）**
 
-布局预期大小和位置的元素以填充[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)每次运行时。 默认情况下[VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)将回收任何未使用的元素，每个布局处理过程结束时。
+布局应在每次运行时都要调整元素大小并定位，以填充[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) 。 默认情况下， [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)将在每个布局处理结束时回收任何未使用的元素。
 
-[VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)作为的一部分传递给布局[MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride)并[ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride)提供其他信息需要虚拟化布局。 一些它提供的最常用内容的功能如下：
+作为[system.windows.frameworkelement.measureoverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride)和[system.windows.frameworkelement.arrangeoverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride)的一部分传递到布局的[VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)提供了虚拟化布局所需的其他信息。 它提供的一些最常用的功能是：
 
-1. 查询的数据中的项数 ([ItemCount](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.itemcount))。
-2. 检索特定项使用[GetItemAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getitemat)方法。
-3. 检索[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)表示视区和布局应具有填充的缓冲区意识到元素。
-4. 请求特定的项与 UIElement [GetOrCreateElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法。
+1. 查询数据中的项目数（[ItemCount](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.itemcount)）。
+2. 使用[GetItemAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getitemat)方法检索特定项。
+3. 检索表示布局应使用已实现元素填充的视区和缓冲区的[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) 。
+4. 使用[GetOrCreateElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法为特定项请求 UIElement。
 
-请求给定索引的元素将导致该元素将被标记为"使用中"布局的阶段。 如果尚不存在元素，然后将会意识到，并自动准备好使用 （例如以下 UI 树定义中的 DataTemplate，处理任何数据绑定，等等。）。  否则，它将检索从现有实例池。
+为给定索引请求元素将导致该布局的传递将该元素标记为 "正在使用"。 如果该元素尚不存在，则它将实现并自动准备就绪（例如，因为这样做 System.windows.datatemplate> 中定义的 UI 树，处理任何数据绑定，等等）。  否则，将从现有实例的池中检索它。
 
-在每个测量处理过程结束时，任何现有的、 实现"中使用"未标记为元素自动被视为可供重复使用除非选项[SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions)通过检索到元素时使用[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法。 框架会自动将其移动到回收池，并使其可。 它可能会随后将请求使用的不同容器。 框架尝试避免此如有可能因为没有重设关系元素与关联一些费用。
+每个度量值结束时，任何未标记为 "正在使用" 的现有已实现元素都将被自动视为可重复使用，除非通过[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) 方法检索元素是使用了 [SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions)。 框架自动将其移动到回收池并使其可用。 它随后可能会被其他容器使用。 如果可能，该框架会尽量避免这种情况，因为存在一些与重新父级元素相关的成本。
 
-如果虚拟化布局知道每个度量值的元素将不再属于实现 rect 的开头，则它可以优化其重复使用。 而不是依赖框架的默认行为。 布局可提前移动元素到回收池通过使用[RecycleElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recycleelement)方法。  请求新元素之前调用此方法使布局更高版本发出时能够使用这些现有元素[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)的索引，尚未与元素关联的请求。
+如果虚拟化布局知道每个度量值开始时，哪些元素将不再位于实现矩形内，则它可以优化其重复使用。 而不是依赖于框架的默认行为。 布局可以提前使用[RecycleElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recycleelement)方法将元素移动到回收池。  在请求新元素之前调用此方法会导致这些现有元素在布局之后对尚未与某个元素关联的索引发出[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)请求时可用。
 
-VirtualizingLayoutContext 提供两个面向布局作者创建依赖于内容的布局的其他属性。 它们是更详细地讨论更高版本。
+VirtualizingLayoutContext 提供了其他两个属性，这些属性设计用于创建内容相关布局的布局作者。 稍后将对其进行更详细的讨论。
 
-1. 一个[RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex)提供了一个可选_输入_到布局。
-2. 一个[LayoutOrigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin) ，它是一个可选_输出_的布局。
+1. 提供要布局的可选_输入_的[RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) 。
+2. 作为布局的可选_输出_的[LayoutOrigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin) 。
 
-## <a name="data-dependent-virtualizing-layouts"></a>依赖于数据的虚拟化布局
+## <a name="data-dependent-virtualizing-layouts"></a>数据相关的虚拟化布局
 
-如果您知道每个项的大小应为无需度量值要显示的内容，则虚拟化布局容易。  在此文档中我们将只需引用此类别的虚拟化作为布局**数据布局**因为它们通常涉及检查数据。  基于应用程序可能会因为也许选取已知大小的可视表示形式的数据在其部分数据或以前由设计决定。
+如果知道每个项的大小应该不需要衡量要显示的内容，则虚拟化布局会更容易。  在本文档中，我们只是将这种类型的虚拟化布局作为**数据布局**，因为它们通常涉及到数据的检查。  根据数据，应用可能会选取具有已知大小的视觉对象表示形式，这可能是因为它的数据部分或之前是由设计决定的。
 
-常规方法是对布局：
+常规方法是对的布局进行以下操作：
 
-1. 计算大小和每个项的位置。
-2. 作为的一部分[MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride):
-   1. 使用[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)来确定哪些项显示在视区内。
-   2. 检索表示应具有的项的 UIElement [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法。
-   3. [度量值](/uwp/api/windows.ui.xaml.uielement.measure)UIElement 预先计算的大小。
-3. 作为的一部分[ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride)，[排列](/uwp/api/windows.ui.xaml.uielement.arrange)每个使用预先计算好的位置实现 UIElement。
+1. 计算每个项的大小和位置。
+2. 作为[system.windows.frameworkelement.measureoverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride)的一部分：
+   1. 使用[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)确定应在视区中显示哪些项。
+   2. 检索应该用[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法表示该项的 UIElement。
+   3. 用预计算的大小[度量](/uwp/api/windows.ui.xaml.uielement.measure)UIElement。
+3. 作为[system.windows.frameworkelement.arrangeoverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride)的一部分，请将每个已实现的 UIElement 与预先计算的位置进行[排列](/uwp/api/windows.ui.xaml.uielement.arrange)。
 
 > [!NOTE]
-> 数据布局方法通常是与不兼容_数据虚拟化_。  具体而言，唯一的数据加载到内存是填充了对用户可见的内容所需的数据。  随着用户向该数据仍驻留下滚动，数据虚拟化不指延迟或增量加载的数据。  相反，它指当项从内存释放，因为会将它们滚动出视野之外。  无检查每个数据项，因为数据布局的一部分将会按预期方式阻止正常使用的数据虚拟化的数据布局。  例外情况是像 UniformGridLayout 假定所有一切必须大小相同的布局。
+> 数据布局方法通常与_数据虚拟化_不兼容。  具体而言，仅将加载到内存中的数据加载到内存中的数据是填充用户可见内容所需的数据。  当用户向下滚动数据的驻留位置时，数据虚拟化不会引用延迟或增量加载数据。  相反，它会引用从内存中释放项的时间，因为它们会滚动到视图之外。  使用数据布局检查作为数据布局一部分的每个数据项会阻止数据虚拟化按预期方式工作。  异常是类似于 UniformGridLayout 的布局，它假定所有内容都具有相同的大小。
 
 > [!TIP]
-> 如果要创建自定义控件中各种情况下的其他人将使用的控件库的数据布局可能不是为你的选项。
+> 如果要为控件库创建自定义控件，而其他人将在各种情况下使用该控件，则可能不会为你选择数据布局。
 
-### <a name="example-xbox-activity-feed-layout"></a>例如：Xbox 活动源的布局
+### <a name="example-xbox-activity-feed-layout"></a>例如：Xbox 活动源布局
 
-Xbox 活动源的 UI 使用了其中每一行都具有宽磁贴，然后两个相反的窄磁贴上的后续行重复图案。 在此布局中，每个项的大小取决于项的位置中的数据集和磁贴的已知的大小 （宽 vs 缩小）。
+Xbox 活动源的 UI 使用重复模式，其中每行都有一个宽磁贴，后跟在后续行上反转的两个窄图块。 在此布局中，每个项的大小是项在数据集中的位置的功能，以及磁贴的已知大小（宽型和窄型）。
 
 ![Xbox 活动源](images/xaml-attached-layout-activityfeedscreenshot.png)
 
-下面演练哪些自定义虚拟化的活动源的 UI 可能为了说明常规何种方法的代码可能需要**的数据布局**。
+下面的代码演示了活动源的自定义虚拟化 UI 的定义，它可能是为了说明**数据布局**的一般方法。
 
 <table>
 <td>
-    <p>如果有<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序安装，请单击此处可打开应用，请参阅<a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a>在此示例布局操作。</p>
+    <p>如果已安装了<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序，请单击此处打开应用程序，并使用此示例布局查看<a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a>的操作。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">获取源代码 (GitHub)</a></li>
@@ -582,13 +582,13 @@ internal class ActivityFeedLayoutState
 }
 ```
 
-### <a name="optional-managing-the-item-to-uielement-mapping"></a>（可选）管理到 UIElement 的映射项
+### <a name="optional-managing-the-item-to-uielement-mapping"></a>可有可无管理要 UIElement 映射的项
 
-默认情况下[VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)维护已实现的元素和它们所代表的数据源中的索引之间的映射。  可以选择一种布局来管理此映射本身始终请求的选项来[SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions)检索通过的元素时[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法，这将阻止默认值自动回收行为。  布局可能选择执行此操作，例如，如果它将仅用于时滚动仅限于一个方向，则将其视为的项会总是连续 （即知道第一个和最后一个元素的索引只需知道应为 rea 的所有元素lized)。
+默认情况下， [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)在所表示的数据源中的已实现元素与索引之间维护映射。  布局可以选择在通过阻止默认自动回收行为的[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法检索元素时，始终请求[SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions)的选项来管理此映射本身。  布局可以选择执行此操作，例如，仅当滚动仅限一个方向并且它认为的项将始终是连续的时（即，知道第一个和最后一个元素的索引就足以知道应该 rea 的所有元素。lized).
 
 #### <a name="example-xbox-activity-feed-measure"></a>例如：Xbox 活动源度量值
 
-下面的代码段显示了可添加到在前面的示例 MeasureOverride，若要管理映射的其他逻辑。
+下面的代码片段显示了可添加到前面示例中的 System.windows.frameworkelement.measureoverride 以管理映射的其他逻辑。
 
 ```csharp
     protected override Size MeasureOverride(VirtualizingLayoutContext context, Size availableSize)
@@ -660,59 +660,59 @@ internal class ActivityFeedLayoutState
 }
 ```
 
-## <a name="content-dependent-virtualizing-layouts"></a>依赖于内容的虚拟化布局
+## <a name="content-dependent-virtualizing-layouts"></a>依赖内容的虚拟化布局
 
-如果您必须首先测量要找出其精确大小的项的 UI 内容，则它是**依赖于内容的布局**。  您还可以为每个项必须调整自身的布局，而不是告知其大小的项的布局将它。 属于此类别的虚拟化布局是更为复杂。
+如果必须首先测量某个项的 UI 内容才能确定其准确大小，则它是**依赖于内容的布局**。  您还可以将其视为一种布局，其中每个项必须自行调整大小，而不是指示项大小的布局。 此类别中的虚拟化布局更多。
 
 > [!NOTE]
-> 不依赖于内容的布局 （不应该） 破坏数据虚拟化。
+> 依赖于内容的布局不会中断数据虚拟化。
 
 ### <a name="estimations"></a>估计
 
-依赖于内容的布局依赖估计猜出未实现内容的大小和已实现的内容的位置。 在这些估计值更改将导致已实现的内容来定期转变可滚动区域内的位置。 如果未得到缓解，这可能会导致非常令人沮丧而且不和谐的用户体验。 此处讨论的潜在问题和缓解措施。
+依赖于内容的布局会依赖于估计来猜测未实现内容的大小和已实现内容的位置。 随着这些估计值的更改，它将导致已实现的内容在可滚动区域内定期移动位置。 如果不减少，这可能会导致用户体验变得非常令人沮丧。 这里讨论了潜在的问题和缓解措施。
 
 > [!NOTE]
-> 数据布局，请考虑每个项并知道的所有项目，请意识到和其位置的确切的大小可以完全避免这些问题。
+> 数据布局可考虑每个项并了解所有项的准确大小（已实现或未实现）及其位置可完全避免这些问题。
 
-**滚动锚定**
+**滚动定位**
 
-XAML 提供了一种机制来通过具有滚动控件支持来缓解突然视区 shifts[滚动锚定](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider)通过实现[IScrollAnchorPovider](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider)接口。 用户会操作内容，如滚动控件不断地从选择-中要跟踪的候选项的集中选择一个元素。 如果定位点元素的位置将在布局期间移动滚动控件将会自动转移其视区维护视区。
+XAML 提供一种机制，可通过实现[IScrollAnchorPovider](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider)接口，通过滚动控件支持[滚动定位](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider)来缓解突然的视区偏移。 当用户操作内容时，滚动控件会持续从选择要跟踪的候选集合中选择一个元素。 如果定位点元素在布局中的位置改变，滚动控件会自动将其视区移动到维护视区。
 
-值[RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex)提供给布局可能反映该选择的滚动控件的当前所选的定位点元素。 或者，如果开发人员显式请求一个元素意识到其索引[GetOrCreateElement](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.getorcreateelement)方法[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)，则该索引指定为[RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex)在下一步布局处理过程。 这使开发人员意识到一个元素，并随后请求，它会进入视图通过可能的方案准备好布局[StartBringIntoView](/uwp/api/windows.ui.xaml.uielement.startbringintoview)方法。
+为布局提供的[RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex)的值可能反映滚动控件所选择的当前选定定位点元素。 或者，如果开发人员显式请求使用[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)上的[GetOrCreateElement](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.getorcreateelement)方法为索引实现某个元素，则在下一次布局传递时，该索引将被指定为[RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) 。 这样，便可以针对开发人员认识到元素，并随后请求通过[StartBringIntoView](/uwp/api/windows.ui.xaml.uielement.startbringintoview)方法进入视图中的情况来准备布局。
 
-[RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex)是估计其项的位置时，依赖于内容的布局应首先定位数据源中的项的索引。 它应作为用于定位其他已实现的项的起始点。
+[RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex)是数据源中的项的索引，与内容相关的布局在估计其项的位置时应首先定位。 它应充当定位其他已实现项的起点。
 
-**对滚动条的影响**
+**滚动条的影响**
 
-即使使用滚动锚定，如果布局的估计值多种多样，可能是由于重大的变化的内容，然后滚动条滚动块的位置可能看起来周围跳转。  如果滚动块不会显示为跟踪其鼠标指针的位置，它们在拖动时，这可以是用户他们疑惑不解。
+即使使用滚动定位，如果布局的估计值变化很大，可能是由于内容大小有重大变化，滚动条的滚动块的位置可能看上去像是跳跃。  如果在拖动滚动块时未显示滚动鼠标指针的位置，则可以为用户 jarring 这种情况。
 
-更准确地布局可以是在其估计，则用户不太可能将会看到一个在跳转的滚动条的滚动块。
+布局可以在其估计中越精确，用户看到滚动条的滚动块的可能性就越小。
 
-### <a name="layout-corrections"></a>布局的更正
+### <a name="layout-corrections"></a>布局更正
 
-依赖于内容的布局应准备好与现实合理估算。  例如，当用户滚动到的内容和布局顶部意识到第一个元素，它可能会发现元素的预期的位置相对于从中启动它的元素将导致其原点 (x: 0 之外的地方出现y:0)。 当发生这种情况时，可以使用布局[LayoutOrigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin)属性设置为新的布局起点它计算而来的位置。  最终结果是类似于滚动锚定在其中滚动控件的视区自动调整到的内容位置的帐户报告的布局。
+应准备好与内容相关的布局，以便通过现实来合理化其估算。  例如，当用户滚动到内容顶部并且布局实现了第一个元素时，它可能会发现，相对于其开始位置的元素，该元素的预期位置将导致该元素出现在除原点之外的任何位置（x:0, y:0). 出现这种情况时，布局可以使用[LayoutOrigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin)属性将它计算的位置设置为新布局源。  最终结果类似于滚动定位，滚动控件的视区会自动调整以反映布局报告的内容位置。
 
 ![更正 LayoutOrigin](images/xaml-attached-layout-origincorrection.png)
 
 ### <a name="disconnected-viewports"></a>断开连接的视区
 
-返回与该布局的大小[MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride)方法表示的内容，可能会随每个后续布局的大小最佳猜测。  当用户滚动将不断地重新计算使用更新布局[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)。
+从布局的[system.windows.frameworkelement.measureoverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride)方法返回的大小表示最佳推测，即内容大小可能随每个连续布局发生变化。  当用户滚动时，将使用更新的[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)持续重新计算布局。
 
-如果用户拖动滚动块非常快速地从布局，才会显示以使大的角度来看，视区则可以跳个之前的位置不会重叠现在当前位置。  这是因为滚动的异步特性。 还有可能使用布局来请求一个元素放入的项的当前未实现，预计当前跟踪的布局的范围之外的布局视图的应用。
+如果用户从布局的角度来看，从布局的角度来看，这种滚动块速度非常快，则显示为在以前的位置与当前位置不重叠的情况下进行大幅跳转。  这是由于滚动的异步性质导致的。 还可能是使用布局的应用请求为当前未实现的项提供一个元素，并估计该元素在布局跟踪的当前范围之外进行布局。
 
-在布局发现其猜测值不正确和/或看到意外的视区 shift，它需要重新调整其起始位置。  XAML 控件的一部分发布的虚拟化布局作为依赖于内容的布局开发，因为它们会将受限制较少的性质将显示的内容。
+当布局发现其推测不正确并且/或发现意外的视区变化时，它需要重定向其起始位置。  作为 XAML 控件一部分提供的虚拟化布局作为内容相关的布局进行开发，因为它们对要显示的内容的性质施加的限制更少。
 
 
-### <a name="example-simple-virtualizing-stack-layout-for-variable-sized-items"></a>例如：大小可变的项的简单虚拟化堆栈布局
+### <a name="example-simple-virtualizing-stack-layout-for-variable-sized-items"></a>例如：可变大小的项的简单虚拟化堆栈布局
 
-下面的示例演示简单堆栈布局的大小可变的项：
+下面的示例演示了可变大小的项的简单堆栈布局：
 
-* 支持用户界面虚拟化
-* 使用估计猜出未实现项目的大小
-* 识别潜在的不连续的视区 shifts 和
-* 应用布局更正来应对这些变化。
+* 支持 UI 虚拟化，
+* 使用估算来推测未实现的项的大小，
+* 了解潜在的不连续视区偏移量和
+* 应用布局更正以考虑这些倒班。
 
-**用法：标记**
+**Usage：标记 @ no__t-0
 
 ```xaml
 <ScrollViewer>
@@ -741,7 +741,7 @@ XAML 提供了一种机制来通过具有滚动控件支持来缓解突然视区
 </ScrollViewer>
 ```
 
-**代码隐藏文件：Main.cs**
+**Codebehind：Main .cs @ no__t-0
 
 ```csharp
 string _lorem = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus.";
@@ -757,7 +757,7 @@ var data = new ObservableCollection<Recipe>(Enumerable.Range(0, 300).Select(k =>
 repeater.ItemsSource = data;
 ```
 
-**代码：VirtualizingStackLayout.cs**
+**Code：VirtualizingStackLayout @ no__t-0
 
 ```csharp
 // This is a sample layout that stacks elements one after

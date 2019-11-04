@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 662f23c5ab201a44669b2e4e4a454aa73ebd3b43
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 31b4a02f3307909f325b71cdc0540d44054adf4c
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340195"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061970"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary 和 XAML 资源引用
 
@@ -77,7 +77,7 @@ XAML 资源是多次从标记中引用的对象。 资源在 [ResourceDictionary
 </Page>
 ```
 
-所有资源都需要有一个键。 通常，键是通过 `x:Key=”myString”` 定义的字符串。 但是，还有几种其他方法可指定键：
+所有资源都需要有一个键。 通常，键是通过 `x:Key="myString"` 定义的字符串。 但是，还有几种其他方法可指定键：
 
 -   如果未指定 [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)，则 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 和 [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 需要“TargetType”，并且将“TargetType”用作键   。 在这种情况下，键是实际的 Type 对象，而非字符串。 （请参阅下方示例）
 -   如果未指定 [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)，具有“TargetType”的 [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) 资源会将“TargetType”用作键   。 在这种情况下，键是实际的 Type 对象，而非字符串。
