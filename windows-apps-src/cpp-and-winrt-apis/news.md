@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 新增功能, 功能, 新增
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 525110a09c56f48f9f9ce3d2521c98e2297a8372
-ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
+ms.openlocfilehash: 24abdb26cf884367d9a9521d30b09b443d2e4e00
+ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72816714"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72998617"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 中的新增功能
 
@@ -269,7 +269,7 @@ struct MainPage : PageT<MainPage>
 
 [winrt::event  ](/uwp/cpp-ref-for-winrt/event) 实现现在可适当地处理使用无效标记值（数组中不存在的值）调用其 remove  方法的情况。
 
-#### <a name="coroutine-locals-are-now-destroyed-before-the-coroutine-returns"></a>现在会在协同例程返回之前销毁协同例程局部变量
+#### <a name="coroutine-local-variables-are-now-destroyed-before-the-coroutine-returns"></a>现在会在协同例程返回之前销毁协同例程局部变量
 
 实现协同例程类型的传统方法可能会允许在协同例程返回/完成之后  （而不是在最终挂起之前）销毁协同例程中的局部变量。 任何等待程序的恢复现在会延迟到最终挂起，以便避免此问题并形成其他好处。
 
@@ -296,7 +296,7 @@ struct MainPage : PageT<MainPage>
 - 重大更改  。 [winrt::handle_type 构造函数  ](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor)已通过使其显式进行了强化（现在更难使用它编写不正确的代码）。 如果需要分配原始句柄值，则改为调用 [handle_type::attach 函数  ](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function)。
 - 重大更改  。 WINRT_CanUnloadNow  和 WINRT_GetActivationFactory  的签名已更改。 完全不能声明这些函数。 而是包含 `winrt/base.h`（在包含任何 C++/WinRT Windows 命名空间头文件时自动包含）以包含这些函数的声明。
 - 对于 [winrt::clock struct  ](/uwp/cpp-ref-for-winrt/clock)，from_FILETIME/to_FILETIME  已弃用，以支持 from_file_time/to_file_time  。
-- 需要 IBuffer  参数的 API 进行了简化。 虽然大多数 API 首选集合或数组，但是有足够的 API 依赖于 IBuffer  ，需要它以便更易于从 C++ 使用这类 API。 通过此更新可以直接访问 IBuffer  实现背后的数据（使用 C++ 标准库容器所使用的相同数据命名约定）。 这样还可避免与通常以大写字母开头的元数据名称冲突。
+- 简化了需要 **IBuffer** 参数的 API。 大多数 API 更喜欢集合或数组。 但我们认为，我们应该使调用依赖于 **IBuffer** 的 API 更轻松。 此更新提供对 **IBuffer** 实现后的数据的直接访问。 它使用的数据命名约定与 C++ 标准库容器使用的数据命名约定相同。 该约定还可避免与通常以大写字母开头的元数据名称冲突。
 - 改进了代码生成：进行了各种改进，以减小代码大小、提高内联并优化工厂缓存。
 - 删除了不必要的递归。 当命令行引用文件夹，而不是特定 `.winmd` 时，`cppwinrt.exe` 工具不再以递归方式搜索 `.winmd` 文件。 `cppwinrt.exe` 工具现在还可更智能地处理重复项，从而对用户错误和格式不正确的 `.winmd` 文件更具弹性。
 - 强化了智能指针。 以前在移动分配新值时，事件撤销程序会无法撤销。 这有助于揭示智能指针类未可靠地处理自我赋值的问题；来源于 [winrt::com_ptr 结构模板  ](/uwp/cpp-ref-for-winrt/com-ptr)。 winrt::com_ptr  进行了修复，并且事件撤销程序进行了修复，可正确处理移动语义正确，以便可在分配时撤销。
