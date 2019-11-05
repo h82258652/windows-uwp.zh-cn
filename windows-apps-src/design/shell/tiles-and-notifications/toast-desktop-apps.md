@@ -7,12 +7,12 @@ ms.date: 05/01/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, 桌面, toast 通知, 桌面桥, 用于发送 toast 的选项, com 服务器, com 激活器, com, 虚假 com, 无 com, 没有 com, 发送 toast
 ms.localizationpriority: medium
-ms.openlocfilehash: 030f8b1380dc28a41e65989ccbda688523fad965
-ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
+ms.openlocfilehash: 31501d2dc3ac255897e374ca81b05558be7bc2fc
+ms.sourcegitcommit: 545d5d864d89650a00a496ac4e52def9a13b14cd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71100820"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73560660"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>来自桌面应用的 Toast 通知
 
@@ -74,13 +74,13 @@ ms.locfileid: "71100820"
 | ToastGeneric 协议 | ✔️ | ✔️ |
 | 旧版模板 | ✔️ | ❌ |
 
-对于桌面桥应用, 只需发送 toast 通知, 如 UWP 应用就可以。 当用户点击你的 toast 时，你的应用将使用你在 toast 中指定的启动参数启动命令行。
+对于桌面桥应用，只需发送 toast 通知，如 UWP 应用就可以。 当用户点击你的 toast 时，你的应用将使用你在 toast 中指定的启动参数启动命令行。
 
 对于经典 Win32 应用，应设置 AUMID，以便你可以发送 toast，然后还应在快捷方式上指定 CLSID。 它可以是任何随机的 GUID。 不要添加 COM 服务器/激活器。 你正在添加“存根”COM CLSID，这将导致操作中心保留通知。 请注意，你只能使用协议激活 toast，因为存根 CLSID 将中断任何其他 toast 激活的激活。 因此，你必须更新你的应用以支持协议激活，并让 toast 协议激活你自己的应用。
 
 
 ## <a name="resources"></a>资源
 
-* [从 destkop C#应用发送本地 toast 通知](send-local-toast-desktop.md)
-* [从 destkop C++ WRL apps 发送本地 toast 通知](send-local-toast-desktop-cpp-wrl.md)
+* [从桌面C#应用发送本地 toast 通知](send-local-toast-desktop.md)
+* [从 desktop C++ WRL 应用发送本地 toast 通知](send-local-toast-desktop-cpp-wrl.md)
 * [Toast 内容文档](adaptive-interactive-toasts.md)
