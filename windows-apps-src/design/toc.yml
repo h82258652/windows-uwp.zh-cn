@@ -114,6 +114,8 @@
           items:
             - name: 项目容器和模板
               href: controls-and-patterns/item-containers-templates.md
+            - name: 数据模板选择
+              href: controls-and-patterns/data-template-selector.md
             - name: 列表视图项模板
               href: controls-and-patterns/item-templates-listview.md
             - name: 网格视图项模板
