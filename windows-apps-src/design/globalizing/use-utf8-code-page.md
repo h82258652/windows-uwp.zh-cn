@@ -1,23 +1,26 @@
 ---
-Description: 使用 UTF-8 字符编码，以便在 web 应用和其他基于 nix 的平台（Unix、Linux 和变体）之间实现最佳兼容性，最大程度地减少本地化 bug 并降低测试开销。
+Description: 使用 UTF-8 字符编码，以便在 web 应用和 \*其他基于 nix 的平台（Unix、Linux 和变体）之间实现最佳兼容性，最大程度地减少本地化 bug 并降低测试开销。
 title: 使用 Windows UTF-8 代码页
 template: detail.hbs
 ms.date: 06/12/2019
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: be3aade0289911f878d960fb62bde49b8ef840a8
-ms.sourcegitcommit: 3a06cf3f8bd00e5e6eac3b38ee7e3c7cf4bc5197
+ms.openlocfilehash: 4b4050dfea1589fbe79db08061bcc56e392173f1
+ms.sourcegitcommit: 13ce25364201223e21e2e5e89f99bc7aa4d93f56
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72888738"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73847600"
 ---
 # <a name="use-the-utf-8-code-page"></a>使用 UTF-8 代码页
 
-使用[utf-8](http://www.utf-8.com/)字符编码，以便在 web 应用和其他基于 nix 的平台（Unix、Linux 和变体）之间实现最佳兼容性，最大程度地减少本地化 bug 并降低测试开销。
+使用[utf-8](http://www.utf-8.com/)字符编码，以便在 web 应用和 \*其他基于 nix 的平台（Unix、Linux 和变体）之间实现最佳兼容性，最大程度地减少本地化 bug 并降低测试开销。
 
-UTF-8 是国际化的通用代码页面，支持使用1-6 字节可变宽度编码的所有 Unicode 码位。 它在 web 上使用 pervasively，是基于 * nix 的平台的默认值。
+UTF-8 是国际化的通用代码页，可以编码整个 Unicode 字符集。 它在 web 上使用 pervasively，是基于 * nix 的平台的默认值。
+
+> [!NOTE]
+> 编码的字符采用1到4个字节。 UTF-8 编码支持较长的字节序列，最多6个字节，但 Unicode 6.0 （U + 10FFFF）的最大码位只需要4个字节。
 
 ## <a name="-a-vs--w-apis"></a>-A 与-W Api
   
@@ -80,7 +83,8 @@ Win32 Api 通常同时支持-A 和-W 变体。
 [MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar)和[WIDECHARTOMULTIBYTE](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte)允许在 utf-8 和 utf-16 （`WCHAR`）（以及其他代码页）之间进行转换。 这在旧 Win32 API 可能仅了解 `WCHAR`时特别有用。 这些函数允许你将 UTF-8 输入转换为 `WCHAR` 以传入-W API，然后在必要时转换回结果。
 在将 `CodePage` 设置为 `CP_UTF8`的情况下使用这些函数时，请使用 `0` 或 `MB_ERR_INVALID_CHARS`的 `dwFlags`，否则 `ERROR_INVALID_FLAGS` 发生。
 
-注意：仅当在 Windows 版本1903（可能2019更新）或更高版本上运行，并且上述 ActiveCodePage 属性设置为 UTF-8 时，`CP_ACP` 等同于 `CP_UTF8`。 否则，它会采用旧的系统代码页。 建议显式使用 `CP_UTF8`。
+> [!NOTE]
+> 仅当在 Windows 版本1903（可能2019更新）或更高版本上运行，并且上述 ActiveCodePage 属性设置为 UTF-8 时，`CP_ACP` 等同于 `CP_UTF8`。 否则，它会采用旧的系统代码页。 建议显式使用 `CP_UTF8`。
 
 ## <a name="related-topics"></a>相关主题
 
