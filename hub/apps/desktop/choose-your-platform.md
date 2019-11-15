@@ -3,16 +3,17 @@ Description: 若要创建新的桌面应用，首先要做的决定是使用 Win
 ms.assetid: 82705644-F1F0-40F3-99B1-7A97BFB32831
 title: 选择应用平台
 ms.topic: article
-ms.date: 03/18/2019
+ms.date: 11/04/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 57f3101b1134b4fdceb6a38f392e54677d2b884d
-ms.sourcegitcommit: f3dd633a3149d2e206981fa52ad424d408e5508c
+keywords: windows win32, 桌面开发
+ms.openlocfilehash: c931991c283bb0b31f55c3e5539eac5ddeda9575
+ms.sourcegitcommit: cf88f5e8e1de476ed2635e791a5e5e82ae4bd8cf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73799579"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74056854"
 ---
 # <a name="choose-your-app-platform"></a>选择应用平台
 
@@ -40,19 +41,57 @@ UWP 是 Windows 10 应用程序和游戏的前沿平台。 它是一个高度可
 
 UWP 不仅可以用于为 Windows 电脑创建桌面应用程序，同时，它也是 Xbox、HoloLens 和 Surface Hub 应用程序的唯一支持平台。 UWP 是我们最新的前沿应用程序平台。
 
-有关 UWP 的详细信息，请参阅 [Windows 10 应用入门](/windows/uwp/get-started/)。
+有关 UWP 的详细信息，请参阅以下文章：
+
+* [开始行动](/windows/uwp/get-started/)
+* [设计和 UI](/windows/uwp/design/)
+* [技术和功能](/windows/uwp/develop/)
+* [API 参考](/uwp/)
+* [示例](https://github.com/Microsoft/Windows-universal-samples)
 
 ## <a name="wpf"></a>WPF
 
-WPF 是已建立的适用于可访问整个 .NET Framework 的托管型 Windows 应用程序的平台，它还使用 XAML 标记将 UI 与代码分隔。 此平台旨在用于需要复杂 UI、自定义样式和图形密集型方案的桌面应用程序。 WPF 开发技能类似于 UWP 开发技能，因此从 WPF 迁移到 UWP 应用比从 Windows 窗体迁移更容易。
+WPF 是为托管型 Windows 应用程序而建立的平台，通过它可访问 .NET Core 或整个 .NET Framework，它还使用 XAML 标记将 UI 与代码分隔。 此平台旨在用于需要复杂 UI、自定义样式和图形密集型方案的桌面应用程序。 WPF 开发技能类似于 UWP 开发技能，因此从 WPF 迁移到 UWP 应用比从 Windows 窗体迁移更容易。
 
-有关 WPF 的详细信息，请参阅 [WPF 入门](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/)。
+有关 WPF 的详细信息，请参阅以下文章：
+
+* [入门 (WPF)](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/)。
+* [创建首个应用 (.NET Core)](/visualstudio/get-started/csharp/tutorial-wpf/)
+* [创建首个应用 (.NET Framework)](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
+* [将 WPF 应用迁移到 .NET Core](/dotnet/desktop-wpf/migration/convert-project-from-net-framework/)
+* [API 参考 (.NET)](https://docs.microsoft.com/dotnet/api/index)
+* [示例](https://github.com/Microsoft/WPF-Samples)
 
 ## <a name="windows-forms"></a>Windows 窗体
 
-Windows 窗体是用于托管型 Windows 应用程序的原始平台，具有一个轻型 UI 模型和对整个 .NET Framework 的访问权限。 它擅长帮助开发人员快速开始构建应用程序，即使对于刚接触该平台的开发人员也是如此。 这是一种基于窗体的快速应用程序开发平台，其中包含大量内置的可视化和非可视化拖放控件。 Windows 窗体不使用 XAML，因此，如果决定以后将应用程序扩展到 UWP，则需要完全重写 UI。
+Windows 窗体是用于托管型 Windows 应用程序的原始平台，具有一个轻型 UI 模型和对 .NET Core 或整个 .NET Framework 的访问权限。 它擅长帮助开发人员快速开始构建应用程序，即使对于刚接触该平台的开发人员也是如此。 这是一种基于窗体的快速应用程序开发平台，其中包含大量内置的可视化和非可视化拖放控件。 Windows 窗体不使用 XAML，因此，如果决定以后将应用程序扩展到 UWP，则需要完全重写 UI。
 
-有关 Windows 窗体的详细信息，请参阅 [Windows 窗体入门](https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms)。
+有关 Windows 窗体的详细信息，请参阅以下文章：
+
+* [Windows 窗体入门](https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms)
+* [创建你的第一个应用](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
+* [API 参考 (.NET)](https://docs.microsoft.com/dotnet/api/index)
+* [增强 Windows 窗体应用](/dotnet/framework/winforms/advanced/)
+
+## <a name="win32"></a>Win32
+
+与在托管运行时环境上（如 WinRT 和 .NET）相比，将 Win32 API 与 C++ 结合使用可以实现最高级别的性能和效率，方法是通过使用非托管代码对目标平台进行更多控制。 但是，对应用程序的执行进行这种级别的控制需要更加谨慎和更集中的注意力才能正确执行，同时，需牺牲开发效率以提高运行时性能。
+
+以下是 Win32 API 和 C++ 提供的一些主要功能，使你能够生成高性能应用程序。
+
+* 硬件级优化，包括对资源分配、对象生存期、数据布局、对齐、字节封装等的严格控制。
+* 通过内部函数访问面向性能的指令集，如 SSE 和 AVX。
+* 使用模板进行高效且类型安全的泛型编程。
+* 高效且安全的容器和算法。
+* DirectX，尤其是 Direct3D 和 DirectCompute（请注意，UWP 还提供 DirectX 互操作）。
+
+有关详细信息，请参阅以下文章：
+
+* [开始行动](/windows/win32/desktop-programming/)
+* [创建首个 Win32 和 C++ 应用](/windows/win32/learnwin32/learn-to-program-for-windows/)
+* [技术和功能](/windows/win32/desktop-app-technologies)
+* [API 参考](/windows/win32/apiindex/windows-api-list/)
+* [示例](https://github.com/Microsoft/Windows-classic-samples)
 
 ## <a name="platform-comparison-uwp-wpf-and-windows-forms"></a>平台比较：UWP、WPF 和 Windows 窗体
 
@@ -71,29 +110,6 @@ Windows 窗体是用于托管型 Windows 应用程序的原始平台，具有一
 <sup>1</sup> 我们已经公开发布了一些功能，这些功能将在未来版本的 Windows 10 中处理此方案。
 
 <sup>2</sup> 尽管该平台缺少针对此方案的一流 API 支持，但开发人员可通过工作区来支持此方案。
-
-## <a name="win32"></a>Win32
-
-与在托管运行时环境上（如 WinRT 和 .NET）相比，将 Win32 API 与 C++ 结合使用可以实现最高级别的性能和效率，方法是通过使用非托管代码对目标平台进行更多控制。 但是，对应用程序的执行进行这种级别的控制需要更加谨慎和更集中的注意力才能正确执行，同时，需牺牲开发效率以提高运行时性能。
-
-以下是 Win32 API 和 C++ 提供的一些主要功能，使你能够生成高性能应用程序。
-
--   硬件级优化，包括对资源分配、对象生存期、数据布局、对齐、字节封装等的严格控制。
--   通过内部函数访问面向性能的指令集，如 SSE 和 AVX。
--   使用模板进行高效且类型安全的泛型编程。
--   高效且安全的容器和算法。
--   DirectX，尤其是 Direct3D 和 DirectCompute（请注意，UWP 还提供 DirectX 互操作）。
--   C++ AMP。
-
-有关详细信息，请参阅[使用 Win32 API 的桌面 Windows 应用入门](/windows/desktop/desktop-programming)和[桌面应用技术](/windows/desktop/desktop-app-technologies)。
-
-### <a name="win32-and-c-for-traditional-desktop-applications"></a>适用于传统桌面应用程序的 Win32 和 C++
-
-在 C++ 中编写桌面应用程序时，可以为 UI 或许多同样支持非 Windows 平台的第三方应用程序框架选择 Win32 或 MFC。
-
--   **Win32：** 这是 Windows 平台基于句柄的 C 语言 API，包括但不限于如下 UI 功能：窗口化、绘图和 UI 控件。 由于它是基于句柄的低级 C 语言 API，因此，它不是一种创建新式 UI 密集型应用的常用选择。 但是，它提供了与 Windows 平台进行交互所需的基本 API，同时，对于具有简单 UI 要求的应用或者仅希望 Windows UI 尽可能避免干扰的应用（如游戏）来说，它是一个合适的选择。
--   **MFC（Microsoft 基础类库）：** 这是古老的应用程序框架和 UI 库，自 1992 年以来一直为 Windows 开发人员提供服务。 它是基于句柄的 C 语言 Win32 API 精简 C++ 包装器，为许多预定义窗口、公共控件及其他 Windows 对象提供面向对象的接口。 尽管 .NET 生态系统中的许多新式 UI 框架在便利性方面都超过了 MFC，但对于许多创建 Windows 桌面应用程序的 C++ 开发人员来说，它仍是首选的本机 UI 框架。
--   **第三方应用程序框架：** 由于 C++ 可以在各种平台上运行且不会绑定到 Windows 或 .NET 运行时，因此第三方开发了新的 C++ 应用程序和 UI 框架，以简化具有丰富用户接口的跨平台应用程序的开发。 其中一些框架提供其自身的外观，而其他框架（如 wxWidgets 或 Qt）则使用或模拟平台的本机控件集。 使用这些库，可以在在 Windows 或其他平台（如 OSX 或 Linux）上运行的各个版本的应用程序之间共享几乎所有应用程序的源代码。
 
 ## <a name="other-app-platforms"></a>其他应用平台
 
