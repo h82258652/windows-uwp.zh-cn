@@ -1,6 +1,6 @@
 ---
-description: 连贯动画让你可以通过为一个元素在两种不同视图之间的转换创建动画来创建动态和引入注目的导航体验。
-title: 连贯的动画
+description: 连贯的动画让你可以通过为一个元素在两种不同视图之间的转换创建动画来创建动态且引人入胜的导航体验。
+title: 连贯动画
 template: detail.hbs
 ms.date: 10/04/2018
 ms.topic: article
@@ -9,20 +9,20 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f448f481b2b55a42cbaa158cc4b07261e2d7717b
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 6e17b1c18fc8e643ac788e5e13ac78cae49a35ef
+ms.sourcegitcommit: 6d743cf9c3e09f87ea2879b8e1f2dc4a1b1a16fe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317136"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74166076"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>适用于 UWP 应用的连贯动画
 
-连贯动画让你可以通过为一个元素在两种不同视图之间的转换创建动画来创建动态和引入注目的导航体验。 这有助于用户维持其上下文并提供不同视图之间的连贯性。
+连贯的动画让你可以通过为一个元素在两种不同视图之间的转换创建动画来创建动态且引人入胜的导航体验。 这有助于用户维持其上下文并提供不同视图之间的连贯性。
 
-在已连接动画中，元素似乎"继续"期间在用户界面内容中，在屏幕上从源视图中的位置飞到其目标的新视图中更改两个视图之间。 这强调在视图之间的常见内容，并为转换的一部分创建美观和动态效果。
+在连接的动画中，在 UI 内容的更改过程中，在两个视图之间出现 "继续" 元素，在屏幕上，从其在源视图中的位置到新视图的目标位置。 这强调了视图间的通用内容，并在转换过程中创建了漂亮而动态的效果。
 
-> **重要的 API**：[ConnectedAnimation 类](/uwp/api/windows.ui.xaml.media.animation.connectedanimation)， [ConnectedAnimationService 类](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
+> **重要 api**： [ConnectedAnimation 类](/uwp/api/windows.ui.xaml.media.animation.connectedanimation)、 [ConnectedAnimationService 类](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
 
 ## <a name="examples"></a>示例
@@ -32,7 +32,7 @@ ms.locfileid: "67317136"
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
-    <p>如果有<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序安装，请单击此处<a href="xamlcontrolsgallery:/item/ConnectedAnimation">打开应用并在操作中看到连接动画</a>。</p>
+    <p>如果已安装了<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序，请单击此处<a href="xamlcontrolsgallery:/item/ConnectedAnimation">打开应用程序，并查看连接动画的操作</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
@@ -41,7 +41,7 @@ ms.locfileid: "67317136"
 </tr>
 </table>
 
-在此简短视频中，应用使用连接的动画进行动画处理的项图像，随着它"继续"成为下一个页面的标头的一部分。 该效果有助于在转换过程维持用户上下文。
+在这个简短的视频中，应用使用连接的动画来对项图像进行动画处理，因为它 "继续" 变为下一页的标题。 该效果有助于在转换过程维持用户上下文。
 
 ![连贯动画](images/connected-animations/example.gif)
 
@@ -55,7 +55,7 @@ ms.locfileid: "67317136"
 
 ## <a name="connected-animation-and-the-fluent-design-system"></a>连贯动画和 Fluent 设计系统
 
- Fluent 设计系统可帮助你创建包含光线、深度、动画、材料和比例的现代、粗体 UI。 连贯动画是 Fluent 设计系统的一个组成部分，它将动画添加到你的应用。 要了解详细信息，请参阅 [UWP 的 Fluent Design 概述](/windows/apps/fluent-design-system)。
+ Fluent Design 系统可帮助你创建包含光线、深度、动画、材料和比例的现代粗体 UI。 连贯动画是 Fluent 设计系统的一个组成部分，它将动画添加到你的应用。 要了解详细信息，请参阅 [UWP 的 Fluent Design 概述](/windows/apps/fluent-design-system)。
 
 ## <a name="why-connected-animation"></a>为何选择连贯动画？
 
@@ -65,60 +65,60 @@ ms.locfileid: "67317136"
 
 连贯动画通常在更改页面时使用，但它们可被应用于你在更改 UI 中的内容时希望用户维持上下文的任何体验。 每当源视图和目标视图之间有共享的图像或其他 UI 元素时，你应该考虑使用连贯动画而不是[导航转换中的钻取](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition)。
 
-## <a name="configure-connected-animation"></a>配置连接的动画
+## <a name="configure-connected-animation"></a>配置连接动画
 
 > [!IMPORTANT]
-> 此功能需要应用的目标版本是 Windows 10，版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本。 配置属性不是在较早的 Sdk 中可用的。 可以针对最小值的版本低于 SDK 17763 使用自适应代码或条件 XAML。 有关详细信息，请参阅[版本自适应应用](/windows/uwp/debug-test-perf/version-adaptive-apps)。
+> 此功能要求应用的目标版本为 Windows 10 版本1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或更高版本。 配置属性在早期 Sdk 中不可用。 使用自适应代码或条件 XAML 可将低于 SDK 17763 的最低版本作为目标。 有关详细信息，请参阅[版本自适应应用](/windows/uwp/debug-test-perf/version-adaptive-apps)。
 
-从 Windows 10，版本 1809，开始进一步连接的动画体现 Fluent 设计动画，从而配置定制专门为向前和向后页面导航。
+从 Windows 10 版本1809开始，连接的动画通过提供专为向前和向后翻页导航定制的动画配置，进一步体现的流畅设计。
 
-通过在 connectedanimation 的位置上设置配置属性指定动画配置。 （我们将介绍此方面的示例中的下一节。）
+可以通过在 ConnectedAnimation 上设置配置属性来指定动画配置。 （我们将在下一部分中显示此内容的示例。）
 
-下表介绍可用的配置。 有关应用于这些动画的动作原则的详细信息，请参阅[方向性和重力](index.md)。
+下表介绍了可用配置。 有关这些动画中应用的运动原则的详细信息，请参阅[方向性和重心](index.md)。
 
 | [GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration) |
 | - |
-| 这是默认的配置，并建议向前导航。 |
-当用户导航正向 (A 到 B) 在应用中的，已连接的元素将显示物理上"将离开页面"。 这样，元素似乎在 z 轴空间向前移动，有点删除作为重力采用保留的效果。 若要克服受重力影响，该元素获得速度和加速到其最终位置。 结果是一个"规模和 dip"动画。 |
+| 这是默认配置，建议用于向前导航。 |
+当用户在应用中向前导航（A 到 B）时，连接的元素将显示为 "以物理方式拖离页面"。 在此过程中，元素显示为在 z 空间中向前移动，并将某个位删除为重力保持效果。 为了克服重心的影响，元素会获得速度并加速到其最终位置。 结果为 "规模和 dip" 动画。 |
 
 | [DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration) |
 | - |
-| 当用户在应用程序 (B 到 A) 中向后导航，动画是更直接。 已连接的元素以线性方式将转换从 B 到使用在减速三次方贝塞尔缓动函数。 向后 visual 功能可见性： 使用户返回到其以前的状态尽可能快同时仍维护的上下文导航流。 |
+| 当用户在应用中向后导航（B 到 A）时，动画更直接。 连接的元素以线性方式从 B 转换为，使用减速三次方缓动函数。 向后的视觉对象 affordance 尽可能快地将用户恢复到以前的状态，同时仍保持导航流的上下文。 |
 
 | [BasicConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.basicconnectedanimationconfiguration) |
 | - |
-| 这是默认值 （仅和） 在 Windows 10，版本 1809年之前的版本中使用的动画 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk))。 |
+| 这是 Windows 10 版本1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）之前的版本中使用的默认动画（仅限）。 |
 
 ### <a name="connectedanimationservice-configuration"></a>ConnectedAnimationService 配置
 
-[ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)类具有两个属性，将应用于单个动画而不是整个服务。
+[ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)类具有两个适用于各个动画的属性，而不是整个服务。
 
 - [DefaultDuration](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.defaultduration)
 - [DefaultEasingFunction](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.defaulteasingfunction)
 
-若要实现的不同效果，某些配置忽略 ConnectedAnimationService 的这些属性，并改为此表中所述使用他们自己的值。
+为了实现各种效果，某些配置将忽略 ConnectedAnimationService 上的这些属性，并改为使用自己的值，如此表中所述。
 
-| 配置 | 尊重 DefaultDuration？ | 尊重 DefaultEasingFunction？ |
+| 配置 | 是否尊重 DefaultDuration？ | 是否尊重 DefaultEasingFunction？ |
 | - | - | - |
-| 引力 | 是 | 是* <br/> **从 A 到 B 的基本转换使用此缓动函数，但是"重力 dip"具有其自己的缓动函数。*  |
-| Direct | 否 <br/> *超过 150ms年之间进行动画处理。*| 否 <br/> *使用缓动函数在减速。* |
-| 基本 | 是 | 是 |
+| 引力 | “是” | 是* <br/> **从 A 到 B 的基本转换使用此缓动函数，但 "重力 dip" 具有其自己的缓动函数。*  |
+| Direct | 无 <br/> *在150ms 上进行动画处理。*| 无 <br/> *使用减速缓动函数。* |
+| 基本 | “是” | “是” |
 
-## <a name="how-to-implement-connected-animation"></a>如何实现连接的动画
+## <a name="how-to-implement-connected-animation"></a>如何实现连接动画
 
 设置连贯动画涉及两个步骤：
 
-1. *准备*动画对象在源页面上，向系统指示源元素将参与连接动画。
-1. *启动*动画的目标页上，将传递到目标元素的引用。
+1. 在 "源" 页上*准备*一个动画对象，该对象向系统指示源元素将参与连接的动画。
+1. 在 "目标" 页上*启动*动画，并向目标元素传递引用。
 
-当从源页中导航，调用[ConnectedAnimationService.GetForCurrentView](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getforcurrentview)来获取 ConnectedAnimationService 的实例。 若要准备动画，请调用[PrepareToAnimate](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.preparetoanimate)对此实例，并传入唯一键和你想要的转换中使用的 UI 元素。 唯一键，可以检索动画更高版本在目标页。
+在源页中导航时，请调用[ConnectedAnimationService GetForCurrentView](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getforcurrentview)获取 ConnectedAnimationService 的实例。 若要准备动画，请在此实例上调用[PrepareToAnimate](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.preparetoanimate) ，并传入要在转换中使用的唯一键和 UI 元素。 可以在 "目标" 页上稍后检索动画。
 
 ```csharp
 ConnectedAnimationService.GetForCurrentView()
     .PrepareToAnimate("forwardAnimation", SourceImage);
 ```
 
-当发生导航时，在目标页中启动动画。 要启动该动画，请调用 [ConnectedAnimation.TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart)。 你可以通过使用你在创建动画时提供的唯一密钥调用 [ConnectedAnimationService.GetAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getanimation)，来检索正确的动画实例。
+导航发生时，在 "目标" 页中启动动画。 要启动该动画，请调用 [ConnectedAnimation.TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart)。 你可以通过使用你在创建动画时提供的唯一密钥调用 [ConnectedAnimationService.GetAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getanimation)，来检索正确的动画实例。
 
 ```csharp
 ConnectedAnimation animation =
@@ -129,13 +129,13 @@ if (animation != null)
 }
 ```
 
-### <a name="forward-navigation"></a>向前导航
+### <a name="forward-navigation"></a>前进导航
 
-此示例演示如何使用 ConnectedAnimationService 创建两个页面 (Page_A 到 Page_B) 之间的向前导航的转换。
+此示例演示如何使用 ConnectedAnimationService 为两个页面（Page_A 到 Page_B）之间的向前导航创建过渡。
 
-建议的动画配置为前进导航[GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration)。 这是默认值，因此不需要设置[配置](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.configuration)属性除非想要指定不同的配置。
+为向前导航推荐的动画配置为[GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration)。 这是默认设置，因此，除非要指定不同的配置，否则不需要设置[配置](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.configuration)属性。
 
-设置源页中的动画。
+在 "源" 页中设置动画。
 
 ```xaml
 <!-- Page_A.xaml -->
@@ -169,7 +169,7 @@ protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
 }
 ```
 
-在目标页中启动动画。
+在 "目标" 页中启动动画。
 
 ```xaml
 <!-- Page_B.xaml -->
@@ -198,11 +198,11 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ### <a name="back-navigation"></a>后退导航
 
-后退导航 (Page_B 到 Page_A)，你遵循相同的步骤，但源和目标页面进行了互换。
+对于后退导航（Page_B Page_A），请遵循相同的步骤，但会反转源页和目标页。
 
-当用户导航回时，它们期望该应用程序尽可能快地返回到以前的状态。 因此，建议的配置是[DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration)。 此动画更快、 更直接，并使用在减速的缓动。
+当用户向后导航时，他们希望应用程序尽快返回到以前的状态。 因此，推荐的配置为[DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration)。 此动画更快、更直接，并使用减速缓动。
 
-设置源页中的动画。
+在 "源" 页中设置动画。
 
 ```csharp
 // Page_B.xaml.cs
@@ -211,8 +211,8 @@ protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
 {
     if (e.NavigationMode == NavigationMode.Back)
     {
-        ConnectedAnimationService.GetForCurrentView()
-            .PrepareToAnimate("backAnimation", DestinationImage);
+        ConnectedAnimation animation = 
+            ConnectedAnimationService.GetForCurrentView().PrepareToAnimate("backAnimation", DestinationImage);
 
         // Use the recommended configuration for back animation.
         animation.Configuration = new DirectConnectedAnimationConfiguration();
@@ -220,7 +220,7 @@ protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
 }
 ```
 
-在目标页中启动动画。
+在 "目标" 页中启动动画。
 
 ```csharp
 // Page_A.xaml.cs
@@ -238,11 +238,11 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-之间的时间设置动画，并会在启动时，源元素出现上面的应用中其他 UI 冻结。 这样可以同时执行任何其他过渡动画。 出于此原因，您不应等待多个 ~ 250 毫秒之间的两个步骤，因为源元素存在可能会变得让人分散注意力。 如果你准备一个动画且并未在三秒内启动它，则系统将释放该动画，且任何对 [TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart) 的后续调用将失败。
+在动画的设置时间和开始时间之间，源元素显示在应用中的其他 UI 之上。 这使您可以同时执行任何其他转换动画。 出于此原因，不应在两个步骤之间等待大约250毫秒，因为存在源元素可能会造成混乱。 如果你准备一个动画且并未在三秒内启动它，则系统将释放该动画，且任何对 [TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart) 的后续调用将失败。
 
 ## <a name="connected-animation-in-list-and-grid-experiences"></a>列表和网格体验中的连贯动画
 
-通常，你会想要以列表或网格控件为源或目标创建连贯动画。 您可以使用两种方法在[ListView](/uwp/api/windows.ui.xaml.controls.listview)并[GridView](/uwp/api/windows.ui.xaml.controls.gridview)， [PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation)并[TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync)，若要简化此过程。
+通常，你会想要以列表或网格控件为源或目标创建连贯动画。 可以在[ListView](/uwp/api/windows.ui.xaml.controls.listview)和[GridView](/uwp/api/windows.ui.xaml.controls.gridview)（ [PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation)和[TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync)）上使用这两个方法来简化此过程。
 
 例如，如果你有一个在其数据模板中包含一个名为“PortraitEllipse”的元素的 **ListView**。
 
@@ -259,7 +259,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 </ListView>
 ```
 
-若要使用与给定的列表项相对应的椭圆准备连接的动画，调用[PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation)方法与唯一键、 项和"PortraitEllipse"的名称。
+若要使用对应于给定列表项的椭圆准备连接的动画，请使用唯一键、项和名称 "PortraitEllipse" 调用[PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation)方法。
 
 ```csharp
 void PrepareAnimationWithItem(ContactsItem item)
@@ -268,7 +268,7 @@ void PrepareAnimationWithItem(ContactsItem item)
 }
 ```
 
-若要启动动画与此元素为目标，例如当导航回从详细信息视图中，使用[TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync)。 如果只是您已加载 ListView 数据源，TryStartConnectedAnimationAsync 将等待，直到已创建相应的项容器启动这个动画。
+若要使用此元素作为目标来启动动画（如从详细信息视图向后导航时），请使用[TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync)。 如果刚加载了 ListView 的数据源，TryStartConnectedAnimationAsync 将等待启动动画，直到创建了相应的项容器。
 
 ```csharp
 private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
@@ -296,11 +296,11 @@ private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
 <iframe width=640 height=360 src='https://microsoft.sharepoint.com/portals/hub/_layouts/15/VideoEmbedHost.aspx?chId=552c725c%2De353%2D4118%2Dbd2b%2Dc2d0584c9848&amp;vId=9066bbbe%2Dcf58%2D4ab4%2Db274%2D595616f5d0a0&amp;width=640&amp;height=360&amp;autoPlay=false&amp;showInfo=true' allowfullscreen></iframe>
 -->
 
-一个*协调动画*是一种特殊的出场动画元素以及连接的动画目标，在屏幕上移动动画结合使用的连接的动画元素的显示位置。 协调动画可以向一个转换添加多个视觉效果，并进一步将用户的注意力转移到源视图和目标视图之间共享的上下文。 在这些图像中，该项目的标题 UI 使用协调动画创建动画。
+*协调动画*是一种特殊类型的入口动画，其中元素与连接的动画目标同时出现，并在屏幕上移动连接的动画元素时与连接的动画元素一起进行动画处理。 协调动画可以向一个转换添加多个视觉效果，并进一步将用户的注意力转移到源视图和目标视图之间共享的上下文。 在这些图像中，该项目的标题 UI 使用协调动画创建动画。
 
-当协调的动画使用重力配置时，重力被应用于连接的动画元素和协调的元素。 协调的元素将"swoop"旁边的连接元素使元素保持真正协调。
+当协调动画使用重力配置时，重心将应用于连接的动画元素和协调的元素。 协调的元素将与连接的元素 "一次性"，使元素保持真正的协调。
 
-使用 **TryStart** 的双参数过载将协调元素添加至连贯动画。 此示例演示一个协调的动画的名为"DescriptionRoot"具有名为"CoverImage"的连接的动画元素中一前一后输入的网格布局。
+使用 **TryStart** 的双参数过载将协调元素添加至连贯动画。 此示例演示名为 "DescriptionRoot" 的网格布局的协调动画，该布局与名为 "CoverImage" 的连接动画元素一起进入。
 
 ```xaml
 <!-- DestinationPage.xaml -->
@@ -329,10 +329,10 @@ void OnNavigatedTo(NavigationEventArgs e)
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
 
 - 在源页面和目标页面之间有共享元素的页面转换中使用连贯动画。
-- 使用[GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration)向前导航。
-- 使用[DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration)重新导航。
-- 不等待网络请求或在准备和开始连接的动画之间其他长时间运行的异步操作。 你可能需要预加载必要信息以提前运行转换，或在将高分辨率图像加载到目标视图中时使用低分辨率占位符图像。
-- 使用[SuppressNavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo)以防止在转换动画**帧**如果你使用的**ConnectedAnimationService**，因为连接动画不应该同时使用的默认导航过渡。 请参阅 [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) 详细了解如何使用导航转换。
+- 使用[GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration)进行前向导航。
+- 使用[DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration)进行后退导航。
+- 请不要等待网络请求或其他长时间运行的异步操作在准备和启动连接的动画之间。 你可能需要预加载必要信息以提前运行转换，或在将高分辨率图像加载到目标视图中时使用低分辨率占位符图像。
+- 如果你使用的是**ConnectedAnimationService**，则可以使用[SuppressNavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo)来防止**帧**中的转换动画，因为连接的动画不应同时与默认导航转换一起使用。 请参阅 [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) 详细了解如何使用导航转换。
 
 ## <a name="related-articles"></a>相关文章
 

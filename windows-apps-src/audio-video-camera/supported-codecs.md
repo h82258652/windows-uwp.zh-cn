@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 92511c1f5b7ad8991900d80d4ec52659d6e74f88
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4b122aa6436e55c80276cdd684b7c10cc3c47d28
+ms.sourcegitcommit: 49a34e957433966ac8d4822b5822f21087aa61c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361406"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74153721"
 ---
 # <a name="supported-codecs"></a>支持的编解码器
 
@@ -28,7 +28,7 @@ ms.locfileid: "66361406"
 
  
 
-### <a name="desktop"></a>桌面设备
+### <a name="desktop"></a>桌面
 
 <table>
 <colgroup>
@@ -339,7 +339,7 @@ ms.locfileid: "66361406"
 
  
 
-### <a name="mobile"></a>移动电话
+### <a name="mobile"></a>移动版
 
 <table>
 <colgroup>
@@ -1272,7 +1272,7 @@ ms.locfileid: "66361406"
 
  
 
-### <a name="xbox"></a>XBox
+### <a name="xbox"></a>Xbox
 
 <table>
 <colgroup>
@@ -1593,7 +1593,7 @@ ms.locfileid: "66361406"
 
  
 
-### <a name="desktop"></a>桌面设备
+### <a name="desktop"></a>桌面
 
 <table>
 <colgroup>
@@ -1812,7 +1812,7 @@ ms.locfileid: "66361406"
 
  
 
-### <a name="mobile"></a>移动电话
+### <a name="mobile"></a>移动版
 
 <table>
 <colgroup>
@@ -2469,7 +2469,7 @@ ms.locfileid: "66361406"
 
  
 
-### <a name="xbox"></a>XBox
+### <a name="xbox"></a>Xbox
 
 <table>
 <colgroup>
@@ -2697,7 +2697,7 @@ ms.locfileid: "66361406"
 <thead>
 <tr class="header">
 <th align="left">编解码器</th>
-<th align="left">桌面设备</th>
+<th align="left">桌面</th>
 <th align="left">其他设备系列</th>
 </tr>
 </thead>
@@ -2749,7 +2749,7 @@ ms.locfileid: "66361406"
 <tr class="even">
 <td align="left">相机 RAW</td>
 <td align="left">D<sup>3</sup></td>
-<td align="left">否</td>
+<td align="left">无</td>
 </tr>
 </table>
 

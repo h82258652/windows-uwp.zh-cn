@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 940de8c00dc2639785ae82e87d63f4994b1b6b2e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: af5d73e0a786e33aff6274cd63ee5ae6ac77c133
+ms.sourcegitcommit: 49a34e957433966ac8d4822b5822f21087aa61c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367738"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74153692"
 ---
 #  <a name="define-the-uwp-app-framework"></a>定义 UWP 应用框架
 
@@ -24,9 +24,9 @@ ms.locfileid: "66367738"
 你需要实现应用单一实例调用的以下五个方法：
 * [__初始化__](#initialize-the-view-provider)
 * [__SetWindow__](#configure-the-window-and-display-behaviors)
-* [__负载__](#load-method-of-the-view-provider)
-* [__Run__](#run-method-of-the-view-provider)
-* [__取消初始化__](#uninitialize-method-of-the-view-provider)
+* [__加载__](#load-method-of-the-view-provider)
+* [__用__](#run-method-of-the-view-provider)
+* [__撤消__](#uninitialize-method-of-the-view-provider)
 
 __Initialize__ 方法在应用程序启动时调用。 __SetWindow__ 方法在 __Initialize__ 之后调用。 然后调用 __Load__ 方法。 __Run__ 方法在游戏运行时调用。 当游戏结束时，调用 __Uninitialize__ 方法。 有关详细信息，请参阅 [__IFrameworkView__ API 参考](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview)。 
 
@@ -186,10 +186,10 @@ void App::Load(
 
 ### <a name="gamemain-constructor"></a>GameMain 构造函数
 
-* 创建和初始化游戏呈现器。 有关详细信息，请参阅[呈现框架实现：简介呈现](tutorial--assembling-the-rendering-pipeline.md)。
+* 创建和初始化游戏呈现器。 有关详细信息，请参阅[呈现框架 I：呈现简介](tutorial--assembling-the-rendering-pipeline.md)。
 * 创建和初始化 Simple3Dgame 对象。 有关详细信息，请参阅[定义主游戏对象](tutorial--defining-the-main-game-loop.md)。    
 * 创建游戏 UI 控件对象和显示游戏信息覆盖层以在加载资源文件时显示进度栏。 有关详细信息，请参阅[添加用户界面](tutorial--adding-a-user-interface.md)。
-* 创建控制器，使它可以从控制器（触摸、鼠标或 XBox 无线控制器）读取输入。 有关详细信息，请参阅[添加控件](tutorial--adding-controls.md)。
+* 创建控制器，使其能够从控制器（触摸、鼠标或 Xbox 无线控制器）读取输入。 有关详细信息，请参阅[添加控件](tutorial--adding-controls.md)。
 * 控制器初始化后，我们在屏幕的左下角和右下角定义了两个矩形区域，分别用于移动和相机触摸控件。 左下角的矩形通过调用 **SetMoveRect** 定义，玩家将该矩形用作虚拟控制板来前后左右移动相机。 右下角的矩形由 **SetFireRect** 方法定义，可用作设计弹药的虚拟按钮。
 * 使用 __create_task__ 和 __create_task::then__ 将资源加载划分为两个独立的阶段。 由于对 Direct3D 11 设备上下文的访问被限制到创建设备上下文的线程，而为对象创建对 Direct3D 11 设备的访问无线程限制，这意味着 **CreateGameDeviceResourcesAsync** 任务可以从完成任务 (*FinalizeCreateGameDeviceResources*) 在单独的线程上运行，其在初始线程上运行。 我们通过 **LoadLevelAsync** 和 **FinalizeLoadLevel** 使用类似的模式来加载关卡资源。
 
@@ -298,19 +298,19 @@ GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) 
 
 ## <a name="run-method-of-the-view-provider"></a>视图提供程序的 Run 方法
 
-早期的三种方法：__初始化__， __SetWindow__，和__负载__已设置此阶段。 现在游戏可进入 **Run** 方法了，启动有趣的游戏吧！ 用于在游戏状态之间转换的事件将被发送和处理。 在游戏循环周期，图形被更新。
+之前的三种方法：__Initialize__、__SetWindow__ 和 __Load__ 已设置了此阶段。 现在游戏可进入 **Run** 方法了，启动有趣的游戏吧！ 用于在游戏状态之间转换的事件将被发送和处理。 在游戏循环周期，图形被更新。
 
 ### <a name="apprun"></a>App::Run
 
 启动一个 __while__ 循环，当玩家关闭游戏窗口时该循环将终止。
 
 示例代码在游戏引擎状态机中转换为以下两个状态之一：
-    * __停用__:游戏窗口停用（失去焦点）或贴靠。 在发生此事件时，游戏将暂停事件处理并等待窗口获得焦点或取消贴靠。
-    * __TooSmall__:游戏更新其自己的状态，并将呈现用于显示图形。
+    * __Deactivated__：游戏窗口停用（失去焦点）或贴靠。 在发生此事件时，游戏将暂停事件处理并等待窗口获得焦点或取消贴靠。
+    * __TooSmall__：游戏将更新自己的状态并呈现要显示的图形。
 
 在你的游戏获得焦点时，必须处理消息队列中到达的每个事件，因此必须使用 **ProcessAllIfPresent** 选项调用 [**CoreWindowDispatch.ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents)。 其他选项可能导致延迟处理消息事件，这会让人感到游戏停止响应，或者导致触摸行为反应慢和没有“粘合力”。
 
-当游戏不可见、暂停或贴靠时，你不希望应用使用任何资源循环去调度永不会到达的消息。 这种情况下，你的游戏必须使用 **ProcessOneAndAllPending**，它在获得事件前将进行阻止，随即在获得事件后处理该事件以及处理队列中在处理第一个事件期间到达的任何其他事件。 [**ProcessEvents** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents)然后立即返回处理队列后。
+当游戏不可见、暂停或贴靠时，你不希望应用使用任何资源循环去调度永不会到达的消息。 这种情况下，你的游戏必须使用 **ProcessOneAndAllPending**，它在获得事件前将进行阻止，随即在获得事件后处理该事件以及处理队列中在处理第一个事件期间到达的任何其他事件。 [**ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents)在队列处理后立即返回。
 
 ```cpp
 void App::Run()
@@ -384,9 +384,9 @@ void GameMain::Run()
 
 当用户最终结束游戏会话时，我们需要清理。 这时要使用 **Uninitialize**。
 
-在 Windows 10 中，关闭应用窗口不会终止应用程序的进程，但改为写入内存的应用程序的单一实例的状态。 如果在系统回收此内存时必须执行一些特殊操作（包括任何特殊的资源清除），则将执行该清除的代码放入此方法。
+在 Windows 10 中，关闭应用程序窗口不会终止应用程序的进程，而是将应用程序的状态写入内存。 如果在系统回收此内存时必须执行一些特殊操作（包括任何特殊的资源清除），则将执行该清除的代码放入此方法。
 
-### <a name="app-uninitialize"></a>应用程序::Uninitialize
+### <a name="app-uninitialize"></a>App:: Uninitialize
 
 ```cpp
 void App::Uninitialize()
