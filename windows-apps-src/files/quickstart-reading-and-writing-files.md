@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 6ff7b37eee4f2b9228a635a117e164d7d9859629
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 0dbe5e2f1cc32a3d1b52572f71fba7547af99f17
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63803617"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258567"
 ---
 # <a name="create-write-and-read-a-file"></a>创建、写入和读取文件
 
@@ -29,11 +29,11 @@ ms.locfileid: "63803617"
 使用 [**StorageFile**](/uwp/api/windows.storage.storagefile) 对象读取和写入文件。
 
 > [!NOTE]
->有关完整示例，请参阅[文件访问示例](https://go.microsoft.com/fwlink/p/?linkid=619995)。
+> 有关完整示例，请参阅[文件访问示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)。
 
 ## <a name="prerequisites"></a>必备条件
 
--   了解通用 Windows 平台 (UWP) 应用的异步编程 
+-   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
     若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何在 C++/WinRT 中编写异步应用，请参阅[借助 C++/WinRT 的并发和异步操作](/windows/uwp/cpp-and-winrt-apis/concurrency)。 若要了解如何使用 C++/CX 编写异步应用，请参阅[使用 C++/CX 进行异步编程](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
