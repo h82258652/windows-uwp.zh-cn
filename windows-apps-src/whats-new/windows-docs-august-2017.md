@@ -5,24 +5,24 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 1708
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 52b929f2b6f95c2be2feb68a6221a606ca3715e5
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: b4cc5f10ba23c942851f34ef64afd887d265dba1
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67821133"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259772"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>2017 年 8 月 Windows 开发人员文档中的新增功能
 
 Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 最近提供了以下功能概述、开发人员指南和视频，包含面向 Windows 开发人员的新的和更新的信息。
 
-只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/your-first-app.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/your-first-app.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
-使用适用于 Visual Studio 2019 的新 [Windows Template Studio](https://aka.ms/wtsinstall) 扩展快速生成具有所需页面、框架和功能的 UWP 应用。 此基于向导的体验实现成熟的模式和最佳做法，以便为你节省时间和更加轻松地在你的应用中添加功能。
+使用适用于 Visual Studio 2019 的新 [Windows Template Studio](https://marketplace.visualstudio.com/items?itemName=WASTeamAccount.WindowsTemplateStudio) 扩展快速生成具有所需页面、框架和功能的 UWP 应用。 此基于向导的体验实现成熟的模式和最佳做法，以便为你节省时间和更加轻松地在你的应用中添加功能。
 
 ![Windows Template Studio](images/template-studio.png)
 
@@ -81,4 +81,4 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
-[此视频](https://channel9.msdn.com/Blogs/One-Dev-Minute/Getting-Started-with-Windows-Template-Studio)提供了关于 Windows Template Studio 的更详细概述。 准备就绪后，请[安装扩展](https://aka.ms/wtsinstall)或[查看源代码和文档](https://aka.ms/wtsinstall)。
+[此视频](https://channel9.msdn.com/Blogs/One-Dev-Minute/Getting-Started-with-Windows-Template-Studio)提供了关于 Windows Template Studio 的更详细概述。 准备就绪后，请[安装扩展](https://marketplace.visualstudio.com/items?itemName=WASTeamAccount.WindowsTemplateStudio)或[查看源代码和文档](https://marketplace.visualstudio.com/items?itemName=WASTeamAccount.WindowsTemplateStudio)。

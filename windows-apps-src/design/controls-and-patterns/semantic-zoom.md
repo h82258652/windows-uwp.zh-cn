@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c655fbf5582ae5abbb3f415e6e0778b9c64ca7fd
-ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
+ms.openlocfilehash: 0821ebaa300d6641cf4efe8f96f1ae8878877a88
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340829"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258134"
 ---
 # <a name="semantic-zoom"></a>语义式缩放
 
@@ -98,7 +98,7 @@ ms.locfileid: "68340829"
 </SemanticZoom>
  ```
  
-下面的示例摘自 [XAML UI 基本示例](https://go.microsoft.com/fwlink/p/?LinkId=619992)的 SemanticZoom 页面。 可以下载该示例来查看完整代码，包括数据源。 此语义式缩放使用 GridView 提供放大视图，使用 ListView 提供缩小视图。
+下面的示例摘自 [XAML UI 基本示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)的 SemanticZoom 页面。 可以下载该示例来查看完整代码，包括数据源。 此语义式缩放使用 GridView 提供放大视图，使用 ListView 提供缩小视图。
   
 **定义放大视图**
 

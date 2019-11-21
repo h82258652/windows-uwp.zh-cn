@@ -6,18 +6,18 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
 ms.localizationpriority: medium
-ms.openlocfilehash: 4395ed9113b85d53ce464bd085b168c806fc281c
-ms.sourcegitcommit: a7740ebb14c98cd5afadd52db5cf714522821b49
+ms.openlocfilehash: 53604de72eb32f7f6a8162b0cdb9cf481f6e9537
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72893055"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258874"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-15063"></a>面向开发人员的 Windows 10 内部版本 15063 中的新增功能
 
-Windows 10 内部版本 15063（又称 Creators Update 或版本 1703）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+Windows 10 内部版本 15063（又称 Creators Update 或版本 1703）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
-这是一系列开发人员感兴趣的新增和改进功能。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 15063 API 更改](windows-10-build-15063-api-diff.md)。 有关 Windows 10 亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的高级概述。
+这是一系列开发人员感兴趣的新增和改进功能。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 15063 API 更改](windows-10-build-15063-api-diff.md)。 有关 Windows 10 亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://developer.microsoft.com/windows/windows-10-for-developers)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的高级概述。
 
 ## <a name="windows-10-build-15063---march-2017"></a>Windows 10 内部版本 15063 - 2017 年 3 月
 

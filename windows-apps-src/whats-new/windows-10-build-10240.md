@@ -6,16 +6,16 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
-ms.openlocfilehash: 28eb1dfecf9f6648bd43606c541daf7b57960771
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 986fa1b14fcb3b1ada150a232fb0d42f7eafa133
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320446"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258907"
 ---
 # <a name="whats-new-in-windows10-for-developers-build-10240"></a>面向开发人员的 Windows 10 内部版本 10240 中的新增功能
 
-Windows 10 内部版本 10240 和更新的 SDK 提供用于打造出色的通用 Windows 平台应用的工具、功能和体验。 在 Windows 10 上[安装这些工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 后，你可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+Windows 10 内部版本 10240 和更新的 SDK 提供用于打造出色的通用 Windows 平台应用的工具、功能和体验。 在 Windows 10 上[安装这些工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 后，你可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 下面按功能逐项查看 Windows 10 内部版本 10240（也称为 Windows 10 版本 1507）的新增功能。
 

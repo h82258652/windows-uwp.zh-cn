@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 97407ec48eaac3415980b9313092b21e9532250a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 834bea47a566789926648098086c05c0a47b6065
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321113"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260556"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>生成复杂的通用 Windows 平台 (UWP) 应用
 
@@ -65,7 +65,7 @@ ms.locfileid: "67321113"
 
 如果对概念满意，便可以准备下一个阶段，即创建应用蓝图。 信息体系结构 (IA) 为你的内容提供所需的结构完整性。 它帮助定义应用的导航模型，并且最终定义应用的标识。 通过规划内容的组织方式（以及用户发现此内容的方式），你可以在用户对应用的体验方面获得更好的主意。
 
-好的 IA 不仅可以实现用户方案，还能帮助你构想起始关键屏幕。 例如，[Audible](https://go.microsoft.com/fwlink/p/?LinkID=268089) 应用可直接启动到中心，该中心提供对用户的库、应用商店、新闻和统计数据的访问。该体验专注于使用户能快速地获取并享受音频书籍。 应用的更深级别侧重于更具体的任务。
+好的 IA 不仅可以实现用户方案，还能帮助你构想起始关键屏幕。 例如，[Audible](https://www.windowsphone.com/store/app/audible-for-windows-phone/bdc813dd-c20b-41f8-8646-de72fa0b365d) 应用可直接启动到中心，该中心提供对用户的库、应用商店、新闻和统计数据的访问。该体验专注于使用户能快速地获取并享受音频书籍。 应用的更深级别侧重于更具体的任务。
 
 有关相关指南，请参阅[导航设计基础知识](../design/basics/navigation-basics.md)。
 

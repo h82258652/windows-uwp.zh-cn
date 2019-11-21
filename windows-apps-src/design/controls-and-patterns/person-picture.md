@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1897eded4d18a00a3c11cf1926adb1ebec6ae69a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c276b232e76afb98d778ef65c7e0e363285c4794
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63791702"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258206"
 ---
 # <a name="person-picture-control"></a>个人图片控件
 
@@ -190,4 +190,4 @@ namespace SampleApp
 ## <a name="related-articles"></a>相关文章
 
 * [联系人和日历](../../contacts-and-calendar/index.md)
-* [Contact cards sample](https://go.microsoft.com/fwlink/p/?LinkId=624040)（联系人卡片示例）
+* [Contact cards sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards)（联系人卡片示例）

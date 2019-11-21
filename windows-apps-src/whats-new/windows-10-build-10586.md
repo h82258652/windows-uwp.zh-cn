@@ -6,16 +6,16 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 0d6c65c5-2ad5-46c7-964e-a3a9833c94ce
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b94cf08ea39ec12db48c56541a924e5cdc5efb4
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: af3c078d2e5c1d27e5e6ece8f72b0fa601d6c053
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820998"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259766"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-10586"></a>面向开发人员的 Windows 10 内部版本 10586 中的新增功能
 
-Windows 10 内部版本 10586（又称 11 月更新或版本 1511）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+Windows 10 内部版本 10586（又称 11 月更新或版本 1511）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 ## <a name="windows-10-build-10586---november-2015"></a>Windows 10 内部版本 10586 - 2015 年 11 月
 

@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eec1de013efce7b23cd89e81f659a5cc530638c4
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 152a1bf2a751c2d2c78818b85868bfea3be911ac
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339966"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259647"
 ---
 # <a name="enterprise"></a>企业
 
@@ -146,7 +146,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司�
 | 主题 | 描述 |
 |-------|-------------|
 | [UWP 应用指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) | 在此初级指南中，你将熟悉 Windows 10 UWP 平台，包括：什么是设备系列和如何决定要面向哪个设备、可使你针对不同设备外形规格改编 UI 的新 UI 控件和面板以及如何了解和控制适用于应用的 API 图面。 |
-| [自适应 XAML UI 代码示例](https://go.microsoft.com/fwlink/p/?LinkId=619992) | 此代码示例展示了应用的所有可能的布局选项和控件，而不考虑设备类型，并允许你与面板交互以演示如何实现你需要的任何布局。 除了演示每个控件如何响应不同的外形规格外，应用本身也具有响应性，并显示实现自定义 UI 的各种方法。 |
+| [自适应 XAML UI 代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) | 此代码示例展示了应用的所有可能的布局选项和控件，而不考虑设备类型，并允许你与面板交互以演示如何实现你需要的任何布局。 除了演示每个控件如何响应不同的外形规格外，应用本身也具有响应性，并显示实现自定义 UI 的各种方法。 |
 | [Xamarin 主题](/xamarin/) | 以手机为应用目标的 Xamarin |
 
 ## <a name="deployment"></a>部署

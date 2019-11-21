@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 提问, 问题, 常见问题解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bb19e406df98a24a6d65fc774a29e44ef267272
-ms.sourcegitcommit: c079388634cbd328d0d43e7a6185e09bb4bca65b
+ms.openlocfilehash: b0ec2c5a05e7c4e9309311fa22ad863d06597a53
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71939588"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254988"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有关 C++/WinRT 的常见问题解答
 对你可能存疑的关于通过 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 创作和使用 Windows 运行时 API 的问题的解答。
@@ -51,7 +51,7 @@ C++/WinRT 生成支持（属性/目标）记录在 Microsoft.Windows.CppWinRT Nu
 ## <a name="why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error"></a>链接器为何显示“LNK2019:未解析的外部符号”错误？
 如果无法解析的符号是 C++/WinRT 投影的 Windows 命名空间标头文件中的 API（位于 **winrt** 命名空间），则是因为该 API 在已包含的标头文件中做了前置声明，但其定义位于尚未包含的标头文件中。 请包括以 API 的命名空间命名的标头文件，并重新生成。 有关详细信息，请参阅 [C++/WinRT 投影标头文件](consume-apis.md#cwinrt-projection-headers)。
 
-如果无法解析的符号是 Windows 运行时自由函数，例如 [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize)，则需要在项目中显式链接 [WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella 库。 C++/WinRT 投影依赖于这些自由（非成员）函数和入口点。 如果为应用程序使用了某个 [C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix) 项目模板，则会自动链接 `WindowsApp.lib`。 否则，你可以使用项目链接设置包含它，或在源代码中包含它。
+如果无法解析的符号是 Windows 运行时自由函数，例如 [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize)，则需要在项目中显式链接 [WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella 库。 C++/WinRT 投影依赖于这些自由（非成员）函数和入口点。 如果为应用程序使用了某个 [C++/WinRT Visual Studio 扩展 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) 项目模板，则会自动链接 `WindowsApp.lib`。 否则，你可以使用项目链接设置包含它，或在源代码中包含它。
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")

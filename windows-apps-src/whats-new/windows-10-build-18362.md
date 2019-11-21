@@ -6,18 +6,18 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f95193b1bbf50165619fb6c7b7222ed36853d2e2
-ms.sourcegitcommit: a7740ebb14c98cd5afadd52db5cf714522821b49
+ms.openlocfilehash: 4671b3048850197cc33e6878b814b2c26792e36c
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72893039"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258850"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-18362"></a>面向开发人员的 Windows 10 内部版本 18362 中的新增功能
 
-Windows 10 内部版本 18362（也称为 SDK 版本 1903）与 Visual Studio 2019 相结合，提供所需的工具、功能和体验来创建非凡的 Windows 应用。 只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+Windows 10 内部版本 18362（也称为 SDK 版本 1903）与 Visual Studio 2019 相结合，提供所需的工具、功能和体验来创建非凡的 Windows 应用。 只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
-该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 18362 API 更改](windows-10-build-18362-api-diff.md)。 有关 Windows 10 亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://go.microsoft.com/fwlink/?LinkId=823181)。
+该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 18362 API 更改](windows-10-build-18362-api-diff.md)。 有关 Windows 10 亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://developer.microsoft.com/windows/windows-10-for-developers)。
 
 ## <a name="design--ui"></a>设计和 UI
 
@@ -56,7 +56,7 @@ Project Rome | Project Rome SDK 现在适用于 Android 和 iOS。 了解如何�
 Visual Studio 2019 | Visual Studio 2019 已发布，其中包含面向任何开发人员、应用或平台的最新工具和服务。 请查看 [Visual Studio 2019 中的新增功能](https://docs.microsoft.com/visualstudio/ide/whats-new-visual-studio-2019?view=vs-2019)了解最新版本和入门知识。
 Win32 WebView | [常见问题解答](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview#frequently-asked-questions-faqs)为在桌面应用程序中使用 Microsoft Edge WebView 时所提出的常见问题提供解答，并提供示例和其他资源的链接。
 Windows 命令行 | [新的控制台功能](https://devblogs.microsoft.com/commandline/new-experimental-console-features/)包括试验性的“终端”选项卡，以及有关滚动、光标形状和光标颜色的设置。 请在[面向开发人员的 Windows 命令行工具博客](https://devblogs.microsoft.com/commandline/)中了解详细信息。
-Windows 社区工具包 | Windows 社区工具包 v5.1 提供动画、远程设备、图像裁剪和辅助功能的令人兴奋的更新。 </br> • 新的 [Lottie-Windows 库](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie)利用 Windows.UI.Composition API 在 Windows 10 (1809) 上提供优质动画支持，并允许使用 [Bodymovin](https://aescripts.com/bodymovin/) JSON 文件或优化的代码生成类在 Windows 应用中播放内容。 请试用 Microsoft Store 中提供的新 [Lottie Viewer 应用](https://aka.ms/lottieviewer)，以测试动画并为 Windows 应用生成优化的代码。 </br> • 新的[远程设备选取器](https://docs.microsoft.com/windows/communitytoolkit/controls/remotedevicepicker)可让用户选择（附近的或可通过云访问的）设备，在该设备上启动应用，或者与远程设备上的应用服务通信。 </br> • 新的 [ImageCropper 控件](https://docs.microsoft.com/windows/communitytoolkit/controls/imagecropper)集成了裁剪功能，可用于选择个人资料图片或使用照片编辑工具。 </br> • 此外，已改进控件的辅助功能，并为 WPF 和 WinForms 提供了 [Microsoft.Toolkit.Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32) 6.0 预览包更新；在[发行说明](https://github.com/windows-toolkit/WindowsCommunityToolkit/releases/tag/v5.1.0)中可以了解更多的功能。
+Windows 社区工具包 | Windows 社区工具包 v5.1 提供动画、远程设备、图像裁剪和辅助功能的令人兴奋的更新。 </br> • 新的 [Lottie-Windows 库](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie)利用 Windows.UI.Composition API 在 Windows 10 (1809) 上提供优质动画支持，并允许使用 [Bodymovin](https://aescripts.com/bodymovin/) JSON 文件或优化的代码生成类在 Windows 应用中播放内容。 请试用 Microsoft Store 中提供的新 [Lottie Viewer 应用](https://www.microsoft.com/p/lottie-viewer/9p7x9k692tmw)，以测试动画并为 Windows 应用生成优化的代码。 </br> • 新的[远程设备选取器](https://docs.microsoft.com/windows/communitytoolkit/controls/remotedevicepicker)可让用户选择（附近的或可通过云访问的）设备，在该设备上启动应用，或者与远程设备上的应用服务通信。 </br> • 新的 [ImageCropper 控件](https://docs.microsoft.com/windows/communitytoolkit/controls/imagecropper)集成了裁剪功能，可用于选择个人资料图片或使用照片编辑工具。 </br> • 此外，已改进控件的辅助功能，并为 WPF 和 WinForms 提供了 [Microsoft.Toolkit.Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32) 6.0 预览包更新；在[发行说明](https://github.com/windows-toolkit/WindowsCommunityToolkit/releases/tag/v5.1.0)中可以了解更多的功能。
 Windows 机器学习 | 我们重新制作了 Windows AI 文档，已将其拆分为三个区域：Windows 机器学习 (WinML)、Windows 视觉技能和直接机器学习 (DirectML)。 查看新的[登陆页](https://docs.microsoft.com/windows/ai/) </br> • [*MLGen* 体验](https://docs.microsoft.com/windows/ai/mlgen)即将在 Visual Studio 中发生变化。 在 Windows 10 版本 1903 和更高版本中，*mlgen* 不再包含在 Windows 10 SDK 中。 如果使用的是 VS 2017，则应下载并安装 Visual Studio 扩展 [Windows 机器学习代码生成器 VS 2017](https://marketplace.visualstudio.com/items?itemName=WinML.mlgen)。 如果使用的是 Visual Studio 2019，则应安装 [Windows 机器学习代码生成器](https://marketplace.visualstudio.com/items?itemName=WinML.mlgenv2)扩展。 </br> • 此外，我们自豪地宣布推出新的支持以精简代码。 现在，开发人员可以使用一项称作“精简代码”的技术（可通过 [WinMLTools 转换器](https://docs.microsoft.com/windows/ai/convert-model-winmltools)使用）来减少其机器学习模型的磁盘占用空间。
 WinRT 合并参考 | 我们已添加 [WinRT 类型系统](https://docs.microsoft.com/uwp/winrt-cref/winrt-type-system)和 [WinMD 文件](https://docs.microsoft.com/uwp/winrt-cref/winmd-files)的完整说明，以提供有关 WinRT API 结构定义的具体深入说明。
 适用于 Linux 的 Windows 子系统 (WSL) | [WSL 的最新更新](https://devblogs.microsoft.com/commandline/whats-new-for-wsl-in-windows-10-version-1903/)包括使用文件资源管理器从 Windows 访问 Linux 文件的功能，以及 wsl.exe 和 wslconfig.exe 的一些新命令。
@@ -87,7 +87,7 @@ Microsoft Learn 为 Microsoft 开发人员提供新的动手学习和培训机�
 
 ### <a name="progressive-web-apps"></a>渐进式 Web 应用
 
-渐进式 Web 应用是网站，功能类似于各种浏览器和各种 Windows 10 设备上的本机应用。 [观看视频](https://youtu.be/ugAewC3308Y)了解详细信息，然后[查看文档](https://aka.ms/Windows-PWA)以开始。
+渐进式 Web 应用是网站，功能类似于各种浏览器和各种 Windows 10 设备上的本机应用。 [观看视频](https://youtu.be/ugAewC3308Y)了解详细信息，然后[查看文档](https://developer.microsoft.com/windows/pwa)以开始。
 
 ### <a name="vs-code-series"></a>VS Code 系列
 

@@ -6,12 +6,12 @@ ms.date: 06/03/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8278e02de4d0f9a0efa301051a57bf59bce8d520
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 49e126ea0212499361fea58b58237ee13fb76ca2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363302"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259176"
 ---
 # <a name="sockets"></a>套接字
 套接字是实现许多网络协议所基于的低级数据传输技术。 UWP 为客户端-服务器或对等应用程序提供 TCP 和 UDP 套接字类，无论连接长期存在还是不需要建立连接。
@@ -521,7 +521,7 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 }
 ```
 
-从 StreamSocket 的角度来看，完成处理程序在延续体运行前已执行完毕（因此套接字符合处置条件）  。 因此，如果想要在延续中使用该套接字，就需要避免处置它。为此，需要直接引用（通过 lambda 捕获）套接字并使用，或者间接引用（通过在延续内继续访问 `args->Socket`）套接字，或者强制延续任务内联。 可在 [StreamSocket 示例](https://go.microsoft.com/fwlink/p/?LinkId=620609)中看到第一种方法（lambda 捕获）的实际用法。 上文[构建基本的 TCP 套接字客户端和服务器](#build-a-basic-tcp-socket-client-and-server)部分中的 C++/CX 代码使用了第二种方法 &mdash; 它以响应的形式回显了请求，并从最内层的延续中访问了 `args->Socket`。
+从 StreamSocket 的角度来看，完成处理程序在延续体运行前已执行完毕（因此套接字符合处置条件）  。 因此，如果想要在延续中使用该套接字，就需要避免处置它。为此，需要直接引用（通过 lambda 捕获）套接字并使用，或者间接引用（通过在延续内继续访问 `args->Socket`）套接字，或者强制延续任务内联。 可在 [StreamSocket 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket)中看到第一种方法（lambda 捕获）的实际用法。 上文[构建基本的 TCP 套接字客户端和服务器](#build-a-basic-tcp-socket-client-and-server)部分中的 C++/CX 代码使用了第二种方法 &mdash; 它以响应的形式回显了请求，并从最内层的延续中访问了 `args->Socket`。
 
 不需要回显响应时，可以采用第三种方法。 可以使用 `task_continuation_context::use_synchronous_execution()` 选项强制 PPL 以内联形式执行延续体。 下面的代码示例演示了如何执行该操作。
 
@@ -1384,4 +1384,4 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 * [Windows 套接字 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)
 
 ## <a name="samples"></a>示例
-* [StreamSocket 示例](https://go.microsoft.com/fwlink/p/?LinkId=620609)
+* [StreamSocket 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket)

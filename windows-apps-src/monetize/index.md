@@ -6,12 +6,12 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: windows 10, uwp, 盈利, 参与, 促销, Microsoft Store 服务
 ms.localizationpriority: medium
-ms.openlocfilehash: 460179f7f57e17f78fdb3fd3bd289e761a8a7b4f
-ms.sourcegitcommit: 2dba9b4e81151d14ca90d36341274a3b59926197
+ms.openlocfilehash: 7beee974bceceab02984ae6499a9c5db0b0281b9
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74057478"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259294"
 ---
 # <a name="monetization-engagement-and-store-services"></a>盈利、参与度和 Microsoft Store 服务
 
@@ -72,7 +72,7 @@ Windows SDK、Microsoft 广告 SDK、Microsoft Store Services SDK 和 Microsoft 
 我们支持多种广告体验以适应大部分需求，包括横幅广告、间隙广告（横幅和视频）、线性视频广告、可播放广告和本机广告。 我们的平台符合 OpenRTB、VAST 2.x、MRAID 2 和 VPAID 3 标准，并与 MOAT 和 IAS 兼容。
 
 [浏览广告选项](../publish/create-an-ad-campaign-for-your-app.md)
-[安装广告 SDK](https://aka.ms/ads-sdk-uwp)
+[安装广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
     :::column-end:::
 :::row-end:::
 
@@ -85,7 +85,7 @@ Windows SDK、Microsoft 广告 SDK、Microsoft Store Services SDK 和 Microsoft 
 
 通过使用 Microsoft 广告中介服务，在多个热门广告网络中投放广告，最大程度地提高应用中的广告收入。 你可以在合作伙伴中心中配置中介设置，无需更改任何代码。 如果让我们为你配置中介，我们的机器学习算法可帮助你在应用支持的多个市场之间最大程度地提高广告收入。
 
-[使用广告服务](https://aka.ms/admediationblog)
+[使用广告服务](https://blogs.windows.com/windowsdeveloper/2017/05/08/announcing-microsofts-ad-mediation-service/)
     :::column-end:::
 :::row-end:::
 
@@ -110,8 +110,8 @@ Windows SDK、Microsoft 广告 SDK、Microsoft Store Services SDK 和 Microsoft 
 
  主题                | 描述                 |
 |--------------------|-----------------------------|
-| [Microsoft 联盟计划](https://go.microsoft.com/fwlink/p/?LinkId=617665)。 | 通过从应用、博客、网页或其他通讯产品链接到 Microsoft 产品，来赚取佣金。 你可以链接到 Microsoft Store 中出售的应用、游戏、音乐、电影、硬件、配件和其他商品。
-| [A/B 试验](https://go.microsoft.com/fwlink/p/?LinkId=722784) | 在应用中运行 A/B 测试，衡量面向部分客户进行的功能更改的成效，然后再针对所有用户执行更改。
+| [Microsoft 联盟计划](https://www.microsoftaffiliates.com/)。 | 通过从应用、博客、网页或其他通讯产品链接到 Microsoft 产品，来赚取佣金。 你可以链接到 Microsoft Store 中出售的应用、游戏、音乐、电影、硬件、配件和其他商品。
+| [A/B 试验](https://docs.microsoft.com/windows/uwp/monetize/run-app-experiments-with-a-b-testing) | 在应用中运行 A/B 测试，衡量面向部分客户进行的功能更改的成效，然后再针对所有用户执行更改。
 | [使用 Microsoft Store Services SDK 与客户互动](microsoft-store-services-sdk.md) | 你可以使用 Microsoft Store Services SDK 提供的库和工具将这些功能添加到你的应用，这可帮助你吸引客户。 这些功能包括定向通知、A/B 测试以及从应用启动“反馈中心”。
 | [从应用启动反馈中心](launch-feedback-hub-from-your-app.md) | 将代码添加到 UWP 应用以将 Windows 10 客户定向至“反馈中心”，他们可以在其中提交问题、提出建议并进行投票。 然后，在合作伙伴中心内的[反馈报告](../publish/feedback-report.md)中管理此反馈。 此功能需要 Microsoft Store Services SDK。 
 | [配置应用以接收合作伙伴中心推送通知](configure-your-app-to-receive-dev-center-notifications.md) | 为 UWP 应用注册通知通道，以便它可以接收[合作伙伴中心推送通知](../publish/send-push-notifications-to-your-apps-customers.md)，并跟踪由推送通知导致的应用启动的速度。 此功能需要 Microsoft Store Services SDK。

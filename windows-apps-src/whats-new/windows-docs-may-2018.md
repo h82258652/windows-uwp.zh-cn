@@ -5,18 +5,18 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 5 月, �
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d8b72501c298f3814092ec4567a5fb608c4bb88f
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: cd84892f9d90a69379ac5a7f84dfa188adf1211e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682766"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258785"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>2018 年 5 月 Windows 开发人员文档中的新增功能
 
 Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 五月份提供了与 [Microsoft Build 2018](https://www.microsoft.com/build/) 开发人员大会一致的以下功能概述、开发人员指南、视频和示例。
 
-只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 ## <a name="features"></a>功能
 

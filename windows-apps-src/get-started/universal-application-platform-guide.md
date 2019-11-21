@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b1f6e0e04cdf81512918e0cd3e33ec0f93e2245
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5b0d226a9492a2218edf20e68b8216ea513ca12a
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321001"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260540"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>什么是通用 Windows 平台 (UWP) 应用？
 
@@ -115,7 +115,7 @@ UWP 应用可以使用 Windows 运行时，它是操作系统提供的本机 API
 
 Microsoft 的设计系统名为 Fluent。 Fluent Design 系统是一套结合了最佳实践的 UWP 功能，用于创建在所有类型的支持 Windows 的设备上都表现出色的应用。 Fluent 体验能够适应各类设备，并提供自然的使用感受，从平板电脑到笔记本电脑，从电脑到电视，再到虚拟现实设备。 有关 Fluent Design 的简介，请参阅 [UWP 应用的 Fluent Design 系统](https://docs.microsoft.com/windows/uwp/design/fluent-design-system)。
 
-除了确定应用外观和运行方式外，良好的[设计](https://go.microsoft.com/fwlink/?LinkId=258848)还是确定用户如何与你的应用交互的过程。 用户体验极大地影响着用户对你的应用的满意度，所以请勿忽略此步骤。 [设计基础知识](https://developer.microsoft.com/en-us/windows/apps/design)介绍了如何设计通用 Windows 应用。 有关设计出令用户满意的 UWP 应用的信息，请参阅[面向设计人员的通用 Windows 平台 (UWP) 应用简介](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)。 在开始编写代码之前，请参阅[设备入门](../design/devices/index.md)，以帮助你全面考虑在你要针对的所有不同外形规格上使用应用的交互体验。
+除了确定应用外观和运行方式外，良好的[设计](http://design.windows.com/)还是确定用户如何与你的应用交互的过程。 用户体验极大地影响着用户对你的应用的满意度，所以请勿忽略此步骤。 [设计基础知识](https://developer.microsoft.com/en-us/windows/apps/design)介绍了如何设计通用 Windows 应用。 有关设计出令用户满意的 UWP 应用的信息，请参阅[面向设计人员的通用 Windows 平台 (UWP) 应用简介](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)。 在开始编写代码之前，请参阅[设备入门](../design/devices/index.md)，以帮助你全面考虑在你要针对的所有不同外形规格上使用应用的交互体验。
 
 除了在不同设备上的交互外，还需[规划应用](https://docs.microsoft.com/windows/uwp/get-started/plan-your-app)以利用在多个设备之间运行的优势。 例如：
 
@@ -125,7 +125,7 @@ Microsoft 的设计系统名为 Fluent。 Fluent Design 系统是一套结合了
 
 ### <a name="add-services"></a>添加服务
 
-- 使用[云服务](https://go.microsoft.com/fwlink/?LinkId=526377)跨设备同步。
+- 使用[云服务](https://azure.microsoft.com/documentation/services/cloud-services)跨设备同步。
 - 了解如何[连接到 Web 服务](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))以支持应用体验。
 - 将[推送通知](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)和[应用内购买](https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases)包含在规划中。 这些功能应该能够跨设备运行。
 

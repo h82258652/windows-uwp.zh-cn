@@ -6,12 +6,12 @@ keywords: 入门 开发人员许可证 Visual Studio，开发人员许可证 启
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a4c1f90c0fa8304f95b1dc958fe5a75e74301dd
-ms.sourcegitcommit: 7791596c25baf9d222729e057ecdf81b45a59f0c
+ms.openlocfilehash: a2d1719379302dd8e996c37e05d7ddaf35a0cf18
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71205928"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258420"
 ---
 # <a name="enable-your-device-for-development"></a>启用设备进行开发
 
@@ -74,7 +74,7 @@ ms.locfileid: "71205928"
 **旁加载应用**是比开发人员模式更安全的选项，因为你无法在缺少可信任证书的设备上安装应用。
 
 > [!NOTE]
-> 如果旁加载应用，你仍然应该仅从受信任的源安装应用。 安装未经 Microsoft Store 认证的旁加载应用时，即表明你同意已获取旁加载应用所需的所有权限，并且你对任何由安装和运行应用引发的损害负全责。 请参阅此[隐私声明](https://go.microsoft.com/fwlink/?LinkId=521839)的“ Windows &gt; Microsoft Store”部分。
+> 如果旁加载应用，你仍然应该仅从受信任的源安装应用。 安装未经 Microsoft Store 认证的旁加载应用时，即表明你同意已获取旁加载应用所需的所有权限，并且你对任何由安装和运行应用引发的损害负全责。 请参阅此[隐私声明](https://privacy.microsoft.com/privacystatement)的“ Windows &gt; Microsoft Store”部分。
 
 
 ### <a name="developer-mode"></a>开发人员模式

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c7296923b3e991a56fed115527b28a6b62b3ffd6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 15e6ebd45d4f7069e09169a437476b0f785ea959
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369463"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259592"
 ---
  # <a name="files-folders-and-libraries"></a>文件、文件夹和库
 
@@ -36,11 +36,11 @@ ms.locfileid: "66369463"
 | [在 UWP 中快速访问文件属性](fast-file-properties.md) | 高效地从库中收集文件及其属性的列表以用于 UWP 应用。 |
 
 ## <a name="related-samples"></a>相关示例
-[文件夹枚举示例](https://go.microsoft.com/fwlink/p/?linkid=619993)
+[文件夹枚举示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FolderEnumeration)
 
-[文件访问示例](https://go.microsoft.com/fwlink/p/?linkid=619995)
+[文件访问示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)
 
-[文件选取器示例](https://go.microsoft.com/fwlink/p/?linkid=619994)
+[文件选取器示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker)
  
 
  

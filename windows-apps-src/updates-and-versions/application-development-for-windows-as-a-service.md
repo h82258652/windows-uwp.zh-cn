@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
-ms.openlocfilehash: 478c4a16902329e1dd9267e0339dca0e0dcf3539
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1a2b22df2610191636d258dc48838e0bc5be6ee4
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321968"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259782"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>面向 Windows 即服务的应用程序开发
 
@@ -50,7 +50,7 @@ ms.locfileid: "67321968"
 
 在 Windows 即服务模型中，Microsoft 承诺会维护底层操作系统的兼容性。 这意味着 Microsoft 将致力于确保不会出现对应用生态系统造成负面影响的重大更改。 在此方案中，当发布一个 Windows 版本时，大多数应用（不具有任何内核依赖关系的应用）仍可继续运行。
 
-鉴于此更改，Microsoft 建议 ISV 合作伙伴将其应用发布和支持从特定的 Windows 版本中分离出来。 我们的共同客户可以通过应用程序生命周期方法得到更好的服务。 这意味着，当某个应用程序版本发布时，它在一段时期内会受支持，无论在此期间发布了多少个 Windows 版本。 ISV 承诺：只要该特定版本的应用在生命周期内受支持，就会对它提供支持。 Microsoft 针对可在[此处](https://go.microsoft.com/fwlink/?LinkID=780549)参考的 Windows 遵循类似的生命周期方法。
+鉴于此更改，Microsoft 建议 ISV 合作伙伴将其应用发布和支持从特定的 Windows 版本中分离出来。 我们的共同客户可以通过应用程序生命周期方法得到更好的服务。 这意味着，当某个应用程序版本发布时，它在一段时期内会受支持，无论在此期间发布了多少个 Windows 版本。 ISV 承诺：只要该特定版本的应用在生命周期内受支持，就会对它提供支持。 Microsoft 针对可在[此处](https://support.microsoft.com/hub/4095338/microsoft-lifecycle-policy?C2=14019)参考的 Windows 遵循类似的生命周期方法。
 
 此方法将减轻配合 Windows 发布的应用计划的维护负担。 ISV 合作伙伴应该能够按照自己的节奏不受约束地发布特性或更新。 我们认为，我们的合作伙伴可以使用最新应用更新（不依赖 Windows 版本）来持续更新其客户基础。 此外，我们的客户在发布 Windows 版本就不必寻找明确的支持声明。 下面是支持声明的一个示例，该声明介绍某个应用可如何在不同版本的操作系统上受支持：
 
@@ -90,7 +90,7 @@ OS 版本已根据 Windows 10 递增。 这意味着内部版本号已更改为 
 -   如果应用依赖于特定的 API 功能，请确保定向正确的 API 版本。
 -   确保通过 APISet 或其他公共 API 检测更改，不要将版本用作某些功能或修复的代理。 如果存在重大更改，而正常检查未检测到，则表明存在 Bug。
 -   确保应用不会使用奇怪的方式检查版本，如通过注册表、文件版本、偏移、内核模式、驱动程序或其他方式。 如果应用确实需要检查版本，则使用 GetVersion API，它应该会返回主要版本号、次要版本号和内部版本号。
--   如果你使用的是 [GetVersion](https://go.microsoft.com/fwlink/?LinkID=780555) API，请记住，此 API 的行为在 Windows 8.1 以后已发生变化。
+-   如果你使用的是 [GetVersion](https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion?redirectedfrom=MSDN) API，请记住，此 API 的行为在 Windows 8.1 以后已发生变化。
 
 如果你拥有反恶意软件或防火墙应用之类的应用，应通过常规反馈渠道和通过 Windows 预览体验计划进行工作。
 
@@ -100,9 +100,9 @@ OS 版本已根据 Windows 10 递增。 这意味着内部版本号已更改为 
 
 ### <a name="develop-universal-windows-platform-uwp-and-centennial-apps"></a>开发通用 Windows 平台 (UWP) 和 Centennial 应用
 
-我们鼓励所有 Win32 应用 ISV 开发[通用 Windows 平台 (UWP)](https://go.microsoft.com/fwlink/?LinkID=780560)，特别是 [Centennial](https://go.microsoft.com/fwlink/?LinkID=780562) 应用要与时俱进。 开发这些应用包有许多好处，而使用传统 Win32 安装程序则没有。 UWP 应用在 [Microsoft Store](https://go.microsoft.com/fwlink/?LinkID=780563) 中也受支持，因此它便于你将你的用户自动更新到一致版本，从而降低支持成本。
+我们鼓励所有 Win32 应用 ISV 开发[通用 Windows 平台 (UWP)](https://blogs.windows.com/windowsdeveloper/2016/02/25/an-update-on-the-developer-opportunity-and-windows-10/)，特别是 [Centennial](https://channel9.msdn.com/Events/Build/2015/2-692) 应用要与时俱进。 开发这些应用包有许多好处，而使用传统 Win32 安装程序则没有。 UWP 应用在 [Microsoft Store](https://blogs.windows.com/windowsdeveloper/2016/02/04/windows-store-trends-february-2016/) 中也受支持，因此它便于你将你的用户自动更新到一致版本，从而降低支持成本。
 
-如果你的 Win32 应用类型不适用于 Centennial 模型，我们强烈你使用正确的安装程序，并确保经过全面测试。 安装程序是用户或客户对你的应用的首次体验，因此确保该安装程序运行良好。 安装程序时常运行不良，或者并未针对所有情形进行全面测试。 在你的用户开始操作之前，[Windows 应用认证工具包](https://go.microsoft.com/fwlink/?LinkID=780565)可以帮助你测试 Win32 应用的安装和卸载、帮助标识未记录的 API 的使用情况以及其他与性能相关的基本最佳做法问题。
+如果你的 Win32 应用类型不适用于 Centennial 模型，我们强烈你使用正确的安装程序，并确保经过全面测试。 安装程序是用户或客户对你的应用的首次体验，因此确保该安装程序运行良好。 安装程序时常运行不良，或者并未针对所有情形进行全面测试。 在你的用户开始操作之前，[Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)可以帮助你测试 Win32 应用的安装和卸载、帮助标识未记录的 API 的使用情况以及其他与性能相关的基本最佳做法问题。
 
 **最佳做法：**
 -   使用同时适用 32 位和 64 位版本的 Windows 的安装程序。
@@ -117,7 +117,7 @@ Windows 操作系统外部测试版是指在向一般大众发布最终版本之
 如果你的应用位于应用商店内，则可以通过应用商店对你的应用进行外部测试，这意味着会将你的应用提供给 Windows 预览体验成员进行安装。 用户可以安装你的应用，而你则可以在将你的应用发布给一般大众之前收到有关该应用的初步反馈。 以下部分概述了针对 Windows 外部测试版测试你的应用的步骤。
 
 ### <a name="step-1-become-a-windows-insider-and-participate-in-flighting"></a>第 1 步：成为 Windows 预览体验成员并参与外部测试版
-作为 [Windows 预览体验成员](https://go.microsoft.com/fwlink/p/?LinkId=521639)，你可以帮助塑造 Windows 的未来 - 你的反馈将帮助我们改进该平台中的特性和功能。 这是一个充满活力的社区，在这里你可以联系其他爱好者、加入论坛、交换意见，以及了解即将推出的仅面向预览体验成员的活动。
+作为 [Windows 预览体验成员](https://insider.windows.com/)，你可以帮助塑造 Windows 的未来 - 你的反馈将帮助我们改进该平台中的特性和功能。 这是一个充满活力的社区，在这里你可以联系其他爱好者、加入论坛、交换意见，以及了解即将推出的仅面向预览体验成员的活动。
 
 由于你有权访问预览版的 Windows 10、Windows 10 移动版和最新的 Windows SDK 以及仿真器，因此你可以随心所欲地使用所有工具来开发出色的应用，并了解通用 Windows 平台和 Microsoft Store 中的新增功能。
 
@@ -157,7 +157,7 @@ Windows 操作系统外部测试版是指在向一般大众发布最终版本之
 让我们知道你的应用在外部测试版中的执行情况。 当你在测试过程中发现应用中存在问题时，请通过合作伙伴门户（如果你有权访问），或通过你的 Microsoft 代表记录这些 Bug。 我们鼓励提供此信息，以便可以与我们一起为我们的用户生成优质体验。
 
 ### <a name="step-4-register-on-ready-for-windows"></a>步骤 4：注册 Ready For Windows
-[Ready for Windows](https://go.microsoft.com/fwlink/?LinkID=780580) 网站是支持 Windows 10 的软件的目录。 它适用于全球范围内公司和组织的 IT 管理员，这些管理员要针对其部署考虑使用 Windows 10。 IT 管理员可以查看该站点来了解其企业中部署的软件在 Windows 10 中是否受支持。
+[Ready for Windows](https://docs.microsoft.com/configmgr/desktop-analytics/ready-for-windows) 网站是支持 Windows 10 的软件的目录。 它适用于全球范围内公司和组织的 IT 管理员，这些管理员要针对其部署考虑使用 Windows 10。 IT 管理员可以查看该站点来了解其企业中部署的软件在 Windows 10 中是否受支持。
 
 ## <a name="related-topics"></a>相关主题
 [用于更新和升级的 Windows 10 服务选项](https://docs.microsoft.com/windows/manage/introduction-to-windows-10-servicing)

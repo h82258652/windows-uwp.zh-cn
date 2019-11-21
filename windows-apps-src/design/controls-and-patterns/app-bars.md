@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5559e4204dd50ff989d48ff4508862489f9d3180
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 9f5fd3408657047c3d1d102c65f6264954983134
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66361243"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257747"
 ---
 # <a name="command-bar"></a>命令栏
 
@@ -278,7 +278,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 ## <a name="get-the-sample-code"></a>获取示例代码
 
 - [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
-- [XAML 命令示例](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+- [XAML 命令示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCommanding)
 
 ## <a name="related-articles"></a>相关文章
 

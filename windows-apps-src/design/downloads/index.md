@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 63af76e0ee7faa757798f71c63b141e6b2262007
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 72951270a45ba82f1241c967bb70628a3f27f7c1
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867647"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258109"
 ---
 ![设计基础知识](../images/downloads-2x.png)
 
@@ -64,7 +64,7 @@ v1705，2017 年 5 月<br>
 <b>Framer 工具包</b><br>
 （此工具包不再受支持。）<br/>
 v1806，2018 年 6 月<br>
-<a href="https://aka.ms/framertoolkit">下载</a>
+<a href="https://github.com/Microsoft/windows-framer-toolkit">下载</a>
     :::column-end:::
 :::row-end:::
 

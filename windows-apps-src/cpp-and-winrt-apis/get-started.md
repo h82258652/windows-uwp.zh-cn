@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 入门, 开始使用
 ms.localizationpriority: medium
-ms.openlocfilehash: ab582d0528d6af8c9a8ae97e43fda2714f8e2fe6
-ms.sourcegitcommit: 2442a5f5b0c4275204063162f0f379fa90ff13b4
+ms.openlocfilehash: c058a727e09f00e01664c314d8c198f3f25e841e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72292781"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255132"
 ---
 # <a name="get-started-with-cwinrt"></a>C++/WinRT 入门
 
@@ -121,7 +121,7 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 本部分介绍如何将 C++/WinRT 支持添加到 Windows 桌面应用程序项目。 如果你没有 Windows 桌面应用程序项目，可以先遵循以下步骤创建一个。 例如，打开 Visual Studio 并选择“Visual C++”\>“Windows 桌面”\>“Windows 桌面应用程序”来创建一个项目。   
 
-可以选择性地安装 [C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix) 和 NuGet 包。 有关详细信息，请参阅 [C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+可以选择性地安装 [C++/WinRT Visual Studio 扩展 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) 和 NuGet 包。 有关详细信息，请参阅 [C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ### <a name="set-project-properties"></a>设置项目属性
 

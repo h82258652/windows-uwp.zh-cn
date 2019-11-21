@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ce81088495716e43a32dab94d1d47d399dd6a309
-ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
+ms.openlocfilehash: 31f527cff7588ccf6da2594566cfa3cf13a214f1
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061912"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258672"
 ---
 # <a name="sound"></a>声音
 
@@ -69,7 +69,7 @@ ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
 ### <a name="sound-for-tv-and-xbox"></a>电视和 Xbox 的声音
 
 声音是10 英尺体验的关键部分，并且默认情况下，**ElementSoundPlayer** 的状态为“自动”  ，这意味着只有当应用在 Xbox 上运行时才可获取声音。
-若要了解有关针对 Xbox 和电视进行设计的详细信息，请参阅[针对 Xbox 和电视进行设计](https://go.microsoft.com/fwlink/?LinkId=760736)。
+若要了解有关针对 Xbox 和电视进行设计的详细信息，请参阅[针对 Xbox 和电视进行设计](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN)。
 
 ## <a name="sound-volume-override"></a>音量覆盖
 

@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 简介
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a9bb432ce7c856a6c54305f657f06a23dab14f1
-ms.sourcegitcommit: 805420bb7ec6850ec3576b21193a3681054c9754
+ms.openlocfilehash: fd267f96ca6931252ab3130d363447ae79820108
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71976327"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255103"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 简介
 &nbsp;
@@ -37,7 +37,7 @@ Windows 运行时基于组件对象模型 (COM) API，根据设计，可通过�
 
 虽然我们建议使用最新版 Visual Studio 和 Windows SDK 进行开发，但如果你使用的 C++/WinRT 版本是 10.0.17763.0（Windows 10 版本 1809）之前的 Windows SDK 随附的，则至少需要在项目中使用 Windows SDK 目标版本 10.0.17134.0（Windows 10 版本 1803）才能使用上述 Windows 命名空间标头。
 
-需要从 [Visual Studio Marketplace](https://marketplace.visualstudio.com/) 下载并安装最新版 [C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix)。
+需要从 [Visual Studio Marketplace](https://marketplace.visualstudio.com/) 下载并安装最新版 [C++/WinRT Visual Studio 扩展 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)。
 
 - VSIX 扩展为你提供 Visual Studio 中的 C++/WinRT 项目和项模板，让你可以开始进行 C++/WinRT 开发。
 - 另外，它还为你提供 C++/WinRT 投影类型的 Visual Studio 本机调试可视化效果 (natvis)；提供与 C# 调试类似的体验。 Natvis 对于调试版本是自动的。 可以通过定义 WINRT_NATVIS 符号选择加入其发布版本。
@@ -96,7 +96,7 @@ Visual Studio 提供了 XAML 编译器支持，用于从每个 XAML 标记文件
 将生成的 Windows 运行时组件二进制文件及其 `.winmd` 与使用它们的 UWP 应用绑定。
 
 ## <a name="earlier-versions-of-the-vsix-extension"></a>早期版本的 VSIX 扩展
-建议安装（或更新到）最新版 [VSIX 扩展](https://aka.ms/cppwinrt/vsix)。 默认情况下，它已配置为自行更新。 如果你这样做，并且项目是使用 1.0.190128.4 之前的 VSIX 扩展版本创建的，则请参阅此部分，因为其中包含重要信息，介绍了如何升级这些项目，使之兼容新版本。 当然，如果你不进行更新，此部分的内容仍然对你有用。
+建议安装（或更新到）最新版 [VSIX 扩展](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)。 默认情况下，它已配置为自行更新。 如果你这样做，并且项目是使用 1.0.190128.4 之前的 VSIX 扩展版本创建的，则请参阅此部分，因为其中包含重要信息，介绍了如何升级这些项目，使之兼容新版本。 当然，如果你不进行更新，此部分的内容仍然对你有用。
 
 就支持的 Windows SDK 和 Visual Studio 版本以及 Visual Studio 配置来说，上面的[针对 C++/WinRT、XAML、VSIX 扩展和 NuGet 包的 Visual Studio 支持](#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)部分的信息适用于早期版本的 VSIX 扩展。 下面的内容介绍了在使用早期版本创建项目（或将项目升级，使之兼容早期版本）的情况下，在行为和配置方面存在的重要差异。
 
@@ -147,7 +147,7 @@ Windows SDK 也附带 `cppwinrt.exe` 工具，这同样是出于兼容性原因�
 
 ## <a name="related-topics"></a>相关主题
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix)
+* [C++/WinRT Visual Studio 扩展 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)
 * [C++/WinRT 入门](get-started.md)
 * [标准 C++ 数据类型和 C++/WinRT](std-cpp-data-types.md)
 * [C++/WinRT 中的字符串处理](strings.md)

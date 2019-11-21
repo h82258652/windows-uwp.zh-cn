@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 97ad2485abab0bd4733699bc4ffcf29e17a22844
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 318c58b393a33916df7bab51a4ef2690494d14fb
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369440"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259610"
 ---
 # <a name="track-recently-used-files-and-folders"></a>跟踪最近使用的文件和文件夹
 
@@ -25,7 +25,7 @@ ms.locfileid: "66369440"
 你的应用的 MRU 由 [**StorageItemMostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList) 类表示，你可从静态 [**StorageApplicationPermissions.MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) 属性获取该类。 MRU 项存储为 [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem) 对象，这意味着 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 对象（代表文件）和 [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) 对象（代表文件夹）都可以添加到 MRU 中。
 
 > [!NOTE]
-> 有关完整示例，请参阅[文件选取器示例](https://go.microsoft.com/fwlink/p/?linkid=619994)和[文件访问示例](https://go.microsoft.com/fwlink/p/?linkid=619995)。
+> 有关完整示例，请参阅[文件选取器示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker)和[文件访问示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)。
 
 ## <a name="prerequisites"></a>必备条件
 

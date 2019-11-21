@@ -5,18 +5,18 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 一月
 ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: beb80c28866b8f8207f203b70cb504dcd034098d
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: ac5f7e058a616117e73defde2c48bf4c66f68d2e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63800611"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259744"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>2019 年 1 月 Windows 开发人员文档中的新增功能
 
 Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 一月当月提供了以下功能概述、开发人员指南和视频。
 
-只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -70,9 +70,9 @@ WPF、Windows 窗体和 WinUI UX 框架现可用于 GitHub 上的开源内容。
 
 ### <a name="progressive-web-apps"></a>渐进式 Web 应用
 
-渐进式 Web 应用是网站，功能类似于各种浏览器和各种 Windows 10 设备上的本机应用。 [观看视频](https://youtu.be/ugAewC3308Y)了解详细信息，然后[查看文档](https://aka.ms/Windows-PWA)以开始。
+渐进式 Web 应用是网站，功能类似于各种浏览器和各种 Windows 10 设备上的本机应用。 [观看视频](https://youtu.be/ugAewC3308Y)了解详细信息，然后[查看文档](https://developer.microsoft.com/windows/pwa)以开始。
 
-### <a name="vs-code-series"></a>VS 代码系列
+### <a name="vs-code-series"></a>VS Code 系列
 
 查看 [Visual Studio Code 的新视频系列](https://www.youtube.com/playlist?list=PLlrxD0HtieHjQX77y-0sWH9IZBTmv1tTx)，了解 VSCode 是什么、如何使用它以及如何创建它。
 

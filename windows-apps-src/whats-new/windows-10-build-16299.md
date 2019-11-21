@@ -5,18 +5,18 @@ keywords: 最近更新, 更新, 功能, 新增, Windows 10, 1709, 10 月, 最新
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 56061fa30e9581be278c710c29b19f0f90ea99cb
-ms.sourcegitcommit: a7740ebb14c98cd5afadd52db5cf714522821b49
+ms.openlocfilehash: c54321d1d9db95a33d2de6363a79d93243c07d1f
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72893007"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258891"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>面向开发人员的 Windows 10 内部版本 16299 中的新增功能
 
-Windows 10 内部版本 16299（又称 Fall Creators Update 或版本 1709）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+Windows 10 内部版本 16299（又称 Fall Creators Update 或版本 1709）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
-该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 16299 API 更改](windows-10-build-16299-api-diff.md)。 有关 Windows 10 亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的详尽概述。
+该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 16299 API 更改](windows-10-build-16299-api-diff.md)。 有关 Windows 10 亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://developer.microsoft.com/windows/windows-10-for-developers)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的详尽概述。
 
 ## <a name="design--ui"></a>设计和 UI
 
@@ -39,10 +39,10 @@ UI 控件 | 使用这些新控件能够更快速轻松地构建美观的 UI。 <
  :------ | :------
 游戏广播 | **[Windows.Media.AppBroadcasting](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting)** 命名空间中的新 API 允许应用启动系统提供的游戏广播 UI。 </br>也可以登记通知应用广播何时开始或停止的事件。 使用 **[Windows.Media.AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording)** 命名空间中的新 API，你可以录制音频和视频并且捕获游戏截图。 </br>也可以提供系统将嵌入广播和捕获流中的元数据，以便应用提供与游戏事件同步的查看体验。 有关这些功能的更多信息，请参阅[游戏广播和捕获](../gaming/game-broadcast-and-capture.md)。
 游戏聊天覆盖 | [GameChatOverlay 类](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamechatoverlay)提供了用于获取默认游戏聊天覆盖实例、设置希望的覆盖位置以及添加消息的方法。
-游戏设备信息 | 由于控制台的功能不同，通用 Windows 平台 (UWP) 的游戏开发人员需要通过某种方法确定运行游戏的控制台类型，以便在运行时选择充分利用硬件的方式。 **&lt;gamingdeviceinformation.h&gt;** 中的[游戏设备信息](https://aka.ms/gamingdeviceinfo) API 具有此项功能。
+游戏设备信息 | 由于控制台的功能不同，通用 Windows 平台 (UWP) 的游戏开发人员需要通过某种方法确定运行游戏的控制台类型，以便在运行时选择充分利用硬件的方式。 **&lt;gamingdeviceinformation.h&gt;** 中的[游戏设备信息](https://docs.microsoft.com/previous-versions/windows/desktop/gamingdvcinfo/gaming-device-information-portal?redirectedfrom=MSDN) API 具有此项功能。
 游戏模式 | 适用于通用 Windows 平台 (UWP) 的[游戏模式](https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal) API 让你可以利用 Windows 10 中的游戏模式产生最优化的游戏体验。 这些 API 位于 **&lt;expandedresources.h&gt;** 标头中。
 游戏监视器 | [GameMonitor 类](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamemonitor)允许应用获取设备的游戏监视权限状态，并且可能会提示用户启用游戏监视。
-TruePlay | [TruePlay](https://aka.ms/trueplay) 为开发人员提供一组反电脑游戏作弊技术的新工具。 加入 TruePlay 的游戏将在受保护的程序中运行，减少了常见的攻击类型。 适用于通用 Windows 平台 (UWP) 的 TruePlay API 允许 Windows 10 电脑上的游戏以及游戏监视系统之间进行有限的交互。 这些 API 位于 **&lt;gamemonitor.h&gt;** 标头中。
+TruePlay | [TruePlay](https://docs.microsoft.com/previous-versions//mt808781(v=vs.85)?redirectedfrom=MSDN) 为开发人员提供一组反电脑游戏作弊技术的新工具。 加入 TruePlay 的游戏将在受保护的程序中运行，减少了常见的攻击类型。 适用于通用 Windows 平台 (UWP) 的 TruePlay API 允许 Windows 10 电脑上的游戏以及游戏监视系统之间进行有限的交互。 这些 API 位于 **&lt;gamemonitor.h&gt;** 标头中。
 Xbox Live | 我们添加了面向 Xbox Live 开发人员、适用于 UWP 和 Xbox 开发人员工具包 (XDK) 游戏的文档。 </br>* 请参阅 [Xbox Live 开发人员指南](https://docs.microsoft.com/gaming/xbox-live/index.md)以了解如何使用 Xbox Live API 将你的游戏连接到 Xbox Live 社交游戏网络。 </br>* 借助 [Xbox Live 创意者计划](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)，任何 UWP 游戏开发人员都可以在电脑和 Xbox One 上开发和发布支持 Xbox Live 的游戏。 </br>* 请参阅 [Xbox Live 开发人员计划概述](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md)，获取有关 Xbox Live 开发人员可用程序和功能的信息。
 
 ## <a name="develop-windows-apps"></a>开发 Windows 应用
