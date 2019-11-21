@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
-ms.openlocfilehash: f8f31630fed64e2a22b21e4572eaba76440a82fc
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 0b5ca136b969ca238226d6f6b63b8e2fcff3207f
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334765"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259741"
 ---
 # <a name="uwp-on-xbox-one"></a>Xbox One 上的 UWP
 
@@ -40,7 +40,7 @@ Xbox One 上的 UWP 支持开发应用和游戏。 你不必参与开发人员�
 |[多用户应用程序简介](multi-user-applications.md)| 介绍了 Xbox One 上的多用户应用程序 (MUA)。 |
 | [自动化 Xbox One 开发任务](https://github.com/Microsoft/WindowsDevicePortalWrapper/tree/v0.9.4) | GitHub 上的 WindowsDevicePortalWrapper 项目提供了一个库，允许自动执行常见的开发任务，例如部署或启动应用。 该项目包括一个示例 XboxWdpDriver.exe，演示如何使用这些 API 执行常见任务。 |
 |[将现有游戏移植到 Xbox](development-lanes-landing.md)|基于生成你的游戏所熟练掌握的技术，我们可以直接向你提供分步说明，这可以加快使用 UWP 将你的游戏移植到 Xbox 的进度。|
-|[Xbox One 上尚不支持的 UWP 功能](https://go.microsoft.com/fwlink/p/?LinkId=760755)|  介绍了在 Xbox One 上尚不能正常运行的 UWP 功能区域。|
+|[Xbox One 上尚不支持的 UWP 功能](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN)|  介绍了在 Xbox One 上尚不能正常运行的 UWP 功能区域。|
 
 ## <a name="videos"></a>视频
 
