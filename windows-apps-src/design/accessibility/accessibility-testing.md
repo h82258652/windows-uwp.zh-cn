@@ -8,12 +8,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 60be53bfcb351866a0cf124fe4ef6f21ff889f88
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: fb9480740746b6e6ec792d4b88f4d84e4acb7c0e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318958"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257803"
 ---
 # <a name="accessibility-testing"></a>辅助功能测试  
 
@@ -42,7 +42,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 
 ### <a name="inspect"></a>**检查**  
 
-[**检查**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) ，可选择任何 UI 元素并查看其可访问性数据。 可以查看 Microsoft UI 自动化属性和控件模式并测试 UI 自动化树中自动化元素的导航结构。 当你开发 UI 以验证如何在 UI 自动化中公开辅助功能属性时，请使用 **Inspect**。 在某些情况下，属性来自已经为默认 XAML 控件实现的 UI 自动化支持。 在其他情况下，属性来自已经在 XAML 标记中设置为 [**AutomationProperties**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties) 附加属性的特定值。
+[**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) enables you to select any UI element and view its accessibility data. 可以查看 Microsoft UI 自动化属性和控件模式并测试 UI 自动化树中自动化元素的导航结构。 当你开发 UI 以验证如何在 UI 自动化中公开辅助功能属性时，请使用 **Inspect**。 在某些情况下，属性来自已经为默认 XAML 控件实现的 UI 自动化支持。 在其他情况下，属性来自已经在 XAML 标记中设置为 [**AutomationProperties**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties) 附加属性的特定值。
 
 下图展示了 [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) 工具，用于查询记事本中 **“编辑”** 菜单元素的 UI 自动化属性。
 
@@ -52,7 +52,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 <span id="UI_ACCESSIBILITY_CHECKER"/>
 
 ### <a name="ui-accessibility-checker"></a>**UI 辅助功能检查器**  
-**UI 辅助功能检查器 (AccChecker)** 有助于发现运行时的辅助功能问题。 如果你的 UI 完整且可使用，则将 **AccChecker** 用于测试不同的方案、验证运行时辅助功能信息的正确性以及发现运行时问题。 可以在 UI 或命令行模式下运行 **AccChecker**。 若要运行 UI 模式工具，在 Windows SDK bin 目录中打开 **AccChecker** 目录、运行 acccheckui.exe，然后单击“帮助”  菜单。
+**UI 辅助功能检查器 (AccChecker)** 有助于发现运行时的辅助功能问题。 如果你的 UI 完整且可使用，则将 **AccChecker** 用于测试不同的方案、验证运行时辅助功能信息的正确性以及发现运行时问题。 可以在 UI 或命令行模式下运行 **AccChecker**。 若要运行 UI 模式工具，在 Windows SDK bin 目录中打开 **AccChecker** 目录、运行 acccheckui.exe，然后单击“帮助”菜单。
 
 <span id="ui_automation_verify"/>
 <span id="UI_AUTOMATION_VERIFY"/>
@@ -64,7 +64,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 <span id="ACCESSIBLE_EVENT_WATCHER"/>
 
 ### <a name="accessible-event-watcher"></a>**辅助功能事件查看器**  
-[**可访问事件观察器 (AccEvent)** ](https://docs.microsoft.com/windows/desktop/WinAuto/accessible-event-watcher)测试是否应用的 UI 元素触发 UI 更改发生时的相应 UI 自动化和 Microsoft Active Accessibility 事件。 当焦点改变时，或者当 UI 元素被调用、选择或者其状态或属性发生变化时，UI 会发生变化。
+[**Accessible Event Watcher (AccEvent)** ](https://docs.microsoft.com/windows/desktop/WinAuto/accessible-event-watcher) tests whether an app's UI elements fire proper UI Automation and Microsoft Active Accessibility events when UI changes occur. 当焦点改变时，或者当 UI 元素被调用、选择或者其状态或属性发生变化时，UI 会发生变化。
 
 > [!NOTE]
 > 文档中提及的大多数辅助功能测试工具在电脑而不是手机上运行。 开发和使用模拟器时可以运行某些工具，但其中大部分工具无法在模拟器中公开 UI 自动化树。
@@ -79,7 +79,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 <span id="VERIFY_THE_CONTRAST_RATIO_OF_VISIBLE_TEXT"/>
 
 ## <a name="verify-the-contrast-ratio-of-visible-text"></a>验证可见文本的对比度  
-使用颜色对比工具验证可见文本的对比度是否可接受。 例外情况包括不活动的 UI 元素，以及不传递任何信息且可以在含义不变的情况下重新整理的徽标或装饰文本。 有关对比率和例外情况的详细信息，请参阅[辅助文本要求](accessible-text-requirements.md)。 请参阅 [WCAG 2.0 G18 的技术（“资源”部分）](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources)了解可以测试对比率的工具。
+使用颜色对比工具验证可见文本的对比度是否可接受。 例外情况包括不活动的 UI 元素，以及不传递任何信息且可以在含义不变的情况下重新整理的徽标或装饰文本。 有关对比率和例外情况的详细信息，请参阅[辅助文本要求](accessible-text-requirements.md)。 若要了解可以测试对比率的工具，请参阅 [WCAG 2.0 G18 的技术（“资源”部分）](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources)。
 
 > [!NOTE]
 > “WCAG 2.0 G18 的技术”列出的某些工具无法与 UWP 应用交互使用。 你可能需要在该工具中手动输入前景和背景颜色值，对应用 UI 进行屏幕捕获，然后对屏幕捕获图像运行对比度工具，或者在图像编辑程序中打开源位图文件时运行该工具，而不是在应用加载该图像时。
@@ -95,7 +95,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 
 ## <a name="verify-your-app-with-display-settings"></a>使用显示设置验证你的应用  
 
-使用可调节屏幕的每英寸点数 (dpi) 值的系统屏幕选项，并确保当该 dpi 值发生更改时，你的应用 UI 可正确缩放。 (某些用户更改 dpi 值作为辅助功能选项，便可从**轻松访问**也一样显示属性。)如果发现任何问题，请按照[布局按比例缩放指南](https://developer.microsoft.com/windows/apps/design)并提供其他资源的比例系数不同。
+使用可调节屏幕的每英寸点数 (dpi) 值的系统屏幕选项，并确保当该 dpi 值发生更改时，你的应用 UI 可正确缩放。 （某些用户可采用辅助功能选项方式更改 dpi 值，该选项可从“轻松使用”以及屏幕属性中获得。）如果发现任何问题，请遵循[布局缩放指南](https://developer.microsoft.com/windows/apps/design)，并提供其他资源以用于不同的缩放因素。
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
@@ -105,9 +105,9 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode/player]
 
-**使用以下步骤来测试应用程序使用鼠标和键盘使用讲述人：**
+**Use these steps to test your app using Narrator with a mouse and keyboard:**
 1.  按 _Windows 徽标键 + Ctrl + Enter_ 启动“讲述人”。 在 Windows 10 版本 1607 之前的版本中，使用 _Windows 徽标键 + Enter_ 启动“讲述人”。
-2.  使用键盘上的 _Tab_ 键、箭头键、_Caps Lock 和箭头键_在你的应用中导航。
+2.  使用键盘上的 _Tab_ 键、箭头键、_Caps Lock + 箭头键_在你的应用中导航。
 3.  在应用中导航时，听“讲述人”读 UI 元素，验证下列项：
     * 对于每个控件，确保“讲述人”读出所有可见内容。 还需要确保“讲述人”读出每个控件的名称、所有适用的状态（已选中、已选择，等等）、控件类型（按钮、复选框、列表项，等等）。
     * 如果相应元素可交互，请验证是否可以使用“讲述人”通过按 _Caps Lock + Enter_ 调用其操作。
@@ -118,16 +118,16 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 
 从 Windows 10 版本 1607 开始，我们在“讲述人”中引入了新的开发人员模式。 当“讲述人”已经在运行时，通过按 _Caps Lock + Shift + F12_ 打开开发人员模式。 当开发人员模式已启用时，屏幕将屏蔽，并且将仅突出显示可访问的对象和以编程方式向“讲述人”公开的关联文本。 针对向“讲述人”公开的信息，这为你提供了良好的视觉表示形式。
 
-**使用以下步骤来测试应用程序使用讲述人的触摸模式：**
+**Use these steps to test your app using Narrator's touch mode:**
 
 > [!NOTE]
 > 在支持 4 个以上联系人的设备上，“讲述人”自动进入触摸模式。 在主要屏幕上，“讲述人”不支持多监视器方案或多点触控数字化器。
 
 1.  熟悉 UI，了解布局。
 
-    * **使用单根手指轻扫手势导航通过用户界面。** 使用向左或向右轻扫在项目间移动，使用向上或向下轻扫更改要导航的项目的类别。 类别包括所有项目、链接、表格、标题等。 使用单根手指轻扫手势进行导航类似于使用 _Caps Lock + 箭头键_进行导航。
-    * **使用选项卡手势可获得焦点的元素间导航。** 三根手指向右或向左轻扫与使用键盘上的 _Tab_ 和 _Shift + Tab_ 导航相似。
-    * **在空间上调查具有单指的 UI。** 上下拖动或左右拖动单根手指，以使“讲述人”读出你的手指下的项目。 可以使用鼠标作为替代项，因为鼠标在拖动单根手指时使用相同的点击测试逻辑。
+    * **Navigate through the UI by using single-finger swipe gestures.** 使用向左或向右轻扫在项目间移动，使用向上或向下轻扫更改要导航的项目的类别。 类别包括所有项目、链接、表格、标题等。 使用单根手指轻扫手势进行导航类似于使用 _Caps Lock + 箭头键_进行导航。
+    * **Use tab gestures to navigate through focusable elements.** 三根手指向右或向左轻扫与使用键盘上的 _Tab_ 和 _Shift + Tab_ 导航相似。
+    * **Spatially investigate the UI with a single finger.** 上下拖动或左右拖动单根手指，以使“讲述人”读出你的手指下的项目。 可以使用鼠标作为替代项，因为鼠标在拖动单根手指时使用相同的点击测试逻辑。
     * **通过三个手指向上轻扫读出整个窗口及其所有内容**。 这等效于使用 _Caps Lock + W_。
 
     如果存在无法到达的重要 UI，则表明可能存在辅助功能问题。
@@ -136,9 +136,9 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 
     主要操作包括激活按钮、放置文本插入符号、对控件设置焦点等操作。 辅助操作包括选择列表项、展开提供了多个选项的按钮等。
 
-    * 若要测试的主要操作：双点击，或用一个手指按下并点击与另一个。
-    * 若要测试辅助操作：三重点击，或按与用单指和双点击与另一个。
-    * 若要测试的滚动行为：使用两个手指扫在所需的方向滚动。
+    * 测试主要操作：双击，或用一个手指按住，另一个手指点击。
+    * 测试辅助操作：点击三次，或用一个手指按住，另一个手指双击。
+    * 测试滚动行为：使用两个手指轻扫，沿所需方向滚动。
 
     某些控件提供其他操作。 若要显示完整列表，请用四根手指点击。
 
@@ -163,5 +163,5 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 * [辅助功能](accessibility.md)
 * [要避免的做法](practices-to-avoid.md)
 * [UI 自动化](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)
-* [Windows 中的辅助功能](https://go.microsoft.com/fwlink/p/?LinkId=320802)
-* [开始使用讲述人](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)
+* [Accessibility in Windows](https://www.microsoft.com/accessibility/)
+* [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

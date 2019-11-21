@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dec80e4b79a93fc5b6f1e2990ad89570d62c5f1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 406af54cfaae8710cea2d989278a16f28c8dd619
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361438"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74256209"
 ---
 # <a name="effects-for-analyzing-camera-frames"></a>分析相机帧的效果
 
@@ -97,7 +97,7 @@ ms.locfileid: "66361438"
 
 [!code-cs[RegisterFaceDetectionHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterFaceDetectionHandler)]
 
-在该事件的处理程序中，你可以通过访问 [**FaceDetectedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.FaceDetectedEventArgs) 的 [**FaceDetectionEffectFrame.DetectedFaces**](https://docs.microsoft.com/uwp/api/windows.media.core.facedetectioneffectframe.detectedfaces) 属性，获取帧中所有检测到的人脸列表。 [  **FaceBox**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.detectedface.facebox) 属性是 [**BitmapBounds**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapBounds) 结构，用于描述包含检测到的人脸的矩形，其单位相对于预览流尺寸。 若要查看将预览流坐标转换到屏幕坐标的示例代码，请参阅[人脸检测 UWP 示例](https://go.microsoft.com/fwlink/?LinkId=619486)。
+在该事件的处理程序中，你可以通过访问 [**FaceDetectedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.FaceDetectedEventArgs) 的 [**FaceDetectionEffectFrame.DetectedFaces**](https://docs.microsoft.com/uwp/api/windows.media.core.facedetectioneffectframe.detectedfaces) 属性，获取帧中所有检测到的人脸列表。 [  **FaceBox**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.detectedface.facebox) 属性是 [**BitmapBounds**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapBounds) 结构，用于描述包含检测到的人脸的矩形，其单位相对于预览流尺寸。 若要查看将预览流坐标转换到屏幕坐标的示例代码，请参阅[人脸检测 UWP 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFaceDetection)。
 
 [!code-cs[FaceDetected](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetected)]
 
@@ -116,7 +116,7 @@ ms.locfileid: "66361438"
 ## <a name="related-topics"></a>相关主题
 
 * [摄像头](camera.md)
-* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

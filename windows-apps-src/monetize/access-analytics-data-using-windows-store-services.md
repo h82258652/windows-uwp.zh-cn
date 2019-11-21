@@ -1,50 +1,50 @@
 ---
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
-description: 使用 Microsoft Store 分析 API 以编程方式检索您或您的组织注册的应用的分析数据 ' s Windows 合作伙伴中心帐户。
+description: Use the Microsoft Store analytics API to programmatically retrieve analytics data for apps that are registered to your or your organization''s Windows Partner Center account.
 title: 使用应用商店服务访问分析数据
 ms.date: 03/06/2019
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5514ea3a0e416ad2a0b7b75084bc66ad057c1a73
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 71c59049b76219d6f9360748e9ca11ea84542e47
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320969"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259319"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用应用商店服务访问分析数据
 
-使用*Microsoft Store 分析 API*以编程方式检索到您或您组织的 Windows 合作伙伴中心帐户注册的应用的分析数据。 此 API 使你可以针对应用和加载项（也称为应用内产品或 IAP）购置、错误、应用评分和评价检索数据。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
+Use the *Microsoft Store analytics API* to programmatically retrieve analytics data for apps that are registered to your or your organization's Windows Partner Center account. 此 API 使你可以针对应用和加载项（也称为应用内产品或 IAP）购置、错误、应用评分和评价检索数据。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
 
 以下步骤介绍端到端过程：
 
 1.  确保已完成所有[先决条件](#prerequisites)。
-2.  在 Microsoft Store 分析 API 中调用某个方法之前，请先[获取 Azure AD 访问令牌](#obtain-an-azure-ad-access-token)。 获取访问令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Microsoft Store 分析 API。 该令牌到期后，可以重新生成一个。
+2.  在 Microsoft Store 分析 API 中调用某个方法之前，请先[获取 Azure AD 访问令牌](#obtain-an-azure-ad-access-token)。 获取访问令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Microsoft Store 分析 API。 该令牌到期后，你可以生成新的令牌。
 3.  [调用 Microsoft Store 分析 API](#call-the-windows-store-analytics-api)。
 
 <span id="prerequisites" />
 
-## <a name="step-1-complete-prerequisites-for-using-the-microsoft-store-analytics-api"></a>第 1 步：完成使用 Microsoft Store 分析 API 的先决条件
+## <a name="step-1-complete-prerequisites-for-using-the-microsoft-store-analytics-api"></a>步骤 1：完成使用 Microsoft Store 分析 API 的先决条件
 
 在开始编写调用 Microsoft Store 分析 API 的代码之前，确保已完成以下先决条件。
 
-* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](https://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在合作伙伴中心中创建新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
+* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在合作伙伴中心中创建新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
 
-* 必须将 Azure AD 应用程序与你的合作伙伴中心帐户相关联、 检索租户 ID 和应用程序的客户端 ID 和生成密钥。 Azure AD 应用程序是指你想要从中调用 Microsoft Store 分析 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
+* You must associate an Azure AD application with your Partner Center account, retrieve the tenant ID and client ID for the application and generate a key. Azure AD 应用程序是指你想要从中调用 Microsoft Store 分析 API 的应用或服务。 你需要租户 ID、客户端 ID 和密钥以获取传递给 API 的 Azure AD 访问令牌。
     > [!NOTE]
     > 你只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
 
-若要将 Azure AD 应用程序与你的合作伙伴中心帐户相关联，并检索所需的值：
+To associate an Azure AD application with your Partner Center account and retrieve the required values:
 
-1.  在合作伙伴中心[将组织的合作伙伴中心帐户与你组织的 Azure AD 目录相关联](../publish/associate-azure-ad-with-partner-center.md)。
+1.  In Partner Center, [associate your organization's Partner Center account with your organization's Azure AD directory](../publish/associate-azure-ad-with-partner-center.md).
 
-2.  接下来，从**用户**页面**帐户设置**合作伙伴中心部分[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)，表示应用或服务，你将使用访问合作伙伴中心帐户的分析数据。 请确保为此应用程序分配**管理员**角色。 如果不存在该应用程序尚未在 Azure AD 目录，你可以[创建一个新 Azure AD 应用程序在合作伙伴中心](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。
+2.  Next, from the **Users** page in the **Account settings** section of Partner Center, [add the Azure AD application](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) that represents the app or service that you will use to access analytics data for your Partner Center account. 请确保为此应用程序分配**管理员**角色。 If the application doesn't exist yet in your Azure AD directory, you can [create a new Azure AD application in Partner Center](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).
 
 3.  返回到**用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
 
-4. 单击**添加新密钥**。 在接下来的屏幕上，记下**密钥**值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[管理 Azure AD 应用程序的密钥](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
+4. 单击**添加新密钥**。 在接下来的屏幕上，记下“密钥”值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[管理 Azure AD 应用程序的密钥](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
 
 <span id="obtain-an-azure-ad-access-token" />
 
@@ -65,67 +65,67 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-有关*租户\_id* POST URI 中的值和*客户端\_id*并*客户端\_机密*参数，指定的租户ID、 客户端 ID 和从上一节中的合作伙伴中心检索应用程序的密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
+For the *tenant\_id* value in the POST URI and the *client\_id* and *client\_secret* parameters, specify the tenant ID, client ID and the key for your application that you retrieved from Partner Center in the previous section. 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
 
-在你的访问令牌到期后，可以按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
+在你的访问令牌到期后，你可按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
 
 <span id="call-the-windows-store-analytics-api" />
 
-## <a name="step-3-call-the-microsoft-store-analytics-api"></a>步骤 3:调用 Microsoft Store 分析 API
+## <a name="step-3-call-the-microsoft-store-analytics-api"></a>步骤 3：调用 Microsoft Store 分析 API
 
-获取 Azure AD 访问令牌后，可以随时调用 Microsoft Store 分析 API。 必须将访问令牌传递到每个方法的 **Authorization** 标头。
+获取 Azure AD 访问令牌后，可以随时调用 Microsoft Store 分析 API。 你必须将访问令牌传递到每个方法的 **Authorization** 标头。
 
-### <a name="methods-for-uwp-apps-and-games"></a>用于 UWP 应用和游戏的方法
-以下方法是可用于应用和游戏收购和外接程序收购： 
+### <a name="methods-for-uwp-apps-and-games"></a>Methods for UWP apps and games
+The following methods are available for apps and games acquisitions and add-on acquisitions: 
 
-* [获取游戏和应用程序获取数据](acquisitions-data.md)
-* [获取游戏和应用程序的外接程序获取数据](add-on-acquisitions-data.md)
+* [Get acquisitions data for your games and apps](acquisitions-data.md)
+* [Get add-on acquisitions data for your games and apps](add-on-acquisitions-data.md)
 
 ### <a name="methods-for-uwp-apps"></a>适用于 UWP 应用的方法 
 
-以下的分析方法有的合作伙伴中心中的 UWP 应用。
+The following analytics methods are available for UWP apps in Partner Center.
 
-| 应用场景       | 方法      |
+| 方案       | 方法      |
 |---------------|--------------------|
-| 获取、 转换、 安装和使用情况 |  <ul><li>[获取应用收购](get-app-acquisitions.md)（旧版）</li><li>[获取应用程序获取漏斗图数据](get-acquisition-funnel-data.md)（旧版）</li><li>[按渠道获取应用转换](get-app-conversions-by-channel.md)</li><li>[获取外接程序收购](get-in-app-acquisitions.md)</li><li>[获取外接程序购买的订阅](get-subscription-acquisitions.md)</li><li>[按渠道获取外接程序转换](get-add-on-conversions-by-channel.md)</li><li>[获取应用安装](get-app-installs.md)</li><li>[获取应用的每日使用情况](get-app-usage-daily.md)</li><li>[获取应用的每月用量](get-app-usage-monthly.md)</li></ul> |
-| 应用错误 | <ul><li>[获取错误报告数据](get-error-reporting-data.md)</li><li>[获取应用程序中错误的详细信息](get-details-for-an-error-in-your-app.md)</li><li>[获取您的应用程序中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[下载您的应用程序中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
-| 洞察 | <ul><li>[获取应用的 insights 数据](get-insights-data-for-your-app.md)</li></ul>  |
-| 评分和评价 | <ul><li>[获取应用评级](get-app-ratings.md)</li><li>[获取应用程序评论](get-app-reviews.md)</li></ul> |
-| 应用内广告和广告活动 | <ul><li>[获取 ad 性能数据](get-ad-performance-data.md)</li><li>[获取 ad 市场活动的性能数据](get-ad-campaign-performance-data.md)</li></ul> |
+| Acquisitions, conversions, installs, and usage |  <ul><li>[Get app acquisitions](get-app-acquisitions.md) (legacy)</li><li>[Get app acquisition funnel data](get-acquisition-funnel-data.md) (legacy)</li><li>[Get app conversions by channel](get-app-conversions-by-channel.md)</li><li>[Get add-on acquisitions](get-in-app-acquisitions.md)</li><li>[Get subscription add-on acquisitions](get-subscription-acquisitions.md)</li><li>[Get add-on conversions by channel](get-add-on-conversions-by-channel.md)</li><li>[Get app installs](get-app-installs.md)</li><li>[Get daily app usage](get-app-usage-daily.md)</li><li>[Get monthly app usage](get-app-usage-monthly.md)</li></ul> |
+| 应用错误 | <ul><li>[Get error reporting data](get-error-reporting-data.md)</li><li>[Get details for an error in your app](get-details-for-an-error-in-your-app.md)</li><li>[Get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[Download the CAB file for an error in your app](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
+| 洞察 | <ul><li>[Get insights data for your app](get-insights-data-for-your-app.md)</li></ul>  |
+| 评分和评价 | <ul><li>[Get app ratings](get-app-ratings.md)</li><li>[Get app reviews](get-app-reviews.md)</li></ul> |
+| 应用内广告和广告活动 | <ul><li>[Get ad performance data](get-ad-performance-data.md)</li><li>[Get ad campaign performance data](get-ad-campaign-performance-data.md)</li></ul> |
 
 ### <a name="methods-for-desktop-applications"></a>适用于桌面应用程序的方法
 
 属于 [Windows 桌面应用程序计划](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的开发人员帐户可以使用以下分析方法。
 
-| 应用场景       | 方法      |
+| 方案       | 方法      |
 |---------------|--------------------|
-| 安装次数 |  <ul><li>[获取桌面应用程序安装](get-desktop-app-installs.md)</li></ul> |
-| 块 |  <ul><li>[获取升级块的桌面应用程序](get-desktop-block-data.md)</li><li>[获取桌面应用程序的升级块详细信息](get-desktop-block-data-details.md)</li></ul> |
-| 应用程序错误 |  <ul><li>[获取错误报告为桌面应用程序的数据](get-desktop-application-error-reporting-data.md)</li><li>[获取在桌面应用程序中错误的详细信息](get-details-for-an-error-in-your-desktop-application.md)</li><li>[获取桌面应用程序中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[下载你的桌面应用程序中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
-| 洞察 | <ul><li>[获取桌面应用程序的 insights 数据](get-insights-data-for-your-desktop-app.md)</li></ul>  |
+| 安装次数 |  <ul><li>[Get desktop application installs](get-desktop-app-installs.md)</li></ul> |
+| Blocks |  <ul><li>[Get upgrade blocks for your desktop application](get-desktop-block-data.md)</li><li>[Get upgrade block details for your desktop application](get-desktop-block-data-details.md)</li></ul> |
+| 应用程序错误 |  <ul><li>[Get error reporting data for your desktop application](get-desktop-application-error-reporting-data.md)</li><li>[Get details for an error in your desktop application](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Get the stack trace for an error in your desktop application](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Download the CAB file for an error in your desktop application](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
+| 洞察 | <ul><li>[Get insights data for your desktop application](get-insights-data-for-your-desktop-app.md)</li></ul>  |
 
 ### <a name="methods-for-xbox-live-services"></a>适用于 Xbox Live 服务的方法
 
 使用 [Xbox Live 服务](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md)的游戏开发人员帐户可以使用以下其他方法。
 
-| 应用场景       | 方法      |
+| 方案       | 方法      |
 |---------------|--------------------|
-| 常规分析 |  <ul><li>[获取 Xbox Live 分析数据](get-xbox-live-analytics.md)</li><li>[获取 Xbox Live 成就数据](get-xbox-live-achievements-data.md)</li><li>[获取 Xbox Live 并发使用情况数据](get-xbox-live-concurrent-usage-data.md)</li></ul> |
-| 运行状况分析 |  <ul><li>[获取 Xbox Live 的运行状况数据](get-xbox-live-health-data.md)</li></ul> |
-| 社区分析 |  <ul><li>[获取 Xbox Live 游戏中心数据](get-xbox-live-game-hub-data.md)</li><li>[获取 Xbox Live 俱乐部数据](get-xbox-live-club-data.md)</li><li>[获取 Xbox Live 多玩家数据](get-xbox-live-multiplayer-data.md)</li></ul>  |
+| 常规分析 |  <ul><li>[Get Xbox Live analytics data](get-xbox-live-analytics.md)</li><li>[Get Xbox Live achievements data](get-xbox-live-achievements-data.md)</li><li>[Get Xbox Live concurrent usage data](get-xbox-live-concurrent-usage-data.md)</li></ul> |
+| 运行状况分析 |  <ul><li>[Get Xbox Live health data](get-xbox-live-health-data.md)</li></ul> |
+| 社区分析 |  <ul><li>[Get Xbox Live Game Hub data](get-xbox-live-game-hub-data.md)</li><li>[Get Xbox Live club data](get-xbox-live-club-data.md)</li><li>[Get Xbox Live multiplayer data](get-xbox-live-multiplayer-data.md)</li></ul>  |
 
 ### <a name="methods-for-xbox-one-games"></a>适用于 Xbox One 游戏的方法
 
-以下的其他方法为可供开发人员帐户与已引入通过 Xbox 开发人员门户 (XDP) 的 Xbox One 游戏和 XDP 分析仪表板中提供。
+The following additional methods are available for use by developer accounts with Xbox One games that were ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics dashboard.
 
-| 应用场景       | 方法      |
+| 方案       | 方法      |
 |---------------|--------------------|
-| 购置 |  <ul><li>[获取一个 Xbox 游戏收购](get-xbox-one-game-acquisitions.md)</li><li>[获取外接程序收购 Xbox One](get-xbox-one-add-on-acquisitions.md)</li></ul> |
-| 错误 |  <ul><li>[获取错误报告数据为你的 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[获取游戏中你的 Xbox One 的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[获取游戏中你的 Xbox One 的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[下载您的 Xbox One 游戏中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
+| 购置 |  <ul><li>[Get Xbox One game acquisitions](get-xbox-one-game-acquisitions.md)</li><li>[Get Xbox One add-on acquisitions](get-xbox-one-add-on-acquisitions.md)</li></ul> |
+| 错误 |  <ul><li>[Get error reporting data for your Xbox One game](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[Get details for an error in your Xbox One game](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[Get the stack trace for an error in your Xbox One game](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[Download the CAB file for an error in your Xbox One game](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
 
 ### <a name="methods-for-hardware-and-drivers"></a>适用于硬件和驱动程序的方法
 
-开发人员帐户属于[Windows 硬件仪表板计划](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)有权访问一组额外的用于检索有关硬件和驱动程序的分析数据的方法。 有关详细信息，请参阅[硬件仪表板 API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)。
+Developer accounts that belong to the [Windows hardware dashboard program](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) have access to an additional set of methods for retrieving analytics data for hardware and drivers. For more information, see [Hardware dashboard API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
 
 ## <a name="code-example"></a>代码示例
 

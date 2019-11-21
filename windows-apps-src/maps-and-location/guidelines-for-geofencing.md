@@ -6,22 +6,22 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 地理围栏
 ms.localizationpriority: medium
-ms.openlocfilehash: 4580662bf4caf5124caeb34883023121db7ce30f
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6b1f328d45e626e1c7eb633165aad3671f1645e5
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370669"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260382"
 ---
 # <a name="guidelines-for-geofencing-apps"></a>地理围栏应用指南
 
 
 
 
-**重要的 Api**
+**重要的 API**
 
--   [**地域隔离区类 (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence)
--   [**定位类 (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)
+-   [**Geofence class (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence)
+-   [**Geolocator class (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)
 
 在应用中遵循这些适用于[**地理围栏**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing)的最佳做法。
 
@@ -129,7 +129,7 @@ function onVisibilityChanged() {
 
 * [设置地理围栏](https://docs.microsoft.com/windows/uwp/maps-and-location/set-up-a-geofence)
 * [获取当前位置](https://docs.microsoft.com/windows/uwp/maps-and-location/get-location)
-* [UWP 位置示例 （地理位置）](https://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP location sample (geolocation)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
  
 
  

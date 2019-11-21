@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, 税收, irs, 国内税收署, 税款, 所得税, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: dc967961be7a96d04dfc744a229b4ca1f8f23a73
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 55143f109398aae1988b7ac0d060cda138e7e48e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282461"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258970"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 发出的 IRS 税单
 
@@ -23,28 +23,28 @@ ms.locfileid: "72282461"
 
 | IRS 税单 | 描述 | 可用性 |
 |--------------|-------------|--------------|
-|1099-MISC、1099-K | 与你参与 Microsoft 市场的销售活动和/或收到的付款金额相关 | 打印窗体在**1 月 31**日或之前将有邮戳，.pdf 副本将在[合作伙伴中心](https://partner.microsoft.com/dashboard)可用（在**帐户设置中 > 税配置文件**） |
-|1042-S | 与你收到的应缴纳美国预扣税的付款金额相关 | 打印窗体在**3 月 15**日或之前将有邮戳，.pdf 副本将在合作伙伴中心可用（在**帐户设置中 > 税配置文件**） |
+|1099-MISC、1099-K | 与你参与 Microsoft 市场的销售活动和/或收到的付款金额相关 | Printed forms will be postmarked on or before **January 31**, and .pdf copies will be available in [Partner Center](https://partner.microsoft.com/dashboard) (in **Account settings > Tax profile**) at the same time |
+|1042-S | 与你收到的应缴纳美国预扣税的付款金额相关 | Printed forms will be postmarked on or before **March 15**, and .pdf copies will be available in Partner Center (in **Account settings > Tax profile**) at the same time |
 
 > [!NOTE]
-> 用于 IRS 纳税窗体的地址来自你的[税务模板](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的地址。 如果你的地址已变更，请务必更新**税务资料**中的地址。
+> The address we use on IRS tax forms comes from the address in your [Tax profile](setting-up-your-payout-account-and-tax-forms.md#tax-forms). 如果你的地址已变更，请务必更新**税务资料**中的地址。
 
-税务窗体将从以下地址发送给你：
+The tax forms will be sent to you from the following addresses:
 
-**美国公民：**
+**US Citizens:**
 <table>
-<tr><th>业务组</th><th>法律实体</th><th>地址</th></tr>
-<tr><td>Windows、Office、Azure</td><td>Microsoft Corporation</td><td>One Microsoft Way<br>美国华盛顿特区98052</td></tr>
-<tr><td>广告</td><td>Microsoft Online Inc。</td><td>6100 Neil 道路<br>Reno、NV 89511 USA</td></tr>
+<tr><th>Business Group</th><th>Legal Entity</th><th>地址</th></tr>
+<tr><td>Windows, Office, Azure</td><td>Microsoft Corporation</td><td>One Microsoft Way<br>Redmond WA 98052 USA</td></tr>
+<tr><td>广告</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
 <table> 
 
-**非美国公民：**
+**Non-US Citizens:**
 <table>
-<tr><th>业务组</th><th>法律实体</th><th>地址</th></tr>
-<tr><td>Windows、Office、Azure</td><td>Microsoft 爱尔兰运营限制（由 microsoft Corporation 通过 microsoft 爱尔兰，由 microsoft corporation 作为合格中介）</td><td>一个 Microsoft 地方<br>南部 @ no__t-0County @ no__t-1Business @ no__t-2Park<br>Leopardstown，都柏林18爱尔兰</td></tr>
-<tr><td>广播</td><td>Microsoft 爱尔兰运营限制（由 microsoft Online Inc. 支付，由 microsoft 爱尔兰担任，作为 Microsoft Online Inc. 的支出代理。）</td><td>一个 Microsoft 地方<br>南部 @ no__t-0County @ no__t-1Business @ no__t-2Park<br>Leopardstown，都柏林18爱尔兰</td></tr>
-<tr><td>广告</td><td>Microsoft Online Inc。</td><td>6100 Neil 道路<br>Reno、NV 89511 USA</td></tr>
-<tr><td colspan="3">* 以下国家/地区的公民将通过 Microsoft 爱尔兰运营限制来支付广告收入：奥地利、比利时、保加利亚、克罗地亚、塞浦路斯、捷克共和国、丹麦、爱沙尼亚、芬兰、法国、德国、希腊、匈牙利、爱尔兰、Isle 的 Man、意大利、拉脱维亚、列支敦士登、立陶宛、卢森堡、马耳他、摩纳哥、荷兰、挪威、波兰、葡萄牙、罗马尼亚、斯洛伐克、斯洛文尼亚、南非、西班牙、瑞典、瑞士、英国</td></tr>
+<tr><th>Business Group</th><th>Legal Entity</th><th>地址</th></tr>
+<tr><td>Windows, Office, Azure</td><td>Microsoft Ireland Operations Limited (Payment is made by Microsoft Corporation via Microsoft Ireland acting as qualified intermediary for Microsoft Corporation)</td><td>One Microsoft Place<br>South&nbsp;County&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18 Ireland</td></tr>
+<tr><td>Advertising *</td><td>Microsoft Ireland Operations Limited (Payment is made by Microsoft Online Inc. via Microsoft Ireland acting as payout agent for Microsoft Online Inc.)</td><td>One Microsoft Place<br>South&nbsp;County&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18 Ireland</td></tr>
+<tr><td>广告</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
+<tr><td colspan="3">* Citizens of the following countries earning Advertising revenue will be paid through Microsoft Ireland Operations Limited: Austria, Belgium, Bulgaria, Croatia, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Isle of Man, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Monaco, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, South Africa, Spain, Sweden, Switzerland, United Kingdom</td></tr>
 </table>
 
 ## <a name="for-developers-located-in-the-united-states"></a>针对位于美国的开发人员
@@ -56,15 +56,15 @@ ms.locfileid: "72282461"
   </tr>
   <tr> 
      <td valign="top">在适用的纳税年度中，我<b>销售了 200 多个应用</b>，总购买金额<b>超过 20,000 美元</b>（<b>未</b>计算通过 Windows 10 上的 Microsoft Store 在巴西和中国完成的销售额）。</td>
-    <td valign="top"><b>1099-K</b>：<br>筛选器Microsoft Corporation<br>EIN： * * * * * * 4442<br><br><b>重要提示</b>：窗体 1099-K 包含<b>总购买</b>量，而不是支付给你的款项。</td>
+    <td valign="top"><b>1099-K</b>：<br>归档方：Microsoft Corporation<br>EIN: *****4442<br><br><b>Important</b>: Form 1099-K contains <b>gross purchase</b> amounts, not payments made to you.</td>
   </tr>
   <tr> 
      <td valign="top">(i) 通过 Windows 10 上的 Microsoft Store 完成的巴西和中国应用销售或 (ii) 在 Minecraft（我的世界）卖场中的销售，我收到的<b>付款金额至少为 10 美元</b>。<br>
 <br>
-<b>OR @ NO__T-1<br>
+<b>OR</b><br>
 <br>
-在适用的税收年份内，我收到了至少 $600 与 Microsoft 的应用销售相关的付款（例如，来自比赛或促销的激励付款或付款）</td>
-    <td valign="top"><b>1099-MISC</b> :<br>播放器Microsoft Corporation<br>EIN： * * * * * * 4442<br><br><b>重要提示</b>：无论从 Microsoft 收到的付款金额如何，某些业务实体都不会收到 1099-杂项窗体。  有关详细信息，请咨询税务专业人士。</td>
+I received at least $600 in payments not related to app sales from Microsoft in the applicable tax year (for example, incentive payments or payments from a contest or promotion)</td>
+    <td valign="top"><b>1099-MISC</b> :<br>付款方：Microsoft Corporation<br>EIN: *****4442<br><br><b>Important</b>: Certain business entities will not receive 1099-MISC forms regardless of the payment amounts received from Microsoft.  有关详细信息，请咨询税务专业人士。</td>
   </tr>
   <tr>
     <td valign="top">以上内容都不适用。</td>
@@ -75,12 +75,12 @@ ms.locfileid: "72282461"
     <td valign="top">&nbsp;</td>
   </tr>
   <tr>
-     <th>如果我是一个在应用程序中销售广告的美国开发人员 。 </th>
+     <th>If I'm a United States developer selling ads in apps and ... </th>
      <th> 我应该收到此表单</th>
   </tr>
   <tr> 
      <td valign="top">在适用的纳税年度中，我从应用内广告收到的付款金额<b>至少为 600 美元</b></td>
-    <td valign="top"><b>1099-MISC</b> :<br>播放器Microsoft Online Inc。<br>EIN： * * * * * * 0505<br><br><b>重要提示</b>：无论从 Microsoft 收到的付款金额如何，某些业务实体都不会收到 1099-杂项窗体。  有关详细信息，请咨询税务专业人士。</td>
+    <td valign="top"><b>1099-MISC</b> :<br>付款方：Microsoft Online Inc<br>EIN: *****0505<br><br><b>Important</b>: Certain business entities will not receive 1099-MISC forms regardless of the payment amounts received from Microsoft.  有关详细信息，请咨询税务专业人士。</td>
   </tr>
   <tr> 
      <td valign="top">在适用的纳税年度中，我从应用内广告收到的付款金额<b>不足 600 美元</b></td>
@@ -93,29 +93,29 @@ ms.locfileid: "72282461"
 
 <table>
   <tr>
-    <td valign="top">0 I 收到来自 Microsoft 的窗体 1042-S。 @no__t它的作用是什么？ </b></td>
+    <td valign="top"><b>I received a form 1042-S from Microsoft. What is it for?</b></td>
     <td valign="top">因为我们向你支付了应向美国税务机构申报并已预扣税的收入，所以 Microsoft 向你提供了一份或多份 1042-S 表单。  1042-S 表单用于这种申报要求。</td>
   </tr>
   <tr>
-    <td valign="top"><b>我应该如何处理窗体？</b></td>
+    <td valign="top"><b>What should I do with the forms?</b></td>
     <td valign="top">一般来说，你不需要采取具体的操作。 如果你想向当地税务机构申请任何形式的税收抵免，则 1042-S 表单可能对你很有用。  你可以咨询自己的税务顾问，了解有关此主题的更多信息。</td>
   </tr>
   <tr>
-    <td valign="top"><b>为什么在我完成 W8 窗体时我的付款中预扣了税款？</b></td>
+    <td valign="top"><b>Why was tax withheld on my payments when I completed a W8 form?</b></td>
     <td valign="top">如果以下情况之一，将会预扣税款：<br>
-     1. 未正确完成 W8 的税务条约部分，或者<br>
-     2. 你所在的国家/地区未与美国的税务条约一起使用。<br><br>你可以随时访问合作伙伴中心以提交更新的 W8 表单。<br><br><b>注意</b>：并非所有收入都受预缴税金的限制。</td>
+     1. You did not complete the tax treaty section of the W8 correctly, or<br>
+     2. You are resident in a country that does not have a tax treaty with the United States.<br><br>You can visit Partner Center at any time to submit an updated W8 form.<br><br><b>Note</b>: Not all income is subject to tax withholding.</td>
   </tr>
   <tr>
-    <td valign="top">@no__t 0 I 提交了具有有效条约信息的已更新的 W8 表单。Microsoft 是否可以向我退款已预扣的税费？ </b></td>
+    <td valign="top"><b>I submitted an updated W8 form with valid treaty information. Can Microsoft refund me the tax that was withheld?</b></td>
     <td valign="top">一旦税款被代扣，就无法退还。 你可以咨询自己的税务顾问，讨论你是否可以针对这些税收申请当地减免，或者是否可以向 IRS 申请退款。</td>
   </tr>
   <tr>
-    <td valign="top"><b>窗体 1042-S 报告了哪些销售？</b></td>
+    <td valign="top"><b>What sales are reported on form 1042-S?</b></td>
     <td valign="top">只需申报与<b>位于美国且被归类为税款代扣对象的买家</b>进行的销售。  所有其他销售均视为无需申报。</td>
   </tr>
   <tr>
-    <td valign="top"><b>为什么在一个信封中获取了同一窗体1042的3个副本？</b></td>
+    <td valign="top"><b>Why did I get 3 copies of the same form 1042-S in one envelope?</b></td>
     <td valign="top">IRS 法规要求提供三份表单：
 <ul>
 <li>一份用于收件人的记录</li>
@@ -127,4 +127,4 @@ ms.locfileid: "72282461"
 
 
 > [!NOTE]
-> 如果你有与**IRS 税单**相关的其他问题或疑虑，请创建一个[支持票证](https://aka.ms/storesupport)。 Microsoft 无法回答与你的具体税务情况相关的问题；对于这些问题，请向税务专业人士寻求建议。
+> 如果你有与**IRS 税单**相关的其他问题或疑虑，请创建一个[支持票证](https://developer.microsoft.com/windows/support)。 Microsoft 无法回答与你的具体税务情况相关的问题；对于这些问题，请向税务专业人士寻求建议。

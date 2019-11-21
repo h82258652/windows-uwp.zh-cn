@@ -8,12 +8,12 @@ ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: bdc7e5de3be941f2622c04d515e5e1211247b9a2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 18c68baf991b3fd939a6e6ee681700977a5a5eb9
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648242"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258089"
 ---
 # <a name="guidelines-for-globalization"></a>全球化指南
 
@@ -29,30 +29,30 @@ ms.locfileid: "57648242"
 | 支持国际纸张尺寸。 | 最常用的纸张尺寸因国家/地区而异，因此如果包含打印等依赖纸张尺寸的功能，则请确保支持和测试常用国际尺寸。 |
 | 记录键盘或输入法的语言。 | 应用要求用户输入文本时，请记录当前启用的键盘布局或输入法编辑器（输入法）的语言标记。 这将确保在稍后显示输入时，将为用户采用正确的格式进行显示。 使用 [**Language.CurrentInputMethodLanguageTag**](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag) 属性获取当前输入语言。 |
 | 请勿通过语言假定用户所在的地区，并且请勿通过地区假定用户的语言。 | 语言和地区是独立的概念。 用户可以使用某种语言的特定区域变体（例如在英国使用的 en-GB 形式的英语），而自身位于完全不同的国家或地区。 请考虑应用是否需要有关用户语言的知识（例如 UI 文本）或有关地区的知识（例如许可）。 有关详细信息，请参阅[了解用户配置文件语言和应用清单语言](manage-language-and-region.md)。 |
-| 语言标记的比较规则并不重要。 | [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)非常复杂。 在比较语言标记时会存在许多问题，包括匹配脚本信息、旧标记以及多个地区变体的问题。 Windows 中的资源管理系统负责进行匹配。 你可以指定一组资源（以任何语言），而系统将为用户和应用选择合适的资源。 请参阅[应用资源和资源管理系统](../../app-resources/index.md)及[资源管理系统匹配语言标记的方式](../../app-resources/how-rms-matches-lang-tags.md)。 |
+| 语言标记的比较规则并不重要。 | [BCP-47 语言标记](https://tools.ietf.org/html/bcp47)非常复杂。 在比较语言标记时会存在许多问题，包括匹配脚本信息、旧标记以及多个地区变体的问题。 Windows 中的资源管理系统负责进行匹配。 你可以指定一组资源（以任何语言），而系统将为用户和应用选择合适的资源。 请参阅[应用资源和资源管理系统](../../app-resources/index.md)及[资源管理系统匹配语言标记的方式](../../app-resources/how-rms-matches-lang-tags.md)。 |
 | 设计 UI，使其适应标签和文本输入控件的不同文本长度和字号。 | 不同语言的译文长度可能存在很大差异，因此需要 UI 控件根据其内容动态调整带下。 其他语言中的常用字符包括英语常用字符上方或下方的标记（例如 Å 或 Ņ）。 使用标准字号和行高提供足够的垂直空间。 请注意，其他语言的字体可能需要较大的最小字号才能保持内容的清晰显示。 请参阅 [Windows.Globalization.Fonts](/uwp/api/windows.globalization.fonts?branch=live) 命名空间中的类。 |
 | 支持读取顺序的镜像。 | 文本对齐和读取顺序可以采用从左到右的方式（如英语采用的方式）或者从右到左 (RTL) 的方式（如阿拉伯语或希伯来语采用的方式）。 如果要将产品本地化为使用与你本身语言读取顺序不同的语言，则请确保 UI 元素的布局支持镜像。 甚至诸如后退按钮、UI 过渡效果以及图像之类的项都可能需要镜像。 有关详细信息，请参阅[调整布局和字体，并支持 RTL](adjust-layout-and-fonts--and-support-rtl.md)。 |
-| 正确地显示文本和字体。 | 理想的字体、字体大小和文本方向因市场的不同而不同。 有关详细信息，请参阅[**调整布局和字体，并支持 RTL**](adjust-layout-and-fonts--and-support-rtl.md)及[国际字体](loc-international-fonts.md)。 |
+| 正确地显示文本和字体。 | 理想的字体、字号和文本方向因市场而异。 有关详细信息，请参阅[**调整布局和字体，并支持 RTL**](adjust-layout-and-fonts--and-support-rtl.md)及[国际字体](loc-international-fonts.md)。 |
 
 ## <a name="important-apis"></a>重要的 API
  
-* [全球化](/uwp/api/Windows.Globalization?branch=live)
+* [Globalization](/uwp/api/Windows.Globalization?branch=live)
 * [GeographicRegion.CurrenciesInUse](/uwp/api/windows.globalization.geographicregion.CurrenciesInUse)
 * [Language.CurrentInputMethodLanguageTag](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag)
 * [Windows.Globalization.Fonts](/uwp/api/windows.globalization.fonts?branch=live)
 
 ## <a name="related-topics"></a>相关主题
 
-* [对字符串用法的建议](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage)
-* [全球化您的日期/时间/数字格式](use-global-ready-formats.md)
-* [了解用户配置文件的语言和应用程序清单语言](manage-language-and-region.md)
-* [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [应用程序资源和资源管理系统](../../app-resources/index.md)
+* [Recommendations for String Usage](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage)
+* [Globalize your date/time/number formats](use-global-ready-formats.md)
+* [Understand user profile languages and app manifest languages](manage-language-and-region.md)
+* [BCP-47 language tags](https://tools.ietf.org/html/bcp47)
+* [App resources and the Resource Management System](../../app-resources/index.md)
 * [资源管理系统如何匹配语言标记](../../app-resources/how-rms-matches-lang-tags.md)
 * [调整布局和字体并支持 RTL](adjust-layout-and-fonts--and-support-rtl.md)
-* [国际字体](loc-international-fonts.md)
-* [使您的应用程序可本地化](prepare-your-app-for-localization.md)
+* [International fonts](loc-international-fonts.md)
+* [Make your app localizable](prepare-your-app-for-localization.md)
 
 ## <a name="samples"></a>示例
 
-* [全球化首选项示例](https://go.microsoft.com/fwlink/p/?linkid=231608)
+* [Globalization preferences sample](https://code.msdn.microsoft.com/windowsapps/Globalization-preferences-6654eb36)

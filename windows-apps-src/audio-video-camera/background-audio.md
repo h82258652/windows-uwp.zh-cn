@@ -6,26 +6,26 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 19b3aa80bee643087a0aa92f714349004f6ec1c1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fb43e5b7006c7c81875651a926e87eb8f76621fe
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359163"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254302"
 ---
 # <a name="play-media-in-the-background"></a>在后台播放媒体
 本文介绍了如何配置应用，以便在应用从前台移至后台后，媒体可以继续播放。 这意味着，即使在用户已最小化你的应用、返回到主屏幕，或已以其他方式离开你的应用后，你的应用仍可继续播放音频。 
 
 后台音频播放的方案包括：
 
--   **长时间运行的播放列表：** 用户简要引出了前台应用程序以选择并开始播放列表，此后用户需要继续在后台播放的播放列表。
+-   **长期运行的播放列表：** 用户可以简单地弹出前台应用以选择并启动一个播放列表，在此之后，用户期望该播放列表在后台继续播放。
 
--   **使用任务切换器：** 用户简要引出前台应用程序开始播放音频，然后切换到另一个打开的应用程序使用的任务切换器。 用户期望该音频在后台继续播放。
+-   **使用任务切换器：** 用户可以简单地打开前台应用以开始播放音频，然后使用任务切换程序切换到另一个打开的应用。 用户期望该音频在后台继续播放。
 
 本文所述的后台音频实现将使你的应用通常在所有 Windows 设备（包括移动设备、桌面设备和 Xbox）上运行。
 
 > [!NOTE]
-> 本文中的代码改编自 UWP [后台音频示例](https://go.microsoft.com/fwlink/p/?LinkId=800141)。
+> 本文中的代码改编自 UWP [后台音频示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)。
 
 ## <a name="explanation-of-one-process-model"></a>单进程模型说明
 Windows 10 版本 1607 引入的全新单进程模型极大地简化了启用后台音频的进程。 以前，需要你的应用管理后台进程以及前台应用，然后在两个进程之间手动通知状态更改。 在新的模型下，只需将后台音频功能添加到应用部件清单，该应用就会在移至后台之后自动继续播放音频。 [  **EnteredBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) 和 [**LeavingBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground) 这两个新的应用程序生命周期事件使应用可以得知它何时进入和退出后台。 当你的应用移至、过渡到后台或从中移出时，系统强制执行的内存约束可能会发生改变，因此你可以使用这些事件检查当前内存消耗并释放资源，以便保持在限制之下。
@@ -42,9 +42,9 @@ Windows 10 版本 1607 引入的全新单进程模型极大地简化了启用�
 ## <a name="background-media-playback-manifest-capability"></a>后台媒体播放清单功能
 若要支持后台音频，必须将后台媒体播放功能添加到应用部件清单文件（即 Package.appxmanifest）。 
 
-**若要将功能添加到应用程序清单使用清单设计器**
+**To add capabilities to the app manifest using the manifest designer**
 
-1.  在 Microsoft Visual Studio 的“解决方案资源管理器”中，通过双击“package.appxmanifest”项，打开应用程序清单的设计器。  
+1.  在 Microsoft Visual Studio 的**解决方案资源管理器**中，通过双击 **package.appxmanifest** 项，打开应用程序清单的设计器。
 2.  选择**功能**选项卡。
 3.  选择**后台媒体播放**复选框。
 
@@ -74,7 +74,7 @@ Windows 10 版本 1607 引入的全新单进程模型极大地简化了启用�
 
 [!code-cs[DeclareBackgroundMode](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetDeclareBackgroundMode)]
 
-当引发 [**EnteredBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) 事件时，请设置跟踪变量以表明你当前在后台运行。 不得在 **EnteredBackground** 事件中执行长时间运行的任务，因为这可能会导致用户感觉过渡到后台非常慢。
+当引发 [**EnteredBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) 事件时，请设置跟踪变量以指示当前正在后台运行。 不得在 **EnteredBackground** 事件中执行长时间运行的任务，因为这可能会导致用户感觉过渡到后台非常慢。
 
 [!code-cs[EnteredBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetEnteredBackground)]
 
@@ -86,15 +86,15 @@ Windows 10 版本 1607 引入的全新单进程模型极大地简化了启用�
 处理前台和后台之间转换的最重要部分是管理你的应用使用的内存。 由于在后台运行会减少系统允许应用保留的内存资源，因此还应该注册 [**AppMemoryUsageIncreased**](https://docs.microsoft.com/uwp/api/windows.system.memorymanager.appmemoryusageincreased) 和 [**AppMemoryUsageLimitChanging**](https://docs.microsoft.com/uwp/api/windows.system.memorymanager.appmemoryusagelimitchanging) 事件。 引发这些事件时，你应该检查应用的当前内存使用量和当前限制，然后根据需要减少内存使用量。 有关如何在后台运行时减少内存使用量的信息，请参阅[在将应用移动到后台时释放内存](../launch-resume/reduce-memory-usage.md)。
 
 ## <a name="network-availability-for-background-media-apps"></a>后台媒体应用的网络可用性
-不会从流或文件创建的所有网络感知的媒体源将使网络连接保持活动状态（在检索远程内容时），不需要检索时会释放网络连接。 [**MediaStreamSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaStreamSource)，具体而言，依赖于应用程序以正确地报告为平台使用正确的缓冲的范围[ **SetBufferedRange**](https://docs.microsoft.com/uwp/api/windows.media.core.mediastreamsource.setbufferedrange)。 完全缓存整个内容后，网络不再以应用的名义保留。
+不会从流或文件创建的所有网络感知的媒体源将使网络连接保持活动状态（在检索远程内容时），不需要检索时会释放网络连接。 [**MediaStreamSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaStreamSource), specifically, relies on the application to correctly report the correct buffered range to the platform using [**SetBufferedRange**](https://docs.microsoft.com/uwp/api/windows.media.core.mediastreamsource.setbufferedrange). 完全缓存整个内容后，网络不再以应用的名义保留。
 
 如果需要在媒体不在下载时在后台执行网络调用，则必须在诸如 [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) 或 [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger) 等相应任务中包括这些网络调用。 有关详细信息，请参阅[使用后台任务支持应用](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
 
 ## <a name="related-topics"></a>相关主题
 * [媒体播放](media-playback.md)
-* [播放音频和视频使用 MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [将与集成系统媒体传输控件](integrate-with-systemmediatransportcontrols.md)
-* [背景音频示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
+* [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md)
+* [Integrate with the System Media Transport Controls](integrate-with-systemmediatransportcontrols.md)
+* [Background Audio sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
 
  
 

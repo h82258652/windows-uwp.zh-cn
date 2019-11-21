@@ -4,22 +4,22 @@ title: 将 Windows Ink 笔划识别为文本和形状
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
-keywords: Windows 墨迹, Windows 墨迹书写, DirectInk, InkPresenter, InkCanvas, 手写识别，用户交互，输入
+keywords: Windows Ink, Windows Ink 书写, DirectInk, InkPresenter, InkCanvas, 手写识别，用户交互，输入
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f402c88efaca909fa5558880825629d94cc2a64b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 266f07385e3f7fd7450c32f8e912035d804a4740
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363746"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258057"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>将 Windows Ink 笔划识别为文本和形状
 
 使用 Windows Ink 内置的识别功能将笔划墨迹转换为文本和形状。
 
-> **重要的 API**：[**在 InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)， [ **Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **重要 API**：[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)、[**Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="free-form-recognition-with-ink-analysis"></a>带有墨迹分析的自由格式识别
 
@@ -30,7 +30,7 @@ ms.locfileid: "66363746"
 
 在本示例中，用户在单击某个按钮以指示完成绘画时，将会启动识别。
 
-**下载此示例从[墨迹分析示例 (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)**
+**Download this sample from [Ink analysis sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)**
 
 1. 首先，我们设置 UI (MainPage.xaml)。 
 
@@ -215,7 +215,7 @@ private async void RecognizeStrokes_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-6. 以下是在我们的识别画布上绘制 TextBlock 的函数。 我们使用墨迹画布上的关联的墨笔划的边框设置的位置和 TextBlock 的字体大小。
+6. 以下是在我们的识别画布上绘制 TextBlock 的函数。 We use the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the TextBlock.
 
 ```csharp
 /// <summary>
@@ -236,7 +236,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 }
 ```
 
-7. 以下是在我们的识别画布上绘制椭圆和多边形的函数。 我们使用墨迹画布上的关联的墨笔划的边框设置的位置和形状的字体大小。
+7. 以下是在我们的识别画布上绘制椭圆和多边形的函数。 We use the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the shapes.
 
 ```csharp
     // Draw an ellipse on the recognitionCanvas.
@@ -288,11 +288,11 @@ private void DrawText(string recognizedText, Rect boundingRect)
 在本部分中，我们将演示如何使用 Windows Ink 手写识别引擎（不是墨迹分析）将 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 上的一组笔划转换为文本（基于已安装的默认语言包）。
 
 > [!NOTE]
-> 本部分所示的基本手写识别最适合于单行文本输入情形，如表单输入。 有关包括分析和解释文档结构的更丰富识别情况下，列表项、 形状和绘图 （除了执行文本识别），请参阅上一节：[使用墨迹分析的自由格式识别](#free-form-recognition-with-ink-analysis)。
+> 本部分所示的基本手写识别最适合于单行文本输入情形，如表单输入。 如果是包含文档结构、列表项、形状和绘画的分析和解释的更丰富识别情形（包括文本识别在内），请参阅上一部分：[带有墨迹分析的自由格式识别](#free-form-recognition-with-ink-analysis)。
 
 在本示例中，用户在单击某个按钮以指示完成书写时，将会启动识别。
 
-**下载此示例从[墨迹手写识别示例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)**
+**Download this sample from [Ink handwriting recognition sample](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)**
 
 1. 首先，我们设置 UI。
 
@@ -377,9 +377,9 @@ private void DrawText(string recognizedText, Rect boundingRect)
             new InkRecognizerContainer();
     ```
 
-    [**RecognizeAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.recognizeasync)调用以检索一系列[ **InkRecognitionResult** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult)对象。
+    [**RecognizeAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.recognizeasync) is called to retrieve a set of [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) objects.
 
-    为检测到的每个单词生成识别结果[ **InkRecognizer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer)。
+    Recognition results are produced for each word that is detected by an [**InkRecognizer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer).
 
     ```csharp
     // Recognize all ink strokes on the ink canvas.
@@ -389,9 +389,9 @@ private void DrawText(string recognizedText, Rect boundingRect)
                 InkRecognitionTarget.All);
     ```
 
-    每个[ **InkRecognitionResult** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult)对象包含一系列文本候选项。 识别引擎视为此列表中的最顶层项是最佳匹配项后, 跟剩余候选人降低置信度的顺序。
+    Each [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) object contains a set of text candidates. The topmost item in this list is considered by the recognition engine to be the best match, followed by the remaining candidates in order of decreasing confidence.
 
-    我们将遍历每个[ **InkRecognitionResult** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult)和编译的候选项的列表。 然后显示候选项并[ **InkStrokeContainer** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer)清除 (这也将删除[ **InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas))。
+    We iterate through each [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) and compile the list of candidates. The candidates are then displayed and the [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) is cleared (which also clears the [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)).
 
     ```csharp
     string str = "Recognition result\n";
@@ -412,7 +412,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
         inkCanvas.InkPresenter.StrokeContainer.Clear();
     ```
 
-    下面是完整的单击处理程序示例中。
+    Here's the click handler example, in full.
 
     ```csharp
     // Handle button click to initiate recognition.
@@ -483,7 +483,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 你的应用可以查询已安装的手写识别引擎的集合，并使用其中一个引擎或让用户选择其首选语言。
 
-**请注意**  用户可以通过转到查看的已安装的语言列表**设置-&gt;时间和语言**。 已安装的语言在 **“语言”** 下列出。
+**Note**   Users can see a list of installed languages by going to **Settings -&gt; Time & Language**. 已安装的语言在**语言**下列出。
 
 若要安装新语言包并为该语言启用手写识别：
 
@@ -870,18 +870,18 @@ string str = "Recognition result\n";
 
 ## <a name="related-articles"></a>相关文章
 
-- [笔和触笔的交互](pen-and-stylus-interactions.md)
+- [Pen and stylus interactions](pen-and-stylus-interactions.md)
 
 ### <a name="topic-samples"></a>主题示例
 
-- [墨迹分析示例 (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
-- [墨迹手写识别示例 (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
+- [Ink analysis sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
+- [Ink handwriting recognition sample (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
 
 ### <a name="other-samples"></a>其他示例
 
-- [简单墨迹示例 (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-- [复杂墨迹示例 (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
-- [墨迹示例 (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-- [入门教程：在 UWP 应用中支持墨迹](https://aka.ms/appsample-ink)
-- [着色通讯簿示例](https://aka.ms/cpubsample-coloringbook)
-- [系列说明示例](https://aka.ms/cpubsample-familynotessample)
+- [Simple ink sample (C#/C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+- [Complex ink sample (C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
+- [Ink sample (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+- [Get Started Tutorial: Support ink in your UWP app](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+- [Coloring book sample](https://github.com/Microsoft/Windows-appsample-coloringbook)
+- [Family notes sample](https://github.com/Microsoft/Windows-appsample-familynotes)

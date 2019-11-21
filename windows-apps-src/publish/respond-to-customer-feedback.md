@@ -6,23 +6,23 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
-ms.openlocfilehash: 93d4da26dbb4c5eee1856b3a594214aabbbbaa00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9bc305834381fcdddac6e4eacf12144fd9f189c2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645072"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259945"
 ---
 # <a name="respond-to-customer-feedback"></a>回复客户反馈
 
 可以使用[反馈报告](feedback-report.md)查看 Windows 10 客户就你的应用在反馈中心中留下的反馈，然后直接回复该反馈。 可以在反馈中心中发布供所有人查看的回复（作为个别评论，或通过更新一条反馈的状态并添加描述），告知客户相关新功能或 Bug 修复，或者就如何改进你的应用请求更多特定反馈。 还可以将你的回复作为电子邮件直接发送给留下反馈的客户。
 
 > [!TIP]
-> 可以按以下方式鼓励客户留下反馈：使用 [Microsoft Store Services SDK](https://aka.ms/store-em-sdk) 中的反馈 API 添加允许客户直接[从 UWP 应用启动反馈中心](../monetize/launch-feedback-hub-from-your-app.md)的控件。 请记住，已在支持反馈中心的 Windows 10 设备上下载了你的应用的任何客户可以直接通过“反馈中心”应用留下该应用的反馈。 因此，你可能会在此报告中看到客户反馈，即使未从你的应用内明确请求反馈。
+> 可以按以下方式鼓励客户留下反馈：使用 [Microsoft Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK) 中的反馈 API 添加允许客户直接[从 UWP 应用启动反馈中心](../monetize/launch-feedback-hub-from-your-app.md)的控件。 请记住，已在支持反馈中心的 Windows 10 设备上下载了你的应用的任何客户可以直接通过“反馈中心”应用留下该应用的反馈。 因此，你可能会在此报告中看到客户反馈，即使未从你的应用内明确请求反馈。
 
 若要对任何一条反馈进行回复，请单击**反馈报告**中该条反馈旁边显示的“回复反馈”链接。
 
-[合作伙伴中心](https://partner.microsoft.com/dashboard)支持三个选项用于响应提供有关您的应用程序的反馈的客户。 无论你选择哪个选项，请记住，每个回复有 1000 个字符的限制。
+[Partner Center](https://partner.microsoft.com/dashboard) supports three options for responding to customers who provide feedback about your app. 无论你选择哪个选项，请记住，每个回复有 1000 个字符的限制。
 
 ## <a name="public-comments-in-feedback-hub"></a>反馈中心中的公共评论
 
@@ -44,9 +44,9 @@ ms.locfileid: "57645072"
 
 若要使用此选项，请选中“更新状态”单选按钮。 然后选择以下选项之一：
 
-- **调查**:您注意到一个问题，并且正在研究它。
-- **在处理**:您正在解决问题或添加请求的功能。
-- **完成**:已发布的更新来修复问题，或者添加所请求的功能。
+- **正在调查**：已意识到问题，正在进行调查。
+- **正在解决**：正在解决问题或正在添加请求的功能。
+- **已完成**：已发布解决问题或添加请求的功能的更新。
 
 更新状态的同时，还可以输入提供更多信息的评论（例如，估计何时解决问题或有关最新更改的详细信息）。 该描述将显示在评论列表顶部（反馈报告将显示当前状态和描述）。
 
@@ -66,4 +66,4 @@ ms.locfileid: "57645072"
 > [!NOTE]
 > 如果客户收到不恰当的反馈回复，可以向 Microsoft 举报开发人员。 客户也可以选择不通过电子邮件接收反馈回复。
 
-你与客户的关系与你自己相关。 如果开发人员与客户之间有争议，Microsoft 将不介入其中。 但是，如果你认为客户关于你产品的反馈内容不合理，请提交[支持票证](https://go.microsoft.com/fwlink/p/?LinkID=401178)。
+你与客户的关系与你自己相关。 如果开发人员与客户之间有争议，Microsoft 将不介入其中。 但是，如果你认为客户关于你产品的反馈内容不合理，请提交[支持票证](https://developer.microsoft.com/windows/support)。

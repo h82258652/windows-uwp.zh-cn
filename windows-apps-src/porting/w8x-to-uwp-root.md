@@ -1,36 +1,36 @@
 ---
-description: 如果您有一个通用的 8.1 应用程序 &\#8212; 是否面向 Windows 8.1、 Windows Phone 8.1，或两者 （& a)\#8212; 然后您会发现，您的源代码和技能将端口顺利到 Windows 10。
+description: If you have a Universal 8.1 app&\#8212;whether it's targeting Windows 8.1, Windows Phone 8.1, or both&\#8212;then you'll find that your source code and skills will port smoothly to Windows 10.
 title: 从 Windows 运行时 8.x 移动到 UWP
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3985bfef66bfcbcaab90a4f915aeab33b7f7bd33
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: dafa2b5820c0c93f5b7ff5fbefc2b7d4db6d3018
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372222"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259099"
 ---
 # <a name="move-from-windows-runtime-8x-to-uwp"></a>从 Windows 运行时 8.x 移动到 UWP
 
 
-如果您有一个通用的 8.1 应用程序 — 是否面向 Windows 8.1、 Windows Phone 8.1，或这两者，然后您会发现，您的源代码和技能将端口顺利到 Windows 10。 使用 Windows 10 中，可以创建一个通用 Windows 平台 (UWP) 应用，这是你的客户可以安装到每种设备上的单个应用包。 有关 Windows 10、 UWP 应用和自适应代码和自适应 UI，我们将在此迁移指南中介绍的概念的更多背景，请参阅[UWP 应用的指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。
+If you have a Universal 8.1 app—whether it's targeting Windows 8.1, Windows Phone 8.1, or both—then you'll find that your source code and skills will port smoothly to Windows 10. With Windows 10, you can create a Universal Windows Platform (UWP) app, which is a single app package that your customers can install onto every kind of device. For more background on Windows 10, UWP apps, and the concepts of adaptive code and adaptive UI that we'll mention in this porting guide, see [Guide to UWP apps](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
 
-同时迁移，您会发现，Windows 10 与先前的平台，以及 XAML 标记、 UI 框架和工具，共享 Api 的大部分，并且您会发现所有 reassuringly 熟悉。 和以前一样，你仍可以在 C++、C# 和 Visual Basic 之中选择要与 XAML UI 框架一起使用的编程语言。 规划要对当前的一个或多个应用具体执行哪些操作的前期步骤将取决于你所拥有的应用和项目的种类。 这将在以下部分中介绍。
+While porting, you'll find that Windows 10 shares the majority of APIs with the previous platforms, as well as XAML markup, UI framework, and tooling, and you'll find it all reassuringly familiar. 和以前一样，你仍可以在 C++、C# 和 Visual Basic 之中选择要与 XAML UI 框架一起使用的编程语言。 规划要对当前的一个或多个应用具体执行哪些操作的前期步骤将取决于你所拥有的应用和项目的种类。 这将在以下部分中介绍。
 
 ## <a name="if-you-have-a-universal-81-app"></a>如果你有一个 Universal 8.1 App
 
-通用 8.1 应用是基于 8.1 通用应用项目生成的。 让我们假设项目的名称是 AppName\_81。 它包含这些子项目。
+通用 8.1 应用是基于 8.1 通用应用项目生成的。 Let's say the project's name is AppName\_81. 它包含这些子项目。
 
--   AppName\_81.Windows。 这是为 Windows 8.1 生成的应用包的项目。
--   AppName\_81.WindowsPhone。 这是为 Windows Phone 8.1 生成应用包的项目。
--   AppName\_81.Shared。 这是包含由其他两个项目使用的源代码、标记文件以及其他资源的项目。
+-   AppName\_81.Windows. This is the project that builds the app package for Windows 8.1.
+-   AppName\_81.WindowsPhone. 这是为 Windows Phone 8.1 生成应用包的项目。
+-   AppName\_81.Shared. 这是包含由其他两个项目使用的源代码、标记文件以及其他资源的项目。
 
-通常情况下，8.1 通用 Windows 应用程序提供了相同的功能，并且不会使用相同的代码和标记 — 在其 Windows 8.1 和 Windows Phone 8.1 的窗体中。 类似的应用是用于移植到单个 Windows 10 应用面向通用设备系列 （和可以安装到广泛的设备上） 的理想候选项。 实际上，你将移植共享项目的内容，并且只需要使用很少或不使用其他两个项目中的内容，因为它们中只有很少内容或没有内容。
+Often, an 8.1 Universal Windows app offers the same features—and does so using the same code and markup—in both its Windows 8.1 and Windows Phone 8.1 forms. An app like that is an ideal candidate for porting to a single Windows 10 app that targets the Universal device family (and that you can install onto the widest range of devices). 实际上，你将移植共享项目的内容，并且只需要使用很少或不使用其他两个项目中的内容，因为它们中只有很少内容或没有内容。
 
-其他情况下，Windows 8.1 和/或 Windows Phone 8.1 窗体的应用程序包含独特的功能。 或者它们虽然包含相同的功能，但使用不同的技术来实现这些功能。 对于这样的应用，你可以选择将其移植到面向通用设备系列的单个应用（在此情况下你要使应用适应不同的设备），或者可以选择将其移植为多个应用（比如，面向桌面设备系列的应用和面向移动设备系列的应用）。 通用 8.1 应用的性质将决定其中哪些选项最适合你的情况。
+Other times, the Windows 8.1 and/or the Windows Phone 8.1 form of the app contain unique features. 或者它们虽然包含相同的功能，但使用不同的技术来实现这些功能。 对于这样的应用，你可以选择将其移植到面向通用设备系列的单个应用（在此情况下你要使应用适应不同的设备），或者可以选择将其移植为多个应用（比如，面向桌面设备系列的应用和面向移动设备系列的应用）。 通用 8.1 应用的性质将决定其中哪些选项最适合你的情况。
 
 1.  将共享项目的内容移植到面向通用设备系列的应用。 如果适用，从 Windows 和 WindowsPhone 项目回收任何其他内容，并无条件地在应用中使用该内容或在当时恰巧运行应用的设备上有条件地使用该内容（后者的行为称为*自适应*）。
 2.  将 WindowsPhone 项目的内容移植到面向跨平台设备系列的应用。 如果适用，从 Windows 项目中回收任何其他内容，并无条件或自适应地使用该内容。
@@ -61,17 +61,17 @@ ms.locfileid: "66372222"
 
 | 主题 | 描述 |
 |-------|-------------|
-| [迁移项目](w8x-to-uwp-porting-to-a-uwp-project.md) | 在开始移植过程时，你有两个选择。 一是编辑现有项目文件的副本，包括应用包清单（对于该选项，请参阅[将应用迁移到通用 Windows 平台应用 (UWP)](https://docs.microsoft.com/visualstudio/misc/migrate-apps-to-the-universal-windows-platform-uwp?view=vs-2015) 中有关更新项目文件的信息）。 另一个是在 Visual Studio 中创建一个新的 Windows 10 项目，并将你的文件复制到其中。 |
+| [Porting the project](w8x-to-uwp-porting-to-a-uwp-project.md) | 在开始移植过程时，你有两个选择。 一是编辑现有项目文件的副本，包括应用包清单（对于该选项，请参阅[将应用迁移到通用 Windows 平台应用 (UWP)](https://docs.microsoft.com/visualstudio/misc/migrate-apps-to-the-universal-windows-platform-uwp?view=vs-2015) 中有关更新项目文件的信息）。 另一个是在 Visual Studio 中创建一个新的 Windows 10 项目，并将你的文件复制到其中。 |
 | [疑难解答](w8x-to-uwp-troubleshooting.md) | 我们强烈建议阅读到此移植指南的末尾，但是我们也理解你希望尽快前进到项目生成和运行的阶段。 阅读到该末尾后，你可以注释或排除非必要的代码，然后稍后返回支付该债务，从而临时加快进度。 本主题中的疑难解答症状和补救办法的表格可能在此阶段对你有用，尽管它无法替代阅读接下来的一些主题。 在你执行到以后的主题时，你可以一直重新参考该表。 |
-| [移植的 XAML 和 UI](w8x-to-uwp-porting-xaml-and-ui.md) | 以声明性 XAML 标记的形式定义 UI 的做法非常好地将通用 8.1 应用转换为 UWP 应用。 你会发现，你的大多数标记是兼容的，尽管你可能需要针对正在使用的系统资源键或自定义模板作相应调整。 |
-| [移植 I/O、 设备和应用模型](w8x-to-uwp-input-and-sensors.md) | 与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。 它还可以涉及处理数据。 但是通常不将此代码视为 UI 层或数据层。 此代码包含与振动控制器、加速计、陀螺仪、麦克风和扬声器（与语音识别和合成交叉）、（地理）位置和输入形式（例如触摸、鼠标、键盘和笔）的集成。 |
-| [案例研究：Bookstore1](w8x-to-uwp-case-study-bookstore1.md) | 本主题提供了一个将非常简单的通用 8.1 应用移植到 Windows 10 UWP 应用的案例研究。 通用 8.1 应用是为 Windows 8.1 生成一个应用包，并为 Windows Phone 8.1 生成另一个应用包的应用。 在 Windows 10 中，你可以创建可供客户安装到种类广泛的设备上的单个应用包，而这正是我们要在此案例研究中实现的目标。 请参阅 [UWP 应用指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。 |
-| [案例研究：Bookstore2](w8x-to-uwp-case-study-bookstore2.md) | 此案例研究基于 [SemanticZoom](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 控件中提供的信息生成。 在视图模型中，类 Author 的每个实例都表示一组由该作者创作的书籍，而在 SemanticZoom 中，我们可以按作者查看分组书籍的列表，或者可以缩小到能够看到包含作者的跳转列表。 |
-| [案例研究：QuizGame](w8x-to-uwp-case-study-quizgame.md) | 本主题介绍了一个将正在运行的对等测验游戏 WinRT 8.1 示例应用移植到 Windows 10 UWP 应用的案例研究。 |
+| [Porting XAML and UI](w8x-to-uwp-porting-xaml-and-ui.md) | 以声明性 XAML 标记的形式定义 UI 的做法非常好地将通用 8.1 应用转换为 UWP 应用。 你会发现，你的大多数标记是兼容的，尽管你可能需要针对正在使用的系统资源键或自定义模板作相应调整。 |
+| [Porting for I/O, device, and app model](w8x-to-uwp-input-and-sensors.md) | 与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。 它还可以涉及处理数据。 但是通常不将此代码视为 UI 层或数据层。 此代码包含与振动控制器、加速计、陀螺仪、麦克风和扬声器（与语音识别和合成交叉）、（地理）位置和输入形式（例如触摸、鼠标、键盘和笔）的集成。 |
+| [Case study: Bookstore1](w8x-to-uwp-case-study-bookstore1.md) | 本主题提供了一个将非常简单的通用 8.1 应用移植到 Windows 10 UWP 应用的案例研究。 通用 8.1 应用是为 Windows 8.1 生成一个应用包，并为 Windows Phone 8.1 生成另一个应用包的应用。 在 Windows 10 中，你可以创建可供客户安装到种类广泛的设备上的单个应用包，而这正是我们要在此案例研究中实现的目标。 请参阅 [UWP 应用指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。 |
+| [Case study: Bookstore2](w8x-to-uwp-case-study-bookstore2.md) | 此案例研究基于 [SemanticZoom](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 控件中提供的信息生成。 在视图模型中，类 Author 的每个实例都表示一组由该作者创作的书籍，而在 SemanticZoom 中，我们可以按作者查看分组书籍的列表，或者可以缩小到能够看到包含作者的跳转列表。 |
+| [Case study: QuizGame](w8x-to-uwp-case-study-quizgame.md) | 本主题介绍了一个将正在运行的对等测验游戏 WinRT 8.1 示例应用移植到 Windows 10 UWP 应用的案例研究。 |
 
 ## <a name="related-topics"></a>相关主题
 
 **文档**
-* [Windows 运行时引用](https://docs.microsoft.com/uwp/api/)
-* [构建适用于所有 Windows 设备的通用 Windows 应用](https://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [设计应用程序的用户体验](https://docs.microsoft.com/previous-versions/windows/hh767284(v=win.10))
+* [Windows Runtime reference](https://docs.microsoft.com/uwp/api/)
+* [Building Universal Windows apps for all Windows devices](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+* [Designing UX for apps](https://docs.microsoft.com/previous-versions/windows/hh767284(v=win.10))

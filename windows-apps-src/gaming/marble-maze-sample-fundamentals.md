@@ -6,12 +6,12 @@ ms.date: 08/22/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 示例, directx, 基础知识
 ms.localizationpriority: medium
-ms.openlocfilehash: f04c17609976e8bd8f6c1c6143ed7b992b0bb3c5
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: ff39abadc82cc3e0a5d0296ed499baa3b85f2714
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820623"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258485"
 ---
 # <a name="marble-maze-sample-fundamentals"></a>Marble Maze 示例基础
 
@@ -21,13 +21,13 @@ ms.locfileid: "67820623"
 本主题介绍了 Marble Maze 项目的基本特征 &mdash; 例如如何在 Windows 运行时环境中使用 Visual C++、如何创建和构造，以及如何生成。 本主题还介绍了代码中使用的一些约定。
 
 > [!NOTE]
-> 与本文档对应的示例代码位于 [DirectX Marble Maze 游戏示例](https://go.microsoft.com/fwlink/?LinkId=624011)中。
+> 与本文档对应的示例代码位于 [DirectX Marble Maze 游戏示例](https://github.com/microsoft/Windows-appsample-marble-maze)中。
 
 本文档讨论了计划和开发通用 Windows 平台 (UWP) 游戏时的一些重要事项。
 
--   使用**DirectX 11 应用 (通用 Windows- C++/CX)** Visual Studio 创建您的 DirectX UWP 游戏中的模板。
+-   Use the **DirectX 11 App (Universal Windows - C++/CX)** template in Visual Studio to create your DirectX UWP game.
 -   Windows 运行时提供了各种类和接口，让你可以用一种更加现代、面向对象的方式开发 UWP 应用。
--   使用对象引用与该帽 (^) 符号来管理 Windows 运行时变量的生存期[Microsoft::WRL::ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class)来管理 COM 对象的生存期和[std::shared\_ptr](https://docs.microsoft.com/cpp/standard-library/shared-ptr-class)或[std::unique\_ptr](https://docs.microsoft.com/cpp/standard-library/unique-ptr-class)若要管理的所有其他堆分配生存期C++对象。
+-   Use object references with the hat (^) symbol to manage the lifetime of Windows Runtime variables, [Microsoft::WRL::ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class) to manage the lifetime of COM objects, and [std::shared\_ptr](https://docs.microsoft.com/cpp/standard-library/shared-ptr-class) or [std::unique\_ptr](https://docs.microsoft.com/cpp/standard-library/unique-ptr-class) to manage the lifetime of all other heap-allocated C++ objects.
 -   在大多数情况下，使用异常处理而不是结果代码来处理意外错误。
 -   结合使用 [SAL 注释](https://docs.microsoft.com/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects)和代码分析工具来帮助发现应用中的错误。
 
@@ -36,25 +36,25 @@ ms.locfileid: "67820623"
 
 如果已下载并解压缩了该示例，则可以在 Visual Studio 中打开 **MarbleMaze_VS2017.sln** 文件（在 **C++** 文件夹中），这些代码会展现在你的面前。
 
-当我们为 Marble Maze 创建了 Visual Studio 项目时，我们从一个现有项目开始。 但是，如果你还没有提供您的 DirectX UWP 游戏需要的基本功能的现有项目，我们建议创建基于 Visual Studio 的项目**DirectX 11 应用 (通用 Windows- C++/CX)** 模板因为它提供了一个基本的工作 3D 应用程序。 要实现这一点，请执行下列操作：
+当我们为 Marble Maze 创建了 Visual Studio 项目时，我们从一个现有项目开始。 However, if you do not already have an existing project that provides the basic functionality that your DirectX UWP game requires, we recommend that you create a project based on the Visual Studio **DirectX 11 App (Universal Windows - C++/CX)** template because it provides a basic working 3D application. 要实现此目的，请执行下列步骤：
 
-1. 在 Visual Studio 2019，选择**文件 > 新建 > 项目...**
+1. In Visual Studio 2019, select **File > New > Project...**
 
-2. 在中**创建一个新项目**窗口中，选择**DirectX 11 应用 (通用 Windows- C++/CX)** 。 如果看不到此选项，您可能没有安装所需的组件&mdash;请参阅[通过添加或删除工作负载和组件修改 Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)有关如何安装其他组件的信息.
+2. In the **Create a new project** window, select **DirectX 11 App (Universal Windows - C++/CX)** . If you don't see this option, you may not have the required components installed&mdash;see [Modify Visual Studio 2019 by adding or removing workloads and components](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) for information about how to install additional components.
 
 ![新建项目](images/vs2019-marble-maze-sample-fundamentals-1.png)
 
-3. 选择**下一步**，然后输入**项目名称**即**位置**要存储的文件和一个**解决方案名称**，，然后选择**创建**。
+3. Select **Next**, and then enter  a **Project name**, a **Location** for the files to be stored, and a **Solution name**, and then select **Create**.
 
 
 
-中的一个重要项目设置**DirectX 11 应用 (通用 Windows- C++/CX)** 模板 **/ZW**选项，它使程序能够使用 Windows 运行时语言扩展。 在使用 Visual Studio 模板时默认已启用此选项。 有关如何在 Visual Studio 中设置编译器选项的详细信息，请参阅[设置编译器选项](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options)。
+One important project setting in the **DirectX 11 App (Universal Windows - C++/CX)** template is the **/ZW** option, which enables the program to use the Windows Runtime language extensions. 在使用 Visual Studio 模板时默认已启用此选项。 有关如何在 Visual Studio 中设置编译器选项的详细信息，请参阅[设置编译器选项](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options)。
 
-> **谨慎**   **/ZW**选项与不兼容选项如 **/clr**。 **/clr**选项表明无法同时针对 .NET Framework 和 Windows 运行时开发同一个 Visual C++ 项目。
+> **Caution**   The **/ZW** option is not compatible with options such as **/clr**. **/clr**选项表明无法同时针对 .NET Framework 和 Windows 运行时开发同一个 Visual C++ 项目。
 
  
 
-从 Microsoft Store 获取每个 UWP 应用的应用程序包的形式出现。 应用包中包含一个程序包清单，后者包含有关应用的信息。 例如，你可指定应用的功能（如需要的访问受保护的系统资源或用户数据的能力）。 如果你确定应用需要某些功能，可使用程序包清单来声明所需的功能。 清单文件还允许指定项目属性，例如支持哪些设备旋转方向、磁贴图像和欢迎屏幕。 你可以打开项目中的 **Package.appxmanifest** 来编辑清单。 有关应用包的详细信息，请参阅[打包应用](https://docs.microsoft.com/windows/uwp/packaging/index)。
+Every UWP app that you acquire from the Microsoft Store comes in the form of an app package. 应用包中包含一个程序包清单，后者包含有关应用的信息。 例如，你可指定应用的功能（如需要的访问受保护的系统资源或用户数据的能力）。 如果你确定应用需要某些功能，可使用程序包清单来声明所需的功能。 清单还允许指定项目属性，例如支持的设备旋转方向、磁贴图像和初始屏幕。 你可以打开项目中的 **Package.appxmanifest** 来编辑清单。 有关应用包的详细信息，请参阅[打包应用](https://docs.microsoft.com/windows/uwp/packaging/index)。
 
 ##  <a name="building-deploying-and-running-the-game"></a>生成、部署和运行游戏
 
@@ -71,20 +71,20 @@ ms.locfileid: "67820623"
 -   使用触摸、加速计、左操纵杆或鼠标来倾斜迷宫。
 -   使用触摸、控制器上的 A 或“开始”按钮或鼠标来关闭菜单，例如高分表。
 -   使用控制器上的“开始”按钮或键盘上的 P 键暂停或继续游戏。
--   使用控制器上的“后退”按钮或键盘上的 Home 键重新启动游戏。
+-   使用控制器上的“后退”按钮或键盘上的 Home 键重启游戏。
 -   高分表可见时，使用控制器上的“后退”按钮或键盘上的 Home 键清除所有分数。
 
 ##  <a name="code-conventions"></a>代码转换
 
 
-Windows 运行时是可用于创建仅在特殊应用程序环境中运行的 UWP 应用的编程接口。 此类应用程序使用授权的功能、 数据类型和设备，并从 Microsoft Store 分发。 在最低级别上，Windows 运行时由一个应用程序二进制接口 (ABI) 组成。 ABI 是一个低级二进制合约，它使得 Windows 运行时 API 能够访问多种编程语言，例如 JavaScript、.NET 语言和 Visual C++。
+Windows 运行时是可用于创建仅在特殊应用程序环境中运行的 UWP 应用的编程接口。 Such apps use authorized functions, data types, and devices, and are distributed from the Microsoft Store. 在最低级别上，Windows 运行时由一个应用程序二进制接口 (ABI) 组成。 ABI 是一个低级二进制合约，它使得 Windows 运行时 API 能够访问多种编程语言，例如 JavaScript、.NET 语言和 Visual C++。
 
 为了从 JavaScript 和 .NET 调用 Windows 运行时 API，这些语言需要特定于每种语言环境的投影。 当你从 JavaScript 或 .NET 调用 Windows 运行时 API 时，你调用的是投影，而投影又会调用基础的 ABI 函数。 尽管你可以直接从 C++ 调用 ABI 函数，但 Microsoft 也为 C++ 提供了投影，因为这些投影可让使用 Windows 运行时 API 更简单，同时仍然保持较高的性能。 Microsoft 还提供了明确支持 Windows 运行时投影的 Visual C++ 的语言扩展。 其中很多语言扩展都和 C++/CLI 语言有着类似的语法。 但是，原生应用将此语法用于 Windows 运行时，而不是公共语言运行时 (CLR)。 对象引用或乘幂号 (^) 修饰符是这种新语法的一个重要部分，因为它支持以引用计数的方式自动删除运行时对象。 无需调用 [AddRef](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) 和 [Release](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-release) 等方法来管理 Windows 运行时对象的生命周期，运行时在没有其他组件引用该对象时删除它，例如在它离开范围或你将所有引用设置为 **nullptr** 时。 使用 Visual C++ 创建 UWP 应用的另一个重要部分是 **ref new** 关键字。 使用 **ref new** 而不是 **new** 来创建引用计数的 Windows 运行时对象。 有关详细信息，请参阅[类型系统 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx)。
 
 > [!IMPORTANT]
-> 当创建 Windows 运行时对象或创建 Windows 运行时组件时，只能使用 **^** 和 **ref new**。 当编写不使用 Windows 运行时的核心应用程序代码时，可以使用标准 C++ 语法。
+> 仅当创建 Windows 运行时对象或创建 Windows 运行时组件时，才须使用 **^** 和 **ref new**。 当编写不使用 Windows 运行时的核心应用程序代码时，可以使用标准 C++ 语法。
 
-Marble Maze 结合使用 **^** 和 **Microsoft::WRL::ComPtr** 来管理堆分配的对象并且最大程度减少内存泄露。 我们建议你使用 ^ 来管理 Windows 运行时变量的生存期**ComPtr**来管理 COM 变量 （例如在使用 DirectX），生存期和**std::shared\_ptr**或**std::unique\_ptr**若要管理的所有其他堆分配生存期C++对象。
+Marble Maze 结合使用 **^** 和 **Microsoft::WRL::ComPtr** 来管理堆分配的对象并且最大程度减少内存泄露。 We recommend that you use ^ to manage the lifetime of Windows Runtime variables, **ComPtr** to manage the lifetime of COM variables (such as when you use DirectX), and **std::shared\_ptr** or **std::unique\_ptr** to manage the lifetime of all other heap-allocated C++ objects.
 
  
 
@@ -99,7 +99,7 @@ Marble Maze 使用异常处理作为处理意外错误的主要方式。 尽管�
 -   使用异常传播意外错误。
 -   不使用异常控制代码流。
 -   仅捕获你可以安全处理且可以恢复的异常。 否则，不要捕获异常并允许应用终止。
--   当调用返回 **HRESULT** 的 DirectX 例程时，请使用 **DX::ThrowIfFailed** 函数。 [DirectXHelper.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/master/C%2B%2B/Shared/DirectXHelper.h) 中定义了此函数。 如果提供的 **HRESULT** 是错误代码，则 **ThrowIfFailed** 会引发异常。 例如， **E\_指针**导致**ThrowIfFailed**引发[platform:: nullreferenceexception](https://docs.microsoft.com/cpp/cppcx/platform-nullreferenceexception-class)。
+-   当调用返回 **HRESULT** 的 DirectX 例程时，请使用 **DX::ThrowIfFailed** 函数。 [DirectXHelper.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/master/C%2B%2B/Shared/DirectXHelper.h) 中定义了此函数。 如果提供的 **HRESULT** 是错误代码，则 **ThrowIfFailed** 会引发异常。 For example, **E\_POINTER** causes **ThrowIfFailed** to throw [Platform::NullReferenceException](https://docs.microsoft.com/cpp/cppcx/platform-nullreferenceexception-class).
 
     使用 **ThrowIfFailed** 时，将 DirectX 调用放在单独一行，以帮助改善代码可读性，如下面的示例所示。
 
@@ -143,8 +143,8 @@ void LoadMesh(
 ## <a name="related-topics"></a>相关主题
 
 
-* [Marble Maze 应用程序结构](marble-maze-application-structure.md)
-* [开发中的 UWP 游戏 Marble MazeC++和 DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [Marble Maze application structure](marble-maze-application-structure.md)
+* [Developing Marble Maze, a UWP game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

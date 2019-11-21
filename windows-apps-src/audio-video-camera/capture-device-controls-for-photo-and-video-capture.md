@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 99ffa0dcae3412d49aef9da5bc3dfea255173ecb
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7344e5004e6ac398673734cb03ddbdde93b3bd0d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66358939"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254310"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>用于照片和视频捕获的手动相机控件
 
@@ -21,7 +21,7 @@ ms.locfileid: "66358939"
 
 本文中讨论的控件全部使用相同模式添加到你的应用中。 首先，检查运行你的应用的当前设备是否支持该控件。 如果控件受支持，则为控件设置所需模式。 通常，如果特定控件在当前设备上不受支持，你应禁用或隐藏允许用户启用该功能的 UI 元素。
 
-本文中的代码改编自[相机手动控件 SDK 示例](https://go.microsoft.com/fwlink/?linkid=845228)。 你可以下载该示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
+本文中的代码改编自[相机手动控件 SDK 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraManualControls)。 你可以下载该示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
 
 > [!NOTE]
 > 本文以[使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)中讨论的概念和代码为基础，该文章介绍了实现基本照片和视频捕获的步骤。 我们建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
@@ -30,7 +30,7 @@ ms.locfileid: "66358939"
 
 [!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
-## <a name="exposure"></a>Exposure
+## <a name="exposure"></a>曝光
 
 [  **ExposureControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.ExposureControl) 允许你设置照片或视频捕获期间所使用的快门速度。
 
@@ -85,7 +85,7 @@ ms.locfileid: "66358939"
 
 [!code-xml[FlashXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetFlashXAML)]
 
-通过选中 [**Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.supported) 属性，查看当前捕获设备是否支持 **FlashControl**。 如果该控件受支持，可针对此功能显示和启用 UI。 如果 **FlashControl** 受支持，自动消除红眼不一定受支持，因此请在启用 UI 前检查 [**RedEyeReductionSupported**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.redeyereductionsupported) 属性。 由于 **TorchControl** 独立于闪光控件，因此在使用它之前，你也必须先检查它的 [**Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.torchcontrol.supported) 属性。
+通过检查 [**Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.supported) 属性来检查当前捕获设备是否支持 **FlashControl**。 如果该控件受支持，可针对此功能显示和启用 UI。 如果 **FlashControl** 受支持，自动消除红眼不一定受支持，因此请在启用 UI 前检查 [**RedEyeReductionSupported**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.redeyereductionsupported) 属性。 由于 **TorchControl** 独立于闪光控件，因此在使用它之前，你也必须先检查它的 [**Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.torchcontrol.supported) 属性。
 
 对于每个闪光单选按钮，可在 [**Checked**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) 事件处理程序中启用或禁用相应的闪光设置。 注意，如果要将闪光设置为始终使用，你必须将 [**Enabled**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.enabled) 属性设置为 true，而将 [**Auto**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.auto) 属性设置为 false。
 
@@ -104,7 +104,7 @@ ms.locfileid: "66358939"
 > [!NOTE] 
 >  在某些设备上，除非设备正在运行预览流并且正在主动捕获视频，否则即使 [**TorchControl.Enabled**](https://docs.microsoft.com/uwp/api/windows.media.devices.torchcontrol.enabled) 设置为 true，手电筒也不会发光。 建议按如下顺序执行操作：先打开视频预览，然后通过将 **Enabled** 设置为 true 打开手电筒，最后启动视频捕获。 在某些设备上，手电筒将在预览启动后亮起。 在其他设备上，在视频捕获启动后，聚光才会亮起。
 
-## <a name="focus"></a>Focus
+## <a name="focus"></a>对焦
 
 受 [**FocusControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.FocusControl) 对象支持的用于调整相机对焦的常用方法有三种：连续自动对焦、点按对焦和手动对焦。 相机应用支持以上三种方法，但为了便于阅读，本文将分开讨论每种技术。 本部分还将讨论如何启用对焦辅助灯。
 
@@ -149,13 +149,13 @@ ms.locfileid: "66358939"
 
 下一步是，在用户点击屏幕时通过处理当前正在显示捕获预览流的 [**CaptureElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CaptureElement) 的 [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped) 事件来侦听相关事件。 如果相机当前未进行预览，或者如果点按对焦模式处于禁用状态，则从该处理程序返回而不执行任何操作。
 
-如果跟踪变量 *\_isFocused*切换为 false，并且如果照相机是当前焦点的过程中 (由[ **FocusState** ](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.focusstate)属性的**FocusControl**)，开始点击焦点过程。 从传入处理程序的事件参数获取用户点按的位置。 该示例还利用此机会选取将对焦的区域大小。 在本例中，大小为捕获元素最小尺寸的 1/4。 将点击位置和区域大小传入 **TapToFocus** 帮助程序方法，该方法将在下一部分中进行定义。
+If the tracking variable *\_isFocused* is toggled to false, and if the camera isn't currently in the process of focus (determined by the [**FocusState**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.focusstate) property of the **FocusControl**), begin the tap-to-focus process. 从传入处理程序的事件参数获取用户点按的位置。 该示例还利用此机会选取将对焦的区域大小。 在本例中，大小为捕获元素最小尺寸的 1/4。 将点击位置和区域大小传入 **TapToFocus** 帮助程序方法，该方法将在下一部分中进行定义。
 
-如果 *\_isFocused*切换键设置为 true，用户点击应清除上一个区域中的焦点。 这将在下面显示的 **TapUnfocus** 帮助程序方法中执行。
+If the *\_isFocused* toggle is set to true, the user tap should clear the focus from the previous region. 这将在下面显示的 **TapUnfocus** 帮助程序方法中执行。
 
 [!code-cs[TapFocusPreviewControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocusPreviewControl)]
 
-在中**TapToFocus**帮助器方法中，第一组 *\_isFocused*切换为 true，以便下一屏点击将释放分流区域中的焦点。
+In the **TapToFocus** helper method, first set the *\_isFocused* toggle to true so that the next screen tap will release the focus from the tapped region.
 
 此帮助程序方法中的下一个任务是确定矩形，其中包含将分配给对焦控件的预览流。 这需要两个步骤。 第一步是确定 [**CaptureElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CaptureElement) 控件内预览流占用的矩形。 这取决于预览流的大小和设备方向。 帮助程序方法 **GetPreviewStreamRectInControl**（将在本部分末尾处显示）执行此任务，并返回包含预览流的矩形。
 
@@ -218,7 +218,7 @@ ms.locfileid: "66358939"
 
 [!code-xml[FocusLightXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetFocusLightXAML)]
 
-通过选中 [**Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.supported) 属性，查看当前捕获设备是否支持 **FlashControl**。 还应检查 [**AssistantLightSupported**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.assistantlightsupported)以确保辅助灯也受支持。 如果两者均受支持，可针对此功能显示和启用 UI。
+通过检查 [**Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.supported) 属性来检查当前捕获设备是否支持 **FlashControl**。 还应检查 [**AssistantLightSupported**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.assistantlightsupported)以确保辅助灯也受支持。 如果两者均受支持，可针对此功能显示和启用 UI。
 
 [!code-cs[FocusLight](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusLight)]
 
@@ -265,7 +265,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 ## <a name="powerline-frequency"></a>Powerline frequency
 某些相机设备支持防闪烁处理，该功能依赖于获知当前环境中的电力线 AC 频率。 某些设备支持自动确定电力线频率，而另一些设备需要手动设置该频率。 以下代码示例显示如何确定设备上的电力线频率支持以及如何手动设置该频率（如果需要）。 
 
-首先，调用 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.trygetpowerlinefrequency)，从而传入 [**PowerlineFrequency**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.PowerlineFrequency) 类型的输出参数；如果此调用失败，则电力线频率控制在当前设备上不受支持。 如果该功能受支持，则你可以通过尝试设置自动模式来确定自动模式在设备上是否可用。 通过调用 [**TrySetPowerlineFrequency**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.trysetpowerlinefrequency) 并传入值 **Auto** 来执行此操作。如果调用成功，这意味着你的自动电力线频率受支持。 如果设备上支持电力线频率控制器，但不支持自动频率检测，你仍然可以使用 **TrySetPowerlineFrequency** 手动设置频率。 在此示例中，**MyCustomFrequencyLookup** 是你实现的自定义方法，用于为设备的当前位置确定正确的频率。 
+首先，调用 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.trygetpowerlinefrequency)，从而传入 [**PowerlineFrequency**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.PowerlineFrequency) 类型的输出参数；如果此调用失败，则电力线频率控制在当前设备上不受支持。 如果该功能受支持，则你可以通过尝试设置自动模式来确定自动模式在设备上是否可用。 Do this by calling [**TrySetPowerlineFrequency**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.trysetpowerlinefrequency) and passing in the value **Auto**. If the call succeeds, that means that your auto powerline frequency is supported. 如果设备上支持电力线频率控制器，但不支持自动频率检测，你仍然可以使用 **TrySetPowerlineFrequency** 手动设置频率。 在此示例中，**MyCustomFrequencyLookup** 是你实现的自定义方法，用于为设备的当前位置确定正确的频率。 
 
 [!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
 
@@ -299,7 +299,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 > [!IMPORTANT]
 > **ColorTemperaturePreset.Auto** 预设值指示系统自动调整白平衡级别。 在某些情况（如捕获照片序列，其中每个帧的平衡级别均相同）下，你需要将控件锁定为当前自动值。 为此，请调用 [**SetPresetAsync**](https://docs.microsoft.com/uwp/api/windows.media.devices.whitebalancecontrol.setpresetasync) 并指定 **Manual** 预设，但不要在控件上使用 [**SetValueAsync**](https://docs.microsoft.com/uwp/api/windows.media.devices.whitebalancecontrol.setvalueasync) 设置值。 这样做会导致设备锁定当前值。 请不要尝试读取当前控件值，并将该值传递给 **SetValueAsync**，因为不能保证该值是正确的。
 
-## <a name="zoom"></a>Zoom
+## <a name="zoom"></a>缩放
 
 [  **ZoomControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.ZoomControl) 允许你设置照片或视频捕获期间所使用的缩放级别。
 
@@ -335,7 +335,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 在针对 **ManipulationDelta** 事件的处理程序中，将根据用户的收缩手势的变化更新缩放系数。 [  **ManipulationDelta.Scale**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.ManipulationDelta) 值表示收缩手势的比例变化，如此收缩大小的小幅上升是略大于 1.0 的数字，并且收缩大小的小幅下降是略小于 1.0 的数字。 在此示例中，缩放控制的当前值乘以比例增量。
 
-在设置缩放系数之前，你必须确保该值不小于由 [**ZoomControl.Min**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.min) 属性表示的受设备支持的最小值。 此外，还要确保该值小于或等于 [**ZoomControl.Max**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.max) 值。 最后，您必须确保缩放系数是由设备支持缩放步骤大小的倍数[**步骤**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.step)属性。 如果你的缩放系数不符合这些要求，当你试图在捕获设备上设置缩放级别时将引发异常。
+在设置缩放系数之前，你必须确保该值不小于由 [**ZoomControl.Min**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.min) 属性表示的受设备支持的最小值。 此外，还要确保该值小于或等于 [**ZoomControl.Max**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.max) 值。 Finally, you must make sure that the zoom factor is a multiple of the zoom step size supported by the device as indicated by the [**Step**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.step) property. 如果你的缩放系数不符合这些要求，当你试图在捕获设备上设置缩放级别时将引发异常。
 
 通过创建新的 [**ZoomSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.ZoomSettings) 对象，在捕获设备上设置缩放级别。 将 [**Mode**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomsettings.mode) 属性设置为 [**ZoomTransitionMode.Smooth**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.ZoomTransitionMode)，然后将 [**Value**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomsettings.value) 属性设置为你想要的缩放系数。 最后，调用 [**ZoomControl.Configure**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.configure) 在设备上设置新的缩放值。 该设备将平滑过渡到新的缩放值。
 
@@ -344,4 +344,4 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 ## <a name="related-topics"></a>相关主题
 
 * [摄像头](camera.md)
-* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)

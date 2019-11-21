@@ -5,12 +5,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 广告控件, 本机广告
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cb77f7f2622a06334ee35ec61e18b3b01f98bdb
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 83c174dc682af27a4811a44c826c572f91ec1f06
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335015"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260221"
 ---
 # <a name="native-ads"></a>本机广告
 
@@ -21,9 +21,9 @@ ms.locfileid: "58335015"
 > [!NOTE]
 > 目前，只有 Windows 10 上基于 XAML 的 UWP 应用支持本机广告。 我们打算在未来的 Microsoft 广告 SDK 版本中支持使用 HTML 和 JavaScript 编写的 UWP 应用。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
-* 使用 Visual Studio 2015 或更高版本的 Visual Studio 安装 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)。 有关安装说明，请参阅[此文章](install-the-microsoft-advertising-libraries.md)。
+* 使用 Visual Studio 2015 或更高版本的 Visual Studio 安装 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。 有关安装说明，请参阅[此文章](install-the-microsoft-advertising-libraries.md)。
 
 ## <a name="integrate-a-native-ad-into-your-app"></a>在应用中集成本机广告
 
@@ -37,9 +37,9 @@ ms.locfileid: "58335015"
 
 3. 在你的项目中添加对 Microsoft 广告 SDK 的引用：
 
-    1. 在“解决方案资源管理器”窗口中，右键单击“引用”，然后选择“添加引用...”
-    2.  在“引用管理器”中，展开“通用 Windows”、单击“扩展”，然后选中“适用于 XAML 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
-    3.  在“引用管理器”中，单击“确定”。
+    1. 在**解决方案资源管理器**窗口中，右键单击**引用**，然后选择**添加引用...**
+    2.  在**引用管理器**中，展开**通用 Windows**、单击**扩展**，然后选中**适用于 XAML 的 Microsoft 广告 SDK**（版本 10.0）旁边的复选框。
+    3.  在**引用管理器**中，单击“确定”。
 
 4. 在应用的相应代码文件中（例如，在 MainPage.xaml.cs 或部分其他页面的代码文件中）添加以下命名空间引用。
 
@@ -47,7 +47,7 @@ ms.locfileid: "58335015"
 
 5.  在应用的相应位置（例如，在 ```MainPage``` 或部分其他页面）声明 [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) 对象和几个字符串字段，这些字段代表本机广告的应用程序 ID 和广告单元 ID。 以下代码示例将 `myAppId` 和 `myAdUnitId` 字段分配给本机广告的[测试值](set-up-ad-units-in-your-app.md#test-ad-units)。
     > [!NOTE]
-    > 每个 **NativeAdsManagerV2** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为本机广告控件提供广告，每个广告单元都包含*广告单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 您的应用程序发布到应用商店之前，必须[替换为这些测试的值与实时值](#release)从合作伙伴中心。
+    > 每个 **NativeAdsManagerV2** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为本机广告控件提供广告，每个广告单元都包含*广告单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 Before you publish your app to the Store, you must [replace these test values with live values](#release) from Partner Center.
 
     [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
 
@@ -109,17 +109,17 @@ ms.locfileid: "58335015"
 
 1.  请确保你的本机广告实现遵守[本机广告指南](ui-and-user-experience-guidelines.md#guidelines-for-native-ads)。
 
-2.  在合作伙伴中心，请转到[应用内广告](../publish/in-app-ads.md)页并[创建广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。 对于广告单元类型，请指定**本机**。 记下广告单元 ID 和应用程序 ID。
+2.  In Partner Center, go to the [In-app ads](../publish/in-app-ads.md) page and [create an ad unit](set-up-ad-units-in-your-app.md#live-ad-units). 对于广告单元类型，请指定**本机**。 记下广告单元 ID 和应用程序 ID。
     > [!NOTE]
-    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 当在合作伙伴中心创建实时 UWP ad 单元时，ad 单元的应用程序 ID 值将始终匹配您的应用程序 （示例 Store ID 值看上去像 9NBLGGH4R315） Store ID。
+    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 When you create a live UWP ad unit in Partner Center, the application ID value for the ad unit always matches the Store ID for your app (an example Store ID value looks like 9NBLGGH4R315).
 
 3. 你可以选择通过配置[中介设置](../publish/in-app-ads.md#mediation)部分（位于[应用内广告](../publish/in-app-ads.md)页面上）的设置为本机广告启用广告中介。 广告中介能够显示多个广告网络的广告，让你最大程度地增加广告收益，并充分利用应用促销功能。
 
-4.  在代码中，将为测试 ad 单元值 (即*applicationId*并*adUnitId*的参数[NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor)构造函数) 使用 live 值在合作伙伴中心中生成。
+4.  In your code, replace the test ad unit values (that is, the *applicationId* and *adUnitId* parameters of the [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor) constructor) with the live values you generated in Partner Center.
 
-5.  [将应用提交](../publish/app-submissions.md)到使用合作伙伴中心在存储区。
+5.  [Submit your app](../publish/app-submissions.md) to the Store using Partner Center.
 
-6.  查看你[广告性能报告](../publish/advertising-performance-report.md)在合作伙伴中心。
+6.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in Partner Center.
 
 ## <a name="manage-ad-units-for-multiple-native-ads-in-your-app"></a>管理你的应用中多个本机广告的广告单元
 
@@ -130,6 +130,6 @@ ms.locfileid: "58335015"
 
 ## <a name="related-topics"></a>相关主题
 
-* [本机广告的准则](ui-and-user-experience-guidelines.md#guidelines-for-native-ads)
+* [Guidelines for native ads](ui-and-user-experience-guidelines.md#guidelines-for-native-ads)
 * [应用内广告](../publish/in-app-ads.md)
-* [设置 ad 单位为你的应用](set-up-ad-units-in-your-app.md)
+* [Set up ad units for your app](set-up-ad-units-in-your-app.md)

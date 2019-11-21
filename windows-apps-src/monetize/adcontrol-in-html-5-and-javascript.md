@@ -6,25 +6,25 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, AdControl, 广告控件, javascript, HTML
 ms.localizationpriority: medium
-ms.openlocfilehash: 556493ffc901021310036cfb417c3c3b815c529e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b3ce2eb259f26135f2fc5525e10673d1feb78184
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611002"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260345"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>HTML 5 和 JavaScript 中的 AdControl
 
 本演练介绍如何使用 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 类在适用于 Windows 10 的通用 Windows 平台 (UWP) JavaScript/HTML 应用中显示横幅广告。
 
-有关演示如何将横幅广告添加到 JavaScript/HTML 应用的完整示例项目，请参阅 [GitHub 上的广告示例](https://aka.ms/githubads)。
+有关演示如何将横幅广告添加到 JavaScript/HTML 应用的完整示例项目，请参阅 [GitHub 上的广告示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。
 
 ## <a name="prerequisites"></a>必备条件
 
-* 使用 Visual Studio 2015 或更高版本的 Visual Studio 安装 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)。 有关安装说明，请参阅[此文章](install-the-microsoft-advertising-libraries.md)。
+* 使用 Visual Studio 2015 或更高版本的 Visual Studio 安装 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。 有关安装说明，请参阅[此文章](install-the-microsoft-advertising-libraries.md)。
 
 > [!NOTE]
-> 如果已安装的 Windows 10 SDK 版本 10.0.14393 （周年更新） 或更高版本的 Windows SDK，还必须安装[WinJS](https://github.com/winjs/winjs)库。 此库过去包含在以前版本的 Windows SDK（适用于 Windows 10）中，但从 Windows 10 SDK 版本 10.0.14393（周年更新）开始，此库必须单独安装。 
+> If you have installed the Windows 10 SDK version 10.0.14393 (Anniversary Update) or a later version of the Windows SDK, you must also install the [WinJS](https://github.com/winjs/winjs) library. 此库过去包含在以前版本的 Windows SDK（适用于 Windows 10）中，但从 Windows 10 SDK 版本 10.0.14393（周年更新）开始，此库必须单独安装。 
 
 ## <a name="integrate-a-banner-ad-into-your-app"></a>在应用中集成横幅广告
 
@@ -37,13 +37,13 @@ ms.locfileid: "57611002"
 
 3. 在你的项目中添加对 Microsoft 广告 SDK 的引用：
 
-    1. 在“解决方案资源管理器”窗口中，右键单击“引用”，然后选择“添加引用...”
-    2.  在“引用管理器”中，展开“通用 Windows”、单击“扩展”，然后选中“适用于 JavaScript 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
-    3.  在“引用管理器”中，单击“确定”。
+    1. 在**解决方案资源管理器**窗口中，右键单击**引用**，然后选择**添加引用...**
+    2.  在**引用管理器**中，展开**通用 Windows**、单击**扩展**，然后选中**适用于 JavaScript 的 Microsoft 广告 SDK**（版本 10.0）旁边的复选框。
+    3.  在**引用管理器**中，单击“确定”。
 
 6.  打开 index.html 文件（或其他适用于你项目的 html 文件）。
 
-7.  在**&lt;标题&gt;** 部分中，在项目的 JavaScript 引用 default.css 和 main.js 之后，添加对 ad.js 的引用。
+7.  在 **&lt;标题&gt;** 部分中，在项目的 JavaScript 引用 default.css 和 main.js 之后，添加对 ad.js 的引用。
 
     ``` HTML
     <!-- Advertising required references -->
@@ -56,7 +56,7 @@ ms.locfileid: "57611002"
 8.  修改 default.html 文件（或其他适用于你项目的 html 文件）的 **&lt;body&gt;** 部分，以便包含 **AdControl** 的 **div**。 将 **AdControl** 的 **applicationId** 和 **adUnitId** 属性分配至[测试广告单元值](set-up-ad-units-in-your-app.md#test-ad-units)。 另外还要调整控件的**高度**和**宽度**，以使其适应[横幅广告支持的广告大小](supported-ad-sizes-for-banner-ads.md)。
 
     > [!NOTE]
-    > 每个 **AdControl** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为控件提供广告，每个广告单元都包含*单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 您的应用程序发布到应用商店之前，必须[替换为这些测试的值与实时值](#release)从合作伙伴中心。
+    > 每个 **AdControl** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为控件提供广告，每个广告单元都包含*单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 Before you publish your app to the Store, you must [replace these test values with live values](#release) from Partner Center.
 
     ``` HTML
     <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
@@ -107,7 +107,7 @@ ms.locfileid: "57611002"
 如果你使用此代码，并且没有看到广告，则可以尝试将 **position:relative** 的属性插入包含 **AdControl** 的 **div** 中。 这将替代 **IFrame** 的默认设置。 广告将正确显示，除非它们由于此属性的值而没有显示。 请注意，新的广告单元可能在长达 30 分钟内不可用。
 
 > [!NOTE]
-> 此示例中显示的 *applicationId* 和 *adUnitId* 值是[测试模式值](set-up-ad-units-in-your-app.md#test-ad-units)。 您必须[实时值替换这些值](set-up-ad-units-in-your-app.md#live-ad-units)从合作伙伴中心之前提交的提交应用程序。
+> 此示例中显示的 *applicationId* 和 *adUnitId* 值是[测试模式值](set-up-ad-units-in-your-app.md#test-ad-units)。 You must [replace these values with live values](set-up-ad-units-in-your-app.md#live-ad-units) from Partner Center before submitting your app for submission.
 
 <span id="release" />
 
@@ -115,17 +115,17 @@ ms.locfileid: "57611002"
 
 1. 确保在应用中对横幅广告的使用遵循我们的[横幅广告指南](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)。
 
-1.  在合作伙伴中心，请转到[应用内广告](../publish/in-app-ads.md)页并[创建广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。 对于广告单元类型，请指定“横幅”。 记下广告单元 ID 和应用程序 ID。
+1.  In Partner Center, go to the [In-app ads](../publish/in-app-ads.md) page and [create an ad unit](set-up-ad-units-in-your-app.md#live-ad-units). 对于广告单元类型，请指定**横幅**。 记下广告单元 ID 和应用程序 ID。
     > [!NOTE]
-    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 当在合作伙伴中心创建实时 UWP ad 单元时，ad 单元的应用程序 ID 值将始终匹配您的应用程序 （示例 Store ID 值看上去像 9NBLGGH4R315） Store ID。
+    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 When you create a live UWP ad unit in Partner Center, the application ID value for the ad unit always matches the Store ID for your app (an example Store ID value looks like 9NBLGGH4R315).
 
 2. 你可以选择通过配置[中介设置](../publish/in-app-ads.md#mediation)部分（位于[应用内广告](../publish/in-app-ads.md)页面上）的设置为 **AdControl** 启用广告中介。 广告中介显示来自多个广告网络（包括其他付费广告网络，如 Taboola 和 Smaato）的广告及 Microsoft 应用促销活动的广告，从而使你能够最大化你的广告收益和应用促销能力。
 
-3.  在代码中，将为测试 ad 单元值 (**applicationId**并**adUnitId**) 与在合作伙伴中心生成的实时值。
+3.  In your code, replace the test ad unit values (**applicationId** and **adUnitId**) with the live values you generated in Partner Center.
 
-4.  [将应用提交](../publish/app-submissions.md)到使用合作伙伴中心在存储区。
+4.  [Submit your app](../publish/app-submissions.md) to the Store using Partner Center.
 
-5.  查看你[广告性能报告](../publish/advertising-performance-report.md)在合作伙伴中心。             
+5.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in Partner Center.             
 
 <span id="manage" />
 
@@ -138,7 +138,7 @@ ms.locfileid: "57611002"
 
 ## <a name="related-topics"></a>相关主题
 
-* [横幅广告的准则](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
-* [GitHub 上的广告示例](https://aka.ms/githubads)
-* [设置 ad 单位为你的应用](set-up-ad-units-in-your-app.md)
-* [JavaScript 演练中的错误处理](error-handling-in-javascript-walkthrough.md)
+* [Guidelines for banner ads](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
+* [GitHub 上的广告示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
+* [Set up ad units for your app](set-up-ad-units-in-your-app.md)
+* [Error handling in JavaScript walkthrough](error-handling-in-javascript-walkthrough.md)

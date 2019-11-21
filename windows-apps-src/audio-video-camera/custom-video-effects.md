@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: 819f0b4a5ba17a866eb50539f5138460eefd0eec
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1be4bf71d99bd6560ce4ed753b55dacdfcceb868
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318400"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257195"
 ---
 # <a name="custom-video-effects"></a>自定义视频效果
 
@@ -28,20 +28,20 @@ ms.locfileid: "67318400"
 
 自定义视频效果在实现 [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect) 接口的类中定义。 此类不能直接包含在应用的项目中。 必须改用 Windows 运行时组件来托管视频效果类。
 
-**添加视频效果的 Windows 运行时组件**
+**Add a Windows Runtime component for your video effect**
 
 1.  在 Microsoft Visual Studio 中，打开解决方案后，转到**文件**菜单并依次选择**添加-&gt;新建项目**。
-2.  选择“Windows 运行时组件(通用 Windows)”项目类型。 
+2.  选择 **Windows 运行时组件(通用 Windows)** 项目类型。
 3.  对于此示例，将项目命名为*VideoEffectComponent*。 此名称稍后将在代码中引用。
-4.  单击 **“确定”** 。
-5.  项目模板将创建一个名为 Class1.cs 的类。 在“解决方案资源管理器”中，右键单击 Class1.cs 的图标并选择“重命名”。  
-6.  将文件重命名为*ExampleVideoEffect.cs*。 Visual Studio 将显示一条提示，询问你是否想要更新对新名称的所有引用。 单击 **“是”** 。
+4.  单击**确定**。
+5.  项目模板将创建一个名为 Class1.cs 的类。 在**解决方案资源管理器**中，右键单击 Class1.cs 的图标并选择**重命名**。
+6.  将文件重命名为*ExampleVideoEffect.cs*。 Visual Studio 将显示一条提示，询问你是否想要更新对新名称的所有引用。 单击**是**。
 7.  打开**ExampleVideoEffect.cs**，并更新类定义以实现 [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect) 接口。
 
 [!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
 
 
-你需要在效果类文件中包含以下命名空间，以便访问本文中的示例所使用的所有类型。
+你需要在效果类文件中包含以下命名空间，以便访问本文中示例所使用的所有类型。
 
 [!code-cs[EffectUsing](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetEffectUsing)]
 
@@ -53,7 +53,7 @@ ms.locfileid: "67318400"
 
 ### <a name="close-method"></a>Close 方法
 
-当效果关闭时，系统将对你的类调用 [**Close**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.close) 方法。 你应当使用此方法处理你创建的任何资源。 该方法的参数是 [**MediaEffectClosedReason**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaEffectClosedReason)，该参数使你知道效果是否正常关闭、是否发生错误或者效果是否不支持所需的编码格式。
+当效果关闭时，系统将对你的类调用 [**Close**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.close) 方法。 你应当使用此方法来处理你创建的任何资源。 该方法的参数是 [**MediaEffectClosedReason**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaEffectClosedReason)，该参数使你知道效果是否正常关闭、是否发生错误或者效果是否不支持所需的编码格式。
 
 [!code-cs[Close](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetClose)]
 
@@ -72,7 +72,7 @@ ms.locfileid: "67318400"
 [  **IsReadOnly**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.isreadonly) 属性使系统能够知道你的效果是否将写入效果的输出。 如果你的应用不修改视频帧（例如，一种仅执行视频帧分析的效果），你应将此属性设置为 true，这将使系统能够为你有效地将帧输入复制到帧输出。
 
 > [!TIP]
-> 当 [**IsReadOnly**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.isreadonly) 属性设置为 true 时，系统会在调用 [**ProcessFrame**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.processframe) 之前，将输入帧复制到输出帧。 将 **IsReadOnly** 属性设置为 true 不会限制你在 **ProcessFrame** 中对效果的输出帧执行写入操作。
+> 当 [**IsReadOnly**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.isreadonly) 属性设置为 true 时，系统会在调用 [**ProcessFrame**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.processframe) 之前，将输入帧复制到输出帧。 将 **IsReadOnly** 属性设置为 true 不会限制在 **ProcessFrame** 中对效果的输出帧执行写入操作。
 
 
 [!code-cs[IsReadOnly](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetIsReadOnly)]
@@ -93,19 +93,19 @@ ms.locfileid: "67318400"
 
 
 > [!NOTE] 
-> 如果你从 **SupportedEncodingProperties** 返回空的 [**VideoEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.VideoEncodingProperties) 对象的空白列表，系统将默认为 ARGB32 编码。
+> 如果从 **SupportedEncodingProperties** 返回空的 [**VideoEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.VideoEncodingProperties) 对象的空白默认列表，系统将默认为 ARGB32 编码。
 
  
 
 ### <a name="supportedmemorytypes-property"></a>SupportedMemoryTypes 属性
 
-系统将检查 [**SupportedMemoryTypes**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes) 属性以确定你的效果是否将访问软件内存或硬件 (GPU) 内存中的视频帧。 如果你返回 [**MediaMemoryTypes.Cpu**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaMemoryTypes)，系统会将使图像数据包含在 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 对象中的输入和输出帧传递给你的效果。 如果你返回 **MediaMemoryTypes.Gpu**，系统会将使图像数据包含在 [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 对象中的输入和输出帧传递给你的效果。
+系统将检查 [**SupportedMemoryTypes**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes) 属性以确定你的效果是否将访问软件内存或硬件 (GPU) 内存中的视频帧。 如果你返回 [**MediaMemoryTypes.Cpu**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaMemoryTypes)，系统会将使图像数据包含在 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 对象中的输入和输出帧传递给你的效果。 如果返回 **MediaMemoryTypes.Gpu**，系统会将使图像数据包含在 [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 对象中的输入和输出帧传递给效果。
 
 [!code-cs[SupportedMemoryTypes](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedMemoryTypes)]
 
 
 > [!NOTE]
-> 如果你指定 [**MediaMemoryTypes.GpuAndCpu**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaMemoryTypes)，系统将使用 GPU 或系统内存，无论哪一个对管道更高效。 在使用此值时，必须检查 [**ProcessFrame**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.processframe) 方法，以查看传入到该方法的 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 或 [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 是否包含数据，然后相应地处理帧。
+> 如果指定 [**MediaMemoryTypes.GpuAndCpu**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaMemoryTypes)，系统将使用 GPU 或系统内存（以对管道更高效者为准）。 在使用此值时，必须检查 [**ProcessFrame**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.processframe) 方法，以查看传入到该方法的 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 或 [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 是否包含数据，然后相应地处理帧。
 
  
 
@@ -123,7 +123,7 @@ ms.locfileid: "67318400"
 [!code-cs[SetProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetProperties)]
 
 
-此简单示例将根据指定值使每个视频帧中的像素变暗。 已声明了某个属性，并已使用 TryGetValue 获取通过调用应用设置的值。 如果未设置任何值，使用默认值 0.5。
+此简单示例将根据指定值使每个视频帧中的像素变暗。 已声明了某个属性，并已使用 TryGetValue 来获取通过调用应用设置的值。 如果未设置任何值，使用默认值 0.5。
 
 [!code-cs[FadeValue](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetFadeValue)]
 
@@ -134,21 +134,21 @@ ms.locfileid: "67318400"
 
 此示例介绍如何使用软件处理简单地实现 **ProcessFrame** 方法。 有关使用 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 对象的详细信息，请参阅[图像处理](imaging.md)。 使用硬件处理的 **ProcessFrame** 实现示例将在本文后面介绍。
 
-访问 **SoftwareBitmap** 的数据缓冲区需要 COM 互操作，所以你应当在效果类文件中包含 **System.Runtime.InteropServices** 命名空间。
+访问 **SoftwareBitmap** 的数据缓冲区需要 COM 互操作，所以应当在效果类文件中包含 **System.Runtime.InteropServices** 命名空间。
 
 [!code-cs[COMUsing](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetCOMUsing)]
 
 
-在该命名空间内为你的效果添加以下代码，以导入访问该图像缓冲区的接口。
+在该命名空间内为效果添加以下代码，以导入访问该图像缓冲区的接口。
 
 [!code-cs[COMImport](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetCOMImport)]
 
 
 > [!NOTE]
-> 由于此技术访问本机非托管的图像缓冲区，所以你需要将项目配置为允许不安全代码。
-> 1.  在“解决方案资源管理器”中，右键单击 VideoEffectComponent 项目，并选择“属性”。 
-> 2.  选择“生成”选项卡。 
-> 3.  选中“允许不安全代码”复选框。 
+> 因为这种方法访问本机非托管的图像缓冲区，所以需要将项目配置为允许不安全的代码。
+> 1.  在“解决方案资源管理器”中，右键单击 VideoEffectComponent 项目，并选择**属性**。
+> 2.  选择**生成**选项卡。
+> 3.  选中**允许不安全代码**复选框。
 
  
 
@@ -162,30 +162,30 @@ ms.locfileid: "67318400"
 ## <a name="implement-the-ibasicvideoeffect-interface-using-hardware-processing"></a>使用硬件处理实现 IBasicVideoEffect 接口
 
 
-使用硬件 (GPU) 处理创建自定义视频效果与使用上述软件处理几乎完全相同。 本部分介绍使用硬件处理的效果中的几点不同之处。 此示例使用 Win2D Windows 运行时 API。 有关使用 Win2D 的详细信息，请参阅 [Win2D 文档](https://go.microsoft.com/fwlink/?LinkId=519078)。
+使用硬件 (GPU) 处理创建自定义视频效果与使用上述软件处理几乎完全相同。 本部分介绍使用硬件处理的效果中的几点不同之处。 此示例使用 Win2D Windows 运行时 API。 有关使用 Win2D 的详细信息，请参阅 [Win2D 文档](https://microsoft.github.io/Win2D/html/Introduction.htm)。
 
 使用以下步骤将 Win2D NuGet 程序包添加到你创建的项目，如本文开头的**向应用添加自定义效果**部分中所述。
 
-**若要将 Win2D NuGet 包添加到你的效果的项目**
+**To add the Win2D NuGet package to your effect project**
 
-1.  在“解决方案资源管理器”中，右键单击**VideoEffectComponent** 项目，并选择“管理 NuGet 程序包”。  
-2.  在窗口顶部，选择“浏览”选项卡。 
+1.  在**解决方案资源管理器**中，右键单击 **VideoEffectComponent** 项目，并选择**管理 NuGet 程序包**。
+2.  在窗口顶部，选择**浏览**选项卡。
 3.  在搜索框中，输入 **Win2D**。
 4.  选择 **Win2D.uwp**，然后选择右侧窗格中的**安装**。
-5.  **查看更改**对话框将向你显示要安装的程序包。 单击 **“确定”** 。
+5.  **查看更改**对话框将向你显示要安装的程序包。 单击**确定**。
 6.  接受程序包许可证。
 
-除了基本项目设置中包含的命名空间外，你还需要包含 Win2D 提供的以下命名空间。
+除了基本项目设置中包含的命名空间外，还需要包含 Win2D 提供的以下命名空间。
 
 [!code-cs[UsingWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetUsingWin2D)]
 
 
-由于此效果将使用 GPU 内存来处理图像数据，因此你应当从 [**SupportedMemoryTypes**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes) 属性返回 [**MediaMemoryTypes.Gpu**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaMemoryTypes)。
+由于此效果将使用 GPU 内存来处理图像数据，因此应当从 [**SupportedMemoryTypes**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes) 属性返回 [**MediaMemoryTypes.Gpu**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaMemoryTypes)。
 
 [!code-cs[SupportedMemoryTypesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedMemoryTypesWin2D)]
 
 
-使用 [**SupportedEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.supportedencodingproperties) 属性来设置你的效果将支持的编码属性。 当处理 Win2D 时，必须使用 ARGB32 编码。
+使用 [**SupportedEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.supportedencodingproperties) 属性来设置效果将支持的编码属性。 当处理 Win2D 时，必须使用 ARGB32 编码。
 
 [!code-cs[SupportedEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedEncodingPropertiesWin2D)]
 
@@ -214,9 +214,9 @@ ms.locfileid: "67318400"
 
 若要从应用中使用你的视频效果，必须向应用添加对效果项目的引用。
 
-1.  在“解决方案资源管理器”中，在你的应用项目下，右键单击“引用”，然后选择“添加引用”。  
-2.  展开“项目”选项卡、选择“解决方案”，然后选中效果项目名称对应的复选框。   对于此示例，名称为 *VideoEffectComponent*。
-3.  单击 **“确定”** 。
+1.  在“解决方案资源管理器”中，在你的项目下，右键单击**引用**，然后选择**添加引用**。
+2.  展开**项目**选项卡、选择**解决方案**，然后选中效果项目名称对应的复选框。 对于此示例，名称为 *VideoEffectComponent*。
+3.  单击**确定**。
 
 ### <a name="add-your-custom-effect-to-a-camera-video-stream"></a>向相机视频流添加自定义效果
 
@@ -239,7 +239,7 @@ ms.locfileid: "67318400"
 
 
 ## <a name="related-topics"></a>相关主题
-* [简单的相机预览访问权限](simple-camera-preview-access.md)
+* [Simple camera preview access](simple-camera-preview-access.md)
 * [媒体合成和编辑](media-compositions-and-editing.md)
-* [Win2D 文档](https://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [Win2D documentation](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [媒体播放](media-playback.md)

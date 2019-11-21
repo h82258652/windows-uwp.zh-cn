@@ -1,25 +1,25 @@
 ---
-Description: 本主题列出了已本地化为美国以外语言的 UWP 应用的可用字体。（美国）。
+Description: 本主题列出的字体可用于已本地化为除美国英语以外的其他语言的 UWP 应用。
 title: 国际字体
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 06284481ccecbc3c9cd7d7a78d83ccd6e97a49a7
-ms.sourcegitcommit: f3c1a81b50f4a372a15996ac71b3f408a8ee1409
+ms.openlocfilehash: eb12ea0bb7966813413d29908c4974a7c4c97486
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72237518"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258081"
 ---
 # <a name="international-fonts"></a>国际字体
 
-本主题列出了已本地化为美国以外语言的 UWP 应用的可用字体。（美国）。
+本主题列出的字体可用于已本地化为除美国英语以外的其他语言的 UWP 应用。
 
-在下表中，“语言标记”列列出了语言的 [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)。 若要查看 Microsoft Store 专门支持的语言标记列表，请参阅[支持的语言](../../publish/supported-languages.md)。
+在下表中，“语言标记”列列出了语言的 [BCP-47 语言标记](https://tools.ietf.org/html/bcp47)。 若要查看 Microsoft Store 专门支持的语言标记列表，请参阅[支持的语言](../../publish/supported-languages.md)。
 
-| 语言 | 语言标记 | Windows 中使用的字体 |
+| “语言” | 语言标记 | Windows 中使用的字体 |
 | --------- | ----------- | -------------------- |
 | 南非荷兰语 | af-ZA | Segoe UI |
 | 阿尔巴尼亚语 | sq-AL | Segoe UI |
@@ -30,13 +30,13 @@ ms.locfileid: "72237518"
 | 阿塞拜疆语(拉丁语) | az-Latn-AZ | Segoe UI |
 | 孟加拉语(孟加拉) | bn-BD | Nirmala UI |
 | 孟加拉语(印度) | bn-IN | Nirmala UI |
-| 巴斯克语(巴斯克语) | eu-ES | Segoe UI |
+| 巴斯克语(巴斯克) | eu-ES | Segoe UI |
 | 白俄罗斯语 | be-BY | Segoe UI |
 | 波斯尼亚语(拉丁语) | bs-Latn-BA | Segoe UI |
 | 保加利亚语 | bg-BG | Segoe UI |
 | 加泰罗尼亚语 | ca-ES | Segoe UI |
-| 中部库尔德语(阿拉伯语) | ku-ARAB-IQ | Segoe UI |
-| 切罗基语(切罗基语) | chr-CHER-US | Gadugi |
+| 中央库尔德语(阿拉伯) | ku-ARAB-IQ | Segoe UI |
+| 切罗基语(切罗基) | chr-CHER-US | Gadugi |
 | 简体中文 | zh-CN | Microsoft YaHei UI |
 | 繁体中文(香港特别行政区) | zh-HK | Microsoft JhengHei UI |
 | 繁体中文(台湾) | zh-TW | Microsoft JhengHei UI |
@@ -88,7 +88,7 @@ ms.locfileid: "72237518"
 | 蒙古语(西里尔文) | mn-MN | Segoe UI |
 | 尼泊尔语 | ne-NP | Nirmala UI |
 | 挪威语(博克马尔) | nb-NO | Segoe UI |
-| 挪威语(尼诺斯克语) | nn-NO | Segoe UI |
+| 挪威语(尼诺斯克) | nn-NO | Segoe UI |
 | 奥里亚语 | or-IN | Nirmala UI |
 | 波斯语 | fa-IR | Segoe UI |
 | 波兰语 | pl-PL | Segoe UI |
@@ -100,8 +100,8 @@ ms.locfileid: "72237518"
 | 罗马尼亚语 | ro-RO | Segoe UI |
 | 俄语 | ru-RU | Segoe UI |
 | 苏格兰盖尔语 | gd-GB | Segoe UI |
-| 塞尔维亚语（西里尔文，波斯尼亚和黑塞哥维那） | sr-Cyrl-BA | Segoe UI |
-| 塞尔维亚语(西里尔文，塞尔维亚) | sr-Cyrl-CS | Segoe UI |
+| 塞尔维亚语(西里尔文，波斯尼亚和黑塞哥维那) | sr-Cyrl-BA | Segoe UI |
+| 塞尔维亚语（西里尔文，塞尔维亚共和国） | sr-Cyrl-CS | Segoe UI |
 | 塞尔维亚语(拉丁语) | sr-Latn-CS | Segoe UI |
 | 巴索托语 | nso-ZA | Segoe UI |
 | 茨瓦纳语 | tn-ZA | Segoe UI |
@@ -131,5 +131,5 @@ ms.locfileid: "72237518"
 
 ## <a name="related-topics"></a>相关主题
 
-* [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
 * [支持的语言](../../publish/supported-languages.md)

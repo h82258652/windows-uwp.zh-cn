@@ -6,16 +6,16 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: Windows 10, uwp, 年龄分级, 游戏分级, iarc, 分级, 问卷调查, 分级委员会, 内容分级
 ms.localizationpriority: medium
-ms.openlocfilehash: 55592f2d16807e2ad359a21977bd483db0b2e089
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
+ms.openlocfilehash: bab98b50b1d53451708b7631f74d15947c60d4c8
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66826173"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260045"
 ---
 # <a name="age-ratings"></a>年龄分级
 
-[应用提交进程](app-submissions.md)的“年龄分级”页面允许你提供有关应用的信息，以便它可以收到由[国际年龄分级联盟 (IARC)](https://go.microsoft.com/fwlink/p/?LinkId=716854) 分级系统管理的相应年龄和内容分级。  这些分级与应用内容的适宜性有关，而与应用的目标受众的年龄无关。
+[应用提交进程](app-submissions.md)的**年龄分级**页面允许你提供有关应用的信息，以便它可以收到由[国际年龄分级联盟 (IARC)](https://www.globalratings.com/) 分级系统管理的相应年龄和内容分级。 这些分级与应用内容的适宜性有关，而与应用的目标受众的年龄无关。
 
 ## <a name="answering-the-age-ratings-questionnaire"></a>回答年龄分级问卷调查
 
@@ -26,19 +26,19 @@ ms.locfileid: "66826173"
 
 你需要准确回答这些问题。 若要获取任何问题的详细信息，请单击它旁边的信息图标。 在此过程中，我们与 IARC 共享你的发布者显示名称和电子邮件地址。 完成填写问卷调查后，IARC 分级系统将根据你的回复提供年龄和内容分级信息。 我们将在不同市场中向客户显示你的应用时使用此分级信息。 在应用发布后，你还将收到一封来自 IARC 的电子邮件，确认应用的分级事宜。
 
-第一个问题要求你选择最贴切地描述你的应用（及其元数据）的类别。 完成选择后，你将看到其他问题。 你看到的特定问题会因你之前的回答而异。 若要获取可帮助你了解如何回答任何问题的更多详细信息，请单击旁边这个问题的信息图标。 如果出现失误，你可以回退或重新开始问卷调查来提供正确的答案。
+第一个问题要求你选择最贴切地描述你的应用（及其元数据）的类别。 完成选择后，你将看到其他问题。 你看到的特定问题会因你之前的回答而异。 To get more details that may help you understand how to answer any question, click the info icon next to that question. 如果出现失误，你可以回退或重新开始问卷调查来提供正确的答案。
 
-当你回答完问题时，请单击“保存并生成”。  然后，你将看到应用的所有已分配分级，并且可以继续提交。 你还可以单击“编辑”，更正问卷调查的任何答案。
+当你回答完问题时，请单击**保存并生成**。 然后，你将看到应用的所有已分配分级，并且可以继续提交。 你还可以单击**编辑**，更正问卷调查的任何答案。
 
-下次更新应用时，你将在该页面上看到应用的所有已分配分级。 如果应用更改在某种程度上需要你调整任何答案，也可以单击“编辑”重新填写问卷调差。  IARC 有时还可能会更新问题。 如果发生这种情况，可能会在你提交更新时提示你重新完成填写问卷调查。
+下次更新应用时，你将在该页面上看到应用的所有已分配分级。 如果应用更改在某种程度上需要你调整任何答案，也可以单击**编辑**重新填写问卷调差。 IARC 有时还可能会更新问题。 如果发生这种情况，可能会在你提交更新时提示你重新完成填写问卷调查。
 
 <span id="boards" />
 
 > [!NOTE]
-> 韩国法律要求在韩国上市的游戏应通过韩国[游戏分级委员会](https://go.microsoft.com/fwlink/p/?LinkId=228256)进行分级。 如果你提交的是一款游戏并且想要向韩国提供，则必须填写此条增补款并上传分级证书。 注意，如果你的应用不是游戏或不打算向韩国提供，可以将此部分留空。
+> 韩国法律要求在韩国上市的游戏应通过韩国[游戏分级委员会](https://www.grb.or.kr/Default.aspx)进行分级。 如果你提交的是一款游戏并且想要向韩国提供，则必须填写此条增补款并上传分级证书。 注意，如果你的应用不是游戏或不打算向韩国提供，可以将此部分留空。
 
 > [!NOTE]
-> 如果你提交的游戏将在中国台湾提供，则需要依法通过[此表单](https://go.microsoft.com/fwlink/?linkid=867281)使用所提供的 CSRR 分级进行登录。 
+> 如果你提交的游戏将在台湾提供，则需要依法通过[此表单](https://www.gamerating.org.tw/company_login.php)使用所提供的 CSRR 分级进行登录。 
 
 <span id="appeal" />
 

@@ -6,24 +6,24 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f9a253d8470407141c9ae56367d123d638d12c6
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: d23d33eb98f5ed01cf48eebd63a46aba2f923c65
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339826"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257114"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>检测图像或视频中的人脸
 
 
 
-@no__t 0Some 信息与预先发布的产品相关，这些信息可能会在正式发布之前经过重大修改。 对于此处提供的信息，Microsoft 不作任何明示或默示的保证。 \]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
 本主题介绍如何使用 [**FaceDetector**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceDetector) 检测图像中的人脸。 在视频帧的序列中，将随着时间的推移针对人脸跟踪优化 [**FaceTracker**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceTracker)。
 
 有关使用 [**FaceDetectionEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.FaceDetectionEffect) 跟踪人脸的替代方法，请参阅[媒体捕获的场景分析](scene-analysis-for-media-capture.md)。
 
-文本中的代码源自[基本人脸检测](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)和[基本人脸跟踪](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)示例。 你可以下载这些示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
+文本中的代码源自[基本人脸检测](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceDetection)和[基本人脸跟踪](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceTracking)示例。 你可以下载这些示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
 
 ## <a name="detect-faces-in-a-single-image"></a>检测单张图像中的人脸
 
@@ -57,7 +57,7 @@ ms.locfileid: "71339826"
 
 [!code-cs[Dispose](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDispose)]
 
-若要显示图像并在检测到的人脸周围绘制方框，请将 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 元素添加到你的 XAML 页面。
+若要显示图像并在检测到的人脸周围绘制方框，请将 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 元素添加到 XAML 页面。
 
 [!code-xml[Canvas](./code/FaceDetection_Win10/cs/MainPage.xaml#SnippetCanvas)]
 
@@ -91,15 +91,15 @@ ms.locfileid: "71339826"
 
 和 **FaceDetector** 一样，**FaceTracker** 支持一组有限的像素格式。 如果所提供的帧未采用 Nv12 格式，则此示例将放弃人脸检测。
 
-调用 [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync) 来检索表示该帧中的人脸的 [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace) 对象列表。 获得人脸列表后，你可以通过上述用于人脸检测的相同方式显示它们。 请注意，由于不会在 UI 线程上调用面部跟踪助手方法，因此必须在调用[**CoreDispatcher. RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)中进行任何 UI 更新。
+调用 [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync) 来检索表示该帧中的人脸的 [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace) 对象列表。 获得人脸列表后，你可以通过上述用于人脸检测的相同方式显示它们。 Note that, because the face tracking helper method is not called on the UI thread, you must make any UI updates in within a call [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync).
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
 ## <a name="related-topics"></a>相关主题
 
-* [媒体捕获的场景分析](scene-analysis-for-media-capture.md)
-* [基本人脸检测示例](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [基本面部跟踪示例](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [Scene analysis for media capture](scene-analysis-for-media-capture.md)
+* [Basic Face Detection sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceDetection)
+* [Basic Face Tracking sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceTracking)
 * [摄像头](camera.md)
-* [带有 MediaCapture 的基本照片、视频和音频捕获](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [媒体播放](media-playback.md)

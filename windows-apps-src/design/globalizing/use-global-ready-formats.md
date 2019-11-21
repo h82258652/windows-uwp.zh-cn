@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: d641bcff48b830c56a1d03ee861ec2a4c5f433b6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 54846cd350e8f91f7ba664690cfd4dd7e36c129e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634132"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258042"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a>全球化日期/时间/数字格式
 
@@ -70,7 +70,7 @@ ms.locfileid: "57634132"
     var results = "Short Date: " + shortDateFormatter.Format(DateTime.Now);
 ```
 
-## <a name="format-numbers-and-currencies-appropriately"></a>设置相应的数字和货币格式
+## <a name="format-numbers-and-currencies-appropriately"></a>设置适当的数字和货币格式
 
 不同的文化设置数字格式的方式也不相同。 格式差异可能包括显示多少小数位数、什么字符用作小数分隔符以及要使用什么货币符号。 使用 [**NumberFormatting**](/uwp/api/windows.globalization.numberformatting?branch=live) 命名空间中的类来显示小数、分数、千分比和货币。 大多数情况下，建议使用这些格式化程序类，将最佳格式用于用户配置文件。 但是你可以使用格式化程序显示任何区域或格式的货币。
 
@@ -116,9 +116,9 @@ ms.locfileid: "57634132"
 
 设置电话号码格式的方式因区域而异。 电话号码的数字位数、数字组合方式和某些部分的重要性因国家/地区而异。 从 Windows 10 版本 1607 开始，可以使用 [**PhoneNumberFormatting**](/uwp/api/windows.globalization.phonenumberformatting?branch=live) 命名空间中的类为当前区域设置适当的电话号码格式。
 
-[**PhoneNumberInfo** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live)分析数字的字符串，并且可以： 确定是否数字是否为有效的电话号码中的当前区域; 比较两个数字的相等性; 并提取手机的不同功能部分数，例如国家/地区代码或地理区域代码。
+[**PhoneNumberInfo**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live) parses a string of digits and allows you to: determine whether the digits are a valid phone number in the current region; compare two numbers for equality; and to extract the different functional parts of the phone number, such as country code or geographical area code.
 
-[**PhoneNumberFormatter** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live)格式的数字的字符串，或者**PhoneNumberInfo**进行显示，即使数字的字符串表示部分电话号码。 你可以使用此部分号码格式设置，将号码设置为用户输入该号码时所示的格式。
+[**PhoneNumberFormatter**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live) formats a string of digits or a **PhoneNumberInfo** for display, even when the string of digits represents a partial phone number. 你可以使用此部分号码格式设置，将号码设置为用户输入该号码时所示的格式。
 
 下面的示例显示了如何使用 **PhoneNumberFormatter** 将电话号码设置为输入时所示的格式。 每当名为 phoneNumberInputTextBox 的 **TextBox** 中的文本发生更改时，文本框内容都会使用当前默认区域进行格式设置并显示在名为 phoneNumberOutputTextBlock 的 **TextBlock** 中。 出于演示目的，该字符串也使用新西兰区域进行格式设置，并显示在名为 phoneNumberOutputTextBlockNZ 的 TextBlock 中。
   
@@ -161,19 +161,19 @@ ms.locfileid: "57634132"
 
 * [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
 * [NumberFormatting](/uwp/api/windows.globalization.numberformatting?branch=live)
-* [日历](/uwp/api/windows.globalization.calendar?branch=live)
+* [Calendar](/uwp/api/windows.globalization.calendar?branch=live)
 * [PhoneNumberFormatting](/uwp/api/windows.globalization.phonenumberformatting?branch=live)
 * [GlobalizationPreferences](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live)
 
 ## <a name="related-topics"></a>相关主题
 
-* [日历、 日期和时间控件](../controls-and-patterns/date-and-time.md)
-* [了解用户配置文件的语言和应用程序清单语言](manage-language-and-region.md)
+* [日历、日期和时间控件](../controls-and-patterns/date-and-time.md)
+* [Understand user profile languages and app manifest languages](manage-language-and-region.md)
 * [定制语言、比例、高对比度和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)
 
 ## <a name="samples"></a>示例
 
-* [日历的详细信息和数学示例](https://go.microsoft.com/fwlink/p/?linkid=231636)
-* [日期和时间格式设置示例](https://go.microsoft.com/fwlink/p/?linkid=231618)
-* [全球化首选项示例](https://go.microsoft.com/fwlink/p/?linkid=231608)
-* [数字格式设置和分析示例](https://go.microsoft.com/fwlink/p/?linkid=231620)
+* [Calendar details and math sample](https://code.msdn.microsoft.com/windowsapps/Calendar-details-and-math-b1683bb7)
+* [Date and time formatting sample](https://code.msdn.microsoft.com/windowsapps/Date-and-time-formatting-2361f348)
+* [Globalization preferences sample](https://code.msdn.microsoft.com/windowsapps/Globalization-preferences-6654eb36)
+* [Number formatting and parsing sample](https://code.msdn.microsoft.com/windowsapps/Number-formatting-and-bb10ba3d)

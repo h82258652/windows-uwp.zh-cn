@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 线程, 线程池
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ff0eca18eeab72dbf0a2f9a539e452a5923392d
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: d3dcd162e0a139328ef5885ac26edec04a279134
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322019"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259807"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>向线程池提交工作项
 
-\[ 更新适用于 Windows 10 上的 UWP 应用。 Windows 8.x 文章，请参阅[存档](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN) \]
 
-<b>重要的 Api</b>
+<b>重要的 API</b>
 
 -   [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync)
 -   [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)
@@ -31,7 +31,7 @@ ms.locfileid: "67322019"
 [  **RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 有 3 个版本，你可指定工作项的优先级，控制它是否与其他工作项同时运行。
 
 >[!NOTE]
->使用[ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)访问 UI 线程并显示从工作项的进度。
+>Use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) to access the UI thread and show progress from the work item.
 
 以下示例创建工作项并提供 lambda 以执行此工作：
 
@@ -350,7 +350,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>摘要和后续步骤
 
-您可以了解详细信息，请从本快速入门中下载代码[创建线程池工作项示例](https://go.microsoft.com/fwlink/p/?LinkID=328569)编写的 Windows 8.1 和重新使用的源代码中 win\_unap Windows 10 应用。
+You can learn more by downloading the code from this quickstart in the [Creating a ThreadPool work item sample](https://code.msdn.microsoft.com/windowsapps/Creating-a-ThreadPool-work-9665cdff) written for Windows 8.1, and re-using the source code in a win\_unap Windows 10 app.
 
 ## <a name="related-topics"></a>相关主题
 

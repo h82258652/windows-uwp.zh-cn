@@ -4,18 +4,18 @@ description: 创建一个进程外后台任务类并注册它，以便在应用�
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 ms.date: 02/27/2019
 ms.topic: article
-keywords: windows 10，uwp，后台任务
+keywords: windows 10, uwp, background task
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 8ec3d8d3ea460a982d0fe1dfff50c4ede4c47d3f
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 2124a7141740ef9c16273714864587feff4268f3
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714069"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258691"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>创建和注册进程外后台任务
 
@@ -32,18 +32,18 @@ ms.locfileid: "67714069"
 
 ## <a name="create-the-background-task-class"></a>创建后台任务类
 
-你可以通过编写用于实现 [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 接口的类来在后台运行代码。 例如，通过使用，触发特定事件时运行此代码[ **SystemTrigger** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)或[ **MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger)。
+你可以通过编写用于实现 [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 接口的类来在后台运行代码。 This code runs when a specific event is triggered by using, for example, [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) or [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger).
 
 以下示例向你展示如何编写用于实现 [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 接口的新类。
 
-1.  为后台任务创建新项目并将其添加到你的解决方案。 若要执行此操作，右键单击解决方案中的节点**解决方案资源管理器**，然后选择**添加** \> **新建项目**。 然后选择**Windows 运行时组件**项目类型，该项目命名，并单击确定。
-2.  从通用 Windows 平台 (UWP) 应用项目中引用后台任务项目。 有关C#或C++应用程序，在应用程序项目中，右键单击**引用**，然后选择**添加新引用**。 在“解决方案”  下，选择“项目”  ，然后选择你的后台任务项目名称并单击“确定”  。
-3.  到后台任务项目中，添加一个新类，实现[ **IBackgroundTask** ](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)接口。 [ **IBackgroundTask.Run** ](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法是将触发指定的事件时调用的所需的入口点，每个后台任务中需要此方法。
+1.  为后台任务创建新项目并将其添加到你的解决方案。 To do this, right-click on your solution node in the **Solution Explorer** and select **Add** \> **New Project**. Then select the **Windows Runtime Component** project type, name the project, and click OK.
+2.  从通用 Windows 平台 (UWP) 应用项目中引用后台任务项目。 For a C# or C++ app, in your app project, right-click on **References** and select **Add New Reference**. 在**解决方案**下，选择**项目**，然后选择你的后台任务项目名称并单击**确定**。
+3.  To the background tasks project, add a new class that implements the [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface. The [**IBackgroundTask.Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) method is a required entry point that will be called when the specified event is triggered; this method is required in every background task.
 
 > [!NOTE]
-> 后台任务类本身&mdash;后台任务项目中的所有其他类&mdash;需要**公共**类**密封**(或**最终**).
+> The background task class itself&mdash;and all other classes in the background task project&mdash;need to be **public** classes that are **sealed** (or **final**).
 
-下面的示例代码显示了一个非常基本的起始点，后台任务类。
+The following sample code shows a very basic starting point for a background task class.
 
 ```csharp
 // ExampleBackgroundTask.cs
@@ -140,11 +140,11 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 }
 ```
 
-4.  如果你在后台任务中运行任何异步代码，则你的后台任务需要使用延迟。 如果不使用延期，则如果后台任务进程可以意外终止**运行**方法返回之前任何异步工作已完成运行。
+4.  如果你在后台任务中运行任何异步代码，则你的后台任务需要使用延迟。 If you don't use a deferral, then the background task process can terminate unexpectedly if the **Run** method returns before any asynchronous work has run to completion.
 
-请求中的延迟**运行**方法之前调用异步方法。 将延迟保存到的类数据成员，以便其可从异步方法访问。 完成异步代码之后声明延迟完成。
+Request the deferral in the **Run** method before calling the asynchronous method. Save the deferral to a class data member so that it can be accessed from the asynchronous method. 完成异步代码之后声明延迟完成。
 
-下面的示例代码获取延迟、 保存，并在异步代码已完成发布它。
+The following sample code gets the deferral, saves it, and releases it when the asynchronous code is complete.
 
 ```csharp
 BackgroundTaskDeferral _deferral; // Note: defined at class scope so that we can mark it complete inside the OnCancel() callback if we choose to support cancellation
@@ -200,20 +200,20 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 ```
 
 > [!NOTE]
-> 在 C# 中，可以使用 **async/await** 关键字调用后台任务的异步方法。 在C++/CX，可以通过使用任务链来实现类似的结果。
+> 在 C# 中，可以使用 **async/await** 关键字调用后台任务的异步方法。 In C++/CX, a similar result can be achieved by using a task chain.
 
-有关异步模式的详细信息，请参阅[异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps)。 有关如何使用延迟阻止后台任务提前停止的其他示例，请参阅[后台任务示例](https://go.microsoft.com/fwlink/p/?LinkId=618666)。
+有关异步模式的详细信息，请参阅[异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps)。 有关如何使用延迟阻止后台任务提前停止的其他示例，请参阅[后台任务示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)。
 
 以下步骤在你的一个应用类（例如 MainPage.xaml.cs）中完成。
 
 > [!NOTE]
-> 此外可以创建专用于注册后台任务的函数&mdash;请参阅[注册后台任务](register-a-background-task.md)。 在这种情况下，而不是使用接下来三个步骤，您可以只是构造该触发器并将其提供到注册函数以及任务名称、 任务入口点和 （可选） 单击条件。
+> You can also create a function dedicated to registering background tasks&mdash;see [Register a background task](register-a-background-task.md). In that case, instead of using the next three steps, you can simply construct the trigger and provide it to the registration function along with the task name, task entry point, and (optionally) a condition.
 
 ## <a name="register-the-background-task-to-run"></a>注册要运行的后台任务
 
-1.  找出后台任务，可以循环访问的已注册是否[ **BackgroundTaskRegistration.AllTasks** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks)属性。 此步骤非常重要；如果应用不检查现有后台任务注册，则它可能会轻松多次注册该任务，这会导致性能问题和工作结束前超出任务的最大可用 CPU 时间。
+1.  Find out whether the background task is already registered by iterating through the [**BackgroundTaskRegistration.AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) property. 此步骤非常重要；如果应用不检查现有后台任务注册，则它可能会轻松多次注册该任务，这会导致性能问题和工作结束前超出任务的最大可用 CPU 时间。
 
-下面的示例循环访问**AllTasks**属性和设置一个标志变量为 true，如果尚未注册任务。
+The following example iterates on the **AllTasks** property and sets a flag variable to true if the task is already registered.
 
 ```csharp
 var taskRegistered = false;
@@ -272,7 +272,7 @@ while (hascur)
 
 后台任务触发器控制后台任务何时运行。 有关可能的触发器的列表，请参阅 [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)。
 
-例如，此代码创建新的后台任务并将其设置为运行时**TimeZoneChanged**出现触发器：
+For example, this code creates a new background task and sets it to run when the **TimeZoneChanged** trigger occurs:
 
 ```csharp
 var builder = new BackgroundTaskBuilder();
@@ -304,7 +304,7 @@ builder->SetTrigger(ref new SystemTrigger(SystemTriggerType::TimeZoneChange, fal
 
 3.  （可选）在触发器事件发生后，你可以添加条件控制任务何时运行。 例如，如果你不希望在用户存在前运行任务，请使用条件 **UserPresent**。 有关可能条件的列表，请参阅 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
 
-以下示例代码指定需要用户存在的条件：
+以下示例代码分配需要用户存在的条件：
 
 ```csharp
 builder.AddCondition(new SystemCondition(SystemConditionType.UserPresent));
@@ -344,7 +344,7 @@ BackgroundTaskRegistration^ task = builder->Register();
 
 ## <a name="handle-background-task-completion-using-event-handlers"></a>使用事件处理程序处理后台任务完成
 
-你应该使用 [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler) 注册一个方法，以便应用可以从后台任务中获取结果。 当应用程序是启动或恢复时，如果自上次应用位于前台时已完成的后台任务将调用标记的方法。 （如果应用当前位于前台时后台任务完成，将立即调用 OnCompleted 方法。）
+你应该使用 [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler) 注册一个方法，以便应用可以从后台任务中获取结果。 When the app is launched or resumed, the marked method will be called if the background task has completed since the last time the app was in the foreground. （如果应用当前位于前台时后台任务完成，将立即调用 OnCompleted 方法。）
 
 1.  编写一个 OnCompleted 方法，以处理后台任务的完成。 例如，后台任务结果可能导致 UI 更新。 此处所示的方法足迹对于 OnCompleted 事件处理程序方法来说是必需的，即使该示例不使用 *args* 参数也是如此。
 
@@ -393,7 +393,7 @@ void MainPage::OnCompleted(BackgroundTaskRegistration^ task, BackgroundTaskCompl
 ```
 
 > [!NOTE]
-> UI 更新应该异步执行，为的是避免占用 UI 线程。 有关示例，请参阅[后台任务示例](https://go.microsoft.com/fwlink/p/?LinkId=618666)中的 UpdateUI 方法。
+> UI 更新应该异步执行，为的是避免占用 UI 线程。 有关示例，请参阅[后台任务示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)中的 UpdateUI 方法。
 
 2.  回到已注册后台任务的位置。 在该代码行之后，添加一个新的 [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler) 对象。 提供 OnCompleted 方法作为 **BackgroundTaskCompletedEventHandler** 构造函数的参数。
 
@@ -411,15 +411,15 @@ task.Completed({ this, &MainPage::OnCompleted });
 task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::OnCompleted);
 ```
 
-## <a name="declare-in-the-app-manifest-that-your-app-uses-background-tasks"></a>应用程序清单中声明您的应用程序使用后台任务
+## <a name="declare-in-the-app-manifest-that-your-app-uses-background-tasks"></a>Declare in the app manifest that your app uses background tasks
 
-必须先在应用清单中声明各个后台任务，你的应用才能运行后台任务。 如果您的应用程序尝试使用未在清单中列出的触发器注册的后台任务，后台任务的注册将失败并出现"未注册的运行时类"错误。
+必须先在应用清单中声明各个后台任务，你的应用才能运行后台任务。 If your app attempts to register a background task with a trigger that isn't listed in the manifest, the registration of the background task will fail with a "runtime class not registered" error.
 
 1.  通过打开名为 Package.appxmanifest 的文件打开程序包清单设计器。
-2.  打开“声明”  选项卡。
-3.  在“可用声明”  下拉菜单中，选择“后台任务”  ，然后单击“添加”  。
-4.  选中“系统事件”  复选框。
-5.  在中**入口点：** 文本框中，输入命名空间和这是此示例中为 Tasks.ExampleBackgroundTask 背景类的名称。
+2.  打开“声明”选项卡。
+3.  在**可用声明**下拉菜单中，选择**后台任务**，然后单击**添加**。
+4.  选中**系统事件**复选框。
+5.  In the **Entry point:** textbox, enter the namespace and name of your background class which is for this example is Tasks.ExampleBackgroundTask.
 6.  关闭清单设计器。
 
 以下 Extensions 元素将添加到 Package.appxmanifest 文件以注册后台任务：
@@ -439,13 +439,13 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 现在，你应该已基本了解如何编写后台任务类、如何从应用中注册后台任务，以及如何让应用识别后台任务何时完成。 你还应该了解如何更新应用程序清单，以便你的应用可以成功注册后台任务。
 
 > [!NOTE]
-> 下载[后台任务示例](https://go.microsoft.com/fwlink/p/?LinkId=618666)以查看使用后台任务的完整且可靠的 UWP 应用上下文中的类似代码示例。
+> 下载[后台任务示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)以查看使用后台任务的完整且可靠的 UWP 应用上下文中的类似代码示例。
 
 有关 API 引用、后台任务概念指南以及编写使用后台任务的应用的更多详细说明，请参阅以下相关主题。
 
 ## <a name="related-topics"></a>相关主题
 
-**详细的后台任务的指导性主题**
+**Detailed background task instructional topics**
 
 * [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
 * [注册后台任务](register-a-background-task.md)
@@ -455,14 +455,14 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 * [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
 * [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
-* [将进程外后台任务转换为进程内的后台任务](convert-out-of-process-background-task.md)  
+* [Convert an out-of-process background task to an in-process background task](convert-out-of-process-background-task.md)  
 
-**后台任务指南**
+**Background task guidance**
 
 * [后台任务指南](guidelines-for-background-tasks.md)
 * [调试后台任务](debug-a-background-task.md)
-* [如何在触发挂起、 继续和后台 UWP 应用中的事件 （在调试）](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
 
-**后台任务 API 参考**
+**Background Task API Reference**
 
 * [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)

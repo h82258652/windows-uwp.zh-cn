@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 延迟, dxgi, 交换链, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: dbf4935abc543b1c11fbbee32812a7702298cd79
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: dd414c3ea65d30253d54cd335ed0b85d151b6dff
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368185"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258441"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>利用 DXGI 1.3 交换链减少延迟
 
@@ -24,18 +24,18 @@ ms.locfileid: "66368185"
 
 使用翻转模型交换链，当你的游戏调用 [**IDXGISwapChain::Present**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) 时，会将后台缓冲区“翻转”进行排队。 当呈现循环调用 Present() 时，系统会阻止线程，直到显示完前一帧为止，从而为在新帧显示之前将其排入队列腾出了空间。 这会导致游戏绘制帧的时间，以及系统允许游戏显示该帧的时间之间的延迟增加。 在很多情况下，系统将会达到一个稳定的平衡状态，在这种状态下，游戏始终会在呈现帧和呈现下一帧之间等待一个完整的额外帧。 最好等到系统准备好接受新帧，然后再根据当前数据呈现该帧并立即将其排队。
 
-创建具有一个可等待交换链[ **DXGI\_交换\_链\_标志\_帧\_延迟\_WAITABLE\_对象**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)标志。 以这种方式创建的交换链可以在系统准备好接收新帧时通知你的呈现循环。 这样就允许你的游戏根据当前数据进行呈现，然后立即将结果放入显示队列中。
+Create a waitable swap chain with the [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) flag. 以这种方式创建的交换链可以在系统准备好接收新帧时通知你的呈现循环。 这样就允许你的游戏根据当前数据进行呈现，然后立即将结果放入显示队列中。
 
-## <a name="step-1-create-a-waitable-swap-chain"></a>第 1 步：创建一个可等待交换链
+## <a name="step-1-create-a-waitable-swap-chain"></a>步骤 1：创建一个可等待的交换链
 
 
-指定[ **DXGI\_交换\_链\_标志\_帧\_延迟\_WAITABLE\_对象**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)在调用时的标志[ **CreateSwapChainForCoreWindow**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow)。
+Specify the [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) flag when you call [**CreateSwapChainForCoreWindow**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow).
 
 ```cpp
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **请注意**  与一些标志，此标志不能添加或删除使用[ **ResizeBuffers**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers)。 如果此标记的设置方式与创建交换链时不同，DXGI 会返回一个错误代码。
+> **Note**   In contrast to some flags, this flag can't be added or removed using [**ResizeBuffers**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers). 如果此标记的设置方式与创建交换链时不同，DXGI 会返回一个错误代码。
 
  
 
@@ -68,7 +68,7 @@ HRESULT hr = m_swapChain->ResizeBuffers(
 //    );
 ```
 
-## <a name="step-3-get-the-waitable-object-from-the-swap-chain"></a>步骤 3:从交换链中获取可等待对象
+## <a name="step-3-get-the-waitable-object-from-the-swap-chain"></a>步骤 3：从交换链获取可等待对象
 
 
 调用 [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject) 以检索等待句柄。 等待句柄是一个指向可等待对象的指针。 存储此句柄以供你的呈现循环使用。
@@ -80,7 +80,7 @@ HRESULT hr = m_swapChain->ResizeBuffers(
 m_frameLatencyWaitableObject = swapChain2->GetFrameLatencyWaitableObject();
 ```
 
-## <a name="step-4-wait-before-rendering-each-frame"></a>步骤 4：呈现的每个帧之前等待
+## <a name="step-4-wait-before-rendering-each-frame"></a>步骤 4：等待呈现每个帧
 
 
 你的呈现循环应等待交换链通过可等待对象发送信号来开始呈现每个帧。 这包括使用交换链呈现的第一个帧。 使用 [**WaitForSingleObjectEx**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-waitforsingleobjectex)（提供了在步骤 2 中检索的等待句柄）来发信号通知开始每个帧。
@@ -147,14 +147,14 @@ void DX::DeviceResources::WaitOnSwapChain()
 ## <a name="related-topics"></a>相关主题
 
 
-* [DirectXLatency 示例](https://go.microsoft.com/fwlink/p/?LinkID=317361)
+* [DirectXLatency sample](https://code.msdn.microsoft.com/windowsapps/DirectXLatency-sample-a2e2c9c3)
 * [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject)
 * [**WaitForSingleObjectEx**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-waitforsingleobjectex)
 * [**Windows.System.Threading**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
-* [中的异步编程C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)
-* [进程和线程](https://docs.microsoft.com/windows/desktop/ProcThread/processes-and-threads)
+* [Asynchronous programming in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)
+* [Processes and Threads](https://docs.microsoft.com/windows/desktop/ProcThread/processes-and-threads)
 * [同步](https://docs.microsoft.com/windows/desktop/Sync/synchronization)
-* [使用事件对象 (Windows)](https://docs.microsoft.com/windows/desktop/Sync/using-event-objects)
+* [Using Event Objects (Windows)](https://docs.microsoft.com/windows/desktop/Sync/using-event-objects)
 
  
 

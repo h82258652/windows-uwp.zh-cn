@@ -8,26 +8,26 @@ keywords: 设备、数字化器、输入、交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 982f787aaef05dabdc356af906e80b28085b5a2d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b2a17d1f4664326cb54d9c53d828eb372ef93fe4
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363386"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257887"
 ---
 # <a name="identify-input-devices"></a>标识输入设备
 
 
 标识连接到通用 Windows 平台 (UWP) 设备的输入设备，并标识其功能和属性。
 
-> **重要的 API**：[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)， [ **Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)， [ **Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+> **重要 API**：[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)、[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)、[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
 ## <a name="retrieve-mouse-properties"></a>检索鼠标属性
 
 
 [  **Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空间包含 [**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities) 类，用于检索由一个或多个连接的鼠标公开的属性。 只需创建新的 **MouseCapabilities** 对象并获取感兴趣的属性。
 
-**请注意**  返回此处讨论的属性的值根据所有检测到鼠标：布尔型属性返回非零值，如果至少一个鼠标支持某项特定功能，并且数值属性中返回公开的任何一个鼠标的最大值。
+**Note**  The values returned by the properties discussed here are based on all detected mice: Boolean properties return non-zero if at least one mouse supports a specific capability, and numeric properties return the maximum value exposed by any one mouse.
 
  
 
@@ -65,7 +65,7 @@ private void GetKeyboardProperties()
 
 [  **Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空间包含 [**TouchCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.TouchCapabilities) 类，用于检索是否已连接任何触摸数字化器。 只需创建新的 **TouchCapabilities** 对象并获取感兴趣的属性。
 
-**请注意**  返回此处讨论的属性的值根据所有检测到的触控数字化器：布尔型属性返回非零值，如果至少一个数字化器支持某项特定功能，并且数值属性中返回公开的任何一个的数字化器的最大值。
+**Note**  The values returned by the properties discussed here are based on all detected touch digitizers: Boolean properties return non-zero if at least one digitizer supports a specific capability, and numeric properties return the maximum value exposed by any one digitizer.
 
  
 
@@ -85,7 +85,7 @@ private void GetTouchProperties()
 
 [  **Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空间包含 [**PointerDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice) 类，用于检索是否所有检测到的设备都支持指针输入（触摸、触摸板、鼠标或笔）。 只需创建新的 **PointerDevice** 对象并获取感兴趣的属性。
 
-**请注意**  返回此处讨论的属性的值根据所有检测到的指针设备：布尔型属性返回非零值，如果至少一个设备支持某项特定功能，并且数值属性中返回公开的任何一个指针设备的最大值。
+**Note**  The values returned by the properties discussed here are based on all detected pointer devices: Boolean properties return non-zero if at least one device supports a specific capability, and numeric properties return the maximum value exposed by any one pointer device.
 
 以下代码使用一个表格来显示每个指针设备的属性和值。
 
@@ -178,12 +178,12 @@ private void GetPointerDevices()
 
 
 **示例**
-* [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
 
-**存档示例**
-* [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
+**Archive samples**
+* [Input: Device capabilities sample](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
  
 
  

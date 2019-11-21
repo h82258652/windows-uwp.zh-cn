@@ -6,16 +6,16 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, ad control, interstitial
 ms.localizationpriority: medium
-ms.openlocfilehash: 6283c4d69a511e4dd4aa342b547c18624952be29
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 98800f1a9a94de20910e932032d8b949bac52dde
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335115"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259272"
 ---
 # <a name="interstitial-ads"></a>间隙广告
 
-本演练介绍如何将间隙广告纳入面向 Windows 10 的通用 Windows 平台 (UWP) 应用和游戏中。 有关演示如何使用 C# 和 C++ 向 JavaScript/HTML 应用和 XAML 应用添加间隙广告的完整示例项目，请参阅 [GitHub 上的广告示例](https://aka.ms/githubads)。
+本演练介绍如何将间隙广告纳入面向 Windows 10 的通用 Windows 平台 (UWP) 应用和游戏中。 有关演示如何使用 C# 和 C++ 向 JavaScript/HTML 应用和 XAML 应用添加间隙广告的完整示例项目，请参阅 [GitHub 上的广告示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。
 
 <span id="whatareinterstitialads10"/>
 
@@ -34,9 +34,9 @@ ms.locfileid: "58335115"
 > [!NOTE]
 > 间隙广告的 API 不会处理任何用户界面，播放视频时除外。 在考虑如何在应用中集成间隙广告时，可就有关处理方法、避免内容的指南参考[间隙最佳做法](ui-and-user-experience-guidelines.md#interstitialbestpractices10)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
-* 使用 Visual Studio 2015 或更高版本的 Visual Studio 安装 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)。 有关安装说明，请参阅[此文章](install-the-microsoft-advertising-libraries.md)。
+* 使用 Visual Studio 2015 或更高版本的 Visual Studio 安装 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。 有关安装说明，请参阅[此文章](install-the-microsoft-advertising-libraries.md)。
 
 ## <a name="integrate-an-interstitial-ad-into-your-app"></a>在应用中集成间隙广告
 
@@ -44,7 +44,7 @@ ms.locfileid: "58335115"
 
 * [XAML/.NET](#interstitialadsxaml10)
 * [HTML/JavaScript](#interstitialadshtml10)
-* [C++（DirectX 互操作）](#interstitialadsdirectx10)
+* [C++ (DirectX Interop)](#interstitialadsdirectx10)
 
 <span id="interstitialadsxaml10"/>
 
@@ -60,9 +60,9 @@ ms.locfileid: "58335115"
 
 3. 在你的项目中添加对 Microsoft 广告 SDK 的引用：
 
-    1. 在“解决方案资源管理器”窗口中，右键单击“引用”，然后选择“添加引用...”
-    2.  在“引用管理器”中，展开“通用 Windows”、单击“扩展”，然后选中“适用于 XAML 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
-    3.  在“引用管理器”中，单击“确定”。
+    1. 在**解决方案资源管理器**窗口中，右键单击**引用**，然后选择**添加引用...**
+    2.  在**引用管理器**中，展开**通用 Windows**、单击**扩展**，然后选中**适用于 XAML 的 Microsoft 广告 SDK**（版本 10.0）旁边的复选框。
+    3.  在**引用管理器**中，单击“确定”。
 
 3.  在应用的相应代码文件中（例如，在 MainPage.xaml.cs 或部分其他页面的代码文件中）添加以下命名空间引用。
 
@@ -71,7 +71,7 @@ ms.locfileid: "58335115"
 4.  在应用的相应位置（例如，在 ```MainPage``` 或部分其他页面）声明 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 对象和几个字符串字段，这些字段代表间隙广告的应用程序 ID 和广告单元 ID。 以下代码示例将 `myAppId` 和 `myAdUnitId` 字段分配给间隙广告的[测试值](set-up-ad-units-in-your-app.md#test-ad-units)。
 
     > [!NOTE]
-    > 每个 **InterstitialAd** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为控件提供广告，每个广告单元都包含*单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 您的应用程序发布到应用商店之前，必须[替换为这些测试的值与实时值](#release)从合作伙伴中心。
+    > 每个 **InterstitialAd** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为控件提供广告，每个广告单元都包含*单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 Before you publish your app to the Store, you must [replace these test values with live values](#release) from Partner Center.
 
     [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet2)]
 
@@ -79,11 +79,11 @@ ms.locfileid: "58335115"
 
     [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet3)]
 
-6.  如果你想要显示*插播式视频*ad:大约 30-60 秒之后需要 ad，使用[RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad)方法来预提取 ad。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请务必将广告类型指定为 **AdType.Video**。
+6.  如果你需要显示*间隙视频*广告：在需要广告之前大约 30-60 秒，请使用 [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法预取广告。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请务必将广告类型指定为 **AdType.Video**。
 
     [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
 
-    如果你想要显示*插播式横幅*ad:大约 5 到 8 秒之前需要 ad，使用[RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad)方法来预提取 ad。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请务必将广告类型指定为 **AdType.Video**。
+    如果你需要显示*间隙横幅*广告：在需要广告之前大约 5-8 秒，请使用 [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法预取广告。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请务必将广告类型指定为 **AdType.Video**。
 
     ```csharp
     myInterstitialAd.RequestAd(AdType.Display, myAppId, myAdUnitId);
@@ -111,11 +111,11 @@ ms.locfileid: "58335115"
 
 3. 在你的项目中添加对 Microsoft 广告 SDK 的引用：
 
-    1. 在“解决方案资源管理器”窗口中，右键单击“引用”，然后选择“添加引用...”
-    2.  在“引用管理器”中，展开“通用 Windows”、单击“扩展”，然后选中“适用于 JavaScript 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
-    3.  在“引用管理器”中，单击“确定”。
+    1. 在**解决方案资源管理器**窗口中，右键单击**引用**，然后选择**添加引用...**
+    2.  在**引用管理器**中，展开**通用 Windows**、单击**扩展**，然后选中**适用于 JavaScript 的 Microsoft 广告 SDK**（版本 10.0）旁边的复选框。
+    3.  在**引用管理器**中，单击“确定”。
 
-3.  在项目的 HTML 文件的**&lt;标题&gt;** 部分中，在项目的 JavaScript 引用 default.css 和 default.js 之后，添加对 ad.js 的引用。
+3.  在项目的 HTML 文件的 **&lt;标题&gt;** 部分中，在项目的 JavaScript 引用 default.css 和 default.js 之后，添加对 ad.js 的引用。
 
     ``` HTML
     <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
@@ -124,7 +124,7 @@ ms.locfileid: "58335115"
 4.  在项目的 .js 文件中声明 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 对象和几个字段，这些字段包含间隙广告的应用程序 ID 和广告单元 ID。 以下代码示例将 `applicationId` 和 `adUnitId` 字段分配给间隙广告的[测试值](set-up-ad-units-in-your-app.md#test-ad-units)。
 
     > [!NOTE]
-    > 每个 **InterstitialAd** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为控件提供广告，每个广告单元都包含*单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 您的应用程序发布到应用商店之前，必须[替换为这些测试的值与实时值](#release)从合作伙伴中心。
+    > 每个 **InterstitialAd** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为控件提供广告，每个广告单元都包含*单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 Before you publish your app to the Store, you must [replace these test values with live values](#release) from Partner Center.
 
     [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet1)]
 
@@ -132,11 +132,11 @@ ms.locfileid: "58335115"
 
     [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet2)]
 
-5. 如果你想要显示*插播式视频*ad:大约 30-60 秒之后需要 ad，使用[RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad)方法来预提取 ad。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请务必将广告类型指定为 **InterstitialAdType.video**。
+5. 如果你需要显示*间隙视频*广告：在需要广告之前大约 30-60 秒，请使用 [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法预取广告。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请务必将广告类型指定为 **InterstitialAdType.video**。
 
     [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet3)]
 
-    如果你想要显示*插播式横幅*ad:大约 5 到 8 秒之前需要 ad，使用[RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad)方法来预提取 ad。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请务必将广告类型指定为 **InterstitialAdType.display**。
+    如果你需要显示*间隙横幅*广告：在需要广告之前大约 5-8 秒，请使用 [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法预取广告。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请务必将广告类型指定为 **InterstitialAdType.display**。
 
     ```js
     if (interstitialAd) {
@@ -164,9 +164,9 @@ ms.locfileid: "58335115"
 
 3. 在你的项目中添加对 Microsoft 广告 SDK 的引用：
 
-    1. 在“解决方案资源管理器”窗口中，右键单击“引用”，然后选择“添加引用...”
-    2.  在“引用管理器”中，展开“通用 Windows”、单击“扩展”，然后选中“适用于 XAML 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
-    3.  在“引用管理器”中，单击“确定”。
+    1. 在**解决方案资源管理器**窗口中，右键单击**引用**，然后选择**添加引用...**
+    2.  在**引用管理器**中，展开**通用 Windows**、单击**扩展**，然后选中**适用于 XAML 的 Microsoft 广告 SDK**（版本 10.0）旁边的复选框。
+    3.  在**引用管理器**中，单击“确定”。
 
 2.  在应用的相应头文件（例如，DirectXPage.xaml.h）中，声明 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 对象和相关的事件处理程序方法。  
 
@@ -175,11 +175,11 @@ ms.locfileid: "58335115"
 3.  在相同的头文件中声明几个字符串字段，这些字段代表间隙广告的应用程序 ID 和广告单元 ID。 以下代码示例将 `myAppId` 和 `myAdUnitId` 字段分配给间隙广告的[测试值](set-up-ad-units-in-your-app.md#test-ad-units)。
 
     > [!NOTE]
-    > 每个 **InterstitialAd** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为控件提供广告，每个广告单元都包含*单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 您的应用程序发布到应用商店之前，必须[替换为这些测试的值与实时值](#release)从合作伙伴中心。
+    > 每个 **InterstitialAd** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为控件提供广告，每个广告单元都包含*单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 Before you publish your app to the Store, you must [replace these test values with live values](#release) from Partner Center.
 
     [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet2)]
 
-4.  在想要添加代码以显示间隙广告的 .cpp 文件中，添加以下命名空间引用。 以下示例假设你要将代码添加到应用的 DirectXPage.xaml.cpp 文件中。
+4.  在要添加代码以显示间隙广告的 .cpp 文件中，添加以下命名空间引用。 以下示例假设你要将代码添加到应用的 DirectXPage.xaml.cpp 文件中。
 
     [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet3)]
 
@@ -187,11 +187,11 @@ ms.locfileid: "58335115"
 
     [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet4)]
 
-7. 如果你想要显示*插播式视频*ad:在你需要间隙广告之前大约 30-60 秒，请使用 [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法预取广告。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请务必将广告类型指定为 **AdType::Video**。
+7. 如果你需要显示*间隙视频*广告：在需要间隙广告之前大约 30-60 秒，请使用 [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法预取广告。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请务必将广告类型指定为 **AdType::Video**。
 
     [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet5)]
 
-    如果你想要显示*插播式横幅*ad:大约 5 到 8 秒之前需要 ad，使用[RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad)方法来预提取 ad。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请务必将广告类型指定为 **AdType::Display**。
+    如果你需要显示*间隙横幅*广告：在需要广告之前大约 5-8 秒，请使用 [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法预取广告。 这样就允许在应该显示广告之前有足够的时间请求和准备广告。 请务必将广告类型指定为 **AdType::Display**。
 
     ```cpp
     m_interstitialAd->RequestAd(AdType::Display, myAppId, myAdUnitId);
@@ -213,17 +213,17 @@ ms.locfileid: "58335115"
 
 1. 确保在应用中对间隙广告的使用遵循我们的[间隙广告指南](ui-and-user-experience-guidelines.md#interstitialbestpractices10)。
 
-2.  在合作伙伴中心，请转到[应用内广告](../publish/in-app-ads.md)页并[创建广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。 对于广告单元类型，请选择**视频间隙**或**横幅间隙**，具体取决于你将要显示的间隙广告类型。 记下广告单元 ID 和应用程序 ID。
+2.  In Partner Center, go to the [In-app ads](../publish/in-app-ads.md) page and [create an ad unit](set-up-ad-units-in-your-app.md#live-ad-units). 对于广告单元类型，请选择**视频间隙**或**横幅间隙**，具体取决于你将要显示的间隙广告类型。 记下广告单元 ID 和应用程序 ID。
     > [!NOTE]
-    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 当在合作伙伴中心创建实时 UWP ad 单元时，ad 单元的应用程序 ID 值将始终匹配您的应用程序 （示例 Store ID 值看上去像 9NBLGGH4R315） Store ID。
+    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 When you create a live UWP ad unit in Partner Center, the application ID value for the ad unit always matches the Store ID for your app (an example Store ID value looks like 9NBLGGH4R315).
 
 3. 你可以选择性地通过配置[中介设置](../publish/in-app-ads.md#mediation)部分（位于[应用内广告](../publish/in-app-ads.md)页面上）中的设置为**间隙广告**启用广告中介。 广告中介显示来自多个广告网络（包括其他付费广告网络，如 Taboola 和 Smaato）的广告及 Microsoft 应用促销活动的广告，从而使你能够最大化你的广告收益和应用促销能力。
 
-4.  在代码中，将测试 ad 单元值替换在合作伙伴中心生成的实时值。
+4.  In your code, replace the test ad unit values with the live values you generated in Partner Center.
 
-5.  [将应用提交](../publish/app-submissions.md)到使用合作伙伴中心在存储区。
+5.  [Submit your app](../publish/app-submissions.md) to the Store using Partner Center.
 
-6.  查看你[广告性能报告](../publish/advertising-performance-report.md)在合作伙伴中心。
+6.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in Partner Center.
 
 <span id="manage" />
 
@@ -236,8 +236,8 @@ ms.locfileid: "58335115"
 
 ## <a name="related-topics"></a>相关主题
 
-* [插播式广告的准则](ui-and-user-experience-guidelines.md#interstitialbestpractices10)
-* [插播式广告中的代码示例C#](interstitial-ad-sample-code-in-c.md)
-* [在 JavaScript 中的插播式广告示例代码](interstitial-ad-sample-code-in-javascript.md)
-* [GitHub 上的广告示例](https://aka.ms/githubads)
-* [设置 ad 单位为你的应用](set-up-ad-units-in-your-app.md)
+* [Guidelines for interstitial ads](ui-and-user-experience-guidelines.md#interstitialbestpractices10)
+* [Interstitial ad sample code in C#](interstitial-ad-sample-code-in-c.md)
+* [Interstitial ad sample code in JavaScript](interstitial-ad-sample-code-in-javascript.md)
+* [GitHub 上的广告示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
+* [Set up ad units for your app](set-up-ad-units-in-your-app.md)

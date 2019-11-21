@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用内购买, IAP, 收据, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cae88e57a61e6d4e982f1eac7e65582861ef5d2
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: a26d98de58c954f1bec588b335483de08404862b
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335005"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259226"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>使用收据验证产品购买
 
@@ -106,13 +106,13 @@ ms.locfileid: "58335005"
 
 |  元素  |  必需  |  数量  |  描述   |
 |-------------|------------|--------|--------|
-|  [AppReceipt](#appreceipt)  |    否        |  0 或 1  |  包含当前应用的购买信息。            |
-|  [ProductReceipt](#productreceipt)  |     否       |  0 或更多    |   包含有关当前应用的应用内购买的信息。     |
-|  签名  |      是      |  1   |   此元素是一种标准 [XML-DSIG 构造](https://go.microsoft.com/fwlink/p/?linkid=251093)。 它包含 **SignatureValue** 元素（其中包含可用于验证收据的签名）和 **SignedInfo** 元素。      |
+|  [AppReceipt](#appreceipt)  |    无        |  0 或 1  |  包含当前应用的购买信息。            |
+|  [ProductReceipt](#productreceipt)  |     无       |  0 或更多    |   包含有关当前应用的应用内购买的信息。     |
+|  签名  |      “是”      |  1   |   此元素是一种标准 [XML-DSIG 构造](https://www.w3.org/TR/xmldsig-core/)。 它包含 **SignatureValue** 元素（其中包含可用于验证收据的签名）和 **SignedInfo** 元素。      |
 
 **Receipt** 具有以下必属性。
 
-|  特性  |  描述   |
+|  属性  |  描述   |
 |-------------|-------------------|
 |  **版本**  |    收据的版本号。            |
 |  **CertificateId**  |     用于对收据进行签名的证书指纹。          |
@@ -127,7 +127,7 @@ ms.locfileid: "58335005"
 
 **AppReceipt** 具有以下属性。
 
-|  特性  |  描述   |
+|  属性  |  描述   |
 |-------------|-------------------|
 |  **Id**  |    标识购买。           |
 |  **AppId**  |     操作系统用于该应用的程序包系列名称值。           |
@@ -142,7 +142,7 @@ ms.locfileid: "58335005"
 
 **ProductReceipt** 具有以下属性。
 
-|  特性  |  描述   |
+|  属性  |  描述   |
 |-------------|-------------------|
 |  **Id**  |    标识购买。           |
 |  **AppId**  |     标识应用，用户通过该应用进行购买。           |
