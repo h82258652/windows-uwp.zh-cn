@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: ba99abd906bd84a91fae5da1505ac8845dd5b99c
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 5086353adbc07e265f02e12f998ae655cd512d48
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282469"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258980"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store 策略
 
@@ -36,7 +36,7 @@ ms.locfileid: "72282469"
 
 你的产品对于亿万客户的使用体验而言至关重要。 我们迫不及待想要看到你的作品，并且十分乐意向全世界推广你的产品。
 
-如果你想提供关于这些策略的反馈，请在[我们的论坛](http://go.microsoft.com/fwlink/p/?LinkId=224196)上发表评论告知我们。 我们会认真对待每一条评论。
+如果你想提供关于这些策略的反馈，请在[我们的论坛](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=windowsstore)上发表评论告知我们。 我们会认真对待每一条评论。
 
 
 ## <a name="table-of-contents"></a>目录
@@ -114,7 +114,7 @@ ms.locfileid: "72282469"
 
 **10.2.3**
 
-你的产品不得包含或启用恶意软件（Microsoft 在[不需要的软件和恶意软件](http://go.microsoft.com/fwlink/?LinkId=821298)中对恶意软件进行了定义）。
+你的产品不得包含或启用恶意软件（Microsoft 在[不需要的软件和恶意软件](https://docs.microsoft.com/windows/security/threat-protection/intelligence/criteria)中对恶意软件进行了定义）。
 
 **10.2.4**
 
@@ -291,11 +291,11 @@ ms.locfileid: "72282469"
 
 **10.10.2**
 
-如果你通过合作伙伴中心内的广告活动功能购买或创建促销性广告活动来促销你的产品，则你提供给 Microsoft 的所有广告资料（包括任何相关的登录页面）必须符合 Microsoft [创意规范策略](http://go.microsoft.com/fwlink/p/?LinkId=532593)和[创意认可策略](http://go.microsoft.com/fwlink/p/?LinkId=532595)。
+如果你通过合作伙伴中心内的广告活动功能购买或创建促销性广告活动来促销你的产品，则你提供给 Microsoft 的所有广告资料（包括任何相关的登录页面）必须符合 Microsoft [创意规范策略](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-specs)和[创意认可策略](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies)。
 
 **10.10.3**
 
-你的产品所显示的所有广告内容都必须遵循 Microsoft 的 [创意认可策略](http://go.microsoft.com/fwlink/p/?LinkId=532595)。
+你的产品所显示的所有广告内容都必须遵循 Microsoft 的 [创意认可策略](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies)。
 
 如果你的产品需要显示广告，则所显示的所有内容都必须符合[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的广告要求，其中包括以下要求：
 
@@ -309,7 +309,7 @@ ms.locfileid: "72282469"
 
 **10.10.6**
 
-如果你的产品面向 13 岁以下的儿童（如[儿童在线隐私保护法](http://go.microsoft.com/fwlink/p/?LinkID=623015)中定义），则必须在合作伙伴中心中将这一事实通知 Microsoft，并且确保产品中所显示的所有广告内容都适合 13 岁以下的儿童。
+如果你的产品面向 13 岁以下的儿童（如[儿童在线隐私保护法](https://www.ftc.gov/tips-advice/business-center/privacy-and-security/children%27s-privacy)中定义），则必须在合作伙伴中心中将这一事实通知 Microsoft，并且确保产品中所显示的所有广告内容都适合 13 岁以下的儿童。
 
 ### <a name="1011-mobile-voice-plans"></a>10.11 移动语音计划
 
@@ -330,11 +330,11 @@ Microsoft Edge 扩展遵循以下附加要求：
 
 **10.13.1**
 
-面向 Xbox One 的游戏产品（包括主要为其他设备或平台上运行的游戏提供远程玩/控制游戏功能的产品）必须通过 [Xbox Live 创意者](https://go.microsoft.com/fwlink/?linkid=844722)或 [ID@Xbox](http://go.microsoft.com/fwlink/?LinkId=821742) 计划使用 Xbox Live 服务。
+面向 Xbox One 的游戏产品（包括主要为其他设备或平台上运行的游戏提供远程玩/控制游戏功能的产品）必须通过 [Xbox Live 创意者](https://go.microsoft.com/fwlink/?linkid=844722)或 [ID@Xbox](https://www.xbox.com/Developers/id) 计划使用 Xbox Live 服务。
 
 **10.13.2**
 
-支持在 Xbox One 设备上跨玩家交流或同步网络播放的游戏产品必须使用 Xbox Live，且须通过 [ID@Xbox](http://go.microsoft.com/fwlink/?LinkId=821742) 计划获得批准。
+支持在 Xbox One 设备上跨玩家交流或同步网络播放的游戏产品必须使用 Xbox Live，且须通过 [ID@Xbox](https://www.xbox.com/Developers/id) 计划获得批准。
 
 **10.13.3**
 
@@ -356,7 +356,7 @@ Xbox One 上的游戏产品不得显示经由非 Xbox Live 服务获取的备用
 
 对于使用 Xbox Live 和提供多玩家游戏的游戏产品，用户生成的内容或用户通信应遵守：
 - 用户登录到 Xbox Live 之前不得允许开始游戏。
-- 必须遵守[家长和服务的管控](https://go.microsoft.com/fwlink/?linkid=860295)。
+- 必须遵守[家长和服务的管控](https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/check-user-privileges-in-unity)。
 
 **10.13.7**
 
@@ -385,7 +385,7 @@ Xbox Live 的游戏产品必须遵守针对服务使用量的以下要求：
 - 游戏中必须合理使用服务和用户数据。 此数据包括（但不限于）使用情况数据、帐户标识符以及其他任何个人身份数据、统计数据、得分、评分、排名、与其他用户的联络信息和与用户的社交活动相关的其他任何数据。
 - 不得存储任何 Xbox Live 社交图片数据（例如，好友列表），但已将其 Xbox Live 帐户与你的游戏关联的用户的帐户标识符除外。
 - 当你将你的游戏从我们的服务中删除时，或当用户取消其 Xbox Live 帐户与你的游戏的关联时，请删除所有帐户标识符。 请勿将服务或用户数据（即使是匿名的、汇总的或衍生的数据）共享到任何广告网络、数据中介或其他广告或盈利相关的服务。
-- 当 Microsoft 收到来自最终用户的删除个人数据请求时，我们将通过提供最终用户标识符列表的方式和你沟通这些请求。 你必须至少每 30 天检查一次列表，以确保收到所有的删除请求，列表中提供的信息只可用于满足最终用户的删除请求。 你可以通过[删除的帐户列表工具](https://aka.ms/xbox-deleted)查找相关流程的详情。
+- 当 Microsoft 收到来自最终用户的删除个人数据请求时，我们将通过提供最终用户标识符列表的方式和你沟通这些请求。 你必须至少每 30 天检查一次列表，以确保收到所有的删除请求，列表中提供的信息只可用于满足最终用户的删除请求。 你可以通过[删除的帐户列表工具](https://forums.xboxlive.com/users/login.html)查找相关流程的详情。
 
 ### <a name="1014-account-type"></a>10.14 帐户类型
 
