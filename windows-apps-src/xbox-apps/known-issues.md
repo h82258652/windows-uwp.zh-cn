@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
-ms.openlocfilehash: 01bc72051e9efa69adbbab574b932da829c83e72
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 34425a0e754d62a1d9d7716bca3576463aec3ba5
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626632"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259729"
 ---
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 开发人员计划上的 UWP 已知问题
 
 本主题介绍 Xbox One 开发人员计划上的 UWP 已知问题。 有关此计划的详细信息，请参阅 [Xbox 上的 UWP](index.md)。 
 
-\[如果您此处来自 API 参考主题中的链接，并且希望通用设备系列的 API 信息，请参阅[目前还不支持在 Xbox 的 UWP 功能](https://go.microsoft.com/fwlink/?LinkID=760755)。\]
+\[如果你从 API 参考主题的链接中获得，并且正在查找通用设备家族 API 信息，请参阅[Xbox 上尚不支持的 UWP 功能](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN)。\]
 
 下表重点介绍可能遇到的某些已知问题，但该列表并没有包括所有问题。 
 
@@ -60,7 +60,7 @@ System.UnauthorizedAccessException: Access is denied. (Excep_FromHResult 0x80070
 
 ## <a name="uwp-api-coverage"></a>UWP API 覆盖范围
 
-并非所有 UWP API 在 Xbox 上都受支持。 对于我们已知不起作用的 API 列表，请参阅 [Xbox 上尚不支持的 UWP 功能](https://go.microsoft.com/fwlink/p/?LinkId=760755)。 如果你发现其他 API 的问题，请通过论坛报告它们。 
+并非所有 UWP API 在 Xbox 上都受支持。 对于我们已知不起作用的 API 列表，请参阅 [Xbox 上尚不支持的 UWP 功能](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN)。 如果你发现其他 API 的问题，请通过论坛报告它们。 
 
 
 ## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>导航到 WDP 导致证书警告
@@ -116,5 +116,5 @@ namespace TestDNLA {
 ```
 
 ## <a name="see-also"></a>另请参阅
-- [常见问题](frequently-asked-questions.md)
-- [在 Xbox One 上 UWP](index.md)
+- [常见问题解答](frequently-asked-questions.md)
+- [Xbox one 上的 UWP](index.md)

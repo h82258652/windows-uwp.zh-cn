@@ -8,18 +8,18 @@ keywords: 视觉反馈, 焦点反馈, 触摸反馈, 接触可视化, 输入, 交
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 56260eb09bc834b2a71e9889b91f0bc439edaa30
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: bba80403934987569c25b96eced9a610226431b5
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340460"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257914"
 ---
 # <a name="guidelines-for-visual-feedback"></a>视觉反馈指南
 
 当检测、解释和处理用户的交互时，可使用视觉反馈显示给用户。 视觉反馈可通过鼓励交互来帮助用户。 它将指示交互是否成功，以加强用户的控制感觉。 它还可以传送系统状态并减少错误。
 
-> **重要的 API**："Windows.[**输入**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)"、"windows" [ **、"** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input) [**ui**](https://docs.microsoft.com/uwp/api/Windows.UI.Core) "
+> **重要 API**：[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)、[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)、[**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
 
 ## <a name="recommendations"></a>建议
 
@@ -65,7 +65,7 @@ ms.locfileid: "71340460"
 **边框属性**
 
 高可见性焦点视觉分为两部分：主边框和辅助边框。 主边框为 **2px** 粗，在辅助边框的*外部*周围运行。 辅助边框为 **1px** 粗，在主边框的*内部*周围运行。
-@no__t 0High 可见性焦点视觉对象 redlines @ no__t-1
+![高可见性焦点视觉对象 redlines](images/FocusRectRedlines.png)
 
 若要更改任一边框类型（主或辅助）的粗细，请分别使用 **FocusVisualPrimaryThickness** 或 **FocusVisualSecondaryThickness**。
 ```XAML
@@ -73,7 +73,7 @@ ms.locfileid: "71340460"
 ```
 ![高可见性焦点视觉边距厚度](images/FocusMargin.png)
 
-边距是类型 [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness) 的属性，因此可以自定义边距以仅显示在控件的特定侧。 见下方：@no__t 0High 可见性聚焦视觉对象边距粗细仅限 @ no__t-1
+边距是类型 [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness) 的属性，因此可以自定义边距以仅显示在控件的特定侧。 请参阅下面的内容： ![高可见性重点聚焦视觉边距粗细仅限下](images/FocusThicknessSide.png)
 
 边距是控件的视觉边界与焦点视觉*辅助边框*的开始部分之间的间距。 默认边距与控件边界的距离为 **1px**。 可以通过更改 **FocusVisualMargin** 属性来基于每个控件编辑此边距：
 ```XAML
@@ -115,20 +115,20 @@ ms.locfileid: "71340460"
 * [自定义用户交互](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
 **示例**
-* [基本输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [焦点视觉对象示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
 **存档示例**
-* [Input：XAML 用户输入事件示例 @ no__t-0
-* [Input：设备功能示例 @ no__t-0
-* [Input：触控命中测试示例 @ no__t-0
-* [XAML 滚动、平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Input：简体中文 ink 示例 @ no__t-0
-* [Input：Windows 8 手势示例 @ no__t-0
-* [Input：操作和手势（C++）示例 @ no__t-1
-* [DirectX 触摸输入示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [输入： XAML 用户输入事件示例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [输入：设备功能示例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [输入：触控命中测试示例](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+* [XAML 滚动、平移和缩放示例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [输入：简化墨迹示例](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+* [输入： Windows 8 手势示例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+* [输入：操作和手势（C++）示例](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+* [DirectX 触摸输入示例](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
  
 
  

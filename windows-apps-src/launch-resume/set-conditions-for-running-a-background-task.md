@@ -10,16 +10,16 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 88836ac0363001e86c17486e1527b96a4eac0faa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 618c8891551d851c27414968be76fb465eb89bf0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371847"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260421"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>设置后台任务的运行条件
 
-**重要的 Api**
+**重要的 API**
 
 - [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition)
 - [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)
@@ -31,11 +31,11 @@ ms.locfileid: "66371847"
 
 对后台任务设置条件可阻止任务不必要地运行，从而节省电池电量和 CPU。 例如，如果你的后台任务在计时器上运行并要求 Internet 连接，请在注册该任务之前将 **InternetAvailable** 条件添加到 [**TaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)。 仅当计时器时间过去*以及* Internet 可用时运行后台任务，这有助于防止任务不必要地使用系统资源和电池使用时间。
 
-还可以通过在同一 [**TaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 上多次调用 **AddCondition** 组合多个条件。 注意不要添加冲突条件，如 **UserPresent** 和 **UserNotPresent**。
+还可以通过在同一TaskBuilder[**上多次调用**AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 组合多个条件。 注意不要添加冲突条件，如 **UserPresent** 和 **UserNotPresent**。
 
 ## <a name="create-a-systemcondition-object"></a>创建 SystemCondition 对象
 
-本主题假定你的后台任务已与你的应用关联，并且你的应用已包含用于创建名为 **taskBuilder** 的 [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 对象的代码  如果需要先创建一个后台任务，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)或[创建和注册进程外后台任务](create-and-register-a-background-task.md)。
+本主题假定你的后台任务已与你的应用关联，并且你的应用已包含用于创建名为 [taskBuilder**的**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)BackgroundTaskBuilder 对象的代码  如果需要先创建一个后台任务，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)或[创建和注册进程外后台任务](create-and-register-a-background-task.md)。
 
 本主题适用于在进程外运行的后台任务以及在前台应用所在的同一进程中运行的那些后台任务。
 
@@ -105,9 +105,9 @@ BackgroundTaskRegistration ^ task = taskBuilder->Register();
 若要添加多个条件，你的应用需要多次调用 [**AddCondition**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.addcondition) 方法。 任务注册生效之前，必须进行这些调用。
 
 > [!NOTE]
-> 请注意不要将冲突条件添加到后台任务。
+> 请注意不要将冲突的条件添加到后台任务。
 
-以下代码片段显示了创建和注册后台任务的上下文中的多个条件。
+以下代码片段显示了在创建和注册后台任务的上下文中出现的多个条件。
 
 ```csharp
 // Set up the background task.
@@ -178,7 +178,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ## <a name="remarks"></a>备注
 
 > [!NOTE]
-> 选择后台任务的条件，以便仅在运行时它所需要的以及时它不应不会运行。 有关不同后台任务条件的描述，请参阅 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
+> 选择后台任务的条件，使其仅在需要时才运行，不应在不运行的情况下运行。 有关不同后台任务条件的描述，请参阅 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -194,4 +194,4 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
 * [调试后台任务](debug-a-background-task.md)
-* [如何在触发挂起、 继续和后台 UWP 应用中的事件 （在调试）](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在 UWP 应用中触发挂起、继续和后台事件（调试时）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)

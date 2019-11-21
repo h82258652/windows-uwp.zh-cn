@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f5b87590736c4875214819f5c60a05edd47b1476
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 8b566b1960435a856b82a7be605ef5e1f7ba86e2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339510"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257795"
 ---
 # <a name="accessible-text-requirements"></a>辅助文本要求  
 
@@ -28,7 +28,7 @@ ms.locfileid: "71339510"
 ## <a name="contrast-ratios"></a>对比率  
 尽管用户始终可以选择切换到高对比度模式，但是你的应用的文本设计应当将该选项视为最后的方法。 更好的做法是确保应用文本满足某些为文本及其背景之间对比度级别制定的指导准则。 对比度级别基于不考虑色调的确定性技术进行评估。 例如，如果文本为红色，而背景为绿色，则具有色盲障碍的用户可能无法读取该文本。 检查和更正对比率可以防止出现这些类型的辅助功能问题。
 
-此处所述的文本对比度建议基于 web 可访问性标准，@no__t 0G18：确保文本（和文本的图像）和文本 @ no__t 的背景之间存在至少4.5：1之间的对比度。 该指南在 *WCAG 2.0 的 W3C 技术*规范中有说明。
+此处记录的文本对比度建议基于 Web 辅助功能标准 [G18：确保文本（和文本的图像）和文本后面的背景之间的对比率至少为 4.5:1](https://www.w3.org/TR/WCAG20-TECHS/G18.html)。 该指南在 *WCAG 2.0 的 W3C 技术*规范中有说明。
 
 为了考虑辅助功能，可见文本与背景的发光度对比率必须最低为 4.5:1。 例外情况包括徽标和附带文本，例如作为非活动 UI 组件一部分的文本。
 
@@ -70,7 +70,7 @@ UWP 应用可以使用以下默认元素（通常称为 *text* 元素或 *texted
 * 能够将“讲述人”焦点移动到列表
 * 能够使用所有其他阅读模式浏览建议
 
-![Suggestion list @ no__t-1<br/>
+![建议列表](images/autosuggest-list.png)<br/>
 _建议列表示例_
 
 <span id="Implementing_auto-suggest"/>
@@ -85,17 +85,17 @@ _建议列表示例_
 **默认选择**  
 如果在列表中设置了默认选择，则“讲述人”会在桌面应用中查找 [**UIA_SelectionItem_ElementSelectedEventId**](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-event-ids) 事件或在 UWP 应用中查找要引发的 [**AutomationEvents.SelectionItemPatternOnElementSelected**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationevents) 事件。 每次选择更改时，如果用户键入其他字母并且建议已更新，或者如果用户浏览该列表，则应引发 **ElementSelected** 事件。
 
-![List 与默认选择 @ no__t-1<br/>
+默认选择 ![列表](images/autosuggest-default-selection.png)<br/>
 _其中存在默认选择的示例_
 
 **无默认选择**  
 如果没有默认选择（如在“天气”应用的位置框中），则每次更新列表时，“讲述人”都会在列表上查找 [**UIA_LayoutInvalidatedEventId**](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-event-ids) 事件（适用于桌面）或查找要引发的 [**LayoutInvalidated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationevents) 事件（适用于 UWP）。
 
-![List，无默认选择 @ no__t-1<br/>
+无默认选择的 ![列表](images/autosuggest-no-default-selection.png)<br/>
 _没有默认选择的示例_
 
 ### <a name="xaml-implementation"></a>XAML 实现  
-如果你使用的是默认 XAML [**AutosuggestBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)，则已为你关联了所有内容。 如果你要使用 [**TextBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) 和列表自行实现自动建议体验，则需要在 **TextBox** 上将列表设置为 [**AutomationProperties.ControlledPeers**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers)。 必须在每次添加或删除 [**ControlledPeers**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) 属性时触发该属性的 **AutomationPropertyChanged** 事件，此外还必须引发你自己的 [**SelectionItemPatternOnElementSelected**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationevents) 事件或 [**LayoutInvalidated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationevents) 事件，具体取决于方案类型（已在本文的前面部分介绍过）。
+如果你使用的是默认 XAML [**AutosuggestBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)，则已为你关联了所有内容。 如果你要使用 [**TextBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) 和列表自行实现自动建议体验，则需要在 [TextBox**上将列表设置为**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers)AutomationProperties.ControlledPeers。 必须在每次添加或删除ControlledPeers[**属性时触发该属性的**AutomationPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) 事件，此外还必须引发你自己的 [**SelectionItemPatternOnElementSelected**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationevents) 事件或 [**LayoutInvalidated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationevents) 事件，具体取决于方案类型（已在本文的前面部分介绍过）。
 
 ### <a name="html-implementation"></a>HTML 实现  
 如果你使用的是 HTML 中的内部控件，则已为你映射了 UIA 实现。 以下是已为你关联的实现示例。
@@ -126,7 +126,7 @@ _没有默认选择的示例_
 
 当字体使用的字体太小时，用户可能很难阅读应用程序中的文本，因此请确保应用程序中的任何文本在第一位置合理。
 
-完成这一显而易见后，Windows 会提供各种辅助功能和设置，用户可利用这些工具和设置，并调整其自身需求和读取文本的首选项。 这些问题包括：
+完成这一显而易见后，Windows 会提供各种辅助功能和设置，用户可利用这些工具和设置，并调整其自身需求和读取文本的首选项。 这些地方包括：
 
 * "放大镜" 工具，用于放大 UI 的选定区域。 你应确保应用中的文本布局不会使使用放大镜进行读取变得困难。
 * 设置中的全局缩放和分辨率设置 **-> 系统 > 显示-> 比例和布局**。 确切的可用大小调整选项会有所不同，具体取决于显示设备的功能。
@@ -169,7 +169,7 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 }
 ```
 
-**TextScaleFactor**的值是范围 \[1，2.25 @ no__t-2 范围内的双精度值。 最小的文本通过此数量放大。 例如，你可以使用此值缩放图像以匹配文本。 但是请记住，并非所有文本都通过相同的系数来缩放。 一般来说，开始时的文本越大，它受缩放的影响越小。
+**TextScaleFactor**的值是 \[1，2.25\]范围内的 double。 最小的文本通过此数量放大。 例如，你可以使用此值缩放图像以匹配文本。 但是请记住，并非所有文本都通过相同的系数来缩放。 一般来说，开始时的文本越大，它受缩放的影响越小。
 
 这些类型具有 **IsTextScaleFactorEnabled** 属性：  
 * [**System.windows.controls.contentpresenter>** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter)
@@ -186,6 +186,6 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 * [文本缩放](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
 * [辅助功能](accessibility.md)
 * [基本辅助功能信息](basic-accessibility-information.md)
-* [XAML 文本显示示例](https://go.microsoft.com/fwlink/p/?linkid=238579)
-* [XAML 文本编辑示例](https://go.microsoft.com/fwlink/p/?linkid=251417)
-* [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570) 
+* [XAML 文本显示示例](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)
+* [XAML 文本编辑示例](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
+* [XAML 辅助功能示例](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d) 

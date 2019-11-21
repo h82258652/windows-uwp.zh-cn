@@ -8,21 +8,21 @@ keywords: 键盘, 指针, 输入, 用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d5de2af483ca000909e60e94fc41d2a88a405219
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 25398f0b48e88e2cebe81f62cc62ac1d9bd92d5c
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365174"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258218"
 ---
 # <a name="touch-interactions"></a>触摸交互
 
 
 以“触摸将是用户的主要输入方法”为初衷设计应用。 如果你使用 UWP 控件，不要求额外编程，即可支持触摸板、鼠标和笔/触笔，因为 UWP 应用免费提供此类支持。
 
-但是请记住，为触摸优化的 UI 并非总是优于传统 UI。 两者都具有特定于技术和应用的优缺点。 在转换到主要使用触摸的 UI 时，重要的是了解触摸（包括触摸板）、笔/触笔、鼠标和键盘输入之间的核心差别。
+但是请记住，为触摸优化的 UI 并非总是优于传统 UI。 两者都具有特定于技术和应用的优缺点。 在转换到主要使用触摸的 UI 时，了解触摸（包括触摸板）、笔/触笔、鼠标和键盘输入之间的核心差别很重要。
 
-> **重要的 API**：[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)， [ **Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)， [ **Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
+> **重要 API**：[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)、[**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)、[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
 
 
 许多设备具有多点触摸屏幕，它们支持使用一根或多根手指（或触摸接触）作为输入。 触摸接触以及其移动会被解释为触摸手势和操作，以支持各种用户交互。
@@ -74,13 +74,13 @@ ms.locfileid: "66365174"
 
 
 
-**请注意**  间接输入已超过 25 年的优化的权益。 设计诸如悬停触发的工具提示之类的功能，是为了解决触摸板、鼠标、笔/触笔以及键盘输入特有的 UI 浏览。 此类 UI 功能已针对触摸输入提供的丰富体验进行了重新设计，不会对这些其他设备的用户体验产生负面影响。
+**请注意**   间接输入具有25年以上的优化权益。 设计诸如悬停触发的工具提示之类的功能，是为了解决触摸板、鼠标、笔/触笔以及键盘输入特有的 UI 浏览。 此类 UI 功能已针对触摸输入提供的丰富体验进行了重新设计，不会对这些其他设备的用户体验产生负面影响。
 
  
 
 ## <a name="use-touch-feedback"></a>用户触摸反馈
 
-适当的可视反馈，在与您的应用程序之间的交互过程可帮助用户识别、 学习和适应应用程序和 Windows 平台如何解释及其交互。 视觉反馈可以指示成功交互、延迟系统状态、加强控制感觉、减少错误、帮助用户了解系统和输入设备并鼓励交互。
+与应用交互的过程中相应的可视反馈可帮助用户识别、学习和适应应用和 Windows 平台如何解释交互。 视觉反馈可以指示成功交互、延迟系统状态、加强控制感觉、减少错误、帮助用户了解系统和输入设备并鼓励交互。
 
 当用户依赖触摸屏输入来进行要求基于位置的准确活动时，视觉反馈非常重要。 无论何时何地检测到触摸输入都显示反馈，以帮助用户了解应用及其控件定义的任何自定义目标启发。
 
@@ -151,7 +151,7 @@ ms.locfileid: "66365174"
 -   交互应该支持复合操作。 例如，在拖动手指进行平移时收缩即可缩放。
 -   不应按时间来区分交互。 相同的交互应该具有相同的结果，而与执行该操作所花费的时间无关。 基于时间的激活功能为用户引入了强制延迟，因此影响了直接操作的沉浸式属性和系统响应的感知。
 
-    **请注意**  的例外是在其中使用超时的特定交互来帮助学习和探索 （有关示例，请按住）。
+    **请注意**，在这种情况  下，您可以使用特定的定时交互来协助学习和探索（例如，按下并保持）。
 
      
 
@@ -238,7 +238,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 
 以下示例显示如何使用 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)、[**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 和 [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件来处理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 对象上的点击交互。
 
-首先，在 Extensible Application Markup Language (XAML) 中创建名为 `touchRectangle` 的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)。
+首先，在 Extensible Application Markup Language (XAML) 中创建名为 [ 的Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)`touchRectangle`。
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -286,7 +286,7 @@ Public Sub New()
 End Sub
 ```
 
-最后，[**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件处理程序增加 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 和 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)，同时 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 和 [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件处理程序将 **Height** 和 **Width** 设置回其初始值。
+最后，[**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件处理程序增加 [**Rectangle**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 的 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 和 [**Width**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)，同时 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 和 [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件处理程序将 **Height** 和 **Width** 设置回其初始值。
 
 ```cpp
 // Handler for pointer exited event.
@@ -418,11 +418,11 @@ End Sub
 
 | 事件或类                                                                                               | 描述                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| [**ManipulationStarting 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)                                   | 在首次创建操作处理器时发生。                                                                                  |
-| [**ManipulationStarted 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)                                     | 在输入设备在 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 上开始操作时发生。                                            |
+| [**System.windows.uielement.manipulationstarting> 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)                                   | 在首次创建操作处理器时发生。                                                                                  |
+| [**System.windows.uielement.manipulationstarted> 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)                                     | 在输入设备在 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 上开始操作时发生。                                            |
 | [**ManipulationDelta 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)                                         | 在输入设备在操作期间更改位置时发生。                                                                      |
-| [**ManipulationInertiaStarting 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastartingevent)                | 在输入设备在操作期间与 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 对象失去联系和延迟开始时发生。 |
-| [**ManipulationCompleted 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)                                 | 在 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 上的操作和延迟完成时发生。                                          |
+| [**System.windows.uielement.manipulationinertiastarting> 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastartingevent)                | 在输入设备在操作期间与 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 对象失去联系和延迟开始时发生。 |
+| [**System.windows.uielement.manipulationcompleted> 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)                                 | 在 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 上的操作和延迟完成时发生。                                          |
 | [**ManipulationStartingRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs)               | 提供 [**ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting) 事件的数据。                                         |
 | [**ManipulationStartedRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs)                 | 提供 [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted) 事件的数据。                                           |
 | [**ManipulationDeltaRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs)                     | 提供 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件的数据。                                               |
@@ -436,13 +436,13 @@ End Sub
 
 接下来，引发一个或多个 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件。 例如，先触摸屏幕，然后在屏幕上拖动手指。 最后，在完成交互时引发 [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted) 事件。
 
-**请注意**  如果没有触摸屏监视器，可以使用鼠标和鼠标滚轮接口在模拟器中测试操作事件代码。
+**注意**  如果没有触摸屏监视器，可以使用鼠标和鼠标滚轮界面在模拟器中测试操作事件代码。
 
  
 
 以下示例演示如何使用 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件来处理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 上的滑动交互以及在屏幕上移动它。
 
-首先，采用 XAML 格式创建一个名为 `touchRectangle` 的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)，其 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 和 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 为 200。
+首先，采用 XAML 格式创建一个名为 [ 的Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)`touchRectangle`，其 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 和 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 为 200。
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -452,7 +452,7 @@ End Sub
 </Grid>
 ```
 
-接下来，创建一个名为 `dragTranslation` 的全局 [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)，用于转换 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)。 在 **Rectangle** 上指定一个 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件侦听器，并将 `dragTranslation` 添加到 **Rectangle** 的 [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)。
+接下来，创建一个名为 [ 的全局TranslateTransform](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)`dragTranslation`，用于转换 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)。 在 [Rectangle**上指定一个**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)ManipulationDelta 事件侦听器，并将 `dragTranslation` 添加到 [Rectangle**的**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)RenderTransform。
 
 ```cpp
 // Global translation transform used for changing the position of 
@@ -591,17 +591,17 @@ End Sub
 
 **示例**
 
-* [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [焦点视觉对象示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
 **存档示例**
 
-* [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：XAML 用户输入的事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [输入：笔势和 GestureRecognizer 操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [输入：设备功能示例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [输入： XAML 用户输入事件示例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [XAML 滚动、平移和缩放示例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [输入：与 GestureRecognizer 的手势和操作](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
  
 
  

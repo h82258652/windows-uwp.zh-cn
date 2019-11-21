@@ -8,43 +8,43 @@ ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 34f8d15b971cc9ed286471010a21d1b44b84af13
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9b1cac04405f18aaf3c8f39f9bfce2b965577807
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363473"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257942"
 ---
-# <a name="guidelines-for-touch-targets"></a>触摸目标的准则
+# <a name="guidelines-for-touch-targets"></a>触控目标指南
 
-在通用 Windows 平台 (UWP) 应用程序中的所有交互用户界面元素必须足够大，以便用户能够准确地访问和使用，无论何种设备类型或输入方法。
+通用 Windows 平台（UWP）应用程序中的所有交互 UI 元素都必须足够大，以便用户能够准确地访问和使用，而不考虑设备类型或输入方法。
 
-支持触摸输入 （和触控接触区域的相对不精确的性质） 需要目标大小和控制布局方面进一步优化，因为更大、 更复杂的报告的触控数字化器的输入数据集用于确定用户的预期 （或最可能的） 目标。
+支持触摸输入（以及触摸联系人区域相对不精确的性质）需要进一步优化目标大小和控件布局，因为使用触控数字化器报告的较大、更复杂的输入数据集来确定用户的预期（或最可能的）目标。
 
-所有 UWP 控件在设计时默认触摸目标大小和布局，您可以构建视觉平衡且具有吸引力的应用程序的舒适、 易于使用，和置信度。
+所有 UWP 控件都是使用默认的触摸目标大小和布局设计的，使你能够构建视觉上的、易于使用的、易于使用和信心百倍的应用。
 
-在本主题中，我们将介绍这些默认行为，以便您可以设计您的应用程序的使用平台控件和自定义控件 （如果您的应用程序需要） 的最大可用性。
+在本主题中，我们将介绍这些默认行为，以便可以使用平台控件和自定义控件（应用程序是否需要）来设计应用程序的最大可用性。
 
-> **重要的 API**：[**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)， [ **Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)， [ **Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
+> **重要 API**：[**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)、[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)、[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
-## <a name="fluent-standard-sizing"></a>Fluent 标准调整大小
+## <a name="fluent-standard-sizing"></a>Fluent Standard 大小
 
-*Fluent 标准大小*旨在提供信息密度和用户舒适之间的平衡。 实际上，在屏幕上的所有项都对齐到 40 x 40 个有效像素 (epx) 目标 UI 元素与网格都对齐并进行相应调整，可以基于系统级别缩放。
+创建 Fluent Standard 大小是为了在信息密度与用户舒适之间提供平衡。 实际上，屏幕上的所有项都对齐到 40x40 有效像素 (epx) 目标，这使 UI 元素可与网格对齐并基于系统级别缩放进行相应缩放。
 
 > [!NOTE]
->有效像素和缩放的详细信息，请参阅[UWP 应用程序设计简介](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
+>有关有效像素和缩放的更多信息，请参阅 [UWP 应用设计简介](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
 >
-> 系统级别缩放的详细信息，请参阅[对齐、 边距、 填充](../layout/alignment-margin-padding.md)。
+> 有关系统级别缩放的更多信息，请参阅[对齐、边距和填充](../layout/alignment-margin-padding.md)。
 
-## <a name="fluent-compact-sizing"></a>Fluent Compact 大小调整
+## <a name="fluent-compact-sizing"></a>Fluent Compact 大小
 
-应用程序可显示的信息密度并更高级别的*Fluent Compact 大小调整*。 Compact 大小调整将对齐到 32 x 32 epx 目标，它允许进行更紧密的网格并相应地基于系统级别缩放进行缩放的 UI 元素的 UI 元素。
+应用程序可以通过*简洁的精简大小*显示更高级别的信息密度。 精简调整大小将 UI 元素对齐到 32x32 window.epx.codesnippet 目标，这允许 UI 元素与更紧密的网格对齐，并根据系统级缩放适当地缩放。
 
 ### <a name="examples"></a>示例
 
-可以在页面或网格级别应用 compact 大小调整。
+可以在页面或网格级别应用精简大小调整。
 
-### <a name="page-level"></a>页级别
+### <a name="page-level"></a>页面级别
 
 ```xaml
 <Page.Resources>
@@ -64,37 +64,37 @@ ms.locfileid: "66363473"
 
 ## <a name="target-size"></a>目标大小
 
-一般情况下，将在触摸目标大小设置为 7.5 mm 方形范围 （135 PPI 显示在 x 缩放停滞 1.0 40 x 40 像素）。 通常情况下，UWP 控件符合 7.5 mm 触摸目标 （这可以因特定的控件和任何常见使用模式）。 请参阅[控制大小和密度](../style/spacing.md)以了解详细信息。
+通常情况下，将 "触摸目标大小" 设置为 7.5 mm 正方形范围（135 PPI 显示屏上的40x40 像素，以 1.0 x 缩放达到平稳）。 通常，UWP 控件与 7.5 mm touch 目标保持一致（这可能因特定控件和任何常见使用模式而异）。 有关更多详细信息，请参阅[控件大小和密度](../style/spacing.md)。
 
-可以根据你的特定方案的需要调整这些目标大小的建议。 下面是一些要考虑的事项：
+可以根据你的特定方案的需要调整这些目标大小的建议。 下面是一些需要考虑的事项：
 
-- 频率的收尾工作了-考虑进行重复或经常按下大于最小大小的目标。
-- 错误结果-如果触摸在错误导致严重后果的目标应具有更高的填充和放置最荒谬不过的内容区域的边缘。 尤其是经常触摸的目标更是如此。
-- 内容区域中的位置。
-- 窗体身份和屏幕大小。
-- 手指状况。
+- 接触频率-考虑将重复或频繁按下的目标设为大于最小大小。
+- 错误结果-如果错误发生的情况下出现严重后果，则目标应具有更大的填充量，并在内容区域的边缘进一步放置。 尤其是经常触摸的目标更是如此。
+- 在内容区域中的位置。
+- 外形规格和屏幕大小。
+- Finger 状态。
 - 触摸可视化效果。
 
 ## <a name="related-articles"></a>相关文章
 
 - [UWP 应用设计简介](../basics/design-and-ui-intro.md)
-- [控件的大小和密度](../style/spacing.md)
-- [对齐、 边距、 填充](../layout/alignment-margin-padding.md)
+- [控件大小和密度](../style/spacing.md)
+- [对齐、边距和填充](../layout/alignment-margin-padding.md)
 
 ### <a name="samples"></a>示例
 
-- [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-- [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-- [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-- [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [焦点视觉对象示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
 ### <a name="archive-samples"></a>存档示例
 
-- [输入：XAML 用户输入的事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-- [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-- [输入：触控命中测试示例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-- [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-- [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
-- [输入：Windows 8 手势示例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-- [输入：操作和手势 (C++) 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-- [DirectX 触摸输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+- [输入： XAML 用户输入事件示例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+- [输入：设备功能示例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+- [输入：触控命中测试示例](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+- [XAML 滚动、平移和缩放示例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+- [输入：简化墨迹示例](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+- [输入： Windows 8 手势示例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [输入：操作和手势（C++）示例](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+- [DirectX 触摸输入示例](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)

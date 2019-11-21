@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f9e1f285f53f2f4c9f160b573141666609560c00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 05a646979977bca5c19be2efe3f8bec12994cb19
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633652"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259624"
 ---
 # <a name="enterprise-shared-storage"></a>企业共享存储
 
-共享的存储包含两个位置，其中的应用具有受限功能 **enterpriseDeviceLockdown**，而企业证书具有完整的读写访问权限。 请注意，**enterpriseDeviceLockdown** 功能允许应用使用设备锁定 API 和访问企业共享的存储文件夹。 有关该 API 的详细信息，请参阅 [**Windows.Embedded.DeviceLockdown**](https://go.microsoft.com/fwlink/?LinkId=699331) 命名空间。  
+共享的存储包含两个位置，其中的应用具有受限功能 **enterpriseDeviceLockdown**，而企业证书具有完整的读写访问权限。 请注意，**enterpriseDeviceLockdown** 功能允许应用使用设备锁定 API 和访问企业共享的存储文件夹。 有关该 API 的详细信息，请参阅 [**Windows.Embedded.DeviceLockdown**](https://docs.microsoft.com/uwp/api/Windows.Embedded.DeviceLockdown?redirectedfrom=MSDN) 命名空间。  
 
 本地驱动器上的位置设置如下所示：
 - \Data\SharedData\Enterprise\Persistent
@@ -27,7 +27,7 @@ ms.locfileid: "57633652"
 
 - 可以在同一应用的不同实例之间，甚至是假定具有相应功能和证书的应用之间，共享某个应用实例内的数据。
 - 你可以将本地硬盘驱动器上的数据存储在 \Data\SharedData\Enterprise\Persistent 文件夹中，即使重置了设备，仍然会保留该数据。
-- 在设备上通过移动设备管理 (MDM) 服务操作文件，包括读取、写入和删除文件。 有关如何通过 MDM 服务使用企业共享存储的详细信息，请参阅 [EnterpriseExtFileSystem CSP](https://go.microsoft.com/fwlink/?LinkId=699333)。
+- 在设备上通过移动设备管理 (MDM) 服务操作文件，包括读取、写入和删除文件。 有关如何通过 MDM 服务使用企业共享存储的详细信息，请参阅 [EnterpriseExtFileSystem CSP](https://docs.microsoft.com/windows/client-management/mdm/enterpriseextfilessystem-csp?redirectedfrom=MSDN)。
 
 ## <a name="access-enterprise-shared-storage"></a>访问企业共享的存储
 

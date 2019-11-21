@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd8fa2b5264328619619df862d21f02f70f52e0
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 1fd0f00d74d62816ff347265936f6b066a0316b0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393754"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257752"
 ---
 # <a name="keyboard-accessibility"></a>键盘辅助功能  
 
@@ -79,7 +79,7 @@ XAML
 
 如果要在 UI 中使用的元素不能有焦点，你可以创建自己的自定义控件。 你必须将 [**IsTabStop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istabstop) 属性设置为 **true** 以启用焦点，而且必须通过创建一个使用焦点指示器来装饰 UI 的视觉状态，以直观形式指示已设定焦点的元素的状态。 不过，使用控件组合会更容易些，此时，对以下项的支持可以由选择在其中撰写内容的控件处理：制表位、焦点以及 Microsoft UI 自动化对等和模式。
 
-例如，可以在 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 中的 [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 元素上换行以获取指针、键盘和焦点支持，而不是处理该元素上的按下指针事件。
+例如，可以在 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 中的 [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 元素上换行以获取指针、键盘和焦点支持，而不是处理该元素上的按下指针事件。
 
 XAML
 ```xml
@@ -148,7 +148,7 @@ XAML
 
 为简单起见，上一个示例对于“Ctrl+A”之类的字符串没有使用资源。 但是，本地化过程中也必须考虑快捷键。 对快捷键进行本地化是相关的，因为选择将哪个键用作快捷键通常取决于元素的可见文本标签。
 
-有关实现快捷键的更多指南，请参阅 Windows 用户体验交互指南中的[快捷键](https://go.microsoft.com/fwlink/p/?linkid=221825)。
+有关实现快捷键的更多指南，请参阅 Windows 用户体验交互指南中的[快捷键](https://docs.microsoft.com/windows/win32/uxguide/inter-keyboard?redirectedfrom=MSDN)。
 
 <span id="Implementing_a_key_event_handler"/>
 <span id="implementing_a_key_event_handler"/>
@@ -173,9 +173,9 @@ XAML
 <span id="AN_EXAMPLE_OF_A_VISUAL_STATE_FOR_A_FOCUS_INDICATOR"/>
 
 ## <a name="an-example-of-a-visual-state-for-a-focus-indicator"></a>焦点指示符的视觉状态示例  
-我们之前曾提到，任何允许用户为其设置焦点的自定义控件都应当具有一个视觉焦点指示器。 通常，该焦点指示器可以简单到直接围绕控件的普通边界矩形周围绘制一个矩形形状。 视觉焦点的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 是该控件在控件模板中的其余组合的对等元素，但它最初是用 **Collapsed** 的 [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) 值设置的，因为该控件尚未获取焦点。 然后，当控件获取焦点时，会调用一个专门为对于 **Visible** 可见的焦点设置 **Visibility** 的视觉状态。 在焦点移到其他位置之后，会调用另一个视觉状态，**Visibility** 会变成 **Collapsed**。
+我们之前曾提到，任何允许用户为其设置焦点的自定义控件都应当具有一个视觉焦点指示器。 通常，该焦点指示器可以简单到直接围绕控件的普通边界矩形周围绘制一个矩形形状。 视觉焦点的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 是该控件在控件模板中的其余组合的对等元素，但它最初是用 [Collapsed**的**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility)Visibility 值设置的，因为该控件尚未获取焦点。 然后，当控件获取焦点时，会调用一个专门为对于 **Visible** 可见的焦点设置 **Visibility** 的视觉状态。 在焦点移到其他位置之后，会调用另一个视觉状态，**Visibility** 会变成 **Collapsed**。
 
-所有默认 XAML 控件在获得焦点时（如果它们可以获得焦点），都将显示相应的视觉焦点指示器。 根据用户选择的主题，可能会有不同的外观（特别是在用户使用高对比度模式时）。如果在用户界面中使用 XAML 控件而不是替换控件模板，则无需执行任何额外操作即可在行为和正确显示的控件上获得视觉焦点指示器。 但是如果你想要重新创建控件模板，或者如果你对 XAML 控件如何提供其视觉焦点指示器感兴趣，则本部分的剩余部分将介绍如何在 XAML 中和控件逻辑中完成此操作。
+所有默认 XAML 控件在获得焦点时（如果它们可以获得焦点），都将显示相应的视觉焦点指示器。 还可能存在不同的外观，具体取决于用户所选的主题（尤其是用户使用高对比度模式。）如果你在 UI 中使用的是 XAML 控件且未更换控件模板，则无需执行任何额外操作，即可在正确运行和显示的控件上获取视觉焦点指示器。 但是如果你想要重新创建控件模板，或者如果你对 XAML 控件如何提供其视觉焦点指示器感兴趣，则本部分的剩余部分将介绍如何在 XAML 中和控件逻辑中完成此操作。
 
 下面是来自 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的默认 XAML 模板的示例 XAML。
 
@@ -250,4 +250,4 @@ Windows Phone 设备通常不具有专用的硬件键盘。 但是，软输入�
 * [辅助功能](accessibility.md)
 * [键盘交互](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
 * [触摸键盘示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML 辅助功能示例](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e5ff5d8e1a63522a70b37c3226b01a2fc680c368
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 30f361aad321feb44240e66c03003646c560a4f5
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318975"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257816"
 ---
 # <a name="accessibility-overview"></a>辅助功能概述  
 
@@ -103,7 +103,7 @@ ms.locfileid: "67318975"
 
 * 工具必须确定文本是在 Tab 序列遍历过程中读取，还是仅作为整个文档表示形式的一部分进行读取。 你还可以通过选择要用来显示文本的相应元素或者通过调整这些文本元素的属性来帮助控件确定上述内容。 每个文本元素都有一种特定的用途，而且该用途通常具有相应的 UI 自动化角色。 如果使用错误的元素，可能会导致向 UI 自动化报告错误的角色，而且可能会为辅助技术用户创建令人混淆的体验。
 * 除非文本与背景的对比度很大，否则，许多用户都会因视觉上的局限而很难阅读文本。 对于没有该视觉局限的应用设计人员来说，这对用户造成的影响不太直观。 例如，对于色盲用户，如果设计中的颜色选项不好，可能会使某些用户无法阅读文本。 最初为 Web 内容提出的辅助功能建议还定义了可能会避免这些应用问题的对比度标准。 有关详细信息，请参阅[辅助文本要求](accessible-text-requirements.md)。
-* 对于太小的文本，许多用户都有阅读困难。 你可以通过使应用 UI 中的文本在首次出现时合理变大来避免发生此问题。 但是，对于显示大量文本的应用或者对于与其他视觉元素穿插在一起的文本，则具有一定的挑战性。 在这些情况下，请确保应用与能够放大显示器的系统功能正确交互，以便应用中的任何文本都能够随控件一起放大。 （某些用户可采用辅助功能选项方式更改 DPI 值。 该选项可从“轻松使用”  的“放大屏幕上显示的内容”  中获得，可重定向到“外观和个性化”   / “屏幕”  的“控制面板”  UI。）
+* 对于太小的文本，许多用户都有阅读困难。 你可以通过使应用 UI 中的文本在首次出现时合理变大来避免发生此问题。 但是，对于显示大量文本的应用或者对于与其他视觉元素穿插在一起的文本，则具有一定的挑战性。 在这些情况下，请确保应用与能够放大显示器的系统功能正确交互，以便应用中的任何文本都能够随控件一起放大。 （某些用户可采用辅助功能选项方式更改 DPI 值。 该选项可从“轻松使用”的“放大屏幕上显示的内容”中获得，可重定向到“外观和个性化” **“屏幕”**  / 的“控制面板”UI。）
 
 <span id="Supporting_high-contrast_themes"/>
 <span id="supporting_high-contrast_themes"/>
@@ -188,11 +188,11 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 <span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_APPS_THAT_SUPPORT_XAML___MICROSOFT_DIRECTX_INTEROP"/>
 
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>支持 XAML / Microsoft DirectX 互操作的应用中的辅助技术支持  
-默认情况下，无法访问 XAML UI 中托管的 Microsoft DirectX 内容（使用 [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 或 [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)）。 [XAML SwapChainPanel DirectX 互操作示例](https://go.microsoft.com/fwlink/p/?LinkID=309155)显示如何为托管的 DirectX 内容创建 UI 自动化对等。 这种技术让托管的内容可通过 UI 自动化进行访问。
+默认情况下，无法访问 XAML UI 中托管的 Microsoft DirectX 内容（使用 [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 或 [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)）。 [XAML SwapChainPanel DirectX 互操作示例](https://code.msdn.microsoft.com/windowsapps/XAML-SwapChainPanel-00cb688b)显示如何为托管的 DirectX 内容创建 UI 自动化对等。 这种技术让托管的内容可通过 UI 自动化进行访问。
 
 ## <a name="related-topics"></a>相关主题  
-* [**Windows.UI.Xaml.Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation)
-* [可访问性的设计](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
-* [XAML 可访问性示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [**Windows。** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation)
+* [辅助功能设计](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
+* [XAML 辅助功能示例](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
 * [辅助功能](accessibility.md)
-* [开始使用讲述人](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)
+* [讲述人入门](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

@@ -1,21 +1,21 @@
 ---
 ms.assetid: 7234DD5F-8E86-424E-99A0-93D01F1311F2
 title: 使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
-description: 通过使用适用于 Windows 10 移动版的 Microsoft 模拟器随附的工具，模拟与某个设备的真实交互并测试你的应用功能。
+description: 通过适用于 Windows 10 移动版的 Microsoft 仿真器随附的工具，模拟与某个设备的真实交互并测试你的应用功能。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e87fba21f74140e14688194864ccdc416ea227d
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 4f2cb92dca3da2d1f8e3eccfade6558f363c5b13
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73062310"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257870"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
 
-通过使用适用于 Windows 10 移动版的 Microsoft 模拟器随附的工具，模拟与某个设备的真实交互并测试你的应用功能。 该仿真器是一个桌面应用程序，它可以模拟运行 Windows 10 的移动设备。 它提供了一个虚拟环境，你可以在其中调试并测试 Windows App，而无需使用物理设备。 它还为你的应用程序原型提供了隔离的环境。
+通过适用于 Windows 10 移动版的 Microsoft 仿真器随附的工具，模拟与某个设备的真实交互并测试你的应用功能。 该仿真器是一个桌面应用程序，它可以模拟运行 Windows 10 的移动设备。 它提供了一个虚拟环境，你可以在其中调试并测试 Windows App，而无需使用物理设备。 它还为你的应用程序原型提供了隔离的环境。
 
 该模拟器旨在提供与实际设备相当的性能。 但是，在将你的应用发布到 Microsoft Store 之前，我们建议你先在物理设备上测试你的应用。
 
@@ -52,7 +52,7 @@ RAM
 ## <a name="installing-uninstalling-and-running-the-emulator"></a>安装、卸载和运行模拟器
 
 ### <a name="installing"></a>安装
-适用于 Windows 10 移动版的 Microsoft 模拟器作为 Windows 10 SDK 的一部分进行提供。 Windows 10 SDK 和模拟器可作为 Visual Studio 安装的一部分进行安装。 请参阅 [Visual Studio 下载页](https://go.microsoft.com/fwlink/p/?LinkId=534785)。
+适用于 Windows 10 移动版的 Microsoft 模拟器作为 Windows 10 SDK 的一部分进行提供。 Windows 10 SDK 和模拟器可作为 Visual Studio 安装的一部分进行安装。 请参阅 [Visual Studio 下载页](https://developer.microsoft.com/windows/downloads)。
 
 你还可以使用 [Microsoft 模拟器安装程序](https://go.microsoft.com/fwlink/p/?LinkID=615095)来安装适用于 Windows 10 移动版的 Microsoft 模拟器。
 
@@ -62,7 +62,7 @@ RAM
 
 当卸载适用于 Windows 10 移动版的 Microsoft 模拟器时，为供该模拟器使用而创建的 Hyper-V 虚拟以太网适配器不会自动删除。 你可以从“控制面板”的“网络连接”中手动删除此虚拟适配器。
 
-### <a name="running"></a>Running
+### <a name="running"></a>正在运行
 
 若要在仿真程序中运行应用程序，只需从 Visual Studio 中的 "**运行**" 下拉菜单中选择一个模拟设备。
 
@@ -70,7 +70,7 @@ RAM
 
 ## <a name="whats-new-in-microsoft-emulator-for-windows-10-mobile"></a>适用于 Windows 10 移动版的 Microsoft 模拟器的新增功能
 
-除了提供对通用 Windows 平台 (UWP) 的支持外，该模拟器还添加了以下功能：
+除了提供对 Universal Windows Platform (UWP) 的支持外，该模拟器还添加了以下功能：
 
 -   鼠标输入模式支持，可区分鼠标输入和单一触摸输入。
 -   NFC 支持。 借助这款模拟器，不仅可以模拟 NFC，还可以测试和开发支持 NFC/邻近感应的通用应用。
@@ -108,7 +108,7 @@ RAM
 
 仅可以在物理设备上测试以下功能。
 
--   Compass
+-   指南针
 -   陀螺仪
 -   振动控制器
 -   亮度。 模拟器的亮度级别始终很高。
@@ -237,7 +237,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 -   选中脚本编辑器窗口下的“启用 MasterCard”侦听器复选框，然后从 MasterCard 启动模拟器。
 -   使用此工具，你可以生成通过 NFC 工具中继到在模拟器上运行的应用程序的命令。
 
-若要了解有关 HCE 支持以及在 Windows 10 移动版中如何开发 HCE 应用的详细信息，请参考 [Microsoft NFC 团队博客](https://go.microsoft.com/fwlink/?LinkId=534749)。
+若要了解有关 HCE 支持以及在 Windows 10 移动版中如何开发 HCE 应用的详细信息，请参考 [Microsoft NFC 团队博客](https://blogs.msdn.com/b/nfc/)。
 
 ### <a name="how-to-create-scripts-for-hce-testing"></a>如何创建用于 HCE 测试的脚本
 
@@ -289,7 +289,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 ![模拟器工具栏上的多点输入选项](images/em-multipoint.png)
 
-## <a name="accelerometer"></a>Accelerometer
+## <a name="accelerometer"></a>加速计
 
 通过使用仿真器的“其他工具”的“加速计”选项卡，测试可跟踪手机移动的应用。
 
@@ -349,7 +349,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 在位置模拟器的所有模式中，你可以选择“精度配置文件”下拉列表中的以下精度配置文件之一。
 
-| 个人资料  | 描述                                        |
+| 配置文件  | 描述                                        |
 |----------|----------------------------------------------------|
 | 固定点 | 假设完全准确的位置读数。 此设置不实际，但对于测试应用的逻辑很有用。  |
 | 城市    | 假设建筑限制视图中的卫星数量，但通常具有高密度手机基站和可用于定位的 Wi-Fi 接入点。 |
@@ -360,7 +360,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 在“路线”模式中，你可以选择下拉列表中的以下速度配置文件之一。
 
-| 个人资料 | 每小时速度               | 每秒速度 | 描述 | 
+| 配置文件 | 每小时速度               | 每秒速度 | 描述 | 
 |---------|------------------------------|------------------|-------------|
 | 速度限制 | 路线的速度限制 | 不适用   | 以发布的速度限制遍历路线。 |
 | 步行     | 5 km/h                   | 1.39 m           | 以 5 km/h 的自然步行速度遍历路线。 |
@@ -393,7 +393,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 -   模拟的位置属性只包括“纬度”、“经度”、“精度”和PositionSource。 位置模拟器不会模拟其他属性，例如“速度”、“方向”等。
 
-## <a name="network"></a>“网络”
+## <a name="network"></a>Network
 
 通过仿真器的“其他工具”的“网络”选项卡，使用不同的网络速度和不同的信号强度测试你的应用。 如果你的应用调用 Web 服务或传输数据，此功能将很有用。
 
@@ -408,7 +408,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 3.  在“信号强度”下拉列表中，选择以下选项之一：
     -   完好
-    -   正常
+    -   平均值
     -   差
 
 4.  清除“启用网络模拟”还原默认行为，从而使用开发计算机的网络设置。
@@ -487,7 +487,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
     -   支持以下 WNS 通知类型：
 
         -   原始
-        -   Toast
+        -   toast
 
             当应用使用 WNS 通知并且你选择“Toast”通知类型时，模拟选项卡将显示“标记”和“组”字段。 你可以选择这些选项并输入“标记”和“组”值，以管理通知中心中的 Toast 通知。
 
@@ -497,7 +497,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
     -   支持以下 MPN 通知类型。
 
         -   原始
-        -   Toast
+        -   toast
         -   Tile
 
 5.  **选择通知模板。**
@@ -564,9 +564,9 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 | 功能            | Windows Phone 8.0 相机 | Windows Phone 8.1 相机  |
 |--------------------|--------------------------|---------------------------|
 | 分辨率         | 640 x 480 (VGA)          | 640 x 480 (VGA) 或更高 |
-| Autofocus          | “是”                      | “是”                       |
-| Flash              | 无                       | “是”                       |
-| 缩放               | 2x（数字或光学）  | 2x（数字或光学）   |
+| Autofocus          | 是                      | 是                       |
+| Flash              | 否                       | 是                       |
+| Zoom               | 2x（数字或光学）  | 2x（数字或光学）   |
 | 视频分辨率   | 640 x 480 (VGA)          | 640 x 480 (VGA) 或更高 |
 | 预览分辨率 | 640 x 480 (VGA)          | 640 x 480 (VGA)           |
 
@@ -645,7 +645,7 @@ Microsoft 模拟器包括 XDECleanup.exe，此工具用于删除所有虚拟机�
 
 若要禁用硬件加速，请执行以下操作：
 
-1. 启动注册表编辑器。
+1. 启动“注册表编辑器”。
 2. 创建以下注册表子项（如果不存在）：HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
 3. 右键单击 10.0 文件夹、指向“新建”，然后单击“DWORD 值”。
 4. 键入DisableRemoteFx，然后按 Enter。
@@ -656,7 +656,7 @@ Microsoft 模拟器包括 XDECleanup.exe，此工具用于删除所有虚拟机�
 
 ## <a name="support-resources"></a>支持资源
 
-若要在开始使用 Windows 10 工具时查找答案并解决问题，请访问 [Windows 10 工具论坛](https://go.microsoft.com/fwlink/?LinkId=534765)。 若要查看 Windows 10 开发的所有论坛，请访问[此链接](https://go.microsoft.com/fwlink/?LinkId=535000)。
+若要在开始使用 Windows 10 工具时查找答案并解决问题，请访问 [Windows 10 工具论坛](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues)。 若要查看 Windows 10 开发的所有论坛，请访问[此链接](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)。
 
 ## <a name="related-topics"></a>相关主题
 

@@ -6,18 +6,18 @@ ms.date: 08/02/2019
 ms.topic: article
 keywords: windows 10, uwp, 付款摘要, 声明, 付款, 收益, 支出, 付款, 收入
 ms.localizationpriority: medium
-ms.openlocfilehash: 89cb689f0dce4f7dbaec96e9ce109e60d4292f92
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: d609af268cfe304b34797cea4bf91e36d1475c29
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282478"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259008"
 ---
 # <a name="payout-summary"></a>付款摘要
 
 费用**摘要**显示了你在 Microsoft 获得的资金的详细信息。 它还使你可以知道你将何时收到付款和收到多少付款。
 
-如果在 Azure Marketplace 中销售产品，还将在**付款摘要**中看到成功付款信息。 有关 Azure Marketplace 付款的更多详细信息，请参阅 [Microsoft Azure 应用商店参与策略](https://go.microsoft.com/fwlink/p/?LinkId=722436)和 [Microsoft Azure 应用商店发布者协议](https://go.microsoft.com/fwlink/p/?LinkID=699560 )。
+如果在 Azure Marketplace 中销售产品，还将在**付款摘要**中看到成功付款信息。 有关 Azure Marketplace 付款的更多详细信息，请参阅 [Microsoft Azure 应用商店参与策略](https://docs.microsoft.com/legal/marketplace/participation-policy)和 [Microsoft Azure 应用商店发布者协议](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt)。
 
 > [!NOTE]
 > 为了满足付出的条件，你的继续必须达到[支付阈值](payment-thresholds-methods-and-timeframes.md)$50。 有关付款阈值的详细信息，请参阅此页并查看应用开发人员协议。
@@ -33,7 +33,7 @@ ms.locfileid: "72282478"
 
 此页上的总计表示你参与的所有程序。 您可以按参与者 ID、节目、付款 ID 和收入类型进行筛选。 金额为美元提供。 支付的值还会以货币支付。
 
-| 区域                   | 描述                                                                                  |
+| 领域                   | 描述                                                                                  |
 |------------------------|----------------------------------------------------------------------------------------------|
 | 本年度支付的总金额   | 你的所有计划在今年（美元）支付的总金额。       |
 | 下一估计付款 | 接下来的一项付款（即使有其他人即将发布），以美元为单位。 |
@@ -53,7 +53,7 @@ ms.locfileid: "72282478"
 
 ## <a name="payment-status"></a>付款状态
 
-| 收益状态           | Reason                                                                                                                                      | 需要合作伙伴操作？                                   |
+| 收益状态           | 原因                                                                                                                                      | 需要合作伙伴操作？                                   |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
 | 尚未              | 收益有资格支付。 它在激励计划的收视指南中定义的冷却周期处于此状态。 | 否                                                         |
 | 到来                 | 支付订单在处理付款之前生成待定内部评审。                                                               | 否                                                         |
@@ -82,7 +82,7 @@ ms.locfileid: "72282478"
 
 此选项可用于下载你在银行中收到的给定节目、相关税款和总收入金额的付款。 此报告用于许多合作伙伴中心计划，因此某些列可能会不适用您的报表。 这些列标记如下。
 
-| 列名              | 描述                                                                                                                               |
+| 列名称              | 描述                                                                                                                               |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------  |
 | participantID            | 计划下合作伙伴收益的主要标识                                                                             |
 | participantIDType        | 应用商店计划的激励计划和卖方 ID 的程序 id                                                                |
@@ -105,7 +105,7 @@ ms.locfileid: "72282478"
 
 此选项可用于下载您在 "交易历史记录" 页中看到的每个收益行项、收入类型、日期、关联的交易金额、客户、产品和适用于您的计划的其他事务详细信息。
 
-| 列名                    | 描述                                                                                                                              | 激励/存储/Azure Marketplace 的适用性           |
+| 列名称                    | 描述                                                                                                                              | 激励/存储/Azure Marketplace 的适用性           |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|
 | earningId                      | 每个收益的唯一标识符                                                                                                       | 全部                                                            |
 | participantId                  | 计划下合作伙伴收益的主要标识                                                                            | 全部                                                            |
@@ -121,7 +121,7 @@ ms.locfileid: "72282478"
 | transactionAmountUSD           | 交易金额（美元）                                                                                                                | 全部                                                            |
 | 断裂                          | 指示收入的业务规则                                                                                                  | 全部                                                            |
 | earningRate                    | 应用于交易金额以生成收入的激励率                                                                      | 全部                                                            |
-| 数量                       | 根据程序而异。 指示交易计划的计费数量                                                            | 全部                                                            |
+| quantity                       | 根据程序而异。 指示交易计划的计费数量                                                            | 全部                                                            |
 | quantityType                   | 指示数量的类型，例如，计费数量、MAU                                                                                     | 全部                                                            |
 | earningType                    | 指示是费用、回扣、市场活动、销售等。                                                                                          | 全部                                                            |
 | earningAmount                  | 按原始交易币种的收入金额                                                                                      | 全部                                                            |
@@ -138,8 +138,8 @@ ms.locfileid: "72282478"
 | paymentId                      | 付款的唯一标识符。 此数字通常显示在银行对帐单中                                                 | 仅限 SAP 支付                                              |
 | paymentStatus                  | 付款状态                                                                                                                           | 全部                                                            |
 | paymentStatusDescription       | 付款状态的友好说明                                                                                                   | 全部                                                            |
-| 顾客                     | 始终为空                                                                                                                     | 仅激励计划（异常：OEM）和 Azure Marketplace |
-| customerName                   | 始终为空                                                                                                                     | 仅激励计划（异常：OEM）和 Azure Marketplace |
+| 顾客                     | 始终为空                                                                                                                     | 仅激励计划（例外： OEM）和 Azure Marketplace |
+| customerName                   | 始终为空                                                                                                                     | 仅激励计划（例外： OEM）和 Azure Marketplace |
 | partNumber                     | 始终为空                                                                                                                     | 某些激励和商店计划和 Azure Marketplace        |
 | productName                    | 链接到事务的产品名称                                                                                                       | 全部                                                            |
 | productId                      | 唯一产品标识符                                                                                                                | 存储和 Azure Marketplace                                    |

@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 557f5c03bda68d11507ba3b3b3b12823dbe6fd9f
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: c90a3257f8a54202e7ac50395e7e73f0538a484a
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282398"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259880"
 ---
 # <a name="web-account-manager"></a>Web 帐户管理器
 
 本文介绍如何通过 Windows 10 Web 帐户管理器 API，使用 **[AccountsSettingsPane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** 将通用 Windows 平台 (UWP) 应用连接到外部标识提供者，如 Microsoft 或 Facebook。 你将了解如何请求用户的权限以使用其 Microsoft 帐户、获取访问令牌，并使用它来执行基本操作（如获取配置文件数据或将文件上传到他们的 OneDrive 帐户）。 相关步骤类似于通过支持 Web 帐户管理器的任何标识提供者来获取用户权限和访问权限。
 
 > [!NOTE]
-> 有关完整代码示例，请参阅 [GitHub 上的 WebAccountManagement 示例](https://go.microsoft.com/fwlink/p/?LinkId=620621)。
+> 有关完整代码示例，请参阅 [GitHub 上的 WebAccountManagement 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)。
 
 ## <a name="get-set-up"></a>准备工作
 
@@ -116,7 +116,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-接下来，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法获取提供程序。 提供程序的 URL 因提供程序而异，并且可以在提供程序的文档中找到。 对于 Microsoft 帐户和 Azure Active Directory，它是 "https @ no__t-0//.com"。 
+接下来，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法获取提供程序。 提供程序的 URL 因提供程序而异，并且可以在提供程序的文档中找到。 对于 Microsoft 帐户和 Azure Active Directory，它是 "https\://login.microsoft.com"。 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -133,7 +133,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 
 请注意，我们还向可选 *authority* 参数传递字符串“consumers”。 这是因为 Microsoft 提供了两种不同类型的身份验证，即适用于“消费者”的 Microsoft 帐户 (MSA) 和适用于“组织”的 Azure Active Directory (AAD)。 “consumers”颁发机构指示我们需要 MSA 选项。 如果在开发一款企业应用，请使用“organizations”字符串。
 
-最后，通过新建 **[WebAccountProviderCommand](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)** 将提供商添加到 **AccountsSettingsPane**，如下所示： 
+最后，通过新建WebAccountProviderCommand **[ 将提供商添加到 ](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)AccountsSettingsPane**，如下所示： 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -174,7 +174,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 在此示例中，我们向_作用域_参数传递字符串“wl.basic”。 作用域表示你正在从提供给特定用户的服务请求的信息类型。 某些作用域仅提供对用户基本信息的访问权限，例如姓名和电子邮件地址，而其他作用域可能允许访问敏感信息，如用户的照片或电子邮件收件箱。 通常，应用应该至少使用实现其功能所必需的最小许可作用域。 有关需要哪些作用域才能获得用以与它们的服务结合使用的令牌，服务提供商将提供相关文档。 
 
-* 有关 Office 365 和 Outlook.com 的范围，请参阅 [使用 v2.0 身份验证终结点对 Office 365 和 Outlook.com API 进行身份验证](https://developer.microsoft.com/graph/docs/concepts/auth_overview)。 
+* 有关 Office 365 和 Outlook.com 的作用域，请参阅 [使用 v2.0 身份验证终结点对 Office 365 和 Outlook.com API 进行身份验证](https://developer.microsoft.com/graph/docs/concepts/auth_overview)。 
 * 有关 OneDrive 的作用域，请参阅 [OneDrive 身份验证和登录](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
 
 > [!TIP]
@@ -398,7 +398,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 你可以向 AccountsSettingsPane 添加自定义命令，它们会在受支持的 WebAccountProviders 下方显示为链接。 自定义命令非常适合与用户帐户相关的简单任务，如显示隐私策略或为遇到问题的用户启动支持页面。 
 
-以下是一个示例： 
+下面是一个示例： 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -420,7 +420,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 理论上，你可以对任何内容使用设置命令。 但是，我们建议将它们的使用范围限制在直观的与帐户相关的情况，如上文所述。 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [Windows. System.web 命名空间](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
 
@@ -430,6 +430,6 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 [Web 身份验证代理](web-authentication-broker.md)
 
-[Web 帐户管理示例](https://go.microsoft.com/fwlink/p/?LinkId=620621)
+[Web 帐户管理示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
 
 [就餐计划程序应用](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)

@@ -1,5 +1,5 @@
 ---
-Description: 了解如何管理由音频输入质量所导致的语音识别准确度的问题。
+Description: 了解如何管理由音频输入质量所导致的语音识别准确度问题。
 title: 管理音频输入问题
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
 label: Manage audio input issues
@@ -8,19 +8,19 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aef21bc72c7458aecc3ea8f0a3cae275a22d9f08
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6281165d64b8e6e3f77807dbafd6bfff1dd0704f
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365607"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258329"
 ---
 # <a name="manage-issues-with-audio-input"></a>管理音频输入问题
 
 
-了解如何管理由音频输入质量所导致的语音识别准确度的问题。
+了解如何管理由音频输入质量所导致的语音识别准确度问题。
 
-> **重要的 API**：[**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer)， [ **RecognitionQualityDegrading**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading)， [ **SpeechRecognitionAudioProblem**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem)
+> **重要 API**：[**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer)、[**RecognitionQualityDegrading**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading)、[**SpeechRecognitionAudioProblem**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem)
 
 
 ## <a name="assess-audio-input-quality"></a>评估音频输入质量
@@ -108,7 +108,7 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 * [语音交互](speech-interactions.md)
 
 **示例**
-* [语音识别和语音合成示例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [语音识别和语音合成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
  
 
  

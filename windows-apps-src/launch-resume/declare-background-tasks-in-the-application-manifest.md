@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: cf114ed3d2ffce95f9e9aba6ceb222029d23819c
-ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
+ms.openlocfilehash: 53fb8c0b213705a5a79680356bb4f1773594dcdc
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73052029"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260489"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在应用程序清单中声明后台任务
 
@@ -37,7 +37,7 @@ ms.locfileid: "73052029"
 
 打开应用程序清单 (Package.appxmanifest)，然后转到 Application 元素。 创建一个 Extensions 元素（如果尚不存在该元素）。
 
-以下代码段来自[后台任务示例](https://go.microsoft.com/fwlink/p/?LinkId=618666)：
+以下代码段来自[后台任务示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)：
 
 ```xml
 <Application Id="App"
@@ -175,7 +175,7 @@ ms.locfileid: "73052029"
 
 ### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a>使用 ResourceGroup 属性指定运行后台任务的位置。
 
-下面的示例 XML 声明了在独立于同一应用的其他后台任务实例的 BackgroundTaskHost.exe 进程中运行。 注意 `ResourceGroup` 属性，该属性可标识将同时运行哪些后台任务。
+下面的示例 XML 声明了在独立于同一应用的其他后台任务实例的 BackgroundTaskHost.exe 进程中运行。 注意 `ResourceGroup` 属性，可标识将同时运行哪些后台任务。
 
 ```xml
 <Extensions>
@@ -230,7 +230,7 @@ ms.locfileid: "73052029"
 ```
 
 > [!NOTE]
-> 不能与 `SupportsMultipleInstances` 一起指定 `ResourceGroup` 或 `ServerName`。
+> 不能与 `ResourceGroup` 一起指定 `ServerName` 或 `SupportsMultipleInstances`。
 
 ## <a name="related-topics"></a>相关主题
 

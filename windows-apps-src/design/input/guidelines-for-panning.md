@@ -8,19 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 01754d94cf413317cf204d04f8590028eeabcfc8
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 945368e27c4f6215d2f5df20d52d916ead3597dd
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317313"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257947"
 ---
 # <a name="guidelines-for-panning"></a>平移指南
 
 
 平移或滚动允许用户在单个视图中导航，以显示在视口内不适合的视图内容。 示例视图包括计算机的文件夹结构、文档库或相册。
 
-> **重要的 API**：[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)， [ **Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
+> **重要 API**：[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)、[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
@@ -32,11 +32,11 @@ ms.locfileid: "67317313"
 
 -   显示平移指示器和滚动条以提供位置和大小提示。如果你提供自定义导航功能，则隐藏它们。
 
-    **请注意**  与不同的是标准滚动条平移指示器为纯信息性内容。 它们并不会向输入设备显示，因此无法采用任何方式对它们进行操作。
+    **请注意**，  不同于标准滚动条，平移指示器只是信息性的。 它们并不会向输入设备显示，因此无法采用任何方式对它们进行操作。
 
      
 
-**单个轴平移 （一维溢出）**
+**单轴平移（一维溢出）**
 
 -   对于超出一条视口边界（垂直或水平）的内容区域使用单轴平移。
 
@@ -44,27 +44,27 @@ ms.locfileid: "67317313"
     -   用于项网格的水平平移。
 -   如果用户必须在吸附点之间平移和停止，则请勿使用具有单轴平移的强制吸附点。 强制吸附点确保用户将停在某个吸附点处。 转而使用邻近吸附点。
 
-**多边形平移 （二维溢出）**
+**自由平移（二维溢出）**
 
 -   对于超出两条视口边界（垂直和水平）的内容区域使用双轴平移。
 
     -   对于用户想在多个方向移动的非结构化内容，覆盖默认围栏行为并使用自由平移。
 -   自由平移通常适用于在图像或地图内导航。
 
-**分页的视图**
+**分页视图**
 
 -   当内容由分散的元素组成或者你想显示整个元素时，可使用强制对齐点。 这可能包括书籍或杂志、一列项或单个图像的多个页面。
 
     -   吸附点应该放置在每个逻辑边界处。
     -   应通过调整大小或缩放来使每个元素适合视图。
 
-**逻辑和关键点**
+**逻辑点和关键点**
 
 -   如果内容中存在用户可能停止的关键点或逻辑点，则使用邻近吸附点。 例如，节标题。
 
 -   如果定义了最大和最小大小限制或边界，则使用视觉反馈演示用户何时达到或超过这些边界。
 
-**链接嵌入或嵌套的内容**
+**链接嵌入或嵌套内容**
 
 -   将单轴平移（通常为水平方向）和列布局用于基于文本和网格的内容。 在这些情况下，内容通常从列到列自然地环绕和流动，并在整个 UWP 应用中保持可发现的一致用户体验。
 
@@ -76,11 +76,11 @@ ms.locfileid: "67317313"
 
 ## <a name="additional-usage-guidance"></a>其他使用指南
 
-与使用鼠标滚动类似，通过一个或多个手指轻扫或滑动，以使用触控进行平移。 平移交互与滚动鼠标滚轮或滑动滚动框而不是单击滚动条最为相似。 除非进行这种区分是在 API 中进行所需的一些特定于设备的 Windows UI，我们只需引用与平移这两个交互。
+与使用鼠标滚动类似，通过一个或多个手指轻扫或滑动，以使用触控进行平移。 平移交互与滚动鼠标滚轮或滑动滚动框而不是单击滚动条最为相似。 除非在 API 中进行区分或某些特定于设备的 Windows UI 要求，否则，只需将这两个交互作为平移。
 
 > <div id="main">
-> <strong>Windows 10 Fall Creators Update 的行为更改</strong>默认情况下，而不是文本选择 active 笔现在滚动/pan （如触摸、 触摸板和被动笔） 的 UWP 应用中。  
-> 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 有关详细信息，请参阅 API 参考主题<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 类</a>。
+> <strong>Windows 10 秋季创建者更新-行为更改</strong>默认情况下，活动笔现在会滚动到 UWP 应用（如触控、触摸板和被动笔）中，而不是选择文本。  
+> 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 类</a>的 API 参考主题。
 > </div>
 
 根据输入设备的不同，用户使用以下方式之一在可平移区域内进行平移：
@@ -93,12 +93,12 @@ ms.locfileid: "67317313"
 
 滑动涉及按平移方向缓慢移动手指。 这将导致一对一的关系，其中内容会随着手指以相同的速度和距离进行平移。 轻扫涉及迅速滑动并抬起手指，将导致对平移动画应用以下物理情景：
 
--   减速度 （延时）：抬起手指原因平移开始减速。 这类似于滑动到一个斜面上的挡块。
--   全部：如果达到对齐点或内容区域边界期间的减速平移动量会导致轻微的弹跳后生效。
+-   减速（延时）：抬起手指导致平移开始减速。 这类似于滑动到一个斜面上的挡块。
+-   吸收：在减速期间，如果达到吸附点或内容区域边界，则平移动量导致轻微向后弹的效果。
 
-**类型的平移**
+**平移类型**
 
-Windows 8 支持三种类型的平移：
+Windows 8 支持以下三种类型的平移：
 
 -   单轴 - 仅支持一个方向（水平或垂直）的平移。
 -   围栏 - 支持所有方向的平移。 但是，用户超过特定方向的距离阈值后，平移限制在该轴范围内。
@@ -115,7 +115,7 @@ Windows 8 支持三种类型的平移：
 -   触摸平移指示器。
 -   用于其他输入设备（包括鼠标、触摸板、键盘和触笔）的滚动条。
 
-**请注意**  移动指示器平移区域内触控接触时才可见。 同样，只有当鼠标光标、笔/触笔光标或键盘焦点位于可滚动的区域内时才能看到滚动条。
+**注意**  平移指示器仅当 touch 触点在可平移区域内时才可见。 同样，只有当鼠标光标、笔/触笔光标或键盘焦点位于可滚动的区域内时才能看到滚动条。
 
  
 
@@ -152,7 +152,7 @@ Windows 8 支持三种类型的平移：
 
 ![具有限制平移的围栏的屏幕图](images/ux-panning-rails.png)
 
-**链接嵌入或嵌套的内容**
+**链接嵌入或嵌套内容**
 
 当用户在嵌套在另一可缩放或可滚动元素中的元素上达到缩放或滚动限制时，你可以指定父元素是否应继续执行在其子元素中开始的缩放或滚动操作。 这称为缩放或滚动链接。
 
@@ -176,20 +176,20 @@ Windows 8 支持三种类型的平移：
 * [键盘辅助功能](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
 
 **示例**
-* [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [焦点视觉对象示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
 **存档示例**
-* [输入：XAML 用户输入的事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：触控命中测试示例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [输入：Windows 8 手势示例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [输入：操作和手势 (C++) 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 触摸输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [输入： XAML 用户输入事件示例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [输入：设备功能示例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [输入：触控命中测试示例](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+* [XAML 滚动、平移和缩放示例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [输入：简化墨迹示例](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+* [输入： Windows 8 手势示例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+* [输入：操作和手势（C++）示例](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+* [DirectX 触摸输入示例](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
  
 
  

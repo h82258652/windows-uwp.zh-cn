@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eb7f085c5e4daa46cfa6c256ec3938be3c13d82
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2919a2f61f3185d85b91bdf6fd6be22402eb77d0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365348"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258270"
 ---
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>存储和检索 Windows 笔划墨迹数据
 
@@ -23,13 +23,13 @@ ms.locfileid: "66365348"
 > [!NOTE]
 > ISF 为墨迹的最紧凑持久表现形式。 该格式可以嵌入到二进制文档格式（例如 GIF 文件），也可以直接放置在剪贴板上。
 
-> **重要的 API**：[**在 InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)， [ **Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **重要 API**：[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)、[**Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="save-ink-strokes-to-a-file"></a>将笔划墨迹保存到文件
 
 在此，我们展示如何保存在 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件上绘制的笔划墨迹。
 
-**下载此示例从[保存和加载墨迹序列化格式 (ISF) 文件中的墨迹笔画](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
+**下载此示例从[墨迹序列化格式（ISF）文件保存和加载墨笔划](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
 
 1.  首先，我们设置 UI。
 
@@ -161,7 +161,7 @@ public MainPage()
 
 在此，我们展示如何从文件加载笔划墨迹，并在 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件上呈现它们。
 
-**下载此示例从[保存和加载墨迹序列化格式 (ISF) 文件中的墨迹笔画](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
+**下载此示例从[墨迹序列化格式（ISF）文件保存和加载墨笔划](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
 
 1.  首先，我们设置 UI。
 
@@ -277,7 +277,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 
 在此示例中，我们会在使用笔桶按钮（或鼠标右键按钮）修改输入时启用笔划选择。 有关如何实现笔划选择的完整示例，请参阅[笔和触笔交互](pen-and-stylus-interactions.md)中的传递输入以进行高级处理。
 
-**下载此示例从[保存和加载从剪贴板中的墨迹笔画](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)**
+**下载此示例从[剪贴板保存和加载墨笔划](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)**
 
 1.  首先，我们设置 UI。
 
@@ -403,7 +403,7 @@ private void btnCut_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-对于复制，我们只需在 [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) 的 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 上调用 [**CopySelectedToClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) 即可。
+对于复制，我们只需在 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) 的 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 上调用 [**CopySelectedToClipboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) 即可。
 
 
 ```csharp
@@ -415,7 +415,7 @@ private void btnCopy_Click(object sender, RoutedEventArgs e)
 
 对于粘贴，我们调用 [**CanPasteFromClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.canpastefromclipboard) 以确保可以将剪贴板上的内容粘贴到墨迹画布上。
 
-如果是这样，我们调用 [**PasteFromClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.pastefromclipboard) 以将剪贴板笔划墨迹插入到 [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) 的 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 中，之后它会将笔划呈现到墨迹画布上。
+如果是这样，我们调用 [**PasteFromClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.pastefromclipboard) 以将剪贴板笔划墨迹插入到 [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 的 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) 中，之后它会将笔划呈现到墨迹画布上。
 
 ```csharp
 private void btnPaste_Click(object sender, RoutedEventArgs e)
@@ -434,19 +434,19 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>相关文章
 
-* [笔和触笔的交互](pen-and-stylus-interactions.md)
+* [笔和触笔交互](pen-and-stylus-interactions.md)
 
 **主题示例**
-* [保存并从墨迹序列化格式 (ISF) 文件加载的墨迹笔画](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
-* [保存和加载从剪贴板中的墨迹笔画](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
+* [从墨迹序列化格式（ISF）文件保存和加载墨笔划](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
+* [从剪贴板保存和加载墨笔划](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
 
 **其他示例**
-* [简单墨迹示例 (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [复杂墨迹示例 (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [墨迹示例 (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [入门教程：在 UWP 应用中支持墨迹](https://aka.ms/appsample-ink)
-* [着色通讯簿示例](https://aka.ms/cpubsample-coloringbook)
-* [系列说明示例](https://aka.ms/cpubsample-familynotessample)
+* [简单墨迹示例（C#/C++）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+* [复杂墨迹示例（C++）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
+* [Ink 示例（JavaScript）](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [入门教程：在 UWP 应用中支持墨迹](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+* [着色书籍示例](https://github.com/Microsoft/Windows-appsample-coloringbook)
+* [家庭说明示例](https://github.com/Microsoft/Windows-appsample-familynotes)
 
 
 

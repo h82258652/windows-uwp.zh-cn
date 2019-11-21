@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f54cb261f6ef94545d656d5bd4f624622cc6dfff
-ms.sourcegitcommit: dafda665fd3d25136194e452e7500b5bab076638
+ms.openlocfilehash: 7ba05e958a8746874becd4cfa17ec0e8f255ff00
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71982232"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255140"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>为应用程序添加“我的人脉”支持
 
@@ -104,7 +104,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找包系列名称，请使用默认编辑器打开 **Package.appxmanifest**，并在“打包”选项卡中查找。在此，“应用”是与应用程序启动视图相对应的可激活类。
+“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找你的包系列名称，请使用默认编辑器打开 **Package.appxmanifest**，然后查找“Packaging”选项卡。在这里，“App”是指与应用程序启动视图对应的可激活类。
 
 ## <a name="allow-contacts-to-invite-new-potential-users"></a>允许联系人邀请新的潜在用户
 
@@ -251,11 +251,11 @@ async Task PinMultipleContacts(Contact[] contacts)
 
 **注意：** 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 + [“我的人脉”共享](my-people-sharing.md)
 + [我的人员通知](my-people-notifications.md)
 + [向应用程序添加我的人员支持时的第9频道视频](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [我的人员集成示例](https://aka.ms/mypeoplebuild2017)
++ [我的人员集成示例](https://github.com/tonyPendolino/MyPeopleBuild2017)
 + [联系人卡片示例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [PinnedContactManager 类文档](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
 + [将你的应用与联系人卡片上的操作关联起来](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

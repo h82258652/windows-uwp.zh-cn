@@ -1,5 +1,5 @@
 ---
-Description: 接收、 处理，并管理如触摸、 鼠标、 笔/触笔和触摸板，在通用 Windows 平台 (UWP) 应用程序中的指针设备中的输入的数据。
+Description: 在通用 Windows 平台（UWP）应用程序中接收、处理和管理指针设备（如触摸、鼠标、笔/触笔和触摸板）中的输入数据。
 title: 处理指针输入
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
@@ -8,12 +8,12 @@ keywords: 笔、鼠标、触摸板、触摸、指针、输入、用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 596e9221fac686964b4faaa8a75f112dbb8ddf5a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7f3d5480c0fa12366afe02cc31cdb994fdd4a842
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57619362"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257900"
 ---
 # <a name="handle-pointer-input"></a>处理指针输入
 
@@ -45,7 +45,7 @@ ms.locfileid: "57619362"
 UWP 应用可以侦听以下指针事件：
 
 > [!NOTE]
-> 通过在指针事件处理程序内对该元素调用 [**CapturePointer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer)，将指针输入约束到特定的 UI 元素。 当指针由元素捕获时，仅该对象接收指针输入事件，即使指针移动到该对象的边界区域之外也是如此。 若要使 **CapturePointer** 成功，[**IsInContact**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isincontact)（鼠标按钮已按下，触控或触笔相互接触）必须为 true。
+> 通过在指针事件处理程序内对该元素调用 [**CapturePointer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer)，将指针输入约束到特定的 UI 元素。 当指针由元素捕获时，仅该对象接收指针输入事件，即使指针移动到该对象的边界区域之外也是如此。 若要使 [CapturePointer **成功，** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isincontact)IsInContact（鼠标按钮已按下，触控或触笔相互接触）必须为 true。
  
 
 <table>
@@ -92,7 +92,7 @@ UWP 应用可以侦听以下指针事件：
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a></p></td>
-<td align="left"><p>在指针离开元素的绑定区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
+<td align="left"><p>在指针离开元素的边界区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
 <li>触摸需要手指接触，并在指针移出该元素的绑定区域时引发此事件。</li>
 <li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
@@ -131,7 +131,7 @@ UWP 应用可以侦听以下指针事件：
 
 ![指针应用程序 UI](images/pointers/pointers1.gif)
 
-**下载此示例从[指针输入示例 （基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)**
+**从[指针输入示例（基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)下载此示例**
 
 ### <a name="create-the-ui"></a>创建 UI
 
@@ -196,7 +196,7 @@ UWP 应用可以侦听以下指针事件：
 
 在大多数情况下，我们建议你通过事件处理程序的 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 获取指针信息。
 
-如果事件自变量不会公开所需的指针详细信息，可以获取扩展的访问权限[ **PointerPoint** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint)信息通过公开[ **GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint)和 [**GetIntermediatePoints**]https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) 方法[ **PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs)。
+如果事件参数不公开所需的指针详细信息，则可以获取对通过 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) 的 [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) 和 [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) 方法公开的扩展 [**PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 信息的访问权限。
 
 以下代码设置用于跟踪每个活动指针的全局字典对象，并为该目标对象标识各个指针事件侦听器。
 
@@ -243,7 +243,7 @@ public MainPage()
 -   此处理程序管理 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件。 我们将事件添加到事件日志、将指针添加活动指针字典，并显示指针详细信息。
 
     > [!NOTE]
-    > [**PointerPressed** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)并[ **PointerReleased** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)事件始终不会以对。 你的应用应该侦听和处理可能会结束指针向下（如 [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)、[**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled) 和 [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)）的所有事件。      
+    > [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)和[**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)事件并非始终成对出现。 你的应用应该侦听和处理可能会结束指针向下（如 [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)、[**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled) 和 [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)）的所有事件。      
 
 ```csharp
 /// <summary>
@@ -531,7 +531,7 @@ private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
 -   此处理程序管理 [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost) 事件。 我们将事件添加到事件日志、从指针数组删除指针，并更新指针详细信息。
 
     > [!NOTE]
-    > [**PointerCaptureLost** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)而不是可能发生[ **PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)。 指针捕获可能由于各种原因而丢失，包括用户交互、以编程方式捕获另一个指针、调用 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)。     
+    > [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)可能会发生，而不是[**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)。 指针捕获可能由于各种原因而丢失，包括用户交互、以编程方式捕获另一个指针、调用 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)。     
 
 ```csharp
 /// <summary>
@@ -572,7 +572,7 @@ private void Target_PointerCaptureLost(object sender, PointerRoutedEventArgs e)
 
 ### <a name="get-pointer-properties"></a>获取指针属性
 
-如前面所述，必须获取扩展有最指针信息从[ **Windows.UI.Input.PointerPoint** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint)对象通过获得[ **GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint)和 [**GetIntermediatePoints**]https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) 方法[ **PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs)。 下面的代码段显示操作步骤。
+如前面所述，你必须从通过 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) 的 [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) 和 [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) 方法获取的 [**Windows.UI.Input.PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 对象获取最扩展的指针。 下面的代码段显示操作步骤。
 
 -   首先，我们为每个指针创建一个新的 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
 
@@ -681,7 +681,7 @@ String QueryPointer(PointerPoint ptrPt)
 ## <a name="primary-pointer"></a>主指针
 某些输入设备（例如触控式数字化器或触摸板）并不仅仅支持鼠标或笔的典型单一指针（在大多数情况下，就像 Surface Hub 那样支持两个笔输入）。 
 
-使用 **[PointerPointerProperties](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties)** 类的只读 **[IsPrimary](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties.IsPrimary)** 属性可以标识并区分单一主指针（主指针始终是输入序列期间检测到的第一个指针）。 
+使用 **[PointerPointerProperties](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties.IsPrimary)** 类的只读 **[IsPrimary](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties)** 属性可以标识并区分单一主指针（主指针始终是输入序列期间检测到的第一个指针）。 
 
 通过标识主指针，你可以用它来模拟鼠标或笔输入、自定义交互或提供一些其他的特定功能或 UI。
 
@@ -696,13 +696,13 @@ String QueryPointer(PointerPoint ptrPt)
 
 ![具有动画视觉反馈的指针应用程序](images/pointers/pointers-usercontrol-animation.gif)
 
-**下载此示例从[指针的输入的示例 (UserControl 使用动画)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)**
+**从[指针输入示例下载此示例（UserControl with 动画）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)**
 
 ### <a name="visual-feedback"></a>视觉反馈
 
-我们基于 XAML **[椭圆形](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** 对象定义一个 **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)** ，突出显示每个指针在画布上的位置，并使用 **[故事板](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** 来动画显示与主指针对应的椭圆形。
+我们基于 XAML **[椭圆形](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)** 对象定义一个 **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** ，突出显示每个指针在画布上的位置，并使用 **[故事板](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** 来动画显示与主指针对应的椭圆形。
 
-**下面是 XAML:**
+**XAML 如下：**
 
 ```xaml
 <UserControl
@@ -950,19 +950,19 @@ namespace UWP_Pointers
 ## <a name="related-articles"></a>相关文章
 
 **主题示例**
-* [指针 （基本） 的输入的示例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)
-* [指针的输入的示例 (UserControl 使用动画)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)
+* [指针输入示例（基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)
+* [指针输入示例（UserControl with 动画）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)
 
 **其他示例**
-* [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [焦点视觉对象示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
 **存档示例**
-* [输入：XAML 用户输入的事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：操作和手势 （c + +） 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [输入：触控命中测试示例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [输入： XAML 用户输入事件示例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [输入：设备功能示例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [输入：操作和手势（C++）示例](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+* [输入：触控命中测试示例](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+* [XAML 滚动、平移和缩放示例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [输入：简化墨迹示例](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)

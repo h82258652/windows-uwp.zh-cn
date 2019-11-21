@@ -6,24 +6,24 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, ads, 广告, 发行说明
 ms.localizationpriority: medium
-ms.openlocfilehash: d7a250880d148dd4ca3ced522312904f2786715e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 04d3554620cde44fc9907845a7765d023e1ed03e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601222"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260208"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Advertising 库的发行说明
 
 
 
 
-本部分提供当前版本的 Microsoft Advertising 库的发行说明。 这些库支持 Windows 10、 Windows 8.1、 Windows Phone 8.1 和 Windows Phone 8 的 XAML 和 JavaScript/HTML 应用程序。
+本部分提供当前版本的 Microsoft Advertising 库的发行说明。 这些库支持适用于 Windows 10、Windows 8.1 Windows Phone 8.1 和 Windows Phone 8 的 XAML 和 JavaScript/HTML 应用。
 
 ## <a name="installation"></a>安装
 
 
-Microsoft 广告库作为 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp) 的一部分提供。 有关安装 SDK 的更多信息，请参阅[安装 Microsoft 广告 SDK](install-the-microsoft-advertising-libraries.md)。
+Microsoft 广告库作为 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) 的一部分提供。 有关安装 SDK 的更多信息，请参阅[安装 Microsoft 广告 SDK](install-the-microsoft-advertising-libraries.md)。
 
 ## <a name="uninstall-previous-versions"></a>卸载以前版本
 
@@ -39,7 +39,7 @@ Microsoft Advertising 库（其中包括 **AdControl** 和 **InterstitialAd** �
 
 ## <a name="no-toolbox-control"></a>没有工具箱控件
 
-在 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp) 中的当前版本的 Microsoft 广告库中，没有任何工具箱控件可用于将 **AdControl** 或 **InterstitialAd** 拖动到应用中的设计图面。 有关在标记和代码中添加这些控件的说明，请参阅[开发人员演练](developer-walkthroughs.md)。
+在 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) 中的当前版本的 Microsoft 广告库中，没有任何工具箱控件可用于将 **AdControl** 或 **InterstitialAd** 拖动到应用中的设计图面。 有关在标记和代码中添加这些控件的说明，请参阅[开发人员演练](developer-walkthroughs.md)。
 
 ## <a name="latitude-and-longitude-properties-no-longer-available"></a>不再可用的纬度和经度属性
 

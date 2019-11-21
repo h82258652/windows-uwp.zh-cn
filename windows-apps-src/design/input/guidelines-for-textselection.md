@@ -1,5 +1,5 @@
 ---
-Description: 本主题描述用于选择和操作文本、 图像和控件的新 Windows UI，并提供在 UWP 应用中使用这些新的选择和操作机制时应考虑的用户体验指南。
+Description: 本主题介绍用于选择和操作文本、图像和控件的新 Windows UI，并提供在 UWP 应用中使用这些新的选择和操作机制时应考虑的用户体验指南。
 title: 选择文本和图像
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
@@ -8,19 +8,19 @@ keywords: 键盘, 文本, 输入, 用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dab8d26436d312601b749bed7e97048ed5805bb
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 56f09f2c903354159c63fa7226007cd65e57e69e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317288"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257920"
 ---
 # <a name="selecting-text-and-images"></a>选择文本和图像
 
 
 本文介绍了选择和操作文本、图像和控件，并提供了将这些机制用于应用中时应考虑的用户体验指南。
 
-> **重要的 API**：[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)， [ **Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+> **重要 API**：[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)、[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
  
 
 
@@ -47,20 +47,20 @@ ms.locfileid: "67317288"
 
 **注意事项和建议**
 
-使用通过 Windows 中的语言框架公开的内置控件构建提供完整的平台的用户的交互体验，包括所选内容和操作行为的应用程序。 你会发现对于大多数 UWP 应用来说，内置控件的交互功能就已足够。
+使用通过 Windows 中的语言框架公开的内置控件生成可提供完整平台用户交互体验（包括选择和操作行为）的应用程序。 你会发现对于大多数 UWP 应用来说，内置控件的交互功能就已足够。
 
 使用标准 UWP 文本控件时，本主题中所述的选择行为和视觉对象不能自定义。
 
 **文本选择**
 
-如果您的应用程序需要支持文本选择的自定义 UI，我们建议你遵循此处所述的 Windows 选择行为。
+如果你的应用程序需要支持文本选择的自定义 UI，则建议你遵循此处所述的 Windows 选择行为。
 
 **可编辑的和不可编辑的内容**
 
 
-借助触摸，选择交互主要是通过诸如用于设置插入光标或选择词汇的点击以及用于修改选择的滑动之类的手势来执行。 与其他 Windows 触摸式交互，如定时的交互仅限于按下并按住手势来显示信息性 UI。 有关详细信息，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
+借助触摸，选择交互主要是通过诸如用于设置插入光标或选择词汇的点击以及用于修改选择的滑动之类的手势来执行。 与其他 Windows 触控交互一样，计时交互仅限按下和按住手势来显示信息 UI。 有关详细信息，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
 
-Windows 将识别两个可能状态的所选内容交互，可编辑的和不可编辑，并相应地调整选择 UI、 反馈和功能。
+Windows 识别出两种可能的状态：选择交互、可编辑和不可编辑，并相应地调整选择 UI、反馈和功能。
 
 **可编辑内容**
 
@@ -78,11 +78,11 @@ Windows 将识别两个可能状态的所选内容交互，可编辑的和不可
 
 ![在所选内容内或在控制手柄上点击（或长按）可调用上下文菜单。](images/textselection-show-context.png)
 
-**请注意**  对于拼写错误的单词的稍有不同，这些交互。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
+**请注意**，  这些交互在拼写错误的单词时有所不同。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
 
  
 
-**非可编辑内容**
+**不可编辑的内容**
 
 以下图像演示如何通过在词汇内点击来选择词汇（初始选择中不包含空格）。
 
@@ -98,11 +98,11 @@ Windows 将识别两个可能状态的所选内容交互，可编辑的和不可
 
 ![具有进度控制手柄的媒体播放器](images/gripper-mediaplayer.png)
 
-*媒体播放器可调整的进度栏。*
+*具有可调整进度栏的 Media player。*
 
 ![具有修剪控制手柄的图像](images/gripper-imagemanip.png)
 
-*与裁剪控制手柄的图像编辑器。*
+*带有裁剪控制手柄的图像编辑器。*
 
 ## <a name="related-articles"></a>相关文章
 
@@ -112,20 +112,20 @@ Windows 将识别两个可能状态的所选内容交互，可编辑的和不可
 * [自定义用户交互](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
 **示例**
-* [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [焦点视觉对象示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
 **存档示例**
-* [输入：XAML 用户输入的事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：触控命中测试示例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [输入：Windows 8 手势示例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [输入：操作和手势 (C++) 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 触摸输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [输入： XAML 用户输入事件示例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [输入：设备功能示例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [输入：触控命中测试示例](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+* [XAML 滚动、平移和缩放示例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [输入：简化墨迹示例](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+* [输入： Windows 8 手势示例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+* [输入：操作和手势（C++）示例](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+* [DirectX 触摸输入示例](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
  
 
  

@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 7564060e28d3e78608c6f30b1400179087db2b86
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 8627bd7f9f405509cb1bff40d94f10552241f4ce
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73061854"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254589"
 ---
 # <a name="uri-schemes"></a>URI 方案
 
@@ -19,9 +19,9 @@ ms.locfileid: "73061854"
 
 ## <a name="common-features-of-the-uri-schemes"></a>URI 方案的常见功能
 
-本主题中所述的所有方案均遵循适用于标准化和资源检索的典型的 URI 方案规则。 请参阅 [RFC 3986](https://go.microsoft.com/fwlink/p/?LinkId=263444) 获取 URI 的常规语法。
+本主题中所述的所有方案均遵循适用于标准化和资源检索的典型的 URI 方案规则。 请参阅 [RFC 3986](https://www.ietf.org/rfc/rfc3986.txt) 获取 URI 的常规语法。
 
-所有 URI 方案均按照 [RFC 3986](https://go.microsoft.com/fwlink/p/?LinkId=263444) 定义作为 URI 颁发机构和路径组件的层次结构部分。
+所有 URI 方案均按照 [RFC 3986](https://www.ietf.org/rfc/rfc3986.txt) 定义作为 URI 颁发机构和路径组件的层次结构部分。
 
 ```syntax
 URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
@@ -41,7 +41,7 @@ hier-part   = "//" authority path-abempty
 
 本主题中所述的所有 URI 方案均遵循适用于方案标准化和资源检索的典型的 URI 规则 (RFC 3986)。 这些 URI 的标准化形式保持大小写，并对 RFC 3986 未保留的字符进行百分比解码。
 
-对于本主题所述的所有 URI 方案，*方案*、*颁发机构*和*路径*按照标准不区分大小写，或者由系统以不区分大小写的方式进行处理。 **注意**该规则的唯一例外是 `ms-resource` 的*颁发机构*区分大小写。
+对于本主题所述的所有 URI 方案，*方案*、*颁发机构*和*路径*按照标准不区分大小写，或者由系统以不区分大小写的方式进行处理。 **注意**该规则的唯一例外是  *的*颁发机构`ms-resource`区分大小写。
 
 ## <a name="ms-appx-and-ms-appx-web"></a>ms-appx 和 ms-appx-web
 
@@ -269,7 +269,7 @@ ms-resource:///Hello%23World/String1
 
 ## <a name="related-topics"></a>相关主题
 
-* [统一资源标识符（URI）：泛型语法](https://go.microsoft.com/fwlink/p/?LinkId=263444)
+* [统一资源标识符（URI）：泛型语法](https://www.ietf.org/rfc/rfc3986.txt)
 * [打包应用](../packaging/index.md)
 * [从 XAML 标记和代码引用图像或其他资产](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [存储和检索设置以及其他应用数据](../design/app-settings/store-and-retrieve-app-data.md)

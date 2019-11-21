@@ -10,16 +10,16 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: d59d5cd7a2ffbc55b36f0169939859bf1b6b9db5
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c155a2b80826669693c3250282076d8a1b27ee83
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370566"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259397"
 ---
 # <a name="use-a-maintenance-trigger"></a>使用维护触发器
 
-**重要的 Api**
+**重要的 API**
 
 - [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger)
 - [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
@@ -36,9 +36,9 @@ ms.locfileid: "66370566"
 创建新的 [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) 对象。 第二个参数 *OneShot* 指定维护任务是只运行一次还是继续定期运行。 如果 *OneShot* 设置为 true，则第一个参数 (*FreshnessTime*) 会指定在计划后台任务之前需等待的分钟数。 如果 *OneShot* 设置为 false，则 *FreshnessTime* 会指定后台任务运行的频率。
 
 > [!NOTE]
-> 如果*FreshnessTime*设置为少于 15 分钟，尝试注册后台任务时引发异常。
+> 如果*FreshnessTime*设置为不到15分钟，则在尝试注册后台任务时会引发异常。
 
-此示例代码创建小时运行一次的触发器。
+此代码示例创建一个触发器，该触发器每小时运行一次。
 
 ```csharp
 uint waitIntervalMinutes = 60;
@@ -108,7 +108,7 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 > 对于除台式机以外的所有设备系列，如果设备内存不足，后台任务可能会终止。 如果没有呈现内存不足异常，或者应用没有处理该异常，则后台任务将在没有警告且不引发 OnCanceled 事件的情况下终止。 这有助于确保前台中应用的用户体验。 应该将后台任务设计为处理此情形。
 
 > [!NOTE]
-> 通用 Windows 平台应用程序必须调用[ **RequestAccessAsync** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)之前注册的任何后台触发器类型。
+> 通用 Windows 平台应用必须先调用[**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) ，然后才能注册任何后台触发器类型。
 
 若要确保通用 Windows 应用在你发布应用的更新后继续正常运行，则必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess)，然后调用 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
@@ -129,4 +129,4 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
 * [调试后台任务](debug-a-background-task.md)
-* [如何在触发挂起、 继续和后台 UWP 应用中的事件 （在调试）](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在 UWP 应用中触发挂起、继续和后台事件（调试时）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)

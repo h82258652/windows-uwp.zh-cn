@@ -1,42 +1,42 @@
 ---
 title: 执行地理编码和反向地理编码
-description: 本指南演示如何将街道地址转换为地理位置 （地理编码） 和通过 Windows.Services.Maps 命名空间中调用 MapLocationFinder 类的方法转换为街道地址 （反向地理编码） 的地理位置。
+description: 本指南演示如何通过在地理编码命名空间中调用 MapLocationFinder 类的方法，将街道地址转换为地理位置（地理编码）并将地理位置转换为街道地址（反向）。
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
 ms.date: 07/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 地理编码, 地图, 位置
 ms.localizationpriority: medium
-ms.openlocfilehash: 88687f6e7074ff7c914927a81a08720336b3c60c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5d7e1dda355cf87a2c8e26c11327cfff32e9d0b5
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371875"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259369"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>执行地理编码和反向地理编码
 
-本指南演示如何将街道地址转换为地理位置 （地理编码），并将地理位置转换为街道地址 （反向地理编码），通过调用的方法[ **MapLocationFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder)类中[ **Windows.Services.Maps** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps)命名空间。
+本指南演示如何[**通过在地理编码命名空间**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps)中调用[**MapLocationFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder)类的方法，将街道地址转换为地理位置（地理编码）并将地理位置转换为街道地址（反向）。
 
 > [!TIP]
-> 若要了解有关应用程序中使用映射的详细信息，请下载[MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)从示例[Windows 通用示例存储库](h https://github.com/Microsoft/Windows-universal-samples)GitHub 上。
+> 若要详细了解如何在应用中使用映射，请从 GitHub 上的[Windows 通用示例](h https://github.com/Microsoft/Windows-universal-samples)存储库下载[MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)示例。
 
-所涉及的地理编码和反向地理编码类进行组织，如下所示。
+地理编码和反向地理编码中涉及的类按如下方式进行组织。
 
--   [ **MapLocationFinder** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder)类包含处理地理编码的方法 ([**FindLocationsAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)) 和反向地理编码 ([**FindLocationsAtAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync))。
--   这些方法都返回[ **MapLocationFinderResult** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult)实例。
--   [**位置**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations)属性[ **MapLocationFinderResult** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult)公开一系列[ **MapLocation** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation)对象。 
--   [**MapLocation** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation)对象同时具有[**地址**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.address)属性，它公开[ **MapAddress** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapAddress)表示的街道地址、 对象和一个[**点**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.point)属性，它公开[ **Geopoint** ](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint)对象表示地理位置。
+-   [**MapLocationFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder)类包含处理地理编码（[**FindLocationsAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)）和反向地理编码（[**FindLocationsAtAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync)）的方法。
+-   这些方法都返回[**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult)实例。
+-   [**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult)的[**位置**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations)属性公开[**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation)对象的集合。 
+-   [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation)对象同时具有[**Address**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.address)属性（用于公开表示街道地址的[**MapAddress**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapAddress)对象）和[**Point**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.point)属性（用于公开表示地理位置的[**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint)对象）。
 
 > [!IMPORTANT]
-> 然后可以使用地图服务，必须指定一个地图身份验证密钥。 有关详细信息，请参阅[请求地图验证密钥](authentication-key.md)。
+> 必须先指定地图身份验证密钥，然后才能使用地图服务。 有关详细信息，请参阅[请求地图验证密钥](authentication-key.md)。
 
 ## <a name="get-a-location-geocode"></a>获取位置（地理编码）
 
-本部分介绍如何将街道地址或位置名称转换为地理位置 （地理编码）。
+本部分说明如何将街道地址或地点名称转换为地理位置（地理编码）。
 
-1.  调用的重载之一[ **FindLocationsAsync** ](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)方法[ **MapLocationFinder** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder)位置名称或街道类地址。
-2.  [ **FindLocationsAsync** ](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)方法将返回[ **MapLocationFinderResult** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult)对象。
-3.  使用[**位置**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations)属性[ **MapLocationFinderResult** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult)公开集合[ **MapLocation** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation)对象。 可能有多个[ **MapLocation** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation)对象，因为系统可能会发现多个对应于给定的输入的位置。
+1.  使用位置名称或街道地址调用[**MapLocationFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder)类的[**FindLocationsAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)方法的重载之一。
+2.  [**FindLocationsAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)方法返回[**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult)对象。
+3.  使用[**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult)的 "[**位置**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations)" 属性来公开集合[**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation)对象。 可能有多个[**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation)对象，因为系统可能会找到与给定输入对应的多个位置。
 
 ```csharp
 using Windows.Services.Maps;
@@ -80,12 +80,12 @@ result = (47.6406099647284,-122.129339994863)
 
 ## <a name="get-an-address-reverse-geocode"></a>获取地址（反向地理编码）
 
-本部分介绍如何将地理位置转换为一个地址 （反向地理编码）。
+本部分说明如何将地理位置转换为地址（反向地理编码）。
 
-1.  调用 [**MapLocationFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder) 类的 [**FindLocationsAtAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync) 方法。
+1.  调用 [**MapLocationFinder**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync) 类的 [**FindLocationsAtAsync**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder) 方法。
 2.  [  **FindLocationsAtAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync) 方法将返回一个 [**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) 对象，该对象包含匹配的 [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) 对象的集合。
-3.  使用[**位置**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations)属性[ **MapLocationFinderResult** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult)公开集合[ **MapLocation** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation)对象。 可能有多个[ **MapLocation** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation)对象，因为系统可能会发现多个对应于给定的输入的位置。
-4.  访问[ **MapAddress** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapAddress)对象通过[**地址**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.address)每个属性[ **MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation).
+3.  使用[**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult)的 "[**位置**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations)" 属性来公开集合[**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation)对象。 可能有多个[**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation)对象，因为系统可能会找到与给定输入对应的多个位置。
+4.  通过每个[**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation)的[**Address**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.address)属性访问[**MapAddress**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapAddress)对象。
 
 ```csharp
 using Windows.Services.Maps;
@@ -121,11 +121,11 @@ town = Redmond
 
 ## <a name="related-topics"></a>相关主题
 
-* [UWP 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [UWP 路况应用示例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 地图示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
+* [UWP 路况应用示例](https://github.com/Microsoft/Windows-appsample-trafficapp)
 * [地图设计指南](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [视频：跨 Windows 应用中的手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [必应地图开发人员中心](https://www.bingmapsportal.com/)
-* [**MapLocationFinder** class](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder)
+* [**MapLocationFinder**类](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder)
 * [**FindLocationsAsync**方法](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)
 * [**FindLocationsAtAsync**方法](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync)

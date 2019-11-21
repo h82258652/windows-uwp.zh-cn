@@ -7,20 +7,20 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 84835449c7c259c45423a93716b4fbc85fa0a7ab
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 85d42e69b376e2f3f455e44eb1dce3d41e890971
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369951"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258651"
 ---
 # <a name="pair-devices"></a>设备配对
 
 
 
-**重要的 Api**
+**重要的 API**
 
-- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
+- [**Windows. 枚举**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 某些设备需要先进行配对，然后才能使用。 [  **Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) 命名空间支持三种配对设备的不同方式。
 
@@ -28,7 +28,7 @@ ms.locfileid: "66369951"
 -   基本配对
 -   自定义配对
 
-**提示**  某些设备不需要为可进行配对。 这将在自动配对的部分中进行介绍。
+**提示**  某些设备无需成对使用。 这将在自动配对的部分中进行介绍。
 
  
 
@@ -57,9 +57,9 @@ ms.locfileid: "66369951"
 
 为了支持自定义配对，将需要为 [**PairingRequested**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationcustompairing.pairingrequested) 事件创建一个处理程序。 此处理程序需要确保可处理可能会在自定义配对方案中使用的所有各种 [**DevicePairingKinds**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DevicePairingKinds)。 要执行何种操作具体取决于作为事件参数的一部分提供的 **DevicePairingKinds**。
 
-请务必注意，自定义配对始终是系统级操作。 因此，如果你在桌面或 Windows Phone 上操作，将始终在配对即将发生时向用户显示系统对话框。 这是因为这两个平台所拥有的用户体验都要求征得用户同意。 由于该对话框是自动生成的，因此如果你在这两个平台上操作时为 **ConfirmOnly** 选择了 [**DevicePairingKinds**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DevicePairingKinds)，将无需创建你自己的对话框。 对于其他 **DevicePairingKinds**，你将需要执行一些特殊处理，具体取决于特定 **DevicePairingKinds** 值。 有关如何针对不同的 **DevicePairingKinds** 值处理自定义配对的示例，请参阅相关示例。
+请务必注意，自定义配对始终是系统级操作。 因此，如果你在桌面或 Windows Phone 上操作，将始终在配对即将发生时向用户显示系统对话框。 这是因为这两个平台所拥有的用户体验都要求征得用户同意。 由于该对话框是自动生成的，因此如果你在这两个平台上操作时为 [ConfirmOnly**选择了**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DevicePairingKinds)DevicePairingKinds，将无需创建你自己的对话框。 对于其他 **DevicePairingKinds**，你将需要执行一些特殊处理，具体取决于特定 **DevicePairingKinds** 值。 有关如何针对不同的 **DevicePairingKinds** 值处理自定义配对的示例，请参阅相关示例。
 
-从 Windows 10，版本 1903年，一个新**DevicePairingKinds**支持，则**ProvidePasswordCredential**。 此值表示，应用必须请求用户名和密码从用户为了使用配对的设备进行身份验证。 若要处理这种情况下，调用[ **AcceptWithPasswordCredential** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepairingrequestedeventargs.acceptwithpasswordcredential?branch=release-19h1#Windows_Devices_Enumeration_DevicePairingRequestedEventArgs_AcceptWithPasswordCredential_Windows_Security_Credentials_PasswordCredential_)的事件参数的方法**PairingRequested**事件处理程序以接受配对。 传入[ **PasswordCredential** ](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordcredential)封装的用户名和密码作为参数的对象。 请注意，用户名和密码远程设备是不同于和通常不完全相同的本地登录的用户的凭据。
+从 Windows 10 版本1903开始，支持一个新的**DevicePairingKinds** ， **ProvidePasswordCredential**。 此值表示应用必须请求用户提供用户名和密码才能使用配对设备进行身份验证。 若要处理这种情况，请调用**PairingRequested**事件处理程序的事件参数的[**AcceptWithPasswordCredential**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepairingrequestedeventargs.acceptwithpasswordcredential?branch=release-19h1#Windows_Devices_Enumeration_DevicePairingRequestedEventArgs_AcceptWithPasswordCredential_Windows_Security_Credentials_PasswordCredential_)方法，以接受配对。 传入一个[**PasswordCredential**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordcredential)对象，该对象将用户名和密码封装为参数。 请注意，远程设备的用户名和密码不同于并且通常与本地登录用户的凭据不同。
 
 ## <a name="unpairing"></a>取消配对
 
@@ -71,7 +71,7 @@ ms.locfileid: "66369951"
 ## <a name="sample"></a>示例
 
 
-若要下载展示如何使用 [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) API 的示例，请单击[此处](https://go.microsoft.com/fwlink/?LinkID=620536)。
+若要下载展示如何使用 [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) API 的示例，请单击[此处](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing)。
 
  
 

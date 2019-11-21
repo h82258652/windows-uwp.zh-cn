@@ -11,18 +11,18 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: b3a112305489cc9cf5971dbc218080b52e4d30bd
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 796ee7ed1454515817f5fc994ccb9242d2a2918c
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340635"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259870"
 ---
 # <a name="custom-dependency-properties"></a>自定义依赖属性
 
 我们在此处介绍了如何为使用 C++、C# 或 Visual Basic 的 Windows 运行时应用定义和实现你自己的依赖属性。 我们列出了应用开发人员和组件作者可能希望创建自定义依赖属性的原因。 我们描述了自定义依赖属性的实现步骤，以及一些可改善依赖属性的性能、实用性或通用性的最佳做法。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 我们假设你已阅读[依赖属性概述](dependency-properties-overview.md)，并且从现有依赖属性用户的角度理解依赖属性。 要理解本主题中的示例，你还应该理解 XAML，知道如何编写使用 C++、C# 或 Visual Basic 的基本 Windows 运行时应用。
 
@@ -30,9 +30,9 @@ ms.locfileid: "71340635"
 
 若要为属性支持样式设置、数据绑定、动画和默认值，它应实现为依赖属性。 依赖属性值不会存储为类中的字段，它们由 XAML 框架进行存储，并且使用密钥进行引用，该密钥会在通过调用 [**DependencyProperty.Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 方法以使用 Windows 运行时属性系统注册该属性时检索。   依赖属性只能由从 [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) 派生的类型使用。 但 **DependencyObject** 位于类层次结构中很高的级别，所以大部分用于 UI 和演示支持的类都能支持依赖属性。 有关依赖属性以及本文档中用于描述它们的一些术语和约定的详细信息，请参阅[依赖属性概述](dependency-properties-overview.md)。
 
-Windows 运行时中的依赖属性的示例如下：[**控件背景**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background)、 [**FrameworkElement**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、 [**Text 和 TextBox。** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
+Windows 运行时中的依赖属性示例如下：[**Control.Background**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background)、[**FrameworkElement.Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 和 [**TextBox.Text**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) 等等。
 
-约定如下：一个类公开的每个依赖属性都有一个 [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) 类型的相应 **public static readonly** 属性，该属性在同一个类上公开并提供依赖属性的标识符。 标识符的名称遵循以下约定：已向名称末尾添加字符串“Property”的依赖属性的名称。 例如，**Control.Background** 属性对应的 **DependencyProperty** 标识符是 [**Control.BackgroundProperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.backgroundproperty)。 标识符在注册依赖属性时存储其相关信息，然后可用于其他涉及依赖属性的操作，例如调用 [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)。
+约定如下：一个类公开的每个依赖属性都有一个DependencyProperty[**类型的相应**public static readonly](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) 属性，该属性在同一个类上公开并提供依赖属性的标识符。 标识符的名称遵循以下约定：已向名称末尾添加字符串“Property”的依赖属性的名称。 例如，**Control.Background** 属性对应的 **DependencyProperty** 标识符是 [**Control.BackgroundProperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.backgroundproperty)。 标识符在注册依赖属性时存储其相关信息，然后可用于其他涉及依赖属性的操作，例如调用 [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)。
 
 ## <a name="property-wrappers"></a>属性包装器
 
@@ -62,7 +62,7 @@ Windows 运行时中的依赖属性的示例如下：[**控件背景**](https://
 - 向属性系统注册属性名称（调用 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register)），指定所有者类型和属性值的类型。
   - [  **Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 有一个必需的参数需要使用属性元数据。 为 Register 指定 **null**，或者如果你希望通过调用 [**ClearValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.clearvalue) 可还原属性已更改的行为或基于元数据的默认值，请指定 [**PropertyMetadata**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertymetadata) 的实例。
 - 将一个 [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) 标识符定义为所有者类型上的一个 **public static readonly** 属性成员。
-- 按照你正在实现的语言中所用的属性访问器模型，定义一个包装器属性。 包装器属性名称应该与 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 中使用的 *name* 字符串匹配。 实现 **get** 和 **set** 访问器将包装器与它包装的依赖属性相连接，方法是调用 [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue) 和 [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue) 并将你自己的属性标识符作为一个参数传递。
+- 按照你正在实现的语言中所用的属性访问器模型，定义一个包装器属性。 包装器属性名称应该与Register[**中使用的**name](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 字符串匹配。 实现 **get** 和 **set** 访问器将包装器与它包装的依赖属性相连接，方法是调用 [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue) 和 [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue) 并将你自己的属性标识符作为一个参数传递。
 - （可选）将 [**ContentPropertyAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.ContentPropertyAttribute) 等特性放在包装器上。
 
 > [!NOTE]
@@ -72,7 +72,7 @@ Windows 运行时中的依赖属性的示例如下：[**控件背景**](https://
 
 若要使你的属性成为依赖属性，必须将该属性注册到由 Windows 运行时属性系统所维护的属性存储中。  若要注册属性，请调用 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 方法。
 
-对于 Microsoft .NET 语言（C# 和 Microsoft Visual Basic），你可以在类的主体中调用 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register)（在类中，但在任何成员定义外部）。 该标识符由 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 方法调用以返回值的形式提供。 [  **Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 通常调用为静态构造函数，或作为类中包括的 [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) 类型的 **public static readonly** 属性初始化的一部分。 此属性会公开你的依赖属性的标识符。 以下是 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 调用的一些示例。
+对于 Microsoft .NET 语言（C# 和 Microsoft Visual Basic），你可以在类的主体中调用 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register)（在类中，但在任何成员定义外部）。 该标识符由 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 方法调用以返回值的形式提供。 [  **Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 通常调用为静态构造函数，或作为类中包括的DependencyProperty[**类型的**public static readonly](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) 属性初始化的一部分。 此属性会公开你的依赖属性的标识符。 以下是 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 调用的一些示例。
 
 > [!NOTE]
 > 在标识符属性定义中注册依赖属性是典型的实现，但也可以在类静态构造函数中注册依赖属性。 如果需要多行代码来初始化依赖属性，此方法可能很有用。
@@ -166,7 +166,7 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 ```
 
 > [!NOTE]
-> 对于C++/cx 代码，如果你有一个私有字段和一个公共只读属性，其中显示了[DependencyProperty](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty)的原因是，使用依赖属性的其他调用方也可以使用需要要公开的标识符。 如果保持标识符为私有，人们将无法使用这些实用程序 API。 此类 API 示例和场景包括 [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue) 或 [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)、[**ClearValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.clearvalue)、[**GetAnimationBaseValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getanimationbasevalue)、[**SetBinding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.setbinding) 和 [**Setter.Property**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter.property) 等。 不可将公共字段用于这些内容，因为 Windows 运行时元数据规则不支持公共字段。
+> 对于C++/cx 代码，使用私有字段和公共只读属性来呈现[**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty)的原因是，使用依赖属性的其他调用方也可以使用需要将标识符公开的属性系统实用工具 api。 如果保持标识符为私有，人们将无法使用这些实用程序 API。 此类 API 示例和场景包括 [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue) 或 [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)、[**ClearValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.clearvalue)、[**GetAnimationBaseValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getanimationbasevalue)、[**SetBinding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.setbinding) 和 [**Setter.Property**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter.property) 等。 不可将公共字段用于这些内容，因为 Windows 运行时元数据规则不支持公共字段。
 
 ## <a name="dependency-property-name-conventions"></a>依赖属性名称约定
 
@@ -179,7 +179,7 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 
 ## <a name="implementing-the-wrapper"></a>实现包装器
 
-属性包装器应该在 **get** 实现中调用 [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue)，在 **set** 实现中调用 [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)。
+属性包装器应该在 [get**实现中调用**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue)GetValue，在 [set**实现中调用**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)SetValue。
 
 > [!WARNING]
 > 除异常情况以外，包装实现仅应执行[**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue)和[**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)操作。 否则，在通过 XAML 设置属性时的行为与通过代码设置属性时的行为不同。 为了提高效率，在设置依赖属性时，XAML 分析程序将绕过包装器，并通过 **SetValue** 与后备存储通信。
@@ -244,12 +244,12 @@ public:
 
 在调用 [**DependencyProperty.Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 的先前示例中，我们为 *propertyMetadata* 参数传递了一个 Null 值。 要使依存关系属性能够提供一个默认值，或使用某个属性已更改的回调，必须定义一个提供其中一项或全部两项功能的 [**PropertyMetadata**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyMetadata) 实例。
 
-通常，你将在 [**DependencyProperty.Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 的参数内提供一个 [**PropertyMetadata**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyMetadata)，作为一个内联创建的参数。
+通常，你将在 [**DependencyProperty.Register**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyMetadata) 的参数内提供一个 [**PropertyMetadata**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register)，作为一个内联创建的参数。
 
 > [!NOTE]
 > 如果正在定义[**CreateDefaultValueCallback**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.createdefaultvaluecallback)实现，则必须使用实用工具方法[**PropertyMetadata**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertymetadata.create) ，而不是调用[**PropertyMetadata**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyMetadata)构造函数来定义**PropertyMetadata**实例。
 
-下一个示例将通过使用 [**PropertyChangedCallback**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertychangedcallback) 值引用 [**PropertyMetadata**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyMetadata) 实例，修改先前显示的 [**DependencyProperty.Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 示例。 本节的后续内容中将介绍“OnLabelChanged”回调的实现。
+下一个示例将通过使用 [**PropertyChangedCallback**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 值引用 [**PropertyMetadata**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyMetadata) 实例，修改先前显示的 [**DependencyProperty.Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertychangedcallback) 示例。 本节的后续内容中将介绍“OnLabelChanged”回调的实现。
 
 ```csharp
 public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
@@ -421,7 +421,7 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 }
 ```
 
-## <a name="best-practices"></a>最佳实践
+## <a name="best-practices"></a>最佳做法
 
 在定义自定义依赖属性时，将以下考虑因素作为最佳实践。
 
@@ -472,12 +472,12 @@ Windows 运行时没有提供将自定义依赖属性注册为只读的方式。
 
 ### <a name="registering-the-dependency-properties-for-ccx-apps"></a>注册 C++/CX 应用的依赖属性
 
-由于分为标头文件和实现文件以及在实现文件的作用域上进行初始化是错误做法，所以在 C++/CX 中注册属性的实现比在 C# 中实现更为复杂。 （可视化C++组件扩展（C++/cx）将根范围中的静态初始值设定项代码直接放入C# **DllMain**，而编译器将静态初始值设定项分配给类，从而避免**DllMain**加载锁问题。）。 此处执行的最佳做法是为某个类声明可注册所有依赖属性的 helper 函数，一个类对应一个函数。 然后，对于你的应用使用的每个自定义类，必须引用要使用的每个自定义类公开的 helper 注册函数。 在 `InitializeComponent` 之前，调用每个 helper 注册函数以作为 [**Application constructor**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.-ctor) (`App::App()`) 的一部分。 例如，该构造函数仅在首次引用应用时运行，如果恢复暂停的应用，该构造函数不会再次运行。 同样，如之前 C++ 注册示例所示，每个 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 调用周围的 **nullptr** 标识非常重要：它确保该函数的任何调用方均不能注册此属性两次。 第二次注册调用可能会导致没有此类标识的应用崩溃，因为属性名称可能重复。 如果你要查找 C++/CX 版本示例的代码，请参阅 [XAML 用户和自定义控件示例](https://go.microsoft.com/fwlink/p/?linkid=238581)中的这一实现模式。
+由于分为标头文件和实现文件以及在实现文件的作用域上进行初始化是错误做法，所以在 C++/CX 中注册属性的实现比在 C# 中实现更为复杂。 （可视化C++组件扩展（C++/cx）将根范围中的静态初始值设定项代码直接放入C# **DllMain**，而编译器将静态初始值设定项分配给类，从而避免**DllMain**加载锁问题。）。 此处执行的最佳做法是为某个类声明可注册所有依赖属性的 helper 函数，一个类对应一个函数。 然后，对于你的应用使用的每个自定义类，必须引用要使用的每个自定义类公开的 helper 注册函数。 在 [ 之前，调用每个 helper 注册函数以作为Application constructor](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.-ctor)`App::App()` (`InitializeComponent`) 的一部分。 例如，该构造函数仅在首次引用应用时运行，如果恢复暂停的应用，该构造函数不会再次运行。 同样，如之前 C++ 注册示例所示，每个Register[**调用周围的**nullptr](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 标识非常重要：它确保该函数的任何调用方均不能注册此属性两次。 第二次注册调用可能会导致没有此类标识的应用崩溃，因为属性名称可能重复。 如果你要查找 C++/CX 版本示例的代码，请参阅 [XAML 用户和自定义控件示例](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)中的这一实现模式。
 
 ## <a name="related-topics"></a>相关主题
 
 - [**System.windows.dependencyobject>** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)
 - [**DependencyProperty. Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register)
 - [依赖属性概述](dependency-properties-overview.md)
-- [XAML 用户控件和自定义控件示例](https://go.microsoft.com/fwlink/p/?linkid=238581)
+- [XAML 用户控件和自定义控件示例](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)
  

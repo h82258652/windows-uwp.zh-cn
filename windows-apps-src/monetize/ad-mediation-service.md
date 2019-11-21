@@ -5,16 +5,16 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 投放广告, 广告中介
 ms.localizationpriority: medium
-ms.openlocfilehash: 9197dd4b62df26ff63e469063573789da948c767
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 700a80aff4c991f4fa3bff681ba995b113025fec
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592252"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259322"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Microsoft 广告中介服务
 
-当你使用 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)[在应用中显示广告](display-ads-in-your-app.md)时，可以选择使用 Microsoft 广告中介服务来最大程度地增加广告收益。 本文概要介绍广告中介服务及其目标。
+当你使用 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)[在应用中显示广告](display-ads-in-your-app.md)时，可以选择使用 Microsoft 广告中介服务来最大程度地增加广告收益。 本文概要介绍广告中介服务及其目标。
 
 广告中介服务是 [Microsoft 广告盈利平台](https://developer.microsoft.com/windows/ad-monetization-platform)的一部分。 该平台由以下部分组成。
 
@@ -28,7 +28,7 @@ ms.locfileid: "57592252"
 
 ## <a name="manage-complexity-of-ad-network-relationships"></a>管理广告网络关系的复杂性  
 
-广告中介服务与大量广告网络集成，你无需进行此项工作。 使用 Microsoft Advertising SDK 在应用中显示广告后，可以修改 ad 中介设置[在合作伙伴中心](../publish/in-app-ads.md#mediation-settings)显示从多个 ad 网络的广告。 无需对代码进行任何更改，便可以收到来自新广告网络的广告。
+广告中介服务与大量广告网络集成，你无需进行此项工作。 使用 Microsoft Advertising SDK 在应用中显示广告后，可以[在 "合作伙伴中心" 中](../publish/in-app-ads.md#mediation-settings)修改 ad 中介设置，以显示来自多个 ad 网络的广告。 无需对代码进行任何更改，便可以收到来自新广告网络的广告。
 
 我们代表你管理与广告网络的端到端关系。 从网络集成到投放广告、报告和付款，所有工作都由我们来处理，你无需进行任何操作。
 
@@ -47,7 +47,7 @@ ms.locfileid: "57592252"
 
 新的广告网络通过学习预算自动包含并评估性能。 在很短的时间内，它们就会在瀑布中找到自己的位置。 这使得广告网络更具竞争力，并且可以帮助开发人员通过应用获得最大收益。
 
-强烈建议使用[推荐的中介设置](../publish/in-app-ads.md#mediation-settings)使应用中的广告产生的收益最大化。 我们的算法可以借此让你的应用产生最大收益。 但是，也可以自由地在合作伙伴中心，更好地控制为广告和在其中它们执行操作的顺序提供服务的 ad 网络中选择自己中介的设置。
+强烈建议使用[推荐的中介设置](../publish/in-app-ads.md#mediation-settings)使应用中的广告产生的收益最大化。 我们的算法可以借此让你的应用产生最大收益。 不过，你也可以自由选择合作伙伴中心的 "采集转送" 设置，以便更好地控制提供广告的 ad 网络及其执行顺序。
 
 ## <a name="rich-data-and-signals"></a>丰富的数据和信号
 
@@ -55,6 +55,6 @@ ms.locfileid: "57592252"
 
 ## <a name="related-topics"></a>相关主题
 
-* [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)
+* [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
 * [中介设置](../publish/in-app-ads.md#mediation-settings)
 * [广告效果报告](../publish/advertising-performance-report.md)

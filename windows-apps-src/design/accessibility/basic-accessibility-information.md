@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 77b2c76b446332ae78024618b04ffbc1b66ffb75
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: d39d2f094dd85c29b51a19e1affcf0d292183ede
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339587"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257775"
 ---
 # <a name="expose-basic-accessibility-information"></a>公开基本的辅助功能信息  
 
@@ -32,7 +32,7 @@ ms.locfileid: "71339587"
 | 元素类型 | 描述 |
 |--------------|-------------|
 | 静态文本 | 对于 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 元素，辅助名称是从可见（内部）文本自动确定的。 该元素中所有文本都用作其名称。 请参阅[根据内部文本命名](#name_from_inner_text)。 |
-| 映像 | XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 元素没有对 **img** 和类似元素的 HTML **alt** 属性的直接模拟。 使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 提供名称，或者使用描述技术。 请参阅[图像的辅助名称](#images)。 |
+| 图像 | XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 元素没有对 **img** 和类似元素的 HTML **alt** 属性的直接模拟。 使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 提供名称，或者使用描述技术。 请参阅[图像的辅助名称](#images)。 |
 | 窗体元素 | 窗体元素的辅助名称应当与针对该元素显示的标签同名。 请参阅[标签和 LabeledBy](#labels)。 |
 | 按钮和链接 | 默认情况下，按钮或链接的辅助名称基于可见文本，并使用相同的规则，如[根据内部文本命名](#name_from_inner_text)所述。 如果按钮中仅包含一个图像，请使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 提供与按钮的预期操作等效的仅文本操作。 |
 
@@ -44,7 +44,7 @@ ms.locfileid: "71339587"
 ## <a name="role-and-value"></a>角色和值  
 属于 XAML 词汇的控件和其他 UI 元素都实现了对于 UI 自动化的支持，可以在元素的定义中报告角色和值。 你可以使用 UI 自动化工具检查控件的角色和值信息，也可以读取每个控件的 [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) 实现文档。 UI 自动化框架中的可用角色在 [**AutomationControlType**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) 枚举中定义。 通过调用 UI 自动化框架使用控件的 **AutomationPeer** 公开的方法，UI 自动化客户端（例如，辅助技术）可以获取角色信息。
 
-并非所有的控件都有值。 有值的控件将通过该控件支持的对等和模式来向 UI 自动化报告此信息。 例如，[**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 窗体元素有值。 辅助技术可以是 UI 自动化客户端，而且既能发现值的存在，又能发现值是多少。 在此特定情况下，**TextBox** 通过 [**TextBoxAutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.TextBoxAutomationPeer) 定义支持 [**IValueProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IValueProvider) 模式。
+并非所有的控件都有值。 有值的控件将通过该控件支持的对等和模式来向 UI 自动化报告此信息。 例如，[**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 窗体元素有值。 辅助技术可以是 UI 自动化客户端，而且既能发现值的存在，又能发现值是多少。 在此特定情况下，**TextBox** 通过 [**TextBoxAutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IValueProvider) 定义支持 [**IValueProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.TextBoxAutomationPeer) 模式。
 
 > [!NOTE]
 > 如果你使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 或其他技术明确提供辅助名称，请不要在辅助名称中包括由控件角色或类型信息使用的文本。 例如，不要在名称中包含诸如“button”或“list”的字符串。 角色和类型信息源自对 UI 自动化的默认控件支持所提供的另一个 UI 自动化属性 (**LocalizedControlType**)。 许多辅助技术都在辅助名称后面附加 **LocalizedControlType**，因此，使用辅助名称来复制角色可能会导致不必要的重复词。 例如，如果你为 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 控件提供辅助名称“button”或将“button”包含为该名称的最后一部分，则可能导致屏幕阅读器将其读为“button button”。 你应该使用讲述人功能对辅助功能信息的该方面进行测试。
@@ -83,7 +83,7 @@ XAML
   AutomationProperties.Name="An image of a customer using the product."/>
 ```
 
-或者，考虑包括一个文本描述文字，该描述文字在可见 UI 中出现并同时充当图形内容的、与标签相关的辅助功能信息。 以下是一个示例：
+或者，考虑包括一个文本描述文字，该描述文字在可见 UI 中出现并同时充当图形内容的、与标签相关的辅助功能信息。 下面是一个示例：
 
 XAML
 ```xml
@@ -141,7 +141,7 @@ XAML
 <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"/>
 
 ## <a name="accessible-names-from-dynamic-data"></a>动态数据中的辅助名称  
-Windows 通过一个名为*数据绑定*的功能，支持许多可用来显示相关数据源所提供的值的控件。 当你用数据项填充列表时，可能需要在初始列表填充之后使用一种用来为数据绑定列表项设置辅助名称的技术。 有关详细信息，请参阅 [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570)中的“方案 4”。
+Windows 通过一个名为*数据绑定*的功能，支持许多可用来显示相关数据源所提供的值的控件。 当你用数据项填充列表时，可能需要在初始列表填充之后使用一种用来为数据绑定列表项设置辅助名称的技术。 有关详细信息，请参阅 [XAML 辅助功能示例](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)中的“方案 4”。
 
 <span id="Accessible_names_and_localization"/>
 <span id="accessible_names_and_localization"/>
@@ -150,12 +150,12 @@ Windows 通过一个名为*数据绑定*的功能，支持许多可用来显示�
 ## <a name="accessible-names-and-localization"></a>辅助名称和本地化  
 为了确保辅助名称同时还是已本地化的元素，应当使用正确的技术将可本地化字符串作为资源进行存储，然后引用具有 [x:Uid 指令](https://docs.microsoft.com/windows/uwp/xaml-platform/x-uid-directive)值的资源连接。 如果辅助名称来自显式设置的 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 用法，请确保该用法中的字符串同样本地化。
 
-请注意，附加属性（如 [**AutomationProperties**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) 属性）对资源名称使用特定的限定语法，以便资源在应用到特定元素时引用该附加属性。 例如，应用到名为 `MediumButton` 的 UI 元素 时，[**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 的资源名称为 `MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name`。
+请注意，附加属性（如 [**AutomationProperties**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) 属性）对资源名称使用特定的限定语法，以便资源在应用到特定元素时引用该附加属性。 例如，应用到名为 [ 的 UI 元素 时，AutomationProperties.Name](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)`MediumButton` 的资源名称为 `MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name`。
 
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>相关主题  
 * [辅助功能](accessibility.md)
 * [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)
-* [XAML 辅助功能示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML 辅助功能示例](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
 * [辅助功能测试](accessibility-testing.md)

@@ -6,18 +6,18 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, 已知问题, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 029d595c41301e62f74c9b08b633bb22bfb12786
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 51192e13c63bf3141989cfbf5d9ebd7fbaf13641
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641062"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260247"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>有关应用内广告的已知问题和疑难解答
 
 本主题列出了当前版本的 Microsoft 广告 SDK 的已知问题。 有关其他疑难解答指南，请参阅以下主题。
 
-* [HTML 和 JavaScript 故障排除指南](html-and-javascript-troubleshooting-guide.md)
+* [HTML 和 JavaScript 疑难解答指南](html-and-javascript-troubleshooting-guide.md)
 * [XAML 和C#故障排除指南](xaml-and-c-troubleshooting-guide.md)
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>XAML 中的 AdControl 接口未知
@@ -40,15 +40,15 @@ ms.locfileid: "57641062"
 
 你没有看到广告的原因有很多，其中包括网络错误。 其他原因可能包括：
 
-* 使用大小大于或小于的大小在合作伙伴中心选择广告单元**AdControl**在应用程序的代码。
+* 在合作伙伴中心选择一个大小大于或小于应用程序代码中**adunitid**大小的 ad 单位。
 
 * 在运行动态应用时，如果将[测试模式值](set-up-ad-units-in-your-app.md#test-ad-units)用于广告单元 ID，则广告不会显示。
 
 * 如果你在过去半小时创建了新的广告单元 ID，可能无法看到广告，直到服务器通过系统传播新数据为止。 之前显示了广告的现有 ID 应会立即显示广告。
 
-如果你可以在应用中看到测试广告，则代码有效，并且能够显示广告。 如果你遇到问题，请联系[产品支持人员](https://developer.microsoft.com/en-us/windows/support)。 在此页上，选择**联系我们**。
+如果你可以在应用中看到测试广告，则代码有效，并且能够显示广告。 如果你遇到问题，请联系[产品支持人员](https://developer.microsoft.com/en-us/windows/support)。 在该页上 **，选择 "联系我们"** 。
 
-你还可在[论坛](https://go.microsoft.com/fwlink/p/?LinkId=401266)发布问题。
+你还可在[论坛](https://go.microsoft.com/fwlink/?LinkID=401264)发布问题。
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>应用中显示的是测试广告而非实时广告
 
@@ -58,7 +58,7 @@ ms.locfileid: "57641062"
 
 * 旁加载应用或在仿真器中运行的应用不会显示实时广告。
 
-实时广告单元为测试广告提供服务，ad 单元状态会显示**活动和服务测试广告**在合作伙伴中心。 这当前不适用于手机应用。
+当实时 ad 单位提供测试广告时，ad 单位的状态显示为 "活动"，并为 "合作伙伴中心"**提供测试广告**。 这当前不适用于手机应用。
 
 
 <span id="reference_errors"/>
@@ -67,7 +67,7 @@ ms.locfileid: "57641062"
 
 在使用 Microsoft 广告 SDK 时，你无法在项目中面向**任何 CPU**。 如果你的项目面向**任何 CPU** 平台，可能在添加类似于此引用的引用后会看到警告。
 
-![referenceerror\-解决方案资源管理器](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
+![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
 若要删除此警告，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 使用“配置管理器”以设置适用于调试和版本配置的平台目标。
 
@@ -91,7 +91,7 @@ JavaScript/HTML 应用不得将元素放入 Z 顺序的保留 MAX-10 范围。 �
 
 ## <a name="more-information"></a>详细信息
 
-有关最新的已知问题和发布与 Microsoft 广告 SDK 相关的问题的详细信息，请访问[论坛](https://go.microsoft.com/fwlink/p/?LinkId=401266)。
+有关最新的已知问题和发布与 Microsoft 广告 SDK 相关的问题的详细信息，请访问[论坛](https://go.microsoft.com/fwlink/?LinkID=401264)。
 
  
 

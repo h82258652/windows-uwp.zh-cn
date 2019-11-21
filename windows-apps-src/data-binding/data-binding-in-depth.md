@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: ac4ab9dc85292187055c7b4ef772cc64104f7944
-ms.sourcegitcommit: a791269689f0494f2905ee9bdb3cb739dc33eda3
+ms.openlocfilehash: c9218fe2b74fe9a550cd347f72083f090bd48f85
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2019
-ms.locfileid: "72601223"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255352"
 ---
 # <a name="data-binding-in-depth"></a>深入了解数据绑定
 
@@ -42,14 +42,14 @@ ms.locfileid: "72601223"
 
 **演示 {x:Bind} 的示例应用**
 
--   [{x:Bind} 示例](https://go.microsoft.com/fwlink/p/?linkid=619989)。
+-   [{x:Bind} 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind)。
 -   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)。
--   [XAML UI 基本示例](https://go.microsoft.com/fwlink/p/?linkid=619992)。
+-   [XAML UI 基本示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)。
 
 **演示 {Binding} 的示例应用**
 
--   下载 [Bookstore1](https://go.microsoft.com/fwlink/?linkid=532950) 应用。
--   下载 [Bookstore2](https://go.microsoft.com/fwlink/?linkid=532952) 应用。
+-   下载 [Bookstore1](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10) 应用。
+-   下载 [Bookstore2](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2Universal_10) 应用。
 
 ## <a name="every-binding-involves-these-pieces"></a>每个绑定均由以下部分构成
 
@@ -224,18 +224,18 @@ public class HostViewModel : BindableBase
 ```
 
 > [!NOTE]
-> 对于C++/WinRT，在应用程序中声明的派生自基类的任何运行时类称为可*组合*的类。 且可组合类存在一些限制。 若要使应用程序通过 Visual Studio 和 Microsoft Store 用于验证提交的 [Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)测试，使 Microsoft Store 可成功纳入该应用程序，可组合类必须最终派生自 Windows 基类。 这意味着继承层次结构的根类必须是源于 Windows.* 名称空间的类型。 如果确实需要从基类派生运行时类（例如，为要从中派生的所有视图模型实现 BindableBase 类），则可以从 [Windows.UI.Xaml.DependencyObject](/uwp/api/windows.ui.xaml.dependencyobject) 派生。
+> 对于C++/WinRT，在应用程序中声明的派生自基类的任何运行时类称为可*组合*的类。 且可组合类存在一些限制。 若要使应用程序通过 Visual Studio 和 Microsoft Store 用于验证提交的 [Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)测试，使 Microsoft Store 可成功纳入该应用程序，可组合类必须最终派生自 Windows 基类。 这意味着继承层次结构的根类必须是源于 Windows.* 名称空间的类型。 如果确实需要从基类派生运行时类（例如，为要从中派生的所有视图模型实现 BindableBase 类），则可以从 &mdash;Windows.UI.Xaml.DependencyObject **派生**&mdash;[ **。
 
-通过使用 [**String.Empty**](https://docs.microsoft.com/dotnet/api/system.string.empty) 或 **null** 参数引发 **PropertyChanged** 事件，以指示对象上的所有非索引器属性应重新读取。 您可以引发事件，以指示对象的索引器属性已更改，方法是对特定索引器（其中*索引器*是索引值）使用 "item \[*索引器*\]" 的参数，或将 "item \[ \]" 的值指定为索引器.
+通过使用String.Empty[**或**null](https://docs.microsoft.com/dotnet/api/system.string.empty) 参数引发 **PropertyChanged** 事件，以指示对象上的所有非索引器属性应重新读取。 您可以引发事件，以指示对象的索引器属性已更改，方法是将特定索引器（其中索引*器*是索引值）的 "item\[*索引器*\]" 或 "item\[\]" 的值设置为所有索引器。
 
-可以将绑定源视为其属性中包含数据的单个对象或一些对象的集合。 在C#和中 Visual Basic 代码，你可以一次性绑定到对象，该对象实现[**列表（of T）** ](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1)以显示在运行时不会更改的集合。 对于可观察集合（在将项添加到集合或从集合中删除时进行观察），应改为单向绑定到 [**ObservableCollection(Of T)** ](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1)。 在C++/cx 代码中，可以绑定到可观察的集合和不可观察的集合的[**向量 &lt;T &gt;** ](https://docs.microsoft.com/cpp/cppcx/platform-collections-vector-class) ， C++/WinRT 具有其自己的类型。 若要绑定到你自己的集合类，请按照下表中的指南进行操作。
+可以将绑定源视为其属性中包含数据的单个对象或一些对象的集合。 在C#和中 Visual Basic 代码，你可以一次性绑定到对象，该对象实现[**列表（of T）** ](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1)以显示在运行时不会更改的集合。 对于可观察集合（在将项添加到集合或从集合中删除时进行观察），应改为单向绑定到 [**ObservableCollection(Of T)** ](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1)。 在C++/cx 代码中，可以绑定到可观察的集合和不可观察的集合的[**向量&lt;t&gt;** ](https://docs.microsoft.com/cpp/cppcx/platform-collections-vector-class) ， C++/WinRT 具有其自己的类型。 若要绑定到你自己的集合类，请按照下表中的指南进行操作。
 
 |方案|C# 和 VB (CLR)|C++/WinRT|C++/CX|
 |-|-|-|-|
 |绑定到对象。|可以为任何对象。|可以为任何对象。|对象必须具有 [**BindableAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) 或实现 [**ICustomPropertyProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ICustomPropertyProvider)。|
 |从绑定对象获取属性更改通知。|对象必须实现[**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged)。| 对象必须实现[**INotifyPropertyChanged**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.INotifyPropertyChanged)。|对象必须实现[**INotifyPropertyChanged**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.INotifyPropertyChanged)。|
-|绑定到集合。| [**列表（of T）** ](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1)|[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) of [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)或[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。 请参阅[XAML 项控件; C++使用](../cpp-and-winrt-apis/binding-collection.md) [ C++/WinRT](../cpp-and-winrt-apis/collections.md)绑定到/WinRT 集合和集合。| [**向量 &lt;T &gt;** ](https://docs.microsoft.com/cpp/cppcx/platform-collections-vector-class)|
-|从绑定集合获取集合更改通知。|[**ObservableCollection （of T）** ](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1)|[**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)的[**IObservableVector**](/uwp/api/windows.foundation.collections.iobservablevector_t_) 。 例如， [**winrt：： single_threaded_observable_vector &lt;T &gt;** ](https://docs.microsoft.com/en-us/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)。|[**IObservableVector &lt;T &gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_)。  [**向量 &lt;T &gt;** ](https://docs.microsoft.com/cpp/cppcx/platform-collections-vector-class)实现此接口。|
+|绑定到集合。| [**列表（of T）** ](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1)|[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) of [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)或[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。 请参阅[XAML 项控件; C++使用](../cpp-and-winrt-apis/binding-collection.md) [ C++/WinRT](../cpp-and-winrt-apis/collections.md)绑定到/WinRT 集合和集合。| [**向量&lt;T&gt;** ](https://docs.microsoft.com/cpp/cppcx/platform-collections-vector-class)|
+|从绑定集合获取集合更改通知。|[**ObservableCollection （of T）** ](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1)|[**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)的[**IObservableVector**](/uwp/api/windows.foundation.collections.iobservablevector_t_) 。 例如， [**winrt：： single_threaded_observable_vector&lt;t&gt;** ](https://docs.microsoft.com/en-us/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)。|[**IObservableVector&lt;t&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_)。  [**向量&lt;t&gt;** ](https://docs.microsoft.com/cpp/cppcx/platform-collections-vector-class)实现此接口。|
 |实现支持绑定的集合。|扩展 [**List(Of T)** ](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1) 或者实现 [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist)、[**IList**](https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1)(Of [**Object**](https://docs.microsoft.com/dotnet/api/system.object))、[**IEnumerable**](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable) 或 [**IEnumerable**](https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1)(Of **Object**)。 绑定到通用 **IList(Of T)** 和 **IEnumerable(Of T)** 的操作不受支持。|实现[**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)的[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) 。 请参阅[XAML 项控件; C++使用](../cpp-and-winrt-apis/binding-collection.md) [ C++/WinRT](../cpp-and-winrt-apis/collections.md)绑定到/WinRT 集合和集合。|实现 [**IBindableVector**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Interop.IBindableVector)、[**IBindableIterable**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Interop.IBindableIterable)、[**IVector**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IVector_T_)&lt;[**Object**](https://docs.microsoft.com/dotnet/api/system.object)^&gt;、[**IIterable**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IIterable_T_)&lt;**Object**^&gt;、**IVector**&lt;[**IInspectable**](https://docs.microsoft.com/windows/desktop/api/inspectable/nn-inspectable-iinspectable)\*&gt; 或 **IIterable**&lt;**IInspectable**\*&gt;。 绑定到通用 **IVector&lt;T&gt;** 和 **IIterable&lt;T&gt;** 的操作不受支持。|
 | 实现支持集合更改通知的集合。 | 扩展 [**ObservableCollection(Of T)** ](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1) 或实现（非通用）[**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist) 和 [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged)。|实现[**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)的[**IObservableVector**](/uwp/api/windows.foundation.collections.iobservablevector_t_)或[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。|实现 [**IBindableVector**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Interop.IBindableVector) 和 [**IBindableObservableVector**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Interop.IBindableObservableVector)。|
 |实现支持增量加载的集合。|扩展 [**ObservableCollection(Of T)** ](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1) 或实现（非通用）[**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist) 和 [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged)。 此外，还实现 [**ISupportIncrementalLoading**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ISupportIncrementalLoading)。|实现[**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)的[**IObservableVector**](/uwp/api/windows.foundation.collections.iobservablevector_t_)或[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。 另外，实现[**为 isupportincrementalloading**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ISupportIncrementalLoading)|实现 [**IBindableVector**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Interop.IBindableVector)、[**IBindableObservableVector**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Interop.IBindableObservableVector) 和 [**ISupportIncrementalLoading**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ISupportIncrementalLoading)。|
@@ -616,11 +616,11 @@ Click="{x:Bind RootFrame.GoForward}"/>
 
 重载方法不适用于借助此技术来处理事件。 此外，如果用于处理事件的方法包含一些参数，则这些参数均须根据各自对应的事件参数类型进行赋值。 在此情况下，[**Frame.GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward) 不重载且不含任何参数（但即使其包含两个 **object** 参数，也仍然有效）。 不过， [**GoBack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback)是重载的，因此我们不能将该方法与此方法一起使用。
 
-事件绑定技术类似于实现和使用命令（一个命令返回一种属性，该属性将返回实现 [**ICommand**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) 接口的对象）。 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 和 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) 均适用于命令。 可使用 [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) 示例（位于“Common”文件夹中）中提供的 **DelegateCommand** 帮助程序类，这样便无需多次实现命令模式。
+事件绑定技术类似于实现和使用命令（一个命令返回一种属性，该属性将返回实现 [**ICommand**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) 接口的对象）。 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 和 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) 均适用于命令。 可使用 **QuizGame** 示例（位于“Common”文件夹中）中提供的 [DelegateCommand](https://github.com/microsoft/Windows-appsample-networkhelper) 帮助程序类，这样便无需多次实现命令模式。
 
 ## <a name="binding-to-a-collection-of-folders-or-files"></a>绑定到文件夹或文件集合
 
-你可以使用 [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命名空间中的 API 来检索文件夹和文件数据。 然而，各种 **GetFilesAsync**、**GetFoldersAsync** 和 **GetItemsAsync** 方法都不会返回适合绑定到列表控件的值。 必须绑定到 [**FileInformationFactory**](https://docs.microsoft.com/uwp/api/windows.storage.bulkaccess.fileinformationfactory.getvirtualizedfilesvector) 类的 [**GetVirtualizedFilesVector**](https://docs.microsoft.com/uwp/api/windows.storage.bulkaccess.fileinformationfactory.getvirtualizedfoldersvector)、[**GetVirtualizedFoldersVector**](https://docs.microsoft.com/uwp/api/windows.storage.bulkaccess.fileinformationfactory.getvirtualizeditemsvector)和 [**GetVirtualizedItemsVector**](https://docs.microsoft.com/uwp/api/Windows.Storage.BulkAccess.FileInformationFactory) 方法的返回值。 下面的代码示例来自 [StorageDataSource 和 GetVirtualizedFilesVector 示例](https://go.microsoft.com/fwlink/p/?linkid=228621)，它将显示典型的使用模式。 请谨记在应用包清单中声明 **picturesLibrary** 功能，并确认你的 Pictures 库文件夹中有图片。
+你可以使用 [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命名空间中的 API 来检索文件夹和文件数据。 然而，各种 **GetFilesAsync**、**GetFoldersAsync** 和 **GetItemsAsync** 方法都不会返回适合绑定到列表控件的值。 必须绑定到 [**FileInformationFactory**](https://docs.microsoft.com/uwp/api/windows.storage.bulkaccess.fileinformationfactory.getvirtualizedfilesvector) 类的 [**GetVirtualizedFilesVector**](https://docs.microsoft.com/uwp/api/windows.storage.bulkaccess.fileinformationfactory.getvirtualizedfoldersvector)、[**GetVirtualizedFoldersVector**](https://docs.microsoft.com/uwp/api/windows.storage.bulkaccess.fileinformationfactory.getvirtualizeditemsvector)和 [**GetVirtualizedItemsVector**](https://docs.microsoft.com/uwp/api/Windows.Storage.BulkAccess.FileInformationFactory) 方法的返回值。 下面的代码示例来自 [StorageDataSource 和 GetVirtualizedFilesVector 示例](https://code.msdn.microsoft.com/windowsapps/Data-source-adapter-sample-3d32e535)，它将显示典型的使用模式。 请谨记在应用包清单中声明 **picturesLibrary** 功能，并确认你的 Pictures 库文件夹中有图片。
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -687,7 +687,7 @@ ItemsSource="{x:Bind AuthorHasACollectionOfBookSku}" ...>
 </GridView>
 ```
 
-你可以采用以下两种方式之一实现“属于组”模式。 一种方法是创作你自己的组类。 从 **List&lt;T&gt;** 派生类（其中 *T* 是项目类型）。 例如，`public class Author : List<BookSku>`。 另一种方式是，使用 [LINQ](https://docs.microsoft.com/previous-versions/bb397926(v=vs.140)) 表达式，从诸如 **BookSku** 项目的属性值等动态创建组对象（以及组类）。 此方法（仅维护项目的简单列表并将其动态分组在一起）是从云服务访问数据的应用的典型用法。 可以灵活地按作者或流派对书籍进行分组，而无需特殊组类，如 **Author** 和 **Genre**。
+你可以采用以下两种方式之一实现“属于组”模式。 一种方法是创作你自己的组类。 从 **List&lt;T&gt;** 派生类（其中 *T* 是项目类型）。 例如， `public class Author : List<BookSku>`。 另一种方式是，使用 [LINQ](https://docs.microsoft.com/previous-versions/bb397926(v=vs.140)) 表达式，从诸如 **BookSku** 项目的属性值等动态创建组对象（以及组类）。 此方法（仅维护项目的简单列表并将其动态分组在一起）是从云服务访问数据的应用的典型用法。 可以灵活地按作者或流派对书籍进行分组，而无需特殊组类，如 **Author** 和 **Genre**。
 
 下面的示例使用 [LINQ](https://docs.microsoft.com/previous-versions/bb397926(v=vs.140)) 阐述了“属于组”模式。 在本示例中我们按流派对书籍进行分组，并在组标题中显示流派名。 这由引用组 [**Key**](https://docs.microsoft.com/dotnet/api/system.linq.igrouping-2.key#System_Linq_IGrouping_2_Key) 的值的“Key”属性路径进行指示。
 
@@ -738,7 +738,7 @@ public IOrderedEnumerable<IGrouping<string, BookSku>> Genres
     </GridView>
 ```
 
-[  **SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 控件是使用户查看和导航分组数据的绝佳方法。 [Bookstore2](https://go.microsoft.com/fwlink/?linkid=532952) 示例应用演示了如何使用 **SemanticZoom**。 在该应用中，你可以查看按作者分组的书籍列表（放大视图），也可以缩小以查看作者的跳转列表（缩小视图）。 与在书籍列表中上下滚动相比，跳转列表提供了更快速的浏览方式。 实际上，放大视图和缩小视图是绑定到同一 **CollectionViewSource** 的 **ListView** 或 **GridView** 控件。
+[  **SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 控件是使用户查看和导航分组数据的绝佳方法。 [Bookstore2](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2Universal_10) 示例应用演示了如何使用 **SemanticZoom**。 在该应用中，你可以查看按作者分组的书籍列表（放大视图），也可以缩小以查看作者的跳转列表（缩小视图）。 与在书籍列表中上下滚动相比，跳转列表提供了更快速的浏览方式。 实际上，放大视图和缩小视图是绑定到同一 **CollectionViewSource** 的 **ListView** 或 **GridView** 控件。
 
 ![SemanticZoom 图示](images/sezo.png)
 
@@ -756,7 +756,7 @@ public IOrderedEnumerable<IGrouping<string, BookSku>> Genres
 
 ## <a name="creating-bindings-in-code"></a>使用代码创建绑定
 
-**请注意**  This 节仅适用于[{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension)，因为不能在代码中创建[{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)绑定。 不过，使用 [**DependencyObject.RegisterPropertyChangedCallback**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.registerpropertychangedcallback) 同样可以获得 {x:Bind} 的某些相同优势，这使你可以在任何依赖属性上注册更改通知。
+**请注意**  本节仅适用于[{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension)，因为无法在代码中创建[{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)绑定。 不过，使用 [**DependencyObject.RegisterPropertyChangedCallback**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.registerpropertychangedcallback) 同样可以获得 {x:Bind} 的某些相同优势，这使你可以在任何依赖属性上注册更改通知。
 
 还可以使用规程代码而不是 XAML 来将 UI 元素连接到数据。 为此，请创建一个新 [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding) 对象，设置相应的属性，然后调用 [**FrameworkElement.SetBinding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.setbinding) 或 [**BindingOperations.SetBinding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.bindingoperations.setbinding)。 如果你希望在运行时选择绑定属性值或在多个控件中共享单个绑定，则以编程方式创建绑定将十分有用。 但是请注意，调用 **SetBinding** 后，无法更改绑定属性值。
 
@@ -807,7 +807,7 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | 索引器 | `{x:Bind Groups[2].Title}` | `{Binding Groups[2].Title}` | 绑定到集合中的指定项。 仅支持基于整数的索引。 | 
 | 附加属性 | `{x:Bind Button22.(Grid.Row)}` | `{Binding Button22.(Grid.Row)}` | 附加属性用括号进行指定。 如果未在 XAML 命名空间中声明该属性，则在其前面加上 xml 命名空间，这应该映射到文档的标头处的代码命名空间中。 | 
 | 强制转换 | `{x:Bind groups[0].(data:SampleDataGroup.Title)}` | 不需要。 | 强制转换用括号进行指定。 如果未在 XAML 命名空间中声明该属性，则在其前面加上 xml 命名空间，这应该映射到文档的标头处的代码命名空间中。 | 
-| 转换器 | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}}` | 转换器必须在 Page/ResourceDictionary 的根目录处或在 App.xaml 中进行声明。 | 
+| Converter | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}}` | 转换器必须在 Page/ResourceDictionary 的根目录处或在 App.xaml 中进行声明。 | 
 | ConverterParameter, ConverterLanguage | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | 转换器必须在 Page/ResourceDictionary 的根目录处或在 App.xaml 中进行声明。 | 
 | TargetNullValue | `{x:Bind Name, TargetNullValue=0}` | `{Binding Name, TargetNullValue=0}` | 在绑定表达式的叶为 null 时使用。 对于字符串值，应使用单引号。 | 
 | FallbackValue | `{x:Bind Name, FallbackValue='empty'}` | `{Binding Name, FallbackValue='empty'}` | 绑定的路径的任何部分（叶除外）为 null 时使用。 | 
@@ -815,7 +815,7 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | RelativeSource: Self | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | 借助 {x:Bind}，对元素进行命名并在 Path 中使用其名称。 | 
 | RelativeSource: TemplatedParent | 不需要 | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | 对于 System.windows.controls.controltemplate> 上的 {x:Bind} TargetType，指示绑定到模板父级。 对于 {Binding}，可在大多数使用的控件模板中使用常规模板绑定。 但在使用 TemplatedParent 时，需要使用转换器或双向绑定。&lt; | 
 | 来源 | 不需要 | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | 对于 {x:Bind}，可以直接使用命名元素，使用属性或静态路径。 | 
-| “模式” | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | 模式可以是一次性、单向或双向。 {x:Bind} defaults to OneTime; {Binding} defaults to OneWay. | 
+| 模式 | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | 模式可以是一次性、单向或双向。 {x:Bind} defaults to OneTime; {Binding} defaults to OneWay. | 
 | UpdateSourceTrigger | `{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}` | `{Binding UpdateSourceTrigger=PropertyChanged}` | UpdateSourceTrigger 可以是 Default、LostFocus 或 PropertyChanged。 {x:Bind} 不支持 UpdateSourceTrigger=Explicit。 {x:Bind} 可在所有情况下（TextBox.Text 除外，它使用 LostFocus 行为）使用 PropertyChanged 行为。 | 
 
 

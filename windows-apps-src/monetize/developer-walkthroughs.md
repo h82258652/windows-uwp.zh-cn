@@ -6,16 +6,16 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, 演练
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bf2605c55b9b73ccd3376f9c812da31339caedc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 63fec919f089dcf90b251334740c7a965bb36b78
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662662"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260308"
 ---
 # <a name="implement-ads-in-your-app"></a>在应用中实现广告
 
-本部分中的文章介绍如何使用 Microsoft 广告 SDK 将横幅广告、间隙广告和本机广告添加到应用。 有关完整示例项目，请参阅 [GitHub 上的广告示例](https://aka.ms/githubads)。
+本部分中的文章介绍如何使用 Microsoft 广告 SDK 将横幅广告、间隙广告和本机广告添加到应用。 有关完整示例项目，请参阅 [GitHub 上的广告示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。
 
 ## <a name="in-this-section"></a>本部分内容
 
@@ -24,7 +24,7 @@ ms.locfileid: "57662662"
 | [横幅广告](banner-ads.md)     | 提供使用 Microsoft 广告 SDK 中的 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 类将横幅广告添加到 UWP应用的说明。        |
 | [插播式广告](interstitial-ads.md)    | 提供使用 Microsoft 广告 SDK 中的 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 类将间隙广告添加到 UWP应用的说明。       |
 | [本机广告](native-ads.md)       | 提供使用 Microsoft 广告 SDK 中的 [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) 和 [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) 类将本机广告添加到 UWP 应用的说明。  |
-| [在视频内容中显示的广告](add-advertisements-to-video-content.md)     |  提供在 UWP 应用中在视频内容过程中显示广告的说明（当前只有使用 JavaScript 与 HTML 编写的应用支持此功能）。 |
+| [在视频内容中显示广告](add-advertisements-to-video-content.md)     |  提供在 UWP 应用中在视频内容过程中显示广告的说明（当前只有使用 JavaScript 与 HTML 编写的应用支持此功能）。 |
 
 
 

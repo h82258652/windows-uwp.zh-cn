@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 反馈中心, 启动
 ms.localizationpriority: medium
-ms.openlocfilehash: 4190c8af5c8cb7db6b80b1149dff631a8454015b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 589cad0c5055f0bfbade457e035702ee2cffd43d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371068"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259251"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>从应用启动“反馈中心”
 
-你可以通过将用于启动“反馈中心”的控件（如按钮）添加到通用 Windows 平台 (UWP) 应用来鼓励客户留下反馈。 “反馈中心”是预安装的应用，该应用提供了一个用于收集有关 Windows 和已安装应用的反馈的位置。 提交进行收集和提供给你在通过反馈中心应用的所有客户反馈[反馈报告](../publish/feedback-report.md)在合作伙伴中心，因此您所见问题、 建议和客户的 upvote提交在一个报表中。
+你可以通过将用于启动“反馈中心”的控件（如按钮）添加到通用 Windows 平台 (UWP) 应用来鼓励客户留下反馈。 “反馈中心”是预安装的应用，该应用提供了一个用于收集有关 Windows 和已安装应用的反馈的位置。 通过反馈中心为应用提交的所有客户反馈都是在合作伙伴中心的[反馈报告](../publish/feedback-report.md)中收集并向你显示的，因此你可以在一个报表中看到你的客户提交的问题、建议和 upvotes。
 
-若要从应用启动“反馈中心”，请使用 [Microsoft Store Services SDK](https://aka.ms/store-em-sdk) 所提供的 API。 我们建议你使用此 API 从遵循我们的设计指南的应用中的 UI 元素启动“反馈中心”。
+若要从应用启动“反馈中心”，请使用 [Microsoft Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK) 所提供的 API。 我们建议你使用此 API 从遵循我们的设计指南的应用中的 UI 元素启动“反馈中心”。
 
 > [!NOTE]
 > 反馈仅在运行基于桌面和移动[设备系列](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)的 Windows 10 操作系统的版本 10.0.14271 或更高版本的设备上可用。 我们建议你仅当“反馈中心”在用户设备上可用时才在应用中显示反馈控件。 本主题中的代码演示如何执行此操作。
@@ -29,7 +29,7 @@ ms.locfileid: "66371068"
 1. [安装 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。
 2. 在 Visual Studio 中打开你的项目。
 3. 在“解决方案资源管理器”中，右键单击你的项目的**引用**节点，然后单击**添加引用**。
-4. 在“引用管理器”中，展开“通用 Windows”并单击“扩展”。   
+4. 在**引用管理器**中，展开**通用 Windows** 并单击**扩展**。
 5. 在 SDK 列表中，单击 **Microsoft 协议框架**旁边的复选框，然后单击**确定**。
 6. 在项目中，添加要向用户显示的用于启动“反馈中心”的控件，如按钮。 我们建议你按如下方式配置该控件：
   * 将控件中显示的内容的字体设置为 **Segoe MDL2 Assets**。
@@ -44,7 +44,7 @@ ms.locfileid: "66371068"
     <Button x:Name="feedbackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE939;" HorizontalAlignment="Left" Margin="138,352,0,0" VerticalAlignment="Top" Visibility="Collapsed"  Click="feedbackButton_Click"/>
     ```
 
-7. 在承载反馈控件的应用页面的初始化代码中，使用 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 类的静态 [IsSupported](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported) 方法确定“反馈中心”在用户设备上是否可用。 反馈仅在运行基于桌面和移动[设备系列](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)的 Windows 10 操作系统的版本 10.0.14271 或更高版本的设备上可用。
+7. 在承载反馈控件的应用页面的初始化代码中，使用 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported) 类的静态 [IsSupported](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 方法确定“反馈中心”在用户设备上是否可用。 反馈仅在运行基于桌面和移动[设备系列](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)的 Windows 10 操作系统的版本 10.0.14271 或更高版本的设备上可用。
 
     如果此属性返回 **true**，则使该控件可见。 以下代码演示如何为 [Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button) 执行此操作。
 

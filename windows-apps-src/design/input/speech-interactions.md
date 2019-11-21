@@ -8,12 +8,12 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ef8cdad247a57ce5fab461e70c2725fda4231efd
-ms.sourcegitcommit: ed32219e04f814a12ea018348e9cf678fcfd5e3a
+ms.openlocfilehash: 4d36368fab267370e2301e52731d99bc7b146fbd
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67253059"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258250"
 ---
 # <a name="speech-interactions"></a>语音交互
 
@@ -24,7 +24,7 @@ ms.locfileid: "67253059"
 **TTS** TTS 使用语音合成引擎（语音）将文本字符串转换为语音字词。 输入字符串既可以是基本的未经处理的文本，也可以是更复杂的语音合成标记语言 (SSML)。 SSML 提供用于控制语音输出特征（例如发音、音量、音调、音速和重读）的标准方式。
 
 **其他语音相关组件：** 
-Windows 应用程序中的 **Cortana** 使用自定义语音命令（说出或键入）在前台启动你的应用（应用获得焦点，就好像是从“开始”菜单启动一样）或者作为一项后台任务而运行（**Cortana** 保持焦点，但提供来自应用的结果）。 如果要使用 **Cortana** UI 公开应用功能，请参阅 [Cortana 语音命令 (VCD) 指南](https://docs.microsoft.com/en-us/cortana/voice-commands/vcd)。
+Windows 应用程序中的 **Cortana** 使用自定义语音命令（说出或键入）在前台启动你的应用（应用获得焦点，就好像是从“开始”菜单启动一样）或者作为一项后台任务而运行（**Cortana** 保持焦点，但提供来自应用的结果）。 如果要使用 [Cortana](https://docs.microsoft.com/en-us/cortana/voice-commands/vcd) UI 公开应用功能，请参阅 **Cortana 语音命令 (VCD) 指南**。
 
 ## <a name="speech-interaction-design"></a>语音交互设计
 
@@ -80,21 +80,21 @@ Windows 应用程序中的 **Cortana** 使用自定义语音命令（说出或�
 
 -   预定义语法（听写或 Web 搜索）
 
-    -   “侦听”  屏幕。
-    -   “思考”  屏幕。
-    -   “听到你说”  屏幕或错误屏幕。
+    -   “侦听”屏幕。
+    -   “思考”屏幕。
+    -   “听到你说”屏幕或错误屏幕。
 -   字词或短语列表，或者 SRGS 语法文件
 
-    -   “侦听”  屏幕。
-    -   “你说的是”  屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
-    -   “听到你说”  屏幕或错误屏幕。
+    -   “侦听”屏幕。
+    -   **你说的是**屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
+    -   “听到你说”屏幕或错误屏幕。
 
-在 **“侦听”** 屏幕上，你可以：
+在**侦听**屏幕上，你可以：
 
 -   自定义标题文本。
 -   提供用户可以说出的示例文本。
--   指定是否显示“听到你说”  屏幕。
--   在“听到你说”屏幕上向用户读出已识别的字符串  。
+-   指定是否显示**听到你说**屏幕。
+-   在**听到你说**屏幕上向用户读出已识别的字符串。
 
 以下示例显示了使用 SRGS 定义的约束的语音识别器的内置识别流程。 在本例中，语音识别是成功的。
 
@@ -157,7 +157,7 @@ Windows 应用程序中的 **Cortana** 使用自定义语音命令（说出或�
 自定义语法由你设计和创作，随你的应用一起安装。 使用自定义约束的语音识别是在设备上执行的。
 
 -   编程列表约束提供一种轻型方法，用于使用字词或短语的列表创建一种简单的语法。 列表约束非常适用于识别清晰的短语。 因为语音识别引擎仅须处理语音即可确认匹配，所以采用某种语法明确指定所有字词也可提高识别准确度。 也可以以编程方式更新该列表。
--   SRGS 语法是一个静态文档，与编程列表约束不同，它使用由 [SRGS 版本 1.0](https://go.microsoft.com/fwlink/p/?LinkID=262302) 定义的 XML 格式。 SRGS 语法提供了对语音识别体验的最大控制，方法是让你在单个识别中捕获多个语义含义。
+-   SRGS 语法是一个静态文档，与编程列表约束不同，它使用由 [SRGS 版本 1.0](https://www.w3.org/TR/speech-grammar/) 定义的 XML 格式。 SRGS 语法提供了对语音识别体验的最大控制，方法是让你在单个识别中捕获多个语义含义。
 
     以下是用于编写 SRGS 语法的一些提示：
 
@@ -179,7 +179,7 @@ Windows 应用程序中的 **Cortana** 使用自定义语音命令（说出或�
 
 对于包含字词和短语的较大列表，或包含常用字词和短语的列表，可以创建单独的发音词典文档。 有关详细信息，请参阅[关于词典和音标字母](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361646(v=office.14))。
 
-## <a name="testing"></a>正在测试
+## <a name="testing"></a>测试
 
 通过应用目标受众测试语音识别准确度以及任何支持的 UI。 这是确定应用的语音交互体验有效性的最佳方式。 例如，用户是否因你的应用无法聆听常见短语而获得了较差的识别结果？
 
@@ -200,7 +200,7 @@ TTS 从纯文本或 SSML 生成语音输出。
 -   将一系列不常见单词串联在一起，或者说出零件编号或标点可能会导致短语变得无法识别。
 -   当母语使用者说出短语时的韵律或节奏不同时，语音可能听起来不自然。
 
-作为语音合成器的输入而不纯文本使用 SSML 可解决这两个问题。 有关 SSML 的详细信息，请参阅[使用 SSML 控制合成的语音](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14))和[语音合成标记语言参考](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14))。
+可以使用 SSML 而不是纯文本作为语音合成器的输入来解决这两个问题。 有关 SSML 的详细信息，请参阅[使用 SSML 控制合成的语音](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14))和[语音合成标记语言参考](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14))。
 
 ## <a name="other-articles-in-this-section"></a>本部分中的其他文章 
 
@@ -210,7 +210,7 @@ TTS 从纯文本或 SSML 生成语音输出。
 | [指定语音识别器语言](specify-the-speech-recognizer-language.md) | 了解如何选择要用于语音识别的安装语言。 |
 | [定义自定义识别约束](define-custom-recognition-constraints.md) | 了解如何为语音识别定义和使用自定义约束。 |
 | [启用连续听写](enable-continuous-dictation.md) |了解如何捕获和识别较长的连续听写语音输入。 |
-| [使用音频输入管理问题](manage-issues-with-audio-input.md) | 了解如何管理由音频输入质量所导致的语音识别准确度的问题。 |
+| [管理音频输入的问题](manage-issues-with-audio-input.md) | 了解如何管理由音频输入质量所导致的语音识别准确度问题。 |
 | [设置语音识别超时](set-speech-recognition-timeouts.md) | 设置语音识别器忽略静音或无法识别的声音（干扰）并继续侦听语音输入的时长。 |
 
 ## <a name="related-articles"></a>相关文章
@@ -220,7 +220,7 @@ TTS 从纯文本或 SSML 生成语音输出。
 
  **示例**
 
-* [语音识别和语音合成示例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [语音识别和语音合成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
  
 
  

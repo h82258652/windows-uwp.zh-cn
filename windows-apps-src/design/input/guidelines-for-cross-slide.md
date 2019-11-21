@@ -6,34 +6,34 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 36ebabbfd8f7e5f40e31be44d6dc7e4483a199ee
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 833949effd311c707de8dd1823ec6eee06e91e87
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363704"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257978"
 ---
 # <a name="guidelines-for-cross-slide"></a>交叉滑动指南
 
 
 
 
-**重要的 Api**
+**重要的 API**
 
 -   [**CrossSliding**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crosssliding)
 -   [**CrossSlideThresholds**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crossslidethresholds)
--   [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+-   [**Windows UI 输入**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
 使用交叉滑动来支持使用轻扫手势进行选择以及使用滑动手势拖动（移动）交互。
 
-## <a name="span-iddosanddontsspanspan-iddosanddontsspanspan-iddosanddontsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>注意事项
+## <a name="span-iddos_and_don_tsspanspan-iddos_and_don_tsspanspan-iddos_and_don_tsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Dos 和不注意事项
 
 
 -   对在单个方向上滚动的列表或集合使用横向滑动。
 -   当点击交互用于其他目的时，可为项目选择使用横向滑动。
 -   不要使用横向滑动将项目添加到队列。
 
-## <a name="span-idadditionalusageguidancespanspan-idadditionalusageguidancespanspan-idadditionalusageguidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指南
+## <a name="span-idadditional_usage_guidancespanspan-idadditional_usage_guidancespanspan-idadditional_usage_guidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指南
 
 
 仅在可以沿一个方向（垂直或水平）平移的内容区域内进行选择和拖动。 要使任何交互发挥效果，必须锁定一个平移方向，并且必须在垂直于该平移方向的方向上执行手势。
@@ -56,7 +56,7 @@ ms.locfileid: "66363704"
 
 对在单个方向上滚动的列表或集合使用横向滑动。 有关详细信息，请参阅[添加 ListView 控件](https://docs.microsoft.com/previous-versions/windows/apps/hh465382(v=win.10))。
 
-**请注意**  在其中在两个方向，如 web 浏览器或电子阅读器素数内容区域的情况下应使用按下保持定时的交互来调用对象，如图像和超链接的上下文菜单。
+**请注意**  在内容区域可以在两个方向（如 web 浏览器或电子读者）平移的情况下，应使用 "按住" 计时交互来调用对象（如图像和超链接）的上下文菜单。
 
  
 
@@ -69,7 +69,7 @@ ms.locfileid: "66363704"
 
 ### <span id="selection"></span><span id="SELECTION"></span>
 
-**选择**
+**选**
 
 选择就是标记一个或多个对象，而不是启动或激活。 该操作类似于鼠标单击一个或多个对象，或按住 Shift 键的同时鼠标单击这些对象。
 
@@ -123,29 +123,29 @@ ms.locfileid: "66363704"
 
 ### <span id="draganddrop"></span><span id="DRAGANDDROP"></span>
 
-**Drag**
+**入**
 
 使用拖动操作将一个或多个对象从一个位置移动到另一个位置。
 
 如果需要移动多个对象，则让用户选择多个项，然后同时拖动所有选中项。
 
-## <a name="span-idrelatedtopicsspanrelated-articles"></a><span id="related_topics"></span>相关的文章
+## <a name="span-idrelated_topicsspanrelated-articles"></a><span id="related_topics"></span>相关文章
 
 
 **示例**
-* [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉效果示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [焦点视觉效果示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 **存档示例**
-* [输入：XAML 用户输入的事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：触控命中测试示例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [输入：Windows 8 手势示例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [输入：操作和手势 (C++) 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 触摸输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [输入： XAML 用户输入事件示例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [输入：设备功能示例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [输入：触控命中测试示例](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+* [XAML 滚动、平移和缩放示例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [输入：简化墨迹示例](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+* [输入： Windows 8 手势示例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+* [输入：操作和手势（C++）示例](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+* [DirectX 触摸输入示例](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
  
 
  

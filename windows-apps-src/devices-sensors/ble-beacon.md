@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
-ms.openlocfilehash: 3deb5aca27b4f33d0492bae9fd4ddbce4f52d065
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2c4bef6045f75992e0fad503ff2a357d52363008
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370359"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259689"
 ---
 # <a name="bluetooth-le-advertisements"></a>蓝牙 LE 广告
 
 
-**重要的 Api**
+**重要的 API**
 
--   [**Windows.Devices.Bluetooth.Advertisement**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
+-   [**Windows。** ](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
 
 本文概述了适用于通用 Windows 平台 (UWP) 应用的低功耗 (LE) 蓝牙广告信标。  
 
@@ -29,7 +29,7 @@ ms.locfileid: "66370359"
 -   [广告观察程序](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher)：侦听附近信标并根据负载或邻近感应将它们过滤掉。  
 -   [广告发布程序](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher)：定义负载使 Windows 能够以开发人员的名义发布广告。  
 
-Github 上的[蓝牙广告示例](https://go.microsoft.com/fwlink/p/?LinkId=619990)中有完整的示例代码。
+Github 上的[蓝牙广告示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothAdvertisement)中有完整的示例代码。
 
 ## <a name="basic-setup"></a>基本设置
 
@@ -43,7 +43,7 @@ Github 上的[蓝牙广告示例](https://go.microsoft.com/fwlink/p/?LinkId=6199
 
 蓝牙 LE 广告允许你的设备不断以信标方式发出特定负载，称为广告。 如果任何附近支持蓝牙 LE 的设备都设置为侦听此特定广告，则这些设备可以看到此广告。
 
-> **注意**：有关用户隐私，播发的生命周期内绑定到的应用程序。 你可以创建 BluetoothLEAdvertisementPublisher，并在后台任务中为后台广告调用“开始”。 有关后台任务的详细信息，请参阅[启动、恢复和后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/index)。
+> **注意**：出于用户隐私，广告的生命周期被绑定到应用的生命周期。 你可以创建 BluetoothLEAdvertisementPublisher，并在后台任务中为后台广告调用“开始”。 有关后台任务的详细信息，请参阅[启动、恢复和后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/index)。
 
 ### <a name="basic-publishing"></a>基本发布
 
@@ -73,7 +73,7 @@ manufacturerData.Data = writer.DetachBuffer();
 publisher.Advertisement.ManufacturerData.Add(manufacturerData);
 ```
 
-现在，已创建和设置了发布者，你可以调用“开始”来开始发布广告。 
+现在，已创建和设置了发布者，你可以调用**开始**来开始发布广告。
 
 ```csharp
 publisher.Start();

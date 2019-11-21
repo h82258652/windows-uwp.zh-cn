@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, AdControl, AdMediatorControl, 迁移
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: ff0ea54f55803e652964203899f429faf196805e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f33210f14df3fb855c5744ffcab3ecbc66e1ff58
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620462"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259240"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>将应用更新到最新的横幅广告库
 
@@ -19,7 +19,7 @@ ms.locfileid: "57620462"
 
 ## <a name="overview"></a>概述
 
-显示横幅广告的 UWP 应用必须使用 **AdControl**，它位于 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp) 中分布的广告库中。 此 SDK 支持最低广告功能集，包括通过互动广告局 (IAB) 中的[移动富媒体广告界面定义 (MRAID) 1.0 规范](https://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)提供 HTML5 富媒体的功能。 我们的许多广告厂商寻求这些功能，并且我们要求应用开发人员使用这些 SDK 版本之一来增加我们的应用生态系统对广告厂商的吸引力，并最终为你带来更多收益。
+显示横幅广告的 UWP 应用必须使用 **AdControl**，它位于 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) 中分布的广告库中。 此 SDK 支持最低广告功能集，包括通过互动广告局 (IAB) 中的[移动富媒体广告界面定义 (MRAID) 1.0 规范](https://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)提供 HTML5 富媒体的功能。 我们的许多广告厂商寻求这些功能，并且我们要求应用开发人员使用这些 SDK 版本之一来增加我们的应用生态系统对广告厂商的吸引力，并最终为你带来更多收益。
 
 在发布此 SDK 之前，我们先前已在多个较早的广告 SDK 版本中提供了 **AdControl** 类。 这些较早的广告 SDK 版本不再受支持，因为它们不支持以上所述的最低广告功能。 截止 2017 年 4 月 1 日，我们不再为使用不受支持的广告 SDK 版本的应用提供横幅广告。 如果你的应用仍使用的是不受支持的广告 SDK 版本，则会看到以下行为：
 
@@ -27,14 +27,14 @@ ms.locfileid: "57620462"
 
 * 当应用中的 **AdControl** 请求新广告时，将引发控件的 **ErrorOccurred** 事件，并且事件参数的 **ErrorCode** 属性将具有值 **NoAdAvailable**。
 
-* 与你的应用关联的任何广告单元均会停用。 您不能从 DePartnerv 中心帐户中删除这些已停用的广告单元。 如果你已将应用更新为使用 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)，请忽略这些广告单元并创建新的广告单元。
+* 与你的应用关联的任何广告单元均会停用。 你不能从 DePartnerv Center 帐户中删除这些停用的 ad 单位。 如果你已将应用更新为使用 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)，请忽略这些广告单元并创建新的广告单元。
 
 * 此外，不再为任何用于多个应用的广告单元提供横幅广告。 请确保你的每个广告单元只用于一个应用中。
 
-如果现有应用（已存在于 Microsoft Store 中或仍在开发中）使用 **AdControl** 显示横幅广告并且你不确定你的应用正在使用的是哪个广告 SDK，请按照文章中的说明确定你是否需要将应用更新为受支持的 SDK。 如果你遇到任何问题或需要帮助，请[联系支持人员](https://go.microsoft.com/fwlink/?LinkId=393643)。
+如果现有应用（已存在于 Microsoft Store 中或仍在开发中）使用 **AdControl** 显示横幅广告并且你不确定你的应用正在使用的是哪个广告 SDK，请按照文章中的说明确定你是否需要将应用更新为受支持的 SDK。 如果你遇到任何问题或需要帮助，请[联系支持人员](https://support.microsoft.com/getsupport/hostpage.aspx?locale=EN-US&supportregion=EN-US&ccfcode=US&ln=EN-US&pesid=14654&oaspworkflow=start_1.0.0.0&tenant=store&supporttopic_L1=32136151)。
 
 > [!NOTE]
-> 如果你的应用已使用 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)（适用于 UWP 应用），则无需对应用进行任何更改。
+> 如果你的应用已使用 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)（适用于 UWP 应用），则无需对应用进行任何更改。
 
 ## <a name="prerequisites"></a>必备条件
 
@@ -59,7 +59,7 @@ ms.locfileid: "57620462"
 
 <span id="part-2" />
 
-## <a name="part-2-install-the-latest-sdk"></a>第 2 部分：安装最新 SDK
+## <a name="part-2-install-the-latest-sdk"></a>第 2 部分：安装最新的 SDK
 
 如果应用使用早期的 SDK 版本，请按照以下说明确保你的开发计算机上具有最新的 SDK。
 
@@ -69,16 +69,16 @@ ms.locfileid: "57620462"
 
 1.  从开发计算机中卸载 Microsoft Advertising SDK 和广告中介 SDK 的所有以前版本。
 
-2.  打开“命令提示符”窗口并运行这些命令以清除可能与 Visual Studio 一起安装（但可能未显示在计算机上的已安装程序列表中）的任何 SDK 版本：
+2.  打开**命令提示符**窗口并运行这些命令以清除可能与 Visual Studio 一起安装（但可能未显示在计算机上的已安装程序列表中）的任何 SDK 版本：
     ```syntax
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  安装 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)。
+3.  安装 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。
 
-## <a name="part-3-update-your-project"></a>第 3 部分：更新你的项目
+## <a name="part-3-update-your-project"></a>第 3 部分：更新项目
 
 请从项目中删除对 Microsoft 广告库的所有现有引用，并按照[这些说明](install-the-microsoft-advertising-libraries.md#reference)添加所需的引用。 这将确保项目使用正确的库。 可保留现有标记和代码。
 
@@ -86,4 +86,4 @@ ms.locfileid: "57620462"
 
 测试应用以确保它按预期显示横幅广告。
 
-如果在存储中，您的应用程序的以前版本已可用[创建新提交](../publish/app-submissions.md)有关在合作伙伴中心重新发布您的应用程序更新的应用程序。
+如果应用程序中已有应用程序的以前版本，请在合作伙伴中心为已更新的应用程序[创建新的提交](../publish/app-submissions.md)内容以重新发布应用程序。

@@ -1,24 +1,24 @@
 ---
 title: 安全 Windows 应用开发简介
-description: 本文介绍可帮助应用程序架构师和开发人员更好地了解加速创建安全的通用 Windows 平台 (UWP) 应用程序的各种 Windows 10 平台功能。
+description: 此介绍性文章可帮助应用架构师和开发人员更好地了解可提高创建安全通用 Windows 平台（UWP）应用的各种 Windows 10 平台功能。
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b4060fbd2e59a545451c9c8ebe103c9bb527a0
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 98ef721c2068927733648d494a086160f23baab9
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320604"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258949"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>安全 Windows 应用开发简介
 
 
 
 
-本文介绍可帮助应用程序架构师和开发人员更好地了解加速创建安全的通用 Windows 平台 (UWP) 应用程序的各种 Windows 10 平台功能。 它详细介绍了如何在以下各个阶段使用可用的 Windows 安全功能：身份验证、未送达数据和静态数据。 可以通过查看包括在每章中的其他资源来查找有关每个主题的更详细信息。
+此介绍性文章可帮助应用架构师和开发人员更好地了解可提高创建安全通用 Windows 平台（UWP）应用的各种 Windows 10 平台功能。 它详细介绍了如何在以下各个阶段使用可用的 Windows 安全功能：身份验证、未送达数据和静态数据。 可以通过查看包括在每章中的其他资源来查找有关每个主题的更详细信息。
 
 ## <a name="1-introduction"></a>1 简介
 
@@ -75,7 +75,7 @@ ms.locfileid: "67320604"
 ## <a name="211-web-authentication-broker"></a>2.1.1 Web 身份验证代理
 
 
-前面所述，使用密码身份验证的挑战之一是添加了 IT 部门管理的用户名/密码、 重置机制等基本的开销。越来越受欢迎的选项是依赖于第三方标识提供程序通过 OAuth 进行身份验证的开放标准该产品/服务进行身份验证。
+如前所述，IT 部门所面临的密码身份验证的挑战之一是管理用户名/密码基础、重置机制等的开销增加。越来越受欢迎的选择是依靠通过 OAuth（身份验证的开放标准）提供身份验证的第三方标识提供商。
 
 通过使用 OAuth，IT 部门可以有效地将维护带有用户名和密码的数据库、重置密码功能等复杂事务“外包”给第三方标识提供商（例如 Facebook、Twitter 或 Microsoft）。
 
@@ -96,7 +96,7 @@ Windows 10 中的 Web 身份验证代理为应用提供了一组 API 和基础�
 
 如果通信成功，则处理标识提供程序返回的响应字符串。 如果不成功，则处理错误。
 
-此过程的示例 C# 代码如下所示。 有关信息和详细演练，请参阅 [WebAuthenticationBroker](web-authentication-broker.md)。 有关完整代码示例，请查看 [GitHub 上的 WebAuthenticationBroker 示例](https://go.microsoft.com/fwlink/p/?LinkId=620622)。
+此过程的示例 C# 代码如下所示。 有关信息和详细演练，请参阅 [WebAuthenticationBroker](web-authentication-broker.md)。 有关完整代码示例，请查看 [GitHub 上的 WebAuthenticationBroker 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker)。
 
 ```cs
 string startURL = "https://<providerendpoint>?client_id=<clientid>";
@@ -192,9 +192,9 @@ Windows Hello 为设备识别个人用户提供了可靠的方法；这解决了
 
 Web 服务通信的安全要求比直接连接方案中的安全要求要高，因为数据不再仅是安全网络的一部分，并且恶意攻击者伺机截获数据的可能性也更高。 因为各类设备都会访问服务，例如与 WCF 相比，它们可能会生成为 RESTful 服务，这意味着服务的身份验证和授权还会引入新挑战。 我们将谈论安全的远程系统通信的两个要求。
 
-消息的保密性，首要要求是：客户端和 web 服务 （例如，用户和其他个人信息的标识） 之间传递的信息不能由第三方在传输过程中可读。 满足此要求的方式通常是加密发送消息所使用的连接和加密消息本身。 在私钥/公钥加密中，公钥可供所有人使用，并用于加密要发送到特定接收方的消息。 私钥仅由接收方保留，并且用于解密消息。
+第一个要求是消息保密性：在客户端和 Web 服务器之间传递的信息（例如用户的身份和其他个人信息）在传输时不得被第三方读取。 满足此要求的方式通常是加密发送消息所使用的连接和加密消息本身。 在私钥/公钥加密中，公钥可供所有人使用，并用于加密要发送到特定接收方的消息。 私钥仅由接收方保留，并且用于解密消息。
 
-第二个要求是消息的完整性：客户端和 web 服务必须能够验证他们接收的消息是旨在由其他参与方发送的并且该消息被改变在传输过程中。 通过使用数字签名对消息进行签名并使用证书身份验证，可完成此操作。
+第二个要求是消息完整性：客户端和 Web 服务必须能够验证他们接收的消息是其他方试图发送的消息，并且该消息未在传输过程中发生更改。 通过使用数字签名对消息进行签名并使用证书身份验证，可完成此操作。
 
 ## <a name="32-ssl-connections"></a>3.2 SSL 连接
 
@@ -286,7 +286,7 @@ Azure API 管理还可以减少对某个服务的 API 调用数（称为限制�
 
 传统上来讲，Windows 从未对应用下过定义。 它通常是指可执行文件 (.exe)，但从来不包括安装、状态存储、执行长度、版本控制、操作系统集成和应用到应用通信。 通用 Windows 平台模型定义涵盖安装、运行时环境、资源管理、更新、数据模型和卸载的应用模型。
 
-Windows 10 应用中的容器，这意味着，它们具有有限的特权 （可以请求和授予用户其他权限） 的默认情况下运行。 例如，如果某个应用想要在系统上访问文件，必须使用 [**Windows.Storage.Pickers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers) 命名空间的文件选取器才可以让用户选取某个文件（不支持任何对文件的直接访问权限）。 另一个示例是，如果某个应用想要访问用户的位置数据，它需要启用要声明的位置设备功能，从而在下载时提示用户此应用会请求访问用户的位置。 除此之外，应用首次想要访问用户位置时，会向用户显示请求访问数据的权限的额外许可提示。
+Windows 10 应用在容器中运行，这意味着在默认情况下，它们具有有限的权限（用户可以请求和授予其他特权）。 例如，如果某个应用想要在系统上访问文件，必须使用 [**Windows.Storage.Pickers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers) 命名空间的文件选取器才可以让用户选取某个文件（不支持任何对文件的直接访问权限）。 另一个示例是，如果某个应用想要访问用户的位置数据，它需要启用要声明的位置设备功能，从而在下载时提示用户此应用会请求访问用户的位置。 除此之外，应用首次想要访问用户位置时，会向用户显示请求访问数据的权限的额外许可提示。
 
 请注意，此应用模型充当应用的“监狱”，这意味着无法访问它们，但它不是无法从外部访问的“城堡”（具有管理员权限的应用程序当然仍可以访问里面的内容）。 Windows 10 中的 Device Guard 因为支持组织/IT 指定允许执行哪些 (Win32) 应用，所以可以进一步帮助限制此访问权限。
 
@@ -294,21 +294,21 @@ Windows 10 应用中的容器，这意味着，它们具有有限的特权 （�
 
 当设备上的内存资源不足时，Windows 将通过终止应用来释放内存空间。 此生命周期模型强制应用在每当它们暂停时保留数据，因为暂停和终止之间没有额外时间。
 
-有关详细信息，请参阅[是世界：了解 Windows 10 应用程序的生命周期](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx)。
+有关详细信息，请参阅[通用：了解 Windows 10 应用程序的生命周期](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx)。
 
 ## <a name="42-stored-credential-protection"></a>4.2 存储凭据保护
 
 
 访问经身份验证的服务的 Windows 应用通常向用户提供将他们的凭据存储在本地设备上的选项。 这对于用户来说是一项便利；当他们提供用户名和密码时，应用将在应用的后续启动中自动使用它们。 由于如果攻击者获取此存储数据的访问权限，这可能成为安全问题，因此 Windows 10 为 Windows 应用提供了将用户凭据存储在安全凭据保险箱中的功能。 应用调用凭据保险箱 API 来存储凭据并从保险箱进行检索，而不是将它们存储在应用的存储容器中。 凭据保险箱由操作系统管理，但访问权限仅限于存储它们的应用，从而为凭据存储提供了安全托管的解决方案。
 
-当用户提供要存储的凭据时，应用使用 [**Windows.Security.Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials) 命名空间中的 [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault) 对象来获取对凭据保险箱的引用。 然后，它创建一个 [**PasswordCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordCredential) 对象，其中包含 Windows 应用以及用户名和密码的标识符。 这会传递到 [**PasswordVault.Add**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordvault.add) 方法以将凭据存储在保险箱中。 以下 C# 代码示例演示如何执行此操作。
+当用户提供要存储的凭据时，应用使用 [**Windows.Security.Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault) 命名空间中的 [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials) 对象来获取对凭据保险箱的引用。 然后，它创建一个 [**PasswordCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordCredential) 对象，其中包含 Windows 应用以及用户名和密码的标识符。 这会传递到 [**PasswordVault.Add**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordvault.add) 方法以将凭据存储在保险箱中。 以下 C# 代码示例演示如何执行此操作。
 
 ```cs
 var vault = new PasswordVault();
 vault.Add(new PasswordCredential("My App", username, password));
 ```
 
-在以下 C# 代码示例中，应用通过调用 [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault) 对象的 [**FindAllByResource**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordvault.findallbyresource) 方法来请求对应于该应用的所有凭据。 如果返回多个凭据，它将提示用户输入其用户名。 如果凭据不在保险箱中，应用将提示用户输入它们。 然后用户将使用这些凭据登录服务器。
+在以下 C# 代码示例中，应用通过调用 [**PasswordVault**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordvault.findallbyresource) 对象的 [**FindAllByResource**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault) 方法来请求对应于该应用的所有凭据。 如果返回多个凭据，它将提示用户输入其用户名。 如果凭据不在保险箱中，应用将提示用户输入它们。 然后用户将使用这些凭据登录服务器。
 
 ```cs
 private string resourceName = "My App";
@@ -374,7 +374,7 @@ private PasswordCredential GetCredentialFromLocker()
 
 此问题的一个解答是非对称加密，即使用公钥/私钥对。 公钥可免费共享给任何要加密消息的人。 私钥会始终保密，以便只有你可以使用它解密数据。 允许发现公钥的常用技术是使用数字证书，也简称为证书。 除有关用户的信息或服务器的信息（例如名称、颁发者、电子邮件地址和国家/地区）外，证书还托管有关公钥的信息。
 
-Windows 应用开发人员可以使用 [**SymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider) 和 [**AsymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) 类在他们的 UWP 应用中实现对称和非对称加密。 此外，[**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) 类可用于加密和解密数据、对内容进行签名和验证数字签名。 应用还可以使用 [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) 命名空间中的 [**DataProtectionProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) 类来加密和解密存储的本地数据。
+Windows 应用开发人员可以使用 [**SymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider) 和 [**AsymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) 类在他们的 UWP 应用中实现对称和非对称加密。 此外，[**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) 类可用于加密和解密数据、对内容进行签名和验证数字签名。 应用还可以使用 [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) 命名空间中的 [**DataProtectionProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) 类来加密和解密存储的本地数据。
 
 ## <a name="432-detecting-message-tampering-macs-hashes-and-signatures"></a>4.3.2 检测消息篡改（MAC、哈希和签名）
 
@@ -467,7 +467,7 @@ Windows 10 中的通用 Windows 平台提供许多种利用操作系统功能创
 -   [Web 身份验证代理](web-authentication-broker.md)
 -   [指纹生物识别](fingerprint-biometrics.md)
 -   [智能卡](smart-cards.md)
--   [共享的证书](share-certificates.md)
+-   [共享证书](share-certificates.md)
 -   [加密](cryptography.md)
 -   [证书](certificates.md)
 -   [加密密钥](cryptographic-keys.md)
@@ -480,7 +480,7 @@ Windows 10 中的通用 Windows 平台提供许多种利用操作系统功能创
 
 -   [凭据保险箱](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PasswordVault)
 -   [凭据选取器](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CredentialPicker)
--   [使用 Azure 登录名的设备锁定](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceLockdownAzureLogin)
+-   [通过 Azure 登录锁定设备](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceLockdownAzureLogin)
 -   [企业数据保护](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)
 -   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/KeyCredentialManager)
 -   [智能卡](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SmartCard)
@@ -489,16 +489,16 @@ Windows 10 中的通用 Windows 平台提供许多种利用操作系统功能创
 
 ### <a name="63-api-reference"></a>6.3 API 参考
 
--   [**Windows.Security.Authentication.OnlineId**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.OnlineId)
--   [**Windows.Security.Authentication.Web**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web)
--   [**Windows.Security.Authentication.Web.Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.Core)
--   [**Windows.Security.Authentication.Web.Provider**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.Provider)
--   [**Windows.Security.Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials)
--   [**Windows.Security.Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials)
--   [**Windows.Security.Credentials.UI**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI)
--   [**Windows.Security.Cryptography**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography)
--   [**Windows.Security.Cryptography.Certificates**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates)
--   [**Windows.Security.Cryptography.Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core)
--   [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection)
--   [**Windows.Security.ExchangeActiveSyncProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Security.ExchangeActiveSyncProvisioning)
--   [**Windows.Security.EnterpriseData**](https://docs.microsoft.com/uwp/api/Windows.Security.EnterpriseData)
+-   [**Windows.security.authentication.onlineid。** ](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.OnlineId)
+-   [**Windows 安全身份验证。** ](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web)
+-   [**Windows. Security. Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.Core)
+-   [**Windows 安全身份验证。** ](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.Provider)
+-   [**Windows 安全凭据。** ](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials)
+-   [**Windows 安全凭据。** ](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials)
+-   [**Windows 安全. UI**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI)
+-   [**Windows 安全加密**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography)
+-   [**Windows 安全加密。证书**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates)
+-   [**Windows. Security. Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core)
+-   [**DataProtection。** ](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection)
+-   [**Windows.security.exchangeactivesyncprovisioning**](https://docs.microsoft.com/uwp/api/Windows.Security.ExchangeActiveSyncProvisioning)
+-   [**EnterpriseData**](https://docs.microsoft.com/uwp/api/Windows.Security.EnterpriseData)

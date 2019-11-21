@@ -5,18 +5,18 @@ ms.date: 07/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc01894311badd9bb6e88f05c0f8b49c5824736b
-ms.sourcegitcommit: 3cc6eb3bab78f7e68c37226c40410ebca73f82a9
+ms.openlocfilehash: 1a89596979f84c1ec4d698d14deacf8f852a7fbd
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68730525"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258199"
 ---
 # <a name="show-multiple-views-with-applicationview"></a>显示具有 w 的多个视图
 
 通过让用户在单独窗口中查看应用的独立部分，可帮助他们提高效率。 如果你为应用创建多个窗口，每个窗口都独立运作。 任务栏会分别显示每个窗口。 用户可以独立地移动、调整大小、显示和隐藏应用窗口，并且可以在应用窗口间切换，就像它们是单独的应用一样。 每个窗口都在它自己的线程中运行。
 
-> **重要的 API**：[**ApplicationViewSwitcher**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher)、 [ **CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
+> **重要的 API**：[**ApplicationViewSwitcher**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher)、[**CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
 
 ## <a name="what-is-a-view"></a>什么是视图？
 
@@ -63,7 +63,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 2.  跟踪新视图的 [**Id**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.id)。 稍后使用此选项来显示视图。
 
-    你可能需要考虑在你的应用中生成一些基础结构以帮助跟踪你创建的视图。 有关示例，请参阅 [MultipleViews 示例](https://go.microsoft.com/fwlink/p/?LinkId=620574)中的 `ViewLifetimeControl` 类。
+    你可能需要考虑在你的应用中生成一些基础结构以帮助跟踪你创建的视图。 有关示例，请参阅 `ViewLifetimeControl`MultipleViews 示例[中的 ](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MultipleViews) 类。
 
     ```csharp
     int newViewId = 0;
@@ -71,9 +71,9 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 3.  在新线程上，填充窗口。
 
-    使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 方法在新视图的 UI 线程上安排工作。 使用 [lambda 表达式](https://go.microsoft.com/fwlink/p/?LinkId=389615)将函数作为参数传递到 **RunAsync** 方法。 你在 lambda 函数中执行的工作将在新视图的线程上进行。
+    使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 方法在新视图的 UI 线程上安排工作。 使用 [lambda 表达式](https://msdn.microsoft.com/library/bb397687.aspx)将函数作为参数传递到 **RunAsync** 方法。 你在 lambda 函数中执行的工作将在新视图的线程上进行。
 
-    在 XAML中，通常向 [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) 的 [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content) 属性添加 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)，然后将 **Frame** 导航到你已为其定义应用内容的 XAML [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)。 有关框架和页面的详细信息, 请参阅[两个页面之间的对等导航](../basics/navigate-between-two-pages.md)。
+    在 XAML中，通常向 [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) 的 [**Content**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) 属性添加 [**Frame**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content)，然后将 **Frame** 导航到你已为其定义应用内容的 XAML [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)。 有关框架和页面的详细信息，请参阅[两个页面之间的对等导航](../basics/navigate-between-two-pages.md)。
 
     在填充新 [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) 后，必须调用 **Window** 的 [**Activate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.activate) 方法才能在稍后显示 **Window**。 这项工作在新视图的线程上进行，因此会激活新 **Window**。
 
@@ -94,7 +94,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 4.  通过调用 [**ApplicationViewSwitcher.TryShowAsStandaloneAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.tryshowasstandaloneasync) 显示新视图。
 
-    在创建新视图之后，你可以通过调用 [**ApplicationViewSwitcher.TryShowAsStandaloneAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.tryshowasstandaloneasync) 方法，将其显示在新窗口中。 此方法的 *viewId* 参数是唯一标识你的应用中每个视图的整数。 通过使用 **ApplicationView.Id** 属性或 [**ApplicationView.GetApplicationViewIdForWindow**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.getapplicationviewidforwindow) 方法检索视图 [**Id**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.id)。
+    在创建新视图之后，你可以通过调用 [**ApplicationViewSwitcher.TryShowAsStandaloneAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.tryshowasstandaloneasync) 方法，将其显示在新窗口中。 此方法的 *viewId* 参数是唯一标识你的应用中每个视图的整数。 通过使用 [ApplicationView.Id**属性或**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.id)ApplicationView.GetApplicationViewIdForWindow 方法检索视图 [**Id**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.getapplicationviewidforwindow)。
 
     ```csharp
     bool viewShown = await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newViewId);
@@ -105,7 +105,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 应用启动时创建的第一个视图称为*主视图*。 此视图存储于 [**CoreApplication.MainView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.mainview) 属性中，而且其 [**IsMain**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.ismain) 属性为 True。 不要创建此视图；应用会创建它。 主视图的线程可充当应用的管理器，而且所有应用激活事件都会在此线程上传送。
 
-如果打开了辅助视图，主视图的窗口可以隐藏（例如，通过单击窗口标题栏中的关闭 (x) 按钮），但它的线程仍保持活动状态。 在主视图的 [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) 上调用 [**Close**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.close) 会导致 **InvalidOperationException** 发生。 (使用 "[**应用程序" 退出**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.exit)关闭应用。)如果主视图的线程终止, 应用将关闭。
+如果打开了辅助视图，主视图的窗口可以隐藏（例如，通过单击窗口标题栏中的关闭 (x) 按钮），但它的线程仍保持活动状态。 在主视图的 [**Window**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.close) 上调用 [**Close**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) 会导致 **InvalidOperationException** 发生。 （使用 [**Application.Exit**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.exit) 关闭你的应用。）如果主视图的线程终止，则应用关闭。
 
 ## <a name="secondary-views"></a>辅助视图
 

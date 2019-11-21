@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ddd35e0365efcc8c224e717b66f53734af32123d
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 2a13f0779414f60784ac1703fa32ac1ef5c89635
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339750"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74256538"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 处理媒体帧
 
@@ -23,7 +23,7 @@ ms.locfileid: "71339750"
 > 本文中讨论的功能仅从 Windows 10 版本 1607 开始提供。
 
 > [!NOTE] 
-> 文中提供了一个通用 Windows 应用示例，介绍使用 **MediaFrameReader** 显示不同帧源（包括彩色、深度和红外相机）的帧。 有关详细信息，请参阅[相机帧示例](https://go.microsoft.com/fwlink/?LinkId=823230)。
+> 文中提供了一个通用 Windows 应用示例，介绍使用 **MediaFrameReader** 显示不同帧源（包括彩色、深度和红外相机）的帧。 有关详细信息，请参阅[相机帧示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)。
 
 > [!NOTE] 
 > Windows 10 版本 1803 中采用了一组新的 API，借助其可将 **MediaFrameReader** 与音频数据结合使用。 有关详细信息，请参阅[使用 MediaFrameReader 处理音频帧](process-audio-frames-with-mediaframereader.md)。
@@ -48,7 +48,7 @@ ms.locfileid: "71339750"
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-你还可以使用[**DeviceInformation**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher)创建[**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)和从[**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector)返回的值，以便在设备上的可用帧源组时接收通知更改，例如插入外部照相机的时间。 有关详细信息，请参阅[**枚举设备**](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
+你还可以使用[**DeviceInformation**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher)创建[**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)和从[**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector)返回的值，以便在设备上的可用帧源组更改时接收通知，例如在插入外部照相机时接收通知。 有关详细信息，请参阅[**枚举设备**](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
 
 [  **MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup) 具有 [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 对象集合，用于描述组内包括的帧源。 检索可在设备上使用的帧源组后，可以选择公开所关注帧源的组。
 
@@ -56,7 +56,7 @@ ms.locfileid: "71339750"
 
 [!code-cs[SimpleSelect](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSimpleSelect)]
 
-这种标识所需帧源组和帧源的方法对简单情况有效，但如果要依据更复杂的条件选择帧源，这会很快变得难以实现。 另一种方法是使用 Linq 语法和匿名对象进行选择。 以下示例使用 **Select** 扩展方法将 *frameSourceGroups* 列表中的 **MediaFrameSourceGroup** 对象转换为具有两个字段的匿名对象：*sourceGroup* 表示组本身，*colorSourceInfo* 表示组中的颜色帧源。 *colorSourceInfo* 字段设为 **FirstOrDefault** 的结果，后者用于选择所提供的谓词解析为 true 的第一个对象。 在本例中，如果流类型为 **VideoPreview**、源种类为 **Color**，并且相机是设备的前置相机，则谓词为 true。
+这种标识所需帧源组和帧源的方法对简单情况有效，但如果要依据更复杂的条件选择帧源，这会很快变得难以实现。 另一种方法是使用 Linq 语法和匿名对象进行选择。 以下示例使用 **Select** 扩展方法将 **frameSourceGroups** 列表中的 *MediaFrameSourceGroup* 对象转换为具有两个字段的匿名对象：*sourceGroup* 表示组本身，*colorSourceInfo* 表示组中的颜色帧源。 *colorSourceInfo* 字段设为 **FirstOrDefault** 的结果，后者用于选择所提供的谓词解析为 true 的第一个对象。 在本例中，如果流类型为 **VideoPreview**、源种类为 **Color**，并且相机是设备的前置相机，则谓词为 true。
 
 在从上述查询返回的匿名对象列表中，**Where** 扩展方法用于仅选择 *colorSourceInfo* 字段不为 null 的对象。 最后，调用 **FirstOrDefault** 以选择列表中的第一个项目。
 
@@ -91,9 +91,9 @@ ms.locfileid: "71339750"
 [!code-cs[InitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMediaCapture)]
 
 ## <a name="set-the-preferred-format-for-the-frame-source"></a>为帧源设置首选格式
-若要为帧源设置首选格式，需要获取表示源的 [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource) 对象。 通过访问已初始化的 **MediaCapture** 对象的 [**Frames**](https://docs.microsoft.com/previous-versions/windows/apps/phone/jj207578(v=win.10)) 字典，并指定希望使用的帧源的标识符，获取此对象。 这就是我们在选择帧源组时保存 [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 对象的原因。
+若要为帧源设置首选格式，需要获取表示源的 [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource) 对象。 通过访问已初始化的 [MediaCapture**对象的**](https://docs.microsoft.com/previous-versions/windows/apps/phone/jj207578(v=win.10))Frames 字典，并指定希望使用的帧源的标识符，获取此对象。 这就是我们在选择帧源组时保存 [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 对象的原因。
 
-[  **MediaFrameSource.SupportedFormats**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats) 属性包含 [**MediaFrameFormat**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameFormat) 对象列表，此类对象用于描述帧源的受支持格式。 使用 **Where** Linq 扩展方法以根据所需属性选择某种格式。 在本例中，选择了宽度为 1080 像素并且可以提供 32 位 RGB 格式的帧格式。 **FirstOrDefault** 扩展方法选择列表中的第一个条目。 如果所选格式为 null，则请求的格式不受帧源支持。 如果该格式受支持，可以请求源通过调用 [**SetFormatAsync**](https://docs.microsoft.com/windows/uwp/develop/) 来使用此格式。
+[  **MediaFrameSource.SupportedFormats**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats) 属性包含 [**MediaFrameFormat**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameFormat) 对象列表，此类对象用于描述帧源的受支持格式。 使用 **Where** Linq 扩展方法以根据所需属性选择某种格式。 在本例中，选择了宽度为 1080 像素并且可以提供 32 位 RGB 格式的帧格式。 **FirstOrDefault** 扩展方法选择列表中的第一个条目。 如果所选格式为 null，则请求的格式不受帧源支持。 如果支持该格式，可以请求源通过调用 [**SetFormatAsync**](https://docs.microsoft.com/windows/uwp/develop/) 来使用此格式。
 
 [!code-cs[GetPreferredFormat](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetPreferredFormat)]
 
@@ -102,7 +102,7 @@ ms.locfileid: "71339750"
 
 [!code-cs[DeclareMediaFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaFrameReader)]
 
-通过在已初始化的 **MediaCapture** 对象上调用 [**CreateFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync)，实例化帧阅读器。 此方法的第一个参数是你希望从中接收帧的帧源。 可以为每个要使用的帧源创建单独的帧阅读器。 第二个参数告知系统你希望帧到达时使用的输出格式。 这可以省去在帧到达时需要自行转换到帧的工作。 请注意，如果所指定的格式不受帧源支持，将引发异常，因此请确保该值在 [**SupportedFormats**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats) 集合中。  
+通过在已初始化的 [MediaCapture**对象上调用**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync)CreateFrameReaderAsync，实例化帧阅读器。 此方法的第一个参数是你希望从中接收帧的帧源。 可以为每个要使用的帧源创建单独的帧阅读器。 第二个参数告知系统你希望帧到达时使用的输出格式。 这可以省去在帧到达时需要自行转换到帧的工作。 请注意，如果所指定的格式不受帧源支持，将引发异常，因此请确保该值在 [**SupportedFormats**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats) 集合中。  
 
 创建帧阅读器后，请为源提供新帧时引发的 [**FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.framearrived) 事件注册处理程序。
 
@@ -131,14 +131,14 @@ ms.locfileid: "71339750"
 
 接下来，使用 [**Interlocked.Exchange**](https://docs.microsoft.com/dotnet/api/system.threading.interlocked.exchange#System_Threading_Interlocked_Exchange__1___0____0_) 方法来将到达位图的引用交换为后台缓冲区位图。 此方法在线程安全的原子操作中交换这些引用。 交换后，以前的后台缓冲区图像现在位于 *softwareBitmap* 变量中，释放该图像可以清理资源。
 
-接下来，使用与 **Image** 元素关联的 [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 通过调用 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 创建在 UI 线程上运行的任务。 由于异步任务将在任务中执行，因此传递到 **RunAsync** 的 lambda 表达式使用 *async* 关键字声明。
+接下来，使用与 [Image**元素关联的**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher)CoreDispatcher 通过调用 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 创建在 UI 线程上运行的任务。 由于异步任务将在任务中执行，因此传递到 **RunAsync** 的 lambda 表达式使用 *async* 关键字声明。
 
 在任务中，查看 *_taskRunning* 变量以确保一次只运行任务的一个实例。 如果尚未运行该任务，将 *_taskRunning* 设置为 true，以防止任务再次运行。 在 *while* 循环中，调用 **Interlocked.Exchange** 以将后台缓冲区的内容复制到临时 **SoftwareBitmap**，直到后台缓冲区图像为 null。 每次在填充临时位图时，**Image** 的 **Source** 属性转换为 **SoftwareBitmapSource**，然后调用 [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) 以设置图像源。
 
 最后， *_taskRunning* 变量重新设置为 false，以便下次调用处理程序时任务会重新运行。
 
 > [!NOTE] 
-> 如果访问 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.videomediaframe.softwarebitmap) 或 [**Direct3DSurface**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.videomediaframe.direct3dsurface) 对象（由 [**MediaFrameReference**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereference.videomediaframe) 的 [**VideoMediaFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReference) 属性提供），系统将创建对这些对象的强引用，这意味着，当在包含的 **MediaFrameReference** 上调用 [**Dispose**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereference.close) 时，它们将不会释放。 必须直接为要立即释放的对象显式调用 **SoftwareBitmap** 或 **Direct3DSurface** 的 **Dispose** 方法。 否则，垃圾回收器将最终为这些对象释放内存，但无法知道这将何时出现，并且如果分配的位图或曲面的数量超过系统所允许的最大量，将停止新帧的流程。 可以拷贝检索的帧（如使用 [**SoftwareBitmap.Copy**](https://docs.microsoft.com/en-us/uwp/api/windows.graphics.imaging.softwarebitmap.copy) 方法），然后释放原始帧来解决此限制问题。 另外，如果使用重载 [CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, System.String outputSubtype, Windows.Graphics.Imaging.BitmapSize outputSize)](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_System_String_Windows_Graphics_Imaging_BitmapSize_) 或 [CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, System.String outputSubtype)](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_System_String_) 创建 **MediaFrameReader**，则返回的帧为原始帧数据的副本，因此在保留这些帧时不会导致帧采集停止。 
+> 如果访问 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.videomediaframe.softwarebitmap) 或 [**Direct3DSurface**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.videomediaframe.direct3dsurface) 对象（由 [**MediaFrameReference**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereference.videomediaframe) 的 [**VideoMediaFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReference) 属性提供），系统将创建对这些对象的强引用，这意味着，当在包含的 [MediaFrameReference**上调用**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereference.close)Dispose 时，它们将不会释放。 必须直接为要立即释放的对象显式调用 **SoftwareBitmap** 或 **Direct3DSurface** 的 **Dispose** 方法。 否则，垃圾回收器将最终为这些对象释放内存，但无法知道这将何时出现，并且如果分配的位图或曲面的数量超过系统所允许的最大量，将停止新帧的流程。 可以拷贝检索的帧（如使用 [**SoftwareBitmap.Copy**](https://docs.microsoft.com/en-us/uwp/api/windows.graphics.imaging.softwarebitmap.copy) 方法），然后释放原始帧来解决此限制问题。 另外，如果使用重载 **CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, System.String outputSubtype, Windows.Graphics.Imaging.BitmapSize outputSize)** 或 [CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, System.String outputSubtype)](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_System_String_Windows_Graphics_Imaging_BitmapSize_) 创建 [MediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_System_String_)，则返回的帧为原始帧数据的副本，因此在保留这些帧时不会导致帧采集停止。 
 
 
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFrameArrived)]
@@ -151,12 +151,12 @@ ms.locfileid: "71339750"
 有关在挂起应用程序时清理媒体捕获对象的详细信息，请参阅[**显示相机预览**](simple-camera-preview-access.md)。
 
 ## <a name="the-framerenderer-helper-class"></a>FrameRenderer 帮助程序类
-通用 Windows [相机帧示例](https://go.microsoft.com/fwlink/?LinkId=823230)提供在应用中轻松显示彩色、红外和深度源的帧的帮助程序类。 通常，对深度和红外数据的操作不止将其显示到屏幕，因此这个帮助程序类是显示帧阅读器功能和调试帧阅读器实现的有用工具。
+通用 Windows [相机帧示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)提供在应用中轻松显示彩色、红外和深度源的帧的帮助程序类。 通常，对深度和红外数据的操作不止将其显示到屏幕，因此这个帮助程序类是显示帧阅读器功能和调试帧阅读器实现的有用工具。
 
 **FrameRenderer** 帮助程序类实现以下方法。
 
 * **FrameRenderer** 构造函数 - 此构造函数初始化帮助程序类以将传递的 XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 元素用于显示媒体帧。
-* **ProcessFrame** - 此方法在传递到构造函数的 **Image** 元素中显示由 [**MediaFrameReference**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReference) 表示的媒体帧。 通常应该从 [**FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.framearrived) 事件处理程序（传递到 [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe) 返回的帧）中调用此方法。
+* **ProcessFrame** - 此方法在传递到构造函数的 [Image**元素中显示由**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReference)MediaFrameReference 表示的媒体帧。 通常应该从 [**FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.framearrived) 事件处理程序（传递到 [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe) 返回的帧）中调用此方法。
 * **ConvertToDisplayableImage** - 此方法检查媒体帧的格式，并在需要时将其转换为可显示的格式。 对于彩色图像，这意味着可以确保颜色格式为 BGRA8，并且位图 alpha 模式已预乘。 对于深度或红外帧，每个扫描行都经过处理，以使用也包含在示例中并且在下面列出的 **PsuedoColorHelper** 类将深度或红外值转换为伪色渐变。
 
 > [!NOTE] 
@@ -185,7 +185,7 @@ ms.locfileid: "71339750"
 
 [!code-cs[GetColorAndDepthSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetColorAndDepthSource)]
 
-通过调用 [**CreateMultiSourceFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createmultisourceframereaderasync) 和传递阅读器将使用的一组帧源创建并初始化 **MultiSourceMediaFrameReader**。 为 [**FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.FrameArrived) 事件注册事件处理程序。 此示例创建本文前面所述的 **FrameRenderer** 帮助程序类的实例，以将帧呈现给**图像**控件。 通过调用 [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.StartAsync) 启动帧阅读器。
+通过调用CreateMultiSourceFrameReaderAsync[**和传递阅读器将使用的一组帧源创建并初始化**MultiSourceMediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createmultisourceframereaderasync)。 为 [**FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.FrameArrived) 事件注册事件处理程序。 此示例创建本文前面所述的 **FrameRenderer** 帮助程序类的实例，以将帧呈现给**图像**控件。 通过调用 [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.StartAsync) 启动帧阅读器。
 
 为在此示例前面所声明的 **CorellationFailed** 事件注册事件处理程序。 如果正在使用的其中一个媒体帧源停止生成帧，我们将发出此事件的信号。 最后调用 [**Task.Run**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run#System_Threading_Tasks_Task_Run_System_Action_) 以在单独的线程上调用超时帮助程序方法 **NotifyAboutCorrelationFailure**。 本文稍后将展示此方法的实现方式。
 
@@ -193,9 +193,9 @@ ms.locfileid: "71339750"
 
 每当由 **MultiSourceMediaFrameReader** 管理的所有媒体帧源都提供可用的新帧时，引发 **FrameArrived** 事件。 这意味着事件将按照最慢的媒体源的节奏引发。 如果一个源在较慢的源生成一个帧的时间内生成多个帧，则来自快源的额外帧将被丢弃。 
 
-通过调用 [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.TryAcquireLatestFrame) 获取与事件关联的 [**MultiSourceMediaFrameReference**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference)。 通过调用 [**TryGetFrameReferenceBySourceId**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference.trygetframereferencebysourceid) 获取与每个媒体帧源相关联的 **MediaFrameReference**，同时在初始化帧阅读器时在存储的 ID 字符串中传递。
+通过调用 [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference) 获取与事件关联的 [**MultiSourceMediaFrameReference**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.TryAcquireLatestFrame)。 通过调用TryGetFrameReferenceBySourceId[**获取与每个媒体帧源相关联的**MediaFrameReference](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference.trygetframereferencebysourceid)，同时在初始化帧阅读器时在存储的 ID 字符串中传递。
 
-调用 **ManualResetEventSlim** 对象的[**设置**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim.set#System_Threading_ManualResetEventSlim_Set) 方法以发出帧已到达的信号。 我们将在单独的线程中运行的 **NotifyCorrelationFailure** 方法中检查此事件。 
+调用 [ManualResetEventSlim **对象的**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim.set#System_Threading_ManualResetEventSlim_Set)设置 方法以发出帧已到达的信号。 我们将在单独的线程中运行的 **NotifyCorrelationFailure** 方法中检查此事件。 
 
 最后，对与时间关联的媒体帧执行任何处理。 此示例仅显示来自深度源的帧。
 
@@ -208,7 +208,7 @@ ms.locfileid: "71339750"
 [!code-cs[CorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCorrelationFailure)]
 
 ## <a name="use-buffered-frame-acquisition-mode-to-preserve-the-sequence-of-acquired-frames"></a>使用缓冲的帧采集模式保留获取的帧的序列
-从 Windows 10 版本 1709 开始，可以将 **MediaFrameReader** 或 **MultiSourceMediaFrameReader** 的 **[AcquisitionMode](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.AcquisitionMode)** 属性设置为 **Buffered** 来保留从帧源传入应用的帧的序列。
+从 Windows 10 版本 1709 开始，可以将 **MediaFrameReader[ 或 ](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.AcquisitionMode)MultiSourceMediaFrameReader** 的AcquisitionMode 属性设置为 **Buffered** 来保留从帧源传入应用的帧的序列。
 
 [!code-cs[SetBufferedFrameAcquisitionMode](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSetBufferedFrameAcquisitionMode)]
 
@@ -217,7 +217,7 @@ ms.locfileid: "71339750"
 在 **Buffered** 采集模式下，系统将所有帧保留在缓冲区中，并按照帧的接收顺序，通过 **FrameArrived** 事件将帧提供给应用。 请注意，在此模式下，当用于保留帧的系统缓冲区填满后，系统将停止采集新的帧，直至应用完成前面的帧的 **FrameArrived** 事件并在缓冲区中释放更多空间为止。
 
 ## <a name="use-mediasource-to-display-frames-in-a-mediaplayerelement"></a>使用 MediaSource 在 MediaPlayerElement 中显示帧
-从 Windows 版本 1709 开始，可以在 XAML 页面的 **[MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)** 控件中直接显示从 **MediaFrameReader** 采集的帧。 实现此操作的方法是使用 **[MediaSource.CreateFromMediaFrameSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfrommediaframesource)** 创建 **[MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource)** 对象，且与 **MediaPlayerElement** 关联的 **[MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)** 可直接使用该对象。 有关使用 **MediaPlayer** 和 **MediaPlayerElement** 的详细信息，请参阅[使用 MediaPlayer 播放音频和视频](play-audio-and-video-with-mediaplayer.md)。
+从 Windows 版本 1709 开始，可以在 XAML 页面的MediaPlayerElement **[ 控件中直接显示从 ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)MediaFrameReader** 采集的帧。 实现此操作的方法是使用 **[MediaSource.CreateFromMediaFrameSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfrommediaframesource)** 创建 **[MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource)** 对象，且与 **MediaPlayerElement[ 关联的 ](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)** MediaPlayer 可直接使用该对象。 有关使用 **MediaPlayer** 和 **MediaPlayerElement** 的详细信息，请参阅[使用 MediaPlayer 播放音频和视频](play-audio-and-video-with-mediaplayer.md)。
 
 以下代码示例演示了一个简单实现：在 XAML 页面中同时显示前置和后置相机的帧。
 
@@ -235,7 +235,7 @@ ms.locfileid: "71339750"
 
 [!code-cs[MediaSourceInitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMediaSourceInitMediaCapture)]
 
-最后，通过使用关联的 **MediaFrameSourceInfo** 对象的 **[Id](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo.Id)** 属性，在 **MediaCapture** 对象的 **[FrameSources](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.FrameSources)** 集合中选择一个帧源，来调用 **[MediaSource.CreateFromMediaFrameSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfrommediaframesource)** ，为每个帧源创建一个 **MediaSource**。 通过调用 **[SetMediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.MediaPlayer)** 初始化新的 **MediaPlayer** 对象并将其分配给 **MediaPlayerElement**。 然后，将 **[Source](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Source)** 属性设置为新创建的 **MediaSource** 对象。
+最后，通过使用关联的 **MediaFrameSourceInfo[ 对象的 ](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfrommediaframesource)** Id 属性，在 **MediaCapture[ 对象的 ](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo.Id)** FrameSources 集合中选择一个帧源，来调用MediaSource.CreateFromMediaFrameSource **[，为每个帧源创建一个 ](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.FrameSources)MediaSource**。 通过调用SetMediaPlayer 初始化新的 **MediaPlayer[ 对象并将其分配给 ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.MediaPlayer)MediaPlayerElement**。 然后，将 **[Source](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Source)** 属性设置为新创建的 **MediaSource** 对象。
 
 [!code-cs[MediaSourceMediaPlayer](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMediaSourceMediaPlayer)]
 
@@ -253,7 +253,7 @@ ms.locfileid: "71339750"
 
 * [摄像头](camera.md)
 * [带有 MediaCapture 的基本照片、视频和音频捕获](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [照相机框架示例](https://go.microsoft.com/fwlink/?LinkId=823230)
+* [照相机框架示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
  
 
  
