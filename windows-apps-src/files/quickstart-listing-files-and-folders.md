@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: b561e08227664f723802ffc0ee3f0e16bc34a5cc
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 33b03ae1538001a2a9e77d3d72afd7bb67e9f3dc
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63810733"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258573"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>枚举和查询文件和文件夹
 
@@ -25,7 +25,7 @@ ms.locfileid: "63810733"
 有关如何存储通用 Windows 平台应用数据的指南，请参阅 [ApplicationData](/uwp/api/windows.storage.applicationdata) 类。
 
 > [!NOTE]
->有关完整示例，请参阅[文件夹枚举示例](https://go.microsoft.com/fwlink/p/?linkid=619993)。
+> 有关完整示例，请参阅[文件夹枚举示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FolderEnumeration)。
 
 ## <a name="prerequisites"></a>必备条件
 
@@ -40,7 +40,7 @@ ms.locfileid: "63810733"
 ## <a name="enumerate-files-and-folders-in-a-location"></a>枚举某个位置中的文件和文件夹
 
 > [!NOTE]
->请记住声明 picturesLibrary 功能  。
+>请记住声明 picturesLibrary 功能   。
 
 在此示例中，我们首先使用 [StorageFolder.GetFilesAsync](/uwp/api/windows.storage.storagefolder.getfilesasync) 方法获取 [KnownFolders.PicturesLibrary](/uwp/api/windows.storage.knownfolders.pictureslibrary) 的根文件夹（而不是在子文件夹）中的所有文件，并列出每个文件的名称   。 接下来，使用 [StorageFolder.GetFoldersAsync](/uwp/api/windows.storage.storagefolder.getfoldersasync) 方法获取 PicturesLibrary 中的所有子文件夹并列出每个子文件夹的名称   。
 
