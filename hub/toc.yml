@@ -1,7 +1,7 @@
 - name: 构建 Windows 应用
   items:
     - name: 概述
-      href: apps/index.md
+      href: apps/index.yml
     - name: 构建桌面应用
       items:
         - name: 概述
