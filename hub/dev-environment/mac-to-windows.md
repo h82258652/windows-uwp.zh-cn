@@ -1,94 +1,94 @@
 ---
-title: 帮助从 Mac （Unix）迁移到 Windows
-description: 本指南可帮助你从 Mac （Unix）转换到 Windows 开发环境，包括快捷键映射和 Mac 和 Windows 之间不同概念的简要概述。
+title: Help moving from Mac (Unix) to Windows
+description: A guide to help you transition from a Mac (Unix) to a Windows development environment, including shortcut key mapping and a brief overview of concepts that differ between Mac and Windows.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.technology: windows-nodejs
-keywords: Mac 到 Windows，快捷键映射，从 Unix 迁移到 windows，从 Mac 过渡到 Windows，帮助从 MacBook 移动到表面，如何将 Windows 用于 Macintosh 用户，如何将 Windows 切换为 Windows，帮助更改开发环境 Mac OS X，将其从 Macintosh 切换到 Windows，帮助从 Mac 移动到 PC
+keywords: Mac to Windows, shortcut key mapping, move from Unix to Windows, transition from Mac to Windows, help moving from MacBook to Surface, how to use Windows for a Macintosh user, switching from Macintosh to Windows, help changing dev environments, Mac OS X to Windows, help moving from Mac to PC
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: f72e688417726d3c3193d831dc886f6a33ec98f8
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 563a8ad659cfff1396049aae78342642d1db3e72
+ms.sourcegitcommit: 4cb3ee28baa8020ec925b0bdd896ab197a1ddadb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315321"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74309159"
 ---
-# <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>将开发环境从 Mac 更改为 Windows 的指南
+# <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>Guide for changing your dev environment from Mac to Windows
 
-以下提示和控制等效项应有助于在 Mac 和 Windows （或 WSL/Linux）开发环境之间过渡。
+The following tips and control equivalents should help you in your transition between a Mac and Windows (or WSL/Linux) development environment.
 
-对于应用开发，最接近 Xcode 的等效项将是[Visual Studio](https://visualstudio.microsoft.com)。 如果您觉得需要返回，还有一个[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)版本。 对于跨平台源代码编辑（和大量插件） [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=DX_841432)是最常用的选项。
+For app development, the nearest equivalent to Xcode would be [Visual Studio](https://visualstudio.microsoft.com). There is also a version of [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/), if you ever feel the need to go back. For cross-platform source code editing (and a huge number of plug-ins) [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=DX_841432) is the most popular choice.
 
 ## <a name="keyboard-shortcuts"></a>键盘快捷方式
 
-| **运作** | **Mac** | **Windows** |
+| **Operation** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| 复制 | Command + C | Ctr + C |
-| 剪切 | Command + X | Ctr + X |
-| 粘贴 | Command + V | Ctr + V |
-| 撤销 | Command + Z | Ctrl+Z |
-| 保存 | Command + S | Ctrl+S |
-| 打开 | Command + O | Ctrl+O |
-| 锁定计算机 | Command + Control + Q | Ctr + L |
-| 显示桌面 | Command + F3 | Ctrl+D |
-| 最小化窗口 | Windows 键 + M | COMMAND + M |
-| 搜索 | 命令 + Space | Windows 键 |
-| 关闭活动窗口 | Command + W | 控制 + W |
-| 切换当前任务 | Command + Tab | Alt+Tab |
-| 保存屏幕（屏幕快照） | Command + Shift + 3 | Windows + Shift + S |
-| 保存窗口 | Command + Shift + 4 | Windows + Shift + S |
-| 查看项信息或属性 | Command + I | Alt+Enter |
- | 选择所有项 | Command + A | Ctrl+A |
-| 在列表中选择多个项目（非连续） | 命令，然后单击每个项目 | Control，然后单击每个项目 |
-| 键入特殊字符 | 选项 + 字符键 | Alt + 字符键|
+| “复制” | Command+C | Ctr+C |
+| Cut | Command+X | Ctr+X |
+| 粘帖 | Command+V | Ctr+V |
+| 撤销 | Command+Z | Ctrl+Z |
+| “保存” | Command+S | Ctrl+S |
+| 打开 | Command+O | Ctrl+O |
+| Lock computer | Command+Control+Q | WindowKey+L |
+| Show desktop | Command+F3 | WindowKey+D |
+| Minimize windows | COMMAND +M | Windows key+M |
+| “搜索” | Command+Space | Windows 键 |
+| Close active window | Command+W | Control+W |
+| Switch current task | Command+Tab | Alt+Tab |
+| Save screen (Screenshot) | Command+Shift+3 | Windows+Shift+S |
+| Save window | Command+Shift+4 | Windows+Shift+S |
+| View item information or properties | Command+I | Alt+Enter |
+ | Select all items | Command+A | Ctrl+A |
+| Select more than one item in a list (noncontiguous) | Command, then click each item | Control, then click each item |
+| Type special characters | Option+ character key | Alt+ character key|
 
 ## <a name="trackpad-shortcuts"></a>触控板快捷方式
 
-注意:其中一些快捷方式需要 "Precision 触控板"，如 Surface 设备上的触控板和其他第三方便携式计算机。
+Note: Some of these shortcuts require a “Precision Trackpad”, such as the trackpad on Surface devices and some other third party laptops.
 
- **运作** | **Mac** | **Windows** |
+ **Operation** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| 滚动 | 双指垂直滑动 | 双指垂直滑动 |
-| Zoom | 两个推诿扯皮 | 两个推诿扯皮 |
-| 在视图之间向后轻扫 | 双指侧向刷 | 双指侧向刷 |
-| 切换虚拟工作区 | 四指侧向滑动 | 四指侧向滑动 |
-| 显示当前打开的应用 | 四指向上轻扫 | 三个手指向上轻扫 |
-| 在应用之间切换 | 不可用 | 缓慢的三指侧向滑动 |
-| 中转到桌面 | 向外展开四个手指 | 向下轻扫的三指 |
-| 打开 Cortana/操作中心 | 从右侧滑动两指 | 三指点击 |
-| 打开额外信息 | 三指点击 | 不可用 |
-|显示快速启动板/启动应用 | 带四指的挤压 | 用四个手指点击 |
+| 滚动 | Two finger vertical swipe | Two finger vertical swipe |
+| 缩放 | Two finger pinch in and out | Two finger pinch in and out |
+| Swipe back and forward between views | Two finger sideways swipe | Two finger sideways swipe |
+| Switch virtual workspaces | Four fingers sideways swipe | Four fingers sideways swipe |
+| Display currently open apps | Four fingers upward swipe | Three fingers upward swipe |
+| Switch between apps | N/A | Slow three finger sideways swipe |
+| Go to desktop | Spread out four fingers | Three finger swipe downwards |
+| Open Cortana / Action center | Two finger slide from right | Three finger tap |
+| Open extra information | Three finger tap | N/A |
+|Show launchpad / start an app | Pinch with four fingers | Tap with four fingers |
 
-注意:可在两个平台上配置触控板选项。
+Note: Trackpad options are configurable on both platforms.
 
 ## <a name="terminal-and-shell"></a>终端和 Shell
 
-Windows 提供了几种用于 Mac 的终端模拟器的替代方法。
+Windows provides several alternatives to the Mac's terminal emulator.
 
-1. Windows 命令行
+1. The Windows Command Line
 
-Windows 命令行将接受 DOS 命令，是最常用的 Windows 命令行工具。 若要打开它：按**Windows + R**打开 "**运行**" 框，键入**Cmd** ，然后单击 **"确定"** 。 若要打开管理员命令行，请键入**cmd** ，然后按**Ctrl + Shift + enter**。 
+The Windows command line will accept DOS commands, and is the most commonly used command line tool on Windows. To open it: Press **Windows+R** to open the **Run** box, then type **cmd** and then click **OK**. To open an administrator command line, type **cmd** and then press **Ctrl+Shift+Enter**. 
 
 2. PowerShell
 
-[Powershell](https://docs.microsoft.com/powershell/scripting/overview?view=powershell-6)是一种基于任务的命令行外壳和脚本语言，它是在 .net 上构建的。 PowerShell 可帮助系统管理员和高级用户快速自动执行管理操作系统的任务 "。 换句话说，它是一个功能非常强大的命令行，特别是系统管理员。
+[PowerShell](https://docs.microsoft.com/powershell/scripting/overview?view=powershell-6) is a "PowerShell is a task-based command-line shell and scripting language built on .NET. PowerShell helps system administrators and power-users rapidly automate tasks that manage operating systems". In other words, it's a very powerful command line, and is especially loved by system admins.
 
-顺便说一下，PowerShell[还适用于 Mac](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6)。
+Incidentally, PowerShell is [also available for Mac](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6).
 
 3. 适用于 Linux 的 Windows 子系统 (WSL)
 
-WSL 允许在 Windows 中运行 Linux shell。 这意味着，你可以运行*bash** 或其他 shell，具体取决于所安装的选项和特定的 Linux 发行版。 使用 WSL 可提供 Mac 用户最熟悉的环境类型。 例如，**你将在**当前目录中列出文件，**而不是**在 Windows 命令行中列出文件。 若要了解 instaling 和使用 WSL，请参阅[适用于 windows 10 的适用于 Linux 的 Windows 子系统安装指南](https://docs.microsoft.com/en-us/windows/wsl/install-win10)。
+WSL allows you to run a Linux shell within Windows. This means you can run *bash** or other shell, depending on choice and the specific Linux distro installed. Using WSL will provide the kind of environment most familiar to Mac users. For example, you will **ls** to list the files in a current directory, not **dir** as you would with the Windows command line. To learn about instaling and using WSL, see the [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
 ## <a name="apps-and-utilities"></a>应用和实用程序
 
- **应用** | **Mac** | **Windows** |
+ **App** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| 设置和首选项 | 系统首选项 | 设置 |
-| 任务管理器 | 活动监视器 | 任务管理器 |
-| 磁盘格式 | 磁盘实用工具 | 磁盘管理 |
-| 文本编辑 | TextEdit | 记事本 |
-| 事件查看 | 控制台 | 事件查看器 |
-| 查找文件/应用 | 命令 + Space | Windows 键 |
+| Settings and Preferences | System Preferences | “设置” |
+| 任务管理器 | Activity Monitor | “任务管理器” |
+| Disk formatting | Disk Utility | 磁盘管理 |
+| Text editing | TextEdit | 记事本 |
+| Event viewing | 主机 | 事件查看器 |
+| Find files/apps | Command+Space | Windows 键 |
