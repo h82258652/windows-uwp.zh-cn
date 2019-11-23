@@ -154,7 +154,7 @@ UI 虚拟化意味着在_需要时_延迟创建 UI 对象。  这是一种性能
 5. 重写[system.windows.frameworkelement.arrangeoverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride)并对所有子级调用 "[排列](/uwp/api/windows.ui.xaml.uielement.arrange)" 方法。
 6. *（**New**/Optional）* 清除[UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore)中的任何已保存状态。
 
-### <a name="example-a-simple-stack-layout-varying-sized-items"></a>例如：简单的堆栈布局（大小变化的项）
+### <a name="example-a-simple-stack-layout-varying-sized-items"></a>示例：简单的堆栈布局（大小变化的项）
 
 ![MyStackLayout](images/xaml-attached-layout-mystacklayout.png)
 
@@ -261,7 +261,7 @@ public class MyStackLayout : NonVirtualizingLayout
 
 为给定索引请求元素将导致该布局的传递将该元素标记为 "正在使用"。 如果该元素尚不存在，则它将实现并自动准备就绪（例如，因为这样做 System.windows.datatemplate> 中定义的 UI 树，处理任何数据绑定，等等）。  否则，将从现有实例的池中检索它。
 
-每个度量值结束时，任何未标记为 "正在使用" 的现有已实现元素都将被自动视为可重复使用，除非通过[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) 方法检索元素是使用了 [SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions)。 框架自动将其移动到回收池并使其可用。 它随后可能会被其他容器使用。 如果可能，该框架会尽量避免这种情况，因为存在一些与重新父级元素相关的成本。
+每个度量值结束时，任何未标记为 "正在使用" 的现有已实现元素都将被自动视为可重复使用，除非通过[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) 方法检索元素是使用了 [SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)。 框架自动将其移动到回收池并使其可用。 它随后可能会被其他容器使用。 如果可能，该框架会尽量避免这种情况，因为存在一些与重新父级元素相关的成本。
 
 如果虚拟化布局知道每个度量值开始时，哪些元素将不再位于实现矩形内，则它可以优化其重复使用。 而不是依赖于框架的默认行为。 布局可以提前使用[RecycleElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recycleelement)方法将元素移动到回收池。  在请求新元素之前调用此方法会导致这些现有元素在布局之后对尚未与某个元素关联的索引发出[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)请求时可用。
 
@@ -289,7 +289,7 @@ VirtualizingLayoutContext 提供了其他两个属性，这些属性设计用于
 > [!TIP]
 > 如果要为控件库创建自定义控件，而其他人将在各种情况下使用该控件，则可能不会为你选择数据布局。
 
-### <a name="example-xbox-activity-feed-layout"></a>例如：Xbox 活动源布局
+### <a name="example-xbox-activity-feed-layout"></a>示例： Xbox 活动源布局
 
 Xbox 活动源的 UI 使用重复模式，其中每行都有一个宽磁贴，后跟在后续行上反转的两个窄图块。 在此布局中，每个项的大小是项在数据集中的位置的功能，以及磁贴的已知大小（宽型和窄型）。
 
@@ -586,7 +586,7 @@ internal class ActivityFeedLayoutState
 
 默认情况下， [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)在所表示的数据源中的已实现元素与索引之间维护映射。  布局可以选择在通过阻止默认自动回收行为的[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法检索元素时，始终请求[SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions)的选项来管理此映射本身。  布局可以选择执行此操作，例如，仅当滚动仅限一个方向并且它认为的项将始终是连续的时（即，知道第一个和最后一个元素的索引就足以知道应该 rea 的所有元素。lized).
 
-#### <a name="example-xbox-activity-feed-measure"></a>例如：Xbox 活动源度量值
+#### <a name="example-xbox-activity-feed-measure"></a>示例： Xbox 活动源度量值
 
 下面的代码片段显示了可添加到前面示例中的 System.windows.frameworkelement.measureoverride 以管理映射的其他逻辑。
 
@@ -703,7 +703,7 @@ XAML 提供一种机制，可通过实现[IScrollAnchorPovider](/uwp/api/windows
 当布局发现其推测不正确并且/或发现意外的视区变化时，它需要重定向其起始位置。  作为 XAML 控件一部分提供的虚拟化布局作为内容相关的布局进行开发，因为它们对要显示的内容的性质施加的限制更少。
 
 
-### <a name="example-simple-virtualizing-stack-layout-for-variable-sized-items"></a>例如：可变大小的项的简单虚拟化堆栈布局
+### <a name="example-simple-virtualizing-stack-layout-for-variable-sized-items"></a>示例：简单的可变大小项的虚拟化堆栈布局
 
 下面的示例演示了可变大小的项的简单堆栈布局：
 
@@ -712,7 +712,7 @@ XAML 提供一种机制，可通过实现[IScrollAnchorPovider](/uwp/api/windows
 * 了解潜在的不连续视区偏移量和
 * 应用布局更正以考虑这些倒班。
 
-**Usage：标记 @ no__t-0
+**用法：标记**
 
 ```xaml
 <ScrollViewer>
@@ -741,7 +741,7 @@ XAML 提供一种机制，可通过实现[IScrollAnchorPovider](/uwp/api/windows
 </ScrollViewer>
 ```
 
-**Codebehind：Main .cs @ no__t-0
+**代码隐藏： Main.cs**
 
 ```csharp
 string _lorem = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus.";
@@ -757,7 +757,7 @@ var data = new ObservableCollection<Recipe>(Enumerable.Range(0, 300).Select(k =>
 repeater.ItemsSource = data;
 ```
 
-**Code：VirtualizingStackLayout @ no__t-0
+**代码： VirtualizingStackLayout.cs**
 
 ```csharp
 // This is a sample layout that stacks elements one after

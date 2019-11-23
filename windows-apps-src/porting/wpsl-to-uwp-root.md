@@ -1,6 +1,6 @@
 ---
-description: If you’re a developer with a Windows Phone Silverlight app, then you can make great use of your skill set and your source code in the move to Windows 10.
-title: Move from Windows Phone Silverlight to UWP
+description: 如果你是具有 Windows Phone Silverlight 应用的开发人员，则可以在 "移动到 Windows 10" 中充分利用你的技能集和源代码。
+title: 从 Windows Phone Silverlight 移动到 UWP
 ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
 ms.date: 02/08/2017
 ms.topic: article
@@ -13,25 +13,25 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260089"
 ---
-#  <a name="move-from-windowsphone-silverlight-to-uwp"></a>Move from Windows Phone Silverlight to UWP
+#  <a name="move-from-windowsphone-silverlight-to-uwp"></a>从 Windows Phone Silverlight 移动到 UWP
 
 
-If you’re a developer with a Windows Phone Silverlight app, then you can make great use of your skill set and your source code in the move to Windows 10. With Windows 10, you can create a Universal Windows Platform (UWP) app, which is a single app package that your customers can install onto every kind of device. For more background on Windows 10, UWP apps, and the concepts of adaptive code and adaptive UI that we'll mention in this porting guide, see the [Guide to Universal Windows Platform (UWP) apps](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
+如果你是具有 Windows Phone Silverlight 应用的开发人员，则可以在 "移动到 Windows 10" 中充分利用你的技能集和源代码。 使用 Windows 10，你可以创建一个通用 Windows 平台（UWP）应用，该应用是你的客户可以安装到各种设备上的单个应用程序包。 若要深入了解 Windows 10 上的 UWP 应用和自适应代码以及自适应 UI 的概念，请参阅此移植指南，请参阅[通用 Windows 平台（UWP）应用的指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。
 
-When you port your Windows Phone Silverlight app to a Windows 10 app, you'll be able to catch up on the mobile features that were [introduced in Windows Phone 8.1](https://docs.microsoft.com/previous-versions/windows/apps/ff402535(v=vs.105)), and go far beyond them to use the Universal Windows Platform (UWP) whose app model and UI framework are universal across all Windows 10 devices. 这使得通过一个基本代码和一个应用包支持 PC、平板电脑、手机和大量其他种类的设备成为可能。 这将大幅增加应用的潜在受众，并通过共享数据、购买消费品等创造新的可能性。 For more info on new features, see [What's new for developers in Windows 10](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest).
+当你将 Windows Phone Silverlight 应用移植到 Windows 10 应用时，你将能够了解[在 Windows Phone 8.1 中引入](https://docs.microsoft.com/previous-versions/windows/apps/ff402535(v=vs.105))的移动功能，并将其移到目前为止，以使用其应用模型和 UI 框架在所有 Windows 10 设备上都是通用的通用 WINDOWS 平台（UWP）。 这使得通过一个基本代码和一个应用包支持 PC、平板电脑、手机和大量其他种类的设备成为可能。 这将大幅增加应用的潜在受众，并通过共享数据、购买消费品等创造新的可能性。 有关新功能的详细信息，请参阅[Windows 10 中面向开发人员的新增](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest)功能。
 
-If you choose to, the Windows Phone Silverlight version of your app and the Windows 10 version of it can both be available to customers at the same time.
+如果你选择，则应用的 Windows Phone Silverlight 版本和 Windows 10 版本均可同时供客户使用。
 
-**Note**  This guide is designed to help you port your Windows Phone Silverlight app to Windows 10 manually. 除了使用本指南中的信息来移植你的应用外，你还可以尝试 **Mobilize.NET Silverlight Bridge** 的开发者预览版来帮助实现移植过程的自动化。 This tool analyzes your app's source code and converts references to Windows Phone Silverlight controls and APIs to their UWP counterparts. 因为此工具仍为开发人员预览版，所以它还无法处理所有转换方案。 但是，大多数开发人员通过开始使用此工具可以节省一些时间和精力。 若要尝试开发者预览版，请访问 [Mobilize.NET](https://www.mobilize.net/uwp-bridge) 的网站。
+**请注意**  本指南旨在帮助您手动将 Windows Phone Silverlight 应用移植到 Windows 10。 除了使用本指南中的信息来移植你的应用外，你还可以尝试 **Mobilize.NET Silverlight Bridge** 的开发者预览版来帮助实现移植过程的自动化。 此工具分析你的应用程序的源代码，并将对 Windows Phone Silverlight 控件和 Api 的引用转换为其 UWP 对应项。 因为此工具仍为开发人员预览版，所以它还无法处理所有转换方案。 但是，大多数开发人员通过开始使用此工具可以节省一些时间和精力。 若要尝试开发者预览版，请访问 [Mobilize.NET](https://www.mobilize.net/uwp-bridge) 的网站。
 
 ## <a name="xaml-and-net-or-html"></a>XAML 和 .NET 或 HTML？
 
-Windows Phone Silverlight has a XAML UI framework based on Silverlight 4.0, and you program against a version of the .NET Framework and a small subset of UWP APIs. Since you used Extensible Application Markup Language (XAML) in your Windows Phone Silverlight app, it's likely that XAML will be your choice for your Windows 10 version because most of your knowledge and experience will transfer, as will much of your source code and the software patterns you use. 甚至你的 UI 标记和设计也可以随时进行移植。 你会发现托管 API、XAML 标记、UI 框架和工具全都令人熟悉，并且你可以在 UWP 应用中将 C++、C# 或 Visual Basic 与 XAML 一起使用。 即便过程中存在一些挑战，你可能仍会对过程是如此的简单感到惊讶。
+Windows Phone Silverlight 具有基于 Silverlight 4.0 的 XAML UI 框架，并针对 .NET Framework 版本和 UWP Api 的一小部分进行编程。 由于你在 Windows Phone Silverlight 应用中使用了 Extensible Application Markup Language （XAML），因此很可能是你为 Windows 10 版本选择了 XAML，因为你的大多数知识和体验会随你的源代码和你使用的软件模式。 甚至你的 UI 标记和设计也可以随时进行移植。 你会发现托管 API、XAML 标记、UI 框架和工具全都令人熟悉，并且你可以在 UWP 应用中将 C++、C# 或 Visual Basic 与 XAML 一起使用。 即便过程中存在一些挑战，你可能仍会对过程是如此的简单感到惊讶。
 
 请参阅[使用 C# 或 Visual Basic 的通用 Windows 平台 (UWP) 应用的路线图](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10))。
 
-**Note**  Windows 10 supports much more of the .NET Framework than a Windows Phone Store app does. For example, Windows 10 has several System.ServiceModel.\* namespaces as well as System.Net, System.Net.NetworkInformation, and System.Net.Sockets. So, now is a great time to port your Windows Phone Silverlight and have your .NET code just compile and work on the new platform. 请参阅[命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)。
-Another great reason to recompile your existing .NET source code into a Windows 10 app is that you will benefit from .NET Native, which an ahead-of-time compilation technology that converts MSIL into natively-runnable machine code. .NET Native 应用启动速度更快、使用的内存更少，并且比其对应的 MSIL 更省电。
+**请注意**  Windows 10 比 Windows Phone 应用商店应用支持更多的 .NET Framework。 例如，Windows 10 有多个 System.servicemodel。\* 命名空间以及 System.Net、System.net.networkinformation 和系统 .Net。 那么，现在是移植 Windows Phone Silverlight 的好时机，只需编译并在新平台上工作即可。 请参阅[命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)。
+将现有 .NET 源代码重新编译为 Windows 10 应用程序的另一个重要原因是，.NET Native，这是一项预编译技术，它将 MSIL 转换为可运行的本机代码。 .NET Native 应用启动速度更快、使用的内存更少，并且比其对应的 MSIL 更省电。
 
 此移植指南将侧重于 XAML，或者你可以使用 JavaScript、级联样式表 (CSS) 和 HTML5 以及 Windows JavaScript 库，生成在功能上等效的应用（通过调用许多相同的 UWP API）。 尽管使用 XAML 的 Windows 运行时 UI 框架不同于使用 HTML 的 Windows 运行时 UI 框架，但无论你选择哪一个，它都需要通用于所有类型的 Windows 设备。
 
@@ -55,39 +55,39 @@ Another great reason to recompile your existing .NET source code into a Windows�
 
 当你阅读此移植指南时，你可以参考[命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)。 简单明了的映射是通用规则，命名空间和类映射表描述了任何例外。
 
-在功能级别上，好消息是在 UWP 中不受支持的功能非常少。 在阅读本移植指南的剩余部分时，大多数技能组合和源代码均可以非常好地转换到 UWP 应用。 But, here are the few Windows Phone Silverlight features that you may have used for which there is no UWP equivalent.
+在功能级别上，好消息是在 UWP 中不受支持的功能非常少。 在阅读本移植指南的剩余部分时，大多数技能组合和源代码均可以非常好地转换到 UWP 应用。 不过，以下是你可能使用的几个 Windows Phone Silverlight 功能，其中没有 UWP 等效项。
 
-| 没有 UWP 等效项的功能 | Windows Phone Silverlight documentation for the feature |
+| 没有 UWP 等效项的功能 | 功能 Windows Phone Silverlight 文档 |
 |----------------------------------------------|---------------------------------------------------------|
-| Microsoft XNA。 通常情况下，使用 C++ 的 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 是替代项。 请参阅[开发游戏](https://docs.microsoft.com/previous-versions/windows/apps/hh452744(v=win.10))和 [DirectX 和 XAML 互操作](https://docs.microsoft.com/previous-versions/windows/apps/hh825871(v=win.10))。 | [XNA Framework Class Library](https://docs.microsoft.com/previous-versions/windows/xna/bb200104(v=xnagamestudio.41)) | 
-|滤镜应用 | [Lenses for Windows Phone 8](https://docs.microsoft.com/previous-versions/windows/apps/jj206990(v=vs.105)) |
+| Microsoft XNA。 通常情况下，使用 C++ 的 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 是替代项。 请参阅[开发游戏](https://docs.microsoft.com/previous-versions/windows/apps/hh452744(v=win.10))和 [DirectX 和 XAML 互操作](https://docs.microsoft.com/previous-versions/windows/apps/hh825871(v=win.10))。 | [设备种类框架类库](https://docs.microsoft.com/previous-versions/windows/xna/bb200104(v=xnagamestudio.41)) | 
+|滤镜应用 | [重用功能区 for Windows Phone 8](https://docs.microsoft.com/previous-versions/windows/apps/jj206990(v=vs.105)) |
 
 &nbsp;
 
 | 主题| 描述|
 |------|------------| 
-| [Namespace and class mappings](wpsl-to-uwp-namespace-and-class-mappings.md) | This topic provides a comprehensive mapping of Windows Phone Silverlight APIs to their UWP equivalents. |
-| [Porting the project](wpsl-to-uwp-porting-to-a-uwp-project.md) | You begin the porting process by creating a new Windows 10 project in Visual Studio and copying your files into it. |
+| [命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md) | 本主题提供了 Windows Phone Silverlight Api 到其 UWP 等效项的完整映射。 |
+| [移植项目](wpsl-to-uwp-porting-to-a-uwp-project.md) | 通过在 Visual Studio 中创建新的 Windows 10 项目并将文件复制到其中，开始迁移过程。 |
 | [疑难解答](wpsl-to-uwp-troubleshooting.md) | 我们强烈建议阅读到此移植指南的末尾，但是我们也理解你希望尽快前进到项目生成和运行的阶段。 阅读到该末尾后，你可以注释或排除非必要的代码，然后稍后返回支付该债务，从而临时加快进度。 本主题中的疑难解答症状和补救办法的表格可能在此阶段对你有用，尽管它无法替代阅读接下来的一些主题。 在你执行到以后的主题时，你可以一直重新参考该表。 |
-| [Porting XAML and UI](wpsl-to-uwp-porting-xaml-and-ui.md) | The practice of defining UI in the form of declarative XAML markup translates extremely well from Windows Phone Silverlight to UWP apps. 你将发现，更新了系统资源键引用、更改了某些元素类型名称并将“clr-namespace”更改为“using”后，标记的一大部分将可兼容。 |
-| [Porting for I/O, device, and app model](wpsl-to-uwp-input-and-sensors.md) | 与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。 它还可以涉及处理数据。 但是通常不将此代码视为 UI 层或数据层。 此代码包含与振动控制器、加速计、陀螺仪、麦克风和扬声器（与语音识别和合成交叉）、（地理）位置和输入形式（例如触摸、鼠标、键盘和笔）的集成。 |
-| [Porting business and data layers](wpsl-to-uwp-business-and-data.md) | 业务和数据层位于你的 UI 之后。 这两个层中的代码将调用操作系统和 .NET Framework API（例如，后台处理、位置、相机、文件系统、网络和其他数据访问）。 绝大多数这些代码都[适用于 UWP 应用](https://docs.microsoft.com/previous-versions/windows/br211369(v=win.10))，你进而希望能够在不进行更改的情况下移植大部分此类代码。 |
-| [Porting for form factor and UX](wpsl-to-uwp-form-factors-and-ux.md) | Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常见的外观。 用户界面、输入和交互模式都非常相似，并且用户在设备之间移动的操作也将是熟悉的体验。|
-|[Case study: Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) | This topic presents a case study of porting a very simple Windows Phone Silverlight app to a Windows 10 UWP app. With Windows 10, you can create a single app package that your customers can install onto a wide range of devices, and that's what we'll do in this case study. |
-| [Case study: Bookstore2](wpsl-to-uwp-case-study-bookstore2.md) | This case study—which builds on the info given in [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md)—begins with a Windows Phone Silverlight app that displays grouped data in a **LongListSelector**. 在视图模型中，类 **Author** 的每个实例都表示一组由该作者创作的书籍，而在 **LongListSelector** 中，我们可以按作者查看分组书籍的列表，或者可以缩小到可以看到包含作者的跳转列表。 |
+| [移植 XAML 和 UI](wpsl-to-uwp-porting-xaml-and-ui.md) | 以声明性 XAML 标记形式定义 UI 的做法从 Windows Phone Silverlight 转换为 UWP 应用非常好。 你将发现，更新了系统资源键引用、更改了某些元素类型名称并将“clr-namespace”更改为“using”后，标记的一大部分将可兼容。 |
+| [用于 i/o、设备和应用模型的移植](wpsl-to-uwp-input-and-sensors.md) | 与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。 它还可以涉及处理数据。 但是通常不将此代码视为 UI 层或数据层。 此代码包含与振动控制器、加速计、陀螺仪、麦克风和扬声器（与语音识别和合成交叉）、（地理）位置和输入形式（例如触摸、鼠标、键盘和笔）的集成。 |
+| [移植业务层和数据层](wpsl-to-uwp-business-and-data.md) | 业务和数据层位于你的 UI 之后。 这两个层中的代码将调用操作系统和 .NET Framework API（例如，后台处理、位置、相机、文件系统、网络和其他数据访问）。 绝大多数这些代码都[适用于 UWP 应用](https://docs.microsoft.com/previous-versions/windows/br211369(v=win.10))，你进而希望能够在不进行更改的情况下移植大部分此类代码。 |
+| [适用于外形规格和 UX 的移植](wpsl-to-uwp-form-factors-and-ux.md) | Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常见的外观。 用户界面、输入和交互模式都非常相似，并且用户在设备之间移动的操作也将是熟悉的体验。|
+|[案例研究： Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) | 本主题介绍如何将非常简单的 Windows Phone Silverlight 应用移植到 Windows 10 UWP 应用。 使用 Windows 10，你可以创建一个应用程序包，你的客户可以将其安装到各种设备上，这就是我们在此案例研究中要做的。 |
+| [案例研究： Bookstore2](wpsl-to-uwp-case-study-bookstore2.md) | 此案例研究（在[Bookstore1](wpsl-to-uwp-case-study-bookstore1.md)中提供的信息的基础上）以在**LongListSelector**中显示分组数据的 Windows Phone Silverlight 应用开始。 在视图模型中，类 **Author** 的每个实例都表示一组由该作者创作的书籍，而在 **LongListSelector** 中，我们可以按作者查看分组书籍的列表，或者可以缩小到可以看到包含作者的跳转列表。 |
 
 ## <a name="related-topics"></a>相关主题
 
 **文档**
-* [What's new for developers in Windows 10](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest)
+* [Windows 10 中的开发人员的新增功能](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest)
 * [通用 Windows 平台 (UWP) 应用指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-* [Roadmap for Universal Windows Platform (UWP) apps using C# or Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10))
-* [What's next for Windows Phone 8 developers](https://docs.microsoft.com/previous-versions/windows/apps/dn655121(v=vs.105))
+* [使用C#或 Visual Basic 通用 WINDOWS 平台（UWP）应用的路线图](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10))
+* [Windows Phone 8 开发人员接下来要做什么](https://docs.microsoft.com/previous-versions/windows/apps/dn655121(v=vs.105))
 
-**Magazine articles**
-* [Visual Studio Magazine: Windows Phone 8.1: A Giant Leap Forward for Convergence](https://visualstudiomagazine.com/articles/2014/05/01/whats-new-for-developers-with-windows-phone-8_1.aspx)
+**杂志文章**
+* [Visual Studio 杂志： Windows Phone 8.1：聚合的巨大飞跃](https://visualstudiomagazine.com/articles/2014/05/01/whats-new-for-developers-with-windows-phone-8_1.aspx)
 
-**Presentations**
-* [The Story of Bringing Nokia Music from Windows Phone to Windows 8](https://channel9.msdn.com/Events/Build/2013/2-219)
+**Powerpoint**
+* [将 Nokia 音乐从 Windows Phone 引入 Windows 8 的故事](https://channel9.msdn.com/Events/Build/2013/2-219)
  
 

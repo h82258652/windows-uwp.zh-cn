@@ -1,6 +1,6 @@
 ---
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
-title: 蓝牙 RFCOMM
+title: Bluetooth RFCOMM
 description: 本文提供通用 Windows 平台 (UWP) 应用中的蓝牙 RFCOMM 的概述，以及如何发送或接收文件的示例代码。
 ms.date: 07/19/2018
 ms.topic: article
@@ -17,7 +17,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/11/2019
 ms.locfileid: "72281811"
 ---
-# <a name="bluetooth-rfcomm"></a>蓝牙 RFCOMM
+# <a name="bluetooth-rfcomm"></a>Bluetooth RFCOMM
 
 **重要的 API**
 
@@ -40,9 +40,9 @@ RFCOMM API 使用服务标识符的概念。 尽管服务标识符只是一个 1
 
 发送文件时，最基本的方案是基于所需服务连接到配对设备。 这包括以下步骤：
 
--   使用**GetDeviceSelector @ no__t-1**函数可帮助生成可用于枚举所需服务的成对设备实例的 AQS 查询 RfcommDeviceService。
+-   使用**GetDeviceSelector\*** 功能可帮助生成一个 AQS 查询，该查询可用于枚举所需服务的成对设备实例。
 -   选取一个枚举的设备，创建 [**RfcommDeviceService**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService)，并按需读取 SDP 属性（使用 [**established data helpers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 解析该属性的数据）。
--   创建一个套接字并使用 [**StreamSocket.ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) 的 [**RfcommDeviceService.ConnectionHostName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname) 和 [**RfcommDeviceService.ConnectionServiceName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename) 属性，通过 StreamSocket.ConnectAsync 操作连接到使用适当参数的远程设备服务。
+-   创建一个套接字并使用 [**StreamSocket.ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname) 的 [**RfcommDeviceService.ConnectionHostName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename) 和 [**RfcommDeviceService.ConnectionServiceName**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) 属性，通过 StreamSocket.ConnectAsync 操作连接到使用适当参数的远程设备服务。
 -   按照现成的数据流模式从文件读取数据区块，并在该套接字的 [**StreamSocket.OutputStream**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.outputstream) 上将其发送到设备。
 
 ```csharp

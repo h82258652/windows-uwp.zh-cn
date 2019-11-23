@@ -24,18 +24,18 @@ ms.locfileid: "74258441"
 
 使用翻转模型交换链，当你的游戏调用 [**IDXGISwapChain::Present**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) 时，会将后台缓冲区“翻转”进行排队。 当呈现循环调用 Present() 时，系统会阻止线程，直到显示完前一帧为止，从而为在新帧显示之前将其排入队列腾出了空间。 这会导致游戏绘制帧的时间，以及系统允许游戏显示该帧的时间之间的延迟增加。 在很多情况下，系统将会达到一个稳定的平衡状态，在这种状态下，游戏始终会在呈现帧和呈现下一帧之间等待一个完整的额外帧。 最好等到系统准备好接受新帧，然后再根据当前数据呈现该帧并立即将其排队。
 
-Create a waitable swap chain with the [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) flag. 以这种方式创建的交换链可以在系统准备好接收新帧时通知你的呈现循环。 这样就允许你的游戏根据当前数据进行呈现，然后立即将结果放入显示队列中。
+使用 DXGI 创建可等待交换链[ **\_交换\_链\_标志\_帧\_延迟\_可等待\_对象**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)标志。 以这种方式创建的交换链可以在系统准备好接收新帧时通知你的呈现循环。 这样就允许你的游戏根据当前数据进行呈现，然后立即将结果放入显示队列中。
 
 ## <a name="step-1-create-a-waitable-swap-chain"></a>步骤 1：创建一个可等待的交换链
 
 
-Specify the [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) flag when you call [**CreateSwapChainForCoreWindow**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow).
+调用[**CreateSwapChainForCoreWindow**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow)时，指定[**DXGI\_交换\_链\_标志\_帧\_延迟\_对象**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)标志。\_
 
 ```cpp
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **Note**   In contrast to some flags, this flag can't be added or removed using [**ResizeBuffers**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers). 如果此标记的设置方式与创建交换链时不同，DXGI 会返回一个错误代码。
+> **请注意**，   与某些标志相反，不能使用[**ResizeBuffers**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers)添加或删除此标志。 如果此标记的设置方式与创建交换链时不同，DXGI 会返回一个错误代码。
 
  
 
@@ -147,14 +147,14 @@ void DX::DeviceResources::WaitOnSwapChain()
 ## <a name="related-topics"></a>相关主题
 
 
-* [DirectXLatency sample](https://code.msdn.microsoft.com/windowsapps/DirectXLatency-sample-a2e2c9c3)
+* [DirectXLatency 示例](https://code.msdn.microsoft.com/windowsapps/DirectXLatency-sample-a2e2c9c3)
 * [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject)
 * [**WaitForSingleObjectEx**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-waitforsingleobjectex)
-* [**Windows.System.Threading**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
-* [Asynchronous programming in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)
-* [Processes and Threads](https://docs.microsoft.com/windows/desktop/ProcThread/processes-and-threads)
+* [**Windows**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
+* [中的异步编程C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)
+* [进程和线程](https://docs.microsoft.com/windows/desktop/ProcThread/processes-and-threads)
 * [同步](https://docs.microsoft.com/windows/desktop/Sync/synchronization)
-* [Using Event Objects (Windows)](https://docs.microsoft.com/windows/desktop/Sync/using-event-objects)
+* [使用事件对象（Windows）](https://docs.microsoft.com/windows/desktop/Sync/using-event-objects)
 
  
 

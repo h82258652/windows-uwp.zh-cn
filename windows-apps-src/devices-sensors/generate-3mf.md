@@ -83,7 +83,7 @@ ms.locfileid: "71681991"
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
 > [!NOTE]
->@no__t 0The 3D 制造设备将确定哪些可用的物理材料映射到3MF 中存储的虚拟材料元素。 材料映射并不一定是 1:1：如果 3D 打印机只使用一种材料，无论向哪些对象或面分配了不同的材料，它都将以该材料打印整个模型。
+> 3D 制造设备将确定哪些可用的物理材料映射到3MF 中存储的虚拟材料元素。 材料映射并不一定是 1:1：如果 3D 打印机只使用一种材料，无论向哪些对象或面分配了不同的材料，它都将以该材料打印整个模型。
 
 ### <a name="color-materials"></a>颜色材料
 

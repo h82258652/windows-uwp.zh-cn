@@ -21,7 +21,7 @@ ms.locfileid: "71340600"
 
 *附加属性*是一种 XAML 概念。 使用附加属性，可以在对象上设置其他属性/值对，但这些属性并不是原始对象定义的组成部分。 附加属性通常定义为一种专门形式的依赖属性，在所有者类型的对象模型中没有传统的属性包装器。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 我们假设你理解依赖属性的基本概念，并且已阅读[依赖属性概述](dependency-properties-overview.md)。
 
@@ -44,7 +44,7 @@ ms.locfileid: "71340600"
 
 例如，子元素可使用附加属性通知父元素它们如何在 UI 中显示。 [  **Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 附加属性就属于此情况。 **Canvas.Left** 创建为一个附加属性，因为它在 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 元素内包含的元素上设置，而不是在 **Canvas** 本身上设置。 然后，任何可能的子元素使用 **Canvas.Left** 和 [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) 在 **Canvas** 布局容器父元素中指定它的布局偏移。 附加属性使这一场景的实现成为可能，而无需将基础元素的对象模型与大量属性聚集在一起，并且每个属性仅应用于许多可能的布局容器中的一种。 相反，许多布局容器实现它们自己的附加属性集。
 
-为了实现附加属性，[**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 类定义一个名为 [**Canvas.LeftProperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.leftproperty) 的静态 [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) 字段。 然后，**Canvas** 提供 [**SetLeft**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.setleft) 和 [**GetLeft**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.getleft) 方法作为附加属性的公共访问器，以同时支持 XAML 设置和运行时值访问。 对于 XAML 和依赖属性系统，这组 API 实现了一种模式，支持为附加属性使用特定的 XAML 语法并将值存储在依赖属性存储中。
+为了实现附加属性，[**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 类定义一个名为 [**Canvas.LeftProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) 的静态 [**DependencyProperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.leftproperty) 字段。 然后，**Canvas** 提供 [**SetLeft**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.setleft) 和 [**GetLeft**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.getleft) 方法作为附加属性的公共访问器，以同时支持 XAML 设置和运行时值访问。 对于 XAML 和依赖属性系统，这组 API 实现了一种模式，支持为附加属性使用特定的 XAML 语法并将值存储在依赖属性存储中。
 
 ## <a name="how-the-owning-type-uses-attached-properties"></a>拥有类型如何使用附加属性
 
@@ -125,13 +125,13 @@ myCheckBox.SetValue(Canvas::TopProperty(), winrt::box_value(75));
 > [!WARNING]
 > Windows 运行时 XAML 实现的现有限制是，无法对自定义附加属性进行动画处理。
 
-- 若要将附加属性指定为资源文件到**x：Uid**的资源引用的目标属性，请使用一种特殊的语法，该语法注入用方括号（"\[ @ no__t-3"）括起来的代码样式（使用完全限定的声明） **。** 创建有意的作用域分隔符。 例如，假设存在一个 @no__t 为-0 的元素，即面向画布的资源文件中的资源键 **。** 该实例上的 Top 值为 @no__t "2using： Windows.UI.Xaml.Controls\]Canvas.Top"。 有关资源文件和 XAML 的详细信息，请参阅 [Quickstart：转换 UI 资源 @ no__t。
+- 若要将附加属性指定为资源从资源文件到**x：Uid**的资源引用的目标属性，请使用一种特殊的语法，该语法注入用方括号（"\[\]"）括起来的代码样式 **：** 例如，假设存在一个 `<TextBlock x:Uid="Title" />`的元素，则以画布为目标的资源文件中的资源键。该实例上的**Top**值为 "Title"。\[，请使用：\]画布. Top "。 有关资源文件和 XAML 的详细信息，请参阅[快速入门：翻译 UI 资源](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10))。
 
 ## <a name="related-topics"></a>相关主题
 
 - [自定义附加属性](custom-attached-properties.md)
 - [依赖属性概述](dependency-properties-overview.md)
 - [使用 XAML 定义布局](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)
-- [快速入门：转换 UI 资源 @ no__t
+- [快速入门：翻译 UI 资源](https://docs.microsoft.com/previous-versions/windows/apps/hh943060(v=win.10))
 - [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)
 - [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue)

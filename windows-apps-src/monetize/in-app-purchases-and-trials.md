@@ -19,7 +19,7 @@ Windows SDK 提供可用于实现以下功能的 API，以从通用 Windows 平�
 
 * **应用内购买**&nbsp;&nbsp;无论你的应用是否免费，你都可以直接从应用中销售内容或新的应用功能（例如解锁游戏的下一关卡）。
 
-* **试用版功能**&nbsp; @ No__t-2If 将你[的应用配置为合作伙伴中心的免费试用版](../publish/set-app-pricing-and-availability.md#free-trial)，你可以通过在试用期间排除或限制某些功能来吸引客户购买完整版的应用。 也可以在客户购买你的应用之前，启用仅在试用期才会出现的某些功能，如横幅或水印。
+* **试用版功能**&nbsp;&nbsp;如果你[将应用配置为合作伙伴中心的免费试用版](../publish/set-app-pricing-and-availability.md#free-trial)，则可以通过在试用期间排除或限制某些功能来吸引客户购买完整版的应用。 也可以在客户购买你的应用之前，启用仅在试用期才会出现的某些功能，如横幅或水印。
 
 本文提供应用内购买和试用在 UWP 应用内的工作原理概述。
 
@@ -29,9 +29,9 @@ Windows SDK 提供可用于实现以下功能的 API，以从通用 Windows 平�
 
 有两个不同的命名空间可用于向 UWP 应用添加应用内购买和试用功能，具体取决于应用面向 Windows 10 的哪个版本。 尽管这些命名空间中的 API 用于相同目标，但它们的设计完全不同，并且代码在两个 API 之间并不兼容。
 
-* 在 Windows 10 1607 版中，应用程序可以使用 no__t-2 @-2 @-3 开始，应用程序可以使用此命名空间中的 API 来实现应用程序内购买和试验 **[。 @no__t](https://docs.microsoft.com/uwp/api/windows.services.store)** 如果应用项目在 Visual Studio 中面向 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本，我们建议你使用此命名空间中的成员。 此命名空间支持最新的外接程序类型（如存储管理的可使用的外接程序），并旨在与合作伙伴中心和应用商店支持的产品和功能的未来类型兼容。 有关此命名空间的详细信息，请参阅本文中的[使用 Windows.Services.Store 命名空间进行应用内购买和试用](#api_intro)部分。
+* 在 Windows 10 1607 版中 **[开始&nbsp;&nbsp;](https://docs.microsoft.com/uwp/api/windows.services.store)** ，应用程序可以使用此命名空间中的 API 来实现应用程序内购买和试验。 如果应用项目在 Visual Studio 中面向 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本，我们建议你使用此命名空间中的成员。 此命名空间支持最新的外接程序类型（如存储管理的可使用的外接程序），并旨在与合作伙伴中心和应用商店支持的产品和功能的未来类型兼容。 有关此命名空间的详细信息，请参阅本文中的[使用 Windows.Services.Store 命名空间进行应用内购买和试用](#api_intro)部分。
 
-* **[Windows.applicationmodel.resources.core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store)** &nbsp; @ No__t-3All 版本的 Windows 10 还支持在此命名空间中进行应用内购买和试验的旧版 API。 有关 **Windows.ApplicationModel.Store** 命名空间的信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
+* **[Windows.applicationmodel.resources.core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store)** &nbsp;&nbsp;windows 10 的所有版本也支持在此命名空间中进行应用内购买和试用的旧版 API。 有关 **Windows.ApplicationModel.Store** 命名空间的信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
 > [!IMPORTANT]
 > **Windows.ApplicationModel.Store** 命名空间不再更新新功能，如果可能，建议你的应用改用 **Windows.Services.Store** 命名空间。 使用[桌上型计算机](https://developer.microsoft.com/windows/bridges/desktop)的 windows 桌面应用程序或在合作伙伴中心使用开发沙盒的应用程序或游戏中不支持**windows.applicationmodel.resources.core**命名空间（例如，对于任何游戏，与 Xbox Live 集成）。
@@ -40,7 +40,7 @@ Windows SDK 提供可用于实现以下功能的 API，以从通用 Windows 平�
 
 ## <a name="basic-concepts"></a>基本概念
 
-应用商店中提供的每一个项目通常称为*产品*。 大多数开发人员只处理以下类型的产品：*应用*和*加载项*。
+Microsoft Store 中提供的每一个项目通常称为*产品*。 大多数开发人员只处理以下类型的产品：*应用*和*加载项*。
 
 加载项是指你在应用的上下文中向客户提供的产品或功能：例如，要在应用或游戏中使用的货币、游戏的新地图或武器、使用无广告应用的功能，或数字内容，如应用的音乐或视频（前提是应用能够提供此类内容）。 每个应用和加载项都有关联的许可证，用于指示用户是否有权使用该应用或加载项。 如果用户有权将该应用或加载项作为试用来使用，则许可证还提供关于该试用的其他信息。
 
@@ -200,7 +200,7 @@ UWP 应用可提供以下类型的加载项。
 
 1. 进行以下操作之一，使你的应用可以访问 [IInitializeWithWindow](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) 接口：
 
-    * 如果应用程序使用托管语言（如 C# 或 Visual Basic）编写，则在应用代码中使用 [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute) 属性声明 **IInitializeWithWindow** 接口，如以下 C# 示例所示。 此示例假设代码文件具有 **System.Runtime.InteropServices** 命名空间的 **using** 语句。
+    * 如果应用程序使用托管语言（如 C# 或 Visual Basic）编写，则在应用代码中使用 **ComImport** 属性声明 [IInitializeWithWindow](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute) 接口，如以下 C# 示例所示。 此示例假设代码文件具有 **System.Runtime.InteropServices** 命名空间的 **using** 语句。
 
         ```csharp
         [ComImport]
@@ -214,7 +214,7 @@ UWP 应用可提供以下类型的加载项。
 
     * 如果应用程序是采用 C++ 编写的，请在代码中添加对 shobjidl.h 头文件的引用。 此头文件包含 **IInitializeWithWindow** 接口的声明。
 
-2. 按照本文前面部分所述，使用 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getdefault) 方法（或 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getforuser)，如果你的应用是[多用户应用](../xbox-apps/multi-user-applications.md)）获取 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 对象并将此对象转换为 [IInitializeWithWindow](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) 对象。 然后，调用 [IInitializeWithWindow.Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) 方法，并传递你希望成为所有者（对于 **StoreContext** 方法显示的任何模式对话框）的窗口的句柄。 以下示例 C# 显示如何将应用主窗口的句柄传递到该方法。
+2. 按照本文前面部分所述，使用 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 方法（或 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getdefault)，如果你的应用是[多用户应用](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getforuser)）获取 [StoreContext](../xbox-apps/multi-user-applications.md) 对象并将此对象转换为 [IInitializeWithWindow](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) 对象。 然后，调用 [IInitializeWithWindow.Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) 方法，并传递你希望成为所有者（对于 **StoreContext** 方法显示的任何模式对话框）的窗口的句柄。 以下示例 C# 显示如何将应用主窗口的句柄传递到该方法。
     ```csharp
     StoreContext context = StoreContext.GetDefault();
     IInitializeWithWindow initWindow = (IInitializeWithWindow)(object)context;
@@ -227,7 +227,7 @@ UWP 应用可提供以下类型的加载项。
 
 应用商店中的每个产品都至少有一个 *SKU*，而每个 SKU 都至少有一个*可用性*。 这些概念与合作伙伴中心内的大多数开发人员都是抽象的，大多数开发人员绝不会为其应用或外接程序定义 Sku 或可用性。 但是，由于 **Windows.Services.Store** 命名空间中的 Microsoft Store 产品的对象模型包括 SKU 和可用性，因此大致了解这些概念对于某些情况可能很有帮助。
 
-| Object |  描述  |
+| 对象 |  描述  |
 |---------|-------------------|
 | 产品  |  *产品*是指在 Microsoft Store 中提供的任何类型的产品，包括应用或加载项。 <p/><p/> Microsoft Store 中的每个产品都有相应的 [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 对象。 此类提供可用于访问数据的属性，如产品的应用商店 ID、应用商店列表的图像和视频以及定价信息。 它还提供可用于购买产品的方法。 |
 | SKU |  *SKU* 是带有其自己的说明、价格和其他独特产品详细信息的产品特定版本。 每个应用或加载项都有默认的 SKU。 大多数开发人员拥有针对一个应用的多个 SKU 的唯一情况是，他们要发布应用的完整版和试用版（在应用商店目录中，其中每一个版本都是同一个应用的不同 SKU）。 <p/><p/> 某些发布者能够定义他们自己的 SKU。 例如，大型游戏发布者可能发布具有以下两个 SKU 的游戏：一个 SKU 在不允许红色血液的市场中显示绿色血液，另一个 SKU 在所有其他市场中显示红色血液。 另外，销售数字视频内容的发布者可能针对一个视频发布两个 SKU，一个 SKU 用于高清版本，另一个 SKU 用于标清版本。 <p/><p/> Microsoft Store 中的每个 SKU 都有相应的 [StoreSku](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) 对象。 每个 [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 都有可用于访问产品 SKU 的 [Skus](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.skus) 属性。 |
@@ -239,18 +239,18 @@ UWP 应用可提供以下类型的加载项。
 
 Microsoft Store 中的每个应用、加载项或其他产品都有关联的 **Store ID**（有时也称为*产品 Store ID*）。 许多 API 都需要 Store ID 才能执行有关应用或加载项的操作。
 
-应用商店中的任何产品的应用商店 ID 都是 12 个字符的字母数字字符串，例如 ```9NBLGGH4R315```。 有多种不同的方法可用于获取 Microsoft Store 中某个产品的 Store ID：
+Microsoft Store 中的任何产品的 Store ID 都是 12 个字符的字母数字字符串，例如 ```9NBLGGH4R315```。 有多种不同的方法可用于获取 Microsoft Store 中某个产品的 Store ID：
 
 * 对于应用程序，可以在合作伙伴中心的 "[应用标识" 页](../publish/view-app-identity-details.md)上获取存储 ID。
 * 对于外接程序，你可以在合作伙伴中心的外接程序的 "概述" 页上获取存储 ID。
-* 对于任何产品，还可以使用表示此产品的 [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 对象的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.storeid) 属性以编程方式获取 Store ID。
+* 对于任何产品，还可以使用表示此产品的 [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.storeid) 对象的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 属性以编程方式获取 Store ID。
 
 对于具有 SKU 和可用性的产品，SKU 和可用性还有自己的具有不同格式的 Store ID。
 
-| Object |  应用商店 ID 格式  |
+| 对象 |  应用商店 ID 格式  |
 |---------|-------------------|
-| SKU |  对于 SKU，Store ID 的格式为 ```<product Store ID>/xxxx```，其中 ```xxxx``` 是 4 个字符的字母数字字符串，用于标识产品的 SKU。 例如， ```9NBLGGH4R315/000N``` 。 此 ID 由 [StoreSku](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) 对象的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.storeid) 属性返回，并且有时称为 *SKU 应用商店 ID*。 |
-| 可用性  |  对于可用性，Store ID 的格式为 ```<product Store ID>/xxxx/yyyyyyyyyyyy```，其中 ```xxxx``` 是标识产品 SKU 的 4 字符数字字母字符串，而 ```yyyyyyyyyyyy``` 是标识 SKU 可用性的 12 字符字母数字字符串。 例如， ```9NBLGGH4R315/000N/4KW6QZD2VN6X``` 。 此 ID 由 [StoreAvailability](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability) 对象的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability.storeid) 属性返回，并且有时称为*可用性应用商店 ID*。  |
+| SKU |  对于 SKU，Store ID 的格式为 ```<product Store ID>/xxxx```，其中 ```xxxx``` 是 4 个字符的字母数字字符串，用于标识产品的 SKU。 例如， ```9NBLGGH4R315/000N```。 此 ID 由 [StoreSku](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.storeid) 对象的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) 属性返回，并且有时称为 *SKU 应用商店 ID*。 |
+| 可用性  |  对于可用性，Store ID 的格式为 ```<product Store ID>/xxxx/yyyyyyyyyyyy```，其中 ```xxxx``` 是标识产品 SKU 的 4 字符数字字母字符串，而 ```yyyyyyyyyyyy``` 是标识 SKU 可用性的 12 字符字母数字字符串。 例如， ```9NBLGGH4R315/000N/4KW6QZD2VN6X```。 此 ID 由 [StoreAvailability](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability.storeid) 对象的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability) 属性返回，并且有时称为*可用性 Store ID*。  |
 
 <span id="product-ids" />
 

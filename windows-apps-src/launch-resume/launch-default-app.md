@@ -119,7 +119,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 调用 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 的源应用可请求在 URI 启动后停留于屏幕上。 默认情况下，Windows 会尝试在处理该 URI 的源应用和目标应用之间平等地共享所有可用空间。 源应用可使用 [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) 属性向操作系统指示希望其应用占用较多或较少的可用空间。 此外，还可使用 **DesiredRemainingView** 指示源应用在 URI 启动后无需停留于屏幕上，并可由目标应用完全替代。 此属性仅指定调用应用的首选窗口大小。 不指定可能会同时显示在屏幕上的其他应用的行为。
 
-**请注意**  Windows 确定源应用的最终窗口大小时，会考虑多个不同的因素，例如源应用的首选项、屏幕上的应用数、屏幕方向等。 设置 [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) 并不能保证为源应用设定具体的窗口化行为。
+**请注意**  当 Windows 确定源应用的最终窗口大小时，它们会考虑多个不同的因素，例如源应用的首选项、屏幕上的应用程序数、屏幕方向等。 设置 [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) 并不能保证为源应用设定具体的窗口化行为。
 
 ```cs
 // Set the desired remaining view.
@@ -136,7 +136,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="call-app-uri-scheme"></a>呼叫应用 URI 方案
 
-使用**ms call：** 用于启动调用应用的 URI 方案。
+使用 **ms-call:** URI 方案来启动“呼叫”应用。
 
 | URI 方案       | 结果                   |
 |------------------|--------------------------|
@@ -144,16 +144,16 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="email-uri-scheme"></a>电子邮件 URI 方案
 
-使用**mailto：** 用于启动默认邮件应用程序的 URI 方案。
+使用 **mailto:** URI 方案来启动默认邮件应用。
 
 | URI 方案 |结果                          |
 |------------|---------------------------------|
 | mailto:    | 启动默认电子邮件应用。 |
-| mailto @no__t： 0email address @ no__t-1 | 启动电子邮件应用并使用“收件人”一行上特定的电子邮件地址创建新邮件。 请注意，在用户点击“发送”之前，不会发送电子邮件。 |
+| mailto：\[电子邮件地址\] | 启动电子邮件应用并使用“收件人”一行上特定的电子邮件地址创建新邮件。 请注意，在用户点击“发送”之前，不会发送电子邮件。 |
 
 ### <a name="http-uri-scheme"></a>HTTP URI 方案
 
-使用**http：** 用于启动默认 web 浏览器的 URI 方案。
+使用 **http:** URI 方案来启动默认 Web 浏览器。
 
 | URI 方案 | 结果                           |
 |------------|-----------------------------------|
@@ -161,7 +161,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="maps-app-uri-schemes"></a>“地图”应用 URI 方案
 
-使用**bingmaps**：、 **ms-驱动器到：** 和**ms 演练：** 用于[启动 Windows Maps 应用程序以启动](launch-maps-app.md)特定地图、方向和搜索结果的 URI 方案。 例如，以下 URI 将打开 Windows 地图应用，并显示以纽约市为中心的地图。
+使用 **bingmaps:** 、**ms-drive-to:** 和 **ms-walk-to:** URI 方案[启动 Windows 地图应用](launch-maps-app.md)，使其启动后显示特定的地图、路线和搜索结果。 例如，以下 URI 将打开 Windows 地图应用，并显示以纽约市为中心的地图。
 
 `bingmaps:?cp=40.726966~-74.006076`
 
@@ -171,19 +171,19 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="messaging-app-uri-scheme"></a>“消息”应用 URI 方案
 
-使用**ms 聊天：** 用于启动 Windows 消息传递应用程序的 URI 方案。
+使用 **ms-chat:** URI 方案启动 Windows 消息应用。
 
 | URI 方案 |结果 |
 |------------|--------|
 | ms-chat:   | 启动“Messaging”应用。 |
 | ms-chat:?ContactID={contacted}  |  允许使用特定联系人的信息启动消息应用程序。   |
 | ms-chat:?Body={body} | 允许使用要用作消息内容的字符串启动消息应用程序。|
-| ms-chat:?Addresses={address}&Body={body} | 允许使用特定地址的信息以及要用作消息内容的字符串启动消息应用程序。 注意:可以连接地址。 |
+| ms-chat:?Addresses={address}&Body={body} | 允许使用特定地址的信息以及要用作消息内容的字符串启动消息应用程序。 注意：可以串联地址。 |
 | ms-chat:?TransportId={transportId}  | 允许使用特定传输 ID 启动消息应用程序。 |
 
 ### <a name="tone-picker-uri-scheme"></a>音调选取器 URI 方案
 
-使用**tonepicker：** 用于选择铃声、警报和系统声音的 URI 方案。 还可以保存新铃声和获取铃声的显示名称。
+使用 **ms-tonepicker:** URI 方案选择铃声、闹钟和系统音。 还可以保存新铃声和获取铃声的显示名称。
 
 | URI 方案 | 结果 |
 |------------|---------|
@@ -193,20 +193,20 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="nearby-numbers-app-uri-scheme"></a>“114 查号”应用 URI 方案
 
-使用**yellowpage：** 用于启动附近编号应用的 URI 方案。
+使用 **ms-yellowpage:** URI 方案来启动“114 查号”应用。
 
 | URI 方案 | 结果 |
 |------------|---------|
-| yellowpage：？ input = \[keyword @ no__t-1 & method = \[String or T9 @ no__t-3 | 启动“114 查号”应用。<br>`input` 指的是要搜索的关键字。<br>@no__t 是指搜索类型（string 或 T9 search）。<br>如果 `method` 是 `T9`（一种键盘），则 `keyword` 应该是映射到 T9 键盘字母搜索的数字字符串。<br>如果 `method` 是 `String`，则 `keyword` 是要搜索的关键字。 |
+| yellowpage：？ input =\[关键字\]& 方法 =\[String 或 T9\] | 启动“114 查号”应用。<br>`input` 指的是要搜索的关键字。<br>`method` 指的是搜索的类型（string 或 T9 search）。<br>如果 `method` 是 `T9`（一种键盘），则 `keyword` 应该是映射到 T9 键盘字母搜索的数字字符串。<br>如果 `method` 是 `String`，则 `keyword` 是要搜索的关键字。 |
 
 ### <a name="people-app-uri-scheme"></a>“人脉”应用 URI 方案
 
-使用**ms-人物：** 用于启动用户应用的 URI 方案。
+使用 **ms-people:** URI 方案来启动“人脉”应用。
 有关详细信息，请参阅[启动“人脉”应用](launch-people-apps.md)。
 
 ### <a name="photos-app-uri-scheme"></a>“照片”应用 URI 方案
 
-使用 " **ms-照片"：** 用于启动照片应用以查看图像或编辑视频的 URI 方案。 例如：  
+使用 **ms-photos:** URI 方案来启动“照片”应用，以查看图像或编辑视频。 例如：  
 查看图像： `ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg`  
 或编辑视频： `ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime=01:02:03`  
 
@@ -215,14 +215,14 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 | URI 方案 |结果 |
 |------------|--------|
-| ms-photos:viewer?fileName={filename} | 启动“照片”应用查看指定的图像，其 {filename} 为完全限定的路径名称。 例如： `c:\users\userName\Pictures\ImageToView.jpg` |
+| ms-photos:viewer?fileName={filename} | 启动“照片”应用查看指定的图像，其 {filename} 为完全限定的路径名称。 例如：`c:\users\userName\Pictures\ImageToView.jpg` |
 | ms-photos:videoedit?InputToken={input token} | 以视频编辑模式为由文件标记表示的文件启动“照片”应用。 **InputToken** 是必需的。 使用 [SharedStorageAccessManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) 来获取文件的标记。 |
-| ms-photos:videoedit?Action={action} | 可选的参数，用于在指定的视频编辑模式下打开照片应用，其中 {action} 是以下其中之一：**SlowMotion**、 **FrameExtraction**、 **Trim**、 **View**、 **Ink**。 如果未指定，则默认为 **View** |
+| ms-photos:videoedit?Action={action} | 一个可选参数，用于在指定视频编辑模式中打开“照片”应用，该模式的 {action} 为以下内容之一：**SlowMotion**、**FrameExtraction**、**Trim**、**View**、**Ink**。 如果未指定，则默认为 **View** |
 | ms-photos:videoedit?StartTime={timespan} | 一个可选参数，用于指定视频开始播放的位置。 `{timespan}` 的格式必须为 `"hh:mm:ss.ffff"`。 如果未指定，则默认为 `00:00:00.0000` |
 
 ### <a name="settings-app-uri-scheme"></a>“设置”应用 URI 方案
 
-使用**ms 设置：** 用于[启动 Windows 设置应用程序的](launch-settings-app.md)URI 方案。 启动为设置应用是编写隐私感知应用的重要组成部分。 如果你的应用无法访问敏感资源，我们建议为用户提供到该资源的隐私设置的方便链接。 例如，以下 URI 将打开设置应用，并显示相机隐私设置。
+使用 **ms-settings:** URI 方案[启动 Windows“设置”应用](launch-settings-app.md)。 启动为设置应用是编写隐私感知应用的重要组成部分。 如果你的应用无法访问敏感资源，我们建议为用户提供到该资源的隐私设置的方便链接。 例如，以下 URI 将打开设置应用，并显示相机隐私设置。
 
 `ms-settings:privacy-webcam`
 
@@ -230,9 +230,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 有关详细信息，请参阅[启动 Windows“设置”应用](launch-settings-app.md)和[隐私感知应用指南](https://docs.microsoft.com/windows/uwp/security/index)。
 
-### <a name="store-app-uri-scheme"></a>“应用商店”应用 URI 方案
+### <a name="store-app-uri-scheme"></a>Microsoft Store 应用 URI 方案
 
-使用**ms-windows 应用商店：** 用于[启动 UWP 应用的](launch-store-app.md)URI 方案。 打开产品详细信息页、产品审查页和搜索页面等。例如，下面的 URI 打开 UWP 应用并启动存储的主页。
+使用 **ms-windows-store:** URI 方案来[启动 UWP 应用](launch-store-app.md)。 打开产品详细信息页面、产品查看页面和搜索页面等。例如，以下 URI 将打开 UWP 应用并启动 Microsoft Store 的主页。
 
 `ms-windows-store://home/`
 
@@ -240,8 +240,8 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="weather-app-uri-scheme"></a>天气应用 URI 方案
 
-使用**msnweather：** 用于启动天气预报应用程序的 URI 方案。
+使用**msnweather：** URI 方案启动天气应用。
 
 | URI 方案 | 结果 |
 |------------|---------|
-| msnweather：//forecast？ la = \[latitude @ no__t-1 & lo = \[longitude @ no__t-3 | 基于位置地理坐标在预测页中启动天气应用。<br>`latitude` 表示位置的纬度。<br> `longitude` 引用位置的经度。<br> |
+| msnweather：//forecast？ la =\[纬度\]& lo =\[经度\] | 基于位置地理坐标在预测页中启动天气应用。<br>`latitude` 指的是位置的纬度。<br> `longitude` 引用位置的经度。<br> |

@@ -15,7 +15,7 @@ ms.locfileid: "72282247"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>使用应用 URI 处理程序启用“网站的应用”功能
 
-“网站”应用用于将你的应用与网站关联，从而使得在某人打开网站链接时，启动你的应用而不是打开浏览器。 如果未安装你的应用，则会像往常一样在浏览器中打开你的网站。 用户可以信任此体验，因为只有经验证的内容所有者可以注册链接。 用户将能够转到“设置”>“应用”>“网站的应用”检查其所有 Web 到应用链接。
+“网站”应用用于将你的应用与网站关联，从而使得在某人打开网站链接时，启动你的应用而不是打开浏览器。 如果未安装你的应用，则会像往常一样在浏览器中打开你的网站。 用户可以信任此体验，因为只有经验证的内容所有者才能注册链接。 用户将能够转到“设置”>“应用”>“网站的应用”检查其所有 Web 到应用链接。
 
 若要启用 Web 到应用链接，你将需要：
 - 在清单文件中标识你的应用将处理的 URI
@@ -46,7 +46,7 @@ ms.locfileid: "72282247"
 </Applications>
 ```
 
-上述声明将你的应用注册为处理来自指定主机的链接。 如果你的网站具有多个地址（例如： m.example.com、www\.example.com 和 example.com），则在每个地址的 @no__t 中添加单独的 @no__t 1 项。
+上述声明将你的应用注册为处理来自指定主机的链接。 如果你的网站具有多个地址（例如： m.example.com、www\.example.com 和 example.com），则在每个地址的 `<uap3:AppUriHandler>` 内添加单独的 `<uap3:Host Name=... />` 条目。
 
 ## <a name="associate-your-app-and-website-with-a-json-file"></a>将你的应用和网站与 JSON 文件关联
 
@@ -71,12 +71,12 @@ Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器
 
 上述 JSON 文件示例演示了通配符的用法。 通配符允许你使用较少的代码行支持多种链接。 Web 到应用链接在 JSON 文件中支持两种类型的通配符：
 
-| **通配符** | **说明**               |
+| **通配符** | **描述**               |
 |--------------|-------------------------------|
 | **\***       | 表示任何子字符串      |
 | **?**        | 表示单个字符 |
 
-例如，在上面的示例中，假设有 `"excludePaths" : [ "/news/*", "/blog/*" ]`，你的应用程序将支持以你的网站的地址（例如，msn.com）开头的所有路径，**但**不在 `/news/` 和 `/blog/` 的所有路径。 将支持**msn.com/weather.html** ，但不支持**msn.com/news/topnews.html**。
+例如，在上面的示例中，`"excludePaths" : [ "/news/*", "/blog/*" ]` 假设你的应用程序将支持以你的网站的地址（例如 msn.com）开头的所有路径，但 `/news/` 和 `/blog/`下的路径**除外**。 将支持**msn.com/weather.html** ，但不支持**msn.com/news/topnews.html**。
 
 ### <a name="multiple-apps"></a>多个应用
 
@@ -96,7 +96,7 @@ Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器
 
 若要为用户提供最佳体验，请使用排除路径以确保仅联机内容已从 JSON 文件中的受支持路径中排除。
 
-先检查排除路径，如果存在匹配项，则将使用浏览器（而不是指定应用）打开相应的页面。 在上面的示例中，"/news/\*" 包含该路径下的任何页面，而 "/news @ no__t-1" （无正斜杠轨迹 "news"）包含 "news @ no__t" 下的任何路径，例如 "newslocal/"、"newsinternational/" 等等。
+先检查排除路径，如果存在匹配项，则将使用浏览器（而不是指定应用）打开相应的页面。 在上面的示例中，"/news/\*" 包含该路径下的任何页面，而 "/news\*" （无正斜杠轨迹 "新闻"）包含 "news\*" 下的任何路径，例如 "newslocal/"、"newsinternational/" 等等。
 
 ## <a name="handle-links-on-activation-to-link-to-content"></a>处理用于链接到内容的“激活”上的链接
 
@@ -150,19 +150,19 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 **重要提示** 请确保将最终的 `if (rootFrame.Content == null)` 路径替换为 `rootFrame.Navigate(deepLinkPageType, e);`，如上述示例所示。
 
-## <a name="test-it-out-local-validation-tool"></a>测试：本地验证工具
+## <a name="test-it-out-local-validation-tool"></a>测试它：本地验证工具
 
 你可以测试应用和网站的配置，方法是运行在以下位置提供的应用主机注册验证程序工具：
 
-% windir% \\system32 @ no__t-1**AppHostRegistrationVerifier**
+% windir%\\system32\\**AppHostRegistrationVerifier**
 
 通过使用以下参数运行此工具来测试应用和网站的配置：
 
 **AppHostRegistrationVerifier** *hostname packagefamilyname filepath*
 
--   主机名：你的网站（例如，microsoft.com）
--   包系列名称（PFN）：应用的 PFN
--   文件路径：用于本地验证的 JSON 文件（例如，C： \\SomeFolder @ no__t-1windows）
+-   Hostname：你的网站（例如，microsoft.com）
+-   程序包系列名称 (PFN)：你的应用的 PFN
+-   文件路径：用于本地验证的 JSON 文件（例如，C：\\SomeFolder\\windows-应用程序）
 
 如果工具未范围任何内容，则上传时对该文件进行验证即可。 如果返回错误代码，则不起作用。
 
@@ -171,11 +171,11 @@ protected override void OnActivated(IActivatedEventArgs e)
 `HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\
 AppModel\SystemAppData\YourApp\AppUriHandlers`
 
-Keyname`ForceValidation` 值： `1`
+Keyname： `ForceValidation` 值： `1`
 
-## <a name="test-it-web-validation"></a>测试：Web 验证
+## <a name="test-it-web-validation"></a>测试它：Web 验证
 
-关闭应用程序以验证当你单击某个链接时应用是否激活。 然后，在网站中复制受支持路径之一的地址。 例如，如果网站的地址是 "msn.com"，并且其中一个支持路径是 "path1"，则会使用 `http://msn.com/path1`
+关闭应用程序以验证当你单击某个链接时应用是否激活。 然后，在网站中复制受支持路径之一的地址。 例如，如果网站的地址是 "msn.com"，并且其中一个支持路径是 "path1"，则可以使用 `http://msn.com/path1`
 
 验证你的应用是否已关闭。 按 **Windows 键 + R** 打开 **“运行”** 对话框，并在窗口中粘贴该链接。 应启动你的应用，而不是 Web 浏览器。
 
@@ -193,7 +193,7 @@ Keyname`ForceValidation` 值： `1`
 - 带有 AppUriHandlers 的所有旁加载应用都将在安装时验证主机的链接。 不需要上载 JSON 文件即可测试该功能。
 - 只要你的应用是使用 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 启动的 UWP 应用或使用 [ShellExecuteEx](https://docs.microsoft.com/windows/desktop/api/shellapi/nf-shellapi-shellexecuteexa) 启动的 Windows 桌面应用，此功能就可行。 如果 URL 对应于注册的应用 URI 处理程序，则将启动应用，而不是浏览器。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [Web 到应用示例项目](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
 [windows.protocol 注册](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-protocol)

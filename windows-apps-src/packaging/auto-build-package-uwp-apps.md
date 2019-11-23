@@ -62,7 +62,7 @@ steps:
 
 ```
 
-默认模板尝试用 .csproj 文件中指定的证书对包进行签名。 如果要在生成过程中对包进行签名，则必须有权访问私钥。 否则，可以通过将参数 `/p:AppxPackageSigningEnabled=false` 添加到 YAML 文件中的 @no__t 部分来禁用签名。
+默认模板尝试用 .csproj 文件中指定的证书对包进行签名。 如果要在生成过程中对包进行签名，则必须有权访问私钥。 否则，可以通过将参数 `/p:AppxPackageSigningEnabled=false` 添加到 YAML 文件的 `msbuildArgs` 部分来禁用签名。
 
 ## <a name="add-your-project-certificate-to-the-secure-files-library"></a>将项目证书添加到安全文件库
 
@@ -89,17 +89,17 @@ steps:
 
 此任务将工作文件夹中的任何解决方案编译为二进制文件，并生成输出应用包文件。 此任务使用 MSBuild 参数。 你必须指定这些参数的值。 使用下表作为指南。
 
-|**MSBuild 参数**|**ReplTest1**|**说明**|
+|**MSBuild 参数**|**值**|**描述**|
 |--------------------|---------|---------------|
 | AppxPackageDir | $(Build.ArtifactStagingDirectory)\AppxPackages | 定义要存储生成的项目的文件夹。 |
 | AppxBundlePlatforms | $(Build.BuildPlatform) | 使您能够定义要包含在捆绑中的平台。 |
 | AppxBundle | 始终 | 使用指定平台的. .msix/.appx 文件创建 .msixbundle/.appxbundle。 |
-| UapAppxPackageBuildMode | StoreUpload | 生成 msixupload/.appxupload 文件和 **_Test**文件夹以进行旁加载。 |
+| UapAppxPackageBuildMode | StoreUpload | 生成 msixupload/.appxupload 文件，并为旁加载 **_Test**文件夹。 |
 | UapAppxPackageBuildMode | CI | 仅生成 msixupload/.appxupload 文件。 |
 | UapAppxPackageBuildMode | SideloadOnly | 只为旁加载生成 **_Test**文件夹。 |
 | AppxPackageSigningEnabled | true | 启用包签名。 |
 | PackageCertificateThumbprint | 证书指纹 | 此值**必须**与签名证书中的指纹匹配，或为空字符串。 |
-| PackageCertificateKeyFile | Path | 要使用的证书的路径。 这是从安全文件元数据中检索到的。 |
+| PackageCertificateKeyFile | 路径 | 要使用的证书的路径。 这是从安全文件元数据中检索到的。 |
 | PackageCertificatePassword | 密码 | 证书中的私钥的密码。 建议在[Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates)中存储密码，并将密码链接到[变量组](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 可以将变量传递给此参数。 |
 
 ### <a name="configure-the-build"></a>配置生成
@@ -116,7 +116,7 @@ steps:
 ### <a name="configure-package-signing"></a>配置包签名
 
 若要对 .MSIX （或 APPX）包进行签名，管道需要检索签名证书。 为此，请在 VSBuild 任务之前添加 DownloadSecureFile 任务。
-这将允许通过 ```signingCert``` 访问签名证书。
+这将允许通过 ```signingCert```访问签名证书。
 
 ```yml
 - task: DownloadSecureFile@1
@@ -184,7 +184,7 @@ steps:
 
   `MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "AppOne.UnitTests_0.1.2595.0_x86.appx" and package full name "8ef641d1-4557-4e33-957f-6895b122f1e6_0.1.2595.0_x86__scrj5wvaadcy6" is not valid in the bundle because it has a different package family name than other packages in the bundle`
 
-出现此错误是因为，在解决方案级别上，哪个应用应出现在程序包中不明确。 若要解决此问题，请打开每个项目文件，并在第一个 `<PropertyGroup>` 元素末尾添加以下属性。
+出现此错误是因为，在解决方案级别上，哪个应用应出现在程序包中不明确。 若要解决此问题，请打开每个项目文件，并在第一个 `<PropertyGroup>` 元素的末尾添加以下属性。
 
 |**投影**|**属性**|
 |-------|----------|

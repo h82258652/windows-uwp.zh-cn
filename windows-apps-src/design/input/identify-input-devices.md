@@ -27,7 +27,7 @@ ms.locfileid: "74257887"
 
 [  **Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空间包含 [**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities) 类，用于检索由一个或多个连接的鼠标公开的属性。 只需创建新的 **MouseCapabilities** 对象并获取感兴趣的属性。
 
-**Note**  The values returned by the properties discussed here are based on all detected mice: Boolean properties return non-zero if at least one mouse supports a specific capability, and numeric properties return the maximum value exposed by any one mouse.
+**请注意**，此处所述的属性所返回的值  基于所有检测到的鼠标：如果至少有一个鼠标支持特定功能，则布尔属性返回非零，数值属性返回由任意一鼠标显示的最大值。
 
  
 
@@ -65,7 +65,7 @@ private void GetKeyboardProperties()
 
 [  **Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空间包含 [**TouchCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.TouchCapabilities) 类，用于检索是否已连接任何触摸数字化器。 只需创建新的 **TouchCapabilities** 对象并获取感兴趣的属性。
 
-**Note**  The values returned by the properties discussed here are based on all detected touch digitizers: Boolean properties return non-zero if at least one digitizer supports a specific capability, and numeric properties return the maximum value exposed by any one digitizer.
+**请注意**，此处所述的属性所返回的值  基于所有检测到的触控数字化器：如果至少有一个数字化器支持特定功能，则布尔属性返回非零值，数值属性返回任何一个数字化仪公开的最大值。
 
  
 
@@ -85,7 +85,7 @@ private void GetTouchProperties()
 
 [  **Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空间包含 [**PointerDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice) 类，用于检索是否所有检测到的设备都支持指针输入（触摸、触摸板、鼠标或笔）。 只需创建新的 **PointerDevice** 对象并获取感兴趣的属性。
 
-**Note**  The values returned by the properties discussed here are based on all detected pointer devices: Boolean properties return non-zero if at least one device supports a specific capability, and numeric properties return the maximum value exposed by any one pointer device.
+**请注意**  此处所述的属性所返回的值基于所有检测到的指针设备：如果至少有一台设备支持特定的功能，则布尔属性返回非零，数值属性返回任何一个指针设备公开的最大值。
 
 以下代码使用一个表格来显示每个指针设备的属性和值。
 
@@ -178,12 +178,12 @@ private void GetPointerDevices()
 
 
 **示例**
-* [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
 
-**Archive samples**
-* [Input: Device capabilities sample](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+**存档示例**
+* [输入：设备功能示例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
  
 
  

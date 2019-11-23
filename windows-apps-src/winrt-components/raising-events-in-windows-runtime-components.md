@@ -25,7 +25,7 @@ ms.locfileid: "73052021"
 
 如果你只是在后台线程中引发了一个事件而不使用其中任一选项，JavaScript 客户端将不会接收该事件。
 
-## <a name="background"></a>后台
+## <a name="background"></a>背景
 
 所有 Windows 运行时组件和应用基本都是 COM 对象，不管你使用哪种语言创建它们。 在 Windows API 中，大多数组件都是敏捷的 COM 对象，它们可以与后台线程和 UI 线程上的对象很好地进行对等通信。 如果 COM 对象无法变得敏捷，那么它需要帮助程序对象（即代理和存根）来与跨 UI 线程后台的线程边界的其他 COM 对象进行通信。 （就 COM 而言，这称为线程单元之间的通信。）
 
@@ -132,11 +132,11 @@ toastCompletedEventHandler: function (event) {
 
 ## <a name="to-create-the-windows-runtime-component"></a>创建 Windows 运行时组件
 
-在 Visual Studio 中的菜单栏上，依次选择“文件”&gt;“新建项目”。 在“新建项目”对话框中，依次展开JavaScript&gt;“通用 Windows”，然后选择“空白应用”。 将该项目命名为 ToasterApplication，然后选择“确定”按钮。
+在 Visual Studio 中的菜单栏上，依次选择“文件” **“新建项目”&gt;** 。 在“新建项目”对话框中，依次展开JavaScript **“通用 Windows”&gt;** ，然后选择“空白应用”。 将该项目命名为 ToasterApplication，然后选择“确定”按钮。
 
-向解决方案中添加一个 C# Windows 运行时组件：在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后依次选择“添加”&gt;“新建项目”。 展开 **" C# Visual&gt;Microsoft Store** ，然后选择" **Windows 运行时组件**"。 将该项目命名为 ToasterComponent，然后选择“确定”按钮。 ToasterComponent 将是你在后面步骤中创建的组件的根命名空间。
+向解决方案中添加一个 C# Windows 运行时组件：在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后依次选择“添加” **“新建项目”&gt;** 。 展开 **" C# Visual &gt; Microsoft Store** ，然后选择" **Windows 运行时组件**"。 将该项目命名为 ToasterComponent，然后选择“确定”按钮。 ToasterComponent 将是你在后面步骤中创建的组件的根命名空间。
 
-在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后选择“属性”。 在“属性页”对话框中，选择左侧窗格中的“配置属性”，然后在该对话框顶部，将“配置”设置为“调试”以及将“平台”设置为 x86、x64 或 ARM。 选择“确定”按钮。
+在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后选择“属性”。 在“属性页”对话框中，选择左侧窗格中的“配置属性”，然后在该对话框顶部，将“配置”设置为“调试”以及将“平台”设置为 x86、x64 或 ARM。 选择**确定**按钮。
 
 **重要** 平台 = 任何 CPU 都不起作用，因为它对你稍后将添加到解决方案中的本机代码 Win32 DLL 无效。
 
@@ -146,7 +146,7 @@ toastCompletedEventHandler: function (event) {
 
 当你需要代理和存根时，你的组件必须使用接口来显示其公共成员。 在 ToasterComponent.cs 中，为 Toaster 定义一个接口，并为该 Toaster 生成的 Toast 定义另一个接口。
 
-**请注意** C#在中可以跳过此步骤。 改为先创建一个类，然后打开其快捷菜单并依次选择“重构”&gt;“提取接口”。 在生成的代码中，手动提供接口公共辅助功能。
+**请注意** C#在中可以跳过此步骤。 改为先创建一个类，然后打开其快捷菜单并依次选择“重构” **“提取接口”&gt;** 。 在生成的代码中，手动提供接口公共辅助功能。
 
 ```csharp
     public interface IToaster
@@ -229,7 +229,7 @@ IToast 接口具有一个字符串，可以检索该字符串来描述 Toast 的
 
 ## <a name="to-program-the-javascript-app"></a>对 JavaScript 应用进行编程
 
-现在，我们可以向 JavaScript 应用添加一个按钮，使它使用我们刚刚定义为生成 toast 的类。 在我们执行此操作之前，必须添加对刚刚创建的 ToasterComponent 项目的引用。 在“解决方案资源管理器”中，打开 ToasterApplication 项目的快捷菜单，选择**添加 &gt; 引用**，然后选择**添加新引用**按钮。 在“添加引用”对话框中，在“解决方案”下的左窗格中，选择组件项目，然后在中间的窗格中选择 ToasterComponent。 选择“确定”按钮。
+现在，我们可以向 JavaScript 应用添加一个按钮，使它使用我们刚刚定义为生成 toast 的类。 在我们执行此操作之前，必须添加对刚刚创建的 ToasterComponent 项目的引用。 在“解决方案资源管理器”中，打开 ToasterApplication 项目的快捷菜单，选择**添加 &gt; 引用**，然后选择**添加新引用**按钮。 在“添加引用”对话框中，在“解决方案”下的左窗格中，选择组件项目，然后在中间的窗格中选择 ToasterComponent。 选择**确定**按钮。
 
 在“解决方案资源管理器”中，打开 ToasterApplication 项目的快捷菜单，然后选择**设置为启动项目**。
 
@@ -337,7 +337,7 @@ midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid 
 
 ## <a name="to-compile-the-proxy-and-stub-code-into-a-dll"></a>将代理和存根代码编译到 DLL 中
 
-在有了所需的文件后，便可以将它们编译为生成 DLL，即一个 C++ 文件。 为了使此操作尽量简单，请添加新的项目以支持生成代理。 打开 ToasterApplication 解决方案的快捷菜单，然后选择**添加 > 新项目**。 在 "**新建项目**" 对话框的左窗格中，展开 **" C++ Visual&gt;windows&gt;通用 windows**"，然后在中间窗格中选择 " **DLL （UWP 应用）** "。 （请注意，这不是 C++ Windows 运行时组件项目。）将项目命名为 Proxies，然后选择**确定**按钮。 当 C# 类中发生更改时，这些文件将被生成后事件更新。
+在有了所需的文件后，便可以将它们编译为生成 DLL，即一个 C++ 文件。 为了使此操作尽量简单，请添加新的项目以支持生成代理。 打开 ToasterApplication 解决方案的快捷菜单，然后选择**添加 > 新项目**。 在 "**新建项目**" 对话框的左窗格中，展开 **" C++ Visual &gt; windows &gt; 通用 windows**"，然后在中间窗格中选择 " **DLL （UWP 应用）** "。 （请注意，这不是 C++ Windows 运行时组件项目。）将项目命名为 Proxies，然后选择**确定**按钮。 当 C# 类中发生更改时，这些文件将被生成后事件更新。
 
 默认情况下，Proxies 项目会生成标头 .h 文件和 C++ .cpp 文件。 由于 DLL 是从由 MIDL 生成的文件构建的，因此不需要 .h 和 .cpp 文件。 在“解决方案资源管理器”中，打开它们的快捷菜单，选择**删除**，然后确认删除。
 
@@ -416,7 +416,7 @@ MIDL_DEFINE_GUID(IID, IID___x_ToasterComponent_CIToaster,0xE976784C,0xAADE,0x4EA
 -   清单中的接口 Id 与 ToasterComponent\_文件中的 Iid 匹配。
 -   接口名称在清单中是唯一的。 由于系统不使用它们，因此你可以选择值。 较好的做法是选择与你定义的接口明确匹配的接口名称。 对于生成的接口，名称应该指示生成的接口。 你可以使用\_ToasterComponent 文件来帮助你生成接口名称。
 
-如果你尝试现在运行解决方案，将收到以下错误：proxies.dll 不是有效负载的一部分。 在 ToasterApplication 项目中打开**引用**文件夹的快捷菜单，然后选择**添加引用**。 选中 Proxies 项目旁边的复选框。 此外，请确保也选中了 ToasterComponent 旁边的复选框。 选择“确定”按钮。
+如果你尝试现在运行解决方案，将收到以下错误：proxies.dll 不是有效负载的一部分。 在 ToasterApplication 项目中打开**引用**文件夹的快捷菜单，然后选择**添加引用**。 选中 Proxies 项目旁边的复选框。 此外，请确保也选中了 ToasterComponent 旁边的复选框。 选择**确定**按钮。
 
 项目现在应该生成了。 运行该项目，然后验证你是否可以生成 Toast。
 

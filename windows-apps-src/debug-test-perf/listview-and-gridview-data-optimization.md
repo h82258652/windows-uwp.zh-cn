@@ -16,7 +16,7 @@ ms.locfileid: "71339614"
 # <a name="listview-and-gridview-data-virtualization"></a>ListView 和 GridView 数据虚拟化
 
 
-**请注意**  For 更多详细信息，请参阅 build/会话[当用户与 GridView 和 ListView 中的大量数据交互时，大大提高性能](https://channel9.msdn.com/Events/Build/2013/3-158)。
+**请注意**，  有关更多详细信息，请参阅 build/会话在[用户与 GridView 和 ListView 中的大量数据交互时大大提高性能](https://channel9.msdn.com/Events/Build/2013/3-158)。
 
 通过数据虚拟化改进 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 性能和启动时间。 有关 UI 虚拟化、元素缩减和项目的进度更新，请参阅 [ListView 和 GridView UI 优化](optimize-gridview-and-listview.md)。
 
@@ -27,7 +27,7 @@ ms.locfileid: "71339614"
 -   数据集的来源（本地磁盘、网络或云）
 -   应用的总内存消耗。
 
-**请注意**  Be 注意，默认情况下，为 ListView 和 GridView 启用了一项功能，当用户快速平移/滚动时，将显示临时占位符视觉对象。 加载数据时，这些占位符视觉效果将替换为你的项模板。 你可以通过将 [**ListViewBase.ShowsScrollingPlaceholders**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 设置为 false 来关闭此功能，但是如果你这样做，我们建议你使用 x:Phase 属性在项模板中逐步呈现元素。 请参阅[逐步更新 ListView 和 GridView 项](optimize-gridview-and-listview.md#update-items-incrementally)。
+**请注意  请**注意，默认情况下，为 ListView 和 GridView 启用了一项功能，当用户快速平移/滚动时，会显示临时占位符视觉对象。 加载数据时，这些占位符视觉效果将替换为你的项模板。 你可以通过将 [**ListViewBase.ShowsScrollingPlaceholders**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 设置为 false 来关闭此功能，但是如果你这样做，我们建议你使用 x:Phase 属性在项模板中逐步呈现元素。 请参阅[逐步更新 ListView 和 GridView 项](optimize-gridview-and-listview.md#update-items-incrementally)。
 
 下面是有关增量和随机访问数据虚拟化技术的更多详细信息。
 
@@ -36,7 +36,7 @@ ms.locfileid: "71339614"
 增量数据虚拟化会按顺序加载数据。 使用增量数据虚拟化的 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 可以用于查看包含一百万个项目的集合，但最初只加载 50 个项目。 当用户平移/滚动时，便加载接下来的 50 个项目。 当项目已加载后，滚动栏的滚动块大小将会减小。 对于此类型的数据虚拟化，需要编写实现这些接口的数据源类。
 
 -   [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist)
--   [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) （C#/VB）或[IObservableVector @ no__t-5T @ no__t-6](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) （C++/cx）
+-   [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) （C#/VB）或[**IObservableVector&lt;t&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) （C++/cx）
 -   [**为 isupportincrementalloading**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ISupportIncrementalLoading)
 
 诸如此类的数据源是可以不断扩展的内存中列表。 项目控件将使用标准 [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist) 索引器和计数属性请求项目。 计数应表示本地项目的数目，而不是数据集的真实大小。
@@ -48,7 +48,7 @@ ms.locfileid: "71339614"
 随机访问数据虚拟化允许通过数据集中的任意点加载。 使用随机访问数据虚拟化的 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)（用于查看包含一百万个项目的集合）可以加载前 100000 到 100050 个项目。 如果用户随后移动到列表开头，控件将加载前 1 到 50 个项目。 滚动栏的滚动块将始终指示 **ListView** 包含一百万个项目。 滚动栏的滚动块位置相对于可视项目在集合的整个数据集中的位置。 这种类型的数据虚拟化可以显著减少集合的内存需求和加载时间。 若要启用它，需要编写数据源类，用于按需获取数据、管理本地缓存以及实现这些接口。
 
 -   [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist)
--   [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) （C#/VB）或[IObservableVector @ no__t-5T @ no__t-6](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) （C++/cx）
+-   [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) （C#/VB）或[**IObservableVector&lt;t&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) （C++/cx）
 -   （可选）[**IItemsRangeInfo**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IItemsRangeInfo)
 -   （可选）[**ISelectionInfo**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ISelectionInfo)
 

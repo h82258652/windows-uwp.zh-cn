@@ -17,7 +17,7 @@ ms.locfileid: "72578163"
 
 本演练演示如何将 .NET 与 Visual Basic 或C#创建自己的 Windows 运行时类型打包到 Windows 运行时组件中，以及如何从 JavaScript 通用 WINDOWS 平台（UWP）应用程序调用该组件。
 
-利用 Visual Studio，可以轻松地在使用C#或 Visual Basic 编写的 Windows 运行时组件（WRC）项目中创作和部署你自己的自定义 Windows 运行时类型，然后从 JavaScript 应用程序项目中引用该 WRC，并使用这些来自该应用程序的自定义类型。
+通过 Visual Studio，可以轻松地在使用C#或 Visual Basic 编写的 Windows 运行时组件（WRC）项目中创作和部署你自己的自定义 Windows 运行时类型，然后从 JavaScript 应用程序项目中引用该 WRC，并从该应用程序中使用这些自定义类型。
 
 Windows 运行时类型可以在内部使用 UWP 应用程序中允许的任何 .NET 功能。
 
@@ -31,7 +31,7 @@ Windows 运行时类型可以在内部使用 UWP 应用程序中允许的任何 
 
 ## <a name="prerequisites"></a>先决条件：
 
-- Windows 10
+- Windows 10
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/)
 
 ## <a name="creating-a-simple-windows-runtime-class"></a>创建一个简单的 Windows 运行时类
@@ -104,7 +104,7 @@ function basics2() {
 
 在你的 JavaScript 项目中，打开默认 .html 文件然后更新正文，如以下代码所示。 此代码包含用于示例应用的完整控件集，并指定了单击事件的函数名称。
 
-> **请注意**  When 首次运行应用时，仅支持 "Basics1" 和 "Basics2" 按钮。
+> **请注意**  首次运行应用时，仅支持 "Basics1" 和 "Basics2" 按钮。
 
 ```html
 <body>
@@ -180,7 +180,7 @@ Visual Studio 首先编译类库，然后执行运行 [Winmdexp.exe（Windows �
 
 选择 Basics 2 按钮递增 SampleProperty 属性的值并在输出区域中显示新值。 字符串和数字等基元类型可用作参数类型和返回类型，并且可以在托管代码与 JavaScript 之间进行传递。 由于 JavaScript 中的数值以双精度浮点格式进行存储，它们可以转换为 .NET Framework 数值类型。
 
-> **请注意**  By 默认情况下，只能在 JavaScript 代码中设置断点。 若要调试 Visual Basic 或C#代码，请参阅在中C#创建 Windows 运行时组件 Visual Basic。
+> **请注意**  默认情况下，只能在 JavaScript 代码中设置断点。 若要调试 Visual Basic 或C#代码，请参阅在中C#创建 Windows 运行时组件 Visual Basic。
 
 若要停止调试并关闭应用，请从应用切换到 Visual Studio，然后选择 Shift+F5。
 
@@ -188,7 +188,7 @@ Visual Studio 首先编译类库，然后执行运行 [Winmdexp.exe（Windows �
 
 可以从 JavaScript 或托管代码调用 Windows 运行时。 Windows 运行时对象可以在这两者之间来回传递，并且事件可以从任一端进行处理。 但是，在这两种环境中使用 Windows 运行时类型的方式在某些细节上有所不同，因为 JavaScript 和 .NET 支持 Windows 运行时不同。 下面的示例使用 [Windows.Foundation.Collections.PropertySet](/uwp/api/windows.foundation.collections.propertyset) 类演示了这些差异。 在本例中，你在托管代码中创建 PropertySet 集合的一个实例，并注册一个事件处理程序来跟踪集合中的更改。 然后添加获取集合的 JavaScript 代码、注册其自己的事件处理程序，然后使用集合。 最后，添加通过托管代码对集合进行更改的方法，并显示处理托管异常的 JavaScript。
 
-> **重要**  In 此示例中，事件在 UI 线程上激发。 如果从后台线程触发事件（例如在异步调用中），你需要进行一些额外工作才能使 JavaScript 处理事件。 有关详细信息，请参阅[在 Windows 运行时组件中引发事件](raising-events-in-windows-runtime-components.md)。
+> **重要**  在此示例中，事件在 UI 线程上激发。 如果从后台线程触发事件（例如在异步调用中），你需要进行一些额外工作才能使 JavaScript 处理事件。 有关详细信息，请参阅[在 Windows 运行时组件中引发事件](raising-events-in-windows-runtime-components.md)。
 
 在 SampleComponent 项目中，添加名为 PropertySetStats 的新 **public sealed** 类（Visual Basic 中为 **Public NotInheritable** 类）。 该类封装了 PropertySet 集合并处理其 MapChanged 事件。 事件处理程序将跟踪所发生的每种类型的更改数目，并且 DisplayStats 方法将生成格式为 HTML 的报告。 请注意附加的 **using** 语句（在 Visual Basic 中为 **Imports** 语句）；请谨慎地将其添加到现有 **using** 语句中，而不是覆盖它们。
 
@@ -262,7 +262,7 @@ Visual Studio 首先编译类库，然后执行运行 [Winmdexp.exe（Windows �
 > End Class
 > ```
 
-事件处理程序遵循熟悉的 .NET Framework 事件模式，但事件的发送方（在此示例中为 PropertySet 对象）被强制转换为 Visual 中的 IObservableMap &lt;string，object &gt; interface （IObservableMap （of String，Object）基本），这是 Windows 运行时接口[IObservableMap &lt;K，V &gt;](/uwp/api/Windows.Foundation.Collections.IObservableMap_K_V_)的实例化。 （如果需要，可以将发件人转换为其类型。）而且，事件参数以接口而非对象的形式提供。
+事件处理程序遵循熟悉的 .NET Framework 事件模式，但事件的发送方（在本例中为 PropertySet 对象）被强制转换为 IObservableMap&lt;string，object&gt; interface （IObservableMap Visual Basic 中的（），这是 Windows 运行时接口[IObservableMap&lt;K，V&gt;](/uwp/api/Windows.Foundation.Collections.IObservableMap_K_V_)的实例化。 （如果需要，可以将发件人转换为其类型。）而且，事件参数以接口而非对象的形式提供。
 
 在 default.js 文件中添加 Runtime1 函数，如下所示。 此代码会创建一个 PropertySetStats 对象、获取其 PropertySet 集合，然后添加自己的事件处理程序 onMapChanged 函数以处理 MapChanged 事件。 对集合进行更改之后，runtime1 调用 DisplayStats 方法显示更改类型的摘要。
 
@@ -367,7 +367,7 @@ runtimeButton2.addEventListener("click", runtime2, false);
 
 若要运行应用，请选择 F5 键。 依次选择“Runtime 1”和“Runtime 2”。 JavaScript 事件处理程序报告对集合进行的第一项更改。 但是第二项更改具有一个重复键。 .NET Framework 字典的用户期望 Add 方法引发异常，而该情况会如期发生。 JavaScript 处理 .NET 异常。
 
-> **注意**  You 无法通过 JavaScript 代码显示异常消息。 消息文本替换为堆栈跟踪。 有关详细信息，请参阅在C#和 Visual Basic 中创建 Windows 运行时组件中的 "引发异常"。
+> **请注意**  无法通过 JavaScript 代码显示异常消息。 消息文本替换为堆栈跟踪。 有关详细信息，请参阅在C#和 Visual Basic 中创建 Windows 运行时组件中的 "引发异常"。
 
 相比之下，当 JavaScript 调用带有重复键的 insert 方法时，项的值已发生更改。 这种行为差异是由于 JavaScript 和 .NET 支持 Windows 运行时的不同方式所致，如[Windows 运行时组件C#和 Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)中所述。
 
@@ -404,7 +404,7 @@ runtimeButton2.addEventListener("click", runtime2, false);
 
 请注意，字典必须作为由 [Dictionary&lt;TKey, TValue&gt;](/dotnet/api/system.collections.generic.dictionary-2) 实现且映射到 Windows 运行时接口的接口返回。 在此情况下，接口为 IDictionary&lt;int, string&gt;（在 Visual Basic 中为 IDictionary(Of Integer, String)）。 当 Windows 运行时类型 IMap&lt;int, string&gt; 传递到托管代码时，它显示为 IDictionary&lt;int, string&gt;，相反地当托管类型传递到 JavaScript 时也是如此。
 
-**重要**  When 托管类型实现多个接口，JavaScript 使用列表中第一个出现的接口。 例如，如果你将 Dictionary&lt;int, string&gt; 返回到 JavaScript 代码，它会显示为 IDictionary&lt;int, string&gt;，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
+**重要**  当托管类型实现多个接口时，JavaScript 使用列表中第一个出现的接口。 例如，如果你将 Dictionary&lt;int, string&gt; 返回到 JavaScript 代码，它会显示为 IDictionary&lt;int, string&gt;，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
 
  
 
@@ -463,7 +463,7 @@ returnsButton2.addEventListener("click", returns2, false);
 
 另一种意外的行为：如果你将未分配的 JavaScript 变量作为字符串参数传递，你得到的将是字符串“undefined”。 简而言之，请谨慎将 .NET Framework 集合类型传递给你的 JavaScript 代码。
 
-> **请注意**  If 有大量文本要连接，可以通过将代码移动到 .NET Framework 方法并使用 StringBuilder 类来更有效地执行此操作，如 showMap 函数所示。
+> **请注意**  如果有大量文本要连接，可以通过将代码移动到 .NET Framework 方法并使用 StringBuilder 类来更有效地执行此操作，如 showMap 函数所示。
 
 尽管无法从 Windows 运行时组件公开你自己的泛型类型，但你可以使用如下所示的代码返回 Windows 运行时类的 .NET Framework 泛型集合：
 
@@ -665,7 +665,7 @@ GetPrimesInRangeAsync 是非常简单的质数查找程序，通过设计实现�
     -   [WinJS.Promise](/previous-versions/windows/apps/br211867(v=win.10)) 对象提供用于处理返回结果、响应取消和处理进度报告的函数。
     -   AsyncInfo.Run 方法创建一个取消源和一个实现 IProgress&lt;T&gt; 接口的对象。 对于委托，它将同时传递取消源中的 [CancellationToken](/dotnet/api/system.threading.cancellationtoken) 令牌，以及 [IProgress&lt;T&gt;](/dotnet/api/system.iprogress-1) 接口。
 
-        > **请注意**  If 承诺对象并不提供用于对取消做出反应的函数，system.runtime.interopservices.windowsruntime.asyncinfo 仍会传递可取消的令牌，并且仍可能会发生取消。 如果 Promise 对象未提供处理进度更新的函数，AsyncInfo.Run 仍提供实现 IProgress&lt;T&gt; 的对象，但将忽略报告。
+        > **请注意**  如果承诺对象不提供用于对取消做出反应的函数，则 system.runtime.interopservices.windowsruntime.asyncinfo 仍会传递可取消的令牌，并且仍可能会发生取消。 如果 Promise 对象未提供处理进度更新的函数，AsyncInfo.Run 仍提供实现 IProgress&lt;T&gt; 的对象，但将忽略报告。
 
     -   委托使用 [Task.Run&lt;TResult&gt;(Func&lt;TResult&gt;, CancellationToken](/dotnet/api/system.threading.tasks.task.run#System_Threading_Tasks_Task_Run__1_System_Func___0__System_Threading_CancellationToken_)) 方法创建使用令牌和进度接口的启动任务。 启动任务的委托由计算所需结果的 lambda 函数提供。 稍后对此进行详细讨论。
     -   AsyncInfo.Run 方法创建实现 [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_) 接口的对象、将 Windows 运行时取消机制与令牌源连接，并将 Promise 对象的进度报告函数与 IProgress&lt;T&gt; 接口连接。

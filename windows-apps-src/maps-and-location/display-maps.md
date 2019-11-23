@@ -85,7 +85,7 @@ private void SpaceNeedle_Click(object sender, RoutedEventArgs e)
 
 ## <a name="display-map-in-a-control"></a>在控件中显示地图
 
-在你的应用中使用地图控件来显示丰富且可自定义的地图数据。 地图控件可以显示道路地图、鸟瞰图、3D、视图、路线、搜索结果和交通。 在地图上，你可以显示用户的位置、路线和目标点。 地图还可以显示 3D 鸟瞰图、Streetside 视图、交通、公交和本地企业。
+在你的应用中使用地图控件来显示丰富且可自定义的地图数据。 地图控件可以显示道路地图、鸟瞰图、3D、视图、路线、搜索结果和交通。 在地图上，你可以显示用户的位置、路线和目标点。 地图还可以显示 3D 鸟瞰图、街景视图、交通、公交和本地企业。
 
 当你希望应用内具有一个允许用户查看特定于应用或通用地理信息的地图时，请使用地图控件。 在应用中有一个地图控件意味着用户无需为了获取该信息而离开应用。
 
@@ -222,7 +222,7 @@ myMap.StyleSheet = MapStyleSheet.RoadDark();
 
 你还可以使用 JSON 来定义自定义样式，然后使用该 JSON 创建 [**MapStyleSheet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet)对象。
 
-Style sheet JSON can be created interactively using the [Map Style Sheet Editor](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) application.
+可以使用 "[地图样式表编辑器](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft)" 应用程序以交互方式创建样式表 JSON。
 
 ```csharp
 myMap.StyleSheet = MapStyleSheet.ParseFromJson(@"
@@ -284,24 +284,24 @@ myMap.StyleSheet = MapStyleSheet.Combine(new List<MapStyleSheet> { builtInSheet,
 
 放大、缩小、旋转和倾斜地图的照相机，调整为你所需效果的相应角度。 尝试这些属性。
 
--   通过设置 [**Center**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.center) 属性将地图的**中心**设置为一个地理点。
--   通过将 [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel) 属性设置为介于 1 和 20 之间的某个值，设置地图 **缩放级别**。
--   通过设置 [**Heading**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.heading) 属性（其中 0 或 360 度 = 北，90 度 = 东，180 度 = 南，270 度 = 西），设置地图的**旋转角度**。
--   通过将 [**DesiredPitch**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.desiredpitch) 属性设置为介于 0 和 65 度之间的某个值，设置地图的**倾斜程度**。
+-   通过设置Center[ **属性将地图的**中心](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.center)设置为一个地理点。
+-   通过将ZoomLevel[**属性设置为介于 1 和 20 之间的某个值，设置地图**缩放级别](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel)。
+-   通过设置Heading[ **属性（其中 0 或 360 度 = 北，90 度 = 东，180 度 = 南，270 度 = 西），设置地图的**旋转角度](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.heading)。
+-   通过将DesiredPitch[ **属性设置为介于 0 和 65 度之间的某个值，设置地图的**倾斜程度](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.desiredpitch)。
 
 ## <a name="show-and-hide-map-features"></a>显示和隐藏地图功能
 
 通过设置以下 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 属性的值显示或隐藏地图功能，如道路和地标。
 
-* 通过启用或禁用 [**LandmarksVisible**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.landmarksvisible) 属性在地图上显示**建筑物和地标**。
+* 通过启用或禁用LandmarksVisible[ **属性在地图上显示**建筑物和地标](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.landmarksvisible)。
 
   > [!NOTE]
   > 你可以显示或隐藏建筑物，但无法禁止它们以 3D 形式显示。  
 
-* 通过启用或禁用 [**PedestrianFeaturesVisible**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.pedestrianfeaturesvisible) 属性在地图上显示**步行功能**，例如公共楼梯。
-* 通过启用或禁用 [**TrafficFlowVisible**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.trafficflowvisible) 属性在地图上显示**路况**。
-* 通过将 [**WatermarkMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.watermarkmode) 属性设置为一个 [**MapWatermarkMode**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapWatermarkMode) 常数，指定是否在地图上显示**水位线**。
-* 通过将 [**MapRouteView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapRouteView) 添加到“地图”控件的 [**Routes**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.routes) 集合，在地图上显示**驾车或步行路线**。 有关详细信息和示例，请参阅[在地图上显示路线和方向](routes-and-directions.md)。
+* 通过启用或禁用PedestrianFeaturesVisible[ **属性在地图上显示**步行功能](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.pedestrianfeaturesvisible)，例如公共楼梯。
+* 通过启用或禁用TrafficFlowVisible[ **属性在地图上显示**路况](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.trafficflowvisible)。
+* 通过将WatermarkMode[**属性设置为一个**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.watermarkmode)MapWatermarkMode[ **常数，指定是否在地图上显示**水位线](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapWatermarkMode)。
+* 通过将MapRouteView[**添加到“地图”控件的**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapRouteView)Routes[ **集合，在地图上显示**驾车或步行路线](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.routes)。 有关详细信息和示例，请参阅[在地图上显示路线和方向](routes-and-directions.md)。
 
 有关如何显示图钉、图形和 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 中的 XAML 控件的详细信息，请参阅[在地图上显示目标点 (POI)](display-poi.md)。
 
@@ -312,7 +312,7 @@ myMap.StyleSheet = MapStyleSheet.Combine(new List<MapStyleSheet> { builtInSheet,
 
 ![地图控件的街景视图的示例。](images/onlystreetside-730width.png)
 
-考虑“内部”街景视图与地图控件中最初显示的地图有所不同的体验。 例如，更改街景视图中的位置不会改变街景视图“之下”的地图的位置或外观。 在你关闭街景视图（通过单击控件右上角的 **X**）之后，原始地图将保持不变。
+考虑“内部”街景视图与地图控件中最初显示的地图有所不同的体验。 例如，更改街景视图中的位置不会改变街景视图“之下”的地图的位置或外观。 在你关闭街景视图（通过单击控件右上角的“X”）之后，原始地图将保持不变。
 
 显示街景视图
 
@@ -323,7 +323,7 @@ myMap.StyleSheet = MapStyleSheet.Combine(new List<MapStyleSheet> { builtInSheet,
 
 此示例介绍如何显示类似于上一个图像的街景视图。
 
-**Note**  The overview map will not appear if the map control is sized too small.
+**请注意**  如果地图控件大小太小，则不会显示 "概述" 地图。
 
  
 
@@ -377,7 +377,7 @@ private async void showStreetsideView()
 
 1.  通过检查 [**Is3DSupported**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.is3dsupported) 来确定 3D 视图在设备上是否受支持。
 2.  如果支持 3D 视图，请将地图控件的 [**Style**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.style) 属性设置为 [**MapStyle.Aerial3DWithRoads**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapStyle)。
-3.  使用许多 **CreateFrom** 方法之一（例如 [**CreateFromLocationAndRadius**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapScene) 和 [**CreateFromCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapscene.createfromlocationandradius)）创建 [**MapScene**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapscene.createfromcamera) 对象。
+3.  使用许多 [CreateFrom**方法之一（例如**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapScene)CreateFromLocationAndRadius 和 [**CreateFromCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapscene.createfromlocationandradius)）创建 [**MapScene**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapscene.createfromcamera) 对象。
 4.  调用 [**TrySetSceneAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.trysetsceneasync) 以显示 3D 视图。 你也可以在查看更改时，通过提供一个来自 [**MapAnimationKind**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapAnimationKind) 枚举的常数，指定要使用的可选动画。
 
 此示例介绍如何显示 3D 视图。
@@ -421,10 +421,10 @@ private async void display3DLocation()
 
 通过调用 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 的以下方法，在地图上获取有关位置的信息。
 
--   [**TryGetLocationFromOffset**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.getlocationfromoffset) method - Get the geographic location that corresponds to the specified point in the viewport of the Map control.
--   [**GetOffsetFromLocation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.getoffsetfromlocation) method - Get the point in the viewport of the Map control that corresponds to the specified geographic location.
--   [**IsLocationInView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.islocationinview) method - Determine whether the specified geographic location is currently visible in the viewport of the Map control.
--   [**FindMapElementsAtOffset**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.findmapelementsatoffset) method - Get the elements on the map located at the specified point in the viewport of the Map control.
+-   [**TryGetLocationFromOffset**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.getlocationfromoffset)方法-获取与地图控件的视区中的指定点相对应的地理位置。
+-   [**GetOffsetFromLocation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.getoffsetfromlocation)方法-获取对应于指定地理位置的地图控件视区中的点。
+-   [**IsLocationInView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.islocationinview)方法-确定指定的地理位置当前在地图控件的视区中是否可见。
+-   [**FindMapElementsAtOffset**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.findmapelementsatoffset)方法-获取位于地图控件的视区中指定点的地图上的元素。
 
 ## <a name="handle-interaction-and-changes"></a>处理交互和更改
 
@@ -437,7 +437,7 @@ private async void display3DLocation()
 
 通过处理控件的 [**LoadingStatusChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.loadingstatuschanged) 事件，确定地图是正在加载还是已完全加载。
 
-通过处理 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 的以下事件，处理用户或应用更改地图的设置时所发生的更改。 [Guidelines for maps](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
+通过处理 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 的以下事件，处理用户或应用更改地图的设置时所发生的更改。 [地图准则](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 
 -   [**CenterChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.centerchanged)
 -   [**HeadingChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.headingchanged)
@@ -459,6 +459,6 @@ private async void display3DLocation()
 * [获取当前位置](get-location.md)
 * [位置感知应用设计指南](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-and-checklist-for-detecting-location)
 * [地图设计指南](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [生成2015视频：跨 Windows 应用中的手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP 路况应用示例](https://github.com/Microsoft/Windows-appsample-trafficapp)
 * [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)

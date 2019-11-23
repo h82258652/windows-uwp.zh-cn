@@ -41,7 +41,7 @@ ms.locfileid: "72517828"
     ![显示无节点版本的 NVM 列表](../images/windows-nvm-powershell-no-node.png)
 
 6. 安装 node.js 的当前版本（用于测试最新的功能改进，但比 LTS 版本更可能出现问题）： `nvm install latest`
-7. 首先通过查找当前 LTS 版本号的内容，安装 node.js 的最新稳定 LTS 版本： `nvm list available`，然后使用以下内容安装 LTS 版本号： `nvm install <version>` （将 @no__t 替换为数字，即 `nvm install 10.16.3`）。
+7. 首先通过查找当前 LTS 版本号的内容，安装 node.js 的最新稳定 LTS 版本： `nvm list available`，然后使用以下内容安装 LTS 版本号： `nvm install <version>` （将 `<version>` 替换为 `nvm install 10.16.3`数字）。
 
     ![可用版本的 NVM 列表](../images/windows-nvm-list.png)
 
@@ -49,9 +49,9 @@ ms.locfileid: "72517828"
 
     ![显示已安装节点版本的 NVM 列表](../images/windows-nvm-node-installs.png)
 
-9. 若要检查当前哪个版本的 node.js 当前为默认版本，请输入： `node --version`
-10. 若要更改要用于项目的 node.js 版本，请创建新的项目目录 `mkdir NodeTest`，并输入目录 `cd NodeTest`，然后输入 `nvm use <version>`，将 @no__t 3 替换为要使用的版本号（ie v 10.16.3 '）。
-11. 验证安装的 npm 版本： `npm --version`，此版本号将自动更改为与当前版本的 node.js 关联的 npm 版本。
+9. 若要查看当前默认的 node.js 版本，请输入： `node --version`
+10. 若要更改要用于项目的 node.js 版本，请 `mkdir NodeTest`创建新的项目目录，然后输入目录 `cd NodeTest`，然后输入 `nvm use <version>` 将 `<version>` 替换为要使用的版本号（ie v 10.16.3 '）。
+11. 验证安装了哪个版本的 npm： `npm --version`，此版本号将自动更改为与当前版本的 node.js 关联的 npm 版本。
 
 ## <a name="alternative-version-managers"></a>备用版本管理器
 

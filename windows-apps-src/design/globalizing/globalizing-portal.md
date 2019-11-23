@@ -20,7 +20,7 @@ ms.locfileid: "72302250"
 
 Windows 的使用遍及世界各地，用户的语言、区域及文化背景各不相同。 用户讲各种不同的语言，位于不同的国家和地区。 某些用户会说多种语言。 因此，应用在涉及语言、区域和文化系统设置的多种排列方式的配置上运行。 通过使用*全球化*和*本地化*对应用进行设计使其更具有适应性，可以拓展其潜在市场。
 
-此视频简要介绍了如何为世界准备您的应用程序：[全球化和本地化简介](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization)。
+此视频简要介绍了如何准备在全球发布的应用：[全球化和本地化简介](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization)。
 
 **全球化**是一种应用设计和开发过程，可使应用无需进行特定于文化的更改或自定义，即可在不同的全球市场（不同语言和文化配置的系统上）正常工作。
 
@@ -38,7 +38,7 @@ Windows 的使用遍及世界各地，用户的语言、区域及文化背景各
 - 排序规则
 
 >[!NOTE]
-> 有关 Windows 操作系统版本支持的区域设置名称的列表，请参阅 [Appendix A 中的表的语言标记列：[Windows 语言代码标识符（LCID）参考](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f)中的产品行为 @ no__t-0。
+> 有关 Windows 操作系统版本支持的区域设置名称的列表，请参阅[附录 a：](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) [Windows 语言代码标识符（LCID）参考](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f)中的产品行为中的表的语言标记列。
 
 **可本地化性**是为本地化准备全球化应用和/或验证应用是否已准备好进行本地化的过程。 以正确方式对应用进行可本地化处理意味着应用在之后的本地化过程中不会出现任何功能缺陷。 可本地化应用最重要的属性是其可执行代码与应用的可本地化资源完全分隔。
 
@@ -62,9 +62,9 @@ Windows 的使用遍及世界各地，用户的语言、区域及文化背景各
 | [全球化日期/时间/数字格式](use-global-ready-formats.md) | 通过适当设置日期、时间、数字、电话号码和货币的格式，设计全球通用的应用。 稍后即可调整应用，以适应全球市场中更多的文化、区域和语言。 |
 | [使用模板和模式设置日期和时间的格式](use-patterns-to-format-dates-and-times.md) | 结合使用 [**Windows.Globalization.DateTimeFormatting**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 命名空间中的类及自定义模板和模式，以严格按照所需格式显示日期和时间。 |
 | [调整布局和字体并支持 RTL](adjust-layout-and-fonts--and-support-rtl.md) | 设计应用，使其支持多种语言布局和字体，包括 RTL（从右到左）排列方向。 |
-| [NumeralSystem 值](glob-numeralsystem-values.md) | 本主题列出了可用于 [**Windows.Globalization**](/uwp/api/windows.globalization?branch=live) 命名空间中各种类的 **NumeralSystem** 属性的值。 |
+| [NumeralSystem 值](glob-numeralsystem-values.md) | 本主题列出了可用于Windows.Globalization[**命名空间中各种类的**NumeralSystem](/uwp/api/windows.globalization?branch=live) 属性的值。 |
 | [使应用程序可本地化](prepare-your-app-for-localization.md) | 本地化应用是一种可针对其他市场、语言或地区进行本地化且未发现应用中的任何功能性缺陷的应用。 可本地化应用最重要的属性是其可执行代码与其可本地化资源完全分隔。 |
-| [国际字体](loc-international-fonts.md) | 本主题列出了已本地化为美国以外语言的 UWP 应用的可用字体。（美国）。 |
+| [国际字体](loc-international-fonts.md) | 本主题列出的字体可用于已本地化为除美国英语以外的其他语言的 UWP 应用。 |
 | [为双向文本设计应用](design-for-bidi-text.md) | 设计应用，使其提供双向文本支持（双向），以便组合从左到右和从右到左写入系统的脚本。 |
 | [使用多语言应用工具包4。0](use-mat.md) | 多语言应用工具包（材料）4.0 与 Microsoft Visual Studio 2017 及更高版本集成，以通过翻译支持、翻译文件管理和编辑器工具提供 UWP 应用。 |
 | [多语言应用工具包4.0 常见问题 & 疑难解答](mat-faq-troubleshooting.md) | 本主题提供有关多语言应用工具包 (MAT) 4.0 的常见问题解答。 |

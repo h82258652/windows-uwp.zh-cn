@@ -47,7 +47,7 @@ Windows 设备门户允许你查看诊断信息，并通过 HTTP 从浏览器窗
 
 要通过本地主机进行连接，打开浏览器窗口，然后输入你正在使用的连接类型在此处显示的地址。
 
-* Localhost： @no__t 0 或 `http://localhost:<PORT>`
+* Localhost： `http://127.0.0.1:<PORT>` 或 `http://localhost:<PORT>`
 * 本地网络： `https://<IP address of the desktop>:<PORT>`
 
 身份验证和安全通信要求使用 HTTPS。
@@ -71,22 +71,22 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
 - 功能
 - 混合现实
 - 流式安装调试程序
-- Location
+- 位置
 - Scratch
 
 ## <a name="more-device-portal-options"></a>更多设备门户选项
 
 ### <a name="registry-based-configuration-for-device-portal"></a>设备门户的基于注册表的配置
 
-如果你希望为 Device Portal 选择端口号（如 80 和 443），你可以设置以下 RegKey：
+如果你希望为设备门户选择端口号（如 80 和 443），你可以设置以下 RegKey：
 
-- @No__t 下-0
-    - `UseDynamicPorts`：所需的 DWORD。 将其设置为 0，以便保留你已选择的端口号。
-    - `HttpPort`：所需的 DWORD。 包含 Device Portal 将在其上侦听 HTTP 连接的端口号。    
-    - `HttpsPort`：所需的 DWORD。 包含 Device Portal 将在其上侦听 HTTPS 连接的端口号。
+- 在 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
+    - `UseDynamicPorts`：必填的 DWORD。 将其设置为 0，以便保留你已选择的端口号。
+    - `HttpPort`：必填的 DWORD。 包含设备门户将在其上侦听 HTTP 连接的端口号。    
+    - `HttpsPort`：必填的 DWORD。 包含 Device Portal 将在其上侦听 HTTPS 连接的端口号。
     
 在相同的 RegKey 路径下，你也可以关闭身份验证要求：
-- `UseDefaultAuthorizer` @ no__t-1 @ no__t-2 （禁用），`1` 启用。  
+- `UseDefaultAuthorizer`已禁用的  - `0`，`1` 启用。  
     - 这可控制每个连接的基本身份验证要求以及从 HTTP 到 HTTPS 的重定向。  
     
 ### <a name="command-line-options-for-device-portal"></a>设备门户的命令行选项
@@ -113,7 +113,7 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
 
 尝试将开发人员包安装到 Windows 10 的预发行版本时，可能会收到此错误。 这些按需功能（FoD）包承载 Windows 更新上，并在预发布版本上下载它们要求你选择加入试验。 如果未选择将安装用于正确的生成和环形组合，则不会下载有效负载。 仔细检查以下各项：
 
-1. 导航到 "**设置" > 更新 Windows 预览体验计划 & 安全 >** ，并确认 " **windows 预览体验帐户**" 部分包含正确的帐户信息。 如果看不到此部分，请选择 "**链接 Windows 预览体验帐户**"，添加你的电子邮件帐户，并确认它显示在 " **Windows 预览体验帐户**" 标题下（可能需要选择 "第二次将**windows 预览体验帐户链接**到"实际链接新添加的帐户。
+1. 导航到 "**设置" > 更新 Windows 预览体验计划 & 安全 >** ，并确认 " **windows 预览体验帐户**" 部分包含正确的帐户信息。 如果看不到此部分，请选择 "**链接 Windows 预览体验帐户**"、"添加电子邮件帐户"，并确认该帐户显示在 " **Windows 预览体验帐户**" 标题下（可能需要选择 "第二次将**windows 预览体验帐户链接**到实际链接新添加的帐户"）。
  
 2. 在 "**你想要接收何种类型的内容？** " 下，确保已选择 " **Windows 的活动开发**"。
  
@@ -121,15 +121,15 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
  
 4. 现在应能够安装 FoDs。 如果已确认你已在 Windows 有问必答上快速，但仍无法安装 FoDs，请提供反馈，并将日志文件附加到**C:\Windows\Logs\CBS**下。
 
-### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>SCStartServiceOpenService 失败1060：指定的服务不是已安装的服务
+### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>SCStartService： OpenService 失败1060：指定的服务不是已安装的服务
 
 如果开发人员包未安装，则可能会收到此错误。 如果没有开发人员包，则没有 web 管理服务。 请尝试再次安装开发人员包。
 
-### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbs_e_metered_network"></a>由于系统在按流量计费的网络（CBS_E_METERED_NETWORK）上，因此无法开始下载
+### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbs_e_metered_network"></a>由于系统位于计量网络（CBS_E_METERED_NETWORK）上，因此无法开始下载
 
 如果使用按流量计费的 internet 连接，则可能会收到此错误。 你将无法通过按流量计费的连接下载开发人员包。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 * [Windows 设备门户概述](device-portal.md)
 * [设备门户核心 API 参考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

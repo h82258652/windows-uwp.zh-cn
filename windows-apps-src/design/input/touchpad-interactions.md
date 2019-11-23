@@ -55,11 +55,11 @@ ms.locfileid: "74258224"
 
 ![标准触摸板设置](images/mouse-touchpad-settings-standard.png)
 
-<sup>Standard\\ touchpad\\ settings</sup>
+<sup>标准\\ 触摸板\\ 设置</sup>
 
 ![Windows 精确式触摸板设置](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Windows\\ Precision\\ Touchpad\\ settings</sup>
+<sup>Windows\\ 精度\\ 触摸板\\ 设置</sup>
 
 下面是一些用于执行常见任务的触摸板优化手势的示例。
 
@@ -146,8 +146,8 @@ ms.locfileid: "74258224"
 -   对于可单击元素，始终使用箭头光标（![箭头光标](images/cursor-arrow.png)）。 对于链接或其他交互元素，不使用指向手光标（![指向手光标](images/cursor-pointinghand.png)）。 而应使用悬停效果（上文中有介绍）。
 -   对于可选择文本，使用文本光标（![文本光标](images/cursor-text.png)）。
 -   当主要操作是移动（如拖动或裁剪）时，使用移动光标（![移动光标](images/cursor-move.png)）。 对于主要操作是导航的元素（如“开始”菜单磁贴），不使用移动光标。
--   当对象的大小可调整时，使用水平、垂直和对角调整大小光标（![垂直调整光标](images/cursor-vertical.png), ![水平调整光标](images/cursor-horizontal.png), ![对角调整光标（左下和右上）](images/cursor-diagonal2.png), ![对角调整光标（左上和右下）](images/cursor-diagonal1.png)）。
--   当在固定画布（如地图）内平移内容时，使用手掌型光标（![手掌型光标（张开）](images/cursor-pan1.png), ![手掌型光标（闭合）](images/cursor-pan2.png)当在固定画布（例如地图）中平移内容时。
+-   当对象的大小可调整时，使用水平、垂直和对角调整大小光标（![垂直调整光标](images/cursor-vertical.png)， ![水平调整光标](images/cursor-horizontal.png)， ![对角调整光标（左下和右上）](images/cursor-diagonal2.png)， ![对角调整光标（左上和右下）](images/cursor-diagonal1.png)）。
+-   当在固定画布（如地图）内平移内容时，使用手掌型光标（![手掌型光标（张开）](images/cursor-pan1.png)， ![手掌型光标（闭合）](images/cursor-pan2.png)当在固定画布（例如地图）中平移内容时。
 
 ## <a name="related-articles"></a>相关文章
 
@@ -155,15 +155,15 @@ ms.locfileid: "74258224"
 * [处理指针输入](handle-pointer-input.md)
 * [标识输入设备](identify-input-devices.md)
 **示例**
-* [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
 * [焦点视觉效果示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 **存档示例**
-* [Input: Device capabilities sample](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [Input: XAML user input events sample](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [XAML scrolling, panning, and zooming sample](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [Input: Gestures and manipulations with GestureRecognizer](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+* [输入：设备功能示例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [输入： XAML 用户输入事件示例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [XAML 滚动、平移和缩放示例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [输入：与 GestureRecognizer 的手势和操作](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
  
 
 

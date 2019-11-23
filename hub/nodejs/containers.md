@@ -19,13 +19,13 @@ ms.locfileid: "72315121"
 
 帮助你开始使用适用于 node.js 应用的 Docker 容器的循序渐进指南。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 本指南假定你已完成[用 WSL 2 设置 node.js 开发环境](./setup-on-wsl2.md)的步骤，包括：
 
 - 安装 Windows 10 Insider preview 内部版本18932或更高版本。
 - 在 Windows 上启用 WSL 2 功能。
-- 安装 Linux 分发版（Ubuntu 18.04 示例）。 可以通过以下方式检查此项： `wsl lsb_release -a`。
+- 安装 Linux 分发版（Ubuntu 18.04 示例）。 可以通过以下方式查看此内容： `wsl lsb_release -a`。
 - 确保 Ubuntu 18.04 分发在 WSL 2 模式下运行。 （WSL 可以在 v1 或 v2 模式下运行分发。）可以通过打开 PowerShell 并输入以下内容来进行检查： `wsl -l -v`。
 - 使用 PowerShell 将 Ubuntu 18.04 设置为默认分布，使用： `wsl -s ubuntu 18.04`。
 
@@ -49,7 +49,7 @@ Docker 容器类似于虚拟机，但不创建整个虚拟操作系统。 取而
 
     ![Docker Desktop 启动](../images/install-docker-1.png)
 
-3. 如果还没有 Docker ID，则需要通过访问以下项设置一个： [https://hub.docker.com/signup](https://hub.docker.com/signup)。 ID 必须全部为小写字母数字字符。
+3. 如果还没有 Docker ID，则需要通过访问以下项来设置一个： [https://hub.docker.com/signup](https://hub.docker.com/signup)。 ID 必须全部为小写字母数字字符。
 
 4. 安装完成后，通过选择桌面上的快捷方式图标或在 Windows "开始" 菜单中找到它来启动 Docker Desktop。 Docker 图标将显示在任务栏的隐藏图标菜单中。 右键单击该图标可显示 Docker 命令菜单，并选择 "WSL 2 技术预览"。
 
@@ -57,20 +57,20 @@ Docker 容器类似于虚拟机，但不创建整个虚拟操作系统。 取而
 
     ![Docker Desktop 启动](../images/start-docker.gif)
 
-6. 若要确认是否已安装 Docker 并显示版本号，请打开命令行（WSL 或 PowerShell），然后输入： `docker --version`
+6. 若要确认是否已安装 Docker 并显示版本号，请打开命令行（WSL 或 PowerShell）并输入： `docker --version`
 
 7. 运行简单的内置 Docker 映像，测试安装是否正常工作： `docker run hello-world`
 
 下面是一些你应该知道的 Docker 命令：
 
 - 在 Docker CLI 中输入以下命令以列出可用命令： `docker`
-- 具有以下项的特定命令的列表信息： `docker <COMMAND> --help`
-- 列出计算机上的 docker 映像（此时为 "hello world" 映像），其中： `docker image ls --all`
+- 具有以下内容的特定命令的列表信息： `docker <COMMAND> --help`
+- 列出计算机上的 docker 映像（此时为 "hello world" 映像），其中包含： `docker image ls --all`
 - 列出计算机上的容器，其中包含： `docker container ls --all`
-- 列出你在 WSL 2 上下文中可用的 Docker 系统统计信息和资源（CPU & 内存），其中： `docker info`
-- 显示 docker 当前正在运行的位置，其中： `docker context ls`
+- 使用以下方式列出你在 WSL 2 上下文中可用的 Docker 系统统计信息和资源（CPU & 内存）： `docker info`
+- 显示 docker 当前正在运行的位置，其中包括： `docker context ls`
 
-你可以看到，Docker 正在中运行的上下文有两个--`default` （经典 Docker 后台程序）和 `wsl` （我们使用技术预览版的建议）。 （此外，`ls` 命令对于 @no__t 为 short，可互换使用。
+你可以看到，Docker 正在 `default` （经典 Docker 后台程序）和 `wsl` 中运行的两个上下文（我们的建议使用技术预览版）。 （此外，`ls` 命令是 `list` 的简称，可互换使用。
 
 ![Powershell 中的 Docker 显示上下文](../images/docker-context.png)
 
@@ -87,7 +87,7 @@ Docker 扩展使你可以从 Visual Studio Code 轻松生成、管理和部署�
 
     ![远程 WSL 中 VS Code 的 Docker 扩展](../images/docker-vscode-extension.png)
 
-通过在 VS Code 上安装 Docker 扩展，你现在可以在下一节中使用快捷方式打开 @no__t 的命令列表： `Ctrl+Space`
+通过在 VS Code 上安装 Docker 扩展，你现在可以在下一节中使用快捷方式打开 `Dockerfile` 命令的列表： `Ctrl+Space`
 
 详细了解如何[在 VS Code 中使用 Docker](https://code.visualstudio.com/docs/azure/docker)。
 
@@ -99,7 +99,7 @@ Docker 扩展使你可以从 Visual Studio Code 轻松生成、管理和部署�
 
 让我们使用[web 框架](./web-frameworks.md)指南中设置的下一个 .js 应用来构建容器映像。
 
-1. 在 VS Code 中打开下一 .js 应用（确保远程 WSL 扩展按左下绿色选项卡中所示的方式运行）。 打开 WSL 中的 "集成 VS Code （**查看 > 终端**）"，并确保终端路径指向下一个 .js 项目目录（即 @no__t 为-1）。
+1. 在 VS Code 中打开下一 .js 应用（确保远程 WSL 扩展按左下绿色选项卡中所示的方式运行）。 打开 WSL 中的 "集成 VS Code （**查看 > 终端**）"，并确保终端路径指向下一个 .js 项目目录（即 `~/NextProjects/my-next-app$`）。
 
 2. 在下一个 .js 项目的根目录中创建一个名为 `Dockerfile` 的新文件，并添加以下内容：
 
@@ -130,20 +130,20 @@ Docker 扩展使你可以从 Visual Studio Code 轻松生成、管理和部署�
 3. 若要生成 docker 映像，请从项目的根目录中运行以下命令（但将 `<your_docker_username>` 替换为在 Docker 中心创建的用户名）： `docker build -t <your_docker_username>/my-nextjs-app .`
 
 > [!NOTE]
-> Docker 必须运行 WSL 技术预览版才能使此命令正常工作。 若要提醒如何启动 Docker，请参阅安装部分的[步骤 #4](#install-docker-desktop-wsl-2-tech-preview) 。 @No__t-0 标志指定要创建的映像的名称，在本例中为 "nextjs： v1"。 建议在创建映像时，始终[对标记名称使用版本 #](https://medium.com/@mccode/the-misunderstood-docker-tag-latest-af3babfd6375) 。 请确保在命令末尾包含句点，该时间段指定应使用当前工作目录来查找和复制下一个 .js 应用的生成文件。
+> Docker 必须运行 WSL 技术预览版才能使此命令正常工作。 若要提醒如何启动 Docker，请参阅安装部分的[步骤 #4](#install-docker-desktop-wsl-2-tech-preview) 。 `-t` 标志指定要创建的映像的名称，在本例中为 "nextjs： v1"。 建议在创建映像时，始终[对标记名称使用版本 #](https://medium.com/@mccode/the-misunderstood-docker-tag-latest-af3babfd6375) 。 请确保在命令末尾包含句点，该时间段指定应使用当前工作目录来查找和复制下一个 .js 应用的生成文件。
 
 4. 若要在容器中运行下一个 .js 应用的新 docker 映像，请输入以下命令： `docker run -d -p 3333:3000 <your_docker_username>/my-nextjs-app:v1`
 
-5. @No__t-0 标志将端口 "3000" （应用程序在容器内运行的端口）绑定到计算机上的本地端口 "3333"，因此你现在可以将你的 web 浏览器指向[http://localhost:3333](http://localhost:3333) ，并查看你的服务器端呈现的下一个作为 Docker 运行的 node.js 应用程序容器映像。
+5. `-p` 标志将端口 "3000" （应用程序在容器内运行的端口）绑定到计算机上的本地端口 "3333"，因此你现在可以将 web 浏览器指向[http://localhost:3333](http://localhost:3333)并查看以 Docker 容器映像形式运行的下一 node.js 应用程序。
 
 > [!TIP]
-> 我们使用 `FROM node:12` 构建容器映像，该映像引用存储在 Docker 中心上的 node.js 版本12默认映像。 此默认 node.js 映像基于 Debian/Ubuntu Linux 系统，但有许多不同的 node.js 映像可供选择，但是，你可能需要考虑使用更轻量的内容，或者根据你的需要进行定制。 有关详细信息，请参阅[Docker Hub 上的 Node.js 映像注册表](https://hub.docker.com/_/node/)。
+> 我们使用 `FROM node:12` 来构建容器映像，该映像引用存储在 Docker 中心上的 node.js 版本12默认映像。 此默认 node.js 映像基于 Debian/Ubuntu Linux 系统，但有许多不同的 node.js 映像可供选择，但是，你可能需要考虑使用更轻量的内容，或者根据你的需要进行定制。 有关详细信息，请参阅[Docker Hub 上的 Node.js 映像注册表](https://hub.docker.com/_/node/)。
 
 ## <a name="upload-your-container-image-to-a-repository"></a>将容器映像上传到存储库
 
 **容器存储库**在云中存储容器映像。 容器存储库通常会包含相关映像的集合（如不同版本），它们都可以轻松地进行设置和快速部署。 通常，可以通过安全 HTTPs 终结点访问容器存储库上的图像，使你可以通过任何系统、硬件或 VM 实例请求、推送或管理映像。
 
-另一方面，**容器注册表**存储存储库的集合，以及索引、访问控制规则和 API 路径。 这些可以是公开或私下托管的。 [Docker 中心](https://hub.docker.com/)是一个开源 Docker 注册表，在运行 `docker push` 和 @no__t 2 命令时使用的默认值。 它可免费用于公共存储库，并需要支付专用存储库的费用。
+另一方面，**容器注册表**存储存储库的集合，以及索引、访问控制规则和 API 路径。 这些可以是公开或私下托管的。 [Docker 中心](https://hub.docker.com/)是一个开源 Docker 注册表，在运行 `docker push` 和 `docker pull` 命令时使用的默认值。 它可免费用于公共存储库，并需要支付专用存储库的费用。
 
 若要将新的容器映像上传到 Docker 中心托管的存储库，请执行以下操作：
 
@@ -165,17 +165,17 @@ Docker 扩展使你可以从 Visual Studio Code 轻松生成、管理和部署�
 
 ## <a name="deploy-to-azure-container-registry"></a>部署到 Azure 容器注册表
 
-[**Azure 容器注册表**](https://azure.microsoft.com/services/container-registry/)（ACR）使你可以在专用、经过身份验证的存储库中存储、管理和保护容器映像。 ACR 可与标准 Docker 命令兼容，可处理容器运行状况监视和维护等关键任务，并与[Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes)进行配对，以创建可缩放的业务流程系统。 按需生成，或通过触发器（如源代码提交和基础映像更新）完全自动执行生成。 ACR 还利用了强大的 Azure 云网络来管理网络延迟、全球部署，并为使用[Azure App Service](https://docs.microsoft.com/azure/app-service/) （适用于 web 托管、移动后端、REST api）或[其他 Azure 云服务的任何人创建无缝的本机体验。](https://azure.microsoft.com/product-categories/containers/).
+[**Azure 容器注册表**](https://azure.microsoft.com/services/container-registry/)（ACR）使你可以在专用、经过身份验证的存储库中存储、管理和保护容器映像。 ACR 可与标准 Docker 命令兼容，可处理容器运行状况监视和维护等关键任务，并与[Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes)进行配对，以创建可缩放的业务流程系统。 按需生成，或通过触发器（如源代码提交和基础映像更新）完全自动执行生成。 ACR 还利用了强大的 Azure 云网络来管理网络延迟、全球部署，并为使用[Azure App Service](https://docs.microsoft.com/azure/app-service/) （适用于 web 托管、移动后端、REST api）或[其他 Azure 云服务](https://azure.microsoft.com/product-categories/containers/)的任何人创建无缝的本机体验。
 
 > [!IMPORTANT]
 > 若要将容器部署到 Azure，你需要自己的 Azure 订阅，你可能会收到费用。 如果还没有 Azure 订阅，请在开始前[创建一个免费帐户](https://azure.microsoft.com/free/)。
 
-有关创建 Azure 容器注册表和部署应用容器映像的帮助，请参阅练习：[将 Docker 映像部署到 Azure 容器实例](https://docs.microsoft.com/learn/modules/intro-to-containers/7-exercise-deploy-docker-image-to-container-instance)。
+有关创建 Azure 容器注册表和部署应用容器映像的帮助，请参阅练习：将[Docker 映像部署到 Azure 容器实例](https://docs.microsoft.com/learn/modules/intro-to-containers/7-exercise-deploy-docker-image-to-container-instance)。
 
 ## <a name="additional-resources"></a>其他资源
 
 - [Azure 上的 node.js](https://azure.microsoft.com/en-us/develop/nodejs/)
 - 快速入门：[在 Azure 中创建 node.js web 应用](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)
-- 联机课程：[管理 Azure 中的容器](https://docs.microsoft.com/learn/paths/administer-containers-in-azure/)
-- 使用 VS Code：[使用 Docker](https://code.visualstudio.com/docs/azure/docker)
-- Docker 文档：[Docker Desktop WSL 2 技术预览](https://docs.docker.com/docker-for-windows/wsl-tech-preview/)
+- 联机课程：[在 Azure 中管理容器](https://docs.microsoft.com/learn/paths/administer-containers-in-azure/)
+- 使用 VS Code：使用[Docker](https://code.visualstudio.com/docs/azure/docker)
+- Docker 文档： [Docker DESKTOP WSL 2 技术预览](https://docs.docker.com/docker-for-windows/wsl-tech-preview/)

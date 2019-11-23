@@ -18,7 +18,7 @@ ms.locfileid: "71340551"
 
 可以使用 [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) 类和字符串语法来实例化 XAML 或代码中的 **PropertyPath** 值。 **PropertyPath** 值由数据绑定使用。 目标情节提要动画使用相似的语法。 对于这两种情形，都由属性路径来描述最终解析为单个属性的一个或多个对象-属性关系的遍历。
 
-可将属性路径字符串直接设置为 XAML 中的属性。 可使用相同的字符串语法在代码中构造设置 [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding) 的 [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)，或者使用 [**SetTargetProperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.settargetproperty) 在代码中设置动画目标。 Windows 运行时中有两个不同的使用属性路径的功能区域：数据绑定和动画目标。 动画目标不在 Windows 运行时实现中创建基础 Property-path 语法值，它将此信息保留为字符串，但对象-属性遍历的概念非常相似。 数据绑定和动画目标各自计算属性路径的方式略有不同，因此我们分别描述它们的属性路径语法。
+可将属性路径字符串直接设置为 XAML 中的属性。 可使用相同的字符串语法在代码中构造设置 [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) 的 [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)，或者使用 [**SetTargetProperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.settargetproperty) 在代码中设置动画目标。 Windows 运行时中有两个不同的使用属性路径的功能区域：数据绑定和动画目标。 动画目标不在 Windows 运行时实现中创建基础 Property-path 语法值，它将此信息保留为字符串，但对象-属性遍历的概念非常相似。 数据绑定和动画目标各自计算属性路径的方式略有不同，因此我们分别描述它们的属性路径语法。
 
 ## <a name="property-path-for-objects-in-data-binding"></a>数据绑定中的对象的属性路径
 
@@ -36,7 +36,7 @@ ms.locfileid: "71340551"
 
 以下是评估此路径的方法：
 
-1.  为名为“Customer”的属性搜索数据上下文对象（或由相同的 [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding) 指定的 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.source)）。
+1.  为名为“Customer”的属性搜索数据上下文对象（或由相同的 [**Binding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.source) 指定的 [**Source**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)）。
 2.  为名为“Address”的属性搜索作为“Customer”属性的值的对象。
 3.  为名为“StreetAddress1”的属性搜索作为“Address”属性的值的对象。
 
@@ -50,13 +50,13 @@ ms.locfileid: "71340551"
 
 ### <a name="indexers"></a>索引器
 
-数据绑定的属性路径可以包括对编制了索引的属性的引用。 这样便可绑定到已排序的列表/矢量，或绑定到字典/地图。 使用方括号 "\[ @ no__t-1" 字符来表示索引属性。 位于这些括号中的内容可以是整数（对于排序列表），也可以是不加引号的字符串（对于字典）。 还可以绑定到键为整数的字典。 可以在同一路径中使用不同的编制了索引的属性，使用点分隔对象-属性。
+数据绑定的属性路径可以包括对编制了索引的属性的引用。 这样便可绑定到已排序的列表/矢量，或绑定到字典/地图。 使用方括号 "\[\]" 字符来表示索引属性。 位于这些括号中的内容可以是整数（对于排序列表），也可以是不加引号的字符串（对于字典）。 还可以绑定到键为整数的字典。 可以在同一路径中使用不同的编制了索引的属性，使用点分隔对象-属性。
 
-例如，考虑一个业务对象，它有一个“Teams”的列表（排序列表），每个队有一本名为“Players”的字典，每个队员使用姓氏作为键。 第二个团队中特定播放机的示例属性路径为："团队 @ no__t-01 @ no__t-1。队员 @ no__t-2Smith @ no__t "。 （使用 1 来指示“Teams”中的第二个项，因为该列表的索引是从零开始编制的。）
+例如，考虑一个业务对象，它有一个“Teams”的列表（排序列表），每个队有一本名为“Players”的字典，每个队员使用姓氏作为键。 第二个团队中特定播放机的示例属性路径为： "团队\[1\]。玩家\[Smith\]"。 （使用 1 来指示“Teams”中的第二个项，因为该列表的索引是从零开始编制的。）
 
-**请注意**  Indexing 对C++数据源的支持是有限的;[深入查看数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)。
+**请注意**，对数据C++源的  索引支持是有限的;[深入查看数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)。
 
-### <a name="attached-properties"></a>附加的属性
+### <a name="attached-properties"></a>附加属性
 
 属性路径可以包括对附加属性的引用。 因为附加属性的识别名称中已包括点，所以你必须将任何附加属性名称括在括号内，以便不会将点视为对象-属性的分隔符。 例如，用于指定你希望使用 [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) 作为绑定路径的字符串为“(Canvas.ZIndex)”。 有关附加属性的详细信息，请参阅[附加属性概述](attached-properties-overview.md)。
 
@@ -76,7 +76,7 @@ ms.locfileid: "71340551"
 
 ## <a name="simple-targeting"></a>简单目标处理
 
-如果要对在作为目标的对象本身上存在的属性进行动画处理，且该属性的类型可以具有直接应用到属性（而不是应用到属性值的子属性）的动画，则只命名要进行动画处理的属性，无需进行进一步限定。 例如，如果要将 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 等 [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) 子类作为目标，并将经过动画处理的 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 应用于 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill) 属性，则属性路径可以是“Fill”。
+如果要对在作为目标的对象本身上存在的属性进行动画处理，且该属性的类型可以具有直接应用到属性（而不是应用到属性值的子属性）的动画，则只命名要进行动画处理的属性，无需进行进一步限定。 例如，如果要将 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) 等 [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 子类作为目标，并将经过动画处理的 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 应用于 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill) 属性，则属性路径可以是“Fill”。
 
 ## <a name="indirect-property-targeting"></a>间接属性目标处理
 
@@ -84,15 +84,15 @@ ms.locfileid: "71340551"
 
 ## <a name="specifying-a-particular-child-in-a-collection"></a>指定集合中的特定子项
 
-若要指定集合属性中的子项，可以使用数值索引器。 在整数索引值周围使用方括号 "\[ @ no__t-1" 个字符。 可以只引用排序列表，不引用字典。 因为集合不是可进行动画处理的值，所以使用索引器时绝不能将索引器作为属性路径中的结束属性。
+若要指定集合属性中的子项，可以使用数值索引器。 在整数索引值周围使用方括号 "\[\]" 字符。 可以只引用排序列表，不引用字典。 因为集合不是可进行动画处理的值，所以使用索引器时绝不能将索引器作为属性路径中的结束属性。
 
-例如，若要指定要对应用于控件的[**背景**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background)属性的[**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)中的第一种颜色停止颜色进行动画处理，则这是属性路径： "（控件背景）。（GradientBrush. GradientStops） \[0 @ no__t。（System.windows.media.gradientstop>） "。 注意如何实现不将索引器作为路径中的最后一步，尤其要注意最后一步必须引用集合中项 0 的 [**GradientStop.Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color) 属性来对它应用 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 动画值。
+例如，若要指定要对应用于控件的[**背景**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background)属性的[**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)中的第一种颜色停止颜色进行动画处理，则这是属性路径： "（控件背景）。（GradientBrush. GradientStops）\[0\]。（System.windows.media.gradientstop>） "。 注意如何实现不将索引器作为路径中的最后一步，尤其要注意最后一步必须引用集合中项 0 的 [**GradientStop.Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color) 属性来对它应用 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 动画值。
 
 ## <a name="animating-an-attached-property"></a>对附加属性进行动画处理
 
 虽然并不是常见情形，但可以对附加属性进行动画处理，前提是附加属性具有与动画类型匹配的属性值。 因为附加属性的识别名称中已包括点，所以你必须将任何附加属性名称括在括号内，以便不会将点视为对象-属性的分隔符。 例如，用于指定你希望对某个对象上的 [**LinearGradientBrush**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row) 附加属性进行动画处理的字符串使用属性路径“(Grid.Row)”。
 
-**请注意**@no__t 此示例中， [**1For 的值为**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row) **Int32**属性类型。 因此无法使用 **Double** 动画对其进行动画处理， 而应该定义一个具有 [**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame) 组件的 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)，其中 [**ObjectKeyFrame.Value**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) 设置为整数（如“0”或“1”）。
+**请注意**  此示例中， [**Grid**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row)的值为**Int32**属性类型。 因此无法使用 **Double** 动画对其进行动画处理， 而应该定义一个具有 [**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) 组件的 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame)，其中 [**ObjectKeyFrame.Value**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) 设置为整数（如“0”或“1”）。
 
 ## <a name="rules-for-the-properties-in-an-animation-targeting-property-path"></a>动画目标属性路径中的属性所遵守的规则
 

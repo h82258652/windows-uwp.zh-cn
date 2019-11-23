@@ -22,7 +22,7 @@ ms.locfileid: "71340612"
 
 *附加属性*是一种 XAML 概念。 附加属性通常定义为一种特殊形式的依赖属性。 本主题介绍如何将一个 XAML 附加属性实现为依赖属性，如何定义让附加属性可用于 XAML 所必需的访问器约定。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 我们假设你能从现有依赖属性的客户角度理解依赖属性，并且已阅读了[依赖属性概述](dependency-properties-overview.md)。 你还应该阅读了[附加属性概述](attached-properties-overview.md)。 要理解本主题中的示例，你还应该理解 XAML，知道如何编写使用 C++、C# 或 Visual Basic 的基本 Windows 运行时应用。
 
@@ -42,7 +42,7 @@ ms.locfileid: "71340612"
 定义自定义附加属性与自定义依赖属性的主要区别在定义访问器或包装器的方式上。 并不使用[自定义依赖属性](custom-dependency-properties.md)中介绍的包装器技术，你还必须提供静态的 **Get**_PropertyName_ 和 **Set**_PropertyName_ 方法作为附加属性的访问器。 访问器多数供 XAML 分析器使用，但任何其他调用方也可以使用它们来设置非 XAML 场景中的值。
 
 > [!IMPORTANT]
-> 如果未正确定义访问器，则 XAML 处理器无法访问附加属性，尝试使用它的任何人都可能会收到 XAML 分析器错误。 此外，设计和编码工具通常依赖于在引用的程序集中遇到自定义依赖属性时，使用 @no__t "0Property" 约定来命名标识符。
+> 如果未正确定义访问器，则 XAML 处理器无法访问附加属性，尝试使用它的任何人都可能会收到 XAML 分析器错误。 此外，设计和编码工具通常依赖于在引用的程序集中遇到自定义依赖属性时命名标识符的 "\*属性" 约定。
 
 ## <a name="accessors"></a>访问器
 
@@ -213,7 +213,7 @@ GameService::RegisterDependencyProperties() {
 
 定义附加属性并将它的支持成员包含在一个自定义类型中后，你必须让这些定义可供 XAML 使用。 为此，你必须映射一个 XAML 命名空间，它将引用其中包含相关类的代码命名空间。 如果在一个库中定义了附加属性，必须将该库包含在应用的应用程序包中。
 
-XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 例如，对于命名空间 `UserAndCustomControls` 中有一个名为 `GameService` 的类，它包含前面代码段中所示的附加属性定义，映射类似于这样。
+XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 例如，对于命名空间 `GameService` 中有一个名为 `UserAndCustomControls` 的类，它包含前面代码段中所示的附加属性定义，映射类似于这样。
 
 ```xaml
 <UserControl
@@ -228,14 +228,14 @@ XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 
 <Image uc:GameService.IsMovable="True" .../>
 ```
 
-如果在一个元素上设置附加属性并且该元素包含在同一个映射的 XML 命名空间中，则必须在附加属性名称中包含该前缀。 这是因为该前缀限定了所有者类型。 不能假设附加属性的特性与包含该特性的元素位于相同的 XML 命名空间中，尽管按照正常的 XML 规则，特性可从元素继承命名空间。 例如，如果在一种自定义类型 `ImageWithLabelControl`（未给出定义）上设置 `GameService.IsMovable`，即使二者都在映射到同一个前缀的同一个代码命名空间中定义，XAML 仍将是这样的。
+如果在一个元素上设置附加属性并且该元素包含在同一个映射的 XML 命名空间中，则必须在附加属性名称中包含该前缀。 这是因为该前缀限定了所有者类型。 不能假设附加属性的特性与包含该特性的元素位于相同的 XML 命名空间中，尽管按照正常的 XML 规则，特性可从元素继承命名空间。 例如，如果在一种自定义类型 `GameService.IsMovable`（未给出定义）上设置 `ImageWithLabelControl`，即使二者都在映射到同一个前缀的同一个代码命名空间中定义，XAML 仍将是这样的。
 
 ```xaml
 <uc:ImageWithLabelControl uc:GameService.IsMovable="True" .../>
 ```
 
 > [!NOTE]
-> 如果要使用C++/CX 编写 XAML UI，则必须包含定义附加属性的自定义类型的标头，无论 XAML 页何时使用该类型。 每个 XAML 页都具有关联的代码隐藏标头（.xaml .h）。 你应在此中包括（使用 **@no__t 1include**）附加属性的所有者类型定义的标头。
+> 如果要使用C++/CX 编写 XAML UI，则必须包含定义附加属性的自定义类型的标头，无论 XAML 页何时使用该类型。 每个 XAML 页都具有关联的代码隐藏标头（.xaml .h）。 你应在此中包括（使用 **\#包含**）附加属性的所有者类型定义的标头。
 
 ## <a name="setting-your-custom-attached-property-imperatively-with-cwinrt"></a>通过C++/WinRT 强制设置自定义附加属性
 
@@ -264,7 +264,7 @@ MainPage::MainPage()
 
 ## <a name="value-type-of-a-custom-attached-property"></a>自定义附加属性的值类型
 
-用作自定义附加属性的值类型的类型会影响附加属性使用、定义或同时影响二者。 附加属性的值类型在多个位置声明：在 **Get** 和 **Set** 访问器方法的签名中，以及作为 [**RegisterAttached**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.registerattached) 调用的 *propertyType* 参数。
+用作自定义附加属性的值类型的类型会影响附加属性使用、定义或同时影响二者。 附加属性的值类型在多个位置声明：在 **Get** 和 **Set** 访问器方法的签名中，以及作为RegisterAttached[**调用的**propertyType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.registerattached) 参数。
 
 附加属性（无论是否为自定义的）最常用的值类型是一个简单字符串。 这是因为附加属性一般用作 XAML 特性，并且使用一个字符串作为值类型可保持属性的简单性。 可本地转换为字符串方法的其他原语（例如整型、双精度或枚举值）也是常用的附加属性值类型。 你可以使用其他值类型，不支持本地字符串转换的类型作为附加属性值。 但是，这需要选择是使用还是实现：
 
@@ -275,7 +275,7 @@ MainPage::MainPage()
 
 在先前的附加属性用法示例中，我们显示了几种用来设置 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 附加属性的方法。 但是，这对于 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 与你的对象的交互方式有何更改，这是在何时发生的？ 我们将在这个特定示例中深入介绍，原因在于：如果你实现了一个附加属性，则会发现一个有趣的情况，那就是当典型的附加属性所有者类在其他对象上发现了它的附加属性值时，它应当会对这些值进行处理。
 
-[  **Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 的主要功能是成为 UI 中具有绝对位置的布局容器。 **Canvas** 的子项存储在由基类定义的 [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children) 属性中。 在所有的面板中，**Canvas** 是唯一一个使用绝对位置的面板。 如果在添加属性时仅关注 **Canvas**，或者在 **UIElement** 作为 **UIElement** 的子元素的特定情况下，该面板中会充斥着常见 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 类的对象模型。 将 **Canvas** 的布局控件属性定义为可由任何 **UIElement** 用来使对象模型更简洁的附加属性。
+[  **Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 的主要功能是成为 UI 中具有绝对位置的布局容器。 **Canvas** 的子项存储在由基类定义的 [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children) 属性中。 在所有的面板中，**Canvas** 是唯一一个使用绝对位置的面板。 如果在添加属性时仅关注 [Canvas **，或者在** UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 作为 **UIElement** 的子元素的特定情况下，该面板中会充斥着常见UIElement 类的对象模型。 将 **Canvas** 的布局控件属性定义为可由任何 **UIElement** 用来使对象模型更简洁的附加属性。
 
 为了成为实际的面板，[**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 具有可替代框架级 [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) 和 [**Arrange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) 方法的行为。 **Canvas** 就是在这里实际检查其子项上的附加属性值。 **Measure** 和 **Arrange** 模式的一部分就是一个遍历任何内容的循环，一个面板具有 [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children) 属性，通过该属性可以明确假设被视为面板子项的内容。 因此，**Canvas** 布局行为会循环访问这些子项，并针对每个子项进行静态 [**Canvas.GetLeft**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.getleft) 和 [**Canvas.GetTop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.gettop) 调用，查看这些附加属性是否包含非默认值（默认值为 0）。 之后，系统将使用这些值，按照由每个子项提供的特定值将每个子项以绝对位置方式放置到 **Canvas** 中的可用布局空间中。然后系统将使用 **Arrange** 提交这些值。
 

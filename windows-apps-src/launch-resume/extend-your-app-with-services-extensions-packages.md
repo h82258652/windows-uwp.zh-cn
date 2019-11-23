@@ -1,5 +1,5 @@
 ---
-title: 使用服务、扩展和包扩展你的应用
+title: 用服务、扩展和包扩展应用
 description: 介绍如何创建在更新通用 Windows 平台（UWP）应用程序时运行的后台任务。
 ms.date: 05/07/2018
 ms.topic: article
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/31/2019
 ms.locfileid: "73329511"
 ---
-# <a name="extend-your-app-with-services-extensions-and-packages"></a>使用服务、扩展和包扩展你的应用
+# <a name="extend-your-app-with-services-extensions-and-packages"></a>用服务、扩展和包扩展应用
 
 Windows 10 中提供了许多用于扩展和 componentizing 应用的技术。 此表可帮助你根据需要确定应该使用哪种技术。 后面是方案和技术的简要说明。
 

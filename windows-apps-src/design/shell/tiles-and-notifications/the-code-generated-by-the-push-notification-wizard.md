@@ -42,7 +42,7 @@ var <mobile-service-name>Client = new Microsoft.WindowsAzure.MobileServices.Mobi
 ## <a name="registration-for-push-notifications"></a>推送通知注册
 
 
-In push.register.\*, the UploadChannel method registers the device to receive push notifications. 应用商店将跟踪应用的已安装实例，并提供推送通知通道。 请参阅 [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager)。
+In register。\*，UploadChannel 方法会注册设备以接收推送通知。 应用商店将跟踪应用的已安装实例，并提供推送通知通道。 请参阅 [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager)。
 
 对于 JavaScript 后端和 .NET 后端，客户端代码是类似的。 默认情况下，当你为 JavaScript 后端服务添加推送通知时，对 notifyAllUsers 自定义 API 的示例调用将插入到 UploadChannel 方法中。
 
@@ -207,7 +207,7 @@ function sendNotifications(request) {
 
 sendNotifications 函数发送 toast 通知形式的单一通知。 你还可以使用其他类型的推送通知。
 
-**Tip**  For information about how to get help while editing scripts, see [Enabling IntelliSense for server-side JavaScript](https://blogs.msdn.com/b/visualstudio/archive/2013/07/26/enabling-intellisense-for-mobile-services-javascript-in-visual-studio.aspx).
+**提示**  有关在编辑脚本时如何获取帮助的信息，请参阅为[服务器端 JavaScript 启用 IntelliSense](https://blogs.msdn.com/b/visualstudio/archive/2013/07/26/enabling-intellisense-for-mobile-services-javascript-in-visual-studio.aspx)。
 
  
 
@@ -233,7 +233,7 @@ Toast 通知易于使用，你可以在为你生成的通道表的 Insert.js 代
 
 你还可以通过在移动服务中运行计划的任务来发送推送通知。 请参阅[在移动服务中计划定期作业](https://azure.microsoft.com/documentation/articles/mobile-services-schedule-recurring-tasks/)。
 
-**Warning**  Once you've run the push notification wizard once, don't run the wizard a second time to add registration code for another mobile service. 针对每个项目多次运行该向导会生成导致对 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法的重叠调用的代码，从而导致运行时异常。 如果你要为多个移动服务注册推送通知，请运行该向导一次，然后重新编写该注册代码以确保对 **CreatePushNotificationChannelForApplicationAsync** 的调用不会同时运行。 For example, you can accomplish this by moving the wizard-generated code in push.register.\* (including the call to **CreatePushNotificationChannelForApplicationAsync**) outside of the OnLaunched event, but the specifics of this will depend on your app's architecture.
+**警告**  一旦你运行了一次推送通知向导，就不要再次运行向导来为另一移动服务添加注册代码。 针对每个项目多次运行该向导会生成导致对 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法的重叠调用的代码，从而导致运行时异常。 如果你要为多个移动服务注册推送通知，请运行该向导一次，然后重新编写该注册代码以确保对 **CreatePushNotificationChannelForApplicationAsync** 的调用不会同时运行。 例如，你可以通过将向导生成的代码移到 register 来实现此目的。在 OnLaunched 事件外\* （包括对**CreatePushNotificationChannelForApplicationAsync**的调用），但这具体取决于你的应用程序的体系结构。
 
  
 
@@ -242,9 +242,9 @@ Toast 通知易于使用，你可以在为你生成的通道表的 Insert.js 代
 
 * [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)
 * [原始通知概述](raw-notification-overview.md)
-* [Connecting to Windows Azure Mobile Services (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263160(v=win.10))
-* [Connecting to Windows Azure Mobile Services (C#/C++/VB)](https://docs.microsoft.com/previous-versions/windows/apps/dn263175(v=win.10))
-* [Quickstart: Adding push notifications for a mobile service (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263163(v=win.10))
+* [连接到 Windows Azure 移动服务（JavaScript）](https://docs.microsoft.com/previous-versions/windows/apps/dn263160(v=win.10))
+* [连接到 Windows Azure 移动服务（C#/C++/VB）](https://docs.microsoft.com/previous-versions/windows/apps/dn263175(v=win.10))
+* [快速入门：添加移动服务的推送通知（JavaScript）](https://docs.microsoft.com/previous-versions/windows/apps/dn263163(v=win.10))
  
 
  

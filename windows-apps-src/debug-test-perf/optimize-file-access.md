@@ -196,7 +196,7 @@ ms.locfileid: "71339590"
 
 在读取或写入较大的数据集时，你可以通过为 [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0)、[**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0) 和 [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0) 扩展方法提供较大的缓冲区大小来提高读取或写入吞吐量。 这将为数据流适配器提供较大的内部缓冲区大小。 例如，将来自大型文件的数据流传递给 XML 分析程序时，分析程序可以从数据流中执行多个连续的小读取操作。 大型缓冲区可以减少对基础 UWP 流的调用次数并提高性能。
 
-> **请注意**   如果设置的缓冲区大小大于大约 80 KB，应小心，因为这可能会导致垃圾回收器堆上出现碎片（请参阅[提高垃圾回收性能](improve-garbage-collection-performance.md)）。 以下代码示例创建具有 81,920 个字节缓冲区的托管流适配器。
+> **请注意**   设置大于 80 KB 的缓冲区大小时应小心，因为这可能会导致垃圾回收器堆上出现碎片（请参阅[提高垃圾回收性能](improve-garbage-collection-performance.md)）。 以下代码示例创建具有 81,920 个字节缓冲区的托管流适配器。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

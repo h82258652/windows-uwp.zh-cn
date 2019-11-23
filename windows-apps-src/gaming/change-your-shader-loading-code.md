@@ -36,16 +36,16 @@ Direct3D 11 图形管道由 [**ID3D11DeviceContext1**](https://docs.microsoft.co
 -   [输入装配器阶段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage)。 输入装配器阶段为管道提供数据（三角形、直线和点）。 支持此阶段的[**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)方法以 "IA" 为前缀。
 -   [顶点着色器阶段](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85)) - 顶点着色器阶段处理顶点，通常执行诸如转换、换肤以及照明之类的操作。 顶点着色器始终获取一个输入顶点并生成一个输出顶点。 支持此阶段的[**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)方法以 "VS" 为前缀。
 -   [流输出阶段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-stream-stage) - 流输出阶段将管道中的基元数据沿着到光栅器的路线流到内存中。 数据可以流出和/或传递到光栅器中。 流出到内存的数据可以作为输入数据再次循环回到管道，或者从 CPU 读回。 支持此阶段的[**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)方法以 "SO" 为前缀。
--   [光栅器阶段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage) - 光栅器剪辑基元，为像素着色器准备基元并确定如何调用像素着色器。 可以通过以下方式禁用光栅化：指示管道没有像素着色器（将像素着色器阶段设置为 NULL， [**ID3D11DeviceContext：:P ssetshader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader)），禁用深度和模具测试（将 DepthEnable 和 StencilEnable 设置为 FALSE [**D3D11 @ no__t-4DEPTH @ no__t-5STENCIL @ no__t-6DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_depth_stencil_desc)）。 禁用后，与光栅化有关的管道计数器将无法更新。
+-   [光栅器阶段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage) - 光栅器剪辑基元，为像素着色器准备基元并确定如何调用像素着色器。 您可以通过以下方式禁用光栅化：指示管道没有像素着色器（将 "像素着色器" 阶段设置为 "NULL"， [**ID3D11DeviceContext:P： "** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader)"），并禁用深度和模具测试（在[**D3D11\_DEPTH\_\_模具**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_depth_stencil_desc)中将 DepthEnable 和 StencilEnable 设置为 FALSE）。 禁用后，与光栅化有关的管道计数器将无法更新。
 -   [像素着色器阶段](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85)) - 像素着色器阶段接收基元的插值数据并生成每像素数据，如颜色。 支持此阶段的[**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)方法以 "PS" 为前缀。
 -   [输出合并器阶段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage) - 输出合并器阶段将各种类型的输出数据（像素着色器值、深度和模具信息）与呈现器目标的内容以及深度/模具缓冲区组合在一起，以生成最终的管道结果。 支持此阶段的[**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)方法以 "OM" 为前缀。
 
-（还可以使用几何着色器、凸着色器、tesselators 和域着色器的阶段，但由于它们在 OpenGL ES 2.0 中没有物，因此我们不会在此处讨论它们。）有关这些阶段的方法的完整列表，请参阅[**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)和[**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)参考页。 **ID3D11DeviceContext1** 扩展了 Direct3D 11 的 **ID3D11DeviceContext**。
+（还有针对几何图形着色器、外壳着色器、曲面细分以及域着色器的阶段，但由于在 OpenGL ES 2.0 中这些阶段没有类似内容，因此我们不会在这里讨论它们。）有关适用于这些阶段的方法的完整列表，请参阅 [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) 和 [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 参考页面。 **ID3D11DeviceContext1** 扩展了 Direct3D 11 的 **ID3D11DeviceContext**。
 
 ## <a name="creating-a-shader"></a>创建着色器
 
 
-在 Direct3D 中，在编译和加载着色器资源之前不会创建着色器资源，而是在加载 HLSLis 时创建该资源。 因此，不存在对 glCreateShader 的直接类似函数，这将创建特定类型的已初始化着色器资源（如总帐 @ no__t-0VERTEX @ no__t-1SHADER 或总帐 @ no__t-2FRAGMENT @ no__t-3SHADER）。 着色器是在使用特定的函数（如 [**ID3D11Device1::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) 和 [**ID3D11Device1::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader)）加载 HLSL 之后创建的，并且采用类型和编译的 HLSL 作为参数。
+在 Direct3D 中，在编译和加载着色器资源之前不会创建着色器资源，而是在加载 HLSLis 时创建该资源。 因此，不存在对 glCreateShader 的直接类似函数，这会创建特定类型的已初始化着色器资源（如总帐\_顶点\_着色器或总帐\_着色器\_片段）。 着色器是在使用特定的函数（如 [**ID3D11Device1::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) 和 [**ID3D11Device1::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader)）加载 HLSL 之后创建的，并且采用类型和编译的 HLSL 作为参数。
 
 | OpenGL ES 2.0  | Direct3D 11                                                                                                                                                                                                                                                             |
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -56,7 +56,7 @@ Direct3D 11 图形管道由 [**ID3D11DeviceContext1**](https://docs.microsoft.co
 ## <a name="compiling-a-shader"></a>编译着色器
 
 
-Direct3D 着色器必须预编译为通用 Windows 平台（UWP）应用中的已编译的着色器对象（cso）文件，并使用其中一个 Windows 运行时文件 Api 进行加载。 （桌面应用程序可以在运行时从文本文件或字符串编译着色器。）CSO 文件是从 Microsoft Visual Studio 项目中包含的任何 hlsl 文件生成的，并保留相同的名称，但仅使用 CSO 文件扩展名。 请确保交付你的程序包时附带这些文件！
+Direct3D 着色器必须预编译为通用 Windows 平台（UWP）应用中的已编译的着色器对象（cso）文件，并使用其中一个 Windows 运行时文件 Api 进行加载。 （桌面应用可以在运行时通过文本文件或字符串来编译着色器。）CSO 文件通过隶属于 Microsoft Visual Studio 项目的任何 .hlsl 文件生成，文件名相同，只是文件的扩展名为 .cso。 请确保交付你的程序包时附带这些文件！
 
 | OpenGL ES 2.0                          | Direct3D 11                                                                                                                                                                   |
 |----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -90,7 +90,7 @@ OpenGL ES 2.0 具有“着色器程序”对象，该对象包含多个用于执
 
  
 
-使用静态的 [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 方法创建 [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 和 [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_2/nn-d3d11_2-id3d11device2) 的实例。
+使用静态的 [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 方法创建 [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_2/nn-d3d11_2-id3d11device2) 和 [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 的实例。
 
 ``` syntax
 Microsoft::WRL::ComPtr<ID3D11Device1>          m_d3dDevice;
@@ -115,9 +115,9 @@ D3D11CreateDevice(
 ## <a name="setting-the-viewports"></a>设置视区
 
 
-在 Direct3D 11 中设置视口与在 OpenGL ES 2.0 中设置视口的方法非常相似。 在 Direct3D 11 中，使用配置的[**CD3D11 @ no__t-4VIEWPORT**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/jj151722(v=vs.85))调用[**ID3D11DeviceContext：： RSSetViewports**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetviewports) 。
+在 Direct3D 11 中设置视口与在 OpenGL ES 2.0 中设置视口的方法非常相似。 在 Direct3D 11 中，使用已配置的[**CD3D11\_视区**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/jj151722(v=vs.85))调用[**ID3D11DeviceContext：： RSSetViewports**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetviewports) 。
 
-Direct3D 11：设置视区。
+Direct3D 11：设置视口。
 
 ``` syntax
 CD3D11_VIEWPORT viewport(
@@ -131,7 +131,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 | OpenGL ES 2.0 | Direct3D 11                                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| glViewport    | [**CD3D11 @ no__t-2VIEWPORT**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/jj151722(v=vs.85))， [ **ID3D11DeviceContext：： RSSetViewports**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetviewports) |
+| glViewport    | [**CD3D11\_视口**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/jj151722(v=vs.85))， [ **ID3D11DeviceContext：： RSSetViewports**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetviewports) |
 
  
 
@@ -168,7 +168,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 | OpenGL ES 2.0  | Direct3D 11                                                                                                                                                                                                                                         |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| glDrawElements | [**ID3D11DeviceContext1：:D raw**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw)， [**ID3D11DeviceContext1：:D rawindexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) （或其他[**上的**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)方法）。 |
+| glDrawElements | [**ID3D11DeviceContext1：:D raw**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw)， [**ID3D11DeviceContext1：:D rawindexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) （或其他[**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)上的\* 方法绘制）。 |
 | eglSwapBuffers | [**IDXGISwapChain1::Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1)                                                                                                                                                                              |
 
  
@@ -181,7 +181,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 | 着色器语言           | GLSL 功能版本                                                                                                                                                                                                      | Direct3D 着色器模型 |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
 | Direct3D 11 HLSL          | ~4.30。                                                                                                                                                                                                                    | SM 5.0                |
-| GLSL ES for OpenGL ES 2.0 | 1.40。 GLSL ES for OpenGL ES 2.0 的旧实现可能会使用 1.10 至 1.30。 通过 glGetString （GL @ no__t-0SHADING @ no__t-1LANGUAGE @ no__t-2VERSION）或 glGetString （底纹 @ no__t-3LANGUAGE @ no__t-4VERSION）检查原始代码，以确定它。 | ~SM 2.0               |
+| GLSL ES for OpenGL ES 2.0 | 1.40。 GLSL ES for OpenGL ES 2.0 的旧实现可能会使用 1.10 至 1.30。 通过 glGetString （GL\_底纹\_LANGUAGE\_版本）或 glGetString （底纹\_语言\_版本）检查原始代码，以确定它。 | ~SM 2.0               |
 
  
 
@@ -190,21 +190,21 @@ m_d3dContext->RSSetViewports(1, &viewport);
 ## <a name="porting-the-opengl-intrinsics-to-hlsl-semantics"></a>将 OpenGL 内部函数移植到 HLSL 语义
 
 
-Direct3D 11 HLSL 语义是用来标识在应用和着色器程序之间传递的值的字符串，如 uniform 或属性名称。 尽管它们可以是任何类型的字符串，但最好使用指示用法的字符串，如 POSITION 或 COLOR。 在构造常量缓冲区或缓冲区输入布局时分配这些语义。 也可以为语义中附加一个介于 0 和 7 之间的数字，以便你可以为相似的值使用不同的寄存器。 例如：COLOR0、COLOR1、COLOR2 。
+Direct3D 11 HLSL 语义是用来标识在应用和着色器程序之间传递的值的字符串，如 uniform 或属性名称。 尽管它们可以是任何类型的字符串，但最好使用指示用法的字符串，如 POSITION 或 COLOR。 在构造常量缓冲区或缓冲区输入布局时分配这些语义。 也可以为语义中附加一个介于 0 和 7 之间的数字，以便你可以为相似的值使用不同的寄存器。 例如：COLOR0、COLOR1、COLOR2...
 
-前缀为 "SV @ no__t-0" 的语义是由着色器程序写入的系统值语义;应用本身（在 CPU 上运行）无法修改它们。 通常，它们的值为图形管道中其他着色器阶段的输入或输出，或者完全由 GPU 生成。
+带有 "SV\_" 前缀的语义是由着色器程序写入的系统值语义;应用本身（在 CPU 上运行）无法修改它们。 通常，它们的值为图形管道中其他着色器阶段的输入或输出，或者完全由 GPU 生成。
 
-此外，当 SV @ no__t-0 语义用于指定着色器阶段的输入或输出时，它们具有不同的行为。 例如，SV @ no__t-0POSITION （output）包含在顶点着色器阶段转换的顶点数据，SV @ no__t-1POSITION （input）包含在光栅化过程中插值的像素位置值。
+此外，当 SV\_ 语义用于指定着色器阶段的输入或输出时，它们具有不同的行为。 例如，SV\_位置（输出）包含在顶点着色器阶段转换的顶点数据，SV\_POSITION （input）包含在光栅化过程中插值的像素位置值。
 
 下面是常用的 OpenGL ES 2.0 着色器内部函数的几个映射：
 
 | OpenGL 系统值 | 使用此 HLSL 语义                                                                                                                                                   |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 总帐 @ no__t-0Position        | POSITION(n) 针对顶点缓冲区数据。 SV @ no__t-0POSITION 提供像素着色器的像素位置，并且应用程序不能写入。                                        |
-| 总帐 @ no__t-0Normal          | NORMAL(n) 针对由顶点缓冲区提供的普通数据。                                                                                                                 |
-| 总帐 @ no__t-0TexCoord @ no__t-1n @ no__t-2   | TEXCOORD(n) 针对提供给着色器的纹理 UV（在某些 OpenGL 文档中为 ST）坐标数据。                                                                       |
-| 总帐 @ no__t-0FragColor       | COLOR(n) 针对提供给着色器的 RGBA 颜色数据。 请注意，处理方式与坐标数据相同；语义只是帮助你确定它是颜色数据。 |
-| 总帐 @ no__t-0FragData @ no__t-1n @ no__t-2   | SV @ no__t-0Target @ no__t-1n @ no__t-2，将像素着色器写入目标纹理或其他像素缓冲区。                                                                               |
+| 总帐\_位置        | POSITION(n) 针对顶点缓冲区数据。 SV\_POSITION 提供像素着色器的像素位置，并且不能由您的应用程序编写。                                        |
+| 总帐\_正常          | NORMAL(n) 针对由顶点缓冲区提供的普通数据。                                                                                                                 |
+| 总帐\_TexCoord\[n\]   | TEXCOORD(n) 针对提供给着色器的纹理 UV（在某些 OpenGL 文档中为 ST）坐标数据。                                                                       |
+| 总帐\_FragColor       | COLOR(n) 针对提供给着色器的 RGBA 颜色数据。 请注意，处理方式与坐标数据相同；语义只是帮助你确定它是颜色数据。 |
+| 总帐\_FragData\[n\]   | SV\_目标\[n\] 用于从像素着色器写入目标纹理或其他像素缓冲区。                                                                               |
 
  
 
@@ -239,7 +239,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-在这种情况下，SV @ no__t-0TARGET 是呈现器目标的位置，在着色器完成执行时，像素颜色（定义为具有四个浮点值的矢量）将写入该目标。
+在这种情况下，SV\_TARGET 是指在着色器完成执行时，将像素颜色（定义为具有四个浮点值的矢量）的呈现目标的位置。
 
 有关 Direct3D 的语义使用的详细信息，请阅读 [HLSL 语义](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)。
 

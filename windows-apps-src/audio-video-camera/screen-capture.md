@@ -37,7 +37,7 @@ ms.locfileid: "71339764"
 
 ## <a name="launch-the-system-ui-to-start-screen-capture"></a>启动系统 UI 以开始捕获屏幕
 
-在启动系统 UI 前，可以检查应用程序当前是否能够捕获屏幕。 有多种原因可能导致应用程序无法使用屏幕捕获，如设备不符合硬件要求，或要对其实施屏幕捕获的应用程序会阻止屏幕捕获。 使用 [GraphicsCaptureSession](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturesession) 类中的 **IsSupported** 方法来确定是否支持 UWP 屏幕捕获：
+在启动系统 UI 前，可以检查应用程序当前是否能够捕获屏幕。 有多种原因可能导致应用程序无法使用屏幕捕获，如设备不符合硬件要求，或要对其实施屏幕捕获的应用程序会阻止屏幕捕获。 使用 **GraphicsCaptureSession** 类中的 [IsSupported](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturesession) 方法来确定是否支持 UWP 屏幕捕获：
 
 ```cs
 // This runs when the application starts.
@@ -59,7 +59,7 @@ Public Sub OnInitialization()
 End Sub
 ```
 
-验证并确定支持屏幕捕获后，使用 [GraphicsCapturePicker](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturepicker) 类调用系统选取器 UI。 最终用户使用此 UI 选择要对其实施屏幕捕获的屏幕或应用程序窗口。 选取器会返回将用于创建 **GraphicsCaptureSession** 的 [GraphicsCaptureItem](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscaptureitem)：
+验证并确定支持屏幕捕获后，使用 [GraphicsCapturePicker](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturepicker) 类调用系统选取器 UI。 最终用户使用此 UI 选择要对其实施屏幕捕获的屏幕或应用程序窗口。 选取器会返回将用于创建 [GraphicsCaptureSession](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscaptureitem) 的 **GraphicsCaptureItem**：
 
 ```cs
 public async Task StartCaptureAsync()
@@ -113,7 +113,7 @@ Await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
 
 ## <a name="create-a-capture-frame-pool-and-capture-session"></a>创建捕获帧池和捕获会话
 
-使用**GraphicsCaptureItem**，你将创建一个[Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) ，其中包含 D3D 设备、受支持的像素格式（**DXGI @ no__t-3FORMAT @ no__t-4B8G8R8A8 @ no__t-5UNORM**）、所需帧数（可以是任何整数））和帧大小。 **GraphicsCaptureItem** 类的 **ContentSize** 属性可以用作帧的大小：
+使用**GraphicsCaptureItem**，你将使用 D3D 设备创建[Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) 、支持的像素格式（**DXGI\_格式\_B8G8R8A8\_UNORM**）、所需帧数（可以是任何整数）和帧大小。 **GraphicsCaptureItem** 类的 **ContentSize** 属性可以用作帧的大小：
 
 ```cs
 private GraphicsCaptureItem _item;
@@ -224,7 +224,7 @@ End Sub
 
 应用程序不应将引用保存到 **Direct3D11CaptureFrame** 对象，也不应在重新签入帧之后将引用保存到基础 Direct3D 图面。
 
-处理帧时，建议应用程序在与 **Direct3D11CaptureFramePool** 对象关联的相同设备上采用 [ID3D11Multithread](https://docs.microsoft.com/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11multithread) 锁定。
+处理帧时，建议应用程序在与 [Direct3D11CaptureFramePool](https://docs.microsoft.com/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11multithread) 对象关联的相同设备上采用 **ID3D11Multithread** 锁定。
 
 基础 Direct3D 图面始终为创建（或重新创建）**Direct3D11CaptureFramePool** 时所指定的大小。 如果内容超过帧的大小，内容将剪裁为帧的大小。 如果内容小于帧的大小，帧的剩余部分会包含未定义的数据。 建议应用程序使用 **ContentSize** 属性为该 **Direct3D11CaptureFrame** 拷贝出一个 sub-rect，以避免显示未定义的内容。
 
@@ -259,7 +259,7 @@ using (var fileStream = await file.OpenAsync(FileAccessMode.ReadWrite))
 
 ## <a name="putting-it-all-together"></a>整合到一起
 
-下面的代码段是如何在 UWP 应用程序中实现屏幕捕获的端到端示例。 在此示例中，前端有两个按钮：一个调用**Button_ClickAsync**，另一个调用**ScreenshotButton_ClickAsync**。
+下面的代码段是如何在 UWP 应用程序中实现屏幕捕获的端到端示例。 在此示例中，前端有两个按钮：一个调用**Button_ClickAsync**，其他调用**ScreenshotButton_ClickAsync**。
 
 > [!NOTE]
 > 此代码片段使用[Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)，这是用于2d 图形呈现的库。 有关如何为项目设置的信息，请参阅相关文档。
@@ -688,6 +688,6 @@ End Class
 
 如果要录制应用程序的视频，可以使用[AppRecording 命名空间](https://docs.microsoft.com/uwp/api/windows.media.apprecording)来更轻松地执行此操作。 这是桌面扩展 SDK 的一部分，因此它仅适用于桌面，并要求你从项目中添加对它的引用。 有关详细信息，请参阅[设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 * [Windows. Graphics. 捕获命名空间](https://docs.microsoft.com/uwp/api/windows.graphics.capture)

@@ -22,7 +22,7 @@ ms.locfileid: "71339859"
 
 你需要使用 UI 线程进行几乎所有对 UI 线程的更改，包括创建 UI 类型以及访问其成员。 无法从后台线程更新 UI，但可以使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 向其发布消息以使代码在该处运行。
 
-> **请注意**  The 一种例外情况是，有一个单独的呈现线程可以应用 UI 更改，而不会影响输入的处理方式或基本布局。 例如，许多不会影响布局的动画和过渡都可以在此呈现线程上运行。
+> **请注意**  一个例外情况是，有一个单独的呈现线程可以应用 UI 更改，而不会影响输入的处理方式或基本布局。 例如，许多不会影响布局的动画和过渡都可以在此呈现线程上运行。
 
 ## <a name="delay-element-instantiation"></a>延迟元素实例化
 
@@ -41,7 +41,7 @@ ms.locfileid: "71339859"
 
 编写事件处理程序以便快速返回。 在需要执行大量工作的情况下，将工作安排在后台线程并返回。
 
-你可以使用 C# 中的 **await** 运算符、Visual Basic 中的 **Await** 运算符或 C++ 中的委托异步安排工作。 但这并不保证你安排的工作将在后台线程上运行。 许多通用 Windows 平台 (UWP) API 将为你在后台线程中安排工作，但如果你仅使用 **await** 或某个委托调用你的应用代码，请在 UI 线程上运行该委托或方法。 你必须明确指出希望何时在后台线程上运行你的应用代码。 在C#和中 Visual Basic 可以通过将代码传递到任务来完成此[任务。运行](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run)。
+你可以使用 C# 中的 **await** 运算符、Visual Basic 中的 **Await** 运算符或 C++ 中的委托异步安排工作。 但这并不保证你安排的工作将在后台线程上运行。 许多通用 Windows 平台 (UWP) API 将为你在后台线程中安排工作，但如果你仅使用 **await** 或某个委托调用你的应用代码，请在 UI 线程上运行该委托或方法。 你必须明确指出希望何时在后台线程上运行你的应用代码。 在C#和中 Visual Basic 可以通过将代码传递到任务来完成此[**任务。运行**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run)。
 
 请记住，可能只能从 UI 线程访问 UI 元素。 先使用 UI 线程访问 UI 元素，再启动后台工作，并且/或者在后台线程上使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 或 [**CoreDispatcher.RunIdleAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runidleasync)。
 
@@ -101,7 +101,7 @@ public class AsyncExample
 
 在此示例中，`NextMove_Click` 处理程序将在 **await** 返回，以便保持 UI 线程有响应。 但在 `ComputeNextMove`（在后台线程上执行）完成后，执行过程将再次调用该处理程序。 该处理程序中的其余代码将使用结果更新 UI。
 
-> **请注意**  There's 也是 UWP 的[**ThreadPool**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPool)和[**windows.system.threading.threadpooltimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer) API，可用于类似的方案。 有关详细信息，请参阅[线程和异步编程](https://docs.microsoft.com/windows/uwp/threading-async/index)。
+> **请注意**  UWP 还有一个[**ThreadPool**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPool)和[**windows.system.threading.threadpooltimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer) API，可用于类似的方案。 有关详细信息，请参阅[线程和异步编程](https://docs.microsoft.com/windows/uwp/threading-async/index)。
 
 ## <a name="related-topics"></a>相关主题
 

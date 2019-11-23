@@ -53,7 +53,7 @@ ms.locfileid: "72282518"
 ### <a name="span-idconverting_from_a_lower_range_representation_to_a_higher_range_representationspanspan-idconverting_from_a_lower_range_representation_to_a_higher_range_representationspanspan-idconverting_from_a_lower_range_representation_to_a_higher_range_representationspanconverting-from-a-lower-range-representation-to-a-higher-range-representation"></a><span id="Converting_from_a_lower_range_representation_to_a_higher_range_representation"></span><span id="converting_from_a_lower_range_representation_to_a_higher_range_representation"></span><span id="CONVERTING_FROM_A_LOWER_RANGE_REPRESENTATION_TO_A_HIGHER_RANGE_REPRESENTATION"></span>从较低范围的表示形式转换为更高的范围表示形式
 
 -   如果在上限范围格式中可用，下限范围格式中的 NaN 将转换为上限范围格式中的 NaN 表示形式。 如果上限范围格式没有 NaN 表示形式，将转换为 0。
--   如果在上限范围格式中可用，下限范围格式中的 INF 将转换为上限范围格式中的 INF 表示形式。 如果较高的格式没有 INF 表示形式，则会将其转换为最大值表示形式（最大 @ no__t-0FLOAT，格式为）。 如果在目标格式中可用，将保留符号。
+-   如果在上限范围格式中可用，下限范围格式中的 INF 将转换为上限范围格式中的 INF 表示形式。 如果较高的格式没有 INF 表示形式，则会将其转换为最大值可表示的值（最大\_浮点格式）。 如果在目标格式中可用，将保留符号。
 -   如果可能，下限范围格式中的 Denrom 将转换为上限范围格式中的标准化表示形式，否则，如果存在 Denorm 表示形式，则将转换为上限范围格式中的 Denorm 表示形式。 如果上限范围格式没有 Denorm 表示形式，它将转换为 0。 如果在目标格式中可用，将保留符号。 注意，32 位浮点数记为没有 Denorm 表示形式的格式（因为 32 位浮点中操作的 Denorm 刷新为保留 0 的符号）。
 
 ## <a name="span-idinteger_conversionspanspan-idinteger_conversionspanspan-idinteger_conversionspaninteger-conversion"></a><span id="Integer_Conversion"></span><span id="integer_conversion"></span><span id="INTEGER_CONVERSION"></span>整数转换
@@ -170,7 +170,7 @@ ms.locfileid: "72282518"
 <tr class="odd">
 <td align="left">SINT</td>
 <td align="left">位数更多的 UINT</td>
-<td align="left"><p>若要用更多位从圣马丁转换为 UINT：如果为负数，则将值限制为0。 否则，将数字复制到目标格式的 LSB，且其他 MSB 用 0 填充。</p></td>
+<td align="left"><p>要从 SINT 转换为位数更多的 UINT：如果为负，则将值固定为 0。 否则，将数字复制到目标格式的 LSB，且其他 MSB 用 0 填充。</p></td>
 </tr>
 <tr class="even">
 <td align="left">UINT</td>
