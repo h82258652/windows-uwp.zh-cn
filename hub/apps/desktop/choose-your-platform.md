@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 桌面开发
-ms.openlocfilehash: c931991c283bb0b31f55c3e5539eac5ddeda9575
-ms.sourcegitcommit: cf88f5e8e1de476ed2635e791a5e5e82ae4bd8cf
+ms.openlocfilehash: d0d87f8e4b6524471ff5e2ada9012a22641b06d7
+ms.sourcegitcommit: ddf0137929945eddf01041a81aa4d26038e70f46
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74056854"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74392094"
 ---
 # <a name="choose-your-app-platform"></a>选择应用平台
 
@@ -69,7 +69,8 @@ Windows 窗体是用于托管型 Windows 应用程序的原始平台，具有一
 有关 Windows 窗体的详细信息，请参阅以下文章：
 
 * [Windows 窗体入门](https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms)
-* [创建你的第一个应用](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
+* [创建第一个 Windows 窗体应用](/dotnet/framework/winforms/creating-a-new-windows-form)
+* [教程：创建图片查看器](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
 * [API 参考 (.NET)](https://docs.microsoft.com/dotnet/api/index)
 * [增强 Windows 窗体应用](/dotnet/framework/winforms/advanced/)
 
