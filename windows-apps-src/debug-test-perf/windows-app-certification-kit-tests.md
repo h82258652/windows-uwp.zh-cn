@@ -128,7 +128,7 @@ Windows 应用可注册一个在后台运行的进程。 例如，电子邮件�
 
 ### <a name="corrective-action"></a>更正操作
 
-针对[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述的要求检查应用清单。
+针对[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述的要求检查应用部件清单 (manifest)。
 
 ## <a name="windows-security-features-test"></a>Windows 安全功能测试
 
@@ -172,7 +172,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 属性可以从签名程序集中�
 
 不要使用强命名程序集上的 APTCA 属性，除非你的项目需要它且已充分了解风险。 为防不时之需，请确保所有 API 都在相应的代码访问安全性要求下受到了保护。 当程序集包含在通用 Windows 平台 (UWP) 应用中时，APTCA 不会生效。
 
-**注释**
+**备注**
 
 仅在托管代码（C#、.NET 等）上执行此测试。
 
@@ -186,7 +186,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 属性可以从签名程序集中�
 
 生成应用时，在链接器命令中启用 /SAFESEH 选项。 默认情况下，此选项处于打开状态（位于 Visual Studio 的“发布”配置中）。 确认在生成指令中为应用中的所有可执行模块启用了此选项。
 
-**注释**
+**备注**
 
 不在 64 位二元文件或 ARM 芯片集二元文件上执行此测试，因为它们不将异常处理程序地址存储在堆栈上。
 
@@ -200,7 +200,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 属性可以从签名程序集中�
 
 生成应用时，在链接器命令中启用 /NXCOMPAT 选项。 默认情况下，此选项在支持数据执行保护 (DEP) 的链接器版本中处于打开状态。
 
-**注释**
+**备注**
 
 我们建议，在支持 DEP 的 CPU 上测试你的应用，并修复你发现的由于 DEP 所导致的任何故障。
 
@@ -214,7 +214,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 属性可以从签名程序集中�
 
 在生成应用时，在链接器命令中启用 /DYNAMICBASE 选项。 验证你的应用使用的所有模块也使用此链接器选项。
 
-**注释**
+**备注**
 
 通常，ASLR 不影响性能。 但在某些情况下，在 32 位系统上有少许的性能改进。 原因可能是，在许多不同内存位置加载许多映像的高拥堵系统中，性能可能会降级。
 
@@ -230,7 +230,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 属性可以从签名程序集中�
 
 从应用中删除任何共享节，使用合适的安全属性调用 [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) 或 [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) 来创建共享内存对象，然后重新生成你的应用。
 
-**注释**
+**备注**
 
 此测试仅在使用非托管语言（如使用 C 或 C++）编写的应用上执行。
 
@@ -246,7 +246,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 如果托管的可执行文件未通过测试，请确保使用最新的编译器和链接器（如 Microsoft Visual Studio）来生成 UWP 应用。
 
-**注释**
+**备注**
 
 此测试在所有 .exe 文件和非托管 DLL 上执行。
 
@@ -260,7 +260,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 不要将导入表合并到可执行代码节中。 确保 Visual C++ 链接器的 */merge* 标记未设置为将“.rdata”节合并到代码节中。
 
-**注释**
+**备注**
 
 此测试在除纯粹的托管程序集以外的所有二进制代码上执行。
 
@@ -274,7 +274,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 请确保二进制文件中没有可写或可执行的部分，并且该二进制文件的*SectionAlignment*值至少等于其*页\-大小*。
 
-**注释**
+**备注**
 
 此测试在所有 .exe 文件和本机非托管 DLL 上执行。
 
@@ -284,7 +284,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 ### <a name="private-code-signing"></a>私有代码签名
 
-测试应用程序包中是否存在私有代码签名二进制文件。
+测试应用包中是否存在私有代码签名二进制文件。
 
 ### <a name="background"></a>背景
 
@@ -325,7 +325,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 为了提供快速而流畅的用户体验，应用必须迅速响应用户交互和系统命令。
 
-执行测试的计算机的特性会影响测试结果。 设置应用认证的性能测试阈值，以便低能耗计算机能够满足客户快速流畅的体验预期。 为了确定你的应用性能，我们建议你在低能耗计算机上测试应用，例如基于 Intel Atom 处理器的计算机，屏幕分辨率为 1366x768（或更高），旋转硬盘驱动器（相对于固态硬盘驱动器）。
+执行测试的计算机的属性会影响测试结果。 设置应用认证的性能测试阈值，以便低能耗计算机能够满足客户快速流畅的体验预期。 为了确定你的应用性能，我们建议你在低能耗计算机上测试应用，例如基于 Intel Atom 处理器的计算机，屏幕分辨率为 1366x768（或更高），旋转硬盘驱动器（相对于固态硬盘驱动器）。
 
 ### <a name="bytecode-generation"></a>字节码的生成
 

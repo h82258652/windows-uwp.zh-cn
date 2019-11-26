@@ -15,7 +15,7 @@ ms.locfileid: "74258990"
 ---
 # <a name="resolve-submission-errors"></a>解决提交错误
 
-如果将应用提交到应用商店后遇到错误，必须解决这些错误才能继续进行[认证过程](the-app-certification-process.md)。 错误消息将指示问题所在以及为解决该问题而需要执行的操作。 下面是一些可帮助你解决这些错误的其他信息。
+如果将应用提交到应用商店后遇到错误，必须解决这些错误才能继续进行[认证过程](the-app-certification-process.md)。 错误消息将指示问题所在，以及为解决该问题而可能需要执行的操作。 下面是一些可帮助你解决这些错误的其他信息。
 
 ## <a name="uwp-apps"></a>UWP 应用
 

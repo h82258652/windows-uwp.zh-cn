@@ -1,5 +1,5 @@
 ---
-Description: Learn about receiving payments for your apps, add-ons (in-app products), and advertising earnings.
+Description: 了解如何为应用、外接程序（应用内产品）和广告收益接收付款。
 title: 获取付款
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 ms.date: 03/05/2019
@@ -14,10 +14,10 @@ ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259996"
 ---
 # <a name="getting-paid"></a>获取付款
-Here’s some important info about receiving payment for your apps, add-ons, and advertising earnings.
+下面是有关接收应用、外接程序和广告收益的付款的重要信息。
 
 > [!IMPORTANT]
-> Before you can receive money from app sales in the Microsoft Store, you need to [set up your payout account and fill out the necessary tax forms](setting-up-your-payout-account-and-tax-forms.md).
+> 在从 Microsoft Store 中的应用销售额获得资金之前，你需要[设置你的帐户，并填写所需的税务形式](setting-up-your-payout-account-and-tax-forms.md)。
 
 ## <a name="store-fee"></a>应用商店费用
 
@@ -46,7 +46,7 @@ Microsoft Store 费用适用于通过 Microsoft Store 收到的所有应用销�
 
 ## <a name="payout-reporting"></a>付款报告
 
-You can access details about your payment info and download reports in the **Payout summary** of [Partner Center](https://partner.microsoft.com/dashboard). 有关此处显示的信息和我们如何对你的收入进行归类的详细信息，请参阅[付款摘要](payout-summary.md)。
+您可以访问有关您的付款信息的详细信息，并在[合作伙伴中心](https://partner.microsoft.com/dashboard)的 "费用**摘要**" 中下载报表。 有关此处显示的信息和我们如何对你的收入进行归类的详细信息，请参阅[付款摘要](payout-summary.md)。
 
 
 ## <a name="payout-timeframe"></a>付款时限
@@ -56,14 +56,14 @@ You can access details about your payment info and download reports in the **Pay
 
 ##  <a name="payout-hold-status"></a>付款暂停状态
 
-默认情况下，我们将每月发送付款，如上所述。 However, you have the option to put your payouts for a program on hold, which will prevent us from sending payments to your account. 如果你选择暂停付款，我们将继续记录你所赚取的所有收入，并在你的**付快摘要**中提供详细信息。 但是，在你删除暂停前，我们不会向你的帐户发送任何付款。
+默认情况下，我们将每月发送付款，如上所述。 不过，你可以选择将你的付款放入程序，这会阻止我们向你的帐户发送付款。 如果你选择暂停付款，我们将继续记录你所赚取的所有收入，并在你的**付快摘要**中提供详细信息。 但是，在你删除暂停前，我们不会向你的帐户发送任何付款。
 
-To place your payments on hold, go to **Developer settings**. Under **Payout and tax**, in the **Payout and tax profile assignment** section, locate the program for which you would like payments held. Click the **Hold my Payment** checkbox to hold payments for this program. 你可以随时更改你的付款暂停状态，但请注意，你的决定将影响下一次每月付款。 例如，如果你希望暂停四月的付款，请确保在三月结束前将付款暂停状态设置为 **“开”** 。
+若要按保留付款，请参阅**开发人员设置**。 在 "费用**和税金**" 下，在 "**支出和税务配置文件分配**" 部分中，找到要支付的付款计划。 单击 "**保留我的付款**" 复选框，以保留此计划的付款。 你可以随时更改你的付款暂停状态，但请注意，你的决定将影响下一次每月付款。 例如，如果你希望暂停四月的付款，请确保在三月结束前将付款暂停状态设置为 **“开”** 。
 
-Once you have set your payout hold status to **On**, all payouts for this program will be on hold until you toggle the slider back to **Off**. 当执行此操作时，将在下一个每月付款周期期间包含你（前提是已达到任何适用的付款阈值）。 例如，如果你已暂停付款，但希望在 6 月生成一个付款，则请确保在 5 月结束前将付款暂停状态切换为 **“关”** 。
+将 "支出保留" 状态设置为 **"打开**" 后，该程序的所有付款都将处于暂停状态，直到将滑块切换回 "**关闭**"。 当执行此操作时，将在下一个每月付款周期期间包含你（前提是已达到任何适用的付款阈值）。 例如，如果你已暂停付款，但希望在 6 月生成一个付款，则请确保在 5 月结束前将付款暂停状态切换为 **“关”** 。
 
 > [!NOTE]
-> Your **Payout hold status** applies to each program individually (Microsoft Store, advertising, Azure Marketplace, etc.). If you wish to hold payments on all of your programs, you must hold payments on each program individually.
+> **付出的支出状态**分别适用于每个节目（Microsoft Store、广告、Azure Marketplace 等）。 如果希望在所有程序上保留付款，则必须分别在每个节目上保存付款。
 
 
  

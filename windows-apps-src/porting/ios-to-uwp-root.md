@@ -24,14 +24,14 @@ ms.locfileid: "74260161"
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/How-to-Convert-your-iOS-app-to-Windows/player]
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
-| [Selecting an approach to iOS and UWP app development](selecting-an-approach-to-ios-and-uwp-app-development.md) | 在开发跨平台应用时，应如何选择？ |
-| [Getting started with UWP for iOS developers](getting-started-with-uwp-for-ios-developers.md) | 如果你是考虑为 Windows 10 进行开发的 iOS 开发人员，这些文档会是很好的入门文档。 |
-| [Setting up your Mac with Windows 10](setting-up-your-mac-with-windows-10.md) | 使用当前的 Mac 计算机开发 Windows 应用。 |
+| [选择 iOS 和 UWP 应用开发的方法](selecting-an-approach-to-ios-and-uwp-app-development.md) | 在开发跨平台应用时，应如何选择？ |
+| [适用于 iOS 开发人员的 UWP 入门](getting-started-with-uwp-for-ios-developers.md) | 如果你是考虑为 Windows 10 进行开发的 iOS 开发人员，这些文档会是很好的入门文档。 |
+| [通过 Windows 10 设置 Mac](setting-up-your-mac-with-windows-10.md) | 使用当前的 Mac 计算机开发 Windows 应用。 |
 
 ## <a name="related-topics"></a>相关主题
 
-**For designers and developers**
-* [Building Universal Windows apps for all Windows devices](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-* [Download design assets for UWP apps](https://docs.microsoft.com/windows/uwp/design/downloads/index)
+**面向设计人员和开发人员**
+* [构建适用于所有 Windows 设备的通用 Windows 应用程序](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+* [下载 UWP 应用的设计资产](https://docs.microsoft.com/windows/uwp/design/downloads/index)

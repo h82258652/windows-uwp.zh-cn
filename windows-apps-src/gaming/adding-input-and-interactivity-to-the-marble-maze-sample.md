@@ -324,7 +324,7 @@ case GameState::InGamePaused:
 
 ### <a name="tracking-touch-and-mouse-input"></a>跟踪触摸和鼠标输入
 
-对于触摸和鼠标输入，用户可通过触摸或单击一个菜单项来选择它。 下面的示例展示了 **MarbleMazeMain::Update** 方法如何处理指针输入来选择菜单项。 The **m\_pointQueue** member variable tracks the locations where the user touched or clicked on the screen. Marble Maze 收集指针输入的方式将在本文档后面[处理指针输入](#processing-pointer-input)一节中详细介绍。
+对于触摸和鼠标输入，用户可通过触摸或单击一个菜单项来选择它。 下面的示例展示了 **MarbleMazeMain::Update** 方法如何处理指针输入来选择菜单项。 **M\_pointQueue**成员变量跟踪用户在屏幕上接触或单击的位置。 Marble Maze 收集指针输入的方式将在本文档后面[处理指针输入](#processing-pointer-input)一节中详细介绍。
 
 ```cpp
 // Check whether the user chose a button from the UI. 
@@ -541,7 +541,7 @@ if ((oppositeSquared + adjacentSquared) > m_deadzoneSquared)
 
 ###  <a name="applying-input-to-the-game-state"></a>将输入应用到游戏状态
 
-设备以不同方式报告输入值。 例如，指针输入可能采用屏幕坐标格式，而控制器输入可能采用完全不同的格式。 将来自多台设备的输入组合到一组输入值中的一项挑战是标准化，或者将值转换为通用格式。 Marble Maze normalizes values by scaling them to the range \[-1.0, 1.0\]. **PointToTouch** 函数（本节前面已介绍）将屏幕坐标转换为大体在 -1.0 与 +1.0 之间的规范化值。
+设备以不同方式报告输入值。 例如，指针输入可能采用屏幕坐标格式，而控制器输入可能采用完全不同的格式。 将来自多台设备的输入组合到一组输入值中的一项挑战是标准化，或者将值转换为通用格式。 大理石迷宫通过将值缩放到 \[-1.0，1.0\]的范围来规范化值。 **PointToTouch** 函数（本节前面已介绍）将屏幕坐标转换为大体在 -1.0 与 +1.0 之间的规范化值。
 
 > [!TIP]
 > 即使你的应用程序仅使用一种输入方法，我们也建议你始终规范输入值。 执行此操作可简化游戏的其他组件如何解释输入（例如力学模拟），以及使编写适用于不同屏幕分辨率的游戏更容易。
@@ -613,9 +613,9 @@ if (marblePosition.z >= resetDepth)
 ## <a name="related-topics"></a>相关主题
 
 
-* [Adding audio to the Marble Maze sample](adding-audio-to-the-marble-maze-sample.md)
-* [Adding visual content to the Marble Maze sample](adding-visual-content-to-the-marble-maze-sample.md)
-* [Developing Marble Maze, a UWP game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [向大理石迷宫示例添加音频](adding-audio-to-the-marble-maze-sample.md)
+* [向大理石迷宫示例中添加视觉内容](adding-visual-content-to-the-marble-maze-sample.md)
+* [开发大理石迷宫，其中的 UWP 游戏C++和 DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

@@ -17,7 +17,7 @@ ms.locfileid: "74259700"
 # <a name="raw-notification-overview"></a>原始通知概述
 
 
-原始通知是简短的通用推送通知。 原始通知有严格的指令，不包含 UI 组件。 与其他推送通知一样，Windows 推送通知服务 (WNS) 功能提供从云服务到应用的原始通知。
+原始通知是简短的通用推送通知。 它们完全是说明性的，并且不包含 UI 组件。 与其他推送通知一样，Windows 推送通知服务 (WNS) 功能提供从云服务到应用的原始通知。
 
 你可以将原始通知用于各种用途，其中包括触发应用以运行后台任务（如果用户已给予如此操作的应用权限）。 通过使用 WNS 与应用通信，可以避免创建持久的套接字连接、发送 HTTP GET 消息以及其他服务到应用连接的处理开销。
 
@@ -36,7 +36,7 @@ ms.locfileid: "74259700"
 所有原始通知都是推送通知。 因此，发送和接收推送通知所需的设置也适用于原始通知：
 
 -   必须具有有效的 WNS 通道才能发送原始通知。 有关获取推送通知通道的详细信息，请参阅[如何请求、创建和保存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))。
--   必须在应用的清单中包含 **Internet** 功能。 在 Microsoft Visual Studio 清单编辑器中，你可以在“功能”选项卡下看到此选项，即“Internet (客户端)”。 有关详细信息，请参阅[**功能**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities)。
+-   必须在应用的清单中包含 **Internet** 功能。 在 Microsoft Visual Studio 清单编辑器中，你可以在**功能**选项卡下看到此选项，即 **Internet (客户端)** 。 有关详细信息，请参阅[**功能**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities)。
 
 通知的正文采用应用定义的格式。 客户端收到只需应用理解的以 null 终止的字符串 (**HSTRING**) 形式的数据。
 
@@ -106,7 +106,7 @@ ms.locfileid: "74259700"
 1.  通过使用 [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_) 请求在后台运行任务的权限（用户可以随时吊销这些任务）。
 2.  实现后台任务。 有关详细信息，请参阅[通过使用后台任务支持应用](../../../launch-resume/support-your-app-with-background-tasks.md)
 
-随后，在每次接收你的应用的原始通知时，都会调用后台任务以响应 [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)。 后台任务解释原始通知的应用特定的负载并对其进行操作。
+此后，在每次接收到应用的原始通知时，都会调用后台任务以响应 [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)。 后台任务解释原始通知的应用特定的负载并对其进行操作。
 
 对于每个应用，一次只能运行一个后台任务。 如果为已在运行后台任务的应用触发后台任务，则必须先完成第一个后台任务，然后才能运行新的后台任务。
 

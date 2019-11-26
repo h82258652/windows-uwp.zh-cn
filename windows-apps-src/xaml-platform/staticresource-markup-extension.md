@@ -18,7 +18,7 @@ ms.locfileid: "74259847"
 
 通过计算对一个已定义资源的引用，为任何 XAML 属性提供一个值。 资源在 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中定义，而 **StaticResource** 用法则在 **ResourceDictionary** 中引用该资源的键。
 
-## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性用法
 
 ``` syntax
 <object property="{StaticResource key}" .../>
@@ -26,9 +26,9 @@ ms.locfileid: "74259847"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 术语 | 描述 |
+| 术语 | 说明 |
 |------|-------------|
-| 键 | 所请求资源的键。 此键最初通过 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 分配。 资源键可以是以 XamlName 语法定义的任何字符串。 |
+| 密钥 | 所请求资源的键。 此键最初通过 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 分配。 资源键可以是以 XamlName 语法定义的任何字符串。 |
 
 ## <a name="remarks"></a>备注
 

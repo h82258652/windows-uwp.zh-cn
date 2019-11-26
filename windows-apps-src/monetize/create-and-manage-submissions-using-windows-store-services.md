@@ -52,7 +52,7 @@ ms.locfileid: "74260316"
 
   * 如果你要创建或更新应用提交并需要包括应用包，请事先[准备应用包](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)。
 
-  * 如果你要创建或更新应用提交并需要包括应用商店一览的屏幕截图或图像，请事先[准备应用屏幕截图和图像](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images)。
+  * 如果你要创建或更新应用提交并需要包括 Store 一览的屏幕截图或图像，请事先[准备应用屏幕截图和图像](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images)。
 
   * 如果你要创建或更新加载项提交并需要包括图标，请事先[准备图标](https://docs.microsoft.com/windows/uwp/publish/create-iap-descriptions)。
 
@@ -60,7 +60,7 @@ ms.locfileid: "74260316"
 
 ### <a name="how-to-associate-an-azure-ad-application-with-your-partner-center-account"></a>如何将 Azure AD 应用程序与合作伙伴中心帐户关联
 
-使用 Microsoft Store 提交 API 之前，必须将 Azure AD 应用程序与合作伙伴中心帐户相关联，检索应用程序的租户 ID 和客户端 ID，并生成一个密钥。 Azure AD 应用程序是指你想要从中调用 Microsoft Store 提交 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
+使用 Microsoft Store 提交 API 之前，必须将 Azure AD 应用程序与合作伙伴中心帐户相关联，检索应用程序的租户 ID 和客户端 ID，并生成一个密钥。 Azure AD 应用程序是指你想要从中调用 Microsoft Store 提交 API 的应用或服务。 你需要租户 ID、客户端 ID 和密钥以获取传递给 API 的 Azure AD 访问令牌。
 
 > [!NOTE]
 > 你只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
@@ -71,7 +71,7 @@ ms.locfileid: "74260316"
 
 3.  返回到**用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
 
-4. 单击**添加新密钥**。 在接下来的屏幕上，记下“密钥”值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[管理 Azure AD 应用程序的密钥](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
+4. 单击**添加新密钥**。 在接下来的屏幕上，记下**密钥**值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[管理 Azure AD 应用程序的密钥](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
 
 <span id="obtain-an-azure-ad-access-token" />
 
@@ -94,7 +94,7 @@ grant_type=client_credentials
 
 对于 POST URI 中的*租户\_id*值和客户端 *\_id*和*客户端\_机密*参数，为你在上一节中的合作伙伴中心检索的应用程序指定租户 id、客户端 id 和密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
 
-在你的访问令牌到期后，可以按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
+在你的访问令牌到期后，你可按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
 
 对于演示如何使用 C#、Java 或 Python 代码获取访问令牌的示例，请参阅 Microsoft Store 提交 API [代码示例](#code-examples)。
 
@@ -102,12 +102,12 @@ grant_type=client_credentials
 
 ## <a name="step-3-use-the-microsoft-store-submission-api"></a>步骤 3：使用 Microsoft Store 提交 API
 
-获取 Azure AD 访问令牌后，可以在 Microsoft Store 提交 API 中调用方法。 API 中包含的许多方法按照所适用的应用、加载项和软件包外部测试版方案进行分组。 若要创建或更新提交，一般需在 Microsoft Store 提交 API 中按特定顺序调用多个方法。 有关每个方案和每个方法的语法的信息，请参阅下表中的文章。
+获取 Azure AD 访问令牌后，可以在 Microsoft Store 提交 API 中调用方法。 该 API 中包含的许多方法按照所适用的应用、加载项和软件包外部测试版方案进行分组。 若要创建或更新提交，一般需在 Microsoft Store 提交 API 中按特定顺序调用多个方法。 有关每个方案和每个方法的语法的信息，请参阅下表中的文章。
 
 > [!NOTE]
 > 获取访问令牌后，在令牌到期前，你有 60 分钟时间可以调用 Microsoft Store 提交 API 中的方法。
 
-| 方案       | 描述                                                                 |
+| 方案       | 说明                                                                 |
 |---------------|----------------------------------------------------------------------|
 | 应用 |  检索注册到合作伙伴中心帐户的所有应用的数据，并创建应用的提交。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[获取应用数据](get-app-data.md)</li><li>[管理应用提交](manage-app-submissions.md)</li></ul> |
 | 加载项 | 获取、创建或删除应用的加载项，然后获取、创建或删除这些加载项的提交。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[管理加载项](manage-add-ons.md)</li><li>[管理加载项提交](manage-add-on-submissions.md)</li></ul> |

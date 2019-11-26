@@ -32,7 +32,7 @@ XAML 编译时， **{x:Bind}** 将转换为从数据源上的某一属性中获�
 -   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)
 -   [XAML UI 基础示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
 
-## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性用法
 
 ``` syntax
 <object property="{x:Bind}" .../>
@@ -46,7 +46,7 @@ XAML 编译时， **{x:Bind}** 将转换为从数据源上的某一属性中获�
 <object property="{x:Bind pathToFunction.functionName(functionParameter1, functionParameter2, ...), bindingProperties}" .../>
 ```
 
-| 术语 | 描述 |
+| 术语 | 说明 |
 |------|-------------|
 | _propertyPath_ | 一个指定绑定的属性路径的字符串。 下面的[属性路径](#property-path)部分中提供了更多信息。 |
 | _bindingProperties_ |
@@ -88,7 +88,7 @@ XAML 编译时， **{x:Bind}** 将转换为从数据源上的某一属性中获�
 使用 **x:Bind** 时，无需将 **ElementName=xxx** 用作绑定表达式的一部分。 相反，你可以使用元素的名称作为绑定路径的第一部分，因为命名元素成为表示根绑定源的页或用户控件中的字段。 
 
 
-### <a name="collections"></a>集合
+### <a name="collections"></a>集锦
 
 如果数据源是一个集合，则属性路径可以按照位置或索引来指定集合中的项目。 例如，"团队\[0\]。扮演者 "，其中文本"\[\]"包含请求零索引集合中第一项的" 0 "。
 
@@ -133,7 +133,7 @@ _注意： C#-样式强制转换语法比附加的属性语法更为灵活，并
 
 这些属性的工作方式与 [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding) 类的属性的工作方式大体相同。
 
-| 属性 | 描述 |
+| 属性 | 说明 |
 |----------|-------------|
 | **Path** | 请参阅上面的[属性路径](#property-path)部分。 |
 | **转换器** | 指定绑定引擎所调用的转换器对象。 转换器可以在 XAML 中设置，但仅限于你引用你在对资源字典中的该对象的 [{StaticResource} 标记扩展](staticresource-markup-extension.md)引用中分配的对象实例。 |

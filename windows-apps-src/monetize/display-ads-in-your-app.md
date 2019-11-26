@@ -15,7 +15,7 @@ ms.locfileid: "74260323"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft 广告 SDK 在你的应用中显示广告
 
-通过使用 Microsoft 广告 SDK 将广告放入面向 Windows 10 的通用 Windows 平台 (UWP) 应用中，增加收入机会。 Our ad monetization platform offers a variety of ad formats that can be seamlessly integrated into your apps and supports mediation with many popular ad networks. 我们的平台符合 OpenRTB、VAST 2.x、MRAID 2 和 VPAID 3 标准，并与 MOAT 和 IAS 兼容。 
+通过使用 Microsoft 广告 SDK 将广告放入面向 Windows 10 的通用 Windows 平台 (UWP) 应用中，增加收入机会。 我们的 ad 盈利平台提供各种 ad 格式，这些格式可无缝集成到你的应用中，并支持包含许多流行 ad 网络的采集。 我们的平台符合 OpenRTB、VAST 2.x、MRAID 2 和 VPAID 3 标准，并与 MOAT 和 IAS 兼容。 
 
 <br/>
 
@@ -32,23 +32,23 @@ ms.locfileid: "74260323"
 <tr>
 <td align="left"><img src="images/install-sdk.png" alt="Install SDK icon" /></td>
 <td align="left"><b>开始使用</b><br/><br/>
-    <a href="https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK">Install the Microsoft Advertising SDK</a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK">安装 MICROSOFT ADVERTISING SDK</a>
 </td>
 <td align="left"><img src="images/write-code.png" alt="Develop icon" /></td>
-<td align="left"><b>Developer guides</b><br/><br/>
-    <a href="banner-ads.md">Banner ads</a>
+<td align="left"><b>开发人员指南</b><br/><br/>
+    <a href="banner-ads.md">横幅广告</a>
     <br/>
-    <a href="interstitial-ads.md">Interstitial ads</a>
+    <a href="interstitial-ads.md">插播式广告</a>
     <br/>
-    <a href="native-ads.md">Native ads</a>
+    <a href="native-ads.md">本机广告</a>
     </td>
 <td align="left"><img src="images/api-reference.png" alt="API ref icon" /></td>
-<td align="left"><b>Other resources</b><br/><br/>
-    <a href="set-up-ad-units-in-your-app.md">Set up ad units in your app</a>
+<td align="left"><b>其他资源</b><br/><br/>
+    <a href="set-up-ad-units-in-your-app.md">在应用中设置 ad 单位</a>
     <br/>
-    <a href="best-practices-for-ads-in-apps.md">Best practices</a>
+    <a href="best-practices-for-ads-in-apps.md">最佳做法</a>
     <br/>
-    <a href="https://docs.microsoft.com/uwp/api/overview/advertising">API reference</a>
+    <a href="https://docs.microsoft.com/uwp/api/overview/advertising">API 参考</a>
     </td>
 </tr>
 </tbody>
@@ -90,7 +90,7 @@ Microsoft 广告 SDK 提供了你可以在应用中使用的多种不同类型�
 
 ## <a name="step-3-create-an-ad-unit-and-configure-mediation"></a>步骤 3：创建广告单元和配置中介
 
-After you finish testing your app and you are ready to submit it to the Store, create an ad unit on the [In-app ads](../publish/in-app-ads.md) page in Partner Center. 然后，更新应用代码以使用此广告单元，从而使你的应用能够接收实时广告。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
+完成应用测试后，可以将其提交到应用商店，请在合作伙伴中心的[应用内广告](../publish/in-app-ads.md)页上创建一个 ad 单元。 然后，更新应用代码以使用此广告单元，从而使你的应用能够接收实时广告。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
 默认情况下，你的应用将显示来自 Microsoft 付费广告网络的广告。 若要最大化广告收益，可以为广告单元启用[广告中介](ad-mediation-service.md)，以显示来自其他付费广告网络（如 Taboola 和 Smaato）的广告。 你还可以通过在 Microsoft 应用促销活动中提供广告服务，来提高你的应用推广能力。
 
@@ -98,9 +98,9 @@ After you finish testing your app and you are ready to submit it to the Store, c
 
 ## <a name="step-4-submit-your-app-and-review-performance"></a>步骤 4：提交你的应用并查看性能
 
-After you finish developing your app with ads, you can [submit your updated app](https://docs.microsoft.com/windows/uwp/publish/app-submissions) in Partner Center to make it available in the Store. 显示广告的应用必须满足 [Microsoft Store 政策的 10.10 部分](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)和[应用开发人员协议的附录 E](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) 中指定的其他要求。
+完成使用广告开发应用后，可以在合作伙伴中心[提交更新的应用](https://docs.microsoft.com/windows/uwp/publish/app-submissions)，使其在商店中可用。 显示广告的应用必须满足 [Microsoft Store 政策的 10.10 部分](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)和[应用开发人员协议的附录 E](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) 中指定的其他要求。
 
-After your app is published and available in the Store, you can review your [advertising performance reports](../publish/advertising-performance-report.md) in Partner Center and continue to make changes to your mediation settings to optimize the performance of your ads. 广告收入包含在你的[支出汇总](../publish/payout-summary.md)中。
+在应用程序发布并在应用商店中可用后，可以在合作伙伴中心查看[广告性能报告](../publish/advertising-performance-report.md)，并继续对你的中介设置进行更改，以优化广告的性能。 广告收入包含在你的[支出汇总](../publish/payout-summary.md)中。
 
 <span id="additional-help" />
 
@@ -123,4 +123,4 @@ After your app is published and available in the Store, you can review your [adv
 
 * [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
 * [广告效果报告](../publish/advertising-performance-report.md)
-* [Windows Premium Ads Publishers Program](windows-premium-ads-publishers-program.md)
+* [Windows 高级广告出版商计划](windows-premium-ads-publishers-program.md)

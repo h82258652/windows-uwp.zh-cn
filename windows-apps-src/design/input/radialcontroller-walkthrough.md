@@ -38,7 +38,7 @@ Dial 支持三种基本手势：
 - 旋转以突出显示菜单项（如果菜单处于活动状态）或在应用中修改当前操作（如果菜单处于非活动状态）。
 - 单击以选择突出显示的菜单项（如果菜单处于活动状态）或在应用中调用命令（如果菜单处于非活动状态）。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 * 运行 Windows 10 创意者更新或更高版本的计算机（或虚拟机）
 * [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
@@ -85,7 +85,7 @@ Dial 支持三种基本手势：
 
 这些对象为 UWP 应用提供大部分滚轮设备体验。
 
-| Component | 描述 |
+| 组件 | 说明 |
 | --- | --- |
 | [ **RadialController**类](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)和相关 | 表示滚轮输入设备或附件，例如 Surface Dial。 |
 | [**IRadialControllerConfigurationInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) / [ **IRadialControllerInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>我们不在这里介绍此功能，有关详细信息，请参阅 [Windows 经典桌面示例](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController)。 | 通过 UWP 应用支持互操作性。 |

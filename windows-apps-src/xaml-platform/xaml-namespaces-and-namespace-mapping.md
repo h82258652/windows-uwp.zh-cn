@@ -16,7 +16,7 @@ ms.locfileid: "74258714"
 # <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 命名空间和命名空间映射
 
 
-本主题将介绍大部分 XAML 文件的根元素中存在的 XML/XAML 命名空间 (**xmlns**) 映射。 它还将介绍如何为自定义类型和程序集生成类似的映射。
+本主题介绍大多数 XAML 文件的根元素中用到的 XML/XAML 命名空间 (**xmlns**) 映射。 它还将介绍如何为自定义类型和程序集生成类似的映射。
 
 ## <a name="how-xaml-namespaces-relate-to-code-definition-and-type-libraries"></a>XAML 命名空间如何与代码定义和类型库相关
 
@@ -104,7 +104,7 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 
 ### <a name="vsm"></a>**vsm**
 
-不使用。 “vsm:”是有时在从其他 Microsoft 技术导入的较老 XAML 模板中会看到的一个前缀。 该命名空间最初解决了旧版命名空间工具问题。 你应该在用于 Windows 运行时的任何 XAML 中删除“vsm:”的 XAML 命名空间定义，更改 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState)、[**VisualStateGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateGroup) 和相关对象的任何前缀的用法，从而使用默认的 XAML 命名空间。 有关 XAML 迁移的详细信息，请参阅[将 Silverlight 或 WPF XAML/代码迁移到 Windows 运行时应用](https://docs.microsoft.com/previous-versions/windows/apps/br229571(v=win.10))。
+请勿使用。 “vsm:”是有时在从其他 Microsoft 技术导入的较老 XAML 模板中会看到的一个前缀。 该命名空间最初解决了旧版命名空间工具问题。 你应该在用于 Windows 运行时的任何 XAML 中删除“vsm:”的 XAML 命名空间定义，更改 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState)、[**VisualStateGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateGroup) 和相关对象的任何前缀的用法，从而使用默认的 XAML 命名空间。 有关 XAML 迁移的详细信息，请参阅[将 Silverlight 或 WPF XAML/代码迁移到 Windows 运行时应用](https://docs.microsoft.com/previous-versions/windows/apps/br229571(v=win.10))。
 
 ## <a name="mapping-custom-types-to-xaml-namespaces-and-prefixes"></a>将自定义类型映射到 XAML 命名空间和前缀
 

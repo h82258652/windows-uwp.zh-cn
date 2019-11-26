@@ -70,7 +70,7 @@ ms.locfileid: "74258541"
 
 -   [介绍 Win2D：采用 C# 的 DirectX 支持的图形](https://channel9.msdn.com/Events/Build/2015/2-631) – Simon Tao
 -   [ANGLE：在 Windows 上运行 OpenGL ES 2.0 图形代码](https://channel9.msdn.com/Events/Build/2015/3-686) – Tony Balogh
--   [DirectX 12 高级图形和性能](https://channel9.msdn.com/Events/Build/2015/3-673) – Max McMullen
+-   [DirectX 12 高级图形和性能](https://channel9.msdn.com/Events/Build/2015/3-673) - Max McMullen
 
 ## <a name="other-resources"></a>其他资源
 

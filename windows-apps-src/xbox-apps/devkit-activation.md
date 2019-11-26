@@ -38,13 +38,13 @@ Xbox One 具有两种模式，即*零售* 模式 (**1**) 和*开发人员* 模�
 
     ![激活步骤 5](images/activation-step-5.png)  
     
-5.  [Register an app developer account in Partner Center](https://developer.microsoft.com/store/register).  This is also the first step towards publishing your game.
+5.  [在合作伙伴中心注册应用开发人员帐户](https://developer.microsoft.com/store/register)。  这也是发布游戏的第一步。
 
-6.  Sign in to [Partner Center](https://partner.microsoft.com/dashboard) with your valid, current Partner Center app developer account.  If you don't see multiple options in the left hand navigation pane, or don't see the **Create a new app** option in the **Overview** section, the following steps and activation links _will not work_; make sure you fully registered your app developer account from the previous step.
+6.  通过有效的当前合作伙伴中心应用开发者帐户登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。  如果左侧导航窗格中未显示多个选项，或者在 "**概述**" 部分中看不到 "**创建新应用**" 选项，以下步骤和激活链接_将无法工作_;请确保已完全注册了上一步中的应用开发人员帐户。
 
-7.  Go to [partner.microsoft.com/xboxconfig/devices](https://partner.microsoft.com/xboxconfig/devices).
+7.  请参阅[partner.microsoft.com/xboxconfig/devices](https://partner.microsoft.com/xboxconfig/devices)。
 
-8.  输入“开发人员模式激活”应用中显示的激活代码。 与你的帐户关联的激活次数有限制。 After Developer Mode has been activated, Partner Center will indicate you have used one of the activations associated with your account.
+8.  输入“开发人员模式激活”应用中显示的激活代码。 与你的帐户关联的激活次数有限制。 激活开发人员模式后，合作伙伴中心将指示你已使用与你的帐户关联的某个激活。
 
     ![激活步骤 8](images/activation-step-8-rs2.png)    
     
@@ -68,5 +68,5 @@ Xbox One 具有两种模式，即*零售* 模式 (**1**) 和*开发人员* 模�
   ![激活步骤 14](images/activation-step-12.png)  
 
 ## <a name="see-also"></a>另请参阅
-- [Xbox One Developer Mode deactivation](devkit-deactivation.md)
-- [UWP on Xbox One](index.md)
+- [Xbox One 开发人员模式停用](devkit-deactivation.md)
+- [Xbox one 上的 UWP](index.md)

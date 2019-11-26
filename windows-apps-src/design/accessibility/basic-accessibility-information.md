@@ -29,7 +29,7 @@ ms.locfileid: "74257775"
 
 下表描述了如何为 XAML UI 中各种类型的元素定义或获取辅助名称。
 
-| 元素类型 | 描述 |
+| 元素类型 | 说明 |
 |--------------|-------------|
 | 静态文本 | 对于 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 元素，辅助名称是从可见（内部）文本自动确定的。 该元素中所有文本都用作其名称。 请参阅[根据内部文本命名](#name_from_inner_text)。 |
 | 图像 | XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 元素没有对 **img** 和类似元素的 HTML **alt** 属性的直接模拟。 使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 提供名称，或者使用描述技术。 请参阅[图像的辅助名称](#images)。 |

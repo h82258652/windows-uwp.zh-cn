@@ -1,5 +1,5 @@
 ---
-title: 常见问题解答
+title: 常见问题
 description: 有关 Xbox 上的 UWP 的常见问题解答。
 ms.date: 03/29/2017
 ms.topic: article
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259830"
 ---
-# <a name="frequently-asked-questions"></a>常见问题解答
+# <a name="frequently-asked-questions"></a>常见问题
 
 是否未按预期工作？ 查看此常见问题页面。 另外，请查看[已知问题](known-issues.md)主题和[开发通用 Windows 应用](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)论坛。 
 
@@ -59,15 +59,15 @@ Xbox 不再支持 x86 应用开发或将 x86 应用商店提交到应用商店�
 
 ### <a name="i-sold-my-xbox-one-and-left-it-in-developer-mode-how-do-i-deactivate-developer-mode"></a>我已出售我的 Xbox One，并且将它保留在开发人员模式下。 如何停用开发人员模式？
 
-If you no longer have access to your Xbox One, you can deactivate it in Windows Partner Center. For details, see the **Deactivate your console using Partner Center** section in the [Xbox One Developer Mode Deactivation](devkit-deactivation.md#deactivate-your-console-using-partner-center) topic. 
+如果你不再有权访问你的 Xbox，可以在 Windows 合作伙伴中心停用它。 有关详细信息，请参阅[Xbox One 开发人员模式停](devkit-deactivation.md#deactivate-your-console-using-partner-center)用主题中的**使用合作伙伴中心停用控制台**部分。 
 
-### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>I left the Developer Program using Partner Center but I'm in still Developer Mode. 我该怎么办？
+### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>我使用合作伙伴中心离开了开发人员计划，但仍处于开发人员模式。 我该怎么办？
 
 启动“开发人员主页”，然后选择**退出开发人员模式**按钮。 这将在零售模式下重启主机。 
 
 ### <a name="can-i-publish-my-app"></a>我是否可以发布我的应用？
 
-You can [publish apps](../publish/index.md) through Partner Center if you have a [developer account](https://developer.microsoft.com/store/register). 在零售 Xbox One 主机上创建和测试的 UWP 应用将经过当今 Windows 执行的相同引入、审阅和发布过程，以及符合当今 Xbox One 标准的其他审阅。
+如果拥有[开发人员帐户](https://developer.microsoft.com/store/register)，则可以通过合作伙伴中心[发布应用](../publish/index.md)。 在零售 Xbox One 主机上创建和测试的 UWP 应用将经过当今 Windows 执行的相同引入、审阅和发布过程，以及符合当今 Xbox One 标准的其他审阅。
 
 ### <a name="can-i-publish-my-game"></a>我是否可以发布我的游戏？
 
@@ -99,7 +99,7 @@ You can [publish apps](../publish/index.md) through Partner Center if you have a
 如果 Visual Studio 无法连接到你的 Xbox One：
 
 1. 请确保你在开发人员模式下（已在本页的前面部分讨论过）。
-2. 确保已正确设置了你的开发电脑。 是否按照 [Xbox One 上的 UWP 应用开发入门](getting-started.md)中的*全部*指示进行操作？ 
+2. 确保已正确设置了你的开发电脑。 是否按照 *Xbox One 上的 UWP 应用开发入门*中的[全部](getting-started.md)指示进行操作？ 
 
 3. 如果尚未执行此操作，请通读[开发环境设置](development-environment-setup.md)主题和 [Xbox One 工具简介](introduction-to-xbox-tools.md)主题。
 
@@ -117,6 +117,6 @@ TVHelpers 是一套 JavaScript 和 XAML/C# 示例和库，可帮助你使用 Jav
 有关详细信息，请参阅 [TVHelpers](https://github.com/Microsoft/TVHelpers) 项目和 [wiki](https://github.com/Microsoft/TVHelpers/wiki) 项目。
 
 ## <a name="see-also"></a>另请参阅
-- [Known issues with UWP on Xbox One](known-issues.md)
-- [UWP on Xbox One](index.md)
-- [UWP on Xbox One](index.md)
+- [Xbox 上 UWP 的已知问题](known-issues.md)
+- [Xbox one 上的 UWP](index.md)
+- [Xbox one 上的 UWP](index.md)

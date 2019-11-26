@@ -29,12 +29,12 @@ ms.locfileid: "74259140"
 
 此外，请确保访问我们的[社区资源](https://developer.microsoft.com/en-us/windows/support)，了解如何通过开发人员论坛、博客、开发人员营地和研讨会，以及本地 Microsoft 活动和联系人来获得帮助和取得联系。
 
-We think that Windows 10 will open up new app-building opportunities for you. 我们期待看到你即将生成的所有优秀应用！
+我们认为，Windows 10 会为你打开新的应用程序构建机会。 我们期待看到你即将生成的所有优秀应用！
 
 ## <a name="related-topics"></a>相关主题
 
-**Topics for iOS devs**
-* [Resources for iOS devs](https://docs.microsoft.com/previous-versions/windows/apps/jj945493(v=win.10))
-* [Windows controls for iOS devs](https://docs.microsoft.com/previous-versions/windows/apps/dn263255(v=win.10))
-* [Windows cookbook for iOS devs](https://docs.microsoft.com/previous-versions/windows/apps/dn263256(v=win.10))
-* [Building apps for Windows blog](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)
+**IOS 开发人员主题**
+* [IOS 开发人员资源](https://docs.microsoft.com/previous-versions/windows/apps/jj945493(v=win.10))
+* [适用于 iOS 的 Windows 控件开发人员](https://docs.microsoft.com/previous-versions/windows/apps/dn263255(v=win.10))
+* [适用于 iOS 的 Windows 指南开发人员](https://docs.microsoft.com/previous-versions/windows/apps/dn263256(v=win.10))
+* [构建适用于 Windows 的应用博客](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)

@@ -31,7 +31,7 @@ ms.locfileid: "74258232"
 
 你应该已经大致了解了语音识别和识别约束。
 
-如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请仔细阅读这些主题来熟悉此处讨论的技术。
+如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请查看这些主题来熟悉此处讨论的技术。
 
 -   [创建你的第一个应用](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 -   借助[事件和路由事件概述](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)了解事件

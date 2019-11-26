@@ -126,7 +126,7 @@ grant_type=client_credentials
 
 * 对于*资源*参数，请指定[上一节](#access-tokens)中列出的受众 URI 之一，具体取决于要创建的访问令牌的类型。
 
-在你的访问令牌到期后，可以按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。 有关访问令牌的结构的更多详细信息，请参阅[受支持的令牌和声明类型](https://docs.microsoft.com/azure/active-directory/develop/id-tokens)。
+在你的访问令牌到期后，你可按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。 有关访问令牌的结构的更多详细信息，请参阅[支持的令牌和声明类型](https://docs.microsoft.com/azure/active-directory/develop/id-tokens)。
 
 <span id="step-4"/>
 
@@ -208,7 +208,7 @@ grant_type=client_credentials
 
 Microsoft Store ID 密钥是 JSON Web 令牌 (JWT)，该令牌表示你想要访问其产品所有权信息的用户的标识。 当使用 Base64 解码时，Microsoft Store ID 密钥包含以下声明。
 
-* `iat`：&nbsp;&nbsp;&nbsp;标识颁发密钥的时间。 此声明可用于确定令牌的 有效期。 此值表示为纪元时间。
+* `iat`：&nbsp;&nbsp;&nbsp;标识颁发密钥的时间。 此声明可用于确定令牌的有效期。 此值表示为纪元时间。
 * `iss`：&nbsp;&nbsp;&nbsp;标识颁发者。 这与 `aud` 声明具有相同的值。
 * `aud`：&nbsp;&nbsp;&nbsp;标识受众。 必须是下列值之一：`https://collections.mp.microsoft.com/v6.0/keys` 或 `https://purchase.mp.microsoft.com/v6.0/keys`。
 * `exp`：&nbsp;&nbsp;&nbsp;标识过期时间或过期时间，超过该时间后，将不再接受该密钥来处理除续订密钥以外的任何内容。 此声明的值表示为纪元时间。

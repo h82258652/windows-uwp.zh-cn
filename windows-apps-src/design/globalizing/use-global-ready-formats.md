@@ -116,9 +116,9 @@ ms.locfileid: "74258042"
 
 设置电话号码格式的方式因区域而异。 电话号码的数字位数、数字组合方式和某些部分的重要性因国家/地区而异。 从 Windows 10 版本 1607 开始，可以使用 [**PhoneNumberFormatting**](/uwp/api/windows.globalization.phonenumberformatting?branch=live) 命名空间中的类为当前区域设置适当的电话号码格式。
 
-[**PhoneNumberInfo**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live) parses a string of digits and allows you to: determine whether the digits are a valid phone number in the current region; compare two numbers for equality; and to extract the different functional parts of the phone number, such as country code or geographical area code.
+[**PhoneNumberInfo**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live)分析一串数字，并允许您：确定数字是否为当前区域中的有效电话号码;比较两个数值是否相等;并提取电话号码的不同功能部分，例如国家/地区代码或地理区号。
 
-[**PhoneNumberFormatter**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live) formats a string of digits or a **PhoneNumberInfo** for display, even when the string of digits represents a partial phone number. 你可以使用此部分号码格式设置，将号码设置为用户输入该号码时所示的格式。
+[**PhoneNumberFormatter**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live)将数字字符串或**PhoneNumberInfo**的格式设置为显示，即使数字字符串表示部分电话号码也是如此。 你可以使用此部分号码格式设置，将号码设置为用户输入该号码时所示的格式。
 
 下面的示例显示了如何使用 **PhoneNumberFormatter** 将电话号码设置为输入时所示的格式。 每当名为 phoneNumberInputTextBox 的 **TextBox** 中的文本发生更改时，文本框内容都会使用当前默认区域进行格式设置并显示在名为 phoneNumberOutputTextBlock 的 **TextBlock** 中。 出于演示目的，该字符串也使用新西兰区域进行格式设置，并显示在名为 phoneNumberOutputTextBlockNZ 的 TextBlock 中。
   
@@ -160,20 +160,20 @@ ms.locfileid: "74258042"
 ## <a name="important-apis"></a>重要的 API
 
 * [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
-* [NumberFormatting](/uwp/api/windows.globalization.numberformatting?branch=live)
-* [Calendar](/uwp/api/windows.globalization.calendar?branch=live)
+* [Windows.globalization.numberformatting](/uwp/api/windows.globalization.numberformatting?branch=live)
+* [日程表](/uwp/api/windows.globalization.calendar?branch=live)
 * [PhoneNumberFormatting](/uwp/api/windows.globalization.phonenumberformatting?branch=live)
 * [GlobalizationPreferences](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live)
 
 ## <a name="related-topics"></a>相关主题
 
 * [日历、日期和时间控件](../controls-and-patterns/date-and-time.md)
-* [Understand user profile languages and app manifest languages](manage-language-and-region.md)
+* [了解用户配置文件语言和应用程序清单语言](manage-language-and-region.md)
 * [定制语言、比例、高对比度和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)
 
 ## <a name="samples"></a>示例
 
-* [Calendar details and math sample](https://code.msdn.microsoft.com/windowsapps/Calendar-details-and-math-b1683bb7)
-* [Date and time formatting sample](https://code.msdn.microsoft.com/windowsapps/Date-and-time-formatting-2361f348)
-* [Globalization preferences sample](https://code.msdn.microsoft.com/windowsapps/Globalization-preferences-6654eb36)
-* [Number formatting and parsing sample](https://code.msdn.microsoft.com/windowsapps/Number-formatting-and-bb10ba3d)
+* [日历详细信息和数学示例](https://code.msdn.microsoft.com/windowsapps/Calendar-details-and-math-b1683bb7)
+* [日期和时间格式设置示例](https://code.msdn.microsoft.com/windowsapps/Date-and-time-formatting-2361f348)
+* [全球化首选项示例](https://code.msdn.microsoft.com/windowsapps/Globalization-preferences-6654eb36)
+* [数字格式设置和解析示例](https://code.msdn.microsoft.com/windowsapps/Number-formatting-and-bb10ba3d)

@@ -54,7 +54,7 @@ ms.locfileid: "74258021"
 
 文本范围和选择由包含两个字段的 [**CoreTextRange**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core.CoreTextRange) 结构表示：
 
-| 字段                  | 数据类型                                                                 | 描述                                                                      |
+| 字段                  | 数据类型                                                                 | 说明                                                                      |
 |------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 | **StartCaretPosition** | JavaScript\] \[**数** | **System.object** \[.net\] | **int32** \[C++\] | 范围的起始位置是紧接第一个字符前的 ACP。 |
 | **EndCaretPosition**   | JavaScript\] \[**数** | **System.object** \[.net\] | **int32** \[C++\] | 范围的结束位置是紧接最后一个字符后的 ACP。     |

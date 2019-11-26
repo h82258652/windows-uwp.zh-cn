@@ -193,6 +193,6 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 通过最后一项调整，该应用的行为和外观将与移植前完全相同，此外它现在可在任意位置运行。
 
-## <a name="conclusion"></a>结论
+## <a name="conclusion"></a>总结
 
 我们在此案例研究中移植的应用是涉及到多个项目、一个类库以及大量代码和用户界面的相对复杂的应用。 即便如此，该移植仍然很简单。 其中一些便利是直接归属于 Windows 10 开发人员平台与 Windows 8.1 和 Windows Phone 8.1 平台之间的相似性。 另一些是由于原始应用的设计方式使模型、视图模型和视图保持分离。

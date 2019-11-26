@@ -36,7 +36,7 @@ ms.locfileid: "74258485"
 
 如果已下载并解压缩了该示例，则可以在 Visual Studio 中打开 **MarbleMaze_VS2017.sln** 文件（在 **C++** 文件夹中），这些代码会展现在你的面前。
 
-当我们为 Marble Maze 创建了 Visual Studio 项目时，我们从一个现有项目开始。 但是，如果你还没有提供 DirectX UWP 游戏要求的基本功能的现有项目，则建议你根据 Visual Studio **DirectX 11 应用（通用 Windows C++-/cx）** 模板创建项目，因为它提供了一个基本的工作三维应用程序。 要实现这一点，请执行下列操作：
+当我们为 Marble Maze 创建了 Visual Studio 项目时，我们从一个现有项目开始。 但是，如果你还没有提供 DirectX UWP 游戏要求的基本功能的现有项目，则建议你根据 Visual Studio **DirectX 11 应用（通用 Windows C++-/cx）** 模板创建项目，因为它提供了一个基本的工作三维应用程序。 要实现此目的，请执行下列步骤：
 
 1. 在 Visual Studio 2019 中，选择 "**文件" > 新建 > 项目 ...**
 
@@ -54,7 +54,7 @@ ms.locfileid: "74258485"
 
  
 
-从 Microsoft Store 获取的每个 UWP 应用都以应用程序包的形式提供。 应用包中包含一个程序包清单，后者包含有关应用的信息。 例如，你可指定应用的功能（如需要的访问受保护的系统资源或用户数据的能力）。 如果你确定应用需要某些功能，可使用程序包清单来声明所需的功能。 清单文件还允许指定项目属性，例如支持哪些设备旋转方向、磁贴图像和欢迎屏幕。 你可以打开项目中的 **Package.appxmanifest** 来编辑清单。 有关应用包的详细信息，请参阅[打包应用](https://docs.microsoft.com/windows/uwp/packaging/index)。
+从 Microsoft Store 获取的每个 UWP 应用都以应用程序包的形式提供。 应用包中包含一个程序包清单，后者包含有关应用的信息。 例如，你可指定应用的功能（如需要的访问受保护的系统资源或用户数据的能力）。 如果你确定应用需要某些功能，可使用程序包清单来声明所需的功能。 清单还允许指定项目属性，例如支持的设备旋转方向、磁贴图像和初始屏幕。 你可以打开项目中的 **Package.appxmanifest** 来编辑清单。 有关应用包的详细信息，请参阅[打包应用](https://docs.microsoft.com/windows/uwp/packaging/index)。
 
 ##  <a name="building-deploying-and-running-the-game"></a>生成、部署和运行游戏
 
@@ -71,7 +71,7 @@ ms.locfileid: "74258485"
 -   使用触摸、加速计、左操纵杆或鼠标来倾斜迷宫。
 -   使用触摸、控制器上的 A 或“开始”按钮或鼠标来关闭菜单，例如高分表。
 -   使用控制器上的“开始”按钮或键盘上的 P 键暂停或继续游戏。
--   使用控制器上的“后退”按钮或键盘上的 Home 键重新启动游戏。
+-   使用控制器上的“后退”按钮或键盘上的 Home 键重启游戏。
 -   高分表可见时，使用控制器上的“后退”按钮或键盘上的 Home 键清除所有分数。
 
 ##  <a name="code-conventions"></a>代码转换
@@ -82,7 +82,7 @@ Windows 运行时是可用于创建仅在特殊应用程序环境中运行的 UW
 为了从 JavaScript 和 .NET 调用 Windows 运行时 API，这些语言需要特定于每种语言环境的投影。 当你从 JavaScript 或 .NET 调用 Windows 运行时 API 时，你调用的是投影，而投影又会调用基础的 ABI 函数。 尽管你可以直接从 C++ 调用 ABI 函数，但 Microsoft 也为 C++ 提供了投影，因为这些投影可让使用 Windows 运行时 API 更简单，同时仍然保持较高的性能。 Microsoft 还提供了明确支持 Windows 运行时投影的 Visual C++ 的语言扩展。 其中很多语言扩展都和 C++/CLI 语言有着类似的语法。 但是，原生应用将此语法用于 Windows 运行时，而不是公共语言运行时 (CLR)。 对象引用或乘幂号 (^) 修饰符是这种新语法的一个重要部分，因为它支持以引用计数的方式自动删除运行时对象。 无需调用 [AddRef](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) 和 [Release](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-release) 等方法来管理 Windows 运行时对象的生命周期，运行时在没有其他组件引用该对象时删除它，例如在它离开范围或你将所有引用设置为 **nullptr** 时。 使用 Visual C++ 创建 UWP 应用的另一个重要部分是 **ref new** 关键字。 使用 **ref new** 而不是 **new** 来创建引用计数的 Windows 运行时对象。 有关详细信息，请参阅[类型系统 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx)。
 
 > [!IMPORTANT]
-> 当创建 Windows 运行时对象或创建 Windows 运行时组件时，只能使用 **^** 和 **ref new**。 当编写不使用 Windows 运行时的核心应用程序代码时，可以使用标准 C++ 语法。
+> 仅当创建 Windows 运行时对象或创建 Windows 运行时组件时，才须使用 **^** 和 **ref new**。 当编写不使用 Windows 运行时的核心应用程序代码时，可以使用标准 C++ 语法。
 
 Marble Maze 结合使用 **^** 和 **Microsoft::WRL::ComPtr** 来管理堆分配的对象并且最大程度减少内存泄露。 建议使用 ^ 管理 Windows 运行时变量的生存期，使用**ComPtr**来管理 COM 变量的生存期（如使用 DirectX 时），并使用**std：： shared\_ptr**或**std：： unique\_ptr**来管理所有其他堆分配C++的对象的生存期。
 

@@ -196,7 +196,7 @@ private async void GetAadTokenAsync(WebAccountProviderCommand command)
 
 ## <a name="use-the-token"></a>使用令牌
 
-RequestTokenAsync 方法会返回一个 WebTokenRequestResult 对象，它包含你请求的结果。 如果你的请求成功，它将包含一个令牌。  
+RequestTokenAsync 方法会返回一个 WebTokenRequestResult 对象，它包含你请求的结果。 如果请求成功，它将包含一个令牌。  
 
 ```csharp
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
@@ -214,7 +214,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 > [!NOTE]
 > 如果在请求令牌时收到错误，请确保已将应用与 Microsoft Store 关联，如步骤一中所述。 如果你跳过此步骤，你的应用将无法获取令牌。 
 
-获得令牌后，可以使用它来调用提供程序的 API。 在以下代码中，我们将调用[用户信息 Microsoft Live API](https://docs.microsoft.com/office/)，以获取有关用户的基本信息并将其显示在我们的 UI 中。 但请注意，在大多数情况下，建议获取令牌后立即存储，然后以单独的方法使用该令牌。
+获得令牌后，可以使用它来调用提供商的 API。 在以下代码中，我们将调用[用户信息 Microsoft Live API](https://docs.microsoft.com/office/)，以获取有关用户的基本信息并将其显示在我们的 UI 中。 但请注意，在大多数情况下，建议获取令牌后立即存储，然后以单独的方法使用该令牌。
 
 ```csharp
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)

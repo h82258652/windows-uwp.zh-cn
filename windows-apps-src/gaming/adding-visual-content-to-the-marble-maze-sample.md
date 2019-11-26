@@ -1,5 +1,5 @@
 ---
-title: 向 Marble Maze 添加可视内容示例
+title: 向 Marble Maze 示例添加可视内容
 description: 本文档介绍了 Marble Maze 游戏如何在通用 Windows 平台 (UWP) 应用环境中使用 Direct3D 和 Direct2D，以便你可了解相关模式并在处理自己的游戏内容时调整它们。
 ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
 ms.date: 09/08/2017
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258542"
 ---
-# <a name="adding-visual-content-to-the-marble-maze-sample"></a>向 Marble Maze 添加可视内容示例
+# <a name="adding-visual-content-to-the-marble-maze-sample"></a>向 Marble Maze 示例添加可视内容
 
 
 
@@ -288,7 +288,7 @@ DX::ThrowIfFailed(
 
 大理石迷宫使用在**BasicLoader**中声明的**BasicLoader**类来加载纹理和着色器。 大理石迷宫使用**SDKMesh**类为迷宫和大理石加载3d 网格。
 
-若要确保应用能迅速响应，Marble Maze 以异步方式或在后台加载场景资源。 资产加载到后台后，游戏即可响应窗口事件。 这个过程将在本指南的[在后台加载游戏资产](marble-maze-application-structure.md#loading-game-assets-in-the-background)中详细介绍。
+若要确保应用能迅速响应，Marble Maze 以异步方式或在后台加载场景资源。 资源加载到后台后，游戏即可响应窗口事件。 这个过程将在本指南的[在后台加载游戏资产](marble-maze-application-structure.md#loading-game-assets-in-the-background)中详细介绍。
 
 ###  <a name="loading-the-2d-overlay-and-user-interface"></a>加载二维覆盖和用户界面
 
@@ -558,7 +558,7 @@ Marble Maze 使用 SDK-Mesh 作为运行时格式，因为此格式提供了一�
 
 在加载顶点和像素着色器后， **MarbleMazeMain：： LoadDeferredResources**方法加载网格数据。 网格是一个顶点数据集合，通常包含位置、法线数据、颜色、材料和纹理坐标等信息。 网格通常在3D 创作软件中创建，并在独立于应用程序代码的文件中维护。 弹珠和迷宫是该游戏使用的两个网格示例。
 
-Marble Maze 使用 **SDKMesh** 类管理网格。 此类在**SDKMesh**中声明。 **SDKMesh** 提供了加载、呈现和销毁网格数据的方法。
+Marble Maze 使用 **SDKMesh** 类管理网格。 此类在**SDKMesh**中声明。 **SDKMesh** 提供了加载、呈现和消除网格数据的方法。
 
 > [!IMPORTANT]
 > 大理石迷宫使用 SDK-网格格式，并提供**SDKMesh**类仅用于说明。 尽管 SDK-Mesh 格式对学习和创建原型很有用，但它是一种非常基本的格式，可能无法满足大多数游戏开发的需求。 我们建议使用一种可满足游戏具体要求的网格格式。

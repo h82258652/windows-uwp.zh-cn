@@ -15,7 +15,7 @@ ms.locfileid: "74254663"
 ---
 # <a name="how-the-resource-management-system-matches-language-tags"></a>资源管理系统匹配语言标记的方式
 
-上一个主题（[资源管理系统如何匹配和选择资源](how-rms-matches-and-chooses-resources.md)）对限定符匹配进行了总体概括。 本主题主要对语言标记匹配进行详细介绍。
+上一个主题（[资源管理系统如何匹配和选择资源](how-rms-matches-and-chooses-resources.md)）对限定符匹配进行总体概括。 本主题主要对语言标记匹配进行详细介绍。
 
 ## <a name="introduction"></a>简介
 
@@ -70,7 +70,7 @@ ms.locfileid: "74254663"
 
 ### <a name="partial-matches"></a>部分匹配
 
-标记在语言和脚本子标记上匹配，但在地区或一些其他子标记上有所不同。 For example, en-US matches en, or en-US matches en-\*.
+标记在语言和脚本子标记上匹配，但在地区或一些其他子标记上有所不同。 例如，en-us 匹配 en，或 en-us 匹配 en\*。
 
 #### <a name="macro-region-match"></a>宏地区匹配
 
@@ -126,7 +126,7 @@ ms.locfileid: "74254663"
 
 有时，在将一种语言与语言列表相匹配的较大过程中发生匹配。 例如将基于单个语言的资源与应用的语言列表相匹配。 匹配分数将通过第一个匹配语言在列表中的位置进行加权。 语言在列表中的位置越低，分数也将越低。
 
-当语言列表包含两个或多个具有相同语言和脚本子标记的区域变体时，仅为精确匹配、变体匹配和区域匹配对第一个语言标记的比较进行评分。 对部分匹配的评分将延迟到最后一个区域变体。 这使用户可以精确控制其语言列表的匹配行为。 匹配行为可能包括，如果第三项匹配第一项的语言和脚本，则允许列表中第二项的精确匹配优先于列表中第一项的部分匹配。 下面提供了一个示例。
+当语言列表包含两个或多个具有相同语言和脚本子标记的区域变体时，仅为精确匹配、变体匹配和区域匹配对第一个语言标记的比较进行评分。 对部分匹配的评分将延迟到最后一个区域变体。 这使用户可以精确控制其语言列表的匹配行为。 匹配行为可能包括，如果第三项匹配第一项的语言和脚本，则允许列表中第二项的精确匹配优先于列表中第一项的部分匹配。 下面是一个示例。
 
 - 语言列表（按顺序）：“pt-PT”（葡萄牙语（葡萄牙））、“en-US”（英语（美国））、“pt-BR”（葡萄牙语（巴西））。
 - 资源：“en-US”、“pt-BR”。
@@ -141,7 +141,7 @@ ms.locfileid: "74254663"
 
 ## <a name="undetermined-language-und"></a>不确定的语言（“und”）
 
-语言标记“und”可用来指定在没有更好的匹配的情况下匹配任何语言的资源。 可以将其视为类似于 BCP-47 语言范围“ *”或“* -&lt;脚本&gt;”。 下面提供了一个示例。
+语言标记“und”可用来指定在没有更好的匹配的情况下匹配任何语言的资源。 可以将其视为类似于 BCP-47 语言范围“ *”或“* -&lt;脚本&gt;”。 下面是一个示例。
 
 - 语言列表：“en-US”、“zh-Hans-CN”。
 - 资源：“zh-Hans-CN”、“und”。
@@ -190,5 +190,5 @@ ms.locfileid: "74254663"
 
 * [资源管理系统如何匹配和选择资源](how-rms-matches-and-chooses-resources.md)
 * [BCP-47](https://tools.ietf.org/html/bcp47)
-* [Understand user profile languages and app manifest languages](../design/globalizing/manage-language-and-region.md)
-* [Composition of macro geographic (continental) regions, geographical sub-regions, and selected economic and other groupings](https://unstats.un.org/unsd/methods/m49/m49regin.htm)
+* [了解用户配置文件语言和应用程序清单语言](../design/globalizing/manage-language-and-region.md)
+* [组成宏地理（大陆）区域、地理区域和所选经济和其他分组的组合](https://unstats.un.org/unsd/methods/m49/m49regin.htm)

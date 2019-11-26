@@ -1,7 +1,7 @@
 ---
 ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
 title: 管理帐户设置和个人资料信息
-description: You can view and update your developer account settings and profile info in the Account settings section of Partner Center.
+description: 你可以在合作伙伴中心的 "帐户设置" 部分查看和更新你的开发人员帐户设置和配置文件信息。
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 开发人员中心, 帐户设置, 个人资料, 帐户个人资料, 开发人员帐户, 开发人员帐户设置
@@ -15,16 +15,16 @@ ms.locfileid: "74259972"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帐户设置和个人资料信息
 
-You can view and update your developer account settings and profile info in the **Account settings** section of [Partner Center](https://partner.microsoft.com/dashboard). 
+你可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)的 "**帐户设置**" 部分查看和更新你的开发人员帐户设置和配置文件信息。 
 
 > [!NOTE]
-> Notification preferences (such as which type of notifications to receive and how to receive them) can be managed in **Message Center** (which you can access by selecting the message icon near the top of Partner Center).
+> 可在**消息中心**中管理通知首选项（如要接收的通知类型和接收方式），可以通过选择 "合作伙伴中心" 顶部附近的消息图标来进行访问。
 
 ## <a name="account-settings"></a>帐户设置
 
-To view your account settings, click the gear icon in the upper right hand corner of Partner Center and then select **Developer settings**. Here you'll find details about your account and links to other pages where you can view info and perform various account-related tasks.
+若要查看帐户设置，请单击 "合作伙伴中心" 右上角的齿轮图标，然后选择 "**开发人员设置**"。 在这里，你将找到有关你的帐户的详细信息以及指向其他页面的链接，你可以在其中查看信息并执行各种与帐户相关的任务。
 
-在**帐户详细信息**部分中，可以查看帐户的状态和类型。 You can also see your Seller ID and other publisher ID info here. These values are assigned by Microsoft to uniquely identify your developer account and can't be edited.
+在**帐户详细信息**部分中，可以查看帐户的状态和类型。 你还可以在此处查看你的卖方 ID 和其他发布者 ID 信息。 这些值由 Microsoft 分配，用于唯一标识你的开发人员帐户，而不能进行编辑。
 
 > [!NOTE]
 > 可以在每个应用的[应用标识](view-app-identity-details.md)页中查找每个应用的标识详细信息。
@@ -44,13 +44,13 @@ To view your account settings, click the gear icon in the upper right hand corne
 
 以下是**帐户设置**部分中会出现的一些其他项目。
 
-- **Verification status**: When your account is undergoing the verification process (for example, when you first sign up or after you significantly update your contact info), you can review your verification status here.
+- **验证状态**：当你的帐户正在进行验证过程时（例如，当你首次注册或在你重要地更新联系人信息之后），可以在此处查看验证状态。
 - **付款帐户**和**税务资料**：可在此[设置付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)。 需要先执行此操作，然后才可以收取应用或加载项的费用。
 - **企业关联**：接受希望发布应用以供其独家使用的企业的邀请。 有关详细信息，请参阅[将业务线应用分配到企业](distribute-lob-apps-to-enterprises.md)。
-- **Users**: Add users to your account and assign them roles and permissions. 有关详细信息，请参阅[管理帐户用户](manage-account-users.md)。
-- **Tenants**: Manage your Azure AD tenant associations. For more info, see [Associate Azure AD with your Partner Center account](associate-azure-ad-with-dev-center.md).
+- **用户**：向你的帐户添加用户并为其分配角色和权限。 有关详细信息，请参阅[管理帐户用户](manage-account-users.md)。
+- **租户**：管理你的 Azure AD 租户关联。 有关详细信息，请参阅[将 Azure AD 与合作伙伴中心帐户关联](associate-azure-ad-with-dev-center.md)。
 - **计划**：查看正在参加的计划的详细信息，了解可能感兴趣的其他计划。
 - **协议**：查看帐户已接受的协议。
-- **Dev devices**: View and manage [Windows Phone 8.x devices that you've unlocked for testing](https://docs.microsoft.com/previous-versions/windows/apps/dn614128(v=win.10)?redirectedfrom=MSDN) and [Xbox One consoles enabled for development](../xbox-apps/devkit-activation.md). 
+- **开发设备**：查看和管理已为测试和[Xbox one 设备启用以便进行开发](../xbox-apps/devkit-activation.md)的[Windows Phone 8gb 设备](https://docs.microsoft.com/previous-versions/windows/apps/dn614128(v=win.10)?redirectedfrom=MSDN)。 
 
 

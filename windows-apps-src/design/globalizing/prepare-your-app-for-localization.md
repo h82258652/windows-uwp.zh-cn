@@ -1,6 +1,6 @@
 ---
 Description: 本地化应用是一种可针对其他市场、语言或地区进行本地化且未发现应用中的任何功能性缺陷的应用。 可本地化应用最重要的属性是其可执行代码与其可本地化资源完全分隔。
-title: 使应用可本地化
+title: 对应用进行可本地化处理
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 template: detail.hbs
 ms.date: 11/07/2017
@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258098"
 ---
-# <a name="make-your-app-localizable"></a>使应用可本地化
+# <a name="make-your-app-localizable"></a>对应用进行可本地化处理
 
 本地化应用是一种可针对其他市场、语言或地区进行本地化且未发现应用中的任何功能性缺陷的应用。 可本地化应用最重要的属性是其可执行代码与其可本地化资源完全分隔。 所以，你应确定哪些应用的资源需要进行本地化。 问问你自己，如果应用要针对其他市场进行本地化，需要作出哪些更改？
 
@@ -22,7 +22,7 @@ ms.locfileid: "74258098"
 
 ## <a name="put-your-strings-into-resources-files-resw"></a>将字符串置于资源文件 (.resw) 中
 
-Don't hard-code string literals in your imperative code, XAML markup, nor in your app package manifest. 相反，将字符串放入资源文件 (.resw) 中，以便它们适合独立于你应用的生成二进制文件的不同本地市场。 有关详细信息，请参阅[本地化 UI 和应用程序包清单中的字符串](../../app-resources/localize-strings-ui-manifest.md)。
+不要在命令性代码、XAML 标记和应用包清单中对字符串进行硬编码。 相反，将字符串放入资源文件 (.resw) 中，以便它们适合独立于你应用的生成二进制文件的不同本地市场。 有关详细信息，请参阅[本地化 UI 和应用程序包清单中的字符串](../../app-resources/localize-strings-ui-manifest.md)。
 
 该主题还展示如何向你的默认资源文件 (.resw) 中添加注释。 例如，如果你要采用非正式语音或语调，请确保在注释中解释此情况。 此外，为最大程度降低费用，请确认仅向翻译人员提供需要翻译的字符串。
 
@@ -50,9 +50,9 @@ Don't hard-code string literals in your imperative code, XAML markup, nor in you
 
 简而言之，将字符串分解为在所有上下文中均起作用的几个部分。 将出现需要将某一字符串作为整个句子的情况。
 
-Consider the following string: "The {0} could not be synchronized."
+请考虑以下字符串： "{0} 无法同步。"
 
-A variety of words could replace {0}, such as "appointment", "task", or "document". 虽然此示例适用于英语，但它绝不适用于德语等的相应语句。 请注意以下德语语句，模板字符串中的某些字词（“Der”、“Die”、“Das”）需要与参数化的字词匹配：
+各种单词可以替换 {0}，如 "约会"、"任务" 或 "文档"。 虽然此示例适用于英语，但它绝不适用于德语等的相应语句。 请注意以下德语语句，模板字符串中的某些字词（“Der”、“Die”、“Das”）需要与参数化的字词匹配：
 
 | 英语                                    | 德语                                           |
 |:------------------------------------------ |:------------------------------------------------ |
@@ -60,7 +60,7 @@ A variety of words could replace {0}, such as "appointment", "task", or "documen
 | The task could not be synchronized.        | Die Aufgabe konnte nicht synchronisiert werden.  |
 | The document could not be synchronized.    | Das Dokument konnte nicht synchronisiert werden. |
 
-As another example, consider the sentence "Remind me in {0} minute(s)." “minute(s)”适用于英语，但其他语言可能会使用不同的术语。 例如，波兰语使用“minuta”、“minuty”或“minut”，具体取决于上下文。
+作为另一个示例，请考虑说 "{0} 分钟提醒我"。 “minute(s)”适用于英语，但其他语言可能会使用不同的术语。 例如，波兰语使用“minuta”、“minuty”或“minut”，具体取决于上下文。
 
 若要解决此问题，应本地化整个语句，而不应只本地化单个字词。 这么做看似增加了额外工作量且是个不明智的解决方案，但其实是最佳解决方案，原因如下：
 
@@ -80,24 +80,24 @@ As another example, consider the sentence "Remind me in {0} minute(s)." “minut
 
 伪本地化你的应用，找出任何本地化问题。 伪本地化是一种本地化预演或问题揭露测试。 生成一组未真正翻译的资源；它们看起来就是那样子的。 例如，你的字符串大约比默认语言长 40%，并且字符串中具有分隔符，以便你可以一眼就看出它们在 UI 中是否被截断。
 
-## <a name="deployment-considerations"></a>Deployment Considerations
+## <a name="deployment-considerations"></a>部署注意事项
 
-When you install an app that contains localized language data, you might find that only the default language is available for the app even though you initially included resources for multiple languages. This is because the installation process is optimized to only install language resources that match the current language and culture of the device. Therefore, if your device is configured for en-US, only the en-US language resources are installed with your app.
+当你安装包含本地化语言数据的应用时，你可能会发现即使最初包含多种语言的资源，该应用也只有默认语言可用。 这是因为安装过程经过优化，只安装与设备的当前语言和区域性相匹配的语言资源。 因此，如果你的设备配置为 en-us，则只会随你的应用一起安装 en-us 语言资源。
 
 > [!NOTE]
-> It is not possible to install additional language support for your app after the initial installation. If you change the default language after installing an app, the app continues to use only the original language resources.
+> 初始安装后，不能为应用程序安装其他语言支持。 如果在安装应用后更改默认语言，应用将继续仅使用原始语言资源。
 
-If you want to ensure all language resources are available after installation, create a configuration file for the app package that specifies that certain resources are required during installation (including language resources). This optimized installation feature is automatically enabled when your application's .appxbundle is generated during packaging. For more information, see [Ensure that resources are installed on a device regardless of whether a device requires them](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140)).
+如果要确保在安装后所有语言资源都可用，请为应用包创建一个配置文件，该文件指定在安装期间需要某些资源（包括语言资源）。 在打包过程中生成应用程序的 .appxbundle 时，将自动启用此优化的安装功能。 有关详细信息，请参阅[确保在设备上安装资源，而不管设备是否需要](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140))。
 
-Optionally, to ensure all resources are installed (not just a subset), you can disable .appxbundle generation when you package your app. This is not recommended however as it can increase the installation time of your app.
+（可选）若要确保所有资源都已安装（不只是子集），可以在打包应用程序时禁用 .appxbundle 生成。 但建议不要这样做，因为它会增加应用程序的安装时间。
 
-Disable automatic generation of the .appxbundle by setting the "Generate App Bundle" attribute to “never”:
+通过将 "生成应用程序包" 特性设置为 "从不"，禁止自动生成 .appxbundle：
 
-1. In Visual Studio, right-click the project name
-2. Select **Store** -> **Create app packages...**
-3. In the **Create Your Packages** dialog, select **I want to create packages to upload to the Microsoft Store using a new app name** and then click **Next**.
-4. In the **Select an app name** dialog, select/create an app name for your package.
-5. In the **Select and Configure Packages** dialog, set **Generate app bundle** to **Never**.
+1. 在 Visual Studio 中，右键单击项目名称
+2. 选择 "**应用商店** -> **创建应用包 ...** "
+3. 在 "**创建包**" 对话框中，选择 "**我想要使用新应用名称创建要上传到 Microsoft Store 的包**"，然后单击 "**下一步**"。
+4. 在 "**选择应用程序名称**" 对话框中，选择/创建包的应用名称。
+5. 在 "**选择和配置包**" 对话框中，将 "**生成应用捆绑包**" 设置为 "**从不**"。
 
 ## <a name="geopolitical-awareness"></a>地缘政治意识
 
@@ -115,7 +115,7 @@ Disable automatic generation of the .appxbundle by setting the "Generate App Bun
     string.Format("Every {0} {1}", monthName, dayNumber); // For example, "Every April 1".
 ```
 
-此示例中的格式字符串适用于英语(美国)。 但不适用于德语(德国)，例如，其中的日期和月份以相反顺序显示。 Ensure that the translator knows the intent of each of the parameters so that they can reverse the order of the format items in the format string (for example, "{1} {0}") as appropriate for the target language.
+此示例中的格式字符串适用于英语(美国)。 但不适用于德语(德国)，例如，其中的日期和月份以相反顺序显示。 请确保转换器了解每个参数的目的，以便它们可以根据目标语言的格式反转格式字符串中的格式项的顺序（例如，"{1} {0}"）。
 
 ## <a name="dont-over-localize"></a>不要过度本地化
 
@@ -134,20 +134,20 @@ Disable automatic generation of the .appxbundle by setting the "Generate App Bun
 
 不妨请考虑以下几个选项。
 
-- **The resource files can be translated by opening them directly in the project.** 对于需要翻译成两种或三种语言的字符串数量较少的项目，此方法比较适用。 在开发人员使用多种语言并且愿意处理翻译过程的情况下，可以使用这种方法。 这种方法的优势在于快速、无需工具并且误译的风险最小。 但这种方法不可扩展。 特别是，不同语言中的资源很容易不同步，这会导致不好的用户体验和维护困难。
-- **The string resource files are in XML or ResJSON text format, so could be handed off for translation using any text editor. The translated files would then be copied back into the project.** 此方法存在翻译人员意外编辑 XML 标记的风险，但它允许在 Microsoft Visual Studio 项目外进行翻译工作。 对于需要翻译成少数几种语言的项目，此方法可能比较适用。 XLIFF 格式是专门用于本地化的 XML 格式，应该可以很好地受到一些本地化供应商或本地化工具的支持。 你可以使用[多语言应用工具包](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10))从其他资源文件中（如 .resw 或 .resjson）生成 XLIFF 文件。
+- **可以通过直接在项目中打开资源文件来进行转换。** 对于需要翻译成两种或三种语言的字符串数量较少的项目，此方法比较适用。 在开发人员使用多种语言并且愿意处理翻译过程的情况下，可以使用这种方法。 这种方法的优势在于快速、无需工具并且误译的风险最小。 但这种方法不可扩展。 特别是，不同语言中的资源很容易不同步，这会导致不好的用户体验和维护困难。
+- **字符串资源文件采用 XML 格式或 ResJSON 文本格式，因此可以使用任何文本编辑器进行翻译。然后，将转换后的文件复制回项目。** 此方法存在翻译人员意外编辑 XML 标记的风险，但它允许在 Microsoft Visual Studio 项目外进行翻译工作。 对于需要翻译成少数几种语言的项目，此方法可能比较适用。 XLIFF 格式是专门用于本地化的 XML 格式，应该可以很好地受到一些本地化供应商或本地化工具的支持。 你可以使用[多语言应用工具包](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10))从其他资源文件中（如 .resw 或 .resjson）生成 XLIFF 文件。
 
 > [!NOTE]
-> Localization might also be necessary for other assets, including images and audio files.
+> 还需要对其他资产（包括图像和音频文件）进行本地化。
 
-You should also consider the following:
+还应考虑以下事项：
 
-- **Localization tools** A number of localization tools are available for parsing resource files and allowing only the translatable strings to be edited by translators. 这种方法减少了翻译人员意外编辑 XML 标记的风险。 但它的缺点是向本地化流程中引入了新的工具和流程。 本地化工具适合具有大量字符串但需要翻译为少数语言的项目。 若要了解详细信息，请参阅[如何使用多语言应用工具包](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10))。
-- **Localization vendors** Consider using a localization vendor if your application contains extensive strings that need to be translated into a large number of languages. 本地化供应商可提供有关工具和流程的建议，并可翻译你的资源文件。 这是一种理想的解决方案，但也是花费最大的选项，并且会增加翻译内容的检查时间。
+- **本地化工具**许多本地化工具可用于分析资源文件，只允许翻译人员编辑可翻译字符串。 这种方法减少了翻译人员意外编辑 XML 标记的风险。 但它的缺点是向本地化流程中引入了新的工具和流程。 本地化工具适合具有大量字符串但需要翻译为少数语言的项目。 若要了解详细信息，请参阅[如何使用多语言应用工具包](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10))。
+- **本地化供应商**如果你的应用程序包含需要转换为大量语言的大量字符串，请考虑使用本地化供应商。 本地化供应商可提供有关工具和流程的建议，并可翻译你的资源文件。 这是一种理想的解决方案，但也是花费最大的选项，并且会增加翻译内容的检查时间。
 
 ## <a name="keep-access-keys-and-labels-consistent"></a>使访问键和标签保持一致
 
-将用于辅助功能的访问键与本地化的访问键的显示“同步”比较困难，因为这两个字符串资源被分类为两个单独的部分。 Be sure to provide comments for the label string such as: `Make sure that the emphasized shortcut key  is synchronized with the access key.`
+将用于辅助功能的访问键与本地化的访问键的显示“同步”比较困难，因为这两个字符串资源被分类为两个单独的部分。 请确保为标签字符串提供注释，如： `Make sure that the emphasized shortcut key  is synchronized with the access key.`
 
 ## <a name="support-furigana-for-japanese-strings-that-can-be-sorted"></a>支持可进行排序的日语字符串的假名注音
 
@@ -182,12 +182,12 @@ You should also consider the following:
 
 ## <a name="related-topics"></a>相关主题
 
-- [Guidelines for globalization](guidelines-and-checklist-for-globalizing-your-app.md)
+- [全球化准则](guidelines-and-checklist-for-globalizing-your-app.md)
 - [对 UI 和应用包清单中的字符串进行本地化](../../app-resources/localize-strings-ui-manifest.md)
 - [定制语言、比例、高对比度和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)
 - [调整布局和字体并支持 RTL](adjust-layout-and-fonts--and-support-rtl.md)
-- [Updating images in response to qualifier value change events](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
+- [为响应限定符值更改事件而更新图像](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
 
 ## <a name="samples"></a>示例
 
-- [Application resources and localization sample](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa)
+- [应用程序资源和本地化示例](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa)

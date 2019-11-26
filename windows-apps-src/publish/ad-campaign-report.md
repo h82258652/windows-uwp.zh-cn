@@ -1,5 +1,5 @@
 ---
-title: 广告市场活动报告
+title: 广告活动报告
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: 通过合作伙伴中心的广告营销活动报告，可以查看应用升级 Ad 活动的执行情况。
 ms.date: 10/31/2018
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260067"
 ---
-# <a name="ad-campaign-report"></a>广告市场活动报告
+# <a name="ad-campaign-report"></a>广告活动报告
 
 通过[合作伙伴中心](https://partner.microsoft.com/dashboard)的**广告营销活动**报告，可以查看应用升级[Ad 活动](create-an-ad-campaign-for-your-app.md)的执行情况。 若要查看报表，请在左侧导航菜单中展开 "**吸引**" 并选择 " **Ad 市场活动**"。
 

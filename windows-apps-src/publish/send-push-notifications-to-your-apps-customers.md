@@ -15,7 +15,7 @@ ms.locfileid: "74259941"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>向应用客户发送通知
 
-在正确的时间，通过正确的消息吸引客户是应用开发人员取得成功的关键。 通知可以鼓励客户采取行动，例如为应用评分、购买加载项、试用新功能或下载其他应用（或许可通过你提供的[促销代码](generate-promotional-codes.md)免费获取）。
+在正确的时间，通过正确的消息吸引客户是作为应用开发人员取得成功的关键。 通知可以鼓励客户采取行动，例如为应用评分、购买加载项、试用新功能或下载其他应用（或许可通过你提供的[促销代码](generate-promotional-codes.md)免费获取）。
 
 [合作伙伴中心](https://partner.microsoft.com/dashboard)提供数据驱动的客户参与平台，可用于将通知发送到所有应用的客户，或者仅面向应用的 Windows 10 客户的子集，这些客户满足[客户群](create-customer-segments.md)中定义的条件。 你还可以创建要发送给多个应用的客户的通知。
 
@@ -68,7 +68,7 @@ ms.locfileid: "74259941"
     * **方案**（交互式 Toast 类型）。 可选择**默认**、**警报**、**提醒**或**来电**。
     * **基本 URI**（交互式 Toast 类型）。 有关详细信息，请参阅 [BaseUri](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.baseuri#Windows_UI_Xaml_FrameworkElement_BaseUri)。
     * **添加图像查询**（交互式 Toast 类型）。 有关详细想信息，请参阅 [addImageQuery](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual#attributes-and-elements)。
-    * **视觉**。 图像、视频或声音。 有关详细信息，请参阅[视觉](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
+    * **可视**。 图像、视频或声音。 有关详细信息，请参阅[视觉](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
     * **输入**/**操作**/**选择**（交互式 Toast 类型）。 允许你让用户通过通知交互。 有关详细信息，请参阅[自适应和交互式 Toast 通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)。
     * **绑定**（交互式磁贴类型）。 Toast 模板。 有关详细信息，请参阅[绑定](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-binding)。
 

@@ -21,7 +21,7 @@ ms.locfileid: "74259641"
 -   [**Windows. 传感器**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
 -   [**陀螺测试仪**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
 
-**示例**
+**范例**
 
 -   有关更完整的实现，请参阅[陀螺测试仪示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/gyrometer)。
 
@@ -29,7 +29,7 @@ ms.locfileid: "74259641"
 
 陀螺测试仪补充了加速计来一起作为游戏控制器。 加速计可以测量线性运动，而陀螺测试仪测量角度矢量或旋转运动。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 你应该熟悉 Extensible Application Markup Language （XAML）、Microsoft 视觉对象C#和事件。
 

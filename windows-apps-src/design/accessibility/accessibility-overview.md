@@ -171,7 +171,7 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 <span id="VERIFICATION_AND_PUBLISHING"/>
 
 ## <a name="verification-and-publishing"></a>验证和发布  
-有关辅助功能声明和发布应用的详细信息，请参阅[应用商店中的辅助功能](accessibility-in-the-store.md)。
+有关辅助功能声明和发布应用的详细信息，请参阅 [Microsoft Store 中的辅助功能](accessibility-in-the-store.md)。
 
 > [!NOTE]
 > 将应用声明为辅助应用仅与 Microsoft Store 有关。

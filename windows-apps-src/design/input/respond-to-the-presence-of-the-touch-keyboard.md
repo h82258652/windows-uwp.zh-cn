@@ -1,6 +1,6 @@
 ---
 Description: 了解如何在显示或隐藏触摸键盘时定制你的应用 UI。
-title: 响应触摸键盘的存在
+title: 响应触摸键盘的状态
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258273"
 ---
-# <a name="respond-to-the-presence-of-the-touch-keyboard"></a>响应触摸键盘的存在
+# <a name="respond-to-the-presence-of-the-touch-keyboard"></a>响应触摸键盘的状态
 
 了解如何在显示或隐藏触摸键盘时定制你的应用 UI。
 
@@ -39,7 +39,7 @@ ms.locfileid: "74258273"
 
 你应该对标准键盘交互、处理键盘输入和事件以及 UI 自动化有一个基本了解。
 
-如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请仔细阅读这些主题来熟悉此处讨论的技术。
+如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请查看这些主题来熟悉此处讨论的技术。
 
 - [创建你的第一个应用](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 - 借助[事件和路由事件概述](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)了解事件

@@ -42,13 +42,13 @@ Windows 10 版本 1607 引入的全新单进程模型极大地简化了启用�
 ## <a name="background-media-playback-manifest-capability"></a>后台媒体播放清单功能
 若要支持后台音频，必须将后台媒体播放功能添加到应用部件清单文件（即 Package.appxmanifest）。 
 
-**To add capabilities to the app manifest using the manifest designer**
+**使用清单设计器将功能添加到应用程序清单**
 
 1.  在 Microsoft Visual Studio 的**解决方案资源管理器**中，通过双击 **package.appxmanifest** 项，打开应用程序清单的设计器。
 2.  选择**功能**选项卡。
 3.  选择**后台媒体播放**复选框。
 
-若要通过手动编辑应用部件清单 xml 来设置功能，请首先确保已在 **Package** 元素中定义 *uap3* 命名空间前缀。 如果尚未定义，请如下所示进行添加。
+若要通过手动编辑应用部件清单 xml 来设置功能，请首先确保已在 *Package* 元素中定义 **uap3** 命名空间前缀。 如果尚未定义，请如下所示进行添加。
 ```xml
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
@@ -86,15 +86,15 @@ Windows 10 版本 1607 引入的全新单进程模型极大地简化了启用�
 处理前台和后台之间转换的最重要部分是管理你的应用使用的内存。 由于在后台运行会减少系统允许应用保留的内存资源，因此还应该注册 [**AppMemoryUsageIncreased**](https://docs.microsoft.com/uwp/api/windows.system.memorymanager.appmemoryusageincreased) 和 [**AppMemoryUsageLimitChanging**](https://docs.microsoft.com/uwp/api/windows.system.memorymanager.appmemoryusagelimitchanging) 事件。 引发这些事件时，你应该检查应用的当前内存使用量和当前限制，然后根据需要减少内存使用量。 有关如何在后台运行时减少内存使用量的信息，请参阅[在将应用移动到后台时释放内存](../launch-resume/reduce-memory-usage.md)。
 
 ## <a name="network-availability-for-background-media-apps"></a>后台媒体应用的网络可用性
-不会从流或文件创建的所有网络感知的媒体源将使网络连接保持活动状态（在检索远程内容时），不需要检索时会释放网络连接。 [**MediaStreamSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaStreamSource), specifically, relies on the application to correctly report the correct buffered range to the platform using [**SetBufferedRange**](https://docs.microsoft.com/uwp/api/windows.media.core.mediastreamsource.setbufferedrange). 完全缓存整个内容后，网络不再以应用的名义保留。
+不会从流或文件创建的所有网络感知的媒体源将使网络连接保持活动状态（在检索远程内容时），不需要检索时会释放网络连接。 具体来说， [**MediaStreamSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaStreamSource)依赖于应用程序，使用[**SetBufferedRange**](https://docs.microsoft.com/uwp/api/windows.media.core.mediastreamsource.setbufferedrange)将正确的缓冲范围正确报告到平台。 完全缓存整个内容后，网络不再以应用的名义保留。
 
 如果需要在媒体不在下载时在后台执行网络调用，则必须在诸如 [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) 或 [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger) 等相应任务中包括这些网络调用。 有关详细信息，请参阅[使用后台任务支持应用](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
 
 ## <a name="related-topics"></a>相关主题
 * [媒体播放](media-playback.md)
-* [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [Integrate with the System Media Transport Controls](integrate-with-systemmediatransportcontrols.md)
-* [Background Audio sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
+* [通过 MediaPlayer 播放音频和视频](play-audio-and-video-with-mediaplayer.md)
+* [与系统媒体传输控件集成](integrate-with-systemmediatransportcontrols.md)
+* [背景音频示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
 
  
 

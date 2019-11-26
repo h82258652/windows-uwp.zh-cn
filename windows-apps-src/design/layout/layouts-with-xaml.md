@@ -22,7 +22,7 @@ XAML 布局系统为你提供了自动大小调整、布局面板、视觉状态
 
 XAML 布局系统支持静态布局和动态布局。 在静态布局中，你会对控件给定明确的像素大小和位置。 当用户更改其设备的分辨率或方向时，UI 保持不变。 静态布局可对不同的外形规格和显示尺寸进行剪裁。 另一方面，动态布局可缩小、放大和重新排列，从而响应设备上的可用视觉空间。 
 
-实际上，你可以结合使用静态元素和动态元素来创建你的 UI。 你仍可以在某些位置使用静态元素和值，但请确保总体 UI 响应不同分辨率、屏幕大小和视图。
+实际上，你可以结合使用静态元素和动态元素来创建 UI。 你仍可以在某些位置使用静态元素和值，但请确保总体 UI 响应不同分辨率、屏幕大小和视图。
 
 在此处，我们将讨论如何使用 XAML 属性和布局面板创建动态布局。
 
@@ -33,9 +33,9 @@ XAML 布局系统支持静态布局和动态布局。 在静态布局中，你�
 
 **高度和宽度**
 
-[  **Height**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) 和 [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width) 属性用于指定元素的大小。 可以使用固定的值（以有效像素为单位测量），或者可以使用自动或成比例调整大小。 
+[  **Height**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) 和 [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width) 属性用于指定元素的大小。 可以使用固定的值（以有效像素为单位测量），或者可以使用自动或成比例大小调整。 
 
-自动大小调整用于调整 UI 元素的大小以适应其内容或父容器。 还可以将自动调整大小用于网格的行和列。 若要使用自动大小调整，请将 UI 元素的高度和/或宽度设置为 **Auto**。
+自动大小调整用于调整 UI 元素的大小以适应其内容或父容器。 还可以将自动大小调整用于网格的行和列。 若要使用自动大小调整，请将 UI 元素的高度和/或宽度设置为 **Auto**。
 
 > [!NOTE]
 > 元素是否根据其内容或容器大小调整取决于父容器处理其子级的大小调整的方式。 有关详细信息，请参阅本文后面部分的[布局面板](#layout-panels)。
@@ -109,7 +109,7 @@ Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分
 
 下面对 XAML 框架中提供的面板控件的主要功能做一个比较。
 
-面板控件 | 描述
+面板控件 | 说明
 --------------|------------
 [**画布**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) | **Canvas** 不支持动态 UI；控制设置子元素位置和大小的所有方面。 通常将其用于特殊情况（例如创建图形），或用于定义较大自适应 UI 的小静态区域。 可以使用代码或视觉状态来在运行时重新放置元素。<li>元素使用 Canvas.Top 和 Canvas.Left 附加属性进行绝对定位。</li><li>可以使用 Canvas.ZIndex 附加属性明确指定分层。</li><li>HorizontalAlignment/VerticalAlignment 的 Stretch 值将忽略。 如果未显式设置元素的大小，它会调整大小以容纳其内容。</li><li>如果子内容超出面板，则视觉上不会被截断。 </li><li>子内容不受面板边界限制。</li>
 [**格**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) | **Grid** 支持对子元素进行动态调整大小。 可以使用代码或视觉状态来重新定位和重新排列元素。<li>元素使用 Grid.Row 和 Grid.Column 附加属性在行和列中进行排列。</li><li>通过使用 Grid.RowSpan 和 Grid.ColumnSpan 附加属性，元素可跨越多行和多列。</li><li>将遵循 HorizontalAlignment/VerticalAlignment 的 Stretch 值。 如果未明确设置元素的大小，则该元素会拉伸以填满网格单元格中的可用空间。</li><li>如果子内容超出面板，则视觉上会被截断。</li><li>由于内容大小受面板边界限制，因此可滚动的内容会显示滚动条（如果需要）。</li>

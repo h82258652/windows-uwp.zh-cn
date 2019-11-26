@@ -1,6 +1,6 @@
 ---
 title: 从 OpenGL ES 2.0 移植到 Direct3D 11
-description: 包含有关将 OpenGL ES 2.0 图形管道移植到 Direct3D 11 和 Windows 运行时的文章、概述以及演练。
+description: 包含有关将 OpenGL ES 2.0 图形管道移植到 Direct3D 11 和 Windows 运行时的文章、概述以及操作实例。
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 ms.date: 02/08/2017
 ms.topic: article
@@ -17,7 +17,7 @@ ms.locfileid: "74258456"
 
 
 
-包含有关将 OpenGL ES 2.0 图形管道移植到 Direct3D 11 和 Windows 运行时的文章、概述以及演练。
+包含有关将 OpenGL ES 2.0 图形管道移植到 Direct3D 11 和 Windows 运行时的文章、概述以及操作实例。
 
 > **请注意**   迁移 OpenGL ES 2.0 项目的中间步骤是使用角度进行 Microsoft Store。 ANGLE 通过将 OpenGL ES API 调用转换为 DirectX 11 API 调用，允许你在 Windows 上运行 OpenGL ES 内容。 有关 ANGLE 的详细信息，请转到[适用于 Microsoft Store 的 ANGLE Wiki](https://github.com/microsoft/angle/wiki)。
 
@@ -31,7 +31,7 @@ ms.locfileid: "74258456"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

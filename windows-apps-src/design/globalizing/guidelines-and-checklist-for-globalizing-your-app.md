@@ -19,7 +19,7 @@ ms.locfileid: "74258089"
 
 设计和开发应用，使其能够在具有不同语言和文化配置的系统上正常运行。 使用[**全球化**](/uwp/api/Windows.Globalization?branch=live) API 设置数据格式，并避免在代码中对语言、地区、字符分类、写入系统、日期/时间格式、数字、货币、重量和排序规则进行假设。
 
-| 建议 | 描述 |
+| 建议 | 说明 |
 | ------------- | ----------- |
 | 处理和比较字符串时要考虑文化因素。 | 例如，在比较字符串之前，不更改其大小写。 请参阅[字符串用法建议](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage)。 |
 | 对字符串和其他数据进行整理（排序）时，请勿假定其总是按字母顺序进行的。 | 对于不使用拉丁语脚本的语言，整理是基于诸如发音、笔划数等因素进行的。 即使是使用拉丁语脚本的语言也不是始终使用字母顺序排序的。 例如，在某些文化中，电话簿可能不是按照字母顺序排序。 Windows 可以为你处理排序问题，但如果自行创建排序算法，请确保将目标市场使用的排序方法考虑在内。 |
@@ -36,23 +36,23 @@ ms.locfileid: "74258089"
 
 ## <a name="important-apis"></a>重要的 API
  
-* [Globalization](/uwp/api/Windows.Globalization?branch=live)
+* [全球](/uwp/api/Windows.Globalization?branch=live)
 * [GeographicRegion.CurrenciesInUse](/uwp/api/windows.globalization.geographicregion.CurrenciesInUse)
-* [Language.CurrentInputMethodLanguageTag](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag)
-* [Windows.Globalization.Fonts](/uwp/api/windows.globalization.fonts?branch=live)
+* [Language. CurrentInputMethodLanguageTag](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag)
+* [Windows](/uwp/api/windows.globalization.fonts?branch=live)
 
 ## <a name="related-topics"></a>相关主题
 
-* [Recommendations for String Usage](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage)
-* [Globalize your date/time/number formats](use-global-ready-formats.md)
-* [Understand user profile languages and app manifest languages](manage-language-and-region.md)
-* [BCP-47 language tags](https://tools.ietf.org/html/bcp47)
-* [App resources and the Resource Management System](../../app-resources/index.md)
+* [字符串用法建议](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage)
+* [全球化日期/时间/数字格式](use-global-ready-formats.md)
+* [了解用户配置文件语言和应用程序清单语言](manage-language-and-region.md)
+* [BCP-47 语言标记](https://tools.ietf.org/html/bcp47)
+* [应用资源和资源管理系统](../../app-resources/index.md)
 * [资源管理系统如何匹配语言标记](../../app-resources/how-rms-matches-lang-tags.md)
 * [调整布局和字体并支持 RTL](adjust-layout-and-fonts--and-support-rtl.md)
-* [International fonts](loc-international-fonts.md)
-* [Make your app localizable](prepare-your-app-for-localization.md)
+* [国际字体](loc-international-fonts.md)
+* [使应用程序可本地化](prepare-your-app-for-localization.md)
 
 ## <a name="samples"></a>示例
 
-* [Globalization preferences sample](https://code.msdn.microsoft.com/windowsapps/Globalization-preferences-6654eb36)
+* [全球化首选项示例](https://code.msdn.microsoft.com/windowsapps/Globalization-preferences-6654eb36)

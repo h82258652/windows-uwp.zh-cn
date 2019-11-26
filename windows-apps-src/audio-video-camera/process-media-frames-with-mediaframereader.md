@@ -39,12 +39,12 @@ ms.locfileid: "74256538"
 3.  选中**摄像头**框和**麦克风**框。
 4.  若要访问图片库和视频库，请选中**图片库**框和**视频库**框。
 
-除了默认项目模板包含的这些 API，本文的示例代码还使用来自以下命名空间的 API。
+除了默认项目模板包含的 API，本文的示例代码还使用来自以下命名空间的 API。
 
 [!code-cs[FramesUsing](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFramesUsing)]
 
 ## <a name="select-frame-sources-and-frame-source-groups"></a>选择帧源和帧源组
-处理媒体帧的许多应用都需要同时从多个源获取帧，例如设备的彩色和深度相机。 [**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup)对象表示可同时使用的一组媒体帧源。 调用静态方法 [**MediaFrameSourceGroup.FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.findallasync) 获取当前设备支持的所有帧源组列表。
+处理媒体帧的许多应用都需要同时从多个源获取帧，例如设备的彩色和深度相机。 [**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup)对象表示可同时使用的一组媒体帧源。 调用静态方法 [**MediaFrameSourceGroup.FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.findallasync) 获取当前设备支持的所有帧源组的列表。
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
@@ -64,7 +64,7 @@ ms.locfileid: "74256538"
 
 [!code-cs[SelectColor](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSelectColor)]
 
-以下示例使用与上述技术相类似的技术选择包含彩色、深度和红外相机的源组。
+以下示例使用与上述相类似的技术选择包含彩色、深度和红外相机的源组。
 
 [!code-cs[ColorInfraredDepth](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetColorInfraredDepth)]
 
@@ -75,18 +75,18 @@ ms.locfileid: "74256538"
 ## <a name="initialize-the-mediacapture-object-to-use-the-selected-frame-source-group"></a>初始化 MediaCapture 对象以使用所选帧源组
 下一步是初始化 **MediaCapture** 对象以使用在上一步中所选的帧源组。
 
-**MediaCapture** 对象通常在应用的多个位置中使用，因此应声明某个类成员变量以保留它。
+通常会从应用的多个位置使用 **MediaCapture** 对象，因此应声明一个类成员变量，用于保留该对象。
 
 [!code-cs[DeclareMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
-通过调用构造函数创建 **MediaCapture** 对象实例。 接下来，创建一个[**MediaCaptureInitializationSettings**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings)对象，该对象将用于初始化**MediaCapture**对象。 本示例使用以下设置：
+通过调用构造函数创建 **MediaCapture** 对象的实例。 接下来，创建一个[**MediaCaptureInitializationSettings**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings)对象，该对象将用于初始化**MediaCapture**对象。 本示例使用以下设置：
 
 * [**SourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sourcegroup) -此项告诉系统将使用哪个源组来获取帧。 请记住，源组定义可以同时使用的一组媒体帧源。
 * [**SharingMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sharingmode) -此消息告诉系统你是否需要对捕获源设备进行独占控制。 如果将它设置为 [**ExclusiveControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSharingMode)，意味着可以更改捕获设备的设置（例如它生成的帧格式），但也意味着如果其他应用已经拥有独占控制权，你的应用在尝试初始化媒体捕获设备时会失败。 如果将它设置为 [**SharedReadOnly**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSharingMode)，则可以检索帧源的帧，即使其他应用已经在使用这些帧也是如此，但无法更改设备设置。
 * [**MemoryPreference**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.memorypreference) -如果指定[**cpu**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference)，系统将使用 cpu 内存来保证帧到达时，它们将作为[**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)对象提供。 如果指定 [**Auto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference)，系统将动态选择存储帧的最佳内存位置。 如果系统选择使用 GPU 内存，媒体帧将作为 [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 对象（而非 **SoftwareBitmap** 对象）到达。
 * [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode) -将此项设置为[**视频**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.StreamingCaptureMode)，指示音频不需要进行流式处理。
 
-调用 [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync) 以使用所需设置初始化 **MediaCapture**。 请确保在 *try* 块中调用此函数，防止初始化失败。
+调用 [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync) 以使用所需设置初始化 **MediaCapture**。 请确保在 *try* 块内调用此方法，以防初始化失败。
 
 [!code-cs[InitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMediaCapture)]
 
@@ -106,26 +106,26 @@ ms.locfileid: "74256538"
 
 创建帧阅读器后，请为源提供新帧时引发的 [**FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.framearrived) 事件注册处理程序。
 
-调用 [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.startasync) 以告知系统开始读取源的帧。
+通过调用 [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.startasync) 指示系统开始读取源的帧。
 
 [!code-cs[CreateFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCreateFrameReader)]
 
 ## <a name="handle-the-frame-arrived-event"></a>处理帧到达事件
 新帧可用时即引发 [**MediaFrameReader.FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.framearrived) 事件。 可以选择处理到达的每个帧，或者仅在需要时使用它们。 因为帧阅读器在自己的线程上引发事件，所以可能需要实现某些同步逻辑，以确保你不会尝试从多个线程访问相同数据。 本节介绍如何在 XAML 页面中将图形颜色帧同步到图像控件。 这套方案解决需要在 UI 线程上执行 XAML 控件的所有更新的其他同步约束。
 
-在 XAML 中显示帧的第一步是创建 Image 控件。 
+若要在 XAML 中显示帧，第一步是创建 Image 控件。 
 
 [!code-xml[ImageElementXAML](./code/Frames_Win10/Frames_Win10/MainPage.xaml#SnippetImageElementXAML)]
 
-在代码隐藏页面中，声明 **SoftwareBitmap** 类型的类成员变量，该变量用作所有传入图像都会复制到的后台缓冲区。 请注意，图像数据本身不会复制，复制的仅是对象引用。 此外，声明某个布尔值以跟踪 UI 操作当前是否正在运行。
+在代码隐藏页面中，声明 **SoftwareBitmap** 类型的类成员变量，该变量用作所有传入图像都会复制到的后台缓冲区。 请注意，图像数据本身不会复制，复制的仅是对象引用。 此外，要声明一个布尔值以跟踪 UI 操作当前是否正在运行。
 
 [!code-cs[DeclareBackBuffer](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareBackBuffer)]
 
-由于帧将作为 **SoftwareBitmap** 对象到达，因此需要创建 [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) 对象，该对象支持将 **SoftwareBitmap** 用作 XAML **Control** 的源。 在启动帧阅读器前，应该在代码的某个位置设置图像源。
+由于帧将作为 **SoftwareBitmap** 对象到达，因此需要创建 [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) 对象，该对象支持将 **SoftwareBitmap** 用作 XAML **Control** 的源。 在启动帧阅读器前，应在代码的某个位置设置图像源。
 
 [!code-cs[ImageElementSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetImageElementSource)]
 
-此时可以实现 **FrameArrived** 事件处理程序。 调用处理程序时，*sender* 参数包含对引发该事件的 **MediaFrameReader** 对象的引用。 调用此对象上的 [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe) 以尝试获取最新帧。 如名称所示，**TryAcquireLatestFrame** 可能不会成功返回帧。 因此，当依次访问 VideoMediaFrame 和 SoftwareBitmap 属性时，请确保测试它们是否为 null。 在本示例中，null 条件运算符 用于访问 **SoftwareBitmap**，然后检查检索的对象是否为 null。
+现在需实现 **FrameArrived** 事件处理程序。 调用处理程序时，*sender* 参数包含对引发该事件的 **MediaFrameReader** 对象的引用。 调用此对象上的 [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe) 以尝试获取最新帧。 如名称所示，**TryAcquireLatestFrame** 可能不会成功返回帧。 因此，当依次访问 VideoMediaFrame 和 SoftwareBitmap 属性时，请确保测试它们是否为 null。 在本示例中，null 条件运算符 用于访问 **SoftwareBitmap**，然后检查检索的对象是否为 null。
 
 **Image** 控件仅可以显示格式为 BRGA8 并且已经预乘或者没有 alpha 的图像。 如果到达的帧不是这种格式，则使用静态方法 [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.convert) 将软件位图转换为正确的格式。
 
@@ -148,7 +148,7 @@ ms.locfileid: "74256538"
 
 [!code-cs[Cleanup](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCleanup)]
 
-有关在挂起应用程序时清理媒体捕获对象的详细信息，请参阅[**显示相机预览**](simple-camera-preview-access.md)。
+有关在应用程序挂起时清理媒体捕获对象的详细信息，请参阅[**显示相机预览**](simple-camera-preview-access.md)。
 
 ## <a name="the-framerenderer-helper-class"></a>FrameRenderer 帮助程序类
 通用 Windows [相机帧示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)提供在应用中轻松显示彩色、红外和深度源的帧的帮助程序类。 通常，对深度和红外数据的操作不止将其显示到屏幕，因此这个帮助程序类是显示帧阅读器功能和调试帧阅读器实现的有用工具。

@@ -64,7 +64,7 @@ Windows Phone Silverlight 具有基于 Silverlight 4.0 的 XAML UI 框架，并�
 
 &nbsp;
 
-| 主题| 描述|
+| 主题| 说明|
 |------|------------| 
 | [命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md) | 本主题提供了 Windows Phone Silverlight Api 到其 UWP 等效项的完整映射。 |
 | [移植项目](wpsl-to-uwp-porting-to-a-uwp-project.md) | 通过在 Visual Studio 中创建新的 Windows 10 项目并将文件复制到其中，开始迁移过程。 |

@@ -54,7 +54,7 @@ Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这�
 
     如果你的核心业务逻辑采用 C++（而不是 OBJECTIVE-C 或 Swift）编写，通常在你的项目中仅需细微的改动就可以使用此代码。 然后可以使用 XAML 定义 UI（与其他的 Windows 应用一样），并在必要时调用 C++ 代码。
 
--   [Use ANGLE to run OpenGL ES on Windows](https://github.com/microsoft/angle/wiki)
+-   [使用 ANGLE 在 Windows 上运行 OpenGL ES](https://github.com/microsoft/angle/wiki)
 
     移植 OpenGL ES 2.0 项目的中间步骤是使用 ANGLE。 ANGLE 通过将 OpenGL ES API 调用转换为 DirectX 11 API 调用，允许你在 Windows 上运行 OpenGL ES 内容。
 
@@ -64,23 +64,23 @@ Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这�
 
     一个游戏创作环境。
 
--   [Construct 2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
+-   [构造2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
 
     一个游戏创作环境。
 
--   [Titanium Studio](https://www.appcelerator.com/platform/titanium-studio/)
+-   [钛金 Studio](https://www.appcelerator.com/platform/titanium-studio/)
 
     一个跨平台创作环境。
 
--   [Cocos2D-x](https://www.cocos2d-x.org/)
+-   [Cocos2d 为后盾-x](https://www.cocos2d-x.org/)
 
     一个用于子画面处理和力学建模的跨平台代码库。
 
--   [Impact.js](https://impactjs.com/)
+-   [影响 .js](https://impactjs.com/)
 
     一个基于 HTML 的游戏库。
 
--   [Marmalade](http://madewithmarmalade.com/)
+-   [果子](http://madewithmarmalade.com/)
 
     一个跨平台 SDK。
 

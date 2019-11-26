@@ -42,7 +42,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 
 ### <a name="inspect"></a>**检查**  
 
-[**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) enables you to select any UI element and view its accessibility data. 可以查看 Microsoft UI 自动化属性和控件模式并测试 UI 自动化树中自动化元素的导航结构。 当你开发 UI 以验证如何在 UI 自动化中公开辅助功能属性时，请使用 **Inspect**。 在某些情况下，属性来自已经为默认 XAML 控件实现的 UI 自动化支持。 在其他情况下，属性来自已经在 XAML 标记中设置为 [**AutomationProperties**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties) 附加属性的特定值。
+通过 "[**检查**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects)"，您可以选择任何 UI 元素并查看其辅助功能数据。 可以查看 Microsoft UI 自动化属性和控件模式并测试 UI 自动化树中自动化元素的导航结构。 当你开发 UI 以验证如何在 UI 自动化中公开辅助功能属性时，请使用 **Inspect**。 在某些情况下，属性来自已经为默认 XAML 控件实现的 UI 自动化支持。 在其他情况下，属性来自已经在 XAML 标记中设置为 [**AutomationProperties**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties) 附加属性的特定值。
 
 下图展示了 [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) 工具，用于查询记事本中 **“编辑”** 菜单元素的 UI 自动化属性。
 
@@ -64,7 +64,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 <span id="ACCESSIBLE_EVENT_WATCHER"/>
 
 ### <a name="accessible-event-watcher"></a>**辅助功能事件查看器**  
-[**Accessible Event Watcher (AccEvent)** ](https://docs.microsoft.com/windows/desktop/WinAuto/accessible-event-watcher) tests whether an app's UI elements fire proper UI Automation and Microsoft Active Accessibility events when UI changes occur. 当焦点改变时，或者当 UI 元素被调用、选择或者其状态或属性发生变化时，UI 会发生变化。
+[**可访问事件观察程序（AccEvent）** ](https://docs.microsoft.com/windows/desktop/WinAuto/accessible-event-watcher)测试应用的 ui 元素是否在 ui 发生更改时触发了正确的 ui 自动化和 Microsoft Active Accessibility 事件。 当焦点改变时，或者当 UI 元素被调用、选择或者其状态或属性发生变化时，UI 会发生变化。
 
 > [!NOTE]
 > 文档中提及的大多数辅助功能测试工具在电脑而不是手机上运行。 开发和使用模拟器时可以运行某些工具，但其中大部分工具无法在模拟器中公开 UI 自动化树。
@@ -105,7 +105,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode/player]
 
-**Use these steps to test your app using Narrator with a mouse and keyboard:**
+**使用以下步骤，通过鼠标和键盘使用讲述人测试应用：**
 1.  按 _Windows 徽标键 + Ctrl + Enter_ 启动“讲述人”。 在 Windows 10 版本 1607 之前的版本中，使用 _Windows 徽标键 + Enter_ 启动“讲述人”。
 2.  使用键盘上的 _Tab_ 键、箭头键、_Caps Lock + 箭头键_在你的应用中导航。
 3.  在应用中导航时，听“讲述人”读 UI 元素，验证下列项：
@@ -118,16 +118,16 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 
 从 Windows 10 版本 1607 开始，我们在“讲述人”中引入了新的开发人员模式。 当“讲述人”已经在运行时，通过按 _Caps Lock + Shift + F12_ 打开开发人员模式。 当开发人员模式已启用时，屏幕将屏蔽，并且将仅突出显示可访问的对象和以编程方式向“讲述人”公开的关联文本。 针对向“讲述人”公开的信息，这为你提供了良好的视觉表示形式。
 
-**Use these steps to test your app using Narrator's touch mode:**
+**使用以下步骤使用讲述人的触摸模式测试应用：**
 
 > [!NOTE]
 > 在支持 4 个以上联系人的设备上，“讲述人”自动进入触摸模式。 在主要屏幕上，“讲述人”不支持多监视器方案或多点触控数字化器。
 
 1.  熟悉 UI，了解布局。
 
-    * **Navigate through the UI by using single-finger swipe gestures.** 使用向左或向右轻扫在项目间移动，使用向上或向下轻扫更改要导航的项目的类别。 类别包括所有项目、链接、表格、标题等。 使用单根手指轻扫手势进行导航类似于使用 _Caps Lock + 箭头键_进行导航。
-    * **Use tab gestures to navigate through focusable elements.** 三根手指向右或向左轻扫与使用键盘上的 _Tab_ 和 _Shift + Tab_ 导航相似。
-    * **Spatially investigate the UI with a single finger.** 上下拖动或左右拖动单根手指，以使“讲述人”读出你的手指下的项目。 可以使用鼠标作为替代项，因为鼠标在拖动单根手指时使用相同的点击测试逻辑。
+    * **使用单指轻扫手势在 UI 中导航。** 使用向左或向右轻扫在项目间移动，使用向上或向下轻扫更改要导航的项目的类别。 类别包括所有项目、链接、表格、标题等。 使用单根手指轻扫手势进行导航类似于使用 _Caps Lock + 箭头键_进行导航。
+    * **使用 tab 键导航可获得焦点的元素。** 三根手指向右或向左轻扫与使用键盘上的 _Tab_ 和 _Shift + Tab_ 导航相似。
+    * **使用单指空间来调查 UI。** 上下拖动或左右拖动单根手指，以使“讲述人”读出你的手指下的项目。 可以使用鼠标作为替代项，因为鼠标在拖动单根手指时使用相同的点击测试逻辑。
     * **通过三个手指向上轻扫读出整个窗口及其所有内容**。 这等效于使用 _Caps Lock + W_。
 
     如果存在无法到达的重要 UI，则表明可能存在辅助功能问题。
@@ -163,5 +163,5 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 * [辅助功能](accessibility.md)
 * [要避免的做法](practices-to-avoid.md)
 * [UI 自动化](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)
-* [Accessibility in Windows](https://www.microsoft.com/accessibility/)
-* [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)
+* [Windows 中的辅助功能](https://www.microsoft.com/accessibility/)
+* [讲述人入门](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

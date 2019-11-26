@@ -17,7 +17,7 @@ ms.locfileid: "74256707"
 
 本文介绍了如何通过开放源计算机视觉库 (OpenCV) 使用 **[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** 类，该类被许多不同的 UWP API 用于表示图像。开放源计算机视觉库 (OpenCV) 是一种开放源本机代码库，可提供多种用于处理算法的图像。 
 
-The examples in this article walk you through creating a native code Windows Runtime component that can be used from a UWP app, including apps that are created using C#. 此帮助程序组件将公开单个方法，即**模糊**，它将使用 OpenCV 的模糊图像处理功能。 此组件使用专用方法获取 OpenCV 库可直接使用的基础图像数据缓冲区的指针，从而能够更简单地扩展帮助程序组件，以实现其他 OpenCV 处理功能。 
+本文中的示例逐步讲解如何创建可从 UWP 应用使用的本机代码 Windows 运行时组件，包括使用C#创建的应用。 此帮助程序组件将公开单个方法，即**模糊**，它将使用 OpenCV 的模糊图像处理功能。 此组件使用专用方法获取 OpenCV 库可直接使用的基础图像数据缓冲区的指针，从而能够更简单地扩展帮助程序组件，以实现其他 OpenCV 处理功能。 
 
 * 有关使用 **SoftwareBitmap** 的介绍，请参阅[创建、编辑和保存位图图像](imaging.md)。 
 * 若要了解如何使用 OpenCV 库，请转至 [https://opencv.org](https://opencv.org)。
@@ -27,9 +27,9 @@ The examples in this article walk you through creating a native code Windows Run
 > [!NOTE] 
 > 本文中详述的 OpenCVHelper 组件采用的技术要求要处理的图像数据驻留在 CPU 内存中，而不是 GPU 内存中。 因此，对于允许你请求图像内存位置的 API，例如 **[MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture)** 类，你应指定 CPU 内存。
 
-## <a name="create-a-helper-windows-runtime-component-for-opencv-interop"></a>Create a helper Windows Runtime component for OpenCV interop
+## <a name="create-a-helper-windows-runtime-component-for-opencv-interop"></a>创建 OpenCV 互操作的帮助器 Windows 运行时组件
 
-### <a name="1-add-a-new-native-code-windows-runtime-component-project-to-your-solution"></a>1. Add a new native code Windows Runtime component project to your solution
+### <a name="1-add-a-new-native-code-windows-runtime-component-project-to-your-solution"></a>1. 向解决方案中添加新的本机代码 Windows 运行时组件项目
 
 1. 在“解决方案资源管理器”中右键单击你的解决方案并选择**添加->新建项目**即可在 Visual Studio 中为解决方案添加新项目。 
 2. 在 **Visual C++** 类别下，选择 **Windows 运行时组件（通用 Windows）** 。 在本示例中，将项目命名为“OpenCVBridge”并单击**确定**。 
@@ -45,7 +45,7 @@ The examples in this article walk you through creating a native code Windows Run
 4. 使用相同的步骤安装“OpenCV.Win.ImgProc”包。
 
 >[!NOTE]
->OpenCV.Win.Core and OpenCV.Win.ImgProc are not regularly updated and do not pass the Store compliance checks, therefore these packages are intended for experimentation only.
+>OpenCV 和 OpenCV 不会定期更新，也不会通过应用商店合规性检查，因此这些包仅适用于试验。
 
 ### <a name="3-implement-the-opencvhelper-class"></a>3. 实现 OpenCVHelper 类
 
@@ -63,7 +63,7 @@ The examples in this article walk you through creating a native code Windows Run
 
 接下来，将方法 **GetPointerToPixelData** 添加到 OpenCVHelper.cpp。 此方法采用 **[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** ，并且通过一系列转换可获得像素数据的 COM 接口表示，通过它我们可以以 **char** 阵列的形式获取基础数据缓冲区的指针。 
 
-首先通过调用 **[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)** 获得包含像素数据的 **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)** ，请求读取/写入缓冲区，使 OpenCV 库能够修改此像素数据。  **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** is called to get an **[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)** object. 接着，**IMemoryBufferByteAccess** 界面将投影为 **IInspectable**（所有 Windows 运行时类的基本界面），并且将通过调用 **[QueryInterface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))** 来获取 **[IMemoryBufferByteAccess](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85))** COM 界面，它使我们能够以 **char** 阵列的形式获取像素数据缓冲区。 最后，填充 **char** 阵列，方法是调用 **[IMemoryBufferByteAccess::GetBuffer](https://docs.microsoft.com/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer)** 。 如果此方法中的任何转换步骤失败，方法会返回 **false**，表明无法继续进行后续处理。
+首先通过调用 **[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)** 获得包含像素数据的 **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)** ，请求读取/写入缓冲区，使 OpenCV 库能够修改此像素数据。  调用 **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** 以获取 **[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)** 对象。 接着，**IMemoryBufferByteAccess** 界面将投影为 **IInspectable**（所有 Windows 运行时类的基本界面），并且将通过调用 **[QueryInterface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))** 来获取 **[IMemoryBufferByteAccess](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85))** COM 界面，它使我们能够以 **char** 阵列的形式获取像素数据缓冲区。 最后，填充 **char** 阵列，方法是调用 **[IMemoryBufferByteAccess::GetBuffer](https://docs.microsoft.com/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer)** 。 如果此方法中的任何转换步骤失败，方法会返回 **false**，表明无法继续进行后续处理。
 
 [!code-cpp[OpenCVHelperGetPointerToPixelData](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperGetPointerToPixelData)]
 
@@ -82,7 +82,7 @@ The examples in this article walk you through creating a native code Windows Run
 
 
 ## <a name="a-simple-softwarebitmap-opencv-example-using-the-helper-component"></a>有关使用帮助程序组件的简单 SoftwareBitmap OpenCV 示例
-现在已创建了 OpenCVBridge 组件，我们就可以创建一个使用 OpenCV **模糊**方法修改 **SoftwareBitmap** 的简单 C# 应用。 To access the Windows Runtime component from your UWP app, you must first add a reference to the component. 在“解决方案资源管理器”中，右键单击 UWP 应用项目下的**引用**节点并选择**添加引用...** 。在“引用管理器”中，选择**项目->解决方案**。 选中 OpenCVBridge 项目旁边的框并单击**确定**。
+现在已创建了 OpenCVBridge 组件，我们就可以创建一个使用 OpenCV **模糊**方法修改 **SoftwareBitmap** 的简单 C# 应用。 若要从 UWP 应用访问 Windows 运行时组件，必须首先添加对该组件的引用。 在“解决方案资源管理器”中，右键单击 UWP 应用项目下的**引用**节点并选择**添加引用...** 。在“引用管理器”中，选择**项目->解决方案**。 选中 OpenCVBridge 项目旁边的框并单击**确定**。
 
 以下示例代码使用户能够选择一个图像文件，然后使用 **[BitmapDecoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)** 创建图像的 **SoftwareBitmap** 表示。 有关使用 **SoftwareBitmap** 的详细信息，请参阅[创建、编辑和保存位图图像](https://docs.microsoft.com/windows/uwp/audio-video-camera/imaging)。
 
@@ -92,7 +92,7 @@ The examples in this article walk you through creating a native code Windows Run
 
 将创建新的 **OpenCVHelper** 示例，并调用**模糊**方法，以传递源位图和目标位图。 最后，将创建 **SoftwareBitmapSource**，以将输出图像分配给 XAML **Image** 控件。
 
-This sample code uses APIs from the following namespaces, in addition to the namespaces included by the default project template.
+除了默认的项目模板包含的命名空间，此示例代码还使用以下命名空间中的 Api。
 
 [!code-cs[OpenCVMainPageUsing](./code/ImagingWin10/cs/MainPage.OpenCV.xaml.cs#SnippetOpenCVMainPageUsing)]
 
@@ -100,8 +100,8 @@ This sample code uses APIs from the following namespaces, in addition to the nam
 
 ## <a name="related-topics"></a>相关主题
 
-* [BitmapEncoder options reference](bitmapencoder-options-reference.md)
-* [Image Metadata](image-metadata.md)
+* [BitmapEncoder 选项参考](bitmapencoder-options-reference.md)
+* [图像元数据](image-metadata.md)
  
 
  

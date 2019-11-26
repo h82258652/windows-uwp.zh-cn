@@ -18,7 +18,7 @@ ms.locfileid: "74257930"
 # <a name="rotation"></a>旋转
 
 
-本文介绍用于旋转的全新 Windows UI，并提供在 UWP 应用中使用这个新交互机制时应该考虑的用户体验指南。
+本文介绍用于旋转的新 Windows UI，并提供在 UWP 应用中使用这个新交互机制时应该考虑的用户体验指南。
 
 > **重要 API**：[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)、[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
@@ -70,8 +70,8 @@ Windows 10 支持三种类型的旋转：自由、约束和组合。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">在任务栏的搜索框中键入</th>
-<th align="left">描述</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

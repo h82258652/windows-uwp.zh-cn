@@ -17,8 +17,8 @@ ms.locfileid: "74260475"
 
 **重要的 API**
 
--   [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs)
--   [**Windows.UI.Xaml.Application.OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated)
+-   [**Windows.applicationmodel.resources.core. ProtocolActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs)
+-   [**OnActivated （& e）** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated)
 
 了解如何将应用注册为统一资源标识符 (URI) 方案名称的默认处理程序。 Windows 桌面应用和通用 Windows 平台 (UWP) 应用都可以注册为 URI 方案名称的默认处理程序。 如果用户将你的应用选作 URI 方案名称的默认处理程序，则每次启动该类型 URI 时都将激活你的应用。
 
@@ -27,7 +27,7 @@ ms.locfileid: "74260475"
 这些步骤介绍了如何注册自定义 URI 方案名称 `alsdk://`，以及在用户启动 `alsdk://` URI 时如何激活你的应用。
 
 > [!NOTE]
-> In UWP apps, certain URIs and file extensions are reserved for use by built-in apps and the operating system. 使用保留的 URI 或文件扩展名注册应用的尝试将被忽略。 参阅[保留 URI 方案名称和文件类型](reserved-uri-scheme-names.md)以获取无法注册为 UWP 应用的 URI 方案（因为它们为保留或禁止的文件类型）的字母顺序列表。
+> 在 UWP 应用中，某些 Uri 和文件扩展名保留供内置应用程序和操作系统使用。 使用保留的 URI 或文件扩展名注册应用的尝试将被忽略。 参阅[保留 URI 方案名称和文件类型](reserved-uri-scheme-names.md)以获取无法注册为 UWP 应用的 URI 方案（因为它们为保留或禁止的文件类型）的字母顺序列表。
 
 ## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>步骤 1：指定程序包清单中的扩展点
 
@@ -37,17 +37,17 @@ ms.locfileid: "74260475"
 
     以下是该协议的清单设计器中每个可以填写的字段的简短描述（有关详细信息，请参阅 [**AppX 程序包清单**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-extension)）：
 
-| 字段 | 描述 |
+| 字段 | 说明 |
 |-------|-------------|
-| **Logo** | 指定用于标识**控制面板**的[设置默认程序](https://docs.microsoft.com/windows/desktop/shell/default-programs)中 URI 方案名称的徽标。 如果未指定徽标，则使用应用的小徽标。 |
-| **Display Name** | 指定用于标识**控制面板**的[设置默认程序](https://docs.microsoft.com/windows/desktop/shell/default-programs)中 URI 方案名称的显示名称。 |
+| **Logo** | 指定用于标识[控制面板](https://docs.microsoft.com/windows/desktop/shell/default-programs)的**设置默认程序**中 URI 方案名称的徽标。 如果未指定徽标，则使用应用的小徽标。 |
+| **显示名称** | 指定用于标识[控制面板](https://docs.microsoft.com/windows/desktop/shell/default-programs)的**设置默认程序**中 URI 方案名称的显示名称。 |
 | **名称** | 为 URI 方案选择名称。 |
 |  | **注意**  “名称”必须全部为小写字母。 |
 |  | **保留和禁止的文件类型** 请参阅[保留 URI 方案名称和文件类型](reserved-uri-scheme-names.md)以获取不能注册为 UWP 应用的 URI 方案（因为它们是保留或禁止的文件类型）的字母顺序列表。 |
-| **Executable** | 为该协议指定默认的启动可执行文件。 如果未指定，将使用应用的可执行文件。 If specified, the string must be between 1 and 256 characters in length, must end with ".exe", and cannot contain these characters: &gt;, &lt;, :, ", &#124;, ?, or \*. 如果已指定，还将使用**入口点**。 如果未指定**入口点**，将使用为应用定义的入口点。 |
-| **Entry point** | 指定用于处理协议扩展的任务。 这通常是 Windows 运行时类型的完全命名空间限定名称。 如果未指定，将使用应用的入口点。 |
-| **Start page** | 处理扩展点的网页。 |
-| **Resource group** | 可用于一起分组扩展激活以实现资源管理目的的标记。 |
+| **可执行文件** | 为该协议指定默认的启动可执行文件。 如果未指定，将使用应用的可执行文件。 如果指定，则字符串的长度必须介于1到256个字符之间，必须以 ".exe" 结尾，且不能包含以下字符： &gt;、&lt;、：、" &#124;、、？或 \*。 如果已指定，还将使用**入口点**。 如果未指定**入口点**，将使用为应用定义的入口点。 |
+| **入口点** | 指定用于处理协议扩展的任务。 这通常是 Windows 运行时类型的完全命名空间限定名称。 如果未指定，将使用应用的入口点。 |
+| **起始页** | 处理扩展点的网页。 |
+| **资源组** | 可用于一起分组扩展激活以实现资源管理目的的标记。 |
 | **所需视图**（仅适用于 Windows） | 指定**所需视图**字段以指示当为该 URI 方案名称启动应用的窗口时所需的空间量。 **所需视图**的可能值为 **Default**、**UseLess**、**UseHalf**、**UseMore** 或 **UseMinimum**。<br/>**注意**  Windows 在确定目标应用的最终窗口尺寸时会考虑多个不同因素，例如源应用的首选项、屏幕上的应用数量、屏幕方向等。 设置**所需视图**并不保证为目标应用设定具体的窗口化行为。<br/>**移动设备系列：所需视图**在移动设备系列上不受支持。 |
 
 2. 输入 `images\Icon.png` 作为**徽标**。
@@ -75,7 +75,7 @@ ms.locfileid: "74260475"
 
 ## <a name="step-2-add-the-proper-icons"></a>步骤 2：添加适当的图标
 
-成为 URI 方案名称默认应用的应用在整个系统的多个位置中显示其图标，例如在“默认程序”控制面板中。 为实现此目的，请在项目中包含一个 44x44 的图标。 匹配应用磁贴徽标的外观，并使用应用的背景色而不是使图标透明。 将徽标扩展到边缘而无需填充。 在白色背景上测试你的图标。 See [App icons and logos](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos) for more details about icons.
+成为 URI 方案名称默认应用的应用在整个系统的多个位置中显示其图标，例如在“默认程序”控制面板中。 为实现此目的，请在项目中包含一个 44x44 的图标。 匹配应用磁贴徽标的外观，并使用应用的背景色而不是使图标透明。 将徽标扩展到边缘而无需填充。 在白色背景上测试你的图标。 有关图标的详细信息，请参阅[应用程序图标和徽标](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos)。
 
 ## <a name="step-3-handle-the-activated-event"></a>步骤 3：处理激活的事件
 
@@ -134,7 +134,7 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 ```
 
 > [!NOTE]
-> When launched via Protocol Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
+> 通过协议协定启动时，请确保 "后退" 按钮将用户返回到启动应用程序的屏幕，而不是应用程序以前的内容。
 
 下面代码以编程方式通过应用的 URI 启动应用：
 
@@ -155,10 +155,10 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 任何应用或网站（包括恶意应用或网站）都可以使用你的 URI 方案名称。 因此，在 URI 中获得的任何数据都可能来自不受信任的来源。 建议千万不要基于在 URI 中接收的参数执行永久性操作。 例如，可以使用 URI 参数将应用启动到用户的帐户页面，但建议永远不要将其用于直接修改用户的帐户。
 
 > [!NOTE]
-> If you are creating a new URI scheme name for your app, be sure to follow the guidance in [RFC 4395](https://tools.ietf.org/html/rfc4395). 这样会确保你的名称符合 URI 方案的标准。
+> 如果要为应用创建新的 URI 方案名称，请务必遵循[RFC 4395](https://tools.ietf.org/html/rfc4395)中的指南。 这样会确保你的名称符合 URI 方案的标准。
 
 > [!NOTE]
-> When launched via Protocol Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
+> 通过协议协定启动时，请确保 "后退" 按钮将用户返回到启动应用程序的屏幕，而不是应用程序以前的内容。
 
 我们建议应用为打开新 URI 目标的每个激活事件创建一个新的 XAML [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)。 通过此方式，新 XAML **Frame** 的导航 Backstack 将不包含应用暂停时可能在当前窗口中显示的所有早期内容。
 
@@ -166,14 +166,14 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 
 ## <a name="related-topics"></a>相关主题
 
-### <a name="complete-sample-app"></a>Complete sample app
+### <a name="complete-sample-app"></a>完整示例应用
 
-- [Association launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
+- [关联启动示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
 
 ### <a name="concepts"></a>概念
 
-- [Default Programs](https://docs.microsoft.com/windows/desktop/shell/default-programs)
-- [File Type and URI Associations Model](https://docs.microsoft.com/windows/desktop/w8cookbook/file-type-and-protocol-associations-model)
+- [默认程序](https://docs.microsoft.com/windows/desktop/shell/default-programs)
+- [文件类型和 URI 关联模型](https://docs.microsoft.com/windows/desktop/w8cookbook/file-type-and-protocol-associations-model)
 
 ### <a name="tasks"></a>任务
 
@@ -182,10 +182,10 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 
 ### <a name="guidelines"></a>指南
 
-- [Guidelines for file types and URIs](https://docs.microsoft.com/windows/uwp/files/index)
+- [文件类型和 Uri 指南](https://docs.microsoft.com/windows/uwp/files/index)
 
 ### <a name="reference"></a>参考
 
-- [AppX Package Manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-extension)
-- [Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs)
-- [Windows.UI.Xaml.Application.OnActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated)
+- [AppX 包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-extension)
+- [Windows.applicationmodel.resources.core. ProtocolActivatedEventArgs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs)
+- [OnActivated （& e）](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated)

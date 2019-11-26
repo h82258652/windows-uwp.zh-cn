@@ -22,7 +22,7 @@ ms.locfileid: "74260410"
 
 **重要的 API**
 
-- [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)
+- [**封存**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)
 
 了解当系统挂起你的应用时如何保存重要的应用程序数据。 以下示例向事件处理程序注册 [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending) 事件并将字符串保存到文件中。
 
@@ -137,12 +137,12 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 
 当终止应用时系统不会通知应用，因此当暂停应用时，你的应用必须保存其应用程序数据并释放独占资源和文件句柄，并且在终止后又激活应用时还原这些内容。
 
-如果在处理程序中执行异步调用，控件将立即从该异步调用中返回。 这意味着，执行之后会从事件处理程序中返回，并且应用会转变为下一个状态，即使异步调用尚未完成。 使用传递给事件处理程序的 [**EnteredBackgroundEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel?redirectedfrom=MSDN) 对象上的 [**GetDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel?redirectedfrom=MSDN) 方法以延迟暂停，直到调用返回的 [**Windows.Foundation.Deferral**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral) 对象上的 [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete) 方法。
+如果在处理程序中执行异步调用，控件将立即从该异步调用中返回。 这意味着，执行之后会从事件处理程序中返回，并且应用会转变为下一个状态，即使异步调用尚未完成。 使用传递给事件处理程序的 [**EnteredBackgroundEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel?redirectedfrom=MSDN) 对象上的 [**GetDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel?redirectedfrom=MSDN) 方法以延迟暂停，直到调用返回的 [**Windows.Foundation.Deferral**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete) 对象上的 [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral) 方法。
 
 延迟并不会增加应用终止之前需要运行的代码量。 它只延迟终止，直到调用延迟的 *Complete* 方法，或者达到截止时间，*以先发生者为准*。 要延长处于“暂停中”状态的事件，请使用 [**ExtendedExecutionSession**](run-minimized-with-extended-execution.md)
 
 > [!NOTE]
-> To improve system responsiveness in Windows 8.1, apps are given low priority access to resources after they are suspended. 为了支持新的优先级，延长了暂停操作超时，以便应用具有与普通优先级相当的 5 秒（在 Windows 上）或者 1 到 10 秒超时（在 Windows Phone 上）。 你无法扩展或改变此超时窗口。
+> 若要提高 Windows 8.1 中的系统响应能力，在挂起应用程序后，将对其授予低优先级访问资源的权限。 为了支持新的优先级，延长了暂停操作超时，以便应用具有与普通优先级相当的 5 秒（在 Windows 上）或者 1 到 10 秒超时（在 Windows Phone 上）。 你无法扩展或改变此超时窗口。
 
 **有关使用 Visual Studio 进行调试的注释：** Visual Studio 阻止 Windows 暂停连接到调试程序的应用。 这是为了允许用户在应用正在运行时查看 Visual Studio 调试 UI。 调试应用时，可以使用 Visual Studio 将一个暂停事件发送给该应用。 请确保 **“调试位置”** 工具栏正在显示，然后单击 **“暂停”** 图标。
 
@@ -151,8 +151,8 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 * [应用生命周期](app-lifecycle.md)
 * [处理应用激活](activate-an-app.md)
 * [处理应用恢复](resume-an-app.md)
-* [UX guidelines for launch, suspend, and resume](https://docs.microsoft.com/windows/uwp/launch-resume/index)
-* [Extended Execution](run-minimized-with-extended-execution.md)
+* [启动、挂起和恢复的 UX 指导原则](https://docs.microsoft.com/windows/uwp/launch-resume/index)
+* [扩展执行](run-minimized-with-extended-execution.md)
 
  
 

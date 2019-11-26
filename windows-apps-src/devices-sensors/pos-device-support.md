@@ -23,7 +23,7 @@ ms.locfileid: "74259659"
 |
 
 
-| 制造商  | 型号                          | 功能 | 连接    | 在任务栏的搜索框中键入         | 模式                      |
+| 制造商  | 型号                          | 功能 | 左侧的“连接”    | 类型         | 模式                      |
 |---------------|--------------------------------|------------|--------------|--------------|---------------------------|
 | 代码          | 读卡器™950                    | 图         | USB          | 手持设备     | HID POS 扫描器           |
 | 代码          | 读卡器™1021                   | 图         | USB          | 手持设备     | HID POS 扫描器           |
@@ -32,8 +32,8 @@ ms.locfileid: "74259659"
 | Honeywell     | Genesis 7580g                  | 图         | USB          | 呈现 | HID POS 扫描器           |
 | Honeywell     | Granit 198Xi                   | 图         | USB          | 手持设备     | HID POS 扫描器           |
 | Honeywell     | Granit 191Xi                   | 图         | USB          | 手持设备     | HID POS 扫描器           |
-| Honeywell     | N5680                          | 图         | 内部     | Component    | HID POS 扫描器           |
-| Honeywell     | N3680                          | 图         | 内部     | Component    | HID POS 扫描器           |
+| Honeywell     | N5680                          | 图         | 内置     | 组件    | HID POS 扫描器           |
+| Honeywell     | N3680                          | 图         | 内置     | 组件    | HID POS 扫描器           |
 | Honeywell     | 轨道7190g                    | 图         | USB          | 呈现 | HID POS 扫描器           |
 | Honeywell     | Stratos 2700                   | 图         | USB          | 在计数器中   | HID POS 扫描器           |
 | Honeywell     | Voyager 1200g                  | 1D         | USB          | 手持设备     | HID POS 扫描器           |
@@ -77,22 +77,22 @@ ms.locfileid: "74259659"
 ### <a name="windows-devices-with-built-in-barcode-scanner"></a>带有内置条形码扫描器的 Windows 设备
 | 制造商   | 型号 | 操作系统 |
 |----------------|-------|------------------|
-| Innowi         | ChecOut-M | Windows 10   |
+| Innowi         | ChecOut-M | Windows 10   |
 
 ### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>带有内置条形码扫描器的 Windows Mobile 设备
 | 制造商   | 型号 | 操作系统 |
 |----------------|-------|------------------|
-| Bluebird       | EF400 | Windows Mobile   |
-| Bluebird       | EF500 | Windows Mobile   |
-| Bluebird       | EF500R | Windows Mobile   |
-| Honeywell      | CT50   | Windows Mobile   |
-| Honeywell      | D75e | Windows Mobile   |
-| Janam          | XT2      | Windows Mobile   |
-| 松下      | FZ-F1-E1 | Windows Mobile   |
-| 松下      | FZ-F1-F1 |Windows Mobile   |
-| PointMobile    | PM80 | Windows Mobile   |
-| 斑马          | TC700j | Windows Mobile   |
-| HP             | 精英 X3 Jacket | Windows Mobile   |
+| Bluebird       | EF400 | Windows 移动版   |
+| Bluebird       | EF500 | Windows 移动版   |
+| Bluebird       | EF500R | Windows 移动版   |
+| Honeywell      | CT50   | Windows 移动版   |
+| Honeywell      | D75e | Windows 移动版   |
+| Janam          | XT2      | Windows 移动版   |
+| 松下      | FZ-F1-E1 | Windows 移动版   |
+| 松下      | FZ-F1-F1 |Windows 移动版   |
+| PointMobile    | PM80 | Windows 移动版   |
+| 斑马          | TC700j | Windows 移动版   |
+| HP             | 精英 X3 Jacket | Windows 移动版   |
 
 
 

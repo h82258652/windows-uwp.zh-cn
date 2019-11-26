@@ -56,7 +56,7 @@ UWP 应用可以侦听以下指针事件：
 <thead>
 <tr class="header">
 <th align="left">事件</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -64,7 +64,7 @@ UWP 应用可以侦听以下指针事件：
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>PointerCanceled</strong></a></p></td>
 <td align="left"><p>在指针由平台取消时发生。 在以下条件下，可能会发生这种情况：</p>
 <ul>
-<li>当在输入图面的范围内检测到笔时，将取消触摸指针。</li>
+<li>当在输入图面的范围内检测到笔时，将取消触控指针。</li>
 <li>超过 100 毫秒未检测到活动的接触点。</li>
 <li>监视器/显示器已更改（分辨率、设置、多监视器配置）。</li>
 <li>桌面已锁定或用户已注销。</li>
@@ -83,7 +83,7 @@ UWP 应用可以侦听以下指针事件：
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>PointerEntered</strong></a></p></td>
-<td align="left"><p>在指针进入元素的绑定区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
+<td align="left"><p>在指针进入元素的边界区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
 <li>触摸需要手指接触才能引发此事件，无论是从对元素直接触摸按下还是移动到该元素的绑定区域。</li>
 <li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
@@ -96,7 +96,7 @@ UWP 应用可以侦听以下指针事件：
 <ul>
 <li>触摸需要手指接触，并在指针移出该元素的绑定区域时引发此事件。</li>
 <li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
-<li>和触摸一样，笔在移出该元素的绑定区域时引发此事件。 但是，笔也有悬停状态 (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，当状态从 true 更改为 false 时触发此事件。</li>
+<li>和触控一样，笔在移出该元素的边界区域时触发此事件。 但是，笔也有悬停状态 (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，当状态从 true 更改为 false 时触发此事件。</li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -105,7 +105,7 @@ UWP 应用可以侦听以下指针事件：
 <ul>
 <li>触摸需要手指接触，并且仅在与该元素的绑定区域接触时引发此事件。</li>
 <li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
-<li>和触摸一样，笔在与该元素的绑定区域接触时引发此事件。 但是，笔也有悬停状态 (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，当为 true 且位于元素的边界区域内时，将触发此事件。</li>
+<li>和触控一样，笔在与该元素的边界区域接触时触发此事件。 但是，笔也有悬停状态 (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，当为 true 且位于元素的边界区域内时，将触发此事件。</li>
 </ul></td>
 </tr>
 <tr class="even">

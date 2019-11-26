@@ -74,7 +74,7 @@ Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Win
 
 [!code-cs[CaptureToFile](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCaptureToFile)]
 
-有关使用文件和文件夹的详细信息，请参阅[**文件、文件夹和库**](https://docs.microsoft.com/windows/uwp/files/index)。
+若要详细了解如何使用文件和文件夹，请参阅[**文件、文件夹和库**](https://docs.microsoft.com/windows/uwp/files/index)。
 
 ## <a name="capture-a-video"></a>捕获视频
 通过使用 [**LowLagMediaRecording**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.LowLagMediaRecording) 类将视频捕获快速添加到应用。 首先，声明对象的类变量。
@@ -91,7 +91,7 @@ Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Win
 
 [!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
 
-可以继续调用 **StartAsync** 和 **StopAsync** 以捕获其他视频。 完成视频捕获后，调用 [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.finishasync) 以释放捕获会话并清理关联的资源。 完成此调用后，在调用 **StartAsync** 之前必须重新调用 **PrepareLowLagRecordToStorageFileAsync** 以重新初始化捕获会话。
+可以继续调用 **StartAsync** 和 **StopAsync** 以捕获其他视频。 完成视频捕获后，调用 [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.finishasync) 以释放捕获会话并清理关联的资源。 完成此调用后，必须重新调用 **PrepareLowLagRecordToStorageFileAsync** 以重新初始化捕获会话，然后才可 **StartAsync**。
 
 [!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
 
@@ -119,11 +119,11 @@ Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Win
 
 [!code-cs[PauseCaptureWithResult](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetPauseCaptureWithResult)]
 
-在恢复录制时，可将图像源设置为 null 以将其隐藏。
+在恢复录制时，可将图像源设置为 NULL 以将其隐藏。
 
 [!code-cs[ResumeCaptureWithResult](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetResumeCaptureWithResult)]
 
-请注意，在通过调用 [**StopWithResultAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.stopwithresultasync) 停止视频时也可获得结果帧。
+请注意，在通过调用 [**StopWithResultAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.stopwithresultasync) 停止视频时还可获得结果帧。
 
 
 ## <a name="capture-audio"></a>捕获音频 
@@ -132,14 +132,14 @@ Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Win
 [!code-cs[StartAudioCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartAudioCapture)]
 
 
-调用 [**StopAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagphotosequencecapture.stopasync) 以停止音频录制。
+若要停止音频录制，请调用 [**StopAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagphotosequencecapture.stopasync)。
 
 ## <a name="related-topics"></a>相关主题
 
 * [摄像头](camera.md)  
 [!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
 
-可多次调用 **StartAsync** 和 **StopAsync** 以录制多个音频文件。 完成音频捕获后，调用 [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.finishasync) 以释放捕获会话并清理关联的资源。 完成此调用后，在调用 **StartAsync** 之前必须重新调用 **PrepareLowLagRecordToStorageFileAsync** 以重新初始化捕获会话。
+可多次调用 **StartAsync** 和 **StopAsync** 以录制多个音频文件。 完成音频捕获后，调用 [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.finishasync) 以释放捕获会话并清理关联的资源。 完成此调用后，必须重新调用 **PrepareLowLagRecordToStorageFileAsync** 以重新初始化捕获会话，然后才可 **StartAsync**。
 
 [!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
 

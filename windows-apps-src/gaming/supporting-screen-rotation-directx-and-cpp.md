@@ -388,7 +388,7 @@ resizeManager->NotifyLayoutCompleted();
 
 如第三个项目符号中所述，当应用程序调用[**NotifyLayoutCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindowresizemanager.notifylayoutcompleted)时，Windows 10 将停止超时窗口，完成旋转动画并将控制权返回给应用程序，该应用程序现在在新的显示方向上进行绘制。 总体效果是你的应用现在感觉到更流畅一点且响应更快一点，且工作效率更高一点！
 
-## <a name="appendix-a-applying-matrices-for-screen-rotation-2-d"></a>附录 A: 应用矩阵以进行屏幕旋转 (2-D)
+## <a name="appendix-a-applying-matrices-for-screen-rotation-2-d"></a>附录 A：应用矩阵以进行屏幕旋转 (2-D)
 
 
 在[调整交换链的大小和预旋转其内容](#resizing-the-swap-chain-and-pre-rotating-its-contents)中的示例代码中（以及在 [DXGI 交换链旋转示例](https://code.msdn.microsoft.com/windowsapps/DXGI-swap-chain-rotation-21d13d71)中），你可能已注意到，对于 Direct2D 输出和 Direct3D 输出，我们有单独的旋转矩阵。 我们首先看一下 2-D 矩阵。

@@ -1,6 +1,6 @@
 ---
 title: 在多线程环境中使用 Windows 运行时对象 | Microsoft 文档
-description: This article discusses the way the .NET Framework handles calls from C# and Visual Basic code to objects that are provided by the Windows Runtime or by Windows Runtime components.
+description: 本文讨论 .NET Framework 处理从C# Windows 运行时或 Windows 运行时组件提供的对象 Visual Basic 代码的调用的方式。
 ms.date: 01/14/2017
 ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
@@ -14,7 +14,7 @@ ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259800"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>在多线程环境中使用 Windows 运行时对象
-This article discusses the way the .NET Framework handles calls from C# and Visual Basic code to objects that are provided by the Windows Runtime or by Windows Runtime components.
+本文讨论 .NET Framework 处理从C# Windows 运行时或 Windows 运行时组件提供的对象 Visual Basic 代码的调用的方式。
 
 在 .NET Framework 中，默认情况下你可以从多个线程访问任意对象，而无需进行特殊处理。 你需要的仅仅是对该对象的引用。 在 Windows 运行时中，此类对象称为*敏捷*。 大多数 Windows 运行时类都为敏捷类，但有几类除外，而且即使是敏捷类也可能需要进行特殊处理。
 
@@ -163,4 +163,4 @@ End Sub
 ## <a name="see-also"></a>另请参阅
 [C# 指南](/dotnet/csharp/)
 
-[Visual Basic Guide](/dotnet/visual-basic/)
+[Visual Basic 指南](/dotnet/visual-basic/)

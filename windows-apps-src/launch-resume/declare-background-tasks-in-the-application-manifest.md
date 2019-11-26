@@ -175,7 +175,7 @@ ms.locfileid: "74260489"
 
 ### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a>使用 ResourceGroup 属性指定运行后台任务的位置。
 
-下面的示例 XML 声明了在独立于同一应用的其他后台任务实例的 BackgroundTaskHost.exe 进程中运行。 注意 `ResourceGroup` 属性，可标识将同时运行哪些后台任务。
+下面的示例 XML 声明了在独立于同一应用的其他后台任务实例的 BackgroundTaskHost.exe 进程中运行。 注意 `ResourceGroup` 属性，该属性可标识将同时运行哪些后台任务。
 
 ```xml
 <Extensions>

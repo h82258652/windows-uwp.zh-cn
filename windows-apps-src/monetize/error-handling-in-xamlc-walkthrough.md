@@ -59,7 +59,7 @@ ms.locfileid: "74260279"
         ErrorOccurred="OnAdError" />
     ```
 
-4.  在 MainPage.xaml.cs 中，将以下 **OnAdError** 事件处理程序添加到 **MainPage** 类。 此事件处理程序会将信息写入 Visual Studio“输出”窗口。
+4.  在 MainPage.xaml.cs 中，将以下 **OnAdError** 事件处理程序添加到 **MainPage** 类。 此事件处理程序会将信息写入 Visual Studio **输出**窗口。
     ``` csharp
     private void OnAdError(object sender, AdErrorEventArgs e)
     {
@@ -68,7 +68,7 @@ ms.locfileid: "74260279"
     }
     ```
 
-4.  生成并运行该项目。 在应用运行后，你将在 Visual Studio 的“输出”窗口中看到与以下内容类似的消息。
+4.  生成并运行该项目。 在应用运行后，你将在 Visual Studio 的**输出**窗口中看到与以下内容类似的消息。
     ```json
     AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests must use the same application ID within a single application (0, d25517cb-12d4-4699-8bdc-52040c712cab) ErrorCode: ClientConfiguration
     ```

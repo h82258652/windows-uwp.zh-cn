@@ -132,7 +132,7 @@ else
     d:Source="{d:DesignData /SampleData/RecordingsSampleData.json, Type=local:Recordings}"
 ```
 
-到目前为止，我们一直在使用 **d:DesignData** 从 XAML 或 JSON 文件中加载设计时示例数据。 另一种替代选项是 **d:DesignInstance** 标记扩展，它指示设计时源基于 **Type** 属性指定的类。 下面提供了一个示例。
+到目前为止，我们一直在使用 **d:DesignData** 从 XAML 或 JSON 文件中加载设计时示例数据。 另一种替代选项是 **d:DesignInstance** 标记扩展，它指示设计时源基于 **Type** 属性指定的类。 下面是一个示例。
 
 ``` xaml
     <CollectionViewSource x:Name="RecordingsCollection" Source="{Binding Recordings}"

@@ -28,7 +28,7 @@ ms.locfileid: "74257195"
 
 自定义视频效果在实现 [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect) 接口的类中定义。 此类不能直接包含在应用的项目中。 必须改用 Windows 运行时组件来托管视频效果类。
 
-**Add a Windows Runtime component for your video effect**
+**添加视频效果的 Windows 运行时组件**
 
 1.  在 Microsoft Visual Studio 中，打开解决方案后，转到**文件**菜单并依次选择**添加-&gt;新建项目**。
 2.  选择 **Windows 运行时组件(通用 Windows)** 项目类型。
@@ -93,7 +93,7 @@ ms.locfileid: "74257195"
 
 
 > [!NOTE] 
-> 如果从 **SupportedEncodingProperties** 返回空的 [**VideoEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.VideoEncodingProperties) 对象的空白默认列表，系统将默认为 ARGB32 编码。
+> 如果从 [SupportedEncodingProperties**返回空的**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.VideoEncodingProperties)VideoEncodingProperties 对象的空白默认列表，系统将默认为 ARGB32 编码。
 
  
 
@@ -152,7 +152,7 @@ ms.locfileid: "74257195"
 
  
 
-现在，你可以添加 **ProcessFrame** 方法实现。 首先，此方法将从输入和输出软件位图中获取 [**BitmapBuffer**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapBuffer) 对象。 请注意，输出帧和输入帧均已打开，分别用于写入和读取。 接下来，通过调用 [**CreateReference**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference) 为每个缓冲区获取 [**IMemoryBufferReference**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IMemoryBufferReference)。 然后，通过将 **IMemoryBufferReference** 转换为上述定义的 COM 互操作接口 **IMemoryByteAccess**，接着调用 **GetBuffer**，获取实际数据缓冲区。
+现在，你可以添加 **ProcessFrame** 方法实现。 首先，此方法将从输入和输出软件位图中获取 [**BitmapBuffer**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapBuffer) 对象。 请注意，输出帧和输入帧均已打开，分别用于写入和读取。 接下来，通过调用 [**CreateReference**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IMemoryBufferReference) 为每个缓冲区获取 [**IMemoryBufferReference**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference)。 然后，通过将 **IMemoryBufferReference** 转换为上述定义的 COM 互操作接口 **IMemoryByteAccess**，接着调用 **GetBuffer**，获取实际数据缓冲区。
 
 现在已获取数据缓冲区，你可以从输入缓冲区进行读取，并对输出缓冲区进行写入。 通过调用 [**GetPlaneDescription**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.getplanedescription) 获取缓冲区的布局，它提供了有关缓冲区的宽度、步幅和初始偏移的信息。 每像素位数由与之前通过 [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties) 方法设置的编码属性确定。 缓冲区格式信息用于查找每个像素的缓冲区中的索引。 源缓冲区的像素值已复制到目标缓冲区中，并且颜色值乘以为此效果定义的 FadeValue 属性，以使其按指定的量变暗。
 
@@ -166,7 +166,7 @@ ms.locfileid: "74257195"
 
 使用以下步骤将 Win2D NuGet 程序包添加到你创建的项目，如本文开头的**向应用添加自定义效果**部分中所述。
 
-**To add the Win2D NuGet package to your effect project**
+**将 Win2D NuGet 包添加到效果项目**
 
 1.  在**解决方案资源管理器**中，右键单击 **VideoEffectComponent** 项目，并选择**管理 NuGet 程序包**。
 2.  在窗口顶部，选择**浏览**选项卡。
@@ -180,7 +180,7 @@ ms.locfileid: "74257195"
 [!code-cs[UsingWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetUsingWin2D)]
 
 
-由于此效果将使用 GPU 内存来处理图像数据，因此应当从 [**SupportedMemoryTypes**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes) 属性返回 [**MediaMemoryTypes.Gpu**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaMemoryTypes)。
+由于此效果将使用 GPU 内存来处理图像数据，因此应当从 [**SupportedMemoryTypes**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaMemoryTypes) 属性返回 [**MediaMemoryTypes.Gpu**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes)。
 
 [!code-cs[SupportedMemoryTypesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedMemoryTypesWin2D)]
 
@@ -190,7 +190,7 @@ ms.locfileid: "74257195"
 [!code-cs[SupportedEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedEncodingPropertiesWin2D)]
 
 
-使用 [**SetEncodingProperties**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) 方法，从传入到该方法中的 [**IDirect3DDevice**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice) 创建新的 Win2D **CanvasDevice** 对象。
+使用 [**SetEncodingProperties**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) 方法，从传入到该方法中的IDirect3DDevice[**创建新的 Win2D**CanvasDevice](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice) 对象。
 
 [!code-cs[SetEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetEncodingPropertiesWin2D)]
 
@@ -204,7 +204,7 @@ ms.locfileid: "74257195"
 
 最后一步是实现实际处理图像数据的 [**ProcessFrame**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.processframe) 方法。
 
-使用 Win2D API，从输入帧的 [**Direct3DSurface**](https://docs.microsoft.com/uwp/api/windows.media.videoframe.direct3dsurface) 属性创建 **CanvasBitmap**。 从输出帧的 **Direct3DSurface** 创建一个 **CanvasRenderTarget**，从此呈现目标创建一个 **CanvasDrawingSession**。 新的 Win2D **GaussianBlurEffect** 已使用我们的效果通过 [**SetProperties**](https://docs.microsoft.com/uwp/api/windows.media.imediaextension.setproperties) 公开的 **BlurAmount** 属性进行了初始化。 最后，调用 **CanvasDrawingSession.DrawImage** 方法，使用模糊效果将输入位图绘制到呈现目标。
+使用 Win2D API，从输入帧的Direct3DSurface[**属性创建**CanvasBitmap](https://docs.microsoft.com/uwp/api/windows.media.videoframe.direct3dsurface)。 从输出帧的 **Direct3DSurface** 创建一个 **CanvasRenderTarget**，从此呈现目标创建一个 **CanvasDrawingSession**。 新的 Win2D **GaussianBlurEffect** 已使用我们的效果通过SetProperties[**公开的**BlurAmount](https://docs.microsoft.com/uwp/api/windows.media.imediaextension.setproperties) 属性进行了初始化。 最后，调用 **CanvasDrawingSession.DrawImage** 方法，使用模糊效果将输入位图绘制到呈现目标。
 
 [!code-cs[ProcessFrameWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetProcessFrameWin2D)]
 
@@ -232,14 +232,14 @@ ms.locfileid: "74257195"
 
 ### <a name="add-your-custom-effect-to-a-clip-in-a-mediacomposition"></a>向 MediaComposition 中的一段剪辑添加自定义效果
 
-有关从视频剪辑创建媒体合成的一般指南，请参阅[媒体合成和编辑](media-compositions-and-editing.md)。 以下代码片段展示了使用自定义视频效果创建简单媒体合成的过程。 通过调用 [**CreateFromFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.createfromfileasync)、传入用户通过 [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 选择的视频文件创建一个 [**MediaClip**](https://docs.microsoft.com/uwp/api/Windows.Media.Editing.MediaClip) 对象，并将剪辑添加到新的 [**MediaComposition**](https://docs.microsoft.com/uwp/api/Windows.Media.Editing.MediaComposition)。 接下来，创建新的 [**VideoEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.VideoEffectDefinition) 对象，从而将效果的命名空间和类名称传入到构造函数。 最后，将效果定义添加到 **MediaClip** 对象的 [**VideoEffectDefinitions**](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.videoeffectdefinitions) 集合。
+有关从视频剪辑创建媒体合成的一般指南，请参阅[媒体合成和编辑](media-compositions-and-editing.md)。 以下代码片段展示了使用自定义视频效果创建简单媒体合成的过程。 通过调用 [**CreateFromFileAsync**](https://docs.microsoft.com/uwp/api/Windows.Media.Editing.MediaClip)、传入用户通过 [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.createfromfileasync) 选择的视频文件创建一个 [**MediaClip**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 对象，并将剪辑添加到新的 [**MediaComposition**](https://docs.microsoft.com/uwp/api/Windows.Media.Editing.MediaComposition)。 接下来，创建新的 [**VideoEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.VideoEffectDefinition) 对象，从而将效果的命名空间和类名称传入到构造函数。 最后，将效果定义添加到 [MediaClip**对象的**](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.videoeffectdefinitions)VideoEffectDefinitions 集合。
 
 
 [!code-cs[AddEffectToComposition](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddEffectToComposition)]
 
 
 ## <a name="related-topics"></a>相关主题
-* [Simple camera preview access](simple-camera-preview-access.md)
+* [简单的相机预览访问](simple-camera-preview-access.md)
 * [媒体合成和编辑](media-compositions-and-editing.md)
-* [Win2D documentation](https://microsoft.github.io/Win2D/html/Introduction.htm)
+* [Win2D 文档](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [媒体播放](media-playback.md)

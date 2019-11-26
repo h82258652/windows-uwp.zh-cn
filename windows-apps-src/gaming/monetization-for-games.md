@@ -103,7 +103,7 @@ Microsoft Store 可以使你的游戏可在全球200多个国家和地区下载�
 3. 在__应用概述__页面上，单击__开始提交__。
 4. 配置此新提交。 在提交页面上：
     * 单击__定价和可用性__。 在 "__可见性__" 部分中，选择 "__隐藏此应用并防止获取 ...__ "，以确保只有开发团队可以访问该游戏。 有关更多详细信息，请转到[分发和可见性](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。
-    * 单击“属性”。 在__类别和子类别__部分中，选择__游戏__和适合你的游戏的子类别。
+    * 单击__属性__。 在__类别和子类别__部分中，选择__游戏__和适合你的游戏的子类别。
     * 单击__年龄分级__。 准确填写调查表。
     * 单击__程序包__。 上传在上一步中创建的游戏程序包。
 5. 按照仪表板中的任何其他提交提示，你可以成功发布此对公众保持隐藏的游戏。
@@ -183,7 +183,7 @@ Microsoft 广告 SDK 中的 [AdControl](https://docs.microsoft.com/uwp/api/micro
 * [横幅广告的最佳实践](https://docs.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
 * [间隙广告的最佳做法](https://docs.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
 
-有关常见开发问题（不显示广告、黑盒闪烁并消失或广告不刷新）的解决方案，请参阅[疑难解答指南](https://docs.microsoft.com/windows/uwp/monetize/troubleshooting-guides)。
+有关常见开发问题（如不显示广告、黑盒闪烁并消失或广告不刷新）的解决方案，请参阅[疑难解答指南](https://docs.microsoft.com/windows/uwp/monetize/troubleshooting-guides)。
 
 ### <a name="prepare-for-release-by-replacing-ad-unit-test-values"></a>通过替换广告单元测试值准备发布
 
@@ -219,7 +219,7 @@ AdDuplex 可用于在你的游戏中实现横幅或间隙广告。
 
 |市场活动类型             | 你的游戏的广告显示在...                                                                                                                                                                   |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|付费                      |与你的游戏的设备或类别匹配的应用。                                                                                                                                                   |
+|已付费                      |与你的游戏的设备或类别匹配的应用。                                                                                                                                                   |
 |免费社区            |由已选择加入社区广告市场活动的其他开发人员发布的应用。 有关详细信息，请参阅[关于社区广告](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)。|
 |免费自家                |仅你发布的应用。 有关详细信息，请参阅[关于自家广告](https://docs.microsoft.com/windows/uwp/publish/about-house-ads)。                                                            |
 

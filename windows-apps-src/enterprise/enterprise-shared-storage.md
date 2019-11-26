@@ -1,6 +1,6 @@
 ---
 ms.assetid: B48E21AB-0EA5-444B-8333-393DD8D1B76D
-title: 企业共享存储
+title: 企业共享的存储
 description: 企业共享的存储为要共享数据的业务线应用定义本地数据位置。
 ms.date: 02/08/2017
 ms.topic: article
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259624"
 ---
-# <a name="enterprise-shared-storage"></a>企业共享存储
+# <a name="enterprise-shared-storage"></a>企业共享的存储
 
 共享的存储包含两个位置，其中的应用具有受限功能 **enterpriseDeviceLockdown**，而企业证书具有完整的读写访问权限。 请注意，**enterpriseDeviceLockdown** 功能允许应用使用设备锁定 API 和访问企业共享的存储文件夹。 有关该 API 的详细信息，请参阅 [**Windows.Embedded.DeviceLockdown**](https://docs.microsoft.com/uwp/api/Windows.Embedded.DeviceLockdown?redirectedfrom=MSDN) 命名空间。  
 
@@ -21,7 +21,7 @@ ms.locfileid: "74259624"
 - \Data\SharedData\Enterprise\Persistent
 - \Data\SharedData\Enterprise\Non-Persistent
 
-## <a name="scenarios"></a>方案
+## <a name="scenarios"></a>场景
 
 企业共享的存储为以下方案提供支持。
 

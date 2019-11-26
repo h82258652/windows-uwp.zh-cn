@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259689"
 ---
-# <a name="bluetooth-le-advertisements"></a>蓝牙 LE 广告
+# <a name="bluetooth-le-advertisements"></a>蓝牙低能耗广告
 
 
 **重要的 API**

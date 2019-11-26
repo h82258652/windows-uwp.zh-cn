@@ -22,14 +22,14 @@ ms.locfileid: "74260340"
 
 ## <a name="in-this-section"></a>本部分内容
 
-|  主题    | 描述 |               
+|  主题    | 说明 |               
 |----------|-------|
-| [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)     | 在 XAML/.NET 应用中添加横幅广告。        |
-| [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)     | 在 HTML5/JavaScript 应用中添加横幅广告。        |
-| [Supported banner ad sizes](supported-ad-sizes-for-banner-ads.md)    |  检查 UWP 应用中的横幅广告的受支持大小。        |
+| [XAML 和 .NET 中的 Adunitid](adcontrol-in-xaml-and--net.md)     | 在 XAML/.NET 应用中添加横幅广告。        |
+| [HTML 5 和 Javascript 中的 Adunitid](adcontrol-in-html-5-and-javascript.md)     | 在 HTML5/JavaScript 应用中添加横幅广告。        |
+| [支持的横幅广告大小](supported-ad-sizes-for-banner-ads.md)    |  检查 UWP 应用中的横幅广告的受支持大小。        |
 
 
 ## <a name="related-topics"></a>相关主题
 
 * [GitHub 上的广告示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
-* [Set up ad units for your app](set-up-ad-units-in-your-app.md)
+* [设置应用的 ad 单位](set-up-ad-units-in-your-app.md)

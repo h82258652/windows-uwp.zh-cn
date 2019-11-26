@@ -19,7 +19,7 @@ ms.locfileid: "74257836"
 
 若要使应用程序[经过 Windows 认证](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)或准备好将其[发布到 Microsoft Store](https://docs.microsoft.com/windows/uwp/publish/app-submissions)，应首先验证并测试该应用程序。 本主题介绍了如何安装和运行[Windows 应用程序认证工具包](https://msdn.microsoft.com/en-US/windows/apps/bg127575)，以确保应用程序的安全性和效率。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 测试通用 Windows 应用的先决条件：
 
@@ -88,7 +88,7 @@ ms.locfileid: "74257836"
 
 Windows 应用认证工具包的性能测试阈值基于低能耗电脑的性能。
 
-执行测试的计算机的特性会影响测试结果。 若要确定你的应用程序的性能是否符合[Microsoft Store 的策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)，我们建议你在低功耗计算机上测试你的应用程序，例如具有1366x768 （或更高版本）和旋转硬盘（与固态硬盘相对）的屏幕分辨率的基于 Intel Atom 处理器的计算机。
+执行测试的计算机的属性会影响测试结果。 若要确定你的应用程序的性能是否符合[Microsoft Store 的策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)，我们建议你在低功耗计算机上测试你的应用程序，例如具有1366x768 （或更高版本）和旋转硬盘（与固态硬盘相对）的屏幕分辨率的基于 Intel Atom 处理器的计算机。
 
 随着低能耗计算机的发展，其性能特征可能会随时间的推移而改变。 请参阅最新的[Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)，并在最新版本的 Windows 应用程序认证工具包中测试你的应用程序，确保你的应用符合最新的性能要求。
 

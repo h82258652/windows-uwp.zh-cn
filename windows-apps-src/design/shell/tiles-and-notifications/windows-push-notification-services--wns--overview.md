@@ -59,7 +59,7 @@ Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服�
 ## <a name="authenticating-your-cloud-service"></a>验证你的云服务
 
 
-若要发送通知，云服务必须通过 WNS 进行验证。 此过程的第一步出现在使用 Microsoft Store 仪表板注册应用之时。 在注册过程中，你的应用会获得一个程序包安全标识符 (SID) 和一个密钥。 该信息由你的云服务用于向 WNS 进行验证。
+若要发送通知，云服务必须通过 WNS 进行验证。 此过程的第一步出现在使用 Microsoft Store 仪表板注册应用之时。 在注册过程中，应用会获得一个程序包安全标识符 (SID) 和一个密钥。 该信息由你的云服务用于向 WNS 进行验证。
 
 WNS 身份验证方案通过来自 [OAuth 2.0](https://tools.ietf.org/html/draft-ietf-oauth-v2-23) 协议的客户端凭据配置文件来实现。 云服务通过提供其凭据（程序包 SID 和密钥）来向 WNS 进行验证。 反过来，云服务会获得一个访问令牌。 该访问令牌允许云服务发送通知。 每次向 WNS 发送通知请求时都必须使用该令牌。
 
@@ -148,7 +148,7 @@ WNS 对云服务进行身份验证，如果成功，则发送“200 OK”响应�
 -   当设备脱机时，WNS 将默认为每个通道 URI 存储至多 5 个磁贴通知（如果启用了队列；否则只能存储 1 个磁贴通知）和 1 个锁屏提醒通知，不存储原始通知。 可以通过 [X-WNS-Cache-Policy 标头](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))更改这种默认缓存行为。 请注意，当设备离线时，永远不会存储 Toast 通知。
 -   在对用户个性化通知内容的方案中，WNS 建议云服务在收到这些更新时立即发送这些更新。 此方案的示例包括社交媒体源更新、即时通信邀请、新消息通知或警报。 作为备用方法，你可以使用向大部分用户频繁提供相同的通用更新的方案；例如，天气、股票和新闻更新。 WNS 指南中指定这些更新的频率最高为每 30 分钟一个。 最终用户或 WNS 可以将超过该频率的例常更新确定为滥发更新。
 
-## <a name="expiration-of-tile-and-badge-notifications"></a>磁贴和锁屏提醒通知到期时间
+## <a name="expiration-of-tile-and-badge-notifications"></a>磁贴和锁屏提醒通知过期时间
 
 
 默认情况下，磁贴和徽标通知在下载完成时的三天后过期。 通知过期时，此内容将从磁贴或队列中删除，且不再向用户显示。 最佳做法是在所有磁贴和锁屏提醒通知上设置过期时间（使用对你的应用有意义的时间），以便使磁贴的内容不会在它不相关时继续保留。 对于具有已定义的使用寿命的内容来说，显式过期时间是必需的。 这还确保在你的云服务停止发送通知或用户在长时间内与网络断开连接时删除过时的内容。
@@ -167,13 +167,13 @@ WNS 对云服务进行身份验证，如果成功，则发送“200 OK”响应�
 
 此两种设置的状态无法检查，但可以检查节电模式的状态。 在 Windows 10 中，使用[**EnergySaverStatus**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus)属性检查节电程序状态。 应用也可以使用 [**EnergySaverStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) 事件侦听对节电模式的更改。
 
-如果应用严重依赖推送通知，我们建议通知用户，在节电模式打开时，他们可能无法接收通知，并让他们可以轻松地调整“节电模式设置”。 使用 Windows 10 中的节电模式设置 URI 方案 `ms-settings:batterysaver-settings`，你可以提供指向 "设置" 应用的便利链接。
+如果应用严重依赖推送通知，我们建议通知用户，在节电模式打开时，他们可能无法接收通知，并让他们可以轻松地调整**节电模式设置**。 使用 Windows 10 中的节电模式设置 URI 方案 `ms-settings:batterysaver-settings`，你可以提供指向 "设置" 应用的便利链接。
 
 **提示**   向用户通知节电的设置时，建议提供一种在以后禁止显示该消息的方法。 例如，以下示例中的 `dontAskMeAgainBox` 复选框保留用户在 [**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings) 中的首选项。
 
  
 
-下面的示例演示如何在 Windows 10 中检查是否打开了节电版。 此示例将通知用户，并将“设置”应用启动到“节电模式设置”。 `dontAskAgainSetting` 允许用户在不希望再次收到通知时阻止消息。
+下面的示例演示如何在 Windows 10 中检查是否打开了节电版。 此示例将通知用户，并将“设置”应用启动到**节电模式设置**。 `dontAskAgainSetting` 允许用户在不希望再次收到通知时阻止消息。
 
 ```cs
 using System;

@@ -1,6 +1,6 @@
 ---
 Description: 创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸进行优化，但在不同的输入设备上功能一致。
-title: 触摸交互
+title: 触控交互
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
@@ -15,7 +15,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258218"
 ---
-# <a name="touch-interactions"></a>触摸交互
+# <a name="touch-interactions"></a>触控交互
 
 
 以“触摸将是用户的主要输入方法”为初衷设计应用。 如果你使用 UWP 控件，不要求额外编程，即可支持触摸板、鼠标和笔/触笔，因为 UWP 应用免费提供此类支持。
@@ -25,7 +25,7 @@ ms.locfileid: "74258218"
 > **重要 API**：[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)、[**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)、[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
 
 
-许多设备具有多点触摸屏幕，它们支持使用一根或多根手指（或触摸接触）作为输入。 触摸接触以及其移动会被解释为触摸手势和操作，以支持各种用户交互。
+许多设备具有多点触控屏幕，它们支持使用一根或多根手指（或触摸接触）作为输入。 触摸接触以及其移动会被解释为触摸手势和操作，以支持各种用户交互。
 
 通用 Windows 平台 (UWP) 包括多种处理触摸输入的不同机制，从而你可以创建用户能够放心浏览的沉浸式体验。 下面我们将介绍在 UWP 应用中使用触摸输入的基本知识。
 
@@ -56,7 +56,7 @@ ms.locfileid: "74258218"
 下表显示了设计为触摸而优化的 UWP 应用时应该考虑的一些输入设备之间的不同。
 
 <table>
-<tbody><tr><th>因素</th><th>触摸交互</th><th>鼠标、键盘、笔/触笔交互</th><th>触摸板</th></tr>
+<tbody><tr><th>因素</th><th>触控交互</th><th>鼠标、键盘、笔/触笔交互</th><th>触摸板</th></tr>
 <tr><td rowspan="3">精度</td><td>指尖的接触区域大于单个 x-y 坐标，这样便增加了无意中激活命令的几率。</td><td>鼠标和笔/触笔提供了精确的 x-y 坐标。</td><td>与鼠标相同。</td></tr>
 <tr><td>接触区域的形状在整个移动过程中不断变化。  </td><td>鼠标移动和笔/触笔笔划都提供精确的 x-y 坐标。 键盘焦点非常清晰。</td><td>与鼠标相同。</td></tr>
 <tr><td>没有鼠标光标来帮助确定目标。</td><td>鼠标光标、笔/触笔光标以及键盘焦点都可以帮助确定目标。</td><td>与鼠标相同。</td></tr>
@@ -97,7 +97,7 @@ ms.locfileid: "74258218"
 
     手指的整个接触区域可以确定最可能的目标对象。
 
--   推移
+-   清理
 
     通过将手指在组中的项之间拖动可以很容易改变目标（例如，单选按钮）。 释放触摸时激活当前项。
 
@@ -192,15 +192,15 @@ ms.locfileid: "74258218"
 
 下面是一组基本的受 UWP 支持的触摸手势。
 
-| 名称           | 在任务栏的搜索框中键入                 | 描述                                                                            |
+| 姓名           | 类型                 | 说明                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
 | 点击            | 静态手势       | 用一个手指触摸屏幕，然后抬起手指。                                            |
 | 长按 | 静态手势       | 用一个手指触摸屏幕并保持不动。                                      |
 | 滑动          | 操作手势 | 用一个或多个手指触摸屏幕并向着同一方向移动。                   |
-| Swipe          | 操作手势 | 用一个或多个手指触摸屏幕并向着同一方向移动较短距离。  |
+| 轻扫          | 操作手势 | 用一个或多个手指触摸屏幕并向着同一方向移动较短距离。  |
 | 转动           | 操作手势 | 用两个或多个手指触摸屏幕并沿着顺时针或逆时针的弧线移动。 |
 | 收缩          | 操作手势 | 用两个或多个手指触摸屏幕，然后将手指并拢在一起。                         |
-| 拉伸        | 操作手势 | 用两个或多个手指触摸屏幕，然后将手指分开。                           |
+| Stretch        | 操作手势 | 用两个或多个手指触摸屏幕，然后将手指分开。                           |
 
  
 
@@ -222,7 +222,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 
 下面提供指针事件列表及其相关的事件参数。
 
-| 事件或类                                                       | 描述                                                   |
+| 事件或类                                                       | 说明                                                   |
 |----------------------------------------------------------------------|---------------------------------------------------------------|
 | [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)             | 在单根手指触摸屏幕时发生。               |
 | [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)           | 在该同一触摸接触抬起时发生。                |
@@ -416,7 +416,7 @@ End Sub
 
 下面提供操作事件列表及其相关的事件参数。
 
-| 事件或类                                                                                               | 描述                                                                                                                               |
+| 事件或类                                                                                               | 说明                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | [**System.windows.uielement.manipulationstarting> 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)                                   | 在首次创建操作处理器时发生。                                                                                  |
 | [**System.windows.uielement.manipulationstarted> 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)                                     | 在输入设备在 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 上开始操作时发生。                                            |

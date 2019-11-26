@@ -1,7 +1,7 @@
 ---
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
 title: 应用启动性能的最佳实践
-description: 通过用户改进处理启动和激活的方式，创建启动时间得到优化的通用 Windows 平台 (UWP) 应用。
+description: 通过改进你处理启动和激活的方式，创建启动时间最短的通用 Windows 平台 (UWP) 应用。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -16,7 +16,7 @@ ms.locfileid: "74254687"
 # <a name="best-practices-for-your-apps-startup-performance"></a>应用启动性能的最佳实践
 
 
-通过用户改进处理启动和激活的方式，创建启动时间得到优化的通用 Windows 平台 (UWP) 应用。
+通过改进你处理启动和激活的方式，创建启动时间最短的通用 Windows 平台 (UWP) 应用。
 
 ## <a name="best-practices-for-your-apps-startup-performance"></a>应用启动性能的最佳实践
 

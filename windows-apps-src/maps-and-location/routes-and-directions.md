@@ -58,7 +58,7 @@ ms.locfileid: "74259341"
 计算的 [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) 具有多个属性，可提供遍历该路线所需的时间、路线的长度以及包含路线段的 [**MapRouteLeg**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteLeg) 对象的集合。 每个 **MapRouteLeg** 对象都包含 [**MapRouteManeuver**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteManeuver) 对象的集合。 **MapRouteManeuver** 对象包含可以通过其 [**InstructionText**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutemaneuver.instructiontext) 属性进行访问的路线。
 
 >[!IMPORTANT]
->必须先指定地图验证密钥，才能使用地图服务。 有关详细信息，请参阅[请求地图验证密钥](authentication-key.md)。
+>必须先指定地图验证密钥，才能使用地图服务。 有关详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
 
  
 
@@ -141,7 +141,7 @@ You have reached your destination.
 若要在 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) 上显示 [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)，请使用 [MapRoute**构建一个**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapRouteView)MapRouteView。 然后，将 **MapRouteView** 添加到 [MapControl**的**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.routes)Routes 集合。
 
 >[!IMPORTANT]
->必须先指定地图身份验证密钥，然后才能使用地图服务或地图控件。 有关详细信息，请参阅[请求地图验证密钥](authentication-key.md)。
+>必须先指定地图身份验证密钥，然后才能使用地图服务或地图控件。 有关详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
 
  
 

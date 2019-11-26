@@ -93,7 +93,7 @@ ms.locfileid: "74259109"
 
 下面是对控件所做的更改的一些更具体的示例。
 
-| 控件名称 | “更改” |
+| 控件名称 | 更改 |
 |--------------|--------|
 | **AppBar**   | 如果你使用的是**AppBar**控件（建议改为[**命令栏**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBar)），则默认情况下，它在 Windows 10 应用中不会被隐藏。 你可以使用 [**AppBar.ClosedDisplayMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.closeddisplaymode) 属性对其进行控制。 |
 | **AppBar**、[**CommandBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBar) | 在 Windows 10 应用中， **AppBar**和[**命令栏**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBar)具有 "**查看更多**" 按钮（省略号）。 |
@@ -128,7 +128,7 @@ ms.locfileid: "74259109"
 
 以前，视图像素是从设备的实际物理大小和分辨率抽象表示 UI 元素的大小和布局的方法。 视图像素现在已发展为有效像素，下面是对该术语、该术语的意义以及它所提供的额外价值的说明。
 
-术语“分辨率”是指像素密度的度量，而不是通常认为的像素计数。 “有效分辨率”是构成图像或字形的物理像素对肉眼解析的方法，因为设备的观看距离和物理像素大小之间有差异（像素密度是物理像素大小的倒数）。 有效分辨率是构建周围体验的良好指标，因为它是以用户为中心的。 通过了解所有因素并控制 UI 元素的大小，即可优化用户的体验。
+术语“分辨率”是指像素密度的度量，而不是通常认为的像素计数。 “有效分辨率”是构成图像或字形的物理像素对肉眼解析的方法，因为设备的观看距离和物理像素大小之间有差异（像素密度是物理像素大小的倒数）。 有效分辨率是构建周围体验的良好指标，因为它是以用户为中心的。 通过了解所有因素并控制 UI 元素的大小，你可以优化用户的体验。
 
 不同设备的宽度的有效像素是不同的，范围从最小设备的 320 像素到中等大小监视器的 1024 像素，甚至更高宽度的有效像素。 你只需像往常那样继续使用可自动调整大小的元素和动态布局面板。 在某些情况下，你还需要将 XAML 标记中的 UI 元素的相关属性设置为固定大小。 根据应用运行所在的设备和用户所设置的显示设置，比例因子将自动应用于应用。 并且，该比例因子可使具有固定大小的任何 UI 元素在各种尺寸的屏幕上都能向用户显示一些大小恒定的触摸（和阅读）目标。 通过与动态布局结合使用，你的 UI 不仅仅在不同设备上进行视觉上的缩放。 它还会执行任何必要的操作来将相应的内容量纳入到可用空间中。
 
@@ -187,10 +187,10 @@ ms.locfileid: "74259109"
 
 下表描述了对 [**ListViewItem**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewItem) 和 [**GridViewItem**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridViewItem) 控件模板中的视觉状态和视觉状态组的更改。
 
-| 8.1                 |                         | Windows 10        |                     |
+| 8.1                 |                         | Windows 10        |                     |
 |---------------------|-------------------------|-------------------|---------------------|
 | CommonStates        |                         | CommonStates      |                     |
-|                     | 一般                  |                   | 一般              |
+|                     | 正常                  |                   | 正常              |
 |                     | PointerOver             |                   | PointerOver         |
 |                     | Pressed                 |                   | Pressed             |
 |                     | PointerOverPressed      |                   | [不可用]       |
@@ -200,7 +200,7 @@ ms.locfileid: "74259109"
 |                     | [不可用]           |                   | PressedSelected     |
 | [不可用]       |                         | DisabledStates    |                     |
 |                     | [不可用]           |                   | 禁用            |
-|                     | [不可用]           |                   | 已启用             |
+|                     | [不可用]           |                   | 启用             |
 | SelectionHintStates |                         | [不可用]     |                     |
 |                     | VerticalSelectionHint   |                   | [不可用]       |
 |                     | HorizontalSelectionHint |                   | [不可用]       |
@@ -438,7 +438,7 @@ Windows 10 应用的[**播放**](https://docs.microsoft.com/uwp/api/Windows.Medi
 
 在 Windows Phone 应用商店应用和 Windows 10 应用中，按下 "后退" 按钮时，将会解除缩小视图。 对于 Windows 运行时的8mb 应用，没有内置的 "后退" 按钮处理，因此不会应用该问题。
 
-## <a name="settings"></a>“设置”
+## <a name="settings"></a>设置
 
 Windows 运行时**SettingsPane**的类不适合 Windows 10。 除了生成“设置”页面，还应为用户提供从应用内访问它的方式。 我们建议你在最高级别公开此应用“设置”页面来作为导航窗格上的最后一个固定项，但下面依然提供完整的选项集。
 

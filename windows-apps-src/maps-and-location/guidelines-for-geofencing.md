@@ -20,8 +20,8 @@ ms.locfileid: "74260382"
 
 **重要的 API**
 
--   [**Geofence class (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence)
--   [**Geolocator class (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)
+-   [**地域隔离区内类（XAML）** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence)
+-   [**定位类（XAML）** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)
 
 在应用中遵循这些适用于[**地理围栏**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing)的最佳做法。
 
@@ -129,7 +129,7 @@ function onVisibilityChanged() {
 
 * [设置地理围栏](https://docs.microsoft.com/windows/uwp/maps-and-location/set-up-a-geofence)
 * [获取当前位置](https://docs.microsoft.com/windows/uwp/maps-and-location/get-location)
-* [UWP location sample (geolocation)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
+* [UWP 位置示例（地理位置）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
  
 
  

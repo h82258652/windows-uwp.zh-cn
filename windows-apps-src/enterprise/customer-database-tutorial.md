@@ -24,7 +24,7 @@ ms.locfileid: "74258620"
 
 ![正在运行的应用程序的主页](images/customer-database-tutorial/customer-list.png)
 
-### <a name="prerequisites"></a>必备条件
+### <a name="prerequisites"></a>先决条件
 
 * [确保已安装最新版本的 Visual Studio 和 Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * [克隆或下载客户数据库教程示例](https://github.com/microsoft/windows-tutorials-customer-database)
@@ -419,9 +419,9 @@ ms.locfileid: "74258620"
 
 ![删除新客户](images/customer-database-tutorial/delete-new-customer.png)
 
-## <a name="conclusion"></a>结论
+## <a name="conclusion"></a>总结
 
-祝贺你！ 完成此操作后，你的应用程序将具有完整的本地数据库操作范围。 你可以在用户界面中创建、读取、更新和删除客户，这些更改将保存到你的数据库，并将在应用程序的不同启动范围内保留。
+恭喜你！ 完成此操作后，你的应用程序将具有完整的本地数据库操作范围。 你可以在用户界面中创建、读取、更新和删除客户，这些更改将保存到你的数据库，并将在应用程序的不同启动范围内保留。
 
 完成后，请考虑以下事项：
 * 如果尚未这样做，请查看[应用结构概述](../enterprise/customer-database-app-structure.md)，了解有关应用构建方式的详细信息。
@@ -447,7 +447,7 @@ ms.locfileid: "74258620"
 * 将应用与 Microsoft Store 相关联。
 * 将[服务项目](https://github.com/Microsoft/Windows-appsample-customers-orders-database/tree/master/ContosoService)复制到你的应用，并将其部署到 Azure。
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>身份验证
 
 你需要创建一个按钮来启动身份验证序列，并使用一个弹出窗口或单独的页来收集用户的信息。 创建后，需要提供请求用户信息的代码，并使用该信息获取访问令牌。 客户订单数据库示例使用**WebAccountManager**库包装 Microsoft Graph 调用，以获取令牌并处理 AAD 帐户的身份验证。
 

@@ -1,5 +1,5 @@
 ---
-Description: You can create ad campaigns in Partner Center to help promote your app and grow your app's user base.
+Description: 可以在合作伙伴中心创建 ad 活动，以帮助提升应用并拓展应用的用户群。
 title: 为您的应用创建广告市场活动
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
 ms.date: 10/31/2018
@@ -15,18 +15,18 @@ ms.locfileid: "74260013"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>为您的应用创建广告市场活动
 
-You can create ad campaigns in [Partner Center](https://partner.microsoft.com/dashboard) to help promote your app and grow its user base. By default, we will choose the target audience for your ads based on the settings for your app in Partner Center, but you can optionally define your own audience. 你还可以使用一组默认的广告模板，或者上载你自己的广告设计。 有关广告市场活动的更多详细信息，请参阅[有关广告市场活动的常见问题](common-questions.md)。
+可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)创建 ad 活动，以帮助提升应用并拓展其用户群。 默认情况下，我们将根据你在合作伙伴中心的应用设置来选择广告的目标受众，但你可以根据需要定义自己的受众。 你还可以使用一组默认的广告模板，或者上载你自己的广告设计。 有关广告市场活动的更多详细信息，请参阅[有关广告市场活动的常见问题](common-questions.md)。
 
 你可以仅为通过[应用认证过程](the-app-certification-process.md) 的最终发布阶段的应用创建广告市场活动。
 
 > [!NOTE]
-> This section of the documentation describes how to create an ad campaign in Partner Center. Other campaign options to create and manage ad campaigns programmatically include [Vungle](https://vungle.com/) and the [Microsoft Store promotions API](../monetize/run-ad-campaigns-using-windows-store-services.md).
+> 文档的本节介绍如何在合作伙伴中心创建广告活动。 用于以编程方式创建和管理 ad 市场活动的其他活动选项包括[Vungle](https://vungle.com/)和[Microsoft Store 促销 API](../monetize/run-ad-campaigns-using-windows-store-services.md)。
 
 ## <a name="instructions"></a>说明
 
 下面介绍了如何创建广告市场活动来推广应用。
 
-1.  From the left navigation menu of [Partner Center](https://partner.microsoft.com/dashboard), expand **Attract** and then select **Ad campaigns**.
+1.  在[合作伙伴中心](https://partner.microsoft.com/dashboard)的左侧导航菜单中，展开 "**吸引**"，然后选择 " **Ad 市场活动**"。
 2.  选择**创建市场活动**（或者如果你之前已创建市场活动，请选择**新建市场活动**）。
 3.  在下一页的**目标类型**部分中，选择以下目标之一：
     * **增加应用安装量**。 如果广告市场活动的目的是使用户安装应用，请选择此选项。
@@ -36,7 +36,7 @@ You can create ad campaigns in [Partner Center](https://partner.microsoft.com/da
 5.  在**市场活动名称**字段中查看为你的市场活动提供的名称，然后根据需要进行更改。
 6.  在**市场活动类型**下，选择以下其中一个选项：
     * **付费广告**：这些广告将在与应用的设备和类别相匹配的任何应用中运行。 对于在 2017 年 1 月 9 日之后创建的新市场活动，这些广告也会在 MSN.com、Outlook.com、Skype 和其他 Microsoft 高级属性中显示。 面向应用和 Microsoft 高级属性的应用推广市场活动也被称为*通用*市场活动。
-    * **社区广告（免费）** ：这些广告将在也创建社区广告市场活动的其他开发人员发布的应用中运行。 必须先选择在**通过应用内广告** **盈利** -> 页面中显示社区广告，然后才能选择此选项。 有关详细信息，请参阅[关于社区广告](about-community-ads.md)。
+    * **社区广告（免费）** ：这些广告将在也创建社区广告市场活动的其他开发人员发布的应用中运行。 必须先选择在**通过应用内广告** -> 盈利页面中显示社区广告，然后才能选择此选项。 有关详细信息，请参阅[关于社区广告](about-community-ads.md)。
     * **自家广告（免费）** ：这些广告仅在你的应用（与所宣传应用的设备类型相匹配）中运行。 自家广告不收取任何费用。 有关详细信息，请参阅[关于自家广告](about-house-ads.md)。
 
 7.  对于付费广告市场活动，请确认**市场活动持续时间**（将花费市场活动预算的时间段）。 默认选项是**每月**，这表示市场活动预算将在每个月定期使用，直到市场活动停止。 如果你有高级帐户，则可以选择性地选择**自定义**来指定将花费市场活动预算的自定义日期和时间范围。 有关高级帐户的详细信息，请参阅[有关广告市场活动的常见问题](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign)。
@@ -46,11 +46,11 @@ You can create ad campaigns in [Partner Center](https://partner.microsoft.com/da
 
         每月预算针对创建广告市场活动的月份按比例分配。 换言之，如果你在日历月中途创建广告市场活动，在该月你只需支付每月预算的一半。
 
-    * 单击**添加新的付款方式**指定广告市场活动的付款方式，并填写帐户详细信息。 如果你已提供付款方式，在需要对其进行更新时，可以选择**选择其他付款方式**。 The country/region of your payment method's billing address must match the country/region associated with your developer account.
+    * 单击**添加新的付款方式**指定广告市场活动的付款方式，并填写帐户详细信息。 如果你已提供付款方式，在需要对其进行更新时，可以选择**选择其他付款方式**。 你的付款方式的帐单地址的国家/地区必须与与你的开发人员帐户关联的国家/地区。
 
     * 如果你已从 Microsoft 代表收到优惠券来支付广告市场活动，请单击**使用优惠券**、输入优惠券代码，然后单击**应用**即可将优惠券应用到该市场活动。
 
-    完成后，单击**保存并转到下一步**以继续转到**受众**步骤。 This step is not available for House ad campaigns, since they run only in your own apps.
+    完成后，单击**保存并转到下一步**以继续转到**受众**步骤。 此步骤不适用于房子广告活动，因为它们仅在自己的应用中运行。
 
 9.  在**受众**页面中，我们将显示推荐用于市场活动的受众设置。 你可以选择调整此信息：
     * **国家/地区**：选择要在其中显示广告的最多 5 个国家或地区。 有关受支持的国家或地区列表，请参阅[有关广告市场活动的常见问题](common-questions.md#where-will-my-ad-appear)。
@@ -67,10 +67,10 @@ You can create ad campaigns in [Partner Center](https://partner.microsoft.com/da
 
     此部分还显示了**预计受众**图。 根据选定市场中所有支持 Windows 广告的应用用户的百分比，此图显示了通过当前目标选择预计可触及到的受众。
 
-10.  如果选择**提升应用参与度**作为市场活动目标，可选择一个客户类别作为目标。 使用此市场活动创建的广告将仅向包含在此类别中的客户显示。 每个市场活动仅可选择一个客户类别。 有关类别的信息，请参阅[创建客户类别](create-customer-segments.md)。 完成后，单击**保存并转到下一步**以继续转到**广告设计**步骤。 This step is not available for House ad campaigns, because they run only in your own apps.
+10.  如果选择**提升应用参与度**作为市场活动目标，可选择一个客户类别作为目标。 使用此市场活动创建的广告将仅向包含在此类别中的客户显示。 每个市场活动仅可选择一个客户类别。 有关类别的信息，请参阅[创建客户类别](create-customer-segments.md)。 完成后，单击**保存并转到下一步**以继续转到**广告设计**步骤。 此步骤不适用于房子广告活动，因为它们仅在自己的应用中运行。
 
 11.  在**广告设计**页面中，选择以下选项之一：
-    * **自动生成**。 This is the default option, and it allows you to create an ad from our default templates. 你可以进行选择以自定义广告内容，我们将根据你的选择（进行选择时自动更新）预览广告外观。
+    * **自动生成**。 这是默认选项，它允许您从默认模板创建一个广告。 你可以进行选择以自定义广告内容，我们将根据你的选择（进行选择时自动更新）预览广告外观。
         * 在**语言**下拉列表中，选择广告语言。 Microsoft Store 锁屏提醒的文本消息将以选择的语言显示。
         * 若要向你的广告添加额外的文本消息行，可在**自定义标志行**字段中输入文本消息。
             > [!NOTE]
@@ -82,7 +82,7 @@ You can create ad campaigns in [Partner Center](https://partner.microsoft.com/da
             * **显示应用免费**。 如果应用在所有选定市场中免费，还可以选择选中此复选框。
             * **行动号召**。 如果你选择**增加应用参与**作为你的市场活动目标，可以将广告的行动号召按钮设置为**打开**、**播放**、**阅读**、**聆听**或**购物**。  
 
-    * **自定义**。 选择此选项可使用自己的广告设计。 Note that if you selected a customer segment earlier, you must use custom creatives. 可以为每个可用的广告大小上传不同文件。 文件必须满足以下要求和指南：
+    * **自定义**。 选择此选项可使用自己的广告设计。 请注意，如果您之前选择了客户段，则必须使用自定义 creatives。 可以为每个可用的广告大小上传不同文件。 文件必须满足以下要求和指南：
         * 每个文件都必须是 40 KB 或更小的 .png 或 .jpg 格式的文件。
         * 广告设计必须满足 [Microsoft 创意承诺策略](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies)中指定的要求。
         * 广告设计的内容必须与你要推广的应用密切相关。 与应用不相关的广告设计将不会分发给其他应用中的广告。
@@ -90,7 +90,7 @@ You can create ad campaigns in [Partner Center](https://partner.microsoft.com/da
 
 12.  如果你有[高级帐户](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign)，则可以使用**目标 URL** 框控制当客户单击你的广告时会发生什么情况。
     * 如果不选中此框，当客户单击你的广告，将显示应用的应用商店一览。
-    * If you are using Adjust, Kochava, Tune, or Vungle to measure install analytics for your app, enter your install tracking URL. 当你保存市场活动时，将验证跟踪 URL 以确保它在 Microsoft Store 中解析为应用的一览页。 For more information about install tracking with these services, see the [Adjust](https://docs.adjust.com/en/), [Kochava](https://support.kochava.com/), [Tune](https://help.tune.com/hasoffers/), and [Vungle](https://support.vungle.com/hc/en-us) documentation.
+    * 如果使用 "调整"、"Kochava"、"微调" 或 "Vungle" 来度量应用的安装分析，请输入安装跟踪 URL。 当你保存市场活动时，将验证跟踪 URL 以确保它在 Microsoft Store 中解析为应用的一览页。 有关安装跟踪和这些服务的详细信息，请参阅[调整](https://docs.adjust.com/en/)、 [Kochava](https://support.kochava.com/)、[优化](https://help.tune.com/hasoffers/)和[Vungle](https://support.vungle.com/hc/en-us)文档。
     * 如果你选择**增加应用参与**作为市场活动目标，可以指定[深层链接 URI](../launch-resume/handle-uri-activation.md) 将所选客户群中的客户重定向到应用中的特定页面。
     * 如果你指定不是应用描述页或应用内页面的任何目标，将自动暂停市场活动。
 

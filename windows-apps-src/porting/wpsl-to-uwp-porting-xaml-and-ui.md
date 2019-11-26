@@ -187,7 +187,7 @@ UWP 应用的绑定相关的功能当前具有以下限制：
 
 Windows Phone Silverlight 应用使用在**Microsoft.** control 命名空间和**system.web**命名空间中定义的控件。 XAML UWP 应用使用 [**Windows.UI.Xaml.Controls**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls) 命名空间中定义的控件。 UWP 中 XAML 控件的体系结构和设计与 Windows Phone Silverlight 控件几乎相同。 但是，进行了一些更改以改进可用的控件组并将它们与 Windows 应用统一。 以下是具体示例。
 
-| 控件名称 | “更改” |
+| 控件名称 | 更改 |
 |--------------|--------|
 | ApplicationBar | [Page.TopAppBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.topappbar) 属性。 |
 | ApplicationBarIconButton | UWP 等效项是 [Glyph](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon.glyph) 属性。 PrimaryCommands 是 CommandBar 的内容属性。 XAML 分析器将元素的内部 xml 解释为其内容属性的值。 |
@@ -197,7 +197,7 @@ Windows Phone Silverlight 应用使用在**Microsoft.** control 命名空间和*
 | 带有分组数据的 LongListSelector | Windows Phone Silverlight LongListSelector 以两种方式运行，可在音乐会中使用。 第一，它可以显示按某个键分组的数据，例如按首字母分组的名称列表。 第二，它可以在两个语义视图之间“缩放”：项（例如名称）的分组列表和只有组键（例如首字母）本身的列表。 借助 UWP，你可以按照[列表和网格视图控件指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists)进行操作来显示分组数据。 |
 | 带有平面数据的 LongListSelector | 出于性能原因，在非常长的列表情况下，建议使用 LongListSelector 而不是 Windows Phone Silverlight 列表框，即使对于非分组的非分组数据也是如此。 在 UWP 应用中，[GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 优先用于项的长列表，无论数据是否适合分组。 |
 | Panorama | Windows Phone Silverlight 全景控件映射到用于集线器控件的[Windows 运行时的应用程序](https://docs.microsoft.com/windows/uwp/controls-and-patterns/hub)和中心控件指南。 <br/> 请注意，Panorama 控件从最后一部分环绕到第一部分，并且其背景图像相对于具体部分在视差中移动。 [Hub](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Hub) 部分不会环绕，并且不使用视差。 |
-| Pivot | Windows Phone Silverlight 透视控件的 UWP 等效[项为 ""。](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) 它适用于所有设备系列。 |
+| 透视表 | Windows Phone Silverlight 透视控件的 UWP 等效[项为 ""。](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) 它适用于所有设备系列。 |
 
 **请注意**   PointerOver 视觉对象状态适用于 Windows 10 应用中的自定义样式/模板，但在 Windows Phone Silverlight 应用中不适用。 现有的自定义样式/模板可能不适用于 Windows 10 应用，其中包括所使用的系统资源密钥，更改了使用的可视状态集，以及对 Windows 10 默认样式/模板所做的性能改进。 建议为 Windows 10 编辑控件默认模板的全新副本，然后将样式和模板自定义重新应用到该副本。
 
@@ -364,7 +364,7 @@ UWP 应用的磁贴的行为类似于 Windows Phone Silverlight 应用的实时�
 
 Windows Phone Silverlight 应用和 Windows 10 应用的不同之处在于它们对 UI 元素的大小和布局进行抽象，远离设备实际的物理大小和分辨率。 Windows Phone Silverlight 应用使用视图像素来实现此目的。 对于 Windows 10，视图像素的概念已被优化为有效像素。 以下是该术语的解释、它的意义以及它所提供的额外价值。
 
-术语“分辨率”是指像素密度的度量，而不是通常认为的像素计数。 “有效分辨率”是构成图像或字形的物理像素对肉眼解析的方法，因为设备的观看距离和物理像素大小之间有差异（像素密度是物理像素大小的倒数）。 有效分辨率是构建周围体验的良好指标，因为它是以用户为中心的。 通过了解所有因素并控制 UI 元素的大小，即可优化用户的体验。
+术语“分辨率”是指像素密度的度量，而不是通常认为的像素计数。 “有效分辨率”是构成图像或字形的物理像素对肉眼解析的方法，因为设备的观看距离和物理像素大小之间有差异（像素密度是物理像素大小的倒数）。 有效分辨率是构建周围体验的良好指标，因为它是以用户为中心的。 通过了解所有因素并控制 UI 元素的大小，你可以优化用户的体验。
 
 对于 Windows Phone Silverlight 应用程序而言，所有电话屏幕都是完全480的视图像素宽，无例外，无论屏幕的物理像素数量如何，以及像素密度或物理大小是多少。 这意味着，具有 `Width="48"` 的**Image**元素将是可运行 Windows Phone Silverlight 应用的任何手机的屏幕宽度的十分之一。
 

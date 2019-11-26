@@ -31,7 +31,7 @@ UWP 控件相当智能的方面是，它们可以感知到在其上运行的设�
 | 图像视图 (UIDatePicker) | [映像](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) <br/> 另请参阅[图像和 ImageBrush](https://docs.microsoft.com/windows/uwp/controls-and-patterns/images-imagebrushes) |
 | 标签 (UILabel) | [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) <br/> 另请参阅[快速入门：显示文本](https://docs.microsoft.com/previous-versions/windows/apps/hh700392(v=win.10)) |
 | 地图视图 (MKMapView) 和地图视图委派 (MKMapViewDelegate) | 请参阅[适用于 UWP 应用的 Bing 地图](https://msdn.microsoft.com/library/hh846481) |
-| 导航控制器 (UINavigationController) 和导航控制器委托 (UINavigationControllerDelegate) | [框架](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) <br/> 另请参阅[导航](https://docs.microsoft.com/windows/uwp/layout/navigation-basics) |
+| 导航控制器 (UINavigationController) 和导航控制器委托 (UINavigationControllerDelegate) | [Frame](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) <br/> 另请参阅[导航](https://docs.microsoft.com/windows/uwp/layout/navigation-basics) |
 | 页面控件 (UIPageControl) | [页面](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) <br/> 另请参阅[导航](https://docs.microsoft.com/windows/uwp/layout/navigation-basics) |
 | 选取器视图 (UIPickerView) 和选取器视图委托 (UIPickerViewDelegate) | [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) <br/> 另请参阅[添加组合框和列表框](https://docs.microsoft.com/previous-versions/windows/apps/hh780616(v=win.10)) |
 | 进度条 (UIProgressView) | [ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar) <br/> 另请参阅[快速入门：添加进度控件](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10)) |
@@ -47,7 +47,7 @@ UWP 控件相当智能的方面是，它们可以感知到在其上运行的设�
 | 文本视图 (UITextView) 和文本视图委托 (UITextViewDelegate) | [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) <br/>  另请参阅[快速入门：显示文本](https://docs.microsoft.com/previous-versions/windows/apps/hh700392(v=win.10)) |
 | 视图 (UIView) 和视图控制器 (UIViewController) | [页面](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) <br/>  另请参阅[导航](https://docs.microsoft.com/windows/uwp/layout/navigation-basics) |
 | Web 视图 (UIWebView) 和 Web 视图委托 (UIWebViewDelegate) | [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) <br/>  另请参阅 [XAML WebView 控件示例](https://code.msdn.microsoft.com/windowsapps/XAML-WebView-control-sample-58ad63f7) |
-| 窗口 (UIWindow) | [框架](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) <br/>  另请参阅[导航](https://docs.microsoft.com/windows/uwp/layout/navigation-basics) |
+| 窗口 (UIWindow) | [Frame](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) <br/>  另请参阅[导航](https://docs.microsoft.com/windows/uwp/layout/navigation-basics) |
 
 有关其他更多控件，请参阅[控件列表](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/)。
 

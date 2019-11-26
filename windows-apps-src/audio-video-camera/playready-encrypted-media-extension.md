@@ -1,6 +1,6 @@
 ---
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: This section describes how to modify your PlayReady web app to support the changes made from the previous Windows 8.1 version to the Windows 10 version.
+description: 本部分介绍如何修改 PlayReady web 应用，以支持从上一 Windows 8.1 版本到 Windows 10 版本所做的更改。
 title: PlayReady 加密媒体扩展
 ms.date: 02/08/2017
 ms.topic: article
@@ -17,15 +17,15 @@ ms.locfileid: "74256812"
 
 
 
-This section describes how to modify your PlayReady web app to support the changes made from the previous Windows 8.1 version to the Windows 10 version.
+本部分介绍如何修改 PlayReady web 应用，以支持从上一 Windows 8.1 版本到 Windows 10 版本所做的更改。
 
 通过在 Internet Explorer 中使用 PlayReady 媒体元素，开发人员可以在强制执行内容提供商定义的访问规则的同时，创建能够向用户提供 PlayReady 内容的 Web 应用。 本部分介绍如何仅使用 HTML5 和 JavaScript 将 PlayReady 媒体元素添加到现有 Web 应用。
 
 ## <a name="whats-new-in-playready-encrypted-media-extension"></a>PlayReady 加密媒体扩展中的新增功能
 
-This section provides a list of changes made to the PlayReady Encrypted Media Extension (EME) to enable PlayReady content protection on Windows 10.
+本部分提供对 PlayReady 加密媒体扩展（EME）所做更改的列表，以便在 Windows 10 上启用 PlayReady 内容保护。
 
-The following list describes the new features and changes made to PlayReady Encrypted Media Extension for Windows 10:
+以下列表描述了对适用于 Windows 10 的 PlayReady 加密媒体扩展所做的新功能和更改：
 
 -   添加了硬件数字版权管理 (DRM)。
 
@@ -34,10 +34,10 @@ The following list describes the new features and changes made to PlayReady Encr
 -   可主动获取非永久性许可证。
 -   在一条消息中可获取多个许可证。
 
-    You can either use a PlayReady object with multiple key identifiers (KeyIDs) as in Windows 8.1, or use [content decryption model data (CDMData)](https://docs.microsoft.com/previous-versions/windows/apps/dn457361(v=ieb.10)?redirectedfrom=MSDN) with multiple KeyIDs.
+    你可以使用包含多个密钥标识符（KeyIDs）的 PlayReady 对象，Windows 8.1 中使用，也可以将[内容解密模型数据（CDMData）](https://docs.microsoft.com/previous-versions/windows/apps/dn457361(v=ieb.10)?redirectedfrom=MSDN)与多个 KeyIDs 一起使用。
 
     > [!NOTE]
-    > In Windows 10, multiple key identifiers are supported under &lt;KeyID&gt; in CDMData.
+    > 在 Windows 10 中，在 CDMData 中 &lt;KeyID&gt; 下支持多个密钥标识符。
 
 -   添加了实时到期支持，或有限持续时间许可证 (LDL)。
 
@@ -262,13 +262,13 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 ```
 
 > [!NOTE]
-> The secure stop data’s `<SessionID>B64 encoded session ID</SessionID>` in the sample above can be an asterisk (\*), which is a wild card for all the secure stop sessions recorded. That is, the **SessionID** tag can be a specific session, or a wild card (\*) to select all the secure stop sessions.
+> 上面示例中的安全停止数据 `<SessionID>B64 encoded session ID</SessionID>` 可以是星号（\*），这是记录的所有安全停止会话的通配符。 也就是说， **SessionID**标记可以是特定的会话，也可以是通配符（\*）以选择所有安全的停止会话。
 
 ## <a name="programming-considerations-for-encrypted-media-extension"></a>加密媒体扩展的编程注意事项
 
-This section lists the programming considerations that you should take into account when creating your PlayReady-enabled web app for Windows 10.
+本部分列出了为 Windows 10 创建启用 PlayReady 的 web 应用时应考虑的编程注意事项。
 
-应用创建的 **MSMediaKeys** 和 **MSMediaKeySession** 对象必须保持活动状态，直到你的应用关闭。 确保这些对象保持活动状态的一种方法是将它们作为全局变量分配（如果声明为函数内的本地变量，这些变量将超出范围并遵循垃圾回收）。 For example, the following sample assigns the variables *g\_msMediaKeys* and *g\_mediaKeySession* as global variables, which are then assigned to the **MSMediaKeys** and **MSMediaKeySession** objects in the function.
+应用创建的 **MSMediaKeys** 和 **MSMediaKeySession** 对象必须保持活动状态，直到你的应用关闭。 确保这些对象保持活动状态的一种方法是将它们作为全局变量分配（如果声明为函数内的本地变量，这些变量将超出范围并遵循垃圾回收）。 例如，以下示例将变量*g\_msMediaKeys*和*g\_mediaKeySession*分配为全局变量，然后将其分配给函数中的**msMediaKeys**和**MSMediaKeySession**对象。
 
 ``` syntax
 var g_msMediaKeys;

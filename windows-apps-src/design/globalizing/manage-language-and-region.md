@@ -1,5 +1,5 @@
 ---
-Description: This topic defines the terms user profile language list, app manifest language list, and app runtime language list. 我们将在此主题和此功能区域中的其他主题中使用以上术语，因此了解它们的含义非常重要。
+Description: 本主题定义了术语 "用户配置文件语言列表"、"应用程序清单语言列表" 和 "应用运行时语言列表"。 我们将在此主题和此功能区域中的其他主题中使用以上术语，因此了解它们的含义非常重要。
 title: 了解用户配置文件语言和应用清单语言
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 template: detail.hbs
@@ -35,7 +35,7 @@ Windows 用户可以使用**设置** > **时间和语言** > **区域和语言**
 ## <a name="app-manifest-language-list"></a>应用部件清单语言列表
 应用部件清单语言列表是你的应用声明（或将声明）支持的语言列表。 随着应用从开发生命周期一直到本地化的过程中，此列表会不断扩展。
 
-尽管此列表是在编译时确定的，但可以通过两种方式来精确控制它的确定方式。 一种方式是让 Visual Studio 从项目的文件中确定此列表。 为此，首先在应用包清单源文件 (`Package.appxmanifest`) 中的**应用程序**选项卡上设置应用的**默认语言**。 然后，确认同一文件中包含此配置（默认包含）。
+尽管此列表是在编译时确定的，但可以通过两种方式来精确控制它的确定方式。 一种方式是让 Visual Studio 从项目的文件中确定此列表。 为此，首先在应用包清单源文件 ( **) 中的**应用程序**选项卡上设置应用的**默认语言`Package.appxmanifest`。 然后，确认同一文件中包含此配置（默认包含）。
 
 ```xml
   <Resources>
@@ -53,7 +53,7 @@ Windows 用户可以使用**设置** > **时间和语言** > **区域和语言**
   </Resources>
 ```
 
-另一种方式是将应用包清单源文件 (`Package.appxmanifest`) 中的单个“x-generate”`<Resource>` 元素替换为 `<Resource>` 元素的扩展列表（注意要首先列出默认语言）。 尽管该方法会涉及更多的维护工作，但如果使用的是自定义构建系统，这可能是合适的方法。
+另一种方式是将应用包清单源文件 (`<Resource>`) 中的单个“x-generate”`Package.appxmanifest` 元素替换为 `<Resource>` 元素的扩展列表（注意要首先列出默认语言）。 尽管该方法会涉及更多的维护工作，但如果使用的是自定义构建系统，这可能是合适的方法。
 
 首先，应用部件清单语言列表将仅包含一种语言。 可能是 en-US。 但最后，由于你已手动配置清单或向项目添加已翻译的资源，因此，此列表将扩展。
 
@@ -93,23 +93,23 @@ Windows 用户可以使用**设置** > **时间和语言** > **区域和语言**
 **注意**：如果用户配置文件语言和应用部件清单语言是彼此的区域变体，用户的区域变体则用作应用运行时语言。 例如，如果用户首选 en-GB，而应用支持 en-US，应用运行时语言则为 en-GB。 这将确保日期、时间和数字的格式更接近用户的期望 (en-GB)，但仍然会使用应用支持的语言 (en-US) 加载本地化资源（由于语言匹配）。
 
 ## <a name="qualify-resource-files-with-their-language"></a>使用资源文件的语言限定资源文件
-使用语言资源限定符命名资源文件或其文件夹。 若要了解有关资源限定符的详细信息，请参阅[定制语言、比例、高对比度和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)。 A resource file can be an image (or other asset), or it can be a resource container file, such as a *.resw* that contains text strings.
+使用语言资源限定符命名资源文件或其文件夹。 若要了解有关资源限定符的详细信息，请参阅[定制语言、比例、高对比度和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)。 资源文件可以是图像（或其他资产），也可以是包含文本字符串的 *.resw*等资源容器文件。
 
-**Note** Even resources in your app's default language must specify the language qualifier. For example, if your app's default language is English (United States), then qualify your assets as `\Assets\Images\en-US\logo.png`.
+**注意**甚至应用的默认语言中的资源都必须指定语言限定符。 例如，如果应用的默认语言为英语（美国），则将资产限定为 `\Assets\Images\en-US\logo.png`。
 
-- Windows performs complex matching, including across regional variants such as en-US and en-GB. So include the region sub-tag as appropriate. 请参阅[资源管理系统匹配语言标记的方式](../../app-resources/how-rms-matches-lang-tags.md)。
-- Specify a language script sub-tag in the qualifier when there is no Suppress-Script value defined for the language. For example, instead of zh-CN or zh-TW, use zh-Hant, zh-Hant-TW, or zh-Hans (for more detail, see the [IANA language subtag registry](https://www.iana.org/assignments/language-subtag-registry)).
-- For languages that have a single standard dialect, there is no need to include the region qualifier. For example, use ja instead of ja-JP.
+- Windows 执行复杂匹配，其中包括 en-us 和 en 等区域变体。 因此，请根据需要包含区域子标记。 请参阅[资源管理系统匹配语言标记的方式](../../app-resources/how-rms-matches-lang-tags.md)。
+- 如果没有为该语言定义的禁止显示脚本值，请在限定符中指定语言脚本子标记。 例如，使用 zh-chs-Zh-hant、zh-chs-Zh-hant 或 zh-chs-Hans （有关更多详细信息，请参阅[IANA 语言](https://www.iana.org/assignments/language-subtag-registry)子标记注册表），而不是 zh-chs 或 zh-chs。
+- 对于具有单个标准方言的语言，无需包含区域限定符。 例如，使用 ja 而不是 ja-jp。
 - 某些工具和其他组件（如机器翻译程序）可能会发现特定的语言标记（如区域方言信息）在理解数据方面很有帮助。
 
-### <a name="not-all-resources-need-to-be-localized"></a>Not all resources need to be localized
+### <a name="not-all-resources-need-to-be-localized"></a>并非所有资源都需要本地化
 
-Localization might not be required for all resources.
+并非所有资源都需要进行本地化。
 
-- At a minimum, ensure all resources exist in the default language.
-- A subset of some resources might suffice for a closely related language (partial localization). 例如，如果应用的整个资源集都使用西班牙语，那么你可能不会将应用的全部 UI 本地化为加泰罗尼亚语。 For users who speak Catalan and then Spanish, the resources that are not available in Catalan appear in Spanish.
-- Some resources might require exceptions for specific languages, while the majority of other resources map to a common resource. In this case, mark the resource intended to be used for all languages with the undetermined language tag 'und'. Windows interprets the 'und' language tag as a wildcard (similar to '\*') in that it matches the top app language after any other specific match. 例如，如果某些资源对于芬兰语有所不同，但是这些资源的剩余部分对于所有语言都相同，应该使用芬兰语语言标记对芬兰语资源进行标记，而剩余部分则应该通过“und”进行标记。
-- For resources that are based on a language script, such as a font or height of text, use the undetermined language tag with a specified script: 'und-&lt;script&gt;'. 例如，对于拉丁语字体，请使用 `und-Latn\\fonts.css`；对于西里尔文字体，请使用 `und-Cryl\\fonts.css`。
+- 至少，确保所有资源都以默认语言存在。
+- 某些资源的子集可能足以满足紧密相关的语言（部分本地化）。 例如，如果应用的整个资源集都使用西班牙语，那么你可能不会将应用的全部 UI 本地化为加泰罗尼亚语。 对于说加泰罗尼亚语和西班牙语的用户，加泰罗尼亚语中未提供的资源将以西班牙语显示。
+- 某些资源可能需要特定语言的例外，而其他大多数资源则映射到公共资源。 在这种情况下，请将旨在用于所有语言的资源标记为 "und"。 Windows 会将 "und" 语言标记解释为通配符（类似于 "\*"），因为它与任何其他特定匹配项后的顶级应用程序语言相匹配。 例如，如果某些资源对于芬兰语有所不同，但是这些资源的剩余部分对于所有语言都相同，应该使用芬兰语语言标记对芬兰语资源进行标记，而剩余部分则应该通过“und”进行标记。
+- 对于基于语言脚本的资源（如字体或文本的高度），请将不确定的语言标记用于指定的脚本： ' und-&lt;script&gt;'。 例如，对于拉丁语字体，请使用 `und-Latn\\fonts.css`；对于西里尔文字体，请使用 `und-Cryl\\fonts.css`。
 
 ## <a name="set-the-http-accept-language-request-header"></a>设置 HTTP 接受的语言请求标头
 请考虑所调用的 Web 服务是否具有与应用相同的本地化程度范围。 UWP 应用和桌面应用以典型的 Web 请求形式发出的 HTTP 请求以及 XMLHttpRequest (XHR) 使用标准 HTTP 接受的语言请求标头。 默认情况下，HTTP 标头设置为用户配置文件语言列表。 列表中的每种语言进一步扩展为包含中性语言和权重 (q)。 例如，fr-FR 和 en-US 的用户语言列表会产生 fr-FR、fr、en-US、en 的 HTTP 接受的语言请求标头（“fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3”）。 但是，如果天气应用（以此为例）以法语（法国）显示 UI，但用户在其首选项列表中排在最顶端的语言是德语，你则需要从服务中显式请求使用法语（法国），以便在应用内保持一致性。
@@ -172,7 +172,7 @@ Localization might not be required for all resources.
 <td align="left">西班牙语(西班牙)（默认）；西班牙语(墨西哥)；西班牙语(拉丁美洲)；葡萄牙语(巴西)</td>
 <td align="left">英语(美国)</td>
 <td align="left">无</td>
-<td align="left">西班牙语(西班牙)</td>
+<td align="left">西班牙语（西班牙）</td>
 <td align="left">UI：西班牙语(西班牙)（由于没有可用于英语的回退，因此使用默认值）<br>日期/时间/数字西班牙语(西班牙)</td>
 </tr>
 <tr>
@@ -193,27 +193,27 @@ Localization might not be required for all resources.
 </table>
 
 >[!NOTE]
-> For a list of standard country/region codes used by Microsoft, see the [Official Country/Region List](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion).
+> 有关 Microsoft 使用的标准国家/地区代码的列表，请参阅[官方国家/地区列表](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion)。
 
 ## <a name="important-apis"></a>重要的 API
-* [GlobalizationPreferences.Languages](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
+* [GlobalizationPreferences](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
 * [ApplicationLanguages.ManifestLanguages](/uwp/api/windows.globalization.applicationlanguages.ManifestLanguages)
 * [PrimaryLanguageOverride](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride)
-* [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
-* [ResourceContext.Languages](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.Languages)
-* [ApplicationLanguages.Languages](/uwp/api/windows.globalization.applicationlanguages.Languages)
+* [ResourceContext. QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
+* [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.Languages)
+* [ApplicationLanguages](/uwp/api/windows.globalization.applicationlanguages.Languages)
 * [Windows.Globalization](/uwp/api/windows.globalization?branch=live)
 * [语言](/uwp/api/windows.globalization.language?branch=live)
 * [GlobalizationPreferences.HomeGeographicRegion](/uwp/api/windows.system.userprofile.globalizationpreferences.HomeGeographicRegion)
 * [GeographicRegion](/uwp/api/windows.globalization.geographicregion?branch=live)
 
 ## <a name="related-topics"></a>相关主题
-* [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
-* [IANA language subtag registry](https://www.iana.org/assignments/language-subtag-registry)
+* [BCP-47 语言标记](https://tools.ietf.org/html/bcp47)
+* [IANA 语言子标记注册表](https://www.iana.org/assignments/language-subtag-registry)
 * [定制语言、比例、高对比度和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [支持的语言](../../publish/supported-languages.md)
-* [Globalize your date/time/number formats](use-global-ready-formats.md)
+* [全球化日期/时间/数字格式](use-global-ready-formats.md)
 * [资源管理系统如何匹配语言标记](../../app-resources/how-rms-matches-lang-tags.md)
 
 ## <a name="samples"></a>示例
-* [Application resources and localization sample](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa)
+* [应用程序资源和本地化示例](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa)

@@ -59,7 +59,7 @@ ms.locfileid: "74260507"
 
 在触发器事件发生后，你可以添加条件控制任务何时运行。 例如，如果你不希望在用户存在前运行任务，请使用条件 **UserPresent**。 有关可能条件的列表，请参阅 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
 
-以下示例代码指定需要用户存在的条件：
+以下示例代码分配需要用户存在的条件：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs

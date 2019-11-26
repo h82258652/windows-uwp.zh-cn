@@ -22,7 +22,7 @@ ms.locfileid: "74260007"
 > 目前，仅免费应用可以通过适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店专门分配到企业。 如果你提交了作为 LOB 的某个付费应用，它不会向企业提供。 
 
 > [!IMPORTANT]
-> 你无法使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 直接向企业发布 LOB 应用。 All submissions for LOB apps must be published through Partner Center.
+> 你无法使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 直接向企业发布 LOB 应用。 LOB 应用的所有提交都必须通过合作伙伴中心发布。
 
 
 ## <a name="set-up-the-enterprise-association"></a>设置企业关联
@@ -92,7 +92,7 @@ ms.locfileid: "74260007"
 
 通过适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店将应用分配到企业，这可以确保应用由应用商店进行签名，并遵守标准的应用商店策略。
 
-In some cases, companies may not want their LOB apps to be submitted through Partner Center (such as for compliance reasons or for apps that need additional capabilities). 在这种情况下，企业可以通过旁加载直接将应用部署到计算机，无需使用适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店。
+在某些情况下，公司可能不希望通过合作伙伴中心提交其 LOB 应用（例如出于合规性原因或需要其他功能的应用）。 在这种情况下，企业可以通过旁加载直接将应用部署到计算机，无需使用适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店。
 
 有关详细信息，请参阅[在 Windows 10 中旁加载 LOB 应用](https://docs.microsoft.com/windows/application-management/sideload-apps-in-windows-10)。
 

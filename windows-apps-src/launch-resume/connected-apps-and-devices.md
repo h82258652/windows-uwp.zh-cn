@@ -1,5 +1,5 @@
 ---
-title: 连接的应用和设备（项目 Rome）
+title: 连接的应用和设备 (Project Rome)
 description: 本节介绍如何使用远程系统平台发现远程设备、在远程设备上启动应用，以及与远程设备上的应用服务通信。
 ms.date: 06/08/2018
 ms.topic: article
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260520"
 ---
-# <a name="connected-apps-and-devices-project-rome"></a>连接的应用和设备（项目 Rome）
+# <a name="connected-apps-and-devices-project-rome"></a>连接的应用和设备 (Project Rome)
 
 本部分介绍如何使用[Project 罗马](https://developer.microsoft.com/en-us/windows/project-rome)跨设备和平台连接应用。 若要了解如何在跨平台方案中实现 Project 罗马，请访问[Project 罗马的主要文档页](https://docs.microsoft.com/en-us/windows/project-rome/)。
 
@@ -29,7 +29,7 @@ Windows 10 版本 1607 中引入了[远程系统 API](https://docs.microsoft.com
 
 有关 Project Rome 的一般详细信息（包括跨平台集成资源），请转到 [aka.ms/project-rome](https://developer.microsoft.com/windows/project-rome)。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [启动远程设备上的应用](launch-a-remote-app.md) | 了解如何启动远程设备上的应用。 本主题介绍最简单的用例和初步设置。  |
 | [发现远程设备](discover-remote-devices.md)  | 了解如何发现可以连接的设备。 |

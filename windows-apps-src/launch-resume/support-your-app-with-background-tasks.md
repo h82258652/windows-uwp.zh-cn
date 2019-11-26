@@ -48,7 +48,7 @@ ms.locfileid: "74259421"
 
 应用可以通过使用 [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) 类注册后台任务来响应系统生成的事件。 应用可以使用以下任意系统事件触发器（在 [**SystemTriggerType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) 中定义）
 
-| 触发器名称                     | 描述                                                                                                    |
+| 触发器名称                     | 说明                                                                                                    |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------|
 | **InternetAvailable**            | Internet 变为可用。                                                                                |
 | **NetworkStateChange**           | 网络更改，如开销或连接性发生更改。                                              |
@@ -62,7 +62,7 @@ ms.locfileid: "74259421"
 
 你可以控制后台任务何时运行，通过添加条件，甚至可以在任务触发后进行控制。 在触发后，后台任务将不再运行，直至所有条件均符合为止。 可以使用以下条件（由 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) 枚举表示）。
 
-| 条件名称           | 描述                       |
+| 条件名称           | 说明                       |
 |--------------------------|-----------------------------------|
 | **InternetAvailable**    | Internet 必须可用。   |
 | **InternetNotAvailable** | Internet 必须不可用。 |
@@ -84,7 +84,7 @@ ms.locfileid: "74259421"
 
 以下实时触发器可用于在后台运行轻型自定义代码：
 
-| 实时触发器  | 描述 |
+| 实时触发器  | 说明 |
 |--------------------|-------------|
 | **控制通道** | 后台任务通过使用 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 可以使连接保持活动状态，在控制通道上接收消息。 如果你的应用正在侦听套接字，可以使用套接字代理而不是 **ControlChannelTrigger**。 有关使用套接字代理的详细信息，请参阅 [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)。 **ControlChannelTrigger** 在 Windows Phone 上不受支持。 |
 | **记** | 后台任务运行的频率可以为每 15 分钟一次，并且可以通过使用 [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger) 将它们设置在特定时间运行。 有关详细信息，请参阅[通过计时器运行后台任务](run-a-background-task-on-a-timer-.md)。 |
@@ -102,7 +102,7 @@ ms.locfileid: "74259421"
 
 [  **SystemTriggerType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) 枚举表示以下系统事件触发器：
 
-| 触发器名称            | 描述                                                       |
+| 触发器名称            | 说明                                                       |
 |-------------------------|-------------------------------------------------------------------|
 | **UserPresent**         | 后台任务在用户出现后触发。   |
 | **UserAway**            | 后台任务在用户离开后触发。    |
@@ -112,7 +112,7 @@ ms.locfileid: "74259421"
    
 以下系统事件触发器将指示用户何时将应用移到或移出锁屏界面。
 
-| 触发器名称                     | 描述                                  |
+| 触发器名称                     | 说明                                  |
 |----------------------------------|----------------------------------------------|
 | **LockScreenApplicationAdded**   | 向锁屏中添加应用磁贴。     |
 | **LockScreenApplicationRemoved** | 从锁屏中删除应用磁贴。 |

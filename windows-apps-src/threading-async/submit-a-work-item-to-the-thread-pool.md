@@ -15,7 +15,7 @@ ms.locfileid: "74259807"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>向线程池提交工作项
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN) \]
+适用于 Windows 10 上的 UWP 应用的 \[ 更新。 有关 Windows 2.x 的文章，请参阅[存档](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)\]
 
 <b>重要的 API</b>
 
@@ -31,7 +31,7 @@ ms.locfileid: "74259807"
 [  **RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 有 3 个版本，你可指定工作项的优先级，控制它是否与其他工作项同时运行。
 
 >[!NOTE]
->Use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) to access the UI thread and show progress from the work item.
+>使用[**CoreDispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)可访问 UI 线程并显示工作项的进度。
 
 以下示例创建工作项并提供 lambda 以执行此工作：
 
@@ -350,7 +350,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>摘要和后续步骤
 
-You can learn more by downloading the code from this quickstart in the [Creating a ThreadPool work item sample](https://code.msdn.microsoft.com/windowsapps/Creating-a-ThreadPool-work-9665cdff) written for Windows 8.1, and re-using the source code in a win\_unap Windows 10 app.
+若要了解详细信息，可在创建为 Windows 8.1 编写的[ThreadPool 工作项示例](https://code.msdn.microsoft.com/windowsapps/Creating-a-ThreadPool-work-9665cdff)中下载此快速入门中的代码，并在 win\_unap Windows 10 应用中重复使用源代码。
 
 ## <a name="related-topics"></a>相关主题
 

@@ -48,7 +48,7 @@ Windows 运行时音频图 API：
 
 ## <a name="audiograph-class"></a>AudioGraph 类
 
-[  **AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph) 类是构成音频图的所有节点的父类。 使用此对象创建所有音频节点类型的实例。 可通过以下方式创建 **AudioGraph** 类的实例：初始化包含音频图的配置设置的 [**AudioGraphSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings) 对象，然后调用 [**AudioGraph.CreateAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createasync)。 返回的 [**CreateAudioGraphResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.CreateAudioGraphResult) 将提供对创建的音频图的访问权限，或提供一个错误值（如果音频图创建失败）。
+[  **AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph) 类是构成音频图的所有节点的父类。 使用此对象创建所有音频节点类型的实例。 可通过以下方式创建 **AudioGraph** 类的实例：初始化包含音频图的配置设置的 [**AudioGraphSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings) 对象，然后调用 [**AudioGraph.CreateAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createasync)。 返回的 [**CreateAudioGraphResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.CreateAudioGraphResult) 将提供对创建的音频图的访问权限；如果音频图创建失败，则提供一个错误值。
 
 [!code-cs[DeclareAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareAudioGraph)]
 
@@ -73,7 +73,7 @@ Windows 运行时音频图 API：
 
 ##  <a name="device-input-node"></a>设备输入节点
 
-设备输入节点通过连接到系统的音频捕获设备（例如麦克风）将音频送入音频图中。 通过调用 [**CreateDeviceInputNodeAsync**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioDeviceInputNode) 创建使用系统的默认音频捕获设备的 [**DeviceInputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createdeviceinputnodeasync) 对象。 提供 [**AudioRenderCategory**](https://docs.microsoft.com/uwp/api/Windows.Media.Render.AudioRenderCategory)，以允许系统优化指定类别的音频管道。
+设备输入节点通过连接到系统的音频捕获设备（例如麦克风）将音频送入音频图中。 通过调用 [**CreateDeviceInputNodeAsync**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioDeviceInputNode) 创建使用系统的默认音频捕获设备的 [**DeviceInputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createdeviceinputnodeasync) 对象。 提供 [**AudioRenderCategory**](https://docs.microsoft.com/uwp/api/Windows.Media.Render.AudioRenderCategory)，让系统能够优化指定类别的音频管道。
 
 [!code-cs[DeclareDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareDeviceInputNode)]
 
@@ -157,7 +157,7 @@ Windows 运行时音频图 API：
 - Windows 10 版本 1803 中采用了一组新的 API，借助其可将 **MediaFrameReader** 与音频数据结合使用。 借助这些 API，可从媒体帧源中获取 **AudioFrame** 对象，后者可通过 **AddFrame** 方法传递到 **FrameInputNode** 中。 有关详细信息，请参阅[使用 MediaFrameReader 处理音频帧](process-audio-frames-with-mediaframereader.md)。
 -   以下显示了 **GenerateAudioData** 帮助程序方法的一个示例实现。
 
-若要使用音频数据填充 [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame)，则必须访问音频帧的基础内存缓冲区。 为此，必须通过在你的命名空间内添加以下代码来初始化 **IMemoryBufferByteAccess** COM 接口。
+若要使用音频数据填充 [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame)，则必须访问音频帧的基础内存缓冲区。 为此，必须通过在命名空间内添加以下代码来初始化 **IMemoryBufferByteAccess** COM 接口。
 
 [!code-cs[ComImportIMemoryBufferByteAccess](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetComImportIMemoryBufferByteAccess)]
 
@@ -165,7 +165,7 @@ Windows 运行时音频图 API：
 
 [!code-cs[GenerateAudioData](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetGenerateAudioData)]
 
--   因为此方法可访问含有基础 Windows 运行时类型的原始缓冲区，所以必须使用 **unsafe** 关键字进行声明。 你还必须使用 Microsoft Visual Studio 配置你的项目，以允许通过以下操作编译不安全的代码：打开项目的 **“属性”** 页面、单击 **“生成”** 属性页，然后选中 **“允许不安全代码”** 复选框。
+-   此方法访问以 Windows 运行时类型为基础的原始缓冲区，因此必须使用 **unsafe** 关键字进行声明。 你还必须使用 Microsoft Visual Studio 配置你的项目，以允许通过以下操作编译不安全的代码：打开项目的 **“属性”** 页面、单击 **“生成”** 属性页，然后选中 **“允许不安全代码”** 复选框。
 -   通过将所需的缓冲区大小传入构造函数，在 [Windows.Media**命名空间中初始化**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame)AudioFrame 的新实例。 缓冲区大小等于样本数乘以每个样本的大小。
 -   通过调用 [**LockBuffer**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioBuffer) 获取音频帧的 [**AudioBuffer**](https://docs.microsoft.com/uwp/api/windows.media.audioframe.lockbuffer)。
 -   通过调用 [**CreateReference**](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85)) 从音频缓冲区获取 [**IMemoryBufferByteAccess**](https://docs.microsoft.com/uwp/api/windows.media.audiobuffer.createreference) COM 接口的实例。
@@ -203,11 +203,11 @@ Windows 运行时音频图 API：
 
 [!code-cs[AddOutgoingConnection1](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection1)]
 
-你可以创建多个从某个输入节点到其他节点的连接。 下面的示例添加了从 [**AudioFileInputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFileInputNode) 到 [**AudioFileOutputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFileOutputNode) 的另一种连接方法。 现在，音频文件中的音频将在设备的扬声器中播放，还将写出到音频文件。
+可创建多个从某个输入节点到其他节点的连接。 下面的示例添加了从 [**AudioFileInputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFileInputNode) 到 [**AudioFileOutputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFileOutputNode) 的另一种连接方法。 现在，音频文件中的音频将在设备的扬声器中播放，还将写出到音频文件。
 
 [!code-cs[AddOutgoingConnection2](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection2)]
 
-输出节点也可以接收来自其他节点的多个连接。 下面的示例将建立从 [**AudioDeviceInputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioDeviceInputNode) 到 [**AudioDeviceOutput**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode) 节点的连接。 由于输出节点具有来自文件输入节点和设备输入节点的连接，输出将包含来自这两个源的混合音频。 **AddOutgoingConnection** 将提供一个重载，可使你为通过连接传递的信号指定增益值。
+输出节点也可以接收来自其他节点的多个连接。 下面的示例将建立从 [**AudioDeviceInputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioDeviceInputNode) 到 [**AudioDeviceOutput**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode) 节点的连接。 由于输出节点具有来自文件输入节点和设备输入节点的连接，输出将包含来自这两个源的混合音频。 **AddOutgoingConnection** 将提供一个重载，可使用它为通过连接传递的信号指定增益值。
 
 [!code-cs[AddOutgoingConnection3](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection3)]
 
@@ -230,7 +230,7 @@ Windows 运行时音频图 API：
 [!code-cs[AddEffect](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddEffect)]
 
 -   所有音频效果都可实现 [**IAudioEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IAudioEffectDefinition)。 每个节点都将公开 **EffectDefinitions** 属性，它表示应用于该节点的效果的列表。 通过将效果的定义对象添加到列表来添加效果。
--   **Windows.Media.Audio** 命名空间中提供了多个效果定义类。 这些地方包括：
+-   **Windows.Media.Audio** 命名空间中提供了多个效果定义类。 其中包括：
     -   [**EchoEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.EchoEffectDefinition)
     -   [**EqualizerEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.EqualizerEffectDefinition)
     -   [**LimiterEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.LimiterEffectDefinition)
@@ -254,7 +254,7 @@ Windows 运行时音频图 API：
 
 [!code-cs[Listener](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetListener)]
 
-可以更新运行时发射器的位置、速度和方向，以模拟音频源在 3D 空间中的移动。
+可更新运行时发射器的位置、速度和方向，以模拟音频源在 3D 空间中的移动。
 
 [!code-cs[UpdateEmitter](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetUpdateEmitter)]
 

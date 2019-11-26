@@ -15,11 +15,11 @@ ms.locfileid: "74255904"
 ---
 # <a name="composition-effects"></a>合成效果
 
-[  **Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition) API 允许将实时效果应用于图像和附带动画效果属性的 UI。 在此概述中，我们将详细描述可用于允许效果应用于合成视觉效果的功能。
+[  **Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition) API 允许将实时效果应用于图像和附带动画效果属性的 UI。 在此概述中，我们将详细描述可用于允许效果应用于合成视觉对象的功能。
 
 为了支持[通用 Windows 平台 \(UWP\)](https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp) 一致性以供开发人员在其应用程序中描述效果，合成效果利用 Win2D 的 IGraphicsEffect 接口通过 [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空间来使用效果描述。
 
-画笔效果通过将效果应用于一组现有图像来绘制应用程序的区域。 Windows 10 合成效果 API 专用于子画面视觉效果。 在创建颜色、图形和效果方面，SpriteVisual 具有灵活性和互动性。 SpriteVisual 是合成视觉效果类型，该效果可以使用画笔填充 2D 矩形。 该视觉效果定义矩形的边框，而画笔定义用于绘制矩形的像素。
+画笔效果通过将效果应用于一组现有图像来绘制应用程序的区域。 Windows 10 合成效果 API 专用于子画面视觉效果。 在创建颜色、图形和效果方面，SpriteVisual 具有灵活性和互动性。 SpriteVisual 是合成视觉对象类型，该效果可以使用画笔填充 2D 矩形。 该视觉效果定义矩形的边框，而画笔定义用于绘制矩形的像素。
 
 将会针对合成树视觉效果（其内容来自效果图的输出）使用效果画笔。 效果可以引用现有图面/纹理，但不可以引用其他合成树的输出。
 
@@ -37,15 +37,15 @@ ms.locfileid: "74255904"
 
 目前，合成支持以下效果：
 
-| 效果               | 描述                                                                                                                                                                                                                |
+| 作用               | 说明                                                                                                                                                                                                                |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 2D 仿射变换  | 将 2D 仿射变换矩阵应用到图像。 我们使用此效果在我们的效果[示例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/Demos/Reference Demos/BasicCompositonEffects)中对 alpha 蒙板进行动画处理。       |
 | 算术合成 | 使用灵活方程组合两张图像。 我们使用算术合成在我们的[示例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/Demos/Reference Demos/BasicCompositonEffects)中创建交叉淡入淡出效果。 |
 | 混合效果         | 创建组合两张图像的混合效果。 合成提供 Win2D 中受支持的 21 种[混合模式](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.htm)（共 26 种）。        |
 | 颜色源         | 生成包含纯色的图像。                                                                                                                                                                               |
 | 合成            | 组合两张图像。 合成提供 Win2D 中受支持的全部 13 种[合成模式](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.htm)。                                              |
-| 与此示例             | 增加或降低图像的对比度。                                                                                                                                                                           |
-| Exposure             | 增加或降低图像的曝光。                                                                                                                                                                           |
+| 对比度             | 增加或降低图像的对比度。                                                                                                                                                                           |
+| 曝光             | 增加或降低图像的曝光。                                                                                                                                                                           |
 | 灰度            | 将图像转换为单色灰度。                                                                                                                                                                                   |
 | 伽玛转换       | 通过应用每个通道伽玛转换函数来更改图像的颜色。                                                                                                                                           |
 | 色调旋转           | 通过旋转图像的色调值来更改其颜色。                                                                                                                                                                   |
@@ -144,7 +144,7 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 
 - 如果尚未安装受支持版本的 Visual Studio，请转到[此处](https://visualstudio.microsoft.com/downloads/download-visual-studio-vs)的 Visual Studio 下载页。
 
-### <a name="creating-a-new-project"></a>创建新的项目
+### <a name="creating-a-new-project"></a>创建新项目
 
 - 转到“文件”-&gt;“新建”-&gt;“项目”...
 - 选择“Visual C#”

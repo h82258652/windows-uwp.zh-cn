@@ -47,7 +47,7 @@ UWP 应用可以在运行 Windows 10 的任何设备上运行，包括手机、�
 <td style="vertical-align:top;">320x569、360x640、480x854</td>
 </tr>
 <tr class="odd">
-<td style="vertical-align:top;">中等</td>
+<td style="vertical-align:top;">中</td>
 <td style="vertical-align:top;">641px 到 1007px</td>
 <td style="vertical-align:top;">7&quot; 到 12&quot;</td>
 <td style="vertical-align:top;">平板电脑</td>
@@ -84,7 +84,7 @@ UWP 应用会自动缩放 UI，以保证应用在所有 Windows 10 设备上都�
 - 使[导航窗格](../controls-and-patterns/navigationview.md)处于覆盖模式，以节省屏幕空间。
 - 如果你使用的是[大纲细节模式](../controls-and-patterns/master-details.md)，请使用堆叠演示模式来节省屏幕空间。
 
-### <a name="medium"></a>中等
+### <a name="medium"></a>中
 - 将左右窗口边距设置为 24px 以在应用窗口的左侧和右侧边缘之间创建一个可视间隔。
 - 将命令元素（如[应用栏](../controls-and-patterns/app-bars.md)）放置在应用窗口顶部。
 - 使用最多两个列/区域。

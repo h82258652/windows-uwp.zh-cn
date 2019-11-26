@@ -33,7 +33,7 @@ ms.locfileid: "74258399"
 
 使用 Windows Ink，你可以为客户提供能够想象的几乎任何一种笔纸体验的同等数字方式，从快速的手写便笺和注释到白板演示，从体系结构和工程绘图到个人作品。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 * 一台运行当前版本 Windows 10 的计算机（或虚拟机）
 * [Visual Studio 2019 和 RS2 SDK](https://developer.microsoft.com/windows/downloads)
@@ -64,7 +64,7 @@ ms.locfileid: "74258399"
 
 这些对象提供 UWP 应用的大部分墨迹书写体验。
 
-| Component | 描述 |
+| 组件 | 说明 |
 | --- | --- |
 | [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | 默认情况下，一个 XAML UI 平台控件接收并显示从笔到墨迹笔划或擦除笔划的所有输入。 |
 | [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) | 代码隐藏对象，与 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件（通过 [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) 属性公开）一起进行实例化。 此对象提供 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 公开的所有默认墨迹书写功能以及适用于其他自定义和个性化的完整 API 集。 |
@@ -328,14 +328,14 @@ Windows Ink 支持对 Windows 支持的很多语言进行文本识别。 每个�
 - 圆形
 - 菱形
 - 绘图
-- Ellipse
+- 椭圆形
 - 等边三角形
 - 六边形
 - 等腰三角形
 - 平行四边形
 - 五角形
 - 四边形
-- Rectangle
+- 矩形
 - 直角三角形
 - 正方形
 - 梯形

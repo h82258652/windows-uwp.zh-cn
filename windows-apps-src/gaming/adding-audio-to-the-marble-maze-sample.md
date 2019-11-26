@@ -1,6 +1,6 @@
 ---
 title: 向 Marble Maze 添加音频示例
-description: 本文档介绍了在使用音频时要考虑的重要做法，并展示了 Marble Maze 如何应用这些做法。
+description: 本文档介绍了在使用音频时要考虑的重要实践，并展示了 Marble Maze 如何应用这些实践。
 ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
 ms.date: 10/18/2017
 ms.topic: article
@@ -15,7 +15,7 @@ ms.locfileid: "74258561"
 ---
 # <a name="adding-audio-to-the-marble-maze-sample"></a>向 Marble Maze 添加音频示例
 
-本文档介绍了在使用音频时要考虑的重要做法，并展示了 Marble Maze 如何应用这些做法。 Marble Maze 使用 [Microsoft 媒体基础](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk)从文件加载音频资源，使用 [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal) 混合并播放音频，以及向音频应用效果。
+本文档介绍了在使用音频时要考虑的重要实践，并展示了 Marble Maze 如何应用这些实践。 Marble Maze 使用 [Microsoft 媒体基础](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk)从文件加载音频资源，使用 [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal) 混合并播放音频，以及向音频应用效果。
 
 Marble Maze 在后台播放音乐，还使用游戏声音来指示游戏事件，例如弹珠撞到墙壁时。 该实现的一个重要部分是，Marble Maze 使用一个混响或回声效果来模拟弹珠弹跳时的声音。 混响效果实现可导致回声在小空间中更快且更响亮地传到你耳中；但在大空间中，回声会更安静、更慢地传到你耳中。
 
@@ -389,7 +389,7 @@ enum SoundEvent
 
 下表给出了其中每个值之间的关系、包含关联的声音数据的文件，以及每种声音有何含义的简短描述。 音频文件位于 **\\Media\\audio**文件夹中。
 
-| SoundEvent 值  | 文件名      | 描述                                              |
+| SoundEvent 值  | 文件名      | 说明                                              |
 |-------------------|----------------|----------------------------------------------------------|
 | RollingEvent      | MarbleRoll.wav | 在弹珠滚动时播放。                              |
 | FallingEvent      | MarbleFall.wav | 在弹珠从迷宫掉落时播放。               |
@@ -819,7 +819,7 @@ if (m_engineExperiencedCriticalError)
 > [!CAUTION]
 > 作为一项规则，不要在引擎回调主体中执行阻止操作。 执行此操作可能会导致性能问题。 Marble Maze 在 **OnCriticalError** 回调中设置一个标志，随后在常规音频处理阶段处理该错误。 有关 XAudio2 回调的详细信息，请参阅 [XAudio2 回调](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-callbacks)。
 
-## <a name="conclusion"></a>结论
+## <a name="conclusion"></a>总结
 
 这就是 Marble Maze 游戏示例的基础知识！ 虽然这是一个相对简单的游戏，但它包含了许多可以转到任何 UWP DirectX 游戏的重要部分，是可以在制作你自己的游戏时使用的一个好示例。
 

@@ -15,10 +15,10 @@ ms.locfileid: "74259662"
 # <a name="point-of-service"></a>服务点
 此部分包含有关如何使用 [Windows.Devices.PointOfService](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice) 来与从通用 Windows 应用程序的零售和酒店环境中发现的外设进行交互的文章。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |------|------------|
 | [入门](pos-basics.md) | 本文将帮助你开始使用服务点 UWP API。 |
-| [Hardware support](pos-device-support.md) | List of known devices that are compatible with [Windows.Devices.PointOfService](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) UWP APIs. |
-| [Barcode Scanner](pos-barcodescanner.md) | Index of articles on barcode scanner. |
-| [Magnetic stripe reader](pos-magnetic-stripe-reader.md) | Index of articles on magnetic stripe reader.
-| [POSPrinter](pos-printer.md) | Index of articles on POSPrinter. |
+| [硬件支持](pos-device-support.md) | 与[PointOfService](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) UWP api 兼容的已知设备的列表。 |
+| [条形码扫描器](pos-barcodescanner.md) | 条形码扫描器上项目的索引。 |
+| [磁条阅读器](pos-magnetic-stripe-reader.md) | 磁条纹读取器上的项目索引。
+| [POSPrinter](pos-printer.md) | POSPrinter 上的项目索引。 |

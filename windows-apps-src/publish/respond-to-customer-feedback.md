@@ -22,7 +22,7 @@ ms.locfileid: "74259945"
 
 若要对任何一条反馈进行回复，请单击**反馈报告**中该条反馈旁边显示的“回复反馈”链接。
 
-[Partner Center](https://partner.microsoft.com/dashboard) supports three options for responding to customers who provide feedback about your app. 无论你选择哪个选项，请记住，每个回复有 1000 个字符的限制。
+[合作伙伴中心](https://partner.microsoft.com/dashboard)支持三个选项来响应提供应用相关反馈的客户。 无论你选择哪个选项，请记住，每个回复有 1000 个字符的限制。
 
 ## <a name="public-comments-in-feedback-hub"></a>反馈中心中的公共评论
 

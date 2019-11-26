@@ -41,7 +41,7 @@ ms.locfileid: "74258431"
 
 在初始化该游戏示例中的 **MoveLookController** 类时，将注册四个特定于指针的事件和一个特定于鼠标的事件：
 
-事件 | 描述
+事件 | 说明
 :------ | :-------
 [**CoreWindow：:P ointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed) | 点按（并按住）左右鼠标按钮，或触摸触摸屏表面。
 [**CoreWindow：:P ointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) |移动鼠标，或在触摸表面执行拖动操作。
@@ -82,7 +82,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 
 若要确定游戏应在何时侦听某个输入，**MoveLookController** 类有三个特定于控制器的状态（与控制器类型无关）：
 
-状态 | 描述
+State | 说明
 :----- | :-------
 **无** | 这是控制器的初始化状态。 忽略所有输入，因为游戏不期待任何控制器输入。
 **WaitForInput** | 控制器等待玩家通过使用鼠标左键、触摸事件或游戏板上的菜单按钮确认来自游戏的消息。
@@ -212,7 +212,7 @@ void MoveLookController::OnMouseMoved(
 ![移动观看触控布局](images/simple-dx-game-controls-touchzones.png)
 
 以下命令汇总了我们的触摸控件行为。
-用户输入 | Action
+用户输入 | 操作
 :------- | :--------
 移动矩形 | 触控输入转换为虚拟游戏杆，这时，垂直运动将转换为向前/向后位置移动，水平运动将转换为向左/向右位置移动。
 射击矩形 | 射击视区。
@@ -456,7 +456,7 @@ window->PointerReleased +=
 
 此游戏具有以下键盘和鼠标控件布局。
 
-用户输入 | Action
+用户输入 | 操作
 :------- | :--------
 W | 向前移动玩家
 A | 向左移动玩家
@@ -565,7 +565,7 @@ window->KeyUp +=
 
 下面将是我们的游戏板控件。
 
-用户输入 | Action
+用户输入 | 操作
 :------- | :--------
 左摇杆 | 移动玩家
 右摇杆 | 更改相机视图的旋转（俯仰和偏航）

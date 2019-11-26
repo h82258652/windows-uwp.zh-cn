@@ -33,7 +33,7 @@ Direct3D 11 是对 Direct3D 9 的重大升级。 其中包含了多种范式转�
 ##  <a name="do-i-have-to-update-my-game-timer-for-uwp"></a>必须针对 UWP 更新游戏计时器吗？
 
 
-[**QueryPerformanceCounter**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter), along with [**QueryPerformanceFrequency**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancefrequency), is still the best way to implement a game timer for UWP apps.
+[**QueryPerformanceCounter**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter)和[**QueryPerformanceFrequency**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancefrequency)仍是实现 UWP 应用游戏计时器的最佳方式。
 
 你应该注意计时器和 UWP 应用生命周期的细微差别。 暂停/恢复与玩家重新启动桌面游戏有所不同，因为你的游戏将 从该游戏的上次播放时间点及时恢复一个快照。 如果经过了很长时间（例如，几周），那么某些游戏计时器实现可能无法正常工作。 当游戏恢复时，你可以使用应用生命周期事件来重置你的计时器。
 
@@ -44,10 +44,10 @@ Direct3D 11 是对 Direct3D 9 的重大升级。 其中包含了多种范式转�
 
 [DirectX 工具包 (DirectXTK)](https://github.com/Microsoft/DirectXTK) 社区项目提供用于 Direct3D 11 的帮助程序类。
 
-##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>How do I maintain code paths for the desktop and the Microsoft Store?
+##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>如何实现维护桌面和 Microsoft Store 的代码路径吗？
 
 
-Chuck Walbourn's article series titled [Dual-use Coding Techniques for Games](https://blogs.msdn.com/b/chuckw/archive/2012/09/17/dual-use-coding-techniques-for-games.aspx) offers guidance on sharing code between the desktop and the Microsoft Store code paths.
+Chuck Walbourn 的文章系列标题[为适用于游戏的双用途编码技术](https://blogs.msdn.com/b/chuckw/archive/2012/09/17/dual-use-coding-techniques-for-games.aspx)，提供有关在桌面与 Microsoft Store 代码路径之间共享代码的指南。
 
 ##  <a name="how-do-i-load-image-resources-in-my-directx-uwp-app"></a>如何在 DirectX UWP应用中加载图像资源？
 
@@ -98,7 +98,7 @@ DirectX 10.x 和 DirectX 11 桌面游戏可轻松移植到 UWP。 请参阅 [迁
 ## <a name="how-do-i-turn-on-antialiasing"></a>如何打开抗锯齿？
 
 
-创建 Direct3D 设备时会启用抗锯齿（多重采样）。 Enumerate multisampling support by calling [**CheckMultisampleQualityLevels**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels), then set multisample options in the [**DXGI\_SAMPLE\_DESC structure**](https://docs.microsoft.com/windows/desktop/api/dxgicommon/ns-dxgicommon-dxgi_sample_desc) when you call [**CreateSurface**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice-createsurface).
+创建 Direct3D 设备时会启用抗锯齿（多重采样）。 通过调用[**CheckMultisampleQualityLevels**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels)枚举多级多级，然后在调用[**CreateSurface**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice-createsurface)时在[**DXGI\_\_示例**](https://docs.microsoft.com/windows/desktop/api/dxgicommon/ns-dxgicommon-dxgi_sample_desc)中设置多级选项。
 
 ## <a name="my-game-renders-using-multithreading-andor-deferred-rendering-what-do-i-need-to-know-for-direct3d-11"></a>我的游戏使用多线程和/或延迟呈现来进行呈现。 对于 Direct3D 11，我需要了解哪些内容？
 
@@ -110,8 +110,8 @@ DirectX 10.x 和 DirectX 11 桌面游戏可轻松移植到 UWP。 请参阅 [迁
 
 请访问以下主题：
 
--   [Programming Guide for HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-pguide)
--   [Direct3D 10 Frequently Asked Questions](https://docs.microsoft.com/windows/desktop/DxTechArts/direct3d10-frequently-asked-questions)
+-   [HLSL 编程指南](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-pguide)
+-   [Direct3D 10 常见问题](https://docs.microsoft.com/windows/desktop/DxTechArts/direct3d10-frequently-asked-questions)
 
 ## <a name="what-should-i-use-instead-of-the-x-file-format-for-my-models"></a>我应该对我的模型使用哪种文件格式来替代 .x 文件格式？
 
@@ -121,14 +121,14 @@ DirectX 10.x 和 DirectX 11 桌面游戏可轻松移植到 UWP。 请参阅 [迁
 ## <a name="how-do-i-debug-my-shaders"></a>如何调试着色器？
 
 
-Microsoft Visual Studio 2015 includes diagnostic tools for DirectX graphics. 请参阅[调试 DirectX 图形](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015)。
+Microsoft Visual Studio 2015 包括用于 DirectX 图形的诊断工具。 请参阅[调试 DirectX 图形](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015)。
 
 ##  <a name="what-is-the-direct3d-11-equivalent-for-x-function"></a>*x* 函数的 Direct3D 11 等同项是什么？
 
 
 请参阅“将 DirectX 9 功能映射到 DirectX 11 API”中提供的[函数映射](feature-mapping.md#function-mapping)。
 
-##  <a name="what-is-the-dxgi_format-equivalent-of-y-surface-format"></a>What is the DXGI\_FORMAT equivalent of *y* surface format?
+##  <a name="what-is-the-dxgi_format-equivalent-of-y-surface-format"></a>什么是 DXGI\_格式等效于*y*表面格式？
 
 
 请参阅“将 DirectX 9 功能映射到 DirectX 11 API”中提供的[图面格式映射](feature-mapping.md#surface-format-mapping)。

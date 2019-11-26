@@ -1,5 +1,5 @@
 ---
-Description: 如果应用没有与客户设备的特定设置相匹配的资源，则会使用应用的默认资源。 本主题介绍了如何指定这些默认资源。
+Description: 如果应用不具有与客户设备的特定设置相匹配的资源，则使用应用的默认资源。 本主题介绍如何指定这些默认资源是什么。
 title: 指定应用使用的默认资源
 template: detail.hbs
 ms.date: 11/14/2017
@@ -15,11 +15,11 @@ ms.locfileid: "74254646"
 ---
 # <a name="specify-the-default-resources-that-your-app-uses"></a>指定应用使用的默认资源
 
-如果应用没有与客户设备的特定设置相匹配的资源，则会使用应用的默认资源。 本主题介绍了如何指定这些默认资源。
+如果应用不具有与客户设备的特定设置相匹配的资源，则使用应用的默认资源。 本主题介绍如何指定这些默认资源是什么。
 
-当客户从 Microsoft Store 安装应用时，客户设备上的设置与应用的可用资源相匹配。 完成此匹配后，只需为该用户下载并安装适当的资源。 例如，使用最合适的用户语言首选项的字符串和图像，以及设备的分辨率和 DPI 设置。 例如，`scale` 的默认值是 `200`，但可根据自己的意愿使用其他值替代该默认值。
+当客户从 Microsoft Store 安装应用时，客户设备上的设置与应用的可用资源相匹配。 完成此匹配后，只需为该用户下载并安装适当的资源。 例如，使用最合适的用户语言首选项的字符串和图像，以及设备的分辨率和 DPI 设置。 例如，`200` 的默认值是 `scale`，但可根据自己的意愿使用其他值替代该默认值。
 
-即使对于不进入自己资源包的资源（如为高对比度设置定制的图像），如果无法找到与用户设置匹配的资源，则可以指定应用在运行时应该使用的默认资源。 例如，`contrast` 的默认值是 `standard`，但可根据自己的意愿使用其他值替代该默认值。
+即使对于不进入自己资源包的资源（如为高对比度设置定制的图像），如果无法找到与用户设置匹配的资源，则可以指定应用在运行时应该使用的默认资源。 例如，`standard` 的默认值是 `contrast`，但可根据自己的意愿使用其他值替代该默认值。
 
 这些默认值以默认资源限定符值的形式指定。 有关什么是资源限定符及其用法和目的的说明，请参阅[定制语言、比例、高对比度和其他限定符的资源](tailor-resources-lang-scale-contrast.md)。
 
@@ -44,7 +44,7 @@ ms.locfileid: "74254646"
    </default>
    ```
    
-   **注意** 值 `LANGUAGE-TAG(S)` 需要与应用的默认语言保持同步。 如果该值是单一的 [BCP 47 语言标记](https://tools.ietf.org/html/bcp47)，则应用的默认语言必须是同一个标记。 如果它是一个以逗号分隔的语言标记列表，则应用的默认语言必须是列表中的第一个标记。 在应用包清单源文件 (`Package.appxmanifest`) 中的**应用程序**选项卡上，在**默认语言**字段中设置应用的默认语言。
+   **注意** 值 `LANGUAGE-TAG(S)` 需要与应用的默认语言保持同步。 如果该值是单一的 [BCP 47 语言标记](https://tools.ietf.org/html/bcp47)，则应用的默认语言必须是同一个标记。 如果它是一个以逗号分隔的语言标记列表，则应用的默认语言必须是列表中的第一个标记。 在应用包清单源文件 ( **) 中的**应用程序**选项卡上，在**默认语言`Package.appxmanifest`字段中设置应用的默认语言。
 
 4. 每个`<qualifier>`元素指示 Visual Studio 将何值用作每个限定符名称的默认值。 就目前拥有的文件内容来说，实际上尚未更改 Visual Studio 的行为。 换言之，Visual Studio *已表现得如同*该文件已存在这些内容，因为这些都是默认值。 因此若要使用自己的默认值替代默认值，需要更改文件中的值。 以下示例是编辑前三个值后该文件的外观。
    ```xml
@@ -64,7 +64,7 @@ ms.locfileid: "74254646"
 
 若要确认是否将已替代的默认值考虑在内，请查找文件 `<ProjectFolder>\obj\<ReleaseConfiguration folder>\priconfig.xml` 并确认其内容是否与替代的内容相匹配。 如果匹配，则已成功地配置应用将默认使用的资源的限定符值。 如果未找到用户设置的匹配项，则将使用其文件夹或文件名包含在此处设置的默认限定符值的资源。
 
-### <a name="how-does-this-work"></a>WSL 的工作原理是怎样的？
+### <a name="how-does-this-work"></a>这是如何实现的？
 
 在后台，Visual Studio 启动一个名为 `MakePri.exe` 的工具来生成一个称为包资源索引 (PRI) 的文件，用于描述所有应用的资源，包括指示哪些是默认资源。 有关此工具的详细信息，请参阅[使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)。 Visual Studio 将配置文件传递给 `MakePri.exe`。 `priconfig.default.xml` 文件的内容用作该配置文件的 `<default>` 元素，该配置文件是指定一组被认为是默认值的限定符值的部分。 因此，添加和编辑 `priconfig.default.xml` 最终会影响 Visual Studio 为应用生成的并包括在其应用包中的包资源索引文件的内容。
 
@@ -103,5 +103,5 @@ ms.locfileid: "74254646"
 ## <a name="related-topics"></a>相关主题
 
 * [定制语言、比例、高对比度和其他限定符的资源](tailor-resources-lang-scale-contrast.md)
-* [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
+* [BCP-47 语言标记](https://tools.ietf.org/html/bcp47)
 * [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)

@@ -116,7 +116,7 @@ UWP 基于先前的托管代码 UI 框架（如 Windows 窗体、Windows Present
 
 如果要编写自定义控件类而且打算还提供一个新的自动化对等，则应当替代自定义控件的 [**OnCreateAutomationPeer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.oncreateautomationpeer) 方法，以便它返回对等的新实例。 你的对等类必须从 [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) 直接或间接派生。
 
-例如，下面的代码声明自定义控件 `NumericUpDown` 应当使用对等 `NumericUpDownPeer` 来实现 UI 自动化用途：
+例如，下面的代码声明自定义控件 `NumericUpDown` 应当使用对等 `NumericUpDownPeer` 来实现 UI 自动化用途。
 
 ```csharp
 using Windows.UI.Xaml.Automation.Peers;
@@ -275,7 +275,7 @@ protected override string GetClassNameCore()
 
 一些辅助技术在将 UI 自动化树中的项目特征报告为 UI 自动化 [Name**之外的额外信息时，直接使用**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltype)GetAutomationControlType 值。 如果你的控件明显不同于你正派生自的控件，并且你希望报告与控件使用的基本对等类所报告不同的控件类型，则必须实现对等并在你的对等实现中替代 [**GetAutomationControlTypeCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltypecore)。 如果你派生自诸如 [**ItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) 或 [**ContentControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl) 等一般基类（基本对等不提供有关控件类型的精确信息），这尤为重要。
 
-你的 [**GetAutomationControlTypeCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltypecore) 实现通过返回 [**AutomationControlType**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) 值来描述控件。 尽管你可以返回 **AutomationControlType.Custom**，但是你应当返回一个更具体的控件类型，但前提是该类型能够准确地描述控件的主要情形。 下面提供了一个示例。
+你的 [**GetAutomationControlTypeCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltypecore) 实现通过返回 [**AutomationControlType**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) 值来描述控件。 尽管你可以返回 **AutomationControlType.Custom**，但是你应当返回一个更具体的控件类型，但前提是该类型能够准确地描述控件的主要情形。 下面是一个示例。
 
 ```csharp
 protected override AutomationControlType GetAutomationControlTypeCore()
@@ -456,7 +456,7 @@ public class IndexCardAutomationPeer : FrameworkElementAutomationPeer, IExpandCo
 
 UI 自动化事件属于以下类别。
 
-| 事件 | 描述 |
+| 事件 | 说明 |
 |-------|-------------|
 | 属性更改 | 当 UI 自动化元素或控件模式上的属性发生更改时触发。 例如，如果客户端需要监视应用的复选框控件，它可以注册侦听 [**ToggleState**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.provider.itoggleprovider.togglestate) 属性上的属性更改事件。 当选中或取消选中复选框控件时，提供程序将触发该事件，然后客户端可以根据需要进行操作。 |
 | 元素操作 | 当 UI 中的更改是由于用户或编程活动引起时触发；例如，当通过 **Invoke** 模式单击或调用按钮时。 |

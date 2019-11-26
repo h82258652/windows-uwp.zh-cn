@@ -124,7 +124,7 @@ ms.locfileid: "74254525"
 
 `configuration` 限定符用于加载与 `MS_CONFIGURATION_ATTRIBUTE_VALUE` 环境变量的值最佳匹配的资源。 因此，你可以将变量设置为已分配给相关资源的字符串值，例如 `designer` 或 `test`。
 
-## <a name="contrast"></a>与此示例
+## <a name="contrast"></a>对比度
 
 `contrast` 限定符用于提供与高对比度设置最佳匹配的资源。
 
@@ -226,7 +226,7 @@ public void SetLicenseLevel(BrandID brand)
 
 `layoutdirection` 限定符对应于显示语言设置的布局方向。 例如，像阿拉伯语或希伯来语这样从右到左阅读的语言，可能需要镜像图像。 如果设置了 [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) 属性，则 UI 中的布局面板和图像将相应地响应布局方向（请参阅[调整布局和字体并支持 RTL](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)）。 但是，`layoutdirection` 限定符适用于简单翻转无法满足要求的情况，可以采用更常规的方式响应特定阅读顺序和文本对齐的方向性。
 
-## <a name="scale"></a>比例
+## <a name="scale"></a>缩放
 
 Windows 会根据其 DPI（每英寸点数）和设备的观看距离自动为每个显示器选择一个缩放比例。 请参阅[有效像素和缩放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)。 你应该创建多个建议大小（至少包括 100、200 和 400）的图像，使 Windows 可以选择理想的大小或使用最近大小并进行缩放。 这样一来，Windows 可以识别哪个物理文件包含适合显示比例系数的正确大小的图像，你使用 `scale` 限定符。 资源的比例与 [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation.ResolutionScale) 或下一个最大比例资源的值匹配。
 

@@ -17,8 +17,8 @@ ms.locfileid: "74490627"
 
 了解如何启动、暂停和恢复你的通用 Windows 平台 (UWP) DirectX 应用。
 
-|主题|描述|
+|主题|说明|
 |-|-|
-|[How to activate an app](how-to-activate-an-app-directx-and-cpp.md)|本主题介绍了如何为 UWP DirectX 应用定义激活体验。|
-|[How to suspend an app](how-to-suspend-an-app-directx-and-cpp.md)|本主题介绍了在系统暂停 UWP DirectX 应用时，如何保存重要系统状态和应用数据。|
-|[How to resume an app](how-to-resume-an-app-directx-and-cpp.md)|本主题介绍了在系统恢复 UWP DirectX 应用时，如何还原重要的应用程序数据。|
+|[如何激活应用](how-to-activate-an-app-directx-and-cpp.md)|本主题介绍了如何为 UWP DirectX 应用定义激活体验。|
+|[如何挂起应用程序](how-to-suspend-an-app-directx-and-cpp.md)|本主题介绍了在系统暂停 UWP DirectX 应用时，如何保存重要系统状态和应用数据。|
+|[如何恢复应用](how-to-resume-an-app-directx-and-cpp.md)|本主题介绍了在系统恢复 UWP DirectX 应用时，如何还原重要的应用程序数据。|

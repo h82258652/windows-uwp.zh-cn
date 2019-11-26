@@ -29,7 +29,7 @@ ms.locfileid: "74260501"
 |注意事项 | 影响 |
 |--------------|--------|
 |恢复能力   | 如果你的后台进程在另一个进程中运行，后台进程崩溃时不会关闭你的前台应用程序。 此外，如果后台活动运行时间超过了执行时间限制，就可能会终止，即使在你的应用中运行也是如此。 当前台进程和后台进程不需要相互通信时，将后台工作分离成一个独立于前台应用的任务可能是更好的选择（因为进程内后台任务的主要优势之一就是它们不需要进程之间相互通信）。 |
-|简易性    | 进程内后台任务不需要跨进程通信，并且编写起来没有那么复杂。  |
+|简单    | 进程内后台任务不需要跨进程通信，并且编写起来没有那么复杂。  |
 |可用的触发器 | 进程内后台任务不支持以下触发器：[DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396)、[DeviceServicingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceservicingtrigger) 和 **IoTStartupTask**。 |
 |VoIP | 进程内后台任务不支持在应用程序中激活 VoIP 后台任务。 |  
 
