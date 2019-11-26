@@ -28,7 +28,7 @@ ms.locfileid: "74259369"
 -   [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation)对象同时具有[**Address**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.address)属性（用于公开表示街道地址的[**MapAddress**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapAddress)对象）和[**Point**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.point)属性（用于公开表示地理位置的[**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint)对象）。
 
 > [!IMPORTANT]
-> 必须先指定地图身份验证密钥，然后才能使用地图服务。 有关详细信息，请参阅[请求地图验证密钥](authentication-key.md)。
+> 必须先指定地图身份验证密钥，然后才能使用地图服务。 有关详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
 
 ## <a name="get-a-location-geocode"></a>获取位置（地理编码）
 

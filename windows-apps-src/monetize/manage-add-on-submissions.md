@@ -36,7 +36,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 <tr class="header">
 <th align="left">方法</th>
 <th align="left">URI</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -66,7 +66,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 <td align="left"><a href="commit-an-add-on-submission.md">提交新的或更新的加载项提交</a></td>
 </tr>
 <tr>
-<td align="left">DELETE</td>
+<td align="left">删除</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}</td>
 <td align="left"><a href="delete-an-add-on-submission.md">删除附加项提交</a></td>
 </tr>
@@ -83,7 +83,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 2. [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 在 Microsoft Store 提交 API 中，必须将此访问令牌传递给相关方法。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
-3. 在 Microsoft Store 提交 API 中执行以下方法。 此方法会创建新的正在进行的提交，这是你上一发布的提交副本。 有关详细信息，请参阅[创建加载项提交](create-an-add-on-submission.md)。
+3. 在 Microsoft Store 提交 API 中执行以下方法。 此方法创建新的正在进行的提交，这是你上次发布的提交的副本。 有关详细信息，请参阅[创建加载项提交](create-an-add-on-submission.md)。
 
     ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions
@@ -110,7 +110,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
     * [适用于 Java 的 Azure 存储 SDK](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
     * [用于 Python 的 Azure 存储 SDK](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-    以下 C# 代码示例演示了如何在用于 .NET 的 Azure 存储客户端库中使用 [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) 类将 ZIP 存档上载到 Azure Blob 存储。 此示例假定 ZIP 存档已写入流对象。
+    以下 C# 代码示例演示如何在用于 .NET 的 Azure 存储客户端库中使用 [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) 类将 ZIP 存档上载到 Azure Blob 存储。 此示例假定 ZIP 存档已写入流对象。
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -228,33 +228,33 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 此资源具有以下值。
 
-| 值      | 在任务栏的搜索框中键入   | 描述        |
+| Value      | 类型   | 说明        |
 |------------|--------|----------------------|
 | id            | 字符串  | 提交的 ID。 此 ID 包含在 [create an add-on submission](create-an-add-on-submission.md)、[get all add-ons](get-all-add-ons.md) 和 [get an add-on](get-an-add-on.md) 请求的响应数据中。 对于在合作伙伴中心创建的提交，此 ID 还可用于合作伙伴中心中的提交页的 URL。  |
 | contentType           | 字符串  |  加载项中提供的[内容类型](../publish/enter-add-on-properties.md#content-type)。 这可以是以下值之一： <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| keywords           | array  | 字符串数组，其中最多包含加载项的 10 个[关键字](../publish/enter-add-on-properties.md#keywords)。 应用可以使用这些关键字来查询加载项。   |
+| keywords           | 数组  | 字符串数组，其中最多包含加载项的 10 个[关键字](../publish/enter-add-on-properties.md#keywords)。 应用可以使用这些关键字来查询加载项。   |
 | lifetime           | 字符串  |  加载项的生存期。 这可以是以下值之一： <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | listings           | 对象  |  键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为含有加载项列表信息的[列表资源](#listing-object)对象。  |
 | pricing           | 对象  | 包含加载项的定价信息的[定价资源](#pricing-object)。   |
-| targetPublishMode           | 字符串  | 提交的发布模式。 这可以是以下值之一： <ul><li>立即</li><li>Manual</li><li>SpecificDate</li></ul> |
+| targetPublishMode           | 字符串  | 提交的发布模式。 这可以是以下值之一： <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | 字符串  | 提交的发布日期采用 ISO 8601 格式（如果 *targetPublishMode* 设为“SpecificDate”）。  |
 | tag           | 字符串  |  加载项的[自定义开发人员数据](../publish/enter-add-on-properties.md#custom-developer-data)（此信息之前称为 *tag*）。   |
 | visibility  | 字符串  |  加载项的可见性。 这可以是以下值之一： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
-| 状态  | 字符串  |  提交的状态。 这可以是以下值之一： <ul><li>无</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>认证</li><li>CertificationFailed</li><li>发布版本</li><li>ReleaseFailed</li></ul>   |
+| 状态  | 字符串  |  提交的状态。 这可以是以下值之一： <ul><li>无</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>发布</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>版本</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | 对象  |  包含有关提交状态的附加详细信息的[状态详细信息资源](#status-details-object)，其中包括任何错误的相关信息。 |
-| fileUploadUrl           | 字符串  | 用于为提交上载任何程序包的共享访问签名 (SAS) URI。 如果要为提交添加新的程序包，请将包含这些程序包的 ZIP 存档上载到此 URI。 有关详细信息，请参阅[创建加载项提交](#create-an-add-on-submission)。  |
+| fileUploadUrl           | 字符串  | 用于为提交上传任何程序包的共享访问签名 (SAS) URI。 如果要为提交添加新的程序包，请将包含这些程序包的 ZIP 存档上载到此 URI。 有关详细信息，请参阅[创建加载项提交](#create-an-add-on-submission)。  |
 | friendlyName  | 字符串  |  提交的友好名称，如合作伙伴中心中所示。 当你创建提交时，系统会为你生成此值。  |
 
 <span id="listing-object" />
 
-### <a name="listing-resource"></a>列表资源
+### <a name="listing-resource"></a>应用一览资源
 
 此资源包含[加载项的列表信息](../publish/create-add-on-store-listings.md)。 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述       |
+| Value           | 类型    | 说明       |
 |-----------------|---------|------|
-|  description               |    字符串     |   加载项列表的描述。   |     
-|  图标               |   对象      |包含加载项列表的图标数据的[图标资源](#icon-object)。    |
+|  说明               |    字符串     |   加载项列表的描述。   |     
+|  icon               |   对象      |包含加载项列表的图标数据的[图标资源](#icon-object)。    |
 |  title               |     字符串    |   加载项列表的标题。   |  
 
 <span id="icon-object" />
@@ -263,7 +263,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 此资源包含加载项列表的图标数据。 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述     |
+| Value           | 类型    | 说明     |
 |-----------------|---------|------|
 |  fileName               |    字符串     |   ZIP 存档中已为提交上载的图标文件的名称。 图标必须是大小正好为 300 x 300 像素的 .png 文件。   |     
 |  fileStatus               |   字符串      |  图标文件的状态。 这可以是以下值之一： <ul><li>无</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
@@ -274,10 +274,10 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 此资源包含加载项的定价信息。 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述    |
+| Value           | 类型    | 说明    |
 |-----------------|---------|------|
 |  marketSpecificPricings               |    对象     |  键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为[价格段](#price-tiers)。 这些项表示[加载项在特定市场中的自定义价格](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。 此字典中的任何项替代 *priceId* 值针对特定市场所指定的基价。     |     
-|  sales               |   array      |  **已弃用**。 包含加载项销售信息的[销售资源](#sale-object)数组。     |     
+|  sales               |   数组      |  **已弃用**。 包含加载项销售信息的[销售资源](#sale-object)数组。     |     
 |  priceId               |   字符串      |  用于指定加载项[基价](#price-tiers)的[价格段](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。    |    
 |  isAdvancedPricingModel               |   布尔型      |  如果为 **true**，你的开发人员帐户可以使用从 0.99 美元到 1999.99 美元的扩展价格段。 如果为 **false**，你的开发人员帐户可以使用从 0.99 美元到 999.99 美元的原始价格段。 有关其他价格段的详细信息，请参阅[价格段](#price-tiers)。<br/><br/>**注意**&nbsp;&nbsp;此字段为只读字段。   |
 
@@ -295,7 +295,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述           |
+| Value           | 类型    | 说明           |
 |-----------------|---------|------|
 |  name               |    字符串     |   销售的名称。    |     
 |  basePriceId               |   字符串      |  要用于销售基价的[价格段](#price-tiers)。    |     
@@ -309,7 +309,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 此资源包含有关提交状态的附加详细信息。 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述       |
+| Value           | 类型    | 说明       |
 |-----------------|---------|------|
 |  errors               |    对象     |   包含提交的错误详细信息的[状态详细信息资源](#status-detail-object)数组。   |     
 |  warnings               |   对象      | 包含提交的警告详细信息的[状态详细信息资源](#status-detail-object)数组。     |
@@ -321,7 +321,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 此资源包含关于提交的任何相关错误或警告的附加详细信息。 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述    |
+| Value           | 类型    | 说明    |
 |-----------------|---------|------|
 |  code               |    字符串     |   描述错误或警告类型的[提交状态代码](#submission-status-code)。   |     
 |  details               |     字符串    |  包含有关问题的更多详细信息的消息。     |
@@ -332,9 +332,9 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 此资源提供对提交的认证报告数据的访问权限。 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述               |
+| Value           | 类型    | 说明               |
 |-----------------|---------|------|
-|     日期            |    字符串     |  生成报表的日期和时间，采用 ISO 8601 格式。    |
+|     date            |    字符串     |  生成报表的日期和时间，采用 ISO 8601 格式。    |
 |     reportUrl            |    字符串     |  用于访问报告的 URL。    |
 
 ## <a name="enums"></a>枚举
@@ -347,11 +347,11 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 以下值表示加载项提交的[定价资源](#pricing-object)中可用的价格段。
 
-| 值           | 描述       |
+| Value           | 说明       |
 |-----------------|------|
-|  Base               |   未设置价格段；使用加载项的基价。      |     
+|  基本               |   未设置价格段；使用加载项的基价。      |     
 |  NotAvailable              |   加载项在特定区域中不可用。    |     
-|  Free              |   加载项是免费的。    |    
+|  免费              |   加载项是免费的。    |    
 |  Tier*xxxx*               |   一个字符串，用于为加载项指定价格段（**Tier<em>xxxx</em>** 格式）。 目前，支持以下价格段范围：<br/><br/><ul><li>如果*定价资源*的 [isAdvancedPricingModel](#pricing-object) 值为 **true**，则你的帐户的可用价格段值为 **Tier1012** - **Tier1424**。</li><li>如果*定价资源*的 [isAdvancedPricingModel](#pricing-object) 值为 **false**，则你的帐户的可用价格段值为 **Tier2** - **Tier96**。</li></ul>若要查看适用于你的开发人员帐户的完整价格表，包括与每个层关联的市场特定价格，请在合作伙伴中心中转到你的任何应用程序的 "**定价和可用性**" 页，然后单击 "**市场和自定义价格**" 部分中的 "**查看表**" 链接（对于某些开发人员帐户，此链接位于**定价**部分）。     |
 
 <span id="submission-status-code" />
@@ -360,7 +360,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 以下值表示提交的状态代码。
 
-| 值           |  描述      |
+| Value           |  说明      |
 |-----------------|---------------|
 |  无            |     未指定任何代码。         |     
 |      InvalidArchive        |     包含程序包的 ZIP 存档无效或具有无法识别的存档格式。  |

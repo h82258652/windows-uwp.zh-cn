@@ -21,7 +21,7 @@ ms.locfileid: "74259899"
 ### <a name="1-how-may-i-report-an-infringement-of-my-intellectual-property-rights-within-a-windows-app"></a>1. 如何在 Windows 应用中报告侵犯我的知识产权的行为？
 
 
-请使用以下[表单](https://support.microsoft.com/getsupport/hostpage.aspx?locale=EN-US&ln=EN-US&oaspworkflow=start_1.0.0.0&wfname=RAVCI&wf=0)在 Windows 应用中提交版权、商标或形象宣传权侵犯投诉。 对于跨多个应用的版权、商标或形象宣传权侵犯投诉，请将你的请求提交到 mktlegal@microsoft.com。 If you need additional info about Microsoft’s DMCA policy, please visit: [https://www.microsoft.com/info/cpyrtInfrg.aspx](https://www.microsoft.com/info/cpyrtInfrg.aspx).
+请使用以下[表单](https://support.microsoft.com/getsupport/hostpage.aspx?locale=EN-US&ln=EN-US&oaspworkflow=start_1.0.0.0&wfname=RAVCI&wf=0)在 Windows 应用中提交版权、商标或形象宣传权侵犯投诉。 对于跨多个应用的版权、商标或形象宣传权侵犯投诉，请将你的请求提交到 mktlegal@microsoft.com。 如果需要有关 Microsoft 的 DMCA 策略的其他信息，请访问： [https://www.microsoft.com/info/cpyrtInfrg.aspx](https://www.microsoft.com/info/cpyrtInfrg.aspx)。
 
 ### <a name="2-i-created-my-app-to-work-with-a-microsoft-productservice-may-i-use-the-microsoft-productservice-name-in-the-name-of-my-app"></a>2. 我创建了要使用 Microsoft 产品/服务的应用。 我可以在我的应用名称中使用 Microsoft 产品/服务名称吗？
 

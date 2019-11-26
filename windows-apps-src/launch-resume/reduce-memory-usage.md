@@ -28,9 +28,9 @@ Windows 10 版本 1607 引入了两个新的应用程序生命周期事件：[**
 [MemoryManager.AppMemoryUsageLimitChanging](https://docs.microsoft.com/uwp/api/windows.system.memorymanager.appmemoryusagelimitchanging) 仅在应用可以使用的总内存限制更改时引发。 例如，当应用进入后台，Xbox 上的内存限制从 1024MB 更改为 128MB 时。  
 为防止平台暂停或终止应用，这是需要处理的最重要的事件。
 
-当应用的内存占用增加到了 [AppMemoryUsageLevel](https://docs.microsoft.com/uwp/api/windows.system.appmemoryusagelevel) 枚举中的较高值时，将引发 [MemoryManager.AppMemoryUsageIncreased](https://docs.microsoft.com/uwp/api/windows.system.memorymanager.appmemoryusageincreased)。 例如，从**低**到**中**。 处理此事件是可选项，但建议这样做，因为应用程序仍负责保持在限制以下。
+当应用的内存占用增加到了 [AppMemoryUsageLevel](https://docs.microsoft.com/uwp/api/windows.system.memorymanager.appmemoryusageincreased) 枚举中的较高值时，将引发 [MemoryManager.AppMemoryUsageIncreased](https://docs.microsoft.com/uwp/api/windows.system.appmemoryusagelevel)。 例如，从**低**到**中**。 处理此事件是可选项，但建议这样做，因为应用程序仍负责保持在限制以下。
 
-当应用的内存占用降低到了 **AppMemoryUsageLevel** 枚举中的较低值时，将引发 [MemoryManager.AppMemoryUsageDecreased](https://docs.microsoft.com/uwp/api/windows.system.memorymanager.appmemoryusagedecreased)。 例如，从**高**到**低**。 处理此事件是可选项，但指示应用程序可以根据需要分配额外的内存。
+当应用的内存占用降低到了 [AppMemoryUsageLevel](https://docs.microsoft.com/uwp/api/windows.system.memorymanager.appmemoryusagedecreased) 枚举中的较低值时，将引发 **MemoryManager.AppMemoryUsageDecreased**。 例如，从**高**到**低**。 处理此事件是可选项，但指示应用程序可以根据需要分配额外的内存。
 
 ## <a name="handle-the-transition-between-foreground-and-background"></a>处理前台和后台之间的转换
 
@@ -76,7 +76,7 @@ Windows 10 版本 1607 引入了两个新的应用程序生命周期事件：[**
 
 [!code-cs[LeavingBackground](./code/ReduceMemory/cs/App.xaml.cs#SnippetLeavingBackground)]
 
-**CreateRootFrame** 帮助程序方法用于重新创建应用的视图内容。 此方法中的代码几乎默认项目模板中提供的 [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) 处理程序代码完全相同。 一个区别是：**Launching** 处理程序确定 [**LaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) 的 [**PreviousExecutionState**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.previousexecutionstate) 属性中的先前执行状态，而 **CreateRootFrame** 方法只是获取作为参数传入的先前执行状态。 若要最大程度地减少重复代码，可以重构默认的 **Launching** 事件处理程序代码以调用 **CreateRootFrame**。
+**CreateRootFrame** 帮助程序方法用于重新创建应用的视图内容。 此方法中的代码几乎默认项目模板中提供的 [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) 处理程序代码完全相同。 一个区别是：**Launching** 处理程序确定 [**LaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.previousexecutionstate) 的 [**PreviousExecutionState**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) 属性中的先前执行状态，而 **CreateRootFrame** 方法只是获取作为参数传入的先前执行状态。 若要最大程度地减少重复代码，可以重构默认的 **Launching** 事件处理程序代码以调用 **CreateRootFrame**。
 
 [!code-cs[CreateRootFrame](./code/ReduceMemory/cs/App.xaml.cs#SnippetCreateRootFrame)]
 

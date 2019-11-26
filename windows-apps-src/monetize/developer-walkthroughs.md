@@ -19,7 +19,7 @@ ms.locfileid: "74260308"
 
 ## <a name="in-this-section"></a>本部分内容
 
-|  主题    | 描述 |               
+|  主题    | 说明 |               
 |----------|-------|
 | [横幅广告](banner-ads.md)     | 提供使用 Microsoft 广告 SDK 中的 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 类将横幅广告添加到 UWP应用的说明。        |
 | [插播式广告](interstitial-ads.md)    | 提供使用 Microsoft 广告 SDK 中的 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 类将间隙广告添加到 UWP应用的说明。       |

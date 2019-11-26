@@ -33,7 +33,7 @@ ms.locfileid: "74258510"
 
 ## <a name="game-development-resources"></a>游戏开发资源
 
-从文档到开发人员计划、论坛、博客和示例，游戏开发之路上有很多资源可提供帮助。 以下是在开发 Windows 10 游戏时要了解的资源综述。
+从文档到开发人员计划、论坛、博客和示例，游戏开发之路上有很多资源可提供帮助。 以下是在开始开发 Windows 10 游戏时要了解的资源综述。
 
 > [!Note]
 > 某些功能通过各种计划进行管理。 本指南涵盖大范围资源，因此你可能会发现有些资源无法访问，具体取决于所属计划或特定的开发角色。 示例是解析为 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com 或游戏开发人员网络 (GDN) 的链接。 有关与 Microsoft 合作的信息，请参阅[开发人员计划](#developer-programs)。
@@ -622,7 +622,7 @@ Direct3D 11.3 是一个低级别图形 API，使用熟悉的 Direct3D 编程模�
         <td><a href="https://developer.microsoft.com/windows/bridges">将代码引入 Windows</a></td>
     </tr>
     <tr>
-        <td>适用于 iOS 的 Windows 桥</td>
+        <td>面向 iOS 的 Windows 桥</td>
         <td><a href="https://developer.microsoft.com/windows/bridges/ios">将 iOS 应用程序引入 Windows</a></td>
     </tr>
     <tr>
@@ -645,7 +645,7 @@ Direct3D 11.3 是一个低级别图形 API，使用熟悉的 Direct3D 编程模�
         <td><a href="https://playfab.com/">工具和服务概述</a></td>
     </tr>
     <tr>
-        <td>入门</td>
+        <td>开始使用</td>
         <td><a href="https://api.playfab.com/docs/general-getting-started">常规入门指南</a></td>
     </tr>
     <tr>

@@ -52,7 +52,7 @@ ms.locfileid: "74259251"
       > [!NOTE]
       > 尽管反馈中心目前在 Xbox 设备上不受支持，但 **IsSupported** 属性当前在运行 Windows 10 的版本 10.0.14271 或更高版本的 Xbox 设备上返回 **true**。 这是一个已知问题，将在 Microsoft Store Services SDK 的将来版本中得到修复。  
 
-8. 在用户单击控件时运行的事件处理程序中，获取 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 对象并调用 [LaunchAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync) 方法来启动“反馈中心”应用。 此方法有两个重载：一个不带有参数，另一个接受包含要与反馈相关联的元数据的键值对字典。 以下示例演示如何在 [Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 的 [Click](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 事件处理程序中启动“反馈应用”。
+8. 在用户单击控件时运行的事件处理程序中，获取 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 对象并调用 [LaunchAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync) 方法来启动“反馈中心”应用。 此方法有两个重载：一个不带有参数，另一个接受包含要与反馈相关联的元数据的键值对字典。 以下示例演示如何在 [Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 的 [Click](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 事件处理程序中启动“反馈中心”。
 
     [!code-csharp[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#FeedbackButtonClick)]
 

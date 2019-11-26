@@ -19,7 +19,7 @@ ms.locfileid: "74258081"
 
 在下表中，“语言标记”列列出了语言的 [BCP-47 语言标记](https://tools.ietf.org/html/bcp47)。 若要查看 Microsoft Store 专门支持的语言标记列表，请参阅[支持的语言](../../publish/supported-languages.md)。
 
-| “语言” | 语言标记 | Windows 中使用的字体 |
+| 语言 | 语言标记 | Windows 中使用的字体 |
 | --------- | ----------- | -------------------- |
 | 南非荷兰语 | af-ZA | Segoe UI |
 | 阿尔巴尼亚语 | sq-AL | Segoe UI |
@@ -92,16 +92,16 @@ ms.locfileid: "74258081"
 | 奥里亚语 | or-IN | Nirmala UI |
 | 波斯语 | fa-IR | Segoe UI |
 | 波兰语 | pl-PL | Segoe UI |
-| 葡萄牙语（巴西） | pt-BR | Segoe UI |
-| 葡萄牙语（葡萄牙） | pt-PT | Segoe UI |
+| 葡萄牙语(巴西) | pt-BR | Segoe UI |
+| 葡萄牙语(葡萄牙) | pt-PT | Segoe UI |
 | 旁遮普语 | pa-IN | Nirmala UI |
 | 旁遮普语(阿拉伯语) | pa-Arab-PK | Segoe UI |
 | 盖丘亚语 | quz-PE | Segoe UI |
 | 罗马尼亚语 | ro-RO | Segoe UI |
 | 俄语 | ru-RU | Segoe UI |
 | 苏格兰盖尔语 | gd-GB | Segoe UI |
-| 塞尔维亚语(西里尔文，波斯尼亚和黑塞哥维那) | sr-Cyrl-BA | Segoe UI |
-| 塞尔维亚语（西里尔文，塞尔维亚共和国） | sr-Cyrl-CS | Segoe UI |
+| 塞尔维亚语（西里尔文，波斯尼亚和黑塞哥维那） | sr-Cyrl-BA | Segoe UI |
+| 塞尔维亚语(西里尔文，塞尔维亚) | sr-Cyrl-CS | Segoe UI |
 | 塞尔维亚语(拉丁语) | sr-Latn-CS | Segoe UI |
 | 巴索托语 | nso-ZA | Segoe UI |
 | 茨瓦纳语 | tn-ZA | Segoe UI |
@@ -122,7 +122,7 @@ ms.locfileid: "74258081"
 | 乌克兰语 | uk-UA | Segoe UI |
 | 乌尔都语 | ur-PK | Segoe UI |
 | 维吾尔语 | ug-CN | Segoe UI |
-| 乌兹别克语(拉丁文) | uz-Latn-UZ | Segoe UI |
+| 乌兹别克语(拉丁语) | uz-Latn-UZ | Segoe UI |
 | 巴伦西亚语 | ca-ES-valencia | Segoe UI |
 | 越南语 | vi-VN | Segoe UI |
 | 威尔士语 | cy-GB | Segoe UI |
@@ -131,5 +131,5 @@ ms.locfileid: "74258081"
 
 ## <a name="related-topics"></a>相关主题
 
-* [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
+* [BCP-47 语言标记](https://tools.ietf.org/html/bcp47)
 * [支持的语言](../../publish/supported-languages.md)

@@ -34,7 +34,7 @@ Windows 10 版本 1607 又引入了两个应用模型状态：**在前台运行
 
 ## <a name="app-execution-state"></a>应用执行状态
 
-此图显示了从 Windows 10 版本 1607 开始的可能应用模型状态。 演练 UWP 应用的典型生命周期。
+此图显示了从 Windows 10 版本 1607 开始的可能应用模型状态。 演练 UWP 应用的典型生命周期。
 
 ![显示应用执行状态之间转换的状态图](images/updated-lifecycle.png)
 
@@ -131,7 +131,7 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 如果在处理程序中执行异步调用，控件将立即从该异步调用中返回。 这意味着，执行之后会从事件处理程序中返回，并且应用会转变为下一个状态，即使异步调用尚未完成。 使用传递给事件处理程序的 [**EnteredBackgroundEventArgs**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.suspendingoperation.getdeferral) 对象上的 [**GetDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel?redirectedfrom=MSDN) 方法以延迟暂停，直到调用返回的 [**Windows.Foundation.Deferral**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete) 对象上的 [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral) 方法。
 
-延迟并不会增加应用终止之前需要运行的代码量。 它仅延迟终止，直到调用延迟的 *Complete* 方法，或者达到延迟期限 - *以先发生者为准*。
+延迟并不会增加应用终止之前需要运行的代码量。 它只延迟终止，直到调用延迟的 *Complete* 方法，或者达到截止时间，*以先发生者为准*。
 
 如果需要更多时间来保存状态，请调查用于在应用进入后台状态之前的阶段保存状态的方法，以便减少在 **EnteredBackground** 事件处理程序中用于保存的时间。 或者可以请求 [ExtendedExecutionSession](https://msdn.microsoft.com/magazine/mt590969.aspx) 获取更多时间。 由于并不能保证该请求得到允许，因此最好是找到方法来最大程度地减少保存状态所需的时间量。
 
