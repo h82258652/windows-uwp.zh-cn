@@ -10,7 +10,7 @@ ms.author: mcleans
 author: mcleanbyron
 ms.openlocfilehash: f3a2575b17cc4228d7c4db273845478aecf65f29
 ms.sourcegitcommit: f0936ce8e88d78b1af99998794a8765094f6a487
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/25/2019
 ms.locfileid: "72915104"
@@ -25,15 +25,15 @@ Fluent Design System 是用于创建自适应、引人共鸣且美观的用户�
 
 ## <a name="principles"></a>原则
 
-**自适应：每台设备上的流畅体验**
+**自适应：Fluent 体验在每台设备上都显得自然**
 
 Fluent 体验可根据环境进行调整。 Fluent 体验在平板电脑、台式机和 Xbox 上显得很舒适 - 它甚至在混合现实头戴显示设备中表现得很好。 此外，当你添加更多硬件时（例如用于电脑的一台额外显示器），Fluent 体验将利用它。
 
-**Empathetic：熟知体验直观且功能强大**
+**引人共鸣：Fluent 体验直观且强大**
 
 Fluent 体验可根据行为和意图进行调整&mdash;它们能了解和预测需求。 它们将人和思想结合起来，不管他们是站在地球的两头还是站在一起。
 
-**漂亮：精通体验**
+**美观：Fluent 体验吸引力十足且令人沉醉**
 
 通过融入物理世界的元素，Fluent 体验挖掘到了根本的东西。 它运用光线、阴影、动作、深度和纹理，以一种直观和本能的方式整理信息。
 
@@ -72,7 +72,7 @@ Fluent Design 功能内置于 UWP 中。 其中的一些功能（例如，有效
         ![fpo 图像](images/fluent/thumbnail-size-classes.jpg)
     :::column-end:::
     :::column span="2":::
-**正确断点的设计**
+**针对正确的断点进行设计**
 
 不要针对每个单独的屏幕大小进行设计，侧重于几个关键宽度（也称为“断点”）可以显著简化设计和代码，同时让应用无论在小屏幕还是大屏幕上看起来都很棒。
 
@@ -87,7 +87,7 @@ Fluent Design 功能内置于 UWP 中。 其中的一些功能（例如，有效
     :::column span="2":::
 **创建响应式布局**
 
-若要使应用程序的外观合理，应将其布局调整到不同的屏幕大小和设备。 可以在 XAML 中使用自动调整大小、布局面板、可视状态甚至单独的 UI 定义来创建响应式 UI。
+要使应用显得自然，应根据不同的屏幕大小和设备调整布局。 可以使用自动大小调整、布局面板、视觉状态，甚至是以 XAML 编写的单独的 UI 定义来创建响应式 UI。
 
 [了解响应式设计](/windows/uwp/design/layout/responsive-design)
     :::column-end:::
@@ -110,7 +110,7 @@ UWP 应用可在各种支持 Windows 的设备上运行。 了解哪些设备可
         ![fpo 图像](images/fluent/keyboard-shortcuts.jpg)
     :::column-end:::
     :::column span="2":::
-**针对正确输入进行优化**
+**针对正确的输入进行优化**
 
 UWP 应用将自动支持常见的鼠标、键盘、手写笔和触控交互 &mdash; 不必执行任何额外的操作。 但是，你可以利用对特定输入（如手写笔和 Surface Dial）的优化支持增强应用。
 
@@ -132,7 +132,7 @@ Fluent 体验始终使用控件和模式，因此它们的行为方式符合用�
     :::column span="2":::
 **提供正确的导航**
 
-使用正确的应用程序结构和导航组件创建轻松体验。
+通过使用正确的应用结构和导航组件来打造轻松的体验。
 
 [了解导航](/windows/uwp/design/basics/navigation-basics/)
 :::row-end:::
@@ -142,9 +142,9 @@ Fluent 体验始终使用控件和模式，因此它们的行为方式符合用�
         ![fpo 图像](images/fluent/thumbnail-commanding.png)
     :::column-end:::
     :::column span="2":::
-**为交互式**
+**进行交互**
 
-按钮、命令栏、键盘快捷方式和上下文菜单使用户能够与你的应用进行交互;它们是将静态体验更改为动态内容的工具。
+借助按钮、命令栏、键盘快捷方式和上下文菜单，用户可以与应用进行交互；这些工具可以将静态体验转变为动态体验。
 
 [了解命令](/windows/uwp/design/basics/commanding-basics/)
 :::row-end:::
@@ -154,7 +154,7 @@ Fluent 体验始终使用控件和模式，因此它们的行为方式符合用�
         ![fpo 图像](images/fluent/thumbnail-controls-2.jpg)
     :::column-end:::
     :::column span="2":::
-**为作业使用正确的控件**
+**对作业使用正确的控件**
 
 控制是用户界面的构建基块；使用正确的控件可帮助你创建行为方式符合用户的期望的用户界面。 UWP 提供了超过 45 个控件 - 从简单的按钮到强大的数据控件。
 
@@ -163,10 +163,10 @@ Fluent 体验始终使用控件和模式，因此它们的行为方式符合用�
 
 :::row:::
     :::column:::
-        ![包含图像](images/fluent/thumbnail-inclusive.png)
+        ![具有包容性的图像](images/fluent/thumbnail-inclusive.png)
     :::column-end:::
     :::column span="2":::
-**包含**残障人士可以访问设计良好的应用程序。 利用一些额外的编码，你可以将应用与世界各地的人分享。
+**具有包容性** 设计精良的应用可供残疾人士使用。 利用一些额外的编码，可以将应用与世界各地的人分享。
 
 [了解可用性](/windows/uwp/design/usability/)
 :::row-end:::
@@ -188,7 +188,7 @@ Fluent Design 重视华丽的效果。 它融入了真正增强用户体验的�
     :::column span="2":::
 **突出显示**
 
-[突出显示](/windows/uwp/design/style/reveal)使用光线来突出显示交互性元素。光线会照亮用户可与之交互的交互性元素，同时显示隐藏的边框。 突出显示在某些控件（如列表视图和网格视图）上自动启用。 你可以通过应用预定义突出显示样式在其他控件上启用它。
+[突出显示](/windows/uwp/design/style/reveal)利用光线来突出显示交互式元素。光线会照亮用户可与之交互的元素，从而显示隐藏的边框。 突出显示在某些控件（如列表视图和网格视图）上自动启用。 可以通过应用预定义突出显示样式在其他控件上启用它。
 :::row-end:::
 
 :::row:::
@@ -214,7 +214,7 @@ Fluent Design 重视华丽的效果。 它融入了真正增强用户体验的�
     :::column span="2":::
 **视差**
 
-[视差](/windows/uwp/design/motion/parallax)通过让前景的物体看起来比背景中的物体移动速度更快，创造出立体感效应。
+[视差](/windows/uwp/design/motion/parallax)通过让前景中的物体看起来比背景中的物体移动速度更快，创造出立体感效应。
 :::row-end:::
 
 ## <a name="incorporate-motion"></a>包括动作
@@ -225,12 +225,12 @@ Fluent Design 重视华丽的效果。 它融入了真正增强用户体验的�
 
 :::row:::
     :::column:::
-        ![连续性 gif](images/fluent/continuityXbox.gif)
+        ![连续性 Gif](images/fluent/continuityXbox.gif)
     :::column-end:::
     :::column span="2":::
-**衔接动画**
+**连接的动画**
 
-[连接动画](/windows/uwp/design/motion/connected-animation)通过在场景之间无缝过渡帮助用户保持画面的连贯。
+[连接动画](/windows/uwp/design/motion/connected-animation)通过在场景之间无缝切换帮助用户保持画面的连贯。
 :::row-end:::
 
 ## <a name="build-it-with-the-right-material"></a>利用正确的材料生成它
@@ -258,9 +258,9 @@ Fluent Design 重视华丽的效果。 它融入了真正增强用户体验的�
         ![fpo 图像](images/fluent/thumbnail-toolkits.jpg)
     :::column-end:::
     :::column span="2":::
-**"设计工具包和示例" 页**
+**“设计工具包和示例”页面**
 
-查看[设计工具包和示例页面](/windows/uwp/design/downloads/)
+查看[“设计工具包和示例”页面](/windows/uwp/design/downloads/)
 :::row-end:::
 
 

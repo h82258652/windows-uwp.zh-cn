@@ -12,16 +12,20 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d309ce7e18a8dc62a24bc0e7f51f0015042a5f84
-ms.sourcegitcommit: 3bb982f35c057e30c742ab9f1eea119bae627a5f
+ms.openlocfilehash: 4605f759c554c12368325a7c1e42143319eddede
+ms.sourcegitcommit: 503fa613c65236660350794b4f066eccebe9ac8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74086867"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74162354"
 ---
 # <a name="collections-and-lists"></a>集合和列表
 
-集合和列表都是指多个显示在一起的相关数据项的表示形式。 集合可以由不同的集合控件（也可称为集合视图）通过多种方式来表示。 集合控件显示并启用与基于集合的内容（例如联系人列表、日期列表、图像集合等）的交互。  本文介绍的控件包括：
+集合和列表都是指多个显示在一起的相关数据项的表示形式。 集合可以由不同的集合控件（也可称为集合视图）通过多种方式来表示。 集合控件显示并启用与基于集合的内容（例如联系人列表、日期列表、图像集合等）的交互。
+
+> **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)、[FlipView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview)、[TreeView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)、[ItemsRepeater 类](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
+
+本文介绍的控件包括：
 
 - 列表视图，主要用于显示以文字为主的内容集合
 - 网格视图，主要用于显示以图像为主的内容集合
@@ -29,20 +33,14 @@ ms.locfileid: "74086867"
 - 树视图，主要用于按特定层次结构显示以文字为主的内容集合
 - ItemsRepeater，一个可自定义的构建基块，用于创建自定义集合控件
 
-
 下面为每种控件提供了设计指南、功能和示例。
 
 这些控件（ItemsRepeater 除外）都提供内置的样式设置和交互。 但是，若要进一步自定义集合视图以及其中的项的视觉外观，需使用 [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)。 若要详细了解数据模板以及如何自定义集合视图的外观，可参阅[项目容器和模板](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/item-containers-templates)页。
 
 这些控件（ItemsRepeater 除外）都还有内置的行为，允许选择单个或多个项。 请参阅 [Selection modes overview](selection-modes.md)（选择模式概述）以了解详细信息。
 
-> **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)、[FlipView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview)、[TreeView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)、[ItemsRepeater 类](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
-
-> <div id="main">  
-> <strong>Windows 10 Fall Creators Update - 行为更改</strong>  
-> </div>  
-> 默认情况下，主动笔现在可在 UWP 应用中滚动/平移列表，而不是进行选择（与触摸、触摸板和被动笔一样）。  
-> 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 类</a>的 API 参考主题。  
+> **Windows 10 Fall Creators Update - 行为更改** 默认情况下，主动笔现在可在 UWP 应用中滚动/平移列表，而不是进行选择（与触摸、触摸板和被动笔一样）。
+> 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 有关详细信息，请参阅 [ScrollViewer 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer)的 API 参考主题。
 
 ## <a name="examples"></a>示例
 

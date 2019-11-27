@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5f040060b1c3931e9ef1634fddd65febb1be7dbc
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: efe67707edc5f556301ded466f3f2919ec04873e
+ms.sourcegitcommit: 49a34e957433966ac8d4822b5822f21087aa61c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867719"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74153722"
 ---
 # <a name="color"></a>颜色
 
@@ -58,7 +58,7 @@ ms.locfileid: "68867719"
 
 ![深色主题](images/color/dark-theme.svg)
 
-默认情况下，UWP 应用的主题是 Windows 设置中的用户首选主题或设备的默认主题（即 XBox 上的深色主题）。 但是，可设置 UWP 应用的主题。
+默认情况下，UWP 应用的主题是 Windows 设置中的用户首选主题或设备的默认主题（即 Xbox 上的深色主题）。 但是，可设置 UWP 应用的主题。
 
 ### <a name="changing-the-theme"></a>更改主题
 

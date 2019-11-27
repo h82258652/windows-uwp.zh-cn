@@ -10,16 +10,16 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c08dad36929c7889f1896404df862230040e3499
 ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/09/2019
 ms.locfileid: "72163706"
 ---
 # <a name="guidelines-for-app-settings"></a>应用设置指南
 
-应用设置是通过应用设置页访问的通用 Windows 平台（UWP）应用的用户可自定义部分。 例如，新闻阅读器应用程序可让用户指定要显示哪些新闻源或在屏幕上显示的列数，同时，天气应用程序可让用户在摄氏和华氏之间进行选择。 本文提供了有关创建和显示应用设置的建议和最佳实践。
+应用设置是通过应用设置页面访问的通用 Windows 平台 (UWP) 应用的用户可自定义的部分。 例如，新闻阅读器应用可以让用户指定要显示的新闻源或屏幕上要显示的列数，而天气应用则可以让用户在摄氏度和华氏度之间进行选择。 本文将提供有关创建和显示应用设置的建议和最佳做法。
 
-## <a name="when-to-provide-a-settings-page"></a>何时提供设置页
+## <a name="when-to-provide-a-settings-page"></a>何时提供设置页面
 
 以下是属于应用设置页面的应用选项的示例：
 
@@ -58,11 +58,11 @@ ms.locfileid: "72163706"
 
 如果你要使用中心布局，应用设置的入口点应放置在应用栏的“更多”溢出菜单中。
 
-**选项卡/透视**
+**选项卡/透视表**
 
 对于表或透视表布局，我们不推荐将应用设置入口点作为顶部项之一放在导航中。 相反，应用设置的入口点应放置在应用栏的“更多”溢出菜单中。
 
-**Master-详细信息**
+**大纲-细节**
 
 与其将应用设置入口点深埋在大纲-细节窗格中，不如将其设置为高级大纲窗格上的最后一个固定项。
 
@@ -85,7 +85,7 @@ ms.locfileid: "72163706"
 如果你的应用允许用户选择应用的颜色模式，请使用[单选按钮](../controls-and-patterns/radio-button.md)或[组合框](../controls-and-patterns/combo-box.md)提供这些选项，标头为“选择应用模式”。 选项应包括以下内容
 - 浅色
 - 深色
-- Windows 默认模式
+- Windows 默认值
 
 我们还建议添加一个指向 Windows 设置应用的“颜色”页面的超链接，用户可以访问和修改当前的默认应用模式。 对于超链接文本，请使用字符串“Windows 颜色设置”。
 
@@ -124,11 +124,11 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 - 在单个列中从上至下展示内容，支持滚动（如果需要）。 滚动限制的最大值是屏幕高度的两倍。
 - 使用以下应用设置控件：
 
-    - [切换开关](../controls-and-patterns/toggles.md)：允许用户设置或禁用值。
-    - [单选按钮](../controls-and-patterns/radio-button.md)：允许用户从最多5个互相排斥的相关选项集中选择一项。
-    - [文本输入框](../controls-and-patterns/text-block.md)：允许用户输入文本。 使用与要从用户那里获取的文本类型（如电子邮件或密码）相对应的文本输入框类型。
-    - [超链接](../controls-and-patterns/hyperlinks.md)：将用户转到应用中的其他页面或外部网站。 当用户单击超链接时，“设置”浮出控件将会消失。
-    - [按钮](../controls-and-patterns/buttons.md)：如果为，则允许用户立即启动操作而不关闭当前设置浮出控件。
+    - [切换开关](../controls-and-patterns/toggles.md)：用于让用户将值设置为打开或关闭。
+    - [单选按钮](../controls-and-patterns/radio-button.md)：用于让用户从多达 5 个互相排斥的一组相关选项中选择一个项。
+    - [文本输入框](../controls-and-patterns/text-block.md)：用于让用户输入文本。 使用与要从用户那里获取的文本类型（如电子邮件或密码）相对应的文本输入框类型。
+    - [超链接](../controls-and-patterns/hyperlinks.md)：用于将用户带到应用中的其他页面或外部网站。 当用户单击超链接时，“设置”浮出控件将会消失。
+    - [按钮](../controls-and-patterns/buttons.md)：用于让用户立即启动操作，不会消除当前的“设置”浮出控件。
 - 如果禁用其中一个控件，则添加描述性消息。 将此消息置于禁用的控件上。
 - 在为“设置”浮出控件和标头设置动画后，将内容和控件作为单个块进行动画处理。 使用左偏移 100px 的 [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) 或 [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 动画为内容创建动画。
 - 使用节标题、段落和标签来协助组织和阐述内容（如果需要）。
@@ -141,6 +141,6 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 ## <a name="related-articles"></a>相关文章
 
 * [命令设计基础知识](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
-* [进度控制准则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
+* [进度控件指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
 * [存储和检索应用数据](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)
+* [EntranceThemeTransition](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 
