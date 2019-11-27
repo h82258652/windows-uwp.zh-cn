@@ -1,7 +1,7 @@
 ---
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
 title: 设备配对
-description: 某些设备需要先进行配对，然后才能使用。 Windows.Devices.Enumeration 命名空间支持使用三种不同方式的配对设备。
+description: 某些设备需要先进行配对，然后才能使用。 Windows.Devices.Enumeration 命名空间支持使用三种不同的方式为设备配对。
 ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
@@ -22,7 +22,7 @@ ms.locfileid: "74258651"
 
 - [**Windows. 枚举**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
-某些设备需要先进行配对，然后才能使用。 [  **Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) 命名空间支持三种配对设备的不同方式。
+某些设备需要先进行配对，然后才能使用。 [  **Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) 命名空间支持三种不同的设备配对方式。
 
 -   自动配对
 -   基本配对

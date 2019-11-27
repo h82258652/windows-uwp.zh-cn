@@ -15,10 +15,10 @@ ms.locfileid: "74260052"
 ---
 # <a name="account-types-locations-and-fees"></a>帐户类型、位置和费用
 
-The Windows program in [Partner Center](https://partner.microsoft.com/dashboard) offers both individual and company accounts in many [countries and regions](#developer-account-and-app-submission-markets). Either type of account gives you access to publish apps to the Store and to participate in additional Microsoft programs.
+[合作伙伴中心](https://partner.microsoft.com/dashboard)的 Windows 程序在许多[国家和地区](#developer-account-and-app-submission-markets)提供个人帐户和公司帐户。 无论使用哪种类型的帐户，你都可以访问将应用发布到应用商店并参与其他 Microsoft 程序。
 
 > [!NOTE]
-> When opening your developer account, make sure to sign in to [Partner Center](https://partner.microsoft.com/dashboard) with the Microsoft account that you want to use for your developer account. 稍后你将可以选择[向帐户添加其他用户](manage-account-users.md)。
+> 打开开发人员帐户时，请确保使用要用于开发人员帐户的 Microsoft 帐户登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。 稍后你将可以选择[向帐户添加其他用户](manage-account-users.md)。
 
 在[开始注册过程](https://developer.microsoft.com/store/register) 时，你需要选择是创建个人帐户还是公司帐户。 这两种类型的帐户均允许你提交应用、游戏、加载项和服务。
 
@@ -33,11 +33,11 @@ The Windows program in [Partner Center](https://partner.microsoft.com/dashboard)
 |--------------------|-----------------|
 | <ul><li>大约花费 19 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li><li>较短的帐户验证过程</li></ul> | <ul><li>大约花费 99 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li><li>需要更高的帐户验证</li><li>需要你的公司的真实性在其所在国家或地区得到确认</li><li>能够提交具有受限功能的应用（如 [Microsoft Store 策略](store-policies.md#1014-account-type)中所述）</li></ul> |
 
-公司帐户花费稍多，这主要是因为我们要采取一些额外步骤来确保你有权代表公司建立该帐户。 Per the [Store Policies](store-policies.md#1014-account-type), apps with certain functionality, such as those that access financial account information or that require authentication to access primary functionality (without using a secure dedicated third party authentication provider), can only be published by company accounts.
+公司帐户花费稍多，这主要是因为我们要采取一些额外步骤来确保你有权代表公司建立该帐户。 根据[应用商店策略](store-policies.md#1014-account-type)，具有特定功能的应用，如访问财务帐户信息或需要身份验证访问主要功能的应用程序（不使用安全专用第三方身份验证提供程序），只能由公司帐户发布。
 
 ## <a name="account-verification"></a>帐户验证
 
-完成注册过程后，帐户将进行验证过程。 对于个人帐户，我们将进行检查，确保其他公司没有在使用该发布者显示名称。 对于公司帐户，我们的验证合作伙伴 Dun & Bradstreet 将确认你是否有权为你所代表的公司创建帐户。 此过程可能历时几天到几周不等，并经常会致电贵公司（因此请确保你在填写注册表单时所填写的所有联系信息是最新的）。 You can't submit apps from a company account until it's been verified, but while you're waiting, you can [reserve an app name](create-your-app-by-reserving-a-name.md) continue building and testing apps, and work on getting your submissions ready.
+完成注册过程后，帐户将进行验证过程。 对于个人帐户，我们将进行检查，确保其他公司没有在使用该发布者显示名称。 对于公司帐户，我们的验证合作伙伴 Dun & Bradstreet 将确认你是否有权为你所代表的公司创建帐户。 此过程可能历时几天到几周不等，并经常会致电贵公司（因此请确保你在填写注册表单时所填写的所有联系信息是最新的）。 在验证之前，你无法从公司帐户提交应用，但在等待时，你可以[保留应用名称](create-your-app-by-reserving-a-name.md)继续生成和测试应用，并准备就绪。
 
 可在**帐户设置**页上查看验证状态。 
 
@@ -88,7 +88,7 @@ The Windows program in [Partner Center](https://partner.microsoft.com/dashboard)
 | 哥伦比亚                          | 36543 COP           | 180,000 COP       |  
 | 科摩罗                           | 19 USD              | 99 USD           |  
 | 刚果（布）                             | 19 USD              | 99 USD           |  
-| 刚果（民主共和国）                       | 19 USD              | 99 USD           |  
+| 刚果（金）                       | 19 USD              | 99 USD           |  
 | 哥斯达黎加                        | 9578 CRC            | 49725 CRC        |  
 | 科特迪瓦                     | 19 USD              | 99 USD           |  
 | 克罗地亚                           | 107 HRK             | 500 HRK          |  
@@ -140,7 +140,7 @@ The Windows program in [Partner Center](https://partner.microsoft.com/dashboard)
 | 基里巴斯                          | 19 USD              | 99 USD           |  
 | 韩国                             | 21216 KRW           | 108,000 KRW       |  
 | 科威特                            | 5 KWD               | 28 KWD           |  
-| 吉尔吉斯坦                        | 19 USD              | 99 USD           |  
+| 吉尔吉斯斯坦                        | 19 USD              | 99 USD           |  
 | 老挝                              | 19 USD              | 99 USD           |  
 | 拉脱维亚                            | 14 EUR              | 75 EUR           |  
 | 黎巴嫩                           | 28690 LBP           | 149686 LBP       |  
@@ -159,7 +159,7 @@ The Windows program in [Partner Center](https://partner.microsoft.com/dashboard)
 | 马里                              | 19 USD              | 99 USD           |  
 | 马耳他                             | 14 EUR              | 75 EUR           |  
 | 马绍尔群岛                  | 19 USD              | 99 USD           |  
-| 毛里塔尼亚                        | 5681 MRO            | 30046 MRO        |  
+| 毛利塔尼亚                        | 5681 MRO            | 30046 MRO        |  
 | 毛里求斯                         | 19 USD              | 99 USD           |  
 | 墨西哥                            | 247 MXN             | 1140 MXN         |  
 | 密克罗尼西亚                        | 19 USD              | 99 USD           |  
