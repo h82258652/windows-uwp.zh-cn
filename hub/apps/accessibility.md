@@ -1,31 +1,31 @@
 ---
-title: Windows 10 中的辅助功能
-description: 本页提供有关如何开始开发可访问的 Windows 应用的信息。
+title: Windows 10 中的易访问性
+description: 本页提供了开始开发易访问的 Windows 应用时所需的信息。
 ms.topic: article
 ms.date: 09/12/2019
-keywords: Windows 10 中的辅助功能，可访问性，构建可访问的 win32 应用，构建可访问的 UWP 应用，构建可访问的 WPF 应用，构建可访问的 WinForms
+keywords: Windows 10 中的易访问性, 易访问性, 构建易访问的 win32 应用, 构建易访问的 UWP 应用, 构建易访问的 WPF 应用, 构建易访问的 WinForms 应用
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
 ms.openlocfilehash: 76bbd3f0e04bbb2f729ad0950bae190b2fffb6ac
 ms.sourcegitcommit: 6e7665b457ec4585db19b70acfa2554791ad6e10
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/14/2019
 ms.locfileid: "70987189"
 ---
-# <a name="accessibility-in-windows-10"></a>Windows 10 中的辅助功能
+# <a name="accessibility-in-windows-10"></a>Windows 10 中的易访问性
 
 ![hero-accessibility-bar-smaller .png](images/hero-accessibility-bar-smaller.png)
 
-## <a name="build-accessibility-into-your-applications-to-empower-people-of-all-abilities"></a>在应用程序中构建可访问性，以使所有功能的人员能够
+## <a name="build-accessibility-into-your-applications-to-empower-people-of-all-abilities"></a>将易访问性内置到应用程序中，帮助各种能力水平的用户使用
 
-当产品和服务（包括电子介质）设计为尽可能多的人提供完全和成功体验时，它们可供访问。
+当产品和服务（包括电子媒体）设计为向尽可能多的人提供完整、成功的体验时，它们就是易于访问的。
 
-为残障人士（临时和永久）、个人首选项、特定工作样式或形势约束（如共享工作空间）生成可访问的和包含的 Windows 应用程序，并改进了功能和可用性。驱动、烹饪、防眩等）。 一些常见的解决方案包括以替代格式（如视频标题）提供信息或启用辅助技术（如屏幕阅读器）。
+针对残障人士（临时和永久）、个人偏好、特定工作风格或情况约束（如共享工作空间、驾驶、烹饪和防眩等）构建包容性的、易访问的 Windows 应用程序并改进其功能和可用性。 一些常见的解决方案包括以替代格式（如视频上的字幕）提供信息或启用辅助技术的使用（如屏幕阅读器）。
 
-**无论是需要使用楼梯还是电梯，每个人都应该可以访问大楼中的相同房间。**
+**无论是需要使用楼梯还是电梯，每个人都应该可以进入建筑物中的相同房间。**
 
-此页提供有关各种 Windows 开发框架如何为生成 Windows 应用程序的开发人员提供辅助功能支持的信息、辅助技术开发人员（如屏幕阅读器和放大器），以及软件测试工程师创建用于测试应用程序的自动化脚本。
+本页面介绍了各种 Windows 开发框架如何为构建 Windows 应用程序的开发人员、构建屏幕阅读器和放大器等工具的辅助技术开发人员以及创建用于测试应用程序的自动脚本的软件测试工程师提供易访问性支持。
 
 ## <a name="platform-specific-documentation"></a>特定于平台的文档
 
@@ -35,7 +35,7 @@ ms.locfileid: "70987189"
 
       **通用 Windows 平台 (UWP)**
 
-      在适用于任何 Windows 设备（包括电脑、手机、Xbox One、HoloLens 等）的现代平台上开发可访问的应用程序和工具，并将其发布到 Microsoft Store。
+      在新式平台上针对任何 Windows 设备（包括电脑、手机、Xbox One、HoloLens 等）上的 Windows 10 应用程序和游戏开发易访问的应用和工具，并将它们发布到 Microsoft Store。
 
       [设计非独占软件](https://docs.microsoft.com/windows/uwp/accessibility/designing-inclusive-software)
 
@@ -50,19 +50,19 @@ ms.locfileid: "70987189"
 
       **Win32 平台**
 
-      在适用于 C/C++ Windows 应用程序的原始平台上开发可访问的应用程序和工具。
+      在原始平台上针对 C/C++ Windows 应用程序开发易访问的应用和工具。
 
       [Windows 辅助功能和自动化中的新增功能](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew)
 
-      [开发可访问 Windows 应用程序](https://docs.microsoft.com/windows/desktop/accessibility-appdev)
+      [针对 Windows 开发易访问的应用程序](https://docs.microsoft.com/windows/desktop/accessibility-appdev)
 
-      [开发可访问的适用于 Windows 的 UI 框架](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev)
+      [针对 Windows 开发易访问的 UI 框架](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev)
 
-      [开发适用于 Windows 的辅助技术](https://docs.microsoft.com/windows/desktop/accessibility-atdev)
+      [针对 Windows 开发辅助技术](https://docs.microsoft.com/windows/desktop/accessibility-atdev)
 
-      [测试辅助功能](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
+      [易访问性测试](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
 
-      [旧版辅助功能和自动化技术-通过 MSAA 实现 UI 自动化](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
+      [旧版易访问性和自动化技术 - 通过 MSAA 实现 UI 自动化](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
 
       [Windows 辅助功能](https://docs.microsoft.com/windows/desktop/winauto/about-windows-accessibility-features)
 
@@ -73,11 +73,11 @@ ms.locfileid: "70987189"
    :::column:::
       ![WPF 平台](images/platform-wpf2-small.png)
 
-      **Windows Presentation Foundation （WPF）**
+      **Windows Presentation Foundation (WPF)**
 
-      在使用 XAML UI 模型和 .NET Framework 的托管 Windows 应用程序的已建立平台上开发可访问的应用程序和工具。
+      使用 XAML UI 模型和 .NET Framework 在建立的平台上针对托管 Windows 应用程序开发易访问的应用和工具。
 
-      [辅助功能最佳做法](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
+      [易访问性最佳做法](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
 
       [UI 自动化基础知识](https://docs.microsoft.com/dotnet/framework/ui-automation/index)
 
@@ -96,48 +96,48 @@ ms.locfileid: "70987189"
    :::column:::
       ![Windows 窗体平台应用](images/platform-winforms.png)
 
-      **Windows 窗体（WinForms）**
+      **Windows 窗体 (WinForms)**
 
-      使用 XAML UI 模型和 .NET Framework 为托管 Windows 应用程序开发可访问的应用程序和工具。
+      使用 XAML UI 模型和 .NET Framework 针对托管 Windows 应用程序开发易访问的应用和工具。
 
-      [Windows 窗体辅助功能](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
+      [Windows 窗体易访问性](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
 
-      [创建可访问的 Windows 应用程序](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
+      [创建易访问的 Windows 应用程序](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
 
-      [支持辅助功能准则 Windows 窗体控件上的属性](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
+      [支持易访问性准则的 Windows 窗体控件上的属性](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
 
-      [为 Windows 窗体上的控件提供辅助功能信息](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
+      [为 Windows 窗体上的控件提供易访问性信息](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="2":::
-      **Web 辅助功能**
+      **Web 易访问性**
 
-      在 Microsoft Edge 中设计、构建和测试可访问的网站。
+      在 Microsoft Edge 中设计、构建和测试易访问的网站。
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
-      [Web 辅助功能简介](https://docs.microsoft.com/microsoft-edge/accessibility)
+      [Web 易访问性简介](https://docs.microsoft.com/microsoft-edge/accessibility)
 
       [设计辅助网站](https://docs.microsoft.com/microsoft-edge/accessibility/design)
    :::column-end:::
    :::column:::
       [生成辅助网站](https://docs.microsoft.com/microsoft-edge/accessibility/build)
 
-      [测试可访问的网站](https://docs.microsoft.com/microsoft-edge/accessibility/test)
+      [测试易访问的网站](https://docs.microsoft.com/microsoft-edge/accessibility/test)
    :::column-end:::
 :::row-end:::
 
 ## <a name="samples"></a>示例
 
-下载并运行完整的 Windows 示例，这些示例演示了各种辅助功能。
+下载并运行完整 Windows 示例，这些示例演示了各种易访问性特性和功能。
 
 :::row:::
    :::column:::
       [代码示例浏览器](https://docs.microsoft.com/en-us/samples/browse/)
 
-      新示例浏览器取代了 MSDN 代码库。
+      新示例浏览器替代了 MSDN 代码库。
    :::column-end:::
    :::column:::
       [MSDN 代码库（已停用）](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
@@ -149,35 +149,35 @@ ms.locfileid: "70987189"
    :::column:::
       [GitHub 上的 Windows 经典示例](https://github.com/microsoft/Windows-classic-samples/search?q=accessibility&unscoped_q=accessibility)
 
-      这些示例演示了 Windows 和 Windows Server 的功能和编程模型。 
+      这些示例演示适用于 Windows 和 Windows Server 的功能和编程模型。 
    :::column-end:::
    :::column:::
-      [GitHub 上的通用 Windows 平台（UWP）示例](https://github.com/microsoft/Windows-universal-samples/search?q=accessibility&unscoped_q=accessibility)
+      [GitHub 上的通用 Windows 平台 (UWP) 示例](https://github.com/microsoft/Windows-universal-samples/search?q=accessibility&unscoped_q=accessibility)
 
-      这些示例演示适用于 Windows 10 的 Windows 软件开发工具包（SDK）中的通用 Windows 平台（UWP）的 API 使用模式。
+      这些示例演示适用于 Windows 10 的 Windows 软件开发工具包 (SDK) 中的通用 Windows 平台 (UWP) API 使用模式。
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="2":::
       [XAML 控件库](https://github.com/microsoft/Xaml-Controls-Gallery)
 
-      此应用演示了在熟知设计系统中支持的各种 Xaml 控件。
+      此应用演示在 Fluent Design 系统中支持的各种 Xaml 控件。
    :::column-end:::
 :::row-end:::
 
 ## <a name="videos"></a>视频
 
-各种视频涵盖了如何构建可访问的 Windows 应用程序，以了解常见的辅助功能，以及 Microsoft 如何解决这些问题。
+各种视频，涵盖如何构易访问的 Windows 应用程序到常规易访问性问题和 Microsoft 如何解决这些问题。
 
 :::row:::
    :::column:::
-      **如何在 Windows 应用程序中开始利用辅助功能**
+      **如何在 Windows 应用中开始使用辅助功能**
    :::column-end:::
    :::column:::
-      **一分钟的开发人员：开发辅助功能的应用**
+      **One Dev Minute：针对易访问性开发应用**
    :::column-end:::
    :::column:::
-      **残疾和辅助功能简介**
+      **残障和易访问性简介**
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -196,10 +196,10 @@ ms.locfileid: "70987189"
       **从黑客到产品，适用于 Windows 10 的目视控制**
    :::column-end:::
    :::column:::
-      **Windows 10 上的辅助功能**
+      **Windows 10 上的易访问性**
    :::column-end:::
    :::column:::
-      **构建可访问的 UWP 应用简介**
+      **构建易访问的 UWP 应用简介**
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -218,7 +218,7 @@ ms.locfileid: "70987189"
       **设计 Windows 辅助功能**
    :::column-end:::
    :::column:::
-      **Windows 10 辅助功能提供每个人的功能**
+      **Windows 10 辅助功能为每个人提供支持**
    :::column-end:::
    :::column:::
       **使鼠标指针更易于查看**
@@ -242,15 +242,15 @@ ms.locfileid: "70987189"
    :::column span="3":::
       **博客和新闻**
 
-      Microsoft 辅助功能领域的最新功能。
+      Microsoft 易访问性领域的最新内容。
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
-      [新闻](https://news.microsoft.com/presskits/accessibility/)
+      [新闻动态](https://news.microsoft.com/presskits/accessibility/)
    :::column-end:::
    :::column:::
-      [辅助功能博客](https://blogs.microsoft.com/accessibility/)
+      [“易访问性”博客](https://blogs.microsoft.com/accessibility/)
    :::column-end:::
    :::column:::
       [Windows UI 自动化博客](https://blogs.msdn.microsoft.com/winuiautomation/)
@@ -261,17 +261,17 @@ ms.locfileid: "70987189"
    :::column span="3":::
       **社区和支持**
 
-      Windows 开发人员和用户共同见面和学习的地方。
+      Windows 开发人员和用户见面并一起学习的地方。
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
-      [Windows 社区-辅助功能](https://community.windows.com/search?q=accessibility)
+      [Windows 社区 - 易访问性](https://community.windows.com/search?q=accessibility)
    :::column-end:::
    :::column:::
-      [Windows 辅助功能和自动化开发论坛](https://social.msdn.microsoft.com/Forums/windows/home?forum=windowsaccessibilityandautomation)
+      [Windows 易访问性和自动化开发论坛](https://social.msdn.microsoft.com/Forums/windows/home?forum=windowsaccessibilityandautomation)
    :::column-end:::
    :::column:::
-      [伤残咨询台](https://www.microsoft.com/Accessibility/disability-answer-desk)
+      [辅助功能 Answer Desk](https://www.microsoft.com/Accessibility/disability-answer-desk)
    :::column-end:::
 :::row-end:::
