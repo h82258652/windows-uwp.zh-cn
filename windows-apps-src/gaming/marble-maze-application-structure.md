@@ -18,7 +18,7 @@ ms.locfileid: "74258501"
 
 
 
-DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构不同。 Windows 运行时提供了接口（如 [[Windows::UI::Core::ICoreWindow](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types)](https://docs.microsoft.com/uwp/api/Windows.UI.Core.ICoreWindow)），以便你可以采用更现代、面向对象的方式开发 UWP 应用，而不是使用句柄类型（如 [HWND](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-createwindowa)）和函数（如 CreateWindow）。 文档的这一部分介绍了如何构造 Marble Maze 应用代码。
+DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构不同。 Windows 运行时提供了接口（如 [](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types)Windows::UI::Core::ICoreWindow[](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-createwindowa)），以便你可以采用更现代、面向对象的方式开发 UWP 应用，而不是使用句柄类型（如 [HWND](https://docs.microsoft.com/uwp/api/Windows.UI.Core.ICoreWindow)）和函数（如 CreateWindow）。 文档的这一部分介绍了如何构造 Marble Maze 应用代码。
 
 > [!NOTE]
 > 与本文档对应的示例代码位于 [DirectX Marble Maze 游戏示例](https://github.com/microsoft/Windows-appsample-marble-maze)中。
@@ -38,7 +38,7 @@ DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构�
 
 Marble Maze 中的一些组件只需很少或无需修改即可在任何游戏中重用。 对于你自己的游戏，可以调整这些文件所提供的结构和观点。 下表简短描述了重要的源代码文件。
 
-| 文件                                      | 描述                                                                                                                                                                          |
+| 文件                                      | 说明                                                                                                                                                                          |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | App.h、App.cpp               | 定义 **App** 和 **DirectXApplicationSource** 类，可封装应用的视图（窗口、线程和事件）。                                                     |
 | Audio.h、Audio.cpp                         | 定义 **Audio** 类，可管理音频资源。                                                                                                                          |
@@ -123,7 +123,7 @@ UWP 游戏初始化时，它通常会初始化运行时组件（例如 Direct3D�
     });
 ```
 
-The **MarbleMazeMain** class defines the *m\_deferredResourcesReady* flag to indicate that asynchronous loading is complete. **MarbleMazeMain::LoadDeferredResources** 方法加载游戏资源，然后设置此标志。 应用的更新 (**MarbleMazeMain::Update**) 和呈现 (**MarbleMazeMain::Render**) 阶段会检查此标志。 设置此标志后，游戏会像平常一样继续运行。 如果未设置此标志，则游戏会显示加载屏幕。
+**MarbleMazeMain**类定义*m\_deferredResourcesReady*标志以指示异步加载已完成。 **MarbleMazeMain::LoadDeferredResources** 方法加载游戏资源，然后设置此标志。 应用的更新 (**MarbleMazeMain::Update**) 和呈现 (**MarbleMazeMain::Render**) 阶段会检查此标志。 设置此标志后，游戏会像平常一样继续运行。 如果未设置此标志，则游戏会显示加载屏幕。
 
 有关 UWP 应用的异步编程的详细信息，请参阅[使用 C++ 进行异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
@@ -195,7 +195,7 @@ enum class GameState
 };
 ```
 
-例如，**MainMenu** 状态定义主菜单显示和游戏未活动。 相反，**InGameActive** 状态定义游戏是活动的和菜单未显示。 The **MarbleMazeMain** class defines the **m\_gameState** member variable to hold the active game state.
+例如，**MainMenu** 状态定义主菜单显示和游戏未活动。 相反，**InGameActive** 状态定义游戏是活动的和菜单未显示。 **MarbleMazeMain**类定义用于保存活动游戏状态的**m\_gameState**成员变量。
 
 **MarbleMazeMain::Update** 和 **MarbleMazeMain::Render** 方法使用 switch 语句执行当前状态的逻辑。 下面的示例展示了 **MarbleMazeMain::Update** 方法的 switch 语句的可能形式（为了演示结构，已删除了详细内容）。
 
@@ -423,9 +423,9 @@ void MarbleMazeMain::LoadState()
 
 ## <a name="related-topics"></a>相关主题
 
-* [Adding visual content to the Marble Maze sample](adding-visual-content-to-the-marble-maze-sample.md)
-* [Marble Maze sample fundamentals](marble-maze-sample-fundamentals.md)
-* [Developing Marble Maze, a UWP game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [向大理石迷宫示例中添加视觉内容](adding-visual-content-to-the-marble-maze-sample.md)
+* [大理石迷宫示例基础知识](marble-maze-sample-fundamentals.md)
+* [开发大理石迷宫，其中的 UWP 游戏C++和 DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

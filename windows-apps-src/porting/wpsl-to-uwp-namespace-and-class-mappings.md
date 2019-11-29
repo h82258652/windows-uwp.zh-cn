@@ -18,9 +18,9 @@ ms.locfileid: "74259069"
 
 本主题提供 Windows Phone Silverlight Api 到通用 Windows 平台（UWP）等效项的综合性映射。 但是，通常不存在一对一的功能映射：任一平台都可能比其在命名空间或类中的对应平台具有更多或更少的功能。
 
-当你在 UWP 项目中工作，并且要从 Windows Phone Silverlight 项目中重新使用源代码时，映射表将会有帮助。 这两个平台之间的命名空间和类（包括 UI 控件）的名称存在差异。 在许多情况下，只需更改命名空间名称，就可以编译代码。 有时，类或 API 名称以及命名空间名称已发生更改。 在其他情况下，映射需要处理更多工作，而在极少数情况下需要更改方法。
+当你在 UWP 项目中工作，并且要从 Windows Phone Silverlight 项目中重新使用源代码时，映射表将会有帮助。 这两个平台之间的命名空间和类（包括 UI 控件）的名称存在差异。 在许多情况下，只需更改命名空间名称，就可以编译代码。 有时，类或 API 名称以及命名空间名称已发生更改。 有时，映射会处理较多工作，在极少数情况下，则需要更改方法。
 
-**如何使用表：  **首先，搜索正在使用的类的名称。 只要进行映射比仅更改命名空间名称更复杂，类就会在此处列出。 如果你的类未列出，则该映射只是命名空间的更改。 因此，找到你的类的命名空间名称后，你将找到等效的 UWP 命名空间名称。 你的类将位于该命名空间中。 如果你的命名空间未列出，则其名称并未更改。
+**如何使用表：  **首先，搜索正在使用的类的名称。 只要进行映射比仅更改命名空间名称更复杂，就会在此处列出类。 如果你的类未列出，则该映射只是命名空间的更改。 因此，找到你的类的命名空间名称后，你将找到等效的 UWP 命名空间名称。 你的类将位于该命名空间中。 如果你的命名空间未列出，则其名称并未更改。
 
 **请注意**  Windows 10 比 Windows Phone 应用商店应用支持更多的 .NET Framework。 例如，Windows 10 有多个 System.servicemodel。\* 命名空间以及 System.Net、System.net.networkinformation 和系统 .Net。
 此外，在 Windows 10 应用程序中，你将从 .NET Native 中获益，这是一项预编译技术，可将 MSIL 转换为可运行的本机代码。 .NET Native 应用启动速度更快、使用的内存更少，并且比其对应的 MSIL 更省电。
@@ -88,7 +88,7 @@ ms.locfileid: "74259069"
 | (MPI = **Microsoft.Phone.Info**) <br/>**MPI.UserExtendedProperties** 类 | [**AdvertisingManager**](https://docs.microsoft.com/uwp/api/Windows.System.UserProfile.AdvertisingManager)类 |
 | **System.Windows** 命名空间 | [**WINDOWS UI .xaml**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml)命名空间 |
 | **System.Windows.Automation** 命名空间 | [**WINDOWS UI .xaml**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation)命名空间 |
-| **System.Windows.Controls**、**System.Windows.Input** 命名空间 | [**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows.UI.Xaml.Controls**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls) 命名空间 |
+| **System.Windows.Controls**、**System.Windows.Input** 命名空间 | " [**Windows ui"、** ](https://docs.microsoft.com/uwp/api/Windows.UI.Core)"windows [ **"、"** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input)ui" [](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls) 、" |
 | **System.Windows.Controls.DrawingSurface**、**DrawingSurfaceBackgroundGrid** 类 | [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)类 |
 | **System.Windows.Controls.RichTextBox** 类 | [**RichEditBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)类 |
 | **System.Windows.Controls.WrapPanel** 类 | 无常规布局用途的直接等效项。 [**ItemsWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid)和[**WrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WrapGrid)可用于 items 控件的 "项" 面板模板。 |
@@ -105,7 +105,7 @@ ms.locfileid: "74259069"
 | **System.Data.Linq.Mapping.ColumnAttribute** 类 | 无直接等效项 |
 | **System.Data.Linq.SqlClient.SqlHelpers** 类 | 无直接等效项 |
 | 设备 | |
-| **Microsoft.Devices**、**Microsoft.Devices.Sensors** 命名空间 | [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration), [**Windows.Devices.Enumeration.Pnp**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.Pnp), [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors) 命名空间 |
+| **Microsoft.Devices**、**Microsoft.Devices.Sensors** 命名空间 | " [**Windows**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)"、 [ **"windows"** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.Pnp)、"windows"、"windows"、"windows"、"windows" 和 "设备"。 [](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) [](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors) |
 | **Microsoft.Devices.Camera**、**Microsoft.Devices.PhotoCamera** 类 | [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture)类。 此外，[**CameraCaptureUI**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI) 类（仅限 Windows）。 |
 | **Microsoft.Devices.CameraButtons** 类 | [**HardwareButtons**](https://docs.microsoft.com/uwp/api/Windows.Phone.UI.Input.HardwareButtons)类 |
 | **Microsoft.Devices.CameraVideoBrushExtensions** 类 | [**CaptureElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CaptureElement)类 |
@@ -168,7 +168,7 @@ ms.locfileid: "74259069"
 | **Microsoft.Phone.Maps.Services.RouteQuery** 类 | [**MapRouteFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinder)类 |
 | 盈利 | |
 | **Microsoft.Phone.Marketplace** 命名空间 | [**Windows.applicationmodel.resources.core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)命名空间 |
-| Media | |
+| 媒体 | |
 | **Microsoft.Phone.Media** 命名空间 | [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)类 |
 | 网络 | |
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.DeviceNetworkInformation** 类 | [**Hostname**](https://docs.microsoft.com/uwp/api/Windows.Networking.HostName)、 [**system.net.networkinformation**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation)类 |
@@ -221,7 +221,7 @@ ms.locfileid: "74259069"
 | (SSC = **System.Security.Cryptography**) <br/> **SSC.ProtectedData** 类 | [**DataProtectionProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider)类 |
 | (SSC = **System.Security.Cryptography**) <br/> **SSC.RandomNumberGenerator** 类 | [**CryptographicBuffer**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.CryptographicBuffer)类 |
 | (SSC = **System.Security.Cryptography**) <br/> **SSC.X509Certificates.X509Certificate** 类 | [**CertificateEnrollmentManager**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.CertificateEnrollmentManager)类 |
-| 壳体 | |
+| Shell | |
 | (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ApplicationBar** 类 | [**CommandBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)类 |
 | (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ApplicationBarIconButton** 类 | [**AppBarButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton)类（在[**PrimaryCommands**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands)属性中使用时） |
 | (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ApplicationBarMenuItem** 类 | [**AppBarButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton)类（在[**SecondaryCommands**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.secondarycommands)属性中使用时） |

@@ -1,5 +1,5 @@
 ---
-Description: View details related to the unique identity assigned to your app by the Microsoft Store, and get a link to your app's Store listing.
+Description: 查看与 Microsoft Store 分配给应用程序的唯一标识相关的详细信息，并获取应用商店列表的链接。
 title: 查看应用标识的详细信息
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.date: 10/02/2018
@@ -16,20 +16,20 @@ ms.locfileid: "74259882"
 # <a name="view-app-identity-details"></a>查看应用标识的详细信息
 
 
-You can view details related to the unique identity assigned to your app by the Microsoft Store on its **App identity** pages. You can also get a link to your app's Store listing on this page.
+可以通过**应用标识**页面上的 Microsoft Store 查看与分配给应用的唯一标识相关的详细信息。 你还可以在此页上获取应用商店列表的链接。
 
 若要找到此信息，请导航到其中一个应用，然后展开左侧导航菜单中的**应用管理**。 选中**应用标识**查看这些详细信息。
 
 
 ## <a name="values-to-include-in-your-app-package-manifest"></a>要包含在应用程序包清单中的值
 
-The following values must be included in your package manifest. 如果[使用 Microsoft Visual Studio 生成程序包](/windows/msix/package/packaging-uwp-apps)，并使用与你的开发者帐户关联的相同 Microsoft 帐户登录，则会自动包含这些详细信息。 如果手动生成程序包，则需要将以下各项添加到程序包中：
+以下值必须包含在包清单中。 如果[使用 Microsoft Visual Studio 生成程序包](/windows/msix/package/packaging-uwp-apps)，并使用与你的开发者帐户关联的相同 Microsoft 帐户登录，则会自动包含这些详细信息。 如果手动生成程序包，则需要将以下各项添加到程序包中：
 
--   **Package/Identity/Name**
--   **Package/Identity/Publisher**
+-   **包/标识/名称**
+-   **包/标识/发布服务器**
 -   **Package/Properties/PublisherDisplayName**
 
-有关详细信息，请参阅[程序包清单架构参考](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的[**标识**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
+有关详细信息，请参阅[程序包清单架构参考**中的**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)标识[](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)。
 
 同时，这些元素声明应用的标识、建立了所有程序包所属于的“程序包系列”。 单个程序包将具有其他详细信息，如体系结构和版本。
 
