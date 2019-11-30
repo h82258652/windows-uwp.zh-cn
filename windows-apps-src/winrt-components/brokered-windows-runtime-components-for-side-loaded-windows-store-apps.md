@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: 77993256752f081c5abc4f56164d0846c2b61060
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 4d35945c803df2c4f84c5085de0a27a5d6731545
+ms.sourcegitcommit: c8634b15b10bd196e7e2f876ae26e1205e160c91
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258771"
+ms.lasthandoff: 11/29/2019
+ms.locfileid: "74663544"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>用于加载边的 UWP 应用的中转 Windows 运行时组件
 
@@ -493,7 +493,7 @@ a) Dlldata.c
 
 b）标头文件（例如，MyWinRTComponent）
 
-c）\_MyWinRTComponent 文件的 \*（例如，\_
+c） \_MyWinRTComponent 文件的 \*（例如，\_
 
 d） \*\_p .c 文件（例如，MyWinRTComponent\_p）
 
@@ -565,7 +565,7 @@ struct PersonStruct
 }
 ```
 
-然后返回 * PersonStruct\[\]* 而不是*List&lt;PersonObject&gt;* 。
+然后返回*PersonStruct\[\]* 而不是*List&lt;PersonObject&gt;* 。
 这将在一次跨进程“跳跃”中获取所有数据。
 
 和所有性能注意事项一样，测量和测试至关重要。 理想情况下，应当将遥测插入到各种操作中以确定它们所需的时间。 在一定范围内进行测量十分重要：例如，在旁加载应用程序中为特定的查询使用所有 *People* 对象实际需要多少时间？
@@ -577,7 +577,7 @@ struct PersonStruct
 
 当你对服务器作出更改时，有必要确保之前运行的任何实例都不再继续运行。 COM 最终会清理该进程，但在按照削减计时器清理之前，该进程仍对迭代开发有效。 因此，终止以前运行的实例是开发期间的常用步骤。 这要求开发人员一直跟踪用于托管服务器的 dllhost 实例。
 
-可使用任务管理器或其他第三方应用查找和终止服务器进程。 命令行工具 **TaskList.exe** 也包含在内，并具有灵活的语法，例如：
+可使用任务管理器或其他第三方应用查找和终止服务器进程。 命令行工具**TaskList**也包含，具有灵活的语法，例如：
 
   
  | **Command** | **操作** |
