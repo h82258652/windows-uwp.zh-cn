@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, pip, py.exe, file paths, PYTHONPATH, python deployment, python packaging
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 4132ef0089ee707367666b4d6340333e538b1130
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 6dbf86e0f9435e44140159ebb2bcbc3d67928999
+ms.sourcegitcommit: c8634b15b10bd196e7e2f876ae26e1205e160c91
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72313382"
+ms.lasthandoff: 11/29/2019
+ms.locfileid: "74663554"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>有关在 Windows 上使用 Python 的常见问题解答
 
@@ -47,7 +47,7 @@ ms.locfileid: "72313382"
 
 Python 字符串对特殊字符使用“转义符”。 例如，要在字符串中插入换行符，应键入 `\n`。 由于 Windows 上的文件路径使用反斜杠，因此某些部分可能已转换为特殊字符。
 
-要将路径粘贴为 Python 中的字符串，请添加 `r` 前缀。 这表示它是一个 `raw` 字符串，除 \” 外，将不使用任何转义字符（可能需要删除路径中的最后一个反斜杠）。 因此路径可能如下所示：r"C:\Users\MyName\Documents\Document.txt"
+要将路径粘贴为 Python 中的字符串，请添加 `r` 前缀。 这表示它是一个 `raw` 字符串，除 \” 外，将不使用任何转义字符（可能需要删除路径中的最后一个反斜杠）。 因此，路径可能如下所示：`r"C:\Users\MyName\Documents\Document.txt"`
 
 在 Python 中使用路径时，建议使用标准 pathlib 模块。 这样你就可以将字符串转换为丰富的 Path 对象，无论它使用正斜杠还是反斜杠，都可以一致地进行路径操作，从而使代码在不同的操作系统上可以更好地工作。
 

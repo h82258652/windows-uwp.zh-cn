@@ -5,16 +5,16 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 创作, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: e8bb86bd8d52ff96f010bf41758f1e4602330d52
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 55d512faccfa318156fb0dc28d3f804b53f0fe3d
+ms.sourcegitcommit: 102fdfdf32ba12a8911018d234d71d67ebef61ce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393477"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74551665"
 ---
 # <a name="author-events-in-cwinrt"></a>在 C++/WinRT 中创作事件
 
-本主题演示如何创作 Windows 运行时组件，该组件包含表示银行帐户的运行时类，当该帐户的余额进入借方时其会引发事件。 它还演示使用该银行帐户运行时类、调用函数以调整余额并处理产生的任何事件的核心应用。
+本主题演示如何创作 Windows 运行时组件，该组件包含表示银行帐户（当该银行帐户将透支时，该银行帐户会引发事件）的运行时类。 本主题还演示一个使用该银行帐户运行时类、调用函数以调整余额并处理引发的任何事件的核心应用。
 
 > [!NOTE]
 > 有关安装和使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息，请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
@@ -24,7 +24,7 @@ ms.locfileid: "70393477"
 
 ## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>创建 Windows 运行时组件 (BankAccountWRC)
 
-首先在 Microsoft Visual Studio 中创建新项目。 创建一个 Windows 运行时组件 (C++/WinRT) 项目，然后将其命名为 BankAccountWRC（针对“银行帐户 Windows 运行时组件”）   。 暂时不要生成该项目。
+首先在 Microsoft Visual Studio 中创建新项目。 创建一个 Windows 运行时组件 (C++/WinRT) 项目，然后将其命名为 BankAccountWRC（针对“银行帐户 Windows 运行时组件”）   。 将项目命名为 *BankAccountWRC* 会让你在执行本主题的其余步骤时拥有最轻松的体验。 暂时不要生成该项目。
 
 该新建项目包含一个名为 `Class.idl` 的文件。 将该文件重命名为 `BankAccount.idl`（重命名 `.idl` 文件还会自动重命名从属的 `.h` 和 `.cpp` 文件）。 将 `BankAccount.idl` 中的内容替换为下表。
 
@@ -45,7 +45,7 @@ namespace BankAccountWRC
 
 在生成过程中，`midl.exe` 工具会运行以创建组件的 Windows 运行时元数据文件（即 `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`）。 然后，`cppwinrt.exe` 工具运行（具有 `-component` 选项）以生成源代码文件，从而为你在创作组件时提供支持。 这些文件包含让你开始实现已在 IDL 中声明的 BankAccount 运行时类的存根  。 这些存根是 `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` 和 `BankAccount.cpp`。
 
-右键单击项目节点，然后单击“打开文件资源管理器中的文件夹”  。 执行此操作，将在文件资源管理器中打开项目文件夹。 将存根文件 `BankAccount.h` 和 `BankAccount.cpp` 从文件夹 `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` 复制到包含项目文件的文件夹（即 `\BankAccountWRC\BankAccountWRC\`），并替换目标中的文件。 现在，让我们打开 `BankAccount.h` 和 `BankAccount.cpp` 并实现运行时类。 在 `BankAccount.h` 中，将两个私有成员添加到 BankAccount 的实现（不是出厂实现）  。
+右键单击项目节点，然后单击“打开文件资源管理器中的文件夹”  。 执行此操作，将在文件资源管理器中打开项目文件夹。 将存根文件 `BankAccount.h` 和 `BankAccount.cpp` 从文件夹 `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` 复制到包含项目文件的文件夹（即 `\BankAccountWRC\BankAccountWRC\`），并替换目标中的文件。 现在，让我们打开 `BankAccount.h` 和 `BankAccount.cpp` 并实现运行时类。 在 `BankAccount.h` 中，将两个私有成员添加到 **BankAccount** 的实现（不是工厂实现）  。
 
 ```cppwinrt
 // BankAccount.h
@@ -102,9 +102,12 @@ namespace winrt::BankAccountWRC::implementation
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>创建核心应用 (BankAccountCoreApp) 以测试 Windows 运行时组件
 
-现在创建新项目（在 `BankAccountWRC` 解决方案中，或在一个新解决方案中）。 创建核心应用 (C++/WinRT) 项目，然后将其命名为 BankAccountCoreApp   。
+现在创建新项目（在 *BankAccountWRC* 解决方案中，或在一个新解决方案中）。 创建核心应用 (C++/WinRT) 项目，然后将其命名为 BankAccountCoreApp   。
 
-添加一个引用，然后浏览到 `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`（或如果同一解决方案中有两个项目，添加一个项目到项目引用）。 单击“添加”，然后单击“确定”   。 立即生成 BankAccountCoreApp。 在极少数情况下，如果看到一个显示负载文件 `readme.txt` 不存在的错误，请从 Windows 运行时组件项目中排除该文件，重新生成该文件，然后重新生成 BankAccountCoreApp。
+> [!NOTE]
+> 如前文所述，文件夹 `\BankAccountWRC\Debug\BankAccountWRC\` 中创建了 Windows 运行时组件的 Windows 运行时元数据文件（其项目命名为 *BankAccountWRC*）。 该路径的第一段是包含解决方案文件的文件夹的名称；下一段是名为 `Debug` 的子目录；最后一段是为 Windows 运行时组件命名的子目录。 如果未将项目命名为 *BankAccountWRC*，则元数据文件将位于 `\<YourProjectName>\Debug\<YourProjectName>\` 文件夹中。
+
+现在，在“核心应用”项目 (*BankAccountCoreApp*) 中添加一个引用，然后浏览到 `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`（或者，如果同一解决方案中有两个项目，则添加一个项目到项目的引用）。 单击“添加”，然后单击“确定”   。 现在生成 *BankAccountCoreApp*。 在极少数情况下，如果看到一个显示负载文件 `readme.txt` 不存在的错误，请从 Windows 运行时组件项目中排除该文件，重新生成该文件，然后重新生成 *BankAccountCoreApp*。
 
 生成过程期间,`cppwinrt.exe` 工具会运行以将引用的 `.winmd` 文件处理到包含投影类型的源代码文件中,从而为你在使用组件时提供支持。 组件的运行时类的投影类型的标头&mdash;名为 `BankAccountWRC.h`&mdash;将生成在文件夹 `\BankAccountCoreApp\BankAccountCoreApp\Generated Files\winrt\` 中。
 
@@ -114,7 +117,7 @@ namespace winrt::BankAccountWRC::implementation
 #include <winrt/BankAccountWRC.h>
 ```
 
-此外，在 `App.cpp` 中，添加以下代码以实例化 BankAccount（使用投影类型的默认构造函数），注册事件处理程序，然后导致该帐户进入借方。
+此外，在 `App.cpp` 中，添加以下代码以实例化 **BankAccount**（使用投影类型的默认构造函数），注册事件处理程序，然后导致该帐户透支。
 
 `WINRT_ASSERT` 是宏定义，并且扩展到 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
 
