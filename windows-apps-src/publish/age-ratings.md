@@ -6,16 +6,16 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: Windows 10, uwp, 年龄分级, 游戏分级, iarc, 分级, 问卷调查, 分级委员会, 内容分级
 ms.localizationpriority: medium
-ms.openlocfilehash: bab98b50b1d53451708b7631f74d15947c60d4c8
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 2e8ffdcf1daf9198ded9658c471e765acf5ab8f3
+ms.sourcegitcommit: 7754c1cb1a348f3311417ea7df3e9d168fe39517
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260045"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74694773"
 ---
 # <a name="age-ratings"></a>年龄分级
 
-**应用提交进程**的[年龄分级](app-submissions.md)页面允许你提供有关应用的信息，以便它可以收到由[国际年龄分级联盟 (IARC)](https://www.globalratings.com/) 分级系统管理的相应年龄和内容分级。 这些分级与应用内容的适宜性有关，而与应用的目标受众的年龄无关。
+[应用提交进程](app-submissions.md)的**年龄分级**页面允许你提供有关应用的信息，以便它可以收到由[国际年龄分级联盟 (IARC)](https://www.globalratings.com/) 分级系统管理的相应年龄和内容分级。 这些分级与应用内容的适宜性有关，而与应用的目标受众的年龄无关。
 
 ## <a name="answering-the-age-ratings-questionnaire"></a>回答年龄分级问卷调查
 
@@ -35,9 +35,6 @@ ms.locfileid: "74260045"
 <span id="boards" />
 
 > [!NOTE]
-> 韩国法律要求在韩国上市的游戏应通过韩国[游戏分级委员会](https://www.grb.or.kr/Default.aspx)进行分级。 如果你提交的是一款游戏并且想要向韩国提供，则必须填写此条增补款并上传分级证书。 注意，如果你的应用不是游戏或不打算向韩国提供，可以将此部分留空。
-
-> [!NOTE]
 > 如果你提交的游戏将在台湾提供，则需要依法通过[此表单](https://www.gamerating.org.tw/company_login.php)使用所提供的 CSRR 分级进行登录。 
 
 <span id="appeal" />
@@ -53,7 +50,7 @@ ms.locfileid: "74260045"
 
 以前由开发人员为其应用指定年龄分级，而不是通过完成问卷调查。 在下面查找以前的 Microsoft Store 年龄分级细目：
 
-| 年龄分级                           | 说明                            |
+| 年龄分级                           | 描述                            |
 |--------------------------------------|----------------------------------------|
 | 3+（适合幼儿）     | 这些应用包含适合幼儿的内容。 可能会存在非现实的卡通形式的极少量漫画暴力行为。 角色不应该与现实的角色相似或相关联。 不应该存在任何可能会令人害怕的内容，且不应该存在任何裸体或涉及性行为或犯罪活动。 使用此年龄分级的应用也不能启用可能会访问不适合幼儿的内容或功能的功能（例如不受控制地在线共享 12+ 分级类别下描述的信息等）。            |
 | 7+（适合 7 岁及以上年龄）   | 具有此年龄分级的应用与 3+ 应用程序具有相同的条件，但这些应用可以包含可能会惊吓较年幼受众的内容，并且可以包含部分裸露的内容，只要这些裸露不会涉及到性行为。 此分级应该仅用于其内容适合儿童的应用。                                                                                   |
