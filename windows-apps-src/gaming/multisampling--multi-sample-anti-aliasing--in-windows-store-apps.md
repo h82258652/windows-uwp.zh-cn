@@ -1,19 +1,19 @@
 ---
-title: 通用 Windows 平台 (UWP) 应用中的多重采样
+title: UWP 应用中的多重采样
 description: 了解如何在使用 Direct3D 生成的通用 Windows 平台 (UWP) 应用中使用多重采样。
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 多重采样, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 976cdfb5f1dc92f693f7296d6e33d7ccc4c4d6e7
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f4d3e590f99fdf6ca907fcc8fd5b412c5796f474
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318944"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735102"
 ---
-# <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> 多重采样中通用 Windows 平台 (UWP) 应用程序
+# <a name="span-iddev_gamingmultisampling__multi-sample_anti_aliasing__in_windows_store_appsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span>通用 Windows 平台（UWP）应用中的多级取样
 
 
 
@@ -28,11 +28,11 @@ ms.locfileid: "67318944"
 
 Direct3D 功能级别保证支持特定的最小样本计数功能，并保证某些支持多重采样的缓冲区格式可用。 图形设备支持的格式和样本计数通常多于最低要求。 通过检查具有特定 DXGI 格式的多重采样支持功能，然后检查可以与每个支持的格式一起使用的样本计数，你可以在运行时确定多重采样支持。
 
-1.  调用 [**ID3D11Device::CheckFeatureSupport**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) 以了解哪些 DXGI 格式可以用于多重采用。 提供游戏可以使用的呈现目标格式。 呈现器目标和解析目标必须使用相同的格式，因此请查看两个[ **D3D11\_格式\_支持\_MULTISAMPLE\_RENDERTARGET** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support)并**D3D11\_格式\_支持\_MULTISAMPLE\_解决**。
+1.  调用 [**ID3D11Device::CheckFeatureSupport**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) 以了解哪些 DXGI 格式可以用于多重采用。 提供游戏可以使用的呈现目标格式。 呈现目标和解析目标都必须使用相同的格式，因此，请检查[**D3D11\_格式\_支持\_多级采样\_RENDERTARGET**](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support)和**D3D11\_格式\_支持\_的多级**\_解析。
 
-    **功能级别 9:  **尽管功能级别 9 的设备[保证支持多级采样呈现器目标格式](https://docs.microsoft.com/previous-versions/ff471324(v=vs.85))，支持多重采样解析目标不能保证。 因此，在尝试使用本主题所述的多重采样技术之前，此检查是必要的。
+    **功能级别9：  **尽管功能级别9设备[保证支持多级采样呈现目标格式](https://docs.microsoft.com/previous-versions/ff471324(v=vs.85))，但不保证对多级显示解析目标的支持。 因此，在尝试使用本主题所述的多重采样技术之前，此检查是必要的。
 
-    下面的代码检查所有 dxgi 多级取样支持\_格式值：
+    下面的代码检查所有 DXGI\_格式值的多级多级支持：
 
     ```cpp
     // Determine the format support for multisampling.
@@ -82,11 +82,11 @@ Direct3D 功能级别保证支持特定的最小样本计数功能，并保证�
     }
     ```
 
-    > **请注意**  使用[ **ID3D11Device2::CheckMultisampleQualityLevels1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_2/nf-d3d11_2-id3d11device2-checkmultisamplequalitylevels1)改为如果您需要检查多重采样支持的平铺的资源缓冲区。
+    > **请注意**，   使用[**ID3D11Device2：： CheckMultisampleQualityLevels1**](https://docs.microsoft.com/windows/desktop/api/d3d11_2/nf-d3d11_2-id3d11device2-checkmultisamplequalitylevels1) ，而不需要检查对平铺资源缓冲区的多级的支持。
 
      
 
-3.  创建具有所需样本计数的缓冲区和呈现目标视图。 使用相同的 DXGI\_格式、 宽度和高度为交换链，但指定抽样计数大于 1，并使用多级采样的纹理维度 (**D3D11\_RTV\_维度\_TEXTURE2DMS**为例)。 如果必要，你可以使用为多重采样优化的新设置重新创建交换链。
+3.  创建具有所需样本计数的缓冲区和呈现目标视图。 使用与交换链相同的 DXGI\_格式、宽度和高度，但指定一个大于1的样本数，并使用多级采样纹理维度（**D3D11\_RTV\_dimension\_TEXTURE2DMS** ）。 如果必要，你可以使用为多重采样优化的新设置重新创建交换链。
 
     以下代码将创建多重采样渲染目标：
 

@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 55bf6360f09ba4ab6c7878543ecfa0c80c4558e3
-ms.sourcegitcommit: 74c674c70b86bafeac7c8c749b1662fae838c428
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2019
+ms.lasthandoff: 12/03/2019
 ms.locfileid: "72252318"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>诊断 Windows 运行时组件错误条件
@@ -130,7 +130,7 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 </tr>
 <tr class="odd">
 <td align="left">WME1039</td>
-<td align="left"><p>方法 "{0}" 的签名中具有类型为 "{1}" 的参数。 尽管此泛型类型并非有效的 Windows 运行时类型，但类型或其泛型参数可以实现作为有效的 Windows 运行时类型的接口。 {2}</p>
+<td align="left"><p>方法 "{0}" 的签名中具有类型为 "{1}" 的参数。 尽管此泛型类型并非有效的 Windows 运行时类型，但类型或其泛型参数可以实现作为有效的 Windows 运行时类型的接口。 [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/]({2})</p>
 > **注意** 对于 {2}，Winmdexp 附加了替代项的列表，如 "考虑将方法签名中的类型"&gt;&lt;T "改为以下类型之一：" IReadOnlyList&lt;T&gt;，&lt;t&gt;，&lt;&gt;"。"。 "。"。 "。"。 "。"
 </td>
 </tr>
@@ -174,16 +174,16 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 ## <a name="array-parameters-must-specify-whether-array-contents-are-readable-or-writable"></a>数组参数必须指定数组内容是可读还是可写。
 
 
-在 UWP 中，参数必须是只读或只写。 参数无法标记 **ref**（在 Visual Basic 中是缺少 **OutAttribute** 属性的 [ByRef](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.outattribute)）。 这适用于数组内容，因此数组参数必须指示数组内容是只读还是只写。 **out** 参数（在 Visual Basic 中是带有 OutAttribute 属性的 **ByRef** 参数）具有清晰的方向，但必须标记通过值（在 Visual Basic 中是 ByVal）传递的数组参数。 请参阅[将数组传递到 Windows 运行时组件](passing-arrays-to-a-windows-runtime-component.md)。
+在 UWP 中，参数必须是只读或只写。 参数无法标记 **ref**（在 Visual Basic 中是缺少 [OutAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.outattribute) 属性的 **ByRef**）。 这适用于数组内容，因此数组参数必须指示数组内容是只读还是只写。 **out** 参数（在 Visual Basic 中是带有 OutAttribute 属性的 **ByRef** 参数）具有清晰的方向，但必须标记通过值（在 Visual Basic 中是 ByVal）传递的数组参数。 请参阅[将数组传递到 Windows 运行时组件](passing-arrays-to-a-windows-runtime-component.md)。
 
 | 错误编号 | 消息文本         |
 |--------------|----------------------|
 | WME1101      | 方法 "{0}" 的参数 "{1}" 为数组，并且具有 {2} 和 {3}。 在 Windows 运行时中，数组参数内容必须是可读或可写。 请从“{1}”中删除其中一个属性。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | WME1102      | 方法 "{0}" 的输出参数 "{1}" 为数组，但它具有 {2}。 在 Windows 运行时中，可写入输出数组的内容。 请从“{1}”中删除该属性。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| WME1103      | 方法 "{0}" 具有参数 "{1}"，该参数是一个数组，它具有 InteropServices 或 InAttribute 或 InteropServices System.runtime.interopservices.outattribute。 在 Windows 运行时中，数组参数必须具有 {3} 或 {3}。 请删除这些属性，或使用相应的 Windows 运行时属性替换它们（如有必要）。                                                                                                                                                                                                                                                                                                                                                                                          |
-| WME1104      | 方法 "{0}" 具有参数 "{1}"，该参数不是数组，并且具有 {2} 或 {3}。 Windows 运行时不支持使用 {3} 或 {3} 标记非数组参数。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| WME1103      | 方法 "{0}" 具有参数 "{1}"，该参数是一个数组，它具有 InteropServices 或 InAttribute 或 InteropServices System.runtime.interopservices.outattribute。 在 Windows 运行时中，数组参数必须具有 {2} 或 {3}。 请删除这些属性，或使用相应的 Windows 运行时属性替换它们（如有必要）。                                                                                                                                                                                                                                                                                                                                                                                          |
+| WME1104      | 方法 "{0}" 具有参数 "{1}"，该参数不是数组，并且具有 {2} 或 {3}。 Windows 运行时不支持使用 {2} 或 {3} 标记非数组参数。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | WME1105      | 方法 "{0}" 具有 InAttribute 或 InteropServices 的参数 "{1}". System.runtime.interopservices.outattribute。 Windows 运行时不支持使用 System.Runtime.InteropServices.InAttribute 或 System.Runtime.InteropServices.OutAttribute 标记参数。 请考虑删除 System.Runtime.InteropServices.InAttribute，并改为使用“out”修饰符替换 System.Runtime.InteropServices.OutAttribute。 方法 "{0}" 具有 InAttribute 或 InteropServices 的参数 "{1}". System.runtime.interopservices.outattribute。 Windows 运行时仅支持使用 System.Runtime.InteropServices.OutAttribute 标记 ByRef 参数，不支持这些属性的其他用法。 |
-| WME1106      | 方法 "{0}" 具有作为数组的参数 "{1}"。 在 Windows 运行时中，数组参数的内容必须是可读或可写。 请将 {1} 或 {1} 应用到“{1}”。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| WME1106      | 方法 "{0}" 具有作为数组的参数 "{1}"。 在 Windows 运行时中，数组参数的内容必须是可读或可写。 请将 {2} 或 {3} 应用到“{1}”。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 
 ## <a name="member-with-a-parameter-named-value"></a>具有名为“value”的参数的成员

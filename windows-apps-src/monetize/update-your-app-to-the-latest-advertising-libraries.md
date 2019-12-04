@@ -1,17 +1,17 @@
 ---
 description: 了解如何更新应用以使用最新的受支持 Microsoft 广告库，并确保应用继续收到横幅广告。
-title: 将应用更新到最新的横幅广告库
+title: 使用最新的广告广告库广告
 ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, 广告, AdControl, AdMediatorControl, 迁移
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: f33210f14df3fb855c5744ffcab3ecbc66e1ff58
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 74ac8499e673cacad897455c7065dd3386103406
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259240"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735042"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>将应用更新到最新的横幅广告库
 
@@ -36,7 +36,7 @@ ms.locfileid: "74259240"
 > [!NOTE]
 > 如果你的应用已使用 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)（适用于 UWP 应用），则无需对应用进行任何更改。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 * 使用 **AdControl** 的应用的完整源代码和 Visual Studio 项目文件。
 * 应用的 .appx 包。

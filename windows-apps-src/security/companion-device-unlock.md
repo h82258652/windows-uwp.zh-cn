@@ -1,17 +1,17 @@
 ---
-title: 具有 Windows Hello 配套 (IoT) 设备的 Windows 解锁
+title: Windows Hello 并通过配套设备解锁
 description: Windows Hello 配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 使用 Windows Hello 配套设备框架，配套设备即使在生物识别不可用时也可以为 Windows Hello 提供丰富的体验（例如，如果 Windows 10 桌面缺少人脸身份验证或指纹读取器设备的照相机，例如）。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: 416077d2f2e7fe5f98f2586eb7273602b8075982
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 9b04ca1b841f72284ccab9df6c0ab1be8adab5c5
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281849"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735122"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>具有 Windows Hello 配套 (IoT) 设备的 Windows 解锁
 
@@ -21,7 +21,7 @@ Windows Hello 配套设备是可以与你的 Windows 10 桌面版一起使用来
 
 > **注意** Windows Hello 配套设备框架是不向所有应用开发人员提供的特定功能。 若要使用此框架，应用必须由 Microsoft 专门设置，并且在它的清单中列出受限制的 *secondaryAuthenticationFactor* 功能。 若要获得批准，请联系 [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com)。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
 > 有关视频概述，请参阅第 9 频道上来自内部版本 2016 的[具有 IoT 设备的 Windows 解锁](https://channel9.msdn.com/Events/Build/2016/P491)会话。
 
@@ -66,9 +66,9 @@ Windows Hello 配套设备框架实现为在 Windows 上运行的服务（在本
 
 每个 Windows Hello 配套设备均应与支持三种用户信号的应用结合。 这些信号可以采用操作或手势的形式。
 
-- **意向信号**：允许用户显示他通过使用 Windows Hello 设备上的按钮进行解锁的意图。 意图信号必须在 **Windows Hello 配套设备**端收集。
-- **用户状态通知**：证明用户的状态。 例如，Windows Hello 配套设备可能在可用于解锁电脑前需要 PIN（不要与电脑 PIN 混淆），或者它可能需要按某个按钮。
-- **消除歧义信号**：消除当 Windows Hello 设备使用多个选项时，用户想要解锁哪个 Windows 10 桌面版。
+- **意图信号**：通过诸如点击 Windows Hello 配套设备上的按钮等方式，允许用户显示解锁意图。 意图信号必须在 **Windows Hello 配套设备**端收集。
+- **用户存在信号**：证明存在用户。 例如，Windows Hello 配套设备可能在可用于解锁电脑前需要 PIN（不要与电脑 PIN 混淆），或者它可能需要按某个按钮。
+- **消除歧义信号**：当向 Windows Hello 配套设备提供多个选项时，消除用户想要解锁哪台 Windows 10 桌面版的疑虑。
 
 上述任意数量的用户信号都可以组合成一个信号。 每次使用时都必须要有用户存在信号和意图信号。
 
@@ -178,10 +178,10 @@ Windows Hello 配套设备框架不支持远程删除特定 Windows 10 桌面版
 
 配套设备供应商可以实现可用于以下方案的 Web 服务：
 
-- 适用于企业的筛选器服务：企业可以将可在其环境中工作的 Windows Hello 配套设备集限制为从特定供应商选择少量的设备。 例如，公司 Contoso 可以从供应商 X 订购 10000 台 Y 型号配套设备，并确保仅这些设备能够在 Contoso 域中运行（并且供应商 X 的任何其他设备型号都不行）。
-- 清单企业可以确定企业环境中使用的现有配套设备的列表。
-- 实时吊销：如果员工报告其随附设备丢失或被盗，则可以使用 web 服务吊销该设备。
-- 移动用户只需要注册其配套设备一次，并且它适用于其所有 Windows 10 桌面版和移动版。
+- 企业的筛选器服务：企业可以将能够在它们的环境中运行的 Windows Hello 配套设备集限制为特定供应商的少数精选设备。 例如，公司 Contoso 可以从供应商 X 订购 10000 台 Y 型号配套设备，并确保仅这些设备能够在 Contoso 域中运行（并且供应商 X 的任何其他设备型号都不行）。
+- 清单：企业可以确定在企业环境中使用的现有配套设备的列表。
+- 实时吊销：如果员工报告配套设备丢失或失窃，可使用 Web 服务吊销该设备。
+- 漫游：用户仅需注册配套设备一次，它就可以在所有 Windows 10 桌面版和移动版上运行。
 
 实现这些功能要求 Windows Hello 配套设备应用在注册和使用时检查 Web 服务。 Windows Hello 配套设备应用可以为要求一天仅检查一次 Web 服务之类的缓存登录方案进行优化（代价是将吊销事件延长至最多一天）。  
 
@@ -201,9 +201,9 @@ Windows Hello 配套设备应用应包含两个组件：UI 负责注册和注销
     * 确保 Windows Hello 配套设备应用存储了 HMAC 密钥（如果支持），并且 Windows Hello 配套设备应用放弃了其副本
 2. 注册后台任务
 3. 等待后台任务的正确事件
-    * WaitingForUserConfirmation:如果需要 Windows Hello 设备端上的用户操作/手势来启动身份验证流，请等待此事件
-    * CollectingCredential:如果 Windows Hello 设备依赖于电脑端的用户操作/手势来启动身份验证流（例如，按空格键），请等待此事件
-    * 其他触发器，如智能卡：请确保查询当前身份验证状态以调用正确的 Api。
+    * WaitingForUserConfirmation：如果开始身份验证流程需要 Windows Hello 配套设备端上的用户操作/手势，请等待此事件
+    * CollectingCredential：如果 Windows Hello 设备依赖于电脑端的用户操作/手势来启动身份验证流（例如，按空格键），请等待此事件
+    * 其他触发器（例如智能卡）：确保查询当前身份验证状态，以调用正确的 API。
 4. 通过调用 ShowNotificationMessageAsync，随时通知用户错误消息或要求的后续步骤。 仅在收集了意图信号后调用此 API
 5. 解除锁定
     * 确保已收集意图和用户存在信号
@@ -216,7 +216,7 @@ Windows Hello 配套设备应用应包含两个组件：UI 负责注册和注销
 
 ### <a name="registration-and-de-registration"></a>注册和注销
 
-注册需要对配套身份验证服务进行两次 API 调用：RequestStartRegisteringDeviceAsync 和 FinishRegisteringDeviceAsync。
+注册需要配套身份验证服务的两个 API 调用：RequestStartRegisteringDeviceAsync 和 FinishRegisteringDeviceAsync。
 
 在执行任何这些调用前，Windows Hello 配套设备应用必须确保 Windows Hello 配套设备可用。 如果 Windows Hello 配套设备负责生成 HMAC 密钥（身份验证和设备密钥），Windows Hello 配套设备应用还应要求配套设备在执行任何上述两个调用前生成这些密钥。 如果 Windows Hello 配套设备应用负责生成 HMAC 密钥，则它在调用上述两个调用前也应这样做。
 
@@ -346,9 +346,9 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-### <a name="authentication"></a>身份验证
+### <a name="authentication"></a>Authentication
 
-身份验证需要对配套身份验证服务进行两次 API 调用：StartAuthenticationAsync 和 FinishAuthencationAsync。
+身份验证需要配套身份验证服务的两个 API 调用：StartAuthenticationAsync 和 FinishAuthencationAsync。
 
 第一个启动 API 将返回第二个 API 使用的句柄。  在其他事项中，第一个调用返回需要通过存储在 Windows Hello 配套设备上的设备密钥进行 HMAC 处理的 nonce（在与其他内容串联后）。 第二个调用返回 HMAC 的结果和设备密钥，并且最后可能验证身份成功（即用户将看到桌面）。
 
@@ -383,7 +383,7 @@ namespace SecondaryAuthFactorSample
 
 这些状态的详细信息如下所示：
 
-| 状态                         | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 省/市/自治区                         | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------   |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    |
 | WaitingForUserConfirmation    | 锁定屏幕关闭时（例如，用户按下 Windows + L）会触发此状态更改通知事件。 我们不建议请求与在此状态中难以查找设备相关的任何错误消息。 一般情况下，我们建议仅在提供意图信号时显示消息。 如果配套设备收集意向信号（例如，点击 NFC 读卡器，在配套设备上按按钮或特定手势，如拍手），则 Windows Hello 助理设备应用应进行第一次 API 调用进行身份验证。）和 Windows Hello 设备应用后台任务会接收到检测到意向信号的伴随设备的指示。 否则，如果 Windows Hello 配套设备应用依赖电脑启动身份验证流程（通过让用户轻扫解锁屏幕或点击空格键），则 Windows Hello 配套设备应用需要等待下一个状态 (CollectingCredential)。   |
 | CollectingCredential          | 当用户打开笔记本电脑盖子、点击任意键盘按键或轻扫解锁屏幕时，将触发此状态更改通知事件。 如果 Windows Hello 设备设备依赖上述操作来开始收集意向信号，则 Windows Hello 辅助设备应用应开始收集该信号（例如，通过伴随设备上的弹出窗口询问用户是否要解锁 PC）. 如果 Windows Hello 配套设备应用需要用户在配套设备上提供用户存在信号（例如在 Windows Hello 配套设备上键入 PIN），这将是提供错误情况的良好时机。                                                                                                                                                                                                                                                                                                                                             |

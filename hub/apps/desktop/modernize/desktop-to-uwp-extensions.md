@@ -1,6 +1,6 @@
 ---
 Description: 可以使用扩展以预定义方式将打包的桌面应用与 Windows 10 集成。
-title: 将打包的桌面应用程序与 Windows 10 和 UWP （桌面桥）集成
+title: 使用桌面桥现代化现有桌面应用
 ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 65724a7524f68535f4ac917c5527ae8de8f2c6fb
-ms.sourcegitcommit: 545d5d864d89650a00a496ac4e52def9a13b14cd
+ms.openlocfilehash: 16afad7724afeea50d379692f0755593e43709bb
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73560683"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734822"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>将桌面应用与 Windows 10 和 UWP 集成
 
@@ -1198,7 +1198,7 @@ ms.locfileid: "73560683"
 
 如果希望在更新完成后重新启动该应用程序，请在要重新启动的每个进程中调用[RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart)函数。
 
-应用程序中的每个活动窗口都会收到一条[WM_QUERYENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-queryendsession)消息。 此时，应用程序可以再次调用[RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart)函数以更新命令行（如有必要）。
+应用程序中的每个活动窗口都将收到[WM_QUERYENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-queryendsession)消息。 此时，应用程序可以再次调用[RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart)函数以更新命令行（如有必要）。
 
 当应用程序中的每个活动窗口收到[WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession)消息时，应用程序应保存数据并关闭。
 
