@@ -1,17 +1,17 @@
 ---
 description: 本主题提供 Windows Phone Silverlight Api 到通用 Windows 平台（UWP）等效项的综合性映射。
-title: Windows Phone Silverlight 到 UWP 命名空间和类映射
+title: WPSL 到 UWP 命名空间和类映射
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1af36b43e02c9ee08373098f57ba29c10badb6c8
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: fdb1dc8ad4b4e61e1ffec294cfbf17e8abcc8586
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259069"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735052"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>Windows Phone Silverlight 到 UWP API 映射
 
@@ -104,7 +104,7 @@ ms.locfileid: "74259069"
 | **System.Data.Linq.DataContext** 类 | 无直接等效项 |
 | **System.Data.Linq.Mapping.ColumnAttribute** 类 | 无直接等效项 |
 | **System.Data.Linq.SqlClient.SqlHelpers** 类 | 无直接等效项 |
-| 设备 | |
+| “设备” | |
 | **Microsoft.Devices**、**Microsoft.Devices.Sensors** 命名空间 | " [**Windows**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)"、 [ **"windows"** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.Pnp)、"windows"、"windows"、"windows"、"windows" 和 "设备"。 [](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) [](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors) |
 | **Microsoft.Devices.Camera**、**Microsoft.Devices.PhotoCamera** 类 | [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture)类。 此外，[**CameraCaptureUI**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI) 类（仅限 Windows）。 |
 | **Microsoft.Devices.CameraButtons** 类 | [**HardwareButtons**](https://docs.microsoft.com/uwp/api/Windows.Phone.UI.Input.HardwareButtons)类 |
@@ -168,7 +168,7 @@ ms.locfileid: "74259069"
 | **Microsoft.Phone.Maps.Services.RouteQuery** 类 | [**MapRouteFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinder)类 |
 | 盈利 | |
 | **Microsoft.Phone.Marketplace** 命名空间 | [**Windows.applicationmodel.resources.core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)命名空间 |
-| 媒体 | |
+| Media | |
 | **Microsoft.Phone.Media** 命名空间 | [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)类 |
 | 网络 | |
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.DeviceNetworkInformation** 类 | [**Hostname**](https://docs.microsoft.com/uwp/api/Windows.Networking.HostName)、 [**system.net.networkinformation**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation)类 |
@@ -215,13 +215,13 @@ ms.locfileid: "74259069"
 | 安全元素 | |
 | (MPS = **Microsoft.Phone.SecureElement**) <br/> **MPS.SecureElementChannel**、**MPS.SecureElementSession** 类 | [**SmartCardConnection**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardConnection)类 |
 | (MPS = **Microsoft.Phone.SecureElement**) <br/> **MPS.SecureElementReader** 类 | [**SmartCardReader**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardReader)类 |
-| 安全性 | |
+| 安全 | |
 | (SSC = **System.Security.Cryptography**) <br/> **SSC.Aes**、**SSC.RSA** 类 | [**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine)类 |
 | (SSC = **System.Security.Cryptography**) <br/> **SSC.HMACSHA256**、**SSC.SHA256** 类 | [**HashAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider)类 |
 | (SSC = **System.Security.Cryptography**) <br/> **SSC.ProtectedData** 类 | [**DataProtectionProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider)类 |
 | (SSC = **System.Security.Cryptography**) <br/> **SSC.RandomNumberGenerator** 类 | [**CryptographicBuffer**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.CryptographicBuffer)类 |
 | (SSC = **System.Security.Cryptography**) <br/> **SSC.X509Certificates.X509Certificate** 类 | [**CertificateEnrollmentManager**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.CertificateEnrollmentManager)类 |
-| Shell | |
+| 壳体 | |
 | (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ApplicationBar** 类 | [**CommandBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)类 |
 | (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ApplicationBarIconButton** 类 | [**AppBarButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton)类（在[**PrimaryCommands**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands)属性中使用时） |
 | (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ApplicationBarMenuItem** 类 | [**AppBarButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton)类（在[**SecondaryCommands**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.secondarycommands)属性中使用时） |
