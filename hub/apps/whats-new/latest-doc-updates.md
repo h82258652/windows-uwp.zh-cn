@@ -2,33 +2,108 @@
 Description: 发现 Windows 开发人员文档的最新新增功能。
 title: Windows 开发人员文档的最新更新
 ms.topic: article
-ms.date: 10/13/2019
+ms.date: 12/05/2019
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: 19028ca868c05ac0a1de39b3187a30f95567d915
-ms.sourcegitcommit: c7e10793cbef55ace959ac8fc6ddd08e683602bd
+ms.openlocfilehash: 37349fb802b05399d025b1f8cdc46235fe7de824
+ms.sourcegitcommit: dd4ee5c2a8c2ab20c3a78dfd6b939483d8c562b5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73329504"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74854166"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Windows 开发人员文档的最新更新
 
 
-Windows 开发人员文档会定期更新，并提供新的和改进的信息和内容。 以下文档介绍了上个月中的重要更新，2019年10月31日结束：
+Windows 开发人员文档会定期更新，并提供新的和改进的信息和内容。 以下文档介绍了上个月中的重要更新，2019年11月30日结束：
 
 
 ## <a name="winrt-conceptual"></a>WinRT 概念
 
 <ul>
 <li><a href="https://docs.microsoft.com/windows/uwp/app-resources/uri-schemes">URI 方案</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/audio-video-camera/camera">摄像头</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/composition/inertia-modifiers">使用惯性修饰符创建对齐点</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/composition/spring-animations">弹簧动画</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/concurrency">利用 C++/WinRT 实现的并发和异步操作</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/composition/visual-layer">视觉对象层</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/index">联系人和日历</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-apis">使用 C++/WinRT 创作 API</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/faq">有关C++/WinRT 的常见问题</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started">C++/WinRT 入门</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/news">C++/WinRT 中的新增功能</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/data-access/sqlite-databases">在 UWP 应用中使用 SQLite 数据库</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/app-analysis">应用分析</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal">Windows 设备门户概述</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/pgo-for-uwp">在通用 Windows 平台（UWP）应用上运行按配置优化（PGO）</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/devices/index">UWP 设备的 UI 注意事项</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/downloads/index">设计 UWP 应用的工具包和示例</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat">使用多语言应用工具包</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/custom-text-input">自定义文本输入概述</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/focus-navigation">不带鼠标的焦点导航</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/ink-toolbar">将 InkToolbar 添加到通用 Windows 平台（UWP）应用</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/ink-walkthrough">支持 UWP 应用中的墨迹</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/input-primer">交互入门</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/keyboard-events">键盘事件</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink">存储和检索 Windows Ink 墨迹数据</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/application-view">使用 w 类显示应用的辅助窗口</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/grid-tutorial">使用 Grid 和 System.windows.controls.stackpanel> 创建一个简单的应用。</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/motion/parallax">使用视差可向应用程序添加深度和移动。</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/style/color">UWP 应用中的颜色</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/style/reveal-focus">显示焦点</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/style/rounded-corner">角半径</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/style/sound">声音</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/devices-sensors/ble-beacon">蓝牙广告</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/devices-sensors/pair-devices">设备配对</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/enterprise/index">企业</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/enterprise/wip-dev-guide">Windows 信息保护（WIP）开发人员指南</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/enterprise/wip-hub">Windows 信息保护 (WIP)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/files/index">文件、文件夹和库</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/concept-approval">概念批准</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/directx-porting-faq">DirectX 11 移植常见问题解答</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/e2e">Windows 10 游戏开发指南</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/feature-mapping">将 DirectX 9 功能映射到 DirectX 11 Api</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/monetization-for-games">游戏盈利</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/plan-your-directx-port">规划 DirectX 端口</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/get-set-up">准备工作</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/plan-your-app">生成复杂通用 Windows 平台（UWP）应用</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/sign-up">创建开发人员帐户</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/your-first-app">创建你的第一个应用</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle">Windows 10 UWP 应用生命周期</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app">启动 Windows 地图应用</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/launch-resume/suspend-an-app">处理应用挂起</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps">使用 2D、3D 和街景视图显示地图</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/display-poi">在地图上显示目标点 (POI)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/geocoding">执行地理编码和反向地理编码</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/get-location">获取用户位置</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/index">映射和位置概述</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/ad-mediation-service">Microsoft ad 采集服务</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/banner-ads">横幅广告</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/index">盈利、参与度和 Microsoft Store 服务</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/interstitial-ads">间隙广告</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/native-ads">本机广告</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/networking/httpclient">HttpClient</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/networking/networking-basics">网络基础知识</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/networking/sockets">套接字</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/networking/websockets">WebSocket</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/porting/ios-to-uwp-root">从 iOS 移到 UWP</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-root">从 Windows 运行时从8mb 移动到 UWP "</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/ad-campaign-report">广告市场活动报告</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/add-on-submissions">加载项提交</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/age-ratings">年龄分级</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/analytics">分析应用性能</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/feedback-report">反馈报告</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/getting-paid-apps">获得付款</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/in-app-ads">应用内广告</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/link-to-your-app">链接到应用</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/payout-summary">支出汇总</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/store-policies">Microsoft Store 策略</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/vat-info">增值税信息</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/security/microsoft-passport">Windows Hello</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/security/web-account-manager">Web 帐户管理器</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation">Xbox One 开发人员模式激活</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/index">Xbox one 上的 UWP</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/known-issues">有关 UWP 上的 UWP 开发人员计划的已知问题</a></li>
 </ul>
 
 
@@ -36,54 +111,13 @@ Windows 开发人员文档会定期更新，并提供新的和改进的信息和
 ## <a name="winrt-api-reference"></a>WinRT API 参考
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence">ID3D12Fence （d3d12）</a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence1">ID3D12Fence1 （d3d12）</a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nc-winuser-dlgproc">DLGPROC （winuser.h）</a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setfocus">SetFocus 函数（winuser.h）</a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/ws2spi/nc-ws2spi-lpwspioctl">LPWSPIOCTL</a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/ws2spi/nc-ws2spi-lpwspsend">LPWSPSEND</a></li>
 </ul>
 
-## <a name="win32-conceptual"></a>Win32 概念
-
-<ul>
-<li><a href="https://docs.microsoft.com/windows/desktop/Direct2D/enumerations">Direct2D 枚举</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/ETW/starttrace">StartTrace 函数</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/FileIO/naming-a-file">命名文件、路径和命名空间</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Intl/international-support">适用于 Windows 应用程序的国际化</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/basewindow-sample">BaseWindow 示例</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/direct2d-circle-sample">Direct2D Circle 示例</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/direct2d-clock-sample">Direct2D 时钟示例</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/draw-circle-sample">绘制圆形示例</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/drawing-with-direct2d">用 Direct2D 进行绘制</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/open-dialog-box-sample">"打开" 对话框示例</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/simple-drawing-sample">简单的绘图示例</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/what-is-a-com-interface-">什么是 COM 接口</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Midl/response-files">响应文件</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Power/power-setting-guids">电源设置 Guid</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Power/system-power-states">系统电源状态</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Power/wm-powerbroadcast">WM_POWERBROADCAST 消息</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Sync/interlocked-variable-access">联锁变量访问</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/desktop-app-technologies">桌面应用技术</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/desktop-programming">开始使用</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directx-12-glossary">Direct3D 12 词汇表</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/multi-engine">多适配器系统</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/new-releases">新版本</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/shared-heaps">共享堆</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-1-4-improvements">DXGI 1.4 改进</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-1-6-improvements">DXGI 1.6 改进</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/direct3d-11-video-apis">Direct3D 11 视频 Api</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/direct3d-12-video-apis">Direct3D 12 视频 Api</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/direct3d-12-video-guids">Direct3D 12 视频 Guid</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/direct3d-12-video-overview">Direct3D 12 视频概述</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/float2-structure">float2 结构</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/float3-structure">float3 结构</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/float3x2-structure">float3x2 结构</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/float4-structure">float4 结构</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/float4x4-structure">float4x4 结构</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/plane-structure">平面结构</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/quaternion-structure">四元数结构</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/wer/collecting-user-mode-dumps">收集用户模式转储</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/windows-application-ui-development">桌面应用用户界面</a></li>
-</ul>
-
-## <a name="win32-api-reference"></a>Win32 API 引用
+## <a name="win32"></a>Win32
 
 <ul>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.devices.lights.lamparraykind">Windows. LampArrayKind</a></li>
