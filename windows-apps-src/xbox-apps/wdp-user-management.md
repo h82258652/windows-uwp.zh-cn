@@ -5,14 +5,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
-ms.openlocfilehash: 71c47767cf026b962f682fb30ca93758dbd5e227
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 52f333af73084ed14982b9d09b6770c8294980f7
+ms.sourcegitcommit: 6169660ea437915265165c4631d9702587e4793d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244073"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74902530"
 ---
-#<a name="xbox-live-user-management"></a>Xbox Live 用户管理 #
+# <a name="xbox-live-user-management"></a>Xbox Live 用户管理
 
 ## <a name="request"></a>请求
 
@@ -20,7 +20,7 @@ ms.locfileid: "59244073"
 
 | 方法        | 请求 URI     | 
 | ------------- |-----------------|
-| GET           | /ext/user |
+| 获取           | /ext/user |
 | PUT           | /ext/user |
 
 
@@ -38,12 +38,12 @@ ms.locfileid: "59244073"
 
 * 用户
   * AutoSignIn（可选）：用于禁用或启用自动登录 EmailAddress 或 UserId 指定帐户的布尔值。
-  * 电子邮件地址 (可选-除非赞助用户中的签名，如果未提供用户 Id，必须提供):指定修改/添加/删除用户的电子邮件地址。
-  * 密码 (可选-必须提供用户当前不在控制台上):用于在控制台中添加新用户的密码。
+  * EmailAddress（可选，但如果未提供 UserId，则必须提供，除非登录的是赞助用户）：用于指定要修改/添加/删除的用户的电子邮件。
+  * 密码（可选，但如果用户当前不在主机上，则必须提供）：用于向主机添加新用户的密码。
   * SignedIn（可选）：用于指定是否应登录或注销所提供帐户的布尔值。
-  * 用户 Id (可选-除非赞助用户中的签名，如果未提供电子邮件地址，必须提供):指定修改/添加/删除用户的 UserId。
+  * UserId（可选，但如果未提供 EmailAddress，则必须提供，除非登录的是赞助用户）：用于指定要修改/添加/删除的用户的 UserId。
   * SponsoredUser（可选）：用于指定是否添加赞助用户的布尔值。
-  * （可选） 删除： 布尔值，指定要从控制台中删除此用户
+  * Delete （可选）：指定从控制台中删除此用户的布尔值
 
 ## <a name="response"></a>响应
 
