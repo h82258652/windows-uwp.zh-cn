@@ -1,18 +1,18 @@
 ---
 Description: 了解如何在 UWP 应用中实现向后导航以遍历用户的导航历史记录。
-title: 导航历史记录和向后导航（Windows 应用）
+title: 导航历史记录和向后导航
 template: detail.hbs
 op-migration-status: ready
 ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: de2e70a09f75ed5380a47bed225c0689eb029e89
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 05b435eb6f070634507c143bd028d2cb051c97bc
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713801"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735022"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP 应用的导航历史记录和向后导航
 

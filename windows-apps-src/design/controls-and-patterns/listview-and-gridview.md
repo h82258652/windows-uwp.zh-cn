@@ -3,7 +3,7 @@ Description: 使用 ListView 和 GridView 控件显示和操控数据组，例�
 title: 列表视图和网格视图
 label: List view and grid view
 template: detail.hbs
-ms.date: 05/20/2017
+ms.date: 11/04/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f8532ba0-5510-4686-9fcf-87fd7c643e7b
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a85edf0caa429d95d376af6fbc93bc7e8134340c
-ms.sourcegitcommit: 00cd8a6616e358479a63e56126c62ef02b8da75b
+ms.openlocfilehash: e95a9a1f6a0d34e377f48c5b19497eb638fb186e
+ms.sourcegitcommit: 27cb7c4539bb6417d32883824ccea160bb948c15
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72548455"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74830821"
 ---
 # <a name="list-view-and-grid-view"></a>列表视图和网格视图
 
