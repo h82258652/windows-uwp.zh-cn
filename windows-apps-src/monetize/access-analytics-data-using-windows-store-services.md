@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 71c59049b76219d6f9360748e9ca11ea84542e47
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 3b732da8f92c258647f905e6939dc3cb1b9c9f87
+ms.sourcegitcommit: 3e47987fb4f86a6349ffe8262675f50971c77472
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259319"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74954061"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用应用商店服务访问分析数据
 
@@ -44,7 +44,7 @@ ms.locfileid: "74259319"
 
 3.  返回到**用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
 
-4. 单击**添加新密钥**。 在接下来的屏幕上，记下**密钥**值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[管理 Azure AD 应用程序的密钥](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
+4. 单击**添加新密钥**。 在接下来的屏幕上，记下“密钥”值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[管理 Azure AD 应用程序的密钥](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
 
 <span id="obtain-an-azure-ad-access-token" />
 
@@ -113,15 +113,6 @@ grant_type=client_credentials
 | 常规分析 |  <ul><li>[获取 Xbox 实时分析数据](get-xbox-live-analytics.md)</li><li>[获取 Xbox Live 成就数据](get-xbox-live-achievements-data.md)</li><li>[获取 Xbox Live 并发使用数据](get-xbox-live-concurrent-usage-data.md)</li></ul> |
 | 运行状况分析 |  <ul><li>[获取 Xbox Live 运行状况数据](get-xbox-live-health-data.md)</li></ul> |
 | 社区分析 |  <ul><li>[获取 Xbox Live 游戏中心数据](get-xbox-live-game-hub-data.md)</li><li>[获取 Xbox Live 俱乐部数据](get-xbox-live-club-data.md)</li><li>[获取 Xbox Live 多玩家数据](get-xbox-live-multiplayer-data.md)</li></ul>  |
-
-### <a name="methods-for-xbox-one-games"></a>适用于 Xbox One 游戏的方法
-
-以下附加方法可供包含 Xbox One 游戏（通过 Xbox 开发人员门户（XDP）引入并在 XDP Analytics 仪表板中提供）的开发人员帐户使用。
-
-| 方案       | 方法      |
-|---------------|--------------------|
-| 购置 |  <ul><li>[获取 Xbox One 游戏收购](get-xbox-one-game-acquisitions.md)</li><li>[获取 Xbox One 外接程序购买](get-xbox-one-add-on-acquisitions.md)</li></ul> |
-| 错误 |  <ul><li>[获取 Xbox One 游戏的错误报告数据](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[获取 Xbox one 游戏中错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[获取 Xbox one 游戏中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[下载适用于 Xbox One 游戏中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
 
 ### <a name="methods-for-hardware-and-drivers"></a>适用于硬件和驱动程序的方法
 

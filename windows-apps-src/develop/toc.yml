@@ -553,19 +553,6 @@
                           href: ../monetize/download-the-cab-file-for-an-error-in-your-desktop-application.md
                 - name: Xbox One 游戏和 Xbox Live
                   items:
-                    - name: 获取 Xbox One 游戏购置
-                      href: ../monetize/get-xbox-one-game-acquisitions.md
-                    - name: 获取 Xbox One 的加载项购置
-                      href: ../monetize/get-xbox-one-add-on-acquisitions.md
-                    - name: 获取 Xbox One 游戏的错误报告数据
-                      href: ../monetize/get-error-reporting-data-for-your-xbox-one-game.md
-                      items:
-                        - name: 获取 Xbox One 游戏内错误的详细信息
-                          href: ../monetize/get-details-for-an-error-in-your-xbox-one-game.md
-                        - name: 获取 Xbox One 游戏内错误的堆栈跟踪
-                          href: ../monetize/get-the-stack-trace-for-an-error-in-your-xbox-one-game.md
-                        - name: 下载 Xbox One 游戏内错误的 CAB 文件
-                          href: ../monetize/download-the-cab-file-for-an-error-in-your-xbox-one-game.md
                     - name: 获取 Xbox Live 分析数据
                       href: ../monetize/get-xbox-live-analytics.md
                       items:
