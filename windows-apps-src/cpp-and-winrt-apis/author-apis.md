@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: eba0e6312bc22153d8cb62eb97d32635184f0fdc
-ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
+ms.openlocfilehash: 84c0e9315950541e51bf49f5c0eec370f3188c4d
+ms.sourcegitcommit: 58f6643510a27d6b9cd673da850c191ee23b813e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71317113"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74701490"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 创作 API
 
@@ -239,7 +239,7 @@ Visual Studio 项目和项模板为每个运行时类生成一个单独的 IDL �
 下面是一些示例。
 
 - 可以放宽对参数类型的要求。 例如，如果在 IDL 中，你的方法接受 **SomeClass**，那么可以选择在实现中将其更改为 **IInspectable**。 这会起作用，因为任何 **SomeClass** 均可转发到 **IInspectable**（当然，反之则不然）。
-- 可以按值（而不是按引用）接受可复制的参数。 例如，将 `SomeClass const&` 更改为 `SomeClass const&`。 这在你需要避免将引用捕获到协同例程时是必要的（请参阅[参数传递](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)）。
+- 可以按值（而不是按引用）接受可复制的参数。 例如，将 `SomeClass` 更改为 `SomeClass const&`。 这在你需要避免将引用捕获到协同例程时是必要的（请参阅[参数传递](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)）。
 - 可以放宽对返回值的要求。 例如，可以将 **void** 更改为 [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget)。
 
 编写异步事件处理程序时，最后两个都非常有用。
@@ -276,7 +276,13 @@ namespace MyProject
 }
 ```
 
-若要从 **MyType** 获得你可以使用或作为投影的一部分返回的 **IStringable** 或 **IClosable** 对象，应调用 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 函数模板。 make 将返回实现类型的默认接口  。
+不能直接分配实现类型。
+
+```cppwinrt
+MyType myimpl; // error C2259: 'MyType': cannot instantiate abstract class
+```
+
+但是，可以从 MyType 获得你可以使用或作为投影的一部分返回的 IStringable 或 IClosable 对象，只需调用 [winrt::make](/uwp/cpp-ref-for-winrt/make) 函数模板即可     。 make 将返回实现类型的默认接口  。
 
 ```cppwinrt
 IStringable istringable = winrt::make<MyType>();
@@ -329,36 +335,73 @@ impl.copy_from(winrt::get_self<MyType>(from));
 // com_ptr::copy_from ensures that AddRef is called.
 ```
 
-实现类型本身不会从 winrt::Windows::Foundation::IUnknown 派生，因此它没有 as 函数   。 即便如此，也也可实例化一个，并访问其所有接口的成员。 但如果你这样做，请勿将原始实现类型实例返回给调用方。 而应使用上面显示的方法之一，返回一个投影接口或 com_ptr  。
+实现类型本身不会从 winrt::Windows::Foundation::IUnknown 派生，因此它没有 as 函数   。 即便如此，你也可以访问其所有接口的成员，如上面的 **ImplFromIClosable** 函数所述。 但如果你那样做，请勿将原始实现类型实例返回给调用方。 而应使用已显示的方法之一，返回一个投影接口或 com_ptr  。
+
+如果你有一个实现类型的实例，并且需要将它传递给期望相应的投影类型的函数，那么你可以这样做，如以下代码示例所示。 实现类型上存在一个转换运算符（前提是实现类型是由 `cppwinrt.exe` 工具生成的），可以帮助完成此工作。 可以将实现类型值直接传递给期望得到相应投影类型值的方法。 从实现类型成员函数，可以将 `*this` 传递给期望得到相应投影类型值的方法。
 
 ```cppwinrt
-MyType myimpl;
-myimpl.ToString();
-myimpl.Close();
-IClosable ic1 = myimpl.as<IClosable>(); // error
-```
-
-如果你有一个实现类型的实例，并且需要将它传递给期望相应的投影类型的函数，那么你可以这样做。 实现类型上存在一个转换运算符（前提是实现类型是由 `cppwinrt.exe` 工具生成的），可以帮助完成此工作。 可以将实现类型值直接传递给期望得到相应投影类型值的方法。 从实现类型成员函数，可以将 `*this` 传递给期望得到相应投影类型值的方法。
-
-```cppwinrt
-// MyProject::MyType is the projected type; the implementation type would be MyProject::implementation::MyType.
-
-void MyOtherType::DoWork(MyProject::MyType const&){ ... }
-
-...
-
-void FreeFunction(MyProject::MyOtherType const& ot)
+// MyClass.idl
+import "MyOtherClass.idl";
+namespace MyProject
 {
-    MyType myimpl;
-    ot.DoWork(myimpl);
+    runtimeclass MyClass
+    {
+        MyClass();
+        void MemberFunction(MyOtherClass oc);
+    }
 }
 
+// MyClass.h
+...
+namespace winrt::MyProject::implementation
+{
+    struct MyClass : MyClassT<MyClass>
+    {
+        MyClass() = default;
+        void MemberFunction(MyProject::MyOtherClass const& oc) { oc.DoWork(*this); }
+    };
+}
 ...
 
-void MyType::MemberFunction(MyProject::MyOtherType const& ot)
+// MyOtherClass.idl
+import "MyClass.idl";
+namespace MyProject
 {
-    ot.DoWork(*this);
+    runtimeclass MyOtherClass
+    {
+        MyOtherClass();
+        void DoWork(MyClass c);
+    }
 }
+
+// MyOtherClass.h
+...
+namespace winrt::MyProject::implementation
+{
+    struct MyOtherClass : MyOtherClassT<MyOtherClass>
+    {
+        MyOtherClass() = default;
+        void DoWork(MyProject::MyClass const& c){ /* ... */ }
+    };
+}
+...
+
+//main.cpp
+#include "pch.h"
+#include <winrt/base.h>
+#include "MyClass.h"
+#include "MyOtherClass.h"
+using namespace winrt;
+
+// MyProject::MyClass is the projected type; the implementation type would be MyProject::implementation::MyClass.
+
+void FreeFunction(MyProject::MyOtherClass const& oc)
+{
+    auto defaultInterface = winrt::make<MyProject::implementation::MyClass>();
+    MyProject::implementation::MyClass* myimpl = winrt::get_self<MyProject::implementation::MyClass>(defaultInterface);
+    oc.DoWork(*myimpl);
+}
+...
 ```
 
 ## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>从一个具有非默认构造函数的类型派生

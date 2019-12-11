@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, windows 上的 python, 使用 wsl 的 python web, 使用适用于 linux 的 windows 子系统的 python web 应用, windows 上的 python web 开发, windows 上的 flask 应用, windows 上的 django 应用, python web, windows 上的 flask web 开发, windows 上的 django web 开发, 使用 python 的 windows web 开发, vs code python web 开发, 远程 wsl 扩展, ubuntu, wsl, venv, pip, microsoft python 扩展, 在 windows 上运行 python, 在 windows 上使用 python, 在 windows 上使用 python 构建
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 285e5149778f2d5cb63554a5af63bb9ae23809dc
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: d883007168e0baf35f8a0ab0827505b683cfd291
+ms.sourcegitcommit: f5bb4e35d1373b982259e61547b3b1765da0e78c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72314941"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881295"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>开始在 Windows 上将 Python 用于 Web 开发
 
@@ -46,6 +46,9 @@ ms.locfileid: "72314941"
 3. 首次运行发行版本时，系统会要求创建帐户名称和密码。 在此之后，默认情况下你会以此用户身份自动登录。 可以选择任意用户名和密码。 它们对 Windows 用户名没有任何影响。
 
 可以通过输入以下内容来检查当前使用的 Linux 发行版本：`lsb_release -d`。 若要更新 Ubuntu 发行版本，请使用：`sudo apt update && sudo apt upgrade`。 建议定期更新以确保具有最新包。 Windows 不会自动处理此更新。 有关 Microsoft Store 中提供的其他 Linux 发行版本链接、替代安装方法或故障排除，请参阅[适用于 Linux 的 Windows 子系统安装指南 (Windows 10)](https://docs.microsoft.com/windows/wsl/install-win10)。
+
+> [!TIP]
+> 可以考虑试用新的 [Windows 终端](https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md)，前提是你打算使用多个命令行（Ubuntu、PowerShell、Windows 命令提示符等），或者你想要[自定义你的终端](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md)，包括文本、背景色、键绑定等。
 
 ## <a name="set-up-visual-studio-code"></a>设置 Visual Studio Code
 

@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 创作, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: 55d512faccfa318156fb0dc28d3f804b53f0fe3d
-ms.sourcegitcommit: 102fdfdf32ba12a8911018d234d71d67ebef61ce
+ms.openlocfilehash: 6fb9b98ec362b59ad2593bbce24654f1dcfc7638
+ms.sourcegitcommit: 27cb7c4539bb6417d32883824ccea160bb948c15
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74551665"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74830788"
 ---
 # <a name="author-events-in-cwinrt"></a>在 C++/WinRT 中创作事件
 
@@ -253,8 +253,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 ```
 
 ## <a name="parameterized-delegates-simple-signals-and-callbacks-within-a-project"></a>项目中的参数化委托、简单信号和回调
-
-如果事件仅在 C++/WinRT 项目内部（而不跨二进制文件）使用，则仍使用 [WinRT::event](/uwp/cpp-ref-for-winrt/event) 结构模板，但使用 C++/WinRT 的非 Windows 运行时 [winrt::delegate&lt;...   T&gt;](/uwp/cpp-ref-for-winrt/delegate) 结构模板将其参数化，这是一个有效的引用计数委托。 它支持任意数量的参数，且参数不限于 Windows 运行时类型。
+如果所需事件是 Visual Studio 项目内部的（未跨二进制文件），而在内部这些事件不限于 Windows 运行时类型，则仍可使用 [**winrt::event**](/uwp/cpp-ref-for-winrt/event)\<Delegate\> 类模板。 请直接使用 [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) 而不是实际的 Windows 运行时委托类型，因为 **winrt::delegate** 也支持非 Windows 运行时参数。
 
 以下示例先显示不采用任何参数的委托签名（本质上即简单信号），然后显示采用字符串的委托签名。
 

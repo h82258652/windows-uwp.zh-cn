@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, 了解 python, windows 上的 python（初学者）, 使用 microsoft store 安装 python, python 与 vs code, windows 上的 pygame
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: d4c1cb6d65eb38a93e8bf9f0c34afd9e28f20129
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 688ae004dad8653e70d86b3b91652b6898c1e9d3
+ms.sourcegitcommit: f5bb4e35d1373b982259e61547b3b1765da0e78c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72314921"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881285"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>开始在 Windows 上使用 Python（初学者）
 
@@ -21,7 +21,7 @@ ms.locfileid: "72314921"
 
 ## <a name="set-up-your-development-environment"></a>设置开发环境
 
-对于不熟悉 Python 的初学者，建议[从 Microsoft Store 安装 Python](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab)。 通过 Microsoft Store 安装会使用基本 Python3 解释器，但会为当前用户设置 PATH 设置（避免需要管理员访问权限），以及提供自动更新。 如果处于教育环境中或所属组织限制计算机上的权限或管理访问权限，则这会特别有用。
+对于不熟悉 Python 的初学者，建议[从 Microsoft Store 安装 Python](https://www.microsoft.com/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab)。 通过 Microsoft Store 安装会使用基本 Python3 解释器，但会为当前用户设置 PATH 设置（避免需要管理员访问权限），以及提供自动更新。 如果处于教育环境中或所属组织限制计算机上的权限或管理访问权限，则这会特别有用。
 
 如果在 Windows 上将 Python 用于 Web 开发  ，则建议为开发环境设置其他设置。 建议通过适用于 Linux 的 Windows 子系统安装和使用 Python，而不是直接在 Windows 上安装。 有关帮助，请参阅：[开始在 Windows 上将 Python 用于 Web 开发](./web-frameworks.md)。 如果对在操作系统上自动执行常见任务感兴趣，请参阅我们的指南：[开始在 Windows 上将 Python 用于脚本和自动化](./scripting.md)。 对于某些高级方案（如需要访问/修改 Python 的已安装文件、创建二进制文件的副本或直接使用 Python DLL），可能需要考虑直接从 [python.org](https://www.python.org/downloads/) 下载特定 Python 版本或考虑安装[替代实现](https://www.python.org/download/alternatives)，如 Anaconda、Jython、PyPy、WinPython、IronPython 等。建议仅当你是更高级的 Python 程序员并且有特定原因需要选择替代实现时才使用此方法。
 
@@ -45,15 +45,17 @@ VS Code 还包含一个[内置终端](https://code.visualstudio.com/docs/editor/
 
 1. 若要安装 VS Code，请下载适用于 Windows 的 VS Code：[https://code.visualstudio.com](https://code.visualstudio.com)。
 
-2. Python 是一种解释型语言，若要运行 Python 代码，必须向 VS Code 告知要使用的解释器。 建议坚持使用 Python 3.7，除非有特定原因需要选择其他解释器。 选择 Python 3 解释器，具体方法是打开“命令面板”  (Ctrl+Shift+P)，开始输入命令“Python:  选择解释器”进行搜索，然后选择命令。 在可用时，还可以使用底部状态栏上的“选择 Python 环境”  选项（它可能已显示所选解释器）。 该命令提供 VS Code 可以自动找到的可用解释器列表（包括虚拟环境）。 如果看不到所需解释器，请参阅[配置 Python 环境](https://code.visualstudio.com/docs/python/environments)。
+2. 安装 VS Code 以后，还需安装 Python 扩展。 若要安装 Python 扩展，可以选择 [VS Code 市场链接](https://marketplace.visualstudio.com/items?itemName=ms-python.python)，也可以打开 VS Code 并在扩展菜单中搜索 **Python** (Ctrl+Shift+X)。
+
+3. Python 是一种解释型语言，若要运行 Python 代码，必须向 VS Code 告知要使用的解释器。 建议坚持使用 Python 3.7，除非有特定原因需要选择其他解释器。 安装 Python 扩展以后，请选择 Python 3 解释器，具体方法是：打开“命令面板”  (Ctrl+Shift+P)，开始输入命令“Python:  选择解释器”进行搜索，然后选择命令。 在可用时，还可以使用底部状态栏上的“选择 Python 环境”  选项（它可能已显示所选解释器）。 该命令提供 VS Code 可以自动找到的可用解释器列表（包括虚拟环境）。 如果看不到所需解释器，请参阅[配置 Python 环境](https://code.visualstudio.com/docs/python/environments)。
 
     ![在 VS Code 中选择 Python 解释器](../images/interpreterselection.gif)
 
-3. 若要在 VS Code 中打开终端，请选择“视图”   > “终端”  ，或者使用快捷方式 Ctrl+'  （使用反撇号字符）。 默认终端是 PowerShell。
+4. 若要在 VS Code 中打开终端，请选择“视图”   > “终端”  ，或者使用快捷方式 Ctrl+'  （使用反撇号字符）。 默认终端是 PowerShell。
 
-4. 在 VS Code 终端中，只需通过输入以下命令即可打开 Python：`python`
+5. 在 VS Code 终端中，只需通过输入以下命令即可打开 Python：`python`
 
-5. 通过输入以下内容来尝试使用 Python 解释器：`print("Hello World")`。 Python 会返回语句“Hello World”。
+6. 通过输入以下内容来尝试使用 Python 解释器：`print("Hello World")`。 Python 会返回语句“Hello World”。
 
     ![VS Code 中的 Python 命令行](../images/python-in-vscode.png)
 
@@ -188,7 +190,7 @@ Pygame 是一种用于编写游戏的常用 Python 包 - 鼓励学生学习编�
 
 ### <a name="online-courses-for-learning-python"></a>学习 Python 的在线课程
 
-- [Microsoft Learn 上的 Python 简介](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/)：尝试使用交互式 Microsoft Learn 平台，并获得完成该模块的经验积分，该模块涵盖了有关如何编写基本 Python 代码、声明变量以及使用控制台输入和输出的基础知识。 对于尚未设置 Python 开发环境的人员来说，交互式沙箱环境是一个不错的起点。
+- [Microsoft Learn 上的 Python 简介](https://docs.microsoft.com/learn/modules/intro-to-python/)：尝试使用交互式 Microsoft Learn 平台，并获得完成该模块的经验积分，该模块涵盖了有关如何编写基本 Python 代码、声明变量以及使用控制台输入和输出的基础知识。 对于尚未设置 Python 开发环境的人员来说，交互式沙箱环境是一个不错的起点。
 
 - [Pluralsight 上的 Python：8 个课程，29 小时](https://app.pluralsight.com/paths/skills/python)：Pluralsight 上的 Python 学习路径提供了涵盖与 Python 相关的各种主题的在线课程，包括用于衡量技能和查找知识缺口的工具。
 

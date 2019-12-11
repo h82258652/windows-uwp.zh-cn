@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: f3a2575b17cc4228d7c4db273845478aecf65f29
-ms.sourcegitcommit: f0936ce8e88d78b1af99998794a8765094f6a487
+ms.openlocfilehash: f46d6ba99d4342e1e4fe7a9926082a5981fd690a
+ms.sourcegitcommit: 11c5cb559c949b6fe645499c2265434885882d8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72915104"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74666912"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>适用于 Windows 应用创建者的 Fluent Design System
 
@@ -112,7 +112,7 @@ UWP 应用可在各种支持 Windows 的设备上运行。 了解哪些设备可
     :::column span="2":::
 **针对正确的输入进行优化**
 
-UWP 应用将自动支持常见的鼠标、键盘、手写笔和触控交互 &mdash; 不必执行任何额外的操作。 但是，你可以利用对特定输入（如手写笔和 Surface Dial）的优化支持增强应用。
+UWP 应用将自动支持常见的鼠标、键盘、手写笔和触控交互。 不必执行任何额外的操作。 但是，你可以根据需要利用对特定输入（如手写笔和 Surface Dial）的优化支持来增强应用。
 
 [了解输入和交互](/windows/uwp/design/input/input-primer)
 :::row-end:::
