@@ -4,7 +4,7 @@ title: 进度控件指南
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 11/29/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -12,20 +12,42 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 67315518238bda1359862f36acd398e25e8481e3
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 3e5ff5d0e9172432110d60a007228e59e48785b9
+ms.sourcegitcommit: 27cb7c4539bb6417d32883824ccea160bb948c15
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258157"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74830810"
 ---
 # <a name="progress-controls"></a>进度控件
 
- 
-
 进度控件将为用户提供关于正在处理运行时间较长的操作的反馈。 这意味着，在进度指示器可见，并且还可以根据所使用的指示器指示等待时长时，用户无法与该应用交互。
 
-> **重要的 API**：[ProgressBar 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate)、[ProgressRing 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)、[IsActive 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
+| **平台 API** | **Windows UI 库** |
+| - | - |
+| [ProgressBar 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate)、[ProgressRing 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)、[IsActive 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive) | [ProgressBar 类](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate 属性](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.progressbar.isindeterminate) |
+
+| **获取 Windows UI 库** |
+| - |
+| 此控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，包含新控件和 UWP 应用的 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> [!NOTE]
+> 有两个版本的 ProgressBar 控件：一个在平台中，以 Windows.UI.Xaml 命名空间为代表；另一个在 Windows UI 库中，以 Microsoft.UI.Xaml 命名空间为代表。 虽然用于 ProgressBar 的 API 相同，但这两个版本的控件外观不同。 本文档将显示较新版 Windows UI 库的映像。
+在本文档中，我们将使用 XAML 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们已将此添加到我们的[页](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)元素：
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+```
+
+在后面的代码中，我们还将使用 C# 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们在文件顶部添加了此 **using** 语句：
+
+```csharp
+using muxc = Microsoft.UI.Xaml.Controls;
+```
+
+```vb
+Imports muxc = Microsoft.UI.Xaml.Controls
+```
 
 ## <a name="types-of-progress"></a>进度类型
 
@@ -37,7 +59,7 @@ ms.locfileid: "74258157"
 
 另外，进度控件为只读，不具有交互性。 这意味着用户无法直接调用或使用这些控件。
 
-![ProgressBar 状态](images/ProgressBar_TwoStates.png)
+![ProgressBar 状态](images/progress-bar-two-states.png)
 
 *自顶到底 - 不确定 ProgressBar 和确定 ProgressBar*
 
@@ -119,13 +141,13 @@ ms.locfileid: "74258157"
 
 **ProgressBar - 确定**
 
-![ProgressBar 确定示例](images/PB_DeterminateExample.png)
+![ProgressBar 确定示例](images/progress-bar-determinate-example.png)
 
 第一个示例是确定 ProgressBar。 如果已知操作持续时间，则最好使用确定 ProgressBar 显示何时安装、下载、设置等。
 
 **ProgressBar - 不确定**
 
-![ProgressBar 不确定示例](images/PB_IndeterminateExample.png)
+![ProgressBar 不确定示例](images/progress-bar-indeterminate-example.png)
 
 如果不知道操作持续时间，请使用不确定 ProgressBar。 在填充虚拟化列表和在不确定和确定 ProgressBar 之间创建流畅的视觉过渡时，也可以使用不确定 ProgressBar。
 
@@ -168,7 +190,7 @@ progressRing.IsActive = true;
 
 ```XAML
 <ProgressRing IsActive="True" Height="100" Width="100" Foreground="Blue"/>
-<ProgressBar Width="100" Foreground="Green"/>
+<muxc:ProgressBar Width="100" Foreground="Green"/>
 ```
 
 更改 ProgressRing 的前景色将更改点颜色。 进度条的前景属性可以更改进度条的填充颜色；若要更改进度条的未填充部分，只需重写背景属性。
