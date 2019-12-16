@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 92088906078a3a705e5fae052a50fc914561c77c
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: d540474140e4734320b06d852933b30fa20b61be
+ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393460"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74958967"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>从 C++/CX 移动到 C++/WinRT
 
@@ -468,24 +468,23 @@ C++/CX 将 Windows 运行时字符串表示为引用类型，而 C++/WinRT 则�
 
 另外，C++/CX 允许取消引用 null **String^** ，在这种情况下，其行为类似于字符串 `""`。
 
-| 操作 | C++/CX | C++/WinRT|
+| 行为 | C++/CX | C++/WinRT|
 |-|-|-|
+| 声明 | `Object^ o;`<br>`String^ s;` | `IInspectable o;`<br>`hstring s;` |
 | 字符串类型类别 | 引用类型 | 值类型 |
 | null **HSTRING** 投影方式 | `(String^)nullptr` | `hstring{}` |
 | null 和 `""` 是否相同？ | 是 | 是 |
-| null 的有效性 | `s = nullptr;`<br>`s->Length == 0`（有效） | `s = nullptr;`<br>`s.size() == 0`（有效） |
-| 将字符串装箱 | `o = s;` | `o = box_value(s);` |
-| 如果 `s` 为 `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
-| 如果 `s` 为 `""` | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
-| 将字符串装箱，保留 null | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
-| 将字符串强制装箱 | `o = PropertyValue::CreateString(s);` | `o = box_value(s);` |
-| 取消已知字符串的装箱 | `s = (String^)o;` | `s = unbox_value<hstring>(o);` |
-| 如果 `o` 为 null | `s == nullptr; // equivalent to ""` | 崩溃 |
-| 如果 `o` 不是装箱的字符串 | `Platform::InvalidCastException` | 崩溃 |
-| 取消字符串的装箱，在为 null 的情况下使用回退；任何其他情况则崩溃 | `s = o ? (String^)o : fallback;` | `s = o ? unbox_value<hstring>(o) : fallback;` |
-| 尽可能取消字符串的装箱；在任何其他情况下使用回退 | `auto box = dynamic_cast<IBox<String^>^>(o);`<br>`s = box ? box->Value : fallback;` | `s = unbox_value_or<hstring>(o, fallback);` |
+| null 的有效性 | `s = nullptr;`<br>`s->Length == 0`（有效） | `s = hstring{};`<br>`s.size() == 0`（有效） |
+| 如果将 null 字符串分配给对象 | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
+| 如果将 `""` 分配给对象 | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr` |
 
-在上面的两个包含回退的取消装箱示例中，  null 字符串可能是强制装箱的，这种情况下不会使用回退。 生成的值将是空字符串，因为箱中为空。
+基本装箱和取消装箱。
+
+| 操作 | C++/CX | C++/WinRT|
+|-|-|-|
+| 将字符串装箱 | `o = s;`<br>空字符串变为 nullptr。 | `o = box_value(s);`<br>空字符串变为非 null 对象。 |
+| 取消已知字符串的装箱 | `s = (String^)o;`<br>Null 对象变为空字符串。<br>如果不是字符串，则引发 InvalidCastException。 | `s = unbox_value<hstring>(o);`<br>Null 对象崩溃。<br>如果不是字符串，则崩溃。 |
+| 将可能的字符串取消装箱 | `s = dynamic_cast<String^>(o);`<br>Null 对象或非字符串变为空字符串。 | `s = unbox_value_or<hstring>(o, fallback);`<br>Null 或非字符串变为 fallback。<br>空字符串被保留。 |
 
 ## <a name="concurrency-and-asynchronous-operations"></a>并发和异步操作
 

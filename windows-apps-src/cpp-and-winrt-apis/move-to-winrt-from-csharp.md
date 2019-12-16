@@ -5,12 +5,12 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: a63d38db613ebe6425a05ed20563405242ffd441
-ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
+ms.openlocfilehash: 17900829388bfe0b3cc325e27d0807b139ccaa27
+ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68328856"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74958957"
 ---
 # <a name="move-to-cwinrt-from-c"></a>从 C# 移动到 C++/WinRT
 
@@ -264,7 +264,7 @@ C# 自动将标量装箱到对象中。 C++/WinRT 要求你显式调用 [**winrt
 | 如果 o 为 null | `System.NullReferenceException` | 崩溃 |
 | 如果 o 不是装箱的整数 | `System.InvalidCastException` | 崩溃 |
 | 取消整数的装箱，在为 null 的情况下使用回退；任何其他情况则崩溃 | `i = o != null ? (int)o : fallback;` | `i = o ? unbox_value<int>(o) : fallback;` |
-| 尽可能取消整数的装箱；在任何其他情况下使用回退 | `var box = o as int?;`<br>`i = box != null ? box.Value : fallback;` | `i = unbox_value_or<int>(o, fallback);` |
+| 尽可能取消整数的装箱；在任何其他情况下使用回退 | `i = as int? ?? fallback;` | `i = unbox_value_or<int>(o, fallback);` |
 
 ### <a name="boxing-and-unboxing-a-string"></a>将字符串装箱和取消装箱
 
@@ -274,24 +274,23 @@ ABI 类型 [**HSTRING**](/windows/win32/winrt/hstring) 是一个指向引用计�
 
 C# 将 Windows 运行时字符串表示为引用类型，而 C++/WinRT 则将字符串投影为值类型。 这意味着装箱的 null 字符串可能有不同的表示形式，具体取决于你所采用的方法。
 
+| 行为 | C# | C++/WinRT|
+|-|-|-|
+| 声明 | `object o;`<br>`string s;` | `IInspectable o;`<br>`hstring s;` |
+| 字符串类型类别 | 引用类型 | 值类型 |
+| null **HSTRING** 投影方式 | `""` | `hstring{}` |
+| null 和 `""` 是否相同？ | 否 | 是 |
+| null 的有效性 | `s = null;`<br>`s.Length` 引发 NullReferenceException | `s = hstring{};`<br>`s.size() == 0`（有效） |
+| 如果将 null 字符串分配给对象 | `o = (string)null;`<br>`o == null` | `o = box_value(hstring{});`<br>`o != nullptr` |
+| 如果将 `""` 分配给对象 | `o = "";`<br>`o != null` | `o = box_value(hstring{L""});`<br>`o != nullptr` |
+
+基本装箱和取消装箱。
+
 | 操作 | C# | C++/WinRT|
 |-|-|-|
-| 字符串类型类别 | 引用类型 | 值类型 |
-| null **HSTRING** 投影方式 | `""` | `hstring{ nullptr }` |
-| null 和 `""` 是否相同？ | 否 | 是 |
-| null 的有效性 | `s = null;`<br>`s.Length` 引发 **NullReferenceException** | `s = nullptr;`<br>`s.size() == 0`（有效） |
-| 将字符串装箱 | `o = s;` | `o = box_value(s);` |
-| 如果 `s` 为 `null` | `o = (string)null;`<br>`o == null` | `o = box_value(hstring{nullptr});`<br>`o != nullptr` |
-| 如果 `s` 为 `""` | `o = "";`<br>`o != null;` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
-| 将字符串装箱，保留 null | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
-| 将字符串强制装箱 | `o = PropertyValue.CreateString(s);` | `o = box_value(s);` |
-| 取消已知字符串的装箱 | `s = (string)o;` | `s = unbox_value<hstring>(o);` |
-| 如果 `o` 为 null | `s == null; // not equivalent to ""` | 崩溃 |
-| 如果 `o` 不是装箱的字符串 | `System.InvalidCastException` | 崩溃 |
-| 取消字符串的装箱，在为 null 的情况下使用回退；任何其他情况则崩溃 | `s = o != null ? (string)o : fallback;` | `s = o ? unbox_value<hstring>(o) : fallback;` |
-| 尽可能取消字符串的装箱；在任何其他情况下使用回退 | `var s = o as string ?? fallback;` | `s = unbox_value_or<hstring>(o, fallback);` |
-
-在上面的两个包含回退的取消装箱示例中，  null 字符串可能是强制装箱的，这种情况下不会使用回退。 生成的值将是空字符串，因为箱中为空。
+| 将字符串装箱 | `o = s;`<br>空字符串变为非 null 对象。 | `o = box_value(s);`<br>空字符串变为非 null 对象。 |
+| 取消已知字符串的装箱 | `s = (string)o;`<br>Null 对象变为 null 字符串。<br>如果不是字符串，则引发 InvalidCastException。 | `s = unbox_value<hstring>(o);`<br>Null 对象崩溃。<br>如果不是字符串，则崩溃。 |
+| 将可能的字符串取消装箱 | `s = o as string;`<br>Null 对象或非字符串变为 null 字符串。<br><br>或者<br><br>`s = o as string ?? fallback;`<br>Null 或非字符串变为 fallback。<br>空字符串被保留。 | `s = unbox_value_or<hstring>(o, fallback);`<br>Null 或非字符串变为 fallback。<br>空字符串被保留。 |
 
 ## <a name="derived-classes"></a>派生类
 
