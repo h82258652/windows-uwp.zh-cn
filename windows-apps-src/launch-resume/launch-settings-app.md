@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7dd8604d9c9f32c374161ec1478221ebee6972c6
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 6387cc75047371666ac55b9fb70ae73d3e4c4d64
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282501"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302661"
 ---
 # <a name="launch-the-windows-settings-app"></a>启动 Windows 设置应用
 
@@ -22,7 +22,7 @@ ms.locfileid: "72282501"
 -   [**PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
 -   [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
-了解如何启动 Windows"设置"应用。 本主题描述了**ms 设置：** URI 方案。 使用此 URI 方案将 Windows 设置应用启动到特定设置页面。
+了解如何启动 Windows"设置"应用。 本主题介绍 **ms-settings:** URI 方案。 使用此 URI 方案将 Windows 设置应用启动到特定设置页面。
 
 启动为设置应用是编写隐私感知应用的重要组成部分。 如果你的应用无法访问敏感资源，我们建议为用户提供到该资源的隐私设置的方便链接。 有关详细信息，请参阅[隐私感知应用指南](https://docs.microsoft.com/windows/uwp/security/index)。
 
@@ -44,7 +44,7 @@ ms.locfileid: "72282501"
 </TextBlock>
 ```
 
-此外，你的应用可以调用 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法来启动**设置**应用。 此示例介绍了如何使用 `ms-settings:privacy-webcam` URI 启动到相机的隐私设置页面。
+此外，你的应用可以调用 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法来启动**设置**应用。 此示例演示如何使用 `ms-settings:privacy-webcam` URI 启动到相机的隐私设置页面。
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
@@ -56,7 +56,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 有关启动 URI 的详细信息，请参阅[启动 URI 的默认应用](launch-default-app.md)。
 
-## <a name="ms-settings-uri-scheme-reference"></a>ms-settings:URI 方案引用
+## <a name="ms-settings-uri-scheme-reference"></a>ms-settings: URI 方案引用
 
 使用以下 URI 以打开“设置”应用的各个页面。
 
@@ -72,7 +72,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 * ms-settings:storagecleanup
 * ms-settings:update-security -->
 
-## <a name="accounts"></a>帐户
+## <a name="accounts"></a>“帐户”
 
 |设置页面| URI |
 |-------------|-----|
@@ -81,11 +81,11 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 家人和其他人 | ms-settings:otherusers |
 | 设置展台 | ms-设置： assignedaccess |
 | 登录选项 | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
-| 同步你的设置 | ms-settings:sync |
+| “同步你的设置” | ms-settings:sync |
 | Windows Hello 设置 | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
 | 你的信息 | ms-settings:yourinfo |
 
-## <a name="apps"></a>应用
+## <a name="apps"></a>“应用”
 
 |设置页面| URI |
 |-------------|-----|
@@ -111,12 +111,12 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 > [!NOTE] 
 > 如果计算机设置为当前未提供 Cortana 或 Cortana 已禁用的区域，则桌面上的此设置部分将称为 "搜索"。 在这种情况下，将不会列出 cortana 特定页面（在我的设备上 Cortana，并与 Cortana 通信）。 
 
-## <a name="devices"></a>设备
+## <a name="devices"></a>“设备”
 
 |设置页面| URI |
 |-------------|-----|
 | AutoPlay | ms-settings:autoplay |
-| 蓝牙 | ms-settings:bluetooth |
+| “蓝牙” | ms-settings:bluetooth |
 | 已连接的设备 | ms-settings:connecteddevices |
 | 默认相机 | ms-设置：照相机（**在 Windows 10 中已弃用，版本1809及更高版本**） |
 | 鼠标和触摸板 | ms-settings:mousetouchpad（仅具有触摸板的设备可使用触摸板设置） |
@@ -124,8 +124,8 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 打印机和扫描仪 | ms-settings:printers |
 | 触摸板 | ms-settings:devices-touchpad（仅在存在触摸板硬件时可用） |
 | 键入 | ms-settings:typing |
-| USB | ms-settings:usb |
-| Wheel | ms-settings:wheel（仅在“拨号”配对成功后可用） |
+| “USB” | ms-settings:usb |
+| 滚轮 | ms-settings:wheel（仅在“拨号”配对成功后可用） |
 | 你的手机 | ms-settings:mobile-devices  |
 
 ## <a name="ease-of-access"></a>轻松使用
@@ -135,8 +135,8 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Audio | ms-settings:easeofaccess-audio |
 | 隐藏式字幕 | ms-settings:easeofaccess-closedcaptioning |
 | 颜色筛选器 | ms-settings： easeofaccess-colorfilter |
-| 光标 & 指针大小 | ms-settings： easeofaccess-cursorandpointersize |
-| 显示 | ms-settings:easeofaccess-display |
+| 光标和指针大小 | ms-settings： easeofaccess-cursorandpointersize |
+| “显示” | ms-settings:easeofaccess-display |
 | 目视控制 | ms-settings:easeofaccess-eyecontrol |
 | 字体 | ms-settings:fonts |
 | 高对比度 | ms-settings:easeofaccess-highcontrast |
@@ -145,7 +145,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 鼠标 | ms-settings:easeofaccess-mouse |
 | 讲述人 | ms-settings:easeofaccess-narrator |
 | 其他选项 | ms-settings： easeofaccess-otheroptions （**在 Windows 10 版本1809及更高版本中已弃用**） |
-| 语音 | ms-settings:easeofaccess-speechrecognition |
+| “语音” | ms-settings:easeofaccess-speechrecognition |
 
 ## <a name="extras"></a>附加
 
@@ -159,7 +159,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 |-------------|-----|
 | 广播 | ms-settings:gaming-broadcasting |
 | 游戏栏 | ms-settings:gaming-gamebar |
-| 游戏 DVR | ms-settings:gaming-gamedvr |
+| “游戏 DVR” | ms-settings:gaming-gamedvr |
 | 游戏模式 | ms-settings:gaming-gamemode |
 | 全屏玩游戏 | ms-settings:quietmomentsgame |
 | TruePlay | ms-设置：游戏-trueplay （**在 Windows 10 版本1809及更高版本中已弃用**） |
@@ -187,9 +187,9 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |设置页面| URI |
 |-------------|-----|
-| 飞行模式 | ms-settings:network-airplanemode<br/>ms-settings:proximity |
+| “飞行模式” | ms-settings:network-airplanemode<br/>ms-settings:proximity |
 | 手机网络和 SIM 卡 | ms-settings:network-cellular |
-| 数据使用情况 | ms-settings:datausage |
+| 数据使用量 | ms-settings:datausage |
 | 拨号 | ms-settings:network-dialup |
 | DirectAccess | ms-settings:network-directaccess（仅在启用 DirectAccess 后可用） |
 | Ethernet | ms-settings:network-ethernet |
@@ -198,11 +198,11 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | NFC | ms-settings:nfctransactions |
 | 代理 | ms-settings:network-proxy |
 | 状态 | ms-settings:network-status<br/>ms-设置：网络 |
-| VPN | ms-settings:network-vpn |
+| “VPN” | ms-settings:network-vpn |
 | WLAN | ms-settings:network-wifi（仅当设备具有 WLAN 适配器时可用） |
 | WLAN 呼叫 | ms-settings:network-wificalling（仅在启用 WLAN 呼叫后可用） |
 
-## <a name="personalization"></a>个性化
+## <a name="personalization"></a>“个性化”
 
 |设置页面| URI |
 |-------------|-----|
@@ -213,9 +213,9 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 锁屏界面 | ms-settings:lockscreen |
 | 导航栏 | ms 设置：个性化设置-导航栏（**在 Windows 10 中已弃用，版本1809及更高版本**） |
 | 个性化（类别） | ms-settings:personalization |
-| Start | ms-settings:personalization-start |
+| “开始”菜单 | ms-settings:personalization-start |
 | 任务栏 | ms-settings:taskbar |
-| 主题 | ms-settings:themes |
+| “主题” | ms-settings:themes |
 
 ## <a name="phone"></a>Phone
 
@@ -223,7 +223,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 |-------------|-----|
 | 你的手机 | ms-settings:mobile-devices<br/>ms-设置：移动设备-addphone<br/>ms 设置：移动设备-addphone-direct （打开**手机**应用） |
 
-## <a name="privacy"></a>隐私
+## <a name="privacy"></a>“隐私”
 
 |设置页面| URI |
 |-------------|-----|
@@ -231,23 +231,23 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 帐户信息 | ms-settings:privacy-accountinfo |
 | 活动历史记录 | ms-settings:privacy-activityhistory |
 | 广告 ID | ms-settings： advertisingid （**在 Windows 10 版本1809及更高版本中已弃用**） |
-| “应用诊断” | ms-settings:privacy-appdiagnostics |
+| 应用诊断 | ms-settings:privacy-appdiagnostics |
 | 自动文件下载 | ms-settings:privacy-automaticfiledownloads |
 | 后台应用 | ms-settings:privacy-backgroundapps |
 | Calendar | ms-settings:privacy-calendar |
 | 呼叫历史记录 | ms-settings:privacy-callhistory |
-| 照相机 | ms-settings:privacy-webcam |
+| 相机 | ms-settings:privacy-webcam |
 | 联系人 | ms-settings:privacy-contacts |
 | 文档 | ms-settings:privacy-documents |
-| Email | ms-settings:privacy-email |
-| “目视跟踪器” | ms-settings:privacy-eyetracker（需要眼球跟踪器硬件） |
+| “电子邮件” | ms-settings:privacy-email |
+| 眼球跟踪器 | ms-settings:privacy-eyetracker（需要眼球跟踪器硬件） |
 | 反馈和诊断 | ms-settings:privacy-feedback |
 | 文件系统 | ms-settings:privacy-broadfilesystemaccess |
-| 常规 | ms-settings:privacy-general |
-| Location | ms-settings:privacy-location |
+| “常规” | ms-settings:privacy-general |
+| 位置 | ms-settings:privacy-location |
 | 消息 | ms-settings:privacy-messaging |
 | 麦克风 | ms-settings:privacy-microphone |
-| 移动 | ms-settings:privacy-motion |
+| 动态效果 | ms-settings:privacy-motion |
 | 通知 | ms-settings:privacy-notifications |
 | 其他设备 | ms-settings:privacy-customdevices |
 | 图片 | ms-settings:privacy-pictures |
@@ -262,13 +262,13 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |设置页面| URI |
 |-------------|-----|
-| 帐户 | ms-settings:surfacehub-accounts |
+| “帐户” | ms-settings:surfacehub-accounts |
 | 会话清理 | ms-settings:surfacehub-sessioncleanup |
 | 团队会议 | ms-settings:surfacehub-calling |
 | 团队设备管理 | ms-settings:surfacehub-devicemanagenent |
 | 欢迎屏幕 | ms-settings:surfacehub-welcome |
 
-## <a name="system"></a>系统
+## <a name="system"></a>“系统”
 
 |设置页面| URI |
 |-------------|-----|
@@ -279,9 +279,9 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | “节电模式”设置 | ms-settings:batterysaver-settings（仅在具有电池的设备[如平板电脑]上可用） |
 | 电池使用 | ms-settings:batterysaver-usagedetails（仅在具有电池的设备[如平板电脑]上可用） |
 | 剪贴板 | ms-设置：剪贴板 |
-| 显示 | ms-settings:display |
+| “显示” | ms-settings:display |
 | 默认保存位置 | ms-settings:savelocations |
-| 显示 | ms-settings:screenrotation |
+| “显示” | ms-settings:screenrotation |
 | 复制我的屏幕 | ms-settings:quietmomentspresentation |
 | 在这些时间内 | ms-settings:quietmomentsscheduled |
 | 加密 | ms-settings:deviceencryption |
@@ -291,15 +291,15 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 多任务 | ms-settings:multitasking |
 | 夜灯设置 | ms-settings:nightlight |
 | Phone | ms-settings:phone-defaultapps |
-| 投影到这台电脑 | ms-settings:project |
+| “投影到这台电脑”， | ms-settings:project |
 | 共享体验 | ms-settings:crossdevice |
-| 平板电脑模式 | ms-settings:tabletmode |
+| 平板模式 | ms-settings:tabletmode |
 | 任务栏 | ms-settings:taskbar |
 | 通知和操作 | ms-settings:notifications |
 | 远程桌面 | ms-settings:remotedesktop |
 | Phone | ms-设置： phone （**在 Windows 10 中已弃用，版本1809及更高版本**） |
 | 电源和睡眠 | ms-settings:powersleep |
-| 声音 | ms-设置：声音 |
+| “声音” | ms-设置：声音 |
 | 存储 | ms-settings:storagesense |
 | 存储感知 | ms-settings:storagepolicies |
 
@@ -309,9 +309,10 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 |-------------|-----|
 | 日期和时间 | ms-settings:dateandtime |
 | 日本输入法设置 | ms-settings:regionlanguage-jpnime（在安装了 Microsoft 日本输入法编辑器的情况下可用） |
-| 语言 | ms-设置：键盘<br/>ms-settings:regionlanguage<br/>ms-settings： regionlanguage-bpmfime<br/>ms-settings： regionlanguage-cangjieime<br/>ms-settings： regionlanguage-chsime-domainlexicon<br/>ms-settings： regionlanguage-chsime-keyconfig<br/>ms-settings： regionlanguage-chsime-udp<br/>ms-settings： regionlanguage-chsime-五笔-udp<br/>ms-settings： regionlanguage-quickime |
+| Region | ms-设置： regionformatting |
+| “语言” | ms-设置：键盘<br/>ms-settings:regionlanguage<br/>ms-settings： regionlanguage-bpmfime<br/>ms-settings： regionlanguage-cangjieime<br/>ms-settings： regionlanguage-chsime-domainlexicon<br/>ms-settings： regionlanguage-chsime-keyconfig<br/>ms-settings： regionlanguage-chsime-udp<br/>ms-settings： regionlanguage-chsime-五笔-udp<br/>ms-settings： regionlanguage-quickime |
 | 拼音输入法设置 | ms-settings:regionlanguage-chsime-pinyin（在安装了 Microsoft 拼音输入法编辑器的情况下可用） |
-| 语音 | ms-settings:speech |
+| “语音” | ms-settings:speech |
 | 五笔输入法设置  | ms-settings:regionlanguage-chsime-wubi（在安装了 Microsoft 五笔输入法编辑器的情况下可用） |
 
 ## <a name="update--security"></a>更新和安全
@@ -319,15 +320,15 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 |设置页面| URI |
 |-------------|-----|
 | 激活 | ms-settings:activation |
-| 备份 | ms-settings:backup |
+| “备份” | ms-settings:backup |
 | 传递优化 | ms-settings:delivery-optimization |
 | 查找我的设备 | ms-settings:findmydevice |
-| 对于开发人员 | ms-settings:developers |
-| 恢复 | ms-settings:recovery |
-| 故障排除 | ms-settings:troubleshoot |
+| 适用于开发人员 | ms-settings:developers |
+| “恢复” | ms-settings:recovery |
+| “疑难解答” | ms-settings:troubleshoot |
 | “Windows 安全中心” | ms-settings:windowsdefender |
 | Windows 预览体验计划 | ms-settings:windowsinsider（仅当用户在 WIP 中注册时显示）<br/>ms-settings： windowsinsider-optin |
-| Windows 更新 | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
+| “Windows 更新” | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | Windows 更新 - 高级选项 | ms-settings:windowsupdate-options |
 | Windows 更新 - 重启选项 | ms-settings:windowsupdate-restartoptions |
 | Windows 更新 - 查看更新历史记录 | ms-settings:windowsupdate-history |

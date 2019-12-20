@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 16afad7724afeea50d379692f0755593e43709bb
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: d1f01774d5950dbb73cff2e5c38f16167b4b812b
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74734822"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302591"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>将桌面应用与 Windows 10 和 UWP 集成
 
@@ -372,7 +372,7 @@ ms.locfileid: "74734822"
 
 |名称 |描述 |
 |-------|-------------|
-|类别 |始终 ``windows.firewallRules``|
+|类别 |始终是 ``windows.firewallRules``|
 |可执行文件 |想要添加到防火墙例外列表的可执行文件名称 |
 |Direction |指示规则是传入规则还是传出规则 |
 |IPProtocol |通信协议 |
@@ -1376,10 +1376,4 @@ ms.locfileid: "74734822"
 
 ## <a name="next-steps"></a>后续步骤
 
-**查找问题的答案**
-
 有问题？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
-
-**提供反馈或提出功能建议**
-
-请参阅 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。

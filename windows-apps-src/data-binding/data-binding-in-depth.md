@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: c9218fe2b74fe9a550cd347f72083f090bd48f85
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 2ed94dd54c58c1ae1bd27238b6033cdbf00359b4
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255352"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302671"
 ---
 # <a name="data-binding-in-depth"></a>深入了解数据绑定
 
@@ -147,7 +147,7 @@ public class HostViewModel : INotifyPropertyChanged
     public void OnPropertyChanged([CallerMemberName] string propertyName = null)
     {
         // Raise the PropertyChanged event, passing the name of the property whose value has changed.
-        this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }
 ```
@@ -224,9 +224,9 @@ public class HostViewModel : BindableBase
 ```
 
 > [!NOTE]
-> 对于C++/WinRT，在应用程序中声明的派生自基类的任何运行时类称为可*组合*的类。 且可组合类存在一些限制。 若要使应用程序通过 Visual Studio 和 Microsoft Store 用于验证提交的 [Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)测试，使 Microsoft Store 可成功纳入该应用程序，可组合类必须最终派生自 Windows 基类。 这意味着继承层次结构的根类必须是源于 Windows.* 名称空间的类型。 如果确实需要从基类派生运行时类（例如，为要从中派生的所有视图模型实现 BindableBase 类），则可以从 &mdash;Windows.UI.Xaml.DependencyObject **派生**&mdash;[ **。
+> 对于C++/WinRT，在应用程序中声明的派生自基类的任何运行时类称为可*组合*的类。 且可组合类存在一些限制。 若要使应用程序通过 Visual Studio 和 Microsoft Store 用于验证提交的 [Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)测试，使 Microsoft Store 可成功纳入该应用程序，可组合类必须最终派生自 Windows 基类。 这意味着继承层次结构的根类必须是源于 Windows.* 名称空间的类型。 如果确实需要从基类派生运行时类（例如，为要从中派生的所有视图模型实现 BindableBase 类），则可以从 [Windows.UI.Xaml.DependencyObject](/uwp/api/windows.ui.xaml.dependencyobject) 派生。
 
-通过使用String.Empty[**或**null](https://docs.microsoft.com/dotnet/api/system.string.empty) 参数引发 **PropertyChanged** 事件，以指示对象上的所有非索引器属性应重新读取。 您可以引发事件，以指示对象的索引器属性已更改，方法是将特定索引器（其中索引*器*是索引值）的 "item\[*索引器*\]" 或 "item\[\]" 的值设置为所有索引器。
+通过使用 [**String.Empty**](https://docs.microsoft.com/dotnet/api/system.string.empty) 或 **null** 参数引发 **PropertyChanged** 事件，以指示对象上的所有非索引器属性应重新读取。 您可以引发事件，以指示对象的索引器属性已更改，方法是将特定索引器（其中索引*器*是索引值）的 "item\[*索引器*\]" 或 "item\[\]" 的值设置为所有索引器。
 
 可以将绑定源视为其属性中包含数据的单个对象或一些对象的集合。 在C#和中 Visual Basic 代码，你可以一次性绑定到对象，该对象实现[**列表（of T）** ](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1)以显示在运行时不会更改的集合。 对于可观察集合（在将项添加到集合或从集合中删除时进行观察），应改为单向绑定到 [**ObservableCollection(Of T)** ](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1)。 在C++/cx 代码中，可以绑定到可观察的集合和不可观察的集合的[**向量&lt;t&gt;** ](https://docs.microsoft.com/cpp/cppcx/platform-collections-vector-class) ， C++/WinRT 具有其自己的类型。 若要绑定到你自己的集合类，请按照下表中的指南进行操作。
 
@@ -616,7 +616,7 @@ Click="{x:Bind RootFrame.GoForward}"/>
 
 重载方法不适用于借助此技术来处理事件。 此外，如果用于处理事件的方法包含一些参数，则这些参数均须根据各自对应的事件参数类型进行赋值。 在此情况下，[**Frame.GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward) 不重载且不含任何参数（但即使其包含两个 **object** 参数，也仍然有效）。 不过， [**GoBack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback)是重载的，因此我们不能将该方法与此方法一起使用。
 
-事件绑定技术类似于实现和使用命令（一个命令返回一种属性，该属性将返回实现 [**ICommand**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) 接口的对象）。 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 和 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) 均适用于命令。 可使用 **QuizGame** 示例（位于“Common”文件夹中）中提供的 [DelegateCommand](https://github.com/microsoft/Windows-appsample-networkhelper) 帮助程序类，这样便无需多次实现命令模式。
+事件绑定技术类似于实现和使用命令（一个命令返回一种属性，该属性将返回实现 [**ICommand**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) 接口的对象）。 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 和 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) 均适用于命令。 可使用 [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) 示例（位于“Common”文件夹中）中提供的 **DelegateCommand** 帮助程序类，这样便无需多次实现命令模式。
 
 ## <a name="binding-to-a-collection-of-folders-or-files"></a>绑定到文件夹或文件集合
 
@@ -814,8 +814,8 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | ElementName | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | 使用 {x:Bind}，绑定到某一字段；Path 默认位于 Page 的根处，以便任意命名的元素均可通过其字段进行访问。 | 
 | RelativeSource: Self | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | 借助 {x:Bind}，对元素进行命名并在 Path 中使用其名称。 | 
 | RelativeSource: TemplatedParent | 不需要 | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | 对于 System.windows.controls.controltemplate> 上的 {x:Bind} TargetType，指示绑定到模板父级。 对于 {Binding}，可在大多数使用的控件模板中使用常规模板绑定。 但在使用 TemplatedParent 时，需要使用转换器或双向绑定。&lt; | 
-| Source | 不需要 | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | 对于 {x:Bind}，可以直接使用命名元素，使用属性或静态路径。 | 
-| 模式 | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | 模式可以是一次性、单向或双向。 {x:Bind} defaults to OneTime; {Binding} defaults to OneWay. | 
+| 来源 | 不需要 | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | 对于 {x:Bind}，可以直接使用命名元素，使用属性或静态路径。 | 
+| “模式” | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | 模式可以是一次性、单向或双向。 {x:Bind} defaults to OneTime; {Binding} defaults to OneWay. | 
 | UpdateSourceTrigger | `{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}` | `{Binding UpdateSourceTrigger=PropertyChanged}` | UpdateSourceTrigger 可以是 Default、LostFocus 或 PropertyChanged。 {x:Bind} 不支持 UpdateSourceTrigger=Explicit。 {x:Bind} 可在所有情况下（TextBox.Text 除外，它使用 LostFocus 行为）使用 PropertyChanged 行为。 | 
 
 

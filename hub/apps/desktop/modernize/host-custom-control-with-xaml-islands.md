@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3c14cfaefcf10aa051e3054d5df2e6da9fd77602
-ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
+ms.openlocfilehash: af8ef4d8fb8661e4a8f2d6b1fb98dd19cbd567c1
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71317067"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302521"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 孤岛在 WPF 应用程序中托管自定义 UWP 控件
 
@@ -29,9 +29,9 @@ ms.locfileid: "71317067"
 
 * **自定义 UWP 控件**。 你需要承载自定义 UWP 控件的源代码，以便可以将其与你的应用进行编译。 通常，自定义控件在与 WPF （或 Windows 窗体）项目相同的解决方案中引用的 UWP 类库项目中定义。
 
-* **定义 XamlApplication 对象的 UWP 应用项目**。 WPF （或 Windows 窗体）项目必须有权访问 Windows 社区工具包提供的`Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication`类的实例。 此对象用作根元数据提供程序，用于为应用程序的当前目录中的程序集中的自定义 UWP XAML 类型加载元数据。 执行此操作的建议方法是将**空白应用（通用 Windows）** 项目添加到与 WPF （或 Windows 窗体）项目相同的解决方案，并修改此项目中`App`的默认类。
+* **定义 XamlApplication 对象的 UWP 应用项目**。 WPF （或 Windows 窗体）项目必须有权访问 Windows 社区工具包提供的 `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` 类的实例。 此对象用作根元数据提供程序，用于为应用程序的当前目录中的程序集中的自定义 UWP XAML 类型加载元数据。 执行此操作的建议方法是将**空白应用（通用 Windows）** 项目添加到与 WPF （或 Windows 窗体）项目相同的解决方案，并修改此项目中的默认 `App` 类。
   > [!NOTE]
-  > 你的解决方案只能包含一个定义`XamlApplication`对象的项目。 应用中的所有自定义 UWP 控件共享同`XamlApplication`一个对象。 定义`XamlApplication`对象的项目必须包括对在 XAML 岛中承载 uwp 控件的所有其他 UWP 库和项目的引用。
+  > 你的解决方案只能包含一个定义 `XamlApplication` 对象的项目。 应用中的所有自定义 UWP 控件共享相同的 `XamlApplication` 对象。 定义 `XamlApplication` 对象的项目必须包含对在 XAML 岛中承载 UWP 控件的所有其他 UWP 库和项目的引用。
 
 ## <a name="create-a-wpf-project"></a>创建 WPF 项目
 
@@ -59,19 +59,19 @@ ms.locfileid: "71317067"
 
 7. 配置解决方案以面向特定的平台，例如 x86 或 x64。 对于以**任何 CPU**为目标的项目，不支持自定义 UWP 控件。
 
-    1. 在**解决方案资源管理器**中，右键单击解决方案节点，然后选择 "**属性** -> " "**配置属性** -> "**Configuration Manager**。 
+    1. 在**解决方案资源管理器**中，右键单击 "解决方案" 节点，然后选择 "**属性**" " -> **配置属性**" -> **Configuration Manager**"。 
     2. 在 "**活动解决方案平台**" 下，选择 "**新建**"。 
     3. 在 "**新建解决方案平台**" 对话框中，选择 " **X64**或**X86** "，并按 **"确定"** 。 
     4. 关闭 "打开" 对话框。
 
 ## <a name="create-a-xamlapplication-object-in-a-uwp-app-project"></a>在 UWP 应用项目中创建 XamlApplication 对象
 
-接下来，将 UWP 应用项目添加到与 WPF 项目相同的解决方案中。 您将修改此项目`App`中的默认类以派生自 Windows `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication`社区工具包提供的类。 WPF 应用中的**WindowsXamlHost**对象需要此`XamlApplication`对象来承载自定义 UWP 控件。
+接下来，将 UWP 应用项目添加到与 WPF 项目相同的解决方案中。 您将修改此项目中的默认 `App` 类，以便从 Windows 社区工具包提供的 `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` 类派生。 WPF 应用中的**WindowsXamlHost**对象需要此 `XamlApplication` 对象来承载自定义 UWP 控件。
 
-1. 在**解决方案资源管理器**中，右键单击解决方案节点，然后选择 "**添加** -> **新项目**"。
+1. 在**解决方案资源管理器**中，右键单击 "解决方案" 节点，然后选择 "**添加** -> "**新建项目**"。
 2. 向你的解决方案中添加一个**空白应用（通用 Windows）** 项目。 请确保目标版本和最低版本均设置为**Windows 10 1903 版**或更高版本。
 3. 在 UWP 应用项目中，安装[XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet 包（版本 v 6.0.0-preview7 或更高版本）。
-4. 打开**app.config**文件，并将此文件的内容替换为以下 xaml。 替换`MyUWPApp`为 UWP 应用项目的命名空间。
+4. 打开**app.config**文件，并将此文件的内容替换为以下 xaml。 将 `MyUWPApp` 替换为 UWP 应用项目的命名空间。
 
     ```xml
     <xaml:XamlApplication
@@ -83,7 +83,7 @@ ms.locfileid: "71317067"
     </xaml:XamlApplication>
     ```
 
-5. 打开**App.xaml.cs**文件，并将此文件的内容替换为以下代码。 替换`MyUWPApp`为 UWP 应用项目的命名空间。
+5. 打开**App.xaml.cs**文件，并将此文件的内容替换为以下代码。 将 `MyUWPApp` 替换为 UWP 应用项目的命名空间。
 
     ```csharp
     namespace MyUWPApp
@@ -99,7 +99,7 @@ ms.locfileid: "71317067"
     ```
 
 6. 从 UWP 应用项目中删除**MainPage**文件。
-7. 生成 UWP 应用项目。
+7. 清除 UWP 应用项目，然后生成该项目。
 8. 在 WPF 项目中，右键单击 "**依赖项**" 节点，并添加对 UWP 应用项目的引用。
 
 ## <a name="create-a-custom-uwp-control"></a>创建自定义 UWP 控件
@@ -110,10 +110,10 @@ ms.locfileid: "71317067"
 
 如果已经有一个自定义控件，则可以使用它，而不是此处所示的控件。 但是，您仍需要配置包含该控件的项目，如以下步骤所示。
 
-1. 在**解决方案资源管理器**中，右键单击解决方案节点，然后选择 "**添加** -> **新项目**"。
+1. 在**解决方案资源管理器**中，右键单击 "解决方案" 节点，然后选择 "**添加** -> "**新建项目**"。
 2. 将**类库（通用 Windows）** 项目添加到解决方案。 请确保目标版本和最低版本均设置为**Windows 10 1903 版**或更高版本。
 3. 右键单击项目文件，然后选择 "**卸载项目**"。 再次右键单击项目文件，然后选择 "**编辑**"。
-4. 在结束`</Project>`元素之前添加以下 XML，以禁用多个属性，然后保存该项目文件。 必须启用这些属性才能在 WPF （或 Windows 窗体）应用程序中托管自定义 UWP 控件。
+4. 在关闭 `</Project>` 元素之前，添加以下 XML 以禁用多个属性，然后保存该项目文件。 必须启用这些属性才能在 WPF （或 Windows 窗体）应用程序中托管自定义 UWP 控件。
 
     ```xml
     <PropertyGroup>
@@ -124,7 +124,7 @@ ms.locfileid: "71317067"
 
 5. 右键单击项目文件，然后选择 "**重新加载项目**"。
 6. 删除默认的**Class1.cs**文件，并向项目中添加新的**用户控件**项。
-7. 在用户控件的 XAML 文件中，将以下`StackPanel`项添加为默认`Grid`的子项。 此示例将添加``TextBlock``一个控件，然后将``Text``该控件的属性绑定到``XamlIslandMessage``该字段。
+7. 在用户控件的 XAML 文件中，添加以下 `StackPanel` 作为默认 `Grid`的子元素。 此示例将添加一个 ``TextBlock`` 控件，然后将该控件的 ``Text`` 特性绑定到 ``XamlIslandMessage`` 字段。
 
     ```xml
     <StackPanel Background="LightCoral">
@@ -134,7 +134,7 @@ ms.locfileid: "71317067"
     </StackPanel>
     ```
 
-8. 在用户控件的代码隐藏文件中，将`XamlIslandMessage`字段添加到用户控件类，如下所示。
+8. 在用户控件的代码隐藏文件中，将 `XamlIslandMessage` 字段添加到用户控件类，如下所示。
 
     ```csharp
     public sealed partial class MyUserControl : UserControl
@@ -156,19 +156,19 @@ ms.locfileid: "71317067"
 ## <a name="host-the-custom-uwp-control-in-your-wpf-app"></a>在 WPF 应用程序中托管自定义 UWP 控件
 
 1. 在**解决方案资源管理器**中，展开 WPF 项目，然后打开 mainwindow.xaml 文件或您要在其中承载自定义控件的其他窗口。
-2. 在 XAML 文件中，将以下命名空间声明添加到`<Window>`元素。
+2. 在 XAML 文件中，将以下命名空间声明添加到 `<Window>` 元素。
 
     ```xml
     xmlns:xaml="clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost"
     ```
 
-3. 在同一文件中，将以下控件添加到`<Grid>`元素。 `InitialTypeName`将属性更改为 UWP 类库项目中的用户控件的完全限定名称。
+3. 在同一文件中，将以下控件添加到 `<Grid>` 元素。 将 `InitialTypeName` 特性更改为 UWP 类库项目中的用户控件的完全限定名称。
 
     ```xml
     <xaml:WindowsXamlHost InitialTypeName="UWPClassLibrary.MyUserControl" ChildChanged="WindowsXamlHost_ChildChanged" />
     ```
 
-4. 打开代码隐藏文件并将以下代码添加到`Window`类。 此代码定义一个`ChildChanged`事件处理程序，该事件处理程序``XamlIslandMessage``将 UWP 自定义控件的字段值分配`WPFMessage`给 WPF 应用程序中的字段的值。 更改`UWPClassLibrary.MyUserControl`为 UWP 类库项目中的用户控件的完全限定名称。
+4. 打开代码隐藏文件，并将以下代码添加到 `Window` 类。 此代码定义 `ChildChanged` 事件处理程序，该处理程序将 UWP 自定义控件 ``XamlIslandMessage`` 字段的值分配给 WPF 应用程序中的 `WPFMessage` 字段的值。 将 `UWPClassLibrary.MyUserControl` 更改为 UWP 类库项目中的用户控件的完全限定名称。
 
     ```csharp
     private void WindowsXamlHost_ChildChanged(object sender, EventArgs e)
@@ -206,7 +206,7 @@ ms.locfileid: "71317067"
     > [!NOTE]
     > 请确保安装最新的*预发行*版本。 目前，如果你选择将你的应用打包到[.msix 包](https://docs.microsoft.com/windows/msix)进行部署，则只有此包的预发行版本才适用。
 
-2. 在此项目的 app.config 文件中，将以下子元素添加到`<xaml:Application>`元素。
+2. 在此项目的 App.config 文件中，将以下子元素添加到 `<xaml:Application>` 元素。
 
     ```xml
     <Application.Resources>
@@ -231,13 +231,13 @@ ms.locfileid: "71317067"
 
 3. 在 UWP 类库项目中，安装最新的[Microsoft. UI](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 包的预发行版本（在 UWP 应用项目中安装的版本）。
 
-4. 在同一项目中，打开用户控件的 XAML 文件，并将以下命名空间声明添加到`<UserControl>`元素。
+4. 在同一项目中，打开用户控件的 XAML 文件，并将以下命名空间声明添加到 `<UserControl>` 元素。
 
     ```xml
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     ```
 
-5. 在同一文件中，添加一个`<winui:RatingControl />`元素作为的`<StackPanel>`子元素。 此元素从 WinUI 库添加[RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol?view=winui-2.2)类的实例。 添加此元素后， `<StackPanel>`现在应类似于此。
+5. 在同一文件中，添加一个 `<winui:RatingControl />` 元素作为 `<StackPanel>`的子元素。 此元素从 WinUI 库添加[RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol?view=winui-2.2)类的实例。 添加此元素后，`<StackPanel>` 现在应如下所示。
 
     ```xml
     <StackPanel Background="LightCoral">
@@ -262,7 +262,7 @@ ms.locfileid: "71317067"
 
 3. 编辑打包项目文件。 这些更改当前需要打包面向 .NET Core 3 且托管 XAML 孤岛的 WPF 应用。
 
-    1. 在解决方案资源管理器中, 右键单击打包项目节点, 然后选择 "**编辑项目文件**"。
+    1. 在解决方案资源管理器中，右键单击打包项目节点，然后选择 "**编辑项目文件**"。
     2. 在文件中找到 `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` 元素。 将此元素替换为以下 XML。 这些更改当前是打包面向 .NET Core 3 并承载 UWP 控件的 WPF 应用程序所必需的。
 
         ``` xml
@@ -287,7 +287,7 @@ ms.locfileid: "71317067"
         </Target>
         ```
 
-    3. 保存并关闭项目文件。
+    3. 保存项目文件并将其关闭。
 
 4. 编辑包清单以引用正确的默认初始屏幕图像。 此解决方法目前是打包自定义 UWP 控件的 WPF 应用程序所必需的。
 
@@ -306,7 +306,7 @@ ms.locfileid: "71317067"
 
     1. 在解决方案资源管理器中，右键单击 WPF 项目节点，然后选择 "**卸载项目**"。
     2. 右键单击 WPF 项目节点，然后选择 "**编辑**"。
-    3. 定位到文件`</PropertyGroup>`中的最后一个结束标记，并在该标记的后面添加以下 XML。
+    3. 找到文件中的最后一个 `</PropertyGroup>` 结束标记，并在该标记后面添加以下 XML。
 
         ``` xml
         <PropertyGroup>
@@ -314,7 +314,7 @@ ms.locfileid: "71317067"
         </PropertyGroup>
         ```
 
-    4. 保存并关闭项目文件。
+    4. 保存项目文件并将其关闭。
     5. 右键单击 WPF 项目节点，然后选择 "**重新加载项目**"。
 
 6. 生成并运行打包项目。 确认 WPF 运行，UWP 自定义控件按预期方式显示。
