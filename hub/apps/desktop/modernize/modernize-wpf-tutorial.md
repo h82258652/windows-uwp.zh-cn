@@ -1,6 +1,6 @@
 ---
 description: 本教程演示如何添加 UWP XAML 用户界面、创建 .MSIX 包以及将其他新式组件合并到 WPF 应用。
-title: 教程：实现 WPF 应用现代化
+title: 教程：现代化 WPF 应用
 ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
@@ -8,14 +8,14 @@ author: mcleanbyron
 keywords: windows 10、uwp、windows 窗体、wpf、xaml 孤岛
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 3e78bd81531750ac419c5ca3628e72a3e8505038
-ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
+ms.openlocfilehash: de84cbb2e1927d9426eefaaf7b0d70d604427da1
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71317085"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683810"
 ---
-# <a name="tutorial-modernize-a-wpf-app"></a>教程：实现 WPF 应用现代化 
+# <a name="tutorial-modernize-a-wpf-app"></a>教程：现代化 WPF 应用 
 
 通过将最新的 Windows 功能集成到现有源代码而不是从头重新编写应用程序，可以通过多种方式来[现代化](index.md)现有的桌面应用程序。 在本教程中，我们将探讨使用这些功能实现现有 WPF 业务线应用的现代化的多种方法：
 
@@ -57,7 +57,7 @@ Contoso 希望使此应用程序具有新的 Windows 功能，使员工能够更
 
 * Windows 10 版本1903（版本18362）或更高版本。
 * [Visual Studio 2019](https://www.visualstudio.com)。
-* [.Net Core 3 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0)（安装最新版本）。
+* [.Net Core 3 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0) （安装最新版本）。
 
 请确保通过 Visual Studio 2019 安装以下工作负荷和可选功能：
 
@@ -69,20 +69,20 @@ Contoso 希望使此应用程序具有新的 Windows 功能，使员工能够更
 
 在开始本教程之前，请下载 Contoso 支出应用程序的源代码，并确保可以在 Visual Studio 中生成代码。
 
-1. 从[AppConsult WinAppsModernization 讨论会存储库](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop)的 "**发布**" 选项卡下载应用程序源代码。 直接链接为[https://aka.ms/wamwc](https://aka.ms/wamwc)。
+1. 从[AppConsult WinAppsModernization 讨论会存储库](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop)的 "**发布**" 选项卡下载应用程序源代码。 直接链接[https://aka.ms/wamwc](https://aka.ms/wamwc)。
 2. 打开 zip 文件并将所有内容提取到**C：\\** 驱动器的根目录。 它将创建一个名为**C:\WinAppsModernizationWorkshop**的文件夹。
 3. 打开 "Visual Studio 2019"，然后双击 " **C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses\ContosoExpenses.sln** " 文件以打开解决方案。
 4. 通过按 "**开始**" 按钮或按 CTRL + F5，验证您可以生成、运行和调试 CONTOSO 支出 WPF 项目。
 
-## <a name="get-started"></a>立即开始行动
+## <a name="get-started"></a>“开始”
 
 获得 Contoso 支出示例应用的源代码后，可以确认是否可以在 Visual Studio 中生成该应用程序，现在可以开始学习教程：
 
-* [第 1 部分：将 Contoso 支出应用迁移到 .NET Core 3](modernize-wpf-tutorial-1.md)
-* [第 2 部分：使用 XAML 孤岛添加 UWP InkCanvas 控件](modernize-wpf-tutorial-2.md)
+* [第1部分：将 Contoso 支出应用迁移到 .NET Core 3](modernize-wpf-tutorial-1.md)
+* [第2部分：使用 XAML 孤岛添加 UWP InkCanvas 控件](modernize-wpf-tutorial-2.md)
 * [第3部分：使用 XAML 孤岛添加 UWP CalendarView 控件](modernize-wpf-tutorial-3.md)
 * [第4部分：添加 Windows 10 用户活动和通知](modernize-wpf-tutorial-4.md)
-* [第5部分：用 .MSIX 打包和部署](modernize-wpf-tutorial-5.md)
+* [第5部分：打包和部署 with .MSIX](modernize-wpf-tutorial-5.md)
 
 ## <a name="important-concepts"></a>重要概念
 
@@ -98,9 +98,9 @@ Contoso 希望使此应用程序具有新的 Windows 功能，使员工能够更
 
 ### <a name="msix-packaging"></a>.MSIX 打包
 
-[.Msix](http://aka.ms/msix)（以前称为 AppX）是 Windows 应用的新式打包模型。 .MSIX 支持 UWP 应用以及使用 Win32、WPF、Windows 窗体、Java、Electron 等技术生成的桌面应用。 在 .MSIX 包中打包桌面应用时，可以将应用发布到 Microsoft Store。 桌面应用程序在安装时也会获得包标识，这使桌面应用能够使用一组更广泛的 WinRT Api。
+[.Msix](/windows/msix/) （以前称为 AppX）是适用于 Windows 应用的新式打包模型。 .MSIX 支持 UWP 应用以及使用 Win32、WPF、Windows 窗体、Java、Electron 等技术生成的桌面应用。 在 .MSIX 包中打包桌面应用时，可以将应用发布到 Microsoft Store。 桌面应用程序在安装时也会获得包标识，这使桌面应用能够使用一组更广泛的 WinRT Api。
 
-有关详细信息, 请参阅以下文章:
+有关详细信息，请参阅以下文章：
 
 * [打包桌面应用程序](/windows/uwp/porting/desktop-to-uwp-root)
 * [打包桌面应用程序的幕后](/windows/uwp/porting/desktop-to-uwp-behind-the-scenes)
@@ -111,7 +111,7 @@ Contoso 希望使此应用程序具有新的 Windows 功能，使员工能够更
 
 有关详细信息，请参阅[桌面应用程序中的 UWP 控件（XAML 孤岛）](/windows/uwp/xaml-platform/xaml-host-controls)。 本教程将指导您完成使用两种不同类型的 XAML 岛控件的过程：
 
-* Windows 社区工具包中的[InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)和[MapControl](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) 。 这些 WPF 控件包装相应 UWP 控件的接口和功能，并可与 Visual Studio 设计器中的任何其他 WPF 控件一起使用。
+* Windows 社区工具包中的[InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)和[MapControl](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) 。 这些 WPF 控件包装相应 UWP 控件的接口和功能，并可与 Visual Studio 设计器中的任何其他 WPF 控件一起使用。
 
 * UWP[日历视图](/windows/uwp/design/controls-and-patterns/calendar-view)控件。 这是一个标准 UWP 控件，你将使用 Windows 社区工具包中的[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控件进行托管。
 
@@ -121,9 +121,9 @@ Contoso 希望使此应用程序具有新的 Windows 功能，使员工能够更
 
 通过它的前几个版本，.NET Core 的重点是支持 web 或后端应用程序。 借助 .NET Core，你可以轻松地生成可在 Windows、Linux 或微服务体系结构（如 Docker 容器）上托管的可缩放 web 应用或 Api。
 
-.NET Core 3 是最新版本的 .NET Core。 此版本的突出显示支持 Windows 桌面应用，包括 Windows 窗体和 WPF 应用。 你可以在 .NET Core 3 上运行新的和现有的 Windows 桌面应用程序，并享受 .NET Core 提供的所有权益。 托管在 [XAML 岛](xaml-islands.md)中的 UWP 控件也可在面向 .NET Core 3 的 Windows 窗体和 WPF 应用中使用。
+.NET Core 3 是最新版本的 .NET Core。 这个版本的主要特点是支持 Windows 桌面应用，包括 Windows Forms 应用和 WPF 应用。 你可以在 .NET Core 3 上运行新的和现有的 Windows 桌面应用并体验 .NET Core 提供的所有优势。 托管在 [XAML 岛](xaml-islands.md)中的 UWP 控件也可在面向 .NET Core 3 的 Windows 窗体和 WPF 应用中使用。
 
 > [!NOTE]
 > WPF 和 Windows 窗体不是跨平台的，因此不能在 Linux 和 MacOS 上运行 WPF 或 Windows 窗体。 WPF 和 Windows 窗体的 UI 组件仍依赖于 Windows 呈现系统。
 
-有关详细信息，请参阅[.Net Core 3.0 中的新增功能](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0)。
+有关详细信息，请参阅 [.NET Core 3.0 中的新增功能](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0)。

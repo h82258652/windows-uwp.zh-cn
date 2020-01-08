@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom: 19H1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 253eea00ba6c4188197224111909c28a53932b88
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: c7b876cff994f775b770d22c103d27271047b269
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257352"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683630"
 ---
 # <a name="connect-to-remote-cameras"></a>连接到远程摄像头
 
@@ -33,9 +33,9 @@ ms.locfileid: "74257352"
 > Helper 方法[**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector)返回一个 AQS 字符串，该字符串将监视本地连接的和远程网络摄像机。 若要仅监视网络摄像机，应使用上面所示的 AQS 字符串。
 
 
-当你通过调用[**start**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.start)方法来启动返回的**DeviceWatcher**时，它将为当前可用的每个网络相机引发[**添加**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added)的事件。 在通过调用[**stop**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.stop)停止观察程序之前，当新的网络照相机设备可用时，将引发**添加**的事件，并且当照相机设备不可用时，将引发[**已删除**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.enumeration.devicewatcher.removed)的事件。
+当你通过调用[**start**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.start)方法来启动返回的**DeviceWatcher**时，它将为当前可用的每个网络相机引发[**添加**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added)的事件。 在通过调用[**stop**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.stop)停止观察程序之前，当新的网络照相机设备可用时，将引发**添加**的事件，并且当照相机设备不可用时，将引发[**已删除**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.removed)的事件。
 
-传入**添加**和**移除**事件处理程序的事件参数分别是[**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)或[**DeviceInformationUpdate**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.enumeration.deviceinformationupdate)对象。 其中每个对象都有一个**Id**属性，该属性是触发事件的网络摄像机的标识符。 将此 ID 传递到[**MediaFrameSourceGroup. FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync)方法，以获取可用于从相机检索帧的[**MediaFrameSourceGroup**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync)对象。
+传入**添加**和**移除**事件处理程序的事件参数分别是[**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)或[**DeviceInformationUpdate**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationupdate)对象。 其中每个对象都有一个**Id**属性，该属性是触发事件的网络摄像机的标识符。 将此 ID 传递到[**MediaFrameSourceGroup. FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync)方法，以获取可用于从相机检索帧的[**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync)对象。
 
 ## <a name="remote-camera-pairing-helper-class"></a>远程相机配对帮助程序类
 

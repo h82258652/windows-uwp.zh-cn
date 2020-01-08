@@ -5,18 +5,18 @@ ms.date: 02/15/2018
 ms.topic: article
 keywords: windows 10 s, 始终连接, 限制, 基于 ARM 的 Windows 10
 ms.localizationpriority: medium
-redirect_url: https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-troubleshooting-x86
-ms.openlocfilehash: a0765f8b7b250949146c4ed6f374bb5b6f7ae8bb
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+redirect_url: https://docs.microsoft.com/windows/uwp/porting/apps-on-arm-troubleshooting-x86
+ms.openlocfilehash: e9bbef6f9b714b99148cf4ac082f98b4422f23b2
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682759"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683960"
 ---
 # <a name="limitations-of-apps-and-experiences-on-arm"></a>ARM 上的应用和体验限制
 基于 ARM 的 Windows 10 有以下必要限制：
 
-- **只支持 ARM64 驱动程序**。 与所有体系结构一样，内核模式驱动程序、[用户模式驱动程序框架 (UMDF)](https://docs.microsoft.com/en-us/windows-hardware/drivers/wdf/overview-of-the-umdf) 驱动程序和打印驱动程序必须进行编译，以匹配操作系统的体系结构。 虽然 ARM 操作系统有模拟 x86 用户模式应用的功能，但目前尚未模拟为其他体系结构（如 x64 或 x86）实现的驱动程序，因此在该平台上不受支持。 任何使用自定义驱动程序的应用都需要移植到 ARM64。 在有限的情况下，应用可以在模拟环境下以 x86 方式运行，但应用的驱动程序部分必须移植到 ARM64。 有关为 ARM64 编译驱动程序的详细信息，请参阅[使用 WDK 构建 ARM64 驱动程序](/windows-hardware/drivers/develop/building-arm64-drivers)。
+- **只支持 ARM64 驱动程序**。 与所有体系结构一样，内核模式驱动程序、[用户模式驱动程序框架 (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf) 驱动程序和打印驱动程序必须进行编译，以匹配操作系统的体系结构。 虽然 ARM 操作系统有模拟 x86 用户模式应用的功能，但目前尚未模拟为其他体系结构（如 x64 或 x86）实现的驱动程序，因此在该平台上不受支持。 任何使用自定义驱动程序的应用都需要移植到 ARM64。 在有限的情况下，应用可以在模拟环境下以 x86 方式运行，但应用的驱动程序部分必须移植到 ARM64。 有关为 ARM64 编译驱动程序的详细信息，请参阅[使用 WDK 构建 ARM64 驱动程序](/windows-hardware/drivers/develop/building-arm64-drivers)。
 
 - **不支持 x64 应用**。 基于 ARM 的 Windows 10 不支持 x64 应用模拟。
 
@@ -32,7 +32,7 @@ ms.locfileid: "68682759"
 
 |问题|解决方案|
 |-----|--------|
-| 你的应用依赖于不是为 ARM 设计的驱动程序。 | 将你的 x86 驱动程序重新编译为 ARM64 驱动程序。 请参阅[使用 WDK 构建 ARM64 驱动程序](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers)。 |
+| 你的应用依赖于不是为 ARM 设计的驱动程序。 | 将你的 x86 驱动程序重新编译为 ARM64 驱动程序。 请参阅[使用 WDK 构建 ARM64 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers)。 |
 | 你的应用只适用于 x64。 | 如果你的应用是为 Microsoft Store 开发的，请提交应用的 ARM 版本。 有关详细信息，请参阅[应用包体系结构](/windows/msix/package/device-architecture)。 如果你是 Win32 开发人员，请分发应用的 x86 版本。 |
 | 你的应用使用了高于 1.1 版本的 OpenGL，或者需要硬件加速的 OpenGL。 | 使用 DirectX 9、DirectX 10、DirectX 11 和 DirectX 12 的 x86 应用将可在 ARM 上正常运行。 有关详细信息，请参阅 [DirectX 图形和游戏](https://docs.microsoft.com/windows/desktop/directx)。 |
 | 你的 x86 应用无法按预期工作。 | 按照 [ARM 上的程序兼容性疑难解答](apps-on-arm-program-compat-troubleshooter.md)中的指南尝试使用兼容性疑难解答。 有关其他一些疑难解答步骤，请参阅[基于 ARM 的 x86 应用疑难解答](apps-on-arm-troubleshooting-x86.md)。 |

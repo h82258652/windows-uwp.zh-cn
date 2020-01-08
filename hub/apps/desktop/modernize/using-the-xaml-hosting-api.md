@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: cdcef66dc1f0026ff369eeb3f3c7881385d6e5ba
-ms.sourcegitcommit: 412bf5bb90e1167d118699fbf71d0e6864ae79bd
+ms.openlocfilehash: 9e4fdc8366e26bcd7e106bf070cb42ed2cd1a49f
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "71339301"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683680"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>在 C++ Win32 应用中使用 UWP XAML 托管 API
 
@@ -34,7 +34,7 @@ UWP XAML 宿主 API 提供低级别的基础结构，用于在桌面应用中承
 
 因为我们建议只有C++ win32 应用使用 UWP XAML 托管 API，但本文主要介绍 win32 应用的C++说明和示例。 但是，如果您选择，可以在 WPF 中使用 UWP XAML 宿主 API，并 Windows 窗体应用。 本文指向适用于 WPF 的[主机控件](xaml-islands.md#host-controls)和 Windows 社区工具包中 Windows 窗体的相关源代码，以便您可以看到这些控件如何使用 UWP XAML 宿主 API。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 XAML 孤岛需要 Windows 10 版本1903（或更高版本）以及相应的 Windows SDK 版本。 若要在C++ Win32 应用中使用 XAML 孤岛，必须先设置项目。
 
@@ -119,7 +119,7 @@ Windows 社区工具包中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 3. 安装[CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet 包：
 
-    1. 在**解决方案资源管理器**中右键单击项目，然后选择 "**管理 NuGet 包**"。
+    1. 在“解决方案资源管理器”中，右键单击你的项目并选择“管理 NuGet 包”。
     2. 选择 "**浏览**" 选项卡，搜索[CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)包，然后安装此包的最新版本。
 
 4. 安装[Microsoft 工具包. Win32](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) NuGet 包：
@@ -133,9 +133,9 @@ Windows 社区工具包中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 1. 在您的应用程序创建它将承载的任何[WINDOWS UI. UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)对象之前，为当前线程初始化 UWP XAML framework。 有多种方法可以执行此操作，具体取决于计划创建将承载控件的[DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource)对象的时间。
 
-    * 如果你的应用程序在创建它将**承载的任何** **DesktopWindowXamlSource**对象之前创建了该对象，则将在你实例化**DesktopWindowXamlSource**对象。 在这种情况下，你无需添加自己的任何代码来初始化该框架。
+    * 如果你的应用程序在创建它将**承载的任何** **DesktopWindowXamlSource**对象之前创建了该对象，则在实例化**DesktopWindowXamlSource**对象时，会为你初始化此框架。 在这种情况下，你无需添加自己的任何代码来初始化该框架。
 
-    * 但是，如果**你的应用**程序在创建将承载这些对象的**DesktopWindowXamlSource**对象之前创建了这些对象，则你的应用程序必须调用静态[WindowsXamlManager InitializeForCurrentThread](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread)方法，在实例化**Windows**对象之前显式初始化 UWP xaml framework。 在实例化承载**DesktopWindowXamlSource**的父 UI 元素时，应用程序通常应调用此方法。
+    * 但是，如果您的应用程序在创建将承载这些对象的**DesktopWindowXamlSource**对象之前创建**了这些对象**，则您的应用程序必须调用静态[WindowsXamlManager InitializeForCurrentThread](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread)方法，以便在实例化**WINDOWS**对象之前显式初始化 UWP xaml framework。 在实例化承载**DesktopWindowXamlSource**的父 UI 元素时，应用程序通常应调用此方法。
 
     > [!NOTE]
     > 此方法返回一个[WindowsXamlManager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager)对象，该对象包含对 UWP XAML 框架的引用。 您可以根据需要在给定线程上创建任意多个**WindowsXamlManager**对象。 但是，因为每个对象都包含对 UWP XAML framework 的引用，所以你应该释放这些对象以确保最终释放 XAML 资源。
@@ -283,7 +283,7 @@ Windows 社区工具包中的[WindowsXamlHost](https://docs.microsoft.com/window
     }
     ```
 
-4. 在上一部分中复制以下代码。 此代码定义窗口的[窗口过程](https://docs.microsoft.com/en-us/windows/win32/learnwin32/writing-the-window-procedure)。
+4. 在上一部分中复制以下代码。 此代码定义窗口的[窗口过程](https://docs.microsoft.com/windows/win32/learnwin32/writing-the-window-procedure)。
 
     ```cppwinrt
     LRESULT CALLBACK WindowProc(HWND hWnd, UINT messageCode, WPARAM wParam, LPARAM lParam)
@@ -397,7 +397,7 @@ Windows 社区工具包中的[WindowsXamlHost](https://docs.microsoft.com/window
 
   * **WPF：** 应用可以从[ComponentDispatcher](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage)事件的事件处理程序调用**PreTranslateMessage** 。 有关示例，请参阅 Windows 社区工具包中的[WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177)文件。
 
-  * **Windows 窗体：** 应用可以通过[system.windows.forms.control.preprocessmessage](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.preprocessmessage)方法的替代调用**PreTranslateMessage** 。 有关示例，请参阅 Windows 社区工具包中的[WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100)文件。
+  * **Windows 窗体：** 应用可以通过[system.windows.forms.control.preprocessmessage](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.preprocessmessage)方法的替代调用**PreTranslateMessage** 。 有关示例，请参阅 Windows 社区工具包中的[WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100)文件。
 
 ### <a name="keyboard-focus-navigation"></a>键盘焦点导航
 
@@ -452,7 +452,7 @@ UWP XAML 框架自动处理托管 UWP 控件的 DPI 更改（例如，当用户�
 </assembly>
 ```
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>“疑难解答”
 
 ### <a name="error-using-uwp-xaml-hosting-api-in-a-uwp-app"></a>在 UWP 应用中使用 UWP XAML 托管 API 时出错
 
@@ -476,7 +476,7 @@ UWP XAML 框架自动处理托管 UWP 控件的 DPI 更改（例如，当用户�
 
 | 问题 | 分辨率 |
 |-------|------------|
-| 你的应用收到**COMException** ，其中包含以下消息： "AttachToWindow 方法失败，因为指定的 HWND 从与以前传递到同一线程上的 ATTACHTOWINDOW 的 HWND 更不同的顶级窗口。" | 此错误表示你的应用程序调用了**IDesktopWindowXamlSourceNative：： AttachToWindow**方法，并向其传递了一个窗口，该窗口与你之前对此方法的调用中指定的窗口相比，此窗口的在同一线程上。</p></p>在应用程序调用特定线程上的**AttachToWindow**后，同一线程上的所有其他[DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource)对象只能附加到作为首次调用时传递的相同顶级窗口的后代的 windows**AttachToWindow**。 当关闭特定线程的所有**DesktopWindowXamlSource**对象时，接下来的**DesktopWindowXamlSource**可以自由地附加到任何窗口。</p></p>若要解决此问题，请关闭绑定到此线程上其他顶级窗口的所有**DesktopWindowXamlSource**对象，或为此**DesktopWindowXamlSource**创建新线程。 |
+| 你的应用收到**COMException** ，其中包含以下消息： "AttachToWindow 方法失败，因为指定的 HWND 从与以前传递到同一线程上的 ATTACHTOWINDOW 的 HWND 更不同的顶级窗口。" | 此错误表示你的应用程序调用了**IDesktopWindowXamlSourceNative：： AttachToWindow**方法，并向其传递了一个窗口的 HWND，该窗口与你先前在同一线程上对此方法的调用中指定的窗口相比，</p></p>在应用程序调用特定线程上的**AttachToWindow**后，同一线程上的所有其他[DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource)对象只能附加到作为首次调用**AttachToWindow**时传递的相同顶级窗口的后代的 windows。 当关闭特定线程的所有**DesktopWindowXamlSource**对象时，接下来的**DesktopWindowXamlSource**可以自由地附加到任何窗口。</p></p>若要解决此问题，请关闭绑定到此线程上其他顶级窗口的所有**DesktopWindowXamlSource**对象，或为此**DesktopWindowXamlSource**创建新线程。 |
 
 ## <a name="related-topics"></a>相关主题
 

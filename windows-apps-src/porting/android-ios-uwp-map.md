@@ -1,19 +1,19 @@
 ---
 Description: 比较 iOS、Android 和 Windows 10 之间的平台功能。
-title: 适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
+title: 面向 Android 和 iOS 开发人员的 Windows 应用概念映射
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: f8ace0d56e6e647ed5f977cbe6860d8f91bb2b5f
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 23d090422c7c5aabb146d9cd1ff40cc64a485bdb
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282365"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683970"
 ---
-# <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
+# <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>面向 Android 和 iOS 开发人员的 Windows 应用概念映射
 
 如果你是具有 Android 或 iOS 技能和/或代码的开发人员，并且希望移动到 Windows 10 和通用 Windows 平台 (UWP)，则此资源具有在三个平台之间映射平台功能（以及你的知识）所需的一切。
 
@@ -42,7 +42,7 @@ ms.locfileid: "72282365"
 <td align="left"><strong>设计语言。</strong><br><br>一组规定平台中的应用应当具有的外观和行为的约定。</td>
 <td align="left"><strong>Android 材料设计</strong>指南提供了一种视觉语言，供 Android 设计人员和开发人员遵循。</td>
 <td align="left"><strong>人机接口指南</strong>为 iOS 设计人员和开发人员提供了相关建议。</td>
-<td align="left"><a href="https://developer.microsoft.com/en-us/windows/apps/design"><strong>UWP Windows Apps 设计</strong></a>说明了如何创建在所有 Windows 10 设备上都很有帮助的应用。 你可以在其中找到用户界面 (UI) 设计基础知识、响应式设计技术和完整详细的指南列表。<br/></td>
+<td align="left"><a href="https://developer.microsoft.com/windows/apps/design"><strong>UWP Windows Apps 设计</strong></a>说明了如何创建在所有 Windows 10 设备上都很有帮助的应用。 你可以在其中找到用户界面 (UI) 设计基础知识、响应式设计技术和完整详细的指南列表。<br/></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>用户界面标记语言。</strong> <br><br>一种呈现和描述 UI 及其组件的标记语言。 每个平台都提供了用于视觉编辑和标记编辑的编辑器。<br/></td>
@@ -342,7 +342,7 @@ ms.locfileid: "72282365"
 <td align="left"><strong>线程处理。</strong> <br><br>使用线程来维护<strong>响应式 UI</strong> 并运行多个<strong>并行任务</strong>。</td>
 <td align="left">实现线程的方法是使用类 <strong>Runnable</strong>、<strong>Handler</strong>、<strong>ThreadPoolExecutor</strong> 和更高级别的 <strong>AsyncTask</strong>。</td>
 <td align="left">也可使用 <strong>NSThread</strong>、<strong>Grand Central Dispatch</strong> 和更高级别的 <strong>NSOperation</strong> 实现线程。</td>
-<td align="left">通过RunAsync 将<strong>工作项<a href="https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync">提交到</a>线程池</strong>即可使用线程。 你可以通过 <strong><a href="https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer">CreateTimer</a></strong> 使用计时器提交工作项，也可以通过 <strong><a href="https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer">CreatePeriodicTimer</a></strong> 创建重复工作项。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/submit-a-work-item-to-the-thread-pool">向线程池提交工作项</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/use-a-timer-to-submit-a-work-item">使用计时器提交工作项</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/create-a-periodic-work-item">创建定期工作项</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/best-practices-for-using-the-thread-pool">使用线程池的最佳做法</a></td>
+<td align="left">通过 <strong><a href="https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync">RunAsync</a></strong> 将<strong>工作项</strong>提交到<strong>线程池</strong>即可使用线程。 你可以通过 <strong><a href="https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer">CreateTimer</a></strong> 使用计时器提交工作项，也可以通过 <strong><a href="https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer">CreatePeriodicTimer</a></strong> 创建重复工作项。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/submit-a-work-item-to-the-thread-pool">向线程池提交工作项</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/use-a-timer-to-submit-a-work-item">使用计时器提交工作项</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/create-a-periodic-work-item">创建定期工作项</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/best-practices-for-using-the-thread-pool">使用线程池的最佳做法</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>异步编程。</strong> <br><br>通过利用异步编程模式避免线程的复杂性来保持 UI 线程有响应。</td>
@@ -354,7 +354,7 @@ ms.locfileid: "72282365"
 <td align="left"><strong>列表视图优化。</strong> <br><br>帮助优化数据列表的内置模式，当需要显示的数据量很大时，性能通常很差</td>
 <td align="left"><strong>ViewHolder</strong> 设计模式用于避免多个视图查找，从而使你可以使用可重用的 UI 元素。</td>
 <td align="left">可以进行一系列的优化来改善 <strong>UITableView</strong> 的性能，不内置任何内容。</td>
-<td align="left">你可以使用自带 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview">UI 虚拟化</a>的 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview">ListView</a> 和 <strong>GridView</strong> 控件，从而提供流畅的平移和滚动体验以及更快速的启动时间。 你还可以在数据源中实现 <a href="https://docs.microsoft.com/dotnet/api/system.collections.ilist">IList</a> 和 <a href="https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a>，从而提供<strong>数据虚拟化</strong>并进一步改善性能。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview">ListView 和 GridView UI 优化</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization">ListView 和 GridView 数据虚拟化</a></td>
+<td align="left">你可以使用自带 <strong>UI 虚拟化</strong>的 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview">ListView</a> 和 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview">GridView</a> 控件，从而提供流畅的平移和滚动体验以及更快速的启动时间。 你还可以在数据源中实现 <a href="https://docs.microsoft.com/dotnet/api/system.collections.ilist">IList</a> 和 <a href="https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a>，从而提供<strong>数据虚拟化</strong>并进一步改善性能。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview">ListView 和 GridView UI 优化</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization">ListView 和 GridView 数据虚拟化</a></td>
 </tr>
 </tbody>
 </table>
@@ -588,13 +588,13 @@ ms.locfileid: "72282365"
 <td align="left"><strong>地理编码和反向地理编码。</strong> <br><br>将地址转换为地理位置（地理编码），将地理位置转换为地址（反向地理编码）。<br/></td>
 <td align="left"><strong>Geocoder</strong> 类用于地理编码和反向地理编码。</td>
 <td align="left"><strong>CLGeocoder</strong> 类用于地理编码。</td>
-<td align="left">你可以使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder">Windows.Services.Maps</a></strong> 中的 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps">MapLocationFinder 类</a></strong>执行地理编码。 对于地理编码，使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync">FindLocationsAsync</a></strong>，而对于反向地理编码，使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync">FindLocationsAtAsync</a></strong>。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/geocoding">执行地理编码和反向地理编码</a></td>
+<td align="left">你可以使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps">Windows.Services.Maps</a></strong> 中的 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder">MapLocationFinder 类</a></strong>执行地理编码。 对于地理编码，使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync">FindLocationsAsync</a></strong>，而对于反向地理编码，使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync">FindLocationsAtAsync</a></strong>。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/geocoding">执行地理编码和反向地理编码</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>路由和方向。</strong> <br><br>提供两个地理位置之间的路线、距离和方向。</td>
 <td align="left">Google 提供的 Web 服务 <strong>Google 地图路线 API</strong> 可以在 Android 上使用，即使没有提供 SDK。</td>
 <td align="left">地图工具包提供 <strong>MKDirections</strong> API，可用于获取有关路线和方向的信息。</td>
-<td align="left">你可以使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinder">Windows.Services.Maps</a></strong> 中的 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps">MapRouteFinder</a></strong> 类，请求步行或驾车路线。 路线会作为 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maproute">MapRoute</a></strong> 实例返回，并轻松地在 MapControl 上显示。 方向会在 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maproutemaneuver">MapRouteManeuver</a></strong> 对象内部返回。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/routes-and-directions">在地图上显示路线和方向</a></td>
+<td align="left">你可以使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps">Windows.Services.Maps</a></strong> 中的 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinder">MapRouteFinder</a></strong> 类，请求步行或驾车路线。 路线会作为 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maproute">MapRoute</a></strong> 实例返回，并轻松地在 MapControl 上显示。 方向会在 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maproutemaneuver">MapRouteManeuver</a></strong> 对象内部返回。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/routes-and-directions">在地图上显示路线和方向</a></td>
 </tr>
 </tbody>
 </table>
@@ -625,13 +625,13 @@ ms.locfileid: "72282365"
 <td align="left"><strong>允许调用您的应用程序。</strong> <br><br>允许应用响应来自另一个应用的请求。</td>
 <td align="left">应用向<strong>意图筛选器</strong>注册<strong>意图处理活动</strong>，以响应来自另一个应用的隐式意图。</td>
 <td align="left">将<strong>应用扩展</strong>打包可使数据与其他应用共享。 应用可以使用 Info.plist 中的 <strong>CFBundleURLTypes</strong> 项注册<strong>自定义 URL 方案</strong>。</td>
-<td align="left">通过在程序包清单中注册一项协议<strong><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.activationkind#Protocol">并更新 </a></strong>Application.OnActivated<strong><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated"> 事件处理程序，（可选）从而返回结果，你可以将应用注册为 </a>URI 方案名称</strong>的默认处理程序。 同样，也可以通过在程序包清单中添加一项声明并处理 <strong><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated">Application.OnFileActivated</a></strong> 事件，将应用注册为特定文件类型的默认处理程序。<br/><br/>你可以通过在清单中将应用注册为共享目标并处理 <strong><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onsharetargetactivated">Application.OnShareTargetActivated</a></strong> 事件来处理共享合约请求。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/launch-resume/how-to-launch-an-app-for-results">针对结果启动应用</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/launch-resume/handle-file-activation">处理文件激活</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/app-to-app/receive-data">接收数据</a></td>
+<td align="left">通过在程序包清单中注册一项<strong><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.activationkind#Protocol">协议</a></strong>并更新 <strong><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated">Application.OnActivated</a></strong> 事件处理程序，（可选）从而返回结果，你可以将应用注册为 <strong>URI 方案名称</strong>的默认处理程序。 同样，也可以通过在程序包清单中添加一项声明并处理 <strong><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated">Application.OnFileActivated</a></strong> 事件，将应用注册为特定文件类型的默认处理程序。<br/><br/>你可以通过在清单中将应用注册为共享目标并处理 <strong><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onsharetargetactivated">Application.OnShareTargetActivated</a></strong> 事件来处理共享合约请求。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/launch-resume/how-to-launch-an-app-for-results">针对结果启动应用</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/launch-resume/handle-file-activation">处理文件激活</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/app-to-app/receive-data">接收数据</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>复制和粘贴。</strong> <br><br>在应用之间复制和粘贴文本及其他内容。</td>
 <td align="left">借助 <strong>ClipboardManager</strong> 和 <strong>ClipData</strong> 类，可以使用<strong>剪贴板框架</strong>实现复制和粘贴。</td>
 <td align="left">可以使用 <strong>UIPasteboard</strong>、<strong>UIMenuController</strong> 和 <strong>UIResponderStandardEditActions</strong> 实现复制和粘贴。</td>
-<td align="left">许多默认 XAML 控件已经支持复制和粘贴。 你可以使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage">Windows.ApplicationModel.DataTransfer</a></strong> 中的 <strong><a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.Clipboard">DataPackage</a></strong> 和 <strong><a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer">Clipboard</a></strong> 类，自行实现复制和粘贴。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/app-to-app/copy-and-paste">复制和粘贴</a></td>
+<td align="left">许多默认 XAML 控件已经支持复制和粘贴。 你可以使用 <strong><a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer">Windows.ApplicationModel.DataTransfer</a></strong> 中的 <strong><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage">DataPackage</a></strong> 和 <strong><a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.Clipboard">Clipboard</a></strong> 类，自行实现复制和粘贴。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/app-to-app/copy-and-paste">复制和粘贴</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>拖放。</strong> <br><br>在应用之间拖放内容。</td>
@@ -662,7 +662,7 @@ ms.locfileid: "72282365"
 <td align="left"><strong>软件设计模式。</strong> <br><br>针对平台推荐的或适用于平台的模式。</td>
 <td align="left">尽管 Beta 版“数据绑定框架”支持广泛使用 <strong>Model-View-ViewModel (MVVM)</strong> 模式，但并没有针对 Android 开发推荐或提供任何正式模式。 许多第三方文章和框架推荐使用 <strong>Model-View-Presenter (MVP)</strong> 和 <strong>MVVM</strong> 方法。</td>
 <td align="left"><strong>Model-View-Controller (MVC)</strong> 是与 iOS 一起使用的常见模式，并且已集成到平台中。</td>
-<td align="left">在针对 UWP 进行生成时，不要局限于某一特定模式。<br/><br/>你可以使用内置的<a href="https://docs.microsoft.com/windows/uwp/data-binding/index">数据绑定</a>模式以确保彻底分离数据和 UI 问题，并避免对随后会更新属性值的 UI 事件处理程序进行编码。<br/><br/>你可以通过利用第三方 MVVM 库（如 <strong>MVVM 光工具包</strong>），或者滚动自己的 MVVM 库并保持逻辑退出代码隐藏来扩展数据绑定，以遵循 <a href="https://archive.codeplex.com/?p=mvvmlight">Model-View-ViewModel (MVVM)</a> 模式。<br/><br/><a href="https://docs.microsoft.com/previous-versions/msp-n-p/hh848246(v=pandp.10)">MVVM 模式</a><br/><br/><a href="https://github.com/Windows-XAML/Template10/wiki">模板 10 Visual Studio 项目模板</a></td>
+<td align="left">在针对 UWP 进行生成时，不要局限于某一特定模式。<br/><br/>你可以使用内置的<a href="https://docs.microsoft.com/windows/uwp/data-binding/index">数据绑定</a>模式以确保彻底分离数据和 UI 问题，并避免对随后会更新属性值的 UI 事件处理程序进行编码。<br/><br/>你可以通过利用第三方 MVVM 库（如 <a href="https://archive.codeplex.com/?p=mvvmlight">MVVM 光工具包</a>），或者滚动自己的 MVVM 库并保持逻辑退出代码隐藏来扩展数据绑定，以遵循 <strong>Model-View-ViewModel (MVVM)</strong> 模式。<br/><br/><a href="https://docs.microsoft.com/previous-versions/msp-n-p/hh848246(v=pandp.10)">MVVM 模式</a><br/><br/><a href="https://github.com/Windows-XAML/Template10/wiki">模板 10 Visual Studio 项目模板</a></td>
 </tr>
 </tbody>
 </table>

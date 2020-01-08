@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f9aab8c4b627b9a4952e7e3e292f1e4b528f992
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: b9fbe76244d37bda69a1737e04f7172a64b3af44
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258383"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684225"
 ---
 # <a name="interaction-primer"></a>交互入门
 
@@ -30,11 +30,11 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 对于 **Windows 10 2018 年 4 月更新**，我们使用眼睛和头部跟踪输入设备引入了对凝视输入的支持。 
 
 > [!NOTE]
-> **Windows 10 Fall Creators Update** 以及[目视控制](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control)中引入了对目视跟踪硬件的支持，这是一项内置功能，让你可以使用眼睛控制屏幕指针，使用屏幕键盘键入，并使用文本到语音转换与其他人交流。
+> **Windows 10 Fall Creators Update** 以及[目视控制](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control)中引入了对目视跟踪硬件的支持，这是一项内置功能，让你可以使用眼睛控制屏幕指针，使用屏幕键盘键入，并使用文本到语音转换与其他人交流。
 
 ### <a name="device-support"></a>设备支持
 
-- 平板电脑
+- Tablet
 - PC 和笔记本电脑
 
 ### <a name="typical-usage"></a>典型用法
@@ -51,7 +51,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 ### <a name="device-support"></a>设备支持
 
-- 平板电脑
+- Tablet
 - PC 和笔记本电脑
 
 ### <a name="typical-usage"></a>典型用法
@@ -69,7 +69,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 ### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
--   平板电脑
+-   Tablet
 -   PC 和笔记本电脑
 -   Surface Hub
 -   IoT
@@ -89,7 +89,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 [Cortana 设计指南](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines)
  
 
-## <a name="speech"></a>语音
+## <a name="speech"></a>“语音”
 
 语音是用户用于与应用程序交互的一种高效自然方式。 这是一种与应用程序通信的简单且准确的方式，并且可使用户提高效率并在各种情况下获取信息。
 
@@ -100,7 +100,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 ### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
--   平板电脑
+-   Tablet
 -   PC 和笔记本电脑
 -   Surface Hub
 -   IoT
@@ -151,7 +151,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 ### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
--   平板电脑
+-   Tablet
 -   PC 和笔记本电脑
 -   Surface Hub
 -   IoT
@@ -178,7 +178,7 @@ Windows 墨迹平台与笔设备相得益彰，提供了一种创建手写便笺
 ### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
--   平板电脑
+-   Tablet
 -   PC 和笔记本电脑
 -   Surface Hub
 -   IoT
@@ -230,7 +230,7 @@ Surface Hub 设备可以识别 100 个独特的并发触摸点。
 [触摸板设计准则](https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions)
  
 
-## <a name="keyboard"></a>键盘
+## <a name="keyboard"></a>Keyboard
 
 键盘是主要的文本输入设备。对于残障人士，或者认为键盘是与应用交互的最快和最有效方法的用户而言，键盘通常非常重要。
 
@@ -239,7 +239,7 @@ Surface Hub 设备可以识别 100 个独特的并发触摸点。
 ### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
--   平板电脑
+-   Tablet
 -   PC 和笔记本电脑
 -   Surface Hub
 -   IoT
@@ -277,7 +277,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 ### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
--   平板电脑
+-   Tablet
 -   PC 和笔记本电脑
 -   Surface Hub
 -   IoT
@@ -349,7 +349,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 ### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
--   平板电脑
+-   Tablet
 -   PC 和笔记本电脑
 -   Surface Hub
 -   IoT

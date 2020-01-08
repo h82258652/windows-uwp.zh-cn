@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f0549aa1e20d8ed787eed550f4a7e7171a812831
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: ff37a243f88bdd378998070f58ec35196c62a6cf
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820189"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683485"
 ---
 # <a name="my-people-sharing"></a>“我的人脉”共享
 
@@ -20,15 +20,15 @@ ms.locfileid: "67820189"
 
 ## <a name="requirements"></a>要求
 
-+ Windows 10 和 Microsoft Visual Studio 2019。 有关安装详细信息，请参阅[设置 Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
-+ C# 或类似面向对象的编程语言的基础知识。 若要开始使用 C#，请参阅[创建“Hello, world”应用](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
++ Windows 10 和 Microsoft Visual Studio 2019。 有关安装详细信息，请参阅[设置 Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)。
++ C# 或类似面向对象的编程语言的基础知识。 若要开始使用 C#，请参阅[创建“Hello, world”应用](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
 ## <a name="overview"></a>概述
 
 你必须执行以下三个步骤，才能将应用程序启用为“我的人脉”共享目标：
 
-1. [声明对应用程序清单中的 shareTarget 激活协定的支持。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [批注的用户可以使用您的应用程序共享的联系人。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [在应用程序清单中声明对 shareTarget 激活约定的支持。](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [使用你的应用来批注用户可以共享的联系人。](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3. 支持同时运行应用程序的多个实例。  用户必须能够与完整版本的应用程序进行交互，并且同时也可以使用应用程序与其他人共享。 他们可以同时在多个共享窗口中使用该应用程序。 为了对此提供支持，应用程序需要能够同时运行多个视图。 若要了解如何执行此操作，请参阅文章[“显示应用的多个视图”](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views)。
 
 当你完成此操作后，应用程序将在“我的人脉”共享窗口中显示为共享目标，可以通过以下两种方式启动共享目标：
@@ -75,7 +75,7 @@ ms.locfileid: "67820189"
 </Applications>
 ```
 
-此代码将添加对所有文件和数据格式的支持，但是你可以选择指定所支持的文件类型和数据格式（请参阅 [ShareTarget 类文档](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)了解更多详细信息）。
+此代码将添加对所有文件和数据格式的支持，但是你可以选择指定所支持的文件类型和数据格式（请参阅 [ShareTarget 类文档](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)了解更多详细信息）。
 
 ## <a name="annotating-contacts"></a>为联系人添加注释
 
@@ -103,11 +103,11 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找包系列名称，请使用默认编辑器打开 **Package.appxmanifest**，并在“打包”选项卡中查找。在此，“应用”是与“共享目标”视图相对应的可激活类。
+“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找你的包系列名称，请使用默认编辑器打开 **Package.appxmanifest**，然后查找“Packaging”选项卡。在这里，“App”是指与“共享目标”视图对应的可激活类。
 
 ## <a name="running-as-a-my-people-share-target"></a>作为“我的人脉”共享目标运行
 
-最后，若要运行该应用，请替代应用主类中的 [OnShareTargetActivated](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) 方法，以处理共享目标激活。 [ShareTargetActivatedEventArgs.ShareOperation.Contacts](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#Properties) 属性将包含与之共享的联系人，如果这是标准共享操作（不是“我的人脉”共享），则将为空。
+最后，若要运行该应用，请替代应用主类中的 [OnShareTargetActivated](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) 方法，以处理共享目标激活。 [ShareTargetActivatedEventArgs.ShareOperation.Contacts](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#Properties) 属性将包含与之共享的联系人，如果这是标准共享操作（不是“我的人脉”共享），则将为空。
 
 ```Csharp
 protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
@@ -131,7 +131,7 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 }
 ```
 
-## <a name="see-also"></a>请参阅
-+ [添加我的人支持](my-people-support.md)
-+ [ShareTarget 类](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
+## <a name="see-also"></a>另请参阅
++ [添加我的人员支持](my-people-support.md)
++ [ShareTarget 类](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
 + [联系人卡集成示例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)

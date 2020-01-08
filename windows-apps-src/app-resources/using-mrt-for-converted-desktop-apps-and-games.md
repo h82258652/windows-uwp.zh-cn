@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp, mrt, pri. 资源, 游戏, centennial, desktop app converter, mui, 卫星程序集
 ms.localizationpriority: medium
-ms.openlocfilehash: 3367cfafb2f3a8e307fd26dc6d6c19f1ece0d17e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 0425e7bb00e4a5be848443aa278ebaad1706cb30
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74254753"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683910"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>在旧应用或游戏中使用 Windows 10 资源管理系统
 
@@ -27,7 +27,7 @@ ms.locfileid: "74254753"
 <table>
 <tr>
 <th>工作</th>
-<th>好处</th>
+<th>益处</th>
 <th>估计成本</th>
 </tr>
 <tr>
@@ -148,7 +148,7 @@ ms.locfileid: "74254753"
 </Package>
 ```
 
-有关包清单文件和包布局的详细信息，请参阅[应用包清单](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest)。
+有关包清单文件和包布局的详细信息，请参阅[应用包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)。
 
 最后，如果使用 Visual Studio 创建新项目并将现有代码迁移到，请参阅[创建 "Hello，world" 应用](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。 你可以将现有代码包含在新项目中，但你可能需要在用户界面中进行重大的代码更改（尤其是在用户界面中），以便作为纯 UWP 应用运行。 这些更改不是本文档讨论的范围。
 
@@ -207,7 +207,7 @@ ms.locfileid: "74254753"
 
 在 `.resw` 文件中定义了值后，下一步是更新清单以引用资源字符串。 同样，你可以直接编辑 XML 文件，或依靠 Visual Studio 清单设计器。
 
-如果你直接编辑 XML，打开 `AppxManifest.xml` 文件，对<span style="background-color: lightgreen">突出显示值</span>进行以下更改 - 使用此*确切*文本，而不是特定于应用程序的文本。 对于使用这些具体的资源名称没有要求（你可以选择自己的名称），但不论你如何选择，所选名称都必须与 &mdash; 文件中的名称完全一致。 这些名称应与你在 `Names` 文件中创建的 `.resw` 一致，带有前缀 `ms-resource:` 架构和 `Resources/` 命名空间。 
+如果你直接编辑 XML，打开 `AppxManifest.xml` 文件，对<span style="background-color: lightgreen">突出显示值</span>进行以下更改 - 使用此*确切*文本，而不是特定于应用程序的文本。 对于使用这些具体的资源名称没有要求（你可以选择自己的名称），但不论你如何选择，所选名称都必须与 `.resw` 文件中的名称完全一致。 这些名称应与你在 `.resw` 文件中创建的 `Names` 一致，带有前缀 `ms-resource:` 架构和 `Resources/` 命名空间。 
 
 > [!NOTE]
 > 此代码段中省略了清单中的许多元素-不删除任何内容！
@@ -310,7 +310,7 @@ ms.locfileid: "74254753"
     > [!IMPORTANT]
     > 如果手动创建签名证书，请确保将这些文件放在与源项目或包源不同的目录中，否则可能包含在包中，其中包括私钥！
 
-3. 若要对包签名，请使用以下命令。 请注意，`Publisher` 的 `Identity` 元素中指定的 `AppxManifest.xml` 必须与证书的 `Subject` 匹配（这**不**是 `<PublisherDisplayName>` 元素，是向用户显示的本地化显示名称）。 像往常一样，将 `contoso_demo...` 文件名替换为适合你的项目的名称，并（**非常重要**）确保 `.pfx` 文件不在当前目录中（否则它可能被作为你的程序包的一部分创建，包括签名私钥！）：
+3. 若要对包签名，请使用以下命令。 请注意，`AppxManifest.xml` 的 `Identity` 元素中指定的 `Publisher` 必须与证书的 `Subject` 匹配（这**不**是 `<PublisherDisplayName>` 元素，是向用户显示的本地化显示名称）。 像往常一样，将 `contoso_demo...` 文件名替换为适合你的项目的名称，并（**非常重要**）确保 `.pfx` 文件不在当前目录中（否则它可能被作为你的程序包的一部分创建，包括签名私钥！）：
 
     ```CMD
     signtool sign /fd SHA256 /a /f ..\contoso_demo_key.pfx ..\contoso_demo.appx
@@ -349,7 +349,7 @@ add-appxpackage contoso_demo.appx
 3. 选择 `Local Machine` 并单击 `Next`
 4. 如果显示 "用户帐户控制" 管理提升提示，请接受该提示，并单击 `Next`
 5. 输入私钥的密码（如果有），然后单击 "`Next`
-6. 选择 `Place all certificates in the following store`
+6. 选择`Place all certificates in the following store`
 7. 单击 `Browse`，然后选择 `Trusted People` 文件夹（**不是**”受信任的发布者“）
 8. 单击 "`Next`"，然后 `Finish`
 
@@ -367,7 +367,7 @@ add-appxpackage contoso_demo.appx
 
 在 `Strings` 文件夹内，使用相应的 BCP-47 代码为你支持的每种语言创建其他文件夹（例如，`Strings\de-DE`）。 在每个文件夹内，创建包括翻译的资源值的 `resources.resw` 文件（使用 XML 编辑器或 Visual Studio 设计器）。 假设你在某处已经有可用的本地化的字符串，你只需将其插入到 `.resw` 文件；本文档不包括翻译步骤本身。 
 
-例如，`Strings\de-DE\resources.resw` 文件可能如下所示，包含从 <span style="background-color: yellow"> 翻译过来的</span>突出显示文本`en-US`：
+例如，`Strings\de-DE\resources.resw` 文件可能如下所示，包含从 `en-US` 翻译过来的<span style="background-color: yellow">突出显示文本</span>：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -433,11 +433,11 @@ makepri createconfig /cf ..\contoso_demo.xml /dq en-US_de-DE_fr-FR /pv 10.0 /o
 1. 运行 `Settings` 应用 (`Windows + I`)
 2. 转到 `Time & language`
 3. 转到 `Region & language`
-4. 单击 `Add a language`
+4. 单击`Add a language`
 5. 键入（或者选择）所需的语言（例如 `Deutsch` 或 `German`）
  * 如果有子语言，选择所需的那个（例如，`Deutsch / Deutschland`）
 6. 在语言列表中选择新的语言
-7. 单击 `Set as default`
+7. 单击`Set as default`
 
 现在，打开“开始”菜单并搜索应用程序，你应该可以看到所选语言的本地化的值（其他应用也可能显示为本地化值）。 如果你未看到本地化的名称，请立即，请等待几分钟，直到刷新开始菜单的缓存。 若要返回到你的本地语言，只需在语言列表中将其设置为默认语言。 
 
@@ -494,7 +494,7 @@ makepri createconfig /cf ..\contoso_demo.xml /dq en-US_de-DE_fr-FR /pv 10.0 /o
 
 本文假设已本地化的资源都具有相同的文件名（例如 `contoso_demo.exe.mui` 或 `contoso_strings.dll` 或 `contoso.strings.xml`），但这些资源位于具有 BCP-47 名称的不同文件夹中（`en-US`、`de-DE`等）。 你有多少资源文件、其名称是什么、其文件格式/关联的 API 是什么等，这些都不重要。唯一重要的是每一个*逻辑*资源具有相同的文件名（但放在不同的*物理*目录下）。 
 
-作为一个反例，如果你的应用程序使用平面文件结构（具有包含文件 `Resources` 和 `english_strings.dll` 的单个 `french_strings.dll` 目录），它不会很好地映射到 MRT。 更好的结构是 `Resources` 目录，有子目录和文件 `en\strings.dll` 和 `fr\strings.dll`。 也可以使用相同的基本文件名，但具有嵌入限定符，如 `strings.lang-en.dll` 和 `strings.lang-fr.dll`，不过使用具有语言代码的目录在概念上更简单，所以我们将重点关注这一点。
+作为一个反例，如果你的应用程序使用平面文件结构（具有包含文件 `english_strings.dll` 和 `french_strings.dll` 的单个 `Resources` 目录），它不会很好地映射到 MRT。 更好的结构是 `Resources` 目录，有子目录和文件 `en\strings.dll` 和 `fr\strings.dll`。 也可以使用相同的基本文件名，但具有嵌入限定符，如 `strings.lang-en.dll` 和 `strings.lang-fr.dll`，不过使用具有语言代码的目录在概念上更简单，所以我们将重点关注这一点。
 
 >[!NOTE]
 > 即使您不能遵循此文件命名约定，仍可以使用 MRT.LOG 和打包权益。只需要执行更多操作。
@@ -541,11 +541,11 @@ MRT 只需要更改此流程的前两个步骤 - 如何确定最佳候选资源�
 
 将代码切换为使用 MRT 查找资源并不困难。 这需要使用一些 WinRT 类型和几行代码。 你将使用的主要类型如下所示：
 
-* [ResourceContext](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext)，封装当前处于活动状态的一组限定符值（语言、比例系数等）
-* [ResourceManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcemanager)（WinRT 版本，而不是 .NET 版本），支持访问来自 PRI 文件的所有资源
-* [ResourceMap](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcemap)，表示 PRI 文件中的一组特定资源子集（在本示例中，为基于文件的资源与字符串资源）
-* [NamedResource](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource)，表示逻辑资源及其所有可能的候选项
-* [ResourceCandidate](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcecandidate)，表示一个具体的候选资源 
+* [ResourceContext](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext)，封装当前处于活动状态的一组限定符值（语言、比例系数等）
+* [ResourceManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemanager)（WinRT 版本，而不是 .NET 版本），支持访问来自 PRI 文件的所有资源
+* [ResourceMap](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemap)，表示 PRI 文件中的一组特定资源子集（在本示例中，为基于文件的资源与字符串资源）
+* [NamedResource](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource)，表示逻辑资源及其所有可能的候选项
+* [ResourceCandidate](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecandidate)，表示一个具体的候选资源 
 
 在伪代码中，你解决给定资源文件名（如上方示例中的 `UICommands\ui.txt`）的方式如下所示：
 
@@ -615,7 +615,7 @@ set absoluteFileName = bestCandidate.ValueAsString
 
 由于本地化的资源不再位于可执行文件安装主位置下的子目录中，所以内置 .NET 资源解决失败。 所幸，.NET 在处理失败的程序集加载尝试方面具有明确定义的机制 - `AssemblyResolve`事件。 使用 MRT 的 .NET 应用必须注册此事件，并提供 .NET 资源子系统缺少的程序集。 
 
-如何使用 WinRT API 查找 .NET 使用的卫星集的简明示例如下所示；所显示的代码被有意压缩以显示最基本的实现，虽然你可以看到它紧密映射到上方的伪代码，其中使用传入的 `ResolveEventArgs` 提供我们需要查找的程序集的名称。 此代码的可运行版本（包含详细注释和错误处理）可以在 `PriResourceRsolver.cs`GitHub 中的 [.NET 程序集解析器**示例**的 ](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DotNetSatelliteAssemblyDemo) 文件中找到。
+如何使用 WinRT API 查找 .NET 使用的卫星集的简明示例如下所示；所显示的代码被有意压缩以显示最基本的实现，虽然你可以看到它紧密映射到上方的伪代码，其中使用传入的 `ResolveEventArgs` 提供我们需要查找的程序集的名称。 此代码的可运行版本（包含详细注释和错误处理）可以在 [GitHub 中的 **.NET 程序集解析器**示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DotNetSatelliteAssemblyDemo)的 `PriResourceRsolver.cs` 文件中找到。
 
 ```csharp
 static class PriResourceResolver
@@ -724,7 +724,7 @@ HRESULT GetMrtResourceHandle(LPCWSTR resourceFilePath,  HINSTANCE* resourceHandl
 
 要使用捆绑包生成器工具，为包创建的 PRI 配置文件需要手动更新，以删除 `<packaging>` 部分。
 
-如果你使用的是 Visual Studio，请参阅[确保在设备上安装资源，而不管设备是否需要这些资源](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140))，以便了解如何通过创建 `priconfig.packaging.xml` 和 `priconfig.default.xml`的文件来将所有语言构建到主包中。
+如果你使用的是 Visual Studio，请参阅[确保在设备上安装资源，而不管设备是否需要这些资源](https://docs.microsoft.com/previous-versions/dn482043(v=vs.140))，以便了解如何通过创建 `priconfig.packaging.xml` 和 `priconfig.default.xml`的文件来将所有语言构建到主包中。
 
 如果你手动编辑文件，请按照下列步骤操作： 
 

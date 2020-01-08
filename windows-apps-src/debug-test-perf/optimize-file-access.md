@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 176791388bc0d0a5ac33659f6744852a2c857187
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 3114bc7a86f7f7f4d22c69c814735c146352efbd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339590"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681948"
 ---
 # <a name="optimize-file-access"></a>优化文件访问
 
@@ -236,6 +236,6 @@ Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 
 如果你希望低延迟地读取和写入并且不希望在基础 UWP 数据流之外的大型数据块中进行读取操作，则也可能希望避免使用缓冲。 例如，如果你使用数据流进行网络通信，则可能希望低延迟地读取和写入。
 
-在聊天应用中，你可以使用数据流通过网络接口以便发送来往消息。 在这种情况下，你希望在准备好后立即发送消息，而不等待填满缓冲区。 如果在调用 [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0)、[**AsStreamForWrite**](https://docs.microsoft.com/en-us/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0) 和 [**AsStream**](https://docs.microsoft.com/en-us/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0) 扩展方法时将缓冲区大小设置为 0，则所得的适配器将不分配缓冲区，并且所有调用直接操作基础 UWP 数据流。
+在聊天应用中，你可以使用数据流通过网络接口以便发送来往消息。 在这种情况下，你希望在准备好后立即发送消息，而不等待填满缓冲区。 如果在调用 [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0)、[**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0) 和 [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0) 扩展方法时将缓冲区大小设置为 0，则所得的适配器将不分配缓冲区，并且所有调用直接操作基础 UWP 数据流。
 
 

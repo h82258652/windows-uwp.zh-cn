@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 28974fea7861022c383efa5bf61565c4f18b5f8d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d758a19800f52284011b3260f83826f7cde300f3
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74254328"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683900"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>使用 MediaCapture 捕获基本的照片、视频和音频
 
@@ -35,7 +35,7 @@ ms.locfileid: "74254328"
 
 
 ## <a name="initialize-the-mediacapture-object"></a>初始化 MediaCapture 对象
-本文介绍的所有捕获方法都需要通过依次调用构造函数和 [**InitializeAsync**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture)，首先初始化 [**MediaCapture**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync) 对象。 由于在应用中可从多个位置访问 **MediaCapture** 对象，所以请声明某个类变量以保留该对象。  如果捕获操作失败，请为待通知的 **MediaCapture** 对象的 [**Failed**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.failed) 事件实现处理程序。
+本文介绍的所有捕获方法都需要通过依次调用构造函数和 [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync)，首先初始化 [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) 对象。 由于在应用中可从多个位置访问 **MediaCapture** 对象，所以请声明某个类变量以保留该对象。  如果捕获操作失败，请为待通知的 **MediaCapture** 对象的 [**Failed**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.failed) 事件实现处理程序。
 
 [!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
@@ -47,19 +47,19 @@ ms.locfileid: "74254328"
 ## <a name="capture-a-photo-to-a-softwarebitmap"></a>将照片捕获到 SoftwareBitmap
 Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 类，可跨多项功能提供图像的通用表示形式。 如果你想捕获照片并立即在应用中使用捕获的图像（例如在 XAML 中显示它，而非捕获到某个文件），则应捕获到 **SoftwareBitmap**。 你仍可选择在以后将图像保存到磁盘。
 
-初始化 **MediaCapture** 对象后，可使用LowLagPhotoCapture[**类将照片捕获到**SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.LowLagPhotoCapture)。 通过调用 [**PrepareLowLagPhotoCaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync)（该函数在指定所需图像格式的 [**ImageEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) 对象中传递），获取此类的实例。 [**CreateUncompressed**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.imageencodingproperties.createuncompressed)创建具有指定像素格式的未压缩编码。 通过调用返回 [**CapturedPhoto**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagphotocapture.captureasync) 对象的 [**CaptureAsync**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CapturedPhoto) 捕获照片。 通过依次访问Frame[**属性和**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedphoto.frame)SoftwareBitmap[**属性，获取**SoftwareBitmap](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.softwarebitmap)。
+初始化 **MediaCapture** 对象后，可使用 [**LowLagPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.LowLagPhotoCapture) 类将照片捕获到 **SoftwareBitmap**。 通过调用 [**PrepareLowLagPhotoCaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync)（该函数在指定所需图像格式的 [**ImageEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) 对象中传递），获取此类的实例。 [**CreateUncompressed**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.imageencodingproperties.createuncompressed)创建具有指定像素格式的未压缩编码。 通过调用返回 [**CapturedPhoto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CapturedPhoto) 对象的 [**CaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagphotocapture.captureasync) 捕获照片。 通过依次访问 [**Frame**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedphoto.frame) 属性和 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.softwarebitmap) 属性，获取 **SoftwareBitmap**。
 
-如果需要，可重复调用 **CaptureAsync** 来捕获多张照片。 在完成捕获后，调用 [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.finishasync) 以关闭 **LowLagPhotoCapture** 会话，并释放关联的资源。 调用 **FinishAsync** 后，若要开始重新捕获照片，需要在调用 [**CaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync) 之前重新调用 [**PrepareLowLagPhotoCaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagphotocapture.captureasync) 以重新初始化捕获会话。
+如果需要，可重复调用 **CaptureAsync** 来捕获多张照片。 在完成捕获后，调用 [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.finishasync) 以关闭 **LowLagPhotoCapture** 会话，并释放关联的资源。 调用 **FinishAsync** 后，若要开始重新捕获照片，需要在调用 [**CaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagphotocapture.captureasync) 之前重新调用 [**PrepareLowLagPhotoCaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync) 以重新初始化捕获会话。
 
 [!code-cs[CaptureToSoftwareBitmap](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCaptureToSoftwareBitmap)]
 
-自 Windows 版本 1803 起，可访问从 [CaptureAsync**返回的**CapturedFrame](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) 类的BitmapProperties 属性，以检索与捕获的照片相关的元数据。 可将此数据传入 **BitmapEncoder**，进而将元数据保存到某个文件。 之前无法访问未压缩的图像格式的此数据。 还可访问 [**ControlValues**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.controlvalues) 属性来检索描述捕获帧的控件值（如曝光度和白平衡）的 [**CapturedFrameControlValues**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframecontrolvalues) 对象。
+自 Windows 版本 1803 起，可访问从 **CaptureAsync** 返回的 **CapturedFrame** 类的 [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) 属性，以检索与捕获的照片相关的元数据。 可将此数据传入 **BitmapEncoder**，进而将元数据保存到某个文件。 之前无法访问未压缩的图像格式的此数据。 还可访问 [**ControlValues**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.controlvalues) 属性来检索描述捕获帧的控件值（如曝光度和白平衡）的 [**CapturedFrameControlValues**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframecontrolvalues) 对象。
 
 若要了解如何使用 **BitmapEncoder** 和 **SoftwareBitmap** 对象（包括如何在 XAML 页面显示此类对象），请参阅[**创建、编辑和保存位图图像**](imaging.md)。 
 
 若要详细了解如何设置捕获设备控件值，请参阅[用于照片和视频的捕获设备控件](capture-device-controls-for-photo-and-video-capture.md)。
 
-自 Windows 10 版本 1803 起，可通过访问 [MediaCapture**返回的**CapturedFrame](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) 的BitmapProperties 属性，获取以未压缩格式捕获的照片的元数据，如 EXIF 信息。 在以前的版本中，仅能在以压缩文件格式捕获的照片的标题中访问此数据。 手动写入图像文件时，可向 [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder) 提供此数据。 有关位图编码的详细信息，请参阅[创建、编辑和保存位图图像](imaging.md)。  还可通过访问 [**ControlValues**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.capturedframe.controlvalues) 属性访问捕获图像时使用的帧控件值，如曝光度和闪光设置。 有关详细信息，请参阅[用于照片和视频捕获的捕获设备控件](capture-device-controls-for-photo-and-video-capture.md)。
+自 Windows 10 版本 1803 起，可通过访问 **MediaCapture** 返回的 **CapturedFrame** 的 [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) 属性，获取以未压缩格式捕获的照片的元数据，如 EXIF 信息。 在以前的版本中，仅能在以压缩文件格式捕获的照片的标题中访问此数据。 手动写入图像文件时，可向 [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder) 提供此数据。 有关位图编码的详细信息，请参阅[创建、编辑和保存位图图像](imaging.md)。  还可通过访问 [**ControlValues**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.controlvalues) 属性访问捕获图像时使用的帧控件值，如曝光度和闪光设置。 有关详细信息，请参阅[用于照片和视频捕获的捕获设备控件](capture-device-controls-for-photo-and-video-capture.md)。
 
 ## <a name="capture-a-photo-to-a-file"></a>将照片捕获到文件
 典型的摄影应用会将捕获的照片保存到磁盘或云存储，并且需要将元数据（例如照片方向）添加到文件。 以下示例显示如何将照片捕获到文件。 你仍可选择在以后从图像文件中创建 **SoftwareBitmap**。 
@@ -91,11 +91,11 @@ Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Win
 
 [!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
 
-可以继续调用 **StartAsync** 和 **StopAsync** 以捕获其他视频。 完成视频捕获后，调用 [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.finishasync) 以释放捕获会话并清理关联的资源。 完成此调用后，必须重新调用 **PrepareLowLagRecordToStorageFileAsync** 以重新初始化捕获会话，然后才可 **StartAsync**。
+可继续调用 **StartAsync** 和 **StopAsync** 以捕获其他视频。 完成视频捕获后，调用 [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.finishasync) 以释放捕获会话并清理关联的资源。 完成此调用后，必须重新调用 **PrepareLowLagRecordToStorageFileAsync** 以重新初始化捕获会话，然后才可 **StartAsync**。
 
 [!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
 
-在捕获视频时，应为 [MediaCapture**对象的**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.recordlimitationexceeded)RecordLimitationExceeded 事件注册处理程序，如果超过单次录制的时限（当前为三小时），操作系统将引发该事件。 在事件的处理程序中，应通过调用 [**StopAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.stopasync) 完成录制。
+在捕获视频时，应为 **MediaCapture** 对象的 [**RecordLimitationExceeded**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.recordlimitationexceeded) 事件注册处理程序，如果超过单次录制的时限（当前为三小时），操作系统将引发该事件。 在事件的处理程序中，应通过调用 [**StopAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.stopasync) 完成录制。
 
 [!code-cs[RecordLimitationExceeded](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceeded)]
 
@@ -104,7 +104,7 @@ Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Win
 ### <a name="play-and-edit-captured-video-files"></a>播放和编辑捕获的视频文件
 将视频捕获到文件后，你可能想要在应用的 UI 中加载并播放该文件。 可使用 **[MediaPlayerElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)** XAML 控件和关联的 **[MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)** 执行此操作。 若要了解如何在 XAML 页面播放媒体，请参阅[使用 MediaPlayer 播放音频和视频](play-audio-and-video-with-mediaplayer.md)。
 
-还可通过调用 **[CreateFromFileAsync](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip)** 从视频文件创建 **[MediaClip](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.createfromfileasync)** 对象。  **[MediaComposition](https://docs.microsoft.com/uwp/api/windows.media.editing.mediacomposition)** 提供基本的视频编辑功能，如排列 **MediaClip** 对象的序列、剪裁视频长度、创建层、添加背景音乐和应用视频效果。 若要详细了解如何使用媒体合成功能，请参阅[媒体合成和编辑](media-compositions-and-editing.md)。
+还可通过调用 **[CreateFromFileAsync](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.createfromfileasync)** 从视频文件创建 **[MediaClip](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip)** 对象。  **[MediaComposition](https://docs.microsoft.com/uwp/api/windows.media.editing.mediacomposition)** 提供基本的视频编辑功能，如排列 **MediaClip** 对象的序列、剪裁视频长度、创建层、添加背景音乐和应用视频效果。 若要详细了解如何使用媒体合成功能，请参阅[媒体合成和编辑](media-compositions-and-editing.md)。
 
 ## <a name="pause-and-resume-video-recording"></a>暂停和恢复视频录制
 通过依次调用 [**PauseAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.pauseasync) 和 [**ResumeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.resumeasync)，可暂停并恢复视频录制，无需创建单独的输出文件。
@@ -113,7 +113,7 @@ Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Win
 
 [!code-cs[ResumeRecordingSimple](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetResumeRecordingSimple)]
 
-从 Windows 10 版本 1607 开始，可暂停视频录制，并接收暂停录制前最后捕获的帧。 然后可在相机预览上覆盖此帧，以允许用户在恢复录制前将相机与暂停的帧保持一致。 调用 [**PauseWithResultAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.pausewithresultasync) 将返回 [**MediaCapturePauseResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapturePauseResult) 对象。 [  **LastFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturepauseresult.lastframe) 属性是表示最后一帧的 [**VideoFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.VideoFrame) 对象。 若要在 XAML 中显示帧，请获取视频帧的 **SoftwareBitmap** 表示形式。 目前仅支持预乘或空 alpha 通道且格式为 BGRA8 的图像，因此如果需要获取正确的格式，请调用 [**Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert)。  创建新 [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) 对象，并调用 [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) 以对其进行初始化。 最后，设置 XAMLImage[**控件的**Source](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 属性以显示该图像。 若要使此技巧有效，图像必须与 **CaptureElement** 控件保持一致，并且不透明度值应小于 1。 请记住，仅可在 UI 线程上修改 UI，因为请在 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 内部进行此次调用。
+从 Windows 10 版本 1607 开始，可暂停视频录制，并接收暂停录制前最后捕获的帧。 然后可在相机预览上覆盖此帧，以允许用户在恢复录制前将相机与暂停的帧保持一致。 调用 [**PauseWithResultAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.pausewithresultasync) 将返回 [**MediaCapturePauseResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapturePauseResult) 对象。 [  **LastFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturepauseresult.lastframe) 属性是表示最后一帧的 [**VideoFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.VideoFrame) 对象。 若要在 XAML 中显示帧，请获取视频帧的 **SoftwareBitmap** 表示形式。 目前仅支持预乘或空 alpha 通道且格式为 BGRA8 的图像，因此如果需要获取正确的格式，请调用 [**Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert)。  创建新 [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) 对象，并调用 [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) 以对其进行初始化。 最后，设置 XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 控件的 **Source** 属性以显示该图像。 若要使此技巧有效，图像必须与 **CaptureElement** 控件保持一致，并且不透明度值应小于 1。 请记住，仅可在 UI 线程上修改 UI，因为请在 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 内部进行此次调用。
 
 **PauseWithResultAsync** 也会返回在上一段中录制的视频持续时间，以防你需要跟踪录制的总时长。
 
@@ -145,7 +145,7 @@ Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Win
 
 
 ## <a name="detect-and-respond-to-audio-level-changes-by-the-system"></a>检测系统的音频级别更改并做出响应
-自 Windows 10 版本 1803 起，应用可检测到系统何时降低其音频捕获和音频渲染流的音频级别或何时将其静音。 例如，应用进入后台状态时，系统可能将应用的流设为静音。 [  **AudioStateMonitor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor) 类可用于注册以接收系统修改音频流的音量时出现的事件。 通过调用CreateForCaptureMonitoring[**获取用于监视音频捕获流的**AudioStateMonitor](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.createforcapturemonitoring#Windows_Media_Audio_AudioStateMonitor_CreateForCaptureMonitoring) 实例。 通过调用 [**CreateForRenderMonitoring**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.createforrendermonitoring) 获取用于监视音频渲染流的实例。 针对系统更改相应流类别的音频时要通知的每个监视器的 [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) 事件，注册一个处理程序。
+自 Windows 10 版本 1803 起，应用可检测到系统何时降低其音频捕获和音频渲染流的音频级别或何时将其静音。 例如，应用进入后台状态时，系统可能将应用的流设为静音。 [  **AudioStateMonitor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor) 类可用于注册以接收系统修改音频流的音量时出现的事件。 通过调用 [**CreateForCaptureMonitoring**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.createforcapturemonitoring#Windows_Media_Audio_AudioStateMonitor_CreateForCaptureMonitoring) 获取用于监视音频捕获流的 **AudioStateMonitor** 实例。 通过调用 [**CreateForRenderMonitoring**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.createforrendermonitoring) 获取用于监视音频渲染流的实例。 针对系统更改相应流类别的音频时要通知的每个监视器的 [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) 事件，注册一个处理程序。
 
 [!code-cs[AudioStateMonitorUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetAudioStateMonitorUsing)]
 
@@ -153,7 +153,7 @@ Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Win
 
 [!code-cs[RegisterAudioStateMonitor](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRegisterAudioStateMonitor)]
 
-在捕获流的 **SoundLevelChanged** 处理程序中，可查看 [AudioStateMonitor**发件人的**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevel)SoundLevel 属性来确定新的音量。 请注意：系统决不可让捕获流的音量降低或忽高忽低。 系统仅可将其静音或切换回最大音量。 如果音频流已静音，你可以停止正在进行的捕获。 音频流还原到最大音量后，可再次启动捕获。 以下示例使用一些布尔类变量来跟踪应用当前是否正在捕获音频以及捕获是否因音频状态而停止。 这些变量用于确定何时适合以编程方式停止或启动音频捕获。
+在捕获流的 **SoundLevelChanged** 处理程序中，可查看 **AudioStateMonitor** 发件人的 [**SoundLevel**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevel) 属性来确定新的音量。 请注意：系统决不可让捕获流的音量降低或忽高忽低。 系统仅可将其静音或切换回最大音量。 如果音频流已静音，你可以停止正在进行的捕获。 音频流还原到最大音量后，可再次启动捕获。 以下示例使用一些布尔类变量来跟踪应用当前是否正在捕获音频以及捕获是否因音频状态而停止。 这些变量用于确定何时适合以编程方式停止或启动音频捕获。
 
 [!code-cs[CaptureSoundLevelChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCaptureSoundLevelChanged)]
 

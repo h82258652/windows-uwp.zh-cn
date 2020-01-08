@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, 调试, 测试, 性能
 ms.localizationpriority: medium
-ms.openlocfilehash: cdfcdfddb2b595a589c70d1facc24559c63b98da
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d948af1ce10b3752ba9f20454d8dea72916de692
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74254795"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683850"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和调试 UWP 应用
 
@@ -98,7 +98,7 @@ Microsoft Visual Studio 允许在各种 Windows 10 设备上部署和调试通�
 
 ## <a name="passing-command-line-debug-arguments"></a>传递命令行调试参数
 
-在 Visual Studio 2019 中，可以在开始调试 UWP 应用程序时传递命令行调试参数。 可以通过Application 类的 [OnLaunched**方法中的**args](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application) 参数访问命令行调试参数。 若要指定命令行调试参数，请打开项目的属性并导航到**调试**选项卡。
+在 Visual Studio 2019 中，可以在开始调试 UWP 应用程序时传递命令行调试参数。 可以通过 [**Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application) 类的 **OnLaunched** 方法中的 *args* 参数访问命令行调试参数。 若要指定命令行调试参数，请打开项目的属性并导航到**调试**选项卡。
 
 > [!NOTE]
 > 这在适用于 C#、VB 和 C++ 的 Visual Studio 2017（版本 15.1）中可用。 JavaScript 在更高版本中可用。 命令行调试参数可用于所有部署类型（模拟器除外）。
@@ -111,7 +111,7 @@ Microsoft Visual Studio 允许在各种 Windows 10 设备上部署和调试通�
 
 ![命令行参数 C++ 和 JS](images/command-line-arguments-cpp.png)
 
-指定命令行参数之后，可以在应用的 **OnLaunched** 方法中访问参数值。 [  **LaunchActivatedEventArgs**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) 对象 *args* 的 **Arguments** 属性值设置为**命令行参数**字段中的文本。
+指定命令行参数之后，可以在应用的 **OnLaunched** 方法中访问参数值。 [  **LaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) 对象 *args* 的 **Arguments** 属性值设置为**命令行参数**字段中的文本。
 
 ![命令行参数 C++ 和 JS](images/command-line-arguments-debugging.png)
 

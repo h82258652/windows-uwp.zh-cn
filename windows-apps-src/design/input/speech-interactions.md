@@ -8,12 +8,12 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d36368fab267370e2301e52731d99bc7b146fbd
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: fd33720255a04ffd8669673f027973afb4369086
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258250"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684212"
 ---
 # <a name="speech-interactions"></a>语音交互
 
@@ -24,7 +24,7 @@ ms.locfileid: "74258250"
 **TTS** TTS 使用语音合成引擎（语音）将文本字符串转换为语音字词。 输入字符串既可以是基本的未经处理的文本，也可以是更复杂的语音合成标记语言 (SSML)。 SSML 提供用于控制语音输出特征（例如发音、音量、音调、音速和重读）的标准方式。
 
 **其他语音相关组件：** 
-Windows 应用程序中的 **Cortana** 使用自定义语音命令（说出或键入）在前台启动你的应用（应用获得焦点，就好像是从“开始”菜单启动一样）或者作为一项后台任务而运行（**Cortana** 保持焦点，但提供来自应用的结果）。 如果要使用 [Cortana](https://docs.microsoft.com/en-us/cortana/voice-commands/vcd) UI 公开应用功能，请参阅 **Cortana 语音命令 (VCD) 指南**。
+Windows 应用程序中的 **Cortana** 使用自定义语音命令（说出或键入）在前台启动你的应用（应用获得焦点，就好像是从“开始”菜单启动一样）或者作为一项后台任务而运行（**Cortana** 保持焦点，但提供来自应用的结果）。 如果要使用 **Cortana** UI 公开应用功能，请参阅 [Cortana 语音命令 (VCD) 指南](https://docs.microsoft.com/cortana/voice-commands/vcd)。
 
 ## <a name="speech-interaction-design"></a>语音交互设计
 
@@ -204,7 +204,7 @@ TTS 从纯文本或 SSML 生成语音输出。
 
 ## <a name="other-articles-in-this-section"></a>本部分中的其他文章 
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 | --- | --- |
 | [语音识别](speech-recognition.md) | 使用语音识别提供输入内容、指定操作或命令并完成任务。 |
 | [指定语音识别器语言](specify-the-speech-recognizer-language.md) | 了解如何选择要用于语音识别的安装语言。 |

@@ -1,5 +1,5 @@
 ---
-Description: 了解如何对分组使用集合的操作中心通知。
+Description: 了解如何使用集合在操作中心对通知进行分组。
 title: Toast 集合
 label: Toast Collections
 template: detail.hbs
@@ -7,21 +7,21 @@ ms.date: 05/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 通知, 集合, 通知分组, 分组, 组织, 操作中心, toast
 ms.localizationpriority: medium
-ms.openlocfilehash: 71d5edb662b180571aa10f8a7b0ad533cf28a689
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 19fc1ed49fe5a3ea7d628684226b960ef2bc0732
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320787"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684181"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>通过集合对 Toast 通知分组
 在操作中心使用集合来组织应用的 Toast。 集合能帮助用户更轻松地在操作中心找到信息，并帮助开发人员更好地管理他们的通知。  以下 API 可用于删除、创建和更新通知集合。
 
 > [!IMPORTANT]
-> **需要创意者更新**:必须为目标 SDK 版本 15063 和运行生成 15063 或更高版本才能使用 toast 集合。 相关 API 包括 [Windows.UI.Notifications.ToastCollection](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollection) 和 [Windows.UI.Notifications.ToastCollectionManager](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollectionmanager)
+> **需要创意者更新**：目标必须为 SDK 15063，并且必须运行版本 15063 或更高版本才能使用 Toast 集合。 相关 API 包括 [Windows.UI.Notifications.ToastCollection](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollection) 和 [Windows.UI.Notifications.ToastCollectionManager](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollectionmanager)
 
 下面的示例包含一个消息传送应用，该应用根据聊天群组将通知分开，每个标题（Comp Sci 160A Project Chat、Direct Messages、Lacrosse Team Chat）都代表一个单独的集合。  可以看到，虽然所有通知都来自同一个应用，但它们分成了各不相关的组，好像来自不同的应用一样。  如果希望使用更巧妙的方式来组织通知，请参阅 [Toast 标题](toast-headers.md)。  
-![使用通知两个不同组的集合示例](images/toast-collection-example.png)
+具有两个不同通知组的 ![集合示例](images/toast-collection-example.png)
 
 ## <a name="creating-collections"></a>创建集合
 创建每个集合时，须提供显示名称和图标，二者作为集合标题的一部分显示在操作中心，如上图所示。 集合需要一个启动参数，以在用户单击集合的标题时，帮助应用导航到正确的位置。  
@@ -188,6 +188,6 @@ collectionHistory.Clear();
 
 ## <a name="related-topics"></a>相关主题
 
-* [Toast 通知内容](adaptive-interactive-toasts.md)
+* [Toast 内容](adaptive-interactive-toasts.md)
 * [Toast 标头](toast-headers.md)
-* [GitHub （Windows 社区工具包的一部分） 上的通知库](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [GitHub 上的通知库（Windows 社区工具包的一部分）](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

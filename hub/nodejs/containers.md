@@ -8,18 +8,18 @@ ms.topic: article
 keywords: ''
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 16b1421606d3c8271141256b80ae2600ec9ca49d
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 9467224814b1e26f18031662f5e8d994a8fae1ac
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315121"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683670"
 ---
 # <a name="get-started-using-docker-containers-with-nodejs"></a>开始将 Docker 容器与 node.js 配合使用
 
 帮助你开始使用适用于 node.js 应用的 Docker 容器的循序渐进指南。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 本指南假定你已完成[用 WSL 2 设置 node.js 开发环境](./setup-on-wsl2.md)的步骤，包括：
 
@@ -159,13 +159,13 @@ Docker 扩展使你可以从 Visual Studio Code 轻松生成、管理和部署�
 
 6. 应会看到 "nextjs" 容器在端口 3333-> 3000/tcp 上处于活动状态。 你还可以在此处看到列出的 "容器 ID"。 若要停止运行容器，请输入以下命令： `docker stop <container ID>`
 
-7. 通常，当容器停止后，还应将其删除。 删除容器会清除它留下的所有资源。 删除容器后，在其图像文件系统中所做的任何更改都将永久丢失。 你将需要构建一个新图像来表示更改。 若要删除容器，请使用命令： `docker rm <container ID>`
+7. 通常情况下，容器停止后，也应被删除。 删除容器将清理它留下的任何资源。 删除容器后，在其图像文件系统中所做的任何更改都将永久丢失。 你将需要构建一个新图像来表示更改。 若要删除容器，请使用命令： `docker rm <container ID>`
 
 详细了解如何[使用 Docker 构建容器化 web 应用程序](https://docs.microsoft.com/learn/modules/intro-to-containers/)。
 
 ## <a name="deploy-to-azure-container-registry"></a>部署到 Azure 容器注册表
 
-[**Azure 容器注册表**](https://azure.microsoft.com/services/container-registry/)（ACR）使你可以在专用、经过身份验证的存储库中存储、管理和保护容器映像。 ACR 可与标准 Docker 命令兼容，可处理容器运行状况监视和维护等关键任务，并与[Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes)进行配对，以创建可缩放的业务流程系统。 按需生成，或通过触发器（如源代码提交和基础映像更新）完全自动执行生成。 ACR 还利用了强大的 Azure 云网络来管理网络延迟、全球部署，并为使用[Azure App Service](https://docs.microsoft.com/azure/app-service/) （适用于 web 托管、移动后端、REST api）或[其他 Azure 云服务](https://azure.microsoft.com/product-categories/containers/)的任何人创建无缝的本机体验。
+[**Azure 容器注册表**](https://azure.microsoft.com/services/container-registry/)（ACR）使你可以在专用、经过身份验证的存储库中存储、管理和保护容器映像。 ACR 可与标准 Docker 命令兼容，可处理容器运行状况监视和维护等关键任务，并与[Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes)进行配对，以创建可缩放的业务流程系统。 可以通过源代码提交和基础映像更新等触发器按需生成或完全自动生成。 ACR 还利用了强大的 Azure 云网络来管理网络延迟、全球部署，并为使用[Azure App Service](https://docs.microsoft.com/azure/app-service/) （适用于 web 托管、移动后端、REST api）或[其他 Azure 云服务](https://azure.microsoft.com/product-categories/containers/)的任何人创建无缝的本机体验。
 
 > [!IMPORTANT]
 > 若要将容器部署到 Azure，你需要自己的 Azure 订阅，你可能会收到费用。 如果还没有 Azure 订阅，请在开始前[创建一个免费帐户](https://azure.microsoft.com/free/)。
@@ -174,7 +174,7 @@ Docker 扩展使你可以从 Visual Studio Code 轻松生成、管理和部署�
 
 ## <a name="additional-resources"></a>其他资源
 
-- [Azure 上的 node.js](https://azure.microsoft.com/en-us/develop/nodejs/)
+- [Azure 上的 Node.js](https://azure.microsoft.com/develop/nodejs/)
 - 快速入门：[在 Azure 中创建 node.js web 应用](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)
 - 联机课程：[在 Azure 中管理容器](https://docs.microsoft.com/learn/paths/administer-containers-in-azure/)
 - 使用 VS Code：使用[Docker](https://code.visualstudio.com/docs/azure/docker)
