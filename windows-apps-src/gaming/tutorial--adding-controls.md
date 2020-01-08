@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 控件, 输入
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c2b7031bf8afb047fcfc869e23ee1c398218af8
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: edc790ba949010fb1975317c5113ca02744889a0
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258431"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684565"
 ---
 # <a name="add-controls"></a>添加控件
 
@@ -41,7 +41,7 @@ ms.locfileid: "74258431"
 
 在初始化该游戏示例中的 **MoveLookController** 类时，将注册四个特定于指针的事件和一个特定于鼠标的事件：
 
-事件 | 说明
+事件 | 描述
 :------ | :-------
 [**CoreWindow：:P ointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed) | 点按（并按住）左右鼠标按钮，或触摸触摸屏表面。
 [**CoreWindow：:P ointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) |移动鼠标，或在触摸表面执行拖动操作。
@@ -82,7 +82,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 
 若要确定游戏应在何时侦听某个输入，**MoveLookController** 类有三个特定于控制器的状态（与控制器类型无关）：
 
-State | 说明
+State | 描述
 :----- | :-------
 **无** | 这是控制器的初始化状态。 忽略所有输入，因为游戏不期待任何控制器输入。
 **WaitForInput** | 控制器等待玩家通过使用鼠标左键、触摸事件或游戏板上的菜单按钮确认来自游戏的消息。
@@ -160,7 +160,7 @@ bool MoveLookController::IsFiring()
 
 如果检测到鼠标移动，我们希望利用该移动确定相机的新的俯仰和偏航。 我们通过实现相对鼠标控件实现此目的，在该控件中我们处理鼠标所移动的相对距离（移动开始到停止之间的增量），与记录运动的绝对 x-y 像素坐标相反。
 
-为此，我们通过检查由 [**MouseMoved**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDelta) 事件返回的Windows::Device::Input::MouseEventArgs::MouseDelta[**参数对象上的**](https://docs.microsoft.com/uwp/api/windows.devices.input.mouseeventargs.mousedelta)MouseDelta::X[**和**MouseDelta::Y](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved) 字段获取 X（水平运动）和 Y（垂直运动）坐标的变化。
+为此，我们通过检查由 [**MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved) 事件返回的 [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://docs.microsoft.com/uwp/api/windows.devices.input.mouseeventargs.mousedelta) 参数对象上的 [**MouseDelta::X**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDelta) 和 **MouseDelta::Y** 字段获取 X（水平运动）和 Y（垂直运动）坐标的变化。
 
 ```cpp
 void MoveLookController::OnMouseMoved(
@@ -212,7 +212,7 @@ void MoveLookController::OnMouseMoved(
 ![移动观看触控布局](images/simple-dx-game-controls-touchzones.png)
 
 以下命令汇总了我们的触摸控件行为。
-用户输入 | 操作
+用户输入 | “操作”
 :------- | :--------
 移动矩形 | 触控输入转换为虚拟游戏杆，这时，垂直运动将转换为向前/向后位置移动，水平运动将转换为向左/向右位置移动。
 射击矩形 | 射击视区。
@@ -394,7 +394,7 @@ window->PointerReleased +=
         m_lookInUse = true;
     }
 ```
-你可以在 **GitHub** 上查看 [MoveLookController::OnPointerPressed](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L252-L259) 方法的完整代码。
+你可以在 [GitHub](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L252-L259) 上查看 **MoveLookController::OnPointerPressed** 方法的完整代码。
 
 
 
@@ -456,10 +456,10 @@ window->PointerReleased +=
 
 此游戏具有以下键盘和鼠标控件布局。
 
-用户输入 | 操作
+用户输入 | “操作”
 :------- | :--------
 W | 向前移动玩家
-A | 向左移动玩家
+一个 | 向左移动玩家
 S | 向后移动玩家
 D | 向右移动玩家
 X | 向上移动视图
@@ -469,7 +469,7 @@ P | 暂停游戏
 鼠标左键 | 射击视区
 
 
-若要使用键盘，游戏示例在 [**MoveLookController::InitWindow**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keyup) 方法内注册两个新事件 [**CoreWindow::KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keydown) 和 [**CoreWindow::KeyDown**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L84-L88)。 这些事件处理键的按下和释放。
+若要使用键盘，游戏示例在 [**MoveLookController::InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L84-L88) 方法内注册两个新事件 [**CoreWindow::KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keyup) 和 [**CoreWindow::KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keydown)。 这些事件处理键的按下和释放。
 
 ```cpp
 window->KeyDown +=
@@ -482,9 +482,9 @@ window->KeyUp +=
 尽管鼠标使用的也是指针，但它的处理方式与触摸控件稍有不同。 若要与我们的控件布局保持一致，无论何时移动鼠标，**MoveLookController** 都会旋转，并在按下鼠标左键时射击。
 
 
-这在 [MoveLookController**的**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L179-L313)OnPointerPressed 方法中处理。
+这在 **MoveLookController** 的 [**OnPointerPressed**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L179-L313) 方法中处理。
 
-在此方法中，我们查看哪种类型的指针设备与 [`Windows::Devices::Input::PointerDeviceType`](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Input.PointerDeviceType) 枚举一起使用。 如果游戏处于 **Active** 状态且 **PointerDeviceType** 不是 **Touch**，我们假设为鼠标输入。
+在此方法中，我们查看哪种类型的指针设备与 [`Windows::Devices::Input::PointerDeviceType`](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDeviceType) 枚举一起使用。 如果游戏处于 **Active** 状态且 **PointerDeviceType** 不是 **Touch**，我们假设为鼠标输入。
 
 ```cpp
     case MoveLookControllerState::Active:
@@ -565,7 +565,7 @@ window->KeyUp +=
 
 下面将是我们的游戏板控件。
 
-用户输入 | 操作
+用户输入 | “操作”
 :------- | :--------
 左摇杆 | 移动玩家
 右摇杆 | 更改相机视图的旋转（俯仰和偏航）
@@ -591,7 +591,7 @@ window->KeyUp +=
 
 ### <a name="the-updatepollingdevices-method"></a>UpdatePollingDevices 方法
 
-[MoveLookController**实例的**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L654-L782)UpdatePollingDevices 方法立即检查游戏板是否已连接。 如果已连接，我们将开始通过 [**Gamepad.GetCurrentReading**](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.GetCurrentReading) 读取它的状态。 这将返回 [**GamepadReading**](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.GamepadReading) 结构，让我们可以检查点击了哪些按钮或移动了什么操纵杆。
+**MoveLookController** 实例的 [**UpdatePollingDevices**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L654-L782) 方法立即检查游戏板是否已连接。 如果已连接，我们将开始通过 [**Gamepad.GetCurrentReading**](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.GetCurrentReading) 读取它的状态。 这将返回 [**GamepadReading**](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.GamepadReading) 结构，让我们可以检查点击了哪些按钮或移动了什么操纵杆。
 
 
 如果游戏的状态是 **WaitForInput**，我们将仅侦听控制器的“开始”/“菜单”按钮，以便可以继续游戏。
@@ -727,7 +727,7 @@ x 轴和 y 轴的操纵杆输入都在 -1 和 1 之间。 以下常量指定操�
 
 在我们的 **Update** 方法中，我们随后执行了以下输入检查。
 - 如果玩家使用移动控制器矩形，我们随后将确定指针位置的变化，并使用此信息计算用户是否将指针移出了控制器的死区。 如果移出，**m_moveCommand** 矢量属性随后将更新为虚拟游戏杆值。
-- 如果按下任何移动键盘输入，则会将 `1.0f` 或 `-1.0f` 的值添加到**m_moveCommand**向量的相应分量中 &mdash; "转发"，将 "`1.0f`" 添加到 "反向"。`-1.0f`
+- 如果按下任何移动键盘输入，则会将 `1.0f` 或 `-1.0f` 的值添加到**m_moveCommand**向量的相应分量中 &mdash; "转发"，将 "`1.0f`" 添加到 "反向"。
 
 
 考虑了所有移动输入后，我们通过一些计算来运行 **m_moveCommand** 矢量以生成新矢量，用于表示与游戏世界有关的玩家方向。

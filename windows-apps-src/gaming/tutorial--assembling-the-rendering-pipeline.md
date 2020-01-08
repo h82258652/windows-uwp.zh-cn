@@ -6,16 +6,16 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 呈现
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eeb515f07d9bc2e48ba97f6ef4d71afd0226ace
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8daf07d08dd760da680044938e9a6601e41108d3
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367734"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685021"
 ---
-# <a name="rendering-framework-i-intro-to-rendering"></a>呈现框架实现：呈现简介
+# <a name="rendering-framework-i-intro-to-rendering"></a>呈现框架 I：呈现简介
 
-我们在之前的主题中介绍了如何生成通用 Windows 平台 (UWP) 游戏，以及如何定义状态机来处理游戏流。 现在，应该来了解如何装配呈现框架了。 让我们看看示例游戏将游戏场景使用 Direct3D 11 （通常称为 DirectX 11） 的呈现。
+我们在之前的主题中介绍了如何生成通用 Windows 平台 (UWP) 游戏，以及如何定义状态机来处理游戏流。 现在，应该来了解如何装配呈现框架了。 让我们看看示例游戏如何使用 Direct3D 11 （通常称为 DirectX 11）呈现游戏场景。
 
 >[!Note]
 >如果你尚未下载适用于此示例的最新游戏代码，请转到 [Direct3D 游戏示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此示例是大型 UWP 功能示例集合的一部分。 有关如何下载示例的说明，请参阅[从 GitHub 获取 UWP 示例](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
@@ -36,9 +36,9 @@ Direct3D 11 包含一组 API，其提供访问高性能图形硬件的高级功�
 
 本文介绍如何呈现图形，包含步骤 1 和 3。
 
-[呈现框架 II:游戏渲染](tutorial-game-rendering.md)涵盖了第 2 步; 如何设置呈现框架和呈现可以发生之前如何准备数据。
+[呈现框架 II：游戏呈现](tutorial-game-rendering.md)包含步骤 2；如何设置呈现框架以及如何为呈现准备数据。
 
-## <a name="get-started"></a>立即开始行动
+## <a name="get-started"></a>“开始”
 
 在开始之前，你应该熟悉基本的图形和呈现概念。 如果你不熟悉 Direct3D 和呈现，请参阅[术语和概念](#terms-and-concepts)了解本文使用的图形和呈现术语的简要描述。
 
@@ -50,7 +50,7 @@ Direct3D 11 包含一组 API，其提供访问高性能图形硬件的高级功�
 
 若要访问用于呈现的硬件，请参阅 [__App::Initialize__](tutorial--building-the-games-uwp-app-framework.md#appinitialize-method) 下的 UWP 框架文章。
 
-__做出\_共享函数__，如下所示[下面](#appinitialize-method)，用于创建__共享\_ptr__到[ __DX::DeviceResources__](#dxdeviceresources)，它还提供设备的访问权限。 
+[如下所](#appinitialize-method)示，"创建 __\_共享" 函数__用于创建到 DX 的__共享\_ptr__ [ __：:D eviceresources__](#dxdeviceresources)，这也提供了对设备的访问权限。 
 
 在 Direct3D 11 中，[设备](#device)用于分配和销毁对象、呈现原语，并通过图形驱动程序与显卡通信。
 
@@ -75,7 +75,7 @@ void App::Initialize(
 
 这个简单的流是：
 1. __Update__
-2. __呈现器__
+2. __Render__
 3. __存在__
 
 ### <a name="gamemainrun-method"></a>GameMain::Run 方法
@@ -122,15 +122,15 @@ void GameMain::Run()
 }
 ```
 
-### <a name="update"></a>Update
+### <a name="update"></a>“更新”
 
 请参阅[游戏流管理](tutorial-game-flow-management.md)一文，了解有关如何在 [__App::Update__ 和 __GameMain::Update__](tutorial-game-flow-management.md#appupdate-method) 方法中更新游戏状态的详细信息。
 
-### <a name="render"></a>呈现
+### <a name="render"></a>Render
 
 呈现通过调用 __GameMain::Run__ 中的 [__GameRenderer::Render__](#gamerendererrender-method) 方法实现。
 
-如果[立体呈现](#stereo-rendering)已启用，则有两个呈现通道：一个用于右眼，一个用于左眼。 在呈现每个阶段中，我们将呈现器目标和深度模具视图绑定到设备。 我们还会清除之后的深度模板视图。
+如果[立体呈现](#stereo-rendering)已启用，则有两个呈现通道：一个用于右眼，一个用于左眼。 在每个呈现阶段，我们将呈现器目标和深度模具视图绑定到设备。 我们还会清除之后的深度模板视图。
 
 > [!Note]
 > 立体呈现可以使用其他方法实现，如使用顶点实例或几何着色器的单通道立体声。 双呈现通道方法速度较慢，但更便于实现立体呈现。
@@ -146,10 +146,10 @@ void GameMain::Run()
 
 设置 Direct3D 上下文以使用输入顶点布局。 输入布局对象介绍了如何将顶点缓冲区数据传输到[呈现管道](#rendering-pipeline)。 
 
-接下来，我们设置 Direct3D 要使用的上下文更早版本，定义的常量缓冲区使用的[顶点着色器](#vertex-shaders-and-pixel-shaders)管道阶段和[像素着色器](#vertex-shaders-and-pixel-shaders)管道阶段。 
+接下来，我们将 Direct3D 上下文设置为使用前面定义的常量缓冲区，这些缓冲区由[顶点着色器](#vertex-shaders-and-pixel-shaders)管道阶段和[像素着色器](#vertex-shaders-and-pixel-shaders)管道阶段使用。 
 
 > [!Note]
-> 请参阅[呈现框架 II:游戏渲染](tutorial-game-rendering.md)的常量缓冲区定义有关详细信息。
+> 请参阅[呈现框架 II：游戏呈现](tutorial-game-rendering.md)了解有关常量缓冲区定义的详细信息。
 
 由于为管道中的所有着色器使用相同的常量缓冲区输入布局和集，因此每一帧设置一次。
 
@@ -334,14 +334,14 @@ void GameRenderer::Render()
 
 呈现场景时，将循环所有需要呈现的对象。 对每个对象（基元）重复以下步骤。
 
-* 更新常量缓冲区 (__m\_constantBufferChangesEveryPrim__) 的模型[世界转换矩阵](#world-transform-matrix)和材料的信息。
+* 用模型的[世界变换矩阵](#world-transform-matrix)和材料信息更新常量缓冲区（__m\_constantBufferChangesEveryPrim__）。
 * __M\_constantBufferChangesEveryPrim__包含每个对象的参数。  它包括世界转换矩阵的对象，以及材料属性，如用于光线计算的颜色和反射指数。
 * 设置 Direct3D 上下文以使用将传输到[呈现管道](#rendering-pipeline)输入装配器 (IA) 阶段的网格对象数据的输入顶点布局
 * 设置 Direct3D 上下文以在 IA 阶段使用[索引缓冲区](#index-buffer)。 提供基元信息：类型、数据顺序。
-* 提交绘图调用来绘制索引的非实例化基元。 __GameObject::Render__ 方法使用特定于给定基元的数据更新基元[常量缓冲区](#constant-buffer-or-shader-constant-buffer)。 这将导致在上下文中调用 __DrawIndexed__，以绘制每个基元的几何图形。 尤其是，此绘图调用会随着常量缓冲区数据的参数化将命令和数据编入图形处理单元 (GPU) 的队列。 每个绘图调用执行顶点着色器一次每个顶点，然后[像素着色器](#vertex-shaders-and-pixel-shaders)一次的每个三角形为基元中的每个像素。 纹理是像素着色器用于执行呈现的状态部分。
+* 提交绘图调用来绘制索引的非实例化基元。 __GameObject::Render__ 方法使用特定于给定基元的数据更新基元[常量缓冲区](#constant-buffer-or-shader-constant-buffer)。 这将导致在上下文中调用 __DrawIndexed__，以绘制每个基元的几何图形。 尤其是，此绘图调用会随着常量缓冲区数据的参数化将命令和数据编入图形处理单元 (GPU) 的队列。 每次绘图调用都对每个顶点执行一次顶点着色器，然后对基元中每个三角形的每个像素执行一次[像素着色器](#vertex-shaders-and-pixel-shaders)。 纹理是像素着色器用于执行呈现的状态部分。
 
 多个常量缓冲区的原因：
-    * 该游戏使用多个常量缓冲区，但每个基元只需更新一次这些缓冲区。 如之前所述，常量缓冲区就像对每个基元的着色器的输入。 某些数据是静态的 (__m\_constantBufferNeverChanges__); 一些数据段是常量 (__m\_constantBufferChangesEveryFrame__)，如照相机的位置某些数据是特定于的基元，如颜色和纹理 (__m\_constantBufferChangesEveryPrim__)
+    * 该游戏使用多个常量缓冲区，但每个基元只需更新一次这些缓冲区。 如之前所述，常量缓冲区就像对每个基元的着色器的输入。 某些数据是静态的（__m\_constantBufferNeverChanges__）;某些数据在帧（__m\_constantBufferChangesEveryFrame__）上保持不变，如相机的位置;某些数据是特定于基元的，如其颜色和纹理（__m\_constantBufferChangesEveryPrim__）
     * 示例呈现器将这些输入分别放入不同的常量缓冲区，以优化 CPU 和 GPU 使用的内存带宽。 此方法还有助于最大程度地减少 GPU 需要跟踪的数据量。 GPU 有一个很大的命令队列，游戏每次调用 __Draw__ 时，该命令将随与之关联的数据一起排队。 当游戏更新基元常量缓冲区并发出下一个 __Draw__ 命令时，图形驱动程序会将此下一个命令和关联的数据添加到队列。 如果游戏绘制 100 个基元，它可能在队列中有 100 个常量缓冲区数据的副本。 为了最大程度地减少游戏发送到 GPU 的数据量，游戏使用仅包含每个基元更新的单独基元常量缓冲区。
 
 #### <a name="gameobjectrender-method"></a>GameObject::Render 方法
@@ -473,7 +473,7 @@ void DX::DeviceResources::Present()
 
 ## <a name="next-steps"></a>后续步骤
 
-本文介绍图形如何在屏幕上呈现，并提供了所使用的一些呈现术语的简短描述。 了解有关在中呈现的详细信息[呈现框架 II:游戏渲染](tutorial-game-rendering.md)文章中，并了解如何准备在呈现之前所需的数据。
+本文介绍图形如何在屏幕上呈现，并提供了所使用的一些呈现术语的简短描述。 通过[呈现框架 II：游戏呈现](tutorial-game-rendering.md)文章了解有关呈现的详细信息，并了解如何在呈现之前准备所需的数据。
 
 ## <a name="terms-and-concepts"></a>术语和概念
 
@@ -490,9 +490,9 @@ void DX::DeviceResources::Present()
 呈现管道是一个过程，在此过程中 3D 场景信息转换为在屏幕上显示的图像。 在 Direct3D 11 中，此管道是可编程的。 你可以调整各个阶段来支持你的呈现需求。 具有常见着色器核心的阶段可通过使用 HLSL 编程语言进行编程。 它也称为图形呈现管道或管道。
 
 为了帮助你创建此管道，你需要熟悉：
-* [HLSL](#HLSL)。 对于 UWP DirectX 游戏，我们建议使用 HLSL 着色器模型 5.1 及更高版本。
-* [着色器](#Shaders)
-* [顶点着色器和像素着色器](#vertext-shaders-pixel-shaders)
+* [HLSL](#hlsl)。 对于 UWP DirectX 游戏，我们建议使用 HLSL 着色器模型 5.1 及更高版本。
+* [着色器](#shaders)
+* [顶点着色器和像素着色器](#vertex-shaders-and-pixel-shaders)
 * [着色器阶段](#shader-stages)
 * [各种着色器文件格式](#various-shader-file-formats)
 
@@ -533,7 +533,7 @@ Direct3D 9 着色器可以使用着色器模型 1、着色器模型 2 和着色�
 
 Direct3D 11 是一组 API，可帮助我们为图形密集应用程序（如游戏）创建图形，这时我们需要一个优质的显卡来处理密集计算。 此部分简要说明 Direct3D 11 图形编程概念：资源、子资源、设备和设备上下文。
 
-#### <a name="resource"></a>Resource
+#### <a name="resource"></a>资源
 
 对于新手，你可以将资源（也称为设备资源）视为有关如何呈现对象（如纹理、位置、颜色）的信息。 资源向管道提供数据，并定义在场景中呈现的内容。 资源可以从游戏媒体加载或在运行时动态创建。
 
@@ -549,7 +549,7 @@ Direct3D 11 是一组 API，可帮助我们为图形密集应用程序（如游�
 
 深度信息告知我们在视图中呈现哪些多边形区域（而不是隐藏）。 模板信息告知我们会屏蔽哪些像素。 可以使用它来产生特殊效果，因为它确定是否绘制某个像素；将位设置为 1 或 0。 
 
-有关详细信息，请参阅：[深度模具视图](../graphics-concepts/depth-stencil-view--dsv-.md)，[深度缓冲区](../graphics-concepts/depth-buffers.md)，和[模具缓冲区](../graphics-concepts/stencil-buffers.md)。
+有关详细信息，请参阅：[深度模板视图](../graphics-concepts/depth-stencil-view--dsv-.md)、[深度缓冲区](../graphics-concepts/depth-buffers.md)和[模板缓冲区](../graphics-concepts/stencil-buffers.md)。
 
 #### <a name="render-target"></a>呈现器目标
 
@@ -567,7 +567,7 @@ Direct3D 11 是一组 API，可帮助我们为图形密集应用程序（如游�
 
 请注意，有不同版本的 ID3D11Device，[ID3D11Device5](https://docs.microsoft.com/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11device5) 是最新版本，向 ID3D11Device4 中添加了新方法。 有关 Direct3D 如何与基础硬件通信的详细信息，请参阅 [Windows 设备驱动程序 (WDDM) 体系结构](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-and-later-display-driver-model-architecture)。
 
-每个应用程序都必须有至少一台设备，大多数应用程序只能创建一台设备。 创建一个设备，通过调用在计算机上安装的硬件驱动程序之一__D3D11CreateDevice__或__D3D11CreateDeviceAndSwapChain__并指定驱动程序类型使用 D3D\_驱动程序\_类型标志。 每台设备可以使用一个或多个设备上下文，具体取决于所需的功能。 有关详细信息，请参阅 [D3D11CreateDevice 函数](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice)。
+每个应用程序都必须有至少一台设备，大多数应用程序只能创建一台设备。 通过调用__D3D11CreateDevice__或__D3D11CREATEDEVICEANDSWAPCHAIN__并使用 D3D\_驱动程序\_类型标志指定驱动程序类型，为安装在计算机上的某个硬件驱动程序创建设备。 每台设备可以使用一个或多个设备上下文，具体取决于所需的功能。 有关详细信息，请参阅 [D3D11CreateDevice 函数](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice)。
 
 #### <a name="device-context"></a>设备上下文
 
@@ -577,7 +577,7 @@ Direct3D 11 实现两种类型的设备上下文，一个用于立即呈现，�
 
 __ID3D11DeviceContext__ 界面具有不同版本；__ID3D11DeviceContext4__ 向 __ID3D11DeviceContext3__ 中的界面添加新方法。
 
-注意：__ID3D11DeviceContext4__在 Windows 10 创意者更新中引入，是最新版本__ID3D11DeviceContext__接口。 面向 Windows 10 创意者更新的应用程序应该使用此界面，而不是早期版本。 有关详细信息，请参阅 [ID3D11DeviceContext4](https://docs.microsoft.com/windows/desktop/api/d3d11_3/nn-d3d11_3-id3d11devicecontext4)。
+注意：__ID3D11DeviceContext4__ 在 Windows 10 创意者更新中推出，是最新版的 __ID3D11DeviceContext__ 界面。 面向 Windows 10 创意者更新的应用程序应该使用此界面，而不是早期版本。 有关详细信息，请参阅 [ID3D11DeviceContext4](https://docs.microsoft.com/windows/desktop/api/d3d11_3/nn-d3d11_3-id3d11devicecontext4)。
 
 #### <a name="dxdeviceresources"></a>DX::DeviceResources
 
@@ -587,7 +587,7 @@ __DX::DeviceResources__ 类位于 __DeviceResources.cpp__/ __.h__文件中，控
 
 缓冲区资源是一系列完全类型化的数据，被分组到元素中。 你可以使用缓冲区来存储各类数据，包括位置矢量、法向矢量、顶点缓冲区中的纹理坐标、索引缓冲区中的索引或设备状态。 缓冲区元素可以包含打包数据值（如 R8G8B8A8 表面值）、单个 8 位整数或四个 32 位浮点值。
 
-有三种类型的缓冲区：顶点缓冲区、 索引缓冲区和常量缓冲区。
+有三种类型的缓冲区：顶点缓冲区、索引缓冲区和常量缓冲区。
 
 #### <a name="vertex-buffer"></a>顶点缓冲区
 
@@ -616,7 +616,7 @@ __DX::DeviceResources__ 类位于 __DeviceResources.cpp__/ __.h__文件中，控
 
 ### <a name="dxgi"></a>DXGI
 
-Microsoft DirectX 图形基础结构 (DXGI) 是使用封装了一些低级别任务所需的 Direct3D 10 的 Windows Vista 引入了一个新子系统 10.1、 11 和 11.1。 在多线程应用程序中使用 DXGI 时需要格外小心，以确保不会发生死锁。 有关详细信息，请参阅[DirectX 图形基础结构 (DXGI):最佳做法-多线程处理](https://docs.microsoft.com/windows/desktop/direct3darticles/dxgi-best-practices)
+Microsoft DirectX 图形基础结构（DXGI）是随 Windows Vista 一起引入的新子系统，它封装了 Direct3D 10、10.1、11和11.1 所需的一些低级别任务。 在多线程应用程序中使用 DXGI 时需要格外小心，以确保不会发生死锁。 有关详细信息，请参阅 [DirectX 图形基础结构 (DXGI)：最佳做法-多线程](https://docs.microsoft.com/windows/desktop/direct3darticles/dxgi-best-practices)
 
 ### <a name="feature-level"></a>功能级别
 
@@ -624,9 +624,9 @@ Microsoft DirectX 图形基础结构 (DXGI) 是使用封装了一些低级别任
 
 每个视频卡根据所安装的 GPU 来实现特定级别的 DirectX 功能。 在以前版本的 Microsoft Direct3D 中，你可以找到视频卡实现的 Direct3D 版本，然后相应地对应用程序编程。 
 
-使用功能级别，在创建设备时，你可以尝试为想要请求的功能级别创建设备。 如果设备创建成功，该功能级别将存在，如果失败，硬件将不支持该功能级别。 你可以尝试在更低的功能级别重新创建设备，也可以选择退出应用程序。 例如，12\_0 功能级别要求 Direct3D 11.3 或 Direct3D 12 和着色器模型 5.1。 有关详细信息，请参阅[Direct3D 功能级别：每个功能级别的概述](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)。
+使用功能级别，在创建设备时，你可以尝试为想要请求的功能级别创建设备。 如果设备创建成功，该功能级别将存在，如果失败，硬件将不支持该功能级别。 你可以尝试在更低的功能级别重新创建设备，也可以选择退出应用程序。 例如，12\_0 功能级别需要 Direct3D 11.3 或 Direct3D 12 以及着色器模型5.1。 有关详细信息，请参阅 [Direct3D 功能级别：各功能级别概述](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)。
 
-使用功能级别，你可以 Direct3D 9、 Microsoft Direct3D 10 或 Direct3D 11 中开发的应用程序，然后运行其上 9、 10 或 11 硬件 （有一些例外情况）。 有关详细信息，请参阅 [Direct3D 功能级别](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)。
+使用功能级别，你可以为 Direct3D 9、Microsoft Direct3D 10 或 Direct3D 11 开发应用程序，然后在9、10或11个硬件上运行该应用程序（有一些例外情况）。 有关详细信息，请参阅 [Direct3D 功能级别](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)。
 
 ### <a name="stereo-rendering"></a>立体呈现
 
@@ -650,10 +650,10 @@ V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device).
 * M(model-to-world) 是模型坐标到世界坐标的转换矩阵，也称为[世界转换矩阵](#world-transform-matrix)。 这由基元提供。
 * M(world-to-view) 是世界坐标到视图坐标的转换矩阵，也称为[视图转换矩阵](#view-transform-matrix)。
     * 这由相机的视图矩阵提供。 它由相机的位置和观看矢量（从相机直接进入场景的“观看”矢量和与其垂直向上的“仰望”矢量）定义
-    * 中的示例游戏__m\_viewMatrix__是视图转换矩阵和使用计算__Camera::SetViewParams__ 
+    * 在示例游戏中， __m\_viewMatrix__是视图转换矩阵，使用__摄像：： SetViewParams__进行计算 
 * M(view-to-device) 是视图坐标到设备坐标的转换矩阵，也称为[投影转换矩阵](#projection-transform-matrix)
     * 这由相机的投影提供。 它提供该空间在最终场景中有多少实际可见的信息。 视区 (FoV)、纵横比和剪裁平面定义投影转换矩阵。
-    * 中的示例游戏__m\_projectionMatrix__定义为使用计算的投影坐标将转换__Camera::SetProjParams__ （立体声投影，将使用两个投影矩阵： 一个用于每只眼睛的视图。) 
+    * 在示例游戏中， __m\_projectionMatrix__定义转换为投影坐标，使用__摄像：： SetProjParams__计算（对于立体声投影，使用两个投影矩阵：每个眼睛的视图各有一个）。 
 
 VertexShader.hlsl 中的着色器代码随这些矢量和矩阵从常量缓冲区加载，并对每个顶点执行此转换。
 

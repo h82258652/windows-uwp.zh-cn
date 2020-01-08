@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eeb8cb8a8b71123c3a5a94eea316621e5f93fe8e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 29357746b6fca2c6aae52e9516a5b7dc2fca8ef2
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259074"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684622"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>将 Windows Phone Silverlight XAML 和 UI 移植到 UWP
 
@@ -187,7 +187,7 @@ UWP 应用的绑定相关的功能当前具有以下限制：
 
 Windows Phone Silverlight 应用使用在**Microsoft.** control 命名空间和**system.web**命名空间中定义的控件。 XAML UWP 应用使用 [**Windows.UI.Xaml.Controls**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls) 命名空间中定义的控件。 UWP 中 XAML 控件的体系结构和设计与 Windows Phone Silverlight 控件几乎相同。 但是，进行了一些更改以改进可用的控件组并将它们与 Windows 应用统一。 以下是具体示例。
 
-| 控件名称 | 更改 |
+| 控件名称 | “更改” |
 |--------------|--------|
 | ApplicationBar | [Page.TopAppBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.topappbar) 属性。 |
 | ApplicationBarIconButton | UWP 等效项是 [Glyph](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon.glyph) 属性。 PrimaryCommands 是 CommandBar 的内容属性。 XAML 分析器将元素的内部 xml 解释为其内容属性的值。 |
@@ -205,7 +205,7 @@ Windows Phone Silverlight 应用使用在**Microsoft.** control 命名空间和*
 
 ##  <a name="design-language-in-windows10"></a>Windows 10 中的设计语言
 
-Windows Phone Silverlight 应用和 Windows 10 应用之间的设计语言有一些不同之处。 有关所有详细信息，请参阅[设计](https://developer.microsoft.com/en-us/windows/apps/design)。 不考虑设计语言更改，我们的设计原则始终保持一致：关注细节却又力求简洁（专注于内容而不是外观），显著减少视觉元素，始终忠实于数字领域；使用可视化层次结构（尤其是版式）；基于网格进行设计；通过流畅的动画带给你生动的体验。
+Windows Phone Silverlight 应用和 Windows 10 应用之间的设计语言有一些不同之处。 有关所有详细信息，请参阅[设计](https://developer.microsoft.com/windows/apps/design)。 不考虑设计语言更改，我们的设计原则始终保持一致：关注细节却又力求简洁（专注于内容而不是外观），显著减少视觉元素，始终忠实于数字领域；使用可视化层次结构（尤其是版式）；基于网格进行设计；通过流畅的动画带给你生动的体验。
 
 ## <a name="localization-and-globalization"></a>本地化和全球化
 
@@ -219,9 +219,9 @@ Windows Phone Silverlight 应用使用**CultureInfo**类来帮助全球化应用
 
 当你阅读到有关 UWP 媒体和图形的内容时，请记住 Windows 设计准则鼓励尽量减少任何多余的内容，包括图形的复杂度和混乱度。 Windows 设计以整洁清晰的视觉效果、版式和动作为特征。 如果你的应用遵循相同的准则，那么它看起来将更像内置应用。
 
-Windows Phone Silverlight 具有不存在于 UWP 中的**RadialGradientBrush**类型，但其他[**画笔**](/uwp/api/Windows.UI.Xaml.Media.Brush)类型为。 在某些情况下，你将可以使用位图获得类似的效果。 请注意，你可以使用 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/Direct2D/how-to-create-a-radial-gradient-brush) 中的 Direct2D 和 XAML C++ UWP [创建径向渐变画笔](https://docs.microsoft.com/windows/desktop/directx)。
+Windows Phone Silverlight 具有不存在于 UWP 中的**RadialGradientBrush**类型，但其他[**画笔**](/uwp/api/Windows.UI.Xaml.Media.Brush)类型为。 在某些情况下，你将可以使用位图获得类似的效果。 请注意，你可以使用 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 中的 Direct2D 和 XAML C++ UWP [创建径向渐变画笔](https://docs.microsoft.com/windows/desktop/Direct2D/how-to-create-a-radial-gradient-brush)。
 
-Windows Phone Silverlight 具有**OpacityMask**属性，但该属性不是 UWP [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)类型的成员。 在某些情况下，你将可以使用位图获得类似的效果。 并且你可以使用 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/Direct2D/opacity-masks-overview) 中的 Direct2D 和 XAML C++ UWP 应用[创建不透明蒙板](https://docs.microsoft.com/windows/desktop/directx)。 但是，**OpacityMask** 的常见用例是使用适应浅色和深色主题的单个位图。 对于矢量图形，你可以使用与主题有关的系统画笔（例如下面所示的饼图）。 但是，若要创建与主题有关的位图（例如下面所示的复选标记），则需要使用其他方法。
+Windows Phone Silverlight 具有**OpacityMask**属性，但该属性不是 UWP [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)类型的成员。 在某些情况下，你将可以使用位图获得类似的效果。 并且你可以使用 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 中的 Direct2D 和 XAML C++ UWP 应用[创建不透明蒙板](https://docs.microsoft.com/windows/desktop/Direct2D/opacity-masks-overview)。 但是，**OpacityMask** 的常见用例是使用适应浅色和深色主题的单个位图。 对于矢量图形，你可以使用与主题有关的系统画笔（例如下面所示的饼图）。 但是，若要创建与主题有关的位图（例如下面所示的复选标记），则需要使用其他方法。
 
 ![与主题有关的位图](images/wpsl-to-uwp-case-studies/wpsl-to-uwp-theme-aware-bitmap.png)
 
@@ -257,7 +257,7 @@ Windows Phone Silverlight 具有**OpacityMask**属性，但该属性不是 UWP�
     </UIElement.Clip>
 ```
 
-请注意，你可以凭借 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-layers-overview) 中的 Direct2D 和 XAML C++ UWP 应用[使用任意几何图形作为层中的蒙板](https://docs.microsoft.com/windows/desktop/directx)。
+请注意，你可以凭借 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 中的 Direct2D 和 XAML C++ UWP 应用[使用任意几何图形作为层中的蒙板](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-layers-overview)。
 
 ## <a name="navigation"></a>导航
 
@@ -313,7 +313,7 @@ URI 映射和片段导航是 URI 导航技术，因此它们不适用于 UWP 导
 
 适用于 Windows 10 应用的系统 TextBlock 样式
 
-在 Windows Phone Silverlight 应用中，默认字体系列为 "Microsoft WP"。 在 Windows 10 应用中，默认字体系列是 Segoe UI。 因此，你的应用中的字体指标可能看起来不同。 如果要重现 Windows Phone Silverlight 文本的外观，可以使用属性（如[**LineHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight)和[**LineStackingStrategy**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy)）设置自己的指标。 有关详细信息，请参阅[字体指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts)和[设计 UWP 应用](https://developer.microsoft.com/en-us/windows/apps/design)。
+在 Windows Phone Silverlight 应用中，默认字体系列为 "Microsoft WP"。 在 Windows 10 应用中，默认字体系列是 Segoe UI。 因此，你的应用中的字体指标可能看起来不同。 如果要重现 Windows Phone Silverlight 文本的外观，可以使用属性（如[**LineHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight)和[**LineStackingStrategy**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy)）设置自己的指标。 有关详细信息，请参阅[字体指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts)和[设计 UWP 应用](https://developer.microsoft.com/windows/apps/design)。
 
 ## <a name="theme-changes"></a>主题更改
 

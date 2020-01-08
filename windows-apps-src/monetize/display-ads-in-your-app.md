@@ -6,12 +6,12 @@ ms.date: 06/20/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, 横幅, 广告控件, 间隙
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c12d64bde6b16774b9090f7122f3933e0129ddc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 48aacf03d6e424b7b53052e2c292d4a8589a8d9f
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260323"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684576"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft 广告 SDK 在你的应用中显示广告
 
@@ -110,14 +110,14 @@ Microsoft 广告 SDK 提供了你可以在应用中使用的多种不同类型�
 
 |  任务    | 资源 |               
 |----------|-------|
-| 报告错误或获取对广告的辅助支持     | 访问[支持页面](https://developer.microsoft.com/en-us/windows/support)，然后选择**应用内广告**。        |
+| 报告错误或获取对广告的辅助支持     | 访问[支持页面](https://developer.microsoft.com/windows/support)，然后选择**应用内广告**。        |
 | 获取社区支持     | 访问[论坛](https://go.microsoft.com/fwlink/?LinkID=401264)。       |
 | 下载演示如何向应用添加横幅和间隙广告的示例项目。     | 请参阅 [GitHub 上的广告示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。       |
 | 了解有关 Windows 应用的最新盈利机会     | 访问[获取应用收益](https://developer.microsoft.com/store/monetize)。        |
 
 ## <a name="windows-81-and-windows-phone-8x-apps"></a>Windows 8.1 和 Windows Phone 8.x 应用
 
-对于 Windows 8.1 和 Windows Phone 8.x 应用，我们提供[适用于 Windows 和 Windows Phone 8.x 的 Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDKforWindowsandWindowsPhone8x)。 有关在 Windows 8.1 和 Windows Phone 8.x 应用中使用此 SDK 显示广告的更多信息，请参阅[此文章](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10))。
+对于 Windows 8.1 和 Windows Phone 8.x 应用，我们提供[适用于 Windows 和 Windows Phone 8.x 的 Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDKforWindowsandWindowsPhone8x)。 有关在 Windows 8.1 和 Windows Phone 8.x 应用中使用此 SDK 显示广告的更多信息，请参阅[此文章](https://docs.microsoft.com/previous-versions/windows/apps/dn792120(v=win.10))。
 
 ## <a name="related-topics"></a>相关主题
 

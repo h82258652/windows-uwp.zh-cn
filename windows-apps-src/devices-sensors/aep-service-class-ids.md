@@ -6,20 +6,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e4b4c89fff2854c36bd76cc680197fad1aa8dff
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bc8fecd7a5a1596d074c170d7a7211126e88b8ae
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370407"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684865"
 ---
 # <a name="aep-service-class-ids"></a>AEP 服务类 ID
 
 
 
-**重要的 Api**
+**重要的 API**
 
-- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
+- [**Windows. 枚举**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
 
 关联终结点 (AEP) 服务为设备通过给定协议支持的服务提供编程合约。 其中多个服务具有现成的标识符，应在引用它们时使用。 这些合约通过 **System.Devices.AepService.ServiceClassId** 属性标识。 本主题列出了几个众所周知的 AEP 服务类 ID。 AEP 服务类 ID 也可应用于具有客户类 ID 的协议。
 

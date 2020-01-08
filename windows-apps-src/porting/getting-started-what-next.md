@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 76be28f48be4297d1e81e5a7ab7c07ee55212102
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ca6bba9fcf00d103507a1c24ebde11a7f0a7c588
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259140"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684690"
 ---
 # <a name="getting-started-what-next"></a>入门：下一步是什么？
 
@@ -27,7 +27,7 @@ ms.locfileid: "74259140"
 -   [创建你的第一个使用 C# 或 Visual Basic 的 Windows 运行时应用](https://msdn.microsoft.com/library/windows/apps/hh974581.aspx)：该主题重点介绍 Windows Phone 开发。
 -   [适用于 iOS 和 Android 开发人员的视频](https://docs.microsoft.com/previous-versions/windows/apps/dn393982(v=win.10))：以视频的形式提供更多帮助。
 
-此外，请确保访问我们的[社区资源](https://developer.microsoft.com/en-us/windows/support)，了解如何通过开发人员论坛、博客、开发人员营地和研讨会，以及本地 Microsoft 活动和联系人来获得帮助和取得联系。
+此外，请确保访问我们的[社区资源](https://developer.microsoft.com/windows/support)，了解如何通过开发人员论坛、博客、开发人员营地和研讨会，以及本地 Microsoft 活动和联系人来获得帮助和取得联系。
 
 我们认为，Windows 10 会为你打开新的应用程序构建机会。 我们期待看到你即将生成的所有优秀应用！
 

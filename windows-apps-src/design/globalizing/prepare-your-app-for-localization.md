@@ -1,20 +1,20 @@
 ---
 Description: 本地化应用是一种可针对其他市场、语言或地区进行本地化且未发现应用中的任何功能性缺陷的应用。 可本地化应用最重要的属性是其可执行代码与其可本地化资源完全分隔。
-title: 对应用进行可本地化处理
+title: 使应用可本地化
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 341d46879895da221e3a17ba88f28fd22e7c5e27
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 9e0991a8a06054b6136dfc1fd65c15dbeb66e6fd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258098"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684259"
 ---
-# <a name="make-your-app-localizable"></a>对应用进行可本地化处理
+# <a name="make-your-app-localizable"></a>使应用可本地化
 
 本地化应用是一种可针对其他市场、语言或地区进行本地化且未发现应用中的任何功能性缺陷的应用。 可本地化应用最重要的属性是其可执行代码与其可本地化资源完全分隔。 所以，你应确定哪些应用的资源需要进行本地化。 问问你自己，如果应用要针对其他市场进行本地化，需要作出哪些更改？
 
@@ -87,7 +87,7 @@ ms.locfileid: "74258098"
 > [!NOTE]
 > 初始安装后，不能为应用程序安装其他语言支持。 如果在安装应用后更改默认语言，应用将继续仅使用原始语言资源。
 
-如果要确保在安装后所有语言资源都可用，请为应用包创建一个配置文件，该文件指定在安装期间需要某些资源（包括语言资源）。 在打包过程中生成应用程序的 .appxbundle 时，将自动启用此优化的安装功能。 有关详细信息，请参阅[确保在设备上安装资源，而不管设备是否需要](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140))。
+如果要确保在安装后所有语言资源都可用，请为应用包创建一个配置文件，该文件指定在安装期间需要某些资源（包括语言资源）。 在打包过程中生成应用程序的 .appxbundle 时，将自动启用此优化的安装功能。 有关详细信息，请参阅[确保在设备上安装资源，而不管设备是否需要](https://docs.microsoft.com/previous-versions/dn482043(v=vs.140))。
 
 （可选）若要确保所有资源都已安装（不只是子集），可以在打包应用程序时禁用 .appxbundle 生成。 但建议不要这样做，因为它会增加应用程序的安装时间。
 

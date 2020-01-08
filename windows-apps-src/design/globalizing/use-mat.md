@@ -6,12 +6,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 802a7a925a08dde94ab59d79e01df94fbbcf495d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 34bc609d06705f1dfa6a5c7370ce6022ae9c3ff8
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258039"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684238"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>使用多语言应用工具包 4.0
 
@@ -30,7 +30,7 @@ ms.locfileid: "74258039"
 
 你的应用需要可本地化，然后才能有效使用 MAT。 具体来说，你的项目应包含一个或多个资源文件 (.resw)，其中包含有以默认语言显示的应用的字符串。 有关详细信息，请参阅[本地化 UI 和应用程序包清单中的字符串](../../app-resources/localize-strings-ui-manifest.md)。 完成此操作后，此工具包即可快速、轻松添加其他语言。
 
-有关全球化和本地化的值建议，以及术语&mdash;全球化 **、** 可本地化性**和**本地化**的定义，请参阅**全球化和本地化&mdash;。
+有关全球化和本地化的值建议，以及术语**全球化**、**可本地化性**和**本地化**的定义，请参阅[全球化和本地化](globalizing-portal.md)。
 
 另请参阅[全球化指南](guidelines-and-checklist-for-globalizing-your-app.md)和[使你的应用可本地化](prepare-your-app-for-localization.md)。
 
@@ -39,7 +39,7 @@ ms.locfileid: "74258039"
 多语言应用工具包 4.0 (MAT 4.0) 具有两个部分，每个部分都有其自己的安装程序。
 
 - [多语言应用工具包4.0 扩展，适用于 Visual Studio 2017 和更高版本](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)。 此项包含适用于 Visual Studio 2019 的4.0 扩展，采用 .vsix 安装程序的形式。
-- [多语言应用工具包 4.0 编辑器](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)。 它包含 .msi 安装程序形式的 MAT 4.0 独立多语言编辑器工具。 此外，它还包含适用于 Visual Studio 2015 和 Visual Studio 2013 的 MAT 4.0 扩展。
+- [多语言应用工具包 4.0 编辑器](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit)。 它包含 .msi 安装程序形式的 MAT 4.0 独立多语言编辑器工具。 此外，它还包含适用于 Visual Studio 2015 和 Visual Studio 2013 的 MAT 4.0 扩展。
 
 如果使用 Visual Studio 2017 或 Visual Studio 2019，请逐个下载并运行安装程序。 如果使用 Visual Studio 2015 或 Visual Studio 2013，请下载并运行 .msi 安装程序。
 
@@ -69,7 +69,7 @@ ms.locfileid: "74258039"
 
 每当添加/删除默认语言资源文件 (.resw) 或添加/删除默认语言资源文件 (.resw) 中的字符串时，重新生成项目以重新同步 .xlf 文件。 这将确保 .xlf 文件包含以默认语言显示的字符串并集。
 
-安装的 &mdash;Microsoft 语言门户[和 ](https://www.microsoft.com/Language/)Microsoft Translator[ 等翻译提供程序可用于翻译应用的资源。 当提供程序支持某一特定语言时，该提供程序的图标将显示在“翻译语言”对话框中语言名称的旁边。
+安装的 [Microsoft 语言门户](https://www.microsoft.com/Language/)和 [Microsoft Translator](https://www.microsofttranslator.com/) 等翻译提供程序可用于翻译应用的资源。 当提供程序支持某一特定语言时，该提供程序的图标将显示在“翻译语言”对话框中语言名称的旁边。
 
 在“翻译语言”对话框中，工具包所发现的任何基于 .xlf 的现有语言的选项框均已预勾选，指示项目中已包含该语言。
 
@@ -102,7 +102,7 @@ ms.locfileid: "74258039"
 
 #### <a name="option-1-translate-the-strings-yourself"></a>选项 1 自行翻译字符串
 
-可以使用多语言编辑器单独翻译字符串。 前面已经提到，[.msi 安装程序](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)中包含此操作。
+可以使用多语言编辑器单独翻译字符串。 前面已经提到，[.msi 安装程序](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit)中包含此操作。
 
 - 右键单击想要翻译的 .xlf 文件。
 - 单击**打开方式…** 并选择多语言编辑器。 可以根据需要单击**设为默认值**。
@@ -169,7 +169,7 @@ ms.locfileid: "74258039"
 ## <a name="downloads"></a>下载
 
 * [多语言应用工具包 4.0 .vsix 安装程序](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
-* [多语言应用工具包 4.0 .msi 安装程序](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
+* [多语言应用工具包 4.0 .msi 安装程序](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit)
 
 ## <a name="translation-services"></a>翻译服务
 

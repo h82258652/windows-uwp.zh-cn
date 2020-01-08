@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 19e754fd6a52880c7bc636818acaeda815f9da16
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 879dee0c8c4c3ad9004c11fa488d32eae8936510
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259109"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684654"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>将 Windows 运行时 8.x XAML 和 UI 移植到 UWP
 
@@ -93,7 +93,7 @@ ms.locfileid: "74259109"
 
 下面是对控件所做的更改的一些更具体的示例。
 
-| 控件名称 | 更改 |
+| 控件名称 | “更改” |
 |--------------|--------|
 | **AppBar**   | 如果你使用的是**AppBar**控件（建议改为[**命令栏**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBar)），则默认情况下，它在 Windows 10 应用中不会被隐藏。 你可以使用 [**AppBar.ClosedDisplayMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.closeddisplaymode) 属性对其进行控制。 |
 | **AppBar**、[**CommandBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBar) | 在 Windows 10 应用中， **AppBar**和[**命令栏**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBar)具有 "**查看更多**" 按钮（省略号）。 |
@@ -122,7 +122,7 @@ ms.locfileid: "74259109"
 
 ##  <a name="design-language-in-windows10"></a>Windows 10 中的设计语言
 
-在通用8.1 应用和 Windows 10 应用之间，设计语言存在一些小但重要的差异。 有关所有详细信息，请参阅[设计](https://developer.microsoft.com/en-us/windows/apps/design)。 不考虑设计语言更改，我们的设计原则始终保持一致：关注细节却又力求简洁（专注于内容而不是外观），显著减少视觉元素，始终忠实于数字领域；使用可视化层次结构（尤其是版式）；基于网格进行设计；通过流畅的动画带给你生动的体验。
+在通用8.1 应用和 Windows 10 应用之间，设计语言存在一些小但重要的差异。 有关所有详细信息，请参阅[设计](https://developer.microsoft.com/windows/apps/design)。 不考虑设计语言更改，我们的设计原则始终保持一致：关注细节却又力求简洁（专注于内容而不是外观），显著减少视觉元素，始终忠实于数字领域；使用可视化层次结构（尤其是版式）；基于网格进行设计；通过流畅的动画带给你生动的体验。
 
 ## <a name="effective-pixels-viewing-distance-and-scale-factors"></a>有效像素、观看距离和比例因子
 
@@ -157,9 +157,9 @@ ms.locfileid: "74259109"
 下面是在 Windows 10 中具有更改或不受支持的[**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)和[**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)的各个方面。
 
 -   Windows 10 应用不支持[**IsSwipeEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isswipeenabled)属性（仅限 Windows 运行时8.x 应用）。 API 仍存在，但设置它不起任何作用。 以前的所有选择手势都受支持，向下轻扫（它不受支持是因为数据显示其不容易被发现）和右键单击（为显示上下文菜单而保留）除外。
--   Windows 10 应用不支持[**ReorderMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.reordermode)属性（仅限 Windows Phone 应用商店应用）。 API 仍存在，但设置它不起任何作用。 请改为将你的 [GridView**或**ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) 的 [**AllowDrop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.canreorderitems) 和CanReorderItems 设置为 true，以便用户能够使用长按（或单击并拖动）手势重新排序。
+-   Windows 10 应用不支持[**ReorderMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.reordermode)属性（仅限 Windows Phone 应用商店应用）。 API 仍存在，但设置它不起任何作用。 请改为将你的 **GridView** 或 **ListView** 的 [**AllowDrop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) 和 [**CanReorderItems**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.canreorderitems) 设置为 true，以便用户能够使用长按（或单击并拖动）手势重新排序。
 -   针对 Windows 10 进行开发时，请在项容器样式中使用[**ListViewItemPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenter) ，而不是[**GridViewItemPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.GridViewItemPresenter) ，同时用于[**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)和[**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)。 如果你编辑了默认项容器样式的副本，你将获得正确的类型。
--   Windows 10 应用的选择视觉对象已更改。 如果你将 [**SelectionMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) 设置为 **Multiple**，则在默认情况下，将为每个项都呈现一个复选框。 **ListView** 项的默认设置意味着复选框在项旁边以内联方式布局，因此，该项的其余部分所占用的空间将稍微减少并进行移动。 对于 **GridView** 项，复选框默认叠加在该项上方。 但是，在任何一种情况下，你都可以通过项容器样式内的 [**ListViewItemPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode) 元素，控制复选框的布局方式（内联或叠加，通过 [**CheckMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled) 属性控制）以及是否完整显示它们（通过 [**SelectionCheckMarkVisualEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter) 属性），如以下示例所示。
+-   Windows 10 应用的选择视觉对象已更改。 如果你将 [**SelectionMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) 设置为 **Multiple**，则在默认情况下，将为每个项都呈现一个复选框。 **ListView** 项的默认设置意味着复选框在项旁边以内联方式布局，因此，该项的其余部分所占用的空间将稍微减少并进行移动。 对于 **GridView** 项，复选框默认叠加在该项上方。 但是，在任何一种情况下，你都可以通过项容器样式内的 [**ListViewItemPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter) 元素，控制复选框的布局方式（内联或叠加，通过 [**CheckMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode) 属性控制）以及是否完整显示它们（通过 [**SelectionCheckMarkVisualEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled) 属性），如以下示例所示。
 -   在 Windows 10 中， [**ContainerContentChanging**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging)事件在 UI 虚拟化期间每个项目引发两次：一次用于回收，一次用于重复使用。 如果 [**InRecycleQueue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.containercontentchangingeventargs.inrecyclequeue) 的值是 **true**，并且没有特定回收工作要执行，可立即退出事件处理程序，并可确保在重复使用该相同项时（此时 **InRecycleQueue** 将会是 **false**），将重新进入事件处理程序。
 
 ```xml
@@ -247,7 +247,7 @@ Windows 10 应用的[**播放**](https://docs.microsoft.com/uwp/api/Windows.Medi
 
 在其他情况下，资源键将不再受支持。 Visual Studio 中的 XAML 标记编辑器突出显示对无法解析的资源键的引用。 例如，XAML 标记编辑器将使用红色波形曲线为对样式键 `ListViewItemTextBlockStyle` 的引用加下划线。 如果未更正该错误，则应用将在你尝试将其部署到模拟器或设备时立即终止。 因此，请务必留意 XAML 标记的正确性。 而且你将发现 Visual Studio 是捕获此类问题的绝佳工具。
 
-对于仍受支持的键，设计语言的更改意味着由某些样式设置的属性已更改。 例如，`TitleTextBlockStyle` 将14.667 中 Windows 运行时的**FontSize**设置为，并在 Windows Phone 应用商店应用程序中 18.14 px。 但相同的样式会将**FontSize**设置为 Windows 10 应用中更大的24px。 查看你的设计和布局，并在合适的位置上使用适当的样式。 有关详细信息，请参阅[字体指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts)和[设计 UWP 应用](https://developer.microsoft.com/en-us/windows/apps/design)。
+对于仍受支持的键，设计语言的更改意味着由某些样式设置的属性已更改。 例如，`TitleTextBlockStyle` 将14.667 中 Windows 运行时的**FontSize**设置为，并在 Windows Phone 应用商店应用程序中 18.14 px。 但相同的样式会将**FontSize**设置为 Windows 10 应用中更大的24px。 查看你的设计和布局，并在合适的位置上使用适当的样式。 有关详细信息，请参阅[字体指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts)和[设计 UWP 应用](https://developer.microsoft.com/windows/apps/design)。
 
 下面是不再受支持的键的完整列表。
 
@@ -412,7 +412,7 @@ Windows 10 应用的[**播放**](https://docs.microsoft.com/uwp/api/Windows.Medi
 
 尽管已在通用设备系列中实现了 [**SearchBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.searchbox)，但它无法在移动设备上正常运行。 将 [**AutoSuggestBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox) 用于通用搜索体验。 下面介绍通常如何使用 **AutoSuggestBox** 实现搜索体验。
 
-用户开始键入后，将引发 **TextChanged** 事件，描述为 **UserInput**。 然后填充建议列表，并设置AutoSuggestBox[**的**ItemsSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)。 在用户导航列表时，将引发 **SuggestionChosen** 事件（并且若已设置 **TextMemberDisplayPath**，文本框将自动填充指定的属性）。 当用户使用 Enter 键提交选择时，将引发 **QuerySubmitted** 事件，此时可对该建议执行相应操作（在此情况下，最有可能是导航至具有有关指定内容的更多详细信息的另一个页面）。 请注意，**SearchBoxQuerySubmittedEventArgs** 的 **LinguisticDetails** 和 **Language** 属性不再受支持（有支持该功能的等效 API）。 并且 **KeyModifiers** 也不再受支持。
+用户开始键入后，将引发 **TextChanged** 事件，描述为 **UserInput**。 然后填充建议列表，并设置 [**AutoSuggestBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox) 的 **ItemsSource**。 在用户导航列表时，将引发 **SuggestionChosen** 事件（并且若已设置 **TextMemberDisplayPath**，文本框将自动填充指定的属性）。 当用户使用 Enter 键提交选择时，将引发 **QuerySubmitted** 事件，此时可对该建议执行相应操作（在此情况下，最有可能是导航至具有有关指定内容的更多详细信息的另一个页面）。 请注意，**SearchBoxQuerySubmittedEventArgs** 的 **LinguisticDetails** 和 **Language** 属性不再受支持（有支持该功能的等效 API）。 并且 **KeyModifiers** 也不再受支持。
 
 [**AutoSuggestBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)还支持输入法编辑器（ime）。 如果希望显示“查找”图标，也可以那样做（与图标交互将引发 **QuerySubmitted** 事件）。
 
@@ -438,7 +438,7 @@ Windows 10 应用的[**播放**](https://docs.microsoft.com/uwp/api/Windows.Medi
 
 在 Windows Phone 应用商店应用和 Windows 10 应用中，按下 "后退" 按钮时，将会解除缩小视图。 对于 Windows 运行时的8mb 应用，没有内置的 "后退" 按钮处理，因此不会应用该问题。
 
-## <a name="settings"></a>设置
+## <a name="settings"></a>“设置”
 
 Windows 运行时**SettingsPane**的类不适合 Windows 10。 除了生成“设置”页面，还应为用户提供从应用内访问它的方式。 我们建议你在最高级别公开此应用“设置”页面来作为导航窗格上的最后一个固定项，但下面依然提供完整的选项集。
 

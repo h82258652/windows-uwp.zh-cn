@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 55165e0369c6bda64c19dc384c5c2addf224b8ba
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: b8ff6d6b3b15992f0598bfb371e6bfb1023d6dc1
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259117"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685005"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a>在 Mac 上设置 Windows 10
 
@@ -24,7 +24,7 @@ ms.locfileid: "74259117"
 
 **请注意**  你将需要在磁盘或 u 盘上使用 Windows 10 可启动映像。 如果你是 MSDN 订户，可以从 MSDN 订户下载中心下载安装映像。 如果您不是订阅者，则可以从[Microsoft Store](https://www.microsoft.com/store/apps)购买安装程序。 也可以从[此位置](https://www.microsoft.com/software-download/windows10)下载安装程序，这在你已运行 Windows 并希望升级时很有用。
 
-运行 Windows 后，可以从[适用于 windows 10 的开发人员下载](https://developer.microsoft.com/en-us/windows/downloads)安装最新版本的 Visual Studio 并开始编写应用！
+运行 Windows 后，可以从[适用于 windows 10 的开发人员下载](https://developer.microsoft.com/windows/downloads)安装最新版本的 Visual Studio 并开始编写应用！
 
 **请注意**  如果计划使用 Visual Studio 设备仿真程序，则**必须**安装64位（X64）版本的 Windows 10 专业版或更高版本。 遗憾的是，某些较旧的 Mac 电脑无法运行 64 位 Windows。 请在此 [Apple 支持页面](https://support.apple.com/kb/HT5634)上与 Apple 联系以核实你的硬件是否兼容。
 

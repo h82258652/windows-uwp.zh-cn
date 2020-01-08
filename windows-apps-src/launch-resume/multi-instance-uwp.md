@@ -5,12 +5,12 @@ keywords: 多实例 UWP
 ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9be9b5eec70bc98bc2c44beaf1dcfbba00876f20
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: cdb8d87a63eba14ecb2dc25e3cb5451dce6cae60
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259434"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684639"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>创建多实例通用 Windows 应用
 
@@ -23,7 +23,7 @@ ms.locfileid: "74259434"
 
 ## <a name="opt-in-to-multi-instance-behavior"></a>选择启用多实例行为
 
-如果要创建新的多实例应用程序，可以安装 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.MultiInstanceApps) 中提供的[多实例应用项目模板.VSIX](https://marketplace.visualstudio.com/)。 一旦安装该模板，可通过 **Visual C# > Windows 通用**（或**其他语言 > Visual C++ > Windows 通用**）下的**新建项目**对话框获取。
+如果要创建新的多实例应用程序，可以安装 [Visual Studio Marketplace](https://marketplace.visualstudio.com/) 中提供的[多实例应用项目模板.VSIX](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.MultiInstanceApps)。 一旦安装该模板，可通过 **Visual C# > Windows 通用**（或**其他语言 > Visual C++ > Windows 通用**）下的**新建项目**对话框获取。
 
 已安装两个模板：**多实例 UWP 应用**模板，提供用于创建多实例应用的模板，以及**多实例重定向 UWP 应用**模板，它提供用于构建的其他逻辑，可基于这些逻辑启动新实例或选择性地激活已启动的实例。 例如，你可能只需要一次编辑相同文档的一个实例，因此你会将该文件的实例打开到前台，而不是启动一个新的实例。
 
@@ -110,7 +110,7 @@ public static class Program
 
 `Main()` 是要运行的第一件事。 它在[**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_)和[**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_)之前运行。 这样便能够确定在应用中的任何其他初始化代码运行之前，是激活此实例还是其他实例。
 
-以上代码决定是激活应用程序的现有实例还是新实例。 使用一个密钥来确定是否存在要激活的现有实例。 例如，如果可启动应用来[处理文件激活](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation)，则可能将文件名作为密钥。 然后，可检查是否已使用该密钥注册了应用的一个实例，然后激活它，而不是打开一个新实例。 这是代码背后的理念： `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
+以上代码决定是激活应用程序的现有实例还是新实例。 使用一个密钥来确定是否存在要激活的现有实例。 例如，如果可启动应用来[处理文件激活](https://docs.microsoft.com/windows/uwp/launch-resume/handle-file-activation)，则可能将文件名作为密钥。 然后，可检查是否已使用该密钥注册了应用的一个实例，然后激活它，而不是打开一个新实例。 这是代码背后的理念： `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
 
 如果找到使用该密钥注册的实例，表示该实例已激活。 如果未找到密钥，则当前实例（当前正在运行 `Main` 的实例）将创建其应用程序对象并开始运行。
 

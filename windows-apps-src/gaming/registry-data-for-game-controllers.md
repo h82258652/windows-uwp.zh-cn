@@ -6,19 +6,19 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 输入, 注册表, 自定义
 ms.localizationpriority: medium
-ms.openlocfilehash: 30c1f0d8c9fac09d071d158563c964c6a598e073
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: bfce7503efd88a7a05a0471667953e287262bc35
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714052"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684918"
 ---
 # <a name="registry-data-for-game-controllers"></a>游戏控制器注册表数据
 
 > [!NOTE]
 > 本主题适用于与 Windows 10 兼容的游戏控制器的制造商，不适用于大多数开发人员。
 
-利用 [Windows.Gaming.Input 命名空间](https://docs.microsoft.com/uwp/api/windows.gaming.input)，独立硬件供应商 (IHV) 可以将数据添加到电脑的注册表中，从而使其设备能够相应地显示为 [Gamepads](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad)、[RacingWheels](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel)、[ArcadeSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick)、[FlightSticks](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.flightstick) 和 [UINavigationControllers](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller)。 所有 IHV 都应该为其兼容的控制器添加此数据。 通过执行此操作，所有 UWP 游戏（以及任何使用 WinRT API 的桌面游戏）都将能够支持游戏控制器。
+利用 [Windows.Gaming.Input 命名空间](https://docs.microsoft.com/uwp/api/windows.gaming.input)，独立硬件供应商 (IHV) 可以将数据添加到电脑的注册表中，从而使其设备能够相应地显示为 [Gamepads](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad)、[RacingWheels](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel)、[ArcadeSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick)、[FlightSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick) 和 [UINavigationControllers](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller)。 所有 IHV 都应该为其兼容的控制器添加此数据。 通过执行此操作，所有 UWP 游戏（以及任何使用 WinRT API 的桌面游戏）都将能够支持游戏控制器。
 
 ## <a name="mapping-scheme"></a>映射方案
 
@@ -31,25 +31,25 @@ ms.locfileid: "67714052"
 <table>
     <tr>
         <th>名称</th>
-        <th>type</th>
-        <th>是否为必需？</th>
-        <th>T:System.Diagnostics.Switch</th>
+        <th>在任务栏的搜索框中键入</th>
+        <th>Required?</th>
+        <th>信息</th>
     </tr>
     <tr>
-        <td>Disabled</td>
+        <td>禁用</td>
         <td>DWORD</td>
-        <td>否</td>
+        <td>无</td>
         <td>
             <p>指示应禁用此特定设备。</p>
             <ul>
-                <li><b>0</b>:未禁用设备。</li>
-                <li><b>1</b>:设备已被禁用。</li>
+                <li><b>0</b>：未禁用设备。</li>
+                <li><b>1</b>：已禁用设备。</li>
             </ul>
         </td>
     </tr>
     <tr>
         <td>描述</td>
-        <td>REG_SZ <td>否</td>
+        <td>REG_SZ <td>无</td>
         <td>设备的简短说明。</td>
     </tr>
 </table>
@@ -65,106 +65,106 @@ ms.locfileid: "67714052"
 <table>
     <tr>
         <th>子项</th>
-        <th>是否为必需？</th>
-        <th>T:System.Diagnostics.Switch</th>
+        <th>Required?</th>
+        <th>信息</th>
     </tr>
     <tr>
-        <td>菜单</td>
-        <td>是</td>
+        <td>Menu</td>
+        <td>“是”</td>
         <td rowspan="18" style="vertical-align: middle;">请参阅<a href="#button-mapping">按钮映射</a></td>
     </tr>
     <tr>
-        <td>视图</td>
-        <td>是</td>
+        <td>“查看”</td>
+        <td>“是”</td>
     </tr>
     <tr>
-        <td>A</td>
-        <td>是</td>
+        <td>一个</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>B</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>X</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>Y</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>LeftShoulder</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>RightShoulder</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>LeftThumbstickButton</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>RightThumbstickButton</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>DPadUp</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>DPadDown</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>DPadLeft</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>DPadRight</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>Paddle1</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Paddle2</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Paddle3</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Paddle4</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>LeftTrigger</td>
-        <td>是</td>
+        <td>“是”</td>
         <td rowspan="6" style="vertical-align: middle;">请参阅<a href="#axis-mapping">轴映射</a></td>
     </tr>
     <tr>
         <td>RightTrigger</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>LeftThumbstickX</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>LeftThumbstickY</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>RightThumbstickX</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>RightThumbstickY</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
 </table>
 
@@ -178,154 +178,154 @@ ms.locfileid: "67714052"
 <table>
     <tr>
         <th>子项</th>
-        <th>是否为必需？</th>
-        <th>T:System.Diagnostics.Switch</th>
+        <th>Required?</th>
+        <th>信息</th>
     </tr>
     <tr>
         <td>PreviousGear</td>
-        <td>是</td>
+        <td>“是”</td>
         <td rowspan="30" style="vertical-align: middle;">请参阅<a href="#button-mapping">按钮映射</a></td>
     </tr>
     <tr>
         <td>NextGear</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>DPadUp</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>DPadDown</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>DPadLeft</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>DPadRight</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Button1</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Button2</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Button3</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Button4</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Button5</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Button6</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Button7</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Button8</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Button9</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Button10</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Button11</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Button12</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Button13</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Button14</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Button15</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Button16</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>FirstGear</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>SecondGear</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>ThirdGear</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>FourthGear</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>FifthGear</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>SixthGear</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>SeventhGear</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>ReverseGear</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
-        <td>Wheel</td>
-        <td>是</td>
+        <td>滚轮</td>
+        <td>“是”</td>
         <td rowspan="5" style="vertical-align: middle;">请参阅<a href="#axis-mapping">轴映射</a></td>
     </tr>
     <tr>
         <td>Throttle</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>Brake</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>Clutch</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Handbrake</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>MaxWheelAngle</td>
-        <td>是</td>
+        <td>“是”</td>
         <td>请参阅<a href="#properties-mapping">属性映射</a></td>
     </tr>
 </table>
@@ -337,57 +337,57 @@ ms.locfileid: "67714052"
 <table>
     <tr>
         <th>子项</th>
-        <th>是否为必需？</th>
-        <th>T:System.Diagnostics.Switch</th>
+        <th>Required?</th>
+        <th>信息</th>
     </tr>
     <tr>
         <td>Action1</td>
-        <td>是</td>
+        <td>“是”</td>
         <td rowspan="12" style="vertical-align: middle;">请参阅<a href="#button-mapping">按钮映射</a></td>
     </tr>
     <tr>
         <td>Action2</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>Action3</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>Action4</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>Action5</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>Action6</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>Special1</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>Special2</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>StickUp</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>StickDown</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>StickLeft</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>StickRight</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
 </table>
 
@@ -398,38 +398,38 @@ ms.locfileid: "67714052"
 <table>
     <tr>
         <th>子项</th>
-        <th>是否为必需？</th>
-        <th>T:System.Diagnostics.Switch</th>
+        <th>Required?</th>
+        <th>信息</th>
     </tr>
     <tr>
         <td>FirePrimary</td>
-        <td>是</td>
+        <td>“是”</td>
         <td rowspan="2" style="vertical-align: middle;">请参阅<a href="#button-mapping">按钮映射</a></td>
     </tr>
     <tr>
         <td>FireSecondary</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>Roll</td>
-        <td>是</td>
+        <td>“是”</td>
         <td rowspan="4" style="vertical-align: middle;">请参阅<a href="#axis-mapping">轴映射</a></td>
     </tr>
     <tr>
-        <td>俯仰</td>
-        <td>是</td>
+        <td>Pitch</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>Yaw</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>Throttle</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>HatSwitch</td>
-        <td>是</td>
+        <td>“是”</td>
         <td>请参阅<a href="#switch-mapping">开关映射</a></td>
     </tr>
 </table>
@@ -441,105 +441,105 @@ ms.locfileid: "67714052"
 <table>
     <tr>
         <th>子项</th>
-        <th>是否为必需？</th>
-        <th>T:System.Diagnostics.Switch</th>
+        <th>Required?</th>
+        <th>信息</th>
     </tr>
     <tr>
-        <td>菜单</td>
-        <td>是</td>
+        <td>Menu</td>
+        <td>“是”</td>
         <td rowspan="24" style="vertical-align: middle;">请参阅<a href="#button-mapping">按钮映射</a></td>
     </tr>
     <tr>
-        <td>视图</td>
-        <td>是</td>
+        <td>“查看”</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>接受</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
-        <td>Cancel</td>
-        <td>是</td>
+        <td>“取消”</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>PrimaryUp</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>PrimaryDown</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>PrimaryLeft</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>PrimaryRight</td>
-        <td>是</td>
+        <td>“是”</td>
     </tr>
     <tr>
         <td>Context1</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Context2</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Context3</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>Context4</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>PageUp</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>PageDown</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>PageLeft</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>PageRight</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>ScrollUp</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>ScrollDown</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>ScrollLeft</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>ScrollRight</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>SecondaryUp</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>SecondaryDown</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>SecondaryLeft</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
     <tr>
         <td>SecondaryRight</td>
-        <td>否</td>
+        <td>无</td>
     </tr>
 </table>
 
@@ -555,64 +555,64 @@ ms.locfileid: "67714052"
 
 <table>
     <tr>
-        <th>Source</th>
+        <th>来源</th>
         <th>值名称</th>
         <th>值类型</th>
-        <th>是否为必需？</th>
+        <th>Required?</th>
         <th>值信息</th>
     </tr>
     <tr>
         <td>Button</td>
         <td>ButtonIndex</td>
         <td>DWORD</td>
-        <td>是</td>
+        <td>“是”</td>
         <td><b>RawGameController</b> 按钮阵列中的索引。</td>
     </tr>
     <tr>
         <td rowspan="4" style="vertical-align: middle;">Axis</td>
         <td>AxisIndex</td>
         <td>DWORD</td>
-        <td>是</td>
+        <td>“是”</td>
         <td><b>RawGameController</b> 轴阵列中的索引。</td>
     </tr>
     <tr>
-        <td>反转</td>
+        <td>Invert</td>
         <td>DWORD</td>
-        <td>否</td>
+        <td>无</td>
         <td>指明在应用 <b>ThresholdPercent</b> 和 <b>DebouncePercent</b> 系数之前应该反转轴值。</td>
     </tr>
     <tr>
         <td>ThresholdPercent</td>
         <td>DWORD</td>
-        <td>是</td>
+        <td>“是”</td>
         <td>指明轴位置，在此位置，映射的按钮值会在按下状态和释放状态之间进行转换。 值的有效范围是 0 至 100。 如果轴值大于或等于此值，则认为按下了按钮。</td>
     </tr>
     <tr>
         <td>DebouncePercent</td>
         <td>DWORD</td>
-        <td>是</td>
+        <td>“是”</td>
         <td>
             <p>定义接近于 <b>ThresholdPercent</b> 值（用于防止对报告的按钮状态误操作）的窗口大小。 值的有效范围是 0 至 100。 只有在轴值超过了防止误动作窗口的上边界或下边界时，才会发生按钮状态转换。 例如，如果 <b>ThresholdPercent</b> 为 50，<b>DebouncePercent</b> 为 10，则会按完整范围轴值的 45% 和 55% 生成防止误动作边界。 直到轴值达到 55% 或更高，按钮才能转换成按下状态；直到轴值达到 45% 或更低，按钮才能转换回释放状态。</p>
             <p>计算的防止误动作窗口边界固定在 0% 到 100% 之间。 例如，阈值 5% 和防止误动作窗口值 20% 会导致防止误动作窗口边界下降为 0% 和 15%。 轴值 0% 和 100% 的按钮状态始终分别报告为释放和按下，与阈值和防止误动作值无关。</p>
         </td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">开关</td>
+        <td rowspan="3" style="vertical-align: middle;">将</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
-        <td>是</td>
+        <td>“是”</td>
         <td><b>RawGameController</b> 开关阵列中的索引。</td>
     </tr>
     <tr>
         <td>SwitchPosition</td>
         <td>REG_SZ</td>
-        <td>是</td>
+        <td>“是”</td>
         <td>
             <p>指示将导致映射的按钮报告自己正在被按下的开关位置。 位置值可以为以下字符串之一：</p>
             <ul>
                 <li>向上</li>
                 <li>UpRight</li>
-                <li>向右</li>
+                <li>权限</li>
                 <li>DownRight</li>
                 <li>向下</li>
                 <li>DownLeft</li>
@@ -624,7 +624,7 @@ ms.locfileid: "67714052"
     <tr>
         <td>IncludeAdjacent</td>
         <td>DWORD</td>
-        <td>否</td>
+        <td>无</td>
         <td>指示相邻开关位置也将导致映射的按钮报告自己正在被按下。</td>
     </tr>
 </table>
@@ -635,17 +635,17 @@ ms.locfileid: "67714052"
 
 <table>
     <tr>
-        <th>Source</th>
+        <th>来源</th>
         <th>值名称</th>
         <th>值类型</th>
-        <th>是否为必需？</th>
+        <th>Required?</th>
         <th>值信息</th>
     </tr>
     <tr>
         <td rowspan="2" style="vertical-align: middle;">Button</td>
         <td>MaxValueButtonIndex</td>
         <td>DWORD</td>
-        <td>是</td>
+        <td>“是”</td>
         <td>
             <p>转换为所映射单向轴值的 <b>RawGameController</b> 按钮阵列中的索引。</p>
             <table>
@@ -667,7 +667,7 @@ ms.locfileid: "67714052"
     <tr>
         <td>MinValueButtonIndex</td>
         <td>DWORD</td>
-        <td>否</td>
+        <td>无</td>
         <td>
             <p>指示映射的轴为双向。 <b>MaxButton</b> 和 <b>MinButton</b> 的值会合并到单个双向轴中，如下所示。</p>
             <table>
@@ -703,32 +703,32 @@ ms.locfileid: "67714052"
         <td rowspan="2" style="vertical-align: middle;">Axis</td>
         <td>AxisIndex</td>
         <td>DWORD</td>
-        <td>是</td>
+        <td>“是”</td>
         <td><b>RawGameController</b> 轴阵列中的索引。</td>
     </tr>
     <tr>
-        <td>反转</td>
+        <td>Invert</td>
         <td>DWORD</td>
-        <td>否</td>
+        <td>无</td>
         <td>指示在返回映射的轴值之前应该反转该值。</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">开关</td>
+        <td rowspan="3" style="vertical-align: middle;">将</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
-        <td>是</td>
+        <td>“是”</td>
         <td><b>RawGameController</b> 开关阵列中的索引。
     </tr>
     <tr>
         <td>MaxValueSwitchPosition</td>
         <td>REG_SZ</td>
-        <td>是</td>
+        <td>“是”</td>
         <td>
             <p>以下字符串之一：</p>
             <ul>
                 <li>向上</li>
                 <li>UpRight</li>
-                <li>向右</li>
+                <li>权限</li>
                 <li>DownRight</li>
                 <li>向下</li>
                 <li>DownLeft</li>
@@ -746,7 +746,7 @@ ms.locfileid: "67714052"
                     <td>1.0</td>
                 </tr>
                 <tr>
-                    <td>Center</td>
+                    <td>中点</td>
                     <td>0.5</td>
                 </tr>
                 <tr>
@@ -759,7 +759,7 @@ ms.locfileid: "67714052"
     <tr>
         <td>IncludeAdjacent</td>
         <td>DWORD</td>
-        <td>否</td>
+        <td>无</td>
         <td>
             <p>指示相邻开关位置也将导致映射的轴报告 1.0。 在以上示例中，如果设置了 <b>IncludeAdjacent</b>，则按如下方式完成轴转换：</p>
             <table>
@@ -780,7 +780,7 @@ ms.locfileid: "67714052"
                     <td>1.0</td>
                 </tr>
                 <tr>
-                    <td>Center</td>
+                    <td>中点</td>
                     <td>0.5</td>
                 </tr>
                 <tr>
@@ -806,7 +806,7 @@ ms.locfileid: "67714052"
 
 <table>
     <tr>
-        <th>Source</th>
+        <th>来源</th>
         <th>值名称</th>
         <th>值类型</th>
         <th>值信息</th>
@@ -820,7 +820,7 @@ ms.locfileid: "67714052"
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>， <b>FourWay</b>，或<b>EightWay</b>
+        <td><b>双向</b>、 <b>FourWay</b>或<b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -898,13 +898,13 @@ ms.locfileid: "67714052"
         <td>DWORD</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">开关</td>
+        <td rowspan="3" style="vertical-align: middle;">将</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td><b>RawGameController</b> 开关阵列中的索引。
     </tr>
     <tr>
-        <td>反转</td>
+        <td>Invert</td>
         <td>DWORD</td>
         <td>指示开关以逆时针顺序而不是默认的顺时针顺序来报告其位置。</td>
     </tr>
@@ -926,7 +926,7 @@ ms.locfileid: "67714052"
                     <td>3</td>
                 </tr>
                 <tr>
-                    <td>向右</td>
+                    <td>权限</td>
                     <td>1</td>
                     <td>2</td>
                 </tr>
@@ -966,7 +966,7 @@ ms.locfileid: "67714052"
 
 #### <a name="buttonindex-values"></a>*ButtonIndex 值
 
-\*ButtonIndex 值中的索引**RawGameController**的按钮数组：
+将 ButtonIndex 值索引 \*到**RawGameController**的 button 数组中：
 
 <table>
     <tr>
@@ -1047,7 +1047,7 @@ ms.locfileid: "67714052"
 
 ## <a name="labels"></a>标签
 
-标签应存在于设备根位置下的 **Labels** 项下面。 **标签**可以有 3 个子项：**按钮**，**轴**，和**交换机**。
+标签应存在于设备根位置下的 **Labels** 项下面。 **Labels** 可能有以下 3 个子项：**Buttons**、**Axes** 和 **Switches**。
 
 ### <a name="button-labels"></a>按钮标签
 
@@ -1071,15 +1071,15 @@ RightBumper         // Index 9
 <table>
     <tr>
         <th>名称</th>
-        <th>值 (类型：REG_SZ)</th>
+        <th>值（类型：REG_SZ）</th>
     </tr>
     <tr>
         <td>Button0</td>
-        <td>菜单</td>
+        <td>Menu</td>
     </tr>
     <tr>
         <td>Button1</td>
-        <td>视图</td>
+        <td>“查看”</td>
     </tr>
     <tr>
         <td>Button2</td>
@@ -1117,7 +1117,7 @@ RightBumper         // Index 9
 
 ### <a name="axis-labels"></a>轴标签
 
-就像按钮标签中的情况一样，**Axes** 项会将 **RawGameController** 轴阵列中的每个轴位置映射到 [GameControllerButtonLabel 枚举](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel)中列出的其中一个标签。 请参阅[按钮标签](#button-labels)中的示例。
+就像按钮标签中的情况一样，**Axes** 项会将 **RawGameController** 轴阵列中的每个轴位置映射到 [GameControllerButtonLabel 枚举](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel)中列出的其中一个标签。 请参阅[按钮标签](#button-labels)中的示例。
 
 ### <a name="switch-labels"></a>开关标签
 
@@ -1137,7 +1137,7 @@ RightBumper         // Index 9
 <table>
     <tr>
         <th>名称</th>
-        <th>值 (类型：REG_SZ)</th>
+        <th>值（类型：REG_SZ）</th>
     </tr>
     <tr>
         <td>Switch0Up</td>
@@ -1345,8 +1345,8 @@ Windows Registry Editor Version 5.00
 "Invert" = dword:00000000
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-* [Windows.Gaming.Input Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.Custom Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [Windows. 输入命名空间](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+* [自定义命名空间](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
 * [INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)

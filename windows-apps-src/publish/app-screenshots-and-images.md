@@ -6,12 +6,12 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, uwp, 预告片, 视频, 屏幕截图, 图像, 图标, Microsoft Store 一览, Microsoft Store 一览图像
 ms.localizationpriority: medium
-ms.openlocfilehash: 25dd6ffe698ae8141a02381d5ca45df31377599b
-ms.sourcegitcommit: a4a595c485a1e4549b02b0e20ca9f56b093c5814
+ms.openlocfilehash: 48a8566c80516588939dc0ef071c3da4b9232d64
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74125236"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684615"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>应用屏幕截图、图像和预告片
 
@@ -170,7 +170,7 @@ ms.locfileid: "74125236"
 
 | 视频 | Audio |
 | --- | --- |
-| <ul><li>编解码器[： h.264](https://docs.microsoft.com/en-us/windows/desktop/DirectShow/h-264-video-types) （AVC1）  </li><li>逐行扫描（无隔行）</li><li>高级画质</li><li>2 个连续的 B 帧</li><li>关闭 GOP。 一半帧率的 GOP</li><li>CABAC</li><li>50 MB/s </li><li>色彩空间：4.2.0</li></ul> | <ul><li>编解码器：AAC-LC</li><li>通道：立体声或环绕声</li><li>采样率：48 KHz</li><li>音频比特率：立体声为 384 KB/s，环绕声为 512 KB/s</li></ul> |
+| <ul><li>编解码器[： h.264](https://docs.microsoft.com/windows/desktop/DirectShow/h-264-video-types) （AVC1）  </li><li>逐行扫描（无隔行）</li><li>高级画质</li><li>2 个连续的 B 帧</li><li>关闭 GOP。 一半帧率的 GOP</li><li>CABAC</li><li>50 MB/s </li><li>色彩空间：4.2.0</li></ul> | <ul><li>编解码器：AAC-LC</li><li>通道：立体声或环绕声</li><li>采样率：48 KHz</li><li>音频比特率：立体声为 384 KB/s，环绕声为 512 KB/s</li></ul> |
 
 > [!WARNING]
 > 客户可能不会听到用 AVC1 以外的编解码器编码的未处理文件的音频。
