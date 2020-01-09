@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
-ms.openlocfilehash: 32ece54ef17c97b1cb16b3f0a706c86eb2858556
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 6ab5b2ec13e0de3d234fafc6c1a32e10d35aed4f
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257855"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681938"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 应用认证工具包测试
 
@@ -22,7 +22,7 @@ ms.locfileid: "74257855"
 
 在认证测试期间监视应用，记录它何时崩溃或停止响应。
 
-### <a name="background"></a>背景
+### <a name="background"></a>后台
 
 停止响应或崩溃的应用可能导致用户丢失数据和拥有糟糕的体验。
 
@@ -54,7 +54,7 @@ Windows 应用认证工具包调用 [**IApplicationActivationManager::ActivateAp
 
 检查 Windows 应用是否能在未来版本的操作系统中运行。 此测试历来都仅适用于桌面应用工作流，但现在可适用于应用商店和通用 Windows 平台工作流。
 
-### <a name="background"></a>背景
+### <a name="background"></a>后台
 
 操作系统版本信息的 Microsoft Store 的使用受到限制。 这常被应用误用于检查操作系统版本，使得该应用会向用户提供特定于操作系统版本的相关功能。
 
@@ -70,7 +70,7 @@ Windows App 认证工具包使用 HighVersionLie 来检测应用检查操作系�
 
 这将验证应用是否具有一个可用于已声明后台任务的取消处理程序。 在该任务被取消后，将需要一个用于调用的专用函数。 此测试仅适用于已部署的应用。
 
-### <a name="background"></a>背景
+### <a name="background"></a>后台
 
 Windows 应用可注册一个在后台运行的进程。 例如，电子邮件应用有时可能会对服务器执行 ping 操作。 但是，如果操作系统需要这些资源，它将取消该后台任务，并且应用应当能正常处理此取消操作。 不具有取消处理程序的应用可能会出现崩溃，或者在用户试图关闭应用时无法将其关闭。
 
@@ -86,7 +86,7 @@ Windows 应用可注册一个在后台运行的进程。 例如，电子邮件�
 
 这将验证应用包（APPX 应用程序包）中是否包含某个应用程序。 该测试在工具包中已更改为一个独立的测试。
 
-### <a name="background"></a>背景
+### <a name="background"></a>后台
 
 此测试依据应用商店策略进行实现。
 
@@ -104,13 +104,13 @@ Windows 应用可注册一个在后台运行的进程。 例如，电子邮件�
 
 测试应用部件清单 (manifest) 的内容，确保它的内容是正确的。
 
-### <a name="background"></a>背景
+### <a name="background"></a>后台
 
 应用必须拥有格式正确的应用部件清单 (manifest)。
 
 ### <a name="test-details"></a>测试详细信息
 
-检查应用清单验证内容是否正确，如[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述。
+检查应用部件清单 (manifest) 以验证内容是否正确，如[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述。
 
 -   **文件扩展名和协议**
 
@@ -132,7 +132,7 @@ Windows 应用可注册一个在后台运行的进程。 例如，电子邮件�
 
 ## <a name="windows-security-features-test"></a>Windows 安全功能测试
 
-### <a name="background"></a>背景
+### <a name="background"></a>后台
 
 更改默认的 Windows 安全保护可能增加客户的风险。
 
@@ -149,7 +149,7 @@ BinScope Binary Analyzer 测试检查对以下安全相关功能的正确使用�
 
 ### <a name="binscope-binary-analyzer-tests"></a>BinScope Binary Analyzer 测试
 
-[BinScope Binary Analyzer](https://www.microsoft.com/en-us/download/details.aspx?id=44995) 测试检查应用的二进制文件，以检查使应用不容易被攻击或被用作攻击平台的编码和生成做法。
+[BinScope Binary Analyzer](https://www.microsoft.com/download/details.aspx?id=44995) 测试检查应用的二进制文件，以检查使应用不容易被攻击或被用作攻击平台的编码和生成做法。
 
 BinScope Binary Analyzer 测试检查对这些安全相关功能的正确使用：
 
@@ -286,7 +286,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 测试应用包中是否存在私有代码签名二进制文件。
 
-### <a name="background"></a>背景
+### <a name="background"></a>后台
 
 私有代码签名文件应该保持私有，因为在泄露这些文件的事件中，它们可能会被恶意使用。
 
@@ -302,7 +302,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 测试应用是否使用了任何不兼容的 API。
 
-### <a name="background"></a>背景
+### <a name="background"></a>后台
 
 应用必须使用适用于 UWP 应用的 Api （Windows 运行时或受支持的 Win32 Api）对 Microsoft Store 进行认证。 此测试还识别托管二进制文件依赖于批准的配置文件以外功能的情形。
 
@@ -371,7 +371,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 使用下表作为指导。
 
 <table>
-<tr><th>错误消息</th><th>备注</th></tr>
+<tr><th>错误消息</th><th>说明</th></tr>
 <tr><td>
 <p>图像 {image name} 定义 Scale 和 TargetSize 限定符；一次只能定义一个限定符。</p>
 </td><td>
@@ -495,7 +495,7 @@ UWP 应用应完整且完全正常运行。 使用默认图像（来自模板或
 
 测试应用，确保它不是一个调试版本。
 
-### <a name="background"></a>背景
+### <a name="background"></a>后台
 
 若要在 Microsoft Store 中进行认证，不能编译应用以进行调试，而且不能引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
 
@@ -513,7 +513,7 @@ UWP 应用应完整且完全正常运行。 使用默认图像（来自模板或
 
 ### <a name="utf-8-file-encoding"></a>UTF-8 文件编码
 
-### <a name="background"></a>背景
+### <a name="background"></a>后台
 
 HTML、CSS 和 JavaScript 文件必须使用带有相应字节顺序标记 (BOM) 的 UTF-8 格式进行编码，以便从字节码缓存中获益并避免某些运行时错误情况。
 
@@ -531,7 +531,7 @@ HTML、CSS 和 JavaScript 文件必须使用带有相应字节顺序标记 (BOM)
 
 对 Microsoft Direct3D 应用进行测试，以确保它们不会在使用旧版图形硬件的设备上崩溃。
 
-### <a name="background"></a>背景
+### <a name="background"></a>后台
 
 Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 图形卡上正确呈现或失败。
 
@@ -549,7 +549,7 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 > **请注意**  此测试仅适用于为 Windows 8.1 和更高版本开发的 UWP 应用。
 
-### <a name="background"></a>背景
+### <a name="background"></a>后台
 
 如果该应用不在其 Direct3D 设备上调用 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim)，则该应用不会释放为其早期 3D 工作分配的内存。 这将增加由于系统内存压力而终止应用的风险。
 
@@ -559,13 +559,13 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 ### <a name="corrective-action"></a>更正操作
 
-每当应用即将暂停时应在其 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) 接口上调用 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) API。
+每当应用即将暂停时应在其 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) 接口上调用 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
 
 ## <a name="app-capabilities-test"></a>应用功能测试
 
 ### <a name="special-use-capabilities"></a>专用许可范围
 
-### <a name="background"></a>背景
+### <a name="background"></a>后台
 
 专用许可范围专用于非常特定的场景。 仅允许公司帐户使用这些功能。
 
@@ -585,7 +585,7 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 ## <a name="windows-runtime-metadata-validation"></a>Windows 运行时元数据验证
 
-### <a name="background"></a>背景
+### <a name="background"></a>后台
 
 确保随应用发送的组件符合 UWP 类型系统。
 
@@ -608,7 +608,7 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 安装混合二进制文件的应用可能崩溃或者不能正确运行，具体取决于用户的处理器体系结构。
 
-### <a name="background"></a>背景
+### <a name="background"></a>后台
 
 此测试验证应用包中的二进制文件，确定是否存在体系结构冲突。 应用包不得包含无法在部件清单 (manifest) 指定的处理器体系结构上使用的二进制文件。 包含不受支持的二进制文件可能会导致应用发生崩溃，或造成应用包大小出现不必要的增加。
 
@@ -634,7 +634,7 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 验证应用程序在安装过程中是否不会创建子目录，这超出了\-路径的最大长度。
 
-### <a name="background"></a>背景
+### <a name="background"></a>后台
 
 操作系统组件（包括 Trident、Wwahost.exe 等）在内部限制为文件系统路径的最大\-路径，并且对于更长的路径将无法正常使用。
 
@@ -652,7 +652,7 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 WinJS 后台任务测试可确保 JavaScript 应用具有适当的 close 语句，因此应用不消耗电池电量。
 
-### <a name="background"></a>背景
+### <a name="background"></a>后台
 
 具有 JavaScript 后台任务的应用在后台任务中需要调用 Close() 作为最后的语句。 不执行此操作的应用可能会使系统无法返回到连接的待机模式，并导致消耗电池电量。
 

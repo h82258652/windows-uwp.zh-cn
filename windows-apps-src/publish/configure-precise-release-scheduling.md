@@ -1,86 +1,324 @@
 ---
-Description: 你可以设置应用在应用商店中应变为可用的准确日期和时间，从而为你提供更大的灵活性并为不同市场自定义日期。
-title: 配置精确发布计划
+Description: 你可以精确设置应用应该在应用商店中推出的日期和时间，从而能够针对不同市场更灵活地自定义日期。
+title: 配置精确的发布计划
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10，uwp，计划，发布日期，日期，启动
+keywords: Windows 10, uwp, 计划, 发布日期, 日期, 启动
 ms.localizationpriority: medium
-ms.openlocfilehash: ec9ee00aaa350fc48185cc6328674ac2d8f62ea5
-ms.sourcegitcommit: f561efbda5c1d47b85601d91d70d86c5332bbf8c
+ms.openlocfilehash: eebd98d8e1ce39ef8d9876ab4749bcc76012f9fa
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72690356"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685142"
 ---
-# <a name="configure-precise-release-scheduling"></a>配置精确发布计划
+# <a name="configure-precise-release-scheduling"></a>配置精确的发布计划
 
-使用 "[定价和可用性](set-app-pricing-and-availability.md)" 页上的 "**计划**" 部分，可以设置应用在应用商店中应变为可用的准确日期和时间，从而提供更高的灵活性以及为不同市场自定义日期的能力。
+在[定价和可用性](set-app-pricing-and-availability.md)页面的**计划**部分，你可以精确设置应用应该在应用商店中推出的日期和时间，从而能够针对不同市场更灵活地自定义日期。
 
 > [!NOTE]
-> 尽管本主题指的是应用程序，但外接程序提交的版本计划使用相同的过程。
+> 虽然本主题涉及应用，但加载项提交的发布计划也使用同样的过程。
 
-此外，还可以选择设置产品在商店中不再可用的日期。 请注意，这意味着在商店中不能再通过搜索或浏览找到该产品，但任何具有直接链接的客户都可以看到产品的商店列表。 如果他们已拥有该产品，或者他们有[促销代码](generate-promotional-codes.md)并使用 Windows 10 设备，则他们只能下载该产品。
+此外，你还可以选择设置产品在应用商店中下架的日期。 请注意，这表示不再能够通过搜索或浏览在应用商店中找到该产品，但具有直接链接的任何客户可以看到该产品的应用商店一览。 如果他们已经拥有该产品，或者如果他们拥有[促销代码](generate-promotional-codes.md)并且使用 Windows 10 设备，则仅可以下载该产品。
 
-默认情况下（除非已在 "[可见性](choose-visibility-options.md#discoverability)" 部分的 "存储" 选项中选择了 "**使此应用可供使用，但无法发现**" 选项），则当客户通过认证并完成发布时，你的应用将立即可供客户使用正在. 若要选择其他日期，请选择 "**显示选项**" 以展开此部分。
+默认情况下（除非在[可见性](choose-visibility-options.md#discoverability)部分选择了**在应用商店中提供此应用，但它不可被发现**选项中的一个），你的应用一旦通过认证并完成发布流程，客户即可获取。 若要选择其他日期，请选择**显示选项**以展开此部分。
 
-请注意，如果在 "[可见性](choose-visibility-options.md#discoverability)" 部分的 "存储" 选项中选择了 "**使此应用程序可供使用，但无法发现**" 选项之一，则你将无法在 "**计划**" 部分中配置日期，因为你的应用程序不会被释放到客户，因此没有要配置的发布日期。
+请注意，如果在[可见性](choose-visibility-options.md#discoverability)部分选择了**在应用商店中提供此应用，但它不可被发现**选项中的一个，你将无法在**计划**部分配置日期，因为你的应用不会发布给客户，所以没有要配置的发布日期。
 
 > [!IMPORTANT]
-> 您在 "计划" 部分中指定的日期仅适用于 Windows 10 上的客户。
+> 在“计划”部分指定的日期仅适用于 Windows 10 的客户。
 >
 >如果你以前发布的应用支持早期版本的操作系统，则你选择的任何 "**停止购置**" 日期将不会应用于这些客户;它们仍将能够获取应用（除非你在 "[可见性](choose-visibility-options.md#discoverability)" 部分中使用新选择提交更新，或者在 "**应用概述**" 页中选择 "**使应用不可用**"）。
 
+## <a name="base-schedule"></a>基准计划
 
-## <a name="base-schedule"></a>基本计划
+你为基准计划采用的选项将应用于提供你的应用的所有市场，除非后来通过选择[针对特定市场自定义](#customize-the-schedule-for-specific-markets)针对特定市场（或市场组）添加日期。
 
-你为基本计划做出的选择将适用于你的应用程序可用的所有市场，除非你稍后通过选择 "[自定义" 作为特定市场](#customize-the-schedule-for-specific-markets)来添加特定市场（或市场组）的日期。
+你将看到以下两个选项：**发布**和**停止获取**。 
 
-你将在此处看到两个选项： "**发布**" 和 "**停止获取**"。 
+## <a name="release"></a>发布版本
 
-## <a name="release"></a>发布
-
-在 "**发布**" 下拉箭头中，可以设置希望应用在应用商店中可用的时间。 这意味着在应用程序中通过搜索或浏览可发现应用，并且客户可以查看其商店列表并获取应用。
+在**发布**下拉列表中，可以设置你希望你的应用在应用商店中推出的时间。 这表示通过搜索或浏览可以在应用商店中发现该应用，并且客户可以查看其应用商店一览以及获取该应用。
 
 >[!NOTE]
-> 在应用程序发布并在应用商店中可用后，你将无法再选择**发布**日期（因为应用已发布）。
+> 在你的应用已发布，并在应用商店中推出后，你将不再能够选择**发布**日期（因为该应用已发布）。
 
-以下是可以为产品**发布**计划配置的选项：
-- **尽快：在**认证和发布产品后，产品会立即发布。 这是默认选项。
-- **在**：产品将在你选择的日期和时间发布。 另外还有两个选项：
-   - **UTC**：你选择的时间将是协调世界时（UTC）的时间，因此应用程序可以在任何位置的同一时间发布。
-   - **本地**：你选择的时间将是与市场相关联的每个时区中使用的。 （请注意，对于包含多个时区的市场，只会使用市场中的一个时区。 对于美国，使用东部时区。 此页面向下显示了时区的综合性列表。）
-- **未计划**：应用商店中将无法使用该应用。 如果选择此选项，稍后可以通过创建新的提交并选择其他选项之一来使应用在应用商店中可用。
+你可以为产品的**发布**计划配置以下选项：
+- **尽早**：产品在认证和发布后随即发布。 这是默认选项。
+- **在某个时间**：产品按所选择的日期和时间发布。 另外还有两个选项：
+   - **UTC**：选择协调世界时 (UTC)，以便在世界各地的同一时间发布应用。
+   - **本地**：你选择的时间将用于与市场相关联的每个时区。 （请注意，对于跨多个时区的市场，将仅使用该市场中的某一个时区。 对于美国，使用东部时区。 此页面向下显示了时区的综合性列表。）
+- **未计划**：应用将不会在应用商店中推出。 如果选择此选项，你可以稍后通过创建新的提交并在其他选项中选择一个选项，在应用商店中推出应用。
 
+## <a name="stop-acquisition"></a>停止获取
 
-## <a name="stop-acquisition"></a>停止购置
+在**停止获取**下拉列表中，可以设置你想要停止允许新客户从应用商店获取应用或发现应用列表的日期和时间。 如果你想要精确地控制不再向新客户提供应用的时间（例如当你在协调多个应用之间的可用性时），该选项就非常有用。
 
-在 "**停止获取**" 下拉列表中，你可以设置一个日期和时间，以允许新客户从存储中获取它或发现其列表。 如果你想要精确控制何时不再向新客户提供应用（例如，当你在多个应用间协调可用性时），这会很有用。
+默认情况下，**停止获取**设置为永不。 若要更改此设置，请在下拉列表中选择**在某个时间**，然后指定日期和时间，如上所述。 在你选定的日期和时间，客户将不再能够获取该应用。
 
-默认情况下，"**停止购置**" 设置为 "从不"。 若要更改**此项，请在下拉菜单**中选择 ""，然后按如上所述指定日期和时间。 在您选择的日期和时间，客户将无法再获取该应用程序。
-
-必须了解的是，此选项的影响与选择 "**使此应用程序可发现但**在[可见性](choose-visibility-options.md#discoverability)" 部分中不可用，并选择 "**停止获取"：任何具有直接链接的客户都可以看到产品的存储列出，但只有在其之前拥有产品，或者有促销代码并使用 Windows 10 设备的情况**下，才能下载。 若要完全停止向新客户提供应用，请在 "应用概述" 页上单击 "**使应用不可用**"。 有关详细信息，请参阅[从应用商店中删除应用](guidance-for-app-package-management.md#removing-an-app-from-the-store)。
+必须了解的是，此选项的影响与选择 "**使此应用程序可被发现，但**在[可见性](choose-visibility-options.md#discoverability)" 部分中不可用，并选择 "**停止获取"：任何具有直接链接的客户都可以看到产品的商店清单，但只有在其之前拥有产品，或者有促销代码并使用 Windows 10 设备的情况下，才能下载。** 若要完全停止向新客户提供应用，请从“应用概述”页面中单击**禁止提供应用**。 有关详细信息，请参阅[从 Microsoft Store 中删除应用](guidance-for-app-package-management.md#removing-an-app-from-the-store)。
 
 > [!TIP]
-> 如果选择一个日期来**停止获取**，稍后决定要使该应用再次可用，则可以创建新的提交，并将**停止获取**更改回 "**从不**"。 发布更新的提交后，应用将再次变为可用。
+> 如果选择了**停止获取**的日期，而后来你想要再次提供该应用，则可以创建一个新的提交并将**停止获取**改回**从不**。 在发布更新的提交后，可以再次提供你的应用。
 
-## <a name="customize-the-schedule-for-specific-markets"></a>为特定市场自定义计划 
+## <a name="customize-the-schedule-for-specific-markets"></a>针对特定市场自定义计划 
 
-默认情况下，你选择的选项将应用于提供应用的所有市场。 若要自定义特定市场的价格，请单击 "**自定义特定市场**"。 此时将显示 "**市场选择**" 弹出窗口，其中列出了你选择使应用可用的所有市场。 如果你在[市场](define-pricing-and-market-selection.md)部分中排除了任何市场，则不会显示这些市场。 
+默认情况下，上述所选选项将应用于所有提供应用的市场。 若要针对特定市场自定义价格，请单击**针对特定市场自定义**。 随即将出现**市场选择**弹出窗口，其中列出了所有你选择要提供应用的市场。 如果在[市场](define-pricing-and-market-selection.md)部分中排除了某些市场，则将不会显示这些市场。 
 
-若要为一个市场添加计划，请选择它，然后单击 "**保存**"。 然后，你将看到上文所述的相同**发布**和**停止收购**选项，但所做的选择仅适用于该市场。
+若要针对一个市场添加计划，请选中该市场，然后单击**保存**。 然后将出现上述相同的**发布**和**停止获取**选项，但所做选择将仅应用于该市场。
 
-要添加将应用于多个市场的计划，你将创建一个*市场组*。 为此，请选择想要包括的市场，然后输入组的名称。 （此名称仅供参考，任何客户都不可见。）例如，如果想要为北美创建市场组，则可以选择 "**加拿大**"、"**墨西哥**" 和 "**美国**"，然后将其命名为**北美**或所选的其他名称。 完成创建市场组后，单击 "**保存**"。 然后，你将看到上述相同的**发布**和**停止收购**选项，但你所做的选择将仅适用于该市场组。
+若要添加应用于多个市场的计划，需创建*市场组*。 为此，请选择要包括的市场，然后为该组输入名称。 （此名称仅供参考，对所有客户不可见。）例如，如果要创建北美市场组，你可以选择**加拿大**、**墨西哥**和**美国**，并将其命名为**北美**或其他选择的名称。 完成创建市场组后，请单击**保存**。 然后将出现上述相同的**发布**和**停止获取**选项，但所做选择将仅应用于该市场组。
 
-若要为其他市场或其他市场组添加自定义计划，只需再次单击 "**自定义特定市场**" 并重复这些步骤。 若要更改市场组中包含的市场，请选择其名称。 若要删除市场组（或单个市场）的自定义计划，请单击 "**删除**"。
+若要为更多市场或市场组添加自定义计划，只需再次单击**针对特定市场自定义**并重复上述步骤。 若要更改包括在市场组中的市场，请选择其名称。 若要为市场组（或个别市场）删除自定义计划，请单击**删除**。
 
 > [!NOTE]
-> 市场不能属于**计划**部分中使用的多个市场组。 
+> 一个市场不能同时属于**计划**部分中所使用的多个市场组。 
 
 ## <a name="global-time-zones"></a>全局时区
 
 下面是一个表格，其中显示了每个市场中使用了哪些特定时区，因此当你的提交使用当地时间（例如，在本地上午9点发布）时，可以找出在每个市场中发布的时间，特别适用于具有多个时间 z 的市场一种，如加拿大。
 
-<a name="market--time-zone"></a>市场：时区
-==================
-阿富汗：（UTC + 04：30）喀布尔阿尔巴尼亚：（UTC + 01：00）萨拉热窝，斯科普里，华沙，萨格勒布阿尔及利亚：（UTC + 01：00）萨拉热窝，斯科普里，华沙，萨格勒布美洲萨摩亚：（utc + 01：00）萨摩亚安道尔：（UTC + 01：00）萨拉热窝，斯科普里，华沙，萨格勒布安哥拉：（UTC + 01：00）西部中央非洲安圭拉：（UTC-04:00）大西洋时间（加拿大）南极洲：（UTC + 12：00）奥克兰，惠灵顿安提瓜和巴布达：（UTC-04:00）大西洋时间（加拿大）阿根廷：（utc-03:00）市市，布宜诺斯艾利斯亚美尼亚：（UTC + 04：00）阿尔阿布扎比，马斯喀特 Aruba：（UTC-04:00）大西洋时间（加拿大）澳大利亚：（UTC + 10：00）堪培拉，墨尔本，悉尼奥地利：（UTC + 01：00）阿姆斯特丹，柏林，伯尔尼，罗马，斯德哥尔摩，维也纳阿塞拜疆：（UTC + 04：00）巴库巴哈马，：（utc-05:00）东部时间（美国 &）巴林：（UTC+ 04:00）阿尔阿布扎比，马斯喀特孟加拉国：（UTC + 06：00）达卡巴巴多斯：（UTC-04:00）大西洋时间（加拿大）白俄罗斯：（UTC + 03：00）明斯克：（utc + 01：00）布鲁塞尔，哥本哈根，马德里，巴黎伯利兹：（UTC-06:00）中部时间（美国 & 加拿大）贝宁：（UTC + 01：00）西亚非洲百慕大群岛：（UTC-04:00）大西洋时间（加拿大）不丹：（UTC + 06：00）达卡委内瑞拉玻利瓦尔共和国：（UTC-04:00）加拉加斯玻利维亚：（UTC-04:00）乔治敦，La 巴斯，马瑙斯，San Juan 博内尔岛，圣歇斯和萨巴岛：（UTC-04:00）大西洋时间（加拿大）波斯尼亚和黑塞哥维那：（UTC + 01：00）萨拉热窝，斯科普里，华沙，萨格勒布博茨瓦纳：（UTC + 01：00）中北部非洲布韦岛：（UTC + 00：00）蒙罗维亚，雷克雅未克巴西：（UTC-03:00）巴西利亚英属印度洋领地：（UTC + 06：00）达卡英属维尔京群岛：（UTC-04:00）大西洋时间（加拿大）文莱：（utc + 02：00）伊尔库茨克保加利亚：（utc + 02：00）蒙罗维亚，雷克雅未克布隆迪：（UTC + 02：00）哈拉雷，比勒陀利亚 CÃ́te 科特迪瓦：（UTC + 00：00）蒙罗维亚，雷克雅未克柬埔寨：（UTC + 07：00）曼谷，河内，雅加达喀麦隆：（UTC + 01：00）中非西部加拿大：（UTC-05:00）东部时间（美国 & 加拿大）佛得角：（UTC-01:00）佛得角
-Cayman Islands: (UTC-05:00) Eastern Time (US & Canada) Central African Republic: (UTC+01:00) West Central Africa Chad: (UTC+01:00) West Central Africa Chile: (UTC-04:00) Santiago China: (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi Christmas Island: (UTC+07:00) Krasnoyarsk Cocos (Keeling) Islands: (UTC+06:30) Yangon (Rangoon) Colombia: (UTC-05:00) Bogota, Lima, Quito, Rio Branco Comoros: (UTC+03:00) Nairobi Congo: (UTC+01:00) West Central Africa Congo (DRC): (UTC+01:00) West Central Africa Cook Islands: (UTC-10:00) Hawaii Costa Rica: (UTC-06:00) Central Time (US & Canada) Croatia: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb CuraÃ§ao: (UTC-04:00) Cuiaba Cyprus: (UTC+02:00) Chisinau Czech Republic: (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague Denmark: (UTC+01:00) Brussels, Copenhagen, Madrid, Paris Djibouti: (UTC+03:00) Nairobi Dominica: (UTC-04:00) Atlantic Time (Canada) Dominican Republic: (UTC-04:00) Atlantic Time (Canada) Ecuador: (UTC-05:00) Bogota, Lima, Quito, Rio Branco Egypt: (UTC+02:00) Chisinau El Salvador: (UTC-06:00) Central Time (US & Canada) Equatorial Guinea: (UTC+01:00) West Central Africa Eritrea: (UTC+03:00) Nairobi Estonia: (UTC+02:00) Chisinau Ethiopia: (UTC+03:00) Nairobi Falkland Islands (Islas Malvinas): (UTC-04:00) Santiago Faroe Islands: (UTC+00:00) Dublin, Edinburgh, Lisbon, London Fiji: (UTC+12:00) Fiji Finland: (UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius France: (UTC+01:00) Brussels, Copenhagen, Madrid, Paris French Guiana: (UTC-03:00) Cayenne, Fortaleza French Polynesia: (UTC-10:00) Hawaii French Southern and Antarctic Lands: (UTC+05:00) Ashgabat, Tashkent Gabon: (UTC+01:00) West Central Africa Gambia, The: (UTC+00:00) Monrovia, Reykjavik Georgia: (UTC-05:00) Eastern Time (US & Canada) Germany: (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna Ghana: (UTC+00:00) Monrovia, Reykjavik Gibraltar: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Greece: (UTC+02:00) Athens, Bucharest Greenland: (UTC+00:00) Monrovia, Reykjavik Grenada: (UTC-04:00) Atlantic Time (Canada) Guadeloupe: (UTC-04:00) Atlantic Time (Canada) Guam: (UTC+10:00) Guam, Port Moresby Guatemala: (UTC-06:00) Central Time (US & Canada) Guernsey: (UTC+00:00) Monrovia, Reykjavik Guinea: (UTC+00:00) Monrovia, Reykjavik Guinea-Bissau: (UTC+00:00) Monrovia, Reykjavik Guyana: (UTC-04:00) Atlantic Time (Canada) Haiti: (UTC-05:00) Eastern Time (US & Canada) Heard Island and McDonald Islands: (UTC-05:00) Bogota, Lima, Quito, Rio Branco Holy See (Vatican City): (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Honduras: (UTC-06:00) Central Time (US & Canada) Hong Kong SAR: (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi Hungary: (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague Iceland: (UTC+00:00) Monrovia, Reykjavik India: (UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi Indonesia: (UTC+07:00) Bangkok, Hanoi, Jakarta Iraq: (UTC+04:00) Abu Dhabi, Muscat Ireland: (UTC+00:00) Dublin, Edinburgh, Lisbon, London Israel: (UTC+02:00) Jerusalem Italy: (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna Jamaica: (UTC-05:00) Eastern Time (US & Canada) Japan: (UTC+09:00) Osaka, Sapporo, Tokyo Jersey: (UTC+00:00) Monrovia, Reykjavik Jordan: (UTC+02:00) Chisinau Kazakhstan: (UTC+05:00) Ashgabat, Tashkent Kenya: (UTC+03:00) Nairobi Kiribati: (UTC+14:00) Kiritimati Island Korea: (UTC+09:00) Seoul Kuwait: (UTC+04:00) Abu Dhabi, Muscat Kyrgyzstan: (UTC+06:00) Astana Laos: (UTC+07:00) Bangkok, Hanoi, Jakarta Latvia: (UTC+02:00) Chisinau Lebanon: (UTC+02:00) Chisinau Lesotho: (UTC+02:00) Harare, Pretoria Liberia: (UTC+00:00) Monrovia, Reykjavik Libya: (UTC+02:00) Chisinau Liechtenstein: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Lithuania: (UTC+02:00) Chisinau Luxembourg: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Macao SAR: (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi Macedonia, FYROM: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Madagascar: (UTC+03:00) Nairobi Malawi: (UTC+02:00) Harare, Pretoria Malaysia: (UTC+08:00) Kuala Lumpur, Singapore Maldives: (UTC+05:00) Ashgabat, Tashkent Mali: (UTC+00:00) Monrovia, Reykjavik Malta: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Man, Isle of: (UTC+00:00) Dublin, Edinburgh, Lisbon, London Marshall Islands: (UTC+12:00) Petropavlovsk-Kamchatsky - Old Martinique: (UTC-04:00) Atlantic Time (Canada) Mauritania: (UTC+00:00) Monrovia, Reykjavik Mauritius: (UTC+04:00) Port Louis Mayotte: (UTC+03:00) Nairobi Mexico: (UTC-06:00) Guadalajara, Mexico City, Monterrey Micronesia: (UTC+10:00) Guam, Port Moresby Moldova: (UTC+02:00) Chisinau Monaco: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Mongolia: (UTC+07:00) Krasnoyarsk Montenegro: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Montserrat: (UTC-04:00) Atlantic Time (Canada) Morocco: (UTC+01:00) Casablanca Mozambique: (UTC+02:00) Harare, Pretoria Myanmar: (UTC+06:30) Yangon (Rangoon) Namibia: (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna Nauru: (UTC+12:00) Petropavlovsk-Kamchatsky - Old Nepal: (UTC+05:45) Kathmandu Netherlands: (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna New Caledonia: (UTC+11:00) Solomon Is., New Caledonia New Zealand: (UTC+12:00) Auckland, Wellington Nicaragua: (UTC-06:00) Central Time (US & Canada) Niger: (UTC+01:00) West Central Africa Nigeria: (UTC+01:00) West Central Africa Niue: (UTC+13:00) Samoa Norfolk Island: (UTC+11:00) Solomon Is., New Caledonia Northern Mariana Islands: (UTC+10:00) Guam, Port Moresby Norway: (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna Oman: (UTC+04:00) Abu Dhabi, Muscat Pakistan: (UTC+05:00) Islamabad, Karachi Palau: (UTC+09:00) Osaka, Sapporo, Tokyo Palestinian Authority: (UTC+02:00) Chisinau Panama: (UTC-05:00) Eastern Time (US & Canada) Papua New Guinea: (UTC+10:00) Vladivostok Paraguay: (UTC-04:00) Asuncion Peru: (UTC-05:00) Bogota, Lima, Quito, Rio Branco Philippines: (UTC+08:00) Kuala Lumpur, Singapore Pitcairn Islands: (UTC-08:00) Pacific Time (US & Canada) Poland: (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague Portugal: (UTC+00:00) Dublin, Edinburgh, Lisbon, London Qatar: (UTC+04:00) Abu Dhabi, Muscat Reunion: (UTC+04:00) Port Louis Romania: (UTC+02:00) Chisinau ROW: (UTC-07:00) Mountain Time (US & Canada) Russia: (UTC+03:00) Moscow, St. Petersburg Rwanda: (UTC+02:00) Harare, Pretoria SÃ£o TomÃ© and PrÃ­ncipe: (UTC+00:00) Monrovia, Reykjavik Saint BarthÃ©lemy: (UTC+04:00) Yerevan Saint Helena, Ascension and Tristan da Cunha: (UTC+00:00) Dublin, Edinburgh, Lisbon, London Saint Kitts and Nevis: (UTC-04:00) Atlantic Time (Canada) Saint Lucia: (UTC-04:00) Atlantic Time (Canada) Saint Martin (French Part): (UTC-04:00) Atlantic Time (Canada) Saint Pierre and Miquelon: (UTC-02:00) Mid-Atlantic - Old Saint Vincent and the Grenadines: (UTC-04:00) Atlantic Time (Canada) Samoa: (UTC+13:00) Samoa San Marino: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Saudi Arabia: (UTC+03:00) Kuwait, Riyadh Senegal: (UTC+00:00) Monrovia, Reykjavik Serbia: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Seychelles: (UTC+04:00) Abu Dhabi, Muscat Sierra Leone: (UTC+00:00) Monrovia, Reykjavik Singapore: (UTC+08:00) Kuala Lumpur, Singapore Sint Maarten (Dutch Part): (UTC-04:00) Atlantic Time (Canada) Slovakia: (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague Slovenia: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Solomon Islands: (UTC+11:00) Solomon Is., New Caledonia Somalia: (UTC+03:00) Nairobi South Africa: (UTC+02:00) Harare, Pretoria South Georgia and the South Sandwich Islands: (UTC-02:00) Mid-Atlantic - Old Spain: (UTC+01:00) Brussels, Copenhagen, Madrid, Paris Sri Lanka: (UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi Suriname: (UTC-03:00) Cayenne, Fortaleza Svalbard and Jan Mayen: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Swaziland: (UTC+02:00) Harare, Pretoria Sweden: (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna Switzerland: (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna Taiwan: (UTC+08:00) Taipei Tajikistan: (UTC+05:00) Ashgabat, Tashkent Tanzania: (UTC+03:00) Nairobi Thailand: (UTC+07:00) Bangkok, Hanoi, Jakarta Timor-Leste: (UTC+09:00) Seoul Togo: (UTC+00:00) Monrovia, Reykjavik Tokelau: (UTC+13:00) Nuku'alofa Tonga: (UTC+13:00) Nuku'alofa Trinidad and Tobago: (UTC-04:00) Atlantic Time (Canada) Tunisia: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Turkey: (UTC+03:00) Istanbul Turkmenistan: (UTC+05:00) Ashgabat, Tashkent Turks and Caicos Islands: (UTC-05:00) Eastern Time (US & Canada) Tuvalu: (UTC+12:00) Petropavlovsk-Kamchatsky - Old U.S. Minor Outlying Islands: (UTC+13:00) Samoa U.S. Virgin Islands: (UTC-04:00) Atlantic Time (Canada) Uganda: (UTC+03:00) Nairobi Ukraine: (UTC+02:00) Chisinau United Arab Emirates: (UTC+04:00) Abu Dhabi, Muscat United Kingdom: (UTC+00:00) Dublin, Edinburgh, Lisbon, London United States: (UTC-05:00) Eastern Time (US & Canada) Uruguay: (UTC-03:00) Brasilia Uzbekistan: (UTC+05:00) Ashgabat, Tashkent Vanuatu: (UTC+11:00) Solomon Is., New Caledonia Vietnam: (UTC+07:00) Bangkok, Hanoi, Jakarta Wallis and Futuna: (UTC+12:00) Petropavlovsk-Kamchatsky - Old Western Sahara (Disputed): (UTC+00:00) Dublin, Edinburgh, Lisbon, London Yemen: (UTC+04:00) Abu Dhabi, Muscat Zambia: (UTC+02:00) Harare, Pretoria Zimbabwe: (UTC+02:00) Harare, Pretoria
+| 市场 | 时区 |
+|--------|-----------|
+| 阿富汗  |  (UTC+04:30) 喀布尔 |
+| 阿尔巴尼亚  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| 阿尔及利亚  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| 美属萨摩亚  |  (UTC+13:00) 萨摩亚 |
+| 安道尔  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| 安哥拉  |  (UTC+01:00) 中非西部 |
+| 安圭拉岛  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 南极洲  |  (UTC+12:00) 奥克兰，惠灵顿 |
+| 安提瓜和巴布达  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 阿根廷  |  (UTC-03:00) 布宜诺斯艾利斯市 |
+| 亚美尼亚  |  (UTC+04:00) 阿布扎比市，马斯喀特 |
+| 阿鲁巴岛  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 澳大利亚  |  (UTC+10:00) 堪培拉，墨尔本，悉尼 |
+| 奥地利  |  (UTC+01:00) 阿姆斯特丹，柏林，伯尔尼，罗马，斯德哥尔摩，维也纳 |
+| 阿塞拜疆  |  (UTC+04:00) 巴库 |
+| 巴哈马  |  (UTC-05:00) 东部时间（美国和加拿大） |
+| 巴林  |  (UTC+04:00) 阿布扎比市，马斯喀特 |
+| 孟加拉国  |  (UTC+06:00) 达卡 |
+| 巴巴多斯  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 白俄罗斯  |  (UTC+03:00) 明斯克 |
+| 比利时  |  (UTC+01:00) 布鲁塞尔，哥本哈根，马德里，巴黎 |
+| 伯利兹  |  (UTC-06:00)中部时间(美国和加拿大) |
+| 贝宁  |  (UTC+01:00) 中非西部 |
+| 百慕大  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 不丹  |  (UTC+06:00) 达卡 |
+| 委内瑞拉玻利瓦尔共和国  |  (UTC-04:00) 加拉加斯 |
+| 玻利维亚  |  (UTC-04:00) 乔治敦，拉巴斯，马瑙斯，圣胡安 |
+| 博内尔岛、圣尤斯特歇斯和萨巴岛  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 波斯尼亚和黑塞哥维那  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| 博茨瓦纳  |  (UTC+01:00) 中非西部 |
+| 布韦岛  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 巴西  |  (UTC-03:00) 巴西利亚 |
+| 英属印度洋领地  |  (UTC+06:00) 达卡 |
+| 英属维尔京群岛  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 文莱  |  (UTC+08:00) 伊尔库茨克 |
+| 保加利亚  |  (UTC+02:00) 基希讷乌 |
+| 布基纳法索  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 布隆迪  |  (UTC+02:00) 哈拉雷，比勒陀利亚 |
+| CÃ́te  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 柬埔寨  |  (UTC+07:00) 曼谷，河内，雅加达 |
+| 喀麦隆  |  (UTC+01:00) 中非西部 |
+| 加拿大  |  (UTC-05:00) 东部时间（美国和加拿大） |
+| 佛得角  |  (UTC-01:00) 佛得角 |
+| 开曼群岛  |  (UTC-05:00) 东部时间（美国和加拿大） |
+| 中非共和国  |  (UTC+01:00) 中非西部 |
+| 乍得  |  (UTC+01:00) 中非西部 |
+| 智利  |  (UTC-04:00) 圣地亚哥 |
+| 中国  |  (UTC+08:00) 北京，重庆，香港特別行政区，乌鲁木齐 |
+| 圣延岛  |  (UTC+07:00) 克拉斯诺亚尔斯克 |
+| 科科斯（基林）群岛  |  (UTC+06:30) 仰光 |
+| 哥伦比亚  |  (UTC-05:00) 波哥大，利马，基多，里奥布朗库 |
+| 科摩罗  |  (UTC+03:00) 内罗毕 |
+| 刚果（布）  |  (UTC+01:00) 中非西部 |
+| 刚果（民主共和国）  |  (UTC+01:00) 中非西部 |
+| 库克群岛  |  (UTC-10:00) 夏威夷州 |
+| 哥斯达黎加  |  (UTC-06:00)中部时间(美国和加拿大) |
+| 克罗地亚  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| CuraÃ§ ao  |  (UTC-04:00) 库亚巴 |
+| 塞浦路斯  |  (UTC+02:00) 基希讷乌 |
+| 捷克共和国  |  (UTC+01:00) 贝尔格莱德，布拉迪斯拉发，布达佩斯，卢布尔雅那，布拉格 |
+| 丹麦  |  (UTC+01:00) 布鲁塞尔，哥本哈根，马德里，巴黎 |
+| 吉布提  |  (UTC+03:00) 内罗毕 |
+| 多米尼克  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 多米尼加共和国  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 厄瓜多尔  |  (UTC-05:00) 波哥大，利马，基多，里奥布朗库 |
+| 埃及  |  (UTC+02:00) 基希讷乌 |
+| 萨尔瓦多  |  (UTC-06:00)中部时间(美国和加拿大) |
+| 赤道几内亚  |  (UTC+01:00) 中非西部 |
+| 厄立特里亚国  |  (UTC+03:00) 内罗毕 |
+| 爱沙尼亚  |  (UTC+02:00) 基希讷乌 |
+| 埃塞俄比亚  |  (UTC+03:00) 内罗毕 |
+| 福克兰群岛(马尔维纳斯群岛)  |  (UTC-04:00) 圣地亚哥 |
+| 法罗群岛  |  (UTC+00:00) 都柏林，爱丁堡，里斯本，伦敦 |
+| 斐济  |  (UTC+12:00) 斐济 |
+| 芬兰  |  (UTC+02:00) 赫尔辛基，基辅，里加，索非亚，塔林，维尔纽斯 |
+| 法国  |  (UTC+01:00) 布鲁塞尔，哥本哈根，马德里，巴黎 |
+| 法属圭亚那  |  (UTC-03:00) 卡宴，福塔雷萨 |
+| 法属玻里尼西亚  |  (UTC-10:00) 夏威夷州 |
+| 法属南半球和南极洲领地  |  (UTC+05:00) 阿什哈巴德，塔什干 |
+| 加蓬  |  (UTC+01:00) 中非西部 |
+| 冈比亚  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 格鲁吉亚  |  (UTC-05:00) 东部时间（美国和加拿大） |
+| 德国  |  (UTC+01:00) 阿姆斯特丹，柏林，伯尔尼，罗马，斯德哥尔摩，维也纳 |
+| 加纳  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 直布罗陀  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| 希腊  |  (UTC+02:00) 雅典，布加勒斯特 |
+| 格陵兰  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 格林纳达  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 瓜德罗普岛  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 关岛  |  (UTC+10:00) 关岛，莫尔兹比港 |
+| 危地马拉  |  (UTC-06:00)中部时间(美国和加拿大) |
+| 格恩西岛  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 几内亚  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 几内亚比绍  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 圭亚那  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 海地  |  (UTC-05:00) 东部时间（美国和加拿大） |
+| 赫德岛和麦克唐纳群岛  |  (UTC-05:00) 波哥大，利马，基多，里奥布朗库 |
+| 梵蒂冈  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| 洪都拉斯  |  (UTC-06:00)中部时间(美国和加拿大) |
+| 中国香港特别行政区  |  (UTC+08:00) 北京，重庆，香港特別行政区，乌鲁木齐 |
+| 匈牙利  |  (UTC+01:00) 贝尔格莱德，布拉迪斯拉发，布达佩斯，卢布尔雅那，布拉格 |
+| 冰岛  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 印度  |  (UTC+05:30) 钦奈，加尔各答，孟买，新德里 |
+| 印度尼西亚  |  (UTC+07:00) 曼谷，河内，雅加达 |
+| 伊拉克  |  (UTC+04:00) 阿布扎比市，马斯喀特 |
+| 爱尔兰  |  (UTC+00:00) 都柏林，爱丁堡，里斯本，伦敦 |
+| 以色列  |  (UTC+02:00) 耶路撒冷 |
+| 意大利  |  (UTC+01:00) 阿姆斯特丹，柏林，伯尔尼，罗马，斯德哥尔摩，维也纳 |
+| 牙买加  |  (UTC-05:00) 东部时间（美国和加拿大） |
+| 日本  |  (UTC+09:00) 大坂，札幌，东京 |
+| 泽西  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 约旦  |  (UTC+02:00) 基希讷乌 |
+| 哈萨克斯坦  |  (UTC+05:00) 阿什哈巴德，塔什干 |
+| 肯尼亚  |  (UTC+03:00) 内罗毕 |
+| 基里巴斯  |  (UTC+14:00) 基里巴斯岛 |
+| 韩国  |  (UTC+09:00) 首尔 |
+| 科威特  |  (UTC+04:00) 阿布扎比市，马斯喀特 |
+| 吉尔吉斯坦  |  (UTC+06:00) 阿斯塔纳 |
+| 老挝  |  (UTC+07:00) 曼谷，河内，雅加达 |
+| 拉脱维亚  |  (UTC+02:00) 基希讷乌 |
+| 黎巴嫩  |  (UTC+02:00) 基希讷乌 |
+| 莱索托  |  (UTC+02:00) 哈拉雷，比勒陀利亚 |
+| 利比里亚  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 利比亚  |  (UTC+02:00) 基希讷乌 |
+| 列支敦士登  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| 立陶宛  |  (UTC+02:00) 基希讷乌 |
+| 卢森堡  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| 澳门特别行政区  |  (UTC+08:00) 北京，重庆，香港特別行政区，乌鲁木齐 |
+| 马其顿，前南斯拉夫共和国  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| 马达加斯加  |  (UTC+03:00) 内罗毕 |
+| 马拉维  |  (UTC+02:00) 哈拉雷，比勒陀利亚 |
+| 马来西亚  |  (UTC+08:00) 吉隆坡，新加坡 |
+| 马尔代夫  |  (UTC+05:00) 阿什哈巴德，塔什干 |
+| 马里  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 马耳他  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| Man，Isle  |  (UTC+00:00) 都柏林，爱丁堡，里斯本，伦敦 |
+| 马绍尔群岛  |  (UTC+12:00) 彼得罗巴甫洛夫斯克-堪察加 - 旧用 |
+| 马提尼克  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 毛里塔尼亚  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 毛里求斯  |  (UTC+04:00) 路易港 |
+| 马约特  |  (UTC+03:00) 内罗毕 |
+| 墨西哥  |  (UTC-06:00) 瓜达拉哈拉，墨西哥城，蒙特雷 |
+| 密克罗尼西亚  |  (UTC+10:00) 关岛，莫尔兹比港 |
+| 摩尔多瓦  |  (UTC+02:00) 基希讷乌 |
+| 摩纳哥  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| 蒙古  |  (UTC+07:00) 克拉斯诺亚尔斯克 |
+| 黑山  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| 蒙特塞拉特  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 摩洛哥  |  （UTC + 01：00）Casablanca |
+| 莫桑比克  |  (UTC+02:00) 哈拉雷，比勒陀利亚 |
+| 缅甸语  |  (UTC+06:30) 仰光 |
+| 纳米比亚  |  (UTC+01:00) 阿姆斯特丹，柏林，伯尔尼，罗马，斯德哥尔摩，维也纳 |
+| 瑙鲁  |  (UTC+12:00) 彼得罗巴甫洛夫斯克-堪察加 - 旧用 |
+| 尼泊尔  |  (UTC+05:45) 加德满都 |
+| 荷兰  |  (UTC+01:00) 阿姆斯特丹，柏林，伯尔尼，罗马，斯德哥尔摩，维也纳 |
+| 新喀里多尼亚  |  (UTC+11:00) 所罗门群岛，新喀里多尼亚 |
+| 新西兰  |  (UTC+12:00) 奥克兰，惠灵顿 |
+| 尼加拉瓜  |  (UTC-06:00)中部时间(美国和加拿大) |
+| 尼日尔  |  (UTC+01:00) 中非西部 |
+| 尼日利亚  |  (UTC+01:00) 中非西部 |
+| 纽埃  |  (UTC+13:00) 萨摩亚 |
+| 诺福克岛  |  (UTC+11:00) 所罗门群岛，新喀里多尼亚 |
+| 北马里亚纳群岛  |  (UTC+10:00) 关岛，莫尔兹比港 |
+| 挪威  |  (UTC+01:00) 阿姆斯特丹，柏林，伯尔尼，罗马，斯德哥尔摩，维也纳 |
+| 阿曼  |  (UTC+04:00) 阿布扎比市，马斯喀特 |
+| 巴基斯坦  |  (UTC+05:00) 伊斯兰堡，卡拉奇 |
+| 帕劳  |  (UTC+09:00) 大坂，札幌，东京 |
+| 巴勒斯坦权力机构  |  (UTC+02:00) 基希讷乌 |
+| 巴拿马  |  (UTC-05:00) 东部时间（美国和加拿大） |
+| 巴布亚新几内亚  |  (UTC+10:00) 符拉迪沃斯托克 |
+| 巴拉圭  |  (UTC-04:00) 亚松森 |
+| 秘鲁  |  (UTC-05:00) 波哥大，利马，基多，里奥布朗库 |
+| 菲律宾  |  (UTC+08:00) 吉隆坡，新加坡 |
+| 皮特凯恩群岛  |  (UTC-08:00)太平洋时间(美国和加拿大) |
+| 波兰  |  (UTC+01:00) 贝尔格莱德，布拉迪斯拉发，布达佩斯，卢布尔雅那，布拉格 |
+| 葡萄牙  |  (UTC+00:00) 都柏林，爱丁堡，里斯本，伦敦 |
+| 卡塔尔  |  (UTC+04:00) 阿布扎比市，马斯喀特 |
+| 留尼汪  |  (UTC+04:00) 路易港 |
+| 罗马尼亚  |  (UTC+02:00) 基希讷乌 |
+| 行  |  (UTC-07:00) 山地时间（美国和加拿大） |
+| 俄罗斯  |  （UTC + 03：00）莫斯科，圣彼得堡 |
+| 卢旺达  |  (UTC+02:00) 哈拉雷，比勒陀利亚 |
+| SÃ英镑的 o TomÃ©和 PrÃncipe  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 圣 BarthÃ© lemy  |  (UTC+04:00) 埃里温 |
+| 圣赫勒拿-阿森松-特里斯坦达库尼亚  |  (UTC+00:00) 都柏林，爱丁堡，里斯本，伦敦 |
+| 圣基茨和尼维斯  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 圣卢西亚  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 法属圣马丁  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 圣皮埃尔和密克隆岛  |  (UTC-02:00) 中大西洋 - 旧称 |
+| 圣文森特和格林纳丁斯  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 萨摩亚  |  (UTC+13:00) 萨摩亚 |
+| 圣马力诺  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| 沙特阿拉伯  |  (UTC+03:00) 科威特，利雅得 |
+| 塞内加尔  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 塞尔维亚共和国  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| 塞舌尔  |  (UTC+04:00) 阿布扎比市，马斯喀特 |
+| 塞拉利昂  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 新加坡  |  (UTC+08:00) 吉隆坡，新加坡 |
+| 荷属圣马丁  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 斯洛伐克  |  (UTC+01:00) 贝尔格莱德，布拉迪斯拉发，布达佩斯，卢布尔雅那，布拉格 |
+| 斯洛文尼亚  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| 所罗门群岛  |  (UTC+11:00) 所罗门群岛，新喀里多尼亚 |
+| 索马里  |  (UTC+03:00) 内罗毕 |
+| 南非  |  (UTC+02:00) 哈拉雷，比勒陀利亚 |
+| 南乔治亚和南德桑威奇群岛  |  (UTC-02:00) 中大西洋 - 旧称 |
+| 西班牙  |  (UTC+01:00) 布鲁塞尔，哥本哈根，马德里，巴黎 |
+| 斯里兰卡  |  (UTC+05:30) 钦奈，加尔各答，孟买，新德里 |
+| 苏里南  |  (UTC-03:00) 卡宴，福塔雷萨 |
+| 斯瓦尔巴和扬马延  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| 斯威士兰  |  (UTC+02:00) 哈拉雷，比勒陀利亚 |
+| 瑞典  |  (UTC+01:00) 阿姆斯特丹，柏林，伯尔尼，罗马，斯德哥尔摩，维也纳 |
+| 瑞士  |  (UTC+01:00) 阿姆斯特丹，柏林，伯尔尼，罗马，斯德哥尔摩，维也纳 |
+| 中国台湾地区  |  (UTC+08:00) 台北 |
+| 塔吉克斯坦  |  (UTC+05:00) 阿什哈巴德，塔什干 |
+| 坦桑尼亚  |  (UTC+03:00) 内罗毕 |
+| 泰国  |  (UTC+07:00) 曼谷，河内，雅加达 |
+| 东帝汶  |  (UTC+09:00) 首尔 |
+| 多哥  |  (UTC+00:00) 蒙罗维亚，雷克雅未克 |
+| 托克劳  |  (UTC+13:00) 努库阿洛法 |
+| 汤加  |  (UTC+13:00) 努库阿洛法 |
+| 特立尼达和多巴哥  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 突尼斯  |  (UTC+01:00) 萨拉热窝，斯科普里，华沙，萨格勒布 |
+| 土耳其  |  （UTC + 03：00）伊斯坦布尔 |
+| 土库曼斯坦  |  (UTC+05:00) 阿什哈巴德，塔什干 |
+| 特克斯和凯科斯群岛  |  (UTC-05:00) 东部时间（美国和加拿大） |
+| 图瓦卢  |  (UTC+12:00) 彼得罗巴甫洛夫斯克-堪察加 - 旧用 |
+| 美属外岛  |  (UTC+13:00) 萨摩亚 |
+| 美属维尔京群岛  |  (UTC-04:00) 大西洋时间（加拿大） |
+| 乌干达  |  (UTC+03:00) 内罗毕 |
+| 乌克兰  |  (UTC+02:00) 基希讷乌 |
+| 阿拉伯联合酋长国  |  (UTC+04:00) 阿布扎比市，马斯喀特 |
+| 英国  |  (UTC+00:00) 都柏林，爱丁堡，里斯本，伦敦 |
+| 美国  |  (UTC-05:00) 东部时间（美国和加拿大） |
+| 乌拉圭  |  (UTC-03:00) 巴西利亚 |
+| 乌兹别克斯坦  |  (UTC+05:00) 阿什哈巴德，塔什干 |
+| 瓦努阿图  |  (UTC+11:00) 所罗门群岛，新喀里多尼亚 |
+| 越南  |  (UTC+07:00) 曼谷，河内，雅加达 |
+| 瓦利斯和富图纳  |  (UTC+12:00) 彼得罗巴甫洛夫斯克-堪察加 - 旧用 |
+| 西撒哈拉（争议）  |  (UTC+00:00) 都柏林，爱丁堡，里斯本，伦敦 |
+| 也门  |  (UTC+04:00) 阿布扎比市，马斯喀特 |
+| 赞比亚  |  (UTC+02:00) 哈拉雷，比勒陀利亚 |
+| 津巴布韦  |  (UTC+02:00) 哈拉雷，比勒陀利亚 |

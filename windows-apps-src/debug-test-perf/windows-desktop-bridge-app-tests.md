@@ -6,16 +6,16 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
-ms.openlocfilehash: dcdac5130af673d1b0d1ab1a9713902e9ab22830
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ec780253deb170c5dde1828add366907c403f100
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257823"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681898"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 桌面桥应用测试
 
-[桌面桥应用](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)是使用[桌面桥](https://developer.microsoft.com/en-us/windows/bridges/desktop)转换为通用 Windows 平台（UWP）应用的 Windows 桌面应用程序。 转换后，将以面向 Windows 10 桌面版的 UWP 应用包（.appx 或 .appxbundle）的形式打包、维护和部署 Windows 桌面应用程序。
+[桌面桥应用](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)是使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)转换为通用 Windows 平台（UWP）应用的 Windows 桌面应用程序。 转换后，将以面向 Windows 10 桌面版的 UWP 应用包（.appx 或 .appxbundle）的形式打包、维护和部署 Windows 桌面应用程序。
 
 ## <a name="required-versus-optional-tests"></a>必需测试与可选测试
 Windows Desktop Bridge 应用的可选测试仅提供信息，不会用于在 Microsoft Store 载入期间评估应用。 建议调查这些测试结果以生成更高质量的应用。 应用商店载入的整体通过/失败条件取决于必需测试，而不是这些可选测试。
@@ -110,7 +110,7 @@ Windows Desktop Bridge 应用的可选测试仅提供信息，不会用于在 Mi
 **纠正操作**  
 使用下表作为指南。
 
-错误消息 | 备注
+错误消息 | 说明
 --------------|---------
 图像 {image name} 定义 Scale 和 TargetSize 限定符；一次只能定义一个限定符。 | 可以自定义不同分辨率的图像。 在实际消息中，{image name} 包含有错误的图像名称。 确保每个图像都将 Scale 或 TargetSize 定义为限定符。 
 图像 {image name} 不符合大小限制。  | 确保所有应用图像都符合相应的大小限制。 在实际消息中，{image name} 包含有错误的图像名称。 
@@ -122,9 +122,9 @@ Windows Desktop Bridge 应用的可选测试仅提供信息，不会用于在 Mi
 该程序包缺少一个“resources.pri”文件。  | 如果你在应用清单中包含可本地化的内容，请确保你的应用包包含有效的 resources.pri 文件。 
 “resources.pri”文件必须包含一个其名称与程序包名称 {package full name} 相匹配的资源映射  | 如果清单发生更改并且 resources.pri 中的资源映射名称不再与清单中的程序包名称相匹配，你将遇到此错误。 在实际消息中，{package full name} 包含 resources.pri 必须包含的程序包名称。 为了解决此问题，你需要重新构建 resources.pri，而这样做的最简单方法就是重新构建应用包。 
 “resources.pri”文件不得启用 AutoMerge。  | MakePRI.exe 支持一个名为 AutoMerge 的选项。 AutoMerge 的默认值为 off。 启用后，AutoMerge 在运行时将应用的语言包资源合并到一个 resources.pri 中。 对于要通过 Microsoft Store 分发的应用，不建议使用此步骤。 通过 Microsoft Store 分发的应用的资源必须在应用包的根目录中，并包含应用支持的所有语言引用。 
-字符串 {string} 不符合 {number} 个字符的最大长度限制。  | 请参阅[应用包要求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 在实际消息中，{string} 替换为有错误的字符串并且 {number} 包含最大长度。 
+字符串 {string} 不符合 {number} 个字符的最大长度限制。  | 请参阅[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)。 在实际消息中，{string} 替换为有错误的字符串并且 {number} 包含最大长度。 
 字符串 {string} 不得包含前导空格/尾随空格。  | 应用部件清单 (manifest) 中元素的架构不允许前导空格或尾随空格字符。 在实际消息中，{string} 替换为有错误的字符串。 确保 resources.pri 中清单字段的任何本地化值都没有前导空格或尾随空格字符。 
-字符串必须非空（长度大于零）  | 有关详细信息，请参阅[应用包要求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 
+字符串必须非空（长度大于零）  | 有关详细信息，请参阅[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)。 
 “resources.pri”文件中没有指定的默认资源。  | 有关详细信息，请参阅有关[应用资源](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data)的指南。 在默认版本配置中，Visual Studio 在生成捆绑包时仅在应用包中包含比例为 200 的图像资源，从而将其他资源放入资源包中。 确保你包含比例为 200 的图像资源或将项目配置为包含你拥有的资源。 
 “resources.pri”文件中没有指定的资源值。  | 确保应用清单具有在 resources.pri 中定义的有效资源。 
 图像文件 {filename} 必须小于 204800 字节。  | 减小指示图像的大小。 
@@ -150,16 +150,16 @@ Windows Desktop Bridge 应用的可选测试仅提供信息，不会用于在 Mi
 应用必须拥有格式正确的应用部件清单 (manifest)。
 
 **测试详细信息**  
-检查应用清单验证内容是否正确，如[应用包要求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)中所述。 此测试中会进行以下检查：
+检查应用部件清单 (manifest) 以验证内容是否正确，如[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述。 此测试中会进行以下检查：
 * **文件扩展名和协议**  
 应用可能会声明它可以关联的文件类型。 大量不常见文件类型的声明会形成较差的用户体验。 此测试会限制可以与应用关联的文件扩展名的数量。
 * **框架依赖关系规则**  
 此测试强制要求应用声明对 UWP 的适当依赖关系。 如果存在不适当的依赖关系，该测试将失败。 如果应用面向的操作系统版本和框架依赖关系采用的操作系统版本不匹配，该测试将失败。 如果应用引用了任何“预览”版的框架 DLL，该测试也将失败。
 * **进程间通信（IPC）验证**  
-此测试强制要求桌面桥应用不在应用容器外部与桌面组件通信。 进程间通信仅适用于旁加载应用。 使用等效于 [ 的名称指定ActivatableClassAttribute](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute)`DesktopApplicationPath` 的应用无法通过此测试。  
+此测试强制要求桌面桥应用不在应用容器外部与桌面组件通信。 进程间通信仅适用于旁加载应用。 使用等效于 `DesktopApplicationPath` 的名称指定 [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) 的应用无法通过此测试。  
 
 **纠正操作**  
-针对[应用包要求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)中所述的要求检查应用部件清单 (manifest)。
+针对[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述的要求检查应用部件清单 (manifest)。
 
 
 #### <a name="32-application-count"></a>3.2 应用程序计数

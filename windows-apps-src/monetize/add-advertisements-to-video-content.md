@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 视频, scheduler, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a214288c778505d16707fd64391a9b8cedbbb32
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 6178758cd67471d56b1d65e293104e987e81fb9b
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260361"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681918"
 ---
 # <a name="show-ads-in-video-content"></a>在视频内容中显示广告
 
@@ -70,7 +70,7 @@ ms.locfileid: "74260361"
     > [!NOTE]
     > 在包含了 main.js 之后，此行必须放置在 `<head>` 部分；否则，当你生成项目时将遇到错误。
 
-6.  在你的项目的 main.js 文件中，添加可创建新 **AdScheduler** 对象的代码。 传入可托管视频内容的 **MediaPlayer**。 必须放置代码，以便它在 [WinJS.UI.processAll](https://docs.microsoft.com/en-us/previous-versions/windows/apps/hh440975) 后运行。
+6.  在你的项目的 main.js 文件中，添加可创建新 **AdScheduler** 对象的代码。 传入可托管视频内容的 **MediaPlayer**。 必须放置代码，以便它在 [WinJS.UI.processAll](https://docs.microsoft.com/previous-versions/windows/apps/hh440975) 后运行。
 
     [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet2)]
 

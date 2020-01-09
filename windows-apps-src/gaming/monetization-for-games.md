@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 盈利
 ms.localizationpriority: medium
-ms.openlocfilehash: 132f8c1d0ff314b794cc8464ec69cdf84f6a5f3b
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: baef3750b8dc076fd78c239cfc61662256e57c14
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258473"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685254"
 ---
 #  <a name="monetization-for-games"></a>通过游戏盈利
 
@@ -206,10 +206,10 @@ Smaato 可以将横幅广告合并到 UWP 应用和游戏中。 下载 [SDK](htt
 AdDuplex 可用于在你的游戏中实现横幅或间隙广告。
 
 若要了解有关将 AdDuplex 直接集成到 Windows 10 XAML 项目中的详细信息，请转到 AdDuplex 网站：
-* 横幅广告：[适用于 XAML 的 Windows 10 SDK](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage)
-* 间隙广告：[Windows 10 XAML AdDuplex 间隙广告安装和使用](https://adduplex.zendesk.com/hc/en-us/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage)
+* 横幅广告：[适用于 XAML 的 Windows 10 SDK](https://adduplex.zendesk.com/hc/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage)
+* 间隙广告：[Windows 10 XAML AdDuplex 间隙广告安装和使用](https://adduplex.zendesk.com/hc/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage)
 
-有关将 AdDuplex SDK 集成到使用 Unity 创建的 Windows 10 UWP 游戏的信息，请参阅[适用于 Unity 应用的 Windows 10 SDK 安装和使用](https://adduplex.zendesk.com/hc/en-us/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage)。
+有关将 AdDuplex SDK 集成到使用 Unity 创建的 Windows 10 UWP 游戏的信息，请参阅[适用于 Unity 应用的 Windows 10 SDK 安装和使用](https://adduplex.zendesk.com/hc/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage)。
 
 ## <a name="maximize-your-games-potential-through-ad-campaigns"></a>通过广告市场活动最大程度地发展游戏的潜在客户
 
@@ -225,7 +225,7 @@ AdDuplex 可用于在你的游戏中实现横幅或间隙广告。
 
 ## <a name="related-links"></a>相关链接
 
-* [获取付款](https://docs.microsoft.com/windows/uwp/publish/getting-paid-apps)
+* [获得付款](https://docs.microsoft.com/windows/uwp/publish/getting-paid-apps)
 * [帐户类型、位置和费用](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees)
 * [分析](https://docs.microsoft.com/windows/uwp/publish/analytics)
 * [全球化和本地化](https://docs.microsoft.com/windows/uwp/globalizing/globalizing-portal)

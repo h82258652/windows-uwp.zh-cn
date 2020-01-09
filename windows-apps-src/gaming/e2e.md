@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
-ms.openlocfilehash: c05a973dc9a954569531be6e0fea212135532b84
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a348393a02bab946a128babefc07dc48faea6cd1
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258510"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685075"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 游戏开发指南
 
@@ -246,15 +246,15 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
     </colgroup>
     <tr>
         <td>发布应用和游戏开发人员论坛</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">发布和广告应用</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsapps">发布和广告应用</a></td>
     </tr>
     <tr>
         <td>UWP 应用开发人员论坛</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?forum=wpdevelop">开发通用 Windows 平台应用</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop">开发通用 Windows 平台应用</a></td>
     </tr>
     <tr>
         <td>桌面应用程序开发人员论坛</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsdesktopdev">Windows 桌面应用程序论坛</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsdesktopdev">Windows 桌面应用程序论坛</a></td>
     </tr>
     <tr>
         <td>DirectX Microsoft Store 游戏（存档的论坛文章）</td>
@@ -270,7 +270,7 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
     </tr>
     <tr>
         <td>Azure 平台论坛</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsazureplatform">Azure 论坛</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsazureplatform">Azure 论坛</a></td>
     </tr>
     <tr>
         <td>Xbox Live 论坛</td>
@@ -322,7 +322,7 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
     </tr>
     <tr>
         <td>Visual C++ 工具团队博客</td>
-        <td><a href="https://devblogs.microsoft.com/cppblog/">视觉C++对象团队博客</a></td>
+        <td><a href="https://devblogs.microsoft.com/cppblog/">Visual C++ 团队博客</a></td>
     </tr>
     <tr>
         <td>PIX 团队博客</td>
@@ -517,7 +517,7 @@ C++/CX 是一种高性能、低开销的语言，可提供速度、兼容性和�
     </colgroup>
     <tr>
         <td>C++/CX 参考和概述</td>
-        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">可视C++语言参考（C++/cx）</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">Visual C++ 语言参考 (C++-CX)</a></td>
     </tr>
     <tr>
         <td>Visual C++ 编程指南和参考</td>
@@ -645,7 +645,7 @@ Direct3D 11.3 是一个低级别图形 API，使用熟悉的 Direct3D 编程模�
         <td><a href="https://playfab.com/">工具和服务概述</a></td>
     </tr>
     <tr>
-        <td>开始使用</td>
+        <td>即刻体验</td>
         <td><a href="https://api.playfab.com/docs/general-getting-started">常规入门指南</a></td>
     </tr>
     <tr>
@@ -894,7 +894,7 @@ BabylonJS 是一个完整的 JavaScript 框架，供使用 HTML5、WebGL、WebVR
     </tr>
     <tr>
         <td>将 Xbox 游戏移植到通用 Windows 平台应用</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx">从 Xbox One 移植到 Windows 10 UWP</a></td>
+        <td><a href="https://developer.xboxlive.com/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx">从 Xbox One 移植到 Windows 10 UWP</a></td>
     </tr>
     <tr>
         <td>从 DirectX 9 移植到 DirectX 11</td>
@@ -1070,7 +1070,7 @@ Windows 10 引入通用 Windows 平台 (UWP)，该平台在 Windows 10 设备�
     </colgroup>
     <tr>
         <td>UWP 设计基础知识和指南</td>
-        <td><a href="https://developer.microsoft.com/en-us/windows/apps/design">设计 UWP 应用</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/design">设计 UWP 应用</a></td>
     </tr>
     <tr>
         <td>设计应用生命周期状态</td>
@@ -1311,7 +1311,7 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
 </table>
 
 
-## <a name="production"></a>生产
+## <a name="production"></a>Production 的虚拟 SAN 中删除具有指定全球通用节点名称和全球通用端口名称的主机总线适配器
 
 
 你的工作室现在完全参与并转向生产周期，并且整个团队都分配了工作。 通过优化、重构和扩展原型，使其成为完整的游戏。
@@ -1519,7 +1519,7 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
 
 以下指南和信息可帮助你尽可能顺利地完成发布和提交过程。
 
-### <a name="publishing"></a>发布
+### <a name="publishing"></a>Publishing
 
 你将使用[合作伙伴中心](https://partner.microsoft.com/dashboard)来发布和管理你的游戏包。
 
@@ -1534,7 +1534,7 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
     </tr>
     <tr>
         <td>合作伙伴中心高级发布（GDN）</td>
-        <td><a href="https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx">合作伙伴中心高级发布指南</a></td>
+        <td><a href="https://developer.xboxlive.com/windows/documentation/Pages/home.aspx">合作伙伴中心高级发布指南</a></td>
     </tr>
     <tr>
         <td>使用 Azure Active Directory （AAD）将用户添加到合作伙伴中心帐户</td>
@@ -1739,7 +1739,7 @@ Visual Studio Application Insights 提供关于发布的游戏的性能、遥测
 
 ## <a name="adding-xbox-live-to-your-game"></a>将 Xbox Live 添加到游戏
 
-Xbox Live 是首要游戏网络，连接着世界各地的数百万玩家。 开发人员获取可以有机增加其游戏受众的 Xbox Live 功能的访问权限，包括 Xbox Live 状态、排行榜、云保存、游戏中心、俱乐部、群聊天、游戏 DVR，等等。
+Xbox Live 是一个卓越的游戏网络，连接着世界各地的数百万玩家。 开发人员获取可以有机增加其游戏受众的 Xbox Live 功能的访问权限，包括 Xbox Live 状态、排行榜、云保存、游戏中心、俱乐部、群聊天、游戏 DVR，等等。
 
 > [!Note]
 > 如果你要开发支持 Xbox Live 的作品，则可以在若干选项中选择。 有关各种计划的信息，请参阅[开发人员计划概述](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview)。
