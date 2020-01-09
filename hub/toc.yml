@@ -64,7 +64,7 @@
               href: apps/desktop/modernize/modernize-wpf-tutorial-4.md
             - name: 使用 MSIX 打包和部署
               href: apps/desktop/modernize/modernize-wpf-tutorial-5.md
-    - name: Fluent Design 系统
+    - name: Fluent Design System
       href: apps/fluent-design-system.md
     - name: 辅助功能
       href: apps/accessibility.md
@@ -88,7 +88,7 @@
           href: python/scripting.md
         - name: 数据库入门
           href: python/databases.md
-        - name: 常见问题
+        - name: 常见问题解答
           href: python/faqs.md
         - name: 资源
           href: python/resources.md
@@ -96,8 +96,10 @@
       items:
         - name: 概述
           href: nodejs/index.yml
-        - name: 设置开发环境
+        - name: 使用 WSL2 进行设置 (Linux)
           href: nodejs/setup-on-wsl2.md
+        - name: 使用 Windows 进行设置（初学者）
+          href: nodejs/setup-on-windows.md
         - name: 初学者入门
           href: nodejs/beginners.md
         - name: Web 框架入门

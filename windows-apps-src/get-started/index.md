@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: 入门, Windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 7439d437dda69bf235bd8681751617b2982be394
-ms.sourcegitcommit: 2d3a7d18edf2715987b26d1b5341ec88eefc99ec
+ms.openlocfilehash: 4f78bdfec6c6e06ffc542bc7741b875e952bc169
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74898526"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684892"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Windows 10 应用入门
 
@@ -67,7 +67,7 @@ ms.locfileid: "74898526"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>开始编写代码</h3>
+                        <h3>开始编码</h3>
                         <p>不论你是经验丰富的开发人员还是刚开始生成第一个应用，都可以通过 Windows 10 平台和文档获取第一手经验。</p>
                         <ul>
                             <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">开始编写代码</a></li>
@@ -191,7 +191,7 @@ ms.locfileid: "74898526"
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>将你的应用带到 Windows 中</h3>
+                                <h3>将你的应用引入 Windows</h3>
                             </div>
                         </div>
                     </div>
@@ -211,7 +211,7 @@ ms.locfileid: "74898526"
                         <p><a href="https://github.com/Microsoft/WindowsTemplateStudio/">Windows Template Studio</a></p>
                         <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows 社区工具包</a></p>
                         <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">虚拟机</a></p>
-                        <p><a href="//docs.microsoft.com/windows/wsl/about">装有 Ubuntu 的 Windows 上的 Bash</a></p>
+                        <p><a href="//docs.microsoft.com/windows/wsl/about">Ubuntu on Windows 上的 Bash</a></p>
                         </div>
                     </div>
                 </div>
@@ -223,7 +223,7 @@ ms.locfileid: "74898526"
                 <div class="card">
                     <div class="cardText">
                         <h3>刚接触开发？</h3>
-                        <p><a href="//docs.microsoft.com/en-us/learn/browse/?products=windows&resource_type=module">Microsoft Learn 上的 Windows</a></p>
+                        <p><a href="//docs.microsoft.com/learn/browse/?products=windows&resource_type=module">Microsoft Learn 上的 Windows</a></p>
                         </div>
                     </div>
                 </div>
