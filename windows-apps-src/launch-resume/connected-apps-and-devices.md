@@ -1,21 +1,21 @@
 ---
-title: 连接的应用和设备 (Project Rome)
+title: 连接的应用和设备（项目 Rome）
 description: 本节介绍如何使用远程系统平台发现远程设备、在远程设备上启动应用，以及与远程设备上的应用服务通信。
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10，uwp，连接的设备，远程系统，罗马，project 罗马
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
-ms.openlocfilehash: b989f5c115ef5c8555f8cb48ac43f2d50a9d830c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 742ef56165ea26df3a03d54e99a17d2a00908cb6
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260520"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684457"
 ---
-# <a name="connected-apps-and-devices-project-rome"></a>连接的应用和设备 (Project Rome)
+# <a name="connected-apps-and-devices-project-rome"></a>连接的应用和设备（项目 Rome）
 
-本部分介绍如何使用[Project 罗马](https://developer.microsoft.com/en-us/windows/project-rome)跨设备和平台连接应用。 若要了解如何在跨平台方案中实现 Project 罗马，请访问[Project 罗马的主要文档页](https://docs.microsoft.com/en-us/windows/project-rome/)。
+本部分介绍如何使用[Project 罗马](https://developer.microsoft.com/windows/project-rome)跨设备和平台连接应用。 若要了解如何在跨平台方案中实现 Project 罗马，请访问[Project 罗马的主要文档页](https://docs.microsoft.com/windows/project-rome/)。
 
 大多数用户拥有多台设备，并且通常在一台设备上开始某项活动，而在其他设备上结束该活动。 为了满足此要求，应用需要横跨设备和平台。 Project 罗马允许您发现远程设备、启动远程设备上的应用程序，以及与远程设备上的应用服务通信。
 
@@ -29,7 +29,7 @@ Windows 10 版本 1607 中引入了[远程系统 API](https://docs.microsoft.com
 
 有关 Project Rome 的一般详细信息（包括跨平台集成资源），请转到 [aka.ms/project-rome](https://developer.microsoft.com/windows/project-rome)。
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 |-------|-------------|
 | [启动远程设备上的应用](launch-a-remote-app.md) | 了解如何启动远程设备上的应用。 本主题介绍最简单的用例和初步设置。  |
 | [发现远程设备](discover-remote-devices.md)  | 了解如何发现可以连接的设备。 |

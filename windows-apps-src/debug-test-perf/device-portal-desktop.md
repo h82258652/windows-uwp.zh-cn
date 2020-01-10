@@ -1,21 +1,21 @@
 ---
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: 适用于 Windows 桌面的设备门户
-description: 了解 Windows Device Portal 如何在 Windows 桌面上打开诊断和自动化。
+description: 了解 Windows 设备门户如何在 Windows 桌面上打开诊断和自动化。
 ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10、uwp、设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f25e882f53bb4f673aa5003495f37d553208721
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 73f7e827c0ec8ca289d3523da06601de978a91d2
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282002"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681968"
 ---
 # <a name="device-portal-for-windows-desktop"></a>适用于 Windows 桌面的设备门户
 
-Windows 设备门户允许你查看诊断信息，并通过 HTTP 从浏览器窗口与你的桌面进行交互。 你可以使用 Device Portal 执行以下操作：
+Windows 设备门户允许你查看诊断信息，并通过 HTTP 从浏览器窗口与你的桌面进行交互。 你可以使用设备门户执行以下操作：
 - 查看并操作正在运行的进程的列表
 - 安装、删除、启动和终止应用
 - 更改 WLAN 配置文件、查看信号强度 并查看 ipconfig
@@ -65,7 +65,7 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
 - 调试
 - Windows 事件跟踪 (ETW)
 - 性能跟踪
-- 设备管理器
+- “设备管理器”，
 - 网络
 - 故障数据
 - 功能
@@ -83,7 +83,7 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
 - 在 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
     - `UseDynamicPorts`：必填的 DWORD。 将其设置为 0，以便保留你已选择的端口号。
     - `HttpPort`：必填的 DWORD。 包含设备门户将在其上侦听 HTTP 连接的端口号。    
-    - `HttpsPort`：必填的 DWORD。 包含 Device Portal 将在其上侦听 HTTPS 连接的端口号。
+    - `HttpsPort`：必填的 DWORD。 包含设备门户将在其上侦听 HTTPS 连接的端口号。
     
 在相同的 RegKey 路径下，你也可以关闭身份验证要求：
 - `UseDefaultAuthorizer`已禁用的  - `0`，`1` 启用。  
@@ -103,7 +103,7 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
     - 这将允许你安装自己的 SSL 证书来修复通常显示在设备门户中的 SSL 警告页面。 
 - `-Debug <various options for authentication, port selection, and tracing level>`
     - 运行独立版本的具有特定配置和可见调试消息的设备门户。 这对于生成[打包的插件](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin)最为有用。 
-    - 有关如何作为系统运行此项以完全测试你的打包插件的详细信息，请参阅 [MSDN 杂志文章](https://msdn.microsoft.com/en-us/magazine/mt826332.aspx)。
+    - 有关如何作为系统运行此项以完全测试你的打包插件的详细信息，请参阅 [MSDN 杂志文章](https://msdn.microsoft.com/magazine/mt826332.aspx)。
 
 ## <a name="common-errors-and-issues"></a>常见错误和问题
 

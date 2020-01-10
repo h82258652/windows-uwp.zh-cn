@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 扩展执行, 最小化, ExtendedExecutionSession, 后台任务, 应用程序生命周期, 锁屏界面
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ms.localizationpriority: medium
-ms.openlocfilehash: 68d2c9937b02d60bb8509aedaf6277512a4e0c4a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fdb47a7c57ff8ef719b819253ab768c0d836be14
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371422"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684555"
 ---
 # <a name="postpone-app-suspension-with-extended-execution"></a>使用扩展执行来推迟应用挂起
 
@@ -23,7 +23,7 @@ ms.locfileid: "66371422"
 
 如果应用需要保持运行，操作系统可以让它保持运行，或者它也可以请求保持运行。 例如，在后台播放音频时，如果按照[后台媒体播放](../audio-video-camera/background-audio.md)的以下步骤进行操作，操作系统可以保持应用运行更长时间。 否则，你必须多次手动请求。 你用来执行后台执行的时间可能只有几分钟，但你必须随时准备处理被吊销的会话。 当应用在调试程序下运行时，这些应用程序生命周期时间限制会被禁用。 出于这一原因，在测试推迟应用挂起的扩展执行和其他工具时，一定不要使用调试程序运行；或者，也可以借助 Visual Studio 中提供的生命周期事件进行测试。 
  
-创建 [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) 来多次请求在后台完成操作。 你创建的 **ExtendedExecutionSession** 种类由你在创建它时提供的 [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason) 来决定。 有三个**ExtendedExecutionReason**枚举值：**未指定，LocationTracking**并**SavingData**。 任何时候都只能请求一个 **ExtendedExecutionSession**；在已批准的会话请求当前处于活动状态时，尝试创建另一个会话将导致 **ExtendedExecutionSession** 构造函数引发异常 0x8007139F，指示组或资源不处于执行请求的操作的正确状态。 不要使用 [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) 和 [ExtendedExecutionForegroundReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason)；它们需要受限功能，并且不能在 Microsoft Store 应用程序中使用。
+创建 [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) 来多次请求在后台完成操作。 你创建的 **ExtendedExecutionSession** 种类由你在创建它时提供的 [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason) 来决定。 有三个 **ExtendedExecutionReason** 枚举值：**Unspecified、LocationTracking** 和 **SavingData**。 任何时候都只能请求一个 **ExtendedExecutionSession**；在已批准的会话请求当前处于活动状态时，尝试创建另一个会话将导致 **ExtendedExecutionSession** 构造函数引发异常 0x8007139F，指示组或资源不处于执行请求的操作的正确状态。 不要使用 [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) 和 [ExtendedExecutionForegroundReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason)；它们需要受限功能，并且不能在 Microsoft Store 应用程序中使用。
 
 ## <a name="run-while-minimized"></a>最小化时运行
 
@@ -255,13 +255,13 @@ static class ExtendedExecutionHelper
 
 使用 [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager) 确定用户是否已决定应限制你应用的后台活动。 注意电池使用情况，并且仅当有必要完成用户想要执行的操作时再在后台运行应用。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[扩展的执行示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
+[扩展执行示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
 [应用程序生命周期](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle)  
-[应用生命周期 - 借助后台任务和扩展执行使应用保持活动状态](https://msdn.microsoft.com/en-us/magazine/mt590969.aspx)
+[应用生命周期 - 借助后台任务和扩展执行使应用保持活动状态](https://msdn.microsoft.com/magazine/mt590969.aspx)
 [后台内存管理](https://docs.microsoft.com/windows/uwp/launch-resume/reduce-memory-usage)  
 [后台传输](https://docs.microsoft.com/windows/uwp/networking/background-transfers)  
-[电池意识和后台活动](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
+[电池感知和后台活动](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
 [MemoryManager 类](https://docs.microsoft.com/uwp/api/windows.system.memorymanager)  
-[在背景中播放媒体](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)  
+[在后台播放媒体](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)  

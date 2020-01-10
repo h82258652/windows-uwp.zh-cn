@@ -9,12 +9,12 @@ ms.date: 12/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c2d05c87f4f7b6164afe1fcbcb62323eef3bdf1
-ms.sourcegitcommit: 5f80bfc3ba04ad0a0853f83917d6a0ef3da24fa3
+ms.openlocfilehash: d180621736e79daec91a11a6932e80633962d6c7
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72302250"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684525"
 ---
 # <a name="globalization-and-localization"></a>全球化和本地化
 
@@ -38,7 +38,7 @@ Windows 的使用遍及世界各地，用户的语言、区域及文化背景各
 - 排序规则
 
 >[!NOTE]
-> 有关 Windows 操作系统版本支持的区域设置名称的列表，请参阅[附录 a：](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) [Windows 语言代码标识符（LCID）参考](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f)中的产品行为中的表的语言标记列。
+> 有关 Windows 操作系统版本支持的区域设置名称的列表，请参阅[附录 a：](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) [Windows 语言代码标识符（LCID）参考](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f)中的产品行为中的表的语言标记列。
 
 **可本地化性**是为本地化准备全球化应用和/或验证应用是否已准备好进行本地化的过程。 以正确方式对应用进行可本地化处理意味着应用在之后的本地化过程中不会出现任何功能缺陷。 可本地化应用最重要的属性是其可执行代码与应用的可本地化资源完全分隔。
 
@@ -62,7 +62,7 @@ Windows 的使用遍及世界各地，用户的语言、区域及文化背景各
 | [全球化日期/时间/数字格式](use-global-ready-formats.md) | 通过适当设置日期、时间、数字、电话号码和货币的格式，设计全球通用的应用。 稍后即可调整应用，以适应全球市场中更多的文化、区域和语言。 |
 | [使用模板和模式设置日期和时间的格式](use-patterns-to-format-dates-and-times.md) | 结合使用 [**Windows.Globalization.DateTimeFormatting**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 命名空间中的类及自定义模板和模式，以严格按照所需格式显示日期和时间。 |
 | [调整布局和字体并支持 RTL](adjust-layout-and-fonts--and-support-rtl.md) | 设计应用，使其支持多种语言布局和字体，包括 RTL（从右到左）排列方向。 |
-| [NumeralSystem 值](glob-numeralsystem-values.md) | 本主题列出了可用于Windows.Globalization[**命名空间中各种类的**NumeralSystem](/uwp/api/windows.globalization?branch=live) 属性的值。 |
+| [NumeralSystem 值](glob-numeralsystem-values.md) | 本主题列出了可用于 [**Windows.Globalization**](/uwp/api/windows.globalization?branch=live) 命名空间中各种类的 **NumeralSystem** 属性的值。 |
 | [使应用程序可本地化](prepare-your-app-for-localization.md) | 本地化应用是一种可针对其他市场、语言或地区进行本地化且未发现应用中的任何功能性缺陷的应用。 可本地化应用最重要的属性是其可执行代码与其可本地化资源完全分隔。 |
 | [国际字体](loc-international-fonts.md) | 本主题列出的字体可用于已本地化为除美国英语以外的其他语言的 UWP 应用。 |
 | [为双向文本设计应用](design-for-bidi-text.md) | 设计应用，使其提供双向文本支持（双向），以便组合从左到右和从右到左写入系统的脚本。 |

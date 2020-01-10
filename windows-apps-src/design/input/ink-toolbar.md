@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ae67e5d4d6da3cc9716c5f0efd276023bae9af0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 48fea83560655b02909b302225f44fa3e9713f00
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258372"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684497"
 ---
 # <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-app"></a>将 InkToolbar 添加到通用 Windows 平台 (UWP) 应用
 
@@ -87,7 +87,7 @@ ms.locfileid: "74258372"
 
 通过工具栏的 [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.VerticalAlignment)、[HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment) 和 [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3.Orientation) 属性显式指定其位置和方向。
 
-| Default | 显式 |
+| 默认值 | 显式 |
 | --- | --- |
 | ![默认墨迹工具栏位置和方向](./images/ink/location-default-small.png) | ![显式墨迹工具栏位置和方向](./images/ink/location-explicit-small.png) |
 | *Windows Ink 工具栏默认位置和方向* | *Windows Ink 工具栏显式位置和方向* |
@@ -172,7 +172,7 @@ public MainPage()
 
     1. 向 InkToolbarSnippetHostViewModel 类中添加两个布尔属性：**LeftHandedLayout**（功能与前一个仅 XAML 示例相同）和 **PortraitLayout**（设备的方向）。
         >[!NOTE] 
-        > PortraitLayout 属性可以设置，并且包括 [PropertyChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) 事件的定义。
+        > PortraitLayout 属性可以设置，并且包括 [PropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) 事件的定义。
 
         ```csharp
         public bool LeftHandedLayout
@@ -214,7 +214,7 @@ public MainPage()
     1. 向 Converters 文件夹中添加两个新类（对于本示例，我们将其命名为 **HorizontalAlignmentFromHandednessConverter.cs** 和 **VerticalAlignmentFromAppViewConverter.cs**）。
     1. 向每个文件中添加 `using Windows.UI.Xaml` 和 `using Windows.UI.Xaml.Data` 命名空间。
     1. 将每个类更改为 `public` 并指定其实现 [IValueConverter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter) 接口。
-    1. 向每个文件中添加 [Convert](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.ivalueconverter.convert) 和 [ConvertBack](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.ivalueconverter.convertback) 方法，如此处所示（我们保持不实现 ConvertBack 方法）。
+    1. 向每个文件中添加 [Convert](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter.convert) 和 [ConvertBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter.convertback) 方法，如此处所示（我们保持不实现 ConvertBack 方法）。
         - 对于惯用右手的用户，HorizontalAlignmentFromHandednessConverter 将墨迹工具栏定位到应用的右侧，对于惯用左手的用户，则定位到应用的左侧。
         ```csharp
         using System;
@@ -734,7 +734,7 @@ class CalligraphicPen : InkToolbarCustomPen
 启动应用时，仅支持笔墨迹书写，并使用触控平移或缩放墨迹书写图面。 启用触控墨迹书写时，无法通过触控输入平移或缩放墨迹书写图面。
 
 > [!NOTE]
-> 有关 [](../controls-and-patterns/inking-controls.md)InkCanvas[**和**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)InkToolbar[ **UX 指南，请参阅**墨迹书写控件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar)。 以下建议与此示例相关：
+> 有关 [**InkCanvas**](../controls-and-patterns/inking-controls.md) 和 [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) UX 指南，请参阅[墨迹书写控件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar)。 以下建议与此示例相关：
 > - [  **InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) 和通常的墨迹书写可通过主动笔获得最佳体验。 但是，如果应用需要，可以支持使用鼠标和触控的墨迹书写。 
 > - 如果支持使用触控输入的墨迹书写，我们建议为切换按钮使用“Segoe MLD2 Assets”中的“ED5F”图标，并附带“触控书写”工具提示。 
 

@@ -1,5 +1,5 @@
 ---
-Description: 了解如何以编程方式管理焦点导航键盘、 游戏板，与 UWP 应用中的辅助工具。
+Description: 了解如何在 UWP 应用中使用键盘、游戏板和辅助工具以编程方式管理焦点导航。
 title: 使用键盘、手柄和辅助功能工具的编程焦点导航
 label: Programmatic focus navigation
 keywords: 键盘, 游戏控制器, 遥控器, 导航, 导航策略, 输入, 用户交互, 辅助功能, 可用性
@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 00d25896a490b0a6b1d65075852f44dfb89c2e53
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d919a86a44110d5b3b444fdf47d41f31637ccb6b
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662712"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684500"
 ---
 # <a name="programmatic-focus-navigation"></a>编程焦点导航
 
@@ -123,7 +123,7 @@ private void OnKeyDown(object sender, KeyRoutedEventArgs e)
 }
 ```
 
-使用 [FindNextElementOptions](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.findnextelementoptions) 可以进一步自定义候选焦点的识别方式。 此对象提供以下属性：
+使用 [FindNextElementOptions](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions) 可以进一步自定义候选焦点的识别方式。 此对象提供以下属性：
 
 - [SearchRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot) - 将焦点导航候选项的搜索范围确定为此 DependencyObject 的子级。 Null 指示从可视化树的根级开始搜索。
 
@@ -149,13 +149,13 @@ private void OnKeyDown(object sender, KeyRoutedEventArgs e)
 
 ### <a name="nofocuscandidatefound-event"></a>NoFocusCandidateFound 事件
 
-在按下 Tab 键或箭头键而指定方向没有候选焦点时，将会触发 [UIElement.NoFocusCandidateFound](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_NoFocusCandidateFound) 事件。 不会对 [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) 触发此事件。
+在按下 Tab 键或箭头键而指定方向没有候选焦点时，将会触发 [UIElement.NoFocusCandidateFound](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_NoFocusCandidateFound) 事件。 不会对 [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) 触发此事件。
 
 这是一个路由事件，因此，它将从连续父对象中的聚焦元素向上浮升到对象树的根。 这可让你在适当的位置处理该事件。
 
 <a name="split-view-code-sample"></a>
 
-此处，我们显示了在用户尝试向最左侧可聚焦控件的左侧移动焦点时，Grid 如何打开 [SplitView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)（请参阅[针对 Xbox 和电视进行设计](../devices/designing-for-tv.md#navigation-pane)）。
+此处，我们显示了在用户尝试向最左侧可聚焦控件的左侧移动焦点时，Grid 如何打开 [SplitView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)（请参阅[针对 Xbox 和电视进行设计](../devices/designing-for-tv.md#navigation-pane)）。
 
 ```xaml
 <Grid NoFocusCandidateFound="OnNoFocusCandidateFound">
@@ -180,40 +180,40 @@ private void OnNoFocusCandidateFound (
 ```
 
 ### <a name="gotfocus-and-lostfocus-events"></a>GotFocus 和 LostFocus 事件
-元素在获得焦点或失去焦点时，将会分别触发 [UIElement.GotFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) 和 [UIElement.LostFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) 事件。 不会对 [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) 触发此事件。
+元素在获得焦点或失去焦点时，将会分别触发 [UIElement.GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) 和 [UIElement.LostFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) 事件。 不会对 [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) 触发此事件。
 
 这些是路由事件，因此，它们将从连续父对象中的聚焦元素向上浮升到对象树的根。 这可让你在适当的位置处理该事件。
 
 ### <a name="gettingfocus-and-losingfocus-events"></a>GettingFocus 和 LosingFocus 事件
 
-[UIElement.GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) 和 [UIElement.LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 事件在相应的 [UIElement.GotFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) 和 [UIElement.LostFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) 事件之前触发。 
+[UIElement.GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) 和 [UIElement.LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 事件在相应的 [UIElement.GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) 和 [UIElement.LostFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) 事件之前触发。 
 
 这些是路由事件，因此，它们将从连续父对象中的聚焦元素向上浮升到对象树的根。 由于该事件在发生焦点更改之前发生，因此可以重定向或取消焦点更改。
 
-[GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) 和 [LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 是同步事件，因此，在这些事件浮升时，焦点不会移动。 但是，[GotFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) 和 [LostFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) 为异步事件，这意味着无法确保在执行处理程序之前焦点不会再次移动。
+[GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) 和 [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 是同步事件，因此，在这些事件浮升时，焦点不会移动。 但是，[GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) 和 [LostFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) 为异步事件，这意味着无法确保在执行处理程序之前焦点不会再次移动。
 
-如果通过调用 [Control.Focus](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_) 移动了焦点，[GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) 将在调用过程中提升，而 [GotFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) 将在调用之后提升。
+如果通过调用 [Control.Focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_) 移动了焦点，[GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) 将在调用过程中提升，而 [GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) 将在调用之后提升。
 
-在 [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) 和 [LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 事件过程中（焦点移动之前），可以通过 [GettingFocusEventArgs.NewFocusedElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_NewFocusedElement) 属性更改焦点导航目标。 即便目标已更改，事件仍会浮升并且可以再次更改目标。
+在 [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) 和 [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 事件过程中（焦点移动之前），可以通过 [GettingFocusEventArgs.NewFocusedElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_NewFocusedElement) 属性更改焦点导航目标。 即便目标已更改，事件仍会浮升并且可以再次更改目标。
 
-为了避免出现重新进入问题，如果你尝试在这些事件浮升时移动焦点（使用 [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) 或 [Control.Focus](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_)），则会引发异常。
+为了避免出现重新进入问题，如果你尝试在这些事件浮升时移动焦点（使用 [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) 或 [Control.Focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_)），则会引发异常。
 
 无论焦点移动的原因为何（包括 Tab 键导航、定向导航和编程导航），均会触发这些事件。
 
 下面是焦点事件的执行顺序：
 
-1.  [LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 如果焦点重置回失去焦点的元素或 [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.losingfocuseventargs#Windows_UI_Xaml_Input_LosingFocusEventArgs_TryCancel) 成功，不触发其他事件。
-2.  [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) 如果焦点重置回失去焦点的元素或 [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_TryCancel) 成功，不触发其他事件。
-3.  [LostFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus)
-4.  [GotFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
+1.  [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 如果焦点重置回失去焦点的元素或 [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.losingfocuseventargs#Windows_UI_Xaml_Input_LosingFocusEventArgs_TryCancel) 成功，不触发其他事件。
+2.  [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) 如果焦点重置回失去焦点的元素或 [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_TryCancel) 成功，不触发其他事件。
+3.  [LostFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus)
+4.  [GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
 
 下图显示了在从 A 向右侧移动时，XYFocus 如何将 B4 选为候选焦点。 B4 随后会触发 GettingFocus 事件，其中 ListView 有机会为 B3 重新分配焦点。
 
 ![更改 GettingFocus 事件的焦点导航目标](images/keyboard/focus-events.png)
 
-*更改焦点导航目标 GettingFocus 事件*
+*更改 GettingFocus 事件上的焦点导航目标*
 
-此处，我们显示了如何处理 [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) 事件并重定向焦点。
+此处，我们显示了如何处理 [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) 事件并重定向焦点。
 
 ```XAML
 <StackPanel Orientation="Horizontal">
@@ -250,7 +250,7 @@ private void OnGettingFocus(UIElement sender, GettingFocusEventArgs args)
 }
 ```
 
-此处，我们显示了菜单关闭时如何处理 [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) 的 [LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 事件并设置焦点。
+此处，我们显示了菜单关闭时如何处理 [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) 的 [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 事件并设置焦点。
 
 ```XAML
 <CommandBar x:Name="MyCommandBar" LosingFocus="OnLosingFocus">
@@ -282,7 +282,7 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 
 ## <a name="find-the-first-and-last-focusable-element"></a>查找第一个和最后一个可聚焦的元素
 
-[FocusManager.FindFirstFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindFirstFocusableElement_Windows_UI_Xaml_DependencyObject_) 和 [FocusManager.FindLastFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindLastFocusableElement_Windows_UI_Xaml_DependencyObject_) 方法将焦点移至对象范围内（[UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 的元素树或 [TextElement](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.documents.textelement) 的文本树）的第一个或最后一个可聚焦元素。 范围在调用中指定（如果参数为 null，则范围为当前窗口）。
+[FocusManager.FindFirstFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindFirstFocusableElement_Windows_UI_Xaml_DependencyObject_) 和 [FocusManager.FindLastFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindLastFocusableElement_Windows_UI_Xaml_DependencyObject_) 方法将焦点移至对象范围内（[UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 的元素树或 [TextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement) 的文本树）的第一个或最后一个可聚焦元素。 范围在调用中指定（如果参数为 null，则范围为当前窗口）。
 
 如果在范围内无法标识候选焦点，则返回 null。
 
@@ -327,6 +327,6 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 
 ## <a name="related-articles"></a>相关文章
 
-- [焦点导航的键盘、 游戏板、 远程控制和可访问性工具](focus-navigation.md)
+- [键盘、游戏板、远程控制和辅助工具的焦点导航](focus-navigation.md)
 - [键盘交互](keyboard-interactions.md)
 - [键盘辅助功能](../accessibility/keyboard-accessibility.md)
