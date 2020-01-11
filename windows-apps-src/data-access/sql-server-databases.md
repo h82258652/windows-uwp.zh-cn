@@ -5,12 +5,12 @@ ms.date: 03/28/2019
 ms.topic: article
 keywords: Windows 10, uwp, SQL Server, 数据库
 ms.localizationpriority: medium
-ms.openlocfilehash: 05579affd127fd951e233d1492d23e2dad0f4b53
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 54907dac63580794b7df42fa2e61162d16be8a1b
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340035"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302561"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>在 UWP 应用中使用 SQL Server 数据库
 通过使用 [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) 命名空间中的类，你的应用可以直接连接到 SQL Server 数据库然后存储和检索数据。
@@ -95,10 +95,7 @@ public class Product : INotifyPropertyChanged
     public event PropertyChangedEventHandler PropertyChanged;
     private void NotifyPropertyChanged(string propertyName)
     {
-        if (PropertyChanged != null)
-        {
-            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
 }
@@ -228,7 +225,7 @@ public MainPage()
 
 在大多数情况下，需要更改 SQL Server 配置的某些方面。 如果能够从其他类型的桌面应用程序（例如 Windows 窗体或 WPF 应用程序）连接到数据库，请确保已为 SQL Server 启用 TCP/IP。 可以在“计算机管理”  控制台中执行该操作。
 
-![计算机管理](images/computer-management.png)
+![筿福恨瞶](images/computer-management.png)
 
 然后，确保 SQL Server Browser 服务正在运行。
 
