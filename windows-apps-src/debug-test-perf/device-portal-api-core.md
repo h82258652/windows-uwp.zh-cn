@@ -7,12 +7,12 @@ ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10、uwp、设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 86724b084edb9350adfd2ed2623623d255302b70
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 9e091cc7ad62f69b9e76541101555493609b8a06
+ms.sourcegitcommit: 8d945e0406818e614eacdc962493e570cc7615ed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683455"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75955311"
 ---
 # <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 参考
 
@@ -2003,7 +2003,7 @@ Request
 
 | URI 参数 | 描述 |
 | :------          | :------ |
-| name | （**必需**）计算机的新名称。 |
+| name | （**必需**）计算机的新名称。 这应采用 base64 编码。 |
 
 **请求标头**
 
