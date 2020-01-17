@@ -2,26 +2,28 @@
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
 description: 此路线图提供了适用于 Windows 10 和通用 Windows 平台 (UWP) 应用的关键企业功能的概述。
 title: 企业
-ms.date: 08/30/2018
+ms.date: 01/16/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e005d388e15efe10bede88e77c3ca021b0acad6b
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 0a95529f40ef5bb1cbf112c91c385e6621620a01
+ms.sourcegitcommit: 7a8aea567b26283c71420e0d305d78f675e1fba7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684945"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76125680"
 ---
 # <a name="enterprise"></a>企业
 
 本文概述了通用 Windows 平台 (UWP) 针对 Windows 10 应用提供的关键企业功能。 有关详细演示了其中某些功能的视频，请参阅[使用 UWP 和 Visual Studio 快速构建 LOB 应用程序](https://channel9.msdn.com/Events/Build/2018/BRK3502)。
 
+## <a name="feature-highlights"></a>功能特点
+
 <a id="template-studio" />
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
-Windows Template Studio 是一个 Visual Studio 2017 和 Visual Studio 2019 扩展，它使用基于向导的体验加快创建新的通用 Windows 平台 (UWP) 应用的速度。 生成的 UWP 项目是格式良好且可阅读的代码，它包含了最新的 Windows 10 功能，同时实施了经过证实的模式和最佳做法。
+Windows Template Studio 是一个 Visual Studio 2019 扩展，它使用基于向导的体验加速创建新的通用 Windows 平台 (UWP) 应用。 生成的 UWP 项目是格式良好且可阅读的代码，它包含了最新的 Windows 10 功能，同时实施了经过证实的模式和最佳做法。
 
 ![Windows Template Studio](images/windows-template-studio.png)
 
@@ -58,9 +60,9 @@ Windows UI 库是一组 NuGet 程序包，它们提供了用于 UWP 应用的控
 
 <a id="xaml-islands" />
 
-### <a name="uwp-controls-in-desktop-applications"></a>桌面应用程序中的 UWP 控件
+### <a name="uwp-controls-in-desktop-applications-xaml-islands"></a>桌面应用程序中的 UWP 控件 (XAML Islands)
 
-现在，Windows 10 支持你在 WPF、Windows 窗体和 C++ Win32 桌面应用程序中使用 UWP 控件。 这意味着你可以使用只能通过 UWP 控件（例如 Windows Ink）和支持 Fluent Design System 的控件提供的最新 Windows 10 UI 功能来增强现有桌面应用程序的外观和功能。 此功能称为 XAML 岛。
+现在，Windows 10 支持你通过一个名为 XAML Islands  的功能在 WPF、Windows 窗体和 C++ Win32 桌面应用程序中使用 UWP 控件。 这意味着你可以使用只能通过 UWP 控件（例如 Windows Ink）和支持 Fluent Design System 的控件提供的最新 Windows 10 UI 功能来增强现有桌面应用程序的外观和功能。 此功能称为 XAML 岛。
 
 请参阅[桌面应用程序中的 UWP 控件](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)。
 
@@ -86,9 +88,7 @@ Windows UI 库是一组 NuGet 程序包，它们提供了用于 UWP 应用的控
 
 ### <a name="msix-deployment"></a>MSIX 部署
 
-MSIX 是一种 Windows 应用包格式，可以为所有 Windows 应用提供现代化打包体验。 MSIX 包格式保留了现有应用包和安装文件的功能，此外，它还为 Win32、WPF 和 Windows 窗体应用启用了新的、现代化的打包和部署功能。
-
-MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构建的一种安全可靠的打包格式。
+MSIX 是一种 Windows 应用包格式，它将 MSI、AppX、App-V 和 ClickOnce 的最佳功能组合在一起，以便向所有 Windows 应用提供新式的可靠打包体验。 MSIX 包格式保留了现有应用包和安装文件的功能，此外，它还为 Win32、WPF 和 Windows 窗体应用启用了新式的打包和部署功能。 
 
 ![MSIX 图标](images/MSIX-App-Package.ico)
 
@@ -151,11 +151,12 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司�
 
 ## <a name="deployment"></a>部署
 
-你可以选择将应用分配给组织的用户。 你可以使用适用于企业的 Microsoft 应用商店、现有移动设备管理，或者可以将应用旁加载到设备。 你还可以通过将应用发布到 Microsoft Store 向公众提供应用。
+可以选择使用 MSIX 包将应用分发给组织的用户。 可以配置基于应用安装程序的部署、使用设备管理工具（例如 Microsoft Endpoint Configuration Manager 和 Microsoft Intune）、发布到适用于企业的 Microsoft Store，或者可以将应用旁加载到设备。 你还可以通过将应用发布到 Microsoft Store 向公众提供应用。
 
 | 主题 | 说明 |
 |-------|-------------|
-| [将 LOB 应用分配到企业](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | 你可以通过适用于企业的 Microsoft Store 向企业直接发布业务线应用以获取批量购置，而无需将应用广泛提供给公众。 |
+| [MSIX 文档](https://docs.microsoft.com/windows/msix/) | MSIX 是一种 Windows 应用包格式，它将 MSI、AppX、App-V 和 ClickOnce 的最佳功能组合在一起，以提供新式的可靠打包体验。 |
+| [将 LOB 应用分配到企业](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | 了解用于分发业务线应用而不会将应用广泛提供给公众的选项，包括基于应用安装程序的部署、Microsoft Endpoint Configuration Manager 和 Microsoft Intune，以及发布到适用于企业的 Microsoft Store。 |
 | [旁加载应用](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) | 旁加载应用时，你将一个已签名的应用包部署到设备。 你维护这些应用的签名、承载和部署。 旁加载应用的过程已在 Windows 10 中得到简化。             |
 | [将应用发布到 Microsoft Store](https://developer.microsoft.com/store/publish-apps) | 利用统一的 Microsoft Store，你可以针对所有 Windows 设备发布和管理你的所有应用。 通过每个市场的定价、分配和可见性控件以及其他选项自定义应用的可用性。 |
 
