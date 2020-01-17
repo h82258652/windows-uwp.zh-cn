@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6387cc75047371666ac55b9fb70ae73d3e4c4d64
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.openlocfilehash: c67d359120b738458d7397c9558f19b4794888f6
+ms.sourcegitcommit: 87c20c6a40ed54e086adbe80caa509d851f54f57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302661"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76123839"
 ---
 # <a name="launch-the-windows-settings-app"></a>启动 Windows 设置应用
 
@@ -115,7 +115,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |设置页面| URI |
 |-------------|-----|
-| AutoPlay | ms-settings:autoplay |
+| 自动播放 | ms-settings:autoplay |
 | “蓝牙” | ms-settings:bluetooth |
 | 已连接的设备 | ms-settings:connecteddevices |
 | 默认相机 | ms-设置：照相机（**在 Windows 10 中已弃用，版本1809及更高版本**） |
@@ -140,7 +140,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 目视控制 | ms-settings:easeofaccess-eyecontrol |
 | 字体 | ms-settings:fonts |
 | 高对比度 | ms-settings:easeofaccess-highcontrast |
-| 键盘 | ms-settings:easeofaccess-keyboard |
+| Keyboard | ms-settings:easeofaccess-keyboard |
 | 放大镜 | ms-settings:easeofaccess-magnifier |
 | 鼠标 | ms-settings:easeofaccess-mouse |
 | 讲述人 | ms-settings:easeofaccess-narrator |
@@ -217,7 +217,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 任务栏 | ms-settings:taskbar |
 | “主题” | ms-settings:themes |
 
-## <a name="phone"></a>Phone
+## <a name="phone"></a>电话号码
 
 |设置页面| URI |
 |-------------|-----|
@@ -243,17 +243,18 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 眼球跟踪器 | ms-settings:privacy-eyetracker（需要眼球跟踪器硬件） |
 | 反馈和诊断 | ms-settings:privacy-feedback |
 | 文件系统 | ms-settings:privacy-broadfilesystemaccess |
-| “常规” | ms-settings:privacy-general |
+| “常规” | ms 设置：隐私或 ms 设置：隐私-常规 |
+| 墨迹 & 键入 |ms-settings:privacy-speechtyping |
 | 位置 | ms-settings:privacy-location |
-| 消息 | ms-settings:privacy-messaging |
+| Messaging | ms-settings:privacy-messaging |
 | 麦克风 | ms-settings:privacy-microphone |
 | 动态效果 | ms-settings:privacy-motion |
 | 通知 | ms-settings:privacy-notifications |
 | 其他设备 | ms-settings:privacy-customdevices |
-| 图片 | ms-settings:privacy-pictures |
 | 电话呼叫 | ms 设置：隐私-phonecalls |
+| 图片 | ms-settings:privacy-pictures |
 | 无线电收发器 | ms-settings:privacy-radios |
-| 语音、墨迹书写和键入 |ms-settings:privacy-speechtyping |
+| “语音” | ms 设置：隐私-语音 |
 | 任务 | ms-settings:privacy-tasks |
 | 视频 | ms-settings:privacy-videos |
 | 语音激活 | ms 设置：隐私-voiceactivation |
@@ -287,17 +288,17 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 加密 | ms-settings:deviceencryption |
 | 专注助手 | ms-settings:quiethours <br> ms-settings:quietmomentshome |
 | 图形设置 | ms-settings:display-advancedgraphics（仅适用于支持高级图形选项的设备） |
-| 消息 | ms-settings:messaging |
+| Messaging | ms-settings:messaging |
 | 多任务 | ms-settings:multitasking |
 | 夜灯设置 | ms-settings:nightlight |
-| Phone | ms-settings:phone-defaultapps |
+| 电话号码 | ms-settings:phone-defaultapps |
 | “投影到这台电脑”， | ms-settings:project |
 | 共享体验 | ms-settings:crossdevice |
 | 平板模式 | ms-settings:tabletmode |
 | 任务栏 | ms-settings:taskbar |
 | 通知和操作 | ms-settings:notifications |
 | 远程桌面 | ms-settings:remotedesktop |
-| Phone | ms-设置： phone （**在 Windows 10 中已弃用，版本1809及更高版本**） |
+| 电话号码 | ms-设置： phone （**在 Windows 10 中已弃用，版本1809及更高版本**） |
 | 电源和睡眠 | ms-settings:powersleep |
 | “声音” | ms-设置：声音 |
 | 存储 | ms-settings:storagesense |
@@ -333,7 +334,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Windows 更新 - 重启选项 | ms-settings:windowsupdate-restartoptions |
 | Windows 更新 - 查看更新历史记录 | ms-settings:windowsupdate-history |
 
-## <a name="user--accounts"></a>用户帐户
+## <a name="user-accounts"></a>“用户帐户”
 
 |设置页面| URI |
 |-------------|-----|

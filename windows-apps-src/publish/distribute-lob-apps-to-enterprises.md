@@ -2,21 +2,41 @@
 Description: 可以通过适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店向企业直接发布业务线 (LOB) 应用以获取批量购置，无需在应用商店中使应用广泛可用。
 title: 将 LOB 应用分配到企业
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
-ms.date: 10/31/2018
+ms.date: 01/16/2020
 ms.topic: article
 keywords: windows 10, uwp, lob, 业务线, 企业应用, 适用于企业的 store, 适用于教育的 store, 企业
 ms.localizationpriority: medium
-ms.openlocfilehash: accf4e8dbc19e5858148bcf0cf62d0e1cc95ab82
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: faf750ece274776a147dff9e825f32534eb13014
+ms.sourcegitcommit: 7a8aea567b26283c71420e0d305d78f675e1fba7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260007"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76125669"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>将 LOB 应用分配到企业
 
+可以使用多个选项将业务线（LOB）应用分发到组织的用户使用[.msix 包](https://docs.microsoft.com/windows/msix/)，而无需将应用广泛地提供给公众使用。 你可以使用设备管理工具、配置基于应用程序安装程序的部署、直接旁加载应用，或者将应用发布到 Microsoft Store for Business 或 Microsoft Store 教育。
 
-可以通过适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店向企业直接发布业务线 (LOB) 应用以获取批量购置，无需在应用商店中使应用广泛可用。
+## <a name="microsoft-endpoint-configuration-manager-and-microsoft-intune"></a>Microsoft 端点 Configuration Manager 和 Microsoft Intune
+
+如果你的组织使用 Microsoft 端点 Configuration Manager 或 Microsoft Intune 来管理设备，则可以使用这些工具部署 LOB 应用。 有关详细信息，请参阅以下文章：
+
+* [Configuration Manager 中的应用程序管理简介](https://docs.microsoft.com/configmgr/apps/understand/introduction-to-application-management)
+* [Microsoft Intune 中的应用生命周期概述](https://docs.microsoft.com/intune/apps/app-lifecycle)
+
+## <a name="app-installer"></a>应用安装程序
+
+应用安装程序通过双击 .MSIX 应用包直接或通过双击从 web 服务器安装应用程序包的 appinstaller 文件来安装 Windows 10 应用。 这意味着用户无需使用 PowerShell 或其他开发人员工具来安装 LOB 应用。 应用安装程序还可以安装包含可选包和相关集的应用包。
+
+可以从适用于企业的 Microsoft Store [Web 门户](https://businessstore.microsoft.com/store/details/app-installer/9NBLGGH4NNS1)下载应用安装程序，以便在企业中离线使用。 有关应用程序安装程序的详细信息，请参阅[通过应用安装程序安装 Windows 10 应用](https://docs.microsoft.com/windows/msix/app-installer/app-installer-root)。
+
+## <a name="sideloading"></a>旁加载
+
+将 LOB 应用直接分发给组织中的用户的另一种方法是旁加载。 此选项类似于基于应用安装的部署，因为它使用户能够直接安装 .MSIX 应用程序包。 从 Windows 10 版本2004开始，默认情况下会启用旁加载，用户可以通过双击 "签名 .MSIX 应用包" 来安装应用。 在 Windows 10 版本1909及更早版本中，旁加载需要一些额外的配置，并使用 PowerShell 脚本。 有关详细信息，请参阅[在 Windows 10 中旁加载 LOB 应用](https://docs.microsoft.com/windows/application-management/sideload-apps-in-windows-10)。
+
+## <a name="microsoft-store-for-business-or-microsoft-store-for-education"></a>适用于企业的 Microsoft Store 或 Microsoft Store 教育
+
+可以通过适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店向企业直接发布业务线 (LOB) 应用以获取批量购置，无需在应用商店中使应用广泛可用。 使用此选项时，应用由存储区签名，并且必须符合标准存储策略。
 
 > [!NOTE]
 > 目前，仅免费应用可以通过适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店专门分配到企业。 如果你提交了作为 LOB 的某个付费应用，它不会向企业提供。 
@@ -24,8 +44,7 @@ ms.locfileid: "74260007"
 > [!IMPORTANT]
 > 你无法使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 直接向企业发布 LOB 应用。 LOB 应用的所有提交都必须通过合作伙伴中心发布。
 
-
-## <a name="set-up-the-enterprise-association"></a>设置企业关联
+### <a name="set-up-the-enterprise-association"></a>设置企业关联
 
 将 LOB 应用专门发布到企业的第一步是建立你的帐户和企业的专用应用商店之间的关联。
 
@@ -36,13 +55,11 @@ ms.locfileid: "74260007"
 
 若要确认关联，请单击**接受**。 随后你的帐户将能够发布供该企业专门使用的应用。
 
-
-## <a name="submit-lob-apps"></a>提交 LOB 应用
+### <a name="submit-lob-apps"></a>提交 LOB 应用
 
 在准备好发布供企业专门使用的应用后，该过程类似于应用提交过程。 应用完成相同的[认证过程](the-app-certification-process.md)，并且必须遵循所有 [Microsoft Store 策略](store-policies.md)。 仅有数个部分过程不同。
 
-
-### <a name="visibility"></a>可见性
+#### <a name="visibility"></a>可见性
 
 在设置企业关联后，每次提交应用时，都会在提交的**定价和可用性**页面的**可见性**部分中看到一个下拉框。 默认情况下，此下拉框设置为“零售分配”。 若要使应用供某个企业专门使用，你需要选择“业务线 (LOB) 分配”。
 
@@ -52,7 +69,7 @@ ms.locfileid: "74260007"
 
 <span id="organizational" />
 
-### <a name="organizational-licensing"></a>组织授权
+#### <a name="organizational-licensing"></a>组织授权
 
 默认情况下，在提交应用时，**应用商店托管（联机）批量许可**框已选中。 在发布 LOB 应用时，此框必须保持选中状态，以便企业可以批量购置你的应用。 此操作将可保证在**分配和可见性**部分中选择的企业之外的任何人均无法使用应用。
 
@@ -60,13 +77,11 @@ ms.locfileid: "74260007"
 
 有关详细信息，请参阅[组织授权选项](organizational-licensing.md)。
 
-
-### <a name="age-ratings"></a>年龄分级
+#### <a name="age-ratings"></a>年龄分级
 
 对于 LOB 应用，提交过程的[年龄分级](age-ratings.md)步骤的工作方式与零售应用相同，但还具有其他选项供你手动指示你的应用的应用商店年龄分级，而不是完成问卷或导入现有的 IARC 分级 ID。 此手动分级仅适用于 LOB 分配，因此如果将应用的**可见性**设置更改为**零售分配**，则在发布该提交之前，将需要完成年龄分级问卷。
 
-
-## <a name="enterprise-deployment-of-lob-apps"></a>LOB 应用的企业部署
+### <a name="enterprise-deployment-of-lob-apps"></a>LOB 应用的企业部署
 
 单击“提交到应用商店”后，应用将完成认证过程。 准备就绪后，企业管理员必须在适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店门户中将应用添加到其专用应用商店。 企业稍后可以将应用部署到其用户。
 
@@ -75,8 +90,7 @@ ms.locfileid: "74260007"
 
 有关详细信息，请参阅[使用业务线应用](https://docs.microsoft.com/microsoft-store/working-with-line-of-business-apps)和[使用专用应用商店分配应用](https://docs.microsoft.com/microsoft-store/distribute-apps-from-your-private-store)。
 
-
-## <a name="update-lob-apps"></a>更新 LOB 应用
+### <a name="update-lob-apps"></a>更新 LOB 应用
 
 若要发布对已经发布为 LOB 的应用的更新，只需创建新的提交即可。 可以上载新程序包或进行任何其他更改，然后单击**提交到应用商店**使更新的版本可用。 请确保使**可见性**中的企业选择保持不变，除非希望更改这些选择，例如选择可购置应用的其他企业，或者删除之前分配了应用的企业。
 
@@ -86,20 +100,3 @@ ms.locfileid: "74260007"
 
 > [!NOTE]
 > 将应用更改为**零售分配**时，如果尚未完成[年龄分级问卷](age-ratings.md)，将需要完成该问卷，即使该应用不适用于新的购置也是如此。
-
-
-## <a name="distribute-lob-apps-through-sideloading"></a>通过旁加载分配 LOB 应用
-
-通过适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店将应用分配到企业，这可以确保应用由应用商店进行签名，并遵守标准的应用商店策略。
-
-在某些情况下，公司可能不希望通过合作伙伴中心提交其 LOB 应用（例如出于合规性原因或需要其他功能的应用）。 在这种情况下，企业可以通过旁加载直接将应用部署到计算机，无需使用适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店。
-
-有关详细信息，请参阅[在 Windows 10 中旁加载 LOB 应用](https://docs.microsoft.com/windows/application-management/sideload-apps-in-windows-10)。
-
- 
-
- 
-
-
-
-
