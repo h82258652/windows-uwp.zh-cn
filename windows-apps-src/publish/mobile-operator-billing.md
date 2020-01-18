@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 移动运营商, 移动结算, 移动运营商结算
 ms.localizationpriority: medium
-ms.openlocfilehash: 606267080ced6ea8dd41f8f05ddcdee4d33b00f2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: af682d2a17e10bf1c3b3cdcb3485315a6972eb9f
+ms.sourcegitcommit: e38946d8228293fca7d6c2b4d66e8e8f0d349e92
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259970"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76258349"
 ---
 # <a name="mobile-operator-billing"></a>移动运营商结算
 
@@ -44,10 +44,11 @@ Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的�
 | 波兰               | 橙色，播放                                            |
 | 新加坡            | M1 受限，StarHub                                     |
 | 斯洛伐克             | Slovak Telekom                                          |
+| 南非         | Vodacom                                                 |
 | 西班牙                | Orange                                                  |
 | 瑞典               | Telenor、3                                              |
 | 瑞士          | Swisscom, 日出                                       |
-| 台湾               | FarEasTone                                              |
+| 中国台湾地区               | FarEasTone                                              |
 | 土耳其               | Turkcell                                                |
 | 阿拉伯联合酋长国 | Etisalat                                                |
 | 美国        | Sprint、Verizon                                         |
