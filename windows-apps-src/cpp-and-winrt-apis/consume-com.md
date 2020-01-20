@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, COM, 组件, 类, 接口
 ms.localizationpriority: medium
-ms.openlocfilehash: bb28ec7afa22f81033bfce2aff530119e53a4b91
-ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
+ms.openlocfilehash: 88012d96b7c769094cb80d0f34b77060291a3eef
+ms.sourcegitcommit: 80ea5e05f8c15700f6c6fa3d1ed37e479568762b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660150"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75928817"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>通过 C++/WinRT 使用 COM 组件
 
@@ -18,11 +18,11 @@ ms.locfileid: "67660150"
 
 本主题的末尾提供了一个精简 Direct2D 应用程序的完整源代码列表。 我们将提取该代码的摘录内容，演示如何使用 C++/WinRT 库的各种工具通过 C++/WinRT 来使用 COM 组件。
 
-## <a name="com-smart-pointers-winrtcomptruwpcpp-ref-for-winrtcom-ptr"></a>COM 智能指针 ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
+## <a name="com-smart-pointers-winrtcom_ptruwpcpp-ref-for-winrtcom-ptr"></a>COM 智能指针 ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
 
 使用 COM 编程时，你会直接使用接口而不是对象（Windows 运行时 API 在幕后也是如此，这是 COM 的一种演进）。 若要针对 COM 类调用函数（例如，激活该类），需先获取一个接口，然后针对该接口调用该函数。 若要访问对象的状态，请不要直接访问其数据成员，而应该针对某个接口调用取值函数和赋值函数。
 
-更具体而言，我们将讨论如何与接口指针交互。  对于这种操作，我们可以受益于 C++/WinRT 中的 COM 智能指针类型 &mdash; [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) 类型。
+更具体而言，我们将讨论如何与接口指针交互。  对于这种操作，我们可以受益于 C++/WinRT 中的 COM 智能指针类型 &mdash;[**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) 类型。
 
 ```cppwinrt
 #include <d2d1_1.h>
@@ -81,10 +81,10 @@ DWriteCreateFactory(
     reinterpret_cast<IUnknown**>(dwriteFactory2.put()));
 ```
 
-## <a name="re-seat-a-winrtcomptr"></a>重新定位 **winrt::com_ptr**
+## <a name="re-seat-a-winrtcom_ptr"></a>重新定位 **winrt::com_ptr**
 
 > [!IMPORTANT]
-> 如果某个 [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) 已定位（其内部原始指针已有目标），而你想要将其重新定位为指向不同的对象，则首先需要向其分配 `nullptr` &mdash; 如以下代码示例所示。 否则，已定位的 **com_ptr** 会断言其内部指针不为 null，从而产生需要关注的问题（调用 [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function) 或 [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function) 时）。
+> 如果某个 [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) 已定位（其内部原始指针已有目标），而你想要将其重新定位为指向不同的对象，则首先需要向其分配 `nullptr`&mdash; 如以下代码示例所示。 否则，已定位的 **com_ptr** 会断言其内部指针不为 null，从而产生需要关注的问题（调用 [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function) 或 [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function) 时）。
 
 ```cppwinrt
 winrt::com_ptr<ID2D1SolidColorBrush> brush;
@@ -169,7 +169,11 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 
 ## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>一个精简 Direct2D 应用程序的完整源代码列表
 
-若要生成并运行此源代码示例，请先在 Visual Studio 中创建一个新的 **Core 应用 (C++/WinRT)** 。 `Direct2D` 是项目的合理名称，但你可以指定任意名称。 打开 `App.cpp`，删除其整个内容，然后粘贴以下列表。
+若要生成并运行此源代码示例，请先在 Visual Studio 中创建一个新的 **Core 应用 (C++/WinRT)** 。 `Direct2D` 是项目的合理名称，但你可以指定任意名称。
+
+打开 `pch.h`，并在包含 `windows.h` 后立即添加 `#include <unknwn.h>`。
+
+打开 `App.cpp`，删除其整个内容，然后粘贴以下列表。
 
 以下代码会尽量使用 [winrt::com_ptr::capture 函数](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function)。 `WINRT_ASSERT` 是宏定义，并且扩展到 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
 
@@ -491,7 +495,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="avoiding-namespace-collisions"></a>避免命名空间冲突
 
-正如本主题中列出的代码所示，在 C++/WinRT 中，常见的做法是大量使用 using 指令。 但在某些情况下，这可能导致将冲突名称导入全局命名空间这种问题。 下面提供了一个示例。
+正如本主题中列出的代码所示，在 C++/WinRT 中，常见的做法是大量使用 using 指令。 但在某些情况下，这可能导致将冲突名称导入全局命名空间这种问题。 下面是一个示例。
 
 C++/WinRT 包含名为 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) 的类型，而 COM 则定义名为 [ **::IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown) 的类型。 那么，我们考虑一下，在使用 COM 标头的 C++/WinRT 项目中使用以下代码会出现什么情况。
 

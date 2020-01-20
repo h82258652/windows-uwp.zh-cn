@@ -7,12 +7,12 @@ ms.date: 10/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
-ms.openlocfilehash: 956ac13dcdc1a2e6367e590bb8885c8722f41e2c
-ms.sourcegitcommit: cb7f80100c99d4b6466a819bea191006ec3d616c
+ms.openlocfilehash: d388e1f4b3f1b1be4e265185934a02b6ccd20064
+ms.sourcegitcommit: 87c20c6a40ed54e086adbe80caa509d851f54f57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640874"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76123849"
 ---
 # <a name="data-template-selection-styling-items-based-on-their-properties"></a>数据模板选择：根据项属性设置项样式
 
@@ -50,7 +50,7 @@ ms.locfileid: "73640874"
 
 ## <a name="create-a-datatemplateselector"></a>创建 DataTemplateSelector
 
-创建数据模板选择器后，请在代码中定义模板选择逻辑，并在 XAML 中定义数据模板。
+创建数据模板选择器时，请在代码中定义模板选择逻辑，并在 XAML 中定义数据模板。
 
 ### <a name="code-behind-component"></a>代码隐藏组件
 
@@ -131,6 +131,6 @@ public class MyDataTemplateSelector : DataTemplateSelector
 将 ListView 或 GridView 与大型数据集合结合使用时，滚动和平移性能可能是一个问题。 为保持大型集合的良好运行，可采取一些步骤来提高数据模板的性能。 [ListView 和 GridView UI 优化](/windows/uwp/debug-test-perf/optimize-gridview-and-listview)中更详细地介绍了这些内容。
 
 -  按项目减少元素 - 将数据模板中的 UI 元素数保持在合理的最小值。
-- 带有异类集锦的容器循环
+- 将容器回收用于异类集合
   - 使用 ChoosingItemContainer 事件  - 此事件是一种针对不同项使用不同数据模板的高性能方法。 若要获得最佳性能，应优化缓存并为特定数据选择数据模板。
   - 使用项模板选择器  - 在某些实例中，应避免使用项模板选择器 (`DataTemplateSelector`)，因为它会影响性能。
