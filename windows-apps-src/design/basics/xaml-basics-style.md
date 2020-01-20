@@ -5,12 +5,12 @@ keywords: XAML, UWP, 入门
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f2c63c90170a633ae718db618c502efa41fb3f7d
-ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
+ms.openlocfilehash: 0e9e0a426d51fddaf4ff509438176e9db7a3e474
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72680767"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684122"
 ---
 # <a name="tutorial-create-custom-styles"></a>教程：创建自定义样式
 
@@ -55,7 +55,7 @@ PhotoLab 应用有两个主要页面：
 
 3. 使用多边形元素为曝光滑块创建背景形状。
 
-    [Windows.XAML.Ui.Shapes 命名空间](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes)可提供七种形状以供选择。 有椭圆、矩形和一个叫“路径”的东西，这个东西可以制作任何类型的形状 - 是的，甚至是独角兽！ 
+    [Windows.XAML.Ui.Shapes 命名空间](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Shapes)可提供七种形状以供选择。 有椭圆、矩形和一个叫“路径”的东西，这个东西可以制作任何类型的形状 - 是的，甚至是独角兽！ 
     
     <!-- TODO reduce size -->
     ![独角兽](../basics/images/xaml-basics/unicorn.png)
@@ -177,7 +177,7 @@ PhotoLab 应用有两个主要页面：
 
 XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量，并且可以更加非常轻松地更新应用的外观。
 
-若要定义样式，可以将 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 元素添加到包含要设置样式的控件的元素的 [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) 属性。  如果你将样式添加到 Page.Resources 属性中，则整个页面将可以使用你的样式  。 如果你在 App.xaml 文件内将你的样式添加到 Application.Resources 中，则整个应用将可以使用该样式  。
+若要定义样式，可以将 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 元素添加到包含要设置样式的控件的元素的 [Resources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Resources) 属性。  如果你将样式添加到 Page.Resources 属性中，则整个页面将可以使用你的样式  。 如果你在 App.xaml 文件内将你的样式添加到 Application.Resources 中，则整个应用将可以使用该样式  。
 
 可以创建命名样式和常规样式。 命名样式必须显式应用于特定控件；常规样式会应用于任何与指定的 TargetType 匹配的控件  。 
 

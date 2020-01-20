@@ -6,17 +6,17 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, 联网, websocket, messagewebsocket, streamwebsocket
 ms.localizationpriority: medium
-ms.openlocfilehash: eb083b0d8ed0aedfc6e14be9bed9647daa2bb950
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 221ab5e0647fe95e8d715fc320ba2b9c1bee2dfe
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260162"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684962"
 ---
 # <a name="websockets"></a>WebSockets
 WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与服务器之间进行既快捷又安全的双向通信，同时支持 UTF-8 和二进制消息。
 
-在 [WebSocket Protocol](https://tools.ietf.org/html/rfc6455) 下，数据通过全双工单套接字连接立即传输，从而允许从两个终结点实时发送和接收消息。 WebSocket 非常适用于在多玩家游戏（实时游戏和回合制游戏）、即时社交网络通知、显示的最新股票和天气信息以及需要安全、快速地传输数据的其他应用。
+在 [WebSocket 协议](https://tools.ietf.org/html/rfc6455)下，数据通过全双工单套接字连接立即传输，从而允许从两个终结点实时发送和接收消息。 WebSocket 非常适用于在多玩家游戏（实时游戏和回合制游戏）、即时社交网络通知、显示的最新股票和天气信息以及需要安全、快速地传输数据的其他应用。
 
 为建立 WebSocket 连接，需在客户端与服务器之间交换基于 HTTP 的特定握手。 如果成功，则会使用前面建立的 TCP 连接将应用程序层协议从 HTTP“升级”到 WebSocket。 此后，HTTP 完全被排除在外；这两个终结点均可使用 WebSocket 协议发送或接收数据，直至 WebSocket 连接断开。
 
@@ -39,7 +39,7 @@ WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与�
 | wss: | 用于应该加密的安全连接。 |
 | ws: | 用于未加密的连接。 |
 
-若要加密 WebSocket 连接，请使用 `wss:` URI 方案。 下面提供了一个示例。
+若要加密 WebSocket 连接，请使用 `wss:` URI 方案。 下面是一个示例。
 
 ```csharp
 protected override async void OnNavigatedTo(NavigationEventArgs e)
@@ -298,7 +298,7 @@ private:
 接收数据时会引发 MessageReceived  。 可通过 [MessageWebSocketMessageReceivedEventArgs](/uwp/api/windows.networking.sockets.messagewebsocketmessagereceivedeventargs) 访问数据  。 客户端或服务器关闭套接字时会引发 Closed  。
  
 ### <a name="send-data-on-a-messagewebsocket"></a>通过 MessageWebSocket 发送数据
-建立连接后，可以向服务器发送数据。 执行此操作的方法是使用 [MessageWebSocket.OutputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream) 属性和 [DataWriter](/uwp/api/windows.storage.streams.datawriter) 写入数据   。 
+建立连接后，可以向服务器发送数据。 执行此操作的方法是使用 [MessageWebSocket.OutputStream](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream) 属性和 [DataWriter](/uwp/api/windows.storage.streams.datawriter) 写入数据   。 
 
 注意：DataWriter 获得输出流的所有权   。 DataWriter 超出范围时，如果输出流与之连接，DataWriter 将解除分配输出流   。 此后，使用该输出流的任何后续尝试都会失败，HRESULT 值为 0x80000013。 但你可以调用 [DataWriter.DetachStream](/uwp/api/windows.storage.streams.datawriter.DetachStream) 使输出流与 DataWriter 分离并将该流的所有权返回给 MessageWebSocket    。
 
@@ -564,12 +564,12 @@ private:
 在用 StreamWebSocket 建立连接和发送数据之前，应该订阅 [StreamWebSocket.Closed](/uwp/api/windows.networking.sockets.streamwebsocket.Closed) 事件   。 客户端或服务器关闭套接字时会引发 Closed  。
  
 ### <a name="send-data-on-a-streamwebsocket"></a>通过 StreamWebSocket 发送数据
-建立连接后，可以向服务器发送数据。 执行此操作的方法是使用 [StreamWebSocket.OutputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream) 属性和 [DataWriter](/uwp/api/windows.storage.streams.datawriter) 写入数据   。
+建立连接后，可以向服务器发送数据。 执行此操作的方法是使用 [StreamWebSocket.OutputStream](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream) 属性和 [DataWriter](/uwp/api/windows.storage.streams.datawriter) 写入数据   。
 
 注意：如果你要在同一套接字中写入许多数据，则务必在 DataWriter 超出范围之前调用 [DataWriter.DetachStream](/uwp/api/windows.storage.streams.datawriter.DetachStream)，以使输出流与 DataWriter 分离     。 此操作会将流的所有权返回给 MessageWebSocket  。
 
 ### <a name="receive-data-on-a-streamwebsocket"></a>通过 StreamWebSocket 接收数据
-使用 [StreamWebSocket.InputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream) 属性和 [DataReader](/uwp/api/windows.storage.streams.datareader) 可读取数据   。
+使用 [StreamWebSocket.InputStream](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream) 属性和 [DataReader](/uwp/api/windows.storage.streams.datareader) 可读取数据   。
 
 ## <a name="advanced-options-for-messagewebsocket-and-streamwebsocket"></a>用于 MessageWebSocket 和 StreamWebSocket 的高级选项
 在建立连接之前，可以通过设置 [MessageWebSocketControl](/uwp/api/windows.networking.sockets.messagewebsocketcontrol) 或 [StreamWebSocketControl](/uwp/api/windows.networking.sockets.streamwebsocketcontrol) 的属性来设置用于套接字的高级选项   。 通过它的相应 [MessageWebSocket.Control](/uwp/api/windows.networking.sockets.messagewebsocket.control) 属性或 [StreamWebSocket.Control](/uwp/api/windows.networking.sockets.streamwebsocket.control) 属性可从套接字对象自身中访问这些类的实例   。
@@ -615,14 +615,14 @@ auto connectTask = Concurrency::create_task(streamWebSocket->ConnectAsync(ref ne
 请注意，这些信息类上的属性均为只读形式，但你能够在 Web 套接字对象的生存期内随时使用它们来检索信息。
 
 ## <a name="handling-exceptions"></a>处理异常
-在进行 [**MessageWebSocket**](/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 操作时发生的错误将以 **HRESULT** 值的形式返回。 可将该 HRESULT 值传递给 [WebSocketError.GetStatus](/uwp/api/windows.networking.sockets.websocketerror.getstatus) 方法，将其转换为 [WebErrorStatus](/uwp/api/Windows.Web.WebErrorStatus) 枚举值    。
+在进行 [MessageWebSocket](/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [StreamWebSocket](/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 操作时发生的错误将以 HRESULT 值的形式返回    。 可将该 HRESULT 值传递给 [WebSocketError.GetStatus](/uwp/api/windows.networking.sockets.websocketerror.getstatus) 方法，将其转换为 [WebErrorStatus](/uwp/api/Windows.Web.WebErrorStatus) 枚举值    。
 
 大部分 WebErrorStatus 枚举值对应由本机 HTTP 客户端操作返回的错误  。 应用可以打开 WebErrorStatus 枚举值来基于异常原因修改应用行为  。
 
 对于参数验证错误，可以使用来自异常的 HRESULT 了解有关错误的更详细信息  。 `Winerror.h` 中列出了可能的 HRESULT 值，可以在 SDK 安装位置中找到 Winerror.h，例如，`C:\Program Files (x86)\Windows Kits\10\Include\<VERSION>\shared` 文件夹  。 对于大多数参数验证错误，返回的 HRESULT 为 E_INVALIDARG   。
 
 ## <a name="setting-timeouts-on-websocket-operations"></a>对 WebSocket 操作设置超时
-MessageWebSocket 和 StreamWebSocket 使用内部系统服务，发送 WebSocket 客户端请求并从服务器接收响应   。 WebSocket 连接操作使用的 默认超时值为 60 秒。 如果支持 WebSocket 的 HTTP 服务器不对或无法对 WebSocket 连接请求做出响应（临时关闭或因网络中断而被阻止），则内部系统服务将先等待默认 60 秒，然后返回一个错误。 该错误会导致 WebSocket ConnectAsync 方法中引发异常  。 建立 WebSocket 连接后，用于发送和接收操作的默认超时为 30 秒。
+MessageWebSocket 和 StreamWebSocket 使用内部系统服务，发送 WebSocket 客户端请求并从服务器接收响应   。 WebSocket 连接操作使用的默认超时值为 60 秒。 如果支持 WebSocket 的 HTTP 服务器不对或无法对 WebSocket 连接请求做出响应（临时关闭或因网络中断而被阻止），则内部系统服务将先等待默认 60 秒，然后返回一个错误。 该错误会导致 WebSocket ConnectAsync 方法中引发异常  。 建立 WebSocket 连接后，用于发送和接收操作的默认超时为 30 秒。
 
 如果对 URI 中 HTTP 服务器名称进行名称查询时返回该名称的多个 IP 地址，则内部系统将为该站点尝试最多 5 个 IP 地址，并且在每次尝试失败前都默认超时 60 秒。 因此，你的应用可能会在尝试连接多个 IP 地址时等待几分钟，然后再处理异常。 此行为可能会使用户以为应用已停止工作。 
 
@@ -814,7 +814,7 @@ protected:
 * [MessageWebSocket.Control](/uwp/api/windows.networking.sockets.messagewebsocket.control)
 * [MessageWebSocket.Information](/uwp/api/Windows.Networking.Sockets.MessageWebSocket.Information)
 * [MessageWebSocket.MessageReceived](/uwp/api/Windows.Networking.Sockets.MessageWebSocket.MessageReceived)
-* [MessageWebSocket.OutputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream)
+* [MessageWebSocket.OutputStream](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream)
 * [MessageWebSocketControl](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl)
 * [MessageWebSocketControl.MessageType](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl.MessageType)
 * [MessageWebSocketInformation](/uwp/api/Windows.Networking.Sockets.MessageWebSocketInformation)
@@ -825,8 +825,8 @@ protected:
 * [StreamSocket.ConnectAsync](/uwp/api/windows.networking.sockets.streamsocket.connectasync)
 * [StreamWebSocket.Control](/uwp/api/windows.networking.sockets.streamwebsocket.control)
 * [StreamWebSocket.Information](/uwp/api/windows.networking.sockets.streamwebsocket.Information)
-* [StreamWebSocket.InputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream)
-* [StreamWebSocket.OutputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream)
+* [StreamWebSocket.InputStream](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream)
+* [StreamWebSocket.OutputStream](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream)
 * [StreamWebSocketControl](/uwp/api/Windows.Networking.Sockets.StreamWebSocketControl)
 * [StreamWebSocketInformation](/uwp/api/Windows.Networking.Sockets.StreamWebSocketInformation)
 * [WebErrorStatus](/uwp/api/Windows.Web.WebErrorStatus) 

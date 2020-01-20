@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 799913688f04421cae6b47f0d4b7db2fb1074ed4
-ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
+ms.openlocfilehash: de7a430248841722aedd960cd485ea24499fdd00
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061920"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684277"
 ---
 # <a name="web-view"></a>Web 视图
 
@@ -57,7 +57,7 @@ Web 视图控件将一个视图嵌入你的应用中，以便使用 Microsoft Ed
 
 **输入事件和 Tab 键顺序**
 
-尽管 WebView 不是控件子类，但它可接收键盘输入焦点，并加入 Tab 键序列。 它提供 [Focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.focus) 方法，以及 [GotFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus) 和 [LostFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus) 事件，但它不具有 Tab 键相关属性。 它在 Tab 键序列中的位置与在 XAML 文档顺序中的位置相同。 Tab 键序列包括 Web 视图内容中的所有元素，这些元素可以接收输入焦点。 
+尽管 WebView 不是 Control 子类，但它可接收键盘输入焦点，并加入 Tab 键序列。 它提供 [Focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.focus) 方法，以及 [GotFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus) 和 [LostFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus) 事件，但它不具有 Tab 键相关属性。 它在 Tab 键序列中的位置与在 XAML 文档顺序中的位置相同。 Tab 键序列包括 Web 视图内容中的所有元素，这些元素可以接收输入焦点。 
 
 如 [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) 类页上的“事件”表中所示，Web 视图不支持继承自 [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的大部分用户输入事件，如 [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)、[KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 和 [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)。 可以改为将 [InvokeScriptAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.invokescriptasync) 与 JavaScript **eval** 函数结合使用来使用 HTML 事件处理程序，并通过 HTML 事件处理程序中的 **window.external.notify** 以使用 [WebView.ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify) 通知应用程序。
 
@@ -65,7 +65,7 @@ Web 视图控件将一个视图嵌入你的应用中，以便使用 Microsoft Ed
 
 Web 视图提供多个 API 以进行基本导航：[GoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.goback)、[GoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.goforward)、[Stop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.stop)、[Refresh](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.refresh)、[CanGoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cangoback) 和 [CanGoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cangoforward)。 这些 API 可用于向你的应用添加典型的 Web 浏览功能。 
 
-若要设置 Web 视图的初始内容，请设置 XAML 中的 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.source) 属性。 XAML 分析程序会自动将字符串转换为 [Uri](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri)。 
+若要设置 Web 视图的初始内容，请设置 XAML 中的 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.source) 属性。 XAML 分析程序会自动将字符串转换为 [URI](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri)。 
 
 ```xaml
 <!-- Source file is on the web. -->
@@ -78,7 +78,7 @@ Web 视图提供多个 API 以进行基本导航：[GoBack](https://docs.microso
 <WebView x:Name="webView3" Source="ms-appx-web:///help/about.html"/>
 ```
 
-可以使用代码设置 Source 属性，但若不这样做，通常可以在代码中使用其中一个 **Navigate** 方法来加载内容。 
+可以使用代码设置 Source 属性，但若不这样做，通常可以在代码中使用其中一个 Navigate 方法来加载内容  。 
 
 若要加载 Web 内容，请将 [Navigate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigate) 方法与使用 http 或 https 方案的 **Uri** 结合使用。 
 
@@ -88,9 +88,9 @@ webView1.Navigate("http://www.contoso.com");
 
 若要使用 POST 请求和 HTTP 标头导航到 URI，请使用 [NavigateWithHttpRequestMessage](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage) 方法。 此方法仅支持针对 [HttpRequestMessage.Method](https://docs.microsoft.com/uwp/api/windows.web.http.httprequestmessage.method) 属性值的 [HttpMethod.Post](https://docs.microsoft.com/uwp/api/windows.web.http.httpmethod.post) 和 [HttpMethod.Get](https://docs.microsoft.com/uwp/api/windows.web.http.httpmethod.get)。 
 
-若要加载应用的 [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) 或 [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) 数据存储中的未压缩和未加密内容，请将 **Navigate** 方法与使用 [ms-appdata scheme](/windows/uwp/app-resources/uri-schemes) 的 **Uri** 结合使用。 Web 视图对此方案的支持要求你将子文件夹中的内容置于本地文件夹或临时文件夹下。 这样便可以导航到 URI，例如 ms-appdata:///local/*folder*/*file*.html 和 ms-appdata:///temp/*folder*/*file*.html。 （若要加载压缩或加密文件，请参阅 [NavigateToLocalStreamUri](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri)。） 
+若要加载应用的 [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) 或 [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) 数据存储中的未压缩和未加密内容，请将 **Navigate** 方法与使用 [ms-appdata scheme](/windows/uwp/app-resources/uri-schemes) 的 **Uri** 结合使用。 Web 视图对此方案的支持要求你将子文件夹中的内容置于本地文件夹或临时文件夹下。 这样便可以导航到 URI，例如 ms-appdata:///local/folder/file.html 和 ms-appdata:///temp/folder/file.html     。 （若要加载压缩或加密文件，请参阅 [NavigateToLocalStreamUri](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri)。） 
 
-其中的每个第一级别的子文件夹独立于其他第一级别子文件夹中的内容。 例如，可以导航到 ms-appdata:///temp/folder1/file.html，但在此文件中不能链接到 ms-appdata:///temp/folder2/file.html。 但仍可以使用 **ms-appx-web scheme** 链接到应用程序包中的 HTML 内容，也可以使用 **http** 和 **https** URI 方案链接到 Web 内容。
+其中的每个第一级别的子文件夹独立于其他第一级别子文件夹中的内容。 例如，可以导航到 ms-appdata:///temp/folder1/file.html，但在此文件中不能链接到 ms-appdata:///temp/folder2/file.html。 但仍可以使用 ms-appx-web scheme 链接到应用程序包中的 HTML 内容，也可以使用 http 和 https URI 方案链接到 Web 内容    。
 
 ```csharp
 webView1.Navigate("ms-appdata:///local/intro/welcome.html");
@@ -102,7 +102,7 @@ webView1.Navigate("ms-appdata:///local/intro/welcome.html");
 webView1.Navigate("ms-appx-web:///help/about.html");
 ```
 
-使用 [NavigateToLocalStreamUri](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri) 方法，通过自定义解析程序加载本地内容。 这样既可以支持高级方案（如下载和捕获基于 Web 的内容供脱机使用），也可以支持从压缩文件中提取内容。
+使用 [NavigateToLocalStreamUri](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri) 方法，通过自定义解析程序加载本地内容。 这样既可以支持高级方案（如下载和缓存基于 Web 的内容供脱机使用），也可以支持从压缩文件中提取内容。
 
 ### <a name="responding-to-navigation-events"></a>响应导航事件
 
@@ -171,7 +171,7 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 }
 ```
 
-对于 Web 视图内容中的每个 **iframe**，类似的事件按同样顺序发生： 
+对于 Web 视图内容中的每个 iframe，类似的事件按同样顺序发生  ： 
 - [FrameNavigationStarting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.framenavigationstarting) - 在 Web 视图中的框架导航到新内容之前发生。 
 - [FrameContentLoading](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.framecontentloading) - 在 Web 视图中的框架已开始加载新内容时发生。 
 - [FrameDOMContentLoaded](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.framedomcontentloaded) - 在 Web 视图中的框架已完成分析其当前 HTML 内容时发生。 
@@ -183,7 +183,7 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 
 脚本运行期间，你的应用可能不做任何响应。 [LongRunningScriptDetected](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.longrunningscriptdetected) 事件在 Web 视图执行 JavaScript 期间定期发生，从而提供中断该脚本运行的机会。 若要确定脚本已运行的时间，请检查 [WebViewLongRunningScriptDetectedEventArgs](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewLongRunningScriptDetectedEventArgs) 的 [ExecutionTime](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime) 属性。 若要停止该脚本，请将事件参数 [StopPageScriptExecution](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution) 属性设置为 **true**。 除非在后续 Web 视图导航期间重新加载已停止执行的脚本，否则不会再次执行该脚本。 
 
-Web 视图控件无法承载任意文件类型。 当尝试加载 Web 视图无法承载的内容时，会发生 [UnviewableContentIdentified](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unviewablecontentidentified) 事件。 你可以处理此事件并通知用户，或者使用 [Launcher](https://docs.microsoft.com/uwp/api/Windows.System.Launcher) 类将该文件重定向到外部浏览器或其他应用。
+Web 视图控件无法承载任意文件类型。 尝试加载 Web 视图无法承载的内容时，将发生 [UnviewableContentIdentified](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unviewablecontentidentified) 事件。 你可以处理此事件并通知用户，或者使用 [Launcher](https://docs.microsoft.com/uwp/api/Windows.System.Launcher) 类将该文件重定向到外部浏览器或其他应用。
 
 同样地，当在 Web 内容中调用不受支持的 URI 方案（如 fbconnect:// 或 mailto://）时会发生 [UnsupportedUriSchemeIdentified](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unsupportedurischemeidentified) 事件。 你可以处理此事件来提供自定义行为，而不是允许默认系统启动器启动 URI。
 
@@ -212,7 +212,7 @@ private void webView_ContainsFullScreenElementChanged(WebView sender, object arg
 }
 ```
 
-你可以使用 [NewWindowRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.newwindowrequested) 事件处理以下情况：承载的 Web 内容请求显示一个新窗口，例如弹出窗口。 你可以使用另一个 WebView 控件来显示请求窗口的内容。
+你可以使用 [NewWindowRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.newwindowrequested) 事件来处理托管 web 内容请求显示新窗口的情况，例如弹出窗口。 你可以使用另一个 WebView 控件来显示请求窗口的内容。
 
 [PermissionRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.permissionrequested) 事件用于启用需要特殊功能的 Web 功能。 当前这些功能包括：地理位置、IndexedDB 存储以及用户音频和视频（例如，来自麦克风或摄像头）。 如果你的应用访问用户位置或用户媒体，仍需要在应用清单中声明此功能。 例如，使用地理位置的应用在 Package.appxmanifest 中至少需要声明以下功能：
 
@@ -259,7 +259,7 @@ string returnValue = await webView1.InvokeScriptAsync("setDate", args);
 ```
 
 
-你可以将 **InvokeScriptAsync** 与 JavaScript **eval** 函数结合使用，以便将内容注入到 Web 页面。
+你可以将 InvokeScriptAsync 与 JavaScript eval 函数结合使用，以便将内容注入到 Web 页面   。
 
 此处，XAML 文本框中的文本 (`nameTextBox.Text`) 将写入 `webView1` 中承载的 HTML 页面中的 div。 
 
@@ -271,9 +271,9 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Web 视图内容中的脚本可以使用带有字符串参数的 **window.external.notify** 将信息发送回你的应用。 若要接收这些消息，请处理 [ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify) 事件。 
+Web 视图内容中的脚本可以使用带有字符串参数的 window.external.notify 将信息发送回你的应用  。 若要接收这些消息，请处理 [ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify) 事件。 
 
-若要在调用 window.external.notify 时，允许外部网页引发 **ScriptNotify** 事件，必须在应用清单的 **ApplicationContentUriRules** 部分包含该页面的 URI。 （可以在 Microsoft Visual Studio 中的 Package.appxmanifest 设计器的“内容 URI”选项卡上执行此操作。）此列表中的 URI 必须使用 HTTPS，可以包含子域通配符（例如 `https://*.microsoft.com`），但不能包含域通配符（例如 `https://*.com` 和 `https://*.*`）。 该部件清单要求不适用于源自应用包的内容、使用 ms-local-stream:// URI 的内容或使用 [NavigateToString](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetostring) 加载的内容。 
+若要在调用 window.external.notify 时，允许外部网页引发 ScriptNotify 事件，必须在应用清单的 ApplicationContentUriRules 部分包含该页面的 URI   。 （可以在 Microsoft Visual Studio 中的 Package.appxmanifest 设计器的“内容 URI”选项卡上执行此操作。）此列表中的 URI 必须使用 HTTPS，可以包含子域通配符（例如 `https://*.microsoft.com`），但不能包含域通配符（例如 `https://*.com` 和 `https://*.*`）。 该部件清单要求不适用于源自应用包的内容、使用 ms-local-stream:// URI 的内容或使用 [NavigateToString](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetostring) 加载的内容。 
 
 ### <a name="accessing-the-windows-runtime-in-a-web-view"></a>访问 Web 视图中的 Windows 运行时
 
@@ -293,7 +293,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 有关详细信息，请参阅 [WebView.AddWebAllowedObject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.addweballowedobject)。 
 
-此外，还可以允许 Web 视图中受信任的 JavaScript 内容直接访问 Windows 运行时 API。 这为 Web 视图中承载的 Web 应用提供了强大的本机功能。 若要启用此功能，必须在 Package.appxmanifest 中将受信任内容的 URI 列入应用的 ApplicationContentUriRules 中的白名单，并且明确地将 WindowsRuntimeAccess 设置为“all”。 
+此外，还可以允许 Web 视图中受信任的 JavaScript 内容直接访问 Windows 运行时 API。 这为 Web 视图中承载的 Web 应用提供了强大的本机功能。 若要启用此功能，必须在 Package.appxmanifest 中将受信任内容的 URI 列入应用的 ApplicationContentUriRules 中的允许列表，并且明确地将 WindowsRuntimeAccess 设置为“all”。 
 
 此示例显示应用清单的一部分。 此处，本地 URI 可访问 Windows 运行时。 
 
@@ -321,7 +321,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 ### <a name="threading-behavior"></a>线程行为
 
-默认情况下，Web 视图内容承载于属于桌面设备系列的设备的 UI 线程上，不会承载在所有其他设备的 UI 线程上。 你可以使用 [WebView.DefaultExecutionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.defaultexecutionmode) 静态属性来查询当前客户端的默认线程行为。 如有必要，可以使用 [WebView(WebViewExecutionMode)](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.webview.-ctor#Windows_UI_Xaml_Controls_WebView__ctor_Windows_UI_Xaml_Controls_WebViewExecutionMode_) 构造函数替代此行为。 
+默认情况下，Web 视图内容承载于属于桌面设备系列的设备的 UI 线程上，不会承载在所有其他设备的 UI 线程上。 你可以使用 [WebView.DefaultExecutionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.defaultexecutionmode) 静态属性来查询当前客户端的默认线程行为。 如有必要，可以使用 [WebView(WebViewExecutionMode)](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.-ctor#Windows_UI_Xaml_Controls_WebView__ctor_Windows_UI_Xaml_Controls_WebViewExecutionMode_) 构造函数替代此行为。 
 
 > **注意**&nbsp;&nbsp;在移动设备的 UI 线程上托管内容时可能存在性能问题，因此在更改 DefaultExecutionMode 时，请确保在所有目标设备上进行测试。
 

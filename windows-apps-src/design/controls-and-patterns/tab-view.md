@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: acad94c0697f930235af809cc3e2826e4c5befde
-ms.sourcegitcommit: f0588a086cf2499968bf03b10c6bce5f518e90cb
+ms.openlocfilehash: 141a24ca1f828f98231ec35471f7b43229df57e6
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71144957"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684290"
 ---
 # <a name="tabview"></a>TabView
 
@@ -31,7 +31,7 @@ TabView 提供适用于 UWP 应用的文档选项卡。 在以下情况下使用
 - 用户需要能够将文档或网页直接打开到选项卡中。
 - 用户需要能够在窗口之间拖放选项卡。
 
-如果 TabView 不适合你的应用，考虑使用 [Pivot](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/pivot) 或 [NavigationView](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview) 之类的控件。
+如果 TabView 不适合你的应用，考虑使用 [Pivot](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot) 或 [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview) 之类的控件。
 
 ## <a name="anatomy"></a>结构
 
@@ -91,7 +91,7 @@ private void Tabs_TabCloseRequested(TabView sender, TabViewTabCloseRequestedEven
 
 由于用户可以通过窗口的标题栏来拖动窗口，调整窗口的位置，因此不能让标题栏填满选项卡，这一点很重要。 因此，在标题栏中显示选项卡时，必须指定标题栏的一部分作为可拖动区域保留。 如果不指定可拖动区域，则整个标题栏会变得可拖动，这会妨碍选项卡接收输入事件。 如果 TabView 将显示在窗口的标题栏中，则应始终在 TabView 中包括一个 TabStripFooter 并将其标记为可拖动区域。
 
-有关详细信息，请参阅[标题栏自定义](https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar)
+有关详细信息，请参阅[标题栏自定义](https://docs.microsoft.com/windows/uwp/design/shell/title-bar)
 
 ![标题栏中的选项卡](images/tabview/tab-extend-to-title.png)
 
@@ -151,7 +151,7 @@ private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sende
 
 | TabWidthMode 值 | 行为                                                                                                                                                    |
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 相等              | 添加新选项卡后，所有选项卡都会水平收缩，直到其宽度达到一个很小的最小宽度。                                                       |
+| 等于              | 添加新选项卡后，所有选项卡都会水平收缩，直到其宽度达到一个很小的最小宽度。                                                       |
 | SizeToContent      | 选项卡将始终为其“自然大小”，即，显示其图标和标题所需的最小大小。 添加或关闭选项卡时，它们不会扩展或收缩。 |
 
 不管选择什么值，最终都会出现选项卡过多而无法在选项卡条中显示的情况。 在这种情况下，系统会显示滚动缓冲键，让用户可以左右滚动 TabStrip。
@@ -293,6 +293,6 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 
 ## <a name="related-articles"></a>相关文章
 
-- [MasterDetails](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/master-details)
-- [NavigationView](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview)
-- [透视表](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/pivot)
+- [MasterDetails](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/master-details)
+- [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview)
+- [透视表](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot)

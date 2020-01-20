@@ -6,12 +6,12 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1c535e4ea4ad3c93acb048de2050d5ae7a9c2c2b
-ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
+ms.openlocfilehash: 08853a201eff063b49dcc69d5827c9b54e324b75
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061936"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684873"
 ---
 # <a name="control-size-and-density"></a>控件大小和密度
 
@@ -72,7 +72,7 @@ Compact 大小主要用于适应指针输入。
 
 ### <a name="examples"></a>示例
 
-Compact 大小通过可以在页面级别或特定布局上在应用程序中指定的特殊资源字典来实现。 [WinUI](https://docs.microsoft.com/en-us/uwp/toolkits/winui/) Nuget 包中提供了资源字典。
+Compact 大小通过可以在页面级别或特定布局上在应用程序中指定的特殊资源字典来实现。 [WinUI](https://docs.microsoft.com/uwp/toolkits/winui/) Nuget 包中提供了资源字典。
 
 以下示例演示如何将 `Compact` 样式应用于页面和单个网格控件。
 
@@ -101,6 +101,6 @@ Compact 大小通过可以在页面级别或特定布局上在应用程序中指
 ## <a name="related-articles"></a>相关文章
 
 - [触摸目标准则](../input/guidelines-for-targeting.md)
-- [ResourceDictionary 和 XAML 资源引用](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)
-- [资源字典](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.resourcedictionary)
-- [XAML 样式](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/xaml-styles) 
+- [ResourceDictionary 和 XAML 资源引用](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)
+- [资源字典](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary)
+- [XAML 样式](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles) 

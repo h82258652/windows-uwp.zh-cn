@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: efe67707edc5f556301ded466f3f2919ec04873e
-ms.sourcegitcommit: 49a34e957433966ac8d4822b5822f21087aa61c3
+ms.openlocfilehash: 7ab504657ae5e3142eb7db1d9517a013e9aaf5f3
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74153722"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684585"
 ---
 # <a name="color"></a>颜色
 
@@ -219,13 +219,13 @@ Windows Shell 中的主题色算法可生成主题色的浅色和深色底纹。
 
 ## <a name="color-api"></a>颜色 API
 
-多个 API 可用于向应用程序添加颜色。 首先，[**Colors**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.colors) 类可实现广泛的预定义颜色。 可通过 XAML 属性自动访问这些预定义颜色。 在以下示例中，我们创建了一个按钮并将背景色属性和前景色属性设置为 **Colors** 类的成员。
+多个 API 可用于向应用程序添加颜色。 首先，[**Colors**](https://docs.microsoft.com/uwp/api/windows.ui.colors) 类可实现广泛的预定义颜色。 可通过 XAML 属性自动访问这些预定义颜色。 在以下示例中，我们创建了一个按钮并将背景色属性和前景色属性设置为 **Colors** 类的成员。
 
 ```xaml
 <Button Background="MediumSlateBlue" Foreground="White">Button text</Button>
 ```
 
-可使用 XAML 中的 [**Color**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.color) 结构通过 RGB 或十六进制值自行创建颜色。
+可使用 XAML 中的 [**Color**](https://docs.microsoft.com/uwp/api/windows.ui.color) 结构通过 RGB 或十六进制值自行创建颜色。
 
 ```xaml
 <Color x:Key="LightBlue">#FF36C0FF</Color>
@@ -240,9 +240,9 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 “Argb”中的各字母分别代表 Alpha（不透明度）、红、绿和蓝，这四个部分共同组成一种颜色。 每个参数的值可介于 0 至 255 之间。 可选择忽略第一个值，此操作将默认选定 255 或 100% 的透明度。
 
 > [!Note]
-> 如果使用 C++，则必须使用 [**ColorHelper**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.colorhelper) 类创建颜色。
+> 如果使用 C++，则必须使用 [**ColorHelper**](https://docs.microsoft.com/uwp/api/windows.ui.colorhelper) 类创建颜色。
 
-**Color** 最常用作 [**SolidColorBrush**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.solidcolorbrush) 的参数，该参数可用于以单一纯色绘制 UI 元素。 通常在 [**ResourceDictionary**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中定义这些画笔，以便画笔可重复用于多个元素。
+**Color** 最常用作 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.solidcolorbrush) 的参数，该参数可用于以单一纯色绘制 UI 元素。 通常在 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中定义这些画笔，以便画笔可重复用于多个元素。
 
 ```xaml
 <ResourceDictionary>
@@ -267,9 +267,9 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 ### <a name="how-to-use-colorpaletteresources"></a>如何使用 ColorPaletteResources
 
 ColorPaletteResources API 告知系统在何处限定了资源的范围。 ColorPaletteResources 必须采用提供以下三个选项之一的 [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)：
-- 默认
+- 默认值
   * 显示[浅色](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)和[深色](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)主题中的颜色变化
-- 浅色
+- 轻型
   * 显示[浅色](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)主题中的颜色变化
 - 深色
   * 显示[深色](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)主题中的颜色变化

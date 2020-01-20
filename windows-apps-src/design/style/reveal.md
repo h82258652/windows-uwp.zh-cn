@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0810365eeb0023a31862d31213862e2b3bce8db8
-ms.sourcegitcommit: 5687e5340f8d78da95c3ac28304d1c9b8960c47d
+ms.openlocfilehash: 63a7ee8550b72356199645f54b587480275c2bcd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70930347"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685085"
 ---
 # <a name="reveal-highlight"></a>突出显示
 
@@ -23,7 +23,7 @@ ms.locfileid: "70930347"
 
 突出显示是当用户在交互式元素（如命令栏）附近移动指针时突出显示这些元素的灯光效果。 
 
-> **重要的 API**：[RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper) 和 [VisualState 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
+> **重要的 API**：[RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper) 和 [VisualState 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>工作原理
 当指针靠近时，突出显示通过显示元素的容器来引起对交互式元素的注意，如此图所示：

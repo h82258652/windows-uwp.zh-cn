@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 93a81501b524826484111419899675fbb99b86fa
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 38f289b21980e2a77fd8669c39750e9b989aa742
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364754"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684396"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -256,7 +256,7 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 }
 ```
 
-## <a name="change-the-layout-of-items"></a>更改项目的布局
+## <a name="change-the-layout-of-items"></a>更改项的布局
 
 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 所显示的项由 [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) 对象进行排列，该对象可以管理其子元素的大小和位置设置。 与 ItemsRepeater 配合使用时，Layout 对象支持 UI 虚拟化。 提供的布局为 [StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout) 和 [UniformGridLayout](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout)。 默认情况下，ItemsRepeater 使用垂直方向的 StackLayout。
 
@@ -264,7 +264,7 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 [StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout) 可以将元素按水平或垂直方向排列到单行中。
 
-可以通过设置 [Spacing](/en-us/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing) 属性来调整项之间的空间大小。 间距会应用到布局的 [Orientation](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation) 属性所指定的方向。
+可以通过设置 [Spacing](/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing) 属性来调整项之间的空间大小。 间距会应用到布局的 [Orientation](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation) 属性所指定的方向。
 
 ![堆栈布局间距](images/stack-layout.png)
 
@@ -300,7 +300,7 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 以下列表显示了可用值。 这些定义假定默认的 **Orientation** 为 **Horizontal**。
 
-- **无**：行末尾的额外空间保留不用。 这是默认设置。
+- **None**：行末尾的额外空间保留不用。 这是默认设置。
 - **Fill**：增加项的宽度，直至用完可用空间（如果为垂直方向的布局，则增加项的高度）。
 - **Uniform**：按纵横比增加项的宽度和高度，直至用完可用空间（如果为垂直方向的布局，则高度和宽度互换）。
 
@@ -312,7 +312,7 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 以下列表显示了可用值。 这些定义假定默认的 **Orientation** 为 **Horizontal**。
 
-- **开始**：项与行开头对齐。 行末尾的额外空间保留不用。 这是默认设置。
+- **Start**：项与行开头对齐。 行末尾的额外空间保留不用。 这是默认设置。
 - **Center**：项在行中心对齐。 额外空间在行的开头和末尾均匀分布。
 - **End**：项与行末尾对齐。 行开头的额外空间保留不用。
 - **SpaceAround**：项均匀分布。 在每个项的前面和后面添加的空间大小相同。
@@ -642,6 +642,12 @@ public sealed class MediaCollectionView : Control
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+
+<Page.Resources>
+    <muxc:StackLayout x:Key="MyGroupLayout"/>
+    <muxc:StackLayout x:Key="MyItemLayout" Orientation="Horizontal"/>
+</Page.Resources>
+
 <ScrollViewer>
   <muxc:ItemsRepeater ItemsSource="{x:Bind AppNotifications}"
                       Layout="{StaticResource MyGroupLayout}">
@@ -650,7 +656,7 @@ public sealed class MediaCollectionView : Control
         <!-- Group -->
         <StackPanel>
           <!-- Header -->
-          TextBlock Text="{x:Bind AppTitle}"/>
+          <TextBlock Text="{x:Bind AppTitle}"/>
           <!-- Items -->
           <muxc:ItemsRepeater ItemsSource="{x:Bind Notifications}"
                               Layout="{StaticResource MyItemLayout}"
@@ -663,10 +669,11 @@ public sealed class MediaCollectionView : Control
   </muxc:ItemsRepeater>
 </ScrollViewer>
 ```
-
-以下示例演示某个应用的布局。该应用有各种可以随用户首选项变化的类别，这些类别以水平滚动列表形式呈现，如下所示。
+下图显示了使用以上示例作为指南创建的基本布局。
 
 ![ItemsRepeater 的嵌套式布局](images/items-repeater-nested-layout.png)
+
+下一示例演示某个应用的布局。该应用的各种类别可以随用户首选项变化，并且以水平滚动列表形式呈现。 此示例的布局也如上图所示。
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -777,7 +784,7 @@ ItemsRepeater 自动确保其项（不管是否已虚拟化）的默认 Tab 键�
 > [!NOTE]
 > ItemsRepeater 不会自动记住上一个聚焦项。  这意味着，当用户使用 Shift+Tab 时，系统可能会将其转到上一个实现的项。
 
-### <a name="announcing-item-x-of-y-in-screen-readers"></a>在屏幕阅读器中读出“_Y_ 的项 _X_”
+### <a name="announcing-item-_x_-of-_y_-in-screen-readers"></a>在屏幕阅读器中读出“_Y_ 的项 _X_”
 
 你需要管理相应自动化属性（例如 **PositionInSet** 和 **SizeOfSet** 的值）的设置，并确保这些属性在用户对项执行添加、移动、删除等操作时保持最新状态。
 

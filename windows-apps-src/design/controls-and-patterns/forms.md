@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: ff071a2a98c533ad7c089b28165f026de00ba68f
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: e1a5b192ed57d3962b6ba4cbef69e3663bc1e2ec
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319097"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683990"
 ---
 # <a name="forms"></a>窗体
 表单是一组控件，用于收集和提交来自用户的数据。 表单通常用于设置页面、调查、创建帐户，等等。 
@@ -58,7 +58,7 @@ ms.locfileid: "67319097"
 若要简化用户体验，确保用户能够进行正确的输入，请在设计表单的布局时考虑以下建议： 
 
 ### <a name="labels"></a>标签
-[标签](labels.md)应该左对齐并放置在输入控件上方。 许多控件都有用于显示标签的内置 Header 属性。 对于没有 Header 属性的控件，或要为多组控件添加标签，你可以改用 [TextBlock](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
+[标签](labels.md)应该左对齐并放置在输入控件上方。 许多控件都有用于显示标签的内置 Header 属性。 对于没有 Header 属性的控件，或要为多组控件添加标签，你可以改用 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
 
 在[针对辅助功能进行设计](../accessibility/accessibility.md)时，请将所有的单个控件和控件组进行标记，使用户和屏幕阅读器都能清楚地看到。 
 
@@ -108,7 +108,7 @@ ms.locfileid: "67319097"
 输入控件是 UI 元素，允许用户将信息输入表单中。 下面列出了一些可以添加到表单中的常用控件，并介绍了何时使用它们。
 
 ### <a name="text-input"></a>文本输入
-控件 | 将 | 示例
+控件 | 用途 | 示例
  - | - | -
 [TextBox](text-box.md) | 捕获一个或多个文本行 | 名称、自由表单响应或反馈
 [PasswordBox](password-box.md) | 通过隐藏字符来收集专用数据 | 密码、社会安全号码 (SSN)、PIN、信用卡信息 
@@ -116,7 +116,7 @@ ms.locfileid: "67319097"
 [RichEditBox](rich-edit-box.md) | 使用格式化文本、超链接和图像编辑文本文件 | 在应用中上传文件，然后进行预览和编辑
 
 ### <a name="selection"></a>选择
-控件 | 将 | 示例
+控件 | 用途 | 示例
 - | - | - 
 | [CheckBox](checkbox.md) | 选择或取消选择一个或多个操作项 | 同意条款和条件，添加可选项，选择所有适用的内容
 [RadioButton](radio-button.md) | 从两个或多个选项中选择一个选项 | 选取类型、送货方式等
@@ -125,21 +125,21 @@ ms.locfileid: "67319097"
 > **注意**：如果有五个或更多个选择项，请使用列表控件。
 
 ### <a name="lists"></a>列表
-控件 | 将 | 示例
+控件 | 用途 | 示例
 - | - | -
 [ComboBox](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | 最初处于紧凑状态，可展开以显示可选择项的列表 | 从项（例如州或国家/地区）的长列表中进行选择
 [ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | 对项进行分类并为之分配组标头、拖放项、规划内容以及重新对项进行排序 | 分级选项
 [GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | 排列和浏览基于图像的集合 | 选取照片、颜色、显示主题
 
 ### <a name="numeric-input"></a>数字输入
-控件 | 将 | 示例
+控件 | 用途 | 示例
 - | - | -
 [滑块](slider.md) | 从一系列相邻的数字值中选择一个数字 | 百分比、音量、播放速度
 [评级](rating.md) | 使用星号评级 | 客户反馈
 
 ### <a name="date-and-time"></a>日期和时间
 
-控件 | 将 
+控件 | 用途 
 - | - 
 [CalendarView](calendar-view.md) | 从始终可见的日历中选取一个日期或日期范围 
 [CalendarDatePicker](calendar-date-picker.md) | 从上下文日历中选取一个日期 
@@ -152,7 +152,7 @@ ms.locfileid: "67319097"
 如需更多复杂的自定义 UI 控件，请查看 [Telerik](https://www.telerik.com/)、[SyncFusion](https://www.syncfusion.com/uwp-ui-controls)、[DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)、[Infragistics](https://www.infragistics.com/products/universal-windows-platform)、[ComponentOne](https://www.componentone.com/Studio/Platform/UWP)、[ActiPro](https://www.actiprosoftware.com/products/controls/universal) 等公司提供的 UWP 资源。
 
 ## <a name="one-column-form-example"></a>单列表单示例
-以下示例使用 Acrylic 的[大概/细节](master-details.md)[列表视图](lists.md)和 [NavigationView](navigationview.md) 控件。
+以下示例使用亚克力的[大纲/细节](master-details.md)[列表视图](lists.md)和 [NavigationView](navigationview.md) 控件。
 ![另一表单示例的屏幕截图](images/FormExample2.png)
 ```xaml
 <StackPanel>

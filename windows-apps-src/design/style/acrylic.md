@@ -10,20 +10,20 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ed9feb6edae58b906d4f37f0e1f011d4fa42ee9
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 55d8ed5fa1e3c4a7ffffaf47583eca3796f081cf
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867735"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683980"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
 ![主图](images/header-acrylic.svg)
 
-Acrylic 是一种[画笔](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush)，用于创建半透明纹理。 你可以将 Acrylic 应用到应用图面中，并帮助构建视觉层次结构。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+Acrylic 是一种[画笔](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush)，用于创建半透明纹理。 你可以将 Acrylic 应用到应用图面中，并帮助构建视觉层次结构。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
 
-> **重要的 API**：[AcrylicBrush 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush)、[背景属性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background)
+> **重要的 API**：[AcrylicBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.acrylicbrush)、[背景属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.Background)
 
 :::row:::
     :::column:::

@@ -6,12 +6,12 @@ ms.date: 01/25/2017
 ms.topic: article
 keywords: Windows 10, uwp, 第一个应用, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: f386de7ebf9aae2f49a2709d8c1c8ce2595cbf1d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d0870212df4deb7f12f790107ec988fac3eb69ab
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260527"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685152"
 ---
 # <a name="create-your-first-app"></a>创建你的第一个应用
 
@@ -61,7 +61,7 @@ ms.locfileid: "74260527"
 将 JavaScript 和 HTML 技能扩展到 UWP 之外以创建 Web 应用，或使用 WebVR 在 Web 上探索虚拟现实
 
 * [Microsoft Edge 开发人员文档](https://docs.microsoft.com/microsoft-edge/)
-* [将 WebVR 与 Microsoft Edge 结合使用](https://docs.microsoft.com/en-us/microsoft-edge/webvr/)
+* [将 WebVR 与 Microsoft Edge 结合使用](https://docs.microsoft.com/microsoft-edge/webvr/)
 
 Web 应用可以作为托管的 Web 应用轻松地打包到 UWP 框架中，并且可在 Microsoft Store 中进行升级。
 

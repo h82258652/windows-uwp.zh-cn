@@ -6,12 +6,12 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1c2e6ee84b143ea13aa3e804f288e4dd9e0becec
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d26d88377aec4306ad0711724760ec13e6568d85
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258853"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684759"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>面向开发人员的 Windows 10 内部版本 17763 中的新增功能
 
@@ -21,7 +21,7 @@ Windows 10 内部版本 17763（又称 2018 年 10 月更新或版本 1809）与
 
 ## <a name="design--ui"></a>设计和 UI
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 应用图标和徽标 | [应用图标和徽标页面](../design/style/app-icons-and-logos.md)已经过重新编写，现在显示最新的 Visual Studio 图标工具，并提供有关向 Microsoft Store 中的应用列表添加图像的信息。
 设计登陆页面 | [已更新的设计登陆页面](https://developer.microsoft.com/windows/apps/design)提供对 UWP 设计区域的简要概述以及有关 Fluent Design 最新新增功能的信息。
@@ -33,12 +33,12 @@ Fluent Design 中的动作 | 在 Fluent Design System 中，动作的使用方�
 页面过渡 | [页面过渡](../design/motion/page-transitions.md)可将用户导航到应用中的各个页面。 它们帮助用户了解自己在导航层次结构中的位置，并提供有关页面之间关系的反馈。
 文本缩放 | 新的[文本缩放指南](../design/input/text-scaling.md)介绍了如何更新应用程序以适应新的文本缩放行为，通过该缩放行为，用户可跨操作系统和单个应用程序来更改相对字号。 用户不必使用放大镜应用（通常只放大屏幕某个区域内的全部内容，并带来其自身的可用性问题）、更改显示分辨率或依赖 DPI 缩放（根据显示器和典型观看距离调整所有内容的大小），而是可以快速访问设置，只调整文本大小，调整范围为 100%（默认大小）至最高 225%。
 工具包 | [Adobe XD 和 Adobe Illustrator 工具包](../design/downloads/index.md)已更新，添加了新功能。 这些设计工具包提供用于设计 UWP 应用的控件和布局模板。
-UI 命令 | [UWP 命令基础结构](../design/basics/commanding-basics.md)更新包括更好地封装命令对象（行为、标签、图标、键盘快捷方式、访问密钥和描述）和一组标准的常用命令（包括剪切、复制、粘贴、退出等），因而无需手动设置这些属性。 </br> 新的 [XamlUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.xamluicommand) 类提供了一个基类，用于定义在调用时执行操作的交互式 UI 元素的命令行为。 这是 [StandardUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.standarduicommand) 的父类，StandardUICommand 公开了一组具有预定义属性的标准平台命令。 
+UI 命令 | [UWP 命令基础结构](../design/basics/commanding-basics.md)更新包括更好地封装命令对象（行为、标签、图标、键盘快捷方式、访问密钥和描述）和一组标准的常用命令（包括剪切、复制、粘贴、退出等），因而无需手动设置这些属性。 </br> 新的 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) 类提供了一个基类，用于定义在调用时执行操作的交互式 UI 元素的命令行为。 这是 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 的父类，StandardUICommand 公开了一组具有预定义属性的标准平台命令。 
 Windows UI 库 | [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)是一组 NuGet 程序包，提供用于 UWP 应用的控件和其他用户界面元素。 这些程序包还与 Windows 10 的早期版本兼容，因此即使用户没有最新的操作系统版本，应用也可以正常工作。 </br> 有关 Windows UI 库中内容的详细信息，请参阅 [NuGet 程序包中包含的 API 命名空间列表](https://docs.microsoft.com/uwp/api/overview/winui/)。
 
 ## <a name="develop-windows-apps"></a>开发 Windows 应用
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 条形码扫描仪 | [条码扫描仪](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner)文档已经过重新组织，改进了更多细节和代码片段。 我们还添加了一个新主题，即[获取并了解条形码数据](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner-scan-data)，其中解释了如何获取和使用条形码扫描仪中的数据。
 C++/WinRT | [C++/ WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index) 包含许多新功能、更改和针对此版本的修补程序。 还包含新的函数和基类，用于支持你实现自己的[集合属性和集合类型](/windows/uwp/cpp-and-winrt-apis/collections)；并且现在可以结合使用 [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) XAML 标记扩展和 C++/ WinRT 运行时类 （有关代码示例，请参阅[数据绑定概述](/windows/uwp/data-binding/data-binding-quickstart)）。 有关此版本中新增内容和更改内容的完整描述，请参阅 [C++/WinRT 中的新增功能](../cpp-and-winrt-apis/news.md)。</br></br>其他新 C++/WinRT 内容包括：[XAML 自定义控件](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl)；[创作 COM 组件](/windows/uwp/cpp-and-winrt-apis/author-coclasses)；[值类别](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories)；以及[强引用和弱引用](../cpp-and-winrt-apis/weak-references.md)。
@@ -57,7 +57,7 @@ Windows Mixed Reality | 如果显示硬件支持，开发人员现在可以请�
 
 ## <a name="iot-core"></a>IoT 核心版
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 AssignedAccessSettings | 使用 [AssignedAccessSettings 类](https://docs.microsoft.com/uwp/api/windows.system.userprofile.assignedaccesssettings)，可调用不同的方法和属性来访问用户针对特定设备已分配访问设置。
 默认应用概述 | [Windows 10 IoT 核心版默认应用](https://docs.microsoft.com/windows/iot-core/develop-your-app/iotcoredefaultapp)已更新，添加了新的特性和功能（例如天气、墨迹书写和音频）。
@@ -69,18 +69,18 @@ Windows.System.Update | 新的 [Windows.System.Update 命名空间](https://docs
 
 ## <a name="web-development"></a>Web 开发
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 EdgeHTML 18 | Windows 10 2018 年 10 月更新附带 [EdgeHTML 18](https://docs.microsoft.com/microsoft-edge/dev-guide) 更新，这是对 Microsoft Edge 浏览器以及用于 UWP 应用的 JavaScript 引擎的最新更新。 EdgeHTML 18 对 Web 身份验证 API、新 WebView 控件功能等提供新式扩展支持！ 在工具方面，EdgeHTML 18 提供新的 WebDriver 功能和自动更新，并增强了 Edge DevTools 和 Edge DevTools 协议。 有关所有详细信息，请查看 [What’s new in EdgeHTML 18](https://docs.microsoft.com/microsoft-edge/dev-guide)（EdgeHTML 18 的新增功能）和 [DevTools in the latest Windows 10 update (EdgeHTML 18)](https://docs.microsoft.com/microsoft-edge/devtools-guide/whats-new)（最新 Windows 10 更新中的 DevTools (EdgeHTML 18)）。
-渐进式 Web 应用 | Windows 10 JavaScript 应用（在 WWAHost.exe 进程中运行的 Wed 应用）现在支持可选的[每应用程序后台脚本](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide#progressive-web-apps)，该脚本在激活任何视图之前启动，并在进程持续期间运行  。 使用此应用，可以监视和修改导航、跨导航跟踪状态、监视导航错误，以及在激活视图之前运行代码。 如果指定为[应用清单](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest)中的 [`StartPage`](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema2010-v2/element-application)，每个应用视图（窗口）都作为新 [`WebUIView`](https://docs.microsoft.com/en-us/uwp/api/windows.ui.webui.webuiview)类的实例向脚本公开，提供与常规 (Win32) [WebView](https://docs.microsoft.com/en-us/uwp/api/windows.web.ui.iwebviewcontrol) 相同的事件、属性和方法。
+渐进式 Web 应用 | Windows 10 JavaScript 应用（在 WWAHost.exe 进程中运行的 Wed 应用）现在支持可选的[每应用程序后台脚本](https://docs.microsoft.com/microsoft-edge/dev-guide#progressive-web-apps)，该脚本在激活任何视图之前启动，并在进程持续期间运行  。 使用此应用，可以监视和修改导航、跨导航跟踪状态、监视导航错误，以及在激活视图之前运行代码。 如果指定为[应用清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)中的 [`StartPage`](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema2010-v2/element-application)，每个应用视图（窗口）都作为新 [`WebUIView`](https://docs.microsoft.com/uwp/api/windows.ui.webui.webuiview)类的实例向脚本公开，提供与常规 (Win32) [WebView](https://docs.microsoft.com/uwp/api/windows.web.ui.iwebviewcontrol) 相同的事件、属性和方法。
 Web API 扩展 | [旧版 Microsoft API 扩展](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions)列表已添加到 Mozilla 开发人员网络文档中，用于进行跨浏览器 Web 开发。 这些 API 扩展是 Internet Explorer 或 Microsoft Edge 所独有的，补充了 MDN Web 文档中有关兼容性和浏览器支持的现有信息。也可使用旧版 Microsoft [CSS 扩展](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions)和 [JavaScript 扩展](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions)，并且可在 [Visual Studio Code](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn) 中直接显示的 MDN 中找到大量 Web API 信息。
 WebVR | 我们已对 [WebVR 开发人员指南](https://docs.microsoft.com/microsoft-edge/webvr/)进行了重大更新，其中包括完全重新设计了主页并重新组织了目录。 我们编写了多个新主题，包括： </br> * [什么是 WebVR？](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr) 介绍 WebVR 是什么、使用原因，以及如何开始开发它。 </br> * [渐进式 Web 应用中的 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas)：了解如何将 WebVR 添加到渐进式 Web 应用 (PWA)。 </br> * [WebView 中的 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-webview)：了解如何将 WebVR 添加到 Windows 10 应用程序中的 WebView 控件。 </br> * [WebVR 演示](https://docs.microsoft.com/microsoft-edge/webvr/demos)：请使用 Microsoft Edge 和 Windows Mixed Reality 沉浸式头戴显示设备来查看 WebVR 演示。
 
 ## <a name="publish--monetize-windows-apps"></a>发布 Windows 应用并实现盈利
 
-功能 | 描述
+功能 | 说明
  :------ | :------
-MSIX | [MSIX](https://docs.microsoft.com/windows/msix/overview) 是一种新的 Windows 应用包格式，能为所有 Windows 应用提供现代打包体验。 这种开源的 MSIX 格式既保留了已有程序包的功能，又具有现代部署的特色。
+MSIX | [MSIX](https://docs.microsoft.com/windows/msix/overview) 是一种新的 Windows 应用包格式，能为所有 Windows 应用提供现代打包体验。 这种开源的 MSIX 格式既保留了已有程序包的功能，又具有新式部署的功能。
 MSIX 打包工具 | 即使你无权访问其源代码，也可使用新的 [MSIX 打包工具](https://docs.microsoft.com/windows/msix/mpt-overview) 以 MSIX 格式重新打包现有桌面应用程序。 它可以在命令行中运行，也可以通过其交互式 UI 运行。
 对 MSIX 的 Desktop App Converter 支持 | 通过使用 `-MakeMSIX` 参数，可使用 [Desktop App Converter](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) 来输出 MSIX 包。
 对 MSIX 的 MakeAppx.exe 工具支持 | 可以使用 MakeAppx.exe 工具为 UWP 应用或传统桌面应用程序创建 MSIX 包。 此工具包含在 Windows 10 SDK 中，并且可以从命令提示符或脚本文件中使用。 </br> 对于 UWP 应用，请参阅[使用 MakeAppx.exe 工具创建应用包](/windows/msix/package/create-app-package-with-makeappx-tool)。 </br> 对于桌面应用程序，请参阅[手动打包桌面应用程序](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion)。

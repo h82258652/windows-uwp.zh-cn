@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 七月
 ms.date: 07/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c92de1901c9cc67a30f495e34289bac5d7d2b94
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: f4e9ce391aa485e681fc198e14fe3374edb72aa1
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258799"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684710"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>2018 年 7 月 Windows 开发人员文档中的新增功能
 
@@ -29,7 +29,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 请参阅我们的 PWA 指南，完成以下操作：
 
 * [将简单的 Web 应用生成为 PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started)
-* [使用 Windows 运行时增强 PWA](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/windows-features)
+* [使用 Windows 运行时增强 PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
 * [将你的 PWA 发布到 Microsoft Store](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/microsoft-store)
 
 ### <a name="notepad"></a>记事本

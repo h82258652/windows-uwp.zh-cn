@@ -5,12 +5,12 @@ keywords: XAML, UWP, 入门
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 71c04725fed4ab9d5d2158f2f892af038aefc8fd
-ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
+ms.openlocfilehash: b9c5348063f277d4d76cbea120689328bcc217b1
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72680752"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684155"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教程：创建自适应布局
 
@@ -30,7 +30,7 @@ ms.locfileid: "72680752"
 
 * Visual Studio 2019：[下载 Visual Studio 2019 Community（免费）](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
 * Windows 10 SDK（10.0.15063.468 或更高版）：[下载最新的 Windows SDK（免费）](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* Windows 移动版模拟器：[下载 Windows 10 移动版模拟器（免费）](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
+* Windows 移动版模拟器：[下载 Windows 10 移动版模拟器（免费）](https://developer.microsoft.com/windows/downloads/sdk-archive)
 
 ## <a name="part-0-get-the-starter-code-from-github"></a>第 0 部分：从 github 获取起始代码
 

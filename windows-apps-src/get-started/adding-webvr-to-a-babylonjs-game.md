@@ -5,25 +5,18 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: webvr, edge, web 开发, babylon, babylonjs, babylon.js, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f212e4e06035134b0ac5b5ea69381ed0d985783
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: ff350f8ce08f566b8c95c3c46faad330923e4b2e
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321164"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685201"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>将 WebVR 支持添加到 3D Babylon.js 游戏
 
 如果你已使用 Babylon.js 创建了 3D 游戏，并认为它可能在虚拟现实 (VR) 中看起来很棒，请按照此教程中的几个简单步骤将这一想法变为现实。
 
-我们将 WebVR 支持添加到此处显示的游戏。 继续操作并插入 Xbox 控制器来尝试！
-
-
-<iframe height='300' scrolling='no' title='使用 Babylon.GUI 的 Babylon.js 恐龙游戏' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/wrOvoj/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>请参阅 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/wrOvoj/'>使用 Babylon.GUI 的 Babylon.js 恐龙游戏</a>，来自 Microsoft Edge 文档 (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>)（位于 <a href='https://codepen.io'>CodePen</a> 上）。
-</iframe>
-
-这是一个 3D 游戏，在平面屏幕上效果很好，但在 VR 中将如何？
-在此教程中，我们将演练实现此想法并使用 WebVR 运行的几个步骤。 我们将使用可以在 Microsoft Edge 中利用 WebVR 附加支持的 [Windows Mixed Reality](https://developer.microsoft.com/mixed-reality) 耳机。 我们将这些更改应用于游戏后，你还可以期待在支持 WebVR 的其他浏览器/耳机组合中使用。
+在此教程中，我们将演练使用 WebVR 启动并运行 3D 游戏的几个步骤。 我们将使用可以在 Microsoft Edge 中利用 WebVR 附加支持的 [Windows Mixed Reality](https://developer.microsoft.com/mixed-reality) 耳机。 我们将这些更改应用于游戏后，你还可以期待在支持 WebVR 的其他浏览器/耳机组合中使用。
 
 
 
@@ -31,13 +24,13 @@ ms.locfileid: "67321164"
 
 - 文本编辑器（如 [Visual Studio Code](https://code.visualstudio.com/download)）
 - 插入到你的计算机的 Xbox 控制器
-- Windows 10 Creators 更新
-- 达到[运行 Windows Mixed Reality 的最低规格要求](https://developer.microsoft.com/en-us/windows/mixed-reality/immersive_headset_setup)的计算机
+- Windows 10 创意者更新
+- 达到[运行 Windows Mixed Reality 的最低规格要求](https://developer.microsoft.com/windows/mixed-reality/immersive_headset_setup)的计算机
 - Windows Mixed Reality 设备（可选） 
 
 
 
-## <a name="getting-started"></a>即刻体验
+## <a name="getting-started"></a>入门
 
 最简单的入门方法是访问 [Windows-tutorials-web GitHub 存储库](https://github.com/Microsoft/Windows-tutorials-web)，按绿色“克隆或下载”按钮，然后选择“在 Visual Studio 中打开”   。
 
@@ -135,7 +128,7 @@ navigator.getVRDisplays().then(function (displays) {
 有了 Babylon.js，可以使用 [`WebVRFreeCamera`](https://doc.babylonjs.com/api/classes/babylon.webvrfreecamera) 快速添加 WebVR。 此摄像头可以采取键盘输入，支持使用 VR 耳机来控制你的“头”旋转。
 
 
-### <a name="step-1-checking-for-headsets"></a>第 1 步：检查耳机
+### <a name="step-1-checking-for-headsets"></a>步骤 1：检查耳机
 
 对于我们的回退摄像头，我们将使用原始游戏中当前使用的 [`UniversalCamera`](https://doc.babylonjs.com/api/classes/babylon.universalcamera)。
 
@@ -205,10 +198,7 @@ navigator.getVRDisplays().then(function (displays) {
 如果我们使用插入的耳机和游戏控制器打开 index.html 文件，左键单击蓝色游戏窗口会将游戏切换到 VR 模式  ！ 继续游戏，戴上你的耳机，一试效果。 
 
 
-<iframe height='300' scrolling='no' title='使用 Babylon.GUI 的 Babylon.js 恐龙游戏 - WebVR' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/RjgpJd/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>请参阅 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/RjgpJd/'>使用 Babylon.GUI 的 Babylon.js 恐龙游戏 - WebVR</a>，来自 Microsoft Edge 文档 (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>)（位于 <a href='https://codepen.io'>CodePen</a> 上）。
-</iframe>
-
 
 ## <a name="conclusion"></a>结论
 
-祝贺你！ 你现在已经完成了拥有 WebVR 支持的 Babylon.js 游戏的构建。 从这里，你可以利用所学到的知识构建更好的游戏，或继续完善这个游戏。
+恭喜！ 你现在已经完成了拥有 WebVR 支持的 Babylon.js 游戏的构建。 从这里，你可以利用所学到的知识构建更好的游戏，或继续完善这个游戏。

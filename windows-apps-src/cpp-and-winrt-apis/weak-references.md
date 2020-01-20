@@ -1,17 +1,17 @@
 ---
 description: Windows 运行时是引用在其中占有重要地位的一个系统；在这样的系统中，了解强引用与弱引用的意义和区别非常重要。
-title: C++/WinRT 中的弱引用
+title: C++/WinRT 中的强引用和弱引用
 ms.date: 05/16/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 强, 弱, 引用
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3ad6bb9a98b0fe2a699580001698740e44cea14f
-ms.sourcegitcommit: cba3ba9b9a9f96037cfd0e07d05bd4502753c809
+ms.openlocfilehash: 781b63f9f32a0fdf7edee6479b60fd82822cc745
+ms.sourcegitcommit: e1bd1d9b2598e40b5d788338a07e12f4e4c58495
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2019
-ms.locfileid: "67870322"
+ms.lasthandoff: 01/01/2020
+ms.locfileid: "75585390"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>C++/WinRT 中的强引用和弱引用
 

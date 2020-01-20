@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: f416db0266c4ab2ec959c926c0bf0b676b66dd95
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 824476cb098d0ff561fca67497a896586c70b8fb
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258709"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681958"
 ---
 # <a name="reveal-focus"></a>显示焦点
 
@@ -74,7 +74,7 @@ ms.locfileid: "74258709"
 
 在开始自定义之前，最好先对构成“显示焦点”的组件多一些了解。
 
-默认的“显示焦点”视觉对象分为三部分：主边框、辅助边框和显示明亮辉光。 主边框为 **2px** 粗，在辅助边框的*外部*周围运行。 辅助边框为 **1px** 粗，在主边框的*内部*周围运行。 “显示焦点”明亮辉光的粗细与主边框的粗细成比例，在主边框的“外部”周围运行  。
+默认的“显示焦点”视觉对象分为三部分：主边框、辅助边框和显示明亮辉光。 主边框为 2px 粗，在辅助边框的“外部”周围运行   。 辅助边框为 1px 粗，在主边框的“内部”周围运行   。 “显示焦点”明亮辉光的粗细与主边框的粗细成比例，在主边框的“外部”周围运行  。
 
 除静态元素外，“显示焦点”视觉对象还采用动画灯光，在静止状态它会跳动，当移动焦点时它会朝着焦点方向移动。
 
@@ -108,7 +108,7 @@ ms.locfileid: "74258709"
 
 ## <a name="customize-the-color"></a>自定义颜色
 
-若要更改显示焦点视觉对象的颜色，请使用 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) 和 [FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) 属性。
+若要更改显示焦点视觉对象的颜色，请使用 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) 和 [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) 属性。
 
 | 属性 | 默认资源 | 默认资源值 |
 | ---- | ---- | --- | 

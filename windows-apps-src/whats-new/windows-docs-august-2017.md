@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 1708
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b4cc5f10ba23c942851f34ef64afd887d265dba1
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 824cdb74a809ae3f9ae2ed202a9889535021f711
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259772"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684725"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>2017 年 8 月 Windows 开发人员文档中的新增功能
 
@@ -57,7 +57,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="getting-started-with-point-of-service"></a>服务点入门
 
-我们添加了帮助你[了解服务点设备](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-get-started)的新指南。 它涵盖的主题包括设备枚举、检查设备功能、声明设备和设备共享等。 
+我们添加了帮助你[了解服务点设备](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-get-started)的新指南。 它涵盖的主题包括设备枚举、检查设备功能、声明设备和设备共享等。 
 
 ### <a name="xbox-live"></a>Xbox Live
 
@@ -73,7 +73,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="mixed-reality"></a>混合现实
 
-发布了适用于 [Microsoft HoloLens 课程 250](https://developer.microsoft.com/en-us/windows/mixed-reality/mixed_reality_250) 的一系列新的教程视频。 如果你已安装工具并熟悉开发混合现实的基础知识，请查看这些视频课程以获取关于跨混合现实设备创建共享体验的信息。
+发布了适用于 [Microsoft HoloLens 课程 250](https://developer.microsoft.com/windows/mixed-reality/mixed_reality_250) 的一系列新的教程视频。 如果你已安装工具并熟悉开发混合现实的基础知识，请查看这些视频课程以获取关于跨混合现实设备创建共享体验的信息。
 
 ### <a name="narrator-and-dev-mode"></a>讲述人和开发人员模式
 

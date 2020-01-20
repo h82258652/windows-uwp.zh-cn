@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Windows 10 中的易访问性, 易访问性, 构建易访问的 win32 应用, 构建易访问的 UWP 应用, 构建易访问的 WPF 应用, 构建易访问的 WinForms 应用
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: 76bbd3f0e04bbb2f729ad0950bae190b2fffb6ac
-ms.sourcegitcommit: 6e7665b457ec4585db19b70acfa2554791ad6e10
+ms.openlocfilehash: fdb1092139602edd00086e17ff4dc7a27cf361dd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987189"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681888"
 ---
 # <a name="accessibility-in-windows-10"></a>Windows 10 中的易访问性
 
@@ -33,7 +33,7 @@ ms.locfileid: "70987189"
    :::column:::
       ![通用 Windows 平台 (UWP)](images/platform-uwp.png)
 
-      **通用 Windows 平台 (UWP)**
+      通用 Windows 平台 (UWP) 
 
       在新式平台上针对任何 Windows 设备（包括电脑、手机、Xbox One、HoloLens 等）上的 Windows 10 应用程序和游戏开发易访问的应用和工具，并将它们发布到 Microsoft Store。
 
@@ -43,7 +43,7 @@ ms.locfileid: "70987189"
 
       [辅助功能测试](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-testing)
 
-      [应用商店中的辅助功能](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
+      [Microsoft Store 中的辅助功能](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
    :::column-end:::
    :::column:::
       ![Win32 平台应用](images/platform-win32.png)
@@ -135,7 +135,7 @@ ms.locfileid: "70987189"
 
 :::row:::
    :::column:::
-      [代码示例浏览器](https://docs.microsoft.com/en-us/samples/browse/)
+      [代码示例浏览器](https://docs.microsoft.com/samples/browse/)
 
       新示例浏览器替代了 MSDN 代码库。
    :::column-end:::

@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e454bed6dc1a9429fe313e305dc9ba818d86e765
-ms.sourcegitcommit: 802699ce8d21e7fa4639f0b19b1c5b6c46c2c727
+ms.openlocfilehash: a3cd8a0c988df08047b10911a4d4f55e3ba1cb6e
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68835638"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684103"
 ---
 # <a name="buttons"></a>按钮
 
@@ -28,7 +28,7 @@ ms.locfileid: "68835638"
 
 [Extensible Application Markup Language (XAML)](../../xaml-platform/xaml-overview.md) 框架提供了一个标准按钮控件，以及多个专用的按钮控件。
 
-控件 | 描述
+控件 | 说明
 ------- | -----------
 [Button](/uwp/api/windows.ui.xaml.controls.button) | 用于启动即时操作的按钮。 可以与 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件或 [Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) 绑定配合使用。
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | 一种按钮，在被按下时会持续引发 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。
@@ -129,7 +129,7 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 你通常无法处理 **Button** 对象上的低级别 [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件，因为它具有 **Click** 行为。 有关详细信息，请参阅[事件和路由事件概述](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)。
 
-可以通过更改 [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode) 属性来更改按钮引发 **Click** 事件的方式。 **ClickMode** 默认值为 **Release**，但你也可以将按钮的 **ClickMode** 值设置为 **Hover** 或 **Press**。 如果 **ClickMode** 为 **Hover**，则无法使用键盘或触控引发 **Click** 事件。
+可以通过更改 [ClickMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.clickmode) 属性来更改按钮引发 **Click** 事件的方式。 **ClickMode** 默认值为 **Release**，但你也可以将按钮的 **ClickMode** 值设置为 **Hover** 或 **Press**。 如果 **ClickMode** 为 **Hover**，则无法使用键盘或触控引发 **Click** 事件。
 
 
 ### <a name="button-content"></a>按钮内容
@@ -217,7 +217,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-drop-down-button"></a>创建下拉按钮
 
-> **DropDownButton** 需要 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)或 Windows 10 版本 1809（SDK 17763）或更高版本。 若要下载最新 SDK，请参阅 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)；若要下载较早的 SDK，请参阅 [Windows SDK 和模拟器存档](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)。
+> **DropDownButton** 需要 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)或 Windows 10 版本 1809（SDK 17763）或更高版本。 若要下载最新 SDK，请参阅 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)；若要下载较早的 SDK，请参阅 [Windows SDK 和模拟器存档](https://developer.microsoft.com/windows/downloads/sdk-archive)。
 
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) 是一个按钮，它显示一个 V 形图标作为视觉指示器，表明其附加的浮出控件包含更多选项。 其行为与包含浮出控件的标准 **Button** 控件相同，仅外观存在差异。
 
@@ -278,7 +278,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 ## <a name="create-a-split-button"></a>创建拆分按钮
 
  > [!IMPORTANT]
- > **SplitButton** 需要 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)或 Windows 10 版本 1809（SDK 17763）或更高版本。 若要下载最新 SDK，请参阅 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)；若要下载较早的 SDK，请参阅 [Windows SDK 和模拟器存档](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)。
+ > **SplitButton** 需要 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)或 Windows 10 版本 1809（SDK 17763）或更高版本。 若要下载最新 SDK，请参阅 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)；若要下载较早的 SDK，请参阅 [Windows SDK 和模拟器存档](https://developer.microsoft.com/windows/downloads/sdk-archive)。
 
 [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) 控件有两个可以分别调用的部分。 一个部分的行为类似于标准按钮，可以调用即时操作。 另一个部分调用浮出控件，该控件包含可供用户选择的其他选项。
 
@@ -388,7 +388,7 @@ public sealed partial class MainPage : Page
 ## <a name="create-a-toggle-split-button"></a>创建切换式拆分按钮
 
 > [!NOTE]
-> **ToggleSplitButton** 需要 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)或 Windows 10 版本 1809（SDK 17763）或更高版本。 若要下载最新 SDK，请参阅 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)；若要下载较早的 SDK，请参阅 [Windows SDK 和模拟器存档](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)。
+> **ToggleSplitButton** 需要 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)或 Windows 10 版本 1809（SDK 17763）或更高版本。 若要下载最新 SDK，请参阅 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)；若要下载较早的 SDK，请参阅 [Windows SDK 和模拟器存档](https://developer.microsoft.com/windows/downloads/sdk-archive)。
 
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) 控件有两个可以分别调用的部分。 一个部分的行为类似于可以打开或关闭的切换按钮。 另一个部分调用浮出控件，该控件包含可供用户选择的其他选项。
 

@@ -5,12 +5,12 @@ keywords: 托管 Web 应用, HWA, REST API, 单页应用, SPA
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f5195cc3ed84116797c0b424a637c255b082386
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: b9a6b80034dc8272226c9563960079434dff8e41
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281864"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684786"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>创建具有 REST 后端的单页 Web 应用
 
@@ -32,7 +32,7 @@ ms.locfileid: "72281864"
 
  - [Visual Studio Code](https://code.visualstudio.com/)
 
-如果你想要完成在 Microsoft Azure 上托管 API 服务和记忆游戏应用的最终步骤，你将需要[创建免费的 Azure 帐户](https://azure.microsoft.com/en-us/free/)（如果尚未这样做）。
+如果你想要完成在 Microsoft Azure 上托管 API 服务和记忆游戏应用的最终步骤，你将需要[创建免费的 Azure 帐户](https://azure.microsoft.com/free/)（如果尚未这样做）。
 
 如果你决定放弃（或推后）Azure 部分，只需跳过第一部分和第二部分的最后一节，这些部分介绍了 Microsoft Store 应用的 Azure 托管和打包。 你生成的 API 服务和 Web 应用将仍然在你的计算机上本地运行（分别从 `http://localhost:8000` 和 `http://localhost:3000`）。
 
@@ -78,11 +78,11 @@ ms.locfileid: "72281864"
 #### <a name="post-new"></a>POST /new
 初始化指定大小（匹配项数目）的新游戏板。
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |-----------|-------------|
 | 初始大小  |将被打乱放入游戏“板”的匹配对数量。 示例： `http://memorygameapisample/new?size=2`|
 
-| 响应 | 描述 |
+| 响应 | 说明 |
 |----------|-------------|
 | 200 正常 | 请求大小的新记忆游戏已准备就绪。|
 | 400 请求无效| 请求的大小超出可接受范围。|
@@ -93,18 +93,18 @@ ms.locfileid: "72281864"
 
 无参数 
 
-| 响应 | 描述 |
+| 响应 | 说明 |
 |----------|-------------|
 | 200 正常 | 返回卡片对象的 JSON 阵列。 每张卡片具有“已清除”属性，指示其匹配是否已被找到  。 匹配的卡片还会报告它们的“数值”  。 示例： `[{"cleared":"false"},{"cleared":"false"},{"cleared":"true","value":1},{"cleared":"true","value":1}]`|
 
 #### <a name="put-guess"></a>PUT /guess
 指定要揭开的卡片，检查与之前揭开的卡片是否匹配。
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |-----------|-------------|
 | 初始卡片  | 要揭开的卡片的卡片 ID（游戏板阵列中的索引）。 每个完整的“猜牌”包含两张指定卡片（即，使用有效的唯一卡片值两次调用 /guess）   。 示例： `http://memorygameapisample/guess?card=0`|
 
-| 响应 | 描述 |
+| 响应 | 说明 |
 |----------|-------------|
 | 200 正常 | 返回 JSON，包含指定卡片的 id 和数值   。 示例： `[{"id":0,"value":1}]`|
 | 400 请求无效 |  指定卡片出错。 请参见 HTTP 响应正文了解更多详细信息。|
@@ -290,7 +290,7 @@ Azure 文档将引导你完成：
 
  - [使用 Visual Studio Code 的高级 Node.js 调试](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
- - [Azure Web + 移动文档](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
+ - [Azure Web + 移动文档](https://docs.microsoft.com/azure/#pivot=services&panel=web)
 
  - [Azure DocumentDB 文档](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/)
 
@@ -490,7 +490,7 @@ if (cardsFlipped == gameBoardSize) {
 如果翻转的卡片数量与游戏板大小相同（例如，`cardsFlipped == gameBoardSize`），则没有更多卡片要翻转，用户已在游戏中胜出。 我们会使用 `id="game-board"` 将一些简单的 HTML 添加到 `div`，以让用户知道他们已胜出，可以重玩游戏。  
 
 ### <a name="3-create-the-user-interface"></a>3.创建用户界面 
-现在，我们来通过创建用户界面，看看正在操作的所有代码。 在此教程中，我们使用模板引擎 [Pug](https://pugjs.org/)（之前为 Jade）。  Pug 是编写 HTML 的对空格敏感的洁净语言  。 下面提供了一个示例。 
+现在，我们来通过创建用户界面，看看正在操作的所有代码。 在此教程中，我们使用模板引擎 [Pug](https://pugjs.org/)（之前为 Jade）。  Pug 是编写 HTML 的对空格敏感的洁净语言  。 下面是一个示例。 
 
 ```
 body
@@ -616,7 +616,7 @@ Bootstrap 的网格系统允许网格系统折叠为一个垂直列，就像你�
     现在，当用户单击卡片，卡片将旋转 180 度。
 
 ### <a name="6-test-and-play"></a>6.测试和玩游戏
-祝贺你！ 你已完成了 Web 应用的创建！ 我们来测试一下。 
+恭喜！ 你已完成了 Web 应用的创建！ 我们来测试一下。 
 
 1. 在记忆目录中打开命令提示符，然后输入以下命令：`npm start`
 
@@ -634,8 +634,8 @@ Bootstrap 的网格系统允许网格系统折叠为一个垂直列，就像你�
 
 发布到 Microsoft Store 的基本步骤是：
 
- 1. 创建 [Windows 开发人员](https://developer.microsoft.com/en-us/store/register)帐户
- 2. 使用应用提交[清单](https://docs.microsoft.com/en-us/windows/uwp/publish/app-submissions)
+ 1. 创建 [Windows 开发人员](https://developer.microsoft.com/store/register)帐户
+ 2. 使用应用提交[清单](https://docs.microsoft.com/windows/uwp/publish/app-submissions)
  3. 提交你的应用进行[认证](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)
 
 下面是一些帮助你深入探索的有用资源：

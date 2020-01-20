@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, python 系统管理, python 文件自动化, windows 上的 python 脚本, 在 windows 上设置 python, windows 上的 python 开发人员环境, windows 上的 python 开发环境, python 与 powershell, 适用于文件系统任务的 python 脚本
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 3f8a17de8121fed27e69442d5560f702a04c8e42
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: d465d46a0524345a45dff9b1cc7c425e4cb468a4
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72314861"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683650"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>开始在 Windows 上将 Python 用于脚本和自动化
 
@@ -24,7 +24,7 @@ ms.locfileid: "72314861"
 
 ## <a name="set-up-your-development-environment"></a>设置开发环境
 
-使用 Python 编写执行文件系统操作的脚本时，建议[从 Microsoft Store 安装 Python](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab)。 通过 Microsoft Store 安装会使用基本 Python3 解释器，但会为当前用户设置 PATH 设置（避免需要管理员访问权限），以及提供自动更新。
+使用 Python 编写执行文件系统操作的脚本时，建议[从 Microsoft Store 安装 Python](https://www.microsoft.com/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab)。 通过 Microsoft Store 安装会使用基本 Python3 解释器，但会为当前用户设置 PATH 设置（避免需要管理员访问权限），以及提供自动更新。
 
 如果在 Windows 上将 Python 用于 Web 开发  ，建议使用适用于 Linux 的 Windows 子系统进行不同设置。 在我们的指南中可找到演练：[开始在 Windows 上将 Python 用于 Web 开发](./web-frameworks.md)。 如果不熟悉 Python，请尝试我们的指南：[开始在 Windows 上使用 Python（初学者）](./beginners.md)。 对于某些高级方案（如需要访问/修改 Python 的已安装文件、创建二进制文件的副本或直接使用 Python DLL），可能需要考虑直接从 [python.org](https://www.python.org/downloads/) 下载特定 Python 版本或考虑安装[替代实现](https://www.python.org/download/alternatives)，如 Anaconda、Jython、PyPy、WinPython、IronPython 等。建议仅当你是更高级的 Python 程序员并且有特定原因需要选择替代实现时才使用此方法。
 
@@ -48,7 +48,7 @@ ms.locfileid: "72314861"
 
 ## <a name="install-the-microsoft-python-extension"></a>安装 Microsoft Python 扩展
 
-需要安装 Microsoft Python 扩展，才能利用 VS Code 支持功能。 [了解详情](https://code.visualstudio.com/docs/languages/python)。
+需要安装 Microsoft Python 扩展，才能利用 VS Code 支持功能。 [了解详细信息](https://code.visualstudio.com/docs/languages/python)。
 
 1. 通过输入 Ctrl+Shift+X  来打开 VS Code 扩展窗口（或使用菜单导航到“视图”   > “扩展”  ）。
 
@@ -174,7 +174,7 @@ VS Code 包含一个[内置终端](https://code.visualstudio.com/docs/editor/int
 
 11. 通过直接在 PowerShell 终端中输入以下命令，使用 Python 将文件系统目录输出打印到自己的文本文件中：`python3 list-directory-contents.py > food-directory.txt`
 
-祝贺你！ 你刚刚编写了一个自动系统管理脚本，该脚本会读取你创建的目录和文件，并使用 Python 显示目录结构并打印到自己的文本文件中。
+恭喜！ 你刚刚编写了一个自动系统管理脚本，该脚本会读取你创建的目录和文件，并使用 Python 显示目录结构并打印到自己的文本文件中。
 
 ## <a name="example-script-to-modify-all-files-in-a-directory"></a>用于修改目录中的所有文件的示例脚本
 

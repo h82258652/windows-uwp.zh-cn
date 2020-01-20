@@ -11,18 +11,18 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c276b232e76afb98d778ef65c7e0e363285c4794
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a3bf48da5fdfff205b2013341aaf6869064ce341
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258206"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684377"
 ---
 # <a name="person-picture-control"></a>个人图片控件
 
-如果用户头像可用，个人图片控件将显示用户头像；否则，将显示该用户的姓名缩写或通用字形。 可以使用该控件来显示 [Contact 对象](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact)（该对象管理用户的联系信息），也可以手动提供联系信息，例如显示名称和个人资料图片。  
+如果用户头像可用，个人图片控件将显示用户头像；否则，将显示该用户的姓名缩写或通用字形。 可以使用该控件来显示 [Contact 对象](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)（该对象管理用户的联系信息），也可以手动提供联系信息，例如显示名称和个人资料图片。  
 
-> **重要的 API**：[PersonPicture 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact 类](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager 类](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> **重要的 API**：[PersonPicture 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
 该图显示两个人图片控件，附带两个显示用户名的[文本块](text-block.md)元素。 
 ![个人图片控件](images/person-picture/person-picture_hero.png)
@@ -79,7 +79,7 @@ ms.locfileid: "74258206"
 
 ## <a name="using-the-person-picture-control-to-display-a-contact-object"></a>使用个人图片控件来显示 Contact 对象
 
-可以使用用户选取器控件来显示 [Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact) 对象： 
+可以使用用户选取器控件来显示 [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) 对象： 
 
 ```xaml
 <Page
@@ -167,11 +167,11 @@ namespace SampleApp
 ```
 
 > [!NOTE]
-> 为使代码简单，此示例中创建一个新的 Contact 对象。 在实际应用中，你会让用户选择一个联系人或使用 [ContactManager](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) 查询联系人列表。 有关检索和管理联系人的信息，请参阅[联系人和日历文章](../../contacts-and-calendar/index.md)。 
+> 为使代码简单，此示例中创建一个新的 Contact 对象。 在实际应用中，你会让用户选择一个联系人或使用 [ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) 查询联系人列表。 有关检索和管理联系人的信息，请参阅[联系人和日历文章](../../contacts-and-calendar/index.md)。 
 
 ## <a name="determining-which-info-to-display"></a>确定要显示的信息
 
-提供 [Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact) 对象时，个人图片控件将对其进行评估，以确定它可以显示哪些信息。 
+提供 [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) 对象时，个人图片控件将对其进行评估，以确定它可以显示哪些信息。 
 
 如果图像可用，该控件将显示它找到的第一个图像，顺序如下：
 

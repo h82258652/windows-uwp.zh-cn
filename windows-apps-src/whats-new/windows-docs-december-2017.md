@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 12 月
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 17238dd886b76e16b0fe63151a73d4a3a5c23704
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: f785ad5d7898f838435e0a05cf8dea5c778e70f3
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259757"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684754"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>2017 年 12 月 Windows 开发人员文档中的新增功能
 
@@ -22,7 +22,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="windows-mixed-reality-enthusiasts-guide"></a>Windows Mixed Reality：发烧友指南
 
-[发烧友指南](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/)面向探索混合现实领域的技术发烧友，回答了大家对 Windows Mixed Reality 的主要问题。 
+[发烧友指南](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/)面向探索混合现实领域的技术发烧友，回答了大家对 Windows Mixed Reality 的主要问题。 
 
 在该指南中，你将了解： 
 - 购买前常见问题解答， 
@@ -44,7 +44,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="microsoft-collaborate"></a>Microsoft Collaborate
 
-Microsoft Collaborate 门户提供广泛的工具和服务，旨在通过分享工程系统工作项（bug、功能请求等）以及分配内容（版本、文档、规范）来简化 Microsoft 生态系统中的工程协作。 [了解详情](https://docs.microsoft.com/collaborate/)。
+Microsoft Collaborate 门户提供广泛的工具和服务，旨在通过分享工程系统工作项（bug、功能请求等）以及分配内容（版本、文档、规范）来简化 Microsoft 生态系统中的工程协作。 [了解详细信息](https://docs.microsoft.com/collaborate/)。
 
 ![合作伙伴中心内的 Microsoft Collaborate](images/microsoft_collaborate_screenshot.PNG)
 

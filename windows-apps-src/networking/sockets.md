@@ -6,12 +6,12 @@ ms.date: 06/03/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 49e126ea0212499361fea58b58237ee13fb76ca2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 42913aae69e5d049530d649c031351f4f3ab9ace
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259176"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684977"
 ---
 # <a name="sockets"></a>套接字
 套接字是实现许多网络协议所基于的低级数据传输技术。 UWP 为客户端-服务器或对等应用程序提供 TCP 和 UDP 套接字类，无论连接长期存在还是不需要建立连接。
@@ -1274,10 +1274,10 @@ private:
 
 在代码中使用批量发送存在一些很大的局限性。
 
--   在异步写入尚未完成之前，你将无法修改当前写入的 **IBuffer** 实例的内容。
--   **FlushAsync** 模式仅适用于 **StreamSocket.OutputStream** 和 **DatagramSocket.OutputStream**。
+-   在异步写入尚未完成之前，你将无法修改当前写入的 IBuffer 实例的内容  。
+-   FlushAsync 模式仅适用于 StreamSocket.OutputStream 和 DatagramSocket.OutputStream    。
 -   FlushAsync 模式适仅用于 Windows 10 以及更高版本  。
--   在其他情况下，用 [Task.WaitAll ](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) 来代替 FlushAsync 模式   。
+-   在其他情况下，用 [Task.WaitAll ](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) 来代替 FlushAsync 模式   。
 
 ## <a name="port-sharing-for-datagramsocket"></a>DatagramSocket 的端口共享
 可以配置 [DatagramSocket](/uwp/api/Windows.Networking.Sockets.DatagramSocket)，与绑定到相同地址/端口的其他 Win32 或 UWP 多播套接字共存  。 要执行该操作，请在绑定或连接套接字前将 [DatagramSocketControl.MulticastOnly](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) 设置为 `true`  。 可以通过 DatagramSocket 对象的 [DatagramSocket.Control](/uwp/api/windows.networking.sockets.datagramsocket.Control) 属性从该对象本身访问 DatagramSocketControl 实例    。

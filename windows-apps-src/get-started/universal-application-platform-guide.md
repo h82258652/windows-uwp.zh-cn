@@ -1,17 +1,17 @@
 ---
 title: 什么是通用 Windows 平台 (UWP) 应用？
-description: 了解通用 Windows 平台 (UWP) 应用，此类应用可跨多种使用 Windows 10 的设备运行。
+description: 了解通用 Windows 平台 (UWP) 应用，此类应用可跨多种使用 Windows 10 的设备运行。
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b0d226a9492a2218edf20e68b8216ea513ca12a
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: fdb06581639391c09c445c8497f67af28a8405df
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260540"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685016"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>什么是通用 Windows 平台 (UWP) 应用？
 
@@ -74,7 +74,7 @@ UWP 应用与 [Application Insights](https://azure.microsoft.com/services/applic
 
 可以选择如何获取应用收益。 可以通过多种方法利用你的应用盈利。 只需选择最适合自身的方式即可，例如：
 
-- 付费下载是最简单的选项， 只需指定价格即可。
+- 付费下载是最简单的选项。 只需指定价格即可。
 - 试用允许用户在购买前先试用你的应用，与更传统的“免费模式”选项相比，用户更易于发现你的应用并转而使用该应用。
 - 激励用户的促销价格。
 - 此外还提供应用内购买和广告。
@@ -94,7 +94,7 @@ UWP 应用与 [Application Insights](https://azure.microsoft.com/services/applic
 - 用户活动允许用户在应用中上次中断的位置继续，甚至可以跨设备实现。
 - “操作中心”管理来自应用的通知。
 - 后台执行和触发器使你的应用仅在用户需要时才会运行。
-- 你的应用可以使用语音和蓝牙 LE 设备 来帮助用户与周围的世界进行交互。
+- 你的应用可以使用语音和蓝牙 LE 设备来帮助用户与周围的世界进行交互。
 - 集成 Cortana 以将语音命令功能添加到你的应用。
 
 ##  <a name="use-a-language-you-already-know"></a>使用一种你已知道的语言
@@ -115,7 +115,7 @@ UWP 应用可以使用 Windows 运行时，它是操作系统提供的本机 API
 
 Microsoft 的设计系统名为 Fluent。 Fluent Design 系统是一套结合了最佳实践的 UWP 功能，用于创建在所有类型的支持 Windows 的设备上都表现出色的应用。 Fluent 体验能够适应各类设备，并提供自然的使用感受，从平板电脑到笔记本电脑，从电脑到电视，再到虚拟现实设备。 有关 Fluent Design 的简介，请参阅 [UWP 应用的 Fluent Design 系统](https://docs.microsoft.com/windows/uwp/design/fluent-design-system)。
 
-除了确定应用外观和运行方式外，良好的[设计](http://design.windows.com/)还是确定用户如何与你的应用交互的过程。 用户体验极大地影响着用户对你的应用的满意度，所以请勿忽略此步骤。 [设计基础知识](https://developer.microsoft.com/en-us/windows/apps/design)介绍了如何设计通用 Windows 应用。 有关设计出令用户满意的 UWP 应用的信息，请参阅[面向设计人员的通用 Windows 平台 (UWP) 应用简介](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)。 在开始编写代码之前，请参阅[设备入门](../design/devices/index.md)，以帮助你全面考虑在你要针对的所有不同外形规格上使用应用的交互体验。
+除了确定应用外观和运行方式外，良好的[设计](http://design.windows.com/)还是确定用户如何与你的应用交互的过程。 用户体验极大地影响着用户对你的应用的满意度，所以请勿忽略此步骤。 [设计基础知识](https://developer.microsoft.com/windows/apps/design)介绍了如何设计通用 Windows 应用。 有关设计出令用户满意的 UWP 应用的信息，请参阅[面向设计人员的通用 Windows 平台 (UWP) 应用简介](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)。 在开始编写代码之前，请参阅[设备入门](../design/devices/index.md)，以帮助你全面考虑在你要针对的所有不同外形规格上使用应用的交互体验。
 
 除了在不同设备上的交互外，还需[规划应用](https://docs.microsoft.com/windows/uwp/get-started/plan-your-app)以利用在多个设备之间运行的优势。 例如：
 
@@ -129,7 +129,7 @@ Microsoft 的设计系统名为 Fluent。 Fluent Design 系统是一套结合了
 - 了解如何[连接到 Web 服务](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))以支持应用体验。
 - 将[推送通知](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)和[应用内购买](https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases)包含在规划中。 这些功能应该能够跨设备运行。
 
-### <a name="submit-your-app-to-the-store"></a>向应用商店提交应用
+### <a name="submit-your-app-to-the-store"></a>向 Store 提交应用
 
 使用[合作伙伴中心](https://partner.microsoft.com/dashboard)可以在同一位置针对 Windows 设备管理和提交所有应用。 请参阅[发布 Windows 应用和游戏](../publish/index.md)，了解如何提交应用以在 Microsoft Store 中发布。
 

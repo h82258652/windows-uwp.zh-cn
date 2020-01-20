@@ -6,35 +6,35 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4671b3048850197cc33e6878b814b2c26792e36c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 59b5b6dc3b359aa68b8282375a0fcb1716cdef50
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258850"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684735"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-18362"></a>面向开发人员的 Windows 10 内部版本 18362 中的新增功能
 
 Windows 10 内部版本 18362（也称为 SDK 版本 1903）与 Visual Studio 2019 相结合，提供所需的工具、功能和体验来创建非凡的 Windows 应用。 只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
-该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 18362 API 更改](windows-10-build-18362-api-diff.md)。 有关 Windows 10 亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://developer.microsoft.com/windows/windows-10-for-developers)。
+该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 18362 API 更改](windows-10-build-18362-api-diff.md)。 有关 Windows 10 中亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://developer.microsoft.com/windows/windows-10-for-developers)。
 
 ## <a name="design--ui"></a>设计和 UI
 
-功能 | 描述
+功能 | 说明
 :------ | :------
 AnimatedVisualPlayer | [AnimatedVisualPlayer](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.animatedvisualplayer) API 用于承载和控制应用中动画视觉对象的播放。 此 API 用于控制和显示 [Lottie](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie) 视觉对象等内容，可用于在应用程序本地渲染 Adobe AfterEffects 动画。
 CompactDensity | 在应用中启用[紧密模式](../design/style/spacing.md)可以实现密集、信息丰富的控件组。 这有助于浏览大量内容，最大化页面上的可视化内容，或者在用户使用指针输入时帮助其导航和交互。
 Items Repeater | [ItemsRepeater](../design/controls-and-patterns/items-repeater.md) 控件可以创建用于向用户显示集合的自定义体验。 ItemsRepeater 不提供综合性的最终用户体验或默认 UI， 而是一个构建基块，你可以使用它来创建自己的基于唯一集合的体验和自定义控件。
 教学提示 | [教学提示](../design/controls-and-patterns/dialogs-and-flyouts/teaching-tip.md)是一个提供上下文信息的半持久且包含丰富内容的浮出控件。 可以使用此控件向用户通知、提醒和传授新的或重要的功能。
 UI 命令控制 | 借助 [UWP 应用中的命令控制](../design/controls-and-patterns/commanding.md)，可以使用 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 和 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 类（以及 ICommand 接口）在不同的控件类型之间共享和管理命令，不管所用的设备和输入类型是什么。
-Windows UI 库 | 最新官方版 Windows UI 库 – [WinUI 2.1](https://docs.microsoft.com/uwp/toolkits/winui/release-notes/winui-2.1) – 提供适用于 Windows 应用的丰富多样的新 XAML 控件。 WinUI 库 API 可以在较早的 Windows 10 版本上运行，所以你不需要添加版本检查或条件 XAML 以支持未使用最新版本的用户。
+Windows UI 库 | 最新官方版 Windows UI 库 – [WinUI 2.1](https://docs.microsoft.com/uwp/toolkits/winui/release-notes/winui-2.1) – 提供适用于 Windows 应用的丰富多样的新 XAML 控件。 WinUI 库 API 可以在较早的 Windows 10 版本上运行，所以你不需要添加版本检查或条件 XAML 以支持未使用最新操作系统的用户。
 桌面应用中的视觉层 | 现在可以[在桌面应用程序中使用 UWP 视觉层 API](../composition/visual-layer-in-desktop-apps.md)。 这些 API 为图形、效果和动画提供高性能的保留模式 API，是 Windows 设备上的 UI 的基础。
 Z 深度和阴影 | 使用 [Z 深度和阴影](../design/layout/depth-shadow.md)在 UWP 应用中创建垂直面。 使用这些新功能可使应用的 UI 更易于扫描，并且可以更好地向用户传达需要重点关注的内容。
 
 ## <a name="develop-windows-apps"></a>开发 Windows 应用
 
-功能 | 描述
+功能 | 说明
 :------ | :------
 反恶意软件扫描接口 (AMSI) | 了解[反恶意软件扫描接口 (AMSI) 如何帮助你防范恶意软件](https://docs.microsoft.com/windows/desktop/amsi/how-amsi-helps)，然后查看[示例代码](https://docs.microsoft.com/windows/desktop/amsi/dev-audience)了解如何在桌面应用中实现它。
 C++/WinRT 2.0 | C++/WinRT 版本 2.0 现已发布。 请查看 [C++/WinRT 中的新增功能](../cpp-and-winrt-apis/news.md)，了解所有新的更改和补充功能的完整概述。
@@ -47,7 +47,7 @@ DirectX HLSL | [HLSL 着色器模型 6.4](https://docs.microsoft.com/windows/des
 驱动程序开发 | 为 Windows 驱动程序开发人员添加了新的音频、相机、显示、网络、移动宽带、打印、传感器、存储和 WiFi 功能。 有关更多详细信息，请查看[驱动程序开发中的新增功能](https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development#whats-new-in-windows-10-version-1903-latest)。
 文件系统操作 | 此[最佳做法指南](../files/best-practices-for-writing-to-files.md)可帮助你充分利用 Windows.Storage.FileIO 和 Windows.Storage.PathIO 类来执行文件系统 I/O 操作。
 游戏板和遥控器交互 | 使用[游戏手柄和远程控制交互](../design/input/gamepad-and-remote-interactions.md)构建易于使用和访问的交互体验。 借助这种交互，可以在两英尺远的位置直观轻松地使用应用程序，就如同它与你相距 10 英尺一样。
-日本年号更改 | 我们提供了[这些说明](../design/globalizing/japanese-era-change.md)来展示如何确保 Windows 应用程序针对于 2019 年 5 月 1 日进行的日本纪元更改做好准备。 [此页面也提供了日语版](https://docs.microsoft.com/ja-jp/windows/uwp/design/globalizing/japanese-era-change)。
+日本年号更改 | 我们提供了[这些说明](../design/globalizing/japanese-era-change.md)来展示如何确保 Windows 应用程序针对于 2019 年 5 月 1 日进行的日本纪元更改做好准备。 此页面还以日语提供（在文章底部，单击“语言”控件，然后选择“日语”）。
 WPF、Windows 窗体和 WinUI 的开源 | WPF、Windows 窗体和 WinUI UX 框架现可用于 GitHub 上的开源内容。 有关详细信息和链接，请参阅[生成 Windows 应用博客](https://blogs.windows.com/buildingapps/2018/12/04/announcing-open-source-of-wpf-windows-forms-and-winui-at-microsoft-connect-2018/#OKZjJs1VVTrMMtkL.97)。
 适用于 Xbox 的渐进式 Web 应用 | 使用[适用于 Xbox One 的渐进式 Web 应用](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/xbox-considerations)，可以扩展 Web 应用程序，并通过 Microsoft Store 将其作为 Xbox One 应用提供，同时仍继续使用现有框架、CDN 和服务器后端。 在大多数情况下，可以像在 Windows 中一样打包 Xbox One 的 PWA。 此指南会引导你完成该过程，并强调重要的差异。
 Project Rome | Project Rome SDK 现在适用于 Android 和 iOS。 了解如何将图形通知与每个平台集成：[Android](https://docs.microsoft.com/windows/project-rome/notifications/how-to-guide-for-android) 和 [iOS](https://docs.microsoft.com/windows/project-rome/notifications/how-to-guide-for-ios)。
@@ -64,7 +64,7 @@ Windows 视觉技能 | [Windows 视觉技能](https://docs.microsoft.com/windows
 
 ## <a name="publish--monetize-windows-apps"></a>发布 Windows 应用并实现盈利
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 MSIX | [Windows 10 内部版本 1709 和 1803 中的 MSIX 支持](https://docs.microsoft.com/windows/msix/msix-1709-and-1803-support)介绍了 Windows 10 版本 1809 以前的版本所支持的 MSIX 功能。
 MSIX 打包和部署 | 我们引入了多项[修改包相关的改进](https://docs.microsoft.com/windows/msix/modification-package-insider-preview-build-18312)，以便更轻松地在 MSIX 包中打包自定义项。 这些改进包括包清单中的新 **rescap6:ModificationPackage** 元素、将主包中的文件取代为修改包的功能，以及将基于文件系统的插件打包成 MSIX 修改包的功能。
