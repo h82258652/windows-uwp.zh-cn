@@ -120,7 +120,7 @@ Windows 10 版本 1709
 `void SecureBrowser.security.examineProcessList(String[] blacklistedProcessList, Function callback);`
 
 **Parameters**  
-* `blacklistedProcessList` 的测试应用程序已列入黑名单的进程列表。  
+* `blacklistedProcessList` 的测试应用程序已列入阻止列表的进程列表。  
 `callback` -要调用在找到活动进程之后的函数。 其形式必须为：`Function(String foundBlacklistedProcesses)`，其中 `foundBlacklistedProcesses` 的形式为：`"['process1.exe','process2.exe','processEtc.exe']"`。 如果未找到已列入禁止列表的进程，它将为空。 如果为 null，则指示原始函数调用时发生错误。
 
 **备注** 该列表不包括系统进程。
